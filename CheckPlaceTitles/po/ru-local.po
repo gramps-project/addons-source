@@ -1,4 +1,4 @@
-# Russian translation for Gramps
+# Russian translation for CheckPlaceTitles
 # This file is distributed under the same license as the Gramps package.
 # Русский перевод для GRAMPS
 # Copyright (C) 2002-2011 Free Software Foundation, Inc.
@@ -8,16 +8,16 @@
 # Konstantin Dorichev <kdorichev@gmail.com>, 2008.
 # Yevgeny Zegzda <ezegjda@ya.ru>, 2009, 2010.
 # Andrey Baznikin (http://d.scn.ru/), 2009-2011.
-# Vassilii Khachaturov <vassilii@tarunz.org>, 2011-2013, 2014.
-# Egor Reentov <egor.gramps@gmail.com>, 2011, 2012, 2013.
-# Ivan Komaritsyn <vantu5z@mail.ru>, 2015, 2016.
+# Vassilii Khachaturov <vassilii@tarunz.org>, 2011-2014.
+# Egor Reentov <egor.gramps@gmail.com>, 2011-2013.
+# Ivan Komaritsyn <vantu5z@mail.ru>, 2015-2018.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-12 14:42+0100\n"
-"PO-Revision-Date: 2017-02-07 09:00-0300\n"
+"POT-Creation-Date: 2018-11-28 14:41+0300\n"
+"PO-Revision-Date: 2018-11-28 14:51+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
@@ -32,11 +32,11 @@ msgstr ""
 
 #: CheckPlaceTitles/checkplacetitles.gpr.py:28
 msgid "Check Place Titles"
-msgstr ""
+msgstr "Проверка названия мест"
 
 #: CheckPlaceTitles/checkplacetitles.gpr.py:29
 msgid "Check place titles"
-msgstr ""
+msgstr "Проверяет названия местоположений"
 
 #: CheckPlaceTitles/checkplacetitles.py:56
 msgid "manual|Check_place_titles"
@@ -44,63 +44,63 @@ msgstr ""
 
 #: CheckPlaceTitles/checkplacetitles.py:71
 msgid "Check Place title"
-msgstr ""
+msgstr "Проверить название места"
 
 #: CheckPlaceTitles/checkplacetitles.py:86
 msgid "Checking Place Titles"
 msgstr "Проверка названий мест"
 
-#: CheckPlaceTitles/checkplacetitles.py:87
+#: CheckPlaceTitles/checkplacetitles.py:88
 msgid "Looking for place fields"
-msgstr "Ищем части адресов"
+msgstr "Просмотр данных о месте"
 
-#: CheckPlaceTitles/checkplacetitles.py:103
+#: CheckPlaceTitles/checkplacetitles.py:107
 msgid "Differences"
-msgstr ""
+msgstr "Отличия"
 
-#: CheckPlaceTitles/checkplacetitles.py:109
+#: CheckPlaceTitles/checkplacetitles.py:113
 msgid "No need modifications"
-msgstr ""
+msgstr "Изменения не требуются"
 
-#: CheckPlaceTitles/checkplacetitles.py:110
+#: CheckPlaceTitles/checkplacetitles.py:114
 msgid "No changes need."
-msgstr ""
+msgstr "Изменения не требуются."
 
-#: CheckPlaceTitles/checkplacetitles.py:139
+#: CheckPlaceTitles/checkplacetitles.py:143
 msgid "Select"
 msgstr "Выбрать"
 
-#: CheckPlaceTitles/checkplacetitles.py:142
+#: CheckPlaceTitles/checkplacetitles.py:146
 msgid "Database"
 msgstr "База данных"
 
-#: CheckPlaceTitles/checkplacetitles.py:146
+#: CheckPlaceTitles/checkplacetitles.py:150
 msgid "Display"
 msgstr "Отображение"
 
-#: CheckPlaceTitles/checkplacetitles.py:156
+#: CheckPlaceTitles/checkplacetitles.py:160
 msgid "Building display"
 msgstr "Обновление экрана"
 
-#: CheckPlaceTitles/checkplacetitles.py:185
+#: CheckPlaceTitles/checkplacetitles.py:189
 msgid "Legacy place"
-msgstr ""
+msgstr "Старое место"
 
-#: CheckPlaceTitles/checkplacetitles.py:199
+#: CheckPlaceTitles/checkplacetitles.py:203
 msgid "Modify Place titles"
-msgstr ""
+msgstr "Изменить названия мест"
 
-#: CheckPlaceTitles/checkplacetitles.py:222
+#: CheckPlaceTitles/checkplacetitles.py:226
 msgid "Place titles"
-msgstr ""
+msgstr "Названия мест"
 
 #: CheckPlaceTitles/checkplacetitles.glade.h:1
 msgid "Remove content of place title field if it does not match"
-msgstr ""
+msgstr "Удалить название места, если оно не совпадает"
 
 #: CheckPlaceTitles/checkplacetitles.glade.h:2
 msgid "Copy content of place title field to a new note."
-msgstr ""
+msgstr "Копировать название места в новую заметку."
 
 #: CheckPlaceTitles/checkplacetitles.glade.h:3
 msgid "Mark"
@@ -108,7 +108,7 @@ msgstr "Отметка"
 
 #: CheckPlaceTitles/checkplacetitles.glade.h:4
 msgid "Attach a tag on selected places."
-msgstr ""
+msgstr "Прикрепить метку к выбранным местам."
 
 #: CheckPlaceTitles/checkplacetitles.glade.h:5
 msgid "_Accept changes and close"
@@ -116,4 +116,4 @@ msgstr "_Принять изменения и закрыть"
 
 #: CheckPlaceTitles/checkplacetitles.glade.h:6
 msgid "column"
-msgstr ""
+msgstr "колонка"

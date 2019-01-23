@@ -1,0 +1,142 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: GenealogyTree/gt_ancestor.py:83 GenealogyTree/gt_descendant.py:83
+#: GenealogyTree/gt_sandclock.py:91
+#, python-format
+msgid "Person %s is not in the Database"
+msgstr ""
+
+#: GenealogyTree/gt_ancestor.py:148 GenealogyTree/gt_descendant.py:156
+#: GenealogyTree/gt_grandparent.py:205 GenealogyTree/gt_sandclock.py:215
+msgid "Report Options"
+msgstr ""
+
+#: GenealogyTree/gt_ancestor.py:150 GenealogyTree/gt_descendant.py:158
+#: GenealogyTree/gt_grandparent.py:207 GenealogyTree/gt_sandclock.py:218
+msgid "Center Person"
+msgstr ""
+
+#: GenealogyTree/gt_ancestor.py:151 GenealogyTree/gt_descendant.py:159
+#: GenealogyTree/gt_grandparent.py:208 GenealogyTree/gt_sandclock.py:219
+msgid "The center person for the report"
+msgstr ""
+
+#: GenealogyTree/gt_ancestor.py:154 GenealogyTree/gt_descendant.py:162
+#: GenealogyTree/gt_grandparent.py:211
+msgid "Generations"
+msgstr ""
+
+#: GenealogyTree/gt_ancestor.py:155 GenealogyTree/gt_descendant.py:163
+#: GenealogyTree/gt_grandparent.py:212 GenealogyTree/gt_sandclock.py:227
+#: GenealogyTree/gt_sandclock.py:231
+msgid "The number of generations to include in the tree"
+msgstr ""
+
+#: GenealogyTree/gt_ancestor.py:158 GenealogyTree/gt_descendant.py:166
+#: GenealogyTree/gt_grandparent.py:219 GenealogyTree/gt_sandclock.py:238
+msgid "Include images"
+msgstr ""
+
+#: GenealogyTree/gt_ancestor.py:159 GenealogyTree/gt_descendant.py:167
+#: GenealogyTree/gt_grandparent.py:220 GenealogyTree/gt_sandclock.py:239
+msgid "Include images of people in the nodes."
+msgstr ""
+
+#: GenealogyTree/gt_grandparent.py:107
+#, python-format
+msgid "Person %s does not have both a paternal and a maternal grandparent"
+msgstr ""
+
+#: GenealogyTree/gt_grandparent.py:215
+msgid "Grandparent family spacing"
+msgstr ""
+
+#: GenealogyTree/gt_grandparent.py:216
+msgid "Extra spacing of grandparent families (mm)"
+msgstr ""
+
+#: GenealogyTree/gt_sandclock.py:96
+#, python-format
+msgid "Family %s is not in the Database"
+msgstr ""
+
+#: GenealogyTree/gt_sandclock.py:222
+msgid "Center Family"
+msgstr ""
+
+#: GenealogyTree/gt_sandclock.py:223
+msgid "The center family for the report"
+msgstr ""
+
+#: GenealogyTree/gt_sandclock.py:226
+msgid "Generations up"
+msgstr ""
+
+#: GenealogyTree/gt_sandclock.py:230
+msgid "Generations down"
+msgstr ""
+
+#: GenealogyTree/gt_sandclock.py:234
+msgid "Include siblings"
+msgstr ""
+
+#: GenealogyTree/gt_sandclock.py:235
+msgid "Include siblings of ancestors."
+msgstr ""
+
+#: GenealogyTree/treeplugins.gpr.py:29
+msgid "Ancestor Tree"
+msgstr ""
+
+#: GenealogyTree/treeplugins.gpr.py:30
+msgid "Ancestor tree using LaTeX genealogytree"
+msgstr ""
+
+#: GenealogyTree/treeplugins.gpr.py:51
+msgid "Descendant Tree"
+msgstr ""
+
+#: GenealogyTree/treeplugins.gpr.py:52
+msgid "Descendant tree using LaTeX genealogytree"
+msgstr ""
+
+#: GenealogyTree/treeplugins.gpr.py:73
+msgid "Grandparent Tree"
+msgstr ""
+
+#: GenealogyTree/treeplugins.gpr.py:74
+msgid "Grandparent tree using LaTeX genealogytree"
+msgstr ""
+
+#: GenealogyTree/treeplugins.gpr.py:95
+msgid "Sandclock Tree"
+msgstr ""
+
+#: GenealogyTree/treeplugins.gpr.py:96
+msgid "Sandclock tree using LaTeX genealogytree"
+msgstr ""
+
+#: GenealogyTree/treeplugins.gpr.py:117
+msgid "Sandclock Tree for a Family"
+msgstr ""
+
+#: GenealogyTree/treeplugins.gpr.py:118
+msgid "Sandclock tree for a family using LaTeX genealogytree"
+msgstr ""

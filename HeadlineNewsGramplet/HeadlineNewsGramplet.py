@@ -15,7 +15,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
 # $Id$
 
@@ -74,7 +74,7 @@ def substitute(match):
             return match.group()
 
 def decode_html(string):
-    entity_re = re.compile("&(#?)(\d{1,5}|\w{1,8});")
+    entity_re = re.compile(r"&(#?)(\d{1,5}|\w{1,8});")
     return entity_re.subn(substitute, string)[0]
 
 #------------------------------------------------------------------------
@@ -238,28 +238,28 @@ class HeadlineNewsGramplet(Gramplet):
                     newtext = ""
                 text = text.replace(oldtext, newtext)
         ### Internal wiki URL with title:
-        pattern = re.compile('\[\[(.*?)\|(.*?)\]\]')
+        pattern = re.compile(r'\[\[(.*?)\|(.*?)\]\]')
         matches = pattern.findall(text)
         for (g1, g2) in matches:
             text = text.replace("[[%s|%s]]" % (g1, g2),
                                 ("""<A HREF="%s">%s</A>""" %
                                  (self.wiki(g1), self.nice_title(g2))))
         ### Internal wiki URL:
-        pattern = re.compile('\[\[(.*?)\]\]')
+        pattern = re.compile(r'\[\[(.*?)\]\]')
         matches = pattern.findall(text)
         for match in matches:
             text = text.replace("[[%s]]" % match,
                                 ("""<A HREF="%s">%s</A>""" %
                                  (self.wiki(match), self.nice_title(match))))
         ### URL with title:
-        pattern = re.compile('\[http\:\/\/(.*?) (.*?)\]')
+        pattern = re.compile(r'\[http\:\/\/(.*?) (.*?)\]')
         matches = pattern.findall(text)
         for (g1, g2) in matches:
             text = text.replace("[http://%s %s]" % (g1, g2),
                                 ("""<A HREF="http://%s">%s</A>""" %
                                  (g1, g2)))
         ### URL:
-        pattern = re.compile('\[http\:\/\/(.*?)\]')
+        pattern = re.compile(r'\[http\:\/\/(.*?)\]')
         matches = pattern.findall(text)
         count = 1
         for g1 in matches:

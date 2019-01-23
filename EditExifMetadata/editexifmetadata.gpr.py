@@ -16,7 +16,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
 # $Id$
@@ -34,9 +34,10 @@ register(GRAMPLET,
          gramplet_title        = _("Edit Exif Metadata"),
          detached_width        = 510,
          detached_height       = 550,
-         version = '1.5.11',
+         version = '1.5.15',
          gramps_target_version = "5.1",
-         status                = STABLE,
+         status                = UNSTABLE,
+         include_in_listing    = False,
          fname                 = "editexifmetadata.py",
          help_url              = "Edit Image Exif Metadata",
          authors               = ['Rob G. Healey'],

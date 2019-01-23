@@ -16,7 +16,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
 # $Id: $
@@ -56,14 +56,17 @@ HAARCASCADE_PATH = os.path.join(path, 'haarcascade_frontalface_alt.xml')
 #
 #-------------------------------------------------------------------------
 
-def detect_faces(image_path, min_face_size):
+def detect_faces(image_path, min_face_size, sensitivity):
     cv_image = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
-    o_width, o_height = cv_image.shape[0], cv_image.shape[1]
+    img_size = (cv_image.shape[0], cv_image.shape[1])
     cv2.equalizeHist(cv_image, cv_image)
     cascade = cv2.CascadeClassifier(HAARCASCADE_PATH)
-    # ???
-    faces = cv2.HaarDetectObjects(cv_image, cascade,
-                                 cv2.CreateMemStorage(0),
-                                 1.2, 2, cv2.CV_HAAR_DO_CANNY_PRUNING,
-                                 min_face_size)
-    return faces
+    # calculate values for sensitivity (scaleFactor, minNeighbors)
+    scale_factor = 1.0 + (0.21 - sensitivity/100)       # 1.01 .. 1.2
+    min_neighbors = round(3 + (2 - 2*sensitivity/10))   # 1 .. 5
+
+    faces = cascade.detectMultiScale(cv_image, minSize=min_face_size,
+                                     scaleFactor=scale_factor,
+                                     minNeighbors=min_neighbors)
+
+    return faces, img_size

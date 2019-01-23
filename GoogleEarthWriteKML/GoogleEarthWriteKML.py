@@ -15,7 +15,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
 # $Id: GoogleEarthWriteKML.py.py 11946 2009-02-13 06:06:14Z ldnp $
@@ -32,22 +32,24 @@ GoogleEarth  kml or kmz file format.
 #-------------------------------------------------------------------------
 import os
 import codecs
+import logging
+LOG = logging.getLogger(".GoogleEarthWriteKML")
+
+#-------------------------------------------------------------------------
+#
+# Gramps modules
+#
+#-------------------------------------------------------------------------
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
     _trans = glocale.get_addon_translator(__file__)
 except ValueError:
     _trans = glocale.translation
 _ = _trans.gettext
-
-#-------------------------------------------------------------------------
-#
-# GRAMPS modules
-#
-#-------------------------------------------------------------------------
 from gramps.gui.dialog import ErrorDialog, QuestionDialog2
 from gramps.plugins.lib.libmapservice import MapService
 from gramps.gui.utils import open_file_with_default_application
-from gramps.gen.utils.file import search_for, conv_to_unicode
+from gramps.gen.utils.file import search_for
 from gramps.gen.utils.location import get_main_location
 from gramps.gen.lib import PlaceType
 from gramps.gen.display.place import displayer as place_displayer
@@ -69,21 +71,21 @@ else:
 # Check i googleearth is installed
 _GOOGLEEARTH_OK = False
 if os.sys.platform == 'win32':
-    FILE_PATH = '"%s\Google\Google Earth\googleearth.exe"'\
-                  % (os.getenv('ProgramFiles'))
+    FILE_PATH = r'"%s\Google\Google Earth\googleearth.exe"'\
+                % (os.getenv('ProgramFiles'))
     NORM_PATH = os.path.normpath(FILE_PATH)
     _GOOGLEEARTH_OK = search_for(NORM_PATH)
 
     if not _GOOGLEEARTH_OK:
         # For Win 7 with 32 Gramps
-        FILE_PATH = '"%s\Google\Google Earth\client\googleearth.exe"'\
+        FILE_PATH = r'"%s\Google\Google Earth\client\googleearth.exe"'\
                     % (os.getenv('ProgramFiles'))
         NORM_PATH = os.path.normpath(FILE_PATH)
         _GOOGLEEARTH_OK = search_for(NORM_PATH)
 
     if not _GOOGLEEARTH_OK:
         # For Win 7 with 64 Gramps, need to find path to 32 bits programs
-        FILE_PATH = '"%s\Google\Google Earth\client\googleearth.exe"'\
+        FILE_PATH = r'"%s\Google\Google Earth\client\googleearth.exe"'\
                     % (os.getenv('ProgramFiles(x86)'))
         NORM_PATH = os.path.normpath(FILE_PATH)
         _GOOGLEEARTH_OK = search_for(NORM_PATH)
@@ -164,7 +166,7 @@ class GoogleEarthService(MapService):
 
         full_filename = filename + ".kml"
         zip_filename = filename + ".kmz"
-        home_dir = conv_to_unicode(home_dir) #get_unicode_path_from_env_var(home_dir)
+        home_dir = home_dir #get_unicode_path_from_env_var(home_dir)
         # Check if kml/kmz file exits
         if os.path.exists(full_filename) or os.path.exists(zip_filename):
             qd2 = QuestionDialog2(
@@ -194,9 +196,9 @@ class GoogleEarthService(MapService):
         # Run GoogleEarth if on system, else keep created file
         if _GOOGLEEARTH_OK:
             if _ZIP_OK:
-                open_file_with_default_application(zip_filename)
+                open_file_with_default_application(zip_filename, self.uistate)
             else:
-                open_file_with_default_application(full_filename)
+                open_file_with_default_application(full_filename, self.uistate)
         # Remove the unzipped file.
         if _ZIP_OK:
             os.remove(full_filename)
@@ -224,6 +226,9 @@ class GoogleEarthService(MapService):
         for place, descr in self._all_places():
             latitude, longitude = self._lat_lon(place)
             if latitude == None or longitude == None:
+                location = get_main_location(self.database, place)
+                LOG.warning(" %s : Missing coordinates(latitude/longitude): \
+                             Skipping entry: " % (location))
                 continue
             if not descr:
                 descr = place_displayer.display(self.database, place)

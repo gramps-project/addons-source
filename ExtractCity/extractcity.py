@@ -57,10 +57,13 @@ from gramps.gui.plug import tool
 from gramps.gui.utils import ProgressMeter
 from gramps.gui.glade import Glade
 
-CITY_STATE_ZIP = re.compile("((\w|\s)+)\s*,\s*((\w|\s)+)\s*(,\s*((\d|-)+))", re.UNICODE)
-CITY_STATE = re.compile("((?:\w|\s)+(?:-(?:\w|\s)+)*),((?:\w|\s)+)", re.UNICODE)
-CITY_LAEN =  re.compile("((?:\w|\s)+(?:-(?:\w|\s)+)*)\(((?:\w|\s)+)", re.UNICODE)
-STATE_ZIP = re.compile("(.+)\s+([\d-]+)", re.UNICODE)
+CITY_STATE_ZIP = re.compile(r"((\w|\s)+)\s*,\s*((\w|\s)+)\s*(,\s*((\d|-)+))",
+                            re.UNICODE)
+CITY_STATE = re.compile(r"((?:\w|\s)+(?:-(?:\w|\s)+)*),((?:\w|\s)+)",
+                        re.UNICODE)
+CITY_LAEN = re.compile(r"((?:\w|\s)+(?:-(?:\w|\s)+)*)\(((?:\w|\s)+)",
+                       re.UNICODE)
+STATE_ZIP = re.compile(r"(.+)\s+([\d-]+)", re.UNICODE)
 
 COUNTRY = ( _("United States of America"), _("Canada"), _("France"),_("Sweden"))
 
@@ -433,7 +436,8 @@ class ExtractCity(tool.BatchTool, ManagedWindow):
         Performs the actual extraction of information
         """
 
-        self.progress = ProgressMeter(_('Checking Place Titles'), '')
+        self.progress = ProgressMeter(_('Checking Place Titles'), '',
+                                      parent=self.parent_window)
         self.progress.set_pass(_('Looking for place fields'),
                                self.db.get_number_of_places())
 
@@ -513,11 +517,11 @@ class ExtractCity(tool.BatchTool, ManagedWindow):
                     self.name_list.append(
                         (place.handle, (None, new_state[0], None,
                                   COUNTRY[new_state[1]])))
-        self.progress.close()
 
         if self.name_list:
             self.display()
         else:
+            self.progress.close()
             self.close()
             from gramps.gui.dialog import OkDialog
             OkDialog(_('No modifications made'),

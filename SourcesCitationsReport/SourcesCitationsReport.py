@@ -18,15 +18,15 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
-# Version 3.4
+# Version 3.6
 # $Id: SourcesCitationsReport.py 2012-12-30 Frink hansulrich.frink@gmail.com $
 
 """
 Reports/Text Report.
 
-Developed for gramps 3.4.2.1 under win 7 64bit
+Developed for gramps 5.0.0.1 under win 10 64bit
 
 This is my first contribution to gramps, as well as my first python module,
 so the programming style may in some way be unusual. Thanks to Enno Borgsteede
@@ -65,6 +65,10 @@ Version 3.5:
 - get translation work
 - include Persons names and gramps_id cited in the notes.
 
+Version 3.6:
+- improved translation
+- Date formats.
+
 next steps:
 
 - have an index on Persons
@@ -77,34 +81,29 @@ next steps:
 # standard python modules
 #
 #------------------------------------------------------------------------
-#import posixpath
 import time
 from collections import defaultdict
 
 #------------------------------------------------------------------------
 #
-# GRAMPS modules
+# Gramps modules
 #
 #------------------------------------------------------------------------
-import gen.lib
-from gen.plug.menu import StringOption, MediaOption, NumberOption
-from gen.plug.menu import FilterOption, PlaceListOption, EnumeratedListOption, \
-                          BooleanOption
-from gen.plug.report import Report
-from gen.plug.report import MenuReportOptions
-from gen.plug.report import utils as ReportUtils
-
-from gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle, TableStyle,
-                            TableCellStyle, FONT_SANS_SERIF, FONT_SERIF,
-                            INDEX_TYPE_TOC, INDEX_TYPE_ALP, PARA_ALIGN_CENTER)
-
-from Utils import media_path_full
+from gramps.gen.plug.menu import StringOption, FilterOption, BooleanOption
+from gramps.gen.plug.report import Report
+from gramps.gen.plug.report import MenuReportOptions
+from gramps.gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle,
+                                    TableStyle, TableCellStyle, FONT_SERIF,
+                                    FONT_SANS_SERIF, INDEX_TYPE_TOC,
+                                    PARA_ALIGN_CENTER)
+from gramps.gen.plug.report import stdoptions
 from gramps.gen.const import GRAMPS_LOCALE as glocale
+
 try:
     _trans = glocale.get_addon_translator(__file__)
 except ValueError:
     _trans = glocale.translation
-_ = _trans.gettext
+_ = _trans.sgettext
 
 #------------------------------------------------------------------------
 #
@@ -138,6 +137,11 @@ class SourcesCitationsReport(Report):
         self.title_string = menu.get_option_by_name('title').get_value()
         self.subtitle_string = menu.get_option_by_name('subtitle').get_value()
         self.footer_string = menu.get_option_by_name('footer').get_value()
+        
+        self.set_locale(menu.get_option_by_name('trans').get_value())
+
+        stdoptions.run_date_format_option(self, menu)
+
         self.showperson = menu.get_option_by_name('showperson').get_value()
 
 
@@ -164,7 +168,7 @@ class SourcesCitationsReport(Report):
 
         self.doc.start_paragraph("SRC-ReportTitle")
         title = self.subtitle_string
-        mark = IndexMark(title, INDEX_TYPE_TOC, 1)
+        mark = IndexMark(title, INDEX_TYPE_TOC, 2)
         self.doc.write_text(title, mark)
         self.doc.end_paragraph()
 
@@ -237,7 +241,7 @@ class SourcesCitationsReport(Report):
 
         for pe in self.__db.get_person_handles():
             for eventref in self.__db.get_person_from_handle(pe).event_ref_list:
-                pedic[eventref.ref].add((eventref.get_role(),pe))
+                pedic[eventref.ref].add((eventref.get_role().xml_str(), pe))
 
 
         # build eventfamily dictionary
@@ -248,13 +252,11 @@ class SourcesCitationsReport(Report):
 
         for fh in self.__db.get_family_handles():
             for eventref in self.__db.get_family_from_handle(fh).event_ref_list:
-                family = self.__db.get_family_from_handle(eventref.ref)
                 fedic[eventref.ref].add((self.__db.get_family_from_handle(fh).mother_handle,self.__db.get_family_from_handle(fh).father_handle,fh ))
 
 
         #source
-        skeys = sc.keys()
-        skeys.sort(key=str.lower)
+        skeys = sorted(sc.keys(), key=str.lower)
 
         for s in skeys:
             self.doc.start_paragraph("SRC-SourceTitle")
@@ -276,8 +278,12 @@ class SourcesCitationsReport(Report):
                                     i)
                 self.doc.write_text(_("  %s") %
                                     self.__db.get_citation_from_handle(c).page)
-                self.doc.write_text(_("   Anno %s - ") %
-                                    toYear(self.__db.get_citation_from_handle(c).date))
+#                self.doc.write_text(_("   Anno %s - ") %
+#                                    self.__db.get_citation_from_handle(c).date)
+                date = self._get_date(self.__db.get_citation_from_handle(c).get_date_object())
+                #print(date)
+                self.doc.write_text(_(" - %s ") %
+                                    date)
                 self.doc.end_paragraph()
                 # note
                 for notehandle in self.__db.get_citation_from_handle(c).get_note_list():
@@ -310,15 +316,22 @@ class SourcesCitationsReport(Report):
                                     self.__db.get_event_from_handle(e).get_type())
                                     self.doc.write_text(_("   ( %s )") %
                                                         self.__db.get_event_from_handle(e).gramps_id)
-
-                                    self.doc.write_text(_("   Eheleute: %s ") %
+                                    
+                                    if b:
+                                        father = self.__db.get_person_from_handle(b)
+                                    if a:
+                                        mother = self.__db.get_person_from_handle(a)
+                                    self.doc.write_text(_("   Eheleute: "))
+                                    if father:
+                                        self.doc.write_text(_("%s ") %
                                                         self.__db.get_person_from_handle(b).primary_name.get_name())
-                                    self.doc.write_text(_("and %s ") %
-                                                        self.__db.get_person_from_handle(a).primary_name.get_name())
+                                    if mother:
+                                        self.doc.write_text(_("and %s ") %
+                                                        mother.primary_name.get_name())
                                     self.doc.end_paragraph()
 
                         for (a,b) in pedic[e]:
-                            if a.is_primary():
+                            if a == 'Primary': # FIXME
                                 self.doc.start_paragraph("SRC-SourceDetails")
                                 self.doc.write_text(_("%s") %
                                               self.__db.get_event_from_handle(e).get_type())
@@ -375,24 +388,27 @@ class SourcesCitationsReport(Report):
 #------------------------------------------------------------------------
 class SourcesCitationsOptions(MenuReportOptions):
     """
-    SourcesCitationsAndPersonsOptions provides the options
-    for the SourcesCitationsAndPersonsReport.
+    SourcesCitationsOptions provides the options
+    for the SourcesCitationsReport.
     """
     def __init__(self, name, dbase):
+        self.__filter = None
         MenuReportOptions.__init__(self, name, dbase)
 
-
+    def get_subject(self):
+        """ Return a string that describes the subject of the report. """
+        return self.__filter.get_filter().get_name()
 
     def add_menu_options(self, menu):
         """ Add the options for this report """
         category_name = _("Report Options")
 
-        title = StringOption(_('book|Title'), _('Title of the Book') )
-        title.set_help(_("Title string for the book."))
+        title = StringOption(_('Report Title'), _('Title of the Report') )
+        title.set_help(_("Title string for the report."))
         menu.add_option(category_name, "title", title)
 
-        subtitle = StringOption(_('Subtitle'), _('Subtitle of the Book') )
-        subtitle.set_help(_("Subtitle string for the book."))
+        subtitle = StringOption(_('Subtitle'), _('Subtitle of the Report') )
+        subtitle.set_help(_("Subtitle string for the report."))
         menu.add_option(category_name, "subtitle", subtitle)
 
         dateinfo = time.localtime(time.time())
@@ -407,19 +423,21 @@ class SourcesCitationsOptions(MenuReportOptions):
 
         # Reload filters to pick any new ones
         CustomFilters = None
-        from Filters import CustomFilters, GenericFilter
+        from gramps.gen.filters import CustomFilters, GenericFilter
 
-        opt = FilterOption(_("Select using filter"), 0)
-        opt.set_help(_("Select places using a filter"))
+        self.__filter = FilterOption(_("Select using filter"), 0)
+        self.__filter.set_help(_("Select sources using a filter"))
         filter_list = []
         filter_list.append(GenericFilter())
         filter_list.extend(CustomFilters.get_filters('Source'))
-        opt.set_filters(filter_list)
-        menu.add_option(category_name, "filter", opt)
+        self.__filter.set_filters(filter_list)
+        menu.add_option(category_name, "filter", self.__filter)
 
         showperson = BooleanOption(_("Show persons"), True)
         showperson.set_help(_("Whether to show events and persons mentioned in the note"))
         menu.add_option(category_name, "showperson", showperson)
+        locale_opt = stdoptions.add_localization_option(menu, category_name)
+        stdoptions.add_date_format_option(menu, category_name, locale_opt)
 
     def make_default_style(self, default_style):
         """
@@ -551,7 +569,7 @@ class SourcesCitationsOptions(MenuReportOptions):
         para = ParagraphStyle()
         para.set_font(font)
         para.set_description(_('The style used for event and person details.'))
-        self.default_style.add_paragraph_style("PLC-Details", para)
+        self.default_style.add_paragraph_style("SRC-Details", para)
 
     def __cell_style(self):
         """
@@ -567,5 +585,4 @@ class SourcesCitationsOptions(MenuReportOptions):
         cell = TableCellStyle()
         cell.set_bottom_border(1)
         self.default_style.add_cell_style('SRC-TableColumn', cell)
-
 

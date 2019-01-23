@@ -1,0 +1,364 @@
+# Russian translation for PlaceCompletion
+# This file is distributed under the same license as the Gramps package.
+#
+# Ivan Komaritsyn <vantu5z@mail.ru>, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps50\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-12-05 16:28+0300\n"
+"PO-Revision-Date: 2018-12-05 08:47+0300\n"
+"Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Gtranslator 2.91.7\n"
+"X-Poedit-Language: Russian\n"
+"X-Poedit-Country: RUSSIAN FEDERATION\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+
+#: PlaceCompletion/PlaceCompletion.gpr.py:25
+msgid "PlaceCompletion"
+msgstr "PlaceCompletion"
+
+#: PlaceCompletion/PlaceCompletion.gpr.py:26
+msgid ""
+"Provides a browsable list of selected places, with possibility to complete/"
+"parse/set the attribute fields."
+msgstr ""
+"Предоставляет список из выбраных мест, с возможностью дополнить/разобрать/"
+"установить атрибуты."
+
+#: PlaceCompletion/PlaceCompletion.py:95
+msgid ""
+"Place Completion by parsing, file lookup and batch setting of place "
+"attributes"
+msgstr "Завершение места по разбору, обзору файла и по атрибутам"
+
+#: PlaceCompletion/PlaceCompletion.py:258
+msgid "Error in PlaceCompletion.py"
+msgstr "Ошибка в PlaceCompletion.py"
+
+#: PlaceCompletion/PlaceCompletion.py:259
+msgid "Non existing group used in get"
+msgstr "Не существующая группа была использована в запросе"
+
+#: PlaceCompletion/PlaceCompletion.py:282
+#, python-format
+msgid "PlaceCompletion is unable to create %s %s"
+msgstr "PlaceCompletion не удалось создать %s %s"
+
+#: PlaceCompletion/PlaceCompletion.py:340
+msgid "Places tool"
+msgstr "Инструмент для мест"
+
+#: PlaceCompletion/PlaceCompletion.py:408
+msgid "Missing regex groups in match lat/lon"
+msgstr "Пропущены группы в запросе широты/долготы"
+
+#: PlaceCompletion/PlaceCompletion.py:409
+#, python-format
+msgid ""
+"Regex groups %(lat)s and %(lon)s must be present in lat/lon match. Quiting"
+msgstr "Группы %(lat)s и %(lon)s должны присутствовать в запросе. Завершение"
+
+#: PlaceCompletion/PlaceCompletion.py:419
+msgid "Non valid regex for match lat/lon"
+msgstr "Неверное выражение для широты/долготы"
+
+#: PlaceCompletion/PlaceCompletion.py:420
+msgid "Non valid regular expression given to find lat/lon. Quiting."
+msgstr "Неверное регулярное выражение для поиска широты/долготы. Завершение."
+
+#: PlaceCompletion/PlaceCompletion.py:479
+msgid "Finding Places and appropriate changes"
+msgstr "Поиск мест и соответствующих изменений"
+
+#: PlaceCompletion/PlaceCompletion.py:481
+msgid "Filtering"
+msgstr "Фильтрация"
+
+#: PlaceCompletion/PlaceCompletion.py:491
+msgid "Loading lat/lon file in Memory..."
+msgstr "Загрузка файла широты/долготы в память..."
+
+#: PlaceCompletion/PlaceCompletion.py:497
+msgid "Examining places"
+msgstr "Исследование мест"
+
+#: PlaceCompletion/PlaceCompletion.py:520
+msgid "City"
+msgstr "Город"
+
+#: PlaceCompletion/PlaceCompletion.py:523
+msgid "State"
+msgstr "Республика"
+
+#: PlaceCompletion/PlaceCompletion.py:526
+msgid "Country"
+msgstr "Государство/Страна"
+
+#: PlaceCompletion/PlaceCompletion.py:685
+msgid "Set Tag"
+msgstr "Установить метку"
+
+#: PlaceCompletion/PlaceCompletion.py:687
+msgid "Doing Place changes"
+msgstr "Применение изменений"
+
+#: PlaceCompletion/PlaceCompletion.py:731
+msgid "No place record was modified."
+msgstr "Не произведено изменения мест."
+
+#: PlaceCompletion/PlaceCompletion.py:733
+msgid "1 place record was modified."
+msgstr "1 место было изменено."
+
+#: PlaceCompletion/PlaceCompletion.py:735
+#, python-format
+msgid "%d place records were modified."
+msgstr "%d мест было изменено."
+
+#: PlaceCompletion/PlaceCompletion.py:736
+msgid "Change places"
+msgstr "Изменить места"
+
+#: PlaceCompletion/PlaceCompletion.py:808
+#: PlaceCompletion/PlaceCompletion.py:814
+#: PlaceCompletion/PlaceCompletion.py:819
+#: PlaceCompletion/PlaceCompletion.py:825
+msgid "Cannot open file"
+msgstr "Не удалось открыть файл"
+
+#: PlaceCompletion/PlaceCompletion.py:809
+msgid "The selected file is a directory, not a file."
+msgstr "Выбранный файл является каталогом, а не файлом."
+
+#: PlaceCompletion/PlaceCompletion.py:815
+msgid "You do not have read access to the selected file."
+msgstr "У Вас нет доступа для чтения выбранного файла."
+
+#: PlaceCompletion/PlaceCompletion.py:820
+msgid "The file you want to access is not a regular file."
+msgstr "Файл к которому осуществляется доступ является не обычным файлом."
+
+#: PlaceCompletion/PlaceCompletion.py:826
+msgid "The file does not exist."
+msgstr "Файл не существует."
+
+#: PlaceCompletion/PlaceCompletion.py:858
+msgid "Problem reading file"
+msgstr "Ршибка при чтении файла"
+
+#: PlaceCompletion/PlaceCompletion.py:970
+#: PlaceCompletion/PlaceCompletion.py:982
+#, python-format
+msgid "invalid lat or lon value, %(lat)s, %(lon)s"
+msgstr "неверное значение широты или долготы, %(lat)s, %(lon)s"
+
+#: PlaceCompletion/PlaceCompletion.py:1135
+msgid "No lat/lon conversion"
+msgstr "Нет перевода широты/долготы"
+
+#: PlaceCompletion/PlaceCompletion.py:1136
+msgid "All in degree notation"
+msgstr "Все в формате градусов"
+
+#: PlaceCompletion/PlaceCompletion.py:1137
+msgid "All in decimal notation"
+msgstr "Все в десятичном формате"
+
+#: PlaceCompletion/PlaceCompletion.py:1138
+msgid "Correct -50° in 50°S"
+msgstr "Правильно -50° в 50°S"
+
+#: PlaceCompletion/PlaceCompletion.py:1142
+msgid "No changes"
+msgstr "Нет изменений"
+
+#: PlaceCompletion/PlaceCompletion.py:1143
+msgid "City[, State]"
+msgstr "Город[, Штат]"
+
+#: PlaceCompletion/PlaceCompletion.py:1145
+msgid "City,PostalCode,Country"
+msgstr "Город,Индекс,Страна"
+
+#: PlaceCompletion/PlaceCompletion.py:1147
+msgid "City[(Street;Locality;Parish)],PostalCode,Country"
+msgstr "Город[(Улица;Район;Церковь)],Индекс,Страна"
+
+#: PlaceCompletion/PlaceCompletion.py:1149
+msgid "TitleStart [, City] [, State]"
+msgstr "Начало названия [, Город] [, Штат]"
+
+#: PlaceCompletion/PlaceCompletion.py:1151
+msgid "TitleStart [, City] [, County] [, State] [, Country]"
+msgstr "Начало названия [, Город] [, Район] [, Штат] [, Страна]"
+
+#: PlaceCompletion/PlaceCompletion.py:1153
+msgid "TitleStart [, City] [, Zip] [, County] [, State] [, Country]"
+msgstr "Начало названия [, Город] [, Индекс] [, Район] [, Штат] [, Страна]"
+
+#: PlaceCompletion/PlaceCompletion.py:1177
+msgid "Don't search"
+msgstr "Не искать"
+
+#: PlaceCompletion/PlaceCompletion.py:1180
+msgid "GeoNames country file, city search"
+msgstr "Файл GeoNames для страны, поиск города"
+
+#: PlaceCompletion/PlaceCompletion.py:1185
+msgid "GeoNames country file, city localized variants search"
+msgstr "Файл GeoNames для страны, поиск города локализованные варианты"
+
+#: PlaceCompletion/PlaceCompletion.py:1190
+msgid "GeoNames country file, county/city search"
+msgstr "Файл GeoNames для страны, поиск района/города"
+
+#: PlaceCompletion/PlaceCompletion.py:1202
+msgid "GeoNames country file, title begin, general search"
+msgstr "Файл GeoNames для страны, начало название, основной поиск"
+
+#: PlaceCompletion/PlaceCompletion.py:1207
+msgid "GeoNames USA state file, city search"
+msgstr "Файл GeoNames для США, поиск города"
+
+#: PlaceCompletion/PlaceCompletion.py:1221
+msgid "GNS Geonet country file, city search"
+msgstr "Файл GNS Geonet для страны, поиск города"
+
+#: PlaceCompletion/PlaceCompletion.py:1228
+msgid "GNS Geonet country file, county/city search"
+msgstr "Файл GNS Geonet для страны, поиск района/города"
+
+#: PlaceCompletion/PlaceCompletion.py:1236
+msgid "GNS Geonet country file, title begin, general search"
+msgstr "Файл GNS Geonet для страны, начало название, основной поиск"
+
+#: PlaceCompletion/PlaceCompletion.py:1244
+msgid "Wikipedia CSV Dump"
+msgstr "Данные из Википедии (CSV)"
+
+#: PlaceCompletion/PlaceCompletion.py:1332
+msgid "All Places"
+msgstr "Все места"
+
+#: PlaceCompletion/PlaceCompletion.py:1335
+msgid "No Latitude/Longitude given"
+msgstr "Не задана широта/долгота"
+
+#: PlaceCompletion/placecompletion.glade.h:1
+msgid "_Google Maps"
+msgstr "Карты _Google"
+
+#: PlaceCompletion/placecompletion.glade.h:2
+msgid "Apply all suggested changes"
+msgstr "Применить все предлагаемые изменения"
+
+#: PlaceCompletion/placecompletion.glade.h:3
+msgid "Selection of the Places you want to complete:"
+msgstr "Выбор мест которые хотите дополнить:"
+
+#: PlaceCompletion/placecompletion.glade.h:4
+msgid "C_ity:"
+msgstr "Г_ород:"
+
+#: PlaceCompletion/placecompletion.glade.h:5
+msgid "Parish:"
+msgstr "Церковь:"
+
+#: PlaceCompletion/placecompletion.glade.h:6
+msgid "County:"
+msgstr "Область/Район/Уезд:"
+
+#: PlaceCompletion/placecompletion.glade.h:7
+msgid "Place _filter:"
+msgstr "Фильтр мест:"
+
+#: PlaceCompletion/placecompletion.glade.h:8
+msgid "State:"
+msgstr "Республика/Штат:"
+
+#: PlaceCompletion/placecompletion.glade.h:9
+msgid "Count_ry:"
+msgstr "Ст_рана:"
+
+#: PlaceCompletion/placecompletion.glade.h:10
+msgid "C_enter latitude:"
+msgstr "Широта:"
+
+#: PlaceCompletion/placecompletion.glade.h:11
+msgid "Center longitude:"
+msgstr "Долгота:"
+
+#: PlaceCompletion/placecompletion.glade.h:12
+msgid "Places in a rectangle:"
+msgstr "Места в прямоугольнике:"
+
+#: PlaceCompletion/placecompletion.glade.h:13
+msgid "Width:"
+msgstr "Ширина:"
+
+#: PlaceCompletion/placecompletion.glade.h:14
+msgid "Height:"
+msgstr "Высота:"
+
+#: PlaceCompletion/placecompletion.glade.h:15
+msgid "1. Look up latitude and longitude:"
+msgstr "1. Анализ широты и долготы:"
+
+#: PlaceCompletion/placecompletion.glade.h:16
+msgid "Search in:"
+msgstr "Искать в:"
+
+#: PlaceCompletion/placecompletion.glade.h:17
+msgid "Select A File"
+msgstr "Выбор файла"
+
+#: PlaceCompletion/placecompletion.glade.h:18
+msgid "Parse as:"
+msgstr "Разобрать как:"
+
+#: PlaceCompletion/placecompletion.glade.h:19
+msgid "2. Conversion of existing title or position:"
+msgstr "2. Перевод существующего названия или положения:"
+
+#: PlaceCompletion/placecompletion.glade.h:20
+msgid "Change title into:"
+msgstr "Изменить название:"
+
+#: PlaceCompletion/placecompletion.glade.h:21
+msgid "Convert lat/lon as:"
+msgstr "Перевести широту/долготу в:"
+
+#: PlaceCompletion/placecompletion.glade.h:22
+msgid ""
+"Or define a simple\n"
+"title format:"
+msgstr ""
+"Или определите простой\n"
+"формат названия:"
+
+#: PlaceCompletion/placecompletion.glade.h:24
+msgid ""
+"Available variables: city, street, locality, parish, county, state, country, "
+"postal_code"
+msgstr ""
+"Доступные значения: city, street, locality, parish, county, state, country, "
+"postal_code"
+
+#: PlaceCompletion/placecompletion.glade.h:25
+msgid ""
+"Delete to delete a row, Double-click on the row to edit place with changes "
+"pre-entered, \n"
+"Press Tab on a row or Google Maps button to see place on a map. Press Apply "
+"to do all changes automatically"
+msgstr ""
+"Delete для удаления строки, двойной щелчок для редактирования места, \n"
+"Нажмите Tab или кному 'Карты Google', чтобы увидеть место на карте. "
+"Нажмите 'Применить', чтобы сохранить изменения"

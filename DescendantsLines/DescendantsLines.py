@@ -18,7 +18,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 # This program is based on the program located at
 # http://offog.org/darcs/misccode/familytree. The license for that
@@ -52,9 +52,9 @@ Descendants Lines - Generate a Descendant's Tree Chart - Graphic plugin for
 GRAMPS
 
 Can display the Name, Image and selected Events for the head person and all
-descendants Events may include, type, date, place & description, formatted as
-per the options menu. Each person is linked by connection lines showing families
-(Spouse(s) & any children)
+descendants. Events may include, type, date, place & description, formatted as
+per the options menu. Each person is linked by connection lines showing
+families (Spouse(s) & any children)
 """
 
 #-------------------------------------------------------------------------
@@ -62,14 +62,9 @@ per the options menu. Each person is linked by connection lines showing families
 # python modules
 #
 #-------------------------------------------------------------------------
-import cairo
-from gi.repository import Gtk
-import getopt
-import sys
-import io
-import os.path
-import copy
 import re
+import cairo
+import os.path
 #-------------------------------------------------------------------------
 #
 # gramps modules
@@ -77,12 +72,13 @@ import re
 #-------------------------------------------------------------------------
 
 import gramps.gen.datehandler
-from gramps.gen.plug.menu import (TextOption, NumberOption, PersonOption, FilterOption,
-		DestinationOption, BooleanOption, EnumeratedListOption, StringOption)
+from gramps.gen.plug.menu import (TextOption, NumberOption, PersonOption,
+                                  DestinationOption, BooleanOption,
+                                  EnumeratedListOption, StringOption)
 from gramps.gen.plug.report import Report
 from gramps.gen.plug.report import utils as ReportUtils
 from gramps.gen.plug.report import MenuReportOptions
-from gramps.gen.utils.thumbnails import get_thumbnail_path    #for images
+from gramps.gen.utils.thumbnails import get_thumbnail_path    # for images
 from gramps.gen.utils.file import media_path_full
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
@@ -90,19 +86,18 @@ try:
 except ValueError:
     _trans = glocale.translation
 _ = _trans.gettext
-from gramps.gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle,
-                             FONT_SANS_SERIF, FONT_SERIF,
-                             IndexMark, INDEX_TYPE_TOC, PARA_ALIGN_LEFT)
+from gramps.gen.plug.docgen import (FontStyle, ParagraphStyle,
+                                    FONT_SANS_SERIF, PARA_ALIGN_LEFT)
 from gramps.gen.display.name import displayer as name_displayer
-from gramps.gen.const import USER_HOME, USER_PLUGINS
+from gramps.gen.const import USER_HOME
 import gramps.gen.lib
 from gramps.plugins.lib.libtreebase import *    # for CalcLines
-from gramps.plugins.lib.libsubstkeyword import (SubstKeywords, EventFormat, NameFormat,
-                        ConsumableString, VarString)  # for name/event/date/place string formatting
-from substkw import SubstKeywords2		# Modified version of portions of libsubstkeywords.py
+from gramps.plugins.lib.libsubstkeyword import SubstKeywords
+from substkw import SubstKeywords2  # Modified version of libsubstkeywords.py
 from gramps.gen.lib.eventtype import EventType      # for selecting event types
-from gramps.gen.lib.eventroletype import EventRoleType	# for role in events = PRIMARY
-from gramps.gen.lib.date import NextYear    # for sorting events with unknown dates
+from gramps.gen.lib.eventroletype import EventRoleType  # for PRIMARY, FAMILY
+# for sorting events with unknown dates
+from gramps.gen.lib.date import NextYear
 from gramps.gen.filters import GenericFilterFactory, rules
 
 #-------------------------------------------------------------------------
@@ -143,7 +138,8 @@ STROKE_RECTANGLE = False
 
 # Static variable for do_person()
 CUR_GENERATION = 0
-global HIGH_GENERATION # tracks the highest generation in chart, used for fill colour generation
+global HIGH_GENERATION  # tracks the highest generation in chart, used for
+#                         fill colour generation
 HIGH_GENERATION = 0
 
 # extra Padding for STROKE_RECTANGLE == True
@@ -170,6 +166,7 @@ base_font_size = 12
 
 _event_cache = {}
 
+
 def find_event(database, handle):
     if handle in _event_cache:
         obj = _event_cache[handle]
@@ -178,12 +175,14 @@ def find_event(database, handle):
         _event_cache[handle] = obj
     return obj
 
+
 def event_type(event_name):
     """ returns the event types number if it matches the event_name string """
     for i in range(0, len(EventType._DATAMAP)):
         if event_name.capitalize() == EventType._DATAMAP[i][2]:
             return(EventType._DATAMAP[i][0])
     return(None)
+
 
 def parse_event_disp(line):
     """
@@ -196,7 +195,7 @@ def parse_event_disp(line):
     r = re.search(r'(?P<el>\[[\w, ]*\])(?P<ef>.*)', line)
     if r:
         x = r.group('el')
-        y = x.replace(' ','')
+        y = x.replace(' ', '')
         el = y[1:-1].split(',')
         if el:
             for event_name in el:
@@ -245,7 +244,8 @@ class DescendantsLinesReport(Report):
         output_fmt - The output format
         output_fn - The output filename
         max_gen - Maximum number of generations to include. (0 for unlimited)
-        gender_colors - Whether to use colored names indicating person gender in the output.
+        gender_colors - Whether to use colored names indicating person gender
+                        in the output.
         name_disp - The name format
         inc_dnum - Whether to use d'Aboville descendant numbering system
         style - The predefined output style
@@ -278,6 +278,7 @@ class DescendantsLinesReport(Report):
         global MIN_C_WIDTH
         global TEXT_PAD
         global TEXT_LINE_PAD
+        global _event_cache
         S_DOWN = self.options["S_DOWN"]
         S_UP = self.options["S_UP"]
         S_VPAD = self.options["S_VPAD"]
@@ -291,9 +292,12 @@ class DescendantsLinesReport(Report):
         MIN_C_WIDTH = self.options["MIN_C_WIDTH"]
         TEXT_PAD = self.options["TEXT_PAD"]
         TEXT_LINE_PAD = self.options["TEXT_LINE_PAD"]
+        _event_cache = {}
 
         self.output_fmt = self.options['output_fmt']
         self.output_fn = self.options['output_fn']
+        self.output_fn = '%s.%s' % (os.path.splitext(self.output_fn)[0],
+                                    self.output_fmt.lower())
         self.max_gen = self.options['max_gen']
         self.gender_colors = self.options['gender_colors']
         self.inc_dnum = self.options['inc_dnum']
@@ -342,19 +346,25 @@ class DescendantsLinesReport(Report):
         NAME_FORMAT = self.options['name_disp']
 
         global OR_SIMILAR_EVENTS
-        OR_SIMILAR_EVENTS = {EventType.BIRTH: (EventType.BIRTH, EventType.BAPTISM, EventType.CHRISTEN),
-            EventType.DEATH: (EventType.DEATH, EventType.BURIAL, EventType.CREMATION, EventType.PROBATE),
-            EventType.MARRIAGE: (EventType.MARRIAGE, EventType.MARR_LIC, EventType.ENGAGEMENT),
-            EventType.DIVORCE: (EventType.DIVORCE, EventType.ANNULMENT, EventType.DIV_FILING),
-            }
+        OR_SIMILAR_EVENTS = {
+            EventType.BIRTH: (EventType.BIRTH, EventType.BAPTISM,
+                              EventType.CHRISTEN),
+            EventType.DEATH: (EventType.DEATH, EventType.BURIAL,
+                              EventType.CREMATION, EventType.PROBATE),
+            EventType.MARRIAGE: (EventType.MARRIAGE, EventType.MARR_LIC,
+                                 EventType.ENGAGEMENT),
+            EventType.DIVORCE: (EventType.DIVORCE, EventType.ANNULMENT,
+                                EventType.DIV_FILING)}
         global FAMILY_EVENTS
-        FAMILY_EVENTS = [EventType.MARRIAGE, EventType.MARR_LIC, EventType.ENGAGEMENT,
-            EventType.DIVORCE, EventType.ANNULMENT, EventType.DIV_FILING]
+        FAMILY_EVENTS = [EventType.MARRIAGE, EventType.MARR_LIC,
+                         EventType.ENGAGEMENT, EventType.DIVORCE,
+                         EventType.ANNULMENT, EventType.DIV_FILING]
         global OR_SIMILAR
         OR_SIMILAR = self.options['or_similar_events']
         global SORT_EVENTS
         SORT_EVENTS = self.options['sort_events']
-        # used in sorting to move events with unknown dates to end (not used for birth related events)
+        # used in sorting to move events with unknown dates to end
+        # (not used for birth related events)
         global FUTUREDATE
         FUTUREDATE = NextYear()
 
@@ -384,13 +394,16 @@ class DescendantsLinesReport(Report):
         pid = self.options_class.menu.get_option_by_name('pid').get_value()
         log.debug('Top PID=%s', pid)
 
-        # Creates dummy drawing context for image sizing during creation of tree:
-        init_file(self.output_fn, PNGWriter())
+        # Creates dummy drawing context for image sizing during creation of
+        # tree:
+        init_file(None, PNGWriter())
 
-        # Generates a tree of person records and the family linkages for the chart:
+        # Generates a tree of person records and the family linkages for the
+        # chart:
         p = load_gramps(pid)
 
-        # traverses tree and generates the chart with "person" boxes and the "family" relationship lines.
+        # traverses tree and generates the chart with "person" boxes and the
+        # "family" relationship lines.
         draw_file(p, self.output_fn, PNGWriter())
 
         # Matches all that is used currently, families might be collected later
@@ -407,6 +420,10 @@ class DescendantsLinesReport(Report):
         ind_list = filter.apply(self.database, plist)
 
         # writes textual informations on secondary output file
+        if self.options_class.handler.format_name == 'svg':
+            self._user.warn(_("Using SVG type for supplemental document is"
+                              " not supported!"))
+            return
         for person_handle in ind_list:
             person = self.database.get_person_from_handle(person_handle)
             #log.debug(person_handle)
@@ -419,20 +436,23 @@ class DescendantsLinesReport(Report):
                 self.doc.write_text(surname + ' ' + firstname, mark)
             else:
                 from gramps.gen.config import config
-                PRIVATE_RECORD_TEXT = config.get('preferences.private-record-text')
+                PRIVATE_RECORD_TEXT = config.get(
+                    'preferences.private-record-text')
                 self.doc.write_text(PRIVATE_TEXT + PRIVATE_RECORD_TEXT)
             self.doc.end_paragraph()
         self.doc.start_paragraph("DL-name")
         self.doc.write_text('%s people' % len(ind_list))
         self.doc.end_paragraph()
 
+
 def draw_text(text, x, y, total_w, top_centered_lines=0):
     """
     Draw the block if text at the specified location.
 
-    Total width defines the block's width to allow centering. Top_centered_lines
-    overrides the Text alignment set in options menu for the specified # of
-    lines. This allows centering of the first line containing the user's name
+    Total width defines the block's width to allow centering.
+    Top_centered_lines overrides the Text alignment set in options menu for
+    the specified # of lines. This allows centering of the first line
+    containing the user's name
     """
     #(total_w, total_h) = size_text(text, ctx)
     n = 1
@@ -442,17 +462,18 @@ def draw_text(text, x, y, total_w, top_centered_lines=0):
         (ascent, _, height, _, _) = ctx.font_extents()
         (lx, _, width, _, _, _,) = ctx.text_extents(line)
         if ((TEXT_ALIGNMENT == 'center') or (n <= top_centered_lines)):
-            ctx.move_to(x - lx + TEXT_PAD + (total_w - width + lx) / 2, y
-                         + ascent + TEXT_PAD)
+            ctx.move_to(x - lx + (total_w - width + lx) / 2, y +
+                        ascent + TEXT_PAD)
         elif TEXT_ALIGNMENT == 'left':
-            ctx.move_to(x - lx + TEXT_PAD, y
-                         + ascent + TEXT_PAD)
+            ctx.move_to(x - lx + TEXT_PAD, y + ascent + TEXT_PAD)
         else:
-            raise AttributeError("DT: no such text alignment: '%s'" % TEXT_ALIGNMENT)
+            raise AttributeError("DT: no such text alignment: '%s'" %
+                                 TEXT_ALIGNMENT)
         ctx.set_source_rgb(*color)
         ctx.show_text(line)
         y += height + TEXT_LINE_PAD
         n += 1
+
 
 def size_text(text, cntx):
     text_width = 0
@@ -473,32 +494,35 @@ def size_text(text, cntx):
     text_height += 2 * TEXT_PAD
     return (text_width, text_height)
 
-def calc_image_scale(iw, ih):
-	"""
-	Calculate the scaling factor for the image to fit the Max size set in the
-	Options
 
-	The Max height & width from the Options are MAX_IMAGE_H & MAX_IMAGE_W
-	a value of 0 means there is no limit in that direction.
-	"""
-	if MAX_IMAGE_H == 0:
-		if MAX_IMAGE_W == 0:
-			return (1.0)
-		else:
-			return (MAX_IMAGE_W/iw)
-	else:
-		if MAX_IMAGE_W == 0:
-			return (MAX_IMAGE_H/ih)
-		else:
-# 			log.debug('Calc Scale, min of  H=%f, W=%f', MAX_IMAGE_H/ih, MAX_IMAGE_W/iw)
-			return (min(MAX_IMAGE_W/iw, MAX_IMAGE_H/ih))
+def calc_image_scale(iw, ih):
+    """
+    Calculate the scaling factor for the image to fit the Max size set in the
+    Options
+
+    The Max height & width from the Options are MAX_IMAGE_H & MAX_IMAGE_W
+    a value of 0 means there is no limit in that direction.
+    """
+    if MAX_IMAGE_H == 0:
+        if MAX_IMAGE_W == 0:
+            return 1.0
+        else:
+            return MAX_IMAGE_W / iw
+    else:
+        if MAX_IMAGE_W == 0:
+            return MAX_IMAGE_H / ih
+        else:
+            # log.debug('Calc Scale, min of  H=%f, W=%f',
+            #           MAX_IMAGE_H/ih, MAX_IMAGE_W/iw)
+            return min(MAX_IMAGE_W / iw, MAX_IMAGE_H / ih)
+
 
 def size_image(image_path):
     """
     Gets the size of the image
 
-    Need to use a dummy CTX (dctx) as using the final ctx to get this information
-    seems to ruin the final image.
+    Need to use a dummy CTX (dctx) as using the final ctx to get this
+    information seems to ruin the final image.
     """
     dctx.save()
     iw = 0
@@ -511,32 +535,39 @@ def size_image(image_path):
     dctx.restore()
     return (iw, ih)
 
+
 def draw_image(image_path, ix, iy, iw, ih, scale_factor):
-#     log.debug('Draw Image at x=%d y=%d, w=%d, h=%d, to be scaled by %d', ix, iy, iw, ih, scale_factor)
+    # log.debug('Draw Image at x=%d y=%d, w=%d, h=%d, to be scaled by %d',
+    # ix, iy, iw, ih, scale_factor)
     ctx.save()
     image = cairo.ImageSurface.create_from_png(image_path)
     if scale_factor != 1.0:
-        log.debug('Draw Image: scale factor=%f; result: H=%f, W=%f', scale_factor, ih, iw)
+        log.debug('Draw Image: scale factor=%f; result: H=%f, W=%f',
+                  scale_factor, ih, iw)
         ctx.scale(scale_factor, scale_factor)
-    ctx.set_source_surface(image, (ix+IMAGE_PAD)/scale_factor, (iy+IMAGE_PAD)/scale_factor)
+    ctx.set_source_surface(image, (ix + IMAGE_PAD) / scale_factor,
+                           (iy + IMAGE_PAD) / scale_factor)
     ctx.paint()
     ctx.restore()
+
 
 def get_image(phandle):
     """
     Searches through a person's media and returns the first usable image.
 
-    If the Privacy menu option is enabled, it will return the first non-private image.
+    If the Privacy menu option is enabled, it will return the first
+    non-private image.
     It will create a thumbnail image (PNG) if one does not exist.
     These currently default to a Maximum size of 96x96.
     """
     imagePath = None
-    if GRAMPS_DB == None:
+    if GRAMPS_DB is None:
         log.error('get_image: No DataBase to get images from!')
     else:
         p = GRAMPS_DB.get_person_from_handle(phandle)
         if PROTECT_PRIVATE and p.private:
-            log.debug('get_image: Private Person %s', p.primary_name.get_regular_name())
+            log.debug('get_image: Private Person %s',
+                      p.primary_name.get_regular_name())
             return(None)
         else:
             mediaList = p.get_media_list()
@@ -547,21 +578,27 @@ def get_image(phandle):
                     mediaMimeType = media.get_mime_type()
                     if mediaMimeType[0:5] == "image":
                         rect = media_item.get_rectangle()
-                        # this will create a .PNG thumbnail ("NORMAL" size) if one does not exist.
-                        # rect is the user defined section of the original image (TL x,y & BR x,y {1..100})
+                        # this will create a .PNG thumbnail ("NORMAL" size) if
+                        # one does not exist.
+                        # rect is the user defined section of the original
+                        # image (TL x,y & BR x,y {1..100})
                         imagePath = get_thumbnail_path(
-                                        media_path_full(GRAMPS_DB, media.get_path()),
-                                        rectangle=rect)
+                            media_path_full(GRAMPS_DB, media.get_path()),
+                            rectangle=rect)
                         if imagePath.endswith('/image-missing.png'):
-                            imagePath = None    #skip GRAMPS image-missing icon
-                            log.warning('get_image: %s has Missing Image', p.primary_name.get_regular_name())
+                            imagePath = None  # skip GRAMPS image-missing icon
+                            log.warning('get_image: %s has Missing Image',
+                                        p.primary_name.get_regular_name())
                         else:
                             break   # found the first image
         if imagePath:
-            log.debug('get_image, imagePath: %s', imagePath.replace(USER_HOME + '/gramps/thumb/',''))
+            log.debug('get_image, imagePath: %s',
+                      imagePath.replace(USER_HOME + '/gramps/thumb/', ''))
         else:
-            log.debug('get_image: No Media found for: %s', p.primary_name.get_regular_name())
+            log.debug('get_image: No Media found for: %s',
+                      p.primary_name.get_regular_name())
     return(imagePath)
+
 
 class Person_Block:
     """
@@ -569,27 +606,30 @@ class Person_Block:
     location) and how to display it (widths & heights, image scaling)
     """
     def __init__(self, phandle, text):
-        self.text = text        #array of tuples containing text.
-        self.phandle = phandle  #to access image
-        self.iw = 0.0     #Image Width (initially unscaled, then scaled)
-        self.ih = 0.0     #Image Height (initially unscaled, then scaled)
-        self.tw = 0.0     #Text Width
-        self.th = 0.0     #Text Height
-        self.boxw = 0.0   #Box (containing image & text) Width
-        self.boxh = 0.0   #Box Height
-        self.ipath = None   #Path to (thumbnail) image
-        self.iscale = 1.0    #Scaling factor to use on thumbnail image
+        self.text = text        # array of tuples containing text.
+        self.phandle = phandle  # to access image
+        self.iw = 0.0     # Image Width (initially unscaled, then scaled)
+        self.ih = 0.0     # Image Height (initially unscaled, then scaled)
+        self.tw = 0.0     # Text Width
+        self.th = 0.0     # Text Height
+        self.boxw = 0.0   # Box (containing image & text) Width
+        self.boxh = 0.0   # Box Height
+        self.ipath = None   # Path to (thumbnail) image
+        self.iscale = 1.0    # Scaling factor to use on thumbnail image
 
         (self.tw, self.th) = size_text(self.text, dctx)
-        if (INC_IMAGE and (phandle != None)):
+        if INC_IMAGE and (phandle is not None):
             self.ipath = get_image(self.phandle)
             if self.ipath:
                 (self.iw, self.ih) = size_image(self.ipath)
                 self.iscale = calc_image_scale(self.iw, self.ih)
-                self.iw = self.iw*self.iscale +2*IMAGE_PAD
-                self.ih = self.ih*self.iscale +2*IMAGE_PAD
-                log.debug('PBlk: Have image for %s, p_handle=%s', self.text[0][2], self.phandle)
-#               log.debug('PBlk: imagePath: %s', self.ipath.replace(USER_PATH + '/gramps/thumb/',''))
+                self.iw = self.iw * self.iscale + 2 * IMAGE_PAD
+                self.ih = self.ih * self.iscale + 2 * IMAGE_PAD
+                log.debug('PBlk: Have image for %s, p_handle=%s',
+                          self.text[0][2], self.phandle)
+                # log.debug('PBlk: imagePath: %s',
+                #           self.ipath.replace(USER_PATH + '/gramps/thumb/',
+                #                              ''))
             if IMAGE_LOC == 'Above Text':
                 self.boxw = max(self.tw , self.iw)
                 self.boxh = self.th + self.ih
@@ -601,14 +641,17 @@ class Person_Block:
         else:
             self.boxw = self.tw
             self.boxh = self.th
-#       log.debug('PBlk Width: bw=%d, tw=%d, iw=%d', self.boxw, self.tw, self.iw)
-#       log.debug('PBlk Height: bh=%d, th=%d, ih=%d', self.boxh, self.th, self.ih)
+        # log.debug('PBlk Width: bw=%d, tw=%d, iw=%d',
+        #           self.boxw, self.tw, self.iw)
+        # log.debug('PBlk Height: bh=%d, th=%d, ih=%d',
+        #           self.boxh, self.th, self.ih)
 
     def __str__(self):
         return (self.text[0] + '_PBlk')
 
 
 mem_depth = 0
+
 
 class Memorised:
 
@@ -621,32 +664,35 @@ class Memorised:
         global mem_depth
         mem_depth += 1
         if name in self._memorised:
-            cached = '*'
+            #cached = '*'
             v = self._memorised[name]
         else:
-            cached = ' '
+            #cached = ' '
             v = getattr(self, name)()
             self._memorised[name] = v
 
         mem_depth -= 1
         return v
 
+
 class Person(Memorised):
     """
     This class is for each person in the descendants chart and contains:
-    - linkages for the descendants tree (families, from family, prevsib, next sib)
+    - linkages for the descendants tree (families, from family,
+       prevsib, next sib)
     - information to be displayed about the person (text, ipath)
     - how to display it (generation, widths & heights, image scaling
     """
     def __init__(self, pblk, gen):
-        self.text = pblk.text       # lines of text (tuples of str, colour and size)
+        self.text = pblk.text  # lines of text (tuples of str, colour and size)
         self.ipath = pblk.ipath
         self.iscale = pblk.iscale   # to scale thumbnail image using cario
-        self.boxw = pblk.boxw   # width of box containing text & image, for chart sizing and alignment
+        # for chart sizing and alignment:
+        self.boxw = pblk.boxw   # width of box containing text & image
         self.boxh = pblk.boxh
-        self.iw = pblk.iw       #image width (scaled)
+        self.iw = pblk.iw       # image width (scaled)
         self.ih = pblk.ih
-        self.tw = pblk.tw       #text width
+        self.tw = pblk.tw       # text width
         self.th = pblk.th
         self.generation = gen   # for background colour
         self.families = []
@@ -666,50 +712,59 @@ class Person(Memorised):
     def draw(self):
         #set_bg_style(ctx)
         #ctx.set_source_rgba(1, 0, 0, 0.1)  #very pale red
-        #ctx.rectangle(self.get('x'), self.get('y'), self.get('w'), self.get('h'))
+        #ctx.rectangle(self.get('x'), self.get('y'), self.get('w'),
+        #              self.get('h'))
         #ctx.fill()
-        ixo = 0.0    #image X blockoffset from box's top left corner
-        iyo = 0.0    #image Y blockoffset
-        txo = 0.0     #text X blockoffset
-        tyo = 0.0     #text Y blockoffset
+        ixo = 0.0    # image X blockoffset from box's top left corner
+        iyo = 0.0    # image Y blockoffset
+        txo = 0.0    # text X blockoffset
+        tyo = 0.0    # text Y blockoffset
 
-        if INC_IMAGE == True:
+        if INC_IMAGE is True:
             if IMAGE_LOC == 'Above Text':
-                ixo = (self.boxw - self.iw)/2
+                ixo = (self.boxw - self.iw) / 2
                 #iyo = 0
-                txo = (self.boxw - self.tw)/2
+                txo = (self.boxw - self.tw) / 2
                 tyo = self.ih
             elif IMAGE_LOC == 'Left of Text':
                 #ixo = 0
-                iyo = (self.boxh - self.ih)/2
+                iyo = (self.boxh - self.ih) / 2
                 txo = self.iw
-                tyo = (self.boxh - self.th)/2
+                tyo = (self.boxh - self.th) / 2
             else:
                 log.warning('PD: Image location not valid: %s', IMAGE_LOC)
 
-        log.debug('PD: Draw descendant %s Gen:%d', self.text[0][2], self.generation)
-#       log.debug('PD: bw=%d, get.bw=%d, tw=%d, iw=%d, x=%d, ixo=%d, txo=%d, get.tx=%d', self.boxw, self.get('bw'), self.tw, self.iw, self.get('x'), ixo, txo, self.get('tx'))
-#       log.debug('PD: bh=%d, get.bh=%d, th=%d, ih=%d, y=%d, ixo=%d, txo=%d', self.boxh, self.get('bh'), self.th, self.ih, self.get('y'), iyo, tyo)
+        log.debug('PD: Draw descendant %s Gen:%d',
+                  self.text[0][2], self.generation)
+#         log.debug('PD: bw=%d, get.bw=%d, tw=%d, iw=%d, x=%d, ixo=%d, txo=%d,'
+#                   ' get.tx=%d', self.boxw, self.get('bw'), self.tw, self.iw,
+#                   self.get('x'), ixo, txo, self.get('tx'))
+#         log.debug('PD: bh=%d, get.bh=%d, th=%d, ih=%d, y=%d, ixo=%d, txo=%d',
+#                   self.boxh, self.get('bh'), self.th, self.ih, self.get('y'),
+#                   iyo, tyo)
 
         #set_fg_style(ctx)
         if FILL_COLORS:
-        	set_gen_style(ctx, self.generation, DESCEND_ALPHA)
+            set_gen_style(ctx, self.generation, DESCEND_ALPHA)
         else:
-        	set_fg_style(ctx)
+            set_fg_style(ctx)
         ctx.rectangle(self.get('tx'), self.get('y'), self.boxw, self.boxh)
-        if STROKE_RECTANGLE == True:
-        	ctx.fill_preserve()
-        	set_line_style(ctx)
-        	ctx.stroke()
+        if STROKE_RECTANGLE is True:
+            ctx.fill_preserve()
+            set_line_style(ctx)
+            ctx.stroke()
         else:
             ctx.fill()
 
-        draw_text(self.text, self.get('tx')+ txo, self.get('y')+ tyo, self.tw, top_centered_lines=1)
+        draw_text(self.text, self.get('tx') + txo, self.get('y') + tyo,
+                  self.tw, top_centered_lines=1)
 
         if self.ipath != None:
-#           log.debug('PD: imagePath: %s', self.ipath.replace('/Users/ndpiercy/Library/Application Support/gramps/thumb/',''))
-            draw_image(self.ipath, self.get('tx')+ ixo, self.get('y')+ iyo, self.iw, self.ih, self.iscale)
-
+#             log.debug('PD: imagePath: %s', self.ipath.replace(
+#                 '/Users/ndpiercy/Library/Application Support/gramps/thumb/',
+#                 ''))
+            draw_image(self.ipath, self.get('tx') + ixo, self.get('y') + iyo,
+                       self.iw, self.ih, self.iscale)
 
         for f in self.families:
             f.draw()
@@ -781,6 +836,7 @@ class Person(Memorised):
     def glx(self):
         return self.get('x') + self.get('go')
 
+
 class Family(Memorised):
 
     def __init__(self, main, spouse):
@@ -813,55 +869,68 @@ class Family(Memorised):
         set_gen_style(ctx, self.generation, LINE_DARKNESS)
         ctx.set_dash([20, 5])
         ctx.new_path()
-        ctx.move_to(self.get('glx'), self.get('gly'))   #center bottom of "Descendant" box
+        # center bottom of "Descendant" box
+        ctx.move_to(self.get('glx'), self.get('gly'))
         ctx.rel_line_to(0, self.get('glh'))
         ctx.rel_line_to(self.get('flw'), 0)
-        ctx.rel_line_to(0, -S_UP)                       #to center bottom of "Spouse" box
+        # to center bottom of "Spouse" box
+        ctx.rel_line_to(0, -S_UP)
         ctx.stroke()
-        ctx.set_dash([])    #restore line style to non-dash
+        ctx.set_dash([])    # restore line style to non-dash
 
-        ixo = 0     #image X blockoffset from box
-        iyo = 0     #image Y blockoffset from box
-        txo = 0     #text X blockoffset from box
-        tyo = 0     #text Y blockoffset from box
+        ixo = 0     # image X blockoffset from box
+        iyo = 0     # image Y blockoffset from box
+        txo = 0     # text X blockoffset from box
+        tyo = 0     # text Y blockoffset from box
 
-        if INC_IMAGE == True:
+        if INC_IMAGE is True:
             if IMAGE_LOC == 'Above Text':
-                ixo = (self.spouse.boxw - self.spouse.iw)/2
+                ixo = (self.spouse.boxw - self.spouse.iw) / 2
                 #iyo = 0
-                txo = (self.spouse.boxw - self.spouse.tw)/2
+                txo = (self.spouse.boxw - self.spouse.tw) / 2
                 tyo = self.spouse.ih
             elif IMAGE_LOC == 'Left of Text':
                 #ixo = 0
-                iyo = (self.spouse.boxh - self.spouse.ih)/2
+                iyo = (self.spouse.boxh - self.spouse.ih) / 2
                 txo = self.spouse.iw
-                tyo = (self.spouse.boxh - self.spouse.th)/2
+                tyo = (self.spouse.boxh - self.spouse.th) / 2
             else:
                 log.warning('FD: Image location not valid: %s', IMAGE_LOC)
 
-        log.debug('FD: Draw Fam/Sp %s Gen:%d', self.spouse.text[0][2], self.generation)
-#       log.debug('FD: bw=%d, get.bw=%d, tw=%d, iw=%d, spx=%d, ixo=%d, txo=%d', self.spouse.boxw, self.spouse.get('bw'), self.spouse.tw, self.spouse.iw, self.get('spx'), ixo, txo)
-#       log.debug('FD: bh=%d, get.bh=%d, th=%d, ih=%d, spy=%d, ixo=%d, txo=%d', self.spouse.boxh, self.spouse.get('bh'), self.spouse.th, self.spouse.ih, self.get('spy'), iyo, tyo)
-#       log.debug('FD: glx=%d, gly=%d, glh=%d, flw=%d', self.get('glx'), self.get('gly'), self.get('glh'), self.get('flw'))
+        log.debug('FD: Draw Fam/Sp %s Gen:%d',
+                  self.spouse.text[0][2], self.generation)
+#         log.debug('FD: bw=%d, get.bw=%d, tw=%d, iw=%d, spx=%d, ixo=%d,'
+#                   ' txo=%d', self.spouse.boxw, self.spouse.get('bw'),
+#                   self.spouse.tw, self.spouse.iw, self.get('spx'), ixo, txo)
+#         log.debug('FD: bh=%d, get.bh=%d, th=%d, ih=%d, spy=%d, ixo=%d,'
+#                   ' txo=%d', self.spouse.boxh, self.spouse.get('bh'),
+#                   self.spouse.th, self.spouse.ih, self.get('spy'), iyo, tyo)
+#         log.debug('FD: glx=%d, gly=%d, glh=%d, flw=%d', self.get('glx'),
+#                   self.get('gly'), self.get('glh'), self.get('flw'))
 
         if FILL_COLORS:
-        	set_gen_style(ctx, self.generation, SPOUSE_ALPHA)
+            set_gen_style(ctx, self.generation, SPOUSE_ALPHA)
         else:
-        	set_fg_style(ctx)
-        ctx.rectangle(self.get('spx'), self.get('spy'), self.spouse.boxw, self.spouse.boxh)
-        if STROKE_RECTANGLE == True:
+            set_fg_style(ctx)
+        ctx.rectangle(self.get('spx'), self.get('spy'), self.spouse.boxw,
+                      self.spouse.boxh)
+        if STROKE_RECTANGLE is True:
             ctx.fill_preserve()
             set_line_style(ctx)
             ctx.stroke()
         else:
             ctx.fill()
 
-        draw_text(self.spouse.text, self.get('spx')+ txo, self.get('spy')+ tyo, self.spouse.tw, top_centered_lines=1)
+        draw_text(self.spouse.text, self.get('spx') + txo,
+                  self.get('spy') + tyo, self.spouse.tw, top_centered_lines=1)
 
-        if self.spouse.ipath != None:
-#           log.debug('FD: imagePath: %s', self.spouse.ipath.replace('/Users/ndpiercy/Library/Application Support/gramps/thumb/',''))
-            draw_image(self.spouse.ipath, self.get('spx')+ ixo, self.get('spy')+ iyo, self.spouse.iw, self.spouse.ih, self.spouse.iscale)
-
+        if self.spouse.ipath is not None:
+#             log.debug('FD: imagePath: %s', self.spouse.ipath.replace(
+#                 '/Users/ndpiercy/Library/Application Support/gramps/thumb/',
+#                 ''))
+            draw_image(self.spouse.ipath, self.get('spx') + ixo,
+                       self.get('spy') + iyo, self.spouse.iw, self.spouse.ih,
+                       self.spouse.iscale)
 
         if self.children != []:
             set_line_style(ctx)
@@ -894,12 +963,11 @@ class Family(Memorised):
             return self.prevfam.get('gly') + self.prevfam.get('glh')
 
     def spx(self):
-        return (self.get('glx') + self.get('flw'))\
-             - self.spouse.get('bw') / 2
+        return (self.get('glx') + self.get('flw')) - self.spouse.get('bw') / 2
 
     def spy(self):
-        return ((self.get('gly') + self.get('glh')) - S_UP)\
-             - self.spouse.get('bh')
+        return ((self.get('gly') + self.get('glh')) -
+                S_UP) - self.spouse.get('bh')
 
     def olx(self):
         return (self.get('glx') + self.get('flw')) - FL_PAD
@@ -908,8 +976,8 @@ class Family(Memorised):
         return self.get('gly') + self.get('glh')
 
     def cx(self):
-        return ((self.main.get('x') + self.main.get('go')
-                 + self.get('flw')) - FL_PAD) - self.get('oloc')
+        return ((self.main.get('x') + self.main.get('go') +
+                 self.get('flw')) - FL_PAD) - self.get('oloc')
 
     def cly(self):
         return self.get('oly') + self.get('olh')
@@ -925,15 +993,15 @@ class Family(Memorised):
 
     def flw(self):
         flw = 2 * FL_PAD
-        flw = max(flw, self.main.get('bw') / 2 + self.spouse.get('bw')
-                   / 2 + SP_PAD)
+        flw = max(flw, self.main.get('bw') / 2 + self.spouse.get('bw') / 2 +
+                  SP_PAD)
         if self.nextfam is not None:
-            flw = max(flw, self.nextfam.get('flw')
-                       + self.nextfam.spouse.get('bw') + OL_PAD)
-            flw = max(flw, self.nextfam.get('flw')
-                       - self.nextfam.get('oloc')
-                       + self.nextfam.get('cw') + F_PAD
-                       + self.get('oloc'))
+            flw = max(flw, self.nextfam.get('flw') +
+                      self.nextfam.spouse.get('bw') + OL_PAD)
+            flw = max(flw, self.nextfam.get('flw') -
+                      self.nextfam.get('oloc') +
+                      self.nextfam.get('cw') + F_PAD +
+                      self.get('oloc'))
         return flw
 
     def olh(self):
@@ -946,8 +1014,7 @@ class Family(Memorised):
         if self.children == []:
             return 0
         else:
-            return self.children[-1].get('o')\
-                 + self.children[-1].get('w')
+            return self.children[-1].get('o') + self.children[-1].get('w')
 
     def ch(self):
         biggest = 1
@@ -968,17 +1035,21 @@ class Family(Memorised):
 
 def load_gramps(start):
     """
-    This routine builds a tree of "person" and "family" records from the database
-    with information to be displayed about the person and their relationships.
-    It returns a pointer to the "Person" class at the head of the tree.
+    This routine builds a tree of "person" and "family" records from the
+    database with information to be displayed about the person and their
+    relationships. It returns a pointer to the "Person" class at the head of
+    the tree.
     """
     def format_event_txt(event, event_format, p_hdl):
         """
         returns a formated text string for the event as set in the option menu
-        uses modified version of the formatting utilities from libsubstkeyword.py
+        uses modified version of the formatting utilities from
+        libsubstkeyword.py
         """
         if event:
-            eskw = SubstKeywords2(GRAMPS_DB, glocale, name_displayer, p_hdl, max_note_len=MAX_NOTE_LEN, privacy=PROTECT_PRIVATE)
+            eskw = SubstKeywords2(GRAMPS_DB, glocale, name_displayer, p_hdl,
+                                  max_note_len=MAX_NOTE_LEN,
+                                  privacy=PROTECT_PRIVATE)
             vs = eskw.replace_and_clean([event_format], event)[0]
             log.debug('Formated event text=%s', vs)
             return vs
@@ -1000,20 +1071,26 @@ def load_gramps(start):
                     (PROTECT_PRIVATE and event.private) and
                     (event_ref.get_role() in [EventRoleType.PRIMARY,
                                               EventRoleType.FAMILY])):
-                    log.debug('Format Event: type=%s, and sortdate=%s', event.type, event.get_date_object().sortval)
+                    log.debug('Format Event: type=%s, and sortdate=%s',
+                              event.type, event.get_date_object().sortval)
                     et = format_event_txt(event, event_format, p_hdl)
-                    if event.get_date_object().sortval == 0: # sortval = days since 1-Jan-4713 BC
+                    if event.get_date_object().sortval == 0:
+                        # sortval = days since 1-Jan-4713 BC
                         if etype in OR_SIMILAR_EVENTS[EventType.BIRTH]:
-                            ev.append([et, event.get_date_object().sortval]) # all birth events go to top of list
+                            # all birth events go to top of list
+                            ev.append([et, event.get_date_object().sortval])
                         else:
-                            ev.append([et, FUTUREDATE.sortval],) # all non-birth events go to end
+                            # all non-birth events go to end
+                            ev.append([et, FUTUREDATE.sortval],)
                     else:
                         ev.append([et, event.get_date_object().sortval],)
         return ev
 
-    def format_event_or_similar(event_ref_list, event_type_list, event_format, p_hdl):
+    def format_event_or_similar(event_ref_list, event_type_list, event_format,
+                                p_hdl):
         """
-        returns a formated string of the person's event that matchs one on the event_list
+        returns a formated string of the person's event that matchs one on the
+        event_list.
         Only the fist event that matches on the event list is returned
         If an event does not have date, the sort date will be 0, it is set to a
         future date, unless unless the event is birth related.
@@ -1023,28 +1100,37 @@ def load_gramps(start):
         if event_ref_list:
             for desired_event in event_type_list:
                 for event_ref in event_ref_list:
-                    if ((event_ref.get_role() == EventRoleType.PRIMARY) or (event_ref.get_role() == EventRoleType.FAMILY)):
-                        event = find_event(GRAMPS_DB, event_ref.ref)
-                        if (event.type == desired_event) and not (PROTECT_PRIVATE and event.private):
-                            log.debug('Format EorS: type=%s, and sortdate=%s', event.type, event.get_date_object().sortval)
-                            et = format_event_txt(event, event_format, p_hdl)
-                            if event.get_date_object().sortval == 0: # no date = 0
-                                if event.type in OR_SIMILAR_EVENTS[EventType.BIRTH]:
-                                    ev.append([et, event.get_date_object().sortval]) # all birth events go to top of list
-                                else:
-                                    ev.append([et, FUTUREDATE.sortval],) # all non-birth events go to end
-                            else:
-                                ev.append([et, event.get_date_object().sortval],)
-                            return ev
+                    if not ((event_ref.get_role() == EventRoleType.PRIMARY) or
+                            (event_ref.get_role() == EventRoleType.FAMILY)):
+                        continue
+                    event = find_event(GRAMPS_DB, event_ref.ref)
+                    if not (event.type == desired_event and not
+                            (PROTECT_PRIVATE and event.private)):
+                        continue
+                    log.debug('Format EorS: type=%s, and sortdate=%s',
+                              event.type,
+                              event.get_date_object().sortval)
+                    et = format_event_txt(event, event_format, p_hdl)
+                    if event.get_date_object().sortval == 0:
+                        # no date = 0
+                        if event.type in OR_SIMILAR_EVENTS[EventType.BIRTH]:
+                            # all birth events go to top of list
+                            ev.append([et, event.get_date_object().sortval])
+                        else:
+                            # all non-birth events go to end
+                            ev.append([et, FUTUREDATE.sortval],)
+                    else:
+                        ev.append([et, event.get_date_object().sortval],)
+                    return ev
         return ev
 
     def format_person_events(person, family, event_disp_list):
         """
-        For each line of events to be displayed provided by in the options menu:
-        if the "orSIMILAR" option was selected in the menu and the event type is
-        BIRTH, MARRAIGE, DIVORCE or DEATH, it will get the best match.
-        Otherwise it will get all events that match.
-        Optionally it will sort the resulting formatted event lines by date.
+        For each line of events to be displayed provided by in the options
+        menu: if the "orSIMILAR" option was selected in the menu and the event
+        type is BIRTH, MARRAIGE, DIVORCE or DEATH, it will get the best match.
+        Otherwise it will get all events that match. Optionally it will sort
+        the resulting formatted event lines by date.
         """
         elist = []
         estrings = []
@@ -1055,23 +1141,33 @@ def load_gramps(start):
                 if etype in FAMILY_EVENTS:
                     if family:
                         if (OR_SIMILAR and (etype in OR_SIMILAR_EVENTS)):
-                            ev=(format_event_or_similar(family.get_event_ref_list(), OR_SIMILAR_EVENTS[etype], event_format, person.handle))
+                            ev = (format_event_or_similar(
+                                family.get_event_ref_list(),
+                                OR_SIMILAR_EVENTS[etype],
+                                event_format, person.handle))
                         else:
-                            ev=(format_event(family.get_event_ref_list(), etype, event_format, person.handle))
+                            ev = (format_event(family.get_event_ref_list(),
+                                               etype, event_format,
+                                               person.handle))
                 else:
                     if (OR_SIMILAR and (etype in OR_SIMILAR_EVENTS)):
-                        ev=(format_event_or_similar(person.get_event_ref_list(), OR_SIMILAR_EVENTS[etype], event_format, person.handle))
+                        ev = (format_event_or_similar(
+                            person.get_event_ref_list(),
+                            OR_SIMILAR_EVENTS[etype],
+                            event_format, person.handle))
                     else:
-                        ev=(format_event(person.get_event_ref_list(), etype, event_format, person.handle))
+                        ev = (format_event(person.get_event_ref_list(),
+                                           etype, event_format,
+                                           person.handle))
                 if ev:
                     elist.extend(ev)
-                    #log.debug('Add Event=%s', ev)
+                    # log.debug('Add Event=%s', ev)
         if elist:
-            #log.info('FPE: All Events=%s', elist)
+            # log.info('FPE: All Events=%s', elist)
             if SORT_EVENTS:
-                el2 = sorted(elist, key=lambda x: x[1])    #sort by date
+                el2 = sorted(elist, key=lambda x: x[1])    # sort by date
                 for (etxt, esort) in el2:
-                    #log.debug('FPE: etxt=%s, esort=%d', etxt, esort)
+                    # log.debug('FPE: etxt=%s, esort=%d', etxt, esort)
                     estrings.append(etxt)
             else:
                 for (etxt, esort) in elist:
@@ -1082,15 +1178,16 @@ def load_gramps(start):
         """
         assembles all the text for a person
         """
-        name_size = 1.0 # font size modifier
+        name_size = 1.0  # font size modifier
         event_size = 0.90
-        event_colour = (0, 0, 0) # Black - for all event lines
+        event_colour = (0, 0, 0)  # Black - for all event lines
 
         if PROTECT_PRIVATE and person.private:
             s2 = [(name_size, event_colour, PRIVATE_TEXT)]
         else:
             name = None
-            nskw = SubstKeywords(GRAMPS_DB, glocale, name_displayer, person.handle)
+            nskw = SubstKeywords(GRAMPS_DB, glocale, name_displayer,
+                                 person.handle)
             name = nskw.replace_and_clean([NAME_FORMAT])[0]
             #log.debug('GPT: Name SubKW: %s', name)
 
@@ -1098,19 +1195,19 @@ def load_gramps(start):
             events = format_person_events(person, f, display_format)
             log.debug('GetPersonTxt, All Events: %s', events)
 
-            name_size = 1.0 # font size modifier
+            name_size = 1.0  # font size modifier
             event_size = 0.90
-            event_colour = (0, 0, 0) # Black - for all event lines
+            event_colour = (0, 0, 0)  # Black - for all event lines
 
             if GENDER_COLORS:      # Only for name line
                 if person.get_gender() == gramps.gen.lib.Person.MALE:
-                    n_col = (0, 0, 1) # Blue
+                    n_col = (0, 0, 1)  # Blue
                 elif person.get_gender() == gramps.gen.lib.Person.FEMALE:
-                    n_col = (1, 0, 0) # Red
+                    n_col = (1, 0, 0)  # Red
                 else:
-                    n_col = (0, 0.5, 0) # Green
+                    n_col = (0, 0.5, 0)  # Green
             else:
-                n_col = (0, 0, 0) # Black
+                n_col = (0, 0, 0)  # Black
 
             if INC_DNUM and dnum is not None:   # Prepend DNUM to name text str
                 if name is None:
@@ -1128,7 +1225,7 @@ def load_gramps(start):
 
             # Apply the replacement list to all the text strings
             #    borrowed from calc_lines in libtreebase.py
-            s2=[]
+            s2 = []
             for (size, color, line) in s:
                 for pair in REPLACEMENT_LIST:
                     if pair.count("/") == 1:
@@ -1147,11 +1244,13 @@ def load_gramps(start):
         CUR_GENERATION += 1
         global HIGH_GENERATION
         HIGH_GENERATION = max(HIGH_GENERATION, CUR_GENERATION)
-        UNKNOWN_PERSON_TXT = [(1.0, (0,0,0), _('Unknown')),]
+        UNKNOWN_PERSON_TXT = [(1.0, (0, 0, 0), _('Unknown')), ]
 
         descendant = GRAMPS_DB.get_person_from_gramps_id(p_id)
-        log.debug('Do_Person: Descendant %s, DB ID:%s', descendant.primary_name.get_regular_name(), p_id)
-        blk_txt = get_person_text(descendant, DESCEND_DISP, None, dnum)  # assembles array of text tuples(size, colour, txt-str)
+        log.debug('Do_Person: Descendant %s, DB ID:%s',
+                  descendant.primary_name.get_regular_name(), p_id)
+        # assembles array of text tuples(size, colour, txt-str)
+        blk_txt = get_person_text(descendant, DESCEND_DISP, None, dnum)
         p = Person(Person_Block(descendant.handle, blk_txt), CUR_GENERATION)
         for fhandle in descendant.get_family_handle_list():
             cnum = 1
@@ -1163,46 +1262,67 @@ def load_gramps(start):
                 if sph:
                     spouse = GRAMPS_DB.get_person_from_handle(sph)
                     if spouse:
-                        log.debug('Do_Person: Spouse %s, DB ID=%s', spouse.primary_name.get_regular_name(), spouse.get_gramps_id())
-                        spo_txt = get_person_text(spouse, SPOUSE_DISP, fmly, dnum)
-                        fm = Family(p, Person(Person_Block(spouse.handle, spo_txt), CUR_GENERATION))
-                        if MAX_GENERATION == 0 or CUR_GENERATION < MAX_GENERATION:
-                            for chandle in fmly.get_child_ref_list():
-                                if chandle:
-                                    child = GRAMPS_DB.get_person_from_handle(chandle.ref)
-                                    if child:
-                                        log.debug('Do_Person: Child %s, DB ID=%s', child.primary_name.get_regular_name(), child.get_gramps_id())
-                                        fm.add_child(do_person(child.get_gramps_id(), dnum + str(cnum) + "."))
-                                        cnum += 1
-                                    else:
-                                        log.warning('Do_Person: Failed to get child from handle: %s', chandle)
+                        log.debug('Do_Person: Spouse %s, DB ID=%s',
+                                  spouse.primary_name.get_regular_name(),
+                                  spouse.get_gramps_id())
+                        spo_txt = get_person_text(spouse, SPOUSE_DISP,
+                                                  fmly, dnum)
+                        fm = Family(p, Person(Person_Block(spouse.handle,
+                                                           spo_txt),
+                                              CUR_GENERATION))
+                        if not (MAX_GENERATION == 0 or
+                                CUR_GENERATION < MAX_GENERATION):
+                            continue
+                        for chandle in fmly.get_child_ref_list():
+                            if not chandle:
+                                continue
+                            child = GRAMPS_DB.get_person_from_handle(
+                                chandle.ref)
+                            if child:
+                                log.debug(
+                                    'Do_Person: Child %s, DB ID=%s',
+                                    child.primary_name.get_regular_name(),
+                                    child.get_gramps_id())
+                                fm.add_child(do_person(child.get_gramps_id(),
+                                                       dnum + str(cnum) + "."))
+                                cnum += 1
+                            else:
+                                log.warning('Do_Person: Failed to get child'
+                                            ' from handle: %s', chandle)
                     else:
-                        log.warning('Do_Person: Failed to get spouse from handle: %s', sph)
+                        log.warning('Do_Person: Failed to get spouse from'
+                                    ' handle: %s', sph)
                 else:
-                    log.info('Do_Person: Unknown spouse of %s', descendant.primary_name.get_regular_name())
-                    fm = Family(p, Person(Person_Block(None, UNKNOWN_PERSON_TXT), CUR_GENERATION))
+                    log.info('Do_Person: Unknown spouse of %s',
+                             descendant.primary_name.get_regular_name())
+                    fm = Family(p, Person(Person_Block(None,
+                                                       UNKNOWN_PERSON_TXT),
+                                          CUR_GENERATION))
             else:
-                log.debug('Do_Person: %s has no spouse(s)', descendant.primary_name.get_regular_name())
+                log.debug('Do_Person: %s has no spouse(s)',
+                          descendant.primary_name.get_regular_name())
 
         CUR_GENERATION -= 1
         return p
 
-    CUR_GENERATION=0
+    CUR_GENERATION = 0
     return do_person(start, "1.")
 
 
 def set_bg_style(ctx):
     ctx.set_source_rgb(*BACKGROUND_COLOR)
 
+
 def set_fg_style(ctx):
     ctx.set_source_rgb(*FOREGROUND_COLOR)
 
+
 def set_gen_style(ctx, gen, darkness):
     """
-    Set the colour based on the generation such as to spread the colours across the
-    spectrum (from Red to Violet), with reference to the HIGH_GENERATION global
-    Darkeness controls the intensity of the clolour, with 0 being very pale,
-    and higher numbers resulting in more intense (darker) colours
+    Set the colour based on the generation such as to spread the colours across
+    the spectrum (from Red to Violet), with reference to the HIGH_GENERATION
+    global Darkeness controls the intensity of the clolour, with 0 being very
+    pale, and higher numbers resulting in more intense (darker) colours
     Modified from __set_fill_color in FamilyTree.py
     """
     if (gen and (FILL_COLORS)):
@@ -1214,21 +1334,26 @@ def set_gen_style(ctx, gen, darkness):
         r = 255.0 - max(0, darkness - r * step)
         g = 255.0 - max(0, darkness - g * step)
         b = 255.0 - max(0, (darkness - b * step) * 2.0)
-#       log.debug('SGS: colour r=%d, g=%d, b=%d, number=%d, count=%d, index=%d, step=%d', r, g, b, gen, HIGH_GENERATION, index, step)
-        rgba=(r/255, g/255, b/255, 1)
+#         log.debug('SGS: colour r=%d, g=%d, b=%d, number=%d, count=%d,'
+#                   ' index=%d, step=%d', r, g, b, gen, HIGH_GENERATION,
+#                   index, step)
+        rgba = (r/255, g/255, b/255, 1)
     else:
-        rgba=(0.0, 0.0, 0.0, 1) # black
+        rgba = (0.0, 0.0, 0.0, 1)  # black
     ctx.set_source_rgba(*rgba)
+
 
 def set_line_style(ctx):
     ctx.set_source_rgb(0.3, 0.3, 0.3)
 
 
 def init_file(fn, writer):
-    """dummy surface for image size calculations, to avoid mucking up final image"""
+    """dummy surface for image size calculations, to avoid mucking up
+    final image"""
     global dctx
     surface = writer.start(fn, 10, 10)
     dctx = cairo.Context(surface)
+
 
 def draw_tree(head):
     ctx.select_font_face(font_name)
@@ -1239,22 +1364,20 @@ def draw_tree(head):
     set_line_style(ctx)
     head.draw()
 
+
 class PNGWriter:
 
     def start(self, fn, w, h,):
         self.fn = fn
-        if OUTPUT_FMT == 'PNG':
-            self.surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, int(w
-                     + 1), int(h + 1))
+        if OUTPUT_FMT == 'PNG' or not fn:
+            self.surface = cairo.ImageSurface(cairo.FORMAT_ARGB32,
+                                              int(w + 1), int(h + 1))
         elif OUTPUT_FMT == 'SVG':
-            self.surface = cairo.SVGSurface(OUTPUT_FN, int(w
-                 + 1), int(h + 1))
+            self.surface = cairo.SVGSurface(self.fn, int(w + 1), int(h + 1))
         elif OUTPUT_FMT == 'PDF':
-            self.surface = cairo.PDFSurface(OUTPUT_FN, int(w
-                 + 1), int(h + 1))
+            self.surface = cairo.PDFSurface(self.fn, int(w + 1), int(h + 1))
         elif OUTPUT_FMT == 'PS':
-            self.surface = cairo.PSSurface(OUTPUT_FN, int(w
-                 + 1), int(h + 1))
+            self.surface = cairo.PSSurface(self.fn, int(w + 1), int(h + 1))
         else:
             raise AttributeError("no such output format: '%s'" % OUTPUT_FMT)
         return self.surface
@@ -1263,13 +1386,13 @@ class PNGWriter:
 
         if OUTPUT_FMT == 'PNG':
             self.surface.write_to_png(self.fn)
-        elif (OUTPUT_FMT == 'SVG') \
-             or (OUTPUT_FMT == 'PDF') \
-             or (OUTPUT_FMT == 'PS'):
+        elif (OUTPUT_FMT == 'SVG' or OUTPUT_FMT == 'PDF' or
+              OUTPUT_FMT == 'PS'):
             self.surface.flush()
             self.surface.finish()
         else:
             raise AttributeError("no such output format: '%s'" % OUTPUT_FMT)
+
 
 def draw_file(p, fn, writer):
     """
@@ -1278,7 +1401,8 @@ def draw_file(p, fn, writer):
     """
     global ctx
 
-    surface = writer.start(fn, 10, 10) # 1st pass is just to get size of chart
+    # 1st pass is just to get size of chart
+    surface = writer.start(None, 10, 10)
     ctx = cairo.Context(surface)
     draw_tree(p)
     (w, h) = (p.get('w'), p.get('h'))
@@ -1318,81 +1442,97 @@ class DescendantsLinesOptions(MenuReportOptions):
         menu.add_option(category_name, 'pid', pid)
 
         output_fmt = EnumeratedListOption(_("Output format"), "PNG")
-        output_fmt.set_items([
-                ("PNG", _("PNG format")),
-                ("SVG", _("SVG format")),
-                ("PDF", _("PDF format")),
-                ("PS", _("PS format"))])
+        output_fmt.set_items([("PNG", _("PNG format")),
+                              ("SVG", _("SVG format")),
+                              ("PDF", _("PDF format")),
+                              ("PS", _("PS format"))])
         output_fmt.set_help(_("The output format to be used"))
         menu.add_option(category_name, "output_fmt", output_fmt)
 
-
-        output_fn = DestinationOption(_("Destination"),
-            os.path.join(USER_HOME,"DescendantsLines.png"))
+        output_fn = DestinationOption(
+            _("Destination"), os.path.join(USER_HOME, "DescendantsLines.png"))
         output_fn.set_help(_("The destination file for the content."))
         menu.add_option(category_name, "output_fn", output_fn)
 
         max_gen = NumberOption(_("Generations"), 10, 0, 25)
-        max_gen.set_help(_("The number of generations to include in the chart." \
-                " (0 for unlimited)"))
+        max_gen.set_help(_("The number of generations to include in the chart."
+                           " (0 for unlimited)"))
         menu.add_option(category_name, "max_gen", max_gen)
 
         stroke_rectangle = BooleanOption(_("Box around Person's block"), False)
-        stroke_rectangle.set_help(_('Draw a thin black box around each person\' text block.'))
+        stroke_rectangle.set_help(_('Draw a thin black box around each'
+                                    ' person\' text block.'))
         menu.add_option(category_name, 'stroke_rectangle', stroke_rectangle)
 
         fill_colors = BooleanOption(_('Colour blocks by Generation'), False)
-        fill_colors.set_help(_('Colour the background of text blocks by generation.'))
+        fill_colors.set_help(_('Colour the background of text blocks by'
+                               ' generation.'))
         menu.add_option(category_name, 'fill_colors', fill_colors)
 
         d_alpha = NumberOption(_("Descend block colour intensity"), 64, 0, 255)
-        d_alpha.set_help(_("Intensity of backgound colour in Descendant's Block, 0=faint, 255=intense colour"))
+        d_alpha.set_help(_("Intensity of backgound colour in Descendant's"
+                           " Block, 0=faint, 255=intense colour"))
         menu.add_option(category_name, "descend_alpha", d_alpha)
 
         s_alpha = NumberOption(_("Spouse block colour intensity"), 32, 0, 255)
-        s_alpha.set_help(_("Intensity of backgound colour in Spouse's Block, 0=faint 255=intense colour"))
+        s_alpha.set_help(_("Intensity of backgound colour in Spouse's Block,"
+                           " 0=faint 255=intense colour"))
         menu.add_option(category_name, "spouse_alpha", s_alpha)
 
         inc_image = BooleanOption(_('Include an image'), True)
-        inc_image.set_help(_('Whether to include an image if one is available.'))
+        inc_image.set_help(_('Whether to include an image if one is'
+                             ' available.'))
         menu.add_option(category_name, 'inc_image', inc_image)
 
         image_h = NumberOption(_("Max Image height"), 0, 0, 250)
-        image_h.set_help(_("Maximum image height in pixels, 0=don't scale for height."))
+        image_h.set_help(_("Maximum image height in pixels, 0=don't scale"
+                           " for height."))
         menu.add_option(category_name, "image_h", image_h)
 
         image_w = NumberOption(_("Max Image width"), 0, 0, 250)
-        image_w.set_help(_("Maximum image width in pixels, 0=don't scale for width."))
+        image_w.set_help(_("Maximum image width in pixels, 0=don't scale"
+                           " for width."))
         menu.add_option(category_name, "image_w", image_w)
 
         image_loc = EnumeratedListOption(_("Image Location"), "Above Text")
-        image_loc.set_items([
-                ("Above Text", _("Above text")),
-                ("Left of Text", _("Left of text"))])
+        image_loc.set_items([("Above Text", _("Above text")),
+                             ("Left of Text", _("Left of text"))])
         image_loc.set_help(_("Position of image relative to text"))
         menu.add_option(category_name, "image_loc", image_loc)
 
-      ##################
+        ##################
         category_name = _("Display")
 
-        namedisp = StringOption(_("Name Display Format"), "$n(f L){ \($n(n)\)}")
-        namedisp.set_help(_("f=first & middle names, l=surname, n=nickname,\nc=commonly used given name, t=title, s=suffix, g=family nick name\nSee Wiki Manual > Reports > part 2"))
+        namedisp = StringOption(_("Name Display Format"),
+                                r"$n(f L){ \($n(n)\)}")
+        namedisp.set_help(
+            _("f=first & middle names, l=surname, n=nickname,"
+              "\nc=commonly used given name, t=title, s=suffix,"
+              " g=family nick name\n"
+              "See Wiki Manual > Reports > part 2"))
         menu.add_option(category_name, "name_disp", namedisp)
 
-        inc_dnum = BooleanOption(_("Use d'Aboville descendant numbering system"), False)
-        inc_dnum.set_help(_("Prepend name with d'Aboville descendant number in the chart."))
+        inc_dnum = BooleanOption(
+            _("Use d'Aboville descendant numbering system"), False)
+        inc_dnum.set_help(
+            _("Prepend name with d'Aboville descendant number in the chart."))
         menu.add_option(category_name, 'inc_dnum', inc_dnum)
 
         gender_colors = BooleanOption(_('Colour Name by Gender'), False)
-        gender_colors.set_help(_('Color the name to indicate a person\'s gender in the chart.'))
+        gender_colors.set_help(
+            _('Color the name to indicate a person\'s gender in the chart.'))
         menu.add_option(category_name, 'gender_colors', gender_colors)
 
-        disp = TextOption(_("Descendant\nDisplay Format"),
-                           ["[ BIRTH   ]$e(t d(yyyy)< @ >D(t))",
-                           "[ Occupation, Degree, Education ]$e(t d(o yyyy/mm/dd)< >n< @ >D(t))",
-                           "[ Census, Residence, Property ]$e(t d(yyyy)< @ >D(t))",
-                           "[Death]$e(t d(o yyyy)< @ >D(e<, >l<, >c<, >u<, >s<, >p<, >n))"])
-        disp.set_help(_("[event, list]$e(formating)\nSee Wiki Manual > Reports > part 2\nformating: dates=d(ymdMo) places=D(elcuspnoitxy) notes=n abbreviated_type=t"))
+        disp = TextOption(_("Descendant\nDisplay Format"), [
+            "[ BIRTH   ]$e(t d(yyyy)< @ >D)",
+            "[ Occupation, Degree, Education ]"
+            "$e(t d(o yyyy/mm/dd)< >n< @ >D)",
+            "[ Census, Residence, Property ]$e(t d(yyyy)< @ >D)",
+            "[Death]$e(t d(o yyyy)< @ >D)"])
+        disp.set_help(_("[event, list]$e(formating)\n"
+                        "See Wiki Manual > Reports > part 2\n"
+                        "formating: dates=d(ymdMo) places=D(elcuspnoitxy)"
+                        " notes=n abbreviated_type=t"))
         menu.add_option(category_name, "descend_disp", disp)
 
         #bug 4767
@@ -1402,43 +1542,55 @@ class DescendantsLinesOptions(MenuReportOptions):
         #diffspouse.set_help(_("Whether spouses can have a different format."))
         #menu.add_option(category_name, "diffspouse", diffspouse)
 
-        sdisp = TextOption(_("Spousal\nDisplay Format"),
-                           ["[ Birth ]$e(t d(yyyy)< @ >D(t))",
-                           "[ Occupation, Degree, Education ]$e(t d(yyyy)<, >n< @ >D(t))",
-                           "[ Census, Residence, Property ]$e(t d(yyyy)< @ >D(t))",
-                           "[ Marriage, Divorce ]$e(t d(yyyy)< @ >D(t))",
-                           "[ Death ]$e(t d(yyyy)< @ >D(t))"])
-        sdisp.set_help(_("[event, list]$e(formating)\nSee Wiki Manual > Reports > part 2\nformating: dates=d(ymdMo) places=D(elcuspnoitxy) notes=n abbreviated_type=t"))
+        sdisp = TextOption(_("Spousal\nDisplay Format"), [
+            "[ Birth ]$e(t d(yyyy)< @ >D)",
+            "[ Occupation, Degree, Education ]$e(t d(yyyy)<, >n< @ >D)",
+            "[ Census, Residence, Property ]$e(t d(yyyy)< @ >D)",
+            "[ Marriage, Divorce ]$e(t d(yyyy)< @ >D)",
+            "[ Death ]$e(t d(yyyy)< @ >D(t))"])
+        sdisp.set_help(_("[event, list]$e(formating)\n"
+                         "See Wiki Manual > Reports > part 2\n"
+                         "formating: dates=d(ymdMo) places=D(elcuspnoitxy)"
+                         " notes=n abbreviated_type=t"))
         menu.add_option(category_name, "spouse_disp", sdisp)
 
-        or_similar_events = BooleanOption(_('Use alternate events, if Primary event is not found'), False)
-        or_similar_events.set_help(_("For Birth (baptism, christen)\n   Marriage (marr_lic, engagement)\n   Divorce (annulment, div_filing),\n   Death (burial, cremation, probate)."))
+        or_similar_events = BooleanOption(
+            _('Use alternate events, if Primary event is not found'), False)
+        or_similar_events.set_help(_("For Birth (baptism, christen)\n "
+                                     "  Marriage (marr_lic, engagement)\n "
+                                     "  Divorce (annulment, div_filing),\n "
+                                     "  Death (burial, cremation, probate)."))
         menu.add_option(category_name, "or_similar_events", or_similar_events)
 
         sort_events = BooleanOption(_('Sort Events by Date'), False)
-        sort_events.set_help(_("Sort events by date (else use the order of the 'Display Format' above)."))
+        sort_events.set_help(_("Sort events by date (else use the order of"
+                               " the 'Display Format' above)."))
         menu.add_option(category_name, "sort_events", sort_events)
 
-        protect_private = BooleanOption(_("Protect People, Images or Events that are marked Private"), True)
-        protect_private.set_help(_("The Privacy setting of only these types of Gramps objects are checked"))
+        protect_private = BooleanOption(_("Protect People, Images or Events"
+                                          " that are marked Private"), True)
+        protect_private.set_help(_("The Privacy setting of only these types"
+                                   " of Gramps objects are checked"))
         menu.add_option(category_name, 'protect_private', protect_private)
 
         private_text = StringOption(_("Privacy text"), 'Private')
-        private_text.set_help(_("Text to display in block, when a Person is marked private"))
+        private_text.set_help(_("Text to display in block, when a Person"
+                                " is marked private"))
         menu.add_option(category_name, "private_text", private_text)
 
         text_alignment = EnumeratedListOption(_("Text style"), "center")
-        text_alignment.set_items([
-                ("center", _("Center-aligned text")),
-                ("left", _("Left-aligned text"))])
-        text_alignment.set_help(_("Alignment of the text in the block for each person on the chart"))
+        text_alignment.set_items([("center", _("Center-aligned text")),
+                                  ("left", _("Left-aligned text"))])
+        text_alignment.set_help(_("Alignment of the text in the block for"
+                                  " each person on the chart"))
         menu.add_option(category_name, "text_alignment", text_alignment)
 
         max_note_len = NumberOption(_("Max Note Length"), 0, 0, 250)
-        max_note_len.set_help(_("Maximum length of an event's note field in a text block, '$e(n)'\n 0=no limit "))
+        max_note_len.set_help(_("Maximum length of an event's note field in"
+                                " a text block, '$e(n)'\n 0=no limit "))
         menu.add_option(category_name, "max_note_len", max_note_len)
 
-       ##################
+        ##################
         category_name = _("Replace")
 
         repldisp = TextOption(
@@ -1447,15 +1599,17 @@ class DescendantsLinesOptions(MenuReportOptions):
         repldisp.set_help(_("i.e.\nUnited States of America/USA"))
         menu.add_option(category_name, "replace_list", repldisp)
 
-       ##################
+        ##################
         category_name = _('S  &amp; F Options')
 
         s_down = NumberOption(_("S_DOWN"), 20, 0, 50)
-        s_down.set_help(_("The length of the vertical edge from descendant to spouse-bar."))
+        s_down.set_help(_("The length of the vertical edge from descendant"
+                          " to spouse-bar."))
         menu.add_option(category_name, "S_DOWN", s_down)
 
         s_up = NumberOption(_("S_UP"), 10, 0, 50)
-        s_up.set_help(_("The length of the vertical edge from spouse-bar to spouse."))
+        s_up.set_help(_("The length of the vertical edge from spouse-bar"
+                        " to spouse."))
         menu.add_option(category_name, "S_UP", s_up)
 
         s_vpad = NumberOption(_("S_VPAD"), 10, 0, 50)
@@ -1483,7 +1637,8 @@ class DescendantsLinesOptions(MenuReportOptions):
         menu.add_option(category_name, "OL_PAD", ol_pad)
 
         o_down = NumberOption(_("O_DOWN"), 30, 0, 50)
-        o_down.set_help(_("The length of the vertical edge from spouse-bar to child-bar."))
+        o_down.set_help(_("The length of the vertical edge from spouse-bar"
+                          " to child-bar."))
         menu.add_option(category_name, "O_DOWN", o_down)
 
 #         category_name = _('Options C')
@@ -1493,7 +1648,8 @@ class DescendantsLinesOptions(MenuReportOptions):
         menu.add_option(category_name, "C_PAD", c_pad)
 
         c_up = NumberOption(_("C_UP"), 15, 0, 50)
-        c_up.set_help(_("The length of the vertical edge from child to child-bar."))
+        c_up.set_help(
+            _("The length of the vertical edge from child to child-bar."))
         menu.add_option(category_name, "C_UP", c_up)
 
         min_c_width = NumberOption(_("MIN_C_WIDTH"), 40, 0, 50)

@@ -15,7 +15,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
 # $Id$
@@ -24,9 +24,9 @@ register(TOOL,
 id    = 'PlaceCompletion',
 name  = _("PlaceCompletion"),
 description =  _("Provides a browsable list of selected places, with possibility to complete/parse/set the attribute fields."),
-version = '0.0.30',
+version = '0.0.35',
 gramps_target_version = "5.1",
-status = STABLE, # not yet tested with python 3,
+status = STABLE,
 fname = 'PlaceCompletion.py',
 authors = ["B. Malengier",
 "Mathieu MD"],

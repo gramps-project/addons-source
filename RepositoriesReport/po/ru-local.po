@@ -1,0 +1,205 @@
+# Russian translation for RepositoriesReport
+# This file is distributed under the same license as the Gramps package.
+#
+# Ivan Komaritsyn <vantu5z@mail.ru>, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps50\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-12-06 10:30+0300\n"
+"PO-Revision-Date: 2018-12-06 10:39+0300\n"
+"Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Gtranslator 2.91.7\n"
+"X-Poedit-Language: Russian\n"
+"X-Poedit-Country: RUSSIAN FEDERATION\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+
+#: RepositoriesReport/RepositoriesReport.gpr.py:25
+msgid "Repositories Report Options"
+msgstr "Параметы отчета о хранилищах"
+
+#: RepositoriesReport/RepositoriesReport.gpr.py:26
+#: RepositoriesReport/RepositoriesReport.gpr.py:43
+msgid "Produces a textual repositories report"
+msgstr "Предоставляет текстовый отчёт о хранилищах"
+
+#: RepositoriesReport/RepositoriesReport.gpr.py:42
+#: RepositoriesReport/RepositoriesReport.py:80
+#: RepositoriesReport/RepositoriesReportAlt.py:139
+msgid "Repositories Report"
+msgstr "Отчёт о хранилищах"
+
+#: RepositoriesReport/RepositoriesReport.py:151
+#: RepositoriesReport/RepositoriesReportAlt.py:409
+msgid "Report Options"
+msgstr "Параметры отчёта"
+
+#: RepositoriesReport/RepositoriesReport.py:175
+#: RepositoriesReport/RepositoriesReportAlt.py:503
+msgid "The style used for the title of the report."
+msgstr "Стиль, используемый для заголовка отчёта."
+
+#: RepositoriesReport/RepositoriesReport.py:189
+#: RepositoriesReport/RepositoriesReportAlt.py:517
+msgid "The style used for repository title."
+msgstr "Стиль для названия хранилища."
+
+#: RepositoriesReport/RepositoriesReport.py:203
+#: RepositoriesReport/RepositoriesReportAlt.py:532
+msgid "The style used for each section."
+msgstr "Стиль используемый для заголовков разделов ."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:202
+msgid "Address:"
+msgstr "Адрес:"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:263
+msgid "Author:"
+msgstr "Автор:"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:268
+msgid "Abbreviation:"
+msgstr "Сокращение:"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:273
+msgid "Publication information:"
+msgstr "Информация о публикации:"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:278
+msgid "Data:"
+msgstr "Дата:"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:360
+msgid "Confidence level:"
+msgstr "Достоверность:"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:365
+msgid "Citation:"
+msgstr "Цитата:"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:371
+msgid "Date:"
+msgstr "Дата:"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:377
+msgid "Page:"
+msgstr "Страница:"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:410
+msgid "Repositories"
+msgstr "Хранилища"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:411
+msgid "Sources"
+msgstr "Источники"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:417
+msgid "Select using filter"
+msgstr "Выбрать используя фильтр"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:418
+msgid "Selection with a filter"
+msgstr "Выбор с использованием фильтра"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:430
+msgid "Include repository's urls"
+msgstr "Включать сслыки на хранилище"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:431
+msgid "Whether to include urls on repository."
+msgstr "Включать ли ссылки на хранилище."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:434
+msgid "Include repository's address"
+msgstr "Включать адрес хранилища"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:435
+msgid "Whether to include addresses on repository."
+msgstr "Включать ли адрес хранилища."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:438
+msgid "Include source's author"
+msgstr "Включать автора источника"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:439
+msgid "Whether to include author."
+msgstr "Включать ли автора."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:442
+msgid "Include source's abbreviation"
+msgstr "Включать аббревиатуру источника"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:443
+msgid "Whether to include abbreviation."
+msgstr "Включать ли аббревиатуру."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:446
+msgid "Include source's publication information"
+msgstr "Включать информацию о публикации источника"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:447
+msgid "Whether to include publication information."
+msgstr "Включать ли информациюо публикации."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:450
+msgid "Include source's data"
+msgstr "Включать данные источника"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:451
+msgid "Whether to include keys and values."
+msgstr "Включать ли ключи и значения."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:454
+msgid "Include notes"
+msgstr "Включать заметки"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:455
+msgid "Whether to include notes on repositories and sources."
+msgstr "Включать ли заметки хранилищ и источников."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:458
+msgid "Include media"
+msgstr "Включать документы"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:459
+msgid "Whether to include media."
+msgstr "Включать ли документы."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:462
+msgid "Include citations"
+msgstr "Включать цитаты"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:463
+msgid "Whether to include citations on sources."
+msgstr "Включать ли цитаты источников."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:466
+msgid "Include private records"
+msgstr "Включать личные записи"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:467
+msgid "Whether to include repositories and sources marked as private."
+msgstr "Включать ли хранилища и источники помеченные как личные."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:470
+msgid "Display empty values"
+msgstr "Отображать пустые значения"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:471
+msgid "Whether to include key records with empty values."
+msgstr "Включать ли ключи и с пустые значениями."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:547
+msgid "The style used for child section."
+msgstr "Стиль для раздела детей."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:559
+msgid "The basic style used for the note display."
+msgstr "Основной стиль используемый для отображения заметок."

@@ -18,7 +18,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
 #-------------------------------------------------------------------------
@@ -45,6 +45,7 @@ import cairo
 #-------------------------------------------------------------------------
 import gramps.gen.lib
 from gramps.gui.views.navigationview import NavigationView
+from gramps.gui.display import display_url
 from gramps.gen.display.name import displayer as name_displayer
 from gramps.gen.utils.alive import probably_alive
 from gramps.gen.utils.file import media_path_full
@@ -54,12 +55,14 @@ from gramps.gen.utils.libformatting import FormattingHelper
 from gramps.gen.utils.thumbnails import get_thumbnail_path
 from gramps.gen.errors import WindowActiveError
 from gramps.gui.editors import EditPerson, EditFamily
+from gramps.gui.editors import FilterEditor
 from gramps.gui.ddtargets import DdTargets
 from gramps.gen.config import config
 from gramps.gui.views.bookmarks import PersonBookmarks
 from gramps.gen.const import CUSTOM_FILTERS
 from gramps.gui.dialog import RunDatabaseRepair, ErrorDialog
 from gramps.gui.utils import is_right_click
+from gramps.gen.constfunc import is_quartz
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 from gramps.gen.utils.symbols import Symbols
 try:
@@ -74,6 +77,7 @@ ngettext = trans.ngettext
 # Constants
 #
 #-------------------------------------------------------------------------
+WIKI_PAGE = 'https://gramps-project.org/wiki/index.php?title=TimelinePedigreeView'
 _PERSON = "p"
 _BORN = _('short for born|b.')
 _DIED = _('short for died|d.')
@@ -291,6 +295,8 @@ class PersonBoxWidgetCairo(Gtk.DrawingArea, _PersonWidgetBase):
         context.move_to(5, 4)
         context.set_source_rgb(0, 0, 0)
         textlayout = self.create_pango_layout(self.text)
+        if is_quartz():
+            PangoCairo.context_set_resolution(textlayout.get_context(), 72)
         textlayout.set_font_description(self.get_style().font_desc)
         textlayout.set_markup(self.text)
         PangoCairo.show_layout(context, textlayout)
@@ -335,20 +341,11 @@ class TimelinePedigreeView(NavigationView):
                                       PersonBookmarks,
                                       nav_group)
 
-        self.func_list = {
-            'F2' : self.kb_goto_home,
-            'F3' : self.kb_change_style,
-            'F4' : self.kb_change_direction,
-            'F6' : self.kb_plus_generation,
-            'F5' : self.kb_minus_generation,
-            '<CONTROL>J' : self.jump,
-            }
-
         self.dbstate = dbstate
         self.uistate = uistate
         self.dbstate.connect('database-changed', self.change_db)
 
-        self.additional_uis.append(self.additional_ui())
+        self.additional_uis.append(self.additional_ui)
 
         # Tree Dimensions
         self.generations_in_tree = [3, 4]
@@ -420,6 +417,10 @@ class TimelinePedigreeView(NavigationView):
         NavigationView.on_delete(self)
         self.cman.save()
 
+    def on_help_clicked(self, dummy):
+        """ Button: Display the relevant portion of Gramps manual"""
+        display_url(WIKI_PAGE)
+
     def change_page(self):
         """Called when the page changes."""
         NavigationView.change_page(self)
@@ -463,40 +464,91 @@ class TimelinePedigreeView(NavigationView):
 
         return self.scrolledwindow
 
-    def additional_ui(self):
-        """
-        Specifies the UIManager XML code that defines the menus and buttons
-        associated with the interface.
-        """
-        return '''<ui>
-          <menubar name="MenuBar">
-            <menu action="GoMenu">
-              <placeholder name="CommonGo">
-                <menuitem action="Back"/>
-                <menuitem action="Forward"/>
-                <separator/>
-                <menuitem action="HomePerson"/>
-                <separator/>
-              </placeholder>
-            </menu>
-            <menu action="EditMenu">
-              <menuitem action="FilterEdit"/>
-            </menu>
-            <menu action="BookMenu">
-              <placeholder name="AddEditBook">
-                <menuitem action="AddBook"/>
-                <menuitem action="EditBook"/>
-              </placeholder>
-            </menu>
-          </menubar>
-          <toolbar name="ToolBar">
-            <placeholder name="CommonNavigation">
-              <toolitem action="Back"/>
-              <toolitem action="Forward"/>
-              <toolitem action="HomePerson"/>
-            </placeholder>
-          </toolbar>
-        </ui>'''
+    additional_ui = [  # Defines the UI string for UIManager
+        '''
+      <placeholder id="CommonGo">
+      <section>
+        <item>
+          <attribute name="action">win.Back</attribute>
+          <attribute name="label" translatable="yes">_Back</attribute>
+        </item>
+        <item>
+          <attribute name="action">win.Forward</attribute>
+          <attribute name="label" translatable="yes">_Forward</attribute>
+        </item>
+      </section>
+      <section>
+        <item>
+          <attribute name="action">win.HomePerson</attribute>
+          <attribute name="label" translatable="yes">_Home</attribute>
+        </item>
+      </section>
+      </placeholder>
+''',
+        '''
+      <placeholder id='otheredit'>
+        <item>
+          <attribute name="action">win.FilterEdit</attribute>
+          <attribute name="label" translatable="yes">'''
+        '''Person Filter Editor</attribute>
+        </item>
+      </placeholder>
+''',
+        '''
+      <section id="AddEditBook">
+        <item>
+          <attribute name="action">win.AddBook</attribute>
+          <attribute name="label" translatable="yes">_Add Bookmark</attribute>
+        </item>
+        <item>
+          <attribute name="action">win.EditBook</attribute>
+          <attribute name="label" translatable="no">%s...</attribute>
+        </item>
+      </section>
+''' % _('Organize Bookmarks'),  # Following are the Toolbar items
+        '''
+    <placeholder id='CommonNavigation'>
+    <child groups='RO'>
+      <object class="GtkToolButton">
+        <property name="icon-name">go-previous</property>
+        <property name="action-name">win.Back</property>
+        <property name="tooltip_text" translatable="yes">'''
+        '''Go to the previous object in the history</property>
+        <property name="label" translatable="yes">_Back</property>
+        <property name="use-underline">True</property>
+      </object>
+      <packing>
+        <property name="homogeneous">False</property>
+      </packing>
+    </child>
+    <child groups='RO'>
+      <object class="GtkToolButton">
+        <property name="icon-name">go-next</property>
+        <property name="action-name">win.Forward</property>
+        <property name="tooltip_text" translatable="yes">'''
+        '''Go to the next object in the history</property>
+        <property name="label" translatable="yes">_Forward</property>
+        <property name="use-underline">True</property>
+      </object>
+      <packing>
+        <property name="homogeneous">False</property>
+      </packing>
+    </child>
+    <child groups='RO'>
+      <object class="GtkToolButton">
+        <property name="icon-name">go-home</property>
+        <property name="action-name">win.HomePerson</property>
+        <property name="tooltip_text" translatable="yes">'''
+        '''Go to the default person</property>
+        <property name="label" translatable="yes">_Home</property>
+        <property name="use-underline">True</property>
+      </object>
+      <packing>
+        <property name="homogeneous">False</property>
+      </packing>
+    </child>
+    </placeholder>
+    ''']
 
     def define_actions(self):
         """
@@ -513,12 +565,15 @@ class TimelinePedigreeView(NavigationView):
         """
         NavigationView.define_actions(self)
 
-        self._add_action('FilterEdit',  None, _('Person Filter Editor'),
-                        callback=self.filter_editor)
+        self._add_action('FilterEdit', self.filter_editor)
+        self._add_action('PRIMARY-J', self.jump, '<PRIMARY>J')
+        self._add_action('F2', self.kb_goto_home, 'F2')
+        self._add_action('F3', self.kb_change_style, 'F3')
+        self._add_action('F4', self.kb_change_direction, 'F4')
+        self._add_action('F5', self.kb_minus_generation, 'F5')
+        self._add_action('F6', self.kb_plus_generation, 'F6')
 
-    def filter_editor(self, obj):
-        from FilterEditor import FilterEditor
-
+    def filter_editor(self, *obj):
         try:
             FilterEditor('Person', CUSTOM_FILTERS,
                          self.dbstate, self.uistate)
@@ -709,8 +764,10 @@ class TimelinePedigreeView(NavigationView):
                 if marriagedate:
                     mDate = marriagedate.get_date_object()
                     bDate = self.Tree_EstimateBirth(BranchData[0])
-                    if bDate is not None and mDate is not None:
-                        timespan = bDate.to_calendar("gregorian").get_year() - mDate.to_calendar("gregorian").get_year()
+                    if(bDate is not None and not bDate.is_empty() and
+                       mDate is not None and not mDate.is_empty()):
+                        timespan = (bDate.to_calendar("gregorian").get_year() -
+                                    mDate.to_calendar("gregorian").get_year())
                         xvline = xBoxConnection - Direction * 11 * timespan
 
         # Move all relatives in this branch
@@ -738,7 +795,7 @@ class TimelinePedigreeView(NavigationView):
                     family = self.dbstate.db.get_family_from_handle(family_handle)
                     if family:
                         text = self.format_helper.format_relation( family, BoxSizes[4])
-            label = Gtk.Label(label=text)
+            label = Gtk.Label(label=text, tooltip_text=text)
             label.set_justify(Gtk.Justification.LEFT)
             label.set_line_wrap(True)
             label.set_alignment(0.1,0.5)
@@ -887,7 +944,7 @@ class TimelinePedigreeView(NavigationView):
 
         # Calculate lifespan
         lifespan = 0
-        if self.show_lifespan and person:
+        if self.show_lifespan and person and birthdate:
             death = get_death_or_fallback(self.dbstate.db, person)
             if death:
                 deathdate = death.get_date_object()
@@ -1042,7 +1099,7 @@ class TimelinePedigreeView(NavigationView):
 
         cr.restore()
 
-    def home(self, menuitem):
+    def home(self, *obj):
         """Change root person to default person for database."""
         defperson = self.dbstate.db.get_default_person()
         if defperson:
@@ -1350,26 +1407,26 @@ class TimelinePedigreeView(NavigationView):
         else:
             self.scroll_direction = False
 
-    def kb_goto_home(self):
+    def kb_goto_home(self, *obj):
         """Goto home person from keyboard."""
         self.home(None)
 
-    def kb_plus_generation(self):
+    def kb_plus_generation(self, *obj):
         """Increment size of tree from keyboard."""
         self.change_force_size_cb(None, self.force_size + 1)
 
-    def kb_minus_generation(self):
+    def kb_minus_generation(self, *obj):
         """Decrement size of tree from keyboard."""
         self.change_force_size_cb(None, self.force_size - 1)
 
-    def kb_change_style(self):
+    def kb_change_style(self, *obj):
         """Change style of tree from keyboard."""
         next_style = self.tree_style + 1
         if next_style > 2:
             next_style = 0
         self.change_tree_style_cb(None, next_style)
 
-    def kb_change_direction(self):
+    def kb_change_direction(self, *obj):
         """Change direction of tree from keyboard."""
         next_direction = self.tree_direction + 1
         if next_direction > 3:
@@ -1471,6 +1528,18 @@ class TimelinePedigreeView(NavigationView):
             AncestorSize_menu.append(entry)
 
         AncestorSize_menu.show()
+        item.show()
+        menu.append(item)
+
+        # Separator.
+        item = Gtk.SeparatorMenuItem()
+        item.show()
+        menu.append(item)
+
+        # Help menu entry
+        menu.append(item)
+        item = Gtk.MenuItem(label=_("About Timeline Pedigree View"))
+        item.connect("activate", self.on_help_clicked)
         item.show()
         menu.append(item)
 

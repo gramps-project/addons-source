@@ -720,10 +720,11 @@ class TmgTable(object):
         return '{} Tables Mapped'.format(len(self.tmgtables_ext))
 
     def tablemap(self):
-        '''
+        r'''
          assign table names to correct tables
 
-         create tmg tables dictionary and replace entries with the file path to the table
+         create tmg tables dictionary and replace entries with the file path to
+         the table
 
          eg:call it using:
            tmgtables['tmgPeople']
@@ -1242,8 +1243,9 @@ def importData(database, sqzfilename, user):
 ##################################################################################
             #Process TMG Project for import
             #------------------------------------------------------
-            trial_people(database, tmg_dataset)  # test import of names
-            trial_events(database, tmg_dataset)  # test import of events
+            print("Not working yet")
+            #trial_people(database, tmg_dataset)  # test import of names
+            #trial_events(database, tmg_dataset)  # test import of events
 
             ####-------Processing order----#TODO split to own file "TMGParser(dbase, user, ...)" see below
             #[1] notes

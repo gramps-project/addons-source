@@ -1,0 +1,258 @@
+# Russian translation for PluginManager Gramps addon.
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) 2001-2018 Free Software Foundation, Inc.
+#
+# Ivan Komaritsyn <vantu5z@mail.ru>, 2017-2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps50\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-12-26 14:43+0300\n"
+"PO-Revision-Date: 2018-12-26 14:45+0300\n"
+"Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"X-Generator: Gtranslator 2.91.7\n"
+
+#: PluginManager/PluginManager.gpr.py:29
+msgid "Plugin Manager Enhanced"
+msgstr "Расширенный менеджер дополнений"
+
+#: PluginManager/PluginManager.gpr.py:30
+msgid "An Addon/Plugin Manager with several additional capabilities"
+msgstr "Менеджер дополнений с расширенными возможностями"
+
+#: PluginManager/PluginManager.py:87
+msgid "Plugin Manager - Enhanced"
+msgstr "Менеджер дополнений - расширенный"
+
+#: PluginManager/PluginManager.py:144
+msgid "_Help"
+msgstr "_Справка"
+
+#: PluginManager/PluginManager.py:151
+msgid ""
+"Enter search words to filter the addons.\n"
+"All the words must be present somewhere in the row or\n"
+"the addon filename to be included in the search.\n"
+"Word case and order is ignored."
+msgstr ""
+"Введите слова для поиска дополнений.\n"
+"Каждое слово должно присутствовать где-то в строке\n"
+"или в имени файла.\n"
+"Регистр и порядок слов неважен."
+
+#: PluginManager/PluginManager.py:155
+msgid "Search..."
+msgstr "Поиск..."
+
+#: PluginManager/PluginManager.py:161
+msgid "Check for updated addons now"
+msgstr "Проверить дополнения на наличие обновлений"
+
+#: PluginManager/PluginManager.py:168
+msgid "Reload"
+msgstr "Перезагрузить"
+
+#: PluginManager/PluginManager.py:174 PluginManager/PluginManager.py:734
+msgid "_Close"
+msgstr "_Закрыть"
+
+#: PluginManager/PluginManager.py:207
+msgid "Restart..."
+msgstr "Перезапустить..."
+
+#: PluginManager/PluginManager.py:208
+msgid ""
+"Please Restart Gramps so that your addon changes can be safely completed."
+msgstr "Перезапустите Gramps, чтобы применить изменения в дополнении."
+
+#: PluginManager/PluginManager.py:284
+msgid "Id"
+msgstr "Id"
+
+#: PluginManager/PluginManager.py:285
+msgid "Plugin name"
+msgstr "Название модуля расширения"
+
+#: PluginManager/PluginManager.py:286 PluginManager/PluginManager.py:457
+msgid "Description"
+msgstr "Описание"
+
+#: PluginManager/PluginManager.py:287
+msgid "Version"
+msgstr "Версия"
+
+#: PluginManager/PluginManager.py:288
+msgid "Authors"
+msgstr "Авторы"
+
+#: PluginManager/PluginManager.py:289
+msgid "Email"
+msgstr "Эл. почта"
+
+#: PluginManager/PluginManager.py:290
+msgid "Filename"
+msgstr "Имя файла"
+
+#: PluginManager/PluginManager.py:291
+msgid "Location"
+msgstr "Расположение"
+
+#: PluginManager/PluginManager.py:296
+msgid "Loaded"
+msgstr "Загружен"
+
+#: PluginManager/PluginManager.py:299
+msgid "Hidden"
+msgstr "Скрытый"
+
+#: PluginManager/PluginManager.py:304 PluginManager/PluginManager.py:698
+msgid "Failed"
+msgstr "Неудачно"
+
+#: PluginManager/PluginManager.py:377
+msgid "Installation Errors"
+msgstr "Ошибки при установке"
+
+#: PluginManager/PluginManager.py:378
+msgid "The following addons had errors: "
+msgstr "Следующие дополнения имели ошибки: "
+
+#: PluginManager/PluginManager.py:400
+msgid "Error"
+msgstr "Ошибка"
+
+#: PluginManager/PluginManager.py:401
+#, python-format
+msgid "Error removing the '%s' directory, The uninstall may have failed"
+msgstr "Ошибка удаления каталога '%s', при удалении дополнения возникли ошибки"
+
+#: PluginManager/PluginManager.py:429
+msgid "Type"
+msgstr "Тип"
+
+#: PluginManager/PluginManager.py:438
+msgid "Status"
+msgstr "Статус"
+
+#: PluginManager/PluginManager.py:441
+msgid ""
+"'*' items are supplied by 3rd party authors,\n"
+"<s>strikeout</s> items are hidden"
+msgstr ""
+"'*' дополнения поддерживаются сторонними авторами,\n"
+"<s>зачёркнутые</s> дополнения скрыты"
+
+#: PluginManager/PluginManager.py:449
+msgid "Name"
+msgstr "Название"
+
+#: PluginManager/PluginManager.py:472
+msgid "Info"
+msgstr "Информация"
+
+#: PluginManager/PluginManager.py:475 PluginManager/PluginManager.py:585
+msgid "Hide"
+msgstr "Скрыть"
+
+#: PluginManager/PluginManager.py:478 PluginManager/PluginManager.py:599
+msgid "Install"
+msgstr "Установить"
+
+#: PluginManager/PluginManager.py:481
+msgid "Edit"
+msgstr "Изменить"
+
+#: PluginManager/PluginManager.py:483
+msgid "Load"
+msgstr "Загрузить"
+
+#: PluginManager/PluginManager.py:494
+msgid "Show hidden items"
+msgstr "Показать скрытые дополнения"
+
+#: PluginManager/PluginManager.py:502
+msgid "Show Built-in items"
+msgstr "Показать встроенные дополнения"
+
+#: PluginManager/PluginManager.py:509
+msgid "* indicates 3rd party addon"
+msgstr "* обозначает сторонние дополнения"
+
+#: PluginManager/PluginManager.py:514
+msgid "Plugins"
+msgstr "Дополнения"
+
+#: PluginManager/PluginManager.py:583
+msgid "Unhide"
+msgstr "Показать"
+
+#: PluginManager/PluginManager.py:602
+msgid "Uninstall"
+msgstr "Удалить"
+
+#: PluginManager/PluginManager.py:612
+msgid "Checking Addons Failed"
+msgstr "Не удалось проверить дополнения"
+
+#: PluginManager/PluginManager.py:613
+msgid "The addon repository appears to be unavailable. Please try again later."
+msgstr ""
+"Сервер с дополнениями временно недоступен. Пожалуйста, попробуйте ещё раз "
+"позднее."
+
+#: PluginManager/PluginManager.py:627
+msgid ""
+"3rd party addons are not shown until the addons update list is downloaded.  "
+"Would you like to check for updated addons now?"
+msgstr ""
+"Сторонние дополнения будут показаны после загрузки списка обновлений. "
+"Желаете проверить наличие обновлений сейчас?"
+
+#: PluginManager/PluginManager.py:630
+msgid "Yes"
+msgstr "Да"
+
+#: PluginManager/PluginManager.py:630
+msgid "No"
+msgstr "Нет"
+
+#: PluginManager/PluginManager.py:673
+msgid "*Available"
+msgstr "*Доступно"
+
+#: PluginManager/PluginManager.py:687
+msgid "Built-in"
+msgstr "Встроено"
+
+#: PluginManager/PluginManager.py:692
+msgid "*Installed"
+msgstr "*Установлено"
+
+#: PluginManager/PluginManager.py:701
+msgid "Update Available"
+msgstr "Доступно обновление"
+
+#: PluginManager/PluginManager.py:728
+#, python-format
+msgid "%(str1)s: %(str2)s"
+msgstr "%(str1)s: %(str2)s"
+
+#: PluginManager/PluginManager.py:728
+msgid "Detailed Info"
+msgstr "Подробная информация"
+
+#: PluginManager/PluginManager.py:827
+msgid "Updated"
+msgstr "Обновлено"
+
+#: PluginManager/PluginManager.py:838
+msgid "updates|New"
+msgstr "Новые"

@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-21 14:49+0200\n"
+"POT-Creation-Date: 2018-04-21 23:18+0200\n"
 "PO-Revision-Date: 2013-09-20 22:59+0200\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -32,22 +32,22 @@ msgstr "DE Web Connect Pack"
 msgid "Collection of Web sites for the DE (requires libwebconnect)"
 msgstr "Sammlung von Webseiten für DE (benötigt libwebconnect)"
 
-#: DEWebConnectPack/DEWebPack.py:39
+#: DEWebConnectPack/DEWebPack.py:37
 msgid "Bielefeld Academic Search"
 msgstr "Suchmaschine BASE (Bielefeld Academic Search Engine)"
 
-#: DEWebConnectPack/DEWebPack.py:41
+#: DEWebConnectPack/DEWebPack.py:39
 msgid "FamilySearch.org"
 msgstr "FamilySearch.org"
 
-#: DEWebConnectPack/DEWebPack.py:44
+#: DEWebConnectPack/DEWebPack.py:42
 msgid "Google Archives"
 msgstr "Google Archiv"
 
-#: DEWebConnectPack/DEWebPack.py:45
+#: DEWebConnectPack/DEWebPack.py:43
 msgid "DE Google"
 msgstr "DE Google"
 
-#: DEWebConnectPack/DEWebPack.py:46
+#: DEWebConnectPack/DEWebPack.py:44
 msgid "Open Library"
 msgstr "Die freie Bibliothek"

@@ -14,7 +14,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 # $Id$
 #
@@ -70,13 +70,12 @@ class MediaBrowser(Gramplet):
         self.set_has_data(self.get_has_data(active))
 
     def main(self):
-        active_handle = self.get_active('Person')
-        active = self.dbstate.db.get_person_from_handle(active_handle)
-
         self.model.clear()
         self.photo.set_image(None)
-        if active:
-            self.display_data(active)
+        active_handle = self.get_active('Person')
+        if self.dbstate.db.has_person_handle(active_handle):
+            self.display_data(self.dbstate.db.get_person_from_handle(
+                active_handle))
         else:
             self.set_has_data(False)
 

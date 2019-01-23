@@ -18,7 +18,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
 # $Id: $
@@ -102,7 +102,8 @@ class ChangeGivenNames(tool.BatchTool, ManagedWindow):
 
         given_name_dict = self.get_given_name_dict()
 
-        self.progress = ProgressMeter(_('Checking Given Names'),'')
+        self.progress = ProgressMeter(_('Checking Given Names'),'',
+                                      parent=uistate.window)
         self.progress.set_pass(_('Searching given names'),
                                len(given_name_dict.keys()))
         self.name_list = []
@@ -151,7 +152,7 @@ class ChangeGivenNames(tool.BatchTool, ManagedWindow):
             path = base + "/changenames.glade"
             self.glade.add_from_file(path)
 
-            from gi.repository import GObject
+            #from gi.repository import GObject
             GObject.GObject.__init__(self.glade)
 
             self.top = self.glade.get_object('changenames')
@@ -263,7 +264,7 @@ class ChangeGivenNames(tool.BatchTool, ManagedWindow):
                         fname = capitalize(name.first_name)
                         name.set_first_name(fname)
                 if change:
-                    self.db.commit_person(person, transaction=self.trans)
+                    self.db.commit_person(person, self.trans)
 
         self.db.enable_signals()
         self.db.request_rebuild()

@@ -15,7 +15,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 # $Id$
 
@@ -418,7 +418,6 @@ class NoteCleanup(tool.Tool, ManagedWindow):
             note = self.db.get_note_from_handle(handle)
             g_id = note.gramps_id
             stext = note.get_styledtext()
-            handle = handle.decode('utf-8')
             optype = -1
             ## find the notes and do cleanup
             if not stext.tags:

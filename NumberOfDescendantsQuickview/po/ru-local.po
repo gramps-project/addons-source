@@ -1,0 +1,70 @@
+# Russian translation for NumberOfDescendantsQuickview
+# This file is distributed under the same license as the Gramps package.
+#
+# Ivan Komaritsyn <vantu5z@mail.ru>, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps50\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-12-05 13:25+0300\n"
+"PO-Revision-Date: 2018-12-05 13:44+0300\n"
+"Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Gtranslator 2.91.7\n"
+"X-Poedit-Language: Russian\n"
+"X-Poedit-Country: RUSSIAN FEDERATION\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:3
+msgid "Number of descendants"
+msgstr "Количество потомков"
+
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:4
+msgid "Shows the number of descendants of the current person"
+msgstr "Показывает количество потомков для выбранного лица"
+
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:62
+#, python-format
+msgid "Number of %s's descendants"
+msgstr "Количество потомков для %s"
+
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:87
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:94
+msgid "Generation"
+msgstr "Поколение"
+
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:88
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:95
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:111
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:115
+msgid "Total"
+msgstr "Всего"
+
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:89
+msgid "Seen"
+msgstr "Увиденные"
+
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:90
+msgid "Outlived"
+msgstr "Пережитые"
+
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:91
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:96
+msgid "Now alive"
+msgstr "Живые сейчас"
+
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:122
+#, python-format
+msgid "Seen = number of descendants whose birth %s has lived to see"
+msgstr "Увиденные - количество потомков которые родились за время жизни %s"
+
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:124
+#, python-format
+msgid "Outlived = number of descendants who died while %s was still alive"
+msgstr "Пережитые - количество потомков которые умерли за время жизни %s"

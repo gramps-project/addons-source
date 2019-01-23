@@ -16,7 +16,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
 # $Id $
@@ -31,7 +31,7 @@ id    = 'libaccess',
 name  = "Generic DB Access lib",
 description =  _("Provides a library for generic access to "
                  "the database and gen.lib."),
-version = '1.0.23',
+version = '1.0.26',
 gramps_target_version = "5.1",
 status = STABLE, # not yet tested with python 3
 fname = 'libaccess.py',

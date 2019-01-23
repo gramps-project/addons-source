@@ -17,7 +17,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
 # $Id$
@@ -255,6 +255,7 @@ class CalcToolManagedWindow(PluginWindows.ToolManagedWindowBatch):
                 self.results_write(_("Removing old estimations... "))
                 self.progress.set_pass((_("Removing '%s'...") % source_text),
                                        num_people)
+                supdate = None
                 for person_handle in people:
                     self.progress.step()
                     pupdate = 0
@@ -268,8 +269,9 @@ class CalcToolManagedWindow(PluginWindows.ToolManagedWindowBatch):
                             #print "birth handle:", source_handle
                             source = self.db.get_source_from_handle(source_handle)
                             if source:
-                                #print "birth source:", source, source.get_title()
                                 if source.get_title() == source_text:
+                                    #print("birth event removed from:",
+                                    #      person.gramps_id)
                                     person.set_birth_ref(None)
                                     person.remove_handle_references('Event',[birth_ref.ref])
                                     # remove note
@@ -279,8 +281,10 @@ class CalcToolManagedWindow(PluginWindows.ToolManagedWindowBatch):
                                     for (obj_type, note_handle) in note_list:
                                         self.db.remove_note(note_handle, self.trans)
                                     self.db.remove_event(birth_ref.ref, self.trans)
-                                    self.db.commit_source(source, self.trans)
+                                    self.db.remove_citation(citation_handle,
+                                                            self.trans)
                                     pupdate = 1
+                                    supdate = source  # found the source.
                                     break
                     death_ref = person.get_death_ref()
                     if death_ref:
@@ -291,27 +295,30 @@ class CalcToolManagedWindow(PluginWindows.ToolManagedWindowBatch):
                             #print "death handle:", source_handle
                             source = self.db.get_source_from_handle(source_handle)
                             if source:
-                                #print "death source:", source, source.get_title()
                                 if source.get_title() == source_text:
+                                    #print("death event removed from:",
+                                    #      person.gramps_id)
                                     person.set_death_ref(None)
                                     person.remove_handle_references('Event',[death_ref.ref])
                                     # remove note
                                     note_list = death.get_referenced_note_handles()
-                                    birth.remove_handle_references('Note',
+                                    death.remove_handle_references('Note',
                                       [note_handle for (obj_type, note_handle) in note_list])
                                     for (obj_type, note_handle) in note_list:
                                         self.db.remove_note(note_handle, self.trans)
                                     self.db.remove_event(death_ref.ref, self.trans)
-                                    self.db.commit_source(source, self.trans)
+                                    self.db.remove_citation(citation_handle,
+                                                            self.trans)
                                     pupdate = 1
+                                    supdate = source  # found the source.
                                     break
                     if pupdate == 1:
                         self.db.commit_person(person, self.trans)
-                if source:
-                    self.db.remove_source(source.handle, self.trans)
-                self.results_write(_("done!\n"))
-                self.db.enable_signals()
-                self.db.request_rebuild()
+                if supdate:
+                    self.db.remove_source(supdate.handle, self.trans)
+            self.results_write(_("done!\n"))
+            self.db.enable_signals()
+            self.db.request_rebuild()
         if add_birth or add_death:
             self.results_write(_("Selecting... \n\n"))
             self.progress.set_pass(_('Selecting...'),
@@ -391,7 +398,6 @@ class CalcToolManagedWindow(PluginWindows.ToolManagedWindowBatch):
                 self.results_write(_("No events to be added."))
                 self.results_write("\n")
         self.results_write("\n")
-        self.progress.close()
         self.set_current_frame(_("Select"))
 
     def make_button(self, text, function, widget):
@@ -447,11 +453,14 @@ class CalcToolManagedWindow(PluginWindows.ToolManagedWindowBatch):
                 date2 = row_data[4] # date
                 evidence = row_data[5] # evidence
                 other = row_data[6] # other person
+                if other:
+                    other_name = self.sdb.name(other)
+                else:
+                    other_name = None
                 add_birth_event, add_death_event = self.action[person.handle]
                 birth_ref = person.get_birth_ref()
                 death_ref = person.get_death_ref()
                 if not birth_ref and add_birth_event:
-                    other_name = self.sdb.name(other)
                     if other_name:
                         explanation = _("Added birth event based on %(evidence)s, from %(name)s") % {
                             'evidence' : evidence, 'name' : other_name }
@@ -467,7 +476,6 @@ class CalcToolManagedWindow(PluginWindows.ToolManagedWindowBatch):
                     pupdate = True
                     count += 1
                 if not death_ref and add_death_event:
-                    other_name = self.sdb.name(other)
                     if other_name:
                         explanation = _("Added death event based on %(evidence)s, from %(person)s") % {
                         'evidence' : evidence, 'person' : other_name }
@@ -484,13 +492,13 @@ class CalcToolManagedWindow(PluginWindows.ToolManagedWindowBatch):
                     count += 1
                 if pupdate:
                     self.db.commit_person(person, self.trans)
-            self.results_write(_(" Done! Committing..."))
-            self.results_write("\n")
-            self.db.enable_signals()
-            self.db.request_rebuild()
-            self.results_write(_("Added %d events.") % count)
-            self.results_write("\n\n")
-            self.progress.close()
+        self.results_write(_(" Done! Committing..."))
+        self.results_write("\n")
+        self.db.enable_signals()
+        self.db.request_rebuild()
+        self.results_write(_("Added %d events.") % count)
+        self.results_write("\n\n")
+        self.progress.close()
 
     def get_modifier(self, event_type):
         setting = self.options.handler.options_dict['dates']

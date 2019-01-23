@@ -14,7 +14,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
 #------------------------------------------------------------------------
@@ -56,7 +56,7 @@ def exportData(db, filename,
         fp.write("grandparent(X, Y) :- parent(X, Z), parent(Z, Y).\n")
         fp.write("ancestor(X, Y) :- parent(X, Y).\n")
         fp.write("ancestor(X, Y) :- parent(X, Z), ancestor(Z, Y).\n")
-        fp.write("sibling(X, Y) :- parent(Z, X), parent(Z, Y), X \= Y.\n")
+        fp.write("sibling(X, Y) :- parent(Z, X), parent(Z, Y), X \\= Y.\n")
 
         # ---------------------------------
         # Notes

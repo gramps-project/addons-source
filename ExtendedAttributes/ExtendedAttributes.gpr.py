@@ -15,7 +15,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
 # $Id$
@@ -30,13 +30,13 @@ register(GRAMPLET,
          id="Extended Person Attributes",
          name=_("Extended Person Attributes"),
          description = _("Gramplet showing the attributes of a person"),
-         version = '1.0.20',
+         version = '1.0.26',
          gramps_target_version="5.1",
          status = STABLE, # not yet tested with python 3
          fname="ExtendedAttributes.py",
          height=200,
          gramplet = 'ExtendedPersonAttributes',
-         gramplet_title=_("Attributes"),
+         gramplet_title=_("Extended Attributes"),
          navtypes=["Person"],
          )
 
@@ -44,12 +44,12 @@ register(GRAMPLET,
          id="Extended Family Attributes",
          name=_("Extended Family Attributes"),
          description = _("Gramplet showing the attributes of a family"),
-         version = '1.0.20',
+         version = '1.0.26',
          gramps_target_version="5.1",
          status = STABLE, # not yet tested with python 3
          fname="ExtendedAttributes.py",
          height=200,
          gramplet = 'ExtendedFamilyAttributes',
-         gramplet_title=_("Attributes"),
+         gramplet_title=_("Extended Attributes"),
          navtypes=["Family"],
          )

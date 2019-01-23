@@ -14,7 +14,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
 """
@@ -865,7 +865,7 @@ class DetailedDescendantBookReport(Report):
 
         if self.inc_attrs:
             text = ""
-            attr_list = event.get_attribute_list()
+            attr_list = event.get_attribute_list()[:]  # we don't want to modify cached original
             attr_list.extend(event_ref.get_attribute_list())
             for attr in attr_list:
                 if text:
@@ -883,7 +883,7 @@ class DetailedDescendantBookReport(Report):
         if self.inc_notes:
             # if the event or event reference has a note attached to it,
             # get the text and format it correctly
-            notelist = event.get_note_list()
+            notelist = event.get_note_list()[:]  # we don't want to modify cached original
             notelist.extend(event_ref.get_note_list())
             for notehandle in notelist:
                 note = self.database.get_note_from_handle(notehandle)

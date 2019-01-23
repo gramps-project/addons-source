@@ -20,37 +20,37 @@ Once you use the comands below the version number will be incremented and the re
 files will be in the second addon repository to be commited.
 
 Examples:
-* Creates the initial addon-source directories for the addon.
+* Creates the initial addon-source directories and .pot file for the addon.
 ```
-python make.py gramps42 init AddonDirectory
+python3 make.py gramps50 init AddonDirectory
 ```
 
 * Creates the initial empty `AddonDirectory/po/fr-local.po` file for the addon.
 ```
-python make.py gramps42 init AddonDirectory fr
+python3 make.py gramps50 init AddonDirectory fr
 ```
 
 * Updates `AddonDirectory/po/fr-local.po` with the latest translations.
 ```
-python make.py gramps42 update AddonDirectory fr
+python3 make.py gramps50 update AddonDirectory fr
 ```
 
 * Build `../download/AddonDirectory.addon.tgz`
 ```
-python make.py gramps42 build AddonDirectory
+python3 make.py gramps50 build AddonDirectory
 ```
 
 * Create or update the listing entry for your addon
 ```
-python make.py gramps42 listing AddonDirectory
+python3 make.py gramps50 listing AddonDirectory
 ```
 
 Valid command summary
 =====================
 
-* **clean** - Removes all of the strings(template.pot/ locale etc) from the addon
+* **clean** - Removes unnecessary files(locale etc) from the addon
 
-* **init** - Get all of the strings from the addon and create template.po
+* **init** [subcomand: **all**] - Get all of the strings from the addon and create template.po
 
 * **update** - Updates the template.po file
 
@@ -67,5 +67,7 @@ Valid command summary
 * **check** - Checks if the addon listing matches the addon download version or if missing from the listing
 
 * **listing** [subcomand: **all**] - Builds/Creates a listing for the addon in each supported language
+
+* **as-needed** [no other parameters] - Builds/Lists/Cleans only out of date addons in one step
 
 

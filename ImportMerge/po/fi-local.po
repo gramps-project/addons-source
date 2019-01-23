@@ -1,0 +1,309 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 5.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-08-10 08:27-0500\n"
+"PO-Revision-Date: 2018-10-02 16:18+0300\n"
+"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"Language-Team: Suomi <niememat@gmail.com>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.0.6\n"
+
+msgid ""
+"A '*' indicates that the action was automarked, a '?' indicates a conflict "
+"between automarks."
+msgstr ""
+"Merkki '*' osoittaa, että toiminta on merkitty automaattisesti. '?' Osoittaa "
+"ristiriitaa automaattisessa merkinnässä."
+
+msgid "Action"
+msgstr "Toiminta"
+
+msgid "Add"
+msgstr "Liitä"
+
+# Lisää tuonti
+msgid "Add Import"
+msgstr "Lisätään tuonnista"
+
+# Jisätty
+msgid "Added"
+msgstr "Lisätään"
+
+msgid "Automark Families"
+msgstr "Automaattisesti merkityt perheet"
+
+msgid "Automark Parent Families"
+msgstr "Automaattisesti merkattujen vanhempien perheet"
+
+msgid "Citation"
+msgstr "Lainaus"
+
+msgid "Close _without saving"
+msgstr "Sulje _tallentamatta"
+
+msgid ""
+"Compares a Gramps XML database with the current one, and allows merging of "
+"the differences."
+msgstr ""
+"Vertaa Gramps XML -tietokantaa nykyiseen ja mahdollistaa erojen yhdistämisen."
+
+msgid ""
+"Data item details, showing the current treeitem, imported tree item, and "
+"result (when chosen)."
+msgstr ""
+"Tietoja kohteen yksityiskohdista, joka näyttää nykyisen sukupuun kohteen, "
+"tuodun sukupuun kohteen ja tuloksen (kun se on valittu)."
+
+msgid "Delete"
+msgstr "Poista"
+
+msgid "Delete original"
+msgstr "Poista alkuperäinen"
+
+msgid "Differences"
+msgstr "Erot"
+
+msgid "Different"
+msgstr "Erilainen"
+
+msgid "Done"
+msgstr "Valmis"
+
+msgid "Edit Import"
+msgstr "Muokkaa tuontia"
+
+msgid "Event"
+msgstr "Tapahtuma"
+
+msgid "Family"
+msgstr "Perhe"
+
+msgid "Help"
+msgstr "Ohjeet"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "If you close without saving, the changes you have made will be lost"
+msgstr "Jos suljet tallentamatta, tehdyt muutokset menetetään"
+
+msgid "Ignore"
+msgstr "Ohita"
+
+msgid "Import Failure"
+msgstr "Tuonti epäonnistui"
+
+msgid "Import and Merge"
+msgstr "Tuo ja yhdistä"
+
+msgid "Import and Merge tool"
+msgstr "Tuo ja yhdistä työkalu"
+
+msgid "Import and merge a Gramps XML"
+msgstr "Tuo ja yhdistä Gramps XML"
+
+msgid "Import file"
+msgstr "Tuo tiedosto"
+
+msgid "Imported"
+msgstr "Tuotu"
+
+msgid "Importing data..."
+msgstr "Tuodaan tietoja ..."
+
+# Säilytä alkuperäinen
+msgid "Keep original"
+msgstr "Säilytetään alkuperäinen"
+
+msgid "Last changed"
+msgstr "Viimeksi muutettu"
+
+msgid "Media"
+msgstr "Media"
+
+msgid "Merge Import"
+msgstr "Yhdistä tuonnista"
+
+msgid "Merge Original"
+msgstr "Yhdistä alkuperäisestä"
+
+# Yhdistä tuontiin
+msgid "Merge into import"
+msgstr "Yhdistetään tuonnista"
+
+# Yhdistä alkuperäiseen
+msgid "Merge into original"
+msgstr "Ydistetään alkuperäisestä"
+
+msgid "Missing"
+msgstr "Puuttuva"
+
+msgid "Note"
+msgstr "Huomautus"
+
+msgid "Object"
+msgstr "Kohde"
+
+msgid "Object Name/Description"
+msgstr "Kohteen nimi/kuvaus"
+
+msgid "Object and item"
+msgstr "Kohde ja nimike"
+
+msgid "Original"
+msgstr "Alkuperäinen"
+
+msgid "Person"
+msgstr "Henkilö"
+
+msgid "Place"
+msgstr "Paikka"
+
+msgid "Processing..."
+msgstr "Käsitellään..."
+
+msgid "Replace"
+msgstr "Korvaa"
+
+msgid "Replace with import"
+msgstr "Korvaa tuonnilla"
+
+msgid "Repository"
+msgstr "Arkisto"
+
+msgid "Result  "
+msgstr "Tulos "
+
+msgid "Save Changes?"
+msgstr "Talleta muutokset?"
+
+msgid "Searching..."
+msgstr "Haetaan..."
+
+msgid "Select the difference you wish to examine."
+msgstr "Valitse ero, jota haluat tarkastella."
+
+msgid "Show more details"
+msgstr "Näytä lisää tietoja"
+
+msgid "Source"
+msgstr "Lähde"
+
+msgid "Status"
+msgstr "Tila"
+
+msgid "Tag"
+msgstr "Tagi"
+
+msgid ""
+"The import data will entirely replace the data in your tree.  Any referenced "
+"items were also marked for replacement or removal."
+msgstr ""
+"Tuontitiedot korvaavat kokonaan sukupuun tiedot. Kaikki kohteet on merkitty "
+"vaihdettavaksi tai poistettavaksi."
+
+msgid "This button will add the imported data as a new object to your tree."
+msgstr "Painike lisää tuodut tiedot uusiksi kohteiksi sukupuuhusi."
+
+msgid ""
+"This button will bring up a dialog allowing you to finalize your changes, or "
+"abandon them."
+msgstr ""
+"Painikkeella avataan valintaikkunan, jonka avulla voit viimeistellä tai "
+"hylätä muutokset."
+
+msgid ""
+"This button will edit the imported data.  The data will still need to be "
+"merged, added or replaced."
+msgstr ""
+"Painikkeella muokataan tuotuja tietoja. Tiedot on vielä yhdistettävä, "
+"lisättävä tai vaihdettava."
+
+msgid "This button will ignore the difference, no changes to your tree."
+msgstr "Painikkeella ohitetaan erot, ei muutoksia sukupuuhusi."
+
+msgid ""
+"This button will merge the imported data into your tree with the imported "
+"data as a base."
+msgstr "Painike yhdistää tuodut tiedot sukupuuhun, pohjana tuodut tiedot."
+
+msgid ""
+"This button will merge the imported data into your tree with your tree data "
+"as a base."
+msgstr "Painike yhdistää tuodut tiedot sukupuuhun, pohjana sukupuusi tiedot."
+
+msgid "This button will replace your tree data with the imported data."
+msgstr "Painikkeella korvataan sukupuusi tiedot tuodulla tiedolla."
+
+msgid ""
+"This item will be added to your tree.  Any referenced items were also marked "
+"for adding."
+msgstr ""
+"Tämä kohde lisätään puuhusi. Kaikki kohteet on merkitty myös lisättäväksi."
+
+msgid ""
+"This item will be deleted from your tree.  Any referenced items were also "
+"marked for deletion."
+msgstr ""
+"Tämä kohde poistetaan sukupuusta. Kaikki merkatut kohteet on myös merkitty "
+"poistettavaksi."
+
+msgid ""
+"This item will be merged, saving data from your tree.  Any referenced items "
+"were also marked for merging or adding."
+msgstr ""
+"Tämä kohta yhdistetään tallentamalla tietoja sukupuustasi. Kaikki viitatut "
+"kohteet merkittiin myös yhdistämiseen tai lisäämiseen."
+
+msgid ""
+"This item will be merged, using data from the import.  Any referenced items "
+"were also marked for merging or adding."
+msgstr ""
+"Tämä merkintä yhdistetään, käyttäen tuotuja tietoja. Kaikki kohteet "
+"merkittiin myös yhdistämiseksi tai lisäämiseksi."
+
+msgid ""
+"This item will not be changed in your tree.  Any referenced items were also "
+"marked for Ignore."
+msgstr ""
+"Tätä kohtaa ei muuteta puussa. Kaikki viittaamattomat kohteet merkittiin "
+"myös ohitettavaksi."
+
+msgid ""
+"This item will not be changed in your tree.  Any referenced items were also "
+"marked to keep."
+msgstr ""
+"Tätä kohtaa sukupuussa ei muuteta. Kaikki viitatut kohteet oli myös merkitty "
+"pidettäväksi."
+
+msgid "Unmark"
+msgstr "Poista merkintä"
+
+msgid ""
+"Use buttons below to set the 'Action' for each difference.  No changes will "
+"be made to your tree until you press 'Done' and confirm."
+msgstr ""
+"Käytä alla olevia painikkeita asettaaksesi \"Toiminto\" jokaiselle erolle. "
+"Puuhun ei tehdä muutoksia, ennen kuin painat Valmis ja vahvistat."
+
+msgid "Your Tree and import are the same."
+msgstr "Puu ja tuonti ovat samat."
+
+msgid "_Cancel"
+msgstr "_Peruuta"
+
+msgid "_Save"
+msgstr "_Tallenna"
+
+# tuotu
+msgid "imported "
+msgstr "tuodaan "
+
+# sukupuusi
+msgid "your tree "
+msgstr "sukupuun "

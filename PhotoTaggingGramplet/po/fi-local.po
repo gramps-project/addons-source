@@ -1,0 +1,154 @@
+# Finnish translation for addons-gramps package.
+# This file is distributed under the same license as the addons-gramps package.
+# translation of fi.po to Finnish
+# Matti Niemelä <niememat@gmail.com>, 2018
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PhotoTagging\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-11-23 12:05+0200\n"
+"PO-Revision-Date: 2018-11-23 14:51+0200\n"
+"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"Language-Team: suomenkieli\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.6\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: PhotoTaggingGramplet.gpr.py:3 PhotoTaggingGramplet.gpr.py:11
+msgid "Photo Tagging"
+msgstr "Valokuvien merkintä"
+
+#: PhotoTaggingGramplet.gpr.py:4
+msgid "Gramplet for tagging people in photos"
+msgstr "Gramplet henkilöiden merkintään valokuvissa"
+
+#: PhotoTaggingGramplet.py:118
+msgid "Selection"
+msgstr "Valinta"
+
+#: PhotoTaggingGramplet.py:120
+msgid "Replace existing references to the person being assigned without asking"
+msgstr "Korvaa nykyiset viittaukset määrittämääsi henkilöön kysymättä"
+
+#: PhotoTaggingGramplet.py:127
+msgid "Face detection"
+msgstr "Kasvojentunnistus"
+
+#: PhotoTaggingGramplet.py:130
+msgid "Minimum face width (px)"
+msgstr "Kasvojen minimileveys (px)"
+
+#: PhotoTaggingGramplet.py:132
+msgid "Minimum face height (px)"
+msgstr "Kasvojen minimikorkeus (px)"
+
+#: PhotoTaggingGramplet.py:135
+msgid "Detect faces inside existing boxes"
+msgstr "Tunnista kasvot nykyisissä laatikoissa"
+
+#: PhotoTaggingGramplet.py:137
+msgid "Sensitivity (1 min .. 20 max)"
+msgstr "Herkkyys (1 min .. 20 max)"
+
+#: PhotoTaggingGramplet.py:271 PhotoTaggingGramplet.py:732
+msgid "Select Person"
+msgstr "Valitse henkilö"
+
+#: PhotoTaggingGramplet.py:272
+msgid "Add Person"
+msgstr "Lisää henkilö"
+
+#: PhotoTaggingGramplet.py:273
+msgid "Clear Reference"
+msgstr "Tyhjennä viittaus"
+
+#: PhotoTaggingGramplet.py:274
+msgid "Remove Selection"
+msgstr "Poista valinta"
+
+#: PhotoTaggingGramplet.py:275
+msgid "Edit referenced Person"
+msgstr "Muokkaa viitattua henkilöä"
+
+#: PhotoTaggingGramplet.py:276
+msgid "Zoom In"
+msgstr "Lähennä"
+
+#: PhotoTaggingGramplet.py:277
+msgid "Zoom Out"
+msgstr "Loitonna"
+
+#: PhotoTaggingGramplet.py:280
+msgid "Detect faces"
+msgstr "Tunnista kasvot"
+
+#: PhotoTaggingGramplet.py:282
+msgid "Detect faces (OpenCV module required)"
+msgstr "Tunnista kasvot (OpenCV-moduuli vaaditaan)"
+
+#: PhotoTaggingGramplet.py:285 PhotoTaggingGramplet.py:794
+msgid "Settings"
+msgstr "Asetukset"
+
+#: PhotoTaggingGramplet.py:333
+msgid "Preview"
+msgstr "Esikatselu"
+
+#: PhotoTaggingGramplet.py:334
+msgid "Person"
+msgstr "Henkilö"
+
+#: PhotoTaggingGramplet.py:450
+msgid "Set as active person"
+msgstr "Aseta aktiiviseksi henkilöksi"
+
+#: PhotoTaggingGramplet.py:453
+msgid "_Select"
+msgstr "_Valitse"
+
+#: PhotoTaggingGramplet.py:456
+msgid "_Add"
+msgstr "_Lisää"
+
+#: PhotoTaggingGramplet.py:459
+msgid "_Clear"
+msgstr "_Tyhjennä"
+
+#: PhotoTaggingGramplet.py:462
+msgid "_Remove"
+msgstr "_Poista"
+
+#: PhotoTaggingGramplet.py:609
+#, python-format
+msgid "Edit Person (%s)"
+msgstr "Muokkaa henkilöä (%s)"
+
+#: PhotoTaggingGramplet.py:665
+#, python-brace-format
+msgid "Replace to {0}"
+msgstr "Vaihda henkilöksi {0}"
+
+#: PhotoTaggingGramplet.py:764
+msgid "Detecting faces..."
+msgstr "Kasvojentunnistus..."
+
+#: PhotoTaggingGramplet.py:789
+msgid "Detection finished"
+msgstr "Kasvojentunnistus valmis"
+
+#: PhotoTaggingGramplet.py:839
+#, python-brace-format
+msgid "Another region of this image is associated with {name}. Remove it?"
+msgstr "Tämän kuvan alue liittyy kuvaan {name}. Poistetaanko se?"
+
+#: PhotoTaggingGramplet.py:842
+#, python-brace-format
+msgid "{count} other regions of this image are associated with {name}. Remove them?"
+msgstr "{count} muun kuvan alueet liittyvät kuvaan {name}. Poistetaanko ne?"
+
+#~ msgid "Replace {0}"
+#~ msgstr "Korvaa {0}"

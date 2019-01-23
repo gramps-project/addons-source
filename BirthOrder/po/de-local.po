@@ -1,0 +1,144 @@
+# German translations for PACKAGE package.
+# Copyright (C) 2018 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2018.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-04-16 20:04+0200\n"
+"PO-Revision-Date: 2018-04-16 21:28+0100\n"
+"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 2.0\n"
+
+#: BirthOrder/birthorder.gpr.py:9 BirthOrder/birthorder.py:62
+msgid "Sort Children in Birth order"
+msgstr "Sortiert Kinder in Geburtsreihenfolge"
+
+#: BirthOrder/birthorder.gpr.py:10
+msgid ""
+"Looks through families, looking for children that are not in birth order.  "
+"User can accept individual suggestions to correct, edit the birth order "
+"manually, accept all those families that have all children with proper birth "
+"dates, or accept all."
+msgstr ""
+"Geht durch die Familien und schaut nach Kindern, die sich nicht in der"
+" Geburtsreihenfolge befinden. Der Anwender kann einzelne Vorschläge zum"
+" manuellen Korrigieren/Bearbeiten der Geburtsreihenfolge übernehmen., alle"
+" Familien mit korreckter Geburtsreihenfolge oder alle Familien übernehmen."
+
+#: BirthOrder/birthorder.py:161
+msgid "No families need sorting"
+msgstr "Es muss keine Familie sortiert werden"
+
+#: BirthOrder/birthorder.py:162
+msgid "No children were out of birth order."
+msgstr "Es sind keine Kinder außerhalb der Geburtsreihenfolge."
+
+#: BirthOrder/birthorder.py:186
+msgid "Edit Family"
+msgstr "Familie Bearbeiten"
+
+#: BirthOrder/birthorder.py:203
+msgid "Processing..."
+msgstr "Verarbeite..."
+
+#: BirthOrder/birthorder.py:204
+msgid "Edit Families"
+msgstr "Familien Bearbeiten"
+
+#: BirthOrder/birthorder.py:275
+msgid "Looking for children birth order"
+msgstr "Suche nach der Geburtsreihenfolge der Kinder"
+
+#: BirthOrder/birthorder.py:279
+msgid "Pass 1: Building preliminary lists"
+msgstr "Durchgang 1: Erstelle vorläufige Listen"
+
+#: BirthOrder/birthorder.glade.h:1
+msgid "Select the family you wish to examine."
+msgstr "Wähle die Familie, die du untersuchen willst."
+
+#: BirthOrder/birthorder.glade.h:2
+msgid "Family ID"
+msgstr "Familien ID"
+
+#: BirthOrder/birthorder.glade.h:3
+msgid "Father"
+msgstr "Vater"
+
+#: BirthOrder/birthorder.glade.h:4
+msgid "Mother"
+msgstr "Mutter"
+
+#: BirthOrder/birthorder.glade.h:5
+msgid "Help"
+msgstr "Hilfe"
+
+#: BirthOrder/birthorder.glade.h:6
+msgid "Accept All"
+msgstr "Übernimm Alle"
+
+#: BirthOrder/birthorder.glade.h:7
+msgid "This button will sort all of the families listed."
+msgstr "Diese Schaltfläche sortiert alle aufgelisteten Familien."
+
+#: BirthOrder/birthorder.glade.h:8
+msgid "Accept All *"
+msgstr "Übernimm Alle *"
+
+#: BirthOrder/birthorder.glade.h:9
+msgid ""
+"This button will sort all the families with '*'.  In these families, all the "
+"children have valid dates, so the sort is unambiguous."
+msgstr ""
+"Diese Schaltfläche sortiert alle Familien mit '*'. In diesen Familien haben"
+" alle Kinder ein Geburtsdatum, daher ist die Sortierung unproblematisch."
+
+#: BirthOrder/birthorder.glade.h:10
+msgid "Accept"
+msgstr "Übernehmen"
+
+#: BirthOrder/birthorder.glade.h:11
+msgid ""
+"This button will accept only the family selected and save it as shown in "
+"lower right pane."
+msgstr ""
+"Diese Schaltfläche übernimmt nur die ausgewählten Familien und speichert sie,"
+" wie im unteren rechten Fenster gezeigt."
+
+#: BirthOrder/birthorder.glade.h:12
+msgid "Done"
+msgstr "Fertig"
+
+#: BirthOrder/birthorder.glade.h:13
+msgid "This button will exit, with remaining families unchanged."
+msgstr ""
+"Diese Schaltfläche beendet undlässt die verbleibenden Familien unverändert."
+
+#: BirthOrder/birthorder.glade.h:14
+msgid "Current sort"
+msgstr "Aktuelle Sortierung"
+
+#: BirthOrder/birthorder.glade.h:15
+msgid "Proposed sort"
+msgstr "Geplante Sortierung"
+
+#: BirthOrder/birthorder.glade.h:16
+msgid ""
+"When satisfied with the sort, use 'Accept' button below to accept the "
+"changes.  If you wish to adjust the order, select the child you wish to "
+"move, and use 'Up' or 'Down' buttons below to move them."
+msgstr ""
+"Wenn du mit der Sortierung zufrieden bist, verwende die 'Übernehmen'"
+" Schaltfläche unten um die Änderungen zu übernehmen. Wenn du die Reihenfolge"
+" korrigieren willst, wähle das Kind welches du verschieben möchtest, und"
+" verwende die 'Hoch' oder 'Runter' Schaltflächen unten um es zu bewegen."
+

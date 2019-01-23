@@ -1,0 +1,710 @@
+# Finnish translation for addons-gramps package.
+# This file is distributed under the same license as the addons-gramps package.
+# translation of fi.po to Finnish
+# Matti Niemelä <niememat@gmail.com>, 2018
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-10-02 16:34+0300\n"
+"PO-Revision-Date: 2018-10-02 16:58+0300\n"
+"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"Language-Team: \n"
+"Language: fi_FI\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.6\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: NetworkChart.gpr.py:31
+msgid "Network Chart"
+msgstr "Nettikaavio"
+
+#: NetworkChart.gpr.py:41
+msgid "Generates a family network chart."
+msgstr "Tuota perheiden nettikaavio."
+
+#: NetworkChart.gpr.py:51
+msgid "NetworkChart Warning:  Python networkx module not found."
+msgstr "Nettikaavio Varoitus: Python networkx-moduulia ei löytynyt."
+
+#: NetworkChart.gpr.py:54
+msgid ""
+"NetworkChart Warning:  NetworkChart needs one of the following to work: \n"
+"     Python module  pydotplus            OR\n"
+"     Python module  pygraphviz           OR\n"
+msgstr ""
+"Nettikaavio varoitus: Nettikaavio tarvitsee jonkin seuraavista "
+"toimiakseen: \n"
+"     Python module  pydotplus            TAI\n"
+"     Python module  pygraphviz           TAI\n"
+
+#: NetworkChart.gpr.py:62
+msgid "NetworkChart Failed to Load"
+msgstr "Nettikaavion lataus epäonnistui"
+
+#: NetworkChart.gpr.py:63
+msgid ""
+"\n"
+"\n"
+"NetworkChart is missing python modules or programs.  Networkx AND at\n"
+"least one of (pydotplus OR pygraphviz) must be\n"
+"installed.  For now, it may be possible to install the files manually. See\n"
+"\n"
+"https://gramps-project.org/wiki/index.php?title=NetworkChart \n"
+"\n"
+"To dismiss all future NetworkChart warnings click Dismiss."
+msgstr ""
+"\n"
+"\n"
+"Nettikaaviosta puuttuu python-moduuli tai ohjelma.  Networkx JA \n"
+"vähintään (pydotplus TAI pygraphviz) pitää olla asennettuna\n"
+"Tiedostoja voi olla mahdollista asentaa manuaalisesti. Katso\n"
+"\n"
+"https://gramps-project.org/wiki/index.php?title=NetworkChart \n"
+"\n"
+"Poista Nettikaavio varoitukset napsauttamalla Poista käytöstä."
+
+#: NetworkChart.gpr.py:68
+msgid " Dismiss "
+msgstr " Ohitetaan "
+
+#: NetworkChart.gpr.py:69
+msgid "Continue"
+msgstr "Jatka"
+
+#: NetworkChart.py:133
+msgid "birth abbreviation|b."
+msgstr "s."
+
+#: NetworkChart.py:134
+msgid "death abbreviation|d."
+msgstr "k."
+
+#: NetworkChart.py:135
+msgid "marriage abbreviation|m."
+msgstr "∞"
+
+#: NetworkChart.py:136
+msgid "Unknown"
+msgstr "Tuntematon"
+
+#: NetworkChart.py:856
+msgid "File exists. Overwrite?"
+msgstr "Tiedosto on jo olemassa. Korvataanko?"
+
+#: NetworkChart.py:858
+msgid "Cancel"
+msgstr "Peru"
+
+#: NetworkChart.py:859
+msgid "Yes"
+msgstr "Kyllä"
+
+#: NetworkChart.py:903
+msgid "created"
+msgstr "tuotettu"
+
+#: NetworkChart.py:904 NetworkChart.py:907
+msgid "last_written"
+msgstr "viimeinen_kirjaus"
+
+#: NetworkChart.py:917
+msgid "Main"
+msgstr "Päävalikko"
+
+#: NetworkChart.py:919
+msgid "Graph Style"
+msgstr "Kaaviotyyli"
+
+#: NetworkChart.py:921
+msgid "Orthogonal (right angles in connectors)"
+msgstr "Suorakulmainen (suorat kulmat yhdysviivoissa)"
+
+#: NetworkChart.py:922
+msgid "Straight (no right angles in connectors)"
+msgstr "Suora (ei kulmia yhdysviivoissa)"
+
+#: NetworkChart.py:923
+msgid "Curved (curved and straight connectors)"
+msgstr "Kaarevat (kaarevat ja suorat yhdysviivat)"
+
+#: NetworkChart.py:925
+msgid "Default (Orthogonal)"
+msgstr "Oletus (Suorakulmainen)"
+
+#: NetworkChart.py:930
+msgid "Select the graph line connector format."
+msgstr "Valitse kaavion yhdysviivan muoto."
+
+#: NetworkChart.py:933
+msgid "Graph Direction"
+msgstr "Kaavion suunta"
+
+#: NetworkChart.py:935
+msgid "Top to Bottom"
+msgstr "Ylhäältä alas"
+
+#: NetworkChart.py:935
+msgid "Left to Right"
+msgstr "Vasemmalta oikealle"
+
+#: NetworkChart.py:936
+msgid "Bottom to Top"
+msgstr "Alhaalta ylös"
+
+#: NetworkChart.py:936
+msgid "Right to Left"
+msgstr "Oikealta vasemmalle"
+
+#: NetworkChart.py:938
+msgid "Default (Top to Bottom)"
+msgstr "Oletus (Ylhäältä alas)"
+
+#: NetworkChart.py:941
+msgid "Select the graph direction."
+msgstr "Valitse kaavion suunta."
+
+#: NetworkChart.py:944
+msgid "URL Style"
+msgstr "Tyylitiedosto"
+
+#: NetworkChart.py:946
+msgid "Include URLs from database."
+msgstr "Lisää URL-osoitteet tietokannasta."
+
+#: NetworkChart.py:947
+msgid "Dynamic URL = Prefix + GrampID + Suffix"
+msgstr "Dynaaminen URL = etuliite + GrampID + loppuliite"
+
+#: NetworkChart.py:948
+msgid "Static URL = Prefix"
+msgstr "Staattinen URL = etuliite"
+
+#: NetworkChart.py:949
+msgid "Don't include URLs"
+msgstr "Älä lisää URL-osoitteita"
+
+#: NetworkChart.py:950
+msgid "Default (include)"
+msgstr "Oletus (lisää)"
+
+#: NetworkChart.py:953
+msgid "Select URL style."
+msgstr "Valitse tyylitiedosto."
+
+#: NetworkChart.py:956
+msgid "URL Prefix,Suffix"
+msgstr "URL etuliite, loppuliite"
+
+#: NetworkChart.py:957
+msgid ""
+"Enter the Prefix,Suffix (use comma)\n"
+"for dynamically generated URLs.\n"
+"URL = Prefix + GrampsID + Suffix."
+msgstr ""
+"Syötä etuliite, loppuliite (käytä pilkkua)\n"
+"dynaamisesti luotuihin URL-osoitteisiin.\n"
+"URL = etuliite + GrampsID + loppuliite."
+
+#: NetworkChart.py:962
+msgid "Enter Font Name"
+msgstr "Anna kirjasimen nimi"
+
+#: NetworkChart.py:964
+msgid ""
+"Enter the primary font style for the chart.\n"
+"Must already be installed.\n"
+"White Rabbit can be obtained from\n"
+"https://www.fontsquirrel.com/fonts/white-rabbit"
+msgstr ""
+"Syötä kaavion ensisijainen kirjasintyyli.\n"
+"Sen on oltava asennettuna.\n"
+"White Rabbit voi saada\n"
+"https://www.fontsquirrel.com/fonts/white-rabbit"
+
+#: NetworkChart.py:969
+msgid "Spacing (inch)"
+msgstr "Väli (in)"
+
+#: NetworkChart.py:970
+msgid ""
+"Enter the seperation distance between \"Generations\" in inches (0.1-5.0)."
+msgstr "Syötä erotusväli \"sukupolvien\" välillä tuumina (0,1-5,0)."
+
+#: NetworkChart.py:974
+msgid "Enter Chart Title"
+msgstr "Anna kaavion otsikko"
+
+#: NetworkChart.py:976
+msgid "Set the title of the chart."
+msgstr "Aseta kaaaviolle otsikko."
+
+#: NetworkChart.py:980
+msgid "Folder"
+msgstr "Hakemisto"
+
+#: NetworkChart.py:982
+msgid "The destination folder for generated files."
+msgstr "Luodun tiedoston kohdehakemisto."
+
+#: NetworkChart.py:986 NetworkChart.py:1284 NetworkChart.py:1292
+msgid "network"
+msgstr "netti"
+
+#: NetworkChart.py:989
+msgid "Filename"
+msgstr "Tiedostonimi"
+
+#: NetworkChart.py:991
+msgid "The filename for the generated svg network chart."
+msgstr "Luodun svg-nettikaavion tiedostonimi."
+
+#: NetworkChart.py:998
+msgid "Different node shapes/edges for gender."
+msgstr "Erilaiset solujen muodot/reunat sukupuolelle."
+
+#: NetworkChart.py:999
+msgid "Node differences for gender."
+msgstr "Erilaiset solumuodot sukupuolelle."
+
+#: NetworkChart.py:1002
+msgid "Color"
+msgstr "Värivalinnat"
+
+#: NetworkChart.py:1004
+msgid "Male Background"
+msgstr "Miehen taustaväri"
+
+#: NetworkChart.py:1005
+msgid "RGB-color for male box background."
+msgstr "RGB-väri miessolun taustalle."
+
+#: NetworkChart.py:1008
+msgid "Male Background Alpha"
+msgstr "Miesvärin läpinäkyvyys"
+
+#: NetworkChart.py:1010
+msgid "Alpha for Male box background (transparent=0, solid=255)."
+msgstr "Miessolun taustavärin läpinäkyvyys (läpinäkyvä = 0, kiinteä = 255)."
+
+#: NetworkChart.py:1014
+msgid "Male Box Edge"
+msgstr "Miessolun reuna"
+
+#: NetworkChart.py:1015
+msgid "RGB-color for Male box edge."
+msgstr "RGB-väri miessolun reunalle."
+
+#: NetworkChart.py:1018
+msgid "Female Background"
+msgstr "Naisen taustaväri"
+
+#: NetworkChart.py:1019 NetworkChart.py:1030
+msgid "RGB-color for Female box background."
+msgstr "RGB-väri naissolun taustalle."
+
+#: NetworkChart.py:1024
+msgid "Alpha for Female box background (transparent=0, solid=255)."
+msgstr "Naissolun taustavärin läpinäkyvyys (läpinäkyvä = 0, kiinteä = 255)."
+
+#: NetworkChart.py:1029
+msgid "Female Box Edge"
+msgstr "Naissolun reuna"
+
+#: NetworkChart.py:1033
+msgid "Other Background"
+msgstr "Muiden taustaväri"
+
+#: NetworkChart.py:1034
+msgid "RGB-color for other box background."
+msgstr "RGB-väri muiden solujen taustalle."
+
+#: NetworkChart.py:1037
+msgid "Other Background Alpha"
+msgstr "Muiden värien läpinäkyvyys"
+
+#: NetworkChart.py:1039
+msgid "Alpha for Other box background (transparent=0, solid=255)."
+msgstr "Muiden taustavärin läpinäkyvyys (läpinäkyvä = 0, kiinteä = 255)."
+
+#: NetworkChart.py:1043
+msgid "Family Connector Line"
+msgstr "Perheen yhdysviiva"
+
+#: NetworkChart.py:1044
+msgid "RGB-color for family connector line."
+msgstr "RGB-väri perheen yhdysviivalle."
+
+#: NetworkChart.py:1047
+msgid "Marriage Connector Line"
+msgstr "Avioliiton yhdysviiva"
+
+#: NetworkChart.py:1048
+msgid "RGB-color for marriage connector line."
+msgstr "RGB-väri avioliiton yhdysviivalle."
+
+#: NetworkChart.py:1051
+msgid "Highlight Connector Line"
+msgstr "Korosta yhdysviiva"
+
+#: NetworkChart.py:1052
+msgid ""
+"RGB-color for the highlighted path between two individuals.  If the graph."
+"inverts, reverse the order to change."
+msgstr ""
+"RGB-väri korostetulle polulle kahden henkilön välillä.  Jos kaavio "
+"käännetään, muuta järjestys käänteiseksi."
+
+#: NetworkChart.py:1057
+msgid "Trim Box Edge"
+msgstr "Rajaa solun reunat"
+
+#: NetworkChart.py:1058
+msgid "RGB-color for box edge that has been trimmed."
+msgstr "RGB-väri solun reunalle, joka on rajattu."
+
+#: NetworkChart.py:1062
+msgid "Remove color background on all nodes."
+msgstr "Poista kaikkien solujen taustaväri."
+
+#: NetworkChart.py:1064
+msgid "Removes color background for individuals (nodes) on chart."
+msgstr "Poistaa taustavärin henkilöiden (soluista) kaaviossa."
+
+#: NetworkChart.py:1067
+msgid "Privacy"
+msgstr "Yksityisyys"
+
+#: NetworkChart.py:1069
+msgid ""
+"Enter year to start\n"
+"rounding birthday\n"
+"to year only"
+msgstr ""
+"Anna aloitusvuosi, josta\n"
+"alkaen syntymäpäivät\n"
+"pyöristetään vain vuosiksi"
+
+#: NetworkChart.py:1072
+msgid ""
+"Birthdays after this year are represented by the year only.  Invalid entries "
+"will be ignored."
+msgstr ""
+"Syntymäpäiviä tämän jälkeen edustaa vain vuosi. Virheelliset merkinnät "
+"jätetään huomiotta."
+
+#: NetworkChart.py:1076
+msgid "Round birthday to year after year entered (above)."
+msgstr "Pyöristää syntymäpäivät vuosi vuodelta (yllä)."
+
+#: NetworkChart.py:1078
+msgid "Represent birthday by year only."
+msgstr "Edistää syntymäpäivästä vain vuoden."
+
+#: NetworkChart.py:1082
+msgid ""
+"Enter year to start\n"
+"rounding marriage\n"
+"date to year only"
+msgstr ""
+"Anna aloitusvuosi, josta\n"
+"alkaen avioitumispäivät \n"
+"pyöristetään vain vuosiksi"
+
+#: NetworkChart.py:1083
+msgid ""
+"Marriages after this year are represented bythe year only. Invalid entries "
+"will be ignored."
+msgstr ""
+"Tämän vuoden jälkeen avioitumispäiviä edustaa vain vuosi. Virheelliset "
+"merkinnät jätetään huomiotta."
+
+#: NetworkChart.py:1088
+msgid "Round marriage to year after year entered (above)."
+msgstr "Pyöristää avioitumispäivän vuosi vuodelta (yllä)."
+
+#: NetworkChart.py:1090
+msgid "Represent marriage by year only."
+msgstr "Edistää avioitumispäivästä vain vuoden."
+
+#: NetworkChart.py:1095
+msgid ""
+"Attempts to remove middle names.  Only works for entries with birth year in "
+"the record."
+msgstr ""
+"Yrität poistaa keskimmäiset nimet. Toimii vain syntymävuoden merkinnöissä."
+
+#: NetworkChart.py:1103
+msgid "Remove middle names."
+msgstr "Poista keskimmäiset nimet."
+
+#: NetworkChart.py:1108
+msgid "Allow inclusion of private records in chart."
+msgstr "Lisää yksityiset tiedot kaavioon."
+
+#: NetworkChart.py:1113
+msgid "Trim"
+msgstr "Rajaukset"
+
+#: NetworkChart.py:1115
+msgid "Trim descendants"
+msgstr "Rajaa jälkeläiset"
+
+#: NetworkChart.py:1117
+msgid "All descendants (children) of selected individuals will not be shown."
+msgstr "Valitun henkilön jälkeläisiä (lapsia) ei näytetä."
+
+#: NetworkChart.py:1123
+msgid "Enable trimming of descendants."
+msgstr "Käytä jälkeläisten rajausta."
+
+#: NetworkChart.py:1125
+msgid ""
+"You must enter valid person(s) before \n"
+"enabling trimming of descendants from tree."
+msgstr ""
+"Sinun on annettava vapaa(t) henkilö(t) ennen\n"
+"mahdollisuutta jälkeläisten rajaamiseen sukupuusta."
+
+#: NetworkChart.py:1130
+msgid "Trim ancestors"
+msgstr "Rajaa esivanhemmat"
+
+#: NetworkChart.py:1131
+msgid "All ancestors (parents) of selected individuals will not be shown."
+msgstr "Valitun henkilön esivanhempia (vanhempia) ei näytetä."
+
+#: NetworkChart.py:1137
+msgid "Enable trimming of ancestors."
+msgstr "Käytä esivanhempien rajausta."
+
+#: NetworkChart.py:1139
+msgid "Enable trimming of ancestors from tree."
+msgstr "Käytä rajausta esivanhempien sukupuussa."
+
+#: NetworkChart.py:1143
+msgid "Enable trim groups."
+msgstr "Käytä rajattua ryhmää."
+
+#: NetworkChart.py:1145
+msgid ""
+"Remove groups less than Min Group Size.  Automatic\n"
+"for databases with more than 1500 individuals."
+msgstr ""
+"Poista ryhmät, jotka ovat pienempiä kuin pienryhmäkoko. Automaattinen\n"
+"tietokannoissa, joissa on yli 1500 henkilöä."
+
+#: NetworkChart.py:1150
+msgid "Min Group Size"
+msgstr "Min. Ryhmän koko"
+
+#: NetworkChart.py:1152
+msgid ""
+"Enter the minimum size group to display.\n"
+"Value may be 2 or greater."
+msgstr ""
+"Anna näytettävä vähimmäisryhmä.\n"
+"Arvo voi olla 2 tai suurempi."
+
+#: NetworkChart.py:1157
+msgid "Highlight"
+msgstr "Korostus"
+
+#: NetworkChart.py:1160
+msgid ""
+"Select Start and\n"
+"End Individuals in\n"
+"displayed path(s).\n"
+"Select two"
+msgstr ""
+"Valitse näytettäville\n"
+"poluille alku ja loppu\n"
+"henkilöt.\n"
+"Valitse kaksi"
+
+#: NetworkChart.py:1163
+msgid ""
+"Starting and ending person for displayed path(s).\n"
+"Select two people"
+msgstr ""
+"Alku ja loppu henkilöiden näytetettävälle poluille.\n"
+"Valitse kaksi henkilöä"
+
+#: NetworkChart.py:1167
+msgid "Highlight path(s)"
+msgstr "Korosta polut"
+
+#: NetworkChart.py:1171
+msgid "Default (None)"
+msgstr "Oletus (tyhjä)"
+
+#: NetworkChart.py:1176
+msgid ""
+"None - Don't highlight paths.\n"
+"Direct - Highlight direct descendant/ancestor paths.\n"
+"Any - Highlight any path(s) including direct or indirect."
+msgstr ""
+"Tyhjä - Älä korosta polkuja.\n"
+"Suora - Korosta suoria jälkeläisten/esivanhempien polkuja.\n"
+"Kaikki - Korosta kaikki polut, mukaan lukien suorat tai epäsuorat."
+
+#: NetworkChart.py:1181
+msgid "Show only path(s)"
+msgstr "Näytä vain polut"
+
+#: NetworkChart.py:1183
+msgid "None"
+msgstr "Tyhjä"
+
+#: NetworkChart.py:1183
+msgid "Direct"
+msgstr "Suora"
+
+#: NetworkChart.py:1183
+msgid "Any"
+msgstr "Kaikki"
+
+#: NetworkChart.py:1184
+msgid "Default (none)"
+msgstr "Oletus (tyhjä)"
+
+#: NetworkChart.py:1188
+msgid ""
+"None - Don't show paths only.\n"
+"Direct - Show only direct descendant/ancestor paths.\n"
+"Any - Show only path(s) direct or indirect."
+msgstr ""
+"Tyhjä - Älä näytä vain polkuja.\n"
+"Suora - Näyttää vain suoria jälkeläisten/esivanhempien polkuja.\n"
+"Kaikki - Näytä vain suorat tai epäsuorat polut."
+
+#: NetworkChart.py:1193
+msgid "Center Person"
+msgstr "Keskushenkilö"
+
+#: NetworkChart.py:1195
+msgid "Select person at center of selection radius in graph."
+msgstr "Valitse henkilö kaavion valintaruudun keskellä."
+
+#: NetworkChart.py:1198
+msgid ""
+"Max connections\n"
+"from center"
+msgstr ""
+"Maksimiyhteydet\n"
+"keskustasta"
+
+#: NetworkChart.py:1201
+msgid ""
+"Enter the maximum number of connections allowed from\n"
+"the center person.  Value may be 1 or greater."
+msgstr ""
+"Anna suurin sallittu yhteyksien määrä\n"
+"keskushenkilölle. Arvo voi olla 1 tai suurempi."
+
+#: NetworkChart.py:1206
+msgid "Limit graph to max connections from center."
+msgstr "Rajoita kaavion enimmäisyhteyksiä keskeltä."
+
+#: NetworkChart.py:1208
+msgid "Display up to max connections from central person."
+msgstr "Näytä max. yhteydet keskushenkilöltä."
+
+#: NetworkChart.py:1212
+msgid "Highlight central person in graph."
+msgstr "Korosta kaavion keskushenkilö."
+
+#: NetworkChart.py:1214
+msgid "Add yellow color background to central person."
+msgstr "Lisää keltainen väri keskushenkilön taustalle."
+
+#: NetworkChart.py:1218
+msgid "Config"
+msgstr "Asetukset"
+
+#: NetworkChart.py:1222
+msgid "Database"
+msgstr "Tietokanta"
+
+#: NetworkChart.py:1228
+msgid "File Type"
+msgstr "Tiedostotyyppi"
+
+#: NetworkChart.py:1230
+msgid "Default (svg)"
+msgstr "Oletus (svg)"
+
+#: NetworkChart.py:1233
+msgid ""
+"svg - Scalable Vector Graphics file.\n"
+"pdf - Adobe Portable Document Format.\n"
+msgstr ""
+"svg - Scalable Vector Graphics tiedosto.\n"
+"pdf - Adobe Portable Document Format.\n"
+
+#: NetworkChart.py:1238
+msgid "Use database handle instead of GrampID id in URLs."
+msgstr "Käytä tietokannan kahvan sijasta GrampID ja URL-osoitteita."
+
+#: NetworkChart.py:1240
+msgid ""
+"Use database handle instead of the gramps id for URLs.\n"
+"The handle should never change whereas gramps ids can."
+msgstr ""
+"Käytä tietokannan kahvaa URL-osoitteiden gramps-tunnuksen sijaan.\n"
+"Kahvan ei pitäisi koskaan muuttua, kun taas gramps id voi."
+
+#: NetworkChart.py:1244
+msgid "Confirm overwrite file."
+msgstr "Vahvista ylikirjoitustiedosto."
+
+#: NetworkChart.py:1247
+msgid "Enable/disable confirmation of file overwrite."
+msgstr "Ota tiedoston päällekirjoitus käyttöön/poista se käytöstä."
+
+#~ msgid "unk"
+#~ msgstr "?"
+
+#~ msgid "b."
+#~ msgstr "s. "
+
+#~ msgid "d."
+#~ msgstr "k. "
+
+#~ msgid "m."
+#~ msgstr "∞ "
+
+#~ msgid "Name format"
+#~ msgstr "Nimen muoto"
+
+#~ msgid "Default (Given Surname Suffix)"
+#~ msgstr "Oletus (Etunimi Sukunimi Loppuliite)"
+
+#~ msgid "Select the format to display names"
+#~ msgstr "Valitse nimien näyttömuoto"
+
+#~ msgid "Date format"
+#~ msgstr "Päivämäärän muoto"
+
+#~ msgid "Select the format to display dates"
+#~ msgstr "Valitse päivämäärän esitysmuoto"
+
+#~ msgid "Female Background Alpha"
+#~ msgstr "Naisvärin läpinäkyvyys"
+
+#~ msgid ""
+#~ "Enter year to start\n"
+#~ "removing middle names"
+#~ msgstr ""
+#~ "Anna aloitusvuosi, josta\n"
+#~ "alkaen keskimmäiset\n"
+#~ "nimet poistetaan"
+
+#~ msgid "Remove middle names after given year (above)."
+#~ msgstr "Poistaa keskimmäiset nimet valitun vuoden jälkeen (yllä)."
+
+#~ msgid "Include private records."
+#~ msgstr "Lisää yksityisiksi merkityt tiedot"

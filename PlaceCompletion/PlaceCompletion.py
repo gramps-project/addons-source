@@ -17,7 +17,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
 
@@ -279,8 +279,8 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
         elif group == ('zip'):
             place.set_code(val)
         else:
-            ErrorDialog(_("Error in PlaceCompletion.py"),
-                        _("Non existing group used in set"))
+            print(_("PlaceCompletion is unable to create %s %s"),
+                  group, val)
         return place
 
     def fill_combobox(self, cmb, namelistopt, default) :
@@ -401,7 +401,7 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
         if findregex :
             try:
                 #compile regex aware of locale and unicode
-                self.matchlatlon = re.compile(findregex,re.U|re.L|re.M)
+                self.matchlatlon = re.compile(findregex, re.M)
                 latlongroup = ['lat', 'lon']
                 for group in latlongroup :
                     if findregex.find(r'(?P<'+group+r'>') == -1 :
@@ -410,10 +410,10 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
                                 % {'lat' : latlongroup[0], 'lon' : latlongroup[1]},
                             self.window)
                         return
-                    #check if extra data can be extracted from file
-                    for group in possibleextrafindgroups :
-                        if findregex.find(r'(?P<'+group+r'>') != -1 :
-                            self.extrafindgroup.append(group)
+                #check if extra data can be extracted from file
+                for group in possibleextrafindgroups :
+                    if findregex.find(r'(?P<'+group+r'>') != -1 :
+                        self.extrafindgroup.append(group)
             except:
                 self.matchlatlon = None
                 WarningDialog(_('Non valid regex for match lat/lon'),
@@ -594,7 +594,8 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
     def button_press_event(self,obj,event):
         from gramps.gui.editors import EditPlace
 
-        if event.type == getattr(Gdk.EventType, "2BUTTON_PRESS") and event.button == 1:
+        if (event.type == Gdk.EventType._2BUTTON_PRESS and
+                event.button.button == 1):
             store, node = self.tree.get_selection().get_selected()
             if node:
                 #only when non empty tree view you are here
@@ -622,8 +623,8 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
                 except WindowActiveError :
                     pass
 
-        if event.type == getattr(Gdk.EventType, "KEY_PRESS") and \
-                event.keyval == Gtk.keysyms.Delete:
+        if event.type == Gdk.EventType.KEY_PRESS and \
+                event.keyval == Gdk.KEY_Delete:
             selection = self.tree.get_selection()
             store, node = selection.get_selected()
             if node :
@@ -639,8 +640,8 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
                     if row >= 0:
                         selection.select_path((row,))
 
-        if event.type == getattr(Gdk.EventType, "KEY_PRESS") and \
-                event.keyval == Gtk.keysyms.Tab:
+        if event.type == Gdk.EventType.KEY_PRESS and \
+                event.keyval == Gdk.KEY_Tab:
             #call up google maps
             self.google()
 
@@ -901,7 +902,7 @@ class PlaceCompletion(Tool.Tool, ManagedWindow):
             codes = self.county_lookup[county]
             pattern = re.sub(('COUNTY'), '(' + '|'.join(codes) + ')', pattern)
         #print 'DEBUG info: pattern for search is ' , pattern
-        regexll = re.compile(pattern,re.U|re.L|re.M)
+        regexll = re.compile(pattern, re.M)
         latlongroup = ['lat', 'lon']
         #find all occurences in the data file
         iterator = regexll.finditer(self.latlonfile_datastr)

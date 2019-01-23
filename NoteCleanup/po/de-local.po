@@ -1,0 +1,177 @@
+# German translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# translation of de.po to Deutsch
+#
+#
+# Anton Huber <anton_huber@gmx.de>, 2005,2006.
+# Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
+# Sebastian Vöcking <voeck@web.de>, 2005.
+# Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
+# Alex Roitman <shura@gramps-project.org>, 2006.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
+# Alois Pöttker <alois.poettker@gmx.de>, 2017.
+msgid ""
+msgstr ""
+"Project-Id-Version: de\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-02 18:55+0200\n"
+"PO-Revision-Date: 2018-04-11 19:24+0100\n"
+"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 2.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: NoteCleanup/NoteCleanup.gpr.py:30 NoteCleanup/NoteCleanup.py:395
+msgid "Note Cleanup"
+msgstr "Notiz Bereinigung"
+
+#: NoteCleanup/NoteCleanup.gpr.py:31
+msgid "Clean up Notes that contain HTML markup"
+msgstr "Bereinigt Notizen, die HTML-Markup enthalten"
+
+#: NoteCleanup/NoteCleanup.py:90
+msgid "Note Cleanup Tool"
+msgstr "Notiz Bereinigung Werkzeug"
+
+#: NoteCleanup/NoteCleanup.py:96
+msgid "Cleaned Notes"
+msgstr "Bereinigte Notizen"
+
+#: NoteCleanup/NoteCleanup.py:96
+msgid "Links Only"
+msgstr "Nur Links"
+
+#: NoteCleanup/NoteCleanup.py:97
+msgid "Issues"
+msgstr "Probleme"
+
+#: NoteCleanup/NoteCleanup.py:119
+msgid "Close"
+msgstr "Schließen"
+
+#: NoteCleanup/NoteCleanup.py:120
+msgid "Close the Note Cleanup Tool"
+msgstr "Das Notiz Bereinigung Werkzeug schließen"
+
+#: NoteCleanup/NoteCleanup.py:122
+msgid "Save All"
+msgstr "Alles Speichern"
+
+#: NoteCleanup/NoteCleanup.py:123
+msgid "Save All Changes"
+msgstr "Alle Änderungen Speichern"
+
+#: NoteCleanup/NoteCleanup.py:125
+msgid "Search"
+msgstr "Suche"
+
+#: NoteCleanup/NoteCleanup.py:126
+msgid "Search for Untidy Notes"
+msgstr "Suche nach unaufgeräumten Notizen"
+
+#: NoteCleanup/NoteCleanup.py:128
+msgid "Generate Test Notes"
+msgstr "Erstelle Testnotizen"
+
+#: NoteCleanup/NoteCleanup.py:130
+msgid ""
+"Generate Test notes in range N99996-N99999.\n"
+"These are added to your database, so you may want to work with a test "
+"database or delete them later."
+msgstr ""
+"Generiert Testnotizen im Bereich N99996-N99999.\n"
+"Diese werden zu deiner Datenbank hinzugefügt, sodass du möglicherweise\n"
+"mit einer Testdatenbank arbeiten sie später löschen kannst."
+
+#: NoteCleanup/NoteCleanup.py:134
+msgid "Export"
+msgstr "Exportieren"
+
+#: NoteCleanup/NoteCleanup.py:135
+msgid "Export the results to a text file"
+msgstr "Die Ergebnisse in eine Textdatei exportieren"
+
+#: NoteCleanup/NoteCleanup.py:172
+msgid ""
+"Please back up your database before running this tool.\n"
+"\n"
+"Start the tool by pressing the 'Search' button, then review the results.\n"
+"When satisifed press the 'Save All' button to save your work.\n"
+"You may export a summary list of the notes that were found using the "
+"'Export' button."
+msgstr ""
+"Bitte sichern Sie Ihre Datenbank, bevor Sie dieses Tool ausführen.\n"
+"\n"
+"Starte das Tool, indem du auf die Schaltfläche \"Suchen\" klickst, und "
+"überprüfe die Ergebnisse.\n"
+"Wenn du zufrieden bist, klicke auf 'Alles speichern', um deine Arbeit zu "
+"speichern.\n"
+"Du kannst eine Übersichtsliste der gefundenen Notizen exportieren, indem du "
+"auf die Schaltfläche \"Exportieren\" klickst."
+
+#: NoteCleanup/NoteCleanup.py:182
+msgid "Clean up Notes"
+msgstr "Notizen aufräumen"
+
+#: NoteCleanup/NoteCleanup.py:193
+msgid "Notes"
+msgstr "Notizen"
+
+#: NoteCleanup/NoteCleanup.py:277
+msgid "Cleanup Test Notes"
+msgstr "Bereinige Testnotizen"
+
+#: NoteCleanup/NoteCleanup.py:299 NoteCleanup/NoteCleanup.py:304
+msgid "Add Test Note"
+msgstr "Testnotiz hinzufügen"
+
+#: NoteCleanup/NoteCleanup.py:313
+msgid "Export results to a text file"
+msgstr "Ergebnisse in eine Textdatei exportieren"
+
+#: NoteCleanup/NoteCleanup.py:336
+#, python-format
+msgid "Error when writing the report: %s"
+msgstr "Fehler beim schreiben des Bericht: %s"
+
+#: NoteCleanup/NoteCleanup.py:370
+msgid ""
+"\n"
+"\n"
+"Notes selected on the left pane are shown Before cleanup in this box."
+msgstr ""
+"\n"
+"\n"
+"Die im linken Fensterbereich ausgewählten Notizen werden vor der Bereinigung "
+"in diesem Feld angezeigt."
+
+#: NoteCleanup/NoteCleanup.py:373
+msgid ""
+"\n"
+"\n"
+"Notes selected on the left pane are shown After cleanup in this box.\n"
+"If you wish to make changes, you can make them here and use the style "
+"controls in the toolbar above."
+msgstr ""
+"\n"
+"\n"
+"Die im linken Bereich ausgewählten Notizen werden nach der Bereinigung in "
+"diesem Feld angezeigt.\n"
+"Wenn du Änderungen vornehmen möchtest, kannst du sie hier vornehmen und den "
+"Stil verwenden der in der Werkzeugleiste oben kontrolliert wird."
+
+#: NoteCleanup/NoteCleanup.py:388
+msgid "Saving Notes"
+msgstr "Notizen Speichern"
+
+#: NoteCleanup/NoteCleanup.py:390
+msgid "Saving Cleaned Notes"
+msgstr "Bereinigte Notizen speichern"
+
+#: NoteCleanup/NoteCleanup.py:415
+msgid "Scanning Notes"
+msgstr "Notizen scannen"

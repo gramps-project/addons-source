@@ -3,7 +3,7 @@ register(REPORT,
     name = _('Family Sheet'),
     description = _("Produces a family sheet showing full information "
                     "about a person and his/her partners and children."),
-    version = '3.4.30',
+    version = '3.4.37',
     gramps_target_version = "5.1",
     status = STABLE,
     fname = 'FamilySheet.py',
@@ -12,6 +12,6 @@ register(REPORT,
     category = CATEGORY_TEXT,
     reportclass = 'FamilySheet',
     optionclass = 'FamilySheetOptions',
-    report_modes = [REPORT_MODE_GUI],
+    report_modes = [REPORT_MODE_CLI, REPORT_MODE_GUI, REPORT_MODE_BKI],
     require_active = True
     )

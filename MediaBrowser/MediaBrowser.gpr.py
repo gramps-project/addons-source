@@ -15,7 +15,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
 # $Id$
@@ -29,7 +29,7 @@ register(GRAMPLET,
          id="MediaBrowser",
          name=_("Media Browser"),
          description = _("Gramplet showing details of a person"),
-         version = '1.0.23',
+         version = '1.0.27',
          gramps_target_version="5.1",
          status = STABLE, # not yet tested with python 3
          fname="MediaBrowser.py",

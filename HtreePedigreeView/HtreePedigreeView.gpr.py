@@ -17,7 +17,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 # Created by
 #authors = ["Pat Lefebre"],
@@ -25,20 +25,33 @@
 
 #------------------------------------------------------------------------
 #
-# default views of Gramps
+# H-tree view for Gramps
 #
 #------------------------------------------------------------------------
+if locals().get('uistate'):  # don't start GUI if in CLI mode, just ignore
+    from gi.repository import Gtk, GdkPixbuf
+    import os
+    from gramps.gen.const import USER_PLUGINS
+    fname = os.path.join(USER_PLUGINS, 'HtreePedigreeView',
+                        'gramps-htree.svg')
+    factory = Gtk.IconFactory()
+    pixbuf = GdkPixbuf.Pixbuf.new_from_file(fname)
+    iconset = Gtk.IconSet.new_from_pixbuf(pixbuf)
+    factory.add('gramps-htree', iconset)
+    factory.add_default()
 
 register(VIEW,
-id    = 'HtreePedigreeView',
-name  = _("H-Tree Pedigree"),
-category = ("Ancestry", _("Ancestry")),
-description =  _("The view shows a space-efficient pedigree with ancestors of the selected person"),
-version = '0.0.14',
-gramps_target_version = "5.1",
-status = STABLE,
-fname = 'HtreePedigreeView.py',
-authors = ["Pat Lefebre"],
-authors_email = [""],
-viewclass = 'HtreePedigreeView',
-  )
+    id    = 'HtreePedigreeView',
+    name  = _("H-Tree Pedigree"),
+    category = ("Ancestry", _("Charts")),
+    description =  _("The view shows a space-efficient pedigree with "
+                     "ancestors of the selected person"),
+    version = '0.0.23',
+    gramps_target_version = "5.1",
+    status = STABLE,
+    fname = 'HtreePedigreeView.py',
+    authors = ["Pat Lefebre"],
+    authors_email = [""],
+    viewclass = 'HtreePedigreeView',
+    stock_icon = 'gramps-htree',
+)

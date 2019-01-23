@@ -1,0 +1,188 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: QuiltView/QuiltView.gpr.py:34
+msgid "Quilt Chart"
+msgstr ""
+
+#: QuiltView/QuiltView.gpr.py:35
+msgid "Charts"
+msgstr ""
+
+#: QuiltView/QuiltView.gpr.py:36
+msgid "The view shows a quilt chart visualisation of a family tree"
+msgstr ""
+
+#: QuiltView/QuiltView.py:214
+msgid "Quilt chart"
+msgstr ""
+
+#: QuiltView/QuiltView.py:291
+msgid "Select the name for which you want to see."
+msgstr ""
+
+#: QuiltView/QuiltView.py:296
+msgid "Clear"
+msgstr ""
+
+#: QuiltView/QuiltView.py:298
+msgid "Clear the entry field in the name selection box."
+msgstr ""
+
+#: QuiltView/QuiltView.py:303
+msgid "Nothing is selected"
+msgstr ""
+
+#: QuiltView/QuiltView.py:361
+msgid "Person Filter Editor"
+msgstr ""
+
+#: QuiltView/QuiltView.py:363
+msgid "Print the entire tree"
+msgstr ""
+
+#: QuiltView/QuiltView.py:438
+#, python-format
+msgid ""
+"You have %(filter)d filtered people, %(count)d people shown on the tree and "
+"%(total)d people in your database."
+msgstr ""
+
+#: QuiltView/QuiltView.py:467
+msgid "Could Not Set a Bookmark"
+msgstr ""
+
+#: QuiltView/QuiltView.py:468
+msgid "A bookmark could not be set because no one was selected."
+msgstr ""
+
+#: QuiltView/QuiltView.py:528
+msgid "Loading individuals"
+msgstr ""
+
+#: QuiltView/QuiltView.py:529
+msgid "Loading the data"
+msgstr ""
+
+#: QuiltView/QuiltView.py:905
+msgid "About Quilt View"
+msgstr ""
+
+#: QuiltView/QuiltView.py:975
+#, python-format
+msgid "Family of %(husband)s and %(spouse)s"
+msgstr ""
+
+#: QuiltView/QuiltView.py:981 QuiltView/QuiltView.py:985
+#, python-format
+msgid "Family of %s"
+msgstr ""
+
+#: QuiltView/QuiltView.py:1040 QuiltView/QuiltView.py:1169
+msgid "Edit"
+msgstr ""
+
+#: QuiltView/QuiltView.py:1043 QuiltView/QuiltView.py:1172
+msgid "Edit tags"
+msgstr ""
+
+#: QuiltView/QuiltView.py:1059 QuiltView/QuiltView.py:1384
+msgid "Children"
+msgstr ""
+
+#: QuiltView/QuiltView.py:1072 QuiltView/QuiltView.py:1397
+msgid "Add child to family"
+msgstr ""
+
+#: QuiltView/QuiltView.py:1142
+msgid "Add Child to Family"
+msgstr ""
+
+#: QuiltView/QuiltView.py:1175
+msgid "_Copy"
+msgstr ""
+
+#: QuiltView/QuiltView.py:1185
+msgid "Spouses"
+msgstr ""
+
+#: QuiltView/QuiltView.py:1190 QuiltView/QuiltView.py:1315
+msgid "Add"
+msgstr ""
+
+#: QuiltView/QuiltView.py:1214
+msgid "Siblings"
+msgstr ""
+
+#: QuiltView/QuiltView.py:1282
+msgid "Parents"
+msgstr ""
+
+#: QuiltView/QuiltView.py:1321
+msgid "Related"
+msgstr ""
+
+#: QuiltView/QuiltView.py:1352
+msgid "Set as home person"
+msgstr ""
+
+#: QuiltView/QuiltView.py:1502
+msgid "Adding Tags"
+msgstr ""
+
+#: QuiltView/QuiltView.py:1508
+#, python-format
+msgid "Adding Tags to person (%s)"
+msgstr ""
+
+#: QuiltView/QuiltView.py:1513
+#, python-format
+msgid "Adding Tags to family (%s)"
+msgstr ""
+
+#: QuiltView/QuiltView.py:1713
+msgid "Printing the tree"
+msgstr ""
+
+#: QuiltView/QuiltView.py:1717
+#, python-format
+msgid "Need to print %(pages)s pages (%(format)s format)"
+msgstr ""
+
+#: QuiltView/QuiltView.py:1769
+msgid ""
+"Center on the selected person.\n"
+"The new position of the person will be near the top left corner."
+msgstr ""
+
+#: QuiltView/QuiltView.py:1774
+msgid "The path color"
+msgstr ""
+
+#: QuiltView/QuiltView.py:1779
+msgid "The selected person color"
+msgstr ""
+
+#: QuiltView/QuiltView.py:1784
+msgid "The path transparency"
+msgstr ""
+
+#: QuiltView/QuiltView.py:1787
+msgid "General options"
+msgstr ""

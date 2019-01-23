@@ -14,7 +14,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
 # $Id: $
 
@@ -24,8 +24,9 @@
 #
 #------------------------------------------------------------------------
 import time
-from io import StringIO
+from io import BytesIO, StringIO
 from xml.parsers.expat import ParserCreate
+from gi.repository import Gtk
 
 #------------------------------------------------------------------------
 #
@@ -45,6 +46,7 @@ from gramps.plugins.importer.importcsv import CSVParser
 from gramps.plugins.importer.importvcard import VCardParser
 from gramps.plugins.importer.importxml import GrampsParser, PERSON_RE
 from gramps.gui.dialog import ErrorDialog
+from gramps.gui.user import User
 
 #------------------------------------------------------------------------
 #
@@ -102,8 +104,8 @@ class AtomicGrampsParser(GrampsParser):
     Class that imports XML files with an ordinary transaction so that the
     import is atomic and can be undone.
     """
-    def __init__(self, database, callback, change):
-        GrampsParser.__init__(self, database, callback, change)
+    def __init__(self, database, user, change):
+        GrampsParser.__init__(self, database, user, change)
 
     def parse(self, ifile, linecount=0, personcount=0):
         """
@@ -146,8 +148,6 @@ class AtomicGrampsParser(GrampsParser):
                           "media path in the Preferences."
                          ) % self.mediapath )
 
-            for key in self.func_map.keys():
-                del self.func_map[key]
             del self.func_map
             del self.func_list
             del self.p
@@ -202,12 +202,19 @@ class ImportGramplet(Gramplet):
         # show
         vbox.show_all()
 
+    def myprogress(self, percent):
+        self.uistate.progress.set_fraction(percent/100)
+        while Gtk.events_pending():
+            Gtk.main_iteration()
+
     def run(self, obj):
         """
         Method that is run when you click the Run button.
         The date is retrieved from the entry box, parsed as a date,
         and then handed to the quick report.
         """
+        user = User(callback=self.myprogress)
+
         message = _("Import done")
         buffer = self.import_text.get_buffer()
         start = buffer.get_start_iter()
@@ -220,13 +227,14 @@ class ImportGramplet(Gramplet):
         self.uistate.progress.show()
         self.uistate.push_message(self.dbstate, _("Importing Text..."))
         database = self.dbstate.db
-        ifile = StringIO(text)
         if text.startswith("0 HEAD"):
             raise NotImplementedError
         elif text.startswith("BEGIN:VCARD"):
             parser = AtomicVCardParser(database)
+            ifile = StringIO(text)
             parser.parse(ifile)
         elif text.find("""<!DOCTYPE database PUBLIC "-//Gramps//""") > 0:
+            ifile = BytesIO(text.encode('utf-8'))
             ofile = StringIO(text)
             person_count = 0
             line_count = 0
@@ -235,7 +243,7 @@ class ImportGramplet(Gramplet):
                 if PERSON_RE.match(line):
                     person_count += 1
             change = int(time.time())
-            parser = AtomicGrampsParser(database, None, change)
+            parser = AtomicGrampsParser(database, user, change)
             try:
                 info = parser.parse(ifile, line_count, person_count)
                 print(info.info_text())
@@ -245,6 +253,7 @@ class ImportGramplet(Gramplet):
         else:
             try:
                 parser = AtomicCSVParser(database)
+                ifile = StringIO(text)
                 parser.parse(ifile)
             except:
                 ErrorDialog(_("Can't determine type of import"))

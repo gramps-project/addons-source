@@ -1,0 +1,143 @@
+# Russian translation for BirthOrder
+# This file is distributed under the same license as the Gramps package.
+#
+# Ivan Komaritsyn <vantu5z@mail.ru>, 2018-2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps50\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-09 13:42+0300\n"
+"PO-Revision-Date: 2019-01-09 13:44+0300\n"
+"Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Gtranslator 2.91.7\n"
+"X-Poedit-Language: Russian\n"
+"X-Poedit-Country: RUSSIAN FEDERATION\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+
+#: BirthOrder/birthorder.gpr.py:9 BirthOrder/birthorder.py:62
+msgid "Sort Children in Birth order"
+msgstr "Сортировка детей в порядке рождения"
+
+#: BirthOrder/birthorder.gpr.py:10
+msgid ""
+"Looks through families, looking for children that are not in birth order.  "
+"User can accept individual suggestions to correct, edit the birth order "
+"manually, accept all those families that have all children with proper birth "
+"dates, or accept all."
+msgstr ""
+"Просматривает семьи и ищет детей, которые указаны не в порядке рождения. "
+"Пользователь может принять предложения частично, редактировать порядок "
+"вручную, принять изменения для семей с корректными датами или принять всё."
+
+#: BirthOrder/birthorder.py:161
+msgid "No families need sorting"
+msgstr "Сортировка не требуется"
+
+#: BirthOrder/birthorder.py:162
+msgid "No children were out of birth order."
+msgstr "Дети в несоответствующем порядке рождения отсутствуют."
+
+#: BirthOrder/birthorder.py:186
+msgid "Edit Family"
+msgstr "Редактировать семью"
+
+#: BirthOrder/birthorder.py:203
+msgid "Processing..."
+msgstr "Обработка..."
+
+#: BirthOrder/birthorder.py:204
+msgid "Edit Families"
+msgstr "Редактировать семьи"
+
+#: BirthOrder/birthorder.py:275
+msgid "Looking for children birth order"
+msgstr "Просмотр порядка рождения детей"
+
+#: BirthOrder/birthorder.py:279
+msgid "Pass 1: Building preliminary lists"
+msgstr "Проход 1: Построение предварительных списков"
+
+#: BirthOrder/birthorder.glade.h:1
+msgid "Select the family you wish to examine."
+msgstr "Выберите семью, которую хотите проверить."
+
+#: BirthOrder/birthorder.glade.h:2
+msgid "Family ID"
+msgstr "ID семьи"
+
+#: BirthOrder/birthorder.glade.h:3
+msgid "Father"
+msgstr "Отец"
+
+#: BirthOrder/birthorder.glade.h:4
+msgid "Mother"
+msgstr "Мать"
+
+#: BirthOrder/birthorder.glade.h:5
+msgid "Help"
+msgstr "Справка"
+
+#: BirthOrder/birthorder.glade.h:6
+msgid "Accept All"
+msgstr "Принять всё"
+
+#: BirthOrder/birthorder.glade.h:7
+msgid "This button will sort all of the families listed."
+msgstr "Будет произведена сортировка по всем семьям в списке."
+
+#: BirthOrder/birthorder.glade.h:8
+msgid "Accept All *"
+msgstr "Принять всё *"
+
+#: BirthOrder/birthorder.glade.h:9
+msgid ""
+"This button will sort all the families with '*'.  In these families, all the "
+"children have valid dates, so the sort is unambiguous."
+msgstr ""
+"Произвести сортировку в семьях помеченных '*'. В этих семьях, все дети имеют "
+"полные даты, поэтому сортировка будет однозначной."
+
+#: BirthOrder/birthorder.glade.h:10
+msgid "Accept"
+msgstr "Принять"
+
+#: BirthOrder/birthorder.glade.h:11
+msgid ""
+"This button will accept only the family selected and save it as shown in "
+"lower right pane."
+msgstr ""
+"Принять изменения только для выбранной семьи и сохранить как показано на "
+"нижней панели справа."
+
+#: BirthOrder/birthorder.glade.h:12
+msgid "Done"
+msgstr "Завершить"
+
+#: BirthOrder/birthorder.glade.h:13
+msgid "This button will exit, with remaining families unchanged."
+msgstr "Выход без внесения изменений в семьи."
+
+#: BirthOrder/birthorder.glade.h:14
+msgid "Current sort"
+msgstr "Текущий порядок"
+
+#: BirthOrder/birthorder.glade.h:15
+msgid "Proposed sort"
+msgstr "Предлагаемый порядок"
+
+#: BirthOrder/birthorder.glade.h:16
+msgid ""
+"When satisfied with the sort, use 'Accept' button below to accept the "
+"changes.  If you wish to adjust the order, select the child you wish to "
+"move, and use 'Up' or 'Down' buttons below to move them."
+msgstr ""
+"Когда сортировка будет удовлетворительной, нажмите 'Принять' для сохранения "
+"изменений. Если есть необходимость изменить порядок, выберите ребёнка и "
+"используйте кнопки 'Вверх' или 'Вниз' для его перемещения."

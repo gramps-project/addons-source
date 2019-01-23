@@ -1,0 +1,153 @@
+# Finnish translation HtreeAddonViev addon for Gramps 5.0
+# This file is distributed under the same license as the Gramps package.
+#
+#
+# Matti Niemelä <niememat@gmail.com>, 2018.
+msgid ""
+msgstr ""
+"Project-Id-Version: fi\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-10-02 12:33+0300\n"
+"PO-Revision-Date: 2018-10-02 13:15+0300\n"
+"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"Language-Team: Finnish <niememat@gmail.com>\n"
+"Language: fi_FI\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.6\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: HtreePedigreeView.gpr.py:45
+msgid "H-Tree Pedigree"
+msgstr "H-Sukupuu"
+
+#: HtreePedigreeView.gpr.py:46
+msgid "Charts"
+msgstr "Kaaviot"
+
+#: HtreePedigreeView.gpr.py:47
+msgid ""
+"The view shows a space-efficient pedigree with ancestors of the selected "
+"person"
+msgstr "Näkymä näyttää valitulle henkilölle tilaa säästävän sukupuun"
+
+#: HtreePedigreeView.py:83
+msgid "short for born|b."
+msgstr "s."
+
+#: HtreePedigreeView.py:84
+msgid "short for died|d."
+msgstr "k."
+
+#: HtreePedigreeView.py:85
+msgid "short for baptized|bap."
+msgstr "kast."
+
+#: HtreePedigreeView.py:86
+msgid "short for christened|chr."
+msgstr "rist."
+
+#: HtreePedigreeView.py:87
+msgid "short for buried|bur."
+msgstr "haud."
+
+#: HtreePedigreeView.py:88
+msgid "short for cremated|crem."
+msgstr "krem."
+
+#: HtreePedigreeView.py:531
+msgid "H-tree Pedigree View"
+msgstr "H-Sukupuu"
+
+#: HtreePedigreeView.py:697
+msgid "Person Filter Editor"
+msgstr "Henkilösuodinmuokkain"
+
+#: HtreePedigreeView.py:1540
+msgid "Relationship loop detected"
+msgstr "Suhteessa havaittu silmukka"
+
+#: HtreePedigreeView.py:1541
+msgid "A person was found to be his/her own ancestor."
+msgstr "Löytyi henkilö, joka on määritelty omaksi esivanhemmakseen."
+
+#: HtreePedigreeView.py:1585
+msgid "Pre_vious"
+msgstr "_Edellinen"
+
+#: HtreePedigreeView.py:1586
+msgid "_Next"
+msgstr "_Seuraava"
+
+#: HtreePedigreeView.py:1587
+msgid "_Home"
+msgstr "_Koti"
+
+#: HtreePedigreeView.py:1609
+msgid "Mouse scroll direction"
+msgstr "Hiiren rullauksen suunta"
+
+#: HtreePedigreeView.py:1613
+msgid "Top <-> Bottom"
+msgstr "Ylhäältä <-> Alas"
+
+#: HtreePedigreeView.py:1620
+msgid "Left <-> Right"
+msgstr "Vasen <-> Oikea"
+
+#: HtreePedigreeView.py:1638
+msgid "About H-Tree"
+msgstr "Tietoja H-Sukupuusta"
+
+#: HtreePedigreeView.py:1649
+msgid "_Add"
+msgstr "_Lisää"
+
+#: HtreePedigreeView.py:1684 HtreePedigreeView.py:1912
+msgid "_Edit"
+msgstr "_Muokkaa"
+
+#: HtreePedigreeView.py:1689 HtreePedigreeView.py:1917
+msgid "_Copy"
+msgstr "_Kopioi"
+
+#: HtreePedigreeView.py:1699
+msgid "Spouses"
+msgstr "Puolisot"
+
+#: HtreePedigreeView.py:1733
+msgid "Siblings"
+msgstr "Sisarukset"
+
+#: HtreePedigreeView.py:1775
+msgid "Children"
+msgstr "Lapset"
+
+#: HtreePedigreeView.py:1812
+msgid "Parents"
+msgstr "Vanhemmat"
+
+#: HtreePedigreeView.py:1849
+msgid "Add New Parents..."
+msgstr "Lisää uudet vanhemmat..."
+
+#: HtreePedigreeView.py:1860
+msgid "Related"
+msgstr "Sukua"
+
+#: HtreePedigreeView.py:2044
+msgid "Show images"
+msgstr "Näytä kuvat"
+
+#: HtreePedigreeView.py:2053
+msgid "Show tags"
+msgstr "Näytä tagit"
+
+#: HtreePedigreeView.py:2070
+msgid "Tree size"
+msgstr "Puun koko"
+
+#: HtreePedigreeView.py:2074
+msgid "Layout"
+msgstr "Asetelma"

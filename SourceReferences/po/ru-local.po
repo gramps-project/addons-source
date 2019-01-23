@@ -1,0 +1,62 @@
+# Russian translation for SourceReferences
+# This file is distributed under the same license as the Gramps package.
+#
+# Ivan Komaritsyn <vantu5z@mail.ru>, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps50\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-12-06 11:34+0300\n"
+"PO-Revision-Date: 2018-12-06 11:36+0300\n"
+"Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Gtranslator 2.91.7\n"
+"X-Poedit-Language: Russian\n"
+"X-Poedit-Country: RUSSIAN FEDERATION\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+
+#: SourceReferences/SourceReferences.gpr.py:31
+msgid "Source References"
+msgstr "Ссылки на источник"
+
+#: SourceReferences/SourceReferences.gpr.py:32
+msgid "Gramplet showing the references for a source"
+msgstr "Отображает ссылки на источник"
+
+#: SourceReferences/SourceReferences.gpr.py:40
+msgid "References"
+msgstr "Ссылки"
+
+#: SourceReferences/SourceReferences.py:50
+msgid "Type"
+msgstr "Тип"
+
+#: SourceReferences/SourceReferences.py:51
+msgid "Name"
+msgstr "Имя"
+
+#: SourceReferences/SourceReferences.py:141
+msgid ""
+"Cannot open new citation editor at this time. Either the citation is already "
+"being edited, or the associated source is already being edited, and opening "
+"a citation editor (which also allows the source to be edited), would create "
+"ambiguity by opening two editors on the same source. \n"
+"\n"
+"To edit the citation, close the source editor and open an editor for the "
+"citation alone"
+msgstr ""
+"Не удалось открыть новый редактор цитат. Эта цитата или связанный с ней "
+"источник открыты для редактирования.\n"
+"\n"
+"Закройте редактор источника и прочие окна редактора цитат, и откройте "
+"редактор цитат только для этой цитаты"
+
+#: SourceReferences/SourceReferences.py:154
+msgid "Cannot open new citation editor"
+msgstr "Не удалось открыть новый редактор цитат"

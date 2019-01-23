@@ -16,7 +16,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
 #-------------------------------------------------------------------------
@@ -32,6 +32,7 @@ from time import clock
 # Internationalisation
 #
 #------------------------------------------------------------------------
+from gramps.gen.constfunc import is_quartz
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
     _trans = glocale.get_addon_translator(__file__)
@@ -143,6 +144,10 @@ class PersonNode(Node):
         label = sex_char + ' ' + self.dead + ' ' + self.name
 
         layout = canvas.create_pango_layout(label)
+        if is_quartz():
+            PangoCairo.context_set_resolution(layout.get_context(), 72)
+        font = Pango.FontDescription('Sans')
+        layout.set_font_description(font)
         width, height = layout.get_size()
         self.width = width / 1024
 
@@ -226,7 +231,7 @@ class QuiltView(NavigationView):
         self.uistate.connect('font-changed', self.rebuild)
         self.uistate.connect('nameformat-changed', self.rebuild)
 
-        self.additional_uis.append(self.additional_ui())
+        self.additional_uis.append(self.additional_ui)
 
         # GTK objects
         self.scrolledwindow = None
@@ -315,41 +320,158 @@ class QuiltView(NavigationView):
 
         return self.vbox
 
-    def additional_ui(self):
-        """
-        Specifies the UIManager XML code that defines the menus and buttons
-        associated with the interface.
-        """
-        return '''<ui>
-          <menubar name="MenuBar">
-            <menu action="GoMenu">
-              <placeholder name="CommonGo">
-                <menuitem action="Back"/>
-                <menuitem action="Forward"/>
-                <separator/>
-                <menuitem action="HomePerson"/>
-                <separator/>
-              </placeholder>
-            </menu>
-            <menu action="EditMenu">
-              <menuitem action="FilterEdit"/>
-            </menu>
-            <menu action="BookMenu">
-              <placeholder name="AddEditBook">
-                <menuitem action="AddBook"/>
-                <menuitem action="EditBook"/>
-              </placeholder>
-            </menu>
-          </menubar>
-          <toolbar name="ToolBar">
-            <placeholder name="CommonNavigation">
-              <toolitem action="Back"/>
-              <toolitem action="Forward"/>
-              <toolitem action="HomePerson"/>
-              <toolitem action="Print"/>
-            </placeholder>
-          </toolbar>
-        </ui>'''
+    additional_ui = [  # Defines the UI string for UIManager
+        '''
+      <placeholder id="CommonGo">
+      <section>
+        <item>
+          <attribute name="action">win.Back</attribute>
+          <attribute name="label" translatable="yes">_Back</attribute>
+        </item>
+        <item>
+          <attribute name="action">win.Forward</attribute>
+          <attribute name="label" translatable="yes">_Forward</attribute>
+        </item>
+      </section>
+      <section>
+        <item>
+          <attribute name="action">win.HomePerson</attribute>
+          <attribute name="label" translatable="yes">_Home</attribute>
+        </item>
+      </section>
+      </placeholder>
+''',
+        '''
+      <section id='CommonEdit' groups='RW'>
+        <item>
+          <attribute name="action">win.PrintView</attribute>
+          <attribute name="label" translatable="yes">_Print...</attribute>
+        </item>
+      </section>
+''',
+        '''
+      <placeholder id='otheredit'>
+        <item>
+          <attribute name="action">win.FilterEdit</attribute>
+          <attribute name="label" translatable="yes">'''
+        '''Person Filter Editor</attribute>
+        </item>
+      </placeholder>
+''',
+        '''
+      <section id="AddEditBook">
+        <item>
+          <attribute name="action">win.AddBook</attribute>
+          <attribute name="label" translatable="yes">_Add Bookmark</attribute>
+        </item>
+        <item>
+          <attribute name="action">win.EditBook</attribute>
+          <attribute name="label" translatable="no">%s...</attribute>
+        </item>
+      </section>
+''' % _('Organize Bookmarks'),  # Following are the Toolbar items
+        '''
+    <placeholder id='CommonNavigation'>
+    <child groups='RO'>
+      <object class="GtkToolButton">
+        <property name="icon-name">go-previous</property>
+        <property name="action-name">win.Back</property>
+        <property name="tooltip_text" translatable="yes">'''
+        '''Go to the previous object in the history</property>
+        <property name="label" translatable="yes">_Back</property>
+        <property name="use-underline">True</property>
+      </object>
+      <packing>
+        <property name="homogeneous">False</property>
+      </packing>
+    </child>
+    <child groups='RO'>
+      <object class="GtkToolButton">
+        <property name="icon-name">go-next</property>
+        <property name="action-name">win.Forward</property>
+        <property name="tooltip_text" translatable="yes">'''
+        '''Go to the next object in the history</property>
+        <property name="label" translatable="yes">_Forward</property>
+        <property name="use-underline">True</property>
+      </object>
+      <packing>
+        <property name="homogeneous">False</property>
+      </packing>
+    </child>
+    <child groups='RO'>
+      <object class="GtkToolButton">
+        <property name="icon-name">go-home</property>
+        <property name="action-name">win.HomePerson</property>
+        <property name="tooltip_text" translatable="yes">'''
+        '''Go to the default person</property>
+        <property name="label" translatable="yes">_Home</property>
+        <property name="use-underline">True</property>
+      </object>
+      <packing>
+        <property name="homogeneous">False</property>
+      </packing>
+    </child>
+    </placeholder>
+''',
+        '''
+    <placeholder id='CommonNavigation'>
+    <child groups='RO'>
+      <object class="GtkToolButton">
+        <property name="icon-name">go-previous</property>
+        <property name="action-name">win.Back</property>
+        <property name="tooltip_text" translatable="yes">'''
+        '''Go to the previous object in the history</property>
+        <property name="label" translatable="yes">_Back</property>
+        <property name="use-underline">True</property>
+      </object>
+      <packing>
+        <property name="homogeneous">False</property>
+      </packing>
+    </child>
+    <child groups='RO'>
+      <object class="GtkToolButton">
+        <property name="icon-name">go-next</property>
+        <property name="action-name">win.Forward</property>
+        <property name="tooltip_text" translatable="yes">'''
+        '''Go to the next object in the history</property>
+        <property name="label" translatable="yes">_Forward</property>
+        <property name="use-underline">True</property>
+      </object>
+      <packing>
+        <property name="homogeneous">False</property>
+      </packing>
+    </child>
+    <child groups='RO'>
+      <object class="GtkToolButton">
+        <property name="icon-name">go-home</property>
+        <property name="action-name">win.HomePerson</property>
+        <property name="tooltip_text" translatable="yes">'''
+        '''Go to the default person</property>
+        <property name="label" translatable="yes">_Home</property>
+        <property name="use-underline">True</property>
+      </object>
+      <packing>
+        <property name="homogeneous">False</property>
+      </packing>
+    </child>
+    </placeholder>
+''',
+        '''
+    <placeholder id='BarCommonEdit'>
+    <child groups='RO'>
+      <object class="GtkToolButton">
+        <property name="icon-name">document-print</property>
+        <property name="action-name">win.PrintView</property>
+        <property name="tooltip_text" translatable="yes">Print...</property>
+        <property name="label" translatable="yes">_Print...</property>
+        <property name="use-underline">True</property>
+      </object>
+      <packing>
+        <property name="homogeneous">False</property>
+      </packing>
+    </child>
+    </placeholder>
+    ''']
 
     def define_actions(self):
         """
@@ -366,12 +488,10 @@ class QuiltView(NavigationView):
         """
         NavigationView.define_actions(self)
 
-        self._add_action('FilterEdit', None, _('Person Filter Editor'),
-                        callback=self.filter_editor)
-        self._add_action('Print', Gtk.STOCK_PRINT, _('Print the entire tree'),
-                        callback=self.on_print)
+        self._add_action('FilterEdit', self.filter_editor)
+        self._add_action('PrintView', self.on_print)
 
-    def filter_editor(self, obj):
+    def filter_editor(self, *obj):
         from gramps.gui.editors import FilterEditor
         try:
             FilterEditor('Person', CUSTOM_FILTERS,
@@ -561,13 +681,14 @@ class QuiltView(NavigationView):
                 person = self.dbstate.db.get_person_from_handle(handle)
                 if person is not None:
                     name = name_displayer.display(person)
+                    self.plist.append([name, handle])
                     sex = person.get_gender()
                     ident = person.get_gramps_id()
                 else:
                     name = "???"
+                    self.plist.append([name, handle])
                     sex = Person.UNKNOWN
                     ident = None
-                self.plist.append([name, handle])
                 # get alive status of person to get box color
                 death_event = get_death_or_fallback(self.dbstate.db, person)
                 if death_event:
@@ -808,7 +929,7 @@ class QuiltView(NavigationView):
         if self.on_draw_ok == 0:
             self.on_draw_ok = 1 # We can now draw path lines
 
-    def home(self, menuitem):
+    def home(self, *obj):
         defperson = self.dbstate.db.get_default_person()
         if defperson:
             self.change_active(defperson.handle)
@@ -1708,7 +1829,7 @@ class QuiltView(NavigationView):
     print_zoom = 1.0
     print_settings = None
 
-    def on_print(self, action=None):
+    def on_print(self, *obj):
         self.print_op = Gtk.PrintOperation()
         self.print_op.connect("begin_print", self.begin_print)
         self.print_op.connect("draw_page", self.draw_page)

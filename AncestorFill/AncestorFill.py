@@ -4,6 +4,7 @@
 # Copyright (C) 2000-2007  Donald N. Allingham
 # Copyright (C) 2007-2009  Brian G. Matherly
 # Copyright (C) 2010       Jakim Friant
+# Copyright (C) 2012       Jerome Rapinat
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,7 +18,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 # $Id: AncestorFill.py 18915 2012-02-17 16:51:40Z romjerome $
 
@@ -31,106 +32,30 @@
 import copy
 import os
 import gettext
+from collections import defaultdict
 
 #------------------------------------------------------------------------
 #
 # gramps modules
 #
 #------------------------------------------------------------------------
-from gramps.gen.const import USER_PLUGINS
-from gen.display.name import displayer as global_name_display
+from gramps.gen.const import GRAMPS_LOCALE as glocale
 from gramps.gen.errors import ReportError
-from gen.lib import ChildRefType
-from gen.plug.menu import (NumberOption, PersonOption,BooleanOption,
-                          EnumeratedListOption)
-from gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle,
-                             FONT_SANS_SERIF, INDEX_TYPE_TOC,
-                             PARA_ALIGN_CENTER)
-from gen.plug.report import Report
-from gen.plug.report import MenuReportOptions
-from libtranslate import get_language_string
-from libtranslate import Translator, get_language_string
-from collections import defaultdict
-import logging
+from gramps.gen.lib import ChildRefType
+from gramps.gen.plug.menu import NumberOption, PersonOption, BooleanOption
+from gramps.gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle,
+                                    FONT_SANS_SERIF, INDEX_TYPE_TOC,
+                                    PARA_ALIGN_CENTER)
+from gramps.gen.plug.report import Report
+from gramps.gen.plug.report import MenuReportOptions
+from gramps.gen.plug.report import stdoptions
+from gramps.gen.plug.report import utils
 
 try:
     _trans = glocale.get_addon_translator(__file__)
 except ValueError:
     _trans = glocale.translation
 _ = _trans.gettext
-
-LOCALEDIR = os.path.join(USER_PLUGINS, 'AncestorFill', 'locale')
-LOCALEDOMAIN = 'addon'
-
-# see TransUtils.py
-
-def get_available_translations():
-    """
-    Get a list of available translations.
-
-    :returns: A list of translation languages.
-    :rtype: unicode[]
-
-    """
-    languages = []
-
-    if LOCALEDIR is None:
-        return languages
-
-    for langdir in os.listdir(LOCALEDIR):
-        mofilename = os.path.join( LOCALEDIR, langdir,
-                                   "LC_MESSAGES", "addon.mo")
-        _LOG = logging.getLogger()
-        msg = "MOD file " + mofilename
-        _LOG.debug("message %s\n", msg)
-        if os.path.exists(mofilename):
-            _LOG = logging.getLogger()
-            msg = "LANG file " + langdir
-            _LOG.debug("message %s\n", msg)
-            languages.append(langdir)
-
-    languages.sort()
-
-    return languages
-
-class Translator:
-    """
-    This class provides translated strings for the configured language.
-    """
-
-    def __init__(self, lang="en"):
-        """
-        :param lang: The language to translate to.
-            The language can be:
-               * The name of any installed .mo file
-               * "en" to use the message strings in the code
-               * "default" to use the default translation being used by gettext.
-        :type lang: string
-        :return: nothing
-
-        """
-        if lang == "en":
-            self.__trans = None
-        else:
-            # fallback=True will cause the translator to use English if
-            # lang = "en" or if something goes wrong.
-            self.__trans = gettext.translation(LOCALEDOMAIN, LOCALEDIR,
-                                       [lang], fallback = True)
-
-    def gettext(self, message):
-        """
-        Return the unicode translated string.
-
-        :param message: The message to be translated.
-        :type message: string
-        :returns: The translated message
-        :rtype: unicode
-
-        """
-        if self.__trans:
-            return self.__trans.gettext(message)
-        else:
-            return unicode(gettext.gettext(message))
 
 #------------------------------------------------------------------------
 #
@@ -156,31 +81,28 @@ class AncestorFillReport(Report):
 
         gen       - Maximum number of generations to include.
         name_format   - Preferred format to display names
-        Filleddigit     - Number of decimal for the fill percentage
+        Filled_digit     - Number of decimal for the fill percentage
 
         """
         Report.__init__(self, database, options, user)
 
+        menu = options.menu
+
+        self.set_locale(menu.get_option_by_name('trans').get_value())
+
+        stdoptions.run_name_format_option(self, menu)
+
         self.trouve = {}
         self.index = defaultdict(list)
         self.gener = defaultdict(lambda : defaultdict(int))
-        menu = options.menu
         self.max_generations = menu.get_option_by_name('maxgen').get_value()
         pid = menu.get_option_by_name('pid').get_value()
-        self.Filleddigit = menu.get_option_by_name('Filleddigit').get_value()
-        self.Collapsedigit = menu.get_option_by_name('Collapsedigit').get_value()
-        self.displayth = menu.get_option_by_name('Display theorical').get_value()
+        self.Filleddigit = menu.get_option_by_name('Filled_digit').get_value()
+        self.Collapsedigit = menu.get_option_by_name('Collapsed_digit').get_value()
+        self.displayth = menu.get_option_by_name('Display_theoretical').get_value()
         self.center_person = database.get_person_from_gramps_id(pid)
-        if (self.center_person == None) :
+        if self.center_person is None:
             raise ReportError(_("Person %s is not in the Database") % pid )
-        language = menu.get_option_by_name('trans').get_value()
-        translator = Translator(language)
-
-        # Copy the global NameDisplay so that we don't change application
-        # defaults.
-        self._name_display = copy.deepcopy(global_name_display)
-
-        self._ = translator.gettext
 
     def apply_filter(self, person_handle, index, generation=1):
         """
@@ -202,7 +124,7 @@ class AncestorFillReport(Report):
         person = self.database.get_person_from_handle(person_handle)
         grampsid = person.get_gramps_id()
 
-        if self.trouve.has_key(grampsid):
+        if grampsid in self.trouve:
             return
 
 
@@ -265,8 +187,10 @@ class AncestorFillReport(Report):
         """
 
         name = self._name_display.display(self.center_person)
-        self.title = _("AncestorFill for %s") % name
-        self.doc.start_paragraph("AHN-Title")
+        self.title = self._("AncestorFill for %s") % name
+        self.doc.start_paragraph("ANF-Title")
+        mark = utils.get_person_mark(self.database, self.center_person)
+        self.doc.write_text('', mark)
         mark = IndexMark(self.title, INDEX_TYPE_TOC, 1)
         self.doc.write_text(self.title, mark)
         self.doc.end_paragraph()
@@ -278,19 +202,20 @@ class AncestorFillReport(Report):
         implexe = 0
         theor = ''
         self.apply_filter(self.center_person.get_handle(), 1)
-        strgen = _("Generation ")
-        strfoundanc = _(" Number of Ancestors found ")
-        pctfoundanc = _(" percent of Ancestors found ")
-        uniqfoundanc = _(" Number of single Ancestors found ")
-        strtheoanc = _(" Number of theorical Ancestors ")
-        strimplex = _(" Pedigree Collapse ")
+
+        strgen = self._("Generation ")
+        strfoundanc = self._("Number of Ancestors found ")
+        pctfoundanc = self._("percent of Ancestors found ")
+        uniqfoundanc = self._("Number of single Ancestors found ")
+        strtheoanc = self._("Number of theoretical Ancestors ")
+        strimplex = self._("Pedigree Collapse ")
+
         if self.displayth:
-            form = strgen + "%2d; " + strfoundanc + "%12d;" + strtheoanc + str(theor) + "; " + pctfoundanc +" %." + str(self.Filleddigit) + "f%% " + " ; " + uniqfoundanc + " %6d; " + strimplex + "%3." + str(self.Collapsedigit) + "f%%"
+            form = strgen + "%2d\n" + strfoundanc + "%12d\n" + strtheoanc + str(theor) + "\n" + pctfoundanc +" %." + str(self.Filleddigit) + "f%% " + " \n" + uniqfoundanc + " %6d\n" + strimplex + "%3." + str(self.Collapsedigit) + "f%%"
         else:
-            form = strgen + "%2d; " + strfoundanc + "%12d;" + pctfoundanc +" %." + str(self.Filleddigit) + "f%% " + " ; " + uniqfoundanc + " %6d; " + strimplex + "%3." + str(self.Collapsedigit) + "f%%"
-            text = _(
-                       form % ( gen , longueur , percent , nbhand , implexe ))
-            self.doc.start_paragraph("AHN-Generation")
+            form = strgen + "%2d\n" + strfoundanc + "%12d\n" + pctfoundanc +" %." + str(self.Filleddigit) + "f%% " + " \n" + uniqfoundanc + " %6d\n" + strimplex + "%3." + str(self.Collapsedigit) + "f%%"
+            text = form % (gen, longueur, percent, nbhand, implexe)
+            self.doc.start_paragraph("ANF-Generation")
             self.doc.write_text(text)
             self.doc.end_paragraph()
         for gen in range(0, self.max_generations):
@@ -316,24 +241,23 @@ class AncestorFillReport(Report):
             if longueur == 0:
                 next
             else:
-                self.doc.start_paragraph("AHN-Generation")
+                self.doc.start_paragraph("ANF-Generation")
                 if self.displayth:
-                    form = strgen + "%2d; " + strfoundanc + "%12d;" + strtheoanc + str(theor) + "; " + pctfoundanc +" %." + str(self.Filleddigit) + "f%% " + " ; " + uniqfoundanc + " %6d; " + strimplex + "%3." + str(self.Collapsedigit) + "f%%"
+                    form = strgen + "%2d\n" + strfoundanc + "%12d\n" + strtheoanc + str(theor) + "\n" + pctfoundanc +" %." + str(self.Filleddigit) + "f%% " + " \n" + uniqfoundanc + " %6d\n" + strimplex + "%3." + str(self.Collapsedigit) + "f%%"
                 else:
-                    form = strgen + "%2d; " + strfoundanc + "%12d;" + pctfoundanc +" %." + str(self.Filleddigit) + "f%% " + " ; " + uniqfoundanc + " %6d; " + strimplex + "%3." + str(self.Collapsedigit) + "f%%"
-                text = _(
-                       form % ( nextgen , longueur , percent , nbhand , implexe ))
+                    form = strgen + "%2d\n" + strfoundanc + "%12d\n" + pctfoundanc +" %." + str(self.Filleddigit) + "f%% " + " \n" + uniqfoundanc + " %6d\n" + strimplex + "%3." + str(self.Collapsedigit) + "f%%"
+                text = form % (nextgen, longueur, percent, nbhand, implexe)
                 self.doc.write_text(text)
                 self.doc.end_paragraph()
         totalnbanc = len(self.trouve)
         timplexe= ( total - totalnbanc) * 100.0 / total
-        strtotalanc = _(" Total Number of Ancestors found ")
-        form = strtotalanc + "%d; "
-        totaluniqfoundanc = _(" Total Number of single Ancestors found ")
-        form2 = totaluniqfoundanc + "%d; "
+        strtotalanc = self._("Total Number of Ancestors found ")
+        form = strtotalanc + "%d\n"
+        totaluniqfoundanc = self._("Total Number of single Ancestors found ")
+        form2 = totaluniqfoundanc + "%d\n"
         form3 = strimplex + "%3." + str(self.Collapsedigit) + "f%%"
-        text = _( form % ( total )) + " " + _( form2 % ( totalnbanc )) + _( form3 % ( timplexe ))
-        self.doc.start_paragraph("AHN-Generation")
+        text = (form % total) + (form2 % totalnbanc) + (form3 % timplexe)
+        self.doc.start_paragraph("ANF-Generation")
         self.doc.write_text(text)
         self.doc.end_paragraph()
 
@@ -351,7 +275,16 @@ class AncestorFillOptions(MenuReportOptions):
     """
 
     def __init__(self, name, dbase):
+        self.__db = dbase
+        self.__pid = None
         MenuReportOptions.__init__(self, name, dbase)
+
+    def get_subject(self):
+        """ Return a string that describes the subject of the report. """
+        from gramps.gen.display.name import displayer as _nd
+        gid = self.__pid.get_value()
+        person = self.__db.get_person_from_gramps_id(gid)
+        return _nd.display(person)
 
     def add_menu_options(self, menu):
         """
@@ -359,35 +292,37 @@ class AncestorFillOptions(MenuReportOptions):
         """
         category_name = _("Report Options")
 
-        pid = PersonOption(_("Center Person"))
-        pid.set_help(_("The center person for the report"))
-        menu.add_option(category_name, "pid", pid)
+        self.__pid = PersonOption(_("Center Person"))
+        self.__pid.set_help(_("The center person for the report"))
+        menu.add_option(category_name, "pid", self.__pid)
+
         maxgen = NumberOption(_("Generations"), 10, 1, 300)
         maxgen.set_help(_("The number of generations to include in the report"))
         menu.add_option(category_name, "maxgen", maxgen)
-        Filleddigit = NumberOption(_("Filleddigit"), 10, 1, 50)
-        Filleddigit.set_help(_("The number of digit after comma to include in the report for the percentage of ancestor found at a given generation"))
-        menu.add_option(category_name, "Filleddigit", Filleddigit)
-        Collapsedigit = NumberOption(_("Collapsedigit"), 10, 1, 50)
-        Collapsedigit.set_help(_("The number of digit after comma to include in the report for the pedigree Collapse"))
-        menu.add_option(category_name, "Collapsedigit", Collapsedigit)
-        displayth = BooleanOption(_("Display theorical"), False)
-        displayth.set_help(_("Display the theorical number of ancestor by generation"))
-        menu.add_option(category_name, "Display theorical", displayth)
-        trans = EnumeratedListOption(_("Translation"),"default")
-        trans.add_item("default", _("English"))
-        for language in get_available_translations():
-            trans.add_item(language, get_language_string(language))
-        trans.set_help(_("The translation to be used for the report."))
-        menu.add_option(category_name, "trans", trans)
+
+        Filleddigit = NumberOption(_("Filled digit"), 10, 1, 50)
+        Filleddigit.set_help(_("The number of digits after comma to include in the report for the percentage of ancestor found at a given generation"))
+        menu.add_option(category_name, "Filled_digit", Filleddigit)
+
+        Collapsedigit = NumberOption(_("Collapsed digit"), 10, 1, 50)
+        Collapsedigit.set_help(_("The number of digits after comma to include in the report for the pedigree Collapse"))
+        menu.add_option(category_name, "Collapsed_digit", Collapsedigit)
+
+        displayth = BooleanOption(_("Display theoretical"), False)
+        displayth.set_help(_("Whether to display the theoretical number of ancestor by generation"))
+        menu.add_option(category_name, "Display_theoretical", displayth)
+
+        stdoptions.add_name_format_option(menu, category_name)
+
+        stdoptions.add_localization_option(menu, category_name)
 
     def make_default_style(self, default_style):
         """
-        Make the default output style for the Ahnentafel report.
+        Make the default output style for the AncestorFill report.
 
         There are 3 paragraph styles for this report.
 
-        AHN_Title - The title for the report. The options are:
+        ANF-Title - The title for the report. The options are:
 
             Font      : Sans Serif
                         Bold
@@ -396,7 +331,7 @@ class AncestorFillOptions(MenuReportOptions):
                         0.25cm top and bottom margin
                         Centered
 
-        AHN-Generation - Used for the generation header
+        ANF-Generation - Used for the generation header
 
             Font      : Sans Serif
                         Italic
@@ -404,7 +339,7 @@ class AncestorFillOptions(MenuReportOptions):
             Paragraph : Second level header
                         0.125cm top and bottom margins
 
-        AHN - Normal text display for each entry
+        ANF - Normal text display for each entry
 
             Font      : default
             Paragraph : 1cm margin, with first indent of -1cm
@@ -412,7 +347,7 @@ class AncestorFillOptions(MenuReportOptions):
         """
 
         #
-        # AHN-Title
+        # ANF-Title
         #
         font = FontStyle()
         font.set(face=FONT_SANS_SERIF, size=16, bold=1)
@@ -423,10 +358,10 @@ class AncestorFillOptions(MenuReportOptions):
         para.set_bottom_margin(0.25)
         para.set_alignment(PARA_ALIGN_CENTER)
         para.set_description(_('The style used for the title of the page.'))
-        default_style.add_paragraph_style("AHN-Title", para)
+        default_style.add_paragraph_style("ANF-Title", para)
 
         #
-        # AHN-Generation
+        # ANF-Generation
         #
         font = FontStyle()
         font.set(face=FONT_SANS_SERIF, size=14, italic=1)
@@ -436,14 +371,14 @@ class AncestorFillOptions(MenuReportOptions):
         para.set_top_margin(0.125)
         para.set_bottom_margin(0.125)
         para.set_description(_('The style used for the generation header.'))
-        default_style.add_paragraph_style("AHN-Generation", para)
+        default_style.add_paragraph_style("ANF-Generation", para)
 
         #
-        # AHN-Entry
+        # ANF-Entry
         #
         para = ParagraphStyle()
         para.set(first_indent=-1.0, lmargin=1.0)
         para.set_top_margin(0.125)
         para.set_bottom_margin(0.125)
         para.set_description(_('The basic style used for the text display.'))
-        default_style.add_paragraph_style("AHN-Entry", para)
+        default_style.add_paragraph_style("ANF-Entry", para)

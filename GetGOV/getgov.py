@@ -15,7 +15,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
 """
@@ -27,7 +27,7 @@ GetGOV Gramplet.
 # Python modules
 #
 #------------------------------------------------------------------------
-from urllib.request import urlopen
+from urllib.request import urlopen, quote
 from xml.dom.minidom import parseString
 
 #------------------------------------------------------------------------
@@ -47,6 +47,7 @@ from gramps.gen.db import DbTxn
 from gramps.gen.lib import Place, PlaceName, PlaceType, PlaceRef, Url, UrlType
 from gramps.gen.datehandler import parser
 from gramps.gen.config import config
+from gramps.gen.display.place import displayer as _pd
 
 #------------------------------------------------------------------------
 #
@@ -324,7 +325,12 @@ class GetGOV(Gramplet):
     def __get_places(self, obj):
         gov_id = self.entry.get_text()
         to_do = [gov_id]
-        preferred_lang = config.get('preferences.place-lang')
+        try:
+            preferred_lang = config.get('preferences.place-lang')
+        except AttributeError:
+            fmt = config.get('preferences.place-format')
+            pf = _pd.get_formats()[fmt]
+            preferred_lang = pf.language
         if len(preferred_lang) != 2:
             preferred_lang = 'de'
         visited = {}
@@ -352,11 +358,12 @@ class GetGOV(Gramplet):
                     visited[gov_id] = (place, [])
                 else:
                     place, ref_list = self.__get_place(gov_id, type_dic, preferred_lang)
-                    self.dbstate.db.add_place(place, trans)
-                    visited[gov_id] = (place, ref_list)
-                    for ref, date in ref_list:
-                        if (ref not in to_do) and (ref not in visited):
-                            to_do.append(ref)
+                    if place.get_name().get_value is not '':
+                        self.dbstate.db.add_place(place, trans)
+                        visited[gov_id] = (place, ref_list)
+                        for ref, date in ref_list:
+                            if (ref not in to_do) and (ref not in visited):
+                                to_do.append(ref)
 
             for place, ref_list in visited.values():
                 if len(ref_list) > 0:
@@ -369,7 +376,7 @@ class GetGOV(Gramplet):
                     self.dbstate.db.commit_place(place, trans)
 
     def __get_place(self, gov_id, type_dic, preferred_lang):
-        gov_url = 'http://gov.genealogy.net/semanticWeb/about/' + gov_id
+        gov_url = 'http://gov.genealogy.net/semanticWeb/about/' + quote(gov_id)
 
         response = urlopen(gov_url)
         data = response.read()

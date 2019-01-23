@@ -17,7 +17,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
 # $Id: TimelinePedigreeview.gpr.py 13881 2009-12-21 13:43:50Z flix007 $
@@ -27,17 +27,30 @@
 # default views of Gramps
 #
 #------------------------------------------------------------------------
+if locals().get('uistate'):  # don't start GUI if in CLI mode, just ignore
+    from gi.repository import Gtk, GdkPixbuf
+    import os
+    from gramps.gen.const import USER_PLUGINS
+    fname = os.path.join(USER_PLUGINS, 'TimelinePedigreeView',
+                        'gramps-timelinepedigree.svg')
+    factory = Gtk.IconFactory()
+    pixbuf = GdkPixbuf.Pixbuf.new_from_file(fname)
+    iconset = Gtk.IconSet.new_from_pixbuf(pixbuf)
+    factory.add('gramps-timelinepedigree', iconset)
+    factory.add_default()
 
 register(VIEW,
-id    = 'TimelinePedigreeView',
-name  = _("Timeline Pedigree"),
-category = ("Ancestry", _("Ancestry")),
-description =  _("The view shows a timeline pedigree with ancestors and descendants of the selected person"),
-version = '0.1.43',
-gramps_target_version = "5.1",
-status = STABLE,
-fname = 'TimelinePedigreeView.py',
-authors = ["Felix Heß"],
-authors_email = ["xilef@nurfuerspam.de"],
-viewclass = 'TimelinePedigreeView',
-  )
+    id    = 'TimelinePedigreeView',
+    name  = _("Timeline Pedigree"),
+    category = ("Ancestry", _("Ancestry")),
+    description =  _("The view shows a timeline pedigree with ancestors and "
+                     "descendants of the selected person"),
+    version = '0.1.52',
+    gramps_target_version = "5.1",
+    status = STABLE,
+    fname = 'TimelinePedigreeView.py',
+    authors = ["Felix Heß"],
+    authors_email = ["xilef@nurfuerspam.de"],
+    viewclass = 'TimelinePedigreeView',
+    stock_icon = 'gramps-timelinepedigree',
+    )

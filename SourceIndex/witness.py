@@ -13,7 +13,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 from gi.repository import Gtk
 import os
@@ -112,7 +112,7 @@ class Witness(tool.Tool, ManagedWindow):
         return self.glade.get_widget(key)
 
     def _setup_fields(self):
-        '''
+        r'''
         Gramps XML storage means ability to also import/manage alone records
         /!\ some attributes are translated keys
         see data_item keys and eventref types of attribute

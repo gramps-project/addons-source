@@ -15,7 +15,7 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 # $Id$
 #
@@ -24,7 +24,7 @@ register(GRAMPLET,
          name=_("Last Change Gramplet"),
          description=_("List the last ten person records that have been changed"),
          status=STABLE,
-         version = '0.0.31',
+         version = '0.1.3',
          fname="LastChangeGramplet.py",
          authors=['Jakim Friant'],
          authors_email=["jmodule@friant.org"],
@@ -40,7 +40,7 @@ register(REPORT,
          name=_("Last Change Report"),
          description=_("Report of the last records that have been changed"),
          status=STABLE,
-         version = '0.0.31',
+         version = '0.1.3',
          fname="LastChangeReport.py",
          gramps_target_version="5.1",
          authors=['Jakim Friant'],

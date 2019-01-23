@@ -2,6 +2,7 @@
 #
 # Copyright (C) 2009  Douglas S. Blank <doug.blank@gmail.com>
 # Copyright (C) 2016  Serge Noiraud <serge.noiraud@free.fr>
+# Copyright (C) 2017  Paul Culley <paulr2787@gmail.com>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -15,10 +16,11 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
-import sys
+import time
 
+from gi.repository import Gtk, Gdk, Pango
 #------------------------------------------------------------------------
 #
 # GRAMPS modules
@@ -31,11 +33,10 @@ try:
 except ValueError:
     _trans = glocale.translation
 _ = _trans.gettext
-from gramps.gui.plug.quick import QuickTable, run_quick_report_by_name
-from gramps.gen.simple import SimpleAccess, SimpleDoc
-from gramps.gen.constfunc import handle2internal
+from gramps.gui.editors import EditPerson
+from gramps.gen.simple import SimpleAccess
+from gramps.gen.errors import WindowActiveError
 
-cache = {}
 
 #------------------------------------------------------------------------
 #
@@ -43,63 +44,104 @@ cache = {}
 #
 #------------------------------------------------------------------------
 class DescendantCountGramplet(Gramplet):
+    """
+    Show a list of Persons with a count of their descendants.
+    """
+    def init(self):
+        self.gui.WIDGET = self.build_gui()
+        self.gui.get_container_widget().remove(self.gui.textview)
+        self.gui.get_container_widget().add(self.gui.WIDGET)
+        self.gui.WIDGET.show()
+
     def main(self):
-        run_quick_report_by_name(self.gui.dbstate,
-                                 self.gui.uistate,
-                                 "Descendant Count Quickview",
-                                 "None", # dummy handle value
-                                 container=self.gui.textview)
+        database = self.dbstate.db
+        simple_a = SimpleAccess(database)
+        # stime = time.perf_counter()
+        counts_list = {}
+        count = 0
+        self.model.clear()
+        for person in database.iter_people():
+            if count == 200:
+                count = 0
+                yield True
+            count += 1
+            result = len(countem(database, person, counts_list))
+            self.model.append((simple_a.describe(person), result,
+                               person.handle))
+        self.set_has_data(len(self.model) > 0)
+        # print(time.perf_counter() - stime)
 
     def db_changed(self):
         self.connect(self.dbstate.db, 'person-add', self.update)
         self.connect(self.dbstate.db, 'person-delete', self.update)
+        self.connect(self.dbstate.db, 'family-add', self.update)
+        self.connect(self.dbstate.db, 'family-delete', self.update)
+        self.connect(self.dbstate.db, 'family-update', self.update)
+        self.connect(self.dbstate.db, 'person-rebuild', self.update)
+        self.connect(self.dbstate.db, 'family-rebuild', self.update)
 
-    def active_changed(self, handle):
-        self.update()
+    def build_gui(self):
+        """
+        Build the GUI interface.
+        """
+        tip = _("Click name to change active\n"
+                "Double-click name to edit")
+        self.set_tooltip(tip)
+        top = Gtk.TreeView()
+        top.connect('button-press-event', self._button_press)
+        renderer = Gtk.CellRendererText()
+        renderer.set_property('ellipsize', Pango.EllipsizeMode.END)
+        column = Gtk.TreeViewColumn(_('Person'), renderer, text=0)
+        column.set_expand(True)
+        column.set_resizable(True)
+        column.set_sizing(Gtk.TreeViewColumnSizing.AUTOSIZE)
+        column.set_sort_column_id(0)
+        top.append_column(column)
+        renderer = Gtk.CellRendererText()
+        column = Gtk.TreeViewColumn(_('Descendants'), renderer, text=1)
+        column.set_sort_column_id(1)
+        top.append_column(column)
+        self.model = Gtk.ListStore(str, int, str)
+        top.set_model(self.model)
+        return top
+
+    def _button_press(self, obj, event):
+        """
+        Double-click for edit, single for make active.
+        """
+        model, iter_ = obj.get_selection().get_selected()
+        if iter_:
+            handle = model.get_value(iter_, 2)
+            if event.type == Gdk.EventType._2BUTTON_PRESS and \
+                    event.button == 1:
+                try:
+                    person = self.dbstate.db.get_person_from_handle(handle)
+                    EditPerson(self.dbstate, self.uistate, [], person)
+                except WindowActiveError:
+                    pass
+            else:
+                self.uistate.set_active(handle, 'Person')
+
 
 #------------------------------------------------------------------------
 #
 # Functions
 #
 #------------------------------------------------------------------------
-def countem(db, person_handle):
-    local_list = []
-    person = db.get_person_from_handle(person_handle)
+def countem(db, person, counts_list):
+    """
+    person is the one currently in process
+    counts_list is a dict, handle for key, h_list(set) as value
+    h_list is a set of handles of everyone below current person
+    """
+    h_list = counts_list.get(person.handle, None)
+    if h_list:
+        return h_list
+    h_list = set()
+    counts_list[person.handle] = h_list  # protects against loops
     for fam_handle in person.get_family_handle_list():
         fam = db.get_family_from_handle(fam_handle)
         for child_ref in fam.get_child_ref_list():
-            if child_ref.ref not in local_list:
-                local_list.append(child_ref.ref)
-            new_list = countem(db, child_ref.ref)
-            for elem in new_list:
-                if elem not in local_list:
-                    local_list.append(elem)
-    return local_list
-
-def run(database, document, person):
-    """
-    Loops through the families that the person is a child in, and display
-    the information about the other children.
-    """
-    global cache
-    cache = {}
-    # setup the simple access functions
-    sdb = SimpleAccess(database)
-    sdoc = SimpleDoc(document)
-    stab = QuickTable(sdb)
-    # display the title
-    sdoc.title(_("Descendant Count"))
-    sdoc.paragraph("")
-    stab.columns(_("Person"), _("Number of Descendants"))
-    people = database.get_person_handles(sort_handles=True)
-    for person_handle in people:
-        result = countem(database, handle2internal(person_handle))
-        cache[person_handle] = len(result)
-    matches = 0
-    for person_handle in cache:
-        person = database.get_person_from_handle(person_handle)
-        stab.row(person, cache[person_handle])
-        matches += 1
-    sdoc.paragraph(_("There are %d people.\n") % matches)
-    stab.write(sdoc)
-
+            child = db.get_person_from_handle(child_ref.ref)
+            h_list.update(countem(db, child, counts_list), [child_ref.ref])
+    return h_list

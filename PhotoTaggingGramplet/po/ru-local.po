@@ -1,17 +1,19 @@
 # Russian translation for the Photo Tagging Gramplet.
 # Copyright (C) 2013  Artem Glebov <artem.glebov@gmail.com>
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the Gramps package.
+#
 # Artem Glebov <artem.glebov@gmail.com>, 2013.
+# Ivan Komaritsyn <vantu5z@mail.ru>, 2017-2018.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-24 10:04+0300\n"
-"PO-Revision-Date: 2013-06-24 10:23+0300\n"
-"Last-Translator: Artem Glebov <artem.glebov@gmail.com>\n"
+"POT-Creation-Date: 2018-11-03 19:59+0300\n"
+"PO-Revision-Date: 2018-11-03 20:03+0300\n"
+"Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian <>\n"
-"Language: \n"
+"Language: Russian\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -25,13 +27,132 @@ msgstr "Разметка фотографий"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:4
 msgid "Gramplet for tagging people in photos"
-msgstr "Грамплет для разметки фотографий"
+msgstr "Грамплет предназначен для выделения людей на фотографиях"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:118
+msgid "Selection"
+msgstr "Область"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:120
+msgid "Replace existing references to the person being assigned without asking"
+msgstr "Не спрашивать при замене существующих ссылок на человека"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:127
+msgid "Face detection"
+msgstr "Определение лиц"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:130
+msgid "Minimum face width (px)"
+msgstr "Минимальная ширина лица (px)"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:132
+msgid "Minimum face height (px)"
+msgstr "Минимальная высота лица (px)"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:135
+msgid "Detect faces inside existing boxes"
+msgstr "Искать лица в уже существующих областях"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:137
+msgid "Sensitivity (1 min .. 20 max)"
+msgstr "Чувствительность (1 мин .. 20 макс)"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:271
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:732
+msgid "Select Person"
+msgstr "Выбрать человека"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:272
+msgid "Add Person"
+msgstr "Добавить человека"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:273
+msgid "Clear Reference"
+msgstr "Удалить ссылку"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:274
+msgid "Remove Selection"
+msgstr "Удалить область"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:275
+msgid "Edit referenced Person"
+msgstr "Редактировать привязанного человека"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:276
+msgid "Zoom In"
+msgstr "Увеличить"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:277
+msgid "Zoom Out"
+msgstr "Уменьшить"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:280
+msgid "Detect faces"
+msgstr "Найти лица"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:282
+msgid "Detect faces (OpenCV module required)"
+msgstr "Определение лиц (требуется модуль OpenCV)"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:285
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:794
+msgid "Settings"
+msgstr "Параметры"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:333
+msgid "Preview"
+msgstr "Предпросмотр"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:334
+msgid "Person"
+msgstr "Человек"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:450
+msgid "Set as active person"
+msgstr "Установить активное лицо"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:453
+msgid "_Select"
+msgstr "_Выбрать"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:456
+msgid "_Add"
+msgstr "_Добавить"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:459
+msgid "_Clear"
+msgstr "_Очистить"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:462
+msgid "_Remove"
+msgstr "_Удалить"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:609
 #, python-format
 msgid "Edit Person (%s)"
 msgstr "Редактировать запись о (%s)"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:492
-msgid "Select Person"
-msgstr "Выбрать человека"
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:665
+#, python-brace-format
+msgid "Replace to {0}"
+msgstr "Заменить на {0}"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:764
+msgid "Detecting faces..."
+msgstr "Определение лиц на фото..."
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:789
+msgid "Detection finished"
+msgstr "Определение лиц завершено"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:839
+#, python-brace-format
+msgid "Another region of this image is associated with {name}. Remove it?"
+msgstr "Другая область на этом фото связана с {name}. Удалить её?"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:842
+#, python-brace-format
+msgid ""
+"{count} other regions of this image are associated with {name}. Remove them?"
+msgstr "{count} других областей на этом фото связаны с {name}. Удалить их?"
+

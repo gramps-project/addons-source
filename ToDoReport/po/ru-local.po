@@ -1,0 +1,108 @@
+# Russian translation for ToDoReport
+# This file is distributed under the same license as the Gramps package.
+#
+# Ivan Komaritsyn <vantu5z@mail.ru>, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps50\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-12-06 13:51+0300\n"
+"PO-Revision-Date: 2018-12-06 13:57+0300\n"
+"Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Gtranslator 2.91.7\n"
+"X-Poedit-Language: Russian\n"
+"X-Poedit-Country: RUSSIAN FEDERATION\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+
+#: ToDoReport/TodoReport.gpr.py:24
+msgid "Todo Report"
+msgstr "Отчёт по задачам"
+
+#: ToDoReport/TodoReport.gpr.py:25
+msgid ""
+"Produces a list of all the notes with a given tag along with the records "
+"that it references, the Person, Family, Event, etc."
+msgstr ""
+"Предоставляет список всех заметок с указанныой меткой по всем записям на "
+"которые они ссылаются (лицо, семья, событие, др.)"
+
+#: ToDoReport/TodoReport.py:85
+msgid "ToDo Report"
+msgstr "Отчёт по задачам"
+
+#: ToDoReport/TodoReport.py:86
+msgid "You must first create a tag before running this report."
+msgstr "Необходимо создать метки перед тем как запускать этот отчёт."
+
+#: ToDoReport/TodoReport.py:94
+#, python-format
+msgid "Report on Notes Tagged %s"
+msgstr "Отчёт по заметкам с меткой %s"
+
+#: ToDoReport/TodoReport.py:205
+msgid "Id"
+msgstr "Id"
+
+#: ToDoReport/TodoReport.py:211
+msgid "Text"
+msgstr "Текст"
+
+#: ToDoReport/TodoReport.py:338
+#, python-format
+msgid "%(relationship_type)s on %(relationship_date)s"
+msgstr "%(relationship_type)s в %(relationship_date)s"
+
+#: ToDoReport/TodoReport.py:369
+msgid "date: "
+msgstr "дата: "
+
+#: ToDoReport/TodoReport.py:380
+msgid "place: "
+msgstr "место: "
+
+#: ToDoReport/TodoReport.py:486
+msgid "Report Options"
+msgstr "Параметры отчёта"
+
+#: ToDoReport/TodoReport.py:494 ToDoReport/TodoReport.py:498
+msgid "Tag"
+msgstr "Метка"
+
+#: ToDoReport/TodoReport.py:501
+msgid "The tag to use for the report"
+msgstr "Метка для построения отчёта"
+
+#: ToDoReport/TodoReport.py:504
+msgid "Group by reference type"
+msgstr "Группировать по типу ссылки"
+
+#: ToDoReport/TodoReport.py:505
+msgid "Group notes by Family, Person, Place, etc."
+msgstr "Группировать заметки по семье, лицу, месту и др."
+
+#: ToDoReport/TodoReport.py:522
+msgid "The style used for the title of the page."
+msgstr "Стиль заголовков страниц."
+
+#: ToDoReport/TodoReport.py:532
+msgid "The style used for the section headers."
+msgstr "Стиль заголовка разделов."
+
+#: ToDoReport/TodoReport.py:542
+msgid "The basic style used for the text display."
+msgstr "Основной стиль текста."
+
+#: ToDoReport/TodoReport.py:553
+msgid "The basic style used for table headings."
+msgstr "Основной стиль используемый для заголовков таблиц."
+
+#: ToDoReport/TodoReport.py:560
+msgid "The basic style used for the note display."
+msgstr "Основной стиль используемый для отображения заметок."
