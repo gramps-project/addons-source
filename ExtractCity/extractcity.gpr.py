@@ -33,7 +33,7 @@ id    = 'excity',
 name  = _("Extract Place Data from a Place Title"),
 description =  _("Attempts to extract city and state/province "
                  "from a place title"),
-version = '1.0.5',
+version = '1.0.6',
 gramps_target_version = "5.1",
 status = STABLE,
 fname = 'extractcity.py',
