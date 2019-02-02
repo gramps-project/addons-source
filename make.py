@@ -47,6 +47,7 @@ import glob
 import sys
 import os
 import tarfile
+from xml.etree import ElementTree
 
 if "GRAMPSPATH" in os.environ:
     GRAMPSPATH = os.environ["GRAMPSPATH"]
@@ -208,7 +209,6 @@ elif command == "init":
         dirs = [addon]
     if len(sys.argv) == 4:
         from gramps.gen.plug import make_environment, PTYPE_STR
-        from xml.etree import ElementTree
 
         def register(ptype, **kwargs):
             global plugins
@@ -237,8 +237,7 @@ elif command == "init":
             if not listed:
                 continue  # skip this one if not listed
 
-            mkdir(r("%(addon)s/po"))
-            mkdir("%(addon)s/locale")
+            mkdir("%(addon)s/po")
             system('''xgettext --language=Python --keyword=_ --keyword=N_'''
                    ''' --from-code=UTF-8'''
                    ''' -o "%(addon)s/po/template.pot" "%(addon)s"/*.py ''')
@@ -519,6 +518,7 @@ elif command == "as-needed":
             # Build it.
             do_tar(sfiles)
             print("***Rebuilt:      %s" % addon)
+
         # Add addon to newly created listing (equivalent to 'listing all')
         for lang in languages:
             gpr_bad = False  # to flag a bad gpr
@@ -559,6 +559,45 @@ elif command == "as-needed":
             if gpr_bad or not do_list:
                 break
         cleanup(addon)
+        if todo:  # make an updated pot file
+            mkdir("%(addon)s/po")
+            system('''xgettext --language=Python --keyword=_ --keyword=N_'''
+                   ''' --from-code=UTF-8'''
+                   ''' -o "%(addon)s/po/temp.pot" "%(addon)s"/*.py ''')
+            fnames = glob.glob("%s/*.glade" % addon)
+            if fnames:
+                system('''xgettext -j --add-comments -L Glade '''
+                       '''--from-code=UTF-8 -o "%(addon)s/po/temp.pot" '''
+                       '''"%(addon)s"/*.glade''')
+
+            # scan for xml files and get translation text where the tag
+            # starts with an '_'.  Create a .h file with the text strings
+            fnames = glob.glob("%s/*.xml" % addon)
+            for filename in fnames:
+                tree = ElementTree.parse(filename)
+                root = tree.getroot()
+                with open(filename + '.h', 'w', encoding='utf-8') as head:
+                    for key in root.iter():
+                        if key.tag.startswith('_') and len(key.tag) > 1:
+                            msg = key.text.replace('"', '\\"')
+                            txl = '_("%s")\n' % msg
+                            head.write(txl)
+                root.clear()
+                # now append XML text to the pot
+                system('''xgettext -j --keyword=_ --from-code=UTF-8 '''
+                       '''--language=Python -o "%(addon)s/po/temp.pot" '''
+                       '''"%(filename)s.h"''')
+                os.remove(filename + '.h')
+            if os.path.isfile(r('''%(addon)s/po/template.pot''')):
+                # we do a merge so changes to header are not lost
+                system('''msgmerge --no-fuzzy-matching -U '''
+                       '''%(addon)s/po/template.pot '''
+                       '''%(addon)s/po/temp.pot''')
+                os.remove(r('''%(addon)s/po/temp.pot'''))
+            else:
+                os.rename(r('''%(addon)s/po/temp.pot'''),
+                          r('''%(addon)s/po/template.pot'''))
+    # write out the listings
     for lang in languages:
         fp = open(r("../addons/%(gramps_version)s/listings/") +
                   ("addons-%s.txt" % lang), "w", encoding="utf-8",
