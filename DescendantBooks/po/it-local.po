@@ -1,0 +1,728 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Detatiled Descendant Book Report addon for Gramps\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2019-02-05 23:50+0100\n"
+"Language-Team: Giansalvo Gusinu giansalvo.gusinu@gmail.com\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.1\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: it_IT\n"
+
+#: DescendantBooks/CollectAscendants.py:178
+#, python-format
+msgid "Deep pruning ascendants from %s people..."
+msgstr "Rimozione approfondita degli ascendenti in eccesso da %s persone..."
+
+#: DescendantBooks/CollectAscendants.py:182
+#, python-format
+msgid "Pruning ascendants from %s people..."
+msgstr "Rimozione degli ascendenti in eccesso da %s persone..."
+
+#: DescendantBooks/CollectAscendants.py:320
+#: DescendantBooks/CollectAscendants.py:413
+#, python-format
+msgid "Getting ascendants from %s people..."
+msgstr "Lettura degli ascendenti da %s persone..."
+
+#: DescendantBooks/CollectAscendants.py:331
+#, python-format
+msgid "Verifying descendants from %s people..."
+msgstr "Verifica dei discendenti da %s persone..."
+
+#: DescendantBooks/CollectAscendants.py:348
+#, python-format
+msgid "Getting missing descendants from %s people..."
+msgstr "Recupero dei discendenti mancanti da %s persone..."
+
+#: DescendantBooks/CollectAscendants.py:367
+#, python-format
+msgid "Verifying descendants from %s people after pruning..."
+msgstr "Verifica dei discendenti da %s persone dopo la rimozione..."
+
+#: DescendantBooks/CollectAscendants.py:383
+#, python-format
+msgid "Getting missing descendants from %s people ..."
+msgstr "Recupero dei discendenti mancanti da %s persone..."
+
+#: DescendantBooks/DescendantBookReport.py:218
+#: DescendantBooks/DescendantBookReport.py:223
+#, python-format
+msgid "sp. %(spouse)s"
+msgstr "sp. %(spouse)s"
+
+#: DescendantBooks/DescendantBookReport.py:233
+#, python-format
+msgid "sp. see  %(reference)s : %(spouse)s"
+msgstr "sp. vedi %(reference)s : %(spouse)s"
+
+#: DescendantBooks/DescendantBookReport.py:244
+#, python-format
+msgid "see report: %(report)s, ref: %(reference)s : %(person)s & %(spouse)s"
+msgstr ""
+"vedi resoconto: %(report)s, rif: %(reference)s : %(person)s & %(spouse)s"
+
+#: DescendantBooks/DescendantBookReport.py:319
+#, python-format
+msgid "%s sp."
+msgstr "%s sp."
+
+#: DescendantBooks/DescendantBookReport.py:369
+msgid "Descendants Report"
+msgstr "Resoconto dei Discendenti"
+
+#: DescendantBooks/DescendantBookReport.py:374
+#: DescendantBooks/DetailedDescendantBookReport.py:167
+#, python-format
+msgid "Person %s is not in the Database"
+msgstr "La Persona %s non è in archivio"
+
+#: DescendantBooks/DescendantBookReport.py:418
+#: DescendantBooks/DetailedDescendantBookReport.py:409
+#, python-format
+msgid "Writing %s reports..."
+msgstr "Scrittura di %s resoconti..."
+
+#: DescendantBooks/DescendantBookReport.py:437
+#, python-format
+msgid "%s. Descendants of %s"
+msgstr "%s Discendenti di %s"
+
+#: DescendantBooks/DescendantBookReport.py:439
+#, python-format
+msgid "Descendants of %s"
+msgstr "Discendenti di %s"
+
+#: DescendantBooks/DescendantBookReport.py:459
+msgid "Descendant Report"
+msgstr "Resoconto dei Discendenti"
+
+#: DescendantBooks/DescendantBookReport.py:465
+#: DescendantBooks/DetailedDescendantBookReport.py:591
+msgid "Table Of Contents"
+msgstr "Indice dei contenuti"
+
+#: DescendantBooks/DescendantBookReport.py:476
+#: DescendantBooks/DetailedDescendantBookReport.py:602
+#, python-format
+msgid "%d. %s"
+msgstr "%d. %s"
+
+#: DescendantBooks/DescendantBookReport.py:501
+#: DescendantBooks/DetailedDescendantBookReport.py:1325
+msgid "Report Options"
+msgstr "Opzioni del Resoconto"
+
+#: DescendantBooks/DescendantBookReport.py:503
+#: DescendantBooks/DetailedDescendantBookReport.py:1327
+msgid "Filter"
+msgstr "Filtro"
+
+#: DescendantBooks/DescendantBookReport.py:505
+#: DescendantBooks/DetailedDescendantBookReport.py:1329
+msgid "Select filter to restrict people that appear in the report"
+msgstr ""
+"Seleziona il filtro per restringere le persone che appariranno nel "
+"resoconto"
+
+#: DescendantBooks/DescendantBookReport.py:508
+#: DescendantBooks/DetailedDescendantBookReport.py:1332
+msgid "Center Person"
+msgstr "Persona centrale"
+
+#: DescendantBooks/DescendantBookReport.py:509
+#: DescendantBooks/DetailedDescendantBookReport.py:1333
+msgid "The center person for the report"
+msgstr "La persona centrale del resoconto"
+
+#: DescendantBooks/DescendantBookReport.py:519
+#: DescendantBooks/DetailedDescendantBookReport.py:1342
+msgid "Name format"
+msgstr "Formato del nome"
+
+#: DescendantBooks/DescendantBookReport.py:520
+#: DescendantBooks/DetailedDescendantBookReport.py:1343
+msgid "Default"
+msgstr "Predefinito"
+
+#: DescendantBooks/DescendantBookReport.py:523
+#: DescendantBooks/DetailedDescendantBookReport.py:1346
+msgid "Select the format to display names"
+msgstr "Seleziona il formato di visualizzazione dei nomi"
+
+#: DescendantBooks/DescendantBookReport.py:526
+#: DescendantBooks/DetailedDescendantBookReport.py:1349
+msgid "Numbering system"
+msgstr "Sistema di numerazione"
+
+#: DescendantBooks/DescendantBookReport.py:528
+msgid "Simple numbering"
+msgstr "Numerazione semplice"
+
+#: DescendantBooks/DescendantBookReport.py:529
+msgid "de Villiers/Pama numbering"
+msgstr "numerazione de Villiers/Pama"
+
+#: DescendantBooks/DescendantBookReport.py:530
+msgid "Meurgey de Tupigny numbering"
+msgstr "Numerazione Meurgey de Tupigny"
+
+#: DescendantBooks/DescendantBookReport.py:531
+#: DescendantBooks/DetailedDescendantBookReport.py:1355
+msgid "The numbering system to be used"
+msgstr "Il sistema di numerazione da usare"
+
+#: DescendantBooks/DescendantBookReport.py:534
+#: DescendantBooks/DetailedDescendantBookReport.py:1358
+msgid "Generations"
+msgstr "Generazioni"
+
+#: DescendantBooks/DescendantBookReport.py:535
+#: DescendantBooks/DetailedDescendantBookReport.py:1360
+msgid "The number of generations to include in the report"
+msgstr "Il numero di generazioni da includere nel resoconto"
+
+#: DescendantBooks/DescendantBookReport.py:538
+msgid "Show marriage info"
+msgstr "Visualizza informazioni sul matrimonio"
+
+#: DescendantBooks/DescendantBookReport.py:539
+msgid "Whether to show marriage information in the report."
+msgstr ""
+"Indica se visualizzare o meno le informazioni del matrimonio nel resoconto."
+
+#: DescendantBooks/DescendantBookReport.py:542
+msgid "Show divorce info"
+msgstr "Visualizza le informazioni del divorzio"
+
+#: DescendantBooks/DescendantBookReport.py:543
+msgid "Whether to show divorce information in the report."
+msgstr ""
+"Indica se visualizzare o meno le informazioni del divorzio nel resoconto."
+
+#: DescendantBooks/DescendantBookReport.py:546
+msgid "Show duplicate trees"
+msgstr "Mostra gli alberi duplicati"
+
+#: DescendantBooks/DescendantBookReport.py:547
+msgid "Whether to show duplicate family trees in the report."
+msgstr ""
+"Indica se visualizzare o meno gli alberi familiari duplicati nel resoconto."
+
+#: DescendantBooks/DescendantBookReport.py:570
+#: DescendantBooks/DetailedDescendantBookReport.py:1516
+msgid "The style used for the title of the page."
+msgstr "Lo stile usato per il titolo della pagina."
+
+#: DescendantBooks/DescendantBookReport.py:580
+msgid "The style used for the table of contents header."
+msgstr "Lo stile usato per l'intestazione del sommario."
+
+#: DescendantBooks/DescendantBookReport.py:590
+msgid "The style used for the table of contents detail."
+msgstr "Lo stile usato per i dettagli del sommario."
+
+#: DescendantBooks/DescendantBookReport.py:602
+#, python-format
+msgid "The style used for the level %d display."
+msgstr "Lo stile usato per visualizzare il livello %d."
+
+#: DescendantBooks/DescendantBookReport.py:611
+#, python-format
+msgid "The style used for the spouse level %d display."
+msgstr "Lo stile usato per visualizzare il livello %d del coniuge."
+
+#: DescendantBooks/DescendantBooks.gpr.py:20
+msgid "Descendant Book"
+msgstr "Resoconto dei discendenti"
+
+#: DescendantBooks/DescendantBooks.gpr.py:21
+msgid "Produces one or more descendant reports based on a supplied query."
+msgstr ""
+"Fornisce uno o più resoconti dei discendenti basati sulla richiesta "
+"indicata."
+
+#: DescendantBooks/DescendantBooks.gpr.py:37
+msgid "Detailed Descendant Book"
+msgstr "Resoconto dei discendenti dettagliato"
+
+#: DescendantBooks/DescendantBooks.gpr.py:38
+msgid ""
+"Produces one or more detailed descendant reports based on a supplied query."
+msgstr ""
+"Produce uno o più resoconti dettagliati dei discendenti basati sulla "
+"richiesta indicata."
+
+#: DescendantBooks/DetailedDescendantBookReport.py:130
+msgid "Detailed Descendants Report"
+msgstr "Resoconto dettagliato dei discendenti"
+
+#: DescendantBooks/DetailedDescendantBookReport.py:347
+#, python-format
+msgid "Generating %s report references..."
+msgstr "Generazione di %s riferimenti del resoconto..."
+
+#: DescendantBooks/DetailedDescendantBookReport.py:441
+#, python-format
+msgid "%(report_count)s. Descendant Report for %(person_name)s"
+msgstr "%(report_count)s. Resoconto dei discendenti di %(person_name)s"
+
+#: DescendantBooks/DetailedDescendantBookReport.py:445
+#, python-format
+msgid "Descendant Report for %(person_name)s"
+msgstr "Resoconto dei discendenti per %(person_name)s"
+
+#: DescendantBooks/DetailedDescendantBookReport.py:458
+#, python-format
+msgid "Generation %d"
+msgstr "Generazione %d"
+
+#: DescendantBooks/DetailedDescendantBookReport.py:585
+msgid "Detailed Descendant Report"
+msgstr "Resoconto dettagliato dei discendenti"
+
+#: DescendantBooks/DetailedDescendantBookReport.py:682
+#, python-format
+msgid "See Report : %s, Generation : %s, Person : %s"
+msgstr "Vedi resoconto: %s, Generazione: %s, Persona: %s"
+
+#: DescendantBooks/DetailedDescendantBookReport.py:697
+#, python-format
+msgid "%(name)s is the same person as [%(id_str)s]."
+msgstr "%(name)s è la stessa persona che [%(id_str)s]."
+
+#: DescendantBooks/DetailedDescendantBookReport.py:749
+#: DescendantBooks/DetailedDescendantBookReport.py:762
+#, python-format
+msgid "Report appearances for %s"
+msgstr "Occorrenze nel resoconto di %s"
+
+#: DescendantBooks/DetailedDescendantBookReport.py:793
+#, python-format
+msgid "%(event_name)s of %(name)s "
+msgstr "%(event_name)s di %(name)s "
+
+#: DescendantBooks/DetailedDescendantBookReport.py:797
+#, python-format
+msgid "%(event_name)s of %(name)s and %(mate)s "
+msgstr "%(event_name)s di %(name)s e %(mate)s "
+
+#: DescendantBooks/DetailedDescendantBookReport.py:801
+#: DescendantBooks/DetailedDescendantBookReport.py:845
+#, python-format
+msgid "%(date)s, %(place)s"
+msgstr "%(date)s, %(place)s"
+
+#: DescendantBooks/DetailedDescendantBookReport.py:804
+#: DescendantBooks/DetailedDescendantBookReport.py:848
+#, python-format
+msgid "%(date)s"
+msgstr "%(date)s"
+
+#: DescendantBooks/DetailedDescendantBookReport.py:806
+#: DescendantBooks/DetailedDescendantBookReport.py:850
+#, python-format
+msgid "%(place)s"
+msgstr "%(place)s"
+
+#: DescendantBooks/DetailedDescendantBookReport.py:808
+#, python-format
+msgid ". Ref: %(repno)s %(gen)s %(per)s "
+msgstr ". Rif: %(repno)s %(gen)s %(per)s "
+
+#: DescendantBooks/DetailedDescendantBookReport.py:837
+#, python-format
+msgid "%(event_name)s:"
+msgstr "%(event_name)s:"
+
+#: DescendantBooks/DetailedDescendantBookReport.py:862
+#, python-format
+msgid " %(event_text)s"
+msgstr " %(event_text)s"
+
+#: DescendantBooks/DetailedDescendantBookReport.py:874
+#: DescendantBooks/DetailedDescendantBookReport.py:1127
+#, python-format
+msgid "%(type)s: %(value)s%(endnotes)s"
+msgstr "%(type)s: %(value)s%(endnotes)s"
+
+#: DescendantBooks/DetailedDescendantBookReport.py:963
+#, python-format
+msgid "Spouse: %s"
+msgstr "Coniuge: %s"
+
+#: DescendantBooks/DetailedDescendantBookReport.py:965
+#, python-format
+msgid "Relationship with: %s"
+msgstr "Relazione cont: %s"
+
+#: DescendantBooks/DetailedDescendantBookReport.py:980
+#, python-format
+msgid "Ref: %s. %s"
+msgstr "Rif: %s. %s"
+
+#: DescendantBooks/DetailedDescendantBookReport.py:993
+#: DescendantBooks/DetailedDescendantBookReport.py:1000
+msgid "unknown"
+msgstr "sconosciuto"
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1015
+#, python-format
+msgid "Children of %(mother_name)s and %(father_name)s"
+msgstr "Figlio di %(mother_name)s e %(father_name)s"
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1073
+#, python-format
+msgid "Notes for %(mother_name)s and %(father_name)s:"
+msgstr "Annotazioni di %(mother_name)s e %(father_name)s:"
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1096
+#: DescendantBooks/DetailedDescendantBookReport.py:1119
+#, python-format
+msgid "More about %(mother_name)s and %(father_name)s:"
+msgstr "Altro su %(mother_name)s e %(father_name)s:"
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1201
+#, python-format
+msgid "Notes for %s"
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1214
+#: DescendantBooks/DetailedDescendantBookReport.py:1233
+#: DescendantBooks/DetailedDescendantBookReport.py:1247
+#: DescendantBooks/DetailedDescendantBookReport.py:1271
+#, python-format
+msgid "More about %(person_name)s:"
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1221
+#, python-format
+msgid "%(name_kind)s: %(name)s%(endnotes)s"
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1260
+msgid "Address: "
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1282
+#, python-format
+msgid "%(type)s:"
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1287
+#, python-format
+msgid " %(value)s%(endnotes)s"
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1351
+msgid "Henry numbering"
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1352
+msgid "d'Aboville numbering"
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1354
+msgid "Record (Modified Register) numbering"
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1364
+msgid "Page break between generations"
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1366
+msgid "Whether to start a new page after each generation."
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1369
+msgid "Page break before end notes"
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1371
+msgid "Whether to start a new page before the end notes."
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1378
+msgid "Content"
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1380
+msgid "Use callname for common name"
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1381
+msgid "Whether to use the call name as the first name."
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1384
+msgid "Use full dates instead of only the year"
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1386
+msgid "Whether to use full dates instead of just year."
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1389
+msgid "List children"
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1390
+msgid "Whether to list children."
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1393
+msgid "Compute death age"
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1394
+msgid "Whether to compute a person's age at death."
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1397
+msgid "Omit duplicate ancestors"
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1398
+msgid "Whether to omit duplicate ancestors."
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1401
+msgid "Use complete sentences"
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1403
+msgid "Whether to use complete sentences or succinct language."
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1406
+msgid "Add descendant reference in child list"
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1409
+msgid "Whether to add descendant references in child list."
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1412
+#: DescendantBooks/DetailedDescendantBookReport.py:1413
+msgid "Include"
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1415
+msgid "Include notes"
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1416
+msgid "Whether to include notes."
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1419
+msgid "Include attributes"
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1420
+msgid "Whether to include attributes."
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1423
+msgid "Include Photo/Images from Gallery"
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1424
+msgid "Whether to include images."
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1427
+msgid "Include alternative names"
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1428
+msgid "Whether to include other names."
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1431
+msgid "Include events"
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1432
+msgid "Whether to include events."
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1435
+msgid "Include addresses"
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1436
+msgid "Whether to include addresses."
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1439
+msgid "Include sources"
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1440
+msgid "Whether to include source references."
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1443
+msgid "Include sources notes"
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1444
+msgid ""
+"Whether to include source notes in the Endnotes section. Only works if "
+"Include sources is selected."
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1448
+msgid "Include spouses"
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1449
+msgid "Whether to include detailed spouse information."
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1452
+msgid "Include spouse reference"
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1453
+msgid "Whether to include reference to spouse."
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1456
+msgid "Include sign of succession ('+') in child-list"
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1458
+msgid ""
+"Whether to include a sign ('+') before the descendant number in the child-"
+"list to indicate a child has succession."
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1463
+msgid "Include path to start-person"
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1464
+msgid ""
+"Whether to include the path of descendancy from the start-person to each "
+"descendant."
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1468
+msgid "Include Index of Names"
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1469
+msgid "Whether to include the index of Names at the end of the report."
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1473
+msgid "Include index of Dates"
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1474
+msgid "Whether to include the index of Dates at the end of the report."
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1478
+msgid "Include index of Places"
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1479
+msgid "Whether to include the index of Places at the end of the report."
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1486
+msgid "Missing information"
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1488
+msgid "Replace missing places with ______"
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1489
+msgid "Whether to replace missing Places with blanks."
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1492
+msgid "Replace missing dates with ______"
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1493
+msgid "Whether to replace missing Dates with blanks."
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1526
+msgid "The style used for the generation header."
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1536
+msgid "The style used for the children list title."
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1546
+msgid "The style used for the children list."
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1556
+msgid "The basic style used for Note header."
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1566
+msgid "The basic style used for the text display."
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1573
+msgid "The style used for the first personal entry."
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1583
+msgid "The style used for the More About header and for headers of mates."
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1594
+msgid "The style used for additional detail data."
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1604
+#: DescendantBooks/DetailedDescendantBookReport.py:1614
+msgid "The style used for note detail data."
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1624
+msgid "The style used for the date in the Index of Dates."
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1634
+msgid "The style used for the events in the Index of Dates."
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1644
+msgid "The style used for the header in the Index of Names."
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1654
+msgid "The style used for the references in the Index of Names."
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1664
+msgid "The style used for the header in the Index of Places."
+msgstr ""
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1675
+msgid "The style used for the references in the Index of Places."
+msgstr ""
+
+#: DescendantBooks/RunReport.py:84 DescendantBooks/RunReport.py:89
+msgid "Report could not be created"
+msgstr ""
