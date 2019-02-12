@@ -1,0 +1,79 @@
+# French translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) 2001-2017 Free Software Foundation, Inc.
+#
+# Quelques variables pour la cohérence:
+#  ancestor : ascendant
+#  descendant : descendant
+#  person, individual, people : individu(s)
+#  remove (context) : enlever une référence ou supprimer de la base
+#  home : souche
+#  active person : individu actif
+#  media : media (pas de 's' ou accent) : un medium
+#  les médias : journaux, tv
+#  call name : prénom usuel
+#  unknown (context) : inconnu ou non-connu (individu)
+#
+#
+# Laurent Protois <laurent.protois@free.fr>, 2001-2004.
+# Matthieu Pupat <tieum.tieum@free.fr>, 2004, 2005.
+# Guillaume Pratte <guillaumep@soireevideo.org>, 2005.
+# Frederic Chateaux, 2007-2008.
+# Jérôme Rapinat <romjerome@yahoo.fr>, 2005-2017.
+# Mathieu MD <mathieu.md@gmail.com>, 2012.
+# Christophe <khrys63@gmail.com>, 2018.
+msgid ""
+msgstr ""
+"Project-Id-Version: 5.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-02-12 10:32-0600\n"
+"PO-Revision-Date: 2017-08-01 12:12+0100\n"
+"Last-Translator: \n"
+"Language-Team: French <traduc@traduc.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.5.4\n"
+
+#: Themes/themes.gpr.py:28
+msgid "Préférences de thème"
+msgstr ""
+
+#: Themes/themes.gpr.py:29
+msgid ""
+"An addition to Preferences for simple Theme and Font adjustment.  Especially "
+"useful for Windows users."
+msgstr "Un ajout aux préférences pour un simple ajustement de thème et de "
+"police. Particulièrement utile pour les utilisateurs Windows."
+
+#: Themes/themes.py:85
+msgid "_Help"
+msgstr "Aid_e"
+
+#: Themes/themes.py:130 Themes/themes.py:148
+msgid "Theme is hardcoded by GTK_THEME"
+msgstr "Le thème est figé par GTK_THEME"
+
+# master
+#: Themes/themes.py:133 Themes/themes.py:158
+#, python-format
+msgid "%s: "
+msgstr "%s : "
+
+#: Themes/themes.py:133 Themes/themes.py:169
+msgid "Theme"
+msgstr "Thème"
+
+#: Themes/themes.py:138
+msgid "Dark Variant"
+msgstr "Variante sombre"
+
+#: Themes/themes.py:158
+msgid "Font"
+msgstr "Police"
+
+#: Themes/themes.py:165
+msgid "Default"
+msgstr "Défaut"

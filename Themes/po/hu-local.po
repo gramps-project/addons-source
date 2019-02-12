@@ -1,0 +1,64 @@
+# Hungarian translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) 2013 the Gramps Project
+#
+#
+# Egyeki Gergely <egeri@elte.hu>, 2003, 2004.
+# Arpad Horvath <horvath.arpad@szgti.bmf.hu>, 2006.
+# Kolesár András <translation@kolesar.hu>, 2009.
+# Nemeséri Lajos <nemeseril@gmail.com>,2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: GRAMPS 5.0.X\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-02-12 10:32-0600\n"
+"PO-Revision-Date: 2018-12-20 13:49+0100\n"
+"Last-Translator: Nemeséri Lajos <nemeseril@gmail.com>\n"
+"Language-Team: magyar <>\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Gtranslator 2.91.7\n"
+
+#: Themes/themes.gpr.py:28
+msgid "Theme preferences"
+msgstr "Téma beállítások"
+
+#: Themes/themes.gpr.py:29
+msgid ""
+"An addition to Preferences for simple Theme and Font adjustment.  Especially "
+"useful for Windows users."
+msgstr "Az egyszerű témák és betűtípusok beállításainak kiegészítése a Beállításokhoz."
+" Különösen hasznos a Windows felhasználók számára."
+
+#: Themes/themes.py:85
+msgid "_Help"
+msgstr "_Súgó"
+
+#: Themes/themes.py:130 Themes/themes.py:148
+msgid "Theme is hardcoded by GTK_THEME"
+msgstr "A téma bedrótozva a GTK_THEME-ben"
+
+#: Themes/themes.py:133 Themes/themes.py:158
+#, python-format
+msgid "%s: "
+msgstr "%s: "
+
+#: Themes/themes.py:133 Themes/themes.py:169
+msgid "Theme"
+msgstr "Téma"
+
+#: Themes/themes.py:138
+msgid "Dark Variant"
+msgstr "Sötét változat"
+
+#: Themes/themes.py:158
+msgid "Font"
+msgstr "Betű"
+
+#: Themes/themes.py:165
+msgid "Default"
+msgstr "Alapértelmezett"

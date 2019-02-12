@@ -1,0 +1,61 @@
+# Spanish translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# Messages in spanish for the gramps genealogical software
+#
+# Copyright (C) 2001 Andrés Sepúlveda  <andres@ccpo.odu.edu>.
+# Copyright (C) 2004-2013 Julio Sánchez <jsanchez@users.sourceforge.com>
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 4.0.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-02-12 10:32-0600\n"
+"PO-Revision-Date: 2014-04-20 11:10+0100\n"
+"Last-Translator: Julio Sánchez <jsanchez@users.sourceforge.com>\n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: Themes/themes.gpr.py:28
+msgid "Theme preferences"
+msgstr "Preferencias del tema"
+
+#: Themes/themes.gpr.py:29
+msgid ""
+"An addition to Preferences for simple Theme and Font adjustment.  Especially "
+"useful for Windows users."
+msgstr "Una adición a las preferencias para el ajuste simple de tema y fuente. "
+"Especialmente útil para usuarios de Windows."
+
+#: Themes/themes.py:85
+msgid "_Help"
+msgstr "A_yuda"
+
+#: Themes/themes.py:130 Themes/themes.py:148
+msgid "Theme is hardcoded by GTK_THEME"
+msgstr "El tema está codificado en GTK_THEME"
+
+#: Themes/themes.py:133 Themes/themes.py:158
+#, python-format
+msgid "%s: "
+msgstr "%s: "
+
+#: Themes/themes.py:133 Themes/themes.py:169
+msgid "Theme"
+msgstr "Tema"
+
+#: Themes/themes.py:138
+msgid "Dark Variant"
+msgstr "Variante oscura"
+
+#: Themes/themes.py:158
+msgid "Font"
+msgstr "Tipo de letra"
+
+#: Themes/themes.py:165
+msgid "Default"
+msgstr "Predefinido"
