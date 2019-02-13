@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Gramps_5_fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-02-12 10:32-0600\n"
-"PO-Revision-Date: 2019-01-05 07:31+0200\n"
+"PO-Revision-Date: 2019-02-13 14:51+0200\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: suomi <niememat@gmail.com>\n"
 "Language: fi\n"
@@ -32,8 +32,9 @@ msgstr "Teeman asetukset"
 msgid ""
 "An addition to Preferences for simple Theme and Font adjustment.  Especially "
 "useful for Windows users."
-msgstr "Lisäys asetuksiin yksinkertaisen teeman ja fontin säätämiseksi. "
-"Erityisen hyödyllinen Windows-käyttäjille."
+msgstr ""
+"Lisäys asetuksiin yksinkertaisen teeman ja fontin säätämiseksi. Erityisen "
+"hyödyllinen Windows-käyttäjille."
 
 #: Themes/themes.py:85
 msgid "_Help"
@@ -53,9 +54,8 @@ msgid "Theme"
 msgstr "Teema"
 
 #: Themes/themes.py:138
-#, fuzzy
 msgid "Dark Variant"
-msgstr "Tummanoranssi"
+msgstr "Tumma muunnos"
 
 #: Themes/themes.py:158
 msgid "Font"
