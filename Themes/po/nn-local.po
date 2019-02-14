@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-12 10:32-0600\n"
+"POT-Creation-Date: 2019-02-14 09:58-0600\n"
 "PO-Revision-Date: 2014-12-22 21:26+0100\n"
 "Last-Translator: \n"
 "Language-Team: Norwegian Nynorsk <i18n-nn@lister.ping.uio.no>\n"
@@ -27,34 +27,47 @@ msgstr "Temainnstillinger"
 msgid ""
 "An addition to Preferences for simple Theme and Font adjustment.  Especially "
 "useful for Windows users."
-msgstr "Et tillegg til Innstillinger for enkel justering av tema og skrift. "
-"Spesielt nyttig for Windows-brukere."
+msgstr ""
+"Et tillegg til Innstillinger for enkel justering av tema og skrift. Spesielt "
+"nyttig for Windows-brukere."
 
-#: Themes/themes.py:85
+#: Themes/themes.py:87
 msgid "_Help"
 msgstr "_Hjelp"
 
-#: Themes/themes.py:130 Themes/themes.py:148
+#: Themes/themes.py:132 Themes/themes.py:150
 msgid "Theme is hardcoded by GTK_THEME"
 msgstr ""
 
-#: Themes/themes.py:133 Themes/themes.py:158
+#: Themes/themes.py:135 Themes/themes.py:171
 #, fuzzy, python-format
 msgid "%s: "
-msgstr "%s:"
+msgstr " Detaljar: %s"
 
-#: Themes/themes.py:133 Themes/themes.py:169
+#: Themes/themes.py:135
 msgid "Theme"
 msgstr ""
 
-#: Themes/themes.py:138
+#: Themes/themes.py:140
 msgid "Dark Variant"
 msgstr ""
 
-#: Themes/themes.py:158
+#: Themes/themes.py:154
+msgid "_Toolbar"
+msgstr "Verk_tøylinje"
+
+#: Themes/themes.py:154
+msgid "Text"
+msgstr "Tekst"
+
+#: Themes/themes.py:161
+msgid "Default"
+msgstr "Standard"
+
+#: Themes/themes.py:171
 msgid "Font"
 msgstr "Skrifttype"
 
-#: Themes/themes.py:165
-msgid "Default"
-msgstr "Standard"
+#: Themes/themes.py:177
+msgid "Colors"
+msgstr "Fargar"

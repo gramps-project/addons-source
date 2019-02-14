@@ -1,16 +1,16 @@
-# Themes addon
+# SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the Gramps package.
-# Paul Culley <paulr2787@gmail.com>, 2019.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Themes 0.0.0\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-12 10:32-0600\n"
+"POT-Creation-Date: 2019-02-14 09:58-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Paul Culley <paulr2787@gmail.com>\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -27,31 +27,43 @@ msgid ""
 "useful for Windows users."
 msgstr ""
 
-#: Themes/themes.py:85
+#: Themes/themes.py:87
 msgid "_Help"
 msgstr ""
 
-#: Themes/themes.py:130 Themes/themes.py:148
+#: Themes/themes.py:132 Themes/themes.py:150
 msgid "Theme is hardcoded by GTK_THEME"
 msgstr ""
 
-#: Themes/themes.py:133 Themes/themes.py:158
+#: Themes/themes.py:135 Themes/themes.py:171
 #, python-format
 msgid "%s: "
 msgstr ""
 
-#: Themes/themes.py:133 Themes/themes.py:169
+#: Themes/themes.py:135
 msgid "Theme"
 msgstr ""
 
-#: Themes/themes.py:138
+#: Themes/themes.py:140
 msgid "Dark Variant"
 msgstr ""
 
-#: Themes/themes.py:158
+#: Themes/themes.py:154
+msgid "_Toolbar"
+msgstr ""
+
+#: Themes/themes.py:154
+msgid "Text"
+msgstr ""
+
+#: Themes/themes.py:161
+msgid "Default"
+msgstr ""
+
+#: Themes/themes.py:171
 msgid "Font"
 msgstr ""
 
-#: Themes/themes.py:165
-msgid "Default"
+#: Themes/themes.py:177
+msgid "Colors"
 msgstr ""

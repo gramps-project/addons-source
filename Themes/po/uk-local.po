@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-12 10:32-0600\n"
+"POT-Creation-Date: 2019-02-14 09:58-0600\n"
 "PO-Revision-Date: 2018-07-07 17:30+0300\n"
 "Last-Translator: Fedir Zinchuk <fedikw@gmail.com>\n"
 "Language-Team: Ukrainian <fedikw@gmail.com>\n"
@@ -30,34 +30,47 @@ msgstr "Тематичні уподобання"
 msgid ""
 "An addition to Preferences for simple Theme and Font adjustment.  Especially "
 "useful for Windows users."
-msgstr "На додаток до налаштувань для простої настройки теми та шрифту. "
-"Особливо корисно для користувачів Windows."
+msgstr ""
+"На додаток до налаштувань для простої настройки теми та шрифту. Особливо "
+"корисно для користувачів Windows."
 
-#: Themes/themes.py:85
+#: Themes/themes.py:87
 msgid "_Help"
 msgstr "_Допомога"
 
-#: Themes/themes.py:130 Themes/themes.py:148
+#: Themes/themes.py:132 Themes/themes.py:150
 msgid "Theme is hardcoded by GTK_THEME"
 msgstr "Тему пришито через GTK_THEME"
 
-#: Themes/themes.py:133 Themes/themes.py:158
+#: Themes/themes.py:135 Themes/themes.py:171
 #, python-format
 msgid "%s: "
 msgstr "%s: "
 
-#: Themes/themes.py:133 Themes/themes.py:169
+#: Themes/themes.py:135
 msgid "Theme"
 msgstr "Тема"
 
-#: Themes/themes.py:138
+#: Themes/themes.py:140
 msgid "Dark Variant"
 msgstr "Темний варіант"
 
-#: Themes/themes.py:158
+#: Themes/themes.py:154
+msgid "_Toolbar"
+msgstr "_Панель інструментів"
+
+#: Themes/themes.py:154
+msgid "Text"
+msgstr "Текст"
+
+#: Themes/themes.py:161
+msgid "Default"
+msgstr "Стандартно"
+
+#: Themes/themes.py:171
 msgid "Font"
 msgstr "Шрифт"
 
-#: Themes/themes.py:165
-msgid "Default"
-msgstr "Стандартно"
+#: Themes/themes.py:177
+msgid "Colors"
+msgstr "Кольори"

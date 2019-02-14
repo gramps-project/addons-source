@@ -61,6 +61,8 @@ class MyPrefs(GrampsPreferences):
             MyPrefs.theme_changed, self)
         self.dark_variant_changed = types.MethodType(
             MyPrefs.dark_variant_changed, self)
+        self.t_text_changed = types.MethodType(
+            MyPrefs.t_text_changed, self)
         self.font_changed = types.MethodType(
             MyPrefs.font_changed, self)
         self.font_filter = types.MethodType(
@@ -147,26 +149,32 @@ class MyPrefs(GrampsPreferences):
             self.dark.set_sensitive(False)
             self.dark.set_tooltip_text(_("Theme is hardcoded by GTK_THEME"))
 
+        # Toolbar Text
+        t_text = Gtk.CheckButton.new_with_mnemonic(
+            _("_Toolbar") + ' ' + _('Text'))
+        value = config.get('interface.toolbar-text')
+        t_text.set_active(value)
+        t_text.connect('toggled', self.t_text_changed)
+        th_grid.attach(t_text, 3, 0, 1, 1)
+
+        # Default
+        button = Gtk.Button(label=_('Default'))
+        button.connect('clicked', self.default_clicked)
+        th_grid.attach(button, 4, 0, 1, 1)
+
         # Font
         font_button = Gtk.FontButton(show_style=False)
         font_button.set_filter_func(self.font_filter, None)
         self.gtksettings.bind_property(
             'gtk-font-name', font_button, "font-name",
             BindingFlags.BIDIRECTIONAL | BindingFlags.SYNC_CREATE)
-        sep = Gtk.Label(label='        ')
-        th_grid.attach(sep, 3, 0, 1, 1)
         lwidget = Gtk.Label(label=_("%s: ") % _('Font'))
-        th_grid.attach(lwidget, 4, 0, 1, 1)
-        th_grid.attach(font_button, 5, 0, 1, 1)
+        th_grid.attach(lwidget, 5, 0, 1, 1)
+        th_grid.attach(font_button, 6, 0, 1, 1)
         font_button.connect('font-set', self.font_changed)
         grid.attach(th_grid, 0, 0, 7, 1)
 
-        # Default
-        button = Gtk.Button(label=_('Default'))
-        button.connect('clicked', self.default_clicked)
-        th_grid.attach(button, 6, 0, 1, 1)
-
-        return _('Theme'), grid
+        return _('Colors'), grid
 
     def theme_changed(self, obj):
         ''' deal with combo changed '''
@@ -183,6 +191,13 @@ class MyPrefs(GrampsPreferences):
         config.set('preferences.theme-dark-variant', str(value))
         self.gtksettings.set_property('gtk-application-prefer-dark-theme',
                                       value)
+
+    def t_text_changed(self, obj):
+        ''' Toolbar text changed '''
+        value = obj.get_active()
+        config.set('interface.toolbar-text', value)
+        self.uistate.viewmanager.toolbar.set_style(
+            Gtk.ToolbarStyle.BOTH if value else Gtk.ToolbarStyle.ICONS)
 
     def font_changed(self, obj):
         ''' deal with font changed '''

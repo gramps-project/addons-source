@@ -32,7 +32,7 @@ def load_on_reg(dbstate, uistate, plugin):
         # It is necessary to avoid load GUI elements when run under CLI mode.
         # So we just don't load it at all.
         # Monkey patch my version of Prefs into the system
-        from gi.repository.Gtk import Settings
+        from gi.repository.Gtk import Settings, ToolbarStyle
         from gramps.gui.configure import GrampsPreferences
         from gramps.gen.config import config
         sys.path.append(os.path.abspath(os.path.dirname(__file__)))
@@ -61,3 +61,7 @@ def load_on_reg(dbstate, uistate, plugin):
         value = config.get('preferences.font')
         if value:
             gtksettings.set_property('gtk-font-name', value)
+        config.register('interface.toolbar-text', False)
+        value = config.get('interface.toolbar-text')
+        uistate.viewmanager.toolbar.set_style(
+            ToolbarStyle.BOTH if value else ToolbarStyle.ICONS)

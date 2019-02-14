@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-12 10:32-0600\n"
+"POT-Creation-Date: 2019-02-14 09:58-0600\n"
 "PO-Revision-Date: 2018-07-22 10:52+0200\n"
 "Last-Translator: Espen Berg <espenbe@gmail.com>\n"
 "Language-Team: Norsk, bokmål <kde-i18n-doc@kde.org>\n"
@@ -33,34 +33,47 @@ msgstr "Temainnstillinger"
 msgid ""
 "An addition to Preferences for simple Theme and Font adjustment.  Especially "
 "useful for Windows users."
-msgstr "Et tillegg til Innstillinger for enkel justering av tema og skrift."
-" Spesielt nyttig for Windows-brukere."
+msgstr ""
+"Et tillegg til Innstillinger for enkel justering av tema og skrift. Spesielt "
+"nyttig for Windows-brukere."
 
-#: Themes/themes.py:85
+#: Themes/themes.py:87
 msgid "_Help"
 msgstr "_Hjelp"
 
-#: Themes/themes.py:130 Themes/themes.py:148
+#: Themes/themes.py:132 Themes/themes.py:150
 msgid "Theme is hardcoded by GTK_THEME"
 msgstr "Tema er hardkodet av GTK_THEME"
 
-#: Themes/themes.py:133 Themes/themes.py:158
+#: Themes/themes.py:135 Themes/themes.py:171
 #, python-format
 msgid "%s: "
 msgstr "%s: "
 
-#: Themes/themes.py:133 Themes/themes.py:169
+#: Themes/themes.py:135
 msgid "Theme"
 msgstr "Tema"
 
-#: Themes/themes.py:138
+#: Themes/themes.py:140
 msgid "Dark Variant"
 msgstr "Mørk variant"
 
-#: Themes/themes.py:158
+#: Themes/themes.py:154
+msgid "_Toolbar"
+msgstr "Verk_tøylinje"
+
+#: Themes/themes.py:154
+msgid "Text"
+msgstr "Tekst"
+
+#: Themes/themes.py:161
+msgid "Default"
+msgstr "Standard"
+
+#: Themes/themes.py:171
 msgid "Font"
 msgstr "Skrifttype"
 
-#: Themes/themes.py:165
-msgid "Default"
-msgstr "Standard"
+#: Themes/themes.py:177
+msgid "Colors"
+msgstr "Farger"

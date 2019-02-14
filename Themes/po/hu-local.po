@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 5.0.X\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-12 10:32-0600\n"
+"POT-Creation-Date: 2019-02-14 09:58-0600\n"
 "PO-Revision-Date: 2018-12-20 13:49+0100\n"
 "Last-Translator: Nemeséri Lajos <nemeseril@gmail.com>\n"
 "Language-Team: magyar <>\n"
@@ -31,34 +31,47 @@ msgstr "Téma beállítások"
 msgid ""
 "An addition to Preferences for simple Theme and Font adjustment.  Especially "
 "useful for Windows users."
-msgstr "Az egyszerű témák és betűtípusok beállításainak kiegészítése a Beállításokhoz."
-" Különösen hasznos a Windows felhasználók számára."
+msgstr ""
+"Az egyszerű témák és betűtípusok beállításainak kiegészítése a "
+"Beállításokhoz. Különösen hasznos a Windows felhasználók számára."
 
-#: Themes/themes.py:85
+#: Themes/themes.py:87
 msgid "_Help"
 msgstr "_Súgó"
 
-#: Themes/themes.py:130 Themes/themes.py:148
+#: Themes/themes.py:132 Themes/themes.py:150
 msgid "Theme is hardcoded by GTK_THEME"
 msgstr "A téma bedrótozva a GTK_THEME-ben"
 
-#: Themes/themes.py:133 Themes/themes.py:158
+#: Themes/themes.py:135 Themes/themes.py:171
 #, python-format
 msgid "%s: "
 msgstr "%s: "
 
-#: Themes/themes.py:133 Themes/themes.py:169
+#: Themes/themes.py:135
 msgid "Theme"
 msgstr "Téma"
 
-#: Themes/themes.py:138
+#: Themes/themes.py:140
 msgid "Dark Variant"
 msgstr "Sötét változat"
 
-#: Themes/themes.py:158
+#: Themes/themes.py:154
+msgid "_Toolbar"
+msgstr "_Eszközsáv"
+
+#: Themes/themes.py:154
+msgid "Text"
+msgstr "Szöveg"
+
+#: Themes/themes.py:161
+msgid "Default"
+msgstr "Alapértelmezett"
+
+#: Themes/themes.py:171
 msgid "Font"
 msgstr "Betű"
 
-#: Themes/themes.py:165
-msgid "Default"
-msgstr "Alapértelmezett"
+#: Themes/themes.py:177
+msgid "Colors"
+msgstr "Színek"

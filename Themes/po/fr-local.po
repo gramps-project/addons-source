@@ -26,7 +26,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 5.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-12 10:32-0600\n"
+"POT-Creation-Date: 2019-02-14 09:58-0600\n"
 "PO-Revision-Date: 2017-08-01 12:12+0100\n"
 "Last-Translator: \n"
 "Language-Team: French <traduc@traduc.org>\n"
@@ -38,42 +38,55 @@ msgstr ""
 "X-Generator: Poedit 1.5.4\n"
 
 #: Themes/themes.gpr.py:28
-msgid "Préférences de thème"
+msgid "Theme preferences"
 msgstr ""
 
 #: Themes/themes.gpr.py:29
 msgid ""
 "An addition to Preferences for simple Theme and Font adjustment.  Especially "
 "useful for Windows users."
-msgstr "Un ajout aux préférences pour un simple ajustement de thème et de "
-"police. Particulièrement utile pour les utilisateurs Windows."
+msgstr ""
+"Un ajout aux préférences pour un simple ajustement de thème et de police. "
+"Particulièrement utile pour les utilisateurs Windows."
 
-#: Themes/themes.py:85
+#: Themes/themes.py:87
 msgid "_Help"
 msgstr "Aid_e"
 
-#: Themes/themes.py:130 Themes/themes.py:148
+#: Themes/themes.py:132 Themes/themes.py:150
 msgid "Theme is hardcoded by GTK_THEME"
 msgstr "Le thème est figé par GTK_THEME"
 
 # master
-#: Themes/themes.py:133 Themes/themes.py:158
+#: Themes/themes.py:135 Themes/themes.py:171
 #, python-format
 msgid "%s: "
 msgstr "%s : "
 
-#: Themes/themes.py:133 Themes/themes.py:169
+#: Themes/themes.py:135
 msgid "Theme"
 msgstr "Thème"
 
-#: Themes/themes.py:138
+#: Themes/themes.py:140
 msgid "Dark Variant"
 msgstr "Variante sombre"
 
-#: Themes/themes.py:158
+#: Themes/themes.py:154
+msgid "_Toolbar"
+msgstr "Barre d'ou_tils"
+
+#: Themes/themes.py:154
+msgid "Text"
+msgstr "Texte"
+
+#: Themes/themes.py:161
+msgid "Default"
+msgstr "Défaut"
+
+#: Themes/themes.py:171
 msgid "Font"
 msgstr "Police"
 
-#: Themes/themes.py:165
-msgid "Default"
-msgstr "Défaut"
+#: Themes/themes.py:177
+msgid "Colors"
+msgstr "Couleurs"
