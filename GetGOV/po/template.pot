@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"POT-Creation-Date: 2019-02-21 17:48-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,30 +25,30 @@ msgstr ""
 msgid "Gramplet to get places from the GOV database"
 msgstr ""
 
-#: GetGOV/getgov.py:301
+#: GetGOV/getgov.py:303
 msgid "Enter GOV-id:"
 msgstr ""
 
-#: GetGOV/getgov.py:309
+#: GetGOV/getgov.py:311
 msgid "Get Place"
 msgstr ""
 
-#: GetGOV/getgov.py:353
+#: GetGOV/getgov.py:343
 #, python-format
 msgid "Add GOV-id place %s"
 msgstr ""
 
-#: GetGOV/getgov.py:502
+#: GetGOV/getgov.py:518
 #, python-format
 msgid "from %s to %s"
 msgstr ""
 
-#: GetGOV/getgov.py:504
+#: GetGOV/getgov.py:520
 #, python-format
 msgid "after %s"
 msgstr ""
 
-#: GetGOV/getgov.py:506
+#: GetGOV/getgov.py:522
 #, python-format
 msgid "before %s"
 msgstr ""
