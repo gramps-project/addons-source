@@ -161,6 +161,8 @@ def cleanup(addon_dir):
                 #'%s/po/template.pot' % addon_dir,
                 '%s/po/*-global.po' % addon_dir,
                 '%s/po/*-temp.po' % addon_dir,
+                '%s/po/??.po' % addon_dir,
+                '%s/po/?????.po' % addon_dir,
                 '%s/*.pyc' % addon_dir,
                 '%s/*.pyo' % addon_dir]
     for pat in patterns:
@@ -339,12 +341,9 @@ elif command == "update":
            '''"%(addon)s/po/%(locale)s-temp.po" '''
            '''"%(addon)s/po/%(locale)s-local.po" '''
            '''-o "%(addon)s/po/%(locale)s-local.po.2" ''')
-    system('''cp "%(addon)s/po/%(locale)s-local.po" '''
-           '''"%(addon)s/po/%(locale)s-local.po.1" ''')
-    system('''cp "%(addon)s/po/%(locale)s-local.po.2" '''
-           '''"%(addon)s/po/%(locale)s-local.po" ''')
-    system('''rm -v "%(addon)s/po/%(locale)s-local.po.1" '''
-           '''"%(addon)s/po/%(locale)s-local.po.2" ''')
+    os.remove(r("%(addon)s/po/%(locale)s-local.po"))
+    os.rename(r("%(addon)s/po/%(locale)s-local.po.2"),
+              r("%(addon)s/po/%(locale)s-local.po"))
     # # Done!
     echo('''\nYou can edit "%(addon)s/po/%(locale)s-local.po"''')
 
