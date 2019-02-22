@@ -1,0 +1,71 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-02-22 09:39-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.gpr.py:30
+msgid "GoogleEarth"
+msgstr ""
+
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.gpr.py:35
+msgid "Creates data file for GoogleEarth and opens it"
+msgstr ""
+
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:117
+msgid "No place description"
+msgstr ""
+
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:150
+msgid "GoogleEarth not installed!"
+msgstr ""
+
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:151
+#, python-format
+msgid ""
+"Create kmz/kml file ''%s''\n"
+"in user directory ''%s''?"
+msgstr ""
+
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:154
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:175
+msgid "Yes"
+msgstr ""
+
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:155
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:176
+msgid "No"
+msgstr ""
+
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:161
+#, python-format
+msgid "Failure writing to %s"
+msgstr ""
+
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:162
+msgid "Directory does not exist"
+msgstr ""
+
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:171
+msgid "GoogleEarth file exists!"
+msgstr ""
+
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:172
+#, python-format
+msgid ""
+"Overwrite kmz/kml file ''%s''\n"
+"in user home directory ''%s''?"
+msgstr ""

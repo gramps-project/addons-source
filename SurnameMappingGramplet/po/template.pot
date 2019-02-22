@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-06 19:18+0200\n"
+"POT-Creation-Date: 2019-02-22 09:39-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: SurnameMappingGramplet/SurnameMappingGramplet.grp.py:3
-#: SurnameMappingGramplet/SurnameMappingGramplet.grp.py:10
+#: SurnameMappingGramplet/SurnameMappingGramplet.grp.py:11
 msgid "Surname Mapping"
 msgstr ""
 
@@ -26,32 +26,32 @@ msgstr ""
 msgid "Gramplet for editing the grouping of surnames"
 msgstr ""
 
-#: SurnameMappingGramplet/SurnameMappingGramplet.py:67
+#: SurnameMappingGramplet/SurnameMappingGramplet.py:63
 msgid "Add Mapping"
 msgstr ""
 
-#: SurnameMappingGramplet/SurnameMappingGramplet.py:68
-#: SurnameMappingGramplet/SurnameMappingGramplet.py:158
+#: SurnameMappingGramplet/SurnameMappingGramplet.py:64
+#: SurnameMappingGramplet/SurnameMappingGramplet.py:154
 msgid "Edit Mapping"
 msgstr ""
 
-#: SurnameMappingGramplet/SurnameMappingGramplet.py:69
+#: SurnameMappingGramplet/SurnameMappingGramplet.py:65
 msgid "Remove Mapping"
 msgstr ""
 
-#: SurnameMappingGramplet/SurnameMappingGramplet.py:77
-#: SurnameMappingGramplet/SurnameMappingGramplet.py:108
+#: SurnameMappingGramplet/SurnameMappingGramplet.py:73
+#: SurnameMappingGramplet/SurnameMappingGramplet.py:104
 msgid "Surname"
 msgstr ""
 
-#: SurnameMappingGramplet/SurnameMappingGramplet.py:78
+#: SurnameMappingGramplet/SurnameMappingGramplet.py:74
 msgid "Group Name"
 msgstr ""
 
-#: SurnameMappingGramplet/SurnameMappingGramplet.py:112
+#: SurnameMappingGramplet/SurnameMappingGramplet.py:108
 msgid "Group"
 msgstr ""
 
-#: SurnameMappingGramplet/SurnameMappingGramplet.py:140
+#: SurnameMappingGramplet/SurnameMappingGramplet.py:136
 msgid "Create Mapping"
 msgstr ""

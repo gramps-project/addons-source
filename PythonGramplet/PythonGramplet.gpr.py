@@ -7,7 +7,7 @@ register(GRAMPLET,
          height=250,
          gramplet = 'PythonGramplet',
          gramplet_title=_("Python Shell"),
-         version = '1.0.20',
+         version = '1.0.21',
          gramps_target_version = "4.2",
          help_url="PythonGramplet",
          )

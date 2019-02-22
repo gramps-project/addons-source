@@ -1,0 +1,105 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-02-22 09:39-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: TimelineQuickview/TimelineQuickview.gpr.py:9
+msgid "Timeline"
+msgstr ""
+
+#: TimelineQuickview/TimelineQuickview.gpr.py:10
+msgid "Display a person's events on a timeline"
+msgstr ""
+
+#: TimelineQuickview/TimelineQuickview.py:46
+msgid "Parents"
+msgstr ""
+
+#: TimelineQuickview/TimelineQuickview.py:48
+msgid "Inlaw Parents"
+msgstr ""
+
+#: TimelineQuickview/TimelineQuickview.py:51
+msgid "Grandparents"
+msgstr ""
+
+#: TimelineQuickview/TimelineQuickview.py:53
+msgid "Inlaw Grandparents"
+msgstr ""
+
+#: TimelineQuickview/TimelineQuickview.py:56
+msgid "Great grandparents"
+msgstr ""
+
+#: TimelineQuickview/TimelineQuickview.py:58
+msgid "Inlaw Great grandparents"
+msgstr ""
+
+#: TimelineQuickview/TimelineQuickview.py:61
+msgid "Great, "
+msgstr ""
+
+#: TimelineQuickview/TimelineQuickview.py:61
+#: TimelineQuickview/TimelineQuickview.py:63
+msgid "great, "
+msgstr ""
+
+#: TimelineQuickview/TimelineQuickview.py:61
+#: TimelineQuickview/TimelineQuickview.py:63
+msgid "great grandparents"
+msgstr ""
+
+#: TimelineQuickview/TimelineQuickview.py:63
+msgid "Inlaw Great, "
+msgstr ""
+
+#: TimelineQuickview/TimelineQuickview.py:102
+msgid "Partner's spouse"
+msgstr ""
+
+#: TimelineQuickview/TimelineQuickview.py:156
+#, python-format
+msgid "Timeline for %s"
+msgstr ""
+
+#: TimelineQuickview/TimelineQuickview.py:159
+msgid "Date"
+msgstr ""
+
+#: TimelineQuickview/TimelineQuickview.py:160
+msgid "Event"
+msgstr ""
+
+#: TimelineQuickview/TimelineQuickview.py:161
+msgid "Age"
+msgstr ""
+
+#: TimelineQuickview/TimelineQuickview.py:162
+msgid "Place"
+msgstr ""
+
+#: TimelineQuickview/TimelineQuickview.py:163
+msgid "People involved"
+msgstr ""
+
+#: TimelineQuickview/TimelineQuickview.py:186
+msgid "Today"
+msgstr ""
+
+#: TimelineQuickview/TimelineQuickview.py:192
+msgid "Unknown"
+msgstr ""

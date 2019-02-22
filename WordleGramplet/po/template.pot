@@ -1,0 +1,70 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-02-22 09:39-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: WordleGramplet/WordleGramplet.gpr.py:4
+msgid "Wordle Gramplet"
+msgstr ""
+
+#: WordleGramplet/WordleGramplet.gpr.py:10
+msgid "Wordle"
+msgstr ""
+
+#: WordleGramplet/WordleGramplet.py:68
+msgid "Double-click surname for details"
+msgstr ""
+
+#: WordleGramplet/WordleGramplet.py:70
+msgid "No Family Tree loaded."
+msgstr ""
+
+#: WordleGramplet/WordleGramplet.py:87
+msgid "Processing..."
+msgstr ""
+
+#: WordleGramplet/WordleGramplet.py:122
+msgid "[Missing]"
+msgstr ""
+
+#: WordleGramplet/WordleGramplet.py:130
+msgid "Total unique surnames"
+msgstr ""
+
+#: WordleGramplet/WordleGramplet.py:132
+msgid "Total people"
+msgstr ""
+
+#: WordleGramplet/WordleGramplet.py:136
+msgid "Number of font sizes"
+msgstr ""
+
+#: WordleGramplet/WordleGramplet.py:139
+msgid "Filter"
+msgstr ""
+
+#: WordleGramplet/WordleGramplet.py:140
+msgid "Select filter to restrict list"
+msgstr ""
+
+#: WordleGramplet/WordleGramplet.py:144
+msgid "Filter Person"
+msgstr ""
+
+#: WordleGramplet/WordleGramplet.py:145
+msgid "The center person for the filter"
+msgstr ""

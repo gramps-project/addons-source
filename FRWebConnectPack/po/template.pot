@@ -1,0 +1,50 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-02-22 09:39-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: FRWebConnectPack/FRWebPack.gpr.py:10
+msgid "FR Web Connect Pack"
+msgstr ""
+
+#: FRWebConnectPack/FRWebPack.gpr.py:11
+msgid "Collection of Web sites for the FR (requires libwebconnect)"
+msgstr ""
+
+#: FRWebConnectPack/FRWebPack.py:40
+msgid "French cultural ministry"
+msgstr ""
+
+#: FRWebConnectPack/FRWebPack.py:41
+msgid "Genealogical bank"
+msgstr ""
+
+#: FRWebConnectPack/FRWebPack.py:43
+msgid "OrigineFile (Quebec)"
+msgstr ""
+
+#: FRWebConnectPack/FRWebPack.py:48
+msgid "Cyber genealogy"
+msgstr ""
+
+#: FRWebConnectPack/FRWebPack.py:54
+msgid "Hathi Trust Digital Library"
+msgstr ""
+
+#: FRWebConnectPack/FRWebPack.py:55
+msgid "Open Library"
+msgstr ""
