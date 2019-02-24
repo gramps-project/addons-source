@@ -474,11 +474,11 @@ msgstr "Indica se usare date complete al posto del solo anno."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1389
 msgid "List children"
-msgstr "Lista dei figli"
+msgstr "Elenca i figli"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1390
 msgid "Whether to list children."
-msgstr "Indica se listare i figli oppure no."
+msgstr "Indica se elencare i figli oppure no."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1393
 msgid "Compute death age"
@@ -506,12 +506,12 @@ msgstr "Indica se usare frasi complete oppure un linguaggio sintetico."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1406
 msgid "Add descendant reference in child list"
-msgstr "Aggiungi riferimento all'antenato nella lista dei figli"
+msgstr "Aggiungi riferimento all'antenato nella elenco dei figli"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1409
 msgid "Whether to add descendant references in child list."
 msgstr ""
-"Indica se aggiungere o meno i riferimenti all'antenato nella lista dei "
+"Indica se aggiungere o meno i riferimenti all'antenato nella elenco dei "
 "figli."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1412
@@ -605,7 +605,7 @@ msgstr "Indica se includere o meno il riferimento al coniuge."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1456
 msgid "Include sign of succession ('+') in child-list"
-msgstr "Include il segno di successione ('+') nella lista dei figli"
+msgstr "Include il segno di successione ('+') nella elenco dei figli"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1458
 msgid ""
@@ -613,7 +613,7 @@ msgid ""
 "list to indicate a child has succession."
 msgstr ""
 "Indica se includere il segno ('+') prima del numero di discendente nella "
-"lista dei figli per indicare che un figlio ha una successione."
+"elenco dei figli per indicare che un figlio ha una successione."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1463
 msgid "Include path to start-person"
@@ -678,11 +678,11 @@ msgstr "Lo stile usato per l'intestazione della generazione."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1536
 msgid "The style used for the children list title."
-msgstr "Lo stile usato per il titolo della lista dei figli."
+msgstr "Lo stile usato per il titolo della elenco dei figli."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1546
 msgid "The style used for the children list."
-msgstr "Lo stile usato per la lista dei figli."
+msgstr "Lo stile usato per la elenco dei figli."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1556
 msgid "The basic style used for Note header."
