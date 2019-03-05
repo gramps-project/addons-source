@@ -32,7 +32,10 @@ def load_on_reg(dbstate, uistate, plugin):
         # It is necessary to avoid load GUI elements when run under CLI mode.
         # So we just don't load it at all.
         # Monkey patch my version of Prefs into the system
-        from gi.repository.Gtk import Settings, ToolbarStyle
+        from gi.repository.Gtk import (Settings, ToolbarStyle, CssProvider,
+                                       StyleContext,
+                                       STYLE_PROVIDER_PRIORITY_APPLICATION)
+        from gi.repository.Gdk import Screen
         from gramps.gui.configure import GrampsPreferences
         from gramps.gen.config import config
         sys.path.append(os.path.abspath(os.path.dirname(__file__)))
@@ -65,3 +68,15 @@ def load_on_reg(dbstate, uistate, plugin):
         value = config.get('interface.toolbar-text')
         uistate.viewmanager.toolbar.set_style(
             ToolbarStyle.BOTH if value else ToolbarStyle.ICONS)
+        config.register('interface.fixed-scrollbar', '0')
+        value = config.get('interface.fixed-scrollbar')
+        if value:
+            gtksettings.set_property('gtk-primary-button-warps-slider',
+                                      not value)
+            MyPrefs.provider = CssProvider()
+            css = ('* { -GtkScrollbar-has-backward-stepper: 1; '
+                   '-GtkScrollbar-has-forward-stepper: 1; }')
+            MyPrefs.provider.load_from_data(css.encode('utf8'))
+            StyleContext.add_provider_for_screen(
+                Screen.get_default(), MyPrefs.provider,
+                STYLE_PROVIDER_PRIORITY_APPLICATION)

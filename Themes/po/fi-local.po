@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps_5_fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-14 09:58-0600\n"
+"POT-Creation-Date: 2019-03-05 14:02-0600\n"
 "PO-Revision-Date: 2019-01-05 07:31+0200\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: suomi <niememat@gmail.com>\n"
@@ -36,43 +36,49 @@ msgstr ""
 "Lisäys asetuksiin yksinkertaisen teeman ja fontin säätämiseksi. Erityisen "
 "hyödyllinen Windows-käyttäjille."
 
-#: Themes/themes.py:87
+#: Themes/themes.py:93
 msgid "_Help"
 msgstr "_Ohjeet"
 
-#: Themes/themes.py:132 Themes/themes.py:150
+#: Themes/themes.py:137 Themes/themes.py:155
 msgid "Theme is hardcoded by GTK_THEME"
 msgstr "Teema on koodattu GTK_THEME"
 
-#: Themes/themes.py:135 Themes/themes.py:171
+#: Themes/themes.py:140 Themes/themes.py:163
 #, python-format
 msgid "%s: "
 msgstr "%s: "
 
-#: Themes/themes.py:135
+#: Themes/themes.py:140 Themes/themes.py:190
 msgid "Theme"
 msgstr "Teema"
 
-#: Themes/themes.py:140
+#: Themes/themes.py:145
 msgid "Dark Variant"
 msgstr "Tumma muunnos"
 
-#: Themes/themes.py:154
-msgid "_Toolbar"
-msgstr "T_yökalupalkki"
-
-#: Themes/themes.py:154
-msgid "Text"
-msgstr "Teksti"
-
-#: Themes/themes.py:161
-msgid "Default"
-msgstr "Oletus"
-
-#: Themes/themes.py:171
+#: Themes/themes.py:163
 msgid "Font"
 msgstr "Fontti"
 
-#: Themes/themes.py:177
-msgid "Colors"
-msgstr "Värit"
+#: Themes/themes.py:170
+msgid "_Toolbar"
+msgstr "T_yökalupalkki"
+
+#: Themes/themes.py:170
+msgid "Text"
+msgstr "Teksti"
+
+#: Themes/themes.py:179
+msgid "Fixed Scrollbar (requires restart)"
+msgstr "Kiinteä vierityspalkki (edellyttää uudelleenkäynnistystä)"
+
+#: Themes/themes.py:186
+msgid "Restore to defaults"
+msgstr "Palauta oletusasetukset"
+
+#~ msgid "Default"
+#~ msgstr "Oletus"
+
+#~ msgid "Colors"
+#~ msgstr "Värit"

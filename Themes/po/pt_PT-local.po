@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 5.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-14 09:58-0600\n"
+"POT-Creation-Date: 2019-03-05 14:02-0600\n"
 "PO-Revision-Date: 2018-06-30 07:41-0300\n"
 "Last-Translator: Paulo Henrique Paiva de Moraes <paulohpmoraes@gmail.com>\n"
 "Language-Team: \n"
@@ -36,43 +36,49 @@ msgstr ""
 "Uma adição às Preferências para ajuste simples de Tema e Fonte. "
 "Especialmente útil para usuários do Windows."
 
-#: Themes/themes.py:87
+#: Themes/themes.py:93
 msgid "_Help"
 msgstr "_Ajuda"
 
-#: Themes/themes.py:132 Themes/themes.py:150
+#: Themes/themes.py:137 Themes/themes.py:155
 msgid "Theme is hardcoded by GTK_THEME"
-msgstr "O tema está fixo no código por GTK_THEME"
+msgstr "Tema está codificado por GTK_THEME"
 
-#: Themes/themes.py:135 Themes/themes.py:171
+#: Themes/themes.py:140 Themes/themes.py:163
 #, python-format
 msgid "%s: "
 msgstr "%s: "
 
-#: Themes/themes.py:135
+#: Themes/themes.py:140 Themes/themes.py:190
 msgid "Theme"
 msgstr "Tema"
 
-#: Themes/themes.py:140
+#: Themes/themes.py:145
 msgid "Dark Variant"
-msgstr "Versão escura"
+msgstr "Variante escura"
 
-#: Themes/themes.py:154
-msgid "_Toolbar"
-msgstr "Barra de _ferramentas"
-
-#: Themes/themes.py:154
-msgid "Text"
-msgstr "Texto"
-
-#: Themes/themes.py:161
-msgid "Default"
-msgstr "Padrão"
-
-#: Themes/themes.py:171
+#: Themes/themes.py:163
 msgid "Font"
 msgstr "Font"
 
-#: Themes/themes.py:177
-msgid "Colors"
-msgstr "Cores"
+#: Themes/themes.py:170
+msgid "_Toolbar"
+msgstr "Barra de _ferramentas"
+
+#: Themes/themes.py:170
+msgid "Text"
+msgstr "Texto"
+
+#: Themes/themes.py:179
+msgid "Fixed Scrollbar (requires restart)"
+msgstr "Barra de rolagem clássica (requer reinicialização)"
+
+#: Themes/themes.py:186
+msgid "Restore to defaults"
+msgstr "Restaurar para o padrão"
+
+#~ msgid "Default"
+#~ msgstr "Padrão"
+
+#~ msgid "Colors"
+#~ msgstr "Cores"

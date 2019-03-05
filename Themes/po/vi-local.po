@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS VIETNAMESE 4.2.8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-14 09:58-0600\n"
+"POT-Creation-Date: 2019-03-05 14:02-0600\n"
 "PO-Revision-Date: 2018-07-13 14:34+0800\n"
 "Last-Translator: detran <trande@gmail.com>\n"
 "Language-Team: VIETNAMESE <trande@gmail.com>\n"
@@ -33,43 +33,50 @@ msgstr ""
 "Một bổ sung cho Tùy chọn để điều chỉnh Chủ đề và Phông chữ đơn giản. Đặc "
 "biệt hữu ích cho người dùng Windows."
 
-#: Themes/themes.py:87
+#: Themes/themes.py:93
 msgid "_Help"
 msgstr "_Trợ giúp "
 
-#: Themes/themes.py:132 Themes/themes.py:150
+#: Themes/themes.py:137 Themes/themes.py:155
 msgid "Theme is hardcoded by GTK_THEME"
 msgstr "Chủ đề bị có định do GTK_THEME"
 
-#: Themes/themes.py:135 Themes/themes.py:171
+#: Themes/themes.py:140 Themes/themes.py:163
 #, python-format
 msgid "%s: "
 msgstr "%s:"
 
-#: Themes/themes.py:135
+#: Themes/themes.py:140 Themes/themes.py:190
 msgid "Theme"
 msgstr "Chủ đề"
 
-#: Themes/themes.py:140
+#: Themes/themes.py:145
 msgid "Dark Variant"
 msgstr "Biến thể tối"
 
-#: Themes/themes.py:154
-msgid "_Toolbar"
-msgstr "_Thanh công cụ "
-
-#: Themes/themes.py:154
-msgid "Text"
-msgstr "Văn bản "
-
-#: Themes/themes.py:161
-msgid "Default"
-msgstr "Mặc định "
-
-#: Themes/themes.py:171
+#: Themes/themes.py:163
 msgid "Font"
 msgstr "Font chữ "
 
-#: Themes/themes.py:177
-msgid "Colors"
-msgstr "Màu"
+#: Themes/themes.py:170
+msgid "_Toolbar"
+msgstr "_Thanh công cụ "
+
+#: Themes/themes.py:170
+msgid "Text"
+msgstr "Văn bản "
+
+#: Themes/themes.py:179
+msgid "Fixed Scrollbar (requires restart)"
+msgstr "Thanh cuộn cổ điển (yêu cầu khởi động lại)"
+
+#: Themes/themes.py:186
+#, fuzzy
+msgid "Restore to defaults"
+msgstr "Khôi phục một gramplet về mặc định? "
+
+#~ msgid "Default"
+#~ msgstr "Mặc định "
+
+#~ msgid "Colors"
+#~ msgstr "Màu"

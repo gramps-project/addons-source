@@ -21,9 +21,11 @@
 This module implements the Preferences Themes load patches.
 """
 import os
+import subprocess
 import types
 import glob
 from gi.repository import Gtk, Gio, GLib, Pango
+from gi.repository.Gdk import Screen
 from gi.repository.GObject import BindingFlags
 #-------------------------------------------------------------------------
 #
@@ -35,6 +37,7 @@ from gramps.gui.configure import (GrampsPreferences, ConfigureDialog,
                                   WIKI_HELP_PAGE, WIKI_HELP_SEC)
 from gramps.gui.display import display_help
 from gramps.gen.utils.alive import update_constants
+from gramps.gen.constfunc import win
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 _ = glocale.translation.gettext
 
@@ -69,6 +72,8 @@ class MyPrefs(GrampsPreferences):
             MyPrefs.font_filter, self)
         self.default_clicked = types.MethodType(
             MyPrefs.default_clicked, self)
+        self.scroll_changed = types.MethodType(
+            MyPrefs.scroll_changed, self)
         # Copy of original __init__
         page_funcs = (
             self.add_behavior_panel,
@@ -79,6 +84,7 @@ class MyPrefs(GrampsPreferences):
             self.add_date_panel,
             self.add_researcher_panel,
             self.add_advanced_panel,
+            self.add_color_panel,
             self.add_themes_panel)
 
         ConfigureDialog.__init__(self, uistate, dbstate, page_funcs,
@@ -91,12 +97,11 @@ class MyPrefs(GrampsPreferences):
 
     def add_themes_panel(self, configdialog):
         ''' This adds a line to the top of the original 'Color' panel '''
-        text, grid = self.add_color_panel(configdialog)
+        grid = Gtk.Grid()
+        grid.set_border_width(12)
+        grid.set_column_spacing(6)
+        grid.set_row_spacing(6)
 
-        grid.insert_row(0)
-        th_grid = Gtk.Grid()
-        th_grid.set_border_width(12)
-        th_grid.set_column_spacing(6)
         # Theme combo
         self.theme = Gtk.ComboBoxText()
         self.t_names = set()
@@ -133,8 +138,8 @@ class MyPrefs(GrampsPreferences):
         else:
             self.theme.connect('changed', self.theme_changed)
         lwidget = Gtk.Label(label=(_("%s: ") % _('Theme')))
-        th_grid.attach(lwidget, 0, 0, 1, 1)
-        th_grid.attach(self.theme, 1, 0, 1, 1)
+        grid.attach(lwidget, 0, 0, 1, 1)
+        grid.attach(self.theme, 1, 0, 1, 1)
 
         # Dark theme
         self.dark = Gtk.CheckButton(label=_("Dark Variant"))
@@ -142,25 +147,12 @@ class MyPrefs(GrampsPreferences):
             'gtk-application-prefer-dark-theme')
         self.dark.set_active(value)
         self.dark.connect('toggled', self.dark_variant_changed)
-        th_grid.attach(self.dark, 2, 0, 1, 1)
+        grid.attach(self.dark, 2, 0, 1, 1)
         self.dark_variant_changed(self.dark)
         if os.environ.get("GTK_THEME"):
             # theme is hardcoded, nothing we can do
             self.dark.set_sensitive(False)
             self.dark.set_tooltip_text(_("Theme is hardcoded by GTK_THEME"))
-
-        # Toolbar Text
-        t_text = Gtk.CheckButton.new_with_mnemonic(
-            _("_Toolbar") + ' ' + _('Text'))
-        value = config.get('interface.toolbar-text')
-        t_text.set_active(value)
-        t_text.connect('toggled', self.t_text_changed)
-        th_grid.attach(t_text, 3, 0, 1, 1)
-
-        # Default
-        button = Gtk.Button(label=_('Default'))
-        button.connect('clicked', self.default_clicked)
-        th_grid.attach(button, 4, 0, 1, 1)
 
         # Font
         font_button = Gtk.FontButton(show_style=False)
@@ -169,12 +161,33 @@ class MyPrefs(GrampsPreferences):
             'gtk-font-name', font_button, "font-name",
             BindingFlags.BIDIRECTIONAL | BindingFlags.SYNC_CREATE)
         lwidget = Gtk.Label(label=_("%s: ") % _('Font'))
-        th_grid.attach(lwidget, 5, 0, 1, 1)
-        th_grid.attach(font_button, 6, 0, 1, 1)
+        grid.attach(lwidget, 0, 1, 1, 1)
+        grid.attach(font_button, 1, 1, 1, 1)
         font_button.connect('font-set', self.font_changed)
-        grid.attach(th_grid, 0, 0, 7, 1)
 
-        return _('Colors'), grid
+        # Toolbar Text
+        t_text = Gtk.CheckButton.new_with_mnemonic(
+            _("_Toolbar") + ' ' + _('Text'))
+        value = config.get('interface.toolbar-text')
+        t_text.set_active(value)
+        t_text.connect('toggled', self.t_text_changed)
+        grid.attach(t_text, 0, 2, 2, 1)
+
+        # Scrollbar Windows style
+        if win():
+            self.sc_text = Gtk.CheckButton.new_with_mnemonic(
+                _("Fixed Scrollbar (requires restart)"))
+            value = config.get('interface.fixed-scrollbar')
+            self.sc_text.set_active(value)
+            self.sc_text.connect('toggled', self.scroll_changed)
+            grid.attach(self.sc_text, 0, 3, 2, 1)
+
+        # Default
+        button = Gtk.Button(label=_('Restore to defaults'), expand=False)
+        button.connect('clicked', self.default_clicked)
+        grid.attach(button, 0, 4, 2, 1)
+
+        return _('Theme'), grid
 
     def theme_changed(self, obj):
         ''' deal with combo changed '''
@@ -191,6 +204,34 @@ class MyPrefs(GrampsPreferences):
         config.set('preferences.theme-dark-variant', str(value))
         self.gtksettings.set_property('gtk-application-prefer-dark-theme',
                                       value)
+
+    def scroll_changed(self, obj):
+        ''' Scrollbar changed '''
+        value = obj.get_active()
+        config.set('interface.fixed-scrollbar', str(value))
+        self.gtksettings.set_property('gtk-primary-button-warps-slider',
+                                      not value)
+        if hasattr(MyPrefs, 'provider'):
+            Gtk.StyleContext.remove_provider_for_screen(
+                Screen.get_default(), MyPrefs.provider)
+        if value:
+            MyPrefs.provider = Gtk.CssProvider()
+            css = ('* { -GtkScrollbar-has-backward-stepper: 1; '
+                   '-GtkScrollbar-has-forward-stepper: 1; }')
+            MyPrefs.provider.load_from_data(css.encode('utf8'))
+            Gtk.StyleContext.add_provider_for_screen(
+                Screen.get_default(), MyPrefs.provider,
+                Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
+        try:
+            if value:
+                txt = subprocess.check_output('setx GTK_OVERLAY_SCROLLING 0',
+                                              shell=True)
+            else:
+                txt = subprocess.check_output(
+                    'reg delete HKCU\Environment /v GTK_OVERLAY_SCROLLING /f',
+                    shell=True)
+        except subprocess.CalledProcessError:
+            print("Cannot set environment variable GTK_OVERLAY_SCROLLING")
 
     def t_text_changed(self, obj):
         ''' Toolbar text changed '''
@@ -226,6 +267,20 @@ class MyPrefs(GrampsPreferences):
             if theme == self.def_theme:
                 self.theme.set_active(indx)
         self.dark.set_active(self.def_dark)
+        # Clear out scrollbar stuff
+        if not win():  # don't mess with this on Linux etc.
+            return
+        self.sc_text.set_active(False)
+        config.set('interface.fixed-scrollbar', '')
+        self.gtksettings.set_property('gtk-primary-button-warps-slider', 1)
+        Gtk.StyleContext.remove_provider_for_screen(
+            Screen.get_default(), MyPrefs.provider)
+        try:
+            txt = subprocess.check_output(
+                'reg delete HKCU\Environment /v GTK_OVERLAY_SCROLLING /f',
+                 shell=True)
+        except subprocess.CalledProcessError:
+            pass
 
     def gtk_css(self, directory):
         if not os.path.isdir(directory):

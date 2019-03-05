@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-14 09:58-0600\n"
+"POT-Creation-Date: 2019-03-05 14:02-0600\n"
 "PO-Revision-Date: 2019-01-12 19:56+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -42,43 +42,49 @@ msgstr ""
 "Дополнение к настройкам для простой настройки темы и шрифта. Особенно "
 "полезно для пользователей Windows."
 
-#: Themes/themes.py:87
+#: Themes/themes.py:93
 msgid "_Help"
 msgstr "_Справка"
 
-#: Themes/themes.py:132 Themes/themes.py:150
+#: Themes/themes.py:137 Themes/themes.py:155
 msgid "Theme is hardcoded by GTK_THEME"
 msgstr "Тема жёстко задана с помощью GTK_THEME"
 
-#: Themes/themes.py:135 Themes/themes.py:171
+#: Themes/themes.py:140 Themes/themes.py:163
 #, python-format
 msgid "%s: "
 msgstr "%s: "
 
-#: Themes/themes.py:135
+#: Themes/themes.py:140 Themes/themes.py:190
 msgid "Theme"
 msgstr "Тема"
 
-#: Themes/themes.py:140
+#: Themes/themes.py:145
 msgid "Dark Variant"
 msgstr "Тёмный вариант"
 
-#: Themes/themes.py:154
-msgid "_Toolbar"
-msgstr "_Панель инструментов"
-
-#: Themes/themes.py:154
-msgid "Text"
-msgstr "Текст"
-
-#: Themes/themes.py:161
-msgid "Default"
-msgstr "По умолчанию"
-
-#: Themes/themes.py:171
+#: Themes/themes.py:163
 msgid "Font"
 msgstr "Шрифт"
 
-#: Themes/themes.py:177
-msgid "Colors"
-msgstr "Цвета"
+#: Themes/themes.py:170
+msgid "_Toolbar"
+msgstr "_Панель инструментов"
+
+#: Themes/themes.py:170
+msgid "Text"
+msgstr "Текст"
+
+#: Themes/themes.py:179
+msgid "Fixed Scrollbar (requires restart)"
+msgstr "Классическая полоса прокрутки (требуется перезагрузка)"
+
+#: Themes/themes.py:186
+msgid "Restore to defaults"
+msgstr "Восстановить цвета по умолчанию"
+
+#~ msgid "Default"
+#~ msgstr "По умолчанию"
+
+#~ msgid "Colors"
+#~ msgstr "Цвета"

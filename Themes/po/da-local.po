@@ -44,7 +44,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-14 09:58-0600\n"
+"POT-Creation-Date: 2019-03-05 14:02-0600\n"
 "PO-Revision-Date: 2018-07-11 17:24+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
@@ -68,43 +68,49 @@ msgstr ""
 "En tilføjelse til indstillinger for simpel tema og skrifttypejustering. Især "
 "nyttigt til Windows-brugere."
 
-#: Themes/themes.py:87
+#: Themes/themes.py:93
 msgid "_Help"
 msgstr "_Hjælp"
 
-#: Themes/themes.py:132 Themes/themes.py:150
+#: Themes/themes.py:137 Themes/themes.py:155
 msgid "Theme is hardcoded by GTK_THEME"
 msgstr "Tema fast angivet ved GTK_THEME"
 
-#: Themes/themes.py:135 Themes/themes.py:171
+#: Themes/themes.py:140 Themes/themes.py:163
 #, python-format
 msgid "%s: "
 msgstr "%s: "
 
-#: Themes/themes.py:135
+#: Themes/themes.py:140 Themes/themes.py:190
 msgid "Theme"
 msgstr "Tema"
 
-#: Themes/themes.py:140
+#: Themes/themes.py:145
 msgid "Dark Variant"
 msgstr "Mørk variant"
 
-#: Themes/themes.py:154
-msgid "_Toolbar"
-msgstr "_Værktøjspanel"
-
-#: Themes/themes.py:154
-msgid "Text"
-msgstr "Tekst"
-
-#: Themes/themes.py:161
-msgid "Default"
-msgstr "Standard"
-
-#: Themes/themes.py:171
+#: Themes/themes.py:163
 msgid "Font"
 msgstr "Skrifttype"
 
-#: Themes/themes.py:177
-msgid "Colors"
-msgstr "Farver"
+#: Themes/themes.py:170
+msgid "_Toolbar"
+msgstr "_Værktøjspanel"
+
+#: Themes/themes.py:170
+msgid "Text"
+msgstr "Tekst"
+
+#: Themes/themes.py:179
+msgid "Fixed Scrollbar (requires restart)"
+msgstr "Klassisk rullepanel (kræver genstart)"
+
+#: Themes/themes.py:186
+msgid "Restore to defaults"
+msgstr "Genopret standard"
+
+#~ msgid "Default"
+#~ msgstr "Standard"
+
+#~ msgid "Colors"
+#~ msgstr "Farver"

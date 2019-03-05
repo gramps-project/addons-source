@@ -1,6 +1,6 @@
 # Italian translation for GRAMPS
 # This file is distributed under the same license as the Gramps package.
-# Copyright (C) 2001-2013 the Gramps Project
+# Copyright (C) 2001-2019 the Gramps Project
 #
 # Common and noteworthy translations:
 #
@@ -57,13 +57,13 @@
 #
 # Marco Molteni <molter@gufi.org>, 2001-2002;.
 # Lorenzo Cappelletti <lorenzo.cappelletti@email.it>, 2003.
-# Luigi Toscano <luigi.toscano@tiscali.it>, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
+# Luigi Toscano <luigi.toscano@tiscali.it>, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-14 09:58-0600\n"
-"PO-Revision-Date: 2018-07-15 16:38+0100\n"
+"POT-Creation-Date: 2019-03-05 14:02-0600\n"
+"PO-Revision-Date: 2019-02-10 16:07+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
 "Language: it\n"
@@ -85,43 +85,49 @@ msgstr ""
 "Un'aggiunta alle preferenze per la semplice correzione di temi e caratteri. "
 "Particolarmente utile per gli utenti di Windows."
 
-#: Themes/themes.py:87
+#: Themes/themes.py:93
 msgid "_Help"
 msgstr "_Aiuto"
 
-#: Themes/themes.py:132 Themes/themes.py:150
+#: Themes/themes.py:137 Themes/themes.py:155
 msgid "Theme is hardcoded by GTK_THEME"
 msgstr "Il tema è preimpostato da GTK_THEME"
 
-#: Themes/themes.py:135 Themes/themes.py:171
+#: Themes/themes.py:140 Themes/themes.py:163
 #, python-format
 msgid "%s: "
 msgstr "%s: "
 
-#: Themes/themes.py:135
+#: Themes/themes.py:140 Themes/themes.py:190
 msgid "Theme"
 msgstr "Tema"
 
-#: Themes/themes.py:140
+#: Themes/themes.py:145
 msgid "Dark Variant"
 msgstr "Variante scura"
 
-#: Themes/themes.py:154
-msgid "_Toolbar"
-msgstr "Barra degli s_trumenti"
-
-#: Themes/themes.py:154
-msgid "Text"
-msgstr "Testo"
-
-#: Themes/themes.py:161
-msgid "Default"
-msgstr "Predefinita"
-
-#: Themes/themes.py:171
+#: Themes/themes.py:163
 msgid "Font"
 msgstr "Carattere"
 
-#: Themes/themes.py:177
-msgid "Colors"
-msgstr "Colori"
+#: Themes/themes.py:170
+msgid "_Toolbar"
+msgstr "Barra degli s_trumenti"
+
+#: Themes/themes.py:170
+msgid "Text"
+msgstr "Testo"
+
+#: Themes/themes.py:179
+msgid "Fixed Scrollbar (requires restart)"
+msgstr "Scrollbar classica (richiede il riavvio)"
+
+#: Themes/themes.py:186
+msgid "Restore to defaults"
+msgstr "Ripristinare ai valori predefiniti"
+
+#~ msgid "Default"
+#~ msgstr "Predefinita"
+
+#~ msgid "Colors"
+#~ msgstr "Colori"
