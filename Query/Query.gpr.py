@@ -9,7 +9,8 @@ register(GRAMPLET,
          name=_("Query Gramplet"), 
          description = _("Gramplet for running SQL-like queries"),
          status = UNSTABLE, # not yet tested with python 3
-         version = '1.0.22',
+         include_in_listing = False,
+         version = '1.0.23',
          gramps_target_version = "4.2",
          height=200,
          gramplet = "QueryGramplet",
@@ -31,10 +32,11 @@ register(QUICKREPORT,
          description = _("Quick view for SQL-like running queries"),
          category = CATEGORY_QR_MISC,
          status = STABLE, # not yet tested with python 3
+         include_in_listing = False,
          fname="QueryQuickview.py",
          authors="Douglas Blank",
          authors_email="dblank@cs.brynmawr.edu",
-         version = '1.0.22',
+         version = '1.0.23',
          gramps_target_version = "4.2",
          )
 
