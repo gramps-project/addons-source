@@ -1,123 +1,157 @@
-# Croatian translations for PACKAGE package.
-# Copyright (C) 2009 THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Croatian translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) Gramps project
+# Milo Ivir <mail@milotype.de>, 2019.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-11-23 19:29+0100\n"
-"PO-Revision-Date: 2009-12-10 11:20+0100\n"
-"Last-Translator: \n"
-"Language-Team: Croatian <lokalizacija@linux.hr>\n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2019-03-08 14:56+0100\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 2.2.1\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Language: hr\n"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:3
 msgid "Deep Connections Gramplet"
-msgstr "gramplet: duboka povezanost"
+msgstr "Daleka veza – Gramplet"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:9
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:4
+msgid "Gramplet showing a deep relationship between active and home people"
+msgstr "Gramplet prikazuje daleku vezu između aktivne i glavne osobe"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:10
 msgid "Deep Connections"
-msgstr "Duboka Povezanost"
+msgstr "Daleka veza"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:51
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:59
 msgid "Double-click name for details"
 msgstr "Dvoklik na ime za pojedinosti"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:52
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:60
 msgid "No Family Tree loaded."
-msgstr "Nije učitano obiteljsko stablo."
+msgstr "Nijedan rodoslov nije učitan."
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:57
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:65
 msgid "Pause"
 msgstr "Zaustavi"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:59
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:67
 msgid "Continue"
 msgstr "Nastavi"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:80
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:96
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:69
+msgid "Copy"
+msgstr "Kopiraj"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:106
+msgid "mentioned in note"
+msgstr "naveden/a u zabilješki"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:125
 msgid "child"
 msgstr "dijete"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:85
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:129
 msgid "husband"
 msgstr "muž"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:89
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:131
 msgid "wife"
 msgstr "žena"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:101
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:132
+msgid "Note on Family"
+msgstr "Zabilješka o obitelji"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:142
+msgid "sibling"
+msgstr "brat/sestra"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:146
 msgid "father"
 msgstr "otac"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:105
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:149
 msgid "mother"
 msgstr "majka"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:123
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:150
+msgid "Note on Parent Family"
+msgstr "Zabilješka o obitelji roditelja"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:153
+#, python-format
+msgid "%s (association)"
+msgstr "%s (veze)"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:157
+msgid "Note on Person"
+msgstr "Zabilješka o osobi"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:187
 #, python-format
 msgid ""
 "\n"
-"   who is a %s of "
+"   %s of "
 msgstr ""
 "\n"
-"   %s od"
+"   %s od "
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:137
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:205
 msgid "No Home Person set."
 msgstr "Početna osoba nije postavljena."
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:140
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:208
 msgid "No Active Person set."
-msgstr "Nije postavljena aktivne osoba."
+msgstr "Aktivna osoba nije postavljena."
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:143
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:212
 msgid "self"
-msgstr "Ista osoba"
+msgstr "ista osoba"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:147
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:216
 msgid "Looking for relationship between\n"
-msgstr ""
+msgstr "Traženje veza između\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:148
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:217
 #, python-format
 msgid "  <b>%s</b> (Home Person) and\n"
-msgstr ""
+msgstr "  <b>%s</b> (početna osoba) i\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:149
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:218
 #, python-format
 msgid "  <b>%s</b> (Active Person)...\n"
-msgstr "Aktivna osoba: <b>%s</b>\n"
+msgstr "  <b>%s</b> (aktivna osoba) …\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:157
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:228
 #, python-format
 msgid ""
 "Found relation #%d: \n"
 "   "
 msgstr ""
-"Pronađene poveznice #%d: \n"
+"Pronađena je veza broj%d: \n"
 "   "
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:163
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:238
 msgid ""
 "Paused.\n"
 "Press Continue to search for additional relations.\n"
 msgstr ""
 "Zaustavljeno.\n"
-"Pritisnite gumb Nastavak za traženje dodatnih povezanosti.\n"
+"Pritisni gumb „Nastavi”, za traženje dodatnih veza.\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:176
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:253
 #, python-format
 msgid ""
 "\n"
 "Search completed. %d relations found."
 msgstr ""
 "\n"
-"Traženje završeno. %d poveznica pronađeno."
-
+"Traženje je završeno. Broj pronađenih veza: %d."
