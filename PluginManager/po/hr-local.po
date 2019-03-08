@@ -1,0 +1,259 @@
+# Croatian translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) Gramps project
+# Milo Ivir <mail@milotype.de>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2019-03-08 03:18+0100\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.1\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Language: hr\n"
+
+#: PluginManager/PluginManager.gpr.py:29
+msgid "Plugin Manager Enhanced"
+msgstr "Napredni upravljač za dodatke"
+
+#: PluginManager/PluginManager.gpr.py:30
+msgid "An Addon/Plugin Manager with several additional capabilities"
+msgstr "Upravljač za dodatke, s nekolicinom dodatnih funkcija"
+
+#: PluginManager/PluginManager.py:87
+msgid "Plugin Manager - Enhanced"
+msgstr "Upravljač za dodatke – Napredni"
+
+#: PluginManager/PluginManager.py:144
+msgid "_Help"
+msgstr "_Pomoć"
+
+#: PluginManager/PluginManager.py:151
+msgid ""
+"Enter search words to filter the addons.\n"
+"All the words must be present somewhere in the row or\n"
+"the addon filename to be included in the search.\n"
+"Word case and order is ignored."
+msgstr ""
+"Unesi tražene izraze za filtriranje dodataka.\n"
+"Za odabir u pretragu, sve riječi moraju bit negdje u\n"
+"retku ili u imenu datoteke. Veličina slova i redoslijed\n"
+"riječi ne igraju ulogu u pretrazi."
+
+#: PluginManager/PluginManager.py:155
+msgid "Search..."
+msgstr "Traži …"
+
+#: PluginManager/PluginManager.py:161
+msgid "Check for updated addons now"
+msgstr "Provjeri aktualnost dodataka sada"
+
+#: PluginManager/PluginManager.py:168
+msgid "Reload"
+msgstr "Ponovo učitaj"
+
+#: PluginManager/PluginManager.py:174 PluginManager/PluginManager.py:735
+msgid "_Close"
+msgstr "_Zatvori"
+
+#: PluginManager/PluginManager.py:207
+msgid "Restart..."
+msgstr "Ponovo pokreni …"
+
+#: PluginManager/PluginManager.py:208
+msgid ""
+"Please Restart Gramps so that your addon changes can be safely completed."
+msgstr ""
+"Ponovo pokreni Gramps, kako bi se tvoje promjene u dodacima mogle sigurno "
+"završiti."
+
+#: PluginManager/PluginManager.py:284
+msgid "Id"
+msgstr "ID"
+
+#: PluginManager/PluginManager.py:285
+msgid "Plugin name"
+msgstr "Ime dodatka"
+
+#: PluginManager/PluginManager.py:286 PluginManager/PluginManager.py:457
+msgid "Description"
+msgstr "Opis"
+
+#: PluginManager/PluginManager.py:287
+msgid "Version"
+msgstr "Verzija"
+
+#: PluginManager/PluginManager.py:288
+msgid "Authors"
+msgstr "Autori"
+
+#: PluginManager/PluginManager.py:289
+msgid "Email"
+msgstr "E-pošta"
+
+#: PluginManager/PluginManager.py:290
+msgid "Filename"
+msgstr "Ime datoteke"
+
+#: PluginManager/PluginManager.py:291
+msgid "Location"
+msgstr "Lokacija"
+
+#: PluginManager/PluginManager.py:296
+msgid "Loaded"
+msgstr "Učitano"
+
+#: PluginManager/PluginManager.py:299
+msgid "Hidden"
+msgstr "Skriveno"
+
+#: PluginManager/PluginManager.py:304 PluginManager/PluginManager.py:699
+msgid "Failed"
+msgstr "Nije uspjelo"
+
+#: PluginManager/PluginManager.py:377
+msgid "Installation Errors"
+msgstr "Greške instalacije"
+
+#: PluginManager/PluginManager.py:378
+msgid "The following addons had errors: "
+msgstr "Sljedeći dodaci su imali greške: "
+
+#: PluginManager/PluginManager.py:400
+msgid "Error"
+msgstr "Greška"
+
+#: PluginManager/PluginManager.py:401
+#, python-format
+msgid "Error removing the '%s' directory, The uninstall may have failed"
+msgstr ""
+"Greška prilikom uklanjanja direktorija „%s”. Desintaliranje možda nije bilo "
+"usješno"
+
+#: PluginManager/PluginManager.py:429
+msgid "Type"
+msgstr "Vrsta"
+
+#: PluginManager/PluginManager.py:438
+msgid "Status"
+msgstr "Status"
+
+#: PluginManager/PluginManager.py:441
+msgid ""
+"'*' items are supplied by 3rd party authors,\n"
+"<s>strikeout</s> items are hidden"
+msgstr ""
+"Stavke s oznakom „*” su dodaci treće strane,\n"
+"<s>precrtane</s> stavke su skrivene"
+
+#: PluginManager/PluginManager.py:449
+msgid "Name"
+msgstr "Ime"
+
+#: PluginManager/PluginManager.py:472
+msgid "Info"
+msgstr "Informacije"
+
+#: PluginManager/PluginManager.py:475 PluginManager/PluginManager.py:586
+msgid "Hide"
+msgstr "Sakrij"
+
+#: PluginManager/PluginManager.py:478 PluginManager/PluginManager.py:600
+msgid "Install"
+msgstr "Instaliraj"
+
+#: PluginManager/PluginManager.py:481
+msgid "Edit"
+msgstr "Uredi"
+
+#: PluginManager/PluginManager.py:483
+msgid "Load"
+msgstr "Učitaj"
+
+#: PluginManager/PluginManager.py:494
+msgid "Show hidden items"
+msgstr "Prikaži skrivene stavke"
+
+#: PluginManager/PluginManager.py:502
+msgid "Show Built-in items"
+msgstr "Prikaži ugrađene stavke"
+
+#: PluginManager/PluginManager.py:509
+msgid "* indicates 3rd party addon"
+msgstr "„*” ukazuju na dodatak treće strane"
+
+#: PluginManager/PluginManager.py:514
+msgid "Plugins"
+msgstr "Dodaci"
+
+#: PluginManager/PluginManager.py:584
+msgid "Unhide"
+msgstr "Prikaži"
+
+#: PluginManager/PluginManager.py:603
+msgid "Uninstall"
+msgstr "Deinstaliraj"
+
+#: PluginManager/PluginManager.py:613
+msgid "Checking Addons Failed"
+msgstr "Provjera dodataka nije uspjela"
+
+#: PluginManager/PluginManager.py:614
+msgid "The addon repository appears to be unavailable. Please try again later."
+msgstr "Spremište dodataka nije dostupno. Pokušaj opet kasnije."
+
+#: PluginManager/PluginManager.py:628
+msgid ""
+"3rd party addons are not shown until the addons update list is downloaded.  "
+"Would you like to check for updated addons now?"
+msgstr ""
+"Dodaci treće strane se ne prikazuju, sve dok aktualizirani popis dodataka "
+"nije preuzet. Želiš li sada provjeriti aktualnost dodataka?"
+
+#: PluginManager/PluginManager.py:631
+msgid "Yes"
+msgstr "Da"
+
+#: PluginManager/PluginManager.py:631
+msgid "No"
+msgstr "Ne"
+
+#: PluginManager/PluginManager.py:674
+msgid "*Available"
+msgstr "*Dostupno"
+
+#: PluginManager/PluginManager.py:688
+msgid "Built-in"
+msgstr "Ugrađeno"
+
+#: PluginManager/PluginManager.py:693
+msgid "*Installed"
+msgstr "*Instalirano"
+
+#: PluginManager/PluginManager.py:702
+msgid "Update Available"
+msgstr "Dostupna je nadogradnja"
+
+#: PluginManager/PluginManager.py:729
+#, python-format
+msgid "%(str1)s: %(str2)s"
+msgstr "%(str1)s: %(str2)s"
+
+#: PluginManager/PluginManager.py:729
+msgid "Detailed Info"
+msgstr "Detaljne informacije"
+
+#: PluginManager/PluginManager.py:828
+msgid "Updated"
+msgstr "Aktualizirano"
+
+#: PluginManager/PluginManager.py:839
+msgid "updates|New"
+msgstr "Novi"
