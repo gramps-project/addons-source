@@ -1,0 +1,76 @@
+# Croatian translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) Gramps project
+# Milo Ivir <mail@milotype.de>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2019-03-08 01:39+0100\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.1\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Language: hr\n"
+
+#: Differences/differences.gpr.py:4
+msgid "Database Differences Report"
+msgstr "Izvještaj o razlikama između baza podataka"
+
+#: Differences/differences.gpr.py:5
+msgid "Compares an external database with the current one."
+msgstr "Uspoređuje vanjsku bazu podataka s trenutačnom."
+
+#: Differences/differences.py:128
+msgid "Family Tree Differences"
+msgstr "Razlike rodoslova"
+
+#: Differences/differences.py:129
+msgid "Processing..."
+msgstr "Obrada ..."
+
+#: Differences/differences.py:296
+msgid "Report Options"
+msgstr "Opcije za izvještaj"
+
+#: Differences/differences.py:298
+msgid "Family Tree file"
+msgstr "Datoteka rodoslova"
+
+#: Differences/differences.py:300
+msgid "Select a .gpkg or .gramps file"
+msgstr "Odaberi .gpkg ili .gramps datoteku"
+
+#: Differences/differences.py:303
+msgid "Show items that are different"
+msgstr "Prikaži elemente koji se razlikuju"
+
+#: Differences/differences.py:304
+msgid "Include items that are different"
+msgstr "Uključi elemente koji se razlikuju"
+
+#: Differences/differences.py:307
+msgid "Show items missing from file"
+msgstr "Prikaži elemente koji nedostaju u datoteci"
+
+#: Differences/differences.py:308
+msgid "Include items not in file but in database"
+msgstr "Uključi elemente koji nedostaju u datoteci, ali se nalaze u bazi podataka"
+
+#: Differences/differences.py:311
+msgid "Show items added in file"
+msgstr "Prikaži elemente koji su dodani u datoteku"
+
+#: Differences/differences.py:312
+msgid "Include items in file but not in database"
+msgstr "Uključi elemente koji nedostaju u bazi podataka, ali se nalaze u datoteci"
+
+#: Differences/differences.py:357 Differences/differences.py:359
+#: Differences/differences.py:362 Differences/differences.py:365
+msgid "Text"
+msgstr "Tekst"
