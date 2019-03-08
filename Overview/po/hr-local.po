@@ -1,0 +1,71 @@
+# Croatian translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) Gramps project
+# Milo Ivir <mail@milotype.de>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2019-03-08 03:03+0100\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.1\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Language: hr\n"
+
+#: Overview/Overview.gpr.py:28
+msgid "Person Overview"
+msgstr "Pregled osobe"
+
+#: Overview/Overview.gpr.py:29
+msgid "Gramplet showing an overview of events for a person"
+msgstr "Gramplet za prikaz događaja osobe"
+
+#: Overview/Overview.gpr.py:36 Overview/Overview.gpr.py:50
+msgid "Overview"
+msgstr "Pregled"
+
+#: Overview/Overview.gpr.py:42
+msgid "Family Overview"
+msgstr "Pregled obitelji"
+
+#: Overview/Overview.gpr.py:43
+msgid "Gramplet showing an overview of events for a family"
+msgstr "Gramplet za prikaz događaja obitelji"
+
+#: Overview/Overview.py:70
+msgid "Double-click on a row to edit the selected event."
+msgstr "Dvoklik na redak za uređivanje odabranog događaja."
+
+#: Overview/Overview.py:74
+msgid "Type"
+msgstr "Vrsta"
+
+#: Overview/Overview.py:75
+msgid "Date"
+msgstr "Datum"
+
+#: Overview/Overview.py:77
+msgid "Age"
+msgstr "Starost"
+
+#: Overview/Overview.py:78 Overview/Overview.py:112
+msgid "Where Born"
+msgstr "Mjesto rođenja"
+
+#: Overview/Overview.py:79 Overview/Overview.py:114
+msgid "Condition"
+msgstr "Uvjet"
+
+#: Overview/Overview.py:80 Overview/Overview.py:116
+msgid "Occupation"
+msgstr "Zanimanje"
+
+#: Overview/Overview.py:81 Overview/Overview.py:118
+msgid "Residence"
+msgstr "Prebivalište"
