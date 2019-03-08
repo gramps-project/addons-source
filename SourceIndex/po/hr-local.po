@@ -1,0 +1,666 @@
+# Croatian translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) Gramps project
+# Milo Ivir <mail@milotype.de>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-04 18:55-0600\n"
+"PO-Revision-Date: 2019-03-08 11:48+0100\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.1\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Language: hr\n"
+
+#: SourceIndex/birth.py:126 SourceIndex/census.py:82 SourceIndex/death.py:87
+#: SourceIndex/index.py:92 SourceIndex/marriage.py:87 SourceIndex/witness.py:64
+msgid "Sources Index"
+msgstr "Indeks izvora"
+
+#: SourceIndex/index.py:407
+msgid "*** Error: Must install either ElementTree or lxml."
+msgstr "*** Greška: potrebno je instalirati ElementTree ili lxml."
+
+#: SourceIndex/index.py:409
+msgid "must install either ElementTree or lxml"
+msgstr "potrebno je instalirati ElementTree ili lxml"
+
+#: SourceIndex/SourceIndex.gpr.py:23
+msgid "BirthIndex"
+msgstr "Indeks rođenja"
+
+#: SourceIndex/SourceIndex.gpr.py:38
+msgid "MarriageIndex"
+msgstr "Indeks brakova"
+
+#: SourceIndex/SourceIndex.gpr.py:53
+msgid "DeathIndex"
+msgstr "Indeks smrti"
+
+#: SourceIndex/SourceIndex.gpr.py:68
+msgid "CensusIndex"
+msgstr "Indeks popisa stanovništva"
+
+#: SourceIndex/SourceIndex.gpr.py:83
+msgid "Witness"
+msgstr "Svjedok"
+
+#: SourceIndex/SourceIndex.gpr.py:98
+msgid "SourceIndex"
+msgstr "Indeks izvora"
+
+#: SourceIndex/birth.glade:7 SourceIndex/index.glade:585
+msgid "birth"
+msgstr "rođenje"
+
+#: SourceIndex/birth.glade:47 SourceIndex/birth.glade:316
+#: SourceIndex/birth.glade:852 SourceIndex/census.glade:745
+#: SourceIndex/death.glade:78 SourceIndex/death.glade:484
+#: SourceIndex/marriage.glade:266
+msgid "Date:"
+msgstr "Datum:"
+
+#: SourceIndex/birth.glade:65 SourceIndex/census.glade:728
+#: SourceIndex/death.glade:97 SourceIndex/marriage.glade:64
+msgid "Info:"
+msgstr "Informacije:"
+
+#: SourceIndex/birth.glade:99
+msgid "Birth act:"
+msgstr "Rođenje:"
+
+#: SourceIndex/birth.glade:113 SourceIndex/census.glade:873
+#: SourceIndex/death.glade:182 SourceIndex/marriage.glade:1263
+msgid "Reference:"
+msgstr "Referenca:"
+
+#: SourceIndex/birth.glade:129
+msgid ""
+"Volume\n"
+"    Page:"
+msgstr ""
+"Svezak\n"
+"    Stranica:"
+
+#: SourceIndex/birth.glade:149
+msgid "The source title"
+msgstr "Naziv izvora"
+
+#: SourceIndex/birth.glade:164
+msgid "The volume or page of this source"
+msgstr "Svezak ili stranica ovog izvora"
+
+#: SourceIndex/birth.glade:195 SourceIndex/birth.glade:297
+#: SourceIndex/birth.glade:644 SourceIndex/witness.glade:73
+msgid "Names:"
+msgstr "Imena:"
+
+#: SourceIndex/birth.glade:214
+msgid "select the gender/sex"
+msgstr "odaberi spol"
+
+#: SourceIndex/birth.glade:230 SourceIndex/census.glade:254
+#: SourceIndex/death.glade:386
+msgid "Gender:"
+msgstr "Spol:"
+
+#: SourceIndex/birth.glade:247
+msgid "The names of the main person written into the source"
+msgstr "Sva imena središnje osobe upisanih u izvor"
+
+#: SourceIndex/birth.glade:262
+msgid "The first names of the main person written into the source"
+msgstr "Imena središnje osobe upisanih u izvor"
+
+#: SourceIndex/birth.glade:278 SourceIndex/birth.glade:511
+#: SourceIndex/birth.glade:729 SourceIndex/witness.glade:90
+msgid "First names:"
+msgstr "Ime:"
+
+#: SourceIndex/birth.glade:334 SourceIndex/birth.glade:493
+msgid "Other:"
+msgstr "Ostalo:"
+
+#: SourceIndex/birth.glade:351
+msgid "Repository title"
+msgstr "Naslov spremišta"
+
+#: SourceIndex/birth.glade:388 SourceIndex/census.glade:973
+#: SourceIndex/death.glade:589 SourceIndex/marriage.glade:234
+msgid "<b>Image</b>"
+msgstr "<b>Slika</b>"
+
+#: SourceIndex/birth.glade:406
+msgid "<b><i>Repository</i></b>"
+msgstr "<b><i>Spremište</i></b>"
+
+#: SourceIndex/birth.glade:421
+msgid ""
+"Spouse\n"
+"names:"
+msgstr ""
+"Imena\n"
+"supružnika:"
+
+#: SourceIndex/birth.glade:441
+msgid ""
+"Marriage\n"
+"date:"
+msgstr ""
+"Datum\n"
+"sklapanja braka:"
+
+#: SourceIndex/birth.glade:460
+msgid ""
+"Death\n"
+"date:"
+msgstr ""
+"Datum\n"
+"smrti:"
+
+#: SourceIndex/birth.glade:544 SourceIndex/birth.glade:762
+#: SourceIndex/census.glade:286 SourceIndex/death.glade:521
+#: SourceIndex/death.glade:669 SourceIndex/death.glade:939
+#: SourceIndex/marriage.glade:467 SourceIndex/marriage.glade:789
+#: SourceIndex/marriage.glade:808 SourceIndex/marriage.glade:827
+#: SourceIndex/marriage.glade:1562 SourceIndex/marriage.glade:1621
+#: SourceIndex/witness.glade:107
+msgid "Age:"
+msgstr "Starost:"
+
+#: SourceIndex/birth.glade:578 SourceIndex/birth.glade:677
+#: SourceIndex/census.glade:543 SourceIndex/death.glade:722
+#: SourceIndex/death.glade:821 SourceIndex/marriage.glade:529
+#: SourceIndex/marriage.glade:903 SourceIndex/marriage.glade:922
+#: SourceIndex/marriage.glade:941 SourceIndex/marriage.glade:1361
+#: SourceIndex/marriage.glade:1474 SourceIndex/witness.glade:141
+msgid "Occupation:"
+msgstr "Zanimanje:"
+
+#: SourceIndex/birth.glade:597 SourceIndex/birth.glade:710
+#: SourceIndex/death.glade:741 SourceIndex/death.glade:854
+#: SourceIndex/marriage.glade:560 SourceIndex/marriage.glade:960
+#: SourceIndex/marriage.glade:979 SourceIndex/marriage.glade:998
+#: SourceIndex/marriage.glade:1408 SourceIndex/marriage.glade:1455
+#: SourceIndex/witness.glade:158
+msgid "Live:"
+msgstr "Živi:"
+
+#: SourceIndex/birth.glade:833
+msgid ""
+"<b>Witness\n"
+"Godfather\n"
+"Godmother:</b>"
+msgstr ""
+"<b>Svjedoci\n"
+"Kum\n"
+"Kuma:</b>"
+
+#: SourceIndex/birth.glade:870
+msgid "Call number:"
+msgstr "Pozivni broj:"
+
+#: SourceIndex/birth.glade:887
+msgid "The call number into the repository"
+msgstr "Pozivni broj u spremište"
+
+#: SourceIndex/birth.glade:925
+msgid "<b><i>Data person</i></b>"
+msgstr "<b><i>Podaci osobe</i></b>"
+
+#: SourceIndex/birth.glade:949
+msgid "<b><i>Data margin</i></b>"
+msgstr "<b><i>Podaci margine</i></b>"
+
+#: SourceIndex/birth.glade:973
+msgid "<b><i>Data father</i></b>"
+msgstr "<b><i>Podaci oca</i></b>"
+
+#: SourceIndex/birth.glade:985
+msgid "<b><i>Data mother</i></b>"
+msgstr "<b><i>Podaci majke</i></b>"
+
+#: SourceIndex/birth.glade:1021
+msgid ""
+"witness1, name, given, age, occupation;\n"
+"witness2, name, given, age, occupation;\n"
+"godfather, name, given, age, occupation;\n"
+"etc ..."
+msgstr ""
+"svjedok1, ime, prezime, starost, zanimanje;\n"
+"svjedok2, ime, prezime, starost, zanimanje;\n"
+"kum, ime, prezime, starost, zanimanje;\n"
+"itd …"
+
+#: SourceIndex/birth.glade:1365 SourceIndex/census.glade:63
+#: SourceIndex/death.glade:1452 SourceIndex/marriage.glade:1976
+#: SourceIndex/witness.glade:360
+msgid "Cancel"
+msgstr "Odustani"
+
+#: SourceIndex/birth.glade:1420 SourceIndex/census.glade:117
+#: SourceIndex/death.glade:1507 SourceIndex/marriage.glade:2031
+#: SourceIndex/witness.glade:415
+msgid "OK"
+msgstr "U redu"
+
+#: SourceIndex/birth.glade:1549
+msgid ""
+"Marriage\n"
+"place:"
+msgstr ""
+"Mjesto\n"
+"sklapanja braka:"
+
+#: SourceIndex/birth.glade:1568
+msgid ""
+"Death\n"
+"place:"
+msgstr ""
+"Mjesto\n"
+"smrti:"
+
+#: SourceIndex/birth.glade:1588
+msgid ""
+"Birth\n"
+"place:"
+msgstr ""
+"Mjesto\n"
+"rođenja:"
+
+#: SourceIndex/birth.glade:1892 SourceIndex/birth.glade:1911
+msgid "Origine:"
+msgstr "Porijeklo:"
+
+#: SourceIndex/birth.glade:2272
+msgid "<b><i>Citation</i></b>"
+msgstr "<b><i>Citat</i></b>"
+
+#: SourceIndex/birth.glade:2287
+msgid "<b><i>Source</i></b>"
+msgstr "<b><i>Izvor</i></b>"
+
+#: SourceIndex/census.glade:7 SourceIndex/index.glade:768
+msgid "census"
+msgstr "popis stanovništva"
+
+#: SourceIndex/census.glade:160
+msgid "<b>Census</b>"
+msgstr "<b>Popis stanovništva</b>"
+
+#: SourceIndex/census.glade:176 SourceIndex/death.glade:607
+#: SourceIndex/marriage.glade:185
+msgid "<b>Repository</b>"
+msgstr "<b>Spremište</b>"
+
+#: SourceIndex/census.glade:190 SourceIndex/death.glade:353
+#: SourceIndex/death.glade:465 SourceIndex/death.glade:788
+#: SourceIndex/marriage.glade:405 SourceIndex/marriage.glade:591
+#: SourceIndex/marriage.glade:610 SourceIndex/marriage.glade:629
+#: SourceIndex/marriage.glade:1330 SourceIndex/marriage.glade:1493
+msgid "Name:"
+msgstr "Ime:"
+
+#: SourceIndex/census.glade:221 SourceIndex/death.glade:432
+#: SourceIndex/death.glade:636 SourceIndex/death.glade:873
+#: SourceIndex/marriage.glade:450 SourceIndex/marriage.glade:732
+#: SourceIndex/marriage.glade:751 SourceIndex/marriage.glade:770
+#: SourceIndex/marriage.glade:1543 SourceIndex/marriage.glade:1701
+msgid "First name:"
+msgstr "Ime:"
+
+#: SourceIndex/census.glade:319 SourceIndex/death.glade:1003
+msgid "Birth date:"
+msgstr "Datum rođenja:"
+
+#: SourceIndex/census.glade:364
+msgid "Death date:"
+msgstr "Datum smrti:"
+
+#: SourceIndex/census.glade:381 SourceIndex/death.glade:1035
+msgid "Birth place:"
+msgstr "Mjesto rođenja:"
+
+#: SourceIndex/census.glade:414
+msgid "Death place:"
+msgstr "Mjesto smrti:"
+
+#: SourceIndex/census.glade:447
+msgid "Family status:"
+msgstr "Obiteljski status:"
+
+#: SourceIndex/census.glade:466 SourceIndex/death.glade:1099
+msgid "Spouse name:"
+msgstr "Ime supružnika:"
+
+#: SourceIndex/census.glade:510 SourceIndex/death.glade:703
+#: SourceIndex/death.glade:892 SourceIndex/marriage.glade:498
+#: SourceIndex/marriage.glade:846 SourceIndex/marriage.glade:865
+#: SourceIndex/marriage.glade:884 SourceIndex/marriage.glade:1526
+#: SourceIndex/marriage.glade:1654 SourceIndex/witness.glade:124
+msgid "Origin:"
+msgstr "Izvorno:"
+
+#: SourceIndex/census.glade:671 SourceIndex/death.glade:1067
+msgid "Note:"
+msgstr "Zabilješka:"
+
+#: SourceIndex/census.glade:712 SourceIndex/death.glade:621
+msgid "<b>Data person</b>"
+msgstr "<b>Podaci osobe</b>"
+
+#: SourceIndex/census.glade:777 SourceIndex/census.glade:841
+#: SourceIndex/death.glade:131 SourceIndex/death.glade:201
+#: SourceIndex/marriage.glade:284 SourceIndex/marriage.glade:1233
+msgid "ID:"
+msgstr "ID:"
+
+#: SourceIndex/census.glade:811
+msgid "Address:"
+msgstr "Adresa:"
+
+#: SourceIndex/census.glade:904 SourceIndex/death.glade:217
+#: SourceIndex/marriage.glade:1296
+msgid "Volume:"
+msgstr "Svezak:"
+
+#: SourceIndex/census.glade:1046
+msgid "order, person, surname, given, age, status, occupation, etc ..."
+msgstr "red, osoba, prezime, ime, starost, status, zanimanje …"
+
+#: SourceIndex/census.glade:1090
+msgid "Note"
+msgstr "Zabilješka"
+
+#: SourceIndex/death.glade:7 SourceIndex/index.glade:707
+msgid "death"
+msgstr "smrt"
+
+#: SourceIndex/death.glade:165
+msgid "Death act:"
+msgstr "Potvrda o smrti:"
+
+#: SourceIndex/death.glade:282
+msgid "<b>Death act</b>"
+msgstr "<b>Potvrda o smrti</b>"
+
+#: SourceIndex/death.glade:503
+msgid "Place:"
+msgstr "Mjesto:"
+
+#: SourceIndex/death.glade:986 SourceIndex/marriage.glade:1720
+msgid "<b>Witness:</b>"
+msgstr "<b>Svjedok:</b>"
+
+#: SourceIndex/death.glade:1131
+msgid "Marriage date:"
+msgstr "Datum sklapanja braka:"
+
+#: SourceIndex/death.glade:1163
+msgid "Marriage place:"
+msgstr "Mjesto sklapanja braka:"
+
+#: SourceIndex/death.glade:1195
+msgid "<b>Data mother</b>"
+msgstr "<b>Podaci majke</b>"
+
+#: SourceIndex/death.glade:1210
+msgid "<b>Data father</b>"
+msgstr "<b>Podaci oca</b>"
+
+#: SourceIndex/death.glade:1225
+msgid "<b>Spouse</b> "
+msgstr "<b>Supružnik</b> "
+
+#: SourceIndex/death.glade:1274 SourceIndex/death.glade:1293
+#: SourceIndex/death.glade:1312 SourceIndex/marriage.glade:1819
+#: SourceIndex/marriage.glade:1836 SourceIndex/marriage.glade:1855
+#: SourceIndex/marriage.glade:1874
+msgid "alive"
+msgstr "živi"
+
+#: SourceIndex/death.glade:1394 SourceIndex/marriage.glade:1773
+msgid ""
+"witness1, name, given, age, occupation; witness2, name, given, age, "
+"occupation, etc ..."
+msgstr ""
+"svjedok1, ime, starost, zanimanje; svjedok2, ime, starost, zanimanje; itd. …"
+
+#: SourceIndex/index.glade:7
+msgid "index"
+msgstr "indeks"
+
+#: SourceIndex/index.glade:50
+msgid "_File"
+msgstr "_Datoteka"
+
+#: SourceIndex/index.glade:79
+msgid "Import CSV"
+msgstr "Uvezi CVS"
+
+#: SourceIndex/index.glade:141
+msgid "_Edit"
+msgstr "_Uredi"
+
+#: SourceIndex/index.glade:199
+msgid "_View"
+msgstr "_Pogled"
+
+#: SourceIndex/index.glade:209
+msgid "Display all"
+msgstr "Prikaži sve"
+
+#: SourceIndex/index.glade:210
+msgid "All"
+msgstr "Svi"
+
+#: SourceIndex/index.glade:220
+msgid "Display only births"
+msgstr "Prikaži samo rođenja"
+
+#: SourceIndex/index.glade:221
+msgid "Births/Baptisms"
+msgstr "Rođenja/Krštenja"
+
+#: SourceIndex/index.glade:231
+msgid "Display only marriages"
+msgstr "Prikaži samo brakove"
+
+#: SourceIndex/index.glade:232
+msgid "Marriages/Families"
+msgstr "Brakovi/Obitelji"
+
+#: SourceIndex/index.glade:242
+msgid "Display only deaths"
+msgstr "Prikaži samo smrti"
+
+#: SourceIndex/index.glade:243
+msgid "Deaths/Burials"
+msgstr "Smrti/Pokopi"
+
+#: SourceIndex/index.glade:253
+msgid "Display only censuses"
+msgstr "Prikaži samo popise stanovništva"
+
+#: SourceIndex/index.glade:254
+msgid "Censuses"
+msgstr "Popisi stanovništva"
+
+#: SourceIndex/index.glade:268
+msgid "_Help"
+msgstr "_Pomoć"
+
+#: SourceIndex/index.glade:278
+msgid "About this utility."
+msgstr "O ovom dodatku."
+
+#: SourceIndex/index.glade:279
+msgid "About dialog"
+msgstr "Dijalog za informacije"
+
+#: SourceIndex/index.glade:312
+msgid "New birth or baptism"
+msgstr "Novo rođenje ili krštenje"
+
+#: SourceIndex/index.glade:341
+msgid "add birth act"
+msgstr "dodaj potvrdu o rođenju"
+
+#: SourceIndex/index.glade:373
+msgid "New marriage"
+msgstr "Novi brak"
+
+#: SourceIndex/index.glade:402
+msgid "add marriage act"
+msgstr "dodaj potvrdu o sklapanju braka"
+
+#: SourceIndex/index.glade:434
+msgid "New death or burial"
+msgstr "Nova smrt ili pokop"
+
+#: SourceIndex/index.glade:463
+msgid "add death act"
+msgstr "dodaj potvrdu o smrti"
+
+#: SourceIndex/index.glade:495
+msgid "New census"
+msgstr "Novi popis stanovništva"
+
+#: SourceIndex/index.glade:524
+msgid "add census"
+msgstr "dodaj popis stanovništva"
+
+#: SourceIndex/index.glade:556
+msgid "Select a birth source"
+msgstr "Odaberi izvor za rođenje"
+
+#: SourceIndex/index.glade:617
+msgid "Select a marriage source"
+msgstr "Odaberi izvor za sklapanje braka"
+
+#: SourceIndex/index.glade:646 SourceIndex/marriage.glade:7
+msgid "marriage"
+msgstr "brak"
+
+#: SourceIndex/index.glade:678
+msgid "Select a death source"
+msgstr "Odaberi izvor za smrt"
+
+#: SourceIndex/index.glade:739
+msgid "Select a census source"
+msgstr "Odaberi izvor za popis stanovništva"
+
+#: SourceIndex/index.glade:800
+msgid "Select a repository storing a source"
+msgstr "Odaberi spremište za izvor"
+
+#: SourceIndex/index.glade:829
+msgid "repositories"
+msgstr "spremišta"
+
+#: SourceIndex/index.glade:869
+msgid "Selected view"
+msgstr "Odaberi pogled"
+
+#: SourceIndex/index.glade:889
+msgid ""
+"Records transcriptions ... births/deaths/marriages/censuses with common "
+"fields: id, repository, person name, birth date and place, parents."
+msgstr ""
+"Prijepisi zapisa … rođenja/smrti/brakovi/popisi stanovništva s uobičajenim "
+"poljima: id, spremište, ime osobe, datum i mjesto rođenja, roditelji."
+
+#: SourceIndex/marriage.glade:49
+msgid "Marriage act:"
+msgstr "Potvrda o sklapanju braka:"
+
+#: SourceIndex/marriage.glade:81
+msgid "m. date:"
+msgstr "datum sklapanja braka:"
+
+#: SourceIndex/marriage.glade:97
+msgid "m. place:"
+msgstr "mjesto sklapanja braka:"
+
+#: SourceIndex/marriage.glade:113
+msgid "d.contract:"
+msgstr "datum ugovora:"
+
+#: SourceIndex/marriage.glade:131
+msgid "dates banns:"
+msgstr "datumi zapreka/dozvola:"
+
+#: SourceIndex/marriage.glade:149
+msgid "p.contract:"
+msgstr "mjesto ugovora:"
+
+#: SourceIndex/marriage.glade:167
+msgid "places banns:"
+msgstr "mjesta zapreka/dozvola:"
+
+#: SourceIndex/marriage.glade:198
+msgid "<b>Data union</b>"
+msgstr "<b>Podaci braka</b>"
+
+#: SourceIndex/marriage.glade:318
+msgid "<b>Marriage act</b>"
+msgstr "<b>Potvrda o braku</b>"
+
+#: SourceIndex/marriage.glade:333
+msgid ""
+"<b>Data father\n"
+"spouse1</b>"
+msgstr ""
+"<b>Podaci očeve\n"
+"žene1</b>"
+
+#: SourceIndex/marriage.glade:351
+msgid ""
+"<b>Data mother\n"
+"spouse1</b>"
+msgstr ""
+"<b>Podaci majčinog\n"
+"muža1</b>"
+
+#: SourceIndex/marriage.glade:369
+msgid ""
+"<b>Data mother\n"
+"spouse2</b>"
+msgstr ""
+"<b>Podaci majčinog\n"
+"muža2</b>"
+
+#: SourceIndex/marriage.glade:387
+msgid ""
+"<b>Data father\n"
+"spouse2</b>"
+msgstr ""
+"<b>Podaci očeve\n"
+"žene2</b>"
+
+#: SourceIndex/marriage.glade:1185
+msgid "<b>Data spouse1</b>"
+msgstr "<b>Podaci supružnika1</b>"
+
+#: SourceIndex/marriage.glade:1202
+msgid "<b>Data spouse2</b>"
+msgstr "<b>Podaci supružnika2</b>"
+
+#: SourceIndex/witness.glade:7
+msgid "witness"
+msgstr "svjedok"
+
+#: SourceIndex/witness.glade:60
+msgid "<b>Witness</b>"
+msgstr "<b>Svjedok</b>"
+
+#: SourceIndex/witness.glade:175
+msgid "Relationship:"
+msgstr "Srodstvo:"
