@@ -1,0 +1,142 @@
+# Croatian translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) Gramps project
+# Milo Ivir <mail@milotype.de>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2019-03-08 00:03+0100\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.1\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Language: hr\n"
+
+#: BirthOrder/birthorder.gpr.py:9 BirthOrder/birthorder.py:62
+msgid "Sort Children in Birth order"
+msgstr "Svrstaj djecu redoslijedom rođenja"
+
+#: BirthOrder/birthorder.gpr.py:10
+msgid ""
+"Looks through families, looking for children that are not in birth order.  "
+"User can accept individual suggestions to correct, edit the birth order "
+"manually, accept all those families that have all children with proper birth "
+"dates, or accept all."
+msgstr ""
+"U obiteljima traži djecu, koja nisu svrstana po datumu rođenja. Korisnik "
+"može ispraviti redoslijed prihvaćanjem pojedinih prijedloga, može urediti "
+"redoslijed rođenja ručno, može prihvatiti sve obitelji s ispravnim "
+"redoslijedom datuma rođenja ili može sve prihvatiti."
+
+#: BirthOrder/birthorder.py:161
+msgid "No families need sorting"
+msgstr "Nijednu obitelj nije potrebno razvrastati"
+
+#: BirthOrder/birthorder.py:162
+msgid "No children were out of birth order."
+msgstr "Sva djeca su svrstana po redoslijedu rođenja."
+
+#: BirthOrder/birthorder.py:186
+msgid "Edit Family"
+msgstr "Uredi obitelj"
+
+#: BirthOrder/birthorder.py:203
+msgid "Processing..."
+msgstr "Obrada ..."
+
+#: BirthOrder/birthorder.py:204
+msgid "Edit Families"
+msgstr "Uredi obitelji"
+
+#: BirthOrder/birthorder.py:275
+msgid "Looking for children birth order"
+msgstr "Pretraga redoslijeda rođenja djece"
+
+#: BirthOrder/birthorder.py:279
+msgid "Pass 1: Building preliminary lists"
+msgstr "1. prolaz: Izrada preliminarnog popisa"
+
+#: BirthOrder/birthorder.glade:56
+msgid "Select the family you wish to examine."
+msgstr "Odaberi obitelj, koju želiš provjeriti."
+
+#: BirthOrder/birthorder.glade:78
+msgid "Family ID"
+msgstr "ID obitelji"
+
+#: BirthOrder/birthorder.glade:93
+msgid "Father"
+msgstr "Otac"
+
+#: BirthOrder/birthorder.glade:108
+msgid "Mother"
+msgstr "Majka"
+
+#: BirthOrder/birthorder.glade:141
+msgid "Help"
+msgstr "Pomoć"
+
+#: BirthOrder/birthorder.glade:155
+msgid "Accept All"
+msgstr "Prihvati sve"
+
+#: BirthOrder/birthorder.glade:159
+msgid "This button will sort all of the families listed."
+msgstr "Ovaj gumb će svrstati sve oblitelji u popisu."
+
+#: BirthOrder/birthorder.glade:170
+msgid "Accept All *"
+msgstr "Prihvati sve *"
+
+#: BirthOrder/birthorder.glade:174
+msgid ""
+"This button will sort all the families with '*'.  In these families, all the "
+"children have valid dates, so the sort is unambiguous."
+msgstr ""
+"Ovaj gumb će svrstati sve oblitelji sa '*'. U ovim obiteljima, za svu djeca "
+"postoji datum rođenja, stoga je razvrstavanje jednostavno."
+
+#: BirthOrder/birthorder.glade:185
+msgid "Accept"
+msgstr "Prihvati"
+
+#: BirthOrder/birthorder.glade:189
+msgid ""
+"This button will accept only the family selected and save it as shown in "
+"lower right pane."
+msgstr ""
+"Ovaj gumb preuzima samo odabrane obitelji i sprema ih, kao što je prikazano "
+"u donjem desnom prozoru."
+
+#: BirthOrder/birthorder.glade:232
+msgid "Done"
+msgstr "Gotovo"
+
+#: BirthOrder/birthorder.glade:236
+msgid "This button will exit, with remaining families unchanged."
+msgstr "Ovaj gumb zatvara prozor, bez mijenjanja preostalih obitelji."
+
+#: BirthOrder/birthorder.glade:256
+msgid "Current sort"
+msgstr "Trenutačno razvrstavanje"
+
+#: BirthOrder/birthorder.glade:267
+msgid "Proposed sort"
+msgstr "Predloženo razvrstavanje"
+
+#: BirthOrder/birthorder.glade:333
+msgid ""
+"When satisfied with the sort, use 'Accept' button below to accept the "
+"changes.  If you wish to adjust the order, select the child you wish to "
+"move, and use 'Up' or 'Down' buttons below to move them."
+msgstr ""
+"Kad ti razvrstavanje odgovara, upotrijebi gumb „Prihvati”, za prihvaćanje "
+"promjena. Ukoliko želiš promijeniti redoslijed, odaberi dijete koje želiš "
+"premjestiti i koristi gumbove „Gore” ili „Dolje”."
