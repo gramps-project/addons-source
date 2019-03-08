@@ -1,0 +1,94 @@
+# Croatian translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) Gramps project
+# Milo Ivir <mail@milotype.de>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2019-03-08 00:30+0100\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.1\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Language: hr\n"
+
+#: ChangeGivenNames/ChangeGivenNames.gpr.py:36
+msgid "Fix Capitalization of Given Names"
+msgstr "Ispravi početna slova imena"
+
+#: ChangeGivenNames/ChangeGivenNames.gpr.py:37
+msgid ""
+"Searches the entire database and attempts to fix capitalization of the given "
+"names."
+msgstr ""
+"Pretražuje cijelu bazu podataka i pokušava ispraviti početna slova imena."
+
+#: ChangeGivenNames/ChangeGivenNames.py:66
+msgid "manual|Fix_Capitalization_of_Given_Names..."
+msgstr "Ispravi_početna_slova_imena …"
+
+#: ChangeGivenNames/ChangeGivenNames.py:91
+#: ChangeGivenNames/ChangeGivenNames.py:251
+msgid "Capitalization changes"
+msgstr "Promjene u pisanju početnih slova"
+
+#: ChangeGivenNames/ChangeGivenNames.py:105
+msgid "Checking Given Names"
+msgstr "Provjeravanje imena"
+
+#: ChangeGivenNames/ChangeGivenNames.py:107
+msgid "Searching given names"
+msgstr "Traženje imena"
+
+#: ChangeGivenNames/ChangeGivenNames.py:123
+msgid "No modifications made"
+msgstr "Nisu učinjene promjene"
+
+#: ChangeGivenNames/ChangeGivenNames.py:124
+msgid "No capitalization changes were detected."
+msgstr "Nisu ustanovljene promjene u pisanju početnih slova."
+
+#: ChangeGivenNames/ChangeGivenNames.py:193
+msgid "Select"
+msgstr "Odaberi"
+
+#: ChangeGivenNames/ChangeGivenNames.py:196
+msgid "Original Name"
+msgstr "Izvorno ime"
+
+#: ChangeGivenNames/ChangeGivenNames.py:200
+msgid "Capitalization Change"
+msgstr "Promjena u pisanju početnih slova"
+
+#: ChangeGivenNames/ChangeGivenNames.py:204
+msgid "Affected Names"
+msgstr "Dotična imena"
+
+#: ChangeGivenNames/ChangeGivenNames.py:211
+msgid "Building display"
+msgstr "Stvaranje prikaza"
+
+#: ChangeGivenNames/changenames.glade:32
+msgid ""
+"Below is a list of the given names that \n"
+"Gramps can convert to correct capitalization. \n"
+"Select the names you wish Gramps to convert. "
+msgstr ""
+"Ispod se nalazi popis imena, kojima Gramps\n"
+"može ispraviti početna slova.\n"
+"Odaberi imena, koja želiš promijeniti. "
+
+#: ChangeGivenNames/changenames.glade:107
+msgid "Edit selection"
+msgstr "Uredi odabir"
+
+#: ChangeGivenNames/changenames.glade:123
+msgid "_Accept changes and close"
+msgstr "Prihvati promjene i zatvori prozor"
