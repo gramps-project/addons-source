@@ -1,0 +1,83 @@
+# Croatian translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) Gramps project
+# Milo Ivir <mail@milotype.de>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2019-03-08 00:54+0100\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.1\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Language: hr\n"
+
+#: DateCalculator/DateCalculator.gpr.py:21
+#: DateCalculator/DateCalculator.gpr.py:31
+msgid "Date Calculator"
+msgstr "Kalkulator datuma"
+
+#: DateCalculator/DateCalculator.gpr.py:22
+msgid "Useful for date math calculations"
+msgstr "Korisno za izračunavanje datuma"
+
+#: DateCalculator/DateCalculator.py:63
+msgid "Expression 1"
+msgstr "Izraz 1"
+
+#: DateCalculator/DateCalculator.py:64
+msgid "Expression 2"
+msgstr "Izraz 2"
+
+#: DateCalculator/DateCalculator.py:65
+msgid "Result"
+msgstr "Rezultat"
+
+#: DateCalculator/DateCalculator.py:68
+msgid "Calculate"
+msgstr "Izračunaj"
+
+#: DateCalculator/DateCalculator.py:71
+msgid "Clear"
+msgstr "Ukloni"
+
+#: DateCalculator/DateCalculator.py:118
+msgid "Error: invalid entry for expression 1"
+msgstr "Greška: nevažeči unos za izraz 1"
+
+#: DateCalculator/DateCalculator.py:128
+msgid "Error: invalid entry for expression 2"
+msgstr "Greška: nevažeči unos za izraz 2"
+
+#: DateCalculator/DateCalculator.py:153 DateCalculator/DateCalculator.py:155
+#: DateCalculator/DateCalculator.py:163 DateCalculator/DateCalculator.py:165
+msgid "Error: at least one expression must be a date"
+msgstr "Greška: Barem jedan izraz mora biti datum"
+
+#: DateCalculator/DateCalculator.py:171
+msgid ""
+"Enter an expression in the entries above and click Calculate.\n"
+"\n"
+"An expression can be:\n"
+"\n"
+"1. a valid Gramps date\n"
+"2. a positive or negative number, representing years\n"
+"3. a positive or negative tuple, representing (years, months, days)\n"
+"\n"
+"Note that at least one expression must be a date."
+msgstr ""
+"Unesi jedan izraz i klikni „Izračunaj”.\n"
+"\n"
+"Izraz može biti:\n"
+"\n"
+"1. važeči Gramps datum\n"
+"2. pozitivan ili negativan broj, koji predstavlja godine\n"
+"3. pozitivna ili negativna torka za prikaz (godina, mjeseci, dana)\n"
+"\n"
+"Napomena: Barem jedan izraz mora biti datum."
