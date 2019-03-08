@@ -1,0 +1,61 @@
+# Croatian translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) Gramps project
+# Milo Ivir <mail@milotype.de>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-04 18:55-0600\n"
+"PO-Revision-Date: 2019-03-08 11:49+0100\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.1\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Language: hr\n"
+
+#: SourceReferences/SourceReferences.gpr.py:31
+msgid "Source References"
+msgstr "Reference izvora"
+
+#: SourceReferences/SourceReferences.gpr.py:32
+msgid "Gramplet showing the references for a source"
+msgstr "Gramplet prikazuje reference izvora"
+
+#: SourceReferences/SourceReferences.gpr.py:40
+msgid "References"
+msgstr "Reference"
+
+#: SourceReferences/SourceReferences.py:50
+msgid "Type"
+msgstr "Vrsta"
+
+#: SourceReferences/SourceReferences.py:51
+msgid "Name"
+msgstr "Ime"
+
+#: SourceReferences/SourceReferences.py:141
+msgid ""
+"Cannot open new citation editor at this time. Either the citation is already "
+"being edited, or the associated source is already being edited, and opening "
+"a citation editor (which also allows the source to be edited), would create "
+"ambiguity by opening two editors on the same source. \n"
+"\n"
+"To edit the citation, close the source editor and open an editor for the "
+"citation alone"
+msgstr ""
+"Nije moguće otvoriti uređivač za novi citat u ovom trenutku. Ili se "
+"trenutačno već uređuje citat ili povezani izvor. Otvaranjem još jednog "
+"uređivača citata (koji također dozvoljava obradu izvora), stvorila bi se "
+"neodređenost zbog dva otvorena uređivača, jedno te istog izvora.\n"
+"\n"
+"Za uređivanje izvora, zatvori uređivač izvora i otvori samo uređivač citata"
+
+#: SourceReferences/SourceReferences.py:154
+msgid "Cannot open new citation editor"
+msgstr "Nije moguće otvoriti uređivač za novi citat"
