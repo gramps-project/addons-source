@@ -1,0 +1,1630 @@
+# Croatian translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) Gramps project
+# Milo Ivir <mail@milotype.de>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2019-03-08 01:48+0100\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.1\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Language: hr\n"
+
+#: DynamicWeb/dynamicweb.gpr.py:15
+msgid "Dynamic Web Report"
+msgstr "Dinamični web izvještaj"
+
+#: DynamicWeb/dynamicweb.gpr.py:16
+msgid "Produces dynamic web pages for the database"
+msgstr "Stvara dinamične web stranice za bazu podataka"
+
+#: DynamicWeb/dynamicweb.py:265
+msgid "Street"
+msgstr "Ulica"
+
+#: DynamicWeb/dynamicweb.py:266
+msgid "Locality"
+msgstr "Lokalitet"
+
+#: DynamicWeb/dynamicweb.py:267
+msgid "City"
+msgstr "Grad"
+
+#: DynamicWeb/dynamicweb.py:268
+msgid "Church Parish"
+msgstr "Župa"
+
+#: DynamicWeb/dynamicweb.py:269
+msgid "County"
+msgstr "Županija"
+
+#: DynamicWeb/dynamicweb.py:270
+msgid "State/ Province"
+msgstr "Savezna država/Pokrajina"
+
+#: DynamicWeb/dynamicweb.py:271
+msgid "Postal Code"
+msgstr "Poštanski broj"
+
+#: DynamicWeb/dynamicweb.py:272
+msgid "Country"
+msgstr "Država"
+
+#: DynamicWeb/dynamicweb.py:273
+msgid "Phone"
+msgstr "Telefon"
+
+#: DynamicWeb/dynamicweb.py:279
+msgid "Home Page"
+msgstr "Početna stranica"
+
+#: DynamicWeb/dynamicweb.py:280
+msgid "SVG graphical tree"
+msgstr "SVG grafičko stablo"
+
+#: DynamicWeb/dynamicweb.py:283
+msgid "Indexes pages"
+msgstr "Stranice indeksa"
+
+#: DynamicWeb/dynamicweb.py:287 DynamicWeb/dynamicweb.py:4246
+#, python-format
+msgid "Custom page %(index)i"
+msgstr "Prilagođena stranica %(index)i"
+
+#: DynamicWeb/dynamicweb.py:305
+msgid "Ascending tree"
+msgstr "Uzlazno stablo"
+
+#: DynamicWeb/dynamicweb.py:306
+msgid "Descending tree"
+msgstr "Silazno stablo"
+
+#: DynamicWeb/dynamicweb.py:307
+msgid "Descending tree with spouses"
+msgstr "Silazno stablo sa supružnicima"
+
+#: DynamicWeb/dynamicweb.py:308
+msgid "Ascending and descending tree"
+msgstr "Uzlazno i silazno stablo"
+
+#: DynamicWeb/dynamicweb.py:309
+msgid "Ascending and descending tree with spouses"
+msgstr "Uzlazno i silazno stablo sa supružnicima"
+
+#: DynamicWeb/dynamicweb.py:321
+msgid "Vertical (↓)"
+msgstr "Uspravno (↓)"
+
+#: DynamicWeb/dynamicweb.py:322
+msgid "Vertical (↑)"
+msgstr "Uspravno (↑)"
+
+#: DynamicWeb/dynamicweb.py:323
+msgid "Horizontal (→)"
+msgstr "Vodoravno (→)"
+
+#: DynamicWeb/dynamicweb.py:324
+msgid "Horizontal (←)"
+msgstr "Vodoravno (←)"
+
+#: DynamicWeb/dynamicweb.py:325
+msgid "Full Circle"
+msgstr "Puni krug"
+
+#: DynamicWeb/dynamicweb.py:326
+msgid "Half Circle"
+msgstr "Polukrug"
+
+#: DynamicWeb/dynamicweb.py:327
+msgid "Quadrant"
+msgstr "Četvrt kruga"
+
+#: DynamicWeb/dynamicweb.py:339
+msgid "Size proportional to number of ancestors"
+msgstr "Veličina polja proporcionalna broju predaka"
+
+#: DynamicWeb/dynamicweb.py:340
+msgid "Homogeneous parents distribution"
+msgstr "Jednolična distribucija roditelja"
+
+#: DynamicWeb/dynamicweb.py:343
+msgid "Size proportional to number of descendants"
+msgstr "Veličina polja proporcionalna broju potomaka"
+
+#: DynamicWeb/dynamicweb.py:344
+msgid "Homogeneous children distribution"
+msgstr "Jednolična distribucija djece"
+
+#: DynamicWeb/dynamicweb.py:351 DynamicWeb/dynamicweb.py:374
+msgid "Gender colors"
+msgstr "Boje spolova"
+
+#: DynamicWeb/dynamicweb.py:352
+msgid "Generation based gradient"
+msgstr "Generacijski gradijent"
+
+#: DynamicWeb/dynamicweb.py:353
+msgid "Age based gradient"
+msgstr "Gradijent na osnovi starosti"
+
+#: DynamicWeb/dynamicweb.py:354 DynamicWeb/dynamicweb.py:373
+msgid "Single main (filter) color"
+msgstr "Glavna boja (filtar)"
+
+#: DynamicWeb/dynamicweb.py:355
+msgid "Time period based gradient"
+msgstr "Vremenski gradijent"
+
+#: DynamicWeb/dynamicweb.py:356 DynamicWeb/dynamicweb.py:378
+msgid "White"
+msgstr "Bijela"
+
+#: DynamicWeb/dynamicweb.py:357 DynamicWeb/dynamicweb.py:376
+msgid "Color scheme classic report"
+msgstr "Sistem boje klasičnog izvještaja"
+
+#: DynamicWeb/dynamicweb.py:358 DynamicWeb/dynamicweb.py:377
+msgid "Color scheme classic view"
+msgstr "Sistem boje klasičnog pogleda"
+
+#: DynamicWeb/dynamicweb.py:375
+msgid "Gradient"
+msgstr "Gradient"
+
+#: DynamicWeb/dynamicweb.py:394
+msgid "Default"
+msgstr "Zadano"
+
+#: DynamicWeb/dynamicweb.py:395
+msgid "Mainz"
+msgstr "Mainz"
+
+#: DynamicWeb/dynamicweb.py:703
+#, python-format
+msgid "Neither %(current)s nor %(parent)s are directories"
+msgstr "%(current)s i %(parent)s nisu direktoriji"
+
+#: DynamicWeb/dynamicweb.py:711 DynamicWeb/dynamicweb.py:716
+#, python-format
+msgid "Could not create the directory: %(path)s"
+msgstr "Nije bilo moguće stvoriti stazu: %(path)s"
+
+#: DynamicWeb/dynamicweb.py:742 DynamicWeb/dynamicweb.py:3380
+msgid "Dynamic Web Site Report"
+msgstr "Dinamična web stranica"
+
+#: DynamicWeb/dynamicweb.py:742
+msgid "Exporting family tree data ..."
+msgstr "Izvoz rodoslovnih podataka …"
+
+#: DynamicWeb/dynamicweb.py:1232 DynamicWeb/dynamicweb.py:2456
+msgid "Author"
+msgstr "Autor"
+
+#: DynamicWeb/dynamicweb.py:1233 DynamicWeb/dynamicweb.py:2446
+msgid "Abbreviation"
+msgstr "Kratica"
+
+#: DynamicWeb/dynamicweb.py:1234 DynamicWeb/dynamicweb.py:2543
+msgid "Publication information"
+msgstr "Podaci o publikaciji"
+
+#: DynamicWeb/dynamicweb.py:1304 DynamicWeb/dynamicweb.py:2474
+msgid "Date"
+msgstr "Datum"
+
+#: DynamicWeb/dynamicweb.py:1305
+msgid "Page"
+msgstr "Stranica"
+
+#: DynamicWeb/dynamicweb.py:1306
+msgid "Confidence"
+msgstr "Pouzdanost"
+
+#: DynamicWeb/dynamicweb.py:1625
+#, python-format
+msgid "%(type)s: %(value)s"
+msgstr "%(type)s: %(value)s"
+
+#: DynamicWeb/dynamicweb.py:1872
+#, python-format
+msgid "Impossible to convert \"%(path)s\" to a relative path."
+msgstr "Nije bilo moguće konvertirati stazu „%(path)s” u relativnu stazu."
+
+#: DynamicWeb/dynamicweb.py:2178
+msgid ""
+"The pages configuration is not valid: several pages have the same content"
+msgstr "Konfiguracija stranice nije važeća: više stranica imaju isti sadržaj"
+
+#: DynamicWeb/dynamicweb.py:2189
+msgid "Html|Home"
+msgstr "Početna"
+
+#: DynamicWeb/dynamicweb.py:2190 DynamicWeb/dynamicweb.py:2203
+#: DynamicWeb/dynamicweb.py:2204 DynamicWeb/dynamicweb.py:2205
+msgid "Tree"
+msgstr "Stablo"
+
+#: DynamicWeb/dynamicweb.py:2191 DynamicWeb/dynamicweb.py:2206
+#: DynamicWeb/dynamicweb.py:2207 DynamicWeb/dynamicweb.py:2208
+msgid "Statistics"
+msgstr "Statistike"
+
+#: DynamicWeb/dynamicweb.py:2194 DynamicWeb/dynamicweb.py:2470
+msgid "Configuration"
+msgstr "Konfiguracija"
+
+#: DynamicWeb/dynamicweb.py:2196 DynamicWeb/dynamicweb.py:2535
+msgid "Person"
+msgstr "Osoba"
+
+#: DynamicWeb/dynamicweb.py:2197
+msgid "Family"
+msgstr "Obitelj"
+
+#: DynamicWeb/dynamicweb.py:2198 DynamicWeb/dynamicweb.py:2575
+msgid "Source"
+msgstr "Izvor"
+
+#: DynamicWeb/dynamicweb.py:2199 DynamicWeb/dynamicweb.py:2218
+#: DynamicWeb/dynamicweb.py:2518
+msgid "Media"
+msgstr "Mediji"
+
+#: DynamicWeb/dynamicweb.py:2200 DynamicWeb/dynamicweb.py:2538
+msgid "Place"
+msgstr "Mjesto"
+
+#: DynamicWeb/dynamicweb.py:2201 DynamicWeb/dynamicweb.py:2550
+msgid "Repository"
+msgstr "Spremište"
+
+#: DynamicWeb/dynamicweb.py:2202
+msgid "Search results"
+msgstr "Rezultati traženja"
+
+#: DynamicWeb/dynamicweb.py:2213 DynamicWeb/dynamicweb.py:2214
+#: DynamicWeb/dynamicweb.py:2582
+msgid "Surnames"
+msgstr "Prezimena"
+
+#: DynamicWeb/dynamicweb.py:2215 DynamicWeb/dynamicweb.py:2503
+msgid "Individuals"
+msgstr "Pojedinci"
+
+#: DynamicWeb/dynamicweb.py:2216 DynamicWeb/dynamicweb.py:2486
+msgid "Families"
+msgstr "Obitelji"
+
+#: DynamicWeb/dynamicweb.py:2217 DynamicWeb/dynamicweb.py:2577
+msgid "Sources"
+msgstr "Izvori"
+
+#: DynamicWeb/dynamicweb.py:2219 DynamicWeb/dynamicweb.py:2540
+msgid "Places"
+msgstr "Mjesta"
+
+#: DynamicWeb/dynamicweb.py:2220 DynamicWeb/dynamicweb.py:2448
+msgid "Addresses"
+msgstr "Adrese"
+
+#: DynamicWeb/dynamicweb.py:2221 DynamicWeb/dynamicweb.py:2549
+msgid "Repositories"
+msgstr "Spremišta"
+
+#: DynamicWeb/dynamicweb.py:2272 DynamicWeb/dynamicweb.py:2502
+#: DynamicWeb/dynamicweb.py:4120
+msgid "Indexes"
+msgstr "Indeksi"
+
+#: DynamicWeb/dynamicweb.py:2436
+#, python-format
+msgid "(b. %(birthdate)s, d. %(deathdate)s)"
+msgstr "(r. %(birthdate)s, u. %(deathdate)s)"
+
+#: DynamicWeb/dynamicweb.py:2437
+#, python-format
+msgid "(b. %s)"
+msgstr "(r. %s)"
+
+#: DynamicWeb/dynamicweb.py:2438
+#, python-format
+msgid "(d. %s)"
+msgstr "(u. %s)"
+
+#: DynamicWeb/dynamicweb.py:2439
+msgid "(filtered from _MAX_ total entries)"
+msgstr "(filtrirano iz _MAKS_ ukupno unosa)"
+
+#: DynamicWeb/dynamicweb.py:2440
+#, python-format
+msgid "(m. %s)"
+msgstr "(b. %s)"
+
+#: DynamicWeb/dynamicweb.py:2441
+msgid "(sort by name)"
+msgstr "(sortiraj po imenu)"
+
+#: DynamicWeb/dynamicweb.py:2442
+msgid "(sort by quantity)"
+msgstr "(sortiraj po količini)"
+
+#: DynamicWeb/dynamicweb.py:2443
+msgid ": activate to sort column ascending"
+msgstr ": aktiviraj za uzlazno razvrstavanje stupca"
+
+#: DynamicWeb/dynamicweb.py:2444
+msgid ": activate to sort column descending"
+msgstr ": aktiviraj za silazno razvrstavanje stupca"
+
+#: DynamicWeb/dynamicweb.py:2445
+msgid ""
+"<p>This page provides the SVG raw code.<br>Copy the contents into a text "
+"editor and save as an SVG file.<br>Make sure that the text editor encoding "
+"is UTF-8.</p>"
+msgstr ""
+"<p>Ova stranica sadržava neobrađeni SVG kȏd.<br>Kopiraj sadržaj u neki "
+"uređivač teksta i spremi ga kao SVG datoteku.<br>Provjeri, da je kodiranje "
+"uređivača postavljeno na UTF-8.</p>"
+
+#: DynamicWeb/dynamicweb.py:2447
+msgid "Address"
+msgstr "Adresa"
+
+#: DynamicWeb/dynamicweb.py:2449
+msgid "Age at death"
+msgstr "Starost pri smrti"
+
+#: DynamicWeb/dynamicweb.py:2450
+msgid "Alternate Marriage"
+msgstr "Alternativni brak"
+
+#: DynamicWeb/dynamicweb.py:2451
+msgid "Alternate Name"
+msgstr "Alternativno ime"
+
+#: DynamicWeb/dynamicweb.py:2452
+msgid "Ancestors"
+msgstr "Preci"
+
+#: DynamicWeb/dynamicweb.py:2453
+msgid "Associations"
+msgstr "Veze"
+
+#: DynamicWeb/dynamicweb.py:2454
+msgid "Attribute"
+msgstr "Svojstvo"
+
+#: DynamicWeb/dynamicweb.py:2455
+msgid "Attributes"
+msgstr "Svojstva"
+
+#: DynamicWeb/dynamicweb.py:2457 DynamicWeb/dynamicweb.py:4203
+msgid "Background"
+msgstr "Pozadina"
+
+#: DynamicWeb/dynamicweb.py:2458
+msgid "Baptism"
+msgstr "Krštenje"
+
+#: DynamicWeb/dynamicweb.py:2459
+msgid "Birth"
+msgstr "Rođenje"
+
+#: DynamicWeb/dynamicweb.py:2460
+msgid "Burial"
+msgstr "Pogreb"
+
+#: DynamicWeb/dynamicweb.py:2461
+msgid "Call Name"
+msgstr "Upotrebno ime"
+
+#: DynamicWeb/dynamicweb.py:2462
+msgid "Call Number"
+msgstr "Pozivni broj"
+
+#: DynamicWeb/dynamicweb.py:2463
+msgid "Cause Of Death"
+msgstr "Uzrok smrti"
+
+#: DynamicWeb/dynamicweb.py:2464
+msgid "Children"
+msgstr "Djeca"
+
+#: DynamicWeb/dynamicweb.py:2465
+msgid "Christening"
+msgstr "Krštenje"
+
+#: DynamicWeb/dynamicweb.py:2466
+msgid "Citation"
+msgstr "Citat"
+
+#: DynamicWeb/dynamicweb.py:2467
+msgid "Citations"
+msgstr "Citati"
+
+#: DynamicWeb/dynamicweb.py:2468
+msgid "Click on the map to show it full-screen"
+msgstr "Klikni na kartu za prikaz u cijelom zaslonu"
+
+#: DynamicWeb/dynamicweb.py:2469
+msgid "Code"
+msgstr "Kôd"
+
+#: DynamicWeb/dynamicweb.py:2471
+msgid "Configure"
+msgstr "Konfiguriraj"
+
+#: DynamicWeb/dynamicweb.py:2472
+msgid "Count"
+msgstr "Broj"
+
+#: DynamicWeb/dynamicweb.py:2473
+msgid "Cremation"
+msgstr "Kremiranje"
+
+#: DynamicWeb/dynamicweb.py:2475
+msgid "Death"
+msgstr "Smrt"
+
+#: DynamicWeb/dynamicweb.py:2476
+msgid "Descendants"
+msgstr "Potomci"
+
+#: DynamicWeb/dynamicweb.py:2477
+msgid "Description"
+msgstr "Opis"
+
+#: DynamicWeb/dynamicweb.py:2478
+msgid "DynamicWeb_report#Help"
+msgstr "Dinamični_web_izvještaj#Pomoć"
+
+#: DynamicWeb/dynamicweb.py:2479
+msgid "Enclosed By"
+msgstr "Obuhvaćeno"
+
+#: DynamicWeb/dynamicweb.py:2480
+msgid "Engagement"
+msgstr "Zaruke"
+
+#: DynamicWeb/dynamicweb.py:2481
+msgid "Event"
+msgstr "Događaj"
+
+#: DynamicWeb/dynamicweb.py:2482
+msgid "Events"
+msgstr "Događaji"
+
+#: DynamicWeb/dynamicweb.py:2483
+msgid "Examples"
+msgstr "Primjeri"
+
+#: DynamicWeb/dynamicweb.py:2484
+msgid "F"
+msgstr "Ž"
+
+#: DynamicWeb/dynamicweb.py:2485
+msgid "Families Index"
+msgstr "Indeks obitelji"
+
+#: DynamicWeb/dynamicweb.py:2487
+msgid "Family Nick Name"
+msgstr "Obiteljski nadimak"
+
+#: DynamicWeb/dynamicweb.py:2488
+msgid "Father"
+msgstr "Otac"
+
+#: DynamicWeb/dynamicweb.py:2489
+msgid "Female"
+msgstr "Žensko"
+
+#: DynamicWeb/dynamicweb.py:2490
+msgid "File ready"
+msgstr "Datoteka je premna"
+
+#: DynamicWeb/dynamicweb.py:2491
+msgid "Gender"
+msgstr "Spol"
+
+#: DynamicWeb/dynamicweb.py:2492
+msgid "Help"
+msgstr "Pomoć"
+
+#: DynamicWeb/dynamicweb.py:2493
+msgid "ID"
+msgstr "ID"
+
+#: DynamicWeb/dynamicweb.py:2494 DynamicWeb/dynamicweb.py:4035
+msgid "Include Place map on Place Pages"
+msgstr "Uključi kartu mjesta na stranicama mjesta"
+
+#: DynamicWeb/dynamicweb.py:2495 DynamicWeb/dynamicweb.py:4140
+msgid "Include dates columns on the index pages"
+msgstr "Uključi stupce s datumima na stranicama indeksa"
+
+#: DynamicWeb/dynamicweb.py:2496 DynamicWeb/dynamicweb.py:4148
+msgid "Include a column for parents on the index pages"
+msgstr "Uključi stupac s roditeljima na indeksnoj stranici"
+
+#: DynamicWeb/dynamicweb.py:2497 DynamicWeb/dynamicweb.py:4156
+msgid "Include a column for media path on the index pages"
+msgstr "Uključi stupac s stazama medija na indeksnoj stranici"
+
+#: DynamicWeb/dynamicweb.py:2498 DynamicWeb/dynamicweb.py:4144
+msgid "Include a column for partners on the index pages"
+msgstr "Uključi stupac s partnerima na indeksnoj stranici"
+
+#: DynamicWeb/dynamicweb.py:2499 DynamicWeb/dynamicweb.py:4043
+msgid "Include a map in the individuals and family pages"
+msgstr "Uključi kartu na stranicama pojedinaca i obitelji"
+
+#: DynamicWeb/dynamicweb.py:2500 DynamicWeb/dynamicweb.py:4090
+msgid "Include half and/ or step-siblings on the individual pages"
+msgstr "Uključi polubraću na osobnim stranicama"
+
+#: DynamicWeb/dynamicweb.py:2501 DynamicWeb/dynamicweb.py:4160
+msgid "Include references in indexes"
+msgstr "Uključi reference u indeksima"
+
+#: DynamicWeb/dynamicweb.py:2504 DynamicWeb/dynamicweb.py:4110
+msgid "Insert sources author in the sources title"
+msgstr "Uključi autora izvora u nazivu izvora"
+
+#: DynamicWeb/dynamicweb.py:2505
+msgid "Last Modified"
+msgstr "Zadnja izmjena"
+
+#: DynamicWeb/dynamicweb.py:2506
+msgid "Latitude"
+msgstr "Zemljopisna širina"
+
+#: DynamicWeb/dynamicweb.py:2507
+msgid "Link"
+msgstr "Poveznica"
+
+#: DynamicWeb/dynamicweb.py:2508
+msgid "Loading..."
+msgstr "Učitavanje ..."
+
+#: DynamicWeb/dynamicweb.py:2509
+msgid "Location"
+msgstr "Lokacija"
+
+#: DynamicWeb/dynamicweb.py:2510
+msgid "Longitude"
+msgstr "Zemljopisna dužina"
+
+#: DynamicWeb/dynamicweb.py:2511
+msgid "M"
+msgstr "M"
+
+#: DynamicWeb/dynamicweb.py:2512
+msgid "Male"
+msgstr "Muško"
+
+#: DynamicWeb/dynamicweb.py:2513
+msgid "Map"
+msgstr "Karta"
+
+#: DynamicWeb/dynamicweb.py:2514
+msgid "Marriage"
+msgstr "Brak"
+
+#: DynamicWeb/dynamicweb.py:2515
+msgid "Maximize"
+msgstr "Maksimiraj"
+
+#: DynamicWeb/dynamicweb.py:2516
+msgid "Media Index"
+msgstr "Indeks medija"
+
+#: DynamicWeb/dynamicweb.py:2517
+msgid "Media Type"
+msgstr "Vrsta medija"
+
+#: DynamicWeb/dynamicweb.py:2519
+msgid "Mother"
+msgstr "Majka"
+
+#: DynamicWeb/dynamicweb.py:2520
+msgid "Name"
+msgstr "Ime"
+
+#: DynamicWeb/dynamicweb.py:2521
+msgid "Nick Name"
+msgstr "Nadimak"
+
+#: DynamicWeb/dynamicweb.py:2522
+msgid "No data available in table"
+msgstr "Nema podataka u tablici"
+
+#: DynamicWeb/dynamicweb.py:2523
+msgid "No matches found"
+msgstr "Nema podudarnosti"
+
+#: DynamicWeb/dynamicweb.py:2524
+msgid "No matching records found"
+msgstr "Nema odgovarajućih zapisa"
+
+#: DynamicWeb/dynamicweb.py:2525
+msgid "No matching surname."
+msgstr "Nema odgovarajućih prezimena."
+
+#: DynamicWeb/dynamicweb.py:2526
+msgid "None"
+msgstr "Bez"
+
+#: DynamicWeb/dynamicweb.py:2527
+msgid "Notes"
+msgstr "Zabilješke"
+
+#: DynamicWeb/dynamicweb.py:2528
+msgid "Number"
+msgstr "Broj"
+
+#: DynamicWeb/dynamicweb.py:2529
+msgid "OK"
+msgstr "U redu"
+
+#: DynamicWeb/dynamicweb.py:2530
+msgid "Other participants"
+msgstr "Ostali sudionici"
+
+#: DynamicWeb/dynamicweb.py:2531
+msgid "Parents"
+msgstr "Roditelji"
+
+#: DynamicWeb/dynamicweb.py:2532
+msgid "Path"
+msgstr "Staza"
+
+#: DynamicWeb/dynamicweb.py:2533
+msgid "Person page"
+msgstr "Stranica osobe"
+
+#: DynamicWeb/dynamicweb.py:2534
+msgid "Person to search for"
+msgstr "Tražena osoba"
+
+#: DynamicWeb/dynamicweb.py:2536
+msgid "Persons Index"
+msgstr "Indeks osoba"
+
+#: DynamicWeb/dynamicweb.py:2537
+msgid "Persons"
+msgstr "Osobe"
+
+#: DynamicWeb/dynamicweb.py:2539
+msgid "Places Index"
+msgstr "Indeks mjesta"
+
+#: DynamicWeb/dynamicweb.py:2541
+msgid "Preparing file ..."
+msgstr "Pripremanje datoteke …"
+
+#: DynamicWeb/dynamicweb.py:2542
+msgid "Processing..."
+msgstr "Obrada ..."
+
+#: DynamicWeb/dynamicweb.py:2544
+msgid "References"
+msgstr "Reference"
+
+#: DynamicWeb/dynamicweb.py:2545
+msgid "Relationship to Father"
+msgstr "Srodstvo s ocem"
+
+#: DynamicWeb/dynamicweb.py:2546
+msgid "Relationship to Mother"
+msgstr "Srodstvo s majkom"
+
+#: DynamicWeb/dynamicweb.py:2547
+msgid "Relationship"
+msgstr "Srodstvo"
+
+#: DynamicWeb/dynamicweb.py:2548
+msgid "Repositories Index"
+msgstr "Index spremišta"
+
+#: DynamicWeb/dynamicweb.py:2551
+msgid "Restore"
+msgstr "Obnovi"
+
+#: DynamicWeb/dynamicweb.py:2552
+msgid "Restore default settings"
+msgstr "Vrati zadane postavke"
+
+#: DynamicWeb/dynamicweb.py:2553 DynamicWeb/dynamicweb.py:4106
+msgid "Show last modification time"
+msgstr "Prikaži vrijeme zadnje promjene"
+
+#: DynamicWeb/dynamicweb.py:2554 DynamicWeb/dynamicweb.py:4197
+msgid "SVG tree children distribution"
+msgstr "Distribucija djece u SVG stablu"
+
+#: DynamicWeb/dynamicweb.py:2555
+msgid "SVG tree configuration"
+msgstr "Konfiguracija SVG stabla"
+
+#: DynamicWeb/dynamicweb.py:2556 DynamicWeb/dynamicweb.py:4185
+msgid "SVG tree graph shape"
+msgstr "Oblik dijagrama SVG stabla"
+
+#: DynamicWeb/dynamicweb.py:2557 DynamicWeb/dynamicweb.py:4179
+msgid "SVG tree graph type"
+msgstr "Vrsta dijagrama SVG stabla"
+
+#: DynamicWeb/dynamicweb.py:2558 DynamicWeb/dynamicweb.py:4191
+msgid "SVG tree parents distribution"
+msgstr "Distribucija roditelja u SVG stablu"
+
+#: DynamicWeb/dynamicweb.py:2559
+msgid "Save tree as file"
+msgstr "Spremi stablo kao"
+
+#: DynamicWeb/dynamicweb.py:2560
+msgid "Search:"
+msgstr "Traži:"
+
+#: DynamicWeb/dynamicweb.py:2561
+msgid "Select the background color scheme"
+msgstr "Odaberi sistem boje za pozadinu"
+
+#: DynamicWeb/dynamicweb.py:2562
+msgid "Select the children distribution (fan charts only)"
+msgstr "Odaberi distribuciju djece (samo za lepezaste dijagrame)"
+
+#: DynamicWeb/dynamicweb.py:2563
+msgid "Select the number of ascending generations"
+msgstr "Odaberi broj uzlaznih generacija"
+
+#: DynamicWeb/dynamicweb.py:2564
+msgid "Select the number of descending generations"
+msgstr "Odaberi broj silaznih generacija"
+
+#: DynamicWeb/dynamicweb.py:2565
+msgid "Select the parents distribution (fan charts only)"
+msgstr "Odaberi distribuciju roditelja (samo za lepezaste dijagrame)"
+
+#: DynamicWeb/dynamicweb.py:2566
+msgid "Select the shape of graph"
+msgstr "Odaberi oblik grafikona"
+
+#: DynamicWeb/dynamicweb.py:2567
+msgid "Select the type of graph"
+msgstr "Odaberi vrstu grafikona"
+
+#: DynamicWeb/dynamicweb.py:2568
+msgid "Several matches.<br>Precise your search or choose in the lists below."
+msgstr ""
+"Višestruka poklapanja.<br>Preciziraj pretragu ili odaberi iz doljnjeg popisa."
+
+#: DynamicWeb/dynamicweb.py:2569
+msgid "Show _MENU_ entries"
+msgstr "Prikaži _MENU_ unose"
+
+#: DynamicWeb/dynamicweb.py:2570 DynamicWeb/dynamicweb.py:4215
+msgid "Show duplicates"
+msgstr "Prikaži duplikate"
+
+#: DynamicWeb/dynamicweb.py:2571
+msgid "Showing 0 to 0 of 0 entries"
+msgstr "Prikaz 0 do 0 od 0 unosa"
+
+#: DynamicWeb/dynamicweb.py:2572
+msgid "Showing _START_ to _END_ of _TOTAL_ entries"
+msgstr "Prikaz _START_ do _END_ od _TOTAL_ unosa"
+
+#: DynamicWeb/dynamicweb.py:2573
+msgid "Siblings"
+msgstr "Braća/sestre"
+
+#: DynamicWeb/dynamicweb.py:2574
+msgid "Sort by:"
+msgstr "Razvrstaj po:"
+
+#: DynamicWeb/dynamicweb.py:2576
+msgid "Sources Index"
+msgstr "Indeks izvora"
+
+#: DynamicWeb/dynamicweb.py:2578
+msgid "Spouses"
+msgstr "Supružnici"
+
+#: DynamicWeb/dynamicweb.py:2579 DynamicWeb/dynamicweb.py:4114
+msgid "Suppress Gramps ID"
+msgstr "Ne prikazuj Gramps ID"
+
+#: DynamicWeb/dynamicweb.py:2580
+msgid "Surname"
+msgstr "Prezime"
+
+#: DynamicWeb/dynamicweb.py:2581
+msgid "Surnames Index"
+msgstr "Indeks prezimena"
+
+#: DynamicWeb/dynamicweb.py:2583
+msgid "Title"
+msgstr "Naslov"
+
+#: DynamicWeb/dynamicweb.py:2584
+msgid "Type"
+msgstr "Vrsta"
+
+#: DynamicWeb/dynamicweb.py:2585
+msgid "U"
+msgstr "N"
+
+#: DynamicWeb/dynamicweb.py:2586
+msgid "Unknown"
+msgstr "Nepoznato"
+
+#: DynamicWeb/dynamicweb.py:2587 DynamicWeb/dynamicweb.py:4102
+msgid "Use tabbed panels instead of sections"
+msgstr "Koristi registarske kartice umjesto odjeljaka"
+
+#: DynamicWeb/dynamicweb.py:2588
+msgid "Use the search box above in order to find a person."
+msgstr "Koristi gornju tražilicu za pronalaženje osobe"
+
+#: DynamicWeb/dynamicweb.py:2589
+msgid "Use a table format for the surnames index"
+msgstr "Koristi tablični format za indeks prezimena"
+
+#: DynamicWeb/dynamicweb.py:2590
+msgid "Use a table format for the persons index"
+msgstr "Koristi tablični format za indeks osoba"
+
+#: DynamicWeb/dynamicweb.py:2591
+msgid "Use a table format for the families index"
+msgstr "Koristi tablični format za indeks ogitelji"
+
+#: DynamicWeb/dynamicweb.py:2592
+msgid "Use a table format for the sources index"
+msgstr "Koristi tablični format za indeks izvora"
+
+#: DynamicWeb/dynamicweb.py:2593
+msgid "Use a table format for the places index"
+msgstr "Koristi tablični format za indeks mjesta"
+
+#: DynamicWeb/dynamicweb.py:2594
+msgid "Used for family"
+msgstr "Korišteno za obitelj"
+
+#: DynamicWeb/dynamicweb.py:2595
+msgid "Used for media"
+msgstr "Korišteno za medij"
+
+#: DynamicWeb/dynamicweb.py:2596
+msgid "Used for person"
+msgstr "Korišteno za osobu"
+
+#: DynamicWeb/dynamicweb.py:2597
+msgid "Used for place"
+msgstr "Korišteno za mjesto"
+
+#: DynamicWeb/dynamicweb.py:2598
+msgid "Used for source"
+msgstr "Korišteno za izvor"
+
+#: DynamicWeb/dynamicweb.py:2599
+msgid "Value"
+msgstr "Vrijednost"
+
+#: DynamicWeb/dynamicweb.py:2600
+msgid "Web Link"
+msgstr "Web poveznica"
+
+#: DynamicWeb/dynamicweb.py:2601
+msgid "Web Links"
+msgstr "Web poveznice"
+
+#: DynamicWeb/dynamicweb.py:2602 DynamicWeb/dynamicweb.py:4216
+msgid ""
+"Whether to use a special color for the persons that appear several times in "
+"the SVG tree"
+msgstr ""
+"Da li koristiti posebnu boju za osobe, koje se pojavljuju nekoliko puta u "
+"SVG stablu"
+
+#: DynamicWeb/dynamicweb.py:2603
+msgid "Without name"
+msgstr "Bez imena"
+
+#: DynamicWeb/dynamicweb.py:2604
+msgid "Without surname"
+msgstr "Bez prezimena"
+
+#: DynamicWeb/dynamicweb.py:2605
+msgid "Without title"
+msgstr "Bez naslova"
+
+#: DynamicWeb/dynamicweb.py:2606
+msgid "Zoom in"
+msgstr "Uvećaj"
+
+#: DynamicWeb/dynamicweb.py:2607
+msgid "Zoom out"
+msgstr "Umanji"
+
+#: DynamicWeb/dynamicweb.py:2608
+msgid "all"
+msgstr "sve"
+
+#: DynamicWeb/dynamicweb.py:2811
+msgid "No Home Person"
+msgstr "Nema početne osobe"
+
+#: DynamicWeb/dynamicweb.py:2952
+#, python-format
+msgid "Copying error: %(error)s"
+msgstr "Greška prilikom kopiranja: %(error)s"
+
+#: DynamicWeb/dynamicweb.py:2953
+#, python-format
+msgid "Impossible to copy \"%(src)s\" to \"%(dst)s\""
+msgstr "Nije moguće kopirati „%(src)s” prema „%(dst)s”"
+
+#: DynamicWeb/dynamicweb.py:2956
+msgid "Possible destination error"
+msgstr "Moguća greška u odredištu"
+
+#: DynamicWeb/dynamicweb.py:2957
+msgid ""
+"You appear to have set your target directory to a directory used for data "
+"storage. This could create problems with file management. It is recommended "
+"that you consider using a different directory to store your generated web "
+"pages."
+msgstr ""
+"Kao odredišni direktorij je postaviljen direktorij, koji služi za spremanje "
+"podataka, što može dovesti do problema u upravljanju datotekama. Preporučuje "
+"se odabir nekog drugog direktorija, za spremanje izrađenih web stranica."
+
+#: DynamicWeb/dynamicweb.py:2984
+#, python-format
+msgid "Unable to copy web site template files from \"%(path)s\""
+msgstr "Nije moguće kopirati predloške web stranice „%(path)s”"
+
+#: DynamicWeb/dynamicweb.py:3028
+#, python-format
+msgid "Keeping \"%(dst)s\" (newer than \"%(src)s\")"
+msgstr "Zadži „%(dst)s” (novije od „%(src)s”)"
+
+#: DynamicWeb/dynamicweb.py:3031
+#, python-format
+msgid "Copying \"%(src)s\" to \"%(dst)s\""
+msgstr "Kopiraj „%(src)s” prema „%(dst)s”"
+
+#: DynamicWeb/dynamicweb.py:3049
+msgid "Invalid file name"
+msgstr "Nevažeće ime datoteke"
+
+#: DynamicWeb/dynamicweb.py:3050
+msgid "The archive file must be a file, not a directory"
+msgstr "Arhiva mora biti datoteka, a ne direktorij"
+
+#: DynamicWeb/dynamicweb.py:3060 DynamicWeb/dynamicweb.py:3078
+#, python-format
+msgid "Unable to overwrite archive file \"%(path)s\""
+msgstr "Nije moguće prepisati datoteku arhive „%(path)s”"
+
+#: DynamicWeb/dynamicweb.py:3070 DynamicWeb/dynamicweb.py:3085
+#, python-format
+msgid "Unable to add file \"%(file)s\" to archive \"%(archive)s\""
+msgstr "Nije moguće dodati datoteku „%(file)s” u arhivu „%(archive)s”"
+
+#: DynamicWeb/dynamicweb.py:3138
+#, python-format
+msgid "DynamicWebReport ignoring link type '%(class)s'"
+msgstr "Dinamični web izvještaj zanemaruje vrstu poveznica „%(class)s”"
+
+#: DynamicWeb/dynamicweb.py:3381
+msgid "Constructing list of other objects..."
+msgstr "Stvaranje popisa ostalih objekata ..."
+
+#: DynamicWeb/dynamicweb.py:3516
+#, python-format
+msgid "Family of %(husband)s and %(spouse)s"
+msgstr "Obitelj od %(husband)s i %(spouse)s"
+
+#: DynamicWeb/dynamicweb.py:3522
+#, python-format
+msgid "Family of %(father)s"
+msgstr "Obitelj od %(father)s"
+
+#: DynamicWeb/dynamicweb.py:3526
+#, python-format
+msgid "Family of %(mother)s"
+msgstr "Obitelj od %(mother)s"
+
+#: DynamicWeb/dynamicweb.py:3841
+msgid ""
+"In this note, the following special words are processed:\n"
+"__SEARCH_FORM__ is replaced by a search form.\n"
+"__NB_INDIVIDUALS__ is replaced by the number of persons.\n"
+"__NB_FAMILIES__ is replaced by the number of families.\n"
+"__NB_MEDIA__ is replaced by the number of media.\n"
+"__NB_SOURCES__ is replaced by the number of sources.\n"
+"__NB_REPOSITORIES__ is replaced by the number of repositories.\n"
+"__NB_PLACES__ is replaced by the number of places.\n"
+"__MEDIA_<gid>__ is replaced by the media with Gramps ID <gid>.\n"
+"__THUMB_<gid>__ is replaced by the thumbnail of the media with Gramps ID "
+"<gid>.\n"
+"__EXPORT_DATE__ is replaced by the current date.\n"
+"__GRAMPS_VERSION__ is replaced by the Gramps version.\n"
+"__GRAMPS_HOMEPAGE__ is replaced by the Gramps homepage link.\n"
+"URL starting with \"relative://relative.<link>\" are replaced by the "
+"relative URL \"<link>\".\n"
+msgstr ""
+"U ovoj se bilješci obrađuju sljedeće specijalne riječi:\n"
+"__SEARCH_FORM__ zamijenjuje se poljem za pretraživanje.\n"
+"__NB_INDIVIDUALS__ zamijenjuje se brojem osoba.\n"
+"__NB_FAMILIES__ zamijenjuje se brojem obitelji.\n"
+"__NB_MEDIA__ zamijenjuje se brojem medija.\n"
+"__NB_SOURCES__ zamijenjuje se brojem izvora.\n"
+"__NB_REPOSITORIES__ zamijenjuje se brojem spremišta.\n"
+"__NB_PLACES__ zamijenjuje se brojem mjesta.\n"
+"__MEDIA_<gid>__ zamijenjuje se medijem s Gramps ID <gid>.\n"
+"__THUMB_<gid>__ zamijenjuje se sličicom medija s Gramps ID <gid>.\n"
+"__EXPORT_DATE__ zamijenjuje se aktualnim datumom.\n"
+"__GRAMPS_VERSION__ zamijenjuje se Grampsovom inačicom.\n"
+"__GRAMPS_HOMEPAGE__ zamijenjuje se poveznicom na Grampsovu početnu web "
+"stranicu.\n"
+"URL, koji započinju s \"relative://relative.<link>\" se zamijenjuje s "
+"relativnim URL-om \"<link>\".\n"
+
+#: DynamicWeb/dynamicweb.py:3880
+msgid "Report"
+msgstr "Izvještaj"
+
+#: DynamicWeb/dynamicweb.py:3885
+msgid "Destination"
+msgstr "Odredište"
+
+#: DynamicWeb/dynamicweb.py:3887
+msgid "The destination directory for the web files"
+msgstr "Mapa za spremanje web datoteka"
+
+#: DynamicWeb/dynamicweb.py:3891
+msgid "Store web pages in archive"
+msgstr "Spremi web stranicu u arhivu"
+
+#: DynamicWeb/dynamicweb.py:3892
+msgid ""
+"Whether to create an archive file (in ZIP or TGZ format) containing the web "
+"site"
+msgstr ""
+"Da li stvoriti arhivsku datoteku (u ZIP ili TGZ formatu), koja sadrži web "
+"stranicu"
+
+#: DynamicWeb/dynamicweb.py:3896
+msgid "Archive file"
+msgstr "Arhivna datoteka"
+
+#: DynamicWeb/dynamicweb.py:3898
+msgid "The archive file name (with \".zip\" or \".tgz\" extension)"
+msgstr "Ime arhivne datoteke (s dodacima „.zip” ili „.tgz”)"
+
+#: DynamicWeb/dynamicweb.py:3904
+msgid "Web site title"
+msgstr "Naslov web stranice"
+
+#: DynamicWeb/dynamicweb.py:3904
+msgid "My Family Tree"
+msgstr "Moj rodoslov"
+
+#: DynamicWeb/dynamicweb.py:3905
+msgid "The title of the web site"
+msgstr "Naslov za web stranicu"
+
+#: DynamicWeb/dynamicweb.py:3908
+msgid "Filter"
+msgstr "Filtar"
+
+#: DynamicWeb/dynamicweb.py:3910
+msgid "Select filter to restrict people that appear on web site"
+msgstr ""
+"Odaberi filtar za ograničavanje osoba, koje će biti prikazane na web "
+"stranicama"
+
+#: DynamicWeb/dynamicweb.py:3914
+msgid "Filter Person"
+msgstr "Osoba filtra"
+
+#: DynamicWeb/dynamicweb.py:3915
+msgid "The center person for the filter"
+msgstr "Središnja osoba ovog filtra"
+
+#: DynamicWeb/dynamicweb.py:3923 DynamicWeb/dynamicweb.py:3943
+msgid "Name format (short)"
+msgstr "Format imena (skraćeno)"
+
+#: DynamicWeb/dynamicweb.py:3924 DynamicWeb/dynamicweb.py:3946
+msgid "Select the format to display a shorter version of the names"
+msgstr "Odaberi format za skraćeni prikaz imena"
+
+#: DynamicWeb/dynamicweb.py:3938
+msgid "Name format"
+msgstr "Format za imena"
+
+#: DynamicWeb/dynamicweb.py:3941
+msgid "Select the format to display names"
+msgstr "Odaberi format za prikaz imena"
+
+#: DynamicWeb/dynamicweb.py:3949
+msgid "Web site template"
+msgstr "Predložak za web stranicu"
+
+#: DynamicWeb/dynamicweb.py:3952
+msgid "Select the template of the web site"
+msgstr "Odaberi predložak za web stranicu"
+
+#: DynamicWeb/dynamicweb.py:3955
+msgid "Copyright"
+msgstr "Autorska prava"
+
+#: DynamicWeb/dynamicweb.py:3958
+msgid "The copyright to be used for the web files"
+msgstr "Autorsko pravo korišteno na web stranicama"
+
+#: DynamicWeb/dynamicweb.py:3966
+msgid "Privacy"
+msgstr "Privatnost"
+
+#: DynamicWeb/dynamicweb.py:3974
+msgid "Include records marked private"
+msgstr "Uključi zapise, označene kao privatne"
+
+#: DynamicWeb/dynamicweb.py:3975
+msgid "Whether to include private objects"
+msgstr "Da li uključiti privatne objekte"
+
+#: DynamicWeb/dynamicweb.py:3977
+msgid "Living People"
+msgstr "Žive osobe"
+
+#: DynamicWeb/dynamicweb.py:3978
+msgid "Exclude"
+msgstr "Isključi"
+
+#: DynamicWeb/dynamicweb.py:3979
+msgid "Include Last Name Only"
+msgstr "Uključi samo prezimena"
+
+#: DynamicWeb/dynamicweb.py:3980
+msgid "Include Full Name Only"
+msgstr "Uključi samo potpuna imena"
+
+#: DynamicWeb/dynamicweb.py:3981
+msgid "Include"
+msgstr "Uključi"
+
+#: DynamicWeb/dynamicweb.py:3982
+msgid "How to handle living people"
+msgstr "Kako postupati sa živim osobama"
+
+#: DynamicWeb/dynamicweb.py:3985
+msgid "Years from death to consider living"
+msgstr "Broj godina nakon smrti, za određivanje 'živih' osoba"
+
+#: DynamicWeb/dynamicweb.py:3986
+msgid ""
+"This allows you to restrict information on people who have not been dead for "
+"very long"
+msgstr ""
+"Ovime se ograničava prikaz informacija osoba, koje su tek nedavno preminule"
+
+#: DynamicWeb/dynamicweb.py:3990
+msgid "Export notes"
+msgstr "Izvezi zabilješke"
+
+#: DynamicWeb/dynamicweb.py:3991
+msgid "Whether to export notes in the web pages"
+msgstr "Da li izvesti zabilješke u web stranicu"
+
+#: DynamicWeb/dynamicweb.py:3994
+msgid "Export sources"
+msgstr "Izvezi izvore"
+
+#: DynamicWeb/dynamicweb.py:3995
+msgid "Whether to export sources and citations in the web pages"
+msgstr "Da li izvesti izvore i citate u web stranicu"
+
+#: DynamicWeb/dynamicweb.py:3998
+msgid "Export addresses"
+msgstr "Izvezi adrese"
+
+#: DynamicWeb/dynamicweb.py:3999
+msgid "Whether to export addresses in the web pages"
+msgstr "Da li izvesti adrese u web stranicu"
+
+#: DynamicWeb/dynamicweb.py:4004
+msgid "Options"
+msgstr "Opcije"
+
+#: DynamicWeb/dynamicweb.py:4007
+msgid "Include repository pages"
+msgstr "Uključi stranice sa spremištima"
+
+#: DynamicWeb/dynamicweb.py:4008
+msgid "Whether or not to include the Repository Pages."
+msgstr "Da li uključiti stranice sa spremištima."
+
+#: DynamicWeb/dynamicweb.py:4011
+msgid "Include images and media"
+msgstr "Uključi slike i medijske objekte"
+
+#: DynamicWeb/dynamicweb.py:4012
+msgid "Whether to include images and media in the web pages"
+msgstr "Da li uključiti slike i medije u web stranice"
+
+#: DynamicWeb/dynamicweb.py:4016
+msgid "Copy, rename files with an internal Gramps identifier"
+msgstr "Kopiraj, preimenuj datoteke s internom Gramps oznakom"
+
+#: DynamicWeb/dynamicweb.py:4017
+msgid "Copy, keep file names unchanged"
+msgstr "Kopiraj, zadrži imena datoteka"
+
+#: DynamicWeb/dynamicweb.py:4018
+msgid "Do not copy, reference existing files"
+msgstr "Ne kopiraj, referenciraj postojeću datoteku"
+
+#: DynamicWeb/dynamicweb.py:4020
+msgid "Images and media"
+msgstr "Slike i mediji"
+
+#: DynamicWeb/dynamicweb.py:4023
+msgid "Whether to make a copy of the media"
+msgstr "Da li stvoriti kopije medija"
+
+#: DynamicWeb/dynamicweb.py:4026
+msgid "Print the notes type"
+msgstr "Ispiši vrstu zabilježaka"
+
+#: DynamicWeb/dynamicweb.py:4027
+msgid "Whether to print the notes type in the notes text"
+msgstr "Da li ispisati vrstu zabilješke u tekstu zabilješke"
+
+#: DynamicWeb/dynamicweb.py:4030
+msgid "Print place pages"
+msgstr "Ispiši stranice mjesta"
+
+#: DynamicWeb/dynamicweb.py:4031
+msgid "Whether to show pages for the places"
+msgstr "Da li prikazati stranice za mjesta"
+
+#: DynamicWeb/dynamicweb.py:4037
+msgid ""
+"Whether to include a place map on the Place Pages, where Latitude/ Longitude "
+"are available."
+msgstr ""
+"Da li uključiti kartu mjesta na stranicama mjesta, gdje su dostupne i "
+"zemljopisne širine/dužine."
+
+#: DynamicWeb/dynamicweb.py:4045
+msgid ""
+"Whether or not to add an individual page map showing all the places on this "
+"page. This will allow you to see how your family traveled around the country."
+msgstr ""
+"Da li uključiti zasebnu stranicu s kartom svih mjesta. Na taj način možeš "
+"vidjeti, kuda se tvoja obitelj svuda kretala."
+
+#: DynamicWeb/dynamicweb.py:4053
+msgid "Google"
+msgstr "Google"
+
+#: DynamicWeb/dynamicweb.py:4054
+msgid "OpenStreetMap"
+msgstr "OpenStreetMap"
+
+#: DynamicWeb/dynamicweb.py:4056
+msgid "Map Service"
+msgstr "Kartografska usluga"
+
+#: DynamicWeb/dynamicweb.py:4059
+msgid "Choose your choice of map service for creating the Place Map Pages"
+msgstr ""
+"Odaberi svoju kartografsku uslugu za stvaranje kartografskih stranica mjesta"
+
+#: DynamicWeb/dynamicweb.py:4063
+msgid "Google map API key"
+msgstr "Google karta API ključ"
+
+#: DynamicWeb/dynamicweb.py:4064
+msgid "The API key used for the Google map"
+msgstr "API ključ za Google kartu"
+
+#: DynamicWeb/dynamicweb.py:4071
+msgid "Advanced"
+msgstr "Napredno"
+
+#: DynamicWeb/dynamicweb.py:4074
+msgid "Character set encoding"
+msgstr "Kodiranje znakovnog skupa"
+
+#: DynamicWeb/dynamicweb.py:4077
+msgid "The encoding to be used for the web files"
+msgstr "Kodiranje korišteno u web datotekama"
+
+#: DynamicWeb/dynamicweb.py:4080
+msgid "Include family pages"
+msgstr "Uključi obiteljske stranice"
+
+#: DynamicWeb/dynamicweb.py:4081
+msgid "Whether or not to include family pages"
+msgstr "Da li uključiti obiteljske stranice"
+
+#: DynamicWeb/dynamicweb.py:4091
+msgid ""
+"Whether to include half and/ or step-siblings with the parents and siblings"
+msgstr "Da li uključiti polubraću s roditeljima i braću/sestre"
+
+#: DynamicWeb/dynamicweb.py:4094
+msgid "Include GENDEX file (/gendex.txt)"
+msgstr "Uključi GENDEX datoteku (/gendex.txt)"
+
+#: DynamicWeb/dynamicweb.py:4095
+msgid "Whether to include a GENDEX file or not"
+msgstr "Da li uključiti GENDEX datoteku"
+
+#: DynamicWeb/dynamicweb.py:4098
+msgid "Enable page configuration"
+msgstr "Omogući konfiguraciju stranice"
+
+#: DynamicWeb/dynamicweb.py:4099
+msgid "Whether to enable page configuration"
+msgstr "Da li omogućiti konfiguraciju stranice"
+
+#: DynamicWeb/dynamicweb.py:4103
+msgid "Whether to use tabbed panels for the different sections of the pages."
+msgstr "Da li koristiti registarske kartice za različite odjeljke stranice."
+
+#: DynamicWeb/dynamicweb.py:4107
+msgid "Whether to show the last modification time in the pages footer"
+msgstr "Da li prikazati vrijeme zadnje promjene u podnožju stranice"
+
+#: DynamicWeb/dynamicweb.py:4111
+msgid "Whether to insert sources author in the sources title"
+msgstr "Da li uključiti autora izvora u nazivu izvora"
+
+#: DynamicWeb/dynamicweb.py:4115
+msgid "Whether to hide the Gramps ID"
+msgstr "Da li sakriti Gramps ID oznake"
+
+#: DynamicWeb/dynamicweb.py:4124
+msgid "List"
+msgstr "Popis"
+
+#: DynamicWeb/dynamicweb.py:4125
+msgid "Table"
+msgstr "Tablica"
+
+#: DynamicWeb/dynamicweb.py:4128
+msgid "Default format for the surnames index"
+msgstr "Zadani format za indeks prezimena"
+
+#: DynamicWeb/dynamicweb.py:4128
+msgid "The default format for the surnames index"
+msgstr "Ovo je zadani format za indeks prezimena"
+
+#: DynamicWeb/dynamicweb.py:4129
+msgid "Default format for the persons index"
+msgstr "Zadani format za indeks osoba"
+
+#: DynamicWeb/dynamicweb.py:4129
+msgid "The default format for the persons index"
+msgstr "Ovo je zadani format za indeks osoba"
+
+#: DynamicWeb/dynamicweb.py:4130
+msgid "Default format for the families index"
+msgstr "Zadani format za indeks obitelji"
+
+#: DynamicWeb/dynamicweb.py:4130
+msgid "The default format for the families index"
+msgstr "Ovo je zadani format za indeks obitelji"
+
+#: DynamicWeb/dynamicweb.py:4131
+msgid "Default format for the sources index"
+msgstr "Zadani format za indeks izvora"
+
+#: DynamicWeb/dynamicweb.py:4131
+msgid "The default format for the sources index"
+msgstr "Ovo je zadani format za indeks izvora"
+
+#: DynamicWeb/dynamicweb.py:4132
+msgid "Default format for the places index"
+msgstr "Zadani format za indeks mjesta"
+
+#: DynamicWeb/dynamicweb.py:4132
+msgid "The default format for the places index"
+msgstr "Ovo je zadani format za indeks mjesta"
+
+#: DynamicWeb/dynamicweb.py:4141
+msgid ""
+"Whether to include dates columns (birth, death, marriage) on the index pages"
+msgstr ""
+"Da li uključiti stupac s datumima (rođenje, smrt, sklapanje braka) na "
+"stranicama indeksa"
+
+#: DynamicWeb/dynamicweb.py:4145
+msgid "Whether to include a partners column"
+msgstr "Da li uključiti stupac s partnerima"
+
+#: DynamicWeb/dynamicweb.py:4149
+msgid "Whether to include a parents column"
+msgstr "Da li uključiti stupac s roditeljima"
+
+#: DynamicWeb/dynamicweb.py:4152
+msgid "Generate a families index page"
+msgstr "Stvori stranicu indeksa za obitelji"
+
+#: DynamicWeb/dynamicweb.py:4153
+msgid "Whether to generate an index page for families"
+msgstr "Da li stvoriti stranicu indeksa za obitelji"
+
+#: DynamicWeb/dynamicweb.py:4157
+msgid "Whether to include a column showing the media path"
+msgstr "Da li uključiti stupac sa stazom medija"
+
+#: DynamicWeb/dynamicweb.py:4161
+msgid ""
+"Whether to include the references to the items in the index pages. For "
+"example, in the media index page, the names of the individuals, families, "
+"places, sources that reference the media."
+msgstr ""
+"Da li uključiti reference na stavke u stranici indeksa. Na primjer, na "
+"stranici indeksa medija, to mogu biti imena osoba, obitelji, mjesta ili "
+"izvora, koji imaju referencu na medij."
+
+#: DynamicWeb/dynamicweb.py:4164
+msgid "Default number of entries in the indexes"
+msgstr "Zadani broj unosa u indeksu"
+
+#: DynamicWeb/dynamicweb.py:4167
+msgid "The default number of entries shown in one index page"
+msgstr "Zadani broj unosa, prikazanih na jednoj stranici indeksa"
+
+#: DynamicWeb/dynamicweb.py:4172
+msgid "Trees"
+msgstr "Stabla"
+
+#: DynamicWeb/dynamicweb.py:4175
+msgid "Maximum number of generations"
+msgstr "Najveći broj generacija"
+
+#: DynamicWeb/dynamicweb.py:4176
+msgid ""
+"The maximum number of generations to include in the ancestor and descendant "
+"trees and graphs"
+msgstr ""
+"Maksimalni broj uključenih generacija u stabla predaka i potomaka, kao i u "
+"dijagramima"
+
+#: DynamicWeb/dynamicweb.py:4182
+msgid "Choose the default SVG tree graph type"
+msgstr "Odaberi standardnu vrstu dijagrama SVG stabla"
+
+#: DynamicWeb/dynamicweb.py:4188
+msgid "Choose the default SVG tree graph shape"
+msgstr "Odaberi standardni oblik dijagrama SVG stabla"
+
+#: DynamicWeb/dynamicweb.py:4194
+msgid "Choose the default SVG tree parents distribution (for fan charts only)"
+msgstr ""
+"Odaberi standardnu distribuciju roditelja u SVG stablu (samo za lepezaste "
+"dijagrame)"
+
+#: DynamicWeb/dynamicweb.py:4200
+msgid "Choose the default SVG tree children distribution (for fan charts only)"
+msgstr ""
+"Odaberi standardnu distribuciju djece u SVG stablu (samo za lepezaste "
+"dijagrame)"
+
+#: DynamicWeb/dynamicweb.py:4206
+msgid ""
+"Choose the background color scheme for the persons in the SVG tree graph"
+msgstr "Odaberi sistem boje pozadine za osobe u dijagramu SVG stabla"
+
+#: DynamicWeb/dynamicweb.py:4209
+msgid "Start gradient/Main color"
+msgstr "Početak gradijenta/glavna boja"
+
+#: DynamicWeb/dynamicweb.py:4212
+msgid "End gradient/2nd color"
+msgstr "Kraj gradijenta/druga boja"
+
+#: DynamicWeb/dynamicweb.py:4220
+msgid "Color for duplicates"
+msgstr "Boja duplikata"
+
+#: DynamicWeb/dynamicweb.py:4225
+msgid "Pages"
+msgstr "Stranice"
+
+#: DynamicWeb/dynamicweb.py:4228
+msgid "HTML user header"
+msgstr "HTML korisničko zaglavlje"
+
+#: DynamicWeb/dynamicweb.py:4229
+msgid "A note to be used as the page header"
+msgstr "Zabilješka korištena u zaglavlju stranice"
+
+#: DynamicWeb/dynamicweb.py:4232
+msgid "HTML user brand name / icon"
+msgstr "HTML korisnička marka / ikona"
+
+#: DynamicWeb/dynamicweb.py:4233
+msgid "A note to be used as the brand name or image in the menu"
+msgstr "Zabilješka u izborniku, koja se koristi kao marka ili slika"
+
+#: DynamicWeb/dynamicweb.py:4236
+msgid "HTML user footer"
+msgstr "HTML korisničko podnožje"
+
+#: DynamicWeb/dynamicweb.py:4237
+msgid "A note to be used as the page footer"
+msgstr "Bilješka korištena u podnožju stranice"
+
+#: DynamicWeb/dynamicweb.py:4242
+msgid "Custom pages"
+msgstr "Prilagođene stranice"
+
+#: DynamicWeb/dynamicweb.py:4246
+#, python-format
+msgid "Title for the custom page %(index)i"
+msgstr "Naslov za prilagođenu stranicu %(index)i"
+
+#: DynamicWeb/dynamicweb.py:4247
+#, python-format
+msgid "Name for the custom page %(index)i"
+msgstr "Ime za prilagođenu stranicu %(index)i"
+
+#: DynamicWeb/dynamicweb.py:4250
+#, python-format
+msgid "Note for custom page %(index)i"
+msgstr "Zabilješka za prilagođenu stranicu %(index)i"
+
+#: DynamicWeb/dynamicweb.py:4251
+msgid "A note to be used for the custom page content.\n"
+msgstr "Bilješka korištena za sadržaj prilagođene stranice.\n"
+
+#: DynamicWeb/dynamicweb.py:4254
+#, python-format
+msgid "Menu for the custom page %(index)i"
+msgstr "Izbornik za prilagođenu stranicu %(index)i"
+
+#: DynamicWeb/dynamicweb.py:4255
+msgid "Whether to print a menu for the custom page"
+msgstr "Da li prikazati izbornik za prilagođenu stranicu"
+
+#: DynamicWeb/dynamicweb.py:4260
+msgid "Pages selection"
+msgstr "Odabir stranica"
+
+#: DynamicWeb/dynamicweb.py:4263
+msgid "Number of pages"
+msgstr "Broj stranica"
+
+#: DynamicWeb/dynamicweb.py:4264
+msgid "Number pages in the web site menu."
+msgstr "Pobroji stranice u izborniku web stranice."
+
+#: DynamicWeb/dynamicweb.py:4280
+#, python-format
+msgid "Contents of page %(index)i"
+msgstr "Sadržaj stranice %(index)i"
+
+#: DynamicWeb/dynamicweb.py:4283
+msgid "Contents of the page"
+msgstr "Sadržaj stranice"
