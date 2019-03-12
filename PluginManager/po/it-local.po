@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2019-02-13 15:25+0100\n"
+"PO-Revision-Date: 2019-03-12 13:41+0100\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,7 +26,7 @@ msgstr "Gestore plugin avanzato"
 #: PluginManager/PluginManager.gpr.py:30
 msgid "An Addon/Plugin Manager with several additional capabilities"
 msgstr ""
-"Un Gestore di componenti aggiuntivi/plugin con varie funzionalità addizionali"
+"Un gestore di componenti aggiuntivi/plugin con varie funzionalità addizionali"
 
 #: PluginManager/PluginManager.py:87
 msgid "Plugin Manager - Enhanced"
@@ -188,7 +188,7 @@ msgstr "Mostra gli elementi interni"
 
 #: PluginManager/PluginManager.py:509
 msgid "* indicates 3rd party addon"
-msgstr "Gli elementi '*' sono forniti da autori di terze parti"
+msgstr "* indica i componenti aggiuntivi di terze parti"
 
 #: PluginManager/PluginManager.py:514
 msgid "Plugins"
