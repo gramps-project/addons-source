@@ -46,6 +46,7 @@ from gi.repository import GdkPixbuf
 # gramps modules
 #
 #-------------------------------------------------------------------------
+from gramps.gen.utils.db import get_birth_or_fallback, get_death_or_fallback
 from gramps.gen.utils.file import media_path_full
 from gramps.gen.errors import WindowActiveError
 from gramps.gen.config import config
@@ -53,6 +54,7 @@ from gramps.gen.db import DbTxn
 from gramps.gen.display.name import displayer as name_displayer
 from gramps.gen.plug import Gramplet, MenuOptions
 from gramps.gen.lib import MediaRef, Person
+from gramps.gen.lib.date import Today
 from gramps.gui.editors.editperson import EditPerson
 from gramps.gui.selectors import SelectorFactory
 from gramps.gen.plug.menu import BooleanOption, NumberOption
@@ -193,6 +195,8 @@ class PhotoTaggingGramplet(Gramplet):
     def init(self):
         self.regions = []
 
+        self.age_precision = config.get('preferences.age-display-precision')
+
         self.build_context_menu()
 
         self.gui.WIDGET = self.build_gui()
@@ -322,7 +326,7 @@ class PhotoTaggingGramplet(Gramplet):
 
         hpaned.pack1(self.selection_widget, resize=True, shrink=False)
 
-        self.treestore = Gtk.TreeStore(int, GdkPixbuf.Pixbuf, str)
+        self.treestore = Gtk.TreeStore(int, GdkPixbuf.Pixbuf, str, str)
 
         self.treeview = Gtk.TreeView(self.treestore)
         self.treeview.set_size_request(400, -1)
@@ -332,19 +336,24 @@ class PhotoTaggingGramplet(Gramplet):
         column1 = Gtk.TreeViewColumn(_(''))
         column2 = Gtk.TreeViewColumn(_('Preview'))
         column3 = Gtk.TreeViewColumn(_('Person'))
+        column4 = Gtk.TreeViewColumn(_('Age'))
         self.treeview.append_column(column1)
         self.treeview.append_column(column2)
         self.treeview.append_column(column3)
+        self.treeview.append_column(column4)
 
         cell1 = Gtk.CellRendererText()
         cell2 = Gtk.CellRendererPixbuf()
         cell3 = Gtk.CellRendererText()
+        cell4 = Gtk.CellRendererText()
         column1.pack_start(cell1, expand=True)
         column1.add_attribute(cell1, 'text', 0)
         column2.pack_start(cell2, expand=True)
         column2.add_attribute(cell2, 'pixbuf', 1)
         column3.pack_start(cell3, expand=True)
         column3.add_attribute(cell3, 'text', 2)
+        column4.pack_start(cell4, expand=True)
+        column4.add_attribute(cell4, 'text', 3)
 
         self.treeview.set_search_column(0)
         column1.set_sort_column_id(0)
@@ -938,10 +947,16 @@ class PhotoTaggingGramplet(Gramplet):
     def refresh_list(self):
         self.treestore.clear()
         for (i, region) in enumerate(self.regions, start=1):
-            name = name_displayer.display(region.person) if region.person else ""
-            thumbnail = self.selection_widget.get_thumbnail(region,
-                                                            THUMBNAIL_IMAGE_SIZE)
-            self.treestore.append(None, (i, thumbnail, name))
+            if region.person:
+                name = name_displayer.display(region.person)
+                age = get_person_age(region.person, self.dbstate.db,
+                                     self.age_precision)
+            else:
+                name = ""
+                age = ""
+            thumbnail = self.selection_widget.get_thumbnail(
+                region, THUMBNAIL_IMAGE_SIZE)
+            self.treestore.append(None, (i, thumbnail, name, age))
 
     def refresh_selection(self):
         current = self.selection_widget.get_current()
@@ -950,3 +965,33 @@ class PhotoTaggingGramplet(Gramplet):
             selection.select_path(self.regions.index(current),)
         else:
             selection.unselect_all()
+
+
+def get_person_age(person, dbstate_db, age_precision):
+    """
+    Function to get person age.
+    Returns string with age and mark of death.
+    """
+    birth = get_birth_or_fallback(dbstate_db, person)
+    death = get_death_or_fallback(dbstate_db, person)
+
+    is_dead = False
+    if birth:
+        birth_date = birth.get_date_object()
+        if (birth_date and birth_date.get_valid()):
+            if death:
+                death_date = death.get_date_object()
+                if (death_date and death_date.get_valid()):
+                    age = (death_date - birth_date)
+                    is_dead = True
+            if not is_dead:
+                # if person is alive
+                age = (Today() - birth_date)
+
+            # formating age string
+            age_str = age.format(precision=age_precision)
+            if is_dead:
+                age_str = "%s - %s" % (age_str, _("dead"))
+
+            return age_str
+    return None
