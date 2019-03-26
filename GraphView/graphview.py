@@ -136,7 +136,9 @@ class GraphView(NavigationView):
         ('interface.graphview-ancestor-generations', 3),
         ('interface.graphview-show-animation', True),
         ('interface.graphview-animation-speed', 3),
-        ('interface.graphview-animation-count', 4))
+        ('interface.graphview-animation-count', 4),
+        ('interface.graphview-search-all-db', True),
+        ('interface.graphview-search-show-images', False))
 
     def __init__(self, pdata, dbstate, uistate, nav_group=0):
         NavigationView.__init__(self, _('Graph View'), pdata, dbstate, uistate,
@@ -386,6 +388,20 @@ class GraphView(NavigationView):
         """
         self.graph_widget.animation.speed = 50 * int(entry)
 
+    def cb_update_search_all_db(self, client, cnxn_id, entry, data):
+        """
+        Called when the configuration menu changes the search setting.
+        """
+        value = entry == 'True'
+        self.graph_widget.search_box.set_options(search_all_db=value)
+
+    def cb_update_search_show_images(self, client, cnxn_id, entry, data):
+        """
+        Called when the configuration menu changes the search setting.
+        """
+        value = entry == 'True'
+        self.graph_widget.search_box.set_options(show_images=value)
+
     def config_connect(self):
         """
         Overwriten from  :class:`~gui.views.pageview.PageView method
@@ -416,6 +432,10 @@ class GraphView(NavigationView):
                              self.cb_update_animation_speed)
         self._config.connect('interface.graphview-animation-count',
                              self.cb_update_animation_count)
+        self._config.connect('interface.graphview-search-all-db',
+                             self.cb_update_search_all_db)
+        self._config.connect('interface.graphview-search-show-images',
+                             self.cb_update_search_show_images)
 
     def _get_configure_page_funcs(self):
         """
@@ -426,7 +446,8 @@ class GraphView(NavigationView):
         """
         return [self.layout_config_panel,
                 self.color_config_panel,
-                self.animation_config_panel]
+                self.animation_config_panel,
+                self.search_config_panel]
 
     def layout_config_panel(self, configdialog):
         """
@@ -499,6 +520,26 @@ class GraphView(NavigationView):
 
         return _('Animation'), grid
 
+    def search_config_panel(self, configdialog):
+        """
+        Function that builds the widget in the configuration dialog.
+        See "gramps/gui/configure.py" for details.
+        """
+        grid = Gtk.Grid()
+        grid.set_border_width(12)
+        grid.set_column_spacing(6)
+        grid.set_row_spacing(6)
+
+        row = 0
+        configdialog.add_checkbox(
+            grid, _('Search in all database'), row,
+            'interface.graphview-search-all-db')
+        row += 1
+        configdialog.add_checkbox(
+            grid, _('Show person images'), row,
+            'interface.graphview-search-show-images')
+
+        return _('Search'), grid
     #-------------------------------------------------------------------------
     #
     # Printing functionalities
@@ -646,6 +687,11 @@ class GraphWidget(object):
         # add search widget
         self.search_box = SearchWidget(self.activate_search, self.dbstate)
         hbox.pack_start(self.search_box, True, True, 1)
+        self.search_box.set_options(
+            search_all_db=self.view._config.get(
+                'interface.graphview-search-all-db'),
+            show_images=self.view._config.get(
+                'interface.graphview-search-show-images'))
 
         # add spinners for quick generations change
         box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
