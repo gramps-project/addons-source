@@ -23,6 +23,8 @@ from gi.repository import Gtk, Gdk, GLib
 from threading import Thread
 
 from gramps.gen.display.name import displayer
+from gramps.gen.utils.file import media_path_full, find_file
+from gramps.gen.utils.thumbnails import get_thumbnail_path
 
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
@@ -55,6 +57,18 @@ class SearchWidget(Gtk.SearchEntry):
         self.found_popup, self.found_box, self.other_box = self.build_popup()
 
         self.connect("key-press-event", self.on_key_press_event)
+
+        self.search_all_db_option = True
+        self.show_images_option = False
+
+    def set_options(self, search_all_db=None, show_images=None):
+        """
+        Set options for search.
+        """
+        if search_all_db is not None:
+            self.search_all_db_option = search_all_db
+        if show_images is not None:
+            self.show_images_option = show_images
 
     def set_items_list(self, items_list):
         """
@@ -93,9 +107,13 @@ class SearchWidget(Gtk.SearchEntry):
 
         if search_words:
             self.show_search_popup()
-            self.thread = Thread(target=self.search_all_db,
-                                 args=[search_words])
-            self.thread.start()
+            if self.search_all_db_option:
+                self.search_all_db_box.show_all()
+                self.thread = Thread(target=self.search_all_db,
+                                     args=[search_words])
+                self.thread.start()
+            else:
+                self.search_all_db_box.hide()
         else:
             self.hide_search_popup()
 
@@ -148,6 +166,12 @@ class SearchWidget(Gtk.SearchEntry):
         button = Gtk.Button(val_to_display)
         button.connect("clicked", self.activate_func, person_handle)
         box.pack_start(button, False, True, 2)
+
+        if self.show_images_option:
+            person_image = self.get_person_image(person)
+            if person_image:
+                button.set_image(person_image)
+                button.set_always_show_image(True)
 
         button.show()
 
@@ -210,13 +234,18 @@ class SearchWidget(Gtk.SearchEntry):
         sw_popup.add(found_box)
         all_box.add(sw_popup)
 
+        self.search_all_db_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        self.search_all_db_box.set_margin_top(10)
         other_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         other_lable = Gtk.Label(_('<b>Other persons from database:</b>'))
         other_lable.set_use_markup(True)
-        other_lable.set_margin_top(10)
-        all_box.pack_start(other_lable, False, True, 2)
+        self.search_all_db_box.pack_start(other_lable, False, True, 2)
         sw_popup_other.add(other_box)
-        all_box.add(sw_popup_other)
+        self.search_all_db_box.pack_start(sw_popup_other, False, True, 2)
+        all_box.add(self.search_all_db_box)
+
+        # set all widgets visible
+        all_box.show_all()
 
         found_popup.add(all_box)
 
@@ -237,11 +266,10 @@ class SearchWidget(Gtk.SearchEntry):
             self.add_to_found(person_handle, self.found_box)
 
         if not self.found_list:
-            self.found_box.pack_start(
-                Gtk.Label(_('No persons found...')),
-                False, True, 2)
+            not_found_label = Gtk.Label(_('No persons found...'))
+            self.found_box.pack_start(not_found_label, False, True, 2)
+            not_found_label.show()
 
-        self.found_popup.show_all()
         self.found_popup.popup()
 
     def hide_search_popup(self, *args):
@@ -250,3 +278,27 @@ class SearchWidget(Gtk.SearchEntry):
         """
         self.stop_search()
         self.found_popup.popdown()
+
+    def get_person_image(self, person):
+        """
+        Returns default person image or None.
+        """
+        # see if we have an image to use for this person
+        image_path = None
+        media_list = person.get_media_list()
+        if media_list:
+            media_handle = media_list[0].get_reference_handle()
+            media = self.dbstate.db.get_media_from_handle(media_handle)
+            media_mime_type = media.get_mime_type()
+            if media_mime_type[0:5] == "image":
+                rectangle = media_list[0].get_rectangle()
+                path = media_path_full(self.dbstate.db, media.get_path())
+                image_path = get_thumbnail_path(path, rectangle=rectangle)
+                # test if thumbnail actually exists in thumbs
+                # (import of data means media files might not be present
+                image_path = find_file(image_path)
+        if image_path:
+            person_image = Gtk.Image.new_from_file(image_path)
+            return person_image
+
+        return None
