@@ -148,6 +148,9 @@ class SearchWidget(Gtk.SearchEntry):
         self.in_search = False
 
     def add_no_result(self, list_box):
+        """
+        Add only one row to specified ListBox with no results lable.
+        """
         # remove all old items from popup
         list_box.foreach(list_box.remove)
 
