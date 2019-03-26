@@ -19,7 +19,7 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
-from gi.repository import Gtk, Gdk, GLib
+from gi.repository import Gtk, Gdk, GdkPixbuf, GLib
 from threading import Thread
 
 from gramps.gen.display.name import displayer
@@ -42,8 +42,8 @@ class SearchWidget(Gtk.SearchEntry):
         Gtk.SearchEntry.__init__(self)
         self.set_hexpand(True)
         self.set_tooltip_text(
-            _('Search people in the current visible graph.'))
-        self.set_placeholder_text(_("Search in the graph..."))
+            _('Search people in the current visible graph and database.'))
+        self.set_placeholder_text(_("Search..."))
 
         self.dbstate = dbstate
 
@@ -124,9 +124,7 @@ class SearchWidget(Gtk.SearchEntry):
         """
         self.in_search = True
 
-        progress_label = Gtk.Label(_('Search in progress...'))
-        self.other_box.pack_start(progress_label, False, True, 2)
-        progress_label.show()
+        GLib.idle_add(self.progress_label.show)
 
         # get all person handles
         all_person_handles = self.dbstate.db.get_person_handles()
@@ -141,19 +139,27 @@ class SearchWidget(Gtk.SearchEntry):
                         found = True
                 if not self.in_search:
                     break
-                GLib.usleep(100)
+                GLib.usleep(10)
 
         if not found:
-            no_result = Gtk.Label(_('No persons found...'))
-            self.other_box.pack_start(no_result, False, True, 2)
-            no_result.show()
+            GLib.idle_add(self.add_no_result, self.other_box)
 
-        progress_label.hide()
+        GLib.idle_add(self.progress_label.hide)
         self.in_search = False
 
-    def add_to_found(self, person_handle, box):
+    def add_no_result(self, list_box):
+        # remove all old items from popup
+        list_box.foreach(list_box.remove)
+
+        row = Gtk.ListBoxRow()
+        not_found_label = Gtk.Label(_('No persons found...'))
+        row.add(not_found_label)
+        list_box.add(row)
+        row.show_all()
+
+    def add_to_found(self, person_handle, list_box):
         """
-        Add found item(person) to specified box.
+        Add found item(person) to specified ListBox.
         """
         try:
             # try used for not person handles
@@ -163,17 +169,23 @@ class SearchWidget(Gtk.SearchEntry):
         name = displayer.display_name(person.get_primary_name())
         val_to_display = "[%s] %s" % (person.gramps_id, name)
 
-        button = Gtk.Button(val_to_display)
-        button.connect("clicked", self.activate_func, person_handle)
-        box.pack_start(button, False, True, 2)
+        row = Gtk.ListBoxRow()
+        hbox = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=20)
+        row.add(hbox)
 
+        # add person name
+        label = Gtk.Label(val_to_display, xalign=0)
+        hbox.pack_start(label, True, True, 2)
+        # add person image if needed
         if self.show_images_option:
             person_image = self.get_person_image(person)
             if person_image:
-                button.set_image(person_image)
-                button.set_always_show_image(True)
+                person_image.set_size_request(20, 20)
+                hbox.pack_start(person_image, False, True, 2)
 
-        button.show()
+        row.connect("activate", self.activate_func, person_handle)
+        list_box.add(row)
+        row.show_all()
 
     def stop_search(self):
         """
@@ -188,7 +200,7 @@ class SearchWidget(Gtk.SearchEntry):
 
     def check_person(self, person_handle, search_words):
         """
-        Check if person name contains all words of the search.
+        Check if person name and id contains all words of the search.
         """
         try:
             # try used for not person handles
@@ -198,8 +210,9 @@ class SearchWidget(Gtk.SearchEntry):
 
         if person:
             name = displayer.display_name(person.get_primary_name()).lower()
+            search_str = name + person.gramps_id.lower()
             for word in search_words:
-                if word not in name:
+                if word not in search_str:
                     # if some of words not present in the person name
                     return False
             return True
@@ -227,7 +240,8 @@ class SearchWidget(Gtk.SearchEntry):
         sw_popup_other.set_propagate_natural_height(True)
 
         all_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
-        found_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        found_box = Gtk.ListBox()
+        found_box.set_activate_on_single_click(True)
         found_lable = Gtk.Label(_('<b>Persons from current graph:</b>'))
         found_lable.set_use_markup(True)
         all_box.pack_start(found_lable, False, True, 2)
@@ -236,10 +250,15 @@ class SearchWidget(Gtk.SearchEntry):
 
         self.search_all_db_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         self.search_all_db_box.set_margin_top(10)
-        other_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        other_box = Gtk.ListBox()
+        other_box.set_activate_on_single_click(True)
+        vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         other_lable = Gtk.Label(_('<b>Other persons from database:</b>'))
+        vbox.add(other_lable)
+        self.progress_label = Gtk.Label(_('Search in progress...'))
+        vbox.add(self.progress_label)
         other_lable.set_use_markup(True)
-        self.search_all_db_box.pack_start(other_lable, False, True, 2)
+        self.search_all_db_box.add(vbox)
         sw_popup_other.add(other_box)
         self.search_all_db_box.pack_start(sw_popup_other, False, True, 2)
         all_box.add(self.search_all_db_box)
@@ -249,26 +268,35 @@ class SearchWidget(Gtk.SearchEntry):
 
         found_popup.add(all_box)
 
+        # connect signals
+        found_box.connect("row-selected", self.on_row_selected)
+        other_box.connect("row-selected", self.on_row_selected)
+
         return found_popup, found_box, other_box
+
+    def on_row_selected(self, listbox, row):
+        """
+        Called on row selection.
+        Used to handle mouse click row activation.
+        Row already have connected function, so call it by emiting row signal.
+        """
+        if row:
+            row.emit("activate")
 
     def show_search_popup(self):
         """
         Show search popup with results.
         """
         # remove all old items from popup
-        for child in self.found_box.get_children():
-            self.found_box.remove(child)
-        for child in self.other_box.get_children():
-            self.other_box.remove(child)
+        self.found_box.foreach(self.found_box.remove)
+        self.other_box.foreach(self.other_box.remove)
 
-        # add buttons for all found items(persons)
+        # add rows for all found items(persons)
         for person_handle in self.found_list:
             self.add_to_found(person_handle, self.found_box)
 
         if not self.found_list:
-            not_found_label = Gtk.Label(_('No persons found...'))
-            self.found_box.pack_start(not_found_label, False, True, 2)
-            not_found_label.show()
+            self.add_no_result(self.found_box)
 
         self.found_popup.popup()
 
@@ -298,7 +326,12 @@ class SearchWidget(Gtk.SearchEntry):
                 # (import of data means media files might not be present
                 image_path = find_file(image_path)
         if image_path:
-            person_image = Gtk.Image.new_from_file(image_path)
+            # scale image
+            person_image = GdkPixbuf.Pixbuf.new_from_file_at_scale(
+                filename=image_path,
+                width=32, height=32,
+                preserve_aspect_ratio=True)
+            person_image = Gtk.Image.new_from_pixbuf(person_image)
             return person_image
 
         return None
