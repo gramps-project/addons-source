@@ -675,14 +675,13 @@ class GraphWidget(object):
         self.goto_active_btn.connect("clicked", self.goto_active)
 
         # add 'go to bookmark' combobox
-        self.store = Gtk.ListStore(str, str)
-        self.goto_other_btn = Gtk.ComboBox(model=self.store)
-        cell = Gtk.CellRendererText()
-        self.goto_other_btn.pack_start(cell, True)
-        self.goto_other_btn.add_attribute(cell, 'text', 1)
-        self.goto_other_btn.set_tooltip_text(_('Go to bookmark'))
-        self.goto_other_btn.connect("changed", self.goto_other)
+        self.goto_other_btn = Gtk.Button(_('Go to bookmark'))
+        self.goto_other_btn.set_tooltip_text(
+            _('Center view on selected bookmark'))
         hbox.pack_start(self.goto_other_btn, False, False, 1)
+        self.bkmark_popover = Gtk.Popover.new(self.goto_other_btn)
+        self.goto_other_btn.connect("clicked", self.show_bkmark_popup)
+        self.goto_other_btn.connect("focus-out-event", self.hide_bkmark_popup)
 
         # add search widget
         self.search_box = SearchWidget(self.activate_search, self.dbstate)
@@ -780,10 +779,38 @@ class GraphWidget(object):
 
     def load_bookmarks(self):
         """
-        Load bookmarks in ComboBox (goto_other_btn).
+        Load bookmarks in Popover (goto_other_btn).
         """
+        # recreate Popover to clear it
+        self.bkmark_popover = Gtk.Popover.new(self.goto_other_btn)
+        self.bkmark_popover.set_position(Gtk.PositionType.BOTTOM)
+        self.bkmark_popover.set_modal(False)
+
+        # scroll window for bookmark items
+        sw_popup = Gtk.ScrolledWindow()
+        sw_popup.set_policy(Gtk.PolicyType.NEVER,
+                            Gtk.PolicyType.AUTOMATIC)
+        sw_popup.set_max_content_height(200)
+        sw_popup.set_propagate_natural_height(True)
+
+        all_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        self.bkmark_box = Gtk.ListBox()
+        self.bkmark_box.set_activate_on_single_click(True)
+        bkmark_lable = Gtk.Label(_('<b>Bookmarks for current graph:</b>'))
+        bkmark_lable.set_use_markup(True)
+        all_box.pack_start(bkmark_lable, False, True, 2)
+        sw_popup.add(self.bkmark_box)
+        all_box.add(sw_popup)
+
+        # set all widgets visible
+        all_box.show_all()
+
+        self.bkmark_popover.add(all_box)
+
+        # connect signal
+        self.bkmark_box.connect("row-selected", self.on_row_selected)
+
         bookmarks = self.dbstate.db.get_bookmarks().bookmarks
-        self.store.clear()
         for bkmark in bookmarks:
             person = self.dbstate.db.get_person_from_handle(bkmark)
             if person:
@@ -791,8 +818,31 @@ class GraphWidget(object):
                 val_to_display = "[%s] %s" % (person.gramps_id, name)
                 present = self.animation.get_item_by_title(bkmark)
                 if present is not None:
-                    self.store.append((bkmark, val_to_display))
-        self.goto_other_btn.set_active(-1)
+                    row = Gtk.ListBoxRow()
+                    label = Gtk.Label(val_to_display, xalign=0)
+                    row.add(label)
+                    row.connect("activate", self.activate_search, bkmark)
+                    self.bkmark_box.add(row)
+                    row.show_all()
+
+    def show_bkmark_popup(self, widget):
+        """
+        Show bookmark popup.
+        """
+        self.bkmark_box.unselect_all()
+        self.bkmark_popover.popup()
+
+    def hide_bkmark_popup(self, widget=None, event=None):
+        self.bkmark_popover.popdown()
+
+    def on_row_selected(self, listbox, row):
+        """
+        Called on row selection.
+        Used to handle mouse click row activation.
+        Row already have connected function, so call it by emiting row signal.
+        """
+        if row:
+            row.emit("activate")
 
     def goto_active(self, button=None):
         """
@@ -801,16 +851,6 @@ class GraphWidget(object):
         # check if animation is needed
         animation = bool(button)
         self.animation.move_to_person(self.active_person_handle, animation)
-
-    def goto_other(self, obj):
-        """
-        Go to other person.
-        If person not present in the current graphview tree, ignore it.
-        """
-        if obj.get_active() > -1:
-            other = self.store[obj.get_active()][0]
-            self.animation.move_to_person(other, True)
-            obj.set_active(-1)
 
     def move_to_person(self, menuitem, handle, animate=False):
         """
@@ -854,6 +894,7 @@ class GraphWidget(object):
         self.active_person_handle = active_person
 
         self.search_box.hide_search_popup()
+        self.hide_bkmark_popup()
 
         # generate DOT and SVG data
         dot = DotSvgGenerator(self.dbstate, self.view)
@@ -981,6 +1022,7 @@ class GraphWidget(object):
         on background.
         """
         self.search_box.hide_search_popup()
+        self.hide_bkmark_popup()
 
         if not (event.type == getattr(Gdk.EventType, "BUTTON_PRESS") and
                 item == self.canvas.get_root_item()):
@@ -1049,6 +1091,7 @@ class GraphWidget(object):
         If middle mouse was clicked then try to set scroll mode.
         """
         self.search_box.hide_search_popup()
+        self.hide_bkmark_popup()
 
         handle = item.title
         node_class = item.description
