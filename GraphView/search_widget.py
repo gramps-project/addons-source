@@ -82,6 +82,7 @@ class SearchWidget(Gtk.SearchEntry):
         Handle 'Esc' key.
         """
         if event.keyval == Gdk.KEY_Escape:
+            self.set_text("")
             self.hide_search_popup()
 
     def do_activate(self):
