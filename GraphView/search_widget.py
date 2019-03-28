@@ -19,12 +19,10 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
-from gi.repository import Gtk, Gdk, GdkPixbuf, GLib
+from gi.repository import Gtk, Gdk, GLib
 from threading import Thread
 
 from gramps.gen.display.name import displayer
-from gramps.gen.utils.file import media_path_full, find_file
-from gramps.gen.utils.thumbnails import get_thumbnail_path
 
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
@@ -38,7 +36,7 @@ class SearchWidget(Gtk.SearchEntry):
     """
     Search widget with popup results.
     """
-    def __init__(self, activate_func, dbstate, items_list=None):
+    def __init__(self, graph_widget, activate_func, dbstate, items_list=None):
         Gtk.SearchEntry.__init__(self)
         self.set_hexpand(True)
         self.set_tooltip_text(
@@ -46,6 +44,7 @@ class SearchWidget(Gtk.SearchEntry):
         self.set_placeholder_text(_("Search..."))
 
         self.dbstate = dbstate
+        self.graph_widget = graph_widget
 
         # 'item' - is GooCanvas.CanvasGroup object
         self.items_list = items_list
@@ -182,9 +181,8 @@ class SearchWidget(Gtk.SearchEntry):
         hbox.pack_start(label, True, True, 2)
         # add person image if needed
         if self.show_images_option:
-            person_image = self.get_person_image(person)
+            person_image = self.graph_widget.get_person_image(person, 32, 32)
             if person_image:
-                person_image.set_size_request(20, 20)
                 hbox.pack_start(person_image, False, True, 2)
 
         row.connect("activate", self.activate_func, person_handle)
@@ -310,32 +308,3 @@ class SearchWidget(Gtk.SearchEntry):
         """
         self.stop_search()
         self.found_popup.popdown()
-
-    def get_person_image(self, person):
-        """
-        Returns default person image or None.
-        """
-        # see if we have an image to use for this person
-        image_path = None
-        media_list = person.get_media_list()
-        if media_list:
-            media_handle = media_list[0].get_reference_handle()
-            media = self.dbstate.db.get_media_from_handle(media_handle)
-            media_mime_type = media.get_mime_type()
-            if media_mime_type[0:5] == "image":
-                rectangle = media_list[0].get_rectangle()
-                path = media_path_full(self.dbstate.db, media.get_path())
-                image_path = get_thumbnail_path(path, rectangle=rectangle)
-                # test if thumbnail actually exists in thumbs
-                # (import of data means media files might not be present
-                image_path = find_file(image_path)
-        if image_path:
-            # scale image
-            person_image = GdkPixbuf.Pixbuf.new_from_file_at_scale(
-                filename=image_path,
-                width=32, height=32,
-                preserve_aspect_ratio=True)
-            person_image = Gtk.Image.new_from_pixbuf(person_image)
-            return person_image
-
-        return None

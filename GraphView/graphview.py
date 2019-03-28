@@ -679,18 +679,18 @@ class GraphWidget(object):
         self.goto_other_btn.set_tooltip_text(
             _('Center view on selected bookmark'))
         hbox.pack_start(self.goto_other_btn, False, False, 1)
-        self.bkmark_popover = Gtk.Popover.new(self.goto_other_btn)
+        self.bkmark_popover, self.bkmark_box = self.build_bkmark_popover()
         self.goto_other_btn.connect("clicked", self.show_bkmark_popup)
-        self.goto_other_btn.connect("focus-out-event", self.hide_bkmark_popup)
+        self.show_images_option = self.view._config.get(
+            'interface.graphview-search-show-images')
 
         # add search widget
-        self.search_box = SearchWidget(self.activate_search, self.dbstate)
+        self.search_box = SearchWidget(self, self.activate_search, self.dbstate)
         hbox.pack_start(self.search_box, True, True, 1)
         self.search_box.set_options(
             search_all_db=self.view._config.get(
                 'interface.graphview-search-all-db'),
-            show_images=self.view._config.get(
-                'interface.graphview-search-show-images'))
+            show_images=self.show_images_option)
 
         # add spinners for quick generations change
         box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
@@ -777,14 +777,13 @@ class GraphWidget(object):
         context = GLib.main_context_default()
         self.set_des_event = context.find_source_by_id(event_id)
 
-    def load_bookmarks(self):
+    def build_bkmark_popover(self):
         """
-        Load bookmarks in Popover (goto_other_btn).
+        Build bookmark popover.
         """
-        # recreate Popover to clear it
-        self.bkmark_popover = Gtk.Popover.new(self.goto_other_btn)
-        self.bkmark_popover.set_position(Gtk.PositionType.BOTTOM)
-        self.bkmark_popover.set_modal(False)
+        bkmark_popover = Gtk.Popover.new(self.goto_other_btn)
+        bkmark_popover.set_position(Gtk.PositionType.BOTTOM)
+        bkmark_popover.set_modal(False)
 
         # scroll window for bookmark items
         sw_popup = Gtk.ScrolledWindow()
@@ -794,36 +793,135 @@ class GraphWidget(object):
         sw_popup.set_propagate_natural_height(True)
 
         all_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
-        self.bkmark_box = Gtk.ListBox()
-        self.bkmark_box.set_activate_on_single_click(True)
+        bkmark_box = Gtk.ListBox()
+        bkmark_box.set_activate_on_single_click(True)
         bkmark_lable = Gtk.Label(_('<b>Bookmarks for current graph:</b>'))
         bkmark_lable.set_use_markup(True)
         all_box.pack_start(bkmark_lable, False, True, 2)
-        sw_popup.add(self.bkmark_box)
+        sw_popup.add(bkmark_box)
         all_box.add(sw_popup)
+
+        btn_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
+        # add button to add active person to bookmarks
+        # label will be changed in "self.load_bookmarks"
+        self.add_bkmark = Gtk.Button(_('Add active person'))
+        self.add_bkmark.connect("clicked", self.add_active_to_bkmarks)
+        btn_box.pack_start(self.add_bkmark, True, True, 2)
+        # add buton to call bookmarks manager
+        manage_bkmarks = Gtk.Button(_('Edit'))
+        manage_bkmarks.set_tooltip_text(_('Call the bookmark editor'))
+        manage_bkmarks.connect("clicked", self.edit_bookmarks)
+        btn_box.pack_start(manage_bkmarks, True, True, 2)
+        all_box.pack_start(btn_box, True, True, 2)
 
         # set all widgets visible
         all_box.show_all()
 
-        self.bkmark_popover.add(all_box)
+        bkmark_popover.add(all_box)
 
         # connect signal
-        self.bkmark_box.connect("row-selected", self.on_row_selected)
+        bkmark_box.connect("row-selected", self.on_row_selected)
 
-        bookmarks = self.dbstate.db.get_bookmarks().bookmarks
+        return bkmark_popover, bkmark_box
+
+    def load_bookmarks(self):
+        """
+        Load bookmarks in Popover (goto_other_btn).
+        Add bookmarks only for current graph.
+        """
+        # remove all old items from popup
+        self.bkmark_box.foreach(self.bkmark_box.remove)
+
+        active = self.view.get_active()
+        active_in_bkmarks = False
+        found = False
+
+        bookmarks = self.view.bookmarks.get_bookmarks().bookmarks
         for bkmark in bookmarks:
+            if active == bkmark:
+                active_in_bkmarks = True
             person = self.dbstate.db.get_person_from_handle(bkmark)
             if person:
                 name = displayer.display_name(person.get_primary_name())
                 val_to_display = "[%s] %s" % (person.gramps_id, name)
                 present = self.animation.get_item_by_title(bkmark)
                 if present is not None:
-                    row = Gtk.ListBoxRow()
+                    found = True
+                    hbox = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL,
+                                   spacing=20)
+                    # add person name
                     label = Gtk.Label(val_to_display, xalign=0)
-                    row.add(label)
+                    hbox.pack_start(label, True, True, 2)
+                    # add person image if needed
+                    if self.show_images_option:
+                        person_image = self.get_person_image(person, 32, 32)
+                        if person_image:
+                            hbox.pack_start(person_image, False, True, 2)
+                    row = Gtk.ListBoxRow()
+                    row.add(hbox)
                     row.connect("activate", self.activate_search, bkmark)
                     self.bkmark_box.add(row)
                     row.show_all()
+        if not found:
+            row = Gtk.ListBoxRow()
+            row.add(Gtk.Label(_('No bookmarks')))
+            self.bkmark_box.add(row)
+            row.show_all()
+
+        # set label for "add_bkmark" button
+        self.add_bkmark.hide()
+        if active and not active_in_bkmarks:
+            person = self.dbstate.db.get_person_from_handle(active)
+            if person:
+                name = displayer.display_name(person.get_primary_name())
+                val_to_display = "[%s] %s" % (person.gramps_id, name)
+                self.add_bkmark.set_tooltip_text(
+                    _('Add active person to bookmarks\n'
+                      '%s' % val_to_display))
+                self.add_bkmark.show()
+
+    def get_person_image(self, person, width=-1, height=-1):
+        """
+        Returns default person image and path or None.
+        """
+        # see if we have an image to use for this person
+        image_path = None
+        media_list = person.get_media_list()
+        if media_list:
+            media_handle = media_list[0].get_reference_handle()
+            media = self.dbstate.db.get_media_from_handle(media_handle)
+            media_mime_type = media.get_mime_type()
+            if media_mime_type[0:5] == "image":
+                rectangle = media_list[0].get_rectangle()
+                path = media_path_full(self.dbstate.db, media.get_path())
+                image_path = get_thumbnail_path(path, rectangle=rectangle)
+                # test if thumbnail actually exists in thumbs
+                # (import of data means media files might not be present
+                image_path = find_file(image_path)
+        if image_path:
+            # scale image
+            person_image = GdkPixbuf.Pixbuf.new_from_file_at_scale(
+                filename=image_path,
+                width=width, height=height,
+                preserve_aspect_ratio=True)
+            person_image = Gtk.Image.new_from_pixbuf(person_image)
+            return person_image
+
+        return None
+
+    def add_active_to_bkmarks(self, widget):
+        """
+        Add active person to bookmarks.
+        """
+        self.view.add_bookmark(None)
+        self.load_bookmarks()
+
+    def edit_bookmarks(self, widget):
+        """
+        Call the bookmark editor.
+        """
+        self.view.edit_bookmarks(None)
+        self.load_bookmarks()
 
     def show_bkmark_popup(self, widget):
         """
