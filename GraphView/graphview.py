@@ -871,8 +871,14 @@ class GraphWidget(object):
         sw_popup = Gtk.ScrolledWindow()
         sw_popup.set_policy(Gtk.PolicyType.NEVER,
                             Gtk.PolicyType.AUTOMATIC)
-        sw_popup.set_max_content_height(200)
-        sw_popup.set_propagate_natural_height(True)
+
+        # set max size of scrolled window
+        # use try because methods available since Gtk 3.22
+        try:
+            sw_popup.set_max_content_height(300)
+            sw_popup.set_propagate_natural_height(True)
+        except:
+            sw_popup.connect("draw", self.on_draw_scroll_bkmark)
 
         all_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         bkmark_box = Gtk.ListBox()
@@ -950,7 +956,7 @@ class GraphWidget(object):
             self.bkmark_box.add(row)
             row.show_all()
 
-        # set label for "add_bkmark" button
+        # set tooltip for "add_bkmark" button
         self.add_bkmark.hide()
         if active and not active_in_bkmarks:
             person = self.dbstate.db.get_person_from_handle(active)
@@ -961,6 +967,17 @@ class GraphWidget(object):
                     _('Add active person to bookmarks\n'
                       '%s' % val_to_display))
                 self.add_bkmark.show()
+
+    def on_draw_scroll_bkmark(self, widget, cr):
+        """
+        Workaround to set max height of scrolled window.
+        """
+        max_height = 300
+        minimum_height, natural_height = self.bkmark_box.get_preferred_height()
+        if natural_height > max_height:
+            widget.set_size_request(-1, max_height)
+        else:
+            widget.set_size_request(-1, natural_height)
 
     def get_person_image(self, person, width=-1, height=-1):
         """
