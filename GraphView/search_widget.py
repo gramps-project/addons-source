@@ -232,14 +232,20 @@ class SearchWidget(Gtk.SearchEntry):
         sw_popup = Gtk.ScrolledWindow()
         sw_popup.set_policy(Gtk.PolicyType.NEVER,
                             Gtk.PolicyType.AUTOMATIC)
-        sw_popup.set_max_content_height(200)
-        sw_popup.set_propagate_natural_height(True)
         # scroll window for found in the database
         sw_popup_other = Gtk.ScrolledWindow()
         sw_popup_other.set_policy(Gtk.PolicyType.NEVER,
                                   Gtk.PolicyType.AUTOMATIC)
-        sw_popup_other.set_max_content_height(200)
-        sw_popup_other.set_propagate_natural_height(True)
+        # set max size of scrolled windows
+        # use try because methods available since Gtk 3.22
+        try:
+            sw_popup.set_max_content_height(200)
+            sw_popup.set_propagate_natural_height(True)
+            sw_popup_other.set_max_content_height(200)
+            sw_popup_other.set_propagate_natural_height(True)
+        except:
+            sw_popup.connect("draw", self.on_draw_scroll_search)
+            sw_popup_other.connect("draw", self.on_draw_scroll_search)
 
         all_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         found_box = Gtk.ListBox()
@@ -275,6 +281,18 @@ class SearchWidget(Gtk.SearchEntry):
         other_box.connect("row-selected", self.on_row_selected)
 
         return found_popup, found_box, other_box
+
+    def on_draw_scroll_search(self, widget, cr):
+        """
+        Workaround to set max height of scrolled windows.
+        """
+        max_height = 200
+        for box in (self.found_box, self.other_box):
+            minimum_height, natural_height = box.get_preferred_height()
+            if natural_height > max_height:
+                widget.set_size_request(-1, max_height)
+            else:
+                widget.set_size_request(-1, natural_height)
 
     def on_row_selected(self, listbox, row):
         """
