@@ -122,9 +122,12 @@ class SearchWidget(Gtk.SearchEntry):
         Search persons in all database.
         Use Thread to make UI responsiveness.
         """
+        context = GLib.main_context_default()
         self.in_search = True
 
-        GLib.idle_add(self.progress_label.show)
+        events = []
+        event_id = GLib.idle_add(self.progress_label.show)
+        events.append(context.find_source_by_id(event_id))
 
         # get all person handles
         all_person_handles = self.dbstate.db.get_person_handles()
@@ -134,17 +137,33 @@ class SearchWidget(Gtk.SearchEntry):
             for person_handle in all_person_handles:
                 if person_handle not in self.found_list:
                     if self.check_person(person_handle, search_words):
-                        GLib.idle_add(self.add_to_found,
-                                      person_handle, self.other_box)
+                        event_id = GLib.idle_add(self.add_to_found,
+                                                 person_handle, self.other_box)
+                        event = context.find_source_by_id(event_id)
+                        # wait until person is added to list
+                        while not event.is_destroyed():
+                            if not self.in_search:
+                                break
+                            GLib.usleep(50)
                         found = True
                 if not self.in_search:
                     break
                 GLib.usleep(10)
 
         if not found:
-            GLib.idle_add(self.add_no_result, self.other_box)
+            event_id = GLib.idle_add(self.add_no_result, self.other_box)
+            events.append(context.find_source_by_id(event_id))
 
-        GLib.idle_add(self.progress_label.hide)
+        event_id = GLib.idle_add(self.progress_label.hide)
+        events.append(context.find_source_by_id(event_id))
+        # wait until events finished
+        for event in events:
+            time_out = 0
+            while not event.is_destroyed():
+                if time_out > 10000:
+                    GLib.source_remove(event.get_id())
+                GLib.usleep(50)
+                time_out += 50
         self.in_search = False
 
     def add_no_result(self, list_box):
@@ -165,10 +184,11 @@ class SearchWidget(Gtk.SearchEntry):
         Add found item(person) to specified ListBox.
         """
         try:
-            # try used for not person handles
+            # try used if we have any problem to get person from Thread
             person = self.dbstate.db.get_person_from_handle(person_handle)
         except:
-            return False
+            # we should return "True" to repeat call (see GLib.idle_add)
+            return True
         name = displayer.display_name(person.get_primary_name())
         val_to_display = "[%s] %s" % (person.gramps_id, name)
 
