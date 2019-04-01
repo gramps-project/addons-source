@@ -190,14 +190,16 @@ class SearchWidget(Gtk.SearchEntry):
             # we should return "True" to repeat call (see GLib.idle_add)
             return True
         name = displayer.display_name(person.get_primary_name())
-        val_to_display = "[%s] %s" % (person.gramps_id, name)
 
         row = Gtk.ListBoxRow()
-        hbox = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=20)
+        hbox = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
         row.add(hbox)
 
+        # add person ID
+        label = Gtk.Label("[%s]" % person.gramps_id, xalign=0)
+        hbox.pack_start(label, False, False, 2)
         # add person name
-        label = Gtk.Label(val_to_display, xalign=0)
+        label = Gtk.Label(name, xalign=0)
         hbox.pack_start(label, True, True, 2)
         # add person image if needed
         if self.show_images_option:
@@ -206,7 +208,7 @@ class SearchWidget(Gtk.SearchEntry):
                 hbox.pack_start(person_image, False, True, 2)
 
         row.connect("activate", self.activate_func, person_handle)
-        list_box.add(row)
+        list_box.prepend(row)
         row.show_all()
 
     def stop_search(self):
@@ -270,6 +272,7 @@ class SearchWidget(Gtk.SearchEntry):
         all_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         found_box = Gtk.ListBox()
         found_box.set_activate_on_single_click(True)
+        found_box.set_sort_func(self.graph_widget.sort_func_listbox)
         found_lable = Gtk.Label(_('<b>Persons from current graph:</b>'))
         found_lable.set_use_markup(True)
         all_box.pack_start(found_lable, False, True, 2)
@@ -280,6 +283,7 @@ class SearchWidget(Gtk.SearchEntry):
         self.search_all_db_box.set_margin_top(10)
         other_box = Gtk.ListBox()
         other_box.set_activate_on_single_click(True)
+        other_box.set_sort_func(self.graph_widget.sort_func_listbox)
         vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         other_lable = Gtk.Label(_('<b>Other persons from database:</b>'))
         vbox.add(other_lable)

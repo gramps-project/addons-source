@@ -883,6 +883,7 @@ class GraphWidget(object):
         all_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         bkmark_box = Gtk.ListBox()
         bkmark_box.set_activate_on_single_click(True)
+        bkmark_box.set_sort_func(self.sort_func_listbox)
         bkmark_lable = Gtk.Label(_('<b>Bookmarks for current graph:</b>'))
         bkmark_lable.set_use_markup(True)
         all_box.pack_start(bkmark_lable, False, True, 2)
@@ -931,14 +932,16 @@ class GraphWidget(object):
             person = self.dbstate.db.get_person_from_handle(bkmark)
             if person:
                 name = displayer.display_name(person.get_primary_name())
-                val_to_display = "[%s] %s" % (person.gramps_id, name)
                 present = self.animation.get_item_by_title(bkmark)
                 if present is not None:
                     found = True
                     hbox = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL,
-                                   spacing=20)
+                                   spacing=10)
+                    # add person ID
+                    label = Gtk.Label("[%s]" % person.gramps_id, xalign=0)
+                    hbox.pack_start(label, False, False, 2)
                     # add person name
-                    label = Gtk.Label(val_to_display, xalign=0)
+                    label = Gtk.Label(name, xalign=0)
                     hbox.pack_start(label, True, True, 2)
                     # add person image if needed
                     if self.show_images_option:
@@ -948,7 +951,7 @@ class GraphWidget(object):
                     row = Gtk.ListBoxRow()
                     row.add(hbox)
                     row.connect("activate", self.activate_search, bkmark)
-                    self.bkmark_box.add(row)
+                    self.bkmark_box.prepend(row)
                     row.show_all()
         if not found:
             row = Gtk.ListBoxRow()
@@ -967,6 +970,20 @@ class GraphWidget(object):
                     _('Add active person to bookmarks\n'
                       '%s' % val_to_display))
                 self.add_bkmark.show()
+
+    def sort_func_listbox(self, row_1, row_2):
+        def get_row_label(row):
+            # get persons names to sort rows
+            # row -> hbox -> (id_label, name_label, image)
+            try:
+                row_children = row.get_children()
+                box_children = row_children[0].get_children()
+                # label in box than contain person name
+                row_label = box_children[1]
+                return row_label.get_text().lower()
+            except:
+                return None
+        return get_row_label(row_1) > get_row_label(row_2)
 
     def on_draw_scroll_bkmark(self, widget, cr):
         """
