@@ -679,13 +679,15 @@ class GraphWidget(object):
         self.goto_other_btn.set_tooltip_text(
             _('Center view on selected bookmark'))
         hbox.pack_start(self.goto_other_btn, False, False, 1)
-        self.bkmark_popover, self.bkmark_box = self.build_bkmark_popover()
+        self.bkmark_popover, self.bkmark_box, \
+            self.bkmark_box_other = self.build_bkmark_popover()
         self.goto_other_btn.connect("clicked", self.show_bkmark_popup)
         self.show_images_option = self.view._config.get(
             'interface.graphview-search-show-images')
 
         # add search widget
-        self.search_box = SearchWidget(self, self.activate_search, self.dbstate)
+        self.search_box = SearchWidget(self, self.activate_search,
+                                       self.dbstate)
         hbox.pack_start(self.search_box, True, True, 1)
         self.search_box.set_options(
             search_all_db=self.view._config.get(
@@ -789,16 +791,23 @@ class GraphWidget(object):
         sw_popup = Gtk.ScrolledWindow()
         sw_popup.set_policy(Gtk.PolicyType.NEVER,
                             Gtk.PolicyType.AUTOMATIC)
+        sw_other_popup = Gtk.ScrolledWindow()
+        sw_other_popup.set_policy(Gtk.PolicyType.NEVER,
+                                  Gtk.PolicyType.AUTOMATIC)
 
         # set max size of scrolled window
         # use try because methods available since Gtk 3.22
         try:
-            sw_popup.set_max_content_height(300)
+            sw_popup.set_max_content_height(200)
             sw_popup.set_propagate_natural_height(True)
+            sw_other_popup.set_max_content_height(200)
+            sw_other_popup.set_propagate_natural_height(True)
         except:
             sw_popup.connect("draw", self.on_draw_scroll_bkmark)
+            sw_other_popup.connect("draw", self.on_draw_scroll_bkmark)
 
         all_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+
         bkmark_box = Gtk.ListBox()
         bkmark_box.set_activate_on_single_click(True)
         bkmark_box.set_sort_func(self.sort_func_listbox)
@@ -808,9 +817,20 @@ class GraphWidget(object):
         sw_popup.add(bkmark_box)
         all_box.add(sw_popup)
 
+        self.box_other = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        bkmark_box_other = Gtk.ListBox()
+        bkmark_box_other.set_activate_on_single_click(True)
+        bkmark_box_other.set_sort_func(self.sort_func_listbox)
+        bkmark_lable = Gtk.Label(_('<b>Other Bookmarks:</b>'))
+        bkmark_lable.set_use_markup(True)
+        self.box_other.pack_start(bkmark_lable, False, True, 2)
+        sw_other_popup.add(bkmark_box_other)
+        self.box_other.add(sw_other_popup)
+        all_box.pack_start(self.box_other, False, True, 2)
+
         btn_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
         # add button to add active person to bookmarks
-        # label will be changed in "self.load_bookmarks"
+        # tooltip will be changed in "self.load_bookmarks"
         self.add_bkmark = Gtk.Button(_('Add active person'))
         self.add_bkmark.connect("clicked", self.add_active_to_bkmarks)
         btn_box.pack_start(self.add_bkmark, True, True, 2)
@@ -828,20 +848,22 @@ class GraphWidget(object):
 
         # connect signal
         bkmark_box.connect("row-selected", self.on_row_selected)
+        bkmark_box_other.connect("row-selected", self.on_row_selected)
 
-        return bkmark_popover, bkmark_box
+        return bkmark_popover, bkmark_box, bkmark_box_other
 
     def load_bookmarks(self):
         """
         Load bookmarks in Popover (goto_other_btn).
-        Add bookmarks only for current graph.
         """
         # remove all old items from popup
         self.bkmark_box.foreach(self.bkmark_box.remove)
+        self.bkmark_box_other.foreach(self.bkmark_box_other.remove)
 
         active = self.view.get_active()
         active_in_bkmarks = False
         found = False
+        found_other = False
 
         bookmarks = self.view.bookmarks.get_bookmarks().bookmarks
         for bkmark in bookmarks:
@@ -851,31 +873,51 @@ class GraphWidget(object):
             if person:
                 name = displayer.display_name(person.get_primary_name())
                 present = self.animation.get_item_by_title(bkmark)
+
+                hbox = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL,
+                               spacing=10)
+                # add person ID
+                label = Gtk.Label("[%s]" % person.gramps_id, xalign=0)
+                hbox.pack_start(label, False, False, 2)
+                # add person name
+                label = Gtk.Label(name, xalign=0)
+                hbox.pack_start(label, True, True, 2)
+                # add person image if needed
+                if self.show_images_option:
+                    person_image = self.get_person_image(person, 32, 32)
+                    if person_image:
+                        hbox.pack_start(person_image, False, True, 2)
+                row = Gtk.ListBoxRow()
+                row.add(hbox)
+                row.connect("activate", self.activate_search, bkmark)
+
                 if present is not None:
                     found = True
-                    hbox = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL,
-                                   spacing=10)
-                    # add person ID
-                    label = Gtk.Label("[%s]" % person.gramps_id, xalign=0)
-                    hbox.pack_start(label, False, False, 2)
-                    # add person name
-                    label = Gtk.Label(name, xalign=0)
-                    hbox.pack_start(label, True, True, 2)
-                    # add person image if needed
-                    if self.show_images_option:
-                        person_image = self.get_person_image(person, 32, 32)
-                        if person_image:
-                            hbox.pack_start(person_image, False, True, 2)
-                    row = Gtk.ListBoxRow()
-                    row.add(hbox)
-                    row.connect("activate", self.activate_search, bkmark)
                     self.bkmark_box.prepend(row)
-                    row.show_all()
-        if not found:
+                else:
+                    found_other = True
+                    self.bkmark_box_other.prepend(row)
+                row.show_all()
+        if not found and not found_other:
+            self.box_other.hide()
             row = Gtk.ListBoxRow()
-            row.add(Gtk.Label(_('No bookmarks')))
+            row.add(Gtk.Label(_("You don't have any bookmarks yet...\n"
+                                "Try to add some frequently used persons "
+                                "to speedup navigation.")))
             self.bkmark_box.add(row)
             row.show_all()
+        else:
+            if not found:
+                row = Gtk.ListBoxRow()
+                row.add(Gtk.Label(_('No bookmarks for this graph...')))
+                self.bkmark_box.add(row)
+                row.show_all()
+            if not found_other:
+                row = Gtk.ListBoxRow()
+                row.add(Gtk.Label(_('No other bookmarks...')))
+                self.bkmark_box_other.add(row)
+                row.show_all()
+                self.box_other.show()
 
         # set tooltip for "add_bkmark" button
         self.add_bkmark.hide()
@@ -907,12 +949,13 @@ class GraphWidget(object):
         """
         Workaround to set max height of scrolled window.
         """
-        max_height = 300
-        minimum_height, natural_height = self.bkmark_box.get_preferred_height()
-        if natural_height > max_height:
-            widget.set_size_request(-1, max_height)
-        else:
-            widget.set_size_request(-1, natural_height)
+        max_height = 200
+        for box in (self.bkmark_box, self.bkmark_box_other):
+            minimum_height, natural_height = box.get_preferred_height()
+            if natural_height > max_height:
+                widget.set_size_request(-1, max_height)
+            else:
+                widget.set_size_request(-1, natural_height)
 
     def get_person_image(self, person, width=-1, height=-1):
         """
@@ -961,7 +1004,7 @@ class GraphWidget(object):
         """
         Show bookmark popup.
         """
-        self.bkmark_box.unselect_all()
+        self.load_bookmarks()
         self.bkmark_popover.popup()
 
     def hide_bkmark_popup(self, widget=None, event=None):
@@ -1046,9 +1089,6 @@ class GraphWidget(object):
         if not self.animation.move_to_person(self.person_to_focus, False):
             self.goto_active()
         self.person_to_focus = None
-
-        # load bookmarks to ComboBox
-        self.load_bookmarks()
 
         # update the status bar
         self.view.change_page()
