@@ -1008,6 +1008,9 @@ class GraphWidget(object):
         self.bkmark_popover.popup()
 
     def hide_bkmark_popup(self, widget=None, event=None):
+        """
+        Hide bookmark popup.
+        """
         self.bkmark_popover.popdown()
 
     def on_row_selected(self, listbox, row):
