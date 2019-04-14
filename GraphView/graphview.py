@@ -2325,8 +2325,18 @@ class DotSvgGenerator(object):
         if num_generations < 0:
             return
 
-        # add self
-        if person.handle not in person_handles:
+        # look at if we have children
+        nb_child = 0
+        for family_handle in person.get_family_handle_list():
+            family = self.database.get_family_from_handle(family_handle)
+            for child_ref in family.get_child_ref_list():
+                # we have at least one child. stop
+                nb_child += 1
+                break
+            break
+
+        # add self if not already processed or if we have children
+        if person.handle not in person_handles or nb_child != 0:
             person_handles.append(person.handle)
 
             for family_handle in person.get_family_handle_list():
