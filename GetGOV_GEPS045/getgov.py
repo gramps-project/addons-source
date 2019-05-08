@@ -44,7 +44,8 @@ from gi.repository import Gtk
 #------------------------------------------------------------------------
 from gramps.gen.plug import Gramplet
 from gramps.gen.db import DbTxn
-from gramps.gen.lib import Place, PlaceName, PlaceType, PlaceRef, Url, UrlType
+from gramps.gen.lib import (Place, PlaceName, PlaceType, PlaceRef,
+                            PlaceHierType, Url, UrlType)
 from gramps.gen.datehandler import parser
 from gramps.gen.config import config
 from gramps.gen.display.place import displayer as _pd
@@ -364,6 +365,7 @@ class GetGOV(Gramplet):
                         place_ref = PlaceRef()
                         place_ref.ref = handle
                         place_ref.set_date_object(date)
+                        place_ref.set_type(PlaceHierType.ADMIN)  # TODO deal with other hierarchies
                         place.add_placeref(place_ref)
                     self.dbstate.db.commit_place(place, trans)
         self.dbstate.db.save_place_types()

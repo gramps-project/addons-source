@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-23 09:39-0500\n"
+"POT-Creation-Date: 2019-05-08 09:56-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,80 +29,80 @@ msgstr ""
 msgid "GetGOV"
 msgstr ""
 
-#: GetGOV_GEPS045/getgov.py:303
+#: GetGOV_GEPS045/getgov.py:304
 msgid "Enter GOV-id:"
 msgstr ""
 
-#: GetGOV_GEPS045/getgov.py:311
+#: GetGOV_GEPS045/getgov.py:312
 msgid "Get Place"
 msgstr ""
 
-#: GetGOV_GEPS045/getgov.py:343
+#: GetGOV_GEPS045/getgov.py:344
 #, python-format
 msgid "Add GOV-id place %s"
 msgstr ""
 
-#: GetGOV_GEPS045/getgov.py:373
+#: GetGOV_GEPS045/getgov.py:375
 msgid "Administrative"
 msgstr ""
 
-#: GetGOV_GEPS045/getgov.py:374
+#: GetGOV_GEPS045/getgov.py:376
 msgid "Civil"
 msgstr ""
 
-#: GetGOV_GEPS045/getgov.py:375
+#: GetGOV_GEPS045/getgov.py:377
 msgid "Religious"
 msgstr ""
 
-#: GetGOV_GEPS045/getgov.py:376
+#: GetGOV_GEPS045/getgov.py:378
 msgid "Geographical"
 msgstr ""
 
-#: GetGOV_GEPS045/getgov.py:377
+#: GetGOV_GEPS045/getgov.py:379
 msgid "Cultural"
 msgstr ""
 
-#: GetGOV_GEPS045/getgov.py:378
+#: GetGOV_GEPS045/getgov.py:380
 msgid "Judicial"
 msgstr ""
 
-#: GetGOV_GEPS045/getgov.py:379 GetGOV_GEPS045/getgov.py:388
-#: GetGOV_GEPS045/getgov.py:389
+#: GetGOV_GEPS045/getgov.py:381 GetGOV_GEPS045/getgov.py:390
+#: GetGOV_GEPS045/getgov.py:391
 msgid "Places"
 msgstr ""
 
-#: GetGOV_GEPS045/getgov.py:380
+#: GetGOV_GEPS045/getgov.py:382
 msgid "Transportation"
 msgstr ""
 
-#: GetGOV_GEPS045/getgov.py:381
+#: GetGOV_GEPS045/getgov.py:383
 msgid "Unpopulated Places"
 msgstr ""
 
-#: GetGOV_GEPS045/getgov.py:382
+#: GetGOV_GEPS045/getgov.py:384
 msgid "Other"
 msgstr ""
 
-#: GetGOV_GEPS045/getgov.py:383
+#: GetGOV_GEPS045/getgov.py:385
 msgid "Countries"
 msgstr ""
 
-#: GetGOV_GEPS045/getgov.py:384 GetGOV_GEPS045/getgov.py:385
 #: GetGOV_GEPS045/getgov.py:386 GetGOV_GEPS045/getgov.py:387
+#: GetGOV_GEPS045/getgov.py:388 GetGOV_GEPS045/getgov.py:389
 msgid "Regions"
-msgstr ""
-
-#: GetGOV_GEPS045/getgov.py:550
-#, python-format
-msgid "from %s to %s"
 msgstr ""
 
 #: GetGOV_GEPS045/getgov.py:552
 #, python-format
-msgid "after %s"
+msgid "from %s to %s"
 msgstr ""
 
 #: GetGOV_GEPS045/getgov.py:554
+#, python-format
+msgid "after %s"
+msgstr ""
+
+#: GetGOV_GEPS045/getgov.py:556
 #, python-format
 msgid "before %s"
 msgstr ""
