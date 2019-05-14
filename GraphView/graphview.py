@@ -2844,6 +2844,29 @@ class PopupMenu(Gtk.Menu):
             add_menuitem(tag_menu, _('Organize Tags...'),
                          [handle, 'family'], self.actions.organize_tags)
 
+            # build spouses menu
+            item, sp_menu = self.add_submenu(label=_("Spouses"))
+
+            f_handle = family.get_father_handle()
+            m_handle = family.get_mother_handle()
+            if f_handle:
+                spouse = self.dbstate.db.get_person_from_handle(f_handle)
+                self.add_menuitem(sp_menu, displayer.display(spouse),
+                                  self.graph_widget.move_to_person,
+                                  f_handle, True)
+            else:
+                add_menuitem(sp_menu, _('Add father'), [family, 'father'],
+                             self.actions.add_spouse_to_family)
+
+            if m_handle:
+                spouse = self.dbstate.db.get_person_from_handle(m_handle)
+                self.add_menuitem(sp_menu, displayer.display(spouse),
+                                  self.graph_widget.move_to_person,
+                                  m_handle, True)
+            else:
+                add_menuitem(sp_menu, _('Add mother'), [family, 'mother'],
+                             self.actions.add_spouse_to_family)
+
             self.add_children_submenu(family=family)
 
             self.add_separator()
@@ -2899,6 +2922,17 @@ class PopupMenu(Gtk.Menu):
             item.set_sensitive(0)
         item.show()
         self.append(item)
+
+    def add_menuitem(self, menu, label, func, *args):
+        """
+        Adds menu item.
+        """
+        item = Gtk.MenuItem(label=label)
+        item.connect("activate", func, *args)
+
+        item.show()
+        menu.append(item)
+        return item
 
     def add_submenu(self, label):
         """
@@ -2978,6 +3012,22 @@ class Actions:
             pass
         # set edited person to scroll on it after rebuilding graph
         self.set_person_to_focus(handle)
+
+    def add_spouse_to_family(self, obj):
+        """
+        Adds spouse to existing family.
+        See: editfamily.py
+        """
+        family, kind = obj.get_data()
+
+        try:
+            dialog = EditFamily(self.dbstate, self.uistate, [], family)
+            if kind == 'mother':
+                dialog.add_mother_clicked(None)
+            if kind == 'father':
+                dialog.add_father_clicked(None)
+        except WindowActiveError:
+            pass
 
     def edit_person(self, obj, person_handle=None):
         """
