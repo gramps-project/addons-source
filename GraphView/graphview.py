@@ -2809,6 +2809,15 @@ class PopupMenu(Gtk.Menu):
             add_menuitem(self, _('Set as home person'),
                          handle, self.actions.set_home_person)
 
+            # check if we have person in bookmarks
+            marks = self.graph_widget.view.bookmarks.get_bookmarks().bookmarks
+            if handle in marks:
+                add_menuitem(self, _('Remove from bookmarks'), handle,
+                             self.actions.remove_from_bookmarks)
+            else:
+                add_menuitem(self, _('Add to bookmarks'), [handle, person],
+                             self.actions.add_to_bookmarks)
+
             self.add_separator()
             self.append_help_menu_entry()
 
@@ -2934,10 +2943,11 @@ class Actions:
         self.dbstate = dbstate
         self.uistate = uistate
 
-        # functions from GraphWidget
+        # functions and variables from GraphWidget
         self.set_person_to_focus = graph_widget.set_person_to_focus
         self.populate = graph_widget.populate
         self.rebuild_tree = graph_widget.view.build_tree
+        self.bookmarks = graph_widget.view.bookmarks
 
     def on_help_clicked(self, widget):
         """
@@ -3245,3 +3255,23 @@ class Actions:
                 trans.set_description(description)
 
             self.uistate.set_busy_cursor(False)
+
+    def add_to_bookmarks(self, obj):
+        """
+        Adds bookmark for person.
+        See: navigationview.py and bookmarks.py
+        """
+        handle, person = obj.get_data()
+
+        self.bookmarks.add(handle)
+        name = displayer.display(person)
+        self.uistate.push_message(self.dbstate,
+                                  _("%s has been bookmarked") % name)
+
+    def remove_from_bookmarks(self, obj):
+        """
+        Remove person from the list of bookmarked people.
+        See: bookmarks.py
+        """
+        handle = obj.get_data()
+        self.bookmarks.remove_handles([handle])
