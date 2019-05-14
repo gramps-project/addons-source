@@ -2651,6 +2651,7 @@ class PopupMenu(Gtk.Menu):
 
             add_menuitem(sp_menu, _('Add spouse (new family)'),
                          handle, self.actions.add_spouse)
+            self.add_separator(sp_menu)
 
             fam_list = person.get_family_handle_list()
             for fam_id in fam_list:
@@ -2870,6 +2871,7 @@ class PopupMenu(Gtk.Menu):
             # allow to add a child to this family
             add_menuitem(child_menu, _('Add child to family'),
                          family.get_handle(), self.actions.add_child_to_family)
+            self.add_separator(child_menu)
             no_child = False
         elif person:
             childlist = find_children(self.dbstate.db, person)
