@@ -2588,9 +2588,7 @@ class PopupMenu(Gtk.Menu):
         self.append(menu_item)
 
         # add sub menu for line type setting
-        menu_item = Gtk.MenuItem(_('Lines type'))
-        menu_item.set_submenu(Gtk.Menu())
-        sub_menu = menu_item.get_submenu()
+        menu_item, sub_menu = self.add_submenu(label=_('Lines type'))
 
         spline = self.view._config.get('interface.graphview-show-lines')
 
@@ -2618,10 +2616,7 @@ class PopupMenu(Gtk.Menu):
         entry.show()
         sub_menu.append(entry)
 
-        sub_menu.show()
-        menu_item.show()
-        self.append(menu_item)
-
+        # add help menu
         self.add_separator()
         self.append_help_menu_entry()
 
@@ -2669,12 +2664,9 @@ class PopupMenu(Gtk.Menu):
                 spouse = self.dbstate.db.get_person_from_handle(sp_id)
                 if not spouse:
                     continue
-
-                sp_item = Gtk.MenuItem(label=displayer.display(spouse))
-                sp_item.connect("activate", self.graph_widget.move_to_person,
-                                sp_id, True)
-                sp_item.show()
-                sp_menu.append(sp_item)
+                self.add_menuitem(sp_menu, displayer.display(spouse),
+                                  self.graph_widget.move_to_person,
+                                  sp_id, True)
 
             # go over siblings and build their menu
             item, sib_menu = self.add_submenu(label=_("Siblings"))
@@ -2744,7 +2736,7 @@ class PopupMenu(Gtk.Menu):
 
             # Go over parents and build their menu
             item, par_menu = self.add_submenu(label=_("Parents"))
-            no_parents = 1
+            no_parents = True
             par_list = find_parents(self.dbstate.db, person)
             for par_id in par_list:
                 if not par_id:
@@ -2754,7 +2746,7 @@ class PopupMenu(Gtk.Menu):
                     continue
 
                 if no_parents:
-                    no_parents = 0
+                    no_parents = False
 
                 if find_parents(self.dbstate.db, par):
                     label = Gtk.Label(label='<b><i>%s</i></b>'
@@ -2780,27 +2772,18 @@ class PopupMenu(Gtk.Menu):
             # go over related persons and build their menu
             item, per_menu = self.add_submenu(label=_("Related"))
 
-            no_related = 1
+            no_related = True
             for p_id in find_witnessed_people(self.dbstate.db, person):
                 per = self.dbstate.db.get_person_from_handle(p_id)
                 if not per:
                     continue
 
                 if no_related:
-                    no_related = 0
+                    no_related = False
 
-                label = Gtk.Label(label=escape(displayer.display(per)))
-
-                per_item = Gtk.MenuItem()
-                label.set_use_markup(True)
-                label.show()
-                label.set_halign(Gtk.Align.START)
-                per_item.add(label)
-                per_item.connect("activate", self.graph_widget.move_to_person,
-                                 p_id, True)
-                per_item.show()
-                per_menu.append(per_item)
-
+                self.add_menuitem(per_menu, displayer.display(per),
+                                  self.graph_widget.move_to_person,
+                                  p_id, True)
             if no_related:
                 item.set_sensitive(0)
 
@@ -2876,12 +2859,9 @@ class PopupMenu(Gtk.Menu):
         """
         Go over children and build their menu.
         """
-        item = Gtk.MenuItem(label=_("Children"))
-        item.set_submenu(Gtk.Menu())
-        child_menu = item.get_submenu()
-        child_menu.set_reserve_toggle_size(False)
+        item, child_menu = self.add_submenu(_("Children"))
 
-        no_child = 1
+        no_child = True
 
         childlist = []
         if family:
@@ -2890,7 +2870,7 @@ class PopupMenu(Gtk.Menu):
             # allow to add a child to this family
             add_menuitem(child_menu, _('Add child to family'),
                          family.get_handle(), self.actions.add_child_to_family)
-            no_child = 0
+            no_child = False
         elif person:
             childlist = find_children(self.dbstate.db, person)
 
@@ -2900,7 +2880,7 @@ class PopupMenu(Gtk.Menu):
                 continue
 
             if no_child:
-                no_child = 0
+                no_child = False
 
             if find_children(self.dbstate.db, child):
                 label = Gtk.Label(label='<b><i>%s</i></b>'
@@ -2920,8 +2900,6 @@ class PopupMenu(Gtk.Menu):
 
         if no_child:
             item.set_sensitive(0)
-        item.show()
-        self.append(item)
 
     def add_menuitem(self, menu, label, func, *args):
         """
