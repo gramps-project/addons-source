@@ -792,6 +792,9 @@ class GraphWidget(object):
         """
         Populate the graph with widgets derived from Graphviz.
         """
+        # set the busy cursor, so the user knows that we are working
+        self.uistate.set_busy_cursor(True)
+
         self.clear()
         self.active_person_handle = active_person
 
@@ -819,6 +822,8 @@ class GraphWidget(object):
 
         # update the status bar
         self.view.change_page()
+
+        self.uistate.set_busy_cursor(False)
 
     def zoom_in(self, button=None):
         """
@@ -994,6 +999,7 @@ class GraphWidget(object):
 
         # perform double click on node by left mouse button
         if event.type == getattr(Gdk.EventType, "DOUBLE_BUTTON_PRESS"):
+            self.uistate.set_busy_cursor(False)
             # Remove all single click events
             for click_item in self.click_events:
                 if not click_item.is_destroyed():
@@ -1010,6 +1016,7 @@ class GraphWidget(object):
             return False
 
         if button == 1 and node_class == 'node':            # left mouse
+            self.uistate.set_busy_cursor(True)
             if handle == self.active_person_handle:
                 # Find a parent of the active person so that they can become
                 # the active person, if no parents then leave as the current
