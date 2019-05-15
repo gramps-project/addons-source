@@ -682,6 +682,8 @@ class GraphWidget(object):
         self.bkmark_popover, self.bkmark_box, \
             self.bkmark_box_other = self.build_bkmark_popover()
         self.goto_other_btn.connect("clicked", self.show_bkmark_popup)
+        self.goto_other_btn.connect("key-press-event",
+                                    self.goto_other_btn_key_press_event)
         self.show_images_option = self.view._config.get(
             'interface.graphview-search-show-images')
 
@@ -739,6 +741,13 @@ class GraphWidget(object):
 
         # Gtk style context for scrollwindow to operate with theme colors
         self.sw_style_context = scrolled_win.get_style_context()
+
+    def goto_other_btn_key_press_event(self, widget, event):
+        """
+        Handle 'Esc' key on bookmarks button to hide popup.
+        """
+        if event.keyval == Gdk.KEY_Escape:
+            self.hide_bkmark_popup()
 
     def activate_search(self, widget, person_handle):
         """
