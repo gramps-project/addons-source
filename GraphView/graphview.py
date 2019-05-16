@@ -465,6 +465,7 @@ class GraphView(NavigationView):
         """
         value = entry == 'True'
         self.graph_widget.search_box.set_options(show_images=value)
+        self.graph_widget.show_images_option = value
 
     def config_connect(self):
         """
@@ -743,7 +744,7 @@ class GraphWidget(object):
         hbox.pack_start(self.goto_active_btn, False, False, 1)
         self.goto_active_btn.connect("clicked", self.goto_active)
 
-        # add 'go to bookmark' combobox
+        # add 'go to bookmark' button
         self.goto_other_btn = Gtk.Button(_('Go to bookmark'))
         self.goto_other_btn.set_tooltip_text(
             _('Center view on selected bookmark'))
