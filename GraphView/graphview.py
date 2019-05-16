@@ -1127,6 +1127,7 @@ class GraphWidget(object):
         If person not present in the current graphview tree,
         show dialog to change active person.
         """
+        self.person_to_focus = None
         if self.animation.get_item_by_title(handle):
             self.animation.move_to_person(handle, animate)
         else:
