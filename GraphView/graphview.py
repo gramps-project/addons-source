@@ -532,13 +532,16 @@ class GraphView(NavigationView):
         grid.set_row_spacing(6)
 
         row = 0
-        configdialog.add_checkbox(
+        widget = configdialog.add_checkbox(
             grid, _('Search in all database'), row,
             'interface.graphview-search-all-db')
+        widget.set_tooltip_text(_("Also apply search by all database."))
         row += 1
-        configdialog.add_checkbox(
+        widget = configdialog.add_checkbox(
             grid, _('Show person images'), row,
             'interface.graphview-search-show-images')
+        widget.set_tooltip_text(
+            _("Show persons thumbnails in search result list."))
 
         return _('Search'), grid
     #-------------------------------------------------------------------------
