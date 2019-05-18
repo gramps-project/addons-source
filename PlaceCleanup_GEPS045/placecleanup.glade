@@ -1,0 +1,1124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.22.1 -->
+<interface>
+  <requires lib="gtk+" version="3.10"/>
+  <object class="GtkListStore" id="alt_names_liststore">
+    <columns>
+      <!-- column-name Selected -->
+      <column type="gchararray"/>
+      <!-- column-name Name -->
+      <column type="gchararray"/>
+      <!-- column-name Lang -->
+      <column type="gchararray"/>
+      <!-- column-name Date -->
+      <column type="gchararray"/>
+      <!-- column-name Index -->
+      <column type="gint"/>
+    </columns>
+  </object>
+  <object class="GtkBox" id="results">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="orientation">vertical</property>
+    <child>
+      <object class="GtkLabel" id="res_title">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="label" translatable="yes">City, County, State, Country</property>
+        <attributes>
+          <attribute name="weight" value="bold"/>
+        </attributes>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">True</property>
+        <property name="position">0</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkGrid" id="grid1">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <child>
+          <object class="GtkLabel" id="prim_label">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="halign">center</property>
+            <property name="valign">center</property>
+            <property name="label" translatable="yes">Primary Name</property>
+          </object>
+          <packing>
+            <property name="left_attach">0</property>
+            <property name="top_attach">0</property>
+            <property name="width">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="postal_label">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="halign">end</property>
+            <property name="valign">center</property>
+            <property name="margin_right">5</property>
+            <property name="label" translatable="yes">Postal Code</property>
+          </object>
+          <packing>
+            <property name="left_attach">2</property>
+            <property name="top_attach">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="type_label">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="halign">end</property>
+            <property name="valign">center</property>
+            <property name="margin_right">5</property>
+            <property name="label" translatable="yes">Type</property>
+          </object>
+          <packing>
+            <property name="left_attach">4</property>
+            <property name="top_attach">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="primary">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="tooltip_text" translatable="yes">The current Primary name.</property>
+            <property name="hexpand">True</property>
+            <property name="editable">False</property>
+          </object>
+          <packing>
+            <property name="left_attach">0</property>
+            <property name="top_attach">1</property>
+            <property name="width">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="postal">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="tooltip_text" translatable="yes">The postal code for the place, if any.</property>
+            <property name="hexpand">True</property>
+            <property name="editable">False</property>
+          </object>
+          <packing>
+            <property name="left_attach">2</property>
+            <property name="top_attach">1</property>
+            <property name="width">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkComboBox" id="place_type">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="tooltip_text" translatable="yes">What type of place this is. Eg 'Country', 'City', ... .</property>
+            <property name="has_entry">True</property>
+            <child internal-child="entry">
+              <object class="GtkEntry" id="combobox-entry">
+                <property name="can_focus">True</property>
+                <property name="overwrite_mode">True</property>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="left_attach">4</property>
+            <property name="top_attach">1</property>
+            <property name="width">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkCheckButton" id="postalcheck">
+            <property name="label" translatable="yes">Orig</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">False</property>
+            <property name="tooltip_text" translatable="yes">Check this box if you want to keep the original Postal code.</property>
+            <property name="halign">start</property>
+            <property name="margin_left">5</property>
+            <property name="xalign">0</property>
+            <property name="draw_indicator">True</property>
+            <signal name="toggled" handler="on_postalcheck" swapped="no"/>
+          </object>
+          <packing>
+            <property name="left_attach">3</property>
+            <property name="top_attach">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkCheckButton" id="typecheck">
+            <property name="label" translatable="yes">Orig</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">False</property>
+            <property name="tooltip_text" translatable="yes">Check this box if you want to keep the original Place Type.</property>
+            <property name="halign">start</property>
+            <property name="margin_left">5</property>
+            <property name="xalign">0</property>
+            <property name="image_position">right</property>
+            <property name="draw_indicator">True</property>
+            <signal name="toggled" handler="on_typecheck" swapped="no"/>
+          </object>
+          <packing>
+            <property name="left_attach">5</property>
+            <property name="top_attach">0</property>
+          </packing>
+        </child>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">True</property>
+        <property name="position">1</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkGrid" id="latlongrid">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <child>
+          <object class="GtkEntry" id="longitude">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="halign">center</property>
+          </object>
+          <packing>
+            <property name="left_attach">3</property>
+            <property name="top_attach">1</property>
+            <property name="width">3</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="lon_label">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="valign">center</property>
+            <property name="hexpand">True</property>
+            <property name="label" translatable="yes">Longitude</property>
+          </object>
+          <packing>
+            <property name="left_attach">4</property>
+            <property name="top_attach">0</property>
+            <property name="width">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="latitude">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="halign">center</property>
+          </object>
+          <packing>
+            <property name="left_attach">0</property>
+            <property name="top_attach">1</property>
+            <property name="width">3</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="lat_label">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="valign">center</property>
+            <property name="hexpand">True</property>
+            <property name="label" translatable="yes">Latitude</property>
+          </object>
+          <packing>
+            <property name="left_attach">0</property>
+            <property name="top_attach">0</property>
+            <property name="width">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkCheckButton" id="latloncheck">
+            <property name="label" translatable="yes">Keep Original</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">False</property>
+            <property name="tooltip_text" translatable="yes">Check this box if you want to keep the original Latitude and Longitude.</property>
+            <property name="halign">center</property>
+            <property name="valign">center</property>
+            <property name="hexpand">True</property>
+            <property name="xalign">0</property>
+            <property name="draw_indicator">True</property>
+            <signal name="toggled" handler="on_latloncheck" swapped="no"/>
+          </object>
+          <packing>
+            <property name="left_attach">2</property>
+            <property name="top_attach">0</property>
+            <property name="width">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="grampsid">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="tooltip_text" translatable="yes">The Gramps ID..</property>
+            <property name="halign">center</property>
+            <property name="hexpand">True</property>
+            <property name="editable">False</property>
+          </object>
+          <packing>
+            <property name="left_attach">6</property>
+            <property name="top_attach">1</property>
+            <property name="width">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="id_label">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="halign">end</property>
+            <property name="valign">center</property>
+            <property name="margin_right">5</property>
+            <property name="label" translatable="yes">ID</property>
+          </object>
+          <packing>
+            <property name="left_attach">6</property>
+            <property name="top_attach">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkCheckButton" id="idcheck">
+            <property name="label" translatable="yes">Orig</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">False</property>
+            <property name="tooltip_text" translatable="yes">Check this box if you want to keep the original Gramps ID.</property>
+            <property name="halign">start</property>
+            <property name="xalign">0</property>
+            <property name="draw_indicator">True</property>
+            <signal name="toggled" handler="on_idcheck" swapped="no"/>
+          </object>
+          <packing>
+            <property name="left_attach">7</property>
+            <property name="top_attach">0</property>
+          </packing>
+        </child>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">True</property>
+        <property name="position">2</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkScrolledWindow" id="scrolledwindow2">
+        <property name="visible">True</property>
+        <property name="can_focus">True</property>
+        <property name="vexpand">True</property>
+        <property name="hscrollbar_policy">never</property>
+        <property name="shadow_type">in</property>
+        <property name="min_content_height">100</property>
+        <child>
+          <object class="GtkTreeView" id="alt_names_treeview">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="tooltip_text" translatable="yes">Alterative Names
+Select one or more rows and press 'Keep' button to toggle the 'include into place' status .</property>
+            <property name="model">alt_names_liststore</property>
+            <property name="search_column">0</property>
+            <property name="show_expanders">False</property>
+            <signal name="row-activated" handler="on_alt_row_activated" swapped="no"/>
+            <child internal-child="selection">
+              <object class="GtkTreeSelection" id="alt_names_selection">
+                <property name="mode">multiple</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkTreeViewColumn" id="inc_col">
+                <property name="sizing">fixed</property>
+                <property name="fixed_width">4</property>
+                <property name="title" translatable="yes">Inc</property>
+                <property name="expand">True</property>
+                <property name="clickable">True</property>
+                <property name="sort_indicator">True</property>
+                <property name="sort_column_id">0</property>
+                <child>
+                  <object class="GtkCellRendererText" id="inc_cr">
+                    <property name="wrap_mode">word</property>
+                    <property name="wrap_width">400</property>
+                  </object>
+                  <attributes>
+                    <attribute name="text">0</attribute>
+                  </attributes>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkTreeViewColumn" id="aname_col">
+                <property name="resizable">True</property>
+                <property name="min_width">200</property>
+                <property name="title" translatable="yes">Name</property>
+                <property name="expand">True</property>
+                <property name="clickable">True</property>
+                <property name="sort_indicator">True</property>
+                <property name="sort_column_id">1</property>
+                <child>
+                  <object class="GtkCellRendererText" id="aname_cr">
+                    <property name="wrap_mode">word</property>
+                    <property name="wrap_width">400</property>
+                  </object>
+                  <attributes>
+                    <attribute name="text">1</attribute>
+                  </attributes>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkTreeViewColumn" id="lang_col">
+                <property name="sizing">fixed</property>
+                <property name="fixed_width">4</property>
+                <property name="title" translatable="yes">Lang</property>
+                <property name="expand">True</property>
+                <property name="clickable">True</property>
+                <property name="sort_indicator">True</property>
+                <property name="sort_column_id">2</property>
+                <child>
+                  <object class="GtkCellRendererText" id="lang_cr">
+                    <property name="wrap_mode">word</property>
+                    <property name="wrap_width">400</property>
+                  </object>
+                  <attributes>
+                    <attribute name="text">2</attribute>
+                  </attributes>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkTreeViewColumn" id="date_col">
+                <property name="resizable">True</property>
+                <property name="title" translatable="yes">Date</property>
+                <property name="expand">True</property>
+                <property name="clickable">True</property>
+                <property name="sort_indicator">True</property>
+                <property name="sort_column_id">3</property>
+                <child>
+                  <object class="GtkCellRendererText" id="date_cr">
+                    <property name="wrap_mode">word</property>
+                    <property name="wrap_width">400</property>
+                  </object>
+                  <attributes>
+                    <attribute name="text">3</attribute>
+                  </attributes>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkTreeViewColumn" id="aindex_col">
+                <property name="visible">False</property>
+                <child>
+                  <object class="GtkCellRendererText" id="aindex_cr">
+                    <property name="wrap_mode">word</property>
+                    <property name="wrap_width">400</property>
+                  </object>
+                  <attributes>
+                    <attribute name="text">4</attribute>
+                  </attributes>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">True</property>
+        <property name="position">3</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkBox" id="box2">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="valign">center</property>
+        <child>
+          <object class="GtkButtonBox" id="buttonbox3">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="layout_style">start</property>
+            <child>
+              <object class="GtkButton" id="keep_but">
+                <property name="label" translatable="yes">Keep</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="tooltip_text" translatable="yes">Select one or more rows and use this button to keep the alternative names.</property>
+                <property name="halign">center</property>
+                <signal name="clicked" handler="on_keep_clicked" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="prim_but">
+                <property name="label" translatable="yes">Primary</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="tooltip_text" translatable="yes">Select one row and use this button to make the row the primary name.</property>
+                <property name="halign">center</property>
+                <signal name="clicked" handler="on_prim_clicked" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="disc_but">
+                <property name="label" translatable="yes">Discard</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="tooltip_text" translatable="yes">Select one or more rows and use this button to discard the alternative names.</property>
+                <signal name="clicked" handler="on_disc_clicked" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButtonBox" id="buttonbox2">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="halign">end</property>
+            <property name="layout_style">start</property>
+            <child>
+              <object class="GtkButton" id="res_cancel_but">
+                <property name="label">gtk-cancel</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="tooltip_text" translatable="yes">Cancel the operation, no changes are made to your Place.</property>
+                <property name="use_stock">True</property>
+                <signal name="clicked" handler="on_res_cancel_clicked" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="res_ok_but">
+                <property name="label">gtk-ok</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="tooltip_text" translatable="yes">Store the values in your Place.</property>
+                <property name="use_stock">True</property>
+                <signal name="clicked" handler="on_res_ok_clicked" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">True</property>
+        <property name="position">4</property>
+      </packing>
+    </child>
+  </object>
+  <object class="GtkImage" id="image1">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="icon_name">preferences-other-symbolic</property>
+  </object>
+  <object class="GtkDialog" id="pref_dialog">
+    <property name="can_focus">False</property>
+    <property name="window_position">center-on-parent</property>
+    <property name="type_hint">dialog</property>
+    <child>
+      <placeholder/>
+    </child>
+    <child internal-child="vbox">
+      <object class="GtkBox" id="dialog-vbox1">
+        <property name="can_focus">False</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">2</property>
+        <child internal-child="action_area">
+          <object class="GtkButtonBox" id="dialog-action_area1">
+            <property name="can_focus">False</property>
+            <property name="hexpand">True</property>
+            <property name="layout_style">end</property>
+            <child>
+              <object class="GtkButton" id="pref_ok_but">
+                <property name="label" translatable="yes">Ok</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="halign">end</property>
+                <property name="margin_left">5</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="pref_help_but">
+                <property name="label" translatable="yes">Help</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="halign">start</property>
+                <property name="margin_right">5</property>
+                <signal name="clicked" handler="on_pref_help_clicked" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+                <property name="secondary">True</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkCheckButton" id="keepweb">
+            <property name="label" translatable="yes">Keep Web Links</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">False</property>
+            <property name="tooltip_text" translatable="yes">Puts web links (typically wikipedia) into your place.</property>
+            <property name="xalign">0</property>
+            <property name="active">True</property>
+            <property name="draw_indicator">True</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkCheckButton" id="addcitation">
+            <property name="label" translatable="yes">Add citation and source to Place</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">False</property>
+            <property name="tooltip_text" translatable="yes">This Adds a Citation to your place, citing GeoNames.</property>
+            <property name="xalign">0</property>
+            <property name="active">True</property>
+            <property name="draw_indicator">True</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="label3">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">GeoNames User ID</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="geonames_id_entry">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="primary_icon_tooltip_text" translatable="yes">Enter you Geonames user ID here.</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">3</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="label1">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="label" translatable="yes">Alternative Names Languages to keep</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">4</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="keep_alt_entry">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="tooltip_text" translatable="yes">Enter the two or three letter codes for the languages you wish to keep, seperated by spaces.
+For example "en fr ru".
+These languages will initially be checked off on the Names result display.
+If you often see an un-checked name in a specific language you want, add the language code here.</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">5</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="label2">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="margin_top">10</property>
+            <property name="label" translatable="yes">Currently Enclosed Places</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">7</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkBox" id="box1">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="tooltip_markup" translatable="yes">When cleaning a place that is already enclosed, this affects what is done.
+If '&lt;b&gt;Keep current Enclosure&lt;/b&gt;' is selected, no changes to the enclosing place is made.
+If '&lt;b&gt;Replace with GeoNames Enclosure&lt;/b&gt;' is selected, the enclosed place is changed to the next level GeoNames place.  This may result in some unused places remaining in your database.</property>
+            <child>
+              <object class="GtkRadioButton" id="enc_radio_but_keep">
+                <property name="label" translatable="yes">Keep current Enclosure</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
+                <property name="xalign">0</property>
+                <property name="active">True</property>
+                <property name="draw_indicator">True</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkRadioButton" id="enc_radio_but_repl">
+                <property name="label" translatable="yes">Replace with GeoNames Enclosure</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
+                <property name="xalign">0</property>
+                <property name="draw_indicator">True</property>
+                <property name="group">enc_radio_but_keep</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">8</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+    <action-widgets>
+      <action-widget response="1">pref_ok_but</action-widget>
+    </action-widgets>
+  </object>
+  <object class="GtkListStore" id="res_names_liststore">
+    <columns>
+      <!-- column-name gint1 -->
+      <column type="gint"/>
+      <!-- column-name Title -->
+      <column type="gchararray"/>
+      <!-- column-name Type -->
+      <column type="gchararray"/>
+    </columns>
+  </object>
+  <object class="GtkGrid" id="main">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <child>
+      <object class="GtkLabel" id="title_label">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="xpad">4</property>
+        <property name="label" translatable="yes">Title</property>
+      </object>
+      <packing>
+        <property name="left_attach">0</property>
+        <property name="top_attach">0</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkEntry" id="title_entry">
+        <property name="visible">True</property>
+        <property name="can_focus">True</property>
+        <property name="tooltip_text" translatable="yes">Current Place title.
+You can edit this to help find other places, particularly to reduce the number of results.</property>
+        <property name="hexpand">True</property>
+        <signal name="changed" handler="on_title_entry_changed" swapped="no"/>
+      </object>
+      <packing>
+        <property name="left_attach">1</property>
+        <property name="top_attach">0</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkBox" id="buttonbox1">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <child>
+          <object class="GtkButton" id="help_but">
+            <property name="label">gtk-help</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="halign">start</property>
+            <property name="use_stock">True</property>
+            <signal name="clicked" handler="on_help_clicked" swapped="no"/>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkSeparator" id="separator1">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="opacity">0</property>
+            <property name="orientation">vertical</property>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="find_but">
+            <property name="label" translatable="yes">Find</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="tooltip_text" translatable="yes">Search your local places and GeoNames for a match.</property>
+            <property name="halign">center</property>
+            <signal name="clicked" handler="on_find_clicked" swapped="no"/>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="select_but">
+            <property name="label" translatable="yes">Select</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="tooltip_text" translatable="yes">Continue to merge (for local places), or to complete a place (for GeoNames).</property>
+            <property name="halign">center</property>
+            <property name="margin_left">5</property>
+            <signal name="clicked" handler="on_select_clicked" swapped="no"/>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">3</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="edit_but">
+            <property name="label" translatable="yes">Edit</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="tooltip_text" translatable="yes">Split up Title, Edit manually, and enclose with next level of hierarchy.  For use when the initial component of the Title is too detailed to be found in the gazetteer.</property>
+            <property name="halign">center</property>
+            <property name="margin_left">5</property>
+            <signal name="clicked" handler="on_edit_clicked" swapped="no"/>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">4</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkSeparator" id="separator2">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="opacity">0</property>
+            <property name="orientation">vertical</property>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
+            <property name="position">5</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="next_but">
+            <property name="label" translatable="yes">Next Place</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+            <property name="tooltip_text" translatable="yes">Find an incomplete place.</property>
+            <property name="halign">center</property>
+            <property name="margin_left">5</property>
+            <signal name="clicked" handler="on_next_clicked" swapped="no"/>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">6</property>
+          </packing>
+        </child>
+      </object>
+      <packing>
+        <property name="left_attach">0</property>
+        <property name="top_attach">8</property>
+        <property name="width">3</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkButton" id="prefs_but">
+        <property name="visible">True</property>
+        <property name="can_focus">True</property>
+        <property name="receives_default">True</property>
+        <property name="tooltip_text" translatable="yes">Set preferences</property>
+        <property name="halign">center</property>
+        <property name="image">image1</property>
+        <property name="always_show_image">True</property>
+        <signal name="clicked" handler="on_prefs_clicked" swapped="no"/>
+      </object>
+      <packing>
+        <property name="left_attach">2</property>
+        <property name="top_attach">0</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkScrolledWindow" id="scrolledwindow1">
+        <property name="visible">True</property>
+        <property name="can_focus">True</property>
+        <property name="hexpand">True</property>
+        <property name="vexpand">True</property>
+        <property name="shadow_type">in</property>
+        <property name="min_content_height">150</property>
+        <child>
+          <object class="GtkTreeView" id="result_treeview">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="tooltip_text" translatable="yes">Select one of these places to continue the cleanup process.</property>
+            <property name="model">res_names_liststore</property>
+            <property name="show_expanders">False</property>
+            <signal name="row-activated" handler="on_res_row_activated" swapped="no"/>
+            <child internal-child="selection">
+              <object class="GtkTreeSelection" id="res_selection">
+                <signal name="changed" handler="on_res_sel_changed" swapped="no"/>
+              </object>
+            </child>
+            <child>
+              <object class="GtkTreeViewColumn" id="Index">
+                <property name="visible">False</property>
+                <child>
+                  <object class="GtkCellRendererText" id="index_cr">
+                    <property name="height">20</property>
+                    <property name="wrap_mode">word</property>
+                    <property name="wrap_width">400</property>
+                  </object>
+                  <attributes>
+                    <attribute name="text">0</attribute>
+                  </attributes>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkTreeViewColumn" id="Title">
+                <property name="resizable">True</property>
+                <property name="title" translatable="yes">Search result places</property>
+                <property name="expand">True</property>
+                <property name="clickable">True</property>
+                <property name="sort_indicator">True</property>
+                <property name="sort_column_id">0</property>
+                <child>
+                  <object class="GtkCellRendererText" id="name_cr">
+                    <property name="height">20</property>
+                    <property name="wrap_mode">word</property>
+                    <property name="wrap_width">400</property>
+                  </object>
+                  <attributes>
+                    <attribute name="markup">1</attribute>
+                  </attributes>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkTreeViewColumn" id="Type">
+                <property name="resizable">True</property>
+                <property name="title" translatable="yes">Type</property>
+                <property name="expand">True</property>
+                <property name="clickable">True</property>
+                <property name="sort_indicator">True</property>
+                <property name="sort_column_id">0</property>
+                <child>
+                  <object class="GtkCellRendererText" id="type_cr">
+                    <property name="height">20</property>
+                    <property name="wrap_mode">word</property>
+                    <property name="wrap_width">400</property>
+                  </object>
+                  <attributes>
+                    <attribute name="text">2</attribute>
+                  </attributes>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+      <packing>
+        <property name="left_attach">1</property>
+        <property name="top_attach">1</property>
+        <property name="width">2</property>
+        <property name="height">7</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkLabel" id="res_label">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="valign">start</property>
+        <property name="vexpand">True</property>
+        <property name="label" translatable="yes">No
+Matches</property>
+        <property name="justify">center</property>
+      </object>
+      <packing>
+        <property name="left_attach">0</property>
+        <property name="top_attach">1</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkCheckButton" id="ppl_check">
+        <property name="visible">True</property>
+        <property name="can_focus">True</property>
+        <property name="receives_default">False</property>
+        <property name="tooltip_text" translatable="yes">Checking the 'Populated' checkbox causes the GeoNames search to include 'Populted places', places where people live and work.</property>
+        <property name="halign">center</property>
+        <property name="use_stock">True</property>
+        <property name="xalign">0</property>
+        <property name="image_position">top</property>
+        <property name="active">True</property>
+        <property name="draw_indicator">True</property>
+        <signal name="toggled" handler="on_title_entry_changed" swapped="no"/>
+      </object>
+      <packing>
+        <property name="left_attach">0</property>
+        <property name="top_attach">3</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkLabel" id="ppl_lbl">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="margin_top">8</property>
+        <property name="label" translatable="yes">Populated</property>
+      </object>
+      <packing>
+        <property name="left_attach">0</property>
+        <property name="top_attach">2</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkCheckButton" id="adm_check">
+        <property name="visible">True</property>
+        <property name="can_focus">True</property>
+        <property name="receives_default">False</property>
+        <property name="tooltip_text" translatable="yes">Checking the 'Admin' checkbox cause the GeoNames search to include adminstrative subdivisions in the search (countries, states, counties etc.).</property>
+        <property name="halign">center</property>
+        <property name="use_stock">True</property>
+        <property name="xalign">0</property>
+        <property name="image_position">top</property>
+        <property name="active">True</property>
+        <property name="draw_indicator">True</property>
+        <signal name="toggled" handler="on_title_entry_changed" swapped="no"/>
+      </object>
+      <packing>
+        <property name="left_attach">0</property>
+        <property name="top_attach">5</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkCheckButton" id="spot_check">
+        <property name="visible">True</property>
+        <property name="can_focus">True</property>
+        <property name="receives_default">False</property>
+        <property name="tooltip_text" translatable="yes">Checking the 'Spot' checkbox cause the GeoNames search to include a wide variety of other places in the search (churches, burial grounds, buildings etc.).</property>
+        <property name="halign">center</property>
+        <property name="use_stock">True</property>
+        <property name="xalign">0</property>
+        <property name="image_position">top</property>
+        <property name="draw_indicator">True</property>
+        <signal name="toggled" handler="on_title_entry_changed" swapped="no"/>
+      </object>
+      <packing>
+        <property name="left_attach">0</property>
+        <property name="top_attach">7</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkLabel" id="adm_lbl">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="label" translatable="yes">Admin</property>
+      </object>
+      <packing>
+        <property name="left_attach">0</property>
+        <property name="top_attach">4</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkLabel" id="spot_lbl">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="label" translatable="yes">Spot</property>
+      </object>
+      <packing>
+        <property name="left_attach">0</property>
+        <property name="top_attach">6</property>
+      </packing>
+    </child>
+  </object>
+</interface>
