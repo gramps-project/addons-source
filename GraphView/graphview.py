@@ -73,6 +73,7 @@ from gramps.gui.views.navigationview import NavigationView
 from gramps.gui.views.bookmarks import PersonBookmarks
 from gramps.gui.widgets import progressdialog as progressdlg
 from gramps.gui.widgets.menuitem import add_menuitem
+from gramps.gen.utils.symbols import Symbols
 
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
@@ -103,7 +104,6 @@ if not _DOT_FOUND:
 SPLINE = {0: 'false', 1: 'true', 2: 'ortho'}
 
 WIKI_PAGE = 'https://gramps-project.org/wiki/index.php?title=Graph_View'
-
 
 #-------------------------------------------------------------------------
 #
@@ -158,6 +158,11 @@ class GraphView(NavigationView):
 
         self.additional_uis.append(self.additional_ui)
         self.define_print_actions()
+        self.uistate.connect('font-changed', self.font_changed)
+
+    def font_changed(self):
+        self.graph_widget.font_changed(self.get_active())
+        #self.goto_handle(None)
 
         # for disable animation options in config dialog
         self.ani_widgets = []
@@ -597,7 +602,6 @@ class GraphView(NavigationView):
                 ErrorDialog(msg2, str(msg), parent=dot)
         dot.destroy()
 
-
 #-------------------------------------------------------------------------
 #
 # GraphWidget
@@ -619,6 +623,7 @@ class GraphWidget(object):
         self.view = view
         self.dbstate = dbstate
         self.uistate = uistate
+        self.parser = None
         self.active_person_handle = None
 
         self.dot_data = None
@@ -732,6 +737,12 @@ class GraphWidget(object):
 
         # Gtk style context for scrollwindow to operate with theme colors
         self.sw_style_context = scrolled_win.get_style_context()
+
+    def font_changed(self, active):
+        self.font = config.get('utf8.selected-font')
+        if self.parser:
+            self.parser.font_changed()
+            self.populate(active)
 
     def set_ancestors_generations(self, widget):
         """
@@ -921,7 +932,7 @@ class GraphWidget(object):
         width_canvas = bounds.x2 - bounds.x1
 
         # get scroll window size
-        width = self.hadjustment.get_page_size()
+        width  = self.hadjustment.get_page_size()
         height = self.vadjustment.get_page_size()
 
         # prevent division by zero
@@ -1787,6 +1798,10 @@ class GraphvizSvgParser(object):
                                 "Arial":                 "Helvetica",}
 
         self.transform_scale = 1
+        self.font_changed()
+
+    def font_changed(self):
+        self.font = config.get('utf8.selected-font')
 
     def parse(self, ifile):
         """
@@ -2039,6 +2054,7 @@ class GraphvizSvgParser(object):
         anchor = self.text_attrs.get('text-anchor')
         style = self.text_attrs.get('style')
 
+        # does the following always work with symbols?
         if style:
             p_style = self.parse_style(style)
             try:
@@ -2132,7 +2148,6 @@ class GraphvizSvgParser(object):
         style = style.rstrip(';')
         return dict([i.split(':') for i in style.split(';')])
 
-
 #------------------------------------------------------------------------
 #
 # DotSvgGenerator
@@ -2147,6 +2162,7 @@ class DotSvgGenerator(object):
         Initialise the DotSvgGenerator class.
         """
         self.dbstate = dbstate
+        self.uistate = uistate
         self.database = dbstate.db
         self.view = view
 
@@ -2270,6 +2286,21 @@ class DotSvgGenerator(object):
             self.write(' node [style=filled fontsize=%d fontcolor="%s"];\n'
                        % (fontsize, font_color))
         self.write('\n')
+        self.uistate.connect('font-changed', self.font_changed)
+        self.symbols = Symbols()
+        self.font_changed()
+
+    def font_changed(self):
+        self.font = config.get('utf8.selected-font')
+        dth_idx = self.uistate.death_symbol
+        if self.uistate.symbols:
+            self.bth = self.symbols.get_symbol_for_string(
+                self.symbols.SYMBOL_BIRTH)
+            self.dth = self.symbols.get_death_symbol_for_char(dth_idx)
+        else:
+            self.bth = self.symbols.get_symbol_fallback(
+                self.symbols.SYMBOL_BIRTH)
+            self.dth = self.symbols.get_death_symbol_fallback(dth_idx)
 
     def build_graph(self, active_person):
         """
@@ -2683,12 +2714,14 @@ class DotSvgGenerator(object):
         #       d. 1960-01-02 - DeathPlace
         if self.show_full_dates or self.show_places:
             if birth:
-                txt = _('b. %s') % birth  # short for "born" (could be "*")
+                txt = _('%s %s') % (self.bth, birth)
+                # line separator required only if we have both birth and death
                 label += txt
             if death:
                 if birth:
                     label += line_delimiter
-                txt = _('d. %s') % death  # short for "died" (could be "+")
+                #txt = _('d. %s') % death  # short for "died" (could be "+")
+                txt = _('%s %s') % (self.dth, death)
                 label += txt
         # 2) simple and on one line:
         #       (1890 - 1960)
@@ -2895,7 +2928,6 @@ class DotSvgGenerator(object):
         """
         if self.dot:
             self.dot.write(text)
-
 
 #-------------------------------------------------------------------------
 #
