@@ -2656,7 +2656,7 @@ class PopupMenu(Gtk.Menu):
             # go over spouses and build their menu
             item, sp_menu = self.add_submenu(label=_("Spouses"))
 
-            add_menuitem(sp_menu, _('Add spouse (new family)'),
+            add_menuitem(sp_menu, _('Add new family'),
                          handle, self.actions.add_spouse)
             self.add_separator(sp_menu)
 
