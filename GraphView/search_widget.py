@@ -36,7 +36,12 @@ class SearchWidget(Gtk.SearchEntry):
     """
     Search widget with popup results.
     """
-    def __init__(self, graph_widget, activate_func, dbstate, items_list=None):
+    def __init__(self, activate_func, dbstate,
+                 get_person_image, items_list=None, sort_func=None):
+        """
+        get_person_image - function to get person image
+        sort_func - function to apply sort
+        """
         Gtk.SearchEntry.__init__(self)
         self.set_hexpand(True)
         self.set_tooltip_text(
@@ -44,7 +49,6 @@ class SearchWidget(Gtk.SearchEntry):
         self.set_placeholder_text(_("Search..."))
 
         self.dbstate = dbstate
-        self.graph_widget = graph_widget
 
         # 'item' - is GooCanvas.CanvasGroup object
         self.items_list = items_list
@@ -52,6 +56,9 @@ class SearchWidget(Gtk.SearchEntry):
         # function that will be called (with person handle)
         # whew choose some of result item
         self.activate_func = activate_func
+
+        self.sort_func = sort_func
+        self.get_person_image = get_person_image
 
         self.found_popup, self.found_box, self.other_box = self.build_popup()
 
@@ -203,7 +210,7 @@ class SearchWidget(Gtk.SearchEntry):
         hbox.pack_start(label, True, True, 2)
         # add person image if needed
         if self.show_images_option:
-            person_image = self.graph_widget.get_person_image(person, 32, 32)
+            person_image = self.get_person_image(person, 32, 32, kind='image')
             if person_image:
                 hbox.pack_start(person_image, False, True, 2)
 
@@ -272,7 +279,7 @@ class SearchWidget(Gtk.SearchEntry):
         all_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         found_box = Gtk.ListBox()
         found_box.set_activate_on_single_click(True)
-        found_box.set_sort_func(self.graph_widget.sort_func_listbox)
+        found_box.set_sort_func(self.sort_func)
         found_lable = Gtk.Label(_('<b>Persons from current graph:</b>'))
         found_lable.set_use_markup(True)
         all_box.pack_start(found_lable, False, True, 2)
@@ -283,7 +290,7 @@ class SearchWidget(Gtk.SearchEntry):
         self.search_all_db_box.set_margin_top(10)
         other_box = Gtk.ListBox()
         other_box.set_activate_on_single_click(True)
-        other_box.set_sort_func(self.graph_widget.sort_func_listbox)
+        other_box.set_sort_func(self.sort_func)
         vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         other_lable = Gtk.Label(_('<b>Other persons from database:</b>'))
         vbox.add(other_lable)
