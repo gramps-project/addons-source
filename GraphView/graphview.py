@@ -761,8 +761,9 @@ class GraphWidget(object):
             'interface.graphview-search-show-images')
 
         # add search widget
-        self.search_box = SearchWidget(self, self.activate_search,
-                                       self.dbstate)
+        self.search_box = SearchWidget(self.activate_search, self.dbstate,
+                                       self.get_person_image,
+                                       self.sort_func_listbox)
         hbox.pack_start(self.search_box, True, True, 1)
         self.search_box.set_options(
             search_all_db=self.view._config.get(
@@ -1052,8 +1053,9 @@ class GraphWidget(object):
             else:
                 widget.set_size_request(-1, natural_height)
 
-    def get_person_image(self, person, width=-1, height=-1):
+    def get_person_image(self, person, width=-1, height=-1, kind='image'):
         """
+        kind - 'image', 'path', 'both'
         Returns default person image and path or None.
         """
         # see if we have an image to use for this person
@@ -1071,13 +1073,18 @@ class GraphWidget(object):
                 # (import of data means media files might not be present
                 image_path = find_file(image_path)
         if image_path:
-            # scale image
+            if kind == 'path':
+                return image_path
+            # get and scale image
             person_image = GdkPixbuf.Pixbuf.new_from_file_at_scale(
                 filename=image_path,
                 width=width, height=height,
                 preserve_aspect_ratio=True)
             person_image = Gtk.Image.new_from_pixbuf(person_image)
-            return person_image
+            if kind == 'image':
+                return person_image
+            elif kind == 'both':
+                return person_image, image_path
 
         return None
 
