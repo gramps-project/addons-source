@@ -2915,21 +2915,9 @@ class DotSvgGenerator(object):
         line_delimiter = '<BR/>'
 
         # see if we have an image to use for this person
-        image_path = None
         if self.show_images:
-            media_list = person.get_media_list()
-            if media_list:
-                media_handle = media_list[0].get_reference_handle()
-                media = self.database.get_media_from_handle(media_handle)
-                media_mime_type = media.get_mime_type()
-                if media_mime_type[0:5] == "image":
-                    rectangle = media_list[0].get_rectangle()
-                    path = media_path_full(self.database, media.get_path())
-                    image_path = get_thumbnail_path(path, rectangle=rectangle)
-                    # test if thumbnail actually exists in thumbs
-                    # (import of data means media files might not be present
-                    image_path = find_file(image_path)
-
+            image_path = self.view.graph_widget.get_person_image(person,
+                                                                 kind='path')
         if image_path:
             label += ('<TR><TD><IMG SRC="%s"/></TD></TR>' % image_path)
 
