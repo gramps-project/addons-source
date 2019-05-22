@@ -58,6 +58,7 @@ from gramps.gen.display.place import displayer as place_displayer
 from gramps.gen.errors import WindowActiveError
 from gramps.gen.lib import (Person, Family, ChildRef, Name, Surname,
                             ChildRefType, EventType, EventRoleType)
+from gramps.gen.utils.callback import Callback
 from gramps.gen.utils.db import (get_birth_or_fallback, get_death_or_fallback,
                                  find_children, find_parents, preset_name,
                                  find_witnessed_people)
@@ -572,7 +573,10 @@ class GraphWidget(object):
         self.uistate = uistate
         self.active_person_handle = None
 
-        self.actions = Actions(dbstate, uistate, self)
+        self.actions = Actions(dbstate, uistate, self.view.bookmarks)
+        self.actions.connect('rebuild-graph', self.view.build_tree)
+        self.actions.connect('active-changed', self.populate)
+        self.actions.connect('focus-person-changed', self.set_person_to_focus)
 
         self.dot_data = None
         self.svg_data = None
@@ -2957,22 +2961,26 @@ class PopupMenu(Gtk.Menu):
         self.append(item)
 
 
-class Actions:
+class Actions(Callback):
     """
     Define actions.
     """
-    def __init__(self, dbstate, uistate, graph_widget):
+
+    __signals__ = {
+        'focus-person-changed' : (str, ),
+        'active-changed' : (str, ),
+        'rebuild-graph' :  None,
+        }
+
+    def __init__(self, dbstate, uistate, bookmarks):
         """
-        graph_widget - we will use some functions from GraphWidget.
+        bookmarks - person bookmarks from GraphView(NavigationView).
         """
+        Callback.__init__(self)
         self.dbstate = dbstate
         self.uistate = uistate
 
-        # functions and variables from GraphWidget
-        self.set_person_to_focus = graph_widget.set_person_to_focus
-        self.populate = graph_widget.populate
-        self.rebuild_tree = graph_widget.view.build_tree
-        self.bookmarks = graph_widget.view.bookmarks
+        self.bookmarks = bookmarks
 
     def on_help_clicked(self, widget):
         """
@@ -3002,7 +3010,7 @@ class Actions:
         except WindowActiveError:
             pass
         # set edited person to scroll on it after rebuilding graph
-        self.set_person_to_focus(handle)
+        self.emit('focus-person-changed', (handle, ))
 
     def add_spouse_to_family(self, obj):
         """
@@ -3038,7 +3046,7 @@ class Actions:
         except WindowActiveError:
             pass
         # set edited person to scroll on it after rebuilding graph
-        self.set_person_to_focus(handle)
+        self.emit('focus-person-changed', (handle, ))
 
     def set_home_person(self, obj):
         """
@@ -3048,7 +3056,7 @@ class Actions:
         person = self.dbstate.db.get_person_from_handle(handle)
         if person:
             self.dbstate.db.set_default_person_handle(handle)
-            self.populate(handle)
+            self.emit('active-changed', (handle, ))
 
     def edit_family(self, obj, family_handle=None):
         """
@@ -3071,11 +3079,11 @@ class Actions:
         # set edited family person to scroll on it after rebuilding graph
         f_handle = family.get_father_handle()
         if f_handle:
-            self.set_person_to_focus(f_handle)
+            self.emit('focus-person-changed', (f_handle, ))
         else:
             m_handle = family.get_mother_handle()
             if m_handle:
-                self.set_person_to_focus(m_handle)
+                self.emit('focus-person-changed', (m_handle, ))
 
     def copy_person_to_clipboard(self, obj):
         """
@@ -3099,16 +3107,16 @@ class Actions:
         handle, otype = obj.get_data()
         if otype == 'person':
             target = self.dbstate.db.get_person_from_handle(handle)
-            self.set_person_to_focus(handle)
+            self.emit('focus-person-changed', (handle, ))
         elif otype == 'family':
             target = self.dbstate.db.get_family_from_handle(handle)
             f_handle = target.get_father_handle()
             if f_handle:
-                self.set_person_to_focus(f_handle)
+                self.emit('focus-person-changed', (f_handle, ))
             else:
                 m_handle = target.get_mother_handle()
                 if m_handle:
-                    self.set_person_to_focus(m_handle)
+                    self.emit('focus-person-changed', (m_handle, ))
         else:
             return False
 
@@ -3164,19 +3172,19 @@ class Actions:
         handle, otype = obj.get_data()
         if otype == 'person':
             target = self.dbstate.db.get_person_from_handle(handle)
-            self.set_person_to_focus(handle)
+            self.emit('focus-person-changed', (handle, ))
         elif otype == 'family':
             target = self.dbstate.db.get_family_from_handle(handle)
             f_handle = target.get_father_handle()
             if f_handle:
-                self.set_person_to_focus(f_handle)
+                self.emit('focus-person-changed', (f_handle, ))
             else:
                 m_handle = target.get_mother_handle()
                 if m_handle:
-                    self.set_person_to_focus(m_handle)
+                    self.emit('focus-person-changed', (m_handle, ))
 
         OrganizeTagsDialog(self.dbstate.db, self.uistate, [])
-        self.rebuild_tree()
+        self.emit('rebuild-graph')
 
     def add_parents_to_person(self, obj):
         """
@@ -3193,7 +3201,7 @@ class Actions:
         except WindowActiveError:
             return
         # set edited person to scroll on it after rebuilding graph
-        self.set_person_to_focus(person_handle)
+        self.emit('focus-person-changed', (person_handle, ))
 
     def add_child_to_family(self, obj):
         """
