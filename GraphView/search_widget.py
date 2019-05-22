@@ -23,6 +23,7 @@ from gi.repository import Gtk, Gdk, GLib
 from threading import Thread
 
 from gramps.gen.display.name import displayer
+from gramps.gen.utils.callback import Callback
 
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
@@ -32,19 +33,24 @@ except ValueError:
 _ = _trans.gettext
 
 
-class SearchWidget(Gtk.SearchEntry):
+class SearchWidget(Callback, Gtk.SearchEntry):
     """
     Search widget with popup results.
     """
-    def __init__(self, activate_func, dbstate,
-                 get_person_image, items_list=None, sort_func=None):
+
+    __signals__ = {
+        'item-activated' : (Gtk.ListBoxRow, str, ),
+        }
+
+    def __init__(self, dbstate, get_person_image,
+                 items_list=None, sort_func=None):
         """
-        activate_func - function that will be called (with person handle)
-                        whew choose some of result item
         get_person_image - function to get person image
         sort_func - function to apply sort
         """
         Gtk.SearchEntry.__init__(self)
+        Callback.__init__(self)
+
         self.set_hexpand(True)
         self.set_tooltip_text(
             _('Search people in the current visible graph and database.'))
@@ -56,7 +62,6 @@ class SearchWidget(Gtk.SearchEntry):
         self.items_list = items_list
         self.found_list = []
 
-        self.activate_func = activate_func
         self.sort_func = sort_func
         self.get_person_image = get_person_image
 
@@ -214,9 +219,15 @@ class SearchWidget(Gtk.SearchEntry):
             if person_image:
                 hbox.pack_start(person_image, False, True, 2)
 
-        row.connect("activate", self.activate_func, person_handle)
+        row.connect("activate", self.activate_item, person_handle)
         list_box.prepend(row)
         row.show_all()
+
+    def activate_item(self, row, person_handle):
+        """
+        Activate item in results.
+        """
+        self.emit('item-activated', (row, person_handle, ))
 
     def stop_search(self):
         """

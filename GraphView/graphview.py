@@ -692,7 +692,7 @@ class GraphWidget(object):
             'interface.graphview-search-show-images')
 
         # add search widget
-        self.search_box = SearchWidget(self.activate_search, self.dbstate,
+        self.search_box = SearchWidget(self.dbstate,
                                        self.get_person_image,
                                        self.sort_func_listbox)
         hbox.pack_start(self.search_box, True, True, 1)
@@ -700,6 +700,7 @@ class GraphWidget(object):
             search_all_db=self.view._config.get(
                 'interface.graphview-search-all-db'),
             show_images=self.show_images_option)
+        self.search_box.connect('item-activated', self.activate_popover)
 
         # add spinners for quick generations change
         box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
@@ -754,10 +755,13 @@ class GraphWidget(object):
         if event.keyval == Gdk.KEY_Escape:
             self.hide_bkmark_popup()
 
-    def activate_search(self, widget, person_handle):
+    def activate_popover(self, widget, person_handle):
         """
-        Called when some item(person) in search popup is activated.
+        Called when some item(person)
+        in search or bookmarks popup(popover) is activated.
         """
+        self.hide_bkmark_popup()
+        self.search_box.hide_search_popup()
         # move view to person with animation
         self.move_to_person(None, person_handle, True)
 
@@ -903,7 +907,7 @@ class GraphWidget(object):
                         hbox.pack_start(person_image, False, True, 2)
                 row = Gtk.ListBoxRow()
                 row.add(hbox)
-                row.connect("activate", self.activate_search, bkmark)
+                row.connect("activate", self.activate_popover, bkmark)
 
                 if present is not None:
                     found = True
