@@ -1024,6 +1024,10 @@ class GraphWidget(object):
                 parent_handle = self.find_a_parent(handle)
                 if parent_handle:
                     handle = parent_handle
+                else:
+                    # unset busy cursor as we don't change active person
+                    self.uistate.set_busy_cursor(False)
+                    return True
 
             # redraw the graph based on the selected person
             # schedule after because double click can occur
