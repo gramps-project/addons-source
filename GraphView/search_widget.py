@@ -39,6 +39,8 @@ class SearchWidget(Gtk.SearchEntry):
     def __init__(self, activate_func, dbstate,
                  get_person_image, items_list=None, sort_func=None):
         """
+        activate_func - function that will be called (with person handle)
+                        whew choose some of result item
         get_person_image - function to get person image
         sort_func - function to apply sort
         """
@@ -53,10 +55,8 @@ class SearchWidget(Gtk.SearchEntry):
         # 'item' - is GooCanvas.CanvasGroup object
         self.items_list = items_list
         self.found_list = []
-        # function that will be called (with person handle)
-        # whew choose some of result item
-        self.activate_func = activate_func
 
+        self.activate_func = activate_func
         self.sort_func = sort_func
         self.get_person_image = get_person_image
 
