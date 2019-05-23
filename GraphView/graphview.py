@@ -701,6 +701,12 @@ class GraphWidget(object):
                 'interface.graphview-search-all-db'),
             show_images=self.show_images_option)
         self.search_box.connect('item-activated', self.activate_popover)
+        # add accelerator to focus search entry
+        accel_group = Gtk.AccelGroup()
+        self.uistate.window.add_accel_group(accel_group)
+        self.search_box.add_accelerator('grab-focus', accel_group, Gdk.KEY_f,
+                                        Gdk.ModifierType.CONTROL_MASK,
+                                        Gtk.AccelFlags.VISIBLE)
 
         # add spinners for quick generations change
         box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
