@@ -111,7 +111,7 @@ WIKI_PAGE = 'https://gramps-project.org/wiki/index.php?title=Graph_View'
 #-------------------------------------------------------------------------
 import sys
 sys.path.append(os.path.abspath(os.path.dirname(__file__)))
-from search_widget import SearchWidget
+from search_widget import SearchWidget, ListBoxRow
 
 #-------------------------------------------------------------------------
 #
@@ -865,8 +865,8 @@ class GraphWidget(object):
         bkmark_popover.add(all_box)
 
         # connect signal
-        bkmark_box.connect("row-selected", self.on_row_selected)
-        bkmark_box_other.connect("row-selected", self.on_row_selected)
+        bkmark_box.connect("row-activated", self.bkmark_activated)
+        bkmark_box_other.connect("row-activated", self.bkmark_activated)
 
         return bkmark_popover, bkmark_box, bkmark_box_other
 
@@ -905,9 +905,8 @@ class GraphWidget(object):
                     person_image = self.get_person_image(person, 32, 32)
                     if person_image:
                         hbox.pack_start(person_image, False, True, 2)
-                row = Gtk.ListBoxRow()
+                row = ListBoxRow(description=bkmark)
                 row.add(hbox)
-                row.connect("activate", self.activate_popover, bkmark)
 
                 if present is not None:
                     found = True
@@ -918,7 +917,7 @@ class GraphWidget(object):
                 row.show_all()
         if not found and not found_other:
             self.box_other.hide()
-            row = Gtk.ListBoxRow()
+            row = ListBoxRow()
             row.add(Gtk.Label(_("You don't have any bookmarks yet...\n"
                                 "Try to add some frequently used persons "
                                 "to speedup navigation.")))
@@ -926,12 +925,12 @@ class GraphWidget(object):
             row.show_all()
         else:
             if not found:
-                row = Gtk.ListBoxRow()
+                row = ListBoxRow()
                 row.add(Gtk.Label(_('No bookmarks for this graph...')))
                 self.bkmark_box.add(row)
                 row.show_all()
             if not found_other:
-                row = Gtk.ListBoxRow()
+                row = ListBoxRow()
                 row.add(Gtk.Label(_('No other bookmarks...')))
                 self.bkmark_box_other.add(row)
                 row.show_all()
@@ -1037,14 +1036,15 @@ class GraphWidget(object):
         """
         self.bkmark_popover.popdown()
 
-    def on_row_selected(self, listbox, row):
+    def bkmark_activated(self, listbox, row):
         """
-        Called on row selection.
-        Used to handle mouse click row activation.
-        Row already have connected function, so call it by emiting row signal.
+        Handle bookmark row activation.
         """
-        if row:
-            row.emit("activate")
+        if row is None:
+            return
+        person_handle = row.description
+        if person_handle is not None:
+            self.activate_popover(row, person_handle)
 
     def goto_active(self, button=None):
         """

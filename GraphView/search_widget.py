@@ -183,7 +183,7 @@ class SearchWidget(Gtk.SearchEntry):
         # remove all old items from popup
         list_box.foreach(list_box.remove)
 
-        row = Gtk.ListBoxRow()
+        row = ListBoxRow()
         not_found_label = Gtk.Label(_('No persons found...'))
         row.add(not_found_label)
         list_box.add(row)
@@ -201,7 +201,7 @@ class SearchWidget(Gtk.SearchEntry):
             return True
         name = displayer.display_name(person.get_primary_name())
 
-        row = Gtk.ListBoxRow()
+        row = ListBoxRow(description=person_handle)
         hbox = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
         row.add(hbox)
 
@@ -217,15 +217,18 @@ class SearchWidget(Gtk.SearchEntry):
             if person_image:
                 hbox.pack_start(person_image, False, True, 2)
 
-        row.connect("activate", self.activate_item, person_handle)
         list_box.prepend(row)
         row.show_all()
 
-    def activate_item(self, row, person_handle):
+    def activate_item(self, list_box, row):
         """
         Activate item in results.
         """
-        self.emit('item-activated', person_handle)
+        if row is None:
+            return
+        person_handle = row.description
+        if person_handle is not None:
+            self.emit('item-activated', person_handle)
 
     def stop_search(self):
         """
@@ -317,8 +320,8 @@ class SearchWidget(Gtk.SearchEntry):
         found_popup.add(all_box)
 
         # connect signals
-        found_box.connect("row-selected", self.on_row_selected)
-        other_box.connect("row-selected", self.on_row_selected)
+        found_box.connect("row-activated", self.activate_item)
+        other_box.connect("row-activated", self.activate_item)
 
         return found_popup, found_box, other_box
 
@@ -333,15 +336,6 @@ class SearchWidget(Gtk.SearchEntry):
                 widget.set_size_request(-1, max_height)
             else:
                 widget.set_size_request(-1, natural_height)
-
-    def on_row_selected(self, listbox, row):
-        """
-        Called on row selection.
-        Used to handle mouse click row activation.
-        Row already have connected function, so call it by emiting row signal.
-        """
-        if row:
-            row.emit("activate")
 
     def show_search_popup(self):
         """
@@ -366,3 +360,12 @@ class SearchWidget(Gtk.SearchEntry):
         """
         self.stop_search()
         self.found_popup.popdown()
+
+
+class ListBoxRow(Gtk.ListBoxRow):
+    """
+    Extended Gtk.ListBoxRow whit description property.
+    """
+    def __init__(self, description=None):
+        Gtk.ListBoxRow.__init__(self)
+        self.description = description     # useed to store person handle
