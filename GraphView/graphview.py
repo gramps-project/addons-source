@@ -760,7 +760,7 @@ class GraphWidget(object):
         """
         key = event.keyval
         if event.keyval == Gdk.KEY_Escape:
-            self.hide_bkmark_popup()
+            self.hide_bkmark_popover()
         elif key == Gdk.KEY_Down:
             self.bkmark_popover.grab_focus()
             return True
@@ -770,8 +770,8 @@ class GraphWidget(object):
         Called when some item(person)
         in search or bookmarks popup(popover) is activated.
         """
-        self.hide_bkmark_popup()
-        self.search_box.hide_search_popup()
+        self.hide_bkmark_popover()
+        self.search_box.hide_search_popover()
         # move view to person with animation
         self.move_to_person(None, person_handle, True)
 
@@ -1040,7 +1040,7 @@ class GraphWidget(object):
         self.load_bookmarks()
         self.bkmark_popover.popup()
 
-    def hide_bkmark_popup(self, widget=None, event=None):
+    def hide_bkmark_popover(self, widget=None, event=None):
         """
         Hide bookmark popup.
         """
@@ -1106,8 +1106,8 @@ class GraphWidget(object):
         self.clear()
         self.active_person_handle = active_person
 
-        self.search_box.hide_search_popup()
-        self.hide_bkmark_popup()
+        self.search_box.hide_search_popover()
+        self.hide_bkmark_popover()
 
         # generate DOT and SVG data
         dot = DotSvgGenerator(self.dbstate, self.view)
@@ -1231,8 +1231,8 @@ class GraphWidget(object):
         Enter in scroll mode when left or middle mouse button pressed
         on background.
         """
-        self.search_box.hide_search_popup()
-        self.hide_bkmark_popup()
+        self.search_box.hide_search_popover()
+        self.hide_bkmark_popover()
 
         if not (event.type == getattr(Gdk.EventType, "BUTTON_PRESS") and
                 item == self.canvas.get_root_item()):
@@ -1300,8 +1300,8 @@ class GraphWidget(object):
         Perform actions when a node is clicked.
         If middle mouse was clicked then try to set scroll mode.
         """
-        self.search_box.hide_search_popup()
-        self.hide_bkmark_popup()
+        self.search_box.hide_search_popover()
+        self.hide_bkmark_popover()
 
         handle = item.title
         node_class = item.description
