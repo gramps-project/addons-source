@@ -34,7 +34,8 @@ _ = _trans.gettext
 
 class SearchWidget(Gtk.SearchEntry):
     """
-    Search widget with popup results.
+    Search widget to persons search.
+    Use Gtk.Popover to display results.
     """
 
     __gsignals__ = {
@@ -63,7 +64,8 @@ class SearchWidget(Gtk.SearchEntry):
         self.sort_func = sort_func
         self.get_person_image = get_person_image
 
-        self.found_popup, self.found_box, self.other_box = self.build_popup()
+        self.found_popover, self.found_box, \
+            self.other_box = self.build_popover()
 
         self.connect("key-press-event", self.on_key_press_event)
 
@@ -93,9 +95,9 @@ class SearchWidget(Gtk.SearchEntry):
         key = event.keyval
         if key == Gdk.KEY_Escape:
             self.set_text("")
-            self.hide_search_popup()
+            self.hide_search_popover()
         elif key == Gdk.KEY_Down:
-            self.found_popup.grab_focus()
+            self.found_popover.grab_focus()
             return True
 
     def do_activate(self):
@@ -120,7 +122,7 @@ class SearchWidget(Gtk.SearchEntry):
                 self.found_list.append(item.title)
 
         if search_words:
-            self.show_search_popup()
+            self.show_search_popover()
             if self.search_all_db_option:
                 self.search_all_db_box.show_all()
                 self.thread = Thread(target=self.search_all_db,
@@ -129,7 +131,7 @@ class SearchWidget(Gtk.SearchEntry):
             else:
                 self.search_all_db_box.hide()
         else:
-            self.hide_search_popup()
+            self.hide_search_popover()
 
     def search_all_db(self, search_words):
         """
@@ -184,7 +186,7 @@ class SearchWidget(Gtk.SearchEntry):
         """
         Add only one row to specified ListBox with no results lable.
         """
-        # remove all old items from popup
+        # remove all old items from popover list_box
         list_box.foreach(list_box.remove)
 
         row = ListBoxRow()
@@ -265,32 +267,32 @@ class SearchWidget(Gtk.SearchEntry):
             return True
         return False
 
-    def build_popup(self):
+    def build_popover(self):
         """
-        Builds popup widget.
+        Builds popover widget.
         """
-        found_popup = Gtk.Popover.new(self)
-        found_popup.set_position(Gtk.PositionType.BOTTOM)
-        found_popup.set_modal(False)
+        found_popover = Gtk.Popover.new(self)
+        found_popover.set_position(Gtk.PositionType.BOTTOM)
+        found_popover.set_modal(False)
 
         # scroll window for found in the graph
-        sw_popup = Gtk.ScrolledWindow()
-        sw_popup.set_policy(Gtk.PolicyType.NEVER,
-                            Gtk.PolicyType.AUTOMATIC)
+        sw_popover = Gtk.ScrolledWindow()
+        sw_popover.set_policy(Gtk.PolicyType.NEVER,
+                              Gtk.PolicyType.AUTOMATIC)
         # scroll window for found in the database
-        sw_popup_other = Gtk.ScrolledWindow()
-        sw_popup_other.set_policy(Gtk.PolicyType.NEVER,
-                                  Gtk.PolicyType.AUTOMATIC)
+        sw_popover_other = Gtk.ScrolledWindow()
+        sw_popover_other.set_policy(Gtk.PolicyType.NEVER,
+                                    Gtk.PolicyType.AUTOMATIC)
         # set max size of scrolled windows
         # use try because methods available since Gtk 3.22
         try:
-            sw_popup.set_max_content_height(200)
-            sw_popup.set_propagate_natural_height(True)
-            sw_popup_other.set_max_content_height(200)
-            sw_popup_other.set_propagate_natural_height(True)
+            sw_popover.set_max_content_height(200)
+            sw_popover.set_propagate_natural_height(True)
+            sw_popover_other.set_max_content_height(200)
+            sw_popover_other.set_propagate_natural_height(True)
         except:
-            sw_popup.connect("draw", self.on_draw_scroll_search)
-            sw_popup_other.connect("draw", self.on_draw_scroll_search)
+            sw_popover.connect("draw", self.on_draw_scroll_search)
+            sw_popover_other.connect("draw", self.on_draw_scroll_search)
 
         all_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         found_box = Gtk.ListBox()
@@ -299,8 +301,8 @@ class SearchWidget(Gtk.SearchEntry):
         found_lable = Gtk.Label(_('<b>Persons from current graph:</b>'))
         found_lable.set_use_markup(True)
         all_box.pack_start(found_lable, False, True, 2)
-        sw_popup.add(found_box)
-        all_box.add(sw_popup)
+        sw_popover.add(found_box)
+        all_box.add(sw_popover)
 
         self.search_all_db_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         self.search_all_db_box.set_margin_top(10)
@@ -314,20 +316,20 @@ class SearchWidget(Gtk.SearchEntry):
         vbox.add(self.progress_label)
         other_lable.set_use_markup(True)
         self.search_all_db_box.add(vbox)
-        sw_popup_other.add(other_box)
-        self.search_all_db_box.pack_start(sw_popup_other, False, True, 2)
+        sw_popover_other.add(other_box)
+        self.search_all_db_box.pack_start(sw_popover_other, False, True, 2)
         all_box.add(self.search_all_db_box)
 
         # set all widgets visible
         all_box.show_all()
 
-        found_popup.add(all_box)
+        found_popover.add(all_box)
 
         # connect signals
         found_box.connect("row-activated", self.activate_item)
         other_box.connect("row-activated", self.activate_item)
 
-        return found_popup, found_box, other_box
+        return found_popover, found_box, other_box
 
     def on_draw_scroll_search(self, widget, cr):
         """
@@ -341,11 +343,11 @@ class SearchWidget(Gtk.SearchEntry):
             else:
                 widget.set_size_request(-1, natural_height)
 
-    def show_search_popup(self):
+    def show_search_popover(self):
         """
-        Show search popup with results.
+        Show search popover with search results.
         """
-        # remove all old items from popup
+        # remove all old items from popover lists
         self.found_box.foreach(self.found_box.remove)
         self.other_box.foreach(self.other_box.remove)
 
@@ -356,14 +358,14 @@ class SearchWidget(Gtk.SearchEntry):
         if not self.found_list:
             self.add_no_result(self.found_box)
 
-        self.found_popup.popup()
+        self.found_popover.popup()
 
-    def hide_search_popup(self, *args):
+    def hide_search_popover(self, *args):
         """
-        Hide search popup window.
+        Hide search popover window.
         """
         self.stop_search()
-        self.found_popup.popdown()
+        self.found_popover.popdown()
 
 
 class ListBoxRow(Gtk.ListBoxRow):
