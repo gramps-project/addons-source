@@ -752,8 +752,12 @@ class GraphWidget(object):
         """
         Handle 'Esc' key on bookmarks button to hide popup.
         """
+        key = event.keyval
         if event.keyval == Gdk.KEY_Escape:
             self.hide_bkmark_popup()
+        elif key == Gdk.KEY_Down:
+            self.bkmark_popover.grab_focus()
+            return True
 
     def activate_popover(self, widget, person_handle):
         """
