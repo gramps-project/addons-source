@@ -88,11 +88,15 @@ class SearchWidget(Gtk.SearchEntry):
 
     def on_key_press_event(self, widget, event):
         """
-        Handle 'Esc' key.
+        Handle 'Esc' and 'Down' keys.
         """
-        if event.keyval == Gdk.KEY_Escape:
+        key = event.keyval
+        if key == Gdk.KEY_Escape:
             self.set_text("")
             self.hide_search_popup()
+        elif key == Gdk.KEY_Down:
+            self.found_popup.grab_focus()
+            return True
 
     def do_activate(self):
         """
