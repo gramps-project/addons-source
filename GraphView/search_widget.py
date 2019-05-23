@@ -52,7 +52,8 @@ class SearchWidget(Gtk.SearchEntry):
 
         self.set_hexpand(True)
         self.set_tooltip_text(
-            _('Search people in the current visible graph and database.'))
+            _('Search people in the current visible graph and database.\n'
+              'Use <Ctrl+F> to make search entry active.'))
         self.set_placeholder_text(_("Search..."))
 
         self.dbstate = dbstate
