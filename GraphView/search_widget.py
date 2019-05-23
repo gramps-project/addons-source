@@ -19,11 +19,10 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
-from gi.repository import Gtk, Gdk, GLib
+from gi.repository import Gtk, Gdk, GLib, GObject
 from threading import Thread
 
 from gramps.gen.display.name import displayer
-from gramps.gen.utils.callback import Callback
 
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
@@ -33,13 +32,13 @@ except ValueError:
 _ = _trans.gettext
 
 
-class SearchWidget(Callback, Gtk.SearchEntry):
+class SearchWidget(Gtk.SearchEntry):
     """
     Search widget with popup results.
     """
 
-    __signals__ = {
-        'item-activated' : (Gtk.ListBoxRow, str, ),
+    __gsignals__ = {
+        'item-activated' : (GObject.SIGNAL_RUN_FIRST, None, (str, )),
         }
 
     def __init__(self, dbstate, get_person_image,
@@ -49,7 +48,6 @@ class SearchWidget(Callback, Gtk.SearchEntry):
         sort_func - function to apply sort
         """
         Gtk.SearchEntry.__init__(self)
-        Callback.__init__(self)
 
         self.set_hexpand(True)
         self.set_tooltip_text(
@@ -227,7 +225,7 @@ class SearchWidget(Callback, Gtk.SearchEntry):
         """
         Activate item in results.
         """
-        self.emit('item-activated', (row, person_handle, ))
+        self.emit('item-activated', person_handle)
 
     def stop_search(self):
         """
