@@ -686,6 +686,9 @@ class GraphWidget(object):
         # Gtk style context for scrollwindow to operate with theme colors
         self.sw_style_context = scrolled_win.get_style_context()
 
+        # used for popup menu, prevent destroy menu as local variable
+        self.menu = None
+
     def set_person_to_focus(self, handle):
         """
         Set person that will focus (once) after graph rebuilding.
@@ -944,7 +947,7 @@ class GraphWidget(object):
             return False
 
         if button == 3:
-            PopupMenu(self, kind='background').show_menu(event)
+            self.menu = PopupMenu(self, kind='background').show_menu(event)
             return True
 
         return False
@@ -1043,9 +1046,9 @@ class GraphWidget(object):
 
         elif button == 3 and node_class:                    # right mouse
             if node_class == 'node':
-                PopupMenu(self, 'person', handle).show_menu(event)
+                self.menu = PopupMenu(self, 'person', handle).show_menu(event)
             elif node_class == 'familynode':
-                PopupMenu(self, 'family', handle).show_menu(event)
+                self.menu = PopupMenu(self, 'family', handle).show_menu(event)
 
         elif button == 2:                                   # middle mouse
             # to enter in scroll mode (we should change "item" to root item)
@@ -2543,10 +2546,17 @@ class PopupMenu(Gtk.Menu):
         """
         Show popup menu.
         """
-        # new from gtk 3.22:
-        # self.popup_at_pointer(event)
-        self.popup(None, None, None, None,
-                   event.get_button()[1], event.time)
+        if (Gtk.MAJOR_VERSION >= 3) and (Gtk.MINOR_VERSION >= 22):
+            #new from gtk 3.22:
+            self.popup_at_pointer(event)
+        else:
+            if event:
+                self.popup(None, None, None, None,
+                           event.get_button()[1], event.time)
+            else:
+                self.popup(None, None, None, None,
+                           0, Gtk.get_current_event_time())
+                #self.popup(None, None, None, None, 0, 0)
 
     def background_menu(self):
         """
