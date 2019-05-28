@@ -32,29 +32,23 @@ except ValueError:
 _ = _trans.gettext
 
 
-class SearchWidget(Gtk.SearchEntry):
+class SearchWidget(GObject.GObject):
     """
-    Search widget to persons search.
-    Use Gtk.Popover to display results.
+    Search widget for persons search.
+    SearchEntry to input text.
+    Popover to display results.
     """
 
     __gsignals__ = {
-        'item-activated' : (GObject.SIGNAL_RUN_FIRST, None, (str, )),
+        'item-activated': (GObject.SIGNAL_RUN_FIRST, None, (str, )),
         }
 
     def __init__(self, dbstate, get_person_image,
                  items_list=None, sort_func=None):
         """
-        get_person_image - function to get person image
-        sort_func - function to apply sort
+        Initialise the SearchWidget class.
         """
-        Gtk.SearchEntry.__init__(self)
-
-        self.set_hexpand(True)
-        self.set_tooltip_text(
-            _('Search people in the current visible graph and database.\n'
-              'Use <Ctrl+F> to make search entry active.'))
-        self.set_placeholder_text(_("Search..."))
+        GObject.GObject.__init__(self)
 
         self.dbstate = dbstate
 
@@ -62,25 +56,31 @@ class SearchWidget(Gtk.SearchEntry):
         self.items_list = items_list
         self.found_list = []
 
-        self.sort_func = sort_func
-        self.get_person_image = get_person_image
+        self.search_entry = SearchEntry()
+        self.popover_widget = Popover(dbstate, get_person_image, sort_func)
+        self.popover_widget.set_relative_to(self.search_entry)
 
-        self.found_popover, self.found_box, \
-            self.other_box = self.build_popover()
-
-        self.connect("key-press-event", self.on_key_press_event)
+        # connect signals
+        self.popover_widget.connect('item-activated', self.activate_item)
+        self.search_entry.connect('start-search', self.start_search)
+        self.search_entry.connect('empty-search', self.hide_search_popover)
+        self.search_entry.connect('focus-to-result', self.focus_results)
 
         self.search_all_db_option = True
-        self.show_images_option = False
+        # set default options
+        self.set_options(True, True)
 
-    def set_options(self, search_all_db=None, show_images=None):
+        # thread for search
+        self.thread = None
+
+        # search status
+        self.in_search = False
+
+    def get_widget(self):
         """
-        Set options for search.
+        Returns search entry widget.
         """
-        if search_all_db is not None:
-            self.search_all_db_option = search_all_db
-        if show_images is not None:
-            self.show_images_option = show_images
+        return self.search_entry
 
     def set_items_list(self, items_list):
         """
@@ -89,62 +89,68 @@ class SearchWidget(Gtk.SearchEntry):
         """
         self.items_list = items_list
 
-    def on_key_press_event(self, widget, event):
+    def set_options(self, search_all_db=None, show_images=None):
         """
-        Handle 'Esc' and 'Down' keys.
+        Set options for search.
         """
-        key = event.keyval
-        if key == Gdk.KEY_Escape:
-            self.set_text("")
-            self.hide_search_popover()
-        elif key == Gdk.KEY_Down:
-            self.found_popover.grab_focus()
-            return True
+        if search_all_db is not None:
+            self.search_all_db_option = search_all_db
+        if show_images is not None:
+            self.popover_widget.show_images_option = show_images
 
-    def do_activate(self):
+    def activate_item(self, widget, person_handle):
         """
-        Handle 'Enter' key.
+        Activate item in results.
         """
-        self.do_search_changed()
+        if person_handle is not None:
+            self.emit('item-activated', person_handle)
 
-    def do_search_changed(self):
+    def start_search(self, widget, search_words):
         """
-        Apply search.
-        Called when search string is changed.
+        Start search thread.
         """
         self.stop_search()
-
-        search_str = self.get_text().lower()
-        search_words = search_str.split()
+        self.popover_widget.clear_items()
+        self.popover_widget.popup()
 
         self.found_list.clear()
+        self.thread = Thread(target=self.make_search,
+                             args=[search_words])
+        self.thread.start()
+
+    def make_search(self, search_words):
+        """
+        Search persons in the current graph and after in the db.
+        Use Thread to make UI responsiveness.
+        """
+        self.in_search = True
+
+        add_delay = 1000
+
+        # search persons in the graph
         for item in self.items_list:
             if self.check_person(item.title, search_words):
                 self.found_list.append(item.title)
+                added = self.add_to_result(item.title, 'graph')
+                # wait until person is added to list
+                while not added:
+                    if not self.in_search:
+                        return
+                    GLib.usleep(add_delay)
+                    added = self.add_to_result(person_handle, 'graph')
+                GLib.usleep(add_delay)
+        if not self.found_list:
+            GLib.idle_add(self.popover_widget.add_no_result, 'graph')
 
-        if search_words:
-            self.show_search_popover()
-            if self.search_all_db_option:
-                self.search_all_db_box.show_all()
-                self.thread = Thread(target=self.search_all_db,
-                                     args=[search_words])
-                self.thread.start()
-            else:
-                self.search_all_db_box.hide()
-        else:
-            self.hide_search_popover()
+        # search other persons from db
+        # ============================
+        if not self.search_all_db_option:
+            self.in_search = False
+            return
+        GLib.idle_add(self.popover_widget.show_all_db,
+                      self.search_all_db_option)
 
-    def search_all_db(self, search_words):
-        """
-        Search persons in all database.
-        Use Thread to make UI responsiveness.
-        """
-        context = GLib.main_context_default()
-        self.in_search = True
-
-        events = []
-        event_id = GLib.idle_add(self.progress_label.show)
-        events.append(context.find_source_by_id(event_id))
+        GLib.idle_add(self.popover_widget.progress_label.show)
 
         # get all person handles
         all_person_handles = self.dbstate.db.get_person_handles()
@@ -154,88 +160,48 @@ class SearchWidget(Gtk.SearchEntry):
             for person_handle in all_person_handles:
                 if person_handle not in self.found_list:
                     if self.check_person(person_handle, search_words):
-                        event_id = GLib.idle_add(self.add_to_found,
-                                                 person_handle, self.other_box)
-                        event = context.find_source_by_id(event_id)
+                        added = self.add_to_result(person_handle, 'other')
                         # wait until person is added to list
-                        while not event.is_destroyed():
+                        while not added:
                             if not self.in_search:
-                                break
-                            GLib.usleep(50)
+                                return
+                            GLib.usleep(add_delay)
+                            added = self.add_to_result(person_handle, 'other')
                         found = True
                 if not self.in_search:
-                    break
-                GLib.usleep(10)
+                    return
+                GLib.usleep(add_delay)
 
         if not found:
-            event_id = GLib.idle_add(self.add_no_result, self.other_box)
-            events.append(context.find_source_by_id(event_id))
+            GLib.idle_add(self.popover_widget.add_no_result, 'other')
 
-        event_id = GLib.idle_add(self.progress_label.hide)
-        events.append(context.find_source_by_id(event_id))
-        # wait until events finished
-        for event in events:
-            time_out = 0
-            while not event.is_destroyed():
-                if time_out > 10000:
-                    GLib.source_remove(event.get_id())
-                GLib.usleep(50)
-                time_out += 50
+        GLib.idle_add(self.popover_widget.progress_label.hide)
+
         self.in_search = False
 
-    def add_no_result(self, list_box):
+    def get_person_from_handle(self, person_handle):
         """
-        Add only one row to specified ListBox with no results lable.
-        """
-        # remove all old items from popover list_box
-        list_box.foreach(list_box.remove)
-
-        row = ListBoxRow()
-        not_found_label = Gtk.Label(_('No persons found...'))
-        row.add(not_found_label)
-        list_box.add(row)
-        row.show_all()
-
-    def add_to_found(self, person_handle, list_box):
-        """
-        Add found item(person) to specified ListBox.
+        Get person from handle.
         """
         try:
-            # try used if we have any problem to get person from Thread
+            # try used for not person handles
+            # and other problems to get person
             person = self.dbstate.db.get_person_from_handle(person_handle)
+            return person
         except:
-            # we should return "True" to repeat call (see GLib.idle_add)
+            return False
+
+    def add_to_result(self, person_handle, kind):
+        """
+        Add found person to results.
+        "GLib.idle_add" used for using method in thread.
+        """
+        person = self.get_person_from_handle(person_handle)
+        if person:
+            GLib.idle_add(self.popover_widget.add_to_found, person, kind)
             return True
-        name = displayer.display_name(person.get_primary_name())
-
-        row = ListBoxRow(description=person_handle)
-        hbox = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
-        row.add(hbox)
-
-        # add person ID
-        label = Gtk.Label("[%s]" % person.gramps_id, xalign=0)
-        hbox.pack_start(label, False, False, 2)
-        # add person name
-        label = Gtk.Label(name, xalign=0)
-        hbox.pack_start(label, True, True, 2)
-        # add person image if needed
-        if self.show_images_option:
-            person_image = self.get_person_image(person, 32, 32, kind='image')
-            if person_image:
-                hbox.pack_start(person_image, False, True, 2)
-
-        list_box.prepend(row)
-        row.show_all()
-
-    def activate_item(self, list_box, row):
-        """
-        Activate item in results.
-        """
-        if row is None:
-            return
-        person_handle = row.description
-        if person_handle is not None:
-            self.emit('item-activated', person_handle)
+        else:
+            return False
 
     def stop_search(self):
         """
@@ -252,12 +218,7 @@ class SearchWidget(Gtk.SearchEntry):
         """
         Check if person name and id contains all words of the search.
         """
-        try:
-            # try used for not person handles
-            person = self.dbstate.db.get_person_from_handle(person_handle)
-        except:
-            return False
-
+        person = self.get_person_from_handle(person_handle)
         if person:
             name = displayer.display_name(person.get_primary_name()).lower()
             search_str = name + person.gramps_id.lower()
@@ -268,13 +229,103 @@ class SearchWidget(Gtk.SearchEntry):
             return True
         return False
 
+    def focus_results(self, widget):
+        """
+        Focus to result popover.
+        """
+        self.popover_widget.grab_focus()
+
+    def hide_search_popover(self, *args):
+        """
+        Hide search results.
+        """
+        self.stop_search()
+        self.popover_widget.popdown()
+
+
+class SearchEntry(Gtk.SearchEntry):
+    """
+    Search entry widget for persons search.
+    """
+
+    __gsignals__ = {
+        'start-search': (GObject.SIGNAL_RUN_FIRST, None, (object, )),
+        'empty-search': (GObject.SIGNAL_RUN_FIRST, None, ()),
+        'focus-to-result': (GObject.SIGNAL_RUN_FIRST, None, ()),
+        }
+
+    def __init__(self):
+        Gtk.SearchEntry.__init__(self)
+
+        self.set_hexpand(True)
+        self.set_tooltip_text(
+            _('Search people in the current visible graph and database.\n'
+              'Use <Ctrl+F> to make search entry active.'))
+        self.set_placeholder_text(_("Search..."))
+
+        self.connect("key-press-event", self.on_key_press_event)
+
+    def on_key_press_event(self, widget, event):
+        """
+        Handle 'Esc' and 'Down' keys.
+        """
+        key = event.keyval
+        if key == Gdk.KEY_Escape:
+            self.set_text("")
+            self.emit('empty-search')
+        elif key == Gdk.KEY_Down:
+            self.emit('focus-to-result')
+            return True
+
+    def do_activate(self):
+        """
+        Handle 'Enter' key.
+        """
+        self.do_search_changed()
+
+    def do_search_changed(self):
+        """
+        Apply search.
+        Called when search string is changed.
+        """
+        search_str = self.get_text().lower()
+        search_words = search_str.split()
+
+        if search_words:
+            self.emit('start-search', search_words)
+        else:
+            self.emit('empty-search')
+
+
+class Popover(Gtk.Popover):
+    """
+    Widget to display search results.
+    It separated to 2 parts: graph and db search results.
+    """
+
+    __gsignals__ = {
+        'item-activated': (GObject.SIGNAL_RUN_FIRST, None, (str, )),
+        }
+
+    def __init__(self, dbstate, get_person_image, sort_func):
+        Gtk.Popover.__init__(self)
+
+        self.dbstate = dbstate
+        self.get_person_image = get_person_image
+        self.sort_func = sort_func
+        self.show_images_option = False
+
+        self.progress_label = Gtk.Label(_('Search in progress...'))
+        self.search_all_db_box = None
+
+        self.found_box, self.other_box = self.build_popover()
+
     def build_popover(self):
         """
         Builds popover widget.
         """
-        found_popover = Gtk.Popover.new(self)
-        found_popover.set_position(Gtk.PositionType.BOTTOM)
-        found_popover.set_modal(False)
+        self.set_position(Gtk.PositionType.BOTTOM)
+        self.set_modal(False)
 
         # scroll window for found in the graph
         sw_popover = Gtk.ScrolledWindow()
@@ -284,16 +335,6 @@ class SearchWidget(Gtk.SearchEntry):
         sw_popover_other = Gtk.ScrolledWindow()
         sw_popover_other.set_policy(Gtk.PolicyType.NEVER,
                                     Gtk.PolicyType.AUTOMATIC)
-        # set max size of scrolled windows
-        # use try because methods available since Gtk 3.22
-        try:
-            sw_popover.set_max_content_height(200)
-            sw_popover.set_propagate_natural_height(True)
-            sw_popover_other.set_max_content_height(200)
-            sw_popover_other.set_propagate_natural_height(True)
-        except:
-            sw_popover.connect("draw", self.on_draw_scroll_search)
-            sw_popover_other.connect("draw", self.on_draw_scroll_search)
 
         all_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         found_box = Gtk.ListBox()
@@ -313,7 +354,6 @@ class SearchWidget(Gtk.SearchEntry):
         vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         other_lable = Gtk.Label(_('<b>Other persons from database:</b>'))
         vbox.add(other_lable)
-        self.progress_label = Gtk.Label(_('Search in progress...'))
         vbox.add(self.progress_label)
         other_lable.set_use_markup(True)
         self.search_all_db_box.add(vbox)
@@ -321,52 +361,115 @@ class SearchWidget(Gtk.SearchEntry):
         self.search_all_db_box.pack_start(sw_popover_other, False, True, 2)
         all_box.add(self.search_all_db_box)
 
+        # set max size of scrolled windows
+        # use try because methods available since Gtk 3.22
+        try:
+            sw_popover.set_max_content_height(200)
+            sw_popover.set_propagate_natural_height(True)
+            sw_popover_other.set_max_content_height(200)
+            sw_popover_other.set_propagate_natural_height(True)
+        except:
+            sw_popover.connect("draw", self.on_draw_scroll_search, found_box)
+            sw_popover_other.connect("draw", self.on_draw_scroll_search,
+                                     other_box)
+
         # set all widgets visible
         all_box.show_all()
 
-        found_popover.add(all_box)
+        self.add(all_box)
 
         # connect signals
         found_box.connect("row-activated", self.activate_item)
         other_box.connect("row-activated", self.activate_item)
 
-        return found_popover, found_box, other_box
+        return found_box, other_box
 
-    def on_draw_scroll_search(self, widget, cr):
+    def show_all_db(self, state):
+        """
+        Show/hide results for all db search.
+        """
+        if state:
+            self.search_all_db_box.show_all()
+        else:
+            self.search_all_db_box.hide()
+
+    def activate_item(self, list_box, row):
+        """
+        Emit signal on item activation.
+        """
+        if row is None:
+            return
+        person_handle = row.description
+        if person_handle is not None:
+            self.emit('item-activated', person_handle)
+        # hide popover on activation
+        self.popdown()
+
+    def on_draw_scroll_search(self, widget, cr, list_box):
         """
         Workaround to set max height of scrolled windows.
+        widget - Gtk.ScrolledWindow
+        list_box - Gtk.ListBox
         """
         max_height = 200
-        for box in (self.found_box, self.other_box):
-            minimum_height, natural_height = box.get_preferred_height()
-            if natural_height > max_height:
-                widget.set_size_request(-1, max_height)
-            else:
-                widget.set_size_request(-1, natural_height)
+        minimum_height, natural_height = list_box.get_preferred_height()
+        if natural_height > max_height:
+            widget.set_size_request(-1, max_height)
+        else:
+            widget.set_size_request(-1, natural_height)
 
-    def show_search_popover(self):
+    def add_to_found(self, person, kind):
         """
-        Show search popover with search results.
+        Add found item(person) to specified ListBox.
         """
-        # remove all old items from popover lists
+        if kind == 'graph':
+            list_box = self.found_box
+        else:
+            list_box = self.other_box
+
+        name = displayer.display_name(person.get_primary_name())
+
+        row = ListBoxRow(description=person.handle)
+        hbox = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
+        row.add(hbox)
+
+        # add person ID
+        label = Gtk.Label("[%s]" % person.gramps_id, xalign=0)
+        hbox.pack_start(label, False, False, 2)
+        # add person name
+        label = Gtk.Label(name, xalign=0)
+        hbox.pack_start(label, True, True, 2)
+        # add person image if needed
+        if self.show_images_option:
+            person_image = self.get_person_image(person, 32, 32, kind='image')
+            if person_image:
+                hbox.pack_start(person_image, False, True, 2)
+
+        list_box.prepend(row)
+        row.show_all()
+
+    def add_no_result(self, kind):
+        """
+        Add only one row to specified ListBox with no results lable.
+        """
+        if kind == 'graph':
+            list_box = self.found_box
+        else:
+            list_box = self.other_box
+        # remove all old items from popover list_box
+        list_box.foreach(list_box.remove)
+
+        row = ListBoxRow()
+        row.add(Gtk.Label(_('No persons found...')))
+        list_box.add(row)
+        row.show_all()
+
+    def clear_items(self):
+        """
+        Remove all old items from popover lists.
+        """
         self.found_box.foreach(self.found_box.remove)
         self.other_box.foreach(self.other_box.remove)
-
-        # add rows for all found items(persons)
-        for person_handle in self.found_list:
-            self.add_to_found(person_handle, self.found_box)
-
-        if not self.found_list:
-            self.add_no_result(self.found_box)
-
-        self.found_popover.popup()
-
-    def hide_search_popover(self, *args):
-        """
-        Hide search popover window.
-        """
-        self.stop_search()
-        self.found_popover.popdown()
 
 
 class ListBoxRow(Gtk.ListBoxRow):

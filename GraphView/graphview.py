@@ -393,14 +393,14 @@ class GraphView(NavigationView):
         Called when the configuration menu changes the search setting.
         """
         value = entry == 'True'
-        self.graph_widget.search_box.set_options(search_all_db=value)
+        self.graph_widget.search_widget.set_options(search_all_db=value)
 
     def cb_update_search_show_images(self, client, cnxn_id, entry, data):
         """
         Called when the configuration menu changes the search setting.
         """
         value = entry == 'True'
-        self.graph_widget.search_box.set_options(show_images=value)
+        self.graph_widget.search_widget.set_options(show_images=value)
         self.graph_widget.show_images_option = value
 
     def config_connect(self):
@@ -692,21 +692,22 @@ class GraphWidget(object):
             'interface.graphview-search-show-images')
 
         # add search widget
-        self.search_box = SearchWidget(self.dbstate,
-                                       self.get_person_image,
-                                       self.sort_func_listbox)
-        hbox.pack_start(self.search_box, True, True, 1)
-        self.search_box.set_options(
+        self.search_widget = SearchWidget(self.dbstate,
+                                          self.get_person_image,
+                                          sort_func=self.sort_func_listbox)
+        search_box = self.search_widget.get_widget()
+        hbox.pack_start(search_box, True, True, 1)
+        self.search_widget.set_options(
             search_all_db=self.view._config.get(
                 'interface.graphview-search-all-db'),
             show_images=self.show_images_option)
-        self.search_box.connect('item-activated', self.activate_popover)
+        self.search_widget.connect('item-activated', self.activate_popover)
         # add accelerator to focus search entry
         accel_group = Gtk.AccelGroup()
         self.uistate.window.add_accel_group(accel_group)
-        self.search_box.add_accelerator('grab-focus', accel_group, Gdk.KEY_f,
-                                        Gdk.ModifierType.CONTROL_MASK,
-                                        Gtk.AccelFlags.VISIBLE)
+        search_box.add_accelerator('grab-focus', accel_group, Gdk.KEY_f,
+                                   Gdk.ModifierType.CONTROL_MASK,
+                                   Gtk.AccelFlags.VISIBLE)
 
         # add spinners for quick generations change
         box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
@@ -737,7 +738,7 @@ class GraphWidget(object):
         self.scale = 1
 
         self.animation = CanvasAnimation(self.view, self.canvas, scrolled_win)
-        self.search_box.set_items_list(self.animation.items_list)
+        self.search_widget.set_items_list(self.animation.items_list)
 
         # person that will focus (once) after graph rebuilding
         self.person_to_focus = None
@@ -771,7 +772,7 @@ class GraphWidget(object):
         in search or bookmarks popup(popover) is activated.
         """
         self.hide_bkmark_popover()
-        self.search_box.hide_search_popover()
+        self.search_widget.hide_search_popover()
         # move view to person with animation
         self.move_to_person(None, person_handle, True)
 
@@ -1106,7 +1107,7 @@ class GraphWidget(object):
         self.clear()
         self.active_person_handle = active_person
 
-        self.search_box.hide_search_popover()
+        self.search_widget.hide_search_popover()
         self.hide_bkmark_popover()
 
         # generate DOT and SVG data
@@ -1231,7 +1232,7 @@ class GraphWidget(object):
         Enter in scroll mode when left or middle mouse button pressed
         on background.
         """
-        self.search_box.hide_search_popover()
+        self.search_widget.hide_search_popover()
         self.hide_bkmark_popover()
 
         if not (event.type == getattr(Gdk.EventType, "BUTTON_PRESS") and
@@ -1300,7 +1301,7 @@ class GraphWidget(object):
         Perform actions when a node is clicked.
         If middle mouse was clicked then try to set scroll mode.
         """
-        self.search_box.hide_search_popover()
+        self.search_widget.hide_search_popover()
         self.hide_bkmark_popover()
 
         handle = item.title
