@@ -57,7 +57,7 @@ class SearchWidget(GObject.GObject):
         self.found_list = []
 
         self.search_entry = SearchEntry()
-        self.popover_widget = Popover(dbstate, get_person_image, sort_func)
+        self.popover_widget = Popover(get_person_image, sort_func)
         self.popover_widget.set_relative_to(self.search_entry)
 
         # connect signals
@@ -307,10 +307,9 @@ class Popover(Gtk.Popover):
         'item-activated': (GObject.SIGNAL_RUN_FIRST, None, (str, )),
         }
 
-    def __init__(self, dbstate, get_person_image, sort_func):
+    def __init__(self, get_person_image, sort_func):
         Gtk.Popover.__init__(self)
 
-        self.dbstate = dbstate
         self.get_person_image = get_person_image
         self.sort_func = sort_func
         self.show_images_option = False
