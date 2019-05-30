@@ -109,6 +109,15 @@ WIKI_PAGE = 'https://gramps-project.org/wiki/index.php?title=Graph_View'
 
 #-------------------------------------------------------------------------
 #
+# Search widget module
+#
+#-------------------------------------------------------------------------
+import sys
+sys.path.append(os.path.abspath(os.path.dirname(__file__)))
+from search_widget import SearchWidget
+
+#-------------------------------------------------------------------------
+#
 # GraphView
 #
 #-------------------------------------------------------------------------
@@ -703,6 +712,10 @@ class GraphWidget(object):
         self.goto_other_btn.connect("changed", self.goto_other)
         hbox.pack_start(self.goto_other_btn, False, False, 1)
 
+        # add search widget
+        self.search_box = SearchWidget(self.activate_search, self.dbstate)
+        hbox.pack_start(self.search_box, True, True, 1)
+
         # add spinners for quick generations change
         box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
         box.pack_start(Gtk.Label(label='↑'), False, False, 1)
@@ -725,12 +738,14 @@ class GraphWidget(object):
         hbox.pack_start(box, False, False, 1)
 
         self.vbox.pack_start(scrolled_win, True, True, 0)
+
         # if we have graph lager than graphviz paper size
         # this coef is needed
         self.transform_scale = 1
         self.scale = 1
 
         self.animation = CanvasAnimation(self.view, self.canvas, scrolled_win)
+        self.search_box.set_items_list(self.animation.items_list)
 
         # person that will focus (once) after graph rebuilding
         self.person_to_focus = None
@@ -759,6 +774,13 @@ class GraphWidget(object):
         Set person that will focus (once) after graph rebuilding.
         """
         self.person_to_focus = handle
+
+    def activate_search(self, widget, person_handle):
+        """
+        Called when some item(person) in search popup is activated.
+        """
+        # move view to person with animation
+        self.move_to_person(None, person_handle, True)
 
     def set_ancestors_generations(self, widget):
         """
@@ -869,6 +891,8 @@ class GraphWidget(object):
 
         self.clear()
         self.active_person_handle = active_person
+
+        self.search_box.hide_search_popup()
 
         # generate DOT and SVG data
         dot = DotSvgGenerator(self.dbstate, self.view)
@@ -997,6 +1021,8 @@ class GraphWidget(object):
         Enter in scroll mode when left or middle mouse button pressed
         on background.
         """
+        self.search_box.hide_search_popup()
+
         if not (event.type == getattr(Gdk.EventType, "BUTTON_PRESS") and
                 item == self.canvas.get_root_item()):
             return False
@@ -1064,6 +1090,8 @@ class GraphWidget(object):
         Perform actions when a node is clicked.
         If middle mouse was clicked then try to set scroll mode.
         """
+        self.search_box.hide_search_popup()
+
         handle = item.title
         node_class = item.description
         button = event.get_button()[1]
@@ -2398,7 +2426,8 @@ class CanvasAnimation(object):
         """
         Update list of items for current graph.
         """
-        self.items_list = items_list
+        self.items_list.clear()
+        self.items_list.extend(items_list)
 
         self.in_shake.clear()
         # clear counters and shakes - items not exists anymore
