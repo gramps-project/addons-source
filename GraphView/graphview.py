@@ -2162,7 +2162,7 @@ class DotSvgGenerator(object):
         Initialise the DotSvgGenerator class.
         """
         self.dbstate = dbstate
-        self.uistate = uistate
+        self.uistate = view.uistate
         self.database = dbstate.db
         self.view = view
 
