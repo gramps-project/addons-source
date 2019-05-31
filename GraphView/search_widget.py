@@ -56,8 +56,12 @@ class SearchWidget(GObject.GObject):
         self.items_list = items_list
         self.found_list = []
 
+        self.get_person_image = get_person_image
+
         self.search_entry = SearchEntry()
-        self.popover_widget = Popover(get_person_image, sort_func)
+        self.popover_widget = Popover(_('Persons from current graph'),
+                                      _('Other persons from database'),
+                                      sort_func)
         self.popover_widget.set_relative_to(self.search_entry)
 
         # connect signals
@@ -67,6 +71,7 @@ class SearchWidget(GObject.GObject):
         self.search_entry.connect('focus-to-result', self.focus_results)
 
         self.search_all_db_option = True
+        self.show_images_option = True
         # set default options
         self.set_options(True, True)
 
@@ -96,7 +101,7 @@ class SearchWidget(GObject.GObject):
         if search_all_db is not None:
             self.search_all_db_option = search_all_db
         if show_images is not None:
-            self.popover_widget.show_images_option = show_images
+            self.show_images_option = show_images
 
     def activate_item(self, widget, person_handle):
         """
@@ -127,30 +132,34 @@ class SearchWidget(GObject.GObject):
 
         add_delay = 1000
 
+        GLib.idle_add(self.popover_widget.main_panel.set_progress, True)
         # search persons in the graph
         for item in self.items_list:
             if self.check_person(item.title, search_words):
                 self.found_list.append(item.title)
-                added = self.add_to_result(item.title, 'graph')
+                added = self.add_to_result(
+                    item.title, self.popover_widget.main_panel)
                 # wait until person is added to list
                 while not added:
                     if not self.in_search:
                         return
                     GLib.usleep(add_delay)
-                    added = self.add_to_result(person_handle, 'graph')
+                    added = self.add_to_result(
+                        item.title, self.popover_widget.main_panel)
                 GLib.usleep(add_delay)
         if not self.found_list:
-            GLib.idle_add(self.popover_widget.add_no_result, 'graph')
+            GLib.idle_add(self.popover_widget.main_panel.add_no_result,
+                          _('No persons found...'))
+        GLib.idle_add(self.popover_widget.main_panel.set_progress, False)
 
         # search other persons from db
         # ============================
         if not self.search_all_db_option:
             self.in_search = False
             return
-        GLib.idle_add(self.popover_widget.show_all_db,
+        GLib.idle_add(self.popover_widget.show_other_panel,
                       self.search_all_db_option)
-
-        GLib.idle_add(self.popover_widget.progress_label.show)
+        GLib.idle_add(self.popover_widget.other_panel.set_progress, True)
 
         # get all person handles
         all_person_handles = self.dbstate.db.get_person_handles()
@@ -158,24 +167,28 @@ class SearchWidget(GObject.GObject):
         found = False
         if all_person_handles:
             for person_handle in all_person_handles:
+                # excluding found persons
                 if person_handle not in self.found_list:
                     if self.check_person(person_handle, search_words):
-                        added = self.add_to_result(person_handle, 'other')
+                        added = self.add_to_result(
+                            person_handle, self.popover_widget.other_panel)
                         # wait until person is added to list
                         while not added:
                             if not self.in_search:
                                 return
                             GLib.usleep(add_delay)
-                            added = self.add_to_result(person_handle, 'other')
+                            added = self.add_to_result(
+                                person_handle, self.popover_widget.other_panel)
                         found = True
                 if not self.in_search:
                     return
                 GLib.usleep(add_delay)
 
         if not found:
-            GLib.idle_add(self.popover_widget.add_no_result, 'other')
+            GLib.idle_add(self.popover_widget.other_panel.add_no_result,
+                          _('No persons found...'))
 
-        GLib.idle_add(self.popover_widget.progress_label.hide)
+        GLib.idle_add(self.popover_widget.other_panel.set_progress, False)
 
         self.in_search = False
 
@@ -191,14 +204,33 @@ class SearchWidget(GObject.GObject):
         except:
             return False
 
-    def add_to_result(self, person_handle, kind):
+    def add_to_result(self, person_handle, panel):
         """
         Add found person to results.
         "GLib.idle_add" used for using method in thread.
         """
         person = self.get_person_from_handle(person_handle)
         if person:
-            GLib.idle_add(self.popover_widget.add_to_found, person, kind)
+            name = displayer.display_name(person.get_primary_name())
+
+            row = ListBoxRow(description=person.handle)
+            hbox = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
+            row.add(hbox)
+
+            # add person ID
+            label = Gtk.Label("[%s]" % person.gramps_id, xalign=0)
+            hbox.pack_start(label, False, False, 2)
+            # add person name
+            label = Gtk.Label(name, xalign=0)
+            hbox.pack_start(label, True, True, 2)
+            # add person image if needed
+            if self.show_images_option:
+                person_image = self.get_person_image(person, 32, 32,
+                                                     kind='image')
+                if person_image:
+                    hbox.pack_start(person_image, False, True, 2)
+
+            GLib.idle_add(panel.add_to_panel, ['row', row])
             return True
         else:
             return False
@@ -299,98 +331,44 @@ class SearchEntry(Gtk.SearchEntry):
 
 class Popover(Gtk.Popover):
     """
-    Widget to display search results.
-    It separated to 2 parts: graph and db search results.
+    Widget to display lists results.
+    It contain 2 panels: main and other.
     """
 
     __gsignals__ = {
         'item-activated': (GObject.SIGNAL_RUN_FIRST, None, (str, )),
         }
 
-    def __init__(self, get_person_image, sort_func):
+    def __init__(self, main_label, other_label, sort_func=None):
         Gtk.Popover.__init__(self)
-
-        self.get_person_image = get_person_image
-        self.sort_func = sort_func
-        self.show_images_option = False
-
-        self.progress_label = Gtk.Label(_('Search in progress...'))
-        self.search_all_db_box = None
-
-        self.found_box, self.other_box = self.build_popover()
-
-    def build_popover(self):
-        """
-        Builds popover widget.
-        """
         self.set_position(Gtk.PositionType.BOTTOM)
         self.set_modal(False)
 
-        # scroll window for found in the graph
-        sw_popover = Gtk.ScrolledWindow()
-        sw_popover.set_policy(Gtk.PolicyType.NEVER,
-                              Gtk.PolicyType.AUTOMATIC)
-        # scroll window for found in the database
-        sw_popover_other = Gtk.ScrolledWindow()
-        sw_popover_other.set_policy(Gtk.PolicyType.NEVER,
-                                    Gtk.PolicyType.AUTOMATIC)
+        # build panels
+        self.main_panel = Panel(main_label, sort_func)
+        self.other_panel = Panel(other_label, sort_func)
+        self.other_panel.set_margin_top(10)
+
+        # connect signals
+        self.main_panel.list_box.connect("row-activated", self.activate_item)
+        self.other_panel.list_box.connect("row-activated", self.activate_item)
 
         all_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
-        found_box = Gtk.ListBox()
-        found_box.set_activate_on_single_click(True)
-        found_box.set_sort_func(self.sort_func)
-        found_lable = Gtk.Label(_('<b>Persons from current graph:</b>'))
-        found_lable.set_use_markup(True)
-        all_box.pack_start(found_lable, False, True, 2)
-        sw_popover.add(found_box)
-        all_box.add(sw_popover)
-
-        self.search_all_db_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
-        self.search_all_db_box.set_margin_top(10)
-        other_box = Gtk.ListBox()
-        other_box.set_activate_on_single_click(True)
-        other_box.set_sort_func(self.sort_func)
-        vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
-        other_lable = Gtk.Label(_('<b>Other persons from database:</b>'))
-        vbox.add(other_lable)
-        vbox.add(self.progress_label)
-        other_lable.set_use_markup(True)
-        self.search_all_db_box.add(vbox)
-        sw_popover_other.add(other_box)
-        self.search_all_db_box.pack_start(sw_popover_other, False, True, 2)
-        all_box.add(self.search_all_db_box)
-
-        # set max size of scrolled windows
-        # use try because methods available since Gtk 3.22
-        try:
-            sw_popover.set_max_content_height(200)
-            sw_popover.set_propagate_natural_height(True)
-            sw_popover_other.set_max_content_height(200)
-            sw_popover_other.set_propagate_natural_height(True)
-        except:
-            sw_popover.connect("draw", self.on_draw_scroll_search, found_box)
-            sw_popover_other.connect("draw", self.on_draw_scroll_search,
-                                     other_box)
-
+        all_box.add(self.main_panel)
+        all_box.add(self.other_panel)
         # set all widgets visible
         all_box.show_all()
 
         self.add(all_box)
 
-        # connect signals
-        found_box.connect("row-activated", self.activate_item)
-        other_box.connect("row-activated", self.activate_item)
-
-        return found_box, other_box
-
-    def show_all_db(self, state):
+    def show_other_panel(self, state):
         """
-        Show/hide results for all db search.
+        Show or hide other panel.
         """
         if state:
-            self.search_all_db_box.show_all()
+            self.other_panel.show_all()
         else:
-            self.search_all_db_box.hide()
+            self.other_panel.hide()
 
     def activate_item(self, list_box, row):
         """
@@ -398,83 +376,118 @@ class Popover(Gtk.Popover):
         """
         if row is None:
             return
-        person_handle = row.description
-        if person_handle is not None:
-            self.emit('item-activated', person_handle)
+        handle = row.description
+        if handle is not None:
+            self.emit('item-activated', handle)
         # hide popover on activation
         self.popdown()
-
-    def on_draw_scroll_search(self, widget, cr, list_box):
-        """
-        Workaround to set max height of scrolled windows.
-        widget - Gtk.ScrolledWindow
-        list_box - Gtk.ListBox
-        """
-        max_height = 200
-        minimum_height, natural_height = list_box.get_preferred_height()
-        if natural_height > max_height:
-            widget.set_size_request(-1, max_height)
-        else:
-            widget.set_size_request(-1, natural_height)
-
-    def add_to_found(self, person, kind):
-        """
-        Add found item(person) to specified ListBox.
-        """
-        if kind == 'graph':
-            list_box = self.found_box
-        else:
-            list_box = self.other_box
-
-        name = displayer.display_name(person.get_primary_name())
-
-        row = ListBoxRow(description=person.handle)
-        hbox = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
-        row.add(hbox)
-
-        # add person ID
-        label = Gtk.Label("[%s]" % person.gramps_id, xalign=0)
-        hbox.pack_start(label, False, False, 2)
-        # add person name
-        label = Gtk.Label(name, xalign=0)
-        hbox.pack_start(label, True, True, 2)
-        # add person image if needed
-        if self.show_images_option:
-            person_image = self.get_person_image(person, 32, 32, kind='image')
-            if person_image:
-                hbox.pack_start(person_image, False, True, 2)
-
-        list_box.prepend(row)
-        row.show_all()
-
-    def add_no_result(self, kind):
-        """
-        Add only one row to specified ListBox with no results lable.
-        """
-        if kind == 'graph':
-            list_box = self.found_box
-        else:
-            list_box = self.other_box
-        # remove all old items from popover list_box
-        list_box.foreach(list_box.remove)
-
-        row = ListBoxRow()
-        row.add(Gtk.Label(_('No persons found...')))
-        list_box.add(row)
-        row.show_all()
 
     def clear_items(self):
         """
         Remove all old items from popover lists.
         """
-        self.found_box.foreach(self.found_box.remove)
-        self.other_box.foreach(self.other_box.remove)
+        for panel in (self.main_panel, self.other_panel):
+            panel.clear_items()
 
 
 class ListBoxRow(Gtk.ListBoxRow):
     """
-    Extended Gtk.ListBoxRow whit description property.
+    Extended Gtk.ListBoxRow with description property.
     """
     def __init__(self, description=None):
         Gtk.ListBoxRow.__init__(self)
         self.description = description     # useed to store person handle
+
+
+class ScrolledListBox(Gtk.ScrolledWindow):
+    """
+    Extended Gtk.ScrolledWindow with max_height property.
+    And with Gtk.ListBox inside.
+    """
+    def __init__(self, max_height=-1):
+        Gtk.ScrolledWindow.__init__(self)
+
+        self.list_box = Gtk.ListBox()
+        self.add(self.list_box)
+
+        self.max_height = max_height
+
+        self.connect("draw", self.set_max_height)
+
+    def set_max_height(self, widget, cr):
+        """
+        Workaround to set max height of scrolled window.
+        """
+        minimum_height, natural_height = self.list_box.get_preferred_height()
+        if natural_height > self.max_height:
+            self.set_size_request(-1, self.max_height)
+        else:
+            self.set_size_request(-1, natural_height)
+
+
+class Panel(Gtk.Box):
+    """
+    Panel for popover.
+    Contain in vertical Gtk.Box: Label, Status, Scrolled list.
+    """
+    def __init__(self, label, sort_func):
+        Gtk.Box.__init__(self, orientation=Gtk.Orientation.VERTICAL)
+
+        slb = ScrolledListBox(max_height=200)
+        slb.set_policy(Gtk.PolicyType.NEVER,
+                       Gtk.PolicyType.AUTOMATIC)
+
+        self.list_box = slb.list_box
+        self.list_box.set_activate_on_single_click(True)
+        self.list_box.set_sort_func(sort_func)
+
+        vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        panel_lable = Gtk.Label(_('<b>%s:</b>') % label)
+        panel_lable.set_use_markup(True)
+        vbox.add(panel_lable)
+        self.progress_label = Gtk.Label(_('Search in progress...'))
+        vbox.add(self.progress_label)
+
+        self.add(vbox)
+        self.add(slb)
+
+    def set_progress(self, state):
+        """
+        Show or hide progress label.
+        """
+        if state:
+            self.progress_label.show()
+        else:
+            self.progress_label.hide()
+
+    def add_to_panel(self, data):
+        """
+        Add found item to specified panel (ListBox).
+        data - ['row', ListBoxRow] or ['widget', [Gtk.Widget, description]]
+        """
+        if data[0] == 'row':
+            row = data[1]
+        elif data[0] == 'widget':
+            row = ListBoxRow(description=data[1][1])
+            row.add(data[1][0])
+        else:
+            return False
+
+        self.list_box.prepend(row)
+        row.show_all()
+
+    def add_no_result(self, text):
+        """
+        Add only one row with no results label.
+        """
+        row = ListBoxRow()
+        row.add(Gtk.Label(text))
+        self.clear_items()
+        self.list_box.add(row)
+        row.show_all()
+
+    def clear_items(self):
+        """
+        Remove all old items from list_box.
+        """
+        self.list_box.foreach(self.list_box.remove)
