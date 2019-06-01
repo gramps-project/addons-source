@@ -164,6 +164,7 @@ from gramps.gen.plug.menu import Option as PlugOption
 from gramps.gen.proxy import PrivateProxyDb
 from gramps.gen.utils.db import get_birth_or_fallback
 from gramps.gen.const import GRAMPS_LOCALE as glocale
+from gramps.gen.const import USER_HOME
 #-------------------------------------------------------------------------
 #
 # constants
@@ -2546,8 +2547,8 @@ class DenominoVisoOptions(MenuReportOptions):
     def add_menu_options(self, menu):
         category_name = _("DenominoViso Options")
 
-        des = DestinationOption(_("Destination"),
-            os.path.join(os.getcwd(),"DenominoViso.xhtml"))
+        des = DestinationOption(
+            _("Destination"), os.path.join(USER_HOME, "DenominoViso.xhtml"))        
         des.set_help(_("The destination file for the xhtml-content."))
         menu.add_option(category_name, "DNMfilename", des)
 
