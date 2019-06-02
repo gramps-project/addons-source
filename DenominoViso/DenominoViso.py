@@ -2548,7 +2548,7 @@ class DenominoVisoOptions(MenuReportOptions):
         category_name = _("DenominoViso Options")
 
         des = DestinationOption(
-            _("Destination"), os.path.join(USER_HOME, "DenominoViso.xhtml"))        
+            _("Destination"), os.path.join(USER_HOME, "DenominoViso.xhtml"))
         des.set_help(_("The destination file for the xhtml-content."))
         menu.add_option(category_name, "DNMfilename", des)
 
