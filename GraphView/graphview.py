@@ -114,7 +114,7 @@ WIKI_PAGE = 'https://gramps-project.org/wiki/index.php?title=Graph_View'
 #-------------------------------------------------------------------------
 import sys
 sys.path.append(os.path.abspath(os.path.dirname(__file__)))
-from search_widget import SearchWidget, ListBoxRow
+from search_widget import SearchWidget, Popover, ListBoxRow
 
 #-------------------------------------------------------------------------
 #
@@ -752,11 +752,15 @@ class GraphWidget(object):
         self.goto_other_btn.set_tooltip_text(
             _('Center view on selected bookmark'))
         hbox.pack_start(self.goto_other_btn, False, False, 1)
-        self.bkmark_popover, self.bkmark_box, \
-            self.bkmark_box_other = self.build_bkmark_popover()
+        self.bkmark_popover = Popover(_('Bookmarks for current graph'),
+                                      _('Other Bookmarks'),
+                                      sort_func=self.sort_func_listbox,
+                                      ext_panel=self.build_bkmark_ext_panel())
+        self.bkmark_popover.set_relative_to(self.goto_other_btn)
         self.goto_other_btn.connect("clicked", self.show_bkmark_popup)
         self.goto_other_btn.connect("key-press-event",
                                     self.goto_other_btn_key_press_event)
+        self.bkmark_popover.connect('item-activated', self.activate_popover)
         self.show_images_option = self.view._config.get(
             'interface.graphview-search-show-images')
 
@@ -890,55 +894,10 @@ class GraphWidget(object):
         context = GLib.main_context_default()
         self.set_des_event = context.find_source_by_id(event_id)
 
-    def build_bkmark_popover(self):
+    def build_bkmark_ext_panel(self):
         """
-        Build bookmark popover.
+        Build bookmark popover extand panel.
         """
-        bkmark_popover = Gtk.Popover.new(self.goto_other_btn)
-        bkmark_popover.set_position(Gtk.PositionType.BOTTOM)
-        bkmark_popover.set_modal(False)
-
-        # scroll window for bookmark items
-        sw_popup = Gtk.ScrolledWindow()
-        sw_popup.set_policy(Gtk.PolicyType.NEVER,
-                            Gtk.PolicyType.AUTOMATIC)
-        sw_other_popup = Gtk.ScrolledWindow()
-        sw_other_popup.set_policy(Gtk.PolicyType.NEVER,
-                                  Gtk.PolicyType.AUTOMATIC)
-
-        # set max size of scrolled window
-        # use try because methods available since Gtk 3.22
-        try:
-            sw_popup.set_max_content_height(200)
-            sw_popup.set_propagate_natural_height(True)
-            sw_other_popup.set_max_content_height(200)
-            sw_other_popup.set_propagate_natural_height(True)
-        except:
-            sw_popup.connect("draw", self.on_draw_scroll_bkmark)
-            sw_other_popup.connect("draw", self.on_draw_scroll_bkmark)
-
-        all_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
-
-        bkmark_box = Gtk.ListBox()
-        bkmark_box.set_activate_on_single_click(True)
-        bkmark_box.set_sort_func(self.sort_func_listbox)
-        bkmark_lable = Gtk.Label(_('<b>Bookmarks for current graph:</b>'))
-        bkmark_lable.set_use_markup(True)
-        all_box.pack_start(bkmark_lable, False, True, 2)
-        sw_popup.add(bkmark_box)
-        all_box.add(sw_popup)
-
-        self.box_other = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
-        bkmark_box_other = Gtk.ListBox()
-        bkmark_box_other.set_activate_on_single_click(True)
-        bkmark_box_other.set_sort_func(self.sort_func_listbox)
-        bkmark_lable = Gtk.Label(_('<b>Other Bookmarks:</b>'))
-        bkmark_lable.set_use_markup(True)
-        self.box_other.pack_start(bkmark_lable, False, True, 2)
-        sw_other_popup.add(bkmark_box_other)
-        self.box_other.add(sw_other_popup)
-        all_box.pack_start(self.box_other, False, True, 2)
-
         btn_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
         # add button to add active person to bookmarks
         # tooltip will be changed in "self.load_bookmarks"
@@ -950,26 +909,14 @@ class GraphWidget(object):
         manage_bkmarks.set_tooltip_text(_('Call the bookmark editor'))
         manage_bkmarks.connect("clicked", self.edit_bookmarks)
         btn_box.pack_start(manage_bkmarks, True, True, 2)
-        all_box.pack_start(btn_box, True, True, 2)
-
-        # set all widgets visible
-        all_box.show_all()
-
-        bkmark_popover.add(all_box)
-
-        # connect signal
-        bkmark_box.connect("row-activated", self.bkmark_activated)
-        bkmark_box_other.connect("row-activated", self.bkmark_activated)
-
-        return bkmark_popover, bkmark_box, bkmark_box_other
+        return btn_box
 
     def load_bookmarks(self):
         """
         Load bookmarks in Popover (goto_other_btn).
         """
         # remove all old items from popup
-        self.bkmark_box.foreach(self.bkmark_box.remove)
-        self.bkmark_box_other.foreach(self.bkmark_box_other.remove)
+        self.bkmark_popover.clear_items()
 
         active = self.view.get_active()
         active_in_bkmarks = False
@@ -1003,31 +950,34 @@ class GraphWidget(object):
 
                 if present is not None:
                     found = True
-                    self.bkmark_box.prepend(row)
+                    self.bkmark_popover.main_panel.add_to_panel(['row', row])
                 else:
                     found_other = True
-                    self.bkmark_box_other.prepend(row)
+                    self.bkmark_popover.other_panel.add_to_panel(['row', row])
                 row.show_all()
         if not found and not found_other:
-            self.box_other.hide()
+            self.bkmark_popover.show_other_panel(False)
             row = ListBoxRow()
             row.add(Gtk.Label(_("You don't have any bookmarks yet...\n"
                                 "Try to add some frequently used persons "
                                 "to speedup navigation.")))
-            self.bkmark_box.add(row)
+            self.bkmark_popover.main_panel.add_to_panel(['row', row])
             row.show_all()
         else:
             if not found:
                 row = ListBoxRow()
                 row.add(Gtk.Label(_('No bookmarks for this graph...')))
-                self.bkmark_box.add(row)
+                self.bkmark_popover.main_panel.add_to_panel(['row', row])
                 row.show_all()
             if not found_other:
                 row = ListBoxRow()
                 row.add(Gtk.Label(_('No other bookmarks...')))
-                self.bkmark_box_other.add(row)
+                self.bkmark_popover.other_panel.add_to_panel(['row', row])
                 row.show_all()
-                self.box_other.show()
+                self.bkmark_popover.show_other_panel(True)
+
+        self.bkmark_popover.main_panel.set_progress(False)
+        self.bkmark_popover.other_panel.set_progress(False)
 
         # set tooltip for "add_bkmark" button
         self.add_bkmark.hide()
@@ -1128,16 +1078,6 @@ class GraphWidget(object):
         Hide bookmark popup.
         """
         self.bkmark_popover.popdown()
-
-    def bkmark_activated(self, listbox, row):
-        """
-        Handle bookmark row activation.
-        """
-        if row is None:
-            return
-        person_handle = row.description
-        if person_handle is not None:
-            self.activate_popover(row, person_handle)
 
     def goto_active(self, button=None):
         """

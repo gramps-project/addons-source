@@ -129,10 +129,15 @@ class SearchWidget(GObject.GObject):
         Use Thread to make UI responsiveness.
         """
         self.in_search = True
-
         add_delay = 1000
 
-        GLib.idle_add(self.popover_widget.main_panel.set_progress, True)
+        context = GLib.main_context_default()
+        events = []
+
+        event_id = GLib.idle_add(self.popover_widget.main_panel.set_progress,
+                                 True)
+        events.append(context.find_source_by_id(event_id))
+
         # search persons in the graph
         for item in self.items_list:
             if self.check_person(item.title, search_words):
@@ -140,12 +145,14 @@ class SearchWidget(GObject.GObject):
                 added = self.add_to_result(
                     item.title, self.popover_widget.main_panel)
                 # wait until person is added to list
-                while not added:
+                while not added[0]:
                     if not self.in_search:
+                        self.remove_events(events)
                         return
                     GLib.usleep(add_delay)
                     added = self.add_to_result(
                         item.title, self.popover_widget.main_panel)
+                events.append(added[1])
                 GLib.usleep(add_delay)
         if not self.found_list:
             GLib.idle_add(self.popover_widget.main_panel.add_no_result,
@@ -173,14 +180,17 @@ class SearchWidget(GObject.GObject):
                         added = self.add_to_result(
                             person_handle, self.popover_widget.other_panel)
                         # wait until person is added to list
-                        while not added:
+                        while not added[0]:
                             if not self.in_search:
+                                self.remove_events(events)
                                 return
                             GLib.usleep(add_delay)
                             added = self.add_to_result(
                                 person_handle, self.popover_widget.other_panel)
+                        events.append(added[1])
                         found = True
                 if not self.in_search:
+                    self.remove_events(events)
                     return
                 GLib.usleep(add_delay)
 
@@ -191,6 +201,14 @@ class SearchWidget(GObject.GObject):
         GLib.idle_add(self.popover_widget.other_panel.set_progress, False)
 
         self.in_search = False
+
+    def remove_events(self, events):
+        """
+        Remove all panding events.
+        """
+        for event in events:
+            if not event.is_destroyed():
+                GLib.source_remove(event.get_id())
 
     def get_person_from_handle(self, person_handle):
         """
@@ -230,10 +248,12 @@ class SearchWidget(GObject.GObject):
                 if person_image:
                     hbox.pack_start(person_image, False, True, 2)
 
-            GLib.idle_add(panel.add_to_panel, ['row', row])
-            return True
+            context = GLib.main_context_default()
+            event_id = GLib.idle_add(panel.add_to_panel, ['row', row])
+            event = context.find_source_by_id(event_id)
+            return (True, event)
         else:
-            return False
+            return (False, None)
 
     def stop_search(self):
         """
@@ -339,7 +359,11 @@ class Popover(Gtk.Popover):
         'item-activated': (GObject.SIGNAL_RUN_FIRST, None, (str, )),
         }
 
-    def __init__(self, main_label, other_label, sort_func=None):
+    def __init__(self, main_label, other_label, sort_func=None,
+                ext_panel=None):
+        """
+        ext_panel - Gtk.Widget (container) placeed in the botom.
+        """
         Gtk.Popover.__init__(self)
         self.set_position(Gtk.PositionType.BOTTOM)
         self.set_modal(False)
@@ -356,9 +380,12 @@ class Popover(Gtk.Popover):
         all_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         all_box.add(self.main_panel)
         all_box.add(self.other_panel)
+
+        if ext_panel is not None:
+            all_box.add(ext_panel)
+
         # set all widgets visible
         all_box.show_all()
-
         self.add(all_box)
 
     def show_other_panel(self, state):
