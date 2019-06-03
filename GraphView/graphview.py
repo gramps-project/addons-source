@@ -922,6 +922,8 @@ class GraphWidget(object):
         active_in_bkmarks = False
         found = False
         found_other = False
+        count = 0
+        count_other = 0
 
         bookmarks = self.view.bookmarks.get_bookmarks().bookmarks
         for bkmark in bookmarks:
@@ -950,9 +952,11 @@ class GraphWidget(object):
 
                 if present is not None:
                     found = True
+                    count += 1
                     self.bkmark_popover.main_panel.add_to_panel(['row', row])
                 else:
                     found_other = True
+                    count_other += 1
                     self.bkmark_popover.other_panel.add_to_panel(['row', row])
                 row.show_all()
         if not found and not found_other:
@@ -976,8 +980,9 @@ class GraphWidget(object):
                 row.show_all()
                 self.bkmark_popover.show_other_panel(True)
 
-        self.bkmark_popover.main_panel.set_progress(False)
-        self.bkmark_popover.other_panel.set_progress(False)
+        self.bkmark_popover.main_panel.set_progress(0, 'found: %s' % count)
+        self.bkmark_popover.other_panel.set_progress(
+            0, 'found: %s' % count_other)
 
         # set tooltip for "add_bkmark" button
         self.add_bkmark.hide()

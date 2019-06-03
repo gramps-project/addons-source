@@ -129,17 +129,22 @@ class SearchWidget(GObject.GObject):
         Use Thread to make UI responsiveness.
         """
         self.in_search = True
-        add_delay = 1000
+        add_delay = 50
 
         context = GLib.main_context_default()
         events = []
 
-        event_id = GLib.idle_add(self.popover_widget.main_panel.set_progress,
-                                 True)
+        event_id = GLib.idle_add(
+            self.popover_widget.main_panel.set_progress, 0, '')
+        event_id = GLib.idle_add(
+            self.popover_widget.other_panel.set_progress, 0, '')
         events.append(context.find_source_by_id(event_id))
 
         # search persons in the graph
+        progress = 0
+        count = 0
         for item in self.items_list:
+            progress += 1
             if self.check_person(item.title, search_words):
                 self.found_list.append(item.title)
                 added = self.add_to_result(
@@ -149,15 +154,21 @@ class SearchWidget(GObject.GObject):
                     if not self.in_search:
                         self.remove_events(events)
                         return
-                    GLib.usleep(add_delay)
+                    GLib.usleep(add_delay * 20)
                     added = self.add_to_result(
                         item.title, self.popover_widget.main_panel)
                 events.append(added[1])
-                GLib.usleep(add_delay)
+                count += 1
+                GLib.idle_add(self.popover_widget.main_panel.set_progress,
+                              progress/len(self.items_list),
+                              'found: %s' % count)
+                GLib.usleep(add_delay * 200)
+            GLib.usleep(add_delay)
         if not self.found_list:
             GLib.idle_add(self.popover_widget.main_panel.add_no_result,
                           _('No persons found...'))
-        GLib.idle_add(self.popover_widget.main_panel.set_progress, False)
+        GLib.idle_add(self.popover_widget.main_panel.set_progress,
+                      0, 'found: %s' % count)
 
         # search other persons from db
         # ============================
@@ -166,14 +177,16 @@ class SearchWidget(GObject.GObject):
             return
         GLib.idle_add(self.popover_widget.show_other_panel,
                       self.search_all_db_option)
-        GLib.idle_add(self.popover_widget.other_panel.set_progress, True)
 
         # get all person handles
         all_person_handles = self.dbstate.db.get_person_handles()
 
+        progress = 0
+        count = 0
         found = False
         if all_person_handles:
             for person_handle in all_person_handles:
+                progress += 1
                 # excluding found persons
                 if person_handle not in self.found_list:
                     if self.check_person(person_handle, search_words):
@@ -184,21 +197,27 @@ class SearchWidget(GObject.GObject):
                             if not self.in_search:
                                 self.remove_events(events)
                                 return
-                            GLib.usleep(add_delay)
+                            GLib.usleep(add_delay * 20)
                             added = self.add_to_result(
                                 person_handle, self.popover_widget.other_panel)
                         events.append(added[1])
+                        count += 1
                         found = True
+                        GLib.usleep(add_delay * 200)
                 if not self.in_search:
                     self.remove_events(events)
                     return
+                GLib.idle_add(self.popover_widget.other_panel.set_progress,
+                              progress/len(all_person_handles),
+                              'found: %s' % count)
                 GLib.usleep(add_delay)
 
         if not found:
             GLib.idle_add(self.popover_widget.other_panel.add_no_result,
                           _('No persons found...'))
 
-        GLib.idle_add(self.popover_widget.other_panel.set_progress, False)
+        GLib.idle_add(self.popover_widget.other_panel.set_progress,
+                      0, 'found: %s' % count)
 
         self.in_search = False
 
@@ -207,8 +226,11 @@ class SearchWidget(GObject.GObject):
         Remove all panding events.
         """
         for event in events:
+            if event is None:
+                continue
             if not event.is_destroyed():
                 GLib.source_remove(event.get_id())
+        events.clear()
 
     def get_person_from_handle(self, person_handle):
         """
@@ -472,20 +494,19 @@ class Panel(Gtk.Box):
         panel_lable = Gtk.Label(_('<b>%s:</b>') % label)
         panel_lable.set_use_markup(True)
         vbox.add(panel_lable)
-        self.progress_label = Gtk.Label(_('Search in progress...'))
-        vbox.add(self.progress_label)
+        self.progress_bar = Gtk.ProgressBar()
+        self.progress_bar.set_show_text(True)
+        vbox.add(self.progress_bar)
 
         self.add(vbox)
         self.add(slb)
 
-    def set_progress(self, state):
+    def set_progress(self, fraction, text=None):
         """
-        Show or hide progress label.
+        Set progress and label.
         """
-        if state:
-            self.progress_label.show()
-        else:
-            self.progress_label.hide()
+        self.progress_bar.set_fraction(fraction)
+        self.progress_bar.set_text(text)
 
     def add_to_panel(self, data):
         """
@@ -518,3 +539,4 @@ class Panel(Gtk.Box):
         Remove all old items from list_box.
         """
         self.list_box.foreach(self.list_box.remove)
+        self.set_progress(0)
