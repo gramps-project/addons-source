@@ -81,7 +81,7 @@ class AssociationsTool(tool.Tool, ManagedWindow):
                 (_('Name'), 0, 200),
                 (_('Type of link'), 1, 200),
                 (_('Of'), 2, 200),
-                (_('Relationship calculator'), 2, 200),
+                (_('Relationship Calculator'), 2, 200),
                 ]
 
             treeview = Gtk.TreeView()
