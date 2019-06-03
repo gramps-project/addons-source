@@ -89,7 +89,7 @@ class AssociationsTool(tool.Tool, ManagedWindow):
                 model.add(entry, entry[0])
 
             window = Gtk.Window()
-            window.set_default_size(800, 800)
+            window.set_default_size(1000, 600)
             s = Gtk.ScrolledWindow()
             s.add(treeview)
             window.add(s)
