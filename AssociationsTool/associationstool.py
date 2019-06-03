@@ -57,7 +57,6 @@ class AssociationsTool(tool.Tool, ManagedWindow):
                                                  self.__class__)
 
         stats_list = []
-        
         relationship = get_relationship_calculator()
         rel = ""
 
