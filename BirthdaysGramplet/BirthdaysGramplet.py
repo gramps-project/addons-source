@@ -85,11 +85,13 @@ class BirthdaysGramplet(Gramplet):
         self.result = []
 
         # get ignore tag handle
+        ignore_tag_handle = ""  # No ignore handle selceted by user
         tag_name = self.option.get_value()
         tag_handles = database.get_tag_handles()
         for handle in tag_handles:
             tag = database.get_tag_from_handle(handle)
             if tag_name == tag.get_name():
+                # overwrite ignore_handle to user selction
                 ignore_tag_handle = tag.get_handle()
 
         for cnt, person in enumerate(personList):
