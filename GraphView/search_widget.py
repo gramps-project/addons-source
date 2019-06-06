@@ -180,7 +180,6 @@ class SearchWidget(GObject.GObject):
 
         progress = 0
         count = 0
-        found = False
         if all_person_handles:
             for person_handle in all_person_handles:
                 progress += 1
@@ -198,14 +197,12 @@ class SearchWidget(GObject.GObject):
                         thread_event.clear()
 
                         count += 1
-                        found = True
                 if not self.in_search:
                     return
                 GLib.idle_add(self.popover_widget.other_panel.set_progress,
                               progress/len(all_person_handles),
                               'found: %s' % count)
-
-        if not found:
+        if not count:
             GLib.idle_add(self.popover_widget.other_panel.add_no_result,
                           _('No persons found...'))
 
