@@ -20,7 +20,7 @@
 #
 
 from gi.repository import Gtk, Gdk, GLib, GObject
-from threading import Thread
+from threading import Thread, Event
 
 from gramps.gen.display.name import displayer
 
@@ -44,13 +44,14 @@ class SearchWidget(GObject.GObject):
         }
 
     def __init__(self, dbstate, get_person_image,
-                 items_list=None, sort_func=None):
+                 items_list=None, sort_func=None, bookmarks=None):
         """
         Initialise the SearchWidget class.
         """
         GObject.GObject.__init__(self)
 
         self.dbstate = dbstate
+        self.bookmarks = bookmarks
 
         # 'item' - is GooCanvas.CanvasGroup object
         self.items_list = items_list
@@ -75,11 +76,11 @@ class SearchWidget(GObject.GObject):
         # set default options
         self.set_options(True, True)
 
-        # thread for search
-        self.thread = None
-
+        self.search_words = None
         # search status
         self.in_search = False
+        # thread for search
+        self.thread = Thread()
 
     def get_widget(self):
         """
@@ -128,17 +129,14 @@ class SearchWidget(GObject.GObject):
         Search persons in the current graph and after in the db.
         Use Thread to make UI responsiveness.
         """
+        thread_event = Event()
         self.in_search = True
-        add_delay = 50
 
-        context = GLib.main_context_default()
-        events = []
-
-        event_id = GLib.idle_add(
+        # set progree to 0
+        GLib.idle_add(
             self.popover_widget.main_panel.set_progress, 0, '')
-        event_id = GLib.idle_add(
+        GLib.idle_add(
             self.popover_widget.other_panel.set_progress, 0, '')
-        events.append(context.find_source_by_id(event_id))
 
         # search persons in the graph
         progress = 0
@@ -147,23 +145,22 @@ class SearchWidget(GObject.GObject):
             progress += 1
             if self.check_person(item.title, search_words):
                 self.found_list.append(item.title)
-                added = self.add_to_result(
-                    item.title, self.popover_widget.main_panel)
+                GLib.idle_add(self.do_this, thread_event,
+                              self.add_to_result,
+                              item.title, self.popover_widget.main_panel)
                 # wait until person is added to list
-                while not added[0]:
+                while not thread_event.wait(timeout=0.01):
                     if not self.in_search:
-                        self.remove_events(events)
                         return
-                    GLib.usleep(add_delay * 20)
-                    added = self.add_to_result(
-                        item.title, self.popover_widget.main_panel)
-                events.append(added[1])
+                thread_event.clear()
+
                 count += 1
                 GLib.idle_add(self.popover_widget.main_panel.set_progress,
                               progress/len(self.items_list),
                               'found: %s' % count)
-                GLib.usleep(add_delay * 200)
-            GLib.usleep(add_delay)
+            if not self.in_search:
+                return
+
         if not self.found_list:
             GLib.idle_add(self.popover_widget.main_panel.add_no_result,
                           _('No persons found...'))
@@ -190,27 +187,23 @@ class SearchWidget(GObject.GObject):
                 # excluding found persons
                 if person_handle not in self.found_list:
                     if self.check_person(person_handle, search_words):
-                        added = self.add_to_result(
-                            person_handle, self.popover_widget.other_panel)
+                        GLib.idle_add(self.do_this, thread_event,
+                                      self.add_to_result,
+                                      person_handle,
+                                      self.popover_widget.other_panel)
                         # wait until person is added to list
-                        while not added[0]:
+                        while not thread_event.wait(timeout=0.01):
                             if not self.in_search:
-                                self.remove_events(events)
                                 return
-                            GLib.usleep(add_delay * 20)
-                            added = self.add_to_result(
-                                person_handle, self.popover_widget.other_panel)
-                        events.append(added[1])
+                        thread_event.clear()
+
                         count += 1
                         found = True
-                        GLib.usleep(add_delay * 200)
                 if not self.in_search:
-                    self.remove_events(events)
                     return
                 GLib.idle_add(self.popover_widget.other_panel.set_progress,
                               progress/len(all_person_handles),
                               'found: %s' % count)
-                GLib.usleep(add_delay)
 
         if not found:
             GLib.idle_add(self.popover_widget.other_panel.add_no_result,
@@ -221,16 +214,14 @@ class SearchWidget(GObject.GObject):
 
         self.in_search = False
 
-    def remove_events(self, events):
+    def do_this(self, event, func, *args):
         """
-        Remove all panding events.
+        Do some function (and wait "event" it the thread).
+        It should be called by "GLib.idle_add".
+        In the end "event" will be set.
         """
-        for event in events:
-            if event is None:
-                continue
-            if not event.is_destroyed():
-                GLib.source_remove(event.get_id())
-        events.clear()
+        func(*args)
+        event.set()
 
     def get_person_from_handle(self, person_handle):
         """
@@ -250,6 +241,7 @@ class SearchWidget(GObject.GObject):
         "GLib.idle_add" used for using method in thread.
         """
         person = self.get_person_from_handle(person_handle)
+        bookmarks = self.bookmarks.get_bookmarks().bookmarks
         if person:
             name = displayer.display_name(person.get_primary_name())
 
@@ -270,12 +262,23 @@ class SearchWidget(GObject.GObject):
                 if person_image:
                     hbox.pack_start(person_image, False, True, 2)
 
-            context = GLib.main_context_default()
-            event_id = GLib.idle_add(panel.add_to_panel, ['row', row])
-            event = context.find_source_by_id(event_id)
-            return (True, event)
+            if person_handle in bookmarks:
+                button = Gtk.Button.new_from_icon_name(
+                    'user-bookmarks-symbolic', Gtk.IconSize.MENU)
+                button.connect('clicked', self.remove_from_bookmarks,
+                               person_handle)
+                hbox.add(button)
+            else:
+                button = Gtk.Button.new_from_icon_name(
+                    'bookmark-new-symbolic', Gtk.IconSize.MENU)
+                button.connect('clicked', self.add_to_bookmarks, person_handle)
+                hbox.add(button)
+
+            panel.add_to_panel(['row', row])
+
         else:
-            return (False, None)
+            # we should return 'True' to restart function from GLib.idle_add
+            return True
 
     def stop_search(self):
         """
@@ -283,10 +286,9 @@ class SearchWidget(GObject.GObject):
         And wait while thread is finished.
         """
         self.in_search = False
-        try:
+
+        while self.thread.is_alive():
             self.thread.join()
-        except:
-            pass
 
     def check_person(self, person_handle, search_words):
         """
@@ -316,6 +318,30 @@ class SearchWidget(GObject.GObject):
         self.stop_search()
         self.popover_widget.popdown()
 
+    def add_to_bookmarks(self, widget, handle):
+        """
+        Adds bookmark for person.
+        """
+        self.bookmarks.add(handle)
+
+        # change icon and reconnect
+        img = Gtk.Image.new_from_icon_name('user-bookmarks-symbolic',
+                                           Gtk.IconSize.MENU)
+        widget.set_image(img)
+        widget.disconnect_by_func(self.add_to_bookmarks)
+        widget.connect('clicked', self.remove_from_bookmarks, handle)
+
+    def remove_from_bookmarks(self, widget, handle):
+        """
+        Remove person from the list of bookmarked people.
+        """
+        self.bookmarks.remove_handles([handle])
+        # change icon and reconnect
+        img = Gtk.Image.new_from_icon_name('bookmark-new-symbolic',
+                                           Gtk.IconSize.MENU)
+        widget.set_image(img)
+        widget.disconnect_by_func(self.remove_from_bookmarks)
+        widget.connect('clicked', self.add_to_bookmarks, handle)
 
 class SearchEntry(Gtk.SearchEntry):
     """

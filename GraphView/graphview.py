@@ -767,7 +767,8 @@ class GraphWidget(object):
         # add search widget
         self.search_widget = SearchWidget(self.dbstate,
                                           self.get_person_image,
-                                          sort_func=self.sort_func_listbox)
+                                          sort_func=self.sort_func_listbox,
+                                          bookmarks=self.view.bookmarks)
         search_box = self.search_widget.get_widget()
         hbox.pack_start(search_box, True, True, 1)
         self.search_widget.set_options(
@@ -1009,18 +1010,6 @@ class GraphWidget(object):
             except:
                 return None
         return get_row_label(row_1) > get_row_label(row_2)
-
-    def on_draw_scroll_bkmark(self, widget, cr):
-        """
-        Workaround to set max height of scrolled window.
-        """
-        max_height = 200
-        for box in (self.bkmark_box, self.bkmark_box_other):
-            minimum_height, natural_height = box.get_preferred_height()
-            if natural_height > max_height:
-                widget.set_size_request(-1, max_height)
-            else:
-                widget.set_size_request(-1, natural_height)
 
     def get_person_image(self, person, width=-1, height=-1, kind='image'):
         """
