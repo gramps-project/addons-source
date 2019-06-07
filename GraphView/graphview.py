@@ -754,7 +754,6 @@ class GraphWidget(object):
         hbox.pack_start(self.goto_other_btn, False, False, 1)
         self.bkmark_popover = Popover(_('Bookmarks for current graph'),
                                       _('Other Bookmarks'),
-                                      sort_func=self.sort_func_listbox,
                                       ext_panel=self.build_bkmark_ext_panel())
         self.bkmark_popover.set_relative_to(self.goto_other_btn)
         self.goto_other_btn.connect("clicked", self.show_bkmark_popup)
@@ -767,7 +766,6 @@ class GraphWidget(object):
         # add search widget
         self.search_widget = SearchWidget(self.dbstate,
                                           self.get_person_image,
-                                          sort_func=self.sort_func_listbox,
                                           bookmarks=self.view.bookmarks)
         search_box = self.search_widget.get_widget()
         hbox.pack_start(search_box, True, True, 1)
@@ -948,7 +946,7 @@ class GraphWidget(object):
                     person_image = self.get_person_image(person, 32, 32)
                     if person_image:
                         hbox.pack_start(person_image, False, True, 2)
-                row = ListBoxRow(description=bkmark)
+                row = ListBoxRow(description=bkmark, label=name)
                 row.add(hbox)
 
                 if present is not None:
@@ -996,20 +994,6 @@ class GraphWidget(object):
                     _('Add active person to bookmarks\n'
                       '%s' % val_to_display))
                 self.add_bkmark.show()
-
-    def sort_func_listbox(self, row_1, row_2):
-        def get_row_label(row):
-            # get persons names to sort rows
-            # row -> hbox -> (id_label, name_label, image)
-            try:
-                row_children = row.get_children()
-                box_children = row_children[0].get_children()
-                # label in box than contain person name
-                row_label = box_children[1]
-                return row_label.get_text().lower()
-            except:
-                return None
-        return get_row_label(row_1) > get_row_label(row_2)
 
     def get_person_image(self, person, width=-1, height=-1, kind='image'):
         """

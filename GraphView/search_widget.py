@@ -44,7 +44,7 @@ class SearchWidget(GObject.GObject):
         }
 
     def __init__(self, dbstate, get_person_image,
-                 items_list=None, sort_func=None, bookmarks=None):
+                 items_list=None, bookmarks=None):
         """
         Initialise the SearchWidget class.
         """
@@ -61,8 +61,7 @@ class SearchWidget(GObject.GObject):
 
         self.search_entry = SearchEntry()
         self.popover_widget = Popover(_('Persons from current graph'),
-                                      _('Other persons from database'),
-                                      sort_func)
+                                      _('Other persons from database'))
         self.popover_widget.set_relative_to(self.search_entry)
 
         # connect signals
@@ -242,7 +241,7 @@ class SearchWidget(GObject.GObject):
         if person:
             name = displayer.display_name(person.get_primary_name())
 
-            row = ListBoxRow(description=person.handle)
+            row = ListBoxRow(description=person.handle, label=name)
             hbox = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
             row.add(hbox)
 
@@ -404,8 +403,7 @@ class Popover(Gtk.Popover):
         'item-activated': (GObject.SIGNAL_RUN_FIRST, None, (str, )),
         }
 
-    def __init__(self, main_label, other_label, sort_func=None,
-                ext_panel=None):
+    def __init__(self, main_label, other_label, ext_panel=None):
         """
         ext_panel - Gtk.Widget (container) placeed in the botom.
         """
@@ -414,8 +412,8 @@ class Popover(Gtk.Popover):
         self.set_modal(False)
 
         # build panels
-        self.main_panel = Panel(main_label, sort_func)
-        self.other_panel = Panel(other_label, sort_func)
+        self.main_panel = Panel(main_label)
+        self.other_panel = Panel(other_label)
         self.other_panel.set_margin_top(10)
 
         # connect signals
@@ -466,9 +464,10 @@ class ListBoxRow(Gtk.ListBoxRow):
     """
     Extended Gtk.ListBoxRow with description property.
     """
-    def __init__(self, description=None):
+    def __init__(self, description=None, label=None):
         Gtk.ListBoxRow.__init__(self)
-        self.description = description     # useed to store person handle
+        self.label = label              # person name for sorting
+        self.description = description  # useed to store person handle
 
 
 class ScrolledListBox(Gtk.ScrolledWindow):
@@ -502,7 +501,7 @@ class Panel(Gtk.Box):
     Panel for popover.
     Contain in vertical Gtk.Box: Label, Status, Scrolled list.
     """
-    def __init__(self, label, sort_func):
+    def __init__(self, label):
         Gtk.Box.__init__(self, orientation=Gtk.Orientation.VERTICAL)
 
         slb = ScrolledListBox(max_height=200)
@@ -511,7 +510,7 @@ class Panel(Gtk.Box):
 
         self.list_box = slb.list_box
         self.list_box.set_activate_on_single_click(True)
-        self.list_box.set_sort_func(sort_func)
+        self.list_box.set_sort_func(self.sort_func)
 
         vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         panel_lable = Gtk.Label(_('<b>%s:</b>') % label)
@@ -534,12 +533,13 @@ class Panel(Gtk.Box):
     def add_to_panel(self, data):
         """
         Add found item to specified panel (ListBox).
-        data - ['row', ListBoxRow] or ['widget', [Gtk.Widget, description]]
+        data - ['row', ListBoxRow] or
+               ['widget', [Gtk.Widget, description, label]]
         """
         if data[0] == 'row':
             row = data[1]
         elif data[0] == 'widget':
-            row = ListBoxRow(description=data[1][1])
+            row = ListBoxRow(description=data[1][1], label=data[1][2])
             row.add(data[1][0])
         else:
             return False
@@ -563,3 +563,17 @@ class Panel(Gtk.Box):
         """
         self.list_box.foreach(self.list_box.remove)
         self.set_progress(0)
+
+    def sort_func(self, row_1, row_2):
+        def get_row_label(row):
+            # get persons names to sort rows
+            # row -> hbox -> (id_label, name_label, image)
+            try:
+                row_children = row.get_children()
+                box_children = row_children[0].get_children()
+                # label in box than contain person name
+                row_label = box_children[1]
+                return row_label.get_text().lower()
+            except:
+                return None
+        return get_row_label(row_1) > get_row_label(row_2)
