@@ -261,12 +261,14 @@ class SearchWidget(GObject.GObject):
             if person_handle in bookmarks:
                 button = Gtk.Button.new_from_icon_name(
                     'user-bookmarks-symbolic', Gtk.IconSize.MENU)
+                button.set_tooltip_text(_('Remove from bookmarks'))
                 button.connect('clicked', self.remove_from_bookmarks,
                                person_handle)
                 hbox.add(button)
             else:
                 button = Gtk.Button.new_from_icon_name(
                     'bookmark-new-symbolic', Gtk.IconSize.MENU)
+                button.set_tooltip_text(_('Add to bookmarks'))
                 button.connect('clicked', self.add_to_bookmarks, person_handle)
                 hbox.add(button)
 
@@ -324,6 +326,7 @@ class SearchWidget(GObject.GObject):
         img = Gtk.Image.new_from_icon_name('user-bookmarks-symbolic',
                                            Gtk.IconSize.MENU)
         widget.set_image(img)
+        widget.set_tooltip_text(_('Remove from bookmarks'))
         widget.disconnect_by_func(self.add_to_bookmarks)
         widget.connect('clicked', self.remove_from_bookmarks, handle)
 
@@ -336,6 +339,7 @@ class SearchWidget(GObject.GObject):
         img = Gtk.Image.new_from_icon_name('bookmark-new-symbolic',
                                            Gtk.IconSize.MENU)
         widget.set_image(img)
+        widget.set_tooltip_text(_('Add to bookmarks'))
         widget.disconnect_by_func(self.remove_from_bookmarks)
         widget.connect('clicked', self.add_to_bookmarks, handle)
 
