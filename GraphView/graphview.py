@@ -156,6 +156,9 @@ class GraphView(NavigationView):
         # dict {handle, tooltip_str} of tooltips in markup format
         self.tags_tooltips = {}
 
+        # for disable animation options in config dialog
+        self.ani_widgets = []
+
         self.additional_uis.append(self.additional_ui)
         self.define_print_actions()
         self.uistate.connect('font-changed', self.font_changed)
@@ -163,9 +166,6 @@ class GraphView(NavigationView):
     def font_changed(self):
         self.graph_widget.font_changed(self.get_active())
         #self.goto_handle(None)
-
-        # for disable animation options in config dialog
-        self.ani_widgets = []
 
     def define_print_actions(self):
         """
