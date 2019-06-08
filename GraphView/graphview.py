@@ -1141,39 +1141,15 @@ class GraphWidget(object):
         """
         Increase zoom scale.
         """
-        scale_coef = self.scale
-        if scale_coef < 0.1:
-            step = 0.01
-        elif scale_coef < 0.3:
-            step = 0.03
-        elif scale_coef < 1:
-            step = 0.05
-        elif scale_coef > 2:
-            step = 0.5
-        else:
-            step = 0.1
-
-        scale_coef += step
+        scale_coef = self.scale * 1.1
         self.set_zoom(scale_coef)
 
     def zoom_out(self, button=None):
         """
         Decrease zoom scale.
         """
-        scale_coef = self.scale
-        if scale_coef < 0.1:
-            step = 0.01
-        elif scale_coef < 0.3:
-            step = 0.03
-        elif scale_coef < 1:
-            step = 0.05
-        elif scale_coef > 2:
-            step = 0.5
-        else:
-            step = 0.1
-
-        scale_coef -= step
-        if scale_coef < 0.02:
+        scale_coef = self.scale * 0.9
+        if scale_coef < 0.01:
             scale_coef = 0.01
         self.set_zoom(scale_coef)
 
