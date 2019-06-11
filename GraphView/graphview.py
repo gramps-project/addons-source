@@ -815,7 +815,9 @@ class GraphWidget(object):
 
         # add spinners for quick generations change
         box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
-        box.pack_start(Gtk.Label(label='↑'), False, False, 1)
+        img = Gtk.Image.new_from_icon_name('go-up-symbolic',
+                                           Gtk.IconSize.MENU)
+        box.pack_start(img, False, False, 1)
         self.ancestors_spinner = Gtk.SpinButton.new_with_range(0, 50, 1)
         self.ancestors_spinner.set_tooltip_text(_('Ancestor generations'))
         self.ancestors_spinner.set_value(
@@ -823,8 +825,10 @@ class GraphWidget(object):
         self.ancestors_spinner.connect("value-changed",
                                        self.set_ancestors_generations)
         box.pack_start(self.ancestors_spinner, False, False, 1)
-
-        box.pack_start(Gtk.Label(label='↓'), False, False, 1)
+        
+        img = Gtk.Image.new_from_icon_name('go-down-symbolic',
+                                           Gtk.IconSize.MENU)
+        box.pack_start(img, False, False, 1)
         self.descendants_spinner = Gtk.SpinButton.new_with_range(0, 50, 1)
         self.descendants_spinner.set_tooltip_text(_('Descendant generations'))
         self.descendants_spinner.set_value(self.view._config.get(
