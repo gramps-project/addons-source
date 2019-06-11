@@ -142,7 +142,8 @@ class GraphView(NavigationView):
         ('interface.graphview-animation-count', 4),
         ('interface.graphview-search-all-db', True),
         ('interface.graphview-search-show-images', True),
-        ('interface.graphview-search-marked-first', True))
+        ('interface.graphview-search-marked-first', True),
+        ('interface.graphview-ranksep', 5))
 
     def __init__(self, pdata, dbstate, uistate, nav_group=0):
         NavigationView.__init__(self, _('Graph View'), pdata, dbstate, uistate,
@@ -481,6 +482,13 @@ class GraphView(NavigationView):
         value = entry == 'True'
         self.graph_widget.search_widget.set_options(marked_first=value)
 
+    def cb_update_ranksep(self, client, cnxd_id, entry, data):
+        """
+        Called when the configuration menu changes the ranksep setting.
+        """
+        self.graph_widget.populate(self.get_active())
+
+
     def config_connect(self):
         """
         Overwriten from  :class:`~gui.views.pageview.PageView method
@@ -517,6 +525,8 @@ class GraphView(NavigationView):
                              self.cb_update_search_show_images)
         self._config.connect('interface.graphview-search-marked-first',
                              self.cb_update_search_marked_first)
+        self._config.connect('interface.graphview-ranksep',
+                             self.cb_update_ranksep)
 
     def _get_configure_page_funcs(self):
         """
@@ -552,6 +562,9 @@ class GraphView(NavigationView):
             grid, _('Show places'), 3, 'interface.graphview-show-places')
         configdialog.add_checkbox(
             grid, _('Show tags'), 4, 'interface.graphview-show-tags')
+        configdialog.add_spinner(
+            grid, _('Space between generations'),
+            5, 'interface.graphview-ranksep', (1, 50))
 
         return _('Layout'), grid
 
@@ -1878,6 +1891,8 @@ class DotSvgGenerator(object):
             'interface.graphview-descendant-generations')
         self.ancestor_generations = self.view._config.get(
             'interface.graphview-ancestor-generations')
+        ranksep = self.view._config.get('interface.graphview-ranksep')
+        ranksep = ranksep * 0.1
 
         # get background color from gtk theme and convert it to hex
         # else use white background
@@ -1915,7 +1930,6 @@ class DotSvgGenerator(object):
         nodesep = 0.20
         pagedir = "BL"
         rankdir = "TB"
-        ranksep = 0.40
         ratio = "compress"
         # as we are not using paper,
         # choose a large 'page' size with no margin
