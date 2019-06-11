@@ -1880,7 +1880,13 @@ class DotSvgGenerator(object):
 
         self.dot = None         # will be StringIO()
 
-        self.person_handles = set()
+        # This dictionary contains person handle as the index and the value is
+        # the number of families in which the person is a parent. From this
+        # dictionary is obtained a list of person handles sorted in decreasing
+        # value order which is used to keep multiple spouses positioned
+        # together.
+        self.person_handles_dict = {}
+        self.person_handles = []
 
         # list of persons on path to home person
         self.current_list = list()
@@ -1906,7 +1912,7 @@ class DotSvgGenerator(object):
         self.dot = StringIO()
 
         self.current_list.clear()
-        self.person_handles.clear()
+        self.person_handles_dict.clear()
 
         self.show_images = self.view._config.get(
             'interface.graphview-show-images')
@@ -2027,10 +2033,15 @@ class DotSvgGenerator(object):
             self.home_person = self.dbstate.db.get_default_person()
             self.set_current_list(active_person)
             self.set_current_list_desc(active_person)
-            self.person_handles.update(self.find_descendants(active_person))
-            self.person_handles.update(self.find_ancestors(active_person))
+            self.person_handles_dict.update(
+                self.find_descendants(active_person))
+            self.person_handles_dict.update(self.find_ancestors(active_person))
 
-            if self.person_handles:
+            if self.person_handles_dict:
+                self.person_handles = sorted(
+                    self.person_handles_dict,
+                    key=self.person_handles_dict.__getitem__,
+                    reverse=True)
                 self.add_persons_and_families()
                 self.add_child_links_to_families()
 
@@ -2109,7 +2120,7 @@ class DotSvgGenerator(object):
         Spider the database from the active person.
         """
         person = self.database.get_person_from_handle(active_person)
-        person_handles = []
+        person_handles = {}
         self.add_descendant(person, self.descendant_generations,
                             person_handles)
         return person_handles
@@ -2136,7 +2147,11 @@ class DotSvgGenerator(object):
 
         # add self if not already processed or if we have children
         if person.handle not in person_handles or nb_child != 0:
-            person_handles.append(person.handle)
+            spouses = len(person.get_family_handle_list())
+            if spouses > 1:
+                person_handles[person.handle] = spouses
+            else:
+                person_handles[person.handle] = 0
 
             for family_handle in person.get_family_handle_list():
                 family = self.database.get_family_from_handle(family_handle)
@@ -2159,15 +2174,19 @@ class DotSvgGenerator(object):
         else:
             spouse_handle = family.get_father_handle()
 
-        # add spouse itself
-        if spouse_handle and spouse_handle not in person_handles:
-            person_handles.append(spouse_handle)
-
         # add all his(her) spouses recursively
         if spouse_handle:
             sp_person = self.database.get_person_from_handle(spouse_handle)
         else:
             sp_person = None
+
+        # add spouse itself
+        if spouse_handle and spouse_handle not in person_handles:
+            spouses = len(sp_person.get_family_handle_list())
+            if spouses > 1:
+                person_handles[spouse_handle] = spouses
+            else:
+                person_handles[spouse_handle] = 0
 
         if sp_person:
             for family_handle in sp_person.get_family_handle_list():
@@ -2188,7 +2207,7 @@ class DotSvgGenerator(object):
         Spider the database from the active person.
         """
         person = self.database.get_person_from_handle(active_person)
-        person_handles = []
+        person_handles = {}
         self.add_ancestor(person, self.ancestor_generations, person_handles)
         return person_handles
 
@@ -2204,7 +2223,11 @@ class DotSvgGenerator(object):
 
         # add self
         if person.handle not in person_handles:
-            person_handles.append(person.handle)
+            spouses = len(person.get_family_handle_list())
+            if spouses > 1:
+                person_handles[person.handle] = spouses
+            else:
+                person_handles[person.handle] = 0
 
             for family_handle in person.get_parent_family_handle_list():
                 family = self.database.get_family_from_handle(family_handle)
@@ -2280,13 +2303,20 @@ class DotSvgGenerator(object):
     def add_persons_and_families(self):
         """
         Adds nodes for persons and their families.
+        Subgraphs are used to indicate to Graphviz that parents of families
+        should be positioned together. The person_handles list is sorted so
+        that people with the largest number of spouses are at the start of the
+        list. As families are only processed once, this means people with
+        multiple spouses will have their additional spouses included in their
+        subgraph.
         """
         # variable to communicate with get_person_label
         url = ""
 
         # The list of families for which we have output the node,
         # so we don't do it twice
-        families_done = {}
+        family_nodes_done = {}
+        family_links_done = {}
         for person_handle in self.person_handles:
             person = self.database.get_person_from_handle(person_handle)
             # Output the person's node
@@ -2294,12 +2324,25 @@ class DotSvgGenerator(object):
             (shape, style, color, fill) = self.get_gender_style(person)
             self.add_node(person_handle, label, shape, color, style, fill, url)
 
-            # Output families where person is a parent
+            # Output family nodes where person is a parent
             family_list = person.get_family_handle_list()
             for fam_handle in family_list:
-                if fam_handle not in families_done:
-                    families_done[fam_handle] = 1
-                    self.__add_family(fam_handle)
+                if fam_handle not in family_nodes_done:
+                    family_nodes_done[fam_handle] = 1
+                    self.__add_family_node(fam_handle)
+
+            # Output family links where person is a parent
+            subgraph_started = False
+            family_list = person.get_family_handle_list()
+            for fam_handle in family_list:
+                if fam_handle not in family_links_done:
+                    family_links_done[fam_handle] = 1
+                    if not subgraph_started:
+                        subgraph_started = True
+                        self.start_subgraph(person_handle)
+                    self.__add_family_links(fam_handle)
+            if subgraph_started:
+                self.end_subgraph()
 
     def is_in_path_to_home(self, f_handle):
         """
@@ -2309,9 +2352,9 @@ class DotSvgGenerator(object):
             return True
         return False
 
-    def __add_family(self, fam_handle):
+    def __add_family_node(self, fam_handle):
         """
-        Add a node for a family and optionally link the spouses to it.
+        Add a node for a family.
         """
         fam = self.database.get_family_from_handle(fam_handle)
         fill, color = color_graph_family(fam, self.dbstate)
@@ -2320,12 +2363,11 @@ class DotSvgGenerator(object):
 
         self.add_node(fam_handle, label, "ellipse", color, style, fill)
 
-        # If subgraphs are used then we add both spouses here and Graphviz
-        # will attempt to position both spouses closely together.
-        # A person who is a parent in more than one family may only be
-        # positioned next to one of their spouses. The code currently
-        # does not take into account multiple spouses.
-        self.start_subgraph(fam_handle)
+    def __add_family_links(self, fam_handle):
+        """
+        Add the links for spouses.
+        """
+        fam = self.database.get_family_from_handle(fam_handle)
         f_handle = fam.get_father_handle()
         m_handle = fam.get_mother_handle()
         if f_handle in self.person_handles:
@@ -2342,7 +2384,6 @@ class DotSvgGenerator(object):
                           self.arrowtailstyle,
                           color=self.colors['home_path_color'],
                           bold=self.is_in_path_to_home(m_handle))
-        self.end_subgraph()
 
     def get_gender_style(self, person):
         """
