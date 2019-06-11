@@ -562,9 +562,6 @@ class GraphView(NavigationView):
             grid, _('Show places'), 3, 'interface.graphview-show-places')
         configdialog.add_checkbox(
             grid, _('Show tags'), 4, 'interface.graphview-show-tags')
-        configdialog.add_spinner(
-            grid, _('Space between generations'),
-            5, 'interface.graphview-ranksep', (1, 50))
 
         return _('Layout'), grid
 
@@ -837,6 +834,21 @@ class GraphWidget(object):
         box.pack_start(self.descendants_spinner, False, False, 1)
         self.toolbar.pack_start(box, False, False, 1)
 
+        # add spiner for generation spacing
+        box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
+        img = Gtk.Image.new_from_icon_name('object-flip-vertical',
+                                           Gtk.IconSize.MENU)
+        box.pack_start(img, False, False, 1)
+        self.ranksep_spinner = Gtk.SpinButton.new_with_range(1, 50, 1)
+        self.ranksep_spinner.set_tooltip_text(
+            _('Spacing beetwen generations'))
+        self.ranksep_spinner.set_value(
+            self.view._config.get('interface.graphview-ranksep'))
+        self.ranksep_spinner.connect("value-changed",
+                                     self.set_ranksep)
+        box.pack_start(self.ranksep_spinner, False, False, 1)
+        hbox.pack_start(box, False, False, 1)
+
         self.vbox.pack_start(scrolled_win, True, True, 0)
 
         # if we have graph lager than graphviz paper size
@@ -856,6 +868,7 @@ class GraphWidget(object):
         # for timeout on changing generation settings
         self.set_anc_event = False
         self.set_des_event = False
+        self.set_ranksep_event = False
 
         # Gtk style context for scrollwindow to operate with theme colors
         self.sw_style_context = scrolled_win.get_style_context()
@@ -904,6 +917,23 @@ class GraphWidget(object):
         self.search_widget.hide_search_popover()
         # move view to person with animation
         self.move_to_person(None, person_handle, True)
+
+    def set_ranksep(self, widget):
+        """
+        Set spacing beetwen generations.
+        Use timeout for better interface responsiveness.
+        """
+        value = int(widget.get_value())
+        # try to remove planed event (changing setting)
+        if self.set_ranksep_event and \
+                not self.set_ranksep_event.is_destroyed():
+            GLib.source_remove(self.set_ranksep_event.get_id())
+        # timeout saving setting for better interface responsiveness
+        event_id = GLib.timeout_add(300, self.view._config.set,
+                                    'interface.graphview-ranksep',
+                                    value)
+        context = GLib.main_context_default()
+        self.set_ranksep_event = context.find_source_by_id(event_id)
 
     def set_ancestors_generations(self, widget):
         """
