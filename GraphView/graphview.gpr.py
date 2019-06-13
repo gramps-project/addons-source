@@ -25,11 +25,11 @@ if(_GOO and _DOT or locals().get('build_script') or
         from gramps.gen.const import USER_PLUGINS
         fname = os.path.join(USER_PLUGINS, 'GraphView',
                             'gramps-graph.svg')
-        factory = Gtk.IconFactory()
-        pixbuf = GdkPixbuf.Pixbuf.new_from_file(fname)
-        iconset = Gtk.IconSet.new_from_pixbuf(pixbuf)
-        factory.add('gramps-graph', iconset)
-        factory.add_default()
+        icon_theme = Gtk.IconTheme()
+        size = Gtk.IconSize.lookup(Gtk.IconSize.LARGE_TOOLBAR)
+        pixbuf = GdkPixbuf.Pixbuf.new_from_file_at_scale(fname,
+                                                         size[1], -1, True)
+        icon_theme.add_builtin_icon('gramps-graph', size[1], pixbuf)
 
     register(VIEW,
         id    = 'graphview',
