@@ -31,6 +31,9 @@ except ValueError:
     _trans = glocale.translation
 _ = _trans.gettext
 
+# gtk version
+gtk_version = float("%s.%s" % (Gtk.MAJOR_VERSION, Gtk.MINOR_VERSION))
+
 
 class SearchWidget(GObject.GObject):
     """
@@ -463,6 +466,23 @@ class Popover(Gtk.Popover):
         for panel in (self.main_panel, self.other_panel):
             panel.clear_items()
 
+    def popup(self):
+        """
+        Different popup depending on gtk version.
+        """
+        if gtk_version >= 3.22:
+            super(self.__class__, self).popup()
+        else:
+            self.show()
+
+    def popdown(self):
+        """
+        Different popdown depending on gtk version.
+        """
+        if gtk_version >= 3.22:
+            super(self.__class__, self).popdown()
+        else:
+            self.hide()
 
 class ListBoxRow(Gtk.ListBoxRow):
     """
