@@ -35,6 +35,10 @@ _ = _trans.gettext
 # gtk version
 gtk_version = float("%s.%s" % (Gtk.MAJOR_VERSION, Gtk.MINOR_VERSION))
 
+# mark icons
+starred = 'starred'
+non_starred = 'non-starred'
+
 
 class SearchWidget(GObject.GObject):
     """
@@ -313,15 +317,17 @@ class SearchWidget(GObject.GObject):
 
             if person_handle in bookmarks:
                 button = Gtk.Button.new_from_icon_name(
-                    'user-bookmarks-symbolic', Gtk.IconSize.MENU)
+                    starred, Gtk.IconSize.MENU)
                 button.set_tooltip_text(_('Remove from bookmarks'))
+                button.set_relief(Gtk.ReliefStyle.NONE)
                 button.connect('clicked', self.remove_from_bookmarks,
                                person_handle)
                 hbox.add(button)
             else:
                 button = Gtk.Button.new_from_icon_name(
-                    'bookmark-new-symbolic', Gtk.IconSize.MENU)
+                    non_starred, Gtk.IconSize.MENU)
                 button.set_tooltip_text(_('Add to bookmarks'))
+                button.set_relief(Gtk.ReliefStyle.NONE)
                 button.connect('clicked', self.add_to_bookmarks, person_handle)
                 hbox.add(button)
 
@@ -377,7 +383,7 @@ class SearchWidget(GObject.GObject):
         self.bookmarks.add(handle)
 
         # change icon and reconnect
-        img = Gtk.Image.new_from_icon_name('user-bookmarks-symbolic',
+        img = Gtk.Image.new_from_icon_name(starred,
                                            Gtk.IconSize.MENU)
         widget.set_image(img)
         widget.set_tooltip_text(_('Remove from bookmarks'))
@@ -390,7 +396,7 @@ class SearchWidget(GObject.GObject):
         """
         self.bookmarks.remove_handles([handle])
         # change icon and reconnect
-        img = Gtk.Image.new_from_icon_name('bookmark-new-symbolic',
+        img = Gtk.Image.new_from_icon_name(non_starred,
                                            Gtk.IconSize.MENU)
         widget.set_image(img)
         widget.set_tooltip_text(_('Add to bookmarks'))
