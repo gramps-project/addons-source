@@ -373,8 +373,8 @@ msgid ""
 "is UTF-8.</p>"
 msgstr ""
 "<p>Na tejto stránke nádjete SVG kód.<br>Skopírujte obsah do textového "
-"editoru a uložte ho ako súbor SVG.<br>Uistite sa, že kódovanie znakov "
-"je UTF-8.</p>"
+"editoru a uložte ho ako súbor SVG.<br>Uistite sa, že kódovanie znakov je "
+"UTF-8.</p>"
 
 #: DynamicWeb/dynamicweb.py:2447
 msgid "Address"
@@ -806,7 +806,8 @@ msgstr "Zvoľte typ grafu"
 
 #: DynamicWeb/dynamicweb.py:2568
 msgid "Several matches.<br>Precise your search or choose in the lists below."
-msgstr "Viacero zhod.<br>Upresnite vyhľadávanie alebo vyberte zo zoznamu nižšie."
+msgstr ""
+"Viacero zhod.<br>Upresnite vyhľadávanie alebo vyberte zo zoznamu nižšie."
 
 #: DynamicWeb/dynamicweb.py:2569
 msgid "Show _MENU_ entries"
@@ -934,7 +935,6 @@ msgid ""
 "the SVG tree"
 msgstr ""
 "Či použiť špeciálnu farbu pre osoby ktoré sa v SVG strome vyskytujú viac krát"
-""
 
 #: DynamicWeb/dynamicweb.py:2603
 msgid "Without name"
@@ -1078,8 +1078,8 @@ msgstr ""
 "__EXPORT_DATE__ je nahradené aktuálnym dátumom.\n"
 "__GRAMPS_VERSION__ je nahradené verziou Gramps.\n"
 "__GRAMPS_HOMEPAGE__ je nahradené odkazom na domovskú stránku Gramps.\n"
-"URL začínajúce na \"relative://relative.<link>\" sú nahradené "
-"relatívnou URL \"<link>\".\n"
+"URL začínajúce na \"relative://relative.<link>\" sú nahradené relatívnou URL "
+"\"<link>\".\n"
 
 #: DynamicWeb/dynamicweb.py:3880
 msgid "Report"
@@ -1101,8 +1101,7 @@ msgstr "Uložiť webové súbory do archívu"
 msgid ""
 "Whether to create an archive file (in ZIP or TGZ format) containing the web "
 "site"
-msgstr ""
-"Či vytvoriť archív (v ZIP alebo TGZ formáte) obsahujúci web stránku"
+msgstr "Či vytvoriť archív (v ZIP alebo TGZ formáte) obsahujúci web stránku"
 
 #: DynamicWeb/dynamicweb.py:3896
 msgid "Archive file"
@@ -1216,8 +1215,7 @@ msgstr "Počet rokov od úmrtia, počas ktorých sa osoba považuje za živú"
 msgid ""
 "This allows you to restrict information on people who have not been dead for "
 "very long"
-msgstr ""
-"Toto umožňuje obmedziť informácie o nedávno zosnulých osobách"
+msgstr "Toto umožňuje obmedziť informácie o nedávno zosnulých osobách"
 
 #: DynamicWeb/dynamicweb.py:3990
 msgid "Export notes"
@@ -1362,8 +1360,7 @@ msgstr "Či zahrnúť stránky rodín alebo nie"
 #: DynamicWeb/dynamicweb.py:4091
 msgid ""
 "Whether to include half and/ or step-siblings with the parents and siblings"
-msgstr ""
-"Či zahrnúť nevlastných súrodencov s rodičmi a súrodencami"
+msgstr "Či zahrnúť nevlastných súrodencov s rodičmi a súrodencami"
 
 #: DynamicWeb/dynamicweb.py:4094
 msgid "Include GENDEX file (/gendex.txt)"
@@ -1515,19 +1512,17 @@ msgstr "Zvoľte základný tvar grafu pre SVG strom"
 
 #: DynamicWeb/dynamicweb.py:4194
 msgid "Choose the default SVG tree parents distribution (for fan charts only)"
-msgstr "Zvoľte základné rozdelenie rodičov v SVG strome (len pre vejárové "
-"grafy)"
+msgstr ""
+"Zvoľte základné rozdelenie rodičov v SVG strome (len pre vejárové grafy)"
 
 #: DynamicWeb/dynamicweb.py:4200
 msgid "Choose the default SVG tree children distribution (for fan charts only)"
-msgstr "Zvoľte základné rozdelenie detí v SVG strome (len pre vejárové "
-"grafy)"
+msgstr "Zvoľte základné rozdelenie detí v SVG strome (len pre vejárové grafy)"
 
 #: DynamicWeb/dynamicweb.py:4206
 msgid ""
 "Choose the background color scheme for the persons in the SVG tree graph"
-msgstr ""
-"Zvoľte schému farby pozadia pre osoby v grafe SVG stromu"
+msgstr "Zvoľte schému farby pozadia pre osoby v grafe SVG stromu"
 
 #: DynamicWeb/dynamicweb.py:4209
 msgid "Start gradient/Main color"
