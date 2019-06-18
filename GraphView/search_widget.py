@@ -651,13 +651,8 @@ class Panel(Gtk.Box):
         Function to sort rows by person name.
         Priority for bookmarked persons.
         """
-        # both rows are marked
-        if row_1.marked and row_2.marked:
+        # both rows are marked or not
+        if row_1.marked == row_2.marked:
             return row_1.label > row_2.label
-        # one row is marked
-        if row_1.marked:
-            return False
-        if row_2.marked:
-            return True
-        # rows doesn't marked
-        return row_1.label > row_2.label
+        # if one row is marked
+        return row_2.marked
