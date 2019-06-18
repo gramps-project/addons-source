@@ -77,10 +77,10 @@ class SearchWidget(GObject.GObject):
         self.search_entry.connect('empty-search', self.hide_search_popover)
         self.search_entry.connect('focus-to-result', self.focus_results)
 
+        # set default options
         self.search_all_db_option = True
         self.show_images_option = True
-        # set default options
-        self.set_options(True, True)
+        self.show_marked_first = True
 
         self.search_words = None
         # search status
@@ -102,7 +102,8 @@ class SearchWidget(GObject.GObject):
         """
         self.items_list = items_list
 
-    def set_options(self, search_all_db=None, show_images=None):
+    def set_options(self, search_all_db=None, show_images=None,
+                    marked_first=None):
         """
         Set options for search.
         """
@@ -110,6 +111,8 @@ class SearchWidget(GObject.GObject):
             self.search_all_db_option = search_all_db
         if show_images is not None:
             self.show_images_option = show_images
+        if marked_first is not None:
+            self.show_marked_first = marked_first
 
     def activate_item(self, widget, person_handle):
         """
@@ -331,7 +334,10 @@ class SearchWidget(GObject.GObject):
                 button.connect('clicked', self.add_to_bookmarks, person_handle)
                 hbox.add(button)
 
-            panel.add_to_panel(['row', row])
+            if self.show_marked_first:
+                row.marked = person_handle in bookmarks
+
+            panel.add_to_panel(row)
 
         else:
             # we should return 'True' to restart function from GLib.idle_add
@@ -545,12 +551,14 @@ class Popover(Gtk.Popover):
 
 class ListBoxRow(Gtk.ListBoxRow):
     """
-    Extended Gtk.ListBoxRow with label and description properties.
+    Extended Gtk.ListBoxRow.
+    Include label, description and mark properties.
     """
-    def __init__(self, description=None, label=''):
+    def __init__(self, description=None, label='', marked=False):
         Gtk.ListBoxRow.__init__(self)
         self.label = label              # person name for sorting
         self.description = description  # useed to store person handle
+        self.marked = marked            # is bookmarked (used to sorting)
 
 
 class ScrolledListBox(Gtk.ScrolledWindow):
@@ -613,20 +621,11 @@ class Panel(Gtk.Box):
         self.progress_bar.set_fraction(fraction)
         self.progress_bar.set_text(text)
 
-    def add_to_panel(self, data):
+    def add_to_panel(self, row):
         """
-        Add found item to specified panel (ListBox).
-        data - ['row', ListBoxRow] or
-               ['widget', [Gtk.Widget, description, label]]
+        Add found item to panel (ListBox).
+        row - ListBoxRow
         """
-        if data[0] == 'row':
-            row = data[1]
-        elif data[0] == 'widget':
-            row = ListBoxRow(description=data[1][1], label=data[1][2])
-            row.add(data[1][0])
-        else:
-            return False
-
         self.list_box.prepend(row)
         row.show_all()
 
@@ -650,5 +649,15 @@ class Panel(Gtk.Box):
     def sort_func(self, row_1, row_2):
         """
         Function to sort rows by person name.
+        Priority for bookmarked persons.
         """
+        # both rows are marked
+        if row_1.marked and row_2.marked:
+            return row_1.label > row_2.label
+        # one row is marked
+        if row_1.marked:
+            return False
+        if row_2.marked:
+            return True
+        # rows doesn't marked
         return row_1.label > row_2.label

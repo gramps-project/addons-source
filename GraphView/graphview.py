@@ -141,7 +141,8 @@ class GraphView(NavigationView):
         ('interface.graphview-animation-speed', 3),
         ('interface.graphview-animation-count', 4),
         ('interface.graphview-search-all-db', True),
-        ('interface.graphview-search-show-images', False))
+        ('interface.graphview-search-show-images', True),
+        ('interface.graphview-search-marked-first', True))
 
     def __init__(self, pdata, dbstate, uistate, nav_group=0):
         NavigationView.__init__(self, _('Graph View'), pdata, dbstate, uistate,
@@ -467,6 +468,13 @@ class GraphView(NavigationView):
         self.graph_widget.search_widget.set_options(show_images=value)
         self.graph_widget.show_images_option = value
 
+    def cb_update_search_marked_first(self, client, cnxn_id, entry, data):
+        """
+        Called when the configuration menu changes the search setting.
+        """
+        value = entry == 'True'
+        self.graph_widget.search_widget.set_options(marked_first=value)
+
     def config_connect(self):
         """
         Overwriten from  :class:`~gui.views.pageview.PageView method
@@ -501,6 +509,8 @@ class GraphView(NavigationView):
                              self.cb_update_search_all_db)
         self._config.connect('interface.graphview-search-show-images',
                              self.cb_update_search_show_images)
+        self._config.connect('interface.graphview-search-marked-first',
+                             self.cb_update_search_marked_first)
 
     def _get_configure_page_funcs(self):
         """
@@ -606,6 +616,12 @@ class GraphView(NavigationView):
             'interface.graphview-search-show-images')
         widget.set_tooltip_text(
             _("Show persons thumbnails in search result list."))
+        row += 1
+        widget = configdialog.add_checkbox(
+            grid, _('Show bookmarked first'), row,
+            'interface.graphview-search-marked-first')
+        widget.set_tooltip_text(
+            _("Show bookmarked persons first in search result list."))
 
         return _('Search'), grid
     #-------------------------------------------------------------------------
@@ -952,11 +968,11 @@ class GraphWidget(object):
                 if present is not None:
                     found = True
                     count += 1
-                    self.bkmark_popover.main_panel.add_to_panel(['row', row])
+                    self.bkmark_popover.main_panel.add_to_panel(row)
                 else:
                     found_other = True
                     count_other += 1
-                    self.bkmark_popover.other_panel.add_to_panel(['row', row])
+                    self.bkmark_popover.other_panel.add_to_panel(row)
                 row.show_all()
         if not found and not found_other:
             self.bkmark_popover.show_other_panel(False)
@@ -964,18 +980,18 @@ class GraphWidget(object):
             row.add(Gtk.Label(_("You don't have any bookmarks yet...\n"
                                 "Try to add some frequently used persons "
                                 "to speedup navigation.")))
-            self.bkmark_popover.main_panel.add_to_panel(['row', row])
+            self.bkmark_popover.main_panel.add_to_panel(row)
             row.show_all()
         else:
             if not found:
                 row = ListBoxRow()
                 row.add(Gtk.Label(_('No bookmarks for this graph...')))
-                self.bkmark_popover.main_panel.add_to_panel(['row', row])
+                self.bkmark_popover.main_panel.add_to_panel(row)
                 row.show_all()
             if not found_other:
                 row = ListBoxRow()
                 row.add(Gtk.Label(_('No other bookmarks...')))
-                self.bkmark_popover.other_panel.add_to_panel(['row', row])
+                self.bkmark_popover.other_panel.add_to_panel(row)
                 row.show_all()
                 self.bkmark_popover.show_other_panel(True)
 
