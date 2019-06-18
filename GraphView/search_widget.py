@@ -269,7 +269,7 @@ class SearchWidget(GObject.GObject):
 
     def do_this(self, event, func, *args):
         """
-        Do some function (and wait "event" it the thread).
+        Do some function (and wait "event" in the thread).
         It should be called by "GLib.idle_add".
         In the end "event" will be set.
         """
@@ -402,6 +402,7 @@ class SearchWidget(GObject.GObject):
         widget.set_tooltip_text(_('Add to bookmarks'))
         widget.disconnect_by_func(self.remove_from_bookmarks)
         widget.connect('clicked', self.add_to_bookmarks, handle)
+
 
 class SearchEntry(Gtk.SearchEntry):
     """
@@ -541,9 +542,10 @@ class Popover(Gtk.Popover):
         else:
             self.hide()
 
+
 class ListBoxRow(Gtk.ListBoxRow):
     """
-    Extended Gtk.ListBoxRow with description property.
+    Extended Gtk.ListBoxRow with label and description properties.
     """
     def __init__(self, description=None, label=''):
         Gtk.ListBoxRow.__init__(self)
