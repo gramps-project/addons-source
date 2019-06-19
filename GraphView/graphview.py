@@ -201,12 +201,16 @@ class GraphView(NavigationView):
         Set up callback for changes to the database.
         """
         self._change_db(_db)
-        self.scale = 1
+        self.graph_widget.scale = 1
         if self.active:
             if self.get_active() != "":
                 self.graph_widget.populate(self.get_active())
+                self.graph_widget.set_available(True)
+            else:
+                self.graph_widget.set_available(False)
         else:
             self.dirty = True
+            self.graph_widget.set_available(False)
 
     def get_stock(self):
         """
@@ -341,8 +345,10 @@ class GraphView(NavigationView):
         if self.active:
             if self.get_active() != "":
                 self.graph_widget.populate(self.get_active())
+                self.graph_widget.set_available(True)
         else:
             self.dirty = True
+            self.graph_widget.set_available(False)
 
     def change_active_person(self, menuitem=None, person_handle=''):
         """
@@ -724,50 +730,50 @@ class GraphWidget(object):
         self.vbox = Gtk.Box(homogeneous=False, spacing=4,
                             orientation=Gtk.Orientation.VERTICAL)
         self.vbox.set_border_width(4)
-        hbox = Gtk.Box(homogeneous=False, spacing=4,
+        self.toolbar = Gtk.Box(homogeneous=False, spacing=4,
                        orientation=Gtk.Orientation.HORIZONTAL)
-        self.vbox.pack_start(hbox, False, False, 0)
+        self.vbox.pack_start(self.toolbar, False, False, 0)
 
         # add zoom-in button
         self.zoom_in_btn = Gtk.Button.new_from_icon_name('zoom-in',
                                                          Gtk.IconSize.MENU)
         self.zoom_in_btn.set_tooltip_text(_('Zoom in'))
-        hbox.pack_start(self.zoom_in_btn, False, False, 1)
+        self.toolbar.pack_start(self.zoom_in_btn, False, False, 1)
         self.zoom_in_btn.connect("clicked", self.zoom_in)
 
         # add zoom-out button
         self.zoom_out_btn = Gtk.Button.new_from_icon_name('zoom-out',
                                                           Gtk.IconSize.MENU)
         self.zoom_out_btn.set_tooltip_text(_('Zoom out'))
-        hbox.pack_start(self.zoom_out_btn, False, False, 1)
+        self.toolbar.pack_start(self.zoom_out_btn, False, False, 1)
         self.zoom_out_btn.connect("clicked", self.zoom_out)
 
         # add original zoom button
         self.orig_zoom_btn = Gtk.Button.new_from_icon_name('zoom-original',
                                                            Gtk.IconSize.MENU)
         self.orig_zoom_btn.set_tooltip_text(_('Zoom to original'))
-        hbox.pack_start(self.orig_zoom_btn, False, False, 1)
+        self.toolbar.pack_start(self.orig_zoom_btn, False, False, 1)
         self.orig_zoom_btn.connect("clicked", self.set_original_zoom)
 
         # add best fit button
         self.fit_btn = Gtk.Button.new_from_icon_name('zoom-fit-best',
                                                      Gtk.IconSize.MENU)
         self.fit_btn.set_tooltip_text(_('Zoom to best fit'))
-        hbox.pack_start(self.fit_btn, False, False, 1)
+        self.toolbar.pack_start(self.fit_btn, False, False, 1)
         self.fit_btn.connect("clicked", self.fit_to_page)
 
         # add 'go to active person' button
         self.goto_active_btn = Gtk.Button.new_from_icon_name('go-jump',
                                                              Gtk.IconSize.MENU)
         self.goto_active_btn.set_tooltip_text(_('Go to active person'))
-        hbox.pack_start(self.goto_active_btn, False, False, 1)
+        self.toolbar.pack_start(self.goto_active_btn, False, False, 1)
         self.goto_active_btn.connect("clicked", self.goto_active)
 
         # add 'go to bookmark' button
         self.goto_other_btn = Gtk.Button(_('Go to bookmark'))
         self.goto_other_btn.set_tooltip_text(
             _('Center view on selected bookmark'))
-        hbox.pack_start(self.goto_other_btn, False, False, 1)
+        self.toolbar.pack_start(self.goto_other_btn, False, False, 1)
         self.bkmark_popover = Popover(_('Bookmarks for current graph'),
                                       _('Other Bookmarks'),
                                       ext_panel=self.build_bkmark_ext_panel())
@@ -784,7 +790,7 @@ class GraphWidget(object):
                                           self.get_person_image,
                                           bookmarks=self.view.bookmarks)
         search_box = self.search_widget.get_widget()
-        hbox.pack_start(search_box, True, True, 1)
+        self.toolbar.pack_start(search_box, True, True, 1)
         self.search_widget.set_options(
             search_all_db=self.view._config.get(
                 'interface.graphview-search-all-db'),
@@ -816,7 +822,7 @@ class GraphWidget(object):
         self.descendants_spinner.connect("value-changed",
                                          self.set_descendants_generations)
         box.pack_start(self.descendants_spinner, False, False, 1)
-        hbox.pack_start(box, False, False, 1)
+        self.toolbar.pack_start(box, False, False, 1)
 
         self.vbox.pack_start(scrolled_win, True, True, 0)
 
@@ -843,6 +849,15 @@ class GraphWidget(object):
 
         # used for popup menu, prevent destroy menu as local variable
         self.menu = None
+
+    def set_available(self, state):
+        """
+        Set state for GraphView.
+        """
+        if not state:
+            # if no database is opened
+            self.clear()
+        self.toolbar.set_sensitive(state)
 
     def font_changed(self, active):
         self.font = config.get('utf8.selected-font')
