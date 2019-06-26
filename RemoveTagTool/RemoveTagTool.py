@@ -77,15 +77,15 @@ class RemoveTagOptions(MenuToolOptions):
                ("places", _("Place Filter"), "place_filter", 'Place',
                 _("All Places"), _("Option 2")),
                ("sources", _("Source Filter"), "scource_filter", 'Source',
-                _("All Places"), _("Option 2")),
+                _("All Sources"), _("Option 2")),
                ("citations", _("Citation Filter"), "cit_filter", 'Citation',
-                _("All Places"), _("Option 2")),
+                _("All Citations"), _("Option 2")),
                ("repositories", _("Repository Filter"), "repo_filter",
-                'Repository', _("All Places"), _("Option 2")),
+                'Repository', _("All Repositories"), _("Option 2")),
                ("media", _("Media Filter"), "media_filter", 'Media',
-                _("All Places"), _("Option 2")),
+                _("All Media"), _("Option 2")),
                ("notes", _("Note Filter"), "note_filter", 'Note',
-                _("All Places"), _("Option 2"))]
+                _("All Notes"), _("Option 2"))]
 
         for entry in lst:
             filter_name = FilterOption(entry[1], 0)
