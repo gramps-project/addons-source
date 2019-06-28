@@ -27,6 +27,7 @@ description =  _("Provides a browsable list of selected places, with possibility
 version = '0.0.36',
 gramps_target_version = "5.1",
 status = STABLE,
+include_in_listing = False,
 fname = 'PlaceCompletion.py',
 authors = ["B. Malengier",
 "Mathieu MD"],

@@ -51,7 +51,7 @@ from gramps.gui.display import display_help
 from gramps.plugins.lib.libplaceimport import PlaceImport
 from gramps.gen.utils.location import get_main_location
 from gramps.gen.display.place import displayer as place_displayer
-from gramps.gen.lib import PlaceType, PlaceName
+from gramps.gen.lib import PlaceType, PlaceName, Attribute, AttributeType
 
 from gramps.gui.plug import tool
 from gramps.gui.utils import ProgressMeter
@@ -610,7 +610,7 @@ class ExtractCity(tool.BatchTool, ManagedWindow):
         display_help()
 
     def on_ok_clicked(self, obj):
-        with DbTxn(_("Extract Place data"), self.db, batch=True) as self.trans:
+        with DbTxn(_("Extract Place data"), self.db, batch=False) as self.trans:
             self.db.disable_signals()
             changelist = [node for node in self.iter_list
                           if self.model.get_value(node, 0)]
@@ -624,7 +624,10 @@ class ExtractCity(tool.BatchTool, ManagedWindow):
                     place.set_name(PlaceName(value=row[2]))
                 place.set_type(PlaceType.CITY)
                 if row[4]:
-                    place.set_code(row[4])
+                    attr = Attribute()
+                    attr.set_type(AttributeType.POSTAL)
+                    attr.set_value(row[4])
+                    place.add_attribute(attr)
                 self.db.commit_place(place, self.trans)
 
             self.place_import.generate_hierarchy(self.trans)
