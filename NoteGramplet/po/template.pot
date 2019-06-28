@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"POT-Creation-Date: 2019-06-28 10:11-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -45,10 +45,10 @@ msgstr ""
 msgid "Abandon"
 msgstr ""
 
-#: NoteGramplet/NoteGramplet.py:173 NoteGramplet/NoteGramplet.py:256
+#: NoteGramplet/NoteGramplet.py:174 NoteGramplet/NoteGramplet.py:257
 msgid "Person Note"
 msgstr ""
 
-#: NoteGramplet/NoteGramplet.py:254
+#: NoteGramplet/NoteGramplet.py:255
 msgid "Save Note"
 msgstr ""
