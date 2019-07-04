@@ -23,7 +23,8 @@
 #
 # -------------------------------------------------
 from gramps.gui.plug import MenuToolOptions, PluginWindows
-from gramps.gen.plug.menu import FilterOption, PersonOption, FamilyOption
+from gramps.gen.plug.menu import (FilterOption, PersonOption, FamilyOption,
+                                  TextOption)
 from gramps.gen.db import DbTxn
 import gramps.gen.plug.report.utils as ReportUtils
 from gramps.gui.dialog import OkDialog
@@ -55,57 +56,79 @@ class RemoveTagOptions(MenuToolOptions):
 
     def get_enum_tag_name_list(self):
         """
-        Get an enumerated tag name list.
+        Returns an enumerated tag name list.
 
         :rtype: list
         """
-        tag_list = self.__db.iter_tags()
-        L = list(map(lambda x: x.get_name(), tag_list))
-        return list(enumerate(L))
+        tag_list = list(self.__db.iter_tags())
+        if tag_list:
+            L = list(map(lambda x: x.get_name(), tag_list))
+            return list(enumerate(L))
+
+    def is_db_empty(self):
+        """
+        Check if database has at least one person, family and tag.
+
+        :returns: True or False
+        """
+        try:
+            next(self.__db.iter_person_handles())
+            next(self.__db.iter_family_handles())
+            next(self.__db.iter_tag_handles())
+        except StopIteration:
+            # StopIteration is raised if at least one category has no objects
+            return True  # Empty
+        return False  # Not empty
 
     def add_menu_options(self, menu):
         """
         Add the menu options for the Remove Tag Tool.
         """
-        self.__add_tag_category_options(menu)
-        self.__add_person_options(menu)
-        self.__add_family_options(menu)
+        if self.is_db_empty():
+            txt = [_("The Remove Tag Tool requires at least "
+                     "one person, family and tag to execute.")]
+            self.empty = TextOption(_("ERROR"), txt)
+            menu.add_option(_("ERROR"), "empty", self.empty)
+        else:
+            self.__add_tag_category_options(menu)
+            self.__add_person_options(menu)
+            self.__add_family_options(menu)
 
-        self.filter_dict = {}
-        lst = [("events", _("Event Filter"), "event_filter", 'Event',
-                _("All Events"), _("Option 2")),
-               ("places", _("Place Filter"), "place_filter", 'Place',
-                _("All Places"), _("Option 2")),
-               ("sources", _("Source Filter"), "scource_filter", 'Source',
-                _("All Sources"), _("Option 2")),
-               ("citations", _("Citation Filter"), "cit_filter", 'Citation',
-                _("All Citations"), _("Option 2")),
-               ("repositories", _("Repository Filter"), "repo_filter",
-                'Repository', _("All Repositories"), _("Option 2")),
-               ("media", _("Media Filter"), "media_filter", 'Media',
-                _("All Media"), _("Option 2")),
-               ("notes", _("Note Filter"), "note_filter", 'Note',
-                _("All Notes"), _("Option 2"))]
+            self.filter_dict = {}
+            lst = [("events", _("Event Filter"), "event_filter", 'Event',
+                    _("All Events")),
+                   ("places", _("Place Filter"), "place_filter", 'Place',
+                    _("All Places")),
+                   ("sources", _("Source Filter"), "scource_filter", 'Source',
+                    _("All Sources")),
+                   ("citations", _("Citation Filter"), "cit_filter",
+                    'Citation', _("All Citations")),
+                   ("repositories", _("Repository Filter"), "repo_filter",
+                    'Repository', _("All Repositories")),
+                   ("media", _("Media Filter"), "media_filter", 'Media',
+                    _("All Media")),
+                   ("notes", _("Note Filter"), "note_filter", 'Note',
+                    _("All Notes"))]
 
-        for entry in lst:
-            filter_name = FilterOption(entry[1], 0)
-            filter_name.set_help(_("Select filter to restrict {}"
-                                   .format(entry[0])))
-            menu.add_option(entry[5], entry[2], filter_name)
-            self.filter_dict[entry[3]] = filter_name
+            for entry in lst:
+                filter_name = FilterOption(entry[1], 0)
+                filter_name.set_help(_("Select filter to restrict {}"
+                                       .format(entry[0])))
+                menu.add_option(_("Option 2"), entry[2], filter_name)
+                self.filter_dict[entry[3]] = filter_name
 
-            filter_list = CustomFilters.get_filters(entry[3])
-            GenericFilter = GenericFilterFactory(entry[3])
-            all_filter = GenericFilter()
-            all_filter.set_name(entry[4])
-            all_filter.add_rule(rules.event.AllEvents([]))
-            all_filter_in_list = False
-            for fltr in filter_list:
-                if fltr.get_name() == all_filter.get_name():
-                    all_filter_in_list = True
-            if not all_filter_in_list:
-                filter_list.insert(0, all_filter)
-            self.filter_dict[entry[3]].set_filters(filter_list)
+                filter_list = CustomFilters.get_filters(entry[3])
+                GenericFilter = GenericFilterFactory(entry[3])
+                all_filter = GenericFilter()
+                all_filter.set_name(entry[4])
+                all_filter.add_rule(rules.event.AllEvents([]))
+                all_filter_in_list = False
+                for fltr in filter_list:
+                    if fltr.get_name() == all_filter.get_name():
+                        all_filter_in_list = True
+                if not all_filter_in_list:
+                    filter_list.insert(0, all_filter)
+                self.filter_dict[entry[3]].set_filters(filter_list)
 
     def __add_tag_category_options(self, menu):
         """
@@ -212,8 +235,10 @@ class RemoveTagOptions(MenuToolOptions):
         If the filter is not specific to a person, disable the person option.
         """
         filter_value = self.__person_filter.get_value()
-        (self.__pid.set_available(True) if (filter_value in [1, 2, 3, 4])
-         else self.__pid.set_available(False))
+        if filter_value in [1, 2, 3, 4]:
+            self.__pid.set_available(True)
+        else:
+            self.__pid.set_available(False)
 
     def __add_family_options(self, menu):
         """
@@ -256,8 +281,10 @@ class RemoveTagOptions(MenuToolOptions):
         If the filter is not specific to a family, disable the family option.
         """
         filter_value = self.__family_filter.get_value()
-        (self.__fid.set_available(True) if (filter_value in [1, 2]) else
-         self.__fid.set_available(False))
+        if filter_value in [1, 2]:
+            self.__fid.set_available(True)
+        else:
+            self.__fid.set_available(False)
 
 
 # ----------------------------------------------------------------------------
@@ -283,8 +310,19 @@ class RemoveTagWindow(PluginWindows.ToolManagedWindowBatch):
         Main function running the Remove Tag Tool.
         """
         self.__db = self.dbstate.get_database()
-        self.__tag_info = self.__get_tag_info()
-        self.__get_menu_options()
+        self.__check_menu_option()
+
+    def __check_menu_option(self):
+        """
+        Checks if menu options are generated and the tool can execute.
+        """
+        tag_category = self.__opt_by_name('category')
+        if not tag_category:
+            txt = ("The Remove Tag Tool requires at least one person, family "
+                   "and tag to execute.")
+            OkDialog("ERROR", txt, parent=self.window)
+        else:
+            self.__get_menu_options()
 
     def __get_tag_info(self):
         """
@@ -293,7 +331,7 @@ class RemoveTagWindow(PluginWindows.ToolManagedWindowBatch):
         :rtype: list
         :example tuple: (counter, tag_handle, tag_name)
         """
-        tag_list = self.__db.iter_tags()
+        tag_list = list(self.__db.iter_tags())
         L = []
         counter = 0
         for Tag in tag_list:
@@ -312,6 +350,7 @@ class RemoveTagWindow(PluginWindows.ToolManagedWindowBatch):
         those items of the category, but not from the other categories.
         """
         tag_category = self.__opt_by_name('category')
+        self.__tag_info = self.__get_tag_info()
         category_value = tag_category.get_value()
         tag_value = self.options.handler.options_dict['tag_name']
         for info in self.__tag_info:
