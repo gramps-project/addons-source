@@ -251,6 +251,7 @@ class SearchWidget(GObject.GObject):
         Add persons to specified panel by self.queue.
         """
         thread_event = Event()
+        context = GLib.main_context_default()
         while True:
             item = self.queue.get()
 
@@ -259,12 +260,15 @@ class SearchWidget(GObject.GObject):
                 return
 
             add_list.append(item.handle)
-            GLib.idle_add(self.do_this, thread_event,
-                          self.add_to_result,
-                          item.handle, panel)
+            task_id = GLib.idle_add(self.do_this, thread_event,
+                                    self.add_to_result,
+                                    item.handle, panel)
+            task = context.find_source_by_id(task_id)
             # wait until person is added to list
             while not thread_event.wait(timeout=0.01):
                 if not self.in_search:
+                    if task and not task.is_destroyed():
+                        GLib.source_remove(task.get_id())
                     self.queue.task_done()
                     return
             thread_event.clear()
