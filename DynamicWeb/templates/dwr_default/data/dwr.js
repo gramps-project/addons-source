@@ -3591,7 +3591,7 @@ function mapUpdate()
 	{
 		var OsmPointStyle = function(feature, resolution)
 		{
-			var x_marker = parseInt(feature.p.name.replace('OsmPopup', ''));
+			var x_marker = parseInt(feature.values_.name.replace('OsmPopup', ''));
 			var ip = GetIconProps(x_marker);
 			var iconStyle = new ol.style.Style({
 				image: new ol.style.Icon(({

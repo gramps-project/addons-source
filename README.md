@@ -45,16 +45,26 @@ python3 make.py gramps50 build AddonDirectory
 python3 make.py gramps50 listing AddonDirectory
 ```
 
+* For the developer who is merging PRs or other commits and needs to rebuild
+    and list one or more addons
+```
+python3 make.py gramps50 as-needed
+```
+
 Valid command summary
 =====================
 
-* **clean** - Removes unnecessary files(locale etc) from the addon
+* **clean** - Removes unnecessary files (locale etc) from the addon
 
-* **init** [subcomand: **all**] - Get all of the strings from the addon and create template.po
+* **init** [subcomand: **all**] - Get all of the strings from the addon and
+create necessary subdirectories and the template.pot for the addon or all
+addons if **all** is used.
 
-* **update** - Updates the template.po file
+* **update** - Updates the language xx-local.po file from the pot file.
 
-* **compile** [subcomand: **all**] - Compiles the template.po file into 
+* **compile** [subcomand: **all**] - Compiles the language xx-local.po files
+into the locale/xx/LD_MESSAGES/addon.mo files for all languages in addon,
+or all addons if **all** is used.
 
 * **build**  [subcomand: **all**] - Builds the addon for release
 
@@ -64,10 +74,14 @@ Valid command summary
 
 * **fix**  - If the listing shows a repeated addon entry, fix it
 
-* **check** - Checks if the addon listing matches the addon download version or if missing from the listing
+* **check** - Checks if the addon listing matches the addon download version
+or if missing from the listing
 
-* **listing** [subcomand: **all**] - Builds/Creates a listing for the addon in each supported language
+* **listing** [subcomand: **all**] - Builds/Creates a listing for the addon in
+each supported language
 
-* **as-needed** [no other parameters] - Builds/Lists/Cleans only out of date addons in one step
+* **as-needed** [no other parameters] - Builds/Lists/Cleans only out of date
+addons in one step.  It also rebuilds the template.pot file so it is also
+up to date.
 
 

@@ -1,0 +1,99 @@
+# French translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) 2001-2017 Free Software Foundation, Inc.
+#
+# Quelques variables pour la cohérence:
+#  ancestor : ascendant
+#  descendant : descendant
+#  person, individual, people : individu(s)
+#  remove (context) : enlever une référence ou supprimer de la base
+#  home : souche
+#  active person : individu actif
+#  media : media (pas de 's' ou accent) : un medium
+#  les médias : journaux, tv
+#  call name : prénom usuel
+#  unknown (context) : inconnu ou non-connu (individu)
+#
+#
+# Laurent Protois <laurent.protois@free.fr>, 2001-2004.
+# Matthieu Pupat <tieum.tieum@free.fr>, 2004, 2005.
+# Guillaume Pratte <guillaumep@soireevideo.org>, 2005.
+# Frederic Chateaux, 2007-2008.
+# Jérôme Rapinat <romjerome@yahoo.fr>, 2005-2017.
+# Mathieu MD <mathieu.md@gmail.com>, 2012.
+# Christophe <khrys63@gmail.com>, 2018.
+msgid ""
+msgstr ""
+"Project-Id-Version: 5.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-05 14:02-0600\n"
+"PO-Revision-Date: 2019-02-16 09:53+0100\n"
+"Last-Translator: \n"
+"Language-Team: French <traduc@traduc.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.5.4\n"
+
+#: Themes/themes.gpr.py:28
+msgid "Theme preferences"
+msgstr "Préférences de thème"
+
+#: Themes/themes.gpr.py:29
+msgid ""
+"An addition to Preferences for simple Theme and Font adjustment.  Especially "
+"useful for Windows users."
+msgstr ""
+"Un ajout aux préférences pour un simple ajustement de thème et de police. "
+"Particulièrement utile pour les utilisateurs Windows."
+
+#: Themes/themes.py:93
+msgid "_Help"
+msgstr "Aid_e"
+
+#: Themes/themes.py:137 Themes/themes.py:155
+msgid "Theme is hardcoded by GTK_THEME"
+msgstr "Le thème est figé par GTK_THEME"
+
+# master
+#: Themes/themes.py:140 Themes/themes.py:163
+#, python-format
+msgid "%s: "
+msgstr "%s : "
+
+#: Themes/themes.py:140 Themes/themes.py:190
+msgid "Theme"
+msgstr "Thème"
+
+#: Themes/themes.py:145
+msgid "Dark Variant"
+msgstr "Variante sombre"
+
+#: Themes/themes.py:163
+msgid "Font"
+msgstr "Police"
+
+#: Themes/themes.py:170
+msgid "_Toolbar"
+msgstr "Barre d'ou_tils"
+
+#: Themes/themes.py:170
+msgid "Text"
+msgstr "Texte"
+
+#: Themes/themes.py:179
+msgid "Fixed Scrollbar (requires restart)"
+msgstr "Barre de défilement fixe (redémarrage requis)"
+
+# trunk
+#: Themes/themes.py:186
+msgid "Restore to defaults"
+msgstr "Rétablir les défauts"
+
+#~ msgid "Default"
+#~ msgstr "Défaut"
+
+#~ msgid "Colors"
+#~ msgstr "Couleurs"

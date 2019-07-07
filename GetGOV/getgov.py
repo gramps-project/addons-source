@@ -290,6 +290,8 @@ class GetGOV(Gramplet):
         self.gui.get_container_widget().remove(self.gui.textview)
         self.gui.get_container_widget().add_with_viewport(root)
         root.show_all()
+        self.type_dic = dict()
+
 
     def __create_gui(self):
         """
@@ -335,20 +337,8 @@ class GetGOV(Gramplet):
             preferred_lang = 'de'
         visited = {}
 
-        type_dic = dict()
-        type_url = 'http://gov.genealogy.net/types.owl/'
-        response = urlopen(type_url)
-        data = response.read()
-        dom = parseString(data)
-        for group in dom.getElementsByTagName('owl:Class') :
-            url_value = group.attributes['rdf:about'].value
-            group_number = 'j.0:' + url_value.split('#')[1]
-            for element in dom.getElementsByTagName(group_number):
-                type_number = element.attributes['rdf:about'].value.split('#')[1]
-                for pname in element.getElementsByTagName('rdfs:label'):
-                    type_lang = pname.attributes['xml:lang'].value
-                    type_text = pname.childNodes[0].data
-                    type_dic[type_number,type_lang] = type_text
+        if not self.type_dic:
+            self.__get_types()
 
         with DbTxn(_('Add GOV-id place %s') % gov_id, self.dbstate.db) as trans:
             while to_do:
@@ -357,7 +347,8 @@ class GetGOV(Gramplet):
                 if place is not None:
                     visited[gov_id] = (place, [])
                 else:
-                    place, ref_list = self.__get_place(gov_id, type_dic, preferred_lang)
+                    place, ref_list = self.__get_place(gov_id, self.type_dic,
+                                                       preferred_lang)
                     if place.get_name().get_value is not '':
                         self.dbstate.db.add_place(place, trans)
                         visited[gov_id] = (place, ref_list)
@@ -374,6 +365,31 @@ class GetGOV(Gramplet):
                         place_ref.set_date_object(date)
                         place.add_placeref(place_ref)
                     self.dbstate.db.commit_place(place, trans)
+
+    def __get_types(self):
+        type_url = 'http://gov.genealogy.net/types.owl/'
+        response = urlopen(type_url)
+        data = response.read()
+        dom = parseString(data)
+        for group in dom.getElementsByTagName('owl:Class') :
+            url_value = group.attributes['rdf:about'].value
+            group_number = url_value.split('#')[1]
+            for element in dom.getElementsByTagNameNS("http://gov.genealogy."
+                                                      "net/types.owl#",
+                                                      group_number):
+                type_number = element.attributes['rdf:about'].value.split('#')[1]
+                for pname in element.getElementsByTagName('rdfs:label'):
+                    type_lang = pname.attributes['xml:lang'].value
+                    type_text = pname.childNodes[0].data
+                    self.type_dic[type_number,type_lang] = type_text
+            for element in dom.getElementsByTagNameNS("http://gov.genealogy."
+                                                      "net/ontology.owl#",
+                                                      'Type'):
+                type_number = element.attributes['rdf:about'].value.split('#')[1]
+                for pname in element.getElementsByTagName('rdfs:label'):
+                    type_lang = pname.attributes['xml:lang'].value
+                    type_text = pname.childNodes[0].data
+                    self.type_dic[type_number,type_lang] = type_text
 
     def __get_place(self, gov_id, type_dic, preferred_lang):
         gov_url = 'http://gov.genealogy.net/semanticWeb/about/' + quote(gov_id)

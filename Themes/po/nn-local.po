@@ -1,0 +1,80 @@
+# Norwegian (Nynorsk) translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) 2008
+#
+# Sigmund Lorentsen <siglorent@gmail.com>, 2008, 2009, 2010, 2011, 2012, 2014.
+msgid ""
+msgstr ""
+"Project-Id-Version: nn\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-05 14:02-0600\n"
+"PO-Revision-Date: 2014-12-22 21:26+0100\n"
+"Last-Translator: \n"
+"Language-Team: Norwegian Nynorsk <i18n-nn@lister.ping.uio.no>\n"
+"Language: nn\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.4\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: Themes/themes.gpr.py:28
+msgid "Theme preferences"
+msgstr "Temainnstillinger"
+
+#: Themes/themes.gpr.py:29
+msgid ""
+"An addition to Preferences for simple Theme and Font adjustment.  Especially "
+"useful for Windows users."
+msgstr ""
+"Et tillegg til Innstillinger for enkel justering av tema og skrift. Spesielt "
+"nyttig for Windows-brukere."
+
+#: Themes/themes.py:93
+msgid "_Help"
+msgstr "_Hjelp"
+
+#: Themes/themes.py:137 Themes/themes.py:155
+msgid "Theme is hardcoded by GTK_THEME"
+msgstr "Temaet er hardkodet av GTK_THEME"
+
+#: Themes/themes.py:140 Themes/themes.py:163
+#, fuzzy, python-format
+msgid "%s: "
+msgstr " Detaljar: %s"
+
+#: Themes/themes.py:140 Themes/themes.py:190
+msgid "Theme"
+msgstr "Tema"
+
+#: Themes/themes.py:145
+msgid "Dark Variant"
+msgstr "Mørk Variant"
+
+#: Themes/themes.py:163
+msgid "Font"
+msgstr "Skrifttype"
+
+#: Themes/themes.py:170
+msgid "_Toolbar"
+msgstr "Verk_tøylinje"
+
+#: Themes/themes.py:170
+msgid "Text"
+msgstr "Tekst"
+
+#: Themes/themes.py:179
+msgid "Fixed Scrollbar (requires restart)"
+msgstr "Klassisk rullegardin (krever omstart)"
+
+#: Themes/themes.py:186
+#, fuzzy
+msgid "Restore to defaults"
+msgstr "Skal standard hentast inn att?"
+
+#~ msgid "Default"
+#~ msgstr "Standard"
+
+#~ msgid "Colors"
+#~ msgstr "Fargar"
