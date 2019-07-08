@@ -1,8 +1,7 @@
 #
-# Gramps - a GTK+/GNOME based genealogy program - What Next Gramplet plugin
+# Gramps - a GTK+/GNOME based genealogy program
 #
-# Copyright (C) 2010  Peter Potrowl <peter017@gmail.com>
-# Copyright (C) 2019  Matthias Kemmer <matt.familienforschung@gmail.com>
+# Copyright (C) 2019 Matthias Kemmer <matt.familienforschung@gmail.com>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -19,16 +18,18 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
-register(GRAMPLET,
-    id = 'Birthdays',
-    name = _("Birthdays Gramplet"),
-    description = _("a gramplet that displays the birthdays of the living people"),
-    status = STABLE,
-    version = '1.1.1',
-    fname="BirthdaysGramplet.py",
-    height = 200,
-    gramplet = 'BirthdaysGramplet',
-    gramps_target_version = "5.1",
-    gramplet_title = _("Birthdays Gramplet"),
-    help_url = "BirthdaysGramplet",
-    )
+register(TOOL,
+         id = 'AvatarGenerator',
+         name = _("Avatar Generator Tool"),
+         description =  _("A tool to add avatar pictures to your family tree"),
+         version = '1.0.1',
+         gramps_target_version = "5.0",
+         status = STABLE,
+         fname = 'AvatarGenerator.py',
+         authors = ["Matthias Kemmer"],
+         authors_email = ["matt.familienforschung@gmail.com"],
+         category = TOOL_DBPROC,
+         toolclass = 'AvatarGeneratorWindow',
+         optionclass = 'AvatarGeneratorOptions',
+         tool_modes = [TOOL_MODE_GUI],
+         )

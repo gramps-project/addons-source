@@ -1,14 +1,14 @@
 # Russian translation for DynamicWeb
 # This file is distributed under the same license as the Gramps package.
 #
-# Ivan Komaritsyn <vantu5z@mail.ru>, 2016-2018.
+# Ivan Komaritsyn <vantu5z@mail.ru>, 2016-2019.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-30 10:31+0300\n"
-"PO-Revision-Date: 2018-11-30 10:41+0300\n"
+"POT-Creation-Date: 2019-03-03 09:17-0300\n"
+"PO-Revision-Date: 2019-03-03 09:32-0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
@@ -243,7 +243,7 @@ msgstr "Не удалось преобразовать \"%(path)s\" в отно�
 msgid ""
 "The pages configuration is not valid: several pages have the same content"
 msgstr ""
-"Не верные настройки страниц: насколько страниц содержат одинаковые данные"
+"Неверные настройки страниц: несколько страниц содержат одинаковые данные"
 
 #: DynamicWeb/dynamicweb.py:2189
 msgid "Html|Home"
@@ -550,19 +550,19 @@ msgstr "Включить карту на страницах с местопол�
 
 #: DynamicWeb/dynamicweb.py:2495 DynamicWeb/dynamicweb.py:4140
 msgid "Include dates columns on the index pages"
-msgstr "Включить колонку с датами в огловление"
+msgstr "Включить колонку с датами в оглавление"
 
 #: DynamicWeb/dynamicweb.py:2496 DynamicWeb/dynamicweb.py:4148
 msgid "Include a column for parents on the index pages"
-msgstr "Включить колонку с данными о родителях на индексных страницах"
+msgstr "Включить колонку с данными о родителях в оглавление"
 
 #: DynamicWeb/dynamicweb.py:2497 DynamicWeb/dynamicweb.py:4156
 msgid "Include a column for media path on the index pages"
-msgstr "Включить колонку для документов в огловление"
+msgstr "Включить колонку для документов в оглавление"
 
 #: DynamicWeb/dynamicweb.py:2498 DynamicWeb/dynamicweb.py:4144
 msgid "Include a column for partners on the index pages"
-msgstr "Включить колонку с данными о партнёре на индексных страницах"
+msgstr "Включить колонку с данными о партнёре в оглавление"
 
 #: DynamicWeb/dynamicweb.py:2499 DynamicWeb/dynamicweb.py:4043
 msgid "Include a map in the individuals and family pages"
@@ -1630,13 +1630,13 @@ msgid "Contents of the page"
 msgstr "Содержание страницы"
 
 #~ msgid "Include a column for birth dates on the index pages"
-#~ msgstr "Включить колонку для дат рождения в огловление"
+#~ msgstr "Включить колонку для дат рождения в оглавление"
 
 #~ msgid "Include a column for death dates on the index pages"
-#~ msgstr "Включить колонку для дат смерти в огловление"
+#~ msgstr "Включить колонку для дат смерти в оглавление"
 
 #~ msgid "Include a column for marriage dates on the index pages"
-#~ msgstr "Включить колонку для дат брака в огловление"
+#~ msgstr "Включить колонку для дат брака в оглавление"
 
 #~ msgid "Number of entries in the tables"
 #~ msgstr "Количество записей в таблице"

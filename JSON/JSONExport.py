@@ -24,6 +24,7 @@
 # Gramps modules
 #
 #------------------------------------------------------------------------
+from gramps.gui.plug.export import WriterOptionBox
 from gramps.gen.plug.utils import OpenFileOrStdout
 from gramps.gen.lib.serialize import to_json
 

@@ -1027,6 +1027,8 @@ class ImportMerge(tool.BatchTool, ManagedWindow):
         Should never get a delete operation'''
         edit_hndl = self.diff_list[self.diff_iter][HNDL]
         obj_type = args[0].capitalize()
+        handle_func1 = self.db1.method('get_%s_from_handle', obj_type)
+        handle_func2 = self.db2.method('get_%s_from_handle', obj_type)
         if args[1] == 'update':
             for hndl in args[2]:
                 if self.added.get(hndl) or self.diffs.get(hndl):

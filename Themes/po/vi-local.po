@@ -1,0 +1,82 @@
+# Vietnamese translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# FIRST AUTHOR <trande@gmail.com>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: GRAMPS VIETNAMESE 4.2.8\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-05 14:02-0600\n"
+"PO-Revision-Date: 2018-07-13 14:34+0800\n"
+"Last-Translator: detran <trande@gmail.com>\n"
+"Language-Team: VIETNAMESE <trande@gmail.com>\n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-KeywordsList: July 13, 2018: Gramps Version 4.2.8 based on "
+"Vietnamese Translation Feb 29, 2012. 14:02 VN time, VIETNAMESE TRANSLATION "
+"OF GRAMPS, V. 3\n"
+"X-Generator: Poedit 1.5.4\n"
+
+#: Themes/themes.gpr.py:28
+msgid "Theme preferences"
+msgstr "Tùy chọn chủ đề"
+
+#: Themes/themes.gpr.py:29
+msgid ""
+"An addition to Preferences for simple Theme and Font adjustment.  Especially "
+"useful for Windows users."
+msgstr ""
+"Một bổ sung cho Tùy chọn để điều chỉnh Chủ đề và Phông chữ đơn giản. Đặc "
+"biệt hữu ích cho người dùng Windows."
+
+#: Themes/themes.py:93
+msgid "_Help"
+msgstr "_Trợ giúp "
+
+#: Themes/themes.py:137 Themes/themes.py:155
+msgid "Theme is hardcoded by GTK_THEME"
+msgstr "Chủ đề bị có định do GTK_THEME"
+
+#: Themes/themes.py:140 Themes/themes.py:163
+#, python-format
+msgid "%s: "
+msgstr "%s:"
+
+#: Themes/themes.py:140 Themes/themes.py:190
+msgid "Theme"
+msgstr "Chủ đề"
+
+#: Themes/themes.py:145
+msgid "Dark Variant"
+msgstr "Biến thể tối"
+
+#: Themes/themes.py:163
+msgid "Font"
+msgstr "Font chữ "
+
+#: Themes/themes.py:170
+msgid "_Toolbar"
+msgstr "_Thanh công cụ "
+
+#: Themes/themes.py:170
+msgid "Text"
+msgstr "Văn bản "
+
+#: Themes/themes.py:179
+msgid "Fixed Scrollbar (requires restart)"
+msgstr "Thanh cuộn cổ điển (yêu cầu khởi động lại)"
+
+#: Themes/themes.py:186
+#, fuzzy
+msgid "Restore to defaults"
+msgstr "Khôi phục một gramplet về mặc định? "
+
+#~ msgid "Default"
+#~ msgstr "Mặc định "
+
+#~ msgid "Colors"
+#~ msgstr "Màu"

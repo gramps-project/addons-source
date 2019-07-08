@@ -1,7 +1,7 @@
 #
 # Gramps - a GTK+/GNOME based genealogy program
 #
-# Copyright (C) 2015      Nick Hall
+# Copyright (C) 2019      Paul Culley
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -15,30 +15,25 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
-# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
-#
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #
 
 #------------------------------------------------------------------------
 #
-# GetGOV Gramplet
+# Themes
 #
 #------------------------------------------------------------------------
-
-register(GRAMPLET,
-         id = "GetGOV Gramplet GEPS045",
-         name = _("GetGOV_GEPS045"),
-         description = _("Gramplet to get places from the GOV database"),
-         status = STABLE,
-         version = '1.1.2',
-         gramps_target_version = '5.1',
-         fname = "getgov.py",
-         gramplet = 'GetGOV',
-         height = 375,
-         detached_width = 510,
-         detached_height = 480,
-         expand = True,
-         gramplet_title = _("GetGOV"),
-         help_url="GetGOV Gramplet",
-         include_in_listing = True,
-        )
+register(GENERAL,
+id    = 'ThemesPrefs',
+name  = _("Theme preferences"),
+description =  _("An addition to Preferences for simple Theme and Font"
+                 " adjustment.  Especially useful for Windows users."),
+version = '0.0.3',
+gramps_target_version = '5.0',
+fname = "themes_load.py",
+authors = ["Paul Culley"],
+authors_email = ["paulr2787@gmail.com"],
+category = TOOL_UTILS,
+load_on_reg = True,
+status = STABLE
+  )

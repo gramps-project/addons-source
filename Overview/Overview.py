@@ -144,7 +144,10 @@ class PersonOverview(Overview):
 
     def update_has_data(self):
         active_handle = self.get_active('Person')
-        active = self.dbstate.db.get_person_from_handle(active_handle)
+        if active_handle:
+            active = self.dbstate.db.get_person_from_handle(active_handle)
+        else:
+            active = None
         self.set_has_data(self.get_has_data(active))
 
     def get_has_data(self, active_person):
@@ -198,7 +201,10 @@ class FamilyOverview(Overview):
 
     def update_has_data(self):
         active_handle = self.get_active('Family')
-        active = self.dbstate.db.get_family_from_handle(active_handle)
+        if active_handle:
+            active = self.dbstate.db.get_family_from_handle(active_handle)
+        else:
+            active = None
         self.set_has_data(self.get_has_data(active))
 
     def get_has_data(self, active_family):
