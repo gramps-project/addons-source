@@ -75,28 +75,47 @@ class MyPrefs(GrampsPreferences):
         self.scroll_changed = types.MethodType(
             MyPrefs.scroll_changed, self)
         # Copy of original __init__
-        page_funcs = (
-            self.add_behavior_panel,
-            self.add_famtree_panel,
-            self.add_formats_panel,
-            self.add_text_panel,
-            self.add_prefix_panel,
-            self.add_date_panel,
-            self.add_researcher_panel,
-            self.add_advanced_panel,
-            self.add_color_panel,
-            self.add_themes_panel)
+        if hasattr(self, 'add_ptypes_panel'):
+            page_funcs = (
+                self.add_behavior_panel,
+                self.add_famtree_panel,
+                self.add_formats_panel,
+                self.add_text_panel,
+                self.add_prefix_panel,
+                self.add_date_panel,
+                self.add_researcher_panel,
+                self.add_ptypes_panel,
+                self.add_advanced_panel,
+                self.add_color_panel,
+                self.add_symbols_panel,
+                self.add_themes_panel)
+            ConfigureDialog.__init__(self, uistate, dbstate, page_funcs,
+                                     GrampsPreferences, config,
+                                     on_close=self._close)
+        else:
+            page_funcs = (
+                self.add_behavior_panel,
+                self.add_famtree_panel,
+                self.add_formats_panel,
+                self.add_text_panel,
+                self.add_prefix_panel,
+                self.add_date_panel,
+                self.add_researcher_panel,
+                self.add_advanced_panel,
+                self.add_color_panel,
+                self.add_symbols_panel,
+                self.add_themes_panel)
+            ConfigureDialog.__init__(self, uistate, dbstate, page_funcs,
+                                     GrampsPreferences, config,
+                                     on_close=update_constants)
 
-        ConfigureDialog.__init__(self, uistate, dbstate, page_funcs,
-                                 GrampsPreferences, config,
-                                 on_close=update_constants)
         help_btn = self.window.add_button(_('_Help'), Gtk.ResponseType.HELP)
         help_btn.connect(
             'clicked', lambda x: display_help(WIKI_HELP_PAGE, WIKI_HELP_SEC))
         self.setup_configs('interface.grampspreferences', 700, 450)
 
     def add_themes_panel(self, configdialog):
-        ''' This adds a line to the top of the original 'Color' panel '''
+        ''' This adds a Theme panel '''
         grid = Gtk.Grid()
         grid.set_border_width(12)
         grid.set_column_spacing(6)
@@ -237,7 +256,8 @@ class MyPrefs(GrampsPreferences):
         ''' Toolbar text changed '''
         value = obj.get_active()
         config.set('interface.toolbar-text', value)
-        self.uistate.viewmanager.toolbar.set_style(
+        toolbar = self.uistate.uimanager.get_widget('ToolBar')
+        toolbar.set_style(
             Gtk.ToolbarStyle.BOTH if value else Gtk.ToolbarStyle.ICONS)
 
     def font_changed(self, obj):

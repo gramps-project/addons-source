@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"POT-Creation-Date: 2019-07-08 16:29-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,61 +30,61 @@ msgstr ""
 msgid "Double-click name for details"
 msgstr ""
 
-#: HouseTimelineGramplet/housetimeline.py:42
-#: HouseTimelineGramplet/housetimeline.py:49
+#: HouseTimelineGramplet/housetimeline.py:41
+#: HouseTimelineGramplet/housetimeline.py:48
 msgid "House Icon Style"
 msgstr ""
 
-#: HouseTimelineGramplet/housetimeline.py:50
+#: HouseTimelineGramplet/housetimeline.py:49
 msgid "Standard"
 msgstr ""
 
-#: HouseTimelineGramplet/housetimeline.py:51
+#: HouseTimelineGramplet/housetimeline.py:50
 msgid "Small"
 msgstr ""
 
-#: HouseTimelineGramplet/housetimeline.py:52
+#: HouseTimelineGramplet/housetimeline.py:51
 msgid "Unicode"
 msgstr ""
 
-#: HouseTimelineGramplet/housetimeline.py:53
+#: HouseTimelineGramplet/housetimeline.py:52
 msgid "None"
 msgstr ""
 
-#: HouseTimelineGramplet/housetimeline.py:59
+#: HouseTimelineGramplet/housetimeline.py:58
 msgid "Processing..."
 msgstr ""
 
-#: HouseTimelineGramplet/housetimeline.py:82
+#: HouseTimelineGramplet/housetimeline.py:80
 msgid ""
 "There are no individuals with Address data. Please add Address data to "
 "people."
 msgstr ""
 
-#: HouseTimelineGramplet/housetimeline.py:117
+#: HouseTimelineGramplet/housetimeline.py:118
 msgid "Location"
 msgstr ""
 
-#: HouseTimelineGramplet/housetimeline.py:118
+#: HouseTimelineGramplet/housetimeline.py:119
 msgid "Time In Family"
 msgstr ""
 
-#: HouseTimelineGramplet/housetimeline.py:119
+#: HouseTimelineGramplet/housetimeline.py:120
 msgid "First Resident"
 msgstr ""
 
-#: HouseTimelineGramplet/housetimeline.py:120
+#: HouseTimelineGramplet/housetimeline.py:121
 msgid "Last Resident"
 msgstr ""
 
-#: HouseTimelineGramplet/housetimeline.py:121
+#: HouseTimelineGramplet/housetimeline.py:122
 msgid "Timeline"
 msgstr ""
 
-#: HouseTimelineGramplet/housetimeline.py:122
+#: HouseTimelineGramplet/housetimeline.py:123
 msgid "Unknown"
 msgstr ""
 
-#: HouseTimelineGramplet/housetimeline.py:123
+#: HouseTimelineGramplet/housetimeline.py:124
 msgid "Total Known Residents"
 msgstr ""
