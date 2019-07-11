@@ -255,6 +255,7 @@ else:
         BACKGROUND_GRAD_PERIOD,
     )
 from gramps.gui.utils import hex_to_rgb
+from gramps.gen.filters import reload_custom_filters
 
 SORT_KEY = glocale.sort_key
 
@@ -4301,6 +4302,7 @@ class DynamicWebOptions(MenuReportOptions):
         '''
         gid = self.__pid.get_value()
         person = self.__db.get_person_from_gramps_id(gid)
+        reload_custom_filters()
         filter_list = utils.get_person_filters(person, False)
         self.__filter.set_filters(filter_list)
 
