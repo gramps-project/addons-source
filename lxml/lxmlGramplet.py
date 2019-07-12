@@ -323,12 +323,12 @@ class lxmlGramplet(Gramplet):
             doctype = tree.docinfo.doctype
             current = '<!DOCTYPE database PUBLIC "-//Gramps//DTD Gramps XML 1.8.0//EN" "http://gramps-project.org/xml/1.8.0/grampsxml.dtd">'
             if self.RNGValidation(tree, rng) == True:
-                try:
-                    self.ParseXML(tree, filename)
-                except:
-                    ErrorDialog(_('Parsing issue'), _('Cannot parse content of "%(file)s"') % {'file': filename})
-                    LOG.error('Cannot parse the content of the XML copy')
-                    return
+                #try:
+                self.ParseXML(tree, filename)
+                #except:
+                    #ErrorDialog(_('Parsing issue'), _('Cannot parse content of "%(file)s"') % {'file': filename})
+                    #LOG.error('Cannot parse the content of the XML copy')
+                    #return
             elif doctype != current:
                 ErrorDialog(_('Gramps version'), _('Wrong namespace\nNeed: %s') % current)
                 LOG.error('Namespace is wrong')
@@ -426,6 +426,9 @@ class lxmlGramplet(Gramplet):
                         if text not in places:
                             places.append(text) # temp display
                     if three.tag == NAMESPACE + 'stitle' and three.text not in sources:
+                        # need to add an exception
+                        if not three.text:
+                            three.text = ""
                         sources.append(three.text)
                     if three.tag == NAMESPACE + 'file' and three.items() not in thumbs:
                         thumbs.append(three.items())
