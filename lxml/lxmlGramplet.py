@@ -323,12 +323,12 @@ class lxmlGramplet(Gramplet):
             doctype = tree.docinfo.doctype
             current = '<!DOCTYPE database PUBLIC "-//Gramps//DTD Gramps XML 1.8.0//EN" "http://gramps-project.org/xml/1.8.0/grampsxml.dtd">'
             if self.RNGValidation(tree, rng) == True:
-                #try:
-                self.ParseXML(tree, filename)
-                #except:
-                    #ErrorDialog(_('Parsing issue'), _('Cannot parse content of "%(file)s"') % {'file': filename})
-                    #LOG.error('Cannot parse the content of the XML copy')
-                    #return
+                try:
+                    self.ParseXML(tree, filename)
+                except:
+                    ErrorDialog(_('Parsing issue'), _('Cannot parse content of "%(file)s"') % {'file': filename})
+                    LOG.error('Cannot parse the content of the XML copy')
+                    return
             elif doctype != current:
                 ErrorDialog(_('Gramps version'), _('Wrong namespace\nNeed: %s') % current)
                 LOG.error('Namespace is wrong')
@@ -742,7 +742,7 @@ class lxmlGramplet(Gramplet):
 
         LOG.info('Looking at gallery')
 
-        from gramps.gui.thumbnails import get_thumbnail_path
+        from gramps.gen.utils.thumbnails import get_thumbnail_path
 
         # full clear line for proper styling
 
