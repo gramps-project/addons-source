@@ -78,7 +78,7 @@ try:
     from lxml import etree, objectify
     LXML_OK = True
     # current code is working with:
-    # LXML_VERSION (3, 3, 3)
+    # LXML_VERSION (4, 3, 4)
     # LIBXML_VERSION (2, 9, 1))
     # LIBXSLT_VERSION (1, 1, 28))
     LXML_VERSION = etree.LXML_VERSION
