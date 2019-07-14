@@ -309,8 +309,8 @@ class etreeGramplet(Gramplet):
         print('people', self.dbstate.db.get_number_of_people())
         print('families', self.dbstate.db.get_number_of_families())
         print('sources', self.dbstate.db.get_number_of_sources())
-        # TODO:bug?
-        # print('citations', self.dbstate.db.get_number_of_citations())
+        if self.dbstate.db.db_is_open:
+            print('citations', self.dbstate.db.get_number_of_citations())
         print('places', self.dbstate.db.get_number_of_places())
         print('objects', self.dbstate.db.get_number_of_media())
         print('repositories', self.dbstate.db.get_number_of_repositories())
@@ -477,26 +477,34 @@ class etreeGramplet(Gramplet):
 
         event = _('Number of  events : \n\t\t\t%s\t|\t(%s)*\n') % (len(events), self.dbstate.db.get_number_of_events())
         #DummyDB
-        person = _('Number of persons : \n\t\t\t%s\t|\t(%s)*\n') % (len(people), self.dbstate.db.get_number_of_people())
+        if self.dbstate.db.db_is_open:
+            person = _('Number of persons : \n\t\t\t%s\t|\t(%s) and (%s)* surnames\n') % (len(people), self.dbstate.db.get_number_of_people(), len(self.dbstate.db.surname_list))
+        else:
+            person = _('Number of persons : \n\t\t\t%s\t|\t(%s)*\n') % (len(people), self.dbstate.db.get_number_of_people())
         family = _('Number of families : \n\t\t\t%s\t|\t(%s)*\n') % (len(families), self.dbstate.db.get_number_of_families())
         source = _('Number of sources : \n\t\t\t%s\t|\t(%s)*\n') % (len(sources), self.dbstate.db.get_number_of_sources())
-        # TODO:bug?
-        #citation = _('Number of citations : \n\t\t\t%s\t|\t(%s)*\n') % (len(citations), self.dbstate.db.get_number_of_citations())
+        if self.dbstate.db.db_is_open:
+            citation = _('Number of citations : \n\t\t\t%s\t|\t(%s)*\n') % (len(citations), self.dbstate.db.get_number_of_citations())
+        else:
+            citation = ''
         place = _('Number of places : \n\t\t\t%s\t|\t(%s)*\n') % (len(places), self.dbstate.db.get_number_of_places())
         media = _('Number of media objects : \n\t\t\t%s\t|\t(%s)*\n') % (len(objects), self.dbstate.db.get_number_of_media())
         repository = _('Number of repositories : \n\t\t\t%s\t|\t(%s)*\n') % (len(repositories), self.dbstate.db.get_number_of_repositories())
         note = _('Number of notes : \n\t\t\t%s\t|\t(%s)*\n') % (len(notes), self.dbstate.db.get_number_of_notes())
 
-        #others = len(entries) - (len(tags) + len(events) + len(people) + len(families) + len(sources) + \
-        #len(citations) + len(places) + len(objects) + len(repositories) + len(notes))
+        others = len(entries) - (len(tags) + len(events) + len(people) + len(families) + len(sources) + \
+        len(citations) + len(places) + len(objects) + len(repositories) + len(notes))
 
-        #other = _('\nXML: Number of additional records and relations: \t%s\n') % others
+        other = _('\nXML: Number of additional records and relations: \t%s\n') % others
 
         #DummyDB
-        #nb  = _('* loaded Family Tree base:\n "%s"\n' % self.dbstate.db.path)
+        if self.dbstate.db.db_is_open:
+            nb  = _('* loaded Family Tree base:\n "%s"\n' % self.dbstate.db.path)
+        else:
+            nb = ''
 
-        preview = time + total + tag + event + person + family + source + \
-        place + media + repository + note #+ nb + other + citation
+        preview = time + total + tag + event + person + family + source + citation\
+        + place + media + repository + note + nb + other
 
         self.text.set_text(preview)
 
