@@ -309,21 +309,22 @@ class etreeGramplet(Gramplet):
         print('people', self.dbstate.db.get_number_of_people())
         print('families', self.dbstate.db.get_number_of_families())
         print('sources', self.dbstate.db.get_number_of_sources())
-        print('citations', self.dbstate.db.get_number_of_citations())
+        if self.dbstate.db.db_is_open:
+            print('citations', self.dbstate.db.get_number_of_citations())
         print('places', self.dbstate.db.get_number_of_places())
         print('objects', self.dbstate.db.get_number_of_media())
         print('repositories', self.dbstate.db.get_number_of_repositories())
         print('notes', self.dbstate.db.get_number_of_notes())
 
-        print('emap', self.dbstate.db.emap_index)
-        print('pmap', self.dbstate.db.pmap_index)
-        print('fmap', self.dbstate.db.fmap_index)
-        print('smap', self.dbstate.db.smap_index)
-        print('cmap', self.dbstate.db.cmap_index)
-        print('lmap', self.dbstate.db.lmap_index)
-        print('omap', self.dbstate.db.omap_index)
-        print('rmap', self.dbstate.db.rmap_index)
-        print('nmap', self.dbstate.db.nmap_index)
+        #print('emap', self.dbstate.db.emap_index)
+        #print('pmap', self.dbstate.db.pmap_index)
+        #print('fmap', self.dbstate.db.fmap_index)
+        #print('smap', self.dbstate.db.smap_index)
+        #print('cmap', self.dbstate.db.cmap_index)
+        #print('lmap', self.dbstate.db.lmap_index)
+        #print('omap', self.dbstate.db.omap_index)
+        #print('rmap', self.dbstate.db.rmap_index)
+        #print('nmap', self.dbstate.db.nmap_index)
 
         #print(self.dbstate.db.surname_list)
 
@@ -475,10 +476,17 @@ class etreeGramplet(Gramplet):
             tag = _('Number of tags : \n\t\t\t%s\n' % len(tags))
 
         event = _('Number of  events : \n\t\t\t%s\t|\t(%s)*\n') % (len(events), self.dbstate.db.get_number_of_events())
-        person = _('Number of persons : \n\t\t\t%s\t|\t(%s)* and (%s)* surnames\n') % (len(people), self.dbstate.db.get_number_of_people(), len(self.dbstate.db.surname_list))
+        #DummyDB
+        if self.dbstate.db.db_is_open:
+            person = _('Number of persons : \n\t\t\t%s\t|\t(%s) and (%s)* surnames\n') % (len(people), self.dbstate.db.get_number_of_people(), len(self.dbstate.db.surname_list))
+        else:
+            person = _('Number of persons : \n\t\t\t%s\t|\t(%s)*\n') % (len(people), self.dbstate.db.get_number_of_people())
         family = _('Number of families : \n\t\t\t%s\t|\t(%s)*\n') % (len(families), self.dbstate.db.get_number_of_families())
         source = _('Number of sources : \n\t\t\t%s\t|\t(%s)*\n') % (len(sources), self.dbstate.db.get_number_of_sources())
-        citation = _('Number of citations : \n\t\t\t%s\t|\t(%s)*\n') % (len(citations), self.dbstate.db.get_number_of_citations())
+        if self.dbstate.db.db_is_open:
+            citation = _('Number of citations : \n\t\t\t%s\t|\t(%s)*\n') % (len(citations), self.dbstate.db.get_number_of_citations())
+        else:
+            citation = ''
         place = _('Number of places : \n\t\t\t%s\t|\t(%s)*\n') % (len(places), self.dbstate.db.get_number_of_places())
         media = _('Number of media objects : \n\t\t\t%s\t|\t(%s)*\n') % (len(objects), self.dbstate.db.get_number_of_media())
         repository = _('Number of repositories : \n\t\t\t%s\t|\t(%s)*\n') % (len(repositories), self.dbstate.db.get_number_of_repositories())
@@ -489,10 +497,14 @@ class etreeGramplet(Gramplet):
 
         other = _('\nXML: Number of additional records and relations: \t%s\n') % others
 
-        nb  = _('* loaded Family Tree base:\n "%s"\n' % self.dbstate.db.path)
+        #DummyDB
+        if self.dbstate.db.db_is_open:
+            nb  = _('* loaded Family Tree base:\n "%s"\n' % self.dbstate.db.path)
+        else:
+            nb = ''
 
-        preview = time + total + tag + event + person + family + source + citation + \
-        place + media + repository + note + nb + other
+        preview = time + total + tag + event + person + family + source + citation\
+        + place + media + repository + note + nb + other
 
         self.text.set_text(preview)
 
