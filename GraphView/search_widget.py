@@ -193,10 +193,11 @@ class SearchWidget(GObject.GObject):
 
         # search other persons from db
         # ============================
+        GLib.idle_add(self.popover_widget.show_other_panel,
+                      self.search_all_db_option)
         if not self.search_all_db_option:
             self.in_search = False
             return
-        GLib.idle_add(self.popover_widget.show_other_panel, True)
 
         other_found = []
         self.do_thread = Thread(target=self.apply_search,
