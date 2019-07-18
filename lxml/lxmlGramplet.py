@@ -122,7 +122,7 @@ def epoch(t):
 #
 #-------------------------------------------------------------------------
 
-NAMESPACE = '{http://gramps-project.org/xml/1.8.0/}'
+NAMESPACE = '{http://gramps-project.org/xml/1.7.1/}'
 
 class lxmlGramplet(Gramplet):
     """
@@ -321,7 +321,7 @@ class lxmlGramplet(Gramplet):
             #tree = etree.ElementTree(file=filename)
             tree = etree.parse(filename)
             doctype = tree.docinfo.doctype
-            current = '<!DOCTYPE database PUBLIC "-//Gramps//DTD Gramps XML 1.8.0//EN" "http://gramps-project.org/xml/1.8.0/grampsxml.dtd">'
+            current = '<!DOCTYPE database PUBLIC "-//Gramps//DTD Gramps XML 1.7.1//EN" "http://gramps-project.org/xml/1.7.1/grampsxml.dtd">'
             if self.RNGValidation(tree, rng) == True:
                 try:
                     self.ParseXML(tree, filename)
@@ -423,12 +423,13 @@ class lxmlGramplet(Gramplet):
 
                     if three.tag == NAMESPACE + 'pname':
                         text = str(three.attrib.get('value'))
-                        translation = str(three.attrib.get('lang'))
-                        if translation == 'None':
-                            translation = xml_lang()[0:2]
-                            text = text + _(' - (? or %(lang)s)') % {'lang':translation}
-                        else:
-                            text = text + _(' - (%(lang)s)') % {'lang':translation}
+                        # GEPS045 (XML schema 1.8.0)
+                        #translation = str(three.attrib.get('lang'))
+                        #if translation == 'None':
+                            #translation = xml_lang()[0:2]
+                            #text = text + _(' - (? or %(lang)s)') % {'lang':translation}
+                        #else:
+                            #text = text + _(' - (%(lang)s)') % {'lang':translation}
                         if text not in places:
                             places.append(text) # temp display
                     if three.tag == NAMESPACE + 'stitle' and three.text not in sources:
@@ -537,7 +538,7 @@ class lxmlGramplet(Gramplet):
     def xsd(self, xsd, filename):
         """
         Look at schema, validation, conform, structure, content, etc...
-        Code for 1.8.0 and +
+        Code for 1.7.1
         """
 
         # syntax check against XSD for file format
@@ -558,7 +559,7 @@ class lxmlGramplet(Gramplet):
     def check_valid(self, filename):
         """
         Look at schema, validation, conform, etc...
-        Code for 1.8.0 and +
+        Code for 1.7.1
         """
 
         # syntax check against DTD for file format
