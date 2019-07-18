@@ -423,13 +423,12 @@ class lxmlGramplet(Gramplet):
 
                     if three.tag == NAMESPACE + 'pname':
                         text = str(three.attrib.get('value'))
-                        # GEPS045 (XML schema 1.8.0)
-                        #translation = str(three.attrib.get('lang'))
-                        #if translation == 'None':
-                            #translation = xml_lang()[0:2]
-                            #text = text + _(' - (? or %(lang)s)') % {'lang':translation}
-                        #else:
-                            #text = text + _(' - (%(lang)s)') % {'lang':translation}
+                        translation = str(three.attrib.get('lang'))
+                        if translation == 'None':
+                            translation = xml_lang()[0:2]
+                            text = text + _(' - (? or %(lang)s)') % {'lang':translation}
+                        else:
+                            text = text + _(' - (%(lang)s)') % {'lang':translation}
                         if text not in places:
                             places.append(text) # temp display
                     if three.tag == NAMESPACE + 'stitle' and three.text not in sources:
