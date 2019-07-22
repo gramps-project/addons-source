@@ -43,8 +43,13 @@ _ = _trans.gettext
 # ----------------------------------------------------------------------------
 class SetPrivacyWindow(PluginWindows.ToolManagedWindowBatch):
     """Handles the Set Privacy Tool processing."""
+
+    def get_title(self):
+        return _("Set Privacy Tool")
+
     def run(self):
         self.db = self.dbstate.get_database()
+        self.cnt = []
         opt = []
         for entry in ["years", "person", "event", "media", "no_date"]:
             opt.append(self.get_opt(entry))
@@ -52,9 +57,8 @@ class SetPrivacyWindow(PluginWindows.ToolManagedWindowBatch):
         if True in opt[1:4]:
             self.lock_function(opt)
         else:
-            OkDialog("Information",
-                     "Choose at least one category e.g. 'Persons' to progress",
-                     parent=self.window)
+            OkDialog("Information", "Choose at least one category e.g. "
+                     "'Persons' to progress", parent=self.window)
 
     def get_opt(self, name):
         """Get the options value for further processing.
@@ -78,13 +82,20 @@ class SetPrivacyWindow(PluginWindows.ToolManagedWindowBatch):
             self.lock_events(date, lock_no_date)
         if opt[3]:
             self.lock_media(date, lock_no_date)
+        txt = ""
+        for entry in self.cnt:
+            txt += "Set private: %d %s\n" % (entry[1], entry[0])
+        for entry in self.cnt:
+            txt += "Not private: %d %s\n" % (entry[2], entry[0])
+        OkDialog("Set Privacy Tool", txt, parent=self.window)
 
     def lock_persons(self, date, lock_no_date):
-        with DbTxn(_("Lock Tool"), self.db, batch=True) as self.trans:
+        with DbTxn(_("Set Privacy Tool"), self.db, batch=True) as self.trans:
             self.db.disable_signals()
             person_list = list(self.db.iter_people())
             self.progress.set_pass(_('Set persons private..'),
                                    len(person_list))
+            cnt = [0, 0]
             for Person in person_list:
                 birth_ref = Person.get_birth_ref()
                 if birth_ref:
@@ -92,63 +103,82 @@ class SetPrivacyWindow(PluginWindows.ToolManagedWindowBatch):
                     birth_date = birth.get_date_object()
                     if birth_date.get_year() == 0 and lock_no_date:
                         Person.set_privacy(True)
+                        cnt[0] += 1
                     elif birth_date.get_year() == 0 and not lock_no_date:
                         Person.set_privacy(False)
+                        cnt[1] += 1
                     elif birth_date.get_year() != 0 and birth_date >= date:
                         Person.set_privacy(True)
+                        cnt[0] += 1
                     else:
                         Person.set_privacy(False)
+                        cnt[1] += 1
                 else:
                     if lock_no_date:
                         Person.set_privacy(True)
+                        cnt[0] += 1
                     else:
                         Person.set_privacy(False)
+                        cnt[1] += 1
                 self.db.commit_person(Person, self.trans)
                 self.progress.step()
         self.db.enable_signals()
         self.db.request_rebuild()
+        self.cnt.append(("persons", cnt[0], cnt[1]))
 
     def lock_events(self, date, lock_no_date):
-        with DbTxn(_("Lock Tool"), self.db, batch=True) as self.trans:
+        with DbTxn(_("Set Privacy Tool"), self.db, batch=True) as self.trans:
             self.db.disable_signals()
             event_list = list(self.db.iter_events())
             self.progress.set_pass(_('Set events private..'),
                                    len(event_list))
+            cnt = [0, 0]
             for Event in event_list:
                 event_date = Event.get_date_object()
                 if event_date.get_year() == 0 and lock_no_date:
                     Event.set_privacy(True)
+                    cnt[0] += 1
                 elif event_date.get_year() == 0 and not lock_no_date:
                     Event.set_privacy(False)
+                    cnt[1] += 1
                 elif event_date.get_year() != 0 and event_date >= date:
                     Event.set_privacy(True)
+                    cnt[0] += 1
                 else:
                     Event.set_privacy(False)
+                    cnt[1] += 1
                 self.db.commit_event(Event, self.trans)
                 self.progress.step()
         self.db.enable_signals()
         self.db.request_rebuild()
+        self.cnt.append(("events", cnt[0], cnt[1]))
 
     def lock_media(self, date, lock_no_date):
-        with DbTxn(_("Lock Tool"), self.db, batch=True) as self.trans:
+        with DbTxn(_("Set Privacy Tool"), self.db, batch=True) as self.trans:
             self.db.disable_signals()
             media_list = list(self.db.iter_media())
             self.progress.set_pass(_('Set media private..'),
                                    len(media_list))
+            cnt = [0, 0]
             for Media in media_list:
                 media_date = Media.get_date_object()
                 if media_date.get_year() == 0 and lock_no_date:
                     Media.set_privacy(True)
+                    cnt[0] += 1
                 elif media_date.get_year() == 0 and not lock_no_date:
                     Media.set_privacy(False)
+                    cnt[1] += 1
                 elif media_date.get_year() != 0 and media_date >= date:
                     Media.set_privacy(True)
+                    cnt[0] += 1
                 else:
                     Media.set_privacy(False)
+                    cnt[1] += 1
                 self.db.commit_media(Media, self.trans)
                 self.progress.step()
         self.db.enable_signals()
         self.db.request_rebuild()
+        self.cnt.append(("media", cnt[0], cnt[1]))
 
 
 # ----------------------------------------------------------------------------
@@ -172,7 +202,12 @@ class SetPrivacyOptions(MenuToolOptions):
         menu.add_option(_("Option"), "media", self.media)
 
         self.no_date = BooleanOption(_("Always private if no date."), False)
+        self.no_date.set_help(_("If checked, all objects without a date will "
+                                "also be set private."))
         menu.add_option(_("Option"), "no_date", self.no_date)
 
-        self.years = NumberOption(_("Years"), 0, 0, 200)
+        self.years = NumberOption(_("Years"), 0, 0, 2000)
+        self.years.set_help(_("The time range in years from today you want to "
+                              "set objects private.\n"
+                              "'0 years' = remove privacy from all objects."))
         menu.add_option(_("Option"), "years", self.years)

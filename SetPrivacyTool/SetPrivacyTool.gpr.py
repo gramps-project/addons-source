@@ -19,13 +19,13 @@
 #
 
 register(TOOL,
-         id = 'SetPrivacy',
+         id = 'SetPrivacyTool',
          name = _("Set Privacy Tool"),
          description = _("Set all objects of the last <number> of years private."),
          version = '1.0.0',
          gramps_target_version = "5.1",
          status = STABLE,
-         fname = 'SetPrivacy.py',
+         fname = 'SetPrivacyTool.py',
          authors = ["Matthias Kemmer"],
          authors_email = ["matt.familienforschung@gmail.com"],
          category = TOOL_DBPROC,
