@@ -348,6 +348,7 @@ class NetworkChartReport(Report):
 
             # Get edge_marriage
             h_events = f_family.get_event_list()  # get_event_ref_list()
+            marriage_date = ''
             for e_handle in h_events:
                 i_event = self.database.get_event_from_handle(e_handle)
                 fmt_mdate = self._get_date(i_event.get_date_object())
@@ -365,6 +366,7 @@ class NetworkChartReport(Report):
                                 marriage_date = self._marr + fmt_mdate
                         else:
                             marriage_date = self._marr + fmt_mdate
+                        break
                     except NameError:
                         marriage_date = self._marr + self._unk
             if not marriage_date:
