@@ -1,100 +1,134 @@
-# Catalan translations for PACKAGE package.
-# Copyright (C) 2009 THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Catalan translations for DeepConnectionsGramplet package.
+Copyright (C) 2009 Doug Blank <doug.blank@gmail.com>
+# This file is distributed under the same license as the DeepConnectionsGramplet package.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-11-23 19:10+0100\n"
-"PO-Revision-Date: 2009-11-23 21:10+0100\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2019-08-12 13:00+0200\n"
+"Last-Translator:  Arnau Llovet <arnaullv@gmail.com>\n"
 "Language-Team: Catalan <ca@dodds.net>\n"
+"Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.3\n"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:3
 msgid "Deep Connections Gramplet"
 msgstr "Gramplet de Connexions Profundes"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:9
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:4
+msgid "Gramplet showing a deep relationship between active and home people"
+msgstr "Gramplet que mostra les relacions profundes entre la persona activa i familiars"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:10
 msgid "Deep Connections"
 msgstr "Connexions Profundes"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:51
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:59
 msgid "Double-click name for details"
 msgstr "Fer doble clic al nom per detalls"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:52
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:60
 msgid "No Family Tree loaded."
 msgstr "No s'ha carregat cap Arbre Genealògic."
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:57
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:65
 msgid "Pause"
 msgstr "Pausa"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:59
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:67
 msgid "Continue"
-msgstr "Continuar"
+msgstr "Continua"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:80
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:96
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:69
+msgid "Copy"
+msgstr "Copia"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:106
+msgid "mentioned in note"
+msgstr "esmentat a la nota"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:125
 msgid "child"
 msgstr "fill"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:85
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:129
 msgid "husband"
 msgstr "marit"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:89
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:131
 msgid "wife"
 msgstr "muller"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:101
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:132
+msgid "Note on Family"
+msgstr "Nota sobre la família"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:142
+msgid "sibling"
+msgstr "germà"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:146
 msgid "father"
 msgstr "pare"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:105
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:149
 msgid "mother"
 msgstr "mare"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:123
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:150
+msgid "Note on Parent Family"
+msgstr "Nota sobre la familia dels pares"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:153
+#, python-format
+msgid "%s (association)"
+msgstr "%s (associació)"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:157
+msgid "Note on Person"
+msgstr "Nota sobre la Persona"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:187
 #, python-format
 msgid ""
 "\n"
-"   who is a %s of "
+"   %s of "
 msgstr ""
 "\n"
-"   que és %s de "
+"   %s de "
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:137
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:205
 msgid "No Home Person set."
 msgstr "Persona base no fixada."
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:140
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:208
 msgid "No Active Person set."
 msgstr "No s'ha fixat Persona Activa."
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:143
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:212
 msgid "self"
 msgstr "la mateixa persona"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:147
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:216
 msgid "Looking for relationship between\n"
-msgstr ""
+msgstr "S'està cercant la relació entre\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:148
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:217
 #, python-format
 msgid "  <b>%s</b> (Home Person) and\n"
-msgstr ""
+msgstr "  <b>%s</b> (Persona activa) i\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:149
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:218
 #, python-format
 msgid "  <b>%s</b> (Active Person)...\n"
-msgstr "  <b>%s</b>  (Persona activa)...\n"
+msgstr "  <b>%s</b> (Persona activa)...\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:157
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:228
 #, python-format
 msgid ""
 "Found relation #%d: \n"
@@ -103,7 +137,7 @@ msgstr ""
 "Trobat parentesc #%d: \n"
 "   "
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:163
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:238
 msgid ""
 "Paused.\n"
 "Press Continue to search for additional relations.\n"
@@ -111,7 +145,7 @@ msgstr ""
 "En pausa.\n"
 "Premi Continuar per buscar parentescs addicionals.\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:176
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:253
 #, python-format
 msgid ""
 "\n"
@@ -119,4 +153,3 @@ msgid ""
 msgstr ""
 "\n"
 "Cerca completada. S'han trobat %d parentescs."
-
