@@ -25,9 +25,6 @@ from types import MethodType
 from gramps.gen.config import config
 
 
-orig_delete_pages = None
-
-
 def clear_history(self):
     """
     Clear all history objects. Replaces DisplayState method.
@@ -82,12 +79,13 @@ def load_on_reg(dbstate, uistate, plugin):
     """
     Runs when plugin is registered.
     """
-    global orig_delete_pages
-    if not uistate:
+    if not uistate or ('orig_delete_pages' in globals()):
         # It is necessary to avoid load GUI elements when run under CLI mode.
         # So we just don't load it at all.
         return
     # Monkey patch my version of methods into the system
+    global orig_delete_pages
+    orig_delete_pages = None
     try:
         orig_delete_pages = uistate.viewmanager._ViewManager__delete_pages
         setattr(uistate, 'clear_history', MethodType(clear_history, uistate))
