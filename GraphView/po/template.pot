@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-08 16:29-0500\n"
+"POT-Creation-Date: 2019-08-22 15:51-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,35 +17,35 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: GraphView/graphview.gpr.py:36 GraphView/graphview.py:136
+#: GraphView/graphview.gpr.py:32 GraphView/graphview.py:136
 msgid "Graph View"
 msgstr ""
 
-#: GraphView/graphview.gpr.py:37
+#: GraphView/graphview.gpr.py:33
 msgid "Charts"
 msgstr ""
 
-#: GraphView/graphview.gpr.py:38
+#: GraphView/graphview.gpr.py:34
 msgid "Dynamic and interactive graph of relations"
 msgstr ""
 
-#: GraphView/graphview.gpr.py:51
+#: GraphView/graphview.gpr.py:47
 msgid ""
 "Graphview Warning:  Goocanvas 2 (https://wiki.gnome.org/action/show/Projects/"
 "GooCanvas) is required for this view to work"
 msgstr ""
 
-#: GraphView/graphview.gpr.py:56
+#: GraphView/graphview.gpr.py:52
 msgid ""
 "Graphview Warning:  GraphViz (http://www.graphviz.org) is required for this "
 "view to work"
 msgstr ""
 
-#: GraphView/graphview.gpr.py:65
+#: GraphView/graphview.gpr.py:61
 msgid "Graphview Failed to Load"
 msgstr ""
 
-#: GraphView/graphview.gpr.py:66
+#: GraphView/graphview.gpr.py:62
 #, python-format
 msgid ""
 "\n"
@@ -61,11 +61,11 @@ msgid ""
 "To dismiss all future Graphview warnings click Dismiss."
 msgstr ""
 
-#: GraphView/graphview.gpr.py:82
+#: GraphView/graphview.gpr.py:78
 msgid " Dismiss "
 msgstr ""
 
-#: GraphView/graphview.gpr.py:83
+#: GraphView/graphview.gpr.py:79
 msgid "Continue"
 msgstr ""
 

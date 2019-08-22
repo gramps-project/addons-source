@@ -153,6 +153,7 @@ class PrerequisitesCheckerGramplet(Gramplet):
         self.check12_graphviz()
         self.check13_pyicu()
         self.check14_ghostscript()
+        self.check_fontconfig()
         self.append_text("\n")
         #Optional
         self.render_text("""\n<u><b>Optional</b></u>\n""")
@@ -245,8 +246,8 @@ class PrerequisitesCheckerGramplet(Gramplet):
         '''
         self.append_text("\n")
         # Start check
-        LATEST_GRAMPS_VERSION = (5, 0, 1)
-        LATEST_GRAMPS_DATE = "2018-12-20"
+        LATEST_GRAMPS_VERSION = (5, 1, 0)
+        LATEST_GRAMPS_DATE = "2019-08-20"
         latest_release_message = ("Gramps " + verstr(LATEST_GRAMPS_VERSION) +
                                   "  released " + LATEST_GRAMPS_DATE +
                                   " is the most current version.\n")
@@ -296,7 +297,7 @@ class PrerequisitesCheckerGramplet(Gramplet):
         test)
         '''
         # Start check
-        MIN_PYTHON_VERSION = (3, 2, 0)
+        MIN_PYTHON_VERSION = (3, 3, 0)
         min_py_str = verstr(MIN_PYTHON_VERSION)
 
         # version to check against
@@ -332,7 +333,7 @@ class PrerequisitesCheckerGramplet(Gramplet):
         min: GTK+ 3.10.0
         '''
         # Start check
-        MIN_GTK_VERSION = (3, 10, 0)
+        MIN_GTK_VERSION = (3, 12, 0)
 
         try:
             gi.require_version('Gtk', '3.0')
@@ -370,7 +371,8 @@ class PrerequisitesCheckerGramplet(Gramplet):
         except ImportError:
             gtkver_str = 'not found'
             pygtkver_str = 'not found'
-        # no DISPLAY is a RuntimeError in an older pygtk (e.g. 2.17 in Fedora 14)
+        # no DISPLAY is a RuntimeError in an older pygtk
+                        (e.g. 2.17 in Fedora 14)
         except RuntimeError:
             gtkver_str = 'DISPLAY not set'
             pygtkver_str = 'DISPLAY not set'
@@ -532,8 +534,8 @@ class PrerequisitesCheckerGramplet(Gramplet):
 
         # TODO add the following test to gramps -v
         try:
-            import cairo
-            from gi.repository import Pango
+            # import cairo
+            # from gi.repository import Pango
             from gi.repository import PangoCairo
             pangocairo_str = PangoCairo._version
             #print("pangocairo_str " + str(pangocairo_str))
@@ -774,6 +776,24 @@ class PrerequisitesCheckerGramplet(Gramplet):
         # End check
         self.append_text(result)
 
+    def check_fontconfig(self):
+        ''' The python-fontconfig library is used to support the Genealogical
+        Symbols tab of the Preferences.  Without it Genealogical Symbols don't
+        work '''
+        try:
+            import fontconfig
+            vers = fontconfig.__version__
+            if vers.startswith("0.5."):
+                result = ("* python-fontconfig " + vers +
+                          " (Success version 0.5.x is installed.)")
+            else:
+                result = ("* python-fontconfig " + vers +
+                          " (Requires version 0.5.x)")
+        except ImportError:
+            result = "* python-fontconfig Not found, (Requires version 0.5.x)"
+        # End check
+        self.append_text(result)
+
     #Optional
     def check15_gtkspell(self):
         '''gtkspell & enchant
@@ -800,7 +820,7 @@ class PrerequisitesCheckerGramplet(Gramplet):
         # Start check
         GTKSPELL_MIN_VER = (3, 0)
         gtkspell_min_ver_str = verstr(GTKSPELL_MIN_VER)
-        ENCHANT_MIN_VER = (0, 0)  # TODO ?
+        # ENCHANT_MIN_VER = (0, 0)  # TODO ?
         gtkspell_ver_tp = (0, 0)
         # Attempting to import gtkspell gives an error dialog if gtkspell is
         # not available so test first and log just a warning to the console
@@ -940,7 +960,7 @@ class PrerequisitesCheckerGramplet(Gramplet):
 
         try:
             import PIL
-            from PIL import Image
+            # from PIL import Image
             try:
                 #print(dir(PIL))
                 pil_ver = str(PIL.VERSION)
@@ -1231,7 +1251,7 @@ class PrerequisitesCheckerGramplet(Gramplet):
         # Start check
         NOWEB = 0
         WEBKIT = 1
-        MOZILLA = 2
+        # MOZILLA = 2
         KITNAME = ["None", "WebKit", "Mozilla"]
         TOOLKIT = NOWEB
 
@@ -1588,7 +1608,7 @@ class PrerequisitesCheckerGramplet(Gramplet):
 
         REQ_LXML_VERSION = "3.3.3"
         try:
-            from lxml import etree, objectify
+            from lxml import etree  # objectify
             LXML_OK = True
             # current code is working with:
             # LIBXML_VERSION (2, 9, 1))
@@ -1687,20 +1707,23 @@ class PrerequisitesCheckerGramplet(Gramplet):
     def locales_installed(self):
         '''
         Test and list installed locales because of Gramps AIO!
-        
+
         Used for the GUI
-        
-        Used in reports as the option called: "Translation:" The translation 
-        to be used for the report. Language selector showing all languages 
+
+        Used in reports as the option called: "Translation:" The translation
+        to be used for the report. Language selector showing all languages
         supported by Gramps. Defaults to the language you are using Gramps in.
         '''
         from gramps.gen.const import GRAMPS_LOCALE as glocale
 
-        self.append_text("\nInstalled Locales\Translations (If only English is listed please re-install Gramps again and make sure to select all the Translations and Dictionaries)\n\n")
-        
+        self.append_text("\nInstalled Locales\Translations (If only English is"
+                         " listed please re-install Gramps again and make sure"
+                         " to select all the Translations and Dictionaries)"
+                         "\n\n")
+
         result = ""
         #TODO: Add test to count languages and compare total
-        
+
         languages = glocale.get_language_dict()
         for language in sorted(languages, key=glocale.sort_key):
             #print(languages[language], language)
@@ -1710,7 +1733,6 @@ class PrerequisitesCheckerGramplet(Gramplet):
 
         # End check
         #self.append_text(result)
-
 
     def gramps_environment_variables(self):
         '''Gramps Environment variables
