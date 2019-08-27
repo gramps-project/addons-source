@@ -978,6 +978,11 @@ class PrerequisitesCheckerGramplet(Gramplet):
         self.append_text(result)
 
     def check18_gexiv2(self):
+        ''' wrapper for Options '''
+        self.append_text("\n* ")
+        self.check_gexiv2()
+
+    def check_gexiv2(self):
         '''GExiv2 - is a GObject wrapper around the Exiv2 photo metadata
         library. It allows for Gramps to inspect EXIF, IPTC, and XMP metadata
         in photo and video files of various formats.
@@ -1009,7 +1014,6 @@ class PrerequisitesCheckerGramplet(Gramplet):
          '_version', 'get_version', 'initialize', 'log_get_level',
          'log_set_level', 'log_use_glib_logging']
         '''
-        self.append_text("\n")
         # Start check
 
         try:
@@ -1030,7 +1034,16 @@ class PrerequisitesCheckerGramplet(Gramplet):
         except ValueError:
             gexiv2_str = 'not new enough'
 
-        result = "* GExiv2 : " + gexiv2_str + "(Exiv2 library : TBD? )"
+        try:
+            vers_str = Popen(['exiv2', '-V'],
+                             stdout=PIPE).communicate(input=None)[0]
+            if isinstance(vers_str, bytes) and sys.stdin.encoding:
+                vers_str = vers_str.decode(sys.stdin.encoding)
+            indx = vers_str.find('exiv2 ') + 6
+            vers_str = vers_str[indx : indx + 4]
+        except Exception:
+            vers_str = 'not found'
+        result = "GExiv2 : %s (Exiv2 library : %s)" % (gexiv2_str, vers_str)
         # End check
         self.append_text(result)
 
@@ -1535,7 +1548,8 @@ class PrerequisitesCheckerGramplet(Gramplet):
             raise SystemExit(msg)
         '''
         # End checks
-        self.append_text(" TODO ( pyexiv2  ( 0.2.0 ) & exiv2 )")
+        self.append_text(" ")
+        self.check_gexiv2()
 
     def check32_phototagginggramplet(self):
         '''PhotoTaggingGramplet - Gramplet for tagging people in photos
