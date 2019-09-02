@@ -18,18 +18,20 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
+
 # ----------------------------------------------------------------------------
 #
-# Python modules
+# Python module
 #
 # ----------------------------------------------------------------------------
 import os
 
 # ----------------------------------------------------------------------------
 #
-# Gramps modules
+# Gramps module
 #
 # ----------------------------------------------------------------------------
+from gramps.gui.dialog import OkDialog
 from gramps.gen.utils.file import media_path_full
 from gramps.gen.plug.report import Report, MenuReportOptions
 from gramps.gen.display.name import displayer as name_displayer
@@ -53,9 +55,11 @@ class MediaReport(Report):
         Report.__init__(self, database, options, user)
 
         self.menu = options.menu
+        self.options = options
         self._db = self.database
         self._opt = self.get_opt_dict()
         self.user = user
+        self.window = self.user.uistate.window
         self.filename = None
 
     def get_opt_dict(self):
@@ -69,10 +73,57 @@ class MediaReport(Report):
             dct[name] = opt.get_value()
         return dct
 
+    def __media_is_img(self, mid):
+        if mid != "":
+            media = self._db.get_media_from_gramps_id(mid)
+            media_type = media.get_mime_type()
+            return "image" in media_type
+        return False
+
+    def __valid_options(self):
+        """Check if all menu options are valid for report generation."""
+        dct = self._opt
+        mid = dct["mid"]
+        is_img = self.__media_is_img(mid)
+
+        # no media file selected
+        if not mid or mid == "":
+            OkDialog(_("INFO"), _("You have to select an image to generate "
+                                  "this report."), parent=self.window)
+            return False
+
+        # 'include custom note' checked, but no custom note selected
+        if dct["incl_note"] and dct["note"] == "":
+            OkDialog(_("INFO"), _("You have to select a custom note or uncheck"
+                                  " the option 'include custom note' to "
+                                  "generate this report."), parent=self.window)
+            return False
+
+        # incorrect media file, not an image
+        if not is_img:
+            OkDialog(_("INFO"), _("You have to select an image to "
+                                  "generate this report."), parent=self.window)
+            return False
+
+        # other file output than PDF (PDF is only one supported right now)
+        if self.options.get_output()[-3:] != "pdf":
+            OkDialog(_("INFO"), _("This report only supports PDF as output "
+                                  "file format."), parent=self.window)
+            return False
+
+        # if everything is valid
+        return True
+
     def write_report(self):
         """
         Inherited method; called by Report() in _ReportDialog.py
         """
+        # check if an image is selected and a note, if include note is checked
+        # stop report generation if one is missing
+        if not self.__valid_options():
+            print("stop report")
+            return
+
         dct = self._opt
         mid = dct["mid"]
         media = self._db.get_media_from_gramps_id(mid)
@@ -373,13 +424,14 @@ class ReportOptions(MenuReportOptions):
         media.set_help(_("Select a media file for this report"))
         menu.add_option(_("Report Options"), "mid", media)
 
-        note = NoteOption(_("Custom note"))
-        note.set_help(_("Select a note for this report"))
-        menu.add_option(_("Report Options"), "note", note)
+        self.note = NoteOption(_("Custom note"))
+        self.note.set_help(_("Select a note for this report"))
+        menu.add_option(_("Report Options"), "note", self.note)
 
-        incl_note = BooleanOption(_("Include custom note"), False)
-        incl_note.set_help(_("The custom note will be included"))
-        menu.add_option(_("Report Options"), "incl_note", incl_note)
+        self.incl_note = BooleanOption(_("Include custom note"), False)
+        self.incl_note.set_help(_("The custom note will be included"))
+        menu.add_option(_("Report Options"), "incl_note", self.incl_note)
+        self.incl_note.connect('value-changed', self.__update_custom_note_opt)
 
         incl_pers = BooleanOption(_("Include referenced people"), False)
         incl_pers.set_help(_("Referenced people will be included"))
@@ -388,6 +440,11 @@ class ReportOptions(MenuReportOptions):
         incl_data = BooleanOption(_("Include media data"), False)
         incl_data.set_help(_("Tags, notes and attributes will be included"))
         menu.add_option(_("Report Options"), "incl_data", incl_data)
+
+    def __update_custom_note_opt(self):
+        self.note.set_available(False)
+        if self.incl_note.get_value():
+            self.note.set_available(True)
 
     def make_default_style(self, default_style):
         """Define the default styling."""
