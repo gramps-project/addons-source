@@ -32,7 +32,7 @@ def exportData(db, filename,
     if not callable(callback):
         callback = lambda percent: None # dummy
 
-    with OpenFileOrStdout(filename) as fp:
+    with OpenFileOrStdout(filename, encoding="utf-8") as fp:
 
         total = (db.get_number_of_notes() +
                  db.get_number_of_people() +
