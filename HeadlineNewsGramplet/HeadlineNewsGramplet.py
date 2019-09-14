@@ -129,7 +129,7 @@ class HeadlineNewsGramplet(Gramplet):
             except:
                 continue
             if feed_type == "wiki":
-                text = str(fp.read())
+                text = str(fp.read().decode('utf-8'))
                 if fresh:
                     self.clear_text()
                     fresh = False
