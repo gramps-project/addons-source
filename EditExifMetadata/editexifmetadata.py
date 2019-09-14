@@ -537,8 +537,11 @@ class EditExifMetadata(Gramplet):
             highlighted tab if there is any data to show...
         """
         active_handle = self.get_active('Media')
-        active = self.dbstate.db.get_media_from_handle(active_handle)
-        self.set_has_data(self.get_has_data(active))
+        if active_handle:
+            active = self.dbstate.db.get_media_from_handle(active_handle)
+            self.set_has_data(self.get_has_data(active))
+        else:
+            self.set_has_data(False)
 
     def get_has_data(self, media):
         """
