@@ -84,7 +84,7 @@ def decode_html(string):
 #------------------------------------------------------------------------
 class HeadlineNewsGramplet(Gramplet):
     """
-    Headlines News Gramplet reads the Headline News every hour.
+    Headlines News Gramplet reads the Headline News once a day.
     """
     RAW = URL_WIKISTRING + "%s&action=raw"
     URL = URL_WIKISTRING + "%s"
@@ -97,15 +97,15 @@ class HeadlineNewsGramplet(Gramplet):
         # Description, Type, URL, Pretty URL for User
         self.feeds = [
             ("Gramps Wiki Headline News", "wiki", (self.RAW % "HeadlineNews"), (self.URL % "HeadlineNews")),
-            ("Gramps Blog Comments", "rss", "http://blog.gramps-project.org/?feed=comments-rss2", None),
-            ("Gramps Blog Posts",    "rss", "http://blog.gramps-project.org/?feed=rss", None),
-            ("Gramps Wiki Changes",  "rss", "http://www.gramps-project.org/wiki/index.php?title=Special:RecentChanges&feed=rss", None),
-            ("Gramps Bugtracker Issues", "rss", "http://www.gramps-project.org/bugs/issues_rss.php?key=ece7d21451d76337acf776c9a4384773", None),
-            ("Github Gramps Git Commits",   "rss", "https://github.com/gramps-project/gramps/commits/master.atom", None),
-            ("Sourceforge Gramps Git Commits",   "rss", "http://sourceforge.net/p/gramps/source/feed", None),
+            ("Gramps Blog Posts",    "rss", "https://gramps-project.org/introduction-WP/?feed=rss", None),
+            ("Gramps Bugtracker Issues", "rss", "https://gramps-project.org/bugs/issues_rss.php?key=ece7d21451d76337acf776c9a4384773", None),
+            ("Gramps Wiki Changes",  "rss", "https://gramps-project.org/wiki/index.php?title=Special:RecentChanges&feed=rss", None),
+            #("Github Gramps Git Commits",   "atom", "https://github.com/gramps-project/gramps/commits/master.atom", None), #Needs ATOM support to work
+            #("Reddit Gramps - fan-run forum(unofficial)",   "atom", "https://www.reddit.com/r/gramps/.rss", None), #Needs ATOM support to work
+            #("Gramps Blog Comments", "rss", "https://gramps-project.org/introduction-WP/?feed=comments-rss2", None),  # Comments no longer used on blog due to SPAM!
             ]
         self.set_tooltip(_("Read Gramps headline news"))
-        self.update_interval = 3600 * 1000 # in miliseconds (1 hour)
+        self.update_interval = (3600 * 1000) * 24 # in miliseconds (Once every 24 hours)
         self.set_use_markup(True)
         self.set_wrap(False)
         self.set_text(_("No Family Tree loaded."))
@@ -129,7 +129,7 @@ class HeadlineNewsGramplet(Gramplet):
             except:
                 continue
             if feed_type == "wiki":
-                text = str(fp.read())
+                text = str(fp.read().decode('utf-8'))
                 if fresh:
                     self.clear_text()
                     fresh = False
@@ -252,19 +252,19 @@ class HeadlineNewsGramplet(Gramplet):
                                 ("""<A HREF="%s">%s</A>""" %
                                  (self.wiki(match), self.nice_title(match))))
         ### URL with title:
-        pattern = re.compile(r'\[http\:\/\/(.*?) (.*?)\]')
+        pattern = re.compile(r'\[https\:\/\/(.*?) (.*?)\]')
         matches = pattern.findall(text)
         for (g1, g2) in matches:
-            text = text.replace("[http://%s %s]" % (g1, g2),
-                                ("""<A HREF="http://%s">%s</A>""" %
+            text = text.replace("[https://%s %s]" % (g1, g2),
+                                ("""<A HREF="https://%s">%s</A>""" %
                                  (g1, g2)))
         ### URL:
-        pattern = re.compile(r'\[http\:\/\/(.*?)\]')
+        pattern = re.compile(r'\[https\:\/\/(.*?)\]')
         matches = pattern.findall(text)
         count = 1
         for g1 in matches:
-            text = text.replace("[http://%s]" % (g1),
-                                ("""<A HREF="http://%s">%s</A>""" %
+            text = text.replace("[https://%s]" % (g1),
+                                ("""<A HREF="https://%s">%s</A>""" %
                                  (g1, ("[%d]" % count))))
             count += 1
         ### Bold:
