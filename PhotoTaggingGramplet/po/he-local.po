@@ -1,0 +1,154 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR Avi Markovitz <avi.markovitz@gmail.com>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2019-09-15 19:17+0300\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.1\n"
+"Last-Translator: Avi Markovitz <avi@avi-PC-Mint19>\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==2 ? 1 : n>10 && n%10==0 ? 2 : 3);\n"
+"Language: he\n"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:3
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:11
+msgid "Photo Tagging"
+msgstr "תיוג תמונה"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:4
+msgid "Gramplet for tagging people in photos"
+msgstr "גראמפלט לתיוג אנשים בתמונות"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:118
+msgid "Selection"
+msgstr "בחירה"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:120
+msgid "Replace existing references to the person being assigned without asking"
+msgstr "החלפת הפניות קיימות לאדם ללא שאלה מקדימה"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:127
+msgid "Face detection"
+msgstr "זיהוי פנים"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:130
+msgid "Minimum face width (px)"
+msgstr "רוחב פנים מזערי (פיקסל)"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:132
+msgid "Minimum face height (px)"
+msgstr "גובה פנים מזערי (פיקסל)"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:135
+msgid "Detect faces inside existing boxes"
+msgstr "זיהוי פנים בתוך תיבות קיימות"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:137
+msgid "Sensitivity (1 min .. 20 max)"
+msgstr "רגישות (1 מזערי.. 20 מירבי)"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:271
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:734
+msgid "Select Person"
+msgstr "בחירת אדם"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:272
+msgid "Add Person"
+msgstr "הוספת אדם"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:273
+msgid "Clear Reference"
+msgstr "ניקוי הפניה"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:274
+msgid "Remove Selection"
+msgstr "הסרת פריטים שנבחרו"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:275
+msgid "Edit referenced Person"
+msgstr "עריכת האדם המופנה"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:276
+msgid "Zoom In"
+msgstr "התקרבות"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:277
+msgid "Zoom Out"
+msgstr "התרחקות"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:280
+msgid "Detect faces"
+msgstr "זיהוי פנים"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:282
+msgid "Detect faces (OpenCV module required)"
+msgstr "זיהוי פנים (נדרש רכיב של OpenCV)"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:285
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:796
+msgid "Settings"
+msgstr "הגדרות"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:333
+msgid "Preview"
+msgstr "תצוגה מקדימה"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:334
+msgid "Person"
+msgstr "אדם"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:450
+msgid "Set as active person"
+msgstr "הגדרה כאדם נפעיל"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:453
+msgid "_Select"
+msgstr "_בחירה"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:456
+msgid "_Add"
+msgstr "_הוספה"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:459
+msgid "_Clear"
+msgstr "_ניקוי"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:462
+msgid "_Remove"
+msgstr "_הסרה"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:609
+#, python-format
+msgid "Edit Person (%s)"
+msgstr "עריכת אדם (%s)"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:665
+#, python-brace-format
+msgid "Replace to {0}"
+msgstr "החלפה ל {0}"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:766
+msgid "Detecting faces..."
+msgstr "זיהוי פנים..."
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:791
+msgid "Detection finished"
+msgstr "הזיהוי הסתיים"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:841
+#, python-brace-format
+msgid "Another region of this image is associated with {name}. Remove it?"
+msgstr "אזור אחר של תמונה זו משויכת ל {name}. האם להסיר אותו?"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:844
+#, python-brace-format
+msgid "{count} other regions of this image are associated with {name}. Remove them?"
+msgstr "{count} אזורים אחרים של תמונה זו משויכים ל {name}. האם להסירם?"
