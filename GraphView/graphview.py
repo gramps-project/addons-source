@@ -109,6 +109,15 @@ WIKI_PAGE = 'https://gramps-project.org/wiki/index.php?title=Graph_View'
 
 #-------------------------------------------------------------------------
 #
+# Search widget module
+#
+#-------------------------------------------------------------------------
+import sys
+sys.path.append(os.path.abspath(os.path.dirname(__file__)))
+from search_widget import SearchWidget, Popover, ListBoxRow
+
+#-------------------------------------------------------------------------
+#
 # GraphView
 #
 #-------------------------------------------------------------------------
@@ -130,7 +139,10 @@ class GraphView(NavigationView):
         ('interface.graphview-ancestor-generations', 3),
         ('interface.graphview-show-animation', True),
         ('interface.graphview-animation-speed', 3),
-        ('interface.graphview-animation-count', 4))
+        ('interface.graphview-animation-count', 4),
+        ('interface.graphview-search-all-db', True),
+        ('interface.graphview-search-show-images', True),
+        ('interface.graphview-search-marked-first', True))
 
     def __init__(self, pdata, dbstate, uistate, nav_group=0):
         NavigationView.__init__(self, _('Graph View'), pdata, dbstate, uistate,
@@ -189,12 +201,16 @@ class GraphView(NavigationView):
         Set up callback for changes to the database.
         """
         self._change_db(_db)
-        self.scale = 1
+        self.graph_widget.scale = 1
         if self.active:
             if self.get_active() != "":
                 self.graph_widget.populate(self.get_active())
+                self.graph_widget.set_available(True)
+            else:
+                self.graph_widget.set_available(False)
         else:
             self.dirty = True
+            self.graph_widget.set_available(False)
 
     def get_stock(self):
         """
@@ -329,8 +345,10 @@ class GraphView(NavigationView):
         if self.active:
             if self.get_active() != "":
                 self.graph_widget.populate(self.get_active())
+                self.graph_widget.set_available(True)
         else:
             self.dirty = True
+            self.graph_widget.set_available(False)
 
     def change_active_person(self, menuitem=None, person_handle=''):
         """
@@ -441,6 +459,28 @@ class GraphView(NavigationView):
         """
         self.graph_widget.animation.speed = 50 * int(entry)
 
+    def cb_update_search_all_db(self, client, cnxn_id, entry, data):
+        """
+        Called when the configuration menu changes the search setting.
+        """
+        value = entry == 'True'
+        self.graph_widget.search_widget.set_options(search_all_db=value)
+
+    def cb_update_search_show_images(self, client, cnxn_id, entry, data):
+        """
+        Called when the configuration menu changes the search setting.
+        """
+        value = entry == 'True'
+        self.graph_widget.search_widget.set_options(show_images=value)
+        self.graph_widget.show_images_option = value
+
+    def cb_update_search_marked_first(self, client, cnxn_id, entry, data):
+        """
+        Called when the configuration menu changes the search setting.
+        """
+        value = entry == 'True'
+        self.graph_widget.search_widget.set_options(marked_first=value)
+
     def config_connect(self):
         """
         Overwriten from  :class:`~gui.views.pageview.PageView method
@@ -471,6 +511,12 @@ class GraphView(NavigationView):
                              self.cb_update_animation_speed)
         self._config.connect('interface.graphview-animation-count',
                              self.cb_update_animation_count)
+        self._config.connect('interface.graphview-search-all-db',
+                             self.cb_update_search_all_db)
+        self._config.connect('interface.graphview-search-show-images',
+                             self.cb_update_search_show_images)
+        self._config.connect('interface.graphview-search-marked-first',
+                             self.cb_update_search_marked_first)
 
     def _get_configure_page_funcs(self):
         """
@@ -481,7 +527,8 @@ class GraphView(NavigationView):
         """
         return [self.layout_config_panel,
                 self.color_config_panel,
-                self.animation_config_panel]
+                self.animation_config_panel,
+                self.search_config_panel]
 
     def layout_config_panel(self, configdialog):
         """
@@ -554,6 +601,35 @@ class GraphView(NavigationView):
 
         return _('Animation'), grid
 
+    def search_config_panel(self, configdialog):
+        """
+        Function that builds the widget in the configuration dialog.
+        See "gramps/gui/configure.py" for details.
+        """
+        grid = Gtk.Grid()
+        grid.set_border_width(12)
+        grid.set_column_spacing(6)
+        grid.set_row_spacing(6)
+
+        row = 0
+        widget = configdialog.add_checkbox(
+            grid, _('Search in all database'), row,
+            'interface.graphview-search-all-db')
+        widget.set_tooltip_text(_("Also apply search by all database."))
+        row += 1
+        widget = configdialog.add_checkbox(
+            grid, _('Show person images'), row,
+            'interface.graphview-search-show-images')
+        widget.set_tooltip_text(
+            _("Show persons thumbnails in search result list."))
+        row += 1
+        widget = configdialog.add_checkbox(
+            grid, _('Show bookmarked first'), row,
+            'interface.graphview-search-marked-first')
+        widget.set_tooltip_text(
+            _("Show bookmarked persons first in search result list."))
+
+        return _('Search'), grid
     #-------------------------------------------------------------------------
     #
     # Printing functionalities
@@ -654,54 +730,78 @@ class GraphWidget(object):
         self.vbox = Gtk.Box(homogeneous=False, spacing=4,
                             orientation=Gtk.Orientation.VERTICAL)
         self.vbox.set_border_width(4)
-        hbox = Gtk.Box(homogeneous=False, spacing=4,
+        self.toolbar = Gtk.Box(homogeneous=False, spacing=4,
                        orientation=Gtk.Orientation.HORIZONTAL)
-        self.vbox.pack_start(hbox, False, False, 0)
+        self.vbox.pack_start(self.toolbar, False, False, 0)
 
         # add zoom-in button
         self.zoom_in_btn = Gtk.Button.new_from_icon_name('zoom-in',
                                                          Gtk.IconSize.MENU)
         self.zoom_in_btn.set_tooltip_text(_('Zoom in'))
-        hbox.pack_start(self.zoom_in_btn, False, False, 1)
+        self.toolbar.pack_start(self.zoom_in_btn, False, False, 1)
         self.zoom_in_btn.connect("clicked", self.zoom_in)
 
         # add zoom-out button
         self.zoom_out_btn = Gtk.Button.new_from_icon_name('zoom-out',
                                                           Gtk.IconSize.MENU)
         self.zoom_out_btn.set_tooltip_text(_('Zoom out'))
-        hbox.pack_start(self.zoom_out_btn, False, False, 1)
+        self.toolbar.pack_start(self.zoom_out_btn, False, False, 1)
         self.zoom_out_btn.connect("clicked", self.zoom_out)
 
         # add original zoom button
         self.orig_zoom_btn = Gtk.Button.new_from_icon_name('zoom-original',
                                                            Gtk.IconSize.MENU)
         self.orig_zoom_btn.set_tooltip_text(_('Zoom to original'))
-        hbox.pack_start(self.orig_zoom_btn, False, False, 1)
+        self.toolbar.pack_start(self.orig_zoom_btn, False, False, 1)
         self.orig_zoom_btn.connect("clicked", self.set_original_zoom)
 
         # add best fit button
         self.fit_btn = Gtk.Button.new_from_icon_name('zoom-fit-best',
                                                      Gtk.IconSize.MENU)
         self.fit_btn.set_tooltip_text(_('Zoom to best fit'))
-        hbox.pack_start(self.fit_btn, False, False, 1)
+        self.toolbar.pack_start(self.fit_btn, False, False, 1)
         self.fit_btn.connect("clicked", self.fit_to_page)
 
         # add 'go to active person' button
         self.goto_active_btn = Gtk.Button.new_from_icon_name('go-jump',
                                                              Gtk.IconSize.MENU)
         self.goto_active_btn.set_tooltip_text(_('Go to active person'))
-        hbox.pack_start(self.goto_active_btn, False, False, 1)
+        self.toolbar.pack_start(self.goto_active_btn, False, False, 1)
         self.goto_active_btn.connect("clicked", self.goto_active)
 
-        # add 'go to bookmark' combobox
-        self.store = Gtk.ListStore(str, str)
-        self.goto_other_btn = Gtk.ComboBox(model=self.store)
-        cell = Gtk.CellRendererText()
-        self.goto_other_btn.pack_start(cell, True)
-        self.goto_other_btn.add_attribute(cell, 'text', 1)
-        self.goto_other_btn.set_tooltip_text(_('Go to bookmark'))
-        self.goto_other_btn.connect("changed", self.goto_other)
-        hbox.pack_start(self.goto_other_btn, False, False, 1)
+        # add 'go to bookmark' button
+        self.goto_other_btn = Gtk.Button(_('Go to bookmark'))
+        self.goto_other_btn.set_tooltip_text(
+            _('Center view on selected bookmark'))
+        self.toolbar.pack_start(self.goto_other_btn, False, False, 1)
+        self.bkmark_popover = Popover(_('Bookmarks for current graph'),
+                                      _('Other Bookmarks'),
+                                      ext_panel=self.build_bkmark_ext_panel())
+        self.bkmark_popover.set_relative_to(self.goto_other_btn)
+        self.goto_other_btn.connect("clicked", self.show_bkmark_popup)
+        self.goto_other_btn.connect("key-press-event",
+                                    self.goto_other_btn_key_press_event)
+        self.bkmark_popover.connect('item-activated', self.activate_popover)
+        self.show_images_option = self.view._config.get(
+            'interface.graphview-search-show-images')
+
+        # add search widget
+        self.search_widget = SearchWidget(self.dbstate,
+                                          self.get_person_image,
+                                          bookmarks=self.view.bookmarks)
+        search_box = self.search_widget.get_widget()
+        self.toolbar.pack_start(search_box, True, True, 1)
+        self.search_widget.set_options(
+            search_all_db=self.view._config.get(
+                'interface.graphview-search-all-db'),
+            show_images=self.show_images_option)
+        self.search_widget.connect('item-activated', self.activate_popover)
+        # add accelerator to focus search entry
+        accel_group = Gtk.AccelGroup()
+        self.uistate.window.add_accel_group(accel_group)
+        search_box.add_accelerator('grab-focus', accel_group, Gdk.KEY_f,
+                                   Gdk.ModifierType.CONTROL_MASK,
+                                   Gtk.AccelFlags.VISIBLE)
 
         # add spinners for quick generations change
         box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
@@ -722,15 +822,17 @@ class GraphWidget(object):
         self.descendants_spinner.connect("value-changed",
                                          self.set_descendants_generations)
         box.pack_start(self.descendants_spinner, False, False, 1)
-        hbox.pack_start(box, False, False, 1)
+        self.toolbar.pack_start(box, False, False, 1)
 
         self.vbox.pack_start(scrolled_win, True, True, 0)
+
         # if we have graph lager than graphviz paper size
         # this coef is needed
         self.transform_scale = 1
         self.scale = 1
 
         self.animation = CanvasAnimation(self.view, self.canvas, scrolled_win)
+        self.search_widget.set_items_list(self.animation.items_list)
 
         # person that will focus (once) after graph rebuilding
         self.person_to_focus = None
@@ -748,6 +850,15 @@ class GraphWidget(object):
         # used for popup menu, prevent destroy menu as local variable
         self.menu = None
 
+    def set_available(self, state):
+        """
+        Set state for GraphView.
+        """
+        if not state:
+            # if no database is opened
+            self.clear()
+        self.toolbar.set_sensitive(state)
+
     def font_changed(self, active):
         self.font = config.get('utf8.selected-font')
         if self.parser:
@@ -759,6 +870,27 @@ class GraphWidget(object):
         Set person that will focus (once) after graph rebuilding.
         """
         self.person_to_focus = handle
+
+    def goto_other_btn_key_press_event(self, widget, event):
+        """
+        Handle 'Esc' key on bookmarks button to hide popup.
+        """
+        key = event.keyval
+        if event.keyval == Gdk.KEY_Escape:
+            self.hide_bkmark_popover()
+        elif key == Gdk.KEY_Down:
+            self.bkmark_popover.grab_focus()
+            return True
+
+    def activate_popover(self, widget, person_handle):
+        """
+        Called when some item(person)
+        in search or bookmarks popup(popover) is activated.
+        """
+        self.hide_bkmark_popover()
+        self.search_widget.hide_search_popover()
+        # move view to person with animation
+        self.move_to_person(None, person_handle, True)
 
     def set_ancestors_generations(self, widget):
         """
@@ -792,21 +924,169 @@ class GraphWidget(object):
         context = GLib.main_context_default()
         self.set_des_event = context.find_source_by_id(event_id)
 
+    def build_bkmark_ext_panel(self):
+        """
+        Build bookmark popover extand panel.
+        """
+        btn_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
+        # add button to add active person to bookmarks
+        # tooltip will be changed in "self.load_bookmarks"
+        self.add_bkmark = Gtk.Button(_('Add active person'))
+        self.add_bkmark.connect("clicked", self.add_active_to_bkmarks)
+        btn_box.pack_start(self.add_bkmark, True, True, 2)
+        # add buton to call bookmarks manager
+        manage_bkmarks = Gtk.Button(_('Edit'))
+        manage_bkmarks.set_tooltip_text(_('Call the bookmark editor'))
+        manage_bkmarks.connect("clicked", self.edit_bookmarks)
+        btn_box.pack_start(manage_bkmarks, True, True, 2)
+        return btn_box
+
     def load_bookmarks(self):
         """
-        Load bookmarks in ComboBox (goto_other_btn).
+        Load bookmarks in Popover (goto_other_btn).
         """
-        bookmarks = self.dbstate.db.get_bookmarks().bookmarks
-        self.store.clear()
+        # remove all old items from popup
+        self.bkmark_popover.clear_items()
+
+        active = self.view.get_active()
+        active_in_bkmarks = False
+        found = False
+        found_other = False
+        count = 0
+        count_other = 0
+
+        bookmarks = self.view.bookmarks.get_bookmarks().bookmarks
         for bkmark in bookmarks:
+            if active == bkmark:
+                active_in_bkmarks = True
             person = self.dbstate.db.get_person_from_handle(bkmark)
             if person:
                 name = displayer.display_name(person.get_primary_name())
-                val_to_display = "[%s] %s" % (person.gramps_id, name)
                 present = self.animation.get_item_by_title(bkmark)
+
+                hbox = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL,
+                               spacing=10)
+                # add person ID
+                label = Gtk.Label("[%s]" % person.gramps_id, xalign=0)
+                hbox.pack_start(label, False, False, 2)
+                # add person name
+                label = Gtk.Label(name, xalign=0)
+                hbox.pack_start(label, True, True, 2)
+                # add person image if needed
+                if self.show_images_option:
+                    person_image = self.get_person_image(person, 32, 32)
+                    if person_image:
+                        hbox.pack_start(person_image, False, True, 2)
+                row = ListBoxRow(description=bkmark, label=name)
+                row.add(hbox)
+
                 if present is not None:
-                    self.store.append((bkmark, val_to_display))
-        self.goto_other_btn.set_active(-1)
+                    found = True
+                    count += 1
+                    self.bkmark_popover.main_panel.add_to_panel(row)
+                else:
+                    found_other = True
+                    count_other += 1
+                    self.bkmark_popover.other_panel.add_to_panel(row)
+                row.show_all()
+        if not found and not found_other:
+            self.bkmark_popover.show_other_panel(False)
+            row = ListBoxRow()
+            row.add(Gtk.Label(_("You don't have any bookmarks yet...\n"
+                                "Try to add some frequently used persons "
+                                "to speedup navigation.")))
+            self.bkmark_popover.main_panel.add_to_panel(row)
+            row.show_all()
+        else:
+            if not found:
+                row = ListBoxRow()
+                row.add(Gtk.Label(_('No bookmarks for this graph...')))
+                self.bkmark_popover.main_panel.add_to_panel(row)
+                row.show_all()
+            if not found_other:
+                row = ListBoxRow()
+                row.add(Gtk.Label(_('No other bookmarks...')))
+                self.bkmark_popover.other_panel.add_to_panel(row)
+                row.show_all()
+                self.bkmark_popover.show_other_panel(True)
+
+        self.bkmark_popover.main_panel.set_progress(0, 'found: %s' % count)
+        self.bkmark_popover.other_panel.set_progress(
+            0, 'found: %s' % count_other)
+
+        # set tooltip for "add_bkmark" button
+        self.add_bkmark.hide()
+        if active and not active_in_bkmarks:
+            person = self.dbstate.db.get_person_from_handle(active)
+            if person:
+                name = displayer.display_name(person.get_primary_name())
+                val_to_display = "[%s] %s" % (person.gramps_id, name)
+                self.add_bkmark.set_tooltip_text(
+                    _('Add active person to bookmarks\n'
+                      '%s' % val_to_display))
+                self.add_bkmark.show()
+
+    def get_person_image(self, person, width=-1, height=-1, kind='image'):
+        """
+        kind - 'image', 'path', 'both'
+        Returns default person image and path or None.
+        """
+        # see if we have an image to use for this person
+        image_path = None
+        media_list = person.get_media_list()
+        if media_list:
+            media_handle = media_list[0].get_reference_handle()
+            media = self.dbstate.db.get_media_from_handle(media_handle)
+            media_mime_type = media.get_mime_type()
+            if media_mime_type[0:5] == "image":
+                rectangle = media_list[0].get_rectangle()
+                path = media_path_full(self.dbstate.db, media.get_path())
+                image_path = get_thumbnail_path(path, rectangle=rectangle)
+                # test if thumbnail actually exists in thumbs
+                # (import of data means media files might not be present
+                image_path = find_file(image_path)
+        if image_path:
+            if kind == 'path':
+                return image_path
+            # get and scale image
+            person_image = GdkPixbuf.Pixbuf.new_from_file_at_scale(
+                filename=image_path,
+                width=width, height=height,
+                preserve_aspect_ratio=True)
+            person_image = Gtk.Image.new_from_pixbuf(person_image)
+            if kind == 'image':
+                return person_image
+            elif kind == 'both':
+                return person_image, image_path
+
+        return None
+
+    def add_active_to_bkmarks(self, widget):
+        """
+        Add active person to bookmarks.
+        """
+        self.view.add_bookmark(None)
+        self.load_bookmarks()
+
+    def edit_bookmarks(self, widget):
+        """
+        Call the bookmark editor.
+        """
+        self.view.edit_bookmarks(None)
+        self.load_bookmarks()
+
+    def show_bkmark_popup(self, widget):
+        """
+        Show bookmark popup.
+        """
+        self.load_bookmarks()
+        self.bkmark_popover.popup()
+
+    def hide_bkmark_popover(self, widget=None, event=None):
+        """
+        Hide bookmark popup.
+        """
+        self.bkmark_popover.popdown()
 
     def goto_active(self, button=None):
         """
@@ -816,22 +1096,13 @@ class GraphWidget(object):
         animation = bool(button)
         self.animation.move_to_person(self.active_person_handle, animation)
 
-    def goto_other(self, obj):
-        """
-        Go to other person.
-        If person not present in the current graphview tree, ignore it.
-        """
-        if obj.get_active() > -1:
-            other = self.store[obj.get_active()][0]
-            self.animation.move_to_person(other, True)
-            obj.set_active(-1)
-
     def move_to_person(self, menuitem, handle, animate=False):
         """
         Move to specified person (by handle).
         If person not present in the current graphview tree,
         show dialog to change active person.
         """
+        self.person_to_focus = None
         if self.animation.get_item_by_title(handle):
             self.animation.move_to_person(handle, animate)
         else:
@@ -870,6 +1141,9 @@ class GraphWidget(object):
         self.clear()
         self.active_person_handle = active_person
 
+        self.search_widget.hide_search_popover()
+        self.hide_bkmark_popover()
+
         # generate DOT and SVG data
         dot = DotSvgGenerator(self.dbstate, self.view)
         self.dot_data, self.svg_data = dot.build_graph(active_person)
@@ -889,9 +1163,6 @@ class GraphWidget(object):
             self.goto_active()
         self.person_to_focus = None
 
-        # load bookmarks to ComboBox
-        self.load_bookmarks()
-
         # update the status bar
         self.view.change_page()
 
@@ -901,39 +1172,15 @@ class GraphWidget(object):
         """
         Increase zoom scale.
         """
-        scale_coef = self.scale
-        if scale_coef < 0.1:
-            step = 0.01
-        elif scale_coef < 0.3:
-            step = 0.03
-        elif scale_coef < 1:
-            step = 0.05
-        elif scale_coef > 2:
-            step = 0.5
-        else:
-            step = 0.1
-
-        scale_coef += step
+        scale_coef = self.scale * 1.1
         self.set_zoom(scale_coef)
 
     def zoom_out(self, button=None):
         """
         Decrease zoom scale.
         """
-        scale_coef = self.scale
-        if scale_coef < 0.1:
-            step = 0.01
-        elif scale_coef < 0.3:
-            step = 0.03
-        elif scale_coef < 1:
-            step = 0.05
-        elif scale_coef > 2:
-            step = 0.5
-        else:
-            step = 0.1
-
-        scale_coef -= step
-        if scale_coef < 0.02:
+        scale_coef = self.scale * 0.9
+        if scale_coef < 0.01:
             scale_coef = 0.01
         self.set_zoom(scale_coef)
 
@@ -997,6 +1244,9 @@ class GraphWidget(object):
         Enter in scroll mode when left or middle mouse button pressed
         on background.
         """
+        self.search_widget.hide_search_popover()
+        self.hide_bkmark_popover()
+
         if not (event.type == getattr(Gdk.EventType, "BUTTON_PRESS") and
                 item == self.canvas.get_root_item()):
             return False
@@ -1064,6 +1314,9 @@ class GraphWidget(object):
         Perform actions when a node is clicked.
         If middle mouse was clicked then try to set scroll mode.
         """
+        self.search_widget.hide_search_popover()
+        self.hide_bkmark_popover()
+
         handle = item.title
         node_class = item.description
         button = event.get_button()[1]
@@ -2103,21 +2356,9 @@ class DotSvgGenerator(object):
         line_delimiter = '<BR/>'
 
         # see if we have an image to use for this person
-        image_path = None
         if self.show_images:
-            media_list = person.get_media_list()
-            if media_list:
-                media_handle = media_list[0].get_reference_handle()
-                media = self.database.get_media_from_handle(media_handle)
-                media_mime_type = media.get_mime_type()
-                if media_mime_type[0:5] == "image":
-                    rectangle = media_list[0].get_rectangle()
-                    path = media_path_full(self.database, media.get_path())
-                    image_path = get_thumbnail_path(path, rectangle=rectangle)
-                    # test if thumbnail actually exists in thumbs
-                    # (import of data means media files might not be present
-                    image_path = find_file(image_path)
-
+            image_path = self.view.graph_widget.get_person_image(person,
+                                                                 kind='path')
         if image_path:
             label += ('<TR><TD><IMG SRC="%s"/></TD></TR>' % image_path)
 
@@ -2398,7 +2639,8 @@ class CanvasAnimation(object):
         """
         Update list of items for current graph.
         """
-        self.items_list = items_list
+        self.items_list.clear()
+        self.items_list.extend(items_list)
 
         self.in_shake.clear()
         # clear counters and shakes - items not exists anymore
