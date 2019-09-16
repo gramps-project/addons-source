@@ -153,6 +153,7 @@ class PrerequisitesCheckerGramplet(Gramplet):
         self.check12_graphviz()
         self.check13_pyicu()
         self.check14_ghostscript()
+        self.append_text("\n")
         self.check_fontconfig()
         self.append_text("\n")
         #Optional
