@@ -66,8 +66,8 @@ def load_on_reg(dbstate, uistate, plugin):
             gtksettings.set_property('gtk-font-name', value)
         config.register('interface.toolbar-text', False)
         value = config.get('interface.toolbar-text')
-        uistate.viewmanager.toolbar.set_style(
-            ToolbarStyle.BOTH if value else ToolbarStyle.ICONS)
+        toolbar = uistate.uimanager.get_widget('ToolBar')
+        toolbar.set_style(ToolbarStyle.BOTH if value else ToolbarStyle.ICONS)
         config.register('interface.fixed-scrollbar', '0')
         value = config.get('interface.fixed-scrollbar')
         if value:

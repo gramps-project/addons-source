@@ -1,7 +1,7 @@
 #
 # Gramps - a GTK+/GNOME based genealogy program
 #
-# Copyright (C) 2016-2018 Sam Manzi
+# Copyright (C) 2019  Matthias Kemmer <matt.familienforschung@gmail.com>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,22 +17,19 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
-#------------------------------------------------------------------------
-#
-# Diagnostic check that prerequisites have been met for the current install.
-#
-#------------------------------------------------------------------------
 
-register(GRAMPLET,
-         id="Prerequisites Checker Gramplet",
-         name=_("Prerequisites Checker"),
-         description = _("Prerequisites Checker Gramplet"),
-         version = '0.8.23',
-         gramps_target_version='5.1',
+register(TOOL,
+         id = 'SetPrivacyTool',
+         name = _("Set Privacy Tool"),
+         description = _("Set all objects of the last <number> of years private."),
+         version = '1.0.1',
+         gramps_target_version = "5.1",
          status = STABLE,
-         fname="PrerequisitesCheckerGramplet.py",
-         height = 300,
-         gramplet = 'PrerequisitesCheckerGramplet',
-         gramplet_title=_("Prerequisites Checker"),
-         help_url="PrerequisitesCheckerGramplet"
+         fname = 'SetPrivacyTool.py',
+         authors = ["Matthias Kemmer"],
+         authors_email = ["matt.familienforschung@gmail.com"],
+         category = TOOL_DBPROC,
+         toolclass = 'SetPrivacyWindow',
+         optionclass = 'SetPrivacyOptions',
+         tool_modes = [TOOL_MODE_GUI],
          )

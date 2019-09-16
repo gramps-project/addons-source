@@ -185,7 +185,7 @@ class GraphView(NavigationView):
         """
         Associate the print button to the PrintView action.
         """
-        self._add_action('PrintView', self.printview, "<PRIMARY>P")
+        self._add_action('PrintView', self.printview, "<PRIMARY><SHIFT>P")
         self._add_action('PRIMARY-J', self.jump, '<PRIMARY>J')
 
     def _connect_db_signals(self):

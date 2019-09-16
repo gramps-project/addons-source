@@ -20,8 +20,9 @@ class ExportSQLTestCase (unittest.TestCase):
             pass
         self.database1.load("/tmp/bsddb_exportsql_1")
 
-        importXML(self.database1, gramps_path + "/example/gramps/example.gramps", User())
-        exportSQL(self.database1, "/tmp/exported1.sql")
+        importXML(self.database1, gramps_path +
+                  "/example/gramps/example.gramps", User())
+        exportSQL(self.database1, "/tmp/exported1.sql", User(), None)
 
         self.database2 = make_database("bsddb")
         try:
