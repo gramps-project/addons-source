@@ -2359,8 +2359,8 @@ class DotSvgGenerator(object):
         if self.show_images:
             image_path = self.view.graph_widget.get_person_image(person,
                                                                  kind='path')
-        if image_path:
-            label += ('<TR><TD><IMG SRC="%s"/></TD></TR>' % image_path)
+            if image_path:
+                label += ('<TR><TD><IMG SRC="%s"/></TD></TR>' % image_path)
 
 
         # start adding person name and dates
