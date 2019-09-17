@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"POT-Creation-Date: 2019-09-17 10:29-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -61,142 +61,142 @@ msgstr ""
 msgid "Continue"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:133
+#: NetworkChart/NetworkChart.py:132
 msgid "birth abbreviation|b."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:134
+#: NetworkChart/NetworkChart.py:133
 msgid "death abbreviation|d."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:135
+#: NetworkChart/NetworkChart.py:134
 msgid "marriage abbreviation|m."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:136
+#: NetworkChart/NetworkChart.py:135
 msgid "Unknown"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:856
+#: NetworkChart/NetworkChart.py:243
 msgid "File exists. Overwrite?"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:858
+#: NetworkChart/NetworkChart.py:244
 msgid "Cancel"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:859
+#: NetworkChart/NetworkChart.py:244
 msgid "Yes"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:903
+#: NetworkChart/NetworkChart.py:893
 msgid "created"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:904 NetworkChart/NetworkChart.py:907
+#: NetworkChart/NetworkChart.py:894 NetworkChart/NetworkChart.py:897
 msgid "last_written"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:917
+#: NetworkChart/NetworkChart.py:907
 msgid "Main"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:919
+#: NetworkChart/NetworkChart.py:909
 msgid "Graph Style"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:921
+#: NetworkChart/NetworkChart.py:911
 msgid "Orthogonal (right angles in connectors)"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:922
+#: NetworkChart/NetworkChart.py:912
 msgid "Straight (no right angles in connectors)"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:923
+#: NetworkChart/NetworkChart.py:913
 msgid "Curved (curved and straight connectors)"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:925
+#: NetworkChart/NetworkChart.py:915
 msgid "Default (Orthogonal)"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:930
+#: NetworkChart/NetworkChart.py:920
 msgid "Select the graph line connector format."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:933
+#: NetworkChart/NetworkChart.py:923
 msgid "Graph Direction"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:935
+#: NetworkChart/NetworkChart.py:925
 msgid "Top to Bottom"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:935
+#: NetworkChart/NetworkChart.py:925
 msgid "Left to Right"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:936
+#: NetworkChart/NetworkChart.py:926
 msgid "Bottom to Top"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:936
+#: NetworkChart/NetworkChart.py:926
 msgid "Right to Left"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:938
+#: NetworkChart/NetworkChart.py:928
 msgid "Default (Top to Bottom)"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:941
+#: NetworkChart/NetworkChart.py:931
 msgid "Select the graph direction."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:944
+#: NetworkChart/NetworkChart.py:934
 msgid "URL Style"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:946
+#: NetworkChart/NetworkChart.py:936
 msgid "Include URLs from database."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:947
+#: NetworkChart/NetworkChart.py:937
 msgid "Dynamic URL = Prefix + GrampID + Suffix"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:948
+#: NetworkChart/NetworkChart.py:938
 msgid "Static URL = Prefix"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:949
+#: NetworkChart/NetworkChart.py:939
 msgid "Don't include URLs"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:950
+#: NetworkChart/NetworkChart.py:940
 msgid "Default (include)"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:953
+#: NetworkChart/NetworkChart.py:943
 msgid "Select URL style."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:956
+#: NetworkChart/NetworkChart.py:946
 msgid "URL Prefix,Suffix"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:957
+#: NetworkChart/NetworkChart.py:947
 msgid ""
 "Enter the Prefix,Suffix (use comma)\n"
 "for dynamically generated URLs.\n"
 "URL = Prefix + GrampsID + Suffix."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:962
+#: NetworkChart/NetworkChart.py:952
 msgid "Enter Font Name"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:964
+#: NetworkChart/NetworkChart.py:954
 msgid ""
 "Enter the primary font style for the chart.\n"
 "Must already be installed.\n"
@@ -204,277 +204,291 @@ msgid ""
 "https://www.fontsquirrel.com/fonts/white-rabbit"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:969
+#: NetworkChart/NetworkChart.py:959
 msgid "Spacing (inch)"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:970
+#: NetworkChart/NetworkChart.py:960
 msgid ""
 "Enter the seperation distance between \"Generations\" in inches (0.1-5.0)."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:974
+#: NetworkChart/NetworkChart.py:964
 msgid "Enter Chart Title"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:976
+#: NetworkChart/NetworkChart.py:966
 msgid "Set the title of the chart."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:980
+#: NetworkChart/NetworkChart.py:969
+msgid "File Type"
+msgstr ""
+
+#: NetworkChart/NetworkChart.py:971
+msgid "Default (svg)"
+msgstr ""
+
+#: NetworkChart/NetworkChart.py:974
+msgid ""
+"svg - Scalable Vector Graphics file.\n"
+"pdf - Adobe Portable Document Format.\n"
+msgstr ""
+
+#: NetworkChart/NetworkChart.py:979
 msgid "Folder"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:982
+#: NetworkChart/NetworkChart.py:981
 msgid "The destination folder for generated files."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:986 NetworkChart/NetworkChart.py:1284
-#: NetworkChart/NetworkChart.py:1292
+#: NetworkChart/NetworkChart.py:985 NetworkChart/NetworkChart.py:1274
+#: NetworkChart/NetworkChart.py:1282
 msgid "network"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:989
+#: NetworkChart/NetworkChart.py:988
 msgid "Filename"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:991
+#: NetworkChart/NetworkChart.py:990
 msgid "The filename for the generated svg network chart."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:998
+#: NetworkChart/NetworkChart.py:997
 msgid "Different node shapes/edges for gender."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:999
+#: NetworkChart/NetworkChart.py:998
 msgid "Node differences for gender."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1002
+#: NetworkChart/NetworkChart.py:1001
 msgid "Color"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1004
+#: NetworkChart/NetworkChart.py:1003
 msgid "Male Background"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1005
+#: NetworkChart/NetworkChart.py:1004
 msgid "RGB-color for male box background."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1008
+#: NetworkChart/NetworkChart.py:1007
 msgid "Male Background Alpha"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1010
+#: NetworkChart/NetworkChart.py:1009
 msgid "Alpha for Male box background (transparent=0, solid=255)."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1014
+#: NetworkChart/NetworkChart.py:1013
 msgid "Male Box Edge"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1015
+#: NetworkChart/NetworkChart.py:1014
 msgid "RGB-color for Male box edge."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1018
+#: NetworkChart/NetworkChart.py:1017
 msgid "Female Background"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1019 NetworkChart/NetworkChart.py:1030
+#: NetworkChart/NetworkChart.py:1018 NetworkChart/NetworkChart.py:1029
 msgid "RGB-color for Female box background."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1024
+#: NetworkChart/NetworkChart.py:1023
 msgid "Alpha for Female box background (transparent=0, solid=255)."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1029
+#: NetworkChart/NetworkChart.py:1028
 msgid "Female Box Edge"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1033
+#: NetworkChart/NetworkChart.py:1032
 msgid "Other Background"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1034
+#: NetworkChart/NetworkChart.py:1033
 msgid "RGB-color for other box background."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1037
+#: NetworkChart/NetworkChart.py:1036
 msgid "Other Background Alpha"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1039
+#: NetworkChart/NetworkChart.py:1038
 msgid "Alpha for Other box background (transparent=0, solid=255)."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1043
+#: NetworkChart/NetworkChart.py:1042
 msgid "Family Connector Line"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1044
+#: NetworkChart/NetworkChart.py:1043
 msgid "RGB-color for family connector line."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1047
+#: NetworkChart/NetworkChart.py:1046
 msgid "Marriage Connector Line"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1048
+#: NetworkChart/NetworkChart.py:1047
 msgid "RGB-color for marriage connector line."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1051
+#: NetworkChart/NetworkChart.py:1050
 msgid "Highlight Connector Line"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1052
+#: NetworkChart/NetworkChart.py:1051
 msgid ""
 "RGB-color for the highlighted path between two individuals.  If the graph."
 "inverts, reverse the order to change."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1057
+#: NetworkChart/NetworkChart.py:1056
 msgid "Trim Box Edge"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1058
+#: NetworkChart/NetworkChart.py:1057
 msgid "RGB-color for box edge that has been trimmed."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1062
+#: NetworkChart/NetworkChart.py:1061
 msgid "Remove color background on all nodes."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1064
+#: NetworkChart/NetworkChart.py:1063
 msgid "Removes color background for individuals (nodes) on chart."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1067
+#: NetworkChart/NetworkChart.py:1066
 msgid "Privacy"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1069
+#: NetworkChart/NetworkChart.py:1068
 msgid ""
 "Enter year to start\n"
 "rounding birthday\n"
 "to year only"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1072
+#: NetworkChart/NetworkChart.py:1071
 msgid ""
 "Birthdays after this year are represented by the year only.  Invalid entries "
 "will be ignored."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1076
+#: NetworkChart/NetworkChart.py:1075
 msgid "Round birthday to year after year entered (above)."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1078
+#: NetworkChart/NetworkChart.py:1077
 msgid "Represent birthday by year only."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1082
+#: NetworkChart/NetworkChart.py:1081
 msgid ""
 "Enter year to start\n"
 "rounding marriage\n"
 "date to year only"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1083
+#: NetworkChart/NetworkChart.py:1082
 msgid ""
 "Marriages after this year are represented bythe year only. Invalid entries "
 "will be ignored."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1088
+#: NetworkChart/NetworkChart.py:1087
 msgid "Round marriage to year after year entered (above)."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1090
+#: NetworkChart/NetworkChart.py:1089
 msgid "Represent marriage by year only."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1095
+#: NetworkChart/NetworkChart.py:1094
 msgid ""
 "Attempts to remove middle names.  Only works for entries with birth year in "
 "the record."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1103
+#: NetworkChart/NetworkChart.py:1102
 msgid "Remove middle names."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1108
+#: NetworkChart/NetworkChart.py:1107
 msgid "Allow inclusion of private records in chart."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1113
+#: NetworkChart/NetworkChart.py:1112
 msgid "Trim"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1115
+#: NetworkChart/NetworkChart.py:1114
 msgid "Trim descendants"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1117
+#: NetworkChart/NetworkChart.py:1116
 msgid "All descendants (children) of selected individuals will not be shown."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1123
+#: NetworkChart/NetworkChart.py:1122
 msgid "Enable trimming of descendants."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1125
+#: NetworkChart/NetworkChart.py:1124
 msgid ""
 "You must enter valid person(s) before \n"
 "enabling trimming of descendants from tree."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1130
+#: NetworkChart/NetworkChart.py:1129
 msgid "Trim ancestors"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1131
+#: NetworkChart/NetworkChart.py:1130
 msgid "All ancestors (parents) of selected individuals will not be shown."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1137
+#: NetworkChart/NetworkChart.py:1136
 msgid "Enable trimming of ancestors."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1139
+#: NetworkChart/NetworkChart.py:1138
 msgid "Enable trimming of ancestors from tree."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1143
+#: NetworkChart/NetworkChart.py:1142
 msgid "Enable trim groups."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1145
+#: NetworkChart/NetworkChart.py:1144
 msgid ""
 "Remove groups less than Min Group Size.  Automatic\n"
 "for databases with more than 1500 individuals."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1150
+#: NetworkChart/NetworkChart.py:1149
 msgid "Min Group Size"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1152
+#: NetworkChart/NetworkChart.py:1151
 msgid ""
 "Enter the minimum size group to display.\n"
 "Value may be 2 or greater."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1157
+#: NetworkChart/NetworkChart.py:1156
 msgid "Highlight"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1160
+#: NetworkChart/NetworkChart.py:1159
 msgid ""
 "Select Start and\n"
 "End Individuals in\n"
@@ -482,126 +496,112 @@ msgid ""
 "Select two"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1163
+#: NetworkChart/NetworkChart.py:1162
 msgid ""
 "Starting and ending person for displayed path(s).\n"
 "Select two people"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1167
+#: NetworkChart/NetworkChart.py:1166
 msgid "Highlight path(s)"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1171
+#: NetworkChart/NetworkChart.py:1170
 msgid "Default (None)"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1176
+#: NetworkChart/NetworkChart.py:1175
 msgid ""
 "None - Don't highlight paths.\n"
 "Direct - Highlight direct descendant/ancestor paths.\n"
 "Any - Highlight any path(s) including direct or indirect."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1181
+#: NetworkChart/NetworkChart.py:1180
 msgid "Show only path(s)"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1183
+#: NetworkChart/NetworkChart.py:1182
 msgid "None"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1183
+#: NetworkChart/NetworkChart.py:1182
 msgid "Direct"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1183
+#: NetworkChart/NetworkChart.py:1182
 msgid "Any"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1184
+#: NetworkChart/NetworkChart.py:1183
 msgid "Default (none)"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1188
+#: NetworkChart/NetworkChart.py:1187
 msgid ""
 "None - Don't show paths only.\n"
 "Direct - Show only direct descendant/ancestor paths.\n"
 "Any - Show only path(s) direct or indirect."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1193
+#: NetworkChart/NetworkChart.py:1192
 msgid "Center Person"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1195
+#: NetworkChart/NetworkChart.py:1194
 msgid "Select person at center of selection radius in graph."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1198
+#: NetworkChart/NetworkChart.py:1197
 msgid ""
 "Max connections\n"
 "from center"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1201
+#: NetworkChart/NetworkChart.py:1200
 msgid ""
 "Enter the maximum number of connections allowed from\n"
 "the center person.  Value may be 1 or greater."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1206
+#: NetworkChart/NetworkChart.py:1205
 msgid "Limit graph to max connections from center."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1208
+#: NetworkChart/NetworkChart.py:1207
 msgid "Display up to max connections from central person."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1212
+#: NetworkChart/NetworkChart.py:1211
 msgid "Highlight central person in graph."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1214
+#: NetworkChart/NetworkChart.py:1213
 msgid "Add yellow color background to central person."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1218
+#: NetworkChart/NetworkChart.py:1217
 msgid "Config"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1222
+#: NetworkChart/NetworkChart.py:1221
 msgid "Database"
 msgstr ""
 
 #: NetworkChart/NetworkChart.py:1228
-msgid "File Type"
-msgstr ""
-
-#: NetworkChart/NetworkChart.py:1230
-msgid "Default (svg)"
-msgstr ""
-
-#: NetworkChart/NetworkChart.py:1233
-msgid ""
-"svg - Scalable Vector Graphics file.\n"
-"pdf - Adobe Portable Document Format.\n"
-msgstr ""
-
-#: NetworkChart/NetworkChart.py:1238
 msgid "Use database handle instead of GrampID id in URLs."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1240
+#: NetworkChart/NetworkChart.py:1230
 msgid ""
 "Use database handle instead of the gramps id for URLs.\n"
 "The handle should never change whereas gramps ids can."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1244
+#: NetworkChart/NetworkChart.py:1234
 msgid "Confirm overwrite file."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1247
+#: NetworkChart/NetworkChart.py:1237
 msgid "Enable/disable confirmation of file overwrite."
 msgstr ""
