@@ -2487,7 +2487,7 @@ class DotSvgGenerator(object):
                         rtrn += ' - %s' % place_title
                 return rtrn
             else:
-                if place_title:
+                if place_title and self.show_places:
                     return place_title
         return ''
 
