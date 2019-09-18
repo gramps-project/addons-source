@@ -143,7 +143,8 @@ class GraphView(NavigationView):
         ('interface.graphview-search-all-db', True),
         ('interface.graphview-search-show-images', True),
         ('interface.graphview-search-marked-first', True),
-        ('interface.graphview-ranksep', 5))
+        ('interface.graphview-ranksep', 5),
+        ('interface.graphview-nodesep', 2))
 
     def __init__(self, pdata, dbstate, uistate, nav_group=0):
         NavigationView.__init__(self, _('Graph View'), pdata, dbstate, uistate,
@@ -484,10 +485,15 @@ class GraphView(NavigationView):
 
     def cb_update_ranksep(self, client, cnxd_id, entry, data):
         """
-        Called when the configuration menu changes the ranksep setting.
+        Called when changes the ranksep setting.
         """
         self.graph_widget.populate(self.get_active())
 
+    def cb_update_nodesep(self, client, cnxd_id, entry, data):
+        """
+        Called when changes the nodesep setting.
+        """
+        self.graph_widget.populate(self.get_active())
 
     def config_connect(self):
         """
@@ -527,6 +533,8 @@ class GraphView(NavigationView):
                              self.cb_update_search_marked_first)
         self._config.connect('interface.graphview-ranksep',
                              self.cb_update_ranksep)
+        self._config.connect('interface.graphview-nodesep',
+                             self.cb_update_nodesep)
 
     def _get_configure_page_funcs(self):
         """
@@ -825,7 +833,7 @@ class GraphWidget(object):
         self.ancestors_spinner.connect("value-changed",
                                        self.set_ancestors_generations)
         box.pack_start(self.ancestors_spinner, False, False, 1)
-        
+
         img = Gtk.Image.new_from_icon_name('go-down-symbolic',
                                            Gtk.IconSize.MENU)
         box.pack_start(img, False, False, 1)
@@ -838,7 +846,7 @@ class GraphWidget(object):
         box.pack_start(self.descendants_spinner, False, False, 1)
         self.toolbar.pack_start(box, False, False, 1)
 
-        # add spiner for generation spacing
+        # add spiner for generation (vertical) spacing
         box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
         img = Gtk.Image.new_from_icon_name('object-flip-vertical',
                                            Gtk.IconSize.MENU)
@@ -851,6 +859,21 @@ class GraphWidget(object):
         self.ranksep_spinner.connect("value-changed",
                                      self.set_ranksep)
         box.pack_start(self.ranksep_spinner, False, False, 1)
+        self.toolbar.pack_start(box, False, False, 1)
+
+        # add spiner for node (horizontal) spacing
+        box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
+        img = Gtk.Image.new_from_icon_name('object-flip-horizontal',
+                                           Gtk.IconSize.MENU)
+        box.pack_start(img, False, False, 1)
+        self.nodesep_spinner = Gtk.SpinButton.new_with_range(1, 50, 1)
+        self.nodesep_spinner.set_tooltip_text(
+            _('Spacing beetwen generations'))
+        self.nodesep_spinner.set_value(
+            self.view._config.get('interface.graphview-nodesep'))
+        self.nodesep_spinner.connect("value-changed",
+                                     self.set_nodesep)
+        box.pack_start(self.nodesep_spinner, False, False, 1)
         self.toolbar.pack_start(box, False, False, 1)
 
         self.vbox.pack_start(scrolled_win, True, True, 0)
@@ -873,6 +896,7 @@ class GraphWidget(object):
         self.set_anc_event = False
         self.set_des_event = False
         self.set_ranksep_event = False
+        self.set_nodesep_event = False
 
         # Gtk style context for scrollwindow to operate with theme colors
         self.sw_style_context = scrolled_win.get_style_context()
@@ -938,6 +962,23 @@ class GraphWidget(object):
                                     value)
         context = GLib.main_context_default()
         self.set_ranksep_event = context.find_source_by_id(event_id)
+
+    def set_nodesep(self, widget):
+        """
+        Set spacing beetwen nodes (horizontal).
+        Use timeout for better interface responsiveness.
+        """
+        value = int(widget.get_value())
+        # try to remove planed event (changing setting)
+        if self.set_nodesep_event and \
+                not self.set_nodesep_event.is_destroyed():
+            GLib.source_remove(self.set_nodesep_event.get_id())
+        # timeout saving setting for better interface responsiveness
+        event_id = GLib.timeout_add(300, self.view._config.set,
+                                    'interface.graphview-nodesep',
+                                    value)
+        context = GLib.main_context_default()
+        self.set_nodesep_event = context.find_source_by_id(event_id)
 
     def set_ancestors_generations(self, widget):
         """
@@ -1927,6 +1968,8 @@ class DotSvgGenerator(object):
             'interface.graphview-ancestor-generations')
         ranksep = self.view._config.get('interface.graphview-ranksep')
         ranksep = ranksep * 0.1
+        nodesep = self.view._config.get('interface.graphview-nodesep')
+        nodesep = nodesep * 0.1
 
         # get background color from gtk theme and convert it to hex
         # else use white background
@@ -1961,7 +2004,6 @@ class DotSvgGenerator(object):
         dpi = 72
         fontfamily = ""
         fontsize = 14
-        nodesep = 0.20
         pagedir = "BL"
         rankdir = "TB"
         ratio = "compress"
