@@ -963,18 +963,20 @@ class PrerequisitesCheckerGramplet(Gramplet):
             import PIL
             # from PIL import Image
             try:
-                #print(dir(PIL))
-                pil_ver = str(PIL.VERSION)
-                pillow_ver = str(PIL.PILLOW_VERSION)
-                #print("Pillow version:" + pillow_ver)
+                pil_ver = PIL.__version__
             except Exception:
-                pil_ver = "Installed but does not supply version"
-                pillow_ver = "old version of PIL with no version"
+                try:
+                    pil_ver = str(PIL.PILLOW_VERSION)
+                except Exception:
+                    try:
+                        #print(dir(PIL))
+                        pil_ver = str(PIL.VERSION)
+                    except Exception:
+                        pil_ver = "Installed but does not supply version"
         except ImportError:
-            pillow_ver = "Not found"
             pil_ver = "Not found"
 
-        result = "(PILLOW " + pillow_ver + ")(PIL " + pil_ver + ")"
+        result = "(PILLOW " + pil_ver + ")"
         # End check
         self.append_text(result)
 
