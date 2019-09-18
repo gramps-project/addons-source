@@ -1,0 +1,120 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-19 09:28+1000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: MediaReport/media_report.gpr.py:23
+msgid "Media Report"
+msgstr ""
+
+#: MediaReport/media_report.gpr.py:24
+msgid "Generates report including images, image data and notes."
+msgstr ""
+
+#: MediaReport/media_report.py:91 MediaReport/media_report.py:97
+#: MediaReport/media_report.py:104 MediaReport/media_report.py:110
+msgid "INFO"
+msgstr ""
+
+#: MediaReport/media_report.py:91 MediaReport/media_report.py:104
+msgid "You have to select an image to generate this report."
+msgstr ""
+
+#: MediaReport/media_report.py:97
+msgid ""
+"You have to select a custom note or uncheck the option 'include custom note' "
+"to generate this report."
+msgstr ""
+
+#: MediaReport/media_report.py:110
+msgid "This report only supports PDF as output file format."
+msgstr ""
+
+#: MediaReport/media_report.py:214
+msgid "General:"
+msgstr ""
+
+#: MediaReport/media_report.py:220
+msgid "Description:"
+msgstr ""
+
+#: MediaReport/media_report.py:235
+msgid "Image type:"
+msgstr ""
+
+#: MediaReport/media_report.py:336
+msgid "File does not exist"
+msgstr ""
+
+#: MediaReport/media_report.py:337
+msgid "Could not add photo to page"
+msgstr ""
+
+#: MediaReport/media_report.py:338
+#, python-format
+msgid "%(str1)s: %(str2)s"
+msgstr ""
+
+#: MediaReport/media_report.py:420
+msgid "Heading"
+msgstr ""
+
+#: MediaReport/media_report.py:421 MediaReport/media_report.py:425
+#: MediaReport/media_report.py:429 MediaReport/media_report.py:433
+#: MediaReport/media_report.py:438 MediaReport/media_report.py:442
+msgid "Report Options"
+msgstr ""
+
+#: MediaReport/media_report.py:423
+msgid "Media"
+msgstr ""
+
+#: MediaReport/media_report.py:424
+msgid "Select a media file for this report"
+msgstr ""
+
+#: MediaReport/media_report.py:427
+msgid "Custom note"
+msgstr ""
+
+#: MediaReport/media_report.py:428
+msgid "Select a note for this report"
+msgstr ""
+
+#: MediaReport/media_report.py:431
+msgid "Include custom note"
+msgstr ""
+
+#: MediaReport/media_report.py:432
+msgid "The custom note will be included"
+msgstr ""
+
+#: MediaReport/media_report.py:436
+msgid "Include referenced people"
+msgstr ""
+
+#: MediaReport/media_report.py:437
+msgid "Referenced people will be included"
+msgstr ""
+
+#: MediaReport/media_report.py:440
+msgid "Include media data"
+msgstr ""
+
+#: MediaReport/media_report.py:441
+msgid "Tags, notes and attributes will be included"
+msgstr ""
