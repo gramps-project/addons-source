@@ -851,7 +851,7 @@ class GraphWidget(object):
         self.ranksep_spinner.connect("value-changed",
                                      self.set_ranksep)
         box.pack_start(self.ranksep_spinner, False, False, 1)
-        hbox.pack_start(box, False, False, 1)
+        self.toolbar.pack_start(box, False, False, 1)
 
         self.vbox.pack_start(scrolled_win, True, True, 0)
 
