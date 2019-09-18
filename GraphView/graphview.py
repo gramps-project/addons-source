@@ -2474,11 +2474,13 @@ class DotSvgGenerator(object):
         """
         if event:
             place_title = place_displayer.display_event(self.database, event)
-            if event.get_date_object().get_year_valid():
+            date_object = event.get_date_object()
+            #shall we display full date or do we have a valid year to display only year
+            if (self.show_full_dates and date_object.get_text()) or date_object.get_year_valid():
                 if self.show_full_dates:
                     rtrn = '%s' % datehandler.get_date(event)
                 else:
-                    rtrn = '%i' % event.get_date_object().get_year()
+                    rtrn = '%i' % date_object.get_year()
                 # shall we add the place?
                 if self.show_places:
                     if place_title:
