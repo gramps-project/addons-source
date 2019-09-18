@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"POT-Creation-Date: 2019-09-18 11:31-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -53,7 +53,7 @@ msgstr ""
 msgid "Reload"
 msgstr ""
 
-#: PluginManager/PluginManager.py:174 PluginManager/PluginManager.py:735
+#: PluginManager/PluginManager.py:174 PluginManager/PluginManager.py:739
 msgid "_Close"
 msgstr ""
 
@@ -106,7 +106,7 @@ msgstr ""
 msgid "Hidden"
 msgstr ""
 
-#: PluginManager/PluginManager.py:304 PluginManager/PluginManager.py:699
+#: PluginManager/PluginManager.py:304 PluginManager/PluginManager.py:701
 msgid "Failed"
 msgstr ""
 
@@ -215,31 +215,31 @@ msgstr ""
 msgid "*Available"
 msgstr ""
 
-#: PluginManager/PluginManager.py:688
+#: PluginManager/PluginManager.py:690
 msgid "Built-in"
 msgstr ""
 
-#: PluginManager/PluginManager.py:693
+#: PluginManager/PluginManager.py:695
 msgid "*Installed"
 msgstr ""
 
-#: PluginManager/PluginManager.py:702
+#: PluginManager/PluginManager.py:704
 msgid "Update Available"
 msgstr ""
 
-#: PluginManager/PluginManager.py:729
+#: PluginManager/PluginManager.py:733
 #, python-format
 msgid "%(str1)s: %(str2)s"
 msgstr ""
 
-#: PluginManager/PluginManager.py:729
+#: PluginManager/PluginManager.py:733
 msgid "Detailed Info"
 msgstr ""
 
-#: PluginManager/PluginManager.py:828
+#: PluginManager/PluginManager.py:832
 msgid "Updated"
 msgstr ""
 
-#: PluginManager/PluginManager.py:839
+#: PluginManager/PluginManager.py:843
 msgid "updates|New"
 msgstr ""
