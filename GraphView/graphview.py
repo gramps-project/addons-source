@@ -853,7 +853,7 @@ class GraphWidget(object):
         box.pack_start(img, False, False, 1)
         self.ranksep_spinner = Gtk.SpinButton.new_with_range(1, 50, 1)
         self.ranksep_spinner.set_tooltip_text(
-            _('Spacing beetwen generations'))
+            _('Vertical spacing between generations'))
         self.ranksep_spinner.set_value(
             self.view._config.get('interface.graphview-ranksep'))
         self.ranksep_spinner.connect("value-changed",
@@ -868,7 +868,7 @@ class GraphWidget(object):
         box.pack_start(img, False, False, 1)
         self.nodesep_spinner = Gtk.SpinButton.new_with_range(1, 50, 1)
         self.nodesep_spinner.set_tooltip_text(
-            _('Spacing beetwen generations'))
+            _('Horizontal spacing between generations'))
         self.nodesep_spinner.set_value(
             self.view._config.get('interface.graphview-nodesep'))
         self.nodesep_spinner.connect("value-changed",
@@ -948,7 +948,7 @@ class GraphWidget(object):
 
     def set_ranksep(self, widget):
         """
-        Set spacing beetwen generations.
+        Set spacing between generations.
         Use timeout for better interface responsiveness.
         """
         value = int(widget.get_value())
@@ -965,7 +965,7 @@ class GraphWidget(object):
 
     def set_nodesep(self, widget):
         """
-        Set spacing beetwen nodes (horizontal).
+        Set spacing between nodes (horizontal).
         Use timeout for better interface responsiveness.
         """
         value = int(widget.get_value())
