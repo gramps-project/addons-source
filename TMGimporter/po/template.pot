@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-04 18:55-0600\n"
+"POT-Creation-Date: 2019-09-19 10:57-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,17 +17,17 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: TMGimporter/importtmg.gpr.py:72
+#: TMGimporter/importtmg.gpr.py:71
 msgid "TMG Project Backup"
 msgstr ""
 
-#: TMGimporter/importtmg.gpr.py:73 TMGimporter/importtmg.gpr.py:86
-#: TMGimporter/importtmg.gpr.py:99 TMGimporter/importtmg.gpr.py:112
+#: TMGimporter/importtmg.gpr.py:72 TMGimporter/importtmg.gpr.py:85
+#: TMGimporter/importtmg.gpr.py:98 TMGimporter/importtmg.gpr.py:111
 msgid "Import TMG project files"
 msgstr ""
 
-#: TMGimporter/importtmg.gpr.py:85 TMGimporter/importtmg.gpr.py:98
-#: TMGimporter/importtmg.gpr.py:111
+#: TMGimporter/importtmg.gpr.py:84 TMGimporter/importtmg.gpr.py:97
+#: TMGimporter/importtmg.gpr.py:110
 msgid "TMG Unsupported"
 msgstr ""
 
