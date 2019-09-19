@@ -483,15 +483,9 @@ class GraphView(NavigationView):
         value = entry == 'True'
         self.graph_widget.search_widget.set_options(marked_first=value)
 
-    def cb_update_ranksep(self, client, cnxd_id, entry, data):
+    def cb_update_spacing(self, client, cnxd_id, entry, data):
         """
-        Called when changes the ranksep setting.
-        """
-        self.graph_widget.populate(self.get_active())
-
-    def cb_update_nodesep(self, client, cnxd_id, entry, data):
-        """
-        Called when changes the nodesep setting.
+        Called when the ranksep or nodesep setting changed.
         """
         self.graph_widget.populate(self.get_active())
 
@@ -532,9 +526,9 @@ class GraphView(NavigationView):
         self._config.connect('interface.graphview-search-marked-first',
                              self.cb_update_search_marked_first)
         self._config.connect('interface.graphview-ranksep',
-                             self.cb_update_ranksep)
+                             self.cb_update_spacing)
         self._config.connect('interface.graphview-nodesep',
-                             self.cb_update_nodesep)
+                             self.cb_update_spacing)
 
     def _get_configure_page_funcs(self):
         """
@@ -830,8 +824,9 @@ class GraphWidget(object):
         self.ancestors_spinner.set_tooltip_text(_('Ancestor generations'))
         self.ancestors_spinner.set_value(
             self.view._config.get('interface.graphview-ancestor-generations'))
-        self.ancestors_spinner.connect("value-changed",
-                                       self.set_ancestors_generations)
+        self.ancestors_spinner.connect(
+            "value-changed", self.apply_spinner_delayed,
+            'interface.graphview-ancestor-generations')
         box.pack_start(self.ancestors_spinner, False, False, 1)
 
         img = Gtk.Image.new_from_icon_name('go-down-symbolic',
@@ -841,8 +836,9 @@ class GraphWidget(object):
         self.descendants_spinner.set_tooltip_text(_('Descendant generations'))
         self.descendants_spinner.set_value(self.view._config.get(
             'interface.graphview-descendant-generations'))
-        self.descendants_spinner.connect("value-changed",
-                                         self.set_descendants_generations)
+        self.descendants_spinner.connect(
+            "value-changed", self.apply_spinner_delayed,
+            'interface.graphview-descendant-generations')
         box.pack_start(self.descendants_spinner, False, False, 1)
         self.toolbar.pack_start(box, False, False, 1)
 
@@ -857,7 +853,8 @@ class GraphWidget(object):
         self.ranksep_spinner.set_value(
             self.view._config.get('interface.graphview-ranksep'))
         self.ranksep_spinner.connect("value-changed",
-                                     self.set_ranksep)
+                                     self.apply_spinner_delayed,
+                                     'interface.graphview-ranksep')
         box.pack_start(self.ranksep_spinner, False, False, 1)
         self.toolbar.pack_start(box, False, False, 1)
 
@@ -872,7 +869,8 @@ class GraphWidget(object):
         self.nodesep_spinner.set_value(
             self.view._config.get('interface.graphview-nodesep'))
         self.nodesep_spinner.connect("value-changed",
-                                     self.set_nodesep)
+                                     self.apply_spinner_delayed,
+                                     'interface.graphview-nodesep')
         box.pack_start(self.nodesep_spinner, False, False, 1)
         self.toolbar.pack_start(box, False, False, 1)
 
@@ -892,11 +890,8 @@ class GraphWidget(object):
         # for detecting double click
         self.click_events = []
 
-        # for timeout on changing generation settings
-        self.set_anc_event = False
-        self.set_des_event = False
-        self.set_ranksep_event = False
-        self.set_nodesep_event = False
+        # for timeout on changing settings by spinners
+        self.timeout_event = False
 
         # Gtk style context for scrollwindow to operate with theme colors
         self.sw_style_context = scrolled_win.get_style_context()
@@ -946,71 +941,21 @@ class GraphWidget(object):
         # move view to person with animation
         self.move_to_person(None, person_handle, True)
 
-    def set_ranksep(self, widget):
+    def apply_spinner_delayed(self, widget, conf_const):
         """
-        Set spacing between generations.
+        Set params by spinners (generations, spacing).
         Use timeout for better interface responsiveness.
         """
         value = int(widget.get_value())
         # try to remove planed event (changing setting)
-        if self.set_ranksep_event and \
-                not self.set_ranksep_event.is_destroyed():
-            GLib.source_remove(self.set_ranksep_event.get_id())
+        if self.timeout_event and \
+                not self.timeout_event.is_destroyed():
+            GLib.source_remove(self.timeout_event.get_id())
         # timeout saving setting for better interface responsiveness
         event_id = GLib.timeout_add(300, self.view._config.set,
-                                    'interface.graphview-ranksep',
-                                    value)
+                                    conf_const, value)
         context = GLib.main_context_default()
-        self.set_ranksep_event = context.find_source_by_id(event_id)
-
-    def set_nodesep(self, widget):
-        """
-        Set spacing between nodes (horizontal).
-        Use timeout for better interface responsiveness.
-        """
-        value = int(widget.get_value())
-        # try to remove planed event (changing setting)
-        if self.set_nodesep_event and \
-                not self.set_nodesep_event.is_destroyed():
-            GLib.source_remove(self.set_nodesep_event.get_id())
-        # timeout saving setting for better interface responsiveness
-        event_id = GLib.timeout_add(300, self.view._config.set,
-                                    'interface.graphview-nodesep',
-                                    value)
-        context = GLib.main_context_default()
-        self.set_nodesep_event = context.find_source_by_id(event_id)
-
-    def set_ancestors_generations(self, widget):
-        """
-        Set count of ancestors generations to show.
-        Use timeout for better interface responsiveness.
-        """
-        value = int(widget.get_value())
-        # try to remove planed event (changing setting)
-        if self.set_anc_event and not self.set_anc_event.is_destroyed():
-            GLib.source_remove(self.set_anc_event.get_id())
-        # timeout saving setting for better interface responsiveness
-        event_id = GLib.timeout_add(300, self.view._config.set,
-                                    'interface.graphview-ancestor-generations',
-                                    value)
-        context = GLib.main_context_default()
-        self.set_anc_event = context.find_source_by_id(event_id)
-
-    def set_descendants_generations(self, widget):
-        """
-        Set count of descendants generations to show.
-        Use timeout for better interface responsiveness.
-        """
-        value = int(widget.get_value())
-        # try to remove planed event (changing setting)
-        if self.set_des_event and not self.set_des_event.is_destroyed():
-            GLib.source_remove(self.set_des_event.get_id())
-        # timeout saving setting for better interface responsiveness
-        event_id = GLib.timeout_add(
-            300, self.view._config.set,
-            'interface.graphview-descendant-generations', value)
-        context = GLib.main_context_default()
-        self.set_des_event = context.find_source_by_id(event_id)
+        self.timeout_event = context.find_source_by_id(event_id)
 
     def build_bkmark_ext_panel(self):
         """
