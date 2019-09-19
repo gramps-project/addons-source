@@ -1,0 +1,76 @@
+# Croatian translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) Gramps project
+# Milo Ivir <mail@milotype.de>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-04 18:55-0600\n"
+"PO-Revision-Date: 2019-03-08 02:36+0100\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.1\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Language: hr\n"
+
+#: HtmlView/htmlview.gpr.py:30
+msgid "Html View"
+msgstr "HTML prikaz"
+
+#: HtmlView/htmlview.gpr.py:31
+msgid "A view showing html pages embedded in Gramps"
+msgstr "Pogled za prikaz HTML stranice, ugrađene u Gramps"
+
+#: HtmlView/htmlview.gpr.py:39
+msgid "Web"
+msgstr "Web"
+
+#: HtmlView/htmlview.py:318
+msgid "HtmlView"
+msgstr "HTML prikaz"
+
+#: HtmlView/htmlview.py:484
+msgid "_Back"
+msgstr "_Natrag"
+
+#: HtmlView/htmlview.py:485
+msgid "Go to the previous page in the history"
+msgstr "Idi na prethodnu stranicu u kronologiji"
+
+#: HtmlView/htmlview.py:492
+msgid "_Forward"
+msgstr "N_aprijed"
+
+#: HtmlView/htmlview.py:493
+msgid "Go to the next page in the history"
+msgstr "Idi na sljedeću stranicu u kronologiji"
+
+#: HtmlView/htmlview.py:498
+msgid "_Refresh"
+msgstr "_Osvježi"
+
+#: HtmlView/htmlview.py:501
+msgid "Stop and reload the page."
+msgstr "Zaustavi i učitaj ponovo."
+
+#: HtmlView/htmlview.py:545
+msgid "Start page for the Html View"
+msgstr "Početna stranica HTML prikaza"
+
+#: HtmlView/htmlview.py:546
+msgid ""
+"Type a webpage address at the top, and hit the execute button to load a "
+"webpage in this page\n"
+"<br>\n"
+"For example: "
+msgstr ""
+"Gore unesi adresu jedne web stranice i pritisni gumb za izvršavanje, "
+"kako bi se stranica učitala u ovu stranicu\n"
+"<br>\n"
+"Na primjer: "

@@ -1,0 +1,571 @@
+# This Day In Family History English Language File
+# Copyright (C) 2018
+# This file is distributed under the same license as the This Day In Family History package.
+# Stephen Adams, Gramps Reddit, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-06-16 21:42-0400\n"
+"PO-Revision-Date: 2019-03-08 12:00+0100\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.1\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Language: hr\n"
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.gpr.py:7
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.gpr.py:14
+msgid "This Day in Family History"
+msgstr "Ovaj dan u povijesti obitelji"
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.gpr.py:8
+msgid ""
+"A configurable program that shows you the connected events from your family "
+"tree that match today's day and month."
+msgstr ""
+"Podešavajući program za prikaz povezanih događaja u tvojem rodoslovu, koji "
+"odgovaraju današnjem danu i mjesecu."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:56
+msgid "Database is not open, can't check history right now."
+msgstr ""
+"Baza podataka nije otvorena, trenutačno nije moguće provjeritit povijest."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:57
+#, python-format
+msgid "On %(date)s in family history ...\n"
+msgstr "Na %(date)s u povijesti obitelji …\n"
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:58
+msgid "... nothing happened!  Check again tomorrow!"
+msgstr "… se nije ništa dogodilo! Provjeri ponovo sutra!"
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:62
+msgid "Report only living tree members"
+msgstr "Uključi samo žive osobe u rodoslovu"
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:63
+msgid "Show these events"
+msgstr "Prikaži ove događaje"
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:64
+msgid "Sort by "
+msgstr "Razvrstaj po "
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:65
+msgid "Sort in ascending order?"
+msgstr "Da li razvrstati uzlazno?"
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:78
+msgid "January"
+msgstr "Siječanj"
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:78
+msgid "February"
+msgstr "Veljača"
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:78
+msgid "March"
+msgstr "Ožujak"
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:79
+msgid "April"
+msgstr "Travanj"
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:79
+msgid "May"
+msgstr "Svibanj"
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:79
+msgid "June"
+msgstr "Lipanj"
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:79
+msgid "July"
+msgstr "Srpanj"
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:80
+msgid "August"
+msgstr "Kolovoz"
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:80
+msgid "September"
+msgstr "Rujan"
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:80
+msgid "October"
+msgstr "Listopad"
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:81
+msgid "November"
+msgstr "Studeni"
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:81
+msgid "December"
+msgstr "Prosinac"
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:173
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:178
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:208
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:213
+msgid "Yes"
+msgstr "Da"
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:174
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:180
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:209
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:215
+msgid "No"
+msgstr "Ne"
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:192
+msgid "Person Name"
+msgstr "Ime osobe"
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:193
+msgid "Event Type"
+msgstr "Vrsta događaja"
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:194
+msgid "Event Year"
+msgstr "Godina događaja"
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:195
+msgid "Gramps ID"
+msgstr "Gramps ID oznaka"
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:196
+msgid "Location"
+msgstr "Lokacija"
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:365
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:380
+msgid "Unknown"
+msgstr "Nepoznato"
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:366
+msgid "Unknown father/partner"
+msgstr "Nepoznat otac/partner"
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:381
+msgid "Unknown mother/partner"
+msgstr "Nepoznata majka/partnerica"
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:410
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:412
+msgid " and "
+msgstr " i "
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:414
+msgid "unknown participant"
+msgstr "nepoznati sudionik"
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:421
+msgid "unknown location"
+msgstr "nepoznata lokacija"
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:464
+#, python-format
+msgid "%(male_name)s was adopted in %(year)s at %(place)s."
+msgstr "%(male_name)s je prisvojen %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:466
+#, python-format
+msgid "%(female_name)s was adopted in %(year)s at %(place)s."
+msgstr "%(female_name)s je prisvojena %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:469
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:522
+#, python-format
+msgid "%(male_name)s was christened in %(year)s at %(place)s."
+msgstr "%(male_name)s je kršten %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:471
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:524
+#, python-format
+msgid "%(female_name)s was christened in %(year)s at %(place)s."
+msgstr "%(female_name)s je krštena %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:474
+#, python-format
+msgid "%(male_name)s was married in %(year)s at %(place)s."
+msgstr "%(male_name)s je umro %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:476
+#, python-format
+msgid "%(female_name)s was married in %(year)s at %(place)s."
+msgstr "%(female_name)s je umrla %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:479
+#, python-format
+msgid "%(male_name)s received an annulment in %(year)s at %(place)s."
+msgstr "%(male_name)s je zaprimio poništaj braka %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:481
+#, python-format
+msgid "%(female_name)s received an annulment in %(year)s at %(place)s."
+msgstr ""
+"%(female_name)s je zaprimila poništaj braka %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:485
+#, python-format
+msgid "%(male_name)s was baptized in %(year)s at %(place)s."
+msgstr "%(male_name)s je kršten %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:487
+#, python-format
+msgid "%(female_name)s was baptized in %(year)s at %(place)s."
+msgstr "%(female_name)s je krštena %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:490
+#, python-format
+msgid "%(male_name)s became a bar mitzvah in %(year)s at %(place)s."
+msgstr ""
+"%(male_name)s je postao punoljetan (bar mizva) %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:492
+#, python-format
+msgid "%(female_name)s became a bar mitzvah in %(year)s at %(place)s."
+msgstr ""
+"%(female_name)s je postala punoljetna (bat mizva) %(year)s u mjestu "
+"%(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:495
+#, python-format
+msgid "%(male_name)s became a bat mitzvah in %(year)s at %(place)s."
+msgstr ""
+"%(male_name)s je postao punoljetan (bar mizva) %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:497
+#, python-format
+msgid "%(female_name)s became a bat mitzvah in %(year)s at %(place)s."
+msgstr ""
+"%(female_name)s je postala punoljetna (bat mizva) %(year)s u mjestu "
+"%(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:500
+#, python-format
+msgid "%(male_name)s was born in %(year)s at %(place)s."
+msgstr "%(male_name)s je rođen %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:502
+#, python-format
+msgid "%(female_name)s was born in %(year)s at %(place)s."
+msgstr "%(female_name)s je rođena %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:505
+#, python-format
+msgid "%(male_name)s was blessed in %(year)s at %(place)s."
+msgstr "%(male_name)s je blagoslovljen %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:507
+#, python-format
+msgid "%(female_name)s was blessed in %(year)s at %(place)s."
+msgstr "%(female_name)s je blagoslovljena %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:510
+#, python-format
+msgid "%(male_name)s was buried in %(year)s at %(place)s."
+msgstr "%(male_name)s je pokopan %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:512
+#, python-format
+msgid "%(female_name)s was buried in %(year)s at %(place)s."
+msgstr "%(female_name)s je pokopana %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:515
+#, python-format
+msgid "%(male_name)s participated in a census in %(year)s at %(place)s."
+msgstr ""
+"%(male_name)s je sudjelovao u popisu stanovništva %(year)s u mjestu "
+"%(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:518
+#, python-format
+msgid "%(female_name)s participated in a census in %(year)s at %(place)s."
+msgstr ""
+"%(female_name)s je sudjelovala u popisu stanovništva %(year)s u mjestu "
+"%(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:527
+#, python-format
+msgid "%(male_name)s was confirmed in %(year)s at %(place)s."
+msgstr "%(male_name)s je krizman %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:529
+#, python-format
+msgid "%(female_name)s was confirmed in %(year)s at %(place)s."
+msgstr "%(female_name)s je krizmana %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:532
+#, python-format
+msgid "%(male_name)s was cremated in %(year)s at %(place)s."
+msgstr "%(male_name)s je kremiran %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:534
+#, python-format
+msgid "%(female_name)s was cremated in %(year)s at %(place)s."
+msgstr "%(female_name)s je kremirana %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:537
+#, python-format
+msgid "%(male_name)s died in %(year)s at %(place)s."
+msgstr "%(male_name)s je umro %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:539
+#, python-format
+msgid "%(female_name)s died in %(year)s at %(place)s."
+msgstr "%(female_name)s je umrla %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:542
+#, python-format
+msgid "%(male_name)s was awarded a degree in %(year)s at %(place)s."
+msgstr "%(male_name)s je dodijeljena titula %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:544
+#, python-format
+msgid "%(female_name)s was awarded a degree in %(year)s at %(place)s."
+msgstr "%(female_name)s je dodijeljena titula %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:547
+#, python-format
+msgid "%(male_name)s was granted a divorce in %(year)s at %(place)s."
+msgstr ""
+"%(male_name)s je dobio dozvolu za razvod braka %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:550
+#, python-format
+msgid "%(female_name)s was granted a divorce in %(year)s at %(place)s."
+msgstr ""
+"%(female_name)s je dobila dozvolu za razvod braka %(year)s u mjestu "
+"%(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:554
+#, python-format
+msgid "%(male_name)s filed for divorce in %(year)s at %(place)s."
+msgstr "%(male_name)s je zatražio razvod braka %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:556
+#, python-format
+msgid "%(female_name)s filed for divorce in %(year)s at %(place)s."
+msgstr ""
+"%(female_name)s je zatražila razvod braka %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:559
+#, python-format
+msgid "%(male_name)s was elected in %(year)s at %(place)s."
+msgstr "%(male_name)s je izabran %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:561
+#, python-format
+msgid "%(female_name)s was elected in %(year)s at %(place)s."
+msgstr "%(female_name)s je izabrana %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:564
+#, python-format
+msgid "%(male_name)s emigrated in %(year)s at %(place)s."
+msgstr "%(male_name)s je emigrirao %(year)s iz mjesta %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:566
+#, python-format
+msgid "%(female_name)s emigrated in %(year)s at %(place)s."
+msgstr "%(female_name)s je emigrirala %(year)s iz mjesta %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:569
+#, python-format
+msgid "%(male_name)s became engaged in %(year)s at %(place)s."
+msgstr "%(male_name)s se zaručio %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:571
+#, python-format
+msgid "%(female_name)s became engaged in %(year)s at %(place)s."
+msgstr "%(female_name)s se zaručila %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:574
+#, python-format
+msgid "%(male_name)s received first communion in %(year)s at %(place)s."
+msgstr "%(male_name)s je primio prvu pričest %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:577
+#, python-format
+msgid "%(female_name)s received first communion in %(year)s at %(place)s."
+msgstr "%(female_name)s je primila prvu pričest %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:581
+#, python-format
+msgid "%(male_name)s graduated in %(year)s at %(place)s."
+msgstr "%(male_name)s je maturirao %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:583
+#, python-format
+msgid "%(female_name)s graduated in %(year)s at %(place)s."
+msgstr "%(female_name)s je maturirala %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:586
+#, python-format
+msgid "%(male_name)s immigrated in %(year)s at %(place)s."
+msgstr "%(male_name)s je imigrirao %(year)s u mjesto %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:588
+#, python-format
+msgid "%(female_name)s immigrated in %(year)s at %(place)s."
+msgstr "%(female_name)s je imigrirala %(year)s u mjesto %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:594
+#, python-format
+msgid "%(male_name)s got married in %(year)s at %(place)s."
+msgstr "%(male_name)s se oženio %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:596
+#, python-format
+msgid "%(female_name)s got married in %(year)s at %(place)s."
+msgstr "%(female_name)s se udala %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:599
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:610
+#, python-format
+msgid "%(male_name)s joined as a family in %(year)s at %(place)s."
+msgstr "%(male_name)s se pridružio kao obitelj %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:601
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:612
+#, python-format
+msgid "%(female_name)s joined as a family in %(year)s at %(place)s."
+msgstr ""
+"%(female_name)s se pridružila kao obitelj %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:604
+#, python-format
+msgid "%(male_name)s entered a civil union in %(year)s at %(place)s."
+msgstr ""
+"%(male_name)s je sklopio životno partnerstvo %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:606
+#, python-format
+msgid "%(female_name)s entered a civil union in %(year)s at %(place)s."
+msgstr ""
+"%(female_name)s je sklopila životno partnerstvo %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:615
+#, python-format
+msgid "%(male_name)s had a custom marriage in %(year)s at %(place)s."
+msgstr ""
+"%(male_name)s je pristupio običajnom braku %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:617
+#, python-format
+msgid "%(female_name)s had a custom marriage in %(year)s at %(place)s."
+msgstr ""
+"%(female_name)s je pristupila običajnom braku %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:621
+#, python-format
+msgid "%(male_name)s announced a marriage banns in %(year)s at %(place)s."
+msgstr "%(male_name)s je najavio bračni zavjet %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:624
+#, python-format
+msgid "%(female_name)s announced a marriage banns in %(year)s at %(place)s."
+msgstr ""
+"%(female_name)s je najavila bračni zavjet %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:628
+#, python-format
+msgid "%(male_name)s entered a marriage contract in %(year)s at %(place)s."
+msgstr ""
+"%(male_name)s je pristupio bračnom ugovoru %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:631
+#, python-format
+msgid "%(female_name)s entered a marriage contract in %(year)s at %(place)s."
+msgstr ""
+"%(female_name)s je pristupila bračnom ugovoru %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:635
+#, python-format
+msgid "%(male_name)s obtained a marriage license in %(year)s at %(place)s."
+msgstr "%(male_name)s je dobio dozvolu za brak %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:638
+#, python-format
+msgid "%(female_name)s obtained a marriage license in %(year)s at %(place)s."
+msgstr ""
+"%(female_name)s je dobila dozvolu za brak %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:642
+#, python-format
+msgid "%(male_name)s obtained a marriage settlement in %(year)s at %(place)s."
+msgstr "%(male_name)s je dobio dogovor o braku %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:645
+#, python-format
+msgid ""
+"%(female_name)s obtained a marriage settlement in %(year)s at %(place)s."
+msgstr ""
+"%(female_name)s je dobila dogovor o braku %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:649
+#, python-format
+msgid "%(male_name)s entered military service in %(year)s at %(place)s."
+msgstr "%(male_name)s je ušao u vojnu službu %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:652
+#, python-format
+msgid "%(female_name)s entered military service in %(year)s at %(place)s."
+msgstr "%(female_name)s je ušala u vojnu službu %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:656
+#, python-format
+msgid "%(male_name)s became naturalized in %(year)s at %(place)s."
+msgstr "%(male_name)s je primio državljanstvo %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:658
+#, python-format
+msgid "%(female_name)s became naturalized in %(year)s at %(place)s."
+msgstr "%(female_name)s je primila državljanstvo %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:661
+#, python-format
+msgid "%(male_name)s had a title bestowed in %(year)s at %(place)s."
+msgstr "%(male_name)s je dodijeljena titula %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:663
+#, python-format
+msgid "%(female_name)s had a title bestowed in %(year)s at %(place)s."
+msgstr "%(female_name)s je dodijeljena titula %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:666
+#, python-format
+msgid "%(male_name)s was ordained in %(year)s at %(place)s."
+msgstr "%(male_name)s je zaređen %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:668
+#, python-format
+msgid "%(female_name)s was ordained in %(year)s at %(place)s."
+msgstr "%(female_name)s je zaređena %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:671
+#, python-format
+msgid "%(male_name)s was granted probate in %(year)s at %(place)s."
+msgstr "%(male_name)s je proglasio oporuku %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:673
+#, python-format
+msgid "%(female_name)s was granted probate in %(year)s at %(place)s."
+msgstr "%(female_name)s je proglasila oporuku %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:676
+#, python-format
+msgid "%(male_name)s retired in %(year)s at %(place)s."
+msgstr "%(male_name)s je umirovljen %(year)s u mjestu %(place)s."
+
+#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:678
+#, python-format
+msgid "%(female_name)s retired in %(year)s at %(place)s."
+msgstr "%(female_name)s je umirovljena %(year)s u mjestu %(place)s."

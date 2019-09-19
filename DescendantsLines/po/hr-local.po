@@ -1,0 +1,423 @@
+# Croatian translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) Gramps project
+# Milo Ivir <mail@milotype.de>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2019-03-08 01:25+0100\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.1\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Language: hr\n"
+
+#: DescendantsLines/DescendantsLines.gpr.py:25
+msgid "Descendants Lines"
+msgstr "Linije potomaka"
+
+#: DescendantsLines/DescendantsLines.gpr.py:26
+msgid "Produces descendants lines of a person"
+msgstr "Stvara linije potomaka za jednu osobu"
+
+#: DescendantsLines/DescendantsLines.py:424
+msgid "Using SVG type for supplemental document is not supported!"
+msgstr "Korištenje SVG vrste za dopunske datoteke nije podržano!"
+
+#: DescendantsLines/DescendantsLines.py:1247
+msgid "Unknown"
+msgstr "Nepoznato"
+
+#: DescendantsLines/DescendantsLines.py:1438
+msgid "Report Options"
+msgstr "Opcije za izvještaj"
+
+#: DescendantsLines/DescendantsLines.py:1440
+msgid "Center Person"
+msgstr "Središnja osoba"
+
+#: DescendantsLines/DescendantsLines.py:1441
+msgid "The center person for the report"
+msgstr "Središnja osoba u izvještaju"
+
+#: DescendantsLines/DescendantsLines.py:1444
+msgid "Output format"
+msgstr "Izlazni format"
+
+#: DescendantsLines/DescendantsLines.py:1445
+msgid "PNG format"
+msgstr "PNG format"
+
+#: DescendantsLines/DescendantsLines.py:1446
+msgid "SVG format"
+msgstr "SVG format"
+
+#: DescendantsLines/DescendantsLines.py:1447
+msgid "PDF format"
+msgstr "PDF format"
+
+#: DescendantsLines/DescendantsLines.py:1448
+msgid "PS format"
+msgstr "PS format"
+
+#: DescendantsLines/DescendantsLines.py:1449
+msgid "The output format to be used"
+msgstr "Izlazni format, koji se koristi"
+
+#: DescendantsLines/DescendantsLines.py:1453
+msgid "Destination"
+msgstr "Odredište"
+
+#: DescendantsLines/DescendantsLines.py:1454
+msgid "The destination file for the content."
+msgstr "Odredišna datoteka za sadržaj."
+
+#: DescendantsLines/DescendantsLines.py:1457
+msgid "Generations"
+msgstr "Generacija"
+
+#: DescendantsLines/DescendantsLines.py:1458
+msgid "The number of generations to include in the chart. (0 for unlimited)"
+msgstr "Broj generacija koje se uključuju u dijagram. (0 = neograničeno)"
+
+#: DescendantsLines/DescendantsLines.py:1462
+msgid "Box around Person's block"
+msgstr "Okvir oko bloka osobe"
+
+#: DescendantsLines/DescendantsLines.py:1463
+msgid "Draw a thin black box around each person' text block."
+msgstr "Crtaj tanki crni okvir oko svakog tekstualnog bloka osobe."
+
+#: DescendantsLines/DescendantsLines.py:1467
+msgid "Colour blocks by Generation"
+msgstr "Oboji blokove prema generacijama"
+
+#: DescendantsLines/DescendantsLines.py:1468
+msgid "Colour the background of text blocks by generation."
+msgstr "Oboji pozadinu tektualnih blok prema generacijama."
+
+#: DescendantsLines/DescendantsLines.py:1472
+msgid "Descend block colour intensity"
+msgstr "Intenzitet boje za blokove potomaka"
+
+#: DescendantsLines/DescendantsLines.py:1473
+msgid ""
+"Intensity of backgound colour in Descendant's Block, 0=faint, 255=intense "
+"colour"
+msgstr ""
+"Intenzitet boje pozadine u bloku potomka, 0 = slaba, 255 = intenzivna boja"
+
+#: DescendantsLines/DescendantsLines.py:1477
+msgid "Spouse block colour intensity"
+msgstr "Intenzitet boje za blokove supružnika"
+
+#: DescendantsLines/DescendantsLines.py:1478
+msgid ""
+"Intensity of backgound colour in Spouse's Block, 0=faint 255=intense colour"
+msgstr ""
+"Intenzitet boje pozadine u bloku supružnika, 0 = slaba, 255 = intenzivna boja"
+
+#: DescendantsLines/DescendantsLines.py:1482
+msgid "Include an image"
+msgstr "Uključi sliku"
+
+#: DescendantsLines/DescendantsLines.py:1483
+msgid "Whether to include an image if one is available."
+msgstr "Da li uključiti sliku, ako je dostupna."
+
+#: DescendantsLines/DescendantsLines.py:1487
+msgid "Max Image height"
+msgstr "Maks. visina slike"
+
+#: DescendantsLines/DescendantsLines.py:1488
+msgid "Maximum image height in pixels, 0=don't scale for height."
+msgstr "Maksimalna visina slike u pixelima, 0 = ne skaliraj za visinu."
+
+#: DescendantsLines/DescendantsLines.py:1492
+msgid "Max Image width"
+msgstr "Maks. širina slike"
+
+#: DescendantsLines/DescendantsLines.py:1493
+msgid "Maximum image width in pixels, 0=don't scale for width."
+msgstr "Maksimalna širina slike u pixelima, 0 = ne skaliraj za širinu."
+
+#: DescendantsLines/DescendantsLines.py:1497
+msgid "Image Location"
+msgstr "Položaj slike"
+
+#: DescendantsLines/DescendantsLines.py:1498
+msgid "Above text"
+msgstr "Iznad teksta"
+
+#: DescendantsLines/DescendantsLines.py:1499
+msgid "Left of text"
+msgstr "Lijevo od teksta"
+
+#: DescendantsLines/DescendantsLines.py:1500
+msgid "Position of image relative to text"
+msgstr "Položaj slike, relativan u odnosu na tekst"
+
+#: DescendantsLines/DescendantsLines.py:1504
+msgid "Display"
+msgstr "Prikaži"
+
+#: DescendantsLines/DescendantsLines.py:1506
+msgid "Name Display Format"
+msgstr "Prikazni format za ime"
+
+#: DescendantsLines/DescendantsLines.py:1509
+msgid ""
+"f=first & middle names, l=surname, n=nickname,\n"
+"c=commonly used given name, t=title, s=suffix, g=family nick name\n"
+"See Wiki Manual > Reports > part 2"
+msgstr ""
+"f=ime i srednje ime, l=prezime, n=nadimak,\n"
+"c = uobičajeno upotrebljeno ime, t = titula, s = sufiks, g = obiteljski "
+"nadimak\n"
+"Pogledaj Wiki uputstva > Izvještaji > 2. dio"
+
+#: DescendantsLines/DescendantsLines.py:1516
+msgid "Use d'Aboville descendant numbering system"
+msgstr "Koristi d'Aboville sistem brojenja potomaka"
+
+#: DescendantsLines/DescendantsLines.py:1518
+msgid "Prepend name with d'Aboville descendant number in the chart."
+msgstr "Ispred imena nadodaj d'Aboville broj potomaka u dijagramu."
+
+#: DescendantsLines/DescendantsLines.py:1521
+msgid "Colour Name by Gender"
+msgstr "Oboji imena prema spolu"
+
+#: DescendantsLines/DescendantsLines.py:1523
+msgid "Color the name to indicate a person's gender in the chart."
+msgstr "Oboji ime, za označavanje spola u dijagramu."
+
+#: DescendantsLines/DescendantsLines.py:1526
+msgid ""
+"Descendant\n"
+"Display Format"
+msgstr ""
+"Potomak\n"
+"format prikaza"
+
+#: DescendantsLines/DescendantsLines.py:1532
+#: DescendantsLines/DescendantsLines.py:1551
+msgid ""
+"[event, list]$e(formating)\n"
+"See Wiki Manual > Reports > part 2\n"
+"formating: dates=d(ymdMo) places=D(elcuspnoitxy) notes=n abbreviated_type=t"
+msgstr ""
+"[event, list]$e(formatiranje)\n"
+"Pogledaj Wiki uputstva > Izvještaji > 2. dio\n"
+"formatiranje: datumi=d(ymdMo) mjesta=D(elcuspnoitxy) zabilješke=n "
+"skraćena_vrsta=t"
+
+#: DescendantsLines/DescendantsLines.py:1545
+msgid ""
+"Spousal\n"
+"Display Format"
+msgstr ""
+"Supružnički\n"
+"format prikaza"
+
+#: DescendantsLines/DescendantsLines.py:1558
+msgid "Use alternate events, if Primary event is not found"
+msgstr "Koristi alternativne događaje, ako primarni događaj nije nađen"
+
+#: DescendantsLines/DescendantsLines.py:1559
+msgid ""
+"For Birth (baptism, christen)\n"
+"   Marriage (marr_lic, engagement)\n"
+"   Divorce (annulment, div_filing),\n"
+"   Death (burial, cremation, probate)."
+msgstr ""
+"Za rođenje (krštenje)\n"
+"   Sklapanje braka (dozvola, zaruke)\n"
+"   Razvod braka (poništenje, zahtjev),\n"
+"   Smrt (pokop, kremiranje, objava)."
+
+#: DescendantsLines/DescendantsLines.py:1565
+msgid "Sort Events by Date"
+msgstr "Razvrsatj događaje po datumu"
+
+#: DescendantsLines/DescendantsLines.py:1566
+msgid "Sort events by date (else use the order of the 'Display Format' above)."
+msgstr ""
+"Razvrsatj događaje po datumu (inače koristi raspored, kao u gornjem formatu "
+"prikaza)."
+
+#: DescendantsLines/DescendantsLines.py:1570
+msgid "Protect People, Images or Events that are marked Private"
+msgstr "Zaštiti osobe, slike ili događaje, koji su označeni kao privatni"
+
+#: DescendantsLines/DescendantsLines.py:1572
+msgid "The Privacy setting of only these types of Gramps objects are checked"
+msgstr ""
+"Postavke za privatnost se provjeravaju samo za ove vrste Gramps objekata"
+
+#: DescendantsLines/DescendantsLines.py:1576
+msgid "Privacy text"
+msgstr "Tekst o privatnosti"
+
+#: DescendantsLines/DescendantsLines.py:1577
+msgid "Text to display in block, when a Person is marked private"
+msgstr "Tekst, prikazan u bloku osobe, označene kao privatne"
+
+#: DescendantsLines/DescendantsLines.py:1581
+msgid "Text style"
+msgstr "Stil teksta"
+
+#: DescendantsLines/DescendantsLines.py:1582
+msgid "Center-aligned text"
+msgstr "Centrirani tekst"
+
+#: DescendantsLines/DescendantsLines.py:1583
+msgid "Left-aligned text"
+msgstr "Lijevo poravnati tekst"
+
+#: DescendantsLines/DescendantsLines.py:1584
+msgid "Alignment of the text in the block for each person on the chart"
+msgstr "Poravnanje teksta u bloku za svaku osobu u dijagramu"
+
+#: DescendantsLines/DescendantsLines.py:1588
+msgid "Max Note Length"
+msgstr "Maks. duljina zabilješke"
+
+#: DescendantsLines/DescendantsLines.py:1589
+msgid ""
+"Maximum length of an event's note field in a text block, '$e(n)'\n"
+" 0=no limit "
+msgstr ""
+"Maksimalna duljina polja zabilješke događaja u tekstualnom bloku, '$e(n)'\n"
+" 0 = neograničeno "
+
+#: DescendantsLines/DescendantsLines.py:1594
+msgid "Replace"
+msgstr "Zamijeni"
+
+#: DescendantsLines/DescendantsLines.py:1597
+msgid ""
+"Replace Display Format:\n"
+"'Replace this'/' with this'"
+msgstr ""
+"Zamijeni format prikaza:\n"
+"„Zamijeni ovo”/„s ovim”"
+
+#: DescendantsLines/DescendantsLines.py:1599
+msgid ""
+"i.e.\n"
+"United States of America/USA"
+msgstr ""
+"npr.\n"
+"Sjedinjene Američke Države/SAD"
+
+#: DescendantsLines/DescendantsLines.py:1603
+msgid "S  &amp; F Options"
+msgstr "Opcije za S i F"
+
+#: DescendantsLines/DescendantsLines.py:1605
+msgid "S_DOWN"
+msgstr "S_DOLJE"
+
+#: DescendantsLines/DescendantsLines.py:1606
+msgid "The length of the vertical edge from descendant to spouse-bar."
+msgstr "Razmak između uspravnih rubova ploča potomka i supružnika."
+
+#: DescendantsLines/DescendantsLines.py:1610
+msgid "S_UP"
+msgstr "S_GORE"
+
+#: DescendantsLines/DescendantsLines.py:1611
+msgid "The length of the vertical edge from spouse-bar to spouse."
+msgstr "Razmak između uspravnih rubova ploča supružnika."
+
+#: DescendantsLines/DescendantsLines.py:1615
+msgid "S_VPAD"
+msgstr "S_UODMAK"
+
+#: DescendantsLines/DescendantsLines.py:1616
+msgid "The number of ??? vpad"
+msgstr "Broj za uspravni odmak"
+
+#: DescendantsLines/DescendantsLines.py:1619
+msgid "SP_PAD"
+msgstr "SS_ODMAK"
+
+#: DescendantsLines/DescendantsLines.py:1620
+#: DescendantsLines/DescendantsLines.py:1626
+#: DescendantsLines/DescendantsLines.py:1630
+#: DescendantsLines/DescendantsLines.py:1636
+#: DescendantsLines/DescendantsLines.py:1647
+msgid "The number of ??? pad"
+msgstr "Broj za odmak"
+
+#: DescendantsLines/DescendantsLines.py:1625
+msgid "F_PAD"
+msgstr "F_ODMAK"
+
+#: DescendantsLines/DescendantsLines.py:1629
+msgid "FL_PAD"
+msgstr "FL_ODMAK"
+
+#: DescendantsLines/DescendantsLines.py:1633
+msgid "O, C &amp; Text Options"
+msgstr "Opcije za SD, D i tekst"
+
+#: DescendantsLines/DescendantsLines.py:1635
+msgid "OL_PAD"
+msgstr "SDL_ODMAK"
+
+#: DescendantsLines/DescendantsLines.py:1639
+msgid "O_DOWN"
+msgstr "SD_DOLJE"
+
+#: DescendantsLines/DescendantsLines.py:1640
+msgid "The length of the vertical edge from spouse-bar to child-bar."
+msgstr "Razmak između uspravnih rubova ploča supružnika i djece."
+
+#: DescendantsLines/DescendantsLines.py:1646
+msgid "C_PAD"
+msgstr "D_ODMAK"
+
+#: DescendantsLines/DescendantsLines.py:1650
+msgid "C_UP"
+msgstr "D_GORE"
+
+#: DescendantsLines/DescendantsLines.py:1652
+msgid "The length of the vertical edge from child to child-bar."
+msgstr "Razmak između uspravnih rubova ploča djece."
+
+#: DescendantsLines/DescendantsLines.py:1655
+msgid "MIN_C_WIDTH"
+msgstr "MIN_D_ŠIRINA"
+
+#: DescendantsLines/DescendantsLines.py:1656
+msgid "The number of ??? min width"
+msgstr "Minimalna širina"
+
+#: DescendantsLines/DescendantsLines.py:1661
+msgid "TEXT_PAD"
+msgstr "TEKST_ODMAK"
+
+#: DescendantsLines/DescendantsLines.py:1662
+msgid "The number of text pad ???"
+msgstr "Odmak za tekst"
+
+#: DescendantsLines/DescendantsLines.py:1665
+msgid "TEXT_LINE_PAD"
+msgstr "TEKST_REDAK_ODMAK"
+
+#: DescendantsLines/DescendantsLines.py:1666
+msgid "The number of text line pad ??? "
+msgstr "Odmak za tekstovni redak "
+
+#: DescendantsLines/DescendantsLines.py:1680
+msgid "The default style."
+msgstr "Standardni stil."

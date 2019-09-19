@@ -588,7 +588,7 @@ msgstr ""
 msgid "Database"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1228
+#: NetworkChart/NetworkChart.py:1225
 msgid "Use database handle instead of GrampID id in URLs."
 msgstr ""
 

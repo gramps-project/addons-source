@@ -1,0 +1,195 @@
+# Croatian translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) Gramps project
+# Milo Ivir <mail@milotype.de>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2019-03-08 03:20+0100\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.1\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Language: hr\n"
+
+#: QuiltView/QuiltView.gpr.py:34
+msgid "Quilt Chart"
+msgstr "Poplunasti dijagram"
+
+#: QuiltView/QuiltView.gpr.py:35
+msgid "Charts"
+msgstr "Grafikoni"
+
+#: QuiltView/QuiltView.gpr.py:36
+msgid "The view shows a quilt chart visualisation of a family tree"
+msgstr "Prikazuje dijagram obiteljskog stabla u obliku popluna"
+
+#: QuiltView/QuiltView.py:214
+msgid "Quilt chart"
+msgstr "Poplunasti dijagram"
+
+#: QuiltView/QuiltView.py:291
+msgid "Select the name for which you want to see."
+msgstr "Odaberi ime koje želiš vidjeti.."
+
+#: QuiltView/QuiltView.py:296
+msgid "Clear"
+msgstr "Ukloni"
+
+#: QuiltView/QuiltView.py:298
+msgid "Clear the entry field in the name selection box."
+msgstr "Ukloni unošeno polje u izborniku imena."
+
+#: QuiltView/QuiltView.py:303
+msgid "Nothing is selected"
+msgstr "Ništa nije odabrano"
+
+#: QuiltView/QuiltView.py:361
+msgid "Person Filter Editor"
+msgstr "Uređivač filtra za osobe"
+
+#: QuiltView/QuiltView.py:363
+msgid "Print the entire tree"
+msgstr "Ispiši cjelokupno stablo"
+
+#: QuiltView/QuiltView.py:438
+#, python-format
+msgid ""
+"You have %(filter)d filtered people, %(count)d people shown on the tree and "
+"%(total)d people in your database."
+msgstr ""
+"Imaš %(filter)d filtriranih osoba, %(count)d osoba prikazanih u stablu i "
+"%(total)d osoba u tvojoj bazi podataka."
+
+#: QuiltView/QuiltView.py:467
+msgid "Could Not Set a Bookmark"
+msgstr "Nije bilo moguće postaviti knjižnu oznaku"
+
+#: QuiltView/QuiltView.py:468
+msgid "A bookmark could not be set because no one was selected."
+msgstr ""
+"Nije bilo moguće postaviti knjižnu oznaku, jer nijedna osoba nije odabrana."
+
+#: QuiltView/QuiltView.py:528
+msgid "Loading individuals"
+msgstr "Učitavanje osoba"
+
+#: QuiltView/QuiltView.py:529
+msgid "Loading the data"
+msgstr "Učitavanje podataka"
+
+#: QuiltView/QuiltView.py:905
+msgid "About Quilt View"
+msgstr "O poplunastom dijagramu"
+
+#: QuiltView/QuiltView.py:975
+#, python-format
+msgid "Family of %(husband)s and %(spouse)s"
+msgstr "Obitelj od %(husband)s i %(spouse)s"
+
+#: QuiltView/QuiltView.py:981 QuiltView/QuiltView.py:985
+#, python-format
+msgid "Family of %s"
+msgstr "Obitelj od %s"
+
+#: QuiltView/QuiltView.py:1040 QuiltView/QuiltView.py:1169
+msgid "Edit"
+msgstr "Uredi"
+
+#: QuiltView/QuiltView.py:1043 QuiltView/QuiltView.py:1172
+msgid "Edit tags"
+msgstr "Uredi etikete"
+
+#: QuiltView/QuiltView.py:1059 QuiltView/QuiltView.py:1384
+msgid "Children"
+msgstr "Djeca"
+
+#: QuiltView/QuiltView.py:1072 QuiltView/QuiltView.py:1397
+msgid "Add child to family"
+msgstr "Dodaj dijete k obitelji"
+
+#: QuiltView/QuiltView.py:1142
+msgid "Add Child to Family"
+msgstr "Dodaj dijete k obitelji"
+
+#: QuiltView/QuiltView.py:1175
+msgid "_Copy"
+msgstr "_Kopiraj"
+
+#: QuiltView/QuiltView.py:1185
+msgid "Spouses"
+msgstr "Supružnici"
+
+#: QuiltView/QuiltView.py:1190 QuiltView/QuiltView.py:1315
+msgid "Add"
+msgstr "Dodaj"
+
+#: QuiltView/QuiltView.py:1214
+msgid "Siblings"
+msgstr "Braća/sestre"
+
+#: QuiltView/QuiltView.py:1282
+msgid "Parents"
+msgstr "Roditelji"
+
+#: QuiltView/QuiltView.py:1321
+msgid "Related"
+msgstr "Srodni"
+
+#: QuiltView/QuiltView.py:1352
+msgid "Set as home person"
+msgstr "Postavi kao početnu osobu"
+
+#: QuiltView/QuiltView.py:1502
+msgid "Adding Tags"
+msgstr "Dodavanje etiketa"
+
+#: QuiltView/QuiltView.py:1508
+#, python-format
+msgid "Adding Tags to person (%s)"
+msgstr "Dodavanje etiketa osobi (%s)"
+
+#: QuiltView/QuiltView.py:1513
+#, python-format
+msgid "Adding Tags to family (%s)"
+msgstr "Dodavanje etiketa obitelji (%s)"
+
+#: QuiltView/QuiltView.py:1713
+msgid "Printing the tree"
+msgstr "Ispis stabla"
+
+#: QuiltView/QuiltView.py:1717
+#, python-format
+msgid "Need to print %(pages)s pages (%(format)s format)"
+msgstr "Potrebno je ispisati %(pages)s stranica (%(format)s format)"
+
+#: QuiltView/QuiltView.py:1769
+msgid ""
+"Center on the selected person.\n"
+"The new position of the person will be near the top left corner."
+msgstr ""
+"Centriraj na početnu osobu.\n"
+"Novi položaj osobe će biti u blizini gornjeg lijevog kuta."
+
+#: QuiltView/QuiltView.py:1774
+msgid "The path color"
+msgstr "Boja staze"
+
+#: QuiltView/QuiltView.py:1779
+msgid "The selected person color"
+msgstr "Boja odabrane osobe"
+
+#: QuiltView/QuiltView.py:1784
+msgid "The path transparency"
+msgstr "Prozirnost linije"
+
+#: QuiltView/QuiltView.py:1787
+msgid "General options"
+msgstr "Opći opcije"

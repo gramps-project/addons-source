@@ -1,0 +1,90 @@
+# Croatian translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) Gramps project
+# Milo Ivir <mail@milotype.de>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2019-03-08 03:04+0100\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.1\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Language: hr\n"
+
+#: PedigreeChart/PedigreeChart.gpr.py:24
+msgid "Pedigree Chart"
+msgstr "Dijagram predaka"
+
+#: PedigreeChart/PedigreeChart.gpr.py:25
+msgid "Alternate version of the traditional pedigree chart."
+msgstr "Alternativni prikaz uobičajenog dijagrama predaka."
+
+#: PedigreeChart/PedigreeChart.py:372
+#, python-format
+msgid "Person %s is not in the Database"
+msgstr "Osoba %s ne postoji u bazi podataka"
+
+#: PedigreeChart/PedigreeChart.py:375 PedigreeChart/PedigreeChart.py:523
+msgid "Mother"
+msgstr "Majka"
+
+#: PedigreeChart/PedigreeChart.py:379
+#, python-format
+msgid "Pedigree Chart for %s"
+msgstr "Dijagram predaka za %s"
+
+#: PedigreeChart/PedigreeChart.py:526
+msgid "Father"
+msgstr "Otac"
+
+#: PedigreeChart/PedigreeChart.py:528
+#, python-format
+msgid "Page %d"
+msgstr "Stranica %d"
+
+#: PedigreeChart/PedigreeChart.py:630
+msgid "Tree Options"
+msgstr "Opcije za stablo"
+
+#: PedigreeChart/PedigreeChart.py:632
+msgid "Center Person"
+msgstr "Središnja osoba"
+
+#: PedigreeChart/PedigreeChart.py:633
+msgid "The center person for the tree"
+msgstr "Središnja osoba za stablo"
+
+#: PedigreeChart/PedigreeChart.py:636
+msgid "Generations"
+msgstr "Generacija"
+
+#: PedigreeChart/PedigreeChart.py:637
+msgid "The number of generations to include in the tree"
+msgstr "Broj generacija, uključenih u stablo"
+
+#: PedigreeChart/PedigreeChart.py:640
+msgid "Show Mother/Father captions"
+msgstr "Prikaži opise za majku/oca"
+
+#: PedigreeChart/PedigreeChart.py:641
+msgid "Show the title of mother or father beside each ancestor's box."
+msgstr "Prikaži naslov za majku ili oca pored svakog okvira pretka."
+
+#: PedigreeChart/PedigreeChart.py:653
+msgid "The basic style used for the text display."
+msgstr "Osnovni stil za prikaz teksta."
+
+#: PedigreeChart/PedigreeChart.py:662
+msgid "The basic style used for the title display."
+msgstr "Osnovni stil za prikaz naslova."
+
+#: PedigreeChart/PedigreeChart.py:671
+msgid "Style used for labels and captions"
+msgstr "Sitl korišten za oznake i opise"

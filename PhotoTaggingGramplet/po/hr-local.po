@@ -1,0 +1,154 @@
+# Croatian translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) Gramps project
+# Milo Ivir <mail@milotype.de>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2019-03-08 03:06+0100\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.1\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Language: hr\n"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:3
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:11
+msgid "Photo Tagging"
+msgstr "Označivanje slika"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:4
+msgid "Gramplet for tagging people in photos"
+msgstr "Gramplet za označivanje osoba u slikama"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:118
+msgid "Selection"
+msgstr "Odabir"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:120
+msgid "Replace existing references to the person being assigned without asking"
+msgstr "Zamijeni postojeće reference s određenom osobom, bez pitanja"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:127
+msgid "Face detection"
+msgstr "Pronalaženje lica"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:130
+msgid "Minimum face width (px)"
+msgstr "Minimala širina lica (px)"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:132
+msgid "Minimum face height (px)"
+msgstr "Minimala visina lica (px)"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:135
+msgid "Detect faces inside existing boxes"
+msgstr "Pronađi lica unutar postojećeg okvira"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:137
+msgid "Sensitivity (1 min .. 20 max)"
+msgstr "Osjetljivost (1 min. … 20 maks.)"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:271
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:734
+msgid "Select Person"
+msgstr "Odaberi osobu"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:272
+msgid "Add Person"
+msgstr "Dodaj osobu"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:273
+msgid "Clear Reference"
+msgstr "Ukloni referencu"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:274
+msgid "Remove Selection"
+msgstr "Ukloni odabir"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:275
+msgid "Edit referenced Person"
+msgstr "Uredi referneciranu osobu"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:276
+msgid "Zoom In"
+msgstr "Uvećaj"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:277
+msgid "Zoom Out"
+msgstr "Umanji"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:280
+msgid "Detect faces"
+msgstr "Pronađi lica"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:282
+msgid "Detect faces (OpenCV module required)"
+msgstr "Pronađi lica (potreban je OpenCV modul)"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:285
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:796
+msgid "Settings"
+msgstr "Postavke"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:333
+msgid "Preview"
+msgstr "Pregled"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:334
+msgid "Person"
+msgstr "Osoba"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:450
+msgid "Set as active person"
+msgstr "Postavi kao aktivnu osobu"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:453
+msgid "_Select"
+msgstr "_Odaberi"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:456
+msgid "_Add"
+msgstr "_Dodaj"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:459
+msgid "_Clear"
+msgstr "_Očisti"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:462
+msgid "_Remove"
+msgstr "_Ukloni"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:609
+#, python-format
+msgid "Edit Person (%s)"
+msgstr "Uredi osobu (%s)"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:665
+#, python-brace-format
+msgid "Replace to {0}"
+msgstr "Zamijeni na {0}"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:766
+msgid "Detecting faces..."
+msgstr "Pronalaženje lica …"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:791
+msgid "Detection finished"
+msgstr "Pronalaženje je završeno"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:841
+#, python-brace-format
+msgid "Another region of this image is associated with {name}. Remove it?"
+msgstr "Jedno drugo područje je označeno osobom {name}. Želiš li ukloniti oznaku?"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:844
+#, python-brace-format
+msgid "{count} other regions of this image are associated with {name}. Remove them?"
+msgstr "{count} drugih područja, označenih osobom {name}. Želiš li ih ukloniti?"

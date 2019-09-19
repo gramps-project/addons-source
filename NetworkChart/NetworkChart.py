@@ -358,36 +358,33 @@ class NetworkChartReport(Report):
 
             # Get edge_marriage
             h_events = f_family.get_event_ref_list()  # get_event_ref_list()
-            if len(h_events) > 0:
-                for e_ref in h_events:
-                    i_event = self.database.get_event_from_handle(e_ref.ref)
-                    fmt_mdate = self._get_date(i_event.get_date_object())
-                    if len(fmt_mdate.strip()) < 1:
-                        fmt_mdate = self._unk
-                    if fmt_mdate.strip() == '0000-00-00':
-                        fmt_mdate = self._unk
-                    if i_event.get_type().is_marriage():
-                        try:
-                            if self.b_round_marr:
-                                year = i_event.get_date_object().get_year()
-                                if year > i_round_marr:
-                                    marriage_date = self._marr + str(year)
-                                else:
-                                    marriage_date = self._marr + fmt_mdate
+            marriage_date = ''
+            for e_ref in h_events:
+                i_event = self.database.get_event_from_handle(e_ref.ref)
+                fmt_mdate = self._get_date(i_event.get_date_object())
+                if len(fmt_mdate.strip()) < 1:
+                    fmt_mdate = self._unk
+                if fmt_mdate.strip() == '0000-00-00':
+                    fmt_mdate = self._unk
+                if i_event.get_type().is_marriage():
+                    try:
+                        if self.b_round_marr:
+                            year = i_event.get_date_object().get_year()
+                            if year > i_round_marr:
+                                marriage_date = self._marr + str(year)
                             else:
                                 marriage_date = self._marr + fmt_mdate
-                        except NameError:
-                            marriage_date = self._marr + self._unk
-                        edge_marriage = edge_marriage + [[family_gref,
-                                                          father_gref,
-                                                          mother_gref,
-                                                          marriage_date]]
-            else:
+                        else:
+                            marriage_date = self._marr + fmt_mdate
+                        break
+                    except NameError:
+                        marriage_date = self._marr + self._unk
+            if not marriage_date:
                 marriage_date = self._marr + self._unk
-                edge_marriage = edge_marriage + [[family_gref,
-                                                  father_gref,
-                                                  mother_gref,
-                                                  marriage_date]]
+            edge_marriage = edge_marriage + [[family_gref,
+                                              father_gref,
+                                              mother_gref,
+                                              marriage_date]]
 
             # Get edge_child
             children_refs = f_family.get_child_ref_list()

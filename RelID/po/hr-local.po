@@ -1,0 +1,112 @@
+# Croatian translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) Gramps project
+# Milo Ivir <mail@milotype.de>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-04 18:55-0600\n"
+"PO-Revision-Date: 2019-03-08 10:58+0100\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.1\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Language: hr\n"
+
+#: RelID/relation_tab.gpr.py:35
+msgid "Display relations and distances with the home person"
+msgstr "Prikaži srodstvo s početnom osobom"
+
+#: RelID/relation_tab.gpr.py:36
+msgid "Will display relational informations with the home person"
+msgstr "Prikazat će informacije o srodstvu s početnom osobom"
+
+#: RelID/relation_tab.py:75
+msgid "Relation and distances with root"
+msgstr "Srodstvo i udaljenost s korijenom"
+
+#: RelID/relation_tab.py:92
+msgid "Folder Chooser"
+msgstr "Izbornik za mape"
+
+#: RelID/relation_tab.py:95
+msgid "_Cancel"
+msgstr "_Odustani"
+
+#: RelID/relation_tab.py:97
+msgid "_Select"
+msgstr "_Odaberi"
+
+#: RelID/relation_tab.py:99
+msgid "Please, select a folder"
+msgstr "Odaberi mapu"
+
+#: RelID/relation_tab.py:110
+msgid "Rel_id"
+msgstr "_ID srodstva"
+
+#: RelID/relation_tab.py:111
+msgid "Relation"
+msgstr "Odno"
+
+#: RelID/relation_tab.py:112
+msgid "Name"
+msgstr "Ime"
+
+#: RelID/relation_tab.py:113
+msgid "up"
+msgstr "gore"
+
+#: RelID/relation_tab.py:114
+msgid "down"
+msgstr "dolje"
+
+#: RelID/relation_tab.py:115
+msgid "Common MRA"
+msgstr "Zajednički zadnje umrli predak"
+
+#: RelID/relation_tab.py:116
+msgid "Rank"
+msgstr "Položaj"
+
+#: RelID/relation_tab.py:117
+msgid "Period"
+msgstr "Razdoblje"
+
+#: RelID/relation_tab.py:126
+msgid "Save"
+msgstr "Spremi"
+
+#: RelID/relation_tab.py:164
+msgid "Please wait, filtering..."
+msgstr "Pričekaj, izvršava se filtriranje …"
+
+#: RelID/relation_tab.py:169
+msgid "No default_person"
+msgstr "Nema zadane osobe"
+
+#: RelID/relation_tab.py:174
+msgid "Generating relation map..."
+msgstr "Stvaranje karte srodstva …"
+
+#: RelID/relation_tab.py:190
+#, python-format
+msgid ""
+"%d/%d \n"
+" %d/%d seconds \n"
+" %d/%d \n"
+"%f|\t%f"
+msgstr ""
+"%d/%d \n"
+" %d/%d sekunda \n"
+" %d/%d \n"
+"%f|\t%f"
+
+#: RelID/relation_tab.py:308
+msgid "You do not have write rights on this folder"
+msgstr "Nemaš prava pisanje za ovu mapu"
