@@ -107,6 +107,9 @@ SPLINE = {0: 'false', 1: 'true', 2: 'ortho'}
 
 WIKI_PAGE = 'https://gramps-project.org/wiki/index.php?title=Graph_View'
 
+# gtk version
+gtk_version = float("%s.%s" % (Gtk.MAJOR_VERSION, Gtk.MINOR_VERSION))
+
 #-------------------------------------------------------------------------
 #
 # Search widget module
@@ -816,6 +819,7 @@ class GraphWidget(object):
                                    Gtk.AccelFlags.VISIBLE)
 
         # add spinners for quick generations change
+        gen_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
         img = Gtk.Image.new_from_icon_name('go-up-symbolic',
                                            Gtk.IconSize.MENU)
@@ -828,7 +832,9 @@ class GraphWidget(object):
             "value-changed", self.apply_spinner_delayed,
             'interface.graphview-ancestor-generations')
         box.pack_start(self.ancestors_spinner, False, False, 1)
+        gen_box.add(box)
 
+        box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
         img = Gtk.Image.new_from_icon_name('go-down-symbolic',
                                            Gtk.IconSize.MENU)
         box.pack_start(img, False, False, 1)
@@ -840,9 +846,19 @@ class GraphWidget(object):
             "value-changed", self.apply_spinner_delayed,
             'interface.graphview-descendant-generations')
         box.pack_start(self.descendants_spinner, False, False, 1)
-        self.toolbar.pack_start(box, False, False, 1)
+        gen_box.add(box)
+        gen_box.show_all()
+
+        # pack generation spinners to popover
+        gen_btn = Gtk.Button(_('Generations'))
+        gen_popover = Gtk.Popover()
+        gen_popover.set_relative_to(gen_btn)
+        gen_popover.add(gen_box)
+        gen_btn.connect("clicked", self.spinners_popup, gen_popover)
+        self.toolbar.pack_start(gen_btn, False, False, 1)
 
         # add spiner for generation (vertical) spacing
+        spacing_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
         img = Gtk.Image.new_from_icon_name('object-flip-vertical',
                                            Gtk.IconSize.MENU)
@@ -856,7 +872,7 @@ class GraphWidget(object):
                                      self.apply_spinner_delayed,
                                      'interface.graphview-ranksep')
         box.pack_start(self.ranksep_spinner, False, False, 1)
-        self.toolbar.pack_start(box, False, False, 1)
+        spacing_box.add(box)
 
         # add spiner for node (horizontal) spacing
         box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
@@ -872,7 +888,16 @@ class GraphWidget(object):
                                      self.apply_spinner_delayed,
                                      'interface.graphview-nodesep')
         box.pack_start(self.nodesep_spinner, False, False, 1)
-        self.toolbar.pack_start(box, False, False, 1)
+        spacing_box.add(box)
+        spacing_box.show_all()
+
+        # pack spacing spinners to popover
+        spacing_btn = Gtk.Button(_('Spacings'))
+        spacing_popover = Gtk.Popover()
+        spacing_popover.set_relative_to(spacing_btn)
+        spacing_popover.add(spacing_box)
+        spacing_btn.connect("clicked", self.spinners_popup, spacing_popover)
+        self.toolbar.pack_start(spacing_btn, False, False, 1)
 
         self.vbox.pack_start(scrolled_win, True, True, 0)
 
@@ -898,6 +923,16 @@ class GraphWidget(object):
 
         # used for popup menu, prevent destroy menu as local variable
         self.menu = None
+
+    def spinners_popup(self, widget, popover):
+        """
+        Popover for generations and spacing params.
+        Different popup depending on gtk version.
+        """
+        if gtk_version >= 3.22:
+            popover.popup()
+        else:
+            popover.show()
 
     def set_available(self, state):
         """
