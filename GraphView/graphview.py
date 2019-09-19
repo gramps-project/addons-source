@@ -820,83 +820,33 @@ class GraphWidget(object):
 
         # add spinners for quick generations change
         gen_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
-        box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
-        img = Gtk.Image.new_from_icon_name('go-up-symbolic',
-                                           Gtk.IconSize.MENU)
-        box.pack_start(img, False, False, 1)
-        self.ancestors_spinner = Gtk.SpinButton.new_with_range(0, 50, 1)
-        self.ancestors_spinner.set_tooltip_text(_('Ancestor generations'))
-        self.ancestors_spinner.set_value(
-            self.view._config.get('interface.graphview-ancestor-generations'))
-        self.ancestors_spinner.connect(
-            "value-changed", self.apply_spinner_delayed,
-            'interface.graphview-ancestor-generations')
-        box.pack_start(self.ancestors_spinner, False, False, 1)
+        box = self.build_spinner('go-up-symbolic', 0, 50,
+                                 _('Ancestor generations'),
+                                 'interface.graphview-ancestor-generations')
         gen_box.add(box)
-
-        box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
-        img = Gtk.Image.new_from_icon_name('go-down-symbolic',
-                                           Gtk.IconSize.MENU)
-        box.pack_start(img, False, False, 1)
-        self.descendants_spinner = Gtk.SpinButton.new_with_range(0, 50, 1)
-        self.descendants_spinner.set_tooltip_text(_('Descendant generations'))
-        self.descendants_spinner.set_value(self.view._config.get(
-            'interface.graphview-descendant-generations'))
-        self.descendants_spinner.connect(
-            "value-changed", self.apply_spinner_delayed,
-            'interface.graphview-descendant-generations')
-        box.pack_start(self.descendants_spinner, False, False, 1)
+        box = self.build_spinner('go-down-symbolic', 0, 50,
+                                 _('Descendant generations'),
+                                 'interface.graphview-descendant-generations')
         gen_box.add(box)
-        gen_box.show_all()
-
         # pack generation spinners to popover
         gen_btn = Gtk.Button(_('Generations'))
-        gen_popover = Gtk.Popover()
-        gen_popover.set_relative_to(gen_btn)
-        gen_popover.add(gen_box)
-        gen_btn.connect("clicked", self.spinners_popup, gen_popover)
+        self.add_popover(gen_btn, gen_box)
         self.toolbar.pack_start(gen_btn, False, False, 1)
 
         # add spiner for generation (vertical) spacing
         spacing_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
-        box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
-        img = Gtk.Image.new_from_icon_name('object-flip-vertical',
-                                           Gtk.IconSize.MENU)
-        box.pack_start(img, False, False, 1)
-        self.ranksep_spinner = Gtk.SpinButton.new_with_range(1, 50, 1)
-        self.ranksep_spinner.set_tooltip_text(
-            _('Vertical spacing between generations'))
-        self.ranksep_spinner.set_value(
-            self.view._config.get('interface.graphview-ranksep'))
-        self.ranksep_spinner.connect("value-changed",
-                                     self.apply_spinner_delayed,
-                                     'interface.graphview-ranksep')
-        box.pack_start(self.ranksep_spinner, False, False, 1)
+        box = self.build_spinner('object-flip-vertical', 1, 50,
+                                 _('Vertical spacing between generations'),
+                                 'interface.graphview-ranksep')
         spacing_box.add(box)
-
         # add spiner for node (horizontal) spacing
-        box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
-        img = Gtk.Image.new_from_icon_name('object-flip-horizontal',
-                                           Gtk.IconSize.MENU)
-        box.pack_start(img, False, False, 1)
-        self.nodesep_spinner = Gtk.SpinButton.new_with_range(1, 50, 1)
-        self.nodesep_spinner.set_tooltip_text(
-            _('Horizontal spacing between generations'))
-        self.nodesep_spinner.set_value(
-            self.view._config.get('interface.graphview-nodesep'))
-        self.nodesep_spinner.connect("value-changed",
-                                     self.apply_spinner_delayed,
-                                     'interface.graphview-nodesep')
-        box.pack_start(self.nodesep_spinner, False, False, 1)
+        box = self.build_spinner('object-flip-horizontal', 1, 50,
+                                 _('Horizontal spacing between generations'),
+                                 'interface.graphview-nodesep')
         spacing_box.add(box)
-        spacing_box.show_all()
-
         # pack spacing spinners to popover
         spacing_btn = Gtk.Button(_('Spacings'))
-        spacing_popover = Gtk.Popover()
-        spacing_popover.set_relative_to(spacing_btn)
-        spacing_popover.add(spacing_box)
-        spacing_btn.connect("clicked", self.spinners_popup, spacing_popover)
+        self.add_popover(spacing_btn, spacing_box)
         self.toolbar.pack_start(spacing_btn, False, False, 1)
 
         self.vbox.pack_start(scrolled_win, True, True, 0)
@@ -923,6 +873,32 @@ class GraphWidget(object):
 
         # used for popup menu, prevent destroy menu as local variable
         self.menu = None
+
+    def add_popover(self, widget, container):
+        """
+        Add popover for button.
+        """
+        popover = Gtk.Popover()
+        popover.set_relative_to(widget)
+        popover.add(container)
+        widget.connect("clicked", self.spinners_popup, popover)
+        container.show_all()
+
+    def build_spinner(self, icon, start, end, tooltip, conf_const):
+        """
+        Build spinner with icon and pack it into box.
+        Chenges apply to config with delay.
+        """
+        box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
+        img = Gtk.Image.new_from_icon_name(icon, Gtk.IconSize.MENU)
+        box.pack_start(img, False, False, 1)
+        spinner = Gtk.SpinButton.new_with_range(start, end, 1)
+        spinner.set_tooltip_text(tooltip)
+        spinner.set_value(self.view._config.get(conf_const))
+        spinner.connect("value-changed", self.apply_spinner_delayed,
+                        conf_const)
+        box.pack_start(spinner, False, False, 1)
+        return box
 
     def spinners_popup(self, widget, popover):
         """
