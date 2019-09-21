@@ -183,9 +183,12 @@ class PersonOverview(Overview):
             family = self.dbstate.db.get_family_from_handle(family_handle)
             father_handle = family.get_father_handle()
             mother_handle = family.get_mother_handle()
+            spouse = None
             if father_handle == active_handle:
-                spouse = self.dbstate.db.get_person_from_handle(mother_handle)
-            else:
+                if mother_handle:
+                    spouse = self.dbstate.db.get_person_from_handle(
+                        mother_handle)
+            elif father_handle:
                 spouse = self.dbstate.db.get_person_from_handle(father_handle)
             for event_ref in family.get_event_ref_list():
                 self.add_event_ref(event_ref, spouse)
