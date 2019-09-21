@@ -1,0 +1,128 @@
+# Croatian translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) Gramps project
+# Milo Ivir <mail@milotype.de>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2019-03-08 11:10+0100\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.1\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Language: hr\n"
+
+#: SetAttributeTool/SetAttributeTool.gpr.py:25
+#: SetAttributeTool/SetAttributeTool.py:121
+#: SetAttributeTool/SetAttributeTool.py:129
+msgid "Set Attribute"
+msgstr "Postavi svojstvo"
+
+#: SetAttributeTool/SetAttributeTool.gpr.py:26
+msgid "Set an attribute to a given value."
+msgstr "Postavi svojstvo na određenu vrijednost."
+
+#: SetAttributeTool/SetAttributeTool.py:68
+#: SetAttributeTool/SetAttributeTool.py:124
+msgid "Options"
+msgstr "Opcije"
+
+#: SetAttributeTool/SetAttributeTool.py:70
+msgid "Person Filter"
+msgstr "Filtar za osobe"
+
+#: SetAttributeTool/SetAttributeTool.py:71
+msgid "Select filter to restrict people"
+msgstr "Odaberi filtar za ograničavanje osoba"
+
+#: SetAttributeTool/SetAttributeTool.py:75
+msgid "Filter Person"
+msgstr "Osoba filtra"
+
+#: SetAttributeTool/SetAttributeTool.py:76
+msgid "The center person for the filter"
+msgstr "Središnja osoba ovog filtra"
+
+#: SetAttributeTool/SetAttributeTool.py:80
+msgid "Attribute"
+msgstr "Svojstvo"
+
+#: SetAttributeTool/SetAttributeTool.py:81
+msgid "Value"
+msgstr "Vrijednost"
+
+#: SetAttributeTool/SetAttributeTool.py:83
+msgid "Attribute type to add or edit"
+msgstr "Vrsta svojstva za dodavanje ili uređivanje"
+
+#: SetAttributeTool/SetAttributeTool.py:84
+msgid "Attribute value to add or edit"
+msgstr "Vrijednosti svojstva za dodavanje ili uređivanje"
+
+#: SetAttributeTool/SetAttributeTool.py:91
+msgid "Remove"
+msgstr "Ukloni"
+
+#: SetAttributeTool/SetAttributeTool.py:92
+msgid "Remove attribute type and value set"
+msgstr "Attributart und Wertepaar entfernen"
+
+#: SetAttributeTool/SetAttributeTool.py:130
+#: SetAttributeTool/SetAttributeTool.py:189
+msgid "Results"
+msgstr "Rezultati"
+
+#: SetAttributeTool/SetAttributeTool.py:131
+#: SetAttributeTool/SetAttributeTool.py:190
+msgid "Processing...\n"
+msgstr "Obrada …\n"
+
+#: SetAttributeTool/SetAttributeTool.py:146
+msgid "Setting attributes..."
+msgstr "Postavljanje svojstva …"
+
+#: SetAttributeTool/SetAttributeTool.py:153
+#, python-format
+msgid ""
+"Setting '%s' attributes to '%s'...\n"
+"\n"
+msgstr ""
+"Postavljanje svojstva „%s” na „%s” …\n"
+"\n"
+
+#: SetAttributeTool/SetAttributeTool.py:184
+#, python-format
+msgid ""
+"\n"
+"Set %d '%s' attributes to '%s'\n"
+msgstr ""
+"\n"
+"Postavi %d svojstva „%s” na „%s”\n"
+
+#: SetAttributeTool/SetAttributeTool.py:186
+#: SetAttributeTool/SetAttributeTool.py:235
+msgid "Done!\n"
+msgstr "Gotovo!\n"
+
+#: SetAttributeTool/SetAttributeTool.py:188
+msgid "Remove Attribute"
+msgstr "Ukloni svojstvo"
+
+#: SetAttributeTool/SetAttributeTool.py:205
+msgid "Removing attributes..."
+msgstr "Uklanjanje svojstva …"
+
+#: SetAttributeTool/SetAttributeTool.py:230
+#, python-format
+msgid ""
+"\n"
+"Removing %d '%s' attributes to '%s'\n"
+msgstr ""
+"\n"
+"Uklanjanje %d svojstva „%s” na „%s”\n"

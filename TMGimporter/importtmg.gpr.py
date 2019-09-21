@@ -47,8 +47,7 @@ _ = glocale.translation.sgettext
 #
 #------------------------------------------------------------------------
 dbfavailable = False
-addonversion = '0.0.64'
-grampsversion = "5.0"
+grampsversion = "5.1"
 
 try:
     # External Library: dbf.pypi
@@ -71,7 +70,7 @@ if dbfavailable or locals().get('build_script'):
              id    = 'im_sqz',
              name  = _('TMG Project Backup'),
              description =  _('Import TMG project files'),
-             version = 'ddonversio.0.4',
+             version = '0.0.69',
              gramps_target_version = grampsversion,
              include_in_listing = False,
              status = STABLE,
@@ -84,7 +83,7 @@ if dbfavailable or locals().get('build_script'):
              id    = 'im_pjc',
              name  = _('TMG Unsupported'),
              description =  _('Import TMG project files'),
-             version = 'ddonversio.0.4',
+             version = '0.0.69',
              gramps_target_version = grampsversion,
              include_in_listing = False,
              status = UNSTABLE,
@@ -97,7 +96,7 @@ if dbfavailable or locals().get('build_script'):
              id    = 'im_tmg',
              name  = _('TMG Unsupported'),
              description =  _('Import TMG project files'),
-             version = 'ddonversio.0.4',
+             version = '0.0.69',
              gramps_target_version = grampsversion,
              include_in_listing = False,
              status = UNSTABLE,
@@ -110,7 +109,7 @@ if dbfavailable or locals().get('build_script'):
              id    = 'im_ver',
              name  = _('TMG Unsupported'),
              description =  _('Import TMG project files'),
-             version = 'ddonversio.0.4',
+             version = '0.0.69',
              gramps_target_version = grampsversion,
              include_in_listing = False,
              status = UNSTABLE,

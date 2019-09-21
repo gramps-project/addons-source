@@ -1,0 +1,197 @@
+# Croatian translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) Gramps project
+# Milo Ivir <mail@milotype.de>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2019-03-08 01:53+0100\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.1\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Language: hr\n"
+
+#: FamilySheet/FamilySheet.gpr.py:3 FamilySheet/FamilySheet.py:126
+msgid "Family Sheet"
+msgstr "Obiteljski list"
+
+#: FamilySheet/FamilySheet.gpr.py:4
+msgid ""
+"Produces a family sheet showing full information about a person and his/her "
+"partners and children."
+msgstr ""
+"Stvara obiteljski list sa cjelovitim informacijama o osobi i njenim "
+"roditeljima i djecom."
+
+#: FamilySheet/FamilySheet.py:232 FamilySheet/FamilySheet.py:275
+#, python-format
+msgid "\\u2192 %s"
+msgstr "\\u2192 %s"
+
+#: FamilySheet/FamilySheet.py:396
+#, python-format
+msgid "Address (%(date)s): %(location)s"
+msgstr "Adresa (%(date)s): %(location)s"
+
+#: FamilySheet/FamilySheet.py:400
+#, python-format
+msgid "Address: %(location)s"
+msgstr "Adresa: %(location)s"
+
+#: FamilySheet/FamilySheet.py:451
+#, python-format
+msgid "; %(type)s: %(value)s"
+msgstr "; %(type)s: %(value)s"
+
+#: FamilySheet/FamilySheet.py:539
+msgid "Source references:"
+msgstr "Reference izvora:"
+
+#: FamilySheet/FamilySheet.py:553
+#, python-format
+msgid "%s: "
+msgstr "%s: "
+
+#: FamilySheet/FamilySheet.py:557
+#, python-format
+msgid ", page %s"
+msgstr ", stranica %s"
+
+#: FamilySheet/FamilySheet.py:570
+msgid "Notes:"
+msgstr "Zabilješke:"
+
+#: FamilySheet/FamilySheet.py:749
+#, python-format
+msgid "on %(ymd_date)s"
+msgstr "na dan %(ymd_date)s"
+
+#: FamilySheet/FamilySheet.py:751
+#, python-format
+msgid "in %(ym_date)s"
+msgstr "%(ym_date)s"
+
+#: FamilySheet/FamilySheet.py:753
+#, python-format
+msgid "in %(y_date)s"
+msgstr "%(y_date)s"
+
+#: FamilySheet/FamilySheet.py:757
+#, python-format
+msgid "on %(placeholder)s"
+msgstr "na %(placeholder)s"
+
+#: FamilySheet/FamilySheet.py:759
+#, python-format
+msgid "on %(placeholder)s (%(partial)s)"
+msgstr "na %(placeholder)s (%(partial)s)"
+
+#: FamilySheet/FamilySheet.py:804 FamilySheet/FamilySheet.py:806
+#, python-format
+msgid "in %(place)s"
+msgstr "u mjestu %(place)s"
+
+#: FamilySheet/FamilySheet.py:841
+msgid "Report Options"
+msgstr "Opcije za izvještaj"
+
+#: FamilySheet/FamilySheet.py:844
+msgid "Center person"
+msgstr "Središnja osoba"
+
+#: FamilySheet/FamilySheet.py:846
+msgid "The person whose partners and children are printed"
+msgstr "Osoba, čiji će se parnter i djeca koristiti u ispisu"
+
+#: FamilySheet/FamilySheet.py:849
+msgid "Print sheets for"
+msgstr "Ispiši stranice za"
+
+#: FamilySheet/FamilySheet.py:851
+msgid "Center person only"
+msgstr "Samo središnju osobu"
+
+#: FamilySheet/FamilySheet.py:852
+msgid "Center person and descendants in side branches"
+msgstr "Središnju osobu i potomke u podgranama"
+
+#: FamilySheet/FamilySheet.py:853
+msgid "Center person and all descendants"
+msgstr "Središnju osobu i sve potomke"
+
+#: FamilySheet/FamilySheet.py:854
+msgid "Whether to include descendants, and which ones."
+msgstr "Da li uključiti potomke, i koje."
+
+#: FamilySheet/FamilySheet.py:857
+msgid "Use call name"
+msgstr "Koristi upotrebno ime"
+
+#: FamilySheet/FamilySheet.py:859
+msgid "Don't use call name"
+msgstr "Ne koristi upotrebno ime"
+
+#: FamilySheet/FamilySheet.py:860
+msgid "Replace first name with call name"
+msgstr "Zamijeni cjelokupno ime upotrebnim imenom"
+
+#: FamilySheet/FamilySheet.py:861
+msgid "Underline call name in first name / add call name to first name"
+msgstr ""
+"Podcrtaj upotrebno ime u cjelokupnom imenu / dodaj upotrebno ime cjelokupnom"
+
+#: FamilySheet/FamilySheet.py:862
+msgid "Whether to include call name, and how."
+msgstr "Da li uključiti upotrebno ime, i kako."
+
+#: FamilySheet/FamilySheet.py:865
+msgid "Print placeholders for missing information"
+msgstr "Ispiši prazna polja za nedostajuće podatke"
+
+#: FamilySheet/FamilySheet.py:867
+msgid "Whether to include fields for missing information."
+msgstr "Da li uključiti polja za nedostajuće podatke."
+
+#: FamilySheet/FamilySheet.py:870
+msgid "Include sources"
+msgstr "Uključi izvore"
+
+#: FamilySheet/FamilySheet.py:871
+msgid "Whether to include source references."
+msgstr "Da li uključiti reference izvora."
+
+#: FamilySheet/FamilySheet.py:874
+msgid "Include notes"
+msgstr "Uključi zabilješke"
+
+#: FamilySheet/FamilySheet.py:875
+msgid "Whether to include notes."
+msgstr "Da li uključiti zabilješke."
+
+#: FamilySheet/FamilySheet.py:889
+msgid "The basic style used for the text display"
+msgstr "Osnovni stil za prikaz teksta"
+
+#: FamilySheet/FamilySheet.py:899
+msgid "The style used for the page key on the top"
+msgstr "Stil korišten za ključ stranice u vrhu"
+
+#: FamilySheet/FamilySheet.py:908
+msgid "The style used for names"
+msgstr "Stil korišten za imena"
+
+#: FamilySheet/FamilySheet.py:918
+msgid "The style used for numbers"
+msgstr "Stil korišten za brojke"
+
+#: FamilySheet/FamilySheet.py:928
+msgid "The style used for footnotes (notes and source references)"
+msgstr "Stil korišten za bilješke (zabilješke i reference izvora)"

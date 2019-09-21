@@ -6,96 +6,117 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-11-23 19:29+0100\n"
+"POT-Creation-Date: 2018-05-13 00:06+0200\n"
 "PO-Revision-Date: 2009-11-25 17:30+0100\n"
 "Last-Translator: \n"
 "Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
+"Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:3
-msgid "Deep Connections Gramplet"
-msgstr "Gramplet Hlbšie vzťahy"
-
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:9
-msgid "Deep Connections"
-msgstr "Hlbšie vzťahy"
-
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:51
+#: DeepConnectionsGramplet.py:59
 msgid "Double-click name for details"
 msgstr "Dvojklik na meno sprístupní podrobnosti"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:52
+#: DeepConnectionsGramplet.py:60
 msgid "No Family Tree loaded."
-msgstr "Nebol otvorený nijaký rodinný strom."
+msgstr "Nebol otvorený rodinný strom."
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:57
+#: DeepConnectionsGramplet.py:65
 msgid "Pause"
 msgstr "Pauza"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:59
+#: DeepConnectionsGramplet.py:67
 msgid "Continue"
 msgstr "Pokračovať"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:80
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:96
+#: DeepConnectionsGramplet.py:69
+msgid "Copy"
+msgstr "Kopírovať"
+
+#: DeepConnectionsGramplet.py:106
+msgid "mentioned in note"
+msgstr "spomenutá v poznámke"
+
+#: DeepConnectionsGramplet.py:125
 msgid "child"
 msgstr "dieťa"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:85
+#: DeepConnectionsGramplet.py:129
 msgid "husband"
 msgstr "manžel"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:89
+#: DeepConnectionsGramplet.py:131
 msgid "wife"
 msgstr "manželka"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:101
+#: DeepConnectionsGramplet.py:132
+msgid "Note on Family"
+msgstr "Poznámka pre rodinu"
+
+#: DeepConnectionsGramplet.py:142
+msgid "sibling"
+msgstr "súrodenec"
+
+#: DeepConnectionsGramplet.py:146
 msgid "father"
 msgstr "otec"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:105
+#: DeepConnectionsGramplet.py:149
 msgid "mother"
 msgstr "matka"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:123
+#: DeepConnectionsGramplet.py:150
+msgid "Note on Parent Family"
+msgstr "Poznámka pre rodinu rodiča"
+
+#: DeepConnectionsGramplet.py:153
+#, python-format
+msgid "%s (association)"
+msgstr ""
+
+#: DeepConnectionsGramplet.py:157
+msgid "Note on Person"
+msgstr "Poznámka pre osobu"
+
+#: DeepConnectionsGramplet.py:187
 #, python-format
 msgid ""
 "\n"
-"   who is a %s of "
+"   %s of "
 msgstr ""
 "\n"
-"   je %s osoby "
+"   %s osoby "
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:137
+#: DeepConnectionsGramplet.py:205
 msgid "No Home Person set."
 msgstr "Nebola nastavená východzia osoba."
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:140
+#: DeepConnectionsGramplet.py:208
 msgid "No Active Person set."
 msgstr "Nie je označená aktívna osoba."
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:143
+#: DeepConnectionsGramplet.py:212
 msgid "self"
 msgstr "sám"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:147
+#: DeepConnectionsGramplet.py:216
 msgid "Looking for relationship between\n"
-msgstr ""
+msgstr "Vyhľadávanie vzťahu medzi\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:148
+#: DeepConnectionsGramplet.py:217
 #, python-format
 msgid "  <b>%s</b> (Home Person) and\n"
-msgstr ""
+msgstr "  <b>%s</b> (Východzia osoba) a\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:149
+#: DeepConnectionsGramplet.py:218
 #, python-format
 msgid "  <b>%s</b> (Active Person)...\n"
 msgstr "Aktívna osoba: <b>%s</b>\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:157
+#: DeepConnectionsGramplet.py:228
 #, python-format
 msgid ""
 "Found relation #%d: \n"
@@ -104,15 +125,15 @@ msgstr ""
 "zistený vzťah #%d: \n"
 "   "
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:163
+#: DeepConnectionsGramplet.py:238
 msgid ""
 "Paused.\n"
 "Press Continue to search for additional relations.\n"
 msgstr ""
 "Prerušené.\n"
-"Pre hľadanie ďalšich vzťahov stlačiť Pokračovať.\n"
+"Pre hľadanie ďalšich vzťahov stlačte Pokračovať.\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:176
+#: DeepConnectionsGramplet.py:253
 #, python-format
 msgid ""
 "\n"
@@ -121,3 +142,15 @@ msgstr ""
 "\n"
 "Hľadanie ukončené. Zistené vzťahy v počte %d."
 
+#~ msgid "Deep Connections Gramplet"
+#~ msgstr "Gramplet Hlbšie vzťahy"
+
+#~ msgid "Deep Connections"
+#~ msgstr "Hlbšie vzťahy"
+
+#~ msgid ""
+#~ "\n"
+#~ "   who is a %s of "
+#~ msgstr ""
+#~ "\n"
+#~ "   je %s osoby "

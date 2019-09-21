@@ -22,7 +22,7 @@
 Gramps registration file
 """
 
-MODULE_VERSION="5.0"
+MODULE_VERSION="5.1"
 
 #------------------------------------------------------------------------
 #
@@ -34,7 +34,7 @@ register(TOOL,
 id    = 'associationstool',
 name  = _("Check Associations data"),
 description =  _("Will check the data on Association for people."),
-version = '1.0.5',
+version = '1.1.1',
 gramps_target_version = MODULE_VERSION,
 include_in_listing = True,
 status = STABLE,

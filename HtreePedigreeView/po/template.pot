@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"POT-Creation-Date: 2019-08-22 15:51-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,15 +17,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: HtreePedigreeView/HtreePedigreeView.gpr.py:45
+#: HtreePedigreeView/HtreePedigreeView.gpr.py:41
 msgid "H-Tree Pedigree"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.gpr.py:46
+#: HtreePedigreeView/HtreePedigreeView.gpr.py:42
 msgid "Charts"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.gpr.py:47
+#: HtreePedigreeView/HtreePedigreeView.gpr.py:43
 msgid ""
 "The view shows a space-efficient pedigree with ancestors of the selected "
 "person"
@@ -59,96 +59,96 @@ msgstr ""
 msgid "H-tree Pedigree View"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:699
-msgid "Person Filter Editor"
+#: HtreePedigreeView/HtreePedigreeView.py:681
+msgid "Organize Bookmarks"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:1542
+#: HtreePedigreeView/HtreePedigreeView.py:1585
 msgid "Relationship loop detected"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:1543
+#: HtreePedigreeView/HtreePedigreeView.py:1586
 msgid "A person was found to be his/her own ancestor."
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:1587
+#: HtreePedigreeView/HtreePedigreeView.py:1630
 msgid "Pre_vious"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:1588
+#: HtreePedigreeView/HtreePedigreeView.py:1631
 msgid "_Next"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:1589
+#: HtreePedigreeView/HtreePedigreeView.py:1632
 msgid "_Home"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:1611
+#: HtreePedigreeView/HtreePedigreeView.py:1654
 msgid "Mouse scroll direction"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:1615
+#: HtreePedigreeView/HtreePedigreeView.py:1658
 msgid "Top <-> Bottom"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:1622
+#: HtreePedigreeView/HtreePedigreeView.py:1665
 msgid "Left <-> Right"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:1640
+#: HtreePedigreeView/HtreePedigreeView.py:1683
 msgid "About H-Tree"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:1651
+#: HtreePedigreeView/HtreePedigreeView.py:1694
 msgid "_Add"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:1686
-#: HtreePedigreeView/HtreePedigreeView.py:1914
+#: HtreePedigreeView/HtreePedigreeView.py:1729
+#: HtreePedigreeView/HtreePedigreeView.py:1957
 msgid "_Edit"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:1691
-#: HtreePedigreeView/HtreePedigreeView.py:1919
+#: HtreePedigreeView/HtreePedigreeView.py:1734
+#: HtreePedigreeView/HtreePedigreeView.py:1962
 msgid "_Copy"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:1701
+#: HtreePedigreeView/HtreePedigreeView.py:1744
 msgid "Spouses"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:1735
+#: HtreePedigreeView/HtreePedigreeView.py:1778
 msgid "Siblings"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:1777
+#: HtreePedigreeView/HtreePedigreeView.py:1820
 msgid "Children"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:1814
+#: HtreePedigreeView/HtreePedigreeView.py:1857
 msgid "Parents"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:1851
+#: HtreePedigreeView/HtreePedigreeView.py:1894
 msgid "Add New Parents..."
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:1862
+#: HtreePedigreeView/HtreePedigreeView.py:1905
 msgid "Related"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:2046
+#: HtreePedigreeView/HtreePedigreeView.py:2089
 msgid "Show images"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:2055
+#: HtreePedigreeView/HtreePedigreeView.py:2098
 msgid "Show tags"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:2072
+#: HtreePedigreeView/HtreePedigreeView.py:2115
 msgid "Tree size"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:2076
+#: HtreePedigreeView/HtreePedigreeView.py:2119
 msgid "Layout"
 msgstr ""

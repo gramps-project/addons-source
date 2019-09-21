@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"POT-Creation-Date: 2019-09-21 10:45+1000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,18 +25,22 @@ msgstr ""
 msgid "Will check the data on Association for people."
 msgstr ""
 
-#: AssociationsTool/associationstool.py:52
+#: AssociationsTool/associationstool.py:53
 msgid "Associations state tool"
 msgstr ""
 
-#: AssociationsTool/associationstool.py:75
+#: AssociationsTool/associationstool.py:80
 msgid "Name"
 msgstr ""
 
-#: AssociationsTool/associationstool.py:76
+#: AssociationsTool/associationstool.py:81
 msgid "Type of link"
 msgstr ""
 
-#: AssociationsTool/associationstool.py:77
+#: AssociationsTool/associationstool.py:82
 msgid "Of"
+msgstr ""
+
+#: AssociationsTool/associationstool.py:83
+msgid "Relationship Calculator"
 msgstr ""

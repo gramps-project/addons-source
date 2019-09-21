@@ -39,6 +39,7 @@ from gramps.gui.managedwindow import ManagedWindow
 
 from gramps.gui.plug import tool
 from gramps.gen.display.name import displayer as name_displayer
+from gramps.gen.relationship import get_relationship_calculator
 
 #-------------------------------------------------------------------------
 #
@@ -56,6 +57,8 @@ class AssociationsTool(tool.Tool, ManagedWindow):
                                                  self.__class__)
 
         stats_list = []
+        relationship = get_relationship_calculator()
+        rel = ""
 
         plist = dbstate.db.get_person_handles(sort_handles=True)
 
@@ -68,6 +71,8 @@ class AssociationsTool(tool.Tool, ManagedWindow):
                     (a, b, c, two, value) = ref
                     person2 = dbstate.db.get_person_from_handle(two)
                     name2 = name_displayer.display(person2)
+                    rel = relationship.get_one_relationship(
+                        dbstate.db, person2, person)
                     stats_list.append((name1, value, name2))
 
         if uistate:
@@ -75,6 +80,7 @@ class AssociationsTool(tool.Tool, ManagedWindow):
                 (_('Name'), 0, 200),
                 (_('Type of link'), 1, 200),
                 (_('Of'), 2, 200),
+                (_('Relationship Calculator'), 2, 200),
                 ]
 
             treeview = Gtk.TreeView()
@@ -83,7 +89,7 @@ class AssociationsTool(tool.Tool, ManagedWindow):
                 model.add(entry, entry[0])
 
             window = Gtk.Window()
-            window.set_default_size(800, 600)
+            window.set_default_size(1000, 600)
             s = Gtk.ScrolledWindow()
             s.add(treeview)
             window.add(s)
@@ -92,10 +98,10 @@ class AssociationsTool(tool.Tool, ManagedWindow):
             self.show()
 
         else:
-            print('\t%s'*3 % ('Name','Type of link','Of'))
+            print('\t%s'*4 % ('Name','Type of link','Of','RelCal'))
             print()
             for entry in stats_list:
-                print('\t%s'*3 % entry)
+                print('\t%s'*4 % entry)
 
     def build_menu_names(self, obj):
         return (self.label,None)

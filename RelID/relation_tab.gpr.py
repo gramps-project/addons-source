@@ -22,7 +22,7 @@
 GRAMPS registration file
 """
 
-MODULE_VERSION="5.0"
+MODULE_VERSION="5.1"
 
 #------------------------------------------------------------------------
 #
@@ -34,7 +34,7 @@ register(TOOL,
 id    = 'relationtab',
 name  = _("Display relations and distances with the home person"),
 description =  _("Will display relational informations with the home person"),
-version = '1.0.11',
+version = '1.0.13',
 gramps_target_version = MODULE_VERSION,
 include_in_listing = False,
 status = STABLE,

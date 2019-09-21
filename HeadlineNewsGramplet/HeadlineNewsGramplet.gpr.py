@@ -1,6 +1,6 @@
 register(GRAMPLET,
-         id="Headline News Gramplet",
-         name=_("Headline News Gramplet"),
+         id="Headline News",
+         name=_("Headline News"),
          description = _("Gramplet that shows the latest Gramps news"),
          status = STABLE,
          fname="HeadlineNewsGramplet.py",
@@ -8,7 +8,7 @@ register(GRAMPLET,
          expand=True,
          gramplet = 'HeadlineNewsGramplet',
          gramplet_title=_("Headline News"),
-         version = '1.0.34',
-         gramps_target_version="5.0",
+         version = '1.0.38',
+         gramps_target_version="5.1",
          help_url="HeadlineNewsGramplet"
          )

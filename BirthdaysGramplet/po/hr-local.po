@@ -1,0 +1,36 @@
+# Croatian translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) Gramps project
+# Milo Ivir <mail@milotype.de>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2019-03-08 14:37+0100\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.1\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Language: hr\n"
+
+#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:4
+#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:12
+msgid "Birthdays Gramplet"
+msgstr "Rođendani – Gramplet"
+
+#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:5
+msgid "a gramplet that displays the birthdays of the living people"
+msgstr "gramplet prikazuje rođendane živih osoba"
+
+#: BirthdaysGramplet/BirthdaysGramplet.py:41
+msgid "No Family Tree loaded."
+msgstr "Nijedan rodoslov nije učitan."
+
+#: BirthdaysGramplet/BirthdaysGramplet.py:50
+msgid "Processing..."
+msgstr "Obrada ..."

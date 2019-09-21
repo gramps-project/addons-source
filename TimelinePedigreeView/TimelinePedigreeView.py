@@ -55,6 +55,7 @@ from gramps.gen.utils.libformatting import FormattingHelper
 from gramps.gen.utils.thumbnails import get_thumbnail_path
 from gramps.gen.errors import WindowActiveError
 from gramps.gui.editors import EditPerson, EditFamily
+from gramps.gui.editors import FilterEditor
 from gramps.gui.ddtargets import DdTargets
 from gramps.gen.config import config
 from gramps.gui.views.bookmarks import PersonBookmarks
@@ -63,6 +64,7 @@ from gramps.gui.dialog import RunDatabaseRepair, ErrorDialog
 from gramps.gui.utils import is_right_click
 from gramps.gen.constfunc import is_quartz
 from gramps.gen.const import GRAMPS_LOCALE as glocale
+from gramps.gen.utils.symbols import Symbols
 try:
     trans = glocale.get_addon_translator(__file__)
 except ValueError:
@@ -339,19 +341,11 @@ class TimelinePedigreeView(NavigationView):
                                       PersonBookmarks,
                                       nav_group)
 
-        self.func_list = {
-            'F2' : self.kb_goto_home,
-            'F3' : self.kb_change_style,
-            'F4' : self.kb_change_direction,
-            'F6' : self.kb_plus_generation,
-            'F5' : self.kb_minus_generation,
-            '<CONTROL>J' : self.jump,
-            }
-
         self.dbstate = dbstate
+        self.uistate = uistate
         self.dbstate.connect('database-changed', self.change_db)
 
-        self.additional_uis.append(self.additional_ui())
+        self.additional_uis.append(self.additional_ui)
 
         # Tree Dimensions
         self.generations_in_tree = [3, 4]
@@ -397,7 +391,7 @@ class TimelinePedigreeView(NavigationView):
         # Default - not show, for mo fast display hight tree
         self.show_unknown_peoples = self.cman.get('interface.show-unknown-people')
 
-        self.format_helper = FormattingHelper(self.dbstate)
+        self.format_helper = FormattingHelper(self.dbstate, self.uistate)
 
         # Depth of tree.
         self._depth = 1
@@ -412,6 +406,11 @@ class TimelinePedigreeView(NavigationView):
         self.gtklayout_lines = []
         self.gtklayout_boxes = []
         self._birth_cache = {}
+        self.uistate.connect('font-changed', self.font_changed)
+
+    def font_changed(self):
+        self.format_helper.reload_symbols()
+        self.person_rebuild()
 
     def on_delete(self):
         """Save the configuration settings on shutdown."""
@@ -465,40 +464,91 @@ class TimelinePedigreeView(NavigationView):
 
         return self.scrolledwindow
 
-    def additional_ui(self):
-        """
-        Specifies the UIManager XML code that defines the menus and buttons
-        associated with the interface.
-        """
-        return '''<ui>
-          <menubar name="MenuBar">
-            <menu action="GoMenu">
-              <placeholder name="CommonGo">
-                <menuitem action="Back"/>
-                <menuitem action="Forward"/>
-                <separator/>
-                <menuitem action="HomePerson"/>
-                <separator/>
-              </placeholder>
-            </menu>
-            <menu action="EditMenu">
-              <menuitem action="FilterEdit"/>
-            </menu>
-            <menu action="BookMenu">
-              <placeholder name="AddEditBook">
-                <menuitem action="AddBook"/>
-                <menuitem action="EditBook"/>
-              </placeholder>
-            </menu>
-          </menubar>
-          <toolbar name="ToolBar">
-            <placeholder name="CommonNavigation">
-              <toolitem action="Back"/>
-              <toolitem action="Forward"/>
-              <toolitem action="HomePerson"/>
-            </placeholder>
-          </toolbar>
-        </ui>'''
+    additional_ui = [  # Defines the UI string for UIManager
+        '''
+      <placeholder id="CommonGo">
+      <section>
+        <item>
+          <attribute name="action">win.Back</attribute>
+          <attribute name="label" translatable="yes">_Back</attribute>
+        </item>
+        <item>
+          <attribute name="action">win.Forward</attribute>
+          <attribute name="label" translatable="yes">_Forward</attribute>
+        </item>
+      </section>
+      <section>
+        <item>
+          <attribute name="action">win.HomePerson</attribute>
+          <attribute name="label" translatable="yes">_Home</attribute>
+        </item>
+      </section>
+      </placeholder>
+''',
+        '''
+      <placeholder id='otheredit'>
+        <item>
+          <attribute name="action">win.FilterEdit</attribute>
+          <attribute name="label" translatable="yes">'''
+        '''Person Filter Editor</attribute>
+        </item>
+      </placeholder>
+''',
+        '''
+      <section id="AddEditBook">
+        <item>
+          <attribute name="action">win.AddBook</attribute>
+          <attribute name="label" translatable="yes">_Add Bookmark</attribute>
+        </item>
+        <item>
+          <attribute name="action">win.EditBook</attribute>
+          <attribute name="label" translatable="no">%s...</attribute>
+        </item>
+      </section>
+''' % _('Organize Bookmarks'),  # Following are the Toolbar items
+        '''
+    <placeholder id='CommonNavigation'>
+    <child groups='RO'>
+      <object class="GtkToolButton">
+        <property name="icon-name">go-previous</property>
+        <property name="action-name">win.Back</property>
+        <property name="tooltip_text" translatable="yes">'''
+        '''Go to the previous object in the history</property>
+        <property name="label" translatable="yes">_Back</property>
+        <property name="use-underline">True</property>
+      </object>
+      <packing>
+        <property name="homogeneous">False</property>
+      </packing>
+    </child>
+    <child groups='RO'>
+      <object class="GtkToolButton">
+        <property name="icon-name">go-next</property>
+        <property name="action-name">win.Forward</property>
+        <property name="tooltip_text" translatable="yes">'''
+        '''Go to the next object in the history</property>
+        <property name="label" translatable="yes">_Forward</property>
+        <property name="use-underline">True</property>
+      </object>
+      <packing>
+        <property name="homogeneous">False</property>
+      </packing>
+    </child>
+    <child groups='RO'>
+      <object class="GtkToolButton">
+        <property name="icon-name">go-home</property>
+        <property name="action-name">win.HomePerson</property>
+        <property name="tooltip_text" translatable="yes">'''
+        '''Go to the default person</property>
+        <property name="label" translatable="yes">_Home</property>
+        <property name="use-underline">True</property>
+      </object>
+      <packing>
+        <property name="homogeneous">False</property>
+      </packing>
+    </child>
+    </placeholder>
+    ''']
 
     def define_actions(self):
         """
@@ -515,12 +565,15 @@ class TimelinePedigreeView(NavigationView):
         """
         NavigationView.define_actions(self)
 
-        self._add_action('FilterEdit',  None, _('Person Filter Editor'),
-                        callback=self.filter_editor)
+        self._add_action('FilterEdit', self.filter_editor)
+        self._add_action('PRIMARY-J', self.jump, '<PRIMARY>J')
+        self._add_action('F2', self.kb_goto_home, 'F2')
+        self._add_action('F3', self.kb_change_style, 'F3')
+        self._add_action('F4', self.kb_change_direction, 'F4')
+        self._add_action('F5', self.kb_minus_generation, 'F5')
+        self._add_action('F6', self.kb_plus_generation, 'F6')
 
-    def filter_editor(self, obj):
-        from FilterEditor import FilterEditor
-
+    def filter_editor(self, *obj):
         try:
             FilterEditor('Person', CUSTOM_FILTERS,
                          self.dbstate, self.uistate)
@@ -1046,7 +1099,7 @@ class TimelinePedigreeView(NavigationView):
 
         cr.restore()
 
-    def home(self, menuitem):
+    def home(self, *obj):
         """Change root person to default person for database."""
         defperson = self.dbstate.db.get_default_person()
         if defperson:
@@ -1354,26 +1407,26 @@ class TimelinePedigreeView(NavigationView):
         else:
             self.scroll_direction = False
 
-    def kb_goto_home(self):
+    def kb_goto_home(self, *obj):
         """Goto home person from keyboard."""
         self.home(None)
 
-    def kb_plus_generation(self):
+    def kb_plus_generation(self, *obj):
         """Increment size of tree from keyboard."""
         self.change_force_size_cb(None, self.force_size + 1)
 
-    def kb_minus_generation(self):
+    def kb_minus_generation(self, *obj):
         """Decrement size of tree from keyboard."""
         self.change_force_size_cb(None, self.force_size - 1)
 
-    def kb_change_style(self):
+    def kb_change_style(self, *obj):
         """Change style of tree from keyboard."""
         next_style = self.tree_style + 1
         if next_style > 2:
             next_style = 0
         self.change_tree_style_cb(None, next_style)
 
-    def kb_change_direction(self):
+    def kb_change_direction(self, *obj):
         """Change direction of tree from keyboard."""
         next_direction = self.tree_direction + 1
         if next_direction > 3:

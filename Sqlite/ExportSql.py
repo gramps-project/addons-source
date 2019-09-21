@@ -36,6 +36,7 @@
 
 import sqlite3 as sqlite
 import time
+from collections import abc
 
 #------------------------------------------------------------------------
 #
@@ -52,12 +53,14 @@ log = logging.getLogger(".ExportSql")
 #------------------------------------------------------------------------
 from gramps.gen.utils.id import create_id
 from gramps.gen.const import GRAMPS_LOCALE as glocale
+from gramps.gui.plug.export import WriterOptionBox  # don't remove, used!!!
 try:
     trans = glocale.get_addon_translator(__file__)
 except ValueError:
     trans = glocale.translation
 _ = trans.gettext
 ngettext = trans.ngettext
+
 
 #-------------------------------------------------------------------------
 #
@@ -73,42 +76,18 @@ def lookup(index, event_ref_list):
     else:
         count = 0
         for event_ref in event_ref_list:
-            (private, note_list, attribute_list, ref, role) = event_ref
+            (_private, _note_list, _attribute_list, ref, _role) = event_ref
             if index == count:
                 return ref
             count += 1
         return None
 
-def makeDB(db):
-    db.query("""drop table note;""")
-    db.query("""drop table person;""")
-    db.query("""drop table event;""")
-    db.query("""drop table family;""")
-    db.query("""drop table repository;""")
-    db.query("""drop table repository_ref;""")
-    db.query("""drop table date;""")
-    db.query("""drop table place;""")
-    db.query("""drop table place_ref;""")
-    db.query("""drop table place_name;""")
-    db.query("""drop table citation;""")
-    db.query("""drop table source;""")
-    db.query("""drop table media;""")
-    db.query("""drop table name;""")
-    db.query("""drop table surname;""")
-    db.query("""drop table link;""")
-    db.query("""drop table markup;""")
-    db.query("""drop table event_ref;""")
-    db.query("""drop table child_ref;""")
-    db.query("""drop table person_ref;""")
-    db.query("""drop table lds;""")
-    db.query("""drop table media_ref;""")
-    db.query("""drop table address;""")
-    db.query("""drop table location;""")
-    db.query("""drop table attribute;""")
-    db.query("""drop table url;""")
-    db.query("""drop table datamap;""")
-    db.query("""drop table tag;""")
 
+def makeDB(db, callback):
+    count = 0
+    total = 28
+
+    db.query("""drop table note;""")
     db.query("""CREATE TABLE note (
                   handle CHARACTER(25) PRIMARY KEY,
                   gid    CHARACTER(25),
@@ -118,7 +97,10 @@ def makeDB(db):
                   note_type2   TEXT,
                   change INTEGER,
                   private BOOLEAN);""")
+    count += 1
+    callback(100 * count / total)
 
+    db.query("""drop table name;""")
     db.query("""CREATE TABLE name (
                   handle CHARACTER(25) PRIMARY KEY,
                   primary_name BOOLEAN,
@@ -134,7 +116,10 @@ def makeDB(db):
                   call TEXT,
                   nick TEXT,
                   famnick TEXT);""")
+    count += 1
+    callback(100 * count / total)
 
+    db.query("""drop table surname;""")
     db.query("""CREATE TABLE surname (
                   handle CHARACTER(25),
                   surname TEXT,
@@ -143,10 +128,15 @@ def makeDB(db):
                   origin_type0 INTEGER,
                   origin_type1 TEXT,
                   connector TEXT);""")
+    count += 1
+    callback(100 * count / total)
 
     db.query("""CREATE INDEX idx_surname_handle ON
                   surname(handle);""")
+    count += 1
+    callback(100 * count / total)
 
+    db.query("""drop table date;""")
     db.query("""CREATE TABLE date (
                   handle CHARACTER(25) PRIMARY KEY,
                   calendar INTEGER,
@@ -163,7 +153,10 @@ def makeDB(db):
                   text TEXT,
                   sortval INTEGER,
                   newyear INTEGER);""")
+    count += 1
+    callback(100 * count / total)
 
+    db.query("""drop table person;""")
     db.query("""CREATE TABLE person (
                   handle CHARACTER(25) PRIMARY KEY,
                   gid CHARACTER(25),
@@ -172,7 +165,10 @@ def makeDB(db):
                   birth_ref_handle TEXT,
                   change INTEGER,
                   private BOOLEAN);""")
+    count += 1
+    callback(100 * count / total)
 
+    db.query("""drop table family;""")
     db.query("""CREATE TABLE family (
                  handle CHARACTER(25) PRIMARY KEY,
                  gid CHARACTER(25),
@@ -182,7 +178,10 @@ def makeDB(db):
                  the_type1 TEXT,
                  change INTEGER,
                  private BOOLEAN);""")
+    count += 1
+    callback(100 * count / total)
 
+    db.query("""drop table place;""")
     db.query("""CREATE TABLE place (
                  handle CHARACTER(25) PRIMARY KEY,
                  gid CHARACTER(25),
@@ -196,18 +195,27 @@ def makeDB(db):
                  lang TEXT,
                  change INTEGER,
                  private BOOLEAN);""")
+    count += 1
+    callback(100 * count / total)
 
+    db.query("""drop table place_ref;""")
     db.query("""CREATE TABLE place_ref (
                    handle             CHARACTER(25) PRIMARY KEY,
                    from_place_handle  CHARACTER(25),
                    to_place_handle    CHARACTER(25));""")
+    count += 1
+    callback(100 * count / total)
 
+    db.query("""drop table place_name;""")
     db.query("""CREATE TABLE place_name (
                   handle        CHARACTER(25) PRIMARY KEY,
                   from_handle   CHARACTER(25),
                   value         CHARACTER(25),
                   lang          CHARACTER(25));""")
+    count += 1
+    callback(100 * count / total)
 
+    db.query("""drop table event;""")
     db.query("""CREATE TABLE event (
                  handle CHARACTER(25) PRIMARY KEY,
                  gid CHARACTER(25),
@@ -216,7 +224,10 @@ def makeDB(db):
                  description TEXT,
                  change INTEGER,
                  private BOOLEAN);""")
+    count += 1
+    callback(100 * count / total)
 
+    db.query("""drop table citation;""")
     db.query("""CREATE TABLE citation (
                  handle CHARACTER(25) PRIMARY KEY,
                  gid CHARACTER(25),
@@ -225,7 +236,10 @@ def makeDB(db):
                  source_handle CHARACTER(25),
                  change INTEGER,
                  private BOOLEAN);""")
+    count += 1
+    callback(100 * count / total)
 
+    db.query("""drop table source;""")
     db.query("""CREATE TABLE source (
                  handle CHARACTER(25) PRIMARY KEY,
                  gid CHARACTER(25),
@@ -235,7 +249,10 @@ def makeDB(db):
                  abbrev TEXT,
                  change INTEGER,
                  private BOOLEAN);""")
+    count += 1
+    callback(100 * count / total)
 
+    db.query("""drop table media;""")
     db.query("""CREATE TABLE media (
                  handle CHARACTER(25) PRIMARY KEY,
                  gid CHARACTER(25),
@@ -245,7 +262,10 @@ def makeDB(db):
                  checksum INTEGER,
                  change INTEGER,
                  private BOOLEAN);""")
+    count += 1
+    callback(100 * count / total)
 
+    db.query("""drop table repository_ref;""")
     db.query("""CREATE TABLE repository_ref (
                  handle CHARACTER(25) PRIMARY KEY,
                  ref CHARACTER(25),
@@ -253,7 +273,10 @@ def makeDB(db):
                  source_media_type0 INTEGER,
                  source_media_type1 TEXT,
                  private BOOLEAN);""")
+    count += 1
+    callback(100 * count / total)
 
+    db.query("""drop table repository;""")
     db.query("""CREATE TABLE repository (
                  handle CHARACTER(25) PRIMARY KEY,
                  gid CHARACTER(25),
@@ -262,36 +285,54 @@ def makeDB(db):
                  name TEXT,
                  change INTEGER,
                  private BOOLEAN);""")
+    count += 1
+    callback(100 * count / total)
 
     # One link to link them all
+    db.query("""drop table link;""")
     db.query("""CREATE TABLE link (
                  from_type CHARACTER(25),
                  from_handle CHARACTER(25),
                  to_type CHARACTER(25),
                  to_handle CHARACTER(25));""")
+    count += 1
+    callback(100 * count / total)
 
     db.query("""CREATE INDEX idx_link_to ON
                   link(from_type, from_handle, to_type);""")
+    count += 1
+    callback(100 * count / total)
 
+    db.query("""drop table markup;""")
     db.query("""CREATE TABLE markup (
                  handle CHARACTER(25) PRIMARY KEY,
                  markup0 INTEGER,
                  markup1 TEXT,
                  value INTEGER,
                  start_stop_list TEXT);""")
+    count += 1
+    callback(100 * count / total)
 
+    db.query("""drop table event_ref;""")
     db.query("""CREATE TABLE event_ref (
                  handle CHARACTER(25) PRIMARY KEY,
                  ref CHARACTER(25),
                  role0 INTEGER,
                  role1 TEXT,
                  private BOOLEAN);""")
+    count += 1
+    callback(100 * count / total)
 
+    db.query("""drop table person_ref;""")
     db.query("""CREATE TABLE person_ref (
                  handle CHARACTER(25) PRIMARY KEY,
+                 ref CHARACTER(25),
                  description TEXT,
                  private BOOLEAN);""")
+    count += 1
+    callback(100 * count / total)
 
+    db.query("""drop table child_ref;""")
     db.query("""CREATE TABLE child_ref (
                  handle CHARACTER(25) PRIMARY KEY,
                  ref CHARACTER(25),
@@ -300,7 +341,10 @@ def makeDB(db):
                  mrel0 INTEGER,
                  mrel1 CHARACTER(25),
                  private BOOLEAN);""")
+    count += 1
+    callback(100 * count / total)
 
+    db.query("""drop table lds;""")
     db.query("""CREATE TABLE lds (
                  handle CHARACTER(25) PRIMARY KEY,
                  type INTEGER,
@@ -309,7 +353,10 @@ def makeDB(db):
                  temple TEXT,
                  status INTEGER,
                  private BOOLEAN);""")
+    count += 1
+    callback(100 * count / total)
 
+    db.query("""drop table media_ref;""")
     db.query("""CREATE TABLE media_ref (
                  handle CHARACTER(25) PRIMARY KEY,
                  ref CHARACTER(25),
@@ -318,11 +365,17 @@ def makeDB(db):
                  role2 INTEGER,
                  role3 INTEGER,
                  private BOOLEAN);""")
+    count += 1
+    callback(100 * count / total)
 
+    db.query("""drop table address;""")
     db.query("""CREATE TABLE address (
                 handle CHARACTER(25) PRIMARY KEY,
                 private BOOLEAN);""")
+    count += 1
+    callback(100 * count / total)
 
+    db.query("""drop table location;""")
     db.query("""CREATE TABLE location (
                  handle CHARACTER(25) PRIMARY KEY,
                  street TEXT,
@@ -334,14 +387,20 @@ def makeDB(db):
                  postal TEXT,
                  phone TEXT,
                  parish TEXT);""")
+    count += 1
+    callback(100 * count / total)
 
+    db.query("""drop table attribute;""")
     db.query("""CREATE TABLE attribute (
                  handle CHARACTER(25) PRIMARY KEY,
                  the_type0 INTEGER,
                  the_type1 TEXT,
                  value TEXT,
                  private BOOLEAN);""")
+    count += 1
+    callback(100 * count / total)
 
+    db.query("""drop table url;""")
     db.query("""CREATE TABLE url (
                  handle CHARACTER(25) PRIMARY KEY,
                  path TEXT,
@@ -350,7 +409,10 @@ def makeDB(db):
                  type1 TEXT,
                  private BOOLEAN);
                  """)
+    count += 1
+    callback(100 * count / total)
 
+    db.query("""drop table datamap;""")
     db.query("""CREATE TABLE datamap (
                  from_handle CHARACTER(25),
                  the_type0 INTEGER,
@@ -358,7 +420,10 @@ def makeDB(db):
                  value_field TXT,
                  private BOOLEAN);
                  """)
+    count += 1
+    callback(100 * count / total)
 
+    db.query("""drop table tag;""")
     db.query("""CREATE TABLE tag (
                  handle CHARACTER(25) PRIMARY KEY,
                  name TEXT,
@@ -366,6 +431,9 @@ def makeDB(db):
                  priority INTEGER,
                  change INTEGER);
                  """)
+    count += 1
+    callback(100 * count / total)
+
 
 class Database(object):
     """
@@ -406,36 +474,41 @@ def export_alt_place_name_list(db, handle, alt_place_name_list):
     for place_name in alt_place_name_list:
         export_place_name(db, handle, place_name)
 
+
 def export_place_name(db, handle, place_name):
     # alt_place_name_list = [('Ohio', None, ''), ...] [(value, date, lang)...]
     (value, date, lang) = place_name
     ref_handle = create_id()
-    db.query("""insert into place_name (handle, from_handle, value, lang)
-                   VALUES (?, ?, ?, ?)
-    ;""", ref_handle, handle, value, lang)
+    db.query("insert into place_name (handle, from_handle, value, lang)"
+             " VALUES (?, ?, ?, ?);", ref_handle, handle, value, lang)
     export_date(db, "place_name", ref_handle, date)
 
+
 def export_place_ref_list(db, handle, place_ref_list):
-    # place_ref_list = Enclosed by:  [('4ECKQCWCLO5YIHXEXC', None)] [(handle, date)...]
+    # place_ref_list = Enclosed by:  [('4ECKQCWCLO5YIHXEXC', None)]
+    # [(handle, date)...]
     for place_ref in place_ref_list:
         export_place_ref(db, handle, place_ref)
+
 
 def export_place_ref(db, handle, place_ref):
     (to_place_handle, date) = place_ref
     ref_handle = create_id()
-    db.query("""insert into place_ref (handle, from_place_handle, to_place_handle)
-                   VALUES (?, ?, ?)
-    ;""", ref_handle, handle, to_place_handle)
+    db.query("insert into place_ref"
+             " (handle, from_place_handle, to_place_handle) VALUES (?, ?, ?);",
+             ref_handle, handle, to_place_handle)
     export_date(db, "place_ref", ref_handle, date)
+
 
 def export_location_list(db, from_type, from_handle, locations):
     for location in locations:
         export_location(db, from_type, from_handle, location)
 
+
 def export_url_list(db, from_type, from_handle, urls):
     for url in urls:
-        # (False, u'http://www.gramps-project.org/', u'loleach', (0, u'kaabgo'))
-        (private, path, desc, type) = url
+        # (False, 'http://www.gramps-project.org/', 'loleach', (0, 'kaabgo'))
+        (private, path, desc, type_) = url
         handle = create_id()
         db.query("""insert INTO url (
                  handle,
@@ -448,11 +521,12 @@ def export_url_list(db, from_type, from_handle, urls):
                  handle,
                  path,
                  desc,
-                 type[0],
-                 type[1],
+                 type_[0],
+                 type_[1],
                  private)
         # finally, link this to parent
         export_link(db, from_type, from_handle, "url", handle)
+
 
 def export_person_ref_list(db, from_type, from_handle, person_ref_list):
     for person_ref in person_ref_list:
@@ -461,26 +535,30 @@ def export_person_ref_list(db, from_type, from_handle, person_ref_list):
          note_list,
          handle,
          desc) = person_ref
+        ref_handle = create_id()
         db.query("""INSERT INTO person_ref (
                     handle,
+                    ref,
                     description,
-                    private) VALUES (?, ?, ?);""",
-                 handle,
+                    private) VALUES (?, ?, ?, ?);""",
+                 ref_handle, handle,
                  desc,
                  private
                  )
-        export_list(db, "person_ref", handle, "note", note_list)
-        export_citation_list(db, "person_ref", handle, citation_list)
+        export_list(db, "person_ref", ref_handle, "note", note_list)
+        export_citation_list(db, "person_ref", ref_handle, citation_list)
         # And finally, make a link from parent to new object
-        export_link(db, from_type, from_handle, "person_ref", handle)
+        export_link(db, from_type, from_handle, "person_ref", ref_handle)
+
 
 def export_lds(db, from_type, from_handle, data):
-    (lcitation_list, lnote_list, date, type, place,
+    (lcitation_list, lnote_list, date, type_, place,
      famc, temple, status, private) = data
     lds_handle = create_id()
-    db.query("""INSERT into lds (handle, type, place, famc, temple, status, private)
-             VALUES (?,?,?,?,?,?,?);""",
-             lds_handle, type, place, famc, temple, status, private)
+    db.query("INSERT into lds"
+             " (handle, type, place, famc, temple, status, private) "
+             "VALUES (?,?,?,?,?,?,?);",
+             lds_handle, type_, place, famc, temple, status, private)
     export_link(db, "lds", lds_handle, "place", place)
     export_list(db, "lds", lds_handle, "note", lnote_list)
     export_date(db, "lds", lds_handle, date)
@@ -488,8 +566,10 @@ def export_lds(db, from_type, from_handle, data):
     # And finally, make a link from parent to new object
     export_link(db, from_type, from_handle, "lds", lds_handle)
 
+
 def export_citation_ref(db, from_type, from_handle, citation_handle):
     export_link(db, from_type, from_handle, "citation", citation_handle)
+
 
 def export_source(db, handle, gid, title, author, pubinfo, abbrev, change,
                   private):
@@ -512,8 +592,9 @@ def export_source(db, handle, gid, title, author, pubinfo, abbrev, change,
              change,
              private)
 
+
 def export_note(db, data):
-    (handle, gid, styled_text, format, note_type,
+    (handle, gid, styled_text, format_, note_type,
      change, tag_list, private) = data
     text, markup_list = styled_text
     db.query("""INSERT into note (
@@ -526,16 +607,17 @@ def export_note(db, data):
                   change,
                   private) values (?, ?, ?, ?,
                                    ?, ?, ?, ?);""",
-             handle, gid, text, format, note_type[0],
+             handle, gid, text, format_, note_type[0],
              note_type[1], change, private)
     for markup in markup_list:
         markup_code, value, start_stop_list = markup
-        export_markup(db, "note", handle, markup_code[0], markup_code[1], value,
-                      str(start_stop_list)) # Not normal form; use eval
+        export_markup(db, "note", handle, markup_code[0], markup_code[1],
+                      value, str(start_stop_list))  # Not normal form; use eval
     export_list(db, "note", handle, "tag", tag_list)
 
-def export_markup(db, from_type, from_handle,  markup_code0, markup_code1, value,
-                  start_stop_list):
+
+def export_markup(db, from_type, from_handle,  markup_code0, markup_code1,
+                  value, start_stop_list):
     markup_handle = create_id()
     db.query("""INSERT INTO markup (
                  handle,
@@ -547,6 +629,7 @@ def export_markup(db, from_type, from_handle,  markup_code0, markup_code1, value
              start_stop_list)
     # And finally, make a link from parent to new object
     export_link(db, from_type, from_handle, "markup", markup_handle)
+
 
 def export_event(db, data):
     (handle, gid, the_type, date, description, place_handle,
@@ -575,6 +658,7 @@ def export_event(db, data):
     export_media_ref_list(db, "event", handle, media_list)
     export_citation_list(db, "event", handle, citation_list)
 
+
 def export_event_ref(db, from_type, from_handle, event_ref):
     (private, note_list, attribute_list, ref, role) = event_ref
     handle = create_id()
@@ -594,28 +678,29 @@ def export_event_ref(db, from_type, from_handle, event_ref):
     # finally, link this to parent
     export_link(db, from_type, from_handle, "event_ref", handle)
 
+
 def export_person(db, person):
-    (handle,        #  0
-     gid,          #  1
-     gender,             #  2
-     primary_name,       #  3
-     alternate_names,    #  4
-     death_ref_index,    #  5
-     birth_ref_index,    #  6
-     event_ref_list,     #  7
-     family_list,        #  8
-     parent_family_list, #  9
-     media_list,         # 10
-     address_list,       # 11
-     attribute_list,     # 12
-     urls,               # 13
-     lds_ord_list,       # 14
-     pcitation_list,       # 15
-     pnote_list,         # 16
-     change,             # 17
-     tag_list,             # 18
-     private,           # 19
-     person_ref_list,    # 20
+    (handle,              # 0
+     gid,                 # 1
+     gender,              # 2
+     primary_name,        # 3
+     alternate_names,     # 4
+     death_ref_index,     # 5
+     birth_ref_index,     # 6
+     event_ref_list,      # 7
+     family_list,         # 8
+     parent_family_list,  # 9
+     media_list,          # 10
+     address_list,        # 11
+     attribute_list,      # 12
+     urls,                # 13
+     lds_ord_list,        # 14
+     pcitation_list,      # 15
+     pnote_list,          # 16
+     change,              # 17
+     tag_list,            # 18
+     private,             # 19
+     person_ref_list,     # 20
      ) = person
     db.query("""INSERT INTO person (
                   handle,
@@ -665,8 +750,10 @@ def export_person(db, person):
     for name in alternate_names:
         export_name(db, "person", handle, False, name)
 
+
 def export_date(db, from_type, from_handle, data):
-    if data is None: return
+    if data is None:
+        return
     (calendar, modifier, quality, dateval, text, sortval, newyear) = data
     if len(dateval) == 4:
         day1, month1, year1, slash1 = dateval
@@ -699,6 +786,7 @@ def export_date(db, from_type, from_handle, data):
              text, sortval, newyear)
     export_link(db, from_type, from_handle, "date", date_handle)
 
+
 def export_surname(db, name_handle, surname_list):
     for data in surname_list:
         surname_handle = create_id()
@@ -714,6 +802,7 @@ def export_surname(db, name_handle, surname_list):
                  surname_handle, surname, prefix, primary, origin_type[0],
                  origin_type[1], connector)
         export_link(db, "name", name_handle, "surname", surname_handle)
+
 
 def export_name(db, from_type, from_handle, primary, data):
     if data:
@@ -750,6 +839,7 @@ def export_name(db, from_type, from_handle, primary, data):
         # And finally, make a link from parent to new object
         export_link(db, from_type, from_handle, "name", handle)
 
+
 def export_attribute(db, from_type, from_handle, attribute):
     (private, citation_list, note_list, the_type, value) = attribute
     handle = create_id()
@@ -765,13 +855,16 @@ def export_attribute(db, from_type, from_handle, attribute):
     # finally, link the parent to the address
     export_link(db, from_type, from_handle, "attribute", handle)
 
+
 def export_citation_list(db, from_type, from_handle, citation_list):
     for citation_handle in citation_list:
         export_citation_ref(db, from_type, from_handle, citation_handle)
 
+
 def export_media_ref_list(db, from_type, from_handle, media_list):
     for media in media_list:
         export_media_ref(db, from_type, from_handle, media)
+
 
 def export_media_ref(db, from_type, from_handle, media):
     (private, citation_list, note_list, attribute_list, ref, role) = media
@@ -795,9 +888,11 @@ def export_media_ref(db, from_type, from_handle, media):
     # And finally, make a link from parent to new object
     export_link(db, from_type, from_handle, "media_ref", handle)
 
+
 def export_attribute_list(db, from_type, from_handle, attr_list):
     for attribute in attr_list:
         export_attribute(db, from_type, from_handle, attribute)
+
 
 def export_child_ref_list(db, from_type, from_handle, to_type, ref_list):
     for child_ref in ref_list:
@@ -815,9 +910,11 @@ def export_child_ref_list(db, from_type, from_handle, to_type, ref_list):
         # And finally, make a link from parent to new object
         export_link(db, from_type, from_handle, "child_ref", handle)
 
+
 def export_list(db, from_type, from_handle, to_type, handle_list):
     for to_handle in handle_list:
         export_link(db, from_type, from_handle, to_type, to_handle)
+
 
 def export_link(db, from_type, from_handle, to_type, to_handle):
     if to_handle:
@@ -827,6 +924,7 @@ def export_link(db, from_type, from_handle, to_type, to_handle):
                    to_type,
                    to_handle) values (?, ?, ?, ?)""",
                  from_type, from_handle, to_type, to_handle)
+
 
 def export_datamap_list(db, from_type, from_handle, datamap):
     for private, data_type, data in datamap:
@@ -838,6 +936,7 @@ def export_datamap_list(db, from_type, from_handle, datamap):
                       private) values (?, ?, ?, ?, ?)""",
                  from_handle, data_type[0], data_type[1],
                  data, private)
+
 
 def export_address(db, from_type, from_handle, address):
     (private, acitation_list, anote_list, date, location) = address
@@ -852,13 +951,17 @@ def export_address(db, from_type, from_handle, address):
     # finally, link the parent to the address
     export_link(db, from_type, from_handle, "address", addr_handle)
 
+
 def export_location(db, from_type, from_handle, location):
-    if location == None: return
+    if location is None:
+        return
     if len(location) == 8:
-        (street, locality, city, county, state, country, postal, phone) = location
+        (street, locality, city, county, state, country, postal,
+         phone) = location
         parish = None
     elif len(location) == 2:
-        ((street, locality, city, county, state, country, postal, phone), parish) = location
+        ((street, locality, city, county, state, country, postal,
+          phone), parish) = location
     else:
         print("ERROR: what kind of location is this?", location)
         return
@@ -874,9 +977,11 @@ def export_location(db, from_type, from_handle, location):
                  postal,
                  phone,
                  parish) VALUES (?,?,?,?,?,?,?,?,?,?);""",
-             handle, street, locality, city, county, state, country, postal, phone, parish)
+             handle, street, locality, city, county, state, country,
+             postal, phone, parish)
     # finally, link the parent to the address
     export_link(db, from_type, from_handle, "location", handle)
+
 
 def export_repository_ref_list(db, from_type, from_handle, reporef_list):
     for repo in reporef_list:
@@ -903,10 +1008,16 @@ def export_repository_ref_list(db, from_type, from_handle, reporef_list):
         # finally, link this to parent
         export_link(db, from_type, from_handle, "repository_ref", handle)
 
-def exportData(database, filename, err_dialog=None, option_box=None,
-               callback=None):
-    if not callable(callback):
-        callback = lambda percent: None # dummy
+
+def dummy_callback():
+    pass
+
+
+def exportData(database, filename, user, option_box):
+    if isinstance(user.callback, abc.Callable):  # is really callable
+        callback = user.callback
+    else:
+        callback = dummy_callback  # dummy
 
     if option_box:
         option_box.parse_options()
@@ -926,9 +1037,9 @@ def exportData(database, filename, err_dialog=None, option_box=None,
     count = 0.0
 
     db = Database(filename)
-    makeDB(db)
+    makeDB(db, callback)
 
-    db.batch = True # don't commit till end
+    db.batch = True  # don't commit till end
     # ---------------------------------
     # Notes
     # ---------------------------------
@@ -938,7 +1049,7 @@ def exportData(database, filename, err_dialog=None, option_box=None,
             continue
         export_note(db, data.serialize())
         count += 1
-        callback(100 * count/total)
+        callback(100 * count / total)
 
     # ---------------------------------
     # Event
@@ -949,7 +1060,7 @@ def exportData(database, filename, err_dialog=None, option_box=None,
             continue
         export_event(db, data.serialize())
         count += 1
-        callback(100 * count/total)
+        callback(100 * count / total)
 
     # ---------------------------------
     # Person
@@ -960,7 +1071,7 @@ def exportData(database, filename, err_dialog=None, option_box=None,
             continue
         export_person(db, person.serialize())
         count += 1
-        callback(100 * count/total)
+        callback(100 * count / total)
 
     # ---------------------------------
     # Family
@@ -987,7 +1098,8 @@ def exportData(database, filename, err_dialog=None, option_box=None,
                  the_type[0], the_type[1], change,
                  private)
 
-        export_child_ref_list(db, "family", handle, "child_ref", child_ref_list)
+        export_child_ref_list(db, "family", handle, "child_ref",
+                              child_ref_list)
         export_list(db, "family", handle, "note", note_list)
         export_attribute_list(db, "family", handle, attribute_list)
         export_citation_list(db, "family", handle, citation_list)
@@ -1005,7 +1117,7 @@ def exportData(database, filename, err_dialog=None, option_box=None,
             export_lds(db, "family", handle, ldsord)
 
         count += 1
-        callback(100 * count/total)
+        callback(100 * count / total)
 
     # ---------------------------------
     # Repository
@@ -1014,8 +1126,8 @@ def exportData(database, filename, err_dialog=None, option_box=None,
         repository = database.get_repository_from_handle(repository_handle)
         if repository is None:
             continue
-        (handle, gid, the_type, name, note_list,
-         address_list, urls, change, tag_list, private) = repository.serialize()
+        (handle, gid, the_type, name, note_list, address_list,
+         urls, change, tag_list, private) = repository.serialize()
 
         db.query("""INSERT INTO repository (
                  handle,
@@ -1036,7 +1148,7 @@ def exportData(database, filename, err_dialog=None, option_box=None,
             export_address(db, "repository", handle, address)
 
         count += 1
-        callback(100 * count/total)
+        callback(100 * count / total)
 
     # ---------------------------------
     # Place
@@ -1087,8 +1199,10 @@ def exportData(database, filename, err_dialog=None, option_box=None,
         export_list(db, "place", handle, "note", note_list)
         export_list(db, "place", handle, "tag", tag_list)
 
-        #1. alt_place_name_list = [('Ohio', None, ''), ...] [(value, date, lang)...]
-        #2. place_ref_list = Enclosed by:  [('4ECKQCWCLO5YIHXEXC', None)] [(handle, date)...]
+        #1. alt_place_name_list = [('Ohio', None, ''), ...]
+        # [(value, date, lang)...]
+        #2. place_ref_list = Enclosed by:  [('4ECKQCWCLO5YIHXEXC', None)]
+        # [(handle, date)...]
 
         export_alt_place_name_list(db, handle, alt_place_name_list)
         export_place_ref_list(db, handle, place_ref_list)
@@ -1097,7 +1211,7 @@ def exportData(database, filename, err_dialog=None, option_box=None,
         export_location_list(db, "place_alt", handle, alt_location_list)
 
         count += 1
-        callback(100 * count/total)
+        callback(100 * count / total)
 
     # ---------------------------------
     # Citation
@@ -1106,24 +1220,16 @@ def exportData(database, filename, err_dialog=None, option_box=None,
         citation = database.get_citation_from_handle(citation_handle)
         if citation is None:
             continue
-        #(handle, gid, title,
-        # author, pubinfo,
-        # note_list,
-        # media_list,
-        # abbrev,
-        # change, datamap,
-        # reporef_list,
-        # private)
-        (handle,                           #  0
-         gid,                        #  1
-         date, #  2
-         page,                    #  3
-         confidence,                       #  4
-         source_handle,                    #  5
-         note_list,              #  6
-         media_list,             #  7
-         datamap,                          #  8
-         change,                           #  9
+        (handle,         # 0
+         gid,            # 1
+         date,           # 2
+         page,           # 3
+         confidence,     # 4
+         source_handle,  # 5
+         note_list,      # 6
+         media_list,     # 7
+         datamap,        # 8
+         change,         # 9
          tag_list,
          private) = citation.serialize()
         db.query("""INSERT into citation (
@@ -1148,7 +1254,7 @@ def exportData(database, filename, err_dialog=None, option_box=None,
         export_media_ref_list(db, "citation", handle, media_list)
         export_list(db, "citation", handle, "tag", tag_list)
         count += 1
-        callback(100 * count/total)
+        callback(100 * count / total)
 
     # ---------------------------------
     # Source
@@ -1167,14 +1273,15 @@ def exportData(database, filename, err_dialog=None, option_box=None,
          tag_list,
          private) = source.serialize()
 
-        export_source(db, handle, gid, title, author, pubinfo, abbrev, change, private)
+        export_source(db, handle, gid, title, author, pubinfo, abbrev,
+                      change, private)
         export_list(db, "source", handle, "note", note_list)
         export_list(db, "source", handle, "tag", tag_list)
         export_media_ref_list(db, "source", handle, media_list)
         export_datamap_list(db, "source", handle, datamap)
         export_repository_ref_list(db, "source", handle, reporef_list)
         count += 1
-        callback(100 * count/total)
+        callback(100 * count / total)
 
     # ---------------------------------
     # Media
@@ -1210,7 +1317,7 @@ def exportData(database, filename, err_dialog=None, option_box=None,
         export_attribute_list(db, "media", handle, attribute_list)
         export_list(db, "media", handle, "tag", tag_list)
         count += 1
-        callback(100 * count/total)
+        callback(100 * count / total)
 
     # ---------------------------------
     # Tags
@@ -1228,14 +1335,14 @@ def exportData(database, filename, err_dialog=None, option_box=None,
             change) VALUES (?,?,?,?,?);""",
                  handle, name, color, priority, change)
         count += 1
-        callback(100 * count/total)
+        callback(100 * count / total)
 
-    db.batch = False # turn off batch processing
-    db.db.commit() # commit all changes
+    db.batch = False  # turn off batch processing
+    db.db.commit()  # commit all changes
     db.db.close()
 
     total_time = time.time() - start
-    msg = ngettext('Export Complete: %d second','Export Complete: %d seconds', total_time ) % total_time
+    msg = ngettext('Export Complete: %d second',
+                   'Export Complete: %d seconds', total_time) % total_time
     print(msg)
     return True
-

@@ -89,7 +89,6 @@ from gramps.gen.config import config
 from gramps.gen.plug.report import Report
 from gramps.gen.plug.report import MenuReportOptions
 from gramps.gen.plug.report import stdoptions
-from gramps.gui.dialog import QuestionDialog2
 
 # TODO
 # --- For Future Versions ---
@@ -233,12 +232,23 @@ class NetworkChartReport(Report):
             'dest_path').get_value()
         self.dest_file = menu.get_option_by_name(
             'dest_file').get_value()
-        self.destprefix, self.destext = os.path.splitext(
+        self.destprefix, _dummy = os.path.splitext(
             os.path.basename(self.dest_file))
         file_ext = str("%s." + self.file_type)
         self.fpath_output = os.path.join(self.dest_path, "",
                                          file_ext % (self.destprefix))
-        self.cancel = menu.cancel
+        if os.path.isfile(self.fpath_output):
+            if self.b_confirm_overwrite:
+                self.cancel = user.prompt(
+                    _("File exists. Overwrite?"), self.fpath_output,
+                    _('Cancel'), _('Yes'),
+                    parent=user.uistate.window)
+            else:  # Just overwrite file
+                self.cancel = False
+        elif self.dest_file == '':  # No file name so cancel
+            self.cancel = True
+        else:  # Filename good and not overwriting
+            self.cancel = False
 
     def get_network(self):
         """
@@ -347,37 +357,34 @@ class NetworkChartReport(Report):
                             f_family.get_mother_handle()).get_gramps_id())
 
             # Get edge_marriage
-            h_events = f_family.get_event_list()  # get_event_ref_list()
-            if len(h_events) > 0:
-                for e_handle in h_events:
-                    i_event = self.database.get_event_from_handle(e_handle)
-                    fmt_mdate = self._get_date(i_event.get_date_object())
-                    if len(fmt_mdate.strip()) < 1:
-                        fmt_mdate = self._unk
-                    if fmt_mdate.strip() == '0000-00-00':
-                        fmt_mdate = self._unk
-                    if i_event.get_type().is_marriage():
-                        try:
-                            if self.b_round_marr:
-                                year = i_event.get_date_object().get_year()
-                                if year > i_round_marr:
-                                    marriage_date = self._marr + str(year)
-                                else:
-                                    marriage_date = self._marr + fmt_mdate
+            h_events = f_family.get_event_ref_list()  # get_event_ref_list()
+            marriage_date = ''
+            for e_ref in h_events:
+                i_event = self.database.get_event_from_handle(e_ref.ref)
+                fmt_mdate = self._get_date(i_event.get_date_object())
+                if len(fmt_mdate.strip()) < 1:
+                    fmt_mdate = self._unk
+                if fmt_mdate.strip() == '0000-00-00':
+                    fmt_mdate = self._unk
+                if i_event.get_type().is_marriage():
+                    try:
+                        if self.b_round_marr:
+                            year = i_event.get_date_object().get_year()
+                            if year > i_round_marr:
+                                marriage_date = self._marr + str(year)
                             else:
                                 marriage_date = self._marr + fmt_mdate
-                        except NameError:
-                            marriage_date = self._marr + self._unk
-                        edge_marriage = edge_marriage + [[family_gref,
-                                                          father_gref,
-                                                          mother_gref,
-                                                          marriage_date]]
-            else:
+                        else:
+                            marriage_date = self._marr + fmt_mdate
+                        break
+                    except NameError:
+                        marriage_date = self._marr + self._unk
+            if not marriage_date:
                 marriage_date = self._marr + self._unk
-                edge_marriage = edge_marriage + [[family_gref,
-                                                  father_gref,
-                                                  mother_gref,
-                                                  marriage_date]]
+            edge_marriage = edge_marriage + [[family_gref,
+                                              father_gref,
+                                              mother_gref,
+                                              marriage_date]]
 
             # Get edge_child
             children_refs = f_family.get_child_ref_list()
@@ -793,7 +800,7 @@ class NetworkChartReport(Report):
         if not self.cancel:
             if PYDOT:  # PYDOTPLUS or PYDOT
                 D = nx.nx_pydot.to_pydot(G)
-                D.write_svg(self.fpath_output)
+                D.write(self.fpath_output, format=self.file_type)
             elif PYGRAPHVIZ:  # PYGRAPHVIZ
                 A = nx.drawing.nx_agraph.to_agraph(G)
                 A.draw(self.fpath_output, prog="dot", format=self.file_type)
@@ -817,7 +824,6 @@ class NetworkChartOptions(MenuReportOptions):
         self.inipath = config.config_path + '/NetworkChart.ini'
         if os.path.isfile(self.inipath):
             self.ini.read(self.inipath)
-            self.ini.read_file(open(self.inipath))
         #------- initialize inifile -------
         self._dbase = dbase
         self.graph_splines = self.rank_dir = self.rank_sep = None
@@ -848,25 +854,6 @@ class NetworkChartOptions(MenuReportOptions):
         for name in self.menu.get_all_option_names():
             option = self.menu.get_option_by_name(name)
             self.options_dict[name] = option.get_value()
-        fpath = (str(self.dest_path.get_value()) + os.path.sep +
-                 str(self.dest_file.get_value()) +
-                 '.' + str(self.file_type.get_value()))
-        if os.path.isfile(fpath):
-            if self.b_confirm_overwrite.get_value():
-                q_dia = QuestionDialog2(_("File exists. Overwrite?"),
-                                        fpath,
-                                        _('Cancel'),
-                                        _('Yes'))
-                if q_dia.run():  # Cancel
-                    self.menu.cancel = True
-                else:  # Yes Overwrite
-                    self.menu.cancel = False
-            else:  # Just overwrite file
-                self.menu.cancel = False
-        elif self.dest_file.get_value() == '':  # No file name so cancel
-            self.menu.cancel = True
-        else:  # Filename good and not overwriting
-            self.menu.cancel = False
         #------- stop inifile -------
         dbname = self.s_dbname.get_value()
 
@@ -975,6 +962,15 @@ class NetworkChartOptions(MenuReportOptions):
                                       self._dbase.get_dbname())
         self.top_title.set_help(_("Set the title of the chart."))
         menu.add_option(category_name, "top_title", self.top_title)
+
+        self.file_type = EnumeratedListOption(_("File Type"), "svg")
+        file_type_options = ["svg", "pdf"]
+        self.file_type.add_item(file_type_options[0], _("Default (svg)"))
+        for i in range(0, len(file_type_options)):
+            self.file_type.add_item(file_type_options[i], file_type_options[i])
+        self.file_type.set_help(_("svg - Scalable Vector Graphics file.\n"
+                                  "pdf - Adobe Portable Document Format.\n"))
+        menu.add_option(category_name, "file_type", self.file_type)
 
         self.dest_path = DestinationOption(
             _("Folder"), config.get('paths.website-directory'))
@@ -1224,15 +1220,6 @@ class NetworkChartOptions(MenuReportOptions):
         self.s_dbname.set_value(self._dbase.get_dbname())
         self.s_dbname.set_available(False)
         self.s_dbname.connect('value-changed', self.cb_initialize)
-
-        self.file_type = EnumeratedListOption(_("File Type"), "svg")
-        file_type_options = ["svg", "pdf"]
-        self.file_type.add_item(file_type_options[0], _("Default (svg)"))
-        for i in range(0, len(file_type_options)):
-            self.file_type.add_item(file_type_options[i], file_type_options[i])
-        self.file_type.set_help(_("svg - Scalable Vector Graphics file.\n"
-                                  "pdf - Adobe Portable Document Format.\n"))
-        menu.add_option(category_name, "file_type", self.file_type)
 
         b_use_handle = BooleanOption(
             _("Use database handle instead of GrampID id in URLs."), False)

@@ -1,6 +1,5 @@
-# French translation for Gramps
-# This file is distributed under the same license as the Gramps package.
-# Copyright (C) 2001-2017 Free Software Foundation, Inc.
+# French translation for gramps
+# Copyright (C) 2001-2011 Free Software Foundation, Inc.
 #
 # Quelques variables pour la cohérence:
 #  ancestor : ascendant
@@ -14,27 +13,25 @@
 #  call name : prénom usuel
 #  unknown (context) : inconnu ou non-connu (individu)
 #
-#
 # Laurent Protois <laurent.protois@free.fr>, 2001-2004.
 # Matthieu Pupat <tieum.tieum@free.fr>, 2004, 2005.
 # Guillaume Pratte <guillaumep@soireevideo.org>, 2005.
 # Frederic Chateaux, 2007-2008.
-# Jérôme Rapinat <romjerome@yahoo.fr>, 2005-2017.
-# Mathieu MD <mathieu.md@gmail.com>, 2012.
+# Jérôme Rapinat <romjerome@yahoo.fr>, 2005-2011.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: 5.0.0\n"
+"Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-14 19:02+0200\n"
-"PO-Revision-Date: 2018-10-14 19:06+0100\n"
-"Last-Translator: \n"
-"Language-Team: French <traduc@traduc.org>\n"
-"Language: fr\n"
+"POT-Creation-Date: 2011-12-17 18:16+0100\n"
+"PO-Revision-Date: 2011-12-17 18:57+0100\n"
+"Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
+"Language-Team:  <fr@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.5.4\n"
 
 #: DataEntryGramplet/DataEntryGramplet.gpr.py:8
 msgid "Data Entry Gramplet"
@@ -48,50 +45,64 @@ msgstr "Gramplet pour une saisie rapide des données"
 msgid "Data Entry"
 msgstr "Saisie des données"
 
+#: DataEntryGramplet/DataEntryGramplet.py:59
 #: DataEntryGramplet/DataEntryGramplet.py:71
 msgid "Active person"
 msgstr "Individu actif"
 
+#: DataEntryGramplet/DataEntryGramplet.py:61
 #: DataEntryGramplet/DataEntryGramplet.py:73
 msgid "Family:"
 msgstr "Famille :"
 
+#: DataEntryGramplet/DataEntryGramplet.py:62
 #: DataEntryGramplet/DataEntryGramplet.py:74
 msgid "Sources?"
 msgstr "Sources ?"
 
+#: DataEntryGramplet/DataEntryGramplet.py:64
+#: DataEntryGramplet/DataEntryGramplet.py:93
 #: DataEntryGramplet/DataEntryGramplet.py:76
 #: DataEntryGramplet/DataEntryGramplet.py:109
 msgid "Surname, Given"
 msgstr "Nom de famille, Prénom"
 
+#: DataEntryGramplet/DataEntryGramplet.py:65
+#: DataEntryGramplet/DataEntryGramplet.py:94
 #: DataEntryGramplet/DataEntryGramplet.py:77
 #: DataEntryGramplet/DataEntryGramplet.py:110
 msgid "Gender"
 msgstr "Genre"
 
+#: DataEntryGramplet/DataEntryGramplet.py:65
+#: DataEntryGramplet/DataEntryGramplet.py:95
 #: DataEntryGramplet/DataEntryGramplet.py:77
 #: DataEntryGramplet/DataEntryGramplet.py:111
 msgid "female"
 msgstr "féminin"
 
+#: DataEntryGramplet/DataEntryGramplet.py:65
+#: DataEntryGramplet/DataEntryGramplet.py:95
 #: DataEntryGramplet/DataEntryGramplet.py:77
 #: DataEntryGramplet/DataEntryGramplet.py:111
 msgid "male"
 msgstr "masculin"
 
+#: DataEntryGramplet/DataEntryGramplet.py:65
+#: DataEntryGramplet/DataEntryGramplet.py:95
 #: DataEntryGramplet/DataEntryGramplet.py:77
 #: DataEntryGramplet/DataEntryGramplet.py:111
 msgid "unknown"
 msgstr "inconnu"
 
-#: DataEntryGramplet/DataEntryGramplet.py:77
-#: DataEntryGramplet/DataEntryGramplet.py:111
-msgid "other"
-msgstr "autre"
-
 # L'espace finale est pour précéder le « : » codé en dur dans certains contextes.
 # /!\ vérifier double espace avec search bar "%(titre colonne)s contient"
+#: DataEntryGramplet/DataEntryGramplet.py:66
+#: DataEntryGramplet/DataEntryGramplet.py:68
+#: DataEntryGramplet/DataEntryGramplet.py:69
+#: DataEntryGramplet/DataEntryGramplet.py:95
+#: DataEntryGramplet/DataEntryGramplet.py:96
+#: DataEntryGramplet/DataEntryGramplet.py:97
 #: DataEntryGramplet/DataEntryGramplet.py:78
 #: DataEntryGramplet/DataEntryGramplet.py:80
 #: DataEntryGramplet/DataEntryGramplet.py:81
@@ -101,100 +112,110 @@ msgstr "autre"
 msgid "Source"
 msgstr "Source "
 
+#: DataEntryGramplet/DataEntryGramplet.py:68
+#: DataEntryGramplet/DataEntryGramplet.py:96
 #: DataEntryGramplet/DataEntryGramplet.py:80
 #: DataEntryGramplet/DataEntryGramplet.py:112
 msgid "Birth"
 msgstr "Naissance"
 
+#: DataEntryGramplet/DataEntryGramplet.py:69
+#: DataEntryGramplet/DataEntryGramplet.py:97
 #: DataEntryGramplet/DataEntryGramplet.py:81
 #: DataEntryGramplet/DataEntryGramplet.py:113
 msgid "Death"
 msgstr "Décès"
 
+#: DataEntryGramplet/DataEntryGramplet.py:77
 #: DataEntryGramplet/DataEntryGramplet.py:89
 msgid "Save"
 msgstr "Enregistrer"
 
+#: DataEntryGramplet/DataEntryGramplet.py:80
 #: DataEntryGramplet/DataEntryGramplet.py:92
 msgid "Abandon"
 msgstr "Abandonner"
 
+#: DataEntryGramplet/DataEntryGramplet.py:85
 #: DataEntryGramplet/DataEntryGramplet.py:97
 msgid "New person"
 msgstr "Nouvel individu"
 
+#: DataEntryGramplet/DataEntryGramplet.py:86
 #: DataEntryGramplet/DataEntryGramplet.py:98
 msgid "Add relation"
 msgstr "Ajouter la relation"
 
+#: DataEntryGramplet/DataEntryGramplet.py:87
 #: DataEntryGramplet/DataEntryGramplet.py:99
 msgid "No relation to active person"
 msgstr "Aucune relation avec l'individu actif"
 
+#: DataEntryGramplet/DataEntryGramplet.py:88
 #: DataEntryGramplet/DataEntryGramplet.py:100
 msgid "Add as a Parent"
 msgstr "Ajouter comme parent"
 
-#: DataEntryGramplet/DataEntryGramplet.py:101
-msgid "Add as a Mother"
-msgstr "Ajouter comme mère"
-
-#: DataEntryGramplet/DataEntryGramplet.py:102
-msgid "Add as a Father"
-msgstr "Ajouter comme père"
-
+#: DataEntryGramplet/DataEntryGramplet.py:89
 #: DataEntryGramplet/DataEntryGramplet.py:103
 msgid "Add as a Spouse"
 msgstr "Ajouter comme conjoint"
 
-#: DataEntryGramplet/DataEntryGramplet.py:104
-msgid "Add as a Wife"
-msgstr "Ajouter comme conjointe"
-
-#: DataEntryGramplet/DataEntryGramplet.py:105
-msgid "Add as a Husband"
-msgstr "Ajouter comme conjoint"
-
+#: DataEntryGramplet/DataEntryGramplet.py:90
 #: DataEntryGramplet/DataEntryGramplet.py:106
 msgid "Add as a Sibling"
 msgstr "Ajouter comme frère ou sœur"
 
+#: DataEntryGramplet/DataEntryGramplet.py:91
 #: DataEntryGramplet/DataEntryGramplet.py:107
 msgid "Add as a Child"
 msgstr "Ajouter comme enfant"
 
+#: DataEntryGramplet/DataEntryGramplet.py:105
 #: DataEntryGramplet/DataEntryGramplet.py:121
 msgid "Add"
 msgstr "Ajouter"
 
+#: DataEntryGramplet/DataEntryGramplet.py:108
 #: DataEntryGramplet/DataEntryGramplet.py:124
 msgid "Copy Active Data"
 msgstr "Copier ces données"
 
+#: DataEntryGramplet/DataEntryGramplet.py:111
 #: DataEntryGramplet/DataEntryGramplet.py:127
 msgid "Clear"
 msgstr "Effacer"
 
+#: DataEntryGramplet/DataEntryGramplet.py:154
+#: DataEntryGramplet/DataEntryGramplet.py:168
+#: DataEntryGramplet/DataEntryGramplet.py:299
 #: DataEntryGramplet/DataEntryGramplet.py:167
 #: DataEntryGramplet/DataEntryGramplet.py:178
 #: DataEntryGramplet/DataEntryGramplet.py:315
 msgid "in"
 msgstr "dans"
 
+#: DataEntryGramplet/DataEntryGramplet.py:419
+#: DataEntryGramplet/DataEntryGramplet.py:526
 #: DataEntryGramplet/DataEntryGramplet.py:440
 #: DataEntryGramplet/DataEntryGramplet.py:568
 #, python-format
 msgid "Gramplet Data Edit: %s"
 msgstr "Gramplet formulaire : %s"
 
+#: DataEntryGramplet/DataEntryGramplet.py:492
 #: DataEntryGramplet/DataEntryGramplet.py:514
 msgid "Please provide a name."
 msgstr "Saisissez un nom."
 
+#: DataEntryGramplet/DataEntryGramplet.py:492
 #: DataEntryGramplet/DataEntryGramplet.py:514
 msgid "Can't add new person."
 msgstr "Impossible d'ajouter un nouvel individu."
 
+#: DataEntryGramplet/DataEntryGramplet.py:500
+#: DataEntryGramplet/DataEntryGramplet.py:508
+#: DataEntryGramplet/DataEntryGramplet.py:517
 #: DataEntryGramplet/DataEntryGramplet.py:522
 #: DataEntryGramplet/DataEntryGramplet.py:530
 #: DataEntryGramplet/DataEntryGramplet.py:535
@@ -206,15 +227,93 @@ msgstr "Impossible d'ajouter un nouvel individu."
 msgid "Please set an active person."
 msgstr "Définir l'individu actif."
 
+#: DataEntryGramplet/DataEntryGramplet.py:500
+#: DataEntryGramplet/DataEntryGramplet.py:503
 #: DataEntryGramplet/DataEntryGramplet.py:522
 #: DataEntryGramplet/DataEntryGramplet.py:525
 msgid "Can't add new person as a parent."
 msgstr "Impossible d'ajouter un nouvel individu comme parent."
 
+#: DataEntryGramplet/DataEntryGramplet.py:503
+#: DataEntryGramplet/DataEntryGramplet.py:512
 #: DataEntryGramplet/DataEntryGramplet.py:525
 #: DataEntryGramplet/DataEntryGramplet.py:544
 msgid "Please set the new person's gender."
 msgstr "Définir le genre du nouvel individu."
+
+#: DataEntryGramplet/DataEntryGramplet.py:508
+#: DataEntryGramplet/DataEntryGramplet.py:512
+#: DataEntryGramplet/DataEntryGramplet.py:663
+#: DataEntryGramplet/DataEntryGramplet.py:700
+#: DataEntryGramplet/DataEntryGramplet.py:733
+#: DataEntryGramplet/DataEntryGramplet.py:540
+#: DataEntryGramplet/DataEntryGramplet.py:544
+#: DataEntryGramplet/DataEntryGramplet.py:767
+#: DataEntryGramplet/DataEntryGramplet.py:804
+#: DataEntryGramplet/DataEntryGramplet.py:837
+msgid "Can't add new person as a spouse."
+msgstr "Impossible d'ajouter un nouvel individu comme conjoint."
+
+#: DataEntryGramplet/DataEntryGramplet.py:517
+#: DataEntryGramplet/DataEntryGramplet.py:559
+msgid "Can't add new person as a sibling."
+msgstr "Impossible d'ajouter un nouvel individu comme frère ou sœur."
+
+#: DataEntryGramplet/DataEntryGramplet.py:522
+#: DataEntryGramplet/DataEntryGramplet.py:779
+#: DataEntryGramplet/DataEntryGramplet.py:564
+#: DataEntryGramplet/DataEntryGramplet.py:937
+msgid "Can't add new person as a child."
+msgstr "Impossible d'ajouter un nouvel individu comme enfant."
+
+#: DataEntryGramplet/DataEntryGramplet.py:658
+#: DataEntryGramplet/DataEntryGramplet.py:762
+msgid "Please set Active person."
+msgstr "Définir l'individu actif."
+
+#: DataEntryGramplet/DataEntryGramplet.py:659
+#: DataEntryGramplet/DataEntryGramplet.py:763
+msgid "Can't add new person as a spouse to no one."
+msgstr ""
+"Impossible d'ajouter un nouvel individu en tant que conjoint de personne."
+
+#: DataEntryGramplet/DataEntryGramplet.py:662
+#: DataEntryGramplet/DataEntryGramplet.py:766
+msgid "Please set gender on Active or new person."
+msgstr "Saisissez le genre du nouvel individu ou de la personne active."
+
+#: DataEntryGramplet/DataEntryGramplet.py:699
+#: DataEntryGramplet/DataEntryGramplet.py:732
+#: DataEntryGramplet/DataEntryGramplet.py:803
+#: DataEntryGramplet/DataEntryGramplet.py:836
+msgid "Same genders on Active and new person."
+msgstr "Même genre entre la personne active et le nouvel individu."
+
+#: DataEntryGramplet/DataEntryGramplet.py:778
+#: DataEntryGramplet/DataEntryGramplet.py:936
+msgid "Please set gender on Active person."
+msgstr "Saisissez le genre de l'individu actif."
+
+#: DataEntryGramplet/DataEntryGramplet.py:77
+#: DataEntryGramplet/DataEntryGramplet.py:111
+msgid "other"
+msgstr "autre"
+
+#: DataEntryGramplet/DataEntryGramplet.py:101
+msgid "Add as a Mother"
+msgstr "Ajouter comme mère"
+
+#: DataEntryGramplet/DataEntryGramplet.py:102
+msgid "Add as a Father"
+msgstr "Ajouter comme père"
+
+#: DataEntryGramplet/DataEntryGramplet.py:104
+msgid "Add as a Wife"
+msgstr "Ajouter comme conjointe"
+
+#: DataEntryGramplet/DataEntryGramplet.py:105
+msgid "Add as a Husband"
+msgstr "Ajouter comme conjoint"
 
 #: DataEntryGramplet/DataEntryGramplet.py:530
 msgid "Can't add new person as a mother."
@@ -224,14 +323,6 @@ msgstr "Impossible d'ajouter comme mère."
 msgid "Can't add new person as a father."
 msgstr "Impossible d'ajouter comme père."
 
-#: DataEntryGramplet/DataEntryGramplet.py:540
-#: DataEntryGramplet/DataEntryGramplet.py:544
-#: DataEntryGramplet/DataEntryGramplet.py:767
-#: DataEntryGramplet/DataEntryGramplet.py:804
-#: DataEntryGramplet/DataEntryGramplet.py:837
-msgid "Can't add new person as a spouse."
-msgstr "Impossible d'ajouter un nouvel individu comme conjoint."
-
 #: DataEntryGramplet/DataEntryGramplet.py:549
 msgid "Can't add new person as a wife."
 msgstr "Impossible d'ajouter comme conjointe."
@@ -239,37 +330,6 @@ msgstr "Impossible d'ajouter comme conjointe."
 #: DataEntryGramplet/DataEntryGramplet.py:554
 msgid "Can't add new person as a husband."
 msgstr "Impossible d'ajouter comme conjoint."
-
-#: DataEntryGramplet/DataEntryGramplet.py:559
-msgid "Can't add new person as a sibling."
-msgstr "Impossible d'ajouter un nouvel individu comme frère ou sœur."
-
-#: DataEntryGramplet/DataEntryGramplet.py:564
-#: DataEntryGramplet/DataEntryGramplet.py:937
-msgid "Can't add new person as a child."
-msgstr "Impossible d'ajouter un nouvel individu comme enfant."
-
-#: DataEntryGramplet/DataEntryGramplet.py:762
-msgid "Please set Active person."
-msgstr "Définir l'individu actif."
-
-#: DataEntryGramplet/DataEntryGramplet.py:763
-msgid "Can't add new person as a spouse to no one."
-msgstr ""
-"Impossible d'ajouter un nouvel individu en tant que conjoint de personne."
-
-#: DataEntryGramplet/DataEntryGramplet.py:766
-msgid "Please set gender on Active or new person."
-msgstr "Saisissez le genre du nouvel individu ou de la personne active."
-
-#: DataEntryGramplet/DataEntryGramplet.py:803
-#: DataEntryGramplet/DataEntryGramplet.py:836
-msgid "Same genders on Active and new person."
-msgstr "Même genre entre la personne active et le nouvel individu."
-
-#: DataEntryGramplet/DataEntryGramplet.py:936
-msgid "Please set gender on Active person."
-msgstr "Saisissez le genre de l'individu actif."
 
 #~ msgid "Gramplet Data Entry: %s"
 #~ msgstr "Gramplet formulaire : %s"
