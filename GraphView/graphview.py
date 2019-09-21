@@ -107,6 +107,9 @@ SPLINE = {0: 'false', 1: 'true', 2: 'ortho'}
 
 WIKI_PAGE = 'https://gramps-project.org/wiki/index.php?title=Graph_View'
 
+# gtk version
+gtk_version = float("%s.%s" % (Gtk.MAJOR_VERSION, Gtk.MINOR_VERSION))
+
 #-------------------------------------------------------------------------
 #
 # Search widget module
@@ -142,7 +145,9 @@ class GraphView(NavigationView):
         ('interface.graphview-animation-count', 4),
         ('interface.graphview-search-all-db', True),
         ('interface.graphview-search-show-images', True),
-        ('interface.graphview-search-marked-first', True))
+        ('interface.graphview-search-marked-first', True),
+        ('interface.graphview-ranksep', 5),
+        ('interface.graphview-nodesep', 2))
 
     def __init__(self, pdata, dbstate, uistate, nav_group=0):
         NavigationView.__init__(self, _('Graph View'), pdata, dbstate, uistate,
@@ -481,6 +486,12 @@ class GraphView(NavigationView):
         value = entry == 'True'
         self.graph_widget.search_widget.set_options(marked_first=value)
 
+    def cb_update_spacing(self, client, cnxd_id, entry, data):
+        """
+        Called when the ranksep or nodesep setting changed.
+        """
+        self.graph_widget.populate(self.get_active())
+
     def config_connect(self):
         """
         Overwriten from  :class:`~gui.views.pageview.PageView method
@@ -517,6 +528,10 @@ class GraphView(NavigationView):
                              self.cb_update_search_show_images)
         self._config.connect('interface.graphview-search-marked-first',
                              self.cb_update_search_marked_first)
+        self._config.connect('interface.graphview-ranksep',
+                             self.cb_update_spacing)
+        self._config.connect('interface.graphview-nodesep',
+                             self.cb_update_spacing)
 
     def _get_configure_page_funcs(self):
         """
@@ -804,25 +819,35 @@ class GraphWidget(object):
                                    Gtk.AccelFlags.VISIBLE)
 
         # add spinners for quick generations change
-        box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
-        box.pack_start(Gtk.Label(label='↑'), False, False, 1)
-        self.ancestors_spinner = Gtk.SpinButton.new_with_range(0, 50, 1)
-        self.ancestors_spinner.set_tooltip_text(_('Ancestor generations'))
-        self.ancestors_spinner.set_value(
-            self.view._config.get('interface.graphview-ancestor-generations'))
-        self.ancestors_spinner.connect("value-changed",
-                                       self.set_ancestors_generations)
-        box.pack_start(self.ancestors_spinner, False, False, 1)
+        gen_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        box = self.build_spinner('go-up-symbolic', 0, 50,
+                                 _('Ancestor generations'),
+                                 'interface.graphview-ancestor-generations')
+        gen_box.add(box)
+        box = self.build_spinner('go-down-symbolic', 0, 50,
+                                 _('Descendant generations'),
+                                 'interface.graphview-descendant-generations')
+        gen_box.add(box)
+        # pack generation spinners to popover
+        gen_btn = Gtk.Button(_('Generations'))
+        self.add_popover(gen_btn, gen_box)
+        self.toolbar.pack_start(gen_btn, False, False, 1)
 
-        box.pack_start(Gtk.Label(label='↓'), False, False, 1)
-        self.descendants_spinner = Gtk.SpinButton.new_with_range(0, 50, 1)
-        self.descendants_spinner.set_tooltip_text(_('Descendant generations'))
-        self.descendants_spinner.set_value(self.view._config.get(
-            'interface.graphview-descendant-generations'))
-        self.descendants_spinner.connect("value-changed",
-                                         self.set_descendants_generations)
-        box.pack_start(self.descendants_spinner, False, False, 1)
-        self.toolbar.pack_start(box, False, False, 1)
+        # add spiner for generation (vertical) spacing
+        spacing_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        box = self.build_spinner('object-flip-vertical', 1, 50,
+                                 _('Vertical spacing between generations'),
+                                 'interface.graphview-ranksep')
+        spacing_box.add(box)
+        # add spiner for node (horizontal) spacing
+        box = self.build_spinner('object-flip-horizontal', 1, 50,
+                                 _('Horizontal spacing between generations'),
+                                 'interface.graphview-nodesep')
+        spacing_box.add(box)
+        # pack spacing spinners to popover
+        spacing_btn = Gtk.Button(_('Spacings'))
+        self.add_popover(spacing_btn, spacing_box)
+        self.toolbar.pack_start(spacing_btn, False, False, 1)
 
         self.vbox.pack_start(scrolled_win, True, True, 0)
 
@@ -840,15 +865,50 @@ class GraphWidget(object):
         # for detecting double click
         self.click_events = []
 
-        # for timeout on changing generation settings
-        self.set_anc_event = False
-        self.set_des_event = False
+        # for timeout on changing settings by spinners
+        self.timeout_event = False
 
         # Gtk style context for scrollwindow to operate with theme colors
         self.sw_style_context = scrolled_win.get_style_context()
 
         # used for popup menu, prevent destroy menu as local variable
         self.menu = None
+
+    def add_popover(self, widget, container):
+        """
+        Add popover for button.
+        """
+        popover = Gtk.Popover()
+        popover.set_relative_to(widget)
+        popover.add(container)
+        widget.connect("clicked", self.spinners_popup, popover)
+        container.show_all()
+
+    def build_spinner(self, icon, start, end, tooltip, conf_const):
+        """
+        Build spinner with icon and pack it into box.
+        Chenges apply to config with delay.
+        """
+        box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
+        img = Gtk.Image.new_from_icon_name(icon, Gtk.IconSize.MENU)
+        box.pack_start(img, False, False, 1)
+        spinner = Gtk.SpinButton.new_with_range(start, end, 1)
+        spinner.set_tooltip_text(tooltip)
+        spinner.set_value(self.view._config.get(conf_const))
+        spinner.connect("value-changed", self.apply_spinner_delayed,
+                        conf_const)
+        box.pack_start(spinner, False, False, 1)
+        return box
+
+    def spinners_popup(self, widget, popover):
+        """
+        Popover for generations and spacing params.
+        Different popup depending on gtk version.
+        """
+        if gtk_version >= 3.22:
+            popover.popup()
+        else:
+            popover.show()
 
     def set_available(self, state):
         """
@@ -892,37 +952,21 @@ class GraphWidget(object):
         # move view to person with animation
         self.move_to_person(None, person_handle, True)
 
-    def set_ancestors_generations(self, widget):
+    def apply_spinner_delayed(self, widget, conf_const):
         """
-        Set count of ancestors generations to show.
+        Set params by spinners (generations, spacing).
         Use timeout for better interface responsiveness.
         """
         value = int(widget.get_value())
         # try to remove planed event (changing setting)
-        if self.set_anc_event and not self.set_anc_event.is_destroyed():
-            GLib.source_remove(self.set_anc_event.get_id())
+        if self.timeout_event and \
+                not self.timeout_event.is_destroyed():
+            GLib.source_remove(self.timeout_event.get_id())
         # timeout saving setting for better interface responsiveness
         event_id = GLib.timeout_add(300, self.view._config.set,
-                                    'interface.graphview-ancestor-generations',
-                                    value)
+                                    conf_const, value)
         context = GLib.main_context_default()
-        self.set_anc_event = context.find_source_by_id(event_id)
-
-    def set_descendants_generations(self, widget):
-        """
-        Set count of descendants generations to show.
-        Use timeout for better interface responsiveness.
-        """
-        value = int(widget.get_value())
-        # try to remove planed event (changing setting)
-        if self.set_des_event and not self.set_des_event.is_destroyed():
-            GLib.source_remove(self.set_des_event.get_id())
-        # timeout saving setting for better interface responsiveness
-        event_id = GLib.timeout_add(
-            300, self.view._config.set,
-            'interface.graphview-descendant-generations', value)
-        context = GLib.main_context_default()
-        self.set_des_event = context.find_source_by_id(event_id)
+        self.timeout_event = context.find_source_by_id(event_id)
 
     def build_bkmark_ext_panel(self):
         """
@@ -1878,6 +1922,10 @@ class DotSvgGenerator(object):
             'interface.graphview-descendant-generations')
         self.ancestor_generations = self.view._config.get(
             'interface.graphview-ancestor-generations')
+        ranksep = self.view._config.get('interface.graphview-ranksep')
+        ranksep = ranksep * 0.1
+        nodesep = self.view._config.get('interface.graphview-nodesep')
+        nodesep = nodesep * 0.1
 
         # get background color from gtk theme and convert it to hex
         # else use white background
@@ -1912,10 +1960,8 @@ class DotSvgGenerator(object):
         dpi = 72
         fontfamily = ""
         fontsize = 14
-        nodesep = 0.20
         pagedir = "BL"
         rankdir = "TB"
-        ranksep = 0.40
         ratio = "compress"
         # as we are not using paper,
         # choose a large 'page' size with no margin
