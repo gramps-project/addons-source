@@ -73,7 +73,7 @@ class AssociationsTool(tool.Tool, ManagedWindow):
                     name2 = name_displayer.display(person2)
                     rel = relationship.get_one_relationship(
                         dbstate.db, person2, person)
-                    stats_list.append((name1, value, name2))
+                    stats_list.append((name1, value, name2, rel))
 
         if uistate:
             titles = [
