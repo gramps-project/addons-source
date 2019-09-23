@@ -1054,9 +1054,9 @@ class GraphWidget(object):
                 row.show_all()
                 self.bkmark_popover.show_other_panel(True)
 
-        self.bkmark_popover.main_panel.set_progress(0, 'found: %s' % count)
+        self.bkmark_popover.main_panel.set_progress(0, _('found: %s') % count)
         self.bkmark_popover.other_panel.set_progress(
-            0, 'found: %s' % count_other)
+            0, _('found: %s') % count_other)
 
         # set tooltip for "add_bkmark" button
         self.add_bkmark.hide()

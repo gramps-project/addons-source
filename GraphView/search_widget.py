@@ -175,7 +175,7 @@ class SearchWidget(GObject.GObject):
 
             GLib.idle_add(self.popover_widget.main_panel.set_progress,
                           progress/len(self.items_list),
-                          'found: %s' % len(found_list))
+                          _('found: %s') % len(found_list))
             if not self.in_search:
                 self.queue.queue.clear()
                 self.queue.put('stop')
@@ -189,7 +189,7 @@ class SearchWidget(GObject.GObject):
             GLib.idle_add(self.popover_widget.main_panel.add_no_result,
                           _('No persons found...'))
         GLib.idle_add(self.popover_widget.main_panel.set_progress,
-                      0, 'found: %s' % len(found_list))
+                      0, _('found: %s') % len(found_list))
 
         # search other persons from db
         # ============================
@@ -224,7 +224,7 @@ class SearchWidget(GObject.GObject):
 
                     GLib.idle_add(self.popover_widget.other_panel.set_progress,
                                   progress/len(all_person_handles),
-                                  'found: %s' % len(other_found))
+                                  _('found: %s') % len(other_found))
                     if not self.in_search:
                         self.queue.queue.clear()
                         self.queue.put('stop')
@@ -233,7 +233,7 @@ class SearchWidget(GObject.GObject):
 
                 GLib.idle_add(self.popover_widget.other_panel.set_progress,
                               progress/len(all_person_handles),
-                              'found: %s' % len(other_found))
+                              _('found: %s') % len(other_found))
 
         self.queue.put('stop')
         self.do_thread.join()
@@ -243,7 +243,7 @@ class SearchWidget(GObject.GObject):
                           _('No persons found...'))
 
         GLib.idle_add(self.popover_widget.other_panel.set_progress,
-                      0, 'found: %s' % len(other_found))
+                      0, _('found: %s') % len(other_found))
 
         self.in_search = False
 

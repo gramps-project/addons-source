@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-21 11:00+1000\n"
+"POT-Creation-Date: 2019-09-23 14:48+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -264,6 +264,14 @@ msgstr ""
 
 #: GraphView/graphview.py:1052
 msgid "No other bookmarks..."
+msgstr ""
+
+#: GraphView/graphview.py:1057 GraphView/graphview.py:1059
+#: GraphView/search_widget.py:178 GraphView/search_widget.py:192
+#: GraphView/search_widget.py:227 GraphView/search_widget.py:236
+#: GraphView/search_widget.py:246
+#, python-format
+msgid "found: %s"
 msgstr ""
 
 #: GraphView/graphview.py:1069
