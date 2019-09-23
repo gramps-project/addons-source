@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-23 14:48+0300\n"
-"PO-Revision-Date: 2019-09-23 14:49+0300\n"
+"POT-Creation-Date: 2019-09-23 15:11+0300\n"
+"PO-Revision-Date: 2019-09-23 15:13+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
@@ -246,11 +246,11 @@ msgstr "Поколения"
 
 #: GraphView/graphview.py:839
 msgid "Vertical spacing between generations"
-msgstr "Вертикальное расстояние между покалениями"
+msgstr "Вертикальное расстояние между поколениями"
 
 #: GraphView/graphview.py:844
 msgid "Horizontal spacing between generations"
-msgstr "Горизонтальное рассояние между лицами"
+msgstr "Горизонтальное расстояние между лицами"
 
 #: GraphView/graphview.py:848
 msgid "Spacings"

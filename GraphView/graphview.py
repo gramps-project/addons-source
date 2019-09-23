@@ -1067,7 +1067,7 @@ class GraphWidget(object):
                 val_to_display = "[%s] %s" % (person.gramps_id, name)
                 self.add_bkmark.set_tooltip_text(
                     _('Add active person to bookmarks\n'
-                      '%s' % val_to_display))
+                      '%s') % val_to_display)
                 self.add_bkmark.show()
 
     def get_person_image(self, person, width=-1, height=-1, kind='image'):
