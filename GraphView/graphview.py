@@ -1692,12 +1692,15 @@ class GraphWidget(object):
                 y = ((height_canvas + self._last_y) * scale_coef -
                      self.vadjustment.get_value())
 
-                drag_widget.drag_begin_with_coordinates(
+                context = drag_widget.drag_begin_with_coordinates(
                     drag_widget.drag_source_get_target_list(),
                     Gdk.DragAction.COPY,
                     Gdk.ModifierType.BUTTON1_MASK,
                     event,
                     x, y)
+                # set icon for person drag
+                Gtk.drag_set_icon_name(context, 'gramps-person', 0, 0)
+
                 return True
         return False
 
@@ -1780,12 +1783,15 @@ class GraphWidget(object):
         return True
 
     def cb_drag_begin(self, widget, data):
-        """Set up some inital conditions for drag. Set up icon."""
+        """
+        Called on start drag.
+        """
         self._in_drag = True
-        widget.drag_source_set_icon_name('gramps-person')
 
     def cb_drag_end(self, widget, data):
-        """Set up some inital conditions for drag. Set up icon."""
+        """
+        Called when drag is end.
+        """
         self._in_drag = False
 
     def cb_drag_data_get(self, widget, context, sel_data, info, time):
