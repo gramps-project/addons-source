@@ -1675,7 +1675,7 @@ class GraphWidget(object):
             # start drag when cursor moved more then 5
             # to separate it from simple click
             if ((abs(self._last_x - event.x) > 5)
-                    or (abs(self._last_x - event.x) > 5)):
+                    or (abs(self._last_y - event.y) > 5)):
                 self.uistate.set_busy_cursor(False)
                 # Remove all single click events
                 for click_item in self.click_events:
@@ -1692,15 +1692,12 @@ class GraphWidget(object):
                 y = ((height_canvas + self._last_y) * scale_coef -
                      self.vadjustment.get_value())
 
-                context = drag_widget.drag_begin_with_coordinates(
+                drag_widget.drag_begin_with_coordinates(
                     drag_widget.drag_source_get_target_list(),
                     Gdk.DragAction.COPY,
                     Gdk.ModifierType.BUTTON1_MASK,
                     event,
                     x, y)
-                # set icon for person drag
-                Gtk.drag_set_icon_name(context, 'gramps-person', 0, 0)
-
                 return True
         return False
 
@@ -1782,13 +1779,14 @@ class GraphWidget(object):
 
         return True
 
-    def cb_drag_begin(self, widget, data):
+    def cb_drag_begin(self, widget, context):
         """
         Called on start drag.
         """
-        self._in_drag = True
+        # set icon for person drag
+        Gtk.drag_set_icon_name(context, 'gramps-person', 0, 0)
 
-    def cb_drag_end(self, widget, data):
+    def cb_drag_end(self, widget, context):
         """
         Called when drag is end.
         """
@@ -1802,7 +1800,7 @@ class GraphWidget(object):
         tgs = [x.name() for x in context.list_targets()]
         if info == DdTargets.PERSON_LINK.app_id:
             data = (DdTargets.PERSON_LINK.drag_type,
-                    id(self), self.drag_person.handle, 0)
+                    id(widget), self.drag_person.handle, 0)
             sel_data.set(sel_data.get_target(), 8, pickle.dumps(data))
         elif ('TEXT' in tgs or 'text/plain' in tgs) and info == 0:
             format_helper = FormattingHelper(self.dbstate)
