@@ -2382,8 +2382,7 @@ class DotSvgGenerator(object):
                 value = '#%02x%02x%02x' % (int(rgba.red * 255),
                                    int(rgba.green * 255),
                                    int(rgba.blue * 255))
-                tag.set_color(value)
-                tag_table += '<TD BGCOLOR="%s"></TD>' % tag.get_color()
+                tag_table += '<TD BGCOLOR="%s"></TD>' % value
             tag_table += '</TR></TABLE>'
 
         return tags, tag_table
