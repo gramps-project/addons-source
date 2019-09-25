@@ -1158,19 +1158,9 @@ class GraphWidget(object):
 
         # setup drag and drop
         drag_widget = self.get_widget()
-        drag_widget.drag_source_set(Gdk.ModifierType.BUTTON1_MASK, [],
-                                    Gdk.DragAction.COPY)
         drag_widget.connect("drag_data_get", self.cb_drag_data_get)
         drag_widget.connect("drag_begin", self.cb_drag_begin)
         drag_widget.connect("drag_end", self.cb_drag_end)
-
-        tglist = Gtk.TargetList.new([])
-        tglist.add(DdTargets.PERSON_LINK.atom_drag_type,
-                   DdTargets.PERSON_LINK.target_flags,
-                   DdTargets.PERSON_LINK.app_id)
-        # allow drag to a text document, info on drag_get will be 0L !
-        tglist.add_text_targets(0)
-        drag_widget.drag_source_set_target_list(tglist)
 
     def add_popover(self, widget, container):
         """
@@ -1684,7 +1674,6 @@ class GraphWidget(object):
                 self.click_events.clear()
 
                 # translate to drag_widget coords
-                drag_widget = self.get_widget()
                 scale_coef = self.canvas.get_scale()
                 bounds = self.canvas.get_root_item().get_bounds()
                 height_canvas = bounds.y2 - bounds.y1
@@ -1692,8 +1681,18 @@ class GraphWidget(object):
                 y = ((height_canvas + self._last_y) * scale_coef -
                      self.vadjustment.get_value())
 
+                # setup targets
+                tglist = Gtk.TargetList.new([])
+                tglist.add(DdTargets.PERSON_LINK.atom_drag_type,
+                           DdTargets.PERSON_LINK.target_flags,
+                           DdTargets.PERSON_LINK.app_id)
+                # allow drag to a text document, info on drag_get will be 0L !
+                tglist.add_text_targets(0)
+
+                # start drag
+                drag_widget = self.get_widget()
                 drag_widget.drag_begin_with_coordinates(
-                    drag_widget.drag_source_get_target_list(),
+                    tglist,
                     Gdk.DragAction.COPY,
                     Gdk.ModifierType.BUTTON1_MASK,
                     event,
