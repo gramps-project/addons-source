@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-23 14:48+0300\n"
+"POT-Creation-Date: 2019-09-25 10:45+1000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -69,23 +69,23 @@ msgstr ""
 msgid "Continue"
 msgstr ""
 
-#: GraphView/graphview.py:559 GraphView/graphview.py:2943
+#: GraphView/graphview.py:559 GraphView/graphview.py:2984
 msgid "Show images"
 msgstr ""
 
-#: GraphView/graphview.py:561 GraphView/graphview.py:2951
+#: GraphView/graphview.py:561 GraphView/graphview.py:2992
 msgid "Highlight the home person"
 msgstr ""
 
-#: GraphView/graphview.py:564 GraphView/graphview.py:2959
+#: GraphView/graphview.py:564 GraphView/graphview.py:3000
 msgid "Show full dates"
 msgstr ""
 
-#: GraphView/graphview.py:567 GraphView/graphview.py:2967
+#: GraphView/graphview.py:567 GraphView/graphview.py:3008
 msgid "Show places"
 msgstr ""
 
-#: GraphView/graphview.py:569 GraphView/graphview.py:2975
+#: GraphView/graphview.py:569 GraphView/graphview.py:3016
 msgid "Show tags"
 msgstr ""
 
@@ -101,7 +101,7 @@ msgstr ""
 msgid "Colors"
 msgstr ""
 
-#: GraphView/graphview.py:600 GraphView/graphview.py:2985
+#: GraphView/graphview.py:600 GraphView/graphview.py:3026
 msgid "Show animation"
 msgstr ""
 
@@ -243,8 +243,8 @@ msgstr ""
 msgid "Add active person"
 msgstr ""
 
-#: GraphView/graphview.py:982 GraphView/graphview.py:3032
-#: GraphView/graphview.py:3217
+#: GraphView/graphview.py:982 GraphView/graphview.py:3073
+#: GraphView/graphview.py:3258
 msgid "Edit"
 msgstr ""
 
@@ -292,171 +292,171 @@ msgstr ""
 msgid "Change active person?"
 msgstr ""
 
-#: GraphView/graphview.py:1160 GraphView/graphview.py:3649
-#: GraphView/graphview.py:3678
+#: GraphView/graphview.py:1160 GraphView/graphview.py:3690
+#: GraphView/graphview.py:3719
 msgid "Yes"
 msgstr ""
 
-#: GraphView/graphview.py:1160 GraphView/graphview.py:3649
-#: GraphView/graphview.py:3678
+#: GraphView/graphview.py:1160 GraphView/graphview.py:3690
+#: GraphView/graphview.py:3719
 msgid "No"
 msgstr ""
 
-#: GraphView/graphview.py:2429 GraphView/graphview.py:2436
+#: GraphView/graphview.py:2470 GraphView/graphview.py:2477
 #, python-format
 msgid "%s %s"
 msgstr ""
 
-#: GraphView/graphview.py:2615
+#: GraphView/graphview.py:2656
 msgid "<b>Tags:</b>"
 msgstr ""
 
-#: GraphView/graphview.py:2994
+#: GraphView/graphview.py:3035
 msgid "Lines type"
 msgstr ""
 
-#: GraphView/graphview.py:2998
+#: GraphView/graphview.py:3039
 msgid "Direct"
 msgstr ""
 
-#: GraphView/graphview.py:3006
+#: GraphView/graphview.py:3047
 msgid "Curves"
 msgstr ""
 
-#: GraphView/graphview.py:3014
+#: GraphView/graphview.py:3055
 msgid "Ortho"
 msgstr ""
 
-#: GraphView/graphview.py:3035
+#: GraphView/graphview.py:3076
 msgid "Copy"
 msgstr ""
 
-#: GraphView/graphview.py:3038 GraphView/graphview.py:3220
+#: GraphView/graphview.py:3079 GraphView/graphview.py:3261
 msgid "Remove"
 msgstr ""
 
-#: GraphView/graphview.py:3044 GraphView/graphview.py:3226
+#: GraphView/graphview.py:3085 GraphView/graphview.py:3267
 msgid "Tags"
 msgstr ""
 
-#: GraphView/graphview.py:3046
+#: GraphView/graphview.py:3087
 msgid "Select tags for person"
 msgstr ""
 
-#: GraphView/graphview.py:3049 GraphView/graphview.py:3231
+#: GraphView/graphview.py:3090 GraphView/graphview.py:3272
 msgid "Organize Tags..."
 msgstr ""
 
-#: GraphView/graphview.py:3053 GraphView/graphview.py:3235
+#: GraphView/graphview.py:3094 GraphView/graphview.py:3276
 msgid "Spouses"
 msgstr ""
 
-#: GraphView/graphview.py:3055
+#: GraphView/graphview.py:3096
 msgid "Add new family"
 msgstr ""
 
-#: GraphView/graphview.py:3076
+#: GraphView/graphview.py:3117
 msgid "Siblings"
 msgstr ""
 
-#: GraphView/graphview.py:3142
+#: GraphView/graphview.py:3183
 msgid "Parents"
 msgstr ""
 
-#: GraphView/graphview.py:3173
+#: GraphView/graphview.py:3214
 msgid "Add parents"
 msgstr ""
 
-#: GraphView/graphview.py:3177
+#: GraphView/graphview.py:3218
 msgid "Related"
 msgstr ""
 
-#: GraphView/graphview.py:3196
+#: GraphView/graphview.py:3237
 msgid "Set as home person"
 msgstr ""
 
-#: GraphView/graphview.py:3202 GraphView/search_widget.py:329
+#: GraphView/graphview.py:3243 GraphView/search_widget.py:329
 #: GraphView/search_widget.py:400
 msgid "Remove from bookmarks"
 msgstr ""
 
-#: GraphView/graphview.py:3205 GraphView/search_widget.py:337
+#: GraphView/graphview.py:3246 GraphView/search_widget.py:337
 #: GraphView/search_widget.py:413
 msgid "Add to bookmarks"
 msgstr ""
 
-#: GraphView/graphview.py:3228
+#: GraphView/graphview.py:3269
 msgid "Select tags for family"
 msgstr ""
 
-#: GraphView/graphview.py:3245
+#: GraphView/graphview.py:3286
 msgid "Add father"
 msgstr ""
 
-#: GraphView/graphview.py:3254
+#: GraphView/graphview.py:3295
 msgid "Add mother"
 msgstr ""
 
-#: GraphView/graphview.py:3266
+#: GraphView/graphview.py:3307
 msgid "Children"
 msgstr ""
 
-#: GraphView/graphview.py:3275
+#: GraphView/graphview.py:3316
 msgid "Add child to family"
 msgstr ""
 
-#: GraphView/graphview.py:3346
+#: GraphView/graphview.py:3387
 msgid "About Graph View"
 msgstr ""
 
-#: GraphView/graphview.py:3536
+#: GraphView/graphview.py:3577
 msgid "Adding Tags"
 msgstr ""
 
-#: GraphView/graphview.py:3542
+#: GraphView/graphview.py:3583
 #, python-format
 msgid "Adding Tags to person (%s)"
 msgstr ""
 
-#: GraphView/graphview.py:3547
+#: GraphView/graphview.py:3588
 #, python-format
 msgid "Adding Tags to family (%s)"
 msgstr ""
 
-#: GraphView/graphview.py:3630
+#: GraphView/graphview.py:3671
 msgid "Add Child to Family"
 msgstr ""
 
-#: GraphView/graphview.py:3645
+#: GraphView/graphview.py:3686
 #, python-format
 msgid "Delete %s?"
 msgstr ""
 
-#: GraphView/graphview.py:3646
+#: GraphView/graphview.py:3687
 #, python-format
 msgid "Deleting the person [%s] will remove it from the database."
 msgstr ""
 
-#: GraphView/graphview.py:3658
+#: GraphView/graphview.py:3699
 #, python-format
 msgid "Delete Person (%s)"
 msgstr ""
 
-#: GraphView/graphview.py:3675
+#: GraphView/graphview.py:3716
 #, python-format
 msgid "Delete family [%s]?"
 msgstr ""
 
-#: GraphView/graphview.py:3676
+#: GraphView/graphview.py:3717
 msgid "Deleting the family will remove it from the database."
 msgstr ""
 
-#: GraphView/graphview.py:3687
+#: GraphView/graphview.py:3728
 #, python-format
 msgid "Delete Family [%s]"
 msgstr ""
 
-#: GraphView/graphview.py:3706
+#: GraphView/graphview.py:3747
 #, python-format
 msgid "%s has been bookmarked"
 msgstr ""
