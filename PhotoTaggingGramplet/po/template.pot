@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-20 11:31-0300\n"
+"POT-Creation-Date: 2019-09-25 16:10+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -157,6 +157,17 @@ msgid ""
 "{count} other regions of this image are associated with {name}. Remove them?"
 msgstr ""
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:994
-msgid "dead"
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:997
+#, python-format
+msgid "Male person|Dead at %s"
+msgstr ""
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:999
+#, python-format
+msgid "Female person|Dead at %s"
+msgstr ""
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:1001
+#, python-format
+msgid "Unknown gender person|Dead at %s"
 msgstr ""
