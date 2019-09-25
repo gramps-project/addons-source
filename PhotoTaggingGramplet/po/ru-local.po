@@ -7,10 +7,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gramps50\n"
+"Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-20 11:31-0300\n"
-"PO-Revision-Date: 2019-03-20 11:35-0300\n"
+"POT-Creation-Date: 2019-09-25 16:10+0300\n"
+"PO-Revision-Date: 2019-09-25 16:12-0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian <>\n"
 "Language: Russian\n"
@@ -160,6 +160,17 @@ msgid ""
 "{count} other regions of this image are associated with {name}. Remove them?"
 msgstr "{count} других областей на этом фото связаны с {name}. Удалить их?"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:994
-msgid "dead"
-msgstr "мертв(а)"
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:997
+#, python-format
+msgid "Male person|Dead at %s"
+msgstr "Умер в %s"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:999
+#, python-format
+msgid "Female person|Dead at %s"
+msgstr "Умерла в %s"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:1001
+#, python-format
+msgid "Unknown gender person|Dead at %s"
+msgstr "Смерть в %s"
