@@ -1664,8 +1664,8 @@ class GraphWidget(object):
         if self._in_drag and (event.type == Gdk.EventType.MOTION_NOTIFY):
             # start drag when cursor moved more then 5
             # to separate it from simple click
-            if ((abs(self._last_x - event.x) > 5)
-                    or (abs(self._last_y - event.y) > 5)):
+            if ((abs(self._last_x - event.x_root) > 5)
+                    or (abs(self._last_y - event.y_root) > 5)):
                 self.uistate.set_busy_cursor(False)
                 # Remove all single click events
                 for click_item in self.click_events:
@@ -1683,18 +1683,29 @@ class GraphWidget(object):
 
                 # setup targets
                 tglist = Gtk.TargetList.new([])
-                tglist.add(DdTargets.PERSON_LINK.atom_drag_type,
-                           DdTargets.PERSON_LINK.target_flags,
-                           DdTargets.PERSON_LINK.app_id)
-                # allow drag to a text document, info on drag_get will be 0L !
-                tglist.add_text_targets(0)
+                if self.drag_person is not None:
+                    tglist.add(DdTargets.PERSON_LINK.atom_drag_type,
+                               DdTargets.PERSON_LINK.target_flags,
+                               DdTargets.PERSON_LINK.app_id,
+                               )
+                    # allow drag to a text document, info on drag_get will be 0
+                    tglist.add_text_targets(0)
+                if self.drag_family is not None:
+                    tglist.add(DdTargets.FAMILY_LINK.atom_drag_type,
+                               DdTargets.FAMILY_LINK.target_flags,
+                               DdTargets.FAMILY_LINK.app_id,
+                               )
+                    # allow drag to a text document, info on drag_get will be 1
+                    tglist.add_text_targets(1)
 
-                # start drag
                 drag_widget = self.get_widget()
+                # change event window
+                event.window = drag_widget.get_window()
+                # start drag
                 drag_widget.drag_begin_with_coordinates(
                     tglist,
                     Gdk.DragAction.COPY,
-                    Gdk.ModifierType.BUTTON1_MASK,
+                    Gdk.KEY_Pointer_Button1,
                     event,
                     x, y)
                 return True
@@ -1739,6 +1750,20 @@ class GraphWidget(object):
         if event.type != getattr(Gdk.EventType, "BUTTON_PRESS"):
             return False
 
+        if button == 1 and node_class:                      # left mouse
+            # set drag mode, it will be applyed on motion event
+            self.drag_person = None
+            self.drag_family = None
+            if node_class == 'node':
+                self.drag_person = self.dbstate.db.get_person_from_handle(
+                    handle)
+            if node_class == 'familynode':
+                self.drag_family = self.dbstate.db.get_family_from_handle(
+                    handle)
+            self._in_drag = True
+            self._last_x = event.x_root
+            self._last_y = event.y_root
+
         if button == 1 and node_class == 'node':            # left mouse
             if handle == self.active_person_handle:
                 # Find a parent of the active person so that they can become
@@ -1757,11 +1782,6 @@ class GraphWidget(object):
             # add single click events to list, it will be removed if necessary
             context = GLib.main_context_default()
             self.click_events.append(context.find_source_by_id(click_event_id))
-
-            # go to drag mode, applyed on motion event
-            self._in_drag = True
-            self._last_x = event.x
-            self._last_y = event.y
 
         elif button == 3 and node_class:                    # right mouse
             if node_class == 'node':
@@ -1782,8 +1802,12 @@ class GraphWidget(object):
         """
         Called on start drag.
         """
-        # set icon for person drag
-        Gtk.drag_set_icon_name(context, 'gramps-person', 0, 0)
+        tgs = [x.name() for x in context.list_targets()]
+        # set icon depending on person or family drag
+        if DdTargets.PERSON_LINK.drag_type in tgs:
+            Gtk.drag_set_icon_name(context, 'gramps-person', 0, 0)
+        if DdTargets.FAMILY_LINK.drag_type in tgs:
+            Gtk.drag_set_icon_name(context, 'gramps-family', 0, 0)
 
     def cb_drag_end(self, widget, context):
         """
@@ -1794,17 +1818,39 @@ class GraphWidget(object):
     def cb_drag_data_get(self, widget, context, sel_data, info, time):
         """
         Returned parameters after drag.
-        Specified for 'person-link', for others return text info about person.
+        Specified for 'person-link' and 'family-link',
+        also to return text info about person or family.
         """
         tgs = [x.name() for x in context.list_targets()]
+
         if info == DdTargets.PERSON_LINK.app_id:
             data = (DdTargets.PERSON_LINK.drag_type,
                     id(widget), self.drag_person.handle, 0)
             sel_data.set(sel_data.get_target(), 8, pickle.dumps(data))
-        elif ('TEXT' in tgs or 'text/plain' in tgs) and info == 0:
-            format_helper = FormattingHelper(self.dbstate)
-            sel_data.set_text(
-                format_helper.format_person(self.drag_person, 11),-1)
+        elif info == DdTargets.FAMILY_LINK.app_id:
+            data = (DdTargets.FAMILY_LINK.drag_type,
+                    id(widget), self.drag_family.handle, 0)
+            sel_data.set(sel_data.get_target(), 8, pickle.dumps(data))
+        elif ('TEXT' in tgs or 'text/plain' in tgs):
+            if info == 0:
+                format_helper = FormattingHelper(self.dbstate)
+                sel_data.set_text(
+                    format_helper.format_person(self.drag_person, 11),-1)
+            if info == 1:
+                f_handle = self.drag_family.get_father_handle()
+                m_handle = self.drag_family.get_mother_handle()
+                if f_handle:
+                    father = self.dbstate.db.get_person_from_handle(f_handle)
+                    father = displayer.display(father)
+                else:
+                    father = '...'
+                if m_handle:
+                    mother = self.dbstate.db.get_person_from_handle(m_handle)
+                    mother = displayer.display(mother)
+                else:
+                    mother = '...'
+                sel_data.set_text(
+                    _('Family of %s and %s') % (father, mother), -1)
 
     def find_a_parent(self, handle):
         """
