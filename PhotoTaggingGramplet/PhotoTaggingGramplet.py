@@ -64,9 +64,9 @@ from gramps.gui.ddtargets import DdTargets
 
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
-    _ = glocale.get_addon_translator(__file__).gettext
+    _ = glocale.get_addon_translator(__file__).sgettext
 except ValueError:
-    _ = glocale.translation.gettext
+    _ = glocale.translation.sgettext
 
 #-------------------------------------------------------------------------
 #
@@ -970,7 +970,7 @@ class PhotoTaggingGramplet(Gramplet):
 def get_person_age(person, dbstate_db, age_precision):
     """
     Function to get person age.
-    Returns string with age and mark of death.
+    Returns string for age column.
     """
     birth = get_birth_or_fallback(dbstate_db, person)
     death = get_death_or_fallback(dbstate_db, person)
@@ -991,7 +991,13 @@ def get_person_age(person, dbstate_db, age_precision):
             # formating age string
             age_str = age.format(precision=age_precision)
             if is_dead:
-                age_str = "%s - %s" % (age_str, _("dead"))
-
+                gender = person.get_gender()
+                # we get localized "Dead at %s age"
+                if gender == person.MALE:
+                    age_str = _("Male person|Dead at %s") % (age_str)
+                elif gender == person.FEMALE:
+                    age_str = _("Female person|Dead at %s") % (age_str)
+                else:
+                    age_str = _("Unknown gender person|Dead at %s") % (age_str)
             return age_str
     return None
