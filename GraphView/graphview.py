@@ -1480,7 +1480,8 @@ class GraphWidget(object):
         if self.uistate.window.get_window().is_visible():
             process_pending_events()
 
-        self._in_drag = False
+        self._in_drag = False       # True - when drag can be started
+        self._do_drag = False       # True - when drag is started
         self.clear()
         self.active_person_handle = active_person
 
@@ -1661,7 +1662,10 @@ class GraphWidget(object):
             self.vadjustment.set_value(new_y)
             return True
 
-        if self._in_drag and (event.type == Gdk.EventType.MOTION_NOTIFY):
+        if not (event.type == Gdk.EventType.MOTION_NOTIFY):
+            return False
+
+        if self._in_drag and (not self._do_drag):
             # start drag when cursor moved more then 5
             # to separate it from simple click
             if ((abs(self._last_x - event.x_root) > 5)
@@ -1675,11 +1679,8 @@ class GraphWidget(object):
 
                 # translate to drag_widget coords
                 scale_coef = self.canvas.get_scale()
-                bounds = self.canvas.get_root_item().get_bounds()
-                height_canvas = bounds.y2 - bounds.y1
                 x = self._last_x * scale_coef - self.hadjustment.get_value()
-                y = ((height_canvas + self._last_y) * scale_coef -
-                     self.vadjustment.get_value())
+                y = self._last_y * scale_coef - self.vadjustment.get_value()
 
                 # setup targets
                 tglist = Gtk.TargetList.new([])
@@ -1698,14 +1699,12 @@ class GraphWidget(object):
                     # allow drag to a text document, info on drag_get will be 1
                     tglist.add_text_targets(1)
 
-                drag_widget = self.get_widget()
-                # change event window
-                event.window = drag_widget.get_window()
                 # start drag
+                drag_widget = self.get_widget()
                 drag_widget.drag_begin_with_coordinates(
                     tglist,
                     Gdk.DragAction.COPY,
-                    Gdk.KEY_Pointer_Button1,
+                    1,                      # left mouse button = 1
                     event,
                     x, y)
                 return True
@@ -1802,6 +1801,7 @@ class GraphWidget(object):
         """
         Called on start drag.
         """
+        self._do_drag = True
         tgs = [x.name() for x in context.list_targets()]
         # set icon depending on person or family drag
         if DdTargets.PERSON_LINK.drag_type in tgs:
@@ -1814,6 +1814,7 @@ class GraphWidget(object):
         Called when drag is end.
         """
         self._in_drag = False
+        self._do_drag = False
 
     def cb_drag_data_get(self, widget, context, sel_data, info, time):
         """
