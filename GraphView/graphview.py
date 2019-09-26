@@ -147,7 +147,8 @@ class GraphView(NavigationView):
         ('interface.graphview-search-show-images', True),
         ('interface.graphview-search-marked-first', True),
         ('interface.graphview-ranksep', 5),
-        ('interface.graphview-nodesep', 2))
+        ('interface.graphview-nodesep', 2),
+        ('interface.graphview-person-theme', 0))
 
     def __init__(self, pdata, dbstate, uistate, nav_group=0):
         NavigationView.__init__(self, _('Graph View'), pdata, dbstate, uistate,
@@ -492,6 +493,12 @@ class GraphView(NavigationView):
         """
         self.graph_widget.populate(self.get_active())
 
+    def cb_update_person_theme(self, client, cnxd_id, entry, data):
+        """
+        Called when person theme setting changed.
+        """
+        self.graph_widget.populate(self.get_active())
+
     def config_connect(self):
         """
         Overwriten from  :class:`~gui.views.pageview.PageView method
@@ -532,6 +539,8 @@ class GraphView(NavigationView):
                              self.cb_update_spacing)
         self._config.connect('interface.graphview-nodesep',
                              self.cb_update_spacing)
+        self._config.connect('interface.graphview-person-theme',
+                             self.cb_update_person_theme)
 
     def _get_configure_page_funcs(self):
         """
@@ -541,7 +550,7 @@ class GraphView(NavigationView):
         :return: list of functions
         """
         return [self.layout_config_panel,
-                self.color_config_panel,
+                self.theme_config_panel,
                 self.animation_config_panel,
                 self.search_config_panel]
 
@@ -570,7 +579,7 @@ class GraphView(NavigationView):
 
         return _('Layout'), grid
 
-    def color_config_panel(self, configdialog):
+    def theme_config_panel(self, configdialog):
         """
         Function that builds the widget in the configuration dialog.
         See "gramps/gui/configure.py" for details.
@@ -580,11 +589,22 @@ class GraphView(NavigationView):
         grid.set_column_spacing(6)
         grid.set_row_spacing(6)
 
+        p_themes = DotSvgGenerator(self.dbstate, self).get_person_themes()
+        themes_list = []
+        for t in p_themes:
+            themes_list.append((t[0], t[1]))
+
+        row = 0
+        widget = configdialog.add_combo(grid, _('Person theme'), row,
+                                        'interface.graphview-person-theme',
+                                        themes_list)
+        row += 1
         configdialog.add_color(grid,
                                _('Path color to home person'),
-                               0, 'interface.graphview-home-path-color')
+                               row, 'interface.graphview-home-path-color',
+                               col=1)
 
-        return _('Colors'), grid
+        return _('Themes'), grid
 
     def animation_config_panel(self, configdialog):
         """
@@ -2430,8 +2450,8 @@ class DotSvgGenerator(object):
         If index out of range return default theme.
         """
         person_themes = [
-            # default
-            ('<TABLE '
+            (0, _('Default'),
+             '<TABLE '
              'BORDER="0" CELLSPACING="2" CELLPADDING="0" CELLBORDER="0">'
              '<TR><TD>%(img)s</TD></TR>'
              '<TR><TD>%(name)s</TD></TR>'
@@ -2439,8 +2459,8 @@ class DotSvgGenerator(object):
              '<TR><TD>%(tags)s</TD></TR>'
              '</TABLE>'
             ),
-            # image on right side
-            ('<TABLE '
+            (1, _('Image on right side'),
+             '<TABLE '
              'BORDER="0" CELLSPACING="2" CELLPADDING="0" CELLBORDER="0">'
              '<tr>'
              '  <td>%(name)s</td>'
@@ -2455,7 +2475,8 @@ class DotSvgGenerator(object):
              '</TABLE>'
             ),
             # image on left side
-            ('<TABLE '
+            (2, _('Image on left side'),
+             '<TABLE '
              'BORDER="0" CELLSPACING="2" CELLPADDING="0" CELLBORDER="0">'
              '<tr>'
              '  <td rowspan="2">%(img)s</td>'
@@ -2543,11 +2564,12 @@ class DotSvgGenerator(object):
                 self.add_tags_tooltip(person.handle, tags)
 
         # apply theme to person label
-        p_theme = self.get_person_themes(0)
-        label = p_theme % {'img': image,
-                           'name': name,
-                           'dates': dates,
-                           'tags': tag_table}
+        index = self.view._config.get('interface.graphview-person-theme')
+        p_theme = self.get_person_themes(index)
+        label = p_theme[2] % {'img': image,
+                              'name': name,
+                              'dates': dates,
+                              'tags': tag_table}
         return label
 
     def get_family_label(self, family):
