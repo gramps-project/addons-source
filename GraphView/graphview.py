@@ -2423,6 +2423,62 @@ class DotSvgGenerator(object):
 
         return tags, tag_table
 
+    def get_person_themes(self, index=-1):
+        """
+        Person themes.
+        If index == -1 return list of themes.
+        If index out of range return default theme.
+        """
+        person_themes = [
+            # default
+            ('<TABLE '
+             'BORDER="0" CELLSPACING="2" CELLPADDING="0" CELLBORDER="0">'
+             '<TR><TD>%(img)s</TD></TR>'
+             '<TR><TD>%(name)s</TD></TR>'
+             '<TR><TD>%(dates)s</TD></TR>'
+             '<TR><TD>%(tags)s</TD></TR>'
+             '</TABLE>'
+            ),
+            # image on right side
+            ('<TABLE '
+             'BORDER="0" CELLSPACING="2" CELLPADDING="0" CELLBORDER="0">'
+             '<tr>'
+             '  <td>%(name)s</td>'
+             '  <td rowspan="2">%(img)s</td>'
+             '</tr>'
+             '<tr>'
+             '  <td>%(dates)s</td>'
+             '</tr>'
+             '<tr>'
+             '  <td colspan="2">%(tags)s</td>'
+             '</tr>'
+             '</TABLE>'
+            ),
+            # image on left side
+            ('<TABLE '
+             'BORDER="0" CELLSPACING="2" CELLPADDING="0" CELLBORDER="0">'
+             '<tr>'
+             '  <td rowspan="2">%(img)s</td>'
+             '  <td>%(name)s</td>'
+             '</tr>'
+             '<tr>'
+             '  <td>%(dates)s</td>'
+             '</tr>'
+             '<tr>'
+             '  <td colspan="2">%(tags)s</td>'
+             '</tr>'
+             '</TABLE>'
+            ),
+            ]
+
+        if index < 0:
+            return person_themes
+
+        if index < len(person_themes):
+            return person_themes[index]
+        else:
+            return person_themes[0]
+
     def get_person_label(self, person):
         """
         Return person label string (with tags).
@@ -2438,25 +2494,24 @@ class DotSvgGenerator(object):
         #
         # Will use html.escape to avoid '&', '<', '>' in the strings.
 
-        label = ('<TABLE '
-                 'BORDER="0" CELLSPACING="2" CELLPADDING="0" CELLBORDER="0">')
-        line_delimiter = '<BR/>'
+        # FIRST get all strings: img, name, dates, tags
 
         # see if we have an image to use for this person
+        image = ''
         if self.show_images:
-            image_path = self.view.graph_widget.get_person_image(person,
-                                                                 kind='path')
-            if image_path:
-                label += ('<TR><TD><IMG SRC="%s"/></TD></TR>' % image_path)
+            image = self.view.graph_widget.get_person_image(person,
+                                                            kind='path')
+            if image is not None:
+                image = '<IMG SRC="%s"/>' % image
+            else:
+                image = ''
 
-
-        # start adding person name and dates
-        label += '<TR><TD>'
-
-        # add the person's name
+        # get the person's name
         name = displayer.display_name(person.get_primary_name())
-        label += escape(name) + line_delimiter
+        name= escape(name)
 
+        # get dates
+        dates = ''
         birth, death = self.get_date_strings(person)
         birth = escape(birth)
         death = escape(death)
@@ -2467,35 +2522,32 @@ class DotSvgGenerator(object):
         #       d. 1960-01-02 - DeathPlace
         if self.show_full_dates or self.show_places:
             if birth:
-                txt = _('%s %s') % (self.bth, birth)
+                dates = _('%s %s') % (self.bth, birth)
                 # line separator required only if we have both birth and death
-                label += txt
             if death:
                 if birth:
-                    label += line_delimiter
-                #txt = _('d. %s') % death  # short for "died" (could be "+")
-                txt = _('%s %s') % (self.dth, death)
-                label += txt
+                    dates += '<BR/>'
+                dates += _('%s %s') % (self.dth, death)
+
         # 2) simple and on one line:
         #       (1890 - 1960)
         else:
             if birth or death:
-                txt = '(%s - %s)' % (birth, death)
-                label += txt
+                dates = '(%s - %s)' % (birth, death)
 
-        # ending of name and dates
-        label += '</TD></TR>'
-
-        # add tags table for person and add tooltip for node
+        # get tags table for person and add tooltip for node
+        tag_table = ''
         if self.show_tag_color:
             tags, tag_table = self.get_tags_and_table(person)
-
             if tag_table:
-                label += '<TR><TD>%s</TD></TR>' % tag_table
                 self.add_tags_tooltip(person.handle, tags)
 
-        # terminate the main table
-        label += '</TABLE>'
+        # apply theme to person label
+        p_theme = self.get_person_themes(0)
+        label = p_theme % {'img': image,
+                           'name': name,
+                           'dates': dates,
+                           'tags': tag_table}
         return label
 
     def get_family_label(self, family):
