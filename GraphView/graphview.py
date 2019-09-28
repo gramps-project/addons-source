@@ -1954,6 +1954,8 @@ class DotSvgGenerator(object):
             'interface.graphview-descendant-generations')
         self.ancestor_generations = self.view._config.get(
             'interface.graphview-ancestor-generations')
+        self.person_theme_index = self.view._config.get(
+            'interface.graphview-person-theme')
         ranksep = self.view._config.get('interface.graphview-ranksep')
         ranksep = ranksep * 0.1
         nodesep = self.view._config.get('interface.graphview-nodesep')
@@ -2606,9 +2608,9 @@ class DotSvgGenerator(object):
 
         # apply theme to person label
         if image:
-            index = self.view._config.get('interface.graphview-person-theme')
-            p_theme = self.get_person_themes(index)
+            p_theme = self.get_person_themes(self.person_theme_index)
         else:
+            # use default theme if no image
             p_theme = self.get_person_themes(0)
 
         label = p_theme[2] % {'img': image,
