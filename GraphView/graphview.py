@@ -1781,6 +1781,8 @@ class GraphvizSvgParser(object):
         Parse </text> tags.
         The text tag contains some textual data.
         """
+        tag = escape(tag)
+
         pos_x = float(self.text_attrs.get('x'))
         pos_y = float(self.text_attrs.get('y'))
         anchor = self.text_attrs.get('text-anchor')
@@ -1800,11 +1802,15 @@ class GraphvizSvgParser(object):
             font_size = self.text_attrs.get('font-size')
             text_font = font_family + " " + font_size + 'px'
 
+        # set bold text using PangoMarkup
+        if self.text_attrs.get('font-weight') == 'bold':
+            tag = '<b>%s</b>' % tag
+
         # text color
         fill_color = self.text_attrs.get('fill')
 
         GooCanvas.CanvasText(parent=self.current_parent(),
-                             text=escape(tag),
+                             text=tag,
                              x=pos_x,
                              y=pos_y,
                              anchor=self.text_anchor_map[anchor],
@@ -2454,7 +2460,7 @@ class DotSvgGenerator(object):
              '<TABLE '
              'BORDER="0" CELLSPACING="2" CELLPADDING="0" CELLBORDER="0">'
              '<TR><TD>%(img)s</TD></TR>'
-             '<TR><TD>%(name)s</TD></TR>'
+             '<TR><TD><B>%(name)s</B></TD></TR>'
              '<TR><TD>%(birth_str)s</TD></TR>'
              '<TR><TD>%(death_str)s</TD></TR>'
              '<TR><TD>%(tags)s</TD></TR>'
@@ -2464,7 +2470,7 @@ class DotSvgGenerator(object):
              '<TABLE '
              'BORDER="0" CELLSPACING="2" CELLPADDING="0" CELLBORDER="0">'
              '<tr>'
-             '  <td colspan="2">%(name)s</td>'
+             '  <td colspan="2"><B>%(name)s</B></td>'
              '</tr>'
              '<tr>'
              '  <td ALIGN="LEFT" BALIGN="LEFT">%(birth_wraped)s</td>'
@@ -2482,7 +2488,7 @@ class DotSvgGenerator(object):
              '<TABLE '
              'BORDER="0" CELLSPACING="2" CELLPADDING="0" CELLBORDER="0">'
              '<tr>'
-             '  <td colspan="2">%(name)s</td>'
+             '  <td colspan="2"><B>%(name)s</B></td>'
              '</tr>'
              '<tr>'
              '  <td rowspan="2">%(img)s</td>'
