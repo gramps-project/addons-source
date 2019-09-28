@@ -2455,7 +2455,8 @@ class DotSvgGenerator(object):
              'BORDER="0" CELLSPACING="2" CELLPADDING="0" CELLBORDER="0">'
              '<TR><TD>%(img)s</TD></TR>'
              '<TR><TD>%(name)s</TD></TR>'
-             '<TR><TD>%(dates)s</TD></TR>'
+             '<TR><TD>%(birth_str)s</TD></TR>'
+             '<TR><TD>%(death_str)s</TD></TR>'
              '<TR><TD>%(tags)s</TD></TR>'
              '</TABLE>'
             ),
@@ -2463,27 +2464,32 @@ class DotSvgGenerator(object):
              '<TABLE '
              'BORDER="0" CELLSPACING="2" CELLPADDING="0" CELLBORDER="0">'
              '<tr>'
-             '  <td>%(name)s</td>'
+             '  <td colspan="2">%(name)s</td>'
+             '</tr>'
+             '<tr>'
+             '  <td ALIGN="LEFT" BALIGN="LEFT">%(birth_wraped)s</td>'
              '  <td rowspan="2">%(img)s</td>'
              '</tr>'
              '<tr>'
-             '  <td>%(dates)s</td>'
+             '  <td ALIGN="LEFT" BALIGN="LEFT">%(death_wraped)s</td>'
              '</tr>'
              '<tr>'
              '  <td colspan="2">%(tags)s</td>'
              '</tr>'
              '</TABLE>'
             ),
-            # image on left side
             (2, _('Image on left side'),
              '<TABLE '
              'BORDER="0" CELLSPACING="2" CELLPADDING="0" CELLBORDER="0">'
              '<tr>'
-             '  <td rowspan="2">%(img)s</td>'
-             '  <td>%(name)s</td>'
+             '  <td colspan="2">%(name)s</td>'
              '</tr>'
              '<tr>'
-             '  <td>%(dates)s</td>'
+             '  <td rowspan="2">%(img)s</td>'
+             '  <td ALIGN="LEFT" BALIGN="LEFT">%(birth_wraped)s</td>'
+             '</tr>'
+             '<tr>'
+             '  <td ALIGN="LEFT" BALIGN="LEFT">%(death_wraped)s</td>'
              '</tr>'
              '<tr>'
              '  <td colspan="2">%(tags)s</td>'
@@ -2531,30 +2537,59 @@ class DotSvgGenerator(object):
         name = displayer.display_name(person.get_primary_name())
         name= escape(name)
 
-        # get dates
-        dates = ''
+        # birth, death is a lists [date, place]
         birth, death = self.get_date_strings(person)
-        birth = escape(birth)
-        death = escape(death)
+
+        birth_str = ''
+        death_str = ''
+        birth_wraped = ''
+        death_wraped = ''
 
         # There are two ways of displaying dates:
         # 1) full and on two lines:
         #       b. 1890-12-31 - BirthPlace
         #       d. 1960-01-02 - DeathPlace
         if self.show_full_dates or self.show_places:
-            if birth:
-                dates = _('%s %s') % (self.bth, birth)
-                # line separator required only if we have both birth and death
-            if death:
-                if birth:
-                    dates += '<BR/>'
-                dates += _('%s %s') % (self.dth, death)
+            # add symbols
+            if birth[0]:
+                birth[0] = _('%s %s') % (self.bth, birth[0])
+                birth_wraped = birth[0]
+                birth_str = birth[0]
+                if birth[1]:
+                    birth_wraped += '<BR/>'
+                    birth_str += '  '
+            elif birth[1]:
+                birth_wraped =  _('%s ') % self.bth
+                birth_str = _('%s ') % self.bth
+            birth_wraped += birth[1]
+            birth_str += birth[1]
+
+            if death[0]:
+                death[0] = _('%s %s') % (self.dth, death[0])
+                death_wraped = death[0]
+                death_str = death[0]
+                if death[1]:
+                    death_wraped += '<BR/>'
+                    death_str += '  '
+            elif death[1]:
+                death_wraped =  _('%s ') % self.dth
+                death_str = _('%s ') % self.bth
+            death_wraped += death[1]
+            death_str += death[1]
 
         # 2) simple and on one line:
         #       (1890 - 1960)
         else:
-            if birth or death:
-                dates = '(%s - %s)' % (birth, death)
+            if birth[0] or death[0]:
+                birth_str = '(%s - %s)' % (birth[0], death[0])
+                # add symbols
+                if image:
+                    if birth[0]:
+                        birth_wraped = _('%s %s') % (self.bth, birth[0])
+                    if death[0]:
+                        death_wraped = _('%s %s') % (self.dth, death[0])
+                else:
+                    birth_wraped = birth_str
 
         # get tags table for person and add tooltip for node
         tag_table = ''
@@ -2564,11 +2599,18 @@ class DotSvgGenerator(object):
                 self.add_tags_tooltip(person.handle, tags)
 
         # apply theme to person label
-        index = self.view._config.get('interface.graphview-person-theme')
-        p_theme = self.get_person_themes(index)
+        if image:
+            index = self.view._config.get('interface.graphview-person-theme')
+            p_theme = self.get_person_themes(index)
+        else:
+            p_theme = self.get_person_themes(0)
+
         label = p_theme[2] % {'img': image,
                               'name': name,
-                              'dates': dates,
+                              'birth_str': birth_str,
+                              'death_str': death_str,
+                              'birth_wraped': birth_wraped,
+                              'death_wraped': death_wraped,
                               'tags': tag_table}
         return label
 
@@ -2589,7 +2631,14 @@ class DotSvgGenerator(object):
                      event_ref.get_role() == EventRoleType.PRIMARY)):
                 event_str = self.get_event_string(event)
                 break
-        label += '<TR><TD>%s</TD></TR>' % escape(event_str)
+        if event_str[0] and event_str[1]:
+            event_str = '%s<BR/>%s' % (event_str[0], event_str[1])
+        elif event_str[0]:
+            event_str = '%s' % (event_str[0])
+        elif event_str[1]:
+            event_str = '%s' % (event_str[1])
+
+        label += '<TR><TD>%s</TD></TR>' % event_str
 
         # add tags table for family and add tooltip for node
         if self.show_tag_color:
@@ -2612,13 +2661,13 @@ class DotSvgGenerator(object):
         if birth_event:
             birth = self.get_event_string(birth_event)
         else:
-            birth = ""
+            birth = ['', '']
 
         death_event = get_death_or_fallback(self.database, person)
         if death_event:
             death = self.get_event_string(death_event)
         else:
-            death = ""
+            death = ['', '']
 
         return (birth, death)
 
@@ -2636,21 +2685,24 @@ class DotSvgGenerator(object):
         if event:
             place_title = place_displayer.display_event(self.database, event)
             date_object = event.get_date_object()
-            #shall we display full date or do we have a valid year to display only year
-            if (self.show_full_dates and date_object.get_text()) or date_object.get_year_valid():
+            date = ''
+            place = ''
+            # shall we display full date
+            # or do we have a valid year to display only year
+            if ((self.show_full_dates and date_object.get_text())
+                    or date_object.get_year_valid()):
                 if self.show_full_dates:
-                    rtrn = '%s' % datehandler.get_date(event)
+                    date = '%s' % datehandler.get_date(event)
                 else:
-                    rtrn = '%i' % date_object.get_year()
+                    date = '%i' % date_object.get_year()
                 # shall we add the place?
-                if self.show_places:
-                    if place_title:
-                        rtrn += ' - %s' % place_title
-                return rtrn
+                if self.show_places and place_title:
+                    place = place_title
+                return [escape(date), escape(place)]
             else:
                 if place_title and self.show_places:
-                    return place_title
-        return ''
+                    return ['', escape(place_title)]
+        return ['', '']
 
     def add_link(self, id1, id2, style="", head="", tail="", comment="",
                  bold=False, color=""):
