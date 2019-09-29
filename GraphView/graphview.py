@@ -1501,14 +1501,6 @@ class GraphvizSvgParser(object):
         # list of persons items, used for animation class
         self.items_list = []
 
-        # This dictionary maps various specific fonts to their generic font
-        # types. Will need to include any truetype fonts here.
-        self.font_family_map = {"Times New Roman,serif": "Times",
-                                "Times Roman,serif":     "Times",
-                                "Times-Roman":           "Times",
-                                "Times,serif":           "Times",
-                                "Arial":                 "Helvetica",}
-
         self.transform_scale = 1
         self.font_changed()
 
@@ -1769,14 +1761,10 @@ class GraphvizSvgParser(object):
         # does the following always work with symbols?
         if style:
             p_style = self.parse_style(style)
-            try:
-                font_family = self.font_family_map[p_style['font-family']]
-            except KeyError:
-                font_family = p_style['font-family']
+            font_family = p_style['font-family']
             text_font = font_family + " " + p_style['font-size'] + 'px'
         else:
-            font_family = self.font_family_map[
-                self.text_attrs.get('font-family')]
+            font_family = self.text_attrs.get('font-family')
             font_size = self.text_attrs.get('font-size')
             text_font = font_family + " " + font_size + 'px'
 
