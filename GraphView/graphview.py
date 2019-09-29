@@ -2418,7 +2418,12 @@ class DotSvgGenerator(object):
             tag_table = ('<TABLE BORDER="0" CELLBORDER="0" '
                          'CELLPADDING="5"><TR>')
             for tag in tags:
-                tag_table += '<TD BGCOLOR="%s"></TD>' % tag.get_color()
+                rgba = Gdk.RGBA()
+                rgba.parse(tag.get_color())
+                value = '#%02x%02x%02x' % (int(rgba.red * 255),
+                                   int(rgba.green * 255),
+                                   int(rgba.blue * 255))
+                tag_table += '<TD BGCOLOR="%s"></TD>' % value
             tag_table += '</TR></TABLE>'
 
         return tags, tag_table
