@@ -2543,7 +2543,8 @@ class DotSvgGenerator(object):
 
         # get the person's name
         name = displayer.display_name(person.get_primary_name())
-        name= escape(name)
+        # name string should not be empty
+        name= escape(name) if name else ' '
 
         # birth, death is a lists [date, place]
         birth, death = self.get_date_strings(person)
