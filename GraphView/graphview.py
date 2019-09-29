@@ -2632,7 +2632,7 @@ class DotSvgGenerator(object):
                  'BORDER="0" CELLSPACING="2" CELLPADDING="0" CELLBORDER="0">')
 
         # add dates strtings to table
-        event_str = ''
+        event_str = ['', '']
         for event_ref in family.get_event_ref_list():
             event = self.database.get_event_from_handle(event_ref.ref)
             if (event.type == EventType.MARRIAGE and
