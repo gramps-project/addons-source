@@ -2642,9 +2642,11 @@ class DotSvgGenerator(object):
         if event_str[0] and event_str[1]:
             event_str = '%s<BR/>%s' % (event_str[0], event_str[1])
         elif event_str[0]:
-            event_str = '%s' % (event_str[0])
+            event_str = event_str[0]
         elif event_str[1]:
-            event_str = '%s' % (event_str[1])
+            event_str = event_str[1]
+        else:
+           event_str = ''
 
         label += '<TR><TD>%s</TD></TR>' % event_str
 
