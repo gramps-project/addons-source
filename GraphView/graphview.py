@@ -132,6 +132,7 @@ class GraphView(NavigationView):
     # default settings in the config file
     CONFIGSETTINGS = (
         ('interface.graphview-show-images', True),
+        ('interface.graphview-show-avatars', True),
         ('interface.graphview-show-full-dates', False),
         ('interface.graphview-show-places', False),
         ('interface.graphview-show-lines', 1),
@@ -377,6 +378,13 @@ class GraphView(NavigationView):
         self.show_images = entry == 'True'
         self.graph_widget.populate(self.get_active())
 
+    def cb_update_show_avatars(self, client, cnxn_id, entry, data):
+        """
+        Called when the configuration menu changes the avatars setting.
+        """
+        self.show_avatars = entry == 'True'
+        self.graph_widget.populate(self.get_active())
+
     def cb_update_show_full_dates(self, client, cnxn_id, entry, data):
         """
         Called when the configuration menu changes the date setting.
@@ -507,6 +515,8 @@ class GraphView(NavigationView):
         """
         self._config.connect('interface.graphview-show-images',
                              self.cb_update_show_images)
+        self._config.connect('interface.graphview-show-avatars',
+                             self.cb_update_show_avatars)
         self._config.connect('interface.graphview-show-full-dates',
                              self.cb_update_show_full_dates)
         self._config.connect('interface.graphview-show-places',
@@ -564,18 +574,26 @@ class GraphView(NavigationView):
         grid.set_column_spacing(6)
         grid.set_row_spacing(6)
 
+        row = 0
         configdialog.add_checkbox(
-            grid, _('Show images'), 0, 'interface.graphview-show-images')
+            grid, _('Show images'), row, 'interface.graphview-show-images')
+        row += 1
+        configdialog.add_checkbox(
+            grid, _('Show avatars'), row, 'interface.graphview-show-avatars')
+        row += 1
         configdialog.add_checkbox(
             grid, _('Highlight the home person'),
-            1, 'interface.graphview-highlight-home-person')
+            row, 'interface.graphview-highlight-home-person')
+        row += 1
         configdialog.add_checkbox(
             grid, _('Show full dates'),
-            2, 'interface.graphview-show-full-dates')
+            row, 'interface.graphview-show-full-dates')
+        row += 1
         configdialog.add_checkbox(
-            grid, _('Show places'), 3, 'interface.graphview-show-places')
+            grid, _('Show places'), row, 'interface.graphview-show-places')
+        row += 1
         configdialog.add_checkbox(
-            grid, _('Show tags'), 4, 'interface.graphview-show-tags')
+            grid, _('Show tags'), row, 'interface.graphview-show-tags')
 
         return _('Layout'), grid
 
@@ -1942,6 +1960,8 @@ class DotSvgGenerator(object):
 
         self.show_images = self.view._config.get(
             'interface.graphview-show-images')
+        self.show_avatars = self.view._config.get(
+            'interface.graphview-show-avatars')
         self.show_full_dates = self.view._config.get(
             'interface.graphview-show-full-dates')
         self.show_places = self.view._config.get(
@@ -2514,6 +2534,16 @@ class DotSvgGenerator(object):
         else:
             return person_themes[0]
 
+    def get_avatar(self, gender):
+        """
+        Return person gender avatar.
+        """
+        path, filename = os.path.split(__file__)
+        if gender == Person.MALE:
+            return os.path.join(path, 'person_male.png')
+        if gender == Person.FEMALE:
+            return os.path.join(path, 'person_female.png')
+
     def get_person_label(self, person):
         """
         Return person label string (with tags).
@@ -2536,6 +2566,9 @@ class DotSvgGenerator(object):
         if self.show_images:
             image = self.view.graph_widget.get_person_image(person,
                                                             kind='path')
+            if not image and self.show_avatars:
+                image = self.get_avatar(gender=person.gender)
+
             if image is not None:
                 image = '<IMG SRC="%s"/>' % image
             else:
