@@ -132,6 +132,7 @@ class GraphView(NavigationView):
     # default settings in the config file
     CONFIGSETTINGS = (
         ('interface.graphview-show-images', True),
+        ('interface.graphview-show-avatars', True),
         ('interface.graphview-show-full-dates', False),
         ('interface.graphview-show-places', False),
         ('interface.graphview-show-lines', 1),
@@ -147,7 +148,8 @@ class GraphView(NavigationView):
         ('interface.graphview-search-show-images', True),
         ('interface.graphview-search-marked-first', True),
         ('interface.graphview-ranksep', 5),
-        ('interface.graphview-nodesep', 2))
+        ('interface.graphview-nodesep', 2),
+        ('interface.graphview-person-theme', 0))
 
     def __init__(self, pdata, dbstate, uistate, nav_group=0):
         NavigationView.__init__(self, _('Graph View'), pdata, dbstate, uistate,
@@ -376,6 +378,13 @@ class GraphView(NavigationView):
         self.show_images = entry == 'True'
         self.graph_widget.populate(self.get_active())
 
+    def cb_update_show_avatars(self, client, cnxn_id, entry, data):
+        """
+        Called when the configuration menu changes the avatars setting.
+        """
+        self.show_avatars = entry == 'True'
+        self.graph_widget.populate(self.get_active())
+
     def cb_update_show_full_dates(self, client, cnxn_id, entry, data):
         """
         Called when the configuration menu changes the date setting.
@@ -492,6 +501,12 @@ class GraphView(NavigationView):
         """
         self.graph_widget.populate(self.get_active())
 
+    def cb_update_person_theme(self, client, cnxd_id, entry, data):
+        """
+        Called when person theme setting changed.
+        """
+        self.graph_widget.populate(self.get_active())
+
     def config_connect(self):
         """
         Overwriten from  :class:`~gui.views.pageview.PageView method
@@ -500,6 +515,8 @@ class GraphView(NavigationView):
         """
         self._config.connect('interface.graphview-show-images',
                              self.cb_update_show_images)
+        self._config.connect('interface.graphview-show-avatars',
+                             self.cb_update_show_avatars)
         self._config.connect('interface.graphview-show-full-dates',
                              self.cb_update_show_full_dates)
         self._config.connect('interface.graphview-show-places',
@@ -532,6 +549,8 @@ class GraphView(NavigationView):
                              self.cb_update_spacing)
         self._config.connect('interface.graphview-nodesep',
                              self.cb_update_spacing)
+        self._config.connect('interface.graphview-person-theme',
+                             self.cb_update_person_theme)
 
     def _get_configure_page_funcs(self):
         """
@@ -541,7 +560,7 @@ class GraphView(NavigationView):
         :return: list of functions
         """
         return [self.layout_config_panel,
-                self.color_config_panel,
+                self.theme_config_panel,
                 self.animation_config_panel,
                 self.search_config_panel]
 
@@ -555,22 +574,30 @@ class GraphView(NavigationView):
         grid.set_column_spacing(6)
         grid.set_row_spacing(6)
 
+        row = 0
         configdialog.add_checkbox(
-            grid, _('Show images'), 0, 'interface.graphview-show-images')
+            grid, _('Show images'), row, 'interface.graphview-show-images')
+        row += 1
+        configdialog.add_checkbox(
+            grid, _('Show avatars'), row, 'interface.graphview-show-avatars')
+        row += 1
         configdialog.add_checkbox(
             grid, _('Highlight the home person'),
-            1, 'interface.graphview-highlight-home-person')
+            row, 'interface.graphview-highlight-home-person')
+        row += 1
         configdialog.add_checkbox(
             grid, _('Show full dates'),
-            2, 'interface.graphview-show-full-dates')
+            row, 'interface.graphview-show-full-dates')
+        row += 1
         configdialog.add_checkbox(
-            grid, _('Show places'), 3, 'interface.graphview-show-places')
+            grid, _('Show places'), row, 'interface.graphview-show-places')
+        row += 1
         configdialog.add_checkbox(
-            grid, _('Show tags'), 4, 'interface.graphview-show-tags')
+            grid, _('Show tags'), row, 'interface.graphview-show-tags')
 
         return _('Layout'), grid
 
-    def color_config_panel(self, configdialog):
+    def theme_config_panel(self, configdialog):
         """
         Function that builds the widget in the configuration dialog.
         See "gramps/gui/configure.py" for details.
@@ -580,11 +607,22 @@ class GraphView(NavigationView):
         grid.set_column_spacing(6)
         grid.set_row_spacing(6)
 
+        p_themes = DotSvgGenerator(self.dbstate, self).get_person_themes()
+        themes_list = []
+        for t in p_themes:
+            themes_list.append((t[0], t[1]))
+
+        row = 0
+        widget = configdialog.add_combo(grid, _('Person theme'), row,
+                                        'interface.graphview-person-theme',
+                                        themes_list)
+        row += 1
         configdialog.add_color(grid,
                                _('Path color to home person'),
-                               0, 'interface.graphview-home-path-color')
+                               row, 'interface.graphview-home-path-color',
+                               col=1)
 
-        return _('Colors'), grid
+        return _('Themes'), grid
 
     def animation_config_panel(self, configdialog):
         """
@@ -1761,6 +1799,8 @@ class GraphvizSvgParser(object):
         Parse </text> tags.
         The text tag contains some textual data.
         """
+        tag = escape(tag)
+
         pos_x = float(self.text_attrs.get('x'))
         pos_y = float(self.text_attrs.get('y'))
         anchor = self.text_attrs.get('text-anchor')
@@ -1780,11 +1820,15 @@ class GraphvizSvgParser(object):
             font_size = self.text_attrs.get('font-size')
             text_font = font_family + " " + font_size + 'px'
 
+        # set bold text using PangoMarkup
+        if self.text_attrs.get('font-weight') == 'bold':
+            tag = '<b>%s</b>' % tag
+
         # text color
         fill_color = self.text_attrs.get('fill')
 
         GooCanvas.CanvasText(parent=self.current_parent(),
-                             text=escape(tag),
+                             text=tag,
                              x=pos_x,
                              y=pos_y,
                              anchor=self.text_anchor_map[anchor],
@@ -1916,6 +1960,8 @@ class DotSvgGenerator(object):
 
         self.show_images = self.view._config.get(
             'interface.graphview-show-images')
+        self.show_avatars = self.view._config.get(
+            'interface.graphview-show-avatars')
         self.show_full_dates = self.view._config.get(
             'interface.graphview-show-full-dates')
         self.show_places = self.view._config.get(
@@ -1928,6 +1974,8 @@ class DotSvgGenerator(object):
             'interface.graphview-descendant-generations')
         self.ancestor_generations = self.view._config.get(
             'interface.graphview-ancestor-generations')
+        self.person_theme_index = self.view._config.get(
+            'interface.graphview-person-theme')
         ranksep = self.view._config.get('interface.graphview-ranksep')
         ranksep = ranksep * 0.1
         nodesep = self.view._config.get('interface.graphview-nodesep')
@@ -2428,6 +2476,79 @@ class DotSvgGenerator(object):
 
         return tags, tag_table
 
+    def get_person_themes(self, index=-1):
+        """
+        Person themes.
+        If index == -1 return list of themes.
+        If index out of range return default theme.
+        """
+        person_themes = [
+            (0, _('Default'),
+             '<TABLE '
+             'BORDER="0" CELLSPACING="2" CELLPADDING="0" CELLBORDER="0">'
+             '<TR><TD>%(img)s</TD></TR>'
+             '<TR><TD><B>%(name)s</B></TD></TR>'
+             '<TR><TD>%(birth_str)s</TD></TR>'
+             '<TR><TD>%(death_str)s</TD></TR>'
+             '<TR><TD>%(tags)s</TD></TR>'
+             '</TABLE>'
+            ),
+            (1, _('Image on right side'),
+             '<TABLE '
+             'BORDER="0" CELLSPACING="5" CELLPADDING="0" CELLBORDER="0">'
+             '<tr>'
+             '  <td colspan="2"><B>%(name)s</B></td>'
+             '</tr>'
+             '<tr>'
+             '  <td ALIGN="LEFT" BALIGN="LEFT" CELLPADDING="5">%(birth_wraped)s</td>'
+             '  <td rowspan="2">%(img)s</td>'
+             '</tr>'
+             '<tr>'
+             '  <td ALIGN="LEFT" BALIGN="LEFT" CELLPADDING="5">%(death_wraped)s</td>'
+             '</tr>'
+             '<tr>'
+             '  <td colspan="2">%(tags)s</td>'
+             '</tr>'
+             '</TABLE>'
+            ),
+            (2, _('Image on left side'),
+             '<TABLE '
+             'BORDER="0" CELLSPACING="5" CELLPADDING="0" CELLBORDER="0">'
+             '<tr>'
+             '  <td colspan="2"><B>%(name)s</B></td>'
+             '</tr>'
+             '<tr>'
+             '  <td rowspan="2">%(img)s</td>'
+             '  <td ALIGN="LEFT" BALIGN="LEFT" CELLPADDING="5">%(birth_wraped)s</td>'
+             '</tr>'
+             '<tr>'
+             '  <td ALIGN="LEFT" BALIGN="LEFT" CELLPADDING="5">%(death_wraped)s</td>'
+             '</tr>'
+             '<tr>'
+             '  <td colspan="2">%(tags)s</td>'
+             '</tr>'
+             '</TABLE>'
+            ),
+            ]
+
+        if index < 0:
+            return person_themes
+
+        if index < len(person_themes):
+            return person_themes[index]
+        else:
+            return person_themes[0]
+
+    def get_avatar(self, gender):
+        """
+        Return person gender avatar.
+        """
+        path, filename = os.path.split(__file__)
+        if gender == Person.MALE:
+            return os.path.join(path, 'person_male.png')
+        if gender == Person.FEMALE:
+            return os.path.join(path, 'person_female.png')
+
     def get_person_label(self, person):
         """
         Return person label string (with tags).
@@ -2443,64 +2564,101 @@ class DotSvgGenerator(object):
         #
         # Will use html.escape to avoid '&', '<', '>' in the strings.
 
-        label = ('<TABLE '
-                 'BORDER="0" CELLSPACING="2" CELLPADDING="0" CELLBORDER="0">')
-        line_delimiter = '<BR/>'
+        # FIRST get all strings: img, name, dates, tags
 
         # see if we have an image to use for this person
+        image = ''
         if self.show_images:
-            image_path = self.view.graph_widget.get_person_image(person,
-                                                                 kind='path')
-            if image_path:
-                label += ('<TR><TD><IMG SRC="%s"/></TD></TR>' % image_path)
+            image = self.view.graph_widget.get_person_image(person,
+                                                            kind='path')
+            if not image and self.show_avatars:
+                image = self.get_avatar(gender=person.gender)
 
+            if image is not None:
+                image = '<IMG SRC="%s"/>' % image
+            else:
+                image = ''
 
-        # start adding person name and dates
-        label += '<TR><TD>'
-
-        # add the person's name
+        # get the person's name
         name = displayer.display_name(person.get_primary_name())
-        label += escape(name) + line_delimiter
+        # name string should not be empty
+        name= escape(name) if name else ' '
 
+        # birth, death is a lists [date, place]
         birth, death = self.get_date_strings(person)
-        birth = escape(birth)
-        death = escape(death)
+
+        birth_str = ''
+        death_str = ''
+        birth_wraped = ''
+        death_wraped = ''
 
         # There are two ways of displaying dates:
         # 1) full and on two lines:
         #       b. 1890-12-31 - BirthPlace
         #       d. 1960-01-02 - DeathPlace
         if self.show_full_dates or self.show_places:
-            if birth:
-                txt = _('%s %s') % (self.bth, birth)
-                # line separator required only if we have both birth and death
-                label += txt
-            if death:
-                if birth:
-                    label += line_delimiter
-                #txt = _('d. %s') % death  # short for "died" (could be "+")
-                txt = _('%s %s') % (self.dth, death)
-                label += txt
+            # add symbols
+            if birth[0]:
+                birth[0] = _('%s %s') % (self.bth, birth[0])
+                birth_wraped = birth[0]
+                birth_str = birth[0]
+                if birth[1]:
+                    birth_wraped += '<BR/>'
+                    birth_str += '  '
+            elif birth[1]:
+                birth_wraped =  _('%s ') % self.bth
+                birth_str = _('%s ') % self.bth
+            birth_wraped += birth[1]
+            birth_str += birth[1]
+
+            if death[0]:
+                death[0] = _('%s %s') % (self.dth, death[0])
+                death_wraped = death[0]
+                death_str = death[0]
+                if death[1]:
+                    death_wraped += '<BR/>'
+                    death_str += '  '
+            elif death[1]:
+                death_wraped =  _('%s ') % self.dth
+                death_str = _('%s ') % self.bth
+            death_wraped += death[1]
+            death_str += death[1]
+
         # 2) simple and on one line:
         #       (1890 - 1960)
         else:
-            if birth or death:
-                txt = '(%s - %s)' % (birth, death)
-                label += txt
+            if birth[0] or death[0]:
+                birth_str = '(%s - %s)' % (birth[0], death[0])
+                # add symbols
+                if image:
+                    if birth[0]:
+                        birth_wraped = _('%s %s') % (self.bth, birth[0])
+                    if death[0]:
+                        death_wraped = _('%s %s') % (self.dth, death[0])
+                else:
+                    birth_wraped = birth_str
 
-        # ending of name and dates
-        label += '</TD></TR>'
-
-        # add tags table for person and add tooltip for node
+        # get tags table for person and add tooltip for node
+        tag_table = ''
         if self.show_tag_color:
             tags, tag_table = self.get_tags_and_table(person)
-
             if tag_table:
-                label += '<TR><TD>%s</TD></TR>' % tag_table
                 self.add_tags_tooltip(person.handle, tags)
 
-        # terminate the main table
-        label += '</TABLE>'
+        # apply theme to person label
+        if image:
+            p_theme = self.get_person_themes(self.person_theme_index)
+        else:
+            # use default theme if no image
+            p_theme = self.get_person_themes(0)
+
+        label = p_theme[2] % {'img': image,
+                              'name': name,
+                              'birth_str': birth_str,
+                              'death_str': death_str,
+                              'birth_wraped': birth_wraped,
+                              'death_wraped': death_wraped,
+                              'tags': tag_table}
         return label
 
     def get_family_label(self, family):
@@ -2512,7 +2670,7 @@ class DotSvgGenerator(object):
                  'BORDER="0" CELLSPACING="2" CELLPADDING="0" CELLBORDER="0">')
 
         # add dates strtings to table
-        event_str = ''
+        event_str = ['', '']
         for event_ref in family.get_event_ref_list():
             event = self.database.get_event_from_handle(event_ref.ref)
             if (event.type == EventType.MARRIAGE and
@@ -2520,7 +2678,16 @@ class DotSvgGenerator(object):
                      event_ref.get_role() == EventRoleType.PRIMARY)):
                 event_str = self.get_event_string(event)
                 break
-        label += '<TR><TD>%s</TD></TR>' % escape(event_str)
+        if event_str[0] and event_str[1]:
+            event_str = '%s<BR/>%s' % (event_str[0], event_str[1])
+        elif event_str[0]:
+            event_str = event_str[0]
+        elif event_str[1]:
+            event_str = event_str[1]
+        else:
+           event_str = ''
+
+        label += '<TR><TD>%s</TD></TR>' % event_str
 
         # add tags table for family and add tooltip for node
         if self.show_tag_color:
@@ -2543,13 +2710,13 @@ class DotSvgGenerator(object):
         if birth_event:
             birth = self.get_event_string(birth_event)
         else:
-            birth = ""
+            birth = ['', '']
 
         death_event = get_death_or_fallback(self.database, person)
         if death_event:
             death = self.get_event_string(death_event)
         else:
-            death = ""
+            death = ['', '']
 
         return (birth, death)
 
@@ -2567,21 +2734,24 @@ class DotSvgGenerator(object):
         if event:
             place_title = place_displayer.display_event(self.database, event)
             date_object = event.get_date_object()
-            #shall we display full date or do we have a valid year to display only year
-            if (self.show_full_dates and date_object.get_text()) or date_object.get_year_valid():
+            date = ''
+            place = ''
+            # shall we display full date
+            # or do we have a valid year to display only year
+            if ((self.show_full_dates and date_object.get_text())
+                    or date_object.get_year_valid()):
                 if self.show_full_dates:
-                    rtrn = '%s' % datehandler.get_date(event)
+                    date = '%s' % datehandler.get_date(event)
                 else:
-                    rtrn = '%i' % date_object.get_year()
+                    date = '%i' % date_object.get_year()
                 # shall we add the place?
-                if self.show_places:
-                    if place_title:
-                        rtrn += ' - %s' % place_title
-                return rtrn
+                if self.show_places and place_title:
+                    place = place_title
+                return [escape(date), escape(place)]
             else:
                 if place_title and self.show_places:
-                    return place_title
-        return ''
+                    return ['', escape(place_title)]
+        return ['', '']
 
     def add_link(self, id1, id2, style="", head="", tail="", comment="",
                  bold=False, color=""):
