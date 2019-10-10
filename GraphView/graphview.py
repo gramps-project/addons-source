@@ -640,7 +640,7 @@ class GraphView(NavigationView):
         font_lbl = Gtk.Label(_('Font:'), xalign=0)
         grid.attach(font_lbl, 1, row, 1, 1)
         font = self._config.get('interface.graphview-font')
-        font_str = '%s %d' % (font[0], font[1])
+        font_str = '%s, %d' % (font[0], font[1])
         font_btn = Gtk.FontButton.new_with_font(font_str)
         font_btn.set_show_style(False)
         grid.attach(font_btn, 2, row, 1, 1)
@@ -1826,11 +1826,11 @@ class GraphvizSvgParser(object):
         if style:
             p_style = self.parse_style(style)
             font_family = p_style['font-family']
-            text_font = font_family + " " + p_style['font-size'] + 'px'
+            text_font = font_family + ", " + p_style['font-size'] + 'px'
         else:
             font_family = self.text_attrs.get('font-family')
             font_size = self.text_attrs.get('font-size')
-            text_font = font_family + " " + font_size + 'px'
+            text_font = font_family + ", " + font_size + 'px'
 
         font_desc = Pango.FontDescription.from_string(text_font)
 
@@ -2028,7 +2028,7 @@ class DotSvgGenerator(object):
         self.arrowtailstyle = 'none'
 
         dpi = 72
-        fontfamily = font[0]
+        fontfamily = self.resolve_font_name(font[0])
         fontsize = font[1]
         pagedir = "BL"
         rankdir = "TB"
@@ -2073,6 +2073,20 @@ class DotSvgGenerator(object):
         self.uistate.connect('font-changed', self.font_changed)
         self.symbols = Symbols()
         self.font_changed()
+
+    def resolve_font_name(self, font_name):
+        """
+        Helps to resolve font by graphviz.
+        """
+        # Sometimes graphviz have problem with font resolving.
+        font_family_map = {"Times New Roman": "Times",
+                           "Times Roman":     "Times",
+                           "Times-Roman":     "Times",
+                          }
+        font = font_family_map.get(font_name)
+        if font is None:
+            font = font_name
+        return font
 
     def font_changed(self):
         self.font = config.get('utf8.selected-font')
