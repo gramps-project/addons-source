@@ -645,6 +645,7 @@ class GraphView(NavigationView):
         font_btn.set_show_style(False)
         grid.attach(font_btn, 2, row, 1, 1)
         font_btn.connect('font-set', self.config_change_font)
+        font_btn.set_filter_func(self.font_filter_func)
 
         return _('Themes'), grid
 
@@ -707,6 +708,15 @@ class GraphView(NavigationView):
             _("Show bookmarked persons first in search result list."))
 
         return _('Search'), grid
+
+    def font_filter_func(self, family, face):
+        style = face.get_face_name()
+        if style in ('Обычный', 'Regular', 'Normal', 'obyčejné', 'Standard',
+                     'Κανονικά', 'Normaali', 'Normál', 'Normale', 'Standaard',
+                      'Normalny', 'Normálne', 'Navadno', 'thường', 'Arrunta'):
+            return True
+        return False
+
     #-------------------------------------------------------------------------
     #
     # Printing functionalities
