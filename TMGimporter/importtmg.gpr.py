@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-# Gramps - a GTK+/GNOME based genealogy program
+# TMG Importer addon for Gramps genealogy program
 #
-# Copyright (C) 2017 Sam Manzi
+# Copyright (C) 2017-2018 Sam Manzi
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -27,14 +27,6 @@ Import from an Whollygenes - The Master Genealogist (TMG) Project backup file
 
 #------------------------------------------------------------------------
 #
-# Set up logging
-#
-#------------------------------------------------------------------------
-import logging
-LOG = logging.getLogger(".TMGImport")
-
-#------------------------------------------------------------------------
-#
 # Gramps modules
 #
 #------------------------------------------------------------------------
@@ -47,25 +39,25 @@ _ = glocale.translation.sgettext
 #
 #------------------------------------------------------------------------
 dbfavailable = False
+direct_tmg_pjc_ver_support = False
 grampsversion = "5.1"
 
 try:
     # External Library: dbf.pypi
     # https://pypi.python.org/pypi/dbf
     import dbf
-    print("DBF version = ", dbf.version)
     dbfavailable = True
-except ImportError:
-    '''
-    ErrorDialog(_('DBF could not be found'),
-                _('TMG Import Addon requires DBF 0.96.8 or greater to function.'),
-                _('Please install DBF from https://pypi.python.org/pypi/dbf '))
-    '''
-    print("DBF could not be found")
+except (ImportError, ValueError):
     dbfavailable = False
 
+if not dbfavailable:
+    from gramps.gen.config import config
+    inifile = config.register_manager("tmgimporterwarn")
+    inifile.load()
+    sects = inifile.get_sections()
+
 # Don't register if not runnable, but have to 'Make build' anyway
-if dbfavailable or locals().get('build_script'):
+if(dbfavailable or locals().get('build_script')):
     register(IMPORT,
              id    = 'im_sqz',
              name  = _('TMG Project Backup'),
@@ -76,45 +68,74 @@ if dbfavailable or locals().get('build_script'):
              status = STABLE,
              fname = 'importtmg.py',
              import_function = 'importSqzData',
-             extension = "sqz"
+             extension = "sqz" # Only detects lower case extensions (TODO: add SQZ uppercase)
     )
+    if direct_tmg_pjc_ver_support:
+    # Only Load when importer directly supports (tmg/pjc/ver)
+        register(IMPORT,
+                 id    = 'im_pjc',
+                 name  = _('TMG Unsupported'),
+                 description =  _('Import TMG project files'),
+                 version = '0.0.69',
+                 gramps_target_version = grampsversion,
+                 include_in_listing = False,
+                 status = UNSTABLE,
+                 fname = 'importtmg.py',
+                 import_function = 'importpjc',
+                 extension = "pjc"
+        )
 
-    register(IMPORT,
-             id    = 'im_pjc',
-             name  = _('TMG Unsupported'),
-             description =  _('Import TMG project files'),
-             version = '0.0.69',
-             gramps_target_version = grampsversion,
-             include_in_listing = False,
-             status = UNSTABLE,
-             fname = 'importtmgunsupported.py',
-             import_function = 'importpjc',
-             extension = "pjc"
-    )
+        register(IMPORT,
+                 id    = 'im_tmg',
+                 name  = _('TMG Unsupported'),
+                 description =  _('Import TMG project files'),
+                 version = '0.0.69',
+                 gramps_target_version = grampsversion,
+                 include_in_listing = False,
+                 status = UNSTABLE,
+                 fname = 'importtmg.py',
+                 import_function = 'importtmg',
+                 extension = "tmg"
+        )
 
-    register(IMPORT,
-             id    = 'im_tmg',
-             name  = _('TMG Unsupported'),
-             description =  _('Import TMG project files'),
-             version = '0.0.69',
-             gramps_target_version = grampsversion,
-             include_in_listing = False,
-             status = UNSTABLE,
-             fname = 'importtmgunsupported.py',
-             import_function = 'importtmg',
-             extension = "tmg"
-    )
+        register(IMPORT,
+                 id    = 'im_ver',
+                 name  = _('TMG Unsupported'),
+                 description =  _('Import TMG project files'),
+                 version = '0.0.69',
+                 gramps_target_version = grampsversion,
+                 include_in_listing = False,
+                 status = UNSTABLE,
+                 fname = 'importtmg.py',
+                 import_function = 'importver',
+                 extension = "ver"
+        )
 
-    register(IMPORT,
-             id    = 'im_ver',
-             name  = _('TMG Unsupported'),
-             description =  _('Import TMG project files'),
-             version = '0.0.69',
-             gramps_target_version = grampsversion,
-             include_in_listing = False,
-             status = UNSTABLE,
-             fname = 'importtmgunsupported.py',
-             import_function = 'importver',
-             extension = "ver"
-    )
+from gramps.gen.config import logging
+if not dbfavailable:
+    warn_msg = _("TMG Importer Warning: DBF "
+                 "(https://pypi.python.org/pypi/dbf)"
+                 " is required for this importer to work")
+    logging.log(logging.WARNING, warn_msg)
 
+# don't start GUI if in CLI mode, just ignore
+if not dbfavailable and locals().get('uistate'):
+    from gramps.gui.dialog import QuestionDialog2
+    if 'tmgimporterwarn' not in sects:
+        yes_no = QuestionDialog2(
+            _("TMG Importer Failed to Load"),
+            _("\n\nTMG Importer is missing the DBF python module.\n"
+              "DBF must be installed ( https://pypi.python.org/pypi/dbf ).\n\n"
+              "For more information see\n<a href=\"https://gramps-project.org/wiki/index.php?"
+              "title=Addon:TMGimporter\" "
+              "title=\"https://gramps-project.org/wiki/index.php?"
+              "title=Addon:TMGimporter\">https://gramps-project.org/wiki/index.php?"
+              "title=Addon:TMGimporter</a> \n\n"
+              "To dismiss all future TMG Importer warnings click Dismiss."),
+            _(" Dismiss "),
+            _("Continue"), parent=uistate.window)
+        prompt = yes_no.run()
+        if prompt is True:
+            inifile.register('tmgimporterwarn.MissingModules', "")
+            inifile.set('tmgimporterwarn.MissingModules', "True")
+            inifile.save()
