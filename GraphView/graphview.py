@@ -1954,6 +1954,9 @@ class DotSvgGenerator(object):
         # Gtk style context for scrollwindow
         self.context = self.view.graph_widget.sw_style_context
 
+        # font if we use genealogical symbols
+        self.font = None
+
     def __del__(self):
         """
         Free stream file on destroy.
@@ -1995,7 +1998,10 @@ class DotSvgGenerator(object):
         ranksep = ranksep * 0.1
         nodesep = self.view._config.get('interface.graphview-nodesep')
         nodesep = nodesep * 0.1
+        # use font from Symbols if needed
         font = self.view._config.get('interface.graphview-font')
+        if self.font:
+            font[0] = self.font
 
         # get background color from gtk theme and convert it to hex
         # else use white background
