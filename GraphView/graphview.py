@@ -710,12 +710,20 @@ class GraphView(NavigationView):
         return _('Search'), grid
 
     def font_filter_func(self, family, face):
-        style = face.get_face_name()
-        if style in ('Обычный', 'Regular', 'Normal', 'obyčejné', 'Standard',
-                     'Κανονικά', 'Normaali', 'Normál', 'Normale', 'Standaard',
-                      'Normalny', 'Normálne', 'Navadno', 'thường', 'Arrunta'):
-            return True
-        return False
+        """
+        Filter function to display only regular fonts.
+        """
+        desc = face.describe()
+        stretch = desc.get_stretch()
+        if stretch != Pango.Stretch.NORMAL:
+            return False  # avoid Condensed or Expanded
+        sty = desc.get_style()
+        if sty != Pango.Style.NORMAL:
+            return False  # avoid italic etc.
+        weight = desc.get_weight()
+        if weight != Pango.Weight.NORMAL:
+            return False  # avoid Bold
+        return True
 
     #-------------------------------------------------------------------------
     #
