@@ -42,7 +42,7 @@ from threading import Thread
 from math import sqrt, pow
 from html import escape
 import gi
-from gi.repository import Gtk, Gdk, GdkPixbuf, GLib
+from gi.repository import Gtk, Gdk, GdkPixbuf, GLib, Pango
 
 #-------------------------------------------------------------------------
 #
@@ -149,7 +149,8 @@ class GraphView(NavigationView):
         ('interface.graphview-search-marked-first', True),
         ('interface.graphview-ranksep', 5),
         ('interface.graphview-nodesep', 2),
-        ('interface.graphview-person-theme', 0))
+        ('interface.graphview-person-theme', 0),
+        ('interface.graphview-font', ['', 14]))
 
     def __init__(self, pdata, dbstate, uistate, nav_group=0):
         NavigationView.__init__(self, _('Graph View'), pdata, dbstate, uistate,
@@ -507,6 +508,20 @@ class GraphView(NavigationView):
         """
         self.graph_widget.populate(self.get_active())
 
+    def config_change_font(self, font_button):
+        """
+        Called when font is change.
+        """
+        font_family = font_button.get_font_family()
+        if font_family is not None:
+            font_name = font_family.get_name()
+        else:
+            font_name = ''
+        # apply Pango.SCALE=1024 to font size
+        font_size = int(font_button.get_font_size()/1024)
+        self._config.set('interface.graphview-font', [font_name, font_size])
+        self.graph_widget.populate(self.get_active())
+
     def config_connect(self):
         """
         Overwriten from  :class:`~gui.views.pageview.PageView method
@@ -621,6 +636,16 @@ class GraphView(NavigationView):
                                _('Path color to home person'),
                                row, 'interface.graphview-home-path-color',
                                col=1)
+        row += 1
+        font_lbl = Gtk.Label(_('Font:'), xalign=0)
+        grid.attach(font_lbl, 1, row, 1, 1)
+        font = self._config.get('interface.graphview-font')
+        font_str = '%s, %d' % (font[0], font[1])
+        font_btn = Gtk.FontButton.new_with_font(font_str)
+        font_btn.set_show_style(False)
+        grid.attach(font_btn, 2, row, 1, 1)
+        font_btn.connect('font-set', self.config_change_font)
+        font_btn.set_filter_func(self.font_filter_func)
 
         return _('Themes'), grid
 
@@ -683,6 +708,23 @@ class GraphView(NavigationView):
             _("Show bookmarked persons first in search result list."))
 
         return _('Search'), grid
+
+    def font_filter_func(self, family, face):
+        """
+        Filter function to display only regular fonts.
+        """
+        desc = face.describe()
+        stretch = desc.get_stretch()
+        if stretch != Pango.Stretch.NORMAL:
+            return False  # avoid Condensed or Expanded
+        sty = desc.get_style()
+        if sty != Pango.Style.NORMAL:
+            return False  # avoid italic etc.
+        weight = desc.get_weight()
+        if weight != Pango.Weight.NORMAL:
+            return False  # avoid Bold
+        return True
+
     #-------------------------------------------------------------------------
     #
     # Printing functionalities
@@ -1802,11 +1844,13 @@ class GraphvizSvgParser(object):
         if style:
             p_style = self.parse_style(style)
             font_family = p_style['font-family']
-            text_font = font_family + " " + p_style['font-size'] + 'px'
+            text_font = font_family + ", " + p_style['font-size'] + 'px'
         else:
             font_family = self.text_attrs.get('font-family')
             font_size = self.text_attrs.get('font-size')
-            text_font = font_family + " " + font_size + 'px'
+            text_font = font_family + ", " + font_size + 'px'
+
+        font_desc = Pango.FontDescription.from_string(text_font)
 
         # set bold text using PangoMarkup
         if self.text_attrs.get('font-weight') == 'bold':
@@ -1821,7 +1865,8 @@ class GraphvizSvgParser(object):
                              y=pos_y,
                              anchor=self.text_anchor_map[anchor],
                              use_markup=True,
-                             font=text_font,
+                             #font=text_font,
+                             font_desc=font_desc,
                              fill_color=fill_color)
 
     def start_image(self, attrs):
@@ -1927,6 +1972,9 @@ class DotSvgGenerator(object):
         # Gtk style context for scrollwindow
         self.context = self.view.graph_widget.sw_style_context
 
+        # font if we use genealogical symbols
+        self.font = None
+
     def __del__(self):
         """
         Free stream file on destroy.
@@ -1968,6 +2016,10 @@ class DotSvgGenerator(object):
         ranksep = ranksep * 0.1
         nodesep = self.view._config.get('interface.graphview-nodesep')
         nodesep = nodesep * 0.1
+        # use font from Symbols if needed
+        font = self.view._config.get('interface.graphview-font')
+        if self.font:
+            font[0] = self.font
 
         # get background color from gtk theme and convert it to hex
         # else use white background
@@ -2000,8 +2052,8 @@ class DotSvgGenerator(object):
         self.arrowtailstyle = 'none'
 
         dpi = 72
-        fontfamily = ""
-        fontsize = 14
+        fontfamily = self.resolve_font_name(font[0])
+        fontsize = font[1]
         pagedir = "BL"
         rankdir = "TB"
         ratio = "compress"
@@ -2045,6 +2097,20 @@ class DotSvgGenerator(object):
         self.uistate.connect('font-changed', self.font_changed)
         self.symbols = Symbols()
         self.font_changed()
+
+    def resolve_font_name(self, font_name):
+        """
+        Helps to resolve font by graphviz.
+        """
+        # Sometimes graphviz have problem with font resolving.
+        font_family_map = {"Times New Roman": "Times",
+                           "Times Roman":     "Times",
+                           "Times-Roman":     "Times",
+                          }
+        font = font_family_map.get(font_name)
+        if font is None:
+            font = font_name
+        return font
 
     def font_changed(self):
         self.font = config.get('utf8.selected-font')
