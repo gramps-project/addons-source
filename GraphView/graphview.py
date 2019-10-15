@@ -34,6 +34,7 @@
 #
 #-------------------------------------------------------------------------
 import os
+from re import MULTILINE, findall
 from xml.parsers.expat import ParserCreate
 import string
 from subprocess import Popen, PIPE
@@ -519,8 +520,9 @@ class GraphView(NavigationView):
         else:
             font_name = ''
         # apply Pango.SCALE=1024 to font size
-        font_size = int(font_button.get_font_size()/1024)
+        font_size = int(font_button.get_font_size() / 1024)
         self._config.set('interface.graphview-font', [font_name, font_size])
+        self.graph_widget.retest_font = True
         self.graph_widget.populate(self.get_active())
 
     def config_connect(self):
@@ -955,6 +957,8 @@ class GraphWidget(object):
 
         # used for popup menu, prevent destroy menu as local variable
         self.menu = None
+        self.retest_font = True     # flag indicates need to resize font
+        self.bold_size = self.norm_size = 0  # font sizes to send to dot
 
     def add_popover(self, widget, container):
         """
@@ -1002,7 +1006,7 @@ class GraphWidget(object):
         self.toolbar.set_sensitive(state)
 
     def font_changed(self, active):
-        self.font = config.get('utf8.selected-font')
+        self.sym_font = config.get('utf8.selected-font')
         if self.parser:
             self.parser.font_changed()
             self.populate(active)
@@ -1267,11 +1271,16 @@ class GraphWidget(object):
         self.clear()
         self.active_person_handle = active_person
 
+        # fit the text to boxes
+        self.bold_size, self.norm_size = self.fit_text()
+
         self.search_widget.hide_search_popover()
         self.hide_bkmark_popover()
 
         # generate DOT and SVG data
-        dot = DotSvgGenerator(self.dbstate, self.view)
+        dot = DotSvgGenerator(self.dbstate, self.view,
+                              bold_size=self.bold_size,
+                              norm_size=self.norm_size)
         self.dot_data, self.svg_data = dot.build_graph(active_person)
         del dot
 
@@ -1537,6 +1546,85 @@ class GraphWidget(object):
         """
         self.view._config.set(constant, menu_item.get_active())
 
+    def fit_text(self):
+        """
+        Fit the text to the boxes more exactly.  Works by trying some sample
+        text, measuring the results, and trying an increasing size of font
+        sizes to some sample nodes to see which one will fit the expected
+        text size.
+        In other words we are telling dot to use different font sizes than
+        we are actually displaying, since dot doesn't do a good job of
+        determining the text size.
+        """
+        if not self.retest_font:  # skip this uless font changed.
+            return self.bold_size, self.norm_size
+
+        text = "The quick Brown Fox jumped over the Lazy Dogs 1948-01-01."
+        dot_test = DotSvgGenerator(self.dbstate, self.view)
+        dot_test.init_dot()
+        # These are at the desired font sizes.
+        dot_test.add_node('test_bold', '<B>%s</B>' % text, shape='box')
+        dot_test.add_node('test_norm', text, shape='box')
+        # now add nodes at increasing font sizes
+        for scale in range(35, 140, 2):
+            f_size = dot_test.fontsize * scale / 100.0
+            dot_test.add_node(
+                'test_bold' + str(scale),
+                '<FONT POINT-SIZE="%(bsize)3.1f"><B>%(text)s</B></FONT>' %
+                {'text': text, 'bsize': f_size}, shape='box')
+            dot_test.add_node(
+                'test_norm' + str(scale),
+                text, shape='box', fontsize=("%3.1f" % f_size))
+
+        # close the graphviz dot code with a brace
+        dot_test.write('}\n')
+
+        # get DOT and generate SVG data by Graphviz
+        dot_data = dot_test.dot.getvalue().encode('utf8')
+        svg_data = dot_test.make_svg(dot_data)
+        svg_data = svg_data.decode('utf8')
+
+        # now lest find the box sizes, and font sizes for the generated svg.
+        points_a = findall(r'points="(.*)"', svg_data, MULTILINE)
+        font_fams = findall(r'font-family="(.*)" font-weight',
+                            svg_data, MULTILINE)
+        font_sizes = findall(r'font-size="(.*)" fill', svg_data, MULTILINE)
+        box_w = []
+        for points in points_a:
+            box_pts = points.split()
+            x_1 = box_pts[0].split(',')[0]
+            x_2 = box_pts[1].split(',')[0]
+            box_w.append(float(x_1) - float(x_2) - 16)  # adjust for margins
+
+        text_font = font_fams[0] + ", " + font_sizes[0] + 'px'
+        font_desc = Pango.FontDescription.from_string(text_font)
+
+        # lets measure the bold text on our canvas at desired font size
+        c_text = GooCanvas.CanvasText(parent=self.canvas.get_root_item(),
+                                      text='<b>' + text + '</b>',
+                                      x=100,
+                                      y=100,
+                                      anchor=GooCanvas.CanvasAnchorType.WEST,
+                                      use_markup=True,
+                                      font_desc=font_desc)
+        bold_b = c_text.get_bounds()
+        # and measure the normal text on our canvas at desired font size
+        c_text.props.text = text
+        norm_b = c_text.get_bounds()
+        # now scan throught test boxes, finding the smallest that will hold
+        # the actual text as measured.  And record the dot font that was used.
+        for indx in range(3, len(font_sizes), 2):
+            if box_w[indx] > bold_b.x2 - bold_b.x1:
+                bold_size = float(font_sizes[indx - 1])
+                break
+        for indx in range(4, len(font_sizes), 2):
+            if box_w[indx] > norm_b.x2 - norm_b.x1:
+                norm_size = float(font_sizes[indx - 1])
+                break
+        self.retest_font = False  # we don't do this again until font changes
+        # return the adjusted font size to tell dot to use.
+        return bold_size, norm_size
+
 
 #-------------------------------------------------------------------------
 #
@@ -1560,6 +1648,7 @@ class GraphvizSvgParser(object):
             'interface.graphview-highlight-home-person')
         scheme = config.get('colors.scheme')
         self.home_person_color = config.get('colors.home-person')[scheme]
+        self.font_size = self.view._config.get('interface.graphview-font')[1]
 
         self.tlist = []
         self.text_attrs = None
@@ -1584,10 +1673,6 @@ class GraphvizSvgParser(object):
         self.items_list = []
 
         self.transform_scale = 1
-        self.font_changed()
-
-    def font_changed(self):
-        self.font = config.get('utf8.selected-font')
 
     def parse(self, ifile):
         """
@@ -1849,8 +1934,7 @@ class GraphvizSvgParser(object):
             text_font = font_family + ", " + p_style['font-size'] + 'px'
         else:
             font_family = self.text_attrs.get('font-family')
-            font_size = self.text_attrs.get('font-size')
-            text_font = font_family + ", " + font_size + 'px'
+            text_font = font_family + ", " + str(self.font_size) + 'px'
 
         font_desc = Pango.FontDescription.from_string(text_font)
 
@@ -1867,7 +1951,6 @@ class GraphvizSvgParser(object):
                              y=pos_y,
                              anchor=self.text_anchor_map[anchor],
                              use_markup=True,
-                             #font=text_font,
                              font_desc=font_desc,
                              fill_color=fill_color)
 
@@ -1949,10 +2032,12 @@ class DotSvgGenerator(object):
     """
     Generator of graphing instructions in dot format and svg data by Graphviz.
     """
-    def __init__(self, dbstate, view):
+    def __init__(self, dbstate, view, bold_size=0, norm_size=0):
         """
         Initialise the DotSvgGenerator class.
         """
+        self.bold_size = bold_size
+        self.norm_size = norm_size
         self.dbstate = dbstate
         self.uistate = view.uistate
         self.database = dbstate.db
@@ -1976,7 +2061,7 @@ class DotSvgGenerator(object):
         self.context = self.view.graph_widget.sw_style_context
 
         # font if we use genealogical symbols
-        self.font = None
+        self.sym_font = None
 
     def __del__(self):
         """
@@ -2019,11 +2104,6 @@ class DotSvgGenerator(object):
         ranksep = ranksep * 0.1
         nodesep = self.view._config.get('interface.graphview-nodesep')
         nodesep = nodesep * 0.1
-        # use font from Symbols if needed
-        font = self.view._config.get('interface.graphview-font')
-        if self.font:
-            font[0] = self.font
-
         # get background color from gtk theme and convert it to hex
         # else use white background
         bg_color = self.context.lookup_color('theme_bg_color')
@@ -2055,8 +2135,13 @@ class DotSvgGenerator(object):
         self.arrowtailstyle = 'none'
 
         dpi = 72
+        # use font from config if needed
+        font = self.view._config.get('interface.graphview-font')
         fontfamily = self.resolve_font_name(font[0])
-        fontsize = font[1]
+        self.fontsize = font[1]
+        if not self.bold_size:
+            self.bold_size = self.norm_size = font[1]
+
         pagedir = "BL"
         rankdir = "TB"
         ratio = "compress"
@@ -2074,7 +2159,7 @@ class DotSvgGenerator(object):
         self.write(' charset="utf8";\n')
         self.write(' concentrate="false";\n')
         self.write(' dpi="%d";\n' % dpi)
-        self.write(' graph [fontsize=%d];\n' % fontsize)
+        self.write(' graph [fontsize=%3.1f];\n' % self.fontsize)
         self.write(' margin="%3.2f,%3.2f"; \n' % (xmargin, ymargin))
         self.write(' mclimit="99";\n')
         self.write(' nodesep="%.2f";\n' % nodesep)
@@ -2087,15 +2172,15 @@ class DotSvgGenerator(object):
         self.write(' size="%3.2f,%3.2f"; \n' % (sizew, sizeh))
         self.write(' splines=%s;\n' % self.spline)
         self.write('\n')
-        self.write(' edge [style=solid fontsize=%d];\n' % fontsize)
+        self.write(' edge [style=solid fontsize=%d];\n' % self.fontsize)
 
         if fontfamily:
             self.write(' node [style=filled fontname="%s" '
-                       'fontsize=%d fontcolor="%s"];\n'
-                       % (fontfamily, fontsize, font_color))
+                       'fontsize=%3.1f fontcolor="%s"];\n'
+                       % (fontfamily, self.norm_size, font_color))
         else:
-            self.write(' node [style=filled fontsize=%d fontcolor="%s"];\n'
-                       % (fontsize, font_color))
+            self.write(' node [style=filled fontsize=%3.1f fontcolor="%s"];\n'
+                       % (self.norm_size, font_color))
         self.write('\n')
         self.uistate.connect('font-changed', self.font_changed)
         self.symbols = Symbols()
@@ -2109,14 +2194,13 @@ class DotSvgGenerator(object):
         font_family_map = {"Times New Roman": "Times",
                            "Times Roman":     "Times",
                            "Times-Roman":     "Times",
-                          }
+                           }
         font = font_family_map.get(font_name)
         if font is None:
             font = font_name
         return font
 
     def font_changed(self):
-        self.font = config.get('utf8.selected-font')
         dth_idx = self.uistate.death_symbol
         if self.uistate.symbols:
             self.bth = self.symbols.get_symbol_for_string(
@@ -2126,6 +2210,10 @@ class DotSvgGenerator(object):
             self.bth = self.symbols.get_symbol_fallback(
                 self.symbols.SYMBOL_BIRTH)
             self.dth = self.symbols.get_death_symbol_fallback(dth_idx)
+        # make sure to display in selected symbols font
+        self.sym_font = config.get('utf8.selected-font')
+        self.bth = '<FONT FACE="%s">%s</FONT>' % (self.sym_font, self.bth)
+        self.dth = '<FONT FACE="%s">%s</FONT>' % (self.sym_font, self.dth)
 
     def build_graph(self, active_person):
         """
@@ -2544,49 +2632,66 @@ class DotSvgGenerator(object):
              '<TABLE '
              'BORDER="0" CELLSPACING="2" CELLPADDING="0" CELLBORDER="0">'
              '<TR><TD>%(img)s</TD></TR>'
-             '<TR><TD><B>%(name)s</B></TD></TR>'
-             '<TR><TD>%(birth_str)s</TD></TR>'
-             '<TR><TD>%(death_str)s</TD></TR>'
+             '<TR><TD><FONT POINT-SIZE="%(bsize)3.1f"><B>%(name)s</B>'
+             '</FONT></TD></TR>'
+             '<TR><TD ALIGN="LEFT">%(birth_str)s</TD></TR>'
+             '<TR><TD ALIGN="LEFT">%(death_str)s</TD></TR>'
              '<TR><TD>%(tags)s</TD></TR>'
              '</TABLE>'
-            ),
+             ),
             (1, _('Image on right side'),
              '<TABLE '
              'BORDER="0" CELLSPACING="5" CELLPADDING="0" CELLBORDER="0">'
              '<tr>'
-             '  <td colspan="2"><B>%(name)s</B></td>'
+             '<td colspan="2"><FONT POINT-SIZE="%(bsize)3.1f"><B>%(name)s'
+             '</B></FONT></td>'
              '</tr>'
              '<tr>'
-             '  <td ALIGN="LEFT" BALIGN="LEFT" CELLPADDING="5">%(birth_wraped)s</td>'
-             '  <td rowspan="2">%(img)s</td>'
+             '<td ALIGN="LEFT" BALIGN="LEFT" CELLPADDING="5">%(birth_wraped)s'
+             '</td>'
+             '<td rowspan="2">%(img)s</td>'
              '</tr>'
              '<tr>'
-             '  <td ALIGN="LEFT" BALIGN="LEFT" CELLPADDING="5">%(death_wraped)s</td>'
+             '<td ALIGN="LEFT" BALIGN="LEFT" CELLPADDING="5">%(death_wraped)s'
+             '</td>'
              '</tr>'
              '<tr>'
              '  <td colspan="2">%(tags)s</td>'
              '</tr>'
              '</TABLE>'
-            ),
+             ),
             (2, _('Image on left side'),
              '<TABLE '
              'BORDER="0" CELLSPACING="5" CELLPADDING="0" CELLBORDER="0">'
              '<tr>'
-             '  <td colspan="2"><B>%(name)s</B></td>'
+             '<td colspan="2"><FONT POINT-SIZE="%(bsize)3.1f"><B>%(name)s'
+             '</B></FONT></td>'
              '</tr>'
              '<tr>'
-             '  <td rowspan="2">%(img)s</td>'
-             '  <td ALIGN="LEFT" BALIGN="LEFT" CELLPADDING="5">%(birth_wraped)s</td>'
+             '<td rowspan="2">%(img)s</td>'
+             '<td ALIGN="LEFT" BALIGN="LEFT" CELLPADDING="5">%(birth_wraped)s'
+             '</td>'
              '</tr>'
              '<tr>'
-             '  <td ALIGN="LEFT" BALIGN="LEFT" CELLPADDING="5">%(death_wraped)s</td>'
+             '<td ALIGN="LEFT" BALIGN="LEFT" CELLPADDING="5">%(death_wraped)s'
+             '</td>'
              '</tr>'
              '<tr>'
              '  <td colspan="2">%(tags)s</td>'
              '</tr>'
              '</TABLE>'
-            ),
-            ]
+             ),
+            (3, _('Normal'),
+             '<TABLE '
+             'BORDER="0" CELLSPACING="2" CELLPADDING="0" CELLBORDER="0">'
+             '<TR><TD>%(img)s</TD></TR>'
+             '<TR><TD><FONT POINT-SIZE="%(bsize)3.1f"><B>%(name)s'
+             '</B></FONT></TD></TR>'
+             '<TR><TD ALIGN="LEFT" BALIGN="LEFT">%(birth_wraped)s</TD></TR>'
+             '<TR><TD ALIGN="LEFT" BALIGN="LEFT">%(death_wraped)s</TD></TR>'
+             '<TR><TD>%(tags)s</TD></TR>'
+             '</TABLE>'
+             )]
 
         if index < 0:
             return person_themes
@@ -2703,11 +2808,12 @@ class DotSvgGenerator(object):
                 self.add_tags_tooltip(person.handle, tags)
 
         # apply theme to person label
-        if image:
+        if(image or self.person_theme_index == 0 or
+           self.person_theme_index == 3):
             p_theme = self.get_person_themes(self.person_theme_index)
         else:
             # use default theme if no image
-            p_theme = self.get_person_themes(0)
+            p_theme = self.get_person_themes(3)
 
         label = p_theme[2] % {'img': image,
                               'name': name,
@@ -2715,7 +2821,8 @@ class DotSvgGenerator(object):
                               'death_str': death_str,
                               'birth_wraped': birth_wraped,
                               'death_wraped': death_wraped,
-                              'tags': tag_table}
+                              'tags': tag_table,
+                              'bsize' : self.bold_size}
         return label
 
     def get_family_label(self, family):
@@ -2851,14 +2958,14 @@ class DotSvgGenerator(object):
         self.write('\n')
 
     def add_node(self, node_id, label, shape="", color="",
-                 style="", fillcolor="", url=""):
+                 style="", fillcolor="", url="", fontsize=""):
         """
         Add a node to this graph.
         Nodes can be different shapes like boxes and circles.
         Gramps handles are used as nodes but need to be prefixed with an
         underscore because Graphviz does not like IDs that begin with a number.
         """
-        text = '['
+        text = '[margin="0.11,0.08"'
 
         if shape:
             text += ' shape="%s"' % shape
@@ -2872,6 +2979,8 @@ class DotSvgGenerator(object):
         if style:
             text += ' style="%s"' % style
 
+        if fontsize:
+            text += ' fontsize="%s"' % fontsize
         # note that we always output a label -- even if an empty string --
         # otherwise GraphViz uses the node ID as the label which is unlikely
         # to be what the user wants to see in the graph
