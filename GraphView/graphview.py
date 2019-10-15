@@ -119,6 +119,7 @@ import sys
 sys.path.append(os.path.abspath(os.path.dirname(__file__)))
 from search_widget import SearchWidget, Popover, ListBoxRow
 
+
 #-------------------------------------------------------------------------
 #
 # GraphView
@@ -358,7 +359,7 @@ class GraphView(NavigationView):
             self.dirty = True
             self.graph_widget.set_available(False)
 
-    def change_active_person(self, menuitem=None, person_handle=''):
+    def change_active_person(self, _menuitem=None, person_handle=''):
         """
         Change active person.
         """
@@ -372,48 +373,48 @@ class GraphView(NavigationView):
         """
         return True
 
-    def cb_update_show_images(self, client, cnxn_id, entry, data):
+    def cb_update_show_images(self, _client, _cnxn_id, entry, _data):
         """
         Called when the configuration menu changes the images setting.
         """
         self.show_images = entry == 'True'
         self.graph_widget.populate(self.get_active())
 
-    def cb_update_show_avatars(self, client, cnxn_id, entry, data):
+    def cb_update_show_avatars(self, _client, _cnxn_id, entry, _data):
         """
         Called when the configuration menu changes the avatars setting.
         """
         self.show_avatars = entry == 'True'
         self.graph_widget.populate(self.get_active())
 
-    def cb_update_show_full_dates(self, client, cnxn_id, entry, data):
+    def cb_update_show_full_dates(self, _client, _cnxn_id, entry, _data):
         """
         Called when the configuration menu changes the date setting.
         """
         self.show_full_dates = entry == 'True'
         self.graph_widget.populate(self.get_active())
 
-    def cb_update_show_places(self, client, cnxn_id, entry, data):
+    def cb_update_show_places(self, _client, _cnxn_id, entry, _data):
         """
         Called when the configuration menu changes the place setting.
         """
         self.show_places = entry == 'True'
         self.graph_widget.populate(self.get_active())
 
-    def cb_update_show_tag_color(self, client, cnxn_id, entry, data):
+    def cb_update_show_tag_color(self, _client, _cnxn_id, entry, _data):
         """
         Called when the configuration menu changes the show tags setting.
         """
         self.show_tag_color = entry == 'True'
         self.graph_widget.populate(self.get_active())
 
-    def cb_update_show_lines(self, client, cnxn_id, entry, data):
+    def cb_update_show_lines(self, _client, _cnxn_id, _entry, _data):
         """
         Called when the configuration menu changes the line setting.
         """
         self.graph_widget.populate(self.get_active())
 
-    def cb_update_highlight_home_person(self, client, cnxn_id, entry, data):
+    def cb_update_highlight_home_person(self, _client, _cnxn_id, entry, _data):
         """
         Called when the configuration menu changes the highlight home
         person setting.
@@ -421,14 +422,14 @@ class GraphView(NavigationView):
         self.highlight_home_person = entry == 'True'
         self.graph_widget.populate(self.get_active())
 
-    def cb_update_home_path_color(self, client, cnxn_id, entry, data):
+    def cb_update_home_path_color(self, _client, _cnxn_id, entry, _data):
         """
         Called when the configuration menu changes the path person color.
         """
         self.home_path_color = entry
         self.graph_widget.populate(self.get_active())
 
-    def cb_update_desc_generations(self, client, cnxd_id, entry, data):
+    def cb_update_desc_generations(self, _client, _cnxd_id, entry, _data):
         """
         Called when the configuration menu changes the descendant generation
         count setting.
@@ -436,7 +437,7 @@ class GraphView(NavigationView):
         self.descendant_generations = entry
         self.graph_widget.populate(self.get_active())
 
-    def cb_update_ancestor_generations(self, client, cnxd_id, entry, data):
+    def cb_update_ancestor_generations(self, _client, _cnxd_id, entry, _data):
         """
         Called when the configuration menu changes the ancestor generation
         count setting.
@@ -444,7 +445,7 @@ class GraphView(NavigationView):
         self.ancestor_generations = entry
         self.graph_widget.populate(self.get_active())
 
-    def cb_update_show_animation(self, client, cnxd_id, entry, data):
+    def cb_update_show_animation(self, _client, _cnxd_id, entry, _data):
         """
         Called when the configuration menu changes the show animation
         setting.
@@ -460,28 +461,28 @@ class GraphView(NavigationView):
             for widget in self.ani_widgets:
                 widget.set_sensitive(False)
 
-    def cb_update_animation_count(self, client, cnxd_id, entry, data):
+    def cb_update_animation_count(self, _client, _cnxd_id, entry, _data):
         """
         Called when the configuration menu changes the animation count
         setting.
         """
         self.graph_widget.animation.max_count = int(entry) * 2
 
-    def cb_update_animation_speed(self, client, cnxd_id, entry, data):
+    def cb_update_animation_speed(self, _client, _cnxd_id, entry, _data):
         """
         Called when the configuration menu changes the animation speed
         setting.
         """
         self.graph_widget.animation.speed = 50 * int(entry)
 
-    def cb_update_search_all_db(self, client, cnxn_id, entry, data):
+    def cb_update_search_all_db(self, _client, _cnxn_id, entry, _data):
         """
         Called when the configuration menu changes the search setting.
         """
         value = entry == 'True'
         self.graph_widget.search_widget.set_options(search_all_db=value)
 
-    def cb_update_search_show_images(self, client, cnxn_id, entry, data):
+    def cb_update_search_show_images(self, _client, _cnxn_id, entry, _data):
         """
         Called when the configuration menu changes the search setting.
         """
@@ -489,20 +490,20 @@ class GraphView(NavigationView):
         self.graph_widget.search_widget.set_options(show_images=value)
         self.graph_widget.show_images_option = value
 
-    def cb_update_search_marked_first(self, client, cnxn_id, entry, data):
+    def cb_update_search_marked_first(self, _client, _cnxn_id, entry, _data):
         """
         Called when the configuration menu changes the search setting.
         """
         value = entry == 'True'
         self.graph_widget.search_widget.set_options(marked_first=value)
 
-    def cb_update_spacing(self, client, cnxd_id, entry, data):
+    def cb_update_spacing(self, _client, _cnxd_id, _entry, _data):
         """
         Called when the ranksep or nodesep setting changed.
         """
         self.graph_widget.populate(self.get_active())
 
-    def cb_update_person_theme(self, client, cnxd_id, entry, data):
+    def cb_update_person_theme(self, _client, _cnxd_id, _entry, _data):
         """
         Called when person theme setting changed.
         """
@@ -628,9 +629,9 @@ class GraphView(NavigationView):
             themes_list.append((t[0], t[1]))
 
         row = 0
-        widget = configdialog.add_combo(grid, _('Person theme'), row,
-                                        'interface.graphview-person-theme',
-                                        themes_list)
+        configdialog.add_combo(grid, _('Person theme'), row,
+                               'interface.graphview-person-theme',
+                               themes_list)
         row += 1
         configdialog.add_color(grid,
                                _('Path color to home person'),
@@ -709,7 +710,7 @@ class GraphView(NavigationView):
 
         return _('Search'), grid
 
-    def font_filter_func(self, family, face):
+    def font_filter_func(self, _family, face):
         """
         Filter function to display only regular fonts.
         """
@@ -751,7 +752,7 @@ class GraphView(NavigationView):
         status = dot.run()
         if status == Gtk.ResponseType.OK:
             val = dot.get_filename()
-            (spath, ext) = os.path.splitext(val)
+            (spath, _ext) = os.path.splitext(val)
             val = spath + ".gv"  # used to avoid filename without extension
             # selected path is an existing file and we need a file
             if os.path.isfile(val):
@@ -777,6 +778,7 @@ class GraphView(NavigationView):
                 msg2 = _("Could not create %s") % (val + ', ' + svg)
                 ErrorDialog(msg2, str(msg), parent=dot)
         dot.destroy()
+
 
 #-------------------------------------------------------------------------
 #
@@ -826,7 +828,7 @@ class GraphWidget(object):
                             orientation=Gtk.Orientation.VERTICAL)
         self.vbox.set_border_width(4)
         self.toolbar = Gtk.Box(homogeneous=False, spacing=4,
-                       orientation=Gtk.Orientation.HORIZONTAL)
+                               orientation=Gtk.Orientation.HORIZONTAL)
         self.vbox.pack_start(self.toolbar, False, False, 0)
 
         # add zoom-in button
@@ -980,7 +982,7 @@ class GraphWidget(object):
         box.pack_start(spinner, False, False, 1)
         return box
 
-    def spinners_popup(self, widget, popover):
+    def spinners_popup(self, _widget, popover):
         """
         Popover for generations and spacing params.
         Different popup depending on gtk version.
@@ -1011,7 +1013,7 @@ class GraphWidget(object):
         """
         self.person_to_focus = handle
 
-    def goto_other_btn_key_press_event(self, widget, event):
+    def goto_other_btn_key_press_event(self, _widget, event):
         """
         Handle 'Esc' key on bookmarks button to hide popup.
         """
@@ -1022,7 +1024,7 @@ class GraphWidget(object):
             self.bkmark_popover.grab_focus()
             return True
 
-    def activate_popover(self, widget, person_handle):
+    def activate_popover(self, _widget, person_handle):
         """
         Called when some item(person)
         in search or bookmarks popup(popover) is activated.
@@ -1185,28 +1187,28 @@ class GraphWidget(object):
 
         return None
 
-    def add_active_to_bkmarks(self, widget):
+    def add_active_to_bkmarks(self, _widget):
         """
         Add active person to bookmarks.
         """
         self.view.add_bookmark(None)
         self.load_bookmarks()
 
-    def edit_bookmarks(self, widget):
+    def edit_bookmarks(self, _widget):
         """
         Call the bookmark editor.
         """
         self.view.edit_bookmarks(None)
         self.load_bookmarks()
 
-    def show_bkmark_popup(self, widget):
+    def show_bkmark_popup(self, _widget):
         """
         Show bookmark popup.
         """
         self.load_bookmarks()
         self.bkmark_popover.popup()
 
-    def hide_bkmark_popover(self, widget=None, event=None):
+    def hide_bkmark_popover(self, _widget=None, _event=None):
         """
         Hide bookmark popup.
         """
@@ -1220,7 +1222,7 @@ class GraphWidget(object):
         animation = bool(button)
         self.animation.move_to_person(self.active_person_handle, animation)
 
-    def move_to_person(self, menuitem, handle, animate=False):
+    def move_to_person(self, _menuitem, handle, animate=False):
         """
         Move to specified person (by handle).
         If person not present in the current graphview tree,
@@ -1242,7 +1244,7 @@ class GraphWidget(object):
             if dialog.run():
                 self.view.change_active(handle)
 
-    def scroll_mouse(self, canvas, event):
+    def scroll_mouse(self, _canvas, event):
         """
         Zoom by mouse wheel.
         """
@@ -1292,14 +1294,14 @@ class GraphWidget(object):
 
         self.uistate.set_busy_cursor(False)
 
-    def zoom_in(self, button=None):
+    def zoom_in(self, _button=None):
         """
         Increase zoom scale.
         """
         scale_coef = self.scale * 1.1
         self.set_zoom(scale_coef)
 
-    def zoom_out(self, button=None):
+    def zoom_out(self, _button=None):
         """
         Decrease zoom scale.
         """
@@ -1308,13 +1310,13 @@ class GraphWidget(object):
             scale_coef = 0.01
         self.set_zoom(scale_coef)
 
-    def set_original_zoom(self, button):
+    def set_original_zoom(self, _button):
         """
         Set original zoom scale = 1.
         """
         self.set_zoom(1)
 
-    def fit_to_page(self, button):
+    def fit_to_page(self, _button):
         """
         Calculate scale and fit tree to page.
         """
@@ -1324,7 +1326,7 @@ class GraphWidget(object):
         width_canvas = bounds.x2 - bounds.x1
 
         # get scroll window size
-        width  = self.hadjustment.get_page_size()
+        width = self.hadjustment.get_page_size()
         height = self.vadjustment.get_page_size()
 
         # prevent division by zero
@@ -1363,7 +1365,7 @@ class GraphWidget(object):
         """
         return self.vbox
 
-    def button_press(self, item, target, event):
+    def button_press(self, item, _target, event):
         """
         Enter in scroll mode when left or middle mouse button pressed
         on background.
@@ -1406,7 +1408,7 @@ class GraphWidget(object):
             return True
         return False
 
-    def motion_notify_event(self, item, target, event):
+    def motion_notify_event(self, _item, _target, event):
         """
         Function for motion notify events for drag and scroll mode.
         """
@@ -1522,7 +1524,7 @@ class GraphWidget(object):
 
         return handle
 
-    def update_lines_type(self, menu_item, lines_type, constant):
+    def update_lines_type(self, _menu_item, lines_type, constant):
         """
         Save the lines type setting.
         """
@@ -1637,7 +1639,7 @@ class GraphvizSvgParser(object):
         item.description = attrs.get('class')
         self.item_hier.append(item)
 
-    def stop_g(self, tag):
+    def stop_g(self, _tag):
         """
         Parse </g> tags.
         """
@@ -1731,7 +1733,7 @@ class GraphvizSvgParser(object):
 
         self.item_hier.append(item)
 
-    def stop_polygon(self, tag):
+    def stop_polygon(self, _tag):
         """
         Parse </polygon> tags.
         """
@@ -1774,7 +1776,7 @@ class GraphvizSvgParser(object):
         self.current_parent().description = 'familynode'
         self.item_hier.append(item)
 
-    def stop_ellipse(self, tag):
+    def stop_ellipse(self, _tag):
         """
         Parse </ellipse> tags.
         """
@@ -1816,7 +1818,7 @@ class GraphvizSvgParser(object):
                                         line_width=line_width)
         self.item_hier.append(item)
 
-    def stop_path(self, tag):
+    def stop_path(self, _tag):
         """
         Parse </path> tags.
         """
@@ -1887,7 +1889,7 @@ class GraphvizSvgParser(object):
                                      pixbuf=pixbuf)
         self.item_hier.append(item)
 
-    def stop_image(self, tag):
+    def stop_image(self, _tag):
         """
         Parse </image> tags.
         """
@@ -1908,7 +1910,7 @@ class GraphvizSvgParser(object):
             self.func_map[tag] = (None, None)
             self.func = None
 
-    def end_element(self, tag):
+    def end_element(self, _tag):
         """
         Generic parsing function for closing tags.
         """
@@ -1936,6 +1938,7 @@ class GraphvizSvgParser(object):
         """
         style = style.rstrip(';')
         return dict([i.split(':') for i in style.split(';')])
+
 
 #------------------------------------------------------------------------
 #
@@ -2523,8 +2526,8 @@ class DotSvgGenerator(object):
                 rgba = Gdk.RGBA()
                 rgba.parse(tag.get_color())
                 value = '#%02x%02x%02x' % (int(rgba.red * 255),
-                                   int(rgba.green * 255),
-                                   int(rgba.blue * 255))
+                                           int(rgba.green * 255),
+                                           int(rgba.blue * 255))
                 tag_table += '<TD BGCOLOR="%s"></TD>' % value
             tag_table += '</TR></TABLE>'
 
@@ -2597,7 +2600,7 @@ class DotSvgGenerator(object):
         """
         Return person gender avatar.
         """
-        path, filename = os.path.split(__file__)
+        path, _filename = os.path.split(__file__)
         if gender == Person.MALE:
             return os.path.join(path, 'person_male.png')
         if gender == Person.FEMALE:
@@ -2636,7 +2639,7 @@ class DotSvgGenerator(object):
         # get the person's name
         name = displayer.display_name(person.get_primary_name())
         # name string should not be empty
-        name= escape(name) if name else ' '
+        name = escape(name) if name else ' '
 
         # birth, death is a lists [date, place]
         birth, death = self.get_date_strings(person)
@@ -2660,7 +2663,7 @@ class DotSvgGenerator(object):
                     birth_wraped += '<BR/>'
                     birth_str += '  '
             elif birth[1]:
-                birth_wraped =  _('%s ') % self.bth
+                birth_wraped = _('%s ') % self.bth
                 birth_str = _('%s ') % self.bth
             birth_wraped += birth[1]
             birth_str += birth[1]
@@ -2673,7 +2676,7 @@ class DotSvgGenerator(object):
                     death_wraped += '<BR/>'
                     death_str += '  '
             elif death[1]:
-                death_wraped =  _('%s ') % self.dth
+                death_wraped = _('%s ') % self.dth
                 death_str = _('%s ') % self.bth
             death_wraped += death[1]
             death_str += death[1]
@@ -2739,7 +2742,7 @@ class DotSvgGenerator(object):
         elif event_str[1]:
             event_str = event_str[1]
         else:
-           event_str = ''
+            event_str = ''
 
         label += '<TR><TD>%s</TD></TR>' % event_str
 
@@ -2792,8 +2795,8 @@ class DotSvgGenerator(object):
             place = ''
             # shall we display full date
             # or do we have a valid year to display only year
-            if ((self.show_full_dates and date_object.get_text())
-                    or date_object.get_year_valid()):
+            if(self.show_full_dates and date_object.get_text() or
+               date_object.get_year_valid()):
                 if self.show_full_dates:
                     date = '%s' % datehandler.get_date(event)
                 else:
@@ -2912,6 +2915,7 @@ class DotSvgGenerator(object):
         """
         if self.dot:
             self.dot.write(text)
+
 
 #-------------------------------------------------------------------------
 #
@@ -3495,7 +3499,7 @@ class PopupMenu(Gtk.Menu):
             self.add_separator()
 
             # build tag submenu
-            item, tag_menu = self.add_submenu(label=_("Tags"))
+            _item, tag_menu = self.add_submenu(label=_("Tags"))
 
             add_menuitem(tag_menu, _('Select tags for family'),
                          [handle, 'family'], self.actions.edit_tag_list)
@@ -3504,7 +3508,7 @@ class PopupMenu(Gtk.Menu):
                          [handle, 'family'], self.actions.organize_tags)
 
             # build spouses menu
-            item, sp_menu = self.add_submenu(label=_("Spouses"))
+            _item, sp_menu = self.add_submenu(label=_("Spouses"))
 
             f_handle = family.get_father_handle()
             m_handle = family.get_mother_handle()
@@ -3916,7 +3920,7 @@ class Actions(Callback):
 
         msg1 = _('Delete %s?') % displayer.display(person)
         msg2 = (_('Deleting the person [%s] will remove it '
-                 'from the database.') % person.gramps_id)
+                  'from the database.') % person.gramps_id)
         dialog = QuestionDialog2(msg1, msg2,
                                  _("Yes"), _("No"),
                                  self.uistate.window)
