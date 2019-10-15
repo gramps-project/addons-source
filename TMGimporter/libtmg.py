@@ -30,14 +30,13 @@ Import from an Wholly Genes - The Master Genealogist (TMG) Project backup file
 # Python modules
 #
 #------------------------------------------------------------------------
-import os # Used by clearconsole() 
-import glob # Used by insensitive_glob()
-import sys # Used to read sqz
+import os  # Used by clearconsole()
+import glob  # Used by insensitive_glob()
 import configparser
-import zipfile # Used to read sqz
+import zipfile  # Used to read sqz
 import tempfile
-import calendar # Used by TMG parse_date
-from io import StringIO # Used to read sqz
+import calendar  # Used by TMG parse_date
+from io import StringIO  # Used to read sqz
 
 import logging
 LOG = logging.getLogger(".TMGImport")
@@ -109,6 +108,7 @@ tmgExcludedDuplicates
 #
 #------------------------------------------------------------------------
 
+
 class TMGError(Exception):
     """
     Class used to report TMG errors.
@@ -119,6 +119,7 @@ class TMGError(Exception):
 
     def __str__(self):
         return self.value
+
 
 def insensitive_glob(pattern):
     '''
@@ -144,6 +145,7 @@ def insensitive_glob(pattern):
 #               -
 #               -
 #------------------------------------------------------------------------
+
 
 class TmgProject(object):
     '''
@@ -195,7 +197,7 @@ class TmgProject(object):
         #return 'PJC version : {}'.format(version)
         return version
 
-    def researcher(self):  #TODO Use to populate Gramps Researcher
+    def researcher(self):  # TODO Use to populate Gramps Researcher
         '''
         Researcher details
 
@@ -340,7 +342,7 @@ class TmgProject(object):
         #TODO expand this to identify all tmg file types
         #TODO use a dict to collect it all
         tmgproject = self.tmgproject.rsplit('/', 1)
-        print('Project path =:',tmgproject[0])
+        print('Project path =:', tmgproject[0])
         projectpath = tmgproject[0] + '/'
         ###########
 
@@ -374,19 +376,26 @@ class TmgProject(object):
         allfiles = len(
             all_names), 'Total all files in directory provided (*.*)'
 
-        #(0, 'TMG backup file (SQZ)', 1, 'TMG Project Configuration File (PJC)', 29, 'FoxPro Database Files (DBF)', 18, 'Foxpro Memo Files (FPT)', 0, 'Foxpro Structural Compound Index Files (CDX)', 0, 'TMG Log File (LOG)', 87, 'all files in directory provided')
+        #(0, 'TMG backup file (SQZ)',
+        # 1, 'TMG Project Configuration File (PJC)',
+        # 29, 'FoxPro Database Files (DBF)',
+        # 18, 'Foxpro Memo Files (FPT)',
+        # 0, 'Foxpro Structural Compound Index Files (CDX)',
+        # 0, 'TMG Log File (LOG)',
+        # 87, 'all files in directory provided')
         summaryfiles = sqzfiles + pjcfiles + dbffiles + \
             fptfiles + cdxfiles + logfiles + allfiles
 
         _summaryfiles = ''
         for datum in range(0, len(summaryfiles), 2):
-            #print('{:>8}|{}'.format(summaryfiles[datum], summaryfiles[datum + 1]))
+            #print('{:>8}|{}'.format(summaryfiles[datum],
+            #                        summaryfiles[datum + 1]))
             _summaryfiles = _summaryfiles + \
                 '{:>7}|{}\n'.format(
                     summaryfiles[datum],
                     summaryfiles[datum + 1])
 
-        return ('\n######File Summary########\nNumber |Usage (Type)\n{}'.format(
+        return ('\n#####File Summary#######\nNumber |Usage (Type)\n{}'.format(
                 _summaryfiles))
 
 #------------------------------------------------------------------------
@@ -394,8 +403,11 @@ class TmgProject(object):
 # Identify TMG DBF version by table names
 #
 #------------------------------------------------------------------------
+
+
 '''
-Test TMG DBF fields exist in Tables to determine/verify TMG Project file version
+Test TMG DBF fields exist in Tables to determine/verify TMG Project file
+version
 
     Table (DBF) / Field / New in TMG Version
     A / reminders / 7.01
@@ -522,7 +534,7 @@ def map_dbfs_to_tables(tablemap):
 
     tmgExhibits = Table(
         tmgtables_ext['tmgExhibits'][1],
-        ignore_memos=True,   #TODO Don't ignore memo's if present (try/except)
+        ignore_memos=True,   # TODO Don't ignore memo's if present (try/except)
         #ignore_memos=False,
         dbf_type='vfp')
 
@@ -669,66 +681,36 @@ class TmgTable(object):
         self.table_mapped = False
         self.dbf_names = []
         self.tmgtables_ext = {
-            'tmgPeople': ('_$.dbf',
-                          ''),
-            'tmgSourceCategories': ('_a.dbf',
-                                    ''),
-            'tmgFocusGroupMembers': ('_b.dbf',
-                                     ''),
-            'tmgCustomFlags': ('_c.dbf',
-                               ''),
-            'tmgDataSets': ('_d.dbf',
-                            ''),
-            'tmgDNAinformation': ('_dna.dbf',
-                                  ''),
-            'tmgParticipantsWitnesses': ('_e.dbf',
-                                         ''),
-            'tmgParentChildRelationships': ('_f.dbf',
-                                            ''),
-            'tmgEvents': ('_g.dbf',
-                          ''),
-            'tmgExhibits': ('_i.dbf',
-                            ''),
-            'tmgTimelineLocks': ('_k.dbf',
-                                 ''),
-            'tmgResearchTasks': ('_l.dbf',
-                                 ''),
-            'tmgSources': ('_m.dbf',
-                           ''),
-            'tmgNames': ('_n.dbf',
-                         ''),
-            'tmgNameDictionary': ('_nd.dbf',
-                                  ''),
-            'tmgNamePartType': ('_npt.dbf',
-                                ''),
-            'tmgNamePartValue': ('_npv.dbf',
-                                 ''),
-            'tmgFocusGroups': ('_o.dbf',
-                               ''),
-            'tmgPlaces': ('_p.dbf',
-                          ''),
-            'tmgPlaceDictionary': ('_pd.dbf',
-                                   ''),
-#            'tmgPicklist': ('_pick1.dbf',
-#                            ''),
-            'tmgPlacePartType': ('_ppt.dbf',
-                                 ''),
-            'tmgPlacePartValue': ('_ppv.dbf',
-                                  ''),
-            'tmgRepositories': ('_r.dbf',
-                                ''),
-            'tmgCitations': ('_s.dbf',
-                             ''),
-            'tmgStyles': ('_st.dbf',
-                          ''),
-            'tmgTagTypes': ('_t.dbf',
-                            ''),
-            'tmgSourceComponents': ('_u.dbf',
-                                    ''),
-            'tmgSourceRepositoryLinks': ('_w.dbf',
-                                         ''),
-            'tmgExcludedDuplicates': ('_xd.dbf',
-                                      '')}
+            'tmgPeople': ('_$.dbf', ''),
+            'tmgSourceCategories': ('_a.dbf', ''),
+            'tmgFocusGroupMembers': ('_b.dbf', ''),
+            'tmgCustomFlags': ('_c.dbf', ''),
+            'tmgDataSets': ('_d.dbf', ''),
+            'tmgDNAinformation': ('_dna.dbf', ''),
+            'tmgParticipantsWitnesses': ('_e.dbf', ''),
+            'tmgParentChildRelationships': ('_f.dbf', ''),
+            'tmgEvents': ('_g.dbf', ''),
+            'tmgExhibits': ('_i.dbf', ''),
+            'tmgTimelineLocks': ('_k.dbf', ''),
+            'tmgResearchTasks': ('_l.dbf', ''),
+            'tmgSources': ('_m.dbf', ''),
+            'tmgNames': ('_n.dbf', ''),
+            'tmgNameDictionary': ('_nd.dbf', ''),
+            'tmgNamePartType': ('_npt.dbf', ''),
+            'tmgNamePartValue': ('_npv.dbf', ''),
+            'tmgFocusGroups': ('_o.dbf', ''),
+            'tmgPlaces': ('_p.dbf', ''),
+            'tmgPlaceDictionary': ('_pd.dbf', ''),
+            # 'tmgPicklist': ('_pick1.dbf', ''),
+            'tmgPlacePartType': ('_ppt.dbf', ''),
+            'tmgPlacePartValue': ('_ppv.dbf', ''),
+            'tmgRepositories': ('_r.dbf', ''),
+            'tmgCitations': ('_s.dbf', ''),
+            'tmgStyles': ('_st.dbf', ''),
+            'tmgTagTypes': ('_t.dbf', ''),
+            'tmgSourceComponents': ('_u.dbf', ''),
+            'tmgSourceRepositoryLinks': ('_w.dbf', ''),
+            'tmgExcludedDuplicates': ('_xd.dbf', '')}
 
     def __str__(self):
         '''
@@ -794,9 +776,9 @@ def datasets():
     D .dbf - tmgDataSets - Data Set File
 
     -----------------------------
-      0 - dsid      : 8                                 # DataSet ID# (Primary key)
+      0 - dsid      : 8                            # DataSet ID# (Primary key)
       1 - dsname    : u'sample / Royal92 - 2nd import'  # DataSet Name
-      2 - dslocation: u'royal92.ged'                    # Original Import location
+      2 - dslocation: u'royal92.ged'               # Original Import location
       3 - dstype    : 1                                 # Import type
       4 - dslocked  : False                             # Is DataSet Locked
       5 - dsenabled : True                              # Is DataSet Enabled
@@ -805,8 +787,10 @@ def datasets():
       8 - dsp2      : u''                               # Only in TMG 8 +
       9 - dcomment  : u'A comment is here sometimes'    # DataSet Comment
      10 - host      : u''
-     11 - namestyle : 0                                 # Default name style for this dataset Relates to st.styleid(ST.dbf).
-     12 - placestyle: 0                                 # Default place style for this dataset Relates to st.styleid(ST.dbf).
+     # Default name style for this dataset Relates to st.styleid(ST.dbf).
+     11 - namestyle : 0
+     # Default place style for this dataset Relates to st.styleid(ST.dbf).
+     12 - placestyle: 0
      13 - tt        : u' '
     -----------------------------
     '''
@@ -824,10 +808,14 @@ def datasets():
                                      record.placestyle, record.tt.rstrip()
     '''
     All datasets() =
-    {0: (1, 'TMG Sample Data Set', 'C:\\MYDATA\\SAMPLE'   , 1, False, True , '', '', '', '', 0, 0, ''),
-     1: (2, 'sample / Royal92 - 1st import', 'royal92.ged', 1, True , True , '', '', '', '', 0, 0, ''),
-     2: (8, 'sample / Royal92 - 2nd import', 'royal92.ged', 1, False, True , '', '', '', '', 0, 0, ''),
-     3: (9, 'sample / Royal92 - 3rd import', 'royal92.ged', 1, False, False, '', '', '', '', 0, 0, '')}
+    {0: (1, 'TMG Sample Data Set', 'C:\\MYDATA\\SAMPLE'   , 1,
+         False, True , '', '', '', '', 0, 0, ''),
+     1: (2, 'sample / Royal92 - 1st import', 'royal92.ged', 1,
+         True , True , '', '', '', '', 0, 0, ''),
+     2: (8, 'sample / Royal92 - 2nd import', 'royal92.ged', 1,
+         False, True , '', '', '', '', 0, 0, ''),
+     3: (9, 'sample / Royal92 - 3rd import', 'royal92.ged',
+         1, False, False, '', '', '', '', 0, 0, '')}
     '''
 
     return alldatasets
@@ -865,9 +853,12 @@ def only_first_dataset():
     second_datasetid = (datasets()[1][0])
     third_datasetid = (datasets()[2][0])
     forth_datasetid = (datasets()[3][0])
-    print("second_datasetid = {} of {} ".format(second_datasetid, datasets_total))
-    print("third_datasetid = {} of {} ".format(third_datasetid, datasets_total))
-    print("forth_datasetid = {} of {} ".format(forth_datasetid, datasets_total))
+    print("second_datasetid = {} of {} ".format(
+        second_datasetid, datasets_total))
+    print("third_datasetid = {} of {} ".format(
+        third_datasetid, datasets_total))
+    print("forth_datasetid = {} of {} ".format(
+        forth_datasetid, datasets_total))
     '''
     return first_datasetid
 
@@ -886,23 +877,23 @@ def trial_d_dbf():
     '''
     with tmgPeople:
         t = tmgPeople
-        print("Version:\n",t.version)
-        print("Filename:\n",t.filename)
-        print("Memoname:\n",t.memoname)
-        print("Field names:\n",t.field_names)
-        print("Total Field count:\n",t.field_count)
-        print("Last update:\n",t.last_update)
+        print("Version:\n", t.version)
+        print("Filename:\n", t.filename)
+        print("Memoname:\n", t.memoname)
+        print("Field names:\n", t.field_names)
+        print("Total Field count:\n", t.field_count)
+        print("Last update:\n", t.last_update)
         print("Codepage:\n", t.codepage)
         print("Status:\n", t.status)
         print("Structure:\n", t.structure)
         print("Supported_tables:\n", t.supported_tables)
-        print("First record:\n",t.first_record)
-        print("Last record:\n",t.last_record)
+        print("First record:\n", t.first_record)
+        print("Last record:\n", t.last_record)
         print()
         count = 0
         for record in tmgPeople:
             if record.dsid == 9:
-                person = record.per_no
+                #person = record.per_no
                 count += 1
         print("Number of People records from dataset 9 = ", count)
         return
@@ -918,16 +909,18 @@ def trial_print_table_fields():
     '''
     Print table fields for reference
     '''
-    for x in (tmgPeople, tmgSourceCategories, tmgFocusGroupMembers, \
-            tmgCustomFlags, tmgDataSets, tmgDNAinformation, tmgParticipantsWitnesses, \
-            tmgParentChildRelationships, tmgEvents, tmgExhibits, tmgTimelineLocks, \
-            tmgResearchTasks, tmgSources, tmgNames, tmgNameDictionary, tmgNamePartType, \
-            tmgNamePartValue, tmgFocusGroups, tmgPlaces, tmgPlaceDictionary, tmgPlacePartType, \
-            tmgPlacePartValue, tmgRepositories, tmgCitations, tmgStyles, tmgTagTypes, \
-            tmgSourceComponents, tmgSourceRepositoryLinks, tmgExcludedDuplicates):
-        print("*****************************************************************")
+    for x in (tmgPeople, tmgSourceCategories, tmgFocusGroupMembers,
+              tmgCustomFlags, tmgDataSets, tmgDNAinformation,
+              tmgParticipantsWitnesses, tmgParentChildRelationships, tmgEvents,
+              tmgExhibits, tmgTimelineLocks, tmgResearchTasks, tmgSources,
+              tmgNames, tmgNameDictionary, tmgNamePartType,
+              tmgNamePartValue, tmgFocusGroups, tmgPlaces, tmgPlaceDictionary,
+              tmgPlacePartType, tmgPlacePartValue, tmgRepositories,
+              tmgCitations, tmgStyles, tmgTagTypes, tmgSourceComponents,
+              tmgSourceRepositoryLinks, tmgExcludedDuplicates):
+        print("**************************************************************")
         print(x, x.field_names)
-        print("*****************************************************************")
+        print("**************************************************************")
     return
 
 #--------------------------------------------------------------------------
@@ -949,18 +942,18 @@ def trial_people(database, tmg_dataset):
         tmg_dataset = tmg_dataset
         for record in tmgPeople:
             if record.dsid == tmg_dataset:
-                if record.dsid == None:
+                if record.dsid is None:
                     return
                 else:
                     tmg_people_in_dataset.append(record.per_no)
 
     #------------------------------------
-    ## get each persons name
+    # get each persons name
     #------------------------------------
     with tmgNames:
         tmg_people_named = {}
         for record in tmgNames:
-            if (record.dsid == tmg_dataset) and (record.primary == True):
+            if (record.dsid == tmg_dataset) and (record.primary is True):
                 namesplit = record.srnamedisp.split()
                 surname = namesplit[-1]
                 givenname = namesplit[0]
@@ -979,7 +972,8 @@ def trial_people(database, tmg_dataset):
         # see gramps/gen/db/txn.py  (DbTxn )
         data = {"primary_name": {"first_name": firstname,
                 "surname_list": [{"surname": surname}]}, }
-        person = Person.create(Person.serialize(data))  ## AttributeError: 'dict' object has no attribute 'handle
+        # AttributeError: 'dict' object has no attribute 'handle
+        person = Person.create(Person.serialize(data))
         with DbTxn("Add Person", database) as tran:
             database.add_person(person, tran)
 
@@ -1184,7 +1178,9 @@ def trial_events(database, tmg_dataset):
 [per2 = 0 ]
 [event date = None ]
 [Short PlaceName =   ]
-[Event memo = [:CR:][:CR:]Frank Alexander was educated at Duffield Academy in Elizabethton and at Emory and Henry College in Washington County, Tennessee. ]
+[Event memo = [:CR:][:CR:]Frank Alexander was educated at Duffield Academy
+  in Elizabethton and at Emory and Henry College in Washington County,
+  Tennessee. ]
     '''
     #--------------------------------------------
     #
@@ -1194,7 +1190,8 @@ def trial_events(database, tmg_dataset):
         eventtype = tmg_events[tmgevent][1]
         eventdate = tmg_events[tmgevent][4]
         eventplace = tmg_events[tmgevent][5]
-        #data = {"type": {eventtype}, "date" : eventdate , "place" : eventplace, }
+        #data = {"type": {eventtype}, "date" : eventdate,
+        #        "place" : eventplace,}
         data = {"date" : eventdate , "place" : eventplace}
         event = Event.create(Event.from_struct(data))
         with DbTxn("Add Event", database) as tran:
@@ -1213,7 +1210,7 @@ def on_changed(selection):
     (model, iter) = selection.get_selected()
     # print value selected
     print("\nYou selected : TMG Data Set %s %s" %
-                (model[iter][0],  model[iter][1])) # Datasetnumber & datasetname
+          (model[iter][0], model[iter][1]))  # Datasetnumber & datasetname
     selecteddataset = int(model[iter][0])
     print("selecteddataset : ", selecteddataset)
 
@@ -1225,7 +1222,7 @@ def on_changed(selection):
 
 #-------------------------------------------------------------------------
 #
-# Import data into the currently open database.                    #####See: importxml.py
+# Import data into the currently open database.     #####See: importxml.py
 # Must take care of renaming media files according to their new IDs. #### ?
 #
 #-------------------------------------------------------------------------
@@ -1239,7 +1236,8 @@ def importData(database, sqzfilename, user):
         LOG.warn("Create a New Family Tree to import your TMG Backup into.")
         tmgabortimport = True   # Report import stopped
         return
-    #print("Current Family Tree is empty! database.get_total() = ", database.get_total())
+    #print("Current Family Tree is empty! database.get_total() = ",
+    #      database.get_total())
 
     sqzfilename = os.path.normpath(sqzfilename)
     basefiledir = os.path.dirname(sqzfilename)
@@ -1266,20 +1264,29 @@ def importData(database, sqzfilename, user):
             if rename_required:
                 rename_files_lowercase(pjcfolder)
 
-            #Initialize 
+            #Initialize
             #TODO make this section simpler
-            pjcfilelocation = find_file_ext(".PJC", tmpdirname)  # updated name for pjc after rename
+            # updated name for pjc after rename
+            pjcfilelocation = find_file_ext(".PJC", tmpdirname)
             project = TmgProject(pjcfilelocation)
 
-            # Check PJC version is for TMG 9.02 or newer (PJCVERSION = 11.0) and continue (For the TMG Program Version; generally subtract 1 from the PjcVersion number)
+            # Check PJC version is for TMG 9.02 or newer (PJCVERSION = 11.0)
+            # and continue (For the TMG Program Version; generally subtract 1
+            # from the PjcVersion number)
             pjcverresult = project.version()
-            print("PJC version : {}".format(project.version())) # PJC version number v11.0 or greater for TMG 9.02 +
+            # PJC version number v11.0 or greater for TMG 9.02 +
+            print("PJC version : {}".format(project.version()))
             if pjcverresult >= 11:
-                print("**** TMG 9.02 or greater project backup reported by pjc text file  ******")
+                print("**** TMG 9.02 or greater project backup reported by"
+                      " pjc text file  ******")
             else:
-                print("**** TMG 9.01 or earlier project backup reported by pjc text file  ******")
-                print("**** Please use the last version of TMG to upgrade your backup and follow the advice here: ")
-                print("**** https://gramps-project.org/wiki/index.php?title=Addon:TMGimporter#Before_Import_From_TMG_Backup_file  ******")
+                print("**** TMG 9.01 or earlier project backup reported by "
+                      "pjc text file  ******")
+                print("**** Please use the last version of TMG to upgrade "
+                      "your backup and follow the advice here: ")
+                print("**** https://gramps-project.org/wiki/index.php?title="
+                      "Addon:TMGimporter#Before_Import_From_TMG_Backup_file  "
+                      "******")
                 tmgabortimport = True   # Report import stopped
                 return
             # load DBF Tables
@@ -1290,22 +1297,26 @@ def importData(database, sqzfilename, user):
 
             #--------------------------------
             #TMG Dataset to use
-            # Detect if TMG project file contains more than one dataset and allows selection
+            # Detect if TMG project file contains more than one dataset and
+            # allows selection
 
-            # get list of datasets in (D.dbf) for combo box if more than one dataset
+            # get list of datasets in (D.dbf) for combo box if more than one
+            # dataset
             print("only_has_one_dataset() = ", only_has_one_dataset())
-            if not only_has_one_dataset() and user.uistate:  # check if running from cli (see: importgedcom.py)
+            # check if running from cli (see: importgedcom.py)
+            if not only_has_one_dataset() and user.uistate:
                 print("GUI running show dialog libtmg.glade")
                 top = Glade()
                 liststore = top.get_object('liststore1')
                 # Add list of Datasets from TMG Project
                 datasetchoice = datasets()
-                print("All datasets()",datasets())  # list all datasets
+                print("All datasets()", datasets())  # list all datasets
                 for datasetrow in datasetchoice.items():
-                    liststore.append(( str(datasetrow[1][0]), str(datasetrow[1][1]) ) )
+                    liststore.append((str(datasetrow[1][0]),
+                                      str(datasetrow[1][1])))
                 # Which row is selected in the list
                 treeview1 = top.get_object('treeview1')
-                treeview1.get_selection().connect("changed", on_changed) 
+                treeview1.get_selection().connect("changed", on_changed)
                 #TODO connect help / cancel & import tmg buttons
                 window = top.get_object('tmgimporterwindow')
                 dialog = top.toplevel
@@ -1313,34 +1324,47 @@ def importData(database, sqzfilename, user):
                 #print(dir(dialog))
                 dialog.show_all()
                 #dialog.run()
-                tmg_dataset = selecteddataset  #TODO return selected data set from on_changed? shows but with error! NameError: name 'selecteddataset' is not defined 
+                #TODO return selected data set from on_changed?
+                # shows but with error! NameError: name 'selecteddataset'
+                # is not defined
+                #tmg_dataset = selecteddataset
+
                 dialog.destroy()
 
-                #only_first_dataset() # select first dataset in a multidataset backup if on cli
-                #user_dsid = input("Selected TMG file has multiple datasets. Please select one to import? ")  #TODO remove this when gui fixed
+                # select first dataset in a multidataset backup if on cli
+                #only_first_dataset()
+                #TODO remove this when gui fixed
+                #user_dsid = input("Selected TMG file has multiple datasets. "
+                #                  "Please select one to import? ")
                 #print("You selected dataset = ", user_dsid)
-                #tmg_dataset = datasetchoice[int(user_dsid)][0]  # select the first dsid number from the dataset table
+                # select the first dsid number from the dataset table
+                #tmg_dataset = datasetchoice[int(user_dsid)][0]
             elif only_has_one_dataset():
                 print("Only one Dataset found.")
                 # if true get the dsid of the dataset
-                # not alway "1" especially when you delete and renumber datasets like myself
+                # not alway "1" especially when you delete and renumber
+                # datasets like myself
                 # {1: (1, 'blank / My Data Set', False, True)}
                 # use first dataset in (D.dbf) eg
-                datasetchoice = datasets() #TODO fix this wrong result
+                datasetchoice = datasets()  # TODO fix this wrong result
                 user_dsid = 0  # only choice #TODO fix this wrong result
-                tmg_dataset = datasetchoice[int(user_dsid)][0]  # select the dsid number from the dataset table #TODO fix this wrong result
+                # select the dsid number from the dataset table
+                #TODO fix this wrong result
+                #tmg_dataset = datasetchoice[int(user_dsid)][0]
             else:
                 #No dataset available then stop
                 LOG.warn("No TMG datasets available!")
                 return
-##################################################################################
+###############################################################################
             #Process TMG Project for import
             #------------------------------------------------------
             print("Not working yet")
             #trial_people(database, tmg_dataset)  # test import of names
             #trial_events(database, tmg_dataset)  # test import of events
 
-            ####-------Processing order----#TODO split to own function or class "TMGParser(dbase, user, ...)" see below
+            ####-------Processing order----
+            #TODO split to own function or class "TMGParser(dbase, user, ...)"
+            # see below
             #[1] notes
             #[2] events
             #[3] people
@@ -1350,7 +1374,6 @@ def importData(database, sqzfilename, user):
             #[7] citations
             #[8] place
             #[9] media
-
 
             #[] ImportInfo report errors etc
 
@@ -1383,9 +1406,12 @@ def sqz_pjc_exist(sqzfiletocheck):
         # *.VER - Version Control File (v0.x to v1.2a)
         # *.TMG - Version Control File (v2.0 to v4.0d)
         # *.PJC - TMG Project Configuration File (v5.0 to v9.05)
-        if x.endswith('.PJC') or x.endswith('.pjc') or x.endswith('.tmg') or x.endswith('.VER'):
-            #TODO if tmg or ver  mention older valid tmg backup not supported by tmg import addon
-            #TODO "Please upgrade the TMG database format using the TMG 9.05 trial version and creating a new TMG backup file"
+        if(x.endswith('.PJC') or x.endswith('.pjc') or
+           x.endswith('.tmg') or x.endswith('.VER')):
+            #TODO if tmg or ver  mention older valid tmg backup not supported
+            # by tmg import addon
+            #TODO "Please upgrade the TMG database format using the TMG 9.05
+            # trial version and creating a new TMG backup file"
             validtmgfile = True
         else:
             validtmgfile = False
@@ -1395,9 +1421,9 @@ def sqz_pjc_exist(sqzfiletocheck):
         return False
     # print content of valid file
     try:
-        data = zip.read(x)
+        _data = zip.read(x)
     except KeyError:
-        print('ERROR: Did not find %s in zip file' % filename)
+        print('ERROR: Did not find %s in zip file' % sqzfiletocheck)
     else:
         print(x, ':')
     return True
@@ -1476,9 +1502,10 @@ def find_file_ext(fileext2find, tmpdirname):
     '''
     found = None
 
-    for root, dirs, files in os.walk(tmpdirname):
+    for root, _dirs, files in os.walk(tmpdirname):
         for name in files:
-            if name.endswith(fileext2find.lower()) or name.endswith(fileext2find):
+            if(name.endswith(fileext2find.lower()) or
+               name.endswith(fileext2find)):
                 print(os.path.abspath(os.path.join(root, name)))
                 found = os.path.abspath(os.path.join(root, name))
 
@@ -1496,8 +1523,8 @@ def rename_files_lowercase(pjcfolder):
     '''
     Rename files in folder to lowercase
     '''
-    for i, filename in enumerate(os.listdir(pjcfolder)):
-        #print(i, filename)
+    for _i, filename in enumerate(os.listdir(pjcfolder)):
+        #print(_i, filename)
         src = os.path.join(pjcfolder, filename)
         dest = os.path.join(pjcfolder, filename.lower())
         os.rename(src, dest)
@@ -1544,13 +1571,19 @@ def MediaSqzExtract(database, filename, user):  # dsid media to extract
     try:
         #TODO extract External TMG media files here
         #
-        #  Note that the PJC file contains the default mediapath stored in [Advanced][ImageDirectory=...]
-        #  if more than one dataset is involved check each files Dataset ID is valid before extracting
+        #  Note that the PJC file contains the default mediapath stored in
+        #   [Advanced][ImageDirectory=...]
+        #  if more than one dataset is involved check each files Dataset ID is
+        #  valid before extracting
         #
-        #TODO TMG Media files may also be internal Exhibits if so no media will be extracted here!
-        #TODO see libtmg.py to extract internal exhibits from the "Exhibits Tables" [I.DBF & I.FPT])
-        #TODO or provide a warning they are internal exhibits and to use John Cardinals TMGUtil to
-        # "Export Images" and convert internal images to external images then make a new TMG Backup(*.SQZ) file
+        #TODO TMG Media files may also be internal Exhibits if so no media
+        # will be extracted here!
+        #TODO see libtmg.py to extract internal exhibits from the
+        # "Exhibits Tables" [I.DBF & I.FPT])
+        #TODO or provide a warning they are internal exhibits and to use
+        # John Cardinals TMGUtil to
+        # "Export Images" and convert internal images to external images then
+        # make a new TMG Backup(*.SQZ) file
         # consider a donation to Johns favorite charity.
         # http://www.johncardinal.com/tmgutil/
         # http://www.johncardinal.com/tmgutil/toc.htm
@@ -1573,19 +1606,17 @@ def MediaSqzExtract(database, filename, user):  # dsid media to extract
     # Set correct media dir if possible, complain if problems
     if oldmediapath is None:
         database.set_mediapath(tmpdir_path)
-        user.warn(
-                _("Base path for relative media set"),
-                _("The base media path of this Family Tree has been set to "
+        user.warn(_("Base path for relative media set"),
+                  _("The base media path of this Family Tree has been set to "
                     "%s. Consider taking a simpler path. You can change this "
                     "in the Preferences, while moving your media files to the "
                     "new position, and using the media manager tool, option "
                     "'Replace substring in the path' to set"
                     " correct paths in your media objects."
-                  ) % tmpdir_path)
+                    ) % tmpdir_path)
     else:
-        user.warn(
-                _("Cannot set base media path"),
-                _("The Family Tree you imported into already has a base media "
+        user.warn(_("Cannot set base media path"),
+                  _("The Family Tree you imported into already has a base media "
                     "path: %(orig_path)s. The imported media objects however "
                     "are relative from the path %(path)s. You can change the "
                     "media path in the Preferences or you can convert the "
@@ -1594,7 +1625,7 @@ def MediaSqzExtract(database, filename, user):  # dsid media to extract
                     "new position, and using the media manager tool, option "
                     "'Replace substring in the path' to set"
                     " correct paths in your media objects."
-                  ) % {'orig_path': oldmediapath, 'path': tmpdir_path})
+                    ) % {'orig_path': oldmediapath, 'path': tmpdir_path})
 
     return mediastatus
 
@@ -1623,7 +1654,7 @@ class Information(ManagedWindow):
             (_('Value'), 1, 400)
         ]
         treeview = Gtk.TreeView()
-        model = ListModel(treeview, titles)
+        model = Gtk.ListModel(treeview, titles)
         for key, value in sorted(data.items()):
             model.add((key, str(value),), key)
         s.add(treeview)
@@ -1820,13 +1851,15 @@ The Master Genealogist (TMG) - File Structures for v9
 Last Updated: July 2014
 COPYRIGHT © 2014, Wholly Genes, Inc. All Rights Reserved.
 Filename: TMG9_file_structures.rtf
-URL: http://www.whollygenes.com/forums201/index.php?/topic/381-file-structures-for-the-master-genealogist-tmg/
+URL: http://www.whollygenes.com/forums201/index.php?
+/topic/381-file-structures-for-the-master-genealogist-tmg/
 '''
 #TODO Convert to Gramps Date.set() [gramps.gen.lib.DateObjects]
 #TODO Convert Gramps Date back to TMG Date for Export to TMG 9.05
 #TODO from gramps.gen.datehandler import parser as _dp
 #TODO _dp.parse(parse_date)  # Parses the text, returning a Date object.
-#TODO https://gramps-project.org/docs/date.html#gramps.gen.datehandler._dateparser.DateParser.parse
+#TODO https://gramps-project.org/docs/date.html
+#     gramps.gen.datehandler._dateparser.DateParser.parse
 #------------------------------------------------------------------------
 #
 #  TMG parse_date Helper function
@@ -1921,27 +1954,27 @@ def parse_date(tmgdate):
     if datefieldtype in validdatecodes:
         if datefieldtype == "1":
             '''Regular date code'''
-            regulardate1value2_9 = tmgdate[1:9] # "YYYYMMDD"
-            is_oldstyle10 = tmgdate[9] # "0" = No / "1" = Yes
-            date2yyold = tmgdate[9:11] # Oldstyle YY
-            datemodifier11 = tmgdate[10] # Before/Say/Circa/Exact/After/Between
-                                         # Or/From...to
+            regulardate1value2_9 = tmgdate[1:9]  # "YYYYMMDD"
+            is_oldstyle10 = tmgdate[9]  # "0" = No / "1" = Yes
+            date2yyold = tmgdate[9:11]  # Oldstyle YY
+            # Before/Say/Circa/Exact/After/Between Or/From...to
+            datemodifier11 = tmgdate[10]
             validdatemodifiercodes = ["0", "1", "2", "3", "4", "5", "6", "7"]
-            regulardate2value12_19 = tmgdate[11:19] # "00000000"
+            regulardate2value12_19 = tmgdate[11:19]  # "00000000"
             is_eightzeros = None  # rename to empty field or emptydate?
             if regulardate2value12_19 == "00000000":
                 is_eightzeros = True
             else:
                 is_eightzeros = False
-            regulardate3value12_19 = tmgdate[11:19] # "YYYYMMDD"
-            is_oldstyledate2nd_20 = tmgdate[19] # "0" = No / "1" = Yes
-            has_questionmark21 = tmgdate[20] # "0" = No / "1" = Yes
+            regulardate3value12_19 = tmgdate[11:19]  # "YYYYMMDD"
+            is_oldstyledate2nd_20 = tmgdate[19]  # "0" = No / "1" = Yes
+            has_questionmark21 = tmgdate[20]  # "0" = No / "1" = Yes
             questionmark = None
             if has_questionmark21 == "0":
                 questionmark = ""
             else:
                 questionmark = "?"
-            regulardate4value22_30 = tmgdate[21:29] # (reserved)
+            regulardate4value22_30 = tmgdate[21:29]  # (reserved)
 
             if is_oldstyle10 == "0":
                 if datemodifier11 in validdatemodifiercodes:
@@ -1990,7 +2023,9 @@ def parse_date(tmgdate):
                                                          questionmark))
                 else:
                     # Invalid issue with database?
-                    return tmgdate, "Invalid datemodifier11: ----------{}----------".format(datemodifier11)
+                    return(tmgdate,
+                           "Invalid datemodifier11: ----------{}"
+                           "----------".format(datemodifier11))
             elif is_oldstyle10 == "1":
                 date1 = num_to_date(regulardate1value2_9)
                 YYold2 = date2yyold
@@ -2001,7 +2036,9 @@ def parse_date(tmgdate):
             return irregulardatevalue
     else:
         # Invalid issue with database?
-        return tmgdate, "Invalid datefieldtype: {}--------------------".format(datefieldtype)
+        return(tmgdate,
+               "Invalid datefieldtype: {}"
+                "--------------------".format(datefieldtype))
 #------------------------------------------------------------------------
 #
 #  TMG parse_date function - End
@@ -2019,18 +2056,20 @@ def parse_date(tmgdate):
 
 "The Master Genealogist (TMG) Backup File 'SQZ' reader and extracter"
 
+
 #-------------------------------------------------------------------------
 #
 # TmgExtractSQZ function
 #
 #-------------------------------------------------------------------------
-def TmgExtractSQZ(tmgsqzfilename):  #TODO split into seperate functions
+def TmgExtractSQZ(tmgsqzfilename):  # TODO split into seperate functions
     """
     Open a TMG SQZ file
 
     test sqz
 
-    then extract all the files to a temp directory/location python namedtemp directory?
+    then extract all the files to a temp directory/location
+    python namedtemp directory?
     """
     print("Filename:", tmgsqzfilename)
 
@@ -2046,7 +2085,8 @@ def TmgExtractSQZ(tmgsqzfilename):  #TODO split into seperate functions
                 #print("namelist", tmgsqzfilenames)
                 print("number of files", len(tmgsqzfilenames))
 
-                # Check a TMG "Version Control File"(*.pjc/*.ver/*.tmg) files exist in the SQZ
+                # Check a TMG "Version Control File"(*.pjc/*.ver/*.tmg)
+                # files exist in the SQZ
                 # Early TMG versions used *.VER
                 # TMG v4.x used *.TMG
                 # TMG v5.x and higher use *.PJC
@@ -2054,32 +2094,41 @@ def TmgExtractSQZ(tmgsqzfilename):  #TODO split into seperate functions
                     if filename.endswith('.pjc') or filename.endswith('.PJC'):
                         tmgprojectfilename = filename
                         print("tmgprojectfilename:", tmgprojectfilename)
-                    elif filename.endswith('.tmg') or filename.endswith('.TMG'):
-                        # Present a notification message to Projects with (*.ver/*.tmg)
-                        # eg:TMG v4 and earlier. That tmgimport only supports tmg versions 5.x to 9.x
+                    elif (filename.endswith('.tmg') or
+                          filename.endswith('.TMG')):
+                        # Present a notification message to Projects with
+                        # (*.ver/*.tmg)
+                        # eg:TMG v4 and earlier. That tmgimport only supports
+                        # tmg versions 5.x to 9.x
                         tmgprojectfilenameold = filename
                         print("tmgprojectfilename old:", tmgprojectfilenameold)
                         return
-                    elif filename.endswith('.ver') or filename.endswith('.VER'):
-                        # Present a notification message to Projects with (*.ver/*.tmg)
-                        # eg:TMG v4 and earlier. That tmgimport only supports tmg versions 5.x to 9.x
+                    elif (filename.endswith('.ver') or
+                          filename.endswith('.VER')):
+                        # Present a notification message to Projects with
+                        # (*.ver/*.tmg)
+                        # eg:TMG v4 and earlier. That tmgimport only supports
+                        # tmg versions 5.x to 9.x
                         tmgprojectfilenameevenolder = filename
-                        print("tmgprojectfilename even older:", tmgprojectfilenameevenolder)
+                        print("tmgprojectfilename even older:",
+                              tmgprojectfilenameevenolder)
                         return
                     else:
-                        print("Are you sure this is a tmgprojectfilename? if so contact me.")
+                        print("Are you sure this is a tmgprojectfilename? "
+                              "if so contact me.")
                         return
 
                 # Extract the found (*.pjc)  to a temporary location
 
-                # Read the (*.pjc) contents and report TMG version it was created with
-                # along with some other information.
+                # Read the (*.pjc) contents and report TMG version it was
+                # created with along with some other information.
 
                 pjccontents = StringIO(tmgsqz.read(tmgprojectfilename))
                 print(tmgprojectfilename, ':')
 
                 # PjcVersion=10.0
-                # For the TMG Program Version; subtract 1 from the PjcVersion number
+                # For the TMG Program Version; subtract 1 from the PjcVersion
+                # number
                 for line in pjccontents:
                     if line.startswith("PjcVersion=") > 0:
                         pjcversionraw = line
@@ -2109,31 +2158,40 @@ def TmgExtractSQZ(tmgsqzfilename):  #TODO split into seperate functions
 
                 # GUI(importtmg.glade)
 
-                # Present a drop down box to select only one of the TMG "Data Sets" to be imported.
-                # (I believe Gramps can only have one family tree open at a time,
-                #  and muliple dataset can not be shown in the list views eglike tmgs 1:23, 2:13)
+                # Present a drop down box to select only one of the TMG
+                # "Data Sets" to be imported.
+                # (I believe Gramps can only have one family tree open at
+                # a time,
+                #  and muliple dataset can not be shown in the list views
+                # eglike tmgs 1:23, 2:13)
 
                 # Test the TMG SQZ for Internal exhibits
                 # http://tmg.reigelridge.com/exhibits.htm
                 # Mention that: John Cardinal's TMG Utility will
-                # convert internal exhibits to external...see http://www.johncardinal.com/tmgutil/
-                # In TMG Utility, try the Other->Export Data option and select Exhibit Log;
+                # convert internal exhibits to external...
+                # see http://www.johncardinal.com/tmgutil/
+                # In TMG Utility, try the Other->Export Data option and select
+                # Exhibit Log;
                 # after you've chosen where to save it, you'll be prompted;
                 # http://www.johncardinal.com/tmgutil/exportimages.htm#task1
 
         else:
             # Display an informational popup
-            # http://www.whollygenes.com/forums201/index.php?/topic/14299-opening-old-sqz-files/?p=57594
+            # http://www.whollygenes.com/forums201/index.php?
+            #/topic/14299-opening-old-sqz-files/?p=57594
             # Early TMG versions used the FoxPro SQZ file as a backup archive
             # and this is not a ZIP file.
-            # If the file came from TMG prior to v5, in a trial version of TMG you should
-            # try import, not restore. File / Import
+            # If the file came from TMG prior to v5, in a trial version of
+            # TMG you should try import, not restore. File / Import
             # Select 'The Master Genealogist v4.x or earlier BACKUP (*.SQZ)'.
             # That may or may not work.
-            # If the SQZ came from an early version of TMG, you might need to talk to
-            # Whollygenes  Support and they will want to examine the file.
-            # There are also other genealogy databases that used the .SQZ file extension:
-            # Family Gathering, Roots IV, Roots V, Ultimate Family Tree, Visual Roots.
+            # If the SQZ came from an early version of TMG, you might need to
+            # talk to Whollygenes  Support and they will want to examine the
+            # file.
+            # There are also other genealogy databases that used the .SQZ
+            # file extension:
+            # Family Gathering, Roots IV, Roots V, Ultimate Family Tree,
+            # Visual Roots.
             print(tmgsqzfilename, "is not a TMG SQZ file or \
                   was created in TMG version 4.x or earlier")
             return
@@ -2202,7 +2260,6 @@ C.DBF - tmgCustomFlags - Flag File
 '''
 
 
-
 #------------------------------------------------------------------------
 #
 #  Data Set File
@@ -2234,6 +2291,8 @@ Fields:
 13 - tt        : u' '              #
 -----------------------------
 '''
+
+
 def d_dbf():
     with tmgDataSets:
         d_fields = {}
@@ -2535,4 +2594,3 @@ XD .dbf - tmgExcludedDuplicates - Excluded Pair File
 ############################################################
 #if __name__ == '__main__':
 #    pass
-
