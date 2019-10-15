@@ -48,7 +48,7 @@ class SearchWidget(GObject.GObject):
     """
 
     __gsignals__ = {
-        'item-activated': (GObject.SIGNAL_RUN_FIRST, None, (str, )),
+        'item-activated': (GObject.SignalFlags.RUN_FIRST, None, (str, )),
         }
 
     def __init__(self, dbstate, get_person_image,
@@ -421,9 +421,9 @@ class SearchEntry(Gtk.SearchEntry):
     """
 
     __gsignals__ = {
-        'start-search': (GObject.SIGNAL_RUN_FIRST, None, (object, )),
-        'empty-search': (GObject.SIGNAL_RUN_FIRST, None, ()),
-        'focus-to-result': (GObject.SIGNAL_RUN_FIRST, None, ()),
+        'start-search': (GObject.SignalFlags.RUN_FIRST, None, (object, )),
+        'empty-search': (GObject.SignalFlags.RUN_FIRST, None, ()),
+        'focus-to-result': (GObject.SignalFlags.RUN_FIRST, None, ()),
         }
 
     def __init__(self):
@@ -476,7 +476,7 @@ class Popover(Gtk.Popover):
     """
 
     __gsignals__ = {
-        'item-activated': (GObject.SIGNAL_RUN_FIRST, None, (str, )),
+        'item-activated': (GObject.SignalFlags.RUN_FIRST, None, (str, )),
         }
 
     def __init__(self, main_label, other_label, ext_panel=None):
@@ -609,7 +609,7 @@ class Panel(Gtk.Box):
         self.list_box.set_sort_func(self.sort_func)
 
         vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
-        panel_lable = Gtk.Label(_('<b>%s:</b>') % label)
+        panel_lable = Gtk.Label(label=_('<b>%s:</b>') % label)
         panel_lable.set_use_markup(True)
         vbox.add(panel_lable)
         self.progress_bar = Gtk.ProgressBar()

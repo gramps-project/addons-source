@@ -640,7 +640,7 @@ class GraphView(NavigationView):
                                row, 'interface.graphview-home-path-color',
                                col=1)
         row += 1
-        font_lbl = Gtk.Label(_('Font:'), xalign=0)
+        font_lbl = Gtk.Label(label=_('Font:'), xalign=0)
         grid.attach(font_lbl, 1, row, 1, 1)
         font = self._config.get('interface.graphview-font')
         font_str = '%s, %d' % (font[0], font[1])
@@ -869,7 +869,7 @@ class GraphWidget(object):
         self.goto_active_btn.connect("clicked", self.goto_active)
 
         # add 'go to bookmark' button
-        self.goto_other_btn = Gtk.Button(_('Go to bookmark'))
+        self.goto_other_btn = Gtk.Button(label=_('Go to bookmark'))
         self.goto_other_btn.set_tooltip_text(
             _('Center view on selected bookmark'))
         self.toolbar.pack_start(self.goto_other_btn, False, False, 1)
@@ -913,7 +913,7 @@ class GraphWidget(object):
                                  'interface.graphview-descendant-generations')
         gen_box.add(box)
         # pack generation spinners to popover
-        gen_btn = Gtk.Button(_('Generations'))
+        gen_btn = Gtk.Button(label=_('Generations'))
         self.add_popover(gen_btn, gen_box)
         self.toolbar.pack_start(gen_btn, False, False, 1)
 
@@ -929,7 +929,7 @@ class GraphWidget(object):
                                  'interface.graphview-nodesep')
         spacing_box.add(box)
         # pack spacing spinners to popover
-        spacing_btn = Gtk.Button(_('Spacings'))
+        spacing_btn = Gtk.Button(label=_('Spacings'))
         self.add_popover(spacing_btn, spacing_box)
         self.toolbar.pack_start(spacing_btn, False, False, 1)
 
@@ -1061,11 +1061,11 @@ class GraphWidget(object):
         btn_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
         # add button to add active person to bookmarks
         # tooltip will be changed in "self.load_bookmarks"
-        self.add_bkmark = Gtk.Button(_('Add active person'))
+        self.add_bkmark = Gtk.Button(label=_('Add active person'))
         self.add_bkmark.connect("clicked", self.add_active_to_bkmarks)
         btn_box.pack_start(self.add_bkmark, True, True, 2)
         # add buton to call bookmarks manager
-        manage_bkmarks = Gtk.Button(_('Edit'))
+        manage_bkmarks = Gtk.Button(label=_('Edit'))
         manage_bkmarks.set_tooltip_text(_('Call the bookmark editor'))
         manage_bkmarks.connect("clicked", self.edit_bookmarks)
         btn_box.pack_start(manage_bkmarks, True, True, 2)
