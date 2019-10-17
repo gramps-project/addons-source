@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-10 12:37+1100\n"
+"POT-Creation-Date: 2019-10-17 11:17-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -108,32 +108,32 @@ msgid ""
 "%(gramps_wiki_import_pjc_direct_url)s"
 msgstr ""
 
-#: TMGimporter/libtmg.py:1531
+#: TMGimporter/libtmg.py:1558
 #, python-format
 msgid "Could not create media directory %s"
 msgstr ""
 
-#: TMGimporter/libtmg.py:1535
+#: TMGimporter/libtmg.py:1562
 #, python-format
 msgid "Media directory %s is not writable"
 msgstr ""
 
-#: TMGimporter/libtmg.py:1541
+#: TMGimporter/libtmg.py:1568
 #, python-format
 msgid ""
 "Media directory %s exists. Delete it first, then restart the import process"
 msgstr ""
 
-#: TMGimporter/libtmg.py:1565
+#: TMGimporter/libtmg.py:1598
 #, python-format
 msgid "Error extracting into %s"
 msgstr ""
 
-#: TMGimporter/libtmg.py:1577
+#: TMGimporter/libtmg.py:1609
 msgid "Base path for relative media set"
 msgstr ""
 
-#: TMGimporter/libtmg.py:1578
+#: TMGimporter/libtmg.py:1610
 #, python-format
 msgid ""
 "The base media path of this Family Tree has been set to %s. Consider taking "
@@ -142,11 +142,11 @@ msgid ""
 "'Replace substring in the path' to set correct paths in your media objects."
 msgstr ""
 
-#: TMGimporter/libtmg.py:1587
+#: TMGimporter/libtmg.py:1618
 msgid "Cannot set base media path"
 msgstr ""
 
-#: TMGimporter/libtmg.py:1588
+#: TMGimporter/libtmg.py:1619
 #, python-format
 msgid ""
 "The Family Tree you imported into already has a base media path: "
@@ -158,19 +158,19 @@ msgid ""
 "media objects."
 msgstr ""
 
-#: TMGimporter/libtmg.py:1614 TMGimporter/libtmg.py:1639
+#: TMGimporter/libtmg.py:1645 TMGimporter/libtmg.py:1670
 msgid "Database Information"
 msgstr ""
 
-#: TMGimporter/libtmg.py:1616
+#: TMGimporter/libtmg.py:1647
 msgid "_OK"
 msgstr ""
 
-#: TMGimporter/libtmg.py:1622
+#: TMGimporter/libtmg.py:1653
 msgid "Setting"
 msgstr ""
 
-#: TMGimporter/libtmg.py:1623
+#: TMGimporter/libtmg.py:1654
 msgid "Value"
 msgstr ""
 
