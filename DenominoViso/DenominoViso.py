@@ -1958,21 +1958,17 @@ function %(bd)s2html(person,containerDL) {
         else:
             ErrorDialog(_("the chart type runs out of bounds"),self.options['DNMchart_type'])
 
-        strng = """<?xml version="1.0" encoding="UTF-8"?>
-            <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
-                "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-            <html:html xmlns:html="http://www.w3.org/1999/xhtml"
-                    xmlns="http://www.w3.org/2000/svg"
-                    xml:lang="nl">
-            <html:head>
-            <html:meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8"/>
-            <html:title>%s</html:title>
-            <html:style>
+        strng = """<!DOCTYPE html>
+            <html>
+            <head>
+            <meta charset="utf-8">
+            <title>%s</title>
+            <style type="text/css">
         """ % self.options['DNMtitle']
         strng += self.get_css_style()
-        strng += """</html:style>
-            <html:script type="text/javascript">
-            <![CDATA["""
+        strng += """</style>
+            <script type="text/javascript">
+            """
         strng += self.get_javascript_functions()
         strng += self.unpack_birth_death_data("birth")
         strng += self.unpack_birth_death_data("death")
@@ -1984,22 +1980,21 @@ function %(bd)s2html(person,containerDL) {
         onunload = ''
         if self.open_subwindow:
             onunload = ' onunload="cleanUp()"'
-        strng += """]]>
-            </html:script>
-            </html:head>
-            <html:body%s>
-            <html:div id="infoField"></html:div>
-            <html:form id="searchForm" action="">
-            <html:label>%s:
-            <html:input id="searchString" type="text"
+        strng += """</script>
+            </head>
+            <body%s>
+            <div id="infoField"></div>
+            <form id="searchForm" action="">
+            <label>%s:
+            <input id="searchString" type="text"
                 onkeyup="searchStrInSubj()"/>
-            </html:label>
-            <html:label>%s:
-            <html:select id="searchSubject" onchange="searchStrInSubj()">
-            </html:select>
-            </html:label>
-            </html:form>
-            <html:p><html:br/></html:p> <!-- To accomodate the search form. -->
+            </label>
+            <label>%s:
+            <select id="searchSubject" onchange="searchStrInSubj()">
+            </select>
+            </label>
+            </form>
+            <p><br/></p> <!-- To accomodate the search form. -->
             <svg id="AncestorChart" width="%d%%" height="%dpx"
                 viewBox="%s" preserveAspectRatio="xMinYMin"
                 onclick="start_halo(evt)">
@@ -2417,8 +2412,8 @@ function %(bd)s2html(person,containerDL) {
         strng = """
             <circle id="halo" cx="1" cy="1" r="1" stroke="none" fill="none"/>
             </svg>
-            <html:p><html:br/></html:p><!--To accomodate the copyright string.-->
-            <html:pre id="copyright">%s</html:pre>
+            <p><br/></p><!--To accomodate the copyright string.-->
+            <pre id="copyright">%s</pre>
             """ % self.copyright
         if self.options['DNMchart_type'] == _cnsts.REGULAR:
             if self.options['DNMtime_dir'] < _cnsts.TOP2BOTTOM:
@@ -2442,13 +2437,13 @@ function %(bd)s2html(person,containerDL) {
                 else:
                     viewBox = "%d %d %d %d" % (-self.rect_width/2,-self.rect_height/2,width + self.rect_width, height)
             strng += """
-            <html:script>
+            <script>
                 var svg_el = document.getElementById('AncestorChart');
                 svg_el.setAttribute('viewBox',"%s");
-            </html:script>
+            </script>
             """ % viewBox
         strng += self.get_html_search_options()
-        strng += """</html:body></html:html>"""
+        strng += """</body></html>"""
         f.write(strng)
         return
 
@@ -2463,7 +2458,7 @@ function %(bd)s2html(person,containerDL) {
             self.search_subjects['Date'] = '_date'
         if len([x for x in self.search_subjects.keys() if x[-5:]=='Place']) > 1:
             self.search_subjects['Place'] = '_place'
-        options = """<html:script>
+        options = """<script>
             var search_subject_sel = document.getElementById('searchSubject');
         """
         for subj in sorted(self.search_subjects.keys()):
@@ -2478,7 +2473,7 @@ function %(bd)s2html(person,containerDL) {
                 opt.appendChild(document.createTextNode('%s'));
                 search_subject_sel.appendChild(opt);
                 """ % (self.search_subjects[subj]+":'",self.escbacka(localised_subj))
-        options += "</html:script>"
+        options += "</script>"
         return options
 
     # I would like to include the DOCTYPE but then it gets hard to have the
@@ -2557,7 +2552,7 @@ class DenominoVisoOptions(MenuReportOptions):
         category_name = _("DenominoViso Options")
 
         des = DestinationOption(
-            _("Destination"), os.path.join(USER_HOME, "DenominoViso.xhtml"))
+            _("Destination"), os.path.join(USER_HOME, "DenominoViso.html"))
         des.set_help(_("The destination file for the xhtml-content."))
         menu.add_option(category_name, "DNMfilename", des)
 
