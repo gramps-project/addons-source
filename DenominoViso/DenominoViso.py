@@ -1446,7 +1446,7 @@ function %(bd)s2html(person,containerDL) {
         #note_format = person.get_note_format()
         if note:
             #if note_format:
-                # without this the xhtml file contains a newline while I need \n
+                # without this the html file contains a newline while I need \n
             # python 2.5 had a change in xml/sax/saxutils so that \n is escaped
             # to &#10;. Firefox can't cope with this, so apply \n->\\n now also
             # for unformatted notes, ugly.
@@ -2553,7 +2553,7 @@ class DenominoVisoOptions(MenuReportOptions):
 
         des = DestinationOption(
             _("Destination"), os.path.join(USER_HOME, "DenominoViso.html"))
-        des.set_help(_("The destination file for the xhtml-content."))
+        des.set_help(_("The destination file for the html-content."))
         menu.add_option(category_name, "DNMfilename", des)
 
         pid = PersonOption(_("Central Person"))
@@ -2743,7 +2743,7 @@ class DenominoVisoOptions(MenuReportOptions):
         ext_confidence_keys.sort()
         confidence_color = ConfidenceColorOption(_("Source confidence color"),\
             [str([i, '#000000']) for i in ext_confidence_keys])
-        confidence_color.set_help(_("List os lists where each sublist is a list with information on the color to use for a certain confidence level."))
+        confidence_color.set_help(_("List of lists where each sublist is a list with information on the color to use for a certain confidence level."))
         menu.add_option(category_name, 'DNMconf_color', confidence_color)
 
         event_format = TextOption(_("Event format"),["<" + _('date') + ">",
