@@ -6,10 +6,10 @@
 
 register(GRAMPLET,
          id="etree Gramplet",
-         name=_("etree Gramplet"),
+         name=_("etree"),
          description = _("Gramplet for testing etree with Gramps XML"),
-         status = STABLE, # not yet tested with python 3
-         version = '1.0.7',
+         status = STABLE,
+         version = '1.0.8',
          gramps_target_version = "5.1",
          include_in_listing = False,
          height = 400,

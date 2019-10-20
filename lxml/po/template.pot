@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-23 11:08-0500\n"
+"POT-Creation-Date: 2019-10-21 08:49+1100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,16 +17,12 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: lxml/etreeGramplet.gpr.py:9
-msgid "etree Gramplet"
+#: lxml/etreeGramplet.gpr.py:9 lxml/etreeGramplet.gpr.py:18
+msgid "etree"
 msgstr ""
 
 #: lxml/etreeGramplet.gpr.py:10
 msgid "Gramplet for testing etree with Gramps XML"
-msgstr ""
-
-#: lxml/etreeGramplet.gpr.py:18
-msgid "etree"
 msgstr ""
 
 #: lxml/etreeGramplet.py:85 lxml/lxmlGramplet.py:110
@@ -197,16 +193,12 @@ msgid ""
 " \"%s\"\n"
 msgstr ""
 
-#: lxml/lxmlGramplet.gpr.py:9
-msgid "lxml Gramplet"
+#: lxml/lxmlGramplet.gpr.py:9 lxml/lxmlGramplet.gpr.py:18
+msgid "lxml"
 msgstr ""
 
 #: lxml/lxmlGramplet.gpr.py:10
 msgid "Gramplet for testing lxml and XSLT"
-msgstr ""
-
-#: lxml/lxmlGramplet.gpr.py:18
-msgid "lxml"
 msgstr ""
 
 #: lxml/lxmlGramplet.py:67
