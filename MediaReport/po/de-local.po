@@ -1,0 +1,124 @@
+# German translation for Gramps
+# Copyright (C) 2019 Gramps project
+# This file is distributed under the same license as the Gramps package.
+# Milo Ivir <mail@milotype.de>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-19 09:28+1000\n"
+"PO-Revision-Date: 2019-10-24 11:58+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.4\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: de\n"
+
+#: MediaReport/media_report.gpr.py:23
+msgid "Media Report"
+msgstr "Medienbericht"
+
+#: MediaReport/media_report.gpr.py:24
+msgid "Generates report including images, image data and notes."
+msgstr "Erstellt einen Bericht mit Bildern, Bildaten und Notizen."
+
+#: MediaReport/media_report.py:91 MediaReport/media_report.py:97
+#: MediaReport/media_report.py:104 MediaReport/media_report.py:110
+msgid "INFO"
+msgstr "INFO"
+
+#: MediaReport/media_report.py:91 MediaReport/media_report.py:104
+msgid "You have to select an image to generate this report."
+msgstr "Um diesen Bericht zu erstellen, muß ein Bild ausgewählt werden."
+
+#: MediaReport/media_report.py:97
+msgid ""
+"You have to select a custom note or uncheck the option 'include custom note' "
+"to generate this report."
+msgstr ""
+"Um diesen Bericht zu erstellen, muß ein benutzerdefinierte Notiz ausgewählt "
+"werden, oder die Option ‚Benutzerdefinierte Notiz aufnehmen‘ deaktiviert "
+"werden."
+
+#: MediaReport/media_report.py:110
+msgid "This report only supports PDF as output file format."
+msgstr "Dieser Bericht unterstützt nur PDF als Ausgangsformat."
+
+#: MediaReport/media_report.py:214
+msgid "General:"
+msgstr "Allgemeines:"
+
+#: MediaReport/media_report.py:220
+msgid "Description:"
+msgstr "Beschreibung:"
+
+#: MediaReport/media_report.py:235
+msgid "Image type:"
+msgstr "Art der Bilder:"
+
+#: MediaReport/media_report.py:336
+msgid "File does not exist"
+msgstr "Datei existiert nicht"
+
+#: MediaReport/media_report.py:337
+msgid "Could not add photo to page"
+msgstr "Der Seite konnte kein Foto hinzugefügt werden"
+
+#: MediaReport/media_report.py:338
+#, python-format
+msgid "%(str1)s: %(str2)s"
+msgstr "%(str1)s: %(str2)s"
+
+#: MediaReport/media_report.py:420
+msgid "Heading"
+msgstr "Überschrift"
+
+#: MediaReport/media_report.py:421 MediaReport/media_report.py:425
+#: MediaReport/media_report.py:429 MediaReport/media_report.py:433
+#: MediaReport/media_report.py:438 MediaReport/media_report.py:442
+msgid "Report Options"
+msgstr "Berichtsoptionen"
+
+#: MediaReport/media_report.py:423
+msgid "Media"
+msgstr "Medien"
+
+#: MediaReport/media_report.py:424
+msgid "Select a media file for this report"
+msgstr "Mediendatei für diesen Bericht wählen"
+
+#: MediaReport/media_report.py:427
+msgid "Custom note"
+msgstr "Benutzerdefinierte Notiz"
+
+#: MediaReport/media_report.py:428
+msgid "Select a note for this report"
+msgstr "Notiz für diesen Bericht auswählen"
+
+#: MediaReport/media_report.py:431
+msgid "Include custom note"
+msgstr "Benutzerdefinierte Notiz einbeziehen"
+
+#: MediaReport/media_report.py:432
+msgid "The custom note will be included"
+msgstr "Benutzerdefinierte Notiz wird einbezogen"
+
+#: MediaReport/media_report.py:436
+msgid "Include referenced people"
+msgstr "Referenzierte Personen einbeziehen"
+
+#: MediaReport/media_report.py:437
+msgid "Referenced people will be included"
+msgstr "Referenzierte Personen werden einbezogen"
+
+#: MediaReport/media_report.py:440
+msgid "Include media data"
+msgstr "Mediendaten einbeziehen"
+
+#: MediaReport/media_report.py:441
+msgid "Tags, notes and attributes will be included"
+msgstr "Markierungen, Notizen und Attribute werden einbezogen"
