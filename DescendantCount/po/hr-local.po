@@ -7,36 +7,34 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2019-03-08 14:57+0100\n"
+"POT-Creation-Date: 2019-10-21 08:49+1100\n"
+"PO-Revision-Date: 2019-10-24 13:42+0200\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: \n"
+"Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.1\n"
-"Last-Translator: Milo Ivir <mail@milotype.de>\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
-"Language: hr\n"
+"X-Generator: Poedit 2.2.4\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 
 #: DescendantCount/DescendantCount.gpr.py:22
-msgid "Descendant Count Gramplet"
-msgstr "Broj potomaka – Gramplet"
-
-#: DescendantCount/DescendantCount.gpr.py:23
-msgid "Gramplet for showing people and descendant counts"
-msgstr "Gramplet prikazuje broj osoba i potomaka"
-
 #: DescendantCount/DescendantCount.gpr.py:31
 msgid "Descendant Count"
 msgstr "Broj potomaka"
+
+#: DescendantCount/DescendantCount.gpr.py:23
+msgid "Gramplet for showing people and descendant counts"
+msgstr "Gramplet za prikaz broja osoba i potomaka"
 
 #: DescendantCount/DescendantCount.py:87
 msgid ""
 "Click name to change active\n"
 "Double-click name to edit"
 msgstr ""
-"Za aktiviranje, klikni jednom na ime\n"
-"Za obradu, klikni dvaput na ime"
+"Za mijenjanje aktivne osobe, klikni na ime\n"
+"Za uređivanje osobe, klikni dvaput na ime"
 
 #: DescendantCount/DescendantCount.py:94
 msgid "Person"

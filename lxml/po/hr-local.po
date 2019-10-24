@@ -7,28 +7,25 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-04 18:55-0600\n"
-"PO-Revision-Date: 2019-03-08 15:15+0100\n"
+"POT-Creation-Date: 2019-10-21 08:49+1100\n"
+"PO-Revision-Date: 2019-10-24 14:50+0200\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: \n"
+"Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.1\n"
-"Last-Translator: Milo Ivir <mail@milotype.de>\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
-"Language: hr\n"
+"X-Generator: Poedit 2.2.4\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 
-#: lxml/etreeGramplet.gpr.py:9
-msgid "etree Gramplet"
-msgstr "etree – Gramplet"
+#: lxml/etreeGramplet.gpr.py:9 lxml/etreeGramplet.gpr.py:18
+msgid "etree"
+msgstr "etree"
 
 #: lxml/etreeGramplet.gpr.py:10
 msgid "Gramplet for testing etree with Gramps XML"
-msgstr "Gramplet testiranje etree s Gramps XML"
-
-#: lxml/etreeGramplet.gpr.py:18
-msgid "etree"
-msgstr "etree"
+msgstr "Gramplet za testiranje etree s Gramps XML-om"
 
 #: lxml/etreeGramplet.py:85 lxml/lxmlGramplet.py:110
 msgid "Invalid timestamp"
@@ -65,7 +62,7 @@ msgstr "Tvoj sustav trenutačno još nije podržan!"
 
 #: lxml/etreeGramplet.py:254 lxml/lxmlGramplet.py:275
 msgid "Is it a compressed .gramps?"
-msgstr "Da li se radi o komprimiranoj .gramps?"
+msgstr "Da li se radi o komprimiranoj .gramps datoteci?"
 
 #: lxml/etreeGramplet.py:254 lxml/lxmlGramplet.py:275
 #, python-format
@@ -91,12 +88,12 @@ msgstr ""
 msgid "Cannot copy \"%s\""
 msgstr "Nije moguće kopirati „%s”"
 
-#: lxml/etreeGramplet.py:417
+#: lxml/etreeGramplet.py:418
 #, python-format
 msgid "XML: Last %s editions since %s, were at/on :\n"
 msgstr "XML: Zadnje %s promjene od %s, bile su u/na:\n"
 
-#: lxml/etreeGramplet.py:470
+#: lxml/etreeGramplet.py:471
 #, python-format
 msgid ""
 "\n"
@@ -107,7 +104,7 @@ msgstr ""
 "XML: Broj zapisa i veza : \t%s\n"
 "\n"
 
-#: lxml/etreeGramplet.py:473
+#: lxml/etreeGramplet.py:474
 #, python-format
 msgid ""
 "Number of tags : \n"
@@ -116,7 +113,7 @@ msgstr ""
 "Broj etiketa: \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:475
+#: lxml/etreeGramplet.py:476
 #, python-format
 msgid ""
 "Number of tags : \n"
@@ -125,7 +122,7 @@ msgstr ""
 "Broj etiketa: \n"
 "\t\t\t%s\n"
 
-#: lxml/etreeGramplet.py:477
+#: lxml/etreeGramplet.py:478
 #, python-format
 msgid ""
 "Number of  events : \n"
@@ -134,16 +131,28 @@ msgstr ""
 "Broj događaja: \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:478
+#: lxml/etreeGramplet.py:481
 #, python-format
 msgid ""
 "Number of persons : \n"
-"\t\t\t%s\t|\t(%s)* and (%s)* surnames\n"
+"\t\t\t%s\t|\t(%s) and (%s)* surnames\n"
 msgstr ""
 "Broj osoba: \n"
-"\t\t\t%s\t|\t(%s)* and (%s)* surnames\n"
+"\t\t\t%s\t|\t(%s) i (%s)* prezimena\n"
 
-#: lxml/etreeGramplet.py:479
+#: lxml/etreeGramplet.py:483
+#, python-format
+#| msgid ""
+#| "Number of places : \n"
+#| "\t\t\t%s\t|\t(%s)*\n"
+msgid ""
+"Number of persons : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Broj osoba: \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#: lxml/etreeGramplet.py:484
 #, python-format
 msgid ""
 "Number of families : \n"
@@ -152,7 +161,7 @@ msgstr ""
 "Broj obitelji: \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:480
+#: lxml/etreeGramplet.py:485
 #, python-format
 msgid ""
 "Number of sources : \n"
@@ -161,7 +170,7 @@ msgstr ""
 "Broj izvora: \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:481
+#: lxml/etreeGramplet.py:487
 #, python-format
 msgid ""
 "Number of citations : \n"
@@ -170,7 +179,7 @@ msgstr ""
 "Broj citata: \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:482
+#: lxml/etreeGramplet.py:490
 #, python-format
 msgid ""
 "Number of places : \n"
@@ -179,7 +188,7 @@ msgstr ""
 "Broj mjesta: \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:483
+#: lxml/etreeGramplet.py:491
 #, python-format
 msgid ""
 "Number of media objects : \n"
@@ -188,7 +197,7 @@ msgstr ""
 "Broj mediskih objekata: \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:484
+#: lxml/etreeGramplet.py:492
 #, python-format
 msgid ""
 "Number of repositories : \n"
@@ -197,7 +206,7 @@ msgstr ""
 "Broj spremišta: \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:485
+#: lxml/etreeGramplet.py:493
 #, python-format
 msgid ""
 "Number of notes : \n"
@@ -206,7 +215,7 @@ msgstr ""
 "Broj zabilježaka: \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:490
+#: lxml/etreeGramplet.py:498
 #, python-format
 msgid ""
 "\n"
@@ -215,7 +224,7 @@ msgstr ""
 "\n"
 "XML: Broj dodatnih zapisa i veza: \t%s\n"
 
-#: lxml/etreeGramplet.py:492
+#: lxml/etreeGramplet.py:502
 #, python-format
 msgid ""
 "* loaded Family Tree base:\n"
@@ -224,17 +233,13 @@ msgstr ""
 "* učitana baza podataka rodoslova:\n"
 " „%s”\n"
 
-#: lxml/lxmlGramplet.gpr.py:9
-msgid "lxml Gramplet"
-msgstr "lxml Gramplet"
+#: lxml/lxmlGramplet.gpr.py:9 lxml/lxmlGramplet.gpr.py:18
+msgid "lxml"
+msgstr "lxml"
 
 #: lxml/lxmlGramplet.gpr.py:10
 msgid "Gramplet for testing lxml and XSLT"
 msgstr "Gramplet za testiranje lxml i XSLT"
-
-#: lxml/lxmlGramplet.gpr.py:18
-msgid "lxml"
-msgstr "lxml"
 
 #: lxml/lxmlGramplet.py:67
 msgid "Where is gzip?"
@@ -384,7 +389,7 @@ msgstr "2. Stvoren je indeks medija za „%(file)s”.\n"
 #: lxml/lxmlGramplet.py:525
 #, python-format
 msgid "3. Has written entries into \"%(file)s\".\n"
-msgstr "3. Unosi su upisani u „%(file)s”.\n"
+msgstr "3. Upisani su unosi u „%(file)s”.\n"
 
 #: lxml/lxmlGramplet.py:544
 msgid "Matches XSD schema."

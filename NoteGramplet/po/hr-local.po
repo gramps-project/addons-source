@@ -7,24 +7,25 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2019-03-08 15:17+0100\n"
+"POT-Creation-Date: 2019-06-28 10:11-0500\n"
+"PO-Revision-Date: 2019-10-24 15:03+0200\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: \n"
+"Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.1\n"
-"Last-Translator: Milo Ivir <mail@milotype.de>\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
-"Language: hr\n"
+"X-Generator: Poedit 2.2.4\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 
 #: NoteGramplet/NoteGramplet.gpr.py:3
 msgid "Note Gramplet"
-msgstr "Zabilješke – Gramplet"
+msgstr "Zabilješke"
 
 #: NoteGramplet/NoteGramplet.gpr.py:4
 msgid "Gramplet for editing active person's notes"
-msgstr "Gramplet za urećivanje zabilježaka aktivne osobe"
+msgstr "Gramplet za uređivanje zabilježaka aktivne osobe"
 
 #: NoteGramplet/NoteGramplet.gpr.py:10
 msgid "Note"
@@ -46,10 +47,10 @@ msgstr "Spremi"
 msgid "Abandon"
 msgstr "Odustani"
 
-#: NoteGramplet/NoteGramplet.py:173 NoteGramplet/NoteGramplet.py:256
+#: NoteGramplet/NoteGramplet.py:174 NoteGramplet/NoteGramplet.py:257
 msgid "Person Note"
 msgstr "Zabilješka za osobu"
 
-#: NoteGramplet/NoteGramplet.py:254
+#: NoteGramplet/NoteGramplet.py:255
 msgid "Save Note"
 msgstr "Spremi zabilješku"

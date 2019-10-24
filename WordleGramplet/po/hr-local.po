@@ -7,21 +7,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-04 18:55-0600\n"
-"PO-Revision-Date: 2019-03-08 15:21+0100\n"
+"POT-Creation-Date: 2019-10-21 08:49+1100\n"
+"PO-Revision-Date: 2019-10-24 14:01+0200\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: \n"
+"Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.1\n"
-"Last-Translator: Milo Ivir <mail@milotype.de>\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
-"Language: hr\n"
+"X-Generator: Poedit 2.2.4\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 
 #: WordleGramplet/WordleGramplet.gpr.py:4
-msgid "Wordle Gramplet"
-msgstr "Wordle – Gramplet"
-
 #: WordleGramplet/WordleGramplet.gpr.py:10
 msgid "Wordle"
 msgstr "Wordle"
@@ -40,7 +38,7 @@ msgstr "Nijedan rodoslov nije učitan."
 
 #: WordleGramplet/WordleGramplet.py:91
 msgid "Processing..."
-msgstr "Obrada ..."
+msgstr "Obrađivanje podataka …"
 
 #: WordleGramplet/WordleGramplet.py:126
 msgid "[Missing]"
@@ -72,4 +70,4 @@ msgstr "Osoba filtra"
 
 #: WordleGramplet/WordleGramplet.py:149
 msgid "The center person for the filter"
-msgstr "Središnja osoba ovog filtra"
+msgstr "Središnja osoba za filtar"
