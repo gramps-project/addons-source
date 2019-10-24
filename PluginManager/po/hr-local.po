@@ -7,17 +7,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2019-03-08 03:18+0100\n"
+"POT-Creation-Date: 2019-09-18 11:36-0500\n"
+"PO-Revision-Date: 2019-10-20 15:51+0200\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: \n"
+"Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.1\n"
-"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"X-Generator: Poedit 2.2.4\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
-"Language: hr\n"
 
 #: PluginManager/PluginManager.gpr.py:29
 msgid "Plugin Manager Enhanced"
@@ -25,7 +25,7 @@ msgstr "Napredni upravljač za dodatke"
 
 #: PluginManager/PluginManager.gpr.py:30
 msgid "An Addon/Plugin Manager with several additional capabilities"
-msgstr "Upravljač za dodatke, s nekolicinom dodatnih funkcija"
+msgstr "Upravljač za dodatke s nekolicinom dodatnih funkcija"
 
 #: PluginManager/PluginManager.py:87
 msgid "Plugin Manager - Enhanced"
@@ -42,10 +42,10 @@ msgid ""
 "the addon filename to be included in the search.\n"
 "Word case and order is ignored."
 msgstr ""
-"Unesi tražene izraze za filtriranje dodataka.\n"
-"Za odabir u pretragu, sve riječi moraju bit negdje u\n"
-"retku ili u imenu datoteke. Veličina slova i redoslijed\n"
-"riječi ne igraju ulogu u pretrazi."
+"Upiši tražene izraze za filtriranje dodataka.\n"
+"Da bi se uključile u pretragu, sve se riječi moraju nalaziti negdje\n"
+"u retku ili u imenu datoteke. Veličina slova i redoslijed riječi\n"
+"ne igraju ulogu u pretrazi."
 
 #: PluginManager/PluginManager.py:155
 msgid "Search..."
@@ -59,7 +59,7 @@ msgstr "Provjeri aktualnost dodataka sada"
 msgid "Reload"
 msgstr "Ponovo učitaj"
 
-#: PluginManager/PluginManager.py:174 PluginManager/PluginManager.py:735
+#: PluginManager/PluginManager.py:174 PluginManager/PluginManager.py:739
 msgid "_Close"
 msgstr "_Zatvori"
 
@@ -114,13 +114,13 @@ msgstr "Učitano"
 msgid "Hidden"
 msgstr "Skriveno"
 
-#: PluginManager/PluginManager.py:304 PluginManager/PluginManager.py:699
+#: PluginManager/PluginManager.py:304 PluginManager/PluginManager.py:701
 msgid "Failed"
 msgstr "Nije uspjelo"
 
 #: PluginManager/PluginManager.py:377
 msgid "Installation Errors"
-msgstr "Greške instalacije"
+msgstr "Greške prilikom instaliranja"
 
 #: PluginManager/PluginManager.py:378
 msgid "The following addons had errors: "
@@ -229,31 +229,31 @@ msgstr "Ne"
 msgid "*Available"
 msgstr "*Dostupno"
 
-#: PluginManager/PluginManager.py:688
+#: PluginManager/PluginManager.py:690
 msgid "Built-in"
 msgstr "Ugrađeno"
 
-#: PluginManager/PluginManager.py:693
+#: PluginManager/PluginManager.py:695
 msgid "*Installed"
 msgstr "*Instalirano"
 
-#: PluginManager/PluginManager.py:702
+#: PluginManager/PluginManager.py:704
 msgid "Update Available"
-msgstr "Dostupna je nadogradnja"
+msgstr "Dostupna je nova verzija"
 
-#: PluginManager/PluginManager.py:729
+#: PluginManager/PluginManager.py:733
 #, python-format
 msgid "%(str1)s: %(str2)s"
 msgstr "%(str1)s: %(str2)s"
 
-#: PluginManager/PluginManager.py:729
+#: PluginManager/PluginManager.py:733
 msgid "Detailed Info"
 msgstr "Detaljne informacije"
 
-#: PluginManager/PluginManager.py:828
+#: PluginManager/PluginManager.py:832
 msgid "Updated"
 msgstr "Aktualizirano"
 
-#: PluginManager/PluginManager.py:839
+#: PluginManager/PluginManager.py:843
 msgid "updates|New"
-msgstr "Novi"
+msgstr "Novo"
