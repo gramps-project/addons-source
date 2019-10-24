@@ -1,0 +1,73 @@
+# Croatian translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) 2019 Free Software Foundation, Inc.
+# Milo Ivir <mail@milotype.de>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-07-08 16:30-0500\n"
+"PO-Revision-Date: 2019-10-24 15:44+0200\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"Language-Team: \n"
+"Language: hr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.4\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+
+#: Themes/themes.gpr.py:28
+msgid "Theme preferences"
+msgstr "Postavke za dizajn sučelja"
+
+#: Themes/themes.gpr.py:29
+msgid ""
+"An addition to Preferences for simple Theme and Font adjustment.  Especially "
+"useful for Windows users."
+msgstr ""
+"Dodatak u postavkama za jednostavno podešavanje dizajna sučelja i fontova. "
+"Naročito korisno za korisnike Windows sustava."
+
+#: Themes/themes.py:112
+msgid "_Help"
+msgstr "_Pomoć"
+
+#: Themes/themes.py:156 Themes/themes.py:174
+msgid "Theme is hardcoded by GTK_THEME"
+msgstr "Dizajn sučelja je fiksno kodiran s GTK_THEME"
+
+#: Themes/themes.py:159 Themes/themes.py:182
+#, python-format
+msgid "%s: "
+msgstr "%s: "
+
+#: Themes/themes.py:159 Themes/themes.py:209
+msgid "Theme"
+msgstr "Dizajn sučelja"
+
+#: Themes/themes.py:164
+msgid "Dark Variant"
+msgstr "Tamna varijanta"
+
+#: Themes/themes.py:182
+msgid "Font"
+msgstr "Font"
+
+#: Themes/themes.py:189
+msgid "_Toolbar"
+msgstr "_Alatna traka"
+
+#: Themes/themes.py:189
+msgid "Text"
+msgstr "Tekst"
+
+#: Themes/themes.py:198
+msgid "Fixed Scrollbar (requires restart)"
+msgstr "Fiksna klizna traka (ponovo pokreni program)"
+
+#: Themes/themes.py:205
+msgid "Restore to defaults"
+msgstr "Vrati na zadane vrijednosti"
