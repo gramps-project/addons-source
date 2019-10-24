@@ -8,23 +8,24 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2019-03-08 14:54+0100\n"
+"PO-Revision-Date: 2019-10-24 14:29+0200\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: \n"
+"Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.1\n"
-"Last-Translator: Milo Ivir <mail@milotype.de>\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
-"Language: hr\n"
+"X-Generator: Poedit 2.2.4\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 
 #: DataEntryGramplet/DataEntryGramplet.gpr.py:8
 msgid "Data Entry Gramplet"
-msgstr "Unos podataka – Gramplet"
+msgstr "Unos podataka"
 
 #: DataEntryGramplet/DataEntryGramplet.gpr.py:9
 msgid "Gramplet for quick data entry"
-msgstr "Gramplet za brzi unos podataka: %s"
+msgstr "Gramplet za brzi unos podataka"
 
 #: DataEntryGramplet/DataEntryGramplet.gpr.py:13
 msgid "Data Entry"
@@ -169,7 +170,7 @@ msgstr "Gramplet za uređivanje podataka: %s"
 
 #: DataEntryGramplet/DataEntryGramplet.py:515
 msgid "Please provide a name."
-msgstr "Unesi ime."
+msgstr "Upiši ime."
 
 #: DataEntryGramplet/DataEntryGramplet.py:515
 msgid "Can't add new person."
@@ -184,7 +185,7 @@ msgstr "Novu osobu nije moguće dodati."
 #: DataEntryGramplet/DataEntryGramplet.py:560
 #: DataEntryGramplet/DataEntryGramplet.py:565
 msgid "Please set an active person."
-msgstr "Postavite aktivnu osobu."
+msgstr "Postavi aktivnu osobu."
 
 #: DataEntryGramplet/DataEntryGramplet.py:523
 #: DataEntryGramplet/DataEntryGramplet.py:526
@@ -194,7 +195,7 @@ msgstr "Nije moguće dodati novu osobu kao roditelja."
 #: DataEntryGramplet/DataEntryGramplet.py:526
 #: DataEntryGramplet/DataEntryGramplet.py:545
 msgid "Please set the new person's gender."
-msgstr "Odredite spol nove osobe."
+msgstr "Odredi spol nove osobe."
 
 #: DataEntryGramplet/DataEntryGramplet.py:531
 msgid "Can't add new person as a mother."
@@ -202,7 +203,7 @@ msgstr "Nije moguće dodati novu osobu kao majku."
 
 #: DataEntryGramplet/DataEntryGramplet.py:536
 msgid "Can't add new person as a father."
-msgstr "Nije moguće dodati novu osobu kao oca"
+msgstr "Nije moguće dodati novu osobu kao oca."
 
 #: DataEntryGramplet/DataEntryGramplet.py:541
 #: DataEntryGramplet/DataEntryGramplet.py:545
@@ -235,7 +236,7 @@ msgstr "Postavi aktivnu osobu."
 
 #: DataEntryGramplet/DataEntryGramplet.py:764
 msgid "Can't add new person as a spouse to no one."
-msgstr "Nije moguće nikome dodati novu osobu kao supružnika."
+msgstr "Nikome nije moguće dodati novu osobu kao supružnika."
 
 #: DataEntryGramplet/DataEntryGramplet.py:767
 msgid "Please set gender on Active or new person."
