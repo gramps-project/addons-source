@@ -1,0 +1,56 @@
+# Croatian translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) Gramps project
+# Milo Ivir <mail@milotype.de>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2019-03-08 01:43+0100\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.1\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Language: hr\n"
+
+#: DownloadMedia/DownloadMedia.gpr.py:35
+msgid "Download media files from the internet"
+msgstr "Preuzimanje medijskih datoteka iz interneta"
+
+#: DownloadMedia/DownloadMedia.gpr.py:36
+msgid "This tool downloads media files form the internet"
+msgstr "Ovaj alat preuzima medijske datoteke iz interneta"
+
+#: DownloadMedia/DownloadMedia.py:71
+msgid "Download media"
+msgstr "Preuzmi medij"
+
+#: DownloadMedia/DownloadMedia.py:87
+msgid "Media downloaded"
+msgstr "Medij je uspješno preuzet"
+
+#: DownloadMedia/DownloadMedia.py:88
+#, python-format
+msgid "%d media files downloaded"
+msgstr "Broj je preuzetih medijskih datoteka: %d"
+
+#: DownloadMedia/DownloadMedia.py:100
+msgid "Download media tool"
+msgstr "Alat za preuzimanje medija"
+
+#: DownloadMedia/DownloadMedia.py:106
+msgid "Make sure you are connected to the internet before starting this tool."
+msgstr "Provjeri vezu s internetom prije pokretanja alata."
+
+#: DownloadMedia/DownloadMedia.py:171 DownloadMedia/DownloadMedia.py:172
+msgid "Downloading files"
+msgstr "Preuzimanje datoteka"
+
+#: DownloadMedia/DownloadMedia.py:207
+msgid "Media download errors detected"
+msgstr "Nađene su greške u preuzetim medijima"

@@ -1,0 +1,143 @@
+# Croatian translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) Gramps project
+# Milo Ivir <mail@milotype.de>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2019-03-08 02:21+0100\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.1\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Language: hr\n"
+
+#: GenealogyTree/gt_ancestor.py:83 GenealogyTree/gt_descendant.py:83
+#: GenealogyTree/gt_sandclock.py:91
+#, python-format
+msgid "Person %s is not in the Database"
+msgstr "Osoba %s ne postoji u bazi podataka"
+
+#: GenealogyTree/gt_ancestor.py:148 GenealogyTree/gt_descendant.py:156
+#: GenealogyTree/gt_grandparent.py:205 GenealogyTree/gt_sandclock.py:215
+msgid "Report Options"
+msgstr "Opcije za izvještaj"
+
+#: GenealogyTree/gt_ancestor.py:150 GenealogyTree/gt_descendant.py:158
+#: GenealogyTree/gt_grandparent.py:207 GenealogyTree/gt_sandclock.py:218
+msgid "Center Person"
+msgstr "Središnja osoba"
+
+#: GenealogyTree/gt_ancestor.py:151 GenealogyTree/gt_descendant.py:159
+#: GenealogyTree/gt_grandparent.py:208 GenealogyTree/gt_sandclock.py:219
+msgid "The center person for the report"
+msgstr "Središnja osoba u izvještaju"
+
+#: GenealogyTree/gt_ancestor.py:154 GenealogyTree/gt_descendant.py:162
+#: GenealogyTree/gt_grandparent.py:211
+msgid "Generations"
+msgstr "Generacija"
+
+#: GenealogyTree/gt_ancestor.py:155 GenealogyTree/gt_descendant.py:163
+#: GenealogyTree/gt_grandparent.py:212 GenealogyTree/gt_sandclock.py:227
+#: GenealogyTree/gt_sandclock.py:231
+msgid "The number of generations to include in the tree"
+msgstr "Broj generacija, uključenih u stablo"
+
+#: GenealogyTree/gt_ancestor.py:158 GenealogyTree/gt_descendant.py:166
+#: GenealogyTree/gt_grandparent.py:219 GenealogyTree/gt_sandclock.py:238
+msgid "Include images"
+msgstr "Uključi slike"
+
+#: GenealogyTree/gt_ancestor.py:159 GenealogyTree/gt_descendant.py:167
+#: GenealogyTree/gt_grandparent.py:220 GenealogyTree/gt_sandclock.py:239
+msgid "Include images of people in the nodes."
+msgstr "Uključi slike osoba u čvorišta."
+
+#: GenealogyTree/gt_grandparent.py:107
+#, python-format
+msgid "Person %s does not have both a paternal and a maternal grandparent"
+msgstr "Osoba „%s” nema djedove i bake obiju loza, očeve i majčine"
+
+#: GenealogyTree/gt_grandparent.py:215
+msgid "Grandparent family spacing"
+msgstr "Razmak obitelji djedova i baka"
+
+#: GenealogyTree/gt_grandparent.py:216
+msgid "Extra spacing of grandparent families (mm)"
+msgstr "Dodatni razmak za obitelji djedova i baka (mm)"
+
+#: GenealogyTree/gt_sandclock.py:96
+#, python-format
+msgid "Family %s is not in the Database"
+msgstr "Obitelj „%s” ne postoji u bazi podataka"
+
+#: GenealogyTree/gt_sandclock.py:222
+msgid "Center Family"
+msgstr "Središnja obitelj"
+
+#: GenealogyTree/gt_sandclock.py:223
+msgid "The center family for the report"
+msgstr "Središnja obitelj u izvještaju"
+
+#: GenealogyTree/gt_sandclock.py:226
+msgid "Generations up"
+msgstr "Generacija prema gore"
+
+#: GenealogyTree/gt_sandclock.py:230
+msgid "Generations down"
+msgstr "Generacija prema dolje"
+
+#: GenealogyTree/gt_sandclock.py:234
+msgid "Include siblings"
+msgstr "Uključi braću/sestre"
+
+#: GenealogyTree/gt_sandclock.py:235
+msgid "Include siblings of ancestors."
+msgstr "Uključi braću/sestre predaka."
+
+#: GenealogyTree/treeplugins.gpr.py:29
+msgid "Ancestor Tree"
+msgstr "Stablo predaka"
+
+#: GenealogyTree/treeplugins.gpr.py:30
+msgid "Ancestor tree using LaTeX genealogytree"
+msgstr "Stablo predaka, koristeći LaTeX genealogytree"
+
+#: GenealogyTree/treeplugins.gpr.py:51
+msgid "Descendant Tree"
+msgstr "Stablo potomaka"
+
+#: GenealogyTree/treeplugins.gpr.py:52
+msgid "Descendant tree using LaTeX genealogytree"
+msgstr "Stablo potomaka, koristeći LaTeX genealogytree"
+
+#: GenealogyTree/treeplugins.gpr.py:73
+msgid "Grandparent Tree"
+msgstr "Stablo djedova i baka"
+
+#: GenealogyTree/treeplugins.gpr.py:74
+msgid "Grandparent tree using LaTeX genealogytree"
+msgstr "Stablo djedova i baka, koristeći LaTeX genealogytree"
+
+#: GenealogyTree/treeplugins.gpr.py:95
+msgid "Sandclock Tree"
+msgstr "Stablo u obliku pješčanog sata"
+
+#: GenealogyTree/treeplugins.gpr.py:96
+msgid "Sandclock tree using LaTeX genealogytree"
+msgstr "Stablo u obliku pješčanog sata, koristeći LaTeX genealogytree"
+
+#: GenealogyTree/treeplugins.gpr.py:117
+msgid "Sandclock Tree for a Family"
+msgstr "Stablo u obliku pješčanog sata za obitelj"
+
+#: GenealogyTree/treeplugins.gpr.py:118
+msgid "Sandclock tree for a family using LaTeX genealogytree"
+msgstr "Stablo u obliku pješčanog sata za obitelj, koristeći LaTeX genealogytree"

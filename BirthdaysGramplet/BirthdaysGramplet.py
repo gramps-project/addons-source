@@ -42,34 +42,42 @@ class BirthdaysGramplet(Gramplet):
         """Build the configuration options"""
         db = self.dbstate.db
 
-        name = _("Ignore birthdays with tag")
-        self.option = EnumeratedListOption(name, self.ignore_tag)
+        name_ignore = _("Ignore birthdays with tag")
+        name_only = _("Only show birthdays with tag")
+        self.opt_ignore = EnumeratedListOption(name_ignore, self.ignore_tag)
+        self.opt_only = EnumeratedListOption(name_only, self.only_tag)
 
-        self.option.add_item('', '')  # No ignore tag
+        self.opt_ignore.add_item('', '')  # No ignore tag
+        self.opt_only.add_item('', '')
         if db.is_open():
             for tag_handle in db.get_tag_handles(sort_handles=True):
                 tag = db.get_tag_from_handle(tag_handle)
                 tag_name = tag.get_name()
-                self.option.add_item(tag_name, tag_name)
+                self.opt_ignore.add_item(tag_name, tag_name)
+                self.opt_only.add_item(tag_name, tag_name)
 
-        self.add_option(self.option)
+        self.add_option(self.opt_ignore)
+        self.add_option(self.opt_only)
 
     def save_options(self):
         """Save gramplet configuration data"""
-        self.ignore_tag = self.option.get_value()
+        self.ignore_tag = self.opt_ignore.get_value()
+        self.only_tag = self.opt_only.get_value()
 
     def save_update_options(self, obj):
         """Save a gramplet's options to file"""
         self.save_options()
-        self.gui.data = [self.ignore_tag]
+        self.gui.data = [self.ignore_tag, self.only_tag]
         self.update()
 
     def on_load(self):
         """Load stored configuration data"""
-        if len(self.gui.data) == 1:
+        if len(self.gui.data) == 2:
             self.ignore_tag = self.gui.data[0]
+            self.only_tag = self.gui.data[1]
         else:
             self.ignore_tag = ''
+            self.only_tag = ''
 
     def db_changed(self):
         """Update gramplet when database was changed"""
@@ -81,24 +89,29 @@ class BirthdaysGramplet(Gramplet):
         """Main function of the Birthdays gramplet"""
         self.set_text(_("Processing..."))
         database = self.dbstate.db
-        personList = database.iter_people()
+        person_list = database.iter_people()
         self.result = []
 
-        # get ignore tag handle
-        ignore_tag_handle = ""  # No ignore handle selceted by user
-        tag_name = self.option.get_value()
+        ignore_tag_handle = ""
+        only_tag_handle = ""
+        tag_name_ignore = self.opt_ignore.get_value()
+        tag_name_only = self.opt_only.get_value()
         tag_handles = database.get_tag_handles()
         for handle in tag_handles:
             tag = database.get_tag_from_handle(handle)
-            if tag_name == tag.get_name():
-                # overwrite ignore_handle to user selction
+            # overwrite ignore_handle and only_handle to user selection
+            # if a handle is selected
+            if tag_name_ignore == tag.get_name():
                 ignore_tag_handle = tag.get_handle()
+            if tag_name_only == tag.get_name():
+                only_tag_handle = tag.get_handle()
 
-        for cnt, person in enumerate(personList):
-            person_tag_handles = person.get_tag_list()
-            if ignore_tag_handle in person_tag_handles:
+        for person in list(person_list):
+            pers_tag_handles = person.get_tag_list()
+            if ignore_tag_handle in pers_tag_handles:
                 pass  # ignore person
-            else:  # calculate age and days until birthday:
+            elif only_tag_handle in pers_tag_handles or only_tag_handle == "":
+                # calculate age and days until birthday
                 self.__calculate(database, person)
 
         # Reverse sort on number of days from now:

@@ -21,14 +21,14 @@
 
 register(GRAMPLET,
     id = 'Birthdays',
-    name = _("Birthdays Gramplet"),
+    name = _("Birthdays"),
     description = _("a gramplet that displays the birthdays of the living people"),
     status = STABLE,
-    version = '1.1.2',
+    version = '1.1.6',
     fname="BirthdaysGramplet.py",
     height = 200,
     gramplet = 'BirthdaysGramplet',
     gramps_target_version = "5.1",
-    gramplet_title = _("Birthdays Gramplet"),
+    gramplet_title = _("Birthdays"),
     help_url = "BirthdaysGramplet",
     )

@@ -1,0 +1,552 @@
+# Croatian translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) Gramps project
+# Milo Ivir <mail@milotype.de>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-10-15 10:09-0500\n"
+"PO-Revision-Date: 2019-10-24 13:43+0200\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"Language-Team: \n"
+"Language: hr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.4\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+
+#: GraphView/graphview.gpr.py:32 GraphView/graphview.py:158
+msgid "Graph View"
+msgstr "Dijagram srodstva"
+
+#: GraphView/graphview.gpr.py:33
+msgid "Charts"
+msgstr "Grafikoni"
+
+#: GraphView/graphview.gpr.py:34
+msgid "Dynamic and interactive graph of relations"
+msgstr "Dinamičan i interaktivan dijagram srodstva"
+
+#: GraphView/graphview.gpr.py:47
+msgid ""
+"Graphview Warning:  Goocanvas 2 (https://wiki.gnome.org/action/show/Projects/"
+"GooCanvas) is required for this view to work"
+msgstr ""
+"Greška dijagrama srodstva: za ovaj pogled je potreban Goocanvas 2 (https://"
+"wiki.gnome.org/action/show/Projects/GooCanvas)"
+
+#: GraphView/graphview.gpr.py:52
+msgid ""
+"Graphview Warning:  GraphViz (http://www.graphviz.org) is required for this "
+"view to work"
+msgstr ""
+"Greška dijagrama srodstva: za ovaj pogled je potreban GraphViz (http://www."
+"graphviz.org)"
+
+#: GraphView/graphview.gpr.py:61
+msgid "Graphview Failed to Load"
+msgstr "Dijagram srodstva nije uspješno učitan"
+
+#: GraphView/graphview.gpr.py:62
+#, python-format
+msgid ""
+"\n"
+"\n"
+"Graphview is missing python modules or programs.\n"
+"%smust be installed.\n"
+"\n"
+"For now, it may be possible to install the files manually. See\n"
+"<a href=\"https://gramps-project.org/wiki/index.php?title=Graph_View\" title="
+"\"https://gramps-project.org/wiki/index.php?title=Graph_View\">https://"
+"gramps-project.org/wiki/index.php?title=Graph_View</a> \n"
+"\n"
+"To dismiss all future Graphview warnings click Dismiss."
+msgstr ""
+"\n"
+"\n"
+"Za dijagrama srodstva nedostaju python moduli ili programi.\n"
+"%smora biti instalirano.\n"
+"\n"
+"Za sada ga je vjerojatno moguće ručno instalirati. Vidi\n"
+"<a href=\"https://gramps-project.org/wiki/index.php?title=Graph_View\" title="
+"\"https://gramps-project.org/wiki/index.php?title=Graph_View\">https://"
+"gramps-project.org/wiki/index.php?title=Graph_View</a> \n"
+"\n"
+"Za zanemarivanje budućih upozorenja dijagrama srodstva, klikni Zanemari."
+
+#: GraphView/graphview.gpr.py:78
+msgid " Dismiss "
+msgstr " Zanemari "
+
+#: GraphView/graphview.gpr.py:79
+msgid "Continue"
+msgstr "Nastavi"
+
+#: GraphView/graphview.py:597 GraphView/graphview.py:3328
+msgid "Show images"
+msgstr "Prikaži slike"
+
+#: GraphView/graphview.py:600
+msgid "Show avatars"
+msgstr "Prikaži avatare"
+
+#: GraphView/graphview.py:603 GraphView/graphview.py:3336
+msgid "Highlight the home person"
+msgstr "Istakni početnu osobu"
+
+#: GraphView/graphview.py:607 GraphView/graphview.py:3344
+msgid "Show full dates"
+msgstr "Prikaži potpuni datum"
+
+#: GraphView/graphview.py:611 GraphView/graphview.py:3352
+msgid "Show places"
+msgstr "Prikaži mjesta"
+
+#: GraphView/graphview.py:614 GraphView/graphview.py:3360
+msgid "Show tags"
+msgstr "Prikaži etikete"
+
+#: GraphView/graphview.py:616
+msgid "Layout"
+msgstr "Razmještaj"
+
+#: GraphView/graphview.py:634
+msgid "Person theme"
+msgstr "Tema za osobe"
+
+#: GraphView/graphview.py:639
+msgid "Path color to home person"
+msgstr "Boja linije prema početnoj osobi"
+
+#: GraphView/graphview.py:643
+msgid "Font:"
+msgstr "Font:"
+
+#: GraphView/graphview.py:653
+msgid "Themes"
+msgstr "Teme"
+
+#: GraphView/graphview.py:666 GraphView/graphview.py:3370
+msgid "Show animation"
+msgstr "Prikaži animaciju"
+
+#: GraphView/graphview.py:670
+msgid "Animation speed (1..5 and 5 is the slower)"
+msgstr "Brzina animacije (1 … 5, 5 je sporija)"
+
+#: GraphView/graphview.py:674
+msgid "Animation count (0..8 use 0 to turn off)"
+msgstr "Broj animacije (0 … 8, koristi 0 za isključivanje)"
+
+#: GraphView/graphview.py:683
+msgid "Animation"
+msgstr "Animacija"
+
+#: GraphView/graphview.py:697
+msgid "Search in all database"
+msgstr "Traži u svim bazama podataka"
+
+#: GraphView/graphview.py:699
+msgid "Also apply search by all database."
+msgstr "Također primjeni pretragu po svim bazama podataka."
+
+#: GraphView/graphview.py:702
+msgid "Show person images"
+msgstr "Prikaži slike osobe"
+
+#: GraphView/graphview.py:705
+msgid "Show persons thumbnails in search result list."
+msgstr "Prikaži sličice osobe u popisu rezultata pretrage."
+
+#: GraphView/graphview.py:708
+msgid "Show bookmarked first"
+msgstr "Prikaži najprije označene"
+
+#: GraphView/graphview.py:711
+msgid "Show bookmarked persons first in search result list."
+msgstr "Prikaži najprije označene u popisu rezultata pretrage."
+
+#: GraphView/graphview.py:713
+msgid "Search"
+msgstr "Traži"
+
+#: GraphView/graphview.py:744
+msgid "Select a dot file name"
+msgstr "Odaberi dot datoteku"
+
+#: GraphView/graphview.py:747
+msgid "_Cancel"
+msgstr "_Odustani"
+
+#: GraphView/graphview.py:748
+msgid "_Apply"
+msgstr "_Primijeni"
+
+#: GraphView/graphview.py:761
+msgid "File already exists"
+msgstr "Datoteka već postoji"
+
+#: GraphView/graphview.py:762
+msgid ""
+"You can choose to either overwrite the file, or change the selected filename."
+msgstr ""
+"Možeš birati između prepisivanja postojeće datoteke ili promjene njenog "
+"imena."
+
+#: GraphView/graphview.py:764
+msgid "_Overwrite"
+msgstr "_Prepiši"
+
+#: GraphView/graphview.py:765
+msgid "_Change filename"
+msgstr "_Preimenuj datoteku"
+
+#: GraphView/graphview.py:780
+#, python-format
+msgid "Could not create %s"
+msgstr "Nije moguće stvoriti %s"
+
+#: GraphView/graphview.py:839
+msgid "Zoom in"
+msgstr "Uvećaj"
+
+#: GraphView/graphview.py:846
+msgid "Zoom out"
+msgstr "Umanji"
+
+#: GraphView/graphview.py:853
+msgid "Zoom to original"
+msgstr "Zumiraj na originalnu veličinu"
+
+#: GraphView/graphview.py:860
+msgid "Zoom to best fit"
+msgstr "Zumiraj za najbolji prikaz"
+
+#: GraphView/graphview.py:867
+msgid "Go to active person"
+msgstr "Idi na aktivnu osobu"
+
+#: GraphView/graphview.py:872
+msgid "Go to bookmark"
+msgstr "Idi na knjižnu oznaku"
+
+#: GraphView/graphview.py:874
+msgid "Center view on selected bookmark"
+msgstr "Centriraj pogled na odabranu knjižnu oznaku"
+
+#: GraphView/graphview.py:876
+msgid "Bookmarks for current graph"
+msgstr "Knjižne oznake za trenutačni dijagram"
+
+#: GraphView/graphview.py:877
+msgid "Other Bookmarks"
+msgstr "Ostale knjižne oznake"
+
+#: GraphView/graphview.py:908
+msgid "Ancestor generations"
+msgstr "Generacije predaka"
+
+#: GraphView/graphview.py:912
+msgid "Descendant generations"
+msgstr "Generacije potomaka"
+
+#: GraphView/graphview.py:916
+msgid "Generations"
+msgstr "Generacije"
+
+#: GraphView/graphview.py:923
+msgid "Vertical spacing between generations"
+msgstr "Uspravni razmak između generacija"
+
+#: GraphView/graphview.py:928
+msgid "Horizontal spacing between generations"
+msgstr "Vodoravni razmak između generacija"
+
+#: GraphView/graphview.py:932
+msgid "Spacings"
+msgstr "Razmaci"
+
+#: GraphView/graphview.py:1064
+msgid "Add active person"
+msgstr "Dodaj aktivnu osobu"
+
+#: GraphView/graphview.py:1068 GraphView/graphview.py:3417
+#: GraphView/graphview.py:3602
+msgid "Edit"
+msgstr "Uredi"
+
+#: GraphView/graphview.py:1069
+msgid "Call the bookmark editor"
+msgstr "Pozovi uređivača knjižnih oznaka"
+
+#: GraphView/graphview.py:1125
+msgid ""
+"You don't have any bookmarks yet...\n"
+"Try to add some frequently used persons to speedup navigation."
+msgstr ""
+"Još nemaš knjižnih oznaka …\n"
+"Za bržu navigaciju, dodaj često korištene osobe."
+
+#: GraphView/graphview.py:1133
+msgid "No bookmarks for this graph..."
+msgstr "Nema knjižnih oznaka za ovaj dijagram …"
+
+#: GraphView/graphview.py:1138
+msgid "No other bookmarks..."
+msgstr "Nema drugih knjižnih oznaka …"
+
+#: GraphView/graphview.py:1143 GraphView/graphview.py:1145
+#: GraphView/search_widget.py:178 GraphView/search_widget.py:192
+#: GraphView/search_widget.py:227 GraphView/search_widget.py:236
+#: GraphView/search_widget.py:246
+#, python-format
+msgid "found: %s"
+msgstr "pronađeno: %s"
+
+#: GraphView/graphview.py:1155
+#, python-format
+msgid ""
+"Add active person to bookmarks\n"
+"%s"
+msgstr ""
+"Dodaj aktivnu osobu u knjižne oznake\n"
+"%s"
+
+#: GraphView/graphview.py:1242
+#, python-format
+msgid ""
+"Person <b><i>%s</i></b> is not in the current view.\n"
+"Do you want to set it active and rebuild view?"
+msgstr ""
+"Osoba <b><i>%s</i></b> se ne nalazi u aktualnom pogledu.\n"
+"Želiš li je postaviti aktivnom te ponovo izgraditi pogled?"
+
+#: GraphView/graphview.py:1245
+msgid "Change active person?"
+msgstr "Želiš li zamijeniti aktivnu osobu?"
+
+#: GraphView/graphview.py:1246 GraphView/graphview.py:4034
+#: GraphView/graphview.py:4063
+msgid "Yes"
+msgstr "Da"
+
+#: GraphView/graphview.py:1246 GraphView/graphview.py:4034
+#: GraphView/graphview.py:4063
+msgid "No"
+msgstr "Ne"
+
+#: GraphView/graphview.py:2631
+msgid "Default"
+msgstr "Standardno"
+
+#: GraphView/graphview.py:2642
+msgid "Image on right side"
+msgstr "Slika na desnoj strani"
+
+#: GraphView/graphview.py:2663
+msgid "Image on left side"
+msgstr "Slika na lijevoj strani"
+
+#: GraphView/graphview.py:2684
+msgid "Normal"
+msgstr "Normalno"
+
+#: GraphView/graphview.py:2764 GraphView/graphview.py:2777
+#: GraphView/graphview.py:2797 GraphView/graphview.py:2799
+#, python-format
+msgid "%s %s"
+msgstr "%s %s"
+
+#: GraphView/graphview.py:2771 GraphView/graphview.py:2772
+#: GraphView/graphview.py:2784 GraphView/graphview.py:2785
+#, python-format
+#| msgid "%s %s"
+msgid "%s "
+msgstr "%s "
+
+#: GraphView/graphview.py:2999
+msgid "<b>Tags:</b>"
+msgstr "<b>Etikete:</b>"
+
+#: GraphView/graphview.py:3379
+msgid "Lines type"
+msgstr "Vrsta linija"
+
+#: GraphView/graphview.py:3383
+msgid "Direct"
+msgstr "Ravne"
+
+#: GraphView/graphview.py:3391
+msgid "Curves"
+msgstr "Krivulje"
+
+#: GraphView/graphview.py:3399
+msgid "Ortho"
+msgstr "Pravokutne"
+
+#: GraphView/graphview.py:3420
+msgid "Copy"
+msgstr "Kopiraj"
+
+#: GraphView/graphview.py:3423 GraphView/graphview.py:3605
+msgid "Remove"
+msgstr "Ukloni"
+
+#: GraphView/graphview.py:3429 GraphView/graphview.py:3611
+msgid "Tags"
+msgstr "Etikete"
+
+#: GraphView/graphview.py:3431
+msgid "Select tags for person"
+msgstr "Odaberi etikete za osobu"
+
+#: GraphView/graphview.py:3434 GraphView/graphview.py:3616
+msgid "Organize Tags..."
+msgstr "Uredi etikete ..."
+
+#: GraphView/graphview.py:3438 GraphView/graphview.py:3620
+msgid "Spouses"
+msgstr "Supružnici"
+
+#: GraphView/graphview.py:3440
+msgid "Add new family"
+msgstr "Dodaj novu obitelj"
+
+#: GraphView/graphview.py:3461
+msgid "Siblings"
+msgstr "Braća/sestre"
+
+#: GraphView/graphview.py:3527
+msgid "Parents"
+msgstr "Roditelji"
+
+#: GraphView/graphview.py:3558
+msgid "Add parents"
+msgstr "Dodaj roditelje"
+
+#: GraphView/graphview.py:3562
+msgid "Related"
+msgstr "Srodni"
+
+#: GraphView/graphview.py:3581
+msgid "Set as home person"
+msgstr "Postavi kao početnu osobu"
+
+#: GraphView/graphview.py:3587 GraphView/search_widget.py:329
+#: GraphView/search_widget.py:400
+msgid "Remove from bookmarks"
+msgstr "Ukloni iz knjižnih oznaka"
+
+#: GraphView/graphview.py:3590 GraphView/search_widget.py:337
+#: GraphView/search_widget.py:413
+msgid "Add to bookmarks"
+msgstr "Dodaj u knjižne oznake"
+
+#: GraphView/graphview.py:3613
+msgid "Select tags for family"
+msgstr "Odaberi etikete za obitelj"
+
+#: GraphView/graphview.py:3630
+msgid "Add father"
+msgstr "Dodaj oca"
+
+#: GraphView/graphview.py:3639
+msgid "Add mother"
+msgstr "Dodaj majku"
+
+#: GraphView/graphview.py:3651
+msgid "Children"
+msgstr "Djeca"
+
+#: GraphView/graphview.py:3660
+msgid "Add child to family"
+msgstr "Dodaj dijete k obitelji"
+
+#: GraphView/graphview.py:3731
+msgid "About Graph View"
+msgstr "O dijagramu srodstva"
+
+#: GraphView/graphview.py:3921
+msgid "Adding Tags"
+msgstr "Dodavanje etiketa"
+
+#: GraphView/graphview.py:3927
+#, python-format
+msgid "Adding Tags to person (%s)"
+msgstr "Dodavanje etiketa osobi (%s)"
+
+#: GraphView/graphview.py:3932
+#, python-format
+msgid "Adding Tags to family (%s)"
+msgstr "Dodavanje etiketa obitelji (%s)"
+
+#: GraphView/graphview.py:4015
+msgid "Add Child to Family"
+msgstr "Dodaj dijete k obitelji"
+
+#: GraphView/graphview.py:4030
+#, python-format
+msgid "Delete %s?"
+msgstr "Izbrisati %s?"
+
+#: GraphView/graphview.py:4031
+#, python-format
+msgid "Deleting the person [%s] will remove it from the database."
+msgstr "Brisanje osobe [%s] će ukloniti osobu iz baze podataka."
+
+#: GraphView/graphview.py:4043
+#, python-format
+msgid "Delete Person (%s)"
+msgstr "Izbriši osobu (%s)"
+
+#: GraphView/graphview.py:4060
+#, python-format
+msgid "Delete family [%s]?"
+msgstr "Izbrisati obitelj [%s]?"
+
+#: GraphView/graphview.py:4061
+msgid "Deleting the family will remove it from the database."
+msgstr "Brisanje će ukloniti obitelj iz baze podataka."
+
+#: GraphView/graphview.py:4072
+#, python-format
+msgid "Delete Family [%s]"
+msgstr "Izbriši obitelj [%s]"
+
+#: GraphView/graphview.py:4091
+#, python-format
+msgid "%s has been bookmarked"
+msgstr "Knjižna oznaka je postavljena za %s"
+
+#: GraphView/search_widget.py:70
+msgid "Persons from current graph"
+msgstr "Osobe trenutačnog dijagrama"
+
+#: GraphView/search_widget.py:71
+msgid "Other persons from database"
+msgstr "Ostale osobe iz baze podataka"
+
+#: GraphView/search_widget.py:190 GraphView/search_widget.py:243
+msgid "No persons found..."
+msgstr "Nema osoba …"
+
+#: GraphView/search_widget.py:434
+msgid ""
+"Search people in the current visible graph and database.\n"
+"Use <Ctrl+F> to make search entry active."
+msgstr ""
+"Pretraži ljude u trenutačnom vidljivom dijagramu i bazi podataka.\n"
+"Pomoću <Ctrl+F> aktiviraj unos pretrage."
+
+#: GraphView/search_widget.py:436
+msgid "Search..."
+msgstr "Traži …"
+
+#: GraphView/search_widget.py:612
+#, python-format
+msgid "<b>%s:</b>"
+msgstr "<b>%s:</b>"

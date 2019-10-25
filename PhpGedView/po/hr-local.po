@@ -1,0 +1,104 @@
+# Croatian translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) Gramps project
+# Milo Ivir <mail@milotype.de>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-04 18:55-0600\n"
+"PO-Revision-Date: 2019-03-08 03:07+0100\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.1\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Language: hr\n"
+
+#: PhpGedView/phpgedview.gpr.py:23
+msgid "PhpGedView"
+msgstr "PhpGedView"
+
+#: PhpGedView/phpgedview.gpr.py:24
+msgid "Download a GEDCOM file from a phpGedView server."
+msgstr "Preuzmi GEDCOM datoteku s phpGedView servera."
+
+#: PhpGedView/phpgedviewconnector.py:204 PhpGedView/phpgedviewconnector.py:215
+msgid "Fetching index list..."
+msgstr "Dohvaćanje popisa indeksa …"
+
+#: PhpGedView/phpgedviewconnector.py:218 PhpGedView/phpgedviewconnector.py:222
+msgid "Fetching records..."
+msgstr "Dohvaćanje zapisa …"
+
+#: PhpGedView/phpgedviewconnector.py:327
+msgid "Logging in..."
+msgstr "Prijavljivanje u …"
+
+#: PhpGedView/phpgedviewconnector.py:330
+msgid "Fetching GEDCOM..."
+msgstr "Dohvaćanje GEDCOM-a …"
+
+#: PhpGedView/phpgedviewconnector.py:334
+msgid "Importing GEDCOM..."
+msgstr "Uvoz GEDCOM-a …"
+
+#: PhpGedView/phpgedviewconnector.py:341
+msgid "Error: login failed"
+msgstr "Greška: prijava nije uspjela"
+
+#: PhpGedView/phpgedviewconnector.py:342 PhpGedView/phpgedviewconnector.py:367
+msgid "done."
+msgstr "gotovo."
+
+#: PhpGedView/phpgedviewconnector.py:347
+msgid "Connecting..."
+msgstr "Spajanje …"
+
+#: PhpGedView/phpgedviewconnector.py:349
+msgid "Get version..."
+msgstr "Dohvati inačicu …"
+
+#: PhpGedView/phpgedviewconnector.py:352
+#, python-format
+msgid "Version %s"
+msgstr "Inačica %s"
+
+#: PhpGedView/phpgedviewconnector.py:353
+msgid "Reading file list..."
+msgstr "Čitanje popisa datoteka …"
+
+#: PhpGedView/phpgedviewconnector.py:366
+msgid "Error: Invalid URL"
+msgstr "Greška: nevaljani URL"
+
+#: PhpGedView/phpgedview.glade:12
+msgid "- default -"
+msgstr "– zadano –"
+
+#: PhpGedView/phpgedview.glade:19 PhpGedView/phpgedview.glade:85
+msgid "phpGedView import"
+msgstr "phpGedView uvoz"
+
+#: PhpGedView/phpgedview.glade:103
+msgid "http://"
+msgstr "http://"
+
+#: PhpGedView/phpgedview.glade:158
+msgid "File:"
+msgstr "Datoteka:"
+
+#: PhpGedView/phpgedview.glade:170
+msgid "Username:"
+msgstr "Korisničko ime:"
+
+#: PhpGedView/phpgedview.glade:182
+msgid "Password:"
+msgstr "Lozinka:"
+
+#: PhpGedView/phpgedview.glade:206
+msgid "URL:"
+msgstr "URL:"

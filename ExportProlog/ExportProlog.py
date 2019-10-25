@@ -80,7 +80,7 @@ def exportData(db, filename,
         for person in db.iter_people():
             gid = person.gramps_id.lower()
             fp.write("data(%s, '%s').\n" % (gid, escape(name_displayer.display(person))))
-            fp.write("is_alive(%s, '%s').\n" % (gid, probably_alive(person, database)))
+            fp.write("is_alive(%s, '%s').\n" % (gid, probably_alive(person, db)))
             count += 1
             callback(100 * count/total)
 
@@ -92,17 +92,17 @@ def exportData(db, filename,
             mother_handle = family.get_mother_handle()
             parents = []
             if mother_handle:
-                mother = database.get_person_from_handle(mother_handle)
+                mother = db.get_person_from_handle(mother_handle)
                 if mother:
                     parents.append(mother.gramps_id.lower())
             if father_handle:
-                father = database.get_person_from_handle(father_handle)
+                father = db.get_person_from_handle(father_handle)
                 if father:
                     parents.append(father.gramps_id.lower())
             children = []
             for child_ref in family.get_child_ref_list():
                 child_handle = child_ref.ref
-                child = database.get_person_from_handle(child_handle)
+                child = db.get_person_from_handle(child_handle)
                 if child:
                     children.append(child.gramps_id.lower())
             for pid in parents:

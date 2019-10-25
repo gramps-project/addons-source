@@ -19,7 +19,7 @@
 
 register(GRAMPLET,
          id="Descendant Count Gramplet",
-         name=_("Descendant Count Gramplet"),
+         name=_("Descendant Count"),
          description = _("Gramplet for showing people and descendant counts"),
          status= STABLE,
          fname="DescendantCount.py",
@@ -31,7 +31,7 @@ register(GRAMPLET,
          gramplet_title=_("Descendant Count"),
          detached_width = 600,
          detached_height = 400,
-         version = '2.0.5',
+         version = '2.0.8',
          gramps_target_version = "5.1",
          help_url="Descendant_Count_Gramplet",
          )

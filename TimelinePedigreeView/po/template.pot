@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-21 10:04+1000\n"
+"POT-Creation-Date: 2019-10-06 15:58-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,15 +18,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:44
+#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:40
 msgid "Timeline Pedigree"
 msgstr ""
 
-#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:45
+#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:41
 msgid "Ancestry"
 msgstr ""
 
-#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:46
+#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:42
 msgid ""
 "The view shows a timeline pedigree with ancestors and descendants of the "
 "selected person"
@@ -60,100 +60,100 @@ msgstr ""
 msgid "Timeline pedigree"
 msgstr ""
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:508
+#: TimelinePedigreeView/TimelinePedigreeView.py:502
 msgid "Organize Bookmarks"
 msgstr ""
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:864
+#: TimelinePedigreeView/TimelinePedigreeView.py:854
 msgid "Relationship loop detected"
 msgstr ""
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:865
+#: TimelinePedigreeView/TimelinePedigreeView.py:855
 msgid "A person was found to be his/her own ancestor."
 msgstr ""
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1449
+#: TimelinePedigreeView/TimelinePedigreeView.py:1408
 msgid "_Home"
 msgstr ""
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1469
+#: TimelinePedigreeView/TimelinePedigreeView.py:1428
 msgid "Show images"
 msgstr ""
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1471
+#: TimelinePedigreeView/TimelinePedigreeView.py:1430
 msgid "Show marriage data"
 msgstr ""
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1473
+#: TimelinePedigreeView/TimelinePedigreeView.py:1432
 msgid "Order by timeline"
 msgstr ""
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1475
+#: TimelinePedigreeView/TimelinePedigreeView.py:1434
 msgid "Show lifespan"
 msgstr ""
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1478
+#: TimelinePedigreeView/TimelinePedigreeView.py:1437
 msgid "Mouse scroll direction"
 msgstr ""
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1482
+#: TimelinePedigreeView/TimelinePedigreeView.py:1441
 msgid "Top <-> Bottom"
 msgstr ""
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1489
+#: TimelinePedigreeView/TimelinePedigreeView.py:1448
 msgid "Left <-> Right"
 msgstr ""
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1501
+#: TimelinePedigreeView/TimelinePedigreeView.py:1460
 msgid "Descendant Generations"
 msgstr ""
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1506
-#: TimelinePedigreeView/TimelinePedigreeView.py:1522
+#: TimelinePedigreeView/TimelinePedigreeView.py:1465
+#: TimelinePedigreeView/TimelinePedigreeView.py:1481
 #, python-format
 msgid "%d generation"
 msgid_plural "%d generations"
 msgstr[0] ""
 msgstr[1] ""
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1517
+#: TimelinePedigreeView/TimelinePedigreeView.py:1476
 msgid "Ancestor Generations"
 msgstr ""
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1541
+#: TimelinePedigreeView/TimelinePedigreeView.py:1500
 msgid "About Timeline Pedigree View"
 msgstr ""
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1560
+#: TimelinePedigreeView/TimelinePedigreeView.py:1519
 msgid "_Add"
 msgstr ""
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1590
-#: TimelinePedigreeView/TimelinePedigreeView.py:1819
+#: TimelinePedigreeView/TimelinePedigreeView.py:1549
+#: TimelinePedigreeView/TimelinePedigreeView.py:1766
 msgid "_Edit"
 msgstr ""
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1595
-#: TimelinePedigreeView/TimelinePedigreeView.py:1824
+#: TimelinePedigreeView/TimelinePedigreeView.py:1554
+#: TimelinePedigreeView/TimelinePedigreeView.py:1771
 msgid "_Copy"
 msgstr ""
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1605
+#: TimelinePedigreeView/TimelinePedigreeView.py:1564
 msgid "Spouses"
 msgstr ""
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1638
+#: TimelinePedigreeView/TimelinePedigreeView.py:1597
 msgid "Siblings"
 msgstr ""
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1680
+#: TimelinePedigreeView/TimelinePedigreeView.py:1639
 msgid "Children"
 msgstr ""
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1717
+#: TimelinePedigreeView/TimelinePedigreeView.py:1676
 msgid "Parents"
 msgstr ""
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1767
+#: TimelinePedigreeView/TimelinePedigreeView.py:1714
 msgid "Related"
 msgstr ""

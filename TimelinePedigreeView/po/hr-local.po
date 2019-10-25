@@ -1,0 +1,161 @@
+# Croatian translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) Gramps project
+# Milo Ivir <mail@milotype.de>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-10-06 15:58-0500\n"
+"PO-Revision-Date: 2019-10-24 13:51+0200\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"Language-Team: \n"
+"Language: hr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Generator: Poedit 2.2.4\n"
+
+#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:40
+msgid "Timeline Pedigree"
+msgstr "Kronologija predaka"
+
+#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:41
+msgid "Ancestry"
+msgstr "Preci"
+
+#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:42
+msgid ""
+"The view shows a timeline pedigree with ancestors and descendants of the "
+"selected person"
+msgstr "Prikazuje kronologiju predaka s precima i potomcima odabrane osobe"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:82
+msgid "short for born|b."
+msgstr "r."
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:83
+msgid "short for died|d."
+msgstr "u."
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:84
+msgid "short for baptized|bap."
+msgstr "kr."
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:85
+msgid "short for christened|chr."
+msgstr "kr."
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:86
+msgid "short for buried|bur."
+msgstr "pok."
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:87
+msgid "short for cremated|crem."
+msgstr "krem."
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:339
+msgid "Timeline pedigree"
+msgstr "Kronologija predaka"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:502
+msgid "Organize Bookmarks"
+msgstr "Organiziraj knjižne oznake"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:854
+msgid "Relationship loop detected"
+msgstr "Otkrivena petlja u srodstvu"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:855
+msgid "A person was found to be his/her own ancestor."
+msgstr "Pronađena je osoba, koja je sama sebi predak."
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1408
+msgid "_Home"
+msgstr "_Početna"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1428
+msgid "Show images"
+msgstr "Prikaži slike"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1430
+msgid "Show marriage data"
+msgstr "Prikaži podatke o braku"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1432
+msgid "Order by timeline"
+msgstr "Razvrstaj kronološki"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1434
+msgid "Show lifespan"
+msgstr "Prikaži starosti"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1437
+msgid "Mouse scroll direction"
+msgstr "Smjer micanja s kotačićem miša"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1441
+msgid "Top <-> Bottom"
+msgstr "Gore ↔ Dolje"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1448
+msgid "Left <-> Right"
+msgstr "Lijevo ↔ Desno"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1460
+msgid "Descendant Generations"
+msgstr "Generacija potomaka"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1465
+#: TimelinePedigreeView/TimelinePedigreeView.py:1481
+#, python-format
+msgid "%d generation"
+msgid_plural "%d generations"
+msgstr[0] "%d generacija"
+msgstr[1] "%d generacije"
+msgstr[2] "%d generacija"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1476
+msgid "Ancestor Generations"
+msgstr "Generacija predaka"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1500
+msgid "About Timeline Pedigree View"
+msgstr "O pogledu „Kronologija predaka”"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1519
+msgid "_Add"
+msgstr "_Dodaj"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1549
+#: TimelinePedigreeView/TimelinePedigreeView.py:1766
+msgid "_Edit"
+msgstr "_Uredi"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1554
+#: TimelinePedigreeView/TimelinePedigreeView.py:1771
+msgid "_Copy"
+msgstr "_Kopiraj"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1564
+msgid "Spouses"
+msgstr "Supružnici"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1597
+msgid "Siblings"
+msgstr "Braća/sestre"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1639
+msgid "Children"
+msgstr "Djeca"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1676
+msgid "Parents"
+msgstr "Roditelji"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1714
+msgid "Related"
+msgstr "Srodni"

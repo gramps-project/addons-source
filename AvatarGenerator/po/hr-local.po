@@ -1,0 +1,160 @@
+# Croatian tranlsation for Avatar Generator Tool.
+# Copyright (C) 2019 Matthias Kemmer
+# This file is distributed under the same license as the Avatar Generator Tool package.
+# Milo Ivir <mail@milotype.de>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-06-14 11:49+1000\n"
+"PO-Revision-Date: 2019-10-24 13:27+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.4\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Language: hr\n"
+
+#: AvatarGenerator/AvatarGenerator.gpr.py:23
+msgid "Avatar Generator Tool"
+msgstr "Generator avatara"
+
+#: AvatarGenerator/AvatarGenerator.gpr.py:24
+msgid "A tool to add avatar pictures to your family tree"
+msgstr "Alat za dodavanje avatara rodoslovu"
+
+#: AvatarGenerator/AvatarGenerator.py:58
+msgid "male"
+msgstr "muškarac"
+
+#: AvatarGenerator/AvatarGenerator.py:58
+msgid "female"
+msgstr "žena"
+
+#: AvatarGenerator/AvatarGenerator.py:58
+msgid "unknown"
+msgstr "nepoznato"
+
+#: AvatarGenerator/AvatarGenerator.py:59
+msgid "Option"
+msgstr "Opcija"
+
+#: AvatarGenerator/AvatarGenerator.py:59
+msgid "single image mode"
+msgstr "prikaz slika pojedinačno"
+
+#: AvatarGenerator/AvatarGenerator.py:65
+msgid "Category"
+msgstr "Kategorija"
+
+#: AvatarGenerator/AvatarGenerator.py:66
+msgid "Choose how many images you'd like to use."
+msgstr "Odaberi koliko slika želiš koristiti."
+
+#: AvatarGenerator/AvatarGenerator.py:68 AvatarGenerator/AvatarGenerator.py:75
+#: AvatarGenerator/AvatarGenerator.py:79 AvatarGenerator/AvatarGenerator.py:83
+#: AvatarGenerator/AvatarGenerator.py:87 AvatarGenerator/AvatarGenerator.py:92
+#: AvatarGenerator/AvatarGenerator.py:98 AvatarGenerator/AvatarGenerator.py:137
+msgid "Options"
+msgstr "Opcije"
+
+#: AvatarGenerator/AvatarGenerator.py:73
+msgid "Unknown"
+msgstr "Nepoznato"
+
+#: AvatarGenerator/AvatarGenerator.py:74
+msgid "Image for people with unknown gender."
+msgstr "Slika za osobe nepoznatog spola."
+
+#: AvatarGenerator/AvatarGenerator.py:77
+msgid "Male"
+msgstr "Muškarac"
+
+#: AvatarGenerator/AvatarGenerator.py:78
+msgid "Image for males."
+msgstr "Slika za muškarce."
+
+#: AvatarGenerator/AvatarGenerator.py:81
+msgid "Female"
+msgstr "Žena"
+
+#: AvatarGenerator/AvatarGenerator.py:82
+msgid "Image for females"
+msgstr "Slika za žene"
+
+#: AvatarGenerator/AvatarGenerator.py:85
+msgid "Person Filter"
+msgstr "Filtar za osobe"
+
+#: AvatarGenerator/AvatarGenerator.py:86
+msgid "Select filter to restrict people"
+msgstr "Odaberi filtar za ograničavanje osoba"
+
+#: AvatarGenerator/AvatarGenerator.py:90
+msgid "Center Person"
+msgstr "Središnja osoba"
+
+#: AvatarGenerator/AvatarGenerator.py:91
+msgid "The center person for the filter"
+msgstr "Središnja osoba za filtar"
+
+#: AvatarGenerator/AvatarGenerator.py:95
+msgid "Remove images from people"
+msgstr "Ukloni slike osoba"
+
+#: AvatarGenerator/AvatarGenerator.py:96
+msgid "Remove selected image(s)."
+msgstr "Ukloni odabrane slike."
+
+#: AvatarGenerator/AvatarGenerator.py:134
+#: AvatarGenerator/AvatarGenerator.py:183
+#: AvatarGenerator/AvatarGenerator.py:257
+msgid "Avatar Generator"
+msgstr "Generator avatara"
+
+#: AvatarGenerator/AvatarGenerator.py:186
+msgid "Remove avatar images..."
+msgstr "Ukloni avatare …"
+
+#: AvatarGenerator/AvatarGenerator.py:211
+#: AvatarGenerator/AvatarGenerator.py:219
+#: AvatarGenerator/AvatarGenerator.py:316
+#: AvatarGenerator/AvatarGenerator.py:320
+msgid "INFO"
+msgstr "INFORMACIJE"
+
+#: AvatarGenerator/AvatarGenerator.py:211
+msgid "No media was removed."
+msgstr "Nijedan medij nije uklonjen."
+
+#: AvatarGenerator/AvatarGenerator.py:213
+msgid "{} media references were removed from {} persons."
+msgstr "Broj uklonjenih referenca na medije: {}, broj zahvaćenih osoba: {}."
+
+#: AvatarGenerator/AvatarGenerator.py:216
+msgid ""
+"\n"
+"{} HandleError occured, but were ignored."
+msgstr ""
+"\n"
+"Broj grešaka: {}, ali su zanemarene."
+
+#: AvatarGenerator/AvatarGenerator.py:263
+#: AvatarGenerator/AvatarGenerator.py:280
+msgid "Add avatar images..."
+msgstr "Dodaj avatare …"
+
+#: AvatarGenerator/AvatarGenerator.py:314
+msgid "{} avatar images were sucessfully added."
+msgstr "Broj uspješno dodanih avatara: {}."
+
+#: AvatarGenerator/AvatarGenerator.py:318
+msgid "There was no avatar image to add. "
+msgstr "Nije bilo avatara koji bi se dodali. "
+
+#: AvatarGenerator/AvatarGenerator.py:319
+msgid "All persons already had one."
+msgstr "Sve osobe su već imale jedan."

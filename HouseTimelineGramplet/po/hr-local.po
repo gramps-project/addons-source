@@ -1,0 +1,93 @@
+# Croatian translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) Gramps project
+# Milo Ivir <mail@milotype.de>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2019-03-08 02:35+0100\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.1\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 "
+"&& n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Language: hr\n"
+
+#: HouseTimelineGramplet/housetimeline.gpr.py:3
+#: HouseTimelineGramplet/housetimeline.gpr.py:14
+msgid "House Timeline"
+msgstr "Kronologija stana/kuće"
+
+#: HouseTimelineGramplet/housetimeline.gpr.py:4
+msgid "Lists the Residents of an Address by Timeline"
+msgstr "Kronološki popis stanovnika na adresi"
+
+#: HouseTimelineGramplet/housetimeline.py:25
+msgid "Double-click name for details"
+msgstr "Dvoklik na ime za pojedinosti"
+
+#: HouseTimelineGramplet/housetimeline.py:42
+#: HouseTimelineGramplet/housetimeline.py:49
+msgid "House Icon Style"
+msgstr "Stil ikone kuće"
+
+#: HouseTimelineGramplet/housetimeline.py:50
+msgid "Standard"
+msgstr "Standardno"
+
+#: HouseTimelineGramplet/housetimeline.py:51
+msgid "Small"
+msgstr "Malo"
+
+#: HouseTimelineGramplet/housetimeline.py:52
+msgid "Unicode"
+msgstr "Unicode"
+
+#: HouseTimelineGramplet/housetimeline.py:53
+msgid "None"
+msgstr "Bez"
+
+#: HouseTimelineGramplet/housetimeline.py:59
+msgid "Processing..."
+msgstr "Obrada ..."
+
+#: HouseTimelineGramplet/housetimeline.py:82
+msgid ""
+"There are no individuals with Address data. Please add Address data to "
+"people."
+msgstr ""
+"Nijedna osoba nema adresne podatke. Unsei adresne podatke osobama."
+
+#: HouseTimelineGramplet/housetimeline.py:117
+msgid "Location"
+msgstr "Lokacija"
+
+#: HouseTimelineGramplet/housetimeline.py:118
+msgid "Time In Family"
+msgstr "Vrijeme u obitelji"
+
+#: HouseTimelineGramplet/housetimeline.py:119
+msgid "First Resident"
+msgstr "Prvi stanovnik"
+
+#: HouseTimelineGramplet/housetimeline.py:120
+msgid "Last Resident"
+msgstr "Zadnji stanovnik"
+
+#: HouseTimelineGramplet/housetimeline.py:121
+msgid "Timeline"
+msgstr "Kronologija"
+
+#: HouseTimelineGramplet/housetimeline.py:122
+msgid "Unknown"
+msgstr "Nepoznato"
+
+#: HouseTimelineGramplet/housetimeline.py:123
+msgid "Total Known Residents"
+msgstr "Ukupan broj stanovnika"

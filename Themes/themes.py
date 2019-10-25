@@ -293,8 +293,9 @@ class MyPrefs(GrampsPreferences):
         self.sc_text.set_active(False)
         config.set('interface.fixed-scrollbar', '')
         self.gtksettings.set_property('gtk-primary-button-warps-slider', 1)
-        Gtk.StyleContext.remove_provider_for_screen(
-            Screen.get_default(), MyPrefs.provider)
+        if hasattr(MyPrefs, 'provider'):
+            Gtk.StyleContext.remove_provider_for_screen(
+                Screen.get_default(), MyPrefs.provider)
         try:
             txt = subprocess.check_output(
                 'reg delete HKCU\Environment /v GTK_OVERLAY_SCROLLING /f',

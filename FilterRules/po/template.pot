@@ -1,0 +1,90 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-10-25 09:28-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: FilterRules/hasrolerule.gpr.py:26 FilterRules/hasrolerule.py:64
+msgid "People with events with a selected role"
+msgstr ""
+
+#: FilterRules/hasrolerule.gpr.py:27 FilterRules/hasrolerule.py:65
+msgid "Matches people with an event with a selected role"
+msgstr ""
+
+#: FilterRules/hasrolerule.gpr.py:40 FilterRules/hasrolerule.py:88
+msgid "Families with events with a selected role"
+msgstr ""
+
+#: FilterRules/hasrolerule.gpr.py:41 FilterRules/hasrolerule.py:89
+msgid "Matches families with an event with a selected role"
+msgstr ""
+
+#: FilterRules/hasrolerule.py:51
+msgid "Does NOT match with selected Role"
+msgstr ""
+
+#: FilterRules/hasrolerule.py:52
+msgid "Finds the items that don't have event Roles of the selected type."
+msgstr ""
+
+#: FilterRules/hasrolerule.py:62 FilterRules/hasrolerule.py:86
+msgid "Role"
+msgstr ""
+
+#: FilterRules/hasrolerule.py:63 FilterRules/hasrolerule.py:87
+msgid "Inverse"
+msgstr ""
+
+#: FilterRules/hasrolerule.py:66 FilterRules/hasrolerule.py:90
+msgid "Event filters"
+msgstr ""
+
+#: FilterRules/hassourcefilter.gpr.py:27
+msgid "Source matching parameters"
+msgstr ""
+
+#: FilterRules/hassourcefilter.gpr.py:28
+msgid "Matches Sources with values containing the chosen parameters"
+msgstr ""
+
+#: FilterRules/hassourcefilter.py:49
+msgid "Title:"
+msgstr ""
+
+#: FilterRules/hassourcefilter.py:50
+msgid "Author:"
+msgstr ""
+
+#: FilterRules/hassourcefilter.py:51
+msgid "Abbreviation:"
+msgstr ""
+
+#: FilterRules/hassourcefilter.py:52
+msgid "Publication:"
+msgstr ""
+
+#: FilterRules/hassourcefilter.py:53
+msgid "Sources matching parameters"
+msgstr ""
+
+#: FilterRules/hassourcefilter.py:54
+msgid "Matches sources with a particular value"
+msgstr ""
+
+#: FilterRules/hassourcefilter.py:55
+msgid "General filters"
+msgstr ""

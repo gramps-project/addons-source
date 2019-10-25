@@ -1,0 +1,524 @@
+# Croatian translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) Gramps project
+# Milo Ivir <mail@milotype.de>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-10-21 08:49+1100\n"
+"PO-Revision-Date: 2019-10-24 14:50+0200\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"Language-Team: \n"
+"Language: hr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.4\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+
+#: lxml/etreeGramplet.gpr.py:9 lxml/etreeGramplet.gpr.py:18
+msgid "etree"
+msgstr "etree"
+
+#: lxml/etreeGramplet.gpr.py:10
+msgid "Gramplet for testing etree with Gramps XML"
+msgstr "Gramplet za testiranje etree s Gramps XML-om"
+
+#: lxml/etreeGramplet.py:85 lxml/lxmlGramplet.py:110
+msgid "Invalid timestamp"
+msgstr "Nevažeća vremenska oznaka"
+
+#: lxml/etreeGramplet.py:86 lxml/lxmlGramplet.py:111
+msgid "Unknown"
+msgstr "Nepoznato"
+
+#: lxml/etreeGramplet.py:139
+msgid "No file parsed..."
+msgstr "Nijedna datoteka nije analizirana …"
+
+#: lxml/etreeGramplet.py:146 lxml/lxmlGramplet.py:171
+msgid "Run"
+msgstr "Pokreni"
+
+#: lxml/etreeGramplet.py:205 lxml/etreeGramplet.py:210
+msgid "Number of editions back"
+msgstr "Broj promjena unatrag"
+
+#: lxml/etreeGramplet.py:220 lxml/lxmlGramplet.py:235
+msgid "Space character on filename"
+msgstr "Razmak u imenu datoteke"
+
+#: lxml/etreeGramplet.py:220 lxml/lxmlGramplet.py:235
+#, python-format
+msgid "Please fix space on \"%s\""
+msgstr "Ispravi razmak u „%s”"
+
+#: lxml/etreeGramplet.py:245 lxml/lxmlGramplet.py:265
+msgid "Sorry, no support for your OS yet!"
+msgstr "Tvoj sustav trenutačno još nije podržan!"
+
+#: lxml/etreeGramplet.py:254 lxml/lxmlGramplet.py:275
+msgid "Is it a compressed .gramps?"
+msgstr "Da li se radi o komprimiranoj .gramps datoteci?"
+
+#: lxml/etreeGramplet.py:254 lxml/lxmlGramplet.py:275
+#, python-format
+msgid "Cannot uncompress \"%s\""
+msgstr "Nije moguće otpakirati „%s”"
+
+#: lxml/etreeGramplet.py:256 lxml/etreeGramplet.py:263 lxml/lxmlGramplet.py:278
+#: lxml/lxmlGramplet.py:286
+#, python-format
+msgid ""
+"From:\n"
+" \"%(file1)s\"\n"
+" to:\n"
+" \"%(file2)s\".\n"
+msgstr ""
+"Od:\n"
+" „%(file1)s”\n"
+" prema:\n"
+" „%(file2)s”.\n"
+
+#: lxml/etreeGramplet.py:261 lxml/lxmlGramplet.py:283
+#, python-format
+msgid "Cannot copy \"%s\""
+msgstr "Nije moguće kopirati „%s”"
+
+#: lxml/etreeGramplet.py:418
+#, python-format
+msgid "XML: Last %s editions since %s, were at/on :\n"
+msgstr "XML: Zadnje %s promjene od %s, bile su u/na:\n"
+
+#: lxml/etreeGramplet.py:471
+#, python-format
+msgid ""
+"\n"
+"XML: Number of records and relations : \t%s\n"
+"\n"
+msgstr ""
+"\n"
+"XML: Broj zapisa i veza : \t%s\n"
+"\n"
+
+#: lxml/etreeGramplet.py:474
+#, python-format
+msgid ""
+"Number of tags : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Broj etiketa: \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#: lxml/etreeGramplet.py:476
+#, python-format
+msgid ""
+"Number of tags : \n"
+"\t\t\t%s\n"
+msgstr ""
+"Broj etiketa: \n"
+"\t\t\t%s\n"
+
+#: lxml/etreeGramplet.py:478
+#, python-format
+msgid ""
+"Number of  events : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Broj događaja: \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#: lxml/etreeGramplet.py:481
+#, python-format
+msgid ""
+"Number of persons : \n"
+"\t\t\t%s\t|\t(%s) and (%s)* surnames\n"
+msgstr ""
+"Broj osoba: \n"
+"\t\t\t%s\t|\t(%s) i (%s)* prezimena\n"
+
+#: lxml/etreeGramplet.py:483
+#, python-format
+#| msgid ""
+#| "Number of places : \n"
+#| "\t\t\t%s\t|\t(%s)*\n"
+msgid ""
+"Number of persons : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Broj osoba: \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#: lxml/etreeGramplet.py:484
+#, python-format
+msgid ""
+"Number of families : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Broj obitelji: \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#: lxml/etreeGramplet.py:485
+#, python-format
+msgid ""
+"Number of sources : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Broj izvora: \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#: lxml/etreeGramplet.py:487
+#, python-format
+msgid ""
+"Number of citations : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Broj citata: \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#: lxml/etreeGramplet.py:490
+#, python-format
+msgid ""
+"Number of places : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Broj mjesta: \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#: lxml/etreeGramplet.py:491
+#, python-format
+msgid ""
+"Number of media objects : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Broj mediskih objekata: \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#: lxml/etreeGramplet.py:492
+#, python-format
+msgid ""
+"Number of repositories : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Broj spremišta: \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#: lxml/etreeGramplet.py:493
+#, python-format
+msgid ""
+"Number of notes : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Broj zabilježaka: \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#: lxml/etreeGramplet.py:498
+#, python-format
+msgid ""
+"\n"
+"XML: Number of additional records and relations: \t%s\n"
+msgstr ""
+"\n"
+"XML: Broj dodatnih zapisa i veza: \t%s\n"
+
+#: lxml/etreeGramplet.py:502
+#, python-format
+msgid ""
+"* loaded Family Tree base:\n"
+" \"%s\"\n"
+msgstr ""
+"* učitana baza podataka rodoslova:\n"
+" „%s”\n"
+
+#: lxml/lxmlGramplet.gpr.py:9 lxml/lxmlGramplet.gpr.py:18
+msgid "lxml"
+msgstr "lxml"
+
+#: lxml/lxmlGramplet.gpr.py:10
+msgid "Gramplet for testing lxml and XSLT"
+msgstr "Gramplet za testiranje lxml i XSLT"
+
+#: lxml/lxmlGramplet.py:67
+msgid "Where is gzip?"
+msgstr "Gdje je gzip?"
+
+#: lxml/lxmlGramplet.py:67
+msgid "\"gzip\" is missing"
+msgstr "„gzip” nedostaje"
+
+#: lxml/lxmlGramplet.py:89
+msgid "Missing python3 lxml"
+msgstr "Nedstaje Python3 lxml"
+
+#: lxml/lxmlGramplet.py:89
+msgid "Please, try to install \"python3 lxml\" package."
+msgstr "Pokušaj instalirati „python3 lxml” Paket."
+
+#: lxml/lxmlGramplet.py:164
+msgid "No file loaded..."
+msgstr "Nijedna datoteka nije učitana …"
+
+#: lxml/lxmlGramplet.py:298
+msgid "XSD validation (lxml)"
+msgstr "XSD ispitivanje (lxml)"
+
+#: lxml/lxmlGramplet.py:298
+#, python-format
+msgid "Cannot validate \"%(file)s\" !"
+msgstr "Nije moguće ispitati „%(file)s”!"
+
+#: lxml/lxmlGramplet.py:306
+#, python-format
+msgid "xmllint: skip DTD validation for \"%(file)s\""
+msgstr "xmllint: preskoči DTD ispitivanje za „%(file)s”"
+
+#: lxml/lxmlGramplet.py:318
+#, python-format
+msgid "xmllint: skip RelaxNG validation for \"%(file)s\""
+msgstr "xmllint: preskoči RelaxNG ispitivanje za „%(file)s”"
+
+#: lxml/lxmlGramplet.py:329
+msgid "Parsing issue"
+msgstr "Problem prilikom analiziranja"
+
+#: lxml/lxmlGramplet.py:329
+#, python-format
+msgid "Cannot parse content of \"%(file)s\""
+msgstr "Nije moguće analizirati sadržaj od „%(file)s”"
+
+#: lxml/lxmlGramplet.py:333
+msgid "Gramps version"
+msgstr "Gramps inačica"
+
+#: lxml/lxmlGramplet.py:333
+#, python-format
+msgid ""
+"Wrong namespace\n"
+"Need: %s"
+msgstr ""
+"Krivi nazivni prostor\n"
+"Potreban je: %s"
+
+#: lxml/lxmlGramplet.py:337
+msgid "RelaxNG validation"
+msgstr "RelaxNG ispitivanje"
+
+#: lxml/lxmlGramplet.py:337
+#, python-format
+msgid "Cannot validate \"%(file)s\" via RelaxNG schema"
+msgstr "Nije moguće ispitati „%(file)s” s RelaxNG shemom"
+
+#: lxml/lxmlGramplet.py:341
+msgid "File issue"
+msgstr "Problem s datotekom"
+
+#: lxml/lxmlGramplet.py:341
+#, python-format
+msgid "Cannot parse \"%(file)s\" via etree"
+msgstr "Nije moguće analizirati „%(file)s” pomoću etree"
+
+#: lxml/lxmlGramplet.py:359
+msgid "Parsing file..."
+msgstr "Analiziranje datoteke …"
+
+#: lxml/lxmlGramplet.py:456
+msgid "Missing header"
+msgstr "Nedostaje zaglavlje"
+
+#: lxml/lxmlGramplet.py:456
+msgid ""
+"Not a valid .gramps.\n"
+"Cannot run the gramplet...\n"
+"Please, try to use a .gramps\n"
+"generated by Gramps 4.x."
+msgstr ""
+"Nije važeći .gramps.\n"
+"Nije moguće polkrenuti gramplet …\n"
+"Pokušaj upotrijebiti .gramps\n"
+"stvoren s Gramps 4.x."
+
+#: lxml/lxmlGramplet.py:469 lxml/lxmlGramplet.py:474 lxml/lxmlGramplet.py:479
+#: lxml/lxmlGramplet.py:484
+msgid "0"
+msgstr "0"
+
+#: lxml/lxmlGramplet.py:495
+msgid "File parsed with"
+msgstr "Datoteka je analizirana sa"
+
+#: lxml/lxmlGramplet.py:498
+msgid "File was generated on "
+msgstr "Datoteka je stvorena "
+
+#: lxml/lxmlGramplet.py:498
+msgid " by Gramps "
+msgstr " pomoću Gramps-a "
+
+#: lxml/lxmlGramplet.py:500
+msgid "Period: "
+msgstr "Razdoblje: "
+
+#: lxml/lxmlGramplet.py:502
+msgid " entries for surname(s); no frequency yet"
+msgstr " unosi za prezimena; još bez učestalosti"
+
+#: lxml/lxmlGramplet.py:503
+msgid " entries for place(s)"
+msgstr " unosi za mjesta"
+
+#: lxml/lxmlGramplet.py:504
+msgid " note(s)"
+msgstr " zabilješke"
+
+#: lxml/lxmlGramplet.py:505
+msgid " source(s)"
+msgstr " izvori"
+
+#: lxml/lxmlGramplet.py:521 lxml/lxmlGramplet.py:717
+msgid "Gallery.html"
+msgstr "Galerija.html"
+
+#: lxml/lxmlGramplet.py:522
+#, python-format
+msgid "2. Has generated a media index on \"%(file)s\".\n"
+msgstr "2. Stvoren je indeks medija za „%(file)s”.\n"
+
+#: lxml/lxmlGramplet.py:525
+#, python-format
+msgid "3. Has written entries into \"%(file)s\".\n"
+msgstr "3. Upisani su unosi u „%(file)s”.\n"
+
+#: lxml/lxmlGramplet.py:544
+msgid "Matches XSD schema."
+msgstr "Odgovara XSD shemi."
+
+#: lxml/lxmlGramplet.py:565
+msgid "xmllint: skip DTD validation"
+msgstr "xmllint: preskače DTD ispitivanje"
+
+#: lxml/lxmlGramplet.py:589
+msgid "I am looking at ..."
+msgstr "Gledam na …"
+
+#: lxml/lxmlGramplet.py:590
+msgid "Content generated by Gramps"
+msgstr "Sadržaj je stvoren pomoću Gramps-a"
+
+#: lxml/lxmlGramplet.py:591
+msgid "Surnames"
+msgstr "Prezimena"
+
+#: lxml/lxmlGramplet.py:592
+msgid "Places"
+msgstr "Mjesta"
+
+#: lxml/lxmlGramplet.py:593
+msgid "List of sources"
+msgstr "Popis izvora"
+
+#: lxml/lxmlGramplet.py:611
+msgid "Australia"
+msgstr "Australija"
+
+#: lxml/lxmlGramplet.py:612
+msgid "Brazil"
+msgstr "Brazil"
+
+#: lxml/lxmlGramplet.py:613
+msgid "Bulgaria"
+msgstr "Bugarska"
+
+#: lxml/lxmlGramplet.py:614
+msgid "Canada"
+msgstr "Kanada"
+
+#: lxml/lxmlGramplet.py:615
+msgid "Chile"
+msgstr "Čile"
+
+#: lxml/lxmlGramplet.py:616
+msgid "China"
+msgstr "Kina"
+
+#: lxml/lxmlGramplet.py:617
+msgid "Croatia"
+msgstr "Hrvatska"
+
+#: lxml/lxmlGramplet.py:618
+msgid "Czech Republic"
+msgstr "Češka Republika"
+
+#: lxml/lxmlGramplet.py:619
+msgid "England"
+msgstr "Engleska"
+
+#: lxml/lxmlGramplet.py:620
+msgid "Finland"
+msgstr "Finska"
+
+#: lxml/lxmlGramplet.py:621
+msgid "France"
+msgstr "Francuska"
+
+#: lxml/lxmlGramplet.py:622
+msgid "Germany"
+msgstr "Njemačka"
+
+#: lxml/lxmlGramplet.py:623
+msgid "India"
+msgstr "Indija"
+
+#: lxml/lxmlGramplet.py:624
+msgid "Japan"
+msgstr "Japan"
+
+#: lxml/lxmlGramplet.py:625
+msgid "Norway"
+msgstr "Norveška"
+
+#: lxml/lxmlGramplet.py:626
+msgid "Portugal"
+msgstr "Portugal"
+
+#: lxml/lxmlGramplet.py:627
+msgid "Russia"
+msgstr "Rusija"
+
+#: lxml/lxmlGramplet.py:628
+msgid "Sweden"
+msgstr "Švedska"
+
+#: lxml/lxmlGramplet.py:629
+msgid "United States of America"
+msgstr "Sjedinjene Američke Države"
+
+#: lxml/lxmlGramplet.py:633
+msgid "Name"
+msgstr "Ime"
+
+#: lxml/lxmlGramplet.py:634
+msgid "Country"
+msgstr "Država"
+
+#: lxml/lxmlGramplet.py:695
+#, python-format
+msgid "1. Has generated \"%s\".\n"
+msgstr "1. Stvorena je „%s”.\n"
+
+#: lxml/lxmlGramplet.py:696
+#, python-format
+msgid ""
+"Try to open\n"
+" \"%s\"\n"
+" into your prefered web navigator ..."
+msgstr ""
+"Pokušaj otvoriti\n"
+" „%s”\n"
+"u tvom omiljenom web pregledniku …"
+
+#: lxml/lxmlGramplet.py:715
+msgid "Gallery"
+msgstr "Galerija"

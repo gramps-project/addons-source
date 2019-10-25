@@ -23,20 +23,16 @@ if(_GOO and _DOT or locals().get('build_script') or
     if locals().get('uistate'):  # don't start GUI if in CLI mode, just ignore
         from gi.repository import Gtk, GdkPixbuf
         from gramps.gen.const import USER_PLUGINS
-        fname = os.path.join(USER_PLUGINS, 'GraphView',
-                            'gramps-graph.svg')
-        factory = Gtk.IconFactory()
-        pixbuf = GdkPixbuf.Pixbuf.new_from_file(fname)
-        iconset = Gtk.IconSet.new_from_pixbuf(pixbuf)
-        factory.add('gramps-graph', iconset)
-        factory.add_default()
+        fname = os.path.join(USER_PLUGINS, 'GraphView')
+        icons = Gtk.IconTheme().get_default()
+        icons.append_search_path(fname)
 
     register(VIEW,
         id    = 'graphview',
         name  = _("Graph View"),
         category = ("Ancestry", _("Charts")),
         description =  _("Dynamic and interactive graph of relations"),
-        version = '1.0.93',
+        version = '1.0.107',
         gramps_target_version = "5.1",
         status = STABLE,
         fname = 'graphview.py',
