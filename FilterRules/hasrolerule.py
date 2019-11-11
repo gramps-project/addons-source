@@ -61,7 +61,7 @@ class HasPersonEventRole(Rule):
 
     labels = [(_('Role'), Roletype),
               (_('Inverse'), NoMatch)]
-    name = _('People with events with a selected role')
+    name = _('People with events with the <role>')
     description = _("Matches people with an event with a selected role")
     category = _('Event filters')
 
@@ -85,7 +85,7 @@ class HasFamilyEventRole(Rule):
 
     labels = [(_('Role'), Roletype),
               (_('Inverse'), NoMatch)]
-    name = _('Families with events with a selected role')
+    name = _('Families with events with the <role>')
     description = _("Matches families with an event with a selected role")
     category = _('Event filters')
 
