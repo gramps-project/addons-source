@@ -33,6 +33,7 @@ _ = _trans.gettext
 
 # http://www.gramps-project.org/wiki/index.php?title=Resource_and_related_sites#French_resources
 #
+# http://www.culture.fr/widgets/genealogie/1/0/bigenet&amp;ecfa&amp;mayenne&amp;vendome&amp;leonore&amp;ain&amp;memoire_des_hommes&amp;vendee
 # http://www.bigenet.org/index.php ?
 # http://www.cybergenealogie.fr/cailgeo/us/screch.php
 
