@@ -42,6 +42,8 @@ WEBSITES = [
     ["Person", "Google Archives", _("Google Archives"), "http://news.google.de/archivesearch?q=%(surname)s"],
     ["Person", "DE-Google", _("DE Google"), '''http://www.google.de/#hl=de&q="%(surname)s,+%(given)s"'''],
     ["Person", "Open Library", _("Open Library"), "http://openlibrary.org/search?q=%(surname)s, %(given)s"],
+    ["Person", "Namensverbreitungskarte", _("Surname map (1890-1996)"), "https://nvk.genealogy.net/map/1890:%(surname)s,1996:%(surname)s"],
+    ["Person", "wiki-de.genealogy.net", _("GenWiki"), "http://wiki-de.genealogy.net/Spezial:Suche?search=%(surname)s"],
     ]
 
 def load_on_reg(dbstate, uistate, pdata):
