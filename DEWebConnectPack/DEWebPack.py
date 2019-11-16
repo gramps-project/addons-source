@@ -44,6 +44,7 @@ WEBSITES = [
     ["Person", "Open Library", _("Open Library"), "http://openlibrary.org/search?q=%(surname)s, %(given)s"],
     ["Person", "Namensverbreitungskarte", _("Surname map (1890-1996)"), "https://nvk.genealogy.net/map/1890:%(surname)s,1996:%(surname)s"],
     ["Person", "wiki-de.genealogy.net", _("GenWiki"), "http://wiki-de.genealogy.net/Spezial:Suche?search=%(surname)s"],
+    ["Person", "deutsche-digitale-bibliothek", _("German digital library"),"https://www.deutsche-digitale-bibliothek.de/search/person?query=%(surname)s+%(given)s"],
     ]
 
 def load_on_reg(dbstate, uistate, pdata):
