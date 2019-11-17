@@ -48,7 +48,7 @@ WEBSITES = [
     #["Person", "FamilySearch", _("FamilySearch.org"), "https://familysearch.org/search/record/results?count=20&query=%%2Bgivenname%%3A%(given)s~ %%2Bsurname%%3A%(surname)s~ %%2Bbirth_year%%3A%(birth)s-%(birth)s~ %%2Bdeath_year%%3A%(death)s-%(death)s~"],
     ["Person", "CAILGEO", _("Cyber genealogy"), "https://www.cybergenealogie.fr/cailgeo/fr/cail01n.php?nomr=%(surname)s"],
     ["Person", "Gallica", "Gallica", '''https://gallica.bnf.fr/Search?ArianeWireIndex=index&p=1&lang=FR&q="%(surname)s,+%(given)s"'''],
-    ["Person", "Retronews", "_(RetroNews (Bnf))", '''https://www.retronews.fr/search#allTerms="%(surname)s+%(given)s"&sort=score&page=1&searchIn=all'''],
+    ["Person", "Retronews", _("RetroNews (Bnf)"), "https://www.retronews.fr/search#allTerms=%(surname)s&sort=score&page=1&searchIn=all"],
     ["Person", "GeneaBook", "GeneaBook", "https://www.geneanet.org/fonds/bibliotheque/?&nom=%(surname)s&prenom=&q=%(given)s&go=1"],
     #["Person", "Google Archives", _("Google Archives"), "http://news.google.fr/archivesearch?q=%(surname)s&btnGt=Afficher+la+chronologie"],
     #["Person", "FR-Google", _("FR Google"), u'''http://www.google.fr/#hl=fr&q="%(surname)s,+%(given)s"'''],
