@@ -38,7 +38,7 @@ _ = _trans.gettext
 # http://www.cybergenealogie.fr/cailgeo/us/screch.php
 
 WEBSITES = [
-    ["Person", "Ministère de la culture", _("French cultural ministry"), "http://www.culture.fr/bases_genealogie/resultats?lastname=%(surname)s&firstname=%(given)s&search=Lancer+la+recherche&bases[]=bigenet&bases[]=ecfa&bases[]=mayenne&bases[]=vendome&bases[]=leonore&bases[]=ain&bases[]=memoire_des_hommes&bases[]=vendee"],
+    ["Person", "Ministère de la culture", _("Cultural ministry (France)"), "http://www.culture.fr/bases_genealogie/resultats?lastname=%(surname)s&firstname=%(given)s&search=Lancer+la+recherche&bases[]=bigenet&bases[]=ecfa&bases[]=mayenne&bases[]=vendome&bases[]=leonore&bases[]=ain&bases[]=memoire_des_hommes&bases[]=vendee"],
     ["Person", "Geneabank", _("Genealogical bank"), "https://gbkcouples.geneabank.org/nom/?name=%(surname)s&place=&start=&end=&source=gbk*"],
     #["Person", "Centre Départemental d'Histoire des Familles (CDHF)", _("Historical Families Center Departement (CDHF)"), "http://www.cdhf.net/fr/index.php?t=bases&d=bases%2Fmoteurpat&c=moteurpat&f=selection&p=&order=&order2=&motcle=&patronyme=%(surname)s"],
     ["Person", "Fichier Origine", _("OrigineFile (Quebec)"), "https://www.fichierorigine.com/recherche?nom=%(surname)s"],
@@ -54,9 +54,9 @@ WEBSITES = [
     #["Person", "Google Archives", _("Google Archives"), "http://news.google.fr/archivesearch?q=%(surname)s&btnGt=Afficher+la+chronologie"],
     #["Person", "FR-Google", _("FR Google"), u'''http://www.google.fr/#hl=fr&q="%(surname)s,+%(given)s"'''],
     ["Person", "Archive.org", "Archive.org", '''https://www.archive.org/search.php?query="%(surname)s+%(given)s"&sin=TXT'''],
-    ["Person", "Hathi Trust Digital Library", _("Hathi Trust Digital Library"), '''https://babel.hathitrust.org/cgi/ls?q1=%(surname)s+%(given)s+&lmt=ft&a=srchls&facet=language008_full:"French"'''],
-    ["Person", "Open Library", _("Open Library"), '''https://openlibrary.org/search?q="%(surname)s, %(given)s"&language=fre'''],
-    ["Person", "Archives de Belgique", _("Belgian's Archives"),"https://search.arch.be/fr/rechercher-des-personnes/resultats/q/zoekwijze/s?text=%(surname)s"],
+    ["Person", "Hathi Trust Digital Library", _("Hathi Trust Digital Library (fr)"), '''https://babel.hathitrust.org/cgi/ls?q1=%(surname)s+%(given)s+&lmt=ft&a=srchls&facet=language008_full:"French"'''],
+    ["Person", "Open Library", _("Open Library (fr)"), '''https://openlibrary.org/search?q="%(surname)s, %(given)s"&language=fre'''],
+    ["Person", "Archives de Belgique", _("Belgium's Archives"),"https://search.arch.be/fr/rechercher-des-personnes/resultats/q/zoekwijze/s?text=%(surname)s"],
     #["Place", "Geneanet", "Geneanet", "http://search.geneanet.org/result.php?lang=fr&place=%(city)s"],
     #["Place", "Centre Départemental d'Histoire des Familles (CDHF)", _("Historical Families Center Departement (CDHF)"), "http://www.cdhf.net/fr/index.php?t=villages&d=villages&c=villages&f=results&p=&page=&lieu2=%(city)s"],
     #["Place", "Fichier Origine", _("OrigineFile (Quebec)"), "http://www.fichierorigine.com/recherche.php?commune=%(city)s&pays=%(country)s"],
