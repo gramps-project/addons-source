@@ -16,6 +16,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
+"""A tool to find and replace event descriptions."""
 
 # ----------------------------------------------------------------------------
 #
@@ -43,6 +44,7 @@ _ = _trans.gettext
 # ----------------------------------------------------------------------------
 class EventDescriptionEditor(PluginWindows.ToolManagedWindowBatch):
     """Handles the Event Description Editor Tool processing."""
+
 
     def get_title(self):
         return _("Event Description Editor")
@@ -76,35 +78,18 @@ class EventDescriptionEditor(PluginWindows.ToolManagedWindowBatch):
         with DbTxn(txt, self._db, batch=True) as self.trans:
             self._db.disable_signals()
             num = len(events)
-            self.progress.set_pass(_('Search substring...'), num)
             counter = 0
+            self.progress.set_pass(_('Search substring...'), num)
 
             for handle in events:
                 Event = self._db.get_event_from_handle(handle)
-                s = Event.get_description()
-                c = s.count(sub_str)
-                if sub_str == "":
+                event_desc = Event.get_description()
+                if sub_str == "" or (sub_str in event_desc and not keep_old):
                     Event.set_description(replace_str)
                     counter += 1
-                elif c > 0 and not keep_old:
-                    Event.set_description(replace_str)
-                    counter += 1
-                elif c == 1 and keep_old:
-                    start = s.index(sub_str)
-                    end = start + len(sub_str)
-                    Event.set_description(s[:start] + replace_str + s[end:])
-                    counter += 1
-                elif c > 1 and keep_old:
-                    new = ""
-                    for i in range(c):
-                        if i != c:
-                            start = s.index(sub_str)
-                            end = start + len(sub_str)
-                            new += s[:start] + replace_str
-                            s = s[end:]
-                        else:
-                            new += replace_str + s[end:]
-                    Event.set_description(new)
+                elif sub_str in event_desc and keep_old:
+                    new_str = event_desc.replace(sub_str, replace_str)
+                    Event.set_description(new_str)
                     counter += 1
 
                 self._db.commit_event(Event, self.trans)
@@ -112,8 +97,11 @@ class EventDescriptionEditor(PluginWindows.ToolManagedWindowBatch):
 
             self._db.enable_signals()
             self._db.request_rebuild()
-            OkDialog(_("INFO"), _("%s event descriptions of %s events were "
-                                  "changed." % (str(counter), str(num))))
+
+            OkDialog(_("INFO"),
+                     _("%s event descriptions of %s events were changed."
+                       % (str(counter), str(num))),
+                     parent=self.window)
 
 
 # ----------------------------------------------------------------------------
