@@ -1708,9 +1708,14 @@ class GraphvizSvgParser(object):
             self.transform_scale = scale_x
             if scale_x > scale_y:
                 self.transform_scale = scale_y
+            # scale should be (0..1)
+            # fix graphviz issue from version > 2.40.1
+            if self.transform_scale > 1:
+                self.transform_scale = 1 / self.transform_scale
+
             item.set_simple_transform(self.bounds[1],
                                       self.bounds[3],
-                                      scale_x,
+                                      self.transform_scale,
                                       0)
             item.connect("button-press-event", self.widget.button_press)
             item.connect("button-release-event", self.widget.button_release)
