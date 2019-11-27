@@ -26,7 +26,7 @@ register(RULE,
   name  = _("People related to <filter>"),
   description = _("Matches people who are related to anybody matched by "
                   "a person filter"),
-  version = '1.0.0',
+  version = '1.0.1',
   authors = ["Matthias Kemmer"],
   authors_email = ["matt.familienforschung@gmail.com"],
   gramps_target_version = '5.1',
