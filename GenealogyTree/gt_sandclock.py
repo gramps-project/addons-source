@@ -240,5 +240,5 @@ class SandclockTreeOptions(MenuReportOptions):
         images = BooleanOption(_("Include images"), False)
         images.set_help(_("Include images of people in the nodes."))
         menu.add_option(category_name, "images", images)
- 
+
         locale_opt = stdoptions.add_localization_option(menu, category_name)
