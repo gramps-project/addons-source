@@ -170,4 +170,3 @@ class DescendantTreeOptions(MenuReportOptions):
         menu.add_option(category_name, "images", images)
 
         locale_opt = stdoptions.add_localization_option(menu, category_name)
-        
