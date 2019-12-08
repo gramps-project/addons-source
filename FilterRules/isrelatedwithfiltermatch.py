@@ -25,8 +25,6 @@ Filter rule to match related persons to anybody that matched a person filter.
 # Standard Python modules
 #
 # -------------------------------------------------------------------------
-from gramps.gen.const import GRAMPS_LOCALE as glocale
-_ = glocale.translation.gettext
 
 # -------------------------------------------------------------------------
 #
@@ -35,6 +33,12 @@ _ = glocale.translation.gettext
 # -------------------------------------------------------------------------
 from gramps.gen.filters.rules.person._isrelatedwith import IsRelatedWith
 from gramps.gen.filters.rules.person._matchesfilter import MatchesFilter
+from gramps.gen.const import GRAMPS_LOCALE as glocale
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.gettext
 
 
 # -------------------------------------------------------------------------

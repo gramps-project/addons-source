@@ -26,8 +26,6 @@ Filter rule to match persons with a particular event.
 # Standard Python modules
 #
 #-------------------------------------------------------------------------
-from gramps.gen.const import GRAMPS_LOCALE as glocale
-_ = glocale.translation.gettext
 
 #-------------------------------------------------------------------------
 #
@@ -37,6 +35,12 @@ _ = glocale.translation.gettext
 from gramps.gen.lib.eventroletype import EventRoleType
 from gramps.gui.editors.filtereditor import MySelect, MyBoolean
 from gramps.gen.filters.rules import Rule
+from gramps.gen.const import GRAMPS_LOCALE as glocale
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.gettext
 
 
 class Roletype(MySelect):
