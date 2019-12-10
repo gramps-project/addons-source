@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-02 02:13+0300\n"
-"PO-Revision-Date: 2018-10-02 03:16+0300\n"
+"PO-Revision-Date: 2019-12-10 13:09+0200\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: niememat@gmail.com\n"
 "Language: fi\n"
@@ -326,7 +326,7 @@ msgstr "Lisätään tapahtuma '%s'..."
 #: CalculateEstimatedDates.py:465
 #, python-format
 msgid "Added birth event based on %(evidence)s, from %(name)s"
-msgstr "Lisätyn syntymä tapahtuman peruste on %(evidence)s, henklölle %(name)s"
+msgstr "Lisätyn syntymätapahtuman peruste on %(evidence)s henkilöltä %(name)s"
 
 #: CalculateEstimatedDates.py:468
 #, python-format
@@ -340,8 +340,7 @@ msgstr "Arvioitu syntymäaika"
 #: CalculateEstimatedDates.py:480
 #, python-format
 msgid "Added death event based on %(evidence)s, from %(person)s"
-msgstr ""
-"Lisätyn kuolintapahtuman peruste on %(evidence)s, henkilölle %(person)s"
+msgstr "Lisätyn kuolintapahtuman peruste on %(evidence)s henkilöltä %(person)s"
 
 #: CalculateEstimatedDates.py:483
 #, python-format
