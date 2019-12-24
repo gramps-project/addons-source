@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-11-27 10:32-0600\n"
+"POT-Creation-Date: 2019-12-24 11:34-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -41,18 +41,18 @@ msgstr ""
 msgid "Cyber genealogy"
 msgstr ""
 
-#: FRWebConnectPack/FRWebPack.py:52
+#: FRWebConnectPack/FRWebPack.py:53
 msgid "RetroNews (Bnf)"
 msgstr ""
 
-#: FRWebConnectPack/FRWebPack.py:57
+#: FRWebConnectPack/FRWebPack.py:58
 msgid "Hathi Trust Digital Library (fr)"
 msgstr ""
 
-#: FRWebConnectPack/FRWebPack.py:58
+#: FRWebConnectPack/FRWebPack.py:59
 msgid "Open Library (fr)"
 msgstr ""
 
-#: FRWebConnectPack/FRWebPack.py:59
+#: FRWebConnectPack/FRWebPack.py:60
 msgid "Belgium's Archives"
 msgstr ""
