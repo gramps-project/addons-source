@@ -1,0 +1,145 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-12-24 11:34-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: TypeCleanup/type_cleanup.gpr.py:29
+msgid "Type Cleanup"
+msgstr ""
+
+#: TypeCleanup/type_cleanup.gpr.py:30
+msgid "Clean up (remove) custom types"
+msgstr ""
+
+#: TypeCleanup/type_cleanup.py:90
+msgid "Event Attributes"
+msgstr ""
+
+#: TypeCleanup/type_cleanup.py:91
+msgid "Family Attributes"
+msgstr ""
+
+#: TypeCleanup/type_cleanup.py:92
+msgid "Media Attributes"
+msgstr ""
+
+#: TypeCleanup/type_cleanup.py:93
+msgid "Person Attributes"
+msgstr ""
+
+#: TypeCleanup/type_cleanup.py:95
+msgid "Event Roles"
+msgstr ""
+
+#: TypeCleanup/type_cleanup.py:96
+msgid "Event Types"
+msgstr ""
+
+#: TypeCleanup/type_cleanup.py:97
+msgid "Family Relation Types"
+msgstr ""
+
+#: TypeCleanup/type_cleanup.py:98
+msgid "Child reference Types"
+msgstr ""
+
+#: TypeCleanup/type_cleanup.py:99
+msgid "Name Origin Types"
+msgstr ""
+
+#: TypeCleanup/type_cleanup.py:100
+msgid "Name Types"
+msgstr ""
+
+#: TypeCleanup/type_cleanup.py:101
+msgid "Note Types"
+msgstr ""
+
+#: TypeCleanup/type_cleanup.py:102
+msgid "Place Types"
+msgstr ""
+
+#: TypeCleanup/type_cleanup.py:103
+msgid "Repository Types"
+msgstr ""
+
+#: TypeCleanup/type_cleanup.py:104
+msgid "Source Attributes"
+msgstr ""
+
+#: TypeCleanup/type_cleanup.py:105
+msgid "Source Media Types"
+msgstr ""
+
+#: TypeCleanup/type_cleanup.py:106
+msgid "URL Types"
+msgstr ""
+
+#: TypeCleanup/type_cleanup.py:118
+msgid "Types Cleanup Tool"
+msgstr ""
+
+#: TypeCleanup/type_cleanup.py:145
+msgid "Remove"
+msgstr ""
+
+#: TypeCleanup/type_cleanup.py:146
+msgid "Remove the selected type"
+msgstr ""
+
+#: TypeCleanup/type_cleanup.py:150
+msgid "Close"
+msgstr ""
+
+#: TypeCleanup/type_cleanup.py:151
+msgid "Close the Type Cleanup Tool"
+msgstr ""
+
+#: TypeCleanup/type_cleanup.py:155
+msgid "Types"
+msgstr ""
+
+#: TypeCleanup/type_cleanup.py:172
+msgid "Type"
+msgstr ""
+
+#: TypeCleanup/type_cleanup.py:179
+msgid "References"
+msgstr ""
+
+#: TypeCleanup/type_cleanup.py:196
+msgid "Type Cleanup Tool"
+msgstr ""
+
+#: TypeCleanup/type_cleanup.py:218
+msgid "Reading database..."
+msgstr ""
+
+#: TypeCleanup/type_cleanup.py:288
+msgid ""
+"Removing this custom type will eliminate it from the type selection drop "
+"down lists.  However, it will not remove it from the referenced items in the "
+"database."
+msgstr ""
+
+#: TypeCleanup/type_cleanup.py:291
+msgid "_Remove"
+msgstr ""
+
+#: TypeCleanup/type_cleanup.py:291
+msgid "_Stop"
+msgstr ""
