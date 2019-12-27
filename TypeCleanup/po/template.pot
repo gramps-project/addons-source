@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-26 10:52-0600\n"
+"POT-Creation-Date: 2019-12-27 13:30-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,132 +25,136 @@ msgstr ""
 msgid "Clean up (remove) custom types"
 msgstr ""
 
-#: TypeCleanup/type_cleanup.py:94
+#: TypeCleanup/type_cleanup.py:96
 msgid "Event Attributes"
 msgstr ""
 
-#: TypeCleanup/type_cleanup.py:95
+#: TypeCleanup/type_cleanup.py:97
 msgid "Family Attributes"
 msgstr ""
 
-#: TypeCleanup/type_cleanup.py:96
+#: TypeCleanup/type_cleanup.py:98
 msgid "Media Attributes"
 msgstr ""
 
-#: TypeCleanup/type_cleanup.py:97
+#: TypeCleanup/type_cleanup.py:99
 msgid "Person Attributes"
 msgstr ""
 
-#: TypeCleanup/type_cleanup.py:99
+#: TypeCleanup/type_cleanup.py:101
 msgid "Event Roles"
 msgstr ""
 
-#: TypeCleanup/type_cleanup.py:100
+#: TypeCleanup/type_cleanup.py:102
 msgid "Event Types"
 msgstr ""
 
-#: TypeCleanup/type_cleanup.py:101
+#: TypeCleanup/type_cleanup.py:103
 msgid "Family Relation Types"
 msgstr ""
 
-#: TypeCleanup/type_cleanup.py:102
+#: TypeCleanup/type_cleanup.py:104
 msgid "Child reference Types"
 msgstr ""
 
-#: TypeCleanup/type_cleanup.py:103
+#: TypeCleanup/type_cleanup.py:105
 msgid "Name Origin Types"
 msgstr ""
 
-#: TypeCleanup/type_cleanup.py:104
+#: TypeCleanup/type_cleanup.py:106
 msgid "Name Types"
 msgstr ""
 
-#: TypeCleanup/type_cleanup.py:105
+#: TypeCleanup/type_cleanup.py:107
 msgid "Note Types"
 msgstr ""
 
-#: TypeCleanup/type_cleanup.py:106
+#: TypeCleanup/type_cleanup.py:108
 msgid "Place Types"
 msgstr ""
 
-#: TypeCleanup/type_cleanup.py:107
+#: TypeCleanup/type_cleanup.py:109
 msgid "Repository Types"
 msgstr ""
 
-#: TypeCleanup/type_cleanup.py:108
+#: TypeCleanup/type_cleanup.py:110
 msgid "Source Attributes"
 msgstr ""
 
-#: TypeCleanup/type_cleanup.py:109
+#: TypeCleanup/type_cleanup.py:111
 msgid "Source Media Types"
 msgstr ""
 
-#: TypeCleanup/type_cleanup.py:110
+#: TypeCleanup/type_cleanup.py:112
 msgid "URL Types"
 msgstr ""
 
-#: TypeCleanup/type_cleanup.py:122
+#: TypeCleanup/type_cleanup.py:124
 msgid "Types Cleanup Tool"
 msgstr ""
 
-#: TypeCleanup/type_cleanup.py:158
+#: TypeCleanup/type_cleanup.py:160
+msgid "Help"
+msgstr ""
+
+#: TypeCleanup/type_cleanup.py:164
 msgid "Remove"
 msgstr ""
 
-#: TypeCleanup/type_cleanup.py:160
+#: TypeCleanup/type_cleanup.py:166
 msgid ""
 "Remove the selected type from the db.\n"
 "This does not change any referenced objects."
 msgstr ""
 
-#: TypeCleanup/type_cleanup.py:168
+#: TypeCleanup/type_cleanup.py:174
 msgid ""
 "Select a new name for the current type, prior to renaming the type in the "
 "referenced objects."
 msgstr ""
 
-#: TypeCleanup/type_cleanup.py:176
+#: TypeCleanup/type_cleanup.py:182
 msgid "Rename"
 msgstr ""
 
-#: TypeCleanup/type_cleanup.py:179
+#: TypeCleanup/type_cleanup.py:185
 msgid "Rename the selected type in all referenced objects."
 msgstr ""
 
-#: TypeCleanup/type_cleanup.py:182
+#: TypeCleanup/type_cleanup.py:188
 msgid "Close"
 msgstr ""
 
-#: TypeCleanup/type_cleanup.py:183
+#: TypeCleanup/type_cleanup.py:189
 msgid "Close the Type Cleanup Tool"
 msgstr ""
 
-#: TypeCleanup/type_cleanup.py:189
+#: TypeCleanup/type_cleanup.py:195
 msgid "Types"
 msgstr ""
 
-#: TypeCleanup/type_cleanup.py:208
+#: TypeCleanup/type_cleanup.py:214
 msgid "Type"
 msgstr ""
 
-#: TypeCleanup/type_cleanup.py:215
+#: TypeCleanup/type_cleanup.py:221
 msgid "References"
 msgstr ""
 
-#: TypeCleanup/type_cleanup.py:236
+#: TypeCleanup/type_cleanup.py:242
 msgid "Type Cleanup Tool"
 msgstr ""
 
-#: TypeCleanup/type_cleanup.py:265
+#: TypeCleanup/type_cleanup.py:275
 msgid "Reading database..."
 msgstr ""
 
-#: TypeCleanup/type_cleanup.py:377
+#: TypeCleanup/type_cleanup.py:387
 #, python-format
 msgid "Changing type from %(old_type)s to %(new_type)s."
 msgstr ""
 
-#: TypeCleanup/type_cleanup.py:422
+#: TypeCleanup/type_cleanup.py:432
 msgid ""
 "Removing this custom type will eliminate it from the type selection drop "
 "down lists\n"
@@ -160,10 +164,10 @@ msgid ""
 "If you want to change it in referenced items, use 'Rename'."
 msgstr ""
 
-#: TypeCleanup/type_cleanup.py:427
+#: TypeCleanup/type_cleanup.py:437
 msgid "_Remove"
 msgstr ""
 
-#: TypeCleanup/type_cleanup.py:427
+#: TypeCleanup/type_cleanup.py:437
 msgid "_Stop"
 msgstr ""

@@ -44,6 +44,7 @@ from gramps.gen.errors import WindowActiveError
 from gramps.gen.lib.grampstype import GrampsType
 from gramps.gen.utils.db import navigation_label
 from gramps.gui.dialog import QuestionDialog2
+from gramps.gui.display import display_url
 from gramps.gui.editors import EditNote
 from gramps.gui.plug import tool
 from gramps.gui.managedwindow import ManagedWindow
@@ -82,6 +83,7 @@ try:
 except ValueError:
     _trans = glocale.translation
 _ = _trans.gettext
+WIKI_PAGE = ('https://gramps-project.org/wiki/index.php/Types_Cleanup_Tool')
 
 
 #-------------------------------------------------------------------------
@@ -154,6 +156,10 @@ class TypeCleanup(tool.Tool, ManagedWindow):
         # Buttons etc.
         bbox = Gtk.ButtonBox(orientation=Gtk.Orientation.HORIZONTAL)
         vbox.pack_start(bbox, False, False, 5)
+        # Help
+        help_btn = Gtk.Button(label=_('Help'))
+        help_btn.connect('clicked', self.on_help_clicked)
+        bbox.add(help_btn)
         # Delete
         self.del_btn = Gtk.Button(label=_('Remove'))
         self.del_btn.set_tooltip_text(
@@ -234,6 +240,10 @@ class TypeCleanup(tool.Tool, ManagedWindow):
     def build_menu_names(self, _obj):
         """Override :class:`.ManagedWindow` method."""
         return (_('Type Cleanup Tool'), None)
+
+    def on_help_clicked(self, dummy):
+        """ Button: Display the relevant portion of GRAMPS manual"""
+        display_url(WIKI_PAGE)
 
     def model_load(self):
         """ populate the tree with types """
