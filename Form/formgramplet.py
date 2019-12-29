@@ -45,6 +45,7 @@ from gramps.gen.datehandler import get_date
 from gramps.gen.errors import WindowActiveError
 from gramps.gen.lib import Citation
 from editform import EditForm
+from formactions import FormActions
 from selectform import SelectForm
 from form import get_form_citation
 
@@ -183,7 +184,8 @@ class FormGramplet(Gramplet, DbGUIElement):
         if iter_:
             citation = model.get_value(iter_, 0)
             try:
-                pass
+                actions = FormActions(self.gui.dbstate, self.gui.uistate, [], citation)
+                actions.run()
             except WindowActiveError:
                 pass
 
