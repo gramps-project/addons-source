@@ -32,3 +32,23 @@ class ActionBase():
     """
     def __init__(self):
         pass
+
+    def AddEventToPerson(db, trans, person_handle, event_type, event_date_object, event_description, citation_handle, event_role_type):
+        """
+        Add a new event to the specified person.
+        """
+        event = Event()
+        event.set_type(event_type)
+        event.set_date_object(event_date_object)
+        event.add_citation(citation_handle)
+        event.set_description(event_description)
+
+        # add to the database
+        db.add_event(event, trans)
+        # Add new event reference to the Person record
+        event_ref = EventRef()
+        event_ref.ref = event.get_handle()
+        event_ref.set_role(event_role_type)
+        person = db.get_person_from_handle(person_handle)
+        person.add_event_ref(event_ref)
+        db.commit_person(person, trans)
