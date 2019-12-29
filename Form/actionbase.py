@@ -52,3 +52,13 @@ class ActionBase():
         person = db.get_person_from_handle(person_handle)
         person.add_event_ref(event_ref)
         db.commit_person(person, trans)
+
+def represents_int(s):
+    """
+    return True iff s is convertable to an int, False otherwise
+    """
+    try:
+        int(s)
+        return True
+    except ValueError:
+        return False
