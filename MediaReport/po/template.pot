@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-19 09:28+1000\n"
+"POT-Creation-Date: 2019-11-27 10:32-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,96 +25,115 @@ msgstr ""
 msgid "Generates report including images, image data and notes."
 msgstr ""
 
-#: MediaReport/media_report.py:91 MediaReport/media_report.py:97
-#: MediaReport/media_report.py:104 MediaReport/media_report.py:110
+#: MediaReport/media_report.py:92 MediaReport/media_report.py:98
+#: MediaReport/media_report.py:105 MediaReport/media_report.py:111
 msgid "INFO"
 msgstr ""
 
-#: MediaReport/media_report.py:91 MediaReport/media_report.py:104
+#: MediaReport/media_report.py:92 MediaReport/media_report.py:105
 msgid "You have to select an image to generate this report."
 msgstr ""
 
-#: MediaReport/media_report.py:97
+#: MediaReport/media_report.py:98
 msgid ""
 "You have to select a custom note or uncheck the option 'include custom note' "
 "to generate this report."
 msgstr ""
 
-#: MediaReport/media_report.py:110
+#: MediaReport/media_report.py:111
 msgid "This report only supports PDF as output file format."
 msgstr ""
 
-#: MediaReport/media_report.py:214
+#: MediaReport/media_report.py:215
 msgid "General:"
 msgstr ""
 
-#: MediaReport/media_report.py:220
+#: MediaReport/media_report.py:221
 msgid "Description:"
 msgstr ""
 
-#: MediaReport/media_report.py:235
+#: MediaReport/media_report.py:236
 msgid "Image type:"
 msgstr ""
 
-#: MediaReport/media_report.py:336
+#: MediaReport/media_report.py:328
 msgid "File does not exist"
 msgstr ""
 
-#: MediaReport/media_report.py:337
+#: MediaReport/media_report.py:329
 msgid "Could not add photo to page"
 msgstr ""
 
-#: MediaReport/media_report.py:338
+#: MediaReport/media_report.py:330
 #, python-format
 msgid "%(str1)s: %(str2)s"
 msgstr ""
 
-#: MediaReport/media_report.py:420
+#: MediaReport/media_report.py:412
 msgid "Heading"
 msgstr ""
 
+#: MediaReport/media_report.py:413 MediaReport/media_report.py:417
 #: MediaReport/media_report.py:421 MediaReport/media_report.py:425
-#: MediaReport/media_report.py:429 MediaReport/media_report.py:433
-#: MediaReport/media_report.py:438 MediaReport/media_report.py:442
+#: MediaReport/media_report.py:430 MediaReport/media_report.py:434
+#: MediaReport/media_report.py:439 MediaReport/media_report.py:444
 msgid "Report Options"
 msgstr ""
 
-#: MediaReport/media_report.py:423
+#: MediaReport/media_report.py:415
 msgid "Media"
 msgstr ""
 
-#: MediaReport/media_report.py:424
+#: MediaReport/media_report.py:416
 msgid "Select a media file for this report"
 msgstr ""
 
-#: MediaReport/media_report.py:427
+#: MediaReport/media_report.py:419
 msgid "Custom note"
 msgstr ""
 
-#: MediaReport/media_report.py:428
+#: MediaReport/media_report.py:420
 msgid "Select a note for this report"
 msgstr ""
 
-#: MediaReport/media_report.py:431
+#: MediaReport/media_report.py:423
 msgid "Include custom note"
 msgstr ""
 
-#: MediaReport/media_report.py:432
+#: MediaReport/media_report.py:424
 msgid "The custom note will be included"
 msgstr ""
 
-#: MediaReport/media_report.py:436
+#: MediaReport/media_report.py:428
 msgid "Include referenced people"
 msgstr ""
 
-#: MediaReport/media_report.py:437
+#: MediaReport/media_report.py:429
 msgid "Referenced people will be included"
 msgstr ""
 
-#: MediaReport/media_report.py:440
+#: MediaReport/media_report.py:432
 msgid "Include media data"
 msgstr ""
 
-#: MediaReport/media_report.py:441
+#: MediaReport/media_report.py:433
 msgid "Tags, notes and attributes will be included"
+msgstr ""
+
+#: MediaReport/media_report.py:436
+msgid "Media width"
+msgstr ""
+
+#: MediaReport/media_report.py:437
+#, python-format
+msgid "Maximum media width in % of available page width."
+msgstr ""
+
+#: MediaReport/media_report.py:441
+msgid "Media height"
+msgstr ""
+
+#: MediaReport/media_report.py:442
+#, python-format
+msgid "Maximum media height in % of available page height."
 msgstr ""

@@ -25,6 +25,7 @@
 #
 # ----------------------------------------------------------------------------
 import os
+from math import floor
 
 # ----------------------------------------------------------------------------
 #
@@ -36,7 +37,7 @@ from gramps.gen.utils.file import media_path_full
 from gramps.gen.plug.report import Report, MenuReportOptions
 from gramps.gen.display.name import displayer as name_displayer
 from gramps.gen.plug.menu import (MediaOption, NoteOption, BooleanOption,
-                                  StringOption)
+                                  StringOption, NumberOption)
 from gramps.gen.plug.docgen import (ParagraphStyle, FontStyle, TableStyle,
                                     TableCellStyle, PARA_ALIGN_CENTER,
                                     PARA_ALIGN_LEFT)
@@ -121,7 +122,7 @@ class MediaReport(Report):
         # check if an image is selected and a note, if include note is checked
         # stop report generation if one is missing
         if not self.__valid_options():
-            print("stop report")
+            print("Invalid options. Stop report generation.")
             return
 
         dct = self._opt
@@ -317,20 +318,11 @@ class MediaReport(Report):
         """
         self.filename = media_path_full(self._db, path)
         if os.path.exists(self.filename):
-            from PIL import Image
-            pil_img = Image.open(self.filename)
-            img_size = pil_img.size
-            ratio = img_size[1]/img_size[0]
-            if ratio <= 1:
-                width = self.doc.get_usable_width() * 0.8
-                if width * ratio <= 10:
-                    height = width * ratio
-                else:
-                    height = 10
-                    width = 10 * 1/ratio
-            else:
-                width = self.doc.get_usable_width() * 1/ratio * 0.8
-                height = 10
+            width = floor(self.doc.get_usable_width() *
+                          self._opt["media_w"] * 0.01)
+            height = floor(self.doc.get_usable_height() *
+                           self._opt["media_h"] * 0.009)
+            # height is capped to 90% to save some space for report heading
             self.doc.add_media(self.filename, 'center', width, height)
         else:
             no_file = _('File does not exist')
@@ -440,6 +432,16 @@ class ReportOptions(MenuReportOptions):
         incl_data = BooleanOption(_("Include media data"), False)
         incl_data.set_help(_("Tags, notes and attributes will be included"))
         menu.add_option(_("Report Options"), "incl_data", incl_data)
+
+        media_w = NumberOption(_("Media width"), 100, 10, 100, 10)
+        media_w.set_help(_("Maximum media width in % of available "
+                           "page width."))
+        menu.add_option(_("Report Options"), "media_w", media_w)
+
+        media_h = NumberOption(_("Media height"), 100, 10, 100, 10)
+        media_h.set_help(_("Maximum media height in % of available page "
+                           "height."))
+        menu.add_option(_("Report Options"), "media_h", media_h)
 
     def __update_custom_note_opt(self):
         self.note.set_available(False)

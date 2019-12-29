@@ -27,8 +27,6 @@ Filter rule to match source with a particular value.
 # Standard Python modules
 #
 #-------------------------------------------------------------------------
-from gramps.gen.const import GRAMPS_LOCALE as glocale
-_ = glocale.translation.gettext
 
 #-------------------------------------------------------------------------
 #
@@ -36,6 +34,12 @@ _ = glocale.translation.gettext
 #
 #-------------------------------------------------------------------------
 from gramps.gen.filters.rules._hassourcebase import HasSourceBase
+from gramps.gen.const import GRAMPS_LOCALE as glocale
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.gettext
 
 
 #-------------------------------------------------------------------------

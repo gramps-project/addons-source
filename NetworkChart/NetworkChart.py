@@ -45,6 +45,7 @@ from datetime import datetime
 import configparser
 import itertools
 import os
+from xml.sax.saxutils import escape
 import networkx as nx
 from networkx import dfs_edges
 # pydotplus is needed for nx_pydot
@@ -277,7 +278,7 @@ class NetworkChartReport(Report):
             person_gref = p_person.get_gramps_id()
             p_privacy = p_person.get_privacy()
             if p_person.urls:
-                p_url = p_person.urls[0].get_path()
+                p_url = escape(p_person.urls[0].get_path())
             else:
                 p_url = ""
 

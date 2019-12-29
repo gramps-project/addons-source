@@ -17,26 +17,25 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
-# $Id$
 
 #------------------------------------------------------------------------
 #
-# Note Cleanup tool
+# Type Cleanup tool
 #
 #------------------------------------------------------------------------
 
 register(TOOL,
-id = 'notecleanup',
-name = _("Note Cleanup"),
-description = _("Clean up Notes that contain HTML markup"),
-version = '1.0.10',
+id = 'typecleanup',
+name = _("Type Cleanup"),
+description = _("Clean up (remove) custom types"),
+version = '1.0.3',
 gramps_target_version = '5.1',
 status = STABLE,
-fname = 'NoteCleanup.py',
+fname = 'type_cleanup.py',
 authors = ["Paul Culley"],
 authors_email = ["paulr2787@gmail.com"],
 category = TOOL_UTILS,
-toolclass = 'NoteCleanup',
-optionclass = 'NoteCleanupOptions',
+toolclass = 'TypeCleanup',
+optionclass = 'TypeCleanupOptions',
 tool_modes = [TOOL_MODE_GUI]
   )

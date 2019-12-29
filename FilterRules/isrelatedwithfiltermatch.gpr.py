@@ -1,7 +1,7 @@
 #
 # Gramps - a GTK+/GNOME based genealogy program
 #
-# Copyright (C) 2016      Paul Culley
+# Copyright (C) 2019       Matthias Kemmer
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,26 +17,21 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
-# $Id$
 
-#------------------------------------------------------------------------
-#
-# Note Cleanup tool
-#
-#------------------------------------------------------------------------
-
-register(TOOL,
-id = 'notecleanup',
-name = _("Note Cleanup"),
-description = _("Clean up Notes that contain HTML markup"),
-version = '1.0.10',
-gramps_target_version = '5.1',
-status = STABLE,
-fname = 'NoteCleanup.py',
-authors = ["Paul Culley"],
-authors_email = ["paulr2787@gmail.com"],
-category = TOOL_UTILS,
-toolclass = 'NoteCleanup',
-optionclass = 'NoteCleanupOptions',
-tool_modes = [TOOL_MODE_GUI]
+"""
+Filter rule to match related persons to anybody that matched a person filter.
+"""
+register(RULE,
+  id    = 'IsRelatedWithFilterMatch',
+  name  = _("People related to <filter>"),
+  description = _("Matches people who are related to anybody matched by "
+                  "a person filter"),
+  version = '1.0.3',
+  authors = ["Matthias Kemmer"],
+  authors_email = ["matt.familienforschung@gmail.com"],
+  gramps_target_version = '5.1',
+  status = STABLE,
+  fname = "isrelatedwithfiltermatch.py",
+  ruleclass = 'IsRelatedWithFilterMatch',  # must be rule class name
+  namespace = 'Person',  # one of the primary object classes
   )

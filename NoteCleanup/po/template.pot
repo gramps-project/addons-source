@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"POT-Creation-Date: 2019-11-25 11:06-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: NoteCleanup/NoteCleanup.gpr.py:30 NoteCleanup/NoteCleanup.py:395
+#: NoteCleanup/NoteCleanup.gpr.py:30 NoteCleanup/NoteCleanup.py:397
 msgid "Note Cleanup"
 msgstr ""
 
@@ -41,50 +41,50 @@ msgstr ""
 msgid "Issues"
 msgstr ""
 
-#: NoteCleanup/NoteCleanup.py:119
+#: NoteCleanup/NoteCleanup.py:120
 msgid "Close"
 msgstr ""
 
-#: NoteCleanup/NoteCleanup.py:120
+#: NoteCleanup/NoteCleanup.py:121
 msgid "Close the Note Cleanup Tool"
 msgstr ""
 
-#: NoteCleanup/NoteCleanup.py:122
+#: NoteCleanup/NoteCleanup.py:123
 msgid "Save All"
 msgstr ""
 
-#: NoteCleanup/NoteCleanup.py:123
+#: NoteCleanup/NoteCleanup.py:124
 msgid "Save All Changes"
 msgstr ""
 
-#: NoteCleanup/NoteCleanup.py:125
+#: NoteCleanup/NoteCleanup.py:126
 msgid "Search"
 msgstr ""
 
-#: NoteCleanup/NoteCleanup.py:126
+#: NoteCleanup/NoteCleanup.py:127
 msgid "Search for Untidy Notes"
 msgstr ""
 
-#: NoteCleanup/NoteCleanup.py:128
+#: NoteCleanup/NoteCleanup.py:129
 msgid "Generate Test Notes"
 msgstr ""
 
-#: NoteCleanup/NoteCleanup.py:130
+#: NoteCleanup/NoteCleanup.py:131
 msgid ""
 "Generate Test notes in range N99996-N99999.\n"
 "These are added to your database, so you may want to work with a test "
 "database or delete them later."
 msgstr ""
 
-#: NoteCleanup/NoteCleanup.py:134
+#: NoteCleanup/NoteCleanup.py:135
 msgid "Export"
 msgstr ""
 
-#: NoteCleanup/NoteCleanup.py:135
+#: NoteCleanup/NoteCleanup.py:136
 msgid "Export the results to a text file"
 msgstr ""
 
-#: NoteCleanup/NoteCleanup.py:172
+#: NoteCleanup/NoteCleanup.py:177
 msgid ""
 "Please back up your database before running this tool.\n"
 "\n"
@@ -94,39 +94,39 @@ msgid ""
 "'Export' button."
 msgstr ""
 
-#: NoteCleanup/NoteCleanup.py:182
+#: NoteCleanup/NoteCleanup.py:186
 msgid "Clean up Notes"
 msgstr ""
 
-#: NoteCleanup/NoteCleanup.py:193
+#: NoteCleanup/NoteCleanup.py:197
 msgid "Notes"
 msgstr ""
 
-#: NoteCleanup/NoteCleanup.py:277
+#: NoteCleanup/NoteCleanup.py:279
 msgid "Cleanup Test Notes"
 msgstr ""
 
-#: NoteCleanup/NoteCleanup.py:299 NoteCleanup/NoteCleanup.py:304
+#: NoteCleanup/NoteCleanup.py:301 NoteCleanup/NoteCleanup.py:306
 msgid "Add Test Note"
 msgstr ""
 
-#: NoteCleanup/NoteCleanup.py:313
+#: NoteCleanup/NoteCleanup.py:314
 msgid "Export results to a text file"
 msgstr ""
 
-#: NoteCleanup/NoteCleanup.py:336
+#: NoteCleanup/NoteCleanup.py:337
 #, python-format
 msgid "Error when writing the report: %s"
 msgstr ""
 
-#: NoteCleanup/NoteCleanup.py:370
+#: NoteCleanup/NoteCleanup.py:372
 msgid ""
 "\n"
 "\n"
 "Notes selected on the left pane are shown Before cleanup in this box."
 msgstr ""
 
-#: NoteCleanup/NoteCleanup.py:373
+#: NoteCleanup/NoteCleanup.py:375
 msgid ""
 "\n"
 "\n"
@@ -135,14 +135,14 @@ msgid ""
 "controls in the toolbar above."
 msgstr ""
 
-#: NoteCleanup/NoteCleanup.py:388
+#: NoteCleanup/NoteCleanup.py:390
 msgid "Saving Notes"
 msgstr ""
 
-#: NoteCleanup/NoteCleanup.py:390
+#: NoteCleanup/NoteCleanup.py:392
 msgid "Saving Cleaned Notes"
 msgstr ""
 
-#: NoteCleanup/NoteCleanup.py:415
+#: NoteCleanup/NoteCleanup.py:416
 msgid "Scanning Notes"
 msgstr ""

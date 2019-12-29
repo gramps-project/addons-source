@@ -26,8 +26,6 @@ Filter rule to match persons with a particular event.
 # Standard Python modules
 #
 #-------------------------------------------------------------------------
-from gramps.gen.const import GRAMPS_LOCALE as glocale
-_ = glocale.translation.gettext
 
 #-------------------------------------------------------------------------
 #
@@ -37,6 +35,12 @@ _ = glocale.translation.gettext
 from gramps.gen.lib.eventroletype import EventRoleType
 from gramps.gui.editors.filtereditor import MySelect, MyBoolean
 from gramps.gen.filters.rules import Rule
+from gramps.gen.const import GRAMPS_LOCALE as glocale
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.gettext
 
 
 class Roletype(MySelect):
@@ -61,7 +65,7 @@ class HasPersonEventRole(Rule):
 
     labels = [(_('Role'), Roletype),
               (_('Inverse'), NoMatch)]
-    name = _('People with events with a selected role')
+    name = _('People with events with the <role>')
     description = _("Matches people with an event with a selected role")
     category = _('Event filters')
 
@@ -85,7 +89,7 @@ class HasFamilyEventRole(Rule):
 
     labels = [(_('Role'), Roletype),
               (_('Inverse'), NoMatch)]
-    name = _('Families with events with a selected role')
+    name = _('Families with events with the <role>')
     description = _("Matches families with an event with a selected role")
     category = _('Event filters')
 
