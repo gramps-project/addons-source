@@ -33,7 +33,7 @@ class ActionBase():
     def __init__(self):
         pass
 
-    def AddEventToPerson(db, trans, person_handle, event_type, event_date_object, event_description, citation_handle, event_role_type):
+    def add_event_to_person(db, trans, person_handle, event_type, event_date_object, event_description, citation_handle, event_role_type):
         """
         Add a new event to the specified person.
         """

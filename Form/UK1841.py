@@ -93,7 +93,7 @@ class BirthEvent(ActionBase):
                                         birth_date.set_quality(Date.QUAL_CALCULATED)
 
                                         model.append(parent, (name_displayer.display(person), date_displayer.display(birth_date),
-                                                     lambda db, trans, citation_handle = citation.handle, person_handle = person.handle, birth_date_ = birth_date: ActionBase.AddEventToPerson(db, trans, person_handle, EventType.BIRTH, birth_date_, None, citation_handle, EventRoleType.PRIMARY)))
+                                                     lambda db, trans, citation_handle = citation.handle, person_handle = person.handle, birth_date_ = birth_date: ActionBase.add_event_to_person(db, trans, person_handle, EventType.BIRTH, birth_date_, None, citation_handle, EventRoleType.PRIMARY)))
 
 class OccupationEvent(ActionBase):
     def __init__(self):
@@ -113,4 +113,4 @@ class OccupationEvent(ActionBase):
                             occupation = attr.get_value()
                             if (occupation) :
                                 model.append(parent, (name_displayer.display(person), occupation,
-                                             lambda db, trans, citation_handle = citation.handle, person_handle = person.handle, occupation_ = occupation: ActionBase.AddEventToPerson(db, trans, person_handle, EventType.OCCUPATION, form_event.get_date_object(), occupation_, citation_handle, EventRoleType.PRIMARY)))
+                                             lambda db, trans, citation_handle = citation.handle, person_handle = person.handle, occupation_ = occupation: ActionBase.add_event_to_person(db, trans, person_handle, EventType.OCCUPATION, form_event.get_date_object(), occupation_, citation_handle, EventRoleType.PRIMARY)))
