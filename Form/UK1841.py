@@ -26,8 +26,10 @@
 from gramps.gen.datehandler import displayer as date_displayer
 from gramps.gen.db import DbTxn
 from gramps.gen.display.name import displayer as name_displayer
+from gramps.gen.display.place import displayer as place_displayer
 from gramps.gen.lib import (Date, Event, EventType, EventRef, EventRoleType,
                             Person)
+from gramps.gen.utils.db import get_participant_from_event
 
 #------------------------------------------------------------------------
 #
@@ -117,3 +119,48 @@ class OccupationEvent(ActionBase):
                 actions.append((name_displayer.display(person), occupation,
                          lambda dbstate, uistate, track, citation_handle = citation.handle, person_handle = person.handle, occupation_ = occupation: ActionBase.add_event_to_person(dbstate, uistate, track, person_handle, EventType.OCCUPATION, form_event.get_date_object(), occupation_, citation_handle, EventRoleType.PRIMARY)))
         return (_("Add Occupation event"), actions)
+
+class ResidenceEvent(ActionBase):
+    def __init__(self):
+        ActionBase.__init__(self)
+        pass
+
+    def get_actions(self, dbstate, citation, form_event):
+        db = dbstate.db
+        # build a list of all the people referenced in the form. For 1841, all people have a PRIMARY event role
+        people = []
+        for item in db.find_backlink_handles(form_event.get_handle(), include_classes=['Person']):
+            handle = item[1]
+            person = db.get_person_from_handle(handle)
+            for event_ref in person.get_event_ref_list():
+                if event_ref.ref == form_event.get_handle():
+                    people.append((person.get_handle(), EventRoleType.PRIMARY))
+        actions = []
+        if people:
+            place = None
+            if form_event.get_place_handle():
+                place = place_displayer.display(db, db.get_place_from_handle(form_event.get_place_handle()))
+            actions.append((get_participant_from_event(db, form_event.get_handle()), place,
+                         lambda dbstate, uistate, track, citation_handle = citation.handle, people_handles = people: ResidenceEvent.command(dbstate, uistate, track, citation_handle, form_event.get_date_object(), form_event.get_place_handle(), people_handles)))
+        return (_("Add Residence event"), actions)
+
+    def command(dbstate, uistate, track, citation_handle, event_date_object, event_place_handle, people_handles):
+        db = dbstate.db
+        # create the RESIDENCE event
+        event = Event()
+        event.set_type(EventType.RESIDENCE)
+        event.set_date_object(event_date_object)
+        event.set_place_handle(event_place_handle)
+        event.add_citation(citation_handle)
+        with DbTxn(_("Add Event (%s)") % event.get_gramps_id(), db) as trans:
+            db.add_event(event, trans)
+
+        # and reference the event from all people
+        event_ref = EventRef()
+        event_ref.ref = event.get_handle()
+        for (person_handle, role) in people_handles:
+            event_ref.set_role(role)
+            person = db.get_person_from_handle(person_handle)
+            person.add_event_ref(event_ref)
+            with DbTxn(_("Add Event (%s)") % name_displayer.display(person), db) as trans:
+                db.commit_person(person, trans)
