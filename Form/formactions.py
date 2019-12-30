@@ -149,7 +149,11 @@ class FormActions(object):
 
             for action_class in action_classes:
                 action = (action_class[1])()
-                action.populate_model(self.dbstate, self.citation, self.event, self.model)
+                (title, action_details) = action.get_actions(self.dbstate, self.citation, self.event)
+                if action_details:
+                    parent = self.model.append(None, (title, None, None))
+                    for action_detail in action_details:
+                        self.model.append(parent, action_detail)
 
     def run(self):
         """

@@ -54,12 +54,14 @@ class PrimaryNameCitation(ActionBase):
         ActionBase.__init__(self)
         pass
 
-    def populate_model(self, dbstate, citation, form_event, model):
+    def get_actions(self, dbstate, citation, form_event):
         db = dbstate.db
-        parent = model.append(None, (_("Add Primary Name citation"), None, None))
+        actions = []
         for (person, attr) in ActionBase.get_form_person_attr(db, form_event.get_handle(), 'Name'):
-            model.append(parent, (name_displayer.display(person), attr.get_value(),
+            pass
+            actions.append((name_displayer.display(person), attr.get_value(),
                          lambda dbstate, uistate, track, citation_handle = citation.handle, person_handle = person.handle: PrimaryNameCitation.command(dbstate, uistate, track, citation_handle, person_handle)))
+        return (_("Add Primary Name citation"), actions)
 
     def command(dbstate, uistate, track, citation_handle, person_handle):
         db = dbstate.db
@@ -73,11 +75,11 @@ class BirthEvent(ActionBase):
         ActionBase.__init__(self)
         pass
 
-    def populate_model(self, dbstate, citation, form_event, model):
+    def get_actions(self, dbstate, citation, form_event):
         db = dbstate.db
+        actions = []
         # if there is no date on the form, no actions can be performed
         if form_event.get_date_object():
-            parent = model.append(None, (_("Add Birth event"), None, None))
             for (person, attr) in ActionBase.get_form_person_attr(db, form_event.get_handle(), 'Age'):
                 age_string = attr.get_value()
                 if age_string and represents_int(age_string):
@@ -97,19 +99,21 @@ class BirthEvent(ActionBase):
                             birth_date.set(Date.QUAL_NONE, Date.MOD_RANGE, birth_date.get_calendar(), birth_range, newyear=birth_date.get_new_year())
                         birth_date.set_quality(Date.QUAL_CALCULATED)
 
-                        model.append(parent, (name_displayer.display(person), date_displayer.display(birth_date),
+                        actions.append((name_displayer.display(person), date_displayer.display(birth_date),
                                         lambda dbstate, uistate, track, citation_handle = citation.handle, person_handle = person.handle, birth_date_ = birth_date: ActionBase.add_event_to_person(dbstate, uistate, track, person_handle, EventType.BIRTH, birth_date_, None, citation_handle, EventRoleType.PRIMARY)))
+        return (_("Add Birth event"), actions)
 
 class OccupationEvent(ActionBase):
     def __init__(self):
         ActionBase.__init__(self)
         pass
 
-    def populate_model(self, dbstate, citation, form_event, model):
+    def get_actions(self, dbstate, citation, form_event):
         db = dbstate.db
-        parent = model.append(None, (_('Add Occupation event'), None, None))
+        actions = []
         for (person, attr) in ActionBase.get_form_person_attr(db, form_event.get_handle(), 'Occupation'):
             occupation = attr.get_value()
             if (occupation) :
-                model.append(parent, (name_displayer.display(person), occupation,
-                                lambda dbstate, uistate, track, citation_handle = citation.handle, person_handle = person.handle, occupation_ = occupation: ActionBase.add_event_to_person(dbstate, uistate, track, person_handle, EventType.OCCUPATION, form_event.get_date_object(), occupation_, citation_handle, EventRoleType.PRIMARY)))
+                actions.append((name_displayer.display(person), occupation,
+                         lambda dbstate, uistate, track, citation_handle = citation.handle, person_handle = person.handle, occupation_ = occupation: ActionBase.add_event_to_person(dbstate, uistate, track, person_handle, EventType.OCCUPATION, form_event.get_date_object(), occupation_, citation_handle, EventRoleType.PRIMARY)))
+        return (_("Add Occupation event"), actions)
