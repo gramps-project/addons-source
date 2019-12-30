@@ -18,11 +18,22 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
+#------------------------------------------------------------------------
+#
+# Gramps modules
+#
+#------------------------------------------------------------------------
 from gramps.gen.datehandler import displayer as date_displayer
+from gramps.gen.db import DbTxn
 from gramps.gen.display.name import displayer as name_displayer
 from gramps.gen.lib import (Date, Event, EventType, EventRef, EventRoleType,
                             Person)
 
+#------------------------------------------------------------------------
+#
+# Gramplet modules
+#
+#------------------------------------------------------------------------
 from actionbase import ActionBase, represents_int
 
 #------------------------------------------------------------------------
@@ -54,12 +65,14 @@ class PrimaryNameCitation(ActionBase):
                     for attr in event_ref.get_attribute_list():
                         if (attr.get_type() == "Name"): # Form specific _attribute name
                             model.append(parent, (name_displayer.display(person), attr.get_value(),
-                                        lambda db, trans, citation_handle = citation.handle, person_handle = person.handle: PrimaryNameCitation.command(db, trans, citation_handle, person_handle)))
+                                        lambda dbstate, uistate, track, citation_handle = citation.handle, person_handle = person.handle: PrimaryNameCitation.command(dbstate, uistate, track, citation_handle, person_handle)))
 
-    def command(db, trans, citation_handle, person_handle):
+    def command(dbstate, uistate, track, citation_handle, person_handle):
+        db = dbstate.db
         person = db.get_person_from_handle(person_handle)
         person.get_primary_name().add_citation(citation_handle)
-        db.commit_person(person, trans)
+        with DbTxn(_("Add Person (%s)") % name_displayer.display(person), db) as trans:
+            db.commit_person(person, trans)
 
 class BirthEvent(ActionBase):
     def __init__(self):
@@ -97,7 +110,7 @@ class BirthEvent(ActionBase):
                                         birth_date.set_quality(Date.QUAL_CALCULATED)
 
                                         model.append(parent, (name_displayer.display(person), date_displayer.display(birth_date),
-                                                     lambda db, trans, citation_handle = citation.handle, person_handle = person.handle, birth_date_ = birth_date: ActionBase.add_event_to_person(db, trans, person_handle, EventType.BIRTH, birth_date_, None, citation_handle, EventRoleType.PRIMARY)))
+                                                     lambda dbstate, uistate, track, citation_handle = citation.handle, person_handle = person.handle, birth_date_ = birth_date: ActionBase.add_event_to_person(dbstate, uistate, track, person_handle, EventType.BIRTH, birth_date_, None, citation_handle, EventRoleType.PRIMARY)))
 
 class OccupationEvent(ActionBase):
     def __init__(self):
@@ -117,4 +130,4 @@ class OccupationEvent(ActionBase):
                             occupation = attr.get_value()
                             if (occupation) :
                                 model.append(parent, (name_displayer.display(person), occupation,
-                                             lambda db, trans, citation_handle = citation.handle, person_handle = person.handle, occupation_ = occupation: ActionBase.add_event_to_person(db, trans, person_handle, EventType.OCCUPATION, form_event.get_date_object(), occupation_, citation_handle, EventRoleType.PRIMARY)))
+                                             lambda dbstate, uistate, track, citation_handle = citation.handle, person_handle = person.handle, occupation_ = occupation: ActionBase.add_event_to_person(dbstate, uistate, track, person_handle, EventType.OCCUPATION, form_event.get_date_object(), occupation_, citation_handle, EventRoleType.PRIMARY)))

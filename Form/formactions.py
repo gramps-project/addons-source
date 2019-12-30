@@ -173,14 +173,13 @@ class FormActions(object):
         self._config.save()
 
         # run the selected actions
-        with DbTxn("FormActions", self.db) as trans:
-            (model, pathlist) = self.tree.get_selection().get_selected_rows()
-            for path in pathlist :
-                tree_iter = model.get_iter(path)
+        (model, pathlist) = self.tree.get_selection().get_selected_rows()
+        for path in pathlist :
+            tree_iter = model.get_iter(path)
 
-                command = model.get_value(tree_iter, 2)
-                if command:
-                    (command)(self.db, trans)
+            command = model.get_value(tree_iter, 2)
+            if command:
+                (command)(self.dbstate, self.uistate, self.track)
 
         self.top.destroy()
 

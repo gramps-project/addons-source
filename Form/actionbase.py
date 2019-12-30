@@ -22,9 +22,28 @@
 ActionBase definitions.
 """
 
+#------------------------------------------------------------------------
+#
+# Gramps modules
+#
+#------------------------------------------------------------------------
+from gramps.gen.db import DbTxn
 from gramps.gen.display.name import displayer as name_displayer
 from gramps.gen.lib import (Event, EventType, EventRef, EventRoleType,
                             Person)
+
+#------------------------------------------------------------------------
+#
+# Internationalisation
+#
+#------------------------------------------------------------------------
+from gramps.gen.const import GRAMPS_LOCALE as glocale
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+
+_ = _trans.gettext
 
 class ActionBase():
     """
@@ -33,7 +52,8 @@ class ActionBase():
     def __init__(self):
         pass
 
-    def add_event_to_person(db, trans, person_handle, event_type, event_date_object, event_description, citation_handle, event_role_type):
+    def add_event_to_person(dbstate, uistate, track, person_handle, event_type, event_date_object, event_description, citation_handle, event_role_type):
+        db = dbstate.db
         """
         Add a new event to the specified person.
         """
@@ -44,14 +64,16 @@ class ActionBase():
         event.set_description(event_description)
 
         # add to the database
-        db.add_event(event, trans)
+        with DbTxn(_("Add Event (%s)") % event.get_gramps_id(), db) as trans:
+            db.add_event(event, trans)
         # Add new event reference to the Person record
         event_ref = EventRef()
         event_ref.ref = event.get_handle()
         event_ref.set_role(event_role_type)
         person = db.get_person_from_handle(person_handle)
         person.add_event_ref(event_ref)
-        db.commit_person(person, trans)
+        with DbTxn(_("Add Event (%s)") % name_displayer.display(person), db) as trans:
+            db.commit_person(person, trans)
 
 def represents_int(s):
     """
