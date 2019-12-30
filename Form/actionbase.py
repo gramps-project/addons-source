@@ -75,6 +75,22 @@ class ActionBase():
         with DbTxn(_("Add Event (%s)") % name_displayer.display(person), db) as trans:
             db.commit_person(person, trans)
 
+    def get_form_person_attr(db, form_event_handle, attr_type):
+        """
+        Find all persons referencing the form_event and which have an attribute of type attr_type
+        returns a list of matching (person, attribute) tuples
+        """
+        result = []
+        for item in db.find_backlink_handles(form_event_handle, include_classes=['Person']):
+            handle = item[1]
+            person = db.get_person_from_handle(handle)
+            for event_ref in person.get_event_ref_list():
+                if event_ref.ref == form_event_handle:
+                    for attr in event_ref.get_attribute_list():
+                        if (attr.get_type() == attr_type):
+                            result.append((person, attr))
+        return result
+
 def represents_int(s):
     """
     return True iff s is convertable to an int, False otherwise
