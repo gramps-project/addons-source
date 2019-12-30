@@ -149,7 +149,7 @@ class FormActions(object):
 
             for action_class in action_classes:
                 action = (action_class[1])()
-                action.populate_model(self.db, self.citation, self.event, self.model)
+                action.populate_model(self.dbstate, self.citation, self.event, self.model)
 
     def run(self):
         """

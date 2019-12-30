@@ -54,7 +54,8 @@ class PrimaryNameCitation(ActionBase):
         ActionBase.__init__(self)
         pass
 
-    def populate_model(self, db, citation, form_event, model):
+    def populate_model(self, dbstate, citation, form_event, model):
+        db = dbstate.db
         parent = model.append(None, (_("Add Primary Name citation"), None, None))
         for item in db.find_backlink_handles(form_event.get_handle(),
                                              include_classes=['Person']):
@@ -79,7 +80,8 @@ class BirthEvent(ActionBase):
         ActionBase.__init__(self)
         pass
 
-    def populate_model(self, db, citation, form_event, model):
+    def populate_model(self, dbstate, citation, form_event, model):
+        db = dbstate.db
         # if there is no date on the form, no actions can be performed
         if form_event.get_date_object():
             parent = model.append(None, (_("Add Birth event"), None, None))
@@ -117,7 +119,8 @@ class OccupationEvent(ActionBase):
         ActionBase.__init__(self)
         pass
 
-    def populate_model(self, db, citation, form_event, model):
+    def populate_model(self, dbstate, citation, form_event, model):
+        db = dbstate.db
         parent = model.append(None, (_("Add Occupation event"), None, None))
         for item in db.find_backlink_handles(form_event.get_handle(),
                                              include_classes=['Person']):
