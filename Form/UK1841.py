@@ -49,8 +49,12 @@ class PrimaryNameCitation(ActionBase):
                                              include_classes=['Person']):
             handle = item[1]
             person = db.get_person_from_handle(handle)
-            model.append(parent, (name_displayer.display(person), name_displayer.display(person),
-                         lambda db, trans, citation_handle = citation.handle, person_handle = person.handle: PrimaryNameCitation.command(db, trans, citation_handle, person_handle)))
+            for event_ref in person.get_event_ref_list():
+                if event_ref.ref == form_event.get_handle():
+                    for attr in event_ref.get_attribute_list():
+                        if (attr.get_type() == "Name"): # Form specific _attribute name
+                            model.append(parent, (name_displayer.display(person), attr.get_value(),
+                                        lambda db, trans, citation_handle = citation.handle, person_handle = person.handle: PrimaryNameCitation.command(db, trans, citation_handle, person_handle)))
 
     def command(db, trans, citation_handle, person_handle):
         person = db.get_person_from_handle(person_handle)
