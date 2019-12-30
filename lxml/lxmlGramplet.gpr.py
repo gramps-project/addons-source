@@ -6,10 +6,10 @@
 
 register(GRAMPLET,
 id="lxml Gramplet",
-name=_("lxml"),
+name=_("lxml Gramplet"),
 description = _("Gramplet for testing lxml and XSLT"),
-status = STABLE,
-version = '1.0.10',
+status = STABLE, # not yet tested with python 3
+version = '1.1.0',
 gramps_target_version = "5.1",
 include_in_listing = False,
 height = 300,
