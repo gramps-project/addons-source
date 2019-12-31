@@ -225,12 +225,13 @@ class FormActions(object):
         self._config.set('interface.form-actions-vert-position', root_y)
         self._config.save()
 
-        # run the selected actions
-        for action_type_row in self.model:
-            for action_row in action_type_row.iterchildren():
-                if action_row.model.get_value(action_row.iter, self.RUN_ACTION_COL):
-                    command = action_row.model.get_value(action_row.iter, self.ACTION_COMMAND_COL)
-                    (command)(self.dbstate, self.uistate, self.track)
+        if response == Gtk.ResponseType.OK:
+            # run the selected actions
+            for action_type_row in self.model:
+                for action_row in action_type_row.iterchildren():
+                    if action_row.model.get_value(action_row.iter, self.RUN_ACTION_COL):
+                        command = action_row.model.get_value(action_row.iter, self.ACTION_COMMAND_COL)
+                        (command)(self.dbstate, self.uistate, self.track)
 
         self.top.destroy()
 
