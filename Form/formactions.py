@@ -73,6 +73,10 @@ class FormActions(object):
     """
     Form Action selector.
     """
+    RUN_ACTION_COL = 0
+    ACTION_COL = 1
+    DETAIL_COL = 2
+    ACTION_COMMAND_COL = 3
 
     def __init__(self, dbstate, uistate, track, citation):
         self.dbstate = dbstate
@@ -117,12 +121,19 @@ class FormActions(object):
         box = Gtk.Box()
         top.vbox.pack_start(box, True, True, 5)
 
-        self.model = Gtk.TreeStore(str, str, GObject.TYPE_PYOBJECT)
+        self.model = Gtk.TreeStore(bool, str, str, GObject.TYPE_PYOBJECT)
         self.tree = Gtk.TreeView(model=self.model)
-        renderer = Gtk.CellRendererText()
-        column1 = Gtk.TreeViewColumn(_("Action"), renderer, text=0)
-        column1.set_sort_column_id(1)
-        column2 = Gtk.TreeViewColumn(_("Detail"), renderer, text=1)
+        renderer_text = Gtk.CellRendererText()
+        column1 = Gtk.TreeViewColumn(_("Action"))
+        renderer_action_toggle = Gtk.CellRendererToggle()
+        renderer_action_toggle.connect('toggled', self.on_action_toggled)
+        column1.pack_start(renderer_action_toggle, False)
+        column1.add_attribute(renderer_action_toggle, 'active', self.RUN_ACTION_COL)
+        column1.pack_start(renderer_text, True)
+        column1.add_attribute(renderer_text, 'text', self.ACTION_COL)
+        column1.set_cell_data_func(renderer_action_toggle, FormActions.action_data_func)
+
+        column2 = Gtk.TreeViewColumn(_("Detail"), renderer_text, text=self.DETAIL_COL)
         self.tree.append_column(column1)
         self.tree.append_column(column2)
 
@@ -141,6 +152,12 @@ class FormActions(object):
 
         return top
 
+    def on_action_toggled(self, widget, path):
+        self.model[path][self.RUN_ACTION_COL] = not self.model[path][self.RUN_ACTION_COL]
+
+    def action_data_func(col, cell, model, iter, user_data):
+        cell.set_property("visible", model.get_value(iter, FormActions.ACTION_COMMAND_COL))
+
     def _populate_model(self):
         form_id = get_form_id(self.source)
         if self.actions_module:
@@ -151,9 +168,9 @@ class FormActions(object):
                 action = (action_class[1])()
                 (title, action_details) = action.get_actions(self.dbstate, self.citation, self.event)
                 if action_details:
-                    parent = self.model.append(None, (title, None, None))
+                    parent = self.model.append(None, (False, title, None, None))
                     for action_detail in action_details:
-                        self.model.append(parent, action_detail)
+                        self.model.append(parent, (False, ) + action_detail)
 
     def run(self):
         """
@@ -177,13 +194,11 @@ class FormActions(object):
         self._config.save()
 
         # run the selected actions
-        (model, pathlist) = self.tree.get_selection().get_selected_rows()
-        for path in pathlist :
-            tree_iter = model.get_iter(path)
-
-            command = model.get_value(tree_iter, 2)
-            if command:
-                (command)(self.dbstate, self.uistate, self.track)
+        for action_type_row in self.model:
+            for action_row in action_type_row.iterchildren():
+                if action_row.model.get_value(action_row.iter, self.RUN_ACTION_COL):
+                    command = action_row.model.get_value(action_row.iter, self.ACTION_COMMAND_COL)
+                    (command)(self.dbstate, self.uistate, self.track)
 
         self.top.destroy()
 
