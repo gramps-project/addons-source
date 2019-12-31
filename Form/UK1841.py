@@ -54,13 +54,11 @@ _ = _trans.gettext
 class PrimaryNameCitation(ActionBase):
     def __init__(self):
         ActionBase.__init__(self)
-        pass
 
     def get_actions(self, dbstate, citation, form_event):
         db = dbstate.db
         actions = []
         for (person, attr) in ActionBase.get_form_person_attr(db, form_event.get_handle(), 'Name'):
-            pass
             actions.append((name_displayer.display(person), attr.get_value(),
                          lambda dbstate, uistate, track, citation_handle = citation.handle, person_handle = person.handle: PrimaryNameCitation.command(dbstate, uistate, track, citation_handle, person_handle)))
         return (_("Add Primary Name citation"), actions)
@@ -75,7 +73,6 @@ class PrimaryNameCitation(ActionBase):
 class BirthEvent(ActionBase):
     def __init__(self):
         ActionBase.__init__(self)
-        pass
 
     def get_actions(self, dbstate, citation, form_event):
         db = dbstate.db
@@ -108,7 +105,6 @@ class BirthEvent(ActionBase):
 class OccupationEvent(ActionBase):
     def __init__(self):
         ActionBase.__init__(self)
-        pass
 
     def get_actions(self, dbstate, citation, form_event):
         db = dbstate.db
@@ -123,7 +119,6 @@ class OccupationEvent(ActionBase):
 class ResidenceEvent(ActionBase):
     def __init__(self):
         ActionBase.__init__(self)
-        pass
 
     def get_actions(self, dbstate, citation, form_event):
         db = dbstate.db
