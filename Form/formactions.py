@@ -190,6 +190,7 @@ class FormActions(object):
             self.model[parent][self.RUN_INCONSISTENT_COL] = not consistent
             self.model[parent][self.RUN_ACTION_COL] = consistent and value
 
+    @staticmethod
     def all_children_consistent(model, parent, col):
         consistent = True
         value = False

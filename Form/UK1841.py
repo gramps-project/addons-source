@@ -65,6 +65,7 @@ def get_actions(dbstate, citation, form_event):
     return actions
 
 class PrimaryNameCitation:
+    @staticmethod
     def get_actions(dbstate, citation, form_event):
         db = dbstate.db
         actions = []
@@ -73,6 +74,7 @@ class PrimaryNameCitation:
                          lambda dbstate, uistate, track, citation_handle = citation.handle, person_handle = person.handle: PrimaryNameCitation.command(dbstate, uistate, track, citation_handle, person_handle)))
         return (_("Add Primary Name citation"), actions)
 
+    @staticmethod
     def command(dbstate, uistate, track, citation_handle, person_handle):
         db = dbstate.db
         person = db.get_person_from_handle(person_handle)
@@ -81,6 +83,7 @@ class PrimaryNameCitation:
             db.commit_person(person, trans)
 
 class AlternateName:
+    @staticmethod
     def get_actions(dbstate, citation, form_event):
         db = dbstate.db
         actions = []
@@ -92,6 +95,7 @@ class AlternateName:
                          lambda dbstate, uistate, track, person_handle = person.handle, alternate_ = alternate: AlternateName.command(dbstate, uistate, track, person_handle, alternate_)))
         return (_("Add alternate name"), actions)
 
+    @staticmethod
     def command(dbstate, uistate, track, person_handle, alternate):
         db = dbstate.db
         person = db.get_person_from_handle(person_handle)
@@ -100,6 +104,7 @@ class AlternateName:
             db.commit_person(person, trans)
 
 class BirthEvent:
+    @staticmethod
     def get_actions(dbstate, citation, form_event):
         db = dbstate.db
         actions = []
@@ -129,6 +134,7 @@ class BirthEvent:
         return (_("Add Birth event"), actions)
 
 class OccupationEvent:
+    @staticmethod
     def get_actions(dbstate, citation, form_event):
         db = dbstate.db
         actions = []
@@ -140,6 +146,7 @@ class OccupationEvent:
         return (_("Add Occupation event"), actions)
 
 class ResidenceEvent:
+    @staticmethod
     def get_actions(dbstate, citation, form_event):
         db = dbstate.db
         # build a list of all the people referenced in the form. For 1841, all people have a PRIMARY event role
@@ -159,6 +166,7 @@ class ResidenceEvent:
                          lambda dbstate, uistate, track, citation_handle = citation.handle, people_handles = people: ResidenceEvent.command(dbstate, uistate, track, citation_handle, form_event.get_date_object(), form_event.get_place_handle(), people_handles)))
         return (_("Add Residence event"), actions)
 
+    @staticmethod
     def command(dbstate, uistate, track, citation_handle, event_date_object, event_place_handle, people_handles):
         db = dbstate.db
         # create the RESIDENCE event

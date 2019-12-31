@@ -52,6 +52,7 @@ class ActionBase():
     def __init__(self):
         pass
 
+    @staticmethod
     def add_event_to_person(dbstate, uistate, track, person_handle, event_type, event_date_object, event_description, citation_handle, event_role_type):
         db = dbstate.db
         """
@@ -75,6 +76,7 @@ class ActionBase():
         with DbTxn(_("Add Event (%s)") % name_displayer.display(person), db) as trans:
             db.commit_person(person, trans)
 
+    @staticmethod
     def get_form_person_attr(db, form_event_handle, attr_type):
         """
         Find all persons referencing the form_event and which have an attribute of type attr_type
