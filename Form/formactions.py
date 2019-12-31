@@ -21,10 +21,18 @@
 """
 Form action chooser
 """
+#-------------------------------------------------------------------------
+#
+# Standard Python modules
+#
+#-------------------------------------------------------------------------
+import logging
 import importlib.util
 import inspect
 import os
-import gobject
+import sys
+
+LOG = logging.getLogger('.form')
 
 #------------------------------------------------------------------------
 #
@@ -93,9 +101,19 @@ class FormActions(object):
         # for security reasons provide the full path to the actions_module .py file
         full_path = os.path.join(os.path.dirname(__file__), '%s.py' % self.form_id)
         if os.path.exists(full_path):
-            spec = importlib.util.spec_from_file_location('form.action.', full_path)
-            self.actions_module = importlib.util.module_from_spec(spec)
-            spec.loader.exec_module(self.actions_module)
+            # temporarily modify sys.path so that any import statements in the module get processed correctly
+            sys.path.insert(0, os.path.dirname(__file__))
+            try:
+                spec = importlib.util.spec_from_file_location('form.actions.%s' % self.form_id, full_path)
+                self.actions_module = importlib.util.module_from_spec(spec)
+                spec.loader.exec_module(self.actions_module)
+            except (ValueError, ImportError, SyntaxError) as err:
+                self.actions_module = None
+                LOG.warning("Form plugin error (from '%s'): %s"
+                                    % (self.form_id, err))
+            finally:
+                # must make sure we restore sys.path
+                sys.path.pop(0)
 
         self.event = find_form_event(self.db, self.citation)
 
