@@ -1,6 +1,6 @@
 #
 # Copyright (C) 2011 Matt Keenan <matt.keenan@gmail.com>
-# Copyright (C) 2015 Giansalvo Gusinu <pioggia3@gmail.com>
+# Copyright (C) 2015, 2019 Giansalvo Gusinu <giansalvo.gusinu@gmail.com>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -29,7 +29,11 @@ Merged with Trunk Rev r18388
 #------------------------------------------------------------------------
 import copy
 from gramps.gen.const import GRAMPS_LOCALE as glocale
-_ = glocale.translation.gettext
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.gettext
 from functools import partial
 
 #------------------------------------------------------------------------
