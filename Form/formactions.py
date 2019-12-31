@@ -243,11 +243,22 @@ class FormActions(object):
 
         if response == Gtk.ResponseType.OK:
             # run the selected actions
+            self.uistate.set_busy_cursor(True)
+            self.uistate.progress.show()
+            self.uistate.pulse_progressbar(0)
+            # get the list of actions to be run
+            # this helps give meaningful progress information (because we know how many actions in total will be run)
+            actions = []
             for action_type_row in self.model:
                 for action_row in action_type_row.iterchildren():
                     if action_row.model.get_value(action_row.iter, self.RUN_ACTION_COL):
-                        command = action_row.model.get_value(action_row.iter, self.ACTION_COMMAND_COL)
-                        (command)(self.dbstate, self.uistate, self.track)
+                        actions.append(action_row.model.get_value(action_row.iter, self.ACTION_COMMAND_COL))
+            # run the actions
+            for index, action in enumerate(actions):
+                (action)(self.dbstate, self.uistate, self.track)
+                self.uistate.pulse_progressbar((index + 1) / len(actions) * 100)
+            self.uistate.progress.hide()
+            self.uistate.set_busy_cursor(False)
 
         self.top.destroy()
 
