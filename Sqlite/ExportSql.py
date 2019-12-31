@@ -52,6 +52,7 @@ log = logging.getLogger(".ExportSql")
 #
 #------------------------------------------------------------------------
 from gramps.gen.utils.id import create_id
+from gramps.gen.lib import PlaceType
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 from gramps.gui.plug.export import WriterOptionBox  # don't remove, used!!!
 try:
@@ -186,13 +187,8 @@ def makeDB(db, callback):
                  handle CHARACTER(25) PRIMARY KEY,
                  gid CHARACTER(25),
                  title TEXT,
-                 value TEXT,
-                 the_type0 INTEGER,
-                 the_type1 TEXT,
-                 code TEXT,
                  long TEXT,
                  lat TEXT,
-                 lang TEXT,
                  change INTEGER,
                  private BOOLEAN);""")
     count += 1
@@ -202,7 +198,9 @@ def makeDB(db, callback):
     db.query("""CREATE TABLE place_ref (
                    handle             CHARACTER(25) PRIMARY KEY,
                    from_place_handle  CHARACTER(25),
-                   to_place_handle    CHARACTER(25));""")
+                   to_place_handle    CHARACTER(25),
+                   h_type0 INTEGER,
+                   h_type1 TEXT);""")
     count += 1
     callback(100 * count / total)
 
@@ -212,6 +210,25 @@ def makeDB(db, callback):
                   from_handle   CHARACTER(25),
                   value         CHARACTER(25),
                   lang          CHARACTER(25));""")
+    count += 1
+    callback(100 * count / total)
+
+    db.query("""drop table place_abbrev;""")
+    db.query("""CREATE TABLE place_abbrev (
+                  handle        CHARACTER(25) PRIMARY KEY,
+                  from_handle   CHARACTER(25),
+                  value         INTEGER,
+                  abbr_type0 INTEGER,
+                  abbr_type1 TEXT);""")
+    count += 1
+    callback(100 * count / total)
+
+    db.query("""drop table place_type;""")
+    db.query("""CREATE TABLE place_type (
+                  handle        CHARACTER(25) PRIMARY KEY,
+                  from_handle   CHARACTER(25),
+                  value         INTEGER,
+                  t_str         TEXT);""")
     count += 1
     callback(100 * count / total)
 
@@ -470,18 +487,41 @@ class Database(object):
         self.db.close()
 
 
-def export_alt_place_name_list(db, handle, alt_place_name_list):
-    for place_name in alt_place_name_list:
+def export_place_name_list(db, handle, place_name_list):
+    for place_name in place_name_list:
         export_place_name(db, handle, place_name)
 
 
 def export_place_name(db, handle, place_name):
     # alt_place_name_list = [('Ohio', None, ''), ...] [(value, date, lang)...]
-    (value, date, lang) = place_name
+    (value, date, lang, abbr_list, citation_list) = place_name
     ref_handle = create_id()
     db.query("insert into place_name (handle, from_handle, value, lang)"
              " VALUES (?, ?, ?, ?);", ref_handle, handle, value, lang)
     export_date(db, "place_name", ref_handle, date)
+    export_citation_list(db, "place_name", ref_handle, citation_list)
+    export_place_abbr_list(db, ref_handle, abbr_list)
+
+
+def export_place_abbr_list(db, handle, place_abbr_list):
+    for place_abbr in place_abbr_list:
+        (value, a_type) = place_abbr
+        ref_handle = create_id()
+        db.query("insert into place_abbrev (handle, from_handle, value,"
+                 " abbr_type0, abbr_type1)"
+                 " VALUES (?, ?, ?, ?, ?);",
+                 ref_handle, handle, value, a_type[0], a_type[1])
+
+
+def export_place_type_list(db, handle, place_type_list):
+    for place_type in place_type_list:
+        (value, date, citation_list) = place_type
+        ref_handle = create_id()
+        db.query("insert into place_type (handle, from_handle, value, t_str)"
+                 " VALUES (?, ?, ?, ?);",
+                 ref_handle, handle, value, PlaceType(value).xml_str())
+        export_date(db, "place_type", ref_handle, date)
+        export_citation_list(db, "place_type", ref_handle, citation_list)
 
 
 def export_place_ref_list(db, handle, place_ref_list):
@@ -492,12 +532,14 @@ def export_place_ref_list(db, handle, place_ref_list):
 
 
 def export_place_ref(db, handle, place_ref):
-    (to_place_handle, date) = place_ref
+    (to_place_handle, date, citation_list, htype) = place_ref
     ref_handle = create_id()
     db.query("insert into place_ref"
-             " (handle, from_place_handle, to_place_handle) VALUES (?, ?, ?);",
-             ref_handle, handle, to_place_handle)
+             " (handle, from_place_handle, to_place_handle, h_type0, h_type1)"
+             " VALUES (?, ?, ?, ?, ?);",
+             ref_handle, handle, to_place_handle, htype[0], htype[1])
     export_date(db, "place_ref", ref_handle, date)
+    export_citation_list(db, "place_ref", ref_handle, citation_list)
 
 
 def export_location_list(db, from_type, from_handle, locations):
@@ -1159,56 +1201,42 @@ def exportData(database, filename, user, option_box):
             continue
         (handle, gid, title, long, lat,
          place_ref_list,
-         place_name,
-         alt_place_name_list,
-         place_type,
-         code,
+         name_list,
+         type_list,
+         eventref_list,
          alt_location_list,
          urls,
          media_list,
          citation_list,
          note_list,
-         change, tag_list, private) = place.serialize()
-
-        value, date, lang = place_name
+         change, tag_list, private,
+         attribute_list) = place.serialize()
 
         db.query("""INSERT INTO place (
                  handle,
                  gid,
                  title,
-                 value,
-                 the_type0,
-                 the_type1,
-                 code,
                  long,
                  lat,
-                 lang,
                  change,
-                 private) values (?,?,?,?,?,?,?,?,?,?,?,?);""",
-                 handle, gid, title, value,
-                 place_type[0], place_type[1],
-                 code,
-                 long, lat,
-                 lang,
-                 change, private)
+                 private) values (?,?,?,?,?,?,?);""",
+                 handle, gid, title, long, lat, change, private)
 
-        export_date(db, "place", handle, date)
+        export_place_name_list(db, handle, name_list)
+        export_place_type_list(db, handle, type_list)
         export_url_list(db, "place", handle, urls)
         export_media_ref_list(db, "place", handle, media_list)
         export_citation_list(db, "place", handle, citation_list)
         export_list(db, "place", handle, "note", note_list)
         export_list(db, "place", handle, "tag", tag_list)
-
-        #1. alt_place_name_list = [('Ohio', None, ''), ...]
-        # [(value, date, lang)...]
-        #2. place_ref_list = Enclosed by:  [('4ECKQCWCLO5YIHXEXC', None)]
-        # [(handle, date)...]
-
-        export_alt_place_name_list(db, handle, alt_place_name_list)
         export_place_ref_list(db, handle, place_ref_list)
+        export_attribute_list(db, "place", handle, attribute_list)
 
         # But we need to link these:
         export_location_list(db, "place_alt", handle, alt_location_list)
+        # Event Reference information
+        for event_ref in eventref_list:
+            export_event_ref(db, "place", handle, event_ref)
 
         count += 1
         callback(100 * count / total)
