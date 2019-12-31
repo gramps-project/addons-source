@@ -36,7 +36,7 @@ from gramps.gen.utils.db import get_participant_from_event
 # Gramplet modules
 #
 #------------------------------------------------------------------------
-from actionbase import ActionBase, represents_int
+import actionutils
 
 #------------------------------------------------------------------------
 #
@@ -69,7 +69,7 @@ class PrimaryNameCitation:
     def get_actions(dbstate, citation, form_event):
         db = dbstate.db
         actions = []
-        for (person, attr) in ActionBase.get_form_person_attr(db, form_event.get_handle(), 'Name'):
+        for (person, attr) in actionutils.get_form_person_attr(db, form_event.get_handle(), 'Name'):
             actions.append((name_displayer.display(person), attr.get_value(),
                          lambda dbstate, uistate, track, citation_handle = citation.handle, person_handle = person.handle: PrimaryNameCitation.command(dbstate, uistate, track, citation_handle, person_handle)))
         return (_("Add Primary Name citation"), actions)
@@ -87,7 +87,7 @@ class AlternateName:
     def get_actions(dbstate, citation, form_event):
         db = dbstate.db
         actions = []
-        for (person, attr) in ActionBase.get_form_person_attr(db, form_event.get_handle(), 'Name'):
+        for (person, attr) in actionutils.get_form_person_attr(db, form_event.get_handle(), 'Name'):
             alternate = Name()
             alternate.set_first_name(attr.get_value())
             alternate.add_citation(citation.handle)
@@ -110,9 +110,9 @@ class BirthEvent:
         actions = []
         # if there is no date on the form, no actions can be performed
         if form_event.get_date_object():
-            for (person, attr) in ActionBase.get_form_person_attr(db, form_event.get_handle(), 'Age'):
+            for (person, attr) in actionutils.get_form_person_attr(db, form_event.get_handle(), 'Age'):
                 age_string = attr.get_value()
-                if age_string and represents_int(age_string):
+                if age_string and actionutils.represents_int(age_string):
                     age = int(age_string)
                     if age:
                         birth_date = form_event.get_date_object() - age
@@ -130,7 +130,7 @@ class BirthEvent:
                         birth_date.set_quality(Date.QUAL_CALCULATED)
 
                         actions.append((name_displayer.display(person), date_displayer.display(birth_date),
-                                        lambda dbstate, uistate, track, citation_handle = citation.handle, person_handle = person.handle, birth_date_ = birth_date: ActionBase.add_event_to_person(dbstate, uistate, track, person_handle, EventType.BIRTH, birth_date_, None, citation_handle, EventRoleType.PRIMARY)))
+                                        lambda dbstate, uistate, track, citation_handle = citation.handle, person_handle = person.handle, birth_date_ = birth_date: actionutils.add_event_to_person(dbstate, uistate, track, person_handle, EventType.BIRTH, birth_date_, None, citation_handle, EventRoleType.PRIMARY)))
         return (_("Add Birth event"), actions)
 
 class OccupationEvent:
@@ -138,11 +138,11 @@ class OccupationEvent:
     def get_actions(dbstate, citation, form_event):
         db = dbstate.db
         actions = []
-        for (person, attr) in ActionBase.get_form_person_attr(db, form_event.get_handle(), 'Occupation'):
+        for (person, attr) in actionutils.get_form_person_attr(db, form_event.get_handle(), 'Occupation'):
             occupation = attr.get_value()
             if (occupation) :
                 actions.append((name_displayer.display(person), occupation,
-                         lambda dbstate, uistate, track, citation_handle = citation.handle, person_handle = person.handle, occupation_ = occupation: ActionBase.add_event_to_person(dbstate, uistate, track, person_handle, EventType.OCCUPATION, form_event.get_date_object(), occupation_, citation_handle, EventRoleType.PRIMARY)))
+                         lambda dbstate, uistate, track, citation_handle = citation.handle, person_handle = person.handle, occupation_ = occupation: actionutils.add_event_to_person(dbstate, uistate, track, person_handle, EventType.OCCUPATION, form_event.get_date_object(), occupation_, citation_handle, EventRoleType.PRIMARY)))
         return (_("Add Occupation event"), actions)
 
 class ResidenceEvent:
