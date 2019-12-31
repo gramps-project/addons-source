@@ -74,9 +74,10 @@ class FormActions(object):
     Form Action selector.
     """
     RUN_ACTION_COL = 0
-    ACTION_COL = 1
-    DETAIL_COL = 2
-    ACTION_COMMAND_COL = 3
+    RUN_INCONSISTENT_COL = 1
+    ACTION_COL = 2
+    DETAIL_COL = 3
+    ACTION_COMMAND_COL = 4
 
     def __init__(self, dbstate, uistate, track, citation):
         self.dbstate = dbstate
@@ -121,7 +122,7 @@ class FormActions(object):
         box = Gtk.Box()
         top.vbox.pack_start(box, True, True, 5)
 
-        self.model = Gtk.TreeStore(bool, str, str, GObject.TYPE_PYOBJECT)
+        self.model = Gtk.TreeStore(bool, bool, str, str, GObject.TYPE_PYOBJECT)
         self.tree = Gtk.TreeView(model=self.model)
         renderer_text = Gtk.CellRendererText()
         column1 = Gtk.TreeViewColumn(_("Action"))
@@ -129,9 +130,9 @@ class FormActions(object):
         renderer_action_toggle.connect('toggled', self.on_action_toggled)
         column1.pack_start(renderer_action_toggle, False)
         column1.add_attribute(renderer_action_toggle, 'active', self.RUN_ACTION_COL)
+        column1.add_attribute(renderer_action_toggle, 'inconsistent', self.RUN_INCONSISTENT_COL)
         column1.pack_start(renderer_text, True)
         column1.add_attribute(renderer_text, 'text', self.ACTION_COL)
-        column1.set_cell_data_func(renderer_action_toggle, FormActions.action_data_func)
 
         column2 = Gtk.TreeViewColumn(_("Detail"), renderer_text, text=self.DETAIL_COL)
         self.tree.append_column(column1)
@@ -153,10 +154,39 @@ class FormActions(object):
         return top
 
     def on_action_toggled(self, widget, path):
-        self.model[path][self.RUN_ACTION_COL] = not self.model[path][self.RUN_ACTION_COL]
+        row_iter = self.model.get_iter(path)
+        parent = self.model.iter_parent(row_iter)
+        if not parent:
+            # user clicked an action category row. toggle all children
+            new_state = not self.model[row_iter][self.RUN_ACTION_COL]
+            child = self.model.iter_children(row_iter)
+            while child:
+                self.model[child][self.RUN_ACTION_COL] = new_state
+                child = self.model.iter_next(child)
+            # all children are now consistent
+            self.model[row_iter][self.RUN_INCONSISTENT_COL] = False
+        # toggle RUN_ACTION_COL for the row that was clicked
+        self.model[row_iter][self.RUN_ACTION_COL] = not self.model[row_iter][self.RUN_ACTION_COL]
+        if parent:
+            # update the status of the parent
+            (consistent, value) = FormActions.all_children_consistent(self.model, parent, FormActions.RUN_ACTION_COL)
+            self.model[parent][self.RUN_INCONSISTENT_COL] = not consistent
+            self.model[parent][self.RUN_ACTION_COL] = consistent and value
 
-    def action_data_func(col, cell, model, iter, user_data):
-        cell.set_property("visible", model.get_value(iter, FormActions.ACTION_COMMAND_COL))
+    def all_children_consistent(model, parent, col):
+        consistent = True
+        value = False
+        child = model.iter_children(parent)
+        if child:   # handle case of no children
+            # start with value of first child
+            value = model.get_value(child, col)
+            # advance to second child (if there is one)
+            child = model.iter_next(child)
+            # loop over all remaining children until we find an inconsistent value or reach the end
+            while consistent and child:
+                consistent = model.get_value(child, col) == value
+                child = model.iter_next(child)
+        return (consistent, value)
 
     def _populate_model(self):
         form_id = get_form_id(self.source)
@@ -168,9 +198,11 @@ class FormActions(object):
                 action = (action_class[1])()
                 (title, action_details) = action.get_actions(self.dbstate, self.citation, self.event)
                 if action_details:
-                    parent = self.model.append(None, (False, title, None, None))
+                    # add the action category
+                    parent = self.model.append(None, (False, False, title, None, None))
                     for action_detail in action_details:
-                        self.model.append(parent, (False, ) + action_detail)
+                        # add available actions within this category
+                        self.model.append(parent, (False, False) + action_detail)
 
     def run(self):
         """
