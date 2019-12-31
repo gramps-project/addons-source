@@ -28,7 +28,7 @@ from gramps.gen.db import DbTxn
 from gramps.gen.display.name import displayer as name_displayer
 from gramps.gen.display.place import displayer as place_displayer
 from gramps.gen.lib import (Date, Event, EventType, EventRef, EventRoleType,
-                            Person)
+                            Name, Person)
 from gramps.gen.utils.db import get_participant_from_event
 
 #------------------------------------------------------------------------
@@ -67,6 +67,28 @@ class PrimaryNameCitation(ActionBase):
         db = dbstate.db
         person = db.get_person_from_handle(person_handle)
         person.get_primary_name().add_citation(citation_handle)
+        with DbTxn(_("Add Person (%s)") % name_displayer.display(person), db) as trans:
+            db.commit_person(person, trans)
+
+class AlternateName(ActionBase):
+    def __init__(self):
+        ActionBase.__init__(self)
+
+    def get_actions(self, dbstate, citation, form_event):
+        db = dbstate.db
+        actions = []
+        for (person, attr) in ActionBase.get_form_person_attr(db, form_event.get_handle(), 'Name'):
+            alternate = Name()
+            alternate.set_first_name(attr.get_value())
+            alternate.add_citation(citation.handle)
+            actions.append((name_displayer.display(person), attr.get_value(),
+                         lambda dbstate, uistate, track, person_handle = person.handle, alternate_ = alternate: AlternateName.command(dbstate, uistate, track, person_handle, alternate_)))
+        return (_("Add alternate name"), actions)
+
+    def command(dbstate, uistate, track, person_handle, alternate):
+        db = dbstate.db
+        person = db.get_person_from_handle(person_handle)
+        person.add_alternate_name(alternate)
         with DbTxn(_("Add Person (%s)") % name_displayer.display(person), db) as trans:
             db.commit_person(person, trans)
 
