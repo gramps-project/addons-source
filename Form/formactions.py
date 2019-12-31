@@ -58,7 +58,6 @@ from gramps.gen.db import DbTxn
 #------------------------------------------------------------------------
 from editform import find_form_event
 from form import (get_form_id, get_form_type)
-from actionbase import ActionBase
 
 #------------------------------------------------------------------------
 #
@@ -209,16 +208,14 @@ class FormActions(object):
     def _populate_model(self):
         form_id = get_form_id(self.source)
         if self.actions_module:
-            # get all classes defined in actions_module which are a subclass of ActionBase (but exclude ActionBase itself)
-            action_classes = inspect.getmembers(self.actions_module, lambda obj: inspect.isclass(obj) and obj is not ActionBase and issubclass(obj, ActionBase))
-
-            for action_class in action_classes:
-                action = (action_class[1])()
-                (title, action_details) = action.get_actions(self.dbstate, self.citation, self.event)
-                if action_details:
+            # get the all actions that the actions module can provide for the form
+            # because the module is dynamically loaded, use getattr to retrieve the actual function to call
+            all_actions = getattr(self.actions_module, 'get_actions')(self.dbstate, self.citation, self.event)
+            for (title, actions) in all_actions:
+                if actions:
                     # add the action category
                     parent = self.model.append(None, (False, False, title, None, None))
-                    for action_detail in action_details:
+                    for action_detail in actions:
                         # add available actions within this category
                         self.model.append(parent, (False, False) + action_detail)
 

@@ -51,11 +51,21 @@ except ValueError:
 
 _ = _trans.gettext
 
-class PrimaryNameCitation(ActionBase):
-    def __init__(self):
-        ActionBase.__init__(self)
+def get_actions(dbstate, citation, form_event):
+    """
+    return a list of all actions that this module can provide for the given citation and form
+    each list entry is a string, describing the action category, and a list of actions that can be performed.
+    """
+    actions = []
+    actions.append(PrimaryNameCitation.get_actions(dbstate, citation, form_event))
+    actions.append(AlternateName.get_actions(dbstate, citation, form_event))
+    actions.append(BirthEvent.get_actions(dbstate, citation, form_event))
+    actions.append(OccupationEvent.get_actions(dbstate, citation, form_event))
+    actions.append(ResidenceEvent.get_actions(dbstate, citation, form_event))
+    return actions
 
-    def get_actions(self, dbstate, citation, form_event):
+class PrimaryNameCitation:
+    def get_actions(dbstate, citation, form_event):
         db = dbstate.db
         actions = []
         for (person, attr) in ActionBase.get_form_person_attr(db, form_event.get_handle(), 'Name'):
@@ -70,11 +80,8 @@ class PrimaryNameCitation(ActionBase):
         with DbTxn(_("Add Person (%s)") % name_displayer.display(person), db) as trans:
             db.commit_person(person, trans)
 
-class AlternateName(ActionBase):
-    def __init__(self):
-        ActionBase.__init__(self)
-
-    def get_actions(self, dbstate, citation, form_event):
+class AlternateName:
+    def get_actions(dbstate, citation, form_event):
         db = dbstate.db
         actions = []
         for (person, attr) in ActionBase.get_form_person_attr(db, form_event.get_handle(), 'Name'):
@@ -92,11 +99,8 @@ class AlternateName(ActionBase):
         with DbTxn(_("Add Person (%s)") % name_displayer.display(person), db) as trans:
             db.commit_person(person, trans)
 
-class BirthEvent(ActionBase):
-    def __init__(self):
-        ActionBase.__init__(self)
-
-    def get_actions(self, dbstate, citation, form_event):
+class BirthEvent:
+    def get_actions(dbstate, citation, form_event):
         db = dbstate.db
         actions = []
         # if there is no date on the form, no actions can be performed
@@ -124,11 +128,8 @@ class BirthEvent(ActionBase):
                                         lambda dbstate, uistate, track, citation_handle = citation.handle, person_handle = person.handle, birth_date_ = birth_date: ActionBase.add_event_to_person(dbstate, uistate, track, person_handle, EventType.BIRTH, birth_date_, None, citation_handle, EventRoleType.PRIMARY)))
         return (_("Add Birth event"), actions)
 
-class OccupationEvent(ActionBase):
-    def __init__(self):
-        ActionBase.__init__(self)
-
-    def get_actions(self, dbstate, citation, form_event):
+class OccupationEvent:
+    def get_actions(dbstate, citation, form_event):
         db = dbstate.db
         actions = []
         for (person, attr) in ActionBase.get_form_person_attr(db, form_event.get_handle(), 'Occupation'):
@@ -138,11 +139,8 @@ class OccupationEvent(ActionBase):
                          lambda dbstate, uistate, track, citation_handle = citation.handle, person_handle = person.handle, occupation_ = occupation: ActionBase.add_event_to_person(dbstate, uistate, track, person_handle, EventType.OCCUPATION, form_event.get_date_object(), occupation_, citation_handle, EventRoleType.PRIMARY)))
         return (_("Add Occupation event"), actions)
 
-class ResidenceEvent(ActionBase):
-    def __init__(self):
-        ActionBase.__init__(self)
-
-    def get_actions(self, dbstate, citation, form_event):
+class ResidenceEvent:
+    def get_actions(dbstate, citation, form_event):
         db = dbstate.db
         # build a list of all the people referenced in the form. For 1841, all people have a PRIMARY event role
         people = []
