@@ -1,7 +1,7 @@
 #
 # Gramps - a GTK+/GNOME based genealogy program
 #
-# Copyright (C) 2019 Steve Youngs
+# Copyright (C) 2019-2020 Steve Youngs
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -50,6 +50,7 @@ from gramps.gui.managedwindow import ManagedWindow
 from gramps.gen.config import config
 from gramps.gen.datehandler import get_date
 from gramps.gen.db import DbTxn
+from gramps.gui.display import display_help
 
 #------------------------------------------------------------------------
 #
@@ -162,6 +163,7 @@ class FormActions(object):
         slist.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
         box.pack_start(slist, True, True, 5)
 
+        top.add_button(_('_Help'), Gtk.ResponseType.HELP)
         top.add_button(_('_Cancel'), Gtk.ResponseType.CANCEL)
         top.add_button(_('_OK'), Gtk.ResponseType.OK)
         top.set_default_response(Gtk.ResponseType.OK)
