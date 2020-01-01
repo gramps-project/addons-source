@@ -209,7 +209,6 @@ class FormActions(object):
         return (consistent, value)
 
     def _populate_model(self):
-        form_id = get_form_id(self.source)
         if self.actions_module:
             # get the all actions that the actions module can provide for the form
             # because the module is dynamically loaded, use getattr to retrieve the actual function to call
