@@ -407,6 +407,9 @@
     </form>
     <form id='UK1891' type='Census' title='1891 England Census' date='5 Apr 1891'>
         <heading>
+            <_attribute>Administrative County</_attribute>
+        </heading>
+        <heading>
             <_attribute>Civil Parish</_attribute>
         </heading>
         <heading>
@@ -476,6 +479,9 @@
     </form>
     <form id='UK1901' type='Census' title='1901 England Census' date='31 Mar 1901'>
         <heading>
+            <_attribute>Administrative County</_attribute>
+        </heading>
+        <heading>
             <_attribute>Civil Parish</_attribute>
         </heading>
         <heading>
@@ -538,6 +544,18 @@
         </section>
     </form>
     <form id='UK1911' type='Census' title='1911 England Census' date='2 Apr 1911'>
+        <heading>
+            <_attribute>Registration District</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Registration Sub-District</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Enumeration District</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Number of Rooms</_attribute>
+        </heading>
         <section role='Primary' type='multi'>
             <column>
                 <_attribute>Name</_attribute>
