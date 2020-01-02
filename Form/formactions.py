@@ -99,12 +99,12 @@ class FormActions(object):
 
         self.actions_module = None
         # for security reasons provide the full path to the actions_module .py file
-        full_path = os.path.join(os.path.dirname(__file__), '%s.py' % self.form_id)
+        full_path = os.path.join(os.path.dirname(__file__), '{form_id}.py'.format(form_id=self.form_id))
         if os.path.exists(full_path):
             # temporarily modify sys.path so that any import statements in the module get processed correctly
             sys.path.insert(0, os.path.dirname(__file__))
             try:
-                spec = importlib.util.spec_from_file_location('form.actions.%s' % self.form_id, full_path)
+                spec = importlib.util.spec_from_file_location('form.actions.{form_id}'.format(form_id=self.form_id), full_path)
                 self.actions_module = importlib.util.module_from_spec(spec)
                 spec.loader.exec_module(self.actions_module)
             except (ValueError, ImportError, SyntaxError) as err:
