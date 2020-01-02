@@ -79,7 +79,7 @@ class PrimaryNameCitation:
         db = dbstate.db
         person = db.get_person_from_handle(person_handle)
         person.get_primary_name().add_citation(citation_handle)
-        with DbTxn(_("Add Person (%s)") % name_displayer.display(person), db) as trans:
+        with DbTxn(_("Add Person ({name})").format(name=name_displayer.display(person)), db) as trans:
             db.commit_person(person, trans)
 
 class AlternateName:
@@ -91,7 +91,8 @@ class AlternateName:
             alternate = Name()
             alternate.set_first_name(attr.get_value())
             alternate.add_citation(citation.handle)
-            actions.append((name_displayer.display(person), attr.get_value(),
+            detail = _('Given Name: {name}').format(name=attr.get_value())
+            actions.append((name_displayer.display(person), detail,
                          lambda dbstate, uistate, track, person_handle = person.handle, alternate_ = alternate: AlternateName.command(dbstate, uistate, track, person_handle, alternate_)))
         return (_("Add alternate name"), actions)
 
@@ -100,7 +101,7 @@ class AlternateName:
         db = dbstate.db
         person = db.get_person_from_handle(person_handle)
         person.add_alternate_name(alternate)
-        with DbTxn(_("Add Person (%s)") % name_displayer.display(person), db) as trans:
+        with DbTxn(_("Add Person ({name})").format(name=name_displayer.display(person)), db) as trans:
             db.commit_person(person, trans)
 
 class BirthEvent:
@@ -175,7 +176,7 @@ class ResidenceEvent:
         event.set_date_object(event_date_object)
         event.set_place_handle(event_place_handle)
         event.add_citation(citation_handle)
-        with DbTxn(_("Add Event (%s)") % event.get_gramps_id(), db) as trans:
+        with DbTxn(_("Add Event ({id})").format(id=event.get_gramps_id()), db) as trans:
             db.add_event(event, trans)
 
         # and reference the event from all people
@@ -185,5 +186,5 @@ class ResidenceEvent:
             event_ref.set_role(role)
             person = db.get_person_from_handle(person_handle)
             person.add_event_ref(event_ref)
-            with DbTxn(_("Add Event (%s)") % name_displayer.display(person), db) as trans:
+            with DbTxn(_("Add Event ({name})").format(name=name_displayer.display(person)), db) as trans:
                 db.commit_person(person, trans)

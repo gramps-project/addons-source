@@ -53,7 +53,7 @@ def add_event_to_person(dbstate, uistate, track, person_handle, event_type, even
     event.set_description(event_description)
 
     # add to the database
-    with DbTxn(_("Add Event (%s)") % event.get_gramps_id(), db) as trans:
+    with DbTxn(_("Add Event ({0})").format(event.get_gramps_id()), db) as trans:
         db.add_event(event, trans)
     # Add new event reference to the Person record
     event_ref = EventRef()
@@ -61,7 +61,7 @@ def add_event_to_person(dbstate, uistate, track, person_handle, event_type, even
     event_ref.set_role(event_role_type)
     person = db.get_person_from_handle(person_handle)
     person.add_event_ref(event_ref)
-    with DbTxn(_("Add Event (%s)") % name_displayer.display(person), db) as trans:
+    with DbTxn(_("Add Event ({name})").format(name=name_displayer.display(person)), db) as trans:
         db.commit_person(person, trans)
 
 def get_form_person_attr(db, form_event_handle, attr_type):

@@ -109,8 +109,7 @@ class FormActions(object):
                 spec.loader.exec_module(self.actions_module)
             except (ValueError, ImportError, SyntaxError) as err:
                 self.actions_module = None
-                LOG.warning("Form plugin error (from '%s'): %s"
-                                    % (self.form_id, err))
+                LOG.warning(_("Form plugin error (from '{path}'): {error}").format(path=full_path, error=err))
             finally:
                 # must make sure we restore sys.path
                 sys.path.pop(0)
@@ -275,6 +274,7 @@ class FormActions(object):
         """
         Get the title of the dialog.
         """
-        dialog_title = _('Form: %s: %s')  % (self.source.get_title(), self.citation.get_page())
+        dialog_title = _('Form: {source_title}: {event_reference}').format(
+            source_title=self.source.get_title(), event_reference=self.citation.get_page())
 
         return dialog_title
