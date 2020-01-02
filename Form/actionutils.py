@@ -41,6 +41,12 @@ except ValueError:
 
 _ = _trans.gettext
 
+# Constants to define the options for editing the details of an action
+CANNOT_EDIT_DETAIL = 0
+CAN_EDIT_DETAIL = 1
+MUST_EDIT_DETAIL = 2
+
+
 def __init__():
     pass
 

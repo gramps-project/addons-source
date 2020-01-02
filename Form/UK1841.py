@@ -73,7 +73,7 @@ class PrimaryNameCitation:
         db = dbstate.db
         actions = []
         for (person, attr) in actionutils.get_form_person_attr(db, form_event.get_handle(), 'Name'):
-            actions.append((name_displayer.display(person), attr.get_value(),
+            actions.append((name_displayer.display(person), attr.get_value(), actionutils.CANNOT_EDIT_DETAIL,
                             lambda dbstate, uistate, track, citation_handle=citation.handle, person_handle=person.handle: PrimaryNameCitation.command(dbstate, uistate, track, citation_handle, person_handle)))
         return (_("Add Primary Name citation"), actions)
 
@@ -96,7 +96,7 @@ class AlternateName:
             alternate.set_first_name(attr.get_value())
             alternate.add_citation(citation.handle)
             detail = _('Given Name: {name}').format(name=attr.get_value())
-            actions.append((name_displayer.display(person), detail,
+            actions.append((name_displayer.display(person), detail, actionutils.MUST_EDIT_DETAIL,
                             lambda dbstate, uistate, track, person_handle=person.handle, alternate_=alternate: AlternateName.command(dbstate, uistate, track, person_handle, alternate_)))
         return (_("Add alternate name"), actions)
 
@@ -118,28 +118,32 @@ class BirthEvent:
         if form_event.get_date_object():
             for (person, attr) in actionutils.get_form_person_attr(db, form_event.get_handle(), 'Age'):
                 age_string = attr.get_value()
-                if age_string and actionutils.represents_int(age_string):
-                    age = int(age_string)
-                    if age:
-                        birth_date = form_event.get_date_object() - age
-                        birth_date.make_vague()
-                        # Age was rounded down to the nearest five years for those aged 15 or over
-                        # In practice this rule was not always followed by enumerators
-                        if age < 15:
-                            # no adjustment required
-                            birth_date.set_modifier(Date.MOD_ABOUT)
-                        elif not birth_date.is_compound():
-                            # in theory, birth_date will never be compound since 1841 census date was 1841-06-06. Let's handle it anyway.
-                            # create a compound range spanning the possible birth years
-                            birth_range = (birth_date - 5).get_dmy() + \
-                                (False,) + birth_date.get_dmy() + (False,)
-                            birth_date.set(Date.QUAL_NONE, Date.MOD_RANGE, birth_date.get_calendar(
-                            ), birth_range, newyear=birth_date.get_new_year())
-                        birth_date.set_quality(Date.QUAL_CALCULATED)
-                        detail = _('Age: {age}\nDate: {date}').format(
-                            age=age_string, date=date_displayer.display(birth_date))
-                        actions.append((name_displayer.display(person), detail,
-                                        lambda dbstate, uistate, track, citation_handle=citation.handle, person_handle=person.handle, birth_date_=birth_date: actionutils.add_event_to_person(dbstate, uistate, track, person_handle, EventType.BIRTH, birth_date_, None, citation_handle, EventRoleType.PRIMARY)))
+                if age_string:
+                    birth_date = None
+                    if actionutils.represents_int(age_string):
+                        age = int(age_string)
+                        if age:
+                            birth_date = form_event.get_date_object() - age
+                            birth_date.make_vague()
+                            # Age was rounded down to the nearest five years for those aged 15 or over
+                            # In practice this rule was not always followed by enumerators
+                            if age < 15:
+                                # no adjustment required
+                                birth_date.set_modifier(Date.MOD_ABOUT)
+                            elif not birth_date.is_compound():
+                                # in theory, birth_date will never be compound since 1841 census date was 1841-06-06. Let's handle it anyway.
+                                # create a compound range spanning the possible birth years
+                                birth_range = (birth_date - 5).get_dmy() + \
+                                    (False,) + birth_date.get_dmy() + (False,)
+                                birth_date.set(Date.QUAL_NONE, Date.MOD_RANGE, birth_date.get_calendar(
+                                ), birth_range, newyear=birth_date.get_new_year())
+                            birth_date.set_quality(Date.QUAL_CALCULATED)
+                            detail = _('Age: {age}\nDate: {date}').format(
+                                age=age_string, date=date_displayer.display(birth_date))
+                    else:
+                        detail = _('Age: {age}').format(age=age_string)
+                    actions.append((name_displayer.display(person), detail, actionutils.CAN_EDIT_DETAIL if birth_date else actionutils.MUST_EDIT_DETAIL,
+                                   lambda dbstate, uistate, track, citation_handle=citation.handle, person_handle=person.handle, birth_date_=birth_date: actionutils.add_event_to_person(dbstate, uistate, track, person_handle, EventType.BIRTH, birth_date_, None, citation_handle, EventRoleType.PRIMARY)))
         return (_("Add Birth event"), actions)
 
 
@@ -151,7 +155,7 @@ class OccupationEvent:
         for (person, attr) in actionutils.get_form_person_attr(db, form_event.get_handle(), 'Occupation'):
             occupation = attr.get_value()
             if (occupation):
-                actions.append((name_displayer.display(person), _('Description: {occupation}').format(occupation=occupation),
+                actions.append((name_displayer.display(person), _('Description: {occupation}').format(occupation=occupation), actionutils.CAN_EDIT_DETAIL,
                                 lambda dbstate, uistate, track, citation_handle=citation.handle, person_handle=person.handle, occupation_=occupation: actionutils.add_event_to_person(dbstate, uistate, track, person_handle, EventType.OCCUPATION, form_event.get_date_object(), occupation_, citation_handle, EventRoleType.PRIMARY)))
         return (_("Add Occupation event"), actions)
 
@@ -175,7 +179,7 @@ class ResidenceEvent:
                 place = place_displayer.display(
                     db, db.get_place_from_handle(form_event.get_place_handle()))
                 detail = _('Place: {place}').format(place=place)
-            actions.append((get_participant_from_event(db, form_event.get_handle()), detail,
+            actions.append((get_participant_from_event(db, form_event.get_handle()), detail, actionutils.MUST_EDIT_DETAIL,
                             lambda dbstate, uistate, track, citation_handle=citation.handle, people_handles=people: ResidenceEvent.command(dbstate, uistate, track, citation_handle, form_event.get_date_object(), form_event.get_place_handle(), people_handles)))
         return (_("Add Residence event"), actions)
 

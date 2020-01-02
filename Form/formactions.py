@@ -56,6 +56,7 @@ from gramps.gui.managedwindow import ManagedWindow
 # Gramplet modules
 #
 # ------------------------------------------------------------------------
+import actionutils
 from editform import find_form_event
 from form import (get_form_id, get_form_type)
 
@@ -92,7 +93,8 @@ class FormActions(object):
     RUN_INCONSISTENT_COL = 1
     ACTION_COL = 2
     DETAIL_COL = 3
-    ACTION_COMMAND_COL = 4
+    CAN_EDIT_DETAIL_COL = 4  # actionutils.CANNOT_EDIT_DETAIL, actionutils.CAN_EDIT_DETAIL or actionutils.MUST_EDIT_DETAIL
+    ACTION_COMMAND_COL = 5
 
     def __init__(self, dbstate, uistate, track, citation):
         self.dbstate = dbstate
@@ -151,7 +153,8 @@ class FormActions(object):
         box = Gtk.Box()
         top.vbox.pack_start(box, True, True, 5)
 
-        self.model = Gtk.TreeStore(bool, bool, str, str, GObject.TYPE_PYOBJECT)
+        self.model = Gtk.TreeStore(
+            bool, bool, str, str, int, GObject.TYPE_PYOBJECT)
         self.tree = Gtk.TreeView(model=self.model)
         renderer_text = Gtk.CellRendererText()
         column1 = Gtk.TreeViewColumn(_("Action"))
@@ -233,7 +236,7 @@ class FormActions(object):
                 if actions:
                     # add the action category
                     parent = self.model.append(
-                        None, (False, False, title, None, None))
+                        None, (False, False, title, None, actionutils.CANNOT_EDIT_DETAIL, None, False))
                     for action_detail in actions:
                         # add available actions within this category
                         self.model.append(
