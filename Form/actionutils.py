@@ -18,21 +18,21 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # Gramps modules
 #
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 from gramps.gen.db import DbTxn
 from gramps.gen.display.name import displayer as name_displayer
 from gramps.gen.lib import (Event, EventType, EventRef, EventRoleType,
                             Person)
 
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # Internationalisation
 #
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
     _trans = glocale.get_addon_translator(__file__)
@@ -40,6 +40,7 @@ except ValueError:
     _trans = glocale.translation
 
 _ = _trans.gettext
+
 
 def add_event_to_person(dbstate, uistate, track, person_handle, event_type, event_date_object, event_description, citation_handle, event_role_type):
     db = dbstate.db
@@ -64,6 +65,7 @@ def add_event_to_person(dbstate, uistate, track, person_handle, event_type, even
     with DbTxn(_("Add Event ({name})").format(name=name_displayer.display(person)), db) as trans:
         db.commit_person(person, trans)
 
+
 def get_form_person_attr(db, form_event_handle, attr_type):
     """
     Find all persons referencing the form_event and which have an attribute of type attr_type
@@ -79,6 +81,7 @@ def get_form_person_attr(db, form_event_handle, attr_type):
                     if (attr.get_type() == attr_type):
                         result.append((person, attr))
     return result
+
 
 def represents_int(s):
     """

@@ -18,11 +18,11 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # Gramps modules
 #
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 from gramps.gen.datehandler import displayer as date_displayer
 from gramps.gen.db import DbTxn
 from gramps.gen.display.name import displayer as name_displayer
@@ -31,18 +31,18 @@ from gramps.gen.lib import (Date, Event, EventType, EventRef, EventRoleType,
                             Name, Person)
 from gramps.gen.utils.db import get_participant_from_event
 
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # Gramplet modules
 #
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 import actionutils
 
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # Internationalisation
 #
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
     _trans = glocale.get_addon_translator(__file__)
@@ -51,18 +51,21 @@ except ValueError:
 
 _ = _trans.gettext
 
+
 def get_actions(dbstate, citation, form_event):
     """
     return a list of all actions that this module can provide for the given citation and form
     each list entry is a string, describing the action category, and a list of actions that can be performed.
     """
     actions = []
-    actions.append(PrimaryNameCitation.get_actions(dbstate, citation, form_event))
+    actions.append(PrimaryNameCitation.get_actions(
+        dbstate, citation, form_event))
     actions.append(AlternateName.get_actions(dbstate, citation, form_event))
     actions.append(BirthEvent.get_actions(dbstate, citation, form_event))
     actions.append(OccupationEvent.get_actions(dbstate, citation, form_event))
     actions.append(ResidenceEvent.get_actions(dbstate, citation, form_event))
     return actions
+
 
 class PrimaryNameCitation:
     @staticmethod
@@ -71,7 +74,7 @@ class PrimaryNameCitation:
         actions = []
         for (person, attr) in actionutils.get_form_person_attr(db, form_event.get_handle(), 'Name'):
             actions.append((name_displayer.display(person), attr.get_value(),
-                         lambda dbstate, uistate, track, citation_handle = citation.handle, person_handle = person.handle: PrimaryNameCitation.command(dbstate, uistate, track, citation_handle, person_handle)))
+                            lambda dbstate, uistate, track, citation_handle=citation.handle, person_handle=person.handle: PrimaryNameCitation.command(dbstate, uistate, track, citation_handle, person_handle)))
         return (_("Add Primary Name citation"), actions)
 
     @staticmethod
@@ -81,6 +84,7 @@ class PrimaryNameCitation:
         person.get_primary_name().add_citation(citation_handle)
         with DbTxn(_("Add Person ({name})").format(name=name_displayer.display(person)), db) as trans:
             db.commit_person(person, trans)
+
 
 class AlternateName:
     @staticmethod
@@ -93,7 +97,7 @@ class AlternateName:
             alternate.add_citation(citation.handle)
             detail = _('Given Name: {name}').format(name=attr.get_value())
             actions.append((name_displayer.display(person), detail,
-                         lambda dbstate, uistate, track, person_handle = person.handle, alternate_ = alternate: AlternateName.command(dbstate, uistate, track, person_handle, alternate_)))
+                            lambda dbstate, uistate, track, person_handle=person.handle, alternate_=alternate: AlternateName.command(dbstate, uistate, track, person_handle, alternate_)))
         return (_("Add alternate name"), actions)
 
     @staticmethod
@@ -103,6 +107,7 @@ class AlternateName:
         person.add_alternate_name(alternate)
         with DbTxn(_("Add Person ({name})").format(name=name_displayer.display(person)), db) as trans:
             db.commit_person(person, trans)
+
 
 class BirthEvent:
     @staticmethod
@@ -126,13 +131,17 @@ class BirthEvent:
                         elif not birth_date.is_compound():
                             # in theory, birth_date will never be compound since 1841 census date was 1841-06-06. Let's handle it anyway.
                             # create a compound range spanning the possible birth years
-                            birth_range = (birth_date - 5).get_dmy() + (False,) + birth_date.get_dmy() + (False,)
-                            birth_date.set(Date.QUAL_NONE, Date.MOD_RANGE, birth_date.get_calendar(), birth_range, newyear=birth_date.get_new_year())
+                            birth_range = (birth_date - 5).get_dmy() + \
+                                (False,) + birth_date.get_dmy() + (False,)
+                            birth_date.set(Date.QUAL_NONE, Date.MOD_RANGE, birth_date.get_calendar(
+                            ), birth_range, newyear=birth_date.get_new_year())
                         birth_date.set_quality(Date.QUAL_CALCULATED)
-                        detail = _('Age: {age}\nDate: {date}').format(age=age_string, date=date_displayer.display(birth_date))
+                        detail = _('Age: {age}\nDate: {date}').format(
+                            age=age_string, date=date_displayer.display(birth_date))
                         actions.append((name_displayer.display(person), detail,
-                                        lambda dbstate, uistate, track, citation_handle = citation.handle, person_handle = person.handle, birth_date_ = birth_date: actionutils.add_event_to_person(dbstate, uistate, track, person_handle, EventType.BIRTH, birth_date_, None, citation_handle, EventRoleType.PRIMARY)))
+                                        lambda dbstate, uistate, track, citation_handle=citation.handle, person_handle=person.handle, birth_date_=birth_date: actionutils.add_event_to_person(dbstate, uistate, track, person_handle, EventType.BIRTH, birth_date_, None, citation_handle, EventRoleType.PRIMARY)))
         return (_("Add Birth event"), actions)
+
 
 class OccupationEvent:
     @staticmethod
@@ -141,10 +150,11 @@ class OccupationEvent:
         actions = []
         for (person, attr) in actionutils.get_form_person_attr(db, form_event.get_handle(), 'Occupation'):
             occupation = attr.get_value()
-            if (occupation) :
+            if (occupation):
                 actions.append((name_displayer.display(person), _('Description: {occupation}').format(occupation=occupation),
-                         lambda dbstate, uistate, track, citation_handle = citation.handle, person_handle = person.handle, occupation_ = occupation: actionutils.add_event_to_person(dbstate, uistate, track, person_handle, EventType.OCCUPATION, form_event.get_date_object(), occupation_, citation_handle, EventRoleType.PRIMARY)))
+                                lambda dbstate, uistate, track, citation_handle=citation.handle, person_handle=person.handle, occupation_=occupation: actionutils.add_event_to_person(dbstate, uistate, track, person_handle, EventType.OCCUPATION, form_event.get_date_object(), occupation_, citation_handle, EventRoleType.PRIMARY)))
         return (_("Add Occupation event"), actions)
+
 
 class ResidenceEvent:
     @staticmethod
@@ -162,10 +172,11 @@ class ResidenceEvent:
         if people:
             detail = None
             if form_event.get_place_handle():
-                place = place_displayer.display(db, db.get_place_from_handle(form_event.get_place_handle()))
+                place = place_displayer.display(
+                    db, db.get_place_from_handle(form_event.get_place_handle()))
                 detail = _('Place: {place}').format(place=place)
             actions.append((get_participant_from_event(db, form_event.get_handle()), detail,
-                         lambda dbstate, uistate, track, citation_handle = citation.handle, people_handles = people: ResidenceEvent.command(dbstate, uistate, track, citation_handle, form_event.get_date_object(), form_event.get_place_handle(), people_handles)))
+                            lambda dbstate, uistate, track, citation_handle=citation.handle, people_handles=people: ResidenceEvent.command(dbstate, uistate, track, citation_handle, form_event.get_date_object(), form_event.get_place_handle(), people_handles)))
         return (_("Add Residence event"), actions)
 
     @staticmethod

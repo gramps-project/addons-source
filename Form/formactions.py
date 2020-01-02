@@ -21,62 +21,69 @@
 """
 Form action chooser
 """
-#-------------------------------------------------------------------------
+# -------------------------------------------------------------------------
 #
 # Standard Python modules
 #
-#-------------------------------------------------------------------------
+# -------------------------------------------------------------------------
 import logging
 import importlib.util
 import inspect
 import os
 import sys
 
-LOG = logging.getLogger('.form')
-
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # GTK modules
 #
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 from gi.repository import Gtk, GObject
 
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # Gramps modules
 #
-#------------------------------------------------------------------------
-from gramps.gui.managedwindow import ManagedWindow
+# ------------------------------------------------------------------------
 from gramps.gen.config import config
+from gramps.gen.const import GRAMPS_LOCALE as glocale
 from gramps.gen.datehandler import get_date
 from gramps.gen.db import DbTxn
 from gramps.gui.display import display_help
+from gramps.gui.managedwindow import ManagedWindow
 
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # Gramplet modules
 #
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 from editform import find_form_event
 from form import (get_form_id, get_form_type)
 
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
+#
+# Logging
+#
+# ------------------------------------------------------------------------
+LOG = logging.getLogger('.form')
+
+# ------------------------------------------------------------------------
 #
 # Internationalisation
 #
-#------------------------------------------------------------------------
-from gramps.gen.const import GRAMPS_LOCALE as glocale
+# ------------------------------------------------------------------------
 try:
     _trans = glocale.get_addon_translator(__file__)
 except ValueError:
     _trans = glocale.translation
 _ = _trans.gettext
 
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # FormActions class
 #
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
+
+
 class FormActions(object):
     """
     Form Action selector.
@@ -99,17 +106,20 @@ class FormActions(object):
 
         self.actions_module = None
         # for security reasons provide the full path to the actions_module .py file
-        full_path = os.path.join(os.path.dirname(__file__), '{form_id}.py'.format(form_id=self.form_id))
+        full_path = os.path.join(os.path.dirname(
+            __file__), '{form_id}.py'.format(form_id=self.form_id))
         if os.path.exists(full_path):
             # temporarily modify sys.path so that any import statements in the module get processed correctly
             sys.path.insert(0, os.path.dirname(__file__))
             try:
-                spec = importlib.util.spec_from_file_location('form.actions.{form_id}'.format(form_id=self.form_id), full_path)
+                spec = importlib.util.spec_from_file_location(
+                    'form.actions.{form_id}'.format(form_id=self.form_id), full_path)
                 self.actions_module = importlib.util.module_from_spec(spec)
                 spec.loader.exec_module(self.actions_module)
             except (ValueError, ImportError, SyntaxError) as err:
                 self.actions_module = None
-                LOG.warning(_("Form plugin error (from '{path}'): {error}").format(path=full_path, error=err))
+                LOG.warning(_("Form plugin error (from '{path}'): {error}").format(
+                    path=full_path, error=err))
             finally:
                 # must make sure we restore sys.path
                 sys.path.pop(0)
@@ -122,8 +132,10 @@ class FormActions(object):
         width = self._config.get('interface.form-actions-width')
         height = self._config.get('interface.form-actions-height')
         self.top.resize(width, height)
-        horiz_position = self._config.get('interface.form-actions-horiz-position')
-        vert_position = self._config.get('interface.form-actions-vert-position')
+        horiz_position = self._config.get(
+            'interface.form-actions-horiz-position')
+        vert_position = self._config.get(
+            'interface.form-actions-vert-position')
         if horiz_position != -1:
             self.top.move(horiz_position, vert_position)
 
@@ -146,12 +158,15 @@ class FormActions(object):
         renderer_action_toggle = Gtk.CellRendererToggle()
         renderer_action_toggle.connect('toggled', self.on_action_toggled)
         column1.pack_start(renderer_action_toggle, False)
-        column1.add_attribute(renderer_action_toggle, 'active', self.RUN_ACTION_COL)
-        column1.add_attribute(renderer_action_toggle, 'inconsistent', self.RUN_INCONSISTENT_COL)
+        column1.add_attribute(renderer_action_toggle,
+                              'active', self.RUN_ACTION_COL)
+        column1.add_attribute(renderer_action_toggle,
+                              'inconsistent', self.RUN_INCONSISTENT_COL)
         column1.pack_start(renderer_text, True)
         column1.add_attribute(renderer_text, 'text', self.ACTION_COL)
 
-        column2 = Gtk.TreeViewColumn(_("Detail"), renderer_text, text=self.DETAIL_COL)
+        column2 = Gtk.TreeViewColumn(
+            _("Detail"), renderer_text, text=self.DETAIL_COL)
         self.tree.append_column(column1)
         self.tree.append_column(column2)
 
@@ -187,7 +202,8 @@ class FormActions(object):
         self.model[row_iter][self.RUN_ACTION_COL] = not self.model[row_iter][self.RUN_ACTION_COL]
         if parent:
             # update the status of the parent
-            (consistent, value) = FormActions.all_children_consistent(self.model, parent, FormActions.RUN_ACTION_COL)
+            (consistent, value) = FormActions.all_children_consistent(
+                self.model, parent, FormActions.RUN_ACTION_COL)
             self.model[parent][self.RUN_INCONSISTENT_COL] = not consistent
             self.model[parent][self.RUN_ACTION_COL] = consistent and value
 
@@ -211,14 +227,17 @@ class FormActions(object):
         if self.actions_module:
             # get the all actions that the actions module can provide for the form
             # because the module is dynamically loaded, use getattr to retrieve the actual function to call
-            all_actions = getattr(self.actions_module, 'get_actions')(self.dbstate, self.citation, self.event)
+            all_actions = getattr(self.actions_module, 'get_actions')(
+                self.dbstate, self.citation, self.event)
             for (title, actions) in all_actions:
                 if actions:
                     # add the action category
-                    parent = self.model.append(None, (False, False, title, None, None))
+                    parent = self.model.append(
+                        None, (False, False, title, None, None))
                     for action_detail in actions:
                         # add available actions within this category
-                        self.model.append(parent, (False, False) + action_detail)
+                        self.model.append(
+                            parent, (False, False) + action_detail)
 
     def run(self):
         """
@@ -252,11 +271,13 @@ class FormActions(object):
             for action_type_row in self.model:
                 for action_row in action_type_row.iterchildren():
                     if action_row.model.get_value(action_row.iter, self.RUN_ACTION_COL):
-                        actions.append(action_row.model.get_value(action_row.iter, self.ACTION_COMMAND_COL))
+                        actions.append(action_row.model.get_value(
+                            action_row.iter, self.ACTION_COMMAND_COL))
             # run the actions
             for index, action in enumerate(actions):
                 (action)(self.dbstate, self.uistate, self.track)
-                self.uistate.pulse_progressbar((index + 1) / len(actions) * 100)
+                self.uistate.pulse_progressbar(
+                    (index + 1) / len(actions) * 100)
             self.uistate.progress.hide()
             self.uistate.set_busy_cursor(False)
 
