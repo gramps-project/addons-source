@@ -95,6 +95,7 @@ class FormActions(object):
     DETAIL_COL = 3
     CAN_EDIT_DETAIL_COL = 4  # actionutils.CANNOT_EDIT_DETAIL, actionutils.CAN_EDIT_DETAIL or actionutils.MUST_EDIT_DETAIL
     ACTION_COMMAND_COL = 5
+    EDIT_DETAIL_COL = 6
 
     def __init__(self, dbstate, uistate, track, citation):
         self.dbstate = dbstate
@@ -154,7 +155,7 @@ class FormActions(object):
         top.vbox.pack_start(box, True, True, 5)
 
         self.model = Gtk.TreeStore(
-            bool, bool, str, str, int, GObject.TYPE_PYOBJECT)
+            bool, bool, str, str, int, GObject.TYPE_PYOBJECT, bool)
         self.tree = Gtk.TreeView(model=self.model)
         renderer_text = Gtk.CellRendererText()
         column1 = Gtk.TreeViewColumn(_("Action"))
@@ -168,10 +169,20 @@ class FormActions(object):
         column1.pack_start(renderer_text, True)
         column1.add_attribute(renderer_text, 'text', self.ACTION_COL)
 
+        render_edit_detail_toggle = Gtk.CellRendererToggle()
+        render_edit_detail_toggle.connect(
+            "toggled", self.on_edit_detail_toggled)
         column2 = Gtk.TreeViewColumn(
+            _("Edit"), render_edit_detail_toggle, active=self.EDIT_DETAIL_COL)
+        column2.set_cell_data_func(
+            render_edit_detail_toggle, FormActions.detail_data_func)
+
+        column3 = Gtk.TreeViewColumn(
             _("Detail"), renderer_text, text=self.DETAIL_COL)
+
         self.tree.append_column(column1)
         self.tree.append_column(column2)
+        self.tree.append_column(column3)
 
         self.tree.get_selection().set_mode(Gtk.SelectionMode.MULTIPLE)
 
@@ -211,6 +222,18 @@ class FormActions(object):
             self.model[parent][self.RUN_ACTION_COL] = consistent and value
 
     @staticmethod
+    def detail_data_func(col, cell, model, iter, user_data):
+        can_edit_detail = model.get_value(
+            iter, FormActions.CAN_EDIT_DETAIL_COL)
+        cell.set_property("visible", can_edit_detail !=
+                          actionutils.CANNOT_EDIT_DETAIL)
+        cell.set_property("activatable", (can_edit_detail != actionutils.MUST_EDIT_DETAIL) and (
+            model.get_value(iter, FormActions.RUN_ACTION_COL)))
+
+    def on_edit_detail_toggled(self, widget, path):
+        self.model[path][self.EDIT_DETAIL_COL] = not self.model[path][self.EDIT_DETAIL_COL]
+
+    @staticmethod
     def all_children_consistent(model, parent, col):
         consistent = True
         value = False
@@ -240,7 +263,7 @@ class FormActions(object):
                     for action_detail in actions:
                         # add available actions within this category
                         self.model.append(
-                            parent, (False, False) + action_detail)
+                            parent, (False, False) + action_detail + (action_detail[2] == actionutils.MUST_EDIT_DETAIL,))
 
     def run(self):
         """
