@@ -41,6 +41,9 @@ except ValueError:
 
 _ = _trans.gettext
 
+def __init__():
+    pass
+
 
 def add_event_to_person(dbstate, uistate, track, person_handle, event_type, event_date_object, event_description, citation_handle, event_role_type):
     db = dbstate.db
