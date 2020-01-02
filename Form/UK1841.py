@@ -129,8 +129,8 @@ class BirthEvent:
                             birth_range = (birth_date - 5).get_dmy() + (False,) + birth_date.get_dmy() + (False,)
                             birth_date.set(Date.QUAL_NONE, Date.MOD_RANGE, birth_date.get_calendar(), birth_range, newyear=birth_date.get_new_year())
                         birth_date.set_quality(Date.QUAL_CALCULATED)
-
-                        actions.append((name_displayer.display(person), date_displayer.display(birth_date),
+                        detail = _('Age: {age}\nDate: {date}').format(age=age_string, date=date_displayer.display(birth_date))
+                        actions.append((name_displayer.display(person), detail,
                                         lambda dbstate, uistate, track, citation_handle = citation.handle, person_handle = person.handle, birth_date_ = birth_date: actionutils.add_event_to_person(dbstate, uistate, track, person_handle, EventType.BIRTH, birth_date_, None, citation_handle, EventRoleType.PRIMARY)))
         return (_("Add Birth event"), actions)
 
@@ -142,7 +142,7 @@ class OccupationEvent:
         for (person, attr) in actionutils.get_form_person_attr(db, form_event.get_handle(), 'Occupation'):
             occupation = attr.get_value()
             if (occupation) :
-                actions.append((name_displayer.display(person), occupation,
+                actions.append((name_displayer.display(person), _('Description: {occupation}').format(occupation=occupation),
                          lambda dbstate, uistate, track, citation_handle = citation.handle, person_handle = person.handle, occupation_ = occupation: actionutils.add_event_to_person(dbstate, uistate, track, person_handle, EventType.OCCUPATION, form_event.get_date_object(), occupation_, citation_handle, EventRoleType.PRIMARY)))
         return (_("Add Occupation event"), actions)
 
@@ -160,10 +160,11 @@ class ResidenceEvent:
                     people.append((person.get_handle(), EventRoleType.PRIMARY))
         actions = []
         if people:
-            place = None
+            detail = None
             if form_event.get_place_handle():
                 place = place_displayer.display(db, db.get_place_from_handle(form_event.get_place_handle()))
-            actions.append((get_participant_from_event(db, form_event.get_handle()), place,
+                detail = _('Place: {place}').format(place=place)
+            actions.append((get_participant_from_event(db, form_event.get_handle()), detail,
                          lambda dbstate, uistate, track, citation_handle = citation.handle, people_handles = people: ResidenceEvent.command(dbstate, uistate, track, citation_handle, form_event.get_date_object(), form_event.get_place_handle(), people_handles)))
         return (_("Add Residence event"), actions)
 
