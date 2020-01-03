@@ -227,11 +227,14 @@ class FormActions(object):
             iter, FormActions.CAN_EDIT_DETAIL_COL)
         cell.set_property("visible", can_edit_detail !=
                           actionutils.CANNOT_EDIT_DETAIL)
-        cell.set_property("activatable", (can_edit_detail != actionutils.MUST_EDIT_DETAIL) and (
-            model.get_value(iter, FormActions.RUN_ACTION_COL)))
+        cell.set_property("activatable", can_edit_detail != actionutils.MUST_EDIT_DETAIL)
 
     def on_edit_detail_toggled(self, widget, path):
-        self.model[path][self.EDIT_DETAIL_COL] = not self.model[path][self.EDIT_DETAIL_COL]
+        edit_detail = not self.model[path][self.EDIT_DETAIL_COL]
+        self.model[path][self.EDIT_DETAIL_COL] = edit_detail
+        if edit_detail:
+            # as a convenience, if the user turns EDIT_DETAIL_COL on, automatically turn on RUN_ACTION_COL
+            self.model[path][self.RUN_ACTION_COL] = True
 
     @staticmethod
     def all_children_consistent(model, parent, col):
