@@ -26,11 +26,8 @@
 #------------------------------------------------------------------------
 import re
 from gi.repository import GLib
-try:
-    import urllib.request as urllib2
-except ImportError:
-    import urllib2
-from xml.dom import minidom, Node
+from urllib import request
+from xml.dom import minidom
 import sys
 try:
     from html.entities import name2codepoint as n2cp
@@ -51,6 +48,7 @@ except ValueError:
     _trans = glocale.translation
 _ = _trans.gettext
 
+
 #------------------------------------------------------------------------
 #
 # Local functions
@@ -59,23 +57,19 @@ _ = _trans.gettext
 def substitute(match):
     ent = match.group(2)
     if match.group(1) == "#":
-        try:
-            return unichr(int(ent))
-        except:
-            return chr(int(ent))
+        return chr(int(ent))
     else:
         cp = n2cp.get(ent)
         if cp:
-            try:
-                return unichr(cp)
-            except:
-                return chr(cp)
+            return chr(cp)
         else:
             return match.group()
+
 
 def decode_html(string):
     entity_re = re.compile(r"&(#?)(\d{1,5}|\w{1,8});")
     return entity_re.subn(substitute, string)[0]
+
 
 #------------------------------------------------------------------------
 #
@@ -96,28 +90,40 @@ class HeadlineNewsGramplet(Gramplet):
         self.limit = 5
         # Description, Type, URL, Pretty URL for User
         self.feeds = [
-            ("Gramps Wiki Headline News", "wiki", (self.RAW % "HeadlineNews"), (self.URL % "HeadlineNews")),
-            ("Gramps Blog Posts",    "rss", "https://gramps-project.org/introduction-WP/?feed=rss", None),
-            ("Gramps Bugtracker Issues", "rss", "https://gramps-project.org/bugs/issues_rss.php?key=ece7d21451d76337acf776c9a4384773", None),
-            ("Gramps Wiki Changes",  "rss", "https://gramps-project.org/wiki/index.php?title=Special:RecentChanges&feed=rss", None),
-            #("Github Gramps Git Commits",   "atom", "https://github.com/gramps-project/gramps/commits/master.atom", None), #Needs ATOM support to work
-            #("Reddit Gramps - fan-run forum(unofficial)",   "atom", "https://www.reddit.com/r/gramps/.rss", None), #Needs ATOM support to work
-            #("Gramps Blog Comments", "rss", "https://gramps-project.org/introduction-WP/?feed=comments-rss2", None),  # Comments no longer used on blog due to SPAM!
-            ]
+            ("Gramps Wiki Headline News", "wiki",
+             (self.RAW % "HeadlineNews"), (self.URL % "HeadlineNews")),
+            ("Gramps Blog Posts", "rss",
+             "https://gramps-project.org/introduction-WP/?feed=rss", None),
+            ("Gramps Bugtracker Issues", "rss",
+             "https://gramps-project.org/bugs/issues_rss.php?"
+             "key=ece7d21451d76337acf776c9a4384773", None),
+            ("Gramps Wiki Changes", "rss",
+             "https://gramps-project.org/wiki/index.php?title="
+             "Special:RecentChanges&feed=rss", None), ]
+        #    # Needs ATOM support to work
+        #    ("Github Gramps Git Commits", "atom",
+        #     "https://github.com/gramps-project/gramps/commits/master.atom",
+        #     None),
+        #    ("Reddit Gramps - fan-run forum(unofficial)", "atom",
+        #     "https://www.reddit.com/r/gramps/.rss", None),
+        #    # Comments no longer used on blog due to SPAM!
+        #    ("Gramps Blog Comments", "rss",
+        #     "https://gramps-project.org/introduction-WP/?"
+        #     "feed=comments-rss2", None),
         self.set_tooltip(_("Read Gramps headline news"))
-        self.update_interval = (3600 * 1000) * 24 # in miliseconds (Once every 24 hours)
+        self.update_interval = (3600 * 1000) * 24  # in miliseconds (24 hours)
         self.set_use_markup(True)
         self.set_wrap(False)
         self.set_text(_("No Family Tree loaded."))
         self.timer = GLib.timeout_add(self.update_interval,
-                                         self.update_by_timer)
+                                      self.update_by_timer)
 
     def update_by_timer(self):
         """
         Update, and return True to continually update on interval.
         """
         self.update()
-        return True # keep updating!
+        return True  # keep updating!
 
     def main(self):
         self.set_text("Loading Gramps Headline News...\n")
@@ -125,7 +131,9 @@ class HeadlineNewsGramplet(Gramplet):
         yield True
         for (feed_description, feed_type, feed_url, pretty_url) in self.feeds:
             try:
-                fp = urllib2.urlopen(feed_url, timeout=5, cafile=sys.prefix + "/ssl/certs/ca-bundle.trust.crt")
+                req = request.Request(feed_url,
+                                      headers={"User-Agent": "Mozilla/5.0"})
+                fp = request.urlopen(req)
             except:
                 continue
             if feed_type == "wiki":
@@ -134,7 +142,9 @@ class HeadlineNewsGramplet(Gramplet):
                 if fresh:
                     self.clear_text()
                     fresh = False
-                self.render_text("""<u><b>%s</b></u> [<a href="%s">wiki</a>]\n""" % (feed_description, pretty_url))
+                self.render_text(
+                    '<u><b>%s</b></u> [<a href="%s">wiki</a>]\n' %
+                    (feed_description, pretty_url))
                 self.render_text(self.decode_wiki(text).strip())
                 self.append_text("\n")
                 yield True
@@ -143,12 +153,14 @@ class HeadlineNewsGramplet(Gramplet):
                 try:
                     xmldoc = minidom.parse(fp)
                 except Exception as e:
-                    print("Headline News Gramplet Error: RSS parse failed on '%s': %s" % (feed_description, e))
+                    print("Headline News Gramplet Error: RSS parse failed "
+                          "on '%s': %s" % (feed_description, e))
                     continue
                 if fresh:
                     self.clear_text()
                     fresh = False
-                self.render_text("""<u><b>%s</b></u> [<a href="%s">RSS</a>]\n""" % (feed_description, feed_url))
+                self.render_text('<u><b>%s</b></u> [<a href="%s">RSS</a>]\n' %
+                                 (feed_description, feed_url))
                 yield True
                 rootNode = xmldoc.documentElement
                 for node in rootNode.childNodes:
@@ -156,7 +168,8 @@ class HeadlineNewsGramplet(Gramplet):
                     if (node.nodeName == "channel"):
                         count = 1
                         for node2 in node.childNodes:
-                            if count > 5: break
+                            if count > 5:
+                                break
                             if (node2.nodeName == "item"):
                                 title = ""
                                 link = ""
@@ -166,22 +179,27 @@ class HeadlineNewsGramplet(Gramplet):
                                     #print("---> ", item_node.nodeName)
                                     if (item_node.nodeName == "title"):
                                         for text_node in item_node.childNodes:
-                                            if (text_node.nodeType == node.TEXT_NODE):
+                                            if(text_node.nodeType ==
+                                               node.TEXT_NODE):
                                                 title += text_node.nodeValue
                                     elif (item_node.nodeName == "link"):
                                         for text_node in item_node.childNodes:
-                                            if (text_node.nodeType == node.TEXT_NODE):
+                                            if(text_node.nodeType ==
+                                               node.TEXT_NODE):
                                                 link += text_node.nodeValue
                                     elif (item_node.nodeName == "description"):
                                         for text_node in item_node.childNodes:
-                                            if (text_node.nodeType == node.TEXT_NODE):
+                                            if(text_node.nodeType ==
+                                               node.TEXT_NODE):
                                                 desc += text_node.nodeValue
                                 if title:
                                     if link:
                                         self.render_text("   %d. " % count)
-                                        self.link(title, "URL", link, tooltip=link)
+                                        self.link(title, "URL", link,
+                                                  tooltip=link)
                                     else:
-                                        self.render_text("   %d. %s" % (count, title))
+                                        self.render_text("   %d. %s" %
+                                                         (count, title))
                                     self.append_text(" - ")
                                     self.append_text(self.first_line(desc))
                                     self.append_text("\n")
@@ -226,43 +244,43 @@ class HeadlineNewsGramplet(Gramplet):
         while "\n\n\n" in text:
             text = text.replace("\n\n\n", "\n\n")
         text = text.strip()
-        ## Wiki text:
-        ## Templates:
+        # Wiki text:
+        # Templates:
         pattern = '{{.*?}}'
         matches = re.findall(pattern, text)
         for match in matches:
             page = match[2:-2]
             oldtext = match
             if "|" in page:
-                template, heading, body = page.split("|", 2)
+                template, heading, _body = page.split("|", 2)
                 if template.lower() == "release":
                     newtext = "Gramps " + heading + " released.\n\n"
                 else:
-                    #newtext = "<B>%s</B>\n\n" % heading
+                    # newtext = "<B>%s</B>\n\n" % heading
                     newtext = ""
                 text = text.replace(oldtext, newtext)
-        ### Internal wiki URL with title:
+        # Internal wiki URL with title:
         pattern = re.compile(r'\[\[(.*?)\|(.*?)\]\]')
         matches = pattern.findall(text)
         for (g1, g2) in matches:
             text = text.replace("[[%s|%s]]" % (g1, g2),
                                 ("""<A HREF="%s">%s</A>""" %
                                  (self.wiki(g1), self.nice_title(g2))))
-        ### Internal wiki URL:
+        # Internal wiki URL:
         pattern = re.compile(r'\[\[(.*?)\]\]')
         matches = pattern.findall(text)
         for match in matches:
             text = text.replace("[[%s]]" % match,
                                 ("""<A HREF="%s">%s</A>""" %
                                  (self.wiki(match), self.nice_title(match))))
-        ### URL with title:
+        # URL with title:
         pattern = re.compile(r'\[https\:\/\/(.*?) (.*?)\]')
         matches = pattern.findall(text)
         for (g1, g2) in matches:
             text = text.replace("[https://%s %s]" % (g1, g2),
                                 ("""<A HREF="https://%s">%s</A>""" %
                                  (g1, g2)))
-        ### URL:
+        # URL:
         pattern = re.compile(r'\[https\:\/\/(.*?)\]')
         matches = pattern.findall(text)
         count = 1
@@ -271,7 +289,7 @@ class HeadlineNewsGramplet(Gramplet):
                                 ("""<A HREF="https://%s">%s</A>""" %
                                  (g1, ("[%d]" % count))))
             count += 1
-        ### Bold:
+        # Bold:
         pattern = re.compile("'''(.*?)'''")
         matches = pattern.findall(text)
         for match in matches:
