@@ -3871,7 +3871,8 @@ class DynamicWebOptions(MenuReportOptions):
         self.__add_trees_options(menu)
         self.__add_custom_pages_options(menu)
         self.__add_select_pages_options(menu)
-
+        self.help_url = (
+            "https://gramps-project.org/wiki/index.php/DynamicWeb_report")
 
     def __add_report_options(self, menu):
         '''
