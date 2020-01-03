@@ -21,20 +21,16 @@ if locals().get('uistate'):  # don't start GUI if in CLI mode, just ignore
     from gi.repository import Gtk, GdkPixbuf
     import os
     from gramps.gen.const import USER_PLUGINS
-    fname = os.path.join(USER_PLUGINS, 'QuiltView',
-                        'gramps-quilt.svg')
-    factory = Gtk.IconFactory()
-    pixbuf = GdkPixbuf.Pixbuf.new_from_file(fname)
-    iconset = Gtk.IconSet.new_from_pixbuf(pixbuf)
-    factory.add('gramps-quilt', iconset)
-    factory.add_default()
+    fname = os.path.join(USER_PLUGINS, 'QuiltView')
+    icons = Gtk.IconTheme().get_default()
+    icons.append_search_path(fname)
 
 register(VIEW,
     id = 'QuiltView',
     name = _('Quilt Chart'),
     category = ('Ancestry', _('Charts')),
     description =  _('The view shows a quilt chart visualisation of a family tree'),
-    version = '1.0.10',
+    version = '1.0.13',
     gramps_target_version = '5.1',
     status = STABLE,
     fname = 'QuiltView.py',

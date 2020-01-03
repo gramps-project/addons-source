@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"POT-Creation-Date: 2019-11-27 10:32-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -43,4 +43,16 @@ msgstr ""
 
 #: DEWebConnectPack/DEWebPack.py:44
 msgid "Open Library"
+msgstr ""
+
+#: DEWebConnectPack/DEWebPack.py:45
+msgid "Surname map (1890-1996)"
+msgstr ""
+
+#: DEWebConnectPack/DEWebPack.py:46
+msgid "GenWiki"
+msgstr ""
+
+#: DEWebConnectPack/DEWebPack.py:47
+msgid "German digital library"
 msgstr ""

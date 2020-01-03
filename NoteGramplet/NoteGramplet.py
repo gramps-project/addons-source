@@ -141,8 +141,9 @@ class NoteGramplet(Gramplet):
         vbox = Gtk.VBox()
         self.texteditor = StyledTextEditor()
         # create a formatting toolbar
-        vbox.pack_start(self.texteditor.get_toolbar(),
-                        False, False, 0)
+        toolbar, self.action_group = self.texteditor.create_toolbar(
+            self.uistate.uimanager, self.uistate.window)
+        vbox.pack_start(toolbar, False, False, 0)
         vbox.pack_start(self.texteditor, True, True, 0)
         self.flow_changed(False)
         return vbox

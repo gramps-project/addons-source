@@ -1,0 +1,263 @@
+# Italian translation for Gramps PluginManager addon
+#
+# This file is distributed under the same license as the Gramps package.
+#
+# Giansalvo Gusinu <giansalvo.gusinu@gmail.com>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2019-03-12 13:41+0100\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Last-Translator: Giansalvo Gusinu\n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.2.1\n"
+
+#: PluginManager/PluginManager.gpr.py:29
+msgid "Plugin Manager Enhanced"
+msgstr "Gestore plugin avanzato"
+
+#: PluginManager/PluginManager.gpr.py:30
+msgid "An Addon/Plugin Manager with several additional capabilities"
+msgstr ""
+"Un gestore di componenti aggiuntivi/plugin con varie funzionalità addizionali"
+
+#: PluginManager/PluginManager.py:87
+msgid "Plugin Manager - Enhanced"
+msgstr "Gestore dei plugin - avanzato"
+
+#: PluginManager/PluginManager.py:144
+msgid "_Help"
+msgstr "_Aiuto"
+
+#: PluginManager/PluginManager.py:151
+msgid ""
+"Enter search words to filter the addons.\n"
+"All the words must be present somewhere in the row or\n"
+"the addon filename to be included in the search.\n"
+"Word case and order is ignored."
+msgstr ""
+"Inserisce le parole da cercare per filtrare i componenti aggiuntivi.\n"
+"Tutte le parole devono essere presenti da qualche parte nella riga oppure\n"
+"il nome del componente aggiuntivo da includere nella ricerca.\n"
+"Maiuscole/minuscole e l'ordine delle parole sono ignorate."
+
+#: PluginManager/PluginManager.py:155
+msgid "Search..."
+msgstr "Ricerca..."
+
+#: PluginManager/PluginManager.py:161
+msgid "Check for updated addons now"
+msgstr "Cerca adesso i componenti aggiuntivi aggiornati"
+
+#: PluginManager/PluginManager.py:168
+msgid "Reload"
+msgstr "Ricarica"
+
+#: PluginManager/PluginManager.py:174 PluginManager/PluginManager.py:735
+msgid "_Close"
+msgstr "_Chiudi"
+
+#: PluginManager/PluginManager.py:207
+msgid "Restart..."
+msgstr "Riavvia..."
+
+#: PluginManager/PluginManager.py:208
+msgid ""
+"Please Restart Gramps so that your addon changes can be safely completed."
+msgstr ""
+"Riavvia Gramps in modo da completare l'aggiornamento dei componenti "
+"aggiuntivi in maniera sicura."
+
+#: PluginManager/PluginManager.py:284
+msgid "Id"
+msgstr "Id"
+
+#: PluginManager/PluginManager.py:285
+msgid "Plugin name"
+msgstr "Nome del plugin"
+
+#: PluginManager/PluginManager.py:286 PluginManager/PluginManager.py:457
+msgid "Description"
+msgstr "Descrizione"
+
+#: PluginManager/PluginManager.py:287
+msgid "Version"
+msgstr "Versione"
+
+#: PluginManager/PluginManager.py:288
+msgid "Authors"
+msgstr "Autori"
+
+#: PluginManager/PluginManager.py:289
+msgid "Email"
+msgstr "Email"
+
+#: PluginManager/PluginManager.py:290
+msgid "Filename"
+msgstr "Nome del file"
+
+#: PluginManager/PluginManager.py:291
+msgid "Location"
+msgstr "Località"
+
+#: PluginManager/PluginManager.py:296
+msgid "Loaded"
+msgstr "Caricato"
+
+#: PluginManager/PluginManager.py:299
+msgid "Hidden"
+msgstr "Nascosto"
+
+#: PluginManager/PluginManager.py:304 PluginManager/PluginManager.py:699
+msgid "Failed"
+msgstr "Non riuscito"
+
+#: PluginManager/PluginManager.py:377
+msgid "Installation Errors"
+msgstr "Errori di installazione"
+
+#: PluginManager/PluginManager.py:378
+msgid "The following addons had errors: "
+msgstr "I componenti aggiuntivi seguenti presentano errori: "
+
+#: PluginManager/PluginManager.py:400
+msgid "Error"
+msgstr "Errore"
+
+#: PluginManager/PluginManager.py:401
+#, python-format
+msgid "Error removing the '%s' directory, The uninstall may have failed"
+msgstr ""
+"Errore nella cancellazione della cartella '%s'. La disinstallazione potrebbe "
+"non essere andata a buon fine"
+
+#: PluginManager/PluginManager.py:429
+msgid "Type"
+msgstr "Tipo"
+
+#: PluginManager/PluginManager.py:438
+msgid "Status"
+msgstr "Stato"
+
+#: PluginManager/PluginManager.py:441
+msgid ""
+"'*' items are supplied by 3rd party authors,\n"
+"<s>strikeout</s> items are hidden"
+msgstr ""
+"Gli elementi '*' sono forniti da autori di terze parti,\n"
+"gli elementi <s>barrati</s> sono nascosti"
+
+#: PluginManager/PluginManager.py:449
+msgid "Name"
+msgstr "Nome"
+
+#: PluginManager/PluginManager.py:472
+msgid "Info"
+msgstr "Informazioni"
+
+#: PluginManager/PluginManager.py:475 PluginManager/PluginManager.py:586
+msgid "Hide"
+msgstr "Nascondi"
+
+#: PluginManager/PluginManager.py:478 PluginManager/PluginManager.py:600
+msgid "Install"
+msgstr "Installa"
+
+#: PluginManager/PluginManager.py:481
+msgid "Edit"
+msgstr "Modifica"
+
+#: PluginManager/PluginManager.py:483
+msgid "Load"
+msgstr "Carica"
+
+#: PluginManager/PluginManager.py:494
+msgid "Show hidden items"
+msgstr "Mostra gli elementi nascosti"
+
+#: PluginManager/PluginManager.py:502
+msgid "Show Built-in items"
+msgstr "Mostra gli elementi interni"
+
+#: PluginManager/PluginManager.py:509
+msgid "* indicates 3rd party addon"
+msgstr "* indica i componenti aggiuntivi di terze parti"
+
+#: PluginManager/PluginManager.py:514
+msgid "Plugins"
+msgstr "Plugin"
+
+#: PluginManager/PluginManager.py:584
+msgid "Unhide"
+msgstr "Mostra"
+
+#: PluginManager/PluginManager.py:603
+msgid "Uninstall"
+msgstr "Disinstalla"
+
+#: PluginManager/PluginManager.py:613
+msgid "Checking Addons Failed"
+msgstr "Il controllo dei componenti aggiuntivi non è riuscito"
+
+#: PluginManager/PluginManager.py:614
+msgid "The addon repository appears to be unavailable. Please try again later."
+msgstr ""
+"Il repository dei componenti aggiuntivi non è disponibile. Riprovare più "
+"tardi."
+
+#: PluginManager/PluginManager.py:628
+msgid ""
+"3rd party addons are not shown until the addons update list is downloaded.  "
+"Would you like to check for updated addons now?"
+msgstr ""
+"I componenti aggiuntivi di terze parti non sono mostrati fino allo "
+"scaricamento dell'elenco aggiornato dei componenti aggiuntivi. Si desidera "
+"verificare adesso la presenza di componenti aggiuntivi aggiornati?"
+
+#: PluginManager/PluginManager.py:631
+msgid "Yes"
+msgstr "Sì"
+
+#: PluginManager/PluginManager.py:631
+msgid "No"
+msgstr "No"
+
+#: PluginManager/PluginManager.py:674
+msgid "*Available"
+msgstr "*Disponibile"
+
+#: PluginManager/PluginManager.py:688
+msgid "Built-in"
+msgstr "Interno"
+
+#: PluginManager/PluginManager.py:693
+msgid "*Installed"
+msgstr "*Installato"
+
+#: PluginManager/PluginManager.py:702
+msgid "Update Available"
+msgstr "Aggiornamento disponibile"
+
+#: PluginManager/PluginManager.py:729
+#, python-format
+msgid "%(str1)s: %(str2)s"
+msgstr "%(str1)s: %(str2)s"
+
+#: PluginManager/PluginManager.py:729
+msgid "Detailed Info"
+msgstr "Informazioni dettagliate"
+
+#: PluginManager/PluginManager.py:828
+msgid "Updated"
+msgstr "Aggiornato"
+
+#: PluginManager/PluginManager.py:839
+msgid "updates|New"
+msgstr "Nuovo"

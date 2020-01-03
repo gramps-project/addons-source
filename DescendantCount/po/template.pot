@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"POT-Creation-Date: 2019-10-21 08:49+1100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,15 +18,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: DescendantCount/DescendantCount.gpr.py:22
-msgid "Descendant Count Gramplet"
+#: DescendantCount/DescendantCount.gpr.py:31
+msgid "Descendant Count"
 msgstr ""
 
 #: DescendantCount/DescendantCount.gpr.py:23
 msgid "Gramplet for showing people and descendant counts"
-msgstr ""
-
-#: DescendantCount/DescendantCount.gpr.py:31
-msgid "Descendant Count"
 msgstr ""
 
 #: DescendantCount/DescendantCount.py:87

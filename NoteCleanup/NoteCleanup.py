@@ -26,7 +26,6 @@
 # Python modules
 #
 #-------------------------------------------------------------------------
-import os
 import io
 import re
 import html
@@ -46,7 +45,7 @@ from gi.repository import Gdk
 #-------------------------------------------------------------------------
 from gramps.gui.plug import tool
 from gramps.gui.managedwindow import ManagedWindow
-from gramps.gui.utils import ProgressMeter, open_file_with_default_application
+from gramps.gui.utils import ProgressMeter
 from gramps.gen.db import DbTxn
 from gramps.gui.dialog import WarningDialog
 from gramps.gui.editors import EditNote
@@ -76,6 +75,7 @@ except ValueError:
     _trans = glocale.translation
 _ = _trans.gettext
 
+
 #-------------------------------------------------------------------------
 #
 # Media Verify
@@ -104,7 +104,8 @@ class NoteCleanup(tool.Tool, ManagedWindow):
         vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         hbox = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
         hbox.set_homogeneous(True)
-        rvbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=2, width_request=400)
+        rvbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=2,
+                        width_request=400)
         vbox.pack_start(hbox, True, True, 5)
         self.notebook = Gtk.Notebook()
         self.notebook.set_scrollable(True)
@@ -116,22 +117,22 @@ class NoteCleanup(tool.Tool, ManagedWindow):
 
         bbox = Gtk.ButtonBox(orientation=Gtk.Orientation.HORIZONTAL)
         vbox.pack_start(bbox, False, False, 5)
-        close = Gtk.Button(_('Close'))
+        close = Gtk.Button(label=_('Close'))
         close.set_tooltip_text(_('Close the Note Cleanup Tool'))
         close.connect('clicked', self.close)
-        save = Gtk.Button(_('Save All'))
+        save = Gtk.Button(label=_('Save All'))
         save.set_tooltip_text(_('Save All Changes'))
         save.connect('clicked', self.saveit)
-        search = Gtk.Button(_('Search'))
+        search = Gtk.Button(label=_('Search'))
         search.set_tooltip_text(_('Search for Untidy Notes'))
         search.connect('clicked', self.cleanup)
-        testnote = Gtk.Button(_('Generate Test Notes'))
+        testnote = Gtk.Button(label=_('Generate Test Notes'))
         testnote.set_tooltip_text(_(
             'Generate Test notes in range N99996-N99999.\n'
             'These are added to your database, so you may want to work with'
             ' a test database or delete them later.'))
         testnote.connect('clicked', self.gentest)
-        export = Gtk.Button(_('Export'))
+        export = Gtk.Button(label=_('Export'))
         export.set_tooltip_text(_('Export the results to a text file'))
         export.connect('clicked', self.export_results)
         bbox.add(search)
@@ -147,16 +148,19 @@ class NoteCleanup(tool.Tool, ManagedWindow):
         tbw.add(self.tb)
         rvbox.pack_start(tbw, True, True, 0)
         self.ta = StyledTextEditor()
+        self.ta.set_transient_parent(window)
         self.ta.set_editable(True)
         self.ta.set_wrap_mode(Gtk.WrapMode.WORD)
         taw = Gtk.ScrolledWindow()
         taw.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
         taw.add(self.ta)
-        tat=self.ta.get_toolbar()
+        # tat=self.ta.get_toolbar()
+        tat, self.action_group = self.ta.create_toolbar(
+            uistate.uimanager, window)
         tat.set_icon_size(Gtk.IconSize.SMALL_TOOLBAR)
-        tatb=tat.get_nth_item(5)
+        tatb = tat.get_nth_item(5)
         tat.remove(tatb)
-        tatb=tat.get_nth_item(5)
+        tatb = tat.get_nth_item(5)
         tat.remove(tatb)
         rvbox.pack_start(tat, False, False, 0)
         rvbox.pack_start(taw, True, True, 0)
@@ -168,17 +172,17 @@ class NoteCleanup(tool.Tool, ManagedWindow):
         self.show()
 
         self.show_tabs()
-        WarningDialog(self.window_name,
-              _("Please back up your database before running this tool.\n\n"
+        WarningDialog(
+            self.window_name,
+            _("Please back up your database before running this tool.\n\n"
               "Start the tool by pressing the 'Search' button, then review"
               " the results.\n"
               "When satisifed press the 'Save All' button to save your work.\n"
               "You may export a summary list of the notes that"
               " were found using the 'Export' button."),
-                self.window)
+            self.window)
 
-
-    def build_menu_names(self, obj):
+    def build_menu_names(self, _obj):
         return (_('Clean up Notes'),
                 self.window_name)
 
@@ -206,10 +210,10 @@ class NoteCleanup(tool.Tool, ManagedWindow):
         scrolled_window.add(view)
         self.models.append(model)
         self.views.append(view)
-        label = Gtk.Label(title)
+        label = Gtk.Label(label=title)
         self.notebook.append_page(scrolled_window, label)
 
-    def button_press(self, view, event, page):
+    def button_press(self, view, event, _page):
         """
         Called when a button is pressed on a treeview.
         """
@@ -219,8 +223,7 @@ class NoteCleanup(tool.Tool, ManagedWindow):
                 value = model.get_value(iter_, 1)
                 self.edit(value)
 
-
-    def selection_changed(self, selection, page):
+    def selection_changed(self, selection, _page):
         """
         Called when selection changed within the notebook tab
         """
@@ -229,7 +232,7 @@ class NoteCleanup(tool.Tool, ManagedWindow):
             value = model.get_value(iter_, 1)
             self.showit(value)
 
-    def pagesw(self, notebook, page, pagenum):
+    def pagesw(self, _notebook, _page, pagenum):
         """
         called when we switch tabs in the notebook
         """
@@ -239,8 +242,7 @@ class NoteCleanup(tool.Tool, ManagedWindow):
             value = model.get_value(iter_, 1)
             self.showit(value)
 
-
-    def edit(self,indx):
+    def edit(self, indx):
         """
         Edit the note object with the given handle.
         """
@@ -263,28 +265,28 @@ class NoteCleanup(tool.Tool, ManagedWindow):
 
     def update_changelist(self):
         if self.indx != []:
-            y=self.ta.get_text()
-            z=self.changelist[self.indx][2]
+            y = self.ta.get_text()
+            z = self.changelist[self.indx][2]
             if y.serialize() != z.serialize():    # if y != z: doesn't work!!!
-                x=(self.changelist[self.indx][0],\
-                    self.changelist[self.indx][1], y)
+                x = (self.changelist[self.indx][0],
+                     self.changelist[self.indx][1], y)
                 self.changelist[self.indx] = x
 
-    def gentest(self, button):
+    def gentest(self, _button):
         """
         Create some test notes.
         """
         with DbTxn(_("Cleanup Test Notes"), self.db) as trans:
             gid = 'N99996'
-            text='A note with &lt;a target=new href=&quot;'\
-                'http://seekingmichigan.org&quot;&gt;'\
-                'http://seekingmichigan.org&lt;/a&gt;.'
+            text = 'A note with &lt;a target=new href=&quot;'\
+                   'http://seekingmichigan.org&quot;&gt;'\
+                   'http://seekingmichigan.org&lt;/a&gt;.'
             self.add_note(gid, text, trans)
             gid = 'N99997'
-            text='http://www.google.com'
+            text = 'http://www.google.com'
             self.add_note(gid, text, trans)
             gid = 'N99998'
-            text= 'Quick test of <i>italics</i>, <b>bold</b>, <u>underline'\
+            text = 'Quick test of <i>italics</i>, <b>bold</b>, <u>underline'\
                 '</u>, and <a href="http://www.google.com">Google</a>.'
             self.add_note(gid, text, trans)
             gid = 'N99999'
@@ -304,8 +306,7 @@ class NoteCleanup(tool.Tool, ManagedWindow):
             msg = _("Add Test Note")
         trans.set_description(msg)
 
-
-    def export_results(self, button):
+    def export_results(self, _button):
         """
         Export the results to a text file.
         """
@@ -333,8 +334,8 @@ class NoteCleanup(tool.Tool, ManagedWindow):
                     self.export_page(report_file, title, model)
         except IOError as err:
             WarningDialog(self.window_name,
-                          _('Error when writing the report: %s') % err.strerror,
-                            self.window)
+                          _('Error when writing the report: %s') %
+                          err.strerror, self.window)
 
     def export_page(self, report_file, title, model):
         """
@@ -366,17 +367,18 @@ class NoteCleanup(tool.Tool, ManagedWindow):
         for model in self.models:
             model.clear()
         self.changelist = []
-        self.indx =[]
-        self.tb.set_text(StyledText(_('\n\n'
-            'Notes selected on the left pane are shown Before cleanup in'
+        self.indx = []
+        self.tb.set_text(StyledText(_(
+            '\n\nNotes selected on the left pane are shown Before cleanup in'
             ' this box.')))
-        self.ta.set_text(StyledText(_('\n\n'
+        self.ta.set_text(StyledText(_(
+            '\n\n'
             'Notes selected on the left pane are shown After cleanup in this'
             ' box.\n'
             'If you wish to make changes, you can make them here and'
             ' use the style controls in the toolbar above.')))
 
-    def saveit(self, button):
+    def saveit(self, _button):
         """
         Commit the changes to the database
         """
@@ -401,8 +403,7 @@ class NoteCleanup(tool.Tool, ManagedWindow):
         self.show_tabs()
         progress.close()
 
-
-    def cleanup(self, button):
+    def cleanup(self, _button):
         """
         Cleanup Notes.
         """
@@ -419,7 +420,7 @@ class NoteCleanup(tool.Tool, ManagedWindow):
             g_id = note.gramps_id
             stext = note.get_styledtext()
             optype = -1
-            ## find the notes and do cleanup
+            # find the notes and do cleanup
             if not stext.tags:
                 result = self.convert_to_styled(stext.string)
                 indx = len(self.changelist)
@@ -432,13 +433,16 @@ class NoteCleanup(tool.Tool, ManagedWindow):
                 while True:
                     if optype == ISSUE:
                         # make list of notes with errors
-                        self.models[ISSUE].append((self.preview(stext, g_id), indx))
+                        self.models[ISSUE].append((self.preview(stext, g_id),
+                                                   indx))
                     elif stext.string != result.string:
                         # Make list of edited notes
-                        self.models[CLEANED].append((self.preview(stext, g_id), indx))
+                        self.models[CLEANED].append((self.preview(stext, g_id),
+                                                     indx))
                     elif optype == LINK:
                         # make list of notes with only links
-                        self.models[LINK].append((self.preview(stext, g_id), indx))
+                        self.models[LINK].append((self.preview(stext, g_id),
+                                                  indx))
                     else:
                         break
                     self.changelist.append((handle, stext, result))
@@ -498,9 +502,9 @@ class NoteCleanup(tool.Tool, ManagedWindow):
             ('SKIP',    r'<ul>|</ul>|<li>|<p>|</tr>|<td>|</td>|<th>|'\
                         r'</a>|</i>|</b>|</u>'),
             # Unimplemented HTTP tags
-            ('UNKNWN',  r'<.*?>'),
-            ]
-        tok_regex = '|'.join('(?P<%s>%s)' % pair for pair in token_specification)
+            ('UNKNWN',  r'<.*?>'), ]
+        tok_regex = '|'.join('(?P<%s>%s)' % pair for
+                             pair in token_specification)
 
         prev = 0
         chunkpos = 0
@@ -525,21 +529,24 @@ class NoteCleanup(tool.Tool, ManagedWindow):
                 chunks.append(data[prev:in_start] + '\n')
                 chunkpos += (in_start - prev + 1)
             elif kind == 'ITALIC':
-                chunks.append(data[prev:in_start] + data[(in_start + 3):in_end])
+                chunks.append(data[prev:in_start] +
+                              data[(in_start + 3):in_end])
                 newpos = chunkpos - prev + in_end - 3
                 italics.append((chunkpos + in_start - prev, newpos))
                 chunkpos = newpos
             elif kind == 'BOLD':
-                chunks.append(data[prev:in_start] + data[(in_start + 3):in_end])
+                chunks.append(data[prev:in_start] +
+                              data[(in_start + 3):in_end])
                 newpos = chunkpos - prev + in_end - 3
                 bolds.append((chunkpos + in_start - prev, newpos))
                 chunkpos = newpos
             elif kind == 'UNDER':
-                chunks.append(data[prev:in_start] + data[(in_start + 3):in_end])
+                chunks.append(data[prev:in_start] +
+                              data[(in_start + 3):in_end])
                 newpos = chunkpos - prev + in_end - 3
                 unders.append((chunkpos + in_start - prev, newpos))
                 chunkpos = newpos
-            elif kind == 'HTTP':      #HTTP found
+            elif kind == 'HTTP':      # HTTP found
                 st_txt = mo.group('HTTP')
                 oldpos = chunkpos + in_start - prev
                 chunks.append(data[prev:in_start] + st_txt)
@@ -547,12 +554,12 @@ class NoteCleanup(tool.Tool, ManagedWindow):
                 st_txt = st_txt.rstrip(' .:)')
                 newpos = oldpos + len(st_txt)
                 links.append((st_txt, oldpos, newpos))
-            elif kind == 'HREF':      #HREF found
+            elif kind == 'HREF':      # HREF found
                 st_txt = mo.group('HREFT')
                 lk_txt = mo.group('HREFL')
                 # fix up relative links emmitted by ancestry.com
-                if lk_txt.startswith("/search/dbextra") \
-                            or lk_txt.startswith("/handler/domain"):
+                if(lk_txt.startswith("/search/dbextra") or
+                   lk_txt.startswith("/handler/domain")):
                     lk_txt = "http://search.ancestry.com" + lk_txt
                 oldpos = chunkpos + in_start - prev
                 # if tag (minus any trailing '.') is substring of link
@@ -564,15 +571,15 @@ class NoteCleanup(tool.Tool, ManagedWindow):
                 chunks.append(data[prev:in_start] + st_txt)
                 chunkpos += (in_start - prev + len(st_txt))
                 links.append((lk_txt, oldpos, newpos))
-            elif kind == 'TBLCELL' or kind == 'TBLHDRC':      #Table cell break
+            elif kind == 'TBLCELL' or kind == 'TBLHDRC':     # Table cell break
                 chunks.append(data[prev:in_start] + ':  ')
                 chunkpos += (in_start - prev + 3)
-            elif kind == 'TBLHDRB':      #header start
+            elif kind == 'TBLHDRB':      # header start
                 if prev != in_start:
                     chunks.append(data[prev:in_start])
                     chunkpos += (in_start - prev)
                 bldpos = chunkpos
-            elif kind == 'TBLHDRE':      #Header end
+            elif kind == 'TBLHDRE':      # Header end
                 if bldpos == -1:
                     if prev != in_start:
                         chunks.append(data[prev:in_end])
@@ -593,7 +600,8 @@ class NoteCleanup(tool.Tool, ManagedWindow):
                     reds.append((chunkpos + in_start - prev, newpos))
                     chunkpos = newpos
                 print('Unexpected or unimplemented HTML tag', st_txt)
-            else: print("shouldn't get here")
+            else:
+                print("shouldn't get here")
 
             prev = in_end
         chunks.append(data[prev:])
@@ -601,16 +609,21 @@ class NoteCleanup(tool.Tool, ManagedWindow):
         result = ''.join(chunks)
         tags = []
         for link in links:
-            tags.append(StyledTextTag(StyledTextTagType.LINK, link[0], [(link[1], link[2])]))
+            tags.append(StyledTextTag(StyledTextTagType.LINK, link[0],
+                                      [(link[1], link[2])]))
         if italics:
-            tags.append(StyledTextTag(StyledTextTagType.ITALIC, False , italics))
+            tags.append(StyledTextTag(StyledTextTagType.ITALIC, False ,
+                                      italics))
         if bolds:
             tags.append(StyledTextTag(StyledTextTagType.BOLD, False , bolds))
         if unders:
-            tags.append(StyledTextTag(StyledTextTagType.UNDERLINE, False , unders))
+            tags.append(StyledTextTag(StyledTextTagType.UNDERLINE, False ,
+                                      unders))
         if reds:
-            tags.append(StyledTextTag(StyledTextTagType.HIGHLIGHT, '#FFFF00' , reds))
-        return StyledText(result,tags)
+            tags.append(StyledTextTag(StyledTextTagType.HIGHLIGHT, '#FFFF00',
+                                      reds))
+        return StyledText(result, tags)
+
 
 #------------------------------------------------------------------------
 #
@@ -623,6 +636,7 @@ class MyWindow(Gtk.Window):
         self.uistate = uistate
         self.track = track
         Gtk.Window.__init__(self)
+        self.set_position(Gtk.WindowPosition.CENTER_ON_PARENT)
 
 
 #------------------------------------------------------------------------

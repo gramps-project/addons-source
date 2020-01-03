@@ -14,25 +14,21 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-17 19:00+0200\n"
-"PO-Revision-Date: 2018-04-11 19:24+0100\n"
-"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
+"POT-Creation-Date: 2019-10-21 08:49+1100\n"
+"PO-Revision-Date: 2019-10-24 14:26+0200\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 2.0\n"
+"X-Generator: Poedit 2.2.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ClockGramplet/ClockGramplet.gpr.py:3
-msgid "Clock Gramplet"
-msgstr "Uhren Gramplet"
+#: ClockGramplet/ClockGramplet.gpr.py:3 ClockGramplet/ClockGramplet.gpr.py:8
+msgid "Clock"
+msgstr "Uhr"
 
 #: ClockGramplet/ClockGramplet.gpr.py:4
 msgid "Gramplet for demonstrating Cairo graphics"
 msgstr "Gramplet zum demonstrieren der Cairo Grafik"
-
-#: ClockGramplet/ClockGramplet.gpr.py:8
-msgid "Clock"
-msgstr "Uhr"

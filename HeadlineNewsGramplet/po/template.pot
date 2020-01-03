@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"POT-Creation-Date: 2019-09-14 17:06+1000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,15 +18,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:3
-msgid "Headline News Gramplet"
+#: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:10
+msgid "Headline News"
 msgstr ""
 
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:4
 msgid "Gramplet that shows the latest Gramps news"
-msgstr ""
-
-#: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:10
-msgid "Headline News"
 msgstr ""
 
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.py:107

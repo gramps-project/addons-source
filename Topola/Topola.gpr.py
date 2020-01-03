@@ -1,0 +1,15 @@
+register(TOOL,
+         id = 'Topola',
+         name =_('Interactive Family Tree'),
+         description = _('Opens an interactive tree in the browser'),
+         status = STABLE,
+         version = '1.0.2',
+         fname = 'topola.py',
+         gramps_target_version = '5.1',
+         authors = ['Przemek Więch'],
+         authors_email = ['pwiech@gmail.com'],
+         category = TOOL_ANAL,
+         toolclass = 'Topola',
+         optionclass = 'TopolaOptions',
+         tool_modes = [TOOL_MODE_GUI]
+)

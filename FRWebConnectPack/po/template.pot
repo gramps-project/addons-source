@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"POT-Creation-Date: 2019-12-24 11:34-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,30 +25,34 @@ msgstr ""
 msgid "Collection of Web sites for the FR (requires libwebconnect)"
 msgstr ""
 
-#: FRWebConnectPack/FRWebPack.py:40
-msgid "French cultural ministry"
+#: FRWebConnectPack/FRWebPack.py:41
+msgid "Cultural ministry (France)"
 msgstr ""
 
-#: FRWebConnectPack/FRWebPack.py:41
+#: FRWebConnectPack/FRWebPack.py:42
 msgid "Genealogical bank"
 msgstr ""
 
-#: FRWebConnectPack/FRWebPack.py:43
+#: FRWebConnectPack/FRWebPack.py:44
 msgid "OrigineFile (Quebec)"
 msgstr ""
 
-#: FRWebConnectPack/FRWebPack.py:47
-msgid "FamilySearch.org"
-msgstr ""
-
-#: FRWebConnectPack/FRWebPack.py:48
+#: FRWebConnectPack/FRWebPack.py:50
 msgid "Cyber genealogy"
 msgstr ""
 
-#: FRWebConnectPack/FRWebPack.py:54
-msgid "Hathi Trust Digital Library"
+#: FRWebConnectPack/FRWebPack.py:53
+msgid "RetroNews (Bnf)"
 msgstr ""
 
-#: FRWebConnectPack/FRWebPack.py:55
-msgid "Open Library"
+#: FRWebConnectPack/FRWebPack.py:58
+msgid "Hathi Trust Digital Library (fr)"
+msgstr ""
+
+#: FRWebConnectPack/FRWebPack.py:59
+msgid "Open Library (fr)"
+msgstr ""
+
+#: FRWebConnectPack/FRWebPack.py:60
+msgid "Belgium's Archives"
 msgstr ""

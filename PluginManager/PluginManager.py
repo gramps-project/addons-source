@@ -44,7 +44,7 @@ import shutil
 from gi.repository import GObject  # pylint: disable=import-error
 from gi.repository import Gdk      # pylint: disable=import-error
 from gi.repository import Gtk      # pylint: disable=import-error
-
+from gi.repository.GLib import markup_escape_text
 #-------------------------------------------------------------------------
 #
 # gramps modules
@@ -520,13 +520,13 @@ class PluginStatus(tool.Tool, ManagedWindow):
         if event.type == Gdk.EventType._2BUTTON_PRESS and event.button == 1:
             self.__info(obj, self._list_reg)
 
-    def filter_str_changed(self, widget):
+    def filter_str_changed(self, _widget):
         """
         Called when filter string is changed.
         """
         self.__rebuild_reg_list(rescan=False)
 
-    def _apply_filter(self, model, tr_iter, data):
+    def _apply_filter(self, model, tr_iter, _data):
         """
         Check if we need hide or show row acording the filter.
         This is for "self._tree_filter.set_visible_func".
@@ -569,7 +569,7 @@ class PluginStatus(tool.Tool, ManagedWindow):
             self._list_reg.scroll_to_cell(path, None, True, 0.5, 0)
             self._cursor_changed(None)
 
-    def _cursor_changed(self, obj):
+    def _cursor_changed(self, _obj):
         model, node = self._selection_reg.get_selected()
         if not node:
             return
@@ -676,8 +676,10 @@ class PluginStatus(tool.Tool, ManagedWindow):
                 if hidden:
                     status_str = "<s>%s</s>" % status_str
                     status |= HIDDEN
-                row = [_(plugin_dict["t"]), status_str, plugin_dict["n"],
-                       plugin_dict["d"], plugin_dict["i"], status]
+                row = [_(plugin_dict["t"]), status_str,
+                       markup_escape_text(plugin_dict["n"]),
+                       markup_escape_text(plugin_dict["d"]),
+                       plugin_dict["i"], status]
                 addons.append(row)
 
         fail_list = self._pmgr.get_fail_list()
@@ -705,14 +707,16 @@ class PluginStatus(tool.Tool, ManagedWindow):
                 if hidden:
                     status_str = "<s>%s</s>" % status_str
                     status |= HIDDEN
-                addons.append([typestr, status_str, pdata.name,
-                               pdata.description, pdata.id, status])
+                addons.append([typestr, status_str,
+                               markup_escape_text(pdata.name),
+                               markup_escape_text(pdata.description),
+                               pdata.id, status])
         for row in sorted(addons, key=itemgetter(R_TYPE, R_NAME)):
             if self._show_hidden or (row[R_ID] not in self.hidden):
                 self._model_reg.append(row)
         self._selection_reg.select_path('0')
 
-    def build_menu_names(self, obj):
+    def build_menu_names(self, _obj):
         return (TITLE, ' ')
 
 
@@ -749,7 +753,7 @@ class PluginInfo(ManagedWindow):
         self.window.get_content_area().add(scrolled_window)
         self.show()
 
-    def build_menu_names(self, obj):
+    def build_menu_names(self, _obj):
         return (self.name, None)
 
 
@@ -879,5 +883,4 @@ class PluginManagerOptions(tool.ToolOptions):
             'show_builtins': ("=0/1", "Show builtin Plugins",
                               ["Do not show builtin Plugins",
                                "Show builtin Plugins"],
-                              True),
-            }
+                              True),}

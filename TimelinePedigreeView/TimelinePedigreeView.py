@@ -64,6 +64,7 @@ from gramps.gui.dialog import RunDatabaseRepair, ErrorDialog
 from gramps.gui.utils import is_right_click
 from gramps.gen.constfunc import is_quartz
 from gramps.gen.const import GRAMPS_LOCALE as glocale
+from gramps.gen.utils.symbols import Symbols
 try:
     trans = glocale.get_addon_translator(__file__)
 except ValueError:
@@ -341,6 +342,7 @@ class TimelinePedigreeView(NavigationView):
                                       nav_group)
 
         self.dbstate = dbstate
+        self.uistate = uistate
         self.dbstate.connect('database-changed', self.change_db)
 
         self.additional_uis.append(self.additional_ui)
@@ -379,17 +381,11 @@ class TimelinePedigreeView(NavigationView):
         # Number of descendant generations to display
         self.generations_in_tree[0] = self.cman.get('interface.descendant-size')
 
-        # Automatic resize
-        self.force_size = self.cman.get('interface.tree-size')
-        # Nice tree
-        self.tree_style = self.cman.get('interface.layout')
-        # Tree draw direction
-        self.tree_direction = self.cman.get('interface.tree-direction')
         # Show on not unknown peoples.
         # Default - not show, for mo fast display hight tree
         self.show_unknown_peoples = self.cman.get('interface.show-unknown-people')
 
-        self.format_helper = FormattingHelper(self.dbstate)
+        self.format_helper = FormattingHelper(self.dbstate, self.uistate)
 
         # Depth of tree.
         self._depth = 1
@@ -404,6 +400,11 @@ class TimelinePedigreeView(NavigationView):
         self.gtklayout_lines = []
         self.gtklayout_boxes = []
         self._birth_cache = {}
+        self.uistate.connect('font-changed', self.font_changed)
+
+    def font_changed(self):
+        self.format_helper.reload_symbols()
+        self.person_rebuild()
 
     def on_delete(self):
         """Save the configuration settings on shutdown."""
@@ -561,10 +562,6 @@ class TimelinePedigreeView(NavigationView):
         self._add_action('FilterEdit', self.filter_editor)
         self._add_action('PRIMARY-J', self.jump, '<PRIMARY>J')
         self._add_action('F2', self.kb_goto_home, 'F2')
-        self._add_action('F3', self.kb_change_style, 'F3')
-        self._add_action('F4', self.kb_change_direction, 'F4')
-        self._add_action('F5', self.kb_minus_generation, 'F5')
-        self._add_action('F6', self.kb_plus_generation, 'F6')
 
     def filter_editor(self, *obj):
         try:
@@ -1361,15 +1358,6 @@ class TimelinePedigreeView(NavigationView):
         self.dirty = True
         self.Tree_Rebuild()
 
-    def change_tree_direction_cb(self, menuitem, data):
-        """Change tree_direction option."""
-        if data in [0, 1, 2, 3]:
-            self.cman.set('interface.tree-direction', data)
-            if self.tree_direction != data:
-                self.dirty = True
-                self.tree_direction = data
-                self.Tree_Rebuild()
-
     def change_show_images_cb(self, event):
         """Change show_images option."""
         self.show_images = not self.show_images
@@ -1403,28 +1391,6 @@ class TimelinePedigreeView(NavigationView):
     def kb_goto_home(self, *obj):
         """Goto home person from keyboard."""
         self.home(None)
-
-    def kb_plus_generation(self, *obj):
-        """Increment size of tree from keyboard."""
-        self.change_force_size_cb(None, self.force_size + 1)
-
-    def kb_minus_generation(self, *obj):
-        """Decrement size of tree from keyboard."""
-        self.change_force_size_cb(None, self.force_size - 1)
-
-    def kb_change_style(self, *obj):
-        """Change style of tree from keyboard."""
-        next_style = self.tree_style + 1
-        if next_style > 2:
-            next_style = 0
-        self.change_tree_style_cb(None, next_style)
-
-    def kb_change_direction(self, *obj):
-        """Change direction of tree from keyboard."""
-        next_direction = self.tree_direction + 1
-        if next_direction > 3:
-            next_direction = 0
-        self.change_tree_direction_cb(None, next_direction)
 
     def add_nav_portion_to_menu(self, menu):
         """
@@ -1740,18 +1706,6 @@ class TimelinePedigreeView(NavigationView):
             par_menu.append(par_item)
 
         if no_parents:
-            # the following code is never executed since the two options are
-            # not settable
-            # if self.tree_style == 2 and not self.show_unknown_peoples:
-                # item.set_submenu(Gtk.Menu())
-                # par_menu = item.get_submenu()
-                # par_menu.set_reserve_toggle_size(False)
-                # par_item = Gtk.MenuItem(label=_("Add New Parents..."))
-                # par_item.connect("activate", self.add_parents_cb, person_handle,
-                         # family_handle)
-                # par_item.show()
-                # par_menu.append(par_item)
-            # else:
             item.set_sensitive(0)
         item.show()
         self.menu.append(item)

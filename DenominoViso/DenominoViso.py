@@ -164,6 +164,7 @@ from gramps.gen.plug.menu import Option as PlugOption
 from gramps.gen.proxy import PrivateProxyDb
 from gramps.gen.utils.db import get_birth_or_fallback
 from gramps.gen.const import GRAMPS_LOCALE as glocale
+from gramps.gen.const import USER_HOME
 #-------------------------------------------------------------------------
 #
 # constants
@@ -228,23 +229,27 @@ def polar2cart(r,phi):
     y = r*sin(phi)
     return x,y
 
+
 def hex2int_color(x):
     """Return the decimal representation of a given hex color string.
     x: #e112ff a color in hex notation"""
     return ",".join([str(int(x[i+1:i+3],16)) for i in [0,2,4]])
 
-def list_of_strings2list_of_lists(data_obj):
+
+def list_of_strings2list_of_lists(data):
     # If the option (DNMdash_child_rel or DNMconf_color) is read from the
     # report_options.xml it is a list of strings, while if it comes from
     # the widget or the default it is a list of lists.
-    if type(data_obj[0]) == type([]):
-        return data_obj
+    if type(data[0]) == type([]):
+        return data
     else:
         rv = []
-        for i in data_obj:
-            if i[0] != '[' or i[-1] != ']':
+        for line in data:
+            # remove older Python 'L' on ints
+            line = re.sub(r'(\d+)L', r'\1', line)
+            if line[0] != '[' or line[-1] != ']':
                 raise TypeError('invalid list-option value')
-            rv.append(eval(i))
+            rv.append(eval(line))
         return rv
 
 class DenominoVisoReport(Report):
@@ -279,7 +284,8 @@ class DenominoVisoReport(Report):
         # ImageIncludeAttrOption into DNMinexclude_img, DNMimg_attr4inex, DNMimg_attr_val4inex
         (self.options['DNMinexclude_img'], self.options['DNMimg_attr4inex'],
             self.options['DNMimg_attr_val4inex']) = self.options['DNMimg_attr_m'].split(', ',2)
-        self.options['DNMinexclude_img'] = int(self.options['DNMinexclude_img'])
+        self.options['DNMinexclude_img'] = int(
+            self.options['DNMinexclude_img'].replace('L', ''))
         # HtmlWrapperOption into DNMold_browser_output and DNMfilename4old_browser
         # MouseHandlerOption
         # LineStyleOption
@@ -289,10 +295,10 @@ class DenominoVisoReport(Report):
         #    self.options['DNMold_browser_output_m'].split(', ',1)
         #self.options['DNMold_browser_output'] = self.options['DNMold_browser_output'] == 'True'
 
-        self.options['DNMdash_child_rel'] = list_of_strings2list_of_lists(\
-                self.options['DNMdash_child_rel'])
-        self.options['DNMconf_color'] = list_of_strings2list_of_lists(\
-                self.options['DNMconf_color'])
+        self.options['DNMdash_child_rel'] = list_of_strings2list_of_lists(
+            self.options['DNMdash_child_rel'])
+        self.options['DNMconf_color'] = list_of_strings2list_of_lists(
+            self.options['DNMconf_color'])
         self.event_format = '\n'.join(self.options['DNMevent_format'])
         placeholders = re.findall('<.+?>',self.event_format)
         placeholders = set(placeholders)
@@ -1985,7 +1991,8 @@ function %(bd)s2html(person,containerDL) {
             <html:div id="infoField"></html:div>
             <html:form id="searchForm" action="">
             <html:label>%s:
-            <html:input id="searchString" type="text" onkeyup="searchStrInSubj()"/>
+            <html:input id="searchString" type="text"
+                onkeyup="searchStrInSubj()"/>
             </html:label>
             <html:label>%s:
             <html:select id="searchSubject" onchange="searchStrInSubj()">
@@ -1994,8 +2001,11 @@ function %(bd)s2html(person,containerDL) {
             </html:form>
             <html:p><html:br/></html:p> <!-- To accomodate the search form. -->
             <svg id="AncestorChart" width="%d%%" height="%dpx"
-                viewBox="%s" preserveAspectRatio="xMinYMin" onclick="start_halo(evt)">
-        """ % (onunload,_('Search'),_('in'),self.options['DNMtree_width'],self.options['DNMheight'],viewBox)
+                viewBox="%s" preserveAspectRatio="xMinYMin"
+                onclick="start_halo(evt)">
+        """ % (onunload, _('Search'), _('in'),
+               self.options['DNMtree_width'],
+               self.options['DNMheight'], viewBox)
         if self.options['DNMchart_type'] == _cnsts.PYTREE:
             viewb = [int(i) for i in viewBox.split()]
             strng += """<rect id="sky" x="%d" y="%d" width="100%%" height="%d" />
@@ -2546,8 +2556,8 @@ class DenominoVisoOptions(MenuReportOptions):
     def add_menu_options(self, menu):
         category_name = _("DenominoViso Options")
 
-        des = DestinationOption(_("Destination"),
-            os.path.join(os.getcwd(),"DenominoViso.xhtml"))
+        des = DestinationOption(
+            _("Destination"), os.path.join(USER_HOME, "DenominoViso.xhtml"))
         des.set_help(_("The destination file for the xhtml-content."))
         menu.add_option(category_name, "DNMfilename", des)
 
@@ -2887,7 +2897,7 @@ class GuiImageIncludeAttrOption(Gtk.HBox):
         self.__option = option
         value_str = self.__option.get_value()
         (incl, attr, attr_value) = value_str.split(', ',2)
-        incl = int(incl)
+        incl = int(incl.replace('L', ''))
         self.cbe_w = Gtk.ComboBoxText.new_with_entry()
         image_attributes = dbstate.db.get_media_attribute_types()
         image_attributes.insert(0,' ')
@@ -3093,16 +3103,6 @@ class GuiTableOption(Gtk.ScrolledWindow):
     def get_renderer(self, col):
         return self.tv_w_renderers[col]
 
-    def list_of_strings2list_of_lists(self, data):
-        if type(data[0]) == type([]):
-            return data
-        else:
-            rv = []
-            for i in data:
-                if i[0] != '[' or i[-1] != ']':
-                    raise TypeError('invalid list-option value')
-                rv.append(eval(i))
-            return rv
 
 class LineStyleOption(PlugOption):
     def __init__(self, label, value):
@@ -3113,7 +3113,7 @@ class GuiLineStyleOption(GuiTableOption):
     def __init__(self, option, dbstate, uistate, track, override=False):
         self.__option = option
         data = []
-        for row in self.list_of_strings2list_of_lists(self.__option.get_value()):
+        for row in list_of_strings2list_of_lists(self.__option.get_value()):
             data.append(row[:])
         GuiTableOption.__init__(self, data, _cnsts.USE_DASH_COLUMN)
         column = self.get_column(_cnsts.BIRTH_REL_COLUMN)
@@ -3177,7 +3177,7 @@ class GuiConfidenceColorOption(GuiTableOption):
     def __init__(self, option, dbstate, uistate, track, override=False):
         self.__option = option
         data = []
-        for row in self.list_of_strings2list_of_lists(self.__option.get_value()):
+        for row in list_of_strings2list_of_lists(self.__option.get_value()):
             data.append(row[:])
             data[-1][0] = ext_confidence[row[0]] # num conf to string
         GuiTableOption.__init__(self, data)

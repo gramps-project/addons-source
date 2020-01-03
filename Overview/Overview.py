@@ -144,7 +144,10 @@ class PersonOverview(Overview):
 
     def update_has_data(self):
         active_handle = self.get_active('Person')
-        active = self.dbstate.db.get_person_from_handle(active_handle)
+        if active_handle:
+            active = self.dbstate.db.get_person_from_handle(active_handle)
+        else:
+            active = None
         self.set_has_data(self.get_has_data(active))
 
     def get_has_data(self, active_person):
@@ -180,9 +183,12 @@ class PersonOverview(Overview):
             family = self.dbstate.db.get_family_from_handle(family_handle)
             father_handle = family.get_father_handle()
             mother_handle = family.get_mother_handle()
+            spouse = None
             if father_handle == active_handle:
-                spouse = self.dbstate.db.get_person_from_handle(mother_handle)
-            else:
+                if mother_handle:
+                    spouse = self.dbstate.db.get_person_from_handle(
+                        mother_handle)
+            elif father_handle:
                 spouse = self.dbstate.db.get_person_from_handle(father_handle)
             for event_ref in family.get_event_ref_list():
                 self.add_event_ref(event_ref, spouse)
@@ -198,7 +204,10 @@ class FamilyOverview(Overview):
 
     def update_has_data(self):
         active_handle = self.get_active('Family')
-        active = self.dbstate.db.get_family_from_handle(active_handle)
+        if active_handle:
+            active = self.dbstate.db.get_family_from_handle(active_handle)
+        else:
+            active = None
         self.set_has_data(self.get_has_data(active))
 
     def get_has_data(self, active_family):

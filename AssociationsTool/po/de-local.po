@@ -5,40 +5,43 @@
 # Mirko Leonhäuser <mirko@leonhaeuser.de>, 2018.
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-16 19:19+0200\n"
-"PO-Revision-Date: 2018-04-16 19:30+0100\n"
-"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
+"POT-Creation-Date: 2019-09-21 10:45+1000\n"
+"PO-Revision-Date: 2019-10-23 15:01+0200\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 2.0\n"
+"X-Generator: Poedit 2.2.4\n"
 
 #: AssociationsTool/associationstool.gpr.py:35
 msgid "Check Associations data"
-msgstr "Zuordnungsdaten überprüfen"
+msgstr "Verbindungsdaten überprüfen"
 
 #: AssociationsTool/associationstool.gpr.py:36
 msgid "Will check the data on Association for people."
-msgstr "Überprüft die Daten auf Zuordnungen für Personen."
+msgstr "Überprüft die Verbindungsdaten für Personen."
 
-#: AssociationsTool/associationstool.py:52
+#: AssociationsTool/associationstool.py:53
 msgid "Associations state tool"
-msgstr "Assoziationsstatuswerkzeug"
+msgstr "Verbindungszustand-Werkzeug"
 
-#: AssociationsTool/associationstool.py:75
+#: AssociationsTool/associationstool.py:80
 msgid "Name"
 msgstr "Name"
 
-#: AssociationsTool/associationstool.py:76
+#: AssociationsTool/associationstool.py:81
 msgid "Type of link"
 msgstr "Art der Verknüpfung"
 
-#: AssociationsTool/associationstool.py:77
+#: AssociationsTool/associationstool.py:82
 msgid "Of"
-msgstr ""
+msgstr "Von"
 
+#: AssociationsTool/associationstool.py:83
+msgid "Relationship Calculator"
+msgstr "Verwandtschafts-Rechner"

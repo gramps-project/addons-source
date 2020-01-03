@@ -32,13 +32,9 @@ if locals().get('uistate'):  # don't start GUI if in CLI mode, just ignore
     from gi.repository import Gtk, GdkPixbuf
     import os
     from gramps.gen.const import USER_PLUGINS
-    fname = os.path.join(USER_PLUGINS, 'HtreePedigreeView',
-                        'gramps-htree.svg')
-    factory = Gtk.IconFactory()
-    pixbuf = GdkPixbuf.Pixbuf.new_from_file(fname)
-    iconset = Gtk.IconSet.new_from_pixbuf(pixbuf)
-    factory.add('gramps-htree', iconset)
-    factory.add_default()
+    fname = os.path.join(USER_PLUGINS, 'HtreePedigreeView')
+    icons = Gtk.IconTheme().get_default()
+    icons.append_search_path(fname)
 
 register(VIEW,
     id    = 'HtreePedigreeView',
@@ -46,7 +42,7 @@ register(VIEW,
     category = ("Ancestry", _("Charts")),
     description =  _("The view shows a space-efficient pedigree with "
                      "ancestors of the selected person"),
-    version = '0.0.23',
+    version = '0.0.25',
     gramps_target_version = "5.1",
     status = STABLE,
     fname = 'HtreePedigreeView.py',

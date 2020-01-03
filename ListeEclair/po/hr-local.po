@@ -1,0 +1,88 @@
+# Croatian translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) Gramps project
+# Milo Ivir <mail@milotype.de>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2019-03-08 02:52+0100\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.1\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Language: hr\n"
+
+#: ListeEclair/ListeEclair.gpr.py:3 ListeEclair/ListeEclair.py:97
+#: ListeEclair/ListeEclair.py:104
+msgid "Liste Eclair"
+msgstr "Brzi popis"
+
+#: ListeEclair/ListeEclair.gpr.py:4
+msgid "Produit une liste eclair"
+msgstr "Stvara brzi popis"
+
+#: ListeEclair/ListeEclair.py:97
+msgid "Generating report"
+msgstr "Izrada izvještaja"
+
+#: ListeEclair/ListeEclair.py:253
+msgid "Report Options"
+msgstr "Opcije za izvještaj"
+
+#: ListeEclair/ListeEclair.py:260
+msgid "Select using filter"
+msgstr "Odaberi korištenjem filtra"
+
+#: ListeEclair/ListeEclair.py:261
+msgid "Select places using a filter"
+msgstr "Odaberi mjesta korištenjem filtra"
+
+#: ListeEclair/ListeEclair.py:266
+msgid "Entire Database"
+msgstr "Cijela baza podataka"
+
+#: ListeEclair/ListeEclair.py:273
+msgid "Select places individually"
+msgstr "Odaberi mjesta pojedinačno"
+
+#: ListeEclair/ListeEclair.py:274
+msgid "List of places to report on"
+msgstr "Popis mjesta za izvještaj"
+
+#: ListeEclair/ListeEclair.py:277
+msgid "Type de Liste"
+msgstr "Vrsta popisa"
+
+#: ListeEclair/ListeEclair.py:279
+msgid "Tiny Tafel"
+msgstr "Mali rodoslov"
+
+#: ListeEclair/ListeEclair.py:280
+msgid "cousingenweb"
+msgstr "cousingenweb"
+
+#: ListeEclair/ListeEclair.py:281
+msgid "Type de liste"
+msgstr "Vrsta popisa"
+
+#: ListeEclair/ListeEclair.py:284
+msgid "Include private data"
+msgstr "Uključi privatne podatke"
+
+#: ListeEclair/ListeEclair.py:285
+msgid "Whether to include private data"
+msgstr "Da li uključiti privatne podatke"
+
+#: ListeEclair/ListeEclair.py:301
+msgid "The style used for the liste eclair."
+msgstr "Stil korišten za brzi popis."
+
+#: ListeEclair/ListeEclair.py:314
+msgid "The style used for place title."
+msgstr "Stil korišten za imena mjesta."

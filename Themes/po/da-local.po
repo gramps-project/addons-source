@@ -1,0 +1,116 @@
+# Danish translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# Dansk oversættelse til GRAMPS
+# Copyright (C) 2002 Free Software Foundation, Inc.
+# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
+# Morten Bo Johansen <mbj@spamcop.net>, 2006-, >= Gramps 0.7.3
+# *** Vedr. ordstilling: ***
+# Ofte vil det lyde mere naturligt at ændre en ordstilling ved at
+# bytte om på hoved- og ledsætning, som f.eks.
+#
+#   "Før reparationen udføres, forvis dig om at databasen virkelig
+#   "ikke længere kan åbnes"
+# til
+#
+#   "forvis dig om at databasen virkelig ikke kan åbnes før du
+#   "udfører reparationen."
+#
+# Jeg har dog i mange tilfælde valgt at bevare den oprindelige
+# ordstilling, da der ligger en opmærksomhedsskabende værdi i denne. Her
+# bliver man f.eks. som det første i sætningen gjort opmærksom på at man
+# IKKE skal udføre reparationen FØR .. -MBJ
+# *** Oversættelser af visse ord/vendinger: ***
+# LDS: SDH (Latter Day Saints -> Sidste Dages Hellige)
+# home person: proband
+# ancestor: ane
+# given name: fornavn
+# preferences: indstillinger
+# link: forbindelse
+# family tree: slægtsbog (men se nedenfor)
+# First Communion: Førstekommunion
+# probate: skifte
+# record: optegnelse
+#
+# Anvendt af Lars Kr. Lundin:
+# citation: citering (fremfor f.eks. 'kildehenvisning')
+#      citering er i 2016 blevet ændret til kildehenvisning af Kaj Mikkelsen
+# database: database (fremfor det tidligere 'slægtsbog')
+# matches: matcher (fremfor det tidligere 'passer med')
+# locale: landestandard (i mangel af bedre)
+#
+# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-05 14:02-0600\n"
+"PO-Revision-Date: 2018-07-11 17:24+0200\n"
+"Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
+"Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
+"Language: da\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Gtranslator 2.91.7\n"
+
+#: Themes/themes.gpr.py:28
+msgid "Theme preferences"
+msgstr "Temaindstillinger"
+
+#: Themes/themes.gpr.py:29
+msgid ""
+"An addition to Preferences for simple Theme and Font adjustment.  Especially "
+"useful for Windows users."
+msgstr ""
+"En tilføjelse til indstillinger for simpel tema og skrifttypejustering. Især "
+"nyttigt til Windows-brugere."
+
+#: Themes/themes.py:93
+msgid "_Help"
+msgstr "_Hjælp"
+
+#: Themes/themes.py:137 Themes/themes.py:155
+msgid "Theme is hardcoded by GTK_THEME"
+msgstr "Tema fast angivet ved GTK_THEME"
+
+#: Themes/themes.py:140 Themes/themes.py:163
+#, python-format
+msgid "%s: "
+msgstr "%s: "
+
+#: Themes/themes.py:140 Themes/themes.py:190
+msgid "Theme"
+msgstr "Tema"
+
+#: Themes/themes.py:145
+msgid "Dark Variant"
+msgstr "Mørk variant"
+
+#: Themes/themes.py:163
+msgid "Font"
+msgstr "Skrifttype"
+
+#: Themes/themes.py:170
+msgid "_Toolbar"
+msgstr "_Værktøjspanel"
+
+#: Themes/themes.py:170
+msgid "Text"
+msgstr "Tekst"
+
+#: Themes/themes.py:179
+msgid "Fixed Scrollbar (requires restart)"
+msgstr "Klassisk rullepanel (kræver genstart)"
+
+#: Themes/themes.py:186
+msgid "Restore to defaults"
+msgstr "Genopret standard"
+
+#~ msgid "Default"
+#~ msgstr "Standard"
+
+#~ msgid "Colors"
+#~ msgstr "Farver"

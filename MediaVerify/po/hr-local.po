@@ -1,0 +1,147 @@
+# Croatian translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) Gramps project
+# Milo Ivir <mail@milotype.de>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2019-03-08 02:57+0100\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.1\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Language: hr\n"
+
+#: MediaVerify/MediaVerify.gpr.py:30
+msgid "Media Verify"
+msgstr "Provjera medija"
+
+#: MediaVerify/MediaVerify.gpr.py:31
+msgid "Verify that media is present in the correct path"
+msgstr "Provjeri ispravnost staza medija"
+
+#: MediaVerify/MediaVerify.py:78
+msgid "Media Verify Tool"
+msgstr "Alat za provjeru medija"
+
+#: MediaVerify/MediaVerify.py:83
+msgid "Moved/Renamed Files"
+msgstr "Pomaknute/preimenovane datoteke"
+
+#: MediaVerify/MediaVerify.py:83
+msgid "Missing Files"
+msgstr "Nedostajuće datoteke"
+
+#: MediaVerify/MediaVerify.py:84
+msgid "Duplicate Files"
+msgstr "Dupliciraj datoteke"
+
+#: MediaVerify/MediaVerify.py:84
+msgid "Extra Files"
+msgstr "Dodatne datoteke"
+
+#: MediaVerify/MediaVerify.py:85
+msgid "No md5 Generated"
+msgstr "Nije stvoren md5"
+
+#: MediaVerify/MediaVerify.py:85
+msgid "Errors"
+msgstr "Greške"
+
+#: MediaVerify/MediaVerify.py:100
+msgid "Close"
+msgstr "Zatvori"
+
+#: MediaVerify/MediaVerify.py:101
+msgid "Close the Media Verify Tool"
+msgstr "Zatvori alat za provjeru medija"
+
+#: MediaVerify/MediaVerify.py:103
+msgid "Generate"
+msgstr "Izradi"
+
+#: MediaVerify/MediaVerify.py:104
+msgid "Generate md5 hashes for media objects"
+msgstr "Izradi md5 hash-tablice za medijske objekte"
+
+#: MediaVerify/MediaVerify.py:106
+msgid "Verify"
+msgstr "Provjeri"
+
+#: MediaVerify/MediaVerify.py:107
+msgid "Check media paths and report missing, duplicate and extra files"
+msgstr ""
+"Provjeri staze medija i izvjesti o nedostajućim, dupliciranim ili dodatnim "
+"datotekama"
+
+#: MediaVerify/MediaVerify.py:110
+msgid "Export"
+msgstr "Izvezi"
+
+#: MediaVerify/MediaVerify.py:111
+msgid "Export the results to a text file"
+msgstr "Izvezi rezultate u tekstualnu datoteku"
+
+#: MediaVerify/MediaVerify.py:113
+msgid "Fix"
+msgstr "Popravi"
+
+#: MediaVerify/MediaVerify.py:114
+msgid "Fix media paths of moved and renamed files"
+msgstr "Popravi staze medija za pomaknute ili preimenovane datoteke"
+
+#: MediaVerify/MediaVerify.py:132
+msgid "Verify Gramps media using md5 hashes"
+msgstr "Provjeri Gramps medije, koristeći md5 hash-tablice"
+
+#: MediaVerify/MediaVerify.py:143
+msgid "Files"
+msgstr "Datoteke"
+
+#: MediaVerify/MediaVerify.py:195
+msgid "Export results to a text file"
+msgstr "Izvezi rezultate u tekstualnu datoteku"
+
+#: MediaVerify/MediaVerify.py:218
+#, python-format
+msgid "Error when writing the report: %s"
+msgstr "Greška prilikom pisanja izvještaja: %s"
+
+#: MediaVerify/MediaVerify.py:259
+msgid "Generating media hashes"
+msgstr "Izrada hash-tablica za medije"
+
+#: MediaVerify/MediaVerify.py:261
+msgid "Set media hashes"
+msgstr "Postavi hash-tablice za medije"
+
+#: MediaVerify/MediaVerify.py:296
+msgid ""
+"Media path not set.  You must set the \"Base path for relative media paths\" "
+"in the Preferences."
+msgstr ""
+"Nije postavljena staza za medije. Moraš je postaviti u „Osnovna relativna "
+"staza do medija” u postavkama."
+
+#: MediaVerify/MediaVerify.py:307
+msgid "Finding files"
+msgstr "Pronalaženje datoteka"
+
+#: MediaVerify/MediaVerify.py:335
+msgid "Checking paths"
+msgstr "Provjeravanje staza"
+
+#: MediaVerify/MediaVerify.py:388
+msgid "Fixing file paths"
+msgstr "Ispravljanje staza datoteka"
+
+#: MediaVerify/MediaVerify.py:390
+msgid "Fix media paths"
+msgstr "Ispravi staze datoteka"

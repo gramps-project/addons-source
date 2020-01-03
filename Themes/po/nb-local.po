@@ -1,0 +1,85 @@
+# Norwegian (Bokmaal) translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) YEAR ORGANIZATION.
+#
+#
+# Frode Jemtland <frode.jemtland@skolelinux.no>, 2003, 2004, 2005, 2006, 2008.
+# Axel Bojer <axelb@skolelinux.no>, 2003.
+# Jørgen Grønlund <jorgenhg@broadpark.no>, 2005.
+# Nils Kristian Tomren <project@nilsk.net>, 2006.
+# Espen Berg <espenbe@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2015, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: nb\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-05 14:02-0600\n"
+"PO-Revision-Date: 2018-07-22 10:52+0200\n"
+"Last-Translator: Espen Berg <espenbe@gmail.com>\n"
+"Language-Team: Norsk, bokmål <kde-i18n-doc@kde.org>\n"
+"Language: nb\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.4\n"
+"X-Generator: Poedit 2.0.6\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: Themes/themes.gpr.py:28
+msgid "Theme preferences"
+msgstr "Temainnstillinger"
+
+#: Themes/themes.gpr.py:29
+msgid ""
+"An addition to Preferences for simple Theme and Font adjustment.  Especially "
+"useful for Windows users."
+msgstr ""
+"Et tillegg til Innstillinger for enkel justering av tema og skrift. Spesielt "
+"nyttig for Windows-brukere."
+
+#: Themes/themes.py:93
+msgid "_Help"
+msgstr "_Hjelp"
+
+#: Themes/themes.py:137 Themes/themes.py:155
+msgid "Theme is hardcoded by GTK_THEME"
+msgstr "Tema er hardkodet av GTK_THEME"
+
+#: Themes/themes.py:140 Themes/themes.py:163
+#, python-format
+msgid "%s: "
+msgstr "%s: "
+
+#: Themes/themes.py:140 Themes/themes.py:190
+msgid "Theme"
+msgstr "Tema"
+
+#: Themes/themes.py:145
+msgid "Dark Variant"
+msgstr "Mørk variant"
+
+#: Themes/themes.py:163
+msgid "Font"
+msgstr "Skrifttype"
+
+#: Themes/themes.py:170
+msgid "_Toolbar"
+msgstr "Verk_tøylinje"
+
+#: Themes/themes.py:170
+msgid "Text"
+msgstr "Tekst"
+
+#: Themes/themes.py:179
+msgid "Fixed Scrollbar (requires restart)"
+msgstr "Klassisk rullegardin (krever omstart)"
+
+#: Themes/themes.py:186
+msgid "Restore to defaults"
+msgstr "Hent inn igjen standardene?"
+
+#~ msgid "Default"
+#~ msgstr "Standard"
+
+#~ msgid "Colors"
+#~ msgstr "Farger"

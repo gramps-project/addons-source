@@ -69,6 +69,7 @@ from gramps.gen.display.place import displayer as place_displayer
 from gramps.gen.sort import Sort
 from gramps.gen.utils.db import (get_birth_or_fallback, get_death_or_fallback)
 from gramps.gen.utils.lds import TEMPLES
+from gramps.gen.utils.place import conv_lat_lon
 
 #------------------------------------------------------------------------
 #
@@ -608,12 +609,16 @@ class PersonEverythingReport(Report):
                         self.doc.end_paragraph()
 
                     if place.get_longitude() or place.get_latitude():
+                        lat, lon = conv_lat_lon(place.get_latitude(),
+                                                place.get_longitude(),
+                                                format="DEG")
                         self.doc.start_paragraph("PE-Level%d" % min(level+1, 32))
                         self.doc.start_bold()
                         self.doc.write_text(_("Latitude, Longitude") + " : ")
                         self.doc.end_bold()
-                        self.doc.write_text(", ".join((place.get_longitude(),
-                                                       place.get_latitude())))
+                        self.doc.write_text(
+                            ", ".join((lat if lat else place.get_latitude(),
+                                       lon if lon else place.get_longitude())))
                         self.doc.end_paragraph()
 
                     self.print_object(level+1, place)

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"POT-Creation-Date: 2019-10-21 08:49+1100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,19 +17,27 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:4
-#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:12
-msgid "Birthdays Gramplet"
+#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:24
+#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:32
+msgid "Birthdays"
 msgstr ""
 
-#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:5
+#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:25
 msgid "a gramplet that displays the birthdays of the living people"
 msgstr ""
 
-#: BirthdaysGramplet/BirthdaysGramplet.py:41
+#: BirthdaysGramplet/BirthdaysGramplet.py:38
 msgid "No Family Tree loaded."
 msgstr ""
 
-#: BirthdaysGramplet/BirthdaysGramplet.py:50
+#: BirthdaysGramplet/BirthdaysGramplet.py:45
+msgid "Ignore birthdays with tag"
+msgstr ""
+
+#: BirthdaysGramplet/BirthdaysGramplet.py:46
+msgid "Only show birthdays with tag"
+msgstr ""
+
+#: BirthdaysGramplet/BirthdaysGramplet.py:90
 msgid "Processing..."
 msgstr ""

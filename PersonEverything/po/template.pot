@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"POT-Creation-Date: 2019-10-04 16:33-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,323 +25,323 @@ msgstr ""
 msgid "Produces a report containing everything about the active person"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:109
+#: PersonEverything/PersonEverything.py:110
 #, python-format
 msgid "Person %s is not in the Database"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:131
+#: PersonEverything/PersonEverything.py:132
 #, python-format
 msgid "All information about %s"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:140
+#: PersonEverything/PersonEverything.py:141
 msgid "Person Events"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:146
+#: PersonEverything/PersonEverything.py:147
 msgid "Families"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:152
+#: PersonEverything/PersonEverything.py:153
 msgid "Endnotes"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:168
+#: PersonEverything/PersonEverything.py:169
 msgid "Gender"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:171
+#: PersonEverything/PersonEverything.py:172
 msgid "Primary name"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:172
-#: PersonEverything/PersonEverything.py:179
-#: PersonEverything/PersonEverything.py:299
-#: PersonEverything/PersonEverything.py:593
-#: PersonEverything/PersonEverything.py:718
+#: PersonEverything/PersonEverything.py:173
+#: PersonEverything/PersonEverything.py:180
+#: PersonEverything/PersonEverything.py:300
+#: PersonEverything/PersonEverything.py:594
+#: PersonEverything/PersonEverything.py:723
 msgid "Type"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:178
+#: PersonEverything/PersonEverything.py:179
 msgid "Alternate name"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:198
+#: PersonEverything/PersonEverything.py:199
 msgid "Event reference"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:199
+#: PersonEverything/PersonEverything.py:200
 msgid "Role"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:206
+#: PersonEverything/PersonEverything.py:207
 msgid "Family"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:212
+#: PersonEverything/PersonEverything.py:213
 msgid "Child"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:218
+#: PersonEverything/PersonEverything.py:219
 msgid "Relationship to Father"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:223
+#: PersonEverything/PersonEverything.py:224
 msgid "Relationship to Mother"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:236
+#: PersonEverything/PersonEverything.py:237
 msgid "Parent Family"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:247
+#: PersonEverything/PersonEverything.py:248
 msgid "Relationship"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:257
+#: PersonEverything/PersonEverything.py:258
 msgid "Father"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:268
+#: PersonEverything/PersonEverything.py:269
 msgid "Mother"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:290
-#: PersonEverything/PersonEverything.py:960
-#: PersonEverything/PersonEverything.py:976
+#: PersonEverything/PersonEverything.py:291
+#: PersonEverything/PersonEverything.py:965
+#: PersonEverything/PersonEverything.py:981
 msgid "Private"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:314
+#: PersonEverything/PersonEverything.py:315
 msgid "Address"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:324
+#: PersonEverything/PersonEverything.py:325
 msgid "Attribute"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:352
+#: PersonEverything/PersonEverything.py:353
 msgid "Confidence"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:355
+#: PersonEverything/PersonEverything.py:356
 msgid "Unknown"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:367
+#: PersonEverything/PersonEverything.py:368
 msgid "Date"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:376
+#: PersonEverything/PersonEverything.py:377
 msgid "Description"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:385
+#: PersonEverything/PersonEverything.py:386
 msgid "Event"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:386
+#: PersonEverything/PersonEverything.py:387
 msgid "Event type"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:401
+#: PersonEverything/PersonEverything.py:402
 msgid "Temple and status"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:412
+#: PersonEverything/PersonEverything.py:413
 msgid "LDS Ordinance family"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:416
+#: PersonEverything/PersonEverything.py:417
 msgid "LDS "
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:417
+#: PersonEverything/PersonEverything.py:418
 msgid "Ordinance"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:432
+#: PersonEverything/PersonEverything.py:433
 msgid "Street, City, County, State, Postal Code, Country, Phone number"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:446
+#: PersonEverything/PersonEverything.py:447
 msgid "Media Reference"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:453
-#: PersonEverything/PersonEverything.py:726
+#: PersonEverything/PersonEverything.py:454
+#: PersonEverything/PersonEverything.py:731
 msgid "Description and Path"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:472
+#: PersonEverything/PersonEverything.py:473
 msgid "Could not add photo to page"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:473
+#: PersonEverything/PersonEverything.py:474
 msgid "File does not exist"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:482
+#: PersonEverything/PersonEverything.py:483
 msgid "Referenced Region"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:500
+#: PersonEverything/PersonEverything.py:501
 msgid "unknown"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:501
+#: PersonEverything/PersonEverything.py:502
 msgid "Media Object"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:503
+#: PersonEverything/PersonEverything.py:504
 msgid "Mime type"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:514
+#: PersonEverything/PersonEverything.py:515
 msgid ""
 "Given name(s): Title, Given, Suffix, Call Name, Nick Name, Family Nick Name"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:539
+#: PersonEverything/PersonEverything.py:540
 msgid "Note"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:540
+#: PersonEverything/PersonEverything.py:541
 msgid "Note type"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:551
+#: PersonEverything/PersonEverything.py:552
 msgid "Parent Place"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:566
-#: PersonEverything/PersonEverything.py:570
+#: PersonEverything/PersonEverything.py:567
+#: PersonEverything/PersonEverything.py:571
 msgid "Alternate Location"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:567
+#: PersonEverything/PersonEverything.py:568
 msgid "Parish"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:583
+#: PersonEverything/PersonEverything.py:584
 msgid "Place"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:584
+#: PersonEverything/PersonEverything.py:585
 msgid "Place Title"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:589
+#: PersonEverything/PersonEverything.py:590
 msgid "Name"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:597
+#: PersonEverything/PersonEverything.py:598
 msgid "Code"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:605
+#: PersonEverything/PersonEverything.py:606
 msgid "Alternative Name"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:613
+#: PersonEverything/PersonEverything.py:617
 msgid "Latitude, Longitude"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:634
+#: PersonEverything/PersonEverything.py:639
 msgid "Call number"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:641
+#: PersonEverything/PersonEverything.py:646
 msgid "Repository"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:642
+#: PersonEverything/PersonEverything.py:647
 msgid "Repository type"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:664
+#: PersonEverything/PersonEverything.py:669
 msgid "Repository reference"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:665
+#: PersonEverything/PersonEverything.py:670
 msgid "Media type"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:672
-#: PersonEverything/PersonEverything.py:676
+#: PersonEverything/PersonEverything.py:677
+#: PersonEverything/PersonEverything.py:681
 msgid "Surname"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:673
+#: PersonEverything/PersonEverything.py:678
 msgid "Origin type"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:680
+#: PersonEverything/PersonEverything.py:685
 msgid "Prefix, surname, connector"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:685
+#: PersonEverything/PersonEverything.py:690
 msgid "{This is the primary surname}"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:698
+#: PersonEverything/PersonEverything.py:703
 msgid "Tag name"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:709
+#: PersonEverything/PersonEverything.py:714
 msgid "Tag colour and priority"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:717
+#: PersonEverything/PersonEverything.py:722
 msgid "URL"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:900
+#: PersonEverything/PersonEverything.py:905
 msgid "Source"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:906
+#: PersonEverything/PersonEverything.py:911
 msgid "Citation"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:954
+#: PersonEverything/PersonEverything.py:959
 msgid "No source information found"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:995
+#: PersonEverything/PersonEverything.py:1000
 msgid "Report Options"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:997
+#: PersonEverything/PersonEverything.py:1002
 msgid "Center Person"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:998
+#: PersonEverything/PersonEverything.py:1003
 msgid "The center person for the report"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:1004
+#: PersonEverything/PersonEverything.py:1009
 msgid "Name format"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:1005
+#: PersonEverything/PersonEverything.py:1010
 msgid "Default"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:1008
+#: PersonEverything/PersonEverything.py:1013
 msgid "Select the format to display names"
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:1022
+#: PersonEverything/PersonEverything.py:1027
 msgid "The style used for the title of the page."
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:1033
+#: PersonEverything/PersonEverything.py:1038
 #, python-format
 msgid "The style used for the level %d display."
 msgstr ""
 
-#: PersonEverything/PersonEverything.py:1054
+#: PersonEverything/PersonEverything.py:1059
 msgid "The basic style used for the endnotes source display."
 msgstr ""
