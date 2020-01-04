@@ -295,10 +295,11 @@ class FormActions(ManagedWindow):
         for action_type_row in self.model:
             for action_row in action_type_row.iterchildren():
                 if action_row.model.get_value(action_row.iter, self.RUN_ACTION_COL):
-                    actions.append(action_row.model.get_value(action_row.iter, self.ACTION_COMMAND_COL))
+                    actions.append((action_row.model.get_value(action_row.iter, self.ACTION_COMMAND_COL),
+                                    action_row.model.get_value(action_row.iter, self.EDIT_DETAIL_COL)))
         # run the actions
-        for index, action in enumerate(actions):
-            (action)(self.dbstate, self.uistate, self.track)
+        for index, (action, edit_detail) in enumerate(actions):
+            (action)(self.dbstate, self.uistate, self.track, edit_detail)
             self.uistate.pulse_progressbar(
                 (index + 1) / len(actions) * 100)
         self.uistate.progress.hide()

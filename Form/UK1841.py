@@ -1,7 +1,7 @@
 #
 # Gramps - a GTK+/GNOME based genealogy program
 #
-# Copyright (C) 2019      Steve Youngs
+# Copyright (C) 2019-2020 Steve Youngs
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -74,11 +74,11 @@ class PrimaryNameCitation:
         actions = []
         for (person, attr) in actionutils.get_form_person_attr(db, form_event.get_handle(), 'Name'):
             actions.append((name_displayer.display(person), attr.get_value(), actionutils.CANNOT_EDIT_DETAIL,
-                            lambda dbstate, uistate, track, citation_handle=citation.handle, person_handle=person.handle: PrimaryNameCitation.command(dbstate, uistate, track, citation_handle, person_handle)))
+                            lambda dbstate, uistate, track, edit_detail, citation_handle=citation.handle, person_handle=person.handle: PrimaryNameCitation.command(dbstate, uistate, track, edit_detail, citation_handle, person_handle)))
         return (_("Add Primary Name citation"), actions)
 
     @staticmethod
-    def command(dbstate, uistate, track, citation_handle, person_handle):
+    def command(dbstate, uistate, track, edit_detail, citation_handle, person_handle):
         db = dbstate.db
         person = db.get_person_from_handle(person_handle)
         person.get_primary_name().add_citation(citation_handle)
@@ -97,11 +97,11 @@ class AlternateName:
             alternate.add_citation(citation.handle)
             detail = _('Given Name: {name}').format(name=attr.get_value())
             actions.append((name_displayer.display(person), detail, actionutils.MUST_EDIT_DETAIL,
-                            lambda dbstate, uistate, track, person_handle=person.handle, alternate_=alternate: AlternateName.command(dbstate, uistate, track, person_handle, alternate_)))
+                            lambda dbstate, uistate, track, edit_detail, person_handle=person.handle, alternate_=alternate: AlternateName.command(dbstate, uistate, track, edit_detail, person_handle, alternate_)))
         return (_("Add alternate name"), actions)
 
     @staticmethod
-    def command(dbstate, uistate, track, person_handle, alternate):
+    def command(dbstate, uistate, track, edit_detail, person_handle, alternate):
         db = dbstate.db
         person = db.get_person_from_handle(person_handle)
         person.add_alternate_name(alternate)
@@ -143,7 +143,7 @@ class BirthEvent:
                     else:
                         detail = _('Age: {age}').format(age=age_string)
                     actions.append((name_displayer.display(person), detail, actionutils.CAN_EDIT_DETAIL if birth_date else actionutils.MUST_EDIT_DETAIL,
-                                   lambda dbstate, uistate, track, citation_handle=citation.handle, person_handle=person.handle, birth_date_=birth_date: actionutils.add_event_to_person(dbstate, uistate, track, person_handle, EventType.BIRTH, birth_date_, None, citation_handle, EventRoleType.PRIMARY)))
+                                    lambda dbstate, uistate, track, edit_detail, citation_handle=citation.handle, person_handle=person.handle, birth_date_=birth_date: actionutils.add_event_to_person(dbstate, uistate, track, edit_detail, person_handle, EventType.BIRTH, birth_date_, None, citation_handle, EventRoleType.PRIMARY)))
         return (_("Add Birth event"), actions)
 
 
@@ -156,7 +156,7 @@ class OccupationEvent:
             occupation = attr.get_value()
             if (occupation):
                 actions.append((name_displayer.display(person), _('Description: {occupation}').format(occupation=occupation), actionutils.CAN_EDIT_DETAIL,
-                                lambda dbstate, uistate, track, citation_handle=citation.handle, person_handle=person.handle, occupation_=occupation: actionutils.add_event_to_person(dbstate, uistate, track, person_handle, EventType.OCCUPATION, form_event.get_date_object(), occupation_, citation_handle, EventRoleType.PRIMARY)))
+                                lambda dbstate, uistate, track, edit_detail, citation_handle=citation.handle, person_handle=person.handle, occupation_=occupation: actionutils.add_event_to_person(dbstate, uistate, track, edit_detail, person_handle, EventType.OCCUPATION, form_event.get_date_object(), occupation_, citation_handle, EventRoleType.PRIMARY)))
         return (_("Add Occupation event"), actions)
 
 
@@ -180,11 +180,11 @@ class ResidenceEvent:
                     db, db.get_place_from_handle(form_event.get_place_handle()))
                 detail = _('Place: {place}').format(place=place)
             actions.append((get_participant_from_event(db, form_event.get_handle()), detail, actionutils.MUST_EDIT_DETAIL,
-                            lambda dbstate, uistate, track, citation_handle=citation.handle, people_handles=people: ResidenceEvent.command(dbstate, uistate, track, citation_handle, form_event.get_date_object(), form_event.get_place_handle(), people_handles)))
+                            lambda dbstate, uistate, track, edit_detail, citation_handle=citation.handle, people_handles=people: ResidenceEvent.command(dbstate, uistate, track, edit_detail, citation_handle, form_event.get_date_object(), form_event.get_place_handle(), people_handles)))
         return (_("Add Residence event"), actions)
 
     @staticmethod
-    def command(dbstate, uistate, track, citation_handle, event_date_object, event_place_handle, people_handles):
+    def command(dbstate, uistate, track, edit_detail, citation_handle, event_date_object, event_place_handle, people_handles):
         db = dbstate.db
         # create the RESIDENCE event
         event = Event()

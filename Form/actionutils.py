@@ -1,7 +1,7 @@
 #
 # Gramps - a GTK+/GNOME based genealogy program
 #
-# Copyright (C) 2019      Steve Youngs
+# Copyright (C) 2019-2020 Steve Youngs
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -51,7 +51,7 @@ def __init__():
     pass
 
 
-def add_event_to_person(dbstate, uistate, track, person_handle, event_type, event_date_object, event_description, citation_handle, event_role_type):
+def add_event_to_person(dbstate, uistate, track, edit_detail, person_handle, event_type, event_date_object, event_description, citation_handle, event_role_type):
     db = dbstate.db
     """
     Add a new event to the specified person.
