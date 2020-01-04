@@ -2,7 +2,7 @@
 # Gramps - a GTK+/GNOME based genealogy program
 #
 # Copyright (C) 2009-2015 Nick Hall
-# Copyright (C) 2019      Steve Youngs
+# Copyright (C) 2019-2020 Steve Youngs
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -184,8 +184,7 @@ class FormGramplet(Gramplet, DbGUIElement):
         if iter_:
             citation = model.get_value(iter_, 0)
             try:
-                actions = FormActions(self.gui.dbstate, self.gui.uistate, [], citation)
-                actions.run()
+                FormActions(self.gui.dbstate, self.gui.uistate, [], citation)
             except WindowActiveError:
                 pass
 

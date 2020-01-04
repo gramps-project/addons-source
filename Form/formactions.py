@@ -48,8 +48,8 @@ from gramps.gen.config import config
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 from gramps.gen.datehandler import get_date
 from gramps.gen.db import DbTxn
-from gramps.gui.display import display_help
 from gramps.gui.managedwindow import ManagedWindow
+import gramps.gui.display
 
 # ------------------------------------------------------------------------
 #
@@ -85,7 +85,7 @@ _ = _trans.gettext
 # ------------------------------------------------------------------------
 
 
-class FormActions(object):
+class FormActions(ManagedWindow):
     """
     Form Action selector.
     """
@@ -106,6 +106,8 @@ class FormActions(object):
         source_handle = self.citation.get_reference_handle()
         self.source = self.db.get_source_from_handle(source_handle)
         self.form_id = get_form_id(self.source)
+
+        ManagedWindow.__init__(self, uistate, track, citation)
 
         self.actions_module = None
         # for security reasons provide the full path to the actions_module .py file
@@ -128,31 +130,26 @@ class FormActions(object):
                 sys.path.pop(0)
 
         self.event = find_form_event(self.db, self.citation)
+        top = self.__create_gui()
+        self.set_window(top, None, self.get_title())
+        self._local_init()
 
-        self.top = self._create_dialog(self.get_dialog_title())
+        self._populate_model()
+        self.tree.expand_all()
 
-        self._config = config.get_manager('form')
-        width = self._config.get('interface.form-actions-width')
-        height = self._config.get('interface.form-actions-height')
-        self.top.resize(width, height)
-        horiz_position = self._config.get(
-            'interface.form-actions-horiz-position')
-        vert_position = self._config.get(
-            'interface.form-actions-vert-position')
-        if horiz_position != -1:
-            self.top.move(horiz_position, vert_position)
+        self.show()
 
-    def _create_dialog(self, title):
+    def _local_init(self):
+        self.setup_configs('interface.form-actions', 750, 550)
+
+    def __create_gui(self):
         """
         Create and display the GUI components of the action selector.
         """
-        top = Gtk.Dialog(title)
-        top.set_modal(True)
-        top.set_transient_for(self.uistate.window)
-        top.vbox.set_spacing(5)
-
-        box = Gtk.Box()
-        top.vbox.pack_start(box, True, True, 5)
+        root = Gtk.Window(type=Gtk.WindowType.TOPLEVEL)
+        root.set_transient_for(self.uistate.window)
+        # Initial position for first run
+        root.set_position(Gtk.WindowPosition.CENTER_ON_PARENT)
 
         self.model = Gtk.TreeStore(
             bool, bool, str, str, int, GObject.TYPE_PYOBJECT, bool)
@@ -189,16 +186,35 @@ class FormActions(object):
         slist = Gtk.ScrolledWindow()
         slist.add(self.tree)
         slist.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
-        box.pack_start(slist, True, True, 5)
 
-        top.add_button(_('_Help'), Gtk.ResponseType.HELP)
-        top.add_button(_('_Cancel'), Gtk.ResponseType.CANCEL)
-        top.add_button(_('_OK'), Gtk.ResponseType.OK)
-        top.set_default_response(Gtk.ResponseType.OK)
+        button_box = Gtk.ButtonBox()
+        button_box.set_layout(Gtk.ButtonBoxStyle.END)
 
-        top.show_all()
+        help_btn = Gtk.Button(label=_('_Help'), use_underline=True)
+        help_btn.connect('clicked', self.display_help)
+        button_box.add(help_btn)
+        button_box.set_child_secondary(help_btn, True)
 
-        return top
+        close_btn = Gtk.Button(label=_('_Close'), use_underline=True)
+        close_btn.connect('clicked', self.close)
+        button_box.add(close_btn)
+
+        run_btn = Gtk.Button(label=_('_Run'), use_underline=True)
+        run_btn.connect('clicked', self.run_actions)
+        button_box.add(run_btn)
+
+        vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        vbox.set_margin_left(2)
+        vbox.set_margin_right(2)
+        vbox.set_margin_top(2)
+        vbox.set_margin_bottom(2)
+
+        vbox.pack_start(slist, expand=True, fill=True, padding=0)
+        vbox.pack_end(button_box, expand=False, fill=True, padding=0)
+
+        root.add(vbox)
+
+        return root
 
     def on_action_toggled(self, widget, path):
         row_iter = self.model.get_iter(path)
@@ -268,63 +284,37 @@ class FormActions(object):
                         self.model.append(
                             parent, (False, False) + action_detail + (action_detail[2] == actionutils.MUST_EDIT_DETAIL,))
 
-    def run(self):
-        """
-        Run the dialog and return the result.
-        """
-        self._populate_model()
-        self.tree.expand_all()
-        while True:
-            response = self.top.run()
-            if response == Gtk.ResponseType.HELP:
-                display_help(webpage='Form_Addons')
-            else:
-                break
+    def run_actions(self, widget):
+        # run the selected actions
+        self.uistate.set_busy_cursor(True)
+        self.uistate.progress.show()
+        self.uistate.pulse_progressbar(0)
+        # get the list of actions to be run
+        # this helps give meaningful progress information (because we know how many actions in total will be run)
+        actions = []
+        for action_type_row in self.model:
+            for action_row in action_type_row.iterchildren():
+                if action_row.model.get_value(action_row.iter, self.RUN_ACTION_COL):
+                    actions.append(action_row.model.get_value(action_row.iter, self.ACTION_COMMAND_COL))
+        # run the actions
+        for index, action in enumerate(actions):
+            (action)(self.dbstate, self.uistate, self.track)
+            self.uistate.pulse_progressbar(
+                (index + 1) / len(actions) * 100)
+        self.uistate.progress.hide()
+        self.uistate.set_busy_cursor(False)
+        self.close()
 
-        (width, height) = self.top.get_size()
-        self._config.set('interface.form-actions-width', width)
-        self._config.set('interface.form-actions-height', height)
-        (root_x, root_y) = self.top.get_position()
-        self._config.set('interface.form-actions-horiz-position', root_x)
-        self._config.set('interface.form-actions-vert-position', root_y)
-        self._config.save()
-
-        if response == Gtk.ResponseType.OK:
-            # run the selected actions
-            self.uistate.set_busy_cursor(True)
-            self.uistate.progress.show()
-            self.uistate.pulse_progressbar(0)
-            # get the list of actions to be run
-            # this helps give meaningful progress information (because we know how many actions in total will be run)
-            actions = []
-            for action_type_row in self.model:
-                for action_row in action_type_row.iterchildren():
-                    if action_row.model.get_value(action_row.iter, self.RUN_ACTION_COL):
-                        actions.append(action_row.model.get_value(
-                            action_row.iter, self.ACTION_COMMAND_COL))
-            # run the actions
-            for index, action in enumerate(actions):
-                (action)(self.dbstate, self.uistate, self.track)
-                self.uistate.pulse_progressbar(
-                    (index + 1) / len(actions) * 100)
-            self.uistate.progress.hide()
-            self.uistate.set_busy_cursor(False)
-
-        self.top.destroy()
-
-        return None
-
-    def help_clicked(self, obj):
+    def display_help(self, obj):
         """
         Display the relevant portion of Gramps manual
         """
-        display_help(webpage='Form_Addons')
+        gramps.gui.display.display_help(webpage='Form_Addons')
 
-    def get_dialog_title(self):
-        """
-        Get the title of the dialog.
-        """
-        dialog_title = _('Form: {source_title}: {event_reference}').format(
-            source_title=self.source.get_title(), event_reference=self.citation.get_page())
-
-        return dialog_title
+    def get_title(self):
+        if self.source and self.citation:
+            title = _('Form: {source_title}: {event_reference}').format(
+                source_title=self.source.get_title(), event_reference=self.citation.get_page())
+        else:
+            title = None
+        return title
