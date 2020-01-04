@@ -61,6 +61,8 @@ ORDER_ATTR = _('Order')
 
 # The key of the data item in a source to define it as a form source.
 DEFINITION_KEY = _('Form')
+# the following should be all the translations of "Form" in our po files
+INTL_FORM = {"Form", "Formular", "Formulaire", "Obrazac", "Форма"}
 
 # Prefixes for family attributes.
 GROOM = _('Groom')
@@ -269,7 +271,7 @@ def get_form_id(source):
     Return the form id attached to the given source.
     """
     for attr in source.get_attribute_list():
-        if str(attr.get_type()) == DEFINITION_KEY:
+        if str(attr.get_type()) in INTL_FORM:
             return attr.get_value()
     return None
 
