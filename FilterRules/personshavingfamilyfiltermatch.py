@@ -58,18 +58,19 @@ class PersonsHavingFamilyFilterMatch(MatchesFilterBase):
         self.persons = set()
         MatchesFilterBase.prepare(self, db, user)
         self.MFF_filt = self.find_filter()
-        for family_handle in db.iter_family_handles():
-            if self.MFF_filt.check(db, family_handle):
-                family = db.get_family_from_handle(family_handle)
-                father = family.get_father_handle()
-                mother = family.get_mother_handle()
-                children = family.get_child_ref_list()
-                self.persons.add(father)
-                self.persons.add(mother)
-                for child in children:
-                    child_ref = child.get_referenced_handles()
-                    if child_ref[0] == 'Person':
-                        self.persons.add(child_ref[1])
+        if self.MFF_filt:
+            for family_handle in db.iter_family_handles():
+                if self.MFF_filt.check(db, family_handle):
+                    family = db.get_family_from_handle(family_handle)
+                    father = family.get_father_handle()
+                    mother = family.get_mother_handle()
+                    children = family.get_child_ref_list()
+                    self.persons.add(father)
+                    self.persons.add(mother)
+                    for child in children:
+                        child_ref = child.get_referenced_handles()
+                        if child_ref[0] == 'Person':
+                            self.persons.add(child_ref[1])
 
     def apply(self, db, obj):
         """
