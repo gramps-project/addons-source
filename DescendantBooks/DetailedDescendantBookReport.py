@@ -1,6 +1,6 @@
 #
 # Copyright (C) 2011 Matt Keenan <matt.keenan@gmail.com>
-# Copyright (C) 2015 Giansalvo Gusinu <pioggia3@gmail.com>
+# Copyright (C) 2015, 2019 Giansalvo Gusinu <giansalvo.gusinu@gmail.com>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -29,7 +29,11 @@ Merged with Trunk Rev r18388
 #------------------------------------------------------------------------
 import copy
 from gramps.gen.const import GRAMPS_LOCALE as glocale
-_ = glocale.translation.gettext
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.gettext
 from functools import partial
 
 #------------------------------------------------------------------------
@@ -117,6 +121,7 @@ class DetailedDescendantBookReport(Report):
         incindexnames - Whether to include the index of names at the end of the report.
         incindexplaces- Whether to include the index of places at the end of the report.
         incindexdates - Whether to include the index of dates at the end of the report.
+        inconlyonce   - Whether to include only the first occurrence of a person or all of them.
         incssign      - Whether to include a sign ('+') before the descendant number in the child-list to indicate a child has succession.
         pid           - The Gramps ID of the center person for the report.
         name_format   - Preferred format to display names
@@ -157,6 +162,7 @@ class DetailedDescendantBookReport(Report):
         self.inc_index_names = get_value('incindexnames')
         self.inc_index_of_dates =get_value('incindexdates')
         self.inc_index_of_places =get_value('incindexplaces')
+        self.inc_only_once = get_value('inconlyonce')
         self.inc_ssign     = get_value('incssign')
         self.inc_materef   = get_value('incmateref')
         self.filter_option =  menu.get_option_by_name('filter')
@@ -438,11 +444,11 @@ class DetailedDescendantBookReport(Report):
             self.report_count += 1
             if len(self.ascendants) > 1:
                 self.title = \
-                    self._("%(report_count)s. Descendant Report for " \
+                    _("%(report_count)s. Descendant Report for " \
                     "%(person_name)s") % {'report_count' : self.report_count, \
                     'person_name' : name }
             else:
-                self.title = self._("Descendant Report for " \
+                self.title = _("Descendant Report for " \
                                     "%(person_name)s") % {'person_name' : name }
             mark = IndexMark(self.title, INDEX_TYPE_TOC, 1)
             self.doc.write_text(self.title, mark)
@@ -455,7 +461,7 @@ class DetailedDescendantBookReport(Report):
                 if self.pgbrk and self.generation > 0:
                     self.doc.page_break()
                 self.doc.start_paragraph("DDR-Generation")
-                text = self._("Generation %d") % (self.generation+1)
+                text = _("Generation %d") % (self.generation+1)
                 mark = IndexMark(text, INDEX_TYPE_TOC, 2)
                 self.doc.write_text(text, mark)
                 self.doc.end_paragraph()
@@ -527,7 +533,7 @@ class DetailedDescendantBookReport(Report):
         This function prints the index of dates.
         """
         self.doc.start_paragraph("DDR-Title")
-        self.doc.write_text_citation("Index of Dates")
+        self.doc.write_text_citation(_("Index of Dates"))
         self.doc.end_paragraph()
 
         sorted_year = sorted(self.index_of_dates.keys())
@@ -550,11 +556,11 @@ class DetailedDescendantBookReport(Report):
         where the person appears in the reports.
         """
         self.doc.start_paragraph("DDR-Title")
-        self.doc.write_text_citation("Index of Names")
+        self.doc.write_text_citation(_("Index of Names"))
         self.doc.end_paragraph()
 
         self.doc.start_paragraph("DDR-IndexNamesHeader")
-        ref_str = "Report    Generat. Person    Name"
+        ref_str = _("Report  Generation Person    Name")
         self.doc.write_text_citation(ref_str)
         self.doc.end_paragraph()
 
@@ -565,13 +571,14 @@ class DetailedDescendantBookReport(Report):
             for repno, gen, per, mate, name in self.report_app_ref[person_handle]:
                 if not first_line_done:
                     self.doc.start_paragraph("DDR-IndexNamesEntry")
-                    ref_str = "%13s %13s %15s    \t%s" \
+                    ref_str = _("%13s %13s %15s    \t%s") \
                               % (repno, gen, per, name)
                     self.doc.write_text_citation(ref_str)
                     self.doc.end_paragraph()
-                if first_line_done:
+                elif not self.inc_only_once:
                     self.doc.start_paragraph("DDR-IndexNamesEntry")
-                    ref_str = "%13s %13s %15s                 \"  " % (repno, gen, per)
+                    ref_str = _("%13s %13s %15s                 \"  ") \
+                              % (repno, gen, per)
                     self.doc.write_text_citation(ref_str)
                     self.doc.end_paragraph()
                 first_line_done = True
@@ -582,13 +589,13 @@ class DetailedDescendantBookReport(Report):
             return
 
         self.doc.start_paragraph("DDR-Title")
-        title = self._("Detailed Descendant Report")
+        title = _("Detailed Descendant Report")
         mark = IndexMark(title, INDEX_TYPE_TOC, 1)
         self.doc.write_text(title, mark)
         self.doc.end_paragraph()
 
         self.doc.start_paragraph("DDR-Generation")
-        title = self._("Table Of Contents")
+        title = _("Table Of Contents")
         mark = IndexMark(title, INDEX_TYPE_TOC, 1)
         self.doc.write_text(title, mark)
         self.doc.end_paragraph()
@@ -599,7 +606,7 @@ class DetailedDescendantBookReport(Report):
             name = self._name_display.display_name(person.get_primary_name())
             report_count = report_count + 1
             self.doc.start_paragraph("DDR-Entry")
-            text = self._("%d. %s") % (report_count, name)
+            text = _("%d. %s") % (report_count, name)
             mark = IndexMark(text, INDEX_TYPE_TOC, 2)
             self.doc.write_text(text, mark)
             self.doc.end_paragraph()
@@ -678,7 +685,7 @@ class DetailedDescendantBookReport(Report):
             if person_handle in self.persons_printed:
                 # Don't print duplicate people in second reports, simple reference them
                 rep, gen, dnum = self.persons_printed[person_handle]
-                self.doc.write_text(self._(
+                self.doc.write_text(_(
                     "See Report : %s, Generation : %s, Person : %s") % \
                     self.persons_printed[person_handle])
                 self.doc.end_paragraph()
@@ -693,7 +700,7 @@ class DetailedDescendantBookReport(Report):
                 if dkey >= key:
                     break
                 if self.map[key] == self.map[dkey]:
-                    self.doc.write_text(self._(
+                    self.doc.write_text(_(
                         "%(name)s is the same person as [%(id_str)s].") % {
                             'name' :'',
                             'id_str': self.dnumber[self.map[dkey]],
@@ -739,36 +746,37 @@ class DetailedDescendantBookReport(Report):
         else:
             dnum = "0"
 
-        for repno, gen, per, mate, name in self.report_app_ref[person_handle]:
-            if (repno != self.report_count or gen != self.generation+1) or \
-                (repno == self.report_count and gen == self.generation+1 \
-                and per != dnum):
-                if mate:
-                    if not header_done:
-                        self.doc.start_paragraph("DDR-NoteHeader")
-                        self.doc.write_text(self._("Report appearances " \
-                                                "for %s") % name)
+        if not self.inc_only_once:
+            for repno, gen, per, mate, name in self.report_app_ref[person_handle]:
+                if (repno != self.report_count or gen != self.generation+1) or \
+                    (repno == self.report_count and gen == self.generation+1 \
+                    and per != dnum):
+                    if mate:
+                        if not header_done:
+                            self.doc.start_paragraph("DDR-NoteHeader")
+                            self.doc.write_text(
+                                _("Report appearances for %s") % name)
+                            self.doc.end_paragraph()
+                            header_done = True
+    
+                        self.doc.start_paragraph("DDR-Entry")
+                        ref_str = _("Spouse of: Report: %s, Generation: %s, Person: %s") \
+                                % (repno, gen, per)
+                        self.doc.write_text_citation(ref_str)
                         self.doc.end_paragraph()
-                        header_done = True
-
-                    self.doc.start_paragraph("DDR-Entry")
-                    ref_str = "Spouse of: Report: %s, Generation: %s, " \
-                            "Person: %s" % (repno, gen, per)
-                    self.doc.write_text_citation(ref_str)
-                    self.doc.end_paragraph()
-                else:
-                    if not header_done:
-                        self.doc.start_paragraph("DDR-NoteHeader")
-                        self.doc.write_text(self._("Report appearances " \
-                                                "for %s") % name)
+                    else:
+                        if not header_done:
+                            self.doc.start_paragraph("DDR-NoteHeader")
+                            self.doc.write_text(
+                                _("Report appearances for %s") % name)
+                            self.doc.end_paragraph()
+                            header_done = True
+    
+                        self.doc.start_paragraph("DDR-Entry")
+                        ref_str = _("Report: %s, Generation: %s, Person: %s") \
+                                % (repno, gen, per)
+                        self.doc.write_text_citation(ref_str)
                         self.doc.end_paragraph()
-                        header_done = True
-
-                    self.doc.start_paragraph("DDR-Entry")
-                    ref_str = "Report: %s, Generation: " \
-                            "%s, Person: %s" % (repno, gen, per)
-                    self.doc.write_text_citation(ref_str)
-                    self.doc.end_paragraph()
 #BOOK end
 
     def append_event(self, event_ref, family = False):
@@ -790,22 +798,22 @@ class DetailedDescendantBookReport(Report):
 
         # add mate's name in case of family events
         if family == False:
-            text = self._('%(event_name)s of %(name)s ') % {
-                            'event_name' : self._(event_name), 'name' : name }
+            text = _('%(event_name)s of %(name)s ') % {
+                            'event_name' : _(event_name), 'name' : name }
         else:
             mother_name, father_name = self.__get_mate_names(family)
-            text = self._('%(event_name)s of %(name)s and %(mate)s ') % {
-                            'event_name' : self._(event_name), 'name' : father_name, 'mate' : mother_name }
+            text = _('%(event_name)s of %(name)s and %(mate)s ') % {
+                            'event_name' : _(event_name), 'name' : father_name, 'mate' : mother_name }
 
         if date and place:
-            text +=  self._('%(date)s, %(place)s') % {
+            text +=  _('%(date)s, %(place)s') % {
                        'date' : date, 'place' : place }
         elif date:
-            text += self._('%(date)s') % {'date' : date}
+            text += _('%(date)s') % {'date' : date}
         elif place:
-            text += self._('%(place)s') % { 'place' : place }
+            text += _('%(place)s') % { 'place' : place }
 
-        text += self._('. Ref: %(repno)s %(gen)s %(per)s ') % {
+        text += _('. Ref: %(repno)s %(gen)s %(per)s ') % {
                         'repno' : repno, 'gen' : gen, 'per' : per }
 
         if (event.get_date_object().get_year() and self.inc_index_of_dates):
@@ -834,7 +842,7 @@ class DetailedDescendantBookReport(Report):
 
 #BOOK start
         self.doc.start_bold()
-        text = self._('%(event_name)s:') % {'event_name' : self._(event_name)}
+        text = _('%(event_name)s:') % {'event_name' : _(event_name)}
         self.doc.write_text_citation(text)
         self.doc.end_bold()
 
@@ -842,12 +850,12 @@ class DetailedDescendantBookReport(Report):
 #BOOK end
 
         if date and place:
-            text +=  self._('%(date)s, %(place)s') % {
+            text +=  _('%(date)s, %(place)s') % {
                        'date' : date, 'place' : place }
         elif date:
-            text += self._('%(date)s') % {'date' : date}
+            text += _('%(date)s') % {'date' : date}
         elif place:
-            text += self._('%(place)s') % { 'place' : place }
+            text += _('%(place)s') % { 'place' : place }
 
         if event.get_description():
             if text:
@@ -859,7 +867,7 @@ class DetailedDescendantBookReport(Report):
         if text:
             text += ". "
 
-        text = self._(' %(event_text)s') % {'event_text' : text} #BOOK
+        text = _(' %(event_text)s') % {'event_text' : text} #BOOK
 
         self.doc.write_text_citation(text)
 
@@ -871,8 +879,8 @@ class DetailedDescendantBookReport(Report):
                 if text:
                     text += "; "
                 attrName = self._get_type(attr.get_type())
-                text += self._("%(type)s: %(value)s%(endnotes)s") % {
-                    'type'     : self._(attrName),
+                text += _("%(type)s: %(value)s%(endnotes)s") % {
+                    'type'     : _(attrName),
                     'value'    : attr.get_value(),
                     'endnotes' : self.endnotes(attr) }
             text = " " + text
@@ -960,9 +968,9 @@ class DetailedDescendantBookReport(Report):
             name = self._name_display.display_formal(mate)
             mark = ReportUtils.get_person_mark(self.database, mate)
             if family.get_relationship() == FamilyRelType.MARRIED:
-                self.doc.write_text(self._("Spouse: %s") % name, mark)
+                self.doc.write_text(_("Spouse: %s") % name, mark)
             else:
-                self.doc.write_text(self._("Relationship with: %s") % name, mark)
+                self.doc.write_text(_("Relationship with: %s") % name, mark)
             if name[-1:] != '.':
                 self.doc.write_text(".")
             self.doc.write_text_citation(self.endnotes(mate))
@@ -977,7 +985,7 @@ class DetailedDescendantBookReport(Report):
                 if mate_handle in self.dnumber:
                     self.doc.start_paragraph('DDR-MoreDetails')
                     self.doc.write_text_citation(
-                        self._("Ref: %s. %s") %
+                        _("Ref: %s. %s") %
                         (self.dnumber[mate_handle], name))
                     self.doc.end_paragraph()
                 else:
@@ -990,14 +998,14 @@ class DetailedDescendantBookReport(Report):
             mother = self.database.get_person_from_handle(mother_handle)
             mother_name = self._name_display.display(mother)
         else:
-            mother_name = self._("unknown")
+            mother_name = _("unknown")
 
         father_handle = family.get_father_handle()
         if father_handle:
             father = self.database.get_person_from_handle(father_handle)
             father_name = self._name_display.display(father)
         else:
-            father_name = self._("unknown")
+            father_name = _("unknown")
 
         return mother_name, father_name
 
@@ -1012,7 +1020,7 @@ class DetailedDescendantBookReport(Report):
 
         self.doc.start_paragraph("DDR-ChildTitle")
         self.doc.write_text(
-                        self._("Children of %(mother_name)s and %(father_name)s") %
+                        _("Children of %(mother_name)s and %(father_name)s") %
                             {'father_name': father_name,
                              'mother_name': mother_name
                              } )
@@ -1070,7 +1078,7 @@ class DetailedDescendantBookReport(Report):
 
             self.doc.start_paragraph("DDR-NoteHeader")
             self.doc.write_text(
-                self._('Notes for %(mother_name)s and %(father_name)s:') % {
+                _('Notes for %(mother_name)s and %(father_name)s:') % {
                 'mother_name' : mother_name,
                 'father_name' : father_name })
             self.doc.end_paragraph()
@@ -1093,7 +1101,7 @@ class DetailedDescendantBookReport(Report):
             if first:
                 self.doc.start_paragraph('DDR-MoreHeader')
                 self.doc.write_text(
-                    self._('More about %(mother_name)s and %(father_name)s:') % {
+                    _('More about %(mother_name)s and %(father_name)s:') % {
                     'mother_name' : mother_name,
                     'father_name' : father_name })
                 self.doc.end_paragraph()
@@ -1116,7 +1124,7 @@ class DetailedDescendantBookReport(Report):
 
             self.doc.start_paragraph('DDR-MoreHeader')
             self.doc.write_text(
-                self._('More about %(mother_name)s and %(father_name)s:') % {
+                _('More about %(mother_name)s and %(father_name)s:') % {
                 'mother_name' : mother_name,
                 'father_name' : father_name })
             self.doc.end_paragraph()
@@ -1124,8 +1132,8 @@ class DetailedDescendantBookReport(Report):
         for attr in attrs:
             self.doc.start_paragraph('DDR-MoreDetails')
             attrName = self._get_type(attr.get_type())
-            text = self._("%(type)s: %(value)s%(endnotes)s") % {
-                'type'     : self._(attrName),
+            text = _("%(type)s: %(value)s%(endnotes)s") % {
+                'type'     : _(attrName),
                 'value'    : attr.get_value(),
                 'endnotes' : self.endnotes(attr) }
             self.doc.write_text_citation( text )
@@ -1198,7 +1206,7 @@ class DetailedDescendantBookReport(Report):
         if len(notelist) > 0 and self.inc_notes:
             self.doc.start_paragraph("DDR-NoteHeader")
             # feature request 2356: avoid genitive form
-            self.doc.write_text(self._("Notes for %s") % name)
+            self.doc.write_text(_("Notes for %s") % name)
             self.doc.end_paragraph()
             for notehandle in notelist:
                 note = self.database.get_note_from_handle(notehandle)
@@ -1211,15 +1219,15 @@ class DetailedDescendantBookReport(Report):
             for alt_name in person.get_alternate_names():
                 if first:
                     self.doc.start_paragraph('DDR-MoreHeader')
-                    self.doc.write_text(self._('More about %(person_name)s:') % {
+                    self.doc.write_text(_('More about %(person_name)s:') % {
                         'person_name' : name })
                     self.doc.end_paragraph()
                     first = False
                 self.doc.start_paragraph('DDR-MoreDetails')
                 atype = self._get_type(alt_name.get_type())
                 aname = alt_name.get_regular_name()
-                self.doc.write_text_citation(self._('%(name_kind)s: %(name)s%(endnotes)s') % {
-                    'name_kind' : self._(atype),
+                self.doc.write_text_citation(_('%(name_kind)s: %(name)s%(endnotes)s') % {
+                    'name_kind' : _(atype),
                     'name' : aname,
                     'endnotes' : self.endnotes(alt_name),
                     })
@@ -1230,7 +1238,7 @@ class DetailedDescendantBookReport(Report):
                 if self.inc_events:
                     if first:
                         self.doc.start_paragraph('DDR-MoreHeader')
-                        self.doc.write_text(self._('More about %(person_name)s:') % {
+                        self.doc.write_text(_('More about %(person_name)s:') % {
                             'person_name' : self._name_display.display(person) })
                         self.doc.end_paragraph()
                         first = 0
@@ -1244,7 +1252,7 @@ class DetailedDescendantBookReport(Report):
             for addr in person.get_address_list():
                 if first:
                     self.doc.start_paragraph('DDR-MoreHeader')
-                    self.doc.write_text(self._('More about %(person_name)s:') % {
+                    self.doc.write_text(_('More about %(person_name)s:') % {
                         'person_name' : name })
                     self.doc.end_paragraph()
                     first = False
@@ -1257,7 +1265,7 @@ class DetailedDescendantBookReport(Report):
                 else:
                     date = addr.get_date_object().get_year()
 
-                self.doc.write_text(self._('Address: '))
+                self.doc.write_text(_('Address: '))
                 if date:
                     self.doc.write_text( '%s, ' % date )
                 self.doc.write_text( text )
@@ -1268,7 +1276,7 @@ class DetailedDescendantBookReport(Report):
             attrs = person.get_attribute_list()
             if first and attrs:
                 self.doc.start_paragraph('DDR-MoreHeader')
-                self.doc.write_text(self._('More about %(person_name)s:') % {
+                self.doc.write_text(_('More about %(person_name)s:') % {
                     'person_name' : name })
                 self.doc.end_paragraph()
                 first = False
@@ -1279,12 +1287,12 @@ class DetailedDescendantBookReport(Report):
 
 #BOOK start
                 self.doc.start_bold()
-                text = self._('%(type)s:') % {'type' : self._(attrName)}
+                text = _('%(type)s:') % {'type' : _(attrName)}
                 self.doc.write_text_citation(text)
                 self.doc.end_bold()
 #BOOK end
 
-                text = self._(" %(value)s%(endnotes)s") % {
+                text = _(" %(value)s%(endnotes)s") % {
                     'value'    : attr.get_value(),
                     'endnotes' : self.endnotes(attr) }
                 self.doc.write_text_citation( text )
@@ -1480,6 +1488,10 @@ class DetailedDescendantBookOptions(MenuReportOptions):
                             "at the end of the report."))
         add_option("incindexplaces", incindexplaces)
 
+        inconlyonce = BooleanOption(_("Include only once"), False)
+        inconlyonce.set_help(_("Whether to include only the first occurrence "
+                            "of a person or all of them."))
+        add_option("inconlyonce", inconlyonce)
 
         # Missing information
 
