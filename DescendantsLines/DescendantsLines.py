@@ -5,6 +5,7 @@
 # Copyright (C) 2010 Jerome Rapinat <romjerome@yahoo.fr>
 # Copyright (C) 2010, 2012 lcc <lcc.mailaddress@gmail.com>
 # Copyright (C) 2015 Don Piercy
+# Copyright (C) 2020 Giansalvo Gusinu <giansalvo.gusinu@gmail.com>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -135,6 +136,19 @@ INC_DNUM = False
 MAX_GENERATION = 0
 TEXT_ALIGNMENT = 'center'   # 'center', 'left'
 STROKE_RECTANGLE = False
+same_width = True
+same_height = True
+MARGIN_HEADER = 100 # Margin used for the header. In pixels
+MARGIN_FOOTER = 100 # Margin used for the footer. In pixels
+MARGIN_LEFT   = 100 # Left margin
+MARGIN_RIGHT  = 100 # Right margin
+
+# global variables used in conjunction with same_width/same_height options
+global first_pass
+global max_image_width
+global max_image_height
+global max_text_width
+global max_text_height
 
 # Static variable for do_person()
 CUR_GENERATION = 0
@@ -228,19 +242,19 @@ class DescendantsLinesReport(Report):
         This report needs the following parameters (class variables)
         that come in the options class.
 
-        S_DOWN - The length of the vertical edge from descendant to spouse-bar
-        S_UP - The length of the vertical edge from spouse-bar to spouse
-        S_VPAD
-        FL_PAD
-        OL_PAD
-        O_DOWN - The length of the vertical edge from spouse-bar to child-bar
-        C_PAD
-        F_PAD
-        C_UP - The length of the vertical edge from child to child-bar
-        SP_PAD
-        MIN_C_WIDTH
-        TEXT_PAD
-        TEXT_LINE_PAD
+        S_DOWN  - The length of the vertical edge from descendant to spouse-bar
+        S_UP    - The length of the vertical edge from spouse-bar to spouse
+        S_VPAD  - Vertical space spouse-bar to other spouse
+        FL_PAD  - Horizontal distance spouse to family edge
+        OL_PAD  -
+        O_DOWN  - The length of the vertical edge from spouse-bar to child-bar
+        C_PAD   - Children distance
+        F_PAD   - Horizonal space family to family
+        C_UP    - The length of the vertical edge from child to child-bar
+        SP_PAD  - Horizontal space descendant to spouse
+        MIN_C_WIDTH -
+        TEXT_PAD- Space around text
+        TEXT_LINE_PAD - Space between lines of text
         output_fmt - The output format
         output_fn - The output filename
         max_gen - Maximum number of generations to include. (0 for unlimited)
@@ -249,8 +263,10 @@ class DescendantsLinesReport(Report):
         name_disp - The name format
         inc_dnum - Whether to use d'Aboville descendant numbering system
         style - The predefined output style
-        inc_image -
-        replace_list -
+        inc_image - Include an image
+        replace_list - Replacement list
+        same_width -All Person's blocks have the same width
+        same_height-All Person's blocks have the same height
         """
 
         Report.__init__(self, database, options_class, user)
@@ -308,6 +324,8 @@ class DescendantsLinesReport(Report):
         global FILL_COLORS
         global TEXT_ALIGNMENT
         global STROKE_RECTANGLE
+        global same_width
+        global same_height
         global MAX_NOTE_LEN
         global INC_DNUM
         OUTPUT_FMT = self.output_fmt
@@ -317,6 +335,8 @@ class DescendantsLinesReport(Report):
         FILL_COLORS = self.options['fill_colors']
         TEXT_ALIGNMENT = self.options['text_alignment']
         STROKE_RECTANGLE = self.options['stroke_rectangle']
+        same_width = self.options['same_width']
+        same_height = self.options['same_height']
         MAX_NOTE_LEN = self.options['max_note_len']
 
         INC_DNUM = self.inc_dnum
@@ -386,6 +406,10 @@ class DescendantsLinesReport(Report):
         if STROKE_RECTANGLE:
             TEXT_PAD += RECTANGLE_TEXT_PAD
 
+        self.title = menu.get_option_by_name('title').get_value()
+        self.footer = menu.get_option_by_name('footer').get_value()
+        self.header_coeff = menu.get_option_by_name('header_coeff').get_value()
+
     def write_report(self):
         """
         This routine actually creates the report.
@@ -398,13 +422,28 @@ class DescendantsLinesReport(Report):
         # tree:
         init_file(None, PNGWriter())
 
+        # calculate max_box_width, max_box_height, max_image_width,
+        # max_image_height
+        global first_pass
+        global max_image_width
+        global max_image_height
+        global max_text_width
+        global max_text_height
+        first_pass = True
+        max_text_width = 0
+        max_text_height = 0
+        max_image_height = 0
+        max_image_width = 0
+        p1 = load_gramps(pid) #TODO p1 can be disposed after this call
+
         # Generates a tree of person records and the family linkages for the
         # chart:
+        first_pass = False
         p = load_gramps(pid)
 
         # traverses tree and generates the chart with "person" boxes and the
         # "family" relationship lines.
-        draw_file(p, self.output_fn, PNGWriter())
+        draw_file(p, self.output_fn, PNGWriter(), self.title, self.footer, self.header_coeff)
 
         # Matches all that is used currently, families might be collected later
         filter_class = GenericFilterFactory('Person')
@@ -444,7 +483,6 @@ class DescendantsLinesReport(Report):
         self.doc.write_text('%s people' % len(ind_list))
         self.doc.end_paragraph()
 
-
 def draw_text(text, x, y, total_w, top_centered_lines=0):
     """
     Draw the block if text at the specified location.
@@ -462,10 +500,10 @@ def draw_text(text, x, y, total_w, top_centered_lines=0):
         (ascent, _, height, _, _) = ctx.font_extents()
         (lx, _, width, _, _, _,) = ctx.text_extents(line)
         if ((TEXT_ALIGNMENT == 'center') or (n <= top_centered_lines)):
-            ctx.move_to(x - lx + (total_w - width + lx) / 2, y +
-                        ascent + TEXT_PAD)
+            ctx.move_to(MARGIN_LEFT + x - lx + (total_w - width + lx) / 2, y +
+                        ascent + TEXT_PAD + MARGIN_HEADER)
         elif TEXT_ALIGNMENT == 'left':
-            ctx.move_to(x - lx + TEXT_PAD, y + ascent + TEXT_PAD)
+            ctx.move_to(MARGIN_LEFT + x - lx + TEXT_PAD, y + ascent + TEXT_PAD + MARGIN_HEADER)
         else:
             raise AttributeError("DT: no such text alignment: '%s'" %
                                  TEXT_ALIGNMENT)
@@ -474,6 +512,15 @@ def draw_text(text, x, y, total_w, top_centered_lines=0):
         y += height + TEXT_LINE_PAD
         n += 1
 
+def draw_header_footer(x, y, line, coeff):
+    ctx.select_font_face(font_name)
+    ctx.set_font_size(base_font_size * coeff)
+    (ascent, _, height, _, _) = ctx.font_extents()
+    (lx, _, width, _, _, _,) = ctx.text_extents(line)
+    total_w = 0
+    ctx.move_to(MARGIN_LEFT +x - lx + (total_w - width + lx) / 2,
+                y + ascent)
+    ctx.show_text(line)
 
 def size_text(text, cntx):
     text_width = 0
@@ -646,6 +693,35 @@ class Person_Block:
         # log.debug('PBlk Height: bh=%d, th=%d, ih=%d',
         #           self.boxh, self.th, self.ih)
 
+        global max_image_width
+        global max_image_height
+        global max_text_width
+        global max_text_height
+        if first_pass:
+            max_image_width = max(max_image_width, self.iw)
+            max_image_height = max(max_image_height, self.ih)
+            max_text_width = max(max_text_width, self.tw)
+            max_text_height = max(max_text_height, self.th)
+        else:
+            if same_width:
+                if IMAGE_LOC == 'Above Text':
+                    self.boxw = max(max_text_width , max_image_width)
+                elif IMAGE_LOC == 'Left of Text':
+                    self.boxw = max_text_width + max_image_width
+                else:
+                    log.warning('PBlk: Image location not valid: %s', IMAGE_LOC)
+                self.tw = max_text_width
+                self.iw = max_image_width
+            if same_height:
+                if IMAGE_LOC == 'Above Text':
+                    self.boxh = max_text_height + max_image_height
+                elif IMAGE_LOC == 'Left of Text':
+                    self.boxh = max(max_text_height, max_image_height)
+                else:
+                    log.warning('PBlk: Image location not valid: %s', IMAGE_LOC)
+                self.th = max_text_height
+                self.ih = max_image_height
+
     def __str__(self):
         return (self.text[0] + '_PBlk')
 
@@ -748,7 +824,9 @@ class Person(Memorised):
             set_gen_style(ctx, self.generation, DESCEND_ALPHA)
         else:
             set_fg_style(ctx)
-        ctx.rectangle(self.get('tx'), self.get('y'), self.boxw, self.boxh)
+
+        ctx.rectangle(MARGIN_LEFT + self.get('tx'), self.get('y') + MARGIN_HEADER, self.boxw, self.boxh)
+
         if STROKE_RECTANGLE is True:
             ctx.fill_preserve()
             set_line_style(ctx)
@@ -763,7 +841,7 @@ class Person(Memorised):
 #             log.debug('PD: imagePath: %s', self.ipath.replace(
 #                 '/Users/ndpiercy/Library/Application Support/gramps/thumb/',
 #                 ''))
-            draw_image(self.ipath, self.get('tx') + ixo, self.get('y') + iyo,
+            draw_image(self.ipath, MARGIN_LEFT + self.get('tx') + ixo, self.get('y') + iyo + MARGIN_HEADER,
                        self.iw, self.ih, self.iscale)
 
         for f in self.families:
@@ -870,7 +948,7 @@ class Family(Memorised):
         ctx.set_dash([20, 5])
         ctx.new_path()
         # center bottom of "Descendant" box
-        ctx.move_to(self.get('glx'), self.get('gly'))
+        ctx.move_to(MARGIN_LEFT + self.get('glx'), self.get('gly') + MARGIN_HEADER)
         ctx.rel_line_to(0, self.get('glh'))
         ctx.rel_line_to(self.get('flw'), 0)
         # to center bottom of "Spouse" box
@@ -912,8 +990,8 @@ class Family(Memorised):
             set_gen_style(ctx, self.generation, SPOUSE_ALPHA)
         else:
             set_fg_style(ctx)
-        ctx.rectangle(self.get('spx'), self.get('spy'), self.spouse.boxw,
-                      self.spouse.boxh)
+        ctx.rectangle(MARGIN_LEFT + self.get('spx'), self.get('spy') + MARGIN_HEADER,
+                      self.spouse.boxw, self.spouse.boxh)
         if STROKE_RECTANGLE is True:
             ctx.fill_preserve()
             set_line_style(ctx)
@@ -928,26 +1006,30 @@ class Family(Memorised):
 #             log.debug('FD: imagePath: %s', self.spouse.ipath.replace(
 #                 '/Users/ndpiercy/Library/Application Support/gramps/thumb/',
 #                 ''))
-            draw_image(self.spouse.ipath, self.get('spx') + ixo,
-                       self.get('spy') + iyo, self.spouse.iw, self.spouse.ih,
-                       self.spouse.iscale)
+            draw_image(self.spouse.ipath, MARGIN_LEFT + self.get('spx') + ixo,
+                       self.get('spy') + iyo + MARGIN_HEADER,
+                       self.spouse.iw, self.spouse.ih, self.spouse.iscale)
 
         if self.children != []:
             set_line_style(ctx)
             ctx.new_path()
-            ctx.move_to(self.get('olx'), self.get('oly'))
+            ctx.move_to(MARGIN_LEFT + self.get('olx'),
+                        self.get('oly') + MARGIN_HEADER)
             ctx.rel_line_to(0, self.get('olh'))
             ctx.stroke()
 
             ctx.new_path()
-            ctx.move_to(self.children[0].get('glx'), self.get('cly'))
-            ctx.line_to(self.children[-1].get('glx'), self.get('cly'))
+            ctx.move_to(MARGIN_LEFT + self.children[0].get('glx'),
+                        self.get('cly') + MARGIN_HEADER)
+            ctx.line_to(MARGIN_LEFT + self.children[-1].get('glx'),
+                        self.get('cly') + MARGIN_HEADER)
             ctx.stroke()
 
             for c in self.children:
                 set_line_style(ctx)
                 ctx.new_path()
-                ctx.move_to(c.get('glx'), self.get('cly'))
+                ctx.move_to(MARGIN_LEFT + c.get('glx'),
+                            self.get('cly') + MARGIN_HEADER)
                 ctx.rel_line_to(0, C_UP)
                 ctx.stroke()
 
@@ -1394,7 +1476,7 @@ class PNGWriter:
             raise AttributeError("no such output format: '%s'" % OUTPUT_FMT)
 
 
-def draw_file(p, fn, writer):
+def draw_file(p, fn, writer, title, footer, header_coeff):
     """
     called by write_report to generate the chart
     Uses the tree of person & family records, "p", created by load_gramps
@@ -1408,9 +1490,14 @@ def draw_file(p, fn, writer):
     (w, h) = (p.get('w'), p.get('h'))
     log.debug('### End of 1st Pass. Surface w=%d, h=%d', w, h)
 
-    surface = writer.start(fn, w, h)
+    surface = writer.start(fn, w + MARGIN_LEFT + MARGIN_RIGHT,
+                           h + MARGIN_HEADER + MARGIN_FOOTER)
     ctx = cairo.Context(surface)
+    draw_header_footer(w / 2, MARGIN_HEADER / 2, title, header_coeff)
     draw_tree(p)
+    draw_header_footer(w / 2, h + MARGIN_HEADER + MARGIN_FOOTER / 2,
+                       footer, header_coeff)
+
     ctx.show_page()
     writer.finish()
 
@@ -1464,6 +1551,18 @@ class DescendantsLinesOptions(MenuReportOptions):
                                     ' person\' text block.'))
         menu.add_option(category_name, 'stroke_rectangle', stroke_rectangle)
 
+        same_height = BooleanOption(_("All Person's blocks have the same height"), True)
+        same_height.set_help(_('All the blocks of all the person have the same'
+                                    ' height, which is the height of the highest'
+                                    ' block.'))
+        menu.add_option(category_name, 'same_height', same_height)
+
+        same_width = BooleanOption(_("All Person's blocks have the same width"), True)
+        same_width.set_help(_('All the blocks of all the person have the same'
+                                    ' width, which is the width of the widthest'
+                                    ' block.'))
+        menu.add_option(category_name, 'same_width', same_width)
+
         fill_colors = BooleanOption(_('Colour blocks by Generation'), False)
         fill_colors.set_help(_('Colour the background of text blocks by'
                                ' generation.'))
@@ -1503,15 +1602,6 @@ class DescendantsLinesOptions(MenuReportOptions):
         ##################
         category_name = _("Display")
 
-        namedisp = StringOption(_("Name Display Format"),
-                                r"$n(f L){ \($n(n)\)}")
-        namedisp.set_help(
-            _("f=first & middle names, l=surname, n=nickname,"
-              "\nc=commonly used given name, t=title, s=suffix,"
-              " g=family nick name\n"
-              "See Wiki Manual > Reports > part 2"))
-        menu.add_option(category_name, "name_disp", namedisp)
-
         inc_dnum = BooleanOption(
             _("Use d'Aboville descendant numbering system"), False)
         inc_dnum.set_help(
@@ -1522,6 +1612,43 @@ class DescendantsLinesOptions(MenuReportOptions):
         gender_colors.set_help(
             _('Color the name to indicate a person\'s gender in the chart.'))
         menu.add_option(category_name, 'gender_colors', gender_colors)
+
+        or_similar_events = BooleanOption(
+            _('Use alternate events, if Primary event is not found'), False)
+        or_similar_events.set_help(_("For Birth (baptism, christen)\n "
+                                     "  Marriage (marr_lic, engagement)\n "
+                                     "  Divorce (annulment, div_filing),\n "
+                                     "  Death (burial, cremation, probate)."))
+        menu.add_option(category_name, "or_similar_events", or_similar_events)
+
+        sort_events = BooleanOption(_('Sort Events by Date'), False)
+        sort_events.set_help(_("Sort events by date (else use the order of"
+                               " the 'Display Format' above)."))
+        menu.add_option(category_name, "sort_events", sort_events)
+
+        text_alignment = EnumeratedListOption(_("Text style"), "center")
+        text_alignment.set_items([("center", _("Center-aligned text")),
+                                  ("left", _("Left-aligned text"))])
+        text_alignment.set_help(_("Alignment of the text in the block for"
+                                  " each person on the chart"))
+        menu.add_option(category_name, "text_alignment", text_alignment)
+
+        max_note_len = NumberOption(_("Max Note Length"), 0, 0, 250)
+        max_note_len.set_help(_("Maximum length of an event's note field in"
+                                " a text block, '$e(n)'\n 0=no limit "))
+        menu.add_option(category_name, "max_note_len", max_note_len)
+
+        ##################
+        category_name = _("Display Formats")
+
+        namedisp = StringOption(_("Name Display Format"),
+                                r"$n(f L){ \($n(n)\)}")
+        namedisp.set_help(
+            _("f=first & middle names, l=surname, n=nickname,"
+              "\nc=commonly used given name, t=title, s=suffix,"
+              " g=family nick name\n"
+              "See Wiki Manual > Reports > part 2"))
+        menu.add_option(category_name, "name_disp", namedisp)
 
         disp = TextOption(_("Descendant\nDisplay Format"), [
             "[ BIRTH   ]$e(t d(yyyy)< @ >D)",
@@ -1554,18 +1681,111 @@ class DescendantsLinesOptions(MenuReportOptions):
                          " notes=n abbreviated_type=t"))
         menu.add_option(category_name, "spouse_disp", sdisp)
 
-        or_similar_events = BooleanOption(
-            _('Use alternate events, if Primary event is not found'), False)
-        or_similar_events.set_help(_("For Birth (baptism, christen)\n "
-                                     "  Marriage (marr_lic, engagement)\n "
-                                     "  Divorce (annulment, div_filing),\n "
-                                     "  Death (burial, cremation, probate)."))
-        menu.add_option(category_name, "or_similar_events", or_similar_events)
+        ##################
+        category_name = _("Replace")
 
-        sort_events = BooleanOption(_('Sort Events by Date'), False)
-        sort_events.set_help(_("Sort events by date (else use the order of"
-                               " the 'Display Format' above)."))
-        menu.add_option(category_name, "sort_events", sort_events)
+        repldisp = TextOption(
+            _("Replace Display Format:\n'Replace this'/' with this'"),
+            [])
+        repldisp.set_help(_("i.e.\nUnited States of America/USA"))
+        menu.add_option(category_name, "replace_list", repldisp)
+
+        ##################
+        category_name = _('Spouse and Family')
+
+        s_down = NumberOption(_("Vertical edge descendant to spouse-bar"), 20, 0, 50)
+        s_down.set_help(_("The length of the vertical edge from descendant"
+                          " to spouse-bar."))
+        menu.add_option(category_name, "S_DOWN", s_down)
+
+        s_up = NumberOption(_("Vertical edge spouse-bar to spouse"), 10, 0, 50)
+        s_up.set_help(_("The length of the vertical edge from spouse-bar"
+                        " to spouse."))
+        menu.add_option(category_name, "S_UP", s_up)
+
+        s_vpad = NumberOption(_("Vertical space spouse-bar to other spouse"), 10, 0, 50)
+        s_vpad.set_help(_("The space to add between one spouse-bar and another"
+                          " spouse in case of multiple families with the same"
+                          " descendant."))
+        menu.add_option(category_name, "S_VPAD", s_vpad)
+
+        sp_pad = NumberOption(_("Horizontal space descendant to spouse"), 10, 0, 50)
+        sp_pad.set_help(_("The space to add between the descendant and the spouse."))
+        menu.add_option(category_name, "SP_PAD", sp_pad)
+
+#         category_name = _('Options F')
+
+        f_pad = NumberOption(_("Horizonal space family to family"), 20, 0, 50)
+        f_pad.set_help(_("The space to add between the more extern descendant"
+                         " (or spouse) of a family and the more extern descendant"
+                         " (or spouse) of the next family."))
+        menu.add_option(category_name, "F_PAD", f_pad)
+
+        fl_pad = NumberOption(_("Horizontal distance spouse to family edge"), 20, 0, 50)
+        fl_pad.set_help(_("If this value is 0, the children bar is centered under"
+                          " the spouse. The bigger the value, more the center is"
+                          " moved to the left towards the descendant."))
+        menu.add_option(category_name, "FL_PAD", fl_pad)
+
+        category_name = _('Children')
+
+        ol_pad = NumberOption(_("OL_PAD"), 10, 0, 50)
+        ol_pad.set_help(_("The number of ??? pad"))
+        menu.add_option(category_name, "OL_PAD", ol_pad)
+
+        o_down = NumberOption(_("Vertical edge spouse-bar to child-bar"), 30, 0, 50)
+        o_down.set_help(_("The length of the vertical edge from spouse-bar"
+                          " to child-bar."))
+        menu.add_option(category_name, "O_DOWN", o_down)
+
+#         category_name = _('Options C')
+
+        c_pad = NumberOption(_("Children distance"), 10, 0, 50)
+        c_pad.set_help(_("The horizontal distance between two children"
+                         " of the same family."))
+        menu.add_option(category_name, "C_PAD", c_pad)
+
+        c_up = NumberOption(_("Vertical edge child to child-bar"), 15, 0, 50)
+        c_up.set_help(
+            _("The length of the vertical edge from child to child-bar."))
+        menu.add_option(category_name, "C_UP", c_up)
+
+        min_c_width = NumberOption(_("MIN_C_WIDTH"), 40, 0, 50)
+        min_c_width.set_help(_("The number of ??? min width"))
+        menu.add_option(category_name, "MIN_C_WIDTH", min_c_width)
+
+#         category_name = _('Options Text')
+
+        text_pad = NumberOption(_("Space around text"), 2, 0, 50)
+        text_pad.set_help(_("The space to add around the text block"
+                            " of a person."))
+        menu.add_option(category_name, "TEXT_PAD", text_pad)
+
+        text_line_pad = NumberOption(_("Space between lines of text"), 2, 0, 50)
+        text_line_pad.set_help(_("The space to add between a line and the"
+                                 " next in a person text block."))
+        menu.add_option(category_name, "TEXT_LINE_PAD", text_line_pad)
+
+        ##################
+        category_name = _("Header and Footer")
+
+        title = gramps.gen.plug.menu.StringOption(_("Title text"), "")
+        title.set_help(_("The text that will be written in the header of the"
+                         " document"))
+        menu.add_option(category_name, "title", title)
+
+        footer = gramps.gen.plug.menu.StringOption(_("Footer text"), "")
+        footer.set_help(_("The text that will be written in the footer of the"
+                         " document"))
+        menu.add_option(category_name, "footer", footer)
+
+        header_coeff = NumberOption(_("Title and footer coefficient"), 3, 0, 10)
+        header_coeff.set_help(_("A number that multiply the base size of the"
+                                " text in the title and in the footer"))
+        menu.add_option(category_name, "header_coeff", header_coeff)
+
+        ##################
+        category_name = _("Privacy")
 
         protect_private = BooleanOption(_("Protect People, Images or Events"
                                           " that are marked Private"), True)
@@ -1577,94 +1797,6 @@ class DescendantsLinesOptions(MenuReportOptions):
         private_text.set_help(_("Text to display in block, when a Person"
                                 " is marked private"))
         menu.add_option(category_name, "private_text", private_text)
-
-        text_alignment = EnumeratedListOption(_("Text style"), "center")
-        text_alignment.set_items([("center", _("Center-aligned text")),
-                                  ("left", _("Left-aligned text"))])
-        text_alignment.set_help(_("Alignment of the text in the block for"
-                                  " each person on the chart"))
-        menu.add_option(category_name, "text_alignment", text_alignment)
-
-        max_note_len = NumberOption(_("Max Note Length"), 0, 0, 250)
-        max_note_len.set_help(_("Maximum length of an event's note field in"
-                                " a text block, '$e(n)'\n 0=no limit "))
-        menu.add_option(category_name, "max_note_len", max_note_len)
-
-        ##################
-        category_name = _("Replace")
-
-        repldisp = TextOption(
-            _("Replace Display Format:\n'Replace this'/' with this'"),
-            [])
-        repldisp.set_help(_("i.e.\nUnited States of America/USA"))
-        menu.add_option(category_name, "replace_list", repldisp)
-
-        ##################
-        category_name = _('S  &amp; F Options')
-
-        s_down = NumberOption(_("S_DOWN"), 20, 0, 50)
-        s_down.set_help(_("The length of the vertical edge from descendant"
-                          " to spouse-bar."))
-        menu.add_option(category_name, "S_DOWN", s_down)
-
-        s_up = NumberOption(_("S_UP"), 10, 0, 50)
-        s_up.set_help(_("The length of the vertical edge from spouse-bar"
-                        " to spouse."))
-        menu.add_option(category_name, "S_UP", s_up)
-
-        s_vpad = NumberOption(_("S_VPAD"), 10, 0, 50)
-        s_vpad.set_help(_("The number of ??? vpad"))
-        menu.add_option(category_name, "S_VPAD", s_vpad)
-
-        sp_pad = NumberOption(_("SP_PAD"), 10, 0, 50)
-        sp_pad.set_help(_("The number of ??? pad"))
-        menu.add_option(category_name, "SP_PAD", sp_pad)
-
-#         category_name = _('Options F')
-
-        f_pad = NumberOption(_("F_PAD"), 20, 0, 50)
-        f_pad.set_help(_("The number of ??? pad"))
-        menu.add_option(category_name, "F_PAD", f_pad)
-
-        fl_pad = NumberOption(_("FL_PAD"), 20, 0, 50)
-        fl_pad.set_help(_("The number of ??? pad"))
-        menu.add_option(category_name, "FL_PAD", fl_pad)
-
-        category_name = _('O, C &amp; Text Options')
-
-        ol_pad = NumberOption(_("OL_PAD"), 10, 0, 50)
-        ol_pad.set_help(_("The number of ??? pad"))
-        menu.add_option(category_name, "OL_PAD", ol_pad)
-
-        o_down = NumberOption(_("O_DOWN"), 30, 0, 50)
-        o_down.set_help(_("The length of the vertical edge from spouse-bar"
-                          " to child-bar."))
-        menu.add_option(category_name, "O_DOWN", o_down)
-
-#         category_name = _('Options C')
-
-        c_pad = NumberOption(_("C_PAD"), 10, 0, 50)
-        c_pad.set_help(_("The number of ??? pad"))
-        menu.add_option(category_name, "C_PAD", c_pad)
-
-        c_up = NumberOption(_("C_UP"), 15, 0, 50)
-        c_up.set_help(
-            _("The length of the vertical edge from child to child-bar."))
-        menu.add_option(category_name, "C_UP", c_up)
-
-        min_c_width = NumberOption(_("MIN_C_WIDTH"), 40, 0, 50)
-        min_c_width.set_help(_("The number of ??? min width"))
-        menu.add_option(category_name, "MIN_C_WIDTH", min_c_width)
-
-#         category_name = _('Options Text')
-
-        text_pad = NumberOption(_("TEXT_PAD"), 2, 0, 50)
-        text_pad.set_help(_("The number of text pad ???"))
-        menu.add_option(category_name, "TEXT_PAD", text_pad)
-
-        text_line_pad = NumberOption(_("TEXT_LINE_PAD"), 2, 0, 50)
-        text_line_pad.set_help(_("The number of text line pad ??? "))
-        menu.add_option(category_name, "TEXT_LINE_PAD", text_line_pad)
 
     def make_default_style(self, default_style):
         """Make the default output style"""
