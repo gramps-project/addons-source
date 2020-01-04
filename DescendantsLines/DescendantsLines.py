@@ -5,6 +5,7 @@
 # Copyright (C) 2010 Jerome Rapinat <romjerome@yahoo.fr>
 # Copyright (C) 2010, 2012 lcc <lcc.mailaddress@gmail.com>
 # Copyright (C) 2015 Don Piercy
+# Copyright (C) 2020 Giansalvo Gusinu <giansalvo.gusinu@gmail.com>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -135,6 +136,7 @@ INC_DNUM = False
 MAX_GENERATION = 0
 TEXT_ALIGNMENT = 'center'   # 'center', 'left'
 STROKE_RECTANGLE = False
+MARGIN_HEADER_FOOTER = 100  # Margin used for header and footer. In pixels?
 
 # Static variable for do_person()
 CUR_GENERATION = 0
@@ -385,7 +387,10 @@ class DescendantsLinesReport(Report):
         # increase text pad to allow for box's line
         if STROKE_RECTANGLE:
             TEXT_PAD += RECTANGLE_TEXT_PAD
-
+            
+        self.title = menu.get_option_by_name('title').get_value()
+        self.footer = menu.get_option_by_name('footer').get_value()
+       
     def write_report(self):
         """
         This routine actually creates the report.
@@ -404,7 +409,7 @@ class DescendantsLinesReport(Report):
 
         # traverses tree and generates the chart with "person" boxes and the
         # "family" relationship lines.
-        draw_file(p, self.output_fn, PNGWriter())
+        draw_file(p, self.output_fn, PNGWriter(), self.title, self.footer)
 
         # Matches all that is used currently, families might be collected later
         filter_class = GenericFilterFactory('Person')
@@ -424,6 +429,7 @@ class DescendantsLinesReport(Report):
             self._user.warn(_("Using SVG type for supplemental document is"
                               " not supported!"))
             return
+        
         for person_handle in ind_list:
             person = self.database.get_person_from_handle(person_handle)
             #log.debug(person_handle)
@@ -444,7 +450,6 @@ class DescendantsLinesReport(Report):
         self.doc.write_text('%s people' % len(ind_list))
         self.doc.end_paragraph()
 
-
 def draw_text(text, x, y, total_w, top_centered_lines=0):
     """
     Draw the block if text at the specified location.
@@ -463,9 +468,9 @@ def draw_text(text, x, y, total_w, top_centered_lines=0):
         (lx, _, width, _, _, _,) = ctx.text_extents(line)
         if ((TEXT_ALIGNMENT == 'center') or (n <= top_centered_lines)):
             ctx.move_to(x - lx + (total_w - width + lx) / 2, y +
-                        ascent + TEXT_PAD)
+                        ascent + TEXT_PAD + MARGIN_HEADER_FOOTER)
         elif TEXT_ALIGNMENT == 'left':
-            ctx.move_to(x - lx + TEXT_PAD, y + ascent + TEXT_PAD)
+            ctx.move_to(x - lx + TEXT_PAD, y + ascent + TEXT_PAD + MARGIN_HEADER_FOOTER)
         else:
             raise AttributeError("DT: no such text alignment: '%s'" %
                                  TEXT_ALIGNMENT)
@@ -473,6 +478,15 @@ def draw_text(text, x, y, total_w, top_centered_lines=0):
         ctx.show_text(line)
         y += height + TEXT_LINE_PAD
         n += 1
+
+def draw_header_footer(x, y, line):
+    ctx.select_font_face(font_name)
+    ctx.set_font_size(base_font_size * 1.0)
+    (ascent, _, height, _, _) = ctx.font_extents()
+    (lx, _, width, _, _, _,) = ctx.text_extents(line)
+    total_w = 0    
+    ctx.move_to(x - lx + (total_w - width + lx) / 2, y + ascent)
+    ctx.show_text(line)
 
 
 def size_text(text, cntx):
@@ -748,7 +762,7 @@ class Person(Memorised):
             set_gen_style(ctx, self.generation, DESCEND_ALPHA)
         else:
             set_fg_style(ctx)
-        ctx.rectangle(self.get('tx'), self.get('y'), self.boxw, self.boxh)
+        ctx.rectangle(self.get('tx'), self.get('y') + MARGIN_HEADER_FOOTER, self.boxw, self.boxh)
         if STROKE_RECTANGLE is True:
             ctx.fill_preserve()
             set_line_style(ctx)
@@ -763,7 +777,7 @@ class Person(Memorised):
 #             log.debug('PD: imagePath: %s', self.ipath.replace(
 #                 '/Users/ndpiercy/Library/Application Support/gramps/thumb/',
 #                 ''))
-            draw_image(self.ipath, self.get('tx') + ixo, self.get('y') + iyo,
+            draw_image(self.ipath, self.get('tx') + ixo, self.get('y') + iyo + MARGIN_HEADER_FOOTER,
                        self.iw, self.ih, self.iscale)
 
         for f in self.families:
@@ -870,7 +884,7 @@ class Family(Memorised):
         ctx.set_dash([20, 5])
         ctx.new_path()
         # center bottom of "Descendant" box
-        ctx.move_to(self.get('glx'), self.get('gly'))
+        ctx.move_to(self.get('glx'), self.get('gly') + MARGIN_HEADER_FOOTER)
         ctx.rel_line_to(0, self.get('glh'))
         ctx.rel_line_to(self.get('flw'), 0)
         # to center bottom of "Spouse" box
@@ -912,8 +926,8 @@ class Family(Memorised):
             set_gen_style(ctx, self.generation, SPOUSE_ALPHA)
         else:
             set_fg_style(ctx)
-        ctx.rectangle(self.get('spx'), self.get('spy'), self.spouse.boxw,
-                      self.spouse.boxh)
+        ctx.rectangle(self.get('spx'), self.get('spy') + MARGIN_HEADER_FOOTER,
+                      self.spouse.boxw, self.spouse.boxh)
         if STROKE_RECTANGLE is True:
             ctx.fill_preserve()
             set_line_style(ctx)
@@ -929,25 +943,27 @@ class Family(Memorised):
 #                 '/Users/ndpiercy/Library/Application Support/gramps/thumb/',
 #                 ''))
             draw_image(self.spouse.ipath, self.get('spx') + ixo,
-                       self.get('spy') + iyo, self.spouse.iw, self.spouse.ih,
-                       self.spouse.iscale)
+                       self.get('spy') + iyo + MARGIN_HEADER_FOOTER,
+                       self.spouse.iw, self.spouse.ih, self.spouse.iscale)
 
         if self.children != []:
             set_line_style(ctx)
             ctx.new_path()
-            ctx.move_to(self.get('olx'), self.get('oly'))
+            ctx.move_to(self.get('olx'), self.get('oly') + MARGIN_HEADER_FOOTER)
             ctx.rel_line_to(0, self.get('olh'))
             ctx.stroke()
 
             ctx.new_path()
-            ctx.move_to(self.children[0].get('glx'), self.get('cly'))
-            ctx.line_to(self.children[-1].get('glx'), self.get('cly'))
+            ctx.move_to(self.children[0].get('glx'),
+                        self.get('cly') + MARGIN_HEADER_FOOTER)
+            ctx.line_to(self.children[-1].get('glx'),
+                        self.get('cly') + MARGIN_HEADER_FOOTER)
             ctx.stroke()
 
             for c in self.children:
                 set_line_style(ctx)
                 ctx.new_path()
-                ctx.move_to(c.get('glx'), self.get('cly'))
+                ctx.move_to(c.get('glx'), self.get('cly') + MARGIN_HEADER_FOOTER)
                 ctx.rel_line_to(0, C_UP)
                 ctx.stroke()
 
@@ -1362,6 +1378,7 @@ def draw_tree(head):
     ctx.set_line_cap(cairo.LINE_CAP_SQUARE)
     ctx.set_line_join(cairo.LINE_JOIN_MITER)
     set_line_style(ctx)
+
     head.draw()
 
 
@@ -1394,7 +1411,7 @@ class PNGWriter:
             raise AttributeError("no such output format: '%s'" % OUTPUT_FMT)
 
 
-def draw_file(p, fn, writer):
+def draw_file(p, fn, writer, title, footer):
     """
     called by write_report to generate the chart
     Uses the tree of person & family records, "p", created by load_gramps
@@ -1408,9 +1425,12 @@ def draw_file(p, fn, writer):
     (w, h) = (p.get('w'), p.get('h'))
     log.debug('### End of 1st Pass. Surface w=%d, h=%d', w, h)
 
-    surface = writer.start(fn, w, h)
+    surface = writer.start(fn, w, h + MARGIN_HEADER_FOOTER * 2)
     ctx = cairo.Context(surface)
+    draw_header_footer(w / 2, MARGIN_HEADER_FOOTER / 2, title)
     draw_tree(p)
+    draw_header_footer(w / 2, h + MARGIN_HEADER_FOOTER * 1.5 , footer)
+    
     ctx.show_page()
     writer.finish()
 
@@ -1665,6 +1685,12 @@ class DescendantsLinesOptions(MenuReportOptions):
         text_line_pad = NumberOption(_("TEXT_LINE_PAD"), 2, 0, 50)
         text_line_pad.set_help(_("The number of text line pad ??? "))
         menu.add_option(category_name, "TEXT_LINE_PAD", text_line_pad)
+
+        title = gramps.gen.plug.menu.StringOption(_("Title text"), "")
+        menu.add_option(category_name, "title", title)
+
+        footer = gramps.gen.plug.menu.StringOption(_("Footer text"), "")
+        menu.add_option(category_name, "footer", footer)
 
     def make_default_style(self, default_style):
         """Make the default output style"""
