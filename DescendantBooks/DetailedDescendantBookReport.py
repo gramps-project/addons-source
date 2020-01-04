@@ -758,7 +758,7 @@ class DetailedDescendantBookReport(Report):
                                 _("Report appearances for %s") % name)
                             self.doc.end_paragraph()
                             header_done = True
-    
+
                         self.doc.start_paragraph("DDR-Entry")
                         ref_str = _("Spouse of: Report: %s, Generation: %s, Person: %s") \
                                 % (repno, gen, per)
@@ -771,7 +771,7 @@ class DetailedDescendantBookReport(Report):
                                 _("Report appearances for %s") % name)
                             self.doc.end_paragraph()
                             header_done = True
-    
+
                         self.doc.start_paragraph("DDR-Entry")
                         ref_str = _("Report: %s, Generation: %s, Person: %s") \
                                 % (repno, gen, per)
