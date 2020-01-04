@@ -484,10 +484,9 @@ def draw_header_footer(x, y, line):
     ctx.set_font_size(base_font_size * 1.0)
     (ascent, _, height, _, _) = ctx.font_extents()
     (lx, _, width, _, _, _,) = ctx.text_extents(line)
-    total_w = 0    
+    total_w = 0
     ctx.move_to(x - lx + (total_w - width + lx) / 2, y + ascent)
     ctx.show_text(line)
-
 
 def size_text(text, cntx):
     text_width = 0
