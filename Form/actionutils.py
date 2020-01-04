@@ -51,7 +51,7 @@ def __init__():
     pass
 
 
-def add_event_to_person(dbstate, uistate, track, edit_detail, person_handle, event_type, event_date_object, event_description, citation_handle, event_role_type):
+def add_event_to_person(dbstate, uistate, track, edit_detail, callback, person_handle, event_type, event_date_object, event_description, citation_handle, event_role_type):
     db = dbstate.db
     """
     Add a new event to the specified person.
@@ -73,7 +73,8 @@ def add_event_to_person(dbstate, uistate, track, edit_detail, person_handle, eve
     person.add_event_ref(event_ref)
     with DbTxn(_("Add Event ({name})").format(name=name_displayer.display(person)), db) as trans:
         db.commit_person(person, trans)
-
+    if callback:
+        callback()
 
 def get_form_person_attr(db, form_event_handle, attr_type):
     """

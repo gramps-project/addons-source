@@ -286,7 +286,6 @@ class FormActions(ManagedWindow):
 
     def run_actions(self, widget):
         # run the selected actions
-        self.uistate.set_busy_cursor(True)
         self.uistate.progress.show()
         self.uistate.pulse_progressbar(0)
         # get the list of actions to be run
@@ -297,14 +296,29 @@ class FormActions(ManagedWindow):
                 if action_row.model.get_value(action_row.iter, self.RUN_ACTION_COL):
                     actions.append((action_row.model.get_value(action_row.iter, self.ACTION_COMMAND_COL),
                                     action_row.model.get_value(action_row.iter, self.EDIT_DETAIL_COL)))
-        # run the actions
-        for index, (action, edit_detail) in enumerate(actions):
-            (action)(self.dbstate, self.uistate, self.track, edit_detail)
-            self.uistate.pulse_progressbar(
-                (index + 1) / len(actions) * 100)
-        self.uistate.progress.hide()
-        self.uistate.set_busy_cursor(False)
-        self.close()
+        self.count_actions = len(actions)
+        # run the actions, sequentially
+        self.do_next_action(actions, self.dbstate, self.uistate, self.track)
+
+    def do_next_action(self, actions, dbstate, uistate, track):
+        # update the progressbar based on the number of actions completed so far
+        actions_completed = self.count_actions - len(actions)
+        self.uistate.pulse_progressbar(actions_completed / self.count_actions * 100)
+        if actions:
+            # actions remaining
+            # take the top action
+            (action, edit_detail) = actions[0]
+            # and run it passing, a callback to ourselves, but with actions=actions[1:]
+            # effectively indirect recursion via the callback
+            action(dbstate, uistate, track, edit_detail, lambda self=self, actions=actions[1:], dbstate=dbstate, uistate=uistate, track=track : self.do_next_action(actions, dbstate, uistate, track))
+        else:
+            # no more actions. Stop showing progress
+            uistate.progress.hide()
+            # and close our window now that the actions have all run
+            self.close()
+
+    def close(self, *obj):
+        ManagedWindow.close(self)
 
     def display_help(self, obj):
         """
