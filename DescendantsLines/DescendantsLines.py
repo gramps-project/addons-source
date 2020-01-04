@@ -387,10 +387,10 @@ class DescendantsLinesReport(Report):
         # increase text pad to allow for box's line
         if STROKE_RECTANGLE:
             TEXT_PAD += RECTANGLE_TEXT_PAD
-            
+
         self.title = menu.get_option_by_name('title').get_value()
         self.footer = menu.get_option_by_name('footer').get_value()
-       
+
     def write_report(self):
         """
         This routine actually creates the report.
@@ -429,7 +429,7 @@ class DescendantsLinesReport(Report):
             self._user.warn(_("Using SVG type for supplemental document is"
                               " not supported!"))
             return
-        
+
         for person_handle in ind_list:
             person = self.database.get_person_from_handle(person_handle)
             #log.debug(person_handle)
@@ -1429,7 +1429,7 @@ def draw_file(p, fn, writer, title, footer):
     draw_header_footer(w / 2, MARGIN_HEADER_FOOTER / 2, title)
     draw_tree(p)
     draw_header_footer(w / 2, h + MARGIN_HEADER_FOOTER * 1.5 , footer)
-    
+
     ctx.show_page()
     writer.finish()
 
