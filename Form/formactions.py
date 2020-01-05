@@ -49,6 +49,7 @@ from gramps.gen.const import GRAMPS_LOCALE as glocale
 from gramps.gen.datehandler import get_date
 from gramps.gen.db import DbTxn
 from gramps.gui.managedwindow import ManagedWindow
+import gramps.gui.dialog
 import gramps.gui.display
 
 # ------------------------------------------------------------------------
@@ -106,6 +107,8 @@ class FormActions(ManagedWindow):
         source_handle = self.citation.get_reference_handle()
         self.source = self.db.get_source_from_handle(source_handle)
         self.form_id = get_form_id(self.source)
+
+        self.close_after_run = False    # if True, close this window after running action command(s)
 
         ManagedWindow.__init__(self, uistate, track, citation)
 
@@ -318,8 +321,11 @@ class FormActions(ManagedWindow):
         else:
             # no more actions. Stop showing progress
             uistate.progress.hide()
-            # and close our window now that the actions have all run
-            self.close()
+            # and, optionally, close our window now that the actions have all run
+            if self.close_after_run:
+                self.close()
+            else:
+                gramps.gui.dialog.OkDialog(_("All actions run successfully."), parent=self.window)
 
     def close(self, *obj):
         ManagedWindow.close(self)
