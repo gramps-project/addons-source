@@ -26,7 +26,8 @@
 from gramps.gen.db import DbTxn
 from gramps.gen.display.name import displayer as name_displayer
 from gramps.gen.lib import (Event, EventType, EventRef, EventRoleType,
-                            Person)
+                            Name, Person)
+from gramps.gui.editors import EditEvent, EditName, EditPerson
 
 # ------------------------------------------------------------------------
 #
@@ -51,39 +52,130 @@ def __init__():
     pass
 
 
-def add_event_to_person(dbstate, uistate, track, edit_detail, callback, person_handle, event_type, event_date_object, event_description, citation_handle, event_role_type):
+def make_event(type=EventType(), description=None, date_object=None, citation_handle=None, place_handle=None):
     """
-    Add a new event to the specified person.
+    make an event initialised with the supplied values.
+    return the event created
+    """
+    event = Event()
+    event.set_type(type)
+    event.set_description(description)
+    event.set_date_object(date_object)
+    event.add_citation(citation_handle)
+    event.set_place_handle(place_handle)
+    return event
+
+
+def make_event_ref(event_handle=None, role=EventRoleType()):
+    """
+    make an event_ref initialised with the supplied values.
+    return the event_ref created
+    """
+    event_ref = EventRef()
+    event_ref.set_reference_handle(event_handle)
+    event_ref.set_role(role)
+    return event_ref
+
+
+def make_name(first_name=None, citation_handle=None):
+    name = Name()
+    if first_name:
+        name.set_first_name(first_name)
+    if citation_handle:
+        name.add_citation(citation_handle)
+    return name
+
+
+def update_name(name, first_name=None, citation_handle=None):
+    if first_name:
+        name.set_first_name(first_name)
+    if citation_handle:
+        name.add_citation(citation_handle)
+    return name
+
+
+def update_person(person, primary_name=None):
+    person.set_primary_name(primary_name)
+    return person
+
+
+def commit_person(person, dbstate, uistate, track, edit_detail, callback):
+    """
+    commit person to the database, optionally showing the editor window first.
+    callback(person) is called after successful commit.
+    Note: If the editor window is cancelled, the callback is not called.
+    """
+    if edit_detail:
+        EditPerson(dbstate, uistate, track, person, callback)
+    else:
+        db = dbstate.db
+        with DbTxn(_("Update Person ({name})").format(name=name_displayer.display(person)), db) as trans:
+            db.commit_person(person, trans)
+        if callback:
+            callback(person)
+
+
+def add_event(event, dbstate, uistate, track, edit_detail, callback):
+    """
+    Add a new event to the database, calling callback(event) on successful completion.
+    If edit_detail is true, and the user cancels the editor window, the callback is not called.
     """
     db = dbstate.db
-    event = Event()
-    event.set_type(event_type)
-    event.set_date_object(event_date_object)
-    event.add_citation(citation_handle)
-    event.set_description(event_description)
+    if edit_detail:
+        EditEvent(dbstate, uistate, track, event, callback)
+    else:
+        # add the event to the database
+        with DbTxn(_("Add Event ({0})").format(event.get_gramps_id()), db) as trans:
+            db.add_event(event, trans)
+        if callback:
+            callback(event)
 
-    # add the event to the database
-    with DbTxn(_("Add Event ({0})").format(event.get_gramps_id()), db) as trans:
-        db.add_event(event, trans)
-    add_event_ref_to_person(dbstate, uistate, track, edit_detail,
-                            callback, person_handle, event.get_handle(), event_role_type)
 
-def add_event_ref_to_person(dbstate, uistate, track, edit_detail, callback, person_handle, event_handle, event_role_type):
-    # Add new event reference to the Person record
-    event_ref = EventRef()
-    event_ref.ref = event_handle
-    event_ref.set_role(event_role_type)
+def do_add_event_ref_to_person(event_ref, person_handle, dbstate):
+    """
+    Add event_ref to person_handle
+    return: person_handle
+    """
+    # Add new event reference to the person person_handle
     db = dbstate.db
     person = db.get_person_from_handle(person_handle)
     person.add_event_ref(event_ref)
     with DbTxn(_("Add Event ({name})").format(name=name_displayer.display(person)), db) as trans:
         db.commit_person(person, trans)
-    if callback:
-        callback()
+    return person_handle
+
+
+def add_alternate_name_to_person(name, person_handle, dbstate, uistate, track, edit_detail, callback):
+    # Add new altername name to the person person_handle
+    db = dbstate.db
+    person = db.get_person_from_handle(person_handle)
+    person.add_alternate_name(name)
+    commit_person(person, dbstate, uistate, track, edit_detail, callback)
+
+
+def add_event_ref_to_person(event_ref, person_handle, dbstate, uistate, track, edit_detail, callback):
+    """
+    Add event_ref to person_handle, calling callback(person) on successful completion.
+    If edit_detail is true, and the user cancels the editor window, the callback is not called.
+    return: the person to whom the evert_ref was added.
+    """
+    # Add new event reference to the person person_handle
+    db = dbstate.db
+    person = db.get_person_from_handle(person_handle)
+    person.add_event_ref(event_ref)
+    commit_person(person, dbstate, uistate, track, edit_detail, callback)
+
+
+def edit_name(name, dbstate, uistate, track, edit_detail, callback):
+    if edit_detail:
+        EditName(dbstate, uistate, track, name, callback)
+    else:
+        callback(name)
+
 
 def get_form_person_attr(db, form_event_handle, attr_type):
     """
-    Find all persons referencing the form_event and which have an attribute of type attr_type
+    Find all persons referencing the form_event and which have an attribute of type attr_type.
     returns a list of matching (person, attribute) tuples
     """
     result = []

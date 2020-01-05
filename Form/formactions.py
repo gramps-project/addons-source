@@ -310,7 +310,11 @@ class FormActions(ManagedWindow):
             (action, edit_detail) = actions[0]
             # and run it passing, a callback to ourselves, but with actions=actions[1:]
             # effectively indirect recursion via the callback
-            action(dbstate, uistate, track, edit_detail, lambda self=self, actions=actions[1:], dbstate=dbstate, uistate=uistate, track=track : self.do_next_action(actions, dbstate, uistate, track))
+            action(dbstate, uistate, track, edit_detail,
+                   # kwargs is added for convenince of the action command authors.
+                   # it is not used, but should not be removed.
+                   lambda self=self, actions=actions[1:], dbstate=dbstate, uistate=uistate, track=track, **kwargs:
+                        self.do_next_action(actions=actions, dbstate=dbstate, uistate=uistate, track=track))
         else:
             # no more actions. Stop showing progress
             uistate.progress.hide()

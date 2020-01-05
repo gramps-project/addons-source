@@ -73,19 +73,22 @@ class PrimaryNameCitation:
         db = dbstate.db
         actions = []
         for (person, attr) in actionutils.get_form_person_attr(db, form_event.get_handle(), 'Name'):
-            actions.append((name_displayer.display(person), attr.get_value(), actionutils.CANNOT_EDIT_DETAIL,
-                            lambda dbstate, uistate, track, edit_detail, callback, citation_handle=citation.handle, person_handle=person.handle: PrimaryNameCitation.command(dbstate, uistate, track, edit_detail, callback, citation_handle, person_handle)))
+            actions.append((name_displayer.display(person), attr.get_value(), actionutils.CAN_EDIT_DETAIL,
+                            # lambda dbstate, uistate, track, edit_detail, callback, citation_handle=citation.handle, person_handle=person.handle: PrimaryNameCitation.command(dbstate, uistate, track, edit_detail, callback, citation_handle, person_handle)))
+                            # action command callback
+                            lambda dbstate, uistate, track, edit_detail, callback, person=person:
+                            actionutils.edit_name(actionutils.update_name(name=person.get_primary_name(), citation_handle=citation.handle),
+                                                  dbstate, uistate, track, edit_detail,
+                                                  # edit_name callback
+                                                  lambda name, person=person, dbstate=dbstate, uistate=uistate, track=track, edit_detail=edit_detail:
+                                                  actionutils.commit_person(actionutils.update_person(person=person, primary_name=name),
+                                                                            dbstate, uistate, track, False, # nothing to edit, so force edit_detail=False
+                                                                            # commit_person callback
+                                                                            # call the top level callback
+                                                                            lambda person, callback=callback: callback()))))
+
         return (_("Add Primary Name citation"), actions)
 
-    @staticmethod
-    def command(dbstate, uistate, track, edit_detail, callback, citation_handle, person_handle):
-        db = dbstate.db
-        person = db.get_person_from_handle(person_handle)
-        person.get_primary_name().add_citation(citation_handle)
-        with DbTxn(_("Add Person ({name})").format(name=name_displayer.display(person)), db) as trans:
-            db.commit_person(person, trans)
-        if callback:
-            callback()
 
 class AlternateName:
     @staticmethod
@@ -93,23 +96,21 @@ class AlternateName:
         db = dbstate.db
         actions = []
         for (person, attr) in actionutils.get_form_person_attr(db, form_event.get_handle(), 'Name'):
-            alternate = Name()
-            alternate.set_first_name(attr.get_value())
-            alternate.add_citation(citation.handle)
             detail = _('Given Name: {name}').format(name=attr.get_value())
-            actions.append((name_displayer.display(person), detail, actionutils.MUST_EDIT_DETAIL,
-                            lambda dbstate, uistate, track, edit_detail, callback, person_handle=person.handle, alternate_=alternate: AlternateName.command(dbstate, uistate, track, edit_detail, callback, person_handle, alternate_)))
+            actions.append((name_displayer.display(person), detail,
+                            # the user should split the 'Name' attribute into the consituent parts of a Name object, so force MUST_EDIT_DETAIL
+                            actionutils.MUST_EDIT_DETAIL,
+                            # action command callback
+                            lambda dbstate, uistate, track, edit_detail, callback, person=person, name=attr.get_value():
+                            actionutils.edit_name(actionutils.make_name(first_name=name, citation_handle=citation.handle), dbstate, uistate, track, edit_detail,
+                                                  # edit_name callback
+                                                  lambda name, dbstate=dbstate, uistate=uistate, track=track, edit_detail=edit_detail:
+                                                  actionutils.add_alternate_name_to_person(name, person.handle,
+                                                                                           dbstate, uistate, track, False,  # nothing to edit, so force edit_detail=False
+                                                                                           # add_alternate_name_to_person callback
+                                                                                           # call the top level callback
+                                                                                           lambda person, callback=callback: callback()))))
         return (_("Add alternate name"), actions)
-
-    @staticmethod
-    def command(dbstate, uistate, track, edit_detail, callback, person_handle, alternate):
-        db = dbstate.db
-        person = db.get_person_from_handle(person_handle)
-        person.add_alternate_name(alternate)
-        with DbTxn(_("Add Person ({name})").format(name=name_displayer.display(person)), db) as trans:
-            db.commit_person(person, trans)
-        if callback:
-            callback()
 
 
 class BirthEvent:
@@ -145,8 +146,21 @@ class BirthEvent:
                                 age=age_string, date=date_displayer.display(birth_date))
                     else:
                         detail = _('Age: {age}').format(age=age_string)
-                    actions.append((name_displayer.display(person), detail, actionutils.CAN_EDIT_DETAIL if birth_date else actionutils.MUST_EDIT_DETAIL,
-                                    lambda dbstate, uistate, track, edit_detail, callback, citation_handle=citation.handle, person_handle=person.handle, birth_date_=birth_date: actionutils.add_event_to_person(dbstate, uistate, track, edit_detail, callback, person_handle, EventType.BIRTH, birth_date_, None, citation_handle, EventRoleType.PRIMARY)))
+
+                    actions.append((name_displayer.display(person), detail,
+                                    actionutils.CAN_EDIT_DETAIL if birth_date else actionutils.MUST_EDIT_DETAIL,
+                                    # action command callback
+                                    lambda dbstate, uistate, track, edit_detail, callback, person=person, birth_date=birth_date:
+                                        # add a birth event
+                                        actionutils.add_event(actionutils.make_event(type=EventType.BIRTH, date_object=birth_date, citation_handle=citation.handle),
+                                                              dbstate, uistate, track, edit_detail,
+                                                              # add_event callback
+                                                              lambda event, dbstate=dbstate, uistate=uistate, track=track, edit_detail=edit_detail, callback=callback, person_handle=person.handle:
+                                                              # and then add a reference to the event to person
+                                                              actionutils.add_event_ref_to_person(actionutils.make_event_ref(event_handle=event.get_handle(), role=EventRoleType.PRIMARY), person_handle, dbstate, uistate, track, edit_detail,
+                                                                                                  # add_event_ref_to_person callback
+                                                                                                  # call the top level callback
+                                                                                                  lambda person, callback=callback: callback()))))
         return (_("Add Birth event"), actions)
 
 
@@ -158,8 +172,22 @@ class OccupationEvent:
         for (person, attr) in actionutils.get_form_person_attr(db, form_event.get_handle(), 'Occupation'):
             occupation = attr.get_value()
             if (occupation):
-                actions.append((name_displayer.display(person), _('Description: {occupation}').format(occupation=occupation), actionutils.CAN_EDIT_DETAIL,
-                                lambda dbstate, uistate, track, edit_detail, callback, citation_handle=citation.handle, person_handle=person.handle, occupation_=occupation: actionutils.add_event_to_person(dbstate, uistate, track, edit_detail, callback, person_handle, EventType.OCCUPATION, form_event.get_date_object(), occupation_, citation_handle, EventRoleType.PRIMARY)))
+                detail = _('Description: {occupation}').format(
+                    occupation=occupation)
+                actions.append((name_displayer.display(person), detail,
+                                actionutils.CAN_EDIT_DETAIL,
+                                # action command callback
+                                lambda dbstate, uistate, track, edit_detail, callback, person=person, occupation=occupation:
+                                    # add a occupation event
+                                    actionutils.add_event(actionutils.make_event(type=EventType.OCCUPATION, description=occupation, date_object=form_event.get_date_object(), citation_handle=citation.handle),
+                                                          dbstate, uistate, track, edit_detail,
+                                                          # add_event callback
+                                                          lambda event, dbstate=dbstate, uistate=uistate, track=track, edit_detail=edit_detail, callback=callback, person_handle=person.handle:
+                                                          # and then add a reference to the event to person
+                                                          actionutils.add_event_ref_to_person(actionutils.make_event_ref(event_handle=event.get_handle(), role=EventRoleType.PRIMARY), person_handle, dbstate, uistate, track, edit_detail,
+                                                                                              # add_event_ref_to_person callback
+                                                                                              # call the top level callback
+                                                                                              lambda person, callback=callback: callback()))))
         return (_("Add Occupation event"), actions)
 
 
@@ -168,44 +196,31 @@ class ResidenceEvent:
     def get_actions(dbstate, citation, form_event):
         db = dbstate.db
         # build a list of all the people referenced in the form. For 1841, all people have a PRIMARY event role
-        people = []
+        event_ref_details = []
         for item in db.find_backlink_handles(form_event.get_handle(), include_classes=['Person']):
             handle = item[1]
             person = db.get_person_from_handle(handle)
             for event_ref in person.get_event_ref_list():
                 if event_ref.ref == form_event.get_handle():
-                    people.append((person.get_handle(), EventRoleType.PRIMARY))
+                    event_ref_details.append(
+                        (person.get_handle(), EventRoleType.PRIMARY))
         actions = []
-        if people:
+        if event_ref_details:
             detail = None
             if form_event.get_place_handle():
                 place = place_displayer.display(
                     db, db.get_place_from_handle(form_event.get_place_handle()))
                 detail = _('Place: {place}').format(place=place)
+
             actions.append((get_participant_from_event(db, form_event.get_handle()), detail, actionutils.MUST_EDIT_DETAIL,
-                            lambda dbstate, uistate, track, edit_detail, callback, citation_handle=citation.handle, people_handles=people: ResidenceEvent.command(dbstate, uistate, track, edit_detail, callback, citation_handle, form_event.get_date_object(), form_event.get_place_handle(), people_handles)))
+                            # action command callback
+                            lambda dbstate, uistate, track, edit_detail, callback:
+                                # add a residence event
+                                actionutils.add_event(actionutils.make_event(type=EventType.RESIDENCE, place_handle=form_event.get_place_handle(), date_object=form_event.get_date_object(), citation_handle=citation.handle),
+                                                      dbstate, uistate, track, edit_detail,
+                                                      # add_event callback
+                                                      lambda event, dbstate=dbstate, uistate=uistate, track=track, edit_detail=edit_detail, callback=callback:
+                                                      # call the top level callback with a dummy people argument that is the list of people to who we added an event_ref to
+                                                      callback(people=[actionutils.do_add_event_ref_to_person(actionutils.make_event_ref(event_handle=event.get_handle(), role=event_ref_detail[1]), event_ref_detail[0], dbstate) for event_ref_detail in event_ref_details]))))
+
         return (_("Add Residence event"), actions)
-
-    @staticmethod
-    def command(dbstate, uistate, track, edit_detail, callback, citation_handle, event_date_object, event_place_handle, people_handles):
-        db = dbstate.db
-        # create the RESIDENCE event
-        event = Event()
-        event.set_type(EventType.RESIDENCE)
-        event.set_date_object(event_date_object)
-        event.set_place_handle(event_place_handle)
-        event.add_citation(citation_handle)
-        with DbTxn(_("Add Event ({id})").format(id=event.get_gramps_id()), db) as trans:
-            db.add_event(event, trans)
-
-        # and reference the event from all people
-        event_ref = EventRef()
-        event_ref.ref = event.get_handle()
-        for (person_handle, role) in people_handles:
-            event_ref.set_role(role)
-            person = db.get_person_from_handle(person_handle)
-            person.add_event_ref(event_ref)
-            with DbTxn(_("Add Event ({name})").format(name=name_displayer.display(person)), db) as trans:
-                db.commit_person(person, trans)
-        if callback:
-            callback()
