@@ -23,8 +23,11 @@ class TopolaServer(Thread):
         self.executor = ThreadPoolExecutor()
         self.lock = Lock()
 
-    def _load_data(self, database):
-      """Takes a snapshot of the database as a GEDCOM file."""
+    def set_database(self, database):
+      """Takes a snapshot of the database as a GEDCOM file.
+
+      Note that this call may take some time to generate the GEDCOM file.
+      """
 
       # Export GEDCOM to a temporary file.
       exported_file = mkstemp()[1]
@@ -53,17 +56,10 @@ class TopolaServer(Thread):
           file_map[remote_name] = file_name
           line = '1 FILE http://127.0.0.1:8156{}\n'.format(remote_name)
         gedcom_file.write(line)
-      return file_map
 
-    def set_database(self, database):
-      """Asynchronously takes a snapshot of the database.
-
-      Stores a future that resolves to a file map that includes the GEDCOM file
-      and files referenced from the GEDCOM file.
-      """
-
+      # Replace the file map in a thread-safe way.
       with self.lock:
-        self.dataFuture = self.executor.submit(TopolaServer._load_data, self, database)
+        self.file_map = file_map
 
     def run(self):
         server = self
@@ -71,10 +67,9 @@ class TopolaServer(Thread):
         class Handler(BaseHTTPRequestHandler):
             def do_GET(self):
                 """Serves the GEDCOM file and referenced files."""
-                # Take the file map in a thread-safe way, possibly blocking
-                # until the GEDCOM file is ready.
+                # Take the file map in a thread-safe way.
                 with server.lock:
-                  file_map = server.dataFuture.result()
+                  file_map = server.file_map
 
                 # Return 404 if a file is not known.
                 if not self.path in file_map:
@@ -83,7 +78,6 @@ class TopolaServer(Thread):
 
                 # Respond with the file contents.
                 self.send_response(200)
-                # self.send_header('Access-Control-Allow-Origin', '*')
                 self.send_header('Access-Control-Allow-Origin', 'https://pewu.github.io')
                 self.end_headers()
                 content = open(file_map[self.path], 'rb').read()
