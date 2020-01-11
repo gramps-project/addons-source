@@ -17,14 +17,14 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
-"""Filter rule which matches families that are matched by an event filter."""
+"""Filter rule for families matching an event filter."""
 
 # -------------------------------------------------------------------------
 #
 # Gramps modules
 #
 # -------------------------------------------------------------------------
-from gramps.gen.filters.rules.family._matchesfilter import MatchesFilter
+from gramps.gen.filters.rules._matcheseventfilterbase import MatchesEventFilterBase
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
     _trans = glocale.get_addon_translator(__file__)
@@ -38,49 +38,11 @@ _ = _trans.gettext
 # IsRelatedWithFilterMatch
 #
 # -------------------------------------------------------------------------
-class FamiliesWithEventFilterMatch(MatchesFilter):
+class FamiliesWithEventFilterMatch(MatchesEventFilterBase):
     """Rule that checks against an event filter."""
 
     labels = [_('Event filter name:')]
     name = _('Families matching <event filter>')
     category = _("Event filters")
-    description = _("Matches families that are matched by an event filter")
+    description = _("Matches families matched by an event filter")
     namespace = 'Event'
-
-    def prepare(self, db, user):
-        """
-        Overwrite inherited 'prepare' fuction from :class:`MatchesFilter`.
-
-        Families matching an event filter are put into class attribute
-        'families' (set). This set of families serves as reference for the
-        filter to apply to.
-        """
-        self.db = db
-        self.families = set()
-        self.events = set()
-        MatchesFilter.prepare(self, db, user)
-        self.MEF_filt = self.find_filter()
-        for event_handle in db.iter_event_handles():
-            if self.MEF_filt.check(db, event_handle):
-                self.events.add(event_handle)
-        self.__get_families()
-
-    def apply(self, db, obj):
-        """
-        Return True if a family appies to the filter rule.
-
-        :returns: True or False
-        """
-        if obj.handle in self.families:
-            return True
-        return False
-
-    def __get_families(self):
-        """Get all families matching an event filter."""
-        for person_handle in self.db.iter_person_handles():
-            person = self.db.get_person_from_handle(person_handle)
-            for ref in person.get_event_ref_list():
-                for ref_type, ref_handle in ref.get_referenced_handles():
-                    if ref_type == "Event" and ref_handle in self.events:
-                        for family in person.get_family_handle_list():
-                            self.families.add(family)
