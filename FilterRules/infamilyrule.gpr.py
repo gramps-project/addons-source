@@ -1,7 +1,8 @@
 #
 # Gramps - a GTK+/GNOME based genealogy program
 #
-# Copyright (C) 2020       Matthias Kemmer
+# Copyright (C) 2020  Paul Culley
+# Copyright (C) 2020  Matthias Kemmer
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -20,15 +21,15 @@
 """Filter rule that matches people who are matched by a family filter."""
 
 register(RULE,
-  id = 'personshavingfamilyfiltermatch',
-  name = _("People matching <family filter>"),
-  description = _("Matches people who are matched by a family filter"),
+  id = 'PersonsInFamilyFilterMatch',
+  name = _('People who are part of families matching <filter>'),
+  description = _('People who are part of families matching <filter>'),
   version = '1.0.0',
-  authors = ["Matthias Kemmer"],
-  authors_email = ["matt.familienforschung@gmail.com"],
+  authors = ["Matthias Kemmer", "Paul Culley"],
+  authors_email = ["matt.familienforschung@gmail.com", "paulr2787@gmail.com"],
   gramps_target_version = '5.1',
   status = STABLE,
-  fname = "personshavingfamilyfiltermatch.py",
-  ruleclass = 'PersonsHavingFamilyFilterMatch',  # must be rule class name
+  fname = "infamilyrule.py",
+  ruleclass = 'PersonsInFamilyFilterMatch',  # must be rule class name
   namespace = 'Person',  # one of the primary object classes
   )
