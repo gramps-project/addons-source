@@ -17,7 +17,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
-"""Filter rule that matches relatives by degrees of seperation."""
+"""Filter rule that matches relatives by degrees of separation."""
 
 # -------------------------------------------------------------------------
 #
@@ -55,17 +55,17 @@ class InclPartner(MyBoolean):
 
 # -------------------------------------------------------------------------
 #
-# Degrees of seperation filter rule class
+# Degrees of separation filter rule class
 #
 # -------------------------------------------------------------------------
-class DegreesOfSeperation(Rule):
-    """Filter rule that matches relatives by degrees of seperation."""
+class DegreesOfSeparation(Rule):
+    """Filter rule that matches relatives by degrees of separation."""
 
     labels = [_('ID:'), _("Degrees:"), (_('Include Partners:'), InclPartner)]
-    name = _('People seperated less than <N> degrees of <person>')
+    name = _('People separated less than <N> degrees of <person>')
     category = _("General filters")
     description = _("Filter rule that matches relatives by degrees of"
-                    " seperation")
+                    " separation")
 
     def prepare(self, db, user):
         """Prepare a refernece list for the filter."""

@@ -17,19 +17,19 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
-"""Filter rule that matches relatives by degrees of seperation."""
+"""Filter rule that matches relatives by degrees of separation."""
 
 register(RULE,
-  id = 'degreesofseperation',
-  name = _('People seperated less than <N> degrees of <person>'),
+  id = 'degreesofseparation',
+  name = _('People separated less than <N> degrees of <person>'),
   description = _("Filter rule that matches relatives by degrees of "
-                  "seperation"),
+                  "separation"),
   version = '1.0.0',
   authors = ["Matthias Kemmer"],
   authors_email = ["matt.familienforschung@gmail.com"],
   gramps_target_version = '5.1',
   status = STABLE,
-  fname = "degreesofseperation.py",
-  ruleclass = 'DegreesOfSeperation',  # must be rule class name
+  fname = "degreesofseparation.py",
+  ruleclass = 'DegreesOfSeparation',  # must be rule class name
   namespace = 'Person',  # one of the primary object classes
   )
