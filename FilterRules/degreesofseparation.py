@@ -40,11 +40,31 @@ _ = _trans.gettext
 #
 # -------------------------------------------------------------------------
 class InclPartner(MyBoolean):
-    """Bolean option for filter editor."""
+    """Boolean option for filter editor."""
 
     def __init__(self, database):
         MyBoolean.__init__(self, _('Include Partners'))
         self.set_tooltip_text(_("Include the partners."))
+        self.set_active(True)
+
+    def set_text(self, val):
+        """Set the checkbox active."""
+        is_active = bool(int(val))
+        self.set_active(is_active)
+
+
+# -------------------------------------------------------------------------
+#
+# IncPartners boolean option
+#
+# -------------------------------------------------------------------------
+class InclAllParents(MyBoolean):
+    """Boolean option for filter editor."""
+
+    def __init__(self, database):
+        MyBoolean.__init__(self, _('Include all parents'))
+        self.set_tooltip_text(_("Include parents with relationship foster,"
+                                " adopted, stepchild, etc."))
         self.set_active(True)
 
     def set_text(self, val):
@@ -61,7 +81,10 @@ class InclPartner(MyBoolean):
 class DegreesOfSeparation(Rule):
     """Filter rule that matches relatives by degrees of separation."""
 
-    labels = [_('ID:'), _("Degrees:"), (_('Include Partners:'), InclPartner)]
+    labels = [_('ID:'),
+              _("Degrees:"),
+              (_('Include Partners:'), InclPartner),
+              (_('Include all Parents:'), InclAllParents)]
     name = _('People separated less than <N> degrees of <person>')
     category = _("General filters")
     description = _("Filter rule that matches relatives by degrees of"
@@ -85,25 +108,40 @@ class DegreesOfSeparation(Rule):
 
     def __get_ancestors(self, root_handle):
         """Get the ancestors of a person."""
-        queue = [(root_handle, 1)]
-        while queue:
-            handle, gen = queue.pop(0)
+        self.queue = [(root_handle, 1)]
+        while self.queue:
+            handle, gen = self.queue.pop(0)
             if handle in self.ancestors:
                 continue
             self.ancestors.add(handle)
             gen += 1
             if gen <= int(self.list[1]):
                 person = self.db.get_person_from_handle(handle)
-                fam_id = person.get_main_parents_family_handle()
-                if fam_id:
-                    fam = self.db.get_family_from_handle(fam_id)
-                    if fam:
-                        f_id = fam.get_father_handle()
-                        m_id = fam.get_mother_handle()
-                        if f_id:
-                            queue.append((f_id, gen))
-                        if m_id:
-                            queue.append((m_id, gen))
+                fam_list = person.get_parent_family_handle_list()
+                for fam_id in fam_list:
+                    if fam_id:
+                        fam = self.db.get_family_from_handle(fam_id)
+                        if fam:
+                            f_id = fam.get_father_handle()
+                            m_id = fam.get_mother_handle()
+                            self.__check_parents(fam, f_id, m_id, person, gen)
+
+    def __check_parents(self, fam, f_id, m_id, person, gen):
+        """Check InclAllParents option and parent-child relationship type."""
+        for child_ref in fam.get_child_ref_list():
+            if child_ref.ref == person.get_handle():
+                f_rel = child_ref.get_father_relation()
+                m_rel = child_ref.get_mother_relation()
+                # check father
+                if f_id and self.list[3] == '1':
+                    self.queue.append((f_id, gen))
+                elif f_id and f_rel == _("Birth"):
+                    self.queue.append((f_id, gen))
+                # check mother
+                if m_id and self.list[3] == '1':
+                    self.queue.append((m_id, gen))
+                elif m_id and m_rel == _("Birth"):
+                    self.queue.append((m_id, gen))
 
     def __get_desc(self, root_handle, gen):
         """Get the descendants of a person."""
@@ -115,8 +153,8 @@ class DegreesOfSeparation(Rule):
             self.persons.add(handle)
             gen += 1
             if gen <= int(self.list[1]):
-                p = self.db.get_person_from_handle(handle)
-                fam_list = p.get_family_handle_list()
+                person = self.db.get_person_from_handle(handle)
+                fam_list = person.get_family_handle_list()
                 for fam_id in fam_list:
                     fam = self.db.get_family_from_handle(fam_id)
                     if fam:
