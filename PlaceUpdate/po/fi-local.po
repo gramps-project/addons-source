@@ -15,7 +15,7 @@ msgstr ""
 "X-Generator: Poedit 1.8.7.1\n"
 
 #: PlaceTool/PlaceTool.gpr.py:3 PlaceTool/PlaceTool.gpr.py:14
-msgid "PlaceTool"
+msgid "PlaceUpdate"
 msgstr "Paikkatyökalu"
 
 #: PlaceTool/PlaceTool.gpr.py:4

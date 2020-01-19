@@ -1,7 +1,7 @@
-PlaceTool
----------
+PlaceUpdate
+-----------
 Author: kari.kujansuu@gmail.com
-(9 Jun 2019)
+(19 Jan 2020)
 
 Gramplet to change properties of multiple places at the same time.
 The properties that can be changed are:
@@ -16,7 +16,9 @@ The gramplet can also generate a place hierarchy from place names or titles.
 
 The gramplet is installed on the gramplet pane of the Places view and the place list is used to select which places are affected.
 
-![PlaceTool UI](PlaceTool%20UI.png)
+The user interface looks like:
+
+![PlaceUpdate UI](PlaceUpdate%20UI.png)
 
 **Setting enclosing place**
 
@@ -33,7 +35,6 @@ This can e.g. be used to "move" the places under another place.
 Attempts to set a duplicate enclosing place or a loop (so that a place contains itself) 
 are quietly bypassed.
 
-![Setting enclosing place](PlaceTool-example.png)
 
 **Setting place type or tag**
 
@@ -68,6 +69,17 @@ If the original place is under another place or a new enclosing place is specifi
 **Editing place names**
 
 The "Replace text" function allows substituting a specified text string in the place names with another. Regular expressions can also be used.
+
+**Example**
+
+Select "United States" as the new enclosing places and
+select the three states. Set the place type to "State":
+
+![Setting enclosing place](PlaceUpdate-example.png)
+
+Click "Apply to selected places". The result is:
+
+![Setting enclosing place](PlaceUpdate-example2.png)
 
 **Notes**
 
