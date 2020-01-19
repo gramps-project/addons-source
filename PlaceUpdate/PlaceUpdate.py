@@ -92,20 +92,17 @@ class PlaceUpdate(Gramplet):
         label.set_line_wrap(True)
         vbox.pack_start(label, False, True, 0)
 
-        pt_label = Gtk.Label()
-        pt_label.set_markup("<b>{}</b>".format(_('Place type:')))
+        pt_label = Gtk.Label(_('Place type:'))
         pt_label.set_halign(Gtk.Align.START)
         self.typecombo = Gtk.ComboBoxText.new_with_entry()
         self.__fill_combo(self.typecombo, list(self.__typenames()), wrap_width=4)
 
-        tag_label = Gtk.Label()
-        tag_label.set_markup("<b>{}</b>".format(_('Tag:')))
+        tag_label = Gtk.Label(_('Tag:'))
         tag_label.set_halign(Gtk.Align.START)
         self.tagcombo = Gtk.ComboBoxText.new_with_entry()
         self.__fill_combo(self.tagcombo, list(self.__tagnames()))
 
-        label1 = Gtk.Label()
-        label1.set_markup("<b>{}</b>".format(_("New enclosing place")))
+        label1 = Gtk.Label(_("New enclosing place"))
         label1.set_halign(Gtk.Align.START)
         label1.set_line_wrap(True)
         self.label1 = label1
@@ -162,13 +159,11 @@ class PlaceUpdate(Gramplet):
         vbox.pack_start(replace_text_box, False, True, 0)
 
 
-        old_text_label = Gtk.Label()
-        old_text_label.set_markup("<b>{}</b>".format(_("Old text:")))
+        old_text_label = Gtk.Label(_("Old text:"))
         self.old_text = Gtk.Entry()
         self.old_text.set_sensitive(False)
 
-        new_text_label = Gtk.Label()
-        new_text_label.set_markup("<b>{}</b>".format(_("New text:")))
+        new_text_label = Gtk.Label(_("New text:"))
         self.new_text = Gtk.Entry()
         self.new_text.set_sensitive(False)
 
