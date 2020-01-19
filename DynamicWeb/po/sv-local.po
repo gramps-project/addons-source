@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sv\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-22 19:40+0200\n"
-"PO-Revision-Date: 2018-11-11 13:04+0100\n"
-"Last-Translator: Pär Ekholm <par.ekholm@pekholm.se>\n"
+"POT-Creation-Date: 2020-01-03 16:06-0600\n"
+"PO-Revision-Date: 2020-01-19 13:57+0100\n"
+"Last-Translator: Pär Ekholm <pehlm@pekholm.se>\n"
+"Language-Team: \n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.0.6\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language-Team: \n"
 
 #: DynamicWeb/dynamicweb.gpr.py:15
 msgid "Dynamic Web Report"
@@ -74,7 +74,7 @@ msgstr "Grafiskt SVG-träd"
 msgid "Indexes pages"
 msgstr "Indexerar sidor"
 
-#: DynamicWeb/dynamicweb.py:287 DynamicWeb/dynamicweb.py:4235
+#: DynamicWeb/dynamicweb.py:287 DynamicWeb/dynamicweb.py:4247
 #, python-format
 msgid "Custom page %(index)i"
 msgstr "Anpassad sida %(index)i"
@@ -197,7 +197,7 @@ msgstr "Varken %(current)s eller %(parent)s är kataloger"
 msgid "Could not create the directory: %(path)s"
 msgstr "Kunde inte skapa katalogen: %(path)s"
 
-#: DynamicWeb/dynamicweb.py:742 DynamicWeb/dynamicweb.py:3369
+#: DynamicWeb/dynamicweb.py:742 DynamicWeb/dynamicweb.py:3380
 msgid "Dynamic Web Site Report"
 msgstr "Dynamisk webbsidesrapport"
 
@@ -213,7 +213,7 @@ msgstr "Författare"
 msgid "Abbreviation"
 msgstr "Förkortning"
 
-#: DynamicWeb/dynamicweb.py:1234 DynamicWeb/dynamicweb.py:2542
+#: DynamicWeb/dynamicweb.py:1234 DynamicWeb/dynamicweb.py:2543
 msgid "Publication information"
 msgstr "Publiceringsinformation "
 
@@ -240,8 +240,7 @@ msgid "Impossible to convert \"%(path)s\" to a relative path."
 msgstr "Omöjligt att konvertera \"%(path)s\" till en relativ sökväg."
 
 #: DynamicWeb/dynamicweb.py:2178
-msgid ""
-"The pages configuration is not valid: several pages have the same content"
+msgid "The pages configuration is not valid: several pages have the same content"
 msgstr "Sidkonfigurationen är inte giltig: flera sidor har samma innehåll"
 
 #: DynamicWeb/dynamicweb.py:2189
@@ -262,7 +261,7 @@ msgstr "Statistik"
 msgid "Configuration"
 msgstr "Konfiguration"
 
-#: DynamicWeb/dynamicweb.py:2196 DynamicWeb/dynamicweb.py:2534
+#: DynamicWeb/dynamicweb.py:2196 DynamicWeb/dynamicweb.py:2535
 msgid "Person"
 msgstr "Person"
 
@@ -270,7 +269,7 @@ msgstr "Person"
 msgid "Family"
 msgstr "Familj"
 
-#: DynamicWeb/dynamicweb.py:2198 DynamicWeb/dynamicweb.py:2572
+#: DynamicWeb/dynamicweb.py:2198 DynamicWeb/dynamicweb.py:2575
 msgid "Source"
 msgstr "Källa"
 
@@ -279,11 +278,11 @@ msgstr "Källa"
 msgid "Media"
 msgstr "Media"
 
-#: DynamicWeb/dynamicweb.py:2200 DynamicWeb/dynamicweb.py:2537
+#: DynamicWeb/dynamicweb.py:2200 DynamicWeb/dynamicweb.py:2538
 msgid "Place"
 msgstr "Plats"
 
-#: DynamicWeb/dynamicweb.py:2201 DynamicWeb/dynamicweb.py:2548
+#: DynamicWeb/dynamicweb.py:2201 DynamicWeb/dynamicweb.py:2550
 msgid "Repository"
 msgstr "Arkivplats"
 
@@ -292,7 +291,7 @@ msgid "Search results"
 msgstr "Sökresultat"
 
 #: DynamicWeb/dynamicweb.py:2213 DynamicWeb/dynamicweb.py:2214
-#: DynamicWeb/dynamicweb.py:2579
+#: DynamicWeb/dynamicweb.py:2582
 msgid "Surnames"
 msgstr "Efternamn"
 
@@ -304,11 +303,11 @@ msgstr "Personer"
 msgid "Families"
 msgstr "Familjer"
 
-#: DynamicWeb/dynamicweb.py:2217 DynamicWeb/dynamicweb.py:2574
+#: DynamicWeb/dynamicweb.py:2217 DynamicWeb/dynamicweb.py:2577
 msgid "Sources"
 msgstr "Källor"
 
-#: DynamicWeb/dynamicweb.py:2219 DynamicWeb/dynamicweb.py:2539
+#: DynamicWeb/dynamicweb.py:2219 DynamicWeb/dynamicweb.py:2540
 msgid "Places"
 msgstr "Orter"
 
@@ -316,16 +315,12 @@ msgstr "Orter"
 msgid "Addresses"
 msgstr "Adresser"
 
-#: DynamicWeb/dynamicweb.py:2221 DynamicWeb/dynamicweb.py:2547
-msgid "Repositories Index"
-msgstr "Arkivplatsindex"
-
-#: DynamicWeb/dynamicweb.py:2221 DynamicWeb/dynamicweb.py:2548
+#: DynamicWeb/dynamicweb.py:2221 DynamicWeb/dynamicweb.py:2549
 msgid "Repositories"
 msgstr "Arkivplatser"
 
 #: DynamicWeb/dynamicweb.py:2272 DynamicWeb/dynamicweb.py:2502
-#: DynamicWeb/dynamicweb.py:4109
+#: DynamicWeb/dynamicweb.py:4121
 msgid "Indexes"
 msgstr "Index"
 
@@ -370,14 +365,8 @@ msgid ": activate to sort column descending"
 msgstr ": aktivera för att sortera kolumnen sjunkande"
 
 #: DynamicWeb/dynamicweb.py:2445
-msgid ""
-"<p>This page provides the SVG raw code.<br>Copy the contents into a text "
-"editor and save as an SVG file.<br>Make sure that the text editor encoding is "
-"UTF-8.</p>"
-msgstr ""
-"<p>Den här sidan innehåller SVG råkod.<br>Kopiera innehållet till en "
-"textredigerare och spara som en SVG-fil.<br>Kontrollera att texteditorns "
-"textkodningsinställning är UTF-8.</p>"
+msgid "<p>This page provides the SVG raw code.<br>Copy the contents into a text editor and save as an SVG file.<br>Make sure that the text editor encoding is UTF-8.</p>"
+msgstr "<p>Den här sidan innehåller SVG råkod.<br>Kopiera innehållet till en textredigerare och spara som en SVG-fil.<br>Kontrollera att texteditorns textkodningsinställning är UTF-8.</p>"
 
 #: DynamicWeb/dynamicweb.py:2447
 msgid "Address"
@@ -411,7 +400,7 @@ msgstr "Attribut"
 msgid "Attributes"
 msgstr "Attribut"
 
-#: DynamicWeb/dynamicweb.py:2457 DynamicWeb/dynamicweb.py:4192
+#: DynamicWeb/dynamicweb.py:2457 DynamicWeb/dynamicweb.py:4204
 msgid "Background"
 msgstr "Bakgrund"
 
@@ -547,39 +536,39 @@ msgstr "Hjälp"
 msgid "ID"
 msgstr "ID"
 
-#: DynamicWeb/dynamicweb.py:2494 DynamicWeb/dynamicweb.py:4024
+#: DynamicWeb/dynamicweb.py:2494 DynamicWeb/dynamicweb.py:4036
 msgid "Include Place map on Place Pages"
 msgstr "Ta med platskarta på platssidor"
 
-#: DynamicWeb/dynamicweb.py:2495 DynamicWeb/dynamicweb.py:4129
+#: DynamicWeb/dynamicweb.py:2495 DynamicWeb/dynamicweb.py:4141
 msgid "Include dates columns on the index pages"
 msgstr "Ta med datumkolumner på indexsidorna"
 
-#: DynamicWeb/dynamicweb.py:2496 DynamicWeb/dynamicweb.py:4137
+#: DynamicWeb/dynamicweb.py:2496 DynamicWeb/dynamicweb.py:4149
 msgid "Include a column for parents on the index pages"
 msgstr "Ta med en kolumn för föräldrar på indexsidorna"
 
-#: DynamicWeb/dynamicweb.py:2497 DynamicWeb/dynamicweb.py:4145
+#: DynamicWeb/dynamicweb.py:2497 DynamicWeb/dynamicweb.py:4157
 msgid "Include a column for media path on the index pages"
 msgstr "Ta med en kolumn för mediasökväg på indexsidorna"
 
-#: DynamicWeb/dynamicweb.py:2498 DynamicWeb/dynamicweb.py:4133
+#: DynamicWeb/dynamicweb.py:2498 DynamicWeb/dynamicweb.py:4145
 msgid "Include a column for partners on the index pages"
 msgstr "Ta med en kolumn för partner på indexsidorna"
 
-#: DynamicWeb/dynamicweb.py:2499 DynamicWeb/dynamicweb.py:4032
+#: DynamicWeb/dynamicweb.py:2499 DynamicWeb/dynamicweb.py:4044
 msgid "Include a map in the individuals and family pages"
 msgstr "Ta med en karta på personer- och familjesidor"
 
-#: DynamicWeb/dynamicweb.py:2500 DynamicWeb/dynamicweb.py:4079
+#: DynamicWeb/dynamicweb.py:2500 DynamicWeb/dynamicweb.py:4091
 msgid "Include half and/ or step-siblings on the individual pages"
 msgstr "Ta med halv och/eller styvsyskon på de individuella sidorna"
 
-#: DynamicWeb/dynamicweb.py:2501 DynamicWeb/dynamicweb.py:4149
+#: DynamicWeb/dynamicweb.py:2501 DynamicWeb/dynamicweb.py:4161
 msgid "Include references in indexes"
 msgstr "Ta med referenser i index"
 
-#: DynamicWeb/dynamicweb.py:2504 DynamicWeb/dynamicweb.py:4099
+#: DynamicWeb/dynamicweb.py:2504 DynamicWeb/dynamicweb.py:4111
 msgid "Insert sources author in the sources title"
 msgstr "Lägg till källförfattare i källtiteln"
 
@@ -735,6 +724,10 @@ msgstr "Släktskap med mor"
 msgid "Relationship"
 msgstr "Släktskap"
 
+#: DynamicWeb/dynamicweb.py:2548
+msgid "Repositories Index"
+msgstr "Arkivplatsindex"
+
 #: DynamicWeb/dynamicweb.py:2551
 msgid "Restore"
 msgstr "Återställ"
@@ -743,11 +736,11 @@ msgstr "Återställ"
 msgid "Restore default settings"
 msgstr "Återställ standardinställningar"
 
-#: DynamicWeb/dynamicweb.py:2553 DynamicWeb/dynamicweb.py:4103
+#: DynamicWeb/dynamicweb.py:2553 DynamicWeb/dynamicweb.py:4107
 msgid "Show last modification time"
 msgstr "Visa sista ändringstid"
 
-#: DynamicWeb/dynamicweb.py:2554 DynamicWeb/dynamicweb.py:4194
+#: DynamicWeb/dynamicweb.py:2554 DynamicWeb/dynamicweb.py:4198
 msgid "SVG tree children distribution"
 msgstr "SVG-träd med barn"
 
@@ -755,15 +748,15 @@ msgstr "SVG-träd med barn"
 msgid "SVG tree configuration"
 msgstr "SVG-trädkonfiguration"
 
-#: DynamicWeb/dynamicweb.py:2556 DynamicWeb/dynamicweb.py:4182
+#: DynamicWeb/dynamicweb.py:2556 DynamicWeb/dynamicweb.py:4186
 msgid "SVG tree graph shape"
 msgstr "SVG-trädets grafikform"
 
-#: DynamicWeb/dynamicweb.py:2557 DynamicWeb/dynamicweb.py:4176
+#: DynamicWeb/dynamicweb.py:2557 DynamicWeb/dynamicweb.py:4180
 msgid "SVG tree graph type"
 msgstr "SVG-trädets grafiktyp"
 
-#: DynamicWeb/dynamicweb.py:2558 DynamicWeb/dynamicweb.py:4188
+#: DynamicWeb/dynamicweb.py:2558 DynamicWeb/dynamicweb.py:4192
 msgid "SVG tree parents distribution"
 msgstr "SVG-träd med föräldrar"
 
@@ -775,7 +768,7 @@ msgstr "Spara trädet som fil"
 msgid "Search:"
 msgstr "Sök:"
 
-#: DynamicWeb/dynamicweb.py:2560
+#: DynamicWeb/dynamicweb.py:2561
 msgid "Select the background color scheme"
 msgstr "Välj bakgrundens färgschema"
 
@@ -811,7 +804,7 @@ msgstr "Flera sökresultat.<br>Precisera din sökning eller välj i listan."
 msgid "Show _MENU_ entries"
 msgstr "Visa _MENU_ poster"
 
-#: DynamicWeb/dynamicweb.py:2570 DynamicWeb/dynamicweb.py:4212
+#: DynamicWeb/dynamicweb.py:2570 DynamicWeb/dynamicweb.py:4216
 msgid "Show duplicates"
 msgstr "Visa dubbletter"
 
@@ -839,7 +832,7 @@ msgstr "Källindex"
 msgid "Spouses"
 msgstr "Makar"
 
-#: DynamicWeb/dynamicweb.py:2579 DynamicWeb/dynamicweb.py:4111
+#: DynamicWeb/dynamicweb.py:2579 DynamicWeb/dynamicweb.py:4115
 msgid "Suppress Gramps ID"
 msgstr "Dölj Gramps-ID:n"
 
@@ -867,7 +860,7 @@ msgstr "O"
 msgid "Unknown"
 msgstr "Okänd"
 
-#: DynamicWeb/dynamicweb.py:2587 DynamicWeb/dynamicweb.py:4099
+#: DynamicWeb/dynamicweb.py:2587 DynamicWeb/dynamicweb.py:4103
 msgid "Use tabbed panels instead of sections"
 msgstr "Använd flikar stället för sektioner"
 
@@ -927,13 +920,9 @@ msgstr "Webblänk"
 msgid "Web Links"
 msgstr "Internetlänkar"
 
-#: DynamicWeb/dynamicweb.py:2602 DynamicWeb/dynamicweb.py:4213
-msgid ""
-"Whether to use a special color for the persons that appear several times in "
-"the SVG tree"
-msgstr ""
-"Huruvida använda en speciell färg för personer som syns flera gånger i SVG-"
-"trädet"
+#: DynamicWeb/dynamicweb.py:2602 DynamicWeb/dynamicweb.py:4217
+msgid "Whether to use a special color for the persons that appear several times in the SVG tree"
+msgstr "Huruvida använda en speciell färg för personer som syns flera gånger i SVG-trädet"
 
 #: DynamicWeb/dynamicweb.py:2603
 msgid "Without name"
@@ -959,89 +948,86 @@ msgstr "Zooma ut"
 msgid "all"
 msgstr "alla"
 
-#: DynamicWeb/dynamicweb.py:2941
+#: DynamicWeb/dynamicweb.py:2811
+msgid "No Home Person"
+msgstr "Hemperson är inte bestämd"
+
+#: DynamicWeb/dynamicweb.py:2952
 #, python-format
 msgid "Copying error: %(error)s"
 msgstr "Kopieringsfel: %(error)s"
 
-#: DynamicWeb/dynamicweb.py:2942
+#: DynamicWeb/dynamicweb.py:2953
 #, python-format
 msgid "Impossible to copy \"%(src)s\" to \"%(dst)s\""
 msgstr "Omöjligt att kopiera \"%(src)s\" till \"%(dst)s\""
 
-#: DynamicWeb/dynamicweb.py:2945
+#: DynamicWeb/dynamicweb.py:2956
 msgid "Possible destination error"
 msgstr "Möjligt målfel"
 
-#: DynamicWeb/dynamicweb.py:2946
-msgid ""
-"You appear to have set your target directory to a directory used for data "
-"storage. This could create problems with file management. It is recommended "
-"that you consider using a different directory to store your generated web "
-"pages."
-msgstr ""
-"Du verkar ha satt din målmapp till en mapp, som används för datalagring. "
-"Detta skulle kunna skapa problem med filhantering. Det rekommenderas att du "
-"bör välja en annan mapp till att lagra webbsidor."
+#: DynamicWeb/dynamicweb.py:2957
+msgid "You appear to have set your target directory to a directory used for data storage. This could create problems with file management. It is recommended that you consider using a different directory to store your generated web pages."
+msgstr "Du verkar ha satt din målmapp till en mapp, som används för datalagring. Detta skulle kunna skapa problem med filhantering. Det rekommenderas att du bör välja en annan mapp till att lagra webbsidor."
 
-#: DynamicWeb/dynamicweb.py:2973
+#: DynamicWeb/dynamicweb.py:2984
 #, python-format
 msgid "Unable to copy web site template files from \"%(path)s\""
 msgstr "Kan inte kopiera webbsidesmallar från \"%(path)s\""
 
-#: DynamicWeb/dynamicweb.py:3017
+#: DynamicWeb/dynamicweb.py:3028
 #, python-format
 msgid "Keeping \"%(dst)s\" (newer than \"%(src)s\")"
 msgstr "Spar \"%(dst)s\" (nyare än \"%(src)s\")"
 
-#: DynamicWeb/dynamicweb.py:3020
+#: DynamicWeb/dynamicweb.py:3031
 #, python-format
 msgid "Copying \"%(src)s\" to \"%(dst)s\""
 msgstr "Kopiera \"%(src)s\" till \"%(dst)s\""
 
-#: DynamicWeb/dynamicweb.py:3038
+#: DynamicWeb/dynamicweb.py:3049
 msgid "Invalid file name"
 msgstr "Ogiltigt filnamn"
 
-#: DynamicWeb/dynamicweb.py:3039
+#: DynamicWeb/dynamicweb.py:3050
 msgid "The archive file must be a file, not a directory"
 msgstr "Arkivet måste vara en fil, inte en katalog"
 
-#: DynamicWeb/dynamicweb.py:3049 DynamicWeb/dynamicweb.py:3067
+#: DynamicWeb/dynamicweb.py:3060 DynamicWeb/dynamicweb.py:3078
 #, python-format
 msgid "Unable to overwrite archive file \"%(path)s\""
 msgstr "Kan inte skriva över arkivfilen \"%(path)s\""
 
-#: DynamicWeb/dynamicweb.py:3059 DynamicWeb/dynamicweb.py:3074
+#: DynamicWeb/dynamicweb.py:3070 DynamicWeb/dynamicweb.py:3085
 #, python-format
 msgid "Unable to add file \"%(file)s\" to archive \"%(archive)s\""
 msgstr "Kan inte lägga till filen \"%(file)s\" till arkivet \"%(archive)s\""
 
-#: DynamicWeb/dynamicweb.py:3127
+#: DynamicWeb/dynamicweb.py:3138
 #, python-format
 msgid "DynamicWebReport ignoring link type '%(class)s'"
 msgstr "DynamicWebReport ignorerar länktypen '%(class)s'"
 
-#: DynamicWeb/dynamicweb.py:3370
+#: DynamicWeb/dynamicweb.py:3381
 msgid "Constructing list of other objects..."
 msgstr "Bygger lista med andra objekt..."
 
-#: DynamicWeb/dynamicweb.py:3505
+#: DynamicWeb/dynamicweb.py:3516
 #, python-format
 msgid "Family of %(husband)s and %(spouse)s"
 msgstr "Familj för %(husband)s och %(spouse)s"
 
-#: DynamicWeb/dynamicweb.py:3511
+#: DynamicWeb/dynamicweb.py:3522
 #, python-format
 msgid "Family of %(father)s"
 msgstr "Familj för %(father)s"
 
-#: DynamicWeb/dynamicweb.py:3515
+#: DynamicWeb/dynamicweb.py:3526
 #, python-format
 msgid "Family of %(mother)s"
 msgstr "Familj för %(mother)s"
 
-#: DynamicWeb/dynamicweb.py:3830
+#: DynamicWeb/dynamicweb.py:3841
 msgid ""
 "In this note, the following special words are processed:\n"
 "__SEARCH_FORM__ is replaced by a search form.\n"
@@ -1052,13 +1038,11 @@ msgid ""
 "__NB_REPOSITORIES__ is replaced by the number of repositories.\n"
 "__NB_PLACES__ is replaced by the number of places.\n"
 "__MEDIA_<gid>__ is replaced by the media with Gramps ID <gid>.\n"
-"__THUMB_<gid>__ is replaced by the thumbnail of the media with Gramps ID "
-"<gid>.\n"
+"__THUMB_<gid>__ is replaced by the thumbnail of the media with Gramps ID <gid>.\n"
 "__EXPORT_DATE__ is replaced by the current date.\n"
 "__GRAMPS_VERSION__ is replaced by the Gramps version.\n"
 "__GRAMPS_HOMEPAGE__ is replaced by the Gramps homepage link.\n"
-"URL starting with \"relative://relative.<link>\" are replaced by the relative "
-"URL \"<link>\".\n"
+"URL starting with \"relative://relative.<link>\" are replaced by the relative URL \"<link>\".\n"
 msgstr ""
 "I denna notis är följande specialord bearbetade:\n"
 "__SEARCH_FORM__ är ersatt med en sökfunktion.\n"
@@ -1073,543 +1057,513 @@ msgstr ""
 "__EXPORT_DATE__ är ersatt av nuvarande datum.\n"
 "__GRAMPS_VERSION__ är ersatt av GRAMPS versionen.\n"
 "__GRAMPS_HOMEPAGE__ är ersatt av GRAMPS hemsideslänk.\n"
-"URL:er som börjar med \"relative://relative.<länk>\" är ersatt med den "
-"relativa URL:en \"<länk>\".\n"
+"URL:er som börjar med \"relative://relative.<länk>\" är ersatt med den relativa URL:en \"<länk>\".\n"
 
-#: DynamicWeb/dynamicweb.py:3869
+#: DynamicWeb/dynamicweb.py:3881
 msgid "Report"
 msgstr "Rapport"
 
-#: DynamicWeb/dynamicweb.py:3874
+#: DynamicWeb/dynamicweb.py:3886
 msgid "Destination"
 msgstr "Mål"
 
-#: DynamicWeb/dynamicweb.py:3876
+#: DynamicWeb/dynamicweb.py:3888
 msgid "The destination directory for the web files"
 msgstr "Målmappen för webbfiler"
 
-#: DynamicWeb/dynamicweb.py:3880
+#: DynamicWeb/dynamicweb.py:3892
 msgid "Store web pages in archive"
 msgstr "Spara webbsidor i arkivet"
 
-#: DynamicWeb/dynamicweb.py:3881
-msgid ""
-"Whether to create an archive file (in ZIP or TGZ format) containing the web "
-"site"
-msgstr ""
-"Huruvida skapa ett arkiv (i ZIP eller TGZ formatet) innehållande webbsidan"
+#: DynamicWeb/dynamicweb.py:3893
+msgid "Whether to create an archive file (in ZIP or TGZ format) containing the web site"
+msgstr "Huruvida skapa ett arkiv (i ZIP eller TGZ formatet) innehållande webbsidan"
 
-#: DynamicWeb/dynamicweb.py:3885
+#: DynamicWeb/dynamicweb.py:3897
 msgid "Archive file"
 msgstr "Arkivfil"
 
-#: DynamicWeb/dynamicweb.py:3887
+#: DynamicWeb/dynamicweb.py:3899
 msgid "The archive file name (with \".zip\" or \".tgz\" extension)"
 msgstr "Arkivfilsnamnet (med \".zip\" eller \".tgz\" ändelse)"
 
-#: DynamicWeb/dynamicweb.py:3893
+#: DynamicWeb/dynamicweb.py:3905
 msgid "Web site title"
 msgstr "Webbplatstitel"
 
-#: DynamicWeb/dynamicweb.py:3893
+#: DynamicWeb/dynamicweb.py:3905
 msgid "My Family Tree"
 msgstr "Mitt släktträd"
 
-#: DynamicWeb/dynamicweb.py:3894
+#: DynamicWeb/dynamicweb.py:3906
 msgid "The title of the web site"
 msgstr "Webbsidans titel"
 
-#: DynamicWeb/dynamicweb.py:3897
+#: DynamicWeb/dynamicweb.py:3909
 msgid "Filter"
 msgstr "Filter"
 
-#: DynamicWeb/dynamicweb.py:3899
+#: DynamicWeb/dynamicweb.py:3911
 msgid "Select filter to restrict people that appear on web site"
 msgstr "Välj ett filter, som begränsar vilka personer, som visas på en hemsida."
 
-#: DynamicWeb/dynamicweb.py:3903
+#: DynamicWeb/dynamicweb.py:3915
 msgid "Filter Person"
 msgstr "Filtrera person"
 
-#: DynamicWeb/dynamicweb.py:3904
+#: DynamicWeb/dynamicweb.py:3916
 msgid "The center person for the filter"
 msgstr "Huvudpersonen för filtret"
 
-#: DynamicWeb/dynamicweb.py:3912 DynamicWeb/dynamicweb.py:3932
+#: DynamicWeb/dynamicweb.py:3924 DynamicWeb/dynamicweb.py:3944
 msgid "Name format (short)"
 msgstr "Namnformat (kort)"
 
-#: DynamicWeb/dynamicweb.py:3913 DynamicWeb/dynamicweb.py:3935
+#: DynamicWeb/dynamicweb.py:3925 DynamicWeb/dynamicweb.py:3947
 msgid "Select the format to display a shorter version of the names"
 msgstr "Välj formatet för att visa en kortare version av namnen"
 
-#: DynamicWeb/dynamicweb.py:3927
+#: DynamicWeb/dynamicweb.py:3939
 msgid "Name format"
 msgstr "Namnformat"
 
-#: DynamicWeb/dynamicweb.py:3930
+#: DynamicWeb/dynamicweb.py:3942
 msgid "Select the format to display names"
 msgstr "Välj format vid namnvisning"
 
-#: DynamicWeb/dynamicweb.py:3938
+#: DynamicWeb/dynamicweb.py:3950
 msgid "Web site template"
 msgstr "Webbsidesmall"
 
-#: DynamicWeb/dynamicweb.py:3941
+#: DynamicWeb/dynamicweb.py:3953
 msgid "Select the template of the web site"
 msgstr "Välj webbsidans mall"
 
-#: DynamicWeb/dynamicweb.py:3944
+#: DynamicWeb/dynamicweb.py:3956
 msgid "Copyright"
 msgstr "Copyright"
 
-#: DynamicWeb/dynamicweb.py:3947
+#: DynamicWeb/dynamicweb.py:3959
 msgid "The copyright to be used for the web files"
 msgstr "Den copyright, som skall användas för webbfiler"
 
-#: DynamicWeb/dynamicweb.py:3955
+#: DynamicWeb/dynamicweb.py:3967
 msgid "Privacy"
 msgstr "Skyddade data"
 
-#: DynamicWeb/dynamicweb.py:3963
+#: DynamicWeb/dynamicweb.py:3975
 msgid "Include records marked private"
 msgstr "Ta med data markerade som privata"
 
-#: DynamicWeb/dynamicweb.py:3964
+#: DynamicWeb/dynamicweb.py:3976
 msgid "Whether to include private objects"
 msgstr "Huruvida ta med privata objekt"
 
-#: DynamicWeb/dynamicweb.py:3966
+#: DynamicWeb/dynamicweb.py:3978
 msgid "Living People"
 msgstr "Levande personer"
 
-#: DynamicWeb/dynamicweb.py:3967
+#: DynamicWeb/dynamicweb.py:3979
 msgid "Exclude"
 msgstr "Uteslut"
 
-#: DynamicWeb/dynamicweb.py:3968
+#: DynamicWeb/dynamicweb.py:3980
 msgid "Include Last Name Only"
 msgstr "Ta bara med efternamnet"
 
-#: DynamicWeb/dynamicweb.py:3969
+#: DynamicWeb/dynamicweb.py:3981
 msgid "Include Full Name Only"
 msgstr "Ta bara med kompletta namnet"
 
-#: DynamicWeb/dynamicweb.py:3970
+#: DynamicWeb/dynamicweb.py:3982
 msgid "Include"
 msgstr "Ta med"
 
-#: DynamicWeb/dynamicweb.py:3971
+#: DynamicWeb/dynamicweb.py:3983
 msgid "How to handle living people"
 msgstr "Hur hantera nu levande personer"
 
-#: DynamicWeb/dynamicweb.py:3974
+#: DynamicWeb/dynamicweb.py:3986
 msgid "Years from death to consider living"
 msgstr "År från död att ses som levande"
 
-#: DynamicWeb/dynamicweb.py:3975
-msgid ""
-"This allows you to restrict information on people who have not been dead for "
-"very long"
-msgstr ""
-"Detta tillåter dig att begränsa uppgifter om personer, som inte har varit "
-"döda tillräckligt länge."
+#: DynamicWeb/dynamicweb.py:3987
+msgid "This allows you to restrict information on people who have not been dead for very long"
+msgstr "Detta tillåter dig att begränsa uppgifter om personer, som inte har varit döda tillräckligt länge."
 
-#: DynamicWeb/dynamicweb.py:3979
+#: DynamicWeb/dynamicweb.py:3991
 msgid "Export notes"
 msgstr "Exportera notiser"
 
-#: DynamicWeb/dynamicweb.py:3980
+#: DynamicWeb/dynamicweb.py:3992
 msgid "Whether to export notes in the web pages"
 msgstr "Huruvida exportera notiser i webbsidorna"
 
-#: DynamicWeb/dynamicweb.py:3983
+#: DynamicWeb/dynamicweb.py:3995
 msgid "Export sources"
 msgstr "Exportera källor"
 
-#: DynamicWeb/dynamicweb.py:3984
+#: DynamicWeb/dynamicweb.py:3996
 msgid "Whether to export sources and citations in the web pages"
 msgstr "Huruvida exportera källor och citeringar i webbsidorna"
 
-#: DynamicWeb/dynamicweb.py:3987
+#: DynamicWeb/dynamicweb.py:3999
 msgid "Export addresses"
 msgstr "Exportera adresser"
 
-#: DynamicWeb/dynamicweb.py:3988
+#: DynamicWeb/dynamicweb.py:4000
 msgid "Whether to export addresses in the web pages"
 msgstr "Huruvida exportera adresser i webbsidorna"
 
-#: DynamicWeb/dynamicweb.py:3993
+#: DynamicWeb/dynamicweb.py:4005
 msgid "Options"
 msgstr "Alternativ"
 
-#: DynamicWeb/dynamicweb.py:3996
+#: DynamicWeb/dynamicweb.py:4008
 msgid "Include repository pages"
 msgstr "Ta med arkivplatsförteckning"
 
-#: DynamicWeb/dynamicweb.py:3997
+#: DynamicWeb/dynamicweb.py:4009
 msgid "Whether or not to include the Repository Pages."
 msgstr "Huruvida ta med arkivplatsförteckning eller inte."
 
-#: DynamicWeb/dynamicweb.py:4000
+#: DynamicWeb/dynamicweb.py:4012
 msgid "Include images and media"
 msgstr "Ta med bilder och mediaobjekt"
 
-#: DynamicWeb/dynamicweb.py:4001
+#: DynamicWeb/dynamicweb.py:4013
 msgid "Whether to include images and media in the web pages"
 msgstr "Huruvida ta med mediaobjekt i webbsidorna"
 
-#: DynamicWeb/dynamicweb.py:4005
+#: DynamicWeb/dynamicweb.py:4017
 msgid "Copy, rename files with an internal Gramps identifier"
 msgstr "Kopiera, byt namn på filer med en intern Gramps-identifierare"
 
-#: DynamicWeb/dynamicweb.py:4006
+#: DynamicWeb/dynamicweb.py:4018
 msgid "Copy, keep file names unchanged"
 msgstr "Kopiera, bevara filnamn oförändrade"
 
-#: DynamicWeb/dynamicweb.py:4007
+#: DynamicWeb/dynamicweb.py:4019
 msgid "Do not copy, reference existing files"
 msgstr "Kopiera inte, referera existerande filer"
 
-#: DynamicWeb/dynamicweb.py:4009
+#: DynamicWeb/dynamicweb.py:4021
 msgid "Images and media"
 msgstr "Mediaobjekt"
 
-#: DynamicWeb/dynamicweb.py:4012
+#: DynamicWeb/dynamicweb.py:4024
 msgid "Whether to make a copy of the media"
 msgstr "Huruvida att skapa en kopia av mediaobjekten"
 
-#: DynamicWeb/dynamicweb.py:4015
+#: DynamicWeb/dynamicweb.py:4027
 msgid "Print the notes type"
 msgstr "Skriv ut notistypen"
 
-#: DynamicWeb/dynamicweb.py:4016
+#: DynamicWeb/dynamicweb.py:4028
 msgid "Whether to print the notes type in the notes text"
 msgstr "Huruvida skriva ut notistypen i notistexten"
 
-#: DynamicWeb/dynamicweb.py:4019
+#: DynamicWeb/dynamicweb.py:4031
 msgid "Print place pages"
 msgstr "Skriv ut platssidor"
 
-#: DynamicWeb/dynamicweb.py:4020
+#: DynamicWeb/dynamicweb.py:4032
 msgid "Whether to show pages for the places"
 msgstr "Huruvida visa sidor för platserna"
 
-#: DynamicWeb/dynamicweb.py:4026
-msgid ""
-"Whether to include a place map on the Place Pages, where Latitude/ Longitude "
-"are available."
-msgstr ""
-"Huruvida ta med en platskarta i platssidorna, där Latitud/Longitud finns "
-"tillgängliga."
+#: DynamicWeb/dynamicweb.py:4038
+msgid "Whether to include a place map on the Place Pages, where Latitude/ Longitude are available."
+msgstr "Huruvida ta med en platskarta i platssidorna, där Latitud/Longitud finns tillgängliga."
 
-#: DynamicWeb/dynamicweb.py:4034
-msgid ""
-"Whether or not to add an individual page map showing all the places on this "
-"page. This will allow you to see how your family traveled around the country."
-msgstr ""
-"Huruvida ta med en individuell platskarta som visar alla platser på den "
-"sidan. Det gör att du kan se hur din familj reste runt i landet."
+#: DynamicWeb/dynamicweb.py:4046
+msgid "Whether or not to add an individual page map showing all the places on this page. This will allow you to see how your family traveled around the country."
+msgstr "Huruvida ta med en individuell platskarta som visar alla platser på den sidan. Det gör att du kan se hur din familj reste runt i landet."
 
-#: DynamicWeb/dynamicweb.py:4042
+#: DynamicWeb/dynamicweb.py:4054
 msgid "Google"
 msgstr "Google"
 
-#: DynamicWeb/dynamicweb.py:4043
+#: DynamicWeb/dynamicweb.py:4055
 msgid "OpenStreetMap"
 msgstr "OpenStreetMap"
 
-#: DynamicWeb/dynamicweb.py:4045
+#: DynamicWeb/dynamicweb.py:4057
 msgid "Map Service"
 msgstr "Karttjänst"
 
-#: DynamicWeb/dynamicweb.py:4048
+#: DynamicWeb/dynamicweb.py:4060
 msgid "Choose your choice of map service for creating the Place Map Pages"
 msgstr "Välj din karttjänst för skapande av platskartsidor."
 
-#: DynamicWeb/dynamicweb.py:4052
+#: DynamicWeb/dynamicweb.py:4064
 msgid "Google map API key"
 msgstr "Google map API key"
 
-#: DynamicWeb/dynamicweb.py:4053
+#: DynamicWeb/dynamicweb.py:4065
 msgid "The API key used for the Google map"
 msgstr "API nyckel som används till Google map"
 
-#: DynamicWeb/dynamicweb.py:4060
+#: DynamicWeb/dynamicweb.py:4072
 msgid "Advanced"
 msgstr "Avancerat"
 
-#: DynamicWeb/dynamicweb.py:4063
+#: DynamicWeb/dynamicweb.py:4075
 msgid "Character set encoding"
 msgstr "Teckentabell"
 
-#: DynamicWeb/dynamicweb.py:4066
+#: DynamicWeb/dynamicweb.py:4078
 msgid "The encoding to be used for the web files"
 msgstr "Den kodning, som skall användas för webbfiler"
 
-#: DynamicWeb/dynamicweb.py:4069
+#: DynamicWeb/dynamicweb.py:4081
 msgid "Include family pages"
 msgstr "Ta med familjesidor"
 
-#: DynamicWeb/dynamicweb.py:4070
+#: DynamicWeb/dynamicweb.py:4082
 msgid "Whether or not to include family pages"
 msgstr "Huruvida ta med familjesidor eller inte"
 
-#: DynamicWeb/dynamicweb.py:4080
-msgid ""
-"Whether to include half and/ or step-siblings with the parents and siblings"
-msgstr ""
-"Huruvida ta med ett halv- och/eller styvsyskon med föräldrarna och syskonen"
+#: DynamicWeb/dynamicweb.py:4092
+msgid "Whether to include half and/ or step-siblings with the parents and siblings"
+msgstr "Huruvida ta med ett halv- och/eller styvsyskon med föräldrarna och syskonen"
 
-#: DynamicWeb/dynamicweb.py:4083
+#: DynamicWeb/dynamicweb.py:4095
 msgid "Include GENDEX file (/gendex.txt)"
 msgstr "Inkludera GENDEX-fil (/gendex.txt)"
 
-#: DynamicWeb/dynamicweb.py:4084
+#: DynamicWeb/dynamicweb.py:4096
 msgid "Whether to include a GENDEX file or not"
 msgstr "Huruvida ta med en GENDEX-fil eller inte"
 
-#: DynamicWeb/dynamicweb.py:4087
+#: DynamicWeb/dynamicweb.py:4099
 msgid "Enable page configuration"
 msgstr "Aktivera sidkonfiguration"
 
-#: DynamicWeb/dynamicweb.py:4088
+#: DynamicWeb/dynamicweb.py:4100
 msgid "Whether to enable page configuration"
 msgstr "Huruvida aktivera sidkonfiguration"
 
-#: DynamicWeb/dynamicweb.py:4092
+#: DynamicWeb/dynamicweb.py:4104
 msgid "Whether to use tabbed panels for the different sections of the pages."
 msgstr "Huruvida använda flikar för de olika sektionerna på sidorna."
 
-#: DynamicWeb/dynamicweb.py:4096
+#: DynamicWeb/dynamicweb.py:4108
 msgid "Whether to show the last modification time in the pages footer"
 msgstr "Huruvida visa sista ändringstiden i sidans sidfot"
 
-#: DynamicWeb/dynamicweb.py:4100
+#: DynamicWeb/dynamicweb.py:4112
 msgid "Whether to insert sources author in the sources title"
 msgstr "Huruvida lägga till källförfattare i källtiteln"
 
-#: DynamicWeb/dynamicweb.py:4104
+#: DynamicWeb/dynamicweb.py:4116
 msgid "Whether to hide the Gramps ID"
 msgstr "Huruvida dölja Gramps-IDn"
 
-#: DynamicWeb/dynamicweb.py:4113
+#: DynamicWeb/dynamicweb.py:4125
 msgid "List"
 msgstr "Lista"
 
-#: DynamicWeb/dynamicweb.py:4114
+#: DynamicWeb/dynamicweb.py:4126
 msgid "Table"
 msgstr "Tabell"
 
-#: DynamicWeb/dynamicweb.py:4117
+#: DynamicWeb/dynamicweb.py:4129
 msgid "Default format for the surnames index"
 msgstr "Standardformat för efternamnsindex"
 
-#: DynamicWeb/dynamicweb.py:4117
+#: DynamicWeb/dynamicweb.py:4129
 msgid "The default format for the surnames index"
 msgstr "Standardformatet för efternamnsindexet"
 
-#: DynamicWeb/dynamicweb.py:4118
+#: DynamicWeb/dynamicweb.py:4130
 msgid "Default format for the persons index"
 msgstr "Standardformat för personindex"
 
-#: DynamicWeb/dynamicweb.py:4118
+#: DynamicWeb/dynamicweb.py:4130
 msgid "The default format for the persons index"
 msgstr "Standardformatet för personindexet"
 
-#: DynamicWeb/dynamicweb.py:4119
+#: DynamicWeb/dynamicweb.py:4131
 msgid "Default format for the families index"
 msgstr "Standardformat för familjeindex"
 
-#: DynamicWeb/dynamicweb.py:4119
+#: DynamicWeb/dynamicweb.py:4131
 msgid "The default format for the families index"
 msgstr "Standardformatet för familjeindexet"
 
-#: DynamicWeb/dynamicweb.py:4120
+#: DynamicWeb/dynamicweb.py:4132
 msgid "Default format for the sources index"
 msgstr "Standardformat för källindex"
 
-#: DynamicWeb/dynamicweb.py:4120
+#: DynamicWeb/dynamicweb.py:4132
 msgid "The default format for the sources index"
 msgstr "Standardformatet för källindexet"
 
-#: DynamicWeb/dynamicweb.py:4121
+#: DynamicWeb/dynamicweb.py:4133
 msgid "Default format for the places index"
 msgstr "Standardformat för platsindex"
 
-#: DynamicWeb/dynamicweb.py:4121
+#: DynamicWeb/dynamicweb.py:4133
 msgid "The default format for the places index"
 msgstr "Standardformatet för platsindexet"
 
-#: DynamicWeb/dynamicweb.py:4130
-msgid ""
-"Whether to include dates columns (birth, death, marriage) on the index pages"
+#: DynamicWeb/dynamicweb.py:4142
+msgid "Whether to include dates columns (birth, death, marriage) on the index pages"
 msgstr "Huruvida ta med datumkolumner (födelse, död, giftermål) på indexsidorna"
 
-#: DynamicWeb/dynamicweb.py:4134
+#: DynamicWeb/dynamicweb.py:4146
 msgid "Whether to include a partners column"
 msgstr "Huruvida ta med en partnerkolumn"
 
-#: DynamicWeb/dynamicweb.py:4138
+#: DynamicWeb/dynamicweb.py:4150
 msgid "Whether to include a parents column"
 msgstr "Huruvida ta med en föräldrakolumn"
 
-#: DynamicWeb/dynamicweb.py:4141
+#: DynamicWeb/dynamicweb.py:4153
 msgid "Generate a families index page"
 msgstr "Skapa en familjeindexsida"
 
-#: DynamicWeb/dynamicweb.py:4142
+#: DynamicWeb/dynamicweb.py:4154
 msgid "Whether to generate an index page for families"
 msgstr "Huruvida skapa en indexsida för familjer"
 
-#: DynamicWeb/dynamicweb.py:4146
+#: DynamicWeb/dynamicweb.py:4158
 msgid "Whether to include a column showing the media path"
 msgstr "Huruvida ta med en kolumn som visar mediasökväg"
 
-#: DynamicWeb/dynamicweb.py:4150
-msgid ""
-"Whether to include the references to the items in the index pages. For "
-"example, in the media index page, the names of the individuals, families, "
-"places, sources that reference the media."
-msgstr ""
-"Huruvida ta med referenser till artiklarna i indexsidorna. Exempelvis på "
-"mediaindexsidan, namnen på personerna, familjerna, platserna, källorna som "
-"refererar till mediafilerna."
+#: DynamicWeb/dynamicweb.py:4162
+msgid "Whether to include the references to the items in the index pages. For example, in the media index page, the names of the individuals, families, places, sources that reference the media."
+msgstr "Huruvida ta med referenser till artiklarna i indexsidorna. Exempelvis på mediaindexsidan, namnen på personerna, familjerna, platserna, källorna som refererar till mediafilerna."
 
-#: DynamicWeb/dynamicweb.py:4153
+#: DynamicWeb/dynamicweb.py:4165
 msgid "Default number of entries in the indexes"
 msgstr "Standardnummer på poster i indexen"
 
-#: DynamicWeb/dynamicweb.py:4156
+#: DynamicWeb/dynamicweb.py:4168
 msgid "The default number of entries shown in one index page"
 msgstr "Standardnumret för poster som visas på en indexsida"
 
-#: DynamicWeb/dynamicweb.py:4161
+#: DynamicWeb/dynamicweb.py:4173
 msgid "Trees"
 msgstr "Träd"
 
-#: DynamicWeb/dynamicweb.py:4164
+#: DynamicWeb/dynamicweb.py:4176
 msgid "Maximum number of generations"
 msgstr "Maximalt antal generationer"
 
-#: DynamicWeb/dynamicweb.py:4165
-msgid ""
-"The maximum number of generations to include in the ancestor and descendant "
-"trees and graphs"
-msgstr ""
-"Maximalt antal generationer att ta med i förfäders- och ättlingsträden och "
-"grafer"
+#: DynamicWeb/dynamicweb.py:4177
+msgid "The maximum number of generations to include in the ancestor and descendant trees and graphs"
+msgstr "Maximalt antal generationer att ta med i förfäders- och ättlingsträden och grafer"
 
-#: DynamicWeb/dynamicweb.py:4171
+#: DynamicWeb/dynamicweb.py:4183
 msgid "Choose the default SVG tree graph type"
 msgstr "Välj standard SVG trädgrafiktyp"
 
-#: DynamicWeb/dynamicweb.py:4177
+#: DynamicWeb/dynamicweb.py:4189
 msgid "Choose the default SVG tree graph shape"
 msgstr "Välj standard SVG trädgrafikform"
 
-#: DynamicWeb/dynamicweb.py:4183
+#: DynamicWeb/dynamicweb.py:4195
 msgid "Choose the default SVG tree parents distribution (for fan charts only)"
-msgstr ""
-"Välj standard SVG träd för föräldrar (endast för antavlor i cirkelformat)"
+msgstr "Välj standard SVG träd för föräldrar (endast för antavlor i cirkelformat)"
 
-#: DynamicWeb/dynamicweb.py:4189
+#: DynamicWeb/dynamicweb.py:4201
 msgid "Choose the default SVG tree children distribution (for fan charts only)"
 msgstr "Välj standard SVG träd för barn (endast för antavlor i cirkelformat)"
 
-#: DynamicWeb/dynamicweb.py:4195
+#: DynamicWeb/dynamicweb.py:4207
 msgid "Choose the background color scheme for the persons in the SVG tree graph"
 msgstr "Välj bakgrundens färgschema för personerna i SVG-trädet"
 
-#: DynamicWeb/dynamicweb.py:4198
+#: DynamicWeb/dynamicweb.py:4210
 msgid "Start gradient/Main color"
 msgstr "Start för gradient/huvudfärg"
 
-#: DynamicWeb/dynamicweb.py:4201
+#: DynamicWeb/dynamicweb.py:4213
 msgid "End gradient/2nd color"
 msgstr "Slut för gradient/andra färg"
 
-#: DynamicWeb/dynamicweb.py:4209
+#: DynamicWeb/dynamicweb.py:4221
 msgid "Color for duplicates"
 msgstr "Färg för dubbletter"
 
-#: DynamicWeb/dynamicweb.py:4214
+#: DynamicWeb/dynamicweb.py:4226
 msgid "Pages"
 msgstr "Sidor"
 
-#: DynamicWeb/dynamicweb.py:4217
+#: DynamicWeb/dynamicweb.py:4229
 msgid "HTML user header"
 msgstr "HTML sidhuvud"
 
-#: DynamicWeb/dynamicweb.py:4218
+#: DynamicWeb/dynamicweb.py:4230
 msgid "A note to be used as the page header"
 msgstr "En notis, som skall användas som sidhuvud"
 
-#: DynamicWeb/dynamicweb.py:4221
+#: DynamicWeb/dynamicweb.py:4233
 msgid "HTML user brand name / icon"
 msgstr "HTML varumärke namn/ikon"
 
-#: DynamicWeb/dynamicweb.py:4222
+#: DynamicWeb/dynamicweb.py:4234
 msgid "A note to be used as the brand name or image in the menu"
 msgstr "En notis att användas för varumärkesnamnet eller en bild i menyn"
 
-#: DynamicWeb/dynamicweb.py:4225
+#: DynamicWeb/dynamicweb.py:4237
 msgid "HTML user footer"
 msgstr "HTML sidfot"
 
-#: DynamicWeb/dynamicweb.py:4226
+#: DynamicWeb/dynamicweb.py:4238
 msgid "A note to be used as the page footer"
 msgstr "En notis, som skall används som sidfot"
 
-#: DynamicWeb/dynamicweb.py:4231
+#: DynamicWeb/dynamicweb.py:4243
 msgid "Custom pages"
 msgstr "Anpassade sidor"
 
-#: DynamicWeb/dynamicweb.py:4235
+#: DynamicWeb/dynamicweb.py:4247
 #, python-format
 msgid "Title for the custom page %(index)i"
 msgstr "Den anpassade sidans titel %(index)i"
 
-#: DynamicWeb/dynamicweb.py:4236
+#: DynamicWeb/dynamicweb.py:4248
 #, python-format
 msgid "Name for the custom page %(index)i"
 msgstr "Namn på den anpassade sidan %(index)i"
 
-#: DynamicWeb/dynamicweb.py:4239
+#: DynamicWeb/dynamicweb.py:4251
 #, python-format
 msgid "Note for custom page %(index)i"
 msgstr "Notis för den anpassade sidan %(index)i"
 
-#: DynamicWeb/dynamicweb.py:4240
+#: DynamicWeb/dynamicweb.py:4252
 msgid "A note to be used for the custom page content.\n"
 msgstr "En notis att användas för innehållet på den anpassade sidan.\n"
 
-#: DynamicWeb/dynamicweb.py:4243
+#: DynamicWeb/dynamicweb.py:4255
 #, python-format
 msgid "Menu for the custom page %(index)i"
 msgstr "Meny på den anpassade sidan %(index)i"
 
-#: DynamicWeb/dynamicweb.py:4244
+#: DynamicWeb/dynamicweb.py:4256
 msgid "Whether to print a menu for the custom page"
 msgstr "Huruvida skriva ut en meny för den anpassade sidan"
 
-#: DynamicWeb/dynamicweb.py:4249
+#: DynamicWeb/dynamicweb.py:4261
 msgid "Pages selection"
 msgstr "Sidval"
 
-#: DynamicWeb/dynamicweb.py:4252
+#: DynamicWeb/dynamicweb.py:4264
 msgid "Number of pages"
 msgstr "Antal sidor"
 
-#: DynamicWeb/dynamicweb.py:4253
+#: DynamicWeb/dynamicweb.py:4265
 msgid "Number pages in the web site menu."
 msgstr "Antal sidor i webbsidesmenyn."
 
-#: DynamicWeb/dynamicweb.py:4269
+#: DynamicWeb/dynamicweb.py:4281
 #, python-format
 msgid "Contents of page %(index)i"
 msgstr "Sidan %(index)i innehåll"
 
-#: DynamicWeb/dynamicweb.py:4272
+#: DynamicWeb/dynamicweb.py:4284
 msgid "Contents of the page"
 msgstr "Innehåll på sidan"
