@@ -401,4 +401,3 @@ class PlaceUpdate(Gramplet):
             elif enclosing_handles_set.intersection(place.get_placeref_list()):
                 top_level[name] = (handle, place)
         return top_level
-    
