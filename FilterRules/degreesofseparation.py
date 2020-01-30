@@ -10,7 +10,7 @@
 #
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
@@ -25,13 +25,27 @@
 #
 # -------------------------------------------------------------------------
 from gramps.gen.filters.rules import Rule
-from gramps.gui.editors.filtereditor import MyBoolean
+from gramps.gui.editors.filtereditor import MyBoolean, MyInteger
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
     _trans = glocale.get_addon_translator(__file__)
 except ValueError:
     _trans = glocale.translation
 _ = _trans.gettext
+
+
+# -------------------------------------------------------------------------
+#
+# Degrees number option
+#
+# -------------------------------------------------------------------------
+class DegreesOption(MyInteger):
+    """Number option for filter editor."""
+
+    def __init__(self, database):
+        MyInteger.__init__(self, 1, 32)
+        self.set_tooltip_text(_("Number of degrees of separation from"
+                                " person."))
 
 
 # -------------------------------------------------------------------------
@@ -44,7 +58,7 @@ class InclPartner(MyBoolean):
 
     def __init__(self, database):
         MyBoolean.__init__(self, _('Include Partners'))
-        self.set_tooltip_text(_("Include the partners."))
+        self.set_tooltip_text(_("Include all partners."))
         self.set_active(True)
 
     def set_text(self, val):
@@ -82,11 +96,11 @@ class DegreesOfSeparation(Rule):
     """Filter rule that matches relatives by degrees of separation."""
 
     labels = [_('ID:'),
-              _("Degrees:"),
-              (_('Include Partners:'), InclPartner),
-              (_('Include all Parents:'), InclAllParents)]
+              (_("Degrees:"), DegreesOption),
+              ('', InclPartner),
+              ('', InclAllParents)]
     name = _('People separated less than <N> degrees of <person>')
-    category = _("General filters")
+    category = _("Relationship")
     description = _("Filter rule that matches relatives by degrees of"
                     " separation")
 
@@ -94,17 +108,23 @@ class DegreesOfSeparation(Rule):
         """Prepare a refernece list for the filter."""
         self.db = db
         self.persons = set()
-        self.ancestors = set()
-        pid = self.list[0]
-        person = db.get_person_from_gramps_id(pid)
-        root_handle = person.get_handle()
+        self.ancestors = list()
+        root_handle = self.__get_root_handle()
 
         self.__get_ancestors(root_handle)
         for ancestor in self.ancestors:
-            self.__get_desc(ancestor, self.list[1])
+            self.__get_desc(ancestor, 0)
 
-        if bool(int(self.list[2])):
+        get_partners = bool(int(self.list[2]))
+        if get_partners:
             self.__get_partners()
+
+    def __get_root_handle(self):
+        """Get the handle of the starting person."""
+        pid = self.list[0]
+        person = self.db.get_person_from_gramps_id(pid)
+        root_handle = person.get_handle()
+        return root_handle
 
     def __get_ancestors(self, root_handle):
         """Get the ancestors of a person."""
@@ -113,7 +133,7 @@ class DegreesOfSeparation(Rule):
             handle, gen = self.queue.pop(0)
             if handle in self.ancestors:
                 continue
-            self.ancestors.add(handle)
+            self.ancestors.append(handle)
             gen += 1
             if gen <= int(self.list[1]):
                 person = self.db.get_person_from_handle(handle)
@@ -145,21 +165,20 @@ class DegreesOfSeparation(Rule):
 
     def __get_desc(self, root_handle, gen):
         """Get the descendants of a person."""
-        queue = [(root_handle, 1)]
-        while queue:
-            handle, gen = queue.pop(0)
-            if handle in self.persons:
-                continue
-            self.persons.add(handle)
-            gen += 1
-            if gen <= int(self.list[1]):
-                person = self.db.get_person_from_handle(handle)
-                fam_list = person.get_family_handle_list()
-                for fam_id in fam_list:
-                    fam = self.db.get_family_from_handle(fam_id)
-                    if fam:
-                        for child_ref in fam.get_child_ref_list():
-                            self.__get_desc(child_ref.ref, gen)
+        if root_handle in self.persons:
+            return
+
+        self.persons.add(root_handle)
+        if gen >= int(self.list[1]):
+            return
+
+        person = self.db.get_person_from_handle(root_handle)
+        fam_list = person.get_family_handle_list()
+        for fam_id in fam_list:
+            fam = self.db.get_family_from_handle(fam_id)
+            if fam:
+                for child_ref in fam.get_child_ref_list():
+                    self.__get_desc(child_ref.ref, gen+1)
 
     def __get_partners(self):
         """Get the partners."""
