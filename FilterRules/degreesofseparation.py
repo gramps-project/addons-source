@@ -100,7 +100,7 @@ class DegreesOfSeparation(Rule):
               ('', InclPartner),
               ('', InclAllParents)]
     name = _('People separated less than <N> degrees of <person>')
-    category = _("Relationship")
+    category = _("Relationship filters")
     description = _("Filter rule that matches relatives by degrees of"
                     " separation")
 
