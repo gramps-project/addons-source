@@ -252,7 +252,7 @@ class DescendantsLinesReport(Report):
         F_PAD   - Horizonal space family to family
         C_UP    - The length of the vertical edge from child to child-bar
         SP_PAD  - Horizontal space descendant to spouse
-        MIN_C_WIDTH - 
+        MIN_C_WIDTH -
         TEXT_PAD- Space around text
         TEXT_LINE_PAD - Space between lines of text
         output_fmt - The output format
@@ -692,7 +692,7 @@ class Person_Block:
         #           self.boxw, self.tw, self.iw)
         # log.debug('PBlk Height: bh=%d, th=%d, ih=%d',
         #           self.boxh, self.th, self.ih)
-        
+
         global max_image_width
         global max_image_height
         global max_text_width
@@ -1605,7 +1605,7 @@ class DescendantsLinesOptions(MenuReportOptions):
         max_note_len.set_help(_("Maximum length of an event's note field in"
                                 " a text block, '$e(n)'\n 0=no limit "))
         menu.add_option(category_name, "max_note_len", max_note_len)
-        
+
         ##################
         category_name = _("Display")
 
@@ -1771,7 +1771,7 @@ class DescendantsLinesOptions(MenuReportOptions):
 
         ##################
         category_name = _("Header and Footer")
-        
+
         title = gramps.gen.plug.menu.StringOption(_("Title text"), "")
         title.set_help(_("The text that will be written in the header of the"
                          " document"))
@@ -1789,7 +1789,7 @@ class DescendantsLinesOptions(MenuReportOptions):
 
         ##################
         category_name = _("Privacy")
-        
+
         protect_private = BooleanOption(_("Protect People, Images or Events"
                                           " that are marked Private"), True)
         protect_private.set_help(_("The Privacy setting of only these types"
