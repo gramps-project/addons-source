@@ -474,6 +474,10 @@ class NetworkChartReport(Report):
         G = nx.DiGraph()
         G.clear()
 
+        # deal with incompatibiliy between v1 and v2
+        ver = str(nx.__version__).split('.')
+        g_node = G.node if ver[0] == '1' else G.nodes
+
         for i in edge_marriage:
             if i[1] and i[2]:
                 G.add_edge(i[1], i[2])
@@ -549,31 +553,31 @@ class NetworkChartReport(Report):
                     lbl = '\\n'.join(i[1:4])
                 if lbl:
                     if G.has_node(i[0]):
-                        G.node[i[0]]['label'] = lbl
-                        G.node[i[0]]['color'] = node_edge_color
-                        G.node[i[0]]['penwidth'] = node_edge_thickness
+                        g_node[i[0]]['label'] = lbl
+                        g_node[i[0]]['color'] = node_edge_color
+                        g_node[i[0]]['penwidth'] = node_edge_thickness
                         if include_urls == "include":
-                            G.node[i[0]]['URL'] = i[6]
+                            g_node[i[0]]['URL'] = i[6]
                         elif include_urls == "dynamic":
                             if self.b_use_handle:
                                 pers = self.database.get_person_from_gramps_id(
                                     i[0])
                                 h_ref = str(pers.get_handle())
-                                G.node[i[0]]['URL'] = (url_prefix + h_ref +
+                                g_node[i[0]]['URL'] = (url_prefix + h_ref +
                                                        url_suffix)
                             else:
-                                G.node[i[0]]['URL'] = (url_prefix + i[0] +
+                                g_node[i[0]]['URL'] = (url_prefix + i[0] +
                                                        url_suffix)
                         elif include_urls == "static":
-                            G.node[i[0]]['URL'] = url_prefix
+                            g_node[i[0]]['URL'] = url_prefix
                         else:
-                            G.node[i[0]]['URL'] = ""
+                            g_node[i[0]]['URL'] = ""
                         if fillnode:
-                            G.node[i[0]]['fillcolor'] = node_fill_color
+                            g_node[i[0]]['fillcolor'] = node_fill_color
                         if PYDOT:  # PYDOTPLUS
-                            G.node[i[0]]['style'] = '"' + node_style + '"'
+                            g_node[i[0]]['style'] = '"' + node_style + '"'
                         else:  # PYGRAPHVIZ
-                            G.node[i[0]]['style'] = node_style
+                            g_node[i[0]]['style'] = node_style
                     else:
                         if fillnode:
                             G.add_node(i[0], color=node_edge_color,
@@ -582,27 +586,27 @@ class NetworkChartReport(Report):
                         else:
                             G.add_node(i[0], color=node_edge_color,
                                        penwidth=node_edge_thickness)
-                        G.node[i[0]]['label'] = lbl
+                        g_node[i[0]]['label'] = lbl
                         if include_urls == "include":
-                            G.node[i[0]]['URL'] = i[6]
+                            g_node[i[0]]['URL'] = i[6]
                         elif include_urls == "dynamic":
                             if self.b_use_handle:
                                 pers = self.database.get_person_from_gramps_id(
                                     i[0])
                                 h_ref = str(pers.get_handle())
-                                G.node[i[0]]['URL'] = (url_prefix + h_ref +
+                                g_node[i[0]]['URL'] = (url_prefix + h_ref +
                                                        url_suffix)
                             else:
-                                G.node[i[0]]['URL'] = (url_prefix + i[0] +
+                                g_node[i[0]]['URL'] = (url_prefix + i[0] +
                                                        url_suffix)
                         elif include_urls == "static":
-                            G.node[i[0]]['URL'] = url_prefix
+                            g_node[i[0]]['URL'] = url_prefix
                         else:
-                            G.node[i[0]]['URL'] = ""
+                            g_node[i[0]]['URL'] = ""
                         if PYDOT:  # PYDOTPLUS
-                            G.node[i[0]]['style'] = '"' + node_style + '"'
+                            g_node[i[0]]['style'] = '"' + node_style + '"'
                         else:  # PYGRAPHVIZ
-                            G.node[i[0]]['style'] = node_style
+                            g_node[i[0]]['style'] = node_style
             except Exception:
                 raise
 
@@ -621,7 +625,7 @@ class NetworkChartReport(Report):
 
         if self.b_highlight_center:
             if G.has_node(center_person):
-                G.node[center_person]['fillcolor'] = '#FFFD6BFF'
+                g_node[center_person]['fillcolor'] = '#FFFD6BFF'
 
         if self.b_center_person:
             if G.has_node(center_person):
