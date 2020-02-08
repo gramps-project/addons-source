@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-18 20:10+0200\n"
+"POT-Creation-Date: 2020-02-08 08:27-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,95 +17,91 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: PlaceTool/PlaceTool.gpr.py:3 PlaceTool/PlaceTool.gpr.py:14
+#: PlaceUpdate/PlaceUpdate.gpr.py:3 PlaceUpdate/PlaceUpdate.gpr.py:14
 msgid "PlaceUpdate"
 msgstr ""
 
-#: PlaceTool/PlaceTool.gpr.py:4
+#: PlaceUpdate/PlaceUpdate.gpr.py:4
 msgid "Gramplet to manipulate multiple places"
 msgstr ""
 
-#: PlaceTool/PlaceTool.py:57
+#: PlaceUpdate/PlaceUpdate.py:53
 msgid "Set properties for multiple places"
 msgstr ""
 
-#: PlaceTool/PlaceTool.py:79 PlaceTool/PlaceTool.py:116
+#: PlaceUpdate/PlaceUpdate.py:73 PlaceUpdate/PlaceUpdate.py:110
 msgid "None"
 msgstr ""
 
-#: PlaceTool/PlaceTool.py:93
+#: PlaceUpdate/PlaceUpdate.py:90
 msgid ""
 "This gramplet allows setting properties for multiple places at the same time"
 msgstr ""
 
-#: PlaceTool/PlaceTool.py:99
+#: PlaceUpdate/PlaceUpdate.py:95
 msgid "Place type:"
 msgstr ""
 
-#: PlaceTool/PlaceTool.py:105
+#: PlaceUpdate/PlaceUpdate.py:100
 msgid "Tag:"
 msgstr ""
 
-#: PlaceTool/PlaceTool.py:111
+#: PlaceUpdate/PlaceUpdate.py:105
 msgid "New enclosing place"
 msgstr ""
 
-#: PlaceTool/PlaceTool.py:130
-msgid "Set enclosing place"
+#: PlaceUpdate/PlaceUpdate.py:124
+msgid "Select enclosing place"
 msgstr ""
 
-#: PlaceTool/PlaceTool.py:134
+#: PlaceUpdate/PlaceUpdate.py:128
 msgid "Clear original enclosing places"
 msgstr ""
 
-#: PlaceTool/PlaceTool.py:137
+#: PlaceUpdate/PlaceUpdate.py:131
 msgid "Clear tags"
 msgstr ""
 
-#: PlaceTool/PlaceTool.py:140
+#: PlaceUpdate/PlaceUpdate.py:134
 msgid "Generate hierarchy"
 msgstr ""
 
-#: PlaceTool/PlaceTool.py:146
+#: PlaceUpdate/PlaceUpdate.py:140
 msgid "use spaces as separator"
 msgstr ""
 
-#: PlaceTool/PlaceTool.py:150
+#: PlaceUpdate/PlaceUpdate.py:144
 msgid "reverse hierarchy"
 msgstr ""
 
-#: PlaceTool/PlaceTool.py:156
+#: PlaceUpdate/PlaceUpdate.py:150
 msgid "Replace text"
 msgstr ""
 
-#: PlaceTool/PlaceTool.py:159
+#: PlaceUpdate/PlaceUpdate.py:153
 msgid "Use regex"
 msgstr ""
 
-#: PlaceTool/PlaceTool.py:169
+#: PlaceUpdate/PlaceUpdate.py:162
 msgid "Old text:"
 msgstr ""
 
-#: PlaceTool/PlaceTool.py:174
+#: PlaceUpdate/PlaceUpdate.py:166
 msgid "New text:"
 msgstr ""
 
-#: PlaceTool/PlaceTool.py:186
+#: PlaceUpdate/PlaceUpdate.py:178
 msgid "Clear selections"
 msgstr ""
 
-#: PlaceTool/PlaceTool.py:190
+#: PlaceUpdate/PlaceUpdate.py:182
 msgid "Apply to selected places"
 msgstr ""
 
-#: PlaceTool/PlaceTool.py:209
-msgid "Please select a place that will be set as an enclosing place"
-msgstr ""
-
-#: PlaceTool/PlaceTool.py:231
+#: PlaceUpdate/PlaceUpdate.py:224
 msgid "Setting place properties"
 msgstr ""
 
-#: PlaceTool/PlaceTool.py:272
+#: PlaceUpdate/PlaceUpdate.py:262
 msgid "Regex operation failed: {}"
 msgstr ""

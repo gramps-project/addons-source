@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-31 16:18-0600\n"
+"POT-Creation-Date: 2020-02-08 08:27-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,54 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: FilterRules/degreesofseparation.gpr.py:24
+#: FilterRules/degreesofseparation.py:102
+msgid "People separated less than <N> degrees of <person>"
+msgstr ""
+
+#: FilterRules/degreesofseparation.gpr.py:25
+#: FilterRules/degreesofseparation.py:104
+msgid "Filter rule that matches relatives by degrees of separation"
+msgstr ""
+
+#: FilterRules/degreesofseparation.py:47
+msgid "Number of degrees of separation from person."
+msgstr ""
+
+#: FilterRules/degreesofseparation.py:60
+msgid "Include Partners"
+msgstr ""
+
+#: FilterRules/degreesofseparation.py:61
+msgid "Include all partners."
+msgstr ""
+
+#: FilterRules/degreesofseparation.py:79
+msgid "Include all parents"
+msgstr ""
+
+#: FilterRules/degreesofseparation.py:80
+msgid "Include parents with relationship foster, adopted, stepchild, etc."
+msgstr ""
+
+#: FilterRules/degreesofseparation.py:98
+msgid "ID:"
+msgstr ""
+
+#: FilterRules/degreesofseparation.py:99
+msgid "Degrees:"
+msgstr ""
+
+#: FilterRules/degreesofseparation.py:103
+#: FilterRules/isrelatedwithfiltermatch.py:54
+msgid "Relationship filters"
+msgstr ""
+
+#: FilterRules/degreesofseparation.py:158
+#: FilterRules/degreesofseparation.py:163
+msgid "Birth"
+msgstr ""
 
 #: FilterRules/familieswitheventfiltermatch.gpr.py:24
 #: FilterRules/familieswitheventfiltermatch.py:45
@@ -152,10 +200,6 @@ msgstr ""
 
 #: FilterRules/isrelatedwithfiltermatch.py:52
 msgid "Filter name:"
-msgstr ""
-
-#: FilterRules/isrelatedwithfiltermatch.py:54
-msgid "Relationship filters"
 msgstr ""
 
 #: FilterRules/isrelatedwithfiltermatch.py:67
