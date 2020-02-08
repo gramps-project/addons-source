@@ -745,7 +745,8 @@ class PlaceCleanup(Gramplet):
                 name = PlaceName()
                 name.value = parent.title
                 parent.name = name
-                parent.gramps_id = self.newplace.parent_ids[0]
+                if self.newplace.parent_ids:
+                    parent.gramps_id = self.newplace.parent_ids[0]
                 with DbTxn(_("Add Place (%s)") % parent.title,
                            self.dbstate.db) as trans:
                     self.dbstate.db.add_place(parent, trans)
