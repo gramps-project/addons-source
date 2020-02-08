@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"POT-Creation-Date: 2020-02-08 15:56-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -87,87 +87,87 @@ msgid ""
 "Or try changing the Title with more detail, such as a country."
 msgstr ""
 
-#: PlaceCleanup/placecleanup.py:396 PlaceCleanup/placecleanup.py:398
-#: PlaceCleanup/placecleanup.py:787
+#: PlaceCleanup/placecleanup.py:399 PlaceCleanup/placecleanup.py:401
+#: PlaceCleanup/placecleanup.py:797
 msgid ", "
 msgstr ""
 
-#: PlaceCleanup/placecleanup.py:418 PlaceCleanup/placecleanup.py:423
+#: PlaceCleanup/placecleanup.py:421 PlaceCleanup/placecleanup.py:426
 msgid "Problem getting data from web"
 msgstr ""
 
-#: PlaceCleanup/placecleanup.py:424
+#: PlaceCleanup/placecleanup.py:427
 msgid "Web request Timeout, you can try again..."
 msgstr ""
 
-#: PlaceCleanup/placecleanup.py:432
+#: PlaceCleanup/placecleanup.py:435
 msgid "Problem getting data from GeoNames"
 msgstr ""
 
-#: PlaceCleanup/placecleanup.py:477 PlaceCleanup/placecleanup.py:748
+#: PlaceCleanup/placecleanup.py:480 PlaceCleanup/placecleanup.py:758
 msgid "Place cycle detected"
 msgstr ""
 
-#: PlaceCleanup/placecleanup.py:478
+#: PlaceCleanup/placecleanup.py:481
 msgid ""
 "One of the places you are merging encloses the other!\n"
 "Please choose another place."
 msgstr ""
 
-#: PlaceCleanup/placecleanup.py:740
+#: PlaceCleanup/placecleanup.py:750
 #, python-format
 msgid "Add Place (%s)"
 msgstr ""
 
-#: PlaceCleanup/placecleanup.py:749
+#: PlaceCleanup/placecleanup.py:759
 msgid ""
 "The place you chose is enclosed in the place you are workin on!\n"
 "Please cancel and choose another place."
 msgstr ""
 
-#: PlaceCleanup/placecleanup.py:772
+#: PlaceCleanup/placecleanup.py:782
 #, python-format
 msgid "Add Citation (%s)"
 msgstr ""
 
-#: PlaceCleanup/placecleanup.py:777
+#: PlaceCleanup/placecleanup.py:787
 #, python-format
 msgid "Edit Place (%s)"
 msgstr ""
 
-#: PlaceCleanup/placecleanup.py:935
+#: PlaceCleanup/placecleanup.py:945
 msgid "GeoNames web site"
 msgstr ""
 
-#: PlaceCleanup/placecleanup.py:940
+#: PlaceCleanup/placecleanup.py:950
 msgid "GeoNames author"
 msgstr ""
 
-#: PlaceCleanup/placecleanup.py:945
+#: PlaceCleanup/placecleanup.py:955
 msgid "GeoNames was founded by Marc Wick. You can reach him at "
 msgstr ""
 
-#: PlaceCleanup/placecleanup.py:948
+#: PlaceCleanup/placecleanup.py:958
 msgid ""
 "GeoNames is a project of Unxos GmbH, Weingartenstrasse 8, 8708 Männedorf, "
 "Switzerland.\n"
 "This work is licensed under a "
 msgstr ""
 
-#: PlaceCleanup/placecleanup.py:951
+#: PlaceCleanup/placecleanup.py:961
 msgid "Creative Commons Attribution 3.0 License"
 msgstr ""
 
-#: PlaceCleanup/placecleanup.py:963
+#: PlaceCleanup/placecleanup.py:973
 #, python-format
 msgid "Add Souce/Repo/Note (%s)"
 msgstr ""
 
-#: PlaceCleanup/placecleanup.py:1064
+#: PlaceCleanup/placecleanup.py:1074
 msgid "This Place is not used!"
 msgstr ""
 
-#: PlaceCleanup/placecleanup.py:1065
+#: PlaceCleanup/placecleanup.py:1075
 msgid ""
 "You should delete it, or, if it contains useful notes or other data, use the "
 "Find to merge it into a valid place."
