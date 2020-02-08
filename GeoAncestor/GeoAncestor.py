@@ -29,9 +29,6 @@ Geography for one person
 #
 #-------------------------------------------------------------------------
 import operator
-from gi.repository import Gdk
-from gi.repository import Gtk
-from gi.repository import GLib
 
 #-------------------------------------------------------------------------
 #
@@ -39,6 +36,9 @@ from gi.repository import GLib
 #
 #-------------------------------------------------------------------------
 import logging
+
+from gi.repository import Gdk
+from gi.repository import Gtk
 
 #-------------------------------------------------------------------------
 #
@@ -167,18 +167,6 @@ _UI_DEF = [
     </placeholder>
     ''']
 
-STANDARD_MAP = 0
-PNVKARTE     = 1
-STAMEN       = 2
-MAP_INFO = {
-    STANDARD_MAP : ("Your current map selection",
-                    "http://tile.openstreetmap.org/#Z/#X/#Y.png"),
-    PNVKARTE     : ("PNVKARTE",
-                    "http://tile.xn--pnvkarte-m4a.de/tilegen/#Z/#X/#Y.png"),
-    STAMEN       : ("STAMEN",
-                    "http://tile.stamen.com/watercolor/#Z/#X/#Y.jpg"),
-}
-
 #-------------------------------------------------------------------------
 #
 # GeoView
@@ -201,13 +189,13 @@ class GeoAncestor(GeoGraphyView):
         ('geography.map_service', constants.OPENSTREETMAP),
         ('geography.max_places', 5000),
         ('geography.other_map', 0),
+        ('geography.personal-map', ""),
         )
 
     def __init__(self, pdata, dbstate, uistate, nav_group=0):
         GeoGraphyView.__init__(self, _("Ancestors places on the map"),
-                                      pdata, dbstate, uistate,
-                                      PersonBookmarks,
-                                      nav_group)
+                               pdata, dbstate, uistate, PersonBookmarks,
+                               nav_group)
         self.dbstate = dbstate
         self.uistate = uistate
         self.place_list = []
@@ -261,19 +249,8 @@ class GeoAncestor(GeoGraphyView):
         """
         Rebuild the tree with the given person handle as the root.
         """
-        active = self.get_active()
         self._createmap()
         self.uistate.modify_statusbar(self.dbstate)
-
-    def select_map(self, combo_entry, config):
-        entry = combo_entry.get_active()
-        self._config.set(config, entry)
-        print(entry)
-        print(config)
-        STANDARD_MAP = 0
-        PNVKARTE     = 1
-        STAMEN       = 2
-        STAMEN_X     = 3
 
     def build_tree(self):
         """
@@ -281,7 +258,6 @@ class GeoAncestor(GeoGraphyView):
         all handling of visibility is now in rebuild_trees, see that for more
         information.
         """
-        active = self.get_active()
         self._createmap()
         self.uistate.modify_statusbar(self.dbstate)
 
@@ -300,8 +276,6 @@ class GeoAncestor(GeoGraphyView):
         self.minyear = 9999
         self.maxyear = 0
         self.already_done = []
-        latitude = ""
-        longitude = ""
         self.nbplaces = 0
         self.nbmarkers = 0
         self.message_layer.clear_messages()
@@ -330,10 +304,10 @@ class GeoAncestor(GeoGraphyView):
             event = dbstate.db.get_event_from_handle(event_ref.ref)
             self.load_kml_files(event)
             role = event_ref.get_role()
-            eyear = str(
-         "%04d" % event.get_date_object().to_calendar(self.cal).get_year()) + \
-     str("%02d" % event.get_date_object().to_calendar(self.cal).get_month()) + \
-     str("%02d" % event.get_date_object().to_calendar(self.cal).get_day())
+            edate = event.get_date_object().to_calendar(self.cal)
+            eyear = str("%04d" % edate.get_year()) + \
+                        str("%02d" % edate.get_month()) + \
+                        str("%02d" % edate.get_day())
             place_handle = event.get_place_handle()
             if place_handle and event_ref.ref not in self.event_list:
                 self.event_list.append(event_ref.ref)
@@ -346,14 +320,13 @@ class GeoAncestor(GeoGraphyView):
                     descr = _pd.display(dbstate.db, place)
                     evt = EventType(event.get_type())
                     descr1 = _("%(eventtype)s : %(name)s") % {
-                                    'eventtype': evt,
-                                    'name': _nd.display(person)}
+                        'eventtype': evt,
+                        'name': _nd.display(person)}
                     self.load_kml_files(place)
                     # place.get_longitude and place.get_latitude return
                     # one string. We have coordinates when the two values
                     # contains non null string.
                     if longitude and latitude:
-                        print("xxx :", descr1, _nd.display(person))
                         self._append_to_places_list(descr, evt,
                                                     _nd.display(person),
                                                     latitude, longitude,
@@ -363,10 +336,10 @@ class GeoAncestor(GeoGraphyView):
                                                     place.gramps_id,
                                                     event.gramps_id,
                                                     role
-                                                    )
+                                                   )
                     else:
-                        self._append_to_places_without_coord(
-                                                    place.gramps_id, descr)
+                        self._append_to_places_without_coord(place.gramps_id,
+                                                             descr)
         family_list = person.get_family_handle_list()
         for family_hdl in family_list:
             family = self.dbstate.db.get_family_from_handle(family_hdl)
@@ -389,17 +362,16 @@ class GeoAncestor(GeoGraphyView):
                     descr1 = "%s%s" % (descr1, _nd.display(mother))
                 for event_ref in family.get_event_ref_list():
                     if event_ref:
-                        event = dbstate.db.get_event_from_handle(
-                                              event_ref.ref)
+                        event = dbstate.db.get_event_from_handle(event_ref.ref)
                         self.load_kml_files(event)
                         role = event_ref.get_role()
                         if event.get_place_handle():
                             place_handle = event.get_place_handle()
                             if (place_handle and
-                                event_ref.ref not in self.event_list):
+                                    event_ref.ref not in self.event_list):
                                 self.event_list.append(event_ref.ref)
                                 place = dbstate.db.get_place_from_handle(
-                                               place_handle)
+                                    place_handle)
                                 if place:
                                     longitude = place.get_longitude()
                                     latitude = place.get_latitude()
@@ -409,31 +381,34 @@ class GeoAncestor(GeoGraphyView):
                                                                "D.D8")
                                     descr = _pd.display(dbstate.db, place)
                                     evt = EventType(event.get_type())
-                                    eyear = str(
-         "%04d" % event.get_date_object().to_calendar(self.cal).get_year()) + \
-     str("%02d" % event.get_date_object().to_calendar(self.cal).get_month()) + \
-     str("%02d" % event.get_date_object().to_calendar(self.cal).get_day())
+                                    edate = event.get_date_object()
+                                    edate = edate.to_calendar(self.cal)
+                                    eyear = str("%04d" % edate.get_year()) + \
+                                                str("%02d" % edate.get_month())\
+                                                + str("%02d" % edate.get_day())
                                     self.load_kml_files(place)
                                     if longitude and latitude:
-                                        self._append_to_places_list(descr,
-                                             evt, _nd.display(person),
-                                             latitude, longitude,
-                                             descr1, eyear,
-                                             event.get_type(),
-                                             person.gramps_id,
-                                             place.gramps_id,
-                                             event.gramps_id,
-                                             role
-                                             )
+                                        self._append_to_places_list(descr, evt,
+                                                                    _nd.display(person),
+                                                                    latitude,
+                                                                    longitude,
+                                                                    descr1,
+                                                                    eyear,
+                                                                    event.get_type(),
+                                                                    person.gramps_id,
+                                                                    place.gramps_id,
+                                                                    event.gramps_id,
+                                                                    role
+                                                                   )
                                     else:
                                         self._append_to_places_without_coord(place.gramps_id, descr)
         for pers in [self._get_parent(person, True),
-                       self._get_parent(person, False)]:
+                     self._get_parent(person, False)]:
             if pers:
                 self.show_one_person(pers)
 
         self.sort = sorted(self.place_list,
-                           key=operator.itemgetter(3,4,6)
+                           key=operator.itemgetter(3, 4, 6)
                           )
         self._create_markers()
 
@@ -454,6 +429,7 @@ class GeoAncestor(GeoGraphyView):
                     if person_handle:
                         fct = self.dbstate.db.get_person_from_handle
                         return fct(person_handle)
+        return None
 
     def bubble_message(self, event, lat, lon, marks):
         self.menu = Gtk.Menu()
@@ -583,26 +559,3 @@ class GeoAncestor(GeoGraphyView):
         """
         return (("Person Filter",),
                 ())
-
-    def specific_options(self, configdialog):
-        """
-        Add specific entry to the preference menu.
-        Must be done in the associated view.
-        """
-        grid = Gtk.Grid()
-        grid.set_border_width(12)
-        grid.set_column_spacing(6)
-        grid.set_row_spacing(6)
-        configdialog.add_text(grid,
-                _('The following option will be used if you select '
-                  'other map in the map selection menu.'),
-                1, line_wrap=False)
-        configdialog.add_combo(grid, _('Fan chart distribution'), 8,
-                        'geography.other_map',
-                        ((STANDARD_MAP, MAP_INFO[STANDARD_MAP][0]),
-                         (PNVKARTE, MAP_INFO[PNVKARTE][0]),
-                         (STAMEN, MAP_INFO[STAMEN][0]),
-                         (STAMEN_X, MAP_INFO[STAMEN][0]),
-                        ),
-                        callback=self.select_map)
-        return _('Specific old maps'), grid
