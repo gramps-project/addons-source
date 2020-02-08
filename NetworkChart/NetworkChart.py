@@ -553,7 +553,8 @@ class NetworkChartReport(Report):
                     lbl = '\\n'.join(i[1:4])
                 if lbl:
                     if G.has_node(i[0]):
-                        g_node[i[0]]['label'] = lbl
+                        g_node[i[0]]['label'] = escape(
+                            lbl, {"{": "&#123;", "}": "&#125;"})
                         g_node[i[0]]['color'] = node_edge_color
                         g_node[i[0]]['penwidth'] = node_edge_thickness
                         if include_urls == "include":
@@ -586,7 +587,8 @@ class NetworkChartReport(Report):
                         else:
                             G.add_node(i[0], color=node_edge_color,
                                        penwidth=node_edge_thickness)
-                        g_node[i[0]]['label'] = lbl
+                        g_node[i[0]]['label'] = escape(
+                            lbl, {"{": "&#123;", "}": "&#125;"})
                         if include_urls == "include":
                             g_node[i[0]]['URL'] = i[6]
                         elif include_urls == "dynamic":
@@ -789,7 +791,8 @@ class NetworkChartReport(Report):
         edge_dict.update({'labelfontcolor': cline_marriage, 'labelfloat': '1'})
         G.graph['edge'] = edge_dict
 
-        graph_dict = {'URL': '#' + top_title, 'label': top_title,
+        graph_dict = {'URL': '#' + top_title, 'label': escape(
+            top_title, {"{": "&#123;", "}": "&#125;"}),
                       'labelloc': 'top'}
         graph_dict.update({'colorscheme': "RGBA", 'bgcolor': 'transparent'})
         graph_dict.update({'ranksep': str(rank_sep), 'rankdir': str(rank_dir)})
