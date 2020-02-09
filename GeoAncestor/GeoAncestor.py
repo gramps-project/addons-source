@@ -211,6 +211,10 @@ class GeoAncestor(GeoGraphyView):
         self.already_started = False
         self.large_move = False
         self.cal = None
+        self.menu = None
+        self.itemoption = None
+        self.event_list = []
+        self.already_done = []
 
     def get_title(self):
         """
