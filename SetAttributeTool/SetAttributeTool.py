@@ -130,7 +130,8 @@ class SetAttributeWindow(PluginWindows.ToolManagedWindowBatch):
         attribute_text = self.options.handler.options_dict['attribute_text']
         self.add_results_frame(_("Results"))
         if not attribute_text:
-            self.results_write(_("Attribute must be set!\n"))
+            self.results_write(_("Cannot save attribute") + '\n' +
+                               _("The attribute type cannot be empty"))
             return
         attribute_value = self.options.handler.options_dict['attribute_value']
         specified_type = gramps.gen.lib.AttributeType()

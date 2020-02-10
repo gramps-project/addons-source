@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-09 15:16-0600\n"
+"POT-Creation-Date: 2020-02-10 08:13-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #: SetAttributeTool/SetAttributeTool.gpr.py:25
 #: SetAttributeTool/SetAttributeTool.py:122
-#: SetAttributeTool/SetAttributeTool.py:149
+#: SetAttributeTool/SetAttributeTool.py:150
 msgid "Set Attribute"
 msgstr ""
 
@@ -77,47 +77,51 @@ msgid "Results"
 msgstr ""
 
 #: SetAttributeTool/SetAttributeTool.py:133
-msgid "Attribute must be set!\n"
+msgid "Cannot save attribute"
 msgstr ""
 
-#: SetAttributeTool/SetAttributeTool.py:150
-#: SetAttributeTool/SetAttributeTool.py:192
-msgid "Processing...\n"
+#: SetAttributeTool/SetAttributeTool.py:134
+msgid "The attribute type cannot be empty"
 msgstr ""
 
 #: SetAttributeTool/SetAttributeTool.py:151
+#: SetAttributeTool/SetAttributeTool.py:193
+msgid "Processing...\n"
+msgstr ""
+
+#: SetAttributeTool/SetAttributeTool.py:152
 msgid "Setting attributes..."
 msgstr ""
 
-#: SetAttributeTool/SetAttributeTool.py:155
+#: SetAttributeTool/SetAttributeTool.py:156
 #, python-format
 msgid ""
 "Setting '%s' attributes to '%s'...\n"
 "\n"
 msgstr ""
 
-#: SetAttributeTool/SetAttributeTool.py:187
+#: SetAttributeTool/SetAttributeTool.py:188
 #, python-format
 msgid ""
 "\n"
 "Set %d '%s' attributes to '%s'\n"
 msgstr ""
 
-#: SetAttributeTool/SetAttributeTool.py:190
+#: SetAttributeTool/SetAttributeTool.py:191
 msgid "Remove Attribute"
 msgstr ""
 
-#: SetAttributeTool/SetAttributeTool.py:193
+#: SetAttributeTool/SetAttributeTool.py:194
 msgid "Removing attributes..."
 msgstr ""
 
-#: SetAttributeTool/SetAttributeTool.py:220
+#: SetAttributeTool/SetAttributeTool.py:221
 #, python-format
 msgid ""
 "\n"
 "Removing %d '%s' attributes to '%s'\n"
 msgstr ""
 
-#: SetAttributeTool/SetAttributeTool.py:225
+#: SetAttributeTool/SetAttributeTool.py:226
 msgid "Done!\n"
 msgstr ""
