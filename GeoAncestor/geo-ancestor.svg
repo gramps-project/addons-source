@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="8.5in"
+   height="11in"
+   id="svg1771"
+   sodipodi:version="0.32"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   version="1.0"
+   sodipodi:docname="geo-ancestor.svg"
+   inkscape:export-filename="/home/benny/programms/gramps/myicons/gramps_try4.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
+  <title
+     id="title13529">GeoAncestor Icon</title>
+  <defs
+     id="defs1773">
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect12631"
+       is_visible="true"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect12627"
+       is_visible="true"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient3040">
+      <stop
+         style="stop-color:white;stop-opacity:1;"
+         offset="0"
+         id="stop3042" />
+      <stop
+         style="stop-color:white;stop-opacity:0;"
+         offset="1"
+         id="stop3044" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3040"
+       id="linearGradient1619"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.25283,0,0,0.339077,34.82518,1.16907)"
+       x1="3"
+       y1="24.871992"
+       x2="70.421181"
+       y2="76.251137" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3040"
+       id="linearGradient1641"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.25283,0,0,0.339077,34.82518,25.99951)"
+       x1="3"
+       y1="24.871992"
+       x2="70.421181"
+       y2="76.251137" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="13.517279"
+     inkscape:cx="35.048366"
+     inkscape:cy="24.986333"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     inkscape:window-width="1588"
+     inkscape:window-height="878"
+     inkscape:window-x="114"
+     inkscape:window-y="82"
+     showgrid="true"
+     units="in"
+     inkscape:snap-nodes="false"
+     inkscape:window-maximized="0">
+    <inkscape:grid
+       type="xygrid"
+       id="grid12579" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata1776">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>application</rdf:li>
+            <rdf:li>gramps</rdf:li>
+            <rdf:li>geography</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Serge Noiraud</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:title>GeoAncestor Icon</dc:title>
+        <cc:license
+           rdf:resource="http://creativecommons.org/licenses/by-nc-nd/4.0/" />
+        <dc:contributor>
+          <cc:Agent>
+            <dc:title />
+          </cc:Agent>
+        </dc:contributor>
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/licenses/by-nc-nd/4.0/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#Notice" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#Attribution" />
+        <cc:prohibits
+           rdf:resource="http://creativecommons.org/ns#CommercialUse" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,1004.8)">
+    <rect
+       style="fill:none;fill-opacity:1;stroke:url(#linearGradient1619);stroke-width:0.92209893;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:11;stroke-dasharray:none;stroke-opacity:1"
+       id="rect6066"
+       width="10.156818"
+       height="5.2430906"
+       x="35.65778"
+       y="8.5638494"
+       rx="0.31386796"
+       ry="1.6276314" />
+    <rect
+       style="fill:none;fill-opacity:1;stroke:url(#linearGradient1641);stroke-width:0.92209893;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:11;stroke-dasharray:none;stroke-opacity:1"
+       id="rect6122"
+       width="10.156818"
+       height="5.2430906"
+       x="35.65778"
+       y="33.394291"
+       rx="0.31386796"
+       ry="1.6276314" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 19.400495,29.513733 c 7,9 7,9 7,9 v 0"
+       id="path12617"
+       inkscape:connector-curvature="0" />
+    <rect
+       id="rect11768"
+       width="20.938238"
+       height="6.9382391"
+       x="5.1201591"
+       y="22.748697"
+       style="fill:#feccf0;fill-opacity:1;stroke:#861f69;stroke-width:1.06176078;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.94117647" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.91493475px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 32.556563,29.70954 c -6.401374,8.238489 -6.401374,8.238489 -6.401374,8.238489"
+       id="path12619"
+       inkscape:connector-curvature="0" />
+    <ellipse
+       style="fill:#ffffe0;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-opacity:0.94117647"
+       id="path12577"
+       cx="25.056124"
+       cy="35.447426"
+       rx="7.5"
+       ry="3.5" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.03632963px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 25.019134,38.855589 c 0,8.591835 0,8.591835 0,8.591835"
+       id="path12621"
+       inkscape:connector-curvature="0" />
+    <rect
+       style="fill:#b7cee6;fill-opacity:1;stroke:#1f4986;stroke-width:1.02458441;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect12575-3"
+       width="13.975415"
+       height="6.9754157"
+       x="18.290354"
+       y="41.707184" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.03632963px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 40.011545,20.256084 c 0,8.59184 0,8.59184 0,8.59184"
+       id="path12621-6"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.91493475px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 46.826995,11.008014 c -6.401374,8.23847 -6.401374,8.23847 -6.401374,8.23847"
+       id="path12619-5"
+       inkscape:connector-curvature="0" />
+    <rect
+       style="fill:#b7cee6;fill-opacity:1;stroke:#1f4986;stroke-width:1.02458441;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect12575-5"
+       width="20.975416"
+       height="6.9754157"
+       x="37.657696"
+       y="3.7683764" />
+    <ellipse
+       style="fill:#ffffe0;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-opacity:0.94117647"
+       id="path12577-6"
+       cx="40.056126"
+       cy="16.447426"
+       rx="7.5"
+       ry="3.5" />
+    <rect
+       style="fill:#b7cee6;fill-opacity:1;stroke:#1f4986;stroke-width:1.02458441;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect12575"
+       width="20.975416"
+       height="6.9754157"
+       x="28.849037"
+       y="22.696953" />
+  </g>
+</svg>
