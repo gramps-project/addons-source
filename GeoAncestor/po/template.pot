@@ -1,0 +1,89 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-02-24 08:46-0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: GeoAncestor/GeoAncestor.gpr.py:65
+msgid "OsmGpsMap module not loaded."
+msgstr ""
+
+#: GeoAncestor/GeoAncestor.gpr.py:66
+#, python-format
+msgid ""
+"Geography functionality will not be available.\n"
+"To build it for Gramps see %(gramps_wiki_build_osmgps_url)s"
+msgstr ""
+
+#: GeoAncestor/GeoAncestor.gpr.py:80
+msgid "Ancestors map"
+msgstr ""
+
+#: GeoAncestor/GeoAncestor.gpr.py:81
+msgid "A view showing ancestors places on the map."
+msgstr ""
+
+#: GeoAncestor/GeoAncestor.gpr.py:88
+msgid "Geography"
+msgstr ""
+
+#: GeoAncestor/GeoAncestor.py:108
+msgid "Organize Bookmarks"
+msgstr ""
+
+#: GeoAncestor/GeoAncestor.py:196
+msgid "Ancestors places on the map"
+msgstr ""
+
+#: GeoAncestor/GeoAncestor.py:223
+msgid "GeoAncestor"
+msgstr ""
+
+#: GeoAncestor/GeoAncestor.py:294
+#, python-format
+msgid "Ancestors places for %s"
+msgstr ""
+
+#: GeoAncestor/GeoAncestor.py:326
+#, python-format
+msgid "%(eventtype)s : %(name)s"
+msgstr ""
+
+#: GeoAncestor/GeoAncestor.py:456 GeoAncestor/GeoAncestor.py:477
+#: GeoAncestor/GeoAncestor.py:518
+msgid "Edit Event"
+msgstr ""
+
+#: GeoAncestor/GeoAncestor.py:461 GeoAncestor/GeoAncestor.py:482
+#: GeoAncestor/GeoAncestor.py:522
+msgid "Center on this place"
+msgstr ""
+
+#: GeoAncestor/GeoAncestor.py:496
+msgid "Unknown"
+msgstr ""
+
+#: GeoAncestor/GeoAncestor.py:507
+msgid "No description"
+msgstr ""
+
+#: GeoAncestor/GeoAncestor.py:538
+msgid "Show all places"
+msgstr ""
+
+#: GeoAncestor/GeoAncestor.py:542 GeoAncestor/GeoAncestor.py:547
+msgid "Centering on Place"
+msgstr ""

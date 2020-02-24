@@ -25,11 +25,9 @@
 #
 #------------------------------------------------------------------------
 
-MODULE_VERSION = "5.1"
-
 from gi import Repository
 from gramps.gen.const import GRAMPS_LOCALE as glocale
-from gramps.gen.plug._pluginreg import register, VIEW, STABLE #, END, START
+#from gramps.gen.plug._pluginreg import register, VIEW, STABLE #, END, START
 _ = glocale.translation.gettext
 
 #-------------------------------------------------------------------------
@@ -61,14 +59,13 @@ if not OSMGPSMAP:
         if has_display():
             from gramps.gui.dialog import MessageHideDialog
             from gramps.gen.const import URL_WIKISTRING
-            OSMGPS_DICT = {'gramps_wiki_build_osmgps_url' :
-                                URL_WIKISTRING +
-                                    "GEPS_029:_GTK3-GObject_introspection"
-                                    "_Conversion#OsmGpsMap_for_Geography"}
+            OSMGPS_DICT = {'gramps_wiki_build_osmgps_url' : URL_WIKISTRING +
+                           "GEPS_029:_GTK3-GObject_introspection"
+                           "_Conversion#OsmGpsMap_for_Geography"}
             TITLE = _("OsmGpsMap module not loaded.")
             MESSAGE = _("Geography functionality will not be available.\n"
-                       "To build it for Gramps see "
-                       "%(gramps_wiki_build_osmgps_url)s") % OSMGPS_DICT
+                        "To build it for Gramps see "
+                        "%(gramps_wiki_build_osmgps_url)s") % OSMGPS_DICT
             if uistate:
                 MessageHideDialog(TITLE, MESSAGE,
                                   'interface.ignore-osmgpsmap',
@@ -78,19 +75,17 @@ if not OSMGPSMAP:
                                   'interface.ignore-osmgpsmap')
 else:
     # Load the view only if osmgpsmap library is present.
-    pass
     register(VIEW,
-             id = 'geoancestor',
-             name = _("Ancestors map"),
-             description = _("A view showing ancestors places on the map."),
-             version = '1.0',
-             gramps_target_version = MODULE_VERSION,
-             status = STABLE,
-             fname = 'GeoAncestor.py',
-             authors = ["Serge Noiraud"],
-             authors_email = [""],
-             category = ("Geography", _("Geography")),
-             viewclass = 'GeoAncestor',
-             stock_icon = 'geo-ancestor',
-      )
-
+             id='geoancestor',
+             name=_("Ancestors map"),
+             description=_("A view showing ancestors places on the map."),
+             version = '1.0.1',
+             gramps_target_version='5.1',
+             status=STABLE,
+             fname='GeoAncestor.py',
+             authors=["Serge Noiraud"],
+             authors_email=[""],
+             category=("Geography", _("Geography")),
+             viewclass='GeoAncestor',
+             stock_icon='geo-ancestor',
+             )
