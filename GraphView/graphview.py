@@ -59,6 +59,7 @@ from gramps.gen.display.place import displayer as place_displayer
 from gramps.gen.errors import WindowActiveError
 from gramps.gen.lib import (Person, Family, ChildRef, Name, Surname,
                             ChildRefType, EventType, EventRoleType)
+from gramps.gen.utils.alive import probably_alive
 from gramps.gen.utils.callback import Callback
 from gramps.gen.utils.db import (get_birth_or_fallback, get_death_or_fallback,
                                  find_children, find_parents, preset_name,
@@ -2592,11 +2593,10 @@ class DotSvgGenerator(object):
         style = "solid, filled"
 
         # get alive status of person to get box color
-        death_event = get_death_or_fallback(self.database, person)
-        if death_event:
+        try:
+            alive = probably_alive(person, self.dbstate.db)
+        except RuntimeError:
             alive = False
-        else:
-            alive = True
 
         fill, color = color_graph_box(alive, gender)
         return(shape, style, color, fill)
