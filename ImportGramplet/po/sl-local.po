@@ -1,0 +1,85 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Bernard Banko <beernarrd at gmail.com>, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-10-21 08:49+1100\n"
+"PO-Revision-Date: 2020-02-26 23:16+0200\n"
+"Last-Translator: Bernard Banko <beernarrd at gmail.com>\n"
+"Language-Team: lugos.si\n"
+"Language: sl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || "
+"n%100==4 ? 3 : 0);\n"
+"X-Generator: Virtaal 0.7.1\n"
+
+#: ImportGramplet/ImportGramplet.gpr.py:9
+#: ImportGramplet/ImportGramplet.gpr.py:17
+msgid "Import Text"
+msgstr "Uvozi besedilo"
+
+#: ImportGramplet/ImportGramplet.gpr.py:10
+msgid "Gramplet for importing text"
+msgstr "Pripomoček za uvoz besedila"
+
+#: ImportGramplet/ImportGramplet.py:71
+msgid "CSV import"
+msgstr "Uvoz CSV"
+
+#: ImportGramplet/ImportGramplet.py:94
+msgid "VCard import"
+msgstr "Uvoz VCard"
+
+#: ImportGramplet/ImportGramplet.py:116
+msgid "Gramps XML import"
+msgstr "Uvoz Gramps XML"
+
+#: ImportGramplet/ImportGramplet.py:143
+msgid "Could not change media path"
+msgstr "Poti zunanjih predmetov ni bilo mogoče spremeniti"
+
+#: ImportGramplet/ImportGramplet.py:144
+#, python-format
+msgid ""
+"The opened file has media path %s, which conflicts with the media path of "
+"the family tree you import into. The original media path has been retained. "
+"Copy the files to a correct directory or change the media path in the "
+"Preferences."
+msgstr ""
+"Odprta datoteka ima navedeno pot %s, ki je v sporu s potjo za zunanje "
+"predmete rodovnika, v katerega bi radi uvozili podatke. Ohranjena je bila "
+"izvirna pot. Prekopirajte datoteke v pravilno mapo ali v nastavitvah "
+"spremenite pot zunanjih predmetov."
+
+#: ImportGramplet/ImportGramplet.py:172
+msgid ""
+"Enter text to import and then click\n"
+"the Import button at bottom"
+msgstr ""
+"Vnesite besedilo za uvoz in nato spodaj\n"
+"kliknite gumb za uvoz"
+
+#: ImportGramplet/ImportGramplet.py:198
+msgid "_Import"
+msgstr "_Uvozi"
+
+#: ImportGramplet/ImportGramplet.py:218
+msgid "Import done"
+msgstr "Uvoz končan"
+
+#: ImportGramplet/ImportGramplet.py:228
+msgid "Importing Text..."
+msgstr "Uvažanje besedila ..."
+
+#: ImportGramplet/ImportGramplet.py:259
+msgid "Can't determine type of import"
+msgstr "Ni bilo mogoče ugotoviti vrste uvoza"
+
+#: ImportGramplet/ImportGramplet.py:260
+msgid "Import failed"
+msgstr "Uvoz je spodletel"

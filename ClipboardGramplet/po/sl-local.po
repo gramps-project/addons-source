@@ -1,0 +1,33 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Bernard Banko <beernarrd at gmail.com>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2020-02-26 22:43+0100\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"Last-Translator: Bernard Banko <beernarrd at gmail.com>\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100>=3 || n%100<=4 ? 3 : 0);\n"
+"Language: sl\n"
+
+#: ClipboardGramplet/ClipboardGramplet.gpr.py:9
+#: ClipboardGramplet/ClipboardGramplet.gpr.py:17
+msgid "Collections Clipboard"
+msgstr "Zbirno odložišče"
+
+#: ClipboardGramplet/ClipboardGramplet.gpr.py:10
+msgid "Gramplet for grouping collections of items to aid in data entry."
+msgstr "Pripomoček za združevanje elementov v odložišče za enostavnejši vnos podatkov."
+
+#: ClipboardGramplet/ClipboardGramplet.py:83
+#, python-format
+msgid "Clipboard Gramplet: %s"
+msgstr "Pripomoček odložišče: %s"
