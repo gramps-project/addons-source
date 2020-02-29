@@ -1,0 +1,57 @@
+# -*- coding: utf-8 -*-
+#
+# Gramps - a GTK+/GNOME based genealogy program
+#
+# Copyright (C) 2011  Doug Blank <doug.blank@gmail.com>
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+#
+
+# $Id$
+
+from libwebconnect import *
+from gramps.gen.const import GRAMPS_LOCALE as glocale
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.gettext
+
+# Format: [[nav_type, id, name, url_pattern], ...]
+
+# http://gramps-project.org/wiki/index.php?title=Resources_and_related_sites#German_information_sites
+
+WEBSITES = [
+    ["Person", "Bielefeld Academic Search", _("Bielefeld Academic Search"), "http://www.base-search.net/Search/Results?lookfor=%(surname)s,+%(given)s&type=all&lem=0&lem=1&refid=dcbasde"],
+    ["Person", "Geneanet", "Geneanet", "https://www.geneanet.org/fonds/individus/?u=km&nom=%(surname)s&ignore_each_patronyme=&prenom=%(given)s&go=1"],
+    ["Person", "FamilySearch", _("FamilySearch.org"), "https://familysearch.org/search/record/results?count=20&query=%%2Bgivenname%%3A%(given)s~ %%2Bsurname%%3A%(surname)s~ %%2Bbirth_year%%3A%(birth)s-%(birth)s~ %%2Bdeath_year%%3A%(death)s-%(death)s~"],
+    ["Person", "Archive.org", "Archive.org", '''http://www.archive.org/search.php?query="%(surname)s,+%(given)s"'''],
+    ["Person", "GeneaBook", "GeneaBook", "http://www.geneabook.org/genealogie/1/ouvrages.php?nom=%(surname)s&x=20&y=1"],
+    ["Person", "Google Archives", _("Google Archives"), "https://news.google.com/search?as_drrb=a&hl=sl&gl=SI&ceid=SI:sl&q=%(surname)s"],
+    ["Person", "Google.si", _("SL Google"), '''http://www.google.si/#hl=sl&q="%(surname)s,+%(given)s"'''],
+    ["Person", "Open Library", _("Open Library"), "http://openlibrary.org/search?q=%(surname)s, %(given)s"],
+    ["Person", "Namensverbreitungskarte", _("Surname map (1890-1996)"), "https://nvk.genealogy.net/map/1890:%(surname)s,1996:%(surname)s"],
+    ["Person", "Cobiss", _("Slovenian library catalog"),'''https://plus.cobiss.si/opac7/bib/search/expert?c=%22%(surname)s%2C+%(given)s%22&db=cobib&mat=allmaterials'''],
+    ["Person", "dLib", _("Slovenian Digital Library"),'''http://www.dlib.si/results/?query=%27fts%3d%22%(given)s+%(surname)s%22%27&pageSize=25'''],
+    ]
+
+def load_on_reg(dbstate, uistate, pdata):
+    # do things at time of load
+    # now return functions that take:
+    #     dbstate, uistate, nav_type, handle
+    # and that returns a function that takes a widget
+    return lambda nav_type: \
+        make_search_functions(nav_type, WEBSITES)
+
