@@ -118,7 +118,7 @@ gtk_version = float("%s.%s" % (Gtk.MAJOR_VERSION, Gtk.MINOR_VERSION))
 #-------------------------------------------------------------------------
 import sys
 sys.path.append(os.path.abspath(os.path.dirname(__file__)))
-from search_widget import SearchWidget, Popover, ListBoxRow
+from search_widget import SearchWidget, Popover, ListBoxRow, get_person_tooltip
 
 
 #-------------------------------------------------------------------------
@@ -1109,6 +1109,11 @@ class GraphWidget(object):
                         hbox.pack_start(person_image, False, True, 2)
                 row = ListBoxRow(description=bkmark, label=name)
                 row.add(hbox)
+
+                # add tooltip
+                tooltip = get_person_tooltip(person, self.dbstate.db)
+                if tooltip:
+                    row.set_tooltip_text(tooltip)
 
                 if present is not None:
                     found = True
