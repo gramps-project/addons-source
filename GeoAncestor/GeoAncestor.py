@@ -291,7 +291,7 @@ class GeoAncestor(GeoGraphyView):
             person = dbstate.db.get_person_from_handle(person_handle)
         if person is not None:
             # For each event, if we have a place, set a marker.
-            self.window_name = _("Ancestors places for %s" % 
+            self.window_name = _("Ancestors places for %s" %
                                  _nd.display(person))
             self.message_layer.add_message(self.window_name)
             self.nb_evts = 0
