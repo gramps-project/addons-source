@@ -55,6 +55,7 @@ from gramps.gen.utils.place import conv_lat_lon
 from gramps.gui.views.bookmarks import PersonBookmarks
 from gramps.plugins.lib.maps import constants
 from gramps.plugins.lib.maps.geography import GeoGraphyView
+from gramps.gui.utils import ProgressMeter
 
 #-------------------------------------------------------------------------
 #
@@ -215,6 +216,7 @@ class GeoAncestor(GeoGraphyView):
         self.itemoption = None
         self.event_list = []
         self.already_done = []
+        self.nb_evts = 0
 
     def get_title(self):
         """
@@ -262,7 +264,6 @@ class GeoAncestor(GeoGraphyView):
         all handling of visibility is now in rebuild_trees, see that for more
         information.
         """
-        self._createmap()
         self.uistate.modify_statusbar(self.dbstate)
 
     def _createmap(self):
@@ -290,9 +291,84 @@ class GeoAncestor(GeoGraphyView):
             person = dbstate.db.get_person_from_handle(person_handle)
         if person is not None:
             # For each event, if we have a place, set a marker.
-            self.message_layer.add_message(
-                _("Ancestors places for %s") % _nd.display(person))
+            self.window_name = _("Ancestors places for %s" % 
+                                 _nd.display(person))
+            self.message_layer.add_message(self.window_name)
+            self.nb_evts = 0
+            self.progress = ProgressMeter(self.window_name,
+                                          can_cancel=False,
+                                          parent=self.uistate.window)
+            self.progress.set_pass(_('Counting all places'), self.nb_evts)
+            self.person_count(person)
+            self.event_list = []
+            self.progress.set_pass(_('Showing all places'), self.nb_evts)
             self.show_one_person(person)
+            self.progress.close()
+
+            self.sort = sorted(self.place_list,
+                               key=operator.itemgetter(3, 4, 6)
+                              )
+            self._create_markers()
+
+    def person_count(self, person):
+        """
+        Count the number of events associated to a place with coordinates
+        """
+        dbstate = self.dbstate
+        for event_ref in person.get_event_ref_list():
+            if not event_ref:
+                continue
+            event = dbstate.db.get_event_from_handle(event_ref.ref)
+            place_handle = event.get_place_handle()
+            if place_handle and event_ref.ref not in self.event_list:
+                self.event_list.append(event_ref.ref)
+                place = dbstate.db.get_place_from_handle(place_handle)
+                if place:
+                    longitude = place.get_longitude()
+                    latitude = place.get_latitude()
+                    latitude, longitude = conv_lat_lon(latitude,
+                                                       longitude, "D.D8")
+                    if longitude and latitude:
+                        self.nb_evts += 1
+        family_list = person.get_family_handle_list()
+        for family_hdl in family_list:
+            family = self.dbstate.db.get_family_from_handle(family_hdl)
+            if family is not None:
+                fhandle = family_list[0] # first is primary
+                fam = dbstate.db.get_family_from_handle(fhandle)
+                father = mother = None
+                handle = fam.get_father_handle()
+                if handle:
+                    father = dbstate.db.get_person_from_handle(handle)
+                if father:
+                    self.already_done.append(handle)
+                handle = fam.get_mother_handle()
+                if handle:
+                    self.already_done.append(handle)
+                    mother = dbstate.db.get_person_from_handle(handle)
+                for event_ref in family.get_event_ref_list():
+                    if event_ref:
+                        event = dbstate.db.get_event_from_handle(event_ref.ref)
+                        if event.get_place_handle():
+                            place_handle = event.get_place_handle()
+                            if (place_handle and
+                                    event_ref.ref not in self.event_list):
+                                self.event_list.append(event_ref.ref)
+                                place = dbstate.db.get_place_from_handle(
+                                    place_handle)
+                                if place:
+                                    longitude = place.get_longitude()
+                                    latitude = place.get_latitude()
+                                    (latitude,
+                                     longitude) = conv_lat_lon(latitude,
+                                                               longitude,
+                                                               "D.D8")
+                                    if longitude and latitude:
+                                        self.nb_evts += 1
+        for pers in [self._get_parent(person, True),
+                     self._get_parent(person, False)]:
+            if pers:
+                self.person_count(pers)
 
     def show_one_person(self, person):
         """
@@ -300,7 +376,6 @@ class GeoAncestor(GeoGraphyView):
         a lat/lon.
         """
         dbstate = self.dbstate
-        print("show one person :", _nd.display(person))
         self.load_kml_files(person)
         for event_ref in person.get_event_ref_list():
             if not event_ref:
@@ -331,6 +406,7 @@ class GeoAncestor(GeoGraphyView):
                     # one string. We have coordinates when the two values
                     # contains non null string.
                     if longitude and latitude:
+                        self.progress.step()
                         self._append_to_places_list(descr, evt,
                                                     _nd.display(person),
                                                     latitude, longitude,
@@ -392,6 +468,7 @@ class GeoAncestor(GeoGraphyView):
                                                 + str("%02d" % edate.get_day())
                                     self.load_kml_files(place)
                                     if longitude and latitude:
+                                        self.progress.step()
                                         self._append_to_places_list(descr, evt,
                                                                     _nd.display(person),
                                                                     latitude,
@@ -410,11 +487,6 @@ class GeoAncestor(GeoGraphyView):
                      self._get_parent(person, False)]:
             if pers:
                 self.show_one_person(pers)
-
-        self.sort = sorted(self.place_list,
-                           key=operator.itemgetter(3, 4, 6)
-                          )
-        self._create_markers()
 
     def _get_parent(self, person, father):
         """
