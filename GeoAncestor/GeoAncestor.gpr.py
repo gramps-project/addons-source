@@ -30,6 +30,14 @@ from gramps.gen.const import GRAMPS_LOCALE as glocale
 #from gramps.gen.plug._pluginreg import register, VIEW, STABLE #, END, START
 _ = glocale.translation.gettext
 
+if locals().get('uistate'):  # don't start GUI if in CLI mode, just ignore
+    from gi.repository import Gtk, GdkPixbuf
+    import os
+    from gramps.gen.const import USER_PLUGINS
+    fname = os.path.join(USER_PLUGINS, 'GeoAncestor')
+    icons = Gtk.IconTheme().get_default()
+    icons.append_search_path(fname)
+
 #-------------------------------------------------------------------------
 #
 # set up logging
@@ -87,5 +95,5 @@ else:
              authors_email=[""],
              category=("Geography", _("Geography")),
              viewclass='GeoAncestor',
-             stock_icon='geo-show-family',
+             stock_icon='geo-ancestor',
              )
