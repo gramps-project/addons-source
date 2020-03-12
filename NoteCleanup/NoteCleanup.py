@@ -48,6 +48,7 @@ from gramps.gui.managedwindow import ManagedWindow
 from gramps.gui.utils import ProgressMeter
 from gramps.gen.db import DbTxn
 from gramps.gui.dialog import WarningDialog
+from gramps.gui.display import display_url
 from gramps.gui.editors import EditNote
 from gramps.gen.lib import Note
 from gramps.gen.errors import WindowActiveError
@@ -63,6 +64,7 @@ from gramps.gui.widgets.styledtexteditor import StyledTextEditor
 CLEANED = 0
 LINK = 1
 ISSUE = 2
+WIKI_PAGE = ('https://gramps-project.org/wiki/index.php/NoteCleanupTool')
 #------------------------------------------------------------------------
 #
 # Internationalisation
@@ -110,8 +112,6 @@ class NoteCleanup(tool.Tool, ManagedWindow):
         self.notebook = Gtk.Notebook()
         self.notebook.set_scrollable(True)
         self.notebook.connect('switch-page', self.pagesw)
-        for title in self.titles:
-            self.create_tab(title)
         hbox.pack_start(self.notebook, True, True, 3)
         hbox.pack_start(rvbox, True, True, 3)
 
@@ -135,6 +135,10 @@ class NoteCleanup(tool.Tool, ManagedWindow):
         export = Gtk.Button(label=_('Export'))
         export.set_tooltip_text(_('Export the results to a text file'))
         export.connect('clicked', self.export_results)
+        # Help
+        help_btn = Gtk.Button(label=_('Help'))
+        help_btn.connect('clicked', self.on_help_clicked)
+        bbox.add(help_btn)
         bbox.add(search)
         bbox.add(testnote)
         bbox.add(export)
@@ -185,6 +189,10 @@ class NoteCleanup(tool.Tool, ManagedWindow):
     def build_menu_names(self, _obj):
         return (_('Clean up Notes'),
                 self.window_name)
+
+    def on_help_clicked(self, dummy):
+        """ Button: Display the relevant portion of GRAMPS manual"""
+        display_url(WIKI_PAGE)
 
     def create_tab(self, title):
         """
@@ -237,10 +245,11 @@ class NoteCleanup(tool.Tool, ManagedWindow):
         called when we switch tabs in the notebook
         """
         selection = self.views[pagenum].get_selection()
-        model, iter_ = selection.get_selected()
-        if iter_:
-            value = model.get_value(iter_, 1)
-            self.showit(value)
+        if selection:
+            model, iter_ = selection.get_selected()
+            if iter_:
+                value = model.get_value(iter_, 1)
+                self.showit(value)
 
     def edit(self, indx):
         """
@@ -356,7 +365,7 @@ class NoteCleanup(tool.Tool, ManagedWindow):
             if len(model) > 0:
                 selection = self.views[page].get_selection()
                 selection.select_path(Gtk.TreePath.new_first())
-                tab.show()
+                tab.show_all()
             else:
                 tab.hide()
 
@@ -365,9 +374,11 @@ class NoteCleanup(tool.Tool, ManagedWindow):
         Clear the models.
         """
         for model in self.models:
-            model.clear()
+            self.notebook.remove_page(-1)
+        self.models = []
         self.changelist = []
         self.indx = []
+        self.views = []
         self.tb.set_text(StyledText(_(
             '\n\nNotes selected on the left pane are shown Before cleanup in'
             ' this box.')))
@@ -377,6 +388,9 @@ class NoteCleanup(tool.Tool, ManagedWindow):
             ' box.\n'
             'If you wish to make changes, you can make them here and'
             ' use the style controls in the toolbar above.')))
+        for title in self.titles:
+            self.create_tab(title)
+
 
     def saveit(self, _button):
         """
@@ -389,6 +403,7 @@ class NoteCleanup(tool.Tool, ManagedWindow):
         length = len(self.changelist)
         progress.set_pass(_('Saving Notes'), length)
 
+        self.db.disable_signals()
         with DbTxn(_("Saving Cleaned Notes"), self.db, batch=False) as trans:
             for changed in self.changelist:
                 note = self.db.get_note_from_handle(changed[0])
@@ -399,6 +414,8 @@ class NoteCleanup(tool.Tool, ManagedWindow):
                 progress.step()
                 if progress.get_cancelled():
                     break
+        self.db.enable_signals()
+        self.db.request_rebuild()
         self.clear_models()
         self.show_tabs()
         progress.close()
@@ -408,6 +425,8 @@ class NoteCleanup(tool.Tool, ManagedWindow):
         Cleanup Notes.
         """
         self.clear_models()
+
+        StyledText.__getitem__ = MyStyled.__getitem__  # patch in slice func
 
         progress = ProgressMeter(self.window_name, can_cancel=True,
                                  parent=self.window)
@@ -421,32 +440,33 @@ class NoteCleanup(tool.Tool, ManagedWindow):
             stext = note.get_styledtext()
             optype = -1
             # find the notes and do cleanup
-            if not stext.tags:
-                result = self.convert_to_styled(stext.string)
-                indx = len(self.changelist)
-                for styledtext_tag in result.tags:
-                    if int(styledtext_tag.name) == StyledTextTagType.HIGHLIGHT:
-                        optype = ISSUE
-                        break
-                    elif int(styledtext_tag.name) == StyledTextTagType.LINK:
-                        optype = LINK
-                while True:
-                    if optype == ISSUE:
-                        # make list of notes with errors
-                        self.models[ISSUE].append((self.preview(stext, g_id),
-                                                   indx))
-                    elif stext.string != result.string:
-                        # Make list of edited notes
-                        self.models[CLEANED].append((self.preview(stext, g_id),
-                                                     indx))
-                    elif optype == LINK:
-                        # make list of notes with only links
-                        self.models[LINK].append((self.preview(stext, g_id),
-                                                  indx))
-                    else:
-                        break
-                    self.changelist.append((handle, stext, result))
+            #if not stext.tags:
+            text = StyledText(stext._string, stext._tags)  # make a copy
+            result = self.convert_to_styled(text)
+            indx = len(self.changelist)
+            for styledtext_tag in result.tags:
+                if int(styledtext_tag.name) == StyledTextTagType.HIGHLIGHT:
+                    optype = ISSUE
                     break
+                elif int(styledtext_tag.name) == StyledTextTagType.LINK:
+                    optype = LINK
+            while True:
+                if optype == ISSUE:
+                    # make list of notes with errors
+                    self.models[ISSUE].append((self.preview(stext, g_id),
+                                               indx))
+                elif stext._string != result._string:
+                    # Make list of edited notes
+                    self.models[CLEANED].append((self.preview(stext, g_id),
+                                                 indx))
+                elif optype == LINK:
+                    # make list of notes with only links
+                    self.models[LINK].append((self.preview(stext, g_id),
+                                              indx))
+                else:
+                    break
+                self.changelist.append((handle, stext, result))
+                break
 
             progress.step()
             if progress.get_cancelled():
@@ -463,6 +483,38 @@ class NoteCleanup(tool.Tool, ManagedWindow):
             text = '%s -> %s' % (g_id, prev)
         return text
 
+    token_specification = [
+        # Italics: must not be nested, any tag terminates
+        ('ITALIC',  r'<i>.*?(?=<)'),
+        # bolds: must not be nested, any tag terminates
+        ('BOLD',    r'<b>.*?(?=<)'),
+        # Underlines: must not be nested, any tag terminates
+        ('UNDER',   r'<u>.*?(?=<)'),
+        # Table Header Begin (start Bold)
+        ('TBLHDRB', r'<tr><th>'),
+        # Table Header End (end Bold and \n)
+        ('TBLHDRE', r'</th></tr>'),
+        # Table Header Cell (repl with ': ')
+        ('TBLHDRC', r'(<\th>)?<th>'),
+        # Table Cell break (repl with ':  ')
+        ('TBLCELL', r'</td><td>'),
+        # Table
+        ('TABLE',   r'</?table.*?>'),
+        # Href start to end
+        ('HREF',    r'<+a .*?href=["\' ]*(?P<HREFL>.*?)'\
+                    r'["\' ].*?>(?P<HREFT>.*?)</a>+'),
+        # HTTP start to end (have to rstrip(' .:') for link)
+        ('HTTP',    r'https?:.*?(\s|$)'),
+        # Paragraph end
+        ('PARAEND', r'</p>|</li>|<tr>|<br>'),
+        # Skip over these tags
+        ('SKIP',    r'<ul>|</ul>|<li>|<p>|</tr>|<td>|</td>|<th>|'\
+                    r'</a>|</i>|</b>|</u>|<a>'),
+        # Unimplemented HTTP tags
+        ('UNKNWN',  r'<.*?>'), ]
+    tok_regex = '|'.join('(?P<%s>%s)' % pair for
+                         pair in token_specification)
+
     def convert_to_styled(self, data):
         """
         This scans incoming notes for possible html.  It converts a select few
@@ -474,38 +526,6 @@ class NoteCleanup(tool.Tool, ManagedWindow):
         @type data: str
 
         """
-        token_specification = [
-            # Italics: must not be nested, any tag terminates
-            ('ITALIC',  r'<i>.*?(?=<)'),
-            # bolds: must not be nested, any tag terminates
-            ('BOLD',    r'<b>.*?(?=<)'),
-            # Underlines: must not be nested, any tag terminates
-            ('UNDER',   r'<u>.*?(?=<)'),
-            # Table Header Begin (start Bold)
-            ('TBLHDRB', r'<tr><th>'),
-            # Table Header End (end Bold and \n)
-            ('TBLHDRE', r'</th></tr>'),
-            # Table Header Cell (repl with ': ')
-            ('TBLHDRC', r'(<\th>)?<th>'),
-            # Table Cell break (repl with ':  ')
-            ('TBLCELL', r'</td><td>'),
-            # Table
-            ('TABLE',   r'</?table.*?>'),
-            # Href start to end
-            ('HREF',    r'<+a .*?href=["\' ]*(?P<HREFL>.*?)'\
-                        r'["\' ].*?>(?P<HREFT>.*?)</a>+'),
-            # HTTP start to end (have to rstrip(' .:') for link)
-            ('HTTP',    r'https?:.*?(\s|$)'),
-            # Paragraph end
-            ('PARAEND', r'</p>|</li>|<tr>|<br>'),
-            # Skip over these tags
-            ('SKIP',    r'<ul>|</ul>|<li>|<p>|</tr>|<td>|</td>|<th>|'\
-                        r'</a>|</i>|</b>|</u>'),
-            # Unimplemented HTTP tags
-            ('UNKNWN',  r'<.*?>'), ]
-        tok_regex = '|'.join('(?P<%s>%s)' % pair for
-                             pair in token_specification)
-
         prev = 0
         chunkpos = 0
         chunks = []
@@ -515,8 +535,25 @@ class NoteCleanup(tool.Tool, ManagedWindow):
         links = []
         reds = []
         bldpos = -1
-        data = html.unescape(data)      # clean up escaped html "&lt;" etc.
-        for mo in re.finditer(tok_regex, data, flags=(re.DOTALL | re.I)):
+        # data = html.unescape(data)      # clean up escaped html "&lt;" etc.
+        for mo in re.finditer(html._charref, data._string):
+            out = html._replace_charref(mo)
+            in_start = mo.start()
+            in_end = mo.end()
+            data._string = (data._string[:in_start] + out +
+                            data._string[(in_start + len(out)):])
+            if prev != in_start + len(out):
+                chunks.append(data[prev:(in_start + len(out))])
+                chunkpos += (in_start - prev + len(out))
+            prev = in_end
+        chunks.append(data[prev:])
+
+        data = StyledText().join(chunks)
+        prev = 0
+        chunkpos = 0
+        chunks = []
+        for mo in re.finditer(self.tok_regex, data._string,
+                              flags=(re.DOTALL | re.I)):
             kind = mo.lastgroup
             st_txt = mo.group(kind)
             in_start = mo.start()
@@ -594,11 +631,10 @@ class NoteCleanup(tool.Tool, ManagedWindow):
                     bolds.append((bldpos, chunkpos))
                     bldpos = -1
             elif kind == 'UNKNWN':
-                if prev != in_start:
-                    chunks.append(data[prev:in_end])
-                    newpos = chunkpos - prev + in_end
-                    reds.append((chunkpos + in_start - prev, newpos))
-                    chunkpos = newpos
+                chunks.append(data[prev:in_end])
+                newpos = chunkpos - prev + in_end
+                reds.append((chunkpos + in_start - prev, newpos))
+                chunkpos = newpos
                 print('Unexpected or unimplemented HTML tag', st_txt)
             else:
                 print("shouldn't get here")
@@ -606,7 +642,7 @@ class NoteCleanup(tool.Tool, ManagedWindow):
             prev = in_end
         chunks.append(data[prev:])
 
-        result = ''.join(chunks)
+        result = StyledText().join(chunks)
         tags = []
         for link in links:
             tags.append(StyledTextTag(StyledTextTagType.LINK, link[0],
@@ -622,7 +658,7 @@ class NoteCleanup(tool.Tool, ManagedWindow):
         if reds:
             tags.append(StyledTextTag(StyledTextTagType.HIGHLIGHT, '#FFFF00',
                                       reds))
-        return StyledText(result, tags)
+        return StyledText(result._string, tag_merge(result._tags, tags))
 
 
 #------------------------------------------------------------------------
@@ -637,6 +673,134 @@ class MyWindow(Gtk.Window):
         self.track = track
         Gtk.Window.__init__(self)
         self.set_position(Gtk.WindowPosition.CENTER_ON_PARENT)
+
+
+#------------------------------------------------------------------------
+#
+# My own StyledText class (allows slice)
+#
+#------------------------------------------------------------------------
+class MyStyled(StyledText):
+
+    def __getitem__(self, key):
+        string = self._string[key]
+        if isinstance(key, slice):
+            #Get the start, stop, and step from the slice
+            if key.step:
+                raise IndexError("Invalid step size")
+            key_start = 0 if key.start is None else key.start
+            key_stop = len(self._string) if key.stop is None else key.stop
+            new_tags = []
+
+            for tag in self._tags:
+                new_tag = StyledTextTag(int(tag.name), tag.value)
+                for (start_tag, end_tag) in tag.ranges:
+                    start = max(key_start, start_tag)
+                    end = min(key_stop, end_tag)
+
+                    if start < end:
+                        new_tag.ranges.append((start - key_start,
+                                               end - key_start))
+
+                if new_tag.ranges:
+                    new_tags.append(new_tag)
+            return self.__class__(string, new_tags)
+
+#         elif isinstance(key, int):
+#             if key < 0:  # Handle negative indices
+#                 key += len(self)
+#             if key < 0 or key >= len(self):
+#                 raise IndexError("The index (%d) is out of range." % key)
+#             return self.getData(key)  # Get the data from elsewhere
+        else:
+            raise TypeError("Invalid argument type.")
+
+
+def tag_merge(old_tags, tag_list):
+    styles = {}  # key:name  value:quad
+    outstyles = {}  # key:tuple(name, value), value:list(ranges)
+    tags = []
+    for (prior, tags) in enumerate((old_tags, tag_list)):
+        for tag in tags:
+            if tag.name.value not in styles:
+                styles[tag.name.value] = []
+            out_range = outstyles.get((tag.name.value, tag.value))
+            if out_range is None:
+                out_range = outstyles[(tag.name.value, tag.value)] = []
+            quads = styles[tag.name.value]
+            for rang in tag.ranges:
+                # quad: Value, priority, Start or Stop, True if Stop
+                quads.append((tag.value, prior, rang[0], False))
+                quads.append((tag.value, prior, rang[1], True))
+
+    for tagname, quads in styles.items():
+        quads.sort(key=lambda quad: quad[2])  # sort by start/stop index
+        # start, end are current range
+        start = value = prior = None
+        # open_low; list of low priority open (nested) values
+        # open_high; list of high priority open (nested) values
+        openst = [[], []]
+        for quad in quads:
+            if not quad[3]:  # We have a start
+                if start is None:  # we can start up
+                    value = quad[0]
+                    prior = quad[1]
+                    start = quad[2]
+                elif value == quad[0]:
+                    # we have an overlap with same
+                    continue
+                else:  # we have a nest or overlap with different
+                    openst[prior].append(value)  # save current in open
+                    # close out current, and start new
+                    outstyles[(tagname, value)].append((start, quad[2]))
+                    value = quad[0]
+                    prior = quad[1]
+                    start = quad[2]
+            else:  # we have an end
+                if quad[0] == value:  # current finished
+                    outstyles[(tagname, value)].append((start, quad[2]))
+                    if openst[1]:  # high priority nested to restart
+                        value = openst[1].pop()
+                        prior = 1
+                        start = quad[2]
+                    elif openst[0]:  # low priority nested to restart
+                        value = openst[0].pop()
+                        prior = 0
+                        start = quad[2]
+                    else:  # no nest to restart, just close out
+                        start = value = prior = None
+
+                else:  # clear out overlap
+                    try:
+                        openst[quad[1]].remove(quad[0])
+                    except ValueError:
+                        pass
+                    continue
+        end = None
+    msg = ("Bad Style range!  Do not save, "
+           "if you do your db will be corrupted.")
+    for ((name, value), ranges) in outstyles.items():
+        new_range = []
+        for rang in ranges:
+            if not new_range:
+                new_range.append((rang[0], rang[1]))
+                if rang[0] is None or rang[1] is None:
+                    raise ValueError(msg)
+            elif rang[0] == end:
+                # should merge two ranges together
+                end = rang[1]
+                continue
+            else:
+                new_range.append((start, end))
+                if start is None or end is None:
+                    raise ValueError(msg)
+            start = rang[0]
+            end = rang[1]
+        new_range.append((start, end))
+        if start is None or end is None:
+            raise ValueError(msg)
+        tags.append(StyledTextTag(name, value, new_range))
+    return tags
 
 
 #------------------------------------------------------------------------
