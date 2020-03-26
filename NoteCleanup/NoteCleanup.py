@@ -445,9 +445,10 @@ class NoteCleanup(tool.Tool, ManagedWindow):
             result = self.convert_to_styled(text)
             indx = len(self.changelist)
             for styledtext_tag in result.tags:
-                if int(styledtext_tag.name) == StyledTextTagType.HIGHLIGHT:
-                    optype = ISSUE
-                    break
+                if(int(styledtext_tag.name) == StyledTextTagType.HIGHLIGHT and
+                   '#FFFF00' == styledtext_tag.value):
+                        optype = ISSUE
+                        break
                 elif int(styledtext_tag.name) == StyledTextTagType.LINK:
                     optype = LINK
             while True:
@@ -506,12 +507,12 @@ class NoteCleanup(tool.Tool, ManagedWindow):
         # HTTP start to end (have to rstrip(' .:') for link)
         ('HTTP',    r'https?:.*?(\s|$)'),
         # Paragraph end
-        ('PARAEND', r'</p>|</li>|<tr>|<br>'),
+        ('PARAEND', r'</p>|</li>|<tr>|<br>|<br />'),
         # Skip over these tags
         ('SKIP',    r'<ul>|</ul>|<li>|<p>|</tr>|<td>|</td>|<th>|'\
                     r'</a>|</i>|</b>|</u>|<a>'),
         # Unimplemented HTTP tags
-        ('UNKNWN',  r'<.*?>'), ]
+        ('UNKNWN',  r'<[^<]*?>'), ]
     tok_regex = '|'.join('(?P<%s>%s)' % pair for
                          pair in token_specification)
 
@@ -757,6 +758,8 @@ def tag_merge(old_tags, tag_list):
                     prior = quad[1]
                     start = quad[2]
             else:  # we have an end
+                if start is None:  # end with no start
+                    continue
                 if quad[0] == value:  # current finished
                     outstyles[(tagname, value)].append((start, quad[2]))
                     if openst[1]:  # high priority nested to restart
@@ -781,19 +784,17 @@ def tag_merge(old_tags, tag_list):
            "if you do your db will be corrupted.")
     for ((name, value), ranges) in outstyles.items():
         new_range = []
+        start = None
         for rang in ranges:
-            if not new_range:
-                new_range.append((rang[0], rang[1]))
-                if rang[0] is None or rang[1] is None:
-                    raise ValueError(msg)
-            elif rang[0] == end:
-                # should merge two ranges together
-                end = rang[1]
-                continue
-            else:
-                new_range.append((start, end))
-                if start is None or end is None:
-                    raise ValueError(msg)
+            if start is not None:
+                if rang[0] == end:
+                    # should merge two ranges together
+                    end = rang[1]
+                    continue
+                else:
+                    new_range.append((start, end))
+                    if start is None or end is None:
+                        raise ValueError(msg)
             start = rang[0]
             end = rang[1]
         new_range.append((start, end))
