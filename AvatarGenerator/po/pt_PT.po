@@ -1,0 +1,159 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Pedro Albuquerque <pmra@gmx.com>, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-06-14 11:49+1000\n"
+"PO-Revision-Date: 2020-03-29 10:28+0100\n"
+"Last-Translator: Pedro Albuquerque <pmra@gmx.com>\n"
+"Language-Team: Pedro Albuquerque\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Virtaal 0.7.1\n"
+
+#: AvatarGenerator/AvatarGenerator.gpr.py:23
+msgid "Avatar Generator Tool"
+msgstr "Ferramenta de geração de avatar"
+
+#: AvatarGenerator/AvatarGenerator.gpr.py:24
+msgid "A tool to add avatar pictures to your family tree"
+msgstr "Uma ferramenta para adicionar avatares à sua árvore genealógica"
+
+#: AvatarGenerator/AvatarGenerator.py:58
+msgid "male"
+msgstr "masculino"
+
+#: AvatarGenerator/AvatarGenerator.py:58
+msgid "female"
+msgstr "feminino"
+
+#: AvatarGenerator/AvatarGenerator.py:58
+msgid "unknown"
+msgstr "desconhecido"
+
+#: AvatarGenerator/AvatarGenerator.py:59
+msgid "Option"
+msgstr "Opção"
+
+#: AvatarGenerator/AvatarGenerator.py:59
+msgid "single image mode"
+msgstr "modo de imagem única"
+
+#: AvatarGenerator/AvatarGenerator.py:65
+msgid "Category"
+msgstr "Categoria"
+
+#: AvatarGenerator/AvatarGenerator.py:66
+msgid "Choose how many images you'd like to use."
+msgstr "Escolha quantas imagens deseja utilizar."
+
+#: AvatarGenerator/AvatarGenerator.py:68 AvatarGenerator/AvatarGenerator.py:75
+#: AvatarGenerator/AvatarGenerator.py:79 AvatarGenerator/AvatarGenerator.py:83
+#: AvatarGenerator/AvatarGenerator.py:87 AvatarGenerator/AvatarGenerator.py:92
+#: AvatarGenerator/AvatarGenerator.py:98 AvatarGenerator/AvatarGenerator.py:137
+msgid "Options"
+msgstr "Opções"
+
+#: AvatarGenerator/AvatarGenerator.py:73
+msgid "Unknown"
+msgstr "Desconhecido"
+
+#: AvatarGenerator/AvatarGenerator.py:74
+msgid "Image for people with unknown gender."
+msgstr "Imagem para indivíduos com sexo desconhecido."
+
+#: AvatarGenerator/AvatarGenerator.py:77
+msgid "Male"
+msgstr "Masculino"
+
+#: AvatarGenerator/AvatarGenerator.py:78
+msgid "Image for males."
+msgstr "Imagem para homens"
+
+#: AvatarGenerator/AvatarGenerator.py:81
+msgid "Female"
+msgstr "Feminino"
+
+#: AvatarGenerator/AvatarGenerator.py:82
+msgid "Image for females"
+msgstr "Imagem para mulheres"
+
+#: AvatarGenerator/AvatarGenerator.py:85
+msgid "Person Filter"
+msgstr "Filtro de indivíduos"
+
+#: AvatarGenerator/AvatarGenerator.py:86
+msgid "Select filter to restrict people"
+msgstr "Seleccione o filtro para limitar os indivíduos"
+
+#: AvatarGenerator/AvatarGenerator.py:90
+msgid "Center Person"
+msgstr "Indivíduo central"
+
+#: AvatarGenerator/AvatarGenerator.py:91
+msgid "The center person for the filter"
+msgstr "O indivíduo central para o filtro"
+
+#: AvatarGenerator/AvatarGenerator.py:95
+msgid "Remove images from people"
+msgstr "Remover imagens dos indivíduos"
+
+#: AvatarGenerator/AvatarGenerator.py:96
+msgid "Remove selected image(s)."
+msgstr "Remover as imagens seleccionadas."
+
+#: AvatarGenerator/AvatarGenerator.py:134
+#: AvatarGenerator/AvatarGenerator.py:183
+#: AvatarGenerator/AvatarGenerator.py:257
+msgid "Avatar Generator"
+msgstr "Gerador de avatar"
+
+#: AvatarGenerator/AvatarGenerator.py:186
+msgid "Remove avatar images..."
+msgstr "Remover avatares..."
+
+#: AvatarGenerator/AvatarGenerator.py:211
+#: AvatarGenerator/AvatarGenerator.py:219
+#: AvatarGenerator/AvatarGenerator.py:316
+#: AvatarGenerator/AvatarGenerator.py:320
+msgid "INFO"
+msgstr "INFORMAÇÃO"
+
+#: AvatarGenerator/AvatarGenerator.py:211
+msgid "No media was removed."
+msgstr "Nenhuma imagem removida."
+
+#: AvatarGenerator/AvatarGenerator.py:213
+msgid "{} media references were removed from {} persons."
+msgstr "{} referências multimédia removidas de {} indivíduos."
+
+#: AvatarGenerator/AvatarGenerator.py:216
+msgid ""
+"\n"
+"{} HandleError occured, but were ignored."
+msgstr ""
+"\n"
+"{} HandleError ocorrido, mas foi ignorado."
+
+#: AvatarGenerator/AvatarGenerator.py:263
+#: AvatarGenerator/AvatarGenerator.py:280
+msgid "Add avatar images..."
+msgstr "Adicionar avatares..."
+
+#: AvatarGenerator/AvatarGenerator.py:314
+msgid "{} avatar images were sucessfully added."
+msgstr "{} avatares adicionados com sucesso."
+
+#: AvatarGenerator/AvatarGenerator.py:318
+msgid "There was no avatar image to add. "
+msgstr "Não havia avatar para adicionar."
+
+#: AvatarGenerator/AvatarGenerator.py:319
+msgid "All persons already had one."
+msgstr "Já havia um para cada indivíduo."

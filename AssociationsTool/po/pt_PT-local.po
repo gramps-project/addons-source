@@ -1,0 +1,46 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Pedro Albuquerque <pmra@gmx.com>, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-21 10:45+1000\n"
+"PO-Revision-Date: 2020-03-29 10:13+0100\n"
+"Last-Translator: Pedro Albuquerque <pmra@gmx.com>\n"
+"Language-Team: Pedro Albuquerque\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Virtaal 0.7.1\n"
+
+#: AssociationsTool/associationstool.gpr.py:35
+msgid "Check Associations data"
+msgstr "Verificar dados de associação"
+
+#: AssociationsTool/associationstool.gpr.py:36
+msgid "Will check the data on Association for people."
+msgstr "Vai verificar os dados na associação para indivíduos."
+
+#: AssociationsTool/associationstool.py:53
+msgid "Associations state tool"
+msgstr "Ferramenta de estado das associações"
+
+#: AssociationsTool/associationstool.py:80
+msgid "Name"
+msgstr "Nome"
+
+#: AssociationsTool/associationstool.py:81
+msgid "Type of link"
+msgstr "Tipo de ligação"
+
+#: AssociationsTool/associationstool.py:82
+msgid "Of"
+msgstr "De"
+
+#: AssociationsTool/associationstool.py:83
+msgid "Relationship Calculator"
+msgstr "Calculadora de parentescos"
