@@ -1,0 +1,127 @@
+# Addon SetAttribute for Gramps.
+# Copyright (C) 2020 Gramps
+# This file is distributed under the same license as the gramps package.
+# Pedro Albuquerque <pmra@protonmail.com>, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps51\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2020-04-03 08:26Hora de Verão de GMT\n"
+"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"Language-Team: Pedro Albuquerque\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Geany / PoHelper 1.36\n"
+
+#: SetAttributeTool/SetAttributeTool.gpr.py:25
+#: SetAttributeTool/SetAttributeTool.py:121
+#: SetAttributeTool/SetAttributeTool.py:129
+msgid "Set Attribute"
+msgstr "Definir atributo"
+
+#: SetAttributeTool/SetAttributeTool.gpr.py:26
+msgid "Set an attribute to a given value."
+msgstr "Definir um atributo num dado valor."
+
+#: SetAttributeTool/SetAttributeTool.py:68
+#: SetAttributeTool/SetAttributeTool.py:124
+msgid "Options"
+msgstr "Opções"
+
+#: SetAttributeTool/SetAttributeTool.py:70
+msgid "Person Filter"
+msgstr "Filtro de indivíduos"
+
+#: SetAttributeTool/SetAttributeTool.py:71
+msgid "Select filter to restrict people"
+msgstr "Seleccione um filtro para limitar os indivíduos"
+
+#: SetAttributeTool/SetAttributeTool.py:75
+msgid "Filter Person"
+msgstr "Indivíduo filtro"
+
+#: SetAttributeTool/SetAttributeTool.py:76
+msgid "The center person for the filter"
+msgstr "O indivíduo central do filtro"
+
+#: SetAttributeTool/SetAttributeTool.py:80
+msgid "Attribute"
+msgstr "Atributo"
+
+#: SetAttributeTool/SetAttributeTool.py:81
+msgid "Value"
+msgstr "Valor"
+
+#: SetAttributeTool/SetAttributeTool.py:83
+msgid "Attribute type to add or edit"
+msgstr "Tipo de atributo a adicionar/editar"
+
+#: SetAttributeTool/SetAttributeTool.py:84
+msgid "Attribute value to add or edit"
+msgstr "Valor do atributo a adicionar/editar"
+
+#: SetAttributeTool/SetAttributeTool.py:91
+msgid "Remove"
+msgstr "Remover"
+
+#: SetAttributeTool/SetAttributeTool.py:92
+msgid "Remove attribute type and value set"
+msgstr "Remover tipo e valor do atributo"
+
+#: SetAttributeTool/SetAttributeTool.py:130
+#: SetAttributeTool/SetAttributeTool.py:189
+msgid "Results"
+msgstr "Resultados"
+
+#: SetAttributeTool/SetAttributeTool.py:131
+#: SetAttributeTool/SetAttributeTool.py:190
+msgid "Processing...\n"
+msgstr "A processar...\n"
+
+#: SetAttributeTool/SetAttributeTool.py:146
+msgid "Setting attributes..."
+msgstr "A definir atributos..."
+
+#: SetAttributeTool/SetAttributeTool.py:153
+#, python-format
+msgid ""
+"Setting '%s' attributes to '%s'...\n"
+"\n"
+msgstr ""
+"A definir \"%s\" atributos para \"%s\"...\n"
+"\n"
+
+#: SetAttributeTool/SetAttributeTool.py:184
+#, python-format
+msgid ""
+"\n"
+"Set %d '%s' attributes to '%s'\n"
+msgstr ""
+"\n"
+"Definir %d atributos \"%s\" para \"%s\"\n"
+
+#: SetAttributeTool/SetAttributeTool.py:186
+#: SetAttributeTool/SetAttributeTool.py:235
+msgid "Done!\n"
+msgstr "Feito!\n"
+
+#: SetAttributeTool/SetAttributeTool.py:188
+msgid "Remove Attribute"
+msgstr "Remover atributo"
+
+#: SetAttributeTool/SetAttributeTool.py:205
+msgid "Removing attributes..."
+msgstr "A remover atributos..."
+
+#: SetAttributeTool/SetAttributeTool.py:230
+#, python-format
+msgid ""
+"\n"
+"Removing %d '%s' attributes to '%s'\n"
+msgstr ""
+"\n"
+"A remover %d atributos \"%s\" para \"%s\"\n"

@@ -1,0 +1,45 @@
+# Portuguese translations for Gramps package.
+# Copyright (C) 2017 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#  <palbuquerque73@gmail.com>, 2017.
+# Pedro Albuquerque <palbuquerque73@gmail.com>, 2017.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps50\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-09-15 10:08+0100\n"
+"PO-Revision-Date: 2017-09-15 10:36+0100\n"
+"Last-Translator: Pedro Albuquerque <palbuquerque73@gmail.com>\n"
+"Language-Team: Portuguese <palbuquerque73@gmail.com>\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Gtranslator 2.91.6\n"
+
+#: AllNamesQuickview/AllNames.gpr.py:3 AllNamesQuickview/AllNames.py:51
+msgid "All Names of All People"
+msgstr "Todos os nomes de todos os indivíduos"
+
+#: AllNamesQuickview/AllNames.gpr.py:4
+msgid "Display all names of all people"
+msgstr "Mostrar todos os nomes de todos os indivíduos"
+
+#: AllNamesQuickview/AllNames.py:54
+msgid "Name"
+msgstr "Nome"
+
+#: AllNamesQuickview/AllNames.py:54
+msgid "Primary Name"
+msgstr "Nome principal"
+
+#: AllNamesQuickview/AllNames.py:54
+msgid "Name Type"
+msgstr "Tipo de nome"
+
+#: AllNamesQuickview/AllNames.py:71
+#, python-format
+msgid "Total names %d"
+msgstr "Total de nomes: %d"

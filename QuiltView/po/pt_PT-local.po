@@ -1,0 +1,188 @@
+# Addon QuiltView for Gramps.
+# Copyright (C) 2020 Gramps
+# This file is distributed under the same license as the gramps package.
+# Pedro Albuquerque <pmra@protonmail.com>, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps51\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-08-22 15:51-0500\n"
+"PO-Revision-Date: 2020-04-03 08:03+0100\n"
+"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"Language-Team: Pedro Albuquerque\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.3\n"
+
+#: QuiltView/QuiltView.gpr.py:30
+msgid "Quilt Chart"
+msgstr "Gráfico de retalhos"
+
+#: QuiltView/QuiltView.gpr.py:31
+msgid "Charts"
+msgstr "Gráficos"
+
+#: QuiltView/QuiltView.gpr.py:32
+msgid "The view shows a quilt chart visualisation of a family tree"
+msgstr "Mostra uma vista gráfica da árvore de família"
+
+#: QuiltView/QuiltView.py:223
+msgid "Quilt chart"
+msgstr "Gráfico de retalhos"
+
+#: QuiltView/QuiltView.py:304
+msgid "Select the name for which you want to see."
+msgstr "Seleccione o nome que deseja ver no gráfico."
+
+#: QuiltView/QuiltView.py:309
+msgid "Clear"
+msgstr "Limpar"
+
+#: QuiltView/QuiltView.py:311
+msgid "Clear the entry field in the name selection box."
+msgstr "Limpar o campo de entrada na caixa de selecção de nome."
+
+#: QuiltView/QuiltView.py:316
+msgid "Nothing is selected"
+msgstr "Nada seleccionado"
+
+#: QuiltView/QuiltView.py:372
+msgid "Organize Bookmarks"
+msgstr "Organizar favoritos"
+
+#: QuiltView/QuiltView.py:569
+#, python-format
+msgid ""
+"You have %(filter)d filtered people, %(count)d people shown on the tree and "
+"%(total)d people in your database."
+msgstr ""
+"Tem %(filter)d indivíduos filtrados, %(count)d indivíduos mostrados na "
+"árvore e %(total)d indivíduos na base de dados."
+
+#: QuiltView/QuiltView.py:599
+msgid "Could Not Set a Bookmark"
+msgstr "Impossível definir um favorito"
+
+#: QuiltView/QuiltView.py:600
+msgid "A bookmark could not be set because no one was selected."
+msgstr "Impossível definir um favorito porque ninguém estava seleccionado."
+
+#: QuiltView/QuiltView.py:659
+msgid "Loading individuals"
+msgstr "A carregar indivíduos"
+
+#: QuiltView/QuiltView.py:660
+msgid "Loading the data"
+msgstr "A carregar os dados"
+
+#: QuiltView/QuiltView.py:1061
+msgid "About Quilt View"
+msgstr "Acerca do gráfico de retalhos"
+
+#: QuiltView/QuiltView.py:1131
+#, python-format
+msgid "Family of %(husband)s and %(spouse)s"
+msgstr "Família de %(husband)s e %(spouse)s"
+
+#: QuiltView/QuiltView.py:1137 QuiltView/QuiltView.py:1141
+#, python-format
+msgid "Family of %s"
+msgstr "Fam~ilia de %s"
+
+#: QuiltView/QuiltView.py:1196 QuiltView/QuiltView.py:1325
+msgid "Edit"
+msgstr "Editar"
+
+#: QuiltView/QuiltView.py:1199 QuiltView/QuiltView.py:1328
+msgid "Edit tags"
+msgstr "Editar etiquetas"
+
+#: QuiltView/QuiltView.py:1215 QuiltView/QuiltView.py:1540
+msgid "Children"
+msgstr "Filhos"
+
+#: QuiltView/QuiltView.py:1228 QuiltView/QuiltView.py:1553
+msgid "Add child to family"
+msgstr "Adicionar filho à família"
+
+#: QuiltView/QuiltView.py:1298
+msgid "Add Child to Family"
+msgstr "Adicionar filho à família"
+
+#: QuiltView/QuiltView.py:1331
+msgid "_Copy"
+msgstr "_Copiar"
+
+#: QuiltView/QuiltView.py:1341
+msgid "Spouses"
+msgstr "Cônjuges"
+
+#: QuiltView/QuiltView.py:1346 QuiltView/QuiltView.py:1471
+msgid "Add"
+msgstr "Adicionar"
+
+#: QuiltView/QuiltView.py:1370
+msgid "Siblings"
+msgstr "Irmãos"
+
+#: QuiltView/QuiltView.py:1438
+msgid "Parents"
+msgstr "Pais"
+
+#: QuiltView/QuiltView.py:1477
+msgid "Related"
+msgstr "Relacionados"
+
+#: QuiltView/QuiltView.py:1508
+msgid "Set as home person"
+msgstr "Definir como indivíduo inicial"
+
+#: QuiltView/QuiltView.py:1658
+msgid "Adding Tags"
+msgstr "A adicionar etiquetas"
+
+#: QuiltView/QuiltView.py:1664
+#, python-format
+msgid "Adding Tags to person (%s)"
+msgstr "Adicionar etiquetas ao indivíduo (%s)"
+
+#: QuiltView/QuiltView.py:1669
+#, python-format
+msgid "Adding Tags to family (%s)"
+msgstr "A adicionar etiquetas à família (%s)"
+
+#: QuiltView/QuiltView.py:1873
+msgid "Printing the tree"
+msgstr "A imprimir a árvore"
+
+#: QuiltView/QuiltView.py:1877
+#, python-format
+msgid "Need to print %(pages)s pages (%(format)s format)"
+msgstr "Tem de imprimir %(pages)s páginas (formato %(format)s)"
+
+#: QuiltView/QuiltView.py:1929
+msgid ""
+"Center on the selected person.\n"
+"The new position of the person will be near the top left corner."
+msgstr ""
+"Centro no indivíduo seleccionado.\n"
+"A nova posição do indivíduo será perto do canto superior esquerdo."
+
+#: QuiltView/QuiltView.py:1934
+msgid "The path color"
+msgstr "A cor do caminho"
+
+#: QuiltView/QuiltView.py:1939
+msgid "The selected person color"
+msgstr "A cor do indivíduo seleccionado"
+
+#: QuiltView/QuiltView.py:1944
+msgid "The path transparency"
+msgstr "A transparência do caminho"
+
+#: QuiltView/QuiltView.py:1947
+msgid "General options"
+msgstr "Opções gerais"

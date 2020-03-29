@@ -1,0 +1,112 @@
+# Addon Extract City for Gramps.
+# Copyright (C) 2020 Gramps
+# This file is distributed under the same license as the gramps package.
+# Pedro Albuquerque <pmra@protonmail.com>, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps51\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2020-03-31 08:02+0100\n"
+"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"Language-Team: Pedro Albuquerque\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.3\n"
+
+#: ExtractCity/extractcity.gpr.py:33
+msgid "Extract Place Data from a Place Title"
+msgstr "Extrair dados do local a partir do título"
+
+#: ExtractCity/extractcity.gpr.py:34
+msgid "Attempts to extract city and state/province from a place title"
+msgstr "Tenta extrair a cidade e o distrito de um título de local"
+
+#: ExtractCity/extractcity.py:68
+msgid "United States of America"
+msgstr "Estados Unidos da América"
+
+#: ExtractCity/extractcity.py:68
+msgid "Canada"
+msgstr "Canadá"
+
+#: ExtractCity/extractcity.py:68
+msgid "France"
+msgstr "França"
+
+#: ExtractCity/extractcity.py:68
+msgid "Sweden"
+msgstr "Suécia"
+
+#: ExtractCity/extractcity.py:391
+msgid "Place title"
+msgstr "Título do local"
+
+#: ExtractCity/extractcity.py:392
+msgid "City"
+msgstr "Cidade"
+
+#: ExtractCity/extractcity.py:393
+msgid "State"
+msgstr "Distrito"
+
+#: ExtractCity/extractcity.py:394
+msgid "ZIP/Postal Code"
+msgstr "Código Postal"
+
+#: ExtractCity/extractcity.py:395
+msgid "Country"
+msgstr "País"
+
+#: ExtractCity/extractcity.py:422 ExtractCity/extractcity.py:613
+msgid "Extract Place data"
+msgstr "Extrair dados do local"
+
+#: ExtractCity/extractcity.py:439
+msgid "Checking Place Titles"
+msgstr "A verificar títulos"
+
+#: ExtractCity/extractcity.py:441
+msgid "Looking for place fields"
+msgstr "A procurar campos de local"
+
+#: ExtractCity/extractcity.py:527
+msgid "No modifications made"
+msgstr "Sem modificações feitas"
+
+#: ExtractCity/extractcity.py:528
+msgid "No place information could be extracted."
+msgstr "Impossível extrair informações de local."
+
+#: ExtractCity/extractcity.py:547
+msgid ""
+"Below is a list of Places with the possible data that can be extracted from "
+"the place title. Select the places you wish Gramps to convert."
+msgstr ""
+"Abaixo está uma lista de locais com os dados passíveis de extracção deste "
+"título de local. Seleccione os locais que deseja que o Gramps converta."
+
+#: ExtractCity/extractcity.py:558
+msgid "Select"
+msgstr "Seleccionar"
+
+#: ExtractCity/extractcity.py:572
+msgid "Building display"
+msgstr "A construir"
+
+#: ExtractCity/changenames.glade:35
+msgid ""
+"Below is a list of the family names that \n"
+"Gramps can convert to correct capitalization. \n"
+"Select the names you wish Gramps to convert. "
+msgstr ""
+"Abaixo está uma lista de apelidos em que o\n"
+"Gramps pode corrigir o uso de maiúsculas. \n"
+"Seleccione os que deseja que o Gramps converta. "
+
+#: ExtractCity/changenames.glade:108
+msgid "_Accept changes and close"
+msgstr "_Aceitar alterações e fechar"

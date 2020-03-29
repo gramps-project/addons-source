@@ -1,0 +1,366 @@
+# Addon PlaceCompletion for Gramps.
+# Copyright (C) 2020 Gramps
+# This file is distributed under the same license as the gramps package.
+# Pedro Albuquerque <pmra@protonmail.com>, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps51\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2020-04-02 10:58Hora de Verão de GMT\n"
+"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"Language-Team: Pedro Albuquerque\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Geany / PoHelper 1.36\n"
+
+#: PlaceCompletion/PlaceCompletion.gpr.py:25
+msgid "PlaceCompletion"
+msgstr "Conclusão de locais"
+
+#: PlaceCompletion/PlaceCompletion.gpr.py:26
+msgid ""
+"Provides a browsable list of selected places, with possibility to complete/"
+"parse/set the attribute fields."
+msgstr ""
+"Fornece uma lista navegável de locais seleccionados, com a possibilidade de "
+"concluir/analisar/definir os atributos."
+
+#: PlaceCompletion/PlaceCompletion.py:95
+msgid ""
+"Place Completion by parsing, file lookup and batch setting of place "
+"attributes"
+msgstr ""
+"Conclusão de locais analisando, procurando nos ficheiros e definindo "
+"atributos de locais em lote"
+
+#: PlaceCompletion/PlaceCompletion.py:258
+msgid "Error in PlaceCompletion.py"
+msgstr "Erro em PlaceCompletion.py"
+
+#: PlaceCompletion/PlaceCompletion.py:259
+msgid "Non existing group used in get"
+msgstr "Grupo não existente usado em \"get\""
+
+#: PlaceCompletion/PlaceCompletion.py:282
+#, python-format
+msgid "PlaceCompletion is unable to create %s %s"
+msgstr "A conclusão de locais não pôde criar %s %s"
+
+#: PlaceCompletion/PlaceCompletion.py:340
+msgid "Places tool"
+msgstr "Ferramenta de locais"
+
+#: PlaceCompletion/PlaceCompletion.py:408
+msgid "Missing regex groups in match lat/lon"
+msgstr "Grupos regex em falta na comparação lat/long"
+
+#: PlaceCompletion/PlaceCompletion.py:409
+#, python-format
+msgid ""
+"Regex groups %(lat)s and %(lon)s must be present in lat/lon match. Quiting"
+msgstr ""
+"Os grupos regex %(lat)s e %(lon)s têm de estar presentes na comparação de "
+"lat/lon. A sair..."
+
+#: PlaceCompletion/PlaceCompletion.py:419
+msgid "Non valid regex for match lat/lon"
+msgstr "Regex inválida para comparar lat/lon"
+
+#: PlaceCompletion/PlaceCompletion.py:420
+msgid "Non valid regular expression given to find lat/lon. Quiting."
+msgstr ""
+"Forneceu expressões regulares inválidas para encontrar a lat/lon. A sair..."
+
+#: PlaceCompletion/PlaceCompletion.py:479
+msgid "Finding Places and appropriate changes"
+msgstr "Procurar locais e alterações apropriadas"
+
+#: PlaceCompletion/PlaceCompletion.py:481
+msgid "Filtering"
+msgstr "A filtrar"
+
+#: PlaceCompletion/PlaceCompletion.py:491
+msgid "Loading lat/lon file in Memory..."
+msgstr "A carregar lat/lon em memória..."
+
+#: PlaceCompletion/PlaceCompletion.py:497
+msgid "Examining places"
+msgstr "A examinar locais"
+
+#: PlaceCompletion/PlaceCompletion.py:520
+msgid "City"
+msgstr "Cidade"
+
+#: PlaceCompletion/PlaceCompletion.py:523
+msgid "State"
+msgstr "Distrito"
+
+#: PlaceCompletion/PlaceCompletion.py:526
+msgid "Country"
+msgstr "País"
+
+#: PlaceCompletion/PlaceCompletion.py:685
+msgid "Set Tag"
+msgstr "Definir etiqueta"
+
+#: PlaceCompletion/PlaceCompletion.py:687
+msgid "Doing Place changes"
+msgstr "A fazer alterações"
+
+#: PlaceCompletion/PlaceCompletion.py:731
+msgid "No place record was modified."
+msgstr "Nenhum registo foi alterado."
+
+#: PlaceCompletion/PlaceCompletion.py:733
+msgid "1 place record was modified."
+msgstr "Foi alterado um registo."
+
+#: PlaceCompletion/PlaceCompletion.py:735
+#, python-format
+msgid "%d place records were modified."
+msgstr "Foram alterados %d registos."
+
+#: PlaceCompletion/PlaceCompletion.py:736
+msgid "Change places"
+msgstr "Alterar locais"
+
+#: PlaceCompletion/PlaceCompletion.py:808
+#: PlaceCompletion/PlaceCompletion.py:814
+#: PlaceCompletion/PlaceCompletion.py:819
+#: PlaceCompletion/PlaceCompletion.py:825
+msgid "Cannot open file"
+msgstr "Impossível abrir ficheiro"
+
+#: PlaceCompletion/PlaceCompletion.py:809
+msgid "The selected file is a directory, not a file."
+msgstr "A selecção é uma pasta, não um ficheiro."
+
+#: PlaceCompletion/PlaceCompletion.py:815
+msgid "You do not have read access to the selected file."
+msgstr "Não tem permissão de leitura do ficheiro seleccionado."
+
+#: PlaceCompletion/PlaceCompletion.py:820
+msgid "The file you want to access is not a regular file."
+msgstr "O ficheiro a que deseja aceder não é um ficheiro normal."
+
+#: PlaceCompletion/PlaceCompletion.py:826
+msgid "The file does not exist."
+msgstr "O ficheiro não existe."
+
+#: PlaceCompletion/PlaceCompletion.py:858
+msgid "Problem reading file"
+msgstr "Problema ao ler o ficheiro"
+
+#: PlaceCompletion/PlaceCompletion.py:970
+#: PlaceCompletion/PlaceCompletion.py:982
+#, python-format
+msgid "invalid lat or lon value, %(lat)s, %(lon)s"
+msgstr "valor de lat ou lon inválidos, %(lat)s, %(lon)s"
+
+#: PlaceCompletion/PlaceCompletion.py:1135
+msgid "No lat/lon conversion"
+msgstr "Sem conversão de lat/lon"
+
+#: PlaceCompletion/PlaceCompletion.py:1136
+msgid "All in degree notation"
+msgstr "Tudo em notação de graus"
+
+#: PlaceCompletion/PlaceCompletion.py:1137
+msgid "All in decimal notation"
+msgstr "Tudo em notação decimal"
+
+#: PlaceCompletion/PlaceCompletion.py:1138
+msgid "Correct -50° in 50°S"
+msgstr "Corrigir -50° para 50°S"
+
+#: PlaceCompletion/PlaceCompletion.py:1142
+msgid "No changes"
+msgstr "Sem alterações"
+
+#: PlaceCompletion/PlaceCompletion.py:1143
+msgid "City[, State]"
+msgstr "Cidade [distrito]"
+
+#: PlaceCompletion/PlaceCompletion.py:1145
+msgid "City,PostalCode,Country"
+msgstr "Cidade, código postal, país"
+
+#: PlaceCompletion/PlaceCompletion.py:1147
+msgid "City[(Street;Locality;Parish)],PostalCode,Country"
+msgstr "Cidade [(rua; localidade; paróquia)], código postal, país"
+
+#: PlaceCompletion/PlaceCompletion.py:1149
+msgid "TitleStart [, City] [, State]"
+msgstr "Título [, cidade] [, distrito]"
+
+#: PlaceCompletion/PlaceCompletion.py:1151
+msgid "TitleStart [, City] [, County] [, State] [, Country]"
+msgstr "Título [, cidade] [, concelho] [, distrito] [, país]"
+
+#: PlaceCompletion/PlaceCompletion.py:1153
+msgid "TitleStart [, City] [, Zip] [, County] [, State] [, Country]"
+msgstr "Título [, cidade] [, cód. postal] [, concelho] [, distrito] [, país]"
+
+#: PlaceCompletion/PlaceCompletion.py:1177
+msgid "Don't search"
+msgstr "Não procurar"
+
+#: PlaceCompletion/PlaceCompletion.py:1180
+msgid "GeoNames country file, city search"
+msgstr "Ficheiro de países Geonames, procurar cidade"
+
+#: PlaceCompletion/PlaceCompletion.py:1185
+msgid "GeoNames country file, city localized variants search"
+msgstr "Ficheiro de países Geonames, procurar variantes da cidade"
+
+#: PlaceCompletion/PlaceCompletion.py:1190
+msgid "GeoNames country file, county/city search"
+msgstr "Ficheiro de países Geonames, procurar concelho/cidade"
+
+#: PlaceCompletion/PlaceCompletion.py:1202
+msgid "GeoNames country file, title begin, general search"
+msgstr "Ficheiro de países Geonames, título, procura geral"
+
+#: PlaceCompletion/PlaceCompletion.py:1207
+msgid "GeoNames USA state file, city search"
+msgstr "Ficheiro Geonames dos estados dos EUA, procurar cidade"
+
+#: PlaceCompletion/PlaceCompletion.py:1221
+msgid "GNS Geonet country file, city search"
+msgstr "Ficheiro de países GNS Geonet, procurar cidade"
+
+#: PlaceCompletion/PlaceCompletion.py:1228
+msgid "GNS Geonet country file, county/city search"
+msgstr "Ficheiro de países GNS Geonet, procurar concelho/cidade"
+
+#: PlaceCompletion/PlaceCompletion.py:1236
+msgid "GNS Geonet country file, title begin, general search"
+msgstr "Ficheiro de países GNS Geonet, título, procura geral"
+
+#: PlaceCompletion/PlaceCompletion.py:1244
+msgid "Wikipedia CSV Dump"
+msgstr "Despejo CSV da Wikipedia"
+
+#: PlaceCompletion/PlaceCompletion.py:1332
+msgid "All Places"
+msgstr "Todos os locais"
+
+#: PlaceCompletion/PlaceCompletion.py:1335
+msgid "No Latitude/Longitude given"
+msgstr "Sem Latitude/Longitude"
+
+#: PlaceCompletion/placecompletion.glade:85
+msgid "_Google Maps"
+msgstr "_Google Maps"
+
+#: PlaceCompletion/placecompletion.glade:112
+msgid "Apply all suggested changes"
+msgstr "Aplicar todas as alterações sugeridas"
+
+#: PlaceCompletion/placecompletion.glade:148
+msgid "Selection of the Places you want to complete:"
+msgstr "Selecção dos locais que deseja concluir:"
+
+#: PlaceCompletion/placecompletion.glade:178
+msgid "C_ity:"
+msgstr "C_idade:"
+
+#: PlaceCompletion/placecompletion.glade:195
+msgid "Parish:"
+msgstr "Paróquia:"
+
+#: PlaceCompletion/placecompletion.glade:240
+msgid "County:"
+msgstr "Concelho:"
+
+#: PlaceCompletion/placecompletion.glade:271
+msgid "Place _filter:"
+msgstr "_Filtro de local:"
+
+#: PlaceCompletion/placecompletion.glade:321
+msgid "State:"
+msgstr "Distrito:"
+
+#: PlaceCompletion/placecompletion.glade:336
+msgid "Count_ry:"
+msgstr "_País:"
+
+#: PlaceCompletion/placecompletion.glade:366
+msgid "C_enter latitude:"
+msgstr "Latitude c_entral:"
+
+#: PlaceCompletion/placecompletion.glade:383
+msgid "Center longitude:"
+msgstr "Longitude central:"
+
+#: PlaceCompletion/placecompletion.glade:430
+msgid "Places in a rectangle:"
+msgstr "Locais num rectângulo:"
+
+#: PlaceCompletion/placecompletion.glade:443
+msgid "Width:"
+msgstr "Largura:"
+
+#: PlaceCompletion/placecompletion.glade:460
+msgid "Height:"
+msgstr "Altura:"
+
+#: PlaceCompletion/placecompletion.glade:527
+msgid "1. Look up latitude and longitude:"
+msgstr "1. Procurar latitude e longitude:"
+
+#: PlaceCompletion/placecompletion.glade:554
+msgid "Search in:"
+msgstr "Procurar em:"
+
+#: PlaceCompletion/placecompletion.glade:566
+msgid "Select A File"
+msgstr "Seleccione um ficheiro"
+
+#: PlaceCompletion/placecompletion.glade:579
+msgid "Parse as:"
+msgstr "Analisar como:"
+
+#: PlaceCompletion/placecompletion.glade:619
+msgid "2. Conversion of existing title or position:"
+msgstr "2. Conversão de título ou posição existentes:"
+
+#: PlaceCompletion/placecompletion.glade:649
+msgid "Change title into:"
+msgstr "Alterar título para:"
+
+#: PlaceCompletion/placecompletion.glade:664
+msgid "Convert lat/lon as:"
+msgstr "Converter lat/lon para:"
+
+#: PlaceCompletion/placecompletion.glade:701
+msgid ""
+"Or define a simple\n"
+"title format:"
+msgstr ""
+"Ou defina um formato de\n"
+"título simples:"
+
+#: PlaceCompletion/placecompletion.glade:730
+msgid ""
+"Available variables: city, street, locality, parish, county, state, country, "
+"postal_code"
+msgstr ""
+"Variáveis disponíveis: cidade, rua, localidade, paróquia, concelho, "
+"distrito, país, código_postal"
+
+#: PlaceCompletion/placecompletion.glade:820
+msgid ""
+"Delete to delete a row, Double-click on the row to edit place with changes "
+"pre-entered, \n"
+"Press Tab on a row or Google Maps button to see place on a map. Press Apply "
+"to do all changes automatically"
+msgstr ""
+"Delete para eliminar a linha, duplo clique para editar o local com entradas "
+"pré-inseridas,\n"
+"Tab ou botão GoogleMaps para ver o local no mapa. Clique em Aplicar para "
+"alterar tudo automaticamente."
