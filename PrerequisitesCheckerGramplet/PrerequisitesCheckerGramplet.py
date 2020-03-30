@@ -857,15 +857,14 @@ class PrerequisitesCheckerGramplet(Gramplet):
         # test for enchant
         try:
             from ctypes import cdll, c_char_p
-            enchant = cdll.LoadLibrary("libenchant")
+            try:
+                enchant = cdll.LoadLibrary("libenchant")
+            except FileNotFoundError:
+                enchant = cdll.LoadLibrary("libenchant-2")
             enchant_ver_call = enchant.enchant_get_version
             enchant_ver_call.restype = c_char_p
             enchant_result = enchant_ver_call().decode("utf-8")
-            #import enchant
-            #print("Success enchant found")
-            #enchant_result = "Installed"
         except Exception:
-            #print("enchant not found")
             enchant_result = "Not found"
 
         if gtkspell_ver_tp >= GTKSPELL_MIN_VER:
