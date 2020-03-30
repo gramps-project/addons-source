@@ -25,7 +25,7 @@
 #
 #-------------------------------------------------------------------------
 import math
-from time import clock
+# from time import perf_counter
 
 #------------------------------------------------------------------------
 #
@@ -152,7 +152,7 @@ class PersonNode(Node):
         self.width = width / 1024
 
         # Set the name background depending on the sex
-        cr.set_source_rgb(*self.bg_color)
+        Gdk.cairo_set_source_rgba(cr, self.bg_color)
         cr.rectangle(self.x + 1, self.y + 1, self.width - 2, self.height - 2)
         cr.fill()
 
@@ -165,7 +165,7 @@ class PersonNode(Node):
         cr.line_to(self.x + self.width, self.y + self.height)
         cr.stroke()
 
-        cr.set_source_rgb(*self.fg_color)
+        Gdk.cairo_set_source_rgba(cr, self.fg_color)
         cr.move_to(self.x, self.y)
         PangoCairo.show_layout(cr, layout)
 
@@ -186,11 +186,11 @@ class FamilyNode(Node):
         self.children.append(person)
 
     def draw(self, canvas, cr):
-        cr.set_source_rgb(*self.bg_color)
+        Gdk.cairo_set_source_rgba(cr, self.bg_color)
         cr.rectangle(self.x, self.y, self.width, self.height)
         cr.fill()
 
-        cr.set_source_rgb(*self.fg_color)
+        Gdk.cairo_set_source_rgba(cr, self.fg_color)
         cr.rectangle(self.x, self.y, self.width, self.height)
         cr.stroke()
 
@@ -199,7 +199,7 @@ class FamilyNode(Node):
         layout.set_font_description(font)
         width, height = layout.get_size()
 
-        cr.set_source_rgb(*self.fg_color)
+        Gdk.cairo_set_source_rgba(cr, self.fg_color)
         cr.move_to(self.x, self.y)
         PangoCairo.show_layout(cr, layout)
 
@@ -270,7 +270,8 @@ class QuiltView(NavigationView):
         contains the interface. This containter will be inserted into
         a gtk.ScrolledWindow page.
         """
-        self.scrolledwindow = Gtk.ScrolledWindow(None, None)
+        self.scrolledwindow = Gtk.ScrolledWindow(hadjustment=None,
+                                                 vadjustment=None)
         self.scrolledwindow.set_policy(Gtk.PolicyType.AUTOMATIC,
                                        Gtk.PolicyType.AUTOMATIC)
 
@@ -293,9 +294,11 @@ class QuiltView(NavigationView):
 
         self.preview_rect = None
 
-        self.vbox = Gtk.Box(False, 4, orientation=Gtk.Orientation.VERTICAL)
+        self.vbox = Gtk.Box(homogeneous=False, spacing=4,
+                            orientation=Gtk.Orientation.VERTICAL)
         self.vbox.set_border_width(4)
-        hbox = Gtk.Box(False, 4, orientation=Gtk.Orientation.HORIZONTAL)
+        hbox = Gtk.Box(homogeneous=False, spacing=4,
+                       orientation=Gtk.Orientation.HORIZONTAL)
         self.vbox.pack_start(hbox, False, False, 0)
 
         self.name_store = Gtk.ListStore(str, str)
@@ -306,7 +309,7 @@ class QuiltView(NavigationView):
         self.name_combo.set_entry_text_column(0)
         hbox.pack_start(self.name_combo, False, False, 0)
 
-        clear = Gtk.Button(_("Clear"))
+        clear = Gtk.Button(label=_("Clear"))
         clear.set_tooltip_text(
             _("Clear the entry field in the name selection box."))
         clear.connect('clicked', self._erase_name_selection)
@@ -648,7 +651,7 @@ class QuiltView(NavigationView):
 
     def read_data(self, handle):
 
-        c = clock()
+        # c = perf_counter()
         people = {}
         families = {}
         layers = {}
@@ -697,20 +700,14 @@ class QuiltView(NavigationView):
                 else:
                     fill, color = color_graph_box(True, sex)
                     dead = ' '
-                color = Gdk.color_parse(color)
-                fg_color = (float(color.red / 65535.0),
-                            float(color.green / 65535.0),
-                            float(color.blue / 65535.0))
+                fg_color = Gdk.RGBA()
+                Gdk.RGBA.parse(fg_color, color)
                 if home_person and handle == home_person:
-                    color = Gdk.color_parse(self.home_person_color)
-                    bg_color = (float(color.red / 65535.0),
-                                float(color.green / 65535.0),
-                                float(color.blue / 65535.0))
+                    bg_color = Gdk.RGBA()
+                    Gdk.RGBA.parse(bg_color, self.home_person_color)
                 else:
-                    color = Gdk.color_parse(fill)
-                    bg_color = (float(color.red / 65535.0),
-                                float(color.green / 65535.0),
-                                float(color.blue / 65535.0))
+                    bg_color = Gdk.RGBA()
+                    Gdk.RGBA.parse(bg_color, fill)
 
                 people[handle] = PersonNode(handle, layer, name, sex, ident,
                                             fg_color, bg_color, dead)
@@ -731,14 +728,10 @@ class QuiltView(NavigationView):
                 rel_type = family.get_relationship()
                 ident = family.get_gramps_id()
                 fill, color = color_graph_family(family, self.dbstate)
-                color = Gdk.color_parse(color)
-                fg_color = (float(color.red / 65535.0),
-                            float(color.green / 65535.0),
-                            float(color.blue / 65535.0))
-                color = Gdk.color_parse(fill)
-                bg_color = (float(color.red / 65535.0),
-                            float(color.green / 65535.0),
-                            float(color.blue / 65535.0))
+                fg_color = Gdk.RGBA()
+                Gdk.RGBA.parse(fg_color, color)
+                bg_color = Gdk.RGBA()
+                Gdk.RGBA.parse(bg_color, fill)
                 families[handle] = FamilyNode(handle, layer, rel_type,
                                               ident, fg_color, bg_color)
 
@@ -803,7 +796,7 @@ class QuiltView(NavigationView):
             return
         transparency = self._config.get('interface.quiltview-path-transparency')
         transparency = transparency / 10
-        #c = clock()
+        # c = perf_counter()
 
         cr.scale(self.scale, self.scale)
 
@@ -910,11 +903,10 @@ class QuiltView(NavigationView):
         for path in self.paths:
             x1, y1, x2, y2, color_name = path
             if color_name is not None:
-                color = Gdk.color_parse(color_name)
-                cr.set_source_rgba(float(color.red / 65535.0),
-                                   float(color.green / 65535.0),
-                                   float(color.blue / 65535.0),
-                                   transparency)
+                fg_color = Gdk.RGBA()
+                Gdk.RGBA.parse(fg_color, color_name)
+                fg_color.alpha = transparency
+                Gdk.cairo_set_source_rgba(cr, fg_color)
             else:
                 cr.set_source_rgba(0.90, 0.20, 0.20, transparency)
             cr.set_line_width(HEIGHT/2)
@@ -925,7 +917,7 @@ class QuiltView(NavigationView):
         self.canvas.set_size_request((x + BORDER) * self.scale,
                                      (y + BORDER) * self.scale)
 
-        #print ('draw time', clock()- c)
+        # print ('draw time', perf_counter()- c)
         if self.on_draw_ok == 0:
             self.on_draw_ok = 1 # We can now draw path lines
 
