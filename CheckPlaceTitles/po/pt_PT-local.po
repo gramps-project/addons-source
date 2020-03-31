@@ -1,112 +1,106 @@
-# Portuguese (Portugal) translation for Gramps
-# $Id$
+# Addon Check Place Titles for Gramps.
+# Copyright (C) 2020 Gramps
 # This file is distributed under the same license as the Gramps package.
-# Tradução em Português (Europeu) do GRAMPS
-# Copyright (C) 2002 Free Software Foundation, Inc.
-# Marcos Bedinelli <bedinelli@sourceforge.net>, 2002-2006.
-# Luiz Gonzaga dos Santos Filho <lfilho@gmail.com>, 2007-2007.
-# lcc <lcc@6zap.com>, 2009-2009.
-# Frederico Muñoz <fsmunoz@gmail.com>, 2010-201, 2013.
+# Pedro Albuquerque <pmra@protonmail.com>, 2020.
 msgid ""
 msgstr ""
-"Project-Id-Version: GRAMPS 4.0\n"
+"Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-12 14:42+0100\n"
-"PO-Revision-Date: 2013-03-03 10:02+0100\n"
-"Last-Translator: \n"
-"Language-Team: Portuguese <>\n"
+"POT-Creation-Date: 2019-01-04 18:55-0600\n"
+"PO-Revision-Date: 2020-03-29 11:39Hora de Verão de GMT\n"
+"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"Language-Team: Pedro Albuquerque\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Emacs PO mode, version 2.2 (GNU Emacs 24.2.1)\n"
+"X-Generator: Geany / PoHelper 1.36\n"
 
 #: CheckPlaceTitles/checkplacetitles.gpr.py:28
 msgid "Check Place Titles"
-msgstr ""
+msgstr "Verificar títulos de locais"
 
 #: CheckPlaceTitles/checkplacetitles.gpr.py:29
 msgid "Check place titles"
-msgstr ""
+msgstr "Verificar títulos de locais"
 
 #: CheckPlaceTitles/checkplacetitles.py:56
 msgid "manual|Check_place_titles"
-msgstr ""
+msgstr "Verificar_títulos_de_locais"
 
 #: CheckPlaceTitles/checkplacetitles.py:71
 msgid "Check Place title"
-msgstr ""
+msgstr "Verificar título de local"
 
 #: CheckPlaceTitles/checkplacetitles.py:86
 msgid "Checking Place Titles"
-msgstr "Verificando os nomes dos locais"
+msgstr "A verificar títulos de locais"
 
-#: CheckPlaceTitles/checkplacetitles.py:87
+#: CheckPlaceTitles/checkplacetitles.py:88
 msgid "Looking for place fields"
-msgstr "Procurando os campos dos locais"
+msgstr "A procurar campos de locais"
 
-#: CheckPlaceTitles/checkplacetitles.py:103
+#: CheckPlaceTitles/checkplacetitles.py:107
 msgid "Differences"
-msgstr ""
+msgstr "Diferenças"
 
-#: CheckPlaceTitles/checkplacetitles.py:109
+#: CheckPlaceTitles/checkplacetitles.py:113
 msgid "No need modifications"
-msgstr ""
+msgstr "Não precisa de alterações"
 
-#: CheckPlaceTitles/checkplacetitles.py:110
+#: CheckPlaceTitles/checkplacetitles.py:114
 msgid "No changes need."
-msgstr ""
+msgstr "Não precisa de alterações."
 
-#: CheckPlaceTitles/checkplacetitles.py:139
+#: CheckPlaceTitles/checkplacetitles.py:143
 msgid "Select"
-msgstr "Selecionar"
-
-#: CheckPlaceTitles/checkplacetitles.py:142
-#, fuzzy
-msgid "Database"
-msgstr "Todo a base de dados"
+msgstr "Seleccionar"
 
 #: CheckPlaceTitles/checkplacetitles.py:146
+msgid "Database"
+msgstr "Base de dados"
+
+#: CheckPlaceTitles/checkplacetitles.py:150
 msgid "Display"
 msgstr "Mostrar"
 
-#: CheckPlaceTitles/checkplacetitles.py:156
+#: CheckPlaceTitles/checkplacetitles.py:160
 msgid "Building display"
-msgstr "Construindo a apresentação"
+msgstr "A construir a vista"
 
-#: CheckPlaceTitles/checkplacetitles.py:185
+#: CheckPlaceTitles/checkplacetitles.py:189
 msgid "Legacy place"
-msgstr ""
+msgstr "Local antigo"
 
-#: CheckPlaceTitles/checkplacetitles.py:199
+#: CheckPlaceTitles/checkplacetitles.py:203
 msgid "Modify Place titles"
-msgstr ""
+msgstr "Modificar títulos de locais"
 
-#: CheckPlaceTitles/checkplacetitles.py:222
+#: CheckPlaceTitles/checkplacetitles.py:226
 msgid "Place titles"
-msgstr ""
+msgstr "Títulos de locais"
 
-#: CheckPlaceTitles/checkplacetitles.glade.h:1
+#: CheckPlaceTitles/checkplacetitles.glade:56
 msgid "Remove content of place title field if it does not match"
-msgstr ""
+msgstr "Remover conteúdo do campo de título se não corresponder"
 
-#: CheckPlaceTitles/checkplacetitles.glade.h:2
+#: CheckPlaceTitles/checkplacetitles.glade:74
 msgid "Copy content of place title field to a new note."
-msgstr ""
+msgstr "Copiar conteúdo do campo de título para uma nova nota."
 
-#: CheckPlaceTitles/checkplacetitles.glade.h:3
+#: CheckPlaceTitles/checkplacetitles.glade:87
 msgid "Mark"
-msgstr "Marca"
+msgstr "Marcar"
 
-#: CheckPlaceTitles/checkplacetitles.glade.h:4
+#: CheckPlaceTitles/checkplacetitles.glade:91
 msgid "Attach a tag on selected places."
-msgstr ""
+msgstr "Anexar uma etiqueta nos locais seleccionados."
 
-#: CheckPlaceTitles/checkplacetitles.glade.h:5
+#: CheckPlaceTitles/checkplacetitles.glade:150
 msgid "_Accept changes and close"
-msgstr "_Aceitar as alterações e fechar"
+msgstr "_Aceitar alterações e fechar"
 
-#: CheckPlaceTitles/checkplacetitles.glade.h:6
+#: CheckPlaceTitles/checkplacetitles.glade:177
 msgid "column"
-msgstr ""
+msgstr "coluna"
