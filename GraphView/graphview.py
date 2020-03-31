@@ -34,6 +34,7 @@
 #
 #-------------------------------------------------------------------------
 import os
+import logging
 from re import MULTILINE, findall
 from xml.parsers.expat import ParserCreate
 import string
@@ -137,6 +138,7 @@ class GraphView(NavigationView):
         ('interface.graphview-show-avatars', True),
         ('interface.graphview-show-full-dates', False),
         ('interface.graphview-show-places', False),
+        ('interface.graphview-place-format', 0),
         ('interface.graphview-show-lines', 1),
         ('interface.graphview-show-tags', False),
         ('interface.graphview-highlight-home-person', True),
@@ -402,6 +404,12 @@ class GraphView(NavigationView):
         self.show_places = entry == 'True'
         self.graph_widget.populate(self.get_active())
 
+    def cb_update_place_fmt(self, _client, _cnxn_id, _entry, _data):
+        """
+        Called when the configuration menu changes the place setting.
+        """
+        self.graph_widget.populate(self.get_active())
+
     def cb_update_show_tag_color(self, _client, _cnxn_id, entry, _data):
         """
         Called when the configuration menu changes the show tags setting.
@@ -539,6 +547,8 @@ class GraphView(NavigationView):
                              self.cb_update_show_full_dates)
         self._config.connect('interface.graphview-show-places',
                              self.cb_update_show_places)
+        self._config.connect('interface.graphview-place-format',
+                             self.cb_update_place_fmt)
         self._config.connect('interface.graphview-show-tags',
                              self.cb_update_show_tag_color)
         self._config.connect('interface.graphview-show-lines',
@@ -609,6 +619,17 @@ class GraphView(NavigationView):
         row += 1
         configdialog.add_checkbox(
             grid, _('Show places'), row, 'interface.graphview-show-places')
+        row += 1
+        # Place format:
+        p_fmts = [(0, _("Default"))]
+        for (indx, fmt) in enumerate(place_displayer.get_formats()):
+            p_fmts.append((indx + 1, fmt.name))
+        active = self._config.get('interface.graphview-place-format')
+        if active >= len(p_fmts):
+            active = 1
+        configdialog.add_combo(grid, _('Place format'), row,
+                               'interface.graphview-place-format',
+                               p_fmts, setactive=active)
         row += 1
         configdialog.add_checkbox(
             grid, _('Show tags'), row, 'interface.graphview-show-tags')
@@ -2095,6 +2116,8 @@ class DotSvgGenerator(object):
             'interface.graphview-show-full-dates')
         self.show_places = self.view._config.get(
             'interface.graphview-show-places')
+        self.place_format = self.view._config.get(
+            'interface.graphview-place-format') - 1
         self.show_tag_color = self.view._config.get(
             'interface.graphview-show-tags')
         spline = self.view._config.get('interface.graphview-show-lines')
@@ -2268,7 +2291,7 @@ class DotSvgGenerator(object):
                              stdout=PIPE).communicate(input=dot_data)[0]
         return svg_data
 
-    def set_current_list(self, active_person):
+    def set_current_list(self, active_person, recurs_list=None):
         """
         Get the path from the active person to the home person.
         Select ancestors.
@@ -2276,23 +2299,32 @@ class DotSvgGenerator(object):
         if not active_person:
             return False
         person = self.database.get_person_from_handle(active_person)
+        if recurs_list is None:
+            recurs_list = set()  # make a recursion check list (actually a set)
+        # see if we have a recursion (database loop)
+        elif active_person in recurs_list:
+            logging.warning(_("Relationship loop detected"))
+            return False
+        recurs_list.add(active_person)  # record where we have been for check
         if person == self.home_person:
             self.current_list.append(active_person)
             return True
         else:
             for fam_handle in person.get_parent_family_handle_list():
                 family = self.database.get_family_from_handle(fam_handle)
-                if self.set_current_list(family.get_father_handle()):
+                if self.set_current_list(family.get_father_handle(),
+                                         recurs_list=recurs_list):
                     self.current_list.append(active_person)
                     self.current_list.append(fam_handle)
                     return True
-                if self.set_current_list(family.get_mother_handle()):
+                if self.set_current_list(family.get_mother_handle(),
+                                         recurs_list=recurs_list):
                     self.current_list.append(active_person)
                     self.current_list.append(fam_handle)
                     return True
         return False
 
-    def set_current_list_desc(self, active_person):
+    def set_current_list_desc(self, active_person, recurs_list=None):
         """
         Get the path from the active person to the home person.
         Select children.
@@ -2300,6 +2332,13 @@ class DotSvgGenerator(object):
         if not active_person:
             return False
         person = self.database.get_person_from_handle(active_person)
+        if recurs_list is None:
+            recurs_list = set()  # make a recursion check list (actually a set)
+        # see if we have a recursion (database loop)
+        elif active_person in recurs_list:
+            logging.warning(_("Relationship loop detected"))
+            return False
+        recurs_list.add(active_person)  # record where we have been for check
         if person == self.home_person:
             self.current_list.append(active_person)
             return True
@@ -2307,7 +2346,8 @@ class DotSvgGenerator(object):
             for fam_handle in person.get_family_handle_list():
                 family = self.database.get_family_from_handle(fam_handle)
                 for child in family.get_child_ref_list():
-                    if self.set_current_list_desc(child.ref):
+                    if self.set_current_list_desc(child.ref,
+                                                  recurs_list=recurs_list):
                         self.current_list.append(active_person)
                         self.current_list.append(fam_handle)
                         return True
@@ -2901,7 +2941,8 @@ class DotSvgGenerator(object):
             empty string
         """
         if event:
-            place_title = place_displayer.display_event(self.database, event)
+            place_title = place_displayer.display_event(self.database, event,
+                                                        fmt=self.place_format)
             date_object = event.get_date_object()
             date = ''
             place = ''
