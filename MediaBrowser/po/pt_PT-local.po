@@ -1,4 +1,4 @@
-# Addon ExportProlog for Gramps.
+# Addon MediaBrowser for Gramps.
 # Copyright (C) 2020 Gramps
 # This file is distributed under the same license as the gramps package.
 # Pedro Albuquerque <pmra@protonmail.com>, 2020.
@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-07 16:28-0500\n"
-"PO-Revision-Date: 2020-04-01 07:39Hora de Verão de GMT\n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2020-04-01 07:27Hora de Verão de GMT\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Pedro Albuquerque\n"
 "Language: pt\n"
@@ -17,10 +17,18 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Geany / PoHelper 1.36\n"
 
-#: ExportProlog/ExportProlog.gpr.py:3
-msgid "Prolog Export"
-msgstr "Exportação de prólogo"
+#: MediaBrowser/MediaBrowser.gpr.py:30
+msgid "Media Browser"
+msgstr "Navegador de multimédia"
 
-#: ExportProlog/ExportProlog.gpr.py:4
-msgid "Exports data into a Prolog fact format.  Data is in Unicode (utf-8)"
-msgstr "Exporta dados num formato de prólogo, em Unicode (UTF-8)."
+#: MediaBrowser/MediaBrowser.gpr.py:31
+msgid "Gramplet showing details of a person"
+msgstr "Gramplet que mostra os detalhes de um indivíduo"
+
+#: MediaBrowser/MediaBrowser.gpr.py:38
+msgid "Browser"
+msgstr "Navegador"
+
+#: MediaBrowser/MediaBrowser.py:53
+msgid "Object"
+msgstr "Objecto"

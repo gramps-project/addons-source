@@ -1,4 +1,4 @@
-# Addon ExportProlog for Gramps.
+# Addon libwebconnect for Gramps.
 # Copyright (C) 2020 Gramps
 # This file is distributed under the same license as the gramps package.
 # Pedro Albuquerque <pmra@protonmail.com>, 2020.
@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-07 16:28-0500\n"
-"PO-Revision-Date: 2020-04-01 07:39Hora de Verão de GMT\n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2020-04-01 07:45Hora de Verão de GMT\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Pedro Albuquerque\n"
 "Language: pt\n"
@@ -17,10 +17,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Geany / PoHelper 1.36\n"
 
-#: ExportProlog/ExportProlog.gpr.py:3
-msgid "Prolog Export"
-msgstr "Exportação de prólogo"
-
-#: ExportProlog/ExportProlog.gpr.py:4
-msgid "Exports data into a Prolog fact format.  Data is in Unicode (utf-8)"
-msgstr "Exporta dados num formato de prólogo, em Unicode (UTF-8)."
+#: libwebconnect/libwebconnect.gpr.py:10
+msgid "Library for web site collections"
+msgstr "Biblioteca para colecções em páginas web"

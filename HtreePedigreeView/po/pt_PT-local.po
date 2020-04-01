@@ -1,0 +1,156 @@
+# Addon H-Tree for Gramps.
+# Copyright (C) 2020 Gramps
+# This file is distributed under the same license as the gramps package.
+# Pedro Albuquerque <pmra@protonmail.com>, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps51\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-08-22 15:51-0500\n"
+"PO-Revision-Date: 2020-04-01 06:05Hora de Verão de GMT\n"
+"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"Language-Team: Pedro Albuquerque\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Geany / PoHelper 1.36\n"
+
+#: HtreePedigreeView/HtreePedigreeView.gpr.py:41
+msgid "H-Tree Pedigree"
+msgstr "Costados H-Tree"
+
+#: HtreePedigreeView/HtreePedigreeView.gpr.py:42
+msgid "Charts"
+msgstr "Gráficos"
+
+#: HtreePedigreeView/HtreePedigreeView.gpr.py:43
+msgid ""
+"The view shows a space-efficient pedigree with ancestors of the selected "
+"person"
+msgstr ""
+"Mostra um espaço de costados eficiente com os antepassados do indivíduo "
+"seleccionado"
+
+#: HtreePedigreeView/HtreePedigreeView.py:83
+msgid "short for born|b."
+msgstr "n."
+
+#: HtreePedigreeView/HtreePedigreeView.py:84
+msgid "short for died|d."
+msgstr "f."
+
+#: HtreePedigreeView/HtreePedigreeView.py:85
+msgid "short for baptized|bap."
+msgstr "bap."
+
+#: HtreePedigreeView/HtreePedigreeView.py:86
+msgid "short for christened|chr."
+msgstr "bap."
+
+#: HtreePedigreeView/HtreePedigreeView.py:87
+msgid "short for buried|bur."
+msgstr "fun."
+
+#: HtreePedigreeView/HtreePedigreeView.py:88
+msgid "short for cremated|crem."
+msgstr "crem."
+
+#: HtreePedigreeView/HtreePedigreeView.py:533
+msgid "H-tree Pedigree View"
+msgstr "Vista Costados H-Tree"
+
+#: HtreePedigreeView/HtreePedigreeView.py:681
+msgid "Organize Bookmarks"
+msgstr "Organizar favoritos"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1585
+msgid "Relationship loop detected"
+msgstr "Ciclo de parentesco detectado"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1586
+msgid "A person was found to be his/her own ancestor."
+msgstr "Encontrou-se um indivíduo que é ascendente de si próprio."
+
+#: HtreePedigreeView/HtreePedigreeView.py:1630
+msgid "Pre_vious"
+msgstr "_Anterior"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1631
+msgid "_Next"
+msgstr "Segui_nte"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1632
+msgid "_Home"
+msgstr "_Início"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1654
+msgid "Mouse scroll direction"
+msgstr "Direcção da roda do rato"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1658
+msgid "Top <-> Bottom"
+msgstr "Cima <-> Baixo"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1665
+msgid "Left <-> Right"
+msgstr "Esquerda <-> Direita"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1683
+msgid "About H-Tree"
+msgstr "Acerca do H-Tree"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1694
+msgid "_Add"
+msgstr "_Adicionar"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1729
+#: HtreePedigreeView/HtreePedigreeView.py:1957
+msgid "_Edit"
+msgstr "_Editar"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1734
+#: HtreePedigreeView/HtreePedigreeView.py:1962
+msgid "_Copy"
+msgstr "_Copiar"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1744
+msgid "Spouses"
+msgstr "Cônjuges"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1778
+msgid "Siblings"
+msgstr "Irmãos"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1820
+msgid "Children"
+msgstr "Filhos"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1857
+msgid "Parents"
+msgstr "Pais"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1894
+msgid "Add New Parents..."
+msgstr "Adicionar novos pais..."
+
+#: HtreePedigreeView/HtreePedigreeView.py:1905
+msgid "Related"
+msgstr "Relacionados"
+
+#: HtreePedigreeView/HtreePedigreeView.py:2089
+msgid "Show images"
+msgstr "Mostrar imagens"
+
+#: HtreePedigreeView/HtreePedigreeView.py:2098
+msgid "Show tags"
+msgstr "Mostrar etiquetas"
+
+#: HtreePedigreeView/HtreePedigreeView.py:2115
+msgid "Tree size"
+msgstr "Tamanho da árvore"
+
+#: HtreePedigreeView/HtreePedigreeView.py:2119
+msgid "Layout"
+msgstr "Disposição"
