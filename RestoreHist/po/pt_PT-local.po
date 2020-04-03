@@ -1,0 +1,32 @@
+# Addon RestoreHist for Gramps.
+# Copyright (C) 2020 Gramps
+# This file is distributed under the same license as the gramps package.
+# Pedro Albuquerque <pmra@protonmail.com>, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps51\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2020-04-03 08:23+0100\n"
+"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"Language-Team: Pedro Albuquerque\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.3\n"
+
+#: RestoreHist/restorehist.gpr.py:29
+msgid "Restart where you were last working"
+msgstr "Recomeçar o trabalho onde estava"
+
+#: RestoreHist/restorehist.gpr.py:30
+msgid ""
+"This addon causes Gramps to restart on the same view and object where Gramps "
+"was previously closed.  It adds no new menus or Gramplets, but allows the "
+"last six objects visited to be found via the 'Go' menu."
+msgstr ""
+"Esta extensão faz com que o Gramps recomece na mesma vista e objecto em que "
+"estava quando fechou o Gramps. Não adiciona menus nem gramplets, mas permite "
+"encontrar os últimos seis objectos visitados através do menu Ir."

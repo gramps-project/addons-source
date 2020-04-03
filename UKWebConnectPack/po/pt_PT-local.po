@@ -1,4 +1,4 @@
-# Addon NLWebConnectPack for Gramps.
+# Addon UKWebConnectPack for Gramps.
 # Copyright (C) 2020 Gramps
 # This file is distributed under the same license as the gramps package.
 # Pedro Albuquerque <pmra@protonmail.com>, 2020.
@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2020-04-03 11:37Hora de Verão de GMT\n"
+"PO-Revision-Date: 2020-04-03 11:26Hora de Verão de GMT\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Pedro Albuquerque\n"
 "Language: pt\n"
@@ -19,19 +19,19 @@ msgstr ""
 
 #: UKWebConnectPack/UKWebPack.gpr.py:10
 msgid "UK Web Connect Pack"
-msgstr "NL Web Connect Pack"
+msgstr "UK Web Connect Pack"
 
 #: UKWebConnectPack/UKWebPack.gpr.py:11
 msgid "Collection of Web sites for the UK (requires libwebconnect)"
-msgstr "Colecção de páginas web para NL (requer libwebconnect)"
+msgstr "Colecção de páginas web para UK (requer libwebconnect)"
 
 #: UKWebConnectPack/UKWebPack.py:33
 msgid "UK Google"
-msgstr "NL Google"
+msgstr "UK Google"
 
 #: UKWebConnectPack/UKWebPack.py:34
 msgid "British, UK, and Ireland"
-msgstr "Holanda"
+msgstr "Inglaterra, UK e Irlanda"
 
 #: UKWebConnectPack/UKWebPack.py:35
 msgid "FamilySearch.org"

@@ -1,0 +1,201 @@
+# Addon RepositoriesReport for Gramps.
+# Copyright (C) 2020 Gramps
+# This file is distributed under the same license as the gramps package.
+# Pedro Albuquerque <pmra@protonmail.com>, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps51\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2020-04-03 08:20Hora de Verão de GMT\n"
+"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"Language-Team: Pedro Albuquerque\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Geany / PoHelper 1.36\n"
+
+#: RepositoriesReport/RepositoriesReport.gpr.py:25
+msgid "Repositories Report Options"
+msgstr "Opções do relatório de repositórios"
+
+#: RepositoriesReport/RepositoriesReport.gpr.py:26
+#: RepositoriesReport/RepositoriesReport.gpr.py:43
+msgid "Produces a textual repositories report"
+msgstr "Produz um relatório textual dos repositórios"
+
+#: RepositoriesReport/RepositoriesReport.gpr.py:42
+#: RepositoriesReport/RepositoriesReport.py:80
+#: RepositoriesReport/RepositoriesReportAlt.py:139
+msgid "Repositories Report"
+msgstr "Relatório de repositórios"
+
+#: RepositoriesReport/RepositoriesReport.py:151
+#: RepositoriesReport/RepositoriesReportAlt.py:409
+msgid "Report Options"
+msgstr "Opções do relatório"
+
+#: RepositoriesReport/RepositoriesReport.py:175
+#: RepositoriesReport/RepositoriesReportAlt.py:503
+msgid "The style used for the title of the report."
+msgstr "O estilo usado para o título do relatório."
+
+#: RepositoriesReport/RepositoriesReport.py:189
+#: RepositoriesReport/RepositoriesReportAlt.py:517
+msgid "The style used for repository title."
+msgstr "O estilo usado para o título do repositório."
+
+#: RepositoriesReport/RepositoriesReport.py:203
+#: RepositoriesReport/RepositoriesReportAlt.py:532
+msgid "The style used for each section."
+msgstr "O estilo usado para cada secção."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:202
+msgid "Address:"
+msgstr "Endereço:"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:263
+msgid "Author:"
+msgstr "Autor:"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:268
+msgid "Abbreviation:"
+msgstr "Abreviatura:"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:273
+msgid "Publication information:"
+msgstr "Informação de publicação:"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:278
+msgid "Data:"
+msgstr "Dados:"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:360
+msgid "Confidence level:"
+msgstr "Nível de confiança:"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:365
+msgid "Citation:"
+msgstr "Citação:"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:371
+msgid "Date:"
+msgstr "Data:"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:377
+msgid "Page:"
+msgstr "Página:"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:410
+msgid "Repositories"
+msgstr "Repositórios"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:411
+msgid "Sources"
+msgstr "Fontes"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:417
+msgid "Select using filter"
+msgstr "Seleccionar com filtro"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:418
+msgid "Selection with a filter"
+msgstr "Selecção com um filtro"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:430
+msgid "Include repository's urls"
+msgstr "Incluir URLs do repositório"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:431
+msgid "Whether to include urls on repository."
+msgstr "Se deve incluir URLs no repositório."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:434
+msgid "Include repository's address"
+msgstr "Incluir endereço do repositório"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:435
+msgid "Whether to include addresses on repository."
+msgstr "Se deve incluir os endereços no repositório."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:438
+msgid "Include source's author"
+msgstr "Incluir autor da fonte"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:439
+msgid "Whether to include author."
+msgstr "Se deve incluir o autor."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:442
+msgid "Include source's abbreviation"
+msgstr "Incluir abreviatura da fonte"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:443
+msgid "Whether to include abbreviation."
+msgstr "Se deve incluir a abreviatura."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:446
+msgid "Include source's publication information"
+msgstr "Incluir informação de publicação da fonte"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:447
+msgid "Whether to include publication information."
+msgstr "Se deve incluir informação de publicação."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:450
+msgid "Include source's data"
+msgstr "Incluir dados da fonte"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:451
+msgid "Whether to include keys and values."
+msgstr "Se deve incluir chaves e valores."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:454
+msgid "Include notes"
+msgstr "Incluir notas"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:455
+msgid "Whether to include notes on repositories and sources."
+msgstr "Se deve incluir notas em repositórios e fontes."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:458
+msgid "Include media"
+msgstr "Incluir multimédia"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:459
+msgid "Whether to include media."
+msgstr "Se deve incluir multimédia."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:462
+msgid "Include citations"
+msgstr "Incluir citações"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:463
+msgid "Whether to include citations on sources."
+msgstr "Se deve incluir citações nas fontes."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:466
+msgid "Include private records"
+msgstr "Incluir registos privados"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:467
+msgid "Whether to include repositories and sources marked as private."
+msgstr "Se deve incluir repositórios e fontes marcados como privados."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:470
+msgid "Display empty values"
+msgstr "Mostrar valores vazios"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:471
+msgid "Whether to include key records with empty values."
+msgstr "Se deve incluir registos com valores vazios."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:547
+msgid "The style used for child section."
+msgstr "O estilo usado para a secção-filho."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:559
+msgid "The basic style used for the note display."
+msgstr "O estilo básico  usado para mostrar a nota."
