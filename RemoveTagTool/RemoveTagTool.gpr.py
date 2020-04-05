@@ -1,7 +1,7 @@
 #
 # Gramps - a GTK+/GNOME based genealogy program
 #
-# Copyright (C) 2019  Matthias Kemmer <matt.familienforschung@gmail.com>
+# Copyright (C) 2019  Matthias Kemmer
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,11 +17,12 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
+"""Remove a tag from groups of people, events, etc."""
 
 register(TOOL,
-         id    = 'RemoveTagTool',
-         name  = _("Remove Tag Tool"),
-         description =  _("Remove a tag from groups of people, events, etc."),
+         id = 'RemoveTagTool',
+         name = _("Remove Tag Tool"),
+         description = _("Remove a tag from groups of people, events, etc."),
          version = '1.0.3',
          gramps_target_version = "5.1",
          status = STABLE,

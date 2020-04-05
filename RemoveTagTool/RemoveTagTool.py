@@ -16,6 +16,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
+"""Remove a tag from groups of people, events, etc."""
 
 # -------------------------------------------------
 #
@@ -50,13 +51,14 @@ class RemoveTagOptions(MenuToolOptions):
     The options are needed for processing tag removal in
     :class RemoveTagWindow:.
     """
+
     def __init__(self, name, person_id=None, dbstate=None):
         self.__db = dbstate.get_database()
         MenuToolOptions.__init__(self, name, person_id, dbstate)
 
     def get_enum_tag_name_list(self):
         """
-        Returns an enumerated tag name list.
+        Return an enumerated tag name list.
 
         :rtype: list
         """
@@ -81,9 +83,7 @@ class RemoveTagOptions(MenuToolOptions):
         return False  # Not empty
 
     def add_menu_options(self, menu):
-        """
-        Add the menu options for the Remove Tag Tool.
-        """
+        """Add the menu options for the Remove Tag Tool."""
         if self.is_db_empty():
             txt = [_("The Remove Tag Tool requires at least "
                      "one person, family and tag to execute.")]
@@ -99,7 +99,7 @@ class RemoveTagOptions(MenuToolOptions):
                     _("All Events")),
                    ("places", _("Place Filter"), "place_filter", 'Place',
                     _("All Places")),
-                   ("sources", _("Source Filter"), "scource_filter", 'Source',
+                   ("sources", _("Source Filter"), "source_filter", 'Source',
                     _("All Sources")),
                    ("citations", _("Citation Filter"), "cit_filter",
                     'Citation', _("All Citations")),
@@ -157,9 +157,7 @@ class RemoveTagOptions(MenuToolOptions):
         self.__tag_name.set_items(tag_list)
 
     def __update_options(self):
-        """
-        Turn availability on depending on user selection.
-        """
+        """Turn availability on depending on user selection."""
         self.__disable_all_options()
         value = self.__tag_category.get_value()
 
@@ -185,9 +183,7 @@ class RemoveTagOptions(MenuToolOptions):
             self.filter_dict['Note'].set_available(True)
 
     def __disable_all_options(self):
-        """
-        Turn all options off, except options 'category' and 'tag_name'
-        """
+        """Turn all options off, except options 'category' and 'tag_name.'"""
         self.__person_filter.set_available(False)
         self.__pid.set_available(False)
         self.__family_filter.set_available(False)
@@ -220,9 +216,7 @@ class RemoveTagOptions(MenuToolOptions):
         self.__update_filters()
 
     def __update_filters(self):
-        """
-        Update the filter list based on the selected person.
-        """
+        """Update the filter list based on the selected person."""
         gid = self.__pid.get_value()
         person = self.__db.get_person_from_gramps_id(gid)
         filter_list = ReportUtils.get_person_filters(person, False)
@@ -266,9 +260,7 @@ class RemoveTagOptions(MenuToolOptions):
         self.__update_family_filters()
 
     def __update_family_filters(self):
-        """
-        Update the filter list based on the selected family.
-        """
+        """Update the filter list based on the selected family."""
         gid = self.__fid.get_value()
         family = self.__db.get_family_from_gramps_id(gid)
         filter_list = ReportUtils.get_family_filters(self.__db, family, False)
@@ -293,29 +285,23 @@ class RemoveTagOptions(MenuToolOptions):
 #
 # ----------------------------------------------------------------------------
 class RemoveTagWindow(PluginWindows.ToolManagedWindowBatch):
+    """Remove Tag Tool."""
+
     def get_title(self):
-        """
-        Window title.
-        """
+        """Window title."""
         return _("Remove Tag Tool")
 
     def initial_frame(self):
-        """
-        Category tab title.
-        """
+        """Category tab title."""
         return _("Options")
 
     def run(self):
-        """
-        Main function running the Remove Tag Tool.
-        """
+        """Run function of Remove Tag Tool."""
         self.__db = self.dbstate.get_database()
         self.__check_menu_option()
 
     def __check_menu_option(self):
-        """
-        Checks if menu options are generated and the tool can execute.
-        """
+        """Check if menu options are generated and the tool can execute."""
         tag_category = self.__opt_by_name('category')
         if not tag_category:
             txt = ("The Remove Tag Tool requires at least one person, family "
@@ -326,7 +312,7 @@ class RemoveTagWindow(PluginWindows.ToolManagedWindowBatch):
 
     def __get_tag_info(self):
         """
-        Return a list of tuples
+        Return a list of tuples.
 
         :rtype: list
         :example tuple: (counter, tag_handle, tag_name)
@@ -341,7 +327,7 @@ class RemoveTagWindow(PluginWindows.ToolManagedWindowBatch):
 
     def __get_menu_options(self):
         """
-        A function selecting which category is processed.
+        Category selection.
 
         The category_value is selected by the user in the
         menu options for general category. This function is the interating
@@ -390,14 +376,14 @@ class RemoveTagWindow(PluginWindows.ToolManagedWindowBatch):
 
     def menu_opt_handling(self, category, option_name):
         """
-        General menu option handling
+        General menu option handling.
 
         :param category: name of the category
         :type category: string
         :param option_name: name of the menu option
         :type option_name: string
         """
-        iter_ = eval("self.dbstate.db.iter_{}_handles()".format(category))
+        iter_ = eval("self.db.iter_{}_handles()".format(category))
         filter_opt = self.__opt_by_name(option_name)
         filter_ = filter_opt.get_filter()
         objects = filter_.apply(self.dbstate.db, iter_)
@@ -405,21 +391,21 @@ class RemoveTagWindow(PluginWindows.ToolManagedWindowBatch):
 
     def __remove_from(self, objects, category):
         """
-        Remove the tag from objects of a selected category
+        Remove the tag from objects of a selected category.
 
         :param objects: object handles of a selected category
         :type objects: list
         :param category: name of a selected category
         :type category: string
         """
-        db = self.dbstate.db
         counter = 0
         with DbTxn(_("Remove Tag Tool"), self.db, batch=True) as self.trans:
             self.db.disable_signals()
             num = len(objects)
             self.progress.set_pass(_('Removing tags...'), num)
             for handle in objects:
-                Object = eval("db.get_{}_from_handle(handle)".format(category))
+                Object = eval("self.db.get_{}_from_handle(handle)"
+                              .format(category))
                 if self.tag_handle in Object.get_tag_list():
                     Object.remove_tag(self.tag_handle)
                     eval("self.db.commit_{}(Object, self.trans)"
