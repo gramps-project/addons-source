@@ -383,7 +383,7 @@ class RemoveTagWindow(PluginWindows.ToolManagedWindowBatch):
         :param option_name: name of the menu option
         :type option_name: string
         """
-        iter_ = eval("self.db.iter_{}_handles()".format(category))
+        iter_ = self.db.method('iter_%s_handles', category)()
         filter_opt = self.__opt_by_name(option_name)
         filter_ = filter_opt.get_filter()
         objects = filter_.apply(self.dbstate.db, iter_)
