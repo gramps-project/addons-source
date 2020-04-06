@@ -1,6 +1,5 @@
 """HTTP server serving data for the Topola application."""
 
-from concurrent.futures import ThreadPoolExecutor
 from hashlib import md5
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from os.path import splitext
@@ -20,7 +19,6 @@ class TopolaServer(Thread):
         Thread.__init__(self)
         self.port = port
         self.daemon = True
-        self.executor = ThreadPoolExecutor()
         self.lock = Lock()
 
     def set_database(self, database):
@@ -36,12 +34,12 @@ class TopolaServer(Thread):
 
       # Postprocess the exported file replacing referenced files with links
       # back to Gramps that will read these files.
-      content = open(exported_file, 'r').readlines()
+      content = open(exported_file, 'r', encoding='utf-8').readlines()
       gedcom_path = mkstemp()[1]
       # Store all served files in a map from requested URL path to path on
       # disk.
       file_map = {'/': gedcom_path}
-      gedcom_file = open(gedcom_path, 'w')
+      gedcom_file = open(gedcom_path, 'w', encoding='utf-8')
       for line in content:
         if line.startswith('1 FILE'):
           file_name = line[6:].strip()
