@@ -182,8 +182,12 @@ class DetailedDescendantBookReport(Report):
             empty_place = ""
 
         language = get_value('trans')
-        locale = self.set_locale(language)
+        # Set up to use the language from options
         self._locale = self.set_locale(language)
+        # Normally this is enough,  at least enough for Narrator, but we have
+        # some other local strings to add to the report.
+        add_trans = self._locale.get_addon_translator(__file__)
+        self._ = add_trans.sgettext
 
         # Copy the global NameDisplay so that we don't change application
         # defaults.
