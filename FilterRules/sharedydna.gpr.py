@@ -20,7 +20,7 @@
 """Filter rule that matches people sharing same yDNA."""
 
 register(RULE,
-  id = 'shardedydna',
+  id = 'sharedydna',
   name = _("Descendants of <person> sharing yDNA with each other"),
   description = _("Matches descendants of a <person> sharing yDNA"),
   version = '1.0.0',
@@ -28,7 +28,7 @@ register(RULE,
   authors_email = ["matt.familienforschung@gmail.com"],
   gramps_target_version = '5.1',
   status = STABLE,
-  fname = "shardedydna.py",
+  fname = "sharedydna.py",
   ruleclass = 'SharedYDNA',  # must be rule class name
   namespace = 'Person',  # one of the primary object classes
   )
