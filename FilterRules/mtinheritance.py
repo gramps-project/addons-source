@@ -1,7 +1,7 @@
 #
 # Gramps - a GTK+/GNOME based genealogy program
 #
-# Copyright (C) 2020    Matthias Kemmer
+# Copyright (C) 2020  Matthias Kemmer
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,7 +17,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
-"""Filter rule that matches people sharing same mtDNA."""
+"""Matches descendants following mitochondrial inheritance patterns."""
 
 # -------------------------------------------------------------------------
 #
@@ -35,15 +35,16 @@ _ = _trans.gettext
 
 # -------------------------------------------------------------------------
 #
-# SharedMtDNA
+# MtChromInheritance
 #
 # -------------------------------------------------------------------------
-class SharedMtDNA(HasGrampsId):
-    """Filter rule that matches people sharing same mtDNA."""
+class MtChromInheritance(HasGrampsId):
+    """Matches descendants following mitochondrial inheritance patterns."""
 
     labels = [_('ID:')]
-    name = _('Descendants of <person> sharing mtDNA')
-    description = _("Matches descendants of <person> sharing mtDNA")
+    name = _('Mitochondrial inheritance of <person>')
+    description = _("Matches recorded descendants of person following"
+                    " mitochondrial inheritance patterns.")
     category = _("General filters")
 
     def prepare(self, db, user):
