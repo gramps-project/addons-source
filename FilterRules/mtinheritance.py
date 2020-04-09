@@ -45,7 +45,7 @@ class MtChromInheritance(HasGrampsId):
     name = _('Mitochondrial inheritance of <person>')
     description = _("Matches recorded descendants of person following"
                     " mitochondrial inheritance patterns.")
-    category = _("General filters")
+    category = _("Descendant filters")
 
     def prepare(self, db, user):
         """Prepare a reference list for the filter."""
