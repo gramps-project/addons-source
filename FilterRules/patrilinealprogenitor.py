@@ -43,7 +43,7 @@ class PatrilinealProgenitor(HasGrampsId):
 
     labels = [_('ID:')]
     name = _('Patrilineal progenitor of <person>')
-    category = _("General filters")
+    category = _("Ancestral filters")
     description = _("Matches the earliest recorded patrilineal "
                     "ancestor father.")
 
