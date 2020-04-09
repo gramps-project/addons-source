@@ -17,7 +17,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
-"""Earliest known paternal line father of a person filter rule."""
+"""Matches the earliest recorded patrilineal ancestor father."""
 
 # -------------------------------------------------------------------------
 #
@@ -35,17 +35,17 @@ _ = _trans.gettext
 
 # -------------------------------------------------------------------------
 #
-# EarliestPaternalFather Filter Rule
+# PatrilinealProgenitor Filter Rule
 #
 # -------------------------------------------------------------------------
-class EarliestPaternalFather(HasGrampsId):
-    """Earliest known paternal line father of a person filter rule."""
+class PatrilinealProgenitor(HasGrampsId):
+    """Matches the earliest recorded patrilineal ancestor father."""
 
     labels = [_('ID:')]
-    name = _('Earliest known paternal line father of <person>')
+    name = _('Patrilineal progenitor of <person>')
     category = _("General filters")
-    description = _("Matches the earliest known paternal line father"
-                    " of a person")
+    description = _("Matches the earliest recorded patrilineal "
+                    "ancestor father.")
 
     def prepare(self, db, user):
         """Prepare a reference list for the filter."""

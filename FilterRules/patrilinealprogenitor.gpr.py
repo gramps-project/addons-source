@@ -17,18 +17,18 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
-"""Earliest known paternal line father of a person filter rule."""
+"""Matches the earliest recorded patrilineal ancestor father."""
 
 register(RULE,
-  id = 'EarliestPaternalFather',
-  name = _("Earliest paternal line father of <person>"),
-  description = _("Matches the earliest paternal line father of a person"),
+  id = 'PatrilinealProgenitor',
+  name = _("Patrilineal progenitor of <person>"),
+  description = _("Matches the earliest recorded patrilineal ancestor father."),
   version = '1.0.0',
   authors = ["Matthias Kemmer"],
   authors_email = ["matt.familienforschung@gmail.com"],
   gramps_target_version = '5.1',
   status = STABLE,
-  fname = "EarliestPaternalFather.py",
-  ruleclass = 'EarliestPaternalFather',  # must be rule class name
+  fname = "patrilinealprogenitor.py",
+  ruleclass = 'PatrilinealProgenitor',  # must be rule class name
   namespace = 'Person',  # one of the primary object classes
   )
