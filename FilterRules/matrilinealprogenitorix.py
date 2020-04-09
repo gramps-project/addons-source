@@ -17,7 +17,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
-"""Earliest known maternal line mother of a person filter rule."""
+"""Matches the earliest recorded matrilineal ancestor mother."""
 
 # -------------------------------------------------------------------------
 #
@@ -35,17 +35,17 @@ _ = _trans.gettext
 
 # -------------------------------------------------------------------------
 #
-# EarliestMaternalMother Filter Rule
+# MatrilinealProgenitorix Filter Rule
 #
 # -------------------------------------------------------------------------
-class EarliestMaternalMother(HasGrampsId):
-    """Earliest known maternal line mother of a person filter rule."""
+class MatrilinealProgenitorix(HasGrampsId):
+    """Matches the earliest recorded matrilineal ancestor mother."""
 
     labels = [_('ID:')]
-    name = _('Earliest known maternal line mother of <person>')
+    name = _('Matrilineal progenitorix of <person>')
     category = _("General filters")
-    description = _("Matches the earliest known maternal line mother"
-                    " of a person")
+    description = _("Matches the earliest recorded matrilineal "
+                    "ancestor mother.")
 
     def prepare(self, db, user):
         """Prepare a reference list for the filter."""

@@ -17,18 +17,18 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
-"""Earliest known maternal line mother of a person filter rule."""
+"""Matches the earliest recorded matrilineal ancestor mother."""
 
 register(RULE,
-  id = 'EarliestMaternalMother',
-  name = _("Earliest maternal line mother of <person>"),
-  description = _("Matches the earliest maternal line mother of a person"),
+  id = 'MatrilinealProgenitorix',
+  name = _("Matrilineal progenitorix of <person>"),
+  description = _("Matches the earliest recorded matrilineal ancestor mother."),
   version = '1.0.0',
   authors = ["Matthias Kemmer"],
   authors_email = ["matt.familienforschung@gmail.com"],
   gramps_target_version = '5.1',
   status = STABLE,
-  fname = "EarliestMaternalMother.py",
-  ruleclass = 'EarliestMaternalMother',  # must be rule class name
+  fname = "matrilinealprogenitorix.py",
+  ruleclass = 'MatrilinealProgenitorix',  # must be rule class name
   namespace = 'Person',  # one of the primary object classes
   )
