@@ -45,7 +45,7 @@ class YChromInheritance(HasGrampsId):
     name = _('Y-chromsomal inheritance of <person>')
     description = _("Matches recorded descendants of person following "
                     "Y-chromsomal inheritance patterns.")
-    category = _("General filters")
+    category = _("Descendant filters")
 
     def prepare(self, db, user):
         """Prepare a reference list for the filter."""
