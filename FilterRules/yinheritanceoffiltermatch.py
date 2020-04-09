@@ -46,7 +46,7 @@ class YChromInheritanceFilterMatch(Rule):
     name = _("Y-chromsomal inheritance of <filter>")
     description = _("Matches recorded descendants of a filter result "
                     "following Y-chromsomal inheritance patterns.")
-    category = _("General filters")
+    category = _("Descendant filters")
 
     def prepare(self, db, user):
         """Prepare a reference list for the filter."""
