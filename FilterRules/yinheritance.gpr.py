@@ -17,18 +17,19 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
-"""Filter rule that matches people sharing same yDNA."""
+"""Matches descendants of person following Y-chrom inheritance patterns."""
 
 register(RULE,
-  id = 'sharedydna',
-  name = _("Descendants of <person> sharing yDNA with each other"),
-  description = _("Matches descendants of a <person> sharing yDNA"),
+  id = 'yinheritance',
+  name = _("Y-chromsomal inheritance of <person>"),
+  description = _("Matches recorded descendants of person following "
+                  "Y-chromsomal inheritance patterns."),
   version = '1.0.0',
   authors = ["Matthias Kemmer"],
   authors_email = ["matt.familienforschung@gmail.com"],
   gramps_target_version = '5.1',
   status = STABLE,
-  fname = "sharedydna.py",
-  ruleclass = 'SharedYDNA',  # must be rule class name
+  fname = "yinheritance.py",
+  ruleclass = 'YChromInheritance',  # must be rule class name
   namespace = 'Person',  # one of the primary object classes
   )
