@@ -1,7 +1,7 @@
 #
 # Gramps - a GTK+/GNOME based genealogy program
 #
-# Copyright (C) 2020       Matthias Kemmer
+# Copyright (C) 2020  Matthias Kemmer
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,18 +17,19 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
-"""Filter rule matching people sharing same mtDNA with filter match."""
+"""Matches descendants of a filter result following mitochondrial inheritance patterns."""
 
 register(RULE,
-  id = 'sharedmtdnafiltermatch',
-  name = _("Descendants of <filter> sharing mtDNA with each other"),
-  description = _("Matches descendants of a <filter> sharing mtDNA"),
+  id = 'mtinheritanceoffiltermatch',
+  name = _("Mitochondrial inheritance of <filter>"),
+  description = _("Matches recorded descendants of a filter result "
+                  "following mitochondrial inheritance patterns."),
   version = '1.0.0',
   authors = ["Matthias Kemmer"],
   authors_email = ["matt.familienforschung@gmail.com"],
   gramps_target_version = '5.1',
   status = STABLE,
-  fname = "sharedmtdnafiltermatch.py",
-  ruleclass = 'SharedMtDNAFilterMatch',  # must be rule class name
+  fname = "mtinheritanceoffiltermatch.py",
+  ruleclass = 'MtInheritanceFilterMatch',  # must be rule class name
   namespace = 'Person',  # one of the primary object classes
   )
