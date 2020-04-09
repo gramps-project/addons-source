@@ -43,7 +43,7 @@ class MatrilinealProgenitorix(HasGrampsId):
 
     labels = [_('ID:')]
     name = _('Matrilineal progenitorix of <person>')
-    category = _("General filters")
+    category = _("Ancestral filters")
     description = _("Matches the earliest recorded matrilineal "
                     "ancestor mother.")
 
