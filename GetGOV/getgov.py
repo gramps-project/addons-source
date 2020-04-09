@@ -44,7 +44,8 @@ from gi.repository import Gtk
 #------------------------------------------------------------------------
 from gramps.gen.plug import Gramplet
 from gramps.gen.db import DbTxn
-from gramps.gen.lib import Place, PlaceName, PlaceType, PlaceRef, Url, UrlType
+from gramps.gen.lib import (Place, PlaceName, PlaceType, PlaceRef,
+                            PlaceHierType, Url, UrlType)
 from gramps.gen.datehandler import parser
 from gramps.gen.config import config
 from gramps.gen.display.place import displayer as _pd
@@ -68,210 +69,211 @@ _ = _trans.gettext
 #------------------------------------------------------------------------
 
 ISO_CODE_LOOKUP = {
-"aar": "aa",
-"abk": "ab",
-"afr": "af",
-"aka": "ak",
-"alb": "sq",
-"amh": "am",
-"ara": "ar",
-"arg": "an",
-"arm": "hy",
-"asm": "as",
-"ava": "av",
-"ave": "ae",
-"aym": "ay",
-"aze": "az",
-"bak": "ba",
-"bam": "bm",
-"baq": "eu",
-"bel": "be",
-"ben": "bn",
-"bih": "bh",
-"bis": "bi",
-"bod": "bo",
-"bos": "bs",
-"bre": "br",
-"bul": "bg",
-"bur": "my",
-"cat": "ca",
-"ces": "cs",
-"cha": "ch",
-"che": "ce",
-"chi": "zh",
-"chu": "cu",
-"chv": "cv",
-"cor": "kw",
-"cos": "co",
-"cre": "cr",
-"cym": "cy",
-"cze": "cs",
-"dan": "da",
-"deu": "de",
-"div": "dv",
-"dut": "nl",
-"dzo": "dz",
-"ell": "el",
-"eng": "en",
-"epo": "eo",
-"est": "et",
-"eus": "eu",
-"ewe": "ee",
-"fao": "fo",
-"fas": "fa",
-"fij": "fj",
-"fin": "fi",
-"fra": "fr",
-"fre": "fr",
-"fry": "fy",
-"ful": "ff",
-"geo": "ka",
-"ger": "de",
-"gla": "gd",
-"gle": "ga",
-"glg": "gl",
-"glv": "gv",
-"gre": "el",
-"grn": "gn",
-"guj": "gu",
-"hat": "ht",
-"hau": "ha",
-"heb": "he",
-"her": "hz",
-"hin": "hi",
-"hmo": "ho",
-"hrv": "hr",
-"hun": "hu",
-"hye": "hy",
-"ibo": "ig",
-"ice": "is",
-"ido": "io",
-"iii": "ii",
-"iku": "iu",
-"ile": "ie",
-"ina": "ia",
-"ind": "id",
-"ipk": "ik",
-"isl": "is",
-"ita": "it",
-"jav": "jv",
-"jpn": "ja",
-"kal": "kl",
-"kan": "kn",
-"kas": "ks",
-"kat": "ka",
-"kau": "kr",
-"kaz": "kk",
-"khm": "km",
-"kik": "ki",
-"kin": "rw",
-"kir": "ky",
-"kom": "kv",
-"kon": "kg",
-"kor": "ko",
-"kua": "kj",
-"kur": "ku",
-"lao": "lo",
-"lat": "la",
-"lav": "lv",
-"lim": "li",
-"lin": "ln",
-"lit": "lt",
-"ltz": "lb",
-"lub": "lu",
-"lug": "lg",
-"mac": "mk",
-"mah": "mh",
-"mal": "ml",
-"mao": "mi",
-"mar": "mr",
-"may": "ms",
-"mkd": "mk",
-"mlg": "mg",
-"mlt": "mt",
-"mon": "mn",
-"mri": "mi",
-"msa": "ms",
-"mya": "my",
-"nau": "na",
-"nav": "nv",
-"nbl": "nr",
-"nde": "nd",
-"ndo": "ng",
-"nep": "ne",
-"nld": "nl",
-"nno": "nn",
-"nob": "nb",
-"nor": "no",
-"nya": "ny",
-"oci": "oc",
-"oji": "oj",
-"ori": "or",
-"orm": "om",
-"oss": "os",
-"pan": "pa",
-"per": "fa",
-"pli": "pi",
-"pol": "pl",
-"por": "pt",
-"pus": "ps",
-"que": "qu",
-"roh": "rm",
-"ron": "ro",
-"rum": "ro",
-"run": "rn",
-"rus": "ru",
-"sag": "sg",
-"san": "sa",
-"sin": "si",
-"slk": "sk",
-"slo": "sk",
-"slv": "sl",
-"sme": "se",
-"smo": "sm",
-"sna": "sn",
-"snd": "sd",
-"som": "so",
-"sot": "st",
-"spa": "es",
-"sqi": "sq",
-"srd": "sc",
-"srp": "sr",
-"ssw": "ss",
-"sun": "su",
-"swa": "sw",
-"swe": "sv",
-"tah": "ty",
-"tam": "ta",
-"tat": "tt",
-"tel": "te",
-"tgk": "tg",
-"tgl": "tl",
-"tha": "th",
-"tib": "bo",
-"tir": "ti",
-"ton": "to",
-"tsn": "tn",
-"tso": "ts",
-"tuk": "tk",
-"tur": "tr",
-"twi": "tw",
-"uig": "ug",
-"ukr": "uk",
-"urd": "ur",
-"uzb": "uz",
-"ven": "ve",
-"vie": "vi",
-"vol": "vo",
-"wel": "cy",
-"wln": "wa",
-"wol": "wo",
-"xho": "xh",
-"yid": "yi",
-"yor": "yo",
-"zha": "za",
-"zho": "zh",
-"zul": "zu"}
+    "aar": "aa",
+    "abk": "ab",
+    "afr": "af",
+    "aka": "ak",
+    "alb": "sq",
+    "amh": "am",
+    "ara": "ar",
+    "arg": "an",
+    "arm": "hy",
+    "asm": "as",
+    "ava": "av",
+    "ave": "ae",
+    "aym": "ay",
+    "aze": "az",
+    "bak": "ba",
+    "bam": "bm",
+    "baq": "eu",
+    "bel": "be",
+    "ben": "bn",
+    "bih": "bh",
+    "bis": "bi",
+    "bod": "bo",
+    "bos": "bs",
+    "bre": "br",
+    "bul": "bg",
+    "bur": "my",
+    "cat": "ca",
+    "ces": "cs",
+    "cha": "ch",
+    "che": "ce",
+    "chi": "zh",
+    "chu": "cu",
+    "chv": "cv",
+    "cor": "kw",
+    "cos": "co",
+    "cre": "cr",
+    "cym": "cy",
+    "cze": "cs",
+    "dan": "da",
+    "deu": "de",
+    "div": "dv",
+    "dut": "nl",
+    "dzo": "dz",
+    "ell": "el",
+    "eng": "en",
+    "epo": "eo",
+    "est": "et",
+    "eus": "eu",
+    "ewe": "ee",
+    "fao": "fo",
+    "fas": "fa",
+    "fij": "fj",
+    "fin": "fi",
+    "fra": "fr",
+    "fre": "fr",
+    "fry": "fy",
+    "ful": "ff",
+    "geo": "ka",
+    "ger": "de",
+    "gla": "gd",
+    "gle": "ga",
+    "glg": "gl",
+    "glv": "gv",
+    "gre": "el",
+    "grn": "gn",
+    "guj": "gu",
+    "hat": "ht",
+    "hau": "ha",
+    "heb": "he",
+    "her": "hz",
+    "hin": "hi",
+    "hmo": "ho",
+    "hrv": "hr",
+    "hun": "hu",
+    "hye": "hy",
+    "ibo": "ig",
+    "ice": "is",
+    "ido": "io",
+    "iii": "ii",
+    "iku": "iu",
+    "ile": "ie",
+    "ina": "ia",
+    "ind": "id",
+    "ipk": "ik",
+    "isl": "is",
+    "ita": "it",
+    "jav": "jv",
+    "jpn": "ja",
+    "kal": "kl",
+    "kan": "kn",
+    "kas": "ks",
+    "kat": "ka",
+    "kau": "kr",
+    "kaz": "kk",
+    "khm": "km",
+    "kik": "ki",
+    "kin": "rw",
+    "kir": "ky",
+    "kom": "kv",
+    "kon": "kg",
+    "kor": "ko",
+    "kua": "kj",
+    "kur": "ku",
+    "lao": "lo",
+    "lat": "la",
+    "lav": "lv",
+    "lim": "li",
+    "lin": "ln",
+    "lit": "lt",
+    "ltz": "lb",
+    "lub": "lu",
+    "lug": "lg",
+    "mac": "mk",
+    "mah": "mh",
+    "mal": "ml",
+    "mao": "mi",
+    "mar": "mr",
+    "may": "ms",
+    "mkd": "mk",
+    "mlg": "mg",
+    "mlt": "mt",
+    "mon": "mn",
+    "mri": "mi",
+    "msa": "ms",
+    "mya": "my",
+    "nau": "na",
+    "nav": "nv",
+    "nbl": "nr",
+    "nde": "nd",
+    "ndo": "ng",
+    "nep": "ne",
+    "nld": "nl",
+    "nno": "nn",
+    "nob": "nb",
+    "nor": "no",
+    "nya": "ny",
+    "oci": "oc",
+    "oji": "oj",
+    "ori": "or",
+    "orm": "om",
+    "oss": "os",
+    "pan": "pa",
+    "per": "fa",
+    "pli": "pi",
+    "pol": "pl",
+    "por": "pt",
+    "pus": "ps",
+    "que": "qu",
+    "roh": "rm",
+    "ron": "ro",
+    "rum": "ro",
+    "run": "rn",
+    "rus": "ru",
+    "sag": "sg",
+    "san": "sa",
+    "sin": "si",
+    "slk": "sk",
+    "slo": "sk",
+    "slv": "sl",
+    "sme": "se",
+    "smo": "sm",
+    "sna": "sn",
+    "snd": "sd",
+    "som": "so",
+    "sot": "st",
+    "spa": "es",
+    "sqi": "sq",
+    "srd": "sc",
+    "srp": "sr",
+    "ssw": "ss",
+    "sun": "su",
+    "swa": "sw",
+    "swe": "sv",
+    "tah": "ty",
+    "tam": "ta",
+    "tat": "tt",
+    "tel": "te",
+    "tgk": "tg",
+    "tgl": "tl",
+    "tha": "th",
+    "tib": "bo",
+    "tir": "ti",
+    "ton": "to",
+    "tsn": "tn",
+    "tso": "ts",
+    "tuk": "tk",
+    "tur": "tr",
+    "twi": "tw",
+    "uig": "ug",
+    "ukr": "uk",
+    "urd": "ur",
+    "uzb": "uz",
+    "ven": "ve",
+    "vie": "vi",
+    "vol": "vo",
+    "wel": "cy",
+    "wln": "wa",
+    "wol": "wo",
+    "xho": "xh",
+    "yid": "yi",
+    "yor": "yo",
+    "zha": "za",
+    "zho": "zh",
+    "zul": "zu"}
+
 
 #------------------------------------------------------------------------
 #
@@ -291,7 +293,6 @@ class GetGOV(Gramplet):
         self.gui.get_container_widget().add_with_viewport(root)
         root.show_all()
         self.type_dic = dict()
-
 
     def __create_gui(self):
         """
@@ -324,7 +325,7 @@ class GetGOV(Gramplet):
         """
         pass
 
-    def __get_places(self, obj):
+    def __get_places(self, _obj):
         gov_id = self.entry.get_text()
         to_do = [gov_id]
         try:
@@ -334,13 +335,14 @@ class GetGOV(Gramplet):
             pf = _pd.get_formats()[fmt]
             preferred_lang = pf.language
         if len(preferred_lang) != 2:
-            preferred_lang = 'de'
+            preferred_lang = glocale.lang
         visited = {}
 
         if not self.type_dic:
             self.__get_types()
 
-        with DbTxn(_('Add GOV-id place %s') % gov_id, self.dbstate.db) as trans:
+        with DbTxn(_('Add GOV-id place %s') % gov_id,
+                   self.dbstate.db) as trans:
             while to_do:
                 gov_id = to_do.pop()
                 place = self.dbstate.db.get_place_from_gramps_id(gov_id)
@@ -363,10 +365,37 @@ class GetGOV(Gramplet):
                         place_ref = PlaceRef()
                         place_ref.ref = handle
                         place_ref.set_date_object(date)
+                        place_ref.set_type(PlaceHierType.ADMIN)  # TODO deal with other hierarchies
                         place.add_placeref(place_ref)
                     self.dbstate.db.commit_place(place, trans)
+        self.dbstate.db.save_place_types()
 
     def __get_types(self):
+        groups = {
+            1: _("Administrative"),
+            2: _("Civil"),
+            3: _("Religious"),
+            4: _("Geographical"),
+            5: _("Cultural"),
+            6: _("Judicial"),
+            8: _("Places"),
+            9: _("Transportation"),
+            10: _("Unpopulated Places"),
+            13: _("Other"),
+            26: _("Countries"),
+            27: _("Regions"),
+            28: _("Regions"),
+            29: _("Regions"),
+            30: _("Regions"),
+            31: _("Places"),
+            32: _("Places"),
+        }
+        self.groups_cnv = {}
+        for grp_num, grp_name in groups.items():
+            for grp, tup in PlaceType.GROUPMAP.items():
+                if grp_name.lower() == tup[0].lower():
+                    self.groups_cnv[grp_num] = grp
+        self.type_groups = {}
         type_url = 'http://gov.genealogy.net/types.owl/'
         response = urlopen(type_url)
         data = response.read()
@@ -374,22 +403,30 @@ class GetGOV(Gramplet):
         for group in dom.getElementsByTagName('owl:Class') :
             url_value = group.attributes['rdf:about'].value
             group_number = url_value.split('#')[1]
+            g_num = self.groups_cnv.get(
+                int(group_number.replace('group_', '')), 0)
             for element in dom.getElementsByTagNameNS("http://gov.genealogy."
                                                       "net/types.owl#",
                                                       group_number):
-                type_number = element.attributes['rdf:about'].value.split('#')[1]
-                for pname in element.getElementsByTagName('rdfs:label'):
-                    type_lang = pname.attributes['xml:lang'].value
-                    type_text = pname.childNodes[0].data
-                    self.type_dic[type_number,type_lang] = type_text
+                self.__do_type(dom, element, g_num)
             for element in dom.getElementsByTagNameNS("http://gov.genealogy."
                                                       "net/ontology.owl#",
                                                       'Type'):
-                type_number = element.attributes['rdf:about'].value.split('#')[1]
-                for pname in element.getElementsByTagName('rdfs:label'):
-                    type_lang = pname.attributes['xml:lang'].value
-                    type_text = pname.childNodes[0].data
-                    self.type_dic[type_number,type_lang] = type_text
+                self.__do_type(dom, element, g_num)
+
+    def __do_type(self, dom, element, g_num):
+        type_number = element.attributes['rdf:about'].value.split('#')[1]
+        for pname in element.getElementsByTagName('rdfs:label'):
+            type_lang = pname.attributes['xml:lang'].value
+            type_text = pname.childNodes[0].data
+            self.type_dic[type_number, type_lang] = type_text
+        groups = g_num
+        for res in element.getElementsByTagName('rdf:type'):
+            gx_num = res.attributes['rdf:resource'].value.split('#')[1]
+            if gx_num == 'Type' or 'group_' not in gx_num:
+                continue
+            groups += self.groups_cnv.get(int(gx_num.replace('group_', '')), 0)
+        self.type_groups[int(type_number)] = groups
 
     def __get_place(self, gov_id, type_dic, preferred_lang):
         gov_url = 'http://gov.genealogy.net/semanticWeb/about/' + quote(gov_id)
@@ -405,22 +442,16 @@ class GetGOV(Gramplet):
         if not len(top) :
             return place, []
 
-        count = 0
+        types = []
         for element in top[0].getElementsByTagName('gov:hasName'):
-            count += 1
             place_name = self.__get_hasname(element)
-            if count == 1:
-                place.set_name(place_name)
-            else:
-                if place_name.lang == preferred_lang:
-                    place.add_alternative_name(place.get_name())
-                    place.set_name(place_name)
-                else:
-                    place.add_alternative_name(place_name)
+            place.add_name(place_name)
         for element in top[0].getElementsByTagName('gov:hasType'):
-            curr_lang = place.get_name().get_language()
-            place_type = self.__get_hastype(element,curr_lang, type_dic, preferred_lang)
-            place.set_type(place_type)
+            place_type = self.__get_hastype(element, type_dic,
+                                            preferred_lang)
+            types.append(place_type)
+        types.sort(key=lambda typ: typ.date.get_sort_value(), reverse=True)
+        place.set_types(types)
         for element in top[0].getElementsByTagName('gov:position'):
             latitude, longitude = self.__get_position(element)
             place.set_latitude(latitude)
@@ -441,15 +472,16 @@ class GetGOV(Gramplet):
         if len(pname):
             value = pname[0].getElementsByTagName('gov:value')
             if len(value):
-                 name.set_value(value[0].childNodes[0].data)
+                name.set_value(value[0].childNodes[0].data)
             language = pname[0].getElementsByTagName('gov:language')
             if len(language):
-                 name.set_language(ISO_CODE_LOOKUP.get(language[0].childNodes[0].data))
+                name.set_language(
+                    ISO_CODE_LOOKUP.get(language[0].childNodes[0].data))
             date = self.__get_date_range(pname[0])
             name.set_date_object(date)
         return name
 
-    def __get_hastype(self, element, curr_lang, type_dic, preferred_lang):
+    def __get_hastype(self, element, type_dic, preferred_lang):
         place_type = PlaceType()
         ptype = element.getElementsByTagName('gov:PropertyType')
         if len(ptype):
@@ -457,14 +489,16 @@ class GetGOV(Gramplet):
             if len(value):
                 type_url = value[0].attributes['rdf:resource'].value
                 type_code = type_url.split('#')[1]
-                if tuple([type_code, curr_lang]) in type_dic:
-                    place_type.set_from_xml_str(type_dic.get(tuple([type_code,curr_lang]),'No Type'))
-                elif tuple([type_code, preferred_lang]) in type_dic:
-                    place_type.set_from_xml_str(type_dic.get(tuple([type_code,preferred_lang]),'No Type'))
-                elif tuple([type_code, 'de']) in type_dic:
-                    place_type.set_from_xml_str(type_dic.get(tuple([type_code,'de']),'No Type'))
-                elif tuple([type_code, 'en']) in type_dic:
-                    place_type.set_from_xml_str(type_dic.get(tuple([type_code,'en']),'No Type'))
+                for lang in (preferred_lang, 'de', 'en'):
+                    t_nam = type_dic.get((type_code, lang), None)
+                    if not t_nam:
+                        continue
+                    place_type.set((-int(type_code), t_nam,
+                                   self.type_groups[int(type_code)]))
+                    break
+            date = self.__get_date_range(ptype[0])
+            if date:
+                place_type.set_date_object(date)
         return place_type
 
     def __get_position(self, element):
@@ -500,8 +534,8 @@ class GetGOV(Gramplet):
         if len(pobj):
             value = pobj[0].getElementsByTagName('gov:value')
             if len(value):
-                 url.set_path(value[0].childNodes[0].data)
-                 url.set_type(UrlType.WEB_HOME)
+                url.set_path(value[0].childNodes[0].data)
+                url.set_type(UrlType.WEB_HOME)
         return url
 
     def __get_date_range(self, element):

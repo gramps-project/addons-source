@@ -40,6 +40,7 @@ from gramps.gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle,
 from gramps.gen.plug.menu import (NumberOption, PersonOption, BooleanOption,
                            EnumeratedListOption, FilterOption)
 from gramps.gen.display.name import displayer as global_name_display
+from gramps.gen.display.place import displayer as place_displayer
 from gramps.gen.errors import ReportError
 from gramps.gen.plug.report import Report
 from gramps.gen.plug.report import utils as ReportUtils
@@ -158,8 +159,7 @@ class Printinfo():
             date = gramps.gen.datehandler.get_date(event)
             place_handle = event.get_place_handle()
             if place_handle:
-                place = self.database.get_place_from_handle(
-                    place_handle).get_title()
+                place = place_displayer.display_event(self.database, event)
                 return("%(event_abbrev)s %(date)s - %(place)s" % {
                     'event_abbrev': event.type.get_abbreviation(),
                     'date' : date,

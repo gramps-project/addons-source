@@ -5,6 +5,7 @@ register(IMPORT,
          version = '1.1.2',
          gramps_target_version = "5.1",
          status = STABLE, # tested with python 3, need to review unicode usage
+         include_in_listing = False,
          fname = 'ImportSql.py',
          import_function = 'importData',
          extension = "sql"
@@ -17,6 +18,7 @@ register(EXPORT,
          version = '1.1.2',
          gramps_target_version = "5.1",
          status = STABLE, # tested with python 3 but still gives errors
+         include_in_listing = False,
          fname = 'ExportSql.py',
          export_function = 'exportData',
          extension = "sql",

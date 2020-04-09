@@ -594,13 +594,9 @@ class PersonEverythingReport(Report):
                     self.doc.write_text(" " + _("Type") + " : ")
                     self.doc.end_bold()
                     self.doc.write_text(str(place.get_type()))
-                    self.doc.start_bold()
-                    self.doc.write_text(" " + _("Code") + " : ")
-                    self.doc.end_bold()
-                    self.doc.write_text(place.get_code())
                     self.doc.end_paragraph()
 
-                    for name in place.get_alternative_names():
+                    for name in place.get_names()[1:]:
                         self.doc.start_paragraph("PE-Level%d" % min(level+1, 32))
                         self.doc.start_bold()
                         self.doc.write_text(_("Alternative Name") + " : ")

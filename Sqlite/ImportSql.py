@@ -45,7 +45,8 @@ log = logging.getLogger(".ImportSql")
 #-------------------------------------------------------------------------
 from gramps.gen.lib import (Person, Family, Note, Media, Place, Citation,
                             Source, Tag, Event, Repository, Name, Location,
-                            PlaceName)
+                            PlaceType)
+from gramps.gen.lib.placetype import DM_NAME
 from gramps.gen.db import DbTxn
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
@@ -187,7 +188,7 @@ class SQLReader(object):
                                (frel0, frel1), (mrel0, mrel1)))
         return retval
 
-    def get_datamap_list(self, sql, from_type, from_handle):
+    def get_datamap_list(self, sql, _from_type, from_handle):
         datamap = []
         rows = sql.query("select * from datamap where from_handle = ?;",
                          from_handle)
@@ -312,7 +313,7 @@ class SQLReader(object):
         return (citation_list, note_list, date, type_, place,
                 famc, temple, status, bool(private))
 
-    def pack_surnames(self, sql, data):
+    def pack_surnames(self, _sql, data):
         (_handle,
          surname,
          prefix,
@@ -355,7 +356,7 @@ class SQLReader(object):
                 (source_media_type0, source_media_type1),
                 bool(private))
 
-    def pack_url(self, sql, data):
+    def pack_url(self, _sql, data):
         (_handle,
          path,
          desc,
@@ -451,7 +452,7 @@ class SQLReader(object):
                 (name_type0, name_type1),
                 group_as, sort_as, display_as, call, nick, famnick)
 
-    def pack_location(self, sql, data, with_parish):
+    def pack_location(self, _sql, data, with_parish):
         (_handle, street, locality, city, county, state, country, postal,
          phone, parish) = data
         if with_parish:
@@ -476,7 +477,7 @@ class SQLReader(object):
                       " returned %d records." % (ref_handle, len(place_row)))
         return ''
 
-    def get_alt_place_name_list(self, sql, handle):
+    def get_place_name_list(self, sql, handle):
         place_name_list = sql.query(
             """select * from place_name where from_handle = ?;""", handle)
         retval = []
@@ -484,7 +485,19 @@ class SQLReader(object):
             ref_handle, handle, value, lang = place_name_data
             date_handle = self.get_link(sql, "place_name", ref_handle, "date")
             date = self.get_date(sql, date_handle)
-            retval.append((value, date, lang))
+            abbr_list = self.get_place_abbr_list(sql, ref_handle)
+            citation_list = self.get_citation_list(sql, "place_name",
+                                                   ref_handle)
+            retval.append((value, date, lang, abbr_list, citation_list))
+        return retval
+
+    def get_place_abbr_list(self, sql, handle):
+        place_abbr_list = sql.query(
+            """select * from place_abbrev where from_handle = ?;""", handle)
+        retval = []
+        for place_abbr_data in place_abbr_list:
+            _r_handle, handle, value, abbr_type0, abbr_type1 = place_abbr_data
+            retval.append((value, (abbr_type0, abbr_type1)))
         return retval
 
     def get_place_ref_list(self, sql, handle):
@@ -493,11 +506,45 @@ class SQLReader(object):
         place_ref_list = sql.query(
             """select * from place_ref where from_place_handle = ?;""", handle)
         retval = []
-        for place_ref_data in place_ref_list:
-            ref_handle, handle, to_place_handle = place_ref_data
+        for ref_data in place_ref_list:
+            ref_handle, handle, to_place_handle, h_type0, h_type1 = ref_data
             date_handle = self.get_link(sql, "place_ref", ref_handle, "date")
             date = self.get_date(sql, date_handle)
-            retval.append((to_place_handle, date))
+            citation_list = self.get_citation_list(sql, "place_ref",
+                                                   ref_handle)
+            retval.append((to_place_handle, date, citation_list,
+                           (h_type0, h_type1)))
+        return retval
+
+    def get_place_type_list(self, sql, handle):
+        place_type_list = sql.query(
+            """select * from place_type where from_handle = ?;""",
+            handle)
+        retval = []
+        for place_type_data in place_type_list:
+            ref_handle, handle, type0, type1 = place_type_data
+            date_handle = self.get_link(sql, "place_type", ref_handle, "date")
+            date = self.get_date(sql, date_handle)
+            citation_list = self.get_citation_list(sql, "place_type",
+                                                   ref_handle)
+            retval.append((type0, date, citation_list))
+            if type0 in PlaceType.DATAMAP:
+                # if the number is already there, we are done
+                continue
+            if type0 < PlaceType.CUSTOM:
+                # number is not definitive, check for already there by name
+                for tup in PlaceType.DATAMAP.values():
+                    if type1.lower() == tup[DM_NAME].lower():
+                        break
+                else:
+                    PlaceType.DATAMAP[type0] = (type1,
+                                                PlaceType.G_PLACE,  # groups
+                                                True)               # visible
+            else:
+                # not found, so store the new definition
+                PlaceType.DATAMAP[type0] = (type1,
+                                            PlaceType.G_PLACE,  # groups
+                                            True)               # visible
         return retval
 
     def get_main_location(self, sql, from_handle, with_parish):
@@ -784,8 +831,7 @@ class SQLReader(object):
         places = sql.query("""select * from place;""")
         for place in places:
             count += 1
-            (handle, gid, title, value, the_type0, the_type1, code, long, lat,
-             lang, change, private) = place
+            (handle, gid, title, long, lat, change, private) = place
 
             # We could look this up by "place_main", but we have the handle:
             #main_loc = self.get_main_location(sql, handle, with_parish=True)
@@ -796,14 +842,15 @@ class SQLReader(object):
             citation_list = self.get_citation_list(sql, "place", handle)
             note_list = self.get_note_list(sql, "place", handle)
             tags = self.get_links(sql, "place", handle, "tag")
-            place_type = (the_type0, the_type1)
-            alt_place_name_list = self.get_alt_place_name_list(sql, handle)
+            place_type_list = self.get_place_type_list(sql, handle)
+            place_name_list = self.get_place_name_list(sql, handle)
             place_ref_list = self.get_place_ref_list(sql, handle)
+            eventref_list = self.get_event_ref_list(sql, "place", handle)
+            attr_list = self.get_attribute_list(sql, "place", handle)
             data = (handle, gid, title, long, lat, place_ref_list,
-                    PlaceName(value=value, lang=lang).serialize(),
-                    alt_place_name_list, place_type, code, alt_loc_list,
-                    urls, media_list, citation_list, note_list,
-                    change, tags, private)
+                    place_name_list, place_type_list, eventref_list,
+                    alt_loc_list, urls, media_list, citation_list, note_list,
+                    change, tags, private, attr_list)
             g_plac = Place()
             g_plac.unserialize(data)
             self.db.commit_place(g_plac, self.trans)
@@ -900,3 +947,4 @@ def importData(db, filename, user):
     g = SQLReader(db, filename, user)
     g.process()
     g.cleanup()
+    return _("Import finished...")

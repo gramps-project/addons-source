@@ -30,7 +30,6 @@
 from urllib.request import urlopen, URLError, quote
 from xml.dom.minidom import parseString
 import os
-import sys
 import ctypes
 import locale
 import socket
@@ -51,13 +50,15 @@ from gramps.gen.merge.mergeplacequery import MergePlaceQuery
 from gramps.gui.dialog import ErrorDialog, WarningDialog
 from gramps.gen.plug import Gramplet
 from gramps.gen.db import DbTxn
-from gramps.gen.lib import Citation
+from gramps.gen.lib import Attribute, AttributeType, Citation
 from gramps.gen.lib import Place, PlaceName, PlaceType, PlaceRef, Url, UrlType
+from gramps.gen.lib import PlaceAbbrev, PlaceAbbrevType
 from gramps.gen.lib import Note, NoteType, Repository, RepositoryType, RepoRef
 from gramps.gen.lib import StyledText, StyledTextTag, StyledTextTagType
 from gramps.gen.lib import Source, SourceMediaType
 from gramps.gen.datehandler import get_date
 from gramps.gen.config import config
+from gramps.gen.lib.const import IDENTICAL, EQUAL
 from gramps.gen.constfunc import win
 from gramps.gui.display import display_url
 from gramps.gui.autocomp import StandardCustomSelector
@@ -205,7 +206,7 @@ class PlaceCleanup(Gramplet):
     # ======================================================
     # gramplet event handlers
     # ======================================================
-    def on_help_clicked(self, dummy):
+    def on_help_clicked(self, _dummy):
         ''' Button: Display the relevant portion of GRAMPS manual'''
         display_url(WIKI_PAGE)
 
@@ -214,7 +215,7 @@ class PlaceCleanup(Gramplet):
         self.top.get_object("select_but").set_sensitive(
             res_sel.get_selected())
 
-    def on_title_entry_changed(self, dummy):
+    def on_title_entry_changed(self, _dummy):
         ''' Occurs during edits of the Title box on the main screen.
         we use this to reset the GeoNames search row, as the user may be
         trying another search term.'''
@@ -269,7 +270,7 @@ class PlaceCleanup(Gramplet):
         self.geo_stage = False
         self.top.get_object("select_but").set_sensitive(False)
 
-    def on_find_clicked(self, dummy):
+    def on_find_clicked(self, _dummy):
         """ find a matching place.  First try in the db, then try in the
         GeoNames. """
         self.res_store.clear()
@@ -288,7 +289,7 @@ class PlaceCleanup(Gramplet):
                         self.dbstate.db, place.handle, self.place.handle):
                     title = _pd.display(self.dbstate.db, place)
                     self.res_store.append(row=(index, title,
-                                               str(place.place_type)))
+                                               str(place.get_type())))
             if len(self.res_store) > 0:
                 self.res_lbl.set_text(_('%s\nLocal\nMatches') %
                                       len(self.res_store))
@@ -406,7 +407,7 @@ class PlaceCleanup(Gramplet):
 
     def get_geo_data(self, geo_url):
         """ Get GeoNames data from web with error checking """
-        print(geo_url)
+        # print(geo_url)
         try:
             with urlopen(geo_url, timeout=20) as response:
                 data = response.read()
@@ -416,7 +417,7 @@ class PlaceCleanup(Gramplet):
             except:
                 txt = ''
             ErrorDialog(_('Problem getting data from web'),
-                        msg2=str(err) +'\n' + txt,
+                        msg2=str(err) + '\n' + txt,
                         parent=self.uistate.window)
             return None
         except socket.timeout:
@@ -435,7 +436,7 @@ class PlaceCleanup(Gramplet):
             return None
         return dom
 
-    def on_next_clicked(self, dummy):
+    def on_next_clicked(self, _dummy):
         """ find a incomplete place in the db, if possible """
         self.reset_main()
         place = self.find_an_incomplete_place()
@@ -481,7 +482,8 @@ class PlaceCleanup(Gramplet):
                         parent=self.uistate.window)
             return
         # lets clean up the place name
-        self.place.name.value = self.place.name.value.split(',')[0].strip()
+        name = self.place.get_name()
+        name.value = name.value.split(',')[0].strip()
         place_merge = MergePlaceQuery(self.dbstate, place, self.place)
         place_merge.execute()
         # after merge we should select merged result
@@ -526,23 +528,28 @@ class PlaceCleanup(Gramplet):
         self.newplace.long = str(value[0].childNodes[0].data)
         value = g_name.getElementsByTagName('toponymName')
         topname = value[0].childNodes[0].data
-        new_place = PlaceName()
-        new_place.set_value(topname)
-        new_place.set_language("")
+        pl_name = PlaceName()
+        pl_name.set_value(topname)
+        pl_name.set_language("")
         # make sure we have the topname in the names list and default to
         # primary
-        self.newplace.add_name(new_place)
-        self.newplace.name = new_place
+        self.newplace.add_name(pl_name)
+        self.newplace.name = pl_name
         # lets parse the alternative names
         alt_names = g_name.getElementsByTagName('alternateName')
         for a_name in alt_names:
             pattr = a_name.getAttribute("lang")
             value = a_name.childNodes[0].data
             if pattr == "post":
-                if self.newplace.code:
-                    self.newplace.code += " " + value
-                else:
-                    self.newplace.code = value
+                attr = Attribute()
+                attr.set_type(AttributeType.POSTAL)
+                attr.set_value(value)
+                self.newplace.postals.append(attr)
+            elif pattr == "abbr":
+                # deal with abbreviation
+                abbr = PlaceAbbrev(value=value)
+                abbr.set_type(PlaceAbbrevType.ABBR)
+                self.newplace.abbrs.append(abbr)
             elif pattr == "link":
                 url = Url()
                 url.set_path(value)
@@ -550,15 +557,15 @@ class PlaceCleanup(Gramplet):
                 url.set_type(UrlType(UrlType.WEB_HOME))
                 self.newplace.links.append(url)
             elif pattr not in ['iata', 'iaco', 'faac', 'wkdt', 'unlc']:
-                new_place = PlaceName()
-                new_place.set_language(pattr)
-                new_place.set_value(value)
-                self.newplace.add_name(new_place)
+                pl_name = PlaceName()
+                pl_name.set_language(pattr)
+                pl_name.set_value(value)
+                self.newplace.add_name(pl_name)
             if a_name.hasAttribute('isPreferredName') and (
                     pattr and pattr == self.lang):
                 # if not preferred lang, we use topo name, otherwise
                 # preferred name for lang
-                self.newplace.name = new_place
+                self.newplace.name = pl_name
         # Try to deduce PlaceType:
         #   If populated place, set as City. Long description could over-ride
         #   Parse long description, looking for keyword (Region, County, ...)
@@ -571,24 +578,25 @@ class PlaceCleanup(Gramplet):
         value = g_name.getElementsByTagName('fcode')
         fcode = value[0].childNodes[0].data
         value = g_name.getElementsByTagName('countryCode')
-        countrycode = value[0].childNodes[0].data
+        if value[0].childNodes:
+            countrycode = value[0].childNodes[0].data
+        else:
+            countrycode = ''
         self.newplace.place_type = PlaceType(PlaceType.UNKNOWN)
         ptype = PlaceType()
+        # make a dict of translated names to types
+        tmap = {val[0]: key for key, val in ptype.DATAMAP.items()}
         # scan thorough names looking for name portion that matches a Placetype
         for name in self.newplace.names:
             for tname in name.value.split(' '):
-                ptype.set_from_xml_str(tname.capitalize())
-                if ptype != PlaceType.CUSTOM:
+                tname = tname.capitalize()
+                if tname in ptype._E2IMAP:  # is it English (XML) name?
+                    ptype.set_from_xml_str(tname)
                     self.newplace.place_type = ptype
                     break
                 # see if it is a translated PlaceType
-                ptype.set(tname.capitalize())
-                if ptype != PlaceType.CUSTOM:
-                    self.newplace.place_type = ptype
-                    break
-                # see if it is an already added custom type
-                cust_types = self.dbstate.db.get_place_types()
-                if tname.capitalize() in cust_types:
+                if tname in tmap:
+                    ptype.set(tname)
                     self.newplace.place_type = ptype
                     break
             else:
@@ -602,12 +610,23 @@ class PlaceCleanup(Gramplet):
             self.newplace.place_type = PlaceType(PlaceType.PARISH)
         elif 'PCL' in fcode:
             self.newplace.place_type = PlaceType(PlaceType.COUNTRY)
+            abbrev = PlaceAbbrev(value=countrycode)
+            abbrev.set_type(PlaceAbbrevType.ISO3166)
+            self.newplace.name.add_abbrev(abbrev)
         elif 'ADM' in fcode:
             if countrycode in self.adm_table:
                 _ptype = self.adm_table[countrycode].get(fcode[:4])
                 if _ptype and (_ptype[1] or
-                               self.newplace.place_type.is_default()):
+                               int(self.newplace.place_type) ==
+                               PlaceType.UNKNOWN):
                     self.newplace.place_type = PlaceType(_ptype[0])
+        # store abbreviations on the preferred place name
+        self.newplace.name.get_abbrevs().extend(self.newplace.abbrs)
+        if self.newplace.name.get_abbrevs():
+            for name in self.newplace.names:
+                lang = name.get_language()
+                if not lang or self.lang == lang:
+                    name.set_abbrevs(self.newplace.name.get_abbrevs())
         # save a parent for enclosing
         if len(h_geoid_list) > 1:
             # we have a parent
@@ -621,7 +640,7 @@ class PlaceCleanup(Gramplet):
 #         if ',' in self.place.name.value:
 #             name = self.place.name.value
 #         else:
-        name = self.place.name.value
+        name = self.place.get_names()[0].value
         self.newplace = NewPlace(name)
         names = name.split(',')
         names = [name.strip() for name in names]
@@ -630,32 +649,29 @@ class PlaceCleanup(Gramplet):
         self.newplace.gramps_id = self.place.gramps_id
         self.newplace.lat = self.place.lat
         self.newplace.long = self.place.long
-        self.newplace.code = self.place.code
-        if self.place.place_type == PlaceType.UNKNOWN:
+        self.newplace.code = self.place.code  # TODO
+        if int(self.place.get_type()) == PlaceType.UNKNOWN:
             self.newplace.place_type = PlaceType(PlaceType.UNKNOWN)
             if any(i.isdigit() for i in self.newplace.name.value):
                 self.newplace.place_type = PlaceType(PlaceType.STREET)
             ptype = PlaceType()
+            # make a dict of translated names to types
+            tmap = {val[0]: key for key, val in ptype.DATAMAP.items()}
             for tname in self.newplace.name.value.split(' '):
-                # see if it is an English PlaceType
-                ptype.set_from_xml_str(tname.capitalize())
-                if ptype != PlaceType.CUSTOM:
+                tname = tname.capitalize()
+                if tname in ptype._E2IMAP:  # is it English (XML) name?
+                    ptype.set_from_xml_str(tname)
                     self.newplace.place_type = ptype
                     break
                 # see if it is a translated PlaceType
-                ptype.set(tname.capitalize())
-                if ptype != PlaceType.CUSTOM:
+                if tname in tmap:
+                    ptype.set(tname)
                     self.newplace.place_type = ptype
                     break
-                # see if it is an already added custom type
-                cust_types = self.dbstate.db.get_place_types()
-                if tname.capitalize() in cust_types:
-                    self.newplace.place_type = ptype
         else:
-            self.newplace.place_type = self.place.place_type
+            self.newplace.place_type = self.place.get_type()
         self.newplace.add_name(self.newplace.name)
-        self.newplace.add_name(self.place.name)
-        self.newplace.add_names(self.place.alt_names)
+        self.newplace.add_names(self.place.get_names())
         if self.place.placeref_list:
             # If we already have an enclosing place, use it.
             parent = self.dbstate.db.get_place_from_handle(
@@ -676,9 +692,7 @@ class PlaceCleanup(Gramplet):
         # Setup sort on 'Inc" column so Primary is a top with checks next
         self.alt_store.set_sort_func(0, inc_sort, None)
         self.alt_store.set_sort_column_id(0, 0)
-        # Merge old name and alt names into new set
-        self.newplace.add_name(self.place.name)
-        self.newplace.add_names(self.place.alt_names)
+        self.newplace.add_names(self.place.get_names())
         # Fill in ohter fields
         self.top.get_object('res_title').set_text(self.newplace.title)
         self.top.get_object('primary').set_text(self.newplace.name.value)
@@ -690,7 +704,7 @@ class PlaceCleanup(Gramplet):
         for index, name in enumerate(self.newplace.names):
             if self.newplace.name == name:
                 inc = 'P'
-            elif name.lang in self.allowed_languages or (
+            elif name.lang in self.allowed_languages or (  # TODO
                     name.lang == 'abbr' or name.lang == 'en' or not name.lang):
                 inc = '\u2714'  # Check mark
             else:
@@ -707,16 +721,28 @@ class PlaceCleanup(Gramplet):
         namelist = []
         for row in self.alt_store:
             if row[0] == 'P':
-                self.place.name = self.newplace.names[row[4]]
+                namelist.insert(0, self.newplace.names[row[4]])
             elif row[0] == '\u2714':
                 namelist.append(self.newplace.names[row[4]])
-        self.place.alt_names = namelist
+        self.place.set_names(namelist)
         # Lat/lon/ID/code/type
         self.place.lat = self.top.get_object('latitude').get_text()
         self.place.long = self.top.get_object('longitude').get_text()
         self.place.gramps_id = self.top.get_object('grampsid').get_text()
-        self.place.code = self.top.get_object('postal').get_text()
-        self.place.place_type.set(self.type_combo.get_values())
+        attrs = self.place.get_attribute_list()[:]
+        for addendum in self.newplace.postals:
+            for attr in attrs:
+                equi = attr.is_equivalent(addendum)
+                if equi == IDENTICAL:
+                    break
+                elif equi == EQUAL:
+                    attr.merge(addendum)
+                    break
+            else:
+                self.place.add_attribute(addendum)
+        p_type = PlaceType()
+        p_type.set(self.type_combo.get_values())
+        self.place.set_type(p_type)
         # Add in URLs if wanted
         if self.keepweb:
             for url in self.newplace.links:
@@ -735,8 +761,9 @@ class PlaceCleanup(Gramplet):
                 parent.title = ', '.join(self.newplace.parent_names)
                 name = PlaceName()
                 name.value = parent.title
-                parent.name = name
+                parent.add_name(name)
                 parent.gramps_id = self.newplace.parent_ids[0]
+                parent.set_type(PlaceType())
                 with DbTxn(_("Add Place (%s)") % parent.title,
                            self.dbstate.db) as trans:
                     self.dbstate.db.add_place(parent, trans)
@@ -761,6 +788,7 @@ class PlaceCleanup(Gramplet):
                 if not already_there:
                     placeref = PlaceRef()
                     placeref.set_reference_handle(parent.handle)
+                    placeref.set_type_for_place(self.place)
                     self.place.set_placeref_list([placeref])
         # Add in Citation/Source if wanted
         if self.addcitation and self.newplace.geoid:
@@ -869,39 +897,43 @@ class PlaceCleanup(Gramplet):
             # inititlization
             obj.set_sensitive(True)
             obj.set_active(False)
-        place = self.newplace
-        if self.place.code:
+        attrs = self.newplace.postals
+        if self.get_postals(self.place.get_attribute_list()):
             if obj.get_active():
-                place = self.place
+                attrs = self.place.get_attribute_list()
             obj.set_sensitive(True)
         else:
             obj.set_sensitive(False)
-        self.top.get_object('postal').set_text(place.code)
+        self.top.get_object('postal').set_text(self.get_postals(attrs))
+
+    def get_postals(self, attrs):
+        """ Create a postal codes string from attributes of place """
+        postals = ''
+        for attr in attrs:
+            if attr.type == AttributeType.POSTAL:
+                postals += (', ' if postals else '') + attr.value
+        return postals
 
     def on_typecheck(self, *dummy):
         """ Check toggled; if active, load type from original place, else
         use type from gazetteer """
         obj = self.top.get_object("typecheck")
         combo = self.top.get_object('place_type')
-        additional = sorted(self.dbstate.db.get_place_types(),
-                            key=lambda s: s.lower())
         self.type_combo = StandardCustomSelector(PlaceType().get_map(), combo,
                                                  PlaceType.CUSTOM,
-                                                 PlaceType.UNKNOWN,
-                                                 additional)
+                                                 PlaceType.UNKNOWN)
         if not dummy:
             # inititlization
             obj.set_sensitive(True)
             obj.set_active(False)
-        place = self.newplace
-        if(self.place.place_type and
-           self.place.place_type != PlaceType.UNKNOWN):
+        p_type = self.newplace.place_type
+        if(int(self.place.get_type()) != PlaceType.UNKNOWN):
             if obj.get_active():
-                place = self.place
+                p_type = self.place.get_type()
         else:
             obj.set_sensitive(False)
-        self.type_combo.set_values((int(place.place_type),
-                                    str(place.place_type)))
+        self.type_combo.set_values((int(p_type),
+                                    str(p_type)))
 
     def on_idcheck(self, *dummy):
         """ Check toggled; if active, load gramps_id from original place, else
@@ -1012,7 +1044,9 @@ class PlaceCleanup(Gramplet):
         """ In local db.  Only completed places are matched.
         We may want to try some better matching algorithms, possibly
         something from difflib"""
-        search_name = search_name.lower().split(',')
+        search_name = search_name.lower()
+        if ',' in search_name:
+            search_name = search_name.split(',')[0]
         places = []
         for place in self.dbstate.db.iter_places():
             if (place.get_type() != PlaceType.UNKNOWN and
@@ -1020,8 +1054,8 @@ class PlaceCleanup(Gramplet):
                  (place.get_type() != PlaceType.COUNTRY and
                   place.get_placeref_list()))):
                 # valid place, get all its names
-                for name in place.get_all_names():
-                    if name.get_value().lower() == search_name[0]:
+                for name in place.get_names():
+                    if name.get_value().lower() == search_name:
                         places.append(place)
                         break
         return places
@@ -1050,7 +1084,11 @@ class PlaceCleanup(Gramplet):
         while True:
             hndl = p_hndls[indx]
             place_data = self.dbstate.db.get_raw_place_data(hndl)
-            p_type = place_data[8][0]  # place_type
+            p_type = place_data[7]  # place_types
+            if p_type:
+                p_type = p_type[0]
+            else:
+                p_type = PlaceType.UNKNOWN
             refs = list(self.dbstate.db.find_backlink_handles(hndl))
             if(p_type == PlaceType.UNKNOWN or
                not refs or
@@ -1082,22 +1120,25 @@ class NewPlace():
         self.gramps_id = ''
         self.lat = ''
         self.long = ''
-        self.code = ''
+        self.postals = []
         self.place_type = None
         self.names = []  # all names, including alternate, acts like a set
         self.name = PlaceName()
+        self.abbrs = []
         self.links = []
         self.geoid = ''
-        self.parent_ids = []   # list of gramps_ids in hierarchical order
-        self.parent_names = [] # list of names in hierarchical order
+        self.parent_ids = []    # list of gramps_ids in hierarchical order
+        self.parent_names = []  # list of names in hierarchical order
 
     def add_name(self, name):
         """ Add a name to names list without repeats """
         if ',' in name.value:
             name.value = name.value.split(',')[0]
             return
-        if name not in self.names:
-            self.names.append(name)
+        for c_name in self.names:
+            if name.value == c_name.value and name.lang == c_name.lang:
+                return
+        self.names.append(name)
 
     def add_names(self, names):
         """ Add names to names list without repeats """

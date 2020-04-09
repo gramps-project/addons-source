@@ -38,6 +38,7 @@ from functools import partial
 #
 #------------------------------------------------------------------------
 from gramps.gen.display.name import displayer as global_name_display
+from gramps.gen.display.place import displayer as place_displayer
 from gramps.gen.errors import ReportError
 from gramps.gen.lib import FamilyRelType, Person, NoteType
 from gramps.gen.plug.menu import (BooleanOption, NumberOption, PersonOption,
@@ -779,12 +780,7 @@ class DetailedDescendantBookReport(Report):
         event = self.database.get_event_from_handle(event_ref.ref)
 
         date = self._get_date(event.get_date_object())
-
-        ph = event.get_place_handle()
-        if ph:
-            place = self.database.get_place_from_handle(ph).get_title()
-        else:
-            place = ''
+        place = place_displayer.display_event(self.database, event)
 
         event_name = self._get_type(event.get_type())
 
@@ -823,12 +819,7 @@ class DetailedDescendantBookReport(Report):
         else:
             date = event.get_date_object().get_year()
 
-        ph = event.get_place_handle()
-        if ph:
-            place = self.database.get_place_from_handle(ph).get_title()
-        else:
-            place = ''
-
+        place = place_displayer.display_event(self.database, event)
         self.doc.start_paragraph('DDR-EventHeader')    #BOOK
         event_name = self._get_type(event.get_type())
 

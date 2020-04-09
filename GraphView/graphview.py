@@ -137,6 +137,7 @@ class GraphView(NavigationView):
         ('interface.graphview-show-avatars', True),
         ('interface.graphview-show-full-dates', False),
         ('interface.graphview-show-places', False),
+        ('interface.graphview-place-format', 0),
         ('interface.graphview-show-lines', 1),
         ('interface.graphview-show-tags', False),
         ('interface.graphview-highlight-home-person', True),
@@ -402,6 +403,12 @@ class GraphView(NavigationView):
         self.show_places = entry == 'True'
         self.graph_widget.populate(self.get_active())
 
+    def cb_update_place_fmt(self, _client, _cnxn_id, _entry, _data):
+        """
+        Called when the configuration menu changes the place setting.
+        """
+        self.graph_widget.populate(self.get_active())
+
     def cb_update_show_tag_color(self, _client, _cnxn_id, entry, _data):
         """
         Called when the configuration menu changes the show tags setting.
@@ -539,6 +546,8 @@ class GraphView(NavigationView):
                              self.cb_update_show_full_dates)
         self._config.connect('interface.graphview-show-places',
                              self.cb_update_show_places)
+        self._config.connect('interface.graphview-place-format',
+                             self.cb_update_place_fmt)
         self._config.connect('interface.graphview-show-tags',
                              self.cb_update_show_tag_color)
         self._config.connect('interface.graphview-show-lines',
@@ -609,6 +618,17 @@ class GraphView(NavigationView):
         row += 1
         configdialog.add_checkbox(
             grid, _('Show places'), row, 'interface.graphview-show-places')
+        row += 1
+        # Place format:
+        p_fmts = [(0, _("Default"))]
+        for (indx, fmt) in enumerate(place_displayer.get_formats()):
+            p_fmts.append((indx + 1, fmt.name))
+        active = self._config.get('interface.graphview-place-format')
+        if active >= len(p_fmts):
+            active = 1
+        configdialog.add_combo(grid, _('Place format'), row,
+                               'interface.graphview-place-format',
+                               p_fmts, setactive=active)
         row += 1
         configdialog.add_checkbox(
             grid, _('Show tags'), row, 'interface.graphview-show-tags')
@@ -1674,6 +1694,7 @@ class GraphvizSvgParser(object):
 
         self.transform_scale = 1
 
+
     def parse(self, ifile):
         """
         Parse an SVG file produced by Graphviz.
@@ -2095,6 +2116,8 @@ class DotSvgGenerator(object):
             'interface.graphview-show-full-dates')
         self.show_places = self.view._config.get(
             'interface.graphview-show-places')
+        self.place_format = self.view._config.get(
+            'interface.graphview-place-format') - 1
         self.show_tag_color = self.view._config.get(
             'interface.graphview-show-tags')
         spline = self.view._config.get('interface.graphview-show-lines')
@@ -2746,6 +2769,7 @@ class DotSvgGenerator(object):
             else:
                 image = ''
 
+
         # get the person's name
         name = displayer.display_name(person.get_primary_name())
         # name string should not be empty
@@ -2804,6 +2828,7 @@ class DotSvgGenerator(object):
                         death_wraped = _('%s %s') % (self.dth, death[0])
                 else:
                     birth_wraped = birth_str
+
 
         # get tags table for person and add tooltip for node
         tag_table = ''
@@ -2901,7 +2926,8 @@ class DotSvgGenerator(object):
             empty string
         """
         if event:
-            place_title = place_displayer.display_event(self.database, event)
+            place_title = place_displayer.display_event(self.database, event,
+                                                        fmt=self.place_format)
             date_object = event.get_date_object()
             date = ''
             place = ''

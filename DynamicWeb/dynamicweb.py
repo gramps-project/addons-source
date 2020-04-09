@@ -167,6 +167,8 @@ DWR_VERSION_410 = (VERSION_TUPLE[0] >= 5) or ((VERSION_TUPLE[0] >= 4) and (VERSI
 DWR_VERSION_412 = (VERSION_TUPLE[0] >= 5) or ((VERSION_TUPLE[0] >= 4) and (VERSION_TUPLE[1] >= 1) and (VERSION_TUPLE[2] >= 2))
 DWR_VERSION_420 = (VERSION_TUPLE[0] >= 5) or ((VERSION_TUPLE[0] >= 4) and (VERSION_TUPLE[1] >= 2))
 DWR_VERSION_500 = (VERSION_TUPLE[0] >= 5)
+DWR_VERSION_520 = True  # TODO adjust when we have the real 5.2.x out with enhanced places
+
 from gramps.gen.lib import (ChildRefType, Date, EventType, FamilyRelType, Name,
                             NameType, Person, UrlType, NoteType,
                             EventRoleType, Family, Event, Place, Source,
@@ -226,6 +228,8 @@ from gramps.gen.utils.place import conv_lat_lon
 from gramps.gen.relationship import get_relationship_calculator
 if (DWR_VERSION_410):
     from gramps.gen.utils.location import get_main_location
+if DWR_VERSION_520:
+    from gramps.gen.utils.location import get_code
 
 
 if (DWR_VERSION_500):
@@ -1518,13 +1522,19 @@ class DynamicWebReport(Report):
             if (not self.inc_places):
                 jdatas.append(jdata)
                 continue
+            #if DWR_VERSION_520:  # TODO
+                # Enhanced places support multiple types with dates
+                # Enhanced places support multiple attributes
+                # Enhanced places support multiple events
+                # we may want to display some of these...
             if DWR_VERSION_410:
                 jdata['type'] = str(place.get_type())
             else:
                 jdata['type'] = ''
             jdata['names'] = []
             if DWR_VERSION_410:
-                for pn in place.get_all_names():
+                for pn in (place.get_names() if DWR_VERSION_520 else
+                           place.get_all_names()):
                     lang = pn.get_language()
                     if lang != '' and pref_lang!= '' and lang != pref_lang: continue
                     date = format_date(pn.get_date_object())
@@ -1583,7 +1593,8 @@ class DynamicWebReport(Report):
             else:
                 coords = ("", "")
             jdata['coords'] = coords
-            jdata['code'] = place.get_code()
+            jdata['code'] = (get_code(place) if DWR_VERSION_520 else
+                             place.get_code())
             # Get place notes
             jdata['note'] = self.get_notes_text(place)
             # Get place media

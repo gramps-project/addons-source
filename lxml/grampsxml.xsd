@@ -1,12 +1,14 @@
 <schema
- xmlns='http://www.w3.org/2001/XMLSchema'
- targetNamespace='http://gramps-project.org/xml/1.7.1/'
- xmlns:gramps='http://gramps-project.org/xml/1.7.1/'>
+  xmlns='http://www.w3.org/2001/XMLSchema'
+  targetNamespace='http://gramps-project.org/xml/1.8.0/'
+  xmlns:gramps='http://gramps-project.org/xml/1.8.0/'>
+
  <element name='database'>
   <complexType>
    <sequence>
     <element ref='gramps:header'/>
     <element ref='gramps:name-formats' minOccurs='0' maxOccurs='1'/>
+    <element ref='gramps:place-types' minOccurs='0' maxOccurs='1'/>
     <element ref='gramps:tags' minOccurs='0' maxOccurs='1'/>
     <element ref='gramps:events' minOccurs='0' maxOccurs='1'/>
     <element ref='gramps:people' minOccurs='0' maxOccurs='1'/>
@@ -537,7 +539,7 @@
    <sequence>
     <element ref='gramps:ptitle' minOccurs='0' maxOccurs='1'/>
     <element ref='gramps:pname' maxOccurs='unbounded'/>
-    <element ref='gramps:code' minOccurs='0' maxOccurs='1'/>
+    <element ref='gramps:ptype' maxOccurs='unbounded'/>
     <element ref='gramps:coord' minOccurs='0' maxOccurs='1'/>
     <element ref='gramps:placeref' minOccurs='0' maxOccurs='unbounded'/>
     <element ref='gramps:location' minOccurs='0' maxOccurs='unbounded'/>
@@ -546,6 +548,8 @@
     <element ref='gramps:noteref' minOccurs='0' maxOccurs='unbounded'/>
     <element ref='gramps:citationref' minOccurs='0' maxOccurs='unbounded'/>
     <element ref='gramps:tagref' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='gramps:attribute' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='gramps:eventref' minOccurs='0' maxOccurs='unbounded'/>
    </sequence>
    <attribute name='id' type='string' use='optional'/>
    <attribute name='handle' type='ID' use='required'/>
@@ -558,18 +562,21 @@
     </simpleType>
    </attribute>
    <attribute name='change' type='string' use='required'/>
-   <attribute name='type' type='string' use='required'/>
   </complexType>
  </element>
 
  <element name='pname'>
   <complexType>
-   <choice minOccurs='0' maxOccurs='1'>
-    <element ref='gramps:daterange'/>
-    <element ref='gramps:datespan'/>
-    <element ref='gramps:dateval'/>
-    <element ref='gramps:datestr'/>
-   </choice>
+   <sequence>
+    <choice minOccurs='0' maxOccurs='1'>
+     <element ref='gramps:daterange'/>
+     <element ref='gramps:datespan'/>
+     <element ref='gramps:dateval'/>
+     <element ref='gramps:datestr'/>
+    </choice>
+    <element ref='gramps:citationref' minOccurs='0' maxOccurs='unbounded'/>
+    <element ref='gramps:pabbr' minOccurs='0' maxOccurs='unbounded'/>
+   </sequence>
    <attribute name='lang' type='string' use='optional'/>
    <attribute name='value' type='string' use='required'/>
   </complexType>
@@ -580,8 +587,35 @@
   </complexType>
  </element>
 
- <element name='code'>
-  <complexType mixed='true'>
+ <element name='placeref'>
+  <complexType>
+   <sequence>
+    <choice minOccurs='0' maxOccurs='1'>
+     <element ref='gramps:daterange'/>
+     <element ref='gramps:datespan'/>
+     <element ref='gramps:dateval'/>
+     <element ref='gramps:datestr'/>
+    </choice>
+    <element ref='gramps:citationref' minOccurs='0' maxOccurs='unbounded'/>
+   </sequence>
+   <attribute name='type' type='string' use='optional'/>
+   <attribute name='hlink' type='IDREF' use='required'/>
+  </complexType>
+ </element>
+
+ <element name='ptype'>
+  <complexType>
+   <sequence>
+    <choice minOccurs='0' maxOccurs='1'>
+     <element ref='gramps:daterange'/>
+     <element ref='gramps:datespan'/>
+     <element ref='gramps:dateval'/>
+     <element ref='gramps:datestr'/>
+    </choice>
+    <element ref='gramps:citationref' minOccurs='0' maxOccurs='unbounded'/>
+   </sequence>
+   <attribute name='value' type='string' use='required'/>
+   <attribute name='number' type='string' use='optional'/>
   </complexType>
  </element>
 
@@ -603,6 +637,13 @@
    <attribute name='country' type='string' use='optional'/>
    <attribute name='postal' type='string' use='optional'/>
    <attribute name='phone' type='string' use='optional'/>
+  </complexType>
+ </element>
+
+ <element name='pabbr'>
+  <complexType>
+   <attribute name='type' type='string' use='optional'/>
+   <attribute name='value' type='string' use='required'/>
   </complexType>
  </element>
 
@@ -663,7 +704,7 @@
  <element name='repository'>
   <complexType>
    <sequence>
-    <element ref='gramps:rname'/>
+    <element ref='gramps:rname' minOccurs='0' maxOccurs='1'/>
     <element ref='gramps:type'/>
     <element ref='gramps:address' minOccurs='0' maxOccurs='unbounded'/>
     <element ref='gramps:url' minOccurs='0' maxOccurs='unbounded'/>
@@ -886,6 +927,29 @@
      </restriction>
     </simpleType>
    </attribute>
+  </complexType>
+ </element>
+
+ <element name='place-types'>
+  <complexType>
+   <sequence minOccurs='0' maxOccurs='unbounded'>
+    <element ref='gramps:place-type'/>
+   </sequence>
+  </complexType>
+ </element>
+
+ <element name='place-type'>
+  <complexType>
+   <sequence>
+    <element ref='gramps:pgroup' minOccurs='0' maxOccurs='unbounded'/>
+   </sequence>
+   <attribute name='number' type='string' use='optional'/>
+   <attribute name='name' type='string' use='required'/>
+  </complexType>
+ </element>
+
+ <element name='pgroup'>
+  <complexType mixed='true'>
   </complexType>
  </element>
 
@@ -1133,18 +1197,6 @@
      </restriction>
     </simpleType>
    </attribute>
-  </complexType>
- </element>
-
- <element name='placeref'>
-  <complexType>
-   <choice minOccurs='0' maxOccurs='1'>
-    <element ref='gramps:daterange'/>
-    <element ref='gramps:datespan'/>
-    <element ref='gramps:dateval'/>
-    <element ref='gramps:datestr'/>
-   </choice>
-   <attribute name='hlink' type='IDREF' use='required'/>
   </complexType>
  </element>
 
