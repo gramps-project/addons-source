@@ -20,15 +20,15 @@
 """Matches the earliest recorded matrilineal ancestor mother."""
 
 register(RULE,
-  id = 'MatrilinealProgenitorix',
-  name = _("Matrilineal progenitorix of <person>"),
+  id = 'MatrilinealProgenitrix',
+  name = _("Matrilineal progenitrix of <person>"),
   description = _("Matches the earliest recorded matrilineal ancestor mother."),
   version = '1.0.0',
   authors = ["Matthias Kemmer"],
   authors_email = ["matt.familienforschung@gmail.com"],
   gramps_target_version = '5.1',
   status = STABLE,
-  fname = "matrilinealprogenitorix.py",
-  ruleclass = 'MatrilinealProgenitorix',  # must be rule class name
+  fname = "matrilinealprogenitrix.py",
+  ruleclass = 'MatrilinealProgenitrix',  # must be rule class name
   namespace = 'Person',  # one of the primary object classes
   )

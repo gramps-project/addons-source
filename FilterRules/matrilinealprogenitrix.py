@@ -38,11 +38,11 @@ _ = _trans.gettext
 # MatrilinealProgenitorix Filter Rule
 #
 # -------------------------------------------------------------------------
-class MatrilinealProgenitorix(HasGrampsId):
+class MatrilinealProgenitrix(HasGrampsId):
     """Matches the earliest recorded matrilineal ancestor mother."""
 
     labels = [_('ID:')]
-    name = _('Matrilineal progenitorix of <person>')
+    name = _('Matrilineal progenitrix of <person>')
     category = _("Ancestral filters")
     description = _("Matches the earliest recorded matrilineal "
                     "ancestor mother.")
