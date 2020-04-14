@@ -2832,7 +2832,7 @@ class DotSvgGenerator(object):
                     death_str += '  '
             elif death[1]:
                 death_wraped = _('%s ') % self.dth
-                death_str = _('%s ') % self.bth
+                death_str = _('%s ') % self.dth
             death_wraped += death[1]
             death_str += death[1]
 
