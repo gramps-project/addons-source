@@ -2787,7 +2787,7 @@ class DotSvgGenerator(object):
                 image = self.get_avatar(gender=person.gender)
 
             if image is not None:
-                image = '<IMG SRC="%s"/>' % image
+                image = '<IMG SRC="%s"/>' % escape(image)
             else:
                 image = ''
 
