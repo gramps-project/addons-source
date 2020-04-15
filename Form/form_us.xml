@@ -7841,13 +7841,22 @@ Birth, Death, Marriage
                 <_attribute>Place of Birth</_attribute>
             </column>
             <column>
-                <_attribute>Who will always know your address (Name &amp; Address)</_attribute>
+                <_attribute>Country of Citizenship</_attribute>
             </column>
             <column>
-                <_attribute>Employer&apos;s Name &amp; address</_attribute>
+                <_attribute>Name of Person who will always know your address</_attribute>
             </column>
             <column>
-                <_attribute>Place of employment or business</_attribute>
+                <_attribute>Relationship of that Person</_attribute>
+            </column>
+            <column>
+                <_attribute>Address of that Person</_attribute>
+            </column>
+            <column>
+                <_attribute>Employer&apos;s Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Place of employment or business (Address)</_attribute>
             </column>
             <column>
                 <_attribute>Race</_attribute>
