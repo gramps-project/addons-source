@@ -1006,10 +1006,13 @@ class CombinedView(NavigationView):
             family = self.dbstate.db.get_family_from_handle(family_handle)
             father_handle = family.get_father_handle()
             mother_handle = family.get_mother_handle()
+            spouse = None
             if father_handle == person.handle:
-                spouse = self.dbstate.db.get_person_from_handle(mother_handle)
+                if mother_handle:
+                    spouse = self.dbstate.db.get_person_from_handle(mother_handle)
             else:
-                spouse = self.dbstate.db.get_person_from_handle(father_handle)
+                if father_handle:
+                    spouse = self.dbstate.db.get_person_from_handle(father_handle)
             for event_ref in family.get_event_ref_list():
                 event = self.dbstate.db.get_event_from_handle(event_ref.ref)
                 sortval = event.get_date_object().get_sort_value()
@@ -1094,7 +1097,7 @@ class CombinedView(NavigationView):
         media_list = citation.get_media_list()
         for media_ref in media_list:
             media_handle = media_ref.get_reference_handle()
-            media = self.dbstate.db.get_object_from_handle(media_handle)
+            media = self.dbstate.db.get_media_from_handle(media_handle)
             full_path = media_path_full(self.dbstate.db, media.get_path())
             mime_type = media.get_mime_type()
             if mime_type and mime_type.startswith("image"):
