@@ -66,6 +66,7 @@ from gramps.gen.utils.thumbnails import get_thumbnail_image
 from gramps.gen.config import config
 from gramps.gui import widgets
 from gramps.gui.widgets.reorderfam import Reorder
+from gramps.gui.widgets import ShadeBox
 from gramps.gui.selectors import SelectorFactory
 from gramps.gen.errors import WindowActiveError
 from gramps.gui.views.bookmarks import PersonBookmarks
@@ -282,9 +283,6 @@ class CombinedView(NavigationView):
         container.pack_start(ss, False, False, 0)
         container.pack_start(self.stack, True, True, 0)
         container.show_all()
-
-        self.color = Gdk.RGBA()
-        self.color.parse("White")
 
         return container
 
@@ -1528,7 +1526,7 @@ class CombinedView(NavigationView):
         return vbox
 
     def make_dragbox(self, box, dragtype, handle):
-        eventbox = Gtk.EventBox()
+        eventbox = ShadeBox(self.use_shade)
         eventbox.add(box)
 
         if handle is not None:
@@ -1540,9 +1538,6 @@ class CombinedView(NavigationView):
                 self._set_draggable_event(eventbox, handle)
             elif dragtype == 'Citation':
                 self._set_draggable_citation(eventbox, handle)
-
-        if self.use_shade:
-            eventbox.override_background_color(Gtk.StateType.NORMAL, self.color)
 
         return eventbox
 
