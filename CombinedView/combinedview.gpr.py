@@ -20,9 +20,9 @@
 
 register(VIEW,
 id = 'combinedview',
-name = _("Relationships/Events"),
+name = _("Combined"),
 description = _("A view showing relationships and events for a person"),
-version = '1.0',
+version = '1.0.1',
 gramps_target_version = '5.1',
 status = STABLE,
 fname = 'combinedview.py',

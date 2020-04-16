@@ -29,6 +29,7 @@ Combined View
 #
 #-------------------------------------------------------------------------
 from html import escape
+from operator import itemgetter
 import pickle
 import logging
 
@@ -1019,7 +1020,7 @@ class CombinedView(NavigationView):
                 events.append(((sortval, 0), event_ref, spouse))
 
         # Write all events sorted by date
-        for index, event in enumerate(sorted(events)):
+        for index, event in enumerate(sorted(events, key=itemgetter(0))):
             self.write_event(event[1], event[2], index+1)
 
     def write_event(self, event_ref, spouse, index):
