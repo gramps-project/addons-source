@@ -107,7 +107,7 @@ class CombinedView(NavigationView):
         )
 
     def __init__(self, pdata, dbstate, uistate, nav_group=0):
-        NavigationView.__init__(self, _('Relationships'),
+        NavigationView.__init__(self, _('Combined'),
                                       pdata, dbstate, uistate,
                                       PersonBookmarks,
                                       nav_group)
@@ -124,6 +124,8 @@ class CombinedView(NavigationView):
 
         self.person_tab = 'event'
         self.event_tab = 'participant'
+
+        self.additional_uis.append(self.additional_ui)
 
         self.show_siblings = self._config.get('preferences.family-siblings')
         self.show_details = self._config.get('preferences.family-details')
@@ -799,29 +801,21 @@ class CombinedView(NavigationView):
         else:
             return (_("Unknown"), "")
 
-    def _set_draggable_person(self, eventbox, person_handle):
-        """
-        Register the given eventbox as a drag_source with given person_handle
-        """
-        self._set_draggable(eventbox, person_handle, DdTargets.PERSON_LINK, 'gramps-person')
+    def make_dragbox(self, box, dragtype, handle):
+        eventbox = ShadeBox(self.use_shade)
+        eventbox.add(box)
 
-    def _set_draggable_family(self, eventbox, family_handle):
-        """
-        Register the given eventbox as a drag_source with given family_handle
-        """
-        self._set_draggable(eventbox, family_handle, DdTargets.FAMILY_LINK, 'gramps-family')
+        if handle is not None:
+            if dragtype == 'Person':
+                self._set_draggable(eventbox, handle, DdTargets.PERSON_LINK, 'gramps-person')
+            elif dragtype == 'Family':
+                self._set_draggable(eventbox, handle, DdTargets.FAMILY_LINK, 'gramps-family')
+            elif dragtype == 'Event':
+                self._set_draggable(eventbox, handle, DdTargets.EVENT, 'gramps-event')
+            elif dragtype == 'Citation':
+                self._set_draggable(eventbox, handle, DdTargets.CITATION_LINK, 'gramps-citation')
 
-    def _set_draggable_event(self, eventbox, event_handle):
-        """
-        Register the given eventbox as a drag_source with given event_handle
-        """
-        self._set_draggable(eventbox, event_handle, DdTargets.EVENT, 'gramps-event')
-
-    def _set_draggable_citation(self, eventbox, citation_handle):
-        """
-        Register the given eventbox as a drag_source with given citation_handle
-        """
-        self._set_draggable(eventbox, citation_handle, DdTargets.CITATION_LINK, 'gramps-citation')
+        return eventbox
 
     def _set_draggable(self, eventbox, object_h, dnd_type, stock_icon):
         """
@@ -1479,10 +1473,7 @@ class CombinedView(NavigationView):
 
         hbox.pack_start(bbox, False, True, 6)
 
-        eventbox = Gtk.EventBox()
-        if family is not None:
-            self._set_draggable_family(eventbox, family.handle)
-        eventbox.add(hbox)
+        eventbox = self.make_dragbox(hbox, 'Family', family.handle)
 
         return eventbox
 
@@ -1524,22 +1515,6 @@ class CombinedView(NavigationView):
             vbox.pack_start(link_label, True, True, 0)
 
         return vbox
-
-    def make_dragbox(self, box, dragtype, handle):
-        eventbox = ShadeBox(self.use_shade)
-        eventbox.add(box)
-
-        if handle is not None:
-            if dragtype == 'Person':
-                self._set_draggable_person(eventbox, handle)
-            elif dragtype == 'Family':
-                self._set_draggable_family(eventbox, handle)
-            elif dragtype == 'Event':
-                self._set_draggable_event(eventbox, handle)
-            elif dragtype == 'Citation':
-                self._set_draggable_citation(eventbox, handle)
-
-        return eventbox
 
     def write_child(self, handle, index, child_should_be_linked):
         """
@@ -1603,6 +1578,10 @@ class CombinedView(NavigationView):
 
 ##############################################################################
 
+    def edit_active(self, obj):
+        phandle = self.get_active()
+        self.edit_person(obj, phandle)
+
     def edit_button_press(self, obj, event, handle):
         if button_activated(event, _LEFT_BUTTON):
             self.edit_person(obj, handle)
@@ -1663,10 +1642,6 @@ class CombinedView(NavigationView):
             EditFamily(self.dbstate, self.uistate, [], family)
         except WindowActiveError:
             pass
-
-    def edit_active(self, obj):
-        phandle = self.get_active()
-        self.edit_person(obj, phandle)
 
     def add_child_to_fam(self, obj, event, handle):
         if button_activated(event, _LEFT_BUTTON):
@@ -1907,4 +1882,3 @@ def button_activated(event, mouse_button):
         return True
     else:
         return False
-
