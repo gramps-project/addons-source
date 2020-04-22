@@ -31,5 +31,6 @@ authors_email = ["http://gramps-project.org"],
 category = ("Relationships", _("Relationships")),
 viewclass = 'CombinedView',
 order = START,
+include_in_listing = False,
 )
 
