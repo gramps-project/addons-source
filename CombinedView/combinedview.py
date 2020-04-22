@@ -51,7 +51,7 @@ from gramps.gen.lib import (ChildRef, EventRoleType, EventType, Family,
                             FamilyRelType, Name, Person, Surname)
 from gramps.gen.lib.date import Today
 from gramps.gen.db import DbTxn
-from gramps.gui.views.navigationview import NavigationView
+from navigationview import NavigationView
 from gramps.gui.uimanager import ActionGroup
 from gramps.gui.editors import EditPerson, EditFamily, EditEvent
 from gramps.gui.editors import FilterEditor
@@ -151,7 +151,7 @@ class CombinedView(NavigationView):
         self.callman.add_db_signal('person-delete', self.redraw)
 
     def navigation_type(self):
-        return 'Person'
+        return self.get_active()[0]
 
     def can_configure(self):
         """
@@ -161,7 +161,7 @@ class CombinedView(NavigationView):
         return True
 
     def goto_handle(self, handle):
-        self.change_person(handle)
+        self.change_object(handle)
 
     def shade_update(self, client, cnxn_id, entry, data):
         self.use_shade = self._config.get('preferences.relation-shade')
@@ -181,10 +181,10 @@ class CombinedView(NavigationView):
         if self.active:
             person = self.get_active()
             if person:
-                while not self.change_person(person):
+                while not self.change_object(person):
                     pass
             else:
-                self.change_person(None)
+                self.change_object(None)
         else:
             self.dirty = True
 
@@ -194,10 +194,10 @@ class CombinedView(NavigationView):
             self.bookmarks.redraw()
             person = self.get_active()
             if person:
-                while not self.change_person(person):
+                while not self.change_object(person):
                     pass
             else:
-                self.change_person(None)
+                self.change_object(None)
         else:
             self.dirty = True
 
@@ -205,10 +205,10 @@ class CombinedView(NavigationView):
         if self.active:
             person = self.get_active()
             if person:
-                while not self.change_person(person):
+                while not self.change_object(person):
                     pass
             else:
-                self.change_person(None)
+                self.change_object(None)
         else:
             self.dirty = True
 
@@ -216,10 +216,10 @@ class CombinedView(NavigationView):
         if self.active:
             person = self.get_active()
             if person:
-                while not self.change_person(person):
+                while not self.change_object(person):
                     pass
             else:
-                self.change_person(None)
+                self.change_object(None)
         else:
             self.dirty = True
 
@@ -227,10 +227,10 @@ class CombinedView(NavigationView):
         if self.active:
             person = self.get_active()
             if person:
-                while not self.change_person(person):
+                while not self.change_object(person):
                     pass
             else:
-                self.change_person(None)
+                self.change_object(None)
         else:
             self.dirty = True
 
@@ -238,10 +238,10 @@ class CombinedView(NavigationView):
         if self.active:
             person = self.get_active()
             if person:
-                while not self.change_person(person):
+                while not self.change_object(person):
                     pass
             else:
-                self.change_person(None)
+                self.change_object(None)
         else:
             self.dirty = True
 
@@ -486,7 +486,7 @@ class CombinedView(NavigationView):
                                              self.reorder_sensitive)
         self.uimanager.set_actions_sensitive(self.family_action, False)
 
-    def filter_editor(self, obj):
+    def filter_editor(self, *obj):
         try:
             FilterEditor('Person', CUSTOM_FILTERS,
                          self.dbstate, self.uistate)
@@ -502,36 +502,35 @@ class CombinedView(NavigationView):
             self.child = None
         if self.active:
                 self.bookmarks.redraw()
+        self.history.clear()
         self.redraw()
 
     def redraw(self, *obj):
         active_person = self.get_active()
         if active_person:
-            self.change_person(active_person)
+            self.change_object(active_person)
         else:
-            self.change_person(None)
+            self.change_object(None)
 
-    def change_person(self, obj):
+    def change_object(self, obj):
+
+        list(map(self.header.remove, self.header.get_children()))
+        list(map(self.stack.remove, self.stack.get_children()))
+
+        if obj is None:
+            return
+
         self.change_active(obj)
-        try:
-            return self._change_person(obj)
-        except AttributeError as msg:
-            import traceback
-            exc = traceback.format_exc()
-            _LOG.error(str(msg) +"\n" + exc)
-            from gramps.gui.dialog import RunDatabaseRepair
-            RunDatabaseRepair(str(msg))
-            self.redrawing = False
-            return True
+        if obj[0] == 'Person':
+            return self._change_person(obj[1])
+        elif obj[0] == 'Event':
+            return self._change_event(obj[1])
 
     def _change_person(self, handle):
 
         if self.redrawing:
             return False
         self.redrawing = True
-
-        list(map(self.header.remove, self.header.get_children()))
-        list(map(self.stack.remove, self.stack.get_children()))
 
         person = self.dbstate.db.get_person_from_handle(handle)
         if not person:
@@ -563,11 +562,8 @@ class CombinedView(NavigationView):
             return False
         self.redrawing = True
 
-        list(map(self.header.remove, self.header.get_children()))
-        list(map(self.stack.remove, self.stack.get_children()))
-
-        self.uimanager.set_actions_visible(self.family_action, True)
-        self.uimanager.set_actions_visible(self.order_action, True)
+        self.uimanager.set_actions_visible(self.family_action, False)
+        self.uimanager.set_actions_visible(self.order_action, False)
 
         event = self.dbstate.db.get_event_from_handle(handle)
         self.write_event_title(event)
@@ -760,7 +756,7 @@ class CombinedView(NavigationView):
         Open this picture in the default picture viewer.
         """
         photo_path = media_path_full(self.dbstate.db, photo.get_path())
-        open_file_with_default_application(photo_path)
+        open_file_with_default_application(photo_path, self.uistate)
 
     def format_event(self, event):
         if event:
@@ -886,13 +882,17 @@ class CombinedView(NavigationView):
             value = ""
         return value
 
-    def _button_press(self, obj, event, handle):
+    def _person_link(self, obj, event, handle):
         if button_activated(event, _LEFT_BUTTON):
-            self.change_active(handle)
+            self.change_active(('Person', handle))
         elif button_activated(event, _RIGHT_BUTTON):
             self.myMenu = Gtk.Menu()
             self.myMenu.append(self.build_menu_item(handle))
-            self.myMenu.popup(None, None, None, None, event.button, event.time)
+            self.myMenu.popup_at_pointer(event)
+
+    def _event_link(self, obj, event, handle):
+        if button_activated(event, _LEFT_BUTTON):
+            self.change_active(('Event', handle))
 
     def build_menu_item(self, handle):
         person = self.dbstate.db.get_person_from_handle(handle)
@@ -1038,7 +1038,7 @@ class CombinedView(NavigationView):
 
         vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
 
-        link_func = self._link_event
+        link_func = self._event_link
         name = (title, None)
         handle = event_ref.ref
         link_label = widgets.LinkLabel(name, link_func, handle, emph,
@@ -1063,9 +1063,6 @@ class CombinedView(NavigationView):
         eventbox = self.make_dragbox(vbox, 'Event', handle)
         eventbox.show_all()
         self.vbox2.pack_start(eventbox, False, False, 1)
-
-    def _link_event(self, obj, event, handle):
-        self._change_event(handle)
 
     def write_citation(self, vbox, chandle):
         citation = self.dbstate.db.get_citation_from_handle(chandle)
@@ -1176,7 +1173,7 @@ class CombinedView(NavigationView):
             emph = True
         else:
             emph = False
-        link_func = self._button_press
+        link_func = self._person_link
         link_label = widgets.LinkLabel(name, link_func, handle, emph,
                                        theme=self.theme)
         link_label.set_padding(3, 0)
@@ -1490,7 +1487,7 @@ class CombinedView(NavigationView):
                 emph = True
             else:
                 emph = False
-            link_label = widgets.LinkLabel(name, self._button_press,
+            link_label = widgets.LinkLabel(name, self._person_link,
                                            handle, emph, theme=self.theme)
             link_label.set_visible_window(False)
             if self._config.get('preferences.releditbtn'):
@@ -1533,7 +1530,7 @@ class CombinedView(NavigationView):
             emph = None
 
         if child_should_be_linked:
-            link_func = self._button_press
+            link_func = self._person_link
         else:
             link_func = None
 
@@ -1578,8 +1575,11 @@ class CombinedView(NavigationView):
 
 ##############################################################################
 
-    def edit_active(self, obj):
-        phandle = self.get_active()
+    def get_handle(self):
+        return self.get_active()[1]
+
+    def edit_active(self, *obj):
+        phandle = self.get_handle()
         self.edit_person(obj, phandle)
 
     def edit_button_press(self, obj, event, handle):
@@ -1612,7 +1612,7 @@ class CombinedView(NavigationView):
     def add_family(self, obj, event, handle):
         if button_activated(event, _LEFT_BUTTON):
             family = Family()
-            person = self.dbstate.db.get_person_from_handle(self.get_active())
+            person = self.dbstate.db.get_person_from_handle(self.get_handle())
             if not person:
                 return
 
@@ -1626,9 +1626,9 @@ class CombinedView(NavigationView):
             except WindowActiveError:
                 pass
 
-    def add_spouse(self, obj):
+    def add_spouse(self, *obj):
         family = Family()
-        person = self.dbstate.db.get_person_from_handle(self.get_active())
+        person = self.dbstate.db.get_person_from_handle(self.get_handle())
 
         if not person:
             return
@@ -1697,7 +1697,7 @@ class CombinedView(NavigationView):
         if button_activated(event, _LEFT_BUTTON):
             SelectFamily = SelectorFactory('Family')
 
-            phandle = self.get_active()
+            phandle = self.get_handle()
             person = self.dbstate.db.get_person_from_handle(phandle)
             skip = set(person.get_family_handle_list())
 
@@ -1705,14 +1705,14 @@ class CombinedView(NavigationView):
             family = dialog.run()
 
             if family:
-                child = self.dbstate.db.get_person_from_handle(self.get_active())
+                child = self.dbstate.db.get_person_from_handle(self.get_handle())
 
                 self.dbstate.db.add_child_to_family(family, child)
 
-    def select_parents(self, obj):
+    def select_parents(self, *obj):
         SelectFamily = SelectorFactory('Family')
 
-        phandle = self.get_active()
+        phandle = self.get_handle()
         person = self.dbstate.db.get_person_from_handle(phandle)
         skip = set(person.get_family_handle_list()+
                    person.get_parent_family_handle_list())
@@ -1721,13 +1721,13 @@ class CombinedView(NavigationView):
         family = dialog.run()
 
         if family:
-            child = self.dbstate.db.get_person_from_handle(self.get_active())
+            child = self.dbstate.db.get_person_from_handle(self.get_handle())
 
             self.dbstate.db.add_child_to_family(family, child)
 
-    def add_parents(self, obj):
+    def add_parents(self, *obj):
         family = Family()
-        person = self.dbstate.db.get_person_from_handle(self.get_active())
+        person = self.dbstate.db.get_person_from_handle(self.get_handle())
 
         if not person:
             return
@@ -1744,7 +1744,7 @@ class CombinedView(NavigationView):
     def add_parent_family(self, obj, event, handle):
         if button_activated(event, _LEFT_BUTTON):
             family = Family()
-            person = self.dbstate.db.get_person_from_handle(self.get_active())
+            person = self.dbstate.db.get_person_from_handle(self.get_handle())
 
             ref = ChildRef()
             ref.ref = person.handle
@@ -1757,23 +1757,20 @@ class CombinedView(NavigationView):
 
     def delete_family(self, obj, event, handle):
         if button_activated(event, _LEFT_BUTTON):
-            self.dbstate.db.remove_parent_from_family(self.get_active(), handle)
+            self.dbstate.db.remove_parent_from_family(self.get_handle(), handle)
 
     def delete_parent_family(self, obj, event, handle):
         if button_activated(event, _LEFT_BUTTON):
-            self.dbstate.db.remove_child_from_family(self.get_active(), handle)
-
-    def change_to(self, obj, handle):
-        self.change_active(handle)
+            self.dbstate.db.remove_child_from_family(self.get_handle(), handle)
 
     def reorder_button_press(self, obj, event, handle):
         if button_activated(event, _LEFT_BUTTON):
             self.reorder(obj)
 
-    def reorder(self, obj, dumm1=None, dummy2=None):
-        if self.get_active():
+    def reorder(self, *obj):
+        if self.get_handle():
             try:
-                Reorder(self.dbstate, self.uistate, [], self.get_active())
+                Reorder(self.dbstate, self.uistate, [], self.get_handle())
             except WindowActiveError:
                 pass
 
