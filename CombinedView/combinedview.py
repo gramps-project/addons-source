@@ -1468,11 +1468,14 @@ class CombinedView(NavigationView):
                 delete.set_tooltip_text(del_msg)
                 bbox.pack_start(delete, False, True, 0)
 
+
         hbox.pack_start(bbox, False, True, 6)
 
-        eventbox = self.make_dragbox(hbox, 'Family', family.handle)
-
-        return eventbox
+        if family:
+            eventbox = self.make_dragbox(hbox, 'Family', family.handle)
+            return eventbox
+        else:
+            return hbox
 
     def write_person(self, title, handle):
         """
