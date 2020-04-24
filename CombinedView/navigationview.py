@@ -92,6 +92,17 @@ class NavigationView(PageView):
 
         self.history = History(self.dbstate)
 
+        self.hist = {}
+        for hist_type in ('Person', 'Event'):
+            self.hist[hist_type] = self.uistate.get_history(hist_type)
+            self.hist[hist_type].connect('active-changed', self.sync(hist_type))
+
+    # A partial would be neater here but it doesn't work.
+    def sync(self, hist_type):
+        def sync(handle):
+            self.change_active((hist_type, handle))
+        return sync
+
     def bm_change(self, handle):
         self.change_active(('Person', handle))
 
@@ -218,6 +229,10 @@ class NavigationView(PageView):
         hobj = self.get_history()
         if handle and not hobj.lock and not (handle == hobj.present()):
             hobj.push(handle)
+
+            sync_hist = self.hist[handle[0]]
+            if sync_hist.present() != handle[1]:
+                sync_hist.push(handle[1])
 
     @abstractmethod
     def goto_handle(self, handle):

@@ -1358,7 +1358,7 @@ class CombinedView(NavigationView):
 
         father_handle = family.get_father_handle()
         mother_handle = family.get_mother_handle()
-        if self.get_active() == father_handle:
+        if self.get_handle() == father_handle:
             handle = mother_handle
         else:
             handle = father_handle
