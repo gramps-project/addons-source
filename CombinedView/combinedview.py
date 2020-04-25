@@ -52,6 +52,7 @@ from gramps.gen.lib import (ChildRef, EventRoleType, EventType, Family,
 from gramps.gen.lib.date import Today
 from gramps.gen.db import DbTxn
 from navigationview import NavigationView
+from taglist import TagList
 from gramps.gui.uimanager import ActionGroup
 from gramps.gui.editors import EditPerson, EditFamily, EditEvent
 from gramps.gui.editors import FilterEditor
@@ -883,20 +884,31 @@ class CombinedView(NavigationView):
         return value
 
     def _person_link(self, obj, event, handle):
-        if button_activated(event, _LEFT_BUTTON):
-            self.change_active(('Person', handle))
-        elif button_activated(event, _RIGHT_BUTTON):
-            self.myMenu = Gtk.Menu()
-            self.myMenu.append(self.build_menu_item(handle))
-            self.myMenu.popup_at_pointer(event)
+        self._link(event, 'Person', handle)
 
     def _event_link(self, obj, event, handle):
-        if button_activated(event, _LEFT_BUTTON):
-            self.change_active(('Event', handle))
+        self._link(event, 'Event', handle)
 
-    def build_menu_item(self, handle):
-        person = self.dbstate.db.get_person_from_handle(handle)
-        name = name_displayer.display(person)
+    def _link(self, event, obj_type, handle):
+        if button_activated(event, _LEFT_BUTTON):
+            self.change_active((obj_type, handle))
+        elif button_activated(event, _RIGHT_BUTTON):
+            self.my_menu = Gtk.Menu()
+            self.my_menu.append(self.build_menu_item(obj_type, handle))
+            if Gtk.get_minor_version() >= 22:
+                self.my_menu.popup_at_pointer(event)
+            else:
+                self.my_menu.popup(None, None, None, None,
+                                   event.button, event.time)
+
+    def build_menu_item(self, obj_type, handle):
+
+        if obj_type == 'Person':
+            person = self.dbstate.db.get_person_from_handle(handle)
+            name = name_displayer.display(person)
+        elif obj_type == 'Event':
+            event = self.dbstate.db.get_event_from_handle(handle)
+            name = str(event.get_type())
 
         item = Gtk.ImageMenuItem(None)
         image = Gtk.Image.new_from_icon_name('gtk-edit', Gtk.IconSize.MENU)
@@ -908,16 +920,23 @@ class CombinedView(NavigationView):
         item.set_image(image)
         item.add(label)
 
-        item.connect('activate', self.edit_menu, handle)
+        item.connect('activate', self.edit_menu, handle, obj_type)
         item.show()
         return item
 
-    def edit_menu(self, obj, handle):
-        person = self.dbstate.db.get_person_from_handle(handle)
-        try:
-            EditPerson(self.dbstate, self.uistate, [], person)
-        except WindowActiveError:
-            pass
+    def edit_menu(self, obj, handle, obj_type):
+        if obj_type == 'Person':
+            person = self.dbstate.db.get_person_from_handle(handle)
+            try:
+                EditPerson(self.dbstate, self.uistate, [], person)
+            except WindowActiveError:
+                pass
+        elif obj_type == 'Event':
+            event = self.dbstate.db.get_event_from_handle(handle)
+            try:
+                EditEvent(self.dbstate, self.uistate, [], event)
+            except WindowActiveError:
+                pass
 
     def write_relationship(self, box, family):
         msg = _('Relationship type: %s') % escape(str(family.get_relationship()))
@@ -1044,7 +1063,7 @@ class CombinedView(NavigationView):
         link_label = widgets.LinkLabel(name, link_func, handle, emph,
                                        theme=self.theme)
         link_label.set_padding(3, 0)
-        link_label.set_visible_window(False)
+        link_label.set_tooltip_text(_('Click to make this event active'))
         if self._config.get('preferences.releditbtn'):
             button = widgets.IconButton(self.edit_event, handle)
             button.set_tooltip_text(_('Edit %s') % name[0])
@@ -1177,7 +1196,6 @@ class CombinedView(NavigationView):
         link_label = widgets.LinkLabel(name, link_func, handle, emph,
                                        theme=self.theme)
         link_label.set_padding(3, 0)
-        link_label.set_visible_window(False)
         if self._config.get('preferences.releditbtn'):
             button = widgets.IconButton(self.edit_button_press, handle)
             button.set_tooltip_text(_('Edit %s') % name[0])
@@ -1312,9 +1330,9 @@ class CombinedView(NavigationView):
         vbox.pack_start(ebox, False, False, 1)
 
         if self.show_siblings:
-            active = self.get_active()
+            active = self.get_handle()
 
-            count = len(family.get_child_ref_list()) - 1
+            count = len(family.get_child_ref_list())
             ex2 = Gtk.Expander(label='%s (%s):' % (_('Siblings'), count))
             ex2.set_margin_start(24)
             ex2.set_expanded(True)
@@ -1477,6 +1495,14 @@ class CombinedView(NavigationView):
         else:
             return hbox
 
+    def get_tag_list(self, obj):
+        tags_list = []
+        for handle in obj.get_tag_list():
+            tag = self.dbstate.db.get_tag_from_handle(handle)
+            tags_list.append((tag.priority, tag.name, tag.color))
+        tags_list.sort()
+        return [(item[1], item[2]) for item in tags_list]
+
     def write_person(self, title, handle):
         """
         Create and show a person cell.
@@ -1492,7 +1518,6 @@ class CombinedView(NavigationView):
                 emph = False
             link_label = widgets.LinkLabel(name, self._person_link,
                                            handle, emph, theme=self.theme)
-            link_label.set_visible_window(False)
             if self._config.get('preferences.releditbtn'):
                 button = widgets.IconButton(self.edit_button_press, handle)
                 button.set_tooltip_text(_('Edit %s') % name[0])
@@ -1500,6 +1525,8 @@ class CombinedView(NavigationView):
                 button = None
             hbox = Gtk.Box()
             hbox.set_spacing(6)
+            tag_list = TagList(self.get_tag_list(person))
+            hbox.pack_start(tag_list, False, False, 0)
             hbox.pack_start(link_label, False, False, 0)
             if self.show_details:
                 value = self.info_string(handle)
@@ -1541,9 +1568,7 @@ class CombinedView(NavigationView):
         link_label = widgets.LinkLabel(name, link_func, handle, emph,
                                        theme=self.theme)
         link_label.set_padding(3, 0)
-        link_label.set_visible_window(False)
-        if child_should_be_linked and self._config.get(
-            'preferences.releditbtn'):
+        if self._config.get('preferences.releditbtn'):
             button = widgets.IconButton(self.edit_button_press, handle)
             button.set_tooltip_text(_('Edit %s') % name[0])
         else:
@@ -1555,6 +1580,9 @@ class CombinedView(NavigationView):
         l.set_width_chars(3)
         l.set_halign(Gtk.Align.END)
         hbox.pack_start(l, False, False, 0)
+        person = self.dbstate.db.get_person_from_handle(handle)
+        tag_list = TagList(self.get_tag_list(person))
+        hbox.pack_start(tag_list, False, False, 0)
         hbox.pack_start(link_label, False, False, 0)
         if self.show_details:
             value = self.info_string(handle)
