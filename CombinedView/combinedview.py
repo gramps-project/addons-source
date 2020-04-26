@@ -102,9 +102,11 @@ class CombinedView(NavigationView):
     CONFIGSETTINGS = (
         ('preferences.family-siblings', True),
         ('preferences.family-details', True),
+        ('preferences.show-tags', True),
         ('preferences.relation-display-theme', "CLASSIC"),
         ('preferences.relation-shade', True),
         ('preferences.releditbtn', True),
+        ('preferences.show-tags', True),
         )
 
     def __init__(self, pdata, dbstate, uistate, nav_group=0):
@@ -130,6 +132,7 @@ class CombinedView(NavigationView):
 
         self.show_siblings = self._config.get('preferences.family-siblings')
         self.show_details = self._config.get('preferences.family-details')
+        self.show_tags = self._config.get('preferences.show-tags')
         self.use_shade = self._config.get('preferences.relation-shade')
         self.theme = self._config.get('preferences.relation-display-theme')
         self.toolbar_visible = config.get('interface.toolbar-on')
@@ -173,6 +176,7 @@ class CombinedView(NavigationView):
     def config_update(self, client, cnxn_id, entry, data):
         self.show_siblings = self._config.get('preferences.family-siblings')
         self.show_details = self._config.get('preferences.family-details')
+        self.show_tags = self._config.get('preferences.show-tags')
         self.redraw()
 
     def build_tree(self):
@@ -1525,8 +1529,6 @@ class CombinedView(NavigationView):
                 button = None
             hbox = Gtk.Box()
             hbox.set_spacing(6)
-            tag_list = TagList(self.get_tag_list(person))
-            hbox.pack_start(tag_list, False, False, 0)
             hbox.pack_start(link_label, False, False, 0)
             if self.show_details:
                 value = self.info_string(handle)
@@ -1534,6 +1536,9 @@ class CombinedView(NavigationView):
                     hbox.pack_start(widgets.MarkupLabel(value), False, False, 0)
             if button is not None:
                 hbox.pack_start(button, False, False, 0)
+            if self.show_tags:
+                tag_list = TagList(self.get_tag_list(person))
+                hbox.pack_start(tag_list, False, False, 0)
             vbox.pack_start(hbox, True, True, 0)
         else:
             link_label = Gtk.Label(label=_('Unknown'))
@@ -1581,8 +1586,6 @@ class CombinedView(NavigationView):
         l.set_halign(Gtk.Align.END)
         hbox.pack_start(l, False, False, 0)
         person = self.dbstate.db.get_person_from_handle(handle)
-        tag_list = TagList(self.get_tag_list(person))
-        hbox.pack_start(tag_list, False, False, 0)
         hbox.pack_start(link_label, False, False, 0)
         if self.show_details:
             value = self.info_string(handle)
@@ -1590,6 +1593,9 @@ class CombinedView(NavigationView):
                 hbox.pack_start(widgets.MarkupLabel(value), False, False, 0)
         if button is not None:
             hbox.pack_start(button, False, False, 0)
+        if self.show_tags:
+            tag_list = TagList(self.get_tag_list(person))
+            hbox.pack_start(tag_list, False, False, 0)
         hbox.show()
         vbox.pack_start(hbox, True, True, 0)
 
@@ -1821,6 +1827,8 @@ class CombinedView(NavigationView):
                           self.config_update)
         self._config.connect("preferences.family-details",
                           self.config_update)
+        self._config.connect("preferences.show-tags",
+                          self.config_update)
         config.connect("interface.toolbar-on",
                           self.shade_update)
 
@@ -1861,6 +1869,9 @@ class CombinedView(NavigationView):
         configdialog.add_checkbox(grid,
                 _('Show Siblings'),
                 1, 'preferences.family-siblings')
+        configdialog.add_checkbox(grid,
+                _('Show Tags'),
+                2, 'preferences.show-tags')
 
         return _('Content'), grid
 
