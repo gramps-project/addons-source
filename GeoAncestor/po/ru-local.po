@@ -1,0 +1,99 @@
+# Russian translation for GeoAncestor addon.
+# This file is distributed under the same license as the Gramps package.
+# vantu5z <vantu5z@mail.ru>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps51\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-06 08:50-0500\n"
+"PO-Revision-Date: 2020-04-26 16:01+0300\n"
+"Last-Translator: vantu5z <vantu5z@mail.ru>\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ASCII\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: GeoAncestor/GeoAncestor.gpr.py:73
+msgid "OsmGpsMap module not loaded."
+msgstr "Модуль OsmGpsMap незагружен."
+
+#: GeoAncestor/GeoAncestor.gpr.py:74
+#, python-format
+msgid ""
+"Geography functionality will not be available.\n"
+"To build it for Gramps see %(gramps_wiki_build_osmgps_url)s"
+msgstr ""
+"Функции географии недоступны.\n"
+"Как добавить их в Gramps смотри в %(gramps_wiki_build_osmgps_url)s"
+
+#: GeoAncestor/GeoAncestor.gpr.py:88
+msgid "Ancestors map"
+msgstr "Карта предков"
+
+#: GeoAncestor/GeoAncestor.gpr.py:89
+msgid "A view showing ancestors places on the map."
+msgstr "Вид отображающий местоположения предков на карте."
+
+#: GeoAncestor/GeoAncestor.gpr.py:96
+msgid "Geography"
+msgstr "География"
+
+#: GeoAncestor/GeoAncestor.py:109
+msgid "Organize Bookmarks"
+msgstr "Управление закладками"
+
+#: GeoAncestor/GeoAncestor.py:197
+msgid "Ancestors places on the map"
+msgstr "Места предков на карте"
+
+#: GeoAncestor/GeoAncestor.py:225
+msgid "GeoAncestor"
+msgstr ""
+
+#: GeoAncestor/GeoAncestor.py:294
+#, python-format
+msgid "Ancestors places for %s"
+msgstr "Места предков для %s"
+
+#: GeoAncestor/GeoAncestor.py:301
+msgid "Counting all places"
+msgstr "Подсчёт всех мест"
+
+#: GeoAncestor/GeoAncestor.py:304
+msgid "Showing all places"
+msgstr "Отображение всех мест"
+
+#: GeoAncestor/GeoAncestor.py:401
+#, python-format
+msgid "%(eventtype)s : %(name)s"
+msgstr "%(eventtype)s : %(name)s"
+
+#: GeoAncestor/GeoAncestor.py:528 GeoAncestor/GeoAncestor.py:549
+#: GeoAncestor/GeoAncestor.py:590
+msgid "Edit Event"
+msgstr "Редактировать событие"
+
+#: GeoAncestor/GeoAncestor.py:533 GeoAncestor/GeoAncestor.py:554
+#: GeoAncestor/GeoAncestor.py:594
+msgid "Center on this place"
+msgstr "Центрировать на этом месте"
+
+#: GeoAncestor/GeoAncestor.py:568
+msgid "Unknown"
+msgstr "Неизвестно"
+
+#: GeoAncestor/GeoAncestor.py:579
+msgid "No description"
+msgstr "Нет описания"
+
+#: GeoAncestor/GeoAncestor.py:610
+msgid "Show all places"
+msgstr "Показать все места"
+
+#: GeoAncestor/GeoAncestor.py:614 GeoAncestor/GeoAncestor.py:619
+msgid "Centering on Place"
+msgstr "Центрирование на месте"
