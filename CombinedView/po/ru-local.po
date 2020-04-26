@@ -1,0 +1,239 @@
+# Russian translation for CombinedView addon.
+# Copyright (C) 2020 Gramps
+# This file is distributed under the same license as the gramps package.
+# vantu5z <vantu5z@mail.ru>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps51\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-16 16:53+0300\n"
+"PO-Revision-Date: 2020-04-17 15:41+0300\n"
+"Last-Translator: vantu5z <vantu5z@mail.ru>\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: CombinedView/combinedview.gpr.py:23
+msgid "Relationships/Events"
+msgstr "Отношения/События"
+
+#: CombinedView/combinedview.gpr.py:24
+msgid "A view showing relationships and events for a person"
+msgstr "Вид отображающий отношения и события для лица"
+
+#: CombinedView/combinedview.gpr.py:31 CombinedView/combinedview.py:108
+#: CombinedView/combinedview.py:1281
+msgid "Relationships"
+msgstr "Отношения"
+
+#: CombinedView/combinedview.py:354
+msgid "Organize Bookmarks"
+msgstr "Управление закладками"
+
+#: CombinedView/combinedview.py:604 CombinedView/combinedview.py:662
+#: CombinedView/combinedview.py:911 CombinedView/combinedview.py:1057
+#: CombinedView/combinedview.py:1193 CombinedView/combinedview.py:1508
+#: CombinedView/combinedview.py:1577
+#, python-format
+msgid "Edit %s"
+msgstr "Редактировать %s"
+
+#: CombinedView/combinedview.py:619 CombinedView/combinedview.py:678
+msgid "ID"
+msgstr "ID"
+
+#: CombinedView/combinedview.py:639
+msgid "Attributes"
+msgstr "Атрибуты"
+
+#: CombinedView/combinedview.py:688
+msgid "Birth"
+msgstr "Рождение"
+
+#: CombinedView/combinedview.py:697 CombinedView/combinedview.py:722
+msgid "Death"
+msgstr "Смерть"
+
+#: CombinedView/combinedview.py:717
+msgid "Alive"
+msgstr "Жив"
+
+#: CombinedView/combinedview.py:724
+msgid "unknown"
+msgstr "неизвестно"
+
+#: CombinedView/combinedview.py:783
+#, python-format
+msgid "%(date)s in %(place)s"
+msgstr "%(date)s в %(place)s"
+
+#: CombinedView/combinedview.py:801 CombinedView/combinedview.py:1522
+msgid "Unknown"
+msgstr "Неизвестно"
+
+#: CombinedView/combinedview.py:882
+#, python-format
+msgid "%(birthabbrev)s %(birthdate)s, %(deathabbrev)s %(deathdate)s"
+msgstr "%(birthabbrev)s %(birthdate)s, %(deathabbrev)s %(deathdate)s"
+
+#: CombinedView/combinedview.py:889 CombinedView/combinedview.py:891
+#, python-format
+msgid "%(event)s %(date)s"
+msgstr "%(event)s %(date)s"
+
+#: CombinedView/combinedview.py:930
+#, python-format
+msgid "Relationship type: %s"
+msgstr "Тип отношения: %s"
+
+#: CombinedView/combinedview.py:967
+#, python-format
+msgid "%(event_type)s: %(date)s in %(place)s"
+msgstr "%(event_type)s: %(date)s в %(place)s"
+
+#: CombinedView/combinedview.py:971
+#, python-format
+msgid "%(event_type)s: %(date)s"
+msgstr "%(event_type)s: %(date)s"
+
+#: CombinedView/combinedview.py:974
+#, python-format
+msgid "%(event_type)s: %(place)s"
+msgstr "%(event_type)s: %(place)s"
+
+#: CombinedView/combinedview.py:995
+msgid "Events"
+msgstr "События"
+
+#: CombinedView/combinedview.py:1124
+msgid "Participants"
+msgstr "Участники"
+
+#: CombinedView/combinedview.py:1159 CombinedView/combinedview.py:1222
+msgid "Order"
+msgstr "Порядок"
+
+#: CombinedView/combinedview.py:1244
+msgid "Citations"
+msgstr "Цитаты"
+
+#: CombinedView/combinedview.py:1292 CombinedView/combinedview.py:1313
+msgid "Parents"
+msgstr "Родители"
+
+#: CombinedView/combinedview.py:1316
+msgid "Father"
+msgstr "Отец"
+
+#: CombinedView/combinedview.py:1320
+msgid "Mother"
+msgstr "Мать"
+
+#: CombinedView/combinedview.py:1328
+msgid "Siblings"
+msgstr "Братья/сёстры"
+
+#: CombinedView/combinedview.py:1338 CombinedView/combinedview.py:1399
+msgid "Add new child to family"
+msgstr "Добавить нового ребёнка в семью"
+
+#: CombinedView/combinedview.py:1342 CombinedView/combinedview.py:1403
+msgid "Add existing child to family"
+msgstr "Добавить существующего ребёнка в семью"
+
+#: CombinedView/combinedview.py:1364
+msgid "Broken family detected"
+msgstr "Обнаружена семья с ошибками"
+
+#: CombinedView/combinedview.py:1365
+msgid "Please run the Check and Repair Database tool"
+msgstr "Пожалуйста запустите иструмент - Проверка и исправление базы данных"
+
+#: CombinedView/combinedview.py:1377
+msgid "Family"
+msgstr "Семья"
+
+#: CombinedView/combinedview.py:1381
+msgid "Spouse"
+msgstr "Супруги"
+
+#: CombinedView/combinedview.py:1388
+msgid "Children"
+msgstr "Дети"
+
+#: CombinedView/combinedview.py:1438
+msgid "Add a new set of parents"
+msgstr "Добавить новый набор родителей"
+
+#: CombinedView/combinedview.py:1439
+msgid "Add person as child to an existing family"
+msgstr "Добавить лицо в качестве ребёнка в существующую семью"
+
+#: CombinedView/combinedview.py:1440
+msgid "Edit parents"
+msgstr "Редактировать родителей"
+
+#: CombinedView/combinedview.py:1441
+msgid "Reorder parents"
+msgstr "Изменить порядок родителей"
+
+#: CombinedView/combinedview.py:1442
+msgid "Remove person as child of these parents"
+msgstr "Удалить ребёнка у этих родителей"
+
+#: CombinedView/combinedview.py:1444
+msgid "Add a new family with person as parent"
+msgstr "Создать семью с лицом в качестве родителя"
+
+#: CombinedView/combinedview.py:1446
+msgid "Edit family"
+msgstr "Редактировать семью"
+
+#: CombinedView/combinedview.py:1447
+msgid "Reorder families"
+msgstr "Изменить порядок семей"
+
+#: CombinedView/combinedview.py:1448
+msgid "Remove person as parent in this family"
+msgstr "Удалить родителя из этой семьи"
+
+#: CombinedView/combinedview.py:1701
+msgid "Add Child to Family"
+msgstr "Добавить ребёнка в семью"
+
+#: CombinedView/combinedview.py:1719
+msgid "Select Child"
+msgstr "Выбрать ребёнка"
+
+#: CombinedView/combinedview.py:1838
+msgid "Use shading"
+msgstr ""
+
+#: CombinedView/combinedview.py:1841
+msgid "Display edit buttons"
+msgstr "Показывать кнопки для редактирования"
+
+#: CombinedView/combinedview.py:1843
+msgid "View links as website links"
+msgstr "Показывать ссылки как для веб-страниц"
+
+#: CombinedView/combinedview.py:1849
+msgid "Layout"
+msgstr "Вывод"
+
+#: CombinedView/combinedview.py:1860
+msgid "Show Details"
+msgstr "Показывать дополнительную информацию"
+
+#: CombinedView/combinedview.py:1863
+msgid "Show Siblings"
+msgstr "Показывать братьев/сестёр"
+
+#: CombinedView/combinedview.py:1866
+msgid "Content"
+msgstr "Содержание"
