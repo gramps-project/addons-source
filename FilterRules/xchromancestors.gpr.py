@@ -17,18 +17,18 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
-"""X-chromosomal inheritance of <person>."""
+"""X-chromosomal ancestors of <person>."""
 
 register(RULE,
-  id = 'xchrominheritance',
-  name = _("X-chromosomal inheritance of <person>"),
-  description = _("Matches people contributing to X-chromosomal inheritance of <person>."),
+  id = 'xchromancestors',
+  name = _("X-chromosomal ancestors of <person>"),
+  description = _("Matches ancestors of <person> following a X-chromosomal inheritance pattern."),
   version = '1.0.0',
   authors = ["Matthias Kemmer"],
   authors_email = ["matt.familienforschung@gmail.com"],
   gramps_target_version = '5.1',
   status = STABLE,
-  fname = "xchrominheritance.py",
-  ruleclass = 'XChromInheritance',  # must be rule class name
+  fname = "xchromancestors.py",
+  ruleclass = 'XChromAncestors',  # must be rule class name
   namespace = 'Person',  # one of the primary object classes
   )
