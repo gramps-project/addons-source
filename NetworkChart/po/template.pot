@@ -300,6 +300,11 @@ msgstr ""
 msgid "RGB-color for Female box background."
 msgstr ""
 
+# added:
+#: NetworkChart/NetworkChart.py:1026
+msgid "Female Background Alpha"
+msgstr ""
+
 #: NetworkChart/NetworkChart.py:1028
 msgid "Alpha for Female box background (transparent=0, solid=255)."
 msgstr ""
