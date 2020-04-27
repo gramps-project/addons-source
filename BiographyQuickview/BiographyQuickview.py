@@ -22,6 +22,19 @@
 Display text summary of person events with sources
 """
 
+#------------------------------------------------------------------------
+#
+# Internationalisation
+#
+#------------------------------------------------------------------------
+from gramps.gen.const import GRAMPS_LOCALE as glocale
+try:
+    trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    trans = glocale.translation
+_ = trans.gettext
+ngettext = trans.ngettext
+
 from gramps.gen.simple import SimpleAccess, SimpleDoc
 from gramps.plugins.lib.libnarrate import Narrator
 
@@ -32,7 +45,7 @@ def run(database, document, person):
     """
     sa = SimpleAccess(database)
     sd = SimpleDoc(document)
-    sd.title("Biography for %s" % sa.name(person))
+    sd.title(_("Biography for %s") % sa.name(person))
     sd.paragraph('')
 
     narrator = Narrator(database, verbose=True,
@@ -76,7 +89,7 @@ def run(database, document, person):
     sd.paragraph('')
 
     # Sources
-    sd.header1('Sources')
+    sd.header1(_('Sources'))
     for source in get_sources(database, person):
         sd.paragraph(source)
 
