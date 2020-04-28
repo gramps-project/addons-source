@@ -1,0 +1,54 @@
+# Russian translation for RUWebConnectPack addon.
+# This file is distributed under the same license as the Gramps package.
+# vantu5z <vantu5z@mail.ru>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps51\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-28 10:59+0300\n"
+"PO-Revision-Date: 2020-04-28 11:00+0300\n"
+"Last-Translator: vantu5z <vantu5z@mail.ru>\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: RUWebConnectPack/RUWebPack.gpr.py:10
+msgid "RU Web Connect Pack"
+msgstr "Набор RU Web Connect"
+
+#: RUWebConnectPack/RUWebPack.gpr.py:11
+msgid "Collection of Web sites for the RU (requires libwebconnect)"
+msgstr "Набор веб-сайтов для России (требуется libwebconnect)"
+
+#: RUWebConnectPack/RUWebPack.py:40
+msgid "Memorial"
+msgstr "Мемориал"
+
+#: RUWebConnectPack/RUWebPack.py:41
+msgid "People memory"
+msgstr "Память народа"
+
+#: RUWebConnectPack/RUWebPack.py:42
+msgid "Winners"
+msgstr "Победители"
+
+#: RUWebConnectPack/RUWebPack.py:43
+msgid "Lived"
+msgstr "Прожито"
+
+#: RUWebConnectPack/RUWebPack.py:44
+msgid "Open list"
+msgstr "Открытый список"
+
+#: RUWebConnectPack/RUWebPack.py:45
+msgid "Wait for me"
+msgstr "Жди меня"
+
+#: RUWebConnectPack/RUWebPack.py:46
+msgid "All Russia Family Tree"
+msgstr "Всеросийское генеалогическое древо"
