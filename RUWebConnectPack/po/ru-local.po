@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-29 16:33+0300\n"
+"POT-Creation-Date: 2020-04-29 16:52+0300\n"
 "PO-Revision-Date: 2020-04-29 16:34+0300\n"
 "Last-Translator: vantu5z <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -56,3 +56,7 @@ msgstr "Всеросийское генеалогическое древо"
 #: RUWebConnectPack/RUWebPack.py:47
 msgid "Yandex people"
 msgstr "Яндекс люди"
+
+#: RUWebConnectPack/RUWebPack.py:48
+msgid "OK"
+msgstr "Одноклассники"

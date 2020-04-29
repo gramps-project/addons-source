@@ -45,6 +45,7 @@ WEBSITES = [
     ["Person", "WaitForMe", _("Wait for me"), "https://poisk.vid.ru/?lname=%(surname)s&fname=%(given)s&id_let=&p=10&view=18&age_1=1&age_2=99&searched=НАЙТИ"],
     ["Person", "VGD", _("All Russia Family Tree"), "https://vgd.ru/search/index.php?q=%(surname)s&x=0&y=0&tu=0"],
     ["Person", "YandexPeople", _("Yandex people"), "https://yandex.by/people/search?text=%(surname)s+%(given)s&ps_age=%(birth)s"],
+    ["Person", "ok.ru", _("OK"), "https://ok.ru/search/profiles/%(surname)s %(given)s %(birth)s"],
     ]
 
 def load_on_reg(dbstate, uistate, pdata):
