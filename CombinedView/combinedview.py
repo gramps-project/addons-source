@@ -32,6 +32,7 @@ from html import escape
 from operator import itemgetter
 import pickle
 import logging
+import os
 
 #-------------------------------------------------------------------------
 #
@@ -41,6 +42,7 @@ import logging
 from gi.repository import Gdk
 from gi.repository import Gtk
 from gi.repository import Pango
+from gi.repository import GdkPixbuf
 
 #-------------------------------------------------------------------------
 #
@@ -67,6 +69,7 @@ from gramps.gen.utils.thumbnails import get_thumbnail_image
 from gramps.gen.config import config
 from gramps.gui import widgets
 from gramps.gui.widgets.reorderfam import Reorder
+from gramps.gui.widgets.styledtexteditor import StyledTextEditor
 from gramps.gui.widgets import ShadeBox
 from gramps.gui.selectors import SelectorFactory
 from gramps.gen.errors import WindowActiveError
@@ -75,6 +78,7 @@ from gramps.gen.const import CUSTOM_FILTERS
 from gramps.gen.utils.db import (get_birth_or_fallback, get_death_or_fallback,
                                  preset_name)
 from gramps.gui.ddtargets import DdTargets
+from gramps.gen.const import IMAGE_DIR
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 _ = glocale.translation.sgettext
 ngettext = glocale.translation.ngettext # else "nearby" comments are ignored
@@ -550,6 +554,7 @@ class CombinedView(NavigationView):
         self.write_person_title(person)
         self.write_families(person)
         self.write_events(person)
+        self.write_album(person)
 
         #self.stack.set_visible_child_name(self.person_tab)
 
@@ -1129,6 +1134,85 @@ class CombinedView(NavigationView):
                 images.pack_start(photo, False, False, 0)
 
         return images
+
+##############################################################################
+#
+# Album
+#
+##############################################################################
+
+    def write_album(self, person):
+
+        self.vbox2 = Gtk.Grid(orientation=Gtk.Orientation.VERTICAL)
+
+        scroll = Gtk.ScrolledWindow()
+        scroll.add(self.vbox2)
+        scroll.show_all()
+        self.stack.add_titled(scroll, 'album', _('Album'))
+
+        self.write_media(person.get_media_list(), None)
+
+        for event_ref in person.get_event_ref_list():
+            event = self.dbstate.db.get_event_from_handle(event_ref.ref)
+
+            self.write_media(event.get_media_list(), event)
+
+        for family_handle in person.get_family_handle_list():
+            family = self.dbstate.db.get_family_from_handle(family_handle)
+
+            self.write_media(family.get_media_list(), None)
+
+            for event_ref in family.get_event_ref_list():
+                event = self.dbstate.db.get_event_from_handle(event_ref.ref)
+
+                self.write_media(event.get_media_list(), event)
+
+    def write_media(self, media_list, event):
+        for media_ref in media_list:
+
+            mobj = self.dbstate.db.get_media_from_handle(media_ref.ref)
+            if mobj and mobj.get_mime_type()[0:5] == "image":
+                src_file = media_path_full(self.dbstate.db, mobj.get_path())
+                try:
+                    pixbuf = GdkPixbuf.Pixbuf.new_from_file(src_file)
+                except:
+                    default = os.path.join(IMAGE_DIR, "image-missing.png")
+                    pixbuf = GdkPixbuf.Pixbuf.new_from_file(default)
+
+                image = Gtk.Image()
+                image.set_from_pixbuf(pixbuf)
+                image.show()
+
+                self.vbox2.add(image)
+
+                vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+
+                if event:
+                    etype = str(event.get_type())
+                    label = Gtk.Label(etype)
+                    vbox.pack_start(label, False, False, 0)
+                    who = get_participant_from_event(self.dbstate.db, event.handle)
+                    label = Gtk.Label(who)
+                    vbox.pack_start(label, False, False, 0)
+                    date_place = self.format_event(event)
+                    label = Gtk.Label(date_place)
+                    vbox.pack_start(label, False, False, 0)
+
+                notes = mobj.get_note_list()
+                if len(notes) > 0:
+                    note = self.dbstate.db.get_note_from_handle(notes[0])
+                    texteditor = StyledTextEditor()
+                    texteditor.set_editable(False)
+                    texteditor.set_wrap_mode(Gtk.WrapMode.WORD)
+                    texteditor.set_text(note.get_styledtext())
+                    texteditor.set_hexpand(True)
+                    texteditor.show()
+                    vbox.pack_start(texteditor, True, True, 0)
+                    vbox.show_all()
+
+
+                self.vbox2.attach_next_to(vbox, image,
+                                          Gtk.PositionType.RIGHT, 1, 1)
 
 ##############################################################################
 #
