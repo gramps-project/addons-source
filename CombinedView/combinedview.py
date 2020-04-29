@@ -608,6 +608,9 @@ class CombinedView(NavigationView):
             button = None
 
         hbox = widgets.LinkBox(label, button)
+        if self.show_tags:
+            tag_list = TagList(self.get_tag_list(event))
+            hbox.pack_start(tag_list, False, False, 0)
         eventbox = self.make_dragbox(hbox, 'Event', event.get_handle())
         grid.attach(eventbox, 0, 0, 2, 1)
 
@@ -667,6 +670,9 @@ class CombinedView(NavigationView):
 
 
         hbox = widgets.LinkBox(label, button)
+        if self.show_tags:
+            tag_list = TagList(self.get_tag_list(person))
+            hbox.pack_start(tag_list, False, False, 0)
         eventbox = self.make_dragbox(hbox, 'Person', person.get_handle())
         grid.attach(eventbox, 0, 0, 2, 1)
 
@@ -1075,6 +1081,9 @@ class CombinedView(NavigationView):
             button = None
 
         hbox = widgets.LinkBox(link_label, button)
+        if self.show_tags:
+            tag_list = TagList(self.get_tag_list(event))
+            hbox.pack_start(tag_list, False, False, 0)
         vbox.pack_start(hbox, False, False, 0)
 
         line2 = self.format_event(event)
@@ -1215,6 +1224,9 @@ class CombinedView(NavigationView):
                 hbox.pack_start(widgets.MarkupLabel(value), False, False, 0)
         if button is not None:
             hbox.pack_start(button, False, False, 0)
+        if self.show_tags:
+            tag_list = TagList(self.get_tag_list(person))
+            hbox.pack_start(tag_list, False, False, 0)
         vbox.pack_start(hbox, False, False, 0)
 
         # Write attributes
@@ -1490,10 +1502,12 @@ class CombinedView(NavigationView):
                 delete.set_tooltip_text(del_msg)
                 bbox.pack_start(delete, False, True, 0)
 
-
         hbox.pack_start(bbox, False, True, 6)
 
         if family:
+            if self.show_tags:
+                tag_list = TagList(self.get_tag_list(family))
+                hbox.pack_start(tag_list, False, False, 3)
             eventbox = self.make_dragbox(hbox, 'Family', family.handle)
             return eventbox
         else:
