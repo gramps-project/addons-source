@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-28 10:59+0300\n"
-"PO-Revision-Date: 2020-04-28 11:00+0300\n"
+"POT-Creation-Date: 2020-04-29 16:33+0300\n"
+"PO-Revision-Date: 2020-04-29 16:34+0300\n"
 "Last-Translator: vantu5z <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
@@ -52,3 +52,7 @@ msgstr "Жди меня"
 #: RUWebConnectPack/RUWebPack.py:46
 msgid "All Russia Family Tree"
 msgstr "Всеросийское генеалогическое древо"
+
+#: RUWebConnectPack/RUWebPack.py:47
+msgid "Yandex people"
+msgstr "Яндекс люди"
