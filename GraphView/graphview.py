@@ -82,7 +82,7 @@ from gramps.gui.widgets.menuitem import add_menuitem
 from gramps.gen.utils.symbols import Symbols
 
 from gramps.gui.pluginmanager import GuiPluginManager
-from gramps.gen.plug import CATEGORY_QR_PERSON
+from gramps.gen.plug import CATEGORY_QR_PERSON, CATEGORY_QR_FAMILY
 from gramps.gui.plug.quick import run_report
 
 from gramps.gen.const import GRAMPS_LOCALE as glocale
@@ -3648,14 +3648,14 @@ class PopupMenu(Gtk.Menu):
 
             # QuickReports and WebConnect section
             self.add_separator()
-            q_exists = self.add_quickreport_submenu(handle)
+            q_exists = self.add_quickreport_submenu(CATEGORY_QR_PERSON, handle)
             w_exists = self.add_web_connect_submenu(handle)
 
             if q_exists or w_exists:
                 self.add_separator()
             self.append_help_menu_entry()
 
-    def add_quickreport_submenu(self, handle):
+    def add_quickreport_submenu(self, category, handle):
         """
         Adds Quick Reports menu.
         """
@@ -3663,8 +3663,6 @@ class PopupMenu(Gtk.Menu):
                                        handle, track=[]):
             return lambda x: run_report(dbstate, uistate, category, handle,
                                         pdata, track=track)
-
-        category = CATEGORY_QR_PERSON
 
         # select the reports to show
         showlst = []
@@ -3776,7 +3774,12 @@ class PopupMenu(Gtk.Menu):
 
             self.add_children_submenu(family=family)
 
+            # QuickReports section
             self.add_separator()
+            q_exists = self.add_quickreport_submenu(CATEGORY_QR_FAMILY, handle)
+
+            if q_exists:
+                self.add_separator()
             self.append_help_menu_entry()
 
     def add_children_submenu(self, person=None, family=None):
