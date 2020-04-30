@@ -33,6 +33,7 @@ from operator import itemgetter
 import pickle
 import logging
 import os
+import re
 
 #-------------------------------------------------------------------------
 #
@@ -78,6 +79,7 @@ from gramps.gen.const import CUSTOM_FILTERS
 from gramps.gen.utils.db import (get_birth_or_fallback, get_death_or_fallback,
                                  preset_name)
 from gramps.gui.ddtargets import DdTargets
+from gramps.gui.display import display_url
 from gramps.gen.const import IMAGE_DIR
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 _ = glocale.translation.sgettext
@@ -96,6 +98,8 @@ _KP_ENTER = Gdk.keyval_from_name("KP_Enter")
 _SPACE = Gdk.keyval_from_name("space")
 _LEFT_BUTTON = 1
 _RIGHT_BUTTON = 3
+
+URL_MATCH = re.compile(r'https?://[^\s]+')
 
 class CombinedView(NavigationView):
     """
@@ -1106,10 +1110,17 @@ class CombinedView(NavigationView):
         shandle = citation.get_reference_handle()
         source = self.dbstate.db.get_source_from_handle(shandle)
         heading = source.get_title() + ' ' + citation.get_page()
+
+        box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        url_label = self.get_url(citation)
+        if url_label:
+            box.pack_start(url_label, False, False, 0)
         hbox = self.load_images(citation)
-        if len(hbox.get_children()) > 0:
+        box.pack_start(hbox, False, False, 0)
+
+        if len(hbox.get_children()) > 0 or url_label:
             exp = Gtk.Expander(label=heading)
-            exp.add(hbox)
+            exp.add(box)
             vbox.pack_start(exp, False, False, 0)
         else:
             label = widgets.BasicLabel(heading)
@@ -1134,6 +1145,23 @@ class CombinedView(NavigationView):
                 images.pack_start(photo, False, False, 0)
 
         return images
+
+    def get_url(self, citation):
+        for handle in citation.get_note_list():
+            note = self.dbstate.db.get_note_from_handle(handle)
+            text = note.get()
+            url_match = re.compile(r'https?://[^\s]+')
+            result = URL_MATCH.search(text)
+            if result:
+                url = result.group(0)
+                link_func = lambda x,y,z: display_url(url)
+                name = (url, None)
+                link_label = widgets.LinkLabel(name, link_func, None, False,
+                                       theme=self.theme)
+                link_label.set_tooltip_text(_('Click to visit this link'))
+                return link_label
+        return None
+
 
 ##############################################################################
 #
