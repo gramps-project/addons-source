@@ -30,6 +30,14 @@ from gramps.gen.const import GRAMPS_LOCALE as glocale
 #from gramps.gen.plug._pluginreg import register, VIEW, STABLE #, END, START
 _ = glocale.translation.gettext
 
+if locals().get('uistate'):  # don't start GUI if in CLI mode, just ignore
+    from gi.repository import Gtk, GdkPixbuf
+    import os
+    from gramps.gen.const import USER_PLUGINS
+    fname = os.path.join(USER_PLUGINS, 'GeoAncestor')
+    icons = Gtk.IconTheme().get_default()
+    icons.append_search_path(fname)
+
 #-------------------------------------------------------------------------
 #
 # set up logging
@@ -79,7 +87,7 @@ else:
              id='geoancestor',
              name=_("Ancestors map"),
              description=_("A view showing ancestors places on the map."),
-             version = '1.0.1',
+             version = '1.0.4',
              gramps_target_version='5.1',
              status=STABLE,
              fname='GeoAncestor.py',

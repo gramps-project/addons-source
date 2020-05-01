@@ -1,0 +1,104 @@
+# Addon TodoReport for Gramps.
+# Copyright (C) 2020 Gramps
+# This file is distributed under the same license as the gramps package.
+# Pedro Albuquerque <pmra@protonmail.com>, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps51\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2020-04-03 11:14Hora de Verão de GMT\n"
+"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"Language-Team: Pedro Albuquerque\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Geany / PoHelper 1.36\n"
+
+#: ToDoReport/TodoReport.gpr.py:24
+msgid "Todo Report"
+msgstr "Agenda"
+
+#: ToDoReport/TodoReport.gpr.py:25
+msgid ""
+"Produces a list of all the notes with a given tag along with the records "
+"that it references, the Person, Family, Event, etc."
+msgstr ""
+"Produz uma lista de todas as notas com uma dada etiqueta juntamente com os "
+"registos referenciados, indivíduo, família, evento, etc."
+
+#: ToDoReport/TodoReport.py:85
+msgid "ToDo Report"
+msgstr "Agenda"
+
+#: ToDoReport/TodoReport.py:86
+msgid "You must first create a tag before running this report."
+msgstr "Tem primeiro de criar uma etiqueta antes de executar este relatório."
+
+#: ToDoReport/TodoReport.py:94
+#, python-format
+msgid "Report on Notes Tagged %s"
+msgstr "Notas com a etiqueta %s"
+
+#: ToDoReport/TodoReport.py:205
+msgid "Id"
+msgstr "Id"
+
+#: ToDoReport/TodoReport.py:211
+msgid "Text"
+msgstr "Texto"
+
+#: ToDoReport/TodoReport.py:338
+#, python-format
+msgid "%(relationship_type)s on %(relationship_date)s"
+msgstr "%(relationship_type)s em %(relationship_date)s"
+
+#: ToDoReport/TodoReport.py:369
+msgid "date: "
+msgstr "data: "
+
+#: ToDoReport/TodoReport.py:380
+msgid "place: "
+msgstr "local: "
+
+#: ToDoReport/TodoReport.py:486
+msgid "Report Options"
+msgstr "Opções do relatório"
+
+#: ToDoReport/TodoReport.py:494 ToDoReport/TodoReport.py:498
+msgid "Tag"
+msgstr "Etiqueta"
+
+#: ToDoReport/TodoReport.py:501
+msgid "The tag to use for the report"
+msgstr "A etiqueta a usar para o relatório"
+
+#: ToDoReport/TodoReport.py:504
+msgid "Group by reference type"
+msgstr "Agrupar por tipo de referência"
+
+#: ToDoReport/TodoReport.py:505
+msgid "Group notes by Family, Person, Place, etc."
+msgstr "Agrupar notas por família, indivíduo, local, etc."
+
+#: ToDoReport/TodoReport.py:522
+msgid "The style used for the title of the page."
+msgstr "O estilo usado para o título da página."
+
+#: ToDoReport/TodoReport.py:532
+msgid "The style used for the section headers."
+msgstr "O estilo usado para os cabeçalhos de secção."
+
+#: ToDoReport/TodoReport.py:542
+msgid "The basic style used for the text display."
+msgstr "O estilo básico usado para mostrar texto."
+
+#: ToDoReport/TodoReport.py:553
+msgid "The basic style used for table headings."
+msgstr "O estilo básico usado para títulos de coluna."
+
+#: ToDoReport/TodoReport.py:560
+msgid "The basic style used for the note display."
+msgstr "O estilo básico usado para mostrar a nota."

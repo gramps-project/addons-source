@@ -23,7 +23,10 @@ from gi.repository import Gtk, Gdk, GLib, GObject
 from threading import Thread, Event
 from queue import Queue
 
+from gramps.gen import datehandler
 from gramps.gen.display.name import displayer
+from gramps.gen.utils.db import (get_birth_or_fallback, get_death_or_fallback,
+                                 find_parents)
 
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
@@ -341,6 +344,11 @@ class SearchWidget(GObject.GObject):
 
             if self.show_marked_first:
                 row.marked = person_handle in bookmarks
+
+            # add tooltip
+            tooltip = get_person_tooltip(person, self.dbstate.db)
+            if tooltip:
+                row.set_tooltip_text(tooltip)
 
             panel.add_to_panel(row)
 
@@ -661,3 +669,52 @@ class Panel(Gtk.Box):
             return row_1.label > row_2.label
         # if one row is marked
         return row_2.marked
+
+
+def get_person_tooltip(person, database):
+    """
+    Get Person tooltip string.
+    """
+    # get birth/christening and death/burying date strings.
+    birth_event = get_birth_or_fallback(database, person)
+    if birth_event:
+        birth = datehandler.get_date(birth_event)
+    else:
+        birth = ''
+
+    death_event = get_death_or_fallback(database, person)
+    if death_event:
+        death = datehandler.get_date(death_event)
+    else:
+        death = ''
+
+    # get list of parents.
+    parents = []
+
+    parents_list = find_parents(database, person)
+    for parent_id in parents_list:
+        if not parent_id:
+            continue
+        parent = database.get_person_from_handle(parent_id)
+        if not parent:
+            continue
+        parents.append(displayer.display(parent))
+
+    # build tooltip string
+    tooltip = ''
+    if birth:
+        tooltip += _('Birth: %s' % birth)
+    if death:
+        if tooltip:
+            tooltip += '\n'
+        tooltip += _('Death: %s' % death)
+
+    if (birth or death) and parents:
+        tooltip += '\n\n'
+
+    if parents:
+        tooltip += _('Parents:')
+        for p in parents:
+            tooltip += ('\n  %s' % p)
+
+    return tooltip

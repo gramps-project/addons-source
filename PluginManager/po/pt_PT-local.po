@@ -1,0 +1,256 @@
+# Addon PluginManager for Gramps.
+# Copyright (C) 2020 Gramps
+# This file is distributed under the same license as the gramps package.
+# Pedro Albuquerque <pmra@protonmail.com>, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps51\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-18 11:36-0500\n"
+"PO-Revision-Date: 2020-04-02 11:04+0100\n"
+"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"Language-Team: Pedro Albuquerque\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.3\n"
+
+#: PluginManager/PluginManager.gpr.py:29
+msgid "Plugin Manager Enhanced"
+msgstr "Gestor de extensões melhorado"
+
+#: PluginManager/PluginManager.gpr.py:30
+msgid "An Addon/Plugin Manager with several additional capabilities"
+msgstr "Um gestor de extensões com várias capacidades melhoradas"
+
+#: PluginManager/PluginManager.py:87
+msgid "Plugin Manager - Enhanced"
+msgstr "Gestor de extensões - melhorado"
+
+#: PluginManager/PluginManager.py:144
+msgid "_Help"
+msgstr "A_juda"
+
+#: PluginManager/PluginManager.py:151
+msgid ""
+"Enter search words to filter the addons.\n"
+"All the words must be present somewhere in the row or\n"
+"the addon filename to be included in the search.\n"
+"Word case and order is ignored."
+msgstr ""
+"Insira termos de procura para filtrar as extensões.\n"
+"Todas as palavras têm de estar presentes algures\n"
+"na linha ou no nome da extensão.\n"
+"As maiúsculas e a ordem são ignoradas."
+
+#: PluginManager/PluginManager.py:155
+msgid "Search..."
+msgstr "Procurar..."
+
+#: PluginManager/PluginManager.py:161
+msgid "Check for updated addons now"
+msgstr "Procurar extensões actualizadas agora"
+
+#: PluginManager/PluginManager.py:168
+msgid "Reload"
+msgstr "Recarregar"
+
+#: PluginManager/PluginManager.py:174 PluginManager/PluginManager.py:739
+msgid "_Close"
+msgstr "Fe_char"
+
+#: PluginManager/PluginManager.py:207
+msgid "Restart..."
+msgstr "Reiniciar..."
+
+#: PluginManager/PluginManager.py:208
+msgid ""
+"Please Restart Gramps so that your addon changes can be safely completed."
+msgstr ""
+"Por favor, reinicie o Gramps para que as alterações se concluam em segurança."
+
+#: PluginManager/PluginManager.py:284
+msgid "Id"
+msgstr "Id"
+
+#: PluginManager/PluginManager.py:285
+msgid "Plugin name"
+msgstr "Nome da extensão"
+
+#: PluginManager/PluginManager.py:286 PluginManager/PluginManager.py:457
+msgid "Description"
+msgstr "Descrição"
+
+#: PluginManager/PluginManager.py:287
+msgid "Version"
+msgstr "Versão"
+
+#: PluginManager/PluginManager.py:288
+msgid "Authors"
+msgstr "Autores"
+
+#: PluginManager/PluginManager.py:289
+msgid "Email"
+msgstr "Email"
+
+#: PluginManager/PluginManager.py:290
+msgid "Filename"
+msgstr "Nome do ficheiro"
+
+#: PluginManager/PluginManager.py:291
+msgid "Location"
+msgstr "Localização"
+
+#: PluginManager/PluginManager.py:296
+msgid "Loaded"
+msgstr "Carregados"
+
+#: PluginManager/PluginManager.py:299
+msgid "Hidden"
+msgstr "Ocultos"
+
+#: PluginManager/PluginManager.py:304 PluginManager/PluginManager.py:701
+msgid "Failed"
+msgstr "Falha"
+
+#: PluginManager/PluginManager.py:377
+msgid "Installation Errors"
+msgstr "Erros de instalação"
+
+#: PluginManager/PluginManager.py:378
+msgid "The following addons had errors: "
+msgstr "As seguintes extensões tiveram erros: "
+
+#: PluginManager/PluginManager.py:400
+msgid "Error"
+msgstr "Erro"
+
+#: PluginManager/PluginManager.py:401
+#, python-format
+msgid "Error removing the '%s' directory, The uninstall may have failed"
+msgstr "Erro ao remover a pasta \"%s\", a desinstalação pode ter falhado"
+
+#: PluginManager/PluginManager.py:429
+msgid "Type"
+msgstr "Tipo"
+
+#: PluginManager/PluginManager.py:438
+msgid "Status"
+msgstr "Estado"
+
+#: PluginManager/PluginManager.py:441
+msgid ""
+"'*' items are supplied by 3rd party authors,\n"
+"<s>strikeout</s> items are hidden"
+msgstr ""
+"Itens \"*\" são fornecidos por terceiros,\n"
+"itens <s>rasuradps</s> estão ocultos"
+
+#: PluginManager/PluginManager.py:449
+msgid "Name"
+msgstr "Nome"
+
+#: PluginManager/PluginManager.py:472
+msgid "Info"
+msgstr "Informação"
+
+#: PluginManager/PluginManager.py:475 PluginManager/PluginManager.py:586
+msgid "Hide"
+msgstr "Ocultar"
+
+#: PluginManager/PluginManager.py:478 PluginManager/PluginManager.py:600
+msgid "Install"
+msgstr "Instalar"
+
+#: PluginManager/PluginManager.py:481
+msgid "Edit"
+msgstr "Editar"
+
+#: PluginManager/PluginManager.py:483
+msgid "Load"
+msgstr "Carregar"
+
+#: PluginManager/PluginManager.py:494
+msgid "Show hidden items"
+msgstr "Mostrar itens ocultos"
+
+#: PluginManager/PluginManager.py:502
+msgid "Show Built-in items"
+msgstr "Mostrar itens internos"
+
+#: PluginManager/PluginManager.py:509
+msgid "* indicates 3rd party addon"
+msgstr "* indica extensão de terceiros"
+
+#: PluginManager/PluginManager.py:514
+msgid "Plugins"
+msgstr "Extensões"
+
+#: PluginManager/PluginManager.py:584
+msgid "Unhide"
+msgstr "Mostrar"
+
+#: PluginManager/PluginManager.py:603
+msgid "Uninstall"
+msgstr "Desinstalar"
+
+#: PluginManager/PluginManager.py:613
+msgid "Checking Addons Failed"
+msgstr "Falha ao procurar extensões"
+
+#: PluginManager/PluginManager.py:614
+msgid "The addon repository appears to be unavailable. Please try again later."
+msgstr ""
+"O repositório de extensões parece estar indisponível. Por favor, tente mais "
+"tarde."
+
+#: PluginManager/PluginManager.py:628
+msgid ""
+"3rd party addons are not shown until the addons update list is downloaded.  "
+"Would you like to check for updated addons now?"
+msgstr ""
+"Extensões de terceiros não são mostradas até que a lista seja transferida. "
+"Quer procurar actualizações de extensões agora?"
+
+#: PluginManager/PluginManager.py:631
+msgid "Yes"
+msgstr "Sim"
+
+#: PluginManager/PluginManager.py:631
+msgid "No"
+msgstr "Não"
+
+#: PluginManager/PluginManager.py:674
+msgid "*Available"
+msgstr "*Disponível"
+
+#: PluginManager/PluginManager.py:690
+msgid "Built-in"
+msgstr "Interna"
+
+#: PluginManager/PluginManager.py:695
+msgid "*Installed"
+msgstr "*Instalada"
+
+#: PluginManager/PluginManager.py:704
+msgid "Update Available"
+msgstr "Actualização disponível"
+
+#: PluginManager/PluginManager.py:733
+#, python-format
+msgid "%(str1)s: %(str2)s"
+msgstr "%(str1)s: %(str2)s"
+
+#: PluginManager/PluginManager.py:733
+msgid "Detailed Info"
+msgstr "Informação detalhada"
+
+#: PluginManager/PluginManager.py:832
+msgid "Updated"
+msgstr "Actualizada"
+
+#: PluginManager/PluginManager.py:843
+msgid "updates|New"
+msgstr "Nova"

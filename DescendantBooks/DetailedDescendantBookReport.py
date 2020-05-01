@@ -19,7 +19,6 @@
 
 """
 Reports/Books/Detailed Descendant Book
-Merged with Trunk Rev r18388
 """
 
 #------------------------------------------------------------------------
@@ -121,6 +120,7 @@ class DetailedDescendantBookReport(Report):
         incindexnames - Whether to include the index of names at the end of the report.
         incindexplaces- Whether to include the index of places at the end of the report.
         incindexdates - Whether to include the index of dates at the end of the report.
+        incappearances- Whether to include Include the 'Report appearances' section with each person.
         incssign      - Whether to include a sign ('+') before the descendant number in the child-list to indicate a child has succession.
         pid           - The Gramps ID of the center person for the report.
         name_format   - Preferred format to display names
@@ -161,6 +161,7 @@ class DetailedDescendantBookReport(Report):
         self.inc_index_names = get_value('incindexnames')
         self.inc_index_of_dates =get_value('incindexdates')
         self.inc_index_of_places =get_value('incindexplaces')
+        self.inc_appearances = get_value('incappearances')
         self.inc_ssign     = get_value('incssign')
         self.inc_materef   = get_value('incmateref')
         self.filter_option =  menu.get_option_by_name('filter')
@@ -181,8 +182,12 @@ class DetailedDescendantBookReport(Report):
             empty_place = ""
 
         language = get_value('trans')
-        locale = self.set_locale(language)
+        # Set up to use the language from options
         self._locale = self.set_locale(language)
+        # Normally this is enough,  at least enough for Narrator, but we have
+        # some other local strings to add to the report.
+        add_trans = self._locale.get_addon_translator(__file__)
+        self._ = add_trans.sgettext
 
         # Copy the global NameDisplay so that we don't change application
         # defaults.
@@ -508,7 +513,7 @@ class DetailedDescendantBookReport(Report):
         This function prints the index of places.
         """
         self.doc.start_paragraph("DDR-Title")
-        self.doc.write_text_citation("Index of Places")
+        self.doc.write_text_citation(self._("Index of Places"))
         self.doc.end_paragraph()
 
         sorted_places = sorted(self.index_of_places.keys())
@@ -531,7 +536,7 @@ class DetailedDescendantBookReport(Report):
         This function prints the index of dates.
         """
         self.doc.start_paragraph("DDR-Title")
-        self.doc.write_text_citation("Index of Dates")
+        self.doc.write_text_citation(self._("Index of Dates"))
         self.doc.end_paragraph()
 
         sorted_year = sorted(self.index_of_dates.keys())
@@ -554,11 +559,13 @@ class DetailedDescendantBookReport(Report):
         where the person appears in the reports.
         """
         self.doc.start_paragraph("DDR-Title")
-        self.doc.write_text_citation("Index of Names")
+        self.doc.write_text_citation(self._("Index of Names"))
         self.doc.end_paragraph()
 
         self.doc.start_paragraph("DDR-IndexNamesHeader")
-        ref_str = "Report    Generat. Person    Name"
+        # TRANSLATORS: This is a column header; the word widths vary with font
+        # so we just seperate the words with ", "
+        ref_str = self._("Report, Generation, Person, Name")
         self.doc.write_text_citation(ref_str)
         self.doc.end_paragraph()
 
@@ -569,13 +576,14 @@ class DetailedDescendantBookReport(Report):
             for repno, gen, per, mate, name in self.report_app_ref[person_handle]:
                 if not first_line_done:
                     self.doc.start_paragraph("DDR-IndexNamesEntry")
-                    ref_str = "%13s %13s %15s    \t%s" \
+                    ref_str = ("%13s %13s %15s    \t%s") \
                               % (repno, gen, per, name)
                     self.doc.write_text_citation(ref_str)
                     self.doc.end_paragraph()
-                if first_line_done:
+                elif self.inc_appearances:
                     self.doc.start_paragraph("DDR-IndexNamesEntry")
-                    ref_str = "%13s %13s %15s                 \"  " % (repno, gen, per)
+                    ref_str = ("%13s %13s %15s                 \"  ") \
+                              % (repno, gen, per)
                     self.doc.write_text_citation(ref_str)
                     self.doc.end_paragraph()
                 first_line_done = True
@@ -743,36 +751,37 @@ class DetailedDescendantBookReport(Report):
         else:
             dnum = "0"
 
-        for repno, gen, per, mate, name in self.report_app_ref[person_handle]:
-            if (repno != self.report_count or gen != self.generation+1) or \
-                (repno == self.report_count and gen == self.generation+1 \
-                and per != dnum):
-                if mate:
-                    if not header_done:
-                        self.doc.start_paragraph("DDR-NoteHeader")
-                        self.doc.write_text(self._("Report appearances " \
-                                                "for %s") % name)
-                        self.doc.end_paragraph()
-                        header_done = True
+        if self.inc_appearances:
+            for repno, gen, per, mate, name in self.report_app_ref[person_handle]:
+                if (repno != self.report_count or gen != self.generation+1) or \
+                    (repno == self.report_count and gen == self.generation+1 \
+                    and per != dnum):
+                    if mate:
+                        if not header_done:
+                            self.doc.start_paragraph("DDR-NoteHeader")
+                            self.doc.write_text(
+                                self._("Report appearances for %s") % name)
+                            self.doc.end_paragraph()
+                            header_done = True
 
-                    self.doc.start_paragraph("DDR-Entry")
-                    ref_str = "Spouse of: Report: %s, Generation: %s, " \
-                            "Person: %s" % (repno, gen, per)
-                    self.doc.write_text_citation(ref_str)
-                    self.doc.end_paragraph()
-                else:
-                    if not header_done:
-                        self.doc.start_paragraph("DDR-NoteHeader")
-                        self.doc.write_text(self._("Report appearances " \
-                                                "for %s") % name)
+                        self.doc.start_paragraph("DDR-Entry")
+                        ref_str = self._("Spouse of: Report: %s, Generation: %s, Person: %s") \
+                                % (repno, gen, per)
+                        self.doc.write_text_citation(ref_str)
                         self.doc.end_paragraph()
-                        header_done = True
+                    else:
+                        if not header_done:
+                            self.doc.start_paragraph("DDR-NoteHeader")
+                            self.doc.write_text(
+                                self._("Report appearances for %s") % name)
+                            self.doc.end_paragraph()
+                            header_done = True
 
-                    self.doc.start_paragraph("DDR-Entry")
-                    ref_str = "Report: %s, Generation: " \
-                            "%s, Person: %s" % (repno, gen, per)
-                    self.doc.write_text_citation(ref_str)
-                    self.doc.end_paragraph()
+                        self.doc.start_paragraph("DDR-Entry")
+                        ref_str = self._("Report: %s, Generation: %s, Person: %s") \
+                                % (repno, gen, per)
+                        self.doc.write_text_citation(ref_str)
+                        self.doc.end_paragraph()
 #BOOK end
 
     def append_event(self, event_ref, family = False):
@@ -1449,6 +1458,8 @@ class DetailedDescendantBookOptions(MenuReportOptions):
             "Endnotes section. Only works if Include sources is selected."))
         add_option("incsrcnotes", incsrcnotes)
 
+        add_option = partial(menu.add_option, _("Include (2)"))
+
         incmates = BooleanOption(_("Include spouses"), False)
         incmates.set_help(_("Whether to include detailed spouse information."))
         add_option("incmates", incmates)
@@ -1480,10 +1491,16 @@ class DetailedDescendantBookOptions(MenuReportOptions):
         add_option("incindexdates", incindexdates)
 
         incindexplaces = BooleanOption(_("Include index of Places"), False)
-        incindexnames.set_help(_("Whether to include the index of Places "
+        incindexplaces.set_help(_("Whether to include the index of Places "
                             "at the end of the report."))
         add_option("incindexplaces", incindexplaces)
 
+        incappearances = BooleanOption(_("Include the 'Report appearances' "
+                                         "section with each person"), True)
+        incappearances.set_help(_("The 'Report appearances' section shows "
+                                  "other places in the report where the person"
+                                  " is mentioned."))
+        add_option("incappearances", incappearances)
 
         # Missing information
 

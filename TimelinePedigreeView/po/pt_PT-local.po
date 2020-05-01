@@ -1,0 +1,160 @@
+# Addon TimelinePedigreeView for Gramps.
+# Copyright (C) 2020 Gramps
+# This file is distributed under the same license as the gramps package.
+# Pedro Albuquerque <pmra@protonmail.com>, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps51\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-10-06 15:58-0500\n"
+"PO-Revision-Date: 2020-04-03 11:00Hora de Verão de GMT\n"
+"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"Language-Team: Pedro Albuquerque\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Geany / PoHelper 1.36\n"
+
+#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:40
+msgid "Timeline Pedigree"
+msgstr "Cronologia de costados"
+
+#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:41
+msgid "Ancestry"
+msgstr "Ascendência"
+
+#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:42
+msgid ""
+"The view shows a timeline pedigree with ancestors and descendants of the "
+"selected person"
+msgstr ""
+"Mostra uma cronologia de costados com ascendentes e descendentes do "
+"indivíduo seleccionado"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:82
+msgid "short for born|b."
+msgstr "n."
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:83
+msgid "short for died|d."
+msgstr "f."
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:84
+msgid "short for baptized|bap."
+msgstr "bap."
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:85
+msgid "short for christened|chr."
+msgstr "bap."
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:86
+msgid "short for buried|bur."
+msgstr "fun."
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:87
+msgid "short for cremated|crem."
+msgstr "crem."
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:339
+msgid "Timeline pedigree"
+msgstr "Cronologia de costados"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:502
+msgid "Organize Bookmarks"
+msgstr "Organizar favoritos"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:854
+msgid "Relationship loop detected"
+msgstr "Ciclo de parentesco detectado"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:855
+msgid "A person was found to be his/her own ancestor."
+msgstr "Um indivíduo foi detectado como seu próprio ascendente."
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1408
+msgid "_Home"
+msgstr "_Início"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1428
+msgid "Show images"
+msgstr "Mostrar imagens"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1430
+msgid "Show marriage data"
+msgstr "Mostrar dados de casamento"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1432
+msgid "Order by timeline"
+msgstr "Ordem cronológica"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1434
+msgid "Show lifespan"
+msgstr "Mostrar duração de vida"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1437
+msgid "Mouse scroll direction"
+msgstr "Direcção de rolagem do rato"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1441
+msgid "Top <-> Bottom"
+msgstr "Cima <-> Baixo"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1448
+msgid "Left <-> Right"
+msgstr "Esquerda <-> Direita"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1460
+msgid "Descendant Generations"
+msgstr "Gerações descendentes"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1465
+#: TimelinePedigreeView/TimelinePedigreeView.py:1481
+#, python-format
+msgid "%d generation"
+msgid_plural "%d generations"
+msgstr[0] "%d geração"
+msgstr[1] "%d gerações"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1476
+msgid "Ancestor Generations"
+msgstr "Gerações ascendentes"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1500
+msgid "About Timeline Pedigree View"
+msgstr "Acerca dos costados da cronologia"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1519
+msgid "_Add"
+msgstr "_Adicionar"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1549
+#: TimelinePedigreeView/TimelinePedigreeView.py:1766
+msgid "_Edit"
+msgstr "_Editar"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1554
+#: TimelinePedigreeView/TimelinePedigreeView.py:1771
+msgid "_Copy"
+msgstr "_Copiar"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1564
+msgid "Spouses"
+msgstr "Cônjuges"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1597
+msgid "Siblings"
+msgstr "Irmãos"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1639
+msgid "Children"
+msgstr "Filhos"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1676
+msgid "Parents"
+msgstr "Pais"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1714
+msgid "Related"
+msgstr "Relacionados"

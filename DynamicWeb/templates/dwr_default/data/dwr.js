@@ -2140,7 +2140,7 @@ function PrintIndexList(id, header, data, fText, before, after, separator, sorti
 		for (i = 0; i < titles.length; i++)
 		{
 			sections.push({
-				title: _(titles[i] || '&nbsp;'),
+				title: (titles[i] || '&nbsp;'),
 				text: texts[titles[i]].join(separator)
 			});
 		}

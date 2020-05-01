@@ -8,7 +8,7 @@ register(TOOL,
 id    = 'calculateestimateddates',
 name  = _("Calculate Estimated Dates"),
 description =  _("Calculates estimated dates for birth and death."),
-version = '0.90.31',
+version = '0.90.32',
 gramps_target_version = "5.1",
 status = STABLE, # not yet tested with python 3
 fname = 'CalculateEstimatedDates.py',

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-08 08:27-0600\n"
+"POT-Creation-Date: 2020-04-08 11:14-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -160,6 +160,7 @@ msgid "Matches sources with a particular value"
 msgstr ""
 
 #: FilterRules/hassourcefilter.py:59 FilterRules/infamilyrule.py:127
+#: FilterRules/isfamilyfiltermatchevent.py:65
 msgid "General filters"
 msgstr ""
 
@@ -184,8 +185,15 @@ msgstr ""
 msgid "Include the parents in the matching families."
 msgstr ""
 
-#: FilterRules/infamilyrule.py:122
+#: FilterRules/infamilyrule.py:122 FilterRules/isfamilyfiltermatchevent.py:62
 msgid "Family Filter name:"
+msgstr ""
+
+#: FilterRules/isfamilyfiltermatchevent.gpr.py:24
+#: FilterRules/isfamilyfiltermatchevent.gpr.py:25
+#: FilterRules/isfamilyfiltermatchevent.py:63
+#: FilterRules/isfamilyfiltermatchevent.py:64
+msgid "Events of families matching a <family filter>"
 msgstr ""
 
 #: FilterRules/isrelatedwithfiltermatch.gpr.py:26
