@@ -1,7 +1,7 @@
 register(QUICKREPORT,
          id = 'NumberOfAncestorsQuickview',
          name = _("Number of ancestors"),
-         description = _("Shows the number of ancestores of the current person."),
+         description = _("Shows the number of ancestors of the current person"),
          version = '1.0.2',
          gramps_target_version = "5.1",
          status = STABLE,

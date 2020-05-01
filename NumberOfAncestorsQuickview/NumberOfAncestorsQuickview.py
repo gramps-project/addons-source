@@ -57,8 +57,8 @@ def run(database, document, person):
     stab.write(sdoc)
     vals = num_lst[-1][1:]
     sdoc.paragraph(_("There were {} of {} ancestors ({}) found.\n"
-                     "Only individual ancestors were count. Doubles caused by "
-                     "pidigree colapse were ignored."
+                     "Only individual ancestors were counted. Duplicates "
+                     "caused by pedigree collapse were ignored."
                      .format(*vals)))
 
 
