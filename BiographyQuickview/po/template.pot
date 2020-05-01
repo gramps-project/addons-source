@@ -24,3 +24,12 @@ msgstr ""
 #: BiographyQuickview/BiographyQuickview.gpr.py:10
 msgid "Display a text biography"
 msgstr ""
+
+#: BiographyQuickview.py:47
+#, python-format
+msgid "Biography for %s"
+msgstr ""
+
+#: BiographyQuickview.py:92
+msgid "Sources"
+msgstr ""
