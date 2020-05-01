@@ -1023,7 +1023,7 @@ class NetworkChartOptions(MenuReportOptions):
         cfill_female.set_help(_("RGB-color for Female box background."))
         menu.add_option(category_name, "cfill_female", cfill_female)
 
-        cfill_female_alpha = NumberOption("Female Background Alpha",
+        cfill_female_alpha = NumberOption(_("Female Background Alpha"),
                                           24, 0, 255, step=1)
         cfill_female_alpha.set_help(_("Alpha for Female box background "
                                       "(transparent=0, solid=255)."))
@@ -1171,11 +1171,12 @@ class NetworkChartOptions(MenuReportOptions):
         self.show_highlight = EnumeratedListOption(_("Highlight path(s)"),
                                                    "None")
         show_highlight_options = ["None", "Direct", "Any"]
+        show_highlight_names = [_("None"), _("Direct"), _("Any")]
         self.show_highlight.add_item(show_highlight_options[0],
                                      _("Default (None)"))
         for i in range(0, len(show_highlight_options)):
             self.show_highlight.add_item(show_highlight_options[i],
-                                         show_highlight_options[i])
+                                         show_highlight_names[i])
         self.show_highlight.set_help(
             _("None - Don't highlight paths.\n"
               "Direct - Highlight direct descendant/ancestor paths.\n"
