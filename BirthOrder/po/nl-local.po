@@ -1,0 +1,142 @@
+# Dutch translation of Gramps addon BirthOrder
+# Copyright (C) 2020 Gramps project
+# This file is distributed under the same license as the BirthOrder package.
+# Jan Sparreboom <jan@sparreboom.net>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: BirthOrder 5.1.x\n"
+"Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2020-04-28 22:15+0200\n"
+"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
+"Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.6\n"
+
+#: BirthOrder/birthorder.gpr.py:9 BirthOrder/birthorder.py:62
+msgid "Sort Children in Birth order"
+msgstr "Sorteer kinderen op volgorde van geboorte"
+
+#: BirthOrder/birthorder.gpr.py:10
+msgid ""
+"Looks through families, looking for children that are not in birth order.  "
+"User can accept individual suggestions to correct, edit the birth order "
+"manually, accept all those families that have all children with proper birth "
+"dates, or accept all."
+msgstr ""
+"Onderzoekt gezinnen, op zoek naar kinderen die niet op geboortevolgorde staan."
+"De gebruiker kan individuele suggesties accepteren om handmatig de "
+"geboortevolgorde te corrigeren of te bewerken, alle gezinnen waarvan alle "
+"kinderen de juiste geboortedatums hebben accepteren, of alles accepteren."
+
+#: BirthOrder/birthorder.py:161
+msgid "No families need sorting"
+msgstr "Er hoeven geen families gesorteerd te worden"
+
+#: BirthOrder/birthorder.py:162
+msgid "No children were out of birth order."
+msgstr "Er zijn geen kinderen buiten de geboortevolgorde."
+
+#: BirthOrder/birthorder.py:186
+msgid "Edit Family"
+msgstr "Familie bewerken"
+
+#: BirthOrder/birthorder.py:203
+msgid "Processing..."
+msgstr "Verwerken..."
+
+#: BirthOrder/birthorder.py:204
+msgid "Edit Families"
+msgstr "Families bewerken"
+
+#: BirthOrder/birthorder.py:275
+msgid "Looking for children birth order"
+msgstr "Op zoek naar de geboortevolgorde van kinderen"
+
+#: BirthOrder/birthorder.py:279
+msgid "Pass 1: Building preliminary lists"
+msgstr "Stap 1: voorlopige lijsten maken"
+
+#: BirthOrder/birthorder.glade:56
+msgid "Select the family you wish to examine."
+msgstr "Selecteer de familie die u wilt onderzoeken."
+
+#: BirthOrder/birthorder.glade:78
+msgid "Family ID"
+msgstr "Gezins-ID"
+
+#: BirthOrder/birthorder.glade:93
+msgid "Father"
+msgstr "Vader"
+
+#: BirthOrder/birthorder.glade:108
+msgid "Mother"
+msgstr "Moeder"
+
+#: BirthOrder/birthorder.glade:141
+msgid "Help"
+msgstr "Help"
+
+#: BirthOrder/birthorder.glade:155
+msgid "Accept All"
+msgstr "Accepteer alles"
+
+#: BirthOrder/birthorder.glade:159
+msgid "This button will sort all of the families listed."
+msgstr "Deze knop sorteert alle vermelde families."
+
+#: BirthOrder/birthorder.glade:170
+msgid "Accept All *"
+msgstr "Accepteer alle *"
+
+#: BirthOrder/birthorder.glade:174
+msgid ""
+"This button will sort all the families with '*'.  In these families, all the "
+"children have valid dates, so the sort is unambiguous."
+msgstr ""
+"Deze knop sorteert alle families met '*'. In deze families hebben alle "
+"kinderen geldige datums, daarom is de sortering niet problematisch."
+
+#: BirthOrder/birthorder.glade:185
+msgid "Accept"
+msgstr "Accepteren"
+
+#: BirthOrder/birthorder.glade:189
+msgid ""
+"This button will accept only the family selected and save it as shown in "
+"lower right pane."
+msgstr ""
+"Deze knop accepteert alleen de geselecteerde familie en slaat deze op zoals "
+"weergegeven in het rechterdeelvenster."
+
+#: BirthOrder/birthorder.glade:232
+msgid "Done"
+msgstr "Gereed"
+
+#: BirthOrder/birthorder.glade:236
+msgid "This button will exit, with remaining families unchanged."
+msgstr ""
+"Met deze knop wordt afgesloten en de resterende gezinnen blijven ongewijzigd."
+
+#: BirthOrder/birthorder.glade:256
+msgid "Current sort"
+msgstr "Huidige sortering"
+
+#: BirthOrder/birthorder.glade:267
+msgid "Proposed sort"
+msgstr "Voorgestelde sortering"
+
+#: BirthOrder/birthorder.glade:333
+msgid ""
+"When satisfied with the sort, use 'Accept' button below to accept the "
+"changes.  If you wish to adjust the order, select the child you wish to move, "
+"and use 'Up' or 'Down' buttons below to move them."
+msgstr ""
+"Als u tevreden bent met het sorteren, gebruikt u de onderstaande knop "
+"'Accepteren' om de wijzigingen te accepteren. Als u de volgorde wilt "
+"aanpassen, selecteert u het kind dat u wilt verplaatsen en gebruikt u de "
+"knoppen 'Omhoog' of 'Omlaag' hieronder om ze te verplaatsen."
