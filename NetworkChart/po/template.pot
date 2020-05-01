@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-08 10:39-0600\n"
+"POT-Creation-Date: 2020-05-01 13:52-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -243,8 +243,8 @@ msgstr ""
 msgid "The destination folder for generated files."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:990 NetworkChart/NetworkChart.py:1279
-#: NetworkChart/NetworkChart.py:1287
+#: NetworkChart/NetworkChart.py:990 NetworkChart/NetworkChart.py:1280
+#: NetworkChart/NetworkChart.py:1288
 msgid "network"
 msgstr ""
 
@@ -511,102 +511,102 @@ msgstr ""
 msgid "Highlight path(s)"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1175
+#: NetworkChart/NetworkChart.py:1174 NetworkChart/NetworkChart.py:1188
+msgid "None"
+msgstr ""
+
+#: NetworkChart/NetworkChart.py:1174 NetworkChart/NetworkChart.py:1188
+msgid "Direct"
+msgstr ""
+
+#: NetworkChart/NetworkChart.py:1174 NetworkChart/NetworkChart.py:1188
+msgid "Any"
+msgstr ""
+
+#: NetworkChart/NetworkChart.py:1176
 msgid "Default (None)"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1180
+#: NetworkChart/NetworkChart.py:1181
 msgid ""
 "None - Don't highlight paths.\n"
 "Direct - Highlight direct descendant/ancestor paths.\n"
 "Any - Highlight any path(s) including direct or indirect."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1185
+#: NetworkChart/NetworkChart.py:1186
 msgid "Show only path(s)"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1187
-msgid "None"
-msgstr ""
-
-#: NetworkChart/NetworkChart.py:1187
-msgid "Direct"
-msgstr ""
-
-#: NetworkChart/NetworkChart.py:1187
-msgid "Any"
-msgstr ""
-
-#: NetworkChart/NetworkChart.py:1188
+#: NetworkChart/NetworkChart.py:1189
 msgid "Default (none)"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1192
+#: NetworkChart/NetworkChart.py:1193
 msgid ""
 "None - Don't show paths only.\n"
 "Direct - Show only direct descendant/ancestor paths.\n"
 "Any - Show only path(s) direct or indirect."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1197
+#: NetworkChart/NetworkChart.py:1198
 msgid "Center Person"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1199
+#: NetworkChart/NetworkChart.py:1200
 msgid "Select person at center of selection radius in graph."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1202
+#: NetworkChart/NetworkChart.py:1203
 msgid ""
 "Max connections\n"
 "from center"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1205
+#: NetworkChart/NetworkChart.py:1206
 msgid ""
 "Enter the maximum number of connections allowed from\n"
 "the center person.  Value may be 1 or greater."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1210
+#: NetworkChart/NetworkChart.py:1211
 msgid "Limit graph to max connections from center."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1212
+#: NetworkChart/NetworkChart.py:1213
 msgid "Display up to max connections from central person."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1216
+#: NetworkChart/NetworkChart.py:1217
 msgid "Highlight central person in graph."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1218
+#: NetworkChart/NetworkChart.py:1219
 msgid "Add yellow color background to central person."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1222
+#: NetworkChart/NetworkChart.py:1223
 msgid "Config"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1226
+#: NetworkChart/NetworkChart.py:1227
 msgid "Database"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1233
+#: NetworkChart/NetworkChart.py:1234
 msgid "Use database handle instead of GrampID id in URLs."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1235
+#: NetworkChart/NetworkChart.py:1236
 msgid ""
 "Use database handle instead of the gramps id for URLs.\n"
 "The handle should never change whereas gramps ids can."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1239
+#: NetworkChart/NetworkChart.py:1240
 msgid "Confirm overwrite file."
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1242
+#: NetworkChart/NetworkChart.py:1243
 msgid "Enable/disable confirmation of file overwrite."
 msgstr ""
