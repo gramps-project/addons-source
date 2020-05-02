@@ -244,27 +244,6 @@ class PlaceCoordinateGeoView(GeoGraphyView):
         self.cal = config.get('preferences.calendar-format-report')
         self.plc_color = []
         self.plc_custom_color = defaultdict(set)
-        self.uistate.connect('Place', self.font_changed)
-        self.connect_signal('Place', self._active_changed)
-
-    def _active_changed(self, handle):
-        self.update()
-        
-    def connect(self, signal_obj, signal, method):
-        id = signal_obj.connect(signal, method)
-        signal_list = self._signal.get(signal, [])
-        signal_list.append((id, signal_obj))
-        self._signal[signal] = signal_list
-
-    def connect_signal(self, nav_type, method):
-        """
-        Connect the given method to the active-changed signal for the
-        navigation type requested.
-        """
-        self.uistate.register(self.dbstate, nav_type, self.nav_group)
-        history = self.uistate.get_history(nav_type, self.nav_group)
-        # print('History: nave-type = %s' % nav_type)
-        self.connect(history, "active-changed", method)
 
     def get_title(self):
         """
