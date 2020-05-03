@@ -1180,16 +1180,17 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                 elif item['type'] == 'path':
                     arguments = deepcopy(item['config']['arguments'])
                     arguments = [individual_id for individual_id in arguments]
+                    colors = [c/255. for c in item['color']]
                     if self.formatting['fade_individual_color'] and 'color_pos' in item:
                         cp = item['color_pos']
 
-                        #ctx.set_source_rgb(*[c/255. for c in item['color']])
+                        #ctx.set_source_rgb(colors[0], colors[1], colors[2])
                         #lg3 = cairo.LinearGradient(0, item['color_pos'][0],  0, item['color_pos'][1])
                         lg3 = cairo.LinearGradient(
                             0, item['color_pos'][0], 0, item['color_pos'][1])
                         #fill = svg_document.linearGradient(("0", str(item['color_pos'][0])+""), ("0", str(item['color_pos'][1])+""), gradientUnits='userSpaceOnUse')
                         lg3.add_color_stop_rgba(
-                            0, *[c/255. for c in item['color']], 1)
+                            0, colors[0], colors[1], colors[2], 1)
                         lg3.add_color_stop_rgba(1, 0, 0, 0, 1)
 
                         ctx.set_source(lg3)
@@ -1208,7 +1209,7 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                         if item['config']['type'] == 'Line':
                             ctx.move_to(arguments[0].real, arguments[0].imag)
                             ctx.set_source_rgb(
-                                *[c/255. for c in item['color']])
+                                colors[0], colors[1], colors[2])
                             ctx.set_line_width(item['stroke_width'])
                             ctx.line_to(arguments[1].real, arguments[1].imag)
                             ctx.stroke()
@@ -1216,7 +1217,7 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
 
                             ctx.move_to(arguments[0].real, arguments[0].imag)
                             ctx.set_source_rgb(
-                                *[c/255. for c in item['color']])
+                                colors[0], colors[1], colors[2])
                             ctx.set_line_width(item['stroke_width'])
                             ctx.curve_to(arguments[1].real, arguments[1].imag, arguments[2].real,
                                          arguments[2].imag, arguments[3].real, arguments[3].imag)
