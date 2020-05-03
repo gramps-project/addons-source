@@ -34,7 +34,7 @@ register(VIEW,
          status=STABLE,
          fname='lifelinechartview.py',
          authors=["Christian Schulze"],
-         authors_email=["XX"],
+         authors_email=["c.w.schulze@gmail.com"],
          viewclass='LifeLineChartView',
          # stock_icon='gramps-lifelinechart',
          )
