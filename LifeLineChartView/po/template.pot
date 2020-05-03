@@ -1,0 +1,144 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-03 12:38+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: LifeLineChartView/lifelinechart.py:1664
+msgid "_Edit"
+msgstr ""
+
+#: LifeLineChartView/lifelinechart.py:1672
+msgid "Edit family"
+msgstr ""
+
+#: LifeLineChartView/lifelinechart.py:1688
+msgid "Reorder families"
+msgstr ""
+
+#: LifeLineChartView/lifelinechart.py:1694
+msgid "_Copy"
+msgstr ""
+
+#: LifeLineChartView/lifelinechart.py:1704
+msgid "Spouses"
+msgstr ""
+
+#: LifeLineChartView/lifelinechart.py:1738
+msgid "Siblings"
+msgstr ""
+
+#: LifeLineChartView/lifelinechart.py:1804
+msgid "Children"
+msgstr ""
+
+#: LifeLineChartView/lifelinechart.py:1841
+msgid "Parents"
+msgstr ""
+
+#: LifeLineChartView/lifelinechart.py:1875
+#: LifeLineChartView/lifelinechart.py:1917
+msgid "_Add"
+msgstr ""
+
+#: LifeLineChartView/lifelinechart.py:1884
+msgid "Related"
+msgstr ""
+
+#: LifeLineChartView/lifelinechart.py:1924
+msgid "Add child to family"
+msgstr ""
+
+#: LifeLineChartView/lifelinechart.py:1932
+msgid "Add partner to person"
+msgstr ""
+
+#: LifeLineChartView/lifelinechart.py:1939
+msgid "Add a person"
+msgstr ""
+
+#: LifeLineChartView/lifelinechart.py:2029
+msgid "Add Child to Family"
+msgstr ""
+
+#: LifeLineChartView/lifelinechartview.gpr.py:29
+#: LifeLineChartView/lifelinechartview.py:222
+msgid "Life Line Chart"
+msgstr ""
+
+#: LifeLineChartView/lifelinechartview.gpr.py:30
+msgid "Charts"
+msgstr ""
+
+#: LifeLineChartView/lifelinechartview.gpr.py:31
+msgid "A view showing parents through a lifelinechart"
+msgstr ""
+
+#: LifeLineChartView/lifelinechartview.py:343
+msgid "Organize Bookmarks"
+msgstr ""
+
+#: LifeLineChartView/lifelinechartview.py:498
+msgid "Export View as SVG"
+msgstr ""
+
+#: LifeLineChartView/lifelinechartview.py:501
+msgid "_Cancel"
+msgstr ""
+
+#: LifeLineChartView/lifelinechartview.py:502
+msgid "_Save"
+msgstr ""
+
+#: LifeLineChartView/lifelinechartview.py:589
+msgid "Gender colors"
+msgstr ""
+
+#: LifeLineChartView/lifelinechartview.py:590
+msgid "Generation based gradient"
+msgstr ""
+
+#: LifeLineChartView/lifelinechartview.py:591
+msgid "Age (0-100) based gradient"
+msgstr ""
+
+#: LifeLineChartView/lifelinechartview.py:593
+msgid "Single main (filter) color"
+msgstr ""
+
+#: LifeLineChartView/lifelinechartview.py:594
+msgid "Time period based gradient"
+msgstr ""
+
+#: LifeLineChartView/lifelinechartview.py:595
+msgid "White"
+msgstr ""
+
+#: LifeLineChartView/lifelinechartview.py:596
+msgid "Color scheme classic report"
+msgstr ""
+
+#: LifeLineChartView/lifelinechartview.py:597
+msgid "Color scheme classic view"
+msgstr ""
+
+#: LifeLineChartView/lifelinechartview.py:606
+msgid "Background"
+msgstr ""
+
+#: LifeLineChartView/lifelinechartview.py:636
+msgid "Layout"
+msgstr ""
