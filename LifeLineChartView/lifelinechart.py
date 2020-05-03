@@ -1549,8 +1549,7 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                         ctx.paint()
                         ctx.restore()
                     import os
-                    draw_image(ctx, item['filename'], *item['config']
-                               ['insert'], *item['config']['size'])
+                    draw_image(ctx, item['filename'], item['config']['insert'][0], item['config']['insert'][1], item['config']['size'][0], item['config']['size'][1])
                     # marriage_pos and 'spouse' in positions[individual_id]['marriage']:
                     #m_pos_x = (positions[positions[individual_id]['marriage']['spouse']]['x_position'] + x_pos)/2
                     #svg_document.add(svg_document.use(image_def.get_iri(), **item['config']))
