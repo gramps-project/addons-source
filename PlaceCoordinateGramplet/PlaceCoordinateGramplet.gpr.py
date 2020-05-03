@@ -34,6 +34,8 @@ register(GRAMPLET,
          fname="PlaceCoordinateGramplet.py",
          height=280,
          gramplet='PlaceCoordinateGramplet',
+         authors=["Christian Schulze"],
+         authors_email=["c.w.schulze@gmail.com"],
          gramplet_title=_("Place Coordinates"),
          navtypes=["Place"],
          )
