@@ -944,7 +944,6 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
         reset = False
         if self.rootpersonh != root_person_handle:  # or self.filter != filtr:
             reset = True
-            self.rootpersonh = root_person_handle
         new_filter = self.filter != filtr
         self.generations = maxgen
         self.radialtext = radialtext
@@ -958,9 +957,9 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
         self.form = form
         self.showid = showid
         root_person = None
-        if self.rootpersonh is None or self.rootpersonh == '':
+        if root_person_handle is not None and root_person_handle != '':
             try:
-                root_person = self.dbstate.db.get_person_from_handle(self.rootpersonh)
+                root_person = self.dbstate.db.get_person_from_handle(root_person_handle)
             except:
                 pass
         if root_person is None:
@@ -972,7 +971,7 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
             # self.life_line_chart_ancestor_graph.place_selected_individuals(None, None, None, None)
             # self.life_line_chart_ancestor_graph._formatting = deepcopy(
             #     self.formatting)
-            # self.life_line_chart_ancestor_graph.define_svg_items()
+            self.life_line_chart_ancestor_graph.define_svg_items()
         else:
             def plot():
                 # x = GrampsIndividual(self.ic, self.dbstate, self.rootpersonh)
@@ -980,6 +979,7 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                         self.formatting != self.life_line_chart_ancestor_graph._formatting or new_filter):
 
                     if reset or self.life_line_chart_ancestor_graph is None or self.positioning != self.life_line_chart_ancestor_graph._positioning:
+                        self.rootpersonh = root_person_handle
                         self.life_line_chart_ancestor_graph = AncestorGraph(
                             positioning=self.positioning, formatting=self.formatting, instance_container=lambda: get_dbdstate_instance_container(self.dbstate))
                         root_individual = self.life_line_chart_ancestor_graph._instances[(
@@ -1053,8 +1053,8 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
         # first do size request of what we will need
         if not ctx:  # Display
             graph = self.life_line_chart_ancestor_graph
-            size_w_a = min(100, max(4000, int(graph.get_full_width()*self.zoom_level)))
-            size_h_a = min(100, max(4000, int(graph.get_full_height()*self.zoom_level)))
+            size_w_a = max(100, min(4000, int(graph.get_full_width()*self.zoom_level)))
+            size_h_a = max(100, min(4000, int(graph.get_full_height()*self.zoom_level)))
             #size_w_a = max(size_w_a, self.get_allocated_width())
             #size_h_a = max(size_h_a, self.get_allocated_height())
             self.set_size_request(size_w_a, size_h_a)
