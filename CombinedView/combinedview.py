@@ -56,6 +56,7 @@ from gramps.gen.lib.date import Today
 from gramps.gen.db import DbTxn
 from navigationview import NavigationView
 from taglist import TagList
+from timeline import Timeline
 from gramps.gui.uimanager import ActionGroup
 from gramps.gui.editors import EditPerson, EditFamily, EditEvent
 from gramps.gui.editors import FilterEditor
@@ -559,6 +560,7 @@ class CombinedView(NavigationView):
         self.write_families(person)
         self.write_events(person)
         self.write_album(person)
+        self.write_timeline(person)
 
         #self.stack.set_visible_child_name(self.person_tab)
 
@@ -1009,6 +1011,130 @@ class CombinedView(NavigationView):
 
     def write_data(self, box, title):
         box.add(widgets.BasicLabel(title))
+
+##############################################################################
+#
+# Timeline
+#
+##############################################################################
+
+    def write_timeline(self, person):
+
+        grid = Gtk.Grid(orientation=Gtk.Orientation.VERTICAL)
+
+        scroll = Gtk.ScrolledWindow()
+        scroll.add(grid)
+        scroll.show_all()
+        self.stack.add_titled(scroll, 'timeline', _('Timeline'))
+
+        events = []
+        start_date = None
+        # Personal events
+        for index, event_ref in enumerate(person.get_event_ref_list()):
+            event = self.dbstate.db.get_event_from_handle(event_ref.ref)
+            date = event.get_date_object()
+            if (start_date is None and event_ref.role.is_primary() and
+                (event.type.is_birth_fallback() or
+                 event.type == EventType.BIRTH)):
+                start_date = date
+            sortval = date.get_sort_value()
+            events.append(((sortval, index), event_ref, None))
+
+        # Family events
+        for family_handle in person.get_family_handle_list():
+            family = self.dbstate.db.get_family_from_handle(family_handle)
+            father_handle = family.get_father_handle()
+            mother_handle = family.get_mother_handle()
+            spouse = None
+            if father_handle == person.handle:
+                if mother_handle:
+                    spouse = self.dbstate.db.get_person_from_handle(mother_handle)
+            else:
+                if father_handle:
+                    spouse = self.dbstate.db.get_person_from_handle(father_handle)
+            for event_ref in family.get_event_ref_list():
+                event = self.dbstate.db.get_event_from_handle(event_ref.ref)
+                sortval = event.get_date_object().get_sort_value()
+                events.append(((sortval, 0), event_ref, spouse))
+
+        # Write all events sorted by date
+        for index, event in enumerate(sorted(events, key=itemgetter(0))):
+            self.write_node(grid, event[1], event[2], index+1, start_date)
+
+        grid.show_all()
+
+    def write_node(self, grid, event_ref, spouse, index, start_date):
+        handle = event_ref.ref
+        event = self.dbstate.db.get_event_from_handle(handle)
+        etype = str(event.get_type())
+        desc = event.get_description()
+        who = get_participant_from_event(self.dbstate.db, handle)
+
+        title = etype
+        if desc:
+            title = '%s (%s)' % (title, desc)
+        if spouse:
+            spouse_name = name_displayer.display(spouse)
+            title = '%s - %s' % (title, spouse_name)
+
+        role = event_ref.get_role()
+        if role in (EventRoleType.PRIMARY, EventRoleType.FAMILY):
+            emph = True
+        else:
+            emph = False
+            title = '%s of %s' % (title, who)
+
+        vbox1 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+
+        link_func = self._event_link
+        name = (title, None)
+        handle = event_ref.ref
+        link_label = widgets.LinkLabel(name, link_func, handle, emph,
+                                       theme=self.theme)
+        link_label.set_padding(3, 0)
+        link_label.set_tooltip_text(_('Click to make this event active'))
+        if self._config.get('preferences.releditbtn'):
+            button = widgets.IconButton(self.edit_event, handle)
+            button.set_tooltip_text(_('Edit %s') % name[0])
+        else:
+            button = None
+
+        hbox = widgets.LinkBox(link_label, button)
+        if self.show_tags:
+            tag_list = TagList(self.get_tag_list(event))
+            hbox.pack_start(tag_list, False, False, 0)
+        vbox1.pack_start(hbox, False, False, 0)
+
+        pname = place_displayer.display_event(self.dbstate.db, event)
+        vbox1.pack_start(widgets.BasicLabel(pname), False, False, 0)
+        vbox1.set_vexpand(False)
+        vbox1.set_valign(Gtk.Align.CENTER)
+        vbox1.show_all()
+
+        eventbox = self.make_dragbox(vbox1, 'Event', handle)
+        eventbox.set_hexpand(True)
+        eventbox.set_vexpand(False)
+        eventbox.set_valign(Gtk.Align.CENTER)
+        eventbox.set_margin_top(1)
+        eventbox.set_margin_bottom(1)
+        eventbox.show_all()
+
+        vbox2 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        dobj = event.get_date_object()
+        date = widgets.BasicLabel(displayer.display(dobj))
+        vbox2.pack_start(date, False, False, 0)
+        if start_date is not None:
+            age_precision = config.get('preferences.age-display-precision')
+            diff = (dobj - start_date).format(precision=age_precision)
+            age = widgets.BasicLabel(diff)
+            vbox2.pack_start(age, False, False, 0)
+        vbox2.set_valign(Gtk.Align.CENTER)
+        grid.add(vbox2)
+
+        tl = Timeline()
+        grid.attach_next_to(tl, vbox2, Gtk.PositionType.RIGHT, 1, 1)
+
+        grid.attach_next_to(eventbox, tl, Gtk.PositionType.RIGHT, 1, 1)
 
 ##############################################################################
 #
