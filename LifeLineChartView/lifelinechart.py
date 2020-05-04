@@ -957,7 +957,13 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
         self.alpha_filter = alpha_filter
         self.form = form
         self.showid = showid
-        if self.rootpersonh is None:
+        root_person = None
+        if self.rootpersonh is None or self.rootpersonh == '':
+            try:
+                root_person = self.dbstate.db.get_person_from_handle(self.rootpersonh)
+            except:
+                pass
+        if root_person is None:
             self.life_line_chart_ancestor_graph = AncestorGraph(
                             positioning=self.positioning, formatting=self.formatting, instance_container=lambda: get_dbdstate_instance_container(self.dbstate))
             # self.life_line_chart_ancestor_graph.select_individuals(
@@ -1047,8 +1053,8 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
         # first do size request of what we will need
         if not ctx:  # Display
             graph = self.life_line_chart_ancestor_graph
-            size_w_a = int(graph.get_full_width()*self.zoom_level)
-            size_h_a = int(graph.get_full_height()*self.zoom_level)
+            size_w_a = min(100, max(4000, int(graph.get_full_width()*self.zoom_level)))
+            size_h_a = min(100, max(4000, int(graph.get_full_height()*self.zoom_level)))
             #size_w_a = max(size_w_a, self.get_allocated_width())
             #size_h_a = max(size_h_a, self.get_allocated_height())
             self.set_size_request(size_w_a, size_h_a)
