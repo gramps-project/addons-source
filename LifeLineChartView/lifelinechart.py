@@ -957,7 +957,17 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
         self.alpha_filter = alpha_filter
         self.form = form
         self.showid = showid
-        if self.rootpersonh:
+        if self.rootpersonh is None:
+            self.life_line_chart_ancestor_graph = AncestorGraph(
+                            positioning=self.positioning, formatting=self.formatting, instance_container=lambda: get_dbdstate_instance_container(self.dbstate))
+            # self.life_line_chart_ancestor_graph.select_individuals(
+            #     None)
+            # cof_family_id = None
+            # self.life_line_chart_ancestor_graph.place_selected_individuals(None, None, None, None)
+            # self.life_line_chart_ancestor_graph._formatting = deepcopy(
+            #     self.formatting)
+            # self.life_line_chart_ancestor_graph.define_svg_items()
+        else:
             def plot():
                 # x = GrampsIndividual(self.ic, self.dbstate, self.rootpersonh)
                 if (reset or self.life_line_chart_ancestor_graph is None or self.positioning != self.life_line_chart_ancestor_graph._positioning or
