@@ -1,250 +1,253 @@
-# translation of nl.po to nederlands
-# Dutch translation of GRAMPS
-# Copyright (C) 2003 The Free Software Foundation,  Inc.
+# Dutch translation of Gramps addon DataEntryGramplet
+# Copyright (C) 2020 Gramps project
+# This file is distributed under the same license as the DataEntryGramplet package.
 #
 # Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
 # Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
 # Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010.
 #
-# --------------------------------------------------
-# Conventies (kan later altijd nog aangepast worden)
-# --------------------------------------------------
-# active             actief (moet hier nog iets beters voor verzinnen)
-# attribute          kenmerk
-# bookmark           bladwijzer
-# view               scherm
-# city               plaats beter is stad dorp
-# marker             aanduiding
-# people             personen
-# place              locatie
-# record             archief/kaart
-# database           gegevensbestand (KB)
-# chart              grafiek
-# Home person        beginpersoon : (EDR)
-# spouse             echtgenoot
-# partner            partner
-# warning            let op
-# at the age of      op een leeftijd van -> toen hij/zij .. oud was
-# repositories       bibliotheken
-# regex              regex onvertaald laten
-# expression         uitdrukking
-# given name         voornaam
-# reference	     waarnaar verwezen wordt
-# count		     aantal maal
-# lineage	     lijn
-# locality	     plaats
-# u gebruiken
-# telkens werkwoord achteraan plaatsen
 msgid ""
 msgstr ""
-"Project-Id-Version: gramps\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-04-10 08:50+0200\n"
-"PO-Revision-Date: 2011-04-10 08:58+0100\n"
-"Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
-"Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
-"Language: \n"
+"Project-Id-Version: DataEntryGramplet 5.1.x\n"
+"Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2020-05-05 16:25+0200\n"
+"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
+"Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-Language: Nederlands\n"
-"X-Poedit-Country: België\n"
+"X-Generator: Poedit 2.0.6\n"
 
 #: DataEntryGramplet/DataEntryGramplet.gpr.py:8
 msgid "Data Entry Gramplet"
-msgstr "Gegevensingave-gramplet"
+msgstr "Gegevensinvoer Gramplet"
 
 #: DataEntryGramplet/DataEntryGramplet.gpr.py:9
 msgid "Gramplet for quick data entry"
-msgstr "Gramplet om gegevens snel in te voeren"
+msgstr "Gramplet om snel gegevens in te voeren"
 
 #: DataEntryGramplet/DataEntryGramplet.gpr.py:13
 msgid "Data Entry"
 msgstr "Gegevensinvoer"
 
-#: DataEntryGramplet/DataEntryGramplet.py:59
+#: DataEntryGramplet/DataEntryGramplet.py:71
 msgid "Active person"
 msgstr "Actieve persoon"
 
-#: DataEntryGramplet/DataEntryGramplet.py:61
+#: DataEntryGramplet/DataEntryGramplet.py:73
 msgid "Family:"
 msgstr "Familie:"
 
-#: DataEntryGramplet/DataEntryGramplet.py:62
+#: DataEntryGramplet/DataEntryGramplet.py:74
 msgid "Sources?"
 msgstr "Bronnen?"
 
-#: DataEntryGramplet/DataEntryGramplet.py:64
-#: DataEntryGramplet/DataEntryGramplet.py:93
+#: DataEntryGramplet/DataEntryGramplet.py:76
+#: DataEntryGramplet/DataEntryGramplet.py:109
 msgid "Surname, Given"
-msgstr "Familienaam, voornaam"
+msgstr "Achternaam, voornaam"
 
-#: DataEntryGramplet/DataEntryGramplet.py:65
-#: DataEntryGramplet/DataEntryGramplet.py:94
+#: DataEntryGramplet/DataEntryGramplet.py:77
+#: DataEntryGramplet/DataEntryGramplet.py:110
 msgid "Gender"
 msgstr "Geslacht"
 
-#: DataEntryGramplet/DataEntryGramplet.py:65
-#: DataEntryGramplet/DataEntryGramplet.py:95
+#: DataEntryGramplet/DataEntryGramplet.py:77
+#: DataEntryGramplet/DataEntryGramplet.py:111
 msgid "female"
-msgstr "vrouwelijk"
+msgstr "vrouw"
 
-#: DataEntryGramplet/DataEntryGramplet.py:65
-#: DataEntryGramplet/DataEntryGramplet.py:95
+#: DataEntryGramplet/DataEntryGramplet.py:77
+#: DataEntryGramplet/DataEntryGramplet.py:111
 msgid "male"
-msgstr "mannelijk"
+msgstr "man"
 
-#: DataEntryGramplet/DataEntryGramplet.py:65
-#: DataEntryGramplet/DataEntryGramplet.py:95
+#: DataEntryGramplet/DataEntryGramplet.py:77
+#: DataEntryGramplet/DataEntryGramplet.py:111
 msgid "unknown"
 msgstr "onbekend"
 
-#: DataEntryGramplet/DataEntryGramplet.py:66
-#: DataEntryGramplet/DataEntryGramplet.py:68
-#: DataEntryGramplet/DataEntryGramplet.py:69
-#: DataEntryGramplet/DataEntryGramplet.py:95
-#: DataEntryGramplet/DataEntryGramplet.py:96
-#: DataEntryGramplet/DataEntryGramplet.py:97
+#: DataEntryGramplet/DataEntryGramplet.py:77
+#: DataEntryGramplet/DataEntryGramplet.py:111
+msgid "other"
+msgstr "anders"
+
+#: DataEntryGramplet/DataEntryGramplet.py:78
+#: DataEntryGramplet/DataEntryGramplet.py:80
+#: DataEntryGramplet/DataEntryGramplet.py:81
+#: DataEntryGramplet/DataEntryGramplet.py:111
+#: DataEntryGramplet/DataEntryGramplet.py:112
+#: DataEntryGramplet/DataEntryGramplet.py:113
 msgid "Source"
 msgstr "Bron"
 
-#: DataEntryGramplet/DataEntryGramplet.py:68
-#: DataEntryGramplet/DataEntryGramplet.py:96
+#: DataEntryGramplet/DataEntryGramplet.py:80
+#: DataEntryGramplet/DataEntryGramplet.py:112
 msgid "Birth"
 msgstr "Geboorte"
 
-# Gebeurtenistype: overlijden/sterven/sterfgeval/doodgaan
-#: DataEntryGramplet/DataEntryGramplet.py:69
-#: DataEntryGramplet/DataEntryGramplet.py:97
+#: DataEntryGramplet/DataEntryGramplet.py:81
+#: DataEntryGramplet/DataEntryGramplet.py:113
 msgid "Death"
 msgstr "Overlijden"
 
-#: DataEntryGramplet/DataEntryGramplet.py:77
+#: DataEntryGramplet/DataEntryGramplet.py:89
 msgid "Save"
 msgstr "Opslaan"
 
-#: DataEntryGramplet/DataEntryGramplet.py:80
+#: DataEntryGramplet/DataEntryGramplet.py:92
 msgid "Abandon"
 msgstr "Annuleren"
 
-#: DataEntryGramplet/DataEntryGramplet.py:85
+#: DataEntryGramplet/DataEntryGramplet.py:97
 msgid "New person"
 msgstr "Nieuwe persoon"
 
-#: DataEntryGramplet/DataEntryGramplet.py:86
+#: DataEntryGramplet/DataEntryGramplet.py:98
 msgid "Add relation"
 msgstr "Relatie toevoegen"
 
-#: DataEntryGramplet/DataEntryGramplet.py:87
+#: DataEntryGramplet/DataEntryGramplet.py:99
 msgid "No relation to active person"
-msgstr "Geen relatie met de actieve persoon"
+msgstr "Geen relatie met actieve persoon"
 
-#: DataEntryGramplet/DataEntryGramplet.py:88
+#: DataEntryGramplet/DataEntryGramplet.py:100
 msgid "Add as a Parent"
-msgstr "Als een ouder toevoegen"
+msgstr "Als ouder toevoegen"
 
-#: DataEntryGramplet/DataEntryGramplet.py:89
+#: DataEntryGramplet/DataEntryGramplet.py:101
+msgid "Add as a Mother"
+msgstr "Als moeder toevoegen"
+
+#: DataEntryGramplet/DataEntryGramplet.py:102
+msgid "Add as a Father"
+msgstr "Als vader toevoegen"
+
+#: DataEntryGramplet/DataEntryGramplet.py:103
 msgid "Add as a Spouse"
-msgstr "Als een echtgeno(o)t(e) toevoegen"
+msgstr "Als partner toevoegen"
 
-#: DataEntryGramplet/DataEntryGramplet.py:90
-msgid "Add as a Sibling"
-msgstr "Als een broer/zus toevoegen"
-
-#: DataEntryGramplet/DataEntryGramplet.py:91
-msgid "Add as a Child"
-msgstr "Als een kind toevoegen"
+#: DataEntryGramplet/DataEntryGramplet.py:104
+msgid "Add as a Wife"
+msgstr "Als vrouw toevoegen"
 
 #: DataEntryGramplet/DataEntryGramplet.py:105
+msgid "Add as a Husband"
+msgstr "Als echtgenoot toevoegen"
+
+#: DataEntryGramplet/DataEntryGramplet.py:106
+msgid "Add as a Sibling"
+msgstr "Als broer/zus toevoegen"
+
+#: DataEntryGramplet/DataEntryGramplet.py:107
+msgid "Add as a Child"
+msgstr "Als kind toevoegen"
+
+#: DataEntryGramplet/DataEntryGramplet.py:121
 msgid "Add"
 msgstr "Toevoegen"
 
-#: DataEntryGramplet/DataEntryGramplet.py:108
+#: DataEntryGramplet/DataEntryGramplet.py:124
 msgid "Copy Active Data"
-msgstr "De actieve gegevens kopiëren"
+msgstr "Kopieer actieve gegevens"
 
-# zie ook uncleared.
-# is dit goed?
-#: DataEntryGramplet/DataEntryGramplet.py:111
+#: DataEntryGramplet/DataEntryGramplet.py:127
 msgid "Clear"
 msgstr "Gewist"
 
-#: DataEntryGramplet/DataEntryGramplet.py:154
-#: DataEntryGramplet/DataEntryGramplet.py:168
-#: DataEntryGramplet/DataEntryGramplet.py:299
+#: DataEntryGramplet/DataEntryGramplet.py:167
+#: DataEntryGramplet/DataEntryGramplet.py:178
+#: DataEntryGramplet/DataEntryGramplet.py:315
 msgid "in"
 msgstr "in"
 
-#: DataEntryGramplet/DataEntryGramplet.py:419
-#: DataEntryGramplet/DataEntryGramplet.py:526
+#: DataEntryGramplet/DataEntryGramplet.py:441
+#: DataEntryGramplet/DataEntryGramplet.py:569
 #, python-format
 msgid "Gramplet Data Edit: %s"
 msgstr "Gramplet-gegevens bewerken: %s"
 
-#: DataEntryGramplet/DataEntryGramplet.py:492
+#: DataEntryGramplet/DataEntryGramplet.py:515
 msgid "Please provide a name."
-msgstr "Een naam opgeven."
+msgstr "Geef een naam op."
 
-#: DataEntryGramplet/DataEntryGramplet.py:492
+#: DataEntryGramplet/DataEntryGramplet.py:515
 msgid "Can't add new person."
-msgstr "De nieuwe persoon kan niet worden toevoegd."
+msgstr "Kan geen nieuwe persoon toevoegen."
 
-#: DataEntryGramplet/DataEntryGramplet.py:500
-#: DataEntryGramplet/DataEntryGramplet.py:508
-#: DataEntryGramplet/DataEntryGramplet.py:517
-#: DataEntryGramplet/DataEntryGramplet.py:522
+#: DataEntryGramplet/DataEntryGramplet.py:523
+#: DataEntryGramplet/DataEntryGramplet.py:531
+#: DataEntryGramplet/DataEntryGramplet.py:536
+#: DataEntryGramplet/DataEntryGramplet.py:541
+#: DataEntryGramplet/DataEntryGramplet.py:550
+#: DataEntryGramplet/DataEntryGramplet.py:555
+#: DataEntryGramplet/DataEntryGramplet.py:560
+#: DataEntryGramplet/DataEntryGramplet.py:565
 msgid "Please set an active person."
-msgstr "Een actieve persoon aanduiden."
+msgstr "Stel een actieve persoon in."
 
-#: DataEntryGramplet/DataEntryGramplet.py:500
-#: DataEntryGramplet/DataEntryGramplet.py:503
+#: DataEntryGramplet/DataEntryGramplet.py:523
+#: DataEntryGramplet/DataEntryGramplet.py:526
 msgid "Can't add new person as a parent."
-msgstr "De nieuwe persoon kan niet als ouder worden toevoegd."
+msgstr "Kan geen nieuwe persoon toevoegen als ouder."
 
-#: DataEntryGramplet/DataEntryGramplet.py:503
-#: DataEntryGramplet/DataEntryGramplet.py:512
+#: DataEntryGramplet/DataEntryGramplet.py:526
+#: DataEntryGramplet/DataEntryGramplet.py:545
 msgid "Please set the new person's gender."
-msgstr "Een geslacht voor de nieuwe persoon kiezen."
+msgstr "Stel het geslacht van de nieuwe persoon in."
 
-#: DataEntryGramplet/DataEntryGramplet.py:508
-#: DataEntryGramplet/DataEntryGramplet.py:512
-#: DataEntryGramplet/DataEntryGramplet.py:663
-#: DataEntryGramplet/DataEntryGramplet.py:700
-#: DataEntryGramplet/DataEntryGramplet.py:733
+#: DataEntryGramplet/DataEntryGramplet.py:531
+msgid "Can't add new person as a mother."
+msgstr "Kan geen nieuwe persoon toevoegen als moeder."
+
+#: DataEntryGramplet/DataEntryGramplet.py:536
+msgid "Can't add new person as a father."
+msgstr "Kan geen nieuwe persoon toevoegen als vader."
+
+#: DataEntryGramplet/DataEntryGramplet.py:541
+#: DataEntryGramplet/DataEntryGramplet.py:545
+#: DataEntryGramplet/DataEntryGramplet.py:768
+#: DataEntryGramplet/DataEntryGramplet.py:805
+#: DataEntryGramplet/DataEntryGramplet.py:838
 msgid "Can't add new person as a spouse."
-msgstr "De nieuwe persoon kan niet als echtgeno(o)t(e) worden toevoegd."
+msgstr "Kan geen nieuwe persoon toevoegen als partner."
 
-#: DataEntryGramplet/DataEntryGramplet.py:517
+#: DataEntryGramplet/DataEntryGramplet.py:550
+msgid "Can't add new person as a wife."
+msgstr "Kan geen nieuwe persoon toevoegen als vrouw."
+
+#: DataEntryGramplet/DataEntryGramplet.py:555
+msgid "Can't add new person as a husband."
+msgstr "Kan geen nieuwe persoon toevoegen als echtgenoot."
+
+#: DataEntryGramplet/DataEntryGramplet.py:560
 msgid "Can't add new person as a sibling."
-msgstr "De nieuwe persoon kan niet als broer/zus worden toevoegd."
+msgstr "Kan geen nieuwe persoon toevoegen als broer of zus."
 
-#: DataEntryGramplet/DataEntryGramplet.py:522
-#: DataEntryGramplet/DataEntryGramplet.py:779
+#: DataEntryGramplet/DataEntryGramplet.py:565
+#: DataEntryGramplet/DataEntryGramplet.py:938
 msgid "Can't add new person as a child."
-msgstr "De nieuwe persoon kan niet als kind worden toevoegd."
+msgstr "Kan geen nieuwe persoon toevoegen als kind."
 
-#: DataEntryGramplet/DataEntryGramplet.py:658
+#: DataEntryGramplet/DataEntryGramplet.py:763
 msgid "Please set Active person."
-msgstr "Actieve persoon aanduiden."
+msgstr "Stel actieve persoon in."
 
-#: DataEntryGramplet/DataEntryGramplet.py:659
+#: DataEntryGramplet/DataEntryGramplet.py:764
 msgid "Can't add new person as a spouse to no one."
-msgstr "De nieuwe persoon kan bij niemand als echtgeno(o)t(e) worden toevoegd."
+msgstr "Kan geen nieuwe persoon toevoegen als partner van niemand."
 
-#: DataEntryGramplet/DataEntryGramplet.py:662
+#: DataEntryGramplet/DataEntryGramplet.py:767
 msgid "Please set gender on Active or new person."
-msgstr "Een geslacht voor actieve of nieuwe persoon kiezen."
+msgstr "Een geslacht voor de actieve of nieuwe persoon kiezen."
 
-#: DataEntryGramplet/DataEntryGramplet.py:699
-#: DataEntryGramplet/DataEntryGramplet.py:732
+#: DataEntryGramplet/DataEntryGramplet.py:804
+#: DataEntryGramplet/DataEntryGramplet.py:837
 msgid "Same genders on Active and new person."
-msgstr "Zelfde geslacht voor actieve en nieuwe persoon."
+msgstr "Dezelfde geslachten op actieve en nieuwe persoon."
 
-#: DataEntryGramplet/DataEntryGramplet.py:778
+#: DataEntryGramplet/DataEntryGramplet.py:937
 msgid "Please set gender on Active person."
-msgstr "Een geslacht voor de actieve persoon kiezen."
-
-#~ msgid "Gramplet Data Entry: %s"
-#~ msgstr "Gramplet-gegevens invoer: %s"
-
+msgstr "Stel geslacht in op actieve persoon."
