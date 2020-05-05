@@ -21,9 +21,9 @@
 
 register(RULE,
   id = 'yinheritance',
-  name = _("Y-chromsomal inheritance of <person>"),
+  name = _("Y-chromosomal inheritance of <person>"),
   description = _("Matches recorded descendants of person following "
-                  "Y-chromsomal inheritance patterns."),
+                  "Y-chromosomal inheritance patterns."),
   version = '1.0.1',
   authors = ["Matthias Kemmer"],
   authors_email = ["matt.familienforschung@gmail.com"],
