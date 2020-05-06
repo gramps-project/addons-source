@@ -378,7 +378,7 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         self.connect("key-press-event", self.on_key_press)
 
         self.connect("draw", self.on_draw)
-        self.add_events(Gdk.EventMask.SCROLL_MASK |
+        self.add_events(Gdk.EventMask.SMOOTH_SCROLL_MASK |
                         Gdk.EventMask.BUTTON_PRESS_MASK |
                         Gdk.EventMask.BUTTON_RELEASE_MASK |
                         Gdk.EventMask.POINTER_MOTION_MASK |
@@ -503,7 +503,7 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
 
     def set_zoom(self, value, fix_point = None):
         zoom_level_backup = self.zoom_level
-        self.zoom_level = value
+        self.zoom_level = max(0.01, min(1000, value))
         visible_range = (self.get_allocated_width(), self.get_allocated_height())
         if fix_point is None:
             fix_point = visible_range[0] * 0.5, visible_range[1] * 0.5
@@ -513,17 +513,33 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
             (self.zoom_level / zoom_level_backup) * (
             fix_point[1] + self.upper_left_view_position[1]) - fix_point[1]
         )
+        self.limit_position()
         self.queue_draw()
 
-    def fit_to_page(self, _button):
+    def fit_to_page(self, _button=None):
         width = self.life_line_chart_ancestor_graph.get_full_width()
         height = self.life_line_chart_ancestor_graph.get_full_height()
         width_a = self.get_allocated_width()
         height_a = self.get_allocated_height()
         scale_w = width_a / width
         scale_h = height_a / height
-        self.set_zoom(min(scale_w, scale_h))
-        self.upper_left_view_position = (width*self.zoom_level - width_a) / 2.0, (height*self.zoom_level - height_a) / 2.0
+        new_zoom_level = min(scale_w, scale_h)
+        self.upper_left_view_position = (width*new_zoom_level - width_a) / 2.0, (height*new_zoom_level - height_a) / 2.0
+        self.set_zoom(new_zoom_level)
+
+    def limit_position(self):
+        width = self.life_line_chart_ancestor_graph.get_full_width()
+        height = self.life_line_chart_ancestor_graph.get_full_height()
+        width_a = self.get_allocated_width()
+        height_a = self.get_allocated_height()
+        allowed_x_min = min(0, (width*self.zoom_level - width_a) / 2.0)
+        allowed_y_min = min(0, (height*self.zoom_level - height_a) / 2.0)
+        allowed_x_max = max(width*self.zoom_level - width_a, allowed_x_min)
+        allowed_y_max = max(height*self.zoom_level - height_a, allowed_y_min)
+        self.upper_left_view_position = (
+           max(allowed_x_min, min(allowed_x_max, self.upper_left_view_position[0])),
+           max(allowed_y_min, min(allowed_y_max, self.upper_left_view_position[1])),
+        )
 
     def get_view_position_center(self):
         visible_range = (self.get_allocated_width(), self.get_allocated_height())
@@ -541,7 +557,13 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         dummy_widget = widget
         # if self.surface:
         #     ctx.set_source_surface(self.surface, 0, 0)
-        widget.draw(ctx)
+        
+        run_profiler = False
+        if run_profiler:
+            import cProfile
+            cProfile.runctx('widget.draw(ctx)', globals(), locals())
+        else:
+            widget.draw(ctx)
         #print('blub')
 
         #self.da.paint()
@@ -718,26 +740,30 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
             #we grab the focus to enable to see key_press events
             self.grab_focus()
 
-        # cell_address = self.cell_address_under_cursor(event.x, event.y)
-        individual = self.life_line_chart_ancestor_graph.get_individual_from_position(
-            event.x/self.zoom_level, event.y/self.zoom_level)
-        if individual:
-            individual_id = individual.individual_id
-        else:
-            #return True
-
+        
+        
+        accel_mask = Gtk.accelerator_get_default_mod_mask()
+        if event.state & accel_mask == Gdk.ModifierType.CONTROL_MASK:
             # left mouse on center dot, we translate on left click
             if event.button == 1:  # left mouse
                 # save the mouse location for movements
                 self.translating = True
                 self.last_x, self.last_y = event.x, event.y
                 return True
+        # else:        
+        #     # line was clicked!
+        #     individual = self.life_line_chart_ancestor_graph.get_individual_from_position(
+        #         event.x/self.zoom_level, event.y/self.zoom_level)
+        #     if individual:
+        #         individual_id = individual.individual_id
+            
+        #         #return True
 
-        # #left click on person, prepare for expand/collapse or drag
-        if event.button == 1:
-            self._mouse_click = True
-            self._mouse_click_individual_id = individual_id
-            return False
+        #     # #left click on person, prepare for expand/collapse or drag
+        #         if event.button == 1:
+        #             self._mouse_click = True
+        #             self._mouse_click_individual_id = individual_id
+        #             return False
 
         # #right click on person, context menu
         # # Do things based on state, event.get_state(), or button, event.button
@@ -751,7 +777,7 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         #         self.on_popup(widget, event, person.handle, fhandle)
         #         return True
 
-        return False
+        return True
 
     def scroll_mouse(self, widget, event):
         """
@@ -760,10 +786,37 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         # Handles zoom in / zoom out on Ctrl+mouse wheel
         accel_mask = Gtk.accelerator_get_default_mod_mask()
         if event.state & accel_mask == Gdk.ModifierType.CONTROL_MASK:
-            if event.direction == Gdk.ScrollDirection.UP:
+            if event.direction == Gdk.ScrollDirection.SMOOTH:
+                hasdeltas, dx, dy = event.get_scroll_deltas()
+                self.set_zoom(self.zoom_level / (1 + max(-0.9, min(10, 0.25 * dy))), fix_point=(event.x, event.y))
+            elif event.direction == Gdk.ScrollDirection.UP:
                 self.zoom_in(fix_point=(event.x, event.y))
             elif event.direction == Gdk.ScrollDirection.DOWN:
                 self.zoom_out(fix_point=(event.x, event.y))
+        else:
+            if event.direction == Gdk.ScrollDirection.SMOOTH:
+                hasdeltas, dx, dy = event.get_scroll_deltas()
+                if hasdeltas:
+                    self.upper_left_view_position = (
+                        self.upper_left_view_position[0] + 50 * dx,
+                        self.upper_left_view_position[1] + 50 * dy)
+                    self.limit_position()
+                    self.queue_draw()
+            elif event.state & accel_mask == Gdk.ModifierType.SHIFT_MASK:
+                if event.direction == Gdk.ScrollDirection.UP:
+                    self.upper_left_view_position = (self.upper_left_view_position[0] - 50, self.upper_left_view_position[1])
+                elif event.direction == Gdk.ScrollDirection.DOWN:
+                    self.upper_left_view_position = (self.upper_left_view_position[0] + 50, self.upper_left_view_position[1])
+                self.limit_position()
+                self.queue_draw()
+            else:
+                print(str(event.get_scroll_deltas()))
+                if event.direction == Gdk.ScrollDirection.UP:
+                    self.upper_left_view_position = (self.upper_left_view_position[0], self.upper_left_view_position[1] - 50)
+                elif event.direction == Gdk.ScrollDirection.DOWN:
+                    self.upper_left_view_position = (self.upper_left_view_position[0], self.upper_left_view_position[1] + 50)
+                self.limit_position()
+                self.queue_draw()
 
         # stop the signal of scroll emission
         # to prevent window scrolling
@@ -828,6 +881,7 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
             self.upper_left_view_position = \
                 self.upper_left_view_position[0] + self.center_delta_xy[0], \
                 self.upper_left_view_position[1] + self.center_delta_xy[1]
+            self.limit_position()
             self.center_delta_xy = 0, 0
         else:
             self.center_delta_xy = 0, 0
@@ -937,6 +991,8 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
         self.formatting = None
         self.positioning = None
         self.filter = None
+        self.chart_items = []
+        self.image_cache = {}
         self.zoom_level = 1.0
         self.zoom_level_backup = 1.0
         self.life_line_chart_ancestor_graph = None
@@ -1040,6 +1096,17 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                             gir.color = gir.color_backup
                     self.life_line_chart_ancestor_graph.define_svg_items()
             plot()
+        additional_items = []
+        for key, value in self.life_line_chart_ancestor_graph.additional_graphical_items.items():
+            additional_items += value
+        sorted_individuals = [(gr.get_birth_event()['ordinal_value'], index, gr) for index, gr in enumerate(
+            self.life_line_chart_ancestor_graph.graphical_individual_representations)]
+        sorted_individuals.sort()
+        sorted_individual_items = []
+        for _, index, graphical_individual_representation in sorted_individuals:
+            sorted_individual_items += graphical_individual_representation.items
+        self.chart_items = additional_items + sorted_individual_items
+        self.image_cache = {}
 
     def nrgen(self):
         """
@@ -1105,505 +1172,530 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
             #ctx.scale(scale, scale)
             #self.zoom_level_backup = self.zoom_level
 
-        additional_items = []
-        for key, value in self.life_line_chart_ancestor_graph.additional_graphical_items.items():
-            additional_items += value
-        sorted_individuals = [(gr.get_birth_event()['ordinal_value'], index, gr) for index, gr in enumerate(
-            self.life_line_chart_ancestor_graph.graphical_individual_representations)]
-        sorted_individuals.sort()
-        sorted_individual_items = []
-        for _, index, graphical_individual_representation in sorted_individuals:
-            sorted_individual_items += graphical_individual_representation.items
-        for item in additional_items + sorted_individual_items:
+        visible_range = (self.get_allocated_width(), self.get_allocated_height())
+        arbitrary_clip_offset = max(visible_range)*0.5 # remove text items if their start position is 50%*view_width outside
+        view_x_min = (self.upper_left_view_position[0] - arbitrary_clip_offset) / self.zoom_level
+        view_x_max = (self.upper_left_view_position[0] + arbitrary_clip_offset + visible_range[0]) / self.zoom_level
+        view_y_min = (self.upper_left_view_position[1] - arbitrary_clip_offset) / self.zoom_level
+        view_y_max = (self.upper_left_view_position[1] + arbitrary_clip_offset + visible_range[1]) / self.zoom_level
+        for item in self.chart_items:
+            def text_function(ctx, text, x, y, rotation=0, fontName="Arial", fontSize=10, verticalPadding=0, vertical_offset=0, horizontal_offset=0, bold=False, align='center', position='middle'):
+                """
+                Used to draw normal text
+                """
+                rotation = rotation * math.pi / 180
 
-                def text_function(ctx, text, x, y, rotation=0, fontName="Arial", fontSize=10, verticalPadding=0, vertical_offset=0, horizontal_offset=0, bold=False, align='center', position='middle'):
+                if bold:
+                    ctx.select_font_face(
+                        fontName, cairo.FONT_SLANT_NORMAL, cairo.FONT_WEIGHT_BOLD)
+                else:
+                    ctx.select_font_face(
+                        fontName, cairo.FONT_SLANT_NORMAL, cairo.FONT_WEIGHT_NORMAL)
+                ctx.set_font_size(fontSize)
 
-                    rotation = rotation * math.pi / 180
+                fascent, fdescent, fheight, fxadvance, fyadvance = ctx.font_extents()
 
-                    if bold:
-                        ctx.select_font_face(
-                            fontName, cairo.FONT_SLANT_NORMAL, cairo.FONT_WEIGHT_BOLD)
+                ctx.save()
+                ctx.translate(x, y)
+                ctx.rotate(rotation)
+                ctx.translate(horizontal_offset, vertical_offset)
+
+                lines = text.split("\n")
+
+                for i, line in enumerate(lines):
+                    xoff, yoff, textWidth, textHeight = ctx.text_extents(line)[
+                        :4]
+
+                    if align == 'middle':
+                        offx = -textWidth / 2.0
+                    elif align == 'end':
+                        offx = -textWidth
                     else:
-                        ctx.select_font_face(
-                            fontName, cairo.FONT_SLANT_NORMAL, cairo.FONT_WEIGHT_NORMAL)
-                    ctx.set_font_size(fontSize)
+                        offx = 0
 
-                    fascent, fdescent, fheight, fxadvance, fyadvance = ctx.font_extents()
+                    if position == 'middle':
+                        offy = (fheight / 2.0) + \
+                            (fheight + verticalPadding) * i
+                    else:
+                        offy = (fheight + verticalPadding) * i
 
-                    ctx.save()
-                    ctx.translate(x, y)
-                    ctx.rotate(rotation)
-                    ctx.translate(horizontal_offset, vertical_offset)
+                    ctx.move_to(offx, offy)
+                    f_o = cairo.FontOptions()
+                    f_o.set_antialias(cairo.ANTIALIAS_GOOD)
+                    ctx.set_font_options(f_o)
+                    ctx.show_text(line)
 
-                    lines = text.split("\n")
+                ctx.restore()
 
-                    for i, line in enumerate(lines):
-                        xoff, yoff, textWidth, textHeight = ctx.text_extents(line)[
-                            :4]
+            if item['type'] == 'text':
+                args = item['config']
+                #ctx.set_font_size(float(args['font_size'][:-2]))
+                # ctx.select_font_face("Arial",
+                #                     cairo.FONT_SLANT_NORMAL,
+                #                     cairo.FONT_WEIGHT_NORMAL)
+                font_size = item['font_size']
+                if type(font_size) == str:
+                    if font_size.endswith('px') or font_size.endswith('pt'):
+                        font_size = float(font_size[:-2])
+                rotation = 0
+                if 'transform' in args and args['transform'].startswith('rotate('):
+                    rotation = float(args['transform'][7:-1].split(',')[0])
 
-                        if align == 'middle':
-                            offx = -textWidth / 2.0
-                        elif align == 'end':
-                            offx = -textWidth
-                        else:
-                            offx = 0
+                estimated_end_pos = (
+                    args['insert'][0] + math.cos(rotation/180*math.pi)*font_size*self.zoom_level*len(args['text']),
+                    args['insert'][1] + math.sin(rotation/180*math.pi)*font_size*self.zoom_level*len(args['text'])
+                )
+                font_too_small = item['font_size'] * self.zoom_level < 1
+                view_x_size = view_x_max - view_x_min
+                view_y_size = view_y_max - view_y_min
 
-                        if position == 'middle':
-                            offy = (fheight / 2.0) + \
-                                (fheight + verticalPadding) * i
-                        else:
-                            offy = (fheight + verticalPadding) * i
+                q_x_start = (args['insert'][0] - view_x_min)/view_x_size
+                q_x_end = (estimated_end_pos[0] - view_x_min)/view_x_size
+                q_y_start = (args['insert'][1] - view_y_min)/view_y_size
+                q_y_end = (estimated_end_pos[1] - view_y_min)/view_y_size
+                text_should_be_visible_x = q_x_start < 0 and q_x_end >= 0 or \
+                    q_x_end < 0 and q_x_start >= 0 or \
+                    q_x_start > 1 and q_x_end <= 1 or \
+                    q_x_end > 1 and q_x_start <= 1 or \
+                    q_x_start >= 0 and q_x_start <= 1 and q_x_end >= 0 and q_x_start <= 1
+                text_should_be_visible_y = q_y_start < 0 and q_y_end >= 0 or \
+                    q_y_end < 0 and q_y_start >= 0 or \
+                    q_y_start > 1 and q_y_end <= 1 or \
+                    q_y_end > 1 and q_y_start <= 1 or \
+                    q_y_start >= 0 and q_y_start <= 1 and q_y_end >= 0 and q_y_start <= 1
+                if font_too_small or not text_should_be_visible_x or not text_should_be_visible_y:
+                    continue # dont draw this item!
+                ctx.set_source_rgb(0, 0, 0)
+                vertical_offset = 0
+                if 'dy' in args:
+                    if args['dy'][0].endswith('px') or args['dy'][0].endswith('pt'):
+                        vertical_offset = float(args['dy'][0][:-2])
+                    else:
+                        vertical_offset = float(args['dy'][0])
+                horizontal_offset = 0
+                if 'dx' in args:
+                    if args['dx'][0].endswith('px') or args['dx'][0].endswith('pt'):
+                        horizontal_offset = float(args['dx'][0][:-2])
+                    else:
+                        horizontal_offset = float(args['dx'][0])
+                anchor = args.get('text-anchor')
+                if not anchor:
+                    anchor = 'start'
+                text_function(
+                    ctx,
+                    args['text'],
+                    args['insert'][0],
+                    args['insert'][1],
+                    rotation,
+                    fontSize=font_size,
+                    fontName=item['font_name'],
+                    vertical_offset=vertical_offset,
+                    horizontal_offset=horizontal_offset,
+                    align=anchor,
+                    position='top')
+                # ctx.save()
+                # ctx.
+                # if 'text-anchor' in args and args['text-anchor'] == 'middle':
+                #     x_bearing, y_bearing, width, height = ctx.text_extents(args['text'])[:4]
+                #     ctx.move_to(args['insert'][0] - width/2, args['insert'][1])
+                #     ctx.show_text(args['text'])
+                # else:
+                #     ctx.move_to(*args['insert'])
+                #     ctx.show_text(args['text'])
+                # cr.restore()
+                #
+                # #args = deepcopy(item['config'])
+                # #args['insert'] = (args['insert'][0], args['insert'][1])
+                # svg_text = svg_document.text(
+                #     **args)
+                # x = svg_document.add(svg_text)
+            elif item['type'] == 'path':
+                arguments = deepcopy(item['config']['arguments'])
+                arguments = [individual_id for individual_id in arguments]
+                colors = [c/255. for c in item['color']]
+                if self.formatting['fade_individual_color'] and 'color_pos' in item:
+                    cp = item['color_pos']
 
-                        ctx.move_to(offx, offy)
-                        f_o = cairo.FontOptions()
-                        f_o.set_antialias(cairo.ANTIALIAS_GOOD)
-                        ctx.set_font_options(f_o)
-                        ctx.show_text(line)
+                    #ctx.set_source_rgb(colors[0], colors[1], colors[2])
+                    #lg3 = cairo.LinearGradient(0, item['color_pos'][0],  0, item['color_pos'][1])
+                    lg3 = cairo.LinearGradient(
+                        0, item['color_pos'][0], 0, item['color_pos'][1])
+                    #fill = svg_document.linearGradient(("0", str(item['color_pos'][0])+""), ("0", str(item['color_pos'][1])+""), gradientUnits='userSpaceOnUse')
+                    lg3.add_color_stop_rgba(
+                        0, colors[0], colors[1], colors[2], 1)
+                    lg3.add_color_stop_rgba(1, 0, 0, 0, 1)
 
-                    ctx.restore()
+                    ctx.set_source(lg3)
+                    if item['config']['type'] == 'Line':
+                        ctx.move_to(arguments[0].real, arguments[0].imag)
+                        ctx.set_line_width(item['stroke_width'])
+                        ctx.line_to(arguments[1].real, arguments[1].imag)
+                        ctx.stroke()
+                    elif item['config']['type'] == 'CubicBezier':
+                        ctx.move_to(arguments[0].real, arguments[0].imag)
+                        ctx.set_line_width(item['stroke_width'])
+                        ctx.curve_to(arguments[1].real, arguments[1].imag, arguments[2].real,
+                                        arguments[2].imag, arguments[3].real, arguments[3].imag)
+                        ctx.stroke()
+                else:
+                    if item['config']['type'] == 'Line':
+                        ctx.move_to(arguments[0].real, arguments[0].imag)
+                        ctx.set_source_rgb(
+                            colors[0], colors[1], colors[2])
+                        ctx.set_line_width(item['stroke_width'])
+                        ctx.line_to(arguments[1].real, arguments[1].imag)
+                        ctx.stroke()
+                    elif item['config']['type'] == 'CubicBezier':
 
-                if item['type'] == 'text':
-                    args = item['config']
-                    ctx.set_source_rgb(0, 0, 0)
-                    #ctx.set_font_size(float(args['font_size'][:-2]))
-                    # ctx.select_font_face("Arial",
-                    #                     cairo.FONT_SLANT_NORMAL,
-                    #                     cairo.FONT_WEIGHT_NORMAL)
-                    font_size = item['font_size']
-                    if type(font_size) == str:
-                        if font_size.endswith('px') or font_size.endswith('pt'):
-                            font_size = float(font_size[:-2])
-                    rotation = 0
-                    if 'transform' in args and args['transform'].startswith('rotate('):
-                        rotation = float(args['transform'][7:-1].split(',')[0])
+                        ctx.move_to(arguments[0].real, arguments[0].imag)
+                        ctx.set_source_rgb(
+                            colors[0], colors[1], colors[2])
+                        ctx.set_line_width(item['stroke_width'])
+                        ctx.curve_to(arguments[1].real, arguments[1].imag, arguments[2].real,
+                                        arguments[2].imag, arguments[3].real, arguments[3].imag)
+                        ctx.stroke()
+            elif item['type'] == 'textPath':
+                from math import cos, sin, atan2, pi
+
+                # def distance(x1, y1, x2, y2):
+                #     """Get the distance between two points."""
+                #     return ((x2 - x1) ** 2 + (y2 - y1) ** 2) ** 0.5
+
+                # def point_angle(cx, cy, px, py):
+                #     """Return angle between x axis and point knowing given center."""
+                #     return atan2(py - cy, px - cx)
+
+                # def point_following_path(path, width):
+                #     """Get the point at ``width`` distance on ``path``."""
+                #     total_length = 0
+                #     for item in path:
+                #         if item[0] == cairo.PATH_MOVE_TO:
+                #             old_point = item[1]
+                #         elif item[0] == cairo.PATH_LINE_TO:
+                #             new_point = item[1]
+                #             length = distance(
+                #                 old_point[0], old_point[1], new_point[0], new_point[1])
+                #             total_length += length
+                #             if total_length < width:
+                #                 old_point = new_point
+                #             else:
+                #                 length -= total_length - width
+                #                 angle = point_angle(
+                #                     old_point[0], old_point[1], new_point[0], new_point[1])
+                #                 x = cos(angle) * length + old_point[0]
+                #                 y = sin(angle) * length + old_point[1]
+                #                 return x, y
+
+                # def zip_letters(xl, yl, dxl, dyl, rl, word):
+                #     """Returns a list with the current letter's positions (x, y and rotation).
+                #     E.g.: for letter 'L' with positions x = 10, y = 20 and rotation = 30:
+                #     >>> [[10, 20, 30], 'L']
+                #     Store the last value of each position and pop the first one in order to
+                #     avoid setting an x,y or rotation value that have already been used.
+                #     """
+                #     return (
+                #         ([pl.pop(0) if pl else None for pl in (xl, yl, dxl, dyl, rl)], char)
+                #         for char in word)
+
+                # x, y, dx, dy, rotate = [], [], [], [], [0]
+                # if 'x' in node:
+                #     x = [size(surface, i, 'x')
+                #         for i in normalize(node['x']).strip().split(' ')]
+                # if 'y' in node:
+                #     y = [size(surface, i, 'y')
+                #         for i in normalize(node['y']).strip().split(' ')]
+                # if 'dx' in node:
+                #     dx = [size(surface, i, 'x')
+                #         for i in normalize(node['dx']).strip().split(' ')]
+                # if 'dy' in node:
+                #     dy = [size(surface, i, 'y')
+                #         for i in normalize(node['dy']).strip().split(' ')]
+                # if 'rotate' in node:
+                #     rotate = [radians(float(i)) if i else 0
+                #             for i in normalize(node['rotate']).strip().split(' ')]
+                # last_r = rotate[-1]
+                # letters_positions = zip_letters(x, y, dx, dy, rotate, node.text)
+                # def draw_t_a_p():
+                #
+                #     for i, ((x, y, dx, dy, r), letter) in enumerate(letters_positions):
+                #         if x:
+                #             surface.cursor_d_position[0] = 0
+                #         if y:
+                #             surface.cursor_d_position[1] = 0
+                #         surface.cursor_d_position[0] += dx or 0
+                #         surface.cursor_d_position[1] += dy or 0
+                #         text_extents = surface.context.text_extents(letter)
+                #         extents = text_extents[4]
+                #         if text_path:
+                #             start = surface.text_path_width + surface.cursor_d_position[0]
+                #             start_point = point_following_path(cairo_path, start)
+                #             middle = start + extents / 2
+                #             middle_point = point_following_path(cairo_path, middle)
+                #             end = start + extents
+                #             end_point = point_following_path(cairo_path, end)
+                #             if i:
+                #                 extents += letter_spacing
+                #             surface.text_path_width += extents
+                #             if not all((start_point, middle_point, end_point)):
+                #                 continue
+                #             if not 0 <= middle <= length:
+                #                 continue
+                #             surface.context.save()
+                #             surface.context.translate(*start_point)
+                #             surface.context.rotate(point_angle(*(start_point + end_point)))
+                #             surface.context.translate(0, surface.cursor_d_position[1])
+                #             surface.context.move_to(0, 0)
+                #             bounding_box = extend_bounding_box(
+                #                 bounding_box, ((end_point[0], text_extents[3]),))
+
+                # def pathtext(g, path, txt, offset) :
+                #     "draws the characters of txt along the specified path in the Context g, using its" \
+                #     " current font and other rendering settings. offset is the initial character placement" \
+                #     " offset from the start of the path."
+                #     #path = path.flatten() # ensure all straight-line segments
+                #     curch = 0 # index into txt
+                #     setdist = offset # distance at which to place next char
+                #     pathdist = 0
+                #     for seg in path.segments :
+                #         curpos = None
+                #         ovr = 0
+                #         for pt in tuple(seg.points) + ((), (seg.points[0],))[seg.closed] :
+                #             assert not pt.off
+                #             prevpos = curpos
+                #             curpos = pt.pt
+                #             if prevpos != None :
+                #                 delta = curpos - prevpos
+                #                 dist = abs(delta) # length of line segment
+                #                 if dist != 0 :
+                #                     ds = delta / dist * ovr
+                #                     cp = g.user_to_device(prevpos + ds)
+                #                     pathdist += dist # accumulate length of path
+                #                     while True :
+                #                         if setdist > pathdist :
+                #                             # no more room to place a character
+                #                             ovr = setdist - pathdist
+                #                             # deduct off placement of first char on next line segment
+                #                             break
+                #                         #end if
+                #                         if curch == len(txt) :
+                #                             # no more characters to place
+                #                             break
+                #                         # place another character along this line segment
+                #                         ch = txt[curch] # FIXME: should not split off trailing diacritics
+                #                         curch += 1
+                #                         text_extents = g.text_extents(ch)
+                #                         charbounds = Vector(text_extents.x_advance, text_extents.y_bearing)
+                #                         g.save()
+                #                         g.transform \
+                #                         (
+                #                                 Matrix.translate
+                #                                 (
+                #                                     g.device_to_user(cp) + delta * charbounds / 2 / dist
+                #                                 ) # midpoint of character back to character position
+                #                             *
+                #                                 Matrix.rotate(delta.angle())
+                #                                 # rotate about midpoint of character
+                #                             *
+                #                                 Matrix.translate(- charbounds / 2)
+                #                                 # midpoint of character to origin
+                #                         )
+                #                         g.show_text(ch)
+                #                         cp = g.user_to_device(g.current_point)
+                #                         g.restore()
+                #                         setdist += charbounds.x # update distance travelled along path
+                #                     #end while
+                #                 #end if
+                #             #end if
+                #         #end for
+                #     #end for
+                # #end pathtext
+                import svgpathtools
+                from cmath import phase
+
+                def draw_text_along_path(ctx, textspans, start_x, start_y, cp1_x, cp1_y, cp2_x, cp2_y, end_x, end_y, show_path_line=True):
+                    def warpPath(ctx, function):
+                        first = True
+
+                        for type, points in ctx.copy_path_flat():
+                            if type == cairo.PATH_MOVE_TO:
+                                if first:
+                                    ctx.new_path()
+                                    first = False
+                                x, y = function(*points)
+                                ctx.move_to(x, y)
+
+                            elif type == cairo.PATH_LINE_TO:
+                                x, y = function(*points)
+                                ctx.line_to(x, y)
+
+                            elif type == cairo.PATH_CURVE_TO:
+                                x1, y1, x2, y2, x3, y3 = points
+                                x1, y1 = function(x1, y1)
+                                x2, y2 = function(x2, y2)
+                                x3, y3 = function(x3, y3)
+                                ctx.curve_to(x1, y1, x2, y2, x3, y3)
+
+                            elif type == cairo.PATH_CLOSE_PATH:
+                                ctx.close_path()
+
+                    def follow_path(path_length, path, te, x, y):
+                        #p = x/path_length
+                        p = path.ilength(
+                            min(x, path_length), error=1e-3, min_depth=2)
+                        return path.point(p).real - path.normal(p).real*(y-te.y_bearing/2), path.point(p).imag - path.normal(p).imag*(y-te.y_bearing/2)
+
+                    def xxx(path_length, ctx, path, textspans, vertical_offset, horizontal_offset):
+                        x_pos = horizontal_offset
+                        for text, args in textspans:
+                            if 'dx' in args:
+                                x_pos += float(args['dx'][0])
+                            for character in text:
+                                p = path.ilength(
+                                    min(x_pos, path_length), error=1e-3, min_depth=2)
+                                character_pos = path.point(
+                                    p) - path.normal(p) * vertical_offset*0
+                                x, y = (character_pos.real,
+                                        character_pos.imag)
+                                r = phase(path.normal(p))/pi*180 + 90
+                                ctx.save()
+
+                                text_function(
+                                    ctx,
+                                    character,
+                                    x,
+                                    y,
+                                    r,
+                                    fontSize=item['font_size'],
+                                    fontName=item['font_name'],
+                                    vertical_offset=vertical_offset,
+                                    horizontal_offset=horizontal_offset,
+                                    align='start',
+                                    position='left',
+                                    bold='style' in args and 'bold' in args['style'])
+                                ctx.select_font_face(
+                                    item['font_name'], cairo.FONT_SLANT_NORMAL, cairo.FONT_WEIGHT_NORMAL)
+                                ctx.set_font_size(font_size)
+                                te = ctx.text_extents(character,)
+                                ctx.restore()
+                                x_pos += te.x_advance
+
+                            te = ctx.text_extents(' ',)
+                            x_pos += te.x_advance
+                    svg_path = svgpathtools.CubicBezier(
+                        start_x + start_y*1j, cp1_x + cp1_y*1j, cp2_x + cp2_y*1j, end_x + end_y*1j)
+                    # if show_path_line:
+                    #     ctx.move_to(start_x, start_y)
+                    #     ctx.curve_to(cp1_x, cp1_y, cp2_x, cp2_y, end_x, end_y)
+                    #     ctx.stroke()
+                    #path = ctx.copy_path_flat()
+
+                    #ctx.new_path()
+                    #ctx.move_to(0, 0)
+                    #ctx.text_path(text)
+                    path_length = svg_path.length(error=1e-3, min_depth=2)
+
+                    ##pathtext(ctx, path, text, 0)
+
                     vertical_offset = 0
-                    if 'dy' in args:
-                        if args['dy'][0].endswith('px') or args['dy'][0].endswith('pt'):
-                            vertical_offset = float(args['dy'][0][:-2])
+                    if 'dy' in item['config']:
+                        if item['config']['dy'][0].endswith('px') or item['config']['dy'][0].endswith('pt'):
+                            vertical_offset = float(
+                                item['config']['dy'][0][:-2])
                         else:
-                            vertical_offset = float(args['dy'][0])
+                            vertical_offset = float(
+                                item['config']['dy'][0])
                     horizontal_offset = 0
                     if 'dx' in args:
                         if args['dx'][0].endswith('px') or args['dx'][0].endswith('pt'):
                             horizontal_offset = float(args['dx'][0][:-2])
                         else:
                             horizontal_offset = float(args['dx'][0])
-                    anchor = args.get('text-anchor')
-                    if not anchor:
-                        anchor = 'start'
-                    text_function(
-                        ctx,
-                        args['text'],
-                        args['insert'][0],
-                        args['insert'][1],
-                        rotation,
-                        fontSize=font_size,
-                        fontName=item['font_name'],
-                        vertical_offset=vertical_offset,
-                        horizontal_offset=horizontal_offset,
-                        align=anchor,
-                        position='top')
-                    # ctx.save()
-                    # ctx.
-                    # if 'text-anchor' in args and args['text-anchor'] == 'middle':
-                    #     x_bearing, y_bearing, width, height = ctx.text_extents(args['text'])[:4]
-                    #     ctx.move_to(args['insert'][0] - width/2, args['insert'][1])
-                    #     ctx.show_text(args['text'])
-                    # else:
-                    #     ctx.move_to(*args['insert'])
-                    #     ctx.show_text(args['text'])
-                    # cr.restore()
-                    #
-                    # #args = deepcopy(item['config'])
-                    # #args['insert'] = (args['insert'][0], args['insert'][1])
-                    # svg_text = svg_document.text(
-                    #     **args)
-                    # x = svg_document.add(svg_text)
-                elif item['type'] == 'path':
-                    arguments = deepcopy(item['config']['arguments'])
-                    arguments = [individual_id for individual_id in arguments]
-                    colors = [c/255. for c in item['color']]
-                    if self.formatting['fade_individual_color'] and 'color_pos' in item:
-                        cp = item['color_pos']
+                    xxx(path_length, ctx, svg_path,
+                        item['spans'], vertical_offset, horizontal_offset)
+                    #te=ctx.text_extents(text)
 
-                        #ctx.set_source_rgb(colors[0], colors[1], colors[2])
-                        #lg3 = cairo.LinearGradient(0, item['color_pos'][0],  0, item['color_pos'][1])
-                        lg3 = cairo.LinearGradient(
-                            0, item['color_pos'][0], 0, item['color_pos'][1])
-                        #fill = svg_document.linearGradient(("0", str(item['color_pos'][0])+""), ("0", str(item['color_pos'][1])+""), gradientUnits='userSpaceOnUse')
-                        lg3.add_color_stop_rgba(
-                            0, colors[0], colors[1], colors[2], 1)
-                        lg3.add_color_stop_rgba(1, 0, 0, 0, 1)
+                    #warpPath(ctx, lambda x, y: follow_path(path_length, svg_path, te, x, y))
+                    ctx.fill()
 
-                        ctx.set_source(lg3)
-                        if item['config']['type'] == 'Line':
-                            ctx.move_to(arguments[0].real, arguments[0].imag)
-                            ctx.set_line_width(item['stroke_width'])
-                            ctx.line_to(arguments[1].real, arguments[1].imag)
-                            ctx.stroke()
-                        elif item['config']['type'] == 'CubicBezier':
-                            ctx.move_to(arguments[0].real, arguments[0].imag)
-                            ctx.set_line_width(item['stroke_width'])
-                            ctx.curve_to(arguments[1].real, arguments[1].imag, arguments[2].real,
-                                         arguments[2].imag, arguments[3].real, arguments[3].imag)
-                            ctx.stroke()
-                    else:
-                        if item['config']['type'] == 'Line':
-                            ctx.move_to(arguments[0].real, arguments[0].imag)
-                            ctx.set_source_rgb(
-                                colors[0], colors[1], colors[2])
-                            ctx.set_line_width(item['stroke_width'])
-                            ctx.line_to(arguments[1].real, arguments[1].imag)
-                            ctx.stroke()
-                        elif item['config']['type'] == 'CubicBezier':
+                args_path = item['path']
+                args_text = item['config']
 
-                            ctx.move_to(arguments[0].real, arguments[0].imag)
-                            ctx.set_source_rgb(
-                                colors[0], colors[1], colors[2])
-                            ctx.set_line_width(item['stroke_width'])
-                            ctx.curve_to(arguments[1].real, arguments[1].imag, arguments[2].real,
-                                         arguments[2].imag, arguments[3].real, arguments[3].imag)
-                            ctx.stroke()
-                elif item['type'] == 'textPath':
-                    from math import cos, sin, atan2, pi
+                if args_path['type'] == 'CubicBezier':
+                    arguments = deepcopy(args_path['arguments'])
+                    ctx.new_path()
+                    ctx.set_line_width(0.1)
+                    #path = svgpathtools.CubicBezier(*arguments)
+                    ctx.set_source_rgb(0, 0, 0)
 
-                    # def distance(x1, y1, x2, y2):
-                    #     """Get the distance between two points."""
-                    #     return ((x2 - x1) ** 2 + (y2 - y1) ** 2) ** 0.5
+                    draw_text_along_path(ctx, item['spans'][0][0], arguments[0].real, arguments[0].imag, arguments[1].real,
+                                            arguments[1].imag, arguments[2].real, arguments[2].imag, arguments[3].real, arguments[3].imag)
+                    # ctx.move_to(arguments[0].real, arguments[0].imag)
+                    # ctx.set_source_rgb(*[c/255. for c in graphical_individual_representation.color])
+                    # ctx.set_line_width(self.life_line_chart_ancestor_graph._formatting['line_thickness'])
+                    # ctx.curve_to()
+                    # ctx.text_path("textxxxxxx")
+                    # path = ctx.copy_path()
+                    #ctx.curve_to(arguments[1].real, arguments[1].imag, arguments[2].real, arguments[2].imag, arguments[3].real, arguments[3].imag)
+                    #warpPath(ctx, curl)
+                    #ctx.close_path()
+                    #ctx.fill()
+                    #ctx.stroke()
+                #args_path['arguments']
+                pass
+                # svg_text = svg_document.text(
+                #     **args_text)
+                # if args_path['type'] == 'Line':
+                #     constructor_function = Line
+                # elif args_path['type'] == 'CubicBezier':
+                #     constructor_function = CubicBezier
+                # svg_path = Path(constructor_function(*args_path['arguments']))
+                # y = svg_document.path( svg_path.d(), fill = 'none')
+                # svg_document.add(y)
+                # #x = svg_document.add(svg_text)
+                # x = svg_document.add(svgwrite.text.Text('', dy = [args_text['dy']], font_size = args_text['font_size']))
+                # t = svgwrite.text.TextPath(y, text = args_text['text'])
+                # for span in item['spans']:
+                #     t.add(svg_document.tspan(span[0], **span[1]))
+                # x.add(t)
 
-                    # def point_angle(cx, cy, px, py):
-                    #     """Return angle between x axis and point knowing given center."""
-                    #     return atan2(py - cy, px - cx)
+            elif item['type'] == 'image':
+                def draw_image(ctx, image, left, top, width, height):
+                    """Draw a scaled image on a given context."""
+                    image_surface = self.image_cache.get(image)
+                    if image_surface is None:
+                        image_surface = cairo.ImageSurface.create_from_png(image)
+                        self.image_cache[image] = image_surface
+                    # calculate proportional scaling
+                    img_height = image_surface.get_height()
+                    img_width = image_surface.get_width()
+                    width_ratio = float(width) / float(img_width)
+                    height_ratio = float(height) / float(img_height)
+                    scale_xy = min(height_ratio, width_ratio)
+                    if height_ratio > scale_xy:
+                        top -= (img_height * scale_xy - height)/2
+                    if width_ratio - scale_xy:
+                        left -= (img_width * scale_xy - width)/2
+                    # scale image and add it
+                    ctx.save()
+                    ctx.translate(left, top)
+                    ctx.scale(scale_xy, scale_xy)
+                    ctx.set_source_surface(image_surface)
 
-                    # def point_following_path(path, width):
-                    #     """Get the point at ``width`` distance on ``path``."""
-                    #     total_length = 0
-                    #     for item in path:
-                    #         if item[0] == cairo.PATH_MOVE_TO:
-                    #             old_point = item[1]
-                    #         elif item[0] == cairo.PATH_LINE_TO:
-                    #             new_point = item[1]
-                    #             length = distance(
-                    #                 old_point[0], old_point[1], new_point[0], new_point[1])
-                    #             total_length += length
-                    #             if total_length < width:
-                    #                 old_point = new_point
-                    #             else:
-                    #                 length -= total_length - width
-                    #                 angle = point_angle(
-                    #                     old_point[0], old_point[1], new_point[0], new_point[1])
-                    #                 x = cos(angle) * length + old_point[0]
-                    #                 y = sin(angle) * length + old_point[1]
-                    #                 return x, y
+                    ctx.paint()
+                    ctx.restore()
+                import os
+                draw_image(ctx, item['filename'], item['config']['insert'][0], item['config']['insert'][1], item['config']['size'][0], item['config']['size'][1])
+                # marriage_pos and 'spouse' in positions[individual_id]['marriage']:
+                #m_pos_x = (positions[positions[individual_id]['marriage']['spouse']]['x_position'] + x_pos)/2
+                #svg_document.add(svg_document.use(image_def.get_iri(), **item['config']))
+                pass
 
-                    # def zip_letters(xl, yl, dxl, dyl, rl, word):
-                    #     """Returns a list with the current letter's positions (x, y and rotation).
-                    #     E.g.: for letter 'L' with positions x = 10, y = 20 and rotation = 30:
-                    #     >>> [[10, 20, 30], 'L']
-                    #     Store the last value of each position and pop the first one in order to
-                    #     avoid setting an x,y or rotation value that have already been used.
-                    #     """
-                    #     return (
-                    #         ([pl.pop(0) if pl else None for pl in (xl, yl, dxl, dyl, rl)], char)
-                    #         for char in word)
+            elif item['type'] == 'rect':
+                pass
+                #this_rect = svg_document.rect(**item['config'])
 
-                    # x, y, dx, dy, rotate = [], [], [], [], [0]
-                    # if 'x' in node:
-                    #     x = [size(surface, i, 'x')
-                    #         for i in normalize(node['x']).strip().split(' ')]
-                    # if 'y' in node:
-                    #     y = [size(surface, i, 'y')
-                    #         for i in normalize(node['y']).strip().split(' ')]
-                    # if 'dx' in node:
-                    #     dx = [size(surface, i, 'x')
-                    #         for i in normalize(node['dx']).strip().split(' ')]
-                    # if 'dy' in node:
-                    #     dy = [size(surface, i, 'y')
-                    #         for i in normalize(node['dy']).strip().split(' ')]
-                    # if 'rotate' in node:
-                    #     rotate = [radians(float(i)) if i else 0
-                    #             for i in normalize(node['rotate']).strip().split(' ')]
-                    # last_r = rotate[-1]
-                    # letters_positions = zip_letters(x, y, dx, dy, rotate, node.text)
-                    # def draw_t_a_p():
-                    #
-                    #     for i, ((x, y, dx, dy, r), letter) in enumerate(letters_positions):
-                    #         if x:
-                    #             surface.cursor_d_position[0] = 0
-                    #         if y:
-                    #             surface.cursor_d_position[1] = 0
-                    #         surface.cursor_d_position[0] += dx or 0
-                    #         surface.cursor_d_position[1] += dy or 0
-                    #         text_extents = surface.context.text_extents(letter)
-                    #         extents = text_extents[4]
-                    #         if text_path:
-                    #             start = surface.text_path_width + surface.cursor_d_position[0]
-                    #             start_point = point_following_path(cairo_path, start)
-                    #             middle = start + extents / 2
-                    #             middle_point = point_following_path(cairo_path, middle)
-                    #             end = start + extents
-                    #             end_point = point_following_path(cairo_path, end)
-                    #             if i:
-                    #                 extents += letter_spacing
-                    #             surface.text_path_width += extents
-                    #             if not all((start_point, middle_point, end_point)):
-                    #                 continue
-                    #             if not 0 <= middle <= length:
-                    #                 continue
-                    #             surface.context.save()
-                    #             surface.context.translate(*start_point)
-                    #             surface.context.rotate(point_angle(*(start_point + end_point)))
-                    #             surface.context.translate(0, surface.cursor_d_position[1])
-                    #             surface.context.move_to(0, 0)
-                    #             bounding_box = extend_bounding_box(
-                    #                 bounding_box, ((end_point[0], text_extents[3]),))
-
-                    # def pathtext(g, path, txt, offset) :
-                    #     "draws the characters of txt along the specified path in the Context g, using its" \
-                    #     " current font and other rendering settings. offset is the initial character placement" \
-                    #     " offset from the start of the path."
-                    #     #path = path.flatten() # ensure all straight-line segments
-                    #     curch = 0 # index into txt
-                    #     setdist = offset # distance at which to place next char
-                    #     pathdist = 0
-                    #     for seg in path.segments :
-                    #         curpos = None
-                    #         ovr = 0
-                    #         for pt in tuple(seg.points) + ((), (seg.points[0],))[seg.closed] :
-                    #             assert not pt.off
-                    #             prevpos = curpos
-                    #             curpos = pt.pt
-                    #             if prevpos != None :
-                    #                 delta = curpos - prevpos
-                    #                 dist = abs(delta) # length of line segment
-                    #                 if dist != 0 :
-                    #                     ds = delta / dist * ovr
-                    #                     cp = g.user_to_device(prevpos + ds)
-                    #                     pathdist += dist # accumulate length of path
-                    #                     while True :
-                    #                         if setdist > pathdist :
-                    #                             # no more room to place a character
-                    #                             ovr = setdist - pathdist
-                    #                             # deduct off placement of first char on next line segment
-                    #                             break
-                    #                         #end if
-                    #                         if curch == len(txt) :
-                    #                             # no more characters to place
-                    #                             break
-                    #                         # place another character along this line segment
-                    #                         ch = txt[curch] # FIXME: should not split off trailing diacritics
-                    #                         curch += 1
-                    #                         text_extents = g.text_extents(ch)
-                    #                         charbounds = Vector(text_extents.x_advance, text_extents.y_bearing)
-                    #                         g.save()
-                    #                         g.transform \
-                    #                         (
-                    #                                 Matrix.translate
-                    #                                 (
-                    #                                     g.device_to_user(cp) + delta * charbounds / 2 / dist
-                    #                                 ) # midpoint of character back to character position
-                    #                             *
-                    #                                 Matrix.rotate(delta.angle())
-                    #                                 # rotate about midpoint of character
-                    #                             *
-                    #                                 Matrix.translate(- charbounds / 2)
-                    #                                 # midpoint of character to origin
-                    #                         )
-                    #                         g.show_text(ch)
-                    #                         cp = g.user_to_device(g.current_point)
-                    #                         g.restore()
-                    #                         setdist += charbounds.x # update distance travelled along path
-                    #                     #end while
-                    #                 #end if
-                    #             #end if
-                    #         #end for
-                    #     #end for
-                    # #end pathtext
-                    import svgpathtools
-                    from cmath import phase
-
-                    def draw_text_along_path(ctx, textspans, start_x, start_y, cp1_x, cp1_y, cp2_x, cp2_y, end_x, end_y, show_path_line=True):
-                        def warpPath(ctx, function):
-                            first = True
-
-                            for type, points in ctx.copy_path_flat():
-                                if type == cairo.PATH_MOVE_TO:
-                                    if first:
-                                        ctx.new_path()
-                                        first = False
-                                    x, y = function(*points)
-                                    ctx.move_to(x, y)
-
-                                elif type == cairo.PATH_LINE_TO:
-                                    x, y = function(*points)
-                                    ctx.line_to(x, y)
-
-                                elif type == cairo.PATH_CURVE_TO:
-                                    x1, y1, x2, y2, x3, y3 = points
-                                    x1, y1 = function(x1, y1)
-                                    x2, y2 = function(x2, y2)
-                                    x3, y3 = function(x3, y3)
-                                    ctx.curve_to(x1, y1, x2, y2, x3, y3)
-
-                                elif type == cairo.PATH_CLOSE_PATH:
-                                    ctx.close_path()
-
-                        def follow_path(path_length, path, te, x, y):
-                            #p = x/path_length
-                            p = path.ilength(
-                                min(x, path_length), error=1e-3, min_depth=2)
-                            return path.point(p).real - path.normal(p).real*(y-te.y_bearing/2), path.point(p).imag - path.normal(p).imag*(y-te.y_bearing/2)
-
-                        def xxx(path_length, ctx, path, textspans, vertical_offset, horizontal_offset):
-                            x_pos = horizontal_offset
-                            for text, args in textspans:
-                                if 'dx' in args:
-                                    x_pos += float(args['dx'][0])
-                                for character in text:
-                                    p = path.ilength(
-                                        min(x_pos, path_length), error=1e-3, min_depth=2)
-                                    character_pos = path.point(
-                                        p) - path.normal(p) * vertical_offset*0
-                                    x, y = (character_pos.real,
-                                            character_pos.imag)
-                                    r = phase(path.normal(p))/pi*180 + 90
-                                    ctx.save()
-
-                                    text_function(
-                                        ctx,
-                                        character,
-                                        x,
-                                        y,
-                                        r,
-                                        fontSize=item['font_size'],
-                                        fontName=item['font_name'],
-                                        vertical_offset=vertical_offset,
-                                        horizontal_offset=horizontal_offset,
-                                        align='start',
-                                        position='left',
-                                        bold='style' in args and 'bold' in args['style'])
-                                    ctx.select_font_face(
-                                        item['font_name'], cairo.FONT_SLANT_NORMAL, cairo.FONT_WEIGHT_NORMAL)
-                                    ctx.set_font_size(font_size)
-                                    te = ctx.text_extents(character,)
-                                    ctx.restore()
-                                    x_pos += te.x_advance
-
-                                te = ctx.text_extents(' ',)
-                                x_pos += te.x_advance
-                        svg_path = svgpathtools.CubicBezier(
-                            start_x + start_y*1j, cp1_x + cp1_y*1j, cp2_x + cp2_y*1j, end_x + end_y*1j)
-                        # if show_path_line:
-                        #     ctx.move_to(start_x, start_y)
-                        #     ctx.curve_to(cp1_x, cp1_y, cp2_x, cp2_y, end_x, end_y)
-                        #     ctx.stroke()
-                        #path = ctx.copy_path_flat()
-
-                        #ctx.new_path()
-                        #ctx.move_to(0, 0)
-                        #ctx.text_path(text)
-                        path_length = svg_path.length(error=1e-3, min_depth=2)
-
-                        ##pathtext(ctx, path, text, 0)
-
-                        vertical_offset = 0
-                        if 'dy' in item['config']:
-                            if item['config']['dy'][0].endswith('px') or item['config']['dy'][0].endswith('pt'):
-                                vertical_offset = float(
-                                    item['config']['dy'][0][:-2])
-                            else:
-                                vertical_offset = float(
-                                    item['config']['dy'][0])
-                        horizontal_offset = 0
-                        if 'dx' in args:
-                            if args['dx'][0].endswith('px') or args['dx'][0].endswith('pt'):
-                                horizontal_offset = float(args['dx'][0][:-2])
-                            else:
-                                horizontal_offset = float(args['dx'][0])
-                        xxx(path_length, ctx, svg_path,
-                            item['spans'], vertical_offset, horizontal_offset)
-                        #te=ctx.text_extents(text)
-
-                        #warpPath(ctx, lambda x, y: follow_path(path_length, svg_path, te, x, y))
-                        ctx.fill()
-
-                    args_path = item['path']
-                    args_text = item['config']
-
-                    if args_path['type'] == 'CubicBezier':
-                        arguments = deepcopy(args_path['arguments'])
-                        ctx.new_path()
-                        ctx.set_line_width(0.1)
-                        #path = svgpathtools.CubicBezier(*arguments)
-                        ctx.set_source_rgb(0, 0, 0)
-
-                        draw_text_along_path(ctx, item['spans'][0][0], arguments[0].real, arguments[0].imag, arguments[1].real,
-                                             arguments[1].imag, arguments[2].real, arguments[2].imag, arguments[3].real, arguments[3].imag)
-                        # ctx.move_to(arguments[0].real, arguments[0].imag)
-                        # ctx.set_source_rgb(*[c/255. for c in graphical_individual_representation.color])
-                        # ctx.set_line_width(self.life_line_chart_ancestor_graph._formatting['line_thickness'])
-                        # ctx.curve_to()
-                        # ctx.text_path("textxxxxxx")
-                        # path = ctx.copy_path()
-                        #ctx.curve_to(arguments[1].real, arguments[1].imag, arguments[2].real, arguments[2].imag, arguments[3].real, arguments[3].imag)
-                        #warpPath(ctx, curl)
-                        #ctx.close_path()
-                        #ctx.fill()
-                        #ctx.stroke()
-                    #args_path['arguments']
-                    pass
-                    # svg_text = svg_document.text(
-                    #     **args_text)
-                    # if args_path['type'] == 'Line':
-                    #     constructor_function = Line
-                    # elif args_path['type'] == 'CubicBezier':
-                    #     constructor_function = CubicBezier
-                    # svg_path = Path(constructor_function(*args_path['arguments']))
-                    # y = svg_document.path( svg_path.d(), fill = 'none')
-                    # svg_document.add(y)
-                    # #x = svg_document.add(svg_text)
-                    # x = svg_document.add(svgwrite.text.Text('', dy = [args_text['dy']], font_size = args_text['font_size']))
-                    # t = svgwrite.text.TextPath(y, text = args_text['text'])
-                    # for span in item['spans']:
-                    #     t.add(svg_document.tspan(span[0], **span[1]))
-                    # x.add(t)
-
-                elif item['type'] == 'image':
-                    def draw_image(ctx, image, left, top, width, height):
-                        """Draw a scaled image on a given context."""
-                        image_surface = cairo.ImageSurface.create_from_png(
-                            image)
-                        # calculate proportional scaling
-                        img_height = image_surface.get_height()
-                        img_width = image_surface.get_width()
-                        width_ratio = float(width) / float(img_width)
-                        height_ratio = float(height) / float(img_height)
-                        scale_xy = min(height_ratio, width_ratio)
-                        if height_ratio > scale_xy:
-                            top -= (img_height * scale_xy - height)/2
-                        if width_ratio - scale_xy:
-                            left -= (img_width * scale_xy - width)/2
-                        # scale image and add it
-                        ctx.save()
-                        ctx.translate(left, top)
-                        ctx.scale(scale_xy, scale_xy)
-                        ctx.set_source_surface(image_surface)
-
-                        ctx.paint()
-                        ctx.restore()
-                    import os
-                    draw_image(ctx, item['filename'], item['config']['insert'][0], item['config']['insert'][1], item['config']['size'][0], item['config']['size'][1])
-                    # marriage_pos and 'spouse' in positions[individual_id]['marriage']:
-                    #m_pos_x = (positions[positions[individual_id]['marriage']['spouse']]['x_position'] + x_pos)/2
-                    #svg_document.add(svg_document.use(image_def.get_iri(), **item['config']))
-                    pass
-
-                elif item['type'] == 'rect':
-                    pass
-                    #this_rect = svg_document.rect(**item['config'])
-
-                    #insert=(rect[0], rect[1]), size = (rect[2]-rect[0], rect[3]-rect[1]), fill = 'none')
-                    #svg_document.add(this_rect)
+                #insert=(rect[0], rect[1]), size = (rect[2]-rect[0], rect[3]-rect[1]), fill = 'none')
+                #svg_document.add(this_rect)
 
     def person_at(self, cell_address):
         """
