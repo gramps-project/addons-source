@@ -508,18 +508,21 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
         #default_dir = '.'#self._config.get('paths.recent-export-dir')
         #chooser.set_current_folder(default_dir)
 
+        import os
         while True:
             value = chooser.run()
             fn = chooser.get_filename()
             if value == Gtk.ResponseType.OK:
-                if fn:
+                if fn and os.path.splitext(fn)[1].lower() in ['', '.svg']:
                     chooser.destroy()
                     break
             else:
                 chooser.destroy()
                 return
         # config.set('paths.recent-export-dir', os.path.split(fn)[0])
-        pass
+        base, extension = os.path.splitext(fn)
+        if extension == '':
+            fn = base + '.svg'
         self.lifeline.life_line_chart_ancestor_graph.paint_and_save(
             self.lifeline.rootpersonh, fn)
 
