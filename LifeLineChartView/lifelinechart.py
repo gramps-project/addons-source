@@ -557,7 +557,7 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         dummy_widget = widget
         # if self.surface:
         #     ctx.set_source_surface(self.surface, 0, 0)
-        
+
         run_profiler = False
         if run_profiler:
             import cProfile
@@ -740,8 +740,8 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
             #we grab the focus to enable to see key_press events
             self.grab_focus()
 
-        
-        
+
+
         accel_mask = Gtk.accelerator_get_default_mod_mask()
         if event.state & accel_mask == Gdk.ModifierType.CONTROL_MASK:
             # left mouse on center dot, we translate on left click
@@ -750,13 +750,13 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
                 self.translating = True
                 self.last_x, self.last_y = event.x, event.y
                 return True
-        # else:        
+        # else:
         #     # line was clicked!
         #     individual = self.life_line_chart_ancestor_graph.get_individual_from_position(
         #         event.x/self.zoom_level, event.y/self.zoom_level)
         #     if individual:
         #         individual_id = individual.individual_id
-            
+
         #         #return True
 
         #     # #left click on person, prepare for expand/collapse or drag
