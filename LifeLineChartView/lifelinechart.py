@@ -372,12 +372,14 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         self.connect("button_release_event", self.on_mouse_up)
         self.connect("motion_notify_event", self.on_mouse_move)
         self.connect("button-press-event", self.on_mouse_down)
+        self.connect("scroll_event", self.scroll_mouse)
         #we want to grab key events also
         self.set_can_focus(True)
         self.connect("key-press-event", self.on_key_press)
 
         self.connect("draw", self.on_draw)
-        self.add_events(Gdk.EventMask.BUTTON_PRESS_MASK |
+        self.add_events(Gdk.EventMask.SCROLL_MASK |
+                        Gdk.EventMask.BUTTON_PRESS_MASK |
                         Gdk.EventMask.BUTTON_RELEASE_MASK |
                         Gdk.EventMask.POINTER_MOTION_MASK |
                         Gdk.EventMask.KEY_PRESS_MASK)
@@ -406,7 +408,7 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         self.rotate_value = 90  # degrees, initially, 1st gen male on right half
         self.center_delta_xy = [0, 0]  # translation of the center of the
         # lifeline wrt canonical center
-        self.center_xy = [0, 0]  # coord of the center of the lifeline
+        self.upper_left_view_position = [0, 0]  # coord of the center of the lifeline
         self.mouse_x = 0
         self.mouse_y = 0
         #(re)compute everything
@@ -476,11 +478,60 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         self.do_size_request(req)
         return req.height, req.height
 
-    def halfdist(self):
+
+    def zoom_in(self, _button=None, fix_point = None):
         """
-        Compute the half radius of the circle
+        Increase zoom scale.
         """
-        raise NotImplementedError
+        scale_coef = self.zoom_level * 1.25
+        self.set_zoom(scale_coef, fix_point)
+
+    def zoom_out(self, _button=None, fix_point = None):
+        """
+        Decrease zoom scale.
+        """
+        scale_coef = self.zoom_level / 1.25
+        if scale_coef < 0.01:
+            scale_coef = 0.01
+        self.set_zoom(scale_coef, fix_point)
+
+    def set_original_zoom(self, _button):
+        """
+        Set original zoom scale = 1.
+        """
+        self.set_zoom(1)
+
+    def set_zoom(self, value, fix_point = None):
+        zoom_level_backup = self.zoom_level
+        self.zoom_level = value
+        visible_range = (self.get_allocated_width(), self.get_allocated_height())
+        if fix_point is None:
+            fix_point = visible_range[0] * 0.5, visible_range[1] * 0.5
+        self.upper_left_view_position = (
+            (self.zoom_level / zoom_level_backup) * (
+            fix_point[0] + self.upper_left_view_position[0]) - fix_point[0],
+            (self.zoom_level / zoom_level_backup) * (
+            fix_point[1] + self.upper_left_view_position[1]) - fix_point[1]
+        )
+        self.queue_draw()
+
+    def fit_to_page(self, _button):
+        width = self.life_line_chart_ancestor_graph.get_full_width()
+        height = self.life_line_chart_ancestor_graph.get_full_height()
+        width_a = self.get_allocated_width()
+        height_a = self.get_allocated_height()
+        scale_w = width_a / width
+        scale_h = height_a / height
+        self.set_zoom(min(scale_w, scale_h))
+        self.upper_left_view_position = (width*self.zoom_level - width_a) / 2.0, (height*self.zoom_level - height_a) / 2.0
+
+    def get_view_position_center(self):
+        visible_range = (self.get_allocated_width(), self.get_allocated_height())
+        return tuple([cp + vr/2 for cp, vr in zip(self.upper_left_view_position, visible_range)])
+
+    def set_view_position_center(self, new_center):
+        visible_range = (self.get_allocated_width(), self.get_allocated_height())
+        return tuple([cp + vr/2 for cp, vr in zip(self.upper_left_view_position, visible_range)])
 
     def on_draw(self, widget, ctx, scale=1.):
         """
@@ -488,9 +539,15 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         """
         dummy_scale = scale
         dummy_widget = widget
-        if self.surface:
-            ctx.set_source_surface(self.surface, 0, 0)
-            ctx.paint()
+        # if self.surface:
+        #     ctx.set_source_surface(self.surface, 0, 0)
+        widget.draw(ctx)
+        #print('blub')
+
+        #self.da.paint()
+        #ctx.set_source_surface(self.da, 0, 0)
+        #widget.draw(ctx)
+        #ctx.paint()
 
     def prt_draw(self, widget, ctx, scale=1.0):
         """
@@ -597,34 +654,6 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
 
         return color[0], color[1], color[2], alpha
 
-    def cursor_to_polar(self, curx, cury, get_raw_rads=False):
-        """
-        Compute angle, radius in unrotated lifeline
-        """
-        lifelinexy = curx - self.center_xy[0], cury - self.center_xy[1]
-        radius = math.sqrt((lifelinexy[0]) ** 2 + (lifelinexy[1]) ** 2)
-        #angle before rotation:
-        #children are in cairo angle (clockwise) from pi to 3 pi
-        #rads however is clock 0 to 2 pi
-        raw_rads = math.atan2(lifelinexy[1], lifelinexy[0]) % (2 * math.pi)
-        rads = (raw_rads - math.radians(self.rotate_value)) % (2 * math.pi)
-        if get_raw_rads:
-            return radius, rads, raw_rads
-        else:
-            return radius, rads
-
-    def radian_in_bounds(self, start_rad, rads, stop_rad):
-        """
-        We compare (rads - start_rad) % (2.0 * math.pi) and
-                   (stop_rad - start_rad)
-        """
-        assert start_rad <= stop_rad
-        portion = stop_rad - start_rad
-        dist_rads_to_start_rads = (rads - start_rad) % (2.0 * math.pi)
-        # print(start_rad, rads, stop_rad, ". (rads-start), portion :",
-        #       dist_rads_to_start_rads, portion)
-        return dist_rads_to_start_rads < portion
-
     def person_at(self, cell_address):
         """
         returns the person at cell_address
@@ -654,17 +683,12 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         """
         dummy_widget = widget
         if Gdk.keyval_name(eventkey.keyval) == 'plus':
-            # we edit the person
-            self.zoom_level *= 1.1
-            self.draw()
-            self.queue_draw()
+            self.zoom_in()
             return True
         if Gdk.keyval_name(eventkey.keyval) == 'minus':
-            # we edit the person
-            self.zoom_level /= 1.1
-            self.draw()
-            self.queue_draw()
+            self.zoom_out()
             return True
+
         #if self.mouse_x and self.mouse_y:
             # cell_address = self.cell_address_under_cursor(self.mouse_x,
             # #                                               self.mouse_y)
@@ -729,6 +753,22 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
 
         return False
 
+    def scroll_mouse(self, widget, event):
+        """
+        Zoom by mouse wheel.
+        """
+        # Handles zoom in / zoom out on Ctrl+mouse wheel
+        accel_mask = Gtk.accelerator_get_default_mod_mask()
+        if event.state & accel_mask == Gdk.ModifierType.CONTROL_MASK:
+            if event.direction == Gdk.ScrollDirection.UP:
+                self.zoom_in(fix_point=(event.x, event.y))
+            elif event.direction == Gdk.ScrollDirection.DOWN:
+                self.zoom_out(fix_point=(event.x, event.y))
+
+        # stop the signal of scroll emission
+        # to prevent window scrolling
+        return True
+
     def on_mouse_move(self, widget, event):
         """
         What to do if we move the mouse
@@ -738,7 +778,8 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         if self.last_x is None or self.last_y is None:
             # while mouse is moving, we must update the tooltip based on person
             individual = self.life_line_chart_ancestor_graph.get_individual_from_position(
-                event.x/self.zoom_level, event.y/self.zoom_level)
+                (event.x + self.upper_left_view_position[0])/self.zoom_level,
+                (event.y + self.upper_left_view_position[1])/self.zoom_level)
             self.mouse_x, self.mouse_y = event.x, event.y
             tooltip = ""
             if individual:
@@ -748,41 +789,21 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
 
         #translate or rotate should happen
         if self.translating:
-            #canonical_center = self.center_xy_from_delta([0, 0])
-            self.center_delta_xy = (event.x - self.last_x,
-                                    event.y - self.last_y)
-        else:
-            # get the angles of the two points from the center:
-            start_angle = math.atan2(event.y - self.center_xy[1],
-                                     event.x - self.center_xy[0])
-            end_angle = math.atan2(self.last_y - self.center_xy[1],
-                                   self.last_x - self.center_xy[0])
-            # now look at change in angle:
-            diff_angle = (end_angle - start_angle) % (math.pi * 2.0)
-            self.rotate_value -= math.degrees(diff_angle)
-            self.last_x, self.last_y = event.x, event.y
-        self.draw()
+            self.center_delta_xy = (self.last_x - event.x,
+                                    self.last_y - event.y)
+        # else:
+        #     # get the angles of the two points from the center:
+        #     start_angle = math.atan2(event.y - self.upper_left_view_position[1],
+        #                              event.x - self.upper_left_view_position[0])
+        #     end_angle = math.atan2(self.last_y - self.upper_left_view_position[1],
+        #                            self.last_x - self.upper_left_view_position[0])
+        #     # now look at change in angle:
+        #     diff_angle = (end_angle - start_angle) % (math.pi * 2.0)
+        #     self.rotate_value -= math.degrees(diff_angle)
+        #     self.last_x, self.last_y = event.x, event.y
+        #self.draw()
         self.queue_draw()
         return True
-
-    def center_xy_from_delta(self, delta=None):
-        """
-        return the x and y position for the center of the canvas
-        """
-        alloc = self.get_allocation()
-        (dummy_x, dummy_y,
-         width, height) = alloc.x, alloc.y, alloc.width, alloc.height
-        if delta is None:
-            delta = self.center_delta_xy
-        if self.form == FORM_CIRCLE:
-            canvas_xy = width / 2 - delta[0], height / 2 - delta[1]
-        elif self.form == FORM_HALFCIRCLE:
-            canvas_xy = (width / 2 - delta[0],
-                         height - self.CENTER - PAD_PX - delta[1])
-        elif self.form == FORM_QUADRANT:
-            canvas_xy = (self.CENTER + PAD_PX - delta[0],
-                         height - self.CENTER - PAD_PX - delta[1])
-        return canvas_xy
 
     def do_mouse_click(self):
         """
@@ -804,16 +825,15 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
             return True
         if self.translating:
             self.translating = False
-            self.center_xy = self.center_xy[0] + \
-                self.center_delta_xy[0], self.center_xy[1] + \
-                self.center_delta_xy[1]
+            self.upper_left_view_position = \
+                self.upper_left_view_position[0] + self.center_delta_xy[0], \
+                self.upper_left_view_position[1] + self.center_delta_xy[1]
             self.center_delta_xy = 0, 0
         else:
             self.center_delta_xy = 0, 0
-            #self.center_xy = self.center_xy[0] + self.center_delta_xy[0], self.center_xy[1] + self.center_delta_xy[1]
 
         self.last_x, self.last_y = None, None
-        self.draw()
+        #self.draw()
         self.queue_draw()
         return True
 
@@ -862,13 +882,13 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         dummy_widget = widget
         dummy_info = info
         dummy_time = time
-        radius, dummy_rads = self.cursor_to_polar(pos_x, pos_y)
+        # radius, dummy_rads = self.cursor_to_polar(pos_x, pos_y)
 
-        if radius < self.CENTER:
-            if sel_data and sel_data.get_data():
-                (dummy_drag_type, dummy_idval, handle,
-                 dummy_val) = pickle.loads(sel_data.get_data())
-                self.goto(self, handle)
+        # if radius < self.CENTER:
+        #     if sel_data and sel_data.get_data():
+        #         (dummy_drag_type, dummy_idval, handle,
+        #          dummy_val) = pickle.loads(sel_data.get_data())
+        #         self.goto(self, handle)
 
     def edit_person_cb(self, obj, person_handle):
         """
@@ -905,12 +925,12 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
 
 class LifeLineChartWidget(LifeLineChartBaseWidget):
     """
-    Interactive Fan Chart Widget.
+    Interactive Life Line Chart Widget.
     """
 
     def __init__(self, dbstate, uistate, callback_popup=None):
         """
-        Fan Chart Widget. Handles visualization of data in self.data.
+        Life Line Chart Widget. Handles visualization of data in self.data.
         See main() of LifeLineChartGramplet for example of model format.
         """
         self.rootpersonh = None
@@ -1053,18 +1073,18 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
         # first do size request of what we will need
         if not ctx:  # Display
             graph = self.life_line_chart_ancestor_graph
-            size_w_a = max(100, min(4000, int(graph.get_full_width()*self.zoom_level)))
-            size_h_a = max(100, min(4000, int(graph.get_full_height()*self.zoom_level)))
+            size_w_a = max(100, min(400000, int(graph.get_full_width()*self.zoom_level)))
+            size_h_a = max(100, min(400000, int(graph.get_full_height()*self.zoom_level)))
             #size_w_a = max(size_w_a, self.get_allocated_width())
             #size_h_a = max(size_h_a, self.get_allocated_height())
+            size_w_a = self.get_allocated_width()
+            size_h_a = self.get_allocated_height()
             self.set_size_request(size_w_a, size_h_a)
             size_w = self.get_allocated_width()
             size_h = self.get_allocated_height()
             self.surface = cairo.ImageSurface(cairo.FORMAT_ARGB32,
                                               size_w_a, size_h_a)
             ctx = cairo.Context(self.surface)
-            #self.center_xy = self.center_xy_from_delta()
-            #ctx.translate(self.center_xy[0] + self.center_delta_xy[0], self.center_xy[1] + self.center_delta_xy[1])
             ctx.scale(self.zoom_level, self.zoom_level)
 
             visible_range = self.scrolledwindow.get_clip(
@@ -1079,8 +1099,11 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
             self.zoom_level_backup = self.zoom_level
         else:  # printing
             # ??
-            #ctx.translate(*self.center_xy)
-            ctx.scale(scale, scale)
+            ctx.translate(-(self.upper_left_view_position[0] + self.center_delta_xy[0]), -(self.upper_left_view_position[1] + self.center_delta_xy[1]))
+            ctx.scale(self.zoom_level, self.zoom_level)
+            ctx.set_antialias(cairo.Antialias.BEST)
+            #ctx.scale(scale, scale)
+            #self.zoom_level_backup = self.zoom_level
 
         additional_items = []
         for key, value in self.life_line_chart_ancestor_graph.additional_graphical_items.items():
@@ -1132,6 +1155,9 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                             offy = (fheight + verticalPadding) * i
 
                         ctx.move_to(offx, offy)
+                        f_o = cairo.FontOptions()
+                        f_o.set_antialias(cairo.ANTIALIAS_GOOD)
+                        ctx.set_font_options(f_o)
                         ctx.show_text(line)
 
                     ctx.restore()
@@ -1601,7 +1627,7 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
     def do_mouse_click(self):
         # no drag occured, expand or collapse the section
         self._mouse_click = False
-        self.draw()
+        #self.draw()
         self.queue_draw()
 
 
@@ -1611,7 +1637,7 @@ class LifeLineChartGrampsGUI:
 
     def __init__(self, on_childmenu_changed):
         """
-        Common part of GUI that shows Fan Chart, needs to know what to do if
+        Common part of GUI that shows Life Line Chart, needs to know what to do if
         one moves via Fan Ch    def set_lifeline(self, lifeline):art to a new person
         on_childmenu_changed: in popup, function called on moving
                               to a new person
@@ -1654,7 +1680,7 @@ class LifeLineChartGrampsGUI:
                                  self.generic_filter,
                                  self.alpha_filter, self.form, self.showid)
         self.lifeline.reset()
-        self.lifeline.draw()
+        #self.lifeline.draw()
         self.lifeline.queue_draw()
 
     def on_popup(self, obj, event, person_handle, family_handle=None):

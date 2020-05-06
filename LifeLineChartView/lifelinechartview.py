@@ -279,15 +279,59 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
         chart.formatting = self.formatting
         chart.positioning = self.positioning
         self.set_lifeline(chart)
-        self.scrolledwindow = Gtk.ScrolledWindow(hadjustment=None,
-                                                 vadjustment=None)
-        self.scrolledwindow.set_policy(Gtk.PolicyType.AUTOMATIC,
-                                       Gtk.PolicyType.AUTOMATIC)
+
+
+        self.scrolledwindow = Gtk.ScrolledWindow()
+        self.scrolledwindow.set_shadow_type(Gtk.ShadowType.IN)
+        self.hadjustment = self.scrolledwindow.get_hadjustment()
+        self.vadjustment = self.scrolledwindow.get_vadjustment()
         self.lifeline.show_all()
-        self.scrolledwindow.add(self.lifeline)
+        #self.scrolledwindow.add(self.lifeline)
         chart.scrolledwindow = self.scrolledwindow
 
-        return self.scrolledwindow
+
+        self.vbox = Gtk.Box(homogeneous=False, spacing=4,
+                            orientation=Gtk.Orientation.VERTICAL)
+        self.vbox.set_border_width(4)
+        self.toolbar = Gtk.Box(homogeneous=False, spacing=4,
+                               orientation=Gtk.Orientation.HORIZONTAL)
+        self.vbox.pack_start(self.toolbar, False, False, 0)
+
+        # add zoom-in button
+        self.zoom_in_btn = Gtk.Button.new_from_icon_name('zoom-in',
+                                                         Gtk.IconSize.MENU)
+        self.zoom_in_btn.set_tooltip_text(_('Zoom in'))
+        self.toolbar.pack_start(self.zoom_in_btn, False, False, 1)
+        self.zoom_in_btn.connect("clicked", self.lifeline.zoom_in)
+
+        # add zoom-out button
+        self.zoom_out_btn = Gtk.Button.new_from_icon_name('zoom-out',
+                                                          Gtk.IconSize.MENU)
+        self.zoom_out_btn.set_tooltip_text(_('Zoom out'))
+        self.toolbar.pack_start(self.zoom_out_btn, False, False, 1)
+        self.zoom_out_btn.connect("clicked", self.lifeline.zoom_out)
+
+        # add original zoom button
+        self.orig_zoom_btn = Gtk.Button.new_from_icon_name('zoom-original',
+                                                           Gtk.IconSize.MENU)
+        self.orig_zoom_btn.set_tooltip_text(_('Zoom to original'))
+        self.toolbar.pack_start(self.orig_zoom_btn, False, False, 1)
+        self.orig_zoom_btn.connect("clicked", self.lifeline.set_original_zoom)
+
+        # add best fit button
+        self.fit_btn = Gtk.Button.new_from_icon_name('zoom-fit-best',
+                                                     Gtk.IconSize.MENU)
+        self.fit_btn.set_tooltip_text(_('Zoom to best fit'))
+        self.toolbar.pack_start(self.fit_btn, False, False, 1)
+        self.fit_btn.connect("clicked", self.lifeline.fit_to_page)
+
+        #self.vbox.pack_start(self.scrolledwindow, True, True, 0)
+        self.vbox.pack_start(self.lifeline, True, True, 0)
+
+
+        gen_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+
+        return self.vbox # self.scrolledwindow
 
     def get_stock(self):
         """
