@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-29 16:52+0300\n"
-"PO-Revision-Date: 2020-04-29 16:34+0300\n"
+"POT-Creation-Date: 2020-05-06 18:13+0300\n"
+"PO-Revision-Date: 2020-05-06 18:17+0300\n"
 "Last-Translator: vantu5z <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
@@ -26,8 +26,8 @@ msgid "Collection of Web sites for the RU (requires libwebconnect)"
 msgstr "Набор веб-сайтов для России (требуется libwebconnect)"
 
 #: RUWebConnectPack/RUWebPack.py:40
-msgid "Memorial"
-msgstr "Мемориал"
+msgid "OBD \"Memorial\""
+msgstr "ОБД \"Мемориал\""
 
 #: RUWebConnectPack/RUWebPack.py:41
 msgid "People memory"
@@ -50,8 +50,8 @@ msgid "Wait for me"
 msgstr "Жди меня"
 
 #: RUWebConnectPack/RUWebPack.py:46
-msgid "All Russia Family Tree"
-msgstr "Всеросийское генеалогическое древо"
+msgid "All Russia Family Tree (forum)"
+msgstr "Всеросийское генеалогическое древо (форум)"
 
 #: RUWebConnectPack/RUWebPack.py:47
 msgid "Yandex people"
