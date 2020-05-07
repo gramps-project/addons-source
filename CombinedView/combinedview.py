@@ -561,6 +561,7 @@ class CombinedView(NavigationView):
         self.write_events(person)
         self.write_album(person)
         self.write_timeline(person)
+        self.write_associations(person)
 
         #self.stack.set_visible_child_name(self.person_tab)
 
@@ -1367,6 +1368,36 @@ class CombinedView(NavigationView):
 
                 self.vbox2.attach_next_to(vbox, image,
                                           Gtk.PositionType.RIGHT, 1, 1)
+
+##############################################################################
+#
+# Associations
+#
+##############################################################################
+
+    def write_associations(self, person):
+
+        self.vbox2 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+
+        scroll = Gtk.ScrolledWindow()
+        scroll.add(self.vbox2)
+        scroll.show_all()
+        self.stack.add_titled(scroll, 'associations', _('Associations'))
+
+        for person_ref in person.get_person_ref_list():
+            self.write_association(person_ref)
+
+
+    def write_association(self, person_ref):
+
+        vbox = self.write_person('assoc', person_ref.ref)
+        rel = Gtk.Label(person_ref.rel)
+        rel.set_halign(Gtk.Align.START)
+        vbox.pack_start(rel, False, False, 0)
+        eventbox = self.make_dragbox(vbox, 'Person', person_ref.ref)
+        eventbox.show_all()
+        self.vbox2.pack_start(eventbox, False, False, 1)
+
 
 ##############################################################################
 #
