@@ -50,6 +50,8 @@ from life_line_chart import BaseIndividual, BaseFamily, InstanceContainer, estim
 from gramps.gen.display.name import displayer as name_displayer
 from gramps.gen.lib import Person, ChildRefType, EventType, FamilyRelType
 from gramps.gen.lib import Date
+from gramps.gen.utils.thumbnails import (get_thumbnail_path, SIZE_NORMAL,
+                                         SIZE_LARGE)
 import datetime
 
 logger = logging.getLogger("LifeLineChart View")
@@ -1100,6 +1102,7 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
             # self.life_line_chart_ancestor_graph.place_selected_individuals(None, None, None, None)
             # self.life_line_chart_ancestor_graph._formatting = deepcopy(
             #     self.formatting)
+
             self.life_line_chart_ancestor_graph.define_svg_items()
         else:
             def plot():
@@ -1147,6 +1150,18 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                             gir.color = (220, 220, 220)
                         else:
                             gir.color = gir.color_backup
+                    for i, reference in enumerate(root_person.media_list):
+                        handle = reference.get_reference_handle()
+                        media = self.dbstate.db.get_media_from_handle(handle)
+                        if media.mime in ['image/jpeg', 'image/png'] and os.path.isfile(media.path):
+                            root_individual = self.life_line_chart_ancestor_graph._instances[('i', root_person_handle)]
+                            year = media.date.get_year()
+                            if year != 0:
+                                date_ov = datetime.date(*[i if i != 0 else 1 for i in media.date.get_ymd()]).toordinal()
+                                date_ov = max(date_ov, root_individual.events['birth_or_christening']['date'].date().toordinal())
+                            else:
+                                date_ov = root_individual.events['birth_or_christening']['date'].date().toordinal() + i*365*5
+                            root_individual.images[date_ov] = get_thumbnail_path(media.path, media.mime, size=SIZE_NORMAL)
                     self.life_line_chart_ancestor_graph.define_svg_items()
             plot()
         additional_items = []
@@ -1720,7 +1735,10 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                     """Draw a scaled image on a given context."""
                     image_surface = self.image_cache.get(image)
                     if image_surface is None:
-                        image_surface = cairo.ImageSurface.create_from_png(image)
+                        if os.path.splitext(image.upper())[1] in ['.JPG', 'JPEG']:
+                            image_surface = cairo.ImageSurface.create_from_jpg(image)
+                        if os.path.splitext(image.upper())[1] in ['.PNG']:
+                            image_surface = cairo.ImageSurface.create_from_png(image)
                         self.image_cache[image] = image_surface
                     # calculate proportional scaling
                     img_height = image_surface.get_height()

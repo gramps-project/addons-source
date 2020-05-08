@@ -69,6 +69,7 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
         ('interface.lifelineview-birth_label_letter_y_offset', str(BaseGraph._default_formatting['birth_label_letter_y_offset'])),
         ('interface.lifelineview-death_label_letter_x_offset', str(BaseGraph._default_formatting['death_label_letter_x_offset'])),
         ('interface.lifelineview-death_label_letter_y_offset', str(BaseGraph._default_formatting['death_label_letter_y_offset'])),
+        ('interface.lifelineview-individual_foto_relative_size', BaseGraph._default_formatting['individual_foto_relative_size']*100),
         )
 
     def __init__(self, pdata, dbstate, uistate, nav_group=0):
@@ -319,6 +320,25 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
                 'widget': 'checkbox',
                 'data_container': 'formatting',
                 'additional_setter_arg': {}
+            },
+            'individual_foto_active': {
+                'description': BaseGraph._formatting_description['individual_foto_active']['short_description'],
+                'tooltip': BaseGraph._formatting_description['individual_foto_active']['long_description'],
+                'additional_arg': {},
+                'widget': 'checkbox',
+                'data_container': 'formatting',
+                'additional_setter_arg': {}
+            },
+            'individual_foto_relative_size': {
+                'description': BaseGraph._formatting_description['individual_foto_relative_size']['short_description'],
+                'tooltip': BaseGraph._formatting_description['individual_foto_relative_size']['long_description'],
+                'additional_arg': {'range': (1, 500)},
+                'data_container': 'formatting',
+                'widget': 'slider',
+                'additional_setter_arg': {
+                    'value_decode': lambda x: x/100.,
+                    'value_encode': lambda x: int(x*100)
+                },
             },
         }
         for item_name, item_data in self.gui_config.items():
