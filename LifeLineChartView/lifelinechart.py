@@ -58,6 +58,15 @@ import datetime
 logger = logging.getLogger("LifeLineChart View")
 
 def get_date(event):
+    """
+    get date dict of a gramps event
+
+    Args:
+        event (gramps.gen.lib.Event): Event instance
+
+    Returns:
+        dict: event data dict
+    """    
     event_data = None
     try:
         date_obj = event.get_date_object()
@@ -90,6 +99,14 @@ def get_date(event):
 
 
 def get_relevant_events(gramps_person, dbstate, target):
+    """
+    collects the dates which are releavnt for life line charts.
+
+    Args:
+        gramps_person (gramps.gen.lib.Person): gramps person instance
+        dbstate (dbstate): dbstate
+        target (dict): place to store the events
+    """    
     events_key_name = {
         EventType.BIRTH: 'birth',
         EventType.CHRISTEN: 'christening',
@@ -125,6 +142,9 @@ def get_relevant_events(gramps_person, dbstate, target):
 
 
 class GrampsIndividual(BaseIndividual):
+    """
+    Interface class to provide person data to live line chart backend
+    """    
     def __init__(self, instances, dbstate, individual_id):
         BaseIndividual.__init__(self, instances, individual_id)
         self._dbstate = dbstate
@@ -139,47 +159,23 @@ class GrampsIndividual(BaseIndividual):
         estimate_birth_date(self, self._instances)
         estimate_death_date(self)
 
-        # if family and other.get_handle() in [family.get_father_handle(),
-        #                                          family.get_mother_handle()]:
-        #         family_rel = family.get_relationship()
-        #         #check for divorce event:
-        #         ex = False
-        #         for eventref in family.get_event_ref_list():
-        #             event = db.get_event_from_handle(eventref.ref)
-        #             if event and (event.get_type() == EventType.DIVORCE
-        #                           or event.get_type() == EventType.ANNULMENT):
-        #                 ex = True
-        #                 break
-        #         if family_rel == FamilyRelType.MARRIED:
-        #             if ex:
-        #                 val.append(self.PARTNER_EX_MARRIED)
-        #             else:
-        #                 val.append(self.PARTNER_MARRIED)
-        #         elif family_rel == FamilyRelType.UNMARRIED:
-        #             if ex:
-        #                 val.append(self.PARTNER_EX_UNMARRIED)
-        #             else:
-        #                 val.append(self.PARTNER_UNMARRIED)
-        #         elif family_rel == FamilyRelType.CIVIL_UNION:
-        #             if ex:
-        #                 val.append(self.PARTNER_EX_CIVIL_UNION)
-        #             else:
-        #                 val.append(self.PARTNER_CIVIL_UNION)
-        #         else:
-        #             if ex:
-        #                 val.append(self.PARTNER_EX_UNKNOWN_REL)
-        #             else:
-        #                 val.append(self.PARTNER_UNKNOWN_REL)
-
-    #     _get_relevant_events(self._database_indi, self.individual_id, self.events)
-    #     estimate_birth_date(self, self._instances)
-    #     estimate_death_date(self)
-
     def _get_name(self):
+        """
+        Get the name string of this person
+
+        Returns:
+            str: name
+        """        
         return [name_displayer.display_format(self._gramps_person, 101), name_displayer.display_format(self._gramps_person, 100)]
     name = property(_get_name)
 
     def _get_father_and_mother(self):
+        """
+        get the uids of the father and mother
+
+        Returns:
+            tuple: father uid, mother uid
+        """        
         child_of_families = self._gramps_person.get_parent_family_handle_list()
         if child_of_families:
             child_of_family = self._dbstate.db.get_family_from_handle(
@@ -190,10 +186,22 @@ class GrampsIndividual(BaseIndividual):
         return None, None
 
     def _get_marriage_family_ids(self):
+        """
+        get the uids of the marriage families
+
+        Returns:
+            list: list of marriage family uids
+        """        
         return self._gramps_person.get_family_handle_list()
 
 
 def estimate_marriage_date(family):
+    """
+    Estimate the marriage date if it is not available
+
+    Args:
+        family (GrampsFamily): family instance
+    """    
     if not family.marriage:
         children_events = []
         for child in family.children_individual_ids:
@@ -212,6 +220,9 @@ def estimate_marriage_date(family):
 
 
 class GrampsFamily(BaseFamily):
+    """
+    Interface class to provide family data to live line chart backend
+    """    
     def __init__(self, instances, dbstate, family_id):
         BaseFamily.__init__(self, instances, family_id)
         self._dbstate = dbstate
@@ -238,18 +249,42 @@ class GrampsFamily(BaseFamily):
         estimate_marriage_date(self)
 
     def _get_husband_and_wife_id(self):
+        """
+        get the uids of husband and wife
+
+        Returns:
+            tuple: husband uid, wife uid
+        """        
         father_handle = Family.get_father_handle(self._gramps_family)
         mother_handle = Family.get_mother_handle(self._gramps_family)
         return father_handle, mother_handle
 
     def _get_children_ids(self):
+        """
+        get the uids of the children
+
+        Returns:
+            list: list of children uids
+        """        
         return [ref.ref for ref in self._gramps_family.get_child_ref_list()]
 
     def _get_husb_name(self):
+        """
+        get the name of the husband
+
+        Returns:
+            str: husband name
+        """        
         father_handle = Family.get_father_handle(self._gramps_family)
         return self.husb.name
 
     def _get_wife_name(self):
+        """
+        get the name of the wife
+
+        Returns:
+            str: wife name
+        """        
         mother_handle = Family.get_mother_handle(self._gramps_family)
         return self.wife.name
     husb_name = property(_get_husb_name)
@@ -259,15 +294,15 @@ class GrampsFamily(BaseFamily):
 
 
 def get_dbdstate_instance_container(dbstate):
-    logger.debug('start reading data')
+    """
+    constructor for instance container
 
-    # def instantiate_all(self, database_fam, database_indi):
-    #     for family_id in list(database_fam.keys()):
-    #         if not ('f',family_id) in self:
-    #             self[('f',family_id)] = Family(self, database_fam, database_indi, family_id)
-    #     for individual_id in list(database_indi.keys()):
-    #         if not ('i',individual_id) in self:
-    #             self[('i',individual_id)] = Individual(self, database_fam, database_indi, individual_id)
+    Args:
+        dbstate (gramps.gen.db): database of gramps
+
+    Returns:
+        life_line_chart.InstanceContainer: instance container
+    """
 
     logger.debug('start creating instances')
     return InstanceContainer(
@@ -288,10 +323,6 @@ from gramps.gen.utils.db import (find_children, find_parents, get_timeperiod,
 from gramps.gen.constfunc import is_quartz
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 from gramps.gen.const import (
-    PIXELS_PER_GENERATION,
-    BORDER_EDGE_WIDTH,
-    CHILDRING_WIDTH,
-    TRANSLATE_PX,
     PAD_PX,
     PAD_TEXT,
     BACKGROUND_SCHEME1,
@@ -305,10 +336,6 @@ from gramps.gen.const import (
     GENCOLOR,
     MAX_AGE,
     GRADIENTSCALE,
-    FORM_CIRCLE,
-    FORM_HALFCIRCLE,
-    FORM_QUADRANT,
-    COLLAPSED,
     NORMAL,
     EXPANDED)
 from gramps.gui.widgets.reorderfam import Reorder
@@ -338,7 +365,6 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
 
     def __init__(self, dbstate, uistate, callback_popup=None):
         Gtk.DrawingArea.__init__(self)
-        self.radialtext = True
         st_cont = self.get_style_context()
         col = st_cont.lookup_color('text_color')
         if col[0]:
@@ -347,24 +373,16 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
             self.textcolor = (0, 0, 0)
         self.dbstate = dbstate
         self.uistate = uistate
-        self.form = FORM_CIRCLE
         self.generations = 3
-        self.childring = 0
         self.childrenroot = []
         self.angle = {}
-        self.background = BACKGROUND_GRAD_GEN
         self.filter = None
-        self.alpha_filter = 0.5
         self.translating = False
-        self.showid = False
-        self.flipupsidedownname = True
         self.dupcolor = None
-        self.twolinename = False
         self.surface = None
         self.goto = None
         self.on_popup = callback_popup
         self.last_x, self.last_y = None, None
-        self.fontdescr = "Sans"
         self.fontsize = 8
         # add parts of a two line name format to the displayer.  We add them
         # as standard names, but set them inactive so they don't show up in
@@ -610,128 +628,6 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         """
         dummy_widget = widget
         self.draw(ctx=ctx, scale=scale)
-
-    def set_userdata_timeperiod(self, person, userdata):
-        """
-        set the userdata as used by timeperiod
-        """
-        period = None
-        if person:
-            period = get_timeperiod(self.dbstate.db, person)
-            if period is not None:
-                if period > self.maxperiod:
-                    self.maxperiod = period
-                if period < self.minperiod:
-                    self.minperiod = period
-        userdata.append(period)
-
-    def set_userdata_age(self, person, userdata):
-        """
-        set the userdata as used by age
-        """
-        agecol = (1, 1, 1)  # white
-        if person:
-            age = get_age(self.dbstate.db, person)
-            if age is not None:
-                age = age[0]
-                if age < 0:
-                    age = 0
-                elif age > MAX_AGE:
-                    age = MAX_AGE
-                #now determine fraction for gradient
-                agefrac = age / MAX_AGE
-                agecol = colorsys.hsv_to_rgb(
-                    ((1-agefrac) * self.cstart_hsv[0] +
-                     agefrac * self.cend_hsv[0]),
-                    ((1-agefrac) * self.cstart_hsv[1] +
-                     agefrac * self.cend_hsv[1]),
-                    ((1-agefrac) * self.cstart_hsv[2] +
-                     agefrac * self.cend_hsv[2]),
-                )
-        userdata.append((agecol[0]*255, agecol[1]*255, agecol[2]*255))
-
-    def background_box(self, person, generation, userdata):
-        """
-        determine red, green, blue value of background of the box of person,
-        which has gender gender, and is in ring generation
-        """
-        if generation == 0 and self.background in [BACKGROUND_GENDER,
-                                                   BACKGROUND_GRAD_GEN,
-                                                   BACKGROUND_SCHEME1,
-                                                   BACKGROUND_SCHEME2]:
-            # white for center person:
-            color = (255, 255, 255)
-        elif self.background == BACKGROUND_GENDER:
-            try:
-                alive = probably_alive(person, self.dbstate.db)
-            except RuntimeError:
-                alive = False
-            backgr, dummy_border = color_graph_box(alive, person.gender)
-            color = hex_to_rgb(backgr)
-        elif self.background == BACKGROUND_SINGLE_COLOR:
-            color = self.maincolor
-        elif self.background == BACKGROUND_GRAD_AGE:
-            color = userdata[0]
-        elif self.background == BACKGROUND_GRAD_PERIOD:
-            period = userdata[0]
-            if period is None:
-                color = (255, 255, 255)  # white
-            else:
-                if self.maxperiod != self.minperiod:
-                    periodfrac = ((period - self.minperiod)
-                                  / (self.maxperiod - self.minperiod))
-                else:
-                    periodfrac = 0.5
-                periodcol = colorsys.hsv_to_rgb(
-                    ((1-periodfrac) * self.cstart_hsv[0] +
-                     periodfrac * self.cend_hsv[0]),
-                    ((1-periodfrac) * self.cstart_hsv[1] +
-                     periodfrac * self.cend_hsv[1]),
-                    ((1-periodfrac) * self.cstart_hsv[2] +
-                     periodfrac * self.cend_hsv[2]),
-                )
-                color = (periodcol[0]*255, periodcol[1]*255, periodcol[2]*255)
-        else:
-            if self.background == BACKGROUND_GRAD_GEN and generation < 0:
-                generation = 0
-            color = self.colors[generation % len(self.colors)]
-            if person.gender == Person.MALE:
-                color = [x*.9 for x in color]
-        # now we set transparency data
-        if self.filter and not self.filter.match(person.handle,
-                                                 self.dbstate.db):
-            if self.background == BACKGROUND_SINGLE_COLOR:
-                alpha = 0.  # no color shown
-            else:
-                alpha = self.alpha_filter
-        else:
-            alpha = 1.
-
-        return color[0], color[1], color[2], alpha
-
-    def person_at(self, cell_address):
-        """
-        returns the person at cell_address
-        """
-        raise NotImplementedError
-
-    def family_at(self, cell_address):
-        """
-        returns the family at cell_address
-        """
-        raise NotImplementedError
-
-    def _have_children(self, person):
-        """
-        Returns True if a person has children.
-        TODO: is there no util function for this
-        """
-        if person:
-            for family_handle in person.get_family_handle_list():
-                family = self.dbstate.db.get_family_from_handle(family_handle)
-                if family and family.get_child_ref_list():
-                    return True
-        return False
 
     def on_key_press(self, widget, eventkey):
         """grab key press
@@ -1058,16 +954,12 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
         self.menu = None
         self.data = {}
         self.dbstate = dbstate
-        self.set_values(None, 5, BACKGROUND_GRAD_GEN, True, True, True, True,
-                        'Sans', None, 0.5, FORM_CIRCLE,
-                        False)
+        self.set_values(None, 5, None)
         LifeLineChartBaseWidget.__init__(
             self, dbstate, uistate, callback_popup)
         self.ic = get_dbdstate_instance_container(self.dbstate)
 
-    def set_values(self, root_person_handle, maxgen, background, childring,
-                   flipupsidedownname, twolinename, radialtext, fontdescr,
-                   filtr, alpha_filter, form, showid):
+    def set_values(self, root_person_handle, maxgen, filtr):
         """
         Reset the values to be used:
 
@@ -1078,16 +970,7 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
             reset = True
         new_filter = self.filter != filtr
         self.generations = maxgen
-        self.radialtext = radialtext
-        self.childring = childring
-        self.twolinename = twolinename
-        self.flipupsidedownname = flipupsidedownname
-        self.background = background
-        self.fontdescr = fontdescr
         self.filter = filtr
-        self.alpha_filter = alpha_filter
-        self.form = form
-        self.showid = showid
         root_person = None
         if root_person_handle is not None and root_person_handle != '':
             try:
@@ -1182,26 +1065,6 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
             self.fit_to_page()
         except:
             pass
-
-    def nrgen(self):
-        """
-        return the generation if we have a person to draw
-        """
-        #compute the number of generations present
-        for generation in range(self.generations - 1, 0, -1):
-            for idx in range(len(self.data[generation])):
-                (person, dummy_parents, dummy_child,
-                 dummy_userdata) = self.data[generation][idx]
-                if person:
-                    return generation
-        return 1
-
-    def halfdist(self):
-        """
-        Compute the half radius of the circle
-        """
-        return (PIXELS_PER_GENERATION * self.nrgen() +
-                self.CENTER + BORDER_EDGE_WIDTH)
 
     def draw(self, ctx=None, scale=1.):
         """
@@ -1779,25 +1642,6 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                 #insert=(rect[0], rect[1]), size = (rect[2]-rect[0], rect[3]-rect[1]), fill = 'none')
                 #svg_document.add(this_rect)
 
-    def person_at(self, cell_address):
-        """
-        returns the person at cell_address
-        """
-        generation, pos = cell_address
-        if generation == -2:
-            person = self.childrenroot[pos][0]
-        else:
-            person = self.data[generation][pos][0]
-        return person
-
-    def family_at(self, cell_address):
-        """
-        returns the family at cell_address
-        Difficult here, we would need to go to child, and then obtain the first
-        parent family, as that is the family that is shown.
-        """
-        return None
-
     def do_mouse_click(self):
         # no drag occured, expand or collapse the section
         self._mouse_click = False
@@ -1818,15 +1662,8 @@ class LifeLineChartGrampsGUI:
         """
         self.lifeline = None
         self.menu = None
-        self.twolinename = False
-        self.radialtext = None
         self.maxgen = 8
-        self.childring = 0
-        self.showid = False
-        self.form = FORM_CIRCLE
-        self.alpha_filter = 0.5
         self.filter = None
-        self.background = BACKGROUND_GRAD_GEN
         self.on_childmenu_changed = on_childmenu_changed
         self.format_helper = FormattingHelper(self.dbstate, self.uistate)
         self.uistate.connect('font-changed', self.reload_symbols)
@@ -1848,11 +1685,7 @@ class LifeLineChartGrampsGUI:
         data.
         """
         root_person_handle = self.get_active('Person')
-        self.lifeline.set_values(root_person_handle, self.maxgen, self.background,
-                                 self.childring, False,
-                                 self.twolinename, self.radialtext, self.fonttype,
-                                 self.generic_filter,
-                                 self.alpha_filter, self.form, self.showid)
+        self.lifeline.set_values(root_person_handle, self.maxgen, self.generic_filter)
         self.lifeline.reset()
         #self.lifeline.draw()
         self.lifeline.queue_draw()
