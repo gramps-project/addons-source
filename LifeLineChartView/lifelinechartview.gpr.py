@@ -86,7 +86,7 @@ if (life_line_chart_is_missing or life_line_chart_too_old) and locals().get('uis
             _("\n\nLife Line Chart failed to import life_line_chart module.\n"
               "{what_to_do}:\n"
               "{pip_command}"
-              "\n\nTo dismiss all future Graphview warnings click Dismiss.").format(
+              "\n\nTo dismiss all future Life Line Chart View warnings click Dismiss.").format(
                   what_to_do = _('Please install life_line_chart module') if not life_line_chart_too_old else _('Please upgrade the module life_line_chart'),
                   pip_command = 'pip install life_line_chart' if not life_line_chart_too_old else 'pip install --upgrade life_line_chart'
               ),
