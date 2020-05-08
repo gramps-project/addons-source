@@ -116,6 +116,7 @@ class CombinedView(NavigationView):
         ('preferences.relation-shade', True),
         ('preferences.releditbtn', True),
         ('preferences.show-tags', True),
+        ('preferences.vertical-details', True),
         )
 
     def __init__(self, pdata, dbstate, uistate, nav_group=0):
@@ -142,6 +143,7 @@ class CombinedView(NavigationView):
         self.show_siblings = self._config.get('preferences.family-siblings')
         self.show_details = self._config.get('preferences.family-details')
         self.show_tags = self._config.get('preferences.show-tags')
+        self.vertical = self._config.get('preferences.vertical-details')
         self.use_shade = self._config.get('preferences.relation-shade')
         self.theme = self._config.get('preferences.relation-display-theme')
         self.toolbar_visible = config.get('interface.toolbar-on')
@@ -186,6 +188,7 @@ class CombinedView(NavigationView):
         self.show_siblings = self._config.get('preferences.family-siblings')
         self.show_details = self._config.get('preferences.family-details')
         self.show_tags = self._config.get('preferences.show-tags')
+        self.vertical = self._config.get('preferences.vertical-details')
         self.redraw()
 
     def build_tree(self):
@@ -861,6 +864,49 @@ class CombinedView(NavigationView):
                 sel_data.set(dnd_type.atom_drag_type, 8, pickle.dumps(data))
         return drag_data_get
 
+    def info_box(self, handle):
+        if self.vertical:
+            box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        else:
+            box = Gtk.Box()
+            box.set_spacing(6)
+
+        person = self.dbstate.db.get_person_from_handle(handle)
+        if not person:
+            return box
+
+        birth = get_birth_or_fallback(self.dbstate.db, person)
+        label1 = widgets.MarkupLabel(self.format_box(birth, EventType.BIRTH))
+        box.pack_start(label1, False, False, 0)
+
+        death = get_death_or_fallback(self.dbstate.db, person)
+        label2 = widgets.MarkupLabel(self.format_box(death, EventType.DEATH))
+        box.pack_start(label2, False, False, 0)
+
+        return box
+
+    def format_box(self, event, main_type):
+        if event:
+            dobj = event.get_date_object()
+            pname = place_displayer.display_event(self.dbstate.db, event)
+            value = {
+                'abbrev': event.type.get_abbreviation(),
+                'date' : displayer.display(dobj),
+                'place' : pname
+                }
+        else:
+            return ''
+
+        if pname and not dobj.is_empty():
+            info = _('%(abbrev)s %(date)s in %(place)s') % value
+        else:
+            info = _('%(abbrev)s %(date)s%(place)s') % value
+
+        if event.type != main_type:
+            return '<i>%s</i>' % escape(info)
+        else:
+            return escape(info)
+
     def info_string(self, handle):
         person = self.dbstate.db.get_person_from_handle(handle)
         if not person:
@@ -1488,9 +1534,9 @@ class CombinedView(NavigationView):
         hbox.set_spacing(6)
         hbox.pack_start(link_label, False, False, 0)
         if self.show_details:
-            value = self.info_string(handle)
-            if value:
-                hbox.pack_start(widgets.MarkupLabel(value), False, False, 0)
+            box = self.info_box(handle)
+            if box:
+                hbox.pack_start(box, False, False, 0)
         if button is not None:
             hbox.pack_start(button, False, False, 0)
         if self.show_tags:
@@ -1814,9 +1860,9 @@ class CombinedView(NavigationView):
             hbox.set_spacing(6)
             hbox.pack_start(link_label, False, False, 0)
             if self.show_details:
-                value = self.info_string(handle)
-                if value:
-                    hbox.pack_start(widgets.MarkupLabel(value), False, False, 0)
+                box = self.info_box(handle)
+                if box:
+                    hbox.pack_start(box, False, False, 0)
             if button is not None:
                 hbox.pack_start(button, False, False, 0)
             if self.show_tags:
@@ -1871,9 +1917,9 @@ class CombinedView(NavigationView):
         person = self.dbstate.db.get_person_from_handle(handle)
         hbox.pack_start(link_label, False, False, 0)
         if self.show_details:
-            value = self.info_string(handle)
-            if value:
-                hbox.pack_start(widgets.MarkupLabel(value), False, False, 0)
+            box = self.info_box(handle)
+            if box:
+                hbox.pack_start(box, False, False, 0)
         if button is not None:
             hbox.pack_start(button, False, False, 0)
         if self.show_tags:
@@ -2112,6 +2158,8 @@ class CombinedView(NavigationView):
                           self.config_update)
         self._config.connect("preferences.show-tags",
                           self.config_update)
+        self._config.connect("preferences.vertical-details",
+                          self.config_update)
         config.connect("interface.toolbar-on",
                           self.shade_update)
 
@@ -2150,11 +2198,14 @@ class CombinedView(NavigationView):
                 _('Show Details'),
                 0, 'preferences.family-details')
         configdialog.add_checkbox(grid,
+                _('Vertical Details'),
+                1, 'preferences.vertical-details')
+        configdialog.add_checkbox(grid,
                 _('Show Siblings'),
-                1, 'preferences.family-siblings')
+                2, 'preferences.family-siblings')
         configdialog.add_checkbox(grid,
                 _('Show Tags'),
-                2, 'preferences.show-tags')
+                3, 'preferences.show-tags')
 
         return _('Content'), grid
 
