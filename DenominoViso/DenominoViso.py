@@ -2605,12 +2605,12 @@ class DenominoVisoOptions(MenuReportOptions):
 
         # strange meaning true and false
         priv = BooleanOption(_("Include private records"), True)
-        priv .set_help(_("Wheater to leave out private data."))
+        priv .set_help(_("Whether to leave out private data."))
         menu.add_option(category_name, "DNMuse_privacy", priv)
 
         inc_events = MyBooleanOption(_("Include Events"), True)
         #inc_events = BooleanOption(_("Include Events"), True)
-        inc_events.set_help(_("Wheather to include a person's events."))
+        inc_events.set_help(_("Whether to include a person's events."))
         menu.add_option(category_name, "DNMinc_events", inc_events)
 
         #inc_all_events = BooleanOption(_("Include All Events"), True)
