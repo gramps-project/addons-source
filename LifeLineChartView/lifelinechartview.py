@@ -56,13 +56,19 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
     """
     The Gramplet code that realizes the LifeLineChartWidget.
     """
-    # settings in the config file
+    # settings in the config file, Needs to be preset only for values with wrong data format
     CONFIGSETTINGS = (
         ('interface.lifelineview-generations', 4),
         ('interface.lifelineview-background', lifelinechart.BACKGROUND_GRAD_GEN),
         ('interface.lifelineview-showid', False),
         ('interface.lifelineview-relative_line_thickness', BaseGraph._default_formatting['relative_line_thickness']*100),
-        ('interface.lifelineview-font_size_description', BaseGraph._default_formatting['font_size_description']*100)
+        ('interface.lifelineview-font_size_description', BaseGraph._default_formatting['font_size_description']*100),
+        ('interface.lifelineview-birth_label_rotation', str(BaseGraph._default_formatting['birth_label_rotation'])),
+        ('interface.lifelineview-death_label_rotation', str(BaseGraph._default_formatting['death_label_rotation'])),
+        ('interface.lifelineview-birth_label_letter_x_offset', str(BaseGraph._default_formatting['birth_label_letter_x_offset'])),
+        ('interface.lifelineview-birth_label_letter_y_offset', str(BaseGraph._default_formatting['birth_label_letter_y_offset'])),
+        ('interface.lifelineview-death_label_letter_x_offset', str(BaseGraph._default_formatting['death_label_letter_x_offset'])),
+        ('interface.lifelineview-death_label_letter_y_offset', str(BaseGraph._default_formatting['death_label_letter_y_offset'])),
         )
 
     def __init__(self, pdata, dbstate, uistate, nav_group=0):
@@ -200,10 +206,8 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
             'family_shape': {
                 'description': BaseGraph._formatting_description['family_shape']['short_description'],
                 'tooltip': BaseGraph._formatting_description['family_shape']['long_description'],
-                'additional_arg': {'opts': enumerate(["0", "1"]), 'valueactive': True},
-                'additional_setter_arg': {'index_to_name': lambda x: int(x)},
-
-
+                'additional_arg': {'opts': [a for a in enumerate(list(BaseGraph._formatting_description['family_shape']['choices'].values()))], 'valueactive': True},
+                'additional_setter_arg': {'index_to_name': lambda x: list(BaseGraph._formatting_description['family_shape']['choices'].keys())[x]},
                 'data_container': 'formatting',
                 'widget': 'combobox',
             },
@@ -218,7 +222,110 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
                     'value_encode': lambda x: int(x*100)
                 },
             },
+            'birth_label_rotation': {
+                'description': BaseGraph._formatting_description['birth_label_rotation']['short_description'],
+                'tooltip': BaseGraph._formatting_description['birth_label_rotation']['long_description'],
+                'additional_arg': {'col_attach' : 1},
+                'additional_setter_arg': {
+                    'value_decode': lambda x: float(x),
+                    'value_encode': lambda x: str(x)
+                },
+                'data_container': 'formatting',
+                'widget': 'lineedit',
+            },
+            'birth_label_letter_x_offset': {
+                'description': BaseGraph._formatting_description['birth_label_letter_x_offset']['short_description'],
+                'tooltip': BaseGraph._formatting_description['birth_label_letter_x_offset']['long_description'],
+                'additional_arg': {'col_attach' : 1},
+                'additional_setter_arg': {
+                    'value_decode': lambda x: float(x),
+                    'value_encode': lambda x: str(x)
+                },
+                'data_container': 'formatting',
+                'widget': 'lineedit',
+            },
+            'birth_label_letter_y_offset': {
+                'description': BaseGraph._formatting_description['birth_label_letter_y_offset']['short_description'],
+                'tooltip': BaseGraph._formatting_description['birth_label_letter_y_offset']['long_description'],
+                'additional_arg': {'col_attach' : 1},
+                'additional_setter_arg': {
+                    'value_decode': lambda x: float(x),
+                    'value_encode': lambda x: str(x)
+                },
+                'data_container': 'formatting',
+                'widget': 'lineedit',
+            },
+            'birth_label_anchor': {
+                'description': BaseGraph._formatting_description['birth_label_anchor']['short_description'],
+                'tooltip': BaseGraph._formatting_description['birth_label_anchor']['long_description'],
+                'additional_arg': {'opts': [a for a in enumerate(list(BaseGraph._formatting_description['birth_label_anchor']['choices'].values()))], 'valueactive': True},
+                'additional_setter_arg': {'index_to_name': lambda x: list(BaseGraph._formatting_description['birth_label_anchor']['choices'].keys())[x]},
+                'data_container': 'formatting',
+                'widget': 'combobox',
+            },
+            'birth_label_wrapping_active': {
+                'description': BaseGraph._formatting_description['birth_label_wrapping_active']['short_description'],
+                'tooltip': BaseGraph._formatting_description['birth_label_wrapping_active']['long_description'],
+                'additional_arg': {},
+                'widget': 'checkbox',
+                'data_container': 'formatting',
+                'additional_setter_arg': {}
+            },
+            'death_label_rotation': {
+                'description': BaseGraph._formatting_description['death_label_rotation']['short_description'],
+                'tooltip': BaseGraph._formatting_description['death_label_rotation']['long_description'],
+                'additional_arg': {'col_attach' : 1},
+                'additional_setter_arg': {
+                    'value_decode': lambda x: float(x),
+                    'value_encode': lambda x: str(x)
+                },
+                'data_container': 'formatting',
+                'widget': 'lineedit',
+            },
+            'death_label_letter_x_offset': {
+                'description': BaseGraph._formatting_description['death_label_letter_x_offset']['short_description'],
+                'tooltip': BaseGraph._formatting_description['death_label_letter_x_offset']['long_description'],
+                'additional_arg': {'col_attach' : 1},
+                'additional_setter_arg': {
+                    'value_decode': lambda x: float(x),
+                    'value_encode': lambda x: str(x)
+                },
+                'data_container': 'formatting',
+                'widget': 'lineedit',
+            },
+            'death_label_letter_y_offset': {
+                'description': BaseGraph._formatting_description['death_label_letter_y_offset']['short_description'],
+                'tooltip': BaseGraph._formatting_description['death_label_letter_y_offset']['long_description'],
+                'additional_arg': {'col_attach' : 1},
+                'additional_setter_arg': {
+                    'value_decode': lambda x: float(x),
+                    'value_encode': lambda x: str(x)
+                },
+                'data_container': 'formatting',
+                'widget': 'lineedit',
+            },
+            'death_label_anchor': {
+                'description': BaseGraph._formatting_description['death_label_anchor']['short_description'],
+                'tooltip': BaseGraph._formatting_description['death_label_anchor']['long_description'],
+                'additional_arg': {'opts': [a for a in enumerate(list(BaseGraph._formatting_description['death_label_anchor']['choices'].values()))], 'valueactive': True},
+                'additional_setter_arg': {'index_to_name': lambda x: list(BaseGraph._formatting_description['death_label_anchor']['choices'].keys())[x]},
+                'data_container': 'formatting',
+                'widget': 'combobox',
+            },
+            'death_label_wrapping_active': {
+                'description': BaseGraph._formatting_description['death_label_wrapping_active']['short_description'],
+                'tooltip': BaseGraph._formatting_description['death_label_wrapping_active']['long_description'],
+                'additional_arg': {},
+                'widget': 'checkbox',
+                'data_container': 'formatting',
+                'additional_setter_arg': {}
+            },
         }
+        for item_name, item_data in self.gui_config.items():
+            if item_data['data_container'] == 'positioning':
+                item_data['tab_name'] = BaseGraph._positioning_description[item_name]['tab'] if 'tab' in BaseGraph._positioning_description[item_name] else 'General Layout'
+            if item_data['data_container'] == 'formatting':
+                item_data['tab_name'] = BaseGraph._formatting_description[item_name]['tab'] if 'tab' in BaseGraph._formatting_description[item_name] else 'General Layout'
         NavigationView.__init__(self, _('Life Line Chart'),
                                 pdata, dbstate, uistate,
                                 PersonBookmarks, nav_group)
@@ -591,9 +698,12 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
 
         :return: list of functions
         """
-        return [self.config_panel]
+        return [
+            lambda configdialog, tab_name='General Layout': self.config_panel(configdialog, tab_name),
+            lambda configdialog, tab_name='Label Configuration': self.config_panel(configdialog, tab_name)
+            ]
 
-    def config_panel(self, configdialog):
+    def config_panel(self, configdialog, tab_name):
         """
         Function that builds the widget in the configuration dialog
         """
@@ -602,6 +712,7 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
         grid.set_border_width(12)
         grid.set_column_spacing(6)
         grid.set_row_spacing(6)
+        
 
         def my_non_weird_add_checkbox(grid, label, index, constant, start=1, stop=9,
                                       config=None, callback=None, extra_callback=None, tooltip=''):
@@ -616,10 +727,12 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
             'slider': configdialog.add_slider,
             'combobox': configdialog.add_combo,
             'checkbox': my_non_weird_add_checkbox,
+            'lineedit': configdialog.add_entry,
         }
 
         for index, (entry_name, settings) in enumerate(self.gui_config.items()):
-
+            if settings['tab_name'] != tab_name:
+                continue
             item = function_mapping[settings['widget']](
                 grid, _(settings['description']),
                 index,
@@ -650,10 +763,10 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
                 break
             nrval += 1
         #i += 1
-        configdialog.add_combo(grid, _('Background'),
-                               29, 'interface.lifelineview-background', backgrvals,
-                               callback=self.cb_update_background,
-                               valueactive=False, setactive=nrval)
+        # configdialog.add_combo(grid, _('Background'),
+        #                        29, 'interface.lifelineview-background', backgrvals,
+        #                        callback=self.cb_update_background,
+        #                        valueactive=False, setactive=nrval)
         #colors, stored as hex values
         # i += 1
         # configdialog.add_color(grid, _('Start gradient/Main color'), i,
@@ -680,7 +793,7 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
         ##        _('Allow radial text'),
         ##        ??, 'interface.lifelineview-radialtext')
 
-        return _('Layout'), grid
+        return _(tab_name), grid
 
     def config_connect(self):
         """
@@ -705,6 +818,17 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
             container[value_name] = value
             self._config.set(constant, value_encode(container[value_name]))
             self.update()
+
+    def cb_update_lineedit(self, obj, constant, value_name, container, value_decode=lambda x: x, value_encode=lambda x: x):
+        try:
+            value = value_decode(obj.get_text())
+            container = getattr(self, container)
+            if container[value_name] != value:
+                container[value_name] = value
+                self._config.set(constant, value_encode(container[value_name]))
+                self.update()
+        except:
+            pass
 
     def cb_update_checkbox(self, client, cnxn_id, entry, data, value_name, container):
         #self, obj, constant, value_name):
