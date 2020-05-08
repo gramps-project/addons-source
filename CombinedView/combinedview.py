@@ -69,6 +69,7 @@ from gramps.gui.utils import open_file_with_default_application
 from gramps.gen.datehandler import displayer, get_date
 from gramps.gen.utils.thumbnails import get_thumbnail_image
 from gramps.gen.config import config
+from gramps.gen.relationship import get_relationship_calculator
 from gramps.gui import widgets
 from gramps.gui.widgets.reorderfam import Reorder
 from gramps.gui.widgets.styledtexteditor import StyledTextEditor
@@ -1282,7 +1283,10 @@ class CombinedView(NavigationView):
         citation = self.dbstate.db.get_citation_from_handle(chandle)
         shandle = citation.get_reference_handle()
         source = self.dbstate.db.get_source_from_handle(shandle)
-        heading = source.get_title() + ' ' + citation.get_page()
+        heading = source.get_title()
+        page = citation.get_page()
+        if page:
+            heading += ' \u2022 ' + page
 
         box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         url_label = self.get_url(citation)
@@ -1431,15 +1435,24 @@ class CombinedView(NavigationView):
         self.stack.add_titled(scroll, 'associations', _('Associations'))
 
         for person_ref in person.get_person_ref_list():
-            self.write_association(person_ref)
+            self.write_association(person, person_ref)
 
 
-    def write_association(self, person_ref):
+    def write_association(self, person1, person_ref):
 
         vbox = self.write_person('assoc', person_ref.ref)
-        rel = Gtk.Label(person_ref.rel)
+
+        assoc = Gtk.Label(_('Association') + _(': ') + person_ref.rel)
+        assoc.set_halign(Gtk.Align.START)
+        vbox.pack_start(assoc, False, False, 0)
+
+        calc = get_relationship_calculator()
+        person2 = self.dbstate.db.get_person_from_handle(person_ref.ref)
+        rel_txt = calc.get_one_relationship(self.dbstate.db, person1, person2)
+        rel = Gtk.Label(_('Relationship') + _(': ') + rel_txt)
         rel.set_halign(Gtk.Align.START)
         vbox.pack_start(rel, False, False, 0)
+
         eventbox = self.make_dragbox(vbox, 'Person', person_ref.ref)
         eventbox.show_all()
         self.vbox2.pack_start(eventbox, False, False, 1)
