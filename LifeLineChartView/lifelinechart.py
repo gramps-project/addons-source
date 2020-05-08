@@ -1178,6 +1178,10 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
             sorted_individual_items += graphical_individual_representation.items
         self.chart_items = additional_items + sorted_individual_items
         self.image_cache = {}
+        try:
+            self.fit_to_page()
+        except:
+            pass
 
     def nrgen(self):
         """
