@@ -85,7 +85,7 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
             'generations': {
                 'description': BaseGraph._positioning_description['generations']['short_description'],
                 'tooltip': BaseGraph._positioning_description['generations']['long_description'],
-                'additional_arg': {'range': (1, 30)},
+                'additional_arg': {'range': (1, 100)},
                 'data_container': 'positioning',
                 'widget': 'spinner',
                 'additional_setter_arg': {}
