@@ -1157,14 +1157,14 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                             media = self.dbstate.db.get_media_from_handle(handle)
                             path = media_path_full(self.dbstate.db, media.get_path())
                             if media.mime in ['image/jpeg', 'image/png'] and os.path.isfile(path):
-                                root_individual = self.life_line_chart_ancestor_graph._instances[('i', root_person_handle)]
+                                individual = gir.individual
                                 year = media.date.get_year()
                                 if year != 0:
                                     date_ov = datetime.date(*[i if i != 0 else 1 for i in media.date.get_ymd()]).toordinal()
-                                    date_ov = max(date_ov, root_individual.events['birth_or_christening']['date'].date().toordinal())
+                                    date_ov = max(date_ov, individual.events['birth_or_christening']['date'].date().toordinal())
                                 else:
-                                    date_ov = root_individual.events['birth_or_christening']['date'].date().toordinal() + i*365*5
-                                root_individual.images[date_ov] = get_thumbnail_path(path, media.mime, size=SIZE_NORMAL)
+                                    date_ov = individual.events['birth_or_christening']['date'].date().toordinal() + i*365*5
+                                individual.images[date_ov] = get_thumbnail_path(path, media.mime, size=SIZE_NORMAL)
                     self.life_line_chart_ancestor_graph.define_svg_items()
             plot()
         additional_items = []
