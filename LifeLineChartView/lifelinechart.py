@@ -1161,9 +1161,9 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                                 year = media.date.get_year()
                                 if year != 0:
                                     date_ov = datetime.date(*[i if i != 0 else 1 for i in media.date.get_ymd()]).toordinal()
-                                    date_ov = max(date_ov, individual.events['birth_or_christening']['date'].date().toordinal())
+                                    date_ov = max(date_ov, individual.events['birth_or_christening']['date'].date().toordinal() + 1)
                                 else:
-                                    date_ov = individual.events['birth_or_christening']['date'].date().toordinal() + i*365*5
+                                    date_ov = individual.events['birth_or_christening']['date'].date().toordinal() + i*365*5 + 1
                                 individual.images[date_ov] = get_thumbnail_path(path, media.mime, size=SIZE_NORMAL)
                     self.life_line_chart_ancestor_graph.define_svg_items()
             plot()

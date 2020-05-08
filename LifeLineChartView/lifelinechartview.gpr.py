@@ -29,7 +29,7 @@ try:
     import life_line_chart
     life_line_chart_is_missing = False
     version_tuple = tuple([int(i) if i.isnumeric() else i for i in life_line_chart.__version__.split('.')])
-    version_required = (1, 2, 19)
+    version_required = (1, 2, 20)
     life_line_chart_too_old = version_required > version_tuple
 
     # load icon
@@ -49,7 +49,7 @@ if not life_line_chart_too_old and not life_line_chart_is_missing:
             name=_("Life Line Chart"),
             category=("Ancestry", _("Charts")),
             description=_("A view showing parents through a lifelinechart"),
-            version = '1.0.6',
+            version = '1.0.7',
             gramps_target_version="5.1",
             status=STABLE,
             fname='lifelinechartview.py',
