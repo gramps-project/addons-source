@@ -369,6 +369,7 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
                 self.positioning[key] = self._config.get(
                     'interface.lifelineview-'+key)
 
+
         self.fonttype = scg('interface.lifelineview-font_name')
 
         self.showid = scg('interface.lifelineview-showid')
@@ -764,6 +765,11 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
             )
             item.set_tooltip_text(_(settings['tooltip']))
 
+        # add zoom-in button
+        reset_button = configdialog.add_button(grid, 'Reset all settings', index + 1, None, lambda a,b=configdialog:self.reset_settings(a,b))
+        #reset_button.set_tooltip_text(_('Zoom in'))
+        #grid.pack_start(self.zoom_in_btn, False, False, 1)
+
         # compress
         backgrvals = (
             (lifelinechart.BACKGROUND_GENDER, _('Gender colors')),
@@ -814,6 +820,35 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
         ##        ??, 'interface.lifelineview-radialtext')
 
         return _(tab_name), grid
+
+    def reset_settings(self, obj, widget):
+        for key, value in self.formatting.items():
+            gramps_key = 'interface.lifelineview-'+key
+            if self._config.is_set('interface.lifelineview-'+key):
+                if key in self.gui_config and 'value_encode' in self.gui_config[key]['additional_setter_arg']:
+                    value_encode = self.gui_config[key]['additional_setter_arg']['value_encode']
+                    value_decode = self.gui_config[key]['additional_setter_arg']['value_decode']
+                else:
+                    def value_encode(x): return x
+                    def value_decode(x): return x
+                self.formatting[key] = BaseGraph._default_formatting[key]
+                self._config.set(gramps_key, value_encode(self.formatting[key]))
+        for key, value in self.positioning.items():
+            gramps_key = 'interface.lifelineview-'+key
+            if self._config.is_set('interface.lifelineview-'+key):
+                if key in self.gui_config and 'value_encode' in self.gui_config[key]['additional_setter_arg']:
+                    value_encode = self.gui_config[key]['additional_setter_arg']['value_encode']
+                    value_decode = self.gui_config[key]['additional_setter_arg']['value_decode']
+                else:
+                    def value_encode(x): return x
+                    def value_decode(x): return x
+                self.positioning[key] = BaseGraph._default_positioning[key]
+                self._config.set(gramps_key, value_encode(self.positioning[key]))
+
+        widget.close()
+        self.update()
+        self.configure()
+        pass
 
     def config_connect(self):
         """
