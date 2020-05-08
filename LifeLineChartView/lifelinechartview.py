@@ -453,6 +453,13 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
         self.toolbar.pack_start(self.fit_btn, False, False, 1)
         self.fit_btn.connect("clicked", self.lifeline.fit_to_page)
 
+        # add view-refresh button
+        self.view_refresh_btn = Gtk.Button.new_from_icon_name('view-refresh',
+                                                         Gtk.IconSize.MENU)
+        self.view_refresh_btn.set_tooltip_text(_('Rebuild Data Cache'))
+        self.toolbar.pack_start(self.view_refresh_btn, False, False, 1)
+        self.view_refresh_btn.connect("clicked", self.lifeline.rebuild_instance_cache)
+
         #self.vbox.pack_start(self.scrolledwindow, True, True, 0)
         self.vbox.pack_start(self.lifeline, True, True, 0)
 
@@ -592,7 +599,8 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
         However, change in generic filter also triggers build_tree ! So we
         need to reset.
         """
-        self.update()
+        # self.update()
+        pass
 
     def active_changed(self, handle):
         """

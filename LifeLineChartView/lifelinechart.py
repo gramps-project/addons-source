@@ -373,7 +373,6 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
             self.textcolor = (0, 0, 0)
         self.dbstate = dbstate
         self.uistate = uistate
-        self.generations = 3
         self.childrenroot = []
         self.angle = {}
         self.filter = None
@@ -954,12 +953,12 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
         self.menu = None
         self.data = {}
         self.dbstate = dbstate
-        self.set_values(None, 5, None)
+        self.set_values(None, None)
         LifeLineChartBaseWidget.__init__(
             self, dbstate, uistate, callback_popup)
         self.ic = get_dbdstate_instance_container(self.dbstate)
 
-    def set_values(self, root_person_handle, maxgen, filtr):
+    def set_values(self, root_person_handle, filtr):
         """
         Reset the values to be used:
 
@@ -969,7 +968,6 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
         if self.rootpersonh != root_person_handle:  # or self.filter != filtr:
             reset = True
         new_filter = self.filter != filtr
-        self.generations = maxgen
         self.filter = filtr
         root_person = None
         if root_person_handle is not None and root_person_handle != '':
@@ -989,15 +987,21 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
 
             self.life_line_chart_ancestor_graph.define_svg_items()
         else:
-            def plot():
+            def plot(reset):
                 # x = GrampsIndividual(self.ic, self.dbstate, self.rootpersonh)
                 if (reset or self.life_line_chart_ancestor_graph is None or self.positioning != self.life_line_chart_ancestor_graph._positioning or
                         self.formatting != self.life_line_chart_ancestor_graph._formatting or new_filter):
 
                     if reset or self.life_line_chart_ancestor_graph is None or self.positioning != self.life_line_chart_ancestor_graph._positioning:
+                        reset = True
                         self.rootpersonh = root_person_handle
-                        self.life_line_chart_ancestor_graph = AncestorGraph(
-                            positioning=self.positioning, formatting=self.formatting, instance_container=lambda: get_dbdstate_instance_container(self.dbstate))
+                        if self.life_line_chart_ancestor_graph is None:
+                            self.life_line_chart_ancestor_graph = AncestorGraph(
+                                positioning=self.positioning, formatting=self.formatting, instance_container=lambda: get_dbdstate_instance_container(self.dbstate))
+                        else:
+                            self.life_line_chart_ancestor_graph.clear_graphical_representations()
+                            self.life_line_chart_ancestor_graph._formatting = deepcopy(self.formatting)
+                            self.life_line_chart_ancestor_graph._positioning = deepcopy(self.positioning)
                         root_individual = self.life_line_chart_ancestor_graph._instances[(
                             'i', self.rootpersonh)]
 
@@ -1049,7 +1053,8 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                                     date_ov = individual.events['birth_or_christening']['date'].date().toordinal() + i*365*5 + 1
                                 individual.images[date_ov] = get_thumbnail_path(path, media.mime, size=SIZE_NORMAL)
                     self.life_line_chart_ancestor_graph.define_svg_items()
-            plot()
+                return reset
+            reset = plot(reset)
         additional_items = []
         for key, value in self.life_line_chart_ancestor_graph.additional_graphical_items.items():
             additional_items += value
@@ -1062,9 +1067,18 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
         self.chart_items = additional_items + sorted_individual_items
         self.image_cache = {}
         try:
-            self.fit_to_page()
+            if reset:
+                self.fit_to_page()
         except:
             pass
+
+    def rebuild_instance_cache(self, _button=None):
+        if self.life_line_chart_ancestor_graph:
+            self.life_line_chart_ancestor_graph.clear_graphical_representations()
+            self.life_line_chart_ancestor_graph._instances.clear()
+            rp = self.rootpersonh
+            self.rootpersonh = None
+            self.set_values(rp, self.filter)
 
     def draw(self, ctx=None, scale=1.):
         """
@@ -1662,7 +1676,6 @@ class LifeLineChartGrampsGUI:
         """
         self.lifeline = None
         self.menu = None
-        self.maxgen = 8
         self.filter = None
         self.on_childmenu_changed = on_childmenu_changed
         self.format_helper = FormattingHelper(self.dbstate, self.uistate)
@@ -1685,7 +1698,7 @@ class LifeLineChartGrampsGUI:
         data.
         """
         root_person_handle = self.get_active('Person')
-        self.lifeline.set_values(root_person_handle, self.maxgen, self.generic_filter)
+        self.lifeline.set_values(root_person_handle, self.generic_filter)
         self.lifeline.reset()
         #self.lifeline.draw()
         self.lifeline.queue_draw()
