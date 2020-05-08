@@ -765,60 +765,8 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
             )
             item.set_tooltip_text(_(settings['tooltip']))
 
-        # add zoom-in button
+        # add reset button
         reset_button = configdialog.add_button(grid, 'Reset all settings', index + 1, None, lambda a,b=configdialog:self.reset_settings(a,b))
-        #reset_button.set_tooltip_text(_('Zoom in'))
-        #grid.pack_start(self.zoom_in_btn, False, False, 1)
-
-        # compress
-        backgrvals = (
-            (lifelinechart.BACKGROUND_GENDER, _('Gender colors')),
-            (lifelinechart.BACKGROUND_GRAD_GEN, _('Generation based gradient')),
-            (lifelinechart.BACKGROUND_GRAD_AGE, _('Age (0-100) based gradient')),
-            (lifelinechart.BACKGROUND_SINGLE_COLOR,
-             _('Single main (filter) color')),
-            (lifelinechart.BACKGROUND_GRAD_PERIOD, _('Time period based gradient')),
-            (lifelinechart.BACKGROUND_WHITE, _('White')),
-            (lifelinechart.BACKGROUND_SCHEME1, _('Color scheme classic report')),
-            (lifelinechart.BACKGROUND_SCHEME2, _('Color scheme classic view')),
-        )
-        curval = self._config.get('interface.lifelineview-background')
-        nrval = 0
-        for nbr, dummy_val in backgrvals:
-            if curval == nbr:
-                break
-            nrval += 1
-        #i += 1
-        # configdialog.add_combo(grid, _('Background'),
-        #                        29, 'interface.lifelineview-background', backgrvals,
-        #                        callback=self.cb_update_background,
-        #                        valueactive=False, setactive=nrval)
-        #colors, stored as hex values
-        # i += 1
-        # configdialog.add_color(grid, _('Start gradient/Main color'), i,
-        #                        'interface.color-start-grad', col=1)
-        # i += 1
-        # configdialog.add_color(grid, _('End gradient/2nd color'), i,
-        #                        'interface.color-end-grad', col=1)
-        # form of the lifeline
-        # configdialog.add_combo(grid, _('Life line chart type'), 5,
-        #                        'interface.lifelineview-form',
-        #                        ((0, _('Full Circle')), (1, _('Half Circle')),
-        #                         (2, _('Quadrant'))),
-        #                        callback=self.cb_update_form)
-
-        # # options users should not change:
-        # configdialog.add_checkbox(grid, _('Show children ring'),
-        #                           nrentry-2, 'interface.lifelineview-childrenring')
-
-        # Show the gramps_id
-        # configdialog.add_checkbox(grid, _('Show gramps id'),
-        #                           nrentry-1, 'interface.lifelineview-showid')
-        # options we don't show on the dialog
-        ##configdialog.add_checkbox(table,
-        ##        _('Allow radial text'),
-        ##        ??, 'interface.lifelineview-radialtext')
-
         return _(tab_name), grid
 
     def reset_settings(self, obj, widget):
