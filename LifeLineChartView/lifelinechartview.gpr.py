@@ -80,7 +80,7 @@ inifile.load()
 sects = inifile.get_sections()
 if (life_line_chart_is_missing or life_line_chart_too_old) and locals().get('uistate'):
     from gramps.gui.dialog import QuestionDialog2
-    if 'lifelinechart_warn' not in sects:
+    if 'lifelinechart_warn' not in sects or not inifile.get('lifelinechart_warn.missingmodules')!='False':
         yes_no = QuestionDialog2(
             _("Life Line Chart View Failed to Load"),
             _("\n\nLife Line Chart failed to import life_line_chart module.\n"
@@ -94,10 +94,10 @@ if (life_line_chart_is_missing or life_line_chart_too_old) and locals().get('uis
             _("Continue"), parent=uistate.window)
         prompt = yes_no.run()
         if prompt is True:
-            inifile.register('lifelinechart_warn.MissingModules', "")
-            inifile.set('lifelinechart_warn.MissingModules', "True")
+            inifile.register('lifelinechart_warn.missingmodules', "")
+            inifile.set('lifelinechart_warn.missingmodules', "True")
             inifile.save()
 else:
-    inifile.register('lifelinechart_warn.MissingModules', "")
-    inifile.set('lifelinechart_warn.MissingModules', "False")
+    inifile.register('lifelinechart_warn.missingmodules', "")
+    inifile.set('lifelinechart_warn.missingmodules', "False")
     inifile.save()
