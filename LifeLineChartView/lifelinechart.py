@@ -66,7 +66,7 @@ def get_date(event):
 
     Returns:
         dict: event data dict
-    """    
+    """
     event_data = None
     try:
         date_obj = event.get_date_object()
@@ -106,7 +106,7 @@ def get_relevant_events(gramps_person, dbstate, target):
         gramps_person (gramps.gen.lib.Person): gramps person instance
         dbstate (dbstate): dbstate
         target (dict): place to store the events
-    """    
+    """
     events_key_name = {
         EventType.BIRTH: 'birth',
         EventType.CHRISTEN: 'christening',
@@ -144,7 +144,7 @@ def get_relevant_events(gramps_person, dbstate, target):
 class GrampsIndividual(BaseIndividual):
     """
     Interface class to provide person data to live line chart backend
-    """    
+    """
     def __init__(self, instances, dbstate, individual_id):
         BaseIndividual.__init__(self, instances, individual_id)
         self._dbstate = dbstate
@@ -165,7 +165,7 @@ class GrampsIndividual(BaseIndividual):
 
         Returns:
             str: name
-        """        
+        """
         return [name_displayer.display_format(self._gramps_person, 101), name_displayer.display_format(self._gramps_person, 100)]
     name = property(_get_name)
 
@@ -175,7 +175,7 @@ class GrampsIndividual(BaseIndividual):
 
         Returns:
             tuple: father uid, mother uid
-        """        
+        """
         child_of_families = self._gramps_person.get_parent_family_handle_list()
         if child_of_families:
             child_of_family = self._dbstate.db.get_family_from_handle(
@@ -191,7 +191,7 @@ class GrampsIndividual(BaseIndividual):
 
         Returns:
             list: list of marriage family uids
-        """        
+        """
         return self._gramps_person.get_family_handle_list()
 
 
@@ -201,7 +201,7 @@ def estimate_marriage_date(family):
 
     Args:
         family (GrampsFamily): family instance
-    """    
+    """
     if not family.marriage:
         children_events = []
         for child in family.children_individual_ids:
@@ -222,7 +222,7 @@ def estimate_marriage_date(family):
 class GrampsFamily(BaseFamily):
     """
     Interface class to provide family data to live line chart backend
-    """    
+    """
     def __init__(self, instances, dbstate, family_id):
         BaseFamily.__init__(self, instances, family_id)
         self._dbstate = dbstate
@@ -254,7 +254,7 @@ class GrampsFamily(BaseFamily):
 
         Returns:
             tuple: husband uid, wife uid
-        """        
+        """
         father_handle = Family.get_father_handle(self._gramps_family)
         mother_handle = Family.get_mother_handle(self._gramps_family)
         return father_handle, mother_handle
@@ -265,7 +265,7 @@ class GrampsFamily(BaseFamily):
 
         Returns:
             list: list of children uids
-        """        
+        """
         return [ref.ref for ref in self._gramps_family.get_child_ref_list()]
 
     def _get_husb_name(self):
@@ -274,7 +274,7 @@ class GrampsFamily(BaseFamily):
 
         Returns:
             str: husband name
-        """        
+        """
         father_handle = Family.get_father_handle(self._gramps_family)
         return self.husb.name
 
@@ -284,7 +284,7 @@ class GrampsFamily(BaseFamily):
 
         Returns:
             str: wife name
-        """        
+        """
         mother_handle = Family.get_mother_handle(self._gramps_family)
         return self.wife.name
     husb_name = property(_get_husb_name)
