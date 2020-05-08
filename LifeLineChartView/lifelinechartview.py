@@ -712,7 +712,7 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
         grid.set_border_width(12)
         grid.set_column_spacing(6)
         grid.set_row_spacing(6)
-        
+
 
         def my_non_weird_add_checkbox(grid, label, index, constant, start=1, stop=9,
                                       config=None, callback=None, extra_callback=None, tooltip=''):

@@ -539,13 +539,13 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
 
         Returns:
             tuple: new position as x, y tuple
-        """        
+        """
         return position[0] + delta[0], position[1] + delta[1]
 
     def view_position_limit_to_bounds(self):
         """
         limit the view to the outer bounds
-        """        
+        """
         self.upper_left_view_position = self.view_position_get_limited(self.upper_left_view_position)
 
     def view_position_get_limited(self, position):
@@ -557,7 +557,7 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
 
         Returns:
             tuple: limited position
-        """        
+        """
         width = self.life_line_chart_ancestor_graph.get_full_width()
         height = self.life_line_chart_ancestor_graph.get_full_height()
         width_a = self.get_allocated_width()
@@ -1219,7 +1219,7 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
             self.zoom_level_backup = self.zoom_level
         else:  # printing
             # ??
-            
+
             self.view_position_limit_to_bounds()
             translated_position = self._position_move(self.upper_left_view_position, self.center_delta_xy)
             translated_position = self.view_position_get_limited(translated_position)
