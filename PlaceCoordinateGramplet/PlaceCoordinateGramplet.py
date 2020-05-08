@@ -230,7 +230,7 @@ class PlaceCoordinateGramplet(Gramplet):
             loc = GeocodeGlib.Location.new(latitude, longitude, 0)
             obj = GeocodeGlib.Reverse.new_for_location(loc)
             result = GeocodeGlib.Reverse.resolve(obj)
-            
+
             location_information = dict((p.name, result.get_property(
                 p.name)) for p in result.list_properties() if result.get_property(p.name))
             self.entry_foundName.set_text(
