@@ -376,13 +376,15 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         #we want to grab key events also
         self.set_can_focus(True)
         self.connect("key-press-event", self.on_key_press)
+        self.connect("key-release-event", self.on_key_release)
 
         self.connect("draw", self.on_draw)
         self.add_events(Gdk.EventMask.SMOOTH_SCROLL_MASK |
                         Gdk.EventMask.BUTTON_PRESS_MASK |
                         Gdk.EventMask.BUTTON_RELEASE_MASK |
                         Gdk.EventMask.POINTER_MOTION_MASK |
-                        Gdk.EventMask.KEY_PRESS_MASK)
+                        Gdk.EventMask.KEY_PRESS_MASK |
+                        Gdk.EventMask.KEY_RELEASE_MASK)
 
         # Enable drag
         self.drag_source_set(Gdk.ModifierType.BUTTON1_MASK, [],
@@ -513,7 +515,7 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
             (self.zoom_level / zoom_level_backup) * (
             fix_point[1] + self.upper_left_view_position[1]) - fix_point[1]
         )
-        self.limit_position()
+        self.view_position_limit_to_bounds()
         self.queue_draw()
 
     def fit_to_page(self, _button=None):
@@ -527,7 +529,35 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         self.upper_left_view_position = (width*new_zoom_level - width_a) / 2.0, (height*new_zoom_level - height_a) / 2.0
         self.set_zoom(new_zoom_level)
 
-    def limit_position(self):
+    def _position_move(self, position, delta):
+        """
+        Move position by delta.
+
+        Args:
+            position (tuple): x, y tuple
+            delta (tuple): x, y tuple
+
+        Returns:
+            tuple: new position as x, y tuple
+        """        
+        return position[0] + delta[0], position[1] + delta[1]
+
+    def view_position_limit_to_bounds(self):
+        """
+        limit the view to the outer bounds
+        """        
+        self.upper_left_view_position = self.view_position_get_limited(self.upper_left_view_position)
+
+    def view_position_get_limited(self, position):
+        """
+        Calculate the limited view position.
+
+        Args:
+            position (tuple): original position
+
+        Returns:
+            tuple: limited position
+        """        
         width = self.life_line_chart_ancestor_graph.get_full_width()
         height = self.life_line_chart_ancestor_graph.get_full_height()
         width_a = self.get_allocated_width()
@@ -536,9 +566,9 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         allowed_y_min = min(0, (height*self.zoom_level - height_a) / 2.0)
         allowed_x_max = max(width*self.zoom_level - width_a, allowed_x_min)
         allowed_y_max = max(height*self.zoom_level - height_a, allowed_y_min)
-        self.upper_left_view_position = (
-           max(allowed_x_min, min(allowed_x_max, self.upper_left_view_position[0])),
-           max(allowed_y_min, min(allowed_y_max, self.upper_left_view_position[1])),
+        return (
+           max(allowed_x_min, min(allowed_x_max, position[0])),
+           max(allowed_y_min, min(allowed_y_max, position[1])),
         )
 
     def get_view_position_center(self):
@@ -710,6 +740,12 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         if Gdk.keyval_name(eventkey.keyval) == 'minus':
             self.zoom_out()
             return True
+        if Gdk.keyval_name(eventkey.keyval) in ['Control_L', 'Control_R']:
+            try:
+                cursor = Gdk.Cursor.new_from_name(widget.get_display(), 'grab')
+            except:
+                cursor = Gdk.Cursor(Gdk.CursorType.HAND1)
+            self.get_window().set_cursor(cursor)
 
         #if self.mouse_x and self.mouse_y:
             # cell_address = self.cell_address_under_cursor(self.mouse_x,
@@ -729,6 +765,13 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
 
         return False
 
+    def on_key_release(self, widget, eventkey):
+        """grab key release
+        """
+        if Gdk.keyval_name(eventkey.keyval) in ['Control_L', 'Control_R']:
+            cursor = Gdk.Cursor(Gdk.CursorType.ARROW)
+            self.get_window().set_cursor(cursor)
+
     def on_mouse_down(self, widget, event):
         """
         What to do if we release a mouse button
@@ -747,6 +790,11 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
             # left mouse on center dot, we translate on left click
             if event.button == 1:  # left mouse
                 # save the mouse location for movements
+                try:
+                    cursor = Gdk.Cursor.new_from_name(widget.get_display(), 'grabbing')
+                except:
+                    cursor = Gdk.Cursor(Gdk.CursorType.HAND1)
+                self.get_window().set_cursor(cursor)
                 self.translating = True
                 self.last_x, self.last_y = event.x, event.y
                 return True
@@ -800,14 +848,14 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
                     self.upper_left_view_position = (
                         self.upper_left_view_position[0] + 50 * dx,
                         self.upper_left_view_position[1] + 50 * dy)
-                    self.limit_position()
+                    self.view_position_limit_to_bounds()
                     self.queue_draw()
             elif event.state & accel_mask == Gdk.ModifierType.SHIFT_MASK:
                 if event.direction == Gdk.ScrollDirection.UP:
                     self.upper_left_view_position = (self.upper_left_view_position[0] - 50, self.upper_left_view_position[1])
                 elif event.direction == Gdk.ScrollDirection.DOWN:
                     self.upper_left_view_position = (self.upper_left_view_position[0] + 50, self.upper_left_view_position[1])
-                self.limit_position()
+                self.view_position_limit_to_bounds()
                 self.queue_draw()
             else:
                 print(str(event.get_scroll_deltas()))
@@ -815,7 +863,7 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
                     self.upper_left_view_position = (self.upper_left_view_position[0], self.upper_left_view_position[1] - 50)
                 elif event.direction == Gdk.ScrollDirection.DOWN:
                     self.upper_left_view_position = (self.upper_left_view_position[0], self.upper_left_view_position[1] + 50)
-                self.limit_position()
+                self.view_position_limit_to_bounds()
                 self.queue_draw()
 
         # stop the signal of scroll emission
@@ -877,11 +925,16 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
             # No translate or rotate
             return True
         if self.translating:
+            try:
+                cursor = Gdk.Cursor.new_from_name(widget.get_display(), 'grab')
+            except:
+                cursor = Gdk.Cursor(Gdk.CursorType.HAND1)
+            self.get_window().set_cursor(cursor)
             self.translating = False
             self.upper_left_view_position = \
                 self.upper_left_view_position[0] + self.center_delta_xy[0], \
                 self.upper_left_view_position[1] + self.center_delta_xy[1]
-            self.limit_position()
+            self.view_position_limit_to_bounds()
             self.center_delta_xy = 0, 0
         else:
             self.center_delta_xy = 0, 0
@@ -1166,7 +1219,11 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
             self.zoom_level_backup = self.zoom_level
         else:  # printing
             # ??
-            ctx.translate(-(self.upper_left_view_position[0] + self.center_delta_xy[0]), -(self.upper_left_view_position[1] + self.center_delta_xy[1]))
+            
+            self.view_position_limit_to_bounds()
+            translated_position = self._position_move(self.upper_left_view_position, self.center_delta_xy)
+            translated_position = self.view_position_get_limited(translated_position)
+            ctx.translate(-translated_position[0], -translated_position[1])
             ctx.scale(self.zoom_level, self.zoom_level)
             ctx.set_antialias(cairo.Antialias.BEST)
             #ctx.scale(scale, scale)
