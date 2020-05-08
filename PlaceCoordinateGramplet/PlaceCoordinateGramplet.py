@@ -47,7 +47,7 @@ from gramps.gen.plug  import (CATEGORY_QR_PLACE)
 from gramps.gen.display.place import displayer as place_displayer
 from gramps.gen.db import DbTxn
 from gramps.gen.config import config
-
+from gramps.gen.utils.place import conv_lat_lon
 def generate_address_string(location_information, entries=['building', 'street', 'area', 'town', 'county', 'state', 'country']):
     name = []
     if 'building' in entries and 'building' in location_information and 'street' in entries and 'street' in location_information:
@@ -218,18 +218,19 @@ class PlaceCoordinateGramplet(Gramplet):
         longitude = self.entry_long_db.get_text()
         self.entry_lat.set_text(self.entry_lat_db.get_text())
         self.entry_long.set_text(self.entry_long_db.get_text())
-        latitude = latitude.replace('N', '+')
-        latitude = latitude.replace('S', '-')
-        latitude = float(latitude)
-        longitude = longitude.replace('E', '+')
-        longitude = longitude.replace('W', '-')
-        longitude = float(longitude)
-        # self.osm.grab_focus()
+        try:
+            latitude, longitude = conv_lat_lon(latitude, longitude, format="D.D8")
+            latitude = float(latitude)
+            longitude = float(longitude)
+        except:
+            self.entry_foundName.set_text(_("Failed to interpret the string format."))
 
+        # self.osm.grab_focus()
         try:
             loc = GeocodeGlib.Location.new(latitude, longitude, 0)
             obj = GeocodeGlib.Reverse.new_for_location(loc)
             result = GeocodeGlib.Reverse.resolve(obj)
+            
             location_information = dict((p.name, result.get_property(
                 p.name)) for p in result.list_properties() if result.get_property(p.name))
             self.entry_foundName.set_text(
