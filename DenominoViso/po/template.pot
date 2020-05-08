@@ -32,6 +32,16 @@ msgstr ""
 msgid "No Source"
 msgstr ""
 
+#: DenominoViso/DenominoViso.py:203
+#: DenominoViso/DenominoViso.py:3020
+msgid "onclick"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:204
+#: DenominoViso/DenominoViso.py:3021
+msgid "onmouseover"
+msgstr ""
+
 #: DenominoViso/DenominoViso.py:208
 msgid "Ancestor"
 msgstr ""
@@ -569,6 +579,14 @@ msgstr ""
 
 #: DenominoViso/DenominoViso.py:2911
 msgid "should be"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2913
+msgid "Included"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2914
+msgid "Excluded"
 msgstr ""
 
 #: DenominoViso/DenominoViso.py:2953
