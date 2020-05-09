@@ -606,14 +606,14 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
         However, change in generic filter also triggers build_tree ! So we
         need to reset.
         """
-        # self.update()
-        pass
+        self.update()
 
     def active_changed(self, handle):
         """
         Method called when active person changes.
         """
-        dummy_handle = handle
+        #pass
+        #dummy_handle = handle
         # Reset everything but rotation angle (leave it as is)
         self.update()
 

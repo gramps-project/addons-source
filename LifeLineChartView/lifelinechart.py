@@ -1781,6 +1781,8 @@ class LifeLineChartGrampsGUI:
         Fill the data structures with the active data. This initializes all
         data.
         """
+        if self.lifeline.get_allocated_width() < 10:
+            return
         root_person_handle = self.get_active('Person')
         self.lifeline.set_values(root_person_handle, self.generic_filter)
         self.lifeline.reset()
