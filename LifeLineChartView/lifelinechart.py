@@ -1229,9 +1229,15 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                 else:
                     ctx.select_font_face(
                         fontName, cairo.FONT_SLANT_NORMAL, cairo.FONT_WEIGHT_NORMAL)
+                f_o = cairo.FontOptions()
+                f_o.set_antialias(cairo.ANTIALIAS_GOOD)
+                f_o.set_hint_metrics(cairo.HINT_METRICS_OFF)
+                ctx.set_font_options(f_o)
                 ctx.set_font_size(fontSize)
 
-                fascent, fdescent, fheight, fxadvance, fyadvance = ctx.font_extents()
+                # this method still quantizes the fheight!
+                # fascent, fdescent, fheight, fxadvance, fyadvance = ctx.font_extents()
+                fheight = 1.15*fontSize
 
                 ctx.save()
                 ctx.translate(x, y)
@@ -1241,8 +1247,13 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                 lines = text.split("\n")
 
                 for i, line in enumerate(lines):
+                    # ctx.set_font_size(fontSize)
                     xoff, yoff, textWidth, textHeight = ctx.text_extents(line)[
                         :4]
+                    # xoff *= self.zoom_level
+                    # yoff *= self.zoom_level
+                    # textWidth *= self.zoom_level
+                    # textHeight *= self.zoom_level
 
                     if align == 'middle':
                         offx = -textWidth / 2.0
@@ -1258,11 +1269,7 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                         offy = (fheight + verticalPadding) * i
 
                     ctx.move_to(offx, offy)
-                    f_o = cairo.FontOptions()
-                    f_o.set_antialias(cairo.ANTIALIAS_GOOD)
-                    ctx.set_font_options(f_o)
                     ctx.show_text(line)
-
                 ctx.restore()
 
             if item['type'] == 'text':
