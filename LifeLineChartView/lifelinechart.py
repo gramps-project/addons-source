@@ -352,6 +352,70 @@ _ = glocale.translation.gettext
 TWO_LINE_FORMAT_1 = 100
 TWO_LINE_FORMAT_2 = 101
 
+
+class LifeLineChartAxis(Gtk.DrawingArea):
+    def __init__(self, dbstate, uistate, life_line_chart_widget):
+        Gtk.DrawingArea.__init__(self)
+        st_cont = self.get_style_context()
+        self.dbstate = dbstate
+        self.uistate = uistate
+        self.life_line_chart_widget = life_line_chart_widget
+        self.connect("draw", self.on_draw)
+        self.set_size_request(100,100)
+
+    def do_size_request(self, requisition):
+        """
+        Overridden method to handle size request events.
+        """
+        requisition.width = 100
+        requisition.height = 100
+
+    def do_get_preferred_width(self):
+        """ GTK3 uses width for height sizing model. This method will
+            override the virtual method
+        """
+        req = Gtk.Requisition()
+        self.do_size_request(req)
+        return req.width, req.width
+
+    def do_get_preferred_height(self):
+        """ GTK3 uses width for height sizing model. This method will
+            override the virtual method
+        """
+        req = Gtk.Requisition()
+        self.do_size_request(req)
+        return req.height, req.height
+
+    def on_draw(self, widget, ctx, scale=1.):
+        """
+        callback to draw the lifelinechart
+        """
+        run_profiler = False
+        if run_profiler:
+            import cProfile
+            cProfile.runctx('widget.draw(ctx)', globals(), locals())
+        else:
+            widget.draw(ctx)
+
+    def draw(self, ctx=None, scale=1.):
+        translated_position = self.life_line_chart_widget._position_move(self.life_line_chart_widget.upper_left_view_position, self.life_line_chart_widget.center_delta_xy)
+        translated_position = ((self.life_line_chart_widget.life_line_chart_ancestor_graph.get_full_width() - self.get_allocated_width()*0)*self.life_line_chart_widget.zoom_level - 0.9*self.get_allocated_width(), translated_position[1])
+        # translated_position = self.life_line_chart_widget.view_position_get_limited(translated_position)
+        ctx.translate(-translated_position[0], -translated_position[1])
+        ctx.scale(self.life_line_chart_widget.zoom_level, self.life_line_chart_widget.zoom_level)
+
+        visible_range = (self.get_allocated_width(), self.get_allocated_height())
+        arbitrary_clip_offset = max(visible_range)*0.5 # remove text items if their start position is 50%*view_width outside
+        view_x_min = (translated_position[0] - arbitrary_clip_offset) / self.life_line_chart_widget.zoom_level
+        view_x_max = (translated_position[0] + arbitrary_clip_offset + visible_range[0]) / self.life_line_chart_widget.zoom_level
+        view_y_min = (translated_position[1] - arbitrary_clip_offset) / self.life_line_chart_widget.zoom_level
+        view_y_max = (translated_position[1] + arbitrary_clip_offset + visible_range[1]) / self.life_line_chart_widget.zoom_level
+        self.life_line_chart_widget.draw_items(
+            ctx,
+            self.life_line_chart_widget.life_line_chart_ancestor_graph.additional_graphical_items['grid'],
+            (view_x_min, view_y_min, view_x_max, view_y_max),
+            (20,30))
+        pass
 #-------------------------------------------------------------------------
 #
 # LifeLineChartBaseWidget
@@ -448,6 +512,10 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         self._mouse_click_cell_address = None
         self.symbols = Symbols()
         self.reload_symbols()
+        self.axis_widget = None
+
+    def set_axis_widget(self, widget):
+        self.axis_widget = widget
 
     def reload_symbols(self):
         dth_idx = self.uistate.death_symbol
@@ -536,7 +604,7 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
             fix_point[1] + self.upper_left_view_position[1]) - fix_point[1]
         )
         self.view_position_limit_to_bounds()
-        self.queue_draw()
+        self.queue_draw_wrapper()
 
     def fit_to_page(self, _button=None):
         width = self.life_line_chart_ancestor_graph.get_full_width()
@@ -747,14 +815,14 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
                         self.upper_left_view_position[0] + 50 * dx,
                         self.upper_left_view_position[1] + 50 * dy)
                     self.view_position_limit_to_bounds()
-                    self.queue_draw()
+                    self.queue_draw_wrapper()
             elif event.state & accel_mask == Gdk.ModifierType.SHIFT_MASK:
                 if event.direction == Gdk.ScrollDirection.UP:
                     self.upper_left_view_position = (self.upper_left_view_position[0] - 50, self.upper_left_view_position[1])
                 elif event.direction == Gdk.ScrollDirection.DOWN:
                     self.upper_left_view_position = (self.upper_left_view_position[0] + 50, self.upper_left_view_position[1])
                 self.view_position_limit_to_bounds()
-                self.queue_draw()
+                self.queue_draw_wrapper()
             else:
                 print(str(event.get_scroll_deltas()))
                 if event.direction == Gdk.ScrollDirection.UP:
@@ -762,7 +830,7 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
                 elif event.direction == Gdk.ScrollDirection.DOWN:
                     self.upper_left_view_position = (self.upper_left_view_position[0], self.upper_left_view_position[1] + 50)
                 self.view_position_limit_to_bounds()
-                self.queue_draw()
+                self.queue_draw_wrapper()
 
         # stop the signal of scroll emission
         # to prevent window scrolling
@@ -801,7 +869,7 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         #     self.rotate_value -= math.degrees(diff_angle)
         #     self.last_x, self.last_y = event.x, event.y
         #self.draw()
-        self.queue_draw()
+        self.queue_draw_wrapper()
         return True
 
     def do_mouse_click(self):
@@ -839,7 +907,7 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
 
         self.last_x, self.last_y = None, None
         #self.draw()
-        self.queue_draw()
+        self.queue_draw_wrapper()
         return True
 
     def on_drag_begin(self, widget, data):
@@ -920,6 +988,11 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
                 pass
             return True
         return False
+
+    def queue_draw_wrapper(self):
+        self.queue_draw()
+        if self.axis_widget:
+            self.axis_widget.queue_draw()
 
 #-------------------------------------------------------------------------
 #
@@ -1054,11 +1127,17 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                                 individual.images[date_ov] = get_thumbnail_path(path, media.mime, size=SIZE_NORMAL)
                     self.life_line_chart_ancestor_graph.define_svg_items()
                 return reset
-            reset = plot(reset)
+
+            run_profiler = False
+            if run_profiler:
+                import cProfile
+                cProfile.runctx('plot(reset)', globals(), locals())
+            else:
+                reset = plot(reset)
         additional_items = []
         for key, value in self.life_line_chart_ancestor_graph.additional_graphical_items.items():
             additional_items += value
-        sorted_individuals = [(gr.get_birth_event()['ordinal_value'], index, gr) for index, gr in enumerate(
+        sorted_individuals = [(gr.get_birth_date_ov(), index, gr) for index, gr in enumerate(
             self.life_line_chart_ancestor_graph.graphical_individual_representations)]
         sorted_individuals.sort()
         sorted_individual_items = []
@@ -1127,14 +1206,17 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
             ctx.set_antialias(cairo.Antialias.BEST)
             #ctx.scale(scale, scale)
             #self.zoom_level_backup = self.zoom_level
-
         visible_range = (self.get_allocated_width(), self.get_allocated_height())
         arbitrary_clip_offset = max(visible_range)*0.5 # remove text items if their start position is 50%*view_width outside
         view_x_min = (self.upper_left_view_position[0] - arbitrary_clip_offset) / self.zoom_level
         view_x_max = (self.upper_left_view_position[0] + arbitrary_clip_offset + visible_range[0]) / self.zoom_level
         view_y_min = (self.upper_left_view_position[1] - arbitrary_clip_offset) / self.zoom_level
         view_y_max = (self.upper_left_view_position[1] + arbitrary_clip_offset + visible_range[1]) / self.zoom_level
-        for item in self.chart_items:
+        self.draw_items(ctx, self.chart_items, (view_x_min, view_y_min, view_x_max, view_y_max))
+
+    def draw_items(self, ctx, chart_items, view_clip_box, limit_font_size = None):
+        view_x_min, view_y_min, view_x_max, view_y_max = view_clip_box
+        for item in chart_items:
             def text_function(ctx, text, x, y, rotation=0, fontName="Arial", fontSize=10, verticalPadding=0, vertical_offset=0, horizontal_offset=0, bold=False, align='center', position='middle'):
                 """
                 Used to draw normal text
@@ -1193,6 +1275,9 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                 if type(font_size) == str:
                     if font_size.endswith('px') or font_size.endswith('pt'):
                         font_size = float(font_size[:-2])
+                if limit_font_size:
+                    font_size = min(font_size, limit_font_size[1]/self.zoom_level)
+                    font_size = max(font_size, limit_font_size[0]/self.zoom_level)
                 rotation = 0
                 if 'transform' in args and args['transform'].startswith('rotate('):
                     rotation = float(args['transform'][7:-1].split(',')[0])
@@ -1660,8 +1745,7 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
         # no drag occured, expand or collapse the section
         self._mouse_click = False
         #self.draw()
-        self.queue_draw()
-
+        self.queue_draw_wrapper()
 
 class LifeLineChartGrampsGUI:
     """ class for functions lifelinechart GUI elements will need in Gramps

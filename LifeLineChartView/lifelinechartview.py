@@ -406,7 +406,9 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
                                                   self.on_popup)
         chart.formatting = self.formatting
         chart.positioning = self.positioning
+        self.axis_widget = lifelinechart.LifeLineChartAxis(self.dbstate, self.uistate, chart)
         self.set_lifeline(chart)
+        chart.set_axis_widget(self.axis_widget)
 
 
         self.scrolledwindow = Gtk.ScrolledWindow()
@@ -461,7 +463,12 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
         self.view_refresh_btn.connect("clicked", self.lifeline.rebuild_instance_cache)
 
         #self.vbox.pack_start(self.scrolledwindow, True, True, 0)
-        self.vbox.pack_start(self.lifeline, True, True, 0)
+
+        self.hbox_split_view = Gtk.Box(homogeneous=False, spacing=0,
+                               orientation=Gtk.Orientation.HORIZONTAL)
+        self.hbox_split_view.pack_start(self.lifeline, True, True, 0)
+        self.hbox_split_view.pack_start(self.axis_widget, False, False, 0)
+        self.vbox.pack_start(self.hbox_split_view, True, True, 0)
 
 
         gen_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
@@ -640,7 +647,8 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
         if run_profiler:
             import cProfile
             cProfile.runctx('self.main()', globals(), locals())
-        self.main()
+        else:
+            self.main()
 
     def goto_handle(self, handle):
         """
