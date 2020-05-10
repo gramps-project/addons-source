@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.1.x\n"
 "Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
 "POT-Creation-Date: 2020-04-06 09:28-0500\n"
-"PO-Revision-Date: 2020-05-09 00:04+0200\n"
+"PO-Revision-Date: 2020-05-10 16:08+0200\n"
 "Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
 "Language-Team: Dutch <gramps-users@lists.sourceforge.net\n"
 "Language: nl\n"
@@ -39,7 +39,7 @@ msgstr "Geen bron"
 
 #: DenominoViso/DenominoViso.py:203 DenominoViso/DenominoViso.py:3020
 msgid "onclick"
-msgstr "bij klikken"
+msgstr "aanklikken"
 
 #: DenominoViso/DenominoViso.py:204 DenominoViso/DenominoViso.py:3021
 msgid "onmouseover"
