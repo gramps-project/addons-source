@@ -39,15 +39,10 @@ import xml.dom.minidom
 #---------------------------------------------------------------
 from gramps.gen.datehandler import parser
 from gramps.gen.config import config
-
-
-### DB$: 08/05/2020 ########################################################################################
 from gramps.gui.dialog import ErrorDialog, OkDialog
 from datetime import datetime
 import inspect, os
-
 import logging
-### DB$: 08/05/2020 ########################################################################################
 
 
 
@@ -75,8 +70,7 @@ ORDER_ATTR = _('Order')
 
 # The key of the data item in a source to define it as a form source.
 DEFINITION_KEY = _('Form')
-# the following should be all the translations of "Form" in our po files
-INTL_FORM = {"Form", "Formular", "Formulaire", "Obrazac", "Форма"}
+
 
 # Prefixes for family attributes.
 GROOM = _('Groom')
@@ -102,7 +96,6 @@ CONFIG.init()
 
 
 
-### DB$: 10/05/2020 ########################################################################################
 def DictFromKeyValueText(DefaultKey, KVTXT):
     """
         Create dictionary object from a string containing Key/Value pairs
@@ -208,14 +201,6 @@ def DisplayLogError(ErrTitle, ErrText):
 
 _LOG = logging.getLogger("Form Gramplet")
 _LOG.debug('The "Form Gramplet" is loading...')
-### DB$: 10/05/2020 ########################################################################################
-
-
-
-
-
-
-
 
 
 
@@ -229,14 +214,12 @@ class Form():
     A class to read form definitions from an XML file.
     """
     def __init__(self):
-        ### DB$: 09/05/2020 ########################################################################################
         self.__refs = {}
         self.__refLbls = {}
         self.__locns = {}
         self.__locnLbls = {}
         self.__dateROs = {}
         self.__dateLbls = {}
-        ### DB$: 09/05/2020 ########################################################################################
         self.__dates = {}
         self.__headings = {}
         self.__sections = {}
@@ -246,15 +229,20 @@ class Form():
         self.__names = {}
         self.__section_types = {}
 
-        ### DB$: 14/05/2020 ########################################################################################
         XmlPath = os.path.dirname(__file__)
         DefXml = definition_files
-        UsrXml = os.getenv('G.FORMS')
-        _LOG.debug('The environment variable "%s" contains: %s' % ('G.FORMS', UsrXml))
-        if UsrXml:
-           AllXml = UsrXml.split(';')
-           AllXml.extend(DefXml)
-        _LOG.debug('XML File List (not an error if missing): %s' % AllXml)
+        UsrXml  = os.getenv('G.FORMS')
+        UsrXmlX = os.getenv('G.FORMSX')
+        _LOG.debug('The envvar "%s": %s' % ('G.FORMS',  UsrXml))
+        _LOG.debug('The envvar "%s": %s' % ('G.FORMSX', UsrXmlX))
+        if  UsrXml:
+            AllXml = UsrXml.split(';')
+            AllXml.extend(DefXml)
+        if  UsrXmlX:
+            Exclusions = UsrXmlX.split(';')
+            for Exclusion in Exclusions:
+                AllXml.remove(Exclusion)
+        _LOG.debug('XML File List (%d files, not an error if missing): %s' % (len(AllXml), AllXml))
         _LOG.debug('Loading XML files from: "%s" (missing files ignored)' % XmlPath)
         for file_name in AllXml:
             full_path = os.path.join(os.path.dirname(__file__), file_name)
@@ -262,33 +250,24 @@ class Form():
                 _LOG.debug('FOUND XML FILE: %s' % file_name)
                 self.__load_definitions(full_path)
         _LOG.debug('Finished Loading all XML files')
-        ### DB$: 14/05/2020 ########################################################################################
 
 
 
     def __load_definitions(self, definition_file):
-        ### DB$: 08/05/2020 ########################################################################################
         try:
            dom = xml.dom.minidom.parse(definition_file)
         except Exception as xArgs:
            self.DisplayLogError(_("XML SYNTAX ERROR") + ": " +  definition_file, str(xArgs))
-        ### DB$: 08/05/2020 ########################################################################################
-
-
 
         top = dom.getElementsByTagName('forms')
-        ### DB$: 08/05/2020 ########################################################################################
         if len(top) == 0:
            self.DisplayLogError(_("XML ERROR") + ": " +  definition_file, _("No '<form>' tags found!"))
-        ### DB$: 08/05/2020 ########################################################################################
-
 
         for form in top[0].getElementsByTagName('form'):
             id = form.attributes['id'].value
             self.__names[id] = form.attributes['title'].value
             self.__types[id] = form.attributes['type'].value
 
-            ### DB$: 13/05/2020 ########################################################################################
             if 'reference' in form.attributes:
                 RefAttr = form.attributes['reference'].value.strip()
                 if  RefAttr != '':
@@ -310,12 +289,7 @@ class Form():
                     if LocnVal != '': self.__locns[id]    = LocnVal
 
             DateVal = ''
-            ### DB$: 13/05/2020 ########################################################################################
-
-
             if 'date' in form.attributes:
-                ### DB$: 09/05/2020 ########################################################################################
-                #self.__dates[id] = form.attributes['date'].value
                 DateAttr  = form.attributes['date'].value.strip()
                 if  DateAttr != '':
                     dkv     = DictFromKeyValueText('default', DateAttr)
@@ -341,7 +315,6 @@ class Form():
                 _LOG.debug("Date Defaulting to '" + DateVal + "' (set date as read-only=" + str(DateValRO) + ')')
                 self.__dateROs[id] = DateValRO
                 self.__dates[id]   = DateVal
-                ### DB$: 09/05/2020 ########################################################################################
             else:
                 self.__dateROs[id] = False     #Editable
                 self.__dates[id] = None        #No default date
@@ -358,18 +331,14 @@ class Form():
             self.__columns[id] = {}
             self.__titles[id] = {}
             self.__section_types[id] = {}
-            ### DB$: 08/05/2020 ########################################################################################
             if len(sections) == 0:
                self.DisplayLogError(_("XML ERROR") + ": " +  definition_file, _("No '<section>' tags found within a '<form>'!"))
-            ### DB$: 08/05/2020 ########################################################################################
             for section in sections:
                 if 'title' in section.attributes:
                     title = section.attributes['title'].value
                 else:
                     title = ''
 
-                ### DB$: 08/05/2020 ########################################################################################
-                #role = section.attributes['role'].value
                 try:
                    role = section.attributes['role'].value.strip()
                    if role == '':
@@ -377,7 +346,6 @@ class Form():
                 except:
                    self.DisplayLogError(_("XML ERROR") + ": " +  definition_file, _("A '<section>' is missing the 'role=' attribute"))
 
-                #section_type = section.attributes['type'].value
                 try:
                    section_type = section.attributes['type'].value.lower()
                 except:
@@ -385,9 +353,6 @@ class Form():
 
                 if section_type != 'person' and section_type != 'multi' and section_type != 'family':
                    self.DisplayLogError(_("XML ERROR") + ": " +  definition_file, _("A '<section>' with Role") + "='" + role + "' " + _("has an invalid value of") + " '" + section_type + "' " + _("for the 'type=' attribute"))
-
-                ### DB$: 08/05/2020 ########################################################################################
-
 
                 self.__sections[id].append(role)
                 self.__titles[id][role] = title
@@ -401,11 +366,7 @@ class Form():
                     attr_text = _(attr[0].childNodes[0].data)
                     if size:
                         size_text = size[0].childNodes[0].data
-                        ### DB$: 09/05/2020 ########################################################################################
-                        #OkDialog("SIZE SPECIFIED - size",      size)
-                        #OkDialog("SIZE SPECIFIED - size_text", size_text)
                         ######## The size is ignored by the form app at the moment ###########
-                        ### DB$: 09/05/2020 ########################################################################################
                     else:
                         size_text = '0'
                     if longname:
@@ -432,9 +393,6 @@ class Form():
         """ Return a textual date for a given form. """
         return self.__dates[form_id]
 
-
-
-    ### DB$: 09/05/2020 ########################################################################################
     def get_dateRO(self, form_id):
         """ Return a true/false value (Is date editable by user?)"""
         return self.__dateROs[form_id]
@@ -474,9 +432,6 @@ class Form():
             return self.__locns[form_id]
         except:
             return ""
-    ### DB$: 09/05/2020 ########################################################################################
-
-
 
     def get_type(self, form_id):
         """ Return a textual event type for a given form. """
@@ -492,16 +447,13 @@ class Form():
 
     def get_section_title(self, form_id, section):
         """ Return the title for a given section. """
-        ### DB$: 08/05/2020 ########################################################################################
-        ### DB$: If 'title' wasn't specified, 'role' probably was...
+        # If 'title' wasn't specified, 'role' probably was...
         SectTitle = self.__titles[form_id][section]         #Grab the SECTION's 'title' tag
         if SectTitle == '':
            SectTitle = SectTitle = section.strip()
         if SectTitle == '':
            SectTitle = "??"                                 #Should never get here
-        #OkDialog(_("DB$TEST DIALOG - get_section_title"), _(SectTitle))
         return SectTitle
-        ### DB$: 08/05/2020 ########################################################################################
 
 
     def get_section_type(self, form_id, section):
@@ -531,7 +483,6 @@ def get_form_title(form_id):
     """
     return FORM.get_title(form_id)
 
-### DB$: 13/05/2020 ########################################################################################
 def get_form_dateRO(form_id):
     """ Return a true/false value (Is date editable by user?) """
     DateRo = FORM.get_dateRO(form_id)
@@ -559,12 +510,6 @@ def get_form_refLbl(form_id):
 def get_form_ref(form_id):
     """ Return the default Reference """
     return FORM.get_ref(form_id)
-### DB$: 13/05/2020 ########################################################################################
-
-
-
-
-
 
 def get_form_date(form_id):
     """
@@ -572,14 +517,6 @@ def get_form_date(form_id):
     """
     date_str = FORM.get_date(form_id)
     if  date_str:
-        ### DB$: 08/05/2020 ########################################################################################
-        #OkDialog("date_str: BEFORE - get_form_date", date_str)
-        #if date_str == '.':
-        #   oNow = datetime.now()
-        #   date_str = oNow.strftime('%d %B %Y')
-        #   OkDialog(_("TODAY's DATE - get_form_date"), _(date_str))
-        ### DB$: 08/05/2020 ########################################################################################
-
         return parser.parse(date_str)
     else:
         return None
@@ -605,11 +542,8 @@ def get_form_sections(form_id):
 def get_section_title(form_id, section):
     """
     Return the title for a given section.
-    DB$
-    return FORM.get_section_title(form_id, section)
     """
     return FORM.get_section_title(form_id, section)
-
 
 def get_section_type(form_id, section):
     """
@@ -628,7 +562,7 @@ def get_form_id(source):
     Return the form id attached to the given source.
     """
     for attr in source.get_attribute_list():
-        if str(attr.get_type()) in INTL_FORM:
+        if str(attr.get_type()) in DEFINITION_KEY:
             return attr.get_value()
     return None
 
