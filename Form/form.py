@@ -562,7 +562,7 @@ def get_form_id(source):
     Return the form id attached to the given source.
     """
     for attr in source.get_attribute_list():
-        if str(attr.get_type()) in DEFINITION_KEY:
+        if str(attr.get_type()) == DEFINITION_KEY:
             return attr.get_value()
     return None
 
