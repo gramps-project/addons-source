@@ -51,10 +51,36 @@ from gramps.gen.db import DbTxn
 from gramps.gen.display.name import displayer as name_displayer
 from gramps.gen.datehandler import get_date, displayer
 from form import ORDER_ATTR, GROOM, BRIDE
-from form import (get_form_id, get_form_date, get_form_type, get_form_headings,
+from form import (get_form_date, get_form_id, get_form_type, get_form_headings,
                   get_form_sections, get_section_title, get_section_type,
                   get_section_columns, get_form_citation)
 from entrygrid import EntryGrid
+
+
+
+### DB$: 13/05/2020 ########################################################################################
+from form import ( get_form_dateRO, get_form_dateLbl,
+                   get_form_locn,   get_form_locnLbl,
+                   get_form_ref,    get_form_refLbl,
+                   FormDlgError, FormDlgInfo, FormDlgDebug,
+                   GetObjectClass
+                 )
+
+# from datetime import datetime (fails for .today()!)
+from datetime import date, datetime
+from gramps.gen.lib           import Place, PlaceName
+from gramps.gen.display.place import displayer as place_displayer
+from gramps.gen.lib import Date
+from gramps.gen.lib.date import Today
+from gramps.gen.datehandler import parser  as DateParser
+
+import logging
+_LOG = logging.getLogger("Form Gramplet")
+### DB$: 13/05/2020 ########################################################################################
+
+
+
+
 
 #------------------------------------------------------------------------
 #
@@ -78,6 +104,9 @@ class EditForm(ManagedWindow):
     Form Editor.
     """
     def __init__(self, dbstate, uistate, track, citation, callback):
+        ### DB$: 13/05/2020 ########################################################################################
+        _LOG.debug('###############\n\nEditForm() starting')
+        ### DB$: 13/05/2020 ########################################################################################
 
         self.dbstate = dbstate
         self.uistate = uistate
@@ -191,6 +220,9 @@ class EditForm(ManagedWindow):
         ref_label = Gtk.Label(label=_("Reference:"))
         ref_label.set_halign(Gtk.Align.START)
         ref_label.set_valign(Gtk.Align.CENTER)
+        ### DB$: 09/05/2020 ########################################################################################
+        self.widgets['ref_label'] = ref_label
+        ### DB$: 09/05/2020 ########################################################################################
         grid.attach(ref_label, 0, 1, 1, 1)
 
         ref_entry = Gtk.Entry()
@@ -198,9 +230,13 @@ class EditForm(ManagedWindow):
         grid.attach(ref_entry, 1, 1, 1, 1)
         self.widgets['ref_entry'] = ref_entry
 
+
         date_label = Gtk.Label(label=_("Date:"))
         date_label.set_halign(Gtk.Align.START)
         date_label.set_valign(Gtk.Align.CENTER)
+        ### DB$: 13/05/2020 ########################################################################################
+        self.widgets['date_label'] = date_label
+        ### DB$: 13/05/2020 ########################################################################################
         grid.attach(date_label, 0, 2, 1, 1)
 
         date_text = ValidatableMaskedEntry()
@@ -215,6 +251,9 @@ class EditForm(ManagedWindow):
         place_label = Gtk.Label(label=_("Place:"))
         place_label.set_halign(Gtk.Align.START)
         place_label.set_valign(Gtk.Align.CENTER)
+        ### DB$: 09/05/2020 ########################################################################################
+        self.widgets['place_label'] = place_label
+        ### DB$: 09/05/2020 ########################################################################################
         grid.attach(place_label, 0, 3, 1, 1)
 
         place_text = Gtk.Label()
@@ -228,21 +267,27 @@ class EditForm(ManagedWindow):
         grid.attach(place_event_box, 1, 3, 1, 1)
         self.widgets['place_event_box'] = place_event_box
 
-        image = Gtk.Image()
-        image.set_from_icon_name('gtk-index', Gtk.IconSize.BUTTON)
-        place_share = Gtk.Button()
-        place_share.set_relief(Gtk.ReliefStyle.NONE)
-        place_share.add(image)
-        grid.attach(place_share, 2, 3, 1, 1)
-        self.widgets['place_share'] = place_share
 
+        ### DB$: 09/05/2020 ########################################################################################
+        #Fixed button order to be consistent with Gramps & the others on this form!
         image = Gtk.Image()
         image.set_from_icon_name('list-add', Gtk.IconSize.BUTTON)
         place_add = Gtk.Button()
         place_add.set_relief(Gtk.ReliefStyle.NONE)
         place_add.add(image)
-        grid.attach(place_add, 3, 3, 1, 1)
+        grid.attach(place_add, 2, 3, 1, 1)
         self.widgets['place_add'] = place_add
+
+        image = Gtk.Image()
+        image.set_from_icon_name('gtk-index', Gtk.IconSize.BUTTON)
+        place_share = Gtk.Button()
+        place_share.set_relief(Gtk.ReliefStyle.NONE)
+        place_share.add(image)
+        grid.attach(place_share, 3, 3, 1, 1)
+        self.widgets['place_share'] = place_share
+        ### DB$: 09/05/2020 ########################################################################################
+
+
 
         button_box = Gtk.ButtonBox()
         button_box.set_layout(Gtk.ButtonBoxStyle.END)
@@ -270,6 +315,42 @@ class EditForm(ManagedWindow):
 
         return root
 
+
+    ### DB$: 12/05/2020 ########################################################################################
+    #def DebugDate(DateObject)
+    #    _LOG.debug("\n\nDATE OBJECT [text=%s]" % str(DateObject))
+    #
+    #    _LOG.debug("\n\n")
+
+    def GetPlaceFromName(self, place_name):
+        """ This will create the place if it doesn't aready exist """
+
+        # Look through all handles for the wanted place name
+        if  place_name == "":
+            return None
+        place_list = self.dbstate.db.get_place_handles()
+        for place_handle in place_list:
+            place = self.dbstate.db.get_place_from_handle(place_handle)
+            place_title = place_displayer.display(self.dbstate.db, place)
+            #_LOG.debug('[GPFN] Looking at: : ' + place_title)
+            if  place_title.strip() == place_name:
+                _LOG.debug('[GPFN] Place found in DB [%s]: %s' % (place.get_gramps_id(), place_name))
+                return place
+
+        # The place doesn't already exist, create it [TODO: Now to set TYPE=FORMS (user can manually edit those for now)
+        place = Place()
+        place.set_title(place_name)
+        place.set_type('_FORM')     #User can easy find these
+        place.set_name(PlaceName(value=place_name))
+
+        with DbTxn(_("Form Create New Place (%s)") % place_name, self.dbstate.db) as self.trans:
+            self.dbstate.db.add_place(place, self.trans)
+            self.dbstate.db.commit_place(place, self.trans)
+        _LOG.debug("[GPFN] Place wasn't in DB, Created it: [%s] %s" % (place.get_gramps_id(), place_name))
+        return place
+    ### DB$: 12/05/2020 ########################################################################################
+
+
     def __populate_gui(self, event):
         """
         Populate the GUI for a given form event.
@@ -286,20 +367,95 @@ class EditForm(ManagedWindow):
         event_type.set_from_xml_str(get_form_type(form_id))
         self.event.set_type(event_type)
 
+        ### DB$: 13/05/2020 ########################################################################################
+        # Set date LABEL TEXT
+        dateLBL = get_form_dateLbl(form_id)       #From stored XML
+        if  dateLBL != '':
+            dateLBL = dateLBL + ":"
+            _LOG.debug("Date Label = " + dateLBL)
+            date_label = self.widgets['date_label']
+            date_label.set_text(dateLBL)
+
+        # Set Reference LABEL TEXT
+        RefLbl = get_form_refLbl(form_id)       #From stored XML
+        if  RefLbl != "":
+            RefLbl = RefLbl + ":"
+            _LOG.debug("Reference Label = " + RefLbl)
+            ref_label = self.widgets['ref_label']
+            ref_label.set_text(RefLbl)
+
+        # Set Location LABEL TEXT
+        LocnLbl = get_form_locnLbl(form_id)       #From stored XML
+        if  LocnLbl != "":
+            LocnLbl = LocnLbl + ":"
+            _LOG.debug("Location Label   = " + LocnLbl)
+            place_label = self.widgets['place_label']
+            place_label.set_text(LocnLbl)
+
+
+        # Set DEFAULT Reference Value
+        ref_entry = self.widgets['ref_entry']
+        RefDef = ref_entry.get_text()
+        if  RefDef == "":                         #Currently no data in the field
+            RefDef = get_form_ref(form_id)        #From stored XML
+            if  RefDef != "":
+                # Display in the form
+                _LOG.debug("Setting DEFAULT Reference: " + RefDef)
+                ref_entry.set_text(RefDef)
+
+        # Set DEFAULT Location Value
+        place_text = self.widgets['place_text']
+        LocnDef = place_text.get_text()
+        if  LocnDef in PlaceEntry.EMPTY_TEXT:     #Currently no data in the field, #EMPTY_TEXT looks like "<i>...text...</i>
+            # This is not editing an existing event (with perhaps a different Location #
+            LocnDef = get_form_locn(form_id)      #From stored XML
+            if  LocnDef != "":
+                # Display in the form
+                _LOG.debug("Location Default = " + LocnDef)
+                place_text.set_text(LocnDef)
+
+                # Update the event
+                NamePlace = self.GetPlaceFromName(LocnDef)
+                event.set_place_handle(NamePlace.get_handle())
+        ### DB$: 13/05/2020 ########################################################################################
+
         # Set date
-        form_date = get_form_date(form_id)
+        form_date  = get_form_date(form_id)          #From stored XML
+        ### DB$: 09/05/2020 ########################################################################################
+        FormDateRO = get_form_dateRO(form_id)
+        ### DB$: 09/05/2020 ########################################################################################
         date_text = self.widgets['date_text']
         date_button = self.widgets['date_button']
         if form_date is not None:
+            _LOG.debug("Adding the DATE for the event: %s (read-only=%s)" % (form_date, FormDateRO))
+            #####FormDateRO = True           ########################## Even though you can change the date, the old date sticks - WTF #################################
             date_text.set_text(displayer.display(form_date))
             self.event.set_date_object(form_date)
             self.citation.set_date_object(form_date)
-            date_text.set_editable(False)
-            date_button.set_sensitive(False)
+            ### DB$: 09/05/2020 ########################################################################################
+            #date_text.set_editable(False)
+            #date_button.set_sensitive(False)
+            date_text.set_editable(not FormDateRO)
+            date_button.set_sensitive(not FormDateRO)
+            #FormDlgDebug("set_editable", str(not FormDateRO))
+            ### DB$: 09/05/2020 ########################################################################################
         else:
             date_text.set_text(get_date(event))
             date_text.set_editable(True)
             date_button.set_sensitive(True)
+
+        ### DB$: 13/05/2020 ########################################################################################
+        if  FormDateRO:
+            DateTT = _('The date was set up by the form definition and is read-only')
+        else:
+            DateTT = _('You can enter "%s" or any other valid date string (or use the date picker)' % _('today'))
+        _LOG.debug("Date Tooltip: %s" % DateTT)
+        date_text.set_tooltip_text(DateTT)
+        date_label.set_tooltip_text(DateTT)
+        date_button.set_tooltip_text(DateTT)
+        ### DB$: 13/05/2020 ########################################################################################
+
+
 
         # Create tabs
         self.details = DetailsTab(self.dbstate,
@@ -322,16 +478,108 @@ class EditForm(ManagedWindow):
                                        self.citation.get_media_list())
 
         self._add_tab(self.notebook, self.details)
-        self._add_tab(self.notebook, self.headings)
+        ### DB$: 13/05/2020 ########################################################################################
+        #if  self.headings.is_empty:            #[BUG] The function always returns true!
+        HeadingCnt = len(get_form_headings(form_id))
+        if  HeadingCnt == 0:
+            _LOG.debug('The Headings tab is empty so we are not displaying it.')
+        else:
+            _LOG.debug('The Headings tab has %d fields (so adding the tab)' % HeadingCnt)
+            self._add_tab(self.notebook, self.headings)
+        ### DB$: 13/05/2020 ########################################################################################
         self._add_tab(self.notebook, self.gallery_list)
 
         self.notebook.show_all()
         self.notebook.set_current_page(0)
 
+
     def save(self, button):
         """
         Called when the user clicks the OK button.
         """
+
+        ### DB$: 13/05/2020 ########################################################################################
+#**    [CommentBlockStart     (13 May 2020 3:02:40 PM, Dennis)
+#**+----------------------------------------------------------------------
+#**|        date_text = self.widgets['date_text']
+#**|        EntryText = date_text.get_text().strip()  #Date in the form's entry field
+#**|        DateObj   = self.event.get_date_object()  #Date in the Event Object (#gramps/gen/database.py)
+#**|        _LOG.debug("EditForm.Save() - OK button clicked, Saving to DB, EVENT DATE : %s"  % DateObj)
+#**|        if  EntryText != str(DateObj):
+#**|            _LOG.debug("[DATES DIFFER!!!!] Entry Field contains : %s" % EntryText)
+#**|        if  EntryText == '.':                        #User typed in "." for todays date (field was red but still accepted)
+#**|            EntryText = str(Today())
+#**|            _LOG.debug("User typed in '.' (for today), Date Now : %s" % EntryText)
+#**|        NewDate = Date()
+#**|        NewDate.set(text=EntryText)
+#**|        _LOG.debug("NewDate: %s" % NewDate)
+#**|        self.event.set_date_object(NewDate)  #Make sure we trigger sync otherwise original default value may be kept (where date field not read-only)
+#**|        if  str(NewDate) == '' or str(NewDate) == '0000-00-00':
+#**|            FormDlgInfo(_("MISSING DATE"), _("You should fill in the manditory date information"))
+#**|            return
+#**+----------------------------------------------------------------------
+#**    CommentBlockEnd]       (13 May 2020 3:02:40 PM, Dennis)
+
+        date_text   = self.widgets['date_text']
+        GuiDateText = date_text.get_text().strip() #Date in the form's entry field
+        EvtDateObj  = self.event.get_date_object() #Date in the Event Object (#gramps/gen/database.py)
+        EvtDateText = str(EvtDateObj)
+        if  EvtDateText == '0000-00-00':
+            EvtDateText = ''
+        if  EvtDateText == '.':                    #Force update
+            EvtDateText = ''
+        _LOG.debug('EditForm.Save() - OK button clicked, Saving to DB, EVENT DATE : %s'  % EvtDateText)
+        if  GuiDateText == EvtDateText:
+            _LOG.debug('The dates in the entry field match those in the event object :-)')
+        else:
+            _LOG.debug("The dates in the entry field don't match those in the event object :-(")
+            _LOG.debug('The ENTRY FIELD (updated by user but not synced to object): %s' % GuiDateText)
+            if  GuiDateText == '.':
+                # User typed in "." for todays date (field was red but still accepted)
+                Now = Today()
+                _LOG.debug('User typed in "." (for today), Today\'s date = %s' % Now)
+                self.event.set_date_object(Now)
+            else:
+                # User typed in a date in multiple possible formats, need to parse to date (that could fail)
+                GuiDateObj = DateParser.parse(GuiDateText)
+                if  GuiDateObj.is_valid():
+                    # User's date parsed OK
+                    _LOG.debug('User typed in "%s", Converted to = %s' % (GuiDateText, GuiDateObj))
+                    self.event.set_date_object(GuiDateObj)
+                else:
+                    # Date supplied by user is not valid
+                    FormDlgInfo(_("Invalid Date Format: ") + GuiDateText, _("The date you provided is invalid, the control should have had a red border (the only 'valid' entry with a red border is '.')..."))
+                    return
+
+        # Have a valid date?
+        if  str(EvtDateObj) == '' or str(EvtDateObj) == '0000-00-00':
+            FormDlgInfo(_("MISSING DATE"), _("You should fill in the manditory date information"))
+            return
+
+        # Have a valid REFERENCE?
+        ref_entry = self.widgets['ref_entry']
+        RefDef = ref_entry.get_text()
+        if  RefDef == "":
+            RefDef = _('NO REF')
+            FormDlgInfo(_("MISSING REFERENCE"), _("You should fill in the manditory reference information"))
+            return
+
+        # Have a valid Reference? If so set up the "Description" of the event to be created
+        if self.citation:
+           # Get the Source Information
+           source_handle = self.citation.get_reference_handle()
+           source = self.db.get_source_from_handle(source_handle)
+           source_text = source.get_title()
+
+           # Add the description
+           EvtDesc = RefDef + " @ " + source_text + " [" + _("form") + "]"
+           _LOG.debug("Setting DESCRIPTION for the event: " + EvtDesc)
+           self.event.set_description(EvtDesc)
+        ### DB$: 13/05/2020 ########################################################################################
+
+
+
+
         with DbTxn(self.get_menu_title(), self.db) as trans:
             if not self.event.get_handle():
                 self.db.add_event(self.event, trans)
@@ -819,7 +1067,55 @@ class MultiSection(Gtk.Box):
 #------------------------------------------------------------------------
 class PersonSection(Gtk.Box):
 
+    ### DB$: 10/05/2020 ########################################################################################
+    InstCounter = 0
+
+    def __IncreaseInstCounter(self):
+        #type(self).InstCounter += 1
+        self.InstCounter += 1
+        _LOG.debug("### CONSTRUCTOR ### self.InstCounter +1 = %d", self.InstCounter)
+
+    def __DecreaseInstCounter(self):
+        #type(self).InstCounter -= 1
+        self.InstCounter -= 1
+        _LOG.debug("### DESTRUCTOR ### self.InstCounter -1 = %d", self.InstCounter)
+
+    def __del__(self):
+        self.__DecreaseInstCounter()
+
+
     SelectPerson = SelectorFactory('Person')
+
+
+    ### DB$: 10/05/2020 ########################################################################################
+    def __PersonAddedCommon(self, PersonHandle):
+        self.handle = PersonHandle
+
+        ### DB$: 10/05/2020 ########################################################################################
+        #Person added to the form (get their name from their handle)
+        person = self.db.get_person_from_handle(self.handle)
+        name   = name_displayer.display(person)
+
+        #Log message
+        SelRole = self.widgets['PersonRole']
+        _LOG.debug("PERSON ADDED: [%s]: %s" % (SelRole.get_text(), name))
+
+        #Update the correct section (so user can see name)
+        SelText = self.widgets['PersonName']
+        SelText.set_markup("[<b><small>%s</small></b>]" % name)     #Doesn't want to work
+        ### DB$: 10/05/2020 ########################################################################################
+
+
+        for heading in self.headings:
+            self.widgets[heading].set_sensitive(True)
+            if heading == _('Name'):
+               self.widgets[heading].set_text(name)
+
+    def _PersonDefaultSet(self, PersonHandle):         #PersonSelection class
+        self.__PersonAddedCommon(PersonHandle)
+    ### DB$: 10/05/2020 ########################################################################################
+
+
 
     def __init__(self, dbstate, uistate, track, event, citation, form_id,
                  section):
@@ -847,7 +1143,24 @@ class PersonSection(Gtk.Box):
         label.set_use_markup(True)
         label.set_halign(Gtk.Align.START)
         label.set_valign(Gtk.Align.CENTER)
+        self.widgets['PersonRole'] = label
         hbox.pack_start(label, expand=False, fill=False, padding=3)
+
+
+        ### DB$: 10/05/2020 ########################################################################################
+        # Probably best at top of __init__() ...
+        self.__IncreaseInstCounter()
+
+        PersonName =_("no one selected yet")
+        label = Gtk.Label(label='<i>%s</i>' % PersonName)
+        label.set_use_markup(True)
+        label.set_halign(Gtk.Align.START)
+        label.set_valign(Gtk.Align.CENTER)
+        self.widgets['PersonName'] = label
+        hbox.pack_start(label, expand=False, fill=False, padding=10)
+        ### DB$: 10/05/2020 ########################################################################################
+
+
 
         image = Gtk.Image()
         image.set_from_icon_name('list-add', Gtk.IconSize.BUTTON)
@@ -871,6 +1184,17 @@ class PersonSection(Gtk.Box):
         self.show()
 
         self.set_columns()
+
+        ### DB$: 10/05/2020 ########################################################################################
+        # Get selected person - NEED TO DO THIS ONE TIME ONLY (as we can only pick up one and in any case the selection order is meaningless
+        _LOG.debug("DEFAULT THE PERSON? [IFF %d == 1]" % self.InstCounter)
+        if  self.InstCounter == 1:
+            handle = self.uistate.get_active('Person')
+            self._PersonDefaultSet(handle)
+        ### DB$: 10/05/2020 ########################################################################################
+
+
+
 
     def is_empty(self):
         return False if self.handle else True
@@ -906,14 +1230,10 @@ class PersonSection(Gtk.Box):
         if obj:
             self.__added(obj)
 
-    def __added(self, obj):
-        self.handle = obj.handle
-        for heading in self.headings:
-            self.widgets[heading].set_sensitive(True)
-            if heading == _('Name'):
-                person = self.db.get_person_from_handle(self.handle)
-                name = name_displayer.display(person)
-                self.widgets[heading].set_text(name)
+    def __added(self, obj):         #PersonSelection class
+        ### DB$: 10/05/2020 ########################################################################################
+        self.__PersonAddedCommon(obj.handle)
+        ### DB$: 10/05/2020 ########################################################################################
 
     def populate_gui(self, event):
         for item in self.db.find_backlink_handles(event.get_handle(),
@@ -932,6 +1252,7 @@ class PersonSection(Gtk.Box):
 
                     self.__populate(obj, attrs)
 
+
     def __populate(self, obj, attrs):
         self.initial_handle = obj.handle
         self.__added(obj)
@@ -940,6 +1261,9 @@ class PersonSection(Gtk.Box):
 
     def save(self, trans):
         if not self.handle:
+            ### DB$: 09/05/2020 ########################################################################################
+            FormDlgInfo(_("ABORTING SAVE"), _("No person selected"))
+            ### DB$: 09/05/2020 ########################################################################################
             return
 
         obj = self.dbstate.db.get_person_from_handle(self.handle)
