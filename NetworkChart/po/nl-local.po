@@ -1,0 +1,666 @@
+# Dutch translation of Gramps addon NetworkChart
+# Copyright (C) 2020 Gramps project
+# This file is distributed under the same license as the NetworkChart package.
+# Jan Sparreboom <jan@sparreboom.net>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: NetworkChart 5.1.x\n"
+"Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
+"POT-Creation-Date: 2019-12-24 11:34-0600\n"
+"PO-Revision-Date: 2020-04-13 18:48+0200\n"
+"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
+"Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.6\n"
+
+#: NetworkChart/NetworkChart.gpr.py:31
+msgid "Network Chart"
+msgstr "Netwerk Grafiek"
+
+#: NetworkChart/NetworkChart.gpr.py:41
+msgid "Generates a family network chart."
+msgstr "Genereert een familienetwerkgrafiek."
+
+#: NetworkChart/NetworkChart.gpr.py:51
+msgid "NetworkChart Warning:  Python networkx module not found."
+msgstr "Netwerk Grafiek Waarschuwing: Python networkx-module niet gevonden."
+
+#: NetworkChart/NetworkChart.gpr.py:54
+msgid ""
+"NetworkChart Warning:  NetworkChart needs one of the following to work: \n"
+"     Python module  pydotplus            OR\n"
+"     Python module  pygraphviz           OR\n"
+msgstr ""
+"Netwerk Grafiek Waarschuwing: Netwerk Grafiek heeft een van deze modules nodig: \n"
+"     Python module  pydotplus            Of\n"
+"     Python module  pygraphviz           Of\n"
+
+#: NetworkChart/NetworkChart.gpr.py:62
+msgid "NetworkChart Failed to Load"
+msgstr "Netwerk Grafiek kan niet worden geladen"
+
+#: NetworkChart/NetworkChart.gpr.py:63
+msgid ""
+"\n"
+"\n"
+"NetworkChart is missing python modules or programs.  Networkx AND at\n"
+"least one of (pydotplus OR pygraphviz) must be\n"
+"installed.  For now, it may be possible to install the files manually. See\n"
+"\n"
+"https://gramps-project.org/wiki/index.php?title=NetworkChart \n"
+"\n"
+"To dismiss all future NetworkChart warnings click Dismiss."
+msgstr ""
+"\n"
+"\n"
+"Netwerk Grafiek mist python modules of programma's. Networkx EN\n"
+"ten minste pydotplus OF pygraphviz moet geïnstalleerd zijn.Het is misschien mogelijk om de "
+"bestanden handmatig te installeren. Zie\n"
+"\n"
+"https://gramps-project.org/wiki/index.php?title=NetworkChart \n"
+"\n"
+"Klik op Negeren om alle toekomstige Netwerk Grafiek-waarschuwingen te negeren."
+
+#: NetworkChart/NetworkChart.gpr.py:68
+msgid " Dismiss "
+msgstr " Negeren "
+
+#: NetworkChart/NetworkChart.gpr.py:69
+msgid "Continue"
+msgstr "Doorgaan"
+
+#: NetworkChart/NetworkChart.py:133
+msgid "birth abbreviation|b."
+msgstr "afkorting geboorte|b."
+
+#: NetworkChart/NetworkChart.py:134
+msgid "death abbreviation|d."
+msgstr "afkorting overlijden|d."
+
+#: NetworkChart/NetworkChart.py:135
+msgid "marriage abbreviation|m."
+msgstr "afkorting huwelijk|m."
+
+#: NetworkChart/NetworkChart.py:136
+msgid "Unknown"
+msgstr "Onbekend"
+
+#: NetworkChart/NetworkChart.py:244
+msgid "File exists. Overwrite?"
+msgstr "Bestand bestaat. Overschrijven?"
+
+#: NetworkChart/NetworkChart.py:245
+msgid "Cancel"
+msgstr "Annuleren"
+
+#: NetworkChart/NetworkChart.py:245
+msgid "Yes"
+msgstr "Ja"
+
+#: NetworkChart/NetworkChart.py:898
+msgid "created"
+msgstr "gemaakt"
+
+#: NetworkChart/NetworkChart.py:899 NetworkChart/NetworkChart.py:902
+msgid "last_written"
+msgstr "als laatste geschreven"
+
+#: NetworkChart/NetworkChart.py:912
+msgid "Main"
+msgstr "Algemeen"
+
+#: NetworkChart/NetworkChart.py:914
+msgid "Graph Style"
+msgstr "Grafiekstijl"
+
+#: NetworkChart/NetworkChart.py:916
+msgid "Orthogonal (right angles in connectors)"
+msgstr "Orthogonaal (rechte hoeken in connectoren)"
+
+#: NetworkChart/NetworkChart.py:917
+msgid "Straight (no right angles in connectors)"
+msgstr "Rechtstreeks (geen rechte hoeken in connectoren)"
+
+#: NetworkChart/NetworkChart.py:918
+msgid "Curved (curved and straight connectors)"
+msgstr "Gebogen (gebogen en rechte connectors)"
+
+#: NetworkChart/NetworkChart.py:920
+msgid "Default (Orthogonal)"
+msgstr "Standaard (orthogonaal)"
+
+#: NetworkChart/NetworkChart.py:925
+msgid "Select the graph line connector format."
+msgstr "Selecteer de opmaak van de grafische lijnconnector."
+
+#: NetworkChart/NetworkChart.py:928
+msgid "Graph Direction"
+msgstr "Grafiekrichting"
+
+#: NetworkChart/NetworkChart.py:930
+msgid "Top to Bottom"
+msgstr "Boven naar beneden"
+
+#: NetworkChart/NetworkChart.py:930
+msgid "Left to Right"
+msgstr "Links naar rechts"
+
+#: NetworkChart/NetworkChart.py:931
+msgid "Bottom to Top"
+msgstr "Beneden naar boven"
+
+#: NetworkChart/NetworkChart.py:931
+msgid "Right to Left"
+msgstr "Rechts naar links"
+
+#: NetworkChart/NetworkChart.py:933
+msgid "Default (Top to Bottom)"
+msgstr "Standaard (Boven naar beneden)"
+
+#: NetworkChart/NetworkChart.py:936
+msgid "Select the graph direction."
+msgstr "Selecteer de grafiekrichting."
+
+#: NetworkChart/NetworkChart.py:939
+msgid "URL Style"
+msgstr "URL Grafiekstijl"
+
+#: NetworkChart/NetworkChart.py:941
+msgid "Include URLs from database."
+msgstr "Voeg URL's uit database toe."
+
+#: NetworkChart/NetworkChart.py:942
+msgid "Dynamic URL = Prefix + GrampID + Suffix"
+msgstr "Dynamisch URL = Prefix + GrampID + Suffix"
+
+#: NetworkChart/NetworkChart.py:943
+msgid "Static URL = Prefix"
+msgstr "Statisch URL = Prefix"
+
+#: NetworkChart/NetworkChart.py:944
+msgid "Don't include URLs"
+msgstr "Voeg geen URL's toe"
+
+#: NetworkChart/NetworkChart.py:945
+msgid "Default (include)"
+msgstr "Standaard (toevoegen)"
+
+#: NetworkChart/NetworkChart.py:948
+msgid "Select URL style."
+msgstr "Selecteer URL-stijl."
+
+#: NetworkChart/NetworkChart.py:951
+msgid "URL Prefix,Suffix"
+msgstr "URL Prefix,Suffix"
+
+#: NetworkChart/NetworkChart.py:952
+msgid ""
+"Enter the Prefix,Suffix (use comma)\n"
+"for dynamically generated URLs.\n"
+"URL = Prefix + GrampsID + Suffix."
+msgstr ""
+"Voer de Prefix,Suffix in (komma gebruiken)\n"
+"voor dynamisch gegenereerde URL's.\n"
+"URL = Prefix + GrampsID + Suffix."
+
+#: NetworkChart/NetworkChart.py:957
+msgid "Enter Font Name"
+msgstr "Voer lettertypenaam in"
+
+#: NetworkChart/NetworkChart.py:959
+msgid ""
+"Enter the primary font style for the chart.\n"
+"Must already be installed.\n"
+"White Rabbit can be obtained from\n"
+"https://www.fontsquirrel.com/fonts/white-rabbit"
+msgstr ""
+"Voer de primaire letterstijl voor de grafiek in.\n"
+"Deze moet al zijn geïnstalleerd.\n"
+"White Rabbit kan worden verkregen bij\n"
+"https://www.fontsquirrel.com/fonts/white-rabbit"
+
+#: NetworkChart/NetworkChart.py:964
+msgid "Spacing (inch)"
+msgstr "Spatiëring (inch)"
+
+#: NetworkChart/NetworkChart.py:965
+msgid "Enter the seperation distance between \"Generations\" in inches (0.1-5.0)."
+msgstr "Voer de scheidingsafstand tussen \"Generaties\" in inches (0.1-5.0) in."
+
+#: NetworkChart/NetworkChart.py:969
+msgid "Enter Chart Title"
+msgstr "Voer de grafiektitel in"
+
+#: NetworkChart/NetworkChart.py:971
+msgid "Set the title of the chart."
+msgstr "Stel de titel van de grafiek in."
+
+#: NetworkChart/NetworkChart.py:974
+msgid "File Type"
+msgstr "Bestandstype"
+
+#: NetworkChart/NetworkChart.py:976
+msgid "Default (svg)"
+msgstr "Standaard (svg)"
+
+#: NetworkChart/NetworkChart.py:979
+msgid ""
+"svg - Scalable Vector Graphics file.\n"
+"pdf - Adobe Portable Document Format.\n"
+msgstr ""
+"svg - Scalable Vector Graphics file.\n"
+"pdf - Adobe Portable Document Format.\n"
+
+#: NetworkChart/NetworkChart.py:984
+msgid "Folder"
+msgstr "Map"
+
+#: NetworkChart/NetworkChart.py:986
+msgid "The destination folder for generated files."
+msgstr "De doelmap voor gegenereerde bestanden."
+
+#: NetworkChart/NetworkChart.py:990 NetworkChart/NetworkChart.py:1279
+#: NetworkChart/NetworkChart.py:1287
+msgid "network"
+msgstr "netwerk"
+
+#: NetworkChart/NetworkChart.py:993
+msgid "Filename"
+msgstr "Bestandsnaam"
+
+#: NetworkChart/NetworkChart.py:995
+msgid "The filename for the generated svg network chart."
+msgstr "De bestandsnaam voor de gegenereerde svg-netwerkgrafiek."
+
+#: NetworkChart/NetworkChart.py:1002
+msgid "Different node shapes/edges for gender."
+msgstr "Verschillende knoopvormen / randen voor geslacht."
+
+#: NetworkChart/NetworkChart.py:1003
+msgid "Node differences for gender."
+msgstr "Verschillende nodes per geslacht."
+
+#: NetworkChart/NetworkChart.py:1006
+msgid "Color"
+msgstr "Kleuren"
+
+#: NetworkChart/NetworkChart.py:1008
+msgid "Male Background"
+msgstr "Achtergrond mannen"
+
+#: NetworkChart/NetworkChart.py:1009
+msgid "RGB-color for male box background."
+msgstr "RGB-kleur voor vakachtergrond van mannen."
+
+#: NetworkChart/NetworkChart.py:1012
+msgid "Male Background Alpha"
+msgstr "Alpha achtergrond bij mannen"
+
+#: NetworkChart/NetworkChart.py:1014
+msgid "Alpha for Male box background (transparent=0, solid=255)."
+msgstr "Alpha voor vakachtergrond bij mannen (transparant=0, effen=255)."
+
+#: NetworkChart/NetworkChart.py:1018
+msgid "Male Box Edge"
+msgstr "Rand vak mannen"
+
+#: NetworkChart/NetworkChart.py:1019
+msgid "RGB-color for Male box edge."
+msgstr "RGB-kleur voor vakrand bij mannen."
+
+#: NetworkChart/NetworkChart.py:1022
+msgid "Female Background"
+msgstr "Achtergrond vrouwen"
+
+# added:
+#: NetworkChart/NetworkChart.py:1026
+msgid "Female Background Alpha"
+msgstr "Alpha achtergrond bij vrouwen"
+
+#: NetworkChart/NetworkChart.py:1023 NetworkChart/NetworkChart.py:1034
+msgid "RGB-color for Female box background."
+msgstr "RGB-kleur voor vakachtergrond van vrouwen."
+
+#: NetworkChart/NetworkChart.py:1028
+msgid "Alpha for Female box background (transparent=0, solid=255)."
+msgstr "Alpha voor vakachtergrond bij vrouwen (transparant=0, effen=255)."
+
+#: NetworkChart/NetworkChart.py:1033
+msgid "Female Box Edge"
+msgstr "Rand vak vrouwen"
+
+#: NetworkChart/NetworkChart.py:1037
+msgid "Other Background"
+msgstr "Achtergrond overige vakken"
+
+#: NetworkChart/NetworkChart.py:1038
+msgid "RGB-color for other box background."
+msgstr "RGB-kleur voor achtergrond van overige vakken."
+
+#: NetworkChart/NetworkChart.py:1041
+msgid "Other Background Alpha"
+msgstr "Alpha achtergrond overige vakken"
+
+#: NetworkChart/NetworkChart.py:1043
+msgid "Alpha for Other box background (transparent=0, solid=255)."
+msgstr "Alpha voor achtergrond van overige vakken (transparant=0, effen=255)."
+
+#: NetworkChart/NetworkChart.py:1047
+msgid "Family Connector Line"
+msgstr "Familie verbindingslijn"
+
+#: NetworkChart/NetworkChart.py:1048
+msgid "RGB-color for family connector line."
+msgstr "RGB-kleur voor Familie verbindingslijn."
+
+#: NetworkChart/NetworkChart.py:1051
+msgid "Marriage Connector Line"
+msgstr "Huwelijksverbindingslijn"
+
+#: NetworkChart/NetworkChart.py:1052
+msgid "RGB-color for marriage connector line."
+msgstr "RGB-kleur van Huwelijksverbindingslijn."
+
+#: NetworkChart/NetworkChart.py:1055
+msgid "Highlight Connector Line"
+msgstr "Markeringsverbindingslijn"
+
+#: NetworkChart/NetworkChart.py:1056
+msgid ""
+"RGB-color for the highlighted path between two individuals.  If the graph.inverts, reverse "
+"the order to change."
+msgstr ""
+"RGB-kleur voor het gemarkeerde pad tussen twee personen.Als de grafiek omkeert, keer dan de "
+"volgorde om."
+
+#: NetworkChart/NetworkChart.py:1061
+msgid "Trim Box Edge"
+msgstr "Inkorten vakrand"
+
+#: NetworkChart/NetworkChart.py:1062
+msgid "RGB-color for box edge that has been trimmed."
+msgstr "RGB-kleur voor ingekorte vakrand."
+
+#: NetworkChart/NetworkChart.py:1066
+msgid "Remove color background on all nodes."
+msgstr "Verwijder de achtergrondkleur op alle knooppunten."
+
+#: NetworkChart/NetworkChart.py:1068
+msgid "Removes color background for individuals (nodes) on chart."
+msgstr "Hiermee verwijdert u de achtergrondkleur voor individuen (knooppunten) in de grafiek."
+
+#: NetworkChart/NetworkChart.py:1071
+msgid "Privacy"
+msgstr "Privacy"
+
+#: NetworkChart/NetworkChart.py:1073
+msgid ""
+"Enter year to start\n"
+"rounding birthday\n"
+"to year only"
+msgstr ""
+"Voer het startjaar in om\n"
+"alleen geboortedag tot\n"
+"jaar af te ronden"
+
+#: NetworkChart/NetworkChart.py:1076
+msgid ""
+"Birthdays after this year are represented by the year only.  Invalid entries will be "
+"ignored."
+msgstr ""
+"Geboortedagen na dit jaar worden alleen door het jaar weergegeven.Ongeldige vermeldingen "
+"worden genegeerd."
+
+#: NetworkChart/NetworkChart.py:1080
+msgid "Round birthday to year after year entered (above)."
+msgstr "Rond de geboortedag af tot het jaar na het hierboven ingevoerd jaar."
+
+#: NetworkChart/NetworkChart.py:1082
+msgid "Represent birthday by year only."
+msgstr "Geef geboortedag alleen door jaar weer."
+
+#: NetworkChart/NetworkChart.py:1086
+msgid ""
+"Enter year to start\n"
+"rounding marriage\n"
+"date to year only"
+msgstr ""
+"Voer het jaar in om te beginnen\n"
+"huwelijk afronden\n"
+"alleen datum tot jaar"
+
+#: NetworkChart/NetworkChart.py:1087
+msgid ""
+"Marriages after this year are represented bythe year only. Invalid entries will be ignored."
+msgstr ""
+"Huwelijken na dit jaar worden alleen door het jaar weergegeven.Ongeldige vermeldingen "
+"worden genegeerd."
+
+#: NetworkChart/NetworkChart.py:1092
+msgid "Round marriage to year after year entered (above)."
+msgstr "Rond huwelijk af tot jaar na hierboven ingevoerd jaar."
+
+#: NetworkChart/NetworkChart.py:1094
+msgid "Represent marriage by year only."
+msgstr "Geef huwelijk alleen door jaar weer."
+
+#: NetworkChart/NetworkChart.py:1099
+msgid ""
+"Attempts to remove middle names.  Only works for entries with birth year in the record."
+msgstr ""
+"Pogingen om middelste namen te verwijderen.Werkt alleen voor vermeldingen met geboortejaar "
+"in het record."
+
+#: NetworkChart/NetworkChart.py:1107
+msgid "Remove middle names."
+msgstr "Verwijder de middelste namen."
+
+#: NetworkChart/NetworkChart.py:1112
+msgid "Allow inclusion of private records in chart."
+msgstr "Sta opname van privérecords in de grafiek toe."
+
+#: NetworkChart/NetworkChart.py:1117
+msgid "Trim"
+msgstr "Inkorten"
+
+#: NetworkChart/NetworkChart.py:1119
+msgid "Trim descendants"
+msgstr "Inkorten aantal afstammelingen"
+
+#: NetworkChart/NetworkChart.py:1121
+msgid "All descendants (children) of selected individuals will not be shown."
+msgstr "Alle nakomelingen (kinderen) van geselecteerde personen worden niet getoond."
+
+#: NetworkChart/NetworkChart.py:1127
+msgid "Enable trimming of descendants."
+msgstr "Schakel inkorten van aantal nakomelingen in."
+
+#: NetworkChart/NetworkChart.py:1129
+msgid ""
+"You must enter valid person(s) before \n"
+"enabling trimming of descendants from tree."
+msgstr ""
+"U moet geldige personen invoeren voordat u het inkorten van\n"
+"aantal afstammelingen uit de boom kunt inschakelen."
+
+#: NetworkChart/NetworkChart.py:1134
+msgid "Trim ancestors"
+msgstr "Inkorten aantal voorouders"
+
+#: NetworkChart/NetworkChart.py:1135
+msgid "All ancestors (parents) of selected individuals will not be shown."
+msgstr "Alle voorouders (ouders) van geselecteerde personen worden niet getoond."
+
+#: NetworkChart/NetworkChart.py:1141
+msgid "Enable trimming of ancestors."
+msgstr "Schakel inkorten van aantal voorouders in."
+
+#: NetworkChart/NetworkChart.py:1143
+msgid "Enable trimming of ancestors from tree."
+msgstr "Schakel inkorten van aantal voorouders uit de stamboom in."
+
+#: NetworkChart/NetworkChart.py:1147
+msgid "Enable trim groups."
+msgstr "Schakel inkorten van aantal groepen in."
+
+#: NetworkChart/NetworkChart.py:1149
+msgid ""
+"Remove groups less than Min Group Size.  Automatic\n"
+"for databases with more than 1500 individuals."
+msgstr ""
+"Verwijder groepen kleiner dan Min Group Size.\n"
+"Automatisch voor databases met meer dan 1500 individuen."
+
+#: NetworkChart/NetworkChart.py:1154
+msgid "Min Group Size"
+msgstr "Minimale groepsgrootte"
+
+#: NetworkChart/NetworkChart.py:1156
+msgid ""
+"Enter the minimum size group to display.\n"
+"Value may be 2 or greater."
+msgstr ""
+"Voer de minimumgrootte van de groep in om weer te geven.\n"
+"De waarde kan 2 of groter zijn."
+
+#: NetworkChart/NetworkChart.py:1161
+msgid "Highlight"
+msgstr "Markeer"
+
+#: NetworkChart/NetworkChart.py:1164
+msgid ""
+"Select Start and\n"
+"End Individuals in\n"
+"displayed path(s).\n"
+"Select two"
+msgstr ""
+"Selecteer Start en\n"
+"Eind Personen in het\n"
+"weergegeven pad(en).\n"
+"Selecteer er twee"
+
+#: NetworkChart/NetworkChart.py:1167
+msgid ""
+"Starting and ending person for displayed path(s).\n"
+"Select two people"
+msgstr "Selecteer twee mensen"
+
+#: NetworkChart/NetworkChart.py:1171
+msgid "Highlight path(s)"
+msgstr "Markeer pad(en)"
+
+#: NetworkChart/NetworkChart.py:1175
+msgid "Default (None)"
+msgstr "Standaard (Geen)"
+
+#: NetworkChart/NetworkChart.py:1180
+msgid ""
+"None - Don't highlight paths.\n"
+"Direct - Highlight direct descendant/ancestor paths.\n"
+"Any - Highlight any path(s) including direct or indirect."
+msgstr ""
+"Geen   - Markeer paden niet.\n"
+"Direct - Markeer directe afstammelingen van voorouders / voorouders.\n"
+"Alle   - markeer elk pad, zowel direct of indirect."
+
+#: NetworkChart/NetworkChart.py:1185
+msgid "Show only path(s)"
+msgstr "Laat alleen pad(en) zien"
+
+#: NetworkChart/NetworkChart.py:1187
+msgid "None"
+msgstr "Geen"
+
+#: NetworkChart/NetworkChart.py:1187
+msgid "Direct"
+msgstr "Direct"
+
+#: NetworkChart/NetworkChart.py:1187
+msgid "Any"
+msgstr "Alle"
+
+#: NetworkChart/NetworkChart.py:1188
+msgid "Default (none)"
+msgstr "Standaard (Geen)"
+
+#: NetworkChart/NetworkChart.py:1192
+msgid ""
+"None - Don't show paths only.\n"
+"Direct - Show only direct descendant/ancestor paths.\n"
+"Any - Show only path(s) direct or indirect."
+msgstr ""
+"Geen   - Toon niet alleen paden.\n"
+"Direct - Toon alleen directe paden van afstammelingen / voorouders.\n"
+"Alle   - Toon alleen pad(en), direct of indirect."
+
+#: NetworkChart/NetworkChart.py:1197
+msgid "Center Person"
+msgstr "Centreer persoon"
+
+#: NetworkChart/NetworkChart.py:1199
+msgid "Select person at center of selection radius in graph."
+msgstr "Selecteer persoon in het midden van de selectieradius in de grafiek."
+
+#: NetworkChart/NetworkChart.py:1202
+msgid ""
+"Max connections\n"
+"from center"
+msgstr ""
+"Max verbindingen\n"
+"vanuit het midden"
+
+#: NetworkChart/NetworkChart.py:1205
+msgid ""
+"Enter the maximum number of connections allowed from\n"
+"the center person.  Value may be 1 or greater."
+msgstr ""
+"Voer het maximum aantal toegestane verbindingen in vanaf\n"
+"de gecentreerde persoon. Waarde kan 1 of groter zijn."
+
+#: NetworkChart/NetworkChart.py:1210
+msgid "Limit graph to max connections from center."
+msgstr "Beperk de grafiek tot max. verbindingen vanuit het midden."
+
+#: NetworkChart/NetworkChart.py:1212
+msgid "Display up to max connections from central person."
+msgstr "Toon tot max verbindingen van centrale persoon."
+
+#: NetworkChart/NetworkChart.py:1216
+msgid "Highlight central person in graph."
+msgstr "Markeer centraal persoon in de grafiek."
+
+#: NetworkChart/NetworkChart.py:1218
+msgid "Add yellow color background to central person."
+msgstr "Geef de centrale persoon een gele achtergrond."
+
+#: NetworkChart/NetworkChart.py:1222
+msgid "Config"
+msgstr "Configuratie"
+
+#: NetworkChart/NetworkChart.py:1226
+msgid "Database"
+msgstr "Database"
+
+#: NetworkChart/NetworkChart.py:1233
+msgid "Use database handle instead of GrampID id in URLs."
+msgstr "Gebruik database-handle in plaats van Gramp-id's in URL's."
+
+#: NetworkChart/NetworkChart.py:1235
+msgid ""
+"Use database handle instead of the gramps id for URLs.\n"
+"The handle should never change whereas gramps ids can."
+msgstr ""
+"Gebruik database-handle in plaats van de gramps-ID voor URL's.\n"
+"De handle mag nooit veranderen, maar de gramps-id's wel."
+
+#: NetworkChart/NetworkChart.py:1239
+msgid "Confirm overwrite file."
+msgstr "Bevestig overschrijven van bestand."
+
+#: NetworkChart/NetworkChart.py:1242
+msgid "Enable/disable confirmation of file overwrite."
+msgstr "Schakel de bevestiging van het overschrijven van bestanden in / uit."

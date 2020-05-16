@@ -851,7 +851,8 @@ class DynamicWebReport(Report):
             name = self.get_short_name(person) or ""
             jdata['short_name'] = name
             jdata['names'] = self.get_name_data(person)
-            jdata['letter'] = first_letter(name).strip()
+            p_name = _nd.primary_surname(person.get_primary_name())
+            jdata['letter'] = first_letter(p_name).strip()
             # Gender
             gender = ""
             if (person.get_gender() == Person.MALE): gender = "M"
@@ -3871,7 +3872,8 @@ class DynamicWebOptions(MenuReportOptions):
         self.__add_trees_options(menu)
         self.__add_custom_pages_options(menu)
         self.__add_select_pages_options(menu)
-
+        self.help_url = (
+            "https://gramps-project.org/wiki/index.php/DynamicWeb_report")
 
     def __add_report_options(self, menu):
         '''

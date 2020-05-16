@@ -1,0 +1,58 @@
+# Dutch translation of Gramps addon FRWebPack
+# Copyright (C) 2020 Gramps project
+# This file is distributed under the same license as the FRWebPack package.
+# Jan Sparreboom <jan@sparreboom.net>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: FRWebPack 5.1.x\n"
+"Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
+"POT-Creation-Date: 2019-12-24 11:34-0600\n"
+"PO-Revision-Date: 2020-04-10 22:19+0200\n"
+"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
+"Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.6\n"
+
+#: FRWebConnectPack/FRWebPack.gpr.py:10
+msgid "FR Web Connect Pack"
+msgstr "FR Web Connect Pack"
+
+#: FRWebConnectPack/FRWebPack.gpr.py:11
+msgid "Collection of Web sites for the FR (requires libwebconnect)"
+msgstr "Verzameling van websites voor FR (libwebconnect is nodig)"
+
+#: FRWebConnectPack/FRWebPack.py:41
+msgid "Cultural ministry (France)"
+msgstr "Cultureel ministerie (Frankrijk)"
+
+#: FRWebConnectPack/FRWebPack.py:42
+msgid "Genealogical bank"
+msgstr "Genealogische bank"
+
+#: FRWebConnectPack/FRWebPack.py:44
+msgid "OrigineFile (Quebec)"
+msgstr "Originele File (Quebec)"
+
+#: FRWebConnectPack/FRWebPack.py:50
+msgid "Cyber genealogy"
+msgstr "Cyber genealogie"
+
+#: FRWebConnectPack/FRWebPack.py:53
+msgid "RetroNews (Bnf)"
+msgstr "RetroNieuws (Bnf)"
+
+#: FRWebConnectPack/FRWebPack.py:58
+msgid "Hathi Trust Digital Library (fr)"
+msgstr "Hathi Trust Digital Library (fr)"
+
+#: FRWebConnectPack/FRWebPack.py:59
+msgid "Open Library (fr)"
+msgstr "Open bibliotheek (fr)"
+
+#: FRWebConnectPack/FRWebPack.py:60
+msgid "Belgium's Archives"
+msgstr "Belgisch archief"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"POT-Creation-Date: 2020-04-25 10:02-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -61,47 +61,58 @@ msgstr ""
 msgid "Country"
 msgstr ""
 
-#: ExtractCity/extractcity.py:422 ExtractCity/extractcity.py:613
+#: ExtractCity/extractcity.py:426 ExtractCity/extractcity.py:630
 msgid "Extract Place data"
 msgstr ""
 
-#: ExtractCity/extractcity.py:439
+#: ExtractCity/extractcity.py:443
 msgid "Checking Place Titles"
 msgstr ""
 
-#: ExtractCity/extractcity.py:441
+#: ExtractCity/extractcity.py:445
 msgid "Looking for place fields"
 msgstr ""
 
-#: ExtractCity/extractcity.py:527
+#: ExtractCity/extractcity.py:531
 msgid "No modifications made"
 msgstr ""
 
-#: ExtractCity/extractcity.py:528
+#: ExtractCity/extractcity.py:532
 msgid "No place information could be extracted."
 msgstr ""
 
-#: ExtractCity/extractcity.py:547
+#: ExtractCity/extractcity.py:553
 msgid ""
 "Below is a list of Places with the possible data that can be extracted from "
 "the place title. Select the places you wish Gramps to convert."
 msgstr ""
 
-#: ExtractCity/extractcity.py:558
+#: ExtractCity/extractcity.py:564
 msgid "Select"
 msgstr ""
 
-#: ExtractCity/extractcity.py:572
+#: ExtractCity/extractcity.py:580
 msgid "Building display"
 msgstr ""
 
-#: ExtractCity/changenames.glade:35
+#: ExtractCity/changenames.glade:37
 msgid ""
 "Below is a list of the family names that \n"
 "Gramps can convert to correct capitalization. \n"
 "Select the names you wish Gramps to convert. "
 msgstr ""
 
-#: ExtractCity/changenames.glade:108
+#: ExtractCity/changenames.glade:94
+msgid "_Toggle Selected"
+msgstr ""
+
+#: ExtractCity/changenames.glade:98
+msgid ""
+"Toggles the checkmarks on selected rows,  Rows can be selected with <ctrl> "
+"(add to group), or <shift> (extend group) click, or with <ctrl> or <shift> "
+"arrow keys and 'space'.  Or <ctrl>'a' for select all."
+msgstr ""
+
+#: ExtractCity/changenames.glade:126
 msgid "_Accept changes and close"
 msgstr ""

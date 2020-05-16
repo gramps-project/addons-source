@@ -13,7 +13,7 @@ gramps_path = os.environ["GRAMPS_RESOURCES"]
 class ExportSQLTestCase (unittest.TestCase):
 
     def setUp(self):
-        self.database1 = make_database("bsddb")
+        self.database1 = make_database("sqlite")
         try:
             os.mkdir("/tmp/bsddb_exportsql_1")
         except:
@@ -24,7 +24,7 @@ class ExportSQLTestCase (unittest.TestCase):
                   "/example/gramps/example.gramps", User())
         exportSQL(self.database1, "/tmp/exported1.sql", User(), None)
 
-        self.database2 = make_database("bsddb")
+        self.database2 = make_database("sqlite")
         try:
             os.mkdir("/tmp/bsddb_exportsql_2")
         except:

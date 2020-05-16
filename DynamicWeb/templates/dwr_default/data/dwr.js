@@ -1651,20 +1651,23 @@ function printSourceCitations(sdx)
 	{
 		html += '<ul class="dwr-citations">';
 		var j;
+		var txt_list = []
 		for (var j = 0; j < S(sdx, 'bkc').length; j++)
 		{
 			var cdx = S(sdx, 'bkc')[j];
 			PreloadScripts(NameFieldScripts('C', cdx, ['text', 'note', 'media', 'note', 'bki', 'bkf', 'bkm', 'bkp', 'bkr']), true);
-			// html += '<li>' + _('Citation') + ': ';
-			html += '<li>';
-			if (C(cdx, 'text') != '') html += notePara(C(cdx, 'text'), '<p>');
-			if (C(cdx, 'note') != '') html += '<p><b>' + _('Notes') + ':</b></p>' + notePara(C(cdx, 'note'), '<p>');
-			if (C(cdx, 'media').length > 0) html += '<p>' + _('Media') + ': ' + mediaLinks(C(cdx, 'media')) + '</p>';
+			// txt = '<li>' + _('Citation') + ': ';
+			var txt = '<li>';
+			if (C(cdx, 'text') != '') txt += notePara(C(cdx, 'text'), '<p>');
+			if (C(cdx, 'note') != '') txt += '<p><b>' + _('Notes') + ':</b></p>' + notePara(C(cdx, 'note'), '<p>');
+			if (C(cdx, 'media').length > 0) txt += '<p>' + _('Media') + ': ' + mediaLinks(C(cdx, 'media')) + '</p>';
 			// Back references
-			html += printBackRefs(BKREF_TYPE_INDEX, C(cdx, 'bki'), C(cdx, 'bkf'), [], C(cdx, 'bkm'), C(cdx, 'bkp'), C(cdx, 'bkr'));
-			html += '</li>';
+			txt += printBackRefs(BKREF_TYPE_INDEX, C(cdx, 'bki'), C(cdx, 'bkf'), [], C(cdx, 'bkm'), C(cdx, 'bkp'), C(cdx, 'bkr'));
+			txt += '</li>';
+			txt_list.push(txt)
 		}
-		html += '</ul>';
+		txt_list.sort(function tabsort(a, b){return a.replace(/<a href=.*">|<\/a>/g, "").localeCompare(b.replace(/<a href=.*">|<\/a>/g, ""))})
+		html += txt_list.join("") + '</ul>';
 	}
 	else
 	{
@@ -2137,7 +2140,7 @@ function PrintIndexList(id, header, data, fText, before, after, separator, sorti
 		for (i = 0; i < titles.length; i++)
 		{
 			sections.push({
-				title: _(titles[i] || '&nbsp;'),
+				title: (titles[i] || '&nbsp;'),
 				text: texts[titles[i]].join(separator)
 			});
 		}
@@ -2491,13 +2494,17 @@ function indexBkrefName(type, referencedType, referencedDx, bk_field, objects, n
 		if ($.inArray(x_object, already_found) == -1)
 		{
 			already_found.push(x_object);
-			var name = names[x_object];
-			if (name != '')
-			{
-				txt += sep;
-				sep = '<br>';
-				txt += '<a class="dwr-index" href="' + ref(x_object) + '">' + name + '</a>';
-			}
+		}
+	}
+	already_found.sort(function(a, b){return names[a].localeCompare(names[b])})
+	for (var x_bk = 0; x_bk < already_found.length; x_bk++)
+	{
+		var name = names[already_found[x_bk]];
+		if (name != '')
+		{
+			txt += sep;
+			sep = '<br>';
+			txt += '<a class="dwr-index" href="' + ref(already_found[x_bk]) + '">' + name + '</a>';
 		}
 	}
 	return(txt);
@@ -3199,22 +3206,23 @@ var BKREF_TYPE_REPOREF = 4;
 
 function printBackRefs(type, bki, bkf, bks, bkm, bkp, bkr)
 {
-	var html = '';
-	html += printBackRef(type, bki, indiHref, function(ref) {return I(ref, 'name')});
+	var html = printBackRef(type, bki, indiHref, function(ref) {return I(ref, 'name')});
 	if (INC_FAMILIES)
-		html += printBackRef(type, bkf, famHref, function(ref) {return F(ref, 'name')});
+		html = html.concat(printBackRef(type, bkf, famHref, function(ref) {return F(ref, 'name')}));
 	else
-		html += printBackRef(type, bkf, null, function(ref) {return F(ref, 'name')});
+		html = html.concat(printBackRef(type, bkf, null, function(ref) {return F(ref, 'name')}));
 	if (INC_SOURCES)
-		html += printBackRef(type, bks, sourceHref, sourName);
+		html = html.concat(printBackRef(type, bks, sourceHref, sourName));
 	if (INC_MEDIA)
-		html += printBackRef(type, bkm, mediaHref, mediaName);
+		html = html.concat(printBackRef(type, bkm, mediaHref, mediaName));
 	if (INC_PLACES)
-		html += printBackRef(type, bkp, placeHref, function(ref) {return P(ref, 'name')});
+		html = html.concat(printBackRef(type, bkp, placeHref, function(ref) {return P(ref, 'name')}));
 	if (INC_REPOSITORIES)
-		html += printBackRef(type, bkr, repoHref, function(ref) {return R(ref, 'name')});
-	if (html == '') return('');
-	return('<ul class="dwr-backrefs">' + html + '</ul>');
+		html = html.concat(printBackRef(type, bkr, repoHref, function(ref) {return R(ref, 'name')}));
+	if (html.length == 0) return('');
+	html.sort(function tabsort(a, b){return a.replace(/<a href=.*">|<\/a>/g, "").localeCompare(b.replace(/<a href=.*">|<\/a>/g, ""))})
+
+	return('<ul class="dwr-backrefs">' + html.join("") + '</ul>');
 }
 
 function printBackRef(type, bk_table, fref, fname)
@@ -3223,7 +3231,8 @@ function printBackRef(type, bk_table, fref, fname)
 		if (fref == null) return(txt);
 		return('<a href="' + fref(ref) + '">' + txt + '</a>');
 	};
-	var html = '';
+	var out_table = [];
+
 	var j;
 	for (j = 0; j < bk_table.length; j++)
 	{
@@ -3262,9 +3271,10 @@ function printBackRef(type, bk_table, fref, fname)
 				txt += '</div>';
 			}
 		}
-		html += '<li>' + txt + '</li>';
+		out_table.push('<li>' + txt + '</li>');
 	}
-	return(html);
+
+	return out_table;
 }
 
 

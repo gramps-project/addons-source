@@ -525,8 +525,8 @@ class PhotoTaggingGramplet(Gramplet):
                 gallery = person.get_media_list()
                 for mediaref in gallery:
                     referenced_handles = mediaref.get_referenced_handles()
-                    if len(referenced_handles) == 1:
-                        handle_type, handle = referenced_handles[0]
+                    for referens_item  in referenced_handles:
+                        handle_type, handle = referens_item
                         if handle_type == "Media" and handle == self.get_current_handle():
                             rect = mediaref.get_rectangle()
                             if rect is None:

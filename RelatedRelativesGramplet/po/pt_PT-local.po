@@ -1,0 +1,55 @@
+# Addon RelatedRelatives for Gramps.
+# Copyright (C) 2020 Gramps
+# This file is distributed under the same license as the gramps package.
+# Pedro Albuquerque <pmra@protonmail.com>, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps51\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-10-21 08:49+1100\n"
+"PO-Revision-Date: 2020-04-03 08:09Hora de Verão de GMT\n"
+"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"Language-Team: Pedro Albuquerque\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Geany / PoHelper 1.36\n"
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:3
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:10
+msgid "Related Relatives"
+msgstr "Parentes relacionados"
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:4
+msgid "Gramplet showing relatives in a relation"
+msgstr "Gramplet que mostra parentes numa relação"
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:52
+msgid "No Family Tree loaded."
+msgstr "Nenhuma árvore genealógica carregada."
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:93
+msgid "Relations of related people in your database:"
+msgstr "Relações de indivíduos aparentados na sua base de dados:"
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:216
+msgid "and"
+msgstr "e"
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:219
+msgid "are partners and"
+msgstr "são companheiros e"
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:242
+msgid "Common ancestor"
+msgstr "Ascendente comum"
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:253
+msgid "No relatives in a relation found"
+msgstr "Nenhum parente encontrado numa relação"
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:254
+msgid "END"
+msgstr "FIM"

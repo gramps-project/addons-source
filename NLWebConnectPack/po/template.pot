@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"POT-Creation-Date: 2020-02-25 08:32-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,8 +17,24 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: UKWebConnectPack/UKWebPack.gpr.py:10
-msgid "UK Web Connect Pack"
+#: NLWebConnectPack/NLWebPack.gpr.py:11
+msgid "Collection of Web sites for the Netherlands (requires libwebconnect)"
+msgstr ""
+
+#: NLWebConnectPack/NLWebPack.py:33
+msgid "Open Archives"
+msgstr ""
+
+#: NLWebConnectPack/NLWebPack.py:34
+msgid "Genealogy Online"
+msgstr ""
+
+#: NLWebConnectPack/NLWebPack.py:35
+msgid "National Archive"
+msgstr ""
+
+#: NLWebConnectPack/NLWebPack.py:37
+msgid "Who (re)searches who?"
 msgstr ""
 
 #: UKWebConnectPack/UKWebPack.gpr.py:11
@@ -48,3 +64,4 @@ msgstr ""
 #: UKWebConnectPack/UKWebPack.py:39
 msgid "Open Library"
 msgstr ""
+

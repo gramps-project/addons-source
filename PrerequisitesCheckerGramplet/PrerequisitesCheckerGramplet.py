@@ -247,8 +247,8 @@ class PrerequisitesCheckerGramplet(Gramplet):
         '''
         self.append_text("\n")
         # Start check
-        LATEST_GRAMPS_VERSION = (5, 1, 1)
-        LATEST_GRAMPS_DATE = "2019-09-14"
+        LATEST_GRAMPS_VERSION = (5, 1, 2)
+        LATEST_GRAMPS_DATE = "2020-01-10"
         latest_release_message = ("Gramps " + verstr(LATEST_GRAMPS_VERSION) +
                                   "  released " + LATEST_GRAMPS_DATE +
                                   " is the most current version.\n")
@@ -857,15 +857,14 @@ class PrerequisitesCheckerGramplet(Gramplet):
         # test for enchant
         try:
             from ctypes import cdll, c_char_p
-            enchant = cdll.LoadLibrary("libenchant")
+            try:
+                enchant = cdll.LoadLibrary("libenchant")
+            except FileNotFoundError:
+                enchant = cdll.LoadLibrary("libenchant-2")
             enchant_ver_call = enchant.enchant_get_version
             enchant_ver_call.restype = c_char_p
             enchant_result = enchant_ver_call().decode("utf-8")
-            #import enchant
-            #print("Success enchant found")
-            #enchant_result = "Installed"
         except Exception:
-            #print("enchant not found")
             enchant_result = "Not found"
 
         if gtkspell_ver_tp >= GTKSPELL_MIN_VER:

@@ -2,6 +2,7 @@
 #
 # Copyright (C) 2010       Jakim Friant
 # Copyright (c) 2015       Douglas S. Blank <doug.blank@gmail.com>
+# Copyright (c) 2020       Jan Sparreboom <jan@sparreboom.net>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -35,8 +36,20 @@ from gi.repository import Gtk
 #------------------------------------------------------------------------
 from gramps.gen.plug import Gramplet
 from gramps.gen.lib import Date
+
+#------------------------------------------------------------------------
+#
+# Internationalisation
+#
+#------------------------------------------------------------------------
 from gramps.gen.const import GRAMPS_LOCALE as glocale
-_ = glocale.translation.sgettext
+try:
+    trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    trans = glocale.translation
+_ = trans.gettext
+ngettext = trans.ngettext
+
 from gramps.gen.datehandler import parser
 
 #------------------------------------------------------------------------

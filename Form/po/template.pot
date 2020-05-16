@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"POT-Creation-Date: 2020-04-08 11:45-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -106,13 +106,13 @@ msgstr ""
 #: Form\form_gb.xml.h:10 Form\form_gb.xml.h:13 Form\form_gb.xml.h:20
 #: Form\form_gb.xml.h:26 Form\form_gb.xml.h:29 Form\form_gb.xml.h:32
 #: Form\form_gb.xml.h:39 Form\form_gb.xml.h:44 Form\form_gb.xml.h:50
-#: Form\form_gb.xml.h:59 Form\form_gb.xml.h:73 Form\form_gb.xml.h:88
-#: Form\form_gb.xml.h:103 Form\form_gb.xml.h:118 Form\form_gb.xml.h:136
-#: Form\form_gb.xml.h:147 Form\form_gb.xml.h:167 Form\form_gb.xml.h:182
-#: Form\form_gb.xml.h:202 Form\form_gb.xml.h:215 Form\form_gb.xml.h:237
-#: Form\form_gb.xml.h:248 Form\form_gb.xml.h:265 Form\form_gb.xml.h:292
-#: Form\form_gb.xml.h:320 Form\form_gb.xml.h:352 Form\form_gb.xml.h:391
-#: Form\form_gb.xml.h:418 Form\form_gb.xml.h:447 Form\form_pl.xml.h:1
+#: Form\form_gb.xml.h:63 Form\form_gb.xml.h:81 Form\form_gb.xml.h:100
+#: Form\form_gb.xml.h:121 Form\form_gb.xml.h:143 Form\form_gb.xml.h:168
+#: Form\form_gb.xml.h:189 Form\form_gb.xml.h:222 Form\form_gb.xml.h:243
+#: Form\form_gb.xml.h:263 Form\form_gb.xml.h:276 Form\form_gb.xml.h:298
+#: Form\form_gb.xml.h:309 Form\form_gb.xml.h:326 Form\form_gb.xml.h:353
+#: Form\form_gb.xml.h:381 Form\form_gb.xml.h:413 Form\form_gb.xml.h:452
+#: Form\form_gb.xml.h:479 Form\form_gb.xml.h:508 Form\form_pl.xml.h:1
 #: Form\form_pl.xml.h:20 Form\form_pl.xml.h:30 Form\form_us.xml.h:8
 #: Form\form_us.xml.h:22 Form\form_us.xml.h:43 Form\form_us.xml.h:64
 #: Form\form_us.xml.h:104 Form\form_us.xml.h:173 Form\form_us.xml.h:261
@@ -157,11 +157,11 @@ msgstr ""
 msgid "Form"
 msgstr ""
 
-#: Form/form.py:66
+#: Form/form.py:68
 msgid "Groom"
 msgstr ""
 
-#: Form/form.py:67
+#: Form/form.py:69
 msgid "Bride"
 msgstr ""
 
@@ -192,7 +192,7 @@ msgid "Date"
 msgstr ""
 
 #: Form/formgramplet.py:117 Form\form_ca.xml.h:545 Form\form_ca.xml.h:677
-#: Form\form_dk.xml.h:166 Form\form_dk.xml.h:189 Form\form_gb.xml.h:235
+#: Form\form_dk.xml.h:166 Form\form_dk.xml.h:189 Form\form_gb.xml.h:296
 #: Form\form_us.xml.h:906
 msgid "Place"
 msgstr ""
@@ -240,8 +240,8 @@ msgstr ""
 #: Form\form_dk.xml.h:181 Form\form_dk.xml.h:204 Form\form_dk.xml.h:225
 #: Form\form_dk.xml.h:249 Form\form_dk.xml.h:283 Form\form_dk.xml.h:312
 #: Form\form_dk.xml.h:336 Form\form_dk.xml.h:362 Form\form_dk.xml.h:386
-#: Form\form_dk.xml.h:406 Form\form_dk.xml.h:426 Form\form_gb.xml.h:413
-#: Form\form_gb.xml.h:433 Form\form_us.xml.h:853 Form\form_us.xml.h:892
+#: Form\form_dk.xml.h:406 Form\form_dk.xml.h:426 Form\form_gb.xml.h:474
+#: Form\form_gb.xml.h:494 Form\form_us.xml.h:853 Form\form_us.xml.h:892
 #: Form\form_us.xml.h:1222 Form\form_us.xml.h:1291 Form\form_us.xml.h:1907
 #: Form\form_us.xml.h:1927 Form\form_us.xml.h:1951 Form\form_us.xml.h:1990
 #: Form\form_us.xml.h:2027 Form\form_us.xml.h:2065 Form\form_us.xml.h:2103
@@ -297,13 +297,13 @@ msgstr ""
 #: Form\form_fr.xml.h:193 Form\form_fr.xml.h:202 Form\form_fr.xml.h:213
 #: Form\form_gb.xml.h:9 Form\form_gb.xml.h:12 Form\form_gb.xml.h:24
 #: Form\form_gb.xml.h:28 Form\form_gb.xml.h:31 Form\form_gb.xml.h:42
-#: Form\form_gb.xml.h:52 Form\form_gb.xml.h:63 Form\form_gb.xml.h:77
-#: Form\form_gb.xml.h:92 Form\form_gb.xml.h:107 Form\form_gb.xml.h:122
-#: Form\form_gb.xml.h:140 Form\form_gb.xml.h:155 Form\form_gb.xml.h:172
-#: Form\form_gb.xml.h:186 Form\form_gb.xml.h:206 Form\form_gb.xml.h:223
-#: Form\form_gb.xml.h:239 Form\form_gb.xml.h:254 Form\form_gb.xml.h:275
-#: Form\form_gb.xml.h:302 Form\form_gb.xml.h:330 Form\form_gb.xml.h:362
-#: Form\form_gb.xml.h:426 Form\form_gb.xml.h:454 Form\form_us.xml.h:265
+#: Form\form_gb.xml.h:54 Form\form_gb.xml.h:69 Form\form_gb.xml.h:87
+#: Form\form_gb.xml.h:108 Form\form_gb.xml.h:129 Form\form_gb.xml.h:151
+#: Form\form_gb.xml.h:176 Form\form_gb.xml.h:205 Form\form_gb.xml.h:231
+#: Form\form_gb.xml.h:247 Form\form_gb.xml.h:267 Form\form_gb.xml.h:284
+#: Form\form_gb.xml.h:300 Form\form_gb.xml.h:315 Form\form_gb.xml.h:336
+#: Form\form_gb.xml.h:363 Form\form_gb.xml.h:391 Form\form_gb.xml.h:423
+#: Form\form_gb.xml.h:487 Form\form_gb.xml.h:515 Form\form_us.xml.h:265
 #: Form\form_us.xml.h:341 Form\form_us.xml.h:422 Form\form_us.xml.h:440
 #: Form\form_us.xml.h:476 Form\form_us.xml.h:631 Form\form_us.xml.h:690
 #: Form\form_us.xml.h:728 Form\form_us.xml.h:777 Form\form_us.xml.h:816
@@ -348,7 +348,7 @@ msgstr ""
 #: Form\form_dk.xml.h:154 Form\form_dk.xml.h:175 Form\form_dk.xml.h:198
 #: Form\form_dk.xml.h:219 Form\form_dk.xml.h:240 Form\form_dk.xml.h:268
 #: Form\form_dk.xml.h:303 Form\form_dk.xml.h:325 Form\form_fr.xml.h:80
-#: Form\form_fr.xml.h:218 Form\form_gb.xml.h:421 Form\form_gb.xml.h:450
+#: Form\form_fr.xml.h:218 Form\form_gb.xml.h:482 Form\form_gb.xml.h:511
 msgid "Religion"
 msgstr ""
 
@@ -382,14 +382,14 @@ msgstr ""
 #: Form\form_fr.xml.h:102 Form\form_fr.xml.h:110 Form\form_fr.xml.h:118
 #: Form\form_fr.xml.h:124 Form\form_fr.xml.h:131 Form\form_fr.xml.h:141
 #: Form\form_fr.xml.h:148 Form\form_fr.xml.h:165 Form\form_fr.xml.h:209
-#: Form\form_gb.xml.h:22 Form\form_gb.xml.h:41 Form\form_gb.xml.h:51
-#: Form\form_gb.xml.h:62 Form\form_gb.xml.h:76 Form\form_gb.xml.h:91
-#: Form\form_gb.xml.h:106 Form\form_gb.xml.h:121 Form\form_gb.xml.h:139
-#: Form\form_gb.xml.h:149 Form\form_gb.xml.h:185 Form\form_gb.xml.h:205
-#: Form\form_gb.xml.h:217 Form\form_gb.xml.h:238 Form\form_gb.xml.h:253
-#: Form\form_gb.xml.h:274 Form\form_gb.xml.h:301 Form\form_gb.xml.h:329
-#: Form\form_gb.xml.h:361 Form\form_gb.xml.h:401 Form\form_gb.xml.h:424
-#: Form\form_gb.xml.h:453 Form\form_pl.xml.h:7 Form\form_pl.xml.h:35
+#: Form\form_gb.xml.h:22 Form\form_gb.xml.h:41 Form\form_gb.xml.h:52
+#: Form\form_gb.xml.h:68 Form\form_gb.xml.h:86 Form\form_gb.xml.h:106
+#: Form\form_gb.xml.h:127 Form\form_gb.xml.h:149 Form\form_gb.xml.h:174
+#: Form\form_gb.xml.h:193 Form\form_gb.xml.h:246 Form\form_gb.xml.h:266
+#: Form\form_gb.xml.h:278 Form\form_gb.xml.h:299 Form\form_gb.xml.h:314
+#: Form\form_gb.xml.h:335 Form\form_gb.xml.h:362 Form\form_gb.xml.h:390
+#: Form\form_gb.xml.h:422 Form\form_gb.xml.h:462 Form\form_gb.xml.h:485
+#: Form\form_gb.xml.h:514 Form\form_pl.xml.h:7 Form\form_pl.xml.h:35
 #: Form\form_us.xml.h:262 Form\form_us.xml.h:338 Form\form_us.xml.h:415
 #: Form\form_us.xml.h:437 Form\form_us.xml.h:469 Form\form_us.xml.h:621
 #: Form\form_us.xml.h:678 Form\form_us.xml.h:717 Form\form_us.xml.h:762
@@ -1449,7 +1449,7 @@ msgstr ""
 #: Form\form_ca.xml.h:310 Form\form_ca.xml.h:364 Form\form_ca.xml.h:411
 #: Form\form_ca.xml.h:466 Form\form_ca.xml.h:630 Form\form_ca.xml.h:679
 #: Form\form_ca.xml.h:767 Form\form_ca.xml.h:822 Form\form_gb.xml.h:7
-#: Form\form_gb.xml.h:40 Form\form_gb.xml.h:169 Form\form_gb.xml.h:425
+#: Form\form_gb.xml.h:40 Form\form_gb.xml.h:226 Form\form_gb.xml.h:486
 #: Form\form_us.xml.h:263 Form\form_us.xml.h:339 Form\form_us.xml.h:416
 #: Form\form_us.xml.h:438 Form\form_us.xml.h:468 Form\form_us.xml.h:620
 #: Form\form_us.xml.h:675 Form\form_us.xml.h:715 Form\form_us.xml.h:760
@@ -1639,13 +1639,13 @@ msgstr ""
 #: Form\form_fr.xml.h:128 Form\form_fr.xml.h:135 Form\form_fr.xml.h:142
 #: Form\form_fr.xml.h:152 Form\form_fr.xml.h:161 Form\form_fr.xml.h:169
 #: Form\form_fr.xml.h:178 Form\form_fr.xml.h:187 Form\form_fr.xml.h:196
-#: Form\form_fr.xml.h:205 Form\form_fr.xml.h:216 Form\form_gb.xml.h:60
-#: Form\form_gb.xml.h:74 Form\form_gb.xml.h:89 Form\form_gb.xml.h:104
-#: Form\form_gb.xml.h:119 Form\form_gb.xml.h:137 Form\form_gb.xml.h:148
-#: Form\form_gb.xml.h:183 Form\form_gb.xml.h:203 Form\form_gb.xml.h:216
-#: Form\form_gb.xml.h:271 Form\form_gb.xml.h:298 Form\form_gb.xml.h:326
-#: Form\form_gb.xml.h:358 Form\form_gb.xml.h:397 Form\form_gb.xml.h:419
-#: Form\form_gb.xml.h:448 Form\form_us.xml.h:1339 Form\form_us.xml.h:1877
+#: Form\form_fr.xml.h:205 Form\form_fr.xml.h:216 Form\form_gb.xml.h:65
+#: Form\form_gb.xml.h:83 Form\form_gb.xml.h:102 Form\form_gb.xml.h:123
+#: Form\form_gb.xml.h:145 Form\form_gb.xml.h:170 Form\form_gb.xml.h:191
+#: Form\form_gb.xml.h:244 Form\form_gb.xml.h:264 Form\form_gb.xml.h:277
+#: Form\form_gb.xml.h:332 Form\form_gb.xml.h:359 Form\form_gb.xml.h:387
+#: Form\form_gb.xml.h:419 Form\form_gb.xml.h:458 Form\form_gb.xml.h:480
+#: Form\form_gb.xml.h:509 Form\form_us.xml.h:1339 Form\form_us.xml.h:1877
 #: Form\form_us.xml.h:1896 Form\form_us.xml.h:1916
 msgid "Relation"
 msgstr ""
@@ -1687,7 +1687,7 @@ msgid "16. Profession, Occupation or Trade"
 msgstr ""
 
 #: Form\form_ca.xml.h:431 Form\form_ca.xml.h:496 Form\form_ca.xml.h:707
-#: Form\form_gb.xml.h:123 Form\form_gb.xml.h:187 Form\form_gb.xml.h:364
+#: Form\form_gb.xml.h:153 Form\form_gb.xml.h:248 Form\form_gb.xml.h:425
 msgid "Employer"
 msgstr ""
 
@@ -1862,7 +1862,7 @@ msgstr ""
 #: Form\form_fr.xml.h:145 Form\form_fr.xml.h:151 Form\form_fr.xml.h:160
 #: Form\form_fr.xml.h:168 Form\form_fr.xml.h:177 Form\form_fr.xml.h:186
 #: Form\form_fr.xml.h:195 Form\form_fr.xml.h:204 Form\form_fr.xml.h:215
-#: Form\form_gb.xml.h:162 Form\form_gb.xml.h:230
+#: Form\form_gb.xml.h:215 Form\form_gb.xml.h:291
 msgid "Nationality"
 msgstr ""
 
@@ -1995,7 +1995,7 @@ msgid "32. Can speak French"
 msgstr ""
 
 #: Form\form_ca.xml.h:524 Form\form_ca.xml.h:741 Form\form_ca.xml.h:789
-#: Form\form_gb.xml.h:193 Form\form_gb.xml.h:213 Form\form_gb.xml.h:232
+#: Form\form_gb.xml.h:254 Form\form_gb.xml.h:274 Form\form_gb.xml.h:293
 msgid "Language"
 msgstr ""
 
@@ -2774,8 +2774,8 @@ msgstr ""
 #: Form\form_dk.xml.h:229 Form\form_dk.xml.h:253 Form\form_dk.xml.h:287
 #: Form\form_dk.xml.h:316 Form\form_dk.xml.h:340 Form\form_dk.xml.h:366
 #: Form\form_dk.xml.h:390 Form\form_dk.xml.h:410 Form\form_dk.xml.h:430
-#: Form\form_gb.xml.h:234 Form\form_gb.xml.h:242 Form\form_gb.xml.h:257
-#: Form\form_gb.xml.h:437
+#: Form\form_gb.xml.h:295 Form\form_gb.xml.h:303 Form\form_gb.xml.h:318
+#: Form\form_gb.xml.h:498
 msgid "Parish"
 msgstr ""
 
@@ -2796,7 +2796,7 @@ msgstr ""
 #: Form\form_dk.xml.h:231 Form\form_dk.xml.h:255 Form\form_dk.xml.h:289
 #: Form\form_dk.xml.h:318 Form\form_dk.xml.h:342 Form\form_dk.xml.h:368
 #: Form\form_dk.xml.h:392 Form\form_dk.xml.h:412 Form\form_dk.xml.h:432
-#: Form\form_gb.xml.h:416 Form\form_gb.xml.h:444 Form\form_us.xml.h:1337
+#: Form\form_gb.xml.h:477 Form\form_gb.xml.h:505 Form\form_us.xml.h:1337
 #: Form\form_us.xml.h:1514 Form\form_us.xml.h:1593
 msgid "Street"
 msgstr ""
@@ -2819,13 +2819,13 @@ msgstr ""
 #: Form\form_fr.xml.h:153 Form\form_fr.xml.h:162 Form\form_fr.xml.h:170
 #: Form\form_fr.xml.h:179 Form\form_fr.xml.h:188 Form\form_fr.xml.h:197
 #: Form\form_fr.xml.h:206 Form\form_fr.xml.h:217 Form\form_gb.xml.h:23
-#: Form\form_gb.xml.h:61 Form\form_gb.xml.h:75 Form\form_gb.xml.h:90
-#: Form\form_gb.xml.h:105 Form\form_gb.xml.h:120 Form\form_gb.xml.h:138
-#: Form\form_gb.xml.h:150 Form\form_gb.xml.h:171 Form\form_gb.xml.h:184
-#: Form\form_gb.xml.h:204 Form\form_gb.xml.h:218 Form\form_gb.xml.h:252
-#: Form\form_gb.xml.h:273 Form\form_gb.xml.h:300 Form\form_gb.xml.h:328
-#: Form\form_gb.xml.h:360 Form\form_gb.xml.h:399 Form\form_gb.xml.h:427
-#: Form\form_gb.xml.h:455 Form\form_us.xml.h:1543 Form\form_us.xml.h:1557
+#: Form\form_gb.xml.h:67 Form\form_gb.xml.h:85 Form\form_gb.xml.h:104
+#: Form\form_gb.xml.h:125 Form\form_gb.xml.h:147 Form\form_gb.xml.h:172
+#: Form\form_gb.xml.h:195 Form\form_gb.xml.h:229 Form\form_gb.xml.h:245
+#: Form\form_gb.xml.h:265 Form\form_gb.xml.h:279 Form\form_gb.xml.h:313
+#: Form\form_gb.xml.h:334 Form\form_gb.xml.h:361 Form\form_gb.xml.h:389
+#: Form\form_gb.xml.h:421 Form\form_gb.xml.h:460 Form\form_gb.xml.h:488
+#: Form\form_gb.xml.h:516 Form\form_us.xml.h:1543 Form\form_us.xml.h:1557
 #: Form\form_us.xml.h:2318
 msgid "Condition"
 msgstr ""
@@ -2874,13 +2874,13 @@ msgstr ""
 #: Form\form_fr.xml.h:103 Form\form_fr.xml.h:111 Form\form_fr.xml.h:139
 #: Form\form_fr.xml.h:157 Form\form_fr.xml.h:174 Form\form_fr.xml.h:183
 #: Form\form_fr.xml.h:192 Form\form_fr.xml.h:201 Form\form_fr.xml.h:211
-#: Form\form_gb.xml.h:53 Form\form_gb.xml.h:64 Form\form_gb.xml.h:78
-#: Form\form_gb.xml.h:93 Form\form_gb.xml.h:108 Form\form_gb.xml.h:127
-#: Form\form_gb.xml.h:145 Form\form_gb.xml.h:161 Form\form_gb.xml.h:191
-#: Form\form_gb.xml.h:211 Form\form_gb.xml.h:229 Form\form_gb.xml.h:255
-#: Form\form_gb.xml.h:277 Form\form_gb.xml.h:304 Form\form_gb.xml.h:332
-#: Form\form_gb.xml.h:368 Form\form_gb.xml.h:405 Form\form_gb.xml.h:428
-#: Form\form_gb.xml.h:460
+#: Form\form_gb.xml.h:56 Form\form_gb.xml.h:71 Form\form_gb.xml.h:89
+#: Form\form_gb.xml.h:110 Form\form_gb.xml.h:131 Form\form_gb.xml.h:157
+#: Form\form_gb.xml.h:182 Form\form_gb.xml.h:213 Form\form_gb.xml.h:252
+#: Form\form_gb.xml.h:272 Form\form_gb.xml.h:290 Form\form_gb.xml.h:316
+#: Form\form_gb.xml.h:338 Form\form_gb.xml.h:365 Form\form_gb.xml.h:393
+#: Form\form_gb.xml.h:429 Form\form_gb.xml.h:466 Form\form_gb.xml.h:489
+#: Form\form_gb.xml.h:521
 msgid "Where Born"
 msgstr ""
 
@@ -2978,8 +2978,8 @@ msgstr ""
 msgid "År gift"
 msgstr ""
 
-#: Form\form_dk.xml.h:277 Form\form_gb.xml.h:153 Form\form_gb.xml.h:221
-#: Form\form_gb.xml.h:459
+#: Form\form_dk.xml.h:277 Form\form_gb.xml.h:201 Form\form_gb.xml.h:282
+#: Form\form_gb.xml.h:520
 msgid "Children Living"
 msgstr ""
 
@@ -3116,8 +3116,8 @@ msgstr ""
 #: Form\form_fr.xml.h:133 Form\form_fr.xml.h:150 Form\form_fr.xml.h:159
 #: Form\form_fr.xml.h:167 Form\form_fr.xml.h:176 Form\form_fr.xml.h:185
 #: Form\form_fr.xml.h:194 Form\form_fr.xml.h:203 Form\form_fr.xml.h:214
-#: Form\form_gb.xml.h:250 Form\form_gb.xml.h:267 Form\form_gb.xml.h:294
-#: Form\form_gb.xml.h:322 Form\form_gb.xml.h:354 Form\form_gb.xml.h:393
+#: Form\form_gb.xml.h:311 Form\form_gb.xml.h:328 Form\form_gb.xml.h:355
+#: Form\form_gb.xml.h:383 Form\form_gb.xml.h:415 Form\form_gb.xml.h:454
 #: Form\form_us.xml.h:1047 Form\form_us.xml.h:1063
 msgid "Address"
 msgstr ""
@@ -3130,11 +3130,11 @@ msgstr ""
 msgid "Type of roof"
 msgstr ""
 
-#: Form\form_fr.xml.h:81 Form\form_fr.xml.h:219 Form\form_gb.xml.h:65
-#: Form\form_gb.xml.h:79 Form\form_gb.xml.h:94 Form\form_gb.xml.h:109
-#: Form\form_gb.xml.h:128 Form\form_gb.xml.h:146 Form\form_gb.xml.h:163
-#: Form\form_gb.xml.h:192 Form\form_gb.xml.h:212 Form\form_gb.xml.h:231
-#: Form\form_gb.xml.h:431 Form\form_gb.xml.h:463 Form\form_us.xml.h:2458
+#: Form\form_fr.xml.h:81 Form\form_fr.xml.h:219 Form\form_gb.xml.h:72
+#: Form\form_gb.xml.h:90 Form\form_gb.xml.h:111 Form\form_gb.xml.h:132
+#: Form\form_gb.xml.h:158 Form\form_gb.xml.h:183 Form\form_gb.xml.h:217
+#: Form\form_gb.xml.h:253 Form\form_gb.xml.h:273 Form\form_gb.xml.h:292
+#: Form\form_gb.xml.h:492 Form\form_gb.xml.h:524 Form\form_us.xml.h:2458
 msgid "Disability"
 msgstr ""
 
@@ -3154,7 +3154,7 @@ msgstr ""
 msgid "Entry Number"
 msgstr ""
 
-#: Form\form_gb.xml.h:3 Form\form_gb.xml.h:36
+#: Form\form_gb.xml.h:3 Form\form_gb.xml.h:36 Form\form_gb.xml.h:185
 msgid "Registration District"
 msgstr ""
 
@@ -3193,412 +3193,633 @@ msgstr ""
 msgid "Cause of Death"
 msgstr ""
 
-#: Form\form_gb.xml.h:48 Form\form_gb.xml.h:56
+#: Form\form_gb.xml.h:48 Form\form_gb.xml.h:60
 msgid "City or Borough"
 msgstr ""
 
-#: Form\form_gb.xml.h:49 Form\form_gb.xml.h:54 Form\form_gb.xml.h:66
+#: Form\form_gb.xml.h:49 Form\form_gb.xml.h:58 Form\form_gb.xml.h:74
 msgid "Parish or Township"
 msgstr ""
 
-#: Form\form_gb.xml.h:55 Form\form_gb.xml.h:72 Form\form_gb.xml.h:87
+#: Form\form_gb.xml.h:51
+msgid "NAMES of each Person who abode therein the preceding Night."
+msgstr ""
+
+#: Form\form_gb.xml.h:53
+msgid ""
+"AGE, rounded down to the nearest five years for those aged fifteen or over."
+msgstr ""
+
+#: Form\form_gb.xml.h:55
+msgid "PROFESSION, TRADE, EMPLOYMENT or of INDEPENDENT MEANS."
+msgstr ""
+
+#: Form\form_gb.xml.h:57
+msgid ""
+"Whether Born in same County (Y or N), Scotland (S), Ireland (I) or Foreign "
+"Parts (P)."
+msgstr ""
+
+#: Form\form_gb.xml.h:59 Form\form_gb.xml.h:80 Form\form_gb.xml.h:99
 msgid "Ecclesiastical District"
 msgstr ""
 
-#: Form\form_gb.xml.h:57 Form\form_gb.xml.h:70 Form\form_gb.xml.h:84
-#: Form\form_gb.xml.h:261 Form\form_gb.xml.h:289 Form\form_gb.xml.h:317
-#: Form\form_gb.xml.h:348 Form\form_gb.xml.h:387 Form\form_us.xml.h:1891
+#: Form\form_gb.xml.h:61 Form\form_gb.xml.h:78 Form\form_gb.xml.h:96
+#: Form\form_gb.xml.h:322 Form\form_gb.xml.h:350 Form\form_gb.xml.h:378
+#: Form\form_gb.xml.h:409 Form\form_gb.xml.h:448 Form\form_us.xml.h:1891
 #: Form\form_us.xml.h:1912
 msgid "Town"
 msgstr ""
 
-#: Form\form_gb.xml.h:58 Form\form_gb.xml.h:262
+#: Form\form_gb.xml.h:62 Form\form_gb.xml.h:323
 msgid "Village"
 msgstr ""
 
-#: Form\form_gb.xml.h:67 Form\form_gb.xml.h:81 Form\form_gb.xml.h:96
+#: Form\form_gb.xml.h:64
+msgid ""
+"Name and Surname of each Person who abode in the house, on the Night of the "
+"30th March, 1851"
+msgstr ""
+
+#: Form\form_gb.xml.h:66 Form\form_gb.xml.h:84 Form\form_gb.xml.h:333
+#: Form\form_gb.xml.h:360 Form\form_gb.xml.h:388 Form\form_gb.xml.h:420
+#: Form\form_gb.xml.h:459 Form\form_gb.xml.h:481 Form\form_gb.xml.h:510
+msgid "Relation to Head of Family"
+msgstr ""
+
+#: Form\form_gb.xml.h:70
+msgid "Rank, Profession or Occupation"
+msgstr ""
+
+#: Form\form_gb.xml.h:73
+msgid "Whether Blind or Deaf and Dumb"
+msgstr ""
+
+#: Form\form_gb.xml.h:75 Form\form_gb.xml.h:93 Form\form_gb.xml.h:114
 msgid "City or Municipal Borough"
 msgstr ""
 
-#: Form\form_gb.xml.h:68 Form\form_gb.xml.h:82 Form\form_gb.xml.h:97
-#: Form\form_gb.xml.h:112 Form\form_gb.xml.h:176
+#: Form\form_gb.xml.h:76 Form\form_gb.xml.h:94 Form\form_gb.xml.h:115
+#: Form\form_gb.xml.h:137 Form\form_gb.xml.h:237
 msgid "Municipal Ward"
 msgstr ""
 
-#: Form\form_gb.xml.h:69 Form\form_gb.xml.h:83 Form\form_gb.xml.h:98
-#: Form\form_gb.xml.h:440
+#: Form\form_gb.xml.h:77 Form\form_gb.xml.h:95 Form\form_gb.xml.h:116
+#: Form\form_gb.xml.h:501
 msgid "Parliamentary Borough"
 msgstr ""
 
-#: Form\form_gb.xml.h:71
+#: Form\form_gb.xml.h:79
 msgid "Hamlet or Tything"
 msgstr ""
 
-#: Form\form_gb.xml.h:80 Form\form_gb.xml.h:95
+#: Form\form_gb.xml.h:82 Form\form_gb.xml.h:169
+msgid "Name and Surname of each Person"
+msgstr ""
+
+#: Form\form_gb.xml.h:88
+msgid "Rank, Profession of Occupation"
+msgstr ""
+
+#: Form\form_gb.xml.h:91
+msgid "Whether Blind, or Deaf-and-Dumb"
+msgstr ""
+
+#: Form\form_gb.xml.h:92 Form\form_gb.xml.h:113
 msgid "Civil Parish or Township"
 msgstr ""
 
-#: Form\form_gb.xml.h:85 Form\form_gb.xml.h:290 Form\form_gb.xml.h:318
-#: Form\form_gb.xml.h:349 Form\form_gb.xml.h:388
+#: Form\form_gb.xml.h:97 Form\form_gb.xml.h:351 Form\form_gb.xml.h:379
+#: Form\form_gb.xml.h:410 Form\form_gb.xml.h:449
 msgid "Village or Hamlet"
 msgstr ""
 
-#: Form\form_gb.xml.h:86
+#: Form\form_gb.xml.h:98
 msgid "Local Board or Improvement Commissioners District"
 msgstr ""
 
-#: Form\form_gb.xml.h:99 Form\form_gb.xml.h:114 Form\form_gb.xml.h:178
+#: Form\form_gb.xml.h:101 Form\form_gb.xml.h:122 Form\form_gb.xml.h:144
+msgid "NAME and Surname of each Person"
+msgstr ""
+
+#: Form\form_gb.xml.h:103 Form\form_gb.xml.h:124 Form\form_gb.xml.h:146
+#: Form\form_gb.xml.h:171
+msgid "RELATION to Head of Family"
+msgstr ""
+
+#: Form\form_gb.xml.h:105
+msgid "CONDITION"
+msgstr ""
+
+#: Form\form_gb.xml.h:107
+msgid "AGE of"
+msgstr ""
+
+#: Form\form_gb.xml.h:109 Form\form_gb.xml.h:130
+msgid "Rank, Profession or OCCUPATION"
+msgstr ""
+
+#: Form\form_gb.xml.h:112
+msgid ""
+"Whether\n"
+"1. Deaf-and-Dumb\n"
+"2. Blind\n"
+"3. Imbecile or Idiot\n"
+"4. Lunatic"
+msgstr ""
+
+#: Form\form_gb.xml.h:117 Form\form_gb.xml.h:139 Form\form_gb.xml.h:239
 msgid "Town, Village or Hamlet"
 msgstr ""
 
-#: Form\form_gb.xml.h:100 Form\form_gb.xml.h:113 Form\form_gb.xml.h:177
+#: Form\form_gb.xml.h:118 Form\form_gb.xml.h:138 Form\form_gb.xml.h:238
 msgid "Urban Sanitary District"
 msgstr ""
 
-#: Form\form_gb.xml.h:101 Form\form_gb.xml.h:115 Form\form_gb.xml.h:179
+#: Form\form_gb.xml.h:119 Form\form_gb.xml.h:140 Form\form_gb.xml.h:240
 msgid "Rural Sanitary District"
 msgstr ""
 
-#: Form\form_gb.xml.h:102 Form\form_gb.xml.h:117 Form\form_gb.xml.h:181
+#: Form\form_gb.xml.h:120 Form\form_gb.xml.h:142 Form\form_gb.xml.h:242
 msgid "Ecclesiastical Parish or District"
 msgstr ""
 
-#: Form\form_gb.xml.h:110 Form\form_gb.xml.h:129 Form\form_gb.xml.h:174
-#: Form\form_gb.xml.h:195 Form\form_gb.xml.h:284 Form\form_gb.xml.h:311
-#: Form\form_gb.xml.h:339 Form\form_gb.xml.h:376
+#: Form\form_gb.xml.h:126 Form\form_gb.xml.h:148
+msgid "CONDITION as to Marriage"
+msgstr ""
+
+#: Form\form_gb.xml.h:128 Form\form_gb.xml.h:150
+msgid "AGE last Birthday of"
+msgstr ""
+
+#: Form\form_gb.xml.h:133
+msgid ""
+"If\n"
+"(1) Deaf-and-Dumb\n"
+"(2) Blind\n"
+"(3) Imbecile or Idiot\n"
+"(4) Lunatic"
+msgstr ""
+
+#: Form\form_gb.xml.h:134 Form\form_gb.xml.h:160
+msgid "Administrative County"
+msgstr ""
+
+#: Form\form_gb.xml.h:135 Form\form_gb.xml.h:161 Form\form_gb.xml.h:235
+#: Form\form_gb.xml.h:256 Form\form_gb.xml.h:345 Form\form_gb.xml.h:372
+#: Form\form_gb.xml.h:400 Form\form_gb.xml.h:437
 msgid "Civil Parish"
 msgstr ""
 
-#: Form\form_gb.xml.h:111 Form\form_gb.xml.h:175
+#: Form\form_gb.xml.h:136 Form\form_gb.xml.h:236
 msgid "Municipal Borough"
 msgstr ""
 
-#: Form\form_gb.xml.h:116 Form\form_gb.xml.h:134 Form\form_gb.xml.h:180
-#: Form\form_gb.xml.h:200
+#: Form\form_gb.xml.h:141 Form\form_gb.xml.h:166 Form\form_gb.xml.h:241
+#: Form\form_gb.xml.h:261
 msgid "Parliamentary Borough or Division"
 msgstr ""
 
-#: Form\form_gb.xml.h:124 Form\form_gb.xml.h:188 Form\form_gb.xml.h:365
+#: Form\form_gb.xml.h:152
+msgid "PROFESSION or OCCUPATION"
+msgstr ""
+
+#: Form\form_gb.xml.h:154 Form\form_gb.xml.h:249 Form\form_gb.xml.h:426
 #: Form\form_us.xml.h:819
 msgid "Employed"
 msgstr ""
 
-#: Form\form_gb.xml.h:125 Form\form_gb.xml.h:189 Form\form_gb.xml.h:366
+#: Form\form_gb.xml.h:155 Form\form_gb.xml.h:250 Form\form_gb.xml.h:427
 msgid "Neither"
 msgstr ""
 
-#: Form\form_gb.xml.h:126 Form\form_gb.xml.h:190 Form\form_gb.xml.h:367
+#: Form\form_gb.xml.h:156 Form\form_gb.xml.h:251 Form\form_gb.xml.h:428
 msgid "Neither Employer nor Employed"
 msgstr ""
 
-#: Form\form_gb.xml.h:130 Form\form_gb.xml.h:196 Form\form_gb.xml.h:378
+#: Form\form_gb.xml.h:159
+msgid ""
+"If\n"
+"(1) Deaf-and-Blind\n"
+"(2) Blind\n"
+"(3) Lunatic, Imbecile or Idiot"
+msgstr ""
+
+#: Form\form_gb.xml.h:162 Form\form_gb.xml.h:257 Form\form_gb.xml.h:439
 msgid "Ecclesiastical Parish"
 msgstr ""
 
-#: Form\form_gb.xml.h:131 Form\form_gb.xml.h:197
+#: Form\form_gb.xml.h:163 Form\form_gb.xml.h:258
 msgid "County Borough, Municipal Borough, or Urban District"
 msgstr ""
 
-#: Form\form_gb.xml.h:132 Form\form_gb.xml.h:198
+#: Form\form_gb.xml.h:164 Form\form_gb.xml.h:259
 msgid "Ward of Municipal Borough or of Urban District"
 msgstr ""
 
-#: Form\form_gb.xml.h:133 Form\form_gb.xml.h:199
+#: Form\form_gb.xml.h:165 Form\form_gb.xml.h:260
 msgid "Rural District"
 msgstr ""
 
-#: Form\form_gb.xml.h:135 Form\form_gb.xml.h:201
+#: Form\form_gb.xml.h:167 Form\form_gb.xml.h:262
 msgid "Town or Village or Hamlet"
 msgstr ""
 
-#: Form\form_gb.xml.h:141 Form\form_gb.xml.h:157 Form\form_gb.xml.h:207
-#: Form\form_gb.xml.h:225
+#: Form\form_gb.xml.h:173 Form\form_gb.xml.h:461
+msgid "Condition as to Marriage"
+msgstr ""
+
+#: Form\form_gb.xml.h:175
+msgid "Age last Birthday of"
+msgstr ""
+
+#: Form\form_gb.xml.h:177
+msgid "PROFESSION OR OCCUPATION"
+msgstr ""
+
+#: Form\form_gb.xml.h:178 Form\form_gb.xml.h:209 Form\form_gb.xml.h:268
+#: Form\form_gb.xml.h:286
 msgid "Work Type"
 msgstr ""
 
-#: Form\form_gb.xml.h:142 Form\form_gb.xml.h:158 Form\form_gb.xml.h:208
-#: Form\form_gb.xml.h:226
+#: Form\form_gb.xml.h:179 Form\form_gb.xml.h:269 Form\form_gb.xml.h:287
 msgid "Employer, Worker or Own Account"
 msgstr ""
 
-#: Form\form_gb.xml.h:143 Form\form_gb.xml.h:159 Form\form_gb.xml.h:209
-#: Form\form_gb.xml.h:227
+#: Form\form_gb.xml.h:180 Form\form_gb.xml.h:211 Form\form_gb.xml.h:270
+#: Form\form_gb.xml.h:288
 msgid "At Home"
 msgstr ""
 
-#: Form\form_gb.xml.h:144 Form\form_gb.xml.h:160 Form\form_gb.xml.h:210
-#: Form\form_gb.xml.h:228 Form\form_gb.xml.h:404
-msgid "Working at Home"
+#: Form\form_gb.xml.h:181
+msgid "If Working at Home"
 msgstr ""
 
-#: Form\form_gb.xml.h:151 Form\form_gb.xml.h:219 Form\form_gb.xml.h:456
+#: Form\form_gb.xml.h:184
+msgid ""
+"If\n"
+"(1) Deaf and Dumb\n"
+"(2) Blind\n"
+"(3) Lunatic\n"
+"(4) Imbecile, feeble-minded"
+msgstr ""
+
+#: Form\form_gb.xml.h:186
+msgid "Registration Sub-District"
+msgstr ""
+
+#: Form\form_gb.xml.h:187 Form\form_gb.xml.h:324
+msgid "Enumeration District"
+msgstr ""
+
+#: Form\form_gb.xml.h:188
+msgid "Number of Rooms"
+msgstr ""
+
+#: Form\form_gb.xml.h:190
+msgid "NAME AND SURNAME"
+msgstr ""
+
+#: Form\form_gb.xml.h:192
+msgid "RELATIONSHIP to Head of Family"
+msgstr ""
+
+#: Form\form_gb.xml.h:194
+msgid "AGE (last Birthday)"
+msgstr ""
+
+#: Form\form_gb.xml.h:196
+msgid ""
+"\"Single,\" \"Married,\" \"Widower,\" or \"Widow,\" for all persons aged 15 "
+"years and upwards."
+msgstr ""
+
+#: Form\form_gb.xml.h:197 Form\form_gb.xml.h:280 Form\form_gb.xml.h:517
 msgid "Years Married"
 msgstr ""
 
-#: Form\form_gb.xml.h:152 Form\form_gb.xml.h:220
+#: Form\form_gb.xml.h:198
+msgid "Completed Years the present Marriage has lasted."
+msgstr ""
+
+#: Form\form_gb.xml.h:199 Form\form_gb.xml.h:281
 msgid "Children Total"
 msgstr ""
 
-#: Form\form_gb.xml.h:154 Form\form_gb.xml.h:222
+#: Form\form_gb.xml.h:200
+msgid "Total Children Born Alive."
+msgstr ""
+
+#: Form\form_gb.xml.h:202
+msgid "Children still Living."
+msgstr ""
+
+#: Form\form_gb.xml.h:203 Form\form_gb.xml.h:283
 msgid "Children Died"
 msgstr ""
 
-#: Form\form_gb.xml.h:156 Form\form_gb.xml.h:224 Form\form_us.xml.h:778
+#: Form\form_gb.xml.h:204
+msgid "Children who have Died."
+msgstr ""
+
+#: Form\form_gb.xml.h:206
+msgid "Personal Occupation"
+msgstr ""
+
+#: Form\form_gb.xml.h:207 Form\form_gb.xml.h:285 Form\form_us.xml.h:778
 #: Form\form_us.xml.h:817 Form\form_us.xml.h:864 Form\form_us.xml.h:1529
 msgid "Industry"
 msgstr ""
 
-#: Form\form_gb.xml.h:164
+#: Form\form_gb.xml.h:208
+msgid "Industry or Service with which worker is sonnected."
+msgstr ""
+
+#: Form\form_gb.xml.h:210
+msgid "Employer, Worker or Working on Own Account"
+msgstr ""
+
+#: Form\form_gb.xml.h:212
+msgid "Whether Working at Home"
+msgstr ""
+
+#: Form\form_gb.xml.h:214
+msgid "BIRTHPLACE of every Person."
+msgstr ""
+
+#: Form\form_gb.xml.h:216
+msgid "NATIONALITY of every Person born in a Foreign Country."
+msgstr ""
+
+#: Form\form_gb.xml.h:218
+msgid "INFIRMITY"
+msgstr ""
+
+#: Form\form_gb.xml.h:219
 msgid "E.D. Letter Code"
 msgstr ""
 
-#: Form\form_gb.xml.h:165
+#: Form\form_gb.xml.h:220
 msgid "Borough, U.D. or R.D."
 msgstr ""
 
-#: Form\form_gb.xml.h:166
+#: Form\form_gb.xml.h:221
 msgid "Registration District and Sub-district"
 msgstr ""
 
-#: Form\form_gb.xml.h:168
+#: Form\form_gb.xml.h:223
+msgid "SURNAMES and OTHER NAMES."
+msgstr ""
+
+#: Form\form_gb.xml.h:224
 msgid "OVSPI"
 msgstr ""
 
-#: Form\form_gb.xml.h:170 Form\form_us.xml.h:2381
+#: Form\form_gb.xml.h:225
+msgid "O, V, S, P or I"
+msgstr ""
+
+#: Form\form_gb.xml.h:227
+msgid "M or F"
+msgstr ""
+
+#: Form\form_gb.xml.h:228 Form\form_us.xml.h:2381
 msgid "Birth Date"
 msgstr ""
 
-#: Form\form_gb.xml.h:173
+#: Form\form_gb.xml.h:230
+msgid "S, M, W or D."
+msgstr ""
+
+#: Form\form_gb.xml.h:232
+msgid "PERSONAL OCCUPATION"
+msgstr ""
+
+#: Form\form_gb.xml.h:233
 msgid "Instructions"
 msgstr ""
 
-#: Form\form_gb.xml.h:194 Form\form_gb.xml.h:214 Form\form_gb.xml.h:233
+#: Form\form_gb.xml.h:234
+msgid "See INSTRUCTIONS"
+msgstr ""
+
+#: Form\form_gb.xml.h:255 Form\form_gb.xml.h:275 Form\form_gb.xml.h:294
 msgid "Language Spoken"
 msgstr ""
 
-#: Form\form_gb.xml.h:236 Form\form_gb.xml.h:247 Form\form_gb.xml.h:264
-#: Form\form_gb.xml.h:291 Form\form_gb.xml.h:319 Form\form_gb.xml.h:351
-#: Form\form_gb.xml.h:390
+#: Form\form_gb.xml.h:271 Form\form_gb.xml.h:289 Form\form_gb.xml.h:465
+msgid "Working at Home"
+msgstr ""
+
+#: Form\form_gb.xml.h:297 Form\form_gb.xml.h:308 Form\form_gb.xml.h:325
+#: Form\form_gb.xml.h:352 Form\form_gb.xml.h:380 Form\form_gb.xml.h:412
+#: Form\form_gb.xml.h:451
 msgid "GROS Data"
 msgstr ""
 
-#: Form\form_gb.xml.h:240
+#: Form\form_gb.xml.h:301
 msgid "Born in County"
 msgstr ""
 
-#: Form\form_gb.xml.h:241
+#: Form\form_gb.xml.h:302
 msgid "Foreigner, Born England or Ireland"
 msgstr ""
 
-#: Form\form_gb.xml.h:243 Form\form_gb.xml.h:258 Form\form_gb.xml.h:285
-#: Form\form_gb.xml.h:312 Form\form_gb.xml.h:340 Form\form_gb.xml.h:379
+#: Form\form_gb.xml.h:304 Form\form_gb.xml.h:319 Form\form_gb.xml.h:346
+#: Form\form_gb.xml.h:373 Form\form_gb.xml.h:401 Form\form_gb.xml.h:440
 msgid "Quoad Sacra Parish"
 msgstr ""
 
-#: Form\form_gb.xml.h:244 Form\form_gb.xml.h:259 Form\form_gb.xml.h:286
-#: Form\form_gb.xml.h:314 Form\form_gb.xml.h:342 Form\form_gb.xml.h:381
+#: Form\form_gb.xml.h:305 Form\form_gb.xml.h:320 Form\form_gb.xml.h:347
+#: Form\form_gb.xml.h:375 Form\form_gb.xml.h:403 Form\form_gb.xml.h:442
 msgid "Parliamentary Burgh"
 msgstr ""
 
-#: Form\form_gb.xml.h:245 Form\form_gb.xml.h:260 Form\form_gb.xml.h:287
-#: Form\form_gb.xml.h:315 Form\form_gb.xml.h:344 Form\form_gb.xml.h:383
+#: Form\form_gb.xml.h:306 Form\form_gb.xml.h:321 Form\form_gb.xml.h:348
+#: Form\form_gb.xml.h:376 Form\form_gb.xml.h:405 Form\form_gb.xml.h:444
 msgid "Royal Burgh"
 msgstr ""
 
-#: Form\form_gb.xml.h:246 Form\form_gb.xml.h:443
+#: Form\form_gb.xml.h:307 Form\form_gb.xml.h:504
 msgid "Town or Village"
 msgstr ""
 
-#: Form\form_gb.xml.h:249
+#: Form\form_gb.xml.h:310
 msgid "House Schedule No"
 msgstr ""
 
-#: Form\form_gb.xml.h:251
+#: Form\form_gb.xml.h:312
 msgid "Relation to Head"
 msgstr ""
 
-#: Form\form_gb.xml.h:256
+#: Form\form_gb.xml.h:317
 msgid "Blind, or Deaf and Dumb"
 msgstr ""
 
-#: Form\form_gb.xml.h:263
-msgid "Enumeration District"
-msgstr ""
-
-#: Form\form_gb.xml.h:266 Form\form_gb.xml.h:293 Form\form_gb.xml.h:321
-#: Form\form_gb.xml.h:353 Form\form_gb.xml.h:392
+#: Form\form_gb.xml.h:327 Form\form_gb.xml.h:354 Form\form_gb.xml.h:382
+#: Form\form_gb.xml.h:414 Form\form_gb.xml.h:453
 msgid "No. Of Schedule"
 msgstr ""
 
-#: Form\form_gb.xml.h:268 Form\form_gb.xml.h:295 Form\form_gb.xml.h:323
-#: Form\form_gb.xml.h:355 Form\form_gb.xml.h:394
+#: Form\form_gb.xml.h:329 Form\form_gb.xml.h:356 Form\form_gb.xml.h:384
+#: Form\form_gb.xml.h:416 Form\form_gb.xml.h:455
 msgid "Road, Street, etc, and No. or Name of House"
 msgstr ""
 
-#: Form\form_gb.xml.h:269 Form\form_gb.xml.h:296 Form\form_gb.xml.h:324
-#: Form\form_gb.xml.h:356 Form\form_gb.xml.h:395
+#: Form\form_gb.xml.h:330 Form\form_gb.xml.h:357 Form\form_gb.xml.h:385
+#: Form\form_gb.xml.h:417 Form\form_gb.xml.h:456
 msgid "House Inhabited"
 msgstr ""
 
-#: Form\form_gb.xml.h:270 Form\form_gb.xml.h:297 Form\form_gb.xml.h:325
-#: Form\form_gb.xml.h:357 Form\form_gb.xml.h:396
+#: Form\form_gb.xml.h:331 Form\form_gb.xml.h:358 Form\form_gb.xml.h:386
+#: Form\form_gb.xml.h:418 Form\form_gb.xml.h:457
 msgid "House U or B"
 msgstr ""
 
-#: Form\form_gb.xml.h:272 Form\form_gb.xml.h:299 Form\form_gb.xml.h:327
-#: Form\form_gb.xml.h:359 Form\form_gb.xml.h:398 Form\form_gb.xml.h:420
-#: Form\form_gb.xml.h:449
-msgid "Relation to Head of Family"
-msgstr ""
-
-#: Form\form_gb.xml.h:276 Form\form_gb.xml.h:303 Form\form_gb.xml.h:331
-#: Form\form_gb.xml.h:363
+#: Form\form_gb.xml.h:337 Form\form_gb.xml.h:364 Form\form_gb.xml.h:392
+#: Form\form_gb.xml.h:424
 msgid "Rank, Profession, or Occupation"
 msgstr ""
 
-#: Form\form_gb.xml.h:278 Form\form_gb.xml.h:305 Form\form_gb.xml.h:333
-#: Form\form_gb.xml.h:370 Form\form_gb.xml.h:407 Form\form_us.xml.h:1409
+#: Form\form_gb.xml.h:339 Form\form_gb.xml.h:366 Form\form_gb.xml.h:394
+#: Form\form_gb.xml.h:431 Form\form_gb.xml.h:468 Form\form_us.xml.h:1409
 msgid "Disabled"
 msgstr ""
 
-#: Form\form_gb.xml.h:279
+#: Form\form_gb.xml.h:340
 msgid "Whether Blind, or Deaf and Dumb"
 msgstr ""
 
-#: Form\form_gb.xml.h:280 Form\form_gb.xml.h:307 Form\form_gb.xml.h:335
-#: Form\form_gb.xml.h:372 Form\form_gb.xml.h:409
+#: Form\form_gb.xml.h:341 Form\form_gb.xml.h:368 Form\form_gb.xml.h:396
+#: Form\form_gb.xml.h:433 Form\form_gb.xml.h:470
 msgid "Children"
 msgstr ""
 
-#: Form\form_gb.xml.h:281 Form\form_gb.xml.h:308 Form\form_gb.xml.h:336
-#: Form\form_gb.xml.h:373 Form\form_gb.xml.h:410
+#: Form\form_gb.xml.h:342 Form\form_gb.xml.h:369 Form\form_gb.xml.h:397
+#: Form\form_gb.xml.h:434 Form\form_gb.xml.h:471
 msgid "No. of Children from 5 to 13 attending School"
 msgstr ""
 
-#: Form\form_gb.xml.h:282 Form\form_gb.xml.h:309 Form\form_gb.xml.h:337
-#: Form\form_gb.xml.h:374 Form\form_gb.xml.h:411
+#: Form\form_gb.xml.h:343 Form\form_gb.xml.h:370 Form\form_gb.xml.h:398
+#: Form\form_gb.xml.h:435 Form\form_gb.xml.h:472
 msgid "WindowRooms"
 msgstr ""
 
-#: Form\form_gb.xml.h:283 Form\form_gb.xml.h:310 Form\form_gb.xml.h:338
-#: Form\form_gb.xml.h:375 Form\form_gb.xml.h:412
+#: Form\form_gb.xml.h:344 Form\form_gb.xml.h:371 Form\form_gb.xml.h:399
+#: Form\form_gb.xml.h:436 Form\form_gb.xml.h:473
 msgid "No. of Rooms with one or more Windows"
 msgstr ""
 
-#: Form\form_gb.xml.h:288 Form\form_gb.xml.h:316 Form\form_gb.xml.h:346
-#: Form\form_gb.xml.h:385
+#: Form\form_gb.xml.h:349 Form\form_gb.xml.h:377 Form\form_gb.xml.h:407
+#: Form\form_gb.xml.h:446
 msgid "Police Burgh"
 msgstr ""
 
-#: Form\form_gb.xml.h:306 Form\form_gb.xml.h:334 Form\form_gb.xml.h:371
-#: Form\form_gb.xml.h:408
+#: Form\form_gb.xml.h:367 Form\form_gb.xml.h:395 Form\form_gb.xml.h:432
+#: Form\form_gb.xml.h:469
 msgid "Whether 1. Deaf and Dumb, 2. Blind, 3. Imbecile or Idiot 4. Lunatic"
 msgstr ""
 
-#: Form\form_gb.xml.h:313
+#: Form\form_gb.xml.h:374
 msgid "School Board District"
 msgstr ""
 
-#: Form\form_gb.xml.h:341 Form\form_gb.xml.h:380
+#: Form\form_gb.xml.h:402 Form\form_gb.xml.h:441
 msgid "School board District"
 msgstr ""
 
-#: Form\form_gb.xml.h:343 Form\form_gb.xml.h:382 Form\form_gb.xml.h:441
+#: Form\form_gb.xml.h:404 Form\form_gb.xml.h:443 Form\form_gb.xml.h:502
 msgid "Parliamentary Division"
 msgstr ""
 
-#: Form\form_gb.xml.h:345 Form\form_gb.xml.h:384
+#: Form\form_gb.xml.h:406 Form\form_gb.xml.h:445
 msgid "Municipal Burgh"
 msgstr ""
 
-#: Form\form_gb.xml.h:347 Form\form_gb.xml.h:386
+#: Form\form_gb.xml.h:408 Form\form_gb.xml.h:447
 msgid "Burgh Ward"
 msgstr ""
 
-#: Form\form_gb.xml.h:350 Form\form_gb.xml.h:389
+#: Form\form_gb.xml.h:411 Form\form_gb.xml.h:450
 msgid "Island"
 msgstr ""
 
-#: Form\form_gb.xml.h:369 Form\form_gb.xml.h:406
+#: Form\form_gb.xml.h:430 Form\form_gb.xml.h:467
 msgid "Gaellic or G. & E."
 msgstr ""
 
-#: Form\form_gb.xml.h:377
+#: Form\form_gb.xml.h:438
 msgid "Parish Ward"
 msgstr ""
 
-#: Form\form_gb.xml.h:400
-msgid "Condition as to Marriage"
-msgstr ""
-
-#: Form\form_gb.xml.h:402
+#: Form\form_gb.xml.h:463
 msgid "Profession or Occupation"
 msgstr ""
 
-#: Form\form_gb.xml.h:403
+#: Form\form_gb.xml.h:464
 msgid "Employer, Worker or on Own Account"
 msgstr ""
 
-#: Form\form_gb.xml.h:414 Form\form_gb.xml.h:435
+#: Form\form_gb.xml.h:475 Form\form_gb.xml.h:496
 msgid "District Electoral Division"
 msgstr ""
 
-#: Form\form_gb.xml.h:415 Form\form_gb.xml.h:438
+#: Form\form_gb.xml.h:476 Form\form_gb.xml.h:499
 msgid "Townland"
 msgstr ""
 
-#: Form\form_gb.xml.h:417 Form\form_gb.xml.h:446
+#: Form\form_gb.xml.h:478 Form\form_gb.xml.h:507
 msgid "No. on Form B"
 msgstr ""
 
-#: Form\form_gb.xml.h:422 Form\form_gb.xml.h:451
+#: Form\form_gb.xml.h:483 Form\form_gb.xml.h:512
 msgid "Education"
 msgstr ""
 
-#: Form\form_gb.xml.h:423 Form\form_gb.xml.h:452
+#: Form\form_gb.xml.h:484 Form\form_gb.xml.h:513
 msgid "\"Read and Write\", \"Read\" or \"Cannot Read\""
 msgstr ""
 
-#: Form\form_gb.xml.h:429 Form\form_gb.xml.h:461
+#: Form\form_gb.xml.h:490 Form\form_gb.xml.h:522
 msgid "Irish Language"
 msgstr ""
 
-#: Form\form_gb.xml.h:430 Form\form_gb.xml.h:462
+#: Form\form_gb.xml.h:491 Form\form_gb.xml.h:523
 msgid ""
 "\"Irish\" or \"Irish & English\", in other cases no entry should be made"
 msgstr ""
 
-#: Form\form_gb.xml.h:432 Form\form_gb.xml.h:464
+#: Form\form_gb.xml.h:493 Form\form_gb.xml.h:525
 msgid ""
 "\"Deaf and Dumb\", \"Dumb only\", \"Blind\", \"Imbecile or Idiot\", or "
 "\"Lunatic\""
 msgstr ""
 
-#: Form\form_gb.xml.h:434
+#: Form\form_gb.xml.h:495
 msgid "Poor Law Union"
 msgstr ""
 
-#: Form\form_gb.xml.h:436
+#: Form\form_gb.xml.h:497
 msgid "Barony"
 msgstr ""
 
-#: Form\form_gb.xml.h:439 Form\form_us.xml.h:1224 Form\form_us.xml.h:1958
+#: Form\form_gb.xml.h:500 Form\form_us.xml.h:1224 Form\form_us.xml.h:1958
 msgid "City"
 msgstr ""
 
-#: Form\form_gb.xml.h:442
+#: Form\form_gb.xml.h:503
 msgid "Urban District"
 msgstr ""
 
-#: Form\form_gb.xml.h:445
+#: Form\form_gb.xml.h:506
 msgid "Head of Family"
 msgstr ""
 
-#: Form\form_gb.xml.h:457
+#: Form\form_gb.xml.h:518
 msgid "Total Children"
 msgstr ""
 
-#: Form\form_gb.xml.h:458
+#: Form\form_gb.xml.h:519
 msgid "Children born alive to present Marriage"
 msgstr ""
 

@@ -1,114 +1,103 @@
-# translation of nl.po to nederlands
-# Dutch translation of GRAMPS
-# Copyright (C) 2003 The Free Software Foundation,  Inc.
+# Dutch translation of Gramps addon DeepConnectionsGramplet
+# Copyright (C) 2020 Gramps Project
+# This file is distributed under the same license as the DeepConnectionsGramplet package.
 #
 # Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
 # Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
 # Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010.
 #
-# --------------------------------------------------
-# Conventies (kan later altijd nog aangepast worden)
-# --------------------------------------------------
-# active             actief (moet hier nog iets beters voor verzinnen)
-# attribute          kenmerk
-# bookmark           bladwijzer
-# view               scherm
-# city               plaats beter is stad dorp
-# marker             aanduiding
-# people             personen
-# place              locatie
-# record             archief/kaart
-# database           gegevensbestand (KB)
-# chart              grafiek
-# Home person        beginpersoon : (EDR)
-# spouse             echtgenoot
-# partner            partner
-# warning            let op
-# at the age of      op een leeftijd van -> toen hij/zij .. oud was
-# repositories       bibliotheken
-# regex              regex onvertaald laten
-# expression         uitdrukking
-# given name         voornaam
-# reference	     waarnaar verwezen wordt
-# count		     aantal maal
-# lineage	     lijn
-# locality	     plaats
-# u gebruiken
-# telkens werkwoord achteraan plaatsen
 msgid ""
 msgstr ""
-"Project-Id-Version: gramps\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-04-10 08:50+0200\n"
-"PO-Revision-Date: 2011-04-08 08:19+0100\n"
-"Last-Translator: Erik De Richter <frederik.de.richter@googlemail.com>\n"
-"Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
-"Language: \n"
+"Project-Id-Version: Gramps 5.1.x\n"
+"Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2020-05-05 22:07+0200\n"
+"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
+"Language-Team: Dutch <gramps-users@lists.sourceforge.net\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-Language: Nederlands\n"
-"X-Poedit-Country: België\n"
+"X-Generator: Poedit 2.0.6\n"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:3
 msgid "Deep Connections Gramplet"
-msgstr "'Verre relaties'-gramplet"
+msgstr "Verre verwanten gramplet"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:4
 msgid "Gramplet showing a deep relationship between active and home people"
-msgstr ""
-"Gramplet die de verre relatie tussen twee de actieve en de thuispersoon toont"
+msgstr "De gramplet toont de relatie tussen de actieve persoon en verre verwanten"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:10
 msgid "Deep Connections"
 msgstr "Verre relaties"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:55
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:59
 msgid "Double-click name for details"
 msgstr "Dubbelklikken op de achternaam voor meer gegevens"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:56
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:60
 msgid "No Family Tree loaded."
 msgstr "Geen familiestamboom geladen."
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:61
-msgid "Pause"
-msgstr "Pause"
-
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:63
-msgid "Continue"
-msgstr "Toch doorgaan"
-
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:65
+msgid "Pause"
+msgstr "Pauze"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:67
+msgid "Continue"
+msgstr "Doorgaan"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:69
 msgid "Copy"
 msgstr "Kopiëren"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:90
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:106
+msgid "mentioned in note"
+msgstr "vermeld in opmerking"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:125
 msgid "child"
 msgstr "kind"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:94
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:129
 msgid "husband"
 msgstr "echtgenoot"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:96
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:131
 msgid "wife"
-msgstr "echtgenote"
+msgstr "vrouw"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:106
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:132
+msgid "Note on Family"
+msgstr "Opmerking over familie"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:142
 msgid "sibling"
 msgstr "broer of zus"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:110
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:146
 msgid "father"
 msgstr "vader"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:113
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:149
 msgid "mother"
 msgstr "moeder"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:150
+msgid "Note on Parent Family"
+msgstr "Opmerking over ouders"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:153
+#, python-format
+msgid "%s (association)"
+msgstr "%s (verbinding)"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:157
+msgid "Note on Person"
+msgstr "Opmerking over persoon"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:187
 #, python-format
 msgid ""
 "\n"
@@ -117,54 +106,54 @@ msgstr ""
 "\n"
 "   %s van "
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:168
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:205
 msgid "No Home Person set."
-msgstr "Geen thuispersoon bepaald."
+msgstr "Geen beginpersoon ingesteld."
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:171
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:208
 msgid "No Active Person set."
-msgstr "Geen actieve persoon gekozen."
+msgstr "Geen actieve persoon ingesteld."
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:175
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:212
 msgid "self"
 msgstr "zelf"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:179
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:216
 msgid "Looking for relationship between\n"
-msgstr "De relatie tussen\n"
+msgstr "Gezocht naar de relatie tussen\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:180
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:217
 #, python-format
 msgid "  <b>%s</b> (Home Person) and\n"
-msgstr "  <b>%s</b> (basispersoon) en\n"
+msgstr "  <b>%s</b> (beginpersoon) en\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:181
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:218
 #, python-format
 msgid "  <b>%s</b> (Active Person)...\n"
 msgstr "  <b>%s</b> (actieve persoon)...\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:191
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:228
 #, python-format
 msgid ""
 "Found relation #%d: \n"
 "   "
 msgstr ""
-"Relatie gevonden#%d: \n"
+"Vond relatie #%d: \n"
 "   "
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:201
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:238
 msgid ""
 "Paused.\n"
 "Press Continue to search for additional relations.\n"
 msgstr ""
-"Gestopt.\n"
-"Druk verder gaan om naar bijkomende relaties te zoeken.\n"
+"Gepauzeerd.\n"
+"Druk op Doorgaan om naar aanvullende relaties te zoeken.\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:216
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:253
 #, python-format
 msgid ""
 "\n"
 "Search completed. %d relations found."
 msgstr ""
 "\n"
-"Het zoeken is gedaan. Er werden %d relaties gevonden."
+"Zoeken voltooid. %d relaties gevonden."

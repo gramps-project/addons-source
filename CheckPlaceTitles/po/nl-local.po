@@ -1,144 +1,109 @@
-# Dutch translation for Gramps
-# $Id$
-# This file is distributed under the same license as the Gramps package.
-# translation of nl.po to nederlands
-# Dutch translation of GRAMPS
-# Copyright (C) 2003 The Free Software Foundation,  Inc.
-#
+# Dutch translation of Gramps addon CheckPlaceTitles
+# Copyright (C) 2020 Gramps project
+# This file is distributed under the same license as the CheckPlaceTitles package.
 # Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
 # Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
 # Erik De Richter <frederik.de.richter@gmail.com>, 2006, 2007, 2008, 2009, 2010 , 2011, 2012, 2013.
 # Harmen Huizinga <harmenhuizinga@sigmo.nl>, 2013
 #
-# --------------------------------------------------
-# Conventies (kan later altijd nog aangepast worden)
-# --------------------------------------------------
-# active             actief (moet hier nog iets beters voor verzinnen)
-# attribute          kenmerk
-# bookmark           bladwijzer
-# view               scherm
-# city               plaats beter is stad dorp
-# marker             merkpunt
-# people             personen
-# place              locatie
-# record             archief/kaart
-# database           gegevensbestand (KB)
-# chart              grafiek
-# Home person        beginpersoon : (EDR)
-# spouse             echtgenoot
-# partner            partner
-# warning            let op
-# at the age of      op een leeftijd van -> toen hij/zij .. oud was
-# repositories       bibliotheken
-# regex              regex onvertaald laten
-# expression         uitdrukking
-# given name         voornaam
-# reference	     waarnaar verwezen wordt
-# count		     aantal maal
-# lineage	     lijn
-# locality	     plaats
-# u gebruiken
-# telkens werkwoord achteraan plaatsen
 msgid ""
 msgstr ""
-"Project-Id-Version: gramps\n"
+"Project-Id-Version: CheckPlaceTitles 5.1.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-12 14:42+0100\n"
-"PO-Revision-Date: 2017-01-08 20:02+0100\n"
-"Last-Translator: Frederik De Richter <frederik.de.richter@gmail.com>\n"
-"Language-Team: nederlands <frederik.de.richter@gmail.com>\n"
+"POT-Creation-Date: 2019-01-04 18:55-0600\n"
+"PO-Revision-Date: 2020-04-30 22:23+0200\n"
+"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
+"Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.9\n"
+"X-Generator: Poedit 2.0.6\n"
 
 #: CheckPlaceTitles/checkplacetitles.gpr.py:28
 msgid "Check Place Titles"
-msgstr ""
+msgstr "Controleer locatienamen"
 
 #: CheckPlaceTitles/checkplacetitles.gpr.py:29
 msgid "Check place titles"
-msgstr ""
+msgstr "Controleer locatienamen"
 
 #: CheckPlaceTitles/checkplacetitles.py:56
 msgid "manual|Check_place_titles"
-msgstr ""
+msgstr "Handmatig | Controleer locatienamen"
 
 #: CheckPlaceTitles/checkplacetitles.py:71
 msgid "Check Place title"
-msgstr ""
+msgstr "Controleer locatienaam"
 
 #: CheckPlaceTitles/checkplacetitles.py:86
 msgid "Checking Place Titles"
-msgstr "Nakijken locatienamen"
+msgstr "Locatienamen controleren"
 
-#: CheckPlaceTitles/checkplacetitles.py:87
+#: CheckPlaceTitles/checkplacetitles.py:88
 msgid "Looking for place fields"
 msgstr "Naar locatievelden zoeken"
 
-#: CheckPlaceTitles/checkplacetitles.py:103
+#: CheckPlaceTitles/checkplacetitles.py:107
 msgid "Differences"
-msgstr ""
+msgstr "Verschillen"
 
-#: CheckPlaceTitles/checkplacetitles.py:109
+#: CheckPlaceTitles/checkplacetitles.py:113
 msgid "No need modifications"
-msgstr ""
+msgstr "Geen aanpassingen nodig"
 
-#: CheckPlaceTitles/checkplacetitles.py:110
+#: CheckPlaceTitles/checkplacetitles.py:114
 msgid "No changes need."
-msgstr ""
+msgstr "Geen wijzigingen nodig."
 
-#: CheckPlaceTitles/checkplacetitles.py:139
+#: CheckPlaceTitles/checkplacetitles.py:143
 msgid "Select"
 msgstr "Selecteren"
 
-#: CheckPlaceTitles/checkplacetitles.py:142
-msgid "Database"
-msgstr "Gegevensbestand"
-
-# De weergave van Datums en kalenders, werkbalk en statusbalk.
 #: CheckPlaceTitles/checkplacetitles.py:146
+msgid "Database"
+msgstr "Database"
+
+#: CheckPlaceTitles/checkplacetitles.py:150
 msgid "Display"
 msgstr "Weergave"
 
-#: CheckPlaceTitles/checkplacetitles.py:156
+#: CheckPlaceTitles/checkplacetitles.py:160
 msgid "Building display"
-msgstr "Opbouwen weergave"
+msgstr "Weergave opbouwen"
 
-#: CheckPlaceTitles/checkplacetitles.py:185
+#: CheckPlaceTitles/checkplacetitles.py:189
 msgid "Legacy place"
-msgstr ""
+msgstr "Oude locatie"
 
-#: CheckPlaceTitles/checkplacetitles.py:199
+#: CheckPlaceTitles/checkplacetitles.py:203
 msgid "Modify Place titles"
-msgstr ""
+msgstr "Locatienamen aanpassen"
 
-#: CheckPlaceTitles/checkplacetitles.py:222
+#: CheckPlaceTitles/checkplacetitles.py:226
 msgid "Place titles"
-msgstr ""
+msgstr "Locatienamen"
 
-#: CheckPlaceTitles/checkplacetitles.glade.h:1
+#: CheckPlaceTitles/checkplacetitles.glade:56
 msgid "Remove content of place title field if it does not match"
-msgstr ""
+msgstr "Verwijder de inhoud van het locatienaamveld als deze niet overeenkomt"
 
-#: CheckPlaceTitles/checkplacetitles.glade.h:2
+#: CheckPlaceTitles/checkplacetitles.glade:74
 msgid "Copy content of place title field to a new note."
-msgstr ""
+msgstr "Kopieer de inhoud van het locatienaamveld naar een nieuwe notitie."
 
-#: CheckPlaceTitles/checkplacetitles.glade.h:3
+#: CheckPlaceTitles/checkplacetitles.glade:87
 msgid "Mark"
 msgstr "Markeren"
 
-#: CheckPlaceTitles/checkplacetitles.glade.h:4
+#: CheckPlaceTitles/checkplacetitles.glade:91
 msgid "Attach a tag on selected places."
-msgstr ""
+msgstr "Bevestig een tag op geselecteerde plaatsen."
 
-#: CheckPlaceTitles/checkplacetitles.glade.h:5
+#: CheckPlaceTitles/checkplacetitles.glade:150
 msgid "_Accept changes and close"
-msgstr "Wijzigingen _accepteren en sluiten"
+msgstr "Wijzigingen accepteren en sluiten"
 
-#: CheckPlaceTitles/checkplacetitles.glade.h:6
+#: CheckPlaceTitles/checkplacetitles.glade:177
 msgid "column"
-msgstr ""
+msgstr "kolom"

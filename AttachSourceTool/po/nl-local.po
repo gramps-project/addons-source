@@ -1,138 +1,100 @@
-# translation of nl.po to nederlands
-# Dutch translation of GRAMPS
-# Copyright (C) 2003 The Free Software Foundation,  Inc.
-#
+# Dutch translation of Gramps addon AttachSourceTool
+# Copyright (C) 2020 Gramps project
+# This file is distributed under the same license as the AttachSourceTool package.
 # Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
 # Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
 # Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010.
+# Jan Sparreboom <jan@sparreboom.net>, 2020.
 #
-# --------------------------------------------------
-# Conventies (kan later altijd nog aangepast worden)
-# --------------------------------------------------
-# active             actief (moet hier nog iets beters voor verzinnen)
-# attribute          kenmerk
-# bookmark           bladwijzer
-# view               scherm
-# city               plaats beter is stad dorp
-# marker             aanduiding
-# people             personen
-# place              locatie
-# record             archief/kaart
-# database           gegevensbestand (KB)
-# chart              grafiek
-# Home person        beginpersoon : (EDR)
-# spouse             echtgenoot
-# partner            partner
-# warning            let op
-# at the age of      op een leeftijd van -> toen hij/zij .. oud was
-# repositories       bibliotheken
-# regex              regex onvertaald laten
-# expression         uitdrukking
-# given name         voornaam
-# reference	     waarnaar verwezen wordt
-# count		     aantal maal
-# lineage	     lijn
-# locality	     plaats
-# u gebruiken
-# telkens werkwoord achteraan plaatsen
 msgid ""
 msgstr ""
-"Project-Id-Version: gramps\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-04-09 08:55+0200\n"
-"PO-Revision-Date: 2011-04-08 08:19+0100\n"
-"Last-Translator: Erik De Richter <frederik.de.richter@googlemail.com>\n"
-"Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
-"Language: \n"
+"Project-Id-Version: AttachSourceTool 5.1.x\n"
+"Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2020-04-28 22:00+0200\n"
+"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
+"Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-Language: Nederlands\n"
-"X-Poedit-Country: België\n"
+"X-Generator: Poedit 2.0.6\n"
 
 #: AttachSourceTool/AttachSourceTool.gpr.py:25
-#: AttachSourceTool/AttachSourceTool.py:133
-#: AttachSourceTool/AttachSourceTool.py:187
+#: AttachSourceTool/AttachSourceTool.py:137
+#: AttachSourceTool/AttachSourceTool.py:155
 msgid "Attach Source"
 msgstr "Bron toevoegen"
 
 #: AttachSourceTool/AttachSourceTool.gpr.py:26
 msgid "Attaches a shared source to multiple objects."
-msgstr "Een gedeelde bron aan verschillende objecten toevoegen."
+msgstr "Koppelt een gedeelde bron aan meerdere objecten."
 
-#: AttachSourceTool/AttachSourceTool.py:63
-#: AttachSourceTool/AttachSourceTool.py:136
+#: AttachSourceTool/AttachSourceTool.py:67
+#: AttachSourceTool/AttachSourceTool.py:140
 msgid "Options"
 msgstr "Opties"
 
-#: AttachSourceTool/AttachSourceTool.py:65
+#: AttachSourceTool/AttachSourceTool.py:69
 msgid "Person Filter"
 msgstr "Persoonsfilter"
 
-#: AttachSourceTool/AttachSourceTool.py:66
-msgid "Select filter to restrict people"
-msgstr "Filter om aantal personen te beperken, selecteren"
-
 #: AttachSourceTool/AttachSourceTool.py:70
+msgid "Select filter to restrict people"
+msgstr "Keuzefilter om het aantal mensen te beperken"
+
+#: AttachSourceTool/AttachSourceTool.py:74
 msgid "Filter Person"
-msgstr "Personenfilter"
+msgstr "Centraal persoon"
 
-#: AttachSourceTool/AttachSourceTool.py:71
+#: AttachSourceTool/AttachSourceTool.py:75
 msgid "The center person for the filter"
-msgstr "De centrale persoon voor de filter"
+msgstr "De centrale persoon voor het filter"
 
-#: AttachSourceTool/AttachSourceTool.py:77
+#: AttachSourceTool/AttachSourceTool.py:81
 msgid "Source type"
 msgstr "Brontype"
 
-#: AttachSourceTool/AttachSourceTool.py:78
+#: AttachSourceTool/AttachSourceTool.py:82
 msgid "New source"
 msgstr "Nieuwe bron"
 
-#: AttachSourceTool/AttachSourceTool.py:79
+#: AttachSourceTool/AttachSourceTool.py:83
 msgid "Existing source"
 msgstr "Bestaande bron"
 
-#: AttachSourceTool/AttachSourceTool.py:80
+#: AttachSourceTool/AttachSourceTool.py:84
 msgid "Select the type of source to attach"
-msgstr "Brontype dat wordt toegevoegd, selecteren"
+msgstr "Selecteer het type bron dat u wilt toevoegen"
 
-#: AttachSourceTool/AttachSourceTool.py:85
+#: AttachSourceTool/AttachSourceTool.py:89
 msgid "New Source Title"
 msgstr "Nieuwe brontitel"
 
-#: AttachSourceTool/AttachSourceTool.py:86
-msgid "Text of source to attach"
-msgstr "Brontekst die wordt toegevoegd"
-
 #: AttachSourceTool/AttachSourceTool.py:90
+msgid "Text of source to attach"
+msgstr "Tekst van bij te voegen bron"
+
+#: AttachSourceTool/AttachSourceTool.py:94
 msgid "Existing Source ID"
-msgstr "Bestaande bron-ID"
+msgstr "Bestaand bron-ID"
 
-#: AttachSourceTool/AttachSourceTool.py:91
+#: AttachSourceTool/AttachSourceTool.py:95
 msgid "ID of source to attach"
-msgstr "ID van de bron die wordt toegevoegd"
+msgstr "ID van bij te voegen bron"
 
-#: AttachSourceTool/AttachSourceTool.py:153
+#: AttachSourceTool/AttachSourceTool.py:156
 msgid "Results"
 msgstr "Resultaten"
 
-#: AttachSourceTool/AttachSourceTool.py:154
-msgid "Processing...\n"
-msgstr "Wordt verwerkt...\n"
+#: AttachSourceTool/AttachSourceTool.py:157
+msgid "Processing..."
+msgstr "Wordt verwerkt..."
 
-#: AttachSourceTool/AttachSourceTool.py:169
-msgid "Attaching sources...\n"
-msgstr "Bronnen worden toegevoegd...\n"
-
-#: AttachSourceTool/AttachSourceTool.py:170
+#: AttachSourceTool/AttachSourceTool.py:174, 175
 msgid "Attaching sources..."
 msgstr "Bronnen worden toegevoegd..."
 
-#: AttachSourceTool/AttachSourceTool.py:190
-msgid "Done!\n"
-msgstr "OK!\n"
-
-#~ msgid "Beta"
-#~ msgstr "Beta"
+#: AttachSourceTool/AttachSourceTool.py:197
+msgid "Done!"
+msgstr "Uitgevoerd!"

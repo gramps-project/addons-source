@@ -108,7 +108,7 @@ msgstr "Sélectionner l'individu"
 #: Form/form_ca.xml.h:9 Form/form_dk.xml.h:9 Form/form_fr.xml.h:1
 #: Form/form_gb.xml.h:6 Form/form_pl.xml.h:1 Form/form_us.xml.h:8
 msgid "Name"
-msgstr "Nom "
+msgstr "Nom"
 
 #: Form/form.py:60
 msgid "Order"
@@ -142,7 +142,7 @@ msgstr "Formulaires"
 # /!\ vérifier double espace avec search bar "%(titre colonne)s contient"
 #: Form/formgramplet.py:108
 msgid "Source"
-msgstr "Source "
+msgstr "Source"
 
 #: Form/formgramplet.py:111
 msgid "Role"
@@ -150,14 +150,14 @@ msgstr "Rôle"
 
 #: Form/formgramplet.py:114 Form/form_ca.xml.h:291 Form/form_us.xml.h:540
 msgid "Date"
-msgstr "Date "
+msgstr "Date"
 
 # L'espace finale est pour précéder le « : » codé en dur dans certains contextes.
 # /!\ vérifier double espace avec search bar "%(titre colonne)s contient"
 #: Form/formgramplet.py:117 Form/form_ca.xml.h:404 Form/form_dk.xml.h:24
 #: Form/form_gb.xml.h:68 Form/form_us.xml.h:488
 msgid "Place"
-msgstr "Lieu "
+msgstr "Lieu"
 
 #: Form/formgramplet.py:125
 msgid "_New"

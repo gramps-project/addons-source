@@ -178,18 +178,22 @@
             <column>
                 <_attribute>Name</_attribute>
                 <size>25</size>
+                <_longname>NAMES of each Person who abode therein the preceding Night.</_longname>
             </column>
             <column>
                 <_attribute>Age</_attribute>
                 <size>5</size>
+                <_longname>AGE, rounded down to the nearest five years for those aged fifteen or over.</_longname>
             </column>
             <column>
                 <_attribute>Occupation</_attribute>
                 <size>25</size>
+                <_longname>PROFESSION, TRADE, EMPLOYMENT or of INDEPENDENT MEANS.</_longname>
             </column>
             <column>
                 <_attribute>Where Born</_attribute>
                 <size>5</size>
+                <_longname>Whether Born in same County (Y or N), Scotland (S), Ireland (I) or Foreign Parts (P).</_longname>
             </column>
         </section>
     </form>
@@ -213,10 +217,12 @@
             <column>
                 <_attribute>Name</_attribute>
                 <size>25</size>
+                <_longname>Name and Surname of each Person who abode in the house, on the Night of the 30th March, 1851</_longname>
             </column>
             <column>
                 <_attribute>Relation</_attribute>
                 <size>10</size>
+                <_longname>Relation to Head of Family</_longname>
             </column>
             <column>
                 <_attribute>Condition</_attribute>
@@ -229,6 +235,7 @@
             <column>
                 <_attribute>Occupation</_attribute>
                 <size>20</size>
+                <_longname>Rank, Profession or Occupation</_longname>
             </column>
             <column>
                 <_attribute>Where Born</_attribute>
@@ -237,6 +244,7 @@
             <column>
                 <_attribute>Disability</_attribute>
                 <size>10</size>
+                <_longname>Whether Blind or Deaf and Dumb</_longname>
             </column>
         </section>
     </form>
@@ -266,10 +274,12 @@
             <column>
                 <_attribute>Name</_attribute>
                 <size>25</size>
+                <_longname>Name and Surname of each Person</_longname>
             </column>
             <column>
                 <_attribute>Relation</_attribute>
                 <size>10</size>
+                <_longname>Relation to Head of Family</_longname>
             </column>
             <column>
                 <_attribute>Condition</_attribute>
@@ -282,6 +292,7 @@
             <column>
                 <_attribute>Occupation</_attribute>
                 <size>20</size>
+                <_longname>Rank, Profession of Occupation</_longname>
             </column>
             <column>
                 <_attribute>Where Born</_attribute>
@@ -290,6 +301,7 @@
             <column>
                 <_attribute>Disability</_attribute>
                 <size>10</size>
+                <_longname>Whether Blind, or Deaf-and-Dumb</_longname>
             </column>
         </section>
     </form>
@@ -322,22 +334,27 @@
             <column>
                 <_attribute>Name</_attribute>
                 <size>25</size>
+                <_longname>NAME and Surname of each Person</_longname>
             </column>
             <column>
                 <_attribute>Relation</_attribute>
                 <size>10</size>
+                <_longname>RELATION to Head of Family</_longname>
             </column>
             <column>
                 <_attribute>Condition</_attribute>
                 <size>10</size>
+                <_longname>CONDITION</_longname>
             </column>
             <column>
                 <_attribute>Age</_attribute>
                 <size>5</size>
+                <_longname>AGE of</_longname>
             </column>
             <column>
                 <_attribute>Occupation</_attribute>
                 <size>20</size>
+                <_longname>Rank, Profession or OCCUPATION</_longname>
             </column>
             <column>
                 <_attribute>Where Born</_attribute>
@@ -346,6 +363,11 @@
             <column>
                 <_attribute>Disability</_attribute>
                 <size>10</size>
+                <_longname>Whether
+1. Deaf-and-Dumb
+2. Blind
+3. Imbecile or Idiot
+4. Lunatic</_longname>
             </column>
         </section>
     </form>
@@ -378,22 +400,27 @@
             <column>
                 <_attribute>Name</_attribute>
                 <size>25</size>
+                <_longname>NAME and Surname of each Person</_longname>
             </column>
             <column>
                 <_attribute>Relation</_attribute>
                 <size>10</size>
+                <_longname>RELATION to Head of Family</_longname>
             </column>
             <column>
                 <_attribute>Condition</_attribute>
                 <size>10</size>
+                <_longname>CONDITION as to Marriage</_longname>
             </column>
             <column>
                 <_attribute>Age</_attribute>
                 <size>5</size>
+                <_longname>AGE last Birthday of</_longname>
             </column>
             <column>
                 <_attribute>Occupation</_attribute>
                 <size>20</size>
+                <_longname>Rank, Profession or OCCUPATION</_longname>
             </column>
             <column>
                 <_attribute>Where Born</_attribute>
@@ -402,10 +429,18 @@
             <column>
                 <_attribute>Disability</_attribute>
                 <size>10</size>
+                <_longname>If
+(1) Deaf-and-Dumb
+(2) Blind
+(3) Imbecile or Idiot
+(4) Lunatic</_longname>
             </column>
         </section>
     </form>
     <form id='UK1891' type='Census' title='1891 England Census' date='5 Apr 1891'>
+        <heading>
+            <_attribute>Administrative County</_attribute>
+        </heading>
         <heading>
             <_attribute>Civil Parish</_attribute>
         </heading>
@@ -434,22 +469,27 @@
             <column>
                 <_attribute>Name</_attribute>
                 <size>25</size>
+                <_longname>NAME and Surname of each Person</_longname>
             </column>
             <column>
                 <_attribute>Relation</_attribute>
                 <size>7</size>
+                <_longname>RELATION to Head of Family</_longname>
             </column>
             <column>
                 <_attribute>Condition</_attribute>
                 <size>7</size>
+                <_longname>CONDITION as to Marriage</_longname>
             </column>
             <column>
                 <_attribute>Age</_attribute>
                 <size>5</size>
+                <_longname>AGE last Birthday of</_longname>
             </column>
             <column>
                 <_attribute>Occupation</_attribute>
                 <size>18</size>
+                <_longname>PROFESSION or OCCUPATION</_longname>
             </column>
             <column>
                 <_attribute>Employer</_attribute>
@@ -471,10 +511,17 @@
             <column>
                 <_attribute>Disability</_attribute>
                 <size>7</size>
+                <_longname>If
+(1) Deaf-and-Blind
+(2) Blind
+(3) Lunatic, Imbecile or Idiot</_longname>
             </column>
         </section>
     </form>
     <form id='UK1901' type='Census' title='1901 England Census' date='31 Mar 1901'>
+        <heading>
+            <_attribute>Administrative County</_attribute>
+        </heading>
         <heading>
             <_attribute>Civil Parish</_attribute>
         </heading>
@@ -500,22 +547,27 @@
             <column>
                 <_attribute>Name</_attribute>
                 <size>25</size>
+                <_longname>Name and Surname of each Person</_longname>
             </column>
             <column>
                 <_attribute>Relation</_attribute>
                 <size>7</size>
+                <_longname>RELATION to Head of Family</_longname>
             </column>
             <column>
                 <_attribute>Condition</_attribute>
                 <size>7</size>
+                <_longname>Condition as to Marriage</_longname>
             </column>
             <column>
                 <_attribute>Age</_attribute>
                 <size>5</size>
+                <_longname>Age last Birthday of</_longname>
             </column>
             <column>
                 <_attribute>Occupation</_attribute>
                 <size>20</size>
+                <_longname>PROFESSION OR OCCUPATION</_longname>
             </column>
             <column>
                 <_attribute>Work Type</_attribute>
@@ -525,7 +577,7 @@
             <column>
                 <_attribute>At Home</_attribute>
                 <size>7</size>
-                <_longname>Working at Home</_longname>
+                <_longname>If Working at Home</_longname>
             </column>
             <column>
                 <_attribute>Where Born</_attribute>
@@ -534,72 +586,102 @@
             <column>
                 <_attribute>Disability</_attribute>
                 <size>7</size>
+                <_longname>If
+(1) Deaf and Dumb
+(2) Blind
+(3) Lunatic
+(4) Imbecile, feeble-minded</_longname>
             </column>
         </section>
     </form>
     <form id='UK1911' type='Census' title='1911 England Census' date='2 Apr 1911'>
+        <heading>
+            <_attribute>Registration District</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Registration Sub-District</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Enumeration District</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Number of Rooms</_attribute>
+        </heading>
         <section role='Primary' type='multi'>
             <column>
                 <_attribute>Name</_attribute>
                 <size>20</size>
+                <_longname>NAME AND SURNAME</_longname>
             </column>
             <column>
                 <_attribute>Relation</_attribute>
                 <size>6</size>
+                <_longname>RELATIONSHIP to Head of Family</_longname>
             </column>
             <column>
                 <_attribute>Age</_attribute>
                 <size>4</size>
+                <_longname>AGE (last Birthday)</_longname>
             </column>
             <column>
                 <_attribute>Condition</_attribute>
                 <size>6</size>
+                <_longname>&quot;Single,&quot; &quot;Married,&quot; &quot;Widower,&quot; or &quot;Widow,&quot; for all persons aged 15 years and upwards.</_longname>
             </column>
             <column>
                 <_attribute>Years Married</_attribute>
                 <size>4</size>
+                <_longname>Completed Years the present Marriage has lasted.</_longname>
             </column>
             <column>
                 <_attribute>Children Total</_attribute>
                 <size>4</size>
+                <_longname>Total Children Born Alive.</_longname>
             </column>
             <column>
                 <_attribute>Children Living</_attribute>
                 <size>4</size>
+                <_longname>Children still Living.</_longname>
             </column>
             <column>
                 <_attribute>Children Died</_attribute>
                 <size>4</size>
+                <_longname>Children who have Died.</_longname>
             </column>
             <column>
                 <_attribute>Occupation</_attribute>
                 <size>10</size>
+                <_longname>Personal Occupation</_longname>
             </column>
             <column>
                 <_attribute>Industry</_attribute>
                 <size>6</size>
+                <_longname>Industry or Service with which worker is sonnected.</_longname>
             </column>
             <column>
                 <_attribute>Work Type</_attribute>
                 <size>6</size>
-                <_longname>Employer, Worker or Own Account</_longname>
+                <_longname>Employer, Worker or Working on Own Account</_longname>
             </column>
             <column>
                 <_attribute>At Home</_attribute>
                 <size>6</size>
-                <_longname>Working at Home</_longname>
+                <_longname>Whether Working at Home</_longname>
             </column>
             <column>
                 <_attribute>Where Born</_attribute>
                 <size>10</size>
+                <_longname>BIRTHPLACE of every Person.</_longname>
             </column>
             <column>
                 <_attribute>Nationality</_attribute>
                 <size>5</size>
+                <_longname>NATIONALITY of every Person born in a Foreign Country.</_longname>
             </column>
             <column>
                 <_attribute>Disability</_attribute>
                 <size>5</size>
+                <_longname>INFIRMITY</_longname>
             </column>
         </section>
     </form>
@@ -617,14 +699,17 @@
             <column>
                 <_attribute>Name</_attribute>
                 <size>25</size>
+                <_longname>SURNAMES and OTHER NAMES.</_longname>
             </column>
             <column>
                 <_attribute>OVSPI</_attribute>
                 <size>5</size>
+                <_longname>O, V, S, P or I</_longname>
             </column>
             <column>
                 <_attribute>Sex</_attribute>
                 <size>5</size>
+                <_longname>M or F</_longname>
             </column>
             <column>
                 <_attribute>Birth Date</_attribute>
@@ -633,14 +718,17 @@
             <column>
                 <_attribute>Condition</_attribute>
                 <size>5</size>
+                <_longname>S, M, W or D.</_longname>
             </column>
             <column>
                 <_attribute>Occupation</_attribute>
                 <size>25</size>
+                <_longname>PERSONAL OCCUPATION</_longname>
             </column>
             <column>
                 <_attribute>Instructions</_attribute>
                 <size>25</size>
+                <_longname>See INSTRUCTIONS</_longname>
             </column>
         </section>
     </form>

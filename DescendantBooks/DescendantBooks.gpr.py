@@ -1,5 +1,6 @@
 #
 # Copyright (C) 2011 Matt Keenan <matt.keenan@gmail.com>
+# Copyright (C) 2019 Giansalvo Gusinu <giansalvo.gusinu@gmail.com>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -19,12 +20,12 @@ register(REPORT,
     id   = 'DescendantBook',
     name = _('Descendant Book'),
     description = _("Produces one or more descendant reports based on a supplied query."),
-    version = '1.1.16',
+    version = '1.1.19',
     gramps_target_version = "5.1",
     status = STABLE,
     fname = 'DescendantBookReport.py',
-    authors = ["Matt Keenan"],
-    authors_email = ["matt.keenan@gmail.com"],
+    authors = ["Matt Keenan", "Giansalvo Gusinu"],
+    authors_email = ["matt.keenan@gmail.com", "giansalvo.gusinu@gmail.com"],
     category = CATEGORY_TEXT,
     reportclass = 'DescendantBookReport',
     optionclass = 'DescendantBookOptions',
@@ -36,12 +37,12 @@ register(REPORT,
     id   = 'DetailedDescendantBook',
     name = _('Detailed Descendant Book'),
     description = _("Produces one or more detailed descendant reports based on a supplied query."),
-    version = '1.1.16',
+    version = '1.1.19',
     gramps_target_version = "5.1",
     status = STABLE,
     fname = 'DetailedDescendantBookReport.py',
-    authors = ["Matt Keenan"],
-    authors_email = ["matt.keenan@gmail.com"],
+    authors = ["Matt Keenan", "Giansalvo Gusinu"],
+    authors_email = ["matt.keenan@gmail.com", "giansalvo.gusinu@gmail.com"],
     category = CATEGORY_TEXT,
     reportclass = 'DetailedDescendantBookReport',
     optionclass = 'DetailedDescendantBookOptions',

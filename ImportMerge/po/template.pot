@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"POT-Creation-Date: 2020-02-10 16:28-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,8 +17,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ImportMerge/importmerge.gpr.py:30 ImportMerge/importmerge.py:311
-#: ImportMerge/importmerge.py:690
+#: ImportMerge/importmerge.gpr.py:30 ImportMerge/importmerge.py:328
+#: ImportMerge/importmerge.py:707
 msgid "Import and Merge tool"
 msgstr ""
 
@@ -48,7 +48,7 @@ msgstr ""
 msgid "Delete original"
 msgstr ""
 
-#: ImportMerge/importmerge.py:109 ImportMerge/importmerge.glade:332
+#: ImportMerge/importmerge.py:109 ImportMerge/importmerge.glade:334
 msgid "Ignore"
 msgstr ""
 
@@ -72,7 +72,7 @@ msgstr ""
 msgid "Keep original"
 msgstr ""
 
-#: ImportMerge/importmerge.py:115 ImportMerge/importmerge.glade:291
+#: ImportMerge/importmerge.py:115 ImportMerge/importmerge.glade:293
 msgid ""
 "Use buttons below to set the 'Action' for each difference.  No changes will "
 "be made to your tree until you press 'Done' and confirm."
@@ -160,68 +160,68 @@ msgstr ""
 msgid "Tag"
 msgstr ""
 
-#: ImportMerge/importmerge.py:312
+#: ImportMerge/importmerge.py:329
 msgid "Importing data..."
 msgstr ""
 
-#: ImportMerge/importmerge.py:321
+#: ImportMerge/importmerge.py:338
 msgid "Import Failure"
 msgstr ""
 
-#: ImportMerge/importmerge.py:325
+#: ImportMerge/importmerge.py:342
 msgid "Searching..."
 msgstr ""
 
-#: ImportMerge/importmerge.py:389
+#: ImportMerge/importmerge.py:406
 msgid "Your Tree and import are the same."
 msgstr ""
 
-#: ImportMerge/importmerge.py:421
+#: ImportMerge/importmerge.py:438
 msgid "Last changed"
 msgstr ""
 
-#: ImportMerge/importmerge.py:434 ImportMerge/importmerge.py:443
-#: ImportMerge/importmerge.py:451 ImportMerge/importmerge.py:459
+#: ImportMerge/importmerge.py:451 ImportMerge/importmerge.py:460
+#: ImportMerge/importmerge.py:468 ImportMerge/importmerge.py:476
 msgid "your tree "
 msgstr ""
 
-#: ImportMerge/importmerge.py:441 ImportMerge/importmerge.py:449
-#: ImportMerge/importmerge.py:457
+#: ImportMerge/importmerge.py:458 ImportMerge/importmerge.py:466
+#: ImportMerge/importmerge.py:474
 msgid "imported "
 msgstr ""
 
-#: ImportMerge/importmerge.py:464 ImportMerge/importmerge.py:943
-#: ImportMerge/importmerge.py:964
+#: ImportMerge/importmerge.py:481 ImportMerge/importmerge.py:960
+#: ImportMerge/importmerge.py:981
 msgid "Original"
 msgstr ""
 
-#: ImportMerge/importmerge.py:465 ImportMerge/importmerge.py:944
-#: ImportMerge/importmerge.py:965
+#: ImportMerge/importmerge.py:482 ImportMerge/importmerge.py:961
+#: ImportMerge/importmerge.py:982
 msgid "Imported"
 msgstr ""
 
-#: ImportMerge/importmerge.py:467 ImportMerge/importmerge.py:946
-#: ImportMerge/importmerge.py:967
+#: ImportMerge/importmerge.py:484 ImportMerge/importmerge.py:963
+#: ImportMerge/importmerge.py:984
 msgid "Result  "
 msgstr ""
 
-#: ImportMerge/importmerge.py:692
+#: ImportMerge/importmerge.py:709
 msgid "Processing..."
 msgstr ""
 
-#: ImportMerge/importmerge.py:693
+#: ImportMerge/importmerge.py:710
 msgid "Import and Merge"
 msgstr ""
 
-#: ImportMerge/importmerge.py:893 ImportMerge/importmerge.glade:405
+#: ImportMerge/importmerge.py:910 ImportMerge/importmerge.glade:407
 msgid "Replace"
 msgstr ""
 
-#: ImportMerge/importmerge.py:898
+#: ImportMerge/importmerge.py:915
 msgid "Add"
 msgstr ""
 
-#: ImportMerge/importmerge.py:903
+#: ImportMerge/importmerge.py:920
 msgid "Delete"
 msgstr ""
 
@@ -235,132 +235,132 @@ msgstr ""
 msgid "Action"
 msgstr ""
 
-#: ImportMerge/importmerge.glade:38
+#: ImportMerge/importmerge.glade:39
 msgid "Import file"
 msgstr ""
 
-#: ImportMerge/importmerge.glade:122
+#: ImportMerge/importmerge.glade:124
 msgid "Select the difference you wish to examine."
 msgstr ""
 
-#: ImportMerge/importmerge.glade:132
+#: ImportMerge/importmerge.glade:134
 msgid "Status"
 msgstr ""
 
-#: ImportMerge/importmerge.glade:147
+#: ImportMerge/importmerge.glade:149
 msgid "Object"
 msgstr ""
 
-#: ImportMerge/importmerge.glade:162
+#: ImportMerge/importmerge.glade:164
 msgid "ID"
 msgstr ""
 
-#: ImportMerge/importmerge.glade:178
+#: ImportMerge/importmerge.glade:180
 msgid "Object Name/Description"
 msgstr ""
 
-#: ImportMerge/importmerge.glade:225
+#: ImportMerge/importmerge.glade:227
 msgid ""
 "Data item details, showing the current treeitem, imported tree item, and "
 "result (when chosen)."
 msgstr ""
 
-#: ImportMerge/importmerge.glade:246
+#: ImportMerge/importmerge.glade:248
 msgid "Object and item"
 msgstr ""
 
-#: ImportMerge/importmerge.glade:262
+#: ImportMerge/importmerge.glade:264
 msgid "Differences"
 msgstr ""
 
-#: ImportMerge/importmerge.glade:318
+#: ImportMerge/importmerge.glade:320
 msgid "Help"
 msgstr ""
 
-#: ImportMerge/importmerge.glade:336
+#: ImportMerge/importmerge.glade:338
 msgid "This button will ignore the difference, no changes to your tree."
 msgstr ""
 
-#: ImportMerge/importmerge.glade:347
+#: ImportMerge/importmerge.glade:349
 msgid "Unmark"
 msgstr ""
 
-#: ImportMerge/importmerge.glade:351
+#: ImportMerge/importmerge.glade:353
 msgid "This button will add the imported data as a new object to your tree."
 msgstr ""
 
-#: ImportMerge/importmerge.glade:362
+#: ImportMerge/importmerge.glade:364
 msgid "Done"
 msgstr ""
 
-#: ImportMerge/importmerge.glade:366
+#: ImportMerge/importmerge.glade:368
 msgid ""
 "This button will bring up a dialog allowing you to finalize your changes, or "
 "abandon them."
 msgstr ""
 
-#: ImportMerge/importmerge.glade:390
+#: ImportMerge/importmerge.glade:392
 msgid "Merge Original"
 msgstr ""
 
-#: ImportMerge/importmerge.glade:394
+#: ImportMerge/importmerge.glade:396
 msgid ""
 "This button will merge the imported data into your tree with your tree data "
 "as a base."
 msgstr ""
 
-#: ImportMerge/importmerge.glade:409
+#: ImportMerge/importmerge.glade:411
 msgid "This button will replace your tree data with the imported data."
 msgstr ""
 
-#: ImportMerge/importmerge.glade:420
+#: ImportMerge/importmerge.glade:422
 msgid "Merge Import"
 msgstr ""
 
-#: ImportMerge/importmerge.glade:424
+#: ImportMerge/importmerge.glade:426
 msgid ""
 "This button will merge the imported data into your tree with the imported "
 "data as a base."
 msgstr ""
 
-#: ImportMerge/importmerge.glade:435
+#: ImportMerge/importmerge.glade:437
 msgid "Edit Import"
 msgstr ""
 
-#: ImportMerge/importmerge.glade:439
+#: ImportMerge/importmerge.glade:441
 msgid ""
 "This button will edit the imported data.  The data will still need to be "
 "merged, added or replaced."
 msgstr ""
 
-#: ImportMerge/importmerge.glade:462
+#: ImportMerge/importmerge.glade:464
 msgid "Show more details"
 msgstr ""
 
-#: ImportMerge/importmerge.glade:479
+#: ImportMerge/importmerge.glade:481
 msgid "Automark Families"
 msgstr ""
 
-#: ImportMerge/importmerge.glade:496
+#: ImportMerge/importmerge.glade:498
 msgid "Automark Parent Families"
 msgstr ""
 
-#: ImportMerge/importmerge.glade:549
+#: ImportMerge/importmerge.glade:551
 msgid "Close _without saving"
 msgstr ""
 
-#: ImportMerge/importmerge.glade:564
+#: ImportMerge/importmerge.glade:566
 msgid "_Cancel"
 msgstr ""
 
-#: ImportMerge/importmerge.glade:580
+#: ImportMerge/importmerge.glade:582
 msgid "_Save"
 msgstr ""
 
-#: ImportMerge/importmerge.glade:611
+#: ImportMerge/importmerge.glade:613
 msgid "Save Changes?"
 msgstr ""
 
-#: ImportMerge/importmerge.glade:642
+#: ImportMerge/importmerge.glade:644
 msgid "If you close without saving, the changes you have made will be lost"
 msgstr ""

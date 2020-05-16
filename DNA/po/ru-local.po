@@ -1,0 +1,34 @@
+# Russian translation for DNA addon.
+# This file is distributed under the same license as the Gramps package.
+# vantu5z <vantu5z@mail.ru>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps51\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-12 08:50-0500\n"
+"PO-Revision-Date: 2020-04-26 15:41+0300\n"
+"Last-Translator: vantu5z <vantu5z@mail.ru>\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: DNA/dna.gpr.py:3 DNA/dna.gpr.py:10
+msgid "DNA"
+msgstr "ДНК"
+
+#: DNA/dna.gpr.py:4
+msgid "Gramplet showing a DNA segment map"
+msgstr "Грамплет отображающий карту сегментов ДНК"
+
+#: DNA/dna.py:87
+msgid "DNA Segment Map"
+msgstr "Карта сегментов ДНК"
+
+#: DNA/dna.py:88
+msgid "Chr"
+msgstr "Хр"

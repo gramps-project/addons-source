@@ -1,0 +1,334 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-15 15:25-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: CombinedView/combinedview.gpr.py:23 CombinedView/combinedview.py:124
+msgid "Combined"
+msgstr ""
+
+#: CombinedView/combinedview.gpr.py:24
+msgid "A view showing relationships and events for a person"
+msgstr ""
+
+#: CombinedView/combinedview.gpr.py:31 CombinedView/combinedview.py:1633
+msgid "Relationships"
+msgstr ""
+
+#: CombinedView/combinedview.py:373
+msgid "Organize Bookmarks"
+msgstr ""
+
+#: CombinedView/combinedview.py:622 CombinedView/combinedview.py:683
+#: CombinedView/combinedview.py:985 CombinedView/combinedview.py:1146
+#: CombinedView/combinedview.py:1262 CombinedView/combinedview.py:1542
+#: CombinedView/combinedview.py:1869 CombinedView/combinedview.py:1920
+#, python-format
+msgid "Edit %s"
+msgstr ""
+
+#: CombinedView/combinedview.py:640 CombinedView/combinedview.py:702
+#: CombinedView/navigationview.py:360
+msgid "ID"
+msgstr ""
+
+#: CombinedView/combinedview.py:660
+msgid "Attributes"
+msgstr ""
+
+#: CombinedView/combinedview.py:712
+msgid "Birth"
+msgstr ""
+
+#: CombinedView/combinedview.py:721 CombinedView/combinedview.py:746
+msgid "Death"
+msgstr ""
+
+#: CombinedView/combinedview.py:741
+msgid "Alive"
+msgstr ""
+
+#: CombinedView/combinedview.py:748
+msgid "unknown"
+msgstr ""
+
+#: CombinedView/combinedview.py:807
+#, python-format
+msgid "%(date)s in %(place)s"
+msgstr ""
+
+#: CombinedView/combinedview.py:825 CombinedView/combinedview.py:1886
+msgid "Unknown"
+msgstr ""
+
+#: CombinedView/combinedview.py:902
+#, python-format
+msgid "%(abbrev)s %(date)s in %(place)s"
+msgstr ""
+
+#: CombinedView/combinedview.py:904
+#, python-format
+msgid "%(abbrev)s %(date)s%(place)s"
+msgstr ""
+
+#: CombinedView/combinedview.py:941
+#, python-format
+msgid "%(birthabbrev)s %(birthdate)s, %(deathabbrev)s %(deathdate)s"
+msgstr ""
+
+#: CombinedView/combinedview.py:948 CombinedView/combinedview.py:950
+#, python-format
+msgid "%(event)s %(date)s"
+msgstr ""
+
+#: CombinedView/combinedview.py:1011
+#, python-format
+msgid "Relationship type: %s"
+msgstr ""
+
+#: CombinedView/combinedview.py:1048
+#, python-format
+msgid "%(event_type)s: %(date)s in %(place)s"
+msgstr ""
+
+#: CombinedView/combinedview.py:1052
+#, python-format
+msgid "%(event_type)s: %(date)s"
+msgstr ""
+
+#: CombinedView/combinedview.py:1055
+#, python-format
+msgid "%(event_type)s: %(place)s"
+msgstr ""
+
+#: CombinedView/combinedview.py:1076
+msgid "Timeline"
+msgstr ""
+
+#: CombinedView/combinedview.py:1143 CombinedView/combinedview.py:1259
+msgid "Click to make this event active"
+msgstr ""
+
+#: CombinedView/combinedview.py:1200
+msgid "Events"
+msgstr ""
+
+#: CombinedView/combinedview.py:1338
+msgid "Click to visit this link"
+msgstr ""
+
+#: CombinedView/combinedview.py:1356
+msgid "Album"
+msgstr ""
+
+#: CombinedView/combinedview.py:1435
+msgid "Associations"
+msgstr ""
+
+#: CombinedView/combinedview.py:1445
+msgid "Association"
+msgstr ""
+
+#: CombinedView/combinedview.py:1445 CombinedView/combinedview.py:1452
+msgid ": "
+msgstr ""
+
+#: CombinedView/combinedview.py:1452
+msgid "Relationship"
+msgstr ""
+
+#: CombinedView/combinedview.py:1474
+msgid "Participants"
+msgstr ""
+
+#: CombinedView/combinedview.py:1509 CombinedView/combinedview.py:1574
+msgid "Order"
+msgstr ""
+
+#: CombinedView/combinedview.py:1596
+msgid "Citations"
+msgstr ""
+
+#: CombinedView/combinedview.py:1644 CombinedView/combinedview.py:1665
+msgid "Parents"
+msgstr ""
+
+#: CombinedView/combinedview.py:1668
+msgid "Father"
+msgstr ""
+
+#: CombinedView/combinedview.py:1672
+msgid "Mother"
+msgstr ""
+
+#: CombinedView/combinedview.py:1680
+msgid "Siblings"
+msgstr ""
+
+#: CombinedView/combinedview.py:1690 CombinedView/combinedview.py:1751
+msgid "Add new child to family"
+msgstr ""
+
+#: CombinedView/combinedview.py:1694 CombinedView/combinedview.py:1755
+msgid "Add existing child to family"
+msgstr ""
+
+#: CombinedView/combinedview.py:1716
+msgid "Broken family detected"
+msgstr ""
+
+#: CombinedView/combinedview.py:1717
+msgid "Please run the Check and Repair Database tool"
+msgstr ""
+
+#: CombinedView/combinedview.py:1729
+msgid "Family"
+msgstr ""
+
+#: CombinedView/combinedview.py:1733
+msgid "Spouse"
+msgstr ""
+
+#: CombinedView/combinedview.py:1740
+msgid "Children"
+msgstr ""
+
+#: CombinedView/combinedview.py:1790
+msgid "Add a new set of parents"
+msgstr ""
+
+#: CombinedView/combinedview.py:1791
+msgid "Add person as child to an existing family"
+msgstr ""
+
+#: CombinedView/combinedview.py:1792
+msgid "Edit parents"
+msgstr ""
+
+#: CombinedView/combinedview.py:1793
+msgid "Reorder parents"
+msgstr ""
+
+#: CombinedView/combinedview.py:1794
+msgid "Remove person as child of these parents"
+msgstr ""
+
+#: CombinedView/combinedview.py:1796
+msgid "Add a new family with person as parent"
+msgstr ""
+
+#: CombinedView/combinedview.py:1798
+msgid "Edit family"
+msgstr ""
+
+#: CombinedView/combinedview.py:1799
+msgid "Reorder families"
+msgstr ""
+
+#: CombinedView/combinedview.py:1800
+msgid "Remove person as parent in this family"
+msgstr ""
+
+#: CombinedView/combinedview.py:2051
+msgid "Add Child to Family"
+msgstr ""
+
+#: CombinedView/combinedview.py:2069
+msgid "Select Child"
+msgstr ""
+
+#: CombinedView/combinedview.py:2189
+msgid "Use shading"
+msgstr ""
+
+#: CombinedView/combinedview.py:2192
+msgid "Display edit buttons"
+msgstr ""
+
+#: CombinedView/combinedview.py:2194
+msgid "View links as website links"
+msgstr ""
+
+#: CombinedView/combinedview.py:2200
+msgid "Layout"
+msgstr ""
+
+#: CombinedView/combinedview.py:2211
+msgid "Show Details"
+msgstr ""
+
+#: CombinedView/combinedview.py:2214
+msgid "Vertical Details"
+msgstr ""
+
+#: CombinedView/combinedview.py:2217
+msgid "Show Siblings"
+msgstr ""
+
+#: CombinedView/combinedview.py:2220
+msgid "Show Tags"
+msgstr ""
+
+#: CombinedView/combinedview.py:2223
+msgid "Content"
+msgstr ""
+
+#: CombinedView/navigationview.py:269
+#, python-format
+msgid "%s has been bookmarked"
+msgstr ""
+
+#: CombinedView/navigationview.py:273
+msgid "Could Not Set a Bookmark"
+msgstr ""
+
+#: CombinedView/navigationview.py:274
+msgid "A bookmark could not be set because no one was selected."
+msgstr ""
+
+#: CombinedView/navigationview.py:340
+msgid "No Home Person"
+msgstr ""
+
+#: CombinedView/navigationview.py:341
+msgid ""
+"You need to set a 'default person' to go to. Select the People View, select "
+"the person you want as 'Home Person', then confirm your choice via the menu "
+"Edit -> Set Home Person."
+msgstr ""
+
+#: CombinedView/navigationview.py:351 CombinedView/navigationview.py:354
+msgid "Jump to by Gramps ID"
+msgstr ""
+
+#: CombinedView/navigationview.py:360
+#, python-format
+msgid "%s: "
+msgstr ""
+
+#: CombinedView/navigationview.py:365
+msgid "_Cancel"
+msgstr ""
+
+#: CombinedView/navigationview.py:366
+msgid "_Jump to"
+msgstr ""
+
+#: CombinedView/navigationview.py:378
+#, python-format
+msgid "Error: %s is not a valid Gramps ID"
+msgstr ""
