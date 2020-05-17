@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<forms>
+    <form id='FindAGrave' type='Death.Info' title="Find a Grave (https://www.findagrave.com/)" date='label=Date of Death' location="label=Location of Cemetery" reference='label=Memorial #'>
+        <section role='Died' type='person' title='Who died?'>
+            <column>
+                <_attribute>Deceased's Name</_attribute>
+                <_longname>In all fields, put the information as written (leave blank if unknown)</_longname>
+            </column>
+            <column>
+                <_attribute>Birth Date</_attribute>
+                <_longname>In all fields, put the information as written (leave blank if unknown)</_longname>
+            </column>
+            <column>
+                <_attribute>Birth Location</_attribute>
+                <_longname>In all fields, put the information as written (leave blank if unknown)</_longname>
+            </column>
+            <xcolumn>
+                <_attribute>Death Date</_attribute>
+                <_longname>In all fields, put the information as written (leave blank if unknown)</_longname>
+            </xcolumn>
+            <column>
+                <_attribute>Death Location</_attribute>
+                <_longname>In all fields, put the information as written (leave blank if unknown)</_longname>
+            </column>
+            <column>
+                <_attribute>Plot</_attribute>
+                <_longname>Don't include the cemetery's location</_longname>
+            </column>
+            <column>
+                <_attribute>Comment</_attribute>
+                <_longname>Are the names wrong etc, put your extra information or worries here</_longname>
+            </column>
+        </section>
+    </form>
+</forms>

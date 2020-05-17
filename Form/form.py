@@ -92,9 +92,15 @@ GROOM = _('Groom')
 BRIDE = _('Bride')
 
 # Files which may contain form definitions
-definition_files = ['form_be.xml', 'form_ca.xml', 'form_dk.xml', 'form_fr.xml',
-                    'form_gb.xml', 'form_pl.xml', 'form_us.xml',
-                    'test.xml', 'custom.xml']
+definition_files = [ 'test*.xml',       # Test forms have precidence (all but the first duplicate ID's are now ignored)
+                     'custom*.xml',     # User's own forms although mainly for backwards compatability as the envvar "G.FORM.I" can be used to define your own forms.
+                     'bdm*.xml',        # Birth Death, marriages registries
+                     'graves*.xml',     # Graves/Death sites (findagrave.com, billiongraves.com and similar)
+                     ##################
+                     'census*.xml',     # Most forms are census related
+                     'form*.xml'        # Legacy naming
+                    ]
+
 
 #------------------------------------------------------------------------
 #
@@ -181,10 +187,14 @@ def FilesMatchingGlobArray(ScListOfFileMasks):
         Gets passed a list of files where the basename can be a glob and
         returns an array of RELATIVE (to __file__) filenames of matches
         e.g. ScListOfFileMasks = "FileInRoot.xml;subdir\graves*.xml"
+        OR   ScListOfFileMasks = ["FileInRoot.xml", "subdir\graves*.xml"]
     """
     NewArray = []
     XmlPath = os.path.dirname(__file__)
-    FileMasks = ScListOfFileMasks.split(';')
+    if  type(ScListOfFileMasks) is str:
+        FileMasks = ScListOfFileMasks.split(';')    #Make an array from ";" string
+    else:
+        FileMasks = ScListOfFileMasks               #Already an array
     for FileMask in FileMasks:
         FileMask = FileMask.strip()
         if  FileMask != '':
@@ -290,14 +300,16 @@ class Form():
         self.__section_types = {}
 
         XmlPath = os.path.dirname(__file__)
-        DefXml  = definition_files
-        AllXml  = DefXml
+        DefXml  = FilesMatchingGlobArray(definition_files)
         UsrXml  = GetEnv('G.FORM.I')
         if  UsrXml:
-            AllXml = FilesMatchingGlobArray(UsrXml)     #Files from EnvVar loaded before hard coded list
+            AllXml = FilesMatchingGlobArray(UsrXml)     #Files from EnvVar loaded before default list
             AllXml.extend(DefXml)
+        else:
+            AllXml  = DefXml                            #No extra files (inclusion envvar not defined)
         UsrXmlX = GetEnv('G.FORM.X')
         if  UsrXmlX:
+            _LOG.info('XML File List (%d files, BEFORE EXCLUSIONS APPLIED): %s' % (len(AllXml), AllXml))
             Exclusions = FilesMatchingGlobArray(UsrXmlX)
             for Exclusion in Exclusions:
                 AllXml.remove(Exclusion)

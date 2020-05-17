@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<forms>
+    <form id='QLD_[B]DM' type='Birth.Info' title="Queensland, Australia, BDM, Birth" date='label=Date of Birth' location="label=Where in QLD?; default=Queensland, Australia" reference='label=QLD [B]DM #'>
+        <section role='Born' type='person' title='Whose Birth?'>
+            <column>
+                <_attribute>Name at Birth</_attribute>
+                <_longname>In all fields, put the information as written (leave blank if unknown).&#xD;&#xD;Reference = Registration details, Date=Event Date, Place=Queensland, Australia</_longname>
+            </column>
+            <column>
+                <_attribute>Mother's Name</_attribute>
+                <_longname>In all fields, put the information as written (leave blank if unknown).&#xD;&#xD;Reference = Registration details, Date=Event Date, Place=Queensland, Australia</_longname>
+            </column>
+            <column>
+                <_attribute>Father's Name</_attribute>
+                <_longname>In all fields, put the information as written (leave blank if unknown).&#xD;&#xD;Reference = Registration details, Date=Event Date, Place=Queensland, Australia</_longname>
+            </column>
+            <column>
+                <_attribute>Comment</_attribute>
+                <_longname>Are the names wrong etc, put your extra information or worries here</_longname>
+                <size>55</size>
+            </column>
+        </section>
+    </form>
+
+
+
+    <form id='QLD_BD[M]' type='Marriage.Info' title="Queensland, Australia, BDM, Marriages" date='label=Date of Marriage' location="label=Where in QLD?; default=Queensland, Australia" reference='label=QLD BD[M] #'>
+        <heading>
+            <_attribute>Husband's Name</_attribute>
+            <_longname>In all fields, put the information as written (leave blank if unknown).&#xD;&#xD;Reference = Registration details, Date=Event Date, Place=Queensland, Australia</_longname>
+        </heading>
+        <heading>
+            <_attribute>Wife's Name</_attribute>
+            <_longname>In all fields, put the information as written (leave blank if unknown).&#xD;&#xD;Reference = Registration details, Date=Event Date, Place=Queensland, Australia</_longname>
+        </heading>
+        <heading>
+                <_attribute>Comment</_attribute>
+                <_longname>Are the names wrong etc, put your extra information or worries here</_longname>
+        </heading>
+
+        <section role='Husband' type='person'></section>
+        <section role='Wife'    type='Person'></section>
+    </form>
+
+
+    <form id='QLD_B[D]M' type='Death.Info' title='BDM, Queensland, Australia, Deaths' date='label=Date of Death' location="label=Where in QLD?; default=Queensland, Australia" reference='label=QLD B[D]M #'>
+        <section role='Died' type='person' title='Who died?'>
+            <column>
+                <_attribute>Name at Death</_attribute>
+                <_longname>In all fields, put the information as written (leave blank if unknown).&#xD;&#xD;Reference = Registration details, Date=Event Date, Place=Queensland, Australia</_longname>
+            </column>
+            <column>
+                <_attribute>Date of Birth</_attribute>
+                <_longname>In all fields, put the information as written (leave blank if unknown).&#xD;&#xD;Reference = Registration details, Date=Event Date, Place=Queensland, Australia</_longname>
+            </column>
+            <column>
+                <_attribute>Mother's Name</_attribute>
+                <_longname>In all fields, put the information as written (leave blank if unknown).&#xD;&#xD;Reference = Registration details, Date=Event Date, Place=Queensland, Australia</_longname>
+            </column>
+            <column>
+                <_attribute>Father's Name</_attribute>
+                <_longname>In all fields, put the information as written (leave blank if unknown).&#xD;&#xD;Reference = Registration details, Date=Event Date, Place=Queensland, Australia</_longname>
+            </column>
+            <column>
+                <_attribute>Comment</_attribute>
+                <_longname>Are the names wrong etc, put your extra information or worries here</_longname>
+            </column>
+        </section>
+    </form>
+
+</forms>

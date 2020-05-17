@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<forms>
+    <form id='VIC_[B]DM' type='Birth.Info' title="Victoria, Australia, BDM, Birth" date='label=Date of Birth' location="label=Where in VIC?; default=Victoria, Australia" reference='label=Vic Reg #'>
+        <section role='Born' type='person' title='Whose Birth?'>
+            <column>
+                <_attribute>Child's Surname</_attribute>
+                <_longname>Child's Family Name</_longname>
+            </column>
+            <column>
+                <_attribute>Child's Given Names</_attribute>
+                <_longname>Child's other names</_longname>
+            </column>
+            <column>
+                <_attribute>Mother's Name</_attribute>
+                <_longname>Column: Mother's Name / Spouse's Name</_longname>
+            </column>
+            <column>
+                <_attribute>Mother's Birth Name</_attribute>
+                <_longname>Mother's surname at birth (maiden name)</_longname>
+            </column>
+            <column>
+                <_attribute>Father's Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Comment</_attribute>
+                <_longname>Are the names wrong etc, put your extra information or worries here</_longname>
+            </column>
+        </section>
+    </form>
+
+    <form id='VIC_B[D]M' type='Death.Info' title="Victoria, Australia, BDM, Death" date='label=Date of Death' location="label=Where in VIC?; default=Victoria, Australia" reference='label=Vic Reg #'>
+        <section role='Born' type='person' title='Whose Birth?'>
+            <column>
+                <_attribute>Surname</_attribute>
+                <_longname>Family Name (surname of deceased)</_longname>
+            </column>
+            <column>
+                <_attribute>Given Names</_attribute>
+                <_longname>Other Name (deceased)</_longname>
+            </column>
+            <column>
+                <_attribute>Mother's Name</_attribute>
+                <_longname>Column: Mother's Name / Spouse's Name</_longname>
+            </column>
+            <column>
+                <_attribute>Mother's Birth Name</_attribute>
+                <_longname>Mother's family/surname at birth (maiden name)</_longname>
+            </column>
+            <column>
+                <_attribute>Father's Name</_attribute>
+            </column>
+            <column>
+                <_attribute>Birth Place</_attribute>
+                <_longname>Where in Victoria?  Enter exactly as specified</_longname>
+            </column>
+            <column>
+                <_attribute>Death Place</_attribute>
+                <_longname>Where in Victoria?  Enter exactly as specified, clean up for the location field above...</_longname>
+            </column>
+            <column>
+                <_attribute>Spouse at Death</_attribute>
+                <_longname>Who were they married to when they died?</_longname>
+            </column>
+            <column>
+                <_attribute>Age at Death</_attribute>
+                <_longname>How old when they died?</_longname>
+            </column>
+            <column>
+                <_attribute>Comment</_attribute>
+                <_longname>Are the names wrong etc, put your extra information or worries here</_longname>
+            </column>
+        </section>
+    </form>
+
+
+    <form id='VIC_BD[M]' type='Marriage.Info' title="Victoria, Australia, BDM, Marriages" date='label=Date of Marriage' location="label=Where in VIC?; default=Victoria, Australia" reference='label=VIC BD[M] #'>
+        <heading>
+            <_attribute>Family Name</_attribute>
+            <_longname>Surname of this spouse</_longname>
+        </heading>
+        <heading>
+            <_attribute>Given Names</_attribute>
+            <_longname>Other Name of this spouse</_longname>
+        </heading>
+        <heading>
+            <_attribute>Spouse's Name</_attribute>
+            <_longname>Married who?  Column: Mother's Name / Spouse's Name</_longname>
+        </heading>
+        <heading>
+            <_attribute>Mother's Name</_attribute>
+            <_longname>Column: Mother's Name / Spouse's Name</_longname>
+        </heading>
+        <heading>
+            <_attribute>Mother's Birth Name</_attribute>
+            <_longname>Mother's family/surname at birth (maiden name)</_longname>
+        </heading>
+        <heading>
+            <_attribute>Father's Name</_attribute>
+        </heading>
+        <heading>
+                <_attribute>Comment</_attribute>
+                <_longname>Are the names wrong etc, put your extra information or worries here</_longname>
+        </heading>
+
+        <section role='Husband' type='person'></section>
+        <section role='Wife'    type='Person'></section>
+    </form>
+
+</forms>
