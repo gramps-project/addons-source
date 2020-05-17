@@ -167,7 +167,7 @@ class CombinedView(NavigationView):
         self.callman.add_db_signal('person-delete', self.redraw)
 
     def navigation_type(self):
-        return self.get_active()[0]
+        return None
 
     def can_configure(self):
         """
@@ -1734,7 +1734,7 @@ class CombinedView(NavigationView):
             if not self.write_relationship_events(box, family):
                 self.write_relationship(box, family)
             ebox = self.make_dragbox(box, 'Person', handle)
-        vbox.pack_start(ebox, False, False, 1)
+            vbox.pack_start(ebox, False, False, 1)
 
         count = len(family.get_child_ref_list())
         ex2 = Gtk.Expander(label='%s (%s):' % (_('Children'), count))
