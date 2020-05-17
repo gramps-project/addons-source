@@ -51,7 +51,7 @@ from gramps.gen.db import DbTxn
 from gramps.gen.display.name import displayer as name_displayer
 from gramps.gen.datehandler import get_date, displayer
 from form import ORDER_ATTR, GROOM, BRIDE
-from form import (get_form_date, get_form_id, get_form_type, get_form_headings,
+from form import (get_form_id, get_form_date, get_form_type, get_form_headings,
                   get_form_sections, get_section_title, get_section_type,
                   get_section_columns, get_form_citation)
 from entrygrid import EntryGrid
@@ -59,7 +59,7 @@ from form import ( get_form_dateRO, get_form_dateLbl,
                    get_form_locn,   get_form_locnLbl,
                    get_form_ref,    get_form_refLbl,
                    FormDlgError, FormDlgInfo, FormDlgDebug,
-                   GetObjectClass
+                   GetObjectClass, get_help_file
                  )
 
 # from datetime import datetime (fails for .today()!)
@@ -69,7 +69,8 @@ from gramps.gen.display.place import displayer as place_displayer
 from gramps.gen.lib import Date
 from gramps.gen.lib.date import Today
 from gramps.gen.datehandler import parser  as DateParser
-
+from gi.repository import Gdk
+import os
 import logging
 _LOG = logging.getLogger("Form Gramplet")
 
@@ -112,6 +113,7 @@ class EditForm(ManagedWindow):
 
         ManagedWindow.__init__(self, uistate, track, citation)
 
+        self.HeadingsNeedsClicking = True
         self.widgets = {}
         top = self.__create_gui()
         self.set_window(top, None, self.get_menu_title())
@@ -197,6 +199,7 @@ class EditForm(ManagedWindow):
         grid.set_margin_right(6)
         grid.set_row_spacing(6)
         grid.set_column_spacing(6)
+        self.widgets['grid'] = grid
 
         source_label = Gtk.Label(label=_("Source:"))
         source_label.set_halign(Gtk.Align.START)
@@ -255,7 +258,7 @@ class EditForm(ManagedWindow):
         self.widgets['place_event_box'] = place_event_box
 
 
-        #[CEATE] Fixed button order to be consistent with Gramps & the others on this form!
+        #[CREATE] Fixed button order to be consistent with Gramps & the others on this form!
         image = Gtk.Image()
         image.set_from_icon_name('list-add', Gtk.IconSize.BUTTON)
         place_add = Gtk.Button()
@@ -273,7 +276,21 @@ class EditForm(ManagedWindow):
         grid.attach(place_share, 3, 3, 1, 1)
         self.widgets['place_share'] = place_share
 
+        ### DB$
+        HelpFrame  = Gtk.Frame()
+        HelpControl = Gtk.Label('')
+        HelpControl.set_use_markup(True)
+        HelpControl.set_selectable(True)    #May include URLs or other Info
+        HelpColor = Gdk.color_parse('blue')
+        HelpControl.modify_fg(Gtk.StateFlags.NORMAL, HelpColor)
 
+        HelpControl.set_line_wrap(True)
+        #HelpControl.set_lines(3)            #This doesn't fail but doesn't work either: https://athenajc.gitbooks.io/python-gtk-3-api/content/gtk-group/gtklabel.html#setlines
+        #place_text.set_vexpand(False)       #Also fail
+        HelpFrame.add(HelpControl)
+        grid.attach(HelpFrame, 0, 4, 4, 1)
+        self.widgets['HelpFrame']   = HelpFrame
+        self.widgets['HelpControl'] = HelpControl
 
         button_box = Gtk.ButtonBox()
         button_box.set_layout(Gtk.ButtonBoxStyle.END)
@@ -330,6 +347,11 @@ class EditForm(ManagedWindow):
         return place
 
 
+    def NoteBookPageSelected(self, notebook, tab, index):
+        if  tab == self.headings:
+            _LOG.info('NoteBookPageSelected(): Headings Tab selected')
+            self.HeadingsNeedsClicking = False
+
     def __populate_gui(self, event):
         """
         Populate the GUI for a given form event.
@@ -340,6 +362,7 @@ class EditForm(ManagedWindow):
         source_text = self.widgets['source_text']
         source_text.set_text(source.get_title())
         form_id = get_form_id(source)
+        _LOG.debug('FORM ID = %s', form_id)
 
         # Set event type
         event_type = EventType()
@@ -396,6 +419,49 @@ class EditForm(ManagedWindow):
                 NamePlace = self.GetPlaceFromName(LocnDef)
                 event.set_place_handle(NamePlace.get_handle())
 
+        # Form Help text (DB$)
+        HelpFrame   = self.widgets['HelpFrame']
+        HelpControl = self.widgets['HelpControl']
+        HelpContents = ''
+        HelpFile = get_help_file(form_id)
+        if  HelpFile:
+            _LOG.debug("HELP FILE EXISTS: %s" % HelpFile)
+            try:
+                with open(HelpFile, 'r') as f:
+                    # Read the file (don't strip remove leading & trailing whitespace yet)
+                    HelpContents = f.read()
+
+                    # Allow a paragraph to be broken up into multiple lines (spaces before the "\" are preserved so the user has full control of formatting)
+                    HelpContents = HelpContents.replace('\\\n', '')
+
+                    # Do strip after fixing "\" so all (including last definately removed
+                    HelpContents = HelpContents.strip()
+            except Exception as xArgs:
+                _LOG.debug('Failed reading help file: %s' % str(xArgs))
+        NumberHeadings = len( get_form_headings(form_id) )
+        if  NumberHeadings != 0:
+            # Add a warning to the help (about the "hidden" headings)
+            if  HelpContents != '':
+                HelpContents = '\n\n' + HelpContents
+            HeadingsHelp = _('There are in {0} fields in the "Headings" tab.')
+            HelpContents = '<span foreground="orange"><b>' + HeadingsHelp.format(NumberHeadings) + '</b></span>' + HelpContents
+        if HelpContents == '':
+            _LOG.debug("No help available (will hide the help controls)")
+            grid = self.widgets['grid']
+            grid.remove_row(4)
+        else:
+            # set_markup() has no return code so need to add error message first!
+            HelpControl.set_markup( _('If you are seeing this, then the help text is incorrectly formatted with pango markup, see:\n')
+                                    + '<b>https://developer.gnome.org/pango/stable/pango-Markup.html</b>\n\n'
+                                    + _('HELP FILE')
+                                    + ': '
+                                    + str(HelpFile)
+                                  )
+            _LOG.debug("HELP CONTENTS: \n\n### HELP START ###\n%s\n### HELP END ###\n" % HelpContents)
+            HelpControl.set_markup(HelpContents)        #How stupid, no RC, no error location/text!
+            FrameText = _('Help for this form: [%s]') % form_id
+            HelpFrame.set_label(' ' + FrameText + ' ')
+
         # Set date
         form_date  = get_form_date(form_id)          #From stored XML
         FormDateRO = get_form_dateRO(form_id)
@@ -447,6 +513,7 @@ class EditForm(ManagedWindow):
         HeadingCnt = len(get_form_headings(form_id))
         if  HeadingCnt == 0:
             _LOG.debug('The Headings tab is empty so we are not displaying it.')
+            self.HeadingsNeedsClicking = False
         else:
             _LOG.debug('The Headings tab has %d fields (so adding the tab)' % HeadingCnt)
             self._add_tab(self.notebook, self.headings)
@@ -455,6 +522,8 @@ class EditForm(ManagedWindow):
         self.notebook.show_all()
         self.notebook.set_current_page(0)
 
+        #DB$
+        self.notebook.connect('switch-page', self.NoteBookPageSelected)
 
     def save(self, button):
         """
@@ -516,6 +585,12 @@ class EditForm(ManagedWindow):
            EvtDesc = RefDef + " @ " + source_text + " [" + _("form") + "]"
            _LOG.debug("Setting DESCRIPTION for the event: " + EvtDesc)
            self.event.set_description(EvtDesc)
+
+        # For now just check user went to the Headings Tab (if that was required)
+        if  self.HeadingsNeedsClicking:
+            FormDlgInfo(_("Headings tab unvisited!"), _("There are headings to be filled in and you haven't gone and at least looked at them!"))
+            return
+
 
         with DbTxn(self.get_menu_title(), self.db) as trans:
             if not self.event.get_handle():
@@ -1036,7 +1111,7 @@ class PersonSection(Gtk.Box):
 
         #Update the correct section (so user can see name)
         SelText = self.widgets['PersonName']
-        SelText.set_markup("[<b><small>%s</small></b>]" % name)     #Doesn't want to work
+        SelText.set_markup("[<b><small>%s</small></b>]" % name)
 
 
         for heading in self.headings:

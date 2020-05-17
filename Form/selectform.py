@@ -36,6 +36,8 @@ from gi.repository import Gdk
 #
 #------------------------------------------------------------------------
 from form import get_form_ids, get_form_id, get_form_type
+from form import DEFINITION_KEY, FormDlgInfo, GetEnvInt
+
 
 #------------------------------------------------------------------------
 #
@@ -48,6 +50,14 @@ try:
 except ValueError:
     _trans = glocale.translation
 _ = _trans.gettext
+
+#------------------------------------------------------------------------
+# Logging
+#------------------------------------------------------------------------
+import logging
+_LOG = logging.getLogger("Form Gramplet")
+
+
 
 #------------------------------------------------------------------------
 #
@@ -69,8 +79,9 @@ class SelectForm(object):
         """
         # pylint: disable-msg=E1101
         title = _("%(title)s - Gramps") % {'title': _("Select Form")}
+        _LOG.debug('Select Form Dialog: %s' % title)
         top = Gtk.Dialog(title)
-        top.set_default_size(400, 350)
+        top.set_default_size(GetEnvInt('G.FORM.SF.W', 400), GetEnvInt('G.FORM.SF.H', 350))
         top.set_modal(True)
         top.set_transient_for(self.uistate.window)
         top.vbox.set_spacing(5)
@@ -105,9 +116,11 @@ class SelectForm(object):
         """
         self.model.clear()
         form_types = {}
+        SrcAttrs = []
         for handle in self.dbstate.db.get_source_handles():
             source = self.dbstate.db.get_source_from_handle(handle)
             form_id = get_form_id(source)
+            if form_id: SrcAttrs.append(form_id)
             if form_id in get_form_ids():
                 form_type = get_form_type(form_id)
                 if _(form_type) in form_types:
@@ -116,8 +129,30 @@ class SelectForm(object):
                     parent = self.model.append(None, (None, _(form_type)))
                     form_types[_(form_type)] = parent
                 self.model.append(parent, (source.handle, source.title))
+                #_LOG.warning("model form_type =%s" % form_type)
+                #_LOG.warning("model.append 1=%s, 2=%s" % (source.handle, source.title))
         self.model.set_sort_column_id(1, Gtk.SortType.ASCENDING)
         self.tree.expand_all()
+
+        # Check for user or installation mistake (form empty)
+        if  len(form_types) != 0:
+            _LOG.debug('%s SOURCE ID\'s (in the "%s" attribute): %s' % (len(SrcAttrs), DEFINITION_KEY, str(SrcAttrs)))
+        else:
+            # NO MATCHES FOUND, Report error if no matches were found
+            FrmAttrs = []
+            for form_id in get_form_ids():
+                FrmAttrs.append(form_id)
+            FormDlgInfo('NO FORM & SOURCE MATCHES FOUND',
+                          _('There were no sources with a attribute of "%s" which matched any form\'s "id" (loaded from XML).') % DEFINITION_KEY
+                        + '\n\n'
+                        + _('%s IDs in Sources') % len(SrcAttrs) + "\n"
+                        + '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~' + "\n"
+                        + str(SrcAttrs)
+                        + '\n\n'
+                        + _('%s IDs in loaded from form xml') % len(FrmAttrs) + "\n"
+                        + '~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~' + "\n"
+                        + str(FrmAttrs)
+                       )
 
     def __button_press(self, obj, event):
         """
