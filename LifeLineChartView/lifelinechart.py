@@ -22,11 +22,11 @@
 See https://github.com/CWSchulze/life_line_chart
 """
 
-#-------------------------------------------------------------------------
+# -------------------------------------------------------------------------
 #
 # Python modules
 #
-#-------------------------------------------------------------------------
+# -------------------------------------------------------------------------
 import logging
 import math
 import colorsys
@@ -1088,7 +1088,7 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                         try:
                             self.life_line_chart_ancestor_graph.modify_layout(
                                 self.rootpersonh)
-                        except:
+                        except Exception as e:
                             pass
 
                         #backup color
