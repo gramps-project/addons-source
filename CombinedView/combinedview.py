@@ -56,6 +56,7 @@ from gramps.gen.lib.date import Today
 from gramps.gen.db import DbTxn
 from navigationview import NavigationView
 from taglist import TagList
+from timeline import Timeline
 from gramps.gui.uimanager import ActionGroup
 from gramps.gui.editors import EditPerson, EditFamily, EditEvent
 from gramps.gui.editors import FilterEditor
@@ -66,8 +67,10 @@ from gramps.gen.utils.alive import probably_alive
 from gramps.gen.utils.db import get_participant_from_event
 from gramps.gui.utils import open_file_with_default_application
 from gramps.gen.datehandler import displayer, get_date
-from gramps.gen.utils.thumbnails import get_thumbnail_image
+from gramps.gen.utils.thumbnails import (get_thumbnail_image, SIZE_NORMAL,
+                                         SIZE_LARGE)
 from gramps.gen.config import config
+from gramps.gen.relationship import get_relationship_calculator
 from gramps.gui import widgets
 from gramps.gui.widgets.reorderfam import Reorder
 from gramps.gui.widgets.styledtexteditor import StyledTextEditor
@@ -115,6 +118,7 @@ class CombinedView(NavigationView):
         ('preferences.relation-shade', True),
         ('preferences.releditbtn', True),
         ('preferences.show-tags', True),
+        ('preferences.vertical-details', True),
         )
 
     def __init__(self, pdata, dbstate, uistate, nav_group=0):
@@ -141,6 +145,7 @@ class CombinedView(NavigationView):
         self.show_siblings = self._config.get('preferences.family-siblings')
         self.show_details = self._config.get('preferences.family-details')
         self.show_tags = self._config.get('preferences.show-tags')
+        self.vertical = self._config.get('preferences.vertical-details')
         self.use_shade = self._config.get('preferences.relation-shade')
         self.theme = self._config.get('preferences.relation-display-theme')
         self.toolbar_visible = config.get('interface.toolbar-on')
@@ -163,7 +168,7 @@ class CombinedView(NavigationView):
         self.callman.add_db_signal('person-delete', self.redraw)
 
     def navigation_type(self):
-        return self.get_active()[0]
+        return None
 
     def can_configure(self):
         """
@@ -185,6 +190,7 @@ class CombinedView(NavigationView):
         self.show_siblings = self._config.get('preferences.family-siblings')
         self.show_details = self._config.get('preferences.family-details')
         self.show_tags = self._config.get('preferences.show-tags')
+        self.vertical = self._config.get('preferences.vertical-details')
         self.redraw()
 
     def build_tree(self):
@@ -559,6 +565,8 @@ class CombinedView(NavigationView):
         self.write_families(person)
         self.write_events(person)
         self.write_album(person)
+        self.write_timeline(person)
+        self.write_associations(person)
 
         #self.stack.set_visible_child_name(self.person_tab)
 
@@ -755,21 +763,27 @@ class CombinedView(NavigationView):
         # image
         image_list = person.get_media_list()
         if image_list:
-            mobj = self.dbstate.db.get_media_from_handle(image_list[0].ref)
-            if mobj and mobj.get_mime_type()[0:5] == "image":
-                pixbuf = get_thumbnail_image(
-                                media_path_full(self.dbstate.db,
-                                                mobj.get_path()),
-                                rectangle=image_list[0].get_rectangle())
-                image = Gtk.Image()
-                image.set_from_pixbuf(pixbuf)
-                button = Gtk.Button()
-                button.add(image)
-                button.connect("clicked", lambda obj: self.view_photo(mobj))
+            button = self.get_thumbnail(image_list[0], size=SIZE_NORMAL)
+            if button:
                 mbox.pack_end(button, False, True, 0)
-
         mbox.show_all()
         self.header.pack_start(mbox, False, True, 0)
+
+    def get_thumbnail(self, media_ref, size):
+        mobj = self.dbstate.db.get_media_from_handle(media_ref.ref)
+        if mobj and mobj.get_mime_type()[0:5] == "image":
+            pixbuf = get_thumbnail_image(
+                            media_path_full(self.dbstate.db,
+                                            mobj.get_path()),
+                            rectangle=media_ref.get_rectangle(),
+                            size=size)
+            image = Gtk.Image()
+            image.set_from_pixbuf(pixbuf)
+            button = Gtk.Button()
+            button.add(image)
+            button.connect("clicked", lambda obj: self.view_photo(mobj))
+            return button
+        return None
 
     def view_photo(self, photo):
         """
@@ -857,6 +871,49 @@ class CombinedView(NavigationView):
                 data = (dnd_type.drag_type, id(self), object_h, 0)
                 sel_data.set(dnd_type.atom_drag_type, 8, pickle.dumps(data))
         return drag_data_get
+
+    def info_box(self, handle):
+        if self.vertical:
+            box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        else:
+            box = Gtk.Box()
+            box.set_spacing(6)
+
+        person = self.dbstate.db.get_person_from_handle(handle)
+        if not person:
+            return box
+
+        birth = get_birth_or_fallback(self.dbstate.db, person)
+        label1 = widgets.MarkupLabel(self.format_box(birth, EventType.BIRTH))
+        box.pack_start(label1, False, False, 0)
+
+        death = get_death_or_fallback(self.dbstate.db, person)
+        label2 = widgets.MarkupLabel(self.format_box(death, EventType.DEATH))
+        box.pack_start(label2, False, False, 0)
+
+        return box
+
+    def format_box(self, event, main_type):
+        if event:
+            dobj = event.get_date_object()
+            pname = place_displayer.display_event(self.dbstate.db, event)
+            value = {
+                'abbrev': event.type.get_abbreviation(),
+                'date' : displayer.display(dobj),
+                'place' : pname
+                }
+        else:
+            return ''
+
+        if pname and not dobj.is_empty():
+            info = _('%(abbrev)s %(date)s in %(place)s') % value
+        else:
+            info = _('%(abbrev)s %(date)s%(place)s') % value
+
+        if event.type != main_type:
+            return '<i>%s</i>' % escape(info)
+        else:
+            return escape(info)
 
     def info_string(self, handle):
         person = self.dbstate.db.get_person_from_handle(handle)
@@ -1012,6 +1069,130 @@ class CombinedView(NavigationView):
 
 ##############################################################################
 #
+# Timeline
+#
+##############################################################################
+
+    def write_timeline(self, person):
+
+        grid = Gtk.Grid(orientation=Gtk.Orientation.VERTICAL)
+
+        scroll = Gtk.ScrolledWindow()
+        scroll.add(grid)
+        scroll.show_all()
+        self.stack.add_titled(scroll, 'timeline', _('Timeline'))
+
+        events = []
+        start_date = None
+        # Personal events
+        for index, event_ref in enumerate(person.get_event_ref_list()):
+            event = self.dbstate.db.get_event_from_handle(event_ref.ref)
+            date = event.get_date_object()
+            if (start_date is None and event_ref.role.is_primary() and
+                (event.type.is_birth_fallback() or
+                 event.type == EventType.BIRTH)):
+                start_date = date
+            sortval = date.get_sort_value()
+            events.append(((sortval, index), event_ref, None))
+
+        # Family events
+        for family_handle in person.get_family_handle_list():
+            family = self.dbstate.db.get_family_from_handle(family_handle)
+            father_handle = family.get_father_handle()
+            mother_handle = family.get_mother_handle()
+            spouse = None
+            if father_handle == person.handle:
+                if mother_handle:
+                    spouse = self.dbstate.db.get_person_from_handle(mother_handle)
+            else:
+                if father_handle:
+                    spouse = self.dbstate.db.get_person_from_handle(father_handle)
+            for event_ref in family.get_event_ref_list():
+                event = self.dbstate.db.get_event_from_handle(event_ref.ref)
+                sortval = event.get_date_object().get_sort_value()
+                events.append(((sortval, 0), event_ref, spouse))
+
+        # Write all events sorted by date
+        for index, event in enumerate(sorted(events, key=itemgetter(0))):
+            self.write_node(grid, event[1], event[2], index+1, start_date)
+
+        grid.show_all()
+
+    def write_node(self, grid, event_ref, spouse, index, start_date):
+        handle = event_ref.ref
+        event = self.dbstate.db.get_event_from_handle(handle)
+        etype = str(event.get_type())
+        desc = event.get_description()
+        who = get_participant_from_event(self.dbstate.db, handle)
+
+        title = etype
+        if desc:
+            title = '%s (%s)' % (title, desc)
+        if spouse:
+            spouse_name = name_displayer.display(spouse)
+            title = '%s - %s' % (title, spouse_name)
+
+        role = event_ref.get_role()
+        if role in (EventRoleType.PRIMARY, EventRoleType.FAMILY):
+            emph = True
+        else:
+            emph = False
+            title = '%s of %s' % (title, who)
+
+        vbox1 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+
+        link_func = self._event_link
+        name = (title, None)
+        handle = event_ref.ref
+        link_label = widgets.LinkLabel(name, link_func, handle, emph,
+                                       theme=self.theme)
+        link_label.set_padding(3, 0)
+        link_label.set_tooltip_text(_('Click to make this event active'))
+        if self._config.get('preferences.releditbtn'):
+            button = widgets.IconButton(self.edit_event, handle)
+            button.set_tooltip_text(_('Edit %s') % name[0])
+        else:
+            button = None
+
+        hbox = widgets.LinkBox(link_label, button)
+        if self.show_tags:
+            tag_list = TagList(self.get_tag_list(event))
+            hbox.pack_start(tag_list, False, False, 0)
+        vbox1.pack_start(hbox, False, False, 0)
+
+        pname = place_displayer.display_event(self.dbstate.db, event)
+        vbox1.pack_start(widgets.BasicLabel(pname), False, False, 0)
+        vbox1.set_vexpand(False)
+        vbox1.set_valign(Gtk.Align.CENTER)
+        vbox1.show_all()
+
+        eventbox = self.make_dragbox(vbox1, 'Event', handle)
+        eventbox.set_hexpand(True)
+        eventbox.set_vexpand(False)
+        eventbox.set_valign(Gtk.Align.CENTER)
+        eventbox.set_margin_top(1)
+        eventbox.set_margin_bottom(1)
+        eventbox.show_all()
+
+        vbox2 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        dobj = event.get_date_object()
+        date = widgets.BasicLabel(displayer.display(dobj))
+        vbox2.pack_start(date, False, False, 0)
+        if start_date is not None:
+            age_precision = config.get('preferences.age-display-precision')
+            diff = (dobj - start_date).format(precision=age_precision)
+            age = widgets.BasicLabel(diff)
+            vbox2.pack_start(age, False, False, 0)
+        vbox2.set_valign(Gtk.Align.CENTER)
+        grid.add(vbox2)
+
+        tl = Timeline()
+        grid.attach_next_to(tl, vbox2, Gtk.PositionType.RIGHT, 1, 1)
+
+        grid.attach_next_to(eventbox, tl, Gtk.PositionType.RIGHT, 1, 1)
+
+##############################################################################
+#
 # Events list
 #
 ##############################################################################
@@ -1109,7 +1290,10 @@ class CombinedView(NavigationView):
         citation = self.dbstate.db.get_citation_from_handle(chandle)
         shandle = citation.get_reference_handle()
         source = self.dbstate.db.get_source_from_handle(shandle)
-        heading = source.get_title() + ' ' + citation.get_page()
+        heading = source.get_title()
+        page = citation.get_page()
+        if page:
+            heading += ' \u2022 ' + page
 
         box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         url_label = self.get_url(citation)
@@ -1199,19 +1383,11 @@ class CombinedView(NavigationView):
         for media_ref in media_list:
 
             mobj = self.dbstate.db.get_media_from_handle(media_ref.ref)
-            if mobj and mobj.get_mime_type()[0:5] == "image":
-                src_file = media_path_full(self.dbstate.db, mobj.get_path())
-                try:
-                    pixbuf = GdkPixbuf.Pixbuf.new_from_file(src_file)
-                except:
-                    default = os.path.join(IMAGE_DIR, "image-missing.png")
-                    pixbuf = GdkPixbuf.Pixbuf.new_from_file(default)
+            button = self.get_thumbnail(media_ref, size=SIZE_LARGE)
+            button.show_all()
+            if button:
 
-                image = Gtk.Image()
-                image.set_from_pixbuf(pixbuf)
-                image.show()
-
-                self.vbox2.add(image)
+                self.vbox2.add(button)
 
                 vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
 
@@ -1239,8 +1415,47 @@ class CombinedView(NavigationView):
                     vbox.show_all()
 
 
-                self.vbox2.attach_next_to(vbox, image,
+                self.vbox2.attach_next_to(vbox, button,
                                           Gtk.PositionType.RIGHT, 1, 1)
+
+##############################################################################
+#
+# Associations
+#
+##############################################################################
+
+    def write_associations(self, person):
+
+        self.vbox2 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+
+        scroll = Gtk.ScrolledWindow()
+        scroll.add(self.vbox2)
+        scroll.show_all()
+        self.stack.add_titled(scroll, 'associations', _('Associations'))
+
+        for person_ref in person.get_person_ref_list():
+            self.write_association(person, person_ref)
+
+
+    def write_association(self, person1, person_ref):
+
+        vbox = self.write_person('assoc', person_ref.ref)
+
+        assoc = Gtk.Label(_('Association') + _(': ') + person_ref.rel)
+        assoc.set_halign(Gtk.Align.START)
+        vbox.pack_start(assoc, False, False, 0)
+
+        calc = get_relationship_calculator()
+        person2 = self.dbstate.db.get_person_from_handle(person_ref.ref)
+        rel_txt = calc.get_one_relationship(self.dbstate.db, person1, person2)
+        rel = Gtk.Label(_('Relationship') + _(': ') + rel_txt)
+        rel.set_halign(Gtk.Align.START)
+        vbox.pack_start(rel, False, False, 0)
+
+        eventbox = self.make_dragbox(vbox, 'Person', person_ref.ref)
+        eventbox.show_all()
+        self.vbox2.pack_start(eventbox, False, False, 1)
+
 
 ##############################################################################
 #
@@ -1331,9 +1546,9 @@ class CombinedView(NavigationView):
         hbox.set_spacing(6)
         hbox.pack_start(link_label, False, False, 0)
         if self.show_details:
-            value = self.info_string(handle)
-            if value:
-                hbox.pack_start(widgets.MarkupLabel(value), False, False, 0)
+            box = self.info_box(handle)
+            if box:
+                hbox.pack_start(box, False, False, 0)
         if button is not None:
             hbox.pack_start(button, False, False, 0)
         if self.show_tags:
@@ -1518,7 +1733,7 @@ class CombinedView(NavigationView):
             if not self.write_relationship_events(box, family):
                 self.write_relationship(box, family)
             ebox = self.make_dragbox(box, 'Person', handle)
-        vbox.pack_start(ebox, False, False, 1)
+            vbox.pack_start(ebox, False, False, 1)
 
         count = len(family.get_child_ref_list())
         ex2 = Gtk.Expander(label='%s (%s):' % (_('Children'), count))
@@ -1657,9 +1872,9 @@ class CombinedView(NavigationView):
             hbox.set_spacing(6)
             hbox.pack_start(link_label, False, False, 0)
             if self.show_details:
-                value = self.info_string(handle)
-                if value:
-                    hbox.pack_start(widgets.MarkupLabel(value), False, False, 0)
+                box = self.info_box(handle)
+                if box:
+                    hbox.pack_start(box, False, False, 0)
             if button is not None:
                 hbox.pack_start(button, False, False, 0)
             if self.show_tags:
@@ -1714,9 +1929,9 @@ class CombinedView(NavigationView):
         person = self.dbstate.db.get_person_from_handle(handle)
         hbox.pack_start(link_label, False, False, 0)
         if self.show_details:
-            value = self.info_string(handle)
-            if value:
-                hbox.pack_start(widgets.MarkupLabel(value), False, False, 0)
+            box = self.info_box(handle)
+            if box:
+                hbox.pack_start(box, False, False, 0)
         if button is not None:
             hbox.pack_start(button, False, False, 0)
         if self.show_tags:
@@ -1955,6 +2170,8 @@ class CombinedView(NavigationView):
                           self.config_update)
         self._config.connect("preferences.show-tags",
                           self.config_update)
+        self._config.connect("preferences.vertical-details",
+                          self.config_update)
         config.connect("interface.toolbar-on",
                           self.shade_update)
 
@@ -1993,11 +2210,14 @@ class CombinedView(NavigationView):
                 _('Show Details'),
                 0, 'preferences.family-details')
         configdialog.add_checkbox(grid,
+                _('Vertical Details'),
+                1, 'preferences.vertical-details')
+        configdialog.add_checkbox(grid,
                 _('Show Siblings'),
-                1, 'preferences.family-siblings')
+                2, 'preferences.family-siblings')
         configdialog.add_checkbox(grid,
                 _('Show Tags'),
-                2, 'preferences.show-tags')
+                3, 'preferences.show-tags')
 
         return _('Content'), grid
 
