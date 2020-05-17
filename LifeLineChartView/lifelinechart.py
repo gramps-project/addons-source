@@ -305,10 +305,26 @@ def get_dbdstate_instance_container(dbstate):
     """
 
     logger.debug('start creating instances')
-    return InstanceContainer(
+    ic = InstanceContainer(
         lambda self, key: GrampsFamily(self, dbstate, key[1]),
         lambda self, key: GrampsIndividual(self, dbstate, key[1]),
         None)  # lambda self : instantiate_all(self, database_fam, database_indi))
+
+    ic.date_label_translation = {
+        'Calculated': '{symbol}\xa0' + _('calculated').replace(' ', '\xa0') + '\xa0{date}',
+        'Estimated': '{symbol}\xa0' + _('estimated').replace(' ', '\xa0') + '\xa0{date}',
+        'Estimated (min 25 at marriage)': '{symbol}\xa0' + _('estimated').replace(' ', '\xa0') + '\xa0{date}',
+        'Estimated (max age 75)': '{symbol}\xa0' + _('estimated').replace(' ', '\xa0') + '\xa0{date}',
+        'Estimated (max age 100)': '{symbol}\xa0' + _('estimated').replace(' ', '\xa0') + '\xa0{date}',
+        'Estimated (min 1 after parents marriage)': '{symbol}\xa0' + _('estimated').replace(' ', '\xa0') + '\xa0{date}',
+        'Still alive': '',
+        'About': '{symbol}\xa0' + _('about').replace(' ', '\xa0') + '\xa0{date}',
+        'Before': '{symbol}\xa0' + _('before').replace(' ', '\xa0') + '\xa0{date}',
+        'After': '{symbol}\xa0' + _('after').replace(' ', '\xa0') + '\xa0{date}',
+        'YearPrecision': '{symbol}\xa0{date}'
+    }
+
+    return ic
 
 
 
@@ -414,7 +430,7 @@ class LifeLineChartAxis(Gtk.DrawingArea):
             ctx,
             self.life_line_chart_widget.life_line_chart_ancestor_graph.additional_graphical_items['grid'],
             (view_x_min, view_y_min, view_x_max, view_y_max),
-            (20,30))
+            (12,30))
         pass
 #-------------------------------------------------------------------------
 #
