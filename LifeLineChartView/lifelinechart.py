@@ -414,10 +414,15 @@ class LifeLineChartAxis(Gtk.DrawingArea):
             widget.draw(ctx)
 
     def draw(self, ctx=None, scale=1.):
-        translated_position = self.life_line_chart_widget._position_move(self.life_line_chart_widget.upper_left_view_position, self.life_line_chart_widget.center_delta_xy)
-        translated_position = ((self.life_line_chart_widget.life_line_chart_ancestor_graph.get_full_width() - self.get_allocated_width()*0)*self.life_line_chart_widget.zoom_level - 0.9*self.get_allocated_width(), translated_position[1])
-        # translated_position = self.life_line_chart_widget.view_position_get_limited(translated_position)
-        ctx.translate(-translated_position[0], -translated_position[1])
+        translated_position = self.life_line_chart_widget._position_move(
+            self.life_line_chart_widget.upper_left_view_position,
+            self.life_line_chart_widget.center_delta_xy)
+        translated_position = self.life_line_chart_widget.view_position_get_limited(translated_position)
+        translated_position = (self.life_line_chart_widget.life_line_chart_ancestor_graph.get_full_width()*self.life_line_chart_widget.zoom_level
+                - 0.9*self.get_allocated_width()), translated_position[1]
+        ctx.translate(
+            -translated_position[0],
+            -translated_position[1])
         ctx.scale(self.life_line_chart_widget.zoom_level, self.life_line_chart_widget.zoom_level)
 
         visible_range = (self.get_allocated_width(), self.get_allocated_height())
@@ -795,17 +800,15 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         #             self._mouse_click_individual_id = individual_id
         #             return False
 
-        # #right click on person, context menu
-        # # Do things based on state, event.get_state(), or button, event.button
-        # if is_right_click(event):
-        #     person, family = (self.person_at(cell_address),
-        #                       self.family_at(cell_address))
-        #     fhandle = None
-        #     if family:
-        #         fhandle = family.handle
-        #     if person and self.on_popup:
-        #         self.on_popup(widget, event, person.handle, fhandle)
-        #         return True
+        #right click on person, context menu
+        # Do things based on state, event.get_state(), or button, event.button
+        if is_right_click(event):
+            individual = self.life_line_chart_ancestor_graph.get_individual_from_position(
+                (event.x + self.upper_left_view_position[0])/self.zoom_level,
+                (event.y + self.upper_left_view_position[1])/self.zoom_level)
+            if individual and self.on_popup:
+                self.on_popup(widget, event, individual)
+                return True
 
         return True
 
@@ -1812,11 +1815,12 @@ class LifeLineChartGrampsGUI:
         #self.lifeline.draw()
         self.lifeline.queue_draw()
 
-    def on_popup(self, obj, event, person_handle, family_handle=None):
+    def on_popup(self, obj, event, individual, family_handle=None):
         """
         Builds the full menu (including Siblings, Spouses, Children,
         and Parents) with navigation.
         """
+        person_handle = individual.individual._gramps_person.handle
         dummy_obj = obj
         #store menu for GTK3 to avoid it being destroyed before showing
         self.menu = Gtk.Menu()
