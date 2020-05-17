@@ -67,7 +67,8 @@ from gramps.gen.utils.alive import probably_alive
 from gramps.gen.utils.db import get_participant_from_event
 from gramps.gui.utils import open_file_with_default_application
 from gramps.gen.datehandler import displayer, get_date
-from gramps.gen.utils.thumbnails import get_thumbnail_image
+from gramps.gen.utils.thumbnails import (get_thumbnail_image, SIZE_NORMAL,
+                                         SIZE_LARGE)
 from gramps.gen.config import config
 from gramps.gen.relationship import get_relationship_calculator
 from gramps.gui import widgets
@@ -762,21 +763,27 @@ class CombinedView(NavigationView):
         # image
         image_list = person.get_media_list()
         if image_list:
-            mobj = self.dbstate.db.get_media_from_handle(image_list[0].ref)
-            if mobj and mobj.get_mime_type()[0:5] == "image":
-                pixbuf = get_thumbnail_image(
-                                media_path_full(self.dbstate.db,
-                                                mobj.get_path()),
-                                rectangle=image_list[0].get_rectangle())
-                image = Gtk.Image()
-                image.set_from_pixbuf(pixbuf)
-                button = Gtk.Button()
-                button.add(image)
-                button.connect("clicked", lambda obj: self.view_photo(mobj))
+            button = self.get_thumbnail(image_list[0], size=SIZE_NORMAL)
+            if button:
                 mbox.pack_end(button, False, True, 0)
-
         mbox.show_all()
         self.header.pack_start(mbox, False, True, 0)
+
+    def get_thumbnail(self, media_ref, size):
+        mobj = self.dbstate.db.get_media_from_handle(media_ref.ref)
+        if mobj and mobj.get_mime_type()[0:5] == "image":
+            pixbuf = get_thumbnail_image(
+                            media_path_full(self.dbstate.db,
+                                            mobj.get_path()),
+                            rectangle=media_ref.get_rectangle(),
+                            size=size)
+            image = Gtk.Image()
+            image.set_from_pixbuf(pixbuf)
+            button = Gtk.Button()
+            button.add(image)
+            button.connect("clicked", lambda obj: self.view_photo(mobj))
+            return button
+        return None
 
     def view_photo(self, photo):
         """
@@ -1376,19 +1383,11 @@ class CombinedView(NavigationView):
         for media_ref in media_list:
 
             mobj = self.dbstate.db.get_media_from_handle(media_ref.ref)
-            if mobj and mobj.get_mime_type()[0:5] == "image":
-                src_file = media_path_full(self.dbstate.db, mobj.get_path())
-                try:
-                    pixbuf = GdkPixbuf.Pixbuf.new_from_file(src_file)
-                except:
-                    default = os.path.join(IMAGE_DIR, "image-missing.png")
-                    pixbuf = GdkPixbuf.Pixbuf.new_from_file(default)
+            button = self.get_thumbnail(media_ref, size=SIZE_LARGE)
+            button.show_all()
+            if button:
 
-                image = Gtk.Image()
-                image.set_from_pixbuf(pixbuf)
-                image.show()
-
-                self.vbox2.add(image)
+                self.vbox2.add(button)
 
                 vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
 
@@ -1416,7 +1415,7 @@ class CombinedView(NavigationView):
                     vbox.show_all()
 
 
-                self.vbox2.attach_next_to(vbox, image,
+                self.vbox2.attach_next_to(vbox, button,
                                           Gtk.PositionType.RIGHT, 1, 1)
 
 ##############################################################################
