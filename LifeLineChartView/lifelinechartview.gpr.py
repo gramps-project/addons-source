@@ -29,8 +29,8 @@ try:
     import life_line_chart
     life_line_chart_is_missing = False
     version_tuple = tuple([int(i) if i.isnumeric() else i for i in life_line_chart.__version__.split('.')])
-    version_required = (1, 2, 22)
-    life_line_chart_too_old = version_required > version_tuple
+    version_required = (1, 2, 24)
+    life_line_chart_too_old = version_required != version_tuple
 
     # load icon
     import os
@@ -49,7 +49,7 @@ if not life_line_chart_too_old and not life_line_chart_is_missing:
             name=_("Life Line Chart"),
             category=("Ancestry", _("Charts")),
             description=_("A view showing parents through a lifelinechart"),
-            version = '1.0.10',
+            version = '1.0.11',
             gramps_target_version="5.1",
             status=STABLE,
             fname='lifelinechartview.py',
@@ -63,13 +63,13 @@ from gramps.gen.config import logging
 if life_line_chart_is_missing:
     warn_msg = _(
         "Life Line Chart View Warning:  life_line_chart module is required."
-        "please run \"pip install life_line_chart\""
+        "please run \"pip install life_line_chart=={}.{}.{}\"".format(*version_required)
     )
     logging.log(logging.WARNING, warn_msg)
 elif life_line_chart_too_old:
     warn_msg = _(
         "Life Line Chart View Warning:  life_line_chart module version is outdated."
-        "please run \"pip install --upgrade life_line_chart\""
+        "please run \"pip install --upgrade life_line_chart=={}.{}.{}\"".format(*version_required)
     )
     logging.log(logging.WARNING, warn_msg)
 
@@ -88,7 +88,7 @@ if (life_line_chart_is_missing or life_line_chart_too_old) and locals().get('uis
               "{pip_command}"
               "\n\nTo dismiss all future Life Line Chart View warnings click Dismiss.").format(
                   what_to_do = _('Please install life_line_chart module') if not life_line_chart_too_old else _('Please upgrade the module life_line_chart'),
-                  pip_command = 'pip install life_line_chart' if not life_line_chart_too_old else 'pip install --upgrade life_line_chart'
+                  pip_command = 'pip install life_line_chart' if not life_line_chart_too_old else 'pip install --upgrade life_line_chart=={}.{}.{}'.format(*version_required)
               ),
             _(" Dismiss "),
             _("Continue"), parent=uistate.window)
