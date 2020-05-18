@@ -93,7 +93,7 @@ BRIDE = _('Bride')
 
 # Files which may contain form definitions
 definition_files = [ 'test*.xml',       # Test forms have precidence (all but the first duplicate ID's are now ignored)
-                     'custom*.xml',     # User's own forms although mainly for backwards compatability as the envvar "G.FORM.I" can be used to define your own forms.
+                     'custom*.xml',     # User's own forms although mainly for backwards compatibility as the envvar "G.FORM.I" can be used to define your own forms.
                      'bdm*.xml',        # Birth Death, marriages registries
                      'graves*.xml',     # Graves/Death sites (findagrave.com, billiongraves.com and similar)
                      ##################
@@ -125,7 +125,7 @@ def DictFromKeyValueText(DefaultKey, KVTXT):
         each separated by "; ".
 
         If the string doesn't contain an equal sign ("=") then the whole
-        text string becomes assigned to a directionary object ontaining a single
+        text string becomes assigned to a dictionary object containing a single
         value keyed by "DefaultKey"
 
         Example 2 x key/value:
