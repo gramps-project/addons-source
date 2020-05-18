@@ -1178,7 +1178,6 @@ class PersonSection(Gtk.Box):
         share_btn.connect('clicked', self.__share_clicked)
         hbox.pack_start(share_btn, expand=False, fill=False, padding=3)
 
-        #Not sure why but after my change the whole thing is being vertically centered in the page (DB$)
         self.pack_start(hbox, False, False, 0)
         self.grid = Gtk.Grid()
         self.pack_start(self.grid, False, False, 0)
@@ -1210,10 +1209,13 @@ class PersonSection(Gtk.Box):
         # The person's controls go into a flowbox
         fbox = Gtk.FlowBox(
                             orientation=Gtk.Orientation.HORIZONTAL,
-                            min_children_per_line=2,   #If I set to 2 then I can set expand to False (and have all controls on top (not centered!)
+                            selection_mode=Gtk.SelectionMode.NONE,
+                            max_children_per_line=99,
+                            min_children_per_line=1,   #If I set to 2 then I can set expand to False (and have all controls on top (not centered!)
                             expand=False               #If not True (and min col=1), they get drawn vertically!!!!!!
                           )
-        fbox.set_valign(Gtk.Align.START)
+        fbox.set_hexpand(True)
+
         for col, heading in enumerate(self.headings):
             # Each label/entry pair placed into its own vbox
             vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
