@@ -276,7 +276,7 @@ class EditForm(ManagedWindow):
         grid.attach(place_share, 3, 3, 1, 1)
         self.widgets['place_share'] = place_share
 
-        ### DB$
+        # Add a Help Frame & Control (will be removed if not required later)
         HelpFrame  = Gtk.Frame()
         HelpControl = Gtk.Label('')
         HelpControl.set_use_markup(True)
@@ -419,7 +419,7 @@ class EditForm(ManagedWindow):
                 NamePlace = self.GetPlaceFromName(LocnDef)
                 event.set_place_handle(NamePlace.get_handle())
 
-        # Form Help text (DB$)
+        # Determine if help text available or we wish to insert any (if no help remove the controls)
         HelpFrame   = self.widgets['HelpFrame']
         HelpControl = self.widgets['HelpControl']
         HelpContents = ''
@@ -522,7 +522,7 @@ class EditForm(ManagedWindow):
         self.notebook.show_all()
         self.notebook.set_current_page(0)
 
-        #DB$
+        # If headings exist then we want to be able to tell that a user at least looked at them
         self.notebook.connect('switch-page', self.NoteBookPageSelected)
 
     def save(self, button):
@@ -1178,12 +1178,15 @@ class PersonSection(Gtk.Box):
         share_btn.connect('clicked', self.__share_clicked)
         hbox.pack_start(share_btn, expand=False, fill=False, padding=3)
 
+        #Not sure why but after my change the whole thing is being vertically centered in the page (DB$)
         self.pack_start(hbox, False, False, 0)
         self.grid = Gtk.Grid()
         self.pack_start(self.grid, False, False, 0)
         self.show()
 
+        # Add this person's columns/questions
         self.set_columns()
+
         # Get selected person - NEED TO DO THIS ONE TIME ONLY (as we can only pick up one and in any case the selection order is meaningless
         _LOG.debug("DEFAULT THE PERSON? [IFF %d == 1]" % self.InstCounter)
         if  self.InstCounter == 1:
@@ -1191,28 +1194,48 @@ class PersonSection(Gtk.Box):
             self._PersonDefaultSet(handle)
 
 
-
-
     def is_empty(self):
         return False if self.handle else True
 
     def set_columns(self):
+        """
+            [PersonSection class]
+            Adds a person (section) columns to the UI, the questions
+            will take up as many lines as required.
+        """
         columns = get_section_columns(self.form_id, self.section)
         self.headings = [column[0] for column in columns]
         self.tooltips = [column[1] for column in columns]
 
+        # The person's controls go into a flowbox
+        fbox = Gtk.FlowBox(
+                            orientation=Gtk.Orientation.HORIZONTAL,
+                            min_children_per_line=2,   #If I set to 2 then I can set expand to False (and have all controls on top (not centered!)
+                            expand=False               #If not True (and min col=1), they get drawn vertically!!!!!!
+                          )
+        fbox.set_valign(Gtk.Align.START)
         for col, heading in enumerate(self.headings):
+            # Each label/entry pair placed into its own vbox
+            vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+            fbox.add(vbox)
+
             label = Gtk.Label(label=heading)
             label.set_halign(Gtk.Align.START)
             label.set_valign(Gtk.Align.CENTER)
             label.show()
+
             entry = MyEntry(heading)
             entry.set_tooltip_text(self.tooltips[col])
             entry.set_sensitive(False)
             self.widgets[heading] = entry
             entry.show()
-            self.grid.attach(label, col, 0, 1, 1)
-            self.grid.attach(entry, col, 1, 1, 1)
+
+            vbox.pack_start(label, expand=False, fill=True, padding=2)
+            vbox.pack_start(entry, expand=True,  fill=True, padding=2)
+
+        # Attach the fbox to scrolling window and it to the grid
+        self.grid.attach(fbox, 0, 0, 1, 1)
+
 
     def __add_clicked(self, obj):
         person = Person()
