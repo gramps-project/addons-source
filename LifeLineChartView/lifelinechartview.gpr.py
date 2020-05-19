@@ -25,12 +25,12 @@ from gramps.gen.const import GRAMPS_LOCALE as glocale
 _ = glocale.translation.gettext
 
 
+life_line_chart_version_required = (1, 2, 24)
 try:
     import life_line_chart
     life_line_chart_is_missing = False
     version_tuple = tuple([int(i) if i.isnumeric() else i for i in life_line_chart.__version__.split('.')])
-    version_required = (1, 2, 24)
-    life_line_chart_too_old = version_required != version_tuple
+    wrong_life_line_chart_version = life_line_chart_version_required != version_tuple
 
     # load icon
     import os
@@ -39,11 +39,11 @@ try:
     fname = os.path.join(USER_PLUGINS, 'LifeLineChartView')
     icons = Gtk.IconTheme().get_default()
     icons.append_search_path(fname)
-except ImportError:
-    life_line_chart_too_old = False
+except Exception as e:
+    wrong_life_line_chart_version = False
     life_line_chart_is_missing = True
 
-if not life_line_chart_too_old and not life_line_chart_is_missing:
+if not wrong_life_line_chart_version and not life_line_chart_is_missing:
     register(VIEW,
             id='lifelinechartview',
             name=_("Life Line Chart"),
@@ -63,13 +63,13 @@ from gramps.gen.config import logging
 if life_line_chart_is_missing:
     warn_msg = _(
         "Life Line Chart View Warning:  life_line_chart module is required."
-        "please run \"pip install life_line_chart=={}.{}.{}\"".format(*version_required)
+        "please run \"pip install life_line_chart=={}.{}.{}\"".format(*life_line_chart_version_required)
     )
     logging.log(logging.WARNING, warn_msg)
-elif life_line_chart_too_old:
+elif wrong_life_line_chart_version:
     warn_msg = _(
         "Life Line Chart View Warning:  life_line_chart module version is outdated."
-        "please run \"pip install --upgrade life_line_chart=={}.{}.{}\"".format(*version_required)
+        "please run \"pip install --upgrade life_line_chart=={}.{}.{}\"".format(*life_line_chart_version_required)
     )
     logging.log(logging.WARNING, warn_msg)
 
@@ -78,7 +78,7 @@ from gramps.gen.config import config
 inifile = config.register_manager("lifelinechart_warn")
 inifile.load()
 sects = inifile.get_sections()
-if (life_line_chart_is_missing or life_line_chart_too_old) and locals().get('uistate'):
+if (life_line_chart_is_missing or wrong_life_line_chart_version) and locals().get('uistate'):
     from gramps.gui.dialog import QuestionDialog2
     if 'lifelinechart_warn' not in sects or not inifile.get('lifelinechart_warn.missingmodules')!='False':
         yes_no = QuestionDialog2(
@@ -87,8 +87,8 @@ if (life_line_chart_is_missing or life_line_chart_too_old) and locals().get('uis
               "{what_to_do}:\n"
               "{pip_command}"
               "\n\nTo dismiss all future Life Line Chart View warnings click Dismiss.").format(
-                  what_to_do = _('Please install life_line_chart module') if not life_line_chart_too_old else _('Please upgrade the module life_line_chart'),
-                  pip_command = 'pip install life_line_chart' if not life_line_chart_too_old else 'pip install --upgrade life_line_chart=={}.{}.{}'.format(*version_required)
+                  what_to_do = _('Please install life_line_chart module') if not wrong_life_line_chart_version else _('Please upgrade the module life_line_chart'),
+                  pip_command = 'pip install life_line_chart=={}.{}.{}'.format(*life_line_chart_version_required) if not wrong_life_line_chart_version else 'pip install --upgrade life_line_chart=={}.{}.{}'.format(*life_line_chart_version_required)
               ),
             _(" Dismiss "),
             _("Continue"), parent=uistate.window)
