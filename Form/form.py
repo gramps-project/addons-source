@@ -26,10 +26,9 @@ Form definitions.
 # Python imports
 #
 #---------------------------------------------------------------
-import os
+import os, sys
 import xml.dom.minidom
-
-
+from gi.repository import Gdk
 
 
 #---------------------------------------------------------------
@@ -45,7 +44,7 @@ import inspect, os
 import logging
 import locale
 import glob
-
+from gramps.gen.utils.grampslocale import GrampsLocale
 
 
 #------------------------------------------------------------------------
@@ -68,9 +67,6 @@ _ = _trans.gettext
 LogAs = _('Form Gramplet')
 _LOG = logging.getLogger(LogAs)
 _LOG.info('The "%s" is loading: %s' % (LogAs, os.path.dirname(__file__)))
-_LOG.info('TODAY in the local language is "%s"' % _('today'))
-_LOG.info('locale.getlocale() => "%s"' % str(locale.getlocale()))
-
 
 
 
@@ -115,9 +111,29 @@ CONFIG.register('interface.form-vert-position', -1)
 
 CONFIG.init()
 
+# Locale for Help files is
+GL = GrampsLocale()
+GLC_FULL = GL.lang
+GLC_GEN  = GLC_FULL[:2]     #GLC_GEN may be same as GLC_FULL
+_LOG.info('TODAY in the local language is "%s"' % _('today'))
+_LOG.info('Python locale.getlocale() => "%s"' % str(locale.getlocale()))
+_LOG.info('Gramps locale Code   FULL => "%s", note that only 2 english locales get reported, en_US & en_GB for all other english countries' % GLC_FULL)
+if  GLC_GEN != GLC_FULL:
+    _LOG.info('                  GENERIC => "%s"' % GLC_GEN)
 
 
-
+def DumpObj(obj):
+    """
+    Returns a string representing the objects contents
+    """
+    Ds = ""
+    for attr in dir(obj):
+        try:
+            attrV = getattr(obj, attr)
+        except:
+            attrV = '<<FAILED DUMPING VALUE>>'
+        Ds = Ds + "obj.%s = %r" % (attr, attrV) + "\n"
+    return(Ds)
 
 def DictFromKeyValueText(DefaultKey, KVTXT):
     """
@@ -231,13 +247,18 @@ def GetCallerDetails(relative_frame):
     line_number         = frameinfo.f_lineno                # of the call
     #func_firstlineno    = frameinfo.f_code.co_firstlineno
 
+    #--- Return Location String ---------------------------------------------
     DebugLocn           = "%s:%d@%s()" % (filename, line_number, func_name)
+    #_LOG.debug('[DEBUG ONLY] RF=%d, LOC:%s:' % (relative_frame, DebugLocn))
     return DebugLocn
 
 
 def AppendCallerText(relative_frame):
     """ add text in a COMMON FORMAT to be displayed (or logged) to the user """
     return "\n\n" +_("LOCATION IN CODE") + "\n~~~~~~~~~~~~~~~~~~~~~~~~~\n" + GetCallerDetails(relative_frame + 1)
+
+def Beep():
+    Gdk.beep()
 
 #def FormLogDebug(LogMe):
 #    _LOG.debug(LogMe, stacklevel=2)         #Won't work, currently old Python in AIO Windows Installer
@@ -255,22 +276,32 @@ def FormDlgDebug(ErrTitle, ErrText):
 
 def FormDlgError(ErrTitle, ErrText):
     """ Used to display an error of some type that the user probably can't do much about (the code location is appended) """
+    Beep()
     _LOG.error('ERROR DLG TITLE=%s, TEXT=%s' % (ErrTitle, TextStack))
     TextStack = str(ErrText) + AppendCallerText(1)
     ErrorDialog(ErrTitle, TextStack)   #allow for list etc
 
 def FormDlgInfo(ErrTitle, ErrText):
     """ Used to display non-critical information to the user (which is based on their input) """
+    Beep()
     _LOG.warning('INFO DLG TITLE=%s, TEXT=%s' % (ErrTitle, ErrText))
     OkDialog(ErrTitle, ErrText)
 
 
 def DisplayLogCritical(ErrTitle, ErrText):
     """ Raise an Exception after displaying the error to the user (log will contain the full stack trace) """
+    Beep()
     TextStack = str(ErrText) + AppendCallerText(1)
-    _LOG.critical('EXCEPTION DLG TITLE [raising exception]: %s, TEXT=%s' % (ErrTitle, TextStack))
+    _LOG.warning('EXCEPTION DLG TITLE [raising exception]: %s, TEXT=%s' % (ErrTitle, TextStack))
     ErrorDialog(ErrTitle, TextStack)
-    raise Exception("\n\n" + _("DIALOG TITLE") + "\n~~~~~~~~~~~~~~~~~~~~~~~~~\n" + ErrTitle + "\n\n"  + _("DIALOG TEXT") + "\n~~~~~~~~~~~~~~~~~~~~~~~~~\n"+ ErrText)
+    raise Exception(   "\n\n"
+                     + _("DIALOG TITLE")
+                     + "\n~~~~~~~~~~~~~~~~~~~~~~~~~\n"
+                     + ErrTitle + "\n\n"
+                     + _("DIALOG TEXT")
+                     + "\n~~~~~~~~~~~~~~~~~~~~~~~~~\n"
+                     + ErrText
+                   )
 
 
 #------------------------------------------------------------------------
@@ -318,7 +349,6 @@ class Form():
         for file_name in AllXml:
             full_path = os.path.join(os.path.dirname(__file__), file_name)
             if os.path.exists(full_path):
-                _LOG.debug('FOUND XML FILE: %s' % file_name)
                 self.__load_definitions(full_path)
         _LOG.debug('Finished Loading all XML files')
         FrmIDs   = []
@@ -328,14 +358,15 @@ class Form():
 
 
     def __load_definitions(self, definition_file):
+        _LOG.debug('LOADING XML FILE: %s' % definition_file)
         try:
            dom = xml.dom.minidom.parse(definition_file)
         except Exception as xArgs:
-           self.DisplayLogCritical(_("XML SYNTAX ERROR") + ": " +  definition_file, str(xArgs))
+           DisplayLogCritical(_("XML SYNTAX ERROR") + ": " +  definition_file, str(xArgs))
 
         top = dom.getElementsByTagName('forms')
         if len(top) == 0:
-           self.DisplayLogCritical(_("XML ERROR") + ": " +  definition_file, _("No '<form>' tags found!"))
+           DisplayLogCritical(_("XML ERROR") + ": " +  definition_file, _("No '<form>' tags found!"))
 
         for form in top[0].getElementsByTagName('form'):
             # Make sure the ID hasn't been duplicated (but not treat as error
@@ -393,7 +424,7 @@ class Form():
                 if  DateVal.lower() == TodayText.lower():
                     # 'today' specified (in any letter case)
                     DateVal   = TodayText           # Now in correct case
-                _LOG.debug("Date Defaulting to '" + DateVal + "' (set date as read-only=" + str(DateValRO) + ')')
+                #_LOG.debug("[DEBUG ONLY] Date Defaulting to '" + DateVal + "' (set date as read-only=" + str(DateValRO) + ')')
                 self.__dateROs[id] = DateValRO
                 self.__dates[id]   = DateVal
             else:
@@ -413,7 +444,7 @@ class Form():
             self.__titles[id] = {}
             self.__section_types[id] = {}
             if len(sections) == 0:
-               self.DisplayLogCritical(_("XML ERROR") + ": " +  definition_file, _("No '<section>' tags found within a '<form>'!"))
+               DisplayLogCritical(_("XML ERROR") + ": " +  definition_file, _("No '<section>' tags found within a '<form>'!"))
             for section in sections:
                 if 'title' in section.attributes:
                     title = section.attributes['title'].value
@@ -422,18 +453,18 @@ class Form():
 
                 try:
                    role = section.attributes['role'].value.strip()
-                   if role == '':
-                      self.DisplayLogCritical(_("XML ERROR") + ": " +  definition_file, _("A '<section>' has an EMPTY 'role=' attribute!"))
                 except:
-                   self.DisplayLogCritical(_("XML ERROR") + ": " +  definition_file, _("A '<section>' is missing the 'role=' attribute"))
+                   DisplayLogCritical(_("XML ERROR") + ": " +  definition_file, _("A '<section>' is missing the 'role=' attribute"))
+                else:
+                   if role == '':
+                      DisplayLogCritical(_("XML ERROR") + ": " +  definition_file, _("A '<section>' has an EMPTY 'role=' attribute!"))
 
                 try:
                    section_type = section.attributes['type'].value.lower()
                 except:
-                   self.DisplayLogCritical(_("XML ERROR") + ": " +  definition_file, _("A '<section>' is missing the 'type=' attribute"))
-
+                   DisplayLogCritical(_("XML ERROR") + ": " +  definition_file, _("A '<section>' is missing the 'type=' attribute"))
                 if section_type != 'person' and section_type != 'multi' and section_type != 'family':
-                   self.DisplayLogCritical(_("XML ERROR") + ": " +  definition_file, _("A '<section>' with Role") + "='" + role + "' " + _("has an invalid value of") + " '" + section_type + "' " + _("for the 'type=' attribute"))
+                   DisplayLogCritical(_("XML ERROR") + ": " +  definition_file, _("A '<section>' with Role") + "='" + role + "' " + _("has an invalid value of") + " '" + section_type + "' " + _("for the 'type=' attribute"))
 
                 self.__sections[id].append(role)
                 self.__titles[id][role] = title
@@ -446,7 +477,8 @@ class Form():
                     longname = column.getElementsByTagName('_longname')
                     attr_text = _(attr[0].childNodes[0].data)
                     if size:
-                        size_text = size[0].childNodes[0].data
+                        #size_text = size[0].childNodes[0].data
+                        size_text = '0'
                         ######## The size is ignored by the form app at the moment ###########
                     else:
                         size_text = '0'
@@ -575,24 +607,26 @@ def get_help_file(HlpKey):
     """
         This returns the ".hlp" file name for the current locale
         (or 'None')
-    """
-    LocaleCode = locale.getlocale()[0]      #Not a code! = locale.getlocale() : ('English_United Kingdom', '1252') // Is code online: ('en_US', 'UTF-8')
-    BaseDir    = os.path.join( os.path.dirname(__file__), "locale.help" )
-    HelpFileSN = HlpKey + ".hlp"
-    HelpFile   = os.path.join(BaseDir, LocaleCode, HelpFileSN)
-    if  not os.path.exists(HelpFile):
-        _LOG.debug("HELP NOT AT: %s" % HelpFile)
-        HelpFile = os.path.join(BaseDir, 'english', HelpFileSN)
-        if  not os.path.exists(HelpFile):
-            _LOG.debug("HELP NOT AT: %s" % HelpFile)
-            HelpFile = os.path.join(BaseDir, HelpFileSN)
-            if  not os.path.exists(HelpFile):
-                _LOG.debug("HELP NOT AT: %s" % HelpFile)
-                HelpFile = None
-            else:
-                _LOG.debug("HELP AT: %s" % HelpFile)
-    return(HelpFile)
 
+        Forms uses the "form_id" as the key
+        Global Variables: GLC_FULL, GLC_GEN
+    """
+    BaseDir    = os.path.join( os.path.dirname(__file__), "help" )
+    HelpFileSN = HlpKey + ".hlp"
+    LookHere   = []
+    LookHere.append(os.path.join(BaseDir, GLC_FULL, HelpFileSN))
+    if  GLC_GEN != GLC_FULL:
+        LookHere.append(os.path.join(BaseDir, GLC_GEN, HelpFileSN))
+    LookHere.append(os.path.join(BaseDir, HelpFileSN))               #Probably shouldn't put files here but may be useful for testing or locale issues
+    HelpFile = None
+    for File in LookHere:
+        if  not os.path.exists(File):
+            _LOG.debug("HELP NOT AT: %s" % File)
+        else:
+            HelpFile = File
+            _LOG.debug("HELP AT: %s" % HelpFile)
+            break
+    return(HelpFile)
 
 def get_form_dateLbl(form_id):
     """ Return the LABEL to be used on the form instead of "Date" """

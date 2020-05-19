@@ -61,6 +61,7 @@ from form import ( get_form_dateRO, get_form_dateLbl,
                    FormDlgError, FormDlgInfo, FormDlgDebug,
                    GetObjectClass, get_help_file
                  )
+from form import (DumpObj)
 
 # from datetime import datetime (fails for .today()!)
 from datetime import date, datetime
@@ -1079,6 +1080,7 @@ class MultiSection(Gtk.Box):
 #------------------------------------------------------------------------
 class PersonSection(Gtk.Box):
 
+    SelectPerson = SelectorFactory('Person')
     InstCounter = 0
 
     def __IncreaseInstCounter(self):
@@ -1093,10 +1095,6 @@ class PersonSection(Gtk.Box):
 
     def __del__(self):
         self.__DecreaseInstCounter()
-
-
-    SelectPerson = SelectorFactory('Person')
-
 
     def __PersonAddedCommon(self, PersonHandle):
         self.handle = PersonHandle
@@ -1226,16 +1224,18 @@ class PersonSection(Gtk.Box):
             label.set_valign(Gtk.Align.CENTER)
             label.show()
 
+            _LOG.debug("COLUMN LABEL: %s" % heading)
             entry = MyEntry(heading)
             entry.set_tooltip_text(self.tooltips[col])
             entry.set_sensitive(False)
             self.widgets[heading] = entry
             entry.show()
+            _LOG.debug("COLUMN ENTRY OBJ: \n\n%s\n\n" % DumpObj(entry))
 
             vbox.pack_start(label, expand=False, fill=True, padding=2)
             vbox.pack_start(entry, expand=True,  fill=True, padding=2)
 
-        # Attach the fbox to scrolling window and it to the grid
+        # Attach the fbox to the grid (can probably delete the grid...)
         self.grid.attach(fbox, 0, 0, 1, 1)
 
 
@@ -1334,7 +1334,14 @@ class FamilySection(Gtk.Box):
         hbox = Gtk.Box()
 
         title = get_section_title(form_id, section)
-        title1, title2 = title.split('/')
+        try:
+            title1, title2 = title.split('/')
+        except:
+            title1 = "MissingSlash 1, Husband? Groom?"
+            title2 = "MissingSlash 2, Wife? Bride?"
+            FormDlgInfo(  _("XML TITLE FIELD MUST CONTAIN A '/' FOR A FAMILY"),
+                          _('The title "%s" is missing the required slash for defining the 2 roles (need something like "Groom/Bride"') % title
+                       )
 
         label = Gtk.Label(label='<b>%s</b>' % title1)
         label.set_use_markup(True)
