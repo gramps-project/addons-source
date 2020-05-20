@@ -29,7 +29,8 @@ life_line_chart_version_required = (1, 2, 28)
 try:
     import life_line_chart
     life_line_chart_is_missing = False
-    version_tuple = tuple([int(i) if i.isnumeric() else i for i in life_line_chart.__version__.split('.')])
+    original_version = life_line_chart.__version__
+    version_tuple = tuple([int(i) if i.isnumeric() else i for i in original_version.split('.')])
     wrong_life_line_chart_version = life_line_chart_version_required != version_tuple
 
     # load icon
@@ -75,7 +76,7 @@ if life_line_chart_is_missing or wrong_life_line_chart_version or unknown_import
     if wrong_life_line_chart_version:
         what_to_do = _('Please upgrade the module life_line_chart')
         pip_command = 'pip install --upgrade life_line_chart=={}.{}.{}'.format(*life_line_chart_version_required)
-        ui_message += f". The installed verison {life_line_chart.__version__} is not compatible."
+        ui_message += f". The installed verison {original_version} is not compatible."
     elif unknown_import_error:
         what_to_do = _('Failed to import life_line_chart module')
         pip_command = 'pip install life_line_chart=={}.{}.{}'.format(*life_line_chart_version_required)

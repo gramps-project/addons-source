@@ -795,7 +795,7 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
                 'interface.lifelineview-' + entry_name,
                 callback=lambda *args, entry_name=entry_name, settings=settings:
                 getattr(self, 'cb_update_' + settings['widget'])(
-                    *args, entry_name, settings['data_container'], **settings['additional_setter_arg']),
+                    *(list(args) + [entry_name, settings['data_container']]), **settings['additional_setter_arg']),
                 **settings['additional_arg']
             )
             item.set_tooltip_text(_(settings['tooltip']))
