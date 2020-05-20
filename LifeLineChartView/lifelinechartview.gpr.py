@@ -76,17 +76,17 @@ if life_line_chart_is_missing or wrong_life_line_chart_version or unknown_import
     if wrong_life_line_chart_version:
         what_to_do = _('Please upgrade the module life_line_chart')
         pip_command = 'pip install --upgrade life_line_chart=={}.{}.{}'.format(*life_line_chart_version_required)
-        ui_message += f". The installed verison {original_version} is not compatible."
+        ui_message += ". The installed verison {original_version} is not compatible.".format(**locals())
     elif unknown_import_error:
         what_to_do = _('Failed to import life_line_chart module')
         pip_command = 'pip install life_line_chart=={}.{}.{}'.format(*life_line_chart_version_required)
-        ui_message += f":\n<i>{import_error_message}</i>"
+        ui_message += ":\n<i>{import_error_message}</i>".format(**locals())
     else:
         what_to_do = _('Please install life_line_chart module')
         pip_command = 'pip install life_line_chart=={}.{}.{}'.format(*life_line_chart_version_required)
-        ui_message += f":\n<i>{import_error_message}</i>"
+        ui_message += ":\n<i>{import_error_message}</i>".format(**locals())
 
-    ui_message += f"\n\n{what_to_do}:\n<i>{pip_command}</i>"
+    ui_message += "\n\n{what_to_do}:\n<i>{pip_command}</i>".format(**locals())
     logging.log(logging.WARNING, ui_message)
 
 
