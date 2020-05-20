@@ -434,7 +434,8 @@ class LifeLineChartAxis(Gtk.DrawingArea):
         view_y_max = (translated_position[1] + arbitrary_clip_offset + visible_range[1]) / self.life_line_chart_widget.zoom_level
         self.life_line_chart_widget.draw_items(
             ctx,
-            self.life_line_chart_widget.life_line_chart_ancestor_graph.additional_graphical_items['grid'],
+            self.life_line_chart_widget.life_line_chart_ancestor_graph.additional_graphical_items['grid']
+            +self.life_line_chart_widget.life_line_chart_ancestor_graph.additional_graphical_items['axis'],
             (view_x_min, view_y_min, view_x_max, view_y_max),
             (12,30))
         pass
@@ -1142,6 +1143,8 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
         self.rootpersonh = root_person_handle
         additional_items = []
         for key, value in self.life_line_chart_ancestor_graph.additional_graphical_items.items():
+            if key == 'axis':
+                continue
             additional_items += value
         sorted_individuals = [(gr.get_birth_date_ov(), index, gr) for index, gr in enumerate(
             self.life_line_chart_ancestor_graph.graphical_individual_representations)]

@@ -480,12 +480,15 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
 
         #self.vbox.pack_start(self.scrolledwindow, True, True, 0)
 
-        self.hbox_split_view = Gtk.Box(homogeneous=False, spacing=0,
+        self.hbox_split_view = Gtk.Box(homogeneous=False, spacing=4,
                                orientation=Gtk.Orientation.HORIZONTAL)
-        self.hbox_split_view.pack_start(self.lifeline, True, True, 0)
-        self.hbox_split_view.pack_start(self.axis_widget, False, False, 0)
+        f = Gtk.Frame()
+        f.add(self.lifeline)
+        self.hbox_split_view.pack_start(f, True, True, 0)
+        f = Gtk.Frame()
+        f.add(self.axis_widget)
+        self.hbox_split_view.pack_start(f, False, False, 0)
         self.vbox.pack_start(self.hbox_split_view, True, True, 0)
-
 
         gen_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
 
