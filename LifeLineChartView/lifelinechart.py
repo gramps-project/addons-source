@@ -1867,12 +1867,18 @@ class LifeLineChartGrampsGUI:
             remove_from_blacklist_item.set_submenu(Gtk.Menu())
             rbl_menu = remove_from_blacklist_item.get_submenu()
             rbl_menu.set_reserve_toggle_size(False)
+            unavailable_items = []
             for handle in self.chart_configuration['discovery_blacklist']:
-                p = self.dbstate.db.get_person_from_handle(handle)
-                blacklist_item = Gtk.MenuItem(label=name_displayer.display(p))
-                blacklist_item.connect("activate", self.remove_person_from_discovery_blacklist, handle)
-                blacklist_item.show()
-                rbl_menu.append(blacklist_item)
+                try:
+                    p = self.dbstate.db.get_person_from_handle(handle)
+                    blacklist_item = Gtk.MenuItem(label=name_displayer.display(p))
+                    blacklist_item.connect("activate", self.remove_person_from_discovery_blacklist, handle)
+                    blacklist_item.show()
+                    rbl_menu.append(blacklist_item)
+                except:
+                    unavailable_items.append(handle)
+            for handle in unavailable_items:
+                self.chart_configuration['discovery_blacklist'].remove(handle)
             menu.append(remove_from_blacklist_item)
 
         try:
