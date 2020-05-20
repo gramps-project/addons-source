@@ -432,10 +432,13 @@ class LifeLineChartAxis(Gtk.DrawingArea):
         view_x_max = (translated_position[0] + arbitrary_clip_offset + visible_range[0]) / self.life_line_chart_widget.zoom_level
         view_y_min = (translated_position[1] - arbitrary_clip_offset) / self.life_line_chart_widget.zoom_level
         view_y_max = (translated_position[1] + arbitrary_clip_offset + visible_range[1]) / self.life_line_chart_widget.zoom_level
+        if 'grid' in self.life_line_chart_widget.life_line_chart_ancestor_graph.additional_graphical_items:
+            items = self.life_line_chart_widget.life_line_chart_ancestor_graph.additional_graphical_items['grid']
+        if 'axis' in self.life_line_chart_widget.life_line_chart_ancestor_graph.additional_graphical_items:
+            items = self.life_line_chart_widget.life_line_chart_ancestor_graph.additional_graphical_items['axis']
         self.life_line_chart_widget.draw_items(
             ctx,
-            self.life_line_chart_widget.life_line_chart_ancestor_graph.additional_graphical_items['grid']
-            +self.life_line_chart_widget.life_line_chart_ancestor_graph.additional_graphical_items['axis'],
+            items,
             (view_x_min, view_y_min, view_x_max, view_y_max),
             (12,30))
         pass
@@ -1121,6 +1124,26 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                                 'size': (thumbnail.get_width(), thumbnail.get_height())
                                 }
                     return images
+
+                unavailable_items = []
+                for handle in self.chart_configuration['discovery_blacklist']:
+                    try:
+                        individual = self.life_line_chart_ancestor_graph._instances[(
+                            'i', handle)]
+                    except:
+                        unavailable_items.append(handle)
+                for handle in unavailable_items:
+                    self.chart_configuration['discovery_blacklist'].remove(handle)
+
+                unavailable_items = []
+                for handle in self.chart_configuration['family_children']:
+                    try:
+                        family = self.life_line_chart_ancestor_graph._instances[(
+                            'f', handle)]
+                    except:
+                        unavailable_items.append(handle)
+                for handle in unavailable_items:
+                    self.chart_configuration['family_children'].remove(handle)
 
                 self.chart_configuration['root_individuals'][0]['individual_id'] = root_person_handle
                 self.life_line_chart_ancestor_graph.set_formatting(self.formatting)

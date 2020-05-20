@@ -59,7 +59,7 @@ if not wrong_life_line_chart_version and not life_line_chart_is_missing:
             name=_("Life Line Chart"),
             category=("Ancestry", _("Charts")),
             description=_("A view showing parents through a lifelinechart"),
-            version = '1.0.13',
+            version = '1.0.14',
             gramps_target_version="5.1",
             status=STABLE,
             fname='lifelinechartview.py',
