@@ -432,10 +432,11 @@ class LifeLineChartAxis(Gtk.DrawingArea):
         view_x_max = (translated_position[0] + arbitrary_clip_offset + visible_range[0]) / self.life_line_chart_widget.zoom_level
         view_y_min = (translated_position[1] - arbitrary_clip_offset) / self.life_line_chart_widget.zoom_level
         view_y_max = (translated_position[1] + arbitrary_clip_offset + visible_range[1]) / self.life_line_chart_widget.zoom_level
+        items = []
         if 'grid' in self.life_line_chart_widget.life_line_chart_ancestor_graph.additional_graphical_items:
-            items = self.life_line_chart_widget.life_line_chart_ancestor_graph.additional_graphical_items['grid']
+            items += self.life_line_chart_widget.life_line_chart_ancestor_graph.additional_graphical_items['grid']
         if 'axis' in self.life_line_chart_widget.life_line_chart_ancestor_graph.additional_graphical_items:
-            items = self.life_line_chart_widget.life_line_chart_ancestor_graph.additional_graphical_items['axis']
+            items += self.life_line_chart_widget.life_line_chart_ancestor_graph.additional_graphical_items['axis']
         self.life_line_chart_widget.draw_items(
             ctx,
             items,
