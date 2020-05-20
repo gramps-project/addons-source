@@ -1802,6 +1802,36 @@ class LifeLineChartGrampsGUI:
         #self.lifeline.draw()
         self.lifeline.queue_draw()
 
+    def add_person_to_discovery_blacklist(self, obj, person_handle):
+        self.chart_configuration['discovery_blacklist'].append(person_handle)
+        root_person_handle = self.get_active('Person')
+        self.lifeline.set_values(root_person_handle, self.generic_filter)
+
+    def remove_person_from_discovery_blacklist(self, obj, person_handle):
+        try:
+            self.chart_configuration['discovery_blacklist'].remove(person_handle)
+            root_person_handle = self.get_active('Person')
+            self.lifeline.set_values(root_person_handle, self.generic_filter)
+        except Exception as e:
+            pass
+
+    def show_siblings(self, obj, person_handle):
+        individual = self.lifeline.life_line_chart_ancestor_graph._instances[(
+            'i', person_handle)]
+        self.chart_configuration['family_children'].append(individual.get_child_of_family()[0].family_id)
+        root_person_handle = self.get_active('Person')
+        self.lifeline.set_values(root_person_handle, self.generic_filter)
+
+    def hide_siblings(self, obj, person_handle):
+        individual = self.lifeline.life_line_chart_ancestor_graph._instances[(
+            'i', person_handle)]
+        try:
+            self.chart_configuration['family_children'].remove(individual.get_child_of_family()[0].family_id)
+            root_person_handle = self.get_active('Person')
+            self.lifeline.set_values(root_person_handle, self.generic_filter)
+        except Exception as e:
+            pass
+
     def on_popup(self, obj, event, individual, family_handle=None):
         """
         Builds the full menu (including Siblings, Spouses, Children,
@@ -1822,6 +1852,41 @@ class LifeLineChartGrampsGUI:
         go_item.connect("activate", self.on_childmenu_changed, person_handle)
         go_item.show()
         menu.append(go_item)
+
+        blacklist_item = Gtk.MenuItem(label=_('Add to blacklist'))
+        blacklist_item.connect("activate", self.add_person_to_discovery_blacklist, person_handle)
+        blacklist_item.show()
+        menu.append(blacklist_item)
+
+        if len(self.chart_configuration['discovery_blacklist']):
+            remove_from_blacklist_item = Gtk.MenuItem(label=_('Remove from blacklist'))
+            remove_from_blacklist_item.show()
+            remove_from_blacklist_item.set_submenu(Gtk.Menu())
+            rbl_menu = remove_from_blacklist_item.get_submenu()
+            rbl_menu.set_reserve_toggle_size(False)
+            for handle in self.chart_configuration['discovery_blacklist']:
+                p = self.dbstate.db.get_person_from_handle(handle)
+                blacklist_item = Gtk.MenuItem(label=name_displayer.display(p))
+                blacklist_item.connect("activate", self.remove_person_from_discovery_blacklist, handle)
+                blacklist_item.show()
+                rbl_menu.append(blacklist_item)
+            menu.append(remove_from_blacklist_item)
+
+        try:
+            cof = individual.individual.get_child_of_family()[0]
+            if len(cof.children_individual_ids) > 1:
+                if cof.family_id not in self.chart_configuration['family_children']:
+                    show_siblings_item = Gtk.MenuItem(label=_('Show siblings'))
+                    show_siblings_item.connect("activate", self.show_siblings, person_handle)
+                    show_siblings_item.show()
+                    menu.append(show_siblings_item)
+                else:
+                    hide_siblings_item = Gtk.MenuItem(label=_('Hide siblings'))
+                    hide_siblings_item.connect("activate", self.hide_siblings, person_handle)
+                    hide_siblings_item.show()
+                    menu.append(hide_siblings_item)
+        except Exception as e:
+            pass
 
         edit_item = Gtk.MenuItem.new_with_mnemonic(_('_Edit'))
         edit_item.connect("activate", self.edit_person_cb, person_handle)
