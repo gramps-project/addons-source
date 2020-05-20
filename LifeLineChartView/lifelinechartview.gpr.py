@@ -25,7 +25,7 @@ from gramps.gen.const import GRAMPS_LOCALE as glocale
 _ = glocale.translation.gettext
 
 
-life_line_chart_version_required = (1, 2, 27)
+life_line_chart_version_required = (1, 2, 28)
 try:
     import life_line_chart
     life_line_chart_is_missing = False
@@ -58,7 +58,7 @@ if not wrong_life_line_chart_version and not life_line_chart_is_missing:
             name=_("Life Line Chart"),
             category=("Ancestry", _("Charts")),
             description=_("A view showing parents through a lifelinechart"),
-            version = '1.0.12',
+            version = '1.0.13',
             gramps_target_version="5.1",
             status=STABLE,
             fname='lifelinechartview.py',
