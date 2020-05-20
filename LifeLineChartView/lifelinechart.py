@@ -35,6 +35,7 @@ from html import escape
 import cairo
 from gi.repository import Pango
 from gi.repository import Gdk
+from gi.repository import GdkPixbuf
 from gi.repository import Gtk
 from gi.repository import PangoCairo
 
@@ -1033,6 +1034,7 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
         self.rootpersonh = None
         self.formatting = None
         self.positioning = None
+        self.chart_configuration = None
         self.filter = None
         self.chart_items = []
         self.image_cache = {}
@@ -1069,7 +1071,7 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                 pass
         if root_person is None:
             self.life_line_chart_ancestor_graph = AncestorGraph(
-                            positioning=self.positioning, formatting=self.formatting, instance_container=lambda: get_dbdstate_instance_container(self.dbstate))
+                            instance_container=lambda: get_dbdstate_instance_container(self.dbstate))
             # self.life_line_chart_ancestor_graph.select_individuals(
             #     None)
             # cof_family_id = None
@@ -1081,70 +1083,54 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
         else:
             def plot(reset):
                 # x = GrampsIndividual(self.ic, self.dbstate, self.rootpersonh)
-                if (reset or self.life_line_chart_ancestor_graph is None or self.positioning != self.life_line_chart_ancestor_graph._positioning or
-                        self.formatting != self.life_line_chart_ancestor_graph._formatting or new_filter):
+                if self.life_line_chart_ancestor_graph is None:
+                    self.life_line_chart_ancestor_graph = AncestorGraph(
+                        instance_container=lambda: get_dbdstate_instance_container(self.dbstate))
 
-                    if reset or self.life_line_chart_ancestor_graph is None or self.positioning != self.life_line_chart_ancestor_graph._positioning:
-                        reset = True
-                        self.rootpersonh = root_person_handle
-                        if self.life_line_chart_ancestor_graph is None:
-                            self.life_line_chart_ancestor_graph = AncestorGraph(
-                                positioning=self.positioning, formatting=self.formatting, instance_container=lambda: get_dbdstate_instance_container(self.dbstate))
-                        else:
-                            self.life_line_chart_ancestor_graph.clear_graphical_representations()
-                            self.life_line_chart_ancestor_graph._formatting = deepcopy(self.formatting)
-                            self.life_line_chart_ancestor_graph._positioning = deepcopy(self.positioning)
-                        root_individual = self.life_line_chart_ancestor_graph._instances[(
-                            'i', self.rootpersonh)]
+                def filter_lambda(individual_id):
+                    return False
 
-                        self.life_line_chart_ancestor_graph.select_individuals(
-                            root_individual)
-                        cof_family_id = None
-                        if root_individual.child_of_family_id:
-                            cof_family_id = root_individual.child_of_family_id[0]
-                        self.life_line_chart_ancestor_graph.place_selected_individuals(
-                            root_individual, None, None, self.life_line_chart_ancestor_graph._instances[('f', cof_family_id)])
-                        try:
-                            self.life_line_chart_ancestor_graph.modify_layout(
-                                self.rootpersonh)
-                        except Exception as e:
-                            pass
+                def color_lambda(individual_id):
+                    if self.filter:
+                        person = self.life_line_chart_ancestor_graph._instances[(
+                            'i', individual_id)]._gramps_person
+                        if not self.filter.match(person.handle, self.dbstate.db):
+                            return (220, 220, 220)
+                    return None
 
-                        #backup color
-                        for gir in self.life_line_chart_ancestor_graph.graphical_individual_representations:
-                            gir.color_backup = gir.color
-                    else:
-                        self.life_line_chart_ancestor_graph.clear_svg_items()
-                        self.life_line_chart_ancestor_graph._formatting = deepcopy(
-                            self.formatting)
+                def images_lambda(individual_id):
+                    images = {}
+                    individual = self.life_line_chart_ancestor_graph._instances[(
+                        'i', individual_id)]
+                    for i, reference in enumerate(individual._gramps_person.media_list):
+                        handle = reference.get_reference_handle()
+                        media = self.dbstate.db.get_media_from_handle(handle)
+                        path = media_path_full(self.dbstate.db, media.get_path())
+                        if media.mime in ['image/jpeg', 'image/png'] and os.path.isfile(path):
+                            year = media.date.get_year()
+                            if year != 0:
+                                date_ov = datetime.date(*[i if i != 0 else 1 for i in media.date.get_ymd()]).toordinal()
+                                date_ov = max(date_ov, individual.events['birth_or_christening']['date'].date().toordinal() + 1)
+                            else:
+                                date_ov = individual.events['birth_or_christening']['date'].date().toordinal() + i*365*5 + 1
+                            image_path = get_thumbnail_path(path, media.mime, size=SIZE_NORMAL)
+                            thumbnail = GdkPixbuf.Pixbuf.new_from_file(image_path)
+                            images[date_ov] = {
+                                'filename': image_path,
+                                'size': (thumbnail.get_width(), thumbnail.get_height())
+                                }
+                    return images
 
-                    def filter(individual_id):
-                        if self.filter:
-                            person = self.life_line_chart_ancestor_graph._instances[(
-                                'i', individual_id)]._gramps_person
-                            if not self.filter.match(person.handle, self.dbstate.db):
-                                return True
-                        return False
-                    for gir in self.life_line_chart_ancestor_graph.graphical_individual_representations:
-                        if filter(gir.individual_id):
-                            gir.color = (220, 220, 220)
-                        else:
-                            gir.color = gir.color_backup
+                self.chart_configuration['root_individuals'][0]['individual_id'] = root_person_handle
+                self.life_line_chart_ancestor_graph.set_formatting(self.formatting)
+                self.life_line_chart_ancestor_graph.set_positioning(self.positioning)
+                self.life_line_chart_ancestor_graph.set_chart_configuration(self.chart_configuration)
 
-                        for i, reference in enumerate(gir.individual._gramps_person.media_list):
-                            handle = reference.get_reference_handle()
-                            media = self.dbstate.db.get_media_from_handle(handle)
-                            path = media_path_full(self.dbstate.db, media.get_path())
-                            if media.mime in ['image/jpeg', 'image/png'] and os.path.isfile(path):
-                                individual = gir.individual
-                                year = media.date.get_year()
-                                if year != 0:
-                                    date_ov = datetime.date(*[i if i != 0 else 1 for i in media.date.get_ymd()]).toordinal()
-                                    date_ov = max(date_ov, individual.events['birth_or_christening']['date'].date().toordinal() + 1)
-                                else:
-                                    date_ov = individual.events['birth_or_christening']['date'].date().toordinal() + i*365*5 + 1
-                                individual.images[date_ov] = get_thumbnail_path(path, media.mime, size=SIZE_NORMAL)
-                    self.life_line_chart_ancestor_graph.define_svg_items()
+                reset = self.life_line_chart_ancestor_graph.update_chart(filter_lambda=filter_lambda,
+                                                                         color_lambda=color_lambda,
+                                                                         images_lambda=images_lambda,
+                                                                         rebuild_all=reset,
+                                                                         update_view=new_filter)
                 return reset
 
             run_profiler = False
@@ -1153,6 +1139,7 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                 cProfile.runctx('plot(reset)', globals(), locals())
             else:
                 reset = plot(reset)
+        self.rootpersonh = root_person_handle
         additional_items = []
         for key, value in self.life_line_chart_ancestor_graph.additional_graphical_items.items():
             additional_items += value
