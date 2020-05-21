@@ -73,8 +73,8 @@ except Exception as e:
 
 if not wrong_life_line_chart_version and not life_line_chart_is_missing and not unknown_import_error:
     register(VIEW,
-             id='lifelinechartview',
-             name=_("Life Line Chart"),
+             id='lifelinechartancestorview',
+             name=_("Life Line Ancestor Chart"),
              category=("Ancestry", _("Charts")),
              description=_("A view showing parents through a lifelinechart"),
              version='1.0.14',
@@ -83,8 +83,22 @@ if not wrong_life_line_chart_version and not life_line_chart_is_missing and not 
              fname='lifelinechartview.py',
              authors=["Christian Schulze"],
              authors_email=["c.w.schulze@gmail.com"],
-             viewclass='LifeLineChartView',
-             stock_icon='gramps-lifelinechart-bw',
+             viewclass='LifeLineChartAncestorView',
+             stock_icon='gramps-lifelineancestorchart-bw',
+             )
+    register(VIEW,
+             id='lifelinechartdescendantview',
+             name=_("Life Line Descendant Chart"),
+             category=("Ancestry", _("Charts")),
+             description=_("A view showing parents through a lifelinechart"),
+             version='1.0.14',
+             gramps_target_version="5.1",
+             status=STABLE,
+             fname='lifelinechartview.py',
+             authors=["Christian Schulze"],
+             authors_email=["c.w.schulze@gmail.com"],
+             viewclass='LifeLineChartDescendantView',
+             stock_icon='gramps-lifelinedescendantchart-bw',
              )
 
     inifile.register('lifelinechart_warn.missingmodules', "")

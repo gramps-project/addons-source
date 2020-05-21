@@ -45,7 +45,7 @@ from gramps.gui.utils import SystemFonts
 import lifelinechart
 
 # backend
-from life_line_chart import AncestorGraph, BaseGraph
+from life_line_chart import AncestorGraph, DescendantGraph, BaseGraph
 
 # the print settings to remember between print sessions
 PRINT_SETTINGS = None
@@ -78,10 +78,10 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
         ('interface.lifelineview-individual_photo_relative_size', llc_default_formatting['individual_photo_relative_size']*100),
         )
 
-    def __init__(self, pdata, dbstate, uistate, nav_group=0):
+    def __init__(self, pdata, dbstate, uistate, nav_group=0, chart_class=None):
         self.dbstate = dbstate
         self.uistate = uistate
-
+        self.chart_class = chart_class
 
         self.formatting = deepcopy(llc_default_formatting)
         self.positioning = deepcopy(llc_default_positioning)
@@ -418,7 +418,7 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
 
     def build_widget(self):
         chart = lifelinechart.LifeLineChartWidget(self.dbstate, self.uistate,
-                                                  self.on_popup)
+                                                  self.on_popup, self.chart_class)
         chart.formatting = self.formatting
         chart.positioning = self.positioning
         chart.chart_configuration = self.chart_configuration
@@ -915,6 +915,16 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
         """
         return (("Person Filter",),
                 ())
+
+
+class LifeLineChartAncestorView(LifeLineChartView):
+    def __init__(self, pdata, dbstate, uistate, nav_group=0):
+        LifeLineChartView.__init__(self, pdata, dbstate, uistate, nav_group, AncestorGraph)
+
+class LifeLineChartDescendantView(LifeLineChartView):
+    def __init__(self, pdata, dbstate, uistate, nav_group=0):
+        LifeLineChartView.__init__(self, pdata, dbstate, uistate, nav_group, DescendantGraph)
+
 
 
 # fix the fact that the config is static

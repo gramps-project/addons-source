@@ -46,7 +46,7 @@ from gi.repository import PangoCairo
 #-------------------------------------------------------------------------
 from copy import deepcopy
 import sys, os
-from life_line_chart import AncestorGraph
+from life_line_chart import AncestorGraph, DescendantGraph
 from life_line_chart import BaseIndividual, BaseFamily, InstanceContainer, estimate_birth_date, estimate_death_date
 from gramps.gen.display.name import displayer as name_displayer
 from gramps.gen.lib import Person, ChildRefType, EventType, FamilyRelType
@@ -876,6 +876,7 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
             tooltip = ""
             if individual:
                 tooltip = individual.individual.short_info_text
+                tooltip += '\nGramps id: ' + individual.individual._gramps_person.get_gramps_id()
             self.set_tooltip_text(tooltip)
             return False
 
@@ -1031,11 +1032,12 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
     Interactive Life Line Chart Widget.
     """
 
-    def __init__(self, dbstate, uistate, callback_popup=None):
+    def __init__(self, dbstate, uistate, callback_popup=None, chart_class=None):
         """
         Life Line Chart Widget. Handles visualization of data in self.data.
         See main() of LifeLineChartGramplet for example of model format.
         """
+        self.chart_class = chart_class
         self.rootpersonh = None
         self.formatting = None
         self.positioning = None
@@ -1075,7 +1077,9 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
             except:
                 pass
         if root_person is None:
-            self.life_line_chart_ancestor_graph = AncestorGraph(
+            # self.life_line_chart_ancestor_graph = AncestorGraph(
+            #                 instance_container=lambda: get_dbdstate_instance_container(self.dbstate))
+            self.life_line_chart_ancestor_graph = self.chart_class(
                             instance_container=lambda: get_dbdstate_instance_container(self.dbstate))
             # self.life_line_chart_ancestor_graph.select_individuals(
             #     None)
@@ -1089,7 +1093,9 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
             def plot(reset):
                 # x = GrampsIndividual(self.ic, self.dbstate, self.rootpersonh)
                 if self.life_line_chart_ancestor_graph is None:
-                    self.life_line_chart_ancestor_graph = AncestorGraph(
+                    # self.life_line_chart_ancestor_graph = AncestorGraph(
+                    #     instance_container=lambda: get_dbdstate_instance_container(self.dbstate))
+                    self.life_line_chart_ancestor_graph = self.chart_class(
                         instance_container=lambda: get_dbdstate_instance_container(self.dbstate))
 
                 def filter_lambda(individual_id):
