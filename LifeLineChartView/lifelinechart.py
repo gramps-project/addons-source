@@ -1829,12 +1829,12 @@ class LifeLineChartGrampsGUI:
         #self.lifeline.draw()
         self.lifeline.queue_draw()
 
-    def add_person_to_discovery_blacklist(self, obj, person_handle):
+    def hide_person(self, obj, person_handle):
         self.chart_configuration['discovery_blacklist'].append(person_handle)
         root_person_handle = self.get_active('Person')
         self.lifeline.set_values(root_person_handle, self.generic_filter)
 
-    def remove_person_from_discovery_blacklist(self, obj, person_handle):
+    def show_hidden_person(self, obj, person_handle):
         try:
             self.chart_configuration['discovery_blacklist'].remove(person_handle)
             root_person_handle = self.get_active('Person')
@@ -1880,13 +1880,18 @@ class LifeLineChartGrampsGUI:
         go_item.show()
         menu.append(go_item)
 
-        blacklist_item = Gtk.MenuItem(label=_('Add to blacklist'))
-        blacklist_item.connect("activate", self.add_person_to_discovery_blacklist, person_handle)
-        blacklist_item.show()
-        menu.append(blacklist_item)
+        sep = Gtk.SeparatorMenuItem()
+        sep.show()
+        menu.append(sep)
+
+        if person_handle != self.lifeline.rootpersonh:
+            blacklist_item = Gtk.MenuItem(label=_('Hide person'))
+            blacklist_item.connect("activate", self.hide_person, person_handle)
+            blacklist_item.show()
+            menu.append(blacklist_item)
 
         if len(self.chart_configuration['discovery_blacklist']):
-            remove_from_blacklist_item = Gtk.MenuItem(label=_('Remove from blacklist'))
+            remove_from_blacklist_item = Gtk.MenuItem(label=_('Show person'))
             remove_from_blacklist_item.show()
             remove_from_blacklist_item.set_submenu(Gtk.Menu())
             rbl_menu = remove_from_blacklist_item.get_submenu()
@@ -1896,7 +1901,7 @@ class LifeLineChartGrampsGUI:
                 try:
                     p = self.dbstate.db.get_person_from_handle(handle)
                     blacklist_item = Gtk.MenuItem(label=name_displayer.display(p))
-                    blacklist_item.connect("activate", self.remove_person_from_discovery_blacklist, handle)
+                    blacklist_item.connect("activate", self.show_hidden_person, handle)
                     blacklist_item.show()
                     rbl_menu.append(blacklist_item)
                 except:
@@ -1909,10 +1914,11 @@ class LifeLineChartGrampsGUI:
             cof = individual.individual.get_child_of_family()[0]
             if len(cof.children_individual_ids) > 1:
                 if cof.family_id not in self.chart_configuration['family_children']:
-                    show_siblings_item = Gtk.MenuItem(label=_('Show siblings'))
-                    show_siblings_item.connect("activate", self.show_siblings, person_handle)
-                    show_siblings_item.show()
-                    menu.append(show_siblings_item)
+                    if len(cof.children_individual_ids) > len(cof.graphical_representations[0].visible_children):
+                        show_siblings_item = Gtk.MenuItem(label=_('Show siblings'))
+                        show_siblings_item.connect("activate", self.show_siblings, person_handle)
+                        show_siblings_item.show()
+                        menu.append(show_siblings_item)
                 else:
                     hide_siblings_item = Gtk.MenuItem(label=_('Hide siblings'))
                     hide_siblings_item.connect("activate", self.hide_siblings, person_handle)
@@ -1920,6 +1926,10 @@ class LifeLineChartGrampsGUI:
                     menu.append(hide_siblings_item)
         except Exception as e:
             pass
+
+        sep = Gtk.SeparatorMenuItem()
+        sep.show()
+        menu.append(sep)
 
         edit_item = Gtk.MenuItem.new_with_mnemonic(_('_Edit'))
         edit_item.connect("activate", self.edit_person_cb, person_handle)
