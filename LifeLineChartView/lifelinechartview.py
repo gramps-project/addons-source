@@ -805,7 +805,8 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
             item.set_tooltip_text(_(settings['tooltip']))
 
         # add reset button
-        reset_button = configdialog.add_button(grid, 'Reset all settings', index + 1, None, lambda a,b=configdialog:self.reset_settings(a,b))
+        caption = _("Reset all settings")
+        reset_button = configdialog.add_button(grid, caption, index + 1, None, lambda a,b=configdialog:self.reset_settings(a,b))
         return _(tab_name), grid
 
     def reset_settings(self, obj, widget):

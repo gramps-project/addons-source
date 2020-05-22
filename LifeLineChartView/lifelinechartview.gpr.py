@@ -142,7 +142,7 @@ class ModuleProvider:
         if module:
             return module
 
-        message = "Failed to load the required module {module_name} version {module_version}.".format(**locals())
+        message = _("Failed to load the required module {module_name} version {module_version}.").format(**locals())
         logging.warning(self.plugin_name + ': ' + message)
         if self.uistate:
             from gramps.gui.dialog import QuestionDialog3
