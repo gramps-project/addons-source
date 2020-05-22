@@ -45,18 +45,18 @@ from gramps.gui.utils import SystemFonts
 import lifelinechart
 
 # backend
-from life_line_chart import AncestorGraph, DescendantGraph, BaseGraph
+from life_line_chart import AncestorChart, DescendantChart, BaseChart
 
 # the print settings to remember between print sessions
 PRINT_SETTINGS = None
 _ = glocale.translation.sgettext
 
-llc_formatting_description = BaseGraph.get_formatting_description()
-llc_positioning_description = BaseGraph.get_positioning_description()
-llc_default_formatting = BaseGraph.get_default_formatting()
-llc_default_positioning = BaseGraph.get_default_positioning()
-llc_chart_configuration_root_individual_description = BaseGraph.get_chart_configuration_root_individual_description()
-llc_default_chart_configuration = AncestorGraph.get_default_chart_configuration()
+llc_formatting_description = BaseChart.get_formatting_description()
+llc_positioning_description = BaseChart.get_positioning_description()
+llc_default_formatting = BaseChart.get_default_formatting()
+llc_default_positioning = BaseChart.get_default_positioning()
+llc_chart_configuration_root_individual_description = BaseChart.get_chart_configuration_root_individual_description()
+llc_default_chart_configuration = AncestorChart.get_default_chart_configuration()
 
 class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
     """
@@ -353,7 +353,7 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
                 },
             },
         }
-        if self.chart_class == DescendantGraph:
+        if self.chart_class == DescendantChart:
             self.gui_config.pop('compress')
             self.gui_config.pop('flip_to_optimize')
             self.gui_config.pop('fathers_have_the_same_color')
@@ -734,7 +734,7 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
         base, extension = os.path.splitext(fn)
         if extension == '':
             fn = base + '.svg'
-        self.lifeline.life_line_chart_ancestor_graph.paint_and_save(
+        self.lifeline.life_line_chart_instance.paint_and_save(
             self.lifeline.rootpersonh, fn)
 
     def on_childmenu_changed(self, obj, person_handle):
@@ -923,11 +923,11 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
 
 class LifeLineChartAncestorView(LifeLineChartView):
     def __init__(self, pdata, dbstate, uistate, nav_group=0):
-        LifeLineChartView.__init__(self, pdata, dbstate, uistate, nav_group, AncestorGraph)
+        LifeLineChartView.__init__(self, pdata, dbstate, uistate, nav_group, AncestorChart)
 
 class LifeLineChartDescendantView(LifeLineChartView):
     def __init__(self, pdata, dbstate, uistate, nav_group=0):
-        LifeLineChartView.__init__(self, pdata, dbstate, uistate, nav_group, DescendantGraph)
+        LifeLineChartView.__init__(self, pdata, dbstate, uistate, nav_group, DescendantChart)
 
 
 

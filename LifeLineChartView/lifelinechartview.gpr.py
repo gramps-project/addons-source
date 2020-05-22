@@ -31,47 +31,243 @@ _ = glocale.translation.gettext
 from gi.repository import Gtk, GdkPixbuf
 from gramps.gen.const import USER_PLUGINS
 from gramps.gen.config import logging
-
 from gramps.gen.config import config
-inifile = config.register_manager("lifelinechart_warn")
+from gramps.gen.plug.utils import Zipfile
+inifile = config.register_manager("lifelinechartview_warn")
 inifile.load()
 sects = inifile.get_sections()
 
-# sys.path = [os.path.join(USER_PLUGINS, 'LifeLineChartView')] + sys.path
 
-life_line_chart_version_required = (1, 3, 0)
+class Zipfile_bugfix(Zipfile):
+    """
+    Zipfile workaround. This class doesn't work with zip files in the recent release.
+    pr-1068: replace file() -> open()
+    """
+    def extractall(self, path, members=None):
+        """
+        Extract all of the files in the zip into path.
+        """
+        import os
+        names = self.zip_obj.namelist()
+        for name in self.get_paths(names):
+            fullname = os.path.join(path, name)
+            if not os.path.exists(fullname):
+                os.mkdir(fullname)
+        for name in self.get_files(names):
+            fullname = os.path.join(path, name)
+            outfile = open(fullname, 'wb') # !!!!!
+            outfile.write(self.zip_obj.read(name))
+            outfile.close()
+
+
+class ModuleProvider:
+    """
+    ModuleProvider
+    ==============
+
+    This class is used to load modules, and if necessary download them first.
+    """
+    def __init__(self, plugin_name, uistate):
+        """
+        Args:
+            plugin_name (str): name of the plugin where this class is used
+            uistate (): uistate for dialog
+        """
+        self.plugin_name = plugin_name
+        self.uistate = uistate
+
+    def check_for(self, module_name, module_version):
+        """
+        Check if a module is available.
+
+        Args:
+            module_name (str): module name
+            module_version (str): module version
+
+        Returns:
+            Module: loaded module or None
+        """
+        import importlib
+        import sys
+        import os
+        from gramps.gen.const import USER_PLUGINS
+        try:
+            module = importlib.import_module(module_name)
+            if hasattr(module, '__version__'):
+                if module.__version__ != module_version:
+                    raise ModuleNotFoundError()
+        except ModuleNotFoundError:
+            pass
+        else:
+            return module
+
+        try:
+            filename = os.path.join(
+                USER_PLUGINS,
+                self.plugin_name,
+                module_name + '-' + module_version,
+                module_name,
+                '__init__.py')
+            if os.path.isfile(filename):
+                spec = importlib.util.spec_from_file_location(module_name, filename)
+                module = importlib.util.module_from_spec(spec)
+                sys.modules[spec.name] = module
+                spec.loader.exec_module(module)
+            else:
+                raise FileNotFoundError(filename)
+        except ModuleNotFoundError:
+            pass
+        except FileNotFoundError as e:
+            pass
+        else:
+            return module
+        return None
+
+    def request(self, module_name, module_version, source_link):
+        """
+        Request a module. Either it is available, or it will be downloaded and loaded.
+
+        Args:
+            module_name (str): module name
+            module_version (str): module version
+            source_link (str): http address of the wheel
+
+        Returns:
+            Module: the loaded module
+        """
+        import os
+        import logging
+        from gramps.gen.const import USER_PLUGINS
+        module = self.check_for(module_name, module_version)
+        if module:
+            return module
+
+        message = "Failed to load the required module {module_name} version {module_version}.".format(**locals())
+        logging.warning(self.plugin_name + ': ' + message)
+        if self.uistate:
+            from gramps.gui.dialog import QuestionDialog3
+            ok_no_cancel = QuestionDialog3(
+                _(self.plugin_name + ' Plugin'),
+                _(message),
+                _("Don't ask me again"),
+                _("Download module"),
+                parent=self.uistate.window)
+            prompt = ok_no_cancel.run()
+            if prompt is True:
+                # dont ask me again
+                inifile.register(self.plugin_name.lower()+'_warn.missingmodules', "")
+                inifile.set(self.plugin_name.lower()+'_warn.missingmodules', "True")
+                inifile.save()
+                logging.warning(self.plugin_name + ': ' + _('The user chose to deactivate further warnings.'))
+                return None
+            elif prompt is -1:
+                #cancel
+                logging.info(self.plugin_name + ': ' + _('The user chose to ignore the warning once.'))
+                return None
+            elif prompt is False:
+                logging.info(self.plugin_name + ': ' + _('The user chose to install the module.'))
+                output_path = os.path.join(USER_PLUGINS, self.plugin_name)
+                self.load_addon_file(source_link, output_path=output_path, callback=print)
+                module = self.check_for(module_name, module_version)
+                return module
+            return None
+
+    def load_addon_file(self, path, output_path, callback=None):
+        """
+        Load an module from a particular path (from URL or file system) and extract to output_path.
+        """
+        from urllib.request import urlopen
+        from gramps.gen.plug.utils import urlopen_maybe_no_check_cert
+        from io import StringIO, BytesIO
+        global Zipfile_bugfix, inifile
+        import tarfile
+        if (path.startswith("http://") or
+            path.startswith("https://") or
+            path.startswith("ftp://")):
+            try:
+                fp = urlopen_maybe_no_check_cert(path)
+            except RuntimeWarning:
+                if callback:
+                    callback(_("Unable to open '%s'") % path)
+                return False
+        else:
+            try:
+                fp = open(path)
+            except RuntimeWarning:
+                if callback:
+                    callback(_("Unable to open '%s'") % path)
+                return False
+        try:
+            content = fp.read()
+            buffer = BytesIO(content)
+        except RuntimeWarning:
+            if callback:
+                callback(_("Error in reading '%s'") % path)
+            return False
+        fp.close()
+        # file_obj is either Zipfile or TarFile
+        if path.endswith(".zip") or path.endswith(".ZIP"):
+            file_obj = Zipfile_bugfix(buffer)
+        elif path.endswith(".tar.gz") or path.endswith(".tgz"):
+            try:
+                file_obj = tarfile.open(None, fileobj=buffer)
+            except RuntimeWarning:
+                if callback:
+                    callback(_("Error: cannot open '%s'") % path)
+                return False
+        else:
+            if callback:
+                callback(_("Error: unknown file type: '%s'") % path)
+            return False
+
+        try:
+            file_obj.extractall(output_path)
+        except OSError:
+            if callback:
+                callback("OSError installing '%s', skipped!" % path)
+            file_obj.close()
+            return False
+        file_obj.close()
+
+        return True
+
+    def cleanup_old_versions(self):
+        raise NotImplementedError()
+
+
+life_line_chart_version_required = (1, 3, 5)
+life_line_chart_version_required_str = '.'.join([str(i) for i in life_line_chart_version_required])
+
 try:
-    import life_line_chart
-    life_line_chart_is_missing = False
-    original_version = life_line_chart.__version__
-    version_tuple = tuple(
-        [int(i) if i.isnumeric() else i for i in original_version.split('.')])
-    wrong_life_line_chart_version = life_line_chart_version_required != version_tuple
-    if wrong_life_line_chart_version:
-        import_error_message = _(
-            'The installed verison {original_version} is not compatible'.format(**locals()))
+    # logging.error(str(sects))
+    # logging.error(str(inifile.get('lifelinechart_warn.missingmodules')))
+    if 'lifelinechartview_warn' not in sects or not inifile.get('lifelinechartview_warn.missingmodules') != 'False':
+        _uistate = locals().get('uistate')
     else:
-        import_error_message = None
-    # load icon
-    import os
+        _uistate = None
+    mp=ModuleProvider('LifeLineChartView', _uistate)
+    svgwrite = mp.request(
+        'svgwrite',
+        '1.4',
+        'https://pypi.python.org/packages/source/s/svgwrite/svgwrite-1.4.zip'
+    )
+    life_line_chart = mp.request(
+        'life_line_chart',
+        life_line_chart_version_required_str,
+        'https://pypi.python.org/packages/source/l/life_line_chart/life_line_chart-'+life_line_chart_version_required_str+'.tar.gz'
+    )
+
     fname = os.path.join(USER_PLUGINS, 'LifeLineChartView')
     icons = Gtk.IconTheme().get_default()
     icons.append_search_path(fname)
-    unknown_import_error = False
-except ImportError as e:
-    wrong_life_line_chart_version = False
-    life_line_chart_is_missing = True
-    unknown_import_error = False
-    #import_error_message = str(e)
-    import_error_message = traceback.format_exc()
-except Exception as e:
-    wrong_life_line_chart_version = False
-    life_line_chart_is_missing = False
-    unknown_import_error = True
-    #import_error_message = str(e)
-    import_error_message = traceback.format_exc()
+    some_import_error = life_line_chart is None or svgwrite is None
 
-if not wrong_life_line_chart_version and not life_line_chart_is_missing and not unknown_import_error:
+except Exception as e:
+    some_import_error = True
+    import_error_message = traceback.format_exc()
+    logging.log(logging.ERROR, 'Failed to load LifeLineChartView plugin.\n' + import_error_message)
+
+if not some_import_error:
     register(VIEW,
              id='lifelinechartancestorview',
              name=_("Life Line Ancestor Chart"),
@@ -104,48 +300,3 @@ if not wrong_life_line_chart_version and not life_line_chart_is_missing and not 
     inifile.register('lifelinechart_warn.missingmodules', "")
     inifile.set('lifelinechart_warn.missingmodules', "False")
     inifile.save()
-else:
-    if wrong_life_line_chart_version:
-        what_to_do = _('Please upgrade the module life_line_chart')
-        pip_command = 'pip install --upgrade life_line_chart=={}.{}.{}'.format(
-            *life_line_chart_version_required)
-    elif unknown_import_error:
-        what_to_do = _('Failed to import life_line_chart module')
-        pip_command = 'pip install life_line_chart=={}.{}.{}'.format(
-            *life_line_chart_version_required)
-    else:
-        what_to_do = _('Please install life_line_chart module')
-        pip_command = 'pip install life_line_chart=={}.{}.{}'.format(
-            *life_line_chart_version_required)
-
-    import_error_message = import_error_message.replace(
-        USER_PLUGINS, '<plugins>')
-    import_error_message_html = html.escape(import_error_message)
-
-    log_message = _(
-        "\n\nLife Line Chart View failed to import life_line_chart module.\n")
-    log_message += "{import_error_message}".format(**locals())
-    log_message += "\n\n{what_to_do}:\n{pip_command}".format(**locals())
-
-    gui_message = _(
-        "\n\nLife Line Chart View failed to import life_line_chart module.\n")
-    gui_message += "<i>{import_error_message_html}</i>".format(**locals())
-    gui_message += "\n\n{what_to_do}:\n<i>{pip_command}</i>\n\n".format(
-        **locals())
-    gui_message += _("To dismiss all future Life Line Chart View warnings click \"Don't show me again\".")
-    logging.log(logging.WARNING, log_message)
-
-    if locals().get('uistate'):
-        from gramps.gui.dialog import QuestionDialog2
-        if 'lifelinechart_warn' not in sects or not inifile.get('lifelinechart_warn.missingmodules') != 'False':
-            yes_no = QuestionDialog2(
-                _("Life Line Chart View Failed to Load"),
-                gui_message,
-                _("Don't show me again"),
-                _("Continue"),
-                parent=uistate.window)
-            prompt = yes_no.run()
-            if prompt is True:
-                inifile.register('lifelinechart_warn.missingmodules', "")
-                inifile.set('lifelinechart_warn.missingmodules', "True")
-                inifile.save()

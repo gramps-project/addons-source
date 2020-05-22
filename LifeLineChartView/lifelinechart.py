@@ -46,7 +46,7 @@ from gi.repository import PangoCairo
 #-------------------------------------------------------------------------
 from copy import deepcopy
 import sys, os
-from life_line_chart import AncestorGraph, DescendantGraph
+from life_line_chart import AncestorChart, DescendantChart
 from life_line_chart import BaseIndividual, BaseFamily, InstanceContainer, estimate_birth_date, estimate_death_date, LifeLineChartNotEnoughInformationToDisplay
 from gramps.gen.display.name import displayer as name_displayer
 from gramps.gen.lib import Person, ChildRefType, EventType, FamilyRelType
@@ -421,7 +421,7 @@ class LifeLineChartAxis(Gtk.DrawingArea):
             self.life_line_chart_widget.upper_left_view_position,
             self.life_line_chart_widget.center_delta_xy)
         translated_position = self.life_line_chart_widget.view_position_get_limited(translated_position)
-        translated_position = (self.life_line_chart_widget.life_line_chart_ancestor_graph.get_full_width()*self.life_line_chart_widget.zoom_level
+        translated_position = (self.life_line_chart_widget.life_line_chart_instance.get_full_width()*self.life_line_chart_widget.zoom_level
                 - 0.9*self.get_allocated_width()), translated_position[1]
         ctx.translate(
             -translated_position[0],
@@ -435,10 +435,10 @@ class LifeLineChartAxis(Gtk.DrawingArea):
         view_y_min = (translated_position[1] - arbitrary_clip_offset) / self.life_line_chart_widget.zoom_level
         view_y_max = (translated_position[1] + arbitrary_clip_offset + visible_range[1]) / self.life_line_chart_widget.zoom_level
         items = []
-        if 'grid' in self.life_line_chart_widget.life_line_chart_ancestor_graph.additional_graphical_items:
-            items += self.life_line_chart_widget.life_line_chart_ancestor_graph.additional_graphical_items['grid']
-        if 'axis' in self.life_line_chart_widget.life_line_chart_ancestor_graph.additional_graphical_items:
-            items += self.life_line_chart_widget.life_line_chart_ancestor_graph.additional_graphical_items['axis']
+        if 'grid' in self.life_line_chart_widget.life_line_chart_instance.additional_graphical_items:
+            items += self.life_line_chart_widget.life_line_chart_instance.additional_graphical_items['grid']
+        if 'axis' in self.life_line_chart_widget.life_line_chart_instance.additional_graphical_items:
+            items += self.life_line_chart_widget.life_line_chart_instance.additional_graphical_items['axis']
         self.life_line_chart_widget.draw_items(
             ctx,
             items,
@@ -636,8 +636,8 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         self.queue_draw_wrapper()
 
     def fit_to_page(self, _button=None):
-        width = self.life_line_chart_ancestor_graph.get_full_width()
-        height = self.life_line_chart_ancestor_graph.get_full_height()
+        width = self.life_line_chart_instance.get_full_width()
+        height = self.life_line_chart_instance.get_full_height()
         width_a = self.get_allocated_width()
         height_a = self.get_allocated_height()
         scale_w = width_a / width
@@ -675,8 +675,8 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         Returns:
             tuple: limited position
         """
-        width = self.life_line_chart_ancestor_graph.get_full_width()
-        height = self.life_line_chart_ancestor_graph.get_full_height()
+        width = self.life_line_chart_instance.get_full_width()
+        height = self.life_line_chart_instance.get_full_height()
         width_a = self.get_allocated_width()
         height_a = self.get_allocated_height()
         allowed_x_min = min(0, (width*self.zoom_level - width_a) / 2.0)
@@ -795,7 +795,7 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
                 return True
         # else:
         #     # line was clicked!
-        #     individual = self.life_line_chart_ancestor_graph.get_individual_from_position(
+        #     individual = self.life_line_chart_instance.get_individual_from_position(
         #         event.x/self.zoom_level, event.y/self.zoom_level)
         #     if individual:
         #         individual_id = individual.individual_id
@@ -811,7 +811,7 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         #right click on person, context menu
         # Do things based on state, event.get_state(), or button, event.button
         if is_right_click(event):
-            individual = self.life_line_chart_ancestor_graph.get_individual_from_position(
+            individual = self.life_line_chart_instance.get_individual_from_position(
                 (event.x + self.upper_left_view_position[0])/self.zoom_level,
                 (event.y + self.upper_left_view_position[1])/self.zoom_level)
             if individual and self.on_popup:
@@ -871,7 +871,7 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         self._mouse_click = False
         if self.last_x is None or self.last_y is None:
             # while mouse is moving, we must update the tooltip based on person
-            individual = self.life_line_chart_ancestor_graph.get_individual_from_position(
+            individual = self.life_line_chart_instance.get_individual_from_position(
                 (event.x + self.upper_left_view_position[0])/self.zoom_level,
                 (event.y + self.upper_left_view_position[1])/self.zoom_level)
             self.mouse_x, self.mouse_y = event.x, event.y
@@ -961,7 +961,7 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         dummy_widget = widget
         dummy_time = time
         tgs = [x.name() for x in context.list_targets()]
-        person = self.life_line_chart_ancestor_graph._instances[(
+        person = self.life_line_chart_instance._instances[(
             'i', self._mouse_click_individual_id)]._gramps_person
         if person:
             if info == DdTargets.PERSON_LINK.app_id:
@@ -1049,7 +1049,7 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
         self.image_cache = {}
         self.zoom_level = 1.0
         self.zoom_level_backup = 1.0
-        self.life_line_chart_ancestor_graph = None
+        self.life_line_chart_instance = None
         self.angle = {}
         self.childrenroot = []
         self.rootangle_rad = []
@@ -1059,7 +1059,7 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
         self.set_values(None, None)
         LifeLineChartBaseWidget.__init__(
             self, dbstate, uistate, callback_popup)
-        self.ic = get_dbdstate_instance_container(self.dbstate)
+        #self.ic = get_dbdstate_instance_container(self.dbstate)
 
     def set_values(self, root_person_handle, filtr):
         """
@@ -1079,33 +1079,33 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
             except:
                 pass
         if root_person is None:
-            # self.life_line_chart_ancestor_graph = AncestorGraph(
-            #                 instance_container=lambda: get_dbdstate_instance_container(self.dbstate))
-            self.life_line_chart_ancestor_graph = self.chart_class(
-                            instance_container=lambda: get_dbdstate_instance_container(self.dbstate))
-            # self.life_line_chart_ancestor_graph.select_individuals(
+            # self.life_line_chart_instance = AncestorChart(
+            #                 instance_container=get_dbdstate_instance_container(self.dbstate))
+            self.life_line_chart_instance = self.chart_class(
+                            instance_container=get_dbdstate_instance_container(self.dbstate))
+            # self.life_line_chart_instance.select_individuals(
             #     None)
             # cof_family_id = None
-            # self.life_line_chart_ancestor_graph.place_selected_individuals(None, None, None, None)
-            # self.life_line_chart_ancestor_graph._formatting = deepcopy(
+            # self.life_line_chart_instance.place_selected_individuals(None, None, None, None)
+            # self.life_line_chart_instance._formatting = deepcopy(
             #     self.formatting)
 
-            self.life_line_chart_ancestor_graph.define_svg_items()
+            self.life_line_chart_instance.define_svg_items()
         else:
             def plot(reset):
                 # x = GrampsIndividual(self.ic, self.dbstate, self.rootpersonh)
-                if self.life_line_chart_ancestor_graph is None:
-                    # self.life_line_chart_ancestor_graph = AncestorGraph(
-                    #     instance_container=lambda: get_dbdstate_instance_container(self.dbstate))
-                    self.life_line_chart_ancestor_graph = self.chart_class(
-                        instance_container=lambda: get_dbdstate_instance_container(self.dbstate))
+                if self.life_line_chart_instance is None:
+                    # self.life_line_chart_instance = AncestorChart(
+                    #     instance_container=get_dbdstate_instance_container(self.dbstate))
+                    self.life_line_chart_instance = self.chart_class(
+                        instance_container=get_dbdstate_instance_container(self.dbstate))
 
                 def filter_lambda(individual_id):
                     return False
 
                 def color_lambda(individual_id):
                     if self.filter:
-                        person = self.life_line_chart_ancestor_graph._instances[(
+                        person = self.life_line_chart_instance._instances[(
                             'i', individual_id)]._gramps_person
                         if not self.filter.match(person.handle, self.dbstate.db):
                             return (220, 220, 220)
@@ -1113,7 +1113,7 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
 
                 def images_lambda(individual_id):
                     images = {}
-                    individual = self.life_line_chart_ancestor_graph._instances[(
+                    individual = self.life_line_chart_instance._instances[(
                         'i', individual_id)]
                     for i, reference in enumerate(individual._gramps_person.media_list):
                         handle = reference.get_reference_handle()
@@ -1137,7 +1137,7 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                 unavailable_items = []
                 for handle in self.chart_configuration['discovery_blacklist']:
                     try:
-                        individual = self.life_line_chart_ancestor_graph._instances[(
+                        individual = self.life_line_chart_instance._instances[(
                             'i', handle)]
                     except:
                         unavailable_items.append(handle)
@@ -1147,7 +1147,7 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                 unavailable_items = []
                 for handle in self.chart_configuration['family_children']:
                     try:
-                        family = self.life_line_chart_ancestor_graph._instances[(
+                        family = self.life_line_chart_instance._instances[(
                             'f', handle)]
                     except:
                         unavailable_items.append(handle)
@@ -1155,11 +1155,11 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                     self.chart_configuration['family_children'].remove(handle)
 
                 self.chart_configuration['root_individuals'][0]['individual_id'] = root_person_handle
-                self.life_line_chart_ancestor_graph.set_formatting(self.formatting)
-                self.life_line_chart_ancestor_graph.set_positioning(self.positioning)
-                self.life_line_chart_ancestor_graph.set_chart_configuration(self.chart_configuration)
+                self.life_line_chart_instance.set_formatting(self.formatting)
+                self.life_line_chart_instance.set_positioning(self.positioning)
+                self.life_line_chart_instance.set_chart_configuration(self.chart_configuration)
 
-                reset = self.life_line_chart_ancestor_graph.update_chart(filter_lambda=filter_lambda,
+                reset = self.life_line_chart_instance.update_chart(filter_lambda=filter_lambda,
                                                                          color_lambda=color_lambda,
                                                                          images_lambda=images_lambda,
                                                                          rebuild_all=reset,
@@ -1174,12 +1174,12 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                 reset = plot(reset)
         self.rootpersonh = root_person_handle
         additional_items = []
-        for key, value in self.life_line_chart_ancestor_graph.additional_graphical_items.items():
+        for key, value in self.life_line_chart_instance.additional_graphical_items.items():
             if key == 'axis':
                 continue
             additional_items += value
         sorted_individuals = [(gr.get_birth_date_ov(), index, gr) for index, gr in enumerate(
-            self.life_line_chart_ancestor_graph.graphical_individual_representations)]
+            self.life_line_chart_instance.graphical_individual_representations)]
         sorted_individuals.sort()
         sorted_individual_items = []
         for _, index, graphical_individual_representation in sorted_individuals:
@@ -1193,9 +1193,9 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
             pass
 
     def rebuild_instance_cache(self, _button=None):
-        if self.life_line_chart_ancestor_graph:
-            self.life_line_chart_ancestor_graph.clear_graphical_representations()
-            self.life_line_chart_ancestor_graph._instances.clear()
+        if self.life_line_chart_instance:
+            self.life_line_chart_instance.clear_graphical_representations()
+            self.life_line_chart_instance._instances.clear()
             rp = self.rootpersonh
             self.rootpersonh = None
             self.set_values(rp, self.filter)
@@ -1211,7 +1211,7 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
         """
         # first do size request of what we will need
         if not ctx:  # Display
-            graph = self.life_line_chart_ancestor_graph
+            graph = self.life_line_chart_instance
             size_w_a = max(100, min(400000, int(graph.get_full_width()*self.zoom_level)))
             size_h_a = max(100, min(400000, int(graph.get_full_height()*self.zoom_level)))
             #size_w_a = max(size_w_a, self.get_allocated_width())
@@ -1720,7 +1720,7 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                                             arguments[1].imag, arguments[2].real, arguments[2].imag, arguments[3].real, arguments[3].imag)
                     # ctx.move_to(arguments[0].real, arguments[0].imag)
                     # ctx.set_source_rgb(*[c/255. for c in graphical_individual_representation.color])
-                    # ctx.set_line_width(self.life_line_chart_ancestor_graph._formatting['line_thickness'])
+                    # ctx.set_line_width(self.life_line_chart_instance._formatting['line_thickness'])
                     # ctx.curve_to()
                     # ctx.text_path("textxxxxxx")
                     # path = ctx.copy_path()
@@ -1851,14 +1851,14 @@ class LifeLineChartGrampsGUI:
             pass
 
     def show_siblings(self, obj, person_handle):
-        individual = self.lifeline.life_line_chart_ancestor_graph._instances[(
+        individual = self.lifeline.life_line_chart_instance._instances[(
             'i', person_handle)]
         self.chart_configuration['family_children'].append(individual.get_child_of_family()[0].family_id)
         root_person_handle = self.get_active('Person')
         self.lifeline.set_values(root_person_handle, self.generic_filter)
 
     def hide_siblings(self, obj, person_handle):
-        individual = self.lifeline.life_line_chart_ancestor_graph._instances[(
+        individual = self.lifeline.life_line_chart_instance._instances[(
             'i', person_handle)]
         try:
             self.chart_configuration['family_children'].remove(individual.get_child_of_family()[0].family_id)
@@ -1919,7 +1919,7 @@ class LifeLineChartGrampsGUI:
             menu.append(remove_from_blacklist_item)
 
         try:
-            if self.lifeline.chart_class == AncestorGraph:
+            if self.lifeline.chart_class == AncestorChart:
                 cof = individual.individual.get_child_of_family()[0]
                 if len(cof.children_individual_ids) > 1:
                     if cof.family_id not in self.chart_configuration['family_children']:
