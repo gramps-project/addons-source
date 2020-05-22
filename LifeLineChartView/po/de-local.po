@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-22 19:12+0200\n"
+"POT-Creation-Date: 2020-05-22 19:26+0200\n"
 "PO-Revision-Date: 2019-10-19 16:49+0200\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -54,8 +54,8 @@ msgid "Hide person"
 msgstr "Person ausblenden"
 
 #: LifeLineChartView/lifelinechart.py:1902
-msgid "Person einblenden"
-msgstr ""
+msgid "Show person"
+msgstr "Person einblenden"
 
 #: LifeLineChartView/lifelinechart.py:1927
 msgid "Show siblings"
@@ -178,16 +178,16 @@ msgstr "Schaubilder"
 
 #: LifeLineChartView/lifelinechartview.gpr.py:275
 #: LifeLineChartView/lifelinechartview.gpr.py:289
-msgid "A view showing parents through a lifelinechart"
-msgstr ""
+msgid "Persons and their relation in a time based chart"
+msgstr "Personen und ihre Verbindungen in einem Zeitbasierten Diagramm"
 
 #: LifeLineChartView/lifelinechartview.gpr.py:287
 msgid "Life Line Descendant Chart"
-msgstr ""
+msgstr "Lebenslinien Nachfahren Diagramm"
 
 #: LifeLineChartView/lifelinechartview.py:367
 msgid "Life Line Chart"
-msgstr ""
+msgstr "Lebenslinien Diagramm"
 
 #: LifeLineChartView/lifelinechartview.py:453
 msgid "Zoom in"
@@ -207,7 +207,7 @@ msgstr "Zoom auf die beste Größte"
 
 #: LifeLineChartView/lifelinechartview.py:481
 msgid "Rebuild Data Cache"
-msgstr ""
+msgstr "Daten aktualisieren"
 
 #: LifeLineChartView/lifelinechartview.py:552
 msgid "Organize Bookmarks"
@@ -215,7 +215,7 @@ msgstr "Lesezeichen organisieren"
 
 #: LifeLineChartView/lifelinechartview.py:709
 msgid "Export View as SVG"
-msgstr ""
+msgstr "Ansicht als SVG exportieren"
 
 #: LifeLineChartView/lifelinechartview.py:712
 msgid "_Cancel"

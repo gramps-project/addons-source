@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-22 19:12+0200\n"
+"POT-Creation-Date: 2020-05-22 19:26+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -170,7 +170,7 @@ msgstr ""
 
 #: LifeLineChartView/lifelinechartview.gpr.py:275
 #: LifeLineChartView/lifelinechartview.gpr.py:289
-msgid "A view showing parents through a lifelinechart"
+msgid "Persons and their relation in a time based chart"
 msgstr ""
 
 #: LifeLineChartView/lifelinechartview.gpr.py:287
