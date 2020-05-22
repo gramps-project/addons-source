@@ -47,7 +47,7 @@ from gi.repository import PangoCairo
 from copy import deepcopy
 import sys, os
 from life_line_chart import AncestorGraph, DescendantGraph
-from life_line_chart import BaseIndividual, BaseFamily, InstanceContainer, estimate_birth_date, estimate_death_date
+from life_line_chart import BaseIndividual, BaseFamily, InstanceContainer, estimate_birth_date, estimate_death_date, LifeLineChartNotEnoughInformationToDisplay
 from gramps.gen.display.name import displayer as name_displayer
 from gramps.gen.lib import Person, ChildRefType, EventType, FamilyRelType
 from gramps.gen.lib import Date
