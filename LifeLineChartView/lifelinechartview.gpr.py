@@ -239,8 +239,6 @@ life_line_chart_version_required = (1, 3, 5)
 life_line_chart_version_required_str = '.'.join([str(i) for i in life_line_chart_version_required])
 
 try:
-    # logging.error(str(sects))
-    # logging.error(str(inifile.get('lifelinechart_warn.missingmodules')))
     if 'lifelinechartview_warn' not in sects or not inifile.get('lifelinechartview_warn.missingmodules') != 'False':
         _uistate = locals().get('uistate')
     else:
@@ -268,12 +266,15 @@ except Exception as e:
     logging.log(logging.ERROR, 'Failed to load LifeLineChartView plugin.\n' + import_error_message)
 
 if locals().get('uistate') is None or not some_import_error:
+    # Right after the download the plugin is loaded without uistate
+    # If the gui is available, then the error message is shown anyway
+    # so here we can import to avoid additional messages.
     register(VIEW,
              id='lifelinechartancestorview',
              name=_("Life Line Ancestor Chart"),
              category=("Ancestry", _("Charts")),
              description=_("Persons and their relation in a time based chart"),
-             version = '1.1.1',
+             version = '1.1.2',
              gramps_target_version="5.1",
              status=STABLE,
              fname='lifelinechartview.py',
@@ -287,7 +288,7 @@ if locals().get('uistate') is None or not some_import_error:
              name=_("Life Line Descendant Chart"),
              category=("Ancestry", _("Charts")),
              description=_("Persons and their relation in a time based chart"),
-             version = '1.1.1',
+             version = '1.1.2',
              gramps_target_version="5.1",
              status=STABLE,
              fname='lifelinechartview.py',
