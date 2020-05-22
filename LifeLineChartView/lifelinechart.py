@@ -1919,19 +1919,20 @@ class LifeLineChartGrampsGUI:
             menu.append(remove_from_blacklist_item)
 
         try:
-            cof = individual.individual.get_child_of_family()[0]
-            if len(cof.children_individual_ids) > 1:
-                if cof.family_id not in self.chart_configuration['family_children']:
-                    if len(cof.children_individual_ids) > len(cof.graphical_representations[0].visible_children):
-                        show_siblings_item = Gtk.MenuItem(label=_('Show siblings'))
-                        show_siblings_item.connect("activate", self.show_siblings, person_handle)
-                        show_siblings_item.show()
-                        menu.append(show_siblings_item)
-                else:
-                    hide_siblings_item = Gtk.MenuItem(label=_('Hide siblings'))
-                    hide_siblings_item.connect("activate", self.hide_siblings, person_handle)
-                    hide_siblings_item.show()
-                    menu.append(hide_siblings_item)
+            if self.lifeline.chart_class == AncestorGraph:
+                cof = individual.individual.get_child_of_family()[0]
+                if len(cof.children_individual_ids) > 1:
+                    if cof.family_id not in self.chart_configuration['family_children']:
+                        if len(cof.children_individual_ids) > len(cof.graphical_representations[0].visible_children):
+                            show_siblings_item = Gtk.MenuItem(label=_('Show siblings'))
+                            show_siblings_item.connect("activate", self.show_siblings, person_handle)
+                            show_siblings_item.show()
+                            menu.append(show_siblings_item)
+                    else:
+                        hide_siblings_item = Gtk.MenuItem(label=_('Hide siblings'))
+                        hide_siblings_item.connect("activate", self.hide_siblings, person_handle)
+                        hide_siblings_item.show()
+                        menu.append(hide_siblings_item)
         except Exception as e:
             pass
 
