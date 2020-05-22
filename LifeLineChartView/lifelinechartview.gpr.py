@@ -39,7 +39,7 @@ sects = inifile.get_sections()
 
 # sys.path = [os.path.join(USER_PLUGINS, 'LifeLineChartView')] + sys.path
 
-life_line_chart_version_required = (1, 2, 28)
+life_line_chart_version_required = (1, 3, 0)
 try:
     import life_line_chart
     life_line_chart_is_missing = False
@@ -77,7 +77,7 @@ if not wrong_life_line_chart_version and not life_line_chart_is_missing and not 
              name=_("Life Line Ancestor Chart"),
              category=("Ancestry", _("Charts")),
              description=_("A view showing parents through a lifelinechart"),
-             version='1.0.14',
+             version='1.1.0',
              gramps_target_version="5.1",
              status=STABLE,
              fname='lifelinechartview.py',
@@ -91,7 +91,7 @@ if not wrong_life_line_chart_version and not life_line_chart_is_missing and not 
              name=_("Life Line Descendant Chart"),
              category=("Ancestry", _("Charts")),
              description=_("A view showing parents through a lifelinechart"),
-             version='1.0.14',
+             version='1.1.0',
              gramps_target_version="5.1",
              status=STABLE,
              fname='lifelinechartview.py',
