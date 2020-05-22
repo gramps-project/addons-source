@@ -156,7 +156,7 @@ class ModuleProvider:
             if prompt == True:
                 # dont ask me again
                 inifile.register(self.plugin_name.lower()+'_warn.missingmodules', "")
-                inifile.set(self.plugin_name.lower()+'_warn.missingmodules', "True")
+                inifile.set(self.plugin_name.lower()+'_warn.missingmodules', "False")
                 inifile.save()
                 logging.warning(self.plugin_name + ': ' + _('The user chose to deactivate further warnings.'))
                 return None
@@ -170,7 +170,7 @@ class ModuleProvider:
                 self.load_addon_file(source_link, output_path=output_path, callback=print)
                 module = self.check_for(module_name, module_version)
                 return module
-            return None
+        return None
 
     def load_addon_file(self, path, output_path, callback=None):
         """
@@ -267,13 +267,13 @@ except Exception as e:
     import_error_message = traceback.format_exc()
     logging.log(logging.ERROR, 'Failed to load LifeLineChartView plugin.\n' + import_error_message)
 
-if not some_import_error:
+if locals().get('uistate') is None or not some_import_error:
     register(VIEW,
              id='lifelinechartancestorview',
              name=_("Life Line Ancestor Chart"),
              category=("Ancestry", _("Charts")),
              description=_("A view showing parents through a lifelinechart"),
-             version='1.1.0',
+             version = '1.1.1',
              gramps_target_version="5.1",
              status=STABLE,
              fname='lifelinechartview.py',
@@ -287,7 +287,7 @@ if not some_import_error:
              name=_("Life Line Descendant Chart"),
              category=("Ancestry", _("Charts")),
              description=_("A view showing parents through a lifelinechart"),
-             version='1.1.0',
+             version = '1.1.1',
              gramps_target_version="5.1",
              status=STABLE,
              fname='lifelinechartview.py',
@@ -297,6 +297,7 @@ if not some_import_error:
              stock_icon='gramps-lifelinedescendantchart-bw',
              )
 
+if not some_import_error:
     inifile.register('lifelinechart_warn.missingmodules', "")
-    inifile.set('lifelinechart_warn.missingmodules', "False")
+    inifile.set('lifelinechart_warn.missingmodules', "True")
     inifile.save()
