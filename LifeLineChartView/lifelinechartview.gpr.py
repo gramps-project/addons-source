@@ -153,18 +153,18 @@ class ModuleProvider:
                 _("Download module"),
                 parent=self.uistate.window)
             prompt = ok_no_cancel.run()
-            if prompt is True:
+            if prompt == True:
                 # dont ask me again
                 inifile.register(self.plugin_name.lower()+'_warn.missingmodules', "")
                 inifile.set(self.plugin_name.lower()+'_warn.missingmodules', "True")
                 inifile.save()
                 logging.warning(self.plugin_name + ': ' + _('The user chose to deactivate further warnings.'))
                 return None
-            elif prompt is -1:
+            elif prompt == -1:
                 #cancel
                 logging.info(self.plugin_name + ': ' + _('The user chose to ignore the warning once.'))
                 return None
-            elif prompt is False:
+            elif prompt == False:
                 logging.info(self.plugin_name + ': ' + _('The user chose to install the module.'))
                 output_path = os.path.join(USER_PLUGINS, self.plugin_name)
                 self.load_addon_file(source_link, output_path=output_path, callback=print)
