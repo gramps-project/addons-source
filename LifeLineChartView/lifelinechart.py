@@ -152,6 +152,8 @@ class GrampsIndividual(BaseIndividual):
         self._gramps_person = self._dbstate.db.get_person_from_handle(
             individual_id)
         self._initialize()
+        if self.events['birth_or_christening'] is None or self.events['death_or_burial'] is None:
+            raise LifeLineChartNotEnoughInformationToDisplay()
 
     def _initialize(self):
         BaseIndividual._initialize(self)
