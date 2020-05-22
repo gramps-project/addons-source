@@ -353,6 +353,10 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
                 },
             },
         }
+        if self.chart_class == DescendantGraph:
+            self.gui_config.pop('compress')
+            self.gui_config.pop('flip_to_optimize')
+            self.gui_config.pop('fathers_have_the_same_color')
         for item_name, item_data in self.gui_config.items():
             if item_data['data_container'] == 'positioning':
                 item_data['tab_name'] = llc_positioning_description[item_name]['tab'] if 'tab' in llc_positioning_description[item_name] else 'General Layout'
