@@ -36,7 +36,7 @@ from copy import deepcopy
 #
 # Gramps modules
 #
-# ------------------------------------------------------------------nechart
+# -------------------------------------------------------------------------
 from gramps.gui.views.navigationview import NavigationView
 from gramps.gui.views.bookmarks import PersonBookmarks
 from gramps.gui.utils import SystemFonts
@@ -46,17 +46,24 @@ import lifelinechart
 
 # backend
 from life_line_chart import AncestorChart, DescendantChart, BaseChart
+from life_line_chart.Translation import recursive_merge_dict_members
 
 # the print settings to remember between print sessions
 PRINT_SETTINGS = None
 _ = glocale.translation.sgettext
 
-llc_formatting_description = BaseChart.get_formatting_description()
-llc_positioning_description = BaseChart.get_positioning_description()
-llc_default_formatting = BaseChart.get_default_formatting()
-llc_default_positioning = BaseChart.get_default_positioning()
-llc_chart_configuration_root_individual_description = BaseChart.get_chart_configuration_root_individual_description()
-llc_default_chart_configuration = AncestorChart.get_default_chart_configuration()
+__, llc_default_formatting = recursive_merge_dict_members(
+    DescendantChart.DEFAULT_FORMATTING,
+    AncestorChart.DEFAULT_FORMATTING,
+    remove_unknown_keys=False)
+__, llc_default_positioning = recursive_merge_dict_members(
+    DescendantChart.DEFAULT_POSITIONING,
+    AncestorChart.DEFAULT_POSITIONING,
+    remove_unknown_keys=False)
+__, llc_default_chart_configuration = recursive_merge_dict_members(
+    DescendantChart.DEFAULT_CHART_CONFIGURATION,
+    AncestorChart.DEFAULT_CHART_CONFIGURATION,
+    remove_unknown_keys=False)
 
 class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
     """
@@ -78,292 +85,226 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
         ('interface.lifelineview-individual_photo_relative_size', llc_default_formatting['individual_photo_relative_size']*100),
         )
 
+    allfonts = [x for x in enumerate(
+        SystemFonts().get_system_fonts())]
+
     def __init__(self, pdata, dbstate, uistate, nav_group=0, chart_class=None):
         self.dbstate = dbstate
         self.uistate = uistate
         self.chart_class = chart_class
 
-        self.formatting = deepcopy(llc_default_formatting)
-        self.positioning = deepcopy(llc_default_positioning)
-        self.chart_configuration = deepcopy(llc_default_chart_configuration)
+        self.formatting = self.chart_class.DEFAULT_FORMATTING
+        self.positioning = self.chart_class.DEFAULT_POSITIONING
+        self.chart_configuration = self.chart_class.DEFAULT_CHART_CONFIGURATION
         self.root_individual = {'generations':4}
         self.chart_configuration['root_individuals'] = [self.root_individual]
         self.discovery_blacklist = []
         self.chart_configuration['discovery_blacklist'] = self.discovery_blacklist
-        self.allfonts = [x for x in enumerate(
-            SystemFonts().get_system_fonts())]
 
-        self.gui_config = {
-            'generations': {
-                'description': llc_chart_configuration_root_individual_description['generations']['short_description'],
-                'tooltip': llc_chart_configuration_root_individual_description['generations']['long_description'],
+        if glocale.lang in self.chart_class.SETTINGS_DESCRIPTION:
+            lang_strings = self.chart_class.SETTINGS_DESCRIPTION[glocale.lang]
+        else:
+            lang_strings = self.chart_class.SETTINGS_DESCRIPTION['en_US.UTF-8']
+        llc_formatting_description = lang_strings['formatting']
+        llc_positioning_description = lang_strings['positioning']
+        llc_chart_configuration_root_individual_description = lang_strings['chart_configuration_root_individual']
+
+        container_description = {
+            'root_individual': llc_chart_configuration_root_individual_description,
+            'formatting': llc_formatting_description,
+            'positioning': llc_positioning_description
+        }
+        print(llc_chart_configuration_root_individual_description.keys())
+
+        self.gui_config = {}
+
+        if 'generations' in container_description['root_individual']:
+            self.gui_config['generations']= {
                 'additional_arg': {'range': (1, 100)},
                 'data_container': 'root_individual',
                 'widget': 'spinner',
                 'additional_setter_arg': {}
-            },
-            # 'compression_steps': {
-            #     'description' : 'compression_steps',
-            #     'additional_arg' : {'range':(-1,500)},
-            #     'data_container':'positioning',
-            #     'widget' : 'spinner',
-            #     'additional_setter_arg'  : {}
-            # },
-            'warp_shape': {
-                'description': llc_formatting_description['warp_shape']['short_description'],
-                'tooltip': llc_formatting_description['warp_shape']['long_description'],
-                'additional_arg': {'opts': [a for a in enumerate(list(llc_formatting_description['warp_shape']['choices'].values()))], 'valueactive': True},
-                'additional_setter_arg': {'index_to_name': lambda x: list(llc_formatting_description['warp_shape']['choices'].keys())[x]},
+            }
+        if 'warp_shape' in container_description['formatting']:
+            self.gui_config['warp_shape'] = {
+                'additional_arg': {'opts': [a for a in enumerate(list(container_description['formatting']['warp_shape']['choices'].values()))], 'valueactive': True},
+                'additional_setter_arg': {'index_to_name': lambda x: list(container_description['formatting']['warp_shape']['choices'].keys())[x]},
                 'data_container': 'formatting',
                 'widget': 'combobox',
-            },
-            'flip_to_optimize': {
-                'description': llc_positioning_description['flip_to_optimize']['short_description'],
-                'tooltip': llc_positioning_description['flip_to_optimize']['long_description'],
-                'additional_arg': {},
+            }
+        if 'flip_to_optimize' in container_description['positioning']:
+            self.gui_config['flip_to_optimize'] = {
                 'widget': 'checkbox',
-                'data_container': 'positioning',
-                'additional_setter_arg': {}
-            },
-            'compress': {
-                'description': llc_positioning_description['compress']['short_description'],
-                'tooltip': llc_positioning_description['compress']['long_description'],
-                'additional_arg': {},
+                'data_container': 'positioning'
+            }
+        if 'compress' in container_description['positioning']:
+            self.gui_config['compress'] = {
                 'widget': 'checkbox',
-                'data_container': 'positioning',
-                'additional_setter_arg': {}
-            },
-            'fade_individual_color': {
-                'description': llc_formatting_description['fade_individual_color']['short_description'],
-                'tooltip': llc_formatting_description['fade_individual_color']['long_description'],
-                'additional_arg': {},
+                'data_container': 'positioning'
+            }
+        if 'fade_individual_color' in container_description['formatting']:
+            self.gui_config['fade_individual_color'] = {
                 'widget': 'checkbox',
-                'data_container': 'formatting',
-                'additional_setter_arg': {}
-            },
-            'birth_label_active': {
-                'description': llc_formatting_description['birth_label_active']['short_description'],
-                'tooltip': llc_formatting_description['birth_label_active']['long_description'],
-                'additional_arg': {},
+                'data_container': 'formatting'
+            }
+        if 'birth_label_active' in container_description['formatting']:
+            self.gui_config['birth_label_active'] = {
                 'widget': 'checkbox',
-                'data_container': 'formatting',
-                'additional_setter_arg': {}
-            },
-            # 'birth_label_along_path': {
-            #     'description': llc_formatting_description['birth_label_along_path']['short_description'],
-            #     'tooltip': llc_formatting_description['birth_label_along_path']['long_description'],
-            #     'additional_arg': {},
-            #     'widget': 'checkbox',
-            #     'data_container': 'formatting',
-            #     'additional_setter_arg': {}
-            # },
-            'marriage_label_active': {
-                'description': llc_formatting_description['marriage_label_active']['short_description'],
-                'tooltip': llc_formatting_description['marriage_label_active']['long_description'],
-                'additional_arg': {},
+                'data_container': 'formatting'
+            }
+        if 'marriage_label_active' in container_description['formatting']:
+            self.gui_config['marriage_label_active'] = {
                 'widget': 'checkbox',
-                'data_container': 'formatting',
-                'additional_setter_arg': {}
-            },
-            'death_label_active': {
-                'description': llc_formatting_description['death_label_active']['short_description'],
-                'tooltip': llc_formatting_description['death_label_active']['long_description'],
-                'additional_arg': {},
+                'data_container': 'formatting'
+            }
+        if 'death_label_active' in container_description['formatting']:
+            self.gui_config['death_label_active'] = {
                 'widget': 'checkbox',
-                'data_container': 'formatting',
-                'additional_setter_arg': {}
-            },
-            'vertical_step_size': {
-                'description': llc_formatting_description['vertical_step_size']['short_description'],
-                'tooltip': llc_formatting_description['vertical_step_size']['long_description'],
+                'data_container': 'formatting'
+            }
+        if 'vertical_step_size' in container_description['formatting']:
+            self.gui_config['vertical_step_size'] = {
                 'additional_arg': {'range': (1, 100)},
                 'data_container': 'formatting',
                 'widget': 'slider',
                 'additional_setter_arg': {}
-            },
-            'relative_line_thickness': {
-                'description': llc_formatting_description['relative_line_thickness']['short_description'],
-                'tooltip': llc_formatting_description['relative_line_thickness']['long_description'],
+            }
+        if 'relative_line_thickness' in container_description['formatting']:
+            self.gui_config['relative_line_thickness'] = {
                 'additional_arg': {'range': (1, 100)},
                 'data_container': 'formatting',
                 'widget': 'slider',
                 'additional_setter_arg': {
                     'value_decode': lambda x: x/100.,
                     'value_encode': lambda x: int(x*100)
-                },
-            },
-            'total_height': {
-                'description': llc_formatting_description['total_height']['short_description'],
-                'tooltip': llc_formatting_description['total_height']['long_description'],
+                }
+            }
+        if 'total_height' in container_description['formatting']:
+            self.gui_config['total_height'] = {
                 'additional_arg': {'range': (500, 5000)},
                 'data_container': 'formatting',
                 'widget': 'slider',
                 'additional_setter_arg': {}
-            },
-            'fathers_have_the_same_color': {
-                'description': llc_positioning_description['fathers_have_the_same_color']['short_description'],
-                'tooltip': llc_positioning_description['fathers_have_the_same_color']['long_description'],
-                'additional_arg': {},
+            }
+        if 'fathers_have_the_same_color' in container_description['positioning']:
+            self.gui_config['fathers_have_the_same_color'] = {
                 'widget': 'checkbox',
-                'data_container': 'positioning',
-                'additional_setter_arg': {}
-            },
-            'font_name': {
-                'description': llc_formatting_description['font_name']['short_description'],
-                'tooltip': llc_formatting_description['font_name']['long_description'],
+                'data_container': 'positioning'
+            }
+        if 'font_name' in container_description['formatting']:
+            self.gui_config['font_name'] = {
                 'additional_arg': {'opts': self.allfonts, 'valueactive': True},
                 'additional_setter_arg': {'index_to_name': lambda x: self.allfonts[x][1]},
                 'data_container': 'formatting',
                 'widget': 'combobox',
-            },
-            'family_shape': {
-                'description': llc_formatting_description['family_shape']['short_description'],
-                'tooltip': llc_formatting_description['family_shape']['long_description'],
-                'additional_arg': {'opts': [a for a in enumerate(list(llc_formatting_description['family_shape']['choices'].values()))], 'valueactive': True},
-                'additional_setter_arg': {'index_to_name': lambda x: list(llc_formatting_description['family_shape']['choices'].keys())[x]},
+            }
+        if 'family_shape' in container_description['formatting']:
+            self.gui_config['family_shape'] = {
+                'additional_arg': {'opts': [a for a in enumerate(list(container_description['formatting']['family_shape']['choices'].values()))], 'valueactive': True},
+                'additional_setter_arg': {'index_to_name': lambda x: list(container_description['formatting']['family_shape']['choices'].keys())[x]},
                 'data_container': 'formatting',
                 'widget': 'combobox',
-            },
-            'font_size_description': {
-                'description': llc_formatting_description['font_size_description']['short_description'],
-                'tooltip': llc_formatting_description['font_size_description']['long_description'],
+            }
+        if 'font_size_description' in container_description['formatting']:
+            self.gui_config['font_size_description'] = {
                 'additional_arg': {'range': (1, 200)},
                 'data_container': 'formatting',
                 'widget': 'slider',
                 'additional_setter_arg': {
                     'value_decode': lambda x: x/100.,
                     'value_encode': lambda x: int(x*100)
-                },
-            },
-            'birth_label_rotation': {
-                'description': llc_formatting_description['birth_label_rotation']['short_description'],
-                'tooltip': llc_formatting_description['birth_label_rotation']['long_description'],
-                'additional_arg': {'col_attach' : 1},
-                'additional_setter_arg': {
-                    'value_decode': lambda x: float(x),
-                    'value_encode': lambda x: str(x)
-                },
+                }
+            }
+        if 'birth_label_rotation' in container_description['formatting']:
+            self.gui_config['birth_label_rotation'] = {
                 'data_container': 'formatting',
                 'widget': 'lineedit',
-            },
-            'birth_label_letter_x_offset': {
-                'description': llc_formatting_description['birth_label_letter_x_offset']['short_description'],
-                'tooltip': llc_formatting_description['birth_label_letter_x_offset']['long_description'],
-                'additional_arg': {'col_attach' : 1},
-                'additional_setter_arg': {
-                    'value_decode': lambda x: float(x),
-                    'value_encode': lambda x: str(x)
-                },
+            }
+        if 'birth_label_letter_x_offset' in container_description['formatting']:
+            self.gui_config['birth_label_letter_x_offset'] = {
                 'data_container': 'formatting',
                 'widget': 'lineedit',
-            },
-            'birth_label_letter_y_offset': {
-                'description': llc_formatting_description['birth_label_letter_y_offset']['short_description'],
-                'tooltip': llc_formatting_description['birth_label_letter_y_offset']['long_description'],
-                'additional_arg': {'col_attach' : 1},
-                'additional_setter_arg': {
-                    'value_decode': lambda x: float(x),
-                    'value_encode': lambda x: str(x)
-                },
+            }
+        if 'birth_label_letter_y_offset' in container_description['formatting']:
+            self.gui_config['birth_label_letter_y_offset'] = {
                 'data_container': 'formatting',
                 'widget': 'lineedit',
-            },
-            'birth_label_anchor': {
-                'description': llc_formatting_description['birth_label_anchor']['short_description'],
-                'tooltip': llc_formatting_description['birth_label_anchor']['long_description'],
-                'additional_arg': {'opts': [a for a in enumerate(list(llc_formatting_description['birth_label_anchor']['choices'].values()))], 'valueactive': True},
-                'additional_setter_arg': {'index_to_name': lambda x: list(llc_formatting_description['birth_label_anchor']['choices'].keys())[x]},
+            }
+        if 'birth_label_anchor' in container_description['formatting']:
+            self.gui_config['birth_label_anchor'] = {
+                'additional_arg': {'opts': [a for a in enumerate(list(container_description['formatting']['birth_label_anchor']['choices'].values()))], 'valueactive': True},
+                'additional_setter_arg': {'index_to_name': lambda x: list(container_description['formatting']['birth_label_anchor']['choices'].keys())[x]},
                 'data_container': 'formatting',
                 'widget': 'combobox',
-            },
-            'birth_label_wrapping_active': {
-                'description': llc_formatting_description['birth_label_wrapping_active']['short_description'],
-                'tooltip': llc_formatting_description['birth_label_wrapping_active']['long_description'],
-                'additional_arg': {},
+            }
+        if 'birth_label_wrapping_active' in container_description['formatting']:
+            self.gui_config['birth_label_wrapping_active'] = {
                 'widget': 'checkbox',
-                'data_container': 'formatting',
-                'additional_setter_arg': {}
-            },
-            'death_label_rotation': {
-                'description': llc_formatting_description['death_label_rotation']['short_description'],
-                'tooltip': llc_formatting_description['death_label_rotation']['long_description'],
-                'additional_arg': {'col_attach' : 1},
-                'additional_setter_arg': {
-                    'value_decode': lambda x: float(x),
-                    'value_encode': lambda x: str(x)
-                },
+                'data_container': 'formatting'
+            }
+        if 'death_label_rotation' in container_description['formatting']:
+            self.gui_config['death_label_rotation'] = {
                 'data_container': 'formatting',
                 'widget': 'lineedit',
-            },
-            'death_label_letter_x_offset': {
-                'description': llc_formatting_description['death_label_letter_x_offset']['short_description'],
-                'tooltip': llc_formatting_description['death_label_letter_x_offset']['long_description'],
-                'additional_arg': {'col_attach' : 1},
-                'additional_setter_arg': {
-                    'value_decode': lambda x: float(x),
-                    'value_encode': lambda x: str(x)
-                },
+            }
+        if 'death_label_letter_x_offset' in container_description['formatting']:
+            self.gui_config['death_label_letter_x_offset'] = {
                 'data_container': 'formatting',
                 'widget': 'lineedit',
-            },
-            'death_label_letter_y_offset': {
-                'description': llc_formatting_description['death_label_letter_y_offset']['short_description'],
-                'tooltip': llc_formatting_description['death_label_letter_y_offset']['long_description'],
-                'additional_arg': {'col_attach' : 1},
-                'additional_setter_arg': {
-                    'value_decode': lambda x: float(x),
-                    'value_encode': lambda x: str(x)
-                },
+            }
+        if 'death_label_letter_y_offset' in container_description['formatting']:
+            self.gui_config['death_label_letter_y_offset'] = {
                 'data_container': 'formatting',
                 'widget': 'lineedit',
-            },
-            'death_label_anchor': {
-                'description': llc_formatting_description['death_label_anchor']['short_description'],
-                'tooltip': llc_formatting_description['death_label_anchor']['long_description'],
-                'additional_arg': {'opts': [a for a in enumerate(list(llc_formatting_description['death_label_anchor']['choices'].values()))], 'valueactive': True},
-                'additional_setter_arg': {'index_to_name': lambda x: list(llc_formatting_description['death_label_anchor']['choices'].keys())[x]},
+            }
+        if 'death_label_anchor' in container_description['formatting']:
+            self.gui_config['death_label_anchor'] = {
+                'additional_arg': {'opts': [a for a in enumerate(list(container_description['formatting']['death_label_anchor']['choices'].values()))], 'valueactive': True},
+                'additional_setter_arg': {'index_to_name': lambda x: list(container_description['formatting']['death_label_anchor']['choices'].keys())[x]},
                 'data_container': 'formatting',
                 'widget': 'combobox',
-            },
-            'death_label_wrapping_active': {
-                'description': llc_formatting_description['death_label_wrapping_active']['short_description'],
-                'tooltip': llc_formatting_description['death_label_wrapping_active']['long_description'],
-                'additional_arg': {},
+            }
+        if 'death_label_wrapping_active' in container_description['formatting']:
+            self.gui_config['death_label_wrapping_active'] = {
                 'widget': 'checkbox',
-                'data_container': 'formatting',
-                'additional_setter_arg': {}
-            },
-            'individual_photo_active': {
-                'description': llc_formatting_description['individual_photo_active']['short_description'],
-                'tooltip': llc_formatting_description['individual_photo_active']['long_description'],
-                'additional_arg': {},
+                'data_container': 'formatting'
+            }
+        if 'individual_photo_active' in container_description['formatting']:
+            self.gui_config['individual_photo_active'] = {
                 'widget': 'checkbox',
-                'data_container': 'formatting',
-                'additional_setter_arg': {}
-            },
-            'individual_photo_relative_size': {
-                'description': llc_formatting_description['individual_photo_relative_size']['short_description'],
-                'tooltip': llc_formatting_description['individual_photo_relative_size']['long_description'],
+                'data_container': 'formatting'
+            }
+        if 'individual_photo_relative_size' in container_description['formatting']:
+            self.gui_config['individual_photo_relative_size'] = {
                 'additional_arg': {'range': (1, 500)},
                 'data_container': 'formatting',
                 'widget': 'slider',
                 'additional_setter_arg': {
                     'value_decode': lambda x: x/100.,
                     'value_encode': lambda x: int(x*100)
-                },
-            },
-        }
-        if self.chart_class == DescendantChart:
-            self.gui_config.pop('compress')
-            self.gui_config.pop('flip_to_optimize')
-            self.gui_config.pop('fathers_have_the_same_color')
+                }
+            }
+
+        for k in list(self.gui_config.keys()):
+            if k not in lang_strings['positioning'] and \
+                    k not in lang_strings['formatting'] and \
+                    k not in lang_strings['chart_configuration_root_individual']:
+                self.gui_config.pop(k)
         for item_name, item_data in self.gui_config.items():
-            if item_data['data_container'] == 'positioning':
-                item_data['tab_name'] = llc_positioning_description[item_name]['tab'] if 'tab' in llc_positioning_description[item_name] else 'General Layout'
-            elif item_data['data_container'] == 'formatting':
-                item_data['tab_name'] = llc_formatting_description[item_name]['tab'] if 'tab' in llc_formatting_description[item_name] else 'General Layout'
-            elif item_data['data_container'] == 'root_individual':
-                item_data['tab_name'] = llc_chart_configuration_root_individual_description[item_name]['tab'] if 'tab' in llc_chart_configuration_root_individual_description[item_name] else 'General Layout'
+            container = container_description[item_data['data_container']]
+            item_data['tab_name'] = container[item_name]['tab'] if 'tab' in container[item_name] else 'General Layout'
+            item_data['description'] = container[item_name]['short_description']
+            item_data['tooltip'] = container[item_name]['long_description']
+            if item_data['widget'] == 'checkbox':
+                item_data['additional_arg']= {}
+                item_data['additional_setter_arg']= {}
+            if item_data['widget'] == 'lineedit':
+                item_data['additional_arg']= {'col_attach' : 1}
+                item_data['additional_setter_arg'] = {
+                    'value_decode': lambda x: float(x),
+                    'value_encode': lambda x: str(x)
+                }
+
         NavigationView.__init__(self, _('Life Line Chart'),
                                 pdata, dbstate, uistate,
                                 PersonBookmarks, nav_group)

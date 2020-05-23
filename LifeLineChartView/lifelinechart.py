@@ -1145,14 +1145,15 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                     self.chart_configuration['discovery_blacklist'].remove(handle)
 
                 unavailable_items = []
-                for handle in self.chart_configuration['family_children']:
-                    try:
-                        family = self.life_line_chart_instance._instances[(
-                            'f', handle)]
-                    except:
-                        unavailable_items.append(handle)
-                for handle in unavailable_items:
-                    self.chart_configuration['family_children'].remove(handle)
+                if 'family_children' in self.chart_configuration:
+                    for handle in self.chart_configuration['family_children']:
+                        try:
+                            family = self.life_line_chart_instance._instances[(
+                                'f', handle)]
+                        except:
+                            unavailable_items.append(handle)
+                    for handle in unavailable_items:
+                        self.chart_configuration['family_children'].remove(handle)
 
                 self.chart_configuration['root_individuals'][0]['individual_id'] = root_person_handle
                 self.life_line_chart_instance.set_formatting(self.formatting)
@@ -1851,11 +1852,12 @@ class LifeLineChartGrampsGUI:
             pass
 
     def show_siblings(self, obj, person_handle):
-        individual = self.lifeline.life_line_chart_instance._instances[(
-            'i', person_handle)]
-        self.chart_configuration['family_children'].append(individual.get_child_of_family()[0].family_id)
-        root_person_handle = self.get_active('Person')
-        self.lifeline.set_values(root_person_handle, self.generic_filter)
+        if 'family_children' in self.chart_configuration:
+            individual = self.lifeline.life_line_chart_instance._instances[(
+                'i', person_handle)]
+            self.chart_configuration['family_children'].append(individual.get_child_of_family()[0].family_id)
+            root_person_handle = self.get_active('Person')
+            self.lifeline.set_values(root_person_handle, self.generic_filter)
 
     def hide_siblings(self, obj, person_handle):
         individual = self.lifeline.life_line_chart_instance._instances[(
