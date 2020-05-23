@@ -1041,6 +1041,7 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
         """
         self.chart_class = chart_class
         self.rootpersonh = None
+        self.rebuild_next_time = True
         self.formatting = None
         self.positioning = None
         self.chart_configuration = None
@@ -1068,7 +1069,7 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
         """
 
         reset = False
-        if self.rootpersonh != root_person_handle:  # or self.filter != filtr:
+        if self.rootpersonh != root_person_handle or self.rebuild_next_time:  # or self.filter != filtr:
             reset = True
         new_filter = self.filter != filtr
         self.filter = filtr
@@ -1193,10 +1194,15 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
         except:
             pass
 
-    def rebuild_instance_cache(self, _button=None):
+    def clear_instance_cache(self, _button=None):
         if self.life_line_chart_instance:
+            self.rebuild_next_time = True
             self.life_line_chart_instance.clear_graphical_representations()
             self.life_line_chart_instance._instances.clear()
+
+    def rebuild_instance_cache(self, _button=None):
+        self.clear_instance_cache()
+        if self.life_line_chart_instance:
             rp = self.rootpersonh
             self.rootpersonh = None
             self.set_values(rp, self.filter)
