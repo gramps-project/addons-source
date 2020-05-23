@@ -435,7 +435,7 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
         # add view-refresh button
         self.view_refresh_btn = Gtk.Button.new_from_icon_name('view-refresh',
                                                          Gtk.IconSize.MENU)
-        self.view_refresh_btn.set_tooltip_text(_('Rebuild Data Cache'))
+        self.view_refresh_btn.set_tooltip_text(_('Rebuild data cache'))
         self.toolbar.pack_start(self.view_refresh_btn, False, False, 1)
         self.view_refresh_btn.connect("clicked", self.lifeline.rebuild_instance_cache)
 
@@ -443,7 +443,7 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
         self.toolbar.pack_start(Gtk.Label(), True, True, 1)
 
         # add view-refresh button
-        self.help_btn = Gtk.Button(_('Open Help'), Gtk.IconSize.MENU)
+        self.help_btn = Gtk.Button(_('Open Life Line Chart help'), Gtk.IconSize.MENU)
         self.toolbar.pack_start(self.help_btn, False, False, 1)
         self.help_btn.connect("clicked", self.on_help_clicked)
 
