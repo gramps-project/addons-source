@@ -235,7 +235,7 @@ class ModuleProvider:
         raise NotImplementedError()
 
 
-life_line_chart_version_required = (1, 3, 5)
+life_line_chart_version_required = (1, 3, 6)
 life_line_chart_version_required_str = '.'.join([str(i) for i in life_line_chart_version_required])
 
 try:
@@ -274,7 +274,7 @@ if locals().get('uistate') is None or not some_import_error:
              name=_("Life Line Ancestor Chart"),
              category=("Ancestry", _("Charts")),
              description=_("Persons and their relation in a time based chart"),
-             version = '1.1.2',
+             version = '1.1.3',
              gramps_target_version="5.1",
              status=STABLE,
              fname='lifelinechartview.py',
@@ -288,7 +288,7 @@ if locals().get('uistate') is None or not some_import_error:
              name=_("Life Line Descendant Chart"),
              category=("Ancestry", _("Charts")),
              description=_("Persons and their relation in a time based chart"),
-             version = '1.1.2',
+             version = '1.1.3',
              gramps_target_version="5.1",
              status=STABLE,
              fname='lifelinechartview.py',
