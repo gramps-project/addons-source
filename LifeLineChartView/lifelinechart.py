@@ -1125,7 +1125,7 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                                 date_ov = datetime.date(*[i if i != 0 else 1 for i in media.date.get_ymd()]).toordinal()
                                 date_ov = max(date_ov, individual.events['birth_or_christening']['date'].date().toordinal() + 1)
                             else:
-                                date_ov = individual.events['birth_or_christening']['date'].date().toordinal() + i*365*5 + 1
+                                date_ov = individual.events['birth_or_christening']['date'].date().toordinal() + int((i+1)*365*5) + 1
                             image_path = get_thumbnail_path(path, media.mime, size=SIZE_NORMAL)
                             thumbnail = GdkPixbuf.Pixbuf.new_from_file(image_path)
                             images[date_ov] = {
