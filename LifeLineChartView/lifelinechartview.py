@@ -39,7 +39,9 @@ from copy import deepcopy
 # -------------------------------------------------------------------------
 from gramps.gui.views.navigationview import NavigationView
 from gramps.gui.views.bookmarks import PersonBookmarks
+from gramps.gui.display import display_url
 from gramps.gui.utils import SystemFonts
+from gramps.gen.config import config
 
 # widget
 import lifelinechart
@@ -47,6 +49,8 @@ import lifelinechart
 # backend
 from life_line_chart import AncestorChart, DescendantChart, BaseChart
 from life_line_chart.Translation import recursive_merge_dict_members
+
+WIKI_PAGE = 'https://gramps-project.org/wiki/index.php?title=LifeLineChartView'
 
 # the print settings to remember between print sessions
 PRINT_SETTINGS = None
@@ -65,12 +69,16 @@ __, llc_default_chart_configuration = recursive_merge_dict_members(
     AncestorChart.DEFAULT_CHART_CONFIGURATION,
     remove_unknown_keys=False)
 
+
 class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
     """
     The Gramplet code that realizes the LifeLineChartWidget.
     """
     # settings in the config file, Needs to be preset only for values with wrong data format
-    CONFIGSETTINGS = (
+    CONFIGSETTINGS = ()
+
+    # settings for both charts
+    GLOBALCONFIGSETTINGS = (
         ('interface.lifelineview-generations', 4),
         ('interface.lifelineview-background', lifelinechart.BACKGROUND_GRAD_GEN),
         ('interface.lifelineview-showid', False),
@@ -92,9 +100,9 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
         self.dbstate = dbstate
         self.uistate = uistate
         self.chart_class = chart_class
+        self.formatting = deepcopy(llc_default_formatting)
+        self.positioning = deepcopy(llc_default_positioning)
 
-        self.formatting = self.chart_class.DEFAULT_FORMATTING
-        self.positioning = self.chart_class.DEFAULT_POSITIONING
         self.chart_configuration = self.chart_class.DEFAULT_CHART_CONFIGURATION
         self.root_individual = {'generations':4}
         self.chart_configuration['root_individuals'] = [self.root_individual]
@@ -117,7 +125,6 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
             'formatting': llc_formatting_description,
             'positioning': llc_positioning_description
         }
-        print(llc_chart_configuration_root_individual_description.keys())
 
         self.gui_config = {}
 
@@ -295,7 +302,7 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
                 self.gui_config.pop(k)
         for item_name, item_data in self.gui_config.items():
             container = container_description[item_data['data_container']]
-            item_data['tab_name'] = container[item_name]['tab'] if 'tab' in container[item_name] else 'General Layout'
+            item_data['tab_name'] = container[item_name]['tab'] if 'tab' in container[item_name] else _('General Layout')
             item_data['description'] = container[item_name]['short_description']
             item_data['tooltip'] = container[item_name]['long_description']
             if item_data['widget'] == 'checkbox':
@@ -313,6 +320,25 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
                                 PersonBookmarks, nav_group)
         lifelinechart.LifeLineChartGrampsGUI.__init__(
             self, self.on_childmenu_changed)
+
+        # high quality hack to use one config file for two views
+        self.__config = self._config
+        self._config = _global_config
+        self.config_connect()
+
+        self.generic_filter = None
+        self.alpha_filter = 0.2
+        self.scrolledwindow = None
+        self.copy_CONFIG_settings_to_life_line_settings()
+
+        dbstate.connect('active-changed', self.active_changed)
+        dbstate.connect('database-changed', self.change_db)
+
+        self.additional_uis.append(self.additional_ui)
+
+        self.uistate.connect('font-changed', self.font_changed)
+
+    def copy_CONFIG_settings_to_life_line_settings(self):
         # set needed values
         scg = self._config.get
         for key, value in self.formatting.items():
@@ -331,21 +357,8 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
                 self.positioning[key] = self._config.get(
                     'interface.lifelineview-'+key)
         self.root_individual['generations'] = self._config.get('interface.lifelineview-generations')
-
-
         self.fonttype = scg('interface.lifelineview-font_name')
-
         self.showid = scg('interface.lifelineview-showid')
-        self.generic_filter = None
-        self.alpha_filter = 0.2
-        self.scrolledwindow = None
-
-        dbstate.connect('active-changed', self.active_changed)
-        dbstate.connect('database-changed', self.change_db)
-
-        self.additional_uis.append(self.additional_ui)
-
-        self.uistate.connect('font-changed', self.font_changed)
 
     def font_changed(self):
         self.format_helper.reload_symbols()
@@ -426,6 +439,14 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
         self.toolbar.pack_start(self.view_refresh_btn, False, False, 1)
         self.view_refresh_btn.connect("clicked", self.lifeline.rebuild_instance_cache)
 
+        # spacer
+        self.toolbar.pack_start(Gtk.Label(), True, True, 1)
+
+        # add view-refresh button
+        self.help_btn = Gtk.Button(_('Open Help'), Gtk.IconSize.MENU)
+        self.toolbar.pack_start(self.help_btn, False, False, 1)
+        self.help_btn.connect("clicked", self.on_help_clicked)
+
         #self.vbox.pack_start(self.scrolledwindow, True, True, 0)
 
         self.hbox_split_view = Gtk.Box(homogeneous=False, spacing=4,
@@ -441,6 +462,12 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
         gen_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
 
         return self.vbox # self.scrolledwindow
+
+    def on_help_clicked(self, obj):
+        """
+        Display the relevant portion of manual.
+        """
+        display_url(WIKI_PAGE)
 
     def get_stock(self):
         """
@@ -573,6 +600,7 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
         However, change in generic filter also triggers build_tree ! So we
         need to reset.
         """
+        self.copy_CONFIG_settings_to_life_line_settings()
         self.update()
 
     def active_changed(self, handle):
@@ -604,7 +632,12 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
         self._change_db(db)
         if self.active:
             self.bookmarks.redraw()
-        self.update()
+        if db.is_open():
+            # ignore dummydb calls
+            if self.active:
+                self.update()
+            else:
+                self.lifeline.clear_instance_cache()
 
     def update(self):
         """
@@ -635,7 +668,11 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
         Redraw the lifeline chart for the person
         """
         dummy_args = args
-        self.update()
+        if self.active:
+            self.lifeline.clear_instance_cache()
+            self.main()
+        else:
+            self.lifeline.clear_instance_cache()
 
     def person_rebuild_bm(self, *args):
         """Large change to person database"""
@@ -703,8 +740,8 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
         :return: list of functions
         """
         return [
-            lambda configdialog, tab_name='General Layout': self.config_panel(configdialog, tab_name),
-            lambda configdialog, tab_name='Label Configuration': self.config_panel(configdialog, tab_name)
+            lambda configdialog, tab_name=_('General Layout'): self.config_panel(configdialog, tab_name),
+            lambda configdialog, tab_name=_('Label Configuration'): self.config_panel(configdialog, tab_name)
             ]
 
     def config_panel(self, configdialog, tab_name):
@@ -825,6 +862,10 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
         #self, obj, constant, value_name):
         value = (entry == 'True')
         container = getattr(self, container)
+
+        # not working correctly when using two classes with one file
+        self._config.set('interface.lifelineview-'+value_name, value)
+
         if container[value_name] != value:
             container[value_name] = value
             #self._config.set(cnxn_id, container[value_name]) # is done by connection... self explaining stuff, why this is handled differently
@@ -866,6 +907,21 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
                 ())
 
 
+
+# fix the fact that the config is static
+for key, value in list(llc_default_formatting.items()) + list(llc_default_positioning.items()):
+    def config_has_key(name):
+        for a, b in LifeLineChartView.GLOBALCONFIGSETTINGS:
+            if a == name:
+                return True
+        return False
+    gramps_key = 'interface.lifelineview-' + key
+    if not config_has_key(gramps_key):
+        LifeLineChartView.GLOBALCONFIGSETTINGS = LifeLineChartView.GLOBALCONFIGSETTINGS + \
+            ((gramps_key, value),)
+
+
+
 class LifeLineChartAncestorView(LifeLineChartView):
     def __init__(self, pdata, dbstate, uistate, nav_group=0):
         LifeLineChartView.__init__(self, pdata, dbstate, uistate, nav_group, AncestorChart)
@@ -876,14 +932,9 @@ class LifeLineChartDescendantView(LifeLineChartView):
 
 
 
-# fix the fact that the config is static
-for key, value in list(llc_default_formatting.items()) + list(llc_default_positioning.items()):
-    def config_has_key(name):
-        for a, b in LifeLineChartView.CONFIGSETTINGS:
-            if a == name:
-                return True
-        return False
-    gramps_key = 'interface.lifelineview-' + key
-    if not config_has_key(gramps_key):
-        LifeLineChartView.CONFIGSETTINGS = LifeLineChartView.CONFIGSETTINGS + \
-            ((gramps_key, value),)
+# static object to use the same config file
+_global_config = config.register_manager("Ancestry_lifelinechartview",
+                                        use_config_path=True)
+for section, value in LifeLineChartView.GLOBALCONFIGSETTINGS:
+    _global_config.register(section, value)
+_global_config.init()
