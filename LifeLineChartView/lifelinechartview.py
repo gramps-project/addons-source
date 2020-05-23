@@ -101,9 +101,12 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
         self.discovery_blacklist = []
         self.chart_configuration['discovery_blacklist'] = self.discovery_blacklist
 
-        if glocale.lang in self.chart_class.SETTINGS_DESCRIPTION:
-            lang_strings = self.chart_class.SETTINGS_DESCRIPTION[glocale.lang]
-        else:
+        lang_strings = None
+        for lang in self.chart_class.SETTINGS_DESCRIPTION.keys():
+            if lang.startswith(glocale.lang):
+                lang_strings = self.chart_class.SETTINGS_DESCRIPTION[lang]
+                break
+        if not lang_strings:
             lang_strings = self.chart_class.SETTINGS_DESCRIPTION['en_US.UTF-8']
         llc_formatting_description = lang_strings['formatting']
         llc_positioning_description = lang_strings['positioning']
