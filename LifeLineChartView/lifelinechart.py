@@ -530,6 +530,7 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         self.dupcolor = None
         self.surface = None
         self.goto = None
+        self._tooltip_individual_cache = None
         self.on_popup = callback_popup
         self.last_x, self.last_y = None, None
         self.fontsize = 8
@@ -935,7 +936,10 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
                 (event.y + self.upper_left_view_position[1])/self.zoom_level)
             self.mouse_x, self.mouse_y = event.x, event.y
             tooltip = ""
-            if individual:
+            if individual and (
+                        self._tooltip_individual_cache is None or \
+                        self._tooltip_individual_cache != individual.individual_id):
+                self._tooltip_individual_cache = individual.individual_id
                 tooltip = individual.individual.short_info_text
                 tooltip += '\nGramps id: ' + individual.individual._gramps_person.get_gramps_id()
             self.set_tooltip_text(tooltip)
