@@ -407,14 +407,20 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
         # add zoom-in button
         self.zoom_in_btn = Gtk.Button.new_from_icon_name('zoom-in',
                                                          Gtk.IconSize.MENU)
-        self.zoom_in_btn.set_tooltip_text(_('Zoom in'))
+        self.zoom_in_btn.set_tooltip_text(
+            _('Zoom in') + '\n'
+            + _('Ctrl') + ' & "+"\n'
+            + _('Ctrl') + ' & ' + _('Mouse wheel'))
         self.toolbar.pack_start(self.zoom_in_btn, False, False, 1)
         self.zoom_in_btn.connect("clicked", self.lifeline.zoom_in)
 
         # add zoom-out button
         self.zoom_out_btn = Gtk.Button.new_from_icon_name('zoom-out',
                                                           Gtk.IconSize.MENU)
-        self.zoom_out_btn.set_tooltip_text(_('Zoom out'))
+        self.zoom_out_btn.set_tooltip_text(
+            _('Zoom out') + '\n'
+            + _('Ctrl') + ' & "-"\n'
+            + _('Ctrl') + ' & ' + _('Mouse wheel'))
         self.toolbar.pack_start(self.zoom_out_btn, False, False, 1)
         self.zoom_out_btn.connect("clicked", self.lifeline.zoom_out)
 
