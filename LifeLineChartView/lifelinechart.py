@@ -729,12 +729,14 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         """grab key press
         """
         dummy_widget = widget
-        if Gdk.keyval_name(eventkey.keyval) == 'plus':
-            self.zoom_in()
-            return True
-        if Gdk.keyval_name(eventkey.keyval) == 'minus':
-            self.zoom_out()
-            return True
+        accel_mask = Gtk.accelerator_get_default_mod_mask()
+        if eventkey.state & accel_mask == Gdk.ModifierType.CONTROL_MASK:
+            if Gdk.keyval_name(eventkey.keyval) == 'plus':
+                self.zoom_in()
+                return True
+            if Gdk.keyval_name(eventkey.keyval) == 'minus':
+                self.zoom_out()
+                return True
         if Gdk.keyval_name(eventkey.keyval) in ['Control_L', 'Control_R']:
             try:
                 cursor = Gdk.Cursor.new_from_name(widget.get_display(), 'grab')
