@@ -50,7 +50,7 @@ import lifelinechart
 from life_line_chart import AncestorChart, DescendantChart, BaseChart
 from life_line_chart.Translation import recursive_merge_dict_members
 
-WIKI_PAGE = 'https://gramps-project.org/wiki/index.php?title=LifeLineChartView'
+WIKI_PAGE = 'https://gramps-project.org/wiki/index.php?title=Life_Line_Chart_View'
 
 # the print settings to remember between print sessions
 PRINT_SETTINGS = None
