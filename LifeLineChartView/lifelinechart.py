@@ -49,6 +49,8 @@ import sys, os
 from life_line_chart import AncestorChart, DescendantChart
 from life_line_chart import BaseIndividual, BaseFamily, InstanceContainer, estimate_birth_date, estimate_death_date, LifeLineChartNotEnoughInformationToDisplay
 from gramps.gen.display.name import displayer as name_displayer
+from gramps.gen.display.place import displayer as place_displayer
+from gramps.gen.datehandler import displayer as date_displayer
 from gramps.gen.lib import Person, ChildRefType, EventType, FamilyRelType
 from gramps.gen.lib import Date
 from gramps.gen.utils.file import media_path_full
@@ -142,6 +144,77 @@ def get_relevant_events(gramps_person, dbstate, target):
         target['death_or_burial'] = None
 
 
+class GrampsInstanceContainer(InstanceContainer):
+    def __init__(self, family_constructor, individual_constructor, instantiate_all, dbstate):
+        InstanceContainer.__init__(self, family_constructor, individual_constructor, instantiate_all)
+        self.dbstate = dbstate
+
+    def display_death_date(self, individual):
+        """
+        get the death (or burial) date
+
+        Returns:
+            str: death date
+        """
+        event = individual.events['death_or_burial']
+        if event:
+            date = event['date']
+            if event['comment']:
+                gramps_date = Date(date.year, 0, 0)
+            else:
+                gramps_date = Date(date.year, date.month, date.day)
+            return date_displayer.display(gramps_date)
+        else:
+            return None
+
+    def display_birth_date(self, individual):
+        """
+        get the birth (or christening or baptism) date str
+
+        Returns:
+            str: birth date str
+        """
+
+        event = individual.events['birth_or_christening']
+        if event:
+            date = event['date']
+            if event['comment']:
+                gramps_date = Date(date.year, 0, 0)
+            else:
+                gramps_date = Date(date.year, date.month, date.day)
+            return date_displayer.display(gramps_date)
+        return None
+
+    def display_marriage_date(self, family):
+        """
+        get the marriage date str
+
+        Returns:
+            str: marriage date str
+        """
+
+        event = family.marriage
+        date = event['date'].date()
+        if event['comment']:
+            gramps_date = Date(date.year, 0, 0)
+        else:
+            gramps_date = Date(date.year, date.month, date.day)
+        return date_displayer.display(gramps_date)
+
+    def display_marriage_location(self, family):
+        """
+        get the marriage location str
+
+        Returns:
+            str: marriage location str
+        """
+        if family.location:
+            return place_displayer.display(self.dbstate.db, family.location)
+        return None
+
+
+
+
 class GrampsIndividual(BaseIndividual):
     """
     Interface class to provide person data to live line chart backend
@@ -162,7 +235,7 @@ class GrampsIndividual(BaseIndividual):
         estimate_birth_date(self, self._instances)
         estimate_death_date(self)
 
-    def _get_name(self):
+    def get_name(self):
         """
         Get the name string of this person
 
@@ -170,23 +243,6 @@ class GrampsIndividual(BaseIndividual):
             str: name
         """
         return [name_displayer.display_format(self._gramps_person, 101), name_displayer.display_format(self._gramps_person, 100)]
-    name = property(_get_name)
-
-    def _get_father_and_mother(self):
-        """
-        get the uids of the father and mother
-
-        Returns:
-            tuple: father uid, mother uid
-        """
-        child_of_families = self._gramps_person.get_parent_family_handle_list()
-        if child_of_families:
-            child_of_family = self._dbstate.db.get_family_from_handle(
-                child_of_families[0])
-            father = child_of_family.get_father_handle()
-            mother = child_of_family.get_mother_handle()
-            return father, mother
-        return None, None
 
     def _get_marriage_family_ids(self):
         """
@@ -248,7 +304,7 @@ class GrampsFamily(BaseFamily):
                 self.marriage = get_date(events[0])
                 if self.marriage and events[0].place:
                     p = self._dbstate.db.get_place_from_handle(events[0].place)
-                    self.location = p.title
+                    self.location = p
         estimate_marriage_date(self)
 
     def _get_husband_and_wife_id(self):
@@ -308,10 +364,11 @@ def get_dbdstate_instance_container(dbstate):
     """
 
     logger.debug('start creating instances')
-    ic = InstanceContainer(
+    ic = GrampsInstanceContainer(
         lambda self, key: GrampsFamily(self, dbstate, key[1]),
         lambda self, key: GrampsIndividual(self, dbstate, key[1]),
-        None)  # lambda self : instantiate_all(self, database_fam, database_indi))
+        None,
+        dbstate)  # lambda self : instantiate_all(self, database_fam, database_indi))
 
     ic.date_label_translation = {
         'Calculated': '{symbol}\xa0' + _('calculated').replace(' ', '\xa0') + '\xa0{date}',
@@ -1863,7 +1920,7 @@ class LifeLineChartGrampsGUI:
         if 'family_children' in self.chart_configuration:
             individual = self.lifeline.life_line_chart_instance._instances[(
                 'i', person_handle)]
-            self.chart_configuration['family_children'].append(individual.get_child_of_family()[0].family_id)
+            self.chart_configuration['family_children'].append(individual.child_of_families[0].family_id)
             root_person_handle = self.get_active('Person')
             self.lifeline.set_values(root_person_handle, self.generic_filter)
 
@@ -1871,7 +1928,7 @@ class LifeLineChartGrampsGUI:
         individual = self.lifeline.life_line_chart_instance._instances[(
             'i', person_handle)]
         try:
-            self.chart_configuration['family_children'].remove(individual.get_child_of_family()[0].family_id)
+            self.chart_configuration['family_children'].remove(individual.child_of_families[0].family_id)
             root_person_handle = self.get_active('Person')
             self.lifeline.set_values(root_person_handle, self.generic_filter)
         except Exception as e:
@@ -1930,7 +1987,7 @@ class LifeLineChartGrampsGUI:
 
         try:
             if self.lifeline.chart_class == AncestorChart:
-                cof = individual.individual.get_child_of_family()[0]
+                cof = individual.individual.child_of_families[0]
                 if len(cof.children_individual_ids) > 1:
                     if cof.family_id not in self.chart_configuration['family_children']:
                         if len(cof.children_individual_ids) > len(cof.graphical_representations[0].visible_children):
