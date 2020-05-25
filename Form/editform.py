@@ -55,29 +55,6 @@ from form import (get_form_id, get_form_date, get_form_type, get_form_headings,
                   get_form_sections, get_section_title, get_section_type,
                   get_section_columns, get_form_citation)
 from entrygrid import EntryGrid
-from form import ( get_form_dateRO, get_form_dateLbl,
-                   get_form_locn,   get_form_locnLbl,
-                   get_form_ref,    get_form_refLbl,
-                   FormDlgError, FormDlgInfo, FormDlgDebug,
-                   GetObjectClass, get_help_file
-                 )
-from form import (DumpObj)
-
-# from datetime import datetime (fails for .today()!)
-from datetime import date, datetime
-from gramps.gen.lib           import Place, PlaceName
-from gramps.gen.display.place import displayer as place_displayer
-from gramps.gen.lib import Date
-from gramps.gen.lib.date import Today
-from gramps.gen.datehandler import parser  as DateParser
-from gi.repository import Gdk
-import os
-import logging
-_LOG = logging.getLogger("Form Gramplet")
-
-
-
-
 
 #------------------------------------------------------------------------
 #
@@ -101,7 +78,6 @@ class EditForm(ManagedWindow):
     Form Editor.
     """
     def __init__(self, dbstate, uistate, track, citation, callback):
-        _LOG.debug('###############\n\nEditForm() starting')
 
         self.dbstate = dbstate
         self.uistate = uistate
@@ -114,7 +90,6 @@ class EditForm(ManagedWindow):
 
         ManagedWindow.__init__(self, uistate, track, citation)
 
-        self.HeadingsNeedsClicking = True
         self.widgets = {}
         top = self.__create_gui()
         self.set_window(top, None, self.get_menu_title())
@@ -200,7 +175,6 @@ class EditForm(ManagedWindow):
         grid.set_margin_right(6)
         grid.set_row_spacing(6)
         grid.set_column_spacing(6)
-        self.widgets['grid'] = grid
 
         source_label = Gtk.Label(label=_("Source:"))
         source_label.set_halign(Gtk.Align.START)
@@ -217,7 +191,6 @@ class EditForm(ManagedWindow):
         ref_label = Gtk.Label(label=_("Reference:"))
         ref_label.set_halign(Gtk.Align.START)
         ref_label.set_valign(Gtk.Align.CENTER)
-        self.widgets['ref_label'] = ref_label
         grid.attach(ref_label, 0, 1, 1, 1)
 
         ref_entry = Gtk.Entry()
@@ -225,11 +198,9 @@ class EditForm(ManagedWindow):
         grid.attach(ref_entry, 1, 1, 1, 1)
         self.widgets['ref_entry'] = ref_entry
 
-
         date_label = Gtk.Label(label=_("Date:"))
         date_label.set_halign(Gtk.Align.START)
         date_label.set_valign(Gtk.Align.CENTER)
-        self.widgets['date_label'] = date_label
         grid.attach(date_label, 0, 2, 1, 1)
 
         date_text = ValidatableMaskedEntry()
@@ -244,7 +215,6 @@ class EditForm(ManagedWindow):
         place_label = Gtk.Label(label=_("Place:"))
         place_label.set_halign(Gtk.Align.START)
         place_label.set_valign(Gtk.Align.CENTER)
-        self.widgets['place_label'] = place_label
         grid.attach(place_label, 0, 3, 1, 1)
 
         place_text = Gtk.Label()
@@ -258,40 +228,21 @@ class EditForm(ManagedWindow):
         grid.attach(place_event_box, 1, 3, 1, 1)
         self.widgets['place_event_box'] = place_event_box
 
-
-        #[CREATE] Fixed button order to be consistent with Gramps & the others on this form!
-        image = Gtk.Image()
-        image.set_from_icon_name('list-add', Gtk.IconSize.BUTTON)
-        place_add = Gtk.Button()
-        place_add.set_relief(Gtk.ReliefStyle.NONE)
-        place_add.add(image)
-        grid.attach(place_add, 2, 3, 1, 1)
-        self.widgets['place_add'] = place_add
-
-        #[USE EXISTING]
         image = Gtk.Image()
         image.set_from_icon_name('gtk-index', Gtk.IconSize.BUTTON)
         place_share = Gtk.Button()
         place_share.set_relief(Gtk.ReliefStyle.NONE)
         place_share.add(image)
-        grid.attach(place_share, 3, 3, 1, 1)
+        grid.attach(place_share, 2, 3, 1, 1)
         self.widgets['place_share'] = place_share
 
-        # Add a Help Frame & Control (will be removed if not required later)
-        HelpFrame  = Gtk.Frame()
-        HelpControl = Gtk.Label('')
-        HelpControl.set_use_markup(True)
-        HelpControl.set_selectable(True)    #May include URLs or other Info
-        HelpColor = Gdk.color_parse('blue')
-        HelpControl.modify_fg(Gtk.StateFlags.NORMAL, HelpColor)
-
-        HelpControl.set_line_wrap(True)
-        #HelpControl.set_lines(3)            #This doesn't fail but doesn't work either: https://athenajc.gitbooks.io/python-gtk-3-api/content/gtk-group/gtklabel.html#setlines
-        #place_text.set_vexpand(False)       #Also fail
-        HelpFrame.add(HelpControl)
-        grid.attach(HelpFrame, 0, 4, 4, 1)
-        self.widgets['HelpFrame']   = HelpFrame
-        self.widgets['HelpControl'] = HelpControl
+        image = Gtk.Image()
+        image.set_from_icon_name('list-add', Gtk.IconSize.BUTTON)
+        place_add = Gtk.Button()
+        place_add.set_relief(Gtk.ReliefStyle.NONE)
+        place_add.add(image)
+        grid.attach(place_add, 3, 3, 1, 1)
+        self.widgets['place_add'] = place_add
 
         button_box = Gtk.ButtonBox()
         button_box.set_layout(Gtk.ButtonBoxStyle.END)
@@ -319,40 +270,6 @@ class EditForm(ManagedWindow):
 
         return root
 
-
-    def GetPlaceFromName(self, place_name):
-        """ This will create the place if it doesn't aready exist """
-
-        # Look through all handles for the wanted place name
-        if  place_name == "":
-            return None
-        place_list = self.dbstate.db.get_place_handles()
-        for place_handle in place_list:
-            place = self.dbstate.db.get_place_from_handle(place_handle)
-            place_title = place_displayer.display(self.dbstate.db, place)
-            #_LOG.debug('[GPFN] Looking at: : ' + place_title)
-            if  place_title.strip() == place_name:
-                _LOG.debug('[GPFN] Place found in DB [%s]: %s' % (place.get_gramps_id(), place_name))
-                return place
-
-        # The place doesn't already exist, create it [TODO: Now to set TYPE=FORMS (user can manually edit those for now)
-        place = Place()
-        place.set_title(place_name)
-        place.set_type('_FORM')     #User can easy find these
-        place.set_name(PlaceName(value=place_name))
-
-        with DbTxn(_("Form Create New Place (%s)") % place_name, self.dbstate.db) as self.trans:
-            self.dbstate.db.add_place(place, self.trans)
-            self.dbstate.db.commit_place(place, self.trans)
-        _LOG.debug("[GPFN] Place wasn't in DB, Created it: [%s] %s" % (place.get_gramps_id(), place_name))
-        return place
-
-
-    def NoteBookPageSelected(self, notebook, tab, index):
-        if  tab == self.headings:
-            _LOG.info('NoteBookPageSelected(): Headings Tab selected')
-            self.HeadingsNeedsClicking = False
-
     def __populate_gui(self, event):
         """
         Populate the GUI for a given form event.
@@ -363,131 +280,26 @@ class EditForm(ManagedWindow):
         source_text = self.widgets['source_text']
         source_text.set_text(source.get_title())
         form_id = get_form_id(source)
-        _LOG.debug('FORM ID = %s', form_id)
 
         # Set event type
         event_type = EventType()
         event_type.set_from_xml_str(get_form_type(form_id))
         self.event.set_type(event_type)
 
-        # Set date LABEL TEXT
-        dateLBL = get_form_dateLbl(form_id)       #From stored XML
-        if  dateLBL != '':
-            dateLBL = dateLBL + ":"
-            _LOG.debug("Date Label = " + dateLBL)
-            date_label = self.widgets['date_label']
-            date_label.set_text(dateLBL)
-
-        # Set Reference LABEL TEXT
-        RefLbl = get_form_refLbl(form_id)       #From stored XML
-        if  RefLbl != "":
-            RefLbl = RefLbl + ":"
-            _LOG.debug("Reference Label = " + RefLbl)
-            ref_label = self.widgets['ref_label']
-            ref_label.set_text(RefLbl)
-
-        # Set Location LABEL TEXT
-        LocnLbl = get_form_locnLbl(form_id)       #From stored XML
-        if  LocnLbl != "":
-            LocnLbl = LocnLbl + ":"
-            _LOG.debug("Location Label   = " + LocnLbl)
-            place_label = self.widgets['place_label']
-            place_label.set_text(LocnLbl)
-
-
-        # Set DEFAULT Reference Value
-        ref_entry = self.widgets['ref_entry']
-        RefDef = ref_entry.get_text()
-        if  RefDef == "":                         #Currently no data in the field
-            RefDef = get_form_ref(form_id)        #From stored XML
-            if  RefDef != "":
-                # Display in the form
-                _LOG.debug("Setting DEFAULT Reference: " + RefDef)
-                ref_entry.set_text(RefDef)
-
-        # Set DEFAULT Location Value
-        place_text = self.widgets['place_text']
-        LocnDef = place_text.get_text()
-        if  LocnDef in PlaceEntry.EMPTY_TEXT:     #Currently no data in the field, #EMPTY_TEXT looks like "<i>...text...</i>
-            # This is not editing an existing event (with perhaps a different Location #
-            LocnDef = get_form_locn(form_id)      #From stored XML
-            if  LocnDef != "":
-                # Display in the form
-                _LOG.debug("Location Default = " + LocnDef)
-                place_text.set_text(LocnDef)
-
-                # Update the event
-                NamePlace = self.GetPlaceFromName(LocnDef)
-                event.set_place_handle(NamePlace.get_handle())
-
-        # Determine if help text available or we wish to insert any (if no help remove the controls)
-        HelpFrame   = self.widgets['HelpFrame']
-        HelpControl = self.widgets['HelpControl']
-        HelpContents = ''
-        HelpFile = get_help_file(form_id)
-        if  HelpFile:
-            _LOG.debug("HELP FILE EXISTS: %s" % HelpFile)
-            try:
-                with open(HelpFile, 'r') as f:
-                    # Read the file (don't strip remove leading & trailing whitespace yet)
-                    HelpContents = f.read()
-
-                    # Allow a paragraph to be broken up into multiple lines (spaces before the "\" are preserved so the user has full control of formatting)
-                    HelpContents = HelpContents.replace('\\\n', '')
-
-                    # Do strip after fixing "\" so all (including last definately removed
-                    HelpContents = HelpContents.strip()
-            except Exception as xArgs:
-                _LOG.debug('Failed reading help file: %s' % str(xArgs))
-        NumberHeadings = len( get_form_headings(form_id) )
-        if  NumberHeadings != 0:
-            # Add a warning to the help (about the "hidden" headings)
-            if  HelpContents != '':
-                HelpContents = '\n\n' + HelpContents
-            HeadingsHelp = _('There are in {0} fields in the "Headings" tab.')
-            HelpContents = '<span foreground="orange"><b>' + HeadingsHelp.format(NumberHeadings) + '</b></span>' + HelpContents
-        if HelpContents == '':
-            _LOG.debug("No help available (will hide the help controls)")
-            grid = self.widgets['grid']
-            grid.remove_row(4)
-        else:
-            # set_markup() has no return code so need to add error message first!
-            HelpControl.set_markup( _('If you are seeing this, then the help text is incorrectly formatted with pango markup, see:\n')
-                                    + '<b>https://developer.gnome.org/pango/stable/pango-Markup.html</b>\n\n'
-                                    + _('HELP FILE')
-                                    + ': '
-                                    + str(HelpFile)
-                                  )
-            _LOG.debug("HELP CONTENTS: \n\n### HELP START ###\n%s\n### HELP END ###\n" % HelpContents)
-            HelpControl.set_markup(HelpContents)        #How stupid, no RC, no error location/text!
-            FrameText = _('Help for this form: [%s]') % form_id
-            HelpFrame.set_label(' ' + FrameText + ' ')
-
         # Set date
-        form_date  = get_form_date(form_id)          #From stored XML
-        FormDateRO = get_form_dateRO(form_id)
+        form_date = get_form_date(form_id)
         date_text = self.widgets['date_text']
         date_button = self.widgets['date_button']
         if form_date is not None:
-            _LOG.debug("Adding the DATE for the event: %s (read-only=%s)" % (form_date, FormDateRO))
             date_text.set_text(displayer.display(form_date))
             self.event.set_date_object(form_date)
             self.citation.set_date_object(form_date)
-            date_text.set_editable(not FormDateRO)
-            date_button.set_sensitive(not FormDateRO)
+            date_text.set_editable(False)
+            date_button.set_sensitive(False)
         else:
             date_text.set_text(get_date(event))
             date_text.set_editable(True)
             date_button.set_sensitive(True)
-
-        if  FormDateRO:
-            DateTT = _('The date was set up by the form definition and is read-only')
-        else:
-            DateTT = _('You can enter "%s" or any other valid date string (or use the date picker)' % _('today'))
-        _LOG.debug("Date Tooltip: %s" % DateTT)
-        date_text.set_tooltip_text(DateTT)
-        date_label.set_tooltip_text(DateTT)
-        date_button.set_tooltip_text(DateTT)
 
         # Create tabs
         self.details = DetailsTab(self.dbstate,
@@ -510,89 +322,16 @@ class EditForm(ManagedWindow):
                                        self.citation.get_media_list())
 
         self._add_tab(self.notebook, self.details)
-        #if  self.headings.is_empty:            #[BUG] The function always returns true!
-        HeadingCnt = len(get_form_headings(form_id))
-        if  HeadingCnt == 0:
-            _LOG.debug('The Headings tab is empty so we are not displaying it.')
-            self.HeadingsNeedsClicking = False
-        else:
-            _LOG.debug('The Headings tab has %d fields (so adding the tab)' % HeadingCnt)
-            self._add_tab(self.notebook, self.headings)
+        self._add_tab(self.notebook, self.headings)
         self._add_tab(self.notebook, self.gallery_list)
 
         self.notebook.show_all()
         self.notebook.set_current_page(0)
 
-        # If headings exist then we want to be able to tell that a user at least looked at them
-        self.notebook.connect('switch-page', self.NoteBookPageSelected)
-
     def save(self, button):
         """
         Called when the user clicks the OK button.
         """
-
-        date_text   = self.widgets['date_text']
-        GuiDateText = date_text.get_text().strip() #Date in the form's entry field
-        EvtDateObj  = self.event.get_date_object() #Date in the Event Object (#gramps/gen/database.py)
-        EvtDateText = str(EvtDateObj)
-        if  EvtDateText == '0000-00-00':
-            EvtDateText = ''
-        if  EvtDateText == '.':                    #Force update
-            EvtDateText = ''
-        _LOG.debug('EditForm.Save() - OK button clicked, Saving to DB, EVENT DATE : %s'  % EvtDateText)
-        if  GuiDateText == EvtDateText:
-            _LOG.debug('The dates in the entry field match those in the event object :-)')
-        else:
-            _LOG.debug("The dates in the entry field don't match those in the event object :-(")
-            _LOG.debug('The ENTRY FIELD (updated by user but not synced to object): %s' % GuiDateText)
-            if  GuiDateText == '.':
-                # User typed in "." for todays date (field was red but still accepted)
-                Now = Today()
-                _LOG.debug('User typed in "." (for today), Today\'s date = %s' % Now)
-                self.event.set_date_object(Now)
-            else:
-                # User typed in a date in multiple possible formats, need to parse to date (that could fail)
-                GuiDateObj = DateParser.parse(GuiDateText)
-                if  GuiDateObj.is_valid():
-                    # User's date parsed OK
-                    _LOG.debug('User typed in "%s", Converted to = %s' % (GuiDateText, GuiDateObj))
-                    self.event.set_date_object(GuiDateObj)
-                else:
-                    # Date supplied by user is not valid
-                    FormDlgInfo(_("Invalid Date Format: ") + GuiDateText, _("The date you provided is invalid, the control should have had a red border (the only 'valid' entry with a red border is '.')..."))
-                    return
-
-        # Have a valid date?
-        if  str(EvtDateObj) == '' or str(EvtDateObj) == '0000-00-00':
-            FormDlgInfo(_("MISSING DATE"), _("You should fill in the manditory date information"))
-            return
-
-        # Have a valid REFERENCE?
-        ref_entry = self.widgets['ref_entry']
-        RefDef = ref_entry.get_text()
-        if  RefDef == "":
-            RefDef = _('NO REF')
-            FormDlgInfo(_("MISSING REFERENCE"), _("You should fill in the manditory reference information"))
-            return
-
-        # Have a valid Reference? If so set up the "Description" of the event to be created
-        if self.citation:
-           # Get the Source Information
-           source_handle = self.citation.get_reference_handle()
-           source = self.db.get_source_from_handle(source_handle)
-           source_text = source.get_title()
-
-           # Add the description
-           EvtDesc = RefDef + " @ " + source_text + " [" + _("form") + "]"
-           _LOG.debug("Setting DESCRIPTION for the event: " + EvtDesc)
-           self.event.set_description(EvtDesc)
-
-        # For now just check user went to the Headings Tab (if that was required)
-        if  self.HeadingsNeedsClicking:
-            FormDlgInfo(_("Headings tab unvisited!"), _("There are headings to be filled in and you haven't gone and at least looked at them!"))
-            return
-
-
         with DbTxn(self.get_menu_title(), self.db) as trans:
             if not self.event.get_handle():
                 self.db.add_event(self.event, trans)
@@ -1081,50 +820,9 @@ class MultiSection(Gtk.Box):
 class PersonSection(Gtk.Box):
 
     SelectPerson = SelectorFactory('Person')
-    InstCounter = 0
-
-    def __IncreaseInstCounter(self):
-        #type(self).InstCounter += 1
-        self.InstCounter += 1
-        _LOG.debug("### CONSTRUCTOR ### self.InstCounter +1 = %d", self.InstCounter)
-
-    def __DecreaseInstCounter(self):
-        #type(self).InstCounter -= 1
-        self.InstCounter -= 1
-        _LOG.debug("### DESTRUCTOR ### self.InstCounter -1 = %d", self.InstCounter)
-
-    def __del__(self):
-        self.__DecreaseInstCounter()
-
-    def __PersonAddedCommon(self, PersonHandle):
-        self.handle = PersonHandle
-
-        #Person added to the form (get their name from their handle)
-        person = self.db.get_person_from_handle(self.handle)
-        name   = name_displayer.display(person)
-
-        #Log message
-        SelRole = self.widgets['PersonRole']
-        _LOG.debug("PERSON ADDED: [%s]: %s" % (SelRole.get_text(), name))
-
-        #Update the correct section (so user can see name)
-        SelText = self.widgets['PersonName']
-        SelText.set_markup("[<b><small>%s</small></b>]" % name)
-
-
-        for heading in self.headings:
-            self.widgets[heading].set_sensitive(True)
-            if heading == _('Name'):
-               self.widgets[heading].set_text(name)
-
-    def _PersonDefaultSet(self, PersonHandle):         #PersonSelection class
-        self.__PersonAddedCommon(PersonHandle)
-
 
     def __init__(self, dbstate, uistate, track, event, citation, form_id,
                  section):
-        self.__IncreaseInstCounter()
-
         Gtk.Box.__init__(self, orientation=Gtk.Orientation.VERTICAL)
 
         self.dbstate = dbstate
@@ -1149,16 +847,7 @@ class PersonSection(Gtk.Box):
         label.set_use_markup(True)
         label.set_halign(Gtk.Align.START)
         label.set_valign(Gtk.Align.CENTER)
-        self.widgets['PersonRole'] = label
         hbox.pack_start(label, expand=False, fill=False, padding=3)
-
-        PersonName =_("no one selected yet")
-        label = Gtk.Label(label='<i>%s</i>' % PersonName)
-        label.set_use_markup(True)
-        label.set_halign(Gtk.Align.START)
-        label.set_valign(Gtk.Align.CENTER)
-        self.widgets['PersonName'] = label
-        hbox.pack_start(label, expand=False, fill=False, padding=10)
 
         image = Gtk.Image()
         image.set_from_icon_name('list-add', Gtk.IconSize.BUTTON)
@@ -1181,63 +870,28 @@ class PersonSection(Gtk.Box):
         self.pack_start(self.grid, False, False, 0)
         self.show()
 
-        # Add this person's columns/questions
         self.set_columns()
-
-        # Get selected person - NEED TO DO THIS ONE TIME ONLY (as we can only pick up one and in any case the selection order is meaningless
-        _LOG.debug("DEFAULT THE PERSON? [IFF %d == 1]" % self.InstCounter)
-        if  self.InstCounter == 1:
-            handle = self.uistate.get_active('Person')
-            self._PersonDefaultSet(handle)
-
 
     def is_empty(self):
         return False if self.handle else True
 
     def set_columns(self):
-        """
-            [PersonSection class]
-            Adds a person (section) columns to the UI, the questions
-            will take up as many lines as required.
-        """
         columns = get_section_columns(self.form_id, self.section)
         self.headings = [column[0] for column in columns]
         self.tooltips = [column[1] for column in columns]
 
-        # The person's controls go into a flowbox
-        fbox = Gtk.FlowBox(
-                            orientation=Gtk.Orientation.HORIZONTAL,
-                            selection_mode=Gtk.SelectionMode.NONE,
-                            max_children_per_line=99,
-                            min_children_per_line=1,   #If I set to 2 then I can set expand to False (and have all controls on top (not centered!)
-                            expand=False               #If not True (and min col=1), they get drawn vertically!!!!!!
-                          )
-        fbox.set_hexpand(True)
-
         for col, heading in enumerate(self.headings):
-            # Each label/entry pair placed into its own vbox
-            vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
-            fbox.add(vbox)
-
             label = Gtk.Label(label=heading)
             label.set_halign(Gtk.Align.START)
             label.set_valign(Gtk.Align.CENTER)
             label.show()
-
-            _LOG.debug("COLUMN LABEL: %s" % heading)
             entry = MyEntry(heading)
             entry.set_tooltip_text(self.tooltips[col])
             entry.set_sensitive(False)
             self.widgets[heading] = entry
             entry.show()
-            _LOG.debug("COLUMN ENTRY OBJ: \n\n%s\n\n" % DumpObj(entry))
-
-            vbox.pack_start(label, expand=False, fill=True, padding=2)
-            vbox.pack_start(entry, expand=True,  fill=True, padding=2)
-
-        # Attach the fbox to the grid (can probably delete the grid...)
-        self.grid.attach(fbox, 0, 0, 1, 1)
-
+            self.grid.attach(label, col, 0, 1, 1)
+            self.grid.attach(entry, col, 1, 1, 1)
 
     def __add_clicked(self, obj):
         person = Person()
@@ -1252,8 +906,14 @@ class PersonSection(Gtk.Box):
         if obj:
             self.__added(obj)
 
-    def __added(self, obj):         #PersonSelection class
-        self.__PersonAddedCommon(obj.handle)
+    def __added(self, obj):
+        self.handle = obj.handle
+        for heading in self.headings:
+            self.widgets[heading].set_sensitive(True)
+            if heading == _('Name'):
+                person = self.db.get_person_from_handle(self.handle)
+                name = name_displayer.display(person)
+                self.widgets[heading].set_text(name)
 
     def populate_gui(self, event):
         for item in self.db.find_backlink_handles(event.get_handle(),
@@ -1272,7 +932,6 @@ class PersonSection(Gtk.Box):
 
                     self.__populate(obj, attrs)
 
-
     def __populate(self, obj, attrs):
         self.initial_handle = obj.handle
         self.__added(obj)
@@ -1281,7 +940,6 @@ class PersonSection(Gtk.Box):
 
     def save(self, trans):
         if not self.handle:
-            FormDlgInfo(_("ABORTING SAVE"), _("No person selected"))
             return
 
         obj = self.dbstate.db.get_person_from_handle(self.handle)
@@ -1334,14 +992,7 @@ class FamilySection(Gtk.Box):
         hbox = Gtk.Box()
 
         title = get_section_title(form_id, section)
-        try:
-            title1, title2 = title.split('/')
-        except:
-            title1 = "MissingSlash 1, Husband? Groom?"
-            title2 = "MissingSlash 2, Wife? Bride?"
-            FormDlgInfo(  _("XML TITLE FIELD MUST CONTAIN A '/' FOR A FAMILY"),
-                          _('The title "%s" is missing the required slash for defining the 2 roles (need something like "Groom/Bride"') % title
-                       )
+        title1, title2 = title.split('/')
 
         label = Gtk.Label(label='<b>%s</b>' % title1)
         label.set_use_markup(True)
