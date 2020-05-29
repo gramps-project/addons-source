@@ -44,7 +44,7 @@ WEBSITES = [
     ["Person", "OpenList", _("Open list"), "https://ru.openlist.wiki/Служебная:OlSearch?olsearch-name=%(surname)s+%(given)s&olsearch-birth_min=%(birth)s&olsearch-birth_max=%(birth)s&olsearch-death_min=%(death)s&olsearch-death_max=%(death)s&olsearch-birthplace=&olsearch-liveplace=&olsearch-nationality=&olsearch-social=&olsearch-profession=&olsearch-deathplace=&olsearch-burialplace=&olsearch-body=&olsearch-categories=&olsearch-arrest_min=&olsearch-arrest_max=&olsearch-indictment=&olsearch-conviction_min=&olsearch-conviction_max=&olsearch-conviction-org=&olsearch-sentence=&olsearch-detentionplace=&olsearch-release_min=&olsearch-release_max=&olsearch-execution_min=&olsearch-execution_max=&olsearch-archive-case-number=&olsearch-run=1&olsearch-advform=1#OlSearch-results-caption"],
     ["Person", "WaitForMe", _("Wait for me"), "https://poisk.vid.ru/?lname=%(surname)s&fname=%(given)s&id_let=&p=10&view=18&age_1=1&age_2=99&searched=НАЙТИ"],
     ["Person", "VGD", _("All Russia Family Tree (forum)"), "https://vgd.ru/search/index.php?q=%(surname)s&x=0&y=0&tu=0"],
-    ["Person", "YandexPeople", _("Yandex people"), "https://yandex.by/people/search?text=%(surname)s+%(given)s&ps_age=%(birth)s"],
+    ["Person", "YandexPeople", _("Yandex people"), "https://yandex.ru/people/search?text=%(surname)s+%(given)s&ps_age=%(birth)s"],
     ["Person", "ok.ru", _("OK"), "https://ok.ru/search/profiles/%(surname)s %(given)s %(birth)s"],
     ["Person", "ria1914", _("RIA Officers"), "http://www.ria1914.info/index.php?title=Служебная:Поиск&search=%(surname)s+%(given)s"],
     ["Person", "arc-familyspace", _("FamilySpace"), "https://arc.familyspace.ru/catalog/%(surname)s %(given)s"],
