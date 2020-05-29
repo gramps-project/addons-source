@@ -46,6 +46,8 @@ WEBSITES = [
     ["Person", "VGD", _("All Russia Family Tree (forum)"), "https://vgd.ru/search/index.php?q=%(surname)s&x=0&y=0&tu=0"],
     ["Person", "YandexPeople", _("Yandex people"), "https://yandex.by/people/search?text=%(surname)s+%(given)s&ps_age=%(birth)s"],
     ["Person", "ok.ru", _("OK"), "https://ok.ru/search/profiles/%(surname)s %(given)s %(birth)s"],
+    ["Person", "ria1914", _("RIA Officers"), "http://www.ria1914.info/index.php?title=Служебная:Поиск&search=%(surname)s+%(given)s"],
+    ["Person", "arc-familyspace", _("FamilySpace"), "https://arc.familyspace.ru/catalog/%(surname)s %(given)s"],
     ]
 
 def load_on_reg(dbstate, uistate, pdata):
