@@ -11,6 +11,10 @@
             <_attribute>Registration District</_attribute>
         </heading>
         <heading>
+            <_attribute>Administrative Area</_attribute>
+            <_longname>County/Administrative Area</_longname>
+        </heading>
+        <heading>
             <_attribute>Date Registered</_attribute>
         </heading>
         <heading>
@@ -64,6 +68,10 @@
         </heading>
         <heading>
             <_attribute>Entry Number</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Administrative Area</_attribute>
+            <_longname>County/Administrative Area</_longname>
         </heading>
         <heading>
             <_attribute>Banns/Licence</_attribute>
@@ -128,6 +136,10 @@
         </heading>
         <heading>
             <_attribute>Registration District</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Administrative Area</_attribute>
+            <_longname>County/Administrative Area</_longname>
         </heading>
         <heading>
             <_attribute>Date Registered</_attribute>
