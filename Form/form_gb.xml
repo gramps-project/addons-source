@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <forms>
-    <form id='UKBirth' type='Birth' title='English Birth Certificate'>
+    <form id='UKBirth' type='Birth' title='English Birth Certificate' reference='Registration District: , Registration Sub-District: , Entry Number: '>
         <heading>
             <_attribute>Certificate Number</_attribute>
         </heading>
@@ -62,7 +62,7 @@
             </column>
         </section>
     </form>
-    <form id='UKMarriage' type='Marriage' title='English Marriage Certificate'>
+    <form id='UKMarriage' type='Marriage' title='English Marriage Certificate' reference='Registration District: , Entry Number: '>
         <heading>
             <_attribute>Certificate Number</_attribute>
         </heading>
@@ -127,7 +127,7 @@
             </column>
         </section>
     </form>
-    <form id='UKDeath' type='Death' title='English Death Certificate'>
+    <form id='UKDeath' type='Death' title='English Death Certificate' reference='Registration District: , Registration Sub-District: , Entry Number: '>
         <heading>
             <_attribute>Certificate Number</_attribute>
         </heading>
