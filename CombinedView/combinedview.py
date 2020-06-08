@@ -782,6 +782,7 @@ class CombinedView(NavigationView):
             button = Gtk.Button()
             button.add(image)
             button.connect("clicked", lambda obj: self.view_photo(mobj))
+            button.show_all()
             return button
         return None
 
@@ -1384,7 +1385,6 @@ class CombinedView(NavigationView):
 
             mobj = self.dbstate.db.get_media_from_handle(media_ref.ref)
             button = self.get_thumbnail(media_ref, size=SIZE_LARGE)
-            button.show_all()
             if button:
 
                 self.vbox2.add(button)
@@ -1413,7 +1413,6 @@ class CombinedView(NavigationView):
                     texteditor.show()
                     vbox.pack_start(texteditor, True, True, 0)
                     vbox.show_all()
-
 
                 self.vbox2.attach_next_to(vbox, button,
                                           Gtk.PositionType.RIGHT, 1, 1)
