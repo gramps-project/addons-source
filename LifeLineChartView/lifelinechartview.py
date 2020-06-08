@@ -28,6 +28,7 @@ See https://github.com/CWSchulze/life_line_chart
 #
 # -------------------------------------------------------------------------
 from gi.repository import Gtk
+from gramps.gen.utils.image import resize_to_buffer
 import cairo
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 from copy import deepcopy
@@ -407,9 +408,13 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
                                orientation=Gtk.Orientation.HORIZONTAL)
         self.vbox.pack_start(self.toolbar, False, False, 0)
 
+
+        import os
         # add zoom-in button
-        self.zoom_in_btn = Gtk.Button.new_from_icon_name('zoom-in',
-                                                         Gtk.IconSize.MENU)
+        image = Gtk.Image()
+        image.set_from_pixbuf(resize_to_buffer(os.path.join(os.path.dirname(__file__), 'icons8-zoom-in-50.png'), [25,25]))
+        self.zoom_in_btn = Gtk.Button()
+        self.zoom_in_btn.set_image(image)
         self.zoom_in_btn.set_tooltip_text(
             _('Zoom in') + '\n'
             + _('Ctrl') + ' & "+"\n'
@@ -418,8 +423,10 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
         self.zoom_in_btn.connect("clicked", self.lifeline.zoom_in)
 
         # add zoom-out button
-        self.zoom_out_btn = Gtk.Button.new_from_icon_name('zoom-out',
-                                                          Gtk.IconSize.MENU)
+        image = Gtk.Image()
+        image.set_from_pixbuf(resize_to_buffer(os.path.join(os.path.dirname(__file__), 'icons8-zoom-out-50.png'), [25,25]))
+        self.zoom_out_btn = Gtk.Button()
+        self.zoom_out_btn.set_image(image)
         self.zoom_out_btn.set_tooltip_text(
             _('Zoom out') + '\n'
             + _('Ctrl') + ' & "-"\n'
@@ -428,22 +435,28 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
         self.zoom_out_btn.connect("clicked", self.lifeline.zoom_out)
 
         # add original zoom button
-        self.orig_zoom_btn = Gtk.Button.new_from_icon_name('zoom-original',
-                                                           Gtk.IconSize.MENU)
+        image = Gtk.Image()
+        image.set_from_pixbuf(resize_to_buffer(os.path.join(os.path.dirname(__file__), 'icons8-zoom-to-actual-size-50.png'), [25,25]))
+        self.orig_zoom_btn = Gtk.Button()
+        self.orig_zoom_btn.set_image(image)
         self.orig_zoom_btn.set_tooltip_text(_('Zoom to original'))
         self.toolbar.pack_start(self.orig_zoom_btn, False, False, 1)
         self.orig_zoom_btn.connect("clicked", self.lifeline.set_original_zoom)
 
         # add best fit button
-        self.fit_btn = Gtk.Button.new_from_icon_name('zoom-fit-best',
-                                                     Gtk.IconSize.MENU)
+        image = Gtk.Image()
+        image.set_from_pixbuf(resize_to_buffer(os.path.join(os.path.dirname(__file__), 'icons8-zoom-to-extents-50.png'), [25,25]))
+        self.fit_btn = Gtk.Button()
+        self.fit_btn.set_image(image)
         self.fit_btn.set_tooltip_text(_('Zoom to best fit'))
         self.toolbar.pack_start(self.fit_btn, False, False, 1)
         self.fit_btn.connect("clicked", self.lifeline.fit_to_page)
 
         # add view-refresh button
-        self.view_refresh_btn = Gtk.Button.new_from_icon_name('view-refresh',
-                                                         Gtk.IconSize.MENU)
+        image = Gtk.Image()
+        image.set_from_pixbuf(resize_to_buffer(os.path.join(os.path.dirname(__file__), 'icons8-refresh-50.png'), [25,25]))
+        self.view_refresh_btn = Gtk.Button()
+        self.view_refresh_btn.set_image(image)
         self.view_refresh_btn.set_tooltip_text(_('Rebuild data cache'))
         self.toolbar.pack_start(self.view_refresh_btn, False, False, 1)
         self.view_refresh_btn.connect("clicked", self.lifeline.rebuild_instance_cache)
@@ -453,7 +466,11 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
         self.toolbar.pack_start(self.lifeline.info_label, True, True, 1)
 
         # add view-refresh button
-        self.help_btn = Gtk.Button(_('Open Life Line Chart help'), Gtk.IconSize.MENU)
+        image = Gtk.Image()
+        image.set_from_pixbuf(resize_to_buffer(os.path.join(os.path.dirname(__file__), 'icons8-help-50.png'), [25,25]))
+        self.help_btn = Gtk.Button()
+        self.help_btn.set_image(image)
+        self.help_btn.set_tooltip_text(_('Open Life Line Chart help'))
         self.toolbar.pack_start(self.help_btn, False, False, 1)
         self.help_btn.connect("clicked", self.on_help_clicked)
 
