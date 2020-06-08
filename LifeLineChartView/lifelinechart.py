@@ -1132,8 +1132,11 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
         """
 
         reset = False
-        if self.rootpersonh != root_person_handle or self.rebuild_next_time:  # or self.filter != filtr:
+        new_root_individual = False
+        if self.rootpersonh != root_person_handle:  # or self.filter != filtr:
             reset = True
+            new_root_individual = True
+        reset = reset or self.rebuild_next_time
         new_filter = self.filter != filtr
         self.filter = filtr
         root_person = None
@@ -1252,7 +1255,7 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
         self.chart_items = additional_items + sorted_individual_items
         self.image_cache = {}
         try:
-            if reset:
+            if new_root_individual:
                 self.fit_to_page()
         except:
             pass
