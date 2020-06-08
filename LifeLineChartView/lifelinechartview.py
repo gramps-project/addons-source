@@ -448,8 +448,9 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
         self.toolbar.pack_start(self.view_refresh_btn, False, False, 1)
         self.view_refresh_btn.connect("clicked", self.lifeline.rebuild_instance_cache)
 
-        # spacer
-        self.toolbar.pack_start(Gtk.Label(), True, True, 1)
+        # Info label
+        self.lifeline.info_label = Gtk.Label()
+        self.toolbar.pack_start(self.lifeline.info_label, True, True, 1)
 
         # add view-refresh button
         self.help_btn = Gtk.Button(_('Open Life Line Chart help'), Gtk.IconSize.MENU)
