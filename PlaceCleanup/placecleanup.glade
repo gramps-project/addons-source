@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated with glade 3.18.3 -->
+<!-- Generated with glade 3.22.2 -->
 <interface>
   <requires lib="gtk+" version="3.10"/>
   <object class="GtkListStore" id="alt_names_liststore">
@@ -101,6 +101,7 @@
             <property name="can_focus">False</property>
             <property name="tooltip_text" translatable="yes">The postal code for the place, if any.</property>
             <property name="hexpand">True</property>
+            <property name="width_chars">16</property>
           </object>
           <packing>
             <property name="left_attach">2</property>
@@ -135,8 +136,8 @@
             <property name="receives_default">False</property>
             <property name="tooltip_text" translatable="yes">Check this box if you want to keep the original Postal code.</property>
             <property name="halign">start</property>
+            <property name="valign">center</property>
             <property name="margin_left">5</property>
-            <property name="xalign">0</property>
             <property name="draw_indicator">True</property>
             <signal name="toggled" handler="on_postalcheck" swapped="no"/>
           </object>
@@ -153,8 +154,8 @@
             <property name="receives_default">False</property>
             <property name="tooltip_text" translatable="yes">Check this box if you want to keep the original Place Type.</property>
             <property name="halign">start</property>
+            <property name="valign">center</property>
             <property name="margin_left">5</property>
-            <property name="xalign">0</property>
             <property name="image_position">right</property>
             <property name="draw_indicator">True</property>
             <signal name="toggled" handler="on_typecheck" swapped="no"/>
@@ -162,6 +163,55 @@
           <packing>
             <property name="left_attach">5</property>
             <property name="top_attach">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="type_label1">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="halign">end</property>
+            <property name="label" translatable="yes">Group</property>
+          </object>
+          <packing>
+            <property name="left_attach">6</property>
+            <property name="top_attach">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkCheckButton" id="groupcheck">
+            <property name="label" translatable="yes">Orig</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">False</property>
+            <property name="tooltip_text" translatable="yes">Check this box if you want to keep the original Place Type.</property>
+            <property name="halign">start</property>
+            <property name="image_position">right</property>
+            <property name="draw_indicator">True</property>
+            <signal name="toggled" handler="on_groupcheck" swapped="no"/>
+          </object>
+          <packing>
+            <property name="left_attach">7</property>
+            <property name="top_attach">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkComboBox" id="place_group">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="tooltip_text" translatable="yes">What type of place this is. Eg 'Country', 'City', ... .</property>
+            <property name="has_entry">True</property>
+            <child internal-child="entry">
+              <object class="GtkEntry">
+                <property name="can_focus">True</property>
+                <property name="width_chars">16</property>
+                <property name="overwrite_mode">True</property>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="left_attach">6</property>
+            <property name="top_attach">1</property>
+            <property name="width">2</property>
           </packing>
         </child>
       </object>
@@ -237,7 +287,6 @@
             <property name="halign">center</property>
             <property name="valign">center</property>
             <property name="hexpand">True</property>
-            <property name="xalign">0</property>
             <property name="draw_indicator">True</property>
             <signal name="toggled" handler="on_latloncheck" swapped="no"/>
           </object>
@@ -255,6 +304,7 @@
             <property name="halign">center</property>
             <property name="hexpand">True</property>
             <property name="editable">False</property>
+            <property name="width_chars">10</property>
           </object>
           <packing>
             <property name="left_attach">6</property>
@@ -284,7 +334,6 @@
             <property name="receives_default">False</property>
             <property name="tooltip_text" translatable="yes">Check this box if you want to keep the original Gramps ID.</property>
             <property name="halign">start</property>
-            <property name="xalign">0</property>
             <property name="draw_indicator">True</property>
             <signal name="toggled" handler="on_idcheck" swapped="no"/>
           </object>
@@ -551,6 +600,9 @@ Select one or more rows and press 'Keep' button to toggle the 'include into plac
     <property name="can_focus">False</property>
     <property name="window_position">center-on-parent</property>
     <property name="type_hint">dialog</property>
+    <child type="titlebar">
+      <placeholder/>
+    </child>
     <child internal-child="vbox">
       <object class="GtkBox" id="dialog-vbox1">
         <property name="can_focus">False</property>

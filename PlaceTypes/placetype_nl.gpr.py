@@ -1,7 +1,8 @@
+# encoding:utf-8
 #
 # Gramps - a GTK+/GNOME based genealogy program
 #
-# Copyright (C) 2015      Nick Hall
+# Copyright (C) 2020  Paul Culley
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,28 +18,24 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
-#
+
 
 #------------------------------------------------------------------------
 #
-# GetGOV Gramplet
+# Common Placetypes
 #
 #------------------------------------------------------------------------
-
-register(GRAMPLET,
-         id = "GetGOV Gramplet",
-         name = _("GetGOV"),
-         description = _("Gramplet to get places from the GOV database"),
-         status = STABLE,
-         version = '2.0.0',
-         gramps_target_version = '5.1',
-         fname = "getgov.py",
-         gramplet = 'GetGOV',
-         height = 375,
-         detached_width = 510,
-         detached_height = 480,
-         expand = True,
-         gramplet_title = _("GetGOV"),
-         help_url="GetGOV Gramplet",
-         include_in_listing = True,
-        )
+register(
+    GENERAL,
+    category='PLACETYPES',
+    id='pt_nl',
+    name="Netherlands PlaceType values",
+    description=_("Provides a library of Netherlands PlaceType values."),
+    version = '1.0.2',
+    status=STABLE,
+    fname='placetype_nl.py',
+    authors=["The Gramps project"],
+    authors_email=["http://gramps-project.org"],
+    load_on_reg=True,
+    gramps_target_version='5.1',
+)

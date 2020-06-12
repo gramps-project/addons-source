@@ -210,7 +210,15 @@ elif command == "init":
     else:
         dirs = [addon]
     if len(sys.argv) == 4:
-        from gramps.gen.plug import make_environment, PTYPE_STR
+        try:
+            sys.path.insert(0, GRAMPSPATH)
+            os.environ['GRAMPS_RESOURCES'] = os.path.abspath(GRAMPSPATH)
+            from gramps.gen.plug import make_environment, PTYPE_STR
+        except ImportError:
+            print("Where is Gramps: '%s'? Use "
+                  "'GRAMPSPATH=path python3 make.py %s as_needed'" %
+                  (os.path.abspath(GRAMPSPATH), gramps_version))
+            exit()
 
         def register(ptype, **kwargs):
             global plugins
@@ -241,7 +249,7 @@ elif command == "init":
 
             mkdir("%(addon)s/po")
             system('''xgettext --language=Python --keyword=_ --keyword=N_'''
-                   ''' --from-code=UTF-8'''
+                   ''' --keyword=_T_ --from-code=UTF-8'''
                    ''' -o "%(addon)s/po/template.pot" "%(addon)s"/*.py ''')
             fnames = glob.glob("%s/*.glade" % addon)
             if fnames:
@@ -561,7 +569,7 @@ elif command == "as-needed":
         if todo:  # make an updated pot file
             mkdir("%(addon)s/po")
             system('''xgettext --language=Python --keyword=_ --keyword=N_'''
-                   ''' --from-code=UTF-8'''
+                   ''' --keyword=_T_ --from-code=UTF-8'''
                    ''' -o "%(addon)s/po/temp.pot" "%(addon)s"/*.py ''')
             fnames = glob.glob("%s/*.glade" % addon)
             if fnames:

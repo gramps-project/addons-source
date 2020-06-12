@@ -50,7 +50,7 @@ from gramps.gui.plug import tool
 from gramps.gui.managedwindow import ManagedWindow
 from gramps.gui.utils import ProgressMeter
 from gramps.gui.utils import edit_object
-from gramps.gui.widgets import MonitoredDataType
+from gramps.gui.widgets import MonitoredDataType, PlaceTypeSelector
 
 from gramps.gen.lib.attrtype import AttributeType
 from gramps.gen.lib.eventroletype import EventRoleType
@@ -61,6 +61,8 @@ from gramps.gen.lib.nameorigintype import NameOriginType
 from gramps.gen.lib.nametype import NameType
 from gramps.gen.lib.notetype import NoteType
 from gramps.gen.lib.placetype import PlaceType
+from gramps.gen.lib.placehiertype import PlaceHierType
+from gramps.gen.lib.placegrouptype import PlaceGroupType
 from gramps.gen.lib.repotype import RepositoryType
 from gramps.gen.lib.srcattrtype import SrcAttributeType
 from gramps.gen.lib.srcmediatype import SourceMediaType
@@ -106,6 +108,8 @@ class TypeCleanup(tool.Tool, ManagedWindow):
         ("name_types", _("Name Types"), NameType, None),
         ("note_types", _("Note Types"), NoteType, None),
         ("place_types", _("Place Types"), PlaceType, None),
+        ("placehier_types", _("Place Hierarchy Types"), PlaceHierType, None),
+        ("placegroup_types", _("Place Group Types"), PlaceGroupType, None),
         ("repository_types", _("Repository Types"), RepositoryType, None),
         ("source_attributes", _("Source Attributes"), SrcAttributeType, None),
         ("source_media_types", _("Source Media Types"), SourceMediaType, None),
@@ -252,11 +256,11 @@ class TypeCleanup(tool.Tool, ManagedWindow):
         for (attr, name, _obj, _srcobj) in self.t_table:
             # 99 is indicator that row is a title row
             row = (name, 0, 99)
-            iter_ = self.model.append(None, row)
             # get custom types from db
             types = getattr(self.db, attr, None)
             if types is None:
                 continue
+            iter_ = self.model.append(None, row)
             for indx, cust_type in enumerate(types):
                 # update right model
                 row = (cust_type, indx, r_indx)
@@ -293,6 +297,12 @@ class TypeCleanup(tool.Tool, ManagedWindow):
                obj.string in self.types_dict[obj.__class__]):  # custom type
                 # save a reference to the original primary object
                 self.types_dict[obj.__class__][obj.string].append(
+                    (obj_class, hndl))
+        elif isinstance(obj, PlaceType):
+            if(obj.__class__ in self.types_dict and  # one of monitored types
+               str(obj) in self.types_dict[obj.__class__]):  # custom type
+                # save a reference to the original primary object
+                self.types_dict[obj.__class__][str(obj)].append(
                     (obj_class, hndl))
 
     def button_press(self, _view, path, _column):
@@ -360,9 +370,13 @@ class TypeCleanup(tool.Tool, ManagedWindow):
         self.combo.get_child().set_width_chars(40)
         self.combo.show()
         self.cbox.add(self.combo)
-        self.type_name = MonitoredDataType(self.combo, self.set_obj,
-                                           self.get_obj, self.db.readonly,
-                                           self.get_cust_types())
+        if isinstance(self.obj, PlaceType):
+            self.type_name = PlaceTypeSelector(
+                self.dbstate, self.combo, self.obj, changed=self.ptchanged)
+        else:
+            self.type_name = MonitoredDataType(self.combo, self.set_obj,
+                                               self.get_obj, self.db.readonly,
+                                               self.get_cust_types())
 
     def get_cust_types(self):
         """ creates the custom types list for the MonitoredDataType """
@@ -372,6 +386,10 @@ class TypeCleanup(tool.Tool, ManagedWindow):
         """ update our temporary object from combo """
         self.obj.set(val)
         # if we have changed the combo value, enable the rename button
+        if '' != str(self.obj) != self.name:
+            self.ren_btn.set_sensitive(True)
+
+    def ptchanged(self):
         if '' != str(self.obj) != self.name:
             self.ren_btn.set_sensitive(True)
 
@@ -404,6 +422,7 @@ class TypeCleanup(tool.Tool, ManagedWindow):
         # remove the old custom type from db
         types = getattr(self.db, self.t_table[self.r_indx][0], None)
         types.remove(self.name)
+        self.db.emit("custom-type-changed")
         # reload the gui
         self.model_load()
 
@@ -416,7 +435,7 @@ class TypeCleanup(tool.Tool, ManagedWindow):
             for item in mod_obj.__dict__.values():
                 self.mod_recurse(item, type_obj)
         if isinstance(mod_obj, self.t_table[self.r_indx][2]):  # if right type
-            if(mod_obj.string == self.name):                 # and right value
+            if(str(mod_obj) == self.name):                 # and right value
                 mod_obj.set(type_obj)
 
     def delete(self, _button):
@@ -441,6 +460,7 @@ class TypeCleanup(tool.Tool, ManagedWindow):
         # actually remove from the db
         types = getattr(self.db, attr, None)
         types.remove(self.name)
+        self.db.emit("custom-type-changed")
         self.model.remove(self.iter_)
 
 
