@@ -28,7 +28,7 @@ from gramps.gui.plug import MenuToolOptions, PluginWindows
 from gramps.gen.plug.menu import FilterOption
 from gramps.gen.lib.familyreltype import FamilyRelType
 from gramps.gen.db import DbTxn
-from gramps.gen.filters import CustomFilters
+from gramps.gen.filters import CustomFilters, GenericFilterFactory, rules
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 _ = glocale.translation.gettext
 
@@ -47,11 +47,23 @@ class FamilyRelationshipToolOptions(MenuToolOptions):
 
     def add_menu_options(self, menu):
         """Add the menu options for the tool."""
+        # Get generic 'all families' filter and all custom familiy filters
+        menu.filter_list = CustomFilters.get_filters("Family")
+        all_families = GenericFilterFactory("Family")()
+        all_families.set_name(_("All Families"))
+        all_families.add_rule(rules.family.AllFamilies([]))
+        all_filter_in_list = False
+        for fltr in menu.filter_list:
+            if fltr.get_name() == all_families.get_name():
+                all_filter_in_list = True
+        if not all_filter_in_list:
+            menu.filter_list.insert(0, all_families)
+
         # family filter menu option
         fam = FilterOption(_("Family Filter"), 0)
         fam.set_help(_("Choose the set of families to process.\n"
                      "Create custom filters if empty."))
-        fam.set_filters(CustomFilters.get_filters("Family"))
+        fam.set_filters(menu.filter_list)
         menu.add_option(_("Options"), "families", fam)
 
         # add family relationship type menu option
