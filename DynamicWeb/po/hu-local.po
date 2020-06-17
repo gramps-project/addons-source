@@ -1,0 +1,1626 @@
+# Hungarian translations for PACKAGE package.
+# Copyright (C) 2020 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Jancsi <gyj@centrum.sk>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-22 11:04-0500\n"
+"PO-Revision-Date: 2020-06-17 13:31+0200\n"
+"Last-Translator: Jancsi <gyj@centrum.sk>\n"
+"Language-Team: Hungarian\n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.0.6\n"
+
+#: DynamicWeb/dynamicweb.gpr.py:15
+msgid "Dynamic Web Report"
+msgstr "Dinamikus Web Összesítő"
+
+#: DynamicWeb/dynamicweb.gpr.py:16
+msgid "Produces dynamic web pages for the database"
+msgstr "Dinamikus weboldalakat állít elő az adatbázisra"
+
+#: DynamicWeb/dynamicweb.py:265
+msgid "Street"
+msgstr "Utca"
+
+#: DynamicWeb/dynamicweb.py:266
+msgid "Locality"
+msgstr "Helyszín"
+
+#: DynamicWeb/dynamicweb.py:267
+msgid "City"
+msgstr "Város"
+
+#: DynamicWeb/dynamicweb.py:268
+msgid "Church Parish"
+msgstr "Egyházmegye"
+
+#: DynamicWeb/dynamicweb.py:269
+msgid "County"
+msgstr "Megye"
+
+#: DynamicWeb/dynamicweb.py:270
+msgid "State/ Province"
+msgstr "Állam/megye"
+
+#: DynamicWeb/dynamicweb.py:271
+msgid "Postal Code"
+msgstr "Irányítószám"
+
+#: DynamicWeb/dynamicweb.py:272
+msgid "Country"
+msgstr "Ország"
+
+#: DynamicWeb/dynamicweb.py:273
+msgid "Phone"
+msgstr "Telefon"
+
+#: DynamicWeb/dynamicweb.py:279
+msgid "Home Page"
+msgstr "Honlap"
+
+#: DynamicWeb/dynamicweb.py:280
+msgid "SVG graphical tree"
+msgstr "SVG grafikás fa"
+
+#: DynamicWeb/dynamicweb.py:283
+msgid "Indexes pages"
+msgstr "Tármutató oldalak"
+
+#: DynamicWeb/dynamicweb.py:287 DynamicWeb/dynamicweb.py:4248
+#, python-format
+msgid "Custom page %(index)i"
+msgstr "Egyéni oldal  %(index)i"
+
+#: DynamicWeb/dynamicweb.py:305
+msgid "Ascending tree"
+msgstr "Ősfa"
+
+#: DynamicWeb/dynamicweb.py:306
+msgid "Descending tree"
+msgstr "Leszármazott fa"
+
+#: DynamicWeb/dynamicweb.py:307
+msgid "Descending tree with spouses"
+msgstr "Leszármazott fa társakkal"
+
+#: DynamicWeb/dynamicweb.py:308
+msgid "Ascending and descending tree"
+msgstr "Ősfa és leszármazott fa"
+
+#: DynamicWeb/dynamicweb.py:309
+msgid "Ascending and descending tree with spouses"
+msgstr "Ősfa és Leszármazott fa társakkal"
+
+#: DynamicWeb/dynamicweb.py:321
+msgid "Vertical (↓)"
+msgstr "Függőleges (↓)"
+
+#: DynamicWeb/dynamicweb.py:322
+msgid "Vertical (↑)"
+msgstr "Függőleges (↑)"
+
+#: DynamicWeb/dynamicweb.py:323
+msgid "Horizontal (→)"
+msgstr "Vízszintes (→)"
+
+#: DynamicWeb/dynamicweb.py:324
+msgid "Horizontal (←)"
+msgstr "Vízszintes (←)"
+
+#: DynamicWeb/dynamicweb.py:325
+msgid "Full Circle"
+msgstr "Teljes körös"
+
+#: DynamicWeb/dynamicweb.py:326
+msgid "Half Circle"
+msgstr "Félkörös"
+
+#: DynamicWeb/dynamicweb.py:327
+msgid "Quadrant"
+msgstr "Negyedkörös"
+
+#: DynamicWeb/dynamicweb.py:339
+msgid "Size proportional to number of ancestors"
+msgstr "Méretarányos az ősök számával"
+
+#: DynamicWeb/dynamicweb.py:340
+msgid "Homogeneous parents distribution"
+msgstr "Homogén szülői felosztás"
+
+#: DynamicWeb/dynamicweb.py:343
+msgid "Size proportional to number of descendants"
+msgstr "Méretarányos a leszármazottak számával"
+
+#: DynamicWeb/dynamicweb.py:344
+msgid "Homogeneous children distribution"
+msgstr "Homogén gyermek felosztás"
+
+#: DynamicWeb/dynamicweb.py:351 DynamicWeb/dynamicweb.py:374
+msgid "Gender colors"
+msgstr "A nem színei"
+
+#: DynamicWeb/dynamicweb.py:352
+msgid "Generation based gradient"
+msgstr "Generáció szerinti átmenet"
+
+#: DynamicWeb/dynamicweb.py:353
+msgid "Age based gradient"
+msgstr "Kor szerinti átmenet"
+
+#: DynamicWeb/dynamicweb.py:354 DynamicWeb/dynamicweb.py:373
+msgid "Single main (filter) color"
+msgstr "Egyszeres fő (szűrő) szín"
+
+#: DynamicWeb/dynamicweb.py:355
+msgid "Time period based gradient"
+msgstr "Időiszak szerinti átmenet"
+
+#: DynamicWeb/dynamicweb.py:356 DynamicWeb/dynamicweb.py:378
+msgid "White"
+msgstr "Fehér"
+
+#: DynamicWeb/dynamicweb.py:357 DynamicWeb/dynamicweb.py:376
+msgid "Color scheme classic report"
+msgstr "Klasszikus szín séma jelentés"
+
+#: DynamicWeb/dynamicweb.py:358 DynamicWeb/dynamicweb.py:377
+msgid "Color scheme classic view"
+msgstr "Klasszikus szín séma nézet"
+
+#: DynamicWeb/dynamicweb.py:375
+msgid "Gradient"
+msgstr "Színátmenet"
+
+#: DynamicWeb/dynamicweb.py:394
+msgid "Default"
+msgstr "Alapértelmezett"
+
+#: DynamicWeb/dynamicweb.py:395
+msgid "Mainz"
+msgstr "Mainz"
+
+#: DynamicWeb/dynamicweb.py:703
+#, python-format
+msgid "Neither %(current)s nor %(parent)s are directories"
+msgstr "A %(current)s sem és a %(parent)s sem mappa"
+
+#: DynamicWeb/dynamicweb.py:711 DynamicWeb/dynamicweb.py:716
+#, python-format
+msgid "Could not create the directory: %(path)s"
+msgstr "%(path)s mappa létrhozésa sikertelen"
+
+#: DynamicWeb/dynamicweb.py:742 DynamicWeb/dynamicweb.py:3381
+msgid "Dynamic Web Site Report"
+msgstr "Dinamikus Web-oldal Összesítő"
+
+#: DynamicWeb/dynamicweb.py:742
+msgid "Exporting family tree data ..."
+msgstr "Családfa-adatainak exportálása ..."
+
+#: DynamicWeb/dynamicweb.py:1233 DynamicWeb/dynamicweb.py:2457
+msgid "Author"
+msgstr "Szerző"
+
+#: DynamicWeb/dynamicweb.py:1234 DynamicWeb/dynamicweb.py:2447
+msgid "Abbreviation"
+msgstr "Rövidítés"
+
+#: DynamicWeb/dynamicweb.py:1235 DynamicWeb/dynamicweb.py:2544
+msgid "Publication information"
+msgstr "Kiadvány információ"
+
+#: DynamicWeb/dynamicweb.py:1305 DynamicWeb/dynamicweb.py:2475
+msgid "Date"
+msgstr "Dátum"
+
+#: DynamicWeb/dynamicweb.py:1306
+msgid "Page"
+msgstr "Oldal"
+
+#: DynamicWeb/dynamicweb.py:1307
+msgid "Confidence"
+msgstr "Megbízhatóság"
+
+#: DynamicWeb/dynamicweb.py:1626
+#, python-format
+msgid "%(type)s: %(value)s"
+msgstr "%(type)s: %(value)s"
+
+#: DynamicWeb/dynamicweb.py:1873
+#, python-format
+msgid "Impossible to convert \"%(path)s\" to a relative path."
+msgstr "Lehetetlen konvertálni a \"%(path)s\" útvonalat relatív útvonallá."
+
+#: DynamicWeb/dynamicweb.py:2179
+msgid ""
+"The pages configuration is not valid: several pages have the same content"
+msgstr ""
+"Az oldalak beállítása érvénytelen: több oldal azonos tartalommal rendelkezik"
+
+#: DynamicWeb/dynamicweb.py:2190
+msgid "Html|Home"
+msgstr "Kezdőlap"
+
+#: DynamicWeb/dynamicweb.py:2191 DynamicWeb/dynamicweb.py:2204
+#: DynamicWeb/dynamicweb.py:2205 DynamicWeb/dynamicweb.py:2206
+msgid "Tree"
+msgstr "Fa"
+
+#: DynamicWeb/dynamicweb.py:2192 DynamicWeb/dynamicweb.py:2207
+#: DynamicWeb/dynamicweb.py:2208 DynamicWeb/dynamicweb.py:2209
+msgid "Statistics"
+msgstr "Statisztika"
+
+#: DynamicWeb/dynamicweb.py:2195 DynamicWeb/dynamicweb.py:2471
+msgid "Configuration"
+msgstr "Beállítás"
+
+#: DynamicWeb/dynamicweb.py:2197 DynamicWeb/dynamicweb.py:2536
+msgid "Person"
+msgstr "Személy"
+
+#: DynamicWeb/dynamicweb.py:2198
+msgid "Family"
+msgstr "Család"
+
+#: DynamicWeb/dynamicweb.py:2199 DynamicWeb/dynamicweb.py:2576
+msgid "Source"
+msgstr "Forrás"
+
+#: DynamicWeb/dynamicweb.py:2200 DynamicWeb/dynamicweb.py:2219
+#: DynamicWeb/dynamicweb.py:2519
+msgid "Media"
+msgstr "Média"
+
+#: DynamicWeb/dynamicweb.py:2201 DynamicWeb/dynamicweb.py:2539
+msgid "Place"
+msgstr "Hely"
+
+#: DynamicWeb/dynamicweb.py:2202 DynamicWeb/dynamicweb.py:2551
+msgid "Repository"
+msgstr "Tároló"
+
+#: DynamicWeb/dynamicweb.py:2203
+msgid "Search results"
+msgstr "Keresési eredmények"
+
+#: DynamicWeb/dynamicweb.py:2214 DynamicWeb/dynamicweb.py:2215
+#: DynamicWeb/dynamicweb.py:2583
+msgid "Surnames"
+msgstr "Vezetéknevek"
+
+#: DynamicWeb/dynamicweb.py:2216 DynamicWeb/dynamicweb.py:2504
+msgid "Individuals"
+msgstr "Személyek"
+
+#: DynamicWeb/dynamicweb.py:2217 DynamicWeb/dynamicweb.py:2487
+msgid "Families"
+msgstr "Családok"
+
+#: DynamicWeb/dynamicweb.py:2218 DynamicWeb/dynamicweb.py:2578
+msgid "Sources"
+msgstr "Források"
+
+#: DynamicWeb/dynamicweb.py:2220 DynamicWeb/dynamicweb.py:2541
+msgid "Places"
+msgstr "Helyek"
+
+#: DynamicWeb/dynamicweb.py:2221 DynamicWeb/dynamicweb.py:2449
+msgid "Addresses"
+msgstr "Lakcímek"
+
+#: DynamicWeb/dynamicweb.py:2222 DynamicWeb/dynamicweb.py:2550
+msgid "Repositories"
+msgstr "Tárolók"
+
+#: DynamicWeb/dynamicweb.py:2273 DynamicWeb/dynamicweb.py:2503
+#: DynamicWeb/dynamicweb.py:4122
+msgid "Indexes"
+msgstr "Tárgymutató"
+
+#: DynamicWeb/dynamicweb.py:2437
+#, python-format
+msgid "(b. %(birthdate)s, d. %(deathdate)s)"
+msgstr "(szül. %(birthdate)s, hal. %(deathdate)s)"
+
+#: DynamicWeb/dynamicweb.py:2438
+#, python-format
+msgid "(b. %s)"
+msgstr "(szül. %s)"
+
+#: DynamicWeb/dynamicweb.py:2439
+#, python-format
+msgid "(d. %s)"
+msgstr "(hal. %s)"
+
+#: DynamicWeb/dynamicweb.py:2440
+msgid "(filtered from _MAX_ total entries)"
+msgstr ""
+
+#: DynamicWeb/dynamicweb.py:2441
+#, python-format
+msgid "(m. %s)"
+msgstr "(ház. %s)"
+
+#: DynamicWeb/dynamicweb.py:2442
+msgid "(sort by name)"
+msgstr "(rendezés név szerint)"
+
+#: DynamicWeb/dynamicweb.py:2443
+msgid "(sort by quantity)"
+msgstr "(rendezés mennyiség szerint)"
+
+#: DynamicWeb/dynamicweb.py:2444
+msgid ": activate to sort column ascending"
+msgstr ": aktiválja az oszlop növekvő sorrendjét"
+
+#: DynamicWeb/dynamicweb.py:2445
+msgid ": activate to sort column descending"
+msgstr ": aktiválja az oszlop csökkenő sorrendjét"
+
+#: DynamicWeb/dynamicweb.py:2446
+msgid ""
+"<p>This page provides the SVG raw code.<br>Copy the contents into a text "
+"editor and save as an SVG file.<br>Make sure that the text editor encoding "
+"is UTF-8.</p>"
+msgstr ""
+"<p>Az oldal SVG nyers kódot tartalmaz.<br>Másolja a tartalmat egy "
+"szövegszerkesztőbe, és mentse SVG fájlként.<br>Győződjön meg arról, hogy a "
+"szövegszerkesztő kódolása UTF-8.</p>"
+
+#: DynamicWeb/dynamicweb.py:2448
+msgid "Address"
+msgstr "Lakcím"
+
+#: DynamicWeb/dynamicweb.py:2450
+msgid "Age at death"
+msgstr "Kora a halálkor"
+
+#: DynamicWeb/dynamicweb.py:2451
+msgid "Alternate Marriage"
+msgstr "Alternatív házasság"
+
+#: DynamicWeb/dynamicweb.py:2452
+msgid "Alternate Name"
+msgstr "Egyébb név"
+
+#: DynamicWeb/dynamicweb.py:2453
+msgid "Ancestors"
+msgstr "Ősök"
+
+#: DynamicWeb/dynamicweb.py:2454
+msgid "Associations"
+msgstr "Társítások"
+
+#: DynamicWeb/dynamicweb.py:2455
+msgid "Attribute"
+msgstr "Jellemző"
+
+#: DynamicWeb/dynamicweb.py:2456
+msgid "Attributes"
+msgstr "Jellemzők"
+
+#: DynamicWeb/dynamicweb.py:2458 DynamicWeb/dynamicweb.py:4205
+msgid "Background"
+msgstr "Háttér"
+
+#: DynamicWeb/dynamicweb.py:2459
+msgid "Baptism"
+msgstr "Keresztség"
+
+#: DynamicWeb/dynamicweb.py:2460
+msgid "Birth"
+msgstr "Születés"
+
+#: DynamicWeb/dynamicweb.py:2461
+msgid "Burial"
+msgstr "Temetés"
+
+#: DynamicWeb/dynamicweb.py:2462
+msgid "Call Name"
+msgstr "Hívónév"
+
+#: DynamicWeb/dynamicweb.py:2463
+msgid "Call Number"
+msgstr "Hívószám"
+
+#: DynamicWeb/dynamicweb.py:2464
+msgid "Cause Of Death"
+msgstr "Halál oka"
+
+#: DynamicWeb/dynamicweb.py:2465
+msgid "Children"
+msgstr "Gyermekek"
+
+#: DynamicWeb/dynamicweb.py:2466
+msgid "Christening"
+msgstr "Keresztelő"
+
+#: DynamicWeb/dynamicweb.py:2467
+msgid "Citation"
+msgstr "Idézet"
+
+#: DynamicWeb/dynamicweb.py:2468
+msgid "Citations"
+msgstr "Idézetek"
+
+#: DynamicWeb/dynamicweb.py:2469
+msgid "Click on the map to show it full-screen"
+msgstr "Kattintson a térképre a teljes képernyős megjelenítéshez"
+
+#: DynamicWeb/dynamicweb.py:2470
+msgid "Code"
+msgstr "Kód"
+
+#: DynamicWeb/dynamicweb.py:2472
+msgid "Configure"
+msgstr "Beállítás"
+
+#: DynamicWeb/dynamicweb.py:2473
+msgid "Count"
+msgstr "Számolás"
+
+#: DynamicWeb/dynamicweb.py:2474
+msgid "Cremation"
+msgstr "Hamvasztás"
+
+#: DynamicWeb/dynamicweb.py:2476
+msgid "Death"
+msgstr "Halál"
+
+#: DynamicWeb/dynamicweb.py:2477
+msgid "Descendants"
+msgstr "Leszármazottak"
+
+#: DynamicWeb/dynamicweb.py:2478
+msgid "Description"
+msgstr "Leírás"
+
+#: DynamicWeb/dynamicweb.py:2479
+msgid "DynamicWeb_report#Help"
+msgstr ""
+
+#: DynamicWeb/dynamicweb.py:2480
+msgid "Enclosed By"
+msgstr "által mellékelve"
+
+#: DynamicWeb/dynamicweb.py:2481
+msgid "Engagement"
+msgstr "Eljegyzés"
+
+#: DynamicWeb/dynamicweb.py:2482
+msgid "Event"
+msgstr "Esemény"
+
+#: DynamicWeb/dynamicweb.py:2483
+msgid "Events"
+msgstr "Események"
+
+#: DynamicWeb/dynamicweb.py:2484
+msgid "Examples"
+msgstr "Példák"
+
+#: DynamicWeb/dynamicweb.py:2485
+msgid "F"
+msgstr "Nő"
+
+#: DynamicWeb/dynamicweb.py:2486
+msgid "Families Index"
+msgstr "Családjegyzék"
+
+#: DynamicWeb/dynamicweb.py:2488
+msgid "Family Nick Name"
+msgstr "Családi becenév"
+
+#: DynamicWeb/dynamicweb.py:2489
+msgid "Father"
+msgstr "Apa"
+
+#: DynamicWeb/dynamicweb.py:2490
+msgid "Female"
+msgstr "Nő"
+
+#: DynamicWeb/dynamicweb.py:2491
+msgid "File ready"
+msgstr "A fájl kész"
+
+#: DynamicWeb/dynamicweb.py:2492
+msgid "Gender"
+msgstr "Nem"
+
+#: DynamicWeb/dynamicweb.py:2493
+msgid "Help"
+msgstr "Súgó"
+
+#: DynamicWeb/dynamicweb.py:2494
+msgid "ID"
+msgstr "Azonosító"
+
+#: DynamicWeb/dynamicweb.py:2495 DynamicWeb/dynamicweb.py:4037
+msgid "Include Place map on Place Pages"
+msgstr "Helytérképpel a Helyek oldalon"
+
+#: DynamicWeb/dynamicweb.py:2496 DynamicWeb/dynamicweb.py:4142
+msgid "Include dates columns on the index pages"
+msgstr "Oszlop a dátumnak a tárgymutatóban"
+
+#: DynamicWeb/dynamicweb.py:2497 DynamicWeb/dynamicweb.py:4150
+msgid "Include a column for parents on the index pages"
+msgstr "Legyen oszlop a szülőknek az index oldalakon"
+
+#: DynamicWeb/dynamicweb.py:2498 DynamicWeb/dynamicweb.py:4158
+msgid "Include a column for media path on the index pages"
+msgstr "Oszlop a média útvonalának a tárgymutatóban"
+
+#: DynamicWeb/dynamicweb.py:2499 DynamicWeb/dynamicweb.py:4146
+msgid "Include a column for partners on the index pages"
+msgstr "Oszlop a társnak a tárgymutatóban"
+
+#: DynamicWeb/dynamicweb.py:2500 DynamicWeb/dynamicweb.py:4045
+msgid "Include a map in the individuals and family pages"
+msgstr "Térképpel a személyi és családi oldalon"
+
+#: DynamicWeb/dynamicweb.py:2501 DynamicWeb/dynamicweb.py:4092
+msgid "Include half and/ or step-siblings on the individual pages"
+msgstr "Fél- és/vagy mostohatestvérekkel az oldalakon"
+
+#: DynamicWeb/dynamicweb.py:2502 DynamicWeb/dynamicweb.py:4162
+msgid "Include references in indexes"
+msgstr "Hivatkozásokkal a tármutatóban"
+
+#: DynamicWeb/dynamicweb.py:2505 DynamicWeb/dynamicweb.py:4112
+msgid "Insert sources author in the sources title"
+msgstr "Forrás szerzője a források címébe"
+
+#: DynamicWeb/dynamicweb.py:2506
+msgid "Last Modified"
+msgstr "Utoljára módosítva"
+
+#: DynamicWeb/dynamicweb.py:2507
+msgid "Latitude"
+msgstr "Szélesség"
+
+#: DynamicWeb/dynamicweb.py:2508
+msgid "Link"
+msgstr "Hivatkozás"
+
+#: DynamicWeb/dynamicweb.py:2509
+msgid "Loading..."
+msgstr "Betöltés..."
+
+#: DynamicWeb/dynamicweb.py:2510
+msgid "Location"
+msgstr "Helyszín"
+
+#: DynamicWeb/dynamicweb.py:2511
+msgid "Longitude"
+msgstr "Hosszúság"
+
+#: DynamicWeb/dynamicweb.py:2512
+msgid "M"
+msgstr "Ffi"
+
+#: DynamicWeb/dynamicweb.py:2513
+msgid "Male"
+msgstr "Férfi"
+
+#: DynamicWeb/dynamicweb.py:2514
+msgid "Map"
+msgstr "Térkép"
+
+#: DynamicWeb/dynamicweb.py:2515
+msgid "Marriage"
+msgstr "Házasság"
+
+#: DynamicWeb/dynamicweb.py:2516
+msgid "Maximize"
+msgstr "Teljes méret"
+
+#: DynamicWeb/dynamicweb.py:2517
+msgid "Media Index"
+msgstr "Médiajegyzék"
+
+#: DynamicWeb/dynamicweb.py:2518
+msgid "Media Type"
+msgstr "Médiatípus"
+
+#: DynamicWeb/dynamicweb.py:2520
+msgid "Mother"
+msgstr "Anya"
+
+#: DynamicWeb/dynamicweb.py:2521
+msgid "Name"
+msgstr "Név"
+
+#: DynamicWeb/dynamicweb.py:2522
+msgid "Nick Name"
+msgstr "Becenév"
+
+#: DynamicWeb/dynamicweb.py:2523
+msgid "No data available in table"
+msgstr "Nincs rendelkezésre álló adat a táblázatban"
+
+#: DynamicWeb/dynamicweb.py:2524
+msgid "No matches found"
+msgstr "Nincsenek találatok"
+
+#: DynamicWeb/dynamicweb.py:2525
+msgid "No matching records found"
+msgstr "Nem található megfelelő bejegyzés"
+
+#: DynamicWeb/dynamicweb.py:2526
+msgid "No matching surname."
+msgstr "Nem található megfelelő vezetéknév."
+
+#: DynamicWeb/dynamicweb.py:2527
+msgid "None"
+msgstr "Nincs"
+
+#: DynamicWeb/dynamicweb.py:2528
+msgid "Notes"
+msgstr "Jegyzetek"
+
+#: DynamicWeb/dynamicweb.py:2529
+msgid "Number"
+msgstr "Szám"
+
+#: DynamicWeb/dynamicweb.py:2530
+msgid "OK"
+msgstr "Rendben"
+
+#: DynamicWeb/dynamicweb.py:2531
+msgid "Other participants"
+msgstr "Egyéb résztvevők"
+
+#: DynamicWeb/dynamicweb.py:2532
+msgid "Parents"
+msgstr "Szülők"
+
+#: DynamicWeb/dynamicweb.py:2533
+msgid "Path"
+msgstr "Útvonal"
+
+#: DynamicWeb/dynamicweb.py:2534
+msgid "Person page"
+msgstr "Személy oldala"
+
+#: DynamicWeb/dynamicweb.py:2535
+msgid "Person to search for"
+msgstr "Keresendő személy"
+
+#: DynamicWeb/dynamicweb.py:2537
+msgid "Persons Index"
+msgstr "Névjegyzék"
+
+#: DynamicWeb/dynamicweb.py:2538
+msgid "Persons"
+msgstr "Személyek"
+
+#: DynamicWeb/dynamicweb.py:2540
+msgid "Places Index"
+msgstr "Helynévtár"
+
+#: DynamicWeb/dynamicweb.py:2542
+msgid "Preparing file ..."
+msgstr "Fájl előkészítése ..."
+
+#: DynamicWeb/dynamicweb.py:2543
+msgid "Processing..."
+msgstr "Végrehajtás..."
+
+#: DynamicWeb/dynamicweb.py:2545
+msgid "References"
+msgstr "Hivatkozások"
+
+#: DynamicWeb/dynamicweb.py:2546
+msgid "Relationship to Father"
+msgstr "Kapcsolat az apával"
+
+#: DynamicWeb/dynamicweb.py:2547
+msgid "Relationship to Mother"
+msgstr "Kapcsolat az anyával"
+
+#: DynamicWeb/dynamicweb.py:2548
+msgid "Relationship"
+msgstr "Kapcsolat"
+
+#: DynamicWeb/dynamicweb.py:2549
+msgid "Repositories Index"
+msgstr "Adattárjegyzék"
+
+#: DynamicWeb/dynamicweb.py:2552
+msgid "Restore"
+msgstr "Visszaállítás"
+
+#: DynamicWeb/dynamicweb.py:2553
+msgid "Restore default settings"
+msgstr "Visszaállítani az alapértelmezett beállításokat"
+
+#: DynamicWeb/dynamicweb.py:2554 DynamicWeb/dynamicweb.py:4108
+msgid "Show last modification time"
+msgstr "Az utolsó módosítás idejének megjelenítése"
+
+#: DynamicWeb/dynamicweb.py:2555 DynamicWeb/dynamicweb.py:4199
+msgid "SVG tree children distribution"
+msgstr "SVG fa gyermek felosztás"
+
+#: DynamicWeb/dynamicweb.py:2556
+msgid "SVG tree configuration"
+msgstr "SVG fa beállítás"
+
+#: DynamicWeb/dynamicweb.py:2557 DynamicWeb/dynamicweb.py:4187
+msgid "SVG tree graph shape"
+msgstr "SVG-fa ábraforma"
+
+#: DynamicWeb/dynamicweb.py:2558 DynamicWeb/dynamicweb.py:4181
+msgid "SVG tree graph type"
+msgstr "SVG-fa ábratípus"
+
+#: DynamicWeb/dynamicweb.py:2559 DynamicWeb/dynamicweb.py:4193
+msgid "SVG tree parents distribution"
+msgstr "SVG fa szülői felostás"
+
+#: DynamicWeb/dynamicweb.py:2560
+msgid "Save tree as file"
+msgstr "Fa mentése fájlként"
+
+#: DynamicWeb/dynamicweb.py:2561
+msgid "Search:"
+msgstr "Keresés:"
+
+#: DynamicWeb/dynamicweb.py:2562
+msgid "Select the background color scheme"
+msgstr "Válassza ki a háttér szín sémáját"
+
+#: DynamicWeb/dynamicweb.py:2563
+msgid "Select the children distribution (fan charts only)"
+msgstr "Gyermek felosztás (legyező ábra)"
+
+#: DynamicWeb/dynamicweb.py:2564
+msgid "Select the number of ascending generations"
+msgstr "Válassza ki a felmenő generációk számát"
+
+#: DynamicWeb/dynamicweb.py:2565
+msgid "Select the number of descending generations"
+msgstr "Válassza ki a leszármazott generációk számát"
+
+#: DynamicWeb/dynamicweb.py:2566
+msgid "Select the parents distribution (fan charts only)"
+msgstr "Válassza ki a szülői felosztást (legyező ábra)"
+
+#: DynamicWeb/dynamicweb.py:2567
+msgid "Select the shape of graph"
+msgstr "Válassza ki az ábraformát"
+
+#: DynamicWeb/dynamicweb.py:2568
+msgid "Select the type of graph"
+msgstr "Válassza ki az ábratípust"
+
+#: DynamicWeb/dynamicweb.py:2569
+msgid "Several matches.<br>Precise your search or choose in the lists below."
+msgstr ""
+"Számos egyezés.<br>Pontosítsa a keresést vagy válasszon az alábbi listából."
+
+#: DynamicWeb/dynamicweb.py:2570
+msgid "Show _MENU_ entries"
+msgstr ""
+
+#: DynamicWeb/dynamicweb.py:2571 DynamicWeb/dynamicweb.py:4217
+msgid "Show duplicates"
+msgstr "Kettőzöttek mutatása"
+
+#: DynamicWeb/dynamicweb.py:2572
+msgid "Showing 0 to 0 of 0 entries"
+msgstr "Mutassa a 0-tól 0-ig 0 bejegyzést"
+
+#: DynamicWeb/dynamicweb.py:2573
+msgid "Showing _START_ to _END_ of _TOTAL_ entries"
+msgstr ""
+
+#: DynamicWeb/dynamicweb.py:2574
+msgid "Siblings"
+msgstr "Testvérek"
+
+#: DynamicWeb/dynamicweb.py:2575
+msgid "Sort by:"
+msgstr "Sorbarakás:"
+
+#: DynamicWeb/dynamicweb.py:2577
+msgid "Sources Index"
+msgstr "Források jegyzéke"
+
+#: DynamicWeb/dynamicweb.py:2579
+msgid "Spouses"
+msgstr "Házastársak"
+
+#: DynamicWeb/dynamicweb.py:2580 DynamicWeb/dynamicweb.py:4116
+msgid "Suppress Gramps ID"
+msgstr "GRAMPS azonosító letiltása"
+
+#: DynamicWeb/dynamicweb.py:2581
+msgid "Surname"
+msgstr "Vezetéknév"
+
+#: DynamicWeb/dynamicweb.py:2582
+msgid "Surnames Index"
+msgstr "Családnévjegyzék"
+
+#: DynamicWeb/dynamicweb.py:2584
+msgid "Title"
+msgstr "Cím"
+
+#: DynamicWeb/dynamicweb.py:2585
+msgid "Type"
+msgstr "Típus"
+
+#: DynamicWeb/dynamicweb.py:2586
+msgid "U"
+msgstr ""
+
+#: DynamicWeb/dynamicweb.py:2587
+msgid "Unknown"
+msgstr "Ismeretlen"
+
+#: DynamicWeb/dynamicweb.py:2588 DynamicWeb/dynamicweb.py:4104
+msgid "Use tabbed panels instead of sections"
+msgstr "Fülekkel ellátott panelek használata szakaszok helyett"
+
+#: DynamicWeb/dynamicweb.py:2589
+msgid "Use the search box above in order to find a person."
+msgstr "Használja a fenti keresőmezőt személy kereséséhez."
+
+#: DynamicWeb/dynamicweb.py:2590
+msgid "Use a table format for the surnames index"
+msgstr "Táblázat használatat a családnévjegyzékhez"
+
+#: DynamicWeb/dynamicweb.py:2591
+msgid "Use a table format for the persons index"
+msgstr "Táblázat használata a névjegyzékhez"
+
+#: DynamicWeb/dynamicweb.py:2592
+msgid "Use a table format for the families index"
+msgstr "Ttáblázat használata a családjegyzékhez"
+
+#: DynamicWeb/dynamicweb.py:2593
+msgid "Use a table format for the sources index"
+msgstr "Táblázatos hasnálata a forrásjegyzékhez"
+
+#: DynamicWeb/dynamicweb.py:2594
+msgid "Use a table format for the places index"
+msgstr "Táblázatos használta a helyjegyzéhez"
+
+#: DynamicWeb/dynamicweb.py:2595
+msgid "Used for family"
+msgstr "Családnál használt"
+
+#: DynamicWeb/dynamicweb.py:2596
+msgid "Used for media"
+msgstr "Médiánál használt"
+
+#: DynamicWeb/dynamicweb.py:2597
+msgid "Used for person"
+msgstr "Személynél használt"
+
+#: DynamicWeb/dynamicweb.py:2598
+msgid "Used for place"
+msgstr "Helyszínnél használt"
+
+#: DynamicWeb/dynamicweb.py:2599
+msgid "Used for source"
+msgstr "Forrásnál használt"
+
+#: DynamicWeb/dynamicweb.py:2600
+msgid "Value"
+msgstr "Érték"
+
+#: DynamicWeb/dynamicweb.py:2601
+msgid "Web Link"
+msgstr "Web-hivatkozás"
+
+#: DynamicWeb/dynamicweb.py:2602
+msgid "Web Links"
+msgstr "Web-hivatkozások"
+
+#: DynamicWeb/dynamicweb.py:2603 DynamicWeb/dynamicweb.py:4218
+msgid ""
+"Whether to use a special color for the persons that appear several times in "
+"the SVG tree"
+msgstr ""
+"Legyen-e külön színe azoknak a személyeknek, akik többször jelennek meg az "
+"SVG-fában"
+
+#: DynamicWeb/dynamicweb.py:2604
+msgid "Without name"
+msgstr "Név nélkül"
+
+#: DynamicWeb/dynamicweb.py:2605
+msgid "Without surname"
+msgstr "Családnév nélkül"
+
+#: DynamicWeb/dynamicweb.py:2606
+msgid "Without title"
+msgstr "Cím nélkül"
+
+#: DynamicWeb/dynamicweb.py:2607
+msgid "Zoom in"
+msgstr "Nagyítás"
+
+#: DynamicWeb/dynamicweb.py:2608
+msgid "Zoom out"
+msgstr "Kicsinyítés"
+
+#: DynamicWeb/dynamicweb.py:2609
+msgid "all"
+msgstr "minden"
+
+#: DynamicWeb/dynamicweb.py:2812
+msgid "No Home Person"
+msgstr "Nincs központi személy"
+
+#: DynamicWeb/dynamicweb.py:2953
+#, python-format
+msgid "Copying error: %(error)s"
+msgstr "Másolási hiba: %(error)s"
+
+#: DynamicWeb/dynamicweb.py:2954
+#, python-format
+msgid "Impossible to copy \"%(src)s\" to \"%(dst)s\""
+msgstr "Nem másolható \"%(src)s\" ide \"%(dst)s\""
+
+#: DynamicWeb/dynamicweb.py:2957
+msgid "Possible destination error"
+msgstr "Lehetséges célhiba"
+
+#: DynamicWeb/dynamicweb.py:2958
+msgid ""
+"You appear to have set your target directory to a directory used for data "
+"storage. This could create problems with file management. It is recommended "
+"that you consider using a different directory to store your generated web "
+"pages."
+msgstr ""
+"Úgy tűnik, hogy a célkönyvtárnak az adattároláshoz használt könyvtárat "
+"választotta. Ez problémákat okozhat a fájlkezelésben. Ajánlott, hogy "
+"fontolja meg egy másik könyvtár használatát a létrehozott weboldalak "
+"tárolására."
+
+#: DynamicWeb/dynamicweb.py:2985
+#, python-format
+msgid "Unable to copy web site template files from \"%(path)s\""
+msgstr ""
+"Nem sikerült másolni a webhely sablon fájljait a(z) \"%(path)s\" helyről"
+
+#: DynamicWeb/dynamicweb.py:3029
+#, python-format
+msgid "Keeping \"%(dst)s\" (newer than \"%(src)s\")"
+msgstr "\"%(dst)s\" megtartása (újabb mint \"%(src)s\")"
+
+#: DynamicWeb/dynamicweb.py:3032
+#, python-format
+msgid "Copying \"%(src)s\" to \"%(dst)s\""
+msgstr "\"%(src)s\" másolása ide \"%(dst)s\""
+
+#: DynamicWeb/dynamicweb.py:3050
+msgid "Invalid file name"
+msgstr "Szabálytalan fájlmegnevezés"
+
+#: DynamicWeb/dynamicweb.py:3051
+msgid "The archive file must be a file, not a directory"
+msgstr "Az archívumnak fájlnak kell lennie, nem mappának"
+
+#: DynamicWeb/dynamicweb.py:3061 DynamicWeb/dynamicweb.py:3079
+#, python-format
+msgid "Unable to overwrite archive file \"%(path)s\""
+msgstr "Nem sikerült felülírni a(z) \"%(path)s\" archív fájlt"
+
+#: DynamicWeb/dynamicweb.py:3071 DynamicWeb/dynamicweb.py:3086
+#, python-format
+msgid "Unable to add file \"%(file)s\" to archive \"%(archive)s\""
+msgstr ""
+"Nem sikerült hozzáadni a(z) \"%(file)s\" fájlt az \"%(archive)s\" archívhoz"
+
+#: DynamicWeb/dynamicweb.py:3139
+#, python-format
+msgid "DynamicWebReport ignoring link type '%(class)s'"
+msgstr "A DynamicWebReport figyelmen kívül hagyja a '%(class)s' utalás típust"
+
+#: DynamicWeb/dynamicweb.py:3382
+msgid "Constructing list of other objects..."
+msgstr "Objektumok listájának összeállítása ..."
+
+#: DynamicWeb/dynamicweb.py:3517
+#, python-format
+msgid "Family of %(husband)s and %(spouse)s"
+msgstr "%(husband)s és %(spouse)s családja"
+
+#: DynamicWeb/dynamicweb.py:3523
+#, python-format
+msgid "Family of %(father)s"
+msgstr "%(father)s családja"
+
+#: DynamicWeb/dynamicweb.py:3527
+#, python-format
+msgid "Family of %(mother)s"
+msgstr "%(mother)s családja"
+
+#: DynamicWeb/dynamicweb.py:3842
+msgid ""
+"In this note, the following special words are processed:\n"
+"__SEARCH_FORM__ is replaced by a search form.\n"
+"__NB_INDIVIDUALS__ is replaced by the number of persons.\n"
+"__NB_FAMILIES__ is replaced by the number of families.\n"
+"__NB_MEDIA__ is replaced by the number of media.\n"
+"__NB_SOURCES__ is replaced by the number of sources.\n"
+"__NB_REPOSITORIES__ is replaced by the number of repositories.\n"
+"__NB_PLACES__ is replaced by the number of places.\n"
+"__MEDIA_<gid>__ is replaced by the media with Gramps ID <gid>.\n"
+"__THUMB_<gid>__ is replaced by the thumbnail of the media with Gramps ID "
+"<gid>.\n"
+"__EXPORT_DATE__ is replaced by the current date.\n"
+"__GRAMPS_VERSION__ is replaced by the Gramps version.\n"
+"__GRAMPS_HOMEPAGE__ is replaced by the Gramps homepage link.\n"
+"URL starting with \"relative://relative.<link>\" are replaced by the "
+"relative URL \"<link>\".\n"
+msgstr ""
+"Ebben a feljegyzésben a következő speciális szavak kerülnek feldolgozásra:\n"
+"__SEARCH_FORM__ helyébe egy keresési űrlap,\n"
+"__NB_INDIVIDUALS__ helyébe a személyek száma,\n"
+"__NB_FAMILIES_ helyébe a családok száma,\n"
+"__NB_MEDIA__ helyébe az adathordozó száma,\n"
+"__NB_SOURCES__ helyébe a források száma,\n"
+"__NB_REPOSITORIES__ helyébe az adattárak száma,\n"
+"__NB_PLACES__ helyébe a helyek száma,\n"
+"__MEDIA_<gid>__ helyébe a média Gramps azonosítója <gid>,\n"
+"__THUMB_<gid>__helyébe a média miniatűrjének Gramps azonosítója <gid>,\n"
+"__EXPORT_DATE__helyébe az aktuális dátum,\n"
+"__GRAMPS_VERSION__ helyébe a Gramps verzió,\n"
+"__GRAMPS_HOMEPAGE__ helyébe a Gramps honlap hivatkozása,\n"
+"\"relative://relative.<link>\" kezdődő URL helyébe a \"<link>\" relatív URL "
+"kerül.\n"
+
+#: DynamicWeb/dynamicweb.py:3882
+msgid "Report"
+msgstr "Összesítés"
+
+#: DynamicWeb/dynamicweb.py:3887
+msgid "Destination"
+msgstr "Célhely"
+
+#: DynamicWeb/dynamicweb.py:3889
+msgid "The destination directory for the web files"
+msgstr "A webfájlok célkönyvtára"
+
+#: DynamicWeb/dynamicweb.py:3893
+msgid "Store web pages in archive"
+msgstr "A weboldal tömörített tárolása"
+
+#: DynamicWeb/dynamicweb.py:3894
+msgid ""
+"Whether to create an archive file (in ZIP or TGZ format) containing the web "
+"site"
+msgstr ""
+"Hozzon-e létre egy archív tömörített fájlt (ZIP vagy TGZ formátum), amely "
+"tartalmazza a weboldalt"
+
+#: DynamicWeb/dynamicweb.py:3898
+msgid "Archive file"
+msgstr "Tömörített fájl"
+
+#: DynamicWeb/dynamicweb.py:3900
+msgid "The archive file name (with \".zip\" or \".tgz\" extension)"
+msgstr "Tömörített fájl neve (\".zip\" vagy \".tgz\" kiterjesztéssel)"
+
+#: DynamicWeb/dynamicweb.py:3906
+msgid "Web site title"
+msgstr "A web-oldal címe"
+
+#: DynamicWeb/dynamicweb.py:3906
+msgid "My Family Tree"
+msgstr "Családfám"
+
+#: DynamicWeb/dynamicweb.py:3907
+msgid "The title of the web site"
+msgstr "A web-oldal elnevezése"
+
+#: DynamicWeb/dynamicweb.py:3910
+msgid "Filter"
+msgstr "Szűrő"
+
+#: DynamicWeb/dynamicweb.py:3912
+msgid "Select filter to restrict people that appear on web site"
+msgstr "Válasszon szűrőt a weboldalon megjelenő személyekhez"
+
+#: DynamicWeb/dynamicweb.py:3916
+msgid "Filter Person"
+msgstr "Személyszűrő"
+
+#: DynamicWeb/dynamicweb.py:3917
+msgid "The center person for the filter"
+msgstr "A szűrő központi személye"
+
+#: DynamicWeb/dynamicweb.py:3925 DynamicWeb/dynamicweb.py:3945
+msgid "Name format (short)"
+msgstr "Név formátum (rövid)"
+
+#: DynamicWeb/dynamicweb.py:3926 DynamicWeb/dynamicweb.py:3948
+msgid "Select the format to display a shorter version of the names"
+msgstr ""
+"Válassza ki a formátumot a nevek rövidebb változatának megjelenítéséhez"
+
+#: DynamicWeb/dynamicweb.py:3940
+msgid "Name format"
+msgstr "Név formátum"
+
+#: DynamicWeb/dynamicweb.py:3943
+msgid "Select the format to display names"
+msgstr "Válasszon névmegjelenítés formátumot"
+
+#: DynamicWeb/dynamicweb.py:3951
+msgid "Web site template"
+msgstr "Web-oldal téma"
+
+#: DynamicWeb/dynamicweb.py:3954
+msgid "Select the template of the web site"
+msgstr "Válassza ki a web-oldal témáját"
+
+#: DynamicWeb/dynamicweb.py:3957
+msgid "Copyright"
+msgstr "Szerzői jog"
+
+#: DynamicWeb/dynamicweb.py:3960
+msgid "The copyright to be used for the web files"
+msgstr "A web-fájlokra vonatkozó szerzői jog"
+
+#: DynamicWeb/dynamicweb.py:3968
+msgid "Privacy"
+msgstr "Bizalmasság"
+
+#: DynamicWeb/dynamicweb.py:3976
+msgid "Include records marked private"
+msgstr "Személyes adatokkal együtt"
+
+#: DynamicWeb/dynamicweb.py:3977
+msgid "Whether to include private objects"
+msgstr "Legyenek-e benne a bizalmas objektumok"
+
+#: DynamicWeb/dynamicweb.py:3979
+msgid "Living People"
+msgstr "Élő emberek"
+
+#: DynamicWeb/dynamicweb.py:3980
+msgid "Exclude"
+msgstr "Kizárva"
+
+#: DynamicWeb/dynamicweb.py:3981
+msgid "Include Last Name Only"
+msgstr "Csak a vezetéknevet mutassa"
+
+#: DynamicWeb/dynamicweb.py:3982
+msgid "Include Full Name Only"
+msgstr "Csak a teljes nevet mutassa"
+
+#: DynamicWeb/dynamicweb.py:3983
+msgid "Include"
+msgstr "Beleértve"
+
+#: DynamicWeb/dynamicweb.py:3984
+msgid "How to handle living people"
+msgstr "Hogyan kezelje az élő embereket"
+
+#: DynamicWeb/dynamicweb.py:3987
+msgid "Years from death to consider living"
+msgstr "Évek száma a halálozástól az élőnek gondoltig"
+
+#: DynamicWeb/dynamicweb.py:3988
+msgid ""
+"This allows you to restrict information on people who have not been dead for "
+"very long"
+msgstr ""
+"Ez lehetővé teszi, hogy korlátozza az olyan emberekkel kapcsolatos "
+"információkat, akik hosszú ideje nem haltak meg"
+
+#: DynamicWeb/dynamicweb.py:3992
+msgid "Export notes"
+msgstr "Jegyzetek exportálása"
+
+#: DynamicWeb/dynamicweb.py:3993
+msgid "Whether to export notes in the web pages"
+msgstr "Legyen-e a web-oldal archívum fájlban tárolva"
+
+#: DynamicWeb/dynamicweb.py:3996
+msgid "Export sources"
+msgstr "Források exportálása"
+
+#: DynamicWeb/dynamicweb.py:3997
+msgid "Whether to export sources and citations in the web pages"
+msgstr "Legyenek-e a források és idézetek exportálása a weboldalakon"
+
+#: DynamicWeb/dynamicweb.py:4000
+msgid "Export addresses"
+msgstr "Helyszínek exportálása"
+
+#: DynamicWeb/dynamicweb.py:4001
+msgid "Whether to export addresses in the web pages"
+msgstr "Legyen-e a helyszínek exportálása a weboldalakon"
+
+#: DynamicWeb/dynamicweb.py:4006
+msgid "Options"
+msgstr "Lehetőségek"
+
+#: DynamicWeb/dynamicweb.py:4009
+msgid "Include repository pages"
+msgstr "Tároló oldalakkal együtt"
+
+#: DynamicWeb/dynamicweb.py:4010
+msgid "Whether or not to include the Repository Pages."
+msgstr "Legyenek-e benne Tároló oldalak, vagy sem."
+
+#: DynamicWeb/dynamicweb.py:4013
+msgid "Include images and media"
+msgstr "Tartalmazza a képeket és a médiát"
+
+#: DynamicWeb/dynamicweb.py:4014
+msgid "Whether to include images and media in the web pages"
+msgstr "Legyenek-e a képek és médiák beillesztve a webolra"
+
+#: DynamicWeb/dynamicweb.py:4018
+msgid "Copy, rename files with an internal Gramps identifier"
+msgstr "Másolásnál, fájlok átnevezése a belső Gramps-azonosító szerint"
+
+#: DynamicWeb/dynamicweb.py:4019
+msgid "Copy, keep file names unchanged"
+msgstr "Másolásnál, tartsa változatlanul a fájlneveket"
+
+#: DynamicWeb/dynamicweb.py:4020
+msgid "Do not copy, reference existing files"
+msgstr "Ne legyen másolva, utalás az eredeti fájlokra"
+
+#: DynamicWeb/dynamicweb.py:4022
+msgid "Images and media"
+msgstr "Képek és média"
+
+#: DynamicWeb/dynamicweb.py:4025
+msgid "Whether to make a copy of the media"
+msgstr "Legyen-e másolatot készítve a médiáról"
+
+#: DynamicWeb/dynamicweb.py:4028
+msgid "Print the notes type"
+msgstr "Jegyzetek típusának nyomtása"
+
+#: DynamicWeb/dynamicweb.py:4029
+msgid "Whether to print the notes type in the notes text"
+msgstr "Legyenek-e jegyzettípus nyomtatva a jegyzetek szövegében"
+
+#: DynamicWeb/dynamicweb.py:4032
+msgid "Print place pages"
+msgstr "Helyoldalak nyomtatása"
+
+#: DynamicWeb/dynamicweb.py:4033
+msgid "Whether to show pages for the places"
+msgstr "Legyenek-e a Hely oldalak jelenítve, vagy sem."
+
+#: DynamicWeb/dynamicweb.py:4039
+msgid ""
+"Whether to include a place map on the Place Pages, where Latitude/ Longitude "
+"are available."
+msgstr ""
+"Legyen-e helytérkép a Helyek oldalon, ahol a szélességi/hosszúsági fok "
+"elérhető."
+
+#: DynamicWeb/dynamicweb.py:4047
+msgid ""
+"Whether or not to add an individual page map showing all the places on this "
+"page. This will allow you to see how your family traveled around the country."
+msgstr ""
+"Legyen-e egyéni oldalhoz térkép hozzáadva, ami jelöli az összes helyet az "
+"oldalon. Ez lehetővé teszi a család országon belüli utazásainak bemutatását."
+
+#: DynamicWeb/dynamicweb.py:4055
+msgid "Google"
+msgstr "Google"
+
+#: DynamicWeb/dynamicweb.py:4056
+msgid "OpenStreetMap"
+msgstr "OpenStreetMap"
+
+#: DynamicWeb/dynamicweb.py:4058
+msgid "Map Service"
+msgstr "Térképszolgáltató"
+
+#: DynamicWeb/dynamicweb.py:4061
+msgid "Choose your choice of map service for creating the Place Map Pages"
+msgstr "A Helytérkép oldalak létrehozásához válasszon egy térképszolgáltatást."
+
+#: DynamicWeb/dynamicweb.py:4065
+msgid "Google map API key"
+msgstr "Google térkép API kulcs"
+
+#: DynamicWeb/dynamicweb.py:4066
+msgid "The API key used for the Google map"
+msgstr "A Google térképhez használt API kulcs"
+
+#: DynamicWeb/dynamicweb.py:4073
+msgid "Advanced"
+msgstr "Haladó"
+
+#: DynamicWeb/dynamicweb.py:4076
+msgid "Character set encoding"
+msgstr "Karakterkészlet kódolás"
+
+#: DynamicWeb/dynamicweb.py:4079
+msgid "The encoding to be used for the web files"
+msgstr "A web-oldal karakterkódja"
+
+#: DynamicWeb/dynamicweb.py:4082
+msgid "Include family pages"
+msgstr "Családi oldalakkal együtt"
+
+#: DynamicWeb/dynamicweb.py:4083
+msgid "Whether or not to include family pages"
+msgstr "Legyenek-e benne családi oldalak is."
+
+#: DynamicWeb/dynamicweb.py:4093
+msgid ""
+"Whether to include half and/ or step-siblings with the parents and siblings"
+msgstr ""
+"Benne legyenek-e a fél- és/vagy mostohatestvérek a szülőkkel és testvérekkel"
+
+#: DynamicWeb/dynamicweb.py:4096
+msgid "Include GENDEX file (/gendex.txt)"
+msgstr "GENDEX-fájllal (/gendex.txt)"
+
+#: DynamicWeb/dynamicweb.py:4097
+msgid "Whether to include a GENDEX file or not"
+msgstr "Legyen-e benne GENDEX-fájl, vagy sem"
+
+#: DynamicWeb/dynamicweb.py:4100
+msgid "Enable page configuration"
+msgstr "Oldalbeállítások engedélyezése"
+
+#: DynamicWeb/dynamicweb.py:4101
+msgid "Whether to enable page configuration"
+msgstr "Oldalbeállítások engedélyezése"
+
+#: DynamicWeb/dynamicweb.py:4105
+msgid "Whether to use tabbed panels for the different sections of the pages."
+msgstr ""
+
+#: DynamicWeb/dynamicweb.py:4109
+msgid "Whether to show the last modification time in the pages footer"
+msgstr "Megjeleníti-e az oldal láblécében az utolsó módosításidőt"
+
+#: DynamicWeb/dynamicweb.py:4113
+msgid "Whether to insert sources author in the sources title"
+msgstr "Forrás szerzője a források címébe"
+
+#: DynamicWeb/dynamicweb.py:4117
+msgid "Whether to hide the Gramps ID"
+msgstr "Legyenek-e elrejtve a GRAMPS azonosítók"
+
+#: DynamicWeb/dynamicweb.py:4126
+msgid "List"
+msgstr "Felsorolás"
+
+#: DynamicWeb/dynamicweb.py:4127
+msgid "Table"
+msgstr "Táblázat"
+
+#: DynamicWeb/dynamicweb.py:4130
+msgid "Default format for the surnames index"
+msgstr "Családnévjegyzék alapértelmezett formátuma"
+
+#: DynamicWeb/dynamicweb.py:4130
+msgid "The default format for the surnames index"
+msgstr "A családnévjegyzék alapértelmezett formátuma"
+
+#: DynamicWeb/dynamicweb.py:4131
+msgid "Default format for the persons index"
+msgstr "Névjegyzék alapértelmezett formátuma"
+
+#: DynamicWeb/dynamicweb.py:4131
+msgid "The default format for the persons index"
+msgstr "A névjegyzék alapértelmezett formátuma"
+
+#: DynamicWeb/dynamicweb.py:4132
+msgid "Default format for the families index"
+msgstr "Családjegyzék alapértelmezett formátuma"
+
+#: DynamicWeb/dynamicweb.py:4132
+msgid "The default format for the families index"
+msgstr "A családjegyzék alapértelmezett formátuma"
+
+#: DynamicWeb/dynamicweb.py:4133
+msgid "Default format for the sources index"
+msgstr "Forrásjegyzék alapértelmezett formátuma"
+
+#: DynamicWeb/dynamicweb.py:4133
+msgid "The default format for the sources index"
+msgstr "A forrásjegyzék alapértelmezett formátuma"
+
+#: DynamicWeb/dynamicweb.py:4134
+msgid "Default format for the places index"
+msgstr "Helyjegyzék alapértelmezett formátuma"
+
+#: DynamicWeb/dynamicweb.py:4134
+msgid "The default format for the places index"
+msgstr "A helyjegyzék alapértelmezett formátuma"
+
+#: DynamicWeb/dynamicweb.py:4143
+msgid ""
+"Whether to include dates columns (birth, death, marriage) on the index pages"
+msgstr ""
+"Felveszi-e a dátum oszlopokat (születés, halál, házasság) a tárgymutatóba"
+
+#: DynamicWeb/dynamicweb.py:4147
+msgid "Whether to include a partners column"
+msgstr "Legyen-e társak oszlop"
+
+#: DynamicWeb/dynamicweb.py:4151
+msgid "Whether to include a parents column"
+msgstr "Legyen-e szülők oszlop"
+
+#: DynamicWeb/dynamicweb.py:4154
+msgid "Generate a families index page"
+msgstr "Családjegyzék oldal létrehozása"
+
+#: DynamicWeb/dynamicweb.py:4155
+msgid "Whether to generate an index page for families"
+msgstr "Legyen-e családjegyzék oldal létrehozva"
+
+#: DynamicWeb/dynamicweb.py:4159
+msgid "Whether to include a column showing the media path"
+msgstr "Legyen-e oszlop a média útvonalának a tárgymutatóban"
+
+#: DynamicWeb/dynamicweb.py:4163
+msgid ""
+"Whether to include the references to the items in the index pages. For "
+"example, in the media index page, the names of the individuals, families, "
+"places, sources that reference the media."
+msgstr ""
+"Beilleszti-e az elemekre való hivatkozásokat a tárgymutatóban. Például a "
+"médiajegyzékben a médiára hivatkozó személyek, családok, helyek és források "
+"nevét."
+
+#: DynamicWeb/dynamicweb.py:4166
+msgid "Default number of entries in the indexes"
+msgstr "A jegyzékekben szereplő bejegyzések alapértelmezett száma"
+
+#: DynamicWeb/dynamicweb.py:4169
+msgid "The default number of entries shown in one index page"
+msgstr "A túrgymutatóban megjelenő bejegyzések alapértelmezett száma"
+
+#: DynamicWeb/dynamicweb.py:4174
+msgid "Trees"
+msgstr "Fák"
+
+#: DynamicWeb/dynamicweb.py:4177
+msgid "Maximum number of generations"
+msgstr "A generációk maximális száma"
+
+#: DynamicWeb/dynamicweb.py:4178
+msgid ""
+"The maximum number of generations to include in the ancestor and descendant "
+"trees and graphs"
+msgstr "Az ős és leszármazott fák ábráján megjelenő generációk maximális száma"
+
+#: DynamicWeb/dynamicweb.py:4184
+msgid "Choose the default SVG tree graph type"
+msgstr "Alapértelmezett SVG-fa ábratípus"
+
+#: DynamicWeb/dynamicweb.py:4190
+msgid "Choose the default SVG tree graph shape"
+msgstr "Alapértelmezett SVG-fa forma"
+
+#: DynamicWeb/dynamicweb.py:4196
+msgid "Choose the default SVG tree parents distribution (for fan charts only)"
+msgstr "Válassza ki az SVG fa ábra szülői felosztását (csak a legyezőábranál)"
+
+#: DynamicWeb/dynamicweb.py:4202
+msgid "Choose the default SVG tree children distribution (for fan charts only)"
+msgstr ""
+"Válassza ki az SVG fa ábra gyermeki felosztását (csak a legyezőábranál)"
+
+#: DynamicWeb/dynamicweb.py:4208
+msgid ""
+"Choose the background color scheme for the persons in the SVG tree graph"
+msgstr "Válassza ki az SVG fa ábrán a szereplő személyek háttérszínét"
+
+#: DynamicWeb/dynamicweb.py:4211
+msgid "Start gradient/Main color"
+msgstr "Átmenet kezdete / Alapszín"
+
+#: DynamicWeb/dynamicweb.py:4214
+msgid "End gradient/2nd color"
+msgstr "Átmenet vége / második szín"
+
+#: DynamicWeb/dynamicweb.py:4222
+msgid "Color for duplicates"
+msgstr "Kettőzöttek színe"
+
+#: DynamicWeb/dynamicweb.py:4227
+msgid "Pages"
+msgstr "Oldalak"
+
+#: DynamicWeb/dynamicweb.py:4230
+msgid "HTML user header"
+msgstr "HTML felhasználói fejléc"
+
+#: DynamicWeb/dynamicweb.py:4231
+msgid "A note to be used as the page header"
+msgstr "Egy szöveg, ami az oldal fejlécében lesz"
+
+#: DynamicWeb/dynamicweb.py:4234
+msgid "HTML user brand name / icon"
+msgstr "HTML felhasználói márkanév / ikon"
+
+#: DynamicWeb/dynamicweb.py:4235
+msgid "A note to be used as the brand name or image in the menu"
+msgstr "Megjegyzés, amelyet márkanévként vagy képként kell használni a menüben"
+
+#: DynamicWeb/dynamicweb.py:4238
+msgid "HTML user footer"
+msgstr "HTML felhasználói lábléc"
+
+#: DynamicWeb/dynamicweb.py:4239
+msgid "A note to be used as the page footer"
+msgstr "Egy szöveg, ami az oldal láblécében lesz"
+
+#: DynamicWeb/dynamicweb.py:4244
+msgid "Custom pages"
+msgstr "Egyéni oldalak"
+
+#: DynamicWeb/dynamicweb.py:4248
+#, python-format
+msgid "Title for the custom page %(index)i"
+msgstr "%(index)i egyéni oldal címe"
+
+#: DynamicWeb/dynamicweb.py:4249
+#, python-format
+msgid "Name for the custom page %(index)i"
+msgstr " %(index)i egyéni oldal neve"
+
+#: DynamicWeb/dynamicweb.py:4252
+#, python-format
+msgid "Note for custom page %(index)i"
+msgstr "%(index)i egyéni oldal jegyzete"
+
+#: DynamicWeb/dynamicweb.py:4253
+msgid "A note to be used for the custom page content.\n"
+msgstr "Megjegyzés az egyedi oldaltartalomhoz.\n"
+
+#: DynamicWeb/dynamicweb.py:4256
+#, python-format
+msgid "Menu for the custom page %(index)i"
+msgstr "%(index)i egyéni oldal menüje"
+
+#: DynamicWeb/dynamicweb.py:4257
+msgid "Whether to print a menu for the custom page"
+msgstr "Legyen-e menü nyomtatva az egyéni oldalakon"
+
+#: DynamicWeb/dynamicweb.py:4262
+msgid "Pages selection"
+msgstr "Oldalak kiválasztása"
+
+#: DynamicWeb/dynamicweb.py:4265
+msgid "Number of pages"
+msgstr "Oldalak száma"
+
+#: DynamicWeb/dynamicweb.py:4266
+msgid "Number pages in the web site menu."
+msgstr "Oldalak száma a webhely menüben."
+
+#: DynamicWeb/dynamicweb.py:4282
+#, python-format
+msgid "Contents of page %(index)i"
+msgstr "%(index)i oldal tartalma"
+
+#: DynamicWeb/dynamicweb.py:4285
+msgid "Contents of the page"
+msgstr "Az oldal tartalma"
