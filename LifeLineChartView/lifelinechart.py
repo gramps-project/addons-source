@@ -542,6 +542,7 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
              (TWO_LINE_FORMAT_2, 'lifelinechart_name_line2', '%f %s', False)])
         self.connect("button_release_event", self.on_mouse_up)
         self.connect("motion_notify_event", self.on_mouse_move)
+        self.connect("leave_notify_event", self.on_mouse_leave)
         self.connect("button-press-event", self.on_mouse_down)
         self.connect("scroll_event", self.scroll_mouse)
         #we want to grab key events also
@@ -554,6 +555,7 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
                         Gdk.EventMask.BUTTON_PRESS_MASK |
                         Gdk.EventMask.BUTTON_RELEASE_MASK |
                         Gdk.EventMask.POINTER_MOTION_MASK |
+                        Gdk.EventMask.LEAVE_NOTIFY_MASK |
                         Gdk.EventMask.KEY_PRESS_MASK |
                         Gdk.EventMask.KEY_RELEASE_MASK)
 
@@ -923,6 +925,10 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         # to prevent window scrolling
         return True
 
+    def on_mouse_leave(self, widget, event):
+        self.info_label.set_text('')
+        self.pos_label.set_text('')
+
     def on_mouse_move(self, widget, event):
         """
         What to do if we move the mouse
@@ -934,6 +940,11 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
             individual = self.life_line_chart_instance.get_individual_from_position(
                 (event.x + self.upper_left_view_position[0])/self.zoom_level,
                 (event.y + self.upper_left_view_position[1])/self.zoom_level)
+            ov = self.life_line_chart_instance._inverse_y_position((event.y + self.upper_left_view_position[1])/self.zoom_level)
+            try:
+                date = datetime.date.fromordinal(int(ov))
+            except:
+                date = datetime.date.fromordinal(1)
             self.mouse_x, self.mouse_y = event.x, event.y
             tooltip = ""
             if individual:
@@ -944,10 +955,12 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
                     tooltip += '\nGramps id: ' + individual.individual._gramps_person.get_gramps_id()
                     self.info_label.override_color( Gtk.StateFlags.NORMAL, Gdk.RGBA(0,0,0))
                     self.info_label.set_text(tooltip.replace('\n','   //   '))
+                self.info_label.override_color( Gtk.StateFlags.NORMAL, Gdk.RGBA(0,0,0))
             else:
                 self._tooltip_individual_cache = None
                 self.info_label.override_color( Gtk.StateFlags.NORMAL, Gdk.RGBA(0.7,0.7,0.7))
                 #self.info_label.set_text(tooltip.replace('\n','   //   '))
+            self.pos_label.set_text('cursor position at ' + str(date))
             #self.set_tooltip_text(tooltip)
             return False
 

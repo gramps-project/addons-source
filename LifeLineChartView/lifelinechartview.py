@@ -450,9 +450,13 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
 
         # Info label
         self.lifeline.info_label = Gtk.Label()
-        self.toolbar.pack_start(self.lifeline.info_label, True, True, 1)
+        self.lifeline.pos_label = Gtk.Label()
+        vbox_label = Gtk.Box(spacing=0, orientation=Gtk.Orientation.VERTICAL)
+        vbox_label.pack_start(self.lifeline.info_label, True, True, 1)
+        vbox_label.pack_start(self.lifeline.pos_label, True, True, 1)
+        self.toolbar.pack_start(vbox_label, True, True, 1)
 
-        # add view-refresh button
+        # add help button
         self.help_btn = Gtk.Button.new_from_icon_name('help-faq-symbolic',
                                                      Gtk.IconSize.LARGE_TOOLBAR)
         self.help_btn.set_tooltip_text(_('Open Life Line Chart help'))
