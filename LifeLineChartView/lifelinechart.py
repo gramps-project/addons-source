@@ -1162,6 +1162,7 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
             # self.life_line_chart_instance.place_selected_individuals(None, None, None, None)
             # self.life_line_chart_instance._formatting = deepcopy(
             #     self.formatting)
+            self.rebuild_next_time = False
 
             self.life_line_chart_instance.define_svg_items()
         else:
@@ -1246,6 +1247,7 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                 cProfile.runctx('plot(reset)', globals(), locals())
             else:
                 reset = plot(reset)
+            self.rebuild_next_time = False
         self.rootpersonh = root_person_handle
         additional_items = []
         for key, value in self.life_line_chart_instance.additional_graphical_items.items():
