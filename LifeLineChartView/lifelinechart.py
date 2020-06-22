@@ -2110,6 +2110,47 @@ class LifeLineChartGrampsGUI:
         sep.show()
         menu.append(sep)
 
+        try:
+            if self.lifeline.chart_class == AncestorChart:
+                for gr_cof in gr_individual.connected_parent_families:
+                    vms = gr_individual.visible_marriages
+                    # if gr_family in vms:
+                    #     gr_marriage = gr_family
+                    # else:
+                    #     gr_marriage = vms[0]
+                    vss = gr_cof.visible_children
+                    if len(vms) > 1 or len(vss):
+                        if (gr_cof.g_id not in self.chart_configuration['ancestor_placement'] \
+                                and (gr_family != vms[0] or gr_individual != vss[0]) \
+                                or self.chart_configuration['ancestor_placement'][gr_cof.g_id] != \
+                                    (gr_family.g_id, gr_individual.g_id)):
+                            show_siblings_item = Gtk.MenuItem(label=_('Show ancestors above ')
+                                +str(gr_family.husb.plain_name)
+                                + " and " +
+                                str(gr_family.wife.plain_name)
+                            )
+                            show_siblings_item.connect("activate", self.place_ancestors_above_specific_family, gr_individual, gr_family)
+                            show_siblings_item.show()
+                            menu.append(show_siblings_item)
+                # if len(cof.children_individual_ids) > 1:
+                #     if cof.family_id not in self.chart_configuration['family_children']:
+                #         if len(cof.children_individual_ids) > len(cof.graphical_representations[0].visible_children):
+                #             show_siblings_item = Gtk.MenuItem(label=_('Show siblings'))
+                #             show_siblings_item.connect("activate", self.show_siblings, person_handle)
+                #             show_siblings_item.show()
+                #             menu.append(show_siblings_item)
+                #     else:
+                #         hide_siblings_item = Gtk.MenuItem(label=_('Hide siblings'))
+                #         hide_siblings_item.connect("activate", self.hide_siblings, person_handle)
+                #         hide_siblings_item.show()
+                #         menu.append(hide_siblings_item)
+
+                sep = Gtk.SeparatorMenuItem()
+                sep.show()
+                menu.append(sep)
+        except Exception as e:
+            pass
+
         edit_item = Gtk.MenuItem.new_with_mnemonic(_('_Edit'))
         edit_item.connect("activate", self.edit_person_cb, person_handle)
         edit_item.show()
