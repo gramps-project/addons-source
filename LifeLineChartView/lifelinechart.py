@@ -1328,6 +1328,16 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
             self.rootpersonh = None
             self.set_values(rp, self.filter)
 
+    def revert_placement(self, _button=None):
+        if self.life_line_chart_instance:
+            if 'ancestor_placement' in self.chart_configuration:
+                self.chart_configuration['ancestor_placement'] = {}
+            if 'family_children' in self.chart_configuration:
+                self.chart_configuration['family_children'] = []
+            if 'discovery_blacklist' in self.chart_configuration:
+                self.chart_configuration['discovery_blacklist'] = []
+            self.set_values(self.rootpersonh, self.filter)
+
     def draw(self, ctx=None, scale=1.):
         """
         The main method to do the drawing.
