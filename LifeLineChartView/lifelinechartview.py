@@ -500,7 +500,7 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
         # add view-restore button
         self.view_restore_btn = Gtk.Button.new_from_icon_name('view-restore-symbolic',
                                                         Gtk.IconSize.LARGE_TOOLBAR)
-        self.view_restore_btn.set_tooltip_text(_('Revert modified placement'))
+        self.view_restore_btn.set_tooltip_text(_('Revert the placement and person selection'))
         self.toolbar.pack_start(self.view_restore_btn, False, False, 1)
         self.view_restore_btn.connect("clicked", self.lifeline.revert_placement)
         self.lifeline.view_restore_btn = self.view_restore_btn
