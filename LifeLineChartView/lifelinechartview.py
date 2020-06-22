@@ -50,6 +50,8 @@ import lifelinechart
 from life_line_chart import AncestorChart, DescendantChart, BaseChart
 from life_line_chart.Translation import recursive_merge_dict_members
 
+DEBUG_MODE = False
+
 WIKI_PAGE = 'https://gramps-project.org/wiki/index.php?title=Life_Line_Chart_View'
 AVAILABLE_DOCUMENTATION_LANGUAGES = ['de']
 if not glocale.lang.startswith('en') and glocale.lang[:2] in AVAILABLE_DOCUMENTATION_LANGUAGES:
@@ -131,6 +133,31 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
 
         self.gui_config = {}
 
+        if DEBUG_MODE:
+            if 'debug_visualize_connections' in container_description['formatting']:
+                self.gui_config['debug_visualize_connections'] = {
+                    'widget': 'checkbox',
+                    'data_container': 'formatting'
+                }
+            if 'debug_visualize_ambiguous_placement' in container_description['formatting']:
+                self.gui_config['debug_visualize_ambiguous_placement'] = {
+                    'widget': 'checkbox',
+                    'data_container': 'formatting'
+                }
+            if 'debug_optimization_compression_steps' in container_description['positioning']:
+                self.gui_config['debug_optimization_compression_steps']= {
+                    'additional_arg': {'range': (-1, 10000)},
+                    'data_container': 'positioning',
+                    'widget': 'spinner',
+                    'additional_setter_arg': {}
+                }
+            if 'debug_optimization_flipping_steps' in container_description['positioning']:
+                self.gui_config['debug_optimization_flipping_steps']= {
+                    'additional_arg': {'range': (-1, 10000)},
+                    'data_container': 'positioning',
+                    'widget': 'spinner',
+                    'additional_setter_arg': {}
+                }
         if 'generations' in container_description['root_individual']:
             self.gui_config['generations']= {
                 'additional_arg': {'range': (1, 100)},
@@ -154,6 +181,28 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
             self.gui_config['compress'] = {
                 'widget': 'checkbox',
                 'data_container': 'positioning'
+            }
+        if 'unique_graphical_representation' in container_description['positioning']:
+            self.gui_config['unique_graphical_representation'] = {
+                'widget': 'checkbox',
+                'data_container': 'positioning'
+            }
+        if 'coloring_of_individuals' in container_description['formatting']:
+            self.gui_config['coloring_of_individuals'] = {
+                'additional_arg': {'opts': [a for a in enumerate(list(container_description['formatting']['coloring_of_individuals']['choices'].values()))], 'valueactive': True},
+                'additional_setter_arg': {'index_to_name': lambda x: list(container_description['formatting']['coloring_of_individuals']['choices'].keys())[x]},
+                'data_container': 'formatting',
+                'widget': 'combobox',
+            }
+        if 'fathers_have_the_same_color' in container_description['formatting']:
+            self.gui_config['fathers_have_the_same_color'] = {
+                'widget': 'checkbox',
+                'data_container': 'formatting'
+            }
+        if 'highlight_descendants' in container_description['formatting']:
+            self.gui_config['highlight_descendants'] = {
+                'widget': 'checkbox',
+                'data_container': 'formatting'
             }
         if 'fade_individual_color' in container_description['formatting']:
             self.gui_config['fade_individual_color'] = {
@@ -447,6 +496,14 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
         self.view_refresh_btn.set_tooltip_text(_('Rebuild data cache'))
         self.toolbar.pack_start(self.view_refresh_btn, False, False, 1)
         self.view_refresh_btn.connect("clicked", self.lifeline.rebuild_instance_cache)
+
+        # add view-restore button
+        self.view_restore_btn = Gtk.Button.new_from_icon_name('view-restore-symbolic',
+                                                        Gtk.IconSize.LARGE_TOOLBAR)
+        self.view_restore_btn.set_tooltip_text(_('Revert modified placement'))
+        self.toolbar.pack_start(self.view_restore_btn, False, False, 1)
+        self.view_restore_btn.connect("clicked", self.lifeline.revert_placement)
+        self.lifeline.view_restore_btn = self.view_restore_btn
 
         # Info label
         self.lifeline.info_label = Gtk.Label()
