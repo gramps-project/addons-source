@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: sv\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-04-22 11:04-0500\n"
-"PO-Revision-Date: 2020-06-21 11:30+0200\n"
+"PO-Revision-Date: 2020-06-22 22:10+0200\n"
 "Last-Translator: Pär Ekholm <pehlm@pekholm.se>\n"
 "Language-Team: \n"
 "Language: sv\n"
@@ -48,7 +48,7 @@ msgstr "Län"
 
 #: DynamicWeb/dynamicweb.py:270
 msgid "State/ Province"
-msgstr "Landskap"
+msgstr "Delstat"
 
 #: DynamicWeb/dynamicweb.py:271
 msgid "Postal Code"
