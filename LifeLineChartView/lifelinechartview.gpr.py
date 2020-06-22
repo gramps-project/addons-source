@@ -235,7 +235,7 @@ class ModuleProvider:
         raise NotImplementedError()
 
 
-life_line_chart_version_required = (1, 3, 7)
+life_line_chart_version_required = (1, 4, 2)
 life_line_chart_version_required_str = '.'.join([str(i) for i in life_line_chart_version_required])
 
 try:

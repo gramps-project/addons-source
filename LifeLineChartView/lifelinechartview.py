@@ -175,8 +175,8 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
                 'widget': 'checkbox',
                 'data_container': 'formatting'
             }
-        if 'vertical_step_size' in container_description['formatting']:
-            self.gui_config['vertical_step_size'] = {
+        if 'horizontal_step_size' in container_description['formatting']:
+            self.gui_config['horizontal_step_size'] = {
                 'additional_arg': {'range': (1, 100)},
                 'data_container': 'formatting',
                 'widget': 'slider',
@@ -199,10 +199,10 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
                 'widget': 'slider',
                 'additional_setter_arg': {}
             }
-        if 'fathers_have_the_same_color' in container_description['positioning']:
-            self.gui_config['fathers_have_the_same_color'] = {
+        if 'flip_vertically' in container_description['formatting']:
+            self.gui_config['flip_vertically'] = {
                 'widget': 'checkbox',
-                'data_container': 'positioning'
+                'data_container': 'formatting'
             }
         if 'font_name' in container_description['formatting']:
             self.gui_config['font_name'] = {
@@ -214,7 +214,7 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
         if 'family_shape' in container_description['formatting']:
             self.gui_config['family_shape'] = {
                 'additional_arg': {'opts': [a for a in enumerate(list(container_description['formatting']['family_shape']['choices'].values()))], 'valueactive': True},
-                'additional_setter_arg': {'index_to_name': lambda x: list(container_description['formatting']['family_shape']['choices'].keys())[x]},
+                'additional_setter_arg': {'index_to_name': lambda x: x},
                 'data_container': 'formatting',
                 'widget': 'combobox',
             }
@@ -731,8 +731,7 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
         base, extension = os.path.splitext(fn)
         if extension == '':
             fn = base + '.svg'
-        self.lifeline.life_line_chart_instance.paint_and_save(
-            self.lifeline.rootpersonh, fn)
+        self.lifeline.life_line_chart_instance.paint_and_save(fn)
 
     def on_childmenu_changed(self, obj, person_handle):
         """Callback for the pulldown menu selection, changing to the person

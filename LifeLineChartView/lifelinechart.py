@@ -73,8 +73,15 @@ def get_date(event):
     event_data = None
     try:
         date_obj = event.get_date_object()
+        precision = ''
+        if date_obj.dateval[0] != 0:
+            precision += 'd'
+        if date_obj.dateval[1] != 0:
+            precision += 'm'
         if date_obj.year == 0:
             return None
+        else:
+            precision += 'y'
         date = datetime.datetime(date_obj.dateval[2], max(
             1, date_obj.dateval[1]), max(1, date_obj.dateval[0]), 0, 0, 0)
         quality = date_obj.get_quality()
@@ -94,7 +101,8 @@ def get_date(event):
             'gramps_event': event,
             'date': date,
             'ordinal_value': date.toordinal(),
-            'comment': comment
+            'comment': comment,
+            'precision': precision
         }
     except:
         pass
@@ -159,8 +167,10 @@ class GrampsInstanceContainer(InstanceContainer):
         event = individual.events['death_or_burial']
         if event:
             date = event['date']
-            if event['comment']:
+            if event['precision'] == 'dmy':
                 gramps_date = Date(date.year, 0, 0)
+            elif event['precision'] == 'my':
+                gramps_date = Date(date.year, date.month, 0)
             else:
                 gramps_date = Date(date.year, date.month, date.day)
             return date_displayer.display(gramps_date)
@@ -178,8 +188,10 @@ class GrampsInstanceContainer(InstanceContainer):
         event = individual.events['birth_or_christening']
         if event:
             date = event['date']
-            if event['comment']:
+            if event['precision'] == 'dmy':
                 gramps_date = Date(date.year, 0, 0)
+            elif event['precision'] == 'my':
+                gramps_date = Date(date.year, date.month, 0)
             else:
                 gramps_date = Date(date.year, date.month, date.day)
             return date_displayer.display(gramps_date)
@@ -195,8 +207,10 @@ class GrampsInstanceContainer(InstanceContainer):
 
         event = family.marriage
         date = event['date'].date()
-        if event['comment']:
+        if event['precision'] == 'dmy':
             gramps_date = Date(date.year, 0, 0)
+        elif event['precision'] == 'my':
+            gramps_date = Date(date.year, date.month, 0)
         else:
             gramps_date = Date(date.year, date.month, date.day)
         return date_displayer.display(gramps_date)
@@ -306,6 +320,8 @@ class GrampsFamily(BaseFamily):
                     p = self._dbstate.db.get_place_from_handle(events[0].place)
                     self.location = p
         estimate_marriage_date(self)
+        if self.marriage is None:
+            raise LifeLineChartNotEnoughInformationToDisplay()
 
     def _get_husband_and_wife_id(self):
         """
@@ -327,7 +343,8 @@ class GrampsFamily(BaseFamily):
         """
         return [ref.ref for ref in self._gramps_family.get_child_ref_list()]
 
-    def _get_husb_name(self):
+    @property
+    def husb_name(self):
         """
         get the name of the husband
 
@@ -335,9 +352,10 @@ class GrampsFamily(BaseFamily):
             str: husband name
         """
         father_handle = Family.get_father_handle(self._gramps_family)
-        return self.husb.name
+        return self.husb.plain_name
 
-    def _get_wife_name(self):
+    @property
+    def wife_name(self):
         """
         get the name of the wife
 
@@ -345,9 +363,7 @@ class GrampsFamily(BaseFamily):
             str: wife name
         """
         mother_handle = Family.get_mother_handle(self._gramps_family)
-        return self.wife.name
-    husb_name = property(_get_husb_name)
-    wife_name = property(_get_wife_name)
+        return self.wife.plain_name
 
 
 
@@ -873,11 +889,11 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         #right click on person, context menu
         # Do things based on state, event.get_state(), or button, event.button
         if is_right_click(event):
-            individual = self.life_line_chart_instance.get_individual_from_position(
+            gr_individual, gr_family = self.life_line_chart_instance.get_individual_from_position(
                 (event.x + self.upper_left_view_position[0])/self.zoom_level,
                 (event.y + self.upper_left_view_position[1])/self.zoom_level)
-            if individual and self.on_popup:
-                self.on_popup(widget, event, individual)
+            if gr_individual and self.on_popup:
+                self.on_popup(widget, event, gr_individual, gr_family)
                 return True
 
         return True
@@ -937,7 +953,7 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         self._mouse_click = False
         if self.last_x is None or self.last_y is None:
             # while mouse is moving, we must update the tooltip based on person
-            individual = self.life_line_chart_instance.get_individual_from_position(
+            gr_individual, gr_family = self.life_line_chart_instance.get_individual_from_position(
                 (event.x + self.upper_left_view_position[0])/self.zoom_level,
                 (event.y + self.upper_left_view_position[1])/self.zoom_level)
             ov = self.life_line_chart_instance._inverse_y_position((event.y + self.upper_left_view_position[1])/self.zoom_level)
@@ -947,17 +963,20 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
                 date = datetime.date.fromordinal(1)
             self.mouse_x, self.mouse_y = event.x, event.y
             tooltip = ""
-            if individual:
+            if gr_individual:
                 if (self._tooltip_individual_cache is None or \
-                    self._tooltip_individual_cache != individual.individual_id):
-                    self._tooltip_individual_cache = individual.individual_id
-                    tooltip = individual.individual.short_info_text
-                    tooltip += '\nGramps id: ' + individual.individual._gramps_person.get_gramps_id()
-                    self.info_label.override_color( Gtk.StateFlags.NORMAL, Gdk.RGBA(0,0,0))
+                    self._tooltip_individual_cache != gr_individual, gr_family):
+                    if self._tooltip_individual_cache != (gr_individual, gr_family):
+                        self._tooltip_individual_cache = gr_individual, gr_family
+                        self.queue_draw_wrapper()
+                    tooltip = gr_individual.individual.short_info_text
+                    tooltip += '\nGramps id: ' + gr_individual.individual._gramps_person.get_gramps_id()
                     self.info_label.set_text(tooltip.replace('\n','   //   '))
                 self.info_label.override_color( Gtk.StateFlags.NORMAL, Gdk.RGBA(0,0,0))
             else:
-                self._tooltip_individual_cache = None
+                if self._tooltip_individual_cache is not None:
+                    self._tooltip_individual_cache = None
+                    self.queue_draw_wrapper()
                 self.info_label.override_color( Gtk.StateFlags.NORMAL, Gdk.RGBA(0.7,0.7,0.7))
                 #self.info_label.set_text(tooltip.replace('\n','   //   '))
             self.pos_label.set_text('cursor position at ' + str(date))
@@ -1187,21 +1206,18 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                     self.life_line_chart_instance = self.chart_class(
                         instance_container=get_dbdstate_instance_container(self.dbstate))
 
-                def filter_lambda(individual_id):
+                def filter_lambda(individual):
                     return False
 
-                def color_lambda(individual_id):
+                def color_lambda(gr_individual):
                     if self.filter:
-                        person = self.life_line_chart_instance._instances[(
-                            'i', individual_id)]._gramps_person
+                        person = gr_individual.individual._gramps_person
                         if not self.filter.match(person.handle, self.dbstate.db):
                             return (220, 220, 220)
                     return None
 
-                def images_lambda(individual_id):
+                def images_lambda(individual):
                     images = {}
-                    individual = self.life_line_chart_instance._instances[(
-                        'i', individual_id)]
                     for i, reference in enumerate(individual._gramps_person.media_list):
                         handle = reference.get_reference_handle()
                         media = self.dbstate.db.get_media_from_handle(handle)
@@ -1248,16 +1264,16 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                 self.life_line_chart_instance.set_chart_configuration(self.chart_configuration)
 
                 reset = self.life_line_chart_instance.update_chart(filter_lambda=filter_lambda,
-                                                                         color_lambda=color_lambda,
-                                                                         images_lambda=images_lambda,
-                                                                         rebuild_all=reset,
-                                                                         update_view=new_filter)
+                                                                   color_lambda=color_lambda,
+                                                                   images_lambda=images_lambda,
+                                                                   rebuild_all=reset,
+                                                                   update_view=new_filter)
                 return reset
 
             run_profiler = False
             if run_profiler:
                 import cProfile
-                cProfile.runctx('plot(reset)', globals(), locals())
+                cProfile.runctx('plot(reset)', globals(), locals(), sort=1)
             else:
                 reset = plot(reset)
             self.rebuild_next_time = False
@@ -1267,13 +1283,22 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
             if key == 'axis':
                 continue
             additional_items += value
-        sorted_individuals = [(gr.get_birth_date_ov(), index, gr) for index, gr in enumerate(
-            self.life_line_chart_instance.graphical_individual_representations)]
+        sorted_individuals = [(gr.birth_date_ov, index, gr) for index, gr in enumerate(
+            self.life_line_chart_instance.gr_individuals)]
         sorted_individuals.sort()
-        sorted_individual_items = []
-        for _, index, graphical_individual_representation in sorted_individuals:
-            sorted_individual_items += graphical_individual_representation.items
-        self.chart_items = additional_items + sorted_individual_items
+        # sorted_individual_items = []
+        # for _, index, graphical_individual_representation in sorted_individuals:
+        #     sorted_individual_items += graphical_individual_representation.items
+
+        sorted_individual_dict = defaultdict(list)
+        for _, _, gr_individual in sorted_individuals:
+            for key, item in gr_individual.items:
+                sorted_individual_dict[key].append(item)
+        sorted_individual_flat_item_list = []
+        for key in sorted(sorted_individual_dict.keys()):
+            sorted_individual_flat_item_list += sorted_individual_dict[key]
+
+        self.chart_items = additional_items + sorted_individual_flat_item_list
         self.image_cache = {}
         try:
             if new_root_individual:
@@ -1351,7 +1376,7 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
 
     def draw_items(self, ctx, chart_items, view_clip_box, limit_font_size = None):
         view_x_min, view_y_min, view_x_max, view_y_max = view_clip_box
-        for item in chart_items:
+        for item_index, item in enumerate(chart_items):
             def text_function(ctx, text, x, y, rotation=0, fontName="Arial", fontSize=10, verticalPadding=0, vertical_offset=0, horizontal_offset=0, bold=False, align='center', position='middle'):
                 """
                 Used to draw normal text
@@ -1962,12 +1987,16 @@ class LifeLineChartGrampsGUI:
         except Exception as e:
             pass
 
-    def on_popup(self, obj, event, individual, family_handle=None):
+    def on_popup(self, obj, event, gr_individual, gr_family=None):
         """
         Builds the full menu (including Siblings, Spouses, Children,
         and Parents) with navigation.
         """
-        person_handle = individual.individual._gramps_person.handle
+        person_handle = gr_individual.individual._gramps_person.handle
+        if gr_family:
+            family_handle = gr_family.family._gramps_family.handle
+        else:
+            family_handle = None
         dummy_obj = obj
         #store menu for GTK3 to avoid it being destroyed before showing
         self.menu = Gtk.Menu()
@@ -2015,7 +2044,7 @@ class LifeLineChartGrampsGUI:
 
         try:
             if self.lifeline.chart_class == AncestorChart:
-                cof = individual.individual.child_of_families[0]
+                cof = gr_individual.individual.child_of_families[0]
                 if len(cof.children_individual_ids) > 1:
                     if cof.family_id not in self.chart_configuration['family_children']:
                         if len(cof.children_individual_ids) > len(cof.graphical_representations[0].visible_children):
