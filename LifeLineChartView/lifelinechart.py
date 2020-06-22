@@ -1540,47 +1540,52 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                 arguments = deepcopy(item['config']['arguments'])
                 arguments = [individual_id for individual_id in arguments]
                 colors = [c/255. for c in item['color']]
-                if self.formatting['fade_individual_color'] and 'color_pos' in item:
-                    cp = item['color_pos']
+                def paint_path(stroke_with_multiplier, colors):
+                    if self.formatting['fade_individual_color'] and 'color_pos' in item:
+                        cp = item['color_pos']
 
-                    #ctx.set_source_rgb(colors[0], colors[1], colors[2])
-                    #lg3 = cairo.LinearGradient(0, item['color_pos'][0],  0, item['color_pos'][1])
-                    lg3 = cairo.LinearGradient(
-                        0, item['color_pos'][0], 0, item['color_pos'][1])
-                    #fill = svg_document.linearGradient(("0", str(item['color_pos'][0])+""), ("0", str(item['color_pos'][1])+""), gradientUnits='userSpaceOnUse')
-                    lg3.add_color_stop_rgba(
-                        0, colors[0], colors[1], colors[2], 1)
-                    lg3.add_color_stop_rgba(1, 0, 0, 0, 1)
+                        #ctx.set_source_rgb(colors[0], colors[1], colors[2])
+                        #lg3 = cairo.LinearGradient(0, item['color_pos'][0],  0, item['color_pos'][1])
+                        lg3 = cairo.LinearGradient(
+                            0, item['color_pos'][0], 0, item['color_pos'][1])
+                        #fill = svg_document.linearGradient(("0", str(item['color_pos'][0])+""), ("0", str(item['color_pos'][1])+""), gradientUnits='userSpaceOnUse')
+                        lg3.add_color_stop_rgba(
+                            0, colors[0], colors[1], colors[2], 1)
+                        lg3.add_color_stop_rgba(1, 0, 0, 0, 1)
 
-                    ctx.set_source(lg3)
-                    if item['config']['type'] == 'Line':
-                        ctx.move_to(arguments[0].real, arguments[0].imag)
-                        ctx.set_line_width(item['stroke_width'])
-                        ctx.line_to(arguments[1].real, arguments[1].imag)
-                        ctx.stroke()
-                    elif item['config']['type'] == 'CubicBezier':
-                        ctx.move_to(arguments[0].real, arguments[0].imag)
-                        ctx.set_line_width(item['stroke_width'])
-                        ctx.curve_to(arguments[1].real, arguments[1].imag, arguments[2].real,
-                                        arguments[2].imag, arguments[3].real, arguments[3].imag)
-                        ctx.stroke()
-                else:
-                    if item['config']['type'] == 'Line':
-                        ctx.move_to(arguments[0].real, arguments[0].imag)
-                        ctx.set_source_rgb(
-                            colors[0], colors[1], colors[2])
-                        ctx.set_line_width(item['stroke_width'])
-                        ctx.line_to(arguments[1].real, arguments[1].imag)
-                        ctx.stroke()
-                    elif item['config']['type'] == 'CubicBezier':
+                        ctx.set_source(lg3)
+                        if item['config']['type'] == 'Line':
+                            ctx.move_to(arguments[0].real, arguments[0].imag)
+                            ctx.set_line_width(item['stroke_width']*stroke_with_multiplier)
+                            ctx.line_to(arguments[1].real, arguments[1].imag)
+                            ctx.stroke()
+                        elif item['config']['type'] == 'CubicBezier':
+                            ctx.move_to(arguments[0].real, arguments[0].imag)
+                            ctx.set_line_width(item['stroke_width']*stroke_with_multiplier)
+                            ctx.curve_to(arguments[1].real, arguments[1].imag, arguments[2].real,
+                                            arguments[2].imag, arguments[3].real, arguments[3].imag)
+                            ctx.stroke()
+                    else:
+                        if item['config']['type'] == 'Line':
+                            ctx.move_to(arguments[0].real, arguments[0].imag)
+                            ctx.set_source_rgb(
+                                colors[0], colors[1], colors[2])
+                            ctx.set_line_width(item['stroke_width']*stroke_with_multiplier)
+                            ctx.line_to(arguments[1].real, arguments[1].imag)
+                            ctx.stroke()
+                        elif item['config']['type'] == 'CubicBezier':
 
-                        ctx.move_to(arguments[0].real, arguments[0].imag)
-                        ctx.set_source_rgb(
-                            colors[0], colors[1], colors[2])
-                        ctx.set_line_width(item['stroke_width'])
-                        ctx.curve_to(arguments[1].real, arguments[1].imag, arguments[2].real,
-                                        arguments[2].imag, arguments[3].real, arguments[3].imag)
-                        ctx.stroke()
+                            ctx.move_to(arguments[0].real, arguments[0].imag)
+                            ctx.set_source_rgb(
+                                colors[0], colors[1], colors[2])
+                            ctx.set_line_width(item['stroke_width']*stroke_with_multiplier)
+                            ctx.curve_to(arguments[1].real, arguments[1].imag, arguments[2].real,
+                                            arguments[2].imag, arguments[3].real, arguments[3].imag)
+                            ctx.stroke()
+                if self._tooltip_individual_cache is not None and 'gir' in item and item['gir'] == self._tooltip_individual_cache[0]:
+                    paint_path(1.4, (255,0,0))
+                    paint_path(1.2, (0,0,0))
+                paint_path(1, colors)
             elif item['type'] == 'textPath':
                 from math import cos, sin, atan2, pi
 
@@ -1914,7 +1919,16 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                     ctx.paint()
                     ctx.restore()
                 import os
-                draw_image(ctx, item['filename'], item['config']['insert'][0], item['config']['insert'][1], item['config']['size'][0], item['config']['size'][1])
+
+                if self._tooltip_individual_cache is not None and 'gfr' in item and \
+                        item['gfr'] == self._tooltip_individual_cache[1]:
+                    factor = 1.5
+                    size = item['config']['size'][0]*factor, item['config']['size'][1]*factor
+                    pos = item['config']['insert'][0] - item['config']['size'][0]*(factor/2 - 0.5), \
+                          item['config']['insert'][1] - item['config']['size'][1]*(factor/2 - 0.5)
+                    draw_image(ctx, item['filename'], pos[0], pos[1], size[0], size[1])
+                else:
+                    draw_image(ctx, item['filename'], item['config']['insert'][0], item['config']['insert'][1], item['config']['size'][0], item['config']['size'][1])
                 # marriage_pos and 'spouse' in positions[individual_id]['marriage']:
                 #m_pos_x = (positions[positions[individual_id]['marriage']['spouse']]['x_position'] + x_pos)/2
                 #svg_document.add(svg_document.use(image_def.get_iri(), **item['config']))
