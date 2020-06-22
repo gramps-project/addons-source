@@ -2006,6 +2006,19 @@ class LifeLineChartGrampsGUI:
         except Exception as e:
             pass
 
+    def place_ancestors_above_specific_family(self, obj, gr_individual, gr_family):
+        try:
+            gr_cof = gr_individual.connected_parent_families[0]
+            if gr_cof.g_id in self.chart_configuration['ancestor_placement']:
+                self.chart_configuration['ancestor_placement'].pop(gr_cof.g_id)
+            self.chart_configuration['ancestor_placement'][gr_cof.g_id] =(
+                gr_family.g_id, gr_individual.g_id
+            )
+            root_person_handle = self.get_active('Person')
+            self.lifeline.set_values(root_person_handle, self.generic_filter)
+        except Exception as e:
+            pass
+
     def on_popup(self, obj, event, gr_individual, gr_family=None):
         """
         Builds the full menu (including Siblings, Spouses, Children,
