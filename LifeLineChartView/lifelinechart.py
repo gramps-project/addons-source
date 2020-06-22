@@ -46,6 +46,8 @@ from gi.repository import PangoCairo
 #-------------------------------------------------------------------------
 from copy import deepcopy
 import sys, os
+from collections import defaultdict
+
 from life_line_chart import AncestorChart, DescendantChart
 from life_line_chart import BaseIndividual, BaseFamily, InstanceContainer, estimate_birth_date, estimate_death_date, LifeLineChartNotEnoughInformationToDisplay
 from gramps.gen.display.name import displayer as name_displayer
@@ -942,8 +944,10 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         return True
 
     def on_mouse_leave(self, widget, event):
+        self._tooltip_individual_cache = None
         self.info_label.set_text('')
         self.pos_label.set_text('')
+        self.queue_draw_wrapper()
 
     def on_mouse_move(self, widget, event):
         """
