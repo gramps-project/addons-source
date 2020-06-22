@@ -1281,6 +1281,11 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
             else:
                 reset = plot(reset)
             self.rebuild_next_time = False
+            self.view_restore_btn.set_sensitive(
+                'ancestor_placement' in self.chart_configuration and bool(self.chart_configuration['ancestor_placement']) or
+                'family_children' in self.chart_configuration and bool(self.chart_configuration['family_children']) or
+                'discovery_blacklist' in self.chart_configuration and bool(self.chart_configuration['discovery_blacklist'])
+                )
         self.rootpersonh = root_person_handle
         additional_items = []
         for key, value in self.life_line_chart_instance.additional_graphical_items.items():
