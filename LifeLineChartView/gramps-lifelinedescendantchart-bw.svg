@@ -1,16 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Ebene_1" xmlns:ev="http://www.w3.org/2001/xml-events"
-	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="600px" height="560px"
-	 viewBox="0 0 600 560" enable-background="new 0 0 600 560" xml:space="preserve">
-<path fill="none" stroke="#000000" stroke-width="31.2" d="M461.411,402.103c0-86.818,0-86.818-163.27-86.818"/>
-<path fill="none" stroke="#000000" stroke-width="31.2" d="M298.141,315.283c163.27,0,163.27,0,163.27-164.951"/>
-<path fill="none" stroke="#000000" stroke-width="31.2" d="M134.871,395.107c0-79.822,0-79.822,163.27-79.822"/>
-<path fill="none" stroke="#000000" stroke-width="31.2" d="M298.141,315.283c-163.27,0-163.27,0-163.27-234.02"/>
-<path fill="none" stroke="#000000" stroke-width="31.2" d="M580,561.822c0-106.679,0-106.679-280-106.679"/>
-<path fill="none" stroke="#000000" stroke-width="31.2" d="M300,455.143c280,0,280,0,280-170.979"/>
-<path fill="none" stroke="#000000" stroke-width="31.2" d="M20,552.874c0-97.729,0-97.729,280-97.73"/>
-<path fill="none" stroke="#000000" stroke-width="31.2" d="M300,455.142c-280,0.001-280,0.001-280-136.268"/>
-<path fill="none" stroke="#000000" stroke-width="31.2" d="M246.5,257.5V32"/>
-<path fill="none" stroke="#000000" stroke-width="31.2" d="M356.5,225.5V0"/>
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="691px" height="644.933px"
+	 viewBox="-43.5 -44.334 691 644.933" enable-background="new -43.5 -44.334 691 644.933" xml:space="preserve">
+<g>
+	<path fill="none" stroke="#FFFFFF" stroke-width="150" stroke-linecap="round" d="M461.411,402.103
+		c0-86.818,0-86.818-163.271-86.818"/>
+	<path fill="none" stroke="#FFFFFF" stroke-width="150" stroke-linecap="round" d="M298.141,315.283
+		c163.271,0,163.271,0,163.271-164.951"/>
+	<path fill="none" stroke="#FFFFFF" stroke-width="150" stroke-linecap="round" d="M134.871,395.107
+		c0-79.822,0-79.822,163.27-79.822"/>
+	<path fill="none" stroke="#FFFFFF" stroke-width="150" stroke-linecap="round" d="M298.141,315.283
+		c-163.27,0-163.27,0-163.27-234.02"/>
+	<path fill="none" stroke="#FFFFFF" stroke-width="150" stroke-linecap="round" d="M580,561.822c0-106.679,0-106.679-280-106.679"/>
+	<path fill="none" stroke="#FFFFFF" stroke-width="150" stroke-linecap="round" d="M300,455.143c280,0,280,0,280-170.979"/>
+	<path fill="none" stroke="#FFFFFF" stroke-width="150" stroke-linecap="round" d="M20,552.875c0-97.729,0-97.729,280-97.73"/>
+	<path fill="none" stroke="#FFFFFF" stroke-width="150" stroke-linecap="round" d="M300,455.142c-280,0.001-280,0.001-280-136.269"
+		/>
+	<path fill="none" stroke="#FFFFFF" stroke-width="150" stroke-linecap="round" d="M246.5,257.5V32"/>
+	<path fill="none" stroke="#FFFFFF" stroke-width="150" stroke-linecap="round" d="M356.5,225.5V0"/>
+</g>
+<g>
+	<path fill="none" stroke="#000000" stroke-width="31.2" d="M461.411,401.103c0-86.818,0-86.818-163.271-86.818"/>
+	<path fill="none" stroke="#000000" stroke-width="31.2" d="M298.141,314.283c163.271,0,163.271,0,163.271-164.951"/>
+	<path fill="none" stroke="#000000" stroke-width="31.2" d="M134.871,394.107c0-79.822,0-79.822,163.27-79.822"/>
+	<path fill="none" stroke="#000000" stroke-width="31.2" d="M298.141,314.283c-163.27,0-163.27,0-163.27-234.02"/>
+	<path fill="none" stroke="#000000" stroke-width="31.2" d="M580,560.822c0-106.679,0-106.679-280-106.679"/>
+	<path fill="none" stroke="#000000" stroke-width="31.2" d="M300,454.143c280,0,280,0,280-170.979"/>
+	<path fill="none" stroke="#000000" stroke-width="31.2" d="M20,551.875c0-97.729,0-97.729,280-97.73"/>
+	<path fill="none" stroke="#000000" stroke-width="31.2" d="M300,454.142c-280,0.001-280,0.001-280-136.269"/>
+	<path fill="none" stroke="#000000" stroke-width="31.2" d="M246.5,256.5V31"/>
+	<path fill="none" stroke="#000000" stroke-width="31.2" d="M356.5,224.5V-1"/>
+</g>
 </svg>

@@ -1,19 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Ebene_1" xmlns:ev="http://www.w3.org/2001/xml-events"
-	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="600px" height="560px"
-	 viewBox="0 0 600 560" enable-background="new 0 0 600 560" xml:space="preserve">
-<path fill="none" stroke="#000000" stroke-width="31.2" d="M220,555.544c0-86.819,0-86.819-80-86.819"/>
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="655px" height="611.333px"
+	 viewBox="-24.5 -28.467 655 611.333" enable-background="new -24.5 -28.467 655 611.333" xml:space="preserve">
+<g>
+	<path fill="none" stroke="#FFFFFF" stroke-width="150" stroke-linecap="round" d="M220,555.545c0-86.819,0-86.819-80-86.819"/>
+	<path fill="none" stroke="#FFFFFF" stroke-width="150" stroke-linecap="round" d="M140,468.724c80,0,80,0,80-164.951"/>
+	<path fill="none" stroke="#FFFFFF" stroke-width="150" stroke-linecap="round" d="M60,548.549c0-79.823,0-79.823,80-79.823"/>
+	<path fill="none" stroke="#FFFFFF" stroke-width="150" stroke-linecap="round" d="M140,468.724c-80,0-80,0-80-234.021"/>
+	<path fill="none" stroke="#FFFFFF" stroke-width="150" stroke-linecap="round" d="M380,541.177c0-82.663,0-82.663,80-82.663"/>
+	<path fill="none" stroke="#FFFFFF" stroke-width="150" stroke-linecap="round" d="M460,458.512c-80,0-80,0-80-150.699"/>
+	<path fill="none" stroke="#FFFFFF" stroke-width="150" stroke-linecap="round" d="M540,540.826c0-82.313,0-82.313-80-82.313"/>
+	<path fill="none" stroke="#FFFFFF" stroke-width="150" stroke-linecap="round" d="M460,458.512c80,0,80,0,80-174.349"/>
+	<path fill="none" stroke="#FFFFFF" stroke-width="150" stroke-linecap="round" d="M460,367.899c0-106.679,0-106.679-160-106.679"/>
+	<path fill="none" stroke="#FFFFFF" stroke-width="150" stroke-linecap="round" d="M300,261.22c160,0,160,0,160-170.979"/>
+	<path fill="none" stroke="#FFFFFF" stroke-width="150" stroke-linecap="round" d="M140,358.951c0-97.729,0-97.729,160-97.729"/>
+	<path fill="none" stroke="#FFFFFF" stroke-width="150" stroke-linecap="round" d="M300,261.22c-160,0-160,0-160-136.269"/>
+	<path fill="none" stroke="#FFFFFF" stroke-width="150" stroke-linecap="round" d="M300,225.5V0"/>
+</g>
+<path fill="none" stroke="#000000" stroke-width="31.2" d="M220,555.545c0-86.819,0-86.819-80-86.819"/>
 <path fill="none" stroke="#000000" stroke-width="31.2" d="M140,468.724c80,0,80,0,80-164.951"/>
-<path fill="none" stroke="#000000" stroke-width="31.2" d="M60,548.548c0-79.823,0-79.823,80-79.823"/>
-<path fill="none" stroke="#000000" stroke-width="31.2" d="M140,468.724c-80,0-80,0-80-234.02"/>
-<path fill="none" stroke="#000000" stroke-width="31.2" d="M380,541.176c0-82.663,0-82.663,80-82.663"/>
+<path fill="none" stroke="#000000" stroke-width="31.2" d="M60,548.549c0-79.823,0-79.823,80-79.823"/>
+<path fill="none" stroke="#000000" stroke-width="31.2" d="M140,468.724c-80,0-80,0-80-234.021"/>
+<path fill="none" stroke="#000000" stroke-width="31.2" d="M380,541.177c0-82.663,0-82.663,80-82.663"/>
 <path fill="none" stroke="#000000" stroke-width="31.2" d="M460,458.512c-80,0-80,0-80-150.699"/>
 <path fill="none" stroke="#000000" stroke-width="31.2" d="M540,540.826c0-82.313,0-82.313-80-82.313"/>
-<path fill="none" stroke="#000000" stroke-width="31.2" d="M460,458.512c80,0,80,0,80-174.348"/>
+<path fill="none" stroke="#000000" stroke-width="31.2" d="M460,458.512c80,0,80,0,80-174.349"/>
 <path fill="none" stroke="#000000" stroke-width="31.2" d="M460,367.899c0-106.679,0-106.679-160-106.679"/>
 <path fill="none" stroke="#000000" stroke-width="31.2" d="M300,261.22c160,0,160,0,160-170.979"/>
-<path fill="none" stroke="#000000" stroke-width="31.2" d="M140,358.951c0-97.73,0-97.73,160-97.73"/>
-<path fill="none" stroke="#000000" stroke-width="31.2" d="M300,261.22c-160,0-160,0-160-136.268"/>
+<path fill="none" stroke="#000000" stroke-width="31.2" d="M140,358.951c0-97.729,0-97.729,160-97.729"/>
+<path fill="none" stroke="#000000" stroke-width="31.2" d="M300,261.22c-160,0-160,0-160-136.269"/>
 <path fill="none" stroke="#000000" stroke-width="31.2" d="M300,225.5V0"/>
 </svg>

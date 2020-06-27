@@ -253,6 +253,20 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
                 'widget': 'checkbox',
                 'data_container': 'formatting'
             }
+        if 'line_weighting' in container_description['formatting']:
+            self.gui_config['line_weighting'] = {
+                'additional_arg': {'opts': [a for a in enumerate(list(container_description['formatting']['line_weighting']['choices'].values()))], 'valueactive': True},
+                'additional_setter_arg': {'index_to_name': lambda x: list(container_description['formatting']['line_weighting']['choices'].keys())[x]},
+                'data_container': 'formatting',
+                'widget': 'combobox',
+            }
+        if 'chart_layout' in container_description['positioning']:
+            self.gui_config['chart_layout'] = {
+                'additional_arg': {'opts': [a for a in enumerate(list(container_description['positioning']['chart_layout']['choices'].values()))], 'valueactive': True},
+                'additional_setter_arg': {'index_to_name': lambda x: list(container_description['positioning']['chart_layout']['choices'].keys())[x]},
+                'data_container': 'positioning',
+                'widget': 'combobox',
+            }
         if 'font_name' in container_description['formatting']:
             self.gui_config['font_name'] = {
                 'additional_arg': {'opts': self.allfonts, 'valueactive': True},

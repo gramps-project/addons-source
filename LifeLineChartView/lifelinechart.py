@@ -450,7 +450,6 @@ TWO_LINE_FORMAT_2 = 101
 class LifeLineChartAxis(Gtk.DrawingArea):
     def __init__(self, dbstate, uistate, life_line_chart_widget):
         Gtk.DrawingArea.__init__(self)
-        st_cont = self.get_style_context()
         self.dbstate = dbstate
         self.uistate = uistate
         self.life_line_chart_widget = life_line_chart_widget
@@ -533,12 +532,6 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
 
     def __init__(self, dbstate, uistate, callback_popup=None):
         Gtk.DrawingArea.__init__(self)
-        st_cont = self.get_style_context()
-        col = st_cont.lookup_color('text_color')
-        if col[0]:
-            self.textcolor = (col[1].red, col[1].green, col[1].blue)
-        else:
-            self.textcolor = (0, 0, 0)
         self.dbstate = dbstate
         self.uistate = uistate
         self.childrenroot = []
@@ -976,12 +969,12 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
                     tooltip = gr_individual.individual.short_info_text
                     tooltip += '\nGramps id: ' + gr_individual.individual._gramps_person.get_gramps_id()
                     self.info_label.set_text(tooltip.replace('\n','   //   '))
-                self.info_label.override_color( Gtk.StateFlags.NORMAL, Gdk.RGBA(0,0,0))
+                self.info_label.set_sensitive(True)
             else:
                 if self._tooltip_individual_cache is not None:
                     self._tooltip_individual_cache = None
                     self.queue_draw_wrapper()
-                self.info_label.override_color( Gtk.StateFlags.NORMAL, Gdk.RGBA(0.7,0.7,0.7))
+                self.info_label.set_sensitive(False)
                 #self.info_label.set_text(tooltip.replace('\n','   //   '))
             self.pos_label.set_text('cursor position at ' + str(date))
             #self.set_tooltip_text(tooltip)
@@ -1210,6 +1203,13 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                     self.life_line_chart_instance = self.chart_class(
                         instance_container=get_dbdstate_instance_container(self.dbstate))
 
+                # text_color = self.uistate.window.get_style_context().get_color(Gtk.StateFlags.NORMAL)
+                # if text_color.red > 0.5:
+                #     # dark theme
+                #     self.life_line_chart_instance._colors = self.life_line_chart_instance.COLOR_CONFIGURATIONS['dark']
+                # else:
+                #     self.life_line_chart_instance._colors = self.life_line_chart_instance.COLOR_CONFIGURATIONS['light']
+
                 def filter_lambda(individual):
                     return False
 
@@ -1395,8 +1395,9 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
 
     def draw_items(self, ctx, chart_items, view_clip_box, limit_font_size = None):
         view_x_min, view_y_min, view_x_max, view_y_max = view_clip_box
+        text_color = self.uistate.window.get_style_context().get_color(Gtk.StateFlags.NORMAL)
         for item_index, item in enumerate(chart_items):
-            def text_function(ctx, text, x, y, rotation=0, fontName="Arial", fontSize=10, verticalPadding=0, vertical_offset=0, horizontal_offset=0, bold=False, align='center', position='middle'):
+            def text_function(ctx, text, x, y, rotation=0, fontName="Arial", fontSize=10, verticalPadding=0, vertical_offset=0, horizontal_offset=0, bold=False, align='center', position='middle', color=(0,0,0)):
                 """
                 Used to draw normal text
                 """
@@ -1409,7 +1410,12 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                     ctx.select_font_face(
                         fontName, cairo.FONT_SLANT_NORMAL, cairo.FONT_WEIGHT_NORMAL)
                 f_o = cairo.FontOptions()
-                f_o.set_antialias(cairo.ANTIALIAS_GOOD)
+
+                ctx.set_source_rgba(float(color[0]),
+                                    float(color[1]),
+                                    float(color[2]),
+                                    1) # transparency
+                #f_o.set_antialias(cairo.ANTIALIAS_GOOD)
                 f_o.set_hint_metrics(cairo.HINT_METRICS_OFF)
                 ctx.set_font_options(f_o)
                 ctx.set_font_size(fontSize)
@@ -1492,7 +1498,6 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                     q_y_start >= 0 and q_y_start <= 1 and q_y_end >= 0 and q_y_start <= 1
                 if font_too_small or not text_should_be_visible_x or not text_should_be_visible_y:
                     continue # dont draw this item!
-                ctx.set_source_rgb(0, 0, 0)
                 vertical_offset = 0
                 if 'dy' in args:
                     if args['dy'][0].endswith('px') or args['dy'][0].endswith('pt'):
@@ -1505,9 +1510,10 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                         horizontal_offset = float(args['dx'][0][:-2])
                     else:
                         horizontal_offset = float(args['dx'][0])
-                anchor = args.get('text-anchor')
+                anchor = args.get('text_anchor')
                 if not anchor:
                     anchor = 'start'
+                color = item.get('fill', (0,0,0))
                 text_function(
                     ctx,
                     args['text'],
@@ -1519,10 +1525,11 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                     vertical_offset=vertical_offset,
                     horizontal_offset=horizontal_offset,
                     align=anchor,
-                    position='top')
+                    position='top',
+                    color=color)
                 # ctx.save()
                 # ctx.
-                # if 'text-anchor' in args and args['text-anchor'] == 'middle':
+                # if 'text_anchor' in args and args['text_anchor'] == 'middle':
                 #     x_bearing, y_bearing, width, height = ctx.text_extents(args['text'])[:4]
                 #     ctx.move_to(args['insert'][0] - width/2, args['insert'][1])
                 #     ctx.show_text(args['text'])
@@ -1572,7 +1579,11 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                                 colors[0], colors[1], colors[2])
                             ctx.set_line_width(item['stroke_width']*stroke_with_multiplier)
                             ctx.line_to(arguments[1].real, arguments[1].imag)
+                            if 'stroke_dasharray' in item:
+                                ctx.set_dash([float(v) for v in item['stroke_dasharray'].split(',')])
                             ctx.stroke()
+                            if 'stroke_dasharray' in item:
+                                ctx.set_dash([])
                         elif item['config']['type'] == 'CubicBezier':
 
                             ctx.move_to(arguments[0].real, arguments[0].imag)
@@ -1583,8 +1594,8 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                                             arguments[2].imag, arguments[3].real, arguments[3].imag)
                             ctx.stroke()
                 if self._tooltip_individual_cache is not None and 'gir' in item and item['gir'] == self._tooltip_individual_cache[0]:
-                    paint_path(1.4, (255,0,0))
-                    paint_path(1.2, (0,0,0))
+                    paint_path(1.4, (1,0,0))
+                    paint_path(1.2, (text_color.red, text_color.green, text_color.blue))
                 paint_path(1, colors)
             elif item['type'] == 'textPath':
                 from math import cos, sin, atan2, pi
