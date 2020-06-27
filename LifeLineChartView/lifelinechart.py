@@ -1203,12 +1203,12 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                     self.life_line_chart_instance = self.chart_class(
                         instance_container=get_dbdstate_instance_container(self.dbstate))
 
-                # text_color = self.uistate.window.get_style_context().get_color(Gtk.StateFlags.NORMAL)
-                # if text_color.red > 0.5:
-                #     # dark theme
-                #     self.life_line_chart_instance._colors = self.life_line_chart_instance.COLOR_CONFIGURATIONS['dark']
-                # else:
-                #     self.life_line_chart_instance._colors = self.life_line_chart_instance.COLOR_CONFIGURATIONS['light']
+                self.text_color = self.uistate.window.get_style_context().get_color(Gtk.StateFlags.NORMAL)
+                if self.text_color.red > 0.5:
+                    # dark theme
+                    self.life_line_chart_instance._colors = self.life_line_chart_instance.COLOR_CONFIGURATIONS['dark']
+                else:
+                    self.life_line_chart_instance._colors = self.life_line_chart_instance.COLOR_CONFIGURATIONS['light']
 
                 def filter_lambda(individual):
                     return False
@@ -1395,7 +1395,6 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
 
     def draw_items(self, ctx, chart_items, view_clip_box, limit_font_size = None):
         view_x_min, view_y_min, view_x_max, view_y_max = view_clip_box
-        text_color = self.uistate.window.get_style_context().get_color(Gtk.StateFlags.NORMAL)
         for item_index, item in enumerate(chart_items):
             def text_function(ctx, text, x, y, rotation=0, fontName="Arial", fontSize=10, verticalPadding=0, vertical_offset=0, horizontal_offset=0, bold=False, align='center', position='middle', color=(0,0,0)):
                 """
