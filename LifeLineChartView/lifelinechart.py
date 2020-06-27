@@ -1410,9 +1410,9 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                         fontName, cairo.FONT_SLANT_NORMAL, cairo.FONT_WEIGHT_NORMAL)
                 f_o = cairo.FontOptions()
 
-                ctx.set_source_rgba(float(color[0]),
-                                    float(color[1]),
-                                    float(color[2]),
+                ctx.set_source_rgba(float(color[0]/255),
+                                    float(color[1]/255),
+                                    float(color[2]/255),
                                     1) # transparency
                 #f_o.set_antialias(cairo.ANTIALIAS_GOOD)
                 f_o.set_hint_metrics(cairo.HINT_METRICS_OFF)
