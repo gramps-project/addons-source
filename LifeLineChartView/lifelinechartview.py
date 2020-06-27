@@ -125,7 +125,7 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
         llc_positioning_description = lang_strings['positioning']
         llc_chart_configuration_root_individual_description = lang_strings['chart_configuration_root_individual']
 
-        container_description = {
+        self.container_description = {
             'root_individual': llc_chart_configuration_root_individual_description,
             'formatting': llc_formatting_description,
             'positioning': llc_positioning_description
@@ -134,104 +134,104 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
         self.gui_config = {}
 
         if DEBUG_MODE:
-            if 'debug_visualize_connections' in container_description['formatting']:
+            if 'debug_visualize_connections' in self.container_description['formatting']:
                 self.gui_config['debug_visualize_connections'] = {
                     'widget': 'checkbox',
                     'data_container': 'formatting'
                 }
-            if 'debug_visualize_ambiguous_placement' in container_description['formatting']:
+            if 'debug_visualize_ambiguous_placement' in self.container_description['formatting']:
                 self.gui_config['debug_visualize_ambiguous_placement'] = {
                     'widget': 'checkbox',
                     'data_container': 'formatting'
                 }
-            if 'debug_optimization_compression_steps' in container_description['positioning']:
+            if 'debug_optimization_compression_steps' in self.container_description['positioning']:
                 self.gui_config['debug_optimization_compression_steps']= {
                     'additional_arg': {'range': (-1, 10000)},
                     'data_container': 'positioning',
                     'widget': 'spinner',
                     'additional_setter_arg': {}
                 }
-            if 'debug_optimization_flipping_steps' in container_description['positioning']:
+            if 'debug_optimization_flipping_steps' in self.container_description['positioning']:
                 self.gui_config['debug_optimization_flipping_steps']= {
                     'additional_arg': {'range': (-1, 10000)},
                     'data_container': 'positioning',
                     'widget': 'spinner',
                     'additional_setter_arg': {}
                 }
-        if 'generations' in container_description['root_individual']:
+        if 'generations' in self.container_description['root_individual']:
             self.gui_config['generations']= {
                 'additional_arg': {'range': (1, 100)},
                 'data_container': 'root_individual',
                 'widget': 'spinner',
                 'additional_setter_arg': {}
             }
-        if 'warp_shape' in container_description['formatting']:
+        if 'warp_shape' in self.container_description['formatting']:
             self.gui_config['warp_shape'] = {
-                'additional_arg': {'opts': [a for a in enumerate(list(container_description['formatting']['warp_shape']['choices'].values()))], 'valueactive': True},
-                'additional_setter_arg': {'index_to_name': lambda x: list(container_description['formatting']['warp_shape']['choices'].keys())[x]},
+                'additional_arg': {'opts': [a for a in enumerate(list(self.container_description['formatting']['warp_shape']['choices'].values()))]},
+                'additional_setter_arg': {'index_to_name': lambda x: list(self.container_description['formatting']['warp_shape']['choices'].keys())[x]},
                 'data_container': 'formatting',
                 'widget': 'combobox',
             }
-        if 'flip_to_optimize' in container_description['positioning']:
+        if 'flip_to_optimize' in self.container_description['positioning']:
             self.gui_config['flip_to_optimize'] = {
                 'widget': 'checkbox',
                 'data_container': 'positioning'
             }
-        if 'compress' in container_description['positioning']:
+        if 'compress' in self.container_description['positioning']:
             self.gui_config['compress'] = {
                 'widget': 'checkbox',
                 'data_container': 'positioning'
             }
-        if 'unique_graphical_representation' in container_description['positioning']:
+        if 'unique_graphical_representation' in self.container_description['positioning']:
             self.gui_config['unique_graphical_representation'] = {
                 'widget': 'checkbox',
                 'data_container': 'positioning'
             }
-        if 'coloring_of_individuals' in container_description['formatting']:
+        if 'coloring_of_individuals' in self.container_description['formatting']:
             self.gui_config['coloring_of_individuals'] = {
-                'additional_arg': {'opts': [a for a in enumerate(list(container_description['formatting']['coloring_of_individuals']['choices'].values()))], 'valueactive': True},
-                'additional_setter_arg': {'index_to_name': lambda x: list(container_description['formatting']['coloring_of_individuals']['choices'].keys())[x]},
+                'additional_arg': {'opts': [a for a in enumerate(list(self.container_description['formatting']['coloring_of_individuals']['choices'].values()))]},
+                'additional_setter_arg': {'index_to_name': lambda x: list(self.container_description['formatting']['coloring_of_individuals']['choices'].keys())[x]},
                 'data_container': 'formatting',
                 'widget': 'combobox',
             }
-        if 'fathers_have_the_same_color' in container_description['formatting']:
+        if 'fathers_have_the_same_color' in self.container_description['formatting']:
             self.gui_config['fathers_have_the_same_color'] = {
                 'widget': 'checkbox',
                 'data_container': 'formatting'
             }
-        if 'highlight_descendants' in container_description['formatting']:
+        if 'highlight_descendants' in self.container_description['formatting']:
             self.gui_config['highlight_descendants'] = {
                 'widget': 'checkbox',
                 'data_container': 'formatting'
             }
-        if 'fade_individual_color' in container_description['formatting']:
+        if 'fade_individual_color' in self.container_description['formatting']:
             self.gui_config['fade_individual_color'] = {
                 'widget': 'checkbox',
                 'data_container': 'formatting'
             }
-        if 'birth_label_active' in container_description['formatting']:
+        if 'birth_label_active' in self.container_description['formatting']:
             self.gui_config['birth_label_active'] = {
                 'widget': 'checkbox',
                 'data_container': 'formatting'
             }
-        if 'marriage_label_active' in container_description['formatting']:
+        if 'marriage_label_active' in self.container_description['formatting']:
             self.gui_config['marriage_label_active'] = {
                 'widget': 'checkbox',
                 'data_container': 'formatting'
             }
-        if 'death_label_active' in container_description['formatting']:
+        if 'death_label_active' in self.container_description['formatting']:
             self.gui_config['death_label_active'] = {
                 'widget': 'checkbox',
                 'data_container': 'formatting'
             }
-        if 'horizontal_step_size' in container_description['formatting']:
+        if 'horizontal_step_size' in self.container_description['formatting']:
             self.gui_config['horizontal_step_size'] = {
                 'additional_arg': {'range': (1, 100)},
                 'data_container': 'formatting',
                 'widget': 'slider',
                 'additional_setter_arg': {}
             }
-        if 'relative_line_thickness' in container_description['formatting']:
+        if 'relative_line_thickness' in self.container_description['formatting']:
             self.gui_config['relative_line_thickness'] = {
                 'additional_arg': {'range': (1, 100)},
                 'data_container': 'formatting',
@@ -241,47 +241,47 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
                     'value_encode': lambda x: int(x*100)
                 }
             }
-        if 'total_height' in container_description['formatting']:
+        if 'total_height' in self.container_description['formatting']:
             self.gui_config['total_height'] = {
                 'additional_arg': {'range': (500, 5000)},
                 'data_container': 'formatting',
                 'widget': 'slider',
                 'additional_setter_arg': {}
             }
-        if 'flip_vertically' in container_description['formatting']:
+        if 'flip_vertically' in self.container_description['formatting']:
             self.gui_config['flip_vertically'] = {
                 'widget': 'checkbox',
                 'data_container': 'formatting'
             }
-        if 'line_weighting' in container_description['formatting']:
+        if 'line_weighting' in self.container_description['formatting']:
             self.gui_config['line_weighting'] = {
-                'additional_arg': {'opts': [a for a in enumerate(list(container_description['formatting']['line_weighting']['choices'].values()))], 'valueactive': True},
-                'additional_setter_arg': {'index_to_name': lambda x: list(container_description['formatting']['line_weighting']['choices'].keys())[x]},
+                'additional_arg': {'opts': [a for a in enumerate(list(self.container_description['formatting']['line_weighting']['choices'].values()))]},
+                'additional_setter_arg': {'index_to_name': lambda x: list(self.container_description['formatting']['line_weighting']['choices'].keys())[x]},
                 'data_container': 'formatting',
                 'widget': 'combobox',
             }
-        if 'chart_layout' in container_description['positioning']:
+        if 'chart_layout' in self.container_description['positioning']:
             self.gui_config['chart_layout'] = {
-                'additional_arg': {'opts': [a for a in enumerate(list(container_description['positioning']['chart_layout']['choices'].values()))], 'valueactive': True},
-                'additional_setter_arg': {'index_to_name': lambda x: list(container_description['positioning']['chart_layout']['choices'].keys())[x]},
+                'additional_arg': {'opts': [a for a in enumerate(list(self.container_description['positioning']['chart_layout']['choices'].values()))]},
+                'additional_setter_arg': {'index_to_name': lambda x: list(self.container_description['positioning']['chart_layout']['choices'].keys())[x]},
                 'data_container': 'positioning',
                 'widget': 'combobox',
             }
-        if 'font_name' in container_description['formatting']:
+        if 'font_name' in self.container_description['formatting']:
             self.gui_config['font_name'] = {
-                'additional_arg': {'opts': self.allfonts, 'valueactive': True},
+                'additional_arg': {'opts': self.allfonts},
                 'additional_setter_arg': {'index_to_name': lambda x: self.allfonts[x][1]},
                 'data_container': 'formatting',
                 'widget': 'combobox',
             }
-        if 'family_shape' in container_description['formatting']:
+        if 'family_shape' in self.container_description['formatting']:
             self.gui_config['family_shape'] = {
-                'additional_arg': {'opts': [a for a in enumerate(list(container_description['formatting']['family_shape']['choices'].values()))], 'valueactive': True},
-                'additional_setter_arg': {'index_to_name': lambda x: x},
+                'additional_arg': {'opts': [a for a in enumerate(list(self.container_description['formatting']['family_shape']['choices'].values()))]},
+                'additional_setter_arg': {'index_to_name': lambda x: list(self.container_description['formatting']['family_shape']['choices'].keys())[x]},
                 'data_container': 'formatting',
                 'widget': 'combobox',
             }
-        if 'font_size_description' in container_description['formatting']:
+        if 'font_size_description' in self.container_description['formatting']:
             self.gui_config['font_size_description'] = {
                 'additional_arg': {'range': (1, 200)},
                 'data_container': 'formatting',
@@ -291,66 +291,66 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
                     'value_encode': lambda x: int(x*100)
                 }
             }
-        if 'birth_label_rotation' in container_description['formatting']:
+        if 'birth_label_rotation' in self.container_description['formatting']:
             self.gui_config['birth_label_rotation'] = {
                 'data_container': 'formatting',
                 'widget': 'lineedit',
             }
-        if 'birth_label_letter_x_offset' in container_description['formatting']:
+        if 'birth_label_letter_x_offset' in self.container_description['formatting']:
             self.gui_config['birth_label_letter_x_offset'] = {
                 'data_container': 'formatting',
                 'widget': 'lineedit',
             }
-        if 'birth_label_letter_y_offset' in container_description['formatting']:
+        if 'birth_label_letter_y_offset' in self.container_description['formatting']:
             self.gui_config['birth_label_letter_y_offset'] = {
                 'data_container': 'formatting',
                 'widget': 'lineedit',
             }
-        if 'birth_label_anchor' in container_description['formatting']:
+        if 'birth_label_anchor' in self.container_description['formatting']:
             self.gui_config['birth_label_anchor'] = {
-                'additional_arg': {'opts': [a for a in enumerate(list(container_description['formatting']['birth_label_anchor']['choices'].values()))], 'valueactive': True},
-                'additional_setter_arg': {'index_to_name': lambda x: list(container_description['formatting']['birth_label_anchor']['choices'].keys())[x]},
+                'additional_arg': {'opts': [a for a in enumerate(list(self.container_description['formatting']['birth_label_anchor']['choices'].values()))]},
+                'additional_setter_arg': {'index_to_name': lambda x: list(self.container_description['formatting']['birth_label_anchor']['choices'].keys())[x]},
                 'data_container': 'formatting',
                 'widget': 'combobox',
             }
-        if 'birth_label_wrapping_active' in container_description['formatting']:
+        if 'birth_label_wrapping_active' in self.container_description['formatting']:
             self.gui_config['birth_label_wrapping_active'] = {
                 'widget': 'checkbox',
                 'data_container': 'formatting'
             }
-        if 'death_label_rotation' in container_description['formatting']:
+        if 'death_label_rotation' in self.container_description['formatting']:
             self.gui_config['death_label_rotation'] = {
                 'data_container': 'formatting',
                 'widget': 'lineedit',
             }
-        if 'death_label_letter_x_offset' in container_description['formatting']:
+        if 'death_label_letter_x_offset' in self.container_description['formatting']:
             self.gui_config['death_label_letter_x_offset'] = {
                 'data_container': 'formatting',
                 'widget': 'lineedit',
             }
-        if 'death_label_letter_y_offset' in container_description['formatting']:
+        if 'death_label_letter_y_offset' in self.container_description['formatting']:
             self.gui_config['death_label_letter_y_offset'] = {
                 'data_container': 'formatting',
                 'widget': 'lineedit',
             }
-        if 'death_label_anchor' in container_description['formatting']:
+        if 'death_label_anchor' in self.container_description['formatting']:
             self.gui_config['death_label_anchor'] = {
-                'additional_arg': {'opts': [a for a in enumerate(list(container_description['formatting']['death_label_anchor']['choices'].values()))], 'valueactive': True},
-                'additional_setter_arg': {'index_to_name': lambda x: list(container_description['formatting']['death_label_anchor']['choices'].keys())[x]},
+                'additional_arg': {'opts': [a for a in enumerate(list(self.container_description['formatting']['death_label_anchor']['choices'].values()))]},
+                'additional_setter_arg': {'index_to_name': lambda x: list(self.container_description['formatting']['death_label_anchor']['choices'].keys())[x]},
                 'data_container': 'formatting',
                 'widget': 'combobox',
             }
-        if 'death_label_wrapping_active' in container_description['formatting']:
+        if 'death_label_wrapping_active' in self.container_description['formatting']:
             self.gui_config['death_label_wrapping_active'] = {
                 'widget': 'checkbox',
                 'data_container': 'formatting'
             }
-        if 'individual_photo_active' in container_description['formatting']:
+        if 'individual_photo_active' in self.container_description['formatting']:
             self.gui_config['individual_photo_active'] = {
                 'widget': 'checkbox',
                 'data_container': 'formatting'
             }
-        if 'individual_photo_relative_size' in container_description['formatting']:
+        if 'individual_photo_relative_size' in self.container_description['formatting']:
             self.gui_config['individual_photo_relative_size'] = {
                 'additional_arg': {'range': (1, 500)},
                 'data_container': 'formatting',
@@ -367,7 +367,7 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
                     k not in lang_strings['chart_configuration_root_individual']:
                 self.gui_config.pop(k)
         for item_name, item_data in self.gui_config.items():
-            container = container_description[item_data['data_container']]
+            container = self.container_description[item_data['data_container']]
             item_data['tab_name'] = container[item_name]['tab'] if 'tab' in container[item_name] else _('General Layout')
             item_data['description'] = container[item_name]['short_description']
             item_data['tooltip'] = container[item_name]['long_description']
@@ -860,14 +860,26 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
         for index, (entry_name, settings) in enumerate(self.gui_config.items()):
             if settings['tab_name'] != tab_name:
                 continue
+            additional_args = settings['additional_arg']
+            if settings['widget'] == 'combobox':
+                if entry_name != 'font_name':
+                    container = getattr(self, settings['data_container'])
+                    value = str(container[entry_name])
+                    try:
+                        additional_args['setactive'] = list(self.container_description[settings['data_container']][entry_name]['choices'].keys()).index(value)
+                    except ValueError:
+                        additional_args['setactive'] = 0
+                else:
+                    additional_args['setactive'] = 0
+            constant = 'interface.lifelineview-' + entry_name
             item = function_mapping[settings['widget']](
                 grid, _(settings['description']),
                 index,
-                'interface.lifelineview-' + entry_name,
+                constant,
                 callback=lambda *args, entry_name=entry_name, settings=settings:
                 getattr(self, 'cb_update_' + settings['widget'])(
                     *(list(args) + [entry_name, settings['data_container']]), **settings['additional_setter_arg']),
-                **settings['additional_arg']
+                **additional_args
             )
             item.set_tooltip_text(_(settings['tooltip']))
 
@@ -961,10 +973,17 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
         entry = obj.get_active()
         container = getattr(self, container)
         value = index_to_name(entry)
-        if container[value_name] != value:
-            container[value_name] = value
-            self._config.set(constant, container[value_name])
-            self.update()
+        data_type = type(container[value_name])
+        if data_type == str:
+            if container[value_name] != value:
+                container[value_name] = value
+                self._config.set(constant, container[value_name])
+                self.update()
+        else:
+            if container[value_name] != data_type(value):
+                container[value_name] = data_type(value)
+                self._config.set(constant, container[value_name])
+                self.update()
 
     def cb_update_background(self, obj, constant):
         """
