@@ -1594,7 +1594,7 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                             ctx.stroke()
                 if self._tooltip_individual_cache is not None and 'gir' in item and item['gir'] == self._tooltip_individual_cache[0]:
                     paint_path(1.4, (1,0,0))
-                    paint_path(1.2, (text_color.red, text_color.green, text_color.blue))
+                    paint_path(1.2, (self.text_color.red, self.text_color.green, self.text_color.blue))
                 paint_path(1, colors)
             elif item['type'] == 'textPath':
                 from math import cos, sin, atan2, pi
