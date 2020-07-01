@@ -38,9 +38,23 @@ from gramps.gui.configure import (GrampsPreferences, ConfigureDialog,
 from gramps.gui.display import display_help
 from gramps.gen.utils.alive import update_constants
 from gramps.gen.constfunc import win
-from gramps.gen.const import GRAMPS_LOCALE as glocale
-_ = glocale.translation.gettext
 
+# old
+# from gramps.gen.const import GRAMPS_LOCALE as glocale
+# _ = glocale.translation.gettext
+
+# New:
+#------------------------------------------------------------------------
+#
+# Internationalisation
+#
+#------------------------------------------------------------------------
+from gramps.gen.const import GRAMPS_LOCALE as glocale
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.gettext
 
 #-------------------------------------------------------------------------
 #
