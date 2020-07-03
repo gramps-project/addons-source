@@ -59,9 +59,29 @@ from gramps.gen.utils.file import media_path_full
 from gramps.gen.utils.thumbnails import (get_thumbnail_path, SIZE_NORMAL,
                                          SIZE_LARGE)
 import datetime
-
+_max_days = {
+    1:31,
+    2:29,
+    3:31,
+    4:30,
+    5:31,
+    6:30,
+    7:31,
+    8:31,
+    9:30,
+    10:31,
+    11:30,
+    12:31
+}
 logger = logging.getLogger("LifeLineChart View")
 
+events_key_name = {
+    EventType.BIRTH: 'birth',
+    EventType.CHRISTEN: 'christening',
+    EventType.DEATH: 'death',
+    EventType.BURIAL: 'burial',
+    EventType.BAPTISM: 'baptism',
+}
 def get_date(event):
     """
     get date dict of a gramps event
@@ -75,17 +95,8 @@ def get_date(event):
     event_data = None
     try:
         date_obj = event.get_date_object()
-        precision = ''
-        if date_obj.dateval[0] != 0:
-            precision += 'd'
-        if date_obj.dateval[1] != 0:
-            precision += 'm'
         if date_obj.year == 0:
             return None
-        else:
-            precision += 'y'
-        date = datetime.datetime(date_obj.dateval[2], max(
-            1, date_obj.dateval[1]), max(1, date_obj.dateval[0]), 0, 0, 0)
         quality = date_obj.get_quality()
         modifier = date_obj.get_modifier()
         comment = ''
@@ -99,10 +110,60 @@ def get_date(event):
             comment = 'After'
         elif modifier == Date.MOD_ABOUT:
             comment = 'About'
+        elif modifier == Date.MOD_RANGE:
+            comment = 'Between'
+
+        month_max_, day_max_ = 12, 31
+        month_min_, day_min_ = 1, 1
+        year_min, year_max = None, None
+        month_max, day_max = None, None
+        month_min, day_min = None, None
+
+        precision = ''
+        if date_obj.dateval[0] != 0:
+            day_min = date_obj.dateval[0]
+            precision += 'd'
+        if date_obj.dateval[1] != 0:
+            month_min = date_obj.dateval[1]
+            precision += 'm'
+        year_min = date_obj.year
+        precision += 'y'
+        year_max = year_min
+
+        if not month_max: month_max = month_max_
+        if not month_min: month_min = month_min_
+        if not day_max: day_max = day_max_
+        if not day_min: day_min = day_min_
+
+        if modifier == Date.MOD_AFTER:
+            year_max = year_min + 15
+        elif modifier == Date.MOD_BEFORE:
+            year_min = year_max - 15
+
+        day_max = min(_max_days[month_max], day_max)
+
+        date_min = datetime.datetime(year_min, month_min, day_min, 0, 0, 0, 0)
+        try:
+            date_max = datetime.datetime(year_max, month_max, day_max, 0, 0, 0, 0)
+        except ValueError as e:
+            if month_max==2:
+                date_max = datetime.datetime(year_max, month_max, day_max, 0, 0, 0, 0)
+            else:
+                raise
+
+        if events_key_name[event.get_type().value] in ['burial', 'death']:
+            # if unknown move to the end of the year
+            date = date_max
+        else:
+            # if unknown move to the beginning of the year
+            date = date_min
+
         event_data = {
             'gramps_event': event,
             'date': date,
             'ordinal_value': date.toordinal(),
+            'ordinal_value_max': date_max.toordinal(),
+            'ordinal_value_min': date_min.toordinal(),
             'comment': comment,
             'precision': precision
         }
@@ -120,13 +181,6 @@ def get_relevant_events(gramps_person, dbstate, target):
         dbstate (dbstate): dbstate
         target (dict): place to store the events
     """
-    events_key_name = {
-        EventType.BIRTH: 'birth',
-        EventType.CHRISTEN: 'christening',
-        EventType.DEATH: 'death',
-        EventType.BURIAL: 'burial',
-        EventType.BAPTISM: 'baptism',
-    }
     for eventref in gramps_person.get_event_ref_list():
         #        for get_event_reference, key_name in events:
         #            eventref = get_event_reference()
@@ -391,15 +445,15 @@ def get_dbdstate_instance_container(dbstate):
     ic.date_label_translation = {
         'Calculated': '{symbol}\xa0' + _('calculated').replace(' ', '\xa0') + '\xa0{date}',
         'Estimated': '{symbol}\xa0' + _('estimated').replace(' ', '\xa0') + '\xa0{date}',
-        'Estimated (min 25 at marriage)': '{symbol}\xa0' + _('estimated').replace(' ', '\xa0') + '\xa0{date}',
-        'Estimated (max age 75)': '{symbol}\xa0' + _('estimated').replace(' ', '\xa0') + '\xa0{date}',
-        'Estimated (max age 100)': '{symbol}\xa0' + _('estimated').replace(' ', '\xa0') + '\xa0{date}',
-        'Estimated (min 1 after parents marriage)': '{symbol}\xa0' + _('estimated').replace(' ', '\xa0') + '\xa0{date}',
+        'Estimated (min age at marriage)': '{symbol}\xa0' + _('estimated').replace(' ', '\xa0') + '\xa0{date}',
+        'Estimated (max age)': '{symbol}\xa0' + _('estimated').replace(' ', '\xa0') + '\xa0{date}',
+        'Estimated (after parents marriage)': '{symbol}\xa0' + _('estimated').replace(' ', '\xa0') + '\xa0{date}',
         'Still alive': '',
         'About': '{symbol}\xa0' + _('about').replace(' ', '\xa0') + '\xa0{date}',
         'Before': '{symbol}\xa0' + _('before').replace(' ', '\xa0') + '\xa0{date}',
         'After': '{symbol}\xa0' + _('after').replace(' ', '\xa0') + '\xa0{date}',
-        'YearPrecision': '{symbol}\xa0{date}'
+        'YearPrecision': '{symbol}\xa0{date}',
+        'Between': '{symbol}\xa0{date}'
     }
 
     return ic
