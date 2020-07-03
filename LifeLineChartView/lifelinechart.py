@@ -1553,11 +1553,12 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                         #ctx.set_source_rgb(colors[0], colors[1], colors[2])
                         #lg3 = cairo.LinearGradient(0, item['color_pos'][0],  0, item['color_pos'][1])
                         lg3 = cairo.LinearGradient(
-                            0, item['color_pos'][0], 0, item['color_pos'][1])
+                            arguments[0].real, item['color_pos'][0],
+                            arguments[0].real, item['color_pos'][1])
                         #fill = svg_document.linearGradient(("0", str(item['color_pos'][0])+""), ("0", str(item['color_pos'][1])+""), gradientUnits='userSpaceOnUse')
                         lg3.add_color_stop_rgba(
                             0, colors[0], colors[1], colors[2], 1)
-                        lg3.add_color_stop_rgba(1, 0, 0, 0, 1)
+                        lg3.add_color_stop_rgb(1, *self.life_line_chart_instance._colors['fade_to_death'])
 
                         ctx.set_source(lg3)
                         if item['config']['type'] == 'Line':
@@ -1568,8 +1569,10 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                         elif item['config']['type'] == 'CubicBezier':
                             ctx.move_to(arguments[0].real, arguments[0].imag)
                             ctx.set_line_width(item['stroke_width']*stroke_with_multiplier)
-                            ctx.curve_to(arguments[1].real, arguments[1].imag, arguments[2].real,
-                                            arguments[2].imag, arguments[3].real, arguments[3].imag)
+                            ctx.curve_to(
+                                arguments[1].real, arguments[1].imag,
+                                arguments[2].real, arguments[2].imag,
+                                arguments[3].real, arguments[3].imag)
                             ctx.stroke()
                     else:
                         if item['config']['type'] == 'Line':
