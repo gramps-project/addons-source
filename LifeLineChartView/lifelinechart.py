@@ -1286,13 +1286,27 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                                 date_ov = datetime.date(*[i if i != 0 else 1 for i in media.date.get_ymd()]).toordinal()
                                 date_ov = max(date_ov, individual.events['birth_or_christening']['date'].date().toordinal() + 1)
                             else:
-                                date_ov = individual.events['birth_or_christening']['date'].date().toordinal() + int((i+1)*365*5) + 1
+                                continue
                             image_path = get_thumbnail_path(path, media.mime, size=SIZE_NORMAL)
                             thumbnail = GdkPixbuf.Pixbuf.new_from_file(image_path)
                             images[date_ov] = {
                                 'filename': image_path,
                                 'size': (thumbnail.get_width(), thumbnail.get_height())
                                 }
+                    if not images:
+                        for i, reference in enumerate(individual._gramps_person.media_list):
+                            handle = reference.get_reference_handle()
+                            media = self.dbstate.db.get_media_from_handle(handle)
+                            path = media_path_full(self.dbstate.db, media.get_path())
+                            if media.mime in ['image/jpeg', 'image/png'] and os.path.isfile(path):
+                                year = media.date.get_year()
+                                date_ov = individual.events['birth_or_christening']['date'].date().toordinal() + int((i+1)*365*5) + 1
+                                image_path = get_thumbnail_path(path, media.mime, size=SIZE_NORMAL)
+                                thumbnail = GdkPixbuf.Pixbuf.new_from_file(image_path)
+                                images[date_ov] = {
+                                    'filename': image_path,
+                                    'size': (thumbnail.get_width(), thumbnail.get_height())
+                                    }
                     return images
 
                 unavailable_items = []
