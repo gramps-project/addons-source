@@ -122,13 +122,18 @@ def get_date(event):
         precision = ''
         if date_obj.dateval[0] != 0:
             day_min = date_obj.dateval[0]
+            if not day_max:
+                day_max = day_min
             precision += 'd'
         if date_obj.dateval[1] != 0:
             month_min = date_obj.dateval[1]
+            if not month_max:
+                month_max = month_min
             precision += 'm'
         year_min = date_obj.year
+        if not year_max:
+            year_max = year_min
         precision += 'y'
-        year_max = year_min
 
         if not month_max: month_max = month_max_
         if not month_min: month_min = month_min_
@@ -223,7 +228,7 @@ class GrampsInstanceContainer(InstanceContainer):
         event = individual.events['death_or_burial']
         if event:
             date = event['date']
-            if event['precision'] == 'dmy':
+            if event['precision'] == 'y':
                 gramps_date = Date(date.year, 0, 0)
             elif event['precision'] == 'my':
                 gramps_date = Date(date.year, date.month, 0)
@@ -244,7 +249,7 @@ class GrampsInstanceContainer(InstanceContainer):
         event = individual.events['birth_or_christening']
         if event:
             date = event['date']
-            if event['precision'] == 'dmy':
+            if event['precision'] == 'y':
                 gramps_date = Date(date.year, 0, 0)
             elif event['precision'] == 'my':
                 gramps_date = Date(date.year, date.month, 0)
