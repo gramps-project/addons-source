@@ -1615,15 +1615,15 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                 arguments = [individual_id for individual_id in arguments]
                 colors = [c/255. for c in item['color']]
                 def paint_path(stroke_with_multiplier, colors):
-                    if self.formatting['fade_individual_color'] and 'color_pos' in item:
-                        cp = item['color_pos']
+                    if self.formatting['fade_individual_color'] and 'age_color_fade_ordinal_values' in item:
+                        cp = item['age_color_fade_ordinal_values']
 
                         #ctx.set_source_rgb(colors[0], colors[1], colors[2])
-                        #lg3 = cairo.LinearGradient(0, item['color_pos'][0],  0, item['color_pos'][1])
+                        #lg3 = cairo.LinearGradient(0, item['age_color_fade_ordinal_values'][0],  0, item['age_color_fade_ordinal_values'][1])
                         lg3 = cairo.LinearGradient(
-                            arguments[0].real, item['color_pos'][0],
-                            arguments[0].real, item['color_pos'][1])
-                        #fill = svg_document.linearGradient(("0", str(item['color_pos'][0])+""), ("0", str(item['color_pos'][1])+""), gradientUnits='userSpaceOnUse')
+                            arguments[0].real, item['age_color_fade_ordinal_values'][0],
+                            arguments[0].real, item['age_color_fade_ordinal_values'][1])
+                        #fill = svg_document.linearGradient(("0", str(item['age_color_fade_ordinal_values'][0])+""), ("0", str(item['age_color_fade_ordinal_values'][1])+""), gradientUnits='userSpaceOnUse')
                         lg3.add_color_stop_rgba(
                             0, colors[0], colors[1], colors[2], 1)
                         lg3.add_color_stop_rgb(1, *self.life_line_chart_instance._colors['fade_to_death'])
@@ -1642,27 +1642,67 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                                 arguments[2].real, arguments[2].imag,
                                 arguments[3].real, arguments[3].imag)
                             ctx.stroke()
-                    else:
-                        if item['config']['type'] == 'Line':
-                            ctx.move_to(arguments[0].real, arguments[0].imag)
-                            ctx.set_source_rgb(
-                                colors[0], colors[1], colors[2])
-                            ctx.set_line_width(item['stroke_width']*stroke_with_multiplier)
-                            ctx.line_to(arguments[1].real, arguments[1].imag)
-                            if 'stroke_dasharray' in item:
-                                ctx.set_dash([float(v) for v in item['stroke_dasharray'].split(',')])
-                            ctx.stroke()
-                            if 'stroke_dasharray' in item:
-                                ctx.set_dash([])
-                        elif item['config']['type'] == 'CubicBezier':
+                    else:# self.formatting['fade_individual_color'] and 'age_color_fade_ordinal_values' in item:
 
-                            ctx.move_to(arguments[0].real, arguments[0].imag)
-                            ctx.set_source_rgb(
-                                colors[0], colors[1], colors[2])
-                            ctx.set_line_width(item['stroke_width']*stroke_with_multiplier)
-                            ctx.curve_to(arguments[1].real, arguments[1].imag, arguments[2].real,
-                                            arguments[2].imag, arguments[3].real, arguments[3].imag)
-                            ctx.stroke()
+                        min_stops = []
+                        max_stops = []
+                        if 'birth_date_position_range' in item and item['birth_date_position_range'] \
+                                and item['birth_date_position_range'][0] != item['birth_date_position_range'][1]:
+                            min_stops.append((item['birth_date_position_range'][0], 0))
+                            max_stops.append((item['birth_date_position_range'][1], 1))
+                        if 'death_date_position_range' in item and item['death_date_position_range'] \
+                                and item['death_date_position_range'][0] != item['death_date_position_range'][1]:
+                            min_stops.append((item['death_date_position_range'][0], 1))
+                            max_stops.append((item['death_date_position_range'][1], 0))
+                        if min_stops or max_stops:
+                            min_ov = min([v[0][1] for v in min_stops + max_stops])
+                            max_ov = max([v[0][1] for v in min_stops + max_stops])
+
+                            cp = item['age_color_fade_ordinal_values']
+
+                            lg3 = cairo.LinearGradient(
+                                arguments[0].real, min_ov,
+                                arguments[0].real, max_ov)
+
+                            for stop in sorted(min_stops + max_stops):
+                                lg3.add_color_stop_rgba(
+                                    (stop[0][1]-min_ov)/(max_ov-min_ov), colors[0], colors[1], colors[2], stop[1])
+
+                            ctx.set_source(lg3)
+                            if item['config']['type'] == 'Line':
+                                ctx.move_to(arguments[0].real, arguments[0].imag)
+                                ctx.set_line_width(item['stroke_width']*stroke_with_multiplier)
+                                ctx.line_to(arguments[1].real, arguments[1].imag)
+                                ctx.stroke()
+                            elif item['config']['type'] == 'CubicBezier':
+                                ctx.move_to(arguments[0].real, arguments[0].imag)
+                                ctx.set_line_width(item['stroke_width']*stroke_with_multiplier)
+                                ctx.curve_to(
+                                    arguments[1].real, arguments[1].imag,
+                                    arguments[2].real, arguments[2].imag,
+                                    arguments[3].real, arguments[3].imag)
+                                ctx.stroke()
+                        else:
+                            if item['config']['type'] == 'Line':
+                                ctx.move_to(arguments[0].real, arguments[0].imag)
+                                ctx.set_source_rgb(
+                                    colors[0], colors[1], colors[2])
+                                ctx.set_line_width(item['stroke_width']*stroke_with_multiplier)
+                                ctx.line_to(arguments[1].real, arguments[1].imag)
+                                if 'stroke_dasharray' in item:
+                                    ctx.set_dash([float(v) for v in item['stroke_dasharray'].split(',')])
+                                ctx.stroke()
+                                if 'stroke_dasharray' in item:
+                                    ctx.set_dash([])
+                            elif item['config']['type'] == 'CubicBezier':
+
+                                ctx.move_to(arguments[0].real, arguments[0].imag)
+                                ctx.set_source_rgb(
+                                    colors[0], colors[1], colors[2])
+                                ctx.set_line_width(item['stroke_width']*stroke_with_multiplier)
+                                ctx.curve_to(arguments[1].real, arguments[1].imag, arguments[2].real,
+                                                arguments[2].imag, arguments[3].real, arguments[3].imag)
+                                ctx.stroke()
                 if self._tooltip_individual_cache is not None and 'gir' in item and item['gir'] == self._tooltip_individual_cache[0]:
                     paint_path(1.4, (1,0,0))
                     paint_path(1.2, (self.text_color.red, self.text_color.green, self.text_color.blue))
