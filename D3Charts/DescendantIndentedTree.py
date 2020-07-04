@@ -586,7 +586,8 @@ class Printinfo():
             delim = "_"
 
         name_str = name.replace(" ", delim).lower()
-        name_out = unicodedata.normalize('NFKD', name_str).encode('ascii', 'ignore')
+        name_out = unicodedata.normalize(
+            'NFKD', name_str).encode('ascii', 'ignore').decode('ascii')
         name_out = ''.join(c for c in name_out \
             if c in valid_filename_chars)
 
