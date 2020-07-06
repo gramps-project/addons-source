@@ -133,9 +133,16 @@ class ClipboardGramplet(Gramplet):
                 class Selection(object):
                     def __init__(self, data):
                         self.data = data
+                    def get_data(self):
+                        return self.data
+                class Target():
+                    def name(self):
+                        return drag_type
                 class Context(object):
-                    targets = [drag_type]
-                    action = 1
+                    def list_targets(self):
+                        return [Target()]
+                    def get_actions(self):
+                        return 1  # action = 1
                 if self.dbstate.is_open():
                     if drag_type == "TEXT":
                         text = tuple_data[1]
