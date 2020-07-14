@@ -1,0 +1,74 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-10 18:31+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: FamilyRelationshipTool/FamilyRelationshipTool.gpr.py:24
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:76
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:91
+msgid "Family Relationship Tool"
+msgstr ""
+
+#: FamilyRelationshipTool/FamilyRelationshipTool.gpr.py:25
+msgid "Mass-edit the family relationship type for a group of families."
+msgstr ""
+
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:51
+msgid "Family Filter"
+msgstr ""
+
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:52
+msgid ""
+"Choose the set of families to process.\n"
+"Create custom filters if empty."
+msgstr ""
+
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:55
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:63
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:80
+msgid "Options"
+msgstr ""
+
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:58
+msgid "Relationship Type"
+msgstr ""
+
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:59
+msgid ""
+"Choose the new family relationship type.\n"
+"Custom relationship types aren't supported."
+msgstr ""
+
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:61
+msgid "Married"
+msgstr ""
+
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:61
+msgid "Unmarried"
+msgstr ""
+
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:62
+msgid "Civil Union"
+msgstr ""
+
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:62
+msgid "Unknown"
+msgstr ""
+
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:95
+msgid "Process relationships..."
+msgstr ""
