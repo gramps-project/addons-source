@@ -87,7 +87,7 @@ msgstr "L'individu %s n'est pas présent dans la base de données"
 #: LinesOfDescendency/lines-of-descendency.py:111
 #, python-format
 msgid "%(line)s. line:"
-msgstr "%(line)s. ligne:"
+msgstr "%(line)s. ligne :"
 
 #: LinesOfDescendency/lines-of-descendency.py:176
 #, python-format
