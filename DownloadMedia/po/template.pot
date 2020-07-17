@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"POT-Creation-Date: 2020-07-17 21:55+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,7 +22,7 @@ msgid "Download media files from the internet"
 msgstr ""
 
 #: DownloadMedia/DownloadMedia.gpr.py:36
-msgid "This tool downloads media files form the internet"
+msgid "This tool downloads media files from the internet"
 msgstr ""
 
 #: DownloadMedia/DownloadMedia.py:71
