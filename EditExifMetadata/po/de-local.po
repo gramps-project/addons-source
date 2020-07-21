@@ -375,6 +375,8 @@ msgstr ""
 "WARNUNG! Du bist dabei, die GPS-Metadaten vollständig aus diesem Bild zu"
 " löschen?"
 
+#: EditExifMetadata/editexifmetadata.py:1334
+
 #: EditExifMetadata/editexifmetadata.py:1318
 msgid "Media Title Update"
 msgstr "Medientitel aktualisiert"
@@ -426,3 +428,4 @@ msgstr ""
 
 #~ msgid "Displaying Exif metadata..."
 #~ msgstr "Exif Metadaten zeigen..."
+
