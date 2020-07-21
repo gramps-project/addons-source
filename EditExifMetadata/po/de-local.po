@@ -14,15 +14,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-29 17:03+0200\n"
-"PO-Revision-Date: 2020-07-29 21:59+0200\n"
+"POT-Creation-Date: 2020-07-21 14:47+0200\n"
+"PO-Revision-Date: 2020-07-21 15:24+0200\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 19.12.3\n"
+"X-Generator: Poedit 2.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: EditExifMetadata/editexifmetadata.gpr.py:29
@@ -214,6 +214,10 @@ msgstr "Konvertieren und Löschen"
 msgid "Convert"
 msgstr "Konvertiere"
 
+#: EditExifMetadata//editexifmetadata.py:217
+msgid "Clear"
+msgstr "Löschen"
+
 #: EditExifMetadata/editexifmetadata.py:792
 msgid ""
 "Your image has been converted and the original file has been deleted, and "
@@ -271,9 +275,9 @@ msgstr ""
 msgid "This button will clear all of the data fields shown here."
 msgstr "Diese Schaltfläche leert alle hier gezeigten Datenfelder."
 
-#: EditExifMetadata/editexifmetadata.py:921
+#: EditExifMetadata//editexifmetadata.py:937
 msgid "This button will clear all of the GPS fields shown here."
-msgstr "Diese Schaltfläche löscht alle hier gezeigten GPS-Felder."
+msgstr "Diese Schaltfläche leert alle hier gezeigten Datenfelder."
 
 #: EditExifMetadata/editexifmetadata.py:925
 msgid ""
@@ -367,13 +371,13 @@ msgstr "ACHTUNG! Du bist dabei alle Exif Metadaten von diesem Bild zu löschen?"
 msgid "Delete"
 msgstr "Löschen"
 
-#: EditExifMetadata/editexifmetadata.py:1133
+#: EditExifMetadata//editexifmetadata.py:1149
 msgid ""
 "WARNING!  You are about to completely delete the GPS metadata from this "
 "image?"
-msgstr ""
-"WARNUNG! Du bist dabei, die GPS-Metadaten vollständig aus diesem Bild zu"
-" löschen?"
+msgstr "ACHTUNG! Du bist dabei alle Exif Metadaten von diesem Bild zu löschen?"
+
+#: EditExifMetadata//editexifmetadata.py:1334
 
 #: EditExifMetadata/editexifmetadata.py:1334
 
@@ -422,6 +426,10 @@ msgstr ""
 
 #~ msgid "Thumbnail"
 #~ msgstr "Miniaturbild"
+
+#: EditExifMetadata//editexifmetadata.py:215
+msgid "Copy"
+msgstr "Kopieren"
 
 #~ msgid "Image Size : %04(width)d x %04(height)d pixels"
 #~ msgstr "Bildgröße : %04(width)d x %04(height)d Punkte"
