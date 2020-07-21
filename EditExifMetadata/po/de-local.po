@@ -14,36 +14,37 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-23 22:21+0200\n"
-"PO-Revision-Date: 2018-04-11 19:24+0100\n"
+"POT-Creation-Date: 2020-07-21 14:47+0200\n"
+"PO-Revision-Date: 2020-07-21 15:24+0200\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 2.0\n"
+"X-Generator: Poedit 2.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: EditExifMetadata/editexifmetadata.gpr.py:29
-#: EditExifMetadata/editexifmetadata.py:749
-#: EditExifMetadata/editexifmetadata.py:1155
+#: EditExifMetadata//editexifmetadata.gpr.py:29
+#: EditExifMetadata//editexifmetadata.py:724
+#: EditExifMetadata//editexifmetadata.py:1136
+#: EditExifMetadata//editexifmetadata.py:1148
 msgid "Edit Image Exif Metadata"
 msgstr "Bild Exif Metadaten bearbeiten"
 
-#: EditExifMetadata/editexifmetadata.gpr.py:30
+#: EditExifMetadata//editexifmetadata.gpr.py:30
 msgid "Gramplet to view, edit, and save image Exif metadata"
 msgstr "Gramplet zum ansehen, bearbeiten und speichern von Exif Metadaten"
 
-#: EditExifMetadata/editexifmetadata.gpr.py:34
+#: EditExifMetadata//editexifmetadata.gpr.py:34
 msgid "Edit Exif Metadata"
 msgstr "Exif Metadaten bearbeiten"
 
-#: EditExifMetadata/editexifmetadata.py:147
+#: EditExifMetadata//editexifmetadata.py:135
 msgid "<-- Image Types -->"
 msgstr "<-- Bildformate -->"
 
-#: EditExifMetadata/editexifmetadata.py:170
+#: EditExifMetadata//editexifmetadata.py:158
 msgid ""
 "Warning:  Changing this entry will update the Media object title field in "
 "Gramps not Exiv2 metadata."
@@ -51,11 +52,11 @@ msgstr ""
 "Warnung: Änderungen an diesem Eintrag aktualisieren das "
 "Medienobjekttitelfeld in Gramps nicht die Exiv2 Metadaten."
 
-#: EditExifMetadata/editexifmetadata.py:173
+#: EditExifMetadata//editexifmetadata.py:161
 msgid "Provide a short description for this image."
 msgstr "Gib eine kurze Beschreibung für dieses Bild."
 
-#: EditExifMetadata/editexifmetadata.py:175
+#: EditExifMetadata//editexifmetadata.py:163
 msgid ""
 "Enter the Artist/ Author of this image.  The person's name or the company "
 "who is responsible for the creation of this image."
@@ -63,11 +64,11 @@ msgstr ""
 "Gib den Künstler/Urheber dieses Bildes ein. Der Name der Person oder Firma "
 "die für die Erstellung des Bildes verantwortlich ist."
 
-#: EditExifMetadata/editexifmetadata.py:178
+#: EditExifMetadata//editexifmetadata.py:167
 msgid "Enter the copyright information for this image. \n"
 msgstr "Gib die copyright Informationen für dieses Bild ein.\n"
 
-#: EditExifMetadata/editexifmetadata.py:180
+#: EditExifMetadata//editexifmetadata.py:169
 msgid ""
 "The original date/ time when the image was first created/ taken as in a "
 "photograph.\n"
@@ -76,7 +77,7 @@ msgstr ""
 "Das original Datum/Zeit an dem das Bild ursprünglich erstellt wurde.\n"
 "Beispiel: 1830-01-1 09:30:59"
 
-#: EditExifMetadata/editexifmetadata.py:183
+#: EditExifMetadata//editexifmetadata.py:173
 msgid ""
 "This is the date/ time that the image was last changed/ modified.\n"
 "Example: 2011-05-24 14:30:00"
@@ -84,31 +85,31 @@ msgstr ""
 "Dies ist das Datum/Zeit an dem das Bild zuletzt geändert wurde.\n"
 "Beispiel: 2011-05-24 14:30:00"
 
-#: EditExifMetadata/editexifmetadata.py:186
+#: EditExifMetadata//editexifmetadata.py:176
 msgid ""
 "Enter the Latitude GPS coordinates for this image,\n"
-"Example: 43.722965, 43 43 22 N, 38° 38′ 03″ N, 38 38 3"
+"Example: -43.722965, -43:43:22, 38° 38′ 03″ N"
 msgstr ""
 "Gib die GPS Breitenkoordinaten für dein Bild ein,\n"
 "Beispiel: 43.722965, 43 43 22 N, 38° 38' 03\" N, 38 38 3"
 
-#: EditExifMetadata/editexifmetadata.py:189
+#: EditExifMetadata//editexifmetadata.py:179
 msgid ""
 "Enter the Longitude GPS coordinates for this image,\n"
-"Example: 10.396378, 10 23 46 E, 105° 6′ 6″ W, -105 6 6"
+"Example: -10.396378, -10:23:46, 105° 6′ 6″ W"
 msgstr ""
 "Gib die GPS Längenkoordinaten für dein Bild ein,\n"
 "Beispiele: 10.396378, 10 23 46 E, 105° 6′ 6″ W, -105 6 6"
 
-#: EditExifMetadata/editexifmetadata.py:192
+#: EditExifMetadata//editexifmetadata.py:182
 msgid ""
 "This is the measurement of Above or Below Sea Level.  It is measured in "
-"meters.Example: 200.558, -200.558"
+"meters.  Example: 200.558, -200.558"
 msgstr ""
 "Dies ist der Messwert über oder unter dem Meeresspiegel. Es wird in Metern "
 "gemessen. Beispiel: 200.558, -200.558"
 
-#: EditExifMetadata/editexifmetadata.py:201
+#: EditExifMetadata//editexifmetadata.py:191
 msgid ""
 "Displays the Gramps Wiki Help page for 'Edit Image Exif Metadata' in your "
 "web browser."
@@ -116,7 +117,7 @@ msgstr ""
 "Zeigt die Gramps Wiki Hilfe Seite für 'Bild Exif Metadaten bearbeiten' in "
 "deinem Browser."
 
-#: EditExifMetadata/editexifmetadata.py:204
+#: EditExifMetadata//editexifmetadata.py:194
 msgid ""
 "This will open up a new window to allow you to edit/ modify this image's "
 "Exif metadata.\n"
@@ -126,12 +127,12 @@ msgstr ""
 "ändern kannst.\n"
 " Es ermöglicht dir auch die geänderten Metadaten zu speichern."
 
-#: EditExifMetadata/editexifmetadata.py:208
+#: EditExifMetadata//editexifmetadata.py:198
 msgid "Will produce a Popup window showing a Thumbnail Viewing Area"
 msgstr ""
 "Erstellt ein Dialogfenster welches einen Vorschaubildanzeigebereich zeigt"
 
-#: EditExifMetadata/editexifmetadata.py:210
+#: EditExifMetadata//editexifmetadata.py:201
 msgid ""
 "Select from a drop- down box the image file type that you would like to "
 "convert your non- Exiv2 compatible media object to."
@@ -139,7 +140,7 @@ msgstr ""
 "Wähle aus einer Aufklappliste das Bilddateiformat in das du dein nicht Exiv2 "
 "kompatibles Medienobjekt konvertieren willst."
 
-#: EditExifMetadata/editexifmetadata.py:213
+#: EditExifMetadata//editexifmetadata.py:205
 msgid ""
 "If your image is not of an image type that can have Exif metadata read/ "
 "written to/from, convert it to a type that can?"
@@ -147,7 +148,7 @@ msgstr ""
 "Wenn dein Bild kein Bildtyp ist, aus/in den man Exif Metadaten lesen/"
 "schreiben kann, konvertiere es zu einem Typ mit dem das möglich ist."
 
-#: EditExifMetadata/editexifmetadata.py:216
+#: EditExifMetadata//editexifmetadata.py:209
 msgid ""
 "WARNING:  This will completely erase all Exif metadata from this image!  Are "
 "you sure that you want to do this?"
@@ -155,15 +156,32 @@ msgstr ""
 "WARNUNG: Dies löscht alle Exif Metadaten von diesem Bild! Bist du sicher, "
 "das du dies tun willst?"
 
-#: EditExifMetadata/editexifmetadata.py:311
+#: EditExifMetadata//editexifmetadata.py:213
+msgid "Clear GPS"
+msgstr "GPS löschen"
+
+#: EditExifMetadata//editexifmetadata.py:214
 msgid "Thumbnail"
 msgstr "Miniaturbild"
 
-#: EditExifMetadata/editexifmetadata.py:393
+#: EditExifMetadata//editexifmetadata.py:215
+msgid "Copy"
+msgstr "Kopieren"
+
+#: EditExifMetadata//editexifmetadata.py:216
+#: EditExifMetadata//editexifmetadata.py:727
+msgid "Convert"
+msgstr "Konvertiere"
+
+#: EditExifMetadata//editexifmetadata.py:217
+msgid "Clear"
+msgstr "Löschen"
+
+#: EditExifMetadata//editexifmetadata.py:402
 msgid "Select an image to begin..."
 msgstr "Wähle zum Start ein Bild..."
 
-#: EditExifMetadata/editexifmetadata.py:415
+#: EditExifMetadata//editexifmetadata.py:421
 msgid ""
 "Image is NOT readable,\n"
 "Please choose a different image..."
@@ -171,7 +189,17 @@ msgstr ""
 "Bild kann NICHT gelesen werden,\n"
 "Bitte wähle ein anderes Bild..."
 
-#: EditExifMetadata/editexifmetadata.py:431
+#: EditExifMetadata//editexifmetadata.py:441
+msgid "Please convert this image to an Exiv2- compatible image type..."
+msgstr "Bitte dieses Bild in ein Exiv2 kompatibles Format umwandeln..."
+
+#: EditExifMetadata//editexifmetadata.py:465
+#, python-brace-format
+msgid "Image Size : {width} x {height} pixels"
+msgstr "Bildgröße : %04(width)d x %04(height)d Punkte"
+
+#: EditExifMetadata//editexifmetadata.py:481
+#: EditExifMetadata//editexifmetadata.py:1441
 msgid ""
 "Image is NOT writable,\n"
 "You will NOT be able to save Exif metadata...."
@@ -179,27 +207,15 @@ msgstr ""
 "Bild kann NICHT geschrieben werden,\n"
 "Du kannst KEINE Exif Metadaten speichern...."
 
-#: EditExifMetadata/editexifmetadata.py:443
-msgid "Please convert this image to an Exiv2- compatible image type..."
-msgstr "Bitte dieses Bild in ein Exiv2 kompatibles Format umwandeln..."
-
-#: EditExifMetadata/editexifmetadata.py:466
-msgid "Image Size : %04(width)d x %04(height)d pixels"
-msgstr "Bildgröße : %04(width)d x %04(height)d Punkte"
-
-#: EditExifMetadata/editexifmetadata.py:499
-msgid "Displaying Exif metadata..."
-msgstr "Exif Metadaten zeigen..."
-
-#: EditExifMetadata/editexifmetadata.py:666
+#: EditExifMetadata//editexifmetadata.py:649
 msgid "Click Close to close this Thumbnail View Area."
 msgstr "Klicke auf Schließen um den Vorschaubildanzeigebereich zu schließen."
 
-#: EditExifMetadata/editexifmetadata.py:670
+#: EditExifMetadata//editexifmetadata.py:655
 msgid "Thumbnail View Area"
 msgstr "Vorschaubildanzeigebereich"
 
-#: EditExifMetadata/editexifmetadata.py:749
+#: EditExifMetadata//editexifmetadata.py:725
 msgid ""
 "WARNING: You are about to convert this image into a .jpeg image.  Are you "
 "sure that you want to do this?"
@@ -207,15 +223,11 @@ msgstr ""
 "ACHTUNG: Du bist dabei dieses Bild in ein .jpeg Bild zu umzuwandeln. Bist du "
 "dir sicher, das tu das tun willst?"
 
-#: EditExifMetadata/editexifmetadata.py:751
+#: EditExifMetadata//editexifmetadata.py:727
 msgid "Convert and Delete"
 msgstr "Konvertieren und Löschen"
 
-#: EditExifMetadata/editexifmetadata.py:751
-msgid "Convert"
-msgstr "Konvertiere"
-
-#: EditExifMetadata/editexifmetadata.py:837
+#: EditExifMetadata//editexifmetadata.py:808
 msgid ""
 "Your image has been converted and the original file has been deleted, and "
 "the full path has been updated!"
@@ -223,7 +235,7 @@ msgstr ""
 "Dein Bild wurde konvertiert, das Original gelöscht und der komplette Pfad "
 "wurde aktualisiert!"
 
-#: EditExifMetadata/editexifmetadata.py:841
+#: EditExifMetadata//editexifmetadata.py:813
 msgid ""
 "There has been an error, Please check your source and destination file "
 "paths..."
@@ -231,7 +243,7 @@ msgstr ""
 "Es ist ein Fehler aufgetreten, Bitte überprüfe deine Quell und "
 "Zieldateipfade..."
 
-#: EditExifMetadata/editexifmetadata.py:844
+#: EditExifMetadata//editexifmetadata.py:817
 msgid ""
 "There was an error in deleting the original file.  You will need to delete "
 "it yourself!"
@@ -239,19 +251,19 @@ msgstr ""
 "Beim Löschen der original Datei ist ein Fehler aufgetreten. Du musst sie "
 "selbst löschen!"
 
-#: EditExifMetadata/editexifmetadata.py:861
+#: EditExifMetadata//editexifmetadata.py:835
 msgid "There was an error in converting your image file."
 msgstr "Beim Konvertieren deines Bildes ist ein Fehler aufgetreten."
 
-#: EditExifMetadata/editexifmetadata.py:872
+#: EditExifMetadata//editexifmetadata.py:845
 msgid "Media Path Update"
 msgstr "Medienpfad aktualisiert"
 
-#: EditExifMetadata/editexifmetadata.py:878
+#: EditExifMetadata//editexifmetadata.py:854
 msgid "There has been an error in updating the image file's path!"
 msgstr "Beim Aktualisieren des Bilddateipfad ist ein Fehler aufgetreten!"
 
-#: EditExifMetadata/editexifmetadata.py:912
+#: EditExifMetadata//editexifmetadata.py:887
 msgid ""
 "Click the close button when you are finished modifying this image's Exif "
 "metadata."
@@ -259,20 +271,24 @@ msgstr ""
 "Klicke die Schließen Schaltfläche wenn du das Ändern dieser Bild Exif "
 "Metadaten abgeschlossen hast."
 
-#: EditExifMetadata/editexifmetadata.py:950
+#: EditExifMetadata//editexifmetadata.py:925
 msgid "Saves a copy of the data fields into the image's Exif metadata."
 msgstr "Speichert eine Kopie der Datenfelder in den Exif Metadaten des Bild."
 
-#: EditExifMetadata/editexifmetadata.py:953
+#: EditExifMetadata//editexifmetadata.py:929
 msgid "Re -display the data fields that were cleared from the Edit Area."
 msgstr ""
 "Zeigt die Datenfelder die aus dem Editorbereich entfernt wurden wieder an."
 
-#: EditExifMetadata/editexifmetadata.py:956
+#: EditExifMetadata//editexifmetadata.py:933
 msgid "This button will clear all of the data fields shown here."
 msgstr "Diese Schaltfläche leert alle hier gezeigten Datenfelder."
 
-#: EditExifMetadata/editexifmetadata.py:959
+#: EditExifMetadata//editexifmetadata.py:937
+msgid "This button will clear all of the GPS fields shown here."
+msgstr "Diese Schaltfläche leert alle hier gezeigten Datenfelder."
+
+#: EditExifMetadata//editexifmetadata.py:941
 msgid ""
 "Closes this popup Edit window.\n"
 "WARNING: This action will NOT Save any changes/ modification made to this "
@@ -281,102 +297,116 @@ msgstr ""
 "Schließt dieses Editorfenster.\n"
 "WARNUNG: Diese Aktion speichert KEINE Änderungen, dieser Bild Exif Metadaten."
 
-#: EditExifMetadata/editexifmetadata.py:986
+#: EditExifMetadata//editexifmetadata.py:970
 msgid "Media Object Title"
 msgstr "Medienobjekttitel"
 
-#: EditExifMetadata/editexifmetadata.py:996
+#: EditExifMetadata//editexifmetadata.py:979
 msgid "media Title: "
 msgstr "Mediumtitel: "
 
-#: EditExifMetadata/editexifmetadata.py:1010
+#: EditExifMetadata//editexifmetadata.py:994
 msgid "General Data"
 msgstr "Allgemeine Daten"
 
-#: EditExifMetadata/editexifmetadata.py:1020
+#: EditExifMetadata//editexifmetadata.py:1004
 msgid "Description: "
 msgstr "Beschreibung: "
 
-#: EditExifMetadata/editexifmetadata.py:1021
+#: EditExifMetadata//editexifmetadata.py:1005
 msgid "Artist: "
 msgstr "Künstler: "
 
-#: EditExifMetadata/editexifmetadata.py:1022
+#: EditExifMetadata//editexifmetadata.py:1006
 msgid "Copyright: "
 msgstr "Copyright: "
 
-#: EditExifMetadata/editexifmetadata.py:1035
+#: EditExifMetadata//editexifmetadata.py:1020
 msgid "Date/ Time"
 msgstr "Datum/Zeit"
 
-#: EditExifMetadata/editexifmetadata.py:1049
+#: EditExifMetadata//editexifmetadata.py:1035
 msgid "Original: "
 msgstr "Original: "
 
-#: EditExifMetadata/editexifmetadata.py:1050
+#: EditExifMetadata//editexifmetadata.py:1036
 msgid "Modified: "
 msgstr "Geändert: "
 
-#: EditExifMetadata/editexifmetadata.py:1067
+#: EditExifMetadata//editexifmetadata.py:1055
 msgid "Latitude/ Longitude/ Altitude GPS coordinates"
 msgstr "Breite/Länge/Höhe GPS Koordinaten"
 
-#: EditExifMetadata/editexifmetadata.py:1081
+#: EditExifMetadata//editexifmetadata.py:1070
 msgid "Latitude :"
 msgstr "Breitengrad:"
 
-#: EditExifMetadata/editexifmetadata.py:1082
+#: EditExifMetadata//editexifmetadata.py:1071
 msgid "Longitude :"
 msgstr "Längengrad:"
 
-#: EditExifMetadata/editexifmetadata.py:1083
+#: EditExifMetadata//editexifmetadata.py:1072
 msgid "Altitude :"
 msgstr "Höhe:"
 
-#: EditExifMetadata/editexifmetadata.py:1135
+#: EditExifMetadata//editexifmetadata.py:1115
 msgid "Bad Date/Time"
 msgstr "Falsches Datum/Zeit"
 
-#: EditExifMetadata/editexifmetadata.py:1143
+#: EditExifMetadata//editexifmetadata.py:1123
 msgid "Invalid latitude (syntax: 18\\u00b09'"
 msgstr "Ungültiger Breitengrad (Syntax: 18\\u00b09'"
 
-#: EditExifMetadata/editexifmetadata.py:1144
+#: EditExifMetadata//editexifmetadata.py:1124
 msgid "48.21\"S, -18.2412 or -18:9:48.21)"
 msgstr "48.21\"S, -18.2412 oder -18:9:48.21)"
 
-#: EditExifMetadata/editexifmetadata.py:1148
+#: EditExifMetadata//editexifmetadata.py:1128
 msgid "Invalid longitude (syntax: 18\\u00b09'"
 msgstr "Ungültiger Längengrad (Syntax: 18\\u00b09'"
 
-#: EditExifMetadata/editexifmetadata.py:1149
+#: EditExifMetadata//editexifmetadata.py:1129
 msgid "48.21\"E, -18.2412 or -18:9:48.21)"
 msgstr "48.21\"O, -18.2412 oder -18:9:48.21)"
 
-#: EditExifMetadata/editexifmetadata.py:1155
+#: EditExifMetadata//editexifmetadata.py:1137
 msgid ""
 "WARNING!  You are about to completely delete the Exif metadata from this "
 "image?"
 msgstr "ACHTUNG! Du bist dabei alle Exif Metadaten von diesem Bild zu löschen?"
 
-#: EditExifMetadata/editexifmetadata.py:1318
+#: EditExifMetadata//editexifmetadata.py:1139
+#: EditExifMetadata//editexifmetadata.py:1151
+msgid "Delete"
+msgstr "Löschen"
+
+#: EditExifMetadata//editexifmetadata.py:1149
+msgid ""
+"WARNING!  You are about to completely delete the GPS metadata from this "
+"image?"
+msgstr "ACHTUNG! Du bist dabei alle Exif Metadaten von diesem Bild zu löschen?"
+
+#: EditExifMetadata//editexifmetadata.py:1334
 msgid "Media Title Update"
 msgstr "Medientitel aktualisiert"
 
-#: EditExifMetadata/editexifmetadata.py:1344
+#: EditExifMetadata//editexifmetadata.py:1358
 msgid "Media Object Date Created"
 msgstr "Medienobjektdatum erstellt"
 
-#: EditExifMetadata/editexifmetadata.py:1416
+#: EditExifMetadata//editexifmetadata.py:1423
 msgid "Saving Exif metadata to this image..."
 msgstr "Speichere Exif Metadaten in dieses Bild..."
 
-#: EditExifMetadata/editexifmetadata.py:1463
+#: EditExifMetadata//editexifmetadata.py:1466
 msgid "All Exif metadata has been deleted from this image..."
 msgstr "Alle Exif Metadaten wurden von diesem Bild entfernt..."
 
-#: EditExifMetadata/editexifmetadata.py:1468
+#: EditExifMetadata//editexifmetadata.py:1471
 msgid "There was an error in stripping the Exif metadata from this image..."
 msgstr ""
 "Beim reinitialisieren der Exif Metadaten für dieses Bild ist ein Fehler "
 "aufgetreten..."
+
+#~ msgid "Displaying Exif metadata..."
+#~ msgstr "Exif Metadaten zeigen..."
