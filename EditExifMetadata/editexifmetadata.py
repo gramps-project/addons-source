@@ -572,7 +572,6 @@ class EditExifMetadata(Gramplet):
         """
         creates and returns a button for display
         """
-        #lbl=_(text)
         button = Gtk.Button(label=_(text))
 
         if callback is not []:
