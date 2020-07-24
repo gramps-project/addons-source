@@ -29,8 +29,19 @@
 #
 #-------------------------------------------------------------------------
 import re
+
+#------------------------------------------------------------------------
+#
+# Internationalisation
+#
+#------------------------------------------------------------------------
 from gramps.gen.const import GRAMPS_LOCALE as glocale
-_ = glocale.translation.gettext
+try:
+    trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    trans = glocale.translation
+_ = trans.gettext
+ngettext = trans.ngettext
 
 #-------------------------------------------------------------------------
 #
