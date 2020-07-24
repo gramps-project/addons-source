@@ -252,6 +252,10 @@ msgid ""
 msgstr ""
 "Die Seitenkonfiguration ist ungültig: Mehrere Seiten haben den gleichen Inhalt"
 
+#: DynamicWeb//dynamicweb.py:2194
+msgid "DynWeb|Home"
+msgstr "Anfang"
+
 #: DynamicWeb/dynamicweb.py:2190
 msgid "Html|Home"
 msgstr "Startseite"
@@ -739,9 +743,10 @@ msgstr "Beziehung zur Mutter"
 msgid "Relationship"
 msgstr "Beziehung"
 
-#: DynamicWeb/dynamicweb.py:2549
+#: DynamicWeb//dynamicweb.py:2553
+#, fuzzy
 msgid "Repositories Index"
-msgstr "Aufbewahrungsorte Index"
+msgstr "Aufbewahrungsortsindex-Seite"
 
 #: DynamicWeb/dynamicweb.py:2552
 msgid "Restore"
@@ -1988,3 +1993,4 @@ msgstr "Inhalt der Seite"
 
 #~ msgid "Number pages in the web site."
 #~ msgstr "Anzahl der Seiten in der Website."
+

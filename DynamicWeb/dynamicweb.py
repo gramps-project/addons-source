@@ -154,7 +154,11 @@ log = logging.getLogger(".DynamicWeb")
 # Gramps module
 #------------------------------------------------
 
-
+#------------------------------------------------------------------------
+#
+# Internationalisation
+#
+#------------------------------------------------------------------------
 from gramps.gen.const import IMAGE_DIR, GRAMPS_LOCALE as glocale
 try:
     _trans = glocale.get_addon_translator(__file__)
@@ -2187,7 +2191,7 @@ class DynamicWebReport(Report):
         #  - Javascript code for generating the page
         self.page_list = [
             # Menu pages
-            ("index.html", _("Html|Home"), PAGE_HOME in self.page_content, True, "Dwr.Main(Dwr.PAGE_HOME);"),
+            ("index.html", _("DynWeb|Home"), PAGE_HOME in self.page_content, True, "Dwr.Main(Dwr.PAGE_HOME);"),
             ("tree_svg.html", _("Tree"), PAGE_SVG_TREE in self.page_content, True, "Dwr.Main(Dwr.PAGE_SVG_TREE);"),
             ("statistics_conf.html", _("Statistics"), True, True, "printStatisticsConf();"),
             # ("statistics_conf.html", _("Statistics"), PAGE_STATISTICS in self.page_content, True, "printStatisticsConf();"),
