@@ -22,40 +22,45 @@
 #
 #------------------------------------------------------------------------
 
-try:
-    from gi.repository import OsmGpsMap as osmgpsmap
-except:
-    raise
+import os
+import ctypes
+import locale
 from gi.repository import Gtk
 import gi
 gi.require_version('GeocodeGlib', '1.0')
 from gi.repository import GeocodeGlib
-from gramps.gui.display import display_url
 
 #------------------------------------------------------------------------
 #
 # GRAMPS modules
 #
 #------------------------------------------------------------------------
+from gramps.gui.display import display_url
 from gramps.gen.plug import Gramplet
-from gramps.gen.const import GRAMPS_LOCALE as glocale
-_ = glocale.translation.sgettext
-#from gramps.gen.const import GRAMPS_LOCALE as glocale
-#_ = glocale.get_addon_translator(__file__).gettext
-from gramps.gui.plug.quick import run_quick_report_by_name, get_quick_report_list
-from gramps.gen.plug  import (CATEGORY_QR_PLACE)
 from gramps.gen.display.place import displayer as place_displayer
 from gramps.gen.db import DbTxn
 from gramps.gen.config import config
 from gramps.gen.utils.place import conv_lat_lon
-def generate_address_string(location_information, entries=['building', 'street', 'area', 'town', 'county', 'state', 'country']):
+from gramps.gen.constfunc import win
+from gramps.gen.const import GRAMPS_LOCALE as glocale
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.gettext
+
+
+def generate_address_string(location_information, entries=[
+        'building', 'street', 'area', 'town', 'county', 'state', 'country']):
     name = []
-    if 'building' in entries and 'building' in location_information and 'street' in entries and 'street' in location_information:
+    if('building' in entries and 'building' in location_information and
+       'street' in entries and 'street' in location_information):
         entries.remove('building')
         entries.remove('street')
         name.append(location_information['street'] +
                     ' ' + location_information['building'])
-    if 'county' in entries and 'county' in location_information and 'town' in entries and 'town' in location_information:
+    if('county' in entries and 'county' in location_information and
+       'town' in entries and 'town' in location_information):
         if location_information['town'] in location_information['county']:
             entries.remove('county')
 
@@ -75,11 +80,13 @@ class PlaceCoordinateGramplet(Gramplet):
     def active_changed(self, handle):
         self.update()
 
-    def post_init(self):
+    def init(self):
         self.gui.WIDGET = self.build_gui()
         self.gui.get_container_widget().remove(self.gui.textview)
         self.gui.get_container_widget().add(self.gui.WIDGET)
         self.gui.WIDGET.show()
+
+    def post_init(self):
         self.connect_signal('Place', self._active_changed)
         #OsmGps.__init__(self)
 
@@ -87,88 +94,85 @@ class PlaceCoordinateGramplet(Gramplet):
         """
         Build the GUI interface.
         """
-        grid = Gtk.Grid()
-        self.view = grid
-#        self.view.add(grid)
+        self.top = Gtk.Builder()  # IGNORE:W0201
+        # Found out that Glade does not support translations for plugins, so
+        # have to do it manually.
+        base = os.path.dirname(__file__)
+        glade_file = base + os.sep + "placecoordinate.glade"
+        # This is needed to make gtk.Builder work by specifying the
+        # translations directory in a separate 'domain'
+        try:
+            localedomain = "addon"
+            localepath = base + os.sep + "locale"
+            if hasattr(locale, 'bindtextdomain'):
+                libintl = locale
+            elif win():  # apparently wants strings in bytes
+                localedomain = localedomain.encode('utf-8')
+                localepath = localepath.encode('utf-8')
+                libintl = ctypes.cdll.LoadLibrary('libintl-8.dll')
+            else:  # mac, No way for author to test this
+                libintl = ctypes.cdll.LoadLibrary('libintl.dylib')
 
-        i = 1
-        grid.attach(Gtk.Label(_("Search for:")), 1, i, 1, 1)
-        self.entry_name = Gtk.Entry()
-        grid.attach(self.entry_name, 2, 1, 2, 1)
-        self.searchButton = Gtk.Button(label=_("Go"))
+            libintl.bindtextdomain(localedomain, localepath)
+            libintl.textdomain(localedomain)
+            libintl.bind_textdomain_codeset(localedomain, "UTF-8")
+            # and finally, tell Gtk Builder to use that domain
+            self.top.set_translation_domain("addon")
+        except (OSError, AttributeError):
+            # Will leave it in English
+            print("Localization of PlaceCleanup failed!")
+
+        self.top.add_from_file(glade_file)
+        self.view = self.top.get_object("grid")
+
+        # grid.attach(Gtk.Label(_("Search for:")), 1, i, 1, 1)
+        self.entry_name = self.top.get_object("entry_name")
+        self.searchButton = self.top.get_object("searchButton")  # Go
         self.searchButton.connect("clicked", self.on_searchButton_clicked)
-        grid.attach(self.searchButton, 4, i, 2, 1)
 
-        i += 1
-        grid.attach(Gtk.Label(_("Found place:")), 1, i, 1, 1)
-        self.entry_foundName = Gtk.Entry()
-        self.entry_foundName.set_editable(False)
-        self.entry_foundName.set_text(_("Nothing has been searched yet"))
-        self.entry_foundName.set_width_chars(100)
-        grid.attach(self.entry_foundName, 2, i, 3, 1)
+        # grid.attach(Gtk.Label(_("Found place:")), 1, i, 1, 1)
+        self.entry_foundName = self.top.get_object("entry_foundName")
 
-        i += 1
-        grid.attach(Gtk.Label(_("Latitude:")), 1, i, 1, 1)
-        self.entry_lat = Gtk.Entry()
-        grid.attach(self.entry_lat, 2, i, 1, 1)
-        grid.attach(Gtk.Label(_("Longitude:")), 3, i, 1, 1)
-        self.entry_long = Gtk.Entry()
-        grid.attach(self.entry_long, 4, i, 1, 1)
+        # grid.attach(Gtk.Label(_("Latitude:")), 1, i, 1, 1)
+        self.entry_lat = self.top.get_object("entry_lat")
+        # grid.attach(Gtk.Label(_("Longitude:")), 3, i, 1, 1)
+        self.entry_long = self.top.get_object("entry_long")
 
-        i += 1
-        self.showInBrowserButton = Gtk.Button(
-            label=_("Show found place externally in Google Maps"))
+        self.showInBrowserButton = self.top.get_object("showInBrowserButton")
         self.showInBrowserButton.connect(
             "clicked", self.on_showInBrowserButton_clicked)
-        grid.attach(self.showInBrowserButton, 1, i, 4, 1)
 
-        i += 1
-        self.place_id_label = Gtk.Label(_(""))
-        self.place_id_label.set_halign(Gtk.Align.START)
-        grid.attach(self.place_id_label, 1, i, 4, 1)
+        self.place_id_label = self.top.get_object("place_id_label")
 
-        i += 1
-        grid.attach(Gtk.Label(_("Postal-Code:")), 1, i, 1, 1)
-        self.entry_code = Gtk.Entry()
-        self.entry_code.set_editable(False)
-        grid.attach(self.entry_code, 2, i, 3, 1)
+        # grid.attach(Gtk.Label(_("Postal-Code:")), 1, i, 1, 1)
+        self.entry_code = self.top.get_object("entry_code")
 
-        i += 1
-        grid.attach(Gtk.Label(_("Latitude:")), 1, i, 1, 1)
-        self.entry_lat_db = Gtk.Entry()
-        self.entry_lat_db.set_editable(False)
-        grid.attach(self.entry_lat_db, 2, i, 1, 1)
-        grid.attach(Gtk.Label(_("Longitude:")), 3, i, 1, 1)
-        self.entry_long_db = Gtk.Entry()
-        self.entry_long_db.set_editable(False)
-        grid.attach(self.entry_long_db, 4, i, 1, 1)
+        # grid.attach(Gtk.Label(_("Latitude:")), 1, i, 1, 1)
+        self.entry_lat_db = self.top.get_object("entry_lat_db")
+        # grid.attach(Gtk.Label(_("Longitude:")), 3, i, 1, 1)
+        self.entry_long_db = self.top.get_object("entry_long_db")
 
-        i += 1
-        self.fromMapButton = Gtk.Button(
-            label=_("Take last clicked position from Geography map"))
+        self.fromMapButton = self.top.get_object("fromMapButton")
         self.fromMapButton.connect("clicked", self.on_fromMapButton_clicked)
-        grid.attach(self.fromMapButton, 1, i, 1, 1)
-        self.fromDBButton = Gtk.Button(label=_("Search location from DB"))
+        self.fromDBButton = self.top.get_object("fromDBButton")
         self.fromDBButton.connect("clicked", self.on_fromDBButton_clicked)
-        grid.attach(self.fromDBButton, 2, i, 1, 1)
-        self.applyButton = Gtk.Button(
-            label=_("Apply geo location to Database"))
+        self.applyButton = self.top.get_object("applyButton")
         self.applyButton.connect("clicked", self.on_apply_clicked)
-        grid.attach(self.applyButton, 3, i, 2, 1)
 
-        grid.show_all()
+        self.view.show_all()
         return self.view
 
     def on_showInBrowserButton_clicked(self, widget):
-        if len(self.entry_lat.get_text()) > 0 and len(self.entry_long.get_text()) > 0:
+        if(len(self.entry_lat.get_text()) > 0 and
+           len(self.entry_long.get_text()) > 0):
             path = "http://maps.google.com/maps?q=%s,%s" % (
                 self.entry_lat.get_text(), self.entry_long.get_text())
             display_url(path)
 
     def on_searchButton_clicked(self, widget):
-        lat = config.get("geography.center-lat")
-        lon = config.get("geography.center-lon")
-#        self.osm.grab_focus()
+        # lat = config.get("geography.center-lat")
+        # lon = config.get("geography.center-lon")
+        # self.osm.grab_focus()
         try:
             location_ = GeocodeGlib.Forward.new_for_string(
                 self.entry_name.get_text())
@@ -179,7 +183,8 @@ class PlaceCoordinateGramplet(Gramplet):
             if result:
                 result = result[0]  # use the first result
                 location_information = dict((p.name, result.get_property(
-                    p.name)) for p in result.list_properties() if result.get_property(p.name))
+                    p.name)) for p in result.list_properties()
+                    if result.get_property(p.name))
                 geo_loc = location_information['location']
 
                 self.entry_lat.set_text("%.10f" % geo_loc.get_latitude())
@@ -188,10 +193,12 @@ class PlaceCoordinateGramplet(Gramplet):
                     generate_address_string(location_information))
             else:
                 self.entry_foundName.set_text(
-                    _("The place was not found. You may clarify the search keywords."))
+                    _("The place was not found. "
+                      "You may clarify the search keywords."))
         except:
             self.entry_foundName.set_text(
-                _("Failed to search for the coordinates due to some unexpected error"))
+                _("Failed to search for the coordinates due to "
+                  "some unexpected error"))
 
     def on_fromMapButton_clicked(self, widget):
         latitude = config.get("geography.center-lat")
@@ -205,7 +212,8 @@ class PlaceCoordinateGramplet(Gramplet):
             obj = GeocodeGlib.Reverse.new_for_location(loc)
             result = GeocodeGlib.Reverse.resolve(obj)
             location_information = dict((p.name, result.get_property(
-                p.name)) for p in result.list_properties() if result.get_property(p.name))
+                p.name)) for p in result.list_properties()
+                if result.get_property(p.name))
             self.entry_foundName.set_text(
                 generate_address_string(location_information))
         except:
@@ -219,11 +227,13 @@ class PlaceCoordinateGramplet(Gramplet):
         self.entry_lat.set_text(self.entry_lat_db.get_text())
         self.entry_long.set_text(self.entry_long_db.get_text())
         try:
-            latitude, longitude = conv_lat_lon(latitude, longitude, format="D.D8")
+            latitude, longitude = conv_lat_lon(
+                latitude, longitude, format="D.D8")
             latitude = float(latitude)
             longitude = float(longitude)
         except:
-            self.entry_foundName.set_text(_("Failed to interpret the string format."))
+            self.entry_foundName.set_text(
+                _("Failed to interpret the string format."))
 
         # self.osm.grab_focus()
         try:
@@ -232,7 +242,8 @@ class PlaceCoordinateGramplet(Gramplet):
             result = GeocodeGlib.Reverse.resolve(obj)
 
             location_information = dict((p.name, result.get_property(
-                p.name)) for p in result.list_properties() if result.get_property(p.name))
+                p.name)) for p in result.list_properties()
+                if result.get_property(p.name))
             self.entry_foundName.set_text(
                 generate_address_string(location_information))
         except:
@@ -256,14 +267,19 @@ class PlaceCoordinateGramplet(Gramplet):
                     #self.dbstate.emit("database-changed", ([active_handle],))
 
     def db_changed(self):
-        self.update()
+        self.dbstate.db.connect('place-update', self.update)
+        self.main()
+        if not self.dbstate.db.readonly:
+            self.connect_signal('Place', self.update)
 
     def update_data(self, active_handle):
         if active_handle:
             place = self.dbstate.db.get_place_from_handle(active_handle)
             if place:
-                self.place_id_label.set_text(
-                    f"DB entry [{place.gramps_id}] {place_displayer.display(self.dbstate.db, place)}:")
+                self.place_id_label.set_text(_(
+                    "DB entry [{id}] {name}:").format(
+                        id=place.gramps_id,
+                        name=place_displayer.display(self.dbstate.db, place)))
                 descr = place_displayer.display(self.dbstate.db, place)
                 self.entry_foundName.set_text(
                     _("Nothing has been searched yet"))
