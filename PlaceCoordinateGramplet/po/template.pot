@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-03 12:09+0200\n"
+"POT-Creation-Date: 2020-07-25 12:00-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -230,7 +230,7 @@ msgid "Center on this place"
 msgstr ""
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:28
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:37
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:39
 msgid "Place Coordinates"
 msgstr ""
 
@@ -251,7 +251,7 @@ msgid "Found place:"
 msgstr ""
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:106
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:268
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:269
 msgid "Nothing has been searched yet"
 msgstr ""
 
@@ -294,15 +294,19 @@ msgid "Failed to search for the coordinates due to some unexpected error"
 msgstr ""
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:212
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:238
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:239
 msgid "The place was not identified."
 msgstr ""
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:249
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:226
+msgid "Failed to interpret the string format."
+msgstr ""
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:250
 #, python-format
 msgid "Edit Place (%s)"
 msgstr ""
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:290
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:291
 msgid "No place is active"
 msgstr ""
