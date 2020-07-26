@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-10 18:31+0200\n"
+"POT-Creation-Date: 2020-07-26 17:29-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,8 +18,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.gpr.py:24
-#: FamilyRelationshipTool/FamilyRelationshipTool.py:76
-#: FamilyRelationshipTool/FamilyRelationshipTool.py:91
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:88
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:103
 msgid "Family Relationship Tool"
 msgstr ""
 
@@ -27,48 +27,52 @@ msgstr ""
 msgid "Mass-edit the family relationship type for a group of families."
 msgstr ""
 
-#: FamilyRelationshipTool/FamilyRelationshipTool.py:51
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:53
+msgid "All Families"
+msgstr ""
+
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:63
 msgid "Family Filter"
 msgstr ""
 
-#: FamilyRelationshipTool/FamilyRelationshipTool.py:52
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:64
 msgid ""
 "Choose the set of families to process.\n"
 "Create custom filters if empty."
 msgstr ""
 
-#: FamilyRelationshipTool/FamilyRelationshipTool.py:55
-#: FamilyRelationshipTool/FamilyRelationshipTool.py:63
-#: FamilyRelationshipTool/FamilyRelationshipTool.py:80
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:67
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:75
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:92
 msgid "Options"
 msgstr ""
 
-#: FamilyRelationshipTool/FamilyRelationshipTool.py:58
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:70
 msgid "Relationship Type"
 msgstr ""
 
-#: FamilyRelationshipTool/FamilyRelationshipTool.py:59
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:71
 msgid ""
 "Choose the new family relationship type.\n"
 "Custom relationship types aren't supported."
 msgstr ""
 
-#: FamilyRelationshipTool/FamilyRelationshipTool.py:61
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:73
 msgid "Married"
 msgstr ""
 
-#: FamilyRelationshipTool/FamilyRelationshipTool.py:61
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:73
 msgid "Unmarried"
 msgstr ""
 
-#: FamilyRelationshipTool/FamilyRelationshipTool.py:62
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:74
 msgid "Civil Union"
 msgstr ""
 
-#: FamilyRelationshipTool/FamilyRelationshipTool.py:62
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:74
 msgid "Unknown"
 msgstr ""
 
-#: FamilyRelationshipTool/FamilyRelationshipTool.py:95
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:107
 msgid "Process relationships..."
 msgstr ""
