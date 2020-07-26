@@ -53,18 +53,19 @@ _ = _trans.gettext
 def generate_address_string(location_information, entries=[
         'building', 'street', 'area', 'town', 'county', 'state', 'country']):
     name = []
-    if('building' in entries and 'building' in location_information and
-       'street' in entries and 'street' in location_information):
-        entries.remove('building')
-        entries.remove('street')
+    entries_temp = entries.copy() # dont remove items from static default argument!
+    if('building' in entries_temp and 'building' in location_information and
+       'street' in entries_temp and 'street' in location_information):
+        entries_temp.remove('building')
+        entries_temp.remove('street')
         name.append(location_information['street'] +
                     ' ' + location_information['building'])
-    if('county' in entries and 'county' in location_information and
-       'town' in entries and 'town' in location_information):
+    if('county' in entries_temp and 'county' in location_information and
+       'town' in entries_temp and 'town' in location_information):
         if location_information['town'] in location_information['county']:
-            entries.remove('county')
+            entries_temp.remove('county')
 
-    for entry in entries:
+    for entry in entries_temp:
         if entry in location_information:
             name.append(location_information[entry])
     return ", ".join(name)
