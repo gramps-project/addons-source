@@ -685,7 +685,7 @@ class PlaceCoordinateGeoView(GeoGraphyView):
         except:
             pass
         try:
-            name = generate_address_string(location_information)
+            name = generate_address_string(location_information, entries)
             placename = PlaceName()
             placename.set_value(name)
             new_place.set_name(placename)
