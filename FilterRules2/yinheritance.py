@@ -42,9 +42,9 @@ class YChromInheritance(HasGrampsId):
     """Matches descendants of person following Y-chrom inheritance patterns."""
 
     labels = [_('ID:')]
-    name = _('Y-chromsomal inheritance of <person>')
+    name = _('Y-chromosomal inheritance of <person>')
     description = _("Matches recorded descendants of person following "
-                    "Y-chromsomal inheritance patterns.")
+                    "Y-chromosomal inheritance patterns.")
     category = _("Descendant filters")
 
     def prepare(self, db, user):
