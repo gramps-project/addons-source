@@ -33,7 +33,7 @@ GRAMPS registration file
 register(TOOL,
 id    = 'downloadmedia',
 name  = _("Download media files from the internet"),
-description =  _("This tool downloads media files form the internet"),
+description =  _("This tool downloads media files from the internet"),
 version = '1.0.12',
 gramps_target_version = "5.1",
 status = STABLE,
