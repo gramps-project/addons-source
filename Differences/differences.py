@@ -35,9 +35,7 @@ import os
 # GRAMPS modules
 #
 #------------------------------------------------------------------------
-from gramps.gen.const import GRAMPS_LOCALE as glocale
-_ = glocale.translation.gettext
-ngettext = glocale.translation.ngettext
+#
 from gramps.gen.display.name import displayer as global_name_display
 from gramps.gen.plug.docgen import (FontStyle, ParagraphStyle, GraphicsStyle,
                              FONT_SERIF, PARA_ALIGN_RIGHT,
@@ -51,6 +49,18 @@ from gramps.gen.merge.diff import diff_dbs, to_struct
 from gramps.gen.db.utils import import_as_dict
 from gramps.gen.simple import SimpleAccess
 from gramps.gen.config import config
+
+#------------------------------------------------------------------------
+#
+# Internationalisation
+#
+#------------------------------------------------------------------------
+from gramps.gen.const import GRAMPS_LOCALE as glocale
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.gettext
 
 #------------------------------------------------------------------------
 #
@@ -82,7 +92,7 @@ class DifferencesReport(Report):
     def write_report(self):
         """ The short method that runs through each month and creates a page. """
         self.doc.start_paragraph('DIFF-Title')
-        self.doc.write_text("Database Differences Report")
+        self.doc.write_text(_("Database Differences Report"))
         self.doc.end_paragraph()
 
         self.doc.start_table('DiffTable','DIFF-Table2')
@@ -101,7 +111,7 @@ class DifferencesReport(Report):
         self.doc.start_row()
         self.doc.start_cell('DIFF-TableCellNoBorder')
         self.doc.start_paragraph('DIFF-TableHeading')
-        self.doc.write_text("File:")
+        self.doc.write_text(_("File:"))
         self.doc.end_paragraph()
         self.doc.end_cell()
         self.doc.start_cell('DIFF-TableCellNoBorder')
@@ -121,7 +131,7 @@ class DifferencesReport(Report):
         diffs, added, missing = diff_dbs(self.database, self.database2, self._user)
         if self.show_diff:
             self.doc.start_paragraph('DIFF-Heading')
-            self.doc.write_text("Differences between Database and File")
+            self.doc.write_text(_("Differences between Database and File"))
             self.doc.end_paragraph()
             last_object = None
             if diffs:
@@ -148,41 +158,41 @@ class DifferencesReport(Report):
                 self.doc.end_table()
             else:
                 self.doc.start_table('DiffTable','DIFF-Table3')
-                self.start_list(self.doc, "No differences", "", "")
+                self.start_list(self.doc, _("No differences"), "", "")
                 self.doc.end_table()
             self.doc.start_paragraph('DIFF-Heading')
             self.doc.write_text("")
             self.doc.end_paragraph()
         if self.show_missing:
             self.doc.start_paragraph('DIFF-Heading')
-            self.doc.write_text("Missing items in File that are added in Database")
+            self.doc.write_text(_("Missing items in File that are added in Database"))
             self.doc.end_paragraph()
             if missing:
                 for pair in missing:
                     obj_type, item = pair
                     self.doc.start_paragraph('DIFF-Text')
-                    self.doc.write_text("Missing %s: %s" % (obj_type, self.sa[0].describe(item)))
+                    self.doc.write_text(_("Missing %s: %s") % (obj_type, self.sa[0].describe(item)))
                     self.doc.end_paragraph()
             else:
                 self.doc.start_paragraph('DIFF-Text')
-                self.doc.write_text("Nothing missing")
+                self.doc.write_text(_("Nothing missing"))
                 self.doc.end_paragraph()
             self.doc.start_paragraph('DIFF-Heading')
             self.doc.write_text("")
             self.doc.end_paragraph()
         if self.show_added:
             self.doc.start_paragraph('DIFF-Heading')
-            self.doc.write_text("Added items in File that are missing in Database")
+            self.doc.write_text(_("Added items in File that are missing in Database"))
             self.doc.end_paragraph()
             if added:
                 for pair in added:
                     obj_type, item = pair
                     self.doc.start_paragraph('DIFF-Text')
-                    self.doc.write_text("Added %s: %s " % (obj_type, self.sa[1].describe(item)))
+                    self.doc.write_text(_("Added %s: %s ") % (obj_type, self.sa[1].describe(item)))
                     self.doc.end_paragraph()
             else:
                 self.doc.start_paragraph('DIFF-Text')
-                self.doc.write_text("Nothing added")
+                self.doc.write_text(_("Nothing added"))
                 self.doc.end_paragraph()
             self.doc.start_paragraph('DIFF-Heading')
             self.doc.write_text("")
