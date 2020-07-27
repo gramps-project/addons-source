@@ -1,0 +1,56 @@
+# Dutch translation of addon DownloadMedia.
+# Copyright (C) 2020 Gramps project
+# This file is distributed under the same license as the DownloadMedia package.
+# Jan Sparreboom <jan@sparreboom.net>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: DownloadMedia 5.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-17 21:37+0200\n"
+"PO-Revision-Date: 2020-07-17 21:50+0200\n"
+"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
+"Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+
+#: DownloadMedia/DownloadMedia.gpr.py:35
+#: DownloadMedia/DownloadMedia.gpr_old.py:35
+msgid "Download media files from the internet"
+msgstr "Download mediabestanden van internet"
+
+#: DownloadMedia/DownloadMedia.gpr.py:36
+msgid "This tool downloads media files from the internet"
+msgstr "Deze tool downloadt mediabestanden van internet"
+
+#: DownloadMedia/DownloadMedia.py:71
+msgid "Download media"
+msgstr "Media downloaden"
+
+#: DownloadMedia/DownloadMedia.py:87
+msgid "Media downloaded"
+msgstr "Media gedownload"
+
+#: DownloadMedia/DownloadMedia.py:88
+#, python-format
+msgid "%d media files downloaded"
+msgstr "%d mediabestanden gedownload"
+
+#: DownloadMedia/DownloadMedia.py:100
+msgid "Download media tool"
+msgstr "Download media hulpmiddel"
+
+#: DownloadMedia/DownloadMedia.py:106
+msgid "Make sure you are connected to the internet before starting this tool."
+msgstr "Zorg ervoor dat u verbonden bent met internet voordat u dit hulpmiddel start."
+
+#: DownloadMedia/DownloadMedia.py:171 DownloadMedia/DownloadMedia.py:172
+msgid "Downloading files"
+msgstr "Bestanden downloaden"
+
+#: DownloadMedia/DownloadMedia.py:207
+msgid "Media download errors detected"
+msgstr "Fouten bij het downloaden van media gedetecteerd"
