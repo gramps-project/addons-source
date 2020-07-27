@@ -16,4 +16,3 @@ register(GENERAL,
          load_on_reg = True,
          depends_on = ["libwebconnect"]
          )
-
