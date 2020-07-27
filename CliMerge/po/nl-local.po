@@ -1,0 +1,26 @@
+# Dutch translation of Gramps addon CliMerge
+# Copyright (C) (C) 2020 Gramps project
+# This file is distributed under the same license as the CliMerge package.
+# Jan Sparreboom <jan@sparreboom.net>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: CliMerge 5.1.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2020-04-30 23:15+0200\n"
+"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
+"Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.6\n"
+
+#: CliMerge/CliMerge.gpr.py:8
+msgid "Command Line Merge"
+msgstr "Opdrachtregel samenvoegen"
+
+#: CliMerge/CliMerge.gpr.py:17
+msgid "Merge primary objects via the command line."
+msgstr "Voeg primaire objecten samen via de opdrachtregel."

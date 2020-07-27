@@ -1,0 +1,67 @@
+# Addon Extended Attributes for Gramps.
+# Copyright (C) 2020 Gramps
+# This file is distributed under the same license as the gramps package.
+# Pedro Albuquerque <pmra@protonmail.com>, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps51\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2020-03-31 07:50Hora de Verão de GMT\n"
+"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"Language-Team: Pedro Albuquerque\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Geany / PoHelper 1.36\n"
+
+#: ExtendedAttributes/ExtendedAttributes.gpr.py:31
+msgid "Extended Person Attributes"
+msgstr "Atributos pessoais estendidos"
+
+#: ExtendedAttributes/ExtendedAttributes.gpr.py:32
+msgid "Gramplet showing the attributes of a person"
+msgstr "Gramplet que mostra os atributos de um indivíduo"
+
+#: ExtendedAttributes/ExtendedAttributes.gpr.py:39
+#: ExtendedAttributes/ExtendedAttributes.gpr.py:53
+msgid "Extended Attributes"
+msgstr "Atributos estendidos"
+
+#: ExtendedAttributes/ExtendedAttributes.gpr.py:45
+msgid "Extended Family Attributes"
+msgstr "Atributos familiares estendidos"
+
+#: ExtendedAttributes/ExtendedAttributes.gpr.py:46
+msgid "Gramplet showing the attributes of a family"
+msgstr "Gramplet que mostra os atributos de uma família"
+
+#: ExtendedAttributes/ExtendedAttributes.py:54
+msgid ""
+"Double-click on a row to edit the object containing the selected attribute."
+msgstr ""
+"Duplo clique numa linha para editar o objecto que contém o atributo "
+"seleccionado."
+
+#: ExtendedAttributes/ExtendedAttributes.py:58
+msgid "Date"
+msgstr "Data"
+
+#: ExtendedAttributes/ExtendedAttributes.py:60
+msgid "Key"
+msgstr "Chave"
+
+#: ExtendedAttributes/ExtendedAttributes.py:61
+msgid "Value"
+msgstr "Valor"
+
+#: ExtendedAttributes/ExtendedAttributes.py:156
+#, python-format
+msgid "Edit Person (%s)"
+msgstr "Editar indivíduo (%s)"
+
+#: ExtendedAttributes/ExtendedAttributes.py:220
+msgid "Edit Family"
+msgstr "Editar família"

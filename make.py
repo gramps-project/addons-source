@@ -258,7 +258,8 @@ elif command == "init":
                 with open(filename + '.h', 'w', encoding='utf-8') as head:
                     for key in root.iter():
                         if key.tag.startswith('_') and len(key.tag) > 1:
-                            msg = key.text.replace('"', '\\"')
+                            msg = key.text.replace('"', '\\"').replace('\n',
+                                                                       '\\n')
                             txl = '_("%s")\n' % msg
                             head.write(txl)
                 root.clear()
@@ -578,7 +579,8 @@ elif command == "as-needed":
                 with open(filename + '.h', 'w', encoding='utf-8') as head:
                     for key in root.iter():
                         if key.tag.startswith('_') and len(key.tag) > 1:
-                            msg = key.text.replace('"', '\\"')
+                            msg = key.text.replace('"', '\\"').replace('\n',
+                                                                       '\\n')
                             txl = '_("%s")\n' % msg
                             head.write(txl)
                 root.clear()

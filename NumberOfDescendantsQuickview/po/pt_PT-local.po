@@ -1,0 +1,68 @@
+# Addon NumberOfDescendants for Gramps.
+# Copyright (C) 2020 Gramps
+# This file is distributed under the same license as the gramps package.
+# Pedro Albuquerque <pmra@protonmail.com>, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps51\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2020-04-02 08:13Hora de Verão de GMT\n"
+"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"Language-Team: Pedro Albuquerque\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Geany / PoHelper 1.36\n"
+
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:3
+msgid "Number of descendants"
+msgstr "Número de descendentes"
+
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:4
+msgid "Shows the number of descendants of the current person"
+msgstr "Mostra o número de descendentes do indivíduo activo"
+
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:62
+#, python-format
+msgid "Number of %s's descendants"
+msgstr "Número de descendentes de %s"
+
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:87
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:94
+msgid "Generation"
+msgstr "Geração"
+
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:88
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:95
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:111
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:115
+msgid "Total"
+msgstr "Total"
+
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:89
+msgid "Seen"
+msgstr "Conhecidos"
+
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:90
+msgid "Outlived"
+msgstr "Sobrevividos"
+
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:91
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:96
+msgid "Now alive"
+msgstr "Ainda vivos"
+
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:122
+#, python-format
+msgid "Seen = number of descendants whose birth %s has lived to see"
+msgstr "Conhecidos é o número de descendentes que %s conheceu em vida"
+
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:124
+#, python-format
+msgid "Outlived = number of descendants who died while %s was still alive"
+msgstr ""
+"Sobrevividos é o número de descendentes que faleceram enquanto %s esteve "
+"vivo"

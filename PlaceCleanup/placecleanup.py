@@ -366,7 +366,10 @@ class PlaceCleanup(Gramplet):
             value = g_name.getElementsByTagName('fcl')
             fcl = value[0].childNodes[0].data
             value = g_name.getElementsByTagName('fcode')
-            _type = fcl + ':' + value[0].childNodes[0].data
+            try:
+                _type = fcl + ':' + value[0].childNodes[0].data
+            except IndexError:
+                _type = fcl + ':'
             geo_url = ('http://api.geonames.org/hierarchy?geonameId=%s'
                        '&lang=%s&username=%s' %
                        (geoid, self.lang, self.geonames_id))
@@ -569,9 +572,15 @@ class PlaceCleanup(Gramplet):
         value = g_name.getElementsByTagName('fcl')
         fcl = value[0].childNodes[0].data
         value = g_name.getElementsByTagName('fcode')
-        fcode = value[0].childNodes[0].data
+        try:
+            fcode = value[0].childNodes[0].data
+        except IndexError:
+            fcode = ''
         value = g_name.getElementsByTagName('countryCode')
-        countrycode = value[0].childNodes[0].data
+        try:
+            countrycode = value[0].childNodes[0].data
+        except IndexError:
+            countrycode = ''
         self.newplace.place_type = PlaceType(PlaceType.UNKNOWN)
         ptype = PlaceType()
         # scan thorough names looking for name portion that matches a Placetype
@@ -736,7 +745,8 @@ class PlaceCleanup(Gramplet):
                 name = PlaceName()
                 name.value = parent.title
                 parent.name = name
-                parent.gramps_id = self.newplace.parent_ids[0]
+                if self.newplace.parent_ids:
+                    parent.gramps_id = self.newplace.parent_ids[0]
                 with DbTxn(_("Add Place (%s)") % parent.title,
                            self.dbstate.db) as trans:
                     self.dbstate.db.add_place(parent, trans)

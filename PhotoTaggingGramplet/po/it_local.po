@@ -1,0 +1,174 @@
+# Italian translation for Gramps PhotoTagging Gramplet addon.
+#
+# This file is distributed under the same license as the Gramps package.
+#
+# Copyright (c) 2020 Giansalvo Gusinu <giansalvo.gusinu@gmail.com>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-25 16:10+0300\n"
+"PO-Revision-Date: 2020-01-04 14:22+0100\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.4\n"
+"Last-Translator: Giansalvo Gusinu <giansalvo.gusinu@gmail.com>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: it_IT\n"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:3
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:11
+msgid "Photo Tagging"
+msgstr "Foto etichettatura"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:4
+msgid "Gramplet for tagging people in photos"
+msgstr "Gramplet per etichettare persone nelle foto"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:120
+msgid "Selection"
+msgstr "Selezione"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:122
+msgid "Replace existing references to the person being assigned without asking"
+msgstr "Sostituisci i riferimenti alla persona assegnata senza chiedere"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:129
+msgid "Face detection"
+msgstr "Riconoscimento facciale"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:132
+msgid "Minimum face width (px)"
+msgstr "Larghezza minima del viso (px)"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:134
+msgid "Minimum face height (px)"
+msgstr "Altezza minima del viso (px)"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:137
+msgid "Detect faces inside existing boxes"
+msgstr "Riconosce i volti all'interno dei rettangoli esistenti"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:139
+msgid "Sensitivity (1 min .. 20 max)"
+msgstr "Sensitività (1 min .. 20 max)"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:275
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:743
+msgid "Select Person"
+msgstr "Seleziona persona"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:276
+msgid "Add Person"
+msgstr "Aggiungi persona"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:277
+msgid "Clear Reference"
+msgstr "Pulisci riferimento"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:278
+msgid "Remove Selection"
+msgstr "Cancella selezione"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:279
+msgid "Edit referenced Person"
+msgstr "Modifica persona riferita"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:280
+msgid "Zoom In"
+msgstr "Zoom dentro"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:281
+msgid "Zoom Out"
+msgstr "Zoom fuori"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:284
+msgid "Detect faces"
+msgstr "Riconosce volti"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:286
+msgid "Detect faces (OpenCV module required)"
+msgstr "Riconosce volti (richiede modulo OpenCV)"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:289
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:805
+msgid "Settings"
+msgstr "Impostazioni"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:337
+msgid "Preview"
+msgstr "Anteprima"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:338
+msgid "Person"
+msgstr "Persona"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:339
+msgid "Age"
+msgstr "Età"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:459
+msgid "Set as active person"
+msgstr "Imposta come persona attiva"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:462
+msgid "_Select"
+msgstr "_Seleziona"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:465
+msgid "_Add"
+msgstr "_Aggiungi"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:468
+msgid "_Clear"
+msgstr "_Cancella"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:471
+msgid "_Remove"
+msgstr "_Rimuovi"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:618
+#, python-format
+msgid "Edit Person (%s)"
+msgstr "Modifica persona (%s)"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:674
+#, python-brace-format
+msgid "Replace to {0}"
+msgstr "Sostituisci con {0}"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:775
+msgid "Detecting faces..."
+msgstr "Riconoscimento facciale in corso..."
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:800
+msgid "Detection finished"
+msgstr "Riconoscimento terminato"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:850
+#, python-brace-format
+msgid "Another region of this image is associated with {name}. Remove it?"
+msgstr "Un'altra regione di questa immagine è associata con {name}. Si vuole rimuoverla?"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:853
+#, python-brace-format
+msgid "{count} other regions of this image are associated with {name}. Remove them?"
+msgstr "Altre {count} regioni di questa immagine sono associate con {name}. Si vuole rimuoverle?"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:997
+#, python-format
+msgid "Male person|Dead at %s"
+msgstr "Morto a %s"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:999
+#, python-format
+msgid "Female person|Dead at %s"
+msgstr "Morta a %s"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:1001
+#, python-format
+msgid "Unknown gender person|Dead at %s"
+msgstr "Morto a %s"

@@ -1,0 +1,394 @@
+# Addon ImportMerge for Gramps.
+# Copyright (C) 2020 Gramps
+# This file is distributed under the same license as the gramps package.
+# Pedro Albuquerque <pmra@protonmail.com>, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps51\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2020-04-01 06:21+0100\n"
+"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"Language-Team: Pedro Albuquerque\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.3\n"
+
+#: ImportMerge/importmerge.gpr.py:30 ImportMerge/importmerge.py:311
+#: ImportMerge/importmerge.py:690
+msgid "Import and Merge tool"
+msgstr "Ferramenta de importação e união"
+
+#: ImportMerge/importmerge.gpr.py:31
+msgid ""
+"Compares a Gramps XML database with the current one, and allows merging of "
+"the differences."
+msgstr ""
+"Compara uma base de dados Gramps XML com a actual e permite unir as "
+"diferenças."
+
+#: ImportMerge/importmerge.py:80
+msgid "Import and merge a Gramps XML"
+msgstr "Importar e unir um Gramps XML"
+
+#: ImportMerge/importmerge.py:89
+msgid "Missing"
+msgstr "Em falta"
+
+#: ImportMerge/importmerge.py:91
+msgid "Added"
+msgstr "Adicionado"
+
+#: ImportMerge/importmerge.py:93
+msgid "Different"
+msgstr "Diferente"
+
+#: ImportMerge/importmerge.py:108
+msgid "Delete original"
+msgstr "Eliminar original"
+
+#: ImportMerge/importmerge.py:109 ImportMerge/importmerge.glade:332
+msgid "Ignore"
+msgstr "Ignorar"
+
+#: ImportMerge/importmerge.py:110
+msgid "Add Import"
+msgstr "Adicionar importado"
+
+#: ImportMerge/importmerge.py:111
+msgid "Merge into original"
+msgstr "Unir ao original"
+
+#: ImportMerge/importmerge.py:112
+msgid "Merge into import"
+msgstr "Unir ao importado"
+
+#: ImportMerge/importmerge.py:113
+msgid "Replace with import"
+msgstr "Substituir pelo importado"
+
+#: ImportMerge/importmerge.py:114
+msgid "Keep original"
+msgstr "Manter original"
+
+#: ImportMerge/importmerge.py:115 ImportMerge/importmerge.glade:291
+msgid ""
+"Use buttons below to set the 'Action' for each difference.  No changes will "
+"be made to your tree until you press 'Done' and confirm."
+msgstr ""
+"Use os botões abaixo para definir a acção para cada diferença. Não serão "
+"feitas alterações à árvore até que clique em Feito e confirme."
+
+#: ImportMerge/importmerge.py:118
+msgid ""
+"This item will be deleted from your tree.  Any referenced items were also "
+"marked for deletion."
+msgstr ""
+"Este item será eliminado da árvore. Quaisquer itens referenciados foram "
+"também marcados para eliminação."
+
+#: ImportMerge/importmerge.py:120
+msgid ""
+"This item will not be changed in your tree.  Any referenced items were also "
+"marked for Ignore."
+msgstr ""
+"Este item não será alterado na árvore. Quaisquer itens referenciados foram "
+"também marcados para serem ignorados."
+
+#: ImportMerge/importmerge.py:122
+msgid ""
+"This item will be added to your tree.  Any referenced items were also marked "
+"for adding."
+msgstr ""
+"Este item será adicionado à árvore. Quaisquer itens referenciados foram "
+"também marcados para adição."
+
+#: ImportMerge/importmerge.py:124
+msgid ""
+"This item will be merged, saving data from your tree.  Any referenced items "
+"were also marked for merging or adding."
+msgstr ""
+"Este item será unido, mantendo os dados da árvore. Quaisquer itens "
+"referenciados foram também marcados para união ou adição."
+
+#: ImportMerge/importmerge.py:126
+msgid ""
+"This item will be merged, using data from the import.  Any referenced items "
+"were also marked for merging or adding."
+msgstr ""
+"Este item será unido, usando os dados da importação. Quaisquer itens "
+"referenciados foram também marcados para união ou adição."
+
+#: ImportMerge/importmerge.py:128
+msgid ""
+"The import data will entirely replace the data in your tree.  Any referenced "
+"items were also marked for replacement or removal."
+msgstr ""
+"Os dados importados vão substituir integralmente os dados da árvore. Todos "
+"os itens referenciados foram também marcados para substituição ou remoção."
+
+#: ImportMerge/importmerge.py:130
+msgid ""
+"This item will not be changed in your tree.  Any referenced items were also "
+"marked to keep."
+msgstr ""
+"Este item não será alterado na árvore. Quaisquer itens referenciados foram "
+"também marcados para serem preservados."
+
+#: ImportMerge/importmerge.py:145
+msgid "Family"
+msgstr "Família"
+
+#: ImportMerge/importmerge.py:145
+msgid "Person"
+msgstr "Indivíduo"
+
+#: ImportMerge/importmerge.py:145
+msgid "Citation"
+msgstr "Citação"
+
+#: ImportMerge/importmerge.py:145
+msgid "Event"
+msgstr "Evento"
+
+#: ImportMerge/importmerge.py:145
+msgid "Media"
+msgstr "Multimédia"
+
+#: ImportMerge/importmerge.py:146
+msgid "Note"
+msgstr "Nota"
+
+#: ImportMerge/importmerge.py:146
+msgid "Place"
+msgstr "Local"
+
+#: ImportMerge/importmerge.py:146
+msgid "Repository"
+msgstr "Repositório"
+
+#: ImportMerge/importmerge.py:146
+msgid "Source"
+msgstr "Fonte"
+
+#: ImportMerge/importmerge.py:146
+msgid "Tag"
+msgstr "Etiqueta"
+
+#: ImportMerge/importmerge.py:312
+msgid "Importing data..."
+msgstr "A importar dados..."
+
+#: ImportMerge/importmerge.py:321
+msgid "Import Failure"
+msgstr "Falha ao importar"
+
+#: ImportMerge/importmerge.py:325
+msgid "Searching..."
+msgstr "A procurar..."
+
+#: ImportMerge/importmerge.py:389
+msgid "Your Tree and import are the same."
+msgstr "A árvore e a importação são idênticas."
+
+#: ImportMerge/importmerge.py:421
+msgid "Last changed"
+msgstr "Última modificação"
+
+#: ImportMerge/importmerge.py:434 ImportMerge/importmerge.py:443
+#: ImportMerge/importmerge.py:451 ImportMerge/importmerge.py:459
+msgid "your tree "
+msgstr "a árvore "
+
+#: ImportMerge/importmerge.py:441 ImportMerge/importmerge.py:449
+#: ImportMerge/importmerge.py:457
+msgid "imported "
+msgstr "importação "
+
+#: ImportMerge/importmerge.py:464 ImportMerge/importmerge.py:943
+#: ImportMerge/importmerge.py:964
+msgid "Original"
+msgstr "Original"
+
+#: ImportMerge/importmerge.py:465 ImportMerge/importmerge.py:944
+#: ImportMerge/importmerge.py:965
+msgid "Imported"
+msgstr "Importado"
+
+#: ImportMerge/importmerge.py:467 ImportMerge/importmerge.py:946
+#: ImportMerge/importmerge.py:967
+msgid "Result  "
+msgstr "Resultado  "
+
+#: ImportMerge/importmerge.py:692
+msgid "Processing..."
+msgstr "A processar..."
+
+#: ImportMerge/importmerge.py:693
+msgid "Import and Merge"
+msgstr "Importar e unir"
+
+#: ImportMerge/importmerge.py:893 ImportMerge/importmerge.glade:405
+msgid "Replace"
+msgstr "Substituir"
+
+#: ImportMerge/importmerge.py:898
+msgid "Add"
+msgstr "Adicionar"
+
+#: ImportMerge/importmerge.py:903
+msgid "Delete"
+msgstr "Eliminar"
+
+#: ImportMerge/importmerge.glade:8
+msgid ""
+"A '*' indicates that the action was automarked, a '?' indicates a conflict "
+"between automarks."
+msgstr ""
+"Um \"*\" indica que a acção foi marcada automaticamente, um \"?\" indica um "
+"conflito entre marcas automáticas."
+
+#: ImportMerge/importmerge.glade:9
+msgid "Action"
+msgstr "Acção"
+
+#: ImportMerge/importmerge.glade:38
+msgid "Import file"
+msgstr "Importar ficheiro"
+
+#: ImportMerge/importmerge.glade:122
+msgid "Select the difference you wish to examine."
+msgstr "Seleccione a diferença que deseja examinar."
+
+#: ImportMerge/importmerge.glade:132
+msgid "Status"
+msgstr "Estado"
+
+#: ImportMerge/importmerge.glade:147
+msgid "Object"
+msgstr "Objecto"
+
+#: ImportMerge/importmerge.glade:162
+msgid "ID"
+msgstr "ID"
+
+#: ImportMerge/importmerge.glade:178
+msgid "Object Name/Description"
+msgstr "Nome/Descrição do objecto"
+
+#: ImportMerge/importmerge.glade:225
+msgid ""
+"Data item details, showing the current treeitem, imported tree item, and "
+"result (when chosen)."
+msgstr ""
+"Detalhes do item de dados, mostrando o item da árvore actual, o item da "
+"árvore importado e o resultado (quando escolhido)."
+
+#: ImportMerge/importmerge.glade:246
+msgid "Object and item"
+msgstr "Objecto e item"
+
+#: ImportMerge/importmerge.glade:262
+msgid "Differences"
+msgstr "Diferenças"
+
+#: ImportMerge/importmerge.glade:318
+msgid "Help"
+msgstr "Ajuda"
+
+#: ImportMerge/importmerge.glade:336
+msgid "This button will ignore the difference, no changes to your tree."
+msgstr "Este botão ignora a diferença, não altera a sua árvore."
+
+#: ImportMerge/importmerge.glade:347
+msgid "Unmark"
+msgstr "Desmarcar"
+
+#: ImportMerge/importmerge.glade:351
+msgid "This button will add the imported data as a new object to your tree."
+msgstr ""
+"Este botão adiciona os dados importados como novo objecto na sua árvore."
+
+#: ImportMerge/importmerge.glade:362
+msgid "Done"
+msgstr "Feito"
+
+#: ImportMerge/importmerge.glade:366
+msgid ""
+"This button will bring up a dialog allowing you to finalize your changes, or "
+"abandon them."
+msgstr ""
+"Este botão abre um diálogo onde pode finalizar as alterações ou abandoná-las."
+
+#: ImportMerge/importmerge.glade:390
+msgid "Merge Original"
+msgstr "Unir o original"
+
+#: ImportMerge/importmerge.glade:394
+msgid ""
+"This button will merge the imported data into your tree with your tree data "
+"as a base."
+msgstr "Este botão une os dados importados com a sua árvore como base."
+
+#: ImportMerge/importmerge.glade:409
+msgid "This button will replace your tree data with the imported data."
+msgstr "Este botão substitui os dados da sua árvore pelos dados importados."
+
+#: ImportMerge/importmerge.glade:420
+msgid "Merge Import"
+msgstr "Unir o importado"
+
+#: ImportMerge/importmerge.glade:424
+msgid ""
+"This button will merge the imported data into your tree with the imported "
+"data as a base."
+msgstr ""
+"Este botão une os dados dados importados com a sua árvore com os dados "
+"importados como base."
+
+#: ImportMerge/importmerge.glade:435
+msgid "Edit Import"
+msgstr "Editar o importado"
+
+#: ImportMerge/importmerge.glade:439
+msgid ""
+"This button will edit the imported data.  The data will still need to be "
+"merged, added or replaced."
+msgstr ""
+"Este botão edita os dados importados. Ainda terão de ser unidos, adicionados "
+"ou substituídos."
+
+#: ImportMerge/importmerge.glade:462
+msgid "Show more details"
+msgstr "Mostrar mais detalhes"
+
+#: ImportMerge/importmerge.glade:479
+msgid "Automark Families"
+msgstr "Marcar famílias automaticamente"
+
+#: ImportMerge/importmerge.glade:496
+msgid "Automark Parent Families"
+msgstr "Marcar famílias-mãe automaticamente"
+
+#: ImportMerge/importmerge.glade:549
+msgid "Close _without saving"
+msgstr "Fechar sem gra_var"
+
+#: ImportMerge/importmerge.glade:564
+msgid "_Cancel"
+msgstr "_Cancelar"
+
+#: ImportMerge/importmerge.glade:580
+msgid "_Save"
+msgstr "_Gravar"
+
+#: ImportMerge/importmerge.glade:611
+msgid "Save Changes?"
+msgstr "Gravar alterações?"
+
+#: ImportMerge/importmerge.glade:642
+msgid "If you close without saving, the changes you have made will be lost"
+msgstr "Se fechar sem gravar, as alterações efectuadas serão perdidas"

@@ -1,0 +1,87 @@
+# Addon ListeEclaire for Gramps.
+# Copyright (C) 2020 Gramps
+# This file is distributed under the same license as the gramps package.
+# Pedro Albuquerque <pmra@protonmail.com>, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps51\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2020-04-01 06:38Hora de Verão de GMT\n"
+"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"Language-Team: Pedro Albuquerque\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Geany / PoHelper 1.36\n"
+
+#: ListeEclair/ListeEclair.gpr.py:3 ListeEclair/ListeEclair.py:97
+#: ListeEclair/ListeEclair.py:104
+msgid "Liste Eclair"
+msgstr "Lista de correspondências"
+
+#: ListeEclair/ListeEclair.gpr.py:4
+msgid "Produit une liste eclair"
+msgstr "Produzir uma lista de correspondências"
+
+#: ListeEclair/ListeEclair.py:97
+msgid "Generating report"
+msgstr "A gerar relatório"
+
+#: ListeEclair/ListeEclair.py:253
+msgid "Report Options"
+msgstr "Opções do relatório"
+
+#: ListeEclair/ListeEclair.py:260
+msgid "Select using filter"
+msgstr "Seleccionar com filtro"
+
+#: ListeEclair/ListeEclair.py:261
+msgid "Select places using a filter"
+msgstr "Seleccionar locais usando um filtro"
+
+#: ListeEclair/ListeEclair.py:266
+msgid "Entire Database"
+msgstr "Toda a base de dados"
+
+#: ListeEclair/ListeEclair.py:273
+msgid "Select places individually"
+msgstr "Seleccionar locais individualmente"
+
+#: ListeEclair/ListeEclair.py:274
+msgid "List of places to report on"
+msgstr "Lista de locais a reportar"
+
+#: ListeEclair/ListeEclair.py:277
+msgid "Type de Liste"
+msgstr "Tipo de lista"
+
+#: ListeEclair/ListeEclair.py:279
+msgid "Tiny Tafel"
+msgstr "Tiny Tafel"
+
+#: ListeEclair/ListeEclair.py:280
+msgid "cousingenweb"
+msgstr "cousingenweb"
+
+#: ListeEclair/ListeEclair.py:281
+msgid "Type de liste"
+msgstr "Tipo de lista"
+
+#: ListeEclair/ListeEclair.py:284
+msgid "Include private data"
+msgstr "Incluir dados privados"
+
+#: ListeEclair/ListeEclair.py:285
+msgid "Whether to include private data"
+msgstr "Se deve incluir dados privados"
+
+#: ListeEclair/ListeEclair.py:301
+msgid "The style used for the liste eclair."
+msgstr "O estilo usado para a lista de correspondências."
+
+#: ListeEclair/ListeEclair.py:314
+msgid "The style used for place title."
+msgstr "O estilo usado para o título do local."

@@ -47,7 +47,7 @@ from gi.repository import GObject
 #-------------------------------------------------------------------------
 from gramps.gen.db import DbTxn
 from gramps.gui.managedwindow import ManagedWindow
-from gramps.gui.display import display_help
+from gramps.gui.display import display_url
 from gramps.plugins.lib.libplaceimport import PlaceImport
 from gramps.gen.utils.location import get_main_location
 from gramps.gen.display.place import displayer as place_displayer
@@ -395,6 +395,10 @@ COLS = [
     (_('Country'), 5)
     ]
 
+WIKI_PAGE = ('https://gramps-project.org/wiki/index.php/'
+             'Extract_Place_Data_from_a_Place_Title')
+
+
 #-------------------------------------------------------------------------
 #
 # ExtractCity
@@ -537,10 +541,12 @@ class ExtractCity(tool.BatchTool, ManagedWindow):
             "on_ok_clicked" : self.on_ok_clicked,
             "on_help_clicked" : self.on_help_clicked,
             "on_delete_event"   : self.close,
+            "on_toggled" : self.toggled_btn,
             })
 
         self.list = self.top.get_object("list")
         self.set_window(window, self.top.get_object('title'), self.label)
+        self.setup_configs('interface.extractcity', 750, 500)
         lbl = self.top.get_object('info')
         lbl.set_line_wrap(True)
         lbl.set_text(
@@ -564,8 +570,10 @@ class ExtractCity(tool.BatchTool, ManagedWindow):
                 render.set_property('editable', True)
                 render.connect('edited', self.__change_name, col)
 
-            self.list.append_column(
-                Gtk.TreeViewColumn(title, render, text=col))
+            t_column = Gtk.TreeViewColumn(title, render, text=col)
+            t_column.set_sort_column_id(col)
+            self.list.append_column(t_column)
+
         self.list.set_model(self.model)
 
         self.iter_list = []
@@ -602,12 +610,21 @@ class ExtractCity(tool.BatchTool, ManagedWindow):
         row = self.model[path]
         row[0] = not row[0]
 
+    def toggled_btn(self, obj):
+        select = self.list.get_selection()
+        selection = select.get_selected_rows()
+        if selection[1]:
+            value = self.model[selection[1][0]][0]  # value of first row
+            for path in selection[1]:
+                row = self.model[path]
+                row[0] = not value
+
     def build_menu_names(self, obj):
         return (self.label, None)
 
     def on_help_clicked(self, obj):
         """Display the relevant portion of GRAMPS manual"""
-        display_help()
+        display_url(WIKI_PAGE)
 
     def on_ok_clicked(self, obj):
         with DbTxn(_("Extract Place data"), self.db, batch=True) as self.trans:

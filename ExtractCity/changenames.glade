@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated with glade 3.18.3 -->
+<!-- Generated with glade 3.22.2 -->
 <interface>
   <requires lib="gtk+" version="3.10"/>
   <object class="GtkWindow" id="changenames">
-    <property name="visible">False</property>
     <property name="can_focus">False</property>
-    <property name="window_position">4</property>
+    <property name="window_position">center-on-parent</property>
     <signal name="delete-event" handler="on_delete_event" swapped="no"/>
+    <child type="titlebar">
+      <placeholder/>
+    </child>
     <child>
       <object class="GtkBox" id="vbox2">
         <property name="visible">True</property>
@@ -52,7 +54,9 @@ Select the names you wish Gramps to convert. </property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <child internal-child="selection">
-                  <object class="GtkTreeSelection" id="treeview-selection1"/>
+                  <object class="GtkTreeSelection" id="treeview-selection1">
+                    <property name="mode">multiple</property>
+                  </object>
                 </child>
               </object>
             </child>
@@ -72,7 +76,6 @@ Select the names you wish Gramps to convert. </property>
             <child>
               <object class="GtkButton" id="help">
                 <property name="label">gtk-help</property>
-                <property name="use_action_appearance">False</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
@@ -87,9 +90,24 @@ Select the names you wish Gramps to convert. </property>
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="button6">
+              <object class="GtkButton" id="toggle">
+                <property name="label" translatable="yes">_Toggle Selected</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="tooltip_text" translatable="yes">Toggles the checkmarks on selected rows,  Rows can be selected with &lt;ctrl&gt; (add to group), or &lt;shift&gt; (extend group) click, or with &lt;ctrl&gt; or &lt;shift&gt; arrow keys and 'space'.  Or &lt;ctrl&gt;'a' for select all.</property>
+                <property name="use_underline">True</property>
+                <signal name="clicked" handler="on_toggled" swapped="no"/>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="cancel">
                 <property name="label">gtk-cancel</property>
-                <property name="use_action_appearance">False</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
@@ -100,13 +118,12 @@ Select the names you wish Gramps to convert. </property>
               <packing>
                 <property name="expand">False</property>
                 <property name="fill">False</property>
-                <property name="position">1</property>
+                <property name="position">2</property>
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="button5">
+              <object class="GtkButton" id="accept">
                 <property name="label" translatable="yes">_Accept changes and close</property>
-                <property name="use_action_appearance">False</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
@@ -117,7 +134,7 @@ Select the names you wish Gramps to convert. </property>
               <packing>
                 <property name="expand">False</property>
                 <property name="fill">False</property>
-                <property name="position">2</property>
+                <property name="position">3</property>
               </packing>
             </child>
           </object>

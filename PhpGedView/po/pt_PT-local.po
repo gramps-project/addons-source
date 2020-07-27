@@ -1,0 +1,103 @@
+# Addon PhpGedView for Gramps.
+# Copyright (C) 2020 Gramps
+# This file is distributed under the same license as the gramps package.
+# Pedro Albuquerque <pmra@protonmail.com>, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps51\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-04 18:55-0600\n"
+"PO-Revision-Date: 2020-04-02 08:38Hora de Verão de GMT\n"
+"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"Language-Team: Pedro Albuquerque\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Geany / PoHelper 1.36\n"
+
+#: PhpGedView/phpgedview.gpr.py:23
+msgid "PhpGedView"
+msgstr "Vista PhpGed"
+
+#: PhpGedView/phpgedview.gpr.py:24
+msgid "Download a GEDCOM file from a phpGedView server."
+msgstr "Transferir um ficheiro GEDCOM de um servidor phpGedView."
+
+#: PhpGedView/phpgedviewconnector.py:204 PhpGedView/phpgedviewconnector.py:215
+msgid "Fetching index list..."
+msgstr "A obter a lista de índice..."
+
+#: PhpGedView/phpgedviewconnector.py:218 PhpGedView/phpgedviewconnector.py:222
+msgid "Fetching records..."
+msgstr "A obter registos..."
+
+#: PhpGedView/phpgedviewconnector.py:327
+msgid "Logging in..."
+msgstr "A iniciar sessão..."
+
+#: PhpGedView/phpgedviewconnector.py:330
+msgid "Fetching GEDCOM..."
+msgstr "A obter o GEDCOM..."
+
+#: PhpGedView/phpgedviewconnector.py:334
+msgid "Importing GEDCOM..."
+msgstr "A importar o GEDCOM..."
+
+#: PhpGedView/phpgedviewconnector.py:341
+msgid "Error: login failed"
+msgstr "Erro: falha ao iniciar sessão"
+
+#: PhpGedView/phpgedviewconnector.py:342 PhpGedView/phpgedviewconnector.py:367
+msgid "done."
+msgstr "feito."
+
+#: PhpGedView/phpgedviewconnector.py:347
+msgid "Connecting..."
+msgstr "A ligar..."
+
+#: PhpGedView/phpgedviewconnector.py:349
+msgid "Get version..."
+msgstr "Obter versão..."
+
+#: PhpGedView/phpgedviewconnector.py:352
+#, python-format
+msgid "Version %s"
+msgstr "Versão %s"
+
+#: PhpGedView/phpgedviewconnector.py:353
+msgid "Reading file list..."
+msgstr "A ler lista de ficheiros..."
+
+#: PhpGedView/phpgedviewconnector.py:366
+msgid "Error: Invalid URL"
+msgstr "Erro: URL inválido"
+
+#: PhpGedView/phpgedview.glade:12
+msgid "- default -"
+msgstr "- pré-definição -"
+
+#: PhpGedView/phpgedview.glade:19 PhpGedView/phpgedview.glade:85
+msgid "phpGedView import"
+msgstr "Importação phpGedView"
+
+#: PhpGedView/phpgedview.glade:103
+msgid "http://"
+msgstr "http://"
+
+#: PhpGedView/phpgedview.glade:158
+msgid "File:"
+msgstr "Ficheiro"
+
+#: PhpGedView/phpgedview.glade:170
+msgid "Username:"
+msgstr "Utilizador"
+
+#: PhpGedView/phpgedview.glade:182
+msgid "Password:"
+msgstr "Senha"
+
+#: PhpGedView/phpgedview.glade:206
+msgid "URL:"
+msgstr "URL"

@@ -1,0 +1,54 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-01 13:30-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.gpr.py:3
+msgid "Number of ancestors"
+msgstr ""
+
+#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.gpr.py:4
+msgid "Shows the number of ancestors of the current person"
+msgstr ""
+
+#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:44
+#, python-format
+msgid "Number of %s's ancestors"
+msgstr ""
+
+#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:48
+msgid "Generation"
+msgstr ""
+
+#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:49
+msgid "Found"
+msgstr ""
+
+#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:50
+msgid "Theoretical"
+msgstr ""
+
+#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:51
+msgid "Percent"
+msgstr ""
+
+#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:59
+msgid ""
+"There were {} of {} ancestors ({}) found.\n"
+"Only individual ancestors were counted. Duplicates caused by pedigree "
+"collapse were ignored."
+msgstr ""
