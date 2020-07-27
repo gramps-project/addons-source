@@ -108,7 +108,7 @@ class LinesOfDescendency(Report):
         next_person = self.database.get_person_from_handle(path[0])
 
         self.doc.start_paragraph('LOD-Line')
-        self.doc.write_text('%(line)s. line:' % { 'line': self.line })
+        self.doc.write_text(_('%(line)s. line:') % { 'line': self.line })
         self.doc.end_paragraph()
         self.line +=1
 
@@ -174,8 +174,8 @@ class LinesOfDescendency(Report):
     def write_report(self):
         self.doc.start_paragraph("LOD-Title")
         self.doc.write_text(_("Lines of Descendency from %(ancestor)s to"
-        " %(descendent)s" % { 'ancestor' : _nd.display(self.ancestor),
-                              'descendent' : _nd.display(self.descendent) }))
+        " %(descendent)s") % { 'ancestor' : _nd.display(self.ancestor),
+                              'descendent' : _nd.display(self.descendent) })
         self.doc.end_paragraph()
 
         self.line = 1

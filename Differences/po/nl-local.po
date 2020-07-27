@@ -1,75 +1,115 @@
-# Dutch translations for gramps package.
-# Copyright (C) 2013 THE gramps'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the gramps package.
-# erik_de_richter <frederik.de.richter@telenet.be>, 2013.
+# Dutch translation of addon Differences.
+# Copyright (C) 2020 Gramps project
+# This file is distributed under the same license as the Differences package.
+# Jan Sparreboom <jan@sparreboom.net>.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gramps 40_addons\n"
+"Project-Id-Version: Differences 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-29 14:38+0100\n"
-"PO-Revision-Date: 2013-01-29 14:38+0100\n"
-"Last-Translator: erik_de_richter <frederik.de.richter@telenet.be>\n"
-"Language-Team: Dutch\n"
+"POT-Creation-Date: 2020-07-17 17:41+0200\n"
+"PO-Revision-Date: 2020-07-17 17:28+0200\n"
+"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
+"Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.3\n"
 
-#: Differences/differences.gpr.py:4
+#: Differences/differences.gpr.py:4 Differences/differences.py:97
 msgid "Database Differences Report"
-msgstr ""
+msgstr "Databaseverschillenverslag"
 
 #: Differences/differences.gpr.py:5
 msgid "Compares an external database with the current one."
-msgstr ""
+msgstr "Vergelijkt een externe database met de huidige."
 
-#: Differences/differences.py:157
-msgid "Differences Report"
-msgstr ""
+#: Differences/differences.py:116
+msgid "File:"
+msgstr "Bestand:"
 
-#: Differences/differences.py:158
-msgid "Looking for differences..."
-msgstr ""
+#: Differences/differences.py:136
+msgid "Differences between Database and File"
+msgstr "Verschillen tussen database en bestand"
 
-#: Differences/differences.py:272
+#: Differences/differences.py:140 Differences/differences_old.py:128
+msgid "Family Tree Differences"
+msgstr "Stamboomverschillen"
+
+#: Differences/differences.py:141 Differences/differences_old.py:129
+msgid "Processing..."
+msgstr "Verwerken..."
+
+#: Differences/differences.py:163
+msgid "No differences"
+msgstr "Geen verschillen"
+
+#: Differences/differences.py:170
+msgid "Missing items in File that are added in Database"
+msgstr "Ontbrekende items in bestand die zijn toegevoegd aan database"
+
+#: Differences/differences.py:176
+#, python-format
+msgid "Missing %s: %s"
+msgstr "Ontbrekend %s: %s"
+
+#: Differences/differences.py:180
+msgid "Nothing missing"
+msgstr "Er ontbreekt niets"
+
+#: Differences/differences.py:187
+msgid "Added items in File that are missing in Database"
+msgstr "Items toegevoegd in het bestand die ontbreken in de database"
+
+#: Differences/differences.py:193
+#, python-format
+msgid "Added %s: %s "
+msgstr "Toegevoegd %s: %s "
+
+#: Differences/differences.py:197
+msgid "Nothing added"
+msgstr "Niets toegevoegd"
+
+#: Differences/differences.py:308 Differences/differences_old.py:296
 msgid "Report Options"
-msgstr ""
+msgstr "Verslagopties"
 
-#: Differences/differences.py:273
+#: Differences/differences.py:310 Differences/differences_old.py:298
 msgid "Family Tree file"
-msgstr ""
+msgstr "Stamboombestand"
 
-#: Differences/differences.py:274
+#: Differences/differences.py:312 Differences/differences_old.py:300
 msgid "Select a .gpkg or .gramps file"
-msgstr ""
+msgstr "Selecteer een .gpkg- of .gramps-bestand"
 
-#: Differences/differences.py:277
+#: Differences/differences.py:315 Differences/differences_old.py:303
 msgid "Show items that are different"
-msgstr ""
+msgstr "Toon items die verschillend zijn"
 
-#: Differences/differences.py:278
+#: Differences/differences.py:316 Differences/differences_old.py:304
 msgid "Include items that are different"
-msgstr ""
+msgstr "Voeg items toe die verschillend zijn"
 
-#: Differences/differences.py:281
-msgid "Show deleted items"
-msgstr ""
+#: Differences/differences.py:319 Differences/differences_old.py:307
+msgid "Show items missing from file"
+msgstr "Toon items die ontbreken in het bestand"
 
-#: Differences/differences.py:282
+#: Differences/differences.py:320 Differences/differences_old.py:308
 msgid "Include items not in file but in database"
-msgstr ""
+msgstr "Neem items op die niet in het bestand maar in de database staan"
 
-#: Differences/differences.py:285
-msgid "Show added items"
-msgstr ""
+#: Differences/differences.py:323 Differences/differences_old.py:311
+msgid "Show items added in file"
+msgstr "Toon items die in het bestand zijn toegevoegd"
 
-#: Differences/differences.py:286
+#: Differences/differences.py:324 Differences/differences_old.py:312
 msgid "Include items in file but not in database"
-msgstr ""
+msgstr "Neem items op in het bestand maar niet in de database"
 
-#: Differences/differences.py:331 Differences/differences.py:333
-#: Differences/differences.py:336 Differences/differences.py:339
+#: Differences/differences.py:369 Differences/differences.py:371
+#: Differences/differences.py:374 Differences/differences.py:377
+#: Differences/differences_old.py:357 Differences/differences_old.py:359
+#: Differences/differences_old.py:362 Differences/differences_old.py:365
 msgid "Text"
-msgstr ""
+msgstr "Tekst"

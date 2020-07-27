@@ -176,11 +176,11 @@ class CollectAscendants():
         if deep_prune:
             self.user.begin_progress(self.title,
                 _('Deep pruning ascendants from %s people...') %
-                (len(self.ascendants)), len(self.ascendants))
+                len(self.ascendants), len(self.ascendants))
         else:
             self.user.begin_progress(self.title,
                 _('Pruning ascendants from %s people...') %
-                (len(self.ascendants)), len(self.ascendants))
+                len(self.ascendants), len(self.ascendants))
 
         asc_copy = copy.deepcopy(self.ascendants)
         for person_handle in asc_copy:

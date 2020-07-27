@@ -17,14 +17,14 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
-"""Matches descendants of filter result following Y-chromsomal inheritance patterns."""
+"""Matches descendants of filter result following Y-chrom inheritance patterns."""
 
 register(RULE,
   id = 'yinheritanceoffiltermatch',
-  name = _("Y-chromsomal inheritance of <filter>"),
+  name = _("Y-chromosomal inheritance of <filter>"),
   description = _("Matches recorded descendants of a filter result following"
-                  " Y-chromsomal inheritance patterns."),
-  version = '1.0.1',
+                  " Y-chromosomal inheritance patterns."),
+  version = '1.0.2',
   authors = ["Matthias Kemmer"],
   authors_email = ["matt.familienforschung@gmail.com"],
   gramps_target_version = '5.1',

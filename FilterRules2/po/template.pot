@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-01 13:41-0500\n"
+"POT-Creation-Date: 2020-07-26 10:08-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -118,23 +118,23 @@ msgid ""
 msgstr ""
 
 #: FilterRules2/yinheritance.gpr.py:24 FilterRules2/yinheritance.py:45
-msgid "Y-chromsomal inheritance of <person>"
+msgid "Y-chromosomal inheritance of <person>"
 msgstr ""
 
 #: FilterRules2/yinheritance.gpr.py:25 FilterRules2/yinheritance.py:46
 msgid ""
-"Matches recorded descendants of person following Y-chromsomal inheritance "
+"Matches recorded descendants of person following Y-chromosomal inheritance "
 "patterns."
 msgstr ""
 
 #: FilterRules2/yinheritanceoffiltermatch.gpr.py:24
 #: FilterRules2/yinheritanceoffiltermatch.py:46
-msgid "Y-chromsomal inheritance of <filter>"
+msgid "Y-chromosomal inheritance of <filter>"
 msgstr ""
 
 #: FilterRules2/yinheritanceoffiltermatch.gpr.py:25
 #: FilterRules2/yinheritanceoffiltermatch.py:47
 msgid ""
-"Matches recorded descendants of a filter result following Y-chromsomal "
+"Matches recorded descendants of a filter result following Y-chromosomal "
 "inheritance patterns."
 msgstr ""
