@@ -1,30 +1,31 @@
 # German translation for Gramps
-# $Id: de.po 23176 2013-09-20 21:02:08Z leonhaeuser $
 # This file is distributed under the same license as the Gramps package.
 # translation of de.po to Deutsch
+#
 #
 # Anton Huber <anton_huber@gmx.de>, 2005,2006.
 # Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
 # Sebastian Vöcking <voeck@web.de>, 2005.
 # Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
 # Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020.
+# Alois Pöttker <alois.poettker@gmx.de>, 2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-17 17:41+0200\n"
-"PO-Revision-Date: 2013-09-21 14:55+0200\n"
-"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
+"POT-Creation-Date: 2020-07-28 23:02+0200\n"
+"PO-Revision-Date: 2020-07-28 23:03+0200\n"
+"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.5\n"
-"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 19.12.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: Differences/differences.gpr.py:4 Differences/differences.py:97
+#: Differences/differences.gpr.py:4 Differences/differences.py:95
 msgid "Database Differences Report"
 msgstr "Datenbankunterschiede Bericht"
 
@@ -32,96 +33,94 @@ msgstr "Datenbankunterschiede Bericht"
 msgid "Compares an external database with the current one."
 msgstr "Vergleicht eine externe Datenbank mit der aktuell geöffneten."
 
-#: Differences/differences.py:116
+#: Differences/differences.py:114
 msgid "File:"
 msgstr "Datei:"
 
-#: Differences/differences.py:136
+#: Differences/differences.py:134
 msgid "Differences between Database and File"
 msgstr "Unterschiede zwischen Datenbank und Datei"
 
-#: Differences/differences.py:140 Differences/differences_old.py:128
+#: Differences/differences.py:138
 msgid "Family Tree Differences"
 msgstr "Stammbaumunterschiede"
 
-#: Differences/differences.py:141 Differences/differences_old.py:129
+#: Differences/differences.py:139
 msgid "Processing..."
 msgstr "Verarbeitung..."
 
-#: Differences/differences.py:163
+#: Differences/differences.py:161
 msgid "No differences"
 msgstr "Keine Unterschiede"
 
-#: Differences/differences.py:170
-#, fuzzy
+#: Differences/differences.py:168
 msgid "Missing items in File that are added in Database"
-msgstr "Fehlende Elemente in der Datei, die in der Datenbank hinzugefügt wurden"
+msgstr ""
+"Fehlende Elemente in der Datei, die in der Datenbank hinzugefügt wurden"
 
-#: Differences/differences.py:176
+#: Differences/differences.py:174
 #, python-format
 msgid "Missing %s: %s"
 msgstr "Fehlende %s: %s"
 
-#: Differences/differences.py:180
+#: Differences/differences.py:178
 msgid "Nothing missing"
 msgstr "Es fehlt nichts"
 
-#: Differences/differences.py:187
+#: Differences/differences.py:185
 msgid "Added items in File that are missing in Database"
 msgstr "Elemente in Datei hinzugefügt, die in der Datenbank fehlen"
 
-#: Differences/differences.py:193
+#: Differences/differences.py:191
 #, python-format
 msgid "Added %s: %s "
 msgstr "Hinzugefügt %s: %s "
 
-#: Differences/differences.py:197
+#: Differences/differences.py:195
 msgid "Nothing added"
 msgstr "Nichts hinzugefügt"
 
-#: Differences/differences.py:308 Differences/differences_old.py:296
+#: Differences/differences.py:306
 msgid "Report Options"
 msgstr "Berichtsoptionen"
 
-#: Differences/differences.py:310 Differences/differences_old.py:298
+#: Differences/differences.py:308
 msgid "Family Tree file"
 msgstr "Stammbaumdatei"
 
-#: Differences/differences.py:312 Differences/differences_old.py:300
+#: Differences/differences.py:310
 msgid "Select a .gpkg or .gramps file"
 msgstr "Eine .gpkg oder .gramps Datei wählen"
 
-#: Differences/differences.py:315 Differences/differences_old.py:303
+#: Differences/differences.py:313
 msgid "Show items that are different"
 msgstr "Zeige unterschiedliche Elemente"
 
-#: Differences/differences.py:316 Differences/differences_old.py:304
+#: Differences/differences.py:314
 msgid "Include items that are different"
 msgstr "Elemente die unterschiedlich sind aufnehmen"
 
-#: Differences/differences.py:319 Differences/differences_old.py:307
+#: Differences/differences.py:317
 msgid "Show items missing from file"
 msgstr "Zeige Elemente, die in der Datei fehlen"
 
-#: Differences/differences.py:320 Differences/differences_old.py:308
+#: Differences/differences.py:318
 msgid "Include items not in file but in database"
 msgstr ""
 "Elemente die sich nicht in der Datei aber in der Datenbank befinden aufnehmen"
 
-#: Differences/differences.py:323 Differences/differences_old.py:311
+#: Differences/differences.py:321
 msgid "Show items added in file"
 msgstr "Zeige Elemente, die in der Datei hinzugefügt wurden"
 
-#: Differences/differences.py:324 Differences/differences_old.py:312
+#: Differences/differences.py:322
 msgid "Include items in file but not in database"
 msgstr ""
 "Elemente die sich  in der Datei aber nicht in der Datenbank befinden "
 "aufnehmen"
 
-#: Differences/differences.py:369 Differences/differences.py:371
-#: Differences/differences.py:374 Differences/differences.py:377
-#: Differences/differences_old.py:357 Differences/differences_old.py:359
-#: Differences/differences_old.py:362 Differences/differences_old.py:365
+#: Differences/differences.py:367 Differences/differences.py:369
+#: Differences/differences.py:372 Differences/differences.py:375
 msgid "Text"
 msgstr "Text"
 
