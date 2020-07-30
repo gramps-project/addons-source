@@ -1,83 +1,87 @@
-# Dutch translations for gramps package.
-# Copyright (C) 2013 THE gramps'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the gramps package.
-# erik_de_richter <frederik.de.richter@telenet.be>, 2013.
+# Dutch translation of addon ListeEclair.
+# Copyright (C) 2020 Gramps project
+# This file is distributed under the same license as the ListeEclair package.
+# Jan Sparreboom <jan@sparreboom.net>.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gramps 40_addons\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-29 17:30+0100\n"
-"PO-Revision-Date: 2013-01-29 17:30+0100\n"
-"Last-Translator: erik_de_richter <frederik.de.richter@telenet.be>\n"
-"Language-Team: Dutch\n"
+"Project-Id-Version: ListeEclair 5.x\n"
+"Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
+"POT-Creation-Date: 2020-04-22 11:04-0500\n"
+"PO-Revision-Date: 2020-07-30 22:28+0200\n"
+"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
+"Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.3\n"
 
-#: ListeEclair/ListeEclair.gpr.py:3 ListeEclair/ListeEclair.py:90
-#: ListeEclair/ListeEclair.py:95
+#: ListeEclair/ListeEclair.gpr.py:3 ListeEclair/ListeEclair.py:97
+#: ListeEclair/ListeEclair.py:104
 msgid "Liste Eclair"
-msgstr ""
+msgstr "Tiny Tafel"
 
 #: ListeEclair/ListeEclair.gpr.py:4
 msgid "Produit une liste eclair"
-msgstr ""
+msgstr "Produceert een tiny tafel"
 
-#: ListeEclair/ListeEclair.py:111
+#: ListeEclair/ListeEclair.py:97
 msgid "Generating report"
-msgstr ""
+msgstr "Verslag genereren"
 
-#: ListeEclair/ListeEclair.py:234
+#: ListeEclair/ListeEclair.py:253
 msgid "Report Options"
-msgstr ""
-
-#: ListeEclair/ListeEclair.py:240
-msgid "Select using filter"
-msgstr ""
-
-#: ListeEclair/ListeEclair.py:241
-msgid "Select places using a filter"
-msgstr ""
-
-#: ListeEclair/ListeEclair.py:248
-msgid "Select places individually"
-msgstr ""
-
-#: ListeEclair/ListeEclair.py:249
-msgid "List of places to report on"
-msgstr ""
-
-#: ListeEclair/ListeEclair.py:252
-msgid "Type de Liste"
-msgstr ""
-
-#: ListeEclair/ListeEclair.py:254
-msgid "Tiny Tafel"
-msgstr ""
-
-#: ListeEclair/ListeEclair.py:255
-msgid "cousingenweb"
-msgstr ""
-
-#: ListeEclair/ListeEclair.py:256
-msgid "Type de liste"
-msgstr ""
-
-#: ListeEclair/ListeEclair.py:259
-msgid "Include private data"
-msgstr ""
+msgstr "Verslagopties"
 
 #: ListeEclair/ListeEclair.py:260
+msgid "Select using filter"
+msgstr "Selecteer met behulp van filter"
+
+#: ListeEclair/ListeEclair.py:261
+msgid "Select places using a filter"
+msgstr "Selecteer locaties met een filter"
+
+#: ListeEclair/ListeEclair.py:266
+msgid "Entire Database"
+msgstr "Gehele database"
+
+#: ListeEclair/ListeEclair.py:273
+msgid "Select places individually"
+msgstr "Selecteer locaties afzonderlijk"
+
+#: ListeEclair/ListeEclair.py:274
+msgid "List of places to report on"
+msgstr "Locatielijst om over te rapporteren"
+
+#: ListeEclair/ListeEclair.py:277
+msgid "Type de Liste"
+msgstr "Lijsttype"
+
+#: ListeEclair/ListeEclair.py:279
+msgid "Tiny Tafel"
+msgstr "Tiny Tafel"
+
+#: ListeEclair/ListeEclair.py:280
+msgid "cousingenweb"
+msgstr "CousinGenWeb"
+
+#: ListeEclair/ListeEclair.py:281
+msgid "Type de liste"
+msgstr "Lijsttype"
+
+#: ListeEclair/ListeEclair.py:284
+msgid "Include private data"
+msgstr "Voeg privégegevens toe"
+
+#: ListeEclair/ListeEclair.py:285
 msgid "Whether to include private data"
-msgstr ""
+msgstr "Of privégegevens moeten worden opgenomen"
 
-#: ListeEclair/ListeEclair.py:276
+#: ListeEclair/ListeEclair.py:301
 msgid "The style used for the liste eclair."
-msgstr ""
+msgstr "De stijl die wordt gebruikt voor de tiny tafel."
 
-#: ListeEclair/ListeEclair.py:289
+#: ListeEclair/ListeEclair.py:314
 msgid "The style used for place title."
-msgstr ""
+msgstr "De stijl die wordt gebruikt voor de titel van de locatie."
