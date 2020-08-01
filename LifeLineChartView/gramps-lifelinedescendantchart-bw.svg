@@ -1,35 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Ebene_1" xmlns:ev="http://www.w3.org/2001/xml-events"
-	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="691px" height="644.933px"
-	 viewBox="-43.5 -44.334 691 644.933" enable-background="new -43.5 -44.334 691 644.933" xml:space="preserve">
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="48px" height="48px"
+	 viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
 <g>
-	<path fill="none" stroke="#FFFFFF" stroke-width="150" stroke-linecap="round" d="M461.411,402.103
-		c0-86.818,0-86.818-163.271-86.818"/>
-	<path fill="none" stroke="#FFFFFF" stroke-width="150" stroke-linecap="round" d="M298.141,315.283
-		c163.271,0,163.271,0,163.271-164.951"/>
-	<path fill="none" stroke="#FFFFFF" stroke-width="150" stroke-linecap="round" d="M134.871,395.107
-		c0-79.822,0-79.822,163.27-79.822"/>
-	<path fill="none" stroke="#FFFFFF" stroke-width="150" stroke-linecap="round" d="M298.141,315.283
-		c-163.27,0-163.27,0-163.27-234.02"/>
-	<path fill="none" stroke="#FFFFFF" stroke-width="150" stroke-linecap="round" d="M580,561.822c0-106.679,0-106.679-280-106.679"/>
-	<path fill="none" stroke="#FFFFFF" stroke-width="150" stroke-linecap="round" d="M300,455.143c280,0,280,0,280-170.979"/>
-	<path fill="none" stroke="#FFFFFF" stroke-width="150" stroke-linecap="round" d="M20,552.875c0-97.729,0-97.729,280-97.73"/>
-	<path fill="none" stroke="#FFFFFF" stroke-width="150" stroke-linecap="round" d="M300,455.142c-280,0.001-280,0.001-280-136.269"
-		/>
-	<path fill="none" stroke="#FFFFFF" stroke-width="150" stroke-linecap="round" d="M246.5,257.5V32"/>
-	<path fill="none" stroke="#FFFFFF" stroke-width="150" stroke-linecap="round" d="M356.5,225.5V0"/>
-</g>
-<g>
-	<path fill="none" stroke="#000000" stroke-width="31.2" d="M461.411,401.103c0-86.818,0-86.818-163.271-86.818"/>
-	<path fill="none" stroke="#000000" stroke-width="31.2" d="M298.141,314.283c163.271,0,163.271,0,163.271-164.951"/>
-	<path fill="none" stroke="#000000" stroke-width="31.2" d="M134.871,394.107c0-79.822,0-79.822,163.27-79.822"/>
-	<path fill="none" stroke="#000000" stroke-width="31.2" d="M298.141,314.283c-163.27,0-163.27,0-163.27-234.02"/>
-	<path fill="none" stroke="#000000" stroke-width="31.2" d="M580,560.822c0-106.679,0-106.679-280-106.679"/>
-	<path fill="none" stroke="#000000" stroke-width="31.2" d="M300,454.143c280,0,280,0,280-170.979"/>
-	<path fill="none" stroke="#000000" stroke-width="31.2" d="M20,551.875c0-97.729,0-97.729,280-97.73"/>
-	<path fill="none" stroke="#000000" stroke-width="31.2" d="M300,454.142c-280,0.001-280,0.001-280-136.269"/>
-	<path fill="none" stroke="#000000" stroke-width="31.2" d="M246.5,256.5V31"/>
-	<path fill="none" stroke="#000000" stroke-width="31.2" d="M356.5,224.5V-1"/>
+	<g>
+		<path fill="none" stroke="#FFFFFF" stroke-width="10.5" stroke-linecap="round" d="M35.299,32.518c0-6.076,0-6.076-11.429-6.076"
+			/>
+		<path fill="none" stroke="#FFFFFF" stroke-width="10.5" stroke-linecap="round" d="M23.871,26.441c11.43,0,11.43,0,11.43-11.547"
+			/>
+		<path fill="none" stroke="#FFFFFF" stroke-width="10.5" stroke-linecap="round" d="M12.442,32.029c0-5.588,0-5.588,11.429-5.588"
+			/>
+		<path fill="none" stroke="#FFFFFF" stroke-width="10.5" stroke-linecap="round" d="M23.871,26.441
+			c-11.429,0-11.429,0-11.429-16.381"/>
+		<path fill="none" stroke="#FFFFFF" stroke-width="10.5" stroke-linecap="round" d="M43.601,43.699c0-7.469,0-7.469-19.6-7.469"/>
+		<path fill="none" stroke="#FFFFFF" stroke-width="10.5" stroke-linecap="round" d="M24.001,36.23c19.6,0,19.6,0,19.6-11.969"/>
+		<path fill="none" stroke="#FFFFFF" stroke-width="10.5" stroke-linecap="round" d="M4.401,43.072c0-6.842,0-6.842,19.601-6.842"/>
+		<path fill="none" stroke="#FFFFFF" stroke-width="10.5" stroke-linecap="round" d="M24.001,36.23c-19.602,0-19.602,0-19.602-9.539
+			"/>
+		<path fill="none" stroke="#FFFFFF" stroke-width="10.5" stroke-linecap="round" d="M20.256,22.396V6.611"/>
+		<path fill="none" stroke="#FFFFFF" stroke-width="10.5" stroke-linecap="round" d="M27.956,20.156V4.371"/>
+	</g>
+	<g>
+		<path fill="none" stroke="#000000" stroke-width="2.184" d="M35.299,32.449c0-6.078,0-6.078-11.429-6.078"/>
+		<path fill="none" stroke="#000000" stroke-width="2.184" d="M23.871,26.371c11.43,0,11.43,0,11.43-11.547"/>
+		<path fill="none" stroke="#000000" stroke-width="2.184" d="M12.442,31.959c0-5.588,0-5.588,11.429-5.588"/>
+		<path fill="none" stroke="#000000" stroke-width="2.184" d="M23.871,26.371c-11.429,0-11.429,0-11.429-16.381"/>
+		<path fill="none" stroke="#000000" stroke-width="2.184" d="M43.601,43.629c0-7.467,0-7.467-19.6-7.467"/>
+		<path fill="none" stroke="#000000" stroke-width="2.184" d="M24.001,36.162c19.6,0,19.6,0,19.6-11.969"/>
+		<path fill="none" stroke="#000000" stroke-width="2.184" d="M4.401,43.002c0-6.84,0-6.84,19.601-6.84"/>
+		<path fill="none" stroke="#000000" stroke-width="2.184" d="M24.001,36.162c-19.6,0-19.6,0-19.6-9.539"/>
+		<path fill="none" stroke="#000000" stroke-width="2.184" d="M20.256,22.326V6.541"/>
+		<path fill="none" stroke="#000000" stroke-width="2.184" d="M27.956,20.086V4.301"/>
+	</g>
 </g>
 </svg>
