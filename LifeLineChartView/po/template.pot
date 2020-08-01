@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-22 10:02+0200\n"
+"POT-Creation-Date: 2020-08-01 21:21+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,104 +17,103 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: LifeLineChartView/lifelinechart.py:392
+#: LifeLineChartView/lifelinechart.py:451
 msgid "calculated"
 msgstr ""
 
-#: LifeLineChartView/lifelinechart.py:393
-#: LifeLineChartView/lifelinechart.py:394
-#: LifeLineChartView/lifelinechart.py:395
-#: LifeLineChartView/lifelinechart.py:396
-#: LifeLineChartView/lifelinechart.py:397
+#: LifeLineChartView/lifelinechart.py:452
+#: LifeLineChartView/lifelinechart.py:453
+#: LifeLineChartView/lifelinechart.py:454
+#: LifeLineChartView/lifelinechart.py:455
 msgid "estimated"
 msgstr ""
 
-#: LifeLineChartView/lifelinechart.py:399
+#: LifeLineChartView/lifelinechart.py:457
 msgid "about"
 msgstr ""
 
-#: LifeLineChartView/lifelinechart.py:400
+#: LifeLineChartView/lifelinechart.py:458
 msgid "before"
 msgstr ""
 
-#: LifeLineChartView/lifelinechart.py:401
+#: LifeLineChartView/lifelinechart.py:459
 msgid "after"
 msgstr ""
 
-#: LifeLineChartView/lifelinechart.py:2066
+#: LifeLineChartView/lifelinechart.py:2192
 msgid "Hide person"
 msgstr ""
 
-#: LifeLineChartView/lifelinechart.py:2072
+#: LifeLineChartView/lifelinechart.py:2198
 msgid "Show person"
 msgstr ""
 
-#: LifeLineChartView/lifelinechart.py:2097
+#: LifeLineChartView/lifelinechart.py:2223
 msgid "Show siblings"
 msgstr ""
 
-#: LifeLineChartView/lifelinechart.py:2102
+#: LifeLineChartView/lifelinechart.py:2228
 msgid "Hide siblings"
 msgstr ""
 
-#: LifeLineChartView/lifelinechart.py:2127
+#: LifeLineChartView/lifelinechart.py:2253
 msgid "Show ancestors above "
 msgstr ""
 
-#: LifeLineChartView/lifelinechart.py:2154
+#: LifeLineChartView/lifelinechart.py:2280
 msgid "_Edit"
 msgstr ""
 
-#: LifeLineChartView/lifelinechart.py:2162
+#: LifeLineChartView/lifelinechart.py:2288
 msgid "Edit family"
 msgstr ""
 
-#: LifeLineChartView/lifelinechart.py:2178
+#: LifeLineChartView/lifelinechart.py:2304
 msgid "Reorder families"
 msgstr ""
 
-#: LifeLineChartView/lifelinechart.py:2184
+#: LifeLineChartView/lifelinechart.py:2310
 msgid "_Copy"
 msgstr ""
 
-#: LifeLineChartView/lifelinechart.py:2194
+#: LifeLineChartView/lifelinechart.py:2320
 msgid "Spouses"
 msgstr ""
 
-#: LifeLineChartView/lifelinechart.py:2228
+#: LifeLineChartView/lifelinechart.py:2354
 msgid "Siblings"
 msgstr ""
 
-#: LifeLineChartView/lifelinechart.py:2294
+#: LifeLineChartView/lifelinechart.py:2420
 msgid "Children"
 msgstr ""
 
-#: LifeLineChartView/lifelinechart.py:2331
+#: LifeLineChartView/lifelinechart.py:2457
 msgid "Parents"
 msgstr ""
 
-#: LifeLineChartView/lifelinechart.py:2365
-#: LifeLineChartView/lifelinechart.py:2407
+#: LifeLineChartView/lifelinechart.py:2491
+#: LifeLineChartView/lifelinechart.py:2533
 msgid "_Add"
 msgstr ""
 
-#: LifeLineChartView/lifelinechart.py:2374
+#: LifeLineChartView/lifelinechart.py:2500
 msgid "Related"
 msgstr ""
 
-#: LifeLineChartView/lifelinechart.py:2414
+#: LifeLineChartView/lifelinechart.py:2540
 msgid "Add child to family"
 msgstr ""
 
-#: LifeLineChartView/lifelinechart.py:2422
+#: LifeLineChartView/lifelinechart.py:2548
 msgid "Add partner to person"
 msgstr ""
 
-#: LifeLineChartView/lifelinechart.py:2429
+#: LifeLineChartView/lifelinechart.py:2555
 msgid "Add a person"
 msgstr ""
 
-#: LifeLineChartView/lifelinechart.py:2519
+#: LifeLineChartView/lifelinechart.py:2645
 msgid "Add Child to Family"
 msgstr ""
 
@@ -148,114 +147,119 @@ msgstr ""
 msgid "The user chose to install the module."
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.gpr.py:191
 #: LifeLineChartView/lifelinechartview.gpr.py:198
+#, python-format
+msgid "Unable to open '%s' with curl"
+msgstr ""
+
+#: LifeLineChartView/lifelinechartview.gpr.py:209
+#: LifeLineChartView/lifelinechartview.gpr.py:216
 #, python-format
 msgid "Unable to open '%s'"
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.gpr.py:205
+#: LifeLineChartView/lifelinechartview.gpr.py:225
 #, python-format
 msgid "Error in reading '%s'"
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.gpr.py:216
+#: LifeLineChartView/lifelinechartview.gpr.py:240
 #, python-format
 msgid "Error: cannot open '%s'"
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.gpr.py:220
+#: LifeLineChartView/lifelinechartview.gpr.py:244
 #, python-format
 msgid "Error: unknown file type: '%s'"
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.gpr.py:274
+#: LifeLineChartView/lifelinechartview.gpr.py:298
 msgid "Life Line Ancestor Chart"
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.gpr.py:275
-#: LifeLineChartView/lifelinechartview.gpr.py:289
+#: LifeLineChartView/lifelinechartview.gpr.py:299
+#: LifeLineChartView/lifelinechartview.gpr.py:313
 msgid "Charts"
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.gpr.py:276
-#: LifeLineChartView/lifelinechartview.gpr.py:290
+#: LifeLineChartView/lifelinechartview.gpr.py:300
+#: LifeLineChartView/lifelinechartview.gpr.py:314
 msgid "Persons and their relation in a time based chart"
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.gpr.py:288
+#: LifeLineChartView/lifelinechartview.gpr.py:312
 msgid "Life Line Descendant Chart"
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.py:357
-#: LifeLineChartView/lifelinechartview.py:815
+#: LifeLineChartView/lifelinechartview.py:371
+#: LifeLineChartView/lifelinechartview.py:829
 msgid "General Layout"
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.py:370
+#: LifeLineChartView/lifelinechartview.py:384
 msgid "Life Line Chart"
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.py:463
+#: LifeLineChartView/lifelinechartview.py:477
 msgid "Zoom in"
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.py:464
-#: LifeLineChartView/lifelinechartview.py:465
-#: LifeLineChartView/lifelinechartview.py:474
-#: LifeLineChartView/lifelinechartview.py:475
+#: LifeLineChartView/lifelinechartview.py:478
+#: LifeLineChartView/lifelinechartview.py:479
+#: LifeLineChartView/lifelinechartview.py:488
+#: LifeLineChartView/lifelinechartview.py:489
 msgid "Ctrl"
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.py:465
-#: LifeLineChartView/lifelinechartview.py:475
+#: LifeLineChartView/lifelinechartview.py:479
+#: LifeLineChartView/lifelinechartview.py:489
 msgid "Mouse wheel"
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.py:473
+#: LifeLineChartView/lifelinechartview.py:487
 msgid "Zoom out"
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.py:482
+#: LifeLineChartView/lifelinechartview.py:496
 msgid "Zoom to original"
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.py:489
+#: LifeLineChartView/lifelinechartview.py:503
 msgid "Zoom to best fit"
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.py:496
+#: LifeLineChartView/lifelinechartview.py:510
 msgid "Rebuild data cache"
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.py:503
+#: LifeLineChartView/lifelinechartview.py:517
 msgid "Revert the placement and person selection"
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.py:519
+#: LifeLineChartView/lifelinechartview.py:533
 msgid "Open Life Line Chart help"
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.py:596
+#: LifeLineChartView/lifelinechartview.py:610
 msgid "Organize Bookmarks"
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.py:763
+#: LifeLineChartView/lifelinechartview.py:777
 msgid "Export View as SVG"
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.py:766
+#: LifeLineChartView/lifelinechartview.py:780
 msgid "_Cancel"
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.py:767
+#: LifeLineChartView/lifelinechartview.py:781
 msgid "_Save"
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.py:816
+#: LifeLineChartView/lifelinechartview.py:830
 msgid "Label Configuration"
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.py:861
+#: LifeLineChartView/lifelinechartview.py:887
 msgid "Reset all settings"
 msgstr ""
