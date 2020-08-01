@@ -181,7 +181,25 @@ class ModuleProvider:
         from io import StringIO, BytesIO
         global Zipfile_bugfix, inifile
         import tarfile
-        if (path.startswith("http://") or
+        import os
+
+        download_with_curl = os.name != 'nt'
+
+        if download_with_curl:
+            output_filepath = os.path.join(output_path, os.path.basename(path))
+            import subprocess
+            try:
+                exitCode = subprocess.Popen(
+                    ['curl', '-L', path, '--output', output_filepath]).wait()
+                if exitCode != 0:
+                    raise RuntimeError("curl call failed")
+            except Exception:
+                if callback:
+                    callback(_("Unable to open '%s' with curl") % path)
+                return False
+            path = output_filepath
+        if not download_with_curl and (
+            path.startswith("http://") or
             path.startswith("https://") or
             path.startswith("ftp://")):
             try:
@@ -192,10 +210,12 @@ class ModuleProvider:
                 return False
         else:
             try:
-                fp = open(path)
+                fp = open(path,'rb')
             except RuntimeWarning:
                 if callback:
                     callback(_("Unable to open '%s'") % path)
+                if download_with_curl:
+                    os.remove(path)
                 return False
         try:
             content = fp.read()
@@ -203,8 +223,12 @@ class ModuleProvider:
         except RuntimeWarning:
             if callback:
                 callback(_("Error in reading '%s'") % path)
+            if download_with_curl:
+                os.remove(path)
             return False
         fp.close()
+        if download_with_curl:
+            os.remove(path)
         # file_obj is either Zipfile or TarFile
         if path.endswith(".zip") or path.endswith(".ZIP"):
             file_obj = Zipfile_bugfix(buffer)
