@@ -983,7 +983,7 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
                 self.view_position_limit_to_bounds()
                 self.queue_draw_wrapper()
             else:
-                print(str(event.get_scroll_deltas()))
+                #print(str(event.get_scroll_deltas()))
                 if event.direction == Gdk.ScrollDirection.UP:
                     self.upper_left_view_position = (self.upper_left_view_position[0], self.upper_left_view_position[1] - 50)
                 elif event.direction == Gdk.ScrollDirection.DOWN:
