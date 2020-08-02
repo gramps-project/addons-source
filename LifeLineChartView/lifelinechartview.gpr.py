@@ -39,17 +39,19 @@ sects = inifile.get_sections()
 import importlib
 
 
-spec = importlib.util.spec_from_file_location(
-    'ModuleProvider',
-    os.path.join(
+module_provider_file = os.path.join(
         USER_PLUGINS,
         'LifeLineChartView',
         'ModuleProvider.py')
-    )
-module = importlib.util.module_from_spec(spec)
-sys.modules[spec.name] = module
-spec.loader.exec_module(module)
-ModuleProvider = module.ModuleProvider
+if os.path.isfile(module_provider_file):
+    spec = importlib.util.spec_from_file_location(
+        'ModuleProvider',
+        module_provider_file
+        )
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    ModuleProvider = module.ModuleProvider
 
 life_line_chart_version_required = (1, 6, 1)
 life_line_chart_version_required_str = '.'.join([str(i) for i in life_line_chart_version_required])
