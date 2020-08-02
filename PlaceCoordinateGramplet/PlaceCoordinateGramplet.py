@@ -1,6 +1,6 @@
 # Gramps - a GTK+/GNOME based genealogy program
 #
-# Copyright (C) 2015       Christian Schulze
+# Copyright (C) 2020 Christian Schulze
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -26,9 +26,17 @@ import os
 import ctypes
 import locale
 from gi.repository import Gtk
-import gi
-gi.require_version('GeocodeGlib', '1.0')
-from gi.repository import GeocodeGlib
+use_geopy = True
+if use_geopy:
+    from geopy.geocoders import Nominatim
+    STR_CITY_CONFIG = ['town', 'county', 'state', 'country']
+    STR_ADDRESS_CONFIG = ['house_number', 'road', 'suburb', 'town', 'county', 'state', 'country']
+else:
+    import gi
+    gi.require_version('GeocodeGlib', '1.0')
+    from gi.repository import GeocodeGlib
+    STR_CITY_CONFIG = ['town', 'county', 'state', 'country']
+    STR_ADDRESS_CONFIG = ['building', 'street', 'area', 'town', 'county', 'state', 'country']
 
 #------------------------------------------------------------------------
 #
@@ -54,12 +62,20 @@ def generate_address_string(location_information, entries=[
         'building', 'street', 'area', 'town', 'county', 'state', 'country']):
     name = []
     entries_temp = entries.copy() # dont remove items from static default argument!
-    if('building' in entries_temp and 'building' in location_information and
-       'street' in entries_temp and 'street' in location_information):
+    if ('building' in entries_temp and 'building' in location_information and
+        'street' in entries_temp and 'street' in location_information):
+        # geocodeglib
         entries_temp.remove('building')
         entries_temp.remove('street')
         name.append(location_information['street'] +
                     ' ' + location_information['building'])
+    elif ('house_number' in entries_temp and 'house_number' in location_information and
+        'road' in entries_temp and 'road' in location_information):
+        # geopy
+        entries_temp.remove('house_number')
+        entries_temp.remove('road')
+        name.append(location_information['road'] +
+                    ' ' + location_information['house_number'])
     if('county' in entries_temp and 'county' in location_information and
        'town' in entries_temp and 'town' in location_information):
         if location_information['town'] in location_information['county']:
@@ -174,32 +190,49 @@ class PlaceCoordinateGramplet(Gramplet):
         # lat = config.get("geography.center-lat")
         # lon = config.get("geography.center-lon")
         # self.osm.grab_focus()
-        try:
-            location_ = GeocodeGlib.Forward.new_for_string(
-                self.entry_name.get_text())
-            try:
-                result = location_.search()
+        if use_geopy:
+            geolocator = Nominatim(user_agent="GrampsPlaceCoordinateGramplet")
+            try :
+                location = geolocator.geocode(self.entry_name.get_text())
+                if location:
+                    self.entry_lat.set_text("%.10f" % location.latitude)
+                    self.entry_long.set_text("%.10f" % location.longitude)
+                    self.entry_foundName.set_text(location.address)
+                else:
+                    self.entry_foundName.set_text(
+                        _("The place was not found. "
+                        "You may clarify the search keywords."))
             except:
-                result = None
-            if result:
-                result = result[0]  # use the first result
-                location_information = dict((p.name, result.get_property(
-                    p.name)) for p in result.list_properties()
-                    if result.get_property(p.name))
-                geo_loc = location_information['location']
+                self.entry_foundName.set_text(
+                    _("Failed to search for the coordinates due to "
+                    "some unexpected error"))
+        else:
+            try:
+                location_ = GeocodeGlib.Forward.new_for_string(
+                    self.entry_name.get_text())
+                try:
+                    result = location_.search()
+                except:
+                    result = None
+                if result:
+                    result = result[0]  # use the first result
+                    location_information = dict((p.name, result.get_property(
+                        p.name)) for p in result.list_properties()
+                        if result.get_property(p.name))
+                    geo_loc = location_information['location']
 
-                self.entry_lat.set_text("%.10f" % geo_loc.get_latitude())
-                self.entry_long.set_text("%.10f" % geo_loc.get_longitude())
+                    self.entry_lat.set_text("%.10f" % geo_loc.get_latitude())
+                    self.entry_long.set_text("%.10f" % geo_loc.get_longitude())
+                    self.entry_foundName.set_text(
+                        generate_address_string(location_information, STR_ADDRESS_CONFIG))
+                else:
+                    self.entry_foundName.set_text(
+                        _("The place was not found. "
+                        "You may clarify the search keywords."))
+            except:
                 self.entry_foundName.set_text(
-                    generate_address_string(location_information))
-            else:
-                self.entry_foundName.set_text(
-                    _("The place was not found. "
-                      "You may clarify the search keywords."))
-        except:
-            self.entry_foundName.set_text(
-                _("Failed to search for the coordinates due to "
-                  "some unexpected error"))
+                    _("Failed to search for the coordinates due to "
+                    "some unexpected error"))
 
     def on_fromMapButton_clicked(self, widget):
         latitude = config.get("geography.center-lat")
