@@ -63,9 +63,18 @@ from gramps.gui.editors import EditPlace
 from gramps.gui.selectors.selectplace import SelectPlace
 from gramps.gui.filters.sidebar import PlaceSidebarFilter
 from gramps.gui.views.navigationview import NavigationView
-import gi
-gi.require_version('GeocodeGlib', '1.0')
-from gi.repository import GeocodeGlib
+use_geopy = True
+if use_geopy:
+    from geopy.geocoders import Nominatim
+    STR_CITY_CONFIG = ['town', 'county', 'state', 'country']
+    STR_ADDRESS_CONFIG = ['house_number', 'road', 'suburb', 'town', 'county', 'state', 'country']
+else:
+    import gi
+    gi.require_version('GeocodeGlib', '1.0')
+    from gi.repository import GeocodeGlib
+    STR_CITY_CONFIG = ['town', 'county', 'state', 'country']
+    STR_ADDRESS_CONFIG = ['building', 'street', 'area', 'town', 'county', 'state', 'country']
+
 from PlaceCoordinateGramplet import generate_address_string
 
 #-------------------------------------------------------------------------
@@ -662,7 +671,7 @@ class PlaceCoordinateGeoView(GeoGraphyView):
                     self.plc_custom_color[str(
                         place.get_type())] = color.lower()
 
-    def __add_place(self, menu, plat, plon, entries=['town', 'county', 'state', 'country']):
+    def __add_place(self, menu, plat, plon, entries):
         """
         Add a new place using longitude and latitude of location centered
         on the map
@@ -670,28 +679,46 @@ class PlaceCoordinateGeoView(GeoGraphyView):
         new_place = Place()
         new_place.set_latitude(str(plat))
         new_place.set_longitude(str(plon))
-        try:
-            loc = GeocodeGlib.Location.new(plat, plon, 0)
-            obj = GeocodeGlib.Reverse.new_for_location(loc)
+        if use_geopy:
+            geolocator = Nominatim(user_agent="GrampsPlaceCoordinateGramplet")
+            try :
+                location = geolocator.reverse(str(plat)+", "+str(plon))
+                if location is None:
+                    raise RuntimeError("Place not found")
+                location_information = location._raw['address']
+            except Exception:
+                pass
+
             try:
-                result = GeocodeGlib.Reverse.resolve(obj)
+                name = generate_address_string(location_information, entries)
+                placename = PlaceName()
+                placename.set_value(name)
+                new_place.set_name(placename)
             except:
                 pass
-            #new_place.set_code(result.get_)
-            location_information = dict((p.name, result.get_property(
-                p.name)) for p in result.list_properties() if result.get_property(p.name))
+        else:
+            try:
+                loc = GeocodeGlib.Location.new(plat, plon, 0)
+                obj = GeocodeGlib.Reverse.new_for_location(loc)
+                try:
+                    result = GeocodeGlib.Reverse.resolve(obj)
+                except:
+                    pass
+                #new_place.set_code(result.get_)
+                location_information = dict((p.name, result.get_property(
+                    p.name)) for p in result.list_properties() if result.get_property(p.name))
 
-            new_place.set_code(location_information['postal-code'])
-        except:
-            pass
-        try:
-            name = generate_address_string(location_information, entries)
-            placename = PlaceName()
-            placename.set_value(name)
-            new_place.set_name(placename)
+                new_place.set_code(location_information['postal-code'])
+            except:
+                pass
+            try:
+                name = generate_address_string(location_information, entries)
+                placename = PlaceName()
+                placename.set_value(name)
+                new_place.set_name(placename)
+            except:
+                pass
 
-        except:
-            pass
         try:
             EditPlace(self.dbstate, self.uistate, [], new_place)
             self.add_marker(None, None, plat, plon, None, True, 0)
@@ -743,13 +770,28 @@ class PlaceCoordinateGeoView(GeoGraphyView):
         menu.append(add_item)
 
         add_item = Gtk.MenuItem(label=_("Add city as place"))
-        add_item.connect("activate", self.__add_place, lat, lon)
+        add_item.connect("activate",
+            lambda menu, plat, plon: self.__add_place(
+                menu,
+                plat,
+                plon,
+                STR_CITY_CONFIG
+                ),
+            lat,
+            lon)
         add_item.show()
         menu.append(add_item)
 
         add_item = Gtk.MenuItem(label=_("Add addess as place"))
-        add_item.connect("activate", lambda menu, plat, plon: self.__add_place(menu, plat, plon, [
-                         'building', 'street', 'area', 'town', 'county', 'state', 'country']), lat, lon)
+        add_item.connect("activate",
+            lambda menu, plat, plon: self.__add_place(
+                menu,
+                plat,
+                plon,
+                STR_ADDRESS_CONFIG
+                ),
+            lat,
+            lon)
         add_item.show()
         menu.append(add_item)
 
