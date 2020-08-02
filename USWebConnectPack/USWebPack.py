@@ -48,6 +48,7 @@ WEBSITES = [
     ["Person", "Mocavo", _("Mocavo"), '''http://www.mocavo.com/search?q="%(surname)s,+%(given)s"'''],
     ["Person", "Hathi Trust Digital Library", _("Hathi Trust Digital Library"), "http://babel.hathitrust.org/cgi/ls?q1=%(surname)s+%(given)s+&lmt=ft&a=srchls"],
     ["Person", "Open Library", _("Open Library"), "http://openlibrary.org/search?q=%(surname)s, %(given)s"],
+    ["Person", "Legacy Obits", _("Legacy.com"), "https://www.legacy.com/search?countryId=366899&countryUrl=united-states-of-america&dateRange=All&firstName=%(given)s&lastName=%(surname)s"],
     ]
 
 def load_on_reg(dbstate, uistate, pdata):

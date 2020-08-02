@@ -84,9 +84,19 @@ from gramps.gen.utils.db import (get_birth_or_fallback, get_death_or_fallback,
 from gramps.gui.ddtargets import DdTargets
 from gramps.gui.display import display_url
 from gramps.gen.const import IMAGE_DIR
+
+#------------------------------------------------------------------------
+#
+# Internationalisation
+#
+#------------------------------------------------------------------------
 from gramps.gen.const import GRAMPS_LOCALE as glocale
-_ = glocale.translation.sgettext
-ngettext = glocale.translation.ngettext # else "nearby" comments are ignored
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.gettext
+
 
 _LOG = logging.getLogger("plugin.relview")
 

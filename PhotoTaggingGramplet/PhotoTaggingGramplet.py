@@ -61,6 +61,7 @@ from gramps.gen.plug.menu import BooleanOption, NumberOption
 from gramps.gui.plug import PluginWindows
 from gramps.gui.widgets import SelectionWidget, Region
 from gramps.gui.ddtargets import DdTargets
+from gramps.gui.display import display_url
 
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
@@ -95,6 +96,10 @@ MIN_FACE_SIZE = CONFIG.get("detection.box_size")
 REPLACE_WITHOUT_ASKING = CONFIG.get("selection.replace_without_asking")
 DETECT_INSIDE_EXISTING_BOXES = CONFIG.get("detection.inside_existing_boxes")
 SENSITIVITY = CONFIG.get("detection.sensitivity")
+
+# translators: you can link here to localized wiki page (if exists)
+WIKI_URL = _("https://www.gramps-project.org/wiki/index.php/"
+             "Photo_Tagging_Gramplet")
 
 def save_config():
     CONFIG.set("detection.box_size", MIN_FACE_SIZE)
@@ -242,6 +247,7 @@ class PhotoTaggingGramplet(Gramplet):
             img.set_from_file(face_detect_icon)
             self.button_detect.set_icon_widget(img)
         self.button_settings = Gtk.ToolButton(Gtk.STOCK_PREFERENCES)
+        self.button_help = Gtk.ToolButton(Gtk.STOCK_HELP)
 
         self.button_index.connect("clicked", self.sel_person_clicked)
         self.button_add.connect("clicked", self.add_person_clicked)
@@ -252,6 +258,7 @@ class PhotoTaggingGramplet(Gramplet):
         self.button_zoom_out.connect("clicked", self.zoom_out_clicked)
         self.button_detect.connect("clicked", self.detect_faces_clicked)
         self.button_settings.connect("clicked", self.settings_clicked)
+        self.button_help.connect("clicked", self.on_help_clicked)
 
         button_panel.pack_start(self.button_index,
                                 expand=False, fill=False, padding=5)
@@ -271,6 +278,8 @@ class PhotoTaggingGramplet(Gramplet):
                                 expand=False, fill=False, padding=5)
         button_panel.pack_start(self.button_settings,
                                 expand=False, fill=False, padding=5)
+        button_panel.pack_start(self.button_help,
+                                expand=False, fill=False, padding=5)
 
         self.button_index.set_tooltip_text(_("Select Person"))
         self.button_add.set_tooltip_text(_("Add Person"))
@@ -287,6 +296,7 @@ class PhotoTaggingGramplet(Gramplet):
         self.button_detect.set_tooltip_text(text)
 
         self.button_settings.set_tooltip_text(_("Settings"))
+        self.button_help.set_tooltip_text(_("Help"))
 
         self.top.pack_start(button_panel, expand=False, fill=True, padding=5)
 
@@ -382,6 +392,12 @@ class PhotoTaggingGramplet(Gramplet):
         self.enable_buttons()
 
         return self.top
+
+    def on_help_clicked(self, widget):
+        """
+        Display the relevant portion of Gramps manual.
+        """
+        display_url(WIKI_URL)
 
     def drag_data_received(self, widget, context, x, y,
                            sel_data, info, time, on_image=None):

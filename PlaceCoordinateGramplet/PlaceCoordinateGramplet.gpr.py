@@ -28,7 +28,7 @@ register(GRAMPLET,
          name=_("Place Coordinates"),
          description=_(
              "Gramplet that simplifies setting the coordinates of a place"),
-         version = '1.1.1',
+         version = '1.1.2',
          gramps_target_version="5.1",
          status=STABLE,
          fname="PlaceCoordinateGramplet.py",

@@ -24,7 +24,7 @@ register(RULE,
   name = _("Mitochondrial inheritance of <person>"),
   description = _("Matches recorded descendants of person following "
                   "mitochondrial inheritance patterns."),
-  version = '1.0.1',
+  version = '1.0.2',
   authors = ["Matthias Kemmer"],
   authors_email = ["matt.familienforschung@gmail.com"],
   gramps_target_version = '5.1',

@@ -43,6 +43,7 @@ from io import StringIO
 from threading import Thread
 from math import sqrt, pow
 from html import escape
+from collections import abc
 import gi
 from gi.repository import Gtk, Gdk, GdkPixbuf, GLib, Pango
 
@@ -79,6 +80,10 @@ from gramps.gui.views.tags import OrganizeTagsDialog
 from gramps.gui.widgets import progressdialog as progressdlg
 from gramps.gui.widgets.menuitem import add_menuitem
 from gramps.gen.utils.symbols import Symbols
+
+from gramps.gui.pluginmanager import GuiPluginManager
+from gramps.gen.plug import CATEGORY_QR_PERSON, CATEGORY_QR_FAMILY
+from gramps.gui.plug.quick import run_report
 
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
@@ -3641,8 +3646,85 @@ class PopupMenu(Gtk.Menu):
                 add_menuitem(self, _('Add to bookmarks'), [handle, person],
                              self.actions.add_to_bookmarks)
 
+            # QuickReports and WebConnect section
             self.add_separator()
+            q_exists = self.add_quickreport_submenu(CATEGORY_QR_PERSON, handle)
+            w_exists = self.add_web_connect_submenu(handle)
+
+            if q_exists or w_exists:
+                self.add_separator()
             self.append_help_menu_entry()
+
+    def add_quickreport_submenu(self, category, handle):
+        """
+        Adds Quick Reports menu.
+        """
+        def make_quick_report_callback(pdata, category, dbstate, uistate,
+                                       handle, track=[]):
+            return lambda x: run_report(dbstate, uistate, category, handle,
+                                        pdata, track=track)
+
+        # select the reports to show
+        showlst = []
+        pmgr = GuiPluginManager.get_instance()
+        for pdata in pmgr.get_reg_quick_reports():
+            if pdata.supported and pdata.category == category:
+                showlst.append(pdata)
+
+        showlst.sort(key=lambda x: x.name)
+        if showlst:
+            menu_item, quick_menu = self.add_submenu(_("Quick View"))
+            for pdata in showlst:
+                callback = make_quick_report_callback(
+                    pdata, category, self.view.dbstate, self.view.uistate,
+                    handle)
+                self.add_menuitem(quick_menu, pdata.name, callback)
+            return True
+        return False
+
+    def add_web_connect_submenu(self, handle):
+        """
+        Adds Web Connect menu if some installed.
+        """
+        def flatten(L):
+            """
+            Flattens a possibly nested list. Removes None results, too.
+            """
+            retval = []
+            if isinstance(L, (list, tuple)):
+                for item in L:
+                    fitem = flatten(item)
+                    if fitem is not None:
+                        retval.extend(fitem)
+            elif L is not None:
+                retval.append(L)
+            return retval
+
+        # select the web connects to show
+        pmgr = GuiPluginManager.get_instance()
+        plugins = pmgr.process_plugin_data('WebConnect')
+
+        nav_group = self.view.navigation_type()
+
+        try:
+            connections = [plug(nav_group) if isinstance(plug, abc.Callable) else
+                           plug for plug in plugins]
+        except BaseException:
+            import traceback
+            traceback.print_exc()
+            connections = []
+
+        connections = flatten(connections)
+        connections.sort(key=lambda plug: plug.name)
+        if connections:
+            menu_item, web_menu = self.add_submenu(_("Web Connection"))
+
+            for connect in connections:
+                callback = connect(self.view.dbstate, self.view.uistate,
+                                   nav_group, handle)
+                self.add_menuitem(web_menu, connect.name, callback)
+            return True
+        return False
 
     def family_menu(self, handle):
         """
@@ -3692,7 +3774,12 @@ class PopupMenu(Gtk.Menu):
 
             self.add_children_submenu(family=family)
 
+            # QuickReports section
             self.add_separator()
+            q_exists = self.add_quickreport_submenu(CATEGORY_QR_FAMILY, handle)
+
+            if q_exists:
+                self.add_separator()
             self.append_help_menu_entry()
 
     def add_children_submenu(self, person=None, family=None):

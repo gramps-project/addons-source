@@ -1,0 +1,78 @@
+# Dutch translation of Gramps addon FamilyRelationshipTool
+# Copyright (C) 2020 Gramps project
+# This file is distributed under the same license as the FamilyRelationshipTool package.
+# Jan Sparreboom <jan@sparreboom.net>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: FamilyRelationshipTool 5.1.x\n"
+"Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
+"POT-Creation-Date: 2020-05-10 18:31+0200\n"
+"PO-Revision-Date: 2020-05-10 18:57+0200\n"
+"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
+"Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.6\n"
+
+#: FamilyRelationshipTool/FamilyRelationshipTool.gpr.py:24
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:76
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:91
+msgid "Family Relationship Tool"
+msgstr "Familierelaties hulpmiddel"
+
+#: FamilyRelationshipTool/FamilyRelationshipTool.gpr.py:25
+msgid "Mass-edit the family relationship type for a group of families."
+msgstr "Het in bulk bewerken van het familierelatie type voor een groep families."
+
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:51
+msgid "Family Filter"
+msgstr "Familiefilter"
+
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:52
+msgid ""
+"Choose the set of families to process.\n"
+"Create custom filters if empty."
+msgstr ""
+"Kies de families die verwerkt moeten worden.\n"
+"Maak aangepaste filters als ze leeg zijn."
+
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:55
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:63
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:80
+msgid "Options"
+msgstr "Opties"
+
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:58
+msgid "Relationship Type"
+msgstr "Soort relatie"
+
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:59
+msgid ""
+"Choose the new family relationship type.\n"
+"Custom relationship types aren't supported."
+msgstr ""
+"Kies het nieuwe type gezinsrelatie.\n"
+"Aangepaste relatietypen worden niet ondersteund."
+
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:61
+msgid "Married"
+msgstr "Getrouwd"
+
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:61
+msgid "Unmarried"
+msgstr "Ongetrouwd"
+
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:62
+msgid "Civil Union"
+msgstr "Geregistreerd samenwonen"
+
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:62
+msgid "Unknown"
+msgstr "Onbekend"
+
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:95
+msgid "Process relationships..."
+msgstr "Relaties verwerken..."

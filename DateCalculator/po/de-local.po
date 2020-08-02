@@ -8,21 +8,21 @@
 # Sebastian Vöcking <voeck@web.de>, 2005.
 # Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
 # Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020.
 # Alois Pöttker <alois.poettker@gmx.de>, 2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-18 22:20+0200\n"
-"PO-Revision-Date: 2018-04-18 22:36+0100\n"
+"POT-Creation-Date: 2020-07-27 18:06+0200\n"
+"PO-Revision-Date: 2020-07-27 18:08+0200\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 2.0\n"
+"X-Generator: Lokalize 19.12.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: DateCalculator/DateCalculator.gpr.py:21
@@ -34,40 +34,40 @@ msgstr "Datums Rechner"
 msgid "Useful for date math calculations"
 msgstr "Nützlich für mathematische Datumsberechnungen"
 
-#: DateCalculator/DateCalculator.py:63
+#: DateCalculator/DateCalculator.py:76
 msgid "Expression 1"
 msgstr "Ausdruck 1"
 
-#: DateCalculator/DateCalculator.py:64
+#: DateCalculator/DateCalculator.py:77
 msgid "Expression 2"
 msgstr "Ausdruck 2"
 
-#: DateCalculator/DateCalculator.py:65
+#: DateCalculator/DateCalculator.py:78
 msgid "Result"
 msgstr "Ergebnis"
 
-#: DateCalculator/DateCalculator.py:68
+#: DateCalculator/DateCalculator.py:81
 msgid "Calculate"
 msgstr "Berechnen"
 
-#: DateCalculator/DateCalculator.py:71
+#: DateCalculator/DateCalculator.py:84
 msgid "Clear"
 msgstr "Löschen"
 
-#: DateCalculator/DateCalculator.py:118
+#: DateCalculator/DateCalculator.py:131
 msgid "Error: invalid entry for expression 1"
 msgstr "Fehler: Ungültige Eingabe für Ausdruck 1"
 
-#: DateCalculator/DateCalculator.py:128
+#: DateCalculator/DateCalculator.py:141
 msgid "Error: invalid entry for expression 2"
 msgstr "Fehler: Ungültige Eingabe für Ausdruck 2"
 
-#: DateCalculator/DateCalculator.py:153 DateCalculator/DateCalculator.py:155
-#: DateCalculator/DateCalculator.py:163 DateCalculator/DateCalculator.py:165
+#: DateCalculator/DateCalculator.py:166 DateCalculator/DateCalculator.py:168
+#: DateCalculator/DateCalculator.py:176 DateCalculator/DateCalculator.py:178
 msgid "Error: at least one expression must be a date"
 msgstr "Fehler: Mindestens ein Ausdruck muss ein Datum sein"
 
-#: DateCalculator/DateCalculator.py:171
+#: DateCalculator/DateCalculator.py:184
 msgid ""
 "Enter an expression in the entries above and click Calculate.\n"
 "\n"
@@ -79,7 +79,7 @@ msgid ""
 "\n"
 "Note that at least one expression must be a date."
 msgstr ""
-"Gebe einen Ausdruck in die oberen FElder ein und klicke auf Berechnen.\n"
+"Gebe einen Ausdruck in die oberen Felder ein und klicke auf Berechnen.\n"
 "\n"
 "Ein Ausdruck kann sein:\n"
 "\n"
@@ -88,4 +88,3 @@ msgstr ""
 "3. ein positives oder negatives Tupel, das (Jahre, Monate, Tage) darstellt\n"
 "\n"
 "Beachte das mindestens ein Ausdruck ein Datum sein muss."
-
