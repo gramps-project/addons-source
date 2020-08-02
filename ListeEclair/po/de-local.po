@@ -8,25 +8,25 @@
 # Sebastian Vöcking <voeck@web.de>, 2005.
 # Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
 # Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020.
 # Alois Pöttker <alois.poettker@gmx.de>, 2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-26 20:00+0200\n"
-"PO-Revision-Date: 2018-04-26 20:21+0100\n"
+"POT-Creation-Date: 2020-08-02 22:23+0200\n"
+"PO-Revision-Date: 2020-08-02 22:29+0200\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 2.0\n"
+"X-Generator: Lokalize 19.12.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ListeEclair/ListeEclair.gpr.py:3 ListeEclair/ListeEclair.py:95
-#: ListeEclair/ListeEclair.py:100
+#: ListeEclair/ListeEclair.gpr.py:3 ListeEclair/ListeEclair.py:97
+#: ListeEclair/ListeEclair.py:104
 msgid "Liste Eclair"
 msgstr "Blitz Liste"
 
@@ -34,59 +34,62 @@ msgstr "Blitz Liste"
 msgid "Produit une liste eclair"
 msgstr "Erstellt eine Blitz Liste"
 
-#: ListeEclair/ListeEclair.py:116
+#: ListeEclair/ListeEclair.py:97
 msgid "Generating report"
 msgstr "Erstelle Bericht"
 
-#: ListeEclair/ListeEclair.py:243
+#: ListeEclair/ListeEclair.py:253
 msgid "Report Options"
 msgstr "Berichtsoptionen"
 
-#: ListeEclair/ListeEclair.py:249
+#: ListeEclair/ListeEclair.py:260
 msgid "Select using filter"
-msgstr "Unter Verwendung vom Filter wählen"
+msgstr "Mit Filter auswählen"
 
-#: ListeEclair/ListeEclair.py:250
+#: ListeEclair/ListeEclair.py:261
 msgid "Select places using a filter"
 msgstr "Ort unter Verwendung vom Filter wählen"
 
-#: ListeEclair/ListeEclair.py:257
+#: ListeEclair/ListeEclair.py:266
+msgid "Entire Database"
+msgstr "Gesamte Datenbank"
+
+#: ListeEclair/ListeEclair.py:273
 msgid "Select places individually"
 msgstr "Orte einzeln wählen"
 
-#: ListeEclair/ListeEclair.py:258
+#: ListeEclair/ListeEclair.py:274
 msgid "List of places to report on"
 msgstr "Liste der Orte für den Bericht"
 
-#: ListeEclair/ListeEclair.py:261
+#: ListeEclair/ListeEclair.py:277
 msgid "Type de Liste"
 msgstr "Art der Liste"
 
-#: ListeEclair/ListeEclair.py:263
+#: ListeEclair/ListeEclair.py:279
 msgid "Tiny Tafel"
 msgstr "Tiny Tafel"
 
-#: ListeEclair/ListeEclair.py:264
+#: ListeEclair/ListeEclair.py:280
 msgid "cousingenweb"
 msgstr ""
 
-#: ListeEclair/ListeEclair.py:265
+#: ListeEclair/ListeEclair.py:281
 msgid "Type de liste"
 msgstr "Art der Liste"
 
-#: ListeEclair/ListeEclair.py:268
+#: ListeEclair/ListeEclair.py:284
 msgid "Include private data"
 msgstr "Vertrauliche Daten aufnehmen"
 
-#: ListeEclair/ListeEclair.py:269
+#: ListeEclair/ListeEclair.py:285
 msgid "Whether to include private data"
 msgstr "Legt fest, ob vertrauliche Daten aufgenommen werden."
 
-#: ListeEclair/ListeEclair.py:285
+#: ListeEclair/ListeEclair.py:301
 msgid "The style used for the liste eclair."
-msgstr "Der Stil, der für die Liste Eclair verwendet wird."
+msgstr "Der Stil, der für die Blitz Liste verwendet wird."
 
-#: ListeEclair/ListeEclair.py:298
+#: ListeEclair/ListeEclair.py:314
 msgid "The style used for place title."
 msgstr "Der Stil, der für den Ortstitel verwendet wird."
-
