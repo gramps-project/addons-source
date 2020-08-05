@@ -8,21 +8,21 @@
 # Sebastian Vöcking <voeck@web.de>, 2005.
 # Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
 # Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020.
 # Alois Pöttker <alois.poettker@gmx.de>, 2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-02 21:19+0200\n"
-"PO-Revision-Date: 2018-05-02 21:21+0100\n"
+"POT-Creation-Date: 2020-08-05 20:15+0200\n"
+"PO-Revision-Date: 2020-08-05 20:19+0200\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 2.0\n"
+"X-Generator: Lokalize 19.12.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: PlaceCompletion/PlaceCompletion.gpr.py:25
@@ -200,7 +200,7 @@ msgstr "Ort, PLZ, Land"
 
 #: PlaceCompletion/PlaceCompletion.py:1147
 msgid "City[(Street;Locality;Parish)],PostalCode,Country"
-msgstr "Stadty[(Straße;Lokalität;Gemeinde)],PLZ,Land"
+msgstr "Stadt[(Straße;Lokalität;Gemeinde)],PLZ,Land"
 
 #: PlaceCompletion/PlaceCompletion.py:1149
 msgid "TitleStart [, City] [, State]"
@@ -262,91 +262,91 @@ msgstr "Alle Orte"
 msgid "No Latitude/Longitude given"
 msgstr "Kein Längen/Breitengrad angegeben"
 
-#: PlaceCompletion/placecompletion.glade.h:1
+#: PlaceCompletion/placecompletion.glade:85
 msgid "_Google Maps"
 msgstr "_Google Maps"
 
-#: PlaceCompletion/placecompletion.glade.h:2
+#: PlaceCompletion/placecompletion.glade:112
 msgid "Apply all suggested changes"
 msgstr "Übernimm alle vorgeschlagenen Änderungen"
 
-#: PlaceCompletion/placecompletion.glade.h:3
+#: PlaceCompletion/placecompletion.glade:148
 msgid "Selection of the Places you want to complete:"
 msgstr "Auswahl der Orte die du vervollständigen willst:"
 
-#: PlaceCompletion/placecompletion.glade.h:4
+#: PlaceCompletion/placecompletion.glade:178
 msgid "C_ity:"
 msgstr "_Stadt:"
 
-#: PlaceCompletion/placecompletion.glade.h:5
+#: PlaceCompletion/placecompletion.glade:195
 msgid "Parish:"
 msgstr "Gemeinde:"
 
-#: PlaceCompletion/placecompletion.glade.h:6
+#: PlaceCompletion/placecompletion.glade:240
 msgid "County:"
 msgstr "Kreis:"
 
-#: PlaceCompletion/placecompletion.glade.h:7
+#: PlaceCompletion/placecompletion.glade:271
 msgid "Place _filter:"
 msgstr "Orte_filter:"
 
-#: PlaceCompletion/placecompletion.glade.h:8
+#: PlaceCompletion/placecompletion.glade:321
 msgid "State:"
 msgstr "Bundesland:"
 
-#: PlaceCompletion/placecompletion.glade.h:9
+#: PlaceCompletion/placecompletion.glade:336
 msgid "Count_ry:"
 msgstr "_Land:"
 
-#: PlaceCompletion/placecompletion.glade.h:10
+#: PlaceCompletion/placecompletion.glade:366
 msgid "C_enter latitude:"
 msgstr "Längengrad  z_entrieren:"
 
-#: PlaceCompletion/placecompletion.glade.h:11
+#: PlaceCompletion/placecompletion.glade:383
 msgid "Center longitude:"
 msgstr "Längengrad zentrieren:"
 
-#: PlaceCompletion/placecompletion.glade.h:12
+#: PlaceCompletion/placecompletion.glade:430
 msgid "Places in a rectangle:"
 msgstr "Orte in einem Rechteck:"
 
-#: PlaceCompletion/placecompletion.glade.h:13
+#: PlaceCompletion/placecompletion.glade:443
 msgid "Width:"
 msgstr "Breite:"
 
-#: PlaceCompletion/placecompletion.glade.h:14
+#: PlaceCompletion/placecompletion.glade:460
 msgid "Height:"
 msgstr "Höhe:"
 
-#: PlaceCompletion/placecompletion.glade.h:15
+#: PlaceCompletion/placecompletion.glade:527
 msgid "1. Look up latitude and longitude:"
 msgstr "1. Suchen von Breiten und Längengrad:"
 
-#: PlaceCompletion/placecompletion.glade.h:16
+#: PlaceCompletion/placecompletion.glade:554
 msgid "Search in:"
 msgstr "Suche in:"
 
-#: PlaceCompletion/placecompletion.glade.h:17
+#: PlaceCompletion/placecompletion.glade:566
 msgid "Select A File"
 msgstr "Wähle eine Datei"
 
-#: PlaceCompletion/placecompletion.glade.h:18
+#: PlaceCompletion/placecompletion.glade:579
 msgid "Parse as:"
 msgstr "Analysieren als:"
 
-#: PlaceCompletion/placecompletion.glade.h:19
+#: PlaceCompletion/placecompletion.glade:619
 msgid "2. Conversion of existing title or position:"
 msgstr "2. Umwandlung des bestehenden Titels oder Position:"
 
-#: PlaceCompletion/placecompletion.glade.h:20
+#: PlaceCompletion/placecompletion.glade:649
 msgid "Change title into:"
 msgstr "Ändere Titel in:"
 
-#: PlaceCompletion/placecompletion.glade.h:21
+#: PlaceCompletion/placecompletion.glade:664
 msgid "Convert lat/lon as:"
 msgstr "Konvertiere Länge/Breite nach:"
 
-#: PlaceCompletion/placecompletion.glade.h:22
+#: PlaceCompletion/placecompletion.glade:701
 msgid ""
 "Or define a simple\n"
 "title format:"
@@ -354,7 +354,7 @@ msgstr ""
 "Oder definiere ein einfaches\n"
 "Titelformat:"
 
-#: PlaceCompletion/placecompletion.glade.h:24
+#: PlaceCompletion/placecompletion.glade:730
 msgid ""
 "Available variables: city, street, locality, parish, county, state, country, "
 "postal_code"
@@ -362,7 +362,7 @@ msgstr ""
 "Verfügbare Variablen: Stadt, Straße, Lokalität, Gemeinde, Kreis, Staat, "
 "Land, PLZ"
 
-#: PlaceCompletion/placecompletion.glade.h:25
+#: PlaceCompletion/placecompletion.glade:820
 msgid ""
 "Delete to delete a row, Double-click on the row to edit place with changes "
 "pre-entered, \n"
