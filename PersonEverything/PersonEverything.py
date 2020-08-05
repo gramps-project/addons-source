@@ -8,6 +8,7 @@
 # Copyright (C) 2010       Jakim Friant
 # Copyright (C) 2011       Matt Keenan (matt.keenan@gmail.com)
 # Copyright (C) 2011-2014  Tim G L Lyons
+# Copyright (C) 2020       Jan Sparreboom (jan@sparreboom.net)
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -165,7 +166,7 @@ class PersonEverythingReport(Report):
         return display_num
 
     def print_person_details(self, level, obj):
-        self.print_header(level, "Person", obj.get_gramps_id(),
+        self.print_header(level, _("Person"), obj.get_gramps_id(),
                           _("Gender"), gender[obj.get_gender()],
                           obj.get_privacy(), ref=obj)
 
@@ -192,10 +193,10 @@ class PersonEverythingReport(Report):
             text = ''
             if event.get_type() == gramps.gen.lib.EventType.BIRTH and \
                 self.center_person.get_birth_ref() == event_ref:
-                text = " This is the primary birth event."
+                text = _(" This is the primary birth event.")
             if event.get_type() == gramps.gen.lib.EventType.DEATH and \
                 self.center_person.get_death_ref() == event_ref:
-                text = " This is the primary death event."
+                text = _(" This is the primary death event.")
             self.print_header(level, _("Event reference") + "." + text,
                               type_desc=_("Role"),
                               obj_type=str(event_ref.get_role()))
@@ -236,9 +237,9 @@ class PersonEverythingReport(Report):
             family = self.database.get_family_from_handle(family_handle)
             self.print_family_summary(level, family, _("Parent Family"))
             self.doc.start_paragraph("PE-Level%d" % min(level+1, 32))
-            self.doc.write_text("Details of any children and events etc. "
+            self.doc.write_text(_("Details of any children and events etc. "
                                 "would be in a similar report for the "
-                                "father or mother.")
+                                "father or mother."))
             self.doc.end_paragraph()
 
             self.print_object(level+1, family)
