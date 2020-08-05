@@ -14,15 +14,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-03 22:23+0200\n"
-"PO-Revision-Date: 2020-08-03 22:42+0200\n"
-"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
+"POT-Creation-Date: 2020-08-05 13:20+0200\n"
+"PO-Revision-Date: 2020-08-05 14:12+0200\n"
+"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 19.12.3\n"
+"X-Generator: Poedit 2.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: PersonEverything/PersonEverything.gpr.py:31
@@ -55,6 +55,10 @@ msgstr "Familien"
 msgid "Endnotes"
 msgstr "Endnoten"
 
+#: PersonEverything//PersonEverything.py:169
+msgid "Person"
+msgstr "Person"
+
 #: PersonEverything/PersonEverything.py:169
 msgid "Gender"
 msgstr "Geschlecht"
@@ -74,6 +78,14 @@ msgstr "Art"
 #: PersonEverything/PersonEverything.py:179
 msgid "Alternate name"
 msgstr "Alternative Name"
+
+#: PersonEverything//PersonEverything.py:196
+msgid " This is the primary birth event."
+msgstr " Dies ist das primäre Geburtsereignis."
+
+#: PersonEverything//PersonEverything.py:199
+msgid " This is the primary death event."
+msgstr " Dies ist das primäre Todesereignis."
 
 #: PersonEverything/PersonEverything.py:199
 msgid "Event reference"
@@ -102,6 +114,14 @@ msgstr "Beziehung zur Mutter"
 #: PersonEverything/PersonEverything.py:237
 msgid "Parent Family"
 msgstr "Eltern Familie"
+
+#: PersonEverything//PersonEverything.py:240
+msgid ""
+"Details of any children and events etc. would be in a similar report for the "
+"father or mother."
+msgstr ""
+"Einzelheiten zu Kindern, Ereignissen usw. sind in einem ähnlichen Bericht "
+"für den Vater oder die Mutter enthalten."
 
 #: PersonEverything/PersonEverything.py:248
 msgid "Relationship"
@@ -257,9 +277,10 @@ msgstr "Alternative Name"
 msgid "Latitude, Longitude"
 msgstr "Breitengrad, Längengrad"
 
-#: PersonEverything/PersonEverything.py:639
+#: PersonEverything//PersonEverything.py:640
+#: PersonEverything//PersonEverything_old.py:639
 msgid "Call number"
-msgstr "Standortnummer/Signatur:"
+msgstr "Standortnummer/Signatur"
 
 #: PersonEverything/PersonEverything.py:646
 msgid "Repository"
@@ -338,9 +359,10 @@ msgstr "Namensformat"
 msgid "Default"
 msgstr "Vorgabe"
 
-#: PersonEverything/PersonEverything.py:1013
+#: PersonEverything//PersonEverything.py:1014
+#: PersonEverything//PersonEverything_old.py:1013
 msgid "Select the format to display names"
-msgstr "Wähle das Format zum Anzeigen von Namen."
+msgstr "Wähle das Format zum Anzeigen von Namen"
 
 #: PersonEverything/PersonEverything.py:1027
 msgid "The style used for the title of the page."
@@ -354,3 +376,4 @@ msgstr "Der Stil, der für Anzeigen der Stufe %d verwendet wird."
 #: PersonEverything/PersonEverything.py:1059
 msgid "The basic style used for the endnotes source display."
 msgstr "Der grundlegende Stil für die Anzeige der Endnotenquelle."
+
