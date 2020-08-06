@@ -8,175 +8,172 @@
 # Sebastian Vöcking <voeck@web.de>, 2005.
 # Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
 # Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020.
 # Alois Pöttker <alois.poettker@gmx.de>, 2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-03 10:29+0200\n"
-"PO-Revision-Date: 2018-05-03 11:08+0100\n"
+"POT-Creation-Date: 2020-08-06 22:37+0200\n"
+"PO-Revision-Date: 2020-08-06 22:42+0200\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 2.0\n"
+"X-Generator: Lokalize 19.12.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: QuiltView/QuiltView.gpr.py:34
+#: QuiltView/QuiltView.gpr.py:30
 msgid "Quilt Chart"
-msgstr "Quilt Diagramm"
+msgstr "Steppdeckendiagramm"
 
-#: QuiltView/QuiltView.gpr.py:35
+#: QuiltView/QuiltView.gpr.py:31
 msgid "Charts"
 msgstr "Schaubilder"
 
-#: QuiltView/QuiltView.gpr.py:36
+#: QuiltView/QuiltView.gpr.py:32
 msgid "The view shows a quilt chart visualisation of a family tree"
-msgstr "Die Ansicht zeigt eine Quilt-Diagramm-Visualisierung eines Stammbaums"
+msgstr ""
+"Die Ansicht zeigt eine Steppdecken-Diagramm-Visualisierung eines Stammbaums"
 
-#: QuiltView/QuiltView.py:211
+#: QuiltView/QuiltView.py:223
 msgid "Quilt chart"
-msgstr "Quilt Diagramm"
+msgstr "Steppdeckendiagramm"
 
-#: QuiltView/QuiltView.py:288
+#: QuiltView/QuiltView.py:307
 msgid "Select the name for which you want to see."
 msgstr "Wähle den Namen, den du sehen möchtest."
 
-#: QuiltView/QuiltView.py:293
+#: QuiltView/QuiltView.py:312
 msgid "Clear"
 msgstr "Löschen"
 
-#: QuiltView/QuiltView.py:295
+#: QuiltView/QuiltView.py:314
 msgid "Clear the entry field in the name selection box."
 msgstr "Löscht das Eingabefeld in der Namensauswahlbox."
 
-#: QuiltView/QuiltView.py:300
+#: QuiltView/QuiltView.py:319
 msgid "Nothing is selected"
 msgstr "Nichts ist ausgewählt"
 
-#: QuiltView/QuiltView.py:358
-msgid "Person Filter Editor"
-msgstr "Filtereditor für Personen"
+#: QuiltView/QuiltView.py:375
+msgid "Organize Bookmarks"
+msgstr "Lesezeichen organisieren"
 
-#: QuiltView/QuiltView.py:360
-msgid "Print the entire tree"
-msgstr "Druckt den gesamten Baum"
-
-#: QuiltView/QuiltView.py:435
+#: QuiltView/QuiltView.py:572
 #, python-format
 msgid ""
 "You have %(filter)d filtered people, %(count)d people shown on the tree and "
 "%(total)d people in your database."
 msgstr ""
-"Du hast %(filter)d gefilterte Personen, %(count)d Personen werden im Baum"
-" gezeigt und %(total)d Personen sind in deiner Datenbank."
+"Du hast %(filter)d gefilterte Personen, %(count)d Personen werden im Baum "
+"gezeigt und %(total)d Personen sind in deiner Datenbank."
 
-#: QuiltView/QuiltView.py:464
+#: QuiltView/QuiltView.py:602
 msgid "Could Not Set a Bookmark"
 msgstr "Das Lesezeichen konnte nicht gesetzt werden"
 
-#: QuiltView/QuiltView.py:465
+#: QuiltView/QuiltView.py:603
 msgid "A bookmark could not be set because no one was selected."
 msgstr ""
 "Das Lesezeichen konnte nicht gesetzt werden, da niemand ausgewählt war."
 
-#: QuiltView/QuiltView.py:525
+#: QuiltView/QuiltView.py:662
 msgid "Loading individuals"
 msgstr "Lade Personen"
 
-#: QuiltView/QuiltView.py:526
+#: QuiltView/QuiltView.py:663
 msgid "Loading the data"
 msgstr "Lade die Daten"
 
-#: QuiltView/QuiltView.py:902
+#: QuiltView/QuiltView.py:1053
 msgid "About Quilt View"
-msgstr "Über Quilt Ansicht"
+msgstr "Über Steppdeckenansicht"
 
-#: QuiltView/QuiltView.py:972
+#: QuiltView/QuiltView.py:1123
 #, python-format
 msgid "Family of %(husband)s and %(spouse)s"
 msgstr "Familie von %(husband)s und %(spouse)s"
 
-#: QuiltView/QuiltView.py:978 QuiltView/QuiltView.py:982
+#: QuiltView/QuiltView.py:1129 QuiltView/QuiltView.py:1133
 #, python-format
 msgid "Family of %s"
 msgstr "Familie von %s"
 
-#: QuiltView/QuiltView.py:1037 QuiltView/QuiltView.py:1166
+#: QuiltView/QuiltView.py:1188 QuiltView/QuiltView.py:1317
 msgid "Edit"
 msgstr "Bearbeiten"
 
-#: QuiltView/QuiltView.py:1040 QuiltView/QuiltView.py:1169
+#: QuiltView/QuiltView.py:1191 QuiltView/QuiltView.py:1320
 msgid "Edit tags"
 msgstr "Markierungen bearbeiten"
 
-#: QuiltView/QuiltView.py:1056 QuiltView/QuiltView.py:1381
+#: QuiltView/QuiltView.py:1207 QuiltView/QuiltView.py:1532
 msgid "Children"
 msgstr "Kinder"
 
-#: QuiltView/QuiltView.py:1069 QuiltView/QuiltView.py:1394
+#: QuiltView/QuiltView.py:1220 QuiltView/QuiltView.py:1545
 msgid "Add child to family"
 msgstr "Füge ein Kind zur Familie hinzu"
 
-#: QuiltView/QuiltView.py:1139
+#: QuiltView/QuiltView.py:1290
 msgid "Add Child to Family"
 msgstr "Kind zur Familie hinzufügen"
 
-#: QuiltView/QuiltView.py:1172
+#: QuiltView/QuiltView.py:1323
 msgid "_Copy"
 msgstr "_Kopieren"
 
-#: QuiltView/QuiltView.py:1182
+#: QuiltView/QuiltView.py:1333
 msgid "Spouses"
 msgstr "(Ehe-)Partner"
 
-#: QuiltView/QuiltView.py:1187 QuiltView/QuiltView.py:1312
+#: QuiltView/QuiltView.py:1338 QuiltView/QuiltView.py:1463
 msgid "Add"
 msgstr "Hinzufügen"
 
-#: QuiltView/QuiltView.py:1211
+#: QuiltView/QuiltView.py:1362
 msgid "Siblings"
 msgstr "Geschwister"
 
-#: QuiltView/QuiltView.py:1279
+#: QuiltView/QuiltView.py:1430
 msgid "Parents"
 msgstr "Eltern"
 
-#: QuiltView/QuiltView.py:1318
+#: QuiltView/QuiltView.py:1469
 msgid "Related"
 msgstr "Verknüpft"
 
-#: QuiltView/QuiltView.py:1349
+#: QuiltView/QuiltView.py:1500
 msgid "Set as home person"
 msgstr "Als Hauptperson setzen"
 
-#: QuiltView/QuiltView.py:1499
+#: QuiltView/QuiltView.py:1650
 msgid "Adding Tags"
 msgstr "Markierungen hinzufügen"
 
-#: QuiltView/QuiltView.py:1505
+#: QuiltView/QuiltView.py:1656
 #, python-format
 msgid "Adding Tags to person (%s)"
 msgstr "Markierungen zu Person (%s) hinzufügen"
 
-#: QuiltView/QuiltView.py:1510
+#: QuiltView/QuiltView.py:1661
 #, python-format
 msgid "Adding Tags to family (%s)"
 msgstr "Markierungen zu Familie (%s) hinzufügen"
 
-#: QuiltView/QuiltView.py:1710
+#: QuiltView/QuiltView.py:1865
 msgid "Printing the tree"
 msgstr "Drucke den Baum"
 
-#: QuiltView/QuiltView.py:1714
+#: QuiltView/QuiltView.py:1869
 #, python-format
 msgid "Need to print %(pages)s pages (%(format)s format)"
 msgstr "Es müssen %(pages)s Seiten (%(format)s format) gedruckt werden"
 
-#: QuiltView/QuiltView.py:1766
+#: QuiltView/QuiltView.py:1921
 msgid ""
 "Center on the selected person.\n"
 "The new position of the person will be near the top left corner."
@@ -184,19 +181,24 @@ msgstr ""
 "Die ausgewählte Person zentrieren.\n"
 "Die neue Position der Person wird in der Nähe der oberen linken Ecke sein."
 
-#: QuiltView/QuiltView.py:1771
+#: QuiltView/QuiltView.py:1926
 msgid "The path color"
 msgstr "Die Pfadfarbe"
 
-#: QuiltView/QuiltView.py:1776
+#: QuiltView/QuiltView.py:1931
 msgid "The selected person color"
 msgstr "Die Farbe der gewählten Person"
 
-#: QuiltView/QuiltView.py:1781
+#: QuiltView/QuiltView.py:1936
 msgid "The path transparency"
 msgstr "Die Pfadtransparenz"
 
-#: QuiltView/QuiltView.py:1784
+#: QuiltView/QuiltView.py:1939
 msgid "General options"
 msgstr "Allgemeine Optionen"
 
+#~ msgid "Person Filter Editor"
+#~ msgstr "Filtereditor für Personen"
+
+#~ msgid "Print the entire tree"
+#~ msgstr "Druckt den gesamten Baum"
