@@ -8,22 +8,21 @@
 # Sebastian Vöcking <voeck@web.de>, 2005.
 # Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
 # Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020.
 # Alois Pöttker <alois.poettker@gmx.de>, 2017.
-# Milo Ivir <mail@milotype.de>, 2019.
 msgid ""
 msgstr ""
-"Project-Id-Version: Gramps 5.x\n"
+"Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-18 11:36-0500\n"
-"PO-Revision-Date: 2019-10-24 15:25+0200\n"
-"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"POT-Creation-Date: 2020-08-06 18:32+0200\n"
+"PO-Revision-Date: 2020-08-06 18:41+0200\n"
+"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Lokalize 19.12.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: PluginManager/PluginManager.gpr.py:29
@@ -49,7 +48,7 @@ msgid ""
 "the addon filename to be included in the search.\n"
 "Word case and order is ignored."
 msgstr ""
-"Geben Sie Suchbegriffe ein, um die Zusatzmodule zu filtern.\n"
+"Gib Suchbegriffe ein, um die Zusatzmodule zu filtern.\n"
 "Alle Wörter müssen irgendwo in der Zeile oder dem Dateinamen\n"
 "des Zusatzmoduls vorhanden sein, um sie in die Suche mit einzubeziehen.\n"
 "Groß-/Kleinschreibung und Reihenfolge werden ignoriert."
@@ -78,7 +77,7 @@ msgstr "Neustart …"
 msgid ""
 "Please Restart Gramps so that your addon changes can be safely completed."
 msgstr ""
-"Bitte starten Sie Gramps neu, um sicherzustellen, dass Ihre Änderungen an "
+"Bitte starte Gramps neu, um sicherzustellen, dass Ihre Änderungen an "
 "den Zusatzmodulen erkannt werden."
 
 #: PluginManager/PluginManager.py:284
@@ -186,19 +185,19 @@ msgstr "Lade"
 
 #: PluginManager/PluginManager.py:494
 msgid "Show hidden items"
-msgstr "Zeige versteckte Gegenstände"
+msgstr "Zeige versteckte Elemente"
 
 #: PluginManager/PluginManager.py:502
 msgid "Show Built-in items"
-msgstr "Show Eingebaute Gegenstände"
+msgstr "Show Eingebaute Elemente"
 
 #: PluginManager/PluginManager.py:509
 msgid "* indicates 3rd party addon"
-msgstr "* Die Ware wird von Dritten versendet"
+msgstr "* zeigt das Erweiterung eines Drittanbieters an"
 
 #: PluginManager/PluginManager.py:514
 msgid "Plugins"
-msgstr "Zusatzmodul"
+msgstr "Zusatzmodule"
 
 #: PluginManager/PluginManager.py:584
 msgid "Unhide"
@@ -223,8 +222,10 @@ msgid ""
 "3rd party addons are not shown until the addons update list is downloaded.  "
 "Would you like to check for updated addons now?"
 msgstr ""
-"Drittanbieter-Addons werden nicht angezeigt, bis die Addons-Update-Liste "
-"heruntergeladen wird.  Möchten Sie jetzt nach aktualisierten Addons suchen?"
+"Drittanbieter-Erweiterungen werden nicht angezeigt, bis die"
+" Erweiterungen-Aktualisierung-Liste "
+"heruntergeladen wurde.  Möchtest du jetzt nach aktualisierten Erweiterungen"
+" suchen?"
 
 #: PluginManager/PluginManager.py:631
 msgid "Yes"
@@ -248,7 +249,7 @@ msgstr "*Installiert"
 
 #: PluginManager/PluginManager.py:704
 msgid "Update Available"
-msgstr "Neufassung Verfügbar"
+msgstr "Aktualisierung Verfügbar"
 
 #: PluginManager/PluginManager.py:733
 #, python-format
@@ -257,7 +258,7 @@ msgstr "%(str1)s: %(str2)s"
 
 #: PluginManager/PluginManager.py:733
 msgid "Detailed Info"
-msgstr "Detaillierte Information"
+msgstr "Detaillierte Informationen"
 
 #: PluginManager/PluginManager.py:832
 msgid "Updated"
