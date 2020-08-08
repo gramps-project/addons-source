@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-25 08:32-0600\n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,18 +21,18 @@ msgstr ""
 msgid "Collection of Web sites for the Netherlands (requires libwebconnect)"
 msgstr ""
 
-#: NLWebConnectPack/NLWebPack.py:33
+#: NLWebConnectPack/NLWebPack.py:34
 msgid "Open Archives"
 msgstr ""
 
-#: NLWebConnectPack/NLWebPack.py:34
+#: NLWebConnectPack/NLWebPack.py:35
 msgid "Genealogy Online"
 msgstr ""
 
-#: NLWebConnectPack/NLWebPack.py:35
+#: NLWebConnectPack/NLWebPack.py:36
 msgid "National Archive"
 msgstr ""
 
-#: NLWebConnectPack/NLWebPack.py:37
+#: NLWebConnectPack/NLWebPack.py:38
 msgid "Who (re)searches who?"
 msgstr ""

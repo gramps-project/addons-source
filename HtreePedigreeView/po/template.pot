@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-22 15:51-0500\n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,124 +31,124 @@ msgid ""
 "person"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:83
+#: HtreePedigreeView/HtreePedigreeView.py:93
 msgid "short for born|b."
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:84
+#: HtreePedigreeView/HtreePedigreeView.py:94
 msgid "short for died|d."
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:85
+#: HtreePedigreeView/HtreePedigreeView.py:95
 msgid "short for baptized|bap."
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:86
+#: HtreePedigreeView/HtreePedigreeView.py:96
 msgid "short for christened|chr."
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:87
+#: HtreePedigreeView/HtreePedigreeView.py:97
 msgid "short for buried|bur."
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:88
+#: HtreePedigreeView/HtreePedigreeView.py:98
 msgid "short for cremated|crem."
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:533
+#: HtreePedigreeView/HtreePedigreeView.py:543
 msgid "H-tree Pedigree View"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:681
+#: HtreePedigreeView/HtreePedigreeView.py:691
 msgid "Organize Bookmarks"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:1585
+#: HtreePedigreeView/HtreePedigreeView.py:1595
 msgid "Relationship loop detected"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:1586
+#: HtreePedigreeView/HtreePedigreeView.py:1596
 msgid "A person was found to be his/her own ancestor."
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:1630
+#: HtreePedigreeView/HtreePedigreeView.py:1640
 msgid "Pre_vious"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:1631
+#: HtreePedigreeView/HtreePedigreeView.py:1641
 msgid "_Next"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:1632
+#: HtreePedigreeView/HtreePedigreeView.py:1642
 msgid "_Home"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:1654
+#: HtreePedigreeView/HtreePedigreeView.py:1664
 msgid "Mouse scroll direction"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:1658
+#: HtreePedigreeView/HtreePedigreeView.py:1668
 msgid "Top <-> Bottom"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:1665
+#: HtreePedigreeView/HtreePedigreeView.py:1675
 msgid "Left <-> Right"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:1683
+#: HtreePedigreeView/HtreePedigreeView.py:1693
 msgid "About H-Tree"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:1694
+#: HtreePedigreeView/HtreePedigreeView.py:1704
 msgid "_Add"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:1729
-#: HtreePedigreeView/HtreePedigreeView.py:1957
+#: HtreePedigreeView/HtreePedigreeView.py:1739
+#: HtreePedigreeView/HtreePedigreeView.py:1967
 msgid "_Edit"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:1734
-#: HtreePedigreeView/HtreePedigreeView.py:1962
+#: HtreePedigreeView/HtreePedigreeView.py:1744
+#: HtreePedigreeView/HtreePedigreeView.py:1972
 msgid "_Copy"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:1744
+#: HtreePedigreeView/HtreePedigreeView.py:1754
 msgid "Spouses"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:1778
+#: HtreePedigreeView/HtreePedigreeView.py:1788
 msgid "Siblings"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:1820
+#: HtreePedigreeView/HtreePedigreeView.py:1830
 msgid "Children"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:1857
+#: HtreePedigreeView/HtreePedigreeView.py:1867
 msgid "Parents"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:1894
+#: HtreePedigreeView/HtreePedigreeView.py:1904
 msgid "Add New Parents..."
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:1905
+#: HtreePedigreeView/HtreePedigreeView.py:1915
 msgid "Related"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:2089
+#: HtreePedigreeView/HtreePedigreeView.py:2099
 msgid "Show images"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:2098
+#: HtreePedigreeView/HtreePedigreeView.py:2108
 msgid "Show tags"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:2115
+#: HtreePedigreeView/HtreePedigreeView.py:2125
 msgid "Tree size"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:2119
+#: HtreePedigreeView/HtreePedigreeView.py:2129
 msgid "Layout"
 msgstr ""

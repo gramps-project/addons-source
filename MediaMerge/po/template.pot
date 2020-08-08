@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,35 +18,35 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: MediaMerge/mediamerge.gpr.py:32
+#: MediaMerge/mediamerge.gpr.py:31
 msgid "Merge Media"
 msgstr ""
 
-#: MediaMerge/mediamerge.gpr.py:33
+#: MediaMerge/mediamerge.gpr.py:32
 msgid ""
 "Searches the entire database, looking for media that have the same path and "
 "merges them."
 msgstr ""
 
-#: MediaMerge/mediamerge.py:95
+#: MediaMerge/mediamerge.py:104
 msgid "Media Merge"
 msgstr ""
 
-#: MediaMerge/mediamerge.py:140
+#: MediaMerge/mediamerge.py:149
 #, python-brace-format
 msgid "{number_of} media merged"
 msgid_plural "{number_of} media merged"
 msgstr[0] ""
 msgstr[1] ""
 
-#: MediaMerge/mediamerge.py:144
+#: MediaMerge/mediamerge.py:153
 msgid "Number of merges done"
 msgstr ""
 
-#: MediaMerge/mediamerge.py:147
+#: MediaMerge/mediamerge.py:156
 msgid "No modifications made"
 msgstr ""
 
-#: MediaMerge/mediamerge.py:148
+#: MediaMerge/mediamerge.py:157
 msgid "No media items merged."
 msgstr ""

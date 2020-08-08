@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-25 10:02-0500\n"
+"POT-Creation-Date: 2020-08-08 17:10-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,73 +25,73 @@ msgstr ""
 msgid "Attempts to extract city and state/province from a place title"
 msgstr ""
 
-#: ExtractCity/extractcity.py:68
+#: ExtractCity/extractcity.py:79
 msgid "United States of America"
 msgstr ""
 
-#: ExtractCity/extractcity.py:68
+#: ExtractCity/extractcity.py:79
 msgid "Canada"
 msgstr ""
 
-#: ExtractCity/extractcity.py:68
+#: ExtractCity/extractcity.py:79
 msgid "France"
 msgstr ""
 
-#: ExtractCity/extractcity.py:68
+#: ExtractCity/extractcity.py:79
 msgid "Sweden"
 msgstr ""
 
-#: ExtractCity/extractcity.py:391
+#: ExtractCity/extractcity.py:402
 msgid "Place title"
 msgstr ""
 
-#: ExtractCity/extractcity.py:392
+#: ExtractCity/extractcity.py:403
 msgid "City"
 msgstr ""
 
-#: ExtractCity/extractcity.py:393
+#: ExtractCity/extractcity.py:404
 msgid "State"
 msgstr ""
 
-#: ExtractCity/extractcity.py:394
+#: ExtractCity/extractcity.py:405
 msgid "ZIP/Postal Code"
 msgstr ""
 
-#: ExtractCity/extractcity.py:395
+#: ExtractCity/extractcity.py:406
 msgid "Country"
 msgstr ""
 
-#: ExtractCity/extractcity.py:426 ExtractCity/extractcity.py:630
+#: ExtractCity/extractcity.py:437 ExtractCity/extractcity.py:641
 msgid "Extract Place data"
 msgstr ""
 
-#: ExtractCity/extractcity.py:443
+#: ExtractCity/extractcity.py:454
 msgid "Checking Place Titles"
 msgstr ""
 
-#: ExtractCity/extractcity.py:445
+#: ExtractCity/extractcity.py:456
 msgid "Looking for place fields"
 msgstr ""
 
-#: ExtractCity/extractcity.py:531
+#: ExtractCity/extractcity.py:542
 msgid "No modifications made"
 msgstr ""
 
-#: ExtractCity/extractcity.py:532
+#: ExtractCity/extractcity.py:543
 msgid "No place information could be extracted."
 msgstr ""
 
-#: ExtractCity/extractcity.py:553
+#: ExtractCity/extractcity.py:564
 msgid ""
 "Below is a list of Places with the possible data that can be extracted from "
 "the place title. Select the places you wish Gramps to convert."
 msgstr ""
 
-#: ExtractCity/extractcity.py:564
+#: ExtractCity/extractcity.py:575
 msgid "Select"
 msgstr ""
 
-#: ExtractCity/extractcity.py:580
+#: ExtractCity/extractcity.py:591
 msgid "Building display"
 msgstr ""
 
