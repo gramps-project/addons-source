@@ -26,9 +26,8 @@
 #------------------------------------------------------------------------
 
 from gi import Repository
-from gramps.gen.const import GRAMPS_LOCALE as glocale
+
 #from gramps.gen.plug._pluginreg import register, VIEW, STABLE #, END, START
-_ = glocale.translation.gettext
 
 if locals().get('uistate'):  # don't start GUI if in CLI mode, just ignore
     from gi.repository import Gtk, GdkPixbuf
