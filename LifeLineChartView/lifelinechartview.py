@@ -423,7 +423,6 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
                 self.positioning[key] = self._config.get(
                     'interface.lifelineview-'+key)
         self.root_individual['generations'] = self._config.get('interface.lifelineview-generations')
-        self.fonttype = scg('interface.lifelineview-font_name')
         self.showid = scg('interface.lifelineview-showid')
 
     def font_changed(self):
@@ -870,7 +869,12 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
                     except ValueError:
                         additional_args['setactive'] = 0
                 else:
-                    additional_args['setactive'] = 0
+                    container = getattr(self, settings['data_container'])
+                    value = str(container[entry_name])
+                    try:
+                        additional_args['setactive'] = [index for index, name in self.allfonts if name == value][0]
+                    except:
+                        additional_args['setactive'] = 0
             constant = 'interface.lifelineview-' + entry_name
             item = function_mapping[settings['widget']](
                 grid, _(settings['description']),
