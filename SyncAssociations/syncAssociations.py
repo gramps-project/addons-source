@@ -89,8 +89,7 @@ class syncAssociations(ManagedWindow):
 
     def main(self):
         pass
-            
-    
+
 #------------------------------------------------------------------------
 #
 # RemoveSpacesOptions
