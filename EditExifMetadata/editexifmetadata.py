@@ -310,7 +310,7 @@ class EditExifMetadata(Gramplet):
         event_box = Gtk.EventBox()
         new_hbox.pack_start(event_box, expand=False, fill=False, padding=0)
         event_box.show()
-        
+
         button = self.__create_button("Thumbnail", [self.thumbnail_view], )
         event_box.add(button)
 
