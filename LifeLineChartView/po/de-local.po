@@ -14,8 +14,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-02 22:14+0200\n"
-"PO-Revision-Date: 2020-08-02 22:17+0200\n"
+"POT-Creation-Date: 2020-08-09 10:56+0200\n"
+"PO-Revision-Date: 2020-07-23 20:24+0200\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -125,7 +125,7 @@ msgstr "Eine Person hinzufügen"
 msgid "Add Child to Family"
 msgstr "Kind zur Familie hinzufügen"
 
-#: LifeLineChartView/lifelinechartview.gpr.py:145
+#: LifeLineChartView/lifelinechartview.gpr.py:149
 #, python-brace-format
 msgid ""
 "Failed to load the required module {module_name} version {module_version}."
@@ -133,76 +133,76 @@ msgstr ""
 "Das benötigte Modul {module_name} in Version {module_version} konnte nicht "
 "geladen werden."
 
-#: LifeLineChartView/lifelinechartview.gpr.py:150
+#: LifeLineChartView/lifelinechartview.gpr.py:154
 msgid " Plugin"
 msgstr "Zusatzmodul"
 
-#: LifeLineChartView/lifelinechartview.gpr.py:152
+#: LifeLineChartView/lifelinechartview.gpr.py:156
 msgid "Don't ask me again"
 msgstr "Nicht nochmal fragen"
 
-#: LifeLineChartView/lifelinechartview.gpr.py:153
+#: LifeLineChartView/lifelinechartview.gpr.py:157
 msgid "Download module"
 msgstr "Modul herunterladen"
 
-#: LifeLineChartView/lifelinechartview.gpr.py:161
+#: LifeLineChartView/lifelinechartview.gpr.py:165
 msgid "The user chose to deactivate further warnings."
 msgstr "Der Nutzer hat weitere Warnungen deaktiviert."
 
-#: LifeLineChartView/lifelinechartview.gpr.py:165
+#: LifeLineChartView/lifelinechartview.gpr.py:169
 msgid "The user chose to ignore the warning once."
 msgstr "Der Nutzer hat die Warnung ignoriert."
 
-#: LifeLineChartView/lifelinechartview.gpr.py:168
+#: LifeLineChartView/lifelinechartview.gpr.py:172
 msgid "The user chose to install the module."
 msgstr "Der Nutzer hat ein fehlendes Modul heruntergeladen."
 
-#: LifeLineChartView/lifelinechartview.gpr.py:198
+#: LifeLineChartView/lifelinechartview.gpr.py:202
 #, python-format
 msgid "Unable to open '%s' with curl"
 msgstr "Unable to open '%s' with curl"
 
-#: LifeLineChartView/lifelinechartview.gpr.py:209
-#: LifeLineChartView/lifelinechartview.gpr.py:216
+#: LifeLineChartView/lifelinechartview.gpr.py:213
+#: LifeLineChartView/lifelinechartview.gpr.py:220
 #, python-format
 msgid "Unable to open '%s'"
 msgstr "Kann '%s' nicht öffnen"
 
-#: LifeLineChartView/lifelinechartview.gpr.py:225
+#: LifeLineChartView/lifelinechartview.gpr.py:229
 #, python-format
 msgid "Error in reading '%s'"
 msgstr "Fehler beim Lesen von \"%s\""
 
-#: LifeLineChartView/lifelinechartview.gpr.py:240
+#: LifeLineChartView/lifelinechartview.gpr.py:244
 #, python-format
 msgid "Error: cannot open '%s'"
 msgstr "FEHLER: Kann '%s' nicht öffnen"
 
-#: LifeLineChartView/lifelinechartview.gpr.py:244
+#: LifeLineChartView/lifelinechartview.gpr.py:248
 #, python-format
 msgid "Error: unknown file type: '%s'"
 msgstr "FEHLER: unbekannter Dateityp: '%s'."
 
-#: LifeLineChartView/lifelinechartview.gpr.py:298
+#: LifeLineChartView/lifelinechartview.gpr.py:305
 msgid "Life Line Ancestor Chart"
 msgstr "Lebenslinien Vorfahren Diagramm"
 
-#: LifeLineChartView/lifelinechartview.gpr.py:299
-#: LifeLineChartView/lifelinechartview.gpr.py:313
+#: LifeLineChartView/lifelinechartview.gpr.py:306
+#: LifeLineChartView/lifelinechartview.gpr.py:320
 msgid "Charts"
 msgstr "Schaubilder"
 
-#: LifeLineChartView/lifelinechartview.gpr.py:300
-#: LifeLineChartView/lifelinechartview.gpr.py:314
+#: LifeLineChartView/lifelinechartview.gpr.py:307
+#: LifeLineChartView/lifelinechartview.gpr.py:321
 msgid "Persons and their relation in a time based chart"
 msgstr "Personen und ihre Verbindungen in einem Zeitbasierten Diagramm"
 
-#: LifeLineChartView/lifelinechartview.gpr.py:312
+#: LifeLineChartView/lifelinechartview.gpr.py:319
 msgid "Life Line Descendant Chart"
 msgstr "Lebenslinien Nachfahren Diagramm"
 
 #: LifeLineChartView/lifelinechartview.py:371
-#: LifeLineChartView/lifelinechartview.py:829
+#: LifeLineChartView/lifelinechartview.py:828
 msgid "General Layout"
 msgstr "Allgemein"
 
@@ -210,66 +210,66 @@ msgstr "Allgemein"
 msgid "Life Line Chart"
 msgstr "Lebenslinien Diagramm"
 
-#: LifeLineChartView/lifelinechartview.py:477
+#: LifeLineChartView/lifelinechartview.py:476
 msgid "Zoom in"
 msgstr "Hineinzoomen"
 
+#: LifeLineChartView/lifelinechartview.py:477
 #: LifeLineChartView/lifelinechartview.py:478
-#: LifeLineChartView/lifelinechartview.py:479
+#: LifeLineChartView/lifelinechartview.py:487
 #: LifeLineChartView/lifelinechartview.py:488
-#: LifeLineChartView/lifelinechartview.py:489
 msgid "Ctrl"
 msgstr "Strg"
 
-#: LifeLineChartView/lifelinechartview.py:479
-#: LifeLineChartView/lifelinechartview.py:489
+#: LifeLineChartView/lifelinechartview.py:478
+#: LifeLineChartView/lifelinechartview.py:488
 msgid "Mouse wheel"
 msgstr "Mausrad"
 
-#: LifeLineChartView/lifelinechartview.py:487
+#: LifeLineChartView/lifelinechartview.py:486
 msgid "Zoom out"
 msgstr "Herauszoomen"
 
-#: LifeLineChartView/lifelinechartview.py:496
+#: LifeLineChartView/lifelinechartview.py:495
 msgid "Zoom to original"
 msgstr "Auf original Größe zoomen"
 
-#: LifeLineChartView/lifelinechartview.py:503
+#: LifeLineChartView/lifelinechartview.py:502
 msgid "Zoom to best fit"
 msgstr "Zoom auf die beste Größte"
 
-#: LifeLineChartView/lifelinechartview.py:510
+#: LifeLineChartView/lifelinechartview.py:509
 msgid "Rebuild data cache"
 msgstr "Daten aktualisieren"
 
-#: LifeLineChartView/lifelinechartview.py:517
+#: LifeLineChartView/lifelinechartview.py:516
 msgid "Revert the placement and person selection"
 msgstr "Änderungen an der Personenauswahl und Platzierung zurücksetzen"
 
-#: LifeLineChartView/lifelinechartview.py:533
+#: LifeLineChartView/lifelinechartview.py:532
 msgid "Open Life Line Chart help"
 msgstr "Life Line Chart Hilfe öffnen"
 
-#: LifeLineChartView/lifelinechartview.py:610
+#: LifeLineChartView/lifelinechartview.py:609
 msgid "Organize Bookmarks"
 msgstr "Lesezeichen organisieren"
 
-#: LifeLineChartView/lifelinechartview.py:777
+#: LifeLineChartView/lifelinechartview.py:776
 msgid "Export View as SVG"
 msgstr "Ansicht als SVG exportieren"
 
-#: LifeLineChartView/lifelinechartview.py:780
+#: LifeLineChartView/lifelinechartview.py:779
 msgid "_Cancel"
 msgstr "_Abbrechen"
 
-#: LifeLineChartView/lifelinechartview.py:781
+#: LifeLineChartView/lifelinechartview.py:780
 msgid "_Save"
 msgstr "_Speichern"
 
-#: LifeLineChartView/lifelinechartview.py:830
+#: LifeLineChartView/lifelinechartview.py:829
 msgid "Label Configuration"
 msgstr "Textfelder"
 
-#: LifeLineChartView/lifelinechartview.py:887
+#: LifeLineChartView/lifelinechartview.py:891
 msgid "Reset all settings"
 msgstr "Alle Einstellungen zurücksetzen"
