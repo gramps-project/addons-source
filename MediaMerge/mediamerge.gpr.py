@@ -18,8 +18,7 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 from gramps.gen.plug._pluginreg import newplugin, STABLE, RELCALC
-from gramps.gen.const import GRAMPS_LOCALE as glocale
-_ = glocale.translation.gettext
+
 #------------------------------------------------------------------------
 #
 # Merge citations
@@ -32,7 +31,7 @@ register(
     name = _("Merge Media"),
     description = _("Searches the entire database, looking for "
                     "media that have the same path and merges them."),
-    version = '1.0.6',
+    version = '1.0.7',
     gramps_target_version = '5.1',
     status = STABLE,
     fname = 'mediamerge.py',

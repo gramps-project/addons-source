@@ -1,0 +1,92 @@
+# SDutch translation of addon HouseTimelineGramplet.
+# Copyright (C) 2020 Gramps project
+# This file is distributed under the same license as the HouseTimelineGramplet package.
+# Jan Sparreboom <jan@sparreboom.net>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: HouseTimelineGramplet 5.x\n"
+"Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
+"POT-Creation-Date: 2020-04-22 11:04-0500\n"
+"PO-Revision-Date: 2020-07-28 12:34+0200\n"
+"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
+"Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+
+#: HouseTimelineGramplet/housetimeline.gpr.py:3
+#: HouseTimelineGramplet/housetimeline.gpr.py:14
+msgid "House Timeline"
+msgstr "Huistijdlijn"
+
+#: HouseTimelineGramplet/housetimeline.gpr.py:4
+msgid "Lists the Residents of an Address by Timeline"
+msgstr "Geeft de bewoners van een adres per tijdlijn weer"
+
+#: HouseTimelineGramplet/housetimeline.py:25
+msgid "Double-click name for details"
+msgstr "Dubbelklik op de naam voor details"
+
+#: HouseTimelineGramplet/housetimeline.py:41
+#: HouseTimelineGramplet/housetimeline.py:48
+msgid "House Icon Style"
+msgstr "Huis pictogramstijl"
+
+#: HouseTimelineGramplet/housetimeline.py:49
+msgid "Standard"
+msgstr "Standaard"
+
+#: HouseTimelineGramplet/housetimeline.py:50
+msgid "Small"
+msgstr "Klein"
+
+#: HouseTimelineGramplet/housetimeline.py:51
+msgid "Unicode"
+msgstr "Unicode"
+
+#: HouseTimelineGramplet/housetimeline.py:52
+msgid "None"
+msgstr "Geen"
+
+#: HouseTimelineGramplet/housetimeline.py:58
+msgid "Processing..."
+msgstr "Verwerken..."
+
+#: HouseTimelineGramplet/housetimeline.py:80
+msgid ""
+"There are no individuals with Address data. Please add Address data to "
+"people."
+msgstr ""
+"Er zijn geen personen met adresgegevens. Voeg adresgegevens toe aan "
+"personen."
+
+#: HouseTimelineGramplet/housetimeline.py:118
+msgid "Location"
+msgstr "Locatie"
+
+#: HouseTimelineGramplet/housetimeline.py:119
+msgid "Time In Family"
+msgstr "Tijd in gezin"
+
+#: HouseTimelineGramplet/housetimeline.py:120
+msgid "First Resident"
+msgstr "Eerste bewoner"
+
+#: HouseTimelineGramplet/housetimeline.py:121
+msgid "Last Resident"
+msgstr "Laatste bewoner"
+
+#: HouseTimelineGramplet/housetimeline.py:122
+msgid "Timeline"
+msgstr "Tijdlijn"
+
+#: HouseTimelineGramplet/housetimeline.py:123
+msgid "Unknown"
+msgstr "Onbekend"
+
+#: HouseTimelineGramplet/housetimeline.py:124
+msgid "Total Known Residents"
+msgstr "Totaal aantal bekende bewoners"

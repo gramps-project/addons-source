@@ -1,0 +1,99 @@
+# SDutch translation of addon GeoAncestor.
+# Copyright (C) 2020 Gramps project
+# This file is distributed under the same license as the GeoAncestor package.
+# Jan Sparreboom <jan@sparreboom.net>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: GeoAncestor 5.x\n"
+"Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
+"POT-Creation-Date: 2020-04-22 11:04-0500\n"
+"PO-Revision-Date: 2020-07-28 11:43+0200\n"
+"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
+"Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+
+#: GeoAncestor/GeoAncestor.gpr.py:73
+msgid "OsmGpsMap module not loaded."
+msgstr "OsmGpsMap-module niet geladen."
+
+#: GeoAncestor/GeoAncestor.gpr.py:74
+#, python-format
+msgid ""
+"Geography functionality will not be available.\n"
+"To build it for Gramps see %(gramps_wiki_build_osmgps_url)s"
+msgstr ""
+"Geografische functionaliteit is niet beschikbaar.\n"
+"Zie %(gramps_wiki_build_osmgps_url) s om het voor Gramps te bouwen"
+
+#: GeoAncestor/GeoAncestor.gpr.py:88
+msgid "Ancestors map"
+msgstr "Voorouderskaart"
+
+#: GeoAncestor/GeoAncestor.gpr.py:89
+msgid "A view showing ancestors places on the map."
+msgstr "Een weergave van de voorouders op de kaart."
+
+#: GeoAncestor/GeoAncestor.gpr.py:96
+msgid "Geography"
+msgstr "Geografie"
+
+#: GeoAncestor/GeoAncestor.py:109
+msgid "Organize Bookmarks"
+msgstr "Organiseer bladwijzers"
+
+#: GeoAncestor/GeoAncestor.py:197
+msgid "Ancestors places on the map"
+msgstr "Voorouderslocaties op de kaart"
+
+#: GeoAncestor/GeoAncestor.py:225
+msgid "GeoAncestor"
+msgstr "GeoVoorouder"
+
+#: GeoAncestor/GeoAncestor.py:294
+#, python-format
+msgid "Ancestors places for %s"
+msgstr "Voorouderslocaties  voor %s"
+
+#: GeoAncestor/GeoAncestor.py:301
+msgid "Counting all places"
+msgstr "Alle locaties tellen"
+
+#: GeoAncestor/GeoAncestor.py:304
+msgid "Showing all places"
+msgstr "Alle locaties weergeven"
+
+#: GeoAncestor/GeoAncestor.py:401
+#, python-format
+msgid "%(eventtype)s : %(name)s"
+msgstr "%(eventtype)s : %(name)s"
+
+#: GeoAncestor/GeoAncestor.py:528 GeoAncestor/GeoAncestor.py:549
+#: GeoAncestor/GeoAncestor.py:590
+msgid "Edit Event"
+msgstr "Pas gebeurtenis aan"
+
+#: GeoAncestor/GeoAncestor.py:533 GeoAncestor/GeoAncestor.py:554
+#: GeoAncestor/GeoAncestor.py:594
+msgid "Center on this place"
+msgstr "Centreer op deze plek"
+
+#: GeoAncestor/GeoAncestor.py:568
+msgid "Unknown"
+msgstr "Onbekend"
+
+#: GeoAncestor/GeoAncestor.py:579
+msgid "No description"
+msgstr "Geen beschrijving"
+
+#: GeoAncestor/GeoAncestor.py:610
+msgid "Show all places"
+msgstr "Toon alle locaties"
+
+#: GeoAncestor/GeoAncestor.py:614 GeoAncestor/GeoAncestor.py:619
+msgid "Centering on Place"
+msgstr "Centreren op locatie"

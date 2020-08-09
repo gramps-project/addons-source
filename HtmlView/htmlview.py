@@ -58,8 +58,18 @@ from gramps.gui.views.bookmarks import PersonBookmarks
 from gramps.gen.utils.file import get_empty_tempdir
 from gramps.gen.constfunc import lin, mac, win
 from gramps.gen.const import TEMP_DIR, URL_HOMEPAGE
+
+#------------------------------------------------------------------------
+#
+# Internationalisation
+#
+#------------------------------------------------------------------------
 from gramps.gen.const import GRAMPS_LOCALE as glocale
-_ = glocale.translation.gettext
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.gettext
 
 #-------------------------------------------------------------------------
 #

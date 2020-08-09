@@ -1,72 +1,41 @@
-# translation of nl.po to nederlands
-# Dutch translation of GRAMPS
-# Copyright (C) 2003 The Free Software Foundation,  Inc.
-#
+# Dutch translation of addon NLWebConnectPack.
+# Copyright (C) 2020 Gramps project
+# This file is distributed under the same license as the NLWebConnectPack package.
 # Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
 # Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
 # Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010.
+# Jan Sparreboom <jan@sparreboom.net>, 2020.
 #
-# --------------------------------------------------
-# Conventies (kan later altijd nog aangepast worden)
-# --------------------------------------------------
-# active             actief (moet hier nog iets beters voor verzinnen)
-# attribute          kenmerk
-# bookmark           bladwijzer
-# view               scherm
-# city               plaats beter is stad dorp
-# marker             aanduiding
-# people             personen
-# place              locatie
-# record             archief/kaart
-# database           gegevensbestand (KB)
-# chart              grafiek
-# Home person        beginpersoon : (EDR)
-# spouse             echtgenoot
-# partner            partner
-# warning            let op
-# at the age of      op een leeftijd van -> toen hij/zij .. oud was
-# repositories       bibliotheken
-# regex              regex onvertaald laten
-# expression         uitdrukking
-# given name         voornaam
-# reference	     waarnaar verwezen wordt
-# count		     aantal maal
-# lineage	     lijn
-# locality	     plaats
-# u gebruiken
-# telkens werkwoord achteraan plaatsen
 msgid ""
 msgstr ""
-"Project-Id-Version: gramps\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-16 20:22+0100\n"
-"PO-Revision-Date: 2011-01-16 20:23+0100\n"
-"Last-Translator: Erik De Richter <frederik.de.richter@telenet.be>\n"
-"Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
-"Language: \n"
+"Project-Id-Version: NLWebConnectPack 5.x\n"
+"Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
+"POT-Creation-Date: 2020-04-22 11:04-0500\n"
+"PO-Revision-Date: 2020-08-01 14:19+0200\n"
+"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
+"Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-Language: Nederlands\n"
-"X-Poedit-Country: België\n"
+"X-Generator: Poedit 2.3\n"
 
-#: NLWebPack.py:33
+#: NLWebConnectPack/NLWebPack.gpr.py:11
+msgid "Collection of Web sites for the Netherlands (requires libwebconnect)"
+msgstr "Verzameling van websites voor Nederland (vereist libwebconnect)"
+
+#: NLWebConnectPack/NLWebPack.py:33
 msgid "Open Archives"
 msgstr "Open Archieven"
 
-#: NLWebPack.py:34
+#: NLWebConnectPack/NLWebPack.py:34
 msgid "Genealogy Online"
-msgstr "Genealogie Online"
+msgstr "Genealogie online"
 
-#: NLWebPack.py:35
+#: NLWebConnectPack/NLWebPack.py:35
 msgid "National Archive"
 msgstr "Nationaal Archief"
 
-#: NLWebPack.py:37
+#: NLWebConnectPack/NLWebPack.py:37
 msgid "Who (re)searches who?"
 msgstr "Wie (onder)zoekt wie?"
-
-#: NLWebPack.gpr.py:11
-msgid "Collection of Web sites for the NL (requires libwebconnect)"
-msgstr "Verzameling websites voor NL (vereist libwebconnect)" 

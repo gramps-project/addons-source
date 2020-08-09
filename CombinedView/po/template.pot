@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-04 11:53-0500\n"
+"POT-Creation-Date: 2020-08-08 17:10-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: CombinedView/combinedview.gpr.py:23 CombinedView/combinedview.py:125
+#: CombinedView/combinedview.gpr.py:23 CombinedView/combinedview.py:135
 msgid "Combined"
 msgstr ""
 
@@ -25,265 +25,265 @@ msgstr ""
 msgid "A view showing relationships and events for a person"
 msgstr ""
 
-#: CombinedView/combinedview.gpr.py:31 CombinedView/combinedview.py:1631
+#: CombinedView/combinedview.gpr.py:31 CombinedView/combinedview.py:1641
 msgid "Relationships"
 msgstr ""
 
-#: CombinedView/combinedview.py:374
+#: CombinedView/combinedview.py:384
 msgid "Organize Bookmarks"
 msgstr ""
 
-#: CombinedView/combinedview.py:623 CombinedView/combinedview.py:684
-#: CombinedView/combinedview.py:993 CombinedView/combinedview.py:1154
-#: CombinedView/combinedview.py:1270 CombinedView/combinedview.py:1540
-#: CombinedView/combinedview.py:1867 CombinedView/combinedview.py:1918
+#: CombinedView/combinedview.py:633 CombinedView/combinedview.py:694
+#: CombinedView/combinedview.py:1003 CombinedView/combinedview.py:1164
+#: CombinedView/combinedview.py:1280 CombinedView/combinedview.py:1550
+#: CombinedView/combinedview.py:1877 CombinedView/combinedview.py:1928
 #, python-format
 msgid "Edit %s"
 msgstr ""
 
-#: CombinedView/combinedview.py:641 CombinedView/combinedview.py:703
+#: CombinedView/combinedview.py:651 CombinedView/combinedview.py:713
 #: CombinedView/navigationview.py:360
 msgid "ID"
 msgstr ""
 
-#: CombinedView/combinedview.py:661
+#: CombinedView/combinedview.py:671
 msgid "Attributes"
 msgstr ""
 
-#: CombinedView/combinedview.py:713
+#: CombinedView/combinedview.py:723
 msgid "Birth"
 msgstr ""
 
-#: CombinedView/combinedview.py:722 CombinedView/combinedview.py:747
+#: CombinedView/combinedview.py:732 CombinedView/combinedview.py:757
 msgid "Death"
 msgstr ""
 
-#: CombinedView/combinedview.py:742
+#: CombinedView/combinedview.py:752
 msgid "Alive"
 msgstr ""
 
-#: CombinedView/combinedview.py:749
+#: CombinedView/combinedview.py:759
 msgid "unknown"
 msgstr ""
 
-#: CombinedView/combinedview.py:815
+#: CombinedView/combinedview.py:825
 #, python-format
 msgid "%(date)s in %(place)s"
 msgstr ""
 
-#: CombinedView/combinedview.py:833 CombinedView/combinedview.py:1884
+#: CombinedView/combinedview.py:843 CombinedView/combinedview.py:1894
 msgid "Unknown"
 msgstr ""
 
-#: CombinedView/combinedview.py:910
+#: CombinedView/combinedview.py:920
 #, python-format
 msgid "%(abbrev)s %(date)s in %(place)s"
 msgstr ""
 
-#: CombinedView/combinedview.py:912
+#: CombinedView/combinedview.py:922
 #, python-format
 msgid "%(abbrev)s %(date)s%(place)s"
 msgstr ""
 
-#: CombinedView/combinedview.py:949
+#: CombinedView/combinedview.py:959
 #, python-format
 msgid "%(birthabbrev)s %(birthdate)s, %(deathabbrev)s %(deathdate)s"
 msgstr ""
 
-#: CombinedView/combinedview.py:956 CombinedView/combinedview.py:958
+#: CombinedView/combinedview.py:966 CombinedView/combinedview.py:968
 #, python-format
 msgid "%(event)s %(date)s"
 msgstr ""
 
-#: CombinedView/combinedview.py:1019
+#: CombinedView/combinedview.py:1029
 #, python-format
 msgid "Relationship type: %s"
 msgstr ""
 
-#: CombinedView/combinedview.py:1056
+#: CombinedView/combinedview.py:1066
 #, python-format
 msgid "%(event_type)s: %(date)s in %(place)s"
 msgstr ""
 
-#: CombinedView/combinedview.py:1060
+#: CombinedView/combinedview.py:1070
 #, python-format
 msgid "%(event_type)s: %(date)s"
 msgstr ""
 
-#: CombinedView/combinedview.py:1063
+#: CombinedView/combinedview.py:1073
 #, python-format
 msgid "%(event_type)s: %(place)s"
 msgstr ""
 
-#: CombinedView/combinedview.py:1084
+#: CombinedView/combinedview.py:1094
 msgid "Timeline"
 msgstr ""
 
-#: CombinedView/combinedview.py:1151 CombinedView/combinedview.py:1267
+#: CombinedView/combinedview.py:1161 CombinedView/combinedview.py:1277
 msgid "Click to make this event active"
 msgstr ""
 
-#: CombinedView/combinedview.py:1208
+#: CombinedView/combinedview.py:1218
 msgid "Events"
 msgstr ""
 
-#: CombinedView/combinedview.py:1346
+#: CombinedView/combinedview.py:1356
 msgid "Click to visit this link"
 msgstr ""
 
-#: CombinedView/combinedview.py:1364
+#: CombinedView/combinedview.py:1374
 msgid "Album"
 msgstr ""
 
-#: CombinedView/combinedview.py:1433
+#: CombinedView/combinedview.py:1443
 msgid "Associations"
 msgstr ""
 
-#: CombinedView/combinedview.py:1443
+#: CombinedView/combinedview.py:1453
 msgid "Association"
 msgstr ""
 
-#: CombinedView/combinedview.py:1443 CombinedView/combinedview.py:1450
+#: CombinedView/combinedview.py:1453 CombinedView/combinedview.py:1460
 msgid ": "
 msgstr ""
 
-#: CombinedView/combinedview.py:1450
+#: CombinedView/combinedview.py:1460
 msgid "Relationship"
 msgstr ""
 
-#: CombinedView/combinedview.py:1472
+#: CombinedView/combinedview.py:1482
 msgid "Participants"
 msgstr ""
 
-#: CombinedView/combinedview.py:1507 CombinedView/combinedview.py:1572
+#: CombinedView/combinedview.py:1517 CombinedView/combinedview.py:1582
 msgid "Order"
 msgstr ""
 
-#: CombinedView/combinedview.py:1594
+#: CombinedView/combinedview.py:1604
 msgid "Citations"
 msgstr ""
 
-#: CombinedView/combinedview.py:1642 CombinedView/combinedview.py:1663
+#: CombinedView/combinedview.py:1652 CombinedView/combinedview.py:1673
 msgid "Parents"
 msgstr ""
 
-#: CombinedView/combinedview.py:1666
+#: CombinedView/combinedview.py:1676
 msgid "Father"
 msgstr ""
 
-#: CombinedView/combinedview.py:1670
+#: CombinedView/combinedview.py:1680
 msgid "Mother"
 msgstr ""
 
-#: CombinedView/combinedview.py:1678
+#: CombinedView/combinedview.py:1688
 msgid "Siblings"
 msgstr ""
 
-#: CombinedView/combinedview.py:1688 CombinedView/combinedview.py:1749
+#: CombinedView/combinedview.py:1698 CombinedView/combinedview.py:1759
 msgid "Add new child to family"
 msgstr ""
 
-#: CombinedView/combinedview.py:1692 CombinedView/combinedview.py:1753
+#: CombinedView/combinedview.py:1702 CombinedView/combinedview.py:1763
 msgid "Add existing child to family"
 msgstr ""
 
-#: CombinedView/combinedview.py:1714
+#: CombinedView/combinedview.py:1724
 msgid "Broken family detected"
 msgstr ""
 
-#: CombinedView/combinedview.py:1715
+#: CombinedView/combinedview.py:1725
 msgid "Please run the Check and Repair Database tool"
 msgstr ""
 
-#: CombinedView/combinedview.py:1727
+#: CombinedView/combinedview.py:1737
 msgid "Family"
 msgstr ""
 
-#: CombinedView/combinedview.py:1731
+#: CombinedView/combinedview.py:1741
 msgid "Spouse"
 msgstr ""
 
-#: CombinedView/combinedview.py:1738
+#: CombinedView/combinedview.py:1748
 msgid "Children"
 msgstr ""
 
-#: CombinedView/combinedview.py:1788
+#: CombinedView/combinedview.py:1798
 msgid "Add a new set of parents"
 msgstr ""
 
-#: CombinedView/combinedview.py:1789
+#: CombinedView/combinedview.py:1799
 msgid "Add person as child to an existing family"
 msgstr ""
 
-#: CombinedView/combinedview.py:1790
+#: CombinedView/combinedview.py:1800
 msgid "Edit parents"
 msgstr ""
 
-#: CombinedView/combinedview.py:1791
+#: CombinedView/combinedview.py:1801
 msgid "Reorder parents"
 msgstr ""
 
-#: CombinedView/combinedview.py:1792
+#: CombinedView/combinedview.py:1802
 msgid "Remove person as child of these parents"
 msgstr ""
 
-#: CombinedView/combinedview.py:1794
+#: CombinedView/combinedview.py:1804
 msgid "Add a new family with person as parent"
 msgstr ""
 
-#: CombinedView/combinedview.py:1796
+#: CombinedView/combinedview.py:1806
 msgid "Edit family"
 msgstr ""
 
-#: CombinedView/combinedview.py:1797
+#: CombinedView/combinedview.py:1807
 msgid "Reorder families"
 msgstr ""
 
-#: CombinedView/combinedview.py:1798
+#: CombinedView/combinedview.py:1808
 msgid "Remove person as parent in this family"
 msgstr ""
 
-#: CombinedView/combinedview.py:2049
+#: CombinedView/combinedview.py:2059
 msgid "Add Child to Family"
 msgstr ""
 
-#: CombinedView/combinedview.py:2067
+#: CombinedView/combinedview.py:2077
 msgid "Select Child"
 msgstr ""
 
-#: CombinedView/combinedview.py:2187
+#: CombinedView/combinedview.py:2197
 msgid "Use shading"
 msgstr ""
 
-#: CombinedView/combinedview.py:2190
+#: CombinedView/combinedview.py:2200
 msgid "Display edit buttons"
 msgstr ""
 
-#: CombinedView/combinedview.py:2192
+#: CombinedView/combinedview.py:2202
 msgid "View links as website links"
 msgstr ""
 
-#: CombinedView/combinedview.py:2198
+#: CombinedView/combinedview.py:2208
 msgid "Layout"
 msgstr ""
 
-#: CombinedView/combinedview.py:2209
+#: CombinedView/combinedview.py:2219
 msgid "Show Details"
 msgstr ""
 
-#: CombinedView/combinedview.py:2212
+#: CombinedView/combinedview.py:2222
 msgid "Vertical Details"
 msgstr ""
 
-#: CombinedView/combinedview.py:2215
+#: CombinedView/combinedview.py:2225
 msgid "Show Siblings"
 msgstr ""
 
-#: CombinedView/combinedview.py:2218
+#: CombinedView/combinedview.py:2228
 msgid "Show Tags"
 msgstr ""
 
-#: CombinedView/combinedview.py:2221
+#: CombinedView/combinedview.py:2231
 msgid "Content"
 msgstr ""
 

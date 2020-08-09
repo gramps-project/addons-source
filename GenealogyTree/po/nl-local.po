@@ -1,0 +1,142 @@
+# SDutch translation of addon GenealogyTree.
+# Copyright (C) 2020 Gramps project
+# This file is distributed under the same license as the GenealogyTree package.
+# Jan Sparreboom <jan@sparreboom.net>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: GenealogyTree 5.x\n"
+"Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
+"POT-Creation-Date: 2020-04-22 11:04-0500\n"
+"PO-Revision-Date: 2020-07-28 11:25+0200\n"
+"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
+"Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+
+#: GenealogyTree/gt_ancestor.py:85 GenealogyTree/gt_descendant.py:85
+#: GenealogyTree/gt_sandclock.py:93
+#, python-format
+msgid "Person %s is not in the Database"
+msgstr "Persoon %s staat niet in de database"
+
+#: GenealogyTree/gt_ancestor.py:150 GenealogyTree/gt_descendant.py:158
+#: GenealogyTree/gt_grandparent.py:207 GenealogyTree/gt_sandclock.py:217
+msgid "Report Options"
+msgstr "Verslagopties"
+
+#: GenealogyTree/gt_ancestor.py:152 GenealogyTree/gt_descendant.py:160
+#: GenealogyTree/gt_grandparent.py:209 GenealogyTree/gt_sandclock.py:220
+msgid "Center Person"
+msgstr "Centraal persoon"
+
+#: GenealogyTree/gt_ancestor.py:153 GenealogyTree/gt_descendant.py:161
+#: GenealogyTree/gt_grandparent.py:210 GenealogyTree/gt_sandclock.py:221
+msgid "The center person for the report"
+msgstr "De centrale persoon voor het verslag"
+
+#: GenealogyTree/gt_ancestor.py:156 GenealogyTree/gt_descendant.py:164
+#: GenealogyTree/gt_grandparent.py:213
+msgid "Generations"
+msgstr "Generaties"
+
+#: GenealogyTree/gt_ancestor.py:157 GenealogyTree/gt_descendant.py:165
+#: GenealogyTree/gt_grandparent.py:214 GenealogyTree/gt_sandclock.py:229
+#: GenealogyTree/gt_sandclock.py:233
+msgid "The number of generations to include in the tree"
+msgstr "Het aantal generaties dat in de boom moet worden opgenomen"
+
+#: GenealogyTree/gt_ancestor.py:160 GenealogyTree/gt_descendant.py:168
+#: GenealogyTree/gt_grandparent.py:221 GenealogyTree/gt_sandclock.py:240
+msgid "Include images"
+msgstr "Voeg afbeeldingen toe"
+
+#: GenealogyTree/gt_ancestor.py:161 GenealogyTree/gt_descendant.py:169
+#: GenealogyTree/gt_grandparent.py:222 GenealogyTree/gt_sandclock.py:241
+msgid "Include images of people in the nodes."
+msgstr "Neem afbeeldingen van mensen op in de knooppunten."
+
+#: GenealogyTree/gt_grandparent.py:109
+#, python-format
+msgid "Person %s does not have both a paternal and a maternal grandparent"
+msgstr "Persoon %s heeft niet zowel een vaderlijke als een moederlijke grootouder"
+
+#: GenealogyTree/gt_grandparent.py:217
+msgid "Grandparent family spacing"
+msgstr "Grootouder-gezin-afstand"
+
+#: GenealogyTree/gt_grandparent.py:218
+msgid "Extra spacing of grandparent families (mm)"
+msgstr "Extra afstand tussen grootoudergezinnen (mm)"
+
+#: GenealogyTree/gt_sandclock.py:98
+#, python-format
+msgid "Family %s is not in the Database"
+msgstr "Gezin %s staat niet in de database"
+
+#: GenealogyTree/gt_sandclock.py:224
+msgid "Center Family"
+msgstr "Centrale gezin"
+
+#: GenealogyTree/gt_sandclock.py:225
+msgid "The center family for the report"
+msgstr "Het centrale gezin voor het verslag"
+
+#: GenealogyTree/gt_sandclock.py:228
+msgid "Generations up"
+msgstr "Generaties omhoog"
+
+#: GenealogyTree/gt_sandclock.py:232
+msgid "Generations down"
+msgstr "Generaties omlaag"
+
+#: GenealogyTree/gt_sandclock.py:236
+msgid "Include siblings"
+msgstr "Voeg broers en zussen toe"
+
+#: GenealogyTree/gt_sandclock.py:237
+msgid "Include siblings of ancestors."
+msgstr "Voeg broers en zussen van voorouders toe."
+
+#: GenealogyTree/treeplugins.gpr.py:29
+msgid "Ancestor Tree"
+msgstr "Voorouderboom"
+
+#: GenealogyTree/treeplugins.gpr.py:30
+msgid "Ancestor tree using LaTeX genealogytree"
+msgstr "Voorouderboom opgebouwd met LaTeX genealogieboom"
+
+#: GenealogyTree/treeplugins.gpr.py:51
+msgid "Descendant Tree"
+msgstr "Afstammelingenboom"
+
+#: GenealogyTree/treeplugins.gpr.py:52
+msgid "Descendant tree using LaTeX genealogytree"
+msgstr "Afstammingsboom opgebouwd met LaTeX genealogieboom"
+
+#: GenealogyTree/treeplugins.gpr.py:73
+msgid "Grandparent Tree"
+msgstr "Grootouderboom"
+
+#: GenealogyTree/treeplugins.gpr.py:74
+msgid "Grandparent tree using LaTeX genealogytree"
+msgstr "Grootouderboom opgebouwd met LaTeX genealogieboom"
+
+#: GenealogyTree/treeplugins.gpr.py:95
+msgid "Sandclock Tree"
+msgstr "Zandklokboom"
+
+#: GenealogyTree/treeplugins.gpr.py:96
+msgid "Sandclock tree using LaTeX genealogytree"
+msgstr "Zandklokboom opgebouwd met LaTeX genealogieboom"
+
+#: GenealogyTree/treeplugins.gpr.py:117
+msgid "Sandclock Tree for a Family"
+msgstr "Zandklokboom voor een gezin"
+
+#: GenealogyTree/treeplugins.gpr.py:118
+msgid "Sandclock tree for a family using LaTeX genealogytree"
+msgstr "Zandklokboom voor een gezin opgebouwd met LaTeX genealogieboom"

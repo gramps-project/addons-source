@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-04 18:55-0600\n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,39 +29,39 @@ msgstr ""
 msgid "Web"
 msgstr ""
 
-#: HtmlView/htmlview.py:318
+#: HtmlView/htmlview.py:328
 msgid "HtmlView"
 msgstr ""
 
-#: HtmlView/htmlview.py:484
+#: HtmlView/htmlview.py:494
 msgid "_Back"
 msgstr ""
 
-#: HtmlView/htmlview.py:485
+#: HtmlView/htmlview.py:495
 msgid "Go to the previous page in the history"
 msgstr ""
 
-#: HtmlView/htmlview.py:492
+#: HtmlView/htmlview.py:502
 msgid "_Forward"
 msgstr ""
 
-#: HtmlView/htmlview.py:493
+#: HtmlView/htmlview.py:503
 msgid "Go to the next page in the history"
 msgstr ""
 
-#: HtmlView/htmlview.py:498
+#: HtmlView/htmlview.py:508
 msgid "_Refresh"
 msgstr ""
 
-#: HtmlView/htmlview.py:501
+#: HtmlView/htmlview.py:511
 msgid "Stop and reload the page."
 msgstr ""
 
-#: HtmlView/htmlview.py:545
+#: HtmlView/htmlview.py:555
 msgid "Start page for the Html View"
 msgstr ""
 
-#: HtmlView/htmlview.py:546
+#: HtmlView/htmlview.py:556
 msgid ""
 "Type a webpage address at the top, and hit the execute button to load a "
 "webpage in this page\n"

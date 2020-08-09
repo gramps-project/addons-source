@@ -1,0 +1,156 @@
+# SDutch translation of addon HtreePedigreeView.
+# Copyright (C) 2020 Gramps project
+# This file is distributed under the same license as the HtreePedigreeView package.
+# Jan Sparreboom <jan@sparreboom.net>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: HtreePedigreeView 5.x\n"
+"Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
+"POT-Creation-Date: 2020-04-22 11:04-0500\n"
+"PO-Revision-Date: 2020-07-30 18:43+0200\n"
+"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
+"Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+
+#: HtreePedigreeView/HtreePedigreeView.gpr.py:41
+msgid "H-Tree Pedigree"
+msgstr "H-Stamboom"
+
+#: HtreePedigreeView/HtreePedigreeView.gpr.py:42
+msgid "Charts"
+msgstr "Grafieken"
+
+#: HtreePedigreeView/HtreePedigreeView.gpr.py:43
+msgid ""
+"The view shows a space-efficient pedigree with ancestors of the selected "
+"person"
+msgstr ""
+"De weergave toont een ruimte-efficiënte kwartierstaat met voorouders van "
+"de geselecteerde persoon"
+
+#: HtreePedigreeView/HtreePedigreeView.py:83
+msgid "short for born|b."
+msgstr "g."
+
+#: HtreePedigreeView/HtreePedigreeView.py:84
+msgid "short for died|d."
+msgstr "o."
+
+#: HtreePedigreeView/HtreePedigreeView.py:85
+msgid "short for baptized|bap."
+msgstr "dp."
+
+#: HtreePedigreeView/HtreePedigreeView.py:86
+msgid "short for christened|chr."
+msgstr "chr."
+
+#: HtreePedigreeView/HtreePedigreeView.py:87
+msgid "short for buried|bur."
+msgstr "bgr."
+
+#: HtreePedigreeView/HtreePedigreeView.py:88
+msgid "short for cremated|crem."
+msgstr "crem."
+
+#: HtreePedigreeView/HtreePedigreeView.py:533
+msgid "H-tree Pedigree View"
+msgstr "H-Stamboomweergave"
+
+#: HtreePedigreeView/HtreePedigreeView.py:681
+msgid "Organize Bookmarks"
+msgstr "Organiseer bladwijzers"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1585
+msgid "Relationship loop detected"
+msgstr "Relatielus gedetecteerd"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1586
+msgid "A person was found to be his/her own ancestor."
+msgstr "Een persoon bleek zijn / haar eigen voorouder te zijn."
+
+#: HtreePedigreeView/HtreePedigreeView.py:1630
+msgid "Pre_vious"
+msgstr "Vo_rige"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1631
+msgid "_Next"
+msgstr "_Volgende"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1632
+msgid "_Home"
+msgstr "_Begin"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1654
+msgid "Mouse scroll direction"
+msgstr "Scrollrichting muis"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1658
+msgid "Top <-> Bottom"
+msgstr "Omhoog <-> Omlaag"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1665
+msgid "Left <-> Right"
+msgstr "Links <-> Rechts"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1683
+msgid "About H-Tree"
+msgstr "Over H-Stamboom"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1694
+msgid "_Add"
+msgstr "_Toevoegen"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1729
+#: HtreePedigreeView/HtreePedigreeView.py:1957
+msgid "_Edit"
+msgstr "_Bewerken"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1734
+#: HtreePedigreeView/HtreePedigreeView.py:1962
+msgid "_Copy"
+msgstr "_Kopiëren"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1744
+msgid "Spouses"
+msgstr "Echtgenoten"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1778
+msgid "Siblings"
+msgstr "Broers en zussen"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1820
+msgid "Children"
+msgstr "Kinderen"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1857
+msgid "Parents"
+msgstr "Ouders"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1894
+msgid "Add New Parents..."
+msgstr "Nieuwe ouders toevoegen..."
+
+#: HtreePedigreeView/HtreePedigreeView.py:1905
+msgid "Related"
+msgstr "Verwant"
+
+#: HtreePedigreeView/HtreePedigreeView.py:2089
+msgid "Show images"
+msgstr "Toon afbeeldingen"
+
+#: HtreePedigreeView/HtreePedigreeView.py:2098
+msgid "Show tags"
+msgstr "Toon labels"
+
+#: HtreePedigreeView/HtreePedigreeView.py:2115
+msgid "Tree size"
+msgstr "Boomgrootte"
+
+#: HtreePedigreeView/HtreePedigreeView.py:2119
+msgid "Layout"
+msgstr "Indeling"

@@ -1,65 +1,33 @@
-# Dutch translation for Gramps
-# This file is distributed under the same license as the Gramps package.
-# translation of nl.po to nederlands
-# Dutch translation of GRAMPS
-# Copyright (C) 2003 The Free Software Foundation,  Inc.
-#
+# SDutch translation of addon LastChange.
+# Copyright (C) 2020 Gramps project
+# This file is distributed under the same license as the LastChange package.
 # Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
 # Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
 # Erik De Richter <frederik.de.richter@gmail.com>, 2006, 2007, 2008, 2009, 2010 , 2011, 2012, 2013.
 # Harmen Huizinga <harmenhuizinga@sigmo.nl>, 2013
+# Jan Sparreboom <jan@sparreboom.net>, 2020.
 #
-# --------------------------------------------------
-# Conventies (kan later altijd nog aangepast worden)
-# --------------------------------------------------
-# active             actief (moet hier nog iets beters voor verzinnen)
-# attribute          kenmerk
-# bookmark           bladwijzer
-# view               scherm
-# city               plaats beter is stad dorp
-# marker             merkpunt
-# people             personen
-# place              locatie
-# record             archief/kaart
-# database           gegevensbestand (KB)
-# chart              grafiek
-# Home person        beginpersoon : (EDR)
-# spouse             echtgenoot
-# partner            partner
-# warning            let op
-# at the age of      op een leeftijd van -> toen hij/zij .. oud was
-# repositories       bibliotheken
-# regex              regex onvertaald laten
-# expression         uitdrukking
-# given name         voornaam
-# reference	     waarnaar verwezen wordt
-# count		     aantal maal
-# lineage	     lijn
-# locality	     plaats
-# u gebruiken
-# telkens werkwoord achteraan plaatsen
 msgid ""
 msgstr ""
-"Project-Id-Version: gramps\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-20 09:20-0600\n"
-"PO-Revision-Date: 2017-07-24 20:28+0200\n"
-"Last-Translator: Frederik De Richter <frederik.de.richter@gmail.com>\n"
-"Language-Team: nederlands <frederik.de.richter@gmail.com>\n"
+"Project-Id-Version: LastChange 5.x\n"
+"Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
+"POT-Creation-Date: 2020-04-22 11:04-0500\n"
+"PO-Revision-Date: 2020-07-28 16:58+0200\n"
+"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
+"Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.0.1\n"
+"X-Generator: Poedit 2.3\n"
 
 #: LastChange/LastChange.gpr.py:24
-msgid "Last Change Gramplet"
-msgstr "'Laatste-wijziging'-gramplet"
+msgid "Last Change"
+msgstr "Laatste wijziging"
 
 #: LastChange/LastChange.gpr.py:25
 msgid "List the last ten person records that have been changed"
-msgstr "De tien laatst gewijzigde persoonsgegevens worden gelijst"
+msgstr "Maak een lijst van de laatste tien persoonsgegevens die gewijzigd zijn"
 
 #: LastChange/LastChange.gpr.py:34
 msgid "Latest Changes"
@@ -68,15 +36,15 @@ msgstr "Laatste wijzigingen"
 #: LastChange/LastChange.gpr.py:40 LastChange/LastChangeReport.py:74
 #: LastChange/LastChangeReport.py:113
 msgid "Last Change Report"
-msgstr "Verslag laatste wijziging"
+msgstr "Laatste wijzigingsverslag"
 
 #: LastChange/LastChange.gpr.py:41
 msgid "Report of the last records that have been changed"
-msgstr "Verslag van de laatst gewijzigde gegevens"
+msgstr "Verslag van de laatste gegevens die gewijzigd zijn"
 
 #: LastChange/LastChangeGramplet.py:55
 msgid "Double-click name for details"
-msgstr "Dubbelklik op de naam voor meer details"
+msgstr "Dubbelklik op de naam voor details"
 
 #: LastChange/LastChangeGramplet.py:56
 msgid "No Family Tree loaded."
@@ -84,7 +52,7 @@ msgstr "Geen stamboom geladen."
 
 #: LastChange/LastChangeGramplet.py:60
 msgid "Processing..."
-msgstr "Wordt verwerkt..."
+msgstr "Verwerken..."
 
 #: LastChange/LastChangeGramplet.py:82
 msgid "changed on"
@@ -96,9 +64,8 @@ msgstr "<Onbekend>"
 
 #: LastChange/LastChangeReport.py:75
 msgid "You must select at least one type of record."
-msgstr "U moet ten minste één type record selecteren."
+msgstr "U moet ten minste één gegevenstype selecteren."
 
-# Mensen
 #: LastChange/LastChangeReport.py:116 LastChange/LastChangeReport.py:345
 msgid "People"
 msgstr "Personen"
@@ -107,12 +74,10 @@ msgstr "Personen"
 msgid "Families"
 msgstr "Gezinnen"
 
-# Gebeuren (korter)
 #: LastChange/LastChangeReport.py:120 LastChange/LastChangeReport.py:348
 msgid "Events"
 msgstr "Gebeurtenissen"
 
-# Plaatsen
 #: LastChange/LastChangeReport.py:122 LastChange/LastChangeReport.py:347
 msgid "Places"
 msgstr "Locaties"
@@ -127,7 +92,7 @@ msgstr "Bronnen"
 
 #: LastChange/LastChangeReport.py:128 LastChange/LastChangeReport.py:351
 msgid "Notes"
-msgstr "Opmerkingen"
+msgstr "Notities"
 
 #: LastChange/LastChangeReport.py:130 LastChange/LastChangeReport.py:352
 msgid "Citations"
@@ -157,11 +122,11 @@ msgstr "Gewijzigd op"
 
 #: LastChange/LastChangeReport.py:197
 msgid "Families Changed"
-msgstr "Gewijzigde families"
+msgstr "Gewijzigde gezinnen"
 
 #: LastChange/LastChangeReport.py:198
 msgid "Family Surname"
-msgstr "Familieachternaam"
+msgstr "Achternaam gezin"
 
 #: LastChange/LastChangeReport.py:215
 #, python-format
@@ -172,7 +137,6 @@ msgstr "%s en %s"
 msgid "Events Changed"
 msgstr "Gewijzigde gebeurtenissen"
 
-# Gebeuren (korter)
 #: LastChange/LastChangeReport.py:229
 msgid "Event"
 msgstr "Gebeurtenis"
@@ -189,14 +153,13 @@ msgstr "Locatie"
 msgid "Media Changed"
 msgstr "Gewijzigde media"
 
-# Locatie
 #: LastChange/LastChangeReport.py:270
 msgid "Path"
 msgstr "Pad"
 
 #: LastChange/LastChangeReport.py:287
 msgid "Sources Changed"
-msgstr "Gewijzigde Bronnen"
+msgstr "Gewijzigde bronnen"
 
 #: LastChange/LastChangeReport.py:288 LastChange/LastChangeReport.py:305
 #: LastChange/LastChangeReport.py:322
@@ -205,11 +168,11 @@ msgstr "Titel"
 
 #: LastChange/LastChangeReport.py:304
 msgid "Notes Changed"
-msgstr "Gewijzigde Notes"
+msgstr "Gewijzigde notities"
 
 #: LastChange/LastChangeReport.py:321
 msgid "Citations Changed"
-msgstr "Gewijzigde Citaten"
+msgstr "Gewijzigde citaten"
 
 #: LastChange/LastChangeReport.py:343
 msgid "Report Options"
@@ -217,23 +180,20 @@ msgstr "Verslagopties"
 
 #: LastChange/LastChangeReport.py:344
 msgid "Select From"
-msgstr "Selecteren uit"
+msgstr "Selecteer uit"
 
 #: LastChange/LastChangeReport.py:378
 msgid "The style used for the title of the page."
-msgstr "De gebruikte opmaak voor de titel van de pagina."
+msgstr "De stijl die wordt gebruikt voor de titel van de pagina."
 
 #: LastChange/LastChangeReport.py:393
 msgid "The style used for the section headers."
-msgstr "De gebruikte opmaak voor de sectietitels."
+msgstr "De stijl die wordt gebruikt voor de sectiekoppen."
 
 #: LastChange/LastChangeReport.py:403
 msgid "The style used for normal text"
-msgstr "De stijl gebruikt voor gewone tekst"
+msgstr "De stijl die wordt gebruikt voor normale tekst"
 
 #: LastChange/LastChangeReport.py:415
 msgid "The basic style used for table headings."
-msgstr "De gebruikte standaardopmaak voor de tabelhoofdingen."
-
-#~ msgid "Select From:"
-#~ msgstr "Selecteren uit:"
+msgstr "De basisstijl die wordt gebruikt voor tabelkoppen."

@@ -29,7 +29,7 @@ id    = 'PluginManager',
 name  = _("Plugin Manager Enhanced"),
 description =  _("An Addon/Plugin Manager with several additional "
                  "capabilities"),
-version = '1.0.26',
+version = '1.0.27',
 gramps_target_version = '5.1',
 fname = "PluginManagerLoad.py",
 authors = ["Paul Culley"],

@@ -42,16 +42,25 @@ import os
 # Gramps modules
 #
 #-------------------------------------------------------------------------
-from gramps.gen.const import GRAMPS_LOCALE as glocale
-_ = glocale.translation.sgettext
-ngettext = glocale.translation.ngettext  # else "nearby" comments are ignored
 from gramps.gen.utils.file import media_path_full
 from gramps.gui.plug import tool
 from gramps.gui.dialog import OkDialog
 from gramps.gen.merge import MergeMediaQuery
-
 from gramps.gen.errors import MergeError
 
+#------------------------------------------------------------------------
+#
+# Internationalisation
+#
+#------------------------------------------------------------------------
+from gramps.gen.const import GRAMPS_LOCALE as glocale
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.gettext
+
+ngettext = glocale.translation.ngettext  # else "nearby" comments are ignored
 #-------------------------------------------------------------------------
 #
 # Constants
