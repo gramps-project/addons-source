@@ -270,7 +270,7 @@ life_line_chart_version_required = (1, 6, 1)
 life_line_chart_version_required_str = '.'.join([str(i) for i in life_line_chart_version_required])
 
 try:
-    if 'lifelinechartview_warn' not in sects or not inifile.get('lifelinechartview_warn.missingmodules') != 'False':
+    if 'lifelinechartview_warn' not in sects or inifile.get('lifelinechartview_warn.missingmodules') != 'False':
         _uistate = locals().get('uistate')
     else:
         _uistate = None
@@ -305,7 +305,7 @@ if locals().get('uistate') is None or not some_import_error:
              name=_("Life Line Ancestor Chart"),
              category=("Ancestry", _("Charts")),
              description=_("Persons and their relation in a time based chart"),
-             version = '1.3.5',
+             version = '1.3.6',
              gramps_target_version="5.1",
              status=STABLE,
              fname='lifelinechartview.py',
@@ -319,7 +319,7 @@ if locals().get('uistate') is None or not some_import_error:
              name=_("Life Line Descendant Chart"),
              category=("Ancestry", _("Charts")),
              description=_("Persons and their relation in a time based chart"),
-             version = '1.3.5',
+             version = '1.3.6',
              gramps_target_version="5.1",
              status=STABLE,
              fname='lifelinechartview.py',
@@ -330,6 +330,6 @@ if locals().get('uistate') is None or not some_import_error:
              )
 
 if not some_import_error:
-    inifile.register('lifelinechart_warn.missingmodules', "")
-    inifile.set('lifelinechart_warn.missingmodules', "True")
+    inifile.register('lifelinechartview_warn.missingmodules', "")
+    inifile.set('lifelinechartview_warn.missingmodules', "True")
     inifile.save()
