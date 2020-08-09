@@ -1,0 +1,264 @@
+# German translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# translation of de.po to Deutsch
+#
+#
+# Anton Huber <anton_huber@gmx.de>, 2005,2006.
+# Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
+# Sebastian Vöcking <voeck@web.de>, 2005.
+# Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
+# Alex Roitman <shura@gramps-project.org>, 2006.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020.
+# Alois Pöttker <alois.poettker@gmx.de>, 2017.
+msgid ""
+msgstr ""
+"Project-Id-Version: de\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-10-17 11:17-0500\n"
+"PO-Revision-Date: 2020-08-09 22:54+0200\n"
+"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 19.12.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: TMGimporter/importtmg.gpr.py:63
+msgid "TMG Project Backup"
+msgstr "TMG-Projektsicherung"
+
+#: TMGimporter/importtmg.gpr.py:64 TMGimporter/importtmg.gpr.py:78
+#: TMGimporter/importtmg.gpr.py:91 TMGimporter/importtmg.gpr.py:104
+msgid "Import TMG project files"
+msgstr "TMG-Projektdateien importieren"
+
+#: TMGimporter/importtmg.gpr.py:77 TMGimporter/importtmg.gpr.py:90
+#: TMGimporter/importtmg.gpr.py:103
+msgid "TMG Unsupported"
+msgstr "TMG nicht unterstützt"
+
+#: TMGimporter/importtmg.gpr.py:116
+msgid ""
+"TMG Importer Warning: DBF (https://pypi.python.org/pypi/dbf) is required for "
+"this importer to work"
+msgstr ""
+"TMG-Importer Warnung: DBF (https://pypi.python.org/pypi/dbf) ist"
+" erforderlich, damit dieser Importer funktioniert"
+
+#: TMGimporter/importtmg.gpr.py:126
+msgid "TMG Importer Failed to Load"
+msgstr "TMG Importer konnte nicht geladen werden"
+
+#: TMGimporter/importtmg.gpr.py:127
+msgid ""
+"\n"
+"\n"
+"TMG Importer is missing the DBF python module.\n"
+"DBF must be installed ( https://pypi.python.org/pypi/dbf ).\n"
+"\n"
+"For more information see\n"
+"<a href=\"https://gramps-project.org/wiki/index.php?title=Addon:TMGimporter"
+"\" title=\"https://gramps-project.org/wiki/index.php?title=Addon:TMGimporter"
+"\">https://gramps-project.org/wiki/index.php?title=Addon:TMGimporter</a> \n"
+"\n"
+"To dismiss all future TMG Importer warnings click Dismiss."
+msgstr ""
+"\n"
+"\n"
+"In TMG Importer fehlt das DBF-Python-Modul.\n"
+"DBF muss installiert sein (https://pypi.python.org/pypi/dbf).\n"
+"\n"
+"Weitere Informationen findest du unter\n"
+"<a href = \"https://gramps-project.org/wiki/index.php?title=Addon:TMGimporter."
+"\"title =\" https://gramps-project.org/wiki/index.php?title=Addon:TMGimporter"
+"\"> https://gramps-project.org/wiki/index.php?title=Addon:TMGimporter </a>\n"
+"\n"
+"Um alle zukünftigen TMG Importer-Warnungen zu schließen, klicke auf Verwerfen."
+
+#: TMGimporter/importtmg.gpr.py:135
+msgid " Dismiss "
+msgstr "Verwerfen"
+
+#: TMGimporter/importtmg.gpr.py:136
+msgid "Continue"
+msgstr "Fortsetzen"
+
+#: TMGimporter/importtmg.py:88 TMGimporter/importtmg.py:109
+#: TMGimporter/importtmg.py:130
+#, python-format
+msgid "%s could not be opened"
+msgstr "%s konnte nicht geöffnet werden"
+
+#: TMGimporter/importtmg.py:89
+#, python-format
+msgid ""
+"Directly importing from TMG files is not supported\n"
+"by the TMG Importer Addon.\n"
+"\n"
+"You need to use an backup copy of the TMG project(*.sqz)\n"
+"\n"
+"Ensure that your TMG project was created by:\n"
+"TMG version 5.x or greater.\n"
+"\n"
+"Your file:\n"
+"*.PJC - Project Configuration File for TMG 5.0 to TMG 9.05\n"
+"\n"
+"Please refer to:\n"
+"%(gramps_wiki_import_pjc_direct_url)s"
+msgstr ""
+"Der direkte Import aus TMG-Dateien wird nicht unterstützt\n"
+"von TMG Importeur Erweiterung.\n"
+"\n"
+"Du musst eine Sicherungskopie des TMG-Projekts (*. sqz) verwenden\n"
+"\n"
+"Stelle sicher, dass dein TMG-Projekt erstellt wurde von:\n"
+"TMG Version 5.x oder höher.\n"
+"\n"
+"Deine Datei:\n"
+"* .PJC - Projektkonfigurationsdatei für TMG 5.0 bis TMG 9.05\n"
+"\n"
+"Bitte beachte:\n"
+"%(gramps_wiki_import_pjc_direct_url)s"
+
+#: TMGimporter/importtmg.py:110
+#, python-format
+msgid ""
+"Directly importing from TMG files is not supportedby the TMG Importer Addon."
+"You need to use an backup copy of TMG project(*.sqz)Ensure that your TMG "
+"project was created by:TMG version 5.x or greater.Your file:*.TMG - Version "
+"Control File for TMG 2.0 to TMG 4.0dPlease refer to:"
+"%(gramps_wiki_import_pjc_direct_url)s"
+msgstr ""
+"Der direkte Import aus TMG-Dateien wird von TMG Importeur Erweiterung nicht"
+" unterstützt. Du musst eine Sicherungskopie des TMG-Projekts (*. sqz)"
+" verwenden. Stelle sicher, dass dein TMG-Projekt erstellt wurde von: TMG"
+" Version 5.x oder höher. Deine Datei: *. TMG - Versionskontrolldatei für TMG"
+" 2.0 bis TMG 4.0d Bitte beachte:"
+"%(gramps_wiki_import_pjc_direct_url)s"
+
+#: TMGimporter/importtmg.py:131
+#, python-format
+msgid ""
+"Directly importing from TMG files is not supportedby the TMG Importer Addon."
+"You need to use an backup copy of TMG project(*.sqz)Ensure that your TMG "
+"project was created by:TMG version 5.x or greater.Your file:*.VER - Version "
+"Control File for TMG 1.2 and earlierPlease refer to:"
+"%(gramps_wiki_import_pjc_direct_url)s"
+msgstr ""
+"Der direkte Import aus TMG-Dateien wird von TMG Importeur Erweiterung nicht"
+" unterstützt. Du musst eine Sicherungskopie des TMG-Projekts (*. sqz)"
+" verwenden. Stelle sicher, dass dein TMG-Projekt erstellt wurde von: TMG"
+" Version 5.x oder höher. Deine Datei: *. VER - Versionskontrolldatei für TMG"
+" 1.2 und früher Bitte beachte:"
+"%(gramps_wiki_import_pjc_direct_url)s"
+
+#: TMGimporter/libtmg.py:1558
+#, python-format
+msgid "Could not create media directory %s"
+msgstr "Konnte Medienverzeichnis %s nicht erstellen"
+
+#: TMGimporter/libtmg.py:1562
+#, python-format
+msgid "Media directory %s is not writable"
+msgstr "In Medienverzeichnis %s kann nicht geschrieben werden"
+
+#: TMGimporter/libtmg.py:1568
+#, python-format
+msgid ""
+"Media directory %s exists. Delete it first, then restart the import process"
+msgstr ""
+"Medienverzeichnis %s existiert. Lösche es erst und wiederhole danach den "
+"Importvorgang"
+
+#: TMGimporter/libtmg.py:1598
+#, python-format
+msgid "Error extracting into %s"
+msgstr "Fehler beim Entpacken nach %s"
+
+#: TMGimporter/libtmg.py:1609
+msgid "Base path for relative media set"
+msgstr "Basisverzeichnis für relative Mediensatz"
+
+#: TMGimporter/libtmg.py:1610
+#, python-format
+msgid ""
+"The base media path of this Family Tree has been set to %s. Consider taking "
+"a simpler path. You can change this in the Preferences, while moving your "
+"media files to the new position, and using the media manager tool, option "
+"'Replace substring in the path' to set correct paths in your media objects."
+msgstr ""
+"Der Medienbasispfad dieses Stammbaum wurde auf %s gesetzt. Überlege, einen "
+"einfacheren Pfad zu wählen. Ändere dies in den Einstellungen, durch "
+"verschieben deiner Medienobjekte an die neue Position. Benutze dazu das "
+"Medienverwaltungswerkzeug mit 'Ersetze Zeichenfolge', um die korrekten Pfade "
+"zu setzen."
+
+#: TMGimporter/libtmg.py:1618
+msgid "Cannot set base media path"
+msgstr "Kann Basismedienpfad nicht setzen"
+
+#: TMGimporter/libtmg.py:1619
+#, python-format
+msgid ""
+"The Family Tree you imported into already has a base media path: "
+"%(orig_path)s. The imported media objects however are relative from the path "
+"%(path)s. You can change the media path in the Preferences or you can "
+"convert the imported files to the existing base media path. You can do that "
+"by moving your media files to the new position, and using the media manager "
+"tool, option 'Replace substring in the path' to set correct paths in your "
+"media objects."
+msgstr ""
+"Der importierte Familienbaum hat bereits einen Medienbasispfad: "
+"%(orig_path)s. Die importierten Medienobjekte sind aber relativ zu dem Pfad "
+"%(path)s. Du kannst den Medienpfad in den Einstellungen ändern, oder die "
+"importierten Mediendateien in den bestehenden Medienbasispfad umschreiben. "
+"Nutze dazu das Werkzeug 'Medienverwaltung' mit der Funktion 'Ersetze "
+"Zeichenfolge im Pfad'."
+
+#: TMGimporter/libtmg.py:1645 TMGimporter/libtmg.py:1670
+msgid "Database Information"
+msgstr "Datumsinformation"
+
+#: TMGimporter/libtmg.py:1647
+msgid "_OK"
+msgstr "_OK"
+
+#: TMGimporter/libtmg.py:1653
+msgid "Setting"
+msgstr "Einstellung"
+
+#: TMGimporter/libtmg.py:1654
+msgid "Value"
+msgstr "Wert"
+
+#: TMGimporter/libtmg.glade:15
+msgid "TMG Importer"
+msgstr "TMG Importeur"
+
+#: TMGimporter/libtmg.glade:31
+msgid "Unreleased Addon - Work In Progress"
+msgstr "Unveröffentlichte Erweiterung - In Arbeit"
+
+#: TMGimporter/libtmg.glade:51
+msgid ""
+"Wholly Genes - The Master Genealogist (TMG) Importer\n"
+"\n"
+"Select the TMG Data Set you wish to import."
+msgstr ""
+"Ganz Gene - Der Master Genealogist (TMG) Importeur\n"
+"\n"
+"Wähle den TMG-Datensatz aus, den du importieren möchtest."
+
+#: TMGimporter/libtmg.glade:77
+msgid "ID"
+msgstr "ID"
+
+#: TMGimporter/libtmg.glade:88
+msgid "Data Set Name"
+msgstr "Datensatzname"
+
+#: TMGimporter/libtmg.glade:148
+msgid "_Import TMG Data Set"
+msgstr "TMG-Datensatz _Importieren"
