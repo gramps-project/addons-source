@@ -14,15 +14,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-21 14:47+0200\n"
-"PO-Revision-Date: 2020-07-21 15:24+0200\n"
+"POT-Creation-Date: 2020-08-09 21:53+0200\n"
+"PO-Revision-Date: 2020-08-09 21:59+0200\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Lokalize 19.12.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: EditExifMetadata/editexifmetadata.gpr.py:29
@@ -106,8 +106,8 @@ msgid ""
 "This is the measurement of Above or Below Sea Level.  It is measured in "
 "meters.  Example: 200.558, -200.558"
 msgstr ""
-"Dies ist die Messung von über oder unter dem Meeresspiegel. Es wird in Metern"
-" gemessen.  Beispiel: 200.558, -200.558"
+"Dies ist die Messung von über oder unter dem Meeresspiegel. Es wird in "
+"Metern gemessen.  Beispiel: 200.558, -200.558"
 
 #: EditExifMetadata/editexifmetadata.py:182
 msgid ""
@@ -214,10 +214,6 @@ msgstr "Konvertieren und Löschen"
 msgid "Convert"
 msgstr "Konvertiere"
 
-#: EditExifMetadata//editexifmetadata.py:217
-msgid "Clear"
-msgstr "Löschen"
-
 #: EditExifMetadata/editexifmetadata.py:792
 msgid ""
 "Your image has been converted and the original file has been deleted, and "
@@ -275,9 +271,9 @@ msgstr ""
 msgid "This button will clear all of the data fields shown here."
 msgstr "Diese Schaltfläche leert alle hier gezeigten Datenfelder."
 
-#: EditExifMetadata//editexifmetadata.py:937
+#: EditExifMetadata/editexifmetadata.py:921
 msgid "This button will clear all of the GPS fields shown here."
-msgstr "Diese Schaltfläche leert alle hier gezeigten Datenfelder."
+msgstr "Diese Schaltfläche löscht alle hier gezeigten GPS-Felder."
 
 #: EditExifMetadata/editexifmetadata.py:925
 msgid ""
@@ -330,15 +326,15 @@ msgstr "Breite/Länge/Höhe GPS Koordinaten"
 
 #: EditExifMetadata/editexifmetadata.py:1054
 msgid "Latitude :"
-msgstr "Breitengrad :"
+msgstr "Breitengrad:"
 
 #: EditExifMetadata/editexifmetadata.py:1055
 msgid "Longitude :"
-msgstr "Längengrad :"
+msgstr "Längengrad:"
 
 #: EditExifMetadata/editexifmetadata.py:1056
 msgid "Altitude :"
-msgstr "Höhe :"
+msgstr "Höhe:"
 
 #: EditExifMetadata/editexifmetadata.py:1099
 msgid "Bad Date/Time"
@@ -371,15 +367,13 @@ msgstr "ACHTUNG! Du bist dabei alle Exif Metadaten von diesem Bild zu löschen?"
 msgid "Delete"
 msgstr "Löschen"
 
-#: EditExifMetadata//editexifmetadata.py:1149
+#: EditExifMetadata/editexifmetadata.py:1133
 msgid ""
 "WARNING!  You are about to completely delete the GPS metadata from this "
 "image?"
-msgstr "ACHTUNG! Du bist dabei alle Exif Metadaten von diesem Bild zu löschen?"
-
-#: EditExifMetadata//editexifmetadata.py:1334
-
-#: EditExifMetadata/editexifmetadata.py:1334
+msgstr ""
+"WARNUNG! Du bist dabei, die GPS-Metadaten vollständig aus diesem Bild zu "
+"löschen?"
 
 #: EditExifMetadata/editexifmetadata.py:1318
 msgid "Media Title Update"
@@ -400,8 +394,8 @@ msgstr "Alle Exif Metadaten wurden von diesem Bild entfernt..."
 #: EditExifMetadata/editexifmetadata.py:1455
 msgid "There was an error in stripping the Exif metadata from this image..."
 msgstr ""
-"Beim reinitialisieren der Exif Metadaten für dieses Bild ist ein Fehler "
-"aufgetreten..."
+"Beim reinitialisieren der Exif Metadaten für dieses Bild ist ein Fehler"
+" aufgetreten..."
 
 #~ msgid ""
 #~ "Enter the Latitude GPS coordinates for this image,\n"
@@ -427,13 +421,8 @@ msgstr ""
 #~ msgid "Thumbnail"
 #~ msgstr "Miniaturbild"
 
-#: EditExifMetadata//editexifmetadata.py:215
-msgid "Copy"
-msgstr "Kopieren"
-
 #~ msgid "Image Size : %04(width)d x %04(height)d pixels"
 #~ msgstr "Bildgröße : %04(width)d x %04(height)d Punkte"
 
 #~ msgid "Displaying Exif metadata..."
 #~ msgstr "Exif Metadaten zeigen..."
-
