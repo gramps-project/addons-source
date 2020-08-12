@@ -39,6 +39,7 @@ from gramps.gen.display.name import displayer as _nd
 from gramps.gui.managedwindow import ManagedWindow
 from gramps.gen.db import DbTxn
 from gramps.gen.lib import PersonRef
+from gramps.gui.dialog import OkDialog
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 _ = glocale.translation.sgettext
 
@@ -54,6 +55,7 @@ ASSOC_LOOKUP = {
 "Godmother": "Godchild",
 "Landlord": "Tenant"
 }
+WIKI_HELP_PAGE = 'https://gramps-project.org/wiki/index.php/Addon:SyncAssociation'
 
 #------------------------------------------------------------------------
 #
@@ -65,11 +67,15 @@ class syncAssociations(ManagedWindow):
     Sync Associations by adding an Association for the person mentioned in another Association.
     """
     def __init__(self, dbstate, user, options_class, name, callback=None):
+        uistate = user.uistate
         self.dbstate = dbstate
         self.db = dbstate.db
+        count = 0
+        has_assoc = False
         for person_handle in self.db.get_person_handles():
             person = self.db.get_person_from_handle(person_handle)
             for assoc in person.get_person_ref_list():
+                has_assoc = True
                 oldRel = assoc.get_relation()
                 if oldRel in ASSOC_LOOKUP:
                     associate = self.db.get_person_from_handle(assoc.ref)
@@ -78,6 +84,7 @@ class syncAssociations(ManagedWindow):
                         if assoc_rev.get_relation() == ASSOC_LOOKUP.get(assoc.get_relation()) and assoc_rev.ref == person_handle :
                             update = False
                     if update:
+                        count += 1
                         newRel = ASSOC_LOOKUP.get(assoc.get_relation())
                         personRef = PersonRef()
                         personRef.set_reference_handle(person_handle)
@@ -86,7 +93,21 @@ class syncAssociations(ManagedWindow):
                         with DbTxn (_('Add %s reciprocal association' ) % _nd.display(associate), self.db) as self.trans:
                             associate.add_person_ref(personRef)
                             self.db.commit_person(associate, self.trans)
-
+        if uistate:
+            if count > 0:
+                OkDialog_("Sync Associations"),
+                        _("{} Reciprocal associations created".format(count)),
+                        parent = uistate.window)
+            elif has_assoc:
+                OkDialog(_("Sync Associations"),
+                         _("All reciprocal associations exist, none created"),
+                         parent = uistate.window)
+            else:
+                OkDialog(_("Sync Associations"),
+                         _("No existing associations, so no reciprocal ones needed"),
+                         parent = uistate.window)
+        else:
+            print("{} Reciprocal associations created".format(count))
     def main(self):
         pass
 
