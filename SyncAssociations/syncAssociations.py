@@ -84,7 +84,6 @@ class syncAssociations(ManagedWindow):
                         if assoc_rev.get_relation() == ASSOC_LOOKUP.get(assoc.get_relation()) and assoc_rev.ref == person_handle :
                             update = False
                     if update:
-                        count += 1
                         newRel = ASSOC_LOOKUP.get(assoc.get_relation())
                         personRef = PersonRef()
                         personRef.set_reference_handle(person_handle)
@@ -93,11 +92,12 @@ class syncAssociations(ManagedWindow):
                         with DbTxn (_('Add %s reciprocal association' ) % _nd.display(associate), self.db) as self.trans:
                             associate.add_person_ref(personRef)
                             self.db.commit_person(associate, self.trans)
+                        count += 1
         if uistate:
             if count > 0:
-                OkDialog_("Sync Associations"),
-                        _("{} Reciprocal associations created".format(count)),
-                        parent = uistate.window)
+                OkDialog(_("Sync Associations"),
+                         _("{} Reciprocal associations created".format(count)),
+                         parent = uistate.window)
             elif has_assoc:
                 OkDialog(_("Sync Associations"),
                          _("All reciprocal associations exist, none created"),
