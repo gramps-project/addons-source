@@ -2,6 +2,7 @@
 # Gramps - a GTK+/GNOME based genealogy program
 #
 # Copyright (C) 2020  Nick Hall
+# Copyright (C) 2020  Gary Griffin
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -20,7 +21,6 @@
 
 """
 DNA Gramplet
-
 This Gramplet shows a DNA segment map.
 """
 #-------------------------------------------------------------------------
@@ -40,6 +40,8 @@ from gi.repository import PangoCairo
 #------------------------------------------------------------------------
 from gramps.gen.plug import Gramplet
 from gramps.gen.const import GRAMPS_LOCALE as glocale
+import random
+from gramps.gen.relationship import get_relationship_calculator
 _ = glocale.translation.gettext
 
 class DNAGramplet(Gramplet):
@@ -54,6 +56,10 @@ class DNAGramplet(Gramplet):
         self.connect(self.dbstate.db, 'person-add', self.update)
         self.connect(self.dbstate.db, 'person-delete', self.update)
         self.connect(self.dbstate.db, 'person-update', self.update)
+        self.connect(self.dbstate.db, 'family-update', self.update)
+        self.connect(self.dbstate.db, 'family-add', self.update)
+        self.connect(self.dbstate.db, 'family-delete', self.update)
+        self.connect_signal('Person',self.update)
 
     def build_gui(self):
         self.vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
@@ -71,43 +77,32 @@ class DNAGramplet(Gramplet):
         active_handle = self.get_active('Person')
         if active_handle:
             active = self.dbstate.db.get_person_from_handle(active_handle)
-
+            self.relationship = get_relationship_calculator(glocale)
+            random.seed(0.66) # use a fixed arbitrary number so it is concistent on redraw
+            segmap = SegmentMap()
+            segmap.set_title(_('DNA Segment Map'))
+            segmap.set_axis(_('Chr'))
+            segmap.segments = []
             for assoc in active.get_person_ref_list():
                 if assoc.get_relation() == 'DNA':
+                    rgb_color = [random.random(),random.random(),random.random()]
+                    associate = self.dbstate.db.get_person_from_handle(assoc.ref)
+                    data, msg = self.relationship.get_relationship_distance_new(self.dbstate.db,active,associate)
                     for handle in assoc.get_note_list():
                         note = self.dbstate.db.get_note_from_handle(handle)
-                        data = get_segment_data(note)
-                        self.create_segmap(data)
-
-    def create_segmap(self, data):
-        """
-        Create a segment map based on a list of segments.
-        """
-        segmap = SegmentMap()
-        segmap.set_title(_('DNA Segment Map'))
-        segmap.set_axis(_('Chr'))
-        segmap.set_segments(data)
-        #segmap.connect('clicked', self.on_segment_clicked, handle_data)
-        segmap.show()
-        self.vbox.pack_start(segmap, True, True, 0)
-
-    def on_segment_clicked(self, _dummy, value, handle_data):
-        """
-        Called when a segment is double-clicked.
-        """
-        print ('clicked')
-
-def get_segment_data(note):
-    segments = []
-    for line in note.get().split('\n'):
-        field = line.split(',')
-        chromo = field[0]
-        start = get_base(field[1])
-        stop = get_base(field[2])
-        side = field[3]
-        cms = float(field[4])
-        segments.append([chromo, start, stop, side, cms])
-    return segments
+                        for line in note.get().split('\n'):
+                            field = line.split(',')
+                            chromo = field[0]
+                            start = get_base(field[1])
+                            stop = get_base(field[2])
+                            if data[0] == -1:
+                                side = field[3]
+                            else:
+                                side = data[2][0].upper()
+                            cms = float(field[4])
+                            segmap.segments.append([chromo, start, stop, side, cms, rgb_color])
+            segmap.show()
+            self.vbox.pack_start(segmap, True, True, 0)
 
 def get_base(num):
     try:
@@ -310,7 +305,7 @@ class SegmentMap(Gtk.DrawingArea):
         # Segments
         cr.set_line_width(1)
         self.__rects = []
-        for chromo, start, stop, side, cms in self.segments:
+        for chromo, start, stop, side, cms, rgb_color in self.segments:
             i = self.labels.index(chromo)
             chr_offset = i * 2 * (chr_height + spacing) + offset
             if side == 'M':
@@ -324,7 +319,7 @@ class SegmentMap(Gtk.DrawingArea):
                          chart_width * (stop-start) / maximum,
                          chr_height))
 
-            cr.set_source_rgba(0.5, 0.5, 1, 1)
+            cr.set_source_rgba(rgb_color[0], rgb_color[1], rgb_color[2], 1)
             cr.fill_preserve()
             cr.set_source_rgba(*fg_color)
             cr.stroke()
