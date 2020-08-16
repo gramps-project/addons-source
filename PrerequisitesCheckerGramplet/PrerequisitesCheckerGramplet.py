@@ -247,8 +247,8 @@ class PrerequisitesCheckerGramplet(Gramplet):
         '''
         self.append_text("\n")
         # Start check
-        LATEST_GRAMPS_VERSION = (5, 1, 2)
-        LATEST_GRAMPS_DATE = "2020-01-10"
+        LATEST_GRAMPS_VERSION = (5, 1, 3)
+        LATEST_GRAMPS_DATE = "2020-08-12"
         latest_release_message = ("Gramps " + verstr(LATEST_GRAMPS_VERSION) +
                                   "  released " + LATEST_GRAMPS_DATE +
                                   " is the most current version.\n")
@@ -792,6 +792,8 @@ class PrerequisitesCheckerGramplet(Gramplet):
                           " (Requires version 0.5.x)")
         except ImportError:
             result = "* python-fontconfig Not found, (Requires version 0.5.x)"
+        except AttributeError:
+            result = "* python-fontconfig installed, version unavailable"
         # End check
         self.append_text(result)
 
