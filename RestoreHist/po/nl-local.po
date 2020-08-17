@@ -1,0 +1,33 @@
+# Dutch translation of addon RestoreHist.
+# Copyright (C) 2020 Gramps project
+# This file is distributed under the same license as the RestoreHist package.
+# Jan Sparreboom <jan@sparreboom.net>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: RestoreHist 5.x\n"
+"Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
+"POT-Creation-Date: 2019-01-04 18:55-0600\n"
+"PO-Revision-Date: 2020-08-10 20:30+0200\n"
+"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
+"Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+
+#: RestoreHist/restorehist.gpr.py:29
+msgid "Restart where you were last working"
+msgstr "Start opnieuw waar u voor het laatst werkte"
+
+#: RestoreHist/restorehist.gpr.py:30
+msgid ""
+"This addon causes Gramps to restart on the same view and object where Gramps "
+"was previously closed.  It adds no new menus or Gramplets, but allows the "
+"last six objects visited to be found via the 'Go' menu."
+msgstr ""
+"Deze add-on zorgt ervoor dat Gramps herstart op dezelfde weergave en "
+"hetzelfde object waar Gramps voorheen werd afgesloten. Het voegt geen nieuwe "
+"menu's of gramplets toe, maar laat toe om de laatste zes bezochte objecten "
+"te vinden via het menu 'Ga naar'."
