@@ -1,0 +1,189 @@
+# Dutch translation of addon QuiltVieuw.
+# Copyright (C) 2020 Gramps project
+# This file is distributed under the same license as the QuiltVieuw package.
+# Jan Sparreboom <jan@sparreboom.net>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: QuiltVieuw 5.x\n"
+"Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
+"POT-Creation-Date: 2019-01-04 18:55-0600\n"
+"PO-Revision-Date: 2020-08-12 15:38+0200\n"
+"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
+"Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+
+#: QuiltView/QuiltView.gpr.py:30
+msgid "Quilt Chart"
+msgstr "Quilt-grafiek"
+
+#: QuiltView/QuiltView.gpr.py:31
+msgid "Charts"
+msgstr "Grafieken"
+
+#: QuiltView/QuiltView.gpr.py:32
+msgid "The view shows a quilt chart visualisation of a family tree"
+msgstr "De weergave toont een quiltkaartvisualisatie van een stamboom"
+
+#: QuiltView/QuiltView.py:223
+msgid "Quilt chart"
+msgstr "Quilt-grafiek"
+
+#: QuiltView/QuiltView.py:307
+msgid "Select the name for which you want to see."
+msgstr "Selecteer de naam die u wilt zien."
+
+#: QuiltView/QuiltView.py:312
+msgid "Clear"
+msgstr "Wissen"
+
+#: QuiltView/QuiltView.py:314
+msgid "Clear the entry field in the name selection box."
+msgstr "Wis het invoerveld in het naamkeuzevak."
+
+#: QuiltView/QuiltView.py:319
+msgid "Nothing is selected"
+msgstr "Er is niets geselecteerd"
+
+#: QuiltView/QuiltView.py:375
+msgid "Organize Bookmarks"
+msgstr "Organiseer bladwijzers"
+
+#: QuiltView/QuiltView.py:572
+#, python-format
+msgid ""
+"You have %(filter)d filtered people, %(count)d people shown on the tree and "
+"%(total)d people in your database."
+msgstr ""
+"U heeft %(filter)d personen gefilterd, %(count)d personen in de grafiek "
+"getoond en %(total)d personen in uw database."
+
+#: QuiltView/QuiltView.py:602
+msgid "Could Not Set a Bookmark"
+msgstr "Kan geen bladwijzer instellen"
+
+#: QuiltView/QuiltView.py:603
+msgid "A bookmark could not be set because no one was selected."
+msgstr ""
+"Er kan geen bladwijzer worden ingesteld omdat er niemand is geselecteerd."
+
+#: QuiltView/QuiltView.py:662
+msgid "Loading individuals"
+msgstr "Personen laden"
+
+#: QuiltView/QuiltView.py:663
+msgid "Loading the data"
+msgstr "Laden van de gegevens"
+
+#: QuiltView/QuiltView.py:1053
+msgid "About Quilt View"
+msgstr "Over Quiltweergave"
+
+#: QuiltView/QuiltView.py:1123
+#, python-format
+msgid "Family of %(husband)s and %(spouse)s"
+msgstr "Gezin van %(husband)s en %(spouse)s"
+
+#: QuiltView/QuiltView.py:1129 QuiltView/QuiltView.py:1133
+#, python-format
+msgid "Family of %s"
+msgstr "Gezin van %s"
+
+#: QuiltView/QuiltView.py:1188 QuiltView/QuiltView.py:1317
+msgid "Edit"
+msgstr "Bewerken"
+
+#: QuiltView/QuiltView.py:1191 QuiltView/QuiltView.py:1320
+msgid "Edit tags"
+msgstr "Bewerk labels"
+
+#: QuiltView/QuiltView.py:1207 QuiltView/QuiltView.py:1532
+msgid "Children"
+msgstr "Kinderen"
+
+#: QuiltView/QuiltView.py:1220 QuiltView/QuiltView.py:1545
+msgid "Add child to family"
+msgstr "Voeg kind aan gezin toe"
+
+#: QuiltView/QuiltView.py:1290
+msgid "Add Child to Family"
+msgstr "Voeg kind toe aan gezin"
+
+#: QuiltView/QuiltView.py:1323
+msgid "_Copy"
+msgstr "_Kopiëren"
+
+#: QuiltView/QuiltView.py:1333
+msgid "Spouses"
+msgstr "Echtgenoten"
+
+#: QuiltView/QuiltView.py:1338 QuiltView/QuiltView.py:1463
+msgid "Add"
+msgstr "Toevoegen"
+
+#: QuiltView/QuiltView.py:1362
+msgid "Siblings"
+msgstr "Broers en zussen"
+
+#: QuiltView/QuiltView.py:1430
+msgid "Parents"
+msgstr "Ouders"
+
+#: QuiltView/QuiltView.py:1469
+msgid "Related"
+msgstr "Verwant"
+
+#: QuiltView/QuiltView.py:1500
+msgid "Set as home person"
+msgstr "Instellen als beginpersoon"
+
+#: QuiltView/QuiltView.py:1650
+msgid "Adding Tags"
+msgstr "Labels toevoegen"
+
+#: QuiltView/QuiltView.py:1656
+#, python-format
+msgid "Adding Tags to person (%s)"
+msgstr "Labels aan persoon (%s) toevoegen"
+
+#: QuiltView/QuiltView.py:1661
+#, python-format
+msgid "Adding Tags to family (%s)"
+msgstr "Labels aan gezin (%s) toevoegen"
+
+#: QuiltView/QuiltView.py:1865
+msgid "Printing the tree"
+msgstr "De boom afdrukken"
+
+#: QuiltView/QuiltView.py:1869
+#, python-format
+msgid "Need to print %(pages)s pages (%(format)s format)"
+msgstr "Moet %(pages)s pagina's (%(format)s-indeling) afdrukken"
+
+#: QuiltView/QuiltView.py:1921
+msgid ""
+"Center on the selected person.\n"
+"The new position of the person will be near the top left corner."
+msgstr ""
+"Centreer op de geselecteerde persoon.\n"
+"De nieuwe positie van de persoon bevindt zich in de linkerbovenhoek."
+
+#: QuiltView/QuiltView.py:1926
+msgid "The path color"
+msgstr "De padkleur"
+
+#: QuiltView/QuiltView.py:1931
+msgid "The selected person color"
+msgstr "Kleur van de geselecteerde persoon"
+
+#: QuiltView/QuiltView.py:1936
+msgid "The path transparency"
+msgstr "De padtransparantie"
+
+#: QuiltView/QuiltView.py:1939
+msgid "General options"
+msgstr "Algemene opties"
