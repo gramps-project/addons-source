@@ -1,55 +1,24 @@
-# translation of nl.po to nederlands
-# Dutch translation of GRAMPS
-# Copyright (C) 2003 The Free Software Foundation,  Inc.
-#
+# Dutch translation of addon TimelineQuickview.
+# Copyright (C) 2020 Gramps project
+# This file is distributed under the same license as the TimelineQuickview package.
 # Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
 # Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
 # Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010.
+# Jan Sparreboom <jan@sparreboom.net>, 2020.
 #
-# --------------------------------------------------
-# Conventies (kan later altijd nog aangepast worden)
-# --------------------------------------------------
-# active             actief (moet hier nog iets beters voor verzinnen)
-# attribute          kenmerk
-# bookmark           bladwijzer
-# view               scherm
-# city               plaats beter is stad dorp
-# marker             aanduiding
-# people             personen
-# place              locatie
-# record             archief/kaart
-# database           gegevensbestand (KB)
-# chart              grafiek
-# Home person        beginpersoon : (EDR)
-# spouse             echtgenoot
-# partner            partner
-# warning            let op
-# at the age of      op een leeftijd van -> toen hij/zij .. oud was
-# repositories       bibliotheken
-# regex              regex onvertaald laten
-# expression         uitdrukking
-# given name         voornaam
-# reference	     waarnaar verwezen wordt
-# count		     aantal maal
-# lineage	     lijn
-# locality	     plaats
-# u gebruiken
-# telkens werkwoord achteraan plaatsen
 msgid ""
 msgstr ""
-"Project-Id-Version: gramps\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-04-14 20:10+0200\n"
-"PO-Revision-Date: 2011-04-12 20:28+0100\n"
-"Last-Translator: Erik De Richter <frederik.de.richter@pandora.be>\n"
-"Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
-"Language: \n"
+"Project-Id-Version: TimelineQuickview 5.x\n"
+"Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
+"POT-Creation-Date: 2019-01-04 18:55-0600\n"
+"PO-Revision-Date: 2020-08-15 16:09+0200\n"
+"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
+"Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-Language: Nederlands\n"
-"X-Poedit-Country: België\n"
+"X-Generator: Poedit 2.3\n"
 
 #: TimelineQuickview/TimelineQuickview.gpr.py:9
 msgid "Timeline"
@@ -57,85 +26,83 @@ msgstr "Tijdlijn"
 
 #: TimelineQuickview/TimelineQuickview.gpr.py:10
 msgid "Display a person's events on a timeline"
-msgstr "Gebeurtenissen van een persoon worden op een tijdslijn getoond"
+msgstr "Geef de gebeurtenissen van een persoon weer op een tijdlijn"
 
-#: TimelineQuickview/TimelineQuickview.py:42
+#: TimelineQuickview/TimelineQuickview.py:46
 msgid "Parents"
 msgstr "Ouders"
 
-#: TimelineQuickview/TimelineQuickview.py:44
+#: TimelineQuickview/TimelineQuickview.py:48
 msgid "Inlaw Parents"
 msgstr "Schoonouders"
 
-#: TimelineQuickview/TimelineQuickview.py:47
+#: TimelineQuickview/TimelineQuickview.py:51
 msgid "Grandparents"
 msgstr "Grootouders"
 
-#: TimelineQuickview/TimelineQuickview.py:49
+#: TimelineQuickview/TimelineQuickview.py:53
 msgid "Inlaw Grandparents"
 msgstr "Schoongrootouders"
 
-#: TimelineQuickview/TimelineQuickview.py:52
+#: TimelineQuickview/TimelineQuickview.py:56
 msgid "Great grandparents"
 msgstr "Overgrootouders"
 
-#: TimelineQuickview/TimelineQuickview.py:54
+#: TimelineQuickview/TimelineQuickview.py:58
 msgid "Inlaw Great grandparents"
 msgstr "Schoonovergrootouders"
 
-#: TimelineQuickview/TimelineQuickview.py:57
+#: TimelineQuickview/TimelineQuickview.py:61
 msgid "Great, "
-msgstr "Over, "
+msgstr "Groot, "
 
-#: TimelineQuickview/TimelineQuickview.py:57
-#: TimelineQuickview/TimelineQuickview.py:59
+#: TimelineQuickview/TimelineQuickview.py:61
+#: TimelineQuickview/TimelineQuickview.py:63
 msgid "great, "
-msgstr "over, "
+msgstr "groot, "
 
-#: TimelineQuickview/TimelineQuickview.py:57
-#: TimelineQuickview/TimelineQuickview.py:59
+#: TimelineQuickview/TimelineQuickview.py:61
+#: TimelineQuickview/TimelineQuickview.py:63
 msgid "great grandparents"
 msgstr "overgrootouders"
 
-#: TimelineQuickview/TimelineQuickview.py:59
+#: TimelineQuickview/TimelineQuickview.py:63
 msgid "Inlaw Great, "
-msgstr "Schoonover, "
+msgstr "Schoongroot, "
 
-#: TimelineQuickview/TimelineQuickview.py:97
+#: TimelineQuickview/TimelineQuickview.py:102
 msgid "Partner's spouse"
-msgstr "Partner van de echtgeno(o)t(e)"
+msgstr "Echtgenote van de partner"
 
-#: TimelineQuickview/TimelineQuickview.py:149
+#: TimelineQuickview/TimelineQuickview.py:156
 #, python-format
 msgid "Timeline for %s"
-msgstr "Tijdslijn voor %s"
+msgstr "Tijdlijn voor %s"
 
-#: TimelineQuickview/TimelineQuickview.py:152
+#: TimelineQuickview/TimelineQuickview.py:159
 msgid "Date"
 msgstr "Datum"
 
-# Gebeuren (korter)
-#: TimelineQuickview/TimelineQuickview.py:153
+#: TimelineQuickview/TimelineQuickview.py:160
 msgid "Event"
 msgstr "Gebeurtenis"
 
-# enkelvoud beter?
-#: TimelineQuickview/TimelineQuickview.py:154
+#: TimelineQuickview/TimelineQuickview.py:161
 msgid "Age"
 msgstr "Leeftijd"
 
-#: TimelineQuickview/TimelineQuickview.py:155
+#: TimelineQuickview/TimelineQuickview.py:162
 msgid "Place"
 msgstr "Locatie"
 
-#: TimelineQuickview/TimelineQuickview.py:156
+#: TimelineQuickview/TimelineQuickview.py:163
 msgid "People involved"
-msgstr "Betrokkenen"
+msgstr "Betrokken personen"
 
-#: TimelineQuickview/TimelineQuickview.py:180
+#: TimelineQuickview/TimelineQuickview.py:186
 msgid "Today"
 msgstr "Vandaag"
 
-#: TimelineQuickview/TimelineQuickview.py:186
+#: TimelineQuickview/TimelineQuickview.py:192
 msgid "Unknown"
 msgstr "Onbekend"
