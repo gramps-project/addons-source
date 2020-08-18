@@ -1,0 +1,212 @@
+# Dutch translation of addon SourcesCitationsReport.
+# Copyright (C) 2020 Gramps project
+# This file is distributed under the same license as the SourcesCitationsReport package.
+# Jan Sparreboom <jan@sparreboom.net>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: SourcesCitationsReport 5.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-13 22:18+0200\n"
+"PO-Revision-Date: 2020-08-13 22:23+0200\n"
+"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
+"Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+
+#: SourcesCitationsReport//SourcesCitationsReport.gpr.py:32
+msgid "Sources and Citations Report"
+msgstr "Bronnen en citatenverslag"
+
+#: SourcesCitationsReport//SourcesCitationsReport.gpr.py:33
+msgid "Provides a source and Citations Report with notes"
+msgstr "Biedt een bron en citatenverslag met notities"
+
+#: SourcesCitationsReport//SourcesCitationsReport.py:278
+#, python-format
+msgid "Key: %s"
+msgstr "Sleutel: %s"
+
+#: SourcesCitationsReport//SourcesCitationsReport.py:283
+msgid "Citations:"
+msgstr "Citaten:"
+
+#: SourcesCitationsReport//SourcesCitationsReport.py:292
+#, python-format
+msgid "%d"
+msgstr "%d"
+
+#: SourcesCitationsReport//SourcesCitationsReport.py:294
+#, python-format
+msgid "  %s"
+msgstr "  %s"
+
+#: SourcesCitationsReport//SourcesCitationsReport.py:300
+#, python-format
+msgid " - %s "
+msgstr " - %s "
+
+#: SourcesCitationsReport//SourcesCitationsReport.py:306
+#, python-format
+msgid "   Type: %s"
+msgstr "   Type: %s"
+
+#: SourcesCitationsReport//SourcesCitationsReport.py:308
+#, python-format
+msgid "   N-ID: %s"
+msgstr "   N-ID: %s"
+
+#: SourcesCitationsReport//SourcesCitationsReport.py:316
+#, python-format
+msgid "   %s"
+msgstr "   %s"
+
+#: SourcesCitationsReport//SourcesCitationsReport.py:330
+#: SourcesCitationsReport//SourcesCitationsReport.py:351
+#: SourcesCitationsReport//SourcesCitationsReport.py:378
+#: SourcesCitationsReport//SourcesCitationsReport.py:384
+#: SourcesCitationsReport//SourcesCitationsReport.py:390
+#, python-format
+msgid "%s"
+msgstr "%s"
+
+#: SourcesCitationsReport//SourcesCitationsReport.py:332
+#: SourcesCitationsReport//SourcesCitationsReport.py:353
+#, python-format
+msgid "   ( %s )"
+msgstr "   ( %s )"
+
+#: SourcesCitationsReport//SourcesCitationsReport.py:339
+msgid "   Spouses: "
+msgstr "   Echtgenoten "
+
+#: SourcesCitationsReport//SourcesCitationsReport.py:341
+#, python-format
+msgid "%s "
+msgstr "%s "
+
+#: SourcesCitationsReport//SourcesCitationsReport.py:344
+#, python-format
+msgid "and %s "
+msgstr "en %s "
+
+#: SourcesCitationsReport//SourcesCitationsReport.py:355
+#, python-format
+msgid " %s"
+msgstr " %s"
+
+#: SourcesCitationsReport//SourcesCitationsReport.py:363
+msgid "Person"
+msgstr "Persoon"
+
+#: SourcesCitationsReport//SourcesCitationsReport.py:363
+msgid "ID"
+msgstr "ID"
+
+#: SourcesCitationsReport//SourcesCitationsReport.py:364
+msgid "Role"
+msgstr "Rol"
+
+#: SourcesCitationsReport//SourcesCitationsReport.py:419
+msgid "Report Options"
+msgstr "Verslagopties"
+
+#: SourcesCitationsReport//SourcesCitationsReport.py:421
+msgid "Report Title"
+msgstr "Verslagtitel"
+
+#: SourcesCitationsReport//SourcesCitationsReport.py:421
+msgid "Title of the Report"
+msgstr "Titel van het verslag"
+
+#: SourcesCitationsReport//SourcesCitationsReport.py:422
+msgid "Title string for the report."
+msgstr "Titelregel voor het verslag."
+
+#: SourcesCitationsReport//SourcesCitationsReport.py:425
+msgid "Subtitle"
+msgstr "Ondertitel"
+
+#: SourcesCitationsReport//SourcesCitationsReport.py:425
+msgid "Subtitle of the Report"
+msgstr "Ondertitel van het verslag"
+
+#: SourcesCitationsReport//SourcesCitationsReport.py:426
+msgid "Subtitle string for the report."
+msgstr "Ondertitelregel van het verslag."
+
+#: SourcesCitationsReport//SourcesCitationsReport.py:431
+msgid "researcher name"
+msgstr "naam onderzoeker"
+
+#: SourcesCitationsReport//SourcesCitationsReport.py:433
+#, python-format
+msgid "Copyright %(year)d %(name)s"
+msgstr "Auteursrecht %(year)d %(name)s"
+
+#: SourcesCitationsReport//SourcesCitationsReport.py:435
+msgid "Footer"
+msgstr "Voettekst"
+
+#: SourcesCitationsReport//SourcesCitationsReport.py:436
+msgid "Footer string for the page."
+msgstr "Voettekstzin voor de pagina."
+
+#: SourcesCitationsReport//SourcesCitationsReport.py:443
+msgid "Select using filter"
+msgstr "Selecteer met behulp van filter"
+
+#: SourcesCitationsReport//SourcesCitationsReport.py:444
+msgid "Select sources using a filter"
+msgstr "Selecteer bronnen met behulp van een filter"
+
+#: SourcesCitationsReport//SourcesCitationsReport.py:451
+msgid "Show persons"
+msgstr "Toon personen"
+
+#: SourcesCitationsReport//SourcesCitationsReport.py:452
+msgid "Whether to show events and persons mentioned in the note"
+msgstr "Of gebeurtenissen en personen vermeld in de notitie moeten worden weergegeven"
+
+#: SourcesCitationsReport//SourcesCitationsReport.py:488
+msgid "The style used for the title of the report."
+msgstr "De stijl die wordt gebruikt voor de titel van het verslag."
+
+#: SourcesCitationsReport//SourcesCitationsReport.py:503
+msgid "The style used for the subtitle of the report."
+msgstr "De stijl die wordt gebruikt voor de ondertitel van het rapport."
+
+#: SourcesCitationsReport//SourcesCitationsReport.py:517
+msgid "The style used for the footer of the report."
+msgstr "De stijl die wordt gebruikt voor de voettekst van het rapport."
+
+#: SourcesCitationsReport//SourcesCitationsReport.py:532
+msgid "The style used for source title."
+msgstr "De stijl die wordt gebruikt voor de brontitel."
+
+#: SourcesCitationsReport//SourcesCitationsReport.py:544
+msgid "The style used for source subtitle."
+msgstr "De stijl die wordt gebruikt voor de bronondertiteling."
+
+#: SourcesCitationsReport//SourcesCitationsReport.py:556
+msgid "The style used for Source details."
+msgstr "De stijl die wordt gebruikt voor brondetails."
+
+#: SourcesCitationsReport//SourcesCitationsReport.py:571
+msgid "The style used for citation title."
+msgstr "De stijl die wordt gebruikt voor de citaattitel."
+
+#: SourcesCitationsReport//SourcesCitationsReport.py:583
+msgid "The style used for a column title."
+msgstr "De stijl die wordt gebruikt voor een kolomtitel."
+
+#: SourcesCitationsReport//SourcesCitationsReport.py:599
+msgid "The style used for each section."
+msgstr "De stijl die voor elke sectie wordt gebruikt."
+
+#: SourcesCitationsReport//SourcesCitationsReport.py:630
+msgid "The style used for event and person details."
+msgstr "De stijl die wordt gebruikt voor details over gebeurtenissen en personen."
