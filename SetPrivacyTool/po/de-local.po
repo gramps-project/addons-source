@@ -7,20 +7,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-29 16:16+1000\n"
-"PO-Revision-Date: 2019-10-24 10:22+0200\n"
+"POT-Creation-Date: 2020-08-12 17:40+0200\n"
+"PO-Revision-Date: 2020-08-12 18:02+0200\n"
+"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
 "Language-Team: \n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.4\n"
-"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"X-Generator: Poedit 2.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: de\n"
 
 #: SetPrivacyTool/SetPrivacyTool.gpr.py:23 SetPrivacyTool/SetPrivacyTool.py:48
-#: SetPrivacyTool/SetPrivacyTool.py:93 SetPrivacyTool/SetPrivacyTool.py:130
-#: SetPrivacyTool/SetPrivacyTool.py:157
+#: SetPrivacyTool/SetPrivacyTool.py:90 SetPrivacyTool/SetPrivacyTool.py:93
+#: SetPrivacyTool/SetPrivacyTool.py:130 SetPrivacyTool/SetPrivacyTool.py:157
 msgid "Set Privacy Tool"
 msgstr "Daten als privat markieren"
 
@@ -28,17 +28,27 @@ msgstr "Daten als privat markieren"
 msgid "Set all objects of the last <number> of years private."
 msgstr "All Objekte der letzten <number> Jahre als privat markieren."
 
+#: SetPrivacyTool/SetPrivacyTool.py:87
+#, python-format
+msgid "Set private: %d %s\n"
+msgstr "Privat einstellen: %d %s\n"
+
+#: SetPrivacyTool/SetPrivacyTool.py:89
+#, python-format
+msgid "Not private: %d %s\n"
+msgstr "Nicht privat: %d %s\n"
+
 #: SetPrivacyTool/SetPrivacyTool.py:96
 msgid "Set persons private.."
-msgstr "Personen als privat markieren …"
+msgstr "Personen als privat markieren…"
 
 #: SetPrivacyTool/SetPrivacyTool.py:133
 msgid "Set events private.."
-msgstr "Ereignisse als privat markieren …"
+msgstr "Ereignisse als privat markieren…"
 
 #: SetPrivacyTool/SetPrivacyTool.py:160
 msgid "Set media private.."
-msgstr "Medien als privat markieren …"
+msgstr "Medien als privat markieren…"
 
 #: SetPrivacyTool/SetPrivacyTool.py:195
 msgid "Persons"
