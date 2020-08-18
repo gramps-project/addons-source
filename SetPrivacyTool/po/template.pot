@@ -8,23 +8,33 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-29 16:16+1000\n"
+"POT-Creation-Date: 2020-08-12 17:40+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: SetPrivacyTool/SetPrivacyTool.gpr.py:23 SetPrivacyTool/SetPrivacyTool.py:48
-#: SetPrivacyTool/SetPrivacyTool.py:93 SetPrivacyTool/SetPrivacyTool.py:130
-#: SetPrivacyTool/SetPrivacyTool.py:157
+#: SetPrivacyTool/SetPrivacyTool.py:90 SetPrivacyTool/SetPrivacyTool.py:93
+#: SetPrivacyTool/SetPrivacyTool.py:130 SetPrivacyTool/SetPrivacyTool.py:157
 msgid "Set Privacy Tool"
 msgstr ""
 
 #: SetPrivacyTool/SetPrivacyTool.gpr.py:24
 msgid "Set all objects of the last <number> of years private."
+msgstr ""
+
+#: SetPrivacyTool/SetPrivacyTool.py:87
+#, python-format
+msgid "Set private: %d %s\n"
+msgstr ""
+
+#: SetPrivacyTool/SetPrivacyTool.py:89
+#, python-format
+msgid "Not private: %d %s\n"
 msgstr ""
 
 #: SetPrivacyTool/SetPrivacyTool.py:96
