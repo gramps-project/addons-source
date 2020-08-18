@@ -1,0 +1,187 @@
+# Dutch translation of addon TypeCleanup.
+# Copyright (C) 2020 Gramps project
+# This file is distributed under the same license as the TypeCleanup package.
+# Jan Sparreboom <jan@sparreboom.net>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: TypeCleanup 5.x\n"
+"Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
+"POT-Creation-Date: 2019-01-04 18:55-0600\n"
+"PO-Revision-Date: 2020-08-11 18:20+0200\n"
+"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
+"Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+
+#: TypeCleanup/type_cleanup.gpr.py:29
+msgid "Type Cleanup"
+msgstr "Type opschonen"
+
+#: TypeCleanup/type_cleanup.gpr.py:30
+msgid "Clean up (remove) custom types"
+msgstr "Aangepaste soorten opschonen (verwijderen)"
+
+#: TypeCleanup/type_cleanup.py:96
+msgid "Event Attributes"
+msgstr "Gebeurteniskenmerken"
+
+#: TypeCleanup/type_cleanup.py:97
+msgid "Family Attributes"
+msgstr "Gezinskenmerken"
+
+#: TypeCleanup/type_cleanup.py:98
+msgid "Media Attributes"
+msgstr "Mediakenmerken"
+
+#: TypeCleanup/type_cleanup.py:99
+msgid "Person Attributes"
+msgstr "Persoonskenmerken"
+
+#: TypeCleanup/type_cleanup.py:101
+msgid "Event Roles"
+msgstr "Gebeurtenisrollen"
+
+#: TypeCleanup/type_cleanup.py:102
+msgid "Event Types"
+msgstr "Gebeurtenistypen"
+
+#: TypeCleanup/type_cleanup.py:103
+msgid "Family Relation Types"
+msgstr "Gezinsrelatietypen"
+
+#: TypeCleanup/type_cleanup.py:104
+msgid "Child reference Types"
+msgstr "Kindreferentietypen"
+
+#: TypeCleanup/type_cleanup.py:105
+msgid "Name Origin Types"
+msgstr "Naamoorsprongstypen"
+
+#: TypeCleanup/type_cleanup.py:106
+msgid "Name Types"
+msgstr "Naamtypen"
+
+#: TypeCleanup/type_cleanup.py:107
+msgid "Note Types"
+msgstr "Notitietypen"
+
+#: TypeCleanup/type_cleanup.py:108
+msgid "Place Types"
+msgstr "Locatietypen"
+
+#: TypeCleanup/type_cleanup.py:109
+msgid "Repository Types"
+msgstr "Bibliotheektypen"
+
+#: TypeCleanup/type_cleanup.py:110
+msgid "Source Attributes"
+msgstr "Bronkenmerken"
+
+#: TypeCleanup/type_cleanup.py:111
+msgid "Source Media Types"
+msgstr "Bronmediatypen"
+
+#: TypeCleanup/type_cleanup.py:112
+msgid "URL Types"
+msgstr "URL-typen"
+
+#: TypeCleanup/type_cleanup.py:124
+msgid "Types Cleanup Tool"
+msgstr "Typen opschoonhulpmiddel"
+
+#: TypeCleanup/type_cleanup.py:160
+msgid "Help"
+msgstr "Help"
+
+#: TypeCleanup/type_cleanup.py:164
+msgid "Remove"
+msgstr "Verwijderen"
+
+#: TypeCleanup/type_cleanup.py:166
+msgid ""
+"Remove the selected type from the db.\n"
+"This does not change any referenced objects."
+msgstr ""
+"Verwijder het geselecteerde type uit de database.\n"
+"Dit verandert niets aan de objecten waarnaar wordt verwezen."
+
+#: TypeCleanup/type_cleanup.py:174
+msgid ""
+"Select a new name for the current type, prior to renaming the type in the "
+"referenced objects."
+msgstr ""
+"Selecteer een nieuwe naam voor het huidige type, voordat u het type "
+"hernoemt in de objecten waarnaar wordt verwezen."
+
+#: TypeCleanup/type_cleanup.py:182
+msgid "Rename"
+msgstr "Hernoemen"
+
+#: TypeCleanup/type_cleanup.py:185
+msgid "Rename the selected type in all referenced objects."
+msgstr ""
+"Hernoem het geselecteerde type in alle objecten waarnaar wordt verwezen."
+
+#: TypeCleanup/type_cleanup.py:188
+msgid "Close"
+msgstr "Sluiten"
+
+#: TypeCleanup/type_cleanup.py:189
+msgid "Close the Type Cleanup Tool"
+msgstr "Sluit het type-opschoonhulpmiddel"
+
+#: TypeCleanup/type_cleanup.py:195
+msgid "Types"
+msgstr "Typen"
+
+#: TypeCleanup/type_cleanup.py:214
+msgid "Type"
+msgstr "Type"
+
+#: TypeCleanup/type_cleanup.py:221
+msgid "References"
+msgstr "Referenties"
+
+#: TypeCleanup/type_cleanup.py:242
+msgid "Type Cleanup Tool"
+msgstr "Type-opschoonhulpmiddel"
+
+#: TypeCleanup/type_cleanup.py:275
+msgid "Reading database..."
+msgstr "Database lezen..."
+
+#: TypeCleanup/type_cleanup.py:387
+#, python-format
+msgid "Changing type from %(old_type)s to %(new_type)s."
+msgstr "Type wijzigen van%(old_type)s naar %(new_type)s."
+
+#: TypeCleanup/type_cleanup.py:432
+msgid ""
+"Removing this custom type will eliminate it from the type selection drop "
+"down lists\n"
+"and further runs of this tool.\n"
+"\n"
+"However, it will not remove it from the referenced items in the "
+"database.\n"
+"If you want to change it in referenced items, use 'Rename'."
+msgstr ""
+"Als u dit aangepaste type verwijdert, wordt het verwijderd uit de "
+"vervolgkeuzelijsten voor typen\n"
+"en het verdere verloop van dit hulpmiddel.\n"
+"\n"
+"Het zal het echter niet verwijderen uit de items waarnaar wordt verwezen "
+"in de database.\n"
+"Gebruik 'Hernoemen' als u het wilt wijzigen in items waarnaar wordt "
+"verwezen."
+
+#: TypeCleanup/type_cleanup.py:437
+msgid "_Remove"
+msgstr "_Verwijderen"
+
+#: TypeCleanup/type_cleanup.py:437
+msgid "_Stop"
+msgstr "_Stop"
