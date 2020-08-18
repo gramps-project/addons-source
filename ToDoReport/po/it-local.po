@@ -61,93 +61,180 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-21 14:43+0100\n"
-"PO-Revision-Date: 2010-03-13 18:09+0100\n"
-"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"POT-Creation-Date: 2020-08-15 22:20+0200\n"
+"PO-Revision-Date: 2020-08-15 23:28+0200\n"
+"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Poedit 2.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ToDoReport/TodoReport.gpr.py:24
-#, fuzzy
+#: ToDoReport//TodoReport.gpr.py:24
 msgid "Todo Report"
-msgstr "Resoconto libro"
+msgstr "Per fare rapporto"
 
-#: ToDoReport/TodoReport.gpr.py:25
+#: ToDoReport//TodoReport.gpr.py:25
 msgid ""
 "Produces a list of all the notes with a given tag along with the records "
 "that it references, the Person, Family, Event, etc."
 msgstr ""
+"Produce un elenco di tutte le note con un dato tag insieme ai record a "
+"cui fa riferimento, la persona, la famiglia, l'evento, ecc."
 
-#: ToDoReport/TodoReport.py:91
-#, fuzzy, python-format
-msgid "Report on Notes Marked %s"
-msgstr "Impossibile creare il resoconto %s"
+#: ToDoReport//TodoReport.py:90
+msgid "ToDo Report"
+msgstr "Per fare rapporto"
 
-#: ToDoReport/TodoReport.py:192
+#: ToDoReport//TodoReport.py:91
+msgid "You must first create a tag before running this report."
+msgstr "Devi prima creare un tag prima di eseguire questo rapporto."
+
+#: ToDoReport//TodoReport.py:98 ToDoReport//TodoReport.py:526
+msgid "TR-Title"
+msgstr "TR-Titolo"
+
+#: ToDoReport//TodoReport.py:99
+#, python-format
+msgid "Report on Notes Tagged '%s'"
+msgstr "Rapporto sulle note contrassegnate con '% s'"
+
+#: ToDoReport//TodoReport.py:198 ToDoReport//TodoReport.py:536
+msgid "TR-Heading"
+msgstr "TR-voce"
+
+#: ToDoReport//TodoReport.py:204
+msgid "NoteTable"
+msgstr "TabellaDelleNote"
+
+#: ToDoReport//TodoReport.py:204 ToDoReport//TodoReport.py:584
+msgid "TR-Table"
+msgstr "TR-Tabella"
+
+#: ToDoReport//TodoReport.py:208 ToDoReport//TodoReport.py:214
+#: ToDoReport//TodoReport.py:228 ToDoReport//TodoReport.py:234
+#: ToDoReport//TodoReport.py:263 ToDoReport//TodoReport.py:271
+#: ToDoReport//TodoReport.py:277 ToDoReport//TodoReport.py:288
+#: ToDoReport//TodoReport.py:307 ToDoReport//TodoReport.py:313
+#: ToDoReport//TodoReport.py:323 ToDoReport//TodoReport.py:346
+#: ToDoReport//TodoReport.py:362 ToDoReport//TodoReport.py:368
+#: ToDoReport//TodoReport.py:378 ToDoReport//TodoReport.py:389
+#: ToDoReport//TodoReport.py:407 ToDoReport//TodoReport.py:413
+#: ToDoReport//TodoReport.py:569
+msgid "TR-TableCell"
+msgstr "TR-TabellaCella"
+
+#: ToDoReport//TodoReport.py:209 ToDoReport//TodoReport.py:215
+#: ToDoReport//TodoReport.py:557
+msgid "TR-Normal-Bold"
+msgstr "TR-Normale-Grassetto"
+
+#: ToDoReport//TodoReport.py:210
 msgid "Id"
 msgstr "Id"
 
-#: ToDoReport/TodoReport.py:198
+#: ToDoReport//TodoReport.py:216
 msgid "Text"
 msgstr "Testo"
 
-#: ToDoReport/TodoReport.py:324
-#, fuzzy, python-format
+#: ToDoReport//TodoReport.py:229 ToDoReport//TodoReport.py:246
+#: ToDoReport//TodoReport.py:264 ToDoReport//TodoReport.py:272
+#: ToDoReport//TodoReport.py:278 ToDoReport//TodoReport.py:289
+#: ToDoReport//TodoReport.py:308 ToDoReport//TodoReport.py:314
+#: ToDoReport//TodoReport.py:324 ToDoReport//TodoReport.py:347
+#: ToDoReport//TodoReport.py:363 ToDoReport//TodoReport.py:369
+#: ToDoReport//TodoReport.py:379 ToDoReport//TodoReport.py:390
+#: ToDoReport//TodoReport.py:408 ToDoReport//TodoReport.py:414
+#: ToDoReport//TodoReport.py:546
+msgid "TR-Normal"
+msgstr "TR-Normale"
+
+#: ToDoReport//TodoReport.py:236 ToDoReport//TodoReport.py:564
+msgid "TR-Note"
+msgstr "TR-Nota"
+
+#: ToDoReport//TodoReport.py:245 ToDoReport//TodoReport.py:574
+msgid "TR-BorderCell"
+msgstr "TR-CellaDiConfine"
+
+#: ToDoReport//TodoReport.py:282 ToDoReport//TodoReport.py:284
+msgid "b. "
+msgstr "n. "
+
+#: ToDoReport//TodoReport.py:293
+msgid "d. "
+msgstr "m. "
+
+#: ToDoReport//TodoReport.py:343
+#, python-format
 msgid "%(relationship_type)s on %(relationship_date)s"
-msgstr " (%(birth_date)s - %(death_date)s)"
+msgstr "%(relationship_type)s in %(relationship_date)s"
 
-#: ToDoReport/TodoReport.py:355
-#, fuzzy
+#: ToDoReport//TodoReport.py:374
 msgid "date: "
-msgstr "data"
+msgstr "data: "
 
-#: ToDoReport/TodoReport.py:366
-#, fuzzy
+#: ToDoReport//TodoReport.py:385
 msgid "place: "
-msgstr "luogo"
+msgstr "posto: "
 
-#: ToDoReport/TodoReport.py:469
+#: ToDoReport//TodoReport.py:489
 msgid "Report Options"
 msgstr "Opzioni resoconto"
 
-#: ToDoReport/TodoReport.py:471
-msgid "Marker"
-msgstr "Marcatore"
+#: ToDoReport//TodoReport.py:497 ToDoReport//TodoReport.py:501
+msgid "Tag"
+msgstr "Etichetta"
 
-#: ToDoReport/TodoReport.py:482
-#, fuzzy
-msgid "The marker type to use for the report"
-msgstr "Il marcatore da usare per questo resoconto"
+#: ToDoReport//TodoReport.py:504
+msgid "The tag to use for the report"
+msgstr "Il tag da utilizzare per il rapporto"
 
-#: ToDoReport/TodoReport.py:485
-#, fuzzy
+#: ToDoReport//TodoReport.py:507
 msgid "Group by reference type"
-msgstr "Nota riferimento fonte"
+msgstr "Raggruppa per tipo di riferimento"
 
-#: ToDoReport/TodoReport.py:486
+#: ToDoReport//TodoReport.py:508
 msgid "Group notes by Family, Person, Place, etc."
-msgstr ""
+msgstr "Appunti di gruppo per famiglia, persona, luogo, ecc."
 
-#: ToDoReport/TodoReport.py:503
+#: ToDoReport//TodoReport.py:525
 msgid "The style used for the title of the page."
 msgstr "Lo stile usato per il titolo della pagina."
 
-#: ToDoReport/TodoReport.py:513
+#: ToDoReport//TodoReport.py:535
 msgid "The style used for the section headers."
 msgstr "Lo stile usato per le intestazioni di sezione."
 
-#: ToDoReport/TodoReport.py:523
+#: ToDoReport//TodoReport.py:545
 msgid "The basic style used for the text display."
 msgstr "Lo stile base usato per la visualizzazione del testo."
 
-#: ToDoReport/TodoReport.py:534
+#: ToDoReport//TodoReport.py:556
 msgid "The basic style used for table headings."
 msgstr "Lo stile base usato per le intestazioni delle tabelle."
 
-#: ToDoReport/TodoReport.py:541
+#: ToDoReport//TodoReport.py:563
 msgid "The basic style used for the note display."
 msgstr "Lo stile base usato per la visualizzazione delle note."
+
+#: ToDoReport//TodoReport.py:568
+msgid "The basic style used for the table cell display."
+msgstr ""
+"Lo stile di base utilizzato per la visualizzazione delle celle della "
+"tabella."
+
+#: ToDoReport//TodoReport.py:573
+msgid "The basic style used for the table border cell display."
+msgstr ""
+"Lo stile di base utilizzato per la visualizzazione della cella del bordo "
+"della tabella."
+
+#: ToDoReport//TodoReport.py:583
+msgid "The basic style used for the table display."
+msgstr "Lo stile di base utilizzato per la visualizzazione del tavolo."
+
+#~ msgid "Marker"
+#~ msgstr "Marcatore"
