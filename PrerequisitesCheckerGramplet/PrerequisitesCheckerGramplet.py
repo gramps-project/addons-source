@@ -82,7 +82,9 @@ import sys
 import os
 import time
 import gi
+from threading import Thread
 from subprocess import Popen, PIPE
+from urllib import request
 
 #-------------------------------------------------------------------------
 #
@@ -137,6 +139,20 @@ class PrerequisitesCheckerGramplet(Gramplet):
                          """prerequisites</a> installed.\n"""))
         self.set_tooltip(_("Diagnostic Gramplet to help evaluate if Gramps has "
                          "all prerequisites installed."))
+        # Get current Gramps version from wiki
+        self.latest_gramps_version = False
+        thread = Thread(target=latest_version_thread,
+                        args=(self,), daemon=True)
+        thread.start()
+
+    def main(self):
+        """
+        This gets called at initialization and again after each 'yield'.
+        Since it may be called before the gramps latest version arrives from
+        the web, we just yield again if not ready.
+        """
+        while self.latest_gramps_version is False:
+            yield True
         self.gramps_version()
         # Gramps for requirements mentioned in Gramps 5.0.0 readme & elsewhere
         # https://github.com/gramps-project/gramps/blob/master/gramps/grampsapp.py#L187
@@ -156,6 +172,7 @@ class PrerequisitesCheckerGramplet(Gramplet):
         self.check9_librsvg2()
         self.check10_languagepackgnomexx()
         self.append_text("\n")
+        yield True
         # STRONGLY RECOMMENDED
         self.render_text(_("""\n<u><b>STRONGLY RECOMMENDED</b></u>\n"""))
         self.render_text(_("The following packages are <b>STRONGLY RECOMMENDED"
@@ -168,6 +185,7 @@ class PrerequisitesCheckerGramplet(Gramplet):
         self.append_text("\n")
         self.check_fontconfig()
         self.append_text("\n")
+        yield True
         #Optional
         self.render_text(_("""\n<u><b>Optional</b></u>\n"""))
         self.append_text(_("The following packages are optional:\n"))
@@ -185,17 +203,19 @@ class PrerequisitesCheckerGramplet(Gramplet):
         #self.append_text("\n")
         self.check20_ttffreefont()
         self.append_text("\n")
+        yield True
         # required developement packages
         # TODO only show this section if running in development mode?
         self.render_text(_("\n<u><b>Development & Translation Requirements</b>"
                          "</u>\n"))
         self.render_text(_("The following packages should be installed if you "
-                         "intend to translate or do any development (addons "
-                         "etc):\n"))
+                           "intend to translate or do any development (addons "
+                           "etc):\n"))
         self.gettext_version()
         self.intltool_version()
         self.sphinx_check()
         self.append_text("\n")
+        yield True
         #Optional packages required by Third-party Addons
         self.render_text(_("\n<u><b>Optional packages required by Third-party "
                          "Addons</b></u>\n"))
@@ -219,6 +239,7 @@ class PrerequisitesCheckerGramplet(Gramplet):
         self.check34_mongodb()
         #self.render_text("""\n<u><b>List of installed Addons.</b></u>\n""")
         #self.list_all_plugins()
+        yield True
         # Diagnostic checks
         self.append_text("\n")
         self.render_text(_("""\n<u><b>Diagnostic checks</b></u>\n"""))
@@ -262,10 +283,8 @@ class PrerequisitesCheckerGramplet(Gramplet):
         '''
         self.append_text("\n")
         # Start check
-        LATEST_GRAMPS_VERSION = (5, 1, 3)
-        LATEST_GRAMPS_DATE = "2020-08-12"
-        latest_release_message = ("Gramps " + verstr(LATEST_GRAMPS_VERSION) +
-                                  _(",  released ") + LATEST_GRAMPS_DATE +
+        latest_release_message = ("Gramps " +
+                                  verstr(self.latest_gramps_version) +
                                   _(", is the most current version.\n"))
 
         try:
@@ -282,12 +301,12 @@ class PrerequisitesCheckerGramplet(Gramplet):
             gramps_str = _('not found')
 
         # Test
-        if not gramps_ver >= LATEST_GRAMPS_VERSION:
+        if not gramps_ver >= self.latest_gramps_version:
             # print("Failed")
             result = (_("You have Gramps %s. Please make a backup and then "
                       "upgrade.\n%s") % (gramps_str, latest_release_message))
         else:
-            if not gramps_ver == LATEST_GRAMPS_VERSION:
+            if not gramps_ver == self.latest_gramps_version:
                 result = (_("You have Gramps %s installed; an unreleased "
                           "development version. Thank you for contributing and"
                           " testing; please report any issues. Backups are "
@@ -1956,6 +1975,27 @@ class PrerequisitesCheckerGramplet(Gramplet):
         self.append_text(_("Sphinx is a tool that builds the Gramps "
                          "development documentation and man pages\n"))
         self.append_text(result)
+
+
+def latest_version_thread(self):
+    """
+    Load the latest version from the wiki.  Done in thread to allow other
+    parts of GUI to continue running via the 'yield' for the Gramplet.
+    """
+    try:
+        req = request.Request("https://gramps-project.org/wiki/index.php"
+                              "?title=Template:Version&action=raw",
+                              headers={"User-Agent": "Mozilla/5.0"})
+        fp = request.urlopen(req)
+        text = str(fp.read().decode('utf-8'))
+        evers = text.find('<')
+        if 4 < evers < 8:
+            self.latest_gramps_version = vertup(text[0:evers])
+        else:
+            self.latest_gramps_version = (0, 0, 0)
+    except Exception:
+        self.latest_gramps_version = (0, 0, 0)
+
 
 def verstr(nums):
     return '.'.join(str(num) for num in nums)
