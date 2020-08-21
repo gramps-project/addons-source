@@ -179,8 +179,14 @@ class PlaceCoordinateGramplet(Gramplet):
         self.applyButton = self.top.get_object("applyButton")
         self.applyButton.connect("clicked", self.on_apply_clicked)
 
+        self.helpButton = self.top.get_object("helpButton")
+        self.helpButton.connect("clicked", self.on_help_clicked)
+
         self.view.show_all()
         return self.view
+
+    def on_help_clicked(self, widget):
+        display_url("https://www.gramps-project.org/wiki/index.php/PlaceCoordinateGramplet")
 
     def on_showInBrowserButton_clicked(self, widget):
         if(len(self.entry_lat.get_text()) > 0 and
