@@ -92,7 +92,7 @@ try:
         except Exception as e:
             result = None
 
-            message = _("Connectivity test failed {module_name}.").format(
+            message = _("Internet connectivity test failed for {module_name}.").format(
                     module_name="gi.repository.GeocodeGlib") \
                     + "\n\n" + str(e)
             logging.warning(plugin_name + ': ' + message)
@@ -116,7 +116,7 @@ except Exception as e:
     import_error_message = traceback.format_exc()
     logging.log(logging.ERROR, 'Failed to load PlaceCoordinateGramplet plugin.\n' + import_error_message)
 
-if locals().get('uistate') is None or not some_import_error:
+if locals().get('uistate') is None or not some_import_error or True:
     # Right after the download the plugin is loaded without uistate
     # If the gui is available, then the error message is shown anyway
     # so here we can import to avoid additional messages.
@@ -142,7 +142,7 @@ if locals().get('uistate') is None or not some_import_error:
 
     register(GRAMPLET,
             id="Place Coordinates",
-            name=_("Place Coordinates"),
+            name=_("Place and Coordinates"),
             description=_(
                 "Gramplet that simplifies setting the coordinates of a place"),
             version = '1.1.6',

@@ -258,7 +258,7 @@ class PlaceCoordinateGeoView(GeoGraphyView):
         """
         Used to set the titlebar in the configuration window.
         """
-        return _('PlaceCoordinateGeoView')
+        return _('Place Coordinate Gramplet')
 
     def get_stock(self):
         """
