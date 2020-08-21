@@ -37,6 +37,10 @@ msgstr "Ansicht für Ortskoordinaten Gramplet."
 msgid "Geography"
 msgstr "Geografie"
 
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:145
+msgid "Place and Coordinates"
+msgstr "Ort und Koordinaten"
+
 #: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:114
 msgid "Organize Bookmarks"
 msgstr "Lesezeichen organisieren"
@@ -44,6 +48,10 @@ msgstr "Lesezeichen organisieren"
 #: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:221
 msgid "Places map"
 msgstr "Ortekarte"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:261
+msgid "Place Coordinate Gramplet"
+msgstr "Ort und Koordinaten Gramplet"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:252
 msgid "PlaceCoordinateGeoView"
@@ -243,6 +251,20 @@ msgstr "Ort bearbeiten"
 msgid "Center on this place"
 msgstr "Auf diesen Ort zentrieren"
 
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:67
+#, python-brace-format
+msgid "Failed to load the required module {module_name}."
+msgstr "Das benötigte Modul {module_name} konnte nicht geladen werden."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:95
+#, python-brace-format
+msgid "Internet connectivity test failed for {module_name}."
+msgstr "Test der Internetverbindung ist fehlgeschlagen für {module_name}."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:108
+msgid "Warning disabled."
+msgstr "Warnung wurde deaktiviert."
+
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:28
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:39
 msgid "Place Coordinates"
@@ -256,6 +278,17 @@ msgstr "Gramplet, das das Einstellen der Koordinaten eines Ortes vereinfacht"
 msgid "The place was not found. You may clarify the search keywords."
 msgstr "Der Ort wurde nicht gefunden. Du kannst die Stichworte verdeutlichen."
 
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:216
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:244
+msgid "Failed to search for the coordinates due to some unexpected error."
+msgstr ""
+"Suche nach Koordinaten ist aufgrund eines unerwarteten Fehlers "
+"fehlgeschlagen."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:241
+msgid "The place was not found."
+msgstr "Der Ort wurde nicht gefunden."
+
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:200
 msgid "Failed to search for the coordinates due to some unexpected error"
 msgstr ""
@@ -265,6 +298,15 @@ msgstr ""
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:250
 msgid "The place was not identified."
 msgstr "Der Ort wurde nicht identifiziert."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:268
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:299
+msgid "Coordinates were not given."
+msgstr "Keine Koordinaten angegeben."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:283
+msgid "Failed to interpret the input format."
+msgstr "Das Eingabeformat wurde nicht erkannt."
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:236
 msgid "Failed to interpret the string format."
@@ -303,6 +345,10 @@ msgid "Latitude:"
 msgstr "Breitengrad:"
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:53
+msgid "No DB entry is selected"
+msgstr "Kein DB Eintrag ist ausgewählt"
+
+#: PlaceCoordinateGramplet/placecoordinate.glade:53
 msgid "label"
 msgstr "Beschriftung"
 
@@ -339,5 +385,10 @@ msgstr "Koordinaten in die Datenbank übernehmen"
 msgid "Go"
 msgstr "Los"
 
+#: PlaceCoordinateGramplet/placecoordinate.glade:290
+msgid "Show help"
+msgstr "Hilfe anzeigen"
+
 #~ msgid "Take last clicked position from Geography map"
 #~ msgstr "Zuletzt geklickten Ort der Kartenansicht übernehmen"
+

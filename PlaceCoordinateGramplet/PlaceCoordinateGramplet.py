@@ -280,7 +280,7 @@ class PlaceCoordinateGramplet(Gramplet):
                 longitude = float(longitude)
             except:
                 self.entry_foundName.set_text(
-                    _("Failed to interpret the string format."))
+                    _("Failed to interpret the input format."))
 
             # self.osm.grab_focus()
             try:
