@@ -102,6 +102,8 @@ class ModuleProvider:
                     raise ModuleNotFoundError()
         except ModuleNotFoundError:
             pass
+        except ImportError:
+            pass
         else:
             return module
 
@@ -120,6 +122,8 @@ class ModuleProvider:
             else:
                 raise FileNotFoundError(filename)
         except ModuleNotFoundError:
+            pass
+        except ImportError:
             pass
         except FileNotFoundError as e:
             pass
