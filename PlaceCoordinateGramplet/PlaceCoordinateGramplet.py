@@ -26,7 +26,7 @@ import os
 import ctypes
 import locale
 from gi.repository import Gtk
-use_geopy = True
+use_geopy = False
 if use_geopy:
     from geopy.geocoders import Nominatim
     STR_CITY_CONFIG = ['town', 'county', 'state', 'country']

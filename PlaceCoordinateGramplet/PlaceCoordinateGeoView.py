@@ -63,7 +63,7 @@ from gramps.gui.editors import EditPlace
 from gramps.gui.selectors.selectplace import SelectPlace
 from gramps.gui.filters.sidebar import PlaceSidebarFilter
 from gramps.gui.views.navigationview import NavigationView
-use_geopy = True
+use_geopy = False
 if use_geopy:
     from geopy.geocoders import Nominatim
     STR_CITY_CONFIG = ['town', 'county', 'state', 'country']
