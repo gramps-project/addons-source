@@ -286,6 +286,20 @@ from Geography map</property>
       </packing>
     </child>
     <child>
+      <object class="GtkButton" id="helpButton">
+        <property name="label" translatable="yes">Show help</property>
+        <property name="visible">True</property>
+        <property name="can_focus">True</property>
+        <property name="receives_default">True</property>
+        <property name="halign">center</property>
+      </object>
+      <packing>
+        <property name="left_attach">0</property>
+        <property name="top_attach">8</property>
+        <property name="width">4</property>
+      </packing>
+    </child>
+    <child>
       <placeholder/>
     </child>
     <child>
