@@ -39,7 +39,7 @@ sects = inifile.get_sections()
 #
 #-------------------------------------------------------------------------
 import logging
-_LOG = logging.getLogger("PlaceCoordinateGeography View")
+_LOG = logging.getLogger("PlaceCoordinateGramplet")
 
 
 import os

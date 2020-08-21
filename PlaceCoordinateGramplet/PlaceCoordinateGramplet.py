@@ -1,3 +1,4 @@
+#
 # Gramps - a GTK+/GNOME based genealogy program
 #
 # Copyright (C) 2020 Christian Schulze
@@ -25,6 +26,8 @@
 import os
 import ctypes
 import locale
+import logging
+_LOG = logging.getLogger("PlaceCoordinateGramplet")
 from gi.repository import Gtk
 use_geopy = False
 if use_geopy:
@@ -137,7 +140,7 @@ class PlaceCoordinateGramplet(Gramplet):
             self.top.set_translation_domain("addon")
         except (OSError, AttributeError):
             # Will leave it in English
-            print("Localization of PlaceCleanup failed!")
+            _LOG.warn("Localization of PlaceCleanup failed!")
 
         self.top.add_from_file(glade_file)
         self.view = self.top.get_object("grid")
@@ -202,18 +205,20 @@ class PlaceCoordinateGramplet(Gramplet):
                     self.entry_foundName.set_text(
                         _("The place was not found. "
                         "You may clarify the search keywords."))
-            except:
+            except Exception as e:
                 self.entry_foundName.set_text(
                     _("Failed to search for the coordinates due to "
-                    "some unexpected error"))
+                    "some unexpected error.") + ' ' + str(e))
         else:
             try:
                 location_ = GeocodeGlib.Forward.new_for_string(
                     self.entry_name.get_text())
                 try:
                     result = location_.search()
-                except:
+                    error_message = "You may clarify the search keywords."
+                except Exception as e:
                     result = None
+                    error_message = str(e)
                 if result:
                     result = result[0]  # use the first result
                     location_information = dict((p.name, result.get_property(
@@ -227,61 +232,65 @@ class PlaceCoordinateGramplet(Gramplet):
                         generate_address_string(location_information, STR_ADDRESS_CONFIG))
                 else:
                     self.entry_foundName.set_text(
-                        _("The place was not found. "
-                        "You may clarify the search keywords."))
-            except:
+                        _("The place was not found.") + ' ' + error_message)
+            except Exception as e:
                 self.entry_foundName.set_text(
                     _("Failed to search for the coordinates due to "
-                    "some unexpected error"))
+                    "some unexpected error.") + ' ' + str(e))
 
     def on_fromMapButton_clicked(self, widget):
         latitude = config.get("geography.center-lat")
         longitude = config.get("geography.center-lon")
-        self.entry_lat.set_text("%.8f" % latitude)
-        self.entry_long.set_text("%.8f" % longitude)
-        # self.osm.grab_focus()
+        if latitude != "" and longitude != "":
+            self.entry_lat.set_text("%.8f" % latitude)
+            self.entry_long.set_text("%.8f" % longitude)
+            # self.osm.grab_focus()
 
-        try:
-            loc = GeocodeGlib.Location.new(latitude, longitude, 0)
-            obj = GeocodeGlib.Reverse.new_for_location(loc)
-            result = GeocodeGlib.Reverse.resolve(obj)
-            location_information = dict((p.name, result.get_property(
-                p.name)) for p in result.list_properties()
-                if result.get_property(p.name))
-            self.entry_foundName.set_text(
-                generate_address_string(location_information))
-        except:
-            self.entry_foundName.set_text(_("The place was not identified."))
+            try:
+                loc = GeocodeGlib.Location.new(latitude, longitude, 0)
+                obj = GeocodeGlib.Reverse.new_for_location(loc)
+                result = GeocodeGlib.Reverse.resolve(obj)
+
+                location_information = dict((p.name, result.get_property(
+                    p.name)) for p in result.list_properties()
+                    if result.get_property(p.name))
+                self.entry_foundName.set_text(
+                    generate_address_string(location_information))
+            except Exception as e:
+                self.entry_foundName.set_text(_("The place was not identified.") + ' ' + str(e))
+        else:
+            self.entry_foundName.set_text(_("Coordinates were not given."))
 
     def on_fromDBButton_clicked(self, widget):
-        latitude = config.get("geography.center-lat")
-        longitude = config.get("geography.center-lon")
         latitude = self.entry_lat_db.get_text()
         longitude = self.entry_long_db.get_text()
-        self.entry_lat.set_text(self.entry_lat_db.get_text())
-        self.entry_long.set_text(self.entry_long_db.get_text())
-        try:
-            latitude, longitude = conv_lat_lon(
-                latitude, longitude, format="D.D8")
-            latitude = float(latitude)
-            longitude = float(longitude)
-        except:
-            self.entry_foundName.set_text(
-                _("Failed to interpret the string format."))
+        if latitude != "" and longitude != "":
+            self.entry_lat.set_text(self.entry_lat_db.get_text())
+            self.entry_long.set_text(self.entry_long_db.get_text())
+            try:
+                latitude, longitude = conv_lat_lon(
+                    latitude, longitude, format="D.D8")
+                latitude = float(latitude)
+                longitude = float(longitude)
+            except:
+                self.entry_foundName.set_text(
+                    _("Failed to interpret the string format."))
 
-        # self.osm.grab_focus()
-        try:
-            loc = GeocodeGlib.Location.new(latitude, longitude, 0)
-            obj = GeocodeGlib.Reverse.new_for_location(loc)
-            result = GeocodeGlib.Reverse.resolve(obj)
+            # self.osm.grab_focus()
+            try:
+                loc = GeocodeGlib.Location.new(latitude, longitude, 0)
+                obj = GeocodeGlib.Reverse.new_for_location(loc)
+                result = GeocodeGlib.Reverse.resolve(obj)
 
-            location_information = dict((p.name, result.get_property(
-                p.name)) for p in result.list_properties()
-                if result.get_property(p.name))
-            self.entry_foundName.set_text(
-                generate_address_string(location_information))
-        except:
-            self.entry_foundName.set_text(_("The place was not identified."))
+                location_information = dict((p.name, result.get_property(
+                    p.name)) for p in result.list_properties()
+                    if result.get_property(p.name))
+                self.entry_foundName.set_text(
+                    generate_address_string(location_information))
+            except Exception as e:
+                self.entry_foundName.set_text(_("The place was not identified.") + ' ' + str(e))
+        else:
+            self.entry_foundName.set_text(_("Coordinates were not given."))
 
     def on_apply_clicked(self, widget):
         active_handle = self.get_active('Place')

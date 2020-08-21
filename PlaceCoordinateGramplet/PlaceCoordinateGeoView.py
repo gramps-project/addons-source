@@ -39,7 +39,7 @@ from collections import defaultdict
 #
 #-------------------------------------------------------------------------
 import logging
-_LOG = logging.getLogger("GeoGraphy.placecoordinate")
+_LOG = logging.getLogger("PlaceCoordinateGramplet")
 
 #-------------------------------------------------------------------------
 #
