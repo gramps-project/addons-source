@@ -22,9 +22,6 @@ import traceback
 import os
 import sys
 import html
-if sys.version_info.major == 3 and sys.version_info.minor <= 5:
-    class ModuleNotFoundError(Exception):
-        pass
 
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 _ = glocale.translation.gettext
@@ -97,18 +94,13 @@ class ModuleProvider:
         import importlib
         import sys
         import os
-        if sys.version_info.major == 3 and sys.version_info.minor <= 5:
-            class ModuleNotFoundError(Exception):
-                pass
         from gramps.gen.const import USER_PLUGINS
         try:
             module = importlib.import_module(module_name)
             if hasattr(module, '__version__'):
                 if module.__version__ != module_version:
-                    raise ModuleNotFoundError()
-        except ModuleNotFoundError:
-            pass
-        except ImportError:
+                    raise ImportError()
+        except Exception as e:
             pass
         else:
             return module
@@ -127,11 +119,7 @@ class ModuleProvider:
                 spec.loader.exec_module(module)
             else:
                 raise FileNotFoundError(filename)
-        except ModuleNotFoundError:
-            pass
-        except ImportError:
-            pass
-        except FileNotFoundError as e:
+        except Exception as e:
             pass
         else:
             return module
@@ -276,7 +264,7 @@ class ModuleProvider:
 ##########################################
 
 
-life_line_chart_version_required = (1, 7, 0)
+life_line_chart_version_required = (1, 7, 1)
 life_line_chart_version_required_str = '.'.join([str(i) for i in life_line_chart_version_required])
 
 try:
@@ -315,7 +303,7 @@ if locals().get('uistate') is None or not some_import_error:
              name=_("Life Line Ancestor Chart"),
              category=("Ancestry", _("Charts")),
              description=_("Persons and their relation in a time based chart"),
-             version = '1.3.7',
+             version = '1.3.8',
              gramps_target_version="5.1",
              status=STABLE,
              fname='lifelinechartview.py',
@@ -329,7 +317,7 @@ if locals().get('uistate') is None or not some_import_error:
              name=_("Life Line Descendant Chart"),
              category=("Ancestry", _("Charts")),
              description=_("Persons and their relation in a time based chart"),
-             version = '1.3.7',
+             version = '1.3.8',
              gramps_target_version="5.1",
              status=STABLE,
              fname='lifelinechartview.py',

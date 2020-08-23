@@ -1480,7 +1480,11 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
             translated_position = self.view_position_get_limited(translated_position)
             ctx.translate(-translated_position[0], -translated_position[1])
             ctx.scale(self.zoom_level, self.zoom_level)
-            ctx.set_antialias(cairo.Antialias.BEST)
+            try:
+                # not always available...
+                ctx.set_antialias(cairo.Antialias.BEST)
+            except Exception as e:
+                pass
             #ctx.scale(scale, scale)
             #self.zoom_level_backup = self.zoom_level
         visible_range = (self.get_allocated_width(), self.get_allocated_height())
