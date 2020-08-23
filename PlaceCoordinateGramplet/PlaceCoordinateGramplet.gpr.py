@@ -82,7 +82,7 @@ try:
 
         some_import_error = True
 
-    if not some_import_error and ('placecoordinategramplet_warn' not in sects
+    if os.name == 'nt' and not some_import_error and ('placecoordinategramplet_warn' not in sects
         or not inifile.is_set('placecoordinategramplet_warn.connectivity')
         or inifile.get('placecoordinategramplet_warn.connectivity') != 'False'
             ):
