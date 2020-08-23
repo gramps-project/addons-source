@@ -64,16 +64,19 @@ from gramps.gui.selectors.selectplace import SelectPlace
 from gramps.gui.filters.sidebar import PlaceSidebarFilter
 from gramps.gui.views.navigationview import NavigationView
 use_geopy = False
-if use_geopy:
-    from geopy.geocoders import Nominatim
-    STR_CITY_CONFIG = ['town', 'county', 'state', 'country']
-    STR_ADDRESS_CONFIG = ['house_number', 'road', 'suburb', 'town', 'county', 'state', 'country']
-else:
-    import gi
-    gi.require_version('GeocodeGlib', '1.0')
-    from gi.repository import GeocodeGlib
-    STR_CITY_CONFIG = ['town', 'county', 'state', 'country']
-    STR_ADDRESS_CONFIG = ['building', 'street', 'area', 'town', 'county', 'state', 'country']
+try:
+    if use_geopy:
+        from geopy.geocoders import Nominatim
+        STR_CITY_CONFIG = ['town', 'county', 'state', 'country']
+        STR_ADDRESS_CONFIG = ['house_number', 'road', 'suburb', 'town', 'county', 'state', 'country']
+    else:
+        import gi
+        gi.require_version('GeocodeGlib', '1.0')
+        from gi.repository import GeocodeGlib
+        STR_CITY_CONFIG = ['town', 'county', 'state', 'country']
+        STR_ADDRESS_CONFIG = ['building', 'street', 'area', 'town', 'county', 'state', 'country']
+except:
+    pass
 
 from PlaceCoordinateGramplet import generate_address_string
 
