@@ -31,6 +31,7 @@ from gi.repository import Gtk
 import cairo
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 from copy import deepcopy
+import sys
 
 # -------------------------------------------------------------------------
 #
@@ -400,7 +401,10 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
         dbstate.connect('active-changed', self.active_changed)
         dbstate.connect('database-changed', self.change_db)
 
-        self.additional_uis.append(self.additional_ui)
+        if sys.version_info.minor <= 5:
+            self.additional_uis.append(self.additional_ui[:-1])
+        else:
+            self.additional_uis.append(self.additional_ui)
 
         self.uistate.connect('font-changed', self.font_changed)
 
