@@ -97,6 +97,9 @@ class ModuleProvider:
         import importlib
         import sys
         import os
+        if sys.version_info.major == 3 and sys.version_info.minor <= 5:
+            class ModuleNotFoundError(Exception):
+                pass
         from gramps.gen.const import USER_PLUGINS
         try:
             module = importlib.import_module(module_name)
