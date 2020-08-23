@@ -264,7 +264,7 @@ class ModuleProvider:
 ##########################################
 
 
-life_line_chart_version_required = (1, 7, 1)
+life_line_chart_version_required = (1, 7, 2)
 life_line_chart_version_required_str = '.'.join([str(i) for i in life_line_chart_version_required])
 
 try:
@@ -273,11 +273,14 @@ try:
     else:
         _uistate = None
     mp=ModuleProvider('LifeLineChartView', _uistate)
-    svgwrite = mp.request(
-        'svgwrite',
-        '1.4',
-        'https://pypi.python.org/packages/source/s/svgwrite/svgwrite-1.4.zip'
-    )
+    if sys.version_info.major==3 and sys.version_info.minor>5:
+        svgwrite = mp.request(
+            'svgwrite',
+            '1.4',
+            'https://pypi.python.org/packages/source/s/svgwrite/svgwrite-1.4.zip'
+        )
+    else:
+        svgwrite = True
     life_line_chart = mp.request(
         'life_line_chart',
         life_line_chart_version_required_str,
