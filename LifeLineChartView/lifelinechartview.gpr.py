@@ -23,7 +23,7 @@ import os
 import sys
 import html
 if sys.version_info.major == 3 and sys.version_info.minor <= 5:
-    class ModuleImportError(Exception):
+    class ModuleNotFoundError(Exception):
         pass
 
 from gramps.gen.const import GRAMPS_LOCALE as glocale
