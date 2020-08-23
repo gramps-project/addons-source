@@ -1365,11 +1365,16 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                 self.life_line_chart_instance.set_positioning(self.positioning)
                 self.life_line_chart_instance.set_chart_configuration(self.chart_configuration)
 
-                reset = self.life_line_chart_instance.update_chart(filter_lambda=filter_lambda,
-                                                                   color_lambda=color_lambda,
-                                                                   images_lambda=images_lambda,
-                                                                   rebuild_all=reset,
-                                                                   update_view=new_filter)
+                try:
+                    reset = self.life_line_chart_instance.update_chart(
+                        filter_lambda=filter_lambda,
+                        color_lambda=color_lambda,
+                        images_lambda=images_lambda,
+                        rebuild_all=reset,
+                        update_view=new_filter)
+                except Exception as e:
+                    logger.warn("LifeLineChartView error: " + str(e))
+                    reset = True
                 return reset
 
             run_profiler = False
