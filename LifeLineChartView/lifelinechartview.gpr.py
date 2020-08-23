@@ -22,6 +22,9 @@ import traceback
 import os
 import sys
 import html
+if sys.version_info.major == 3 and sys.version_info.minor <= 5:
+    class ModuleImportError(Exception):
+        pass
 
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 _ = glocale.translation.gettext
@@ -270,7 +273,7 @@ class ModuleProvider:
 ##########################################
 
 
-life_line_chart_version_required = (1, 6, 1)
+life_line_chart_version_required = (1, 7, 0)
 life_line_chart_version_required_str = '.'.join([str(i) for i in life_line_chart_version_required])
 
 try:

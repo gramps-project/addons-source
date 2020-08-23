@@ -46,10 +46,11 @@ from gi.repository import PangoCairo
 #-------------------------------------------------------------------------
 from copy import deepcopy
 import sys, os
-from collections import defaultdict
+from collections import OrderedDict
 
 from life_line_chart import AncestorChart, DescendantChart
 from life_line_chart import BaseIndividual, BaseFamily, InstanceContainer, estimate_birth_date, estimate_death_date, LifeLineChartNotEnoughInformationToDisplay
+from life_line_chart.InstanceContainer import OrderedDefaultDict
 from gramps.gen.display.name import displayer as name_displayer
 from gramps.gen.display.place import displayer as place_displayer
 from gramps.gen.datehandler import displayer as date_displayer
@@ -765,6 +766,15 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         self.view_position_limit_to_bounds()
         self.queue_draw_wrapper()
 
+    def move_view(self, rel_delta_x, rel_delta_y):
+        visible_range = (self.get_allocated_width(), self.get_allocated_height())
+        self.upper_left_view_position = (
+            self.upper_left_view_position[0] + visible_range[0]*rel_delta_x,
+            self.upper_left_view_position[1] + visible_range[1]*rel_delta_y
+        )
+        self.view_position_limit_to_bounds()
+        self.queue_draw_wrapper()
+
     def fit_to_page(self, _button=None):
         width = self.life_line_chart_instance.get_full_width()
         height = self.life_line_chart_instance.get_full_height()
@@ -873,6 +883,21 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
             except:
                 cursor = Gdk.Cursor(Gdk.CursorType.HAND1)
             self.get_window().set_cursor(cursor)
+        move_to_step = {
+            'Left': (-0.1, 0),
+            'Right': (0.1, 0),
+            'Up': (0, -0.1),
+            'Down': (0, 0.1)
+        }
+        key_name = Gdk.keyval_name(eventkey.keyval)
+        step = move_to_step.get(key_name)
+        if eventkey.state & accel_mask == Gdk.ModifierType.SHIFT_MASK:
+            if step:
+                self.move_view(*[i*5 for i in step])
+                return True
+        if step:
+            self.move_view(*step)
+            return True
 
         #if self.mouse_x and self.mouse_y:
             # cell_address = self.cell_address_under_cursor(self.mouse_x,
@@ -1280,7 +1305,7 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                     return None
 
                 def images_lambda(individual):
-                    images = {}
+                    images = OrderedDict()
                     for i, reference in enumerate(individual._gramps_person.media_list):
                         handle = reference.get_reference_handle()
                         media = self.dbstate.db.get_media_from_handle(handle)
@@ -1372,7 +1397,7 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
         # for _, index, graphical_individual_representation in sorted_individuals:
         #     sorted_individual_items += graphical_individual_representation.items
 
-        sorted_individual_dict = defaultdict(list)
+        sorted_individual_dict = OrderedDefaultDict(list)
         for _, _, gr_individual in sorted_individuals:
             for key, item in gr_individual.items:
                 sorted_individual_dict[key].append(item)
