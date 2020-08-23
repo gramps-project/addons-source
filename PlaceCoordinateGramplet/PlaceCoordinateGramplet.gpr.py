@@ -68,16 +68,17 @@ try:
                 module_name="gi.repository.GeocodeGlib")
         logging.warning(plugin_name + ': ' + message)
 
-        if uistate:
+        if _uistate:
             from gramps.gui.dialog import QuestionDialog2
             warn_dialog = QuestionDialog2(
                 plugin_name + ' Plugin',
                 message,
                 "Don't show again", "OK",
-                parent=uistate.window)
-            if not warn_dialog.run():
+                parent=_uistate.window)
+            if warn_dialog.run():
                 inifile.register('placecoordinategramplet_warn.missingmodules', "")
                 inifile.set('placecoordinategramplet_warn.missingmodules', "False")
+                inifile.save()
 
         some_import_error = True
 
@@ -97,13 +98,13 @@ try:
                     + "\n\n" + str(e)
             logging.warning(plugin_name + ': ' + message)
 
-            if uistate:
+            if _uistate:
                 from gramps.gui.dialog import QuestionDialog2
                 warn_dialog = QuestionDialog2(
                     plugin_name + ' Plugin',
                     message,
                     "Don't show again", "OK",
-                    parent=uistate.window)
+                    parent=_uistate.window)
                 if warn_dialog.run():
                     logging.warning(plugin_name + ': ' + _('Warning disabled.'))
                     inifile.register('placecoordinategramplet_warn.connectivity', "")
@@ -116,7 +117,7 @@ except Exception as e:
     import_error_message = traceback.format_exc()
     logging.log(logging.ERROR, 'Failed to load PlaceCoordinateGramplet plugin.\n' + import_error_message)
 
-if locals().get('uistate') is None or not some_import_error or True:
+if locals().get('uistate') is None or not some_import_error:
     # Right after the download the plugin is loaded without uistate
     # If the gui is available, then the error message is shown anyway
     # so here we can import to avoid additional messages.
