@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-05 20:23+0200\n"
-"PO-Revision-Date: 2020-08-05 22:33+0200\n"
+"PO-Revision-Date: 2020-08-26 21:42+0200\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -51,11 +51,11 @@ msgstr "Ortekarte"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:261
 msgid "Place Coordinate Gramplet"
-msgstr "Ort und Koordinaten Gramplet"
+msgstr "Ortskoordinaten Gramplet"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:252
 msgid "PlaceCoordinateGeoView"
-msgstr "OrteKoordinate GeoView"
+msgstr "OrtskoordinateGeoView"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:432
 #: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:445
@@ -302,11 +302,11 @@ msgstr "Der Ort wurde nicht identifiziert."
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:268
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:299
 msgid "Coordinates were not given."
-msgstr "Keine Koordinaten angegeben."
+msgstr "Koordinaten wurden nicht angegeben."
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:283
 msgid "Failed to interpret the input format."
-msgstr "Das Eingabeformat wurde nicht erkannt."
+msgstr "Das Eingabeformat konnte nicht interpretiert werden."
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:236
 msgid "Failed to interpret the string format."
