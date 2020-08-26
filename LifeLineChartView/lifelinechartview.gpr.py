@@ -2,10 +2,7 @@
 #
 # Gramps - a GTK+/GNOME based genealogy program
 #
-# Copyright (C) 2009 Benny Malengier
-# Copyright (C) 2009 Douglas S. Blank
-# Copyright (C) 2009 Nick Hall
-# Copyright (C) 2011 Tim G L Lyons
+# Copyright (C) 2020 Christian Schulze
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -36,6 +33,13 @@ from gramps.gen.plug.utils import Zipfile
 inifile = config.register_manager("lifelinechartview_warn")
 inifile.load()
 sects = inifile.get_sections()
+
+import importlib
+
+##########################################
+# Zipfile_bugfix and ModuleProvider cannot be moved to another file,
+# because the gpr is evaluated with exec before writing the files
+# when installing the addons.
 
 
 class Zipfile_bugfix(Zipfile):
@@ -95,8 +99,8 @@ class ModuleProvider:
             module = importlib.import_module(module_name)
             if hasattr(module, '__version__'):
                 if module.__version__ != module_version:
-                    raise ModuleNotFoundError()
-        except ModuleNotFoundError:
+                    raise ImportError()
+        except Exception as e:
             pass
         else:
             return module
@@ -115,9 +119,7 @@ class ModuleProvider:
                 spec.loader.exec_module(module)
             else:
                 raise FileNotFoundError(filename)
-        except ModuleNotFoundError:
-            pass
-        except FileNotFoundError as e:
+        except Exception as e:
             pass
         else:
             return module
@@ -181,7 +183,25 @@ class ModuleProvider:
         from io import StringIO, BytesIO
         global Zipfile_bugfix, inifile
         import tarfile
-        if (path.startswith("http://") or
+        import os
+
+        download_with_curl = os.name != 'nt'
+
+        if download_with_curl:
+            output_filepath = os.path.join(output_path, os.path.basename(path))
+            import subprocess
+            try:
+                exitCode = subprocess.Popen(
+                    ['curl', '-L', path, '--output', output_filepath]).wait()
+                if exitCode != 0:
+                    raise RuntimeError("curl call failed")
+            except Exception:
+                if callback:
+                    callback(_("Unable to open '%s' with curl") % path)
+                return False
+            path = output_filepath
+        if not download_with_curl and (
+            path.startswith("http://") or
             path.startswith("https://") or
             path.startswith("ftp://")):
             try:
@@ -192,10 +212,12 @@ class ModuleProvider:
                 return False
         else:
             try:
-                fp = open(path)
+                fp = open(path,'rb')
             except RuntimeWarning:
                 if callback:
                     callback(_("Unable to open '%s'") % path)
+                if download_with_curl:
+                    os.remove(path)
                 return False
         try:
             content = fp.read()
@@ -203,8 +225,12 @@ class ModuleProvider:
         except RuntimeWarning:
             if callback:
                 callback(_("Error in reading '%s'") % path)
+            if download_with_curl:
+                os.remove(path)
             return False
         fp.close()
+        if download_with_curl:
+            os.remove(path)
         # file_obj is either Zipfile or TarFile
         if path.endswith(".zip") or path.endswith(".ZIP"):
             file_obj = Zipfile_bugfix(buffer)
@@ -234,21 +260,27 @@ class ModuleProvider:
     def cleanup_old_versions(self):
         raise NotImplementedError()
 
+#
+##########################################
 
-life_line_chart_version_required = (1, 4, 2)
+
+life_line_chart_version_required = (1, 7, 2)
 life_line_chart_version_required_str = '.'.join([str(i) for i in life_line_chart_version_required])
 
 try:
-    if 'lifelinechartview_warn' not in sects or not inifile.get('lifelinechartview_warn.missingmodules') != 'False':
+    if 'lifelinechartview_warn' not in sects or inifile.get('lifelinechartview_warn.missingmodules') != 'False':
         _uistate = locals().get('uistate')
     else:
         _uistate = None
     mp=ModuleProvider('LifeLineChartView', _uistate)
-    svgwrite = mp.request(
-        'svgwrite',
-        '1.4',
-        'https://pypi.python.org/packages/source/s/svgwrite/svgwrite-1.4.zip'
-    )
+    if sys.version_info.major==3 and sys.version_info.minor>5:
+        svgwrite = mp.request(
+            'svgwrite',
+            '1.4',
+            'https://pypi.python.org/packages/source/s/svgwrite/svgwrite-1.4.zip'
+        )
+    else:
+        svgwrite = True
     life_line_chart = mp.request(
         'life_line_chart',
         life_line_chart_version_required_str,
@@ -274,7 +306,7 @@ if locals().get('uistate') is None or not some_import_error:
              name=_("Life Line Ancestor Chart"),
              category=("Ancestry", _("Charts")),
              description=_("Persons and their relation in a time based chart"),
-             version = '1.2.2',
+             version = '1.3.9',
              gramps_target_version="5.1",
              status=STABLE,
              fname='lifelinechartview.py',
@@ -288,7 +320,7 @@ if locals().get('uistate') is None or not some_import_error:
              name=_("Life Line Descendant Chart"),
              category=("Ancestry", _("Charts")),
              description=_("Persons and their relation in a time based chart"),
-             version = '1.2.2',
+             version = '1.3.9',
              gramps_target_version="5.1",
              status=STABLE,
              fname='lifelinechartview.py',
@@ -299,6 +331,6 @@ if locals().get('uistate') is None or not some_import_error:
              )
 
 if not some_import_error:
-    inifile.register('lifelinechart_warn.missingmodules', "")
-    inifile.set('lifelinechart_warn.missingmodules', "True")
+    inifile.register('lifelinechartview_warn.missingmodules', "")
+    inifile.set('lifelinechartview_warn.missingmodules', "True")
     inifile.save()

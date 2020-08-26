@@ -46,10 +46,11 @@ from gi.repository import PangoCairo
 #-------------------------------------------------------------------------
 from copy import deepcopy
 import sys, os
-from collections import defaultdict
+from collections import OrderedDict
 
 from life_line_chart import AncestorChart, DescendantChart
 from life_line_chart import BaseIndividual, BaseFamily, InstanceContainer, estimate_birth_date, estimate_death_date, LifeLineChartNotEnoughInformationToDisplay
+from life_line_chart.InstanceContainer import OrderedDefaultDict
 from gramps.gen.display.name import displayer as name_displayer
 from gramps.gen.display.place import displayer as place_displayer
 from gramps.gen.datehandler import displayer as date_displayer
@@ -59,9 +60,29 @@ from gramps.gen.utils.file import media_path_full
 from gramps.gen.utils.thumbnails import (get_thumbnail_path, SIZE_NORMAL,
                                          SIZE_LARGE)
 import datetime
-
+_max_days = {
+    1:31,
+    2:29,
+    3:31,
+    4:30,
+    5:31,
+    6:30,
+    7:31,
+    8:31,
+    9:30,
+    10:31,
+    11:30,
+    12:31
+}
 logger = logging.getLogger("LifeLineChart View")
 
+events_key_name = {
+    EventType.BIRTH: 'birth',
+    EventType.CHRISTEN: 'christening',
+    EventType.DEATH: 'death',
+    EventType.BURIAL: 'burial',
+    EventType.BAPTISM: 'baptism',
+}
 def get_date(event):
     """
     get date dict of a gramps event
@@ -75,17 +96,8 @@ def get_date(event):
     event_data = None
     try:
         date_obj = event.get_date_object()
-        precision = ''
-        if date_obj.dateval[0] != 0:
-            precision += 'd'
-        if date_obj.dateval[1] != 0:
-            precision += 'm'
         if date_obj.year == 0:
             return None
-        else:
-            precision += 'y'
-        date = datetime.datetime(date_obj.dateval[2], max(
-            1, date_obj.dateval[1]), max(1, date_obj.dateval[0]), 0, 0, 0)
         quality = date_obj.get_quality()
         modifier = date_obj.get_modifier()
         comment = ''
@@ -99,10 +111,65 @@ def get_date(event):
             comment = 'After'
         elif modifier == Date.MOD_ABOUT:
             comment = 'About'
+        elif modifier == Date.MOD_RANGE:
+            comment = 'Between'
+
+        month_max_, day_max_ = 12, 31
+        month_min_, day_min_ = 1, 1
+        year_min, year_max = None, None
+        month_max, day_max = None, None
+        month_min, day_min = None, None
+
+        precision = ''
+        if date_obj.dateval[0] != 0:
+            day_min = date_obj.dateval[0]
+            if not day_max:
+                day_max = day_min
+            precision += 'd'
+        if date_obj.dateval[1] != 0:
+            month_min = date_obj.dateval[1]
+            if not month_max:
+                month_max = month_min
+            precision += 'm'
+        year_min = date_obj.year
+        if not year_max:
+            year_max = year_min
+        precision += 'y'
+
+        if not month_max: month_max = month_max_
+        if not month_min: month_min = month_min_
+        if not day_max: day_max = day_max_
+        if not day_min: day_min = day_min_
+
+        if modifier == Date.MOD_AFTER:
+            year_max = year_min + 15
+        elif modifier == Date.MOD_BEFORE:
+            year_min = year_max - 15
+
+        day_max = min(_max_days[month_max], day_max)
+
+        date_min = datetime.datetime(year_min, month_min, day_min, 0, 0, 0, 0)
+        try:
+            date_max = datetime.datetime(year_max, month_max, day_max, 0, 0, 0, 0)
+        except ValueError as e:
+            if month_max==2:
+                date_max = datetime.datetime(year_max, month_max, day_max, 0, 0, 0, 0)
+            else:
+                raise
+
+        if events_key_name[event.get_type().value] in ['burial', 'death']:
+            # if unknown move to the end of the year
+            date = date_max
+        else:
+            # if unknown move to the beginning of the year
+            date = date_min
+
         event_data = {
             'gramps_event': event,
             'date': date,
             'ordinal_value': date.toordinal(),
+            'ordinal_value_max': date_max.toordinal(),
+            'ordinal_value_min': date_min.toordinal(),
             'comment': comment,
             'precision': precision
         }
@@ -120,13 +187,6 @@ def get_relevant_events(gramps_person, dbstate, target):
         dbstate (dbstate): dbstate
         target (dict): place to store the events
     """
-    events_key_name = {
-        EventType.BIRTH: 'birth',
-        EventType.CHRISTEN: 'christening',
-        EventType.DEATH: 'death',
-        EventType.BURIAL: 'burial',
-        EventType.BAPTISM: 'baptism',
-    }
     for eventref in gramps_person.get_event_ref_list():
         #        for get_event_reference, key_name in events:
         #            eventref = get_event_reference()
@@ -169,7 +229,7 @@ class GrampsInstanceContainer(InstanceContainer):
         event = individual.events['death_or_burial']
         if event:
             date = event['date']
-            if event['precision'] == 'dmy':
+            if event['precision'] == 'y':
                 gramps_date = Date(date.year, 0, 0)
             elif event['precision'] == 'my':
                 gramps_date = Date(date.year, date.month, 0)
@@ -190,7 +250,7 @@ class GrampsInstanceContainer(InstanceContainer):
         event = individual.events['birth_or_christening']
         if event:
             date = event['date']
-            if event['precision'] == 'dmy':
+            if event['precision'] == 'y':
                 gramps_date = Date(date.year, 0, 0)
             elif event['precision'] == 'my':
                 gramps_date = Date(date.year, date.month, 0)
@@ -391,15 +451,15 @@ def get_dbdstate_instance_container(dbstate):
     ic.date_label_translation = {
         'Calculated': '{symbol}\xa0' + _('calculated').replace(' ', '\xa0') + '\xa0{date}',
         'Estimated': '{symbol}\xa0' + _('estimated').replace(' ', '\xa0') + '\xa0{date}',
-        'Estimated (min 25 at marriage)': '{symbol}\xa0' + _('estimated').replace(' ', '\xa0') + '\xa0{date}',
-        'Estimated (max age 75)': '{symbol}\xa0' + _('estimated').replace(' ', '\xa0') + '\xa0{date}',
-        'Estimated (max age 100)': '{symbol}\xa0' + _('estimated').replace(' ', '\xa0') + '\xa0{date}',
-        'Estimated (min 1 after parents marriage)': '{symbol}\xa0' + _('estimated').replace(' ', '\xa0') + '\xa0{date}',
+        'Estimated (min age at marriage)': '{symbol}\xa0' + _('estimated').replace(' ', '\xa0') + '\xa0{date}',
+        'Estimated (max age)': '{symbol}\xa0' + _('estimated').replace(' ', '\xa0') + '\xa0{date}',
+        'Estimated (after parents marriage)': '{symbol}\xa0' + _('estimated').replace(' ', '\xa0') + '\xa0{date}',
         'Still alive': '',
         'About': '{symbol}\xa0' + _('about').replace(' ', '\xa0') + '\xa0{date}',
         'Before': '{symbol}\xa0' + _('before').replace(' ', '\xa0') + '\xa0{date}',
         'After': '{symbol}\xa0' + _('after').replace(' ', '\xa0') + '\xa0{date}',
-        'YearPrecision': '{symbol}\xa0{date}'
+        'YearPrecision': '{symbol}\xa0{date}',
+        'Between': '{symbol}\xa0{date}'
     }
 
     return ic
@@ -450,7 +510,6 @@ TWO_LINE_FORMAT_2 = 101
 class LifeLineChartAxis(Gtk.DrawingArea):
     def __init__(self, dbstate, uistate, life_line_chart_widget):
         Gtk.DrawingArea.__init__(self)
-        st_cont = self.get_style_context()
         self.dbstate = dbstate
         self.uistate = uistate
         self.life_line_chart_widget = life_line_chart_widget
@@ -533,12 +592,6 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
 
     def __init__(self, dbstate, uistate, callback_popup=None):
         Gtk.DrawingArea.__init__(self)
-        st_cont = self.get_style_context()
-        col = st_cont.lookup_color('text_color')
-        if col[0]:
-            self.textcolor = (col[1].red, col[1].green, col[1].blue)
-        else:
-            self.textcolor = (0, 0, 0)
         self.dbstate = dbstate
         self.uistate = uistate
         self.childrenroot = []
@@ -713,6 +766,15 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         self.view_position_limit_to_bounds()
         self.queue_draw_wrapper()
 
+    def move_view(self, rel_delta_x, rel_delta_y):
+        visible_range = (self.get_allocated_width(), self.get_allocated_height())
+        self.upper_left_view_position = (
+            self.upper_left_view_position[0] + visible_range[0]*rel_delta_x,
+            self.upper_left_view_position[1] + visible_range[1]*rel_delta_y
+        )
+        self.view_position_limit_to_bounds()
+        self.queue_draw_wrapper()
+
     def fit_to_page(self, _button=None):
         width = self.life_line_chart_instance.get_full_width()
         height = self.life_line_chart_instance.get_full_height()
@@ -821,6 +883,21 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
             except:
                 cursor = Gdk.Cursor(Gdk.CursorType.HAND1)
             self.get_window().set_cursor(cursor)
+        move_to_step = {
+            'Left': (-0.1, 0),
+            'Right': (0.1, 0),
+            'Up': (0, -0.1),
+            'Down': (0, 0.1)
+        }
+        key_name = Gdk.keyval_name(eventkey.keyval)
+        step = move_to_step.get(key_name)
+        if eventkey.state & accel_mask == Gdk.ModifierType.SHIFT_MASK:
+            if step:
+                self.move_view(*[i*5 for i in step])
+                return True
+        if step:
+            self.move_view(*step)
+            return True
 
         #if self.mouse_x and self.mouse_y:
             # cell_address = self.cell_address_under_cursor(self.mouse_x,
@@ -931,7 +1008,7 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
                 self.view_position_limit_to_bounds()
                 self.queue_draw_wrapper()
             else:
-                print(str(event.get_scroll_deltas()))
+                #print(str(event.get_scroll_deltas()))
                 if event.direction == Gdk.ScrollDirection.UP:
                     self.upper_left_view_position = (self.upper_left_view_position[0], self.upper_left_view_position[1] - 50)
                 elif event.direction == Gdk.ScrollDirection.DOWN:
@@ -976,12 +1053,12 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
                     tooltip = gr_individual.individual.short_info_text
                     tooltip += '\nGramps id: ' + gr_individual.individual._gramps_person.get_gramps_id()
                     self.info_label.set_text(tooltip.replace('\n','   //   '))
-                self.info_label.override_color( Gtk.StateFlags.NORMAL, Gdk.RGBA(0,0,0))
+                self.info_label.set_sensitive(True)
             else:
                 if self._tooltip_individual_cache is not None:
                     self._tooltip_individual_cache = None
                     self.queue_draw_wrapper()
-                self.info_label.override_color( Gtk.StateFlags.NORMAL, Gdk.RGBA(0.7,0.7,0.7))
+                self.info_label.set_sensitive(False)
                 #self.info_label.set_text(tooltip.replace('\n','   //   '))
             self.pos_label.set_text('cursor position at ' + str(date))
             #self.set_tooltip_text(tooltip)
@@ -1210,6 +1287,13 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                     self.life_line_chart_instance = self.chart_class(
                         instance_container=get_dbdstate_instance_container(self.dbstate))
 
+                self.text_color = self.uistate.window.get_style_context().get_color(Gtk.StateFlags.NORMAL)
+                if self.text_color.red > 0.5:
+                    # dark theme
+                    self.life_line_chart_instance._colors = self.life_line_chart_instance.COLOR_CONFIGURATIONS['dark']
+                else:
+                    self.life_line_chart_instance._colors = self.life_line_chart_instance.COLOR_CONFIGURATIONS['light']
+
                 def filter_lambda(individual):
                     return False
 
@@ -1221,7 +1305,7 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                     return None
 
                 def images_lambda(individual):
-                    images = {}
+                    images = OrderedDict()
                     for i, reference in enumerate(individual._gramps_person.media_list):
                         handle = reference.get_reference_handle()
                         media = self.dbstate.db.get_media_from_handle(handle)
@@ -1232,13 +1316,27 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                                 date_ov = datetime.date(*[i if i != 0 else 1 for i in media.date.get_ymd()]).toordinal()
                                 date_ov = max(date_ov, individual.events['birth_or_christening']['date'].date().toordinal() + 1)
                             else:
-                                date_ov = individual.events['birth_or_christening']['date'].date().toordinal() + int((i+1)*365*5) + 1
+                                continue
                             image_path = get_thumbnail_path(path, media.mime, size=SIZE_NORMAL)
                             thumbnail = GdkPixbuf.Pixbuf.new_from_file(image_path)
                             images[date_ov] = {
                                 'filename': image_path,
                                 'size': (thumbnail.get_width(), thumbnail.get_height())
                                 }
+                    if not images:
+                        for i, reference in enumerate(individual._gramps_person.media_list):
+                            handle = reference.get_reference_handle()
+                            media = self.dbstate.db.get_media_from_handle(handle)
+                            path = media_path_full(self.dbstate.db, media.get_path())
+                            if media.mime in ['image/jpeg', 'image/png'] and os.path.isfile(path):
+                                year = media.date.get_year()
+                                date_ov = individual.events['birth_or_christening']['date'].date().toordinal() + int((i+1)*365*5) + 1
+                                image_path = get_thumbnail_path(path, media.mime, size=SIZE_NORMAL)
+                                thumbnail = GdkPixbuf.Pixbuf.new_from_file(image_path)
+                                images[date_ov] = {
+                                    'filename': image_path,
+                                    'size': (thumbnail.get_width(), thumbnail.get_height())
+                                    }
                     return images
 
                 unavailable_items = []
@@ -1267,11 +1365,16 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                 self.life_line_chart_instance.set_positioning(self.positioning)
                 self.life_line_chart_instance.set_chart_configuration(self.chart_configuration)
 
-                reset = self.life_line_chart_instance.update_chart(filter_lambda=filter_lambda,
-                                                                   color_lambda=color_lambda,
-                                                                   images_lambda=images_lambda,
-                                                                   rebuild_all=reset,
-                                                                   update_view=new_filter)
+                try:
+                    reset = self.life_line_chart_instance.update_chart(
+                        filter_lambda=filter_lambda,
+                        color_lambda=color_lambda,
+                        images_lambda=images_lambda,
+                        rebuild_all=reset,
+                        update_view=new_filter)
+                except Exception as e:
+                    logger.warn("LifeLineChartView error: " + str(e))
+                    reset = True
                 return reset
 
             run_profiler = False
@@ -1299,7 +1402,7 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
         # for _, index, graphical_individual_representation in sorted_individuals:
         #     sorted_individual_items += graphical_individual_representation.items
 
-        sorted_individual_dict = defaultdict(list)
+        sorted_individual_dict = OrderedDefaultDict(list)
         for _, _, gr_individual in sorted_individuals:
             for key, item in gr_individual.items:
                 sorted_individual_dict[key].append(item)
@@ -1382,7 +1485,11 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
             translated_position = self.view_position_get_limited(translated_position)
             ctx.translate(-translated_position[0], -translated_position[1])
             ctx.scale(self.zoom_level, self.zoom_level)
-            ctx.set_antialias(cairo.Antialias.BEST)
+            try:
+                # not always available...
+                ctx.set_antialias(cairo.Antialias.BEST)
+            except Exception as e:
+                pass
             #ctx.scale(scale, scale)
             #self.zoom_level_backup = self.zoom_level
         visible_range = (self.get_allocated_width(), self.get_allocated_height())
@@ -1396,7 +1503,7 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
     def draw_items(self, ctx, chart_items, view_clip_box, limit_font_size = None):
         view_x_min, view_y_min, view_x_max, view_y_max = view_clip_box
         for item_index, item in enumerate(chart_items):
-            def text_function(ctx, text, x, y, rotation=0, fontName="Arial", fontSize=10, verticalPadding=0, vertical_offset=0, horizontal_offset=0, bold=False, align='center', position='middle'):
+            def text_function(ctx, text, x, y, rotation=0, fontName="Arial", fontSize=10, verticalPadding=0, vertical_offset=0, horizontal_offset=0, bold=False, align='center', position='middle', color=(0,0,0)):
                 """
                 Used to draw normal text
                 """
@@ -1409,7 +1516,12 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                     ctx.select_font_face(
                         fontName, cairo.FONT_SLANT_NORMAL, cairo.FONT_WEIGHT_NORMAL)
                 f_o = cairo.FontOptions()
-                f_o.set_antialias(cairo.ANTIALIAS_GOOD)
+
+                ctx.set_source_rgba(float(color[0]/255),
+                                    float(color[1]/255),
+                                    float(color[2]/255),
+                                    1) # transparency
+                #f_o.set_antialias(cairo.ANTIALIAS_GOOD)
                 f_o.set_hint_metrics(cairo.HINT_METRICS_OFF)
                 ctx.set_font_options(f_o)
                 ctx.set_font_size(fontSize)
@@ -1492,7 +1604,6 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                     q_y_start >= 0 and q_y_start <= 1 and q_y_end >= 0 and q_y_start <= 1
                 if font_too_small or not text_should_be_visible_x or not text_should_be_visible_y:
                     continue # dont draw this item!
-                ctx.set_source_rgb(0, 0, 0)
                 vertical_offset = 0
                 if 'dy' in args:
                     if args['dy'][0].endswith('px') or args['dy'][0].endswith('pt'):
@@ -1505,9 +1616,10 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                         horizontal_offset = float(args['dx'][0][:-2])
                     else:
                         horizontal_offset = float(args['dx'][0])
-                anchor = args.get('text-anchor')
+                anchor = args.get('text_anchor')
                 if not anchor:
                     anchor = 'start'
+                color = item.get('fill', (0,0,0))
                 text_function(
                     ctx,
                     args['text'],
@@ -1519,10 +1631,11 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                     vertical_offset=vertical_offset,
                     horizontal_offset=horizontal_offset,
                     align=anchor,
-                    position='top')
+                    position='top',
+                    color=color)
                 # ctx.save()
                 # ctx.
-                # if 'text-anchor' in args and args['text-anchor'] == 'middle':
+                # if 'text_anchor' in args and args['text_anchor'] == 'middle':
                 #     x_bearing, y_bearing, width, height = ctx.text_extents(args['text'])[:4]
                 #     ctx.move_to(args['insert'][0] - width/2, args['insert'][1])
                 #     ctx.show_text(args['text'])
@@ -1541,17 +1654,18 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                 arguments = [individual_id for individual_id in arguments]
                 colors = [c/255. for c in item['color']]
                 def paint_path(stroke_with_multiplier, colors):
-                    if self.formatting['fade_individual_color'] and 'color_pos' in item:
-                        cp = item['color_pos']
+                    if self.formatting['fade_individual_color'] and 'age_color_fade_ordinal_values' in item:
+                        cp = item['age_color_fade_ordinal_values']
 
                         #ctx.set_source_rgb(colors[0], colors[1], colors[2])
-                        #lg3 = cairo.LinearGradient(0, item['color_pos'][0],  0, item['color_pos'][1])
+                        #lg3 = cairo.LinearGradient(0, item['age_color_fade_ordinal_values'][0],  0, item['age_color_fade_ordinal_values'][1])
                         lg3 = cairo.LinearGradient(
-                            0, item['color_pos'][0], 0, item['color_pos'][1])
-                        #fill = svg_document.linearGradient(("0", str(item['color_pos'][0])+""), ("0", str(item['color_pos'][1])+""), gradientUnits='userSpaceOnUse')
+                            arguments[0].real, item['age_color_fade_ordinal_values'][0],
+                            arguments[0].real, item['age_color_fade_ordinal_values'][1])
+                        #fill = svg_document.linearGradient(("0", str(item['age_color_fade_ordinal_values'][0])+""), ("0", str(item['age_color_fade_ordinal_values'][1])+""), gradientUnits='userSpaceOnUse')
                         lg3.add_color_stop_rgba(
                             0, colors[0], colors[1], colors[2], 1)
-                        lg3.add_color_stop_rgba(1, 0, 0, 0, 1)
+                        lg3.add_color_stop_rgb(1, *self.life_line_chart_instance._colors['fade_to_death'])
 
                         ctx.set_source(lg3)
                         if item['config']['type'] == 'Line':
@@ -1562,29 +1676,75 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                         elif item['config']['type'] == 'CubicBezier':
                             ctx.move_to(arguments[0].real, arguments[0].imag)
                             ctx.set_line_width(item['stroke_width']*stroke_with_multiplier)
-                            ctx.curve_to(arguments[1].real, arguments[1].imag, arguments[2].real,
-                                            arguments[2].imag, arguments[3].real, arguments[3].imag)
+                            ctx.curve_to(
+                                arguments[1].real, arguments[1].imag,
+                                arguments[2].real, arguments[2].imag,
+                                arguments[3].real, arguments[3].imag)
                             ctx.stroke()
-                    else:
-                        if item['config']['type'] == 'Line':
-                            ctx.move_to(arguments[0].real, arguments[0].imag)
-                            ctx.set_source_rgb(
-                                colors[0], colors[1], colors[2])
-                            ctx.set_line_width(item['stroke_width']*stroke_with_multiplier)
-                            ctx.line_to(arguments[1].real, arguments[1].imag)
-                            ctx.stroke()
-                        elif item['config']['type'] == 'CubicBezier':
+                    else:# self.formatting['fade_individual_color'] and 'age_color_fade_ordinal_values' in item:
 
-                            ctx.move_to(arguments[0].real, arguments[0].imag)
-                            ctx.set_source_rgb(
-                                colors[0], colors[1], colors[2])
-                            ctx.set_line_width(item['stroke_width']*stroke_with_multiplier)
-                            ctx.curve_to(arguments[1].real, arguments[1].imag, arguments[2].real,
-                                            arguments[2].imag, arguments[3].real, arguments[3].imag)
-                            ctx.stroke()
+                        min_stops = []
+                        max_stops = []
+                        if 'birth_date_position_range' in item and item['birth_date_position_range'] \
+                                and item['birth_date_position_range'][0] != item['birth_date_position_range'][1]:
+                            min_stops.append((item['birth_date_position_range'][0], 0))
+                            max_stops.append((item['birth_date_position_range'][1], 1))
+                        if 'death_date_position_range' in item and item['death_date_position_range'] \
+                                and item['death_date_position_range'][0] != item['death_date_position_range'][1]:
+                            min_stops.append((item['death_date_position_range'][0], 1))
+                            max_stops.append((item['death_date_position_range'][1], 0))
+                        if min_stops or max_stops:
+                            min_ov = min([v[0][1] for v in min_stops + max_stops])
+                            max_ov = max([v[0][1] for v in min_stops + max_stops])
+
+                            cp = item['age_color_fade_ordinal_values']
+
+                            lg3 = cairo.LinearGradient(
+                                arguments[0].real, min_ov,
+                                arguments[0].real, max_ov)
+
+                            for stop in sorted(min_stops + max_stops):
+                                lg3.add_color_stop_rgba(
+                                    (stop[0][1]-min_ov)/(max_ov-min_ov), colors[0], colors[1], colors[2], stop[1])
+
+                            ctx.set_source(lg3)
+                            if item['config']['type'] == 'Line':
+                                ctx.move_to(arguments[0].real, arguments[0].imag)
+                                ctx.set_line_width(item['stroke_width']*stroke_with_multiplier)
+                                ctx.line_to(arguments[1].real, arguments[1].imag)
+                                ctx.stroke()
+                            elif item['config']['type'] == 'CubicBezier':
+                                ctx.move_to(arguments[0].real, arguments[0].imag)
+                                ctx.set_line_width(item['stroke_width']*stroke_with_multiplier)
+                                ctx.curve_to(
+                                    arguments[1].real, arguments[1].imag,
+                                    arguments[2].real, arguments[2].imag,
+                                    arguments[3].real, arguments[3].imag)
+                                ctx.stroke()
+                        else:
+                            if item['config']['type'] == 'Line':
+                                ctx.move_to(arguments[0].real, arguments[0].imag)
+                                ctx.set_source_rgb(
+                                    colors[0], colors[1], colors[2])
+                                ctx.set_line_width(item['stroke_width']*stroke_with_multiplier)
+                                ctx.line_to(arguments[1].real, arguments[1].imag)
+                                if 'stroke_dasharray' in item:
+                                    ctx.set_dash([float(v) for v in item['stroke_dasharray'].split(',')])
+                                ctx.stroke()
+                                if 'stroke_dasharray' in item:
+                                    ctx.set_dash([])
+                            elif item['config']['type'] == 'CubicBezier':
+
+                                ctx.move_to(arguments[0].real, arguments[0].imag)
+                                ctx.set_source_rgb(
+                                    colors[0], colors[1], colors[2])
+                                ctx.set_line_width(item['stroke_width']*stroke_with_multiplier)
+                                ctx.curve_to(arguments[1].real, arguments[1].imag, arguments[2].real,
+                                                arguments[2].imag, arguments[3].real, arguments[3].imag)
+                                ctx.stroke()
                 if self._tooltip_individual_cache is not None and 'gir' in item and item['gir'] == self._tooltip_individual_cache[0]:
-                    paint_path(1.4, (255,0,0))
-                    paint_path(1.2, (0,0,0))
+                    paint_path(1.4, (1,0,0))
+                    paint_path(1.2, (self.text_color.red, self.text_color.green, self.text_color.blue))
                 paint_path(1, colors)
             elif item['type'] == 'textPath':
                 from math import cos, sin, atan2, pi
