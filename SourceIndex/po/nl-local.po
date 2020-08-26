@@ -1,0 +1,667 @@
+# Dutch translation of addon SourceIndex.
+# Copyright (C) 2020 Gramps project
+# This file is distributed under the same license as the SourceIndex package.
+# Jan Sparreboom <jan@sparreboom.net>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: SourceIndex 5.x\n"
+"Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
+"POT-Creation-Date: 2019-01-04 18:55-0600\n"
+"PO-Revision-Date: 2020-08-12 18:12+0200\n"
+"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
+"Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+
+#: SourceIndex/birth.py:126 SourceIndex/census.py:82 SourceIndex/death.py:87
+#: SourceIndex/index.py:92 SourceIndex/marriage.py:87 SourceIndex/witness.py:64
+msgid "Sources Index"
+msgstr "Bronnenindex"
+
+#: SourceIndex/index.py:407
+msgid "*** Error: Must install either ElementTree or lxml."
+msgstr "*** Fout: moet ElementTree of lxml installeren."
+
+#: SourceIndex/index.py:409
+msgid "must install either ElementTree or lxml"
+msgstr "moet ElementTree of lxml installeren"
+
+#: SourceIndex/SourceIndex.gpr.py:23
+msgid "BirthIndex"
+msgstr "Geboorte-index"
+
+#: SourceIndex/SourceIndex.gpr.py:38
+msgid "MarriageIndex"
+msgstr "Huwelijksindex"
+
+#: SourceIndex/SourceIndex.gpr.py:53
+msgid "DeathIndex"
+msgstr "Overlijdensindex"
+
+#: SourceIndex/SourceIndex.gpr.py:68
+msgid "CensusIndex"
+msgstr "Volkstellingsindex"
+
+#: SourceIndex/SourceIndex.gpr.py:83
+msgid "Witness"
+msgstr "Getuige"
+
+#: SourceIndex/SourceIndex.gpr.py:98
+msgid "SourceIndex"
+msgstr "Bronindex"
+
+#: SourceIndex/birth.glade:7 SourceIndex/index.glade:585
+msgid "birth"
+msgstr "geboorte"
+
+#: SourceIndex/birth.glade:47 SourceIndex/birth.glade:316
+#: SourceIndex/birth.glade:852 SourceIndex/census.glade:745
+#: SourceIndex/death.glade:78 SourceIndex/death.glade:484
+#: SourceIndex/marriage.glade:266
+msgid "Date:"
+msgstr "Datum:"
+
+#: SourceIndex/birth.glade:65 SourceIndex/census.glade:728
+#: SourceIndex/death.glade:97 SourceIndex/marriage.glade:64
+msgid "Info:"
+msgstr "Info:"
+
+#: SourceIndex/birth.glade:99
+msgid "Birth act:"
+msgstr "Geboortemoment:"
+
+#: SourceIndex/birth.glade:113 SourceIndex/census.glade:873
+#: SourceIndex/death.glade:182 SourceIndex/marriage.glade:1263
+msgid "Reference:"
+msgstr "Referentie:"
+
+#: SourceIndex/birth.glade:129
+msgid ""
+"Volume\n"
+"    Page:"
+msgstr ""
+"Volume\n"
+"    Pagina:"
+
+#: SourceIndex/birth.glade:149
+msgid "The source title"
+msgstr "De brontitel"
+
+#: SourceIndex/birth.glade:164
+msgid "The volume or page of this source"
+msgstr "Het volume of de pagina van deze bron"
+
+#: SourceIndex/birth.glade:195 SourceIndex/birth.glade:297
+#: SourceIndex/birth.glade:644 SourceIndex/witness.glade:73
+msgid "Names:"
+msgstr "Namen:"
+
+#: SourceIndex/birth.glade:214
+msgid "select the gender/sex"
+msgstr "selecteer het geslachtsrol/geslacht"
+
+#: SourceIndex/birth.glade:230 SourceIndex/census.glade:254
+#: SourceIndex/death.glade:386
+msgid "Gender:"
+msgstr "Geslacht:"
+
+#: SourceIndex/birth.glade:247
+msgid "The names of the main person written into the source"
+msgstr "De namen van de hoofdpersoon geschreven in de bron"
+
+#: SourceIndex/birth.glade:262
+msgid "The first names of the main person written into the source"
+msgstr "De voornamen van de hoofdpersoon geschreven in de bron"
+
+#: SourceIndex/birth.glade:278 SourceIndex/birth.glade:511
+#: SourceIndex/birth.glade:729 SourceIndex/witness.glade:90
+msgid "First names:"
+msgstr "Voornamen:"
+
+#: SourceIndex/birth.glade:334 SourceIndex/birth.glade:493
+msgid "Other:"
+msgstr "Overige:"
+
+#: SourceIndex/birth.glade:351
+msgid "Repository title"
+msgstr "Bibliotheektitel"
+
+#: SourceIndex/birth.glade:388 SourceIndex/census.glade:973
+#: SourceIndex/death.glade:589 SourceIndex/marriage.glade:234
+msgid "<b>Image</b>"
+msgstr "<b>Afbeelding</b>"
+
+#: SourceIndex/birth.glade:406
+msgid "<b><i>Repository</i></b>"
+msgstr "<b><i>Bibliotheek</i></b>"
+
+#: SourceIndex/birth.glade:421
+msgid ""
+"Spouse\n"
+"names:"
+msgstr ""
+"Echtgenoot\n"
+"namen:"
+
+#: SourceIndex/birth.glade:441
+msgid ""
+"Marriage\n"
+"date:"
+msgstr ""
+"Huwelijks\n"
+"datum:"
+
+#: SourceIndex/birth.glade:460
+msgid ""
+"Death\n"
+"date:"
+msgstr ""
+"Overlijdens\n"
+"datum:"
+
+#: SourceIndex/birth.glade:544 SourceIndex/birth.glade:762
+#: SourceIndex/census.glade:286 SourceIndex/death.glade:521
+#: SourceIndex/death.glade:669 SourceIndex/death.glade:939
+#: SourceIndex/marriage.glade:467 SourceIndex/marriage.glade:789
+#: SourceIndex/marriage.glade:808 SourceIndex/marriage.glade:827
+#: SourceIndex/marriage.glade:1562 SourceIndex/marriage.glade:1621
+#: SourceIndex/witness.glade:107
+msgid "Age:"
+msgstr "Leeftijd:"
+
+#: SourceIndex/birth.glade:578 SourceIndex/birth.glade:677
+#: SourceIndex/census.glade:543 SourceIndex/death.glade:722
+#: SourceIndex/death.glade:821 SourceIndex/marriage.glade:529
+#: SourceIndex/marriage.glade:903 SourceIndex/marriage.glade:922
+#: SourceIndex/marriage.glade:941 SourceIndex/marriage.glade:1361
+#: SourceIndex/marriage.glade:1474 SourceIndex/witness.glade:141
+msgid "Occupation:"
+msgstr "Beroep:"
+
+#: SourceIndex/birth.glade:597 SourceIndex/birth.glade:710
+#: SourceIndex/death.glade:741 SourceIndex/death.glade:854
+#: SourceIndex/marriage.glade:560 SourceIndex/marriage.glade:960
+#: SourceIndex/marriage.glade:979 SourceIndex/marriage.glade:998
+#: SourceIndex/marriage.glade:1408 SourceIndex/marriage.glade:1455
+#: SourceIndex/witness.glade:158
+msgid "Live:"
+msgstr "Levend:"
+
+#: SourceIndex/birth.glade:833
+msgid ""
+"<b>Witness\n"
+"Godfather\n"
+"Godmother:</b>"
+msgstr ""
+"<b>Getuige\n"
+"Peetvader\n"
+"Peetmoeder: </b>"
+
+#: SourceIndex/birth.glade:870
+msgid "Call number:"
+msgstr "Belnummer:"
+
+#: SourceIndex/birth.glade:887
+msgid "The call number into the repository"
+msgstr "Het oproepnummer in de bibliotheek"
+
+#: SourceIndex/birth.glade:925
+msgid "<b><i>Data person</i></b>"
+msgstr "<b><i>Gegevens persoon</i></b>"
+
+#: SourceIndex/birth.glade:949
+msgid "<b><i>Data margin</i></b>"
+msgstr "<b><i>Gegevensmarge</i></b>"
+
+#: SourceIndex/birth.glade:973
+msgid "<b><i>Data father</i></b>"
+msgstr "<b><i>Gegevens vader</i></b>"
+
+#: SourceIndex/birth.glade:985
+msgid "<b><i>Data mother</i></b>"
+msgstr "<b><i>Gegevens moeder</i></b>"
+
+#: SourceIndex/birth.glade:1021
+msgid ""
+"witness1, name, given, age, occupation;\n"
+"witness2, name, given, age, occupation;\n"
+"godfather, name, given, age, occupation;\n"
+"etc ..."
+msgstr ""
+"getuige1, naam, opgegeven, leeftijd, beroep;\n"
+"getuige2, naam, opgegeven, leeftijd, beroep;\n"
+"peetvader, naam, gegeven, leeftijd, beroep;\n"
+"enzovoort..."
+
+#: SourceIndex/birth.glade:1365 SourceIndex/census.glade:63
+#: SourceIndex/death.glade:1452 SourceIndex/marriage.glade:1976
+#: SourceIndex/witness.glade:360
+msgid "Cancel"
+msgstr "Annuleren"
+
+#: SourceIndex/birth.glade:1420 SourceIndex/census.glade:117
+#: SourceIndex/death.glade:1507 SourceIndex/marriage.glade:2031
+#: SourceIndex/witness.glade:415
+msgid "OK"
+msgstr "OK"
+
+#: SourceIndex/birth.glade:1549
+msgid ""
+"Marriage\n"
+"place:"
+msgstr ""
+"Huwelijk\n"
+"plaats:"
+
+#: SourceIndex/birth.glade:1568
+msgid ""
+"Death\n"
+"place:"
+msgstr ""
+"Overlijdens\n"
+"locatie:"
+
+#: SourceIndex/birth.glade:1588
+msgid ""
+"Birth\n"
+"place:"
+msgstr ""
+"Geboorte\n"
+"locatie:"
+
+#: SourceIndex/birth.glade:1892 SourceIndex/birth.glade:1911
+msgid "Origine:"
+msgstr "Oorsprong:"
+
+#: SourceIndex/birth.glade:2272
+msgid "<b><i>Citation</i></b>"
+msgstr "<b><i>Citaat</i></b>"
+
+#: SourceIndex/birth.glade:2287
+msgid "<b><i>Source</i></b>"
+msgstr "<b><i>Bron</i></b>"
+
+#: SourceIndex/census.glade:7 SourceIndex/index.glade:768
+msgid "census"
+msgstr "volkstelling"
+
+#: SourceIndex/census.glade:160
+msgid "<b>Census</b>"
+msgstr "<b>Volkstelling</b>"
+
+#: SourceIndex/census.glade:176 SourceIndex/death.glade:607
+#: SourceIndex/marriage.glade:185
+msgid "<b>Repository</b>"
+msgstr "<b>Bibliotheek</b>"
+
+#: SourceIndex/census.glade:190 SourceIndex/death.glade:353
+#: SourceIndex/death.glade:465 SourceIndex/death.glade:788
+#: SourceIndex/marriage.glade:405 SourceIndex/marriage.glade:591
+#: SourceIndex/marriage.glade:610 SourceIndex/marriage.glade:629
+#: SourceIndex/marriage.glade:1330 SourceIndex/marriage.glade:1493
+msgid "Name:"
+msgstr "Naam:"
+
+#: SourceIndex/census.glade:221 SourceIndex/death.glade:432
+#: SourceIndex/death.glade:636 SourceIndex/death.glade:873
+#: SourceIndex/marriage.glade:450 SourceIndex/marriage.glade:732
+#: SourceIndex/marriage.glade:751 SourceIndex/marriage.glade:770
+#: SourceIndex/marriage.glade:1543 SourceIndex/marriage.glade:1701
+msgid "First name:"
+msgstr "Voornaam:"
+
+#: SourceIndex/census.glade:319 SourceIndex/death.glade:1003
+msgid "Birth date:"
+msgstr "Geboortedatum:"
+
+#: SourceIndex/census.glade:364
+msgid "Death date:"
+msgstr "Overlijdensdatum:"
+
+#: SourceIndex/census.glade:381 SourceIndex/death.glade:1035
+msgid "Birth place:"
+msgstr "Geboortelocatie:"
+
+#: SourceIndex/census.glade:414
+msgid "Death place:"
+msgstr "Overlijdenslocatie:"
+
+#: SourceIndex/census.glade:447
+msgid "Family status:"
+msgstr "Gezinsstatus:"
+
+#: SourceIndex/census.glade:466 SourceIndex/death.glade:1099
+msgid "Spouse name:"
+msgstr "Naam echtgenoot:"
+
+#: SourceIndex/census.glade:510 SourceIndex/death.glade:703
+#: SourceIndex/death.glade:892 SourceIndex/marriage.glade:498
+#: SourceIndex/marriage.glade:846 SourceIndex/marriage.glade:865
+#: SourceIndex/marriage.glade:884 SourceIndex/marriage.glade:1526
+#: SourceIndex/marriage.glade:1654 SourceIndex/witness.glade:124
+msgid "Origin:"
+msgstr "Oorsprong:"
+
+#: SourceIndex/census.glade:671 SourceIndex/death.glade:1067
+msgid "Note:"
+msgstr "Notitie:"
+
+#: SourceIndex/census.glade:712 SourceIndex/death.glade:621
+msgid "<b>Data person</b>"
+msgstr "<b>Gegevens persoon</b>"
+
+#: SourceIndex/census.glade:777 SourceIndex/census.glade:841
+#: SourceIndex/death.glade:131 SourceIndex/death.glade:201
+#: SourceIndex/marriage.glade:284 SourceIndex/marriage.glade:1233
+msgid "ID:"
+msgstr "ID:"
+
+#: SourceIndex/census.glade:811
+msgid "Address:"
+msgstr "Adres:"
+
+#: SourceIndex/census.glade:904 SourceIndex/death.glade:217
+#: SourceIndex/marriage.glade:1296
+msgid "Volume:"
+msgstr "Volume:"
+
+#: SourceIndex/census.glade:1046
+msgid "order, person, surname, given, age, status, occupation, etc ..."
+msgstr ""
+"volgorde, persoon, achternaam, gegeven, leeftijd, status, beroep, enz..."
+
+#: SourceIndex/census.glade:1090
+msgid "Note"
+msgstr "Notitie"
+
+#: SourceIndex/death.glade:7 SourceIndex/index.glade:707
+msgid "death"
+msgstr "overlijden"
+
+#: SourceIndex/death.glade:165
+msgid "Death act:"
+msgstr "Overlijdensmoment:"
+
+#: SourceIndex/death.glade:282
+msgid "<b>Death act</b>"
+msgstr "<b>Overlijdensmoment</b>"
+
+#: SourceIndex/death.glade:503
+msgid "Place:"
+msgstr "Locatie:"
+
+#: SourceIndex/death.glade:986 SourceIndex/marriage.glade:1720
+msgid "<b>Witness:</b>"
+msgstr "<b>Getuige:</b>"
+
+#: SourceIndex/death.glade:1131
+msgid "Marriage date:"
+msgstr "Huwelijksdatum:"
+
+#: SourceIndex/death.glade:1163
+msgid "Marriage place:"
+msgstr "Huwelijkslocatie:"
+
+#: SourceIndex/death.glade:1195
+msgid "<b>Data mother</b>"
+msgstr "<b>Gegevens moeder</b>"
+
+#: SourceIndex/death.glade:1210
+msgid "<b>Data father</b>"
+msgstr "<b>Gegevens vader</b>"
+
+#: SourceIndex/death.glade:1225
+msgid "<b>Spouse</b> "
+msgstr "<b>Echtgenoot</b> "
+
+#: SourceIndex/death.glade:1274 SourceIndex/death.glade:1293
+#: SourceIndex/death.glade:1312 SourceIndex/marriage.glade:1819
+#: SourceIndex/marriage.glade:1836 SourceIndex/marriage.glade:1855
+#: SourceIndex/marriage.glade:1874
+msgid "alive"
+msgstr "levend"
+
+#: SourceIndex/death.glade:1394 SourceIndex/marriage.glade:1773
+msgid ""
+"witness1, name, given, age, occupation; witness2, name, given, age, "
+"occupation, etc ..."
+msgstr ""
+"getuige1, naam, opgegeven, leeftijd, beroep; getuige2, naam, voornaam, "
+"leeftijd, beroep, enz..."
+
+#: SourceIndex/index.glade:7
+msgid "index"
+msgstr "index"
+
+#: SourceIndex/index.glade:50
+msgid "_File"
+msgstr "_Bestand"
+
+#: SourceIndex/index.glade:79
+msgid "Import CSV"
+msgstr "CSV importeren"
+
+#: SourceIndex/index.glade:141
+msgid "_Edit"
+msgstr "_Bewerken"
+
+#: SourceIndex/index.glade:199
+msgid "_View"
+msgstr "_Beeld"
+
+#: SourceIndex/index.glade:209
+msgid "Display all"
+msgstr "Alles weergeven"
+
+#: SourceIndex/index.glade:210
+msgid "All"
+msgstr "Alles"
+
+#: SourceIndex/index.glade:220
+msgid "Display only births"
+msgstr "Toon alleen geboorten"
+
+#: SourceIndex/index.glade:221
+msgid "Births/Baptisms"
+msgstr "Geboorten/dopen"
+
+#: SourceIndex/index.glade:231
+msgid "Display only marriages"
+msgstr "Geef alleen huwelijken weer"
+
+#: SourceIndex/index.glade:232
+msgid "Marriages/Families"
+msgstr "Huwelijken/gezinnen"
+
+#: SourceIndex/index.glade:242
+msgid "Display only deaths"
+msgstr "Toon alleen sterfgevallen"
+
+#: SourceIndex/index.glade:243
+msgid "Deaths/Burials"
+msgstr "Sterfgevallen/begrafenissen"
+
+#: SourceIndex/index.glade:253
+msgid "Display only censuses"
+msgstr "Toon alleen volkstellingen"
+
+#: SourceIndex/index.glade:254
+msgid "Censuses"
+msgstr "Volkstellingen"
+
+#: SourceIndex/index.glade:268
+msgid "_Help"
+msgstr "_Help"
+
+#: SourceIndex/index.glade:278
+msgid "About this utility."
+msgstr "Over dit hulpprogramma."
+
+#: SourceIndex/index.glade:279
+msgid "About dialog"
+msgstr "Over dialoog"
+
+#: SourceIndex/index.glade:312
+msgid "New birth or baptism"
+msgstr "Wedergeboorte of doop"
+
+#: SourceIndex/index.glade:341
+msgid "add birth act"
+msgstr "voeg geboorteakte toe"
+
+#: SourceIndex/index.glade:373
+msgid "New marriage"
+msgstr "Nieuw huwelijk"
+
+#: SourceIndex/index.glade:402
+msgid "add marriage act"
+msgstr "voeg huwelijksakte toe"
+
+#: SourceIndex/index.glade:434
+msgid "New death or burial"
+msgstr "Nieuw sterfgeval of begrafenis"
+
+#: SourceIndex/index.glade:463
+msgid "add death act"
+msgstr "overlijdensmoment toevoegen"
+
+#: SourceIndex/index.glade:495
+msgid "New census"
+msgstr "Nieuwe volkstelling"
+
+#: SourceIndex/index.glade:524
+msgid "add census"
+msgstr "voeg volkstelling toe"
+
+#: SourceIndex/index.glade:556
+msgid "Select a birth source"
+msgstr "Selecteer een geboortebron"
+
+#: SourceIndex/index.glade:617
+msgid "Select a marriage source"
+msgstr "Kies een huwelijksbron"
+
+#: SourceIndex/index.glade:646 SourceIndex/marriage.glade:7
+msgid "marriage"
+msgstr "huwelijk"
+
+#: SourceIndex/index.glade:678
+msgid "Select a death source"
+msgstr "Kies een overlijdensbron"
+
+#: SourceIndex/index.glade:739
+msgid "Select a census source"
+msgstr "Selecteer een volkstellingsbron"
+
+#: SourceIndex/index.glade:800
+msgid "Select a repository storing a source"
+msgstr "Selecteer een bibliotheek dat een bron bevat"
+
+#: SourceIndex/index.glade:829
+msgid "repositories"
+msgstr "bibliotheken"
+
+#: SourceIndex/index.glade:869
+msgid "Selected view"
+msgstr "Geselecteerde weergave"
+
+#: SourceIndex/index.glade:889
+msgid ""
+"Records transcriptions ... births/deaths/marriages/censuses with common "
+"fields: id, repository, person name, birth date and place, parents."
+msgstr ""
+"Registreert transcripties ... geboorten/sterfgevallen/huwelijken/"
+"volkstellingen met gemeenschappelijke velden: id, bibliotheek, persoonsnaam, "
+"geboortedatum en -plaats, ouders."
+
+#: SourceIndex/marriage.glade:49
+msgid "Marriage act:"
+msgstr "Huwelijksmoment:"
+
+#: SourceIndex/marriage.glade:81
+msgid "m. date:"
+msgstr "h. datum:"
+
+#: SourceIndex/marriage.glade:97
+msgid "m. place:"
+msgstr "h. locatie:"
+
+#: SourceIndex/marriage.glade:113
+msgid "d.contract:"
+msgstr "o.contrac:"
+
+#: SourceIndex/marriage.glade:131
+msgid "dates banns:"
+msgstr "datums huwelijksaankondigingen:"
+
+#: SourceIndex/marriage.glade:149
+msgid "p.contract:"
+msgstr "l.contract:"
+
+#: SourceIndex/marriage.glade:167
+msgid "places banns:"
+msgstr "locaties huwelijksaankondigingen:"
+
+#: SourceIndex/marriage.glade:198
+msgid "<b>Data union</b>"
+msgstr "<b>Gegevensvereniging</b>"
+
+#: SourceIndex/marriage.glade:318
+msgid "<b>Marriage act</b>"
+msgstr "<b>Huwelijksmoment</b>"
+
+#: SourceIndex/marriage.glade:333
+msgid ""
+"<b>Data father\n"
+"spouse1</b>"
+msgstr ""
+"<b>Gegevens vader\n"
+"echtgenoot1</b>"
+
+#: SourceIndex/marriage.glade:351
+msgid ""
+"<b>Data mother\n"
+"spouse1</b>"
+msgstr ""
+"<b>Gegevens moeder\n"
+"echtgenoot1</b>"
+
+#: SourceIndex/marriage.glade:369
+msgid ""
+"<b>Data mother\n"
+"spouse2</b>"
+msgstr ""
+"<b>Gegevens moeder\n"
+"echtgenoot2</b>"
+
+#: SourceIndex/marriage.glade:387
+msgid ""
+"<b>Data father\n"
+"spouse2</b>"
+msgstr ""
+"<b>Gegevens vader\n"
+"echtgenoot2</b>"
+
+#: SourceIndex/marriage.glade:1185
+msgid "<b>Data spouse1</b>"
+msgstr "<b>Gegevens echtgenoot 1</b>"
+
+#: SourceIndex/marriage.glade:1202
+msgid "<b>Data spouse2</b>"
+msgstr "<b>Gegevens echtgenoot 2</b>"
+
+#: SourceIndex/witness.glade:7
+msgid "witness"
+msgstr "getuige"
+
+#: SourceIndex/witness.glade:60
+msgid "<b>Witness</b>"
+msgstr "<b>Getuige</b>"
+
+#: SourceIndex/witness.glade:175
+msgid "Relationship:"
+msgstr "Verwantschap:"
