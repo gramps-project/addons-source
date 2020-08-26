@@ -1,139 +1,183 @@
-# translation of nl.po to nederlands
-# Dutch translation of GRAMPS
-# Copyright (C) 2003 The Free Software Foundation,  Inc.
-#
+# Dutch translation of addon ToDoReport.
+# Copyright (C) 2020 Gramps project
+# This file is distributed under the same license as the ToDoReport package.
 # Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
 # Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
 # Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010.
+# Jan Sparreboom <jan@sparreboom.net>, 2020.
 #
-# --------------------------------------------------
-# Conventies (kan later altijd nog aangepast worden)
-# --------------------------------------------------
-# active             actief (moet hier nog iets beters voor verzinnen)
-# attribute          kenmerk
-# bookmark           bladwijzer
-# view               scherm
-# city               plaats beter is stad dorp
-# marker             aanduiding
-# people             personen
-# place              locatie
-# record             archief/kaart
-# database           gegevensbestand (KB)
-# chart              grafiek
-# Home person        beginpersoon : (EDR)
-# spouse             echtgenoot
-# partner            partner
-# warning            let op
-# at the age of      op een leeftijd van -> toen hij/zij .. oud was
-# repositories       bibliotheken
-# regex              regex onvertaald laten
-# expression         uitdrukking
-# given name         voornaam
-# reference	     waarnaar verwezen wordt
-# count		     aantal maal
-# lineage	     lijn
-# locality	     plaats
-# u gebruiken
-# telkens werkwoord achteraan plaatsen
 msgid ""
 msgstr ""
-"Project-Id-Version: gramps\n"
+"Project-Id-Version: ToDoReport 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-16 20:18+0100\n"
-"PO-Revision-Date: 2011-01-16 20:20+0100\n"
-"Last-Translator: Erik De Richter <frederik.de.richter@telenet.be>\n"
-"Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
-"Language: \n"
+"POT-Creation-Date: 2020-08-15 22:20+0200\n"
+"PO-Revision-Date: 2020-08-15 22:21+0200\n"
+"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
+"Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-Language: Nederlands\n"
-"X-Poedit-Country: België\n"
+"X-Generator: Poedit 2.3\n"
 
-#: ToDoReport/TodoReport.gpr.py:24
+#: ToDoReport//TodoReport.gpr.py:24
 msgid "Todo Report"
-msgstr "'Nog te doen'-verslag"
+msgstr "Takenverslag"
 
-#: ToDoReport/TodoReport.gpr.py:25
-msgid "Produces a list of all the notes with a given tag along with the records that it references, the Person, Family, Event, etc."
-msgstr "Een lijst van opmerkingen met een bepaalde aanduiding wordt aangemaakt, samen met de gegevens waarnaar verwezen wordt, de persoon, familie, gegeven, enz. ."
+#: ToDoReport//TodoReport.gpr.py:25
+msgid ""
+"Produces a list of all the notes with a given tag along with the records "
+"that it references, the Person, Family, Event, etc."
+msgstr ""
+"Produceert een lijst van alle notities met een bepaald  label, samen met de "
+"gegevens waarnaar het verwijst, de persoon, familie, gebeurtenis, enz."
 
-#: ToDoReport/TodoReport.py:80
+#: ToDoReport//TodoReport.py:90
 msgid "ToDo Report"
-msgstr "'Nog-te-doen'-verslag"
+msgstr "Takenverslag"
 
-#: ToDoReport/TodoReport.py:81
+#: ToDoReport//TodoReport.py:91
 msgid "You must first create a tag before running this report."
-msgstr "U dient eerst een tag aan te maken vooraleer u dit verslag kunt draaien."
+msgstr "U moet eerst een label maken voordat u dit verslag uitvoert."
 
-#: ToDoReport/TodoReport.py:89
+#: ToDoReport//TodoReport.py:98 ToDoReport//TodoReport.py:526
+msgid "TR-Title"
+msgstr "TR-Titel"
+
+#: ToDoReport//TodoReport.py:99
 #, python-format
-msgid "Report on Notes Tagged %s"
-msgstr "Verslag over opmerkingen met de tag %s"
+msgid "Report on Notes Tagged '%s'"
+msgstr "Verslag van notities met label '%s'"
 
-#: ToDoReport/TodoReport.py:200
+#: ToDoReport//TodoReport.py:198 ToDoReport//TodoReport.py:536
+msgid "TR-Heading"
+msgstr "TR-Kop"
+
+#: ToDoReport//TodoReport.py:204
+msgid "NoteTable"
+msgstr "NotitieTabel"
+
+#: ToDoReport//TodoReport.py:204 ToDoReport//TodoReport.py:584
+msgid "TR-Table"
+msgstr "TR-Tabel"
+
+#: ToDoReport//TodoReport.py:208 ToDoReport//TodoReport.py:214
+#: ToDoReport//TodoReport.py:228 ToDoReport//TodoReport.py:234
+#: ToDoReport//TodoReport.py:263 ToDoReport//TodoReport.py:271
+#: ToDoReport//TodoReport.py:277 ToDoReport//TodoReport.py:288
+#: ToDoReport//TodoReport.py:307 ToDoReport//TodoReport.py:313
+#: ToDoReport//TodoReport.py:323 ToDoReport//TodoReport.py:346
+#: ToDoReport//TodoReport.py:362 ToDoReport//TodoReport.py:368
+#: ToDoReport//TodoReport.py:378 ToDoReport//TodoReport.py:389
+#: ToDoReport//TodoReport.py:407 ToDoReport//TodoReport.py:413
+#: ToDoReport//TodoReport.py:569
+msgid "TR-TableCell"
+msgstr "TR-TabelCel"
+
+#: ToDoReport//TodoReport.py:209 ToDoReport//TodoReport.py:215
+#: ToDoReport//TodoReport.py:557
+msgid "TR-Normal-Bold"
+msgstr "TR-Regulier-Vet"
+
+#: ToDoReport//TodoReport.py:210
 msgid "Id"
 msgstr "Id"
 
-#: ToDoReport/TodoReport.py:206
+#: ToDoReport//TodoReport.py:216
 msgid "Text"
 msgstr "Tekst"
 
-#: ToDoReport/TodoReport.py:333
+#: ToDoReport//TodoReport.py:229 ToDoReport//TodoReport.py:246
+#: ToDoReport//TodoReport.py:264 ToDoReport//TodoReport.py:272
+#: ToDoReport//TodoReport.py:278 ToDoReport//TodoReport.py:289
+#: ToDoReport//TodoReport.py:308 ToDoReport//TodoReport.py:314
+#: ToDoReport//TodoReport.py:324 ToDoReport//TodoReport.py:347
+#: ToDoReport//TodoReport.py:363 ToDoReport//TodoReport.py:369
+#: ToDoReport//TodoReport.py:379 ToDoReport//TodoReport.py:390
+#: ToDoReport//TodoReport.py:408 ToDoReport//TodoReport.py:414
+#: ToDoReport//TodoReport.py:546
+msgid "TR-Normal"
+msgstr "TR-Regulier"
+
+#: ToDoReport//TodoReport.py:236 ToDoReport//TodoReport.py:564
+msgid "TR-Note"
+msgstr "TR-Notitie"
+
+#: ToDoReport//TodoReport.py:245 ToDoReport//TodoReport.py:574
+msgid "TR-BorderCell"
+msgstr "TR-RandCel"
+
+#: ToDoReport//TodoReport.py:282 ToDoReport//TodoReport.py:284
+msgid "b. "
+msgstr "g. "
+
+#: ToDoReport//TodoReport.py:293
+msgid "d. "
+msgstr "o. "
+
+#: ToDoReport//TodoReport.py:343
 #, python-format
 msgid "%(relationship_type)s on %(relationship_date)s"
 msgstr "%(relationship_type)s op %(relationship_date)s"
 
-#: ToDoReport/TodoReport.py:364
+#: ToDoReport//TodoReport.py:374
 msgid "date: "
-msgstr "datum:"
+msgstr "datum: "
 
-#: ToDoReport/TodoReport.py:375
+#: ToDoReport//TodoReport.py:385
 msgid "place: "
-msgstr "locatie:"
+msgstr "locatie: "
 
-#: ToDoReport/TodoReport.py:478
+#: ToDoReport//TodoReport.py:489
 msgid "Report Options"
 msgstr "Verslagopties"
 
-#: ToDoReport/TodoReport.py:486
-#: ToDoReport/TodoReport.py:490
+#: ToDoReport//TodoReport.py:497 ToDoReport//TodoReport.py:501
 msgid "Tag"
-msgstr "Tag"
+msgstr "Label"
 
-#: ToDoReport/TodoReport.py:493
+#: ToDoReport//TodoReport.py:504
 msgid "The tag to use for the report"
-msgstr "De gebruikte tag voor dit verslag"
+msgstr "Het label die voor het verslag moet worden gebruikt"
 
-#: ToDoReport/TodoReport.py:496
+#: ToDoReport//TodoReport.py:507
 msgid "Group by reference type"
-msgstr "Volgens verwijzingstype rangschikken"
+msgstr "Groepeer op referentietype"
 
-#: ToDoReport/TodoReport.py:497
+#: ToDoReport//TodoReport.py:508
 msgid "Group notes by Family, Person, Place, etc."
-msgstr "Opmerkingen volgens familie, persoon, locatie, ... rangschikken."
+msgstr "Groepeer notities op familie, persoon, plaats, etc."
 
-#: ToDoReport/TodoReport.py:514
+#: ToDoReport//TodoReport.py:525
 msgid "The style used for the title of the page."
-msgstr "De gebruikte stijl voor de titel van de pagina."
+msgstr "De stijl die gebruikt wordt voor de titel van de pagina."
 
-#: ToDoReport/TodoReport.py:524
+#: ToDoReport//TodoReport.py:535
 msgid "The style used for the section headers."
-msgstr "De gebruikte stijl voor de sectietitels."
+msgstr "De stijl die wordt gebruikt voor de sectiekoppen."
 
-#: ToDoReport/TodoReport.py:534
+#: ToDoReport//TodoReport.py:545
 msgid "The basic style used for the text display."
-msgstr "De gebruikte basisstijl voor de tekstweergave."
+msgstr "De basisstijl die wordt gebruikt voor de tekstweergave."
 
-#: ToDoReport/TodoReport.py:545
+#: ToDoReport//TodoReport.py:556
 msgid "The basic style used for table headings."
-msgstr "De gebruikte basisstijl voor de tabelhoofdingen."
+msgstr "De basisstijl die wordt gebruikt voor tabelkoppen."
 
-#: ToDoReport/TodoReport.py:552
+#: ToDoReport//TodoReport.py:563
 msgid "The basic style used for the note display."
-msgstr "De gebruikte basisstijl voor de weergave van opmerkingen."
+msgstr "De basisstijl die wordt gebruikt voor de weergave van notities."
 
-#~ msgid "Marker"
-#~ msgstr "Aanduiding"
+#: ToDoReport//TodoReport.py:568
+msgid "The basic style used for the table cell display."
+msgstr "De basisstijl die wordt gebruikt voor de weergave van de tabelcel."
 
+#: ToDoReport//TodoReport.py:573
+msgid "The basic style used for the table border cell display."
+msgstr ""
+"De basisstijl die wordt gebruikt voor de weergave van de celrand van de "
+"tabel."
+
+#: ToDoReport//TodoReport.py:583
+msgid "The basic style used for the table display."
+msgstr "De basisstijl die wordt gebruikt voor de weergave van de tabel."
