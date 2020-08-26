@@ -56,7 +56,7 @@ from gramps.gen.lib.date import Today
 from gramps.gen.db import DbTxn
 from navigationview import NavigationView
 from taglist import TagList
-from timeline import Timeline
+from combined_timeline import Timeline
 from gramps.gui.uimanager import ActionGroup
 from gramps.gui.editors import EditPerson, EditFamily, EditEvent
 from gramps.gui.editors import FilterEditor
