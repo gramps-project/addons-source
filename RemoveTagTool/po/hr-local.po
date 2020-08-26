@@ -7,156 +7,221 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-05 11:56+1000\n"
-"PO-Revision-Date: 2019-10-24 10:24+0200\n"
-"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"POT-Creation-Date: 2020-08-19 23:12+0200\n"
+"PO-Revision-Date: 2020-08-20 12:19+0200\n"
+"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
 "Language-Team: \n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 2.3\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 
-#: RemoveTagTool/RemoveTagTool.gpr.py:23 RemoveTagTool/RemoveTagTool.py:300
-#: RemoveTagTool/RemoveTagTool.py:417
-msgid "Remove Tag Tool"
-msgstr "Ukloni etiketu"
+#: RemoveTagTool/RemoveTagTool.gpr.py:24 RemoveTagTool/RemoveTagTool.py:186
+#: RemoveTagTool/RemoveTagTool.py:246
+msgid "Add/Remove Tag Tool"
+msgstr "Alat za dodavanje/uklanjanje etiketu"
 
-#: RemoveTagTool/RemoveTagTool.gpr.py:24
-msgid "Remove a tag from groups of people, events, etc."
-msgstr "Ukloni etiketu iz grupa osoba, događaja, itd."
+#: RemoveTagTool/RemoveTagTool.gpr.py:25
+msgid "Add or remove a tag from groups of people, events, etc."
+msgstr "Dodavanje ili uklanjanje etiketu iz grupa ljudi, događaja itd."
 
-#: RemoveTagTool/RemoveTagTool.py:88
-msgid ""
-"The Remove Tag Tool requires at least one person, family and tag to execute."
-msgstr ""
-"Za rad s alatom „Ukloni etiketu” je potrebno zadati barem jednu osobu, "
-"obitelj i etiketu."
+#: RemoveTagTool/RemoveTagTool.py:58
+msgid "The Tool requires at least one tag to execute."
+msgstr "Alat zahtijeva najmanje jednu etiketu da se izvrši."
 
-#: RemoveTagTool/RemoveTagTool.py:90 RemoveTagTool/RemoveTagTool.py:91
+#: RemoveTagTool/RemoveTagTool.py:59 RemoveTagTool/RemoveTagTool.py:61
 msgid "ERROR"
 msgstr "GREŠKA"
 
-#: RemoveTagTool/RemoveTagTool.py:98
-msgid "Event Filter"
-msgstr "Filtar događaja"
+#: RemoveTagTool/RemoveTagTool.py:86
+msgid "Add/Remove"
+msgstr "Dodaj/ukloni"
 
-#: RemoveTagTool/RemoveTagTool.py:99
-msgid "All Events"
-msgstr "Svi događaji"
+#: RemoveTagTool/RemoveTagTool.py:87
+msgid "Add or remove tags from objects."
+msgstr "Dodavanje ili uklanjanje etiketu iz objekata."
 
-#: RemoveTagTool/RemoveTagTool.py:100
-msgid "Place Filter"
-msgstr "Filtar mjesta"
+#: RemoveTagTool/RemoveTagTool.py:88
+msgid "Add Tags"
+msgstr "Dodaj etiketu"
 
-#: RemoveTagTool/RemoveTagTool.py:101
-msgid "All Places"
-msgstr "Sva mjesta"
+#: RemoveTagTool/RemoveTagTool.py:88
+msgid "Remove Tags"
+msgstr "Ukloni etiketu"
 
-#: RemoveTagTool/RemoveTagTool.py:102
-msgid "Source Filter"
-msgstr "Filtar izvora"
-
-#: RemoveTagTool/RemoveTagTool.py:103
-msgid "All Sources"
-msgstr "Svi izvori"
-
-#: RemoveTagTool/RemoveTagTool.py:104
-msgid "Citation Filter"
-msgstr "Filtar citata"
-
+#: RemoveTagTool/RemoveTagTool.py:89 RemoveTagTool/RemoveTagTool.py:97
 #: RemoveTagTool/RemoveTagTool.py:105
-msgid "All Citations"
-msgstr "Svi citati"
+msgid "General options"
+msgstr "Opće mogućnosti"
 
-#: RemoveTagTool/RemoveTagTool.py:106
-msgid "Repository Filter"
-msgstr "Filtar spremišta"
+#: RemoveTagTool/RemoveTagTool.py:92
+msgid "People"
+msgstr "Osobe"
 
-#: RemoveTagTool/RemoveTagTool.py:107
-msgid "All Repositories"
-msgstr "Sva spremišta"
+#: RemoveTagTool/RemoveTagTool.py:92 RemoveTagTool/RemoveTagTool.py:125
+msgid "Families"
+msgstr "Obitelji"
 
-#: RemoveTagTool/RemoveTagTool.py:108
-msgid "Media Filter"
-msgstr "Filtar medija"
+#: RemoveTagTool/RemoveTagTool.py:92 RemoveTagTool/RemoveTagTool.py:126
+msgid "Events"
+msgstr "Događaji"
 
-#: RemoveTagTool/RemoveTagTool.py:109
-msgid "All Media"
-msgstr "Svi mediji"
+#: RemoveTagTool/RemoveTagTool.py:92 RemoveTagTool/RemoveTagTool.py:127
+msgid "Places"
+msgstr "Mjesta"
 
-#: RemoveTagTool/RemoveTagTool.py:110
-msgid "Note Filter"
-msgstr "Filtar zabilježaka"
+#: RemoveTagTool/RemoveTagTool.py:92 RemoveTagTool/RemoveTagTool.py:128
+msgid "Sources"
+msgstr "Izvori"
 
-#: RemoveTagTool/RemoveTagTool.py:111
-msgid "All Notes"
-msgstr "Sve zabilješke"
+#: RemoveTagTool/RemoveTagTool.py:93 RemoveTagTool/RemoveTagTool.py:129
+msgid "Citations"
+msgstr "Citati"
 
-#: RemoveTagTool/RemoveTagTool.py:115
-msgid "Select filter to restrict {}"
-msgstr "Odaberi filtar za ograničavanje {}"
+#: RemoveTagTool/RemoveTagTool.py:93 RemoveTagTool/RemoveTagTool.py:130
+msgid "Repositories"
+msgstr "Spremišta"
 
-#: RemoveTagTool/RemoveTagTool.py:117
-msgid "Option 2"
-msgstr "Opcija 2"
+#: RemoveTagTool/RemoveTagTool.py:93 RemoveTagTool/RemoveTagTool.py:132
+msgid "Media"
+msgstr "Mediji"
 
-#: RemoveTagTool/RemoveTagTool.py:146
+#: RemoveTagTool/RemoveTagTool.py:93 RemoveTagTool/RemoveTagTool.py:133
+msgid "Notes"
+msgstr "Zabilješke"
+
+#: RemoveTagTool/RemoveTagTool.py:95
 msgid "Category"
 msgstr "Kategorija"
 
-#: RemoveTagTool/RemoveTagTool.py:147
+#: RemoveTagTool/RemoveTagTool.py:96
 msgid "Choose a category."
 msgstr "Odaberi kategoriju."
 
-#: RemoveTagTool/RemoveTagTool.py:148 RemoveTagTool/RemoveTagTool.py:156
-#: RemoveTagTool/RemoveTagTool.py:212 RemoveTagTool/RemoveTagTool.py:217
-#: RemoveTagTool/RemoveTagTool.py:256 RemoveTagTool/RemoveTagTool.py:263
-msgid "Option 1"
-msgstr "Opcija 1"
+#: RemoveTagTool/RemoveTagTool.py:103
+msgid "Choose Tag"
+msgstr "Odaberite etiketu"
 
-#: RemoveTagTool/RemoveTagTool.py:155
+#: RemoveTagTool/RemoveTagTool.py:104
 msgid "Choose a tag to remove."
 msgstr "Odaberi etiketu koju želiš ukloniti."
 
-#: RemoveTagTool/RemoveTagTool.py:210
+#: RemoveTagTool/RemoveTagTool.py:124
 msgid "Person Filter"
 msgstr "Filtar osoba"
 
-#: RemoveTagTool/RemoveTagTool.py:211
-msgid "Select filter to restrict people"
-msgstr "Odaberi filtar za ograničavanje osoba"
+#: RemoveTagTool/RemoveTagTool.py:124
+msgid "Persons"
+msgstr "Osoba"
 
-#: RemoveTagTool/RemoveTagTool.py:215
-msgid "Center Person"
-msgstr "Središnja osoba"
-
-#: RemoveTagTool/RemoveTagTool.py:216 RemoveTagTool/RemoveTagTool.py:262
-msgid "The center person for the filter"
-msgstr "Središnja osoba za filtar"
-
-#: RemoveTagTool/RemoveTagTool.py:254
+#: RemoveTagTool/RemoveTagTool.py:125
 msgid "Family Filter"
 msgstr "Filtar obitelji"
 
-#: RemoveTagTool/RemoveTagTool.py:255
-msgid "Select filter to restrict families"
-msgstr "Odaberi filtar za ograničavanje obitelji"
+#: RemoveTagTool/RemoveTagTool.py:126
+msgid "Event Filter"
+msgstr "Filtar događaja"
 
-#: RemoveTagTool/RemoveTagTool.py:261
-msgid "Center Family"
-msgstr "Središnja obitelj"
+#: RemoveTagTool/RemoveTagTool.py:127
+msgid "Place Filter"
+msgstr "Filtar mjesta"
 
-#: RemoveTagTool/RemoveTagTool.py:306
+#: RemoveTagTool/RemoveTagTool.py:128
+msgid "Source Filter"
+msgstr "Filtar izvora"
+
+#: RemoveTagTool/RemoveTagTool.py:129
+msgid "Citation Filter"
+msgstr "Filtar citata"
+
+#: RemoveTagTool/RemoveTagTool.py:130
+msgid "Repository Filter"
+msgstr "Filtar spremišta"
+
+#: RemoveTagTool/RemoveTagTool.py:132
+msgid "Media Filter"
+msgstr "Filtar medija"
+
+#: RemoveTagTool/RemoveTagTool.py:133
+msgid "Note Filter"
+msgstr "Filtar zabilježaka"
+
+#: RemoveTagTool/RemoveTagTool.py:140
+msgid "Filter options"
+msgstr "Opcije filtriranja"
+
+#: RemoveTagTool/RemoveTagTool.py:151
+#, python-format
+msgid "All %s"
+msgstr "Svi %s"
+
+#: RemoveTagTool/RemoveTagTool.py:190
 msgid "Options"
 msgstr "Opcije"
 
-#: RemoveTagTool/RemoveTagTool.py:420
-msgid "Removing tags..."
-msgstr "Uklanjanje etiketa …"
+#: RemoveTagTool/RemoveTagTool.py:198
+msgid ""
+"Unable to run the tool. Please check if your database contains tags, filters "
+"and objects."
+msgstr ""
+"Alat nije moguće pokrenuti. Provjerite sadrži li vaša baza podataka oznake, "
+"filtre i objekte."
 
-#: RemoveTagTool/RemoveTagTool.py:432
-msgid "Tag '{}' removed from {} {}.\n"
-msgstr "Etiketa „{}” uklonjena iz {} {}.\n"
+#: RemoveTagTool/RemoveTagTool.py:200 RemoveTagTool/RemoveTagTool.py:235
+msgid "WARNING"
+msgstr "UPOZORENJE"
+
+#: RemoveTagTool/RemoveTagTool.py:234
+#, python-format
+msgid "No %s objects were found in database."
+msgstr "U bazi podataka nije pronađen nijedan %s objekt."
+
+#: RemoveTagTool/RemoveTagTool.py:249
+msgid "Process tags..."
+msgstr "Oznake procesa..."
+
+#: RemoveTagTool/RemoveTagTool.py:266
+msgid "added"
+msgstr "dodano"
+
+#: RemoveTagTool/RemoveTagTool.py:268
+msgid "removed"
+msgstr "ukloniti"
+
+#: RemoveTagTool/RemoveTagTool.py:269
+msgid "Tag '{}' was {} to {} {} objects.\n"
+msgstr "Etiketa \"{}\" bila je {} do {} {} objekata.\n"
+
+#: RemoveTagTool/RemoveTagTool.py:271
+msgid "INFO"
+msgstr "INFO"
+
+#~ msgid "Select filter to restrict {}"
+#~ msgstr "Odaberi filtar za ograničavanje {}"
+
+#~ msgid "Option 2"
+#~ msgstr "Opcija 2"
+
+#~ msgid "Option 1"
+#~ msgstr "Opcija 1"
+
+#~ msgid "Select filter to restrict people"
+#~ msgstr "Odaberi filtar za ograničavanje osoba"
+
+#~ msgid "Center Person"
+#~ msgstr "Središnja osoba"
+
+#~ msgid "The center person for the filter"
+#~ msgstr "Središnja osoba za filtar"
+
+#~ msgid "Select filter to restrict families"
+#~ msgstr "Odaberi filtar za ograničavanje obitelji"
+
+#~ msgid "Center Family"
+#~ msgstr "Središnja obitelj"
+
+#~ msgid "Removing tags..."
+#~ msgstr "Uklanjanje etiketa …"

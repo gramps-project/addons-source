@@ -29,9 +29,16 @@ from gramps.gen.plug.menu import FilterOption, TextOption
 from gramps.gen.db import DbTxn
 from gramps.gui.dialog import OkDialog, WarningDialog
 from gramps.gen.filters import CustomFilters, GenericFilterFactory, rules
-from gramps.gen.const import GRAMPS_LOCALE as glocale
-_ = glocale.translation.gettext
 
+#------------------------------------------------------------------------
+# Internationalisation
+#------------------------------------------------------------------------
+from gramps.gen.const import GRAMPS_LOCALE as glocale
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.gettext
 
 # ----------------------------------------------------------------------------
 #
@@ -82,8 +89,8 @@ class RemoveTagOptions(MenuToolOptions):
         menu.add_option(_("General options"), "add_remove", self.add_remove)
 
         # category menu option
-        lst = ["People", "Families", "Events", "Places", "Sources",
-               "Citations", "Repositories", "Media", "Notes"]
+        lst = [_("People"), _("Families"), _("Events"), _("Places"), _("Sources"),
+               _("Citations"), _("Repositories"), _("Media"), _("Notes")]
         category_list = list(enumerate(lst))
         self.tag_category = FilterOption(_("Category"), 0)
         self.tag_category.set_help(_("Choose a category."))
@@ -93,7 +100,7 @@ class RemoveTagOptions(MenuToolOptions):
 
         # tag name list menu option
         tag_list = self.__enum_tag_list()
-        self.tag_name = FilterOption("Choose Tag", 0)
+        self.tag_name = FilterOption(_("Choose Tag"), 0)
         self.tag_name.set_help(_("Choose a tag to remove."))
         menu.add_option(_("General options"), "tag_name", self.tag_name)
         self.tag_name.set_items(tag_list)
@@ -114,16 +121,16 @@ class RemoveTagOptions(MenuToolOptions):
         all_notes = rules.note.AllNotes([])
 
         # create a list used for menu filter option creation later
-        lst = [(_("Person Filter"), 'Person', "Persons", all_persons),
-               (_("Family Filter"), 'Family', "Families", all_families),
-               (_("Event Filter"), 'Event', "Events", all_events),
-               (_("Place Filter"), 'Place', "Places", all_places),
-               (_("Source Filter"), 'Source', "Sources", all_sources),
-               (_("Citation Filter"), 'Citation', "Citations", all_cits),
-               (_("Repository Filter"), 'Repository', "Repositories",
+        lst = [(_("Person Filter"), 'Person', _("Persons"), all_persons),
+               (_("Family Filter"), 'Family', _("Families"), all_families),
+               (_("Event Filter"), 'Event', _("Events"), all_events),
+               (_("Place Filter"), 'Place', _("Places"), all_places),
+               (_("Source Filter"), 'Source', _("Sources"), all_sources),
+               (_("Citation Filter"), 'Citation', _("Citations"), all_cits),
+               (_("Repository Filter"), 'Repository', _("Repositories"),
                 all_repos),
-               (_("Media Filter"), 'Media', "Media", all_media),
-               (_("Note Filter"), 'Note', "Notes", all_notes)]
+               (_("Media Filter"), 'Media', _("Media"), all_media),
+               (_("Note Filter"), 'Note', _("Notes"), all_notes)]
 
         for entry in lst:
             # create a filter option for each category e.g. person, events
@@ -141,7 +148,7 @@ class RemoveTagOptions(MenuToolOptions):
             # generic filter:
             GenericFilter = GenericFilterFactory(entry[1])
             all_filter = GenericFilter()
-            all_filter.set_name(_("All %s" % (entry[2])))
+            all_filter.set_name(_("All %s") % (entry[2]))
             all_filter.add_rule(entry[3])
 
             # only add the generic filter if it isn't already in the menu
