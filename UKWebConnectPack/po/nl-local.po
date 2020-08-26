@@ -1,73 +1,53 @@
-# translation of nl.po to nederlands
-# Dutch translation of GRAMPS
-# Copyright (C) 2003 The Free Software Foundation,  Inc.
-#
+# Dutch translation of addon UKWebConnectPack.
+# Copyright (C) 2020 Gramps project
+# This file is distributed under the same license as the UKWebConnectPack package.
 # Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
 # Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
 # Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010.
+# Jan Sparreboom <jan@sparreboom.net>, 2020.
 #
-# --------------------------------------------------
-# Conventies (kan later altijd nog aangepast worden)
-# --------------------------------------------------
-# active             actief (moet hier nog iets beters voor verzinnen)
-# attribute          kenmerk
-# bookmark           bladwijzer
-# view               scherm
-# city               plaats beter is stad dorp
-# marker             aanduiding
-# people             personen
-# place              locatie
-# record             archief/kaart
-# database           gegevensbestand (KB)
-# chart              grafiek
-# Home person        beginpersoon : (EDR)
-# spouse             echtgenoot
-# partner            partner
-# warning            let op
-# at the age of      op een leeftijd van -> toen hij/zij .. oud was
-# repositories       bibliotheken
-# regex              regex onvertaald laten
-# expression         uitdrukking
-# given name         voornaam
-# reference	     waarnaar verwezen wordt
-# count		     aantal maal
-# lineage	     lijn
-# locality	     plaats
-# u gebruiken
-# telkens werkwoord achteraan plaatsen
 msgid ""
 msgstr ""
-"Project-Id-Version: gramps\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-16 20:22+0100\n"
-"PO-Revision-Date: 2011-01-16 20:23+0100\n"
-"Last-Translator: Erik De Richter <frederik.de.richter@telenet.be>\n"
-"Language-Team: nederlands <frederik.de.richter@googlemail.com>\n"
-"Language: \n"
+"Project-Id-Version: UKWebConnectPack 5.x\n"
+"Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
+"POT-Creation-Date: 2019-01-04 18:55-0600\n"
+"PO-Revision-Date: 2020-08-11 18:32+0200\n"
+"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
+"Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-Language: Nederlands\n"
-"X-Poedit-Country: België\n"
+"X-Generator: Poedit 2.3\n"
 
 #: UKWebConnectPack/UKWebPack.gpr.py:10
 msgid "UK Web Connect Pack"
-msgstr "V.K. Web Connect Pack"
+msgstr "UK Web Connect Pack"
 
 #: UKWebConnectPack/UKWebPack.gpr.py:11
 msgid "Collection of Web sites for the UK (requires libwebconnect)"
-msgstr "Verzameling van websites voor 'VK' (libwebconnect is nodig)"
+msgstr "Verzameling van websites voor het VK (vereist libwebconnect)"
 
-#: UKWebConnectPack/UKWebPack.py:29
+#: UKWebConnectPack/UKWebPack.py:33
 msgid "UK Google"
 msgstr "UK Google"
 
-#: UKWebConnectPack/UKWebPack.py:30
+#: UKWebConnectPack/UKWebPack.py:34
 msgid "British, UK, and Ireland"
-msgstr "Brits, V.K. en Ierland"
+msgstr "Brits, VK en Ierland"
 
-#: UKWebConnectPack/UKWebPack.py:32
+#: UKWebConnectPack/UKWebPack.py:35
+msgid "FamilySearch.org"
+msgstr "FamilySearch.org"
+
+#: UKWebConnectPack/UKWebPack.py:37
 msgid "National Archives"
-msgstr "Nationale archieven"
+msgstr "National Archives"
 
+#: UKWebConnectPack/UKWebPack.py:38
+msgid "Hathi Trust Digital Library"
+msgstr "Hathi Trust Digital Library"
+
+#: UKWebConnectPack/UKWebPack.py:39
+msgid "Open Library"
+msgstr "Open Library"
