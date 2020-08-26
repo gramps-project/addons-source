@@ -571,10 +571,10 @@ class QuiltView(NavigationView):
             self.message.set_label(
                 _("You have %(filter)d filtered people, "
                   "%(count)d people shown on the tree "
-                  "and %(total)d people in your database."
+                  "and %(total)d people in your database.")
                   % {'filter': count,
                      'count': len(self.plist),
-                     'total': self.total}))
+                     'total': self.total})
 
     def _clear_list_store(self):
         """
