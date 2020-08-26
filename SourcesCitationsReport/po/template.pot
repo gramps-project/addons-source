@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-13 22:18+0200\n"
+"POT-Creation-Date: 2020-08-26 15:11-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,196 +17,196 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: SourcesCitationsReport//SourcesCitationsReport.gpr.py:32
+#: SourcesCitationsReport/SourcesCitationsReport.gpr.py:32
 msgid "Sources and Citations Report"
 msgstr ""
 
-#: SourcesCitationsReport//SourcesCitationsReport.gpr.py:33
+#: SourcesCitationsReport/SourcesCitationsReport.gpr.py:33
 msgid "Provides a source and Citations Report with notes"
 msgstr ""
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:278
+#: SourcesCitationsReport/SourcesCitationsReport.py:272
 #, python-format
 msgid "Key: %s"
 msgstr ""
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:283
+#: SourcesCitationsReport/SourcesCitationsReport.py:277
 msgid "Citations:"
 msgstr ""
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:292
+#: SourcesCitationsReport/SourcesCitationsReport.py:286
 #, python-format
 msgid "%d"
 msgstr ""
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:294
+#: SourcesCitationsReport/SourcesCitationsReport.py:288
 #, python-format
 msgid "  %s"
 msgstr ""
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:300
+#: SourcesCitationsReport/SourcesCitationsReport.py:294
 #, python-format
 msgid " - %s "
 msgstr ""
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:306
+#: SourcesCitationsReport/SourcesCitationsReport.py:300
 #, python-format
 msgid "   Type: %s"
 msgstr ""
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:308
+#: SourcesCitationsReport/SourcesCitationsReport.py:302
 #, python-format
 msgid "   N-ID: %s"
 msgstr ""
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:316
+#: SourcesCitationsReport/SourcesCitationsReport.py:310
 #, python-format
 msgid "   %s"
 msgstr ""
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:330
-#: SourcesCitationsReport//SourcesCitationsReport.py:351
-#: SourcesCitationsReport//SourcesCitationsReport.py:378
-#: SourcesCitationsReport//SourcesCitationsReport.py:384
-#: SourcesCitationsReport//SourcesCitationsReport.py:390
+#: SourcesCitationsReport/SourcesCitationsReport.py:324
+#: SourcesCitationsReport/SourcesCitationsReport.py:345
+#: SourcesCitationsReport/SourcesCitationsReport.py:372
+#: SourcesCitationsReport/SourcesCitationsReport.py:378
+#: SourcesCitationsReport/SourcesCitationsReport.py:384
 #, python-format
 msgid "%s"
 msgstr ""
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:332
-#: SourcesCitationsReport//SourcesCitationsReport.py:353
+#: SourcesCitationsReport/SourcesCitationsReport.py:326
+#: SourcesCitationsReport/SourcesCitationsReport.py:347
 #, python-format
 msgid "   ( %s )"
 msgstr ""
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:339
+#: SourcesCitationsReport/SourcesCitationsReport.py:333
 msgid "   Spouses: "
 msgstr ""
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:341
+#: SourcesCitationsReport/SourcesCitationsReport.py:335
 #, python-format
 msgid "%s "
 msgstr ""
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:344
+#: SourcesCitationsReport/SourcesCitationsReport.py:338
 #, python-format
 msgid "and %s "
 msgstr ""
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:355
+#: SourcesCitationsReport/SourcesCitationsReport.py:349
 #, python-format
 msgid " %s"
 msgstr ""
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:363
+#: SourcesCitationsReport/SourcesCitationsReport.py:357
 msgid "Person"
 msgstr ""
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:363
+#: SourcesCitationsReport/SourcesCitationsReport.py:357
 msgid "ID"
 msgstr ""
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:364
+#: SourcesCitationsReport/SourcesCitationsReport.py:358
 msgid "Role"
 msgstr ""
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:419
+#: SourcesCitationsReport/SourcesCitationsReport.py:411
 msgid "Report Options"
 msgstr ""
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:421
+#: SourcesCitationsReport/SourcesCitationsReport.py:413
 msgid "Report Title"
 msgstr ""
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:421
+#: SourcesCitationsReport/SourcesCitationsReport.py:413
 msgid "Title of the Report"
 msgstr ""
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:422
+#: SourcesCitationsReport/SourcesCitationsReport.py:414
 msgid "Title string for the report."
 msgstr ""
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:425
+#: SourcesCitationsReport/SourcesCitationsReport.py:417
 msgid "Subtitle"
 msgstr ""
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:425
+#: SourcesCitationsReport/SourcesCitationsReport.py:417
 msgid "Subtitle of the Report"
 msgstr ""
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:426
+#: SourcesCitationsReport/SourcesCitationsReport.py:418
 msgid "Subtitle string for the report."
 msgstr ""
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:431
+#: SourcesCitationsReport/SourcesCitationsReport.py:423
 msgid "researcher name"
 msgstr ""
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:433
+#: SourcesCitationsReport/SourcesCitationsReport.py:425
 #, python-format
 msgid "Copyright %(year)d %(name)s"
 msgstr ""
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:435
+#: SourcesCitationsReport/SourcesCitationsReport.py:427
 msgid "Footer"
 msgstr ""
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:436
+#: SourcesCitationsReport/SourcesCitationsReport.py:428
 msgid "Footer string for the page."
 msgstr ""
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:443
+#: SourcesCitationsReport/SourcesCitationsReport.py:435
 msgid "Select using filter"
 msgstr ""
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:444
+#: SourcesCitationsReport/SourcesCitationsReport.py:436
 msgid "Select sources using a filter"
 msgstr ""
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:451
+#: SourcesCitationsReport/SourcesCitationsReport.py:443
 msgid "Show persons"
 msgstr ""
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:452
+#: SourcesCitationsReport/SourcesCitationsReport.py:444
 msgid "Whether to show events and persons mentioned in the note"
 msgstr ""
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:488
+#: SourcesCitationsReport/SourcesCitationsReport.py:480
 msgid "The style used for the title of the report."
 msgstr ""
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:503
+#: SourcesCitationsReport/SourcesCitationsReport.py:495
 msgid "The style used for the subtitle of the report."
 msgstr ""
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:517
+#: SourcesCitationsReport/SourcesCitationsReport.py:509
 msgid "The style used for the footer of the report."
 msgstr ""
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:532
+#: SourcesCitationsReport/SourcesCitationsReport.py:524
 msgid "The style used for source title."
 msgstr ""
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:544
+#: SourcesCitationsReport/SourcesCitationsReport.py:536
 msgid "The style used for source subtitle."
 msgstr ""
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:556
+#: SourcesCitationsReport/SourcesCitationsReport.py:548
 msgid "The style used for Source details."
 msgstr ""
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:571
+#: SourcesCitationsReport/SourcesCitationsReport.py:563
 msgid "The style used for citation title."
 msgstr ""
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:583
+#: SourcesCitationsReport/SourcesCitationsReport.py:575
 msgid "The style used for a column title."
 msgstr ""
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:599
+#: SourcesCitationsReport/SourcesCitationsReport.py:591
 msgid "The style used for each section."
 msgstr ""
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:630
+#: SourcesCitationsReport/SourcesCitationsReport.py:622
 msgid "The style used for event and person details."
 msgstr ""

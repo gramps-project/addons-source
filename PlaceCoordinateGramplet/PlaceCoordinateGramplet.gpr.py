@@ -129,7 +129,7 @@ if locals().get('uistate') is None or not some_import_error:
             id='geoIDplaceCoordinateGramplet',
             name=_("Place Coordinate Gramplet view"),
             description=_("View for the place coordinate gramplet."),
-            version = '1.1.9',
+            version = '1.1.10',
             gramps_target_version="5.1",
             status=STABLE,
             fname='PlaceCoordinateGeoView.py',
@@ -146,7 +146,7 @@ if locals().get('uistate') is None or not some_import_error:
             name=_("Place and Coordinates"),
             description=_(
                 "Gramplet that simplifies setting the coordinates of a place"),
-            version = '1.1.9',
+            version = '1.1.10',
             gramps_target_version="5.1",
             status=STABLE,
             fname="PlaceCoordinateGramplet.py",
