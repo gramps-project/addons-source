@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-09 10:56+0200\n"
-"PO-Revision-Date: 2020-07-23 20:24+0200\n"
+"PO-Revision-Date: 2020-08-26 21:32+0200\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -160,7 +160,7 @@ msgstr "Der Nutzer hat ein fehlendes Modul heruntergeladen."
 #: LifeLineChartView/lifelinechartview.gpr.py:202
 #, python-format
 msgid "Unable to open '%s' with curl"
-msgstr "Unable to open '%s' with curl"
+msgstr "Kann '%s' mit curl nicht öffnen"
 
 #: LifeLineChartView/lifelinechartview.gpr.py:213
 #: LifeLineChartView/lifelinechartview.gpr.py:220
