@@ -8,21 +8,21 @@
 # Sebastian Vöcking <voeck@web.de>, 2005.
 # Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
 # Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020.
 # Alois Pöttker <alois.poettker@gmx.de>, 2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-15 22:20+0200\n"
-"PO-Revision-Date: 2020-08-15 22:53+0200\n"
-"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
+"PO-Revision-Date: 2020-08-26 21:58+0200\n"
+"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Lokalize 19.12.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ToDoReport//TodoReport.gpr.py:24
@@ -50,24 +50,24 @@ msgstr ""
 
 #: ToDoReport//TodoReport.py:98 ToDoReport//TodoReport.py:526
 msgid "TR-Title"
-msgstr "TR-Titel"
+msgstr "ZeB-Titel"
 
 #: ToDoReport//TodoReport.py:99
 #, python-format
 msgid "Report on Notes Tagged '%s'"
-msgstr "Bericht von Notizen markiert '%s'"
+msgstr "Bericht über Notizen mit der Markierung '%s'"
 
 #: ToDoReport//TodoReport.py:198 ToDoReport//TodoReport.py:536
 msgid "TR-Heading"
-msgstr "TR-Überschrift"
+msgstr "ZeB-Überschrift"
 
 #: ToDoReport//TodoReport.py:204
 msgid "NoteTable"
-msgstr "HinweisTabelle"
+msgstr "NotizTabelle"
 
 #: ToDoReport//TodoReport.py:204 ToDoReport//TodoReport.py:584
 msgid "TR-Table"
-msgstr "TR-Tabelle"
+msgstr "ZeB-Tabelle"
 
 #: ToDoReport//TodoReport.py:208 ToDoReport//TodoReport.py:214
 #: ToDoReport//TodoReport.py:228 ToDoReport//TodoReport.py:234
@@ -80,12 +80,12 @@ msgstr "TR-Tabelle"
 #: ToDoReport//TodoReport.py:407 ToDoReport//TodoReport.py:413
 #: ToDoReport//TodoReport.py:569
 msgid "TR-TableCell"
-msgstr "TR-TabellenZelle"
+msgstr "ZeB-TabellenZelle"
 
 #: ToDoReport//TodoReport.py:209 ToDoReport//TodoReport.py:215
 #: ToDoReport//TodoReport.py:557
 msgid "TR-Normal-Bold"
-msgstr "TR-Normal-Fett"
+msgstr "ZeB-Normal-Fett"
 
 #: ToDoReport//TodoReport.py:210
 msgid "Id"
@@ -105,23 +105,23 @@ msgstr "Text"
 #: ToDoReport//TodoReport.py:408 ToDoReport//TodoReport.py:414
 #: ToDoReport//TodoReport.py:546
 msgid "TR-Normal"
-msgstr "TR-Normal"
+msgstr "ZeB-Normal"
 
 #: ToDoReport//TodoReport.py:236 ToDoReport//TodoReport.py:564
 msgid "TR-Note"
-msgstr "TR-Hinweis"
+msgstr "ZeB-Notiz"
 
 #: ToDoReport//TodoReport.py:245 ToDoReport//TodoReport.py:574
 msgid "TR-BorderCell"
-msgstr "TR-GrenzZelle"
+msgstr "ZeB-RandZelle"
 
 #: ToDoReport//TodoReport.py:282 ToDoReport//TodoReport.py:284
 msgid "b. "
-msgstr "g. "
+msgstr "*"
 
 #: ToDoReport//TodoReport.py:293
 msgid "d. "
-msgstr "v. "
+msgstr "†"
 
 #: ToDoReport//TodoReport.py:343
 #, python-format
