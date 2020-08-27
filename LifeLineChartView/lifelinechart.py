@@ -603,10 +603,12 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         Gtk.DrawingArea.__init__(self)
         self.dbstate = dbstate
         self.uistate = uistate
+        self.map_size = 0.15
         self.childrenroot = []
         self.angle = {}
         self.filter = None
-        self.translating = False
+        self.translating_ctrl = False
+        self.translating_map = False
         self.dupcolor = None
         self.surface = None
         self.goto = None
@@ -761,6 +763,12 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         self.set_zoom(1)
 
     def set_zoom(self, value, fix_point = None):
+        from math import log10
+        zoom_level = max(0.01, min(1000, value))
+        self.zoom_slider.set_value(-log10(zoom_level)*10 - 10)
+        #self._set_zoom(value, fix_point)
+
+    def _set_zoom(self, value, fix_point = None):
         zoom_level_backup = self.zoom_level
         self.zoom_level = max(0.01, min(1000, value))
         visible_range = (self.get_allocated_width(), self.get_allocated_height())
@@ -880,18 +888,15 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         dummy_widget = widget
         accel_mask = Gtk.accelerator_get_default_mod_mask()
         if eventkey.state & accel_mask == Gdk.ModifierType.CONTROL_MASK:
+            self.translate_button.set_active(True)
+        if self.translate_button.get_active():
             if Gdk.keyval_name(eventkey.keyval) == 'plus':
                 self.zoom_in()
                 return True
             if Gdk.keyval_name(eventkey.keyval) == 'minus':
                 self.zoom_out()
                 return True
-        if Gdk.keyval_name(eventkey.keyval) in ['Control_L', 'Control_R']:
-            try:
-                cursor = Gdk.Cursor.new_from_name(widget.get_display(), 'grab')
-            except:
-                cursor = Gdk.Cursor(Gdk.CursorType.HAND1)
-            self.get_window().set_cursor(cursor)
+        #if Gdk.keyval_name(eventkey.keyval) in ['Control_L', 'Control_R']:
         move_to_step = {
             'Left': (-0.1, 0),
             'Right': (0.1, 0),
@@ -930,15 +935,15 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         """grab key release
         """
         if Gdk.keyval_name(eventkey.keyval) in ['Control_L', 'Control_R']:
-            cursor = Gdk.Cursor(Gdk.CursorType.ARROW)
-            self.get_window().set_cursor(cursor)
+            self.translate_button.set_active(False)
 
     def on_mouse_down(self, widget, event):
         """
         What to do if we release a mouse button
         """
         dummy_widget = widget
-        self.translating = False  # keep track of up/down/left/right movement
+        self.translating_ctrl = False
+        self.translating_map = False  # keep track of up/down/left/right movement
 
         if event.button == 1:
             #we grab the focus to enable to see key_press events
@@ -947,16 +952,61 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
 
 
         accel_mask = Gtk.accelerator_get_default_mod_mask()
-        if event.state & accel_mask == Gdk.ModifierType.CONTROL_MASK:
+
+
+        if event.button == 1:  # left mouse
             # left mouse on center dot, we translate on left click
-            if event.button == 1:  # left mouse
+            visible_range = (self.get_allocated_width(), self.get_allocated_height())
+            is_over_map = event.x < self.map_size*visible_range[0] and event.y > (1-self.map_size)*visible_range[1]
+            if is_over_map:
+                try:
+                    cursor = Gdk.Cursor.new_from_name(widget.get_display(), 'grabbing')
+                except:
+                    cursor = Gdk.Cursor(Gdk.CursorType.HAND1)
+                self.get_window().set_cursor(cursor)
+                self.translating_map = True
+                self.last_x, self.last_y = event.x, event.y
+
+                visible_range = (self.get_allocated_width(), self.get_allocated_height())
+                arbitrary_clip_offset = max(visible_range)*0.5 # remove text items if their start position is 50%*view_width outside
+
+                width = self.life_line_chart_instance.get_full_width()
+                height = self.life_line_chart_instance.get_full_height()
+                aspect_chart = width / height
+                aspect_view = visible_range[0] / visible_range[1]
+
+                map_area_size = [visible_range[0]*self.map_size, visible_range[1]*self.map_size]
+                map_chart_size = [map_area_size[0]*min(1, aspect_chart/aspect_view), map_area_size[1]/max(1, aspect_chart/aspect_view)]
+                scale_x = map_chart_size[0] / width * self.zoom_level
+                scale_y = map_chart_size[1] / height * self.zoom_level
+                scale_x = map_chart_size[0] / width
+                scale_y = map_chart_size[1] / height
+                scale = scale_x
+                map_view_size = [
+                    visible_range[0] * scale / self.zoom_level,
+                    visible_range[1] * scale / self.zoom_level
+                ]
+
+                map_view_center_position = [
+                    -self.upper_left_view_position[0] + (event.x - (visible_range[0]*0 + map_area_size[0]/2 - map_chart_size[0]/2 + map_view_size[0]*0.5))/scale*self.zoom_level,
+                    -self.upper_left_view_position[1] + (event.y - (visible_range[1] - map_area_size[1]/2 - map_chart_size[1]/2 + map_view_size[1]*0.5))/scale*self.zoom_level
+                ]
+
+                self.center_delta_xy = (
+                    map_view_center_position[0],
+                    map_view_center_position[1]
+                )
+                self.queue_draw_wrapper()
+                return True
+            if self.translate_button.get_active():
+                # event.state & accel_mask == Gdk.ModifierType.CONTROL_MASK:
                 # save the mouse location for movements
                 try:
                     cursor = Gdk.Cursor.new_from_name(widget.get_display(), 'grabbing')
                 except:
                     cursor = Gdk.Cursor(Gdk.CursorType.HAND1)
                 self.get_window().set_cursor(cursor)
-                self.translating = True
+                self.translating_ctrl = True
                 self.last_x, self.last_y = event.x, event.y
                 return True
         # else:
@@ -992,7 +1042,8 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         """
         # Handles zoom in / zoom out on Ctrl+mouse wheel
         accel_mask = Gtk.accelerator_get_default_mod_mask()
-        if event.state & accel_mask == Gdk.ModifierType.CONTROL_MASK:
+        if self.translate_button.get_active():
+            # event.state & accel_mask == Gdk.ModifierType.CONTROL_MASK:
             if event.direction == Gdk.ScrollDirection.SMOOTH:
                 hasdeltas, dx, dy = event.get_scroll_deltas()
                 self.set_zoom(self.zoom_level / (1 + max(-0.9, min(10, 0.25 * dy))), fix_point=(event.x, event.y))
@@ -1028,6 +1079,19 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         # stop the signal of scroll emission
         # to prevent window scrolling
         return True
+
+    def on_translate_button_toggle(self, button):
+        cursor = None
+        if not button.get_active():
+            cursor = Gdk.Cursor(Gdk.CursorType.ARROW)
+            self.get_window().set_cursor(cursor)
+        else:
+            try:
+                cursor = Gdk.Cursor.new_from_name(widget.get_display(), 'grab')
+            except:
+                cursor = Gdk.Cursor(Gdk.CursorType.HAND1)
+        if cursor is not None:
+            self.get_window().set_cursor(cursor)
 
     def on_mouse_leave(self, widget, event):
         self._tooltip_individual_cache = None
@@ -1074,9 +1138,43 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
             return False
 
         #translate or rotate should happen
-        if self.translating:
-            self.center_delta_xy = (self.last_x - event.x,
-                                    self.last_y - event.y)
+        if self.translating_ctrl:
+
+            accel_mask = Gtk.accelerator_get_default_mod_mask()
+            if self.translate_button.get_active():
+                # event.state & accel_mask == Gdk.ModifierType.CONTROL_MASK:
+                self.center_delta_xy = (self.last_x - event.x,
+                                        self.last_y - event.y)
+        if self.translating_map:
+            visible_range = (self.get_allocated_width(), self.get_allocated_height())
+            arbitrary_clip_offset = max(visible_range)*0.5 # remove text items if their start position is 50%*view_width outside
+
+            width = self.life_line_chart_instance.get_full_width()
+            height = self.life_line_chart_instance.get_full_height()
+            aspect_chart = width / height
+            aspect_view = visible_range[0] / visible_range[1]
+
+            map_area_size = [visible_range[0]*self.map_size, visible_range[1]*self.map_size]
+            map_chart_size = [map_area_size[0]*min(1, aspect_chart/aspect_view), map_area_size[1]/max(1, aspect_chart/aspect_view)]
+            scale_x = map_chart_size[0] / width * self.zoom_level
+            scale_y = map_chart_size[1] / height * self.zoom_level
+            scale_x = map_chart_size[0] / width
+            scale_y = map_chart_size[1] / height
+            scale = scale_x
+            map_view_size = [
+                visible_range[0] * scale / self.zoom_level,
+                visible_range[1] * scale / self.zoom_level
+            ]
+
+            map_view_center_position = [
+                -self.upper_left_view_position[0] + (event.x - (visible_range[0]*0 + map_area_size[0]/2 - map_chart_size[0]/2 + map_view_size[0]*0.5))/scale*self.zoom_level,
+                -self.upper_left_view_position[1] + (event.y - (visible_range[1] - map_area_size[1]/2 - map_chart_size[1]/2 + map_view_size[1]*0.5))/scale*self.zoom_level
+            ]
+
+            self.center_delta_xy = (
+                map_view_center_position[0],
+                map_view_center_position[1]
+            )
         # else:
         #     # get the angles of the two points from the center:
         #     start_angle = math.atan2(event.y - self.upper_left_view_position[1],
@@ -1109,13 +1207,23 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         if self.last_x is None or self.last_y is None:
             # No translate or rotate
             return True
-        if self.translating:
-            try:
-                cursor = Gdk.Cursor.new_from_name(widget.get_display(), 'grab')
-            except:
-                cursor = Gdk.Cursor(Gdk.CursorType.HAND1)
-            self.get_window().set_cursor(cursor)
-            self.translating = False
+        accel_mask = Gtk.accelerator_get_default_mod_mask()
+        ctrl_is_pressed = self.translate_button.get_active()
+        # event.state & accel_mask == Gdk.ModifierType.CONTROL_MASK
+        if self.translating_ctrl or self.translating_map:
+            cursor = None
+            if not ctrl_is_pressed:
+                cursor = Gdk.Cursor(Gdk.CursorType.ARROW)
+                self.get_window().set_cursor(cursor)
+            else:
+                try:
+                    cursor = Gdk.Cursor.new_from_name(widget.get_display(), 'grab')
+                except:
+                    cursor = Gdk.Cursor(Gdk.CursorType.HAND1)
+            if cursor is not None:
+                self.get_window().set_cursor(cursor)
+            self.translating_ctrl = False
+            self.translating_map = False
             self.upper_left_view_position = \
                 self.upper_left_view_position[0] + self.center_delta_xy[0], \
                 self.upper_left_view_position[1] + self.center_delta_xy[1]
@@ -1470,6 +1578,7 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
             self.surface = cairo.ImageSurface(cairo.FORMAT_ARGB32,
                                               size_w_a, size_h_a)
             ctx = cairo.Context(self.surface)
+            ctx.save()
             ctx.scale(self.zoom_level, self.zoom_level)
 
             visible_range = self.scrolledwindow.get_clip(
@@ -1488,6 +1597,7 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
             self.view_position_limit_to_bounds()
             translated_position = self._position_move(self.upper_left_view_position, self.center_delta_xy)
             translated_position = self.view_position_get_limited(translated_position)
+            ctx.save()
             ctx.translate(-translated_position[0], -translated_position[1])
             ctx.scale(self.zoom_level, self.zoom_level)
             try:
@@ -1504,6 +1614,68 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
         view_y_min = (self.upper_left_view_position[1] - arbitrary_clip_offset) / self.zoom_level
         view_y_max = (self.upper_left_view_position[1] + arbitrary_clip_offset + visible_range[1]) / self.zoom_level
         self.draw_items(ctx, self.chart_items, (view_x_min, view_y_min, view_x_max, view_y_max))
+        ctx.restore()
+        ctx.scale(1, 1)
+
+        width = self.life_line_chart_instance.get_full_width()
+        height = self.life_line_chart_instance.get_full_height()
+        aspect_chart = width / height
+        aspect_view = visible_range[0] / visible_range[1]
+
+        map_area_size = [visible_range[0]*self.map_size, visible_range[1]*self.map_size]
+        map_chart_size = [map_area_size[0]*min(1, aspect_chart/aspect_view), map_area_size[1]/max(1, aspect_chart/aspect_view)]
+        scale_x = map_chart_size[0] / width * self.zoom_level
+        scale_y = map_chart_size[1] / height * self.zoom_level
+        scale_x = map_chart_size[0] / width
+        scale_y = map_chart_size[1] / height
+        scale = scale_x
+        map_view_size = [
+            visible_range[0] * scale / self.zoom_level,
+            visible_range[1] * scale / self.zoom_level
+        ]
+
+        ctx.set_line_width(1)
+
+        # area background
+        ctx.set_source_rgba(0.5, 0.5, 0.5, 0.5)
+        ctx.rectangle(
+            visible_range[0]*0 - map_area_size[0]*0,
+            visible_range[1] - map_area_size[1],
+            map_area_size[0],
+            map_area_size[1]
+        )
+        ctx.fill()
+
+        # chart area
+        ctx.set_source_rgba(0.6, 0.6, 0.6, 1)
+        ctx.rectangle(
+            visible_range[0]*0 + map_area_size[0]/2 - map_chart_size[0]/2,
+            visible_range[1] - map_area_size[1]/2 - map_chart_size[1]/2,
+            map_chart_size[0],
+            map_chart_size[1]
+        )
+        ctx.fill()
+
+        # view area
+        if map_view_size[0] <  map_area_size[0] and map_view_size[1] <  map_area_size[1]:
+            ctx.set_source_rgba(0.4, 0.4, 0.4, 1)
+            ctx.rectangle(
+                visible_range[0]*0 + map_area_size[0]/2 - map_chart_size[0]/2 + translated_position[0]*scale/self.zoom_level,
+                visible_range[1] - map_area_size[1]/2 - map_chart_size[1]/2 + translated_position[1]*scale/self.zoom_level,
+                map_view_size[0],
+                map_view_size[1]
+            )
+            ctx.stroke()
+
+        # area frame
+        ctx.set_source_rgba(0, 0, 0, 1)
+        ctx.rectangle(
+            visible_range[0]*0 - 0*map_area_size[0],
+            visible_range[1] - map_area_size[1],
+            map_area_size[0],
+            map_area_size[1]
+        )
+        ctx.stroke()
 
     def draw_items(self, ctx, chart_items, view_clip_box, limit_font_size = None):
         view_x_min, view_y_min, view_x_max, view_y_max = view_clip_box
