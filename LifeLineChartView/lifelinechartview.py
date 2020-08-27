@@ -468,7 +468,6 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
         self.set_lifeline(chart)
         chart.set_axis_widget(self.axis_widget)
 
-
         self.scrolledwindow = Gtk.ScrolledWindow()
         self.scrolledwindow.set_shadow_type(Gtk.ShadowType.IN)
         self.hadjustment = self.scrolledwindow.get_hadjustment()
@@ -484,6 +483,15 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
         self.toolbar = Gtk.Box(homogeneous=False, spacing=4,
                                orientation=Gtk.Orientation.HORIZONTAL)
         self.vbox.pack_start(self.toolbar, False, False, 0)
+
+
+        self.vbox.connect("key-press-event", self.on_key_press)
+        self.vbox.connect("key-release-event", self.on_key_release)
+
+
+        self.lifeline.translate_button = Gtk.ToggleButton("M")
+        self.toolbar.pack_start(self.lifeline.translate_button, False, False, 1)
+        self.lifeline.translate_button.connect("toggled", self.lifeline.on_translate_button_toggle)
 
         # add zoom-in button
         self.zoom_in_btn = Gtk.Button.new_from_icon_name('zoom-in-symbolic',
@@ -553,6 +561,18 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
 
         self.hbox_split_view = Gtk.Box(homogeneous=False, spacing=4,
                                orientation=Gtk.Orientation.HORIZONTAL)
+
+        adj = Gtk.Adjustment(value=0.0, lower=-20, upper=10,
+                             step_increment=0.5, page_increment=0, page_size=0)
+        # default value is 1.0, minimum is 0.1 and max is 3.0
+        from math import pow
+        slider = Gtk.Scale(orientation=Gtk.Orientation.VERTICAL,
+                           adjustment=adj)
+        slider.connect('format-value', lambda s,x:"{:2.2f}".format(pow(10,-1-x/10)))
+        self.hbox_split_view.pack_start(slider, False, False, 1)
+        slider.connect('value-changed', self.set_zoom)
+        self.lifeline.zoom_slider = slider
+
         f = Gtk.Frame()
         f.add(self.lifeline)
         self.hbox_split_view.pack_start(f, True, True, 0)
@@ -564,6 +584,16 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
         gen_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
 
         return self.vbox # self.scrolledwindow
+
+    def on_key_press(self, widget, eventkey):
+        return self.lifeline.on_key_press(widget, eventkey)
+
+    def on_key_release(self, widget, eventkey):
+        return self.lifeline.on_key_release(widget, eventkey)
+
+    def set_zoom(self, scale):
+        from math import pow
+        self.lifeline._set_zoom(pow(10, -1-scale.get_value()/10))
 
     def on_help_clicked(self, obj):
         """
