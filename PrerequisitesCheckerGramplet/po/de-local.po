@@ -41,7 +41,7 @@ msgid ""
 "blob/master/README.md\">prerequisites</a> installed.\n"
 msgstr ""
 "Diagnose-Gramplet zur Bewertung, ob <a href=\"https://gramps-project.org/\"> "
-"Gramps </a> alle <a href = \"https://github.com/gramps-project/gramps/blob."
+"Gramps </a> alle <a href=\"https://github.com/gramps-project/gramps/blob."
 "com.com enthält /master/README.md\"> Voraussetzungen </a> installiert.\n"
 
 #: PrerequisitesCheckerGramplet//PrerequisitesCheckerGramplet.py:142

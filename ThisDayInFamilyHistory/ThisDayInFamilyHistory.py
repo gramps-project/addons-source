@@ -26,7 +26,6 @@
 #
 # PEP8 check by http://pep8online.com
 # ------------------------------------------------------------
-
 from gramps.gen.plug import Gramplet
 from gramps.gen.lib import Person
 from gramps.gen.lib import FamilyRelType
@@ -41,23 +40,66 @@ except ValueError:
     _trans = glocale.translation
 _ = _trans.gettext
 
+
 class ThisDayInFamilyHistory(Gramplet):
 
     # Unsupported because I can't think of a decent way to express what the
     # event is trying to convey, these events are unsupported.
 
     __UNSUPPORTED_EVENTS = [
-        'alternate parentage',
-        'cause of death',
-        'education',
-        'medical information',
-        'number of marriages',
-        'occupation',
-        'property',
-        'religion',
-        'residence',
-        'will',
-        'year'
+        'Alternate Parentage',
+        'Cause Of Death',
+        'Education',
+        'Medical Information',
+        'Number of Marriages',
+        'Occupation',
+        'Property',
+        'Religion',
+        'Residence',
+        'Will',
+        'Year'
+        ]
+    # Note to translators:  the various Event types listed here are a subset
+    # of the gen.lib.eventtypes.py set, where they are already translated.
+    # this allows us to use the 'deferred' translation to fill in the GUI
+
+    
+    defaultEventChoices = [
+        ('Adopted', True),
+        ('Adult Christening', True),
+        ('Alternate Marriage', False),
+        ('Annulment', False),
+        ('Baptism', False),
+        ('Bar Mitzvah', False),
+        ('Bat Mitzvah', False),
+        ('Birth', True),
+        ('Blessing', False),
+        ('Burial', False),
+        ('Census', False),
+        ('Christening', False),
+        ('Confirmation', False),
+        ('Cremation', False),
+        ('Death', True),
+        ('Degree', False),
+        ('Divorce', False),
+        ('Divorce Filing', False),
+        ('Elected', True),
+        ('Emigration', True),
+        ('Engagement', False),
+        ('First Communion', False),
+        ('Graduation', True),
+        ('Immigration', True),
+        ('Marriage', True),
+        ('Marriage Banns', False),
+        ('Marriage Contract', False),
+        ('Marriage License', False),
+        ('Marriage Settlement', False),
+        ('Military Service', True),
+        ('Naturalization', True),
+        ('Nobility Title', True),
+        ('Ordination', True),
+        ('Probate', False),
+        ('Retirement', True),
         ]
 
     __INIT = _("Database is not open, can't check history right now.")
@@ -119,7 +161,11 @@ class ThisDayInFamilyHistory(Gramplet):
             == 'Yes'
         s = self.opts[self.__OPT_SORT_BY].get_value()
         self.__sortOrder = (int(s) if s else self.__OPT_SORT_DEFAULT)
-        self.__eventsToShow = self.opts[self.__OPT_EVENTS].get_selected()
+        tf_list = self.opts[self.__OPT_EVENTS].get_value().split(',')
+        self.__eventsToShow = []
+        for (indx, choice) in enumerate(tf_list):
+            if choice == 'True':
+                self.__eventsToShow.append(self.defaultEventChoices[indx][0])
         self.__sortAscending = self.opts[self.__OPT_SORT_ASC].get_value()\
             == 'Yes'
 
@@ -141,27 +187,29 @@ class ThisDayInFamilyHistory(Gramplet):
                 == 'True'
             s = self.gui.data[self.__OPT_SORT_BY]
             self.__sortOrder = (int(s) if s else self.__OPT_SORT_DEFAULT)
-            self.__eventsToShow = self.gui.data[self.__OPT_EVENTS]
+            data = self.gui.data[self.__OPT_EVENTS]
+            data = eval(data)
+            self.__eventsToShow = [evt.title() for evt in data]
             self.__sortAscending = self.gui.data[self.__OPT_SORT_ASC] ==\
                 'True'
         else:
             self.__showOnlyLiving = False
             self.__sortOrder = self.__OPT_SORT_DEFAULT
             self.__eventsToShow = [
-                _('adopted'),
-                _('adult christening'),
-                _('birth'),
-                _('death'),
-                _('elected'),
-                _('emigration'),
-                _('graduation'),
-                _('immigration'),
-                _('marriage'),
-                _('military service'),
-                _('naturalization'),
-                _('nobility title'),
-                _('ordination'),
-                _('retirement'),
+                'Adopted',
+                'Adult Christening',
+                'Birth',
+                'Death',
+                'Elected',
+                'Emigration',
+                'Graduation',
+                'Immigration',
+                'Marriage',
+                'Military Service',
+                'Naturalization',
+                'Nobility Title',
+                'Ordination',
+                'Retirement',
                 ]
             self.__sortAscending = True
 
@@ -221,44 +269,6 @@ class ThisDayInFamilyHistory(Gramplet):
             else:
                 self.opts[self.__OPT_SORT_ASC].set_value(_('No'))
 
-        defaultEventChoices = [
-            (_('adopted'), True),
-            (_('adult christening'), True),
-            (_('alternate marriage'), False),
-            (_('annulment'), False),
-            (_('baptism'), False),
-            (_('bar mitzvah'), False),
-            (_('bat mitzvah'), False),
-            (_('birth'), True),
-            (_('blessing'), False),
-            (_('burial'), False),
-            (_('census'), False),
-            (_('christening'), False),
-            (_('confirmation'), False),
-            (_('cremation'), False),
-            (_('death'), True),
-            (_('degree'), False),
-            (_('divorce'), False),
-            (_('divorce filing'), False),
-            (_('elected'), True),
-            (_('emigration'), True),
-            (_('engagement'), False),
-            (_('first communion'), False),
-            (_('graduation'), True),
-            (_('immigration'), True),
-            (_('marriage'), True),
-            (_('marriage banns'), False),
-            (_('marriage contract'), False),
-            (_('marriage license'), False),
-            (_('marriage settlement'), False),
-            (_('military service'), True),
-            (_('naturalization'), True),
-            (_('nobility title'), True),
-            (_('ordination'), True),
-            (_('probate'), False),
-            (_('retirement'), True),
-            ]
-
         op = BooleanListOption(self.__SHOWEVENT)
         if len(self.gui.data) == self.__OPT_MAX:
             userOptionsAvailable = True
@@ -266,12 +276,12 @@ class ThisDayInFamilyHistory(Gramplet):
         else:
             userOptionsAvailable = False
 
-        for (e, d) in defaultEventChoices:
+        for (e, d) in self.defaultEventChoices:
             if userOptionsAvailable:
                 if e in uo:
-                    op.add_button(e, True)
+                    op.add_button(_(e), True)
                 else:
-                    op.add_button(e, False)
+                    op.add_button(_(e), False)
             else:
                 op.add_button(e, d)
 
@@ -293,16 +303,16 @@ class ThisDayInFamilyHistory(Gramplet):
         """
 
         self.set_text(self.__INTRO % dict(date=self.tDateStr))
-        eventList = self.getEvents(_('People'))
-        eventList += self.getEvents(_('Family'))
+        eventList = self.getEvents('People')
+        eventList += self.getEvents('Family')
         self.generateReport(eventList)
 
     def getEvents(self, eventType):
         from gramps.gen.lib.date import Date
 
         eventType = eventType.lower()
-        ev = {_('people'): (self.dbstate.db.iter_people, _('Person')),
-              _('family'): (self.dbstate.db.iter_families, _('Family'))}
+        ev = {'people': (self.dbstate.db.iter_people, _('Person')),
+              'family': (self.dbstate.db.iter_families, _('Family'))}
 
         eventList = []
 
@@ -321,9 +331,9 @@ class ThisDayInFamilyHistory(Gramplet):
                 eMonth = eDate.get_month()
                 eYear = eDate.get_year()
 
-                eType = event.get_type().string
-                if eType.lower() in [_('burial'), _('cremation'), _('death'),
-                                     _('cause of death'), _('will')]:
+                eType = event.get_type().xml_str()
+                if eType.lower() in ['burial', 'cremation', 'death',
+                                     'cause of death', 'will']:
                     if eventType == 'people':
                         gid = p.serialize()[1]
                         self.deceasedList.append(gid)
@@ -332,9 +342,9 @@ class ThisDayInFamilyHistory(Gramplet):
                         pass
 
                 if eMonth == self.tMonth and eDay == self.tDay:
-                    if eType.lower() not in self.__UNSUPPORTED_EVENTS \
-                            and eType.lower() in self.__eventsToShow:
-                        if eventType == _('people'):
+                    if eType not in self.__UNSUPPORTED_EVENTS \
+                            and eType in self.__eventsToShow:
+                        if eventType == 'people':
                             name = \
                                 p.get_primary_name().get_regular_name()
                             pid = (p.serialize()[1], None)
@@ -356,7 +366,7 @@ class ThisDayInFamilyHistory(Gramplet):
                                 extraInfo = int(FamilyRelType.UNKNOWN)
                             else:
                                 extraInfo = ''
-                        elif eventType == _('family'):
+                        elif eventType == 'family':
 
                             """
                             I think the most common family events are marriage,
@@ -466,222 +476,222 @@ class ThisDayInFamilyHistory(Gramplet):
 
     def generateReport(self, events):
         __EVENT_MESSAGE = {}
-        __EVENT_MESSAGE[_('adopted')] = {}
-        __EVENT_MESSAGE[_('adopted')][_('male')] = \
+        __EVENT_MESSAGE['adopted'] = {}
+        __EVENT_MESSAGE['adopted']['male'] = \
             _("%(male_name)s was adopted in %(year)s at %(place)s.")
-        __EVENT_MESSAGE[_('adopted')][_('female')] = \
+        __EVENT_MESSAGE['adopted']['female'] = \
             _("%(female_name)s was adopted in %(year)s at %(place)s.")
-        __EVENT_MESSAGE[_('adult christening')] = {}
-        __EVENT_MESSAGE[_('adult christening')][_('male')] = \
+        __EVENT_MESSAGE['adult christening'] = {}
+        __EVENT_MESSAGE['adult christening']['male'] = \
             _("%(male_name)s was christened in %(year)s at %(place)s.")
-        __EVENT_MESSAGE[_('adult christening')][_('female')] = \
+        __EVENT_MESSAGE['adult christening']['female'] = \
             _("%(female_name)s was christened in %(year)s at %(place)s.")
-        __EVENT_MESSAGE[_('alternate marriage')] = {}
-        __EVENT_MESSAGE[_('alternate marriage')][_('male')] = \
+        __EVENT_MESSAGE['alternate marriage'] = {}
+        __EVENT_MESSAGE['alternate marriage']['male'] = \
             _("%(male_name)s was married in %(year)s at %(place)s.")
-        __EVENT_MESSAGE[_('alternate marriage')][_('female')] = \
+        __EVENT_MESSAGE['alternate marriage']['female'] = \
             _("%(female_name)s was married in %(year)s at %(place)s.")
-        __EVENT_MESSAGE[_('annulment')] = {}
-        __EVENT_MESSAGE[_('annulment')][_('male')] = \
+        __EVENT_MESSAGE['annulment'] = {}
+        __EVENT_MESSAGE['annulment']['male'] = \
             _("%(male_name)s received an annulment in %(year)s at %(place)s.")
-        __EVENT_MESSAGE[_('annulment')][_('female')] = \
+        __EVENT_MESSAGE['annulment']['female'] = \
             _("%(female_name)s received an annulment in %(year)s at " +
               "%(place)s.")
-        __EVENT_MESSAGE[_('baptism')] = {}
-        __EVENT_MESSAGE[_('baptism')][_('male')] = \
+        __EVENT_MESSAGE['baptism'] = {}
+        __EVENT_MESSAGE['baptism']['male'] = \
             _("%(male_name)s was baptized in %(year)s at %(place)s.")
-        __EVENT_MESSAGE[_('baptism')][_('female')] = \
+        __EVENT_MESSAGE['baptism']['female'] = \
             _("%(female_name)s was baptized in %(year)s at %(place)s.")
-        __EVENT_MESSAGE[_('bar mitzvah')] = {}
-        __EVENT_MESSAGE[_('bar mitzvah')][_('male')] = \
+        __EVENT_MESSAGE['bar mitzvah'] = {}
+        __EVENT_MESSAGE['bar mitzvah']['male'] = \
             _("%(male_name)s became a bar mitzvah in %(year)s at %(place)s.")
-        __EVENT_MESSAGE[_('bar mitzvah')][_('female')] = \
+        __EVENT_MESSAGE['bar mitzvah']['female'] = \
             _("%(female_name)s became a bar mitzvah in %(year)s at %(place)s.")
-        __EVENT_MESSAGE[_('bat mitzvah')] = {}
-        __EVENT_MESSAGE[_('bat mitzvah')][_('male')] = \
+        __EVENT_MESSAGE['bat mitzvah'] = {}
+        __EVENT_MESSAGE['bat mitzvah']['male'] = \
             _("%(male_name)s became a bat mitzvah in %(year)s at %(place)s.")
-        __EVENT_MESSAGE[_('bat mitzvah')][_('female')] = \
+        __EVENT_MESSAGE['bat mitzvah']['female'] = \
             _("%(female_name)s became a bat mitzvah in %(year)s at %(place)s.")
-        __EVENT_MESSAGE[_('birth')] = {}
-        __EVENT_MESSAGE[_('birth')][_('male')] = \
+        __EVENT_MESSAGE['birth'] = {}
+        __EVENT_MESSAGE['birth']['male'] = \
             _("%(male_name)s was born in %(year)s at %(place)s.")
-        __EVENT_MESSAGE[_('birth')][_('female')] = \
+        __EVENT_MESSAGE['birth']['female'] = \
             _("%(female_name)s was born in %(year)s at %(place)s.")
-        __EVENT_MESSAGE[_('blessing')] = {}
-        __EVENT_MESSAGE[_('blessing')][_('male')] = \
+        __EVENT_MESSAGE['blessing'] = {}
+        __EVENT_MESSAGE['blessing']['male'] = \
             _("%(male_name)s was blessed in %(year)s at %(place)s.")
-        __EVENT_MESSAGE[_('blessing')][_('female')] = \
+        __EVENT_MESSAGE['blessing']['female'] = \
             _("%(female_name)s was blessed in %(year)s at %(place)s.")
-        __EVENT_MESSAGE[_('burial')] = {}
-        __EVENT_MESSAGE[_('burial')][_('male')] = \
+        __EVENT_MESSAGE['burial'] = {}
+        __EVENT_MESSAGE['burial']['male'] = \
             _("%(male_name)s was buried in %(year)s at %(place)s.")
-        __EVENT_MESSAGE[_('burial')][_('female')] = \
+        __EVENT_MESSAGE['burial']['female'] = \
             _("%(female_name)s was buried in %(year)s at %(place)s.")
-        __EVENT_MESSAGE[_('census')] = {}
-        __EVENT_MESSAGE[_('census')][_('male')] = \
+        __EVENT_MESSAGE['census'] = {}
+        __EVENT_MESSAGE['census']['male'] = \
             _("%(male_name)s participated in a census in %(year)s at " +
               "%(place)s.")
-        __EVENT_MESSAGE[_('census')][_('female')] = \
+        __EVENT_MESSAGE['census']['female'] = \
             _("%(female_name)s participated in a census in %(year)s at " +
               "%(place)s.")
-        __EVENT_MESSAGE[_('christening')] = {}
-        __EVENT_MESSAGE[_('christening')][_('male')] = \
+        __EVENT_MESSAGE['christening'] = {}
+        __EVENT_MESSAGE['christening']['male'] = \
             _("%(male_name)s was christened in %(year)s at %(place)s.")
-        __EVENT_MESSAGE[_('christening')][_('female')] = \
+        __EVENT_MESSAGE['christening']['female'] = \
             _("%(female_name)s was christened in %(year)s at %(place)s.")
-        __EVENT_MESSAGE[_('confirmation')] = {}
-        __EVENT_MESSAGE[_('confirmation')][_('male')] = \
+        __EVENT_MESSAGE['confirmation'] = {}
+        __EVENT_MESSAGE['confirmation']['male'] = \
             _("%(male_name)s was confirmed in %(year)s at %(place)s.")
-        __EVENT_MESSAGE[_('confirmation')][_('female')] = \
+        __EVENT_MESSAGE['confirmation']['female'] = \
             _("%(female_name)s was confirmed in %(year)s at %(place)s.")
-        __EVENT_MESSAGE[_('cremation')] = {}
-        __EVENT_MESSAGE[_('cremation')][_('male')] = \
+        __EVENT_MESSAGE['cremation'] = {}
+        __EVENT_MESSAGE['cremation']['male'] = \
             _("%(male_name)s was cremated in %(year)s at %(place)s.")
-        __EVENT_MESSAGE[_('cremation')][_('female')] = \
+        __EVENT_MESSAGE['cremation']['female'] = \
             _("%(female_name)s was cremated in %(year)s at %(place)s.")
-        __EVENT_MESSAGE[_('death')] = {}
-        __EVENT_MESSAGE[_('death')][_('male')] = \
+        __EVENT_MESSAGE['death'] = {}
+        __EVENT_MESSAGE['death']['male'] = \
             _("%(male_name)s died in %(year)s at %(place)s.")
-        __EVENT_MESSAGE[_('death')][_('female')] = \
+        __EVENT_MESSAGE['death']['female'] = \
             _("%(female_name)s died in %(year)s at %(place)s.")
-        __EVENT_MESSAGE[_('degree')] = {}
-        __EVENT_MESSAGE[_('degree')][_('male')] = \
+        __EVENT_MESSAGE['degree'] = {}
+        __EVENT_MESSAGE['degree']['male'] = \
             _("%(male_name)s was awarded a degree in %(year)s at %(place)s.")
-        __EVENT_MESSAGE[_('degree')][_('female')] = \
+        __EVENT_MESSAGE['degree']['female'] = \
             _("%(female_name)s was awarded a degree in %(year)s at %(place)s.")
-        __EVENT_MESSAGE[_('divorce')] = {}
-        __EVENT_MESSAGE[_('divorce')][_('male')] = \
+        __EVENT_MESSAGE['divorce'] = {}
+        __EVENT_MESSAGE['divorce']['male'] = \
             _("%(male_name)s was granted a divorce in %(year)s at " +
               "%(place)s.")
-        __EVENT_MESSAGE[_('divorce')][_('female')] = \
+        __EVENT_MESSAGE['divorce']['female'] = \
             _("%(female_name)s was granted a divorce in %(year)s at " +
               "%(place)s.")
-        __EVENT_MESSAGE[_('divorce filing')] = {}
-        __EVENT_MESSAGE[_('divorce filing')][_('male')] = \
+        __EVENT_MESSAGE['divorce filing'] = {}
+        __EVENT_MESSAGE['divorce filing']['male'] = \
             _("%(male_name)s filed for divorce in %(year)s at %(place)s.")
-        __EVENT_MESSAGE[_('divorce filing')][_('female')] = \
+        __EVENT_MESSAGE['divorce filing']['female'] = \
             _("%(female_name)s filed for divorce in %(year)s at %(place)s.")
-        __EVENT_MESSAGE[_('elected')] = {}
-        __EVENT_MESSAGE[_('elected')][_('male')] = \
+        __EVENT_MESSAGE['elected'] = {}
+        __EVENT_MESSAGE['elected']['male'] = \
             _("%(male_name)s was elected in %(year)s at %(place)s.")
-        __EVENT_MESSAGE[_('elected')][_('female')] = \
+        __EVENT_MESSAGE['elected']['female'] = \
             _("%(female_name)s was elected in %(year)s at %(place)s.")
-        __EVENT_MESSAGE[_('emigration')] = {}
-        __EVENT_MESSAGE[_('emigration')][_('male')] = \
+        __EVENT_MESSAGE['emigration'] = {}
+        __EVENT_MESSAGE['emigration']['male'] = \
             _("%(male_name)s emigrated in %(year)s at %(place)s.")
-        __EVENT_MESSAGE[_('emigration')][_('female')] = \
+        __EVENT_MESSAGE['emigration']['female'] = \
             _("%(female_name)s emigrated in %(year)s at %(place)s.")
-        __EVENT_MESSAGE[_('engagement')] = {}
-        __EVENT_MESSAGE[_('engagement')][_('male')] = \
+        __EVENT_MESSAGE['engagement'] = {}
+        __EVENT_MESSAGE['engagement']['male'] = \
             _("%(male_name)s became engaged in %(year)s at %(place)s.")
-        __EVENT_MESSAGE[_('engagement')][_('female')] = \
+        __EVENT_MESSAGE['engagement']['female'] = \
             _("%(female_name)s became engaged in %(year)s at %(place)s.")
-        __EVENT_MESSAGE[_('first communion')] = {}
-        __EVENT_MESSAGE[_('first communion')][_('male')] = \
+        __EVENT_MESSAGE['first communion'] = {}
+        __EVENT_MESSAGE['first communion']['male'] = \
             _("%(male_name)s received first communion in %(year)s at " +
               "%(place)s.")
-        __EVENT_MESSAGE[_('first communion')][_('female')] = \
+        __EVENT_MESSAGE['first communion']['female'] = \
             _("%(female_name)s received first communion in %(year)s at " +
               "%(place)s.")
-        __EVENT_MESSAGE[_('graduation')] = {}
-        __EVENT_MESSAGE[_('graduation')][_('male')] = \
+        __EVENT_MESSAGE['graduation'] = {}
+        __EVENT_MESSAGE['graduation']['male'] = \
             _("%(male_name)s graduated in %(year)s at %(place)s.")
-        __EVENT_MESSAGE[_('graduation')][_('female')] = \
+        __EVENT_MESSAGE['graduation']['female'] = \
             _("%(female_name)s graduated in %(year)s at %(place)s.")
-        __EVENT_MESSAGE[_('immigration')] = {}
-        __EVENT_MESSAGE[_('immigration')][_('male')] = \
+        __EVENT_MESSAGE['immigration'] = {}
+        __EVENT_MESSAGE['immigration']['male'] = \
             _("%(male_name)s immigrated in %(year)s at %(place)s.")
-        __EVENT_MESSAGE[_('immigration')][_('female')] = \
+        __EVENT_MESSAGE['immigration']['female'] = \
             _("%(female_name)s immigrated in %(year)s at %(place)s.")
 
         # attempt to distinguish between the marriage event types
 
-        __EVENT_MESSAGE[_('marriage') + str(FamilyRelType.MARRIED)] = {}
-        __EVENT_MESSAGE[_('marriage') + str(FamilyRelType.MARRIED)][_('male')] = \
+        __EVENT_MESSAGE['marriage' + str(FamilyRelType.MARRIED)] = {}
+        __EVENT_MESSAGE['marriage' + str(FamilyRelType.MARRIED)]['male'] = \
             _("%(male_name)s got married in %(year)s at %(place)s.")
-        __EVENT_MESSAGE[_('marriage') + str(FamilyRelType.MARRIED)][_('female')] = \
+        __EVENT_MESSAGE['marriage' + str(FamilyRelType.MARRIED)]['female'] = \
             _("%(female_name)s got married in %(year)s at %(place)s.")
-        __EVENT_MESSAGE[_('marriage') + str(FamilyRelType.UNMARRIED)] = {}
-        __EVENT_MESSAGE[_('marriage') + str(FamilyRelType.UNMARRIED)][_('male')] =\
+        __EVENT_MESSAGE['marriage' + str(FamilyRelType.UNMARRIED)] = {}
+        __EVENT_MESSAGE['marriage' + str(FamilyRelType.UNMARRIED)]['male'] =\
             _("%(male_name)s joined as a family in %(year)s at %(place)s.")
-        __EVENT_MESSAGE[_('marriage') + str(FamilyRelType.UNMARRIED)][_('female')] =\
+        __EVENT_MESSAGE['marriage' + str(FamilyRelType.UNMARRIED)]['female'] =\
             _("%(female_name)s joined as a family in %(year)s at %(place)s.")
-        __EVENT_MESSAGE[_('marriage') + str(FamilyRelType.CIVIL_UNION)] = {}
-        __EVENT_MESSAGE[_('marriage') + str(FamilyRelType.CIVIL_UNION)][_('male')] =\
+        __EVENT_MESSAGE['marriage' + str(FamilyRelType.CIVIL_UNION)] = {}
+        __EVENT_MESSAGE['marriage' + str(FamilyRelType.CIVIL_UNION)]['male'] =\
             _("%(male_name)s entered a civil union in %(year)s at %(place)s.")
-        __EVENT_MESSAGE[_('marriage') + str(FamilyRelType.CIVIL_UNION)][_('female')]\
+        __EVENT_MESSAGE['marriage' + str(FamilyRelType.CIVIL_UNION)]['female']\
             = _("%(female_name)s entered a civil union in %(year)s at " +
                 "%(place)s.")
-        __EVENT_MESSAGE[_('marriage') + str(FamilyRelType.UNKNOWN)] = {}
-        __EVENT_MESSAGE[_('marriage') + str(FamilyRelType.UNKNOWN)][_('male')] = \
+        __EVENT_MESSAGE['marriage' + str(FamilyRelType.UNKNOWN)] = {}
+        __EVENT_MESSAGE['marriage' + str(FamilyRelType.UNKNOWN)]['male'] = \
             _("%(male_name)s joined as a family in %(year)s at %(place)s.")
-        __EVENT_MESSAGE[_('marriage') + str(FamilyRelType.UNKNOWN)][_('female')] = \
+        __EVENT_MESSAGE['marriage' + str(FamilyRelType.UNKNOWN)]['female'] = \
             _("%(female_name)s joined as a family in %(year)s at %(place)s.")
-        __EVENT_MESSAGE[_('marriage') + str(FamilyRelType.CUSTOM)] = {}
-        __EVENT_MESSAGE[_('marriage') + str(FamilyRelType.CUSTOM)][_('male')] = \
+        __EVENT_MESSAGE['marriage' + str(FamilyRelType.CUSTOM)] = {}
+        __EVENT_MESSAGE['marriage' + str(FamilyRelType.CUSTOM)]['male'] = \
             _("%(male_name)s had a custom marriage in %(year)s at %(place)s.")
-        __EVENT_MESSAGE[_('marriage') + str(FamilyRelType.CUSTOM)][_('female')] = \
+        __EVENT_MESSAGE['marriage' + str(FamilyRelType.CUSTOM)]['female'] = \
             _("%(female_name)s had a custom marriage in %(year)s at " +
               "%(place)s.")
-        __EVENT_MESSAGE[_('marriage banns')] = {}
-        __EVENT_MESSAGE[_('marriage banns')][_('male')] = \
+        __EVENT_MESSAGE['marriage banns'] = {}
+        __EVENT_MESSAGE['marriage banns']['male'] = \
             _("%(male_name)s announced a marriage banns in %(year)s at " +
               "%(place)s.")
-        __EVENT_MESSAGE[_('marriage banns')][_('female')] = \
+        __EVENT_MESSAGE['marriage banns']['female'] = \
             _("%(female_name)s announced a marriage banns in %(year)s at " +
               "%(place)s.")
-        __EVENT_MESSAGE[_('marriage contract')] = {}
-        __EVENT_MESSAGE[_('marriage contract')][_('male')] = \
+        __EVENT_MESSAGE['marriage contract'] = {}
+        __EVENT_MESSAGE['marriage contract']['male'] = \
             _("%(male_name)s entered a marriage contract in %(year)s at " +
               "%(place)s.")
-        __EVENT_MESSAGE[_('marriage contract')][_('female')] = \
+        __EVENT_MESSAGE['marriage contract']['female'] = \
             _("%(female_name)s entered a marriage contract in %(year)s at " +
               "%(place)s.")
-        __EVENT_MESSAGE[_('marriage license')] = {}
-        __EVENT_MESSAGE[_('marriage license')][_('male')] = \
+        __EVENT_MESSAGE['marriage license'] = {}
+        __EVENT_MESSAGE['marriage license']['male'] = \
             _("%(male_name)s obtained a marriage license in %(year)s at " +
               "%(place)s.")
-        __EVENT_MESSAGE[_('marriage license')][_('female')] = \
+        __EVENT_MESSAGE['marriage license']['female'] = \
             _("%(female_name)s obtained a marriage license in %(year)s at " +
               "%(place)s.")
-        __EVENT_MESSAGE[_('marriage settlement')] = {}
-        __EVENT_MESSAGE[_('marriage settlement')][_('male')] = \
+        __EVENT_MESSAGE['marriage settlement'] = {}
+        __EVENT_MESSAGE['marriage settlement']['male'] = \
             _("%(male_name)s obtained a marriage settlement in %(year)s at " +
               "%(place)s.")
-        __EVENT_MESSAGE[_('marriage settlement')][_('female')] = \
+        __EVENT_MESSAGE['marriage settlement']['female'] = \
             _("%(female_name)s obtained a marriage settlement in %(year)s " +
               "at %(place)s.")
-        __EVENT_MESSAGE[_('military service')] = {}
-        __EVENT_MESSAGE[_('military service')][_('male')] = \
+        __EVENT_MESSAGE['military service'] = {}
+        __EVENT_MESSAGE['military service']['male'] = \
             _("%(male_name)s entered military service in %(year)s at " +
               "%(place)s.")
-        __EVENT_MESSAGE[_('military service')][_('female')] = \
+        __EVENT_MESSAGE['military service']['female'] = \
             _("%(female_name)s entered military service in %(year)s at " +
               "%(place)s.")
-        __EVENT_MESSAGE[_('naturalization')] = {}
-        __EVENT_MESSAGE[_('naturalization')][_('male')] = \
+        __EVENT_MESSAGE['naturalization'] = {}
+        __EVENT_MESSAGE['naturalization']['male'] = \
             _("%(male_name)s became naturalized in %(year)s at %(place)s.")
-        __EVENT_MESSAGE[_('naturalization')][_('female')] = \
+        __EVENT_MESSAGE['naturalization']['female'] = \
             _("%(female_name)s became naturalized in %(year)s at %(place)s.")
-        __EVENT_MESSAGE[_('nobility title')] = {}
-        __EVENT_MESSAGE[_('nobility title')][_('male')] = \
+        __EVENT_MESSAGE['nobility title'] = {}
+        __EVENT_MESSAGE['nobility title']['male'] = \
             _("%(male_name)s had a title bestowed in %(year)s at %(place)s.")
-        __EVENT_MESSAGE[_('nobility title')][_('female')] = \
+        __EVENT_MESSAGE['nobility title']['female'] = \
             _("%(female_name)s had a title bestowed in %(year)s at %(place)s.")
-        __EVENT_MESSAGE[_('ordination')] = {}
-        __EVENT_MESSAGE[_('ordination')][_('male')] = \
+        __EVENT_MESSAGE['ordination'] = {}
+        __EVENT_MESSAGE['ordination']['male'] = \
             _("%(male_name)s was ordained in %(year)s at %(place)s.")
-        __EVENT_MESSAGE[_('ordination')][_('female')] = \
+        __EVENT_MESSAGE['ordination']['female'] = \
             _("%(female_name)s was ordained in %(year)s at %(place)s.")
-        __EVENT_MESSAGE[_('probate')] = {}
-        __EVENT_MESSAGE[_('probate')][_('male')] = \
+        __EVENT_MESSAGE['probate'] = {}
+        __EVENT_MESSAGE['probate']['male'] = \
             _("%(male_name)s was granted probate in %(year)s at %(place)s.")
-        __EVENT_MESSAGE[_('probate')][_('female')] = \
+        __EVENT_MESSAGE['probate']['female'] = \
             _("%(female_name)s was granted probate in %(year)s at %(place)s.")
-        __EVENT_MESSAGE[_('retirement')] = {}
-        __EVENT_MESSAGE[_('retirement')][_('male')] = \
+        __EVENT_MESSAGE['retirement'] = {}
+        __EVENT_MESSAGE['retirement']['male'] = \
             _("%(male_name)s retired in %(year)s at %(place)s.")
-        __EVENT_MESSAGE[_('retirement')][_('female')] = \
+        __EVENT_MESSAGE['retirement']['female'] = \
             _("%(female_name)s retired in %(year)s at %(place)s.")
 
         if len(events) == 0:
@@ -708,7 +718,7 @@ class ThisDayInFamilyHistory(Gramplet):
                 # Marriage messages are stored in marriageN where N is the
                 # integer relationship type
 
-                if eStr == _('marriage'):
+                if eStr == 'marriage':
                     eStr = eStr + str(extraInfo)
 
                 if year == 0:
@@ -721,13 +731,13 @@ class ThisDayInFamilyHistory(Gramplet):
                 # uncertain if it will pose a translation issue.
 
                 if gender == Person.FEMALE:
-                    msg = __EVENT_MESSAGE[eStr][_('female')]
+                    msg = __EVENT_MESSAGE[eStr]['female']
                     prefix = msg[0:msg.find('%(female_name)')] \
                         % dict(female_name='', year=year, place=place)
                     suffix = msg[msg.find('%(female_name)'):-1] \
                         % dict(female_name='', year=year, place=place)
                 else:
-                    msg = __EVENT_MESSAGE[eStr][_('male')]
+                    msg = __EVENT_MESSAGE[eStr]['male']
                     prefix = msg[0:msg.find('%(male_name)')] \
                         % dict(male_name='', year=year, place=place)
                     suffix = msg[msg.find('%(male_name)'):-1] \
