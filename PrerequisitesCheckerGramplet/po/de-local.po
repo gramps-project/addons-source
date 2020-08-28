@@ -41,8 +41,8 @@ msgid ""
 "blob/master/README.md\">prerequisites</a> installed.\n"
 msgstr ""
 "Diagnose-Gramplet zur Bewertung, ob <a href=\"https://gramps-project.org/\"> "
-"Gramps </a> alle <a href=\"https://github.com/gramps-project/gramps/blob."
-"com.com enthält /master/README.md\"> Voraussetzungen </a> installiert.\n"
+"Gramps </a> alle <a href=\"https://github.com/gramps-project/gramps/"
+"blob/master/README.md\"> Voraussetzungen </a> installiert.\n"
 
 #: PrerequisitesCheckerGramplet//PrerequisitesCheckerGramplet.py:142
 msgid ""
@@ -65,7 +65,7 @@ msgid ""
 "The following packages <b>MUST</b> be installed (Requires the minimum "
 "version or greater.):\n"
 msgstr ""
-"Die folgenden Pakete <b> MÜSSEN </ b> installiert sein (erfordert die "
+"Die folgenden Pakete <b>MÜSSEN</b> installiert sein (erfordert die "
 "Mindestversion oder höher):\n"
 
 #: PrerequisitesCheckerGramplet//PrerequisitesCheckerGramplet.py:180
@@ -130,8 +130,7 @@ msgid ""
 msgstr ""
 "\n"
 "<u><b>Optionale Pakete, die von Erweiterungen von Drittanbietern benötigt"
-" werden</"
-"b></u>\n"
+" werden</b></u>\n"
 
 #: PrerequisitesCheckerGramplet//PrerequisitesCheckerGramplet.py:229
 msgid ""
