@@ -23,6 +23,8 @@
 # Author: kari.kujansuu@gmail.com
 # 9 Jun 2019
 #
+# v1.0.4 (30 Aug 2020): added "timespan"
+#
 # Gramplet to change properties of multiple places at the same time. See README.
 
 import re
@@ -32,9 +34,10 @@ from gi.repository import Gtk
 
 from gramps.gen.plug import Gramplet
 from gramps.gen.db import DbTxn
-from gramps.gen.lib import Place, PlaceRef, PlaceName, PlaceType, Tag
+from gramps.gen.lib import Place, PlaceRef, PlaceName, PlaceType, Tag, Date
 
 from gramps.gui.selectors import SelectorFactory
+from gramps.gui.widgets import MonitoredDate, ValidatableMaskedEntry
 
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
@@ -70,7 +73,8 @@ class PlaceUpdate(Gramplet):
     def cb_clear(self, obj):
         self.selected_handle = None
         self.selected_name = ""
-        self.enclosing_place.set_text(_("None"))
+        #self.enclosing_place.set_text(_("None"))
+        self.but_set_enclosing.set_label(_("Select"))
         self.tagcombo.get_child().set_text("")
         self.typecombo.get_child().set_text("")
         self.clear_enclosing.set_active(False)
@@ -82,6 +86,8 @@ class PlaceUpdate(Gramplet):
         self.use_regex.set_active(False)
         self.old_text.set_text("")
         self.new_text.set_text("")
+        self.date_object.set()
+        self.date_entry.set_text("")
 
     def __create_gui(self):
         vbox = Gtk.VBox(orientation=Gtk.Orientation.VERTICAL)
@@ -110,20 +116,45 @@ class PlaceUpdate(Gramplet):
         self.enclosing_place = Gtk.Label(_("None"))
         self.enclosing_place.set_halign(Gtk.Align.START)
 
+        date_label = Gtk.Label(_('Timespan:'))
+        date_label.set_halign(Gtk.Align.START)
+        self.date_entry = ValidatableMaskedEntry()
+        date_button = Gtk.Button.new_from_icon_name("gramps-date", -1)
+        timespan_tooltip = _("Set timespan for enclosing places")
+        date_label.set_tooltip_text(timespan_tooltip)
+        date_button.set_tooltip_text(timespan_tooltip)
+        self.date_entry.set_tooltip_text(timespan_tooltip)
+        self.date_object = Date()
+        self.track = []
+        self.date_field = MonitoredDate(self.date_entry,
+                                        date_button,
+                                        self.date_object,
+                                        self.uistate, self.track)
+
         pt_grid = Gtk.Grid(column_spacing=10)
         pt_grid.attach(pt_label, 0, 0, 1, 1)
         pt_grid.attach(self.typecombo, 1, 0, 1, 1)
 
         pt_grid.attach(tag_label, 0, 1, 1, 1)
         pt_grid.attach(self.tagcombo, 1, 1, 1, 1)
+
         pt_grid.attach(label1, 0, 2, 1, 1)
-        pt_grid.attach(self.enclosing_place, 1, 2, 1, 1)
+
+        pl_grid = Gtk.Grid(column_spacing=10)
+        pl_grid.set_margin_left(20)
+        #pt_grid.attach(self.enclosing_place, 1, 2, 1, 1)
+
+        pl_grid.attach(date_label, 1, 4, 1, 1)
+        pl_grid.attach(self.date_entry, 2, 4, 1, 1)
+        pl_grid.attach(date_button, 3, 4, 1, 1)
 
         vbox.pack_start(pt_grid, False, True, 0)
+        vbox.pack_start(pl_grid, False, True, 0)
 
-        but_set_enclosing = Gtk.Button(label=_('Select enclosing place'))
-        but_set_enclosing.connect("clicked", self.cb_select)
-        vbox.pack_start(but_set_enclosing, False, True, 10)
+        self.but_set_enclosing = Gtk.Button(label=_('Select'))
+        self.but_set_enclosing.connect("clicked", self.cb_select)
+        #vbox.pack_start(self.but_set_enclosing, False, True, 10)
+        pt_grid.attach(self.but_set_enclosing, 1, 2, 1, 1 )
 
         self.clear_enclosing = Gtk.CheckButton(_("Clear original enclosing places"))
         vbox.pack_start(self.clear_enclosing, False, True, 0)
@@ -207,7 +238,18 @@ class PlaceUpdate(Gramplet):
         title = selected_parent.get_title()
         if title:
             self.selected_name += " (title={})".format(title)
-        self.enclosing_place.set_text(self.selected_name)
+        #self.enclosing_place.set_text(self.selected_name)
+        self.but_set_enclosing.set_label(self.selected_name)
+         
+    def cb_set_enclosing_dates(self, obj):
+        #SelectDate = SelectorFactory('Date')
+        sel = EditDate(None, self.gui.uistate, None)
+        date = sel.run()
+        print("date=", date)
+        if not date:
+            return
+        pass
+
 
     def cb_select_generate_hierarchy(self, obj):
         checked = self.generate_hierarchy.get_active()
@@ -302,6 +344,7 @@ class PlaceUpdate(Gramplet):
         print(pname, "<", self.selected_name)
         placeref = PlaceRef()
         placeref.ref = self.selected_handle
+        placeref.set_date_object(self.date_object)
         place.add_placeref(placeref)
 
 
@@ -353,6 +396,7 @@ class PlaceUpdate(Gramplet):
                 if parent_handle is not None:
                     placeref = PlaceRef()
                     placeref.ref = parent_handle
+                    placeref.set_date_object(self.date_object)
                     new_place.add_placeref(placeref)
                 parent_handle = self.dbstate.db.add_place(new_place, self.trans)
             else:
@@ -363,6 +407,7 @@ class PlaceUpdate(Gramplet):
         if parent_handle is not None:
             placeref = PlaceRef()
             placeref.ref = parent_handle
+            placeref.set_date_object(self.date_object)
             place.set_placeref_list([placeref]) # this removes any previous parent
         return top_place
 
