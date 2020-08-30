@@ -240,7 +240,7 @@ class PlaceUpdate(Gramplet):
             self.selected_name += " (title={})".format(title)
         #self.enclosing_place.set_text(self.selected_name)
         self.but_set_enclosing.set_label(self.selected_name)
-         
+
     def cb_set_enclosing_dates(self, obj):
         #SelectDate = SelectorFactory('Date')
         sel = EditDate(None, self.gui.uistate, None)
