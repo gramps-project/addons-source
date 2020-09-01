@@ -29,7 +29,6 @@ See https://github.com/CWSchulze/life_line_chart
 # -------------------------------------------------------------------------
 from gi.repository import Gtk
 import cairo
-from gramps.gen.const import GRAMPS_LOCALE as glocale
 from copy import deepcopy
 import sys
 
@@ -43,6 +42,16 @@ from gramps.gui.views.bookmarks import PersonBookmarks
 from gramps.gui.display import display_url
 from gramps.gui.utils import SystemFonts
 from gramps.gen.config import config
+
+# -------------------------------------------------------------------------
+# Internationalization
+# -------------------------------------------------------------------------
+from gramps.gen.const import GRAMPS_LOCALE as glocale
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.gettext
 
 # widget
 import lifelinechart
@@ -60,7 +69,6 @@ if not glocale.lang.startswith('en') and glocale.lang[:2] in AVAILABLE_DOCUMENTA
 
 # the print settings to remember between print sessions
 PRINT_SETTINGS = None
-_ = glocale.translation.sgettext
 
 __, llc_default_formatting = recursive_merge_dict_members(
     DescendantChart.DEFAULT_FORMATTING,
