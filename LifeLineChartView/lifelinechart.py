@@ -1060,7 +1060,7 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
                     self.queue_draw_wrapper()
                 self.info_label.set_sensitive(False)
                 #self.info_label.set_text(tooltip.replace('\n','   //   '))
-            self.pos_label.set_text('cursor position at ' + str(date))
+            self.pos_label.set_text(_('cursor position at {date}').format(date=str(date)))
             #self.set_tooltip_text(tooltip)
             return False
 
