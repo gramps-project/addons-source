@@ -63,7 +63,7 @@ class ThisDayInFamilyHistory(Gramplet):
     # of the gen.lib.eventtypes.py set, where they are already translated.
     # this allows us to use the 'deferred' translation to fill in the GUI
 
-    
+
     defaultEventChoices = [
         ('Adopted', True),
         ('Adult Christening', True),
