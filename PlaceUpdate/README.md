@@ -23,7 +23,7 @@ The user interface looks like:
 **Setting enclosing place**
 
 For the enclosing place first select the place that should enclose the other places 
-and click the "Set enclosing place" button. The selected place will be displayed.
+and click the "Select" button next to the "New enclosing place" label. The selected place will be displayed as the label of the button.
 Then select any number of places that should  be enclosed by the first one
 and click the "Apply to selected places" button. 
 
@@ -34,6 +34,8 @@ This can e.g. be used to "move" the places under another place.
 
 Attempts to set a duplicate enclosing place or a loop (so that a place contains itself) 
 are quietly bypassed.
+
+In the "Timespan" field you can specify relevant the date range if needed. This also affects the generated hierarchy (see below).
 
 
 **Setting place type or tag**
@@ -65,6 +67,8 @@ The hierarchy can also be generated in reverse, e.g. the result can also be
 The place type and tag setting affects only the original place.
 
 If the original place is under another place or a new enclosing place is specified then the new hierarchy is placed under the enclosing place.
+
+If a timespan is specified then it applies to all levels in the generated hierarchy.
 
 **Editing place names**
 
