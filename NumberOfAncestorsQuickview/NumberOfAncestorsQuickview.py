@@ -27,9 +27,15 @@
 import gramps.gen.display.name
 from gramps.gen.simple import SimpleDoc
 from gramps.gui.plug.quick import QuickTable
+# -------------------------------------------------------------------------
+# Internationalization
+# -------------------------------------------------------------------------
 from gramps.gen.const import GRAMPS_LOCALE as glocale
-_ = glocale.translation.gettext
-
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.gettext
 
 # ------------------------------------------------------------------------
 #
@@ -58,8 +64,8 @@ def run(database, document, person):
     vals = num_lst[-1][1:]
     sdoc.paragraph(_("There were {} of {} ancestors ({}) found.\n"
                      "Only individual ancestors were counted. Duplicates "
-                     "caused by pedigree collapse were ignored."
-                     .format(*vals)))
+                     "caused by pedigree collapse were ignored.")
+                     .format(*vals))
 
 
 # ------------------------------------------------------------------------
