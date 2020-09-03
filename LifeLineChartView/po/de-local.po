@@ -359,9 +359,22 @@ msgstr "_Abbrechen"
 msgid "_Save"
 msgstr "_Speichern"
 
-#: LifeLineChartView/lifelinechartview.py:833
+#: LifeLineChartView/_dummy_translation_string_po.py:29
+#: LifeLineChartView/_dummy_translation_string_po.py:32
+#: LifeLineChartView/_dummy_translation_string_po.py:35
+#: LifeLineChartView/_dummy_translation_string_po.py:38
+#: LifeLineChartView/_dummy_translation_string_po.py:41
+#: LifeLineChartView/_dummy_translation_string_po.py:47
+#: LifeLineChartView/_dummy_translation_string_po.py:52
+#: LifeLineChartView/_dummy_translation_string_po.py:55
+#: LifeLineChartView/_dummy_translation_string_po.py:58
+#: LifeLineChartView/_dummy_translation_string_po.py:61
+#: LifeLineChartView/_dummy_translation_string_po.py:67
+#: LifeLineChartView/_dummy_translation_string_po.py:74
+#: LifeLineChartView/_dummy_translation_string_po.py:77
+#: LifeLineChartView/lifelinechartview.py:839
 msgid "Label Configuration"
-msgstr "Textfelder"
+msgstr "Label Configuration"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:30
 msgid "Birth label rotation"
@@ -611,7 +624,7 @@ msgstr "Die Linienbreite kann konfiguriert werden."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:98
 msgid "none"
-msgstr "kein"
+msgstr "keine"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:99
 msgid "Show pedigree collapse"
@@ -629,7 +642,7 @@ msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:101
 msgid "Maximum number of generations"
-msgstr "Maximale Anzahl der Generationen"
+msgstr "Maximale Anzahl an Generationen"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:102
 msgid ""
