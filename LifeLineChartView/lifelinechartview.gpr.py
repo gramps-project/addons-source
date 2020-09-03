@@ -23,8 +23,6 @@ import os
 import sys
 import html
 
-from gramps.gen.const import GRAMPS_LOCALE as glocale
-_ = glocale.translation.gettext
 from gi.repository import Gtk, GdkPixbuf
 from gramps.gen.const import USER_PLUGINS
 from gramps.gen.config import logging

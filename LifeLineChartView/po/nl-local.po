@@ -1,269 +1,271 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Dutch translation of addon LifeLineChartView.
+# Copyright (C) 2020 Gramps project
+# This file is distributed under the same license as the LifeLineChartView package.
+# Jan Sparreboom <jan@sparreboom.net>, 2020.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: LifeLineChartView 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-02 18:12+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2020-09-02 18:13+0200\n"
+"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
+"Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
 
 #: LifeLineChartView//lifelinechart.py:452
 msgid "calculated"
-msgstr ""
+msgstr "berekend"
 
 #: LifeLineChartView//lifelinechart.py:453
 #: LifeLineChartView//lifelinechart.py:454
 #: LifeLineChartView//lifelinechart.py:455
 #: LifeLineChartView//lifelinechart.py:456
 msgid "estimated"
-msgstr ""
+msgstr "geschat"
 
 #: LifeLineChartView//lifelinechart.py:458
 msgid "about"
-msgstr ""
+msgstr "omstreeks"
 
 #: LifeLineChartView//lifelinechart.py:459
 msgid "before"
-msgstr ""
+msgstr "voor"
 
 #: LifeLineChartView//lifelinechart.py:460
 msgid "after"
-msgstr ""
+msgstr "na"
 
 #: LifeLineChartView//lifelinechart.py:1063
 msgid "cursor position at "
-msgstr ""
+msgstr "cursorpositie op "
 
 #: LifeLineChartView//lifelinechart.py:2226
 msgid "Hide person"
-msgstr ""
+msgstr "Verberg persoon"
 
 #: LifeLineChartView//lifelinechart.py:2232
 msgid "Show person"
-msgstr ""
+msgstr "Toon persoon"
 
 #: LifeLineChartView//lifelinechart.py:2257
 msgid "Show siblings"
-msgstr ""
+msgstr "Toon broers en zussen"
 
 #: LifeLineChartView//lifelinechart.py:2262
 msgid "Hide siblings"
-msgstr ""
+msgstr "Verberg broers en zussen"
 
 #: LifeLineChartView//lifelinechart.py:2287
 msgid "Show ancestors above "
-msgstr ""
+msgstr "Toon voorouders boven "
 
 #: LifeLineChartView//lifelinechart.py:2314
 msgid "_Edit"
-msgstr ""
+msgstr "_Bewerken"
 
 #: LifeLineChartView//lifelinechart.py:2322
 msgid "Edit family"
-msgstr ""
+msgstr "Bewerk gezin"
 
 #: LifeLineChartView//lifelinechart.py:2338
 msgid "Reorder families"
-msgstr ""
+msgstr "Gezinnen herordenen"
 
 #: LifeLineChartView//lifelinechart.py:2344
 msgid "_Copy"
-msgstr ""
+msgstr "_Kopiëren"
 
 #: LifeLineChartView//lifelinechart.py:2354
 msgid "Spouses"
-msgstr ""
+msgstr "Echtgenoten"
 
 #: LifeLineChartView//lifelinechart.py:2388
 msgid "Siblings"
-msgstr ""
+msgstr "Broers en zussen"
 
 #: LifeLineChartView//lifelinechart.py:2454
 msgid "Children"
-msgstr ""
+msgstr "Kinderen"
 
 #: LifeLineChartView//lifelinechart.py:2491
 msgid "Parents"
-msgstr ""
+msgstr "Ouders"
 
 #: LifeLineChartView//lifelinechart.py:2525
 #: LifeLineChartView//lifelinechart.py:2567
 msgid "_Add"
-msgstr ""
+msgstr "_Toevoegen"
 
 #: LifeLineChartView//lifelinechart.py:2534
 msgid "Related"
-msgstr ""
+msgstr "Verwant"
 
 #: LifeLineChartView//lifelinechart.py:2574
 msgid "Add child to family"
-msgstr ""
+msgstr "Kind aan gezin toevoegen"
 
 #: LifeLineChartView//lifelinechart.py:2582
 msgid "Add partner to person"
-msgstr ""
+msgstr "Voeg partner toe aan persoon"
 
 #: LifeLineChartView//lifelinechart.py:2589
 msgid "Add a person"
-msgstr ""
+msgstr "Voeg een persoon toe"
 
 #: LifeLineChartView//lifelinechart.py:2679
 msgid "Add Child to Family"
-msgstr ""
+msgstr "Voeg kind toe aan gezin"
 
 #: LifeLineChartView//lifelinechartview.gpr.py:147
 #, python-brace-format
 msgid ""
 "Failed to load the required module {module_name} version {module_version}."
 msgstr ""
+"Het laden van de vereiste module {module_name} versie {module_version} is "
+"mislukt."
 
 #: LifeLineChartView//lifelinechartview.gpr.py:152
 msgid " Plugin"
-msgstr ""
+msgstr " Extensie"
 
 #: LifeLineChartView//lifelinechartview.gpr.py:154
 msgid "Don't ask me again"
-msgstr ""
+msgstr "Vraag me dit niet nog een keer"
 
 #: LifeLineChartView//lifelinechartview.gpr.py:155
 msgid "Download module"
-msgstr ""
+msgstr "Download module"
 
 #: LifeLineChartView//lifelinechartview.gpr.py:163
 msgid "The user chose to deactivate further warnings."
-msgstr ""
+msgstr "De gebruiker koos ervoor om verdere waarschuwingen te deactiveren."
 
 #: LifeLineChartView//lifelinechartview.gpr.py:167
 msgid "The user chose to ignore the warning once."
-msgstr ""
+msgstr "De gebruiker heeft ervoor gekozen de waarschuwing één keer te negeren."
 
 #: LifeLineChartView//lifelinechartview.gpr.py:170
 msgid "The user chose to install the module."
-msgstr ""
+msgstr "De gebruiker heeft ervoor gekozen om de module te installeren."
 
 #: LifeLineChartView//lifelinechartview.gpr.py:200
 #, python-format
 msgid "Unable to open '%s' with curl"
-msgstr ""
+msgstr "Kan '%s' niet openen met curl"
 
 #: LifeLineChartView//lifelinechartview.gpr.py:211
 #: LifeLineChartView//lifelinechartview.gpr.py:218
 #, python-format
 msgid "Unable to open '%s'"
-msgstr ""
+msgstr "Kan '%s' niet openen"
 
 #: LifeLineChartView//lifelinechartview.gpr.py:227
 #, python-format
 msgid "Error in reading '%s'"
-msgstr ""
+msgstr "Fout bij het lezen van '%s'"
 
 #: LifeLineChartView//lifelinechartview.gpr.py:242
 #, python-format
 msgid "Error: cannot open '%s'"
-msgstr ""
+msgstr "Fout: kan '%s' niet openen"
 
 #: LifeLineChartView//lifelinechartview.gpr.py:246
 #, python-format
 msgid "Error: unknown file type: '%s'"
-msgstr ""
+msgstr "Fout: onbekend bestandstype: '%s'"
 
 #: LifeLineChartView//lifelinechartview.gpr.py:306
 msgid "Life Line Ancestor Chart"
-msgstr ""
+msgstr "Levenslijn-voorouderdiagram"
 
 #: LifeLineChartView//lifelinechartview.gpr.py:307
 #: LifeLineChartView//lifelinechartview.gpr.py:321
 msgid "Charts"
-msgstr ""
+msgstr "Diagrammen"
 
 #: LifeLineChartView//lifelinechartview.gpr.py:308
 #: LifeLineChartView//lifelinechartview.gpr.py:322
 msgid "Persons and their relation in a time based chart"
-msgstr ""
+msgstr "Personen en hun relatie in een tijdgebaseerde grafiek"
 
 #: LifeLineChartView//lifelinechartview.gpr.py:320
 msgid "Life Line Descendant Chart"
-msgstr ""
+msgstr "Levenslijn-afstammelingsdiagram"
 
 #: LifeLineChartView//lifelinechartview.py:381
 #: LifeLineChartView//lifelinechartview.py:841
 msgid "General Layout"
-msgstr ""
+msgstr "Algemene indeling"
 
 #: LifeLineChartView//lifelinechartview.py:394
 msgid "Life Line Chart"
-msgstr ""
+msgstr "Levenslijndiagram"
 
 #: LifeLineChartView//lifelinechartview.py:489
 msgid "Zoom in"
-msgstr ""
+msgstr "Inzoomen"
 
 #: LifeLineChartView//lifelinechartview.py:490
 #: LifeLineChartView//lifelinechartview.py:491
 #: LifeLineChartView//lifelinechartview.py:500
 #: LifeLineChartView//lifelinechartview.py:501
 msgid "Ctrl"
-msgstr ""
+msgstr "Ctrl"
 
 #: LifeLineChartView//lifelinechartview.py:491
 #: LifeLineChartView//lifelinechartview.py:501
 msgid "Mouse wheel"
-msgstr ""
+msgstr "Muiswiel"
 
 #: LifeLineChartView//lifelinechartview.py:499
 msgid "Zoom out"
-msgstr ""
+msgstr "Uitzoomen"
 
 #: LifeLineChartView//lifelinechartview.py:508
 msgid "Zoom to original"
-msgstr ""
+msgstr "Zoom naar origineel"
 
 #: LifeLineChartView//lifelinechartview.py:515
 msgid "Zoom to best fit"
-msgstr ""
+msgstr "Zoom naar best passend"
 
 #: LifeLineChartView//lifelinechartview.py:522
 msgid "Rebuild data cache"
-msgstr ""
+msgstr "Herbouw de gegevenscache"
 
 #: LifeLineChartView//lifelinechartview.py:529
 msgid "Revert the placement and person selection"
-msgstr ""
+msgstr "Zet de plaatsing en persoonsselectie terug"
 
 #: LifeLineChartView//lifelinechartview.py:545
 msgid "Open Life Line Chart help"
-msgstr ""
+msgstr "Open Help van levenslijndiagram"
 
 #: LifeLineChartView//lifelinechartview.py:622
 msgid "Organize Bookmarks"
-msgstr ""
+msgstr "Organiseer bladwijzers"
 
 #: LifeLineChartView//lifelinechartview.py:789
 msgid "Export View as SVG"
-msgstr ""
+msgstr "Exporteer weergave als SVG"
 
 #: LifeLineChartView//lifelinechartview.py:792
 msgid "_Cancel"
-msgstr ""
+msgstr "_Annuleren"
 
 #: LifeLineChartView//lifelinechartview.py:793
 msgid "_Save"
-msgstr ""
+msgstr "_Opslaan"
 
 #: LifeLineChartView//lifelinechartview.py:842
 msgid "Label Configuration"
-msgstr ""
+msgstr "Labelconfiguratie"
 
 #: LifeLineChartView//lifelinechartview.py:904
 msgid "Reset all settings"
-msgstr ""
+msgstr "Reset alle instellingen"
