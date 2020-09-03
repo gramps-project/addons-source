@@ -887,7 +887,8 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         """
         dummy_widget = widget
         accel_mask = Gtk.accelerator_get_default_mod_mask()
-        if eventkey.state & accel_mask == Gdk.ModifierType.CONTROL_MASK:
+        if eventkey.state & accel_mask == Gdk.ModifierType.CONTROL_MASK and not self.translate_button.get_active():
+            self.grab_focus()
             self.translate_button.set_active(True)
         if self.translate_button.get_active():
             if Gdk.keyval_name(eventkey.keyval) == 'plus':
@@ -952,7 +953,9 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
 
 
         accel_mask = Gtk.accelerator_get_default_mod_mask()
-
+        if event.state & accel_mask == Gdk.ModifierType.CONTROL_MASK and not self.translate_button.get_active():
+            self.grab_focus()
+            self.translate_button.set_active(True)
 
         if event.button == 1:  # left mouse
             # left mouse on center dot, we translate on left click
@@ -1042,6 +1045,9 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         """
         # Handles zoom in / zoom out on Ctrl+mouse wheel
         accel_mask = Gtk.accelerator_get_default_mod_mask()
+        if event.state & accel_mask == Gdk.ModifierType.CONTROL_MASK and not self.translate_button.get_active():
+            self.grab_focus()
+            self.translate_button.set_active(True)
         if self.translate_button.get_active():
             # event.state & accel_mask == Gdk.ModifierType.CONTROL_MASK:
             if event.direction == Gdk.ScrollDirection.SMOOTH:
@@ -1208,8 +1214,10 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
             # No translate or rotate
             return True
         accel_mask = Gtk.accelerator_get_default_mod_mask()
+        if event.state & accel_mask == Gdk.ModifierType.CONTROL_MASK and not self.translate_button.get_active():
+            self.grab_focus()
+            self.translate_button.set_active(True)
         ctrl_is_pressed = self.translate_button.get_active()
-        # event.state & accel_mask == Gdk.ModifierType.CONTROL_MASK
         if self.translating_ctrl or self.translating_map:
             cursor = None
             if not ctrl_is_pressed:
