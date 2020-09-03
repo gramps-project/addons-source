@@ -25,111 +25,584 @@ msgstr ""
 "X-Generator: Poedit 2.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: LifeLineChartView//lifelinechart.py:452
+#: LifeLineChartView/_dummy_translation_string_po.py:10
+msgid "Warp the chart shape"
+msgstr "Diagramm verzerren"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:11
+msgid "The overall shape of the chart can be warped."
+msgstr "Die gesamte Form des Diagramms kann verzerrt werden."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:12
+msgid "Normal grid shape"
+msgstr "Gitterstruktur"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:13
+msgid "Sine shape"
+msgstr "Sinusform"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:14
+msgid "Triangular shape"
+msgstr "Dreiecksform"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:15
+msgid "Show photos"
+msgstr "Fotos anzeigen"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:16
+msgid "Photos of the individual are shown."
+msgstr "Fotos von Personen auf den Linien anzeigen."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:17
+msgid "Photo size"
+msgstr "Größe der Fotos"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:18
+msgid ""
+"Photos which are shown are fitted into a square of this extent. The size is "
+"given relative to the line thickness."
+msgstr ""
+"Die Bilder werden in eine Quadrat dieser Kantenlänge eingepasst. Die Länge "
+"wird relativ zur Linienbreite angegeben."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:19
+msgid "Total height"
+msgstr "Gesamthöhe"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:20
+msgid "Total height of the whole chart."
+msgstr "Höhe des gesamten Diagramms."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:21
+msgid "Relative line thickness"
+msgstr "Relative Linienbreite"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:22
+msgid ""
+"The line thickness of an individual is given relatively to the horizontal "
+"step size."
+msgstr ""
+"Die Breite eine Lebenslinie wird relativ zur horizontalen Schrittweite "
+"angegeben."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:23
+msgid "Horizontal step size"
+msgstr "Horizontale Schrittweite"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:24
+msgid ""
+"This is the distance from one line to another. This value is also used for "
+"scaling of other items."
+msgstr ""
+"Dies ist der Abstand zwischen zwei Lebenslinien. Dieser Wert wird häufig zur "
+"Skalierung anderer Objekte verwendet."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:25
+msgid "Show birth label"
+msgstr "Geburts-Textfeld anzeigen"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:26
+msgid "Activate the birth label."
+msgstr ""
+"Dieses Flag aktiviert die Darstellung eines kurzen Infotextes zur Geburt."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:27
+msgid "Birth label along path"
+msgstr "Geburts-Textfeld auf der Linie"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:28
+msgid "The birth label is aligned to the individual line."
+msgstr "Das Geburts-Textfeld kann entlang der Linie dargestellt werden."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:29
+#: LifeLineChartView/_dummy_translation_string_po.py:32
+#: LifeLineChartView/_dummy_translation_string_po.py:35
+#: LifeLineChartView/_dummy_translation_string_po.py:38
+#: LifeLineChartView/_dummy_translation_string_po.py:41
+#: LifeLineChartView/_dummy_translation_string_po.py:47
+#: LifeLineChartView/_dummy_translation_string_po.py:52
+#: LifeLineChartView/_dummy_translation_string_po.py:55
+#: LifeLineChartView/_dummy_translation_string_po.py:58
+#: LifeLineChartView/_dummy_translation_string_po.py:61
+#: LifeLineChartView/_dummy_translation_string_po.py:67
+#: LifeLineChartView/_dummy_translation_string_po.py:74
+#: LifeLineChartView/_dummy_translation_string_po.py:77
+#: LifeLineChartView/lifelinechartview.py:839
+msgid "Label Configuration"
+msgstr "Textfelder"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:30
+msgid "Birth label rotation"
+msgstr "Geburts-Textfeld drehen"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:31
+msgid "The birth label is written in a text frame rotated by this value."
+msgstr ""
+"Das Geburts-Textfeld wird um diesen Wikel gegen den Uhrzeigersinn gedreht."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:33
+msgid "Horizontal offset of birth label"
+msgstr "Horizontale Verschiebung des Geburts-Textfeldes"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:34
+msgid ""
+"The birth label is moved horizontally by this value, which is given "
+"relatively to the font size."
+msgstr ""
+"Das Geburts-Textfeld wird um diesen Wert horizontal verschoben. Die die "
+"Verschiebung wird relativ zur Schriftgröße angegeben."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:36
+msgid "Vertical offset of birth label"
+msgstr "Vertikale Verschiebung des Geburts-Textfeldes"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:37
+msgid ""
+"The birth label is moved vertically by this value, which is given relatively "
+"to the font size."
+msgstr ""
+"Das Geburts-Textfeld wird um diesen Wert vertikal verschoben. Die die "
+"Verschiebung wird relativ zur Schriftgröße angegeben."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:39
+msgid "Wrap words in birth label"
+msgstr "Zeilenumbruch im Geburts-Textfeld"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:40
+msgid "The birth label content is wrapped where possible."
+msgstr "Wo es möglich ist, wird der Text im Geburts-Textfeld umgebrochen."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:42
+msgid "Birth label anchor"
+msgstr "Textausrichtung des Geburts-Textfeld"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:43
+msgid "Text alignment of the birth label."
+msgstr ""
+"Der Text im Geburts-Textfeld kann unterschiedliche ausgerichtet werden."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:44
+#: LifeLineChartView/_dummy_translation_string_po.py:64
+msgid "Left"
+msgstr "Links"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:45
+#: LifeLineChartView/_dummy_translation_string_po.py:65
+msgid "Center"
+msgstr "Zentriert"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:46
+#: LifeLineChartView/_dummy_translation_string_po.py:66
+msgid "Right"
+msgstr "Rechts"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:48
+msgid "Show death label"
+msgstr "Sterbe-Textfeld anzeigen"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:49
+msgid "Activate the death label."
+msgstr "Dieses Flag aktiviert die Darstellung eines kurzen Infotextes zum Tod."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:50
+msgid "Death label rotation"
+msgstr "Sterbe-Textfeld drehen"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:51
+msgid "The death label is written in a text frame rotated by this value."
+msgstr ""
+"Das Sterbe-Textfeld wird um diesen Wikel gegen den Uhrzeigersinn gedreht."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:53
+msgid "Horizontal offset of death label"
+msgstr "Horizontale Verschiebung des Sterbe-Textfeldes"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:54
+msgid ""
+"The death label is moved horizontally by this value, which is given "
+"relatively to the font size."
+msgstr ""
+"Das Sterbe-Textfeld wird um diesen Wert horizontal verschoben. Die die "
+"Verschiebung wird relativ zur Schriftgröße angegeben."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:56
+msgid "Vertical offset of death label"
+msgstr "Vertikale Verschiebung des Sterbe-Textfeldes"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:57
+msgid ""
+"The death label is moved vertically by this value, which is given relatively "
+"to the font size."
+msgstr ""
+"Das Sterbe-Textfeld wird um diesen Wert vertikal verschoben. Die die "
+"Verschiebung wird relativ zur Schriftgröße angegeben."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:59
+msgid "Wrap words in death label"
+msgstr "Zeilenumbruch im Sterbe-Textfeld"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:60
+msgid "The death label content is wrapped where possible."
+msgstr "Wo es möglich ist, wird der Text im Sterbe-Textfeld umgebrochen."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:62
+msgid "Death label anchor"
+msgstr "Textausrichtung des Sterbe-Textfeld"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:63
+msgid "Text alignment of the death label."
+msgstr "Der Text im Sterbe-Textfeld kann unterschiedliche ausgerichtet werden."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:68
+msgid "Show marriage label"
+msgstr "Ehe-Textfeld anzeigen"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:69
+msgid "Activate the marriage label."
+msgstr "Dieses Flag aktiviert die Darstellung eines kurzen Infotextes zur Ehe."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:70
+msgid "Fade individual color"
+msgstr "Farbgradient der Lebenslinie"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:71
+msgid "The color of the individuals is faded to black with increasing age."
+msgstr "Die Farbe der Lebenslinien verblasst mit zunehmendem Alter."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:72
+msgid "Font name"
+msgstr "Schriftart"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:73
+msgid "Name of the font family used for labels."
+msgstr "Der Name der Schriftfamilie, die für Textfelder verwendet wird."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:75
+msgid "Relative font size"
+msgstr "Relative Schriftgröße"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:76
+msgid "The font size is given relatively to the line thickness."
+msgstr "Die Schriftgröße ist relativ zu der Breite der Lebenslinien angegeben."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:78
+msgid "Family shape"
+msgstr "Familienform"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:79
+msgid "The shape of the families can be varied."
+msgstr "Die Form der Familien kann variiert werden."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:80
+msgid "Rectangular"
+msgstr "Rechteckig"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:81
+msgid "Softer"
+msgstr "Weicher"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:82
+msgid "Upper year minimum margin"
+msgstr "Mindestabstand des oberen Randes"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:83
+msgid ""
+"The upper bound of the chart is extended by at least this number of years."
+msgstr ""
+"Die obere Grenze des Diagramms wird mindestens um diese Anzahl an Jahre "
+"vergrößert."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:84
+msgid "Lower year minimum margin"
+msgstr "Mindestabstand des unteren Randes"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:85
+msgid ""
+"The lower bound of the chart is extended by at least this number of years."
+msgstr ""
+"Die untere Grenze des Diagramms wird mindestens um diese Anzahl an Jahre "
+"vergrößert."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:86
+msgid "Visualize connections"
+msgstr "Verbindungen anzeigen"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:87
+msgid ""
+"Visualize the connections between families and individuals. This is for "
+"debugging purposes."
+msgstr ""
+"Visualisieren Sie die Verbindungen zwischen Familien und Einzelpersonen. "
+"Dies ist für Debugging-Zwecke."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:88
+msgid "Visualize ambiguous placement"
+msgstr "Mehrdeutig Platzierung anzeigen"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:89
+msgid "Visualize automatically detected errors in the placement algorithm."
+msgstr ""
+"Visualisieren Sie automatisch erkannte Fehler des Platzierungs-Algorithmus."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:90
+msgid "Coloring of individuals"
+msgstr "Einfärben von Individuen"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:91
+msgid "There are different ways to determine the color of an individual."
+msgstr ""
+"Es gibt verschiedene Möglichkeiten die Farbe eines Individuums zu bestimmen."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:92
+msgid "Unique"
+msgstr "Einzigartig"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:93
+msgid "Based on surname"
+msgstr "Basierend auf dem Nachnamen"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:94
+msgid "Flip vertically"
+msgstr "Vertikal spiegeln"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:95
+msgid "If active, the chart is flipped vertically."
+msgstr "Falls aktiv, wird das Diagramm vertikal gespiegelt."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:96
+msgid "Line weighting"
+msgstr "Liniengewichtung"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:97
+msgid "The line width can be configured."
+msgstr "Die Linienbreite kann konfiguriert werden."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:98
+msgid "none"
+msgstr "kein"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:99
+msgid "Show pedigree collapse"
+msgstr "Ahnenschwund darstellen"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:100
+msgid ""
+"Due to pedigree collapse one individual might appear several times in a "
+"simple ancestor chart. If this is active, then every individual only appears "
+"once."
+msgstr ""
+"Aufgrund des Ahnenschwundes könnte eine Person mehrmals in einem einfachen "
+"Vorfahren Diagramm gezeigt werden. Wenn dieses Flag aktiv ist, dann "
+"erscheint jede Person nur einmal."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:101
+msgid "Maximum number of generations"
+msgstr "Maximale Anzahl der Generationen"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:102
+msgid ""
+"if this number of generations has been reached, the algorithm doesn't go any "
+"deeper"
+msgstr ""
+"Wenn diese Anzahl von Generationen erreicht worden ist, wird der Algorithmus "
+"nicht tiefer gehen."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:103
+msgid "Fathers have the same color"
+msgstr "Vätern dieselbe Farbe zuordnen"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:104
+msgid ""
+"Starting from the root person, each father of an added individual has the "
+"same color as that individual."
+msgstr ""
+"Ausgehend von der Hauptperson wird rekursiv Vätern dieselbe Farbe zugeordnet."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:105
+msgid "Maximum number of compression steps"
+msgstr "Maximale Anzahl an Komprimierungsschritten"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:106
+msgid "Debugging of the compression algorithm. Abort after x steps."
+msgstr "Debuggen des Komprimierungsalgorithmus. Abbruch nach x Schritten."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:107
+msgid "Maximum number of flipping steps"
+msgstr "Maximale Anzahl an Spiegelungs Schritten"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:108
+msgid "Debugging of the flipping algorithm. Abort after x steps."
+msgstr "Debuggen des Flipping-Algorithmus. Abbruch nach x Schritten."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:109
+msgid "Compress the chart horizontally"
+msgstr "Horizontal komprimieren"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:110
+msgid ""
+"By default every individual has a unique horizontal slot. This can be "
+"inefficient with many generations. This algorithm lets several people share "
+"a horizontal slot, if they do not overlap."
+msgstr ""
+"Normalerweise werden Personen auf einem Raster verteilt. Die horizontale "
+"Position kann nur einer Person zugewiesen sein kann. Bei größeren Diagrammen "
+"führt dies dazu, dass die Diagramme unübersichtlich werden. Dieser "
+"Algorithmus erlaubt es, dass Personen übereinander erscheinen können. Dies "
+"führt jedoch nicht zu Überlappungen."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:111
+msgid "Flip families to reduce horizontal connections"
+msgstr "Spiegeln von Familien zur Verkürzung von Querverbindungen"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:112
+msgid ""
+"Switch the position of mother and father in a family, to reduce the overall "
+"horizontal cross connections in larger graphs. This is happens if one person "
+"is shown in more than one family or it is caused by pedigree collapse."
+msgstr ""
+"In jeder Familie können Mutter und Vater können die Position tauschen. Dies "
+"führt ggf. zu einer Verkürzung der Querverbindungen in großen Diagrammen. "
+"Die Querverbindungen werden durch den Ahnenschwund und Wiederheirat "
+"verursacht."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:113
+msgid "Highlight descandants"
+msgstr "Nachkommen hervorheben"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:114
+msgid "Highlight the persons which are descendants."
+msgstr "Nachkommen werden im Gegensatz zu Angeheirateten hervorgehoben."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:115
+msgid "Number of descendants"
+msgstr "Anzahl der Nachkommen"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:116
+msgid "Very soft"
+msgstr "Sehr weich"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:117
+msgid "General chart layout"
+msgstr "Allgemeines Diagramm-Layout"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:118
+msgid "There are different layouts for descendant charts."
+msgstr "Es gibt verschiedene Layouts für Nachkommen Charts."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:119
+msgid "Parents enclose children"
+msgstr "Eltern umschließen Kinder"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:120
+msgid "Cactus"
+msgstr "Kaktus"
+
+#: LifeLineChartView/lifelinechart.py:463
 msgid "calculated"
 msgstr "berechnet"
 
-#: LifeLineChartView//lifelinechart.py:453
-#: LifeLineChartView//lifelinechart.py:454
-#: LifeLineChartView//lifelinechart.py:455
-#: LifeLineChartView//lifelinechart.py:456
+#: LifeLineChartView/lifelinechart.py:464
+#: LifeLineChartView/lifelinechart.py:465
+#: LifeLineChartView/lifelinechart.py:466
+#: LifeLineChartView/lifelinechart.py:467
 msgid "estimated"
 msgstr "geschätzt"
 
-#: LifeLineChartView//lifelinechart.py:458
+#: LifeLineChartView/lifelinechart.py:469
 msgid "about"
 msgstr "um"
 
-#: LifeLineChartView//lifelinechart.py:459
+#: LifeLineChartView/lifelinechart.py:470
 msgid "before"
 msgstr "vor"
 
-#: LifeLineChartView//lifelinechart.py:460
+#: LifeLineChartView/lifelinechart.py:471
 msgid "after"
 msgstr "nach"
 
-#: LifeLineChartView//lifelinechart.py:1063
+#: LifeLineChartView/lifelinechart.py:1072
+#, python-brace-format
 msgid "cursor position at {date}"
 msgstr "Cursorposition bei {date}"
 
-#: LifeLineChartView//lifelinechart.py:2226
+#: LifeLineChartView/lifelinechart.py:2234
 msgid "Hide person"
 msgstr "Person ausblenden"
 
-#: LifeLineChartView//lifelinechart.py:2232
+#: LifeLineChartView/lifelinechart.py:2240
 msgid "Show person"
 msgstr "Person einblenden"
 
-#: LifeLineChartView//lifelinechart.py:2257
+#: LifeLineChartView/lifelinechart.py:2265
 msgid "Show siblings"
 msgstr "Geschwister einblenden"
 
-#: LifeLineChartView//lifelinechart.py:2262
+#: LifeLineChartView/lifelinechart.py:2270
 msgid "Hide siblings"
 msgstr "Geschwister ausblenden"
 
-#: LifeLineChartView//lifelinechart.py:2287
+#: LifeLineChartView/lifelinechart.py:2295
 msgid "Show ancestors above "
 msgstr "Platziere Vorfahren über "
 
-#: LifeLineChartView//lifelinechart.py:2314
+#: LifeLineChartView/lifelinechart.py:2322
 msgid "_Edit"
 msgstr "_Bearbeiten"
 
-#: LifeLineChartView//lifelinechart.py:2322
+#: LifeLineChartView/lifelinechart.py:2330
 msgid "Edit family"
 msgstr "Familie bearbeiten"
 
-#: LifeLineChartView//lifelinechart.py:2338
+#: LifeLineChartView/lifelinechart.py:2346
 msgid "Reorder families"
 msgstr "Familien wieder ordnen"
 
-#: LifeLineChartView//lifelinechart.py:2344
+#: LifeLineChartView/lifelinechart.py:2352
 msgid "_Copy"
 msgstr "_Kopieren"
 
-#: LifeLineChartView//lifelinechart.py:2354
+#: LifeLineChartView/lifelinechart.py:2362
 msgid "Spouses"
 msgstr "(Ehe-)Partner"
 
-#: LifeLineChartView//lifelinechart.py:2388
+#: LifeLineChartView/lifelinechart.py:2396
 msgid "Siblings"
 msgstr "Geschwister"
 
-#: LifeLineChartView//lifelinechart.py:2454
+#: LifeLineChartView/lifelinechart.py:2462
 msgid "Children"
 msgstr "Kinder"
 
-#: LifeLineChartView//lifelinechart.py:2491
+#: LifeLineChartView/lifelinechart.py:2499
 msgid "Parents"
 msgstr "Eltern"
 
-#: LifeLineChartView//lifelinechart.py:2525
-#: LifeLineChartView//lifelinechart.py:2567
+#: LifeLineChartView/lifelinechart.py:2533
+#: LifeLineChartView/lifelinechart.py:2575
 msgid "_Add"
 msgstr "_Hinzufügen"
 
-#: LifeLineChartView//lifelinechart.py:2534
+#: LifeLineChartView/lifelinechart.py:2542
 msgid "Related"
 msgstr "Verknüpft"
 
-#: LifeLineChartView//lifelinechart.py:2574
+#: LifeLineChartView/lifelinechart.py:2582
 msgid "Add child to family"
 msgstr "Füge ein Kind zur Familie hinzu"
 
-#: LifeLineChartView//lifelinechart.py:2582
+#: LifeLineChartView/lifelinechart.py:2590
 msgid "Add partner to person"
 msgstr "Partner zu einer Person hinzufügen"
 
-#: LifeLineChartView//lifelinechart.py:2589
+#: LifeLineChartView/lifelinechart.py:2597
 msgid "Add a person"
 msgstr "Eine Person hinzufügen"
 
-#: LifeLineChartView//lifelinechart.py:2679
+#: LifeLineChartView/lifelinechart.py:2687
 msgid "Add Child to Family"
 msgstr "Kind zur Familie hinzufügen"
 
-#: LifeLineChartView//lifelinechartview.gpr.py:147
+#: LifeLineChartView/lifelinechartview.gpr.py:145
 #, python-brace-format
 msgid ""
 "Failed to load the required module {module_name} version {module_version}."
@@ -137,143 +610,139 @@ msgstr ""
 "Das benötigte Modul {module_name} in Version {module_version} konnte nicht "
 "geladen werden."
 
-#: LifeLineChartView//lifelinechartview.gpr.py:152
+#: LifeLineChartView/lifelinechartview.gpr.py:150
 msgid " Plugin"
 msgstr " Zusatzmodul"
 
-#: LifeLineChartView//lifelinechartview.gpr.py:154
+#: LifeLineChartView/lifelinechartview.gpr.py:152
 msgid "Don't ask me again"
 msgstr "Nicht nochmal fragen"
 
-#: LifeLineChartView//lifelinechartview.gpr.py:155
+#: LifeLineChartView/lifelinechartview.gpr.py:153
 msgid "Download module"
 msgstr "Modul herunterladen"
 
-#: LifeLineChartView//lifelinechartview.gpr.py:163
+#: LifeLineChartView/lifelinechartview.gpr.py:161
 msgid "The user chose to deactivate further warnings."
 msgstr "Der Nutzer hat weitere Warnungen deaktiviert."
 
-#: LifeLineChartView//lifelinechartview.gpr.py:167
+#: LifeLineChartView/lifelinechartview.gpr.py:165
 msgid "The user chose to ignore the warning once."
 msgstr "Der Nutzer hat die Warnung ignoriert."
 
-#: LifeLineChartView//lifelinechartview.gpr.py:170
+#: LifeLineChartView/lifelinechartview.gpr.py:168
 msgid "The user chose to install the module."
 msgstr "Der Nutzer hat ein fehlendes Modul heruntergeladen."
 
-#: LifeLineChartView//lifelinechartview.gpr.py:200
+#: LifeLineChartView/lifelinechartview.gpr.py:198
 #, python-format
 msgid "Unable to open '%s' with curl"
 msgstr "Kann '%s' mit curl nicht öffnen"
 
-#: LifeLineChartView//lifelinechartview.gpr.py:211
-#: LifeLineChartView//lifelinechartview.gpr.py:218
+#: LifeLineChartView/lifelinechartview.gpr.py:209
+#: LifeLineChartView/lifelinechartview.gpr.py:216
 #, python-format
 msgid "Unable to open '%s'"
 msgstr "Kann '%s' nicht öffnen"
 
-#: LifeLineChartView//lifelinechartview.gpr.py:227
+#: LifeLineChartView/lifelinechartview.gpr.py:225
 #, python-format
 msgid "Error in reading '%s'"
 msgstr "Fehler beim Lesen von \"%s\""
 
-#: LifeLineChartView//lifelinechartview.gpr.py:242
+#: LifeLineChartView/lifelinechartview.gpr.py:240
 #, python-format
 msgid "Error: cannot open '%s'"
 msgstr "FEHLER: Kann '%s' nicht öffnen"
 
-#: LifeLineChartView//lifelinechartview.gpr.py:246
+#: LifeLineChartView/lifelinechartview.gpr.py:244
 #, python-format
 msgid "Error: unknown file type: '%s'"
 msgstr "FEHLER: unbekannter Dateityp: '%s'."
 
-#: LifeLineChartView//lifelinechartview.gpr.py:306
+#: LifeLineChartView/lifelinechartview.gpr.py:304
 msgid "Life Line Ancestor Chart"
 msgstr "Lebenslinien Vorfahren Diagramm"
 
-#: LifeLineChartView//lifelinechartview.gpr.py:307
-#: LifeLineChartView//lifelinechartview.gpr.py:321
+#: LifeLineChartView/lifelinechartview.gpr.py:305
+#: LifeLineChartView/lifelinechartview.gpr.py:319
 msgid "Charts"
 msgstr "Schaubilder"
 
-#: LifeLineChartView//lifelinechartview.gpr.py:308
-#: LifeLineChartView//lifelinechartview.gpr.py:322
+#: LifeLineChartView/lifelinechartview.gpr.py:306
+#: LifeLineChartView/lifelinechartview.gpr.py:320
 msgid "Persons and their relation in a time based chart"
 msgstr "Personen und ihre Verbindungen in einem Zeitbasierten Diagramm"
 
-#: LifeLineChartView//lifelinechartview.gpr.py:320
+#: LifeLineChartView/lifelinechartview.gpr.py:318
 msgid "Life Line Descendant Chart"
 msgstr "Lebenslinien Nachfahren Diagramm"
 
-#: LifeLineChartView//lifelinechartview.py:381
-#: LifeLineChartView//lifelinechartview.py:841
+#: LifeLineChartView/lifelinechartview.py:378
+#: LifeLineChartView/lifelinechartview.py:838
 msgid "General Layout"
 msgstr "Allgemein"
 
-#: LifeLineChartView//lifelinechartview.py:394
+#: LifeLineChartView/lifelinechartview.py:391
 msgid "Life Line Chart"
 msgstr "Lebenslinien Diagramm"
 
-#: LifeLineChartView//lifelinechartview.py:489
+#: LifeLineChartView/lifelinechartview.py:486
 msgid "Zoom in"
 msgstr "Hineinzoomen"
 
-#: LifeLineChartView//lifelinechartview.py:490
-#: LifeLineChartView//lifelinechartview.py:491
-#: LifeLineChartView//lifelinechartview.py:500
-#: LifeLineChartView//lifelinechartview.py:501
+#: LifeLineChartView/lifelinechartview.py:487
+#: LifeLineChartView/lifelinechartview.py:488
+#: LifeLineChartView/lifelinechartview.py:497
+#: LifeLineChartView/lifelinechartview.py:498
 msgid "Ctrl"
 msgstr "Strg"
 
-#: LifeLineChartView//lifelinechartview.py:491
-#: LifeLineChartView//lifelinechartview.py:501
+#: LifeLineChartView/lifelinechartview.py:488
+#: LifeLineChartView/lifelinechartview.py:498
 msgid "Mouse wheel"
 msgstr "Mausrad"
 
-#: LifeLineChartView//lifelinechartview.py:499
+#: LifeLineChartView/lifelinechartview.py:496
 msgid "Zoom out"
 msgstr "Herauszoomen"
 
-#: LifeLineChartView//lifelinechartview.py:508
+#: LifeLineChartView/lifelinechartview.py:505
 msgid "Zoom to original"
 msgstr "Auf original Größe zoomen"
 
-#: LifeLineChartView//lifelinechartview.py:515
+#: LifeLineChartView/lifelinechartview.py:512
 msgid "Zoom to best fit"
 msgstr "Zoom auf die beste Größte"
 
-#: LifeLineChartView//lifelinechartview.py:522
+#: LifeLineChartView/lifelinechartview.py:519
 msgid "Rebuild data cache"
 msgstr "Daten aktualisieren"
 
-#: LifeLineChartView//lifelinechartview.py:529
+#: LifeLineChartView/lifelinechartview.py:526
 msgid "Revert the placement and person selection"
 msgstr "Änderungen an der Personenauswahl und Platzierung zurücksetzen"
 
-#: LifeLineChartView//lifelinechartview.py:545
+#: LifeLineChartView/lifelinechartview.py:542
 msgid "Open Life Line Chart help"
 msgstr "Life Line Chart Hilfe öffnen"
 
-#: LifeLineChartView//lifelinechartview.py:622
+#: LifeLineChartView/lifelinechartview.py:619
 msgid "Organize Bookmarks"
 msgstr "Lesezeichen organisieren"
 
-#: LifeLineChartView//lifelinechartview.py:789
+#: LifeLineChartView/lifelinechartview.py:786
 msgid "Export View as SVG"
 msgstr "Ansicht als SVG exportieren"
 
-#: LifeLineChartView//lifelinechartview.py:792
+#: LifeLineChartView/lifelinechartview.py:789
 msgid "_Cancel"
 msgstr "_Abbrechen"
 
-#: LifeLineChartView//lifelinechartview.py:793
+#: LifeLineChartView/lifelinechartview.py:790
 msgid "_Save"
 msgstr "_Speichern"
 
-#: LifeLineChartView//lifelinechartview.py:842
-msgid "Label Configuration"
-msgstr "Textfelder"
-
-#: LifeLineChartView//lifelinechartview.py:904
+#: LifeLineChartView/lifelinechartview.py:901
 msgid "Reset all settings"
 msgstr "Alle Einstellungen zurücksetzen"
