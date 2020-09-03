@@ -41,7 +41,7 @@ msgid "after"
 msgstr ""
 
 #: LifeLineChartView//lifelinechart.py:1063
-msgid "cursor position at "
+msgid "cursor position at {date}"
 msgstr ""
 
 #: LifeLineChartView//lifelinechart.py:2226
