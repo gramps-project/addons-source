@@ -39,8 +39,15 @@ from gramps.gen.display.name import displayer as _nd
 from gramps.gui.managedwindow import ManagedWindow
 from gramps.gen.db import DbTxn
 from gramps.gen.lib import PersonRef
+# -------------------------------------------------------------------------
+# Internationalization
+# -------------------------------------------------------------------------
 from gramps.gen.const import GRAMPS_LOCALE as glocale
-_ = glocale.translation.sgettext
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.gettext
 
 #-------------------------------------------------------------------------
 #
