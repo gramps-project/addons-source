@@ -53,9 +53,7 @@ msgstr "Foto grootte"
 msgid ""
 "Photos which are shown are fitted into a square of this extent. The size is "
 "given relative to the line thickness."
-msgstr ""
-"De getoonde foto's zijn in een vierkant van deze omvang ingepast. De maat "
-"wordt gegeven in verhouding tot de lijndikte."
+msgstr "De getoonde foto's zijn in een vierkant van deze omvang ingepast. De maat wordt gegeven in verhouding tot de lijndikte."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:19
 msgid "Total height"
@@ -73,9 +71,7 @@ msgstr "Relatieve lijndikte"
 msgid ""
 "The line thickness of an individual is given relatively to the horizontal "
 "step size."
-msgstr ""
-"De lijndikte van een individu wordt gegeven in verhouding tot de horizontale "
-"stapgrootte."
+msgstr "De lijndikte van een individu wordt gegeven in verhouding tot de horizontale stapgrootte."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:23
 msgid "Horizontal step size"
@@ -85,9 +81,7 @@ msgstr "Horizontale stapgrootte"
 msgid ""
 "This is the distance from one line to another. This value is also used for "
 "scaling of other items."
-msgstr ""
-"Dit is de afstand van de ene lijn naar de andere. Deze waarde wordt ook "
-"gebruikt voor het schalen van andere items."
+msgstr "Dit is de afstand van de ene lijn naar de andere. Deze waarde wordt ook gebruikt voor het schalen van andere items."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:25
 msgid "Show birth label"
@@ -128,9 +122,7 @@ msgstr "Geboortelabel rotatie"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:31
 msgid "The birth label is written in a text frame rotated by this value."
-msgstr ""
-"Het geboortelabel is geschreven in een tekstkader dat met deze waarde is "
-"geroteerd."
+msgstr "Het geboortelabel is geschreven in een tekstkader dat met deze waarde is geroteerd."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:33
 msgid "Horizontal offset of birth label"
@@ -140,9 +132,7 @@ msgstr "Horizontale offset van geboortelabel"
 msgid ""
 "The birth label is moved horizontally by this value, which is given "
 "relatively to the font size."
-msgstr ""
-"Het geboortelabel wordt horizontaal verplaatst met deze waarde, die wordt "
-"gegeven in verhouding tot de lettergrootte."
+msgstr "Het geboortelabel wordt horizontaal verplaatst met deze waarde, die wordt gegeven in verhouding tot de lettergrootte."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:36
 msgid "Vertical offset of birth label"
@@ -152,9 +142,7 @@ msgstr "Verticale offset van geboortelabel"
 msgid ""
 "The birth label is moved vertically by this value, which is given relatively "
 "to the font size."
-msgstr ""
-"Het geboortelabel wordt verticaal verplaatst met deze waarde, die wordt "
-"gegeven in verhouding tot de lettergrootte."
+msgstr "Het geboortelabel wordt verticaal verplaatst met deze waarde, die wordt gegeven in verhouding tot de lettergrootte."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:39
 msgid "Wrap words in birth label"
@@ -201,9 +189,7 @@ msgstr "Rotatie overlijdenslabel"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:51
 msgid "The death label is written in a text frame rotated by this value."
-msgstr ""
-"Het overlijdenslabel wordt geschreven in een tekstkader dat met deze waarde "
-"wordt geroteerd."
+msgstr "Het overlijdenslabel wordt geschreven in een tekstkader dat met deze waarde wordt geroteerd."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:53
 msgid "Horizontal offset of death label"
@@ -213,9 +199,7 @@ msgstr "Horizontale offset overlijdenslabel"
 msgid ""
 "The death label is moved horizontally by this value, which is given "
 "relatively to the font size."
-msgstr ""
-"Het overlijdenslabel wordt horizontaal verplaatst met deze waarde, die wordt "
-"gegeven in verhouding tot de lettergrootte."
+msgstr "Het overlijdenslabel wordt horizontaal verplaatst met deze waarde, die wordt gegeven in verhouding tot de lettergrootte."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:56
 msgid "Vertical offset of death label"
@@ -225,9 +209,7 @@ msgstr "Verticale offset overlijdenslabel"
 msgid ""
 "The death label is moved vertically by this value, which is given relatively "
 "to the font size."
-msgstr ""
-"Het overlijdenslabel wordt verticaal verplaatst met deze waarde, die wordt "
-"gegeven in verhouding tot de lettergrootte."
+msgstr "Het overlijdenslabel wordt verticaal verplaatst met deze waarde, die wordt gegeven in verhouding tot de lettergrootte."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:59
 msgid "Wrap words in death label"
@@ -300,8 +282,7 @@ msgstr "Minimum marge boven jaar"
 #: LifeLineChartView/_dummy_translation_string_po.py:83
 msgid ""
 "The upper bound of the chart is extended by at least this number of years."
-msgstr ""
-"De bovengrens van het diagram wordt met minimaal dit aantal jaren verlengd."
+msgstr "De bovengrens van het diagram wordt met minimaal dit aantal jaren verlengd."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:84
 msgid "Lower year minimum margin"
@@ -310,8 +291,7 @@ msgstr "Minimum marge voor een lager jaar"
 #: LifeLineChartView/_dummy_translation_string_po.py:85
 msgid ""
 "The lower bound of the chart is extended by at least this number of years."
-msgstr ""
-"De ondergrens van het diagram wordt met minimaal dit aantal jaren verlengd."
+msgstr "De ondergrens van het diagram wordt met minimaal dit aantal jaren verlengd."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:86
 msgid "Visualize connections"
@@ -321,9 +301,7 @@ msgstr "Visualiseer verbindingen"
 msgid ""
 "Visualize the connections between families and individuals. This is for "
 "debugging purposes."
-msgstr ""
-"Visualiseer de verbindingen tussen families en individuen. Dit is voor "
-"foutopsporingsdoeleinden."
+msgstr "Visualiseer de verbindingen tussen families en individuen. Dit is voor foutopsporingsdoeleinden."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:88
 msgid "Visualize ambiguous placement"
@@ -331,8 +309,7 @@ msgstr "Visualiseer dubbelzinnige plaatsing"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:89
 msgid "Visualize automatically detected errors in the placement algorithm."
-msgstr ""
-"Visualiseer automatisch gedetecteerde fouten in het plaatsingsalgoritme."
+msgstr "Visualiseer automatisch gedetecteerde fouten in het plaatsingsalgoritme."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:90
 msgid "Coloring of individuals"
@@ -380,10 +357,7 @@ msgid ""
 "Due to pedigree collapse one individual might appear several times in a "
 "simple ancestor chart. If this is active, then every individual only appears "
 "once."
-msgstr ""
-"Door kwartierherhaling kan een persoon meerdere keren voorkomen in een "
-"eenvoudige vooroudergrafiek. Als dit actief is, komt elk individu maar één "
-"keer voor."
+msgstr "Door kwartierherhaling kan een persoon meerdere keren voorkomen in een eenvoudige vooroudergrafiek. Als dit actief is, komt elk individu maar Ã©Ã©n keer voor."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:101
 msgid "Maximum number of generations"
@@ -403,9 +377,7 @@ msgstr "Vaders hebben dezelfde kleur"
 msgid ""
 "Starting from the root person, each father of an added individual has the "
 "same color as that individual."
-msgstr ""
-"Beginnend bij de stampersoon heeft elke vader van een toegevoegd individu "
-"dezelfde kleur als dat individu."
+msgstr "Beginnend bij de stampersoon heeft elke vader van een toegevoegd individu dezelfde kleur als dat individu."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:105
 msgid "Maximum number of compression steps"
@@ -432,10 +404,7 @@ msgid ""
 "By default every individual has a unique horizontal slot. This can be "
 "inefficient with many generations. This algorithm lets several people share "
 "a horizontal slot, if they do not overlap."
-msgstr ""
-"Standaard heeft ieder individu een uniek horizontaal slot. Dit kan met vele "
-"generaties inefficiënt zijn. Met dit algoritme kunnen meerdere mensen een "
-"horizontale sleuf delen, als ze elkaar niet overlappen."
+msgstr "Standaard heeft ieder individu een uniek horizontaal slot. Dit kan met vele generaties inefficiÃ«nt zijn. Met dit algoritme kunnen meerdere mensen een horizontale sleuf delen, als ze elkaar niet overlappen."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:111
 msgid "Flip families to reduce horizontal connections"
@@ -446,11 +415,7 @@ msgid ""
 "Switch the position of mother and father in a family, to reduce the overall "
 "horizontal cross connections in larger graphs. This is happens if one person "
 "is shown in more than one family or it is caused by pedigree collapse."
-msgstr ""
-"Verander de positie van moeder en vader in een gezin om de algehele "
-"horizontale dwarsverbanden in grotere grafieken te verminderen. Dit is het "
-"geval als één persoon in meer dan één gezin voorkomt of het wordt "
-"veroorzaakt door kwartierherhaling."
+msgstr "Verander de positie van moeder en vader in een gezin om de algehele horizontale dwarsverbanden in grotere grafieken te verminderen. Dit is het geval als Ã©Ã©n persoon in meer dan Ã©Ã©n gezin voorkomt of het wordt veroorzaakt door kwartierherhaling."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:113
 msgid "Highlight descandants"
@@ -733,3 +698,4 @@ msgstr "_Opslaan"
 #: LifeLineChartView/lifelinechartview.py:901
 msgid "Reset all settings"
 msgstr "Reset alle instellingen"
+

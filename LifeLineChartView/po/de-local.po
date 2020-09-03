@@ -61,9 +61,7 @@ msgstr "Größe der Fotos"
 msgid ""
 "Photos which are shown are fitted into a square of this extent. The size is "
 "given relative to the line thickness."
-msgstr ""
-"Die Bilder werden in eine Quadrat dieser Kantenlänge eingepasst. Die Länge "
-"wird relativ zur Linienbreite angegeben."
+msgstr "Die Bilder werden in eine Quadrat dieser Kantenlänge eingepasst. Die Länge wird relativ zur Linienbreite angegeben."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:19
 msgid "Total height"
@@ -81,9 +79,7 @@ msgstr "Relative Linienbreite"
 msgid ""
 "The line thickness of an individual is given relatively to the horizontal "
 "step size."
-msgstr ""
-"Die Breite eine Lebenslinie wird relativ zur horizontalen Schrittweite "
-"angegeben."
+msgstr "Die Breite eine Lebenslinie wird relativ zur horizontalen Schrittweite angegeben."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:23
 msgid "Horizontal step size"
@@ -93,9 +89,7 @@ msgstr "Horizontale Schrittweite"
 msgid ""
 "This is the distance from one line to another. This value is also used for "
 "scaling of other items."
-msgstr ""
-"Dies ist der Abstand zwischen zwei Lebenslinien. Dieser Wert wird häufig zur "
-"Skalierung anderer Objekte verwendet."
+msgstr "Dies ist der Abstand zwischen zwei Lebenslinien. Dieser Wert wird häufig zur Skalierung anderer Objekte verwendet."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:25
 msgid "Show birth label"
@@ -103,8 +97,7 @@ msgstr "Geburts-Textfeld anzeigen"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:26
 msgid "Activate the birth label."
-msgstr ""
-"Dieses Flag aktiviert die Darstellung eines kurzen Infotextes zur Geburt."
+msgstr "Dieses Flag aktiviert die Darstellung eines kurzen Infotextes zur Geburt."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:27
 msgid "Birth label along path"
@@ -129,7 +122,7 @@ msgstr "Das Geburts-Textfeld kann entlang der Linie dargestellt werden."
 #: LifeLineChartView/_dummy_translation_string_po.py:77
 #: LifeLineChartView/lifelinechartview.py:839
 msgid "Label Configuration"
-msgstr "Textfelder"
+msgstr "Label Configuration"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:30
 msgid "Birth label rotation"
@@ -137,8 +130,7 @@ msgstr "Geburts-Textfeld drehen"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:31
 msgid "The birth label is written in a text frame rotated by this value."
-msgstr ""
-"Das Geburts-Textfeld wird um diesen Wikel gegen den Uhrzeigersinn gedreht."
+msgstr "Das Geburts-Textfeld wird um diesen Wikel gegen den Uhrzeigersinn gedreht."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:33
 msgid "Horizontal offset of birth label"
@@ -148,9 +140,7 @@ msgstr "Horizontale Verschiebung des Geburts-Textfeldes"
 msgid ""
 "The birth label is moved horizontally by this value, which is given "
 "relatively to the font size."
-msgstr ""
-"Das Geburts-Textfeld wird um diesen Wert horizontal verschoben. Die die "
-"Verschiebung wird relativ zur Schriftgröße angegeben."
+msgstr "Das Geburts-Textfeld wird um diesen Wert horizontal verschoben. Die die Verschiebung wird relativ zur Schriftgröße angegeben."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:36
 msgid "Vertical offset of birth label"
@@ -160,9 +150,7 @@ msgstr "Vertikale Verschiebung des Geburts-Textfeldes"
 msgid ""
 "The birth label is moved vertically by this value, which is given relatively "
 "to the font size."
-msgstr ""
-"Das Geburts-Textfeld wird um diesen Wert vertikal verschoben. Die die "
-"Verschiebung wird relativ zur Schriftgröße angegeben."
+msgstr "Das Geburts-Textfeld wird um diesen Wert vertikal verschoben. Die die Verschiebung wird relativ zur Schriftgröße angegeben."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:39
 msgid "Wrap words in birth label"
@@ -178,8 +166,7 @@ msgstr "Textausrichtung des Geburts-Textfeld"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:43
 msgid "Text alignment of the birth label."
-msgstr ""
-"Der Text im Geburts-Textfeld kann unterschiedliche ausgerichtet werden."
+msgstr "Der Text im Geburts-Textfeld kann unterschiedliche ausgerichtet werden."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:44
 #: LifeLineChartView/_dummy_translation_string_po.py:64
@@ -210,8 +197,7 @@ msgstr "Sterbe-Textfeld drehen"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:51
 msgid "The death label is written in a text frame rotated by this value."
-msgstr ""
-"Das Sterbe-Textfeld wird um diesen Wikel gegen den Uhrzeigersinn gedreht."
+msgstr "Das Sterbe-Textfeld wird um diesen Wikel gegen den Uhrzeigersinn gedreht."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:53
 msgid "Horizontal offset of death label"
@@ -221,9 +207,7 @@ msgstr "Horizontale Verschiebung des Sterbe-Textfeldes"
 msgid ""
 "The death label is moved horizontally by this value, which is given "
 "relatively to the font size."
-msgstr ""
-"Das Sterbe-Textfeld wird um diesen Wert horizontal verschoben. Die die "
-"Verschiebung wird relativ zur Schriftgröße angegeben."
+msgstr "Das Sterbe-Textfeld wird um diesen Wert horizontal verschoben. Die die Verschiebung wird relativ zur Schriftgröße angegeben."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:56
 msgid "Vertical offset of death label"
@@ -233,9 +217,7 @@ msgstr "Vertikale Verschiebung des Sterbe-Textfeldes"
 msgid ""
 "The death label is moved vertically by this value, which is given relatively "
 "to the font size."
-msgstr ""
-"Das Sterbe-Textfeld wird um diesen Wert vertikal verschoben. Die die "
-"Verschiebung wird relativ zur Schriftgröße angegeben."
+msgstr "Das Sterbe-Textfeld wird um diesen Wert vertikal verschoben. Die die Verschiebung wird relativ zur Schriftgröße angegeben."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:59
 msgid "Wrap words in death label"
@@ -308,9 +290,7 @@ msgstr "Mindestabstand des oberen Randes"
 #: LifeLineChartView/_dummy_translation_string_po.py:83
 msgid ""
 "The upper bound of the chart is extended by at least this number of years."
-msgstr ""
-"Die obere Grenze des Diagramms wird mindestens um diese Anzahl an Jahre "
-"vergrößert."
+msgstr "Die obere Grenze des Diagramms wird mindestens um diese Anzahl an Jahre vergrößert."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:84
 msgid "Lower year minimum margin"
@@ -319,9 +299,7 @@ msgstr "Mindestabstand des unteren Randes"
 #: LifeLineChartView/_dummy_translation_string_po.py:85
 msgid ""
 "The lower bound of the chart is extended by at least this number of years."
-msgstr ""
-"Die untere Grenze des Diagramms wird mindestens um diese Anzahl an Jahre "
-"vergrößert."
+msgstr "Die untere Grenze des Diagramms wird mindestens um diese Anzahl an Jahre vergrößert."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:86
 msgid "Visualize connections"
@@ -331,9 +309,7 @@ msgstr "Verbindungen anzeigen"
 msgid ""
 "Visualize the connections between families and individuals. This is for "
 "debugging purposes."
-msgstr ""
-"Visualisieren Sie die Verbindungen zwischen Familien und Einzelpersonen. "
-"Dies ist für Debugging-Zwecke."
+msgstr "Visualisieren Sie die Verbindungen zwischen Familien und Einzelpersonen. Dies ist für Debugging-Zwecke."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:88
 msgid "Visualize ambiguous placement"
@@ -341,8 +317,7 @@ msgstr "Mehrdeutig Platzierung anzeigen"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:89
 msgid "Visualize automatically detected errors in the placement algorithm."
-msgstr ""
-"Visualisieren Sie automatisch erkannte Fehler des Platzierungs-Algorithmus."
+msgstr "Visualisieren Sie automatisch erkannte Fehler des Platzierungs-Algorithmus."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:90
 msgid "Coloring of individuals"
@@ -350,8 +325,7 @@ msgstr "Einfärben von Individuen"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:91
 msgid "There are different ways to determine the color of an individual."
-msgstr ""
-"Es gibt verschiedene Möglichkeiten die Farbe eines Individuums zu bestimmen."
+msgstr "Es gibt verschiedene Möglichkeiten die Farbe eines Individuums zu bestimmen."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:92
 msgid "Unique"
@@ -379,7 +353,7 @@ msgstr "Die Linienbreite kann konfiguriert werden."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:98
 msgid "none"
-msgstr "kein"
+msgstr "keine"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:99
 msgid "Show pedigree collapse"
@@ -390,22 +364,17 @@ msgid ""
 "Due to pedigree collapse one individual might appear several times in a "
 "simple ancestor chart. If this is active, then every individual only appears "
 "once."
-msgstr ""
-"Aufgrund des Ahnenschwundes könnte eine Person mehrmals in einem einfachen "
-"Vorfahren Diagramm gezeigt werden. Wenn dieses Flag aktiv ist, dann "
-"erscheint jede Person nur einmal."
+msgstr "Aufgrund des Ahnenschwundes könnte eine Person mehrmals in einem einfachen Vorfahren Diagramm gezeigt werden. Wenn dieses Flag aktiv ist, dann erscheint jede Person nur einmal."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:101
 msgid "Maximum number of generations"
-msgstr "Maximale Anzahl der Generationen"
+msgstr "Maximale Anzahl an Generationen"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:102
 msgid ""
 "if this number of generations has been reached, the algorithm doesn't go any "
 "deeper"
-msgstr ""
-"Wenn diese Anzahl von Generationen erreicht worden ist, wird der Algorithmus "
-"nicht tiefer gehen."
+msgstr "Wenn diese Anzahl von Generationen erreicht worden ist, wird der Algorithmus nicht tiefer gehen."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:103
 msgid "Fathers have the same color"
@@ -415,8 +384,7 @@ msgstr "Vätern dieselbe Farbe zuordnen"
 msgid ""
 "Starting from the root person, each father of an added individual has the "
 "same color as that individual."
-msgstr ""
-"Ausgehend von der Hauptperson wird rekursiv Vätern dieselbe Farbe zugeordnet."
+msgstr "Ausgehend von der Hauptperson wird rekursiv Vätern dieselbe Farbe zugeordnet."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:105
 msgid "Maximum number of compression steps"
@@ -443,12 +411,7 @@ msgid ""
 "By default every individual has a unique horizontal slot. This can be "
 "inefficient with many generations. This algorithm lets several people share "
 "a horizontal slot, if they do not overlap."
-msgstr ""
-"Normalerweise werden Personen auf einem Raster verteilt. Die horizontale "
-"Position kann nur einer Person zugewiesen sein kann. Bei größeren Diagrammen "
-"führt dies dazu, dass die Diagramme unübersichtlich werden. Dieser "
-"Algorithmus erlaubt es, dass Personen übereinander erscheinen können. Dies "
-"führt jedoch nicht zu Überlappungen."
+msgstr "Normalerweise werden Personen auf einem Raster verteilt. Die horizontale Position kann nur einer Person zugewiesen sein kann. Bei größeren Diagrammen führt dies dazu, dass die Diagramme unübersichtlich werden. Dieser Algorithmus erlaubt es, dass Personen übereinander erscheinen können. Dies führt jedoch nicht zu Überlappungen."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:111
 msgid "Flip families to reduce horizontal connections"
@@ -459,11 +422,7 @@ msgid ""
 "Switch the position of mother and father in a family, to reduce the overall "
 "horizontal cross connections in larger graphs. This is happens if one person "
 "is shown in more than one family or it is caused by pedigree collapse."
-msgstr ""
-"In jeder Familie können Mutter und Vater können die Position tauschen. Dies "
-"führt ggf. zu einer Verkürzung der Querverbindungen in großen Diagrammen. "
-"Die Querverbindungen werden durch den Ahnenschwund und Wiederheirat "
-"verursacht."
+msgstr "In jeder Familie können Mutter und Vater können die Position tauschen. Dies führt ggf. zu einer Verkürzung der Querverbindungen in großen Diagrammen. Die Querverbindungen werden durch den Ahnenschwund und Wiederheirat verursacht."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:113
 msgid "Highlight descandants"
@@ -746,3 +705,4 @@ msgstr "_Speichern"
 #: LifeLineChartView/lifelinechartview.py:901
 msgid "Reset all settings"
 msgstr "Alle Einstellungen zurücksetzen"
+
