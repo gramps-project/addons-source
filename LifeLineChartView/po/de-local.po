@@ -49,6 +49,10 @@ msgid "after"
 msgstr "nach"
 
 #: LifeLineChartView//lifelinechart.py:1063
+msgid "cursor position at {date}"
+msgstr "Cursorposition bei {date}"
+
+#: LifeLineChartView//lifelinechart.py:1063
 msgid "cursor position at "
 msgstr "Cursorposition bei "
 

@@ -41,8 +41,8 @@ msgid "after"
 msgstr "na"
 
 #: LifeLineChartView//lifelinechart.py:1063
-msgid "cursor position at "
-msgstr "cursorpositie op "
+msgid "cursor position at {date}"
+msgstr "cursorpositie op {date}"
 
 #: LifeLineChartView//lifelinechart.py:2226
 msgid "Hide person"
