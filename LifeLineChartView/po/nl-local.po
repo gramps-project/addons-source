@@ -357,7 +357,7 @@ msgid ""
 "Due to pedigree collapse one individual might appear several times in a "
 "simple ancestor chart. If this is active, then every individual only appears "
 "once."
-msgstr "Door kwartierherhaling kan een persoon meerdere keren voorkomen in een eenvoudige vooroudergrafiek. Als dit actief is, komt elk individu maar Ã©Ã©n keer voor."
+msgstr "Door kwartierherhaling kan een persoon meerdere keren voorkomen in een eenvoudige vooroudergrafiek. Als dit actief is, komt elk individu maar één keer voor."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:101
 msgid "Maximum number of generations"
@@ -404,7 +404,7 @@ msgid ""
 "By default every individual has a unique horizontal slot. This can be "
 "inefficient with many generations. This algorithm lets several people share "
 "a horizontal slot, if they do not overlap."
-msgstr "Standaard heeft ieder individu een uniek horizontaal slot. Dit kan met vele generaties inefficiÃ«nt zijn. Met dit algoritme kunnen meerdere mensen een horizontale sleuf delen, als ze elkaar niet overlappen."
+msgstr "Standaard heeft ieder individu een uniek horizontaal slot. Dit kan met vele generaties inefficiënt zijn. Met dit algoritme kunnen meerdere mensen een horizontale sleuf delen, als ze elkaar niet overlappen."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:111
 msgid "Flip families to reduce horizontal connections"
@@ -415,7 +415,7 @@ msgid ""
 "Switch the position of mother and father in a family, to reduce the overall "
 "horizontal cross connections in larger graphs. This is happens if one person "
 "is shown in more than one family or it is caused by pedigree collapse."
-msgstr "Verander de positie van moeder en vader in een gezin om de algehele horizontale dwarsverbanden in grotere grafieken te verminderen. Dit is het geval als Ã©Ã©n persoon in meer dan Ã©Ã©n gezin voorkomt of het wordt veroorzaakt door kwartierherhaling."
+msgstr "Verander de positie van moeder en vader in een gezin om de algehele horizontale dwarsverbanden in grotere grafieken te verminderen. Dit is het geval als één persoon in meer dan één gezin voorkomt of het wordt veroorzaakt door kwartierherhaling."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:113
 msgid "Highlight descandants"

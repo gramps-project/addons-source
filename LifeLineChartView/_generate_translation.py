@@ -11,7 +11,7 @@ DATA_FILES = [
     os.path.join(life_line_chart.__path__[0], 'AncestorChartStrings.json'),
     os.path.join(life_line_chart.__path__[0], 'DescendantChartStrings.json')
 ]
-DATA_STRUCTURES = dict([(a, json.loads(open(a,'r').read())) for a in DATA_FILES])
+DATA_STRUCTURES = dict([(a, json.loads(open(a,'r',encoding='utf-8').read())) for a in DATA_FILES])
 LIFE_LINE_CHART_LANGUAGES = list(list(DATA_STRUCTURES.values())[0].keys())
 LIFE_LINE_CHART_LANGUAGES_SHORT = [a[:2] for a in LIFE_LINE_CHART_LANGUAGES]
 
