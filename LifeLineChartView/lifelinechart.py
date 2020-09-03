@@ -23,9 +23,7 @@ See https://github.com/CWSchulze/life_line_chart
 """
 
 # -------------------------------------------------------------------------
-#
 # Python modules
-#
 # -------------------------------------------------------------------------
 import logging
 import math
@@ -40,9 +38,7 @@ from gi.repository import Gtk
 from gi.repository import PangoCairo
 
 #-------------------------------------------------------------------------
-#
 # Gramps modules
-#
 #-------------------------------------------------------------------------
 from copy import deepcopy
 import sys, os
@@ -60,6 +56,18 @@ from gramps.gen.utils.file import media_path_full
 from gramps.gen.utils.thumbnails import (get_thumbnail_path, SIZE_NORMAL,
                                          SIZE_LARGE)
 import datetime
+
+# -------------------------------------------------------------------------
+# Internationalization
+# -------------------------------------------------------------------------
+from gramps.gen.const import GRAMPS_LOCALE as glocale
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.gettext
+
+
 _max_days = {
     1:31,
     2:29,
@@ -213,7 +221,9 @@ def get_relevant_events(gramps_person, dbstate, target):
     else:
         target['death_or_burial'] = None
 
-
+#-------------------------------------------------------------------------
+# GrampsInstanceContainer
+#-------------------------------------------------------------------------
 class GrampsInstanceContainer(InstanceContainer):
     def __init__(self, family_constructor, individual_constructor, instantiate_all, dbstate):
         InstanceContainer.__init__(self, family_constructor, individual_constructor, instantiate_all)
@@ -288,9 +298,9 @@ class GrampsInstanceContainer(InstanceContainer):
             return place_displayer.display(self.dbstate.db, family.location)
         return None
 
-
-
-
+#-------------------------------------------------------------------------
+# GrampsIndividual
+#-------------------------------------------------------------------------
 class GrampsIndividual(BaseIndividual):
     """
     Interface class to provide person data to live line chart backend
@@ -353,7 +363,9 @@ def estimate_marriage_date(family):
             sorted_pairs.sort()
             family.marriage = sorted_pairs[0][1]
 
-
+#-------------------------------------------------------------------------
+# GrampsFamily
+#-------------------------------------------------------------------------
 class GrampsFamily(BaseFamily):
     """
     Interface class to provide family data to live line chart backend
@@ -429,7 +441,6 @@ class GrampsFamily(BaseFamily):
 
 
 
-
 def get_dbdstate_instance_container(dbstate):
     """
     constructor for instance container
@@ -465,7 +476,9 @@ def get_dbdstate_instance_container(dbstate):
     return ic
 
 
-
+#-------------------------------------------------------------------------
+# Gramps modules
+#-------------------------------------------------------------------------
 from gramps.gen.db import DbTxn
 from gramps.gen.errors import WindowActiveError
 from gramps.gen.lib import ChildRef, Family, Name, Person, Surname
@@ -475,7 +488,6 @@ from gramps.gen.utils.libformatting import FormattingHelper
 from gramps.gen.utils.db import (find_children, find_parents, get_timeperiod,
                                  find_witnessed_people, get_age, preset_name)
 from gramps.gen.constfunc import is_quartz
-from gramps.gen.const import GRAMPS_LOCALE as glocale
 from gramps.gen.const import (
     PAD_PX,
     PAD_TEXT,
@@ -499,14 +511,14 @@ from gramps.gui.editors import EditPerson, EditFamily
 from gramps.gui.utilscairo import warpPath
 from gramps.gen.utils.symbols import Symbols
 
-_ = glocale.translation.gettext
-
 # following are used in name_displayer format def
 # (must not conflict with standard defs)
 TWO_LINE_FORMAT_1 = 100
 TWO_LINE_FORMAT_2 = 101
 
-
+#-------------------------------------------------------------------------
+# LifeLineChartAxis
+#-------------------------------------------------------------------------
 class LifeLineChartAxis(Gtk.DrawingArea):
     def __init__(self, dbstate, uistate, life_line_chart_widget):
         Gtk.DrawingArea.__init__(self)
@@ -579,13 +591,10 @@ class LifeLineChartAxis(Gtk.DrawingArea):
             (view_x_min, view_y_min, view_x_max, view_y_max),
             (12,30))
         pass
+
 #-------------------------------------------------------------------------
-#
 # LifeLineChartBaseWidget
-#
 #-------------------------------------------------------------------------
-
-
 class LifeLineChartBaseWidget(Gtk.DrawingArea):
     """ a base widget for lifelinecharts"""
     CENTER = 60                # pixel radius of center, changes per lifelinechart
@@ -1205,12 +1214,8 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
             self.axis_widget.queue_draw()
 
 #-------------------------------------------------------------------------
-#
 # LifeLineChartWidget
-#
 #-------------------------------------------------------------------------
-
-
 class LifeLineChartWidget(LifeLineChartBaseWidget):
     """
     Interactive Life Line Chart Widget.
@@ -2107,6 +2112,9 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
         #self.draw()
         self.queue_draw_wrapper()
 
+#-------------------------------------------------------------------------
+# LifeLineChartGrampsGUI
+#-------------------------------------------------------------------------
 class LifeLineChartGrampsGUI:
     """ class for functions lifelinechart GUI elements will need in Gramps
     """

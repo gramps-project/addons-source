@@ -23,9 +23,7 @@ See https://github.com/CWSchulze/life_line_chart
 """
 
 # -------------------------------------------------------------------------
-#
 # Python modules
-#
 # -------------------------------------------------------------------------
 from gi.repository import Gtk
 import cairo
@@ -33,9 +31,7 @@ from copy import deepcopy
 import sys
 
 # -------------------------------------------------------------------------
-#
 # Gramps modules
-#
 # -------------------------------------------------------------------------
 from gramps.gui.views.navigationview import NavigationView
 from gramps.gui.views.bookmarks import PersonBookmarks
@@ -83,7 +79,9 @@ __, llc_default_chart_configuration = recursive_merge_dict_members(
     AncestorChart.DEFAULT_CHART_CONFIGURATION,
     remove_unknown_keys=False)
 
-
+# -------------------------------------------------------------------------
+# LifeLineChartView
+# -------------------------------------------------------------------------
 class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
     """
     The Gramplet code that realizes the LifeLineChartWidget.
@@ -1042,11 +1040,15 @@ for key, value in list(llc_default_formatting.items()) + list(llc_default_positi
             ((gramps_key, value),)
 
 
-
+# -------------------------------------------------------------------------
+# LifeLineChartAncestorView
+# -------------------------------------------------------------------------
 class LifeLineChartAncestorView(LifeLineChartView):
     def __init__(self, pdata, dbstate, uistate, nav_group=0):
         LifeLineChartView.__init__(self, pdata, dbstate, uistate, nav_group, AncestorChart)
-
+# -------------------------------------------------------------------------
+# LifeLineChartDescendantView
+# -------------------------------------------------------------------------
 class LifeLineChartDescendantView(LifeLineChartView):
     def __init__(self, pdata, dbstate, uistate, nav_group=0):
         LifeLineChartView.__init__(self, pdata, dbstate, uistate, nav_group, DescendantChart)
