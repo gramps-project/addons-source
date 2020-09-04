@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-02 16:40-0500\n"
+"POT-Creation-Date: 2020-09-04 13:11+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,7 +26,7 @@ msgid "Places map"
 msgstr ""
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:264
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:55
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:62
 msgid "Place Coordinate Gramplet"
 msgstr ""
 
@@ -217,41 +217,49 @@ msgstr ""
 msgid "Center on this place"
 msgstr ""
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:66
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:73
 #, python-brace-format
 msgid "Failed to load the required module {module_name}."
 msgstr ""
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:99
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:81
+msgid "Don't show again"
+msgstr ""
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:81
+msgid "OK"
+msgstr ""
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:108
 #, python-brace-format
 msgid "Internet connectivity test failed for {module_name}."
 msgstr ""
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:110
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:119
 msgid "Warning disabled."
 msgstr ""
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:129
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:138
 msgid "Place Coordinate Gramplet view"
 msgstr ""
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:130
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:139
 msgid "View for the place coordinate gramplet."
 msgstr ""
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:137
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:146
 msgid "Geography"
 msgstr ""
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:145
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:154
 msgid "Place and Coordinates"
 msgstr ""
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:147
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:156
 msgid "Gramplet that simplifies setting the coordinates of a place"
 msgstr ""
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:156
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:165
 msgid "Place Coordinates"
 msgstr ""
 

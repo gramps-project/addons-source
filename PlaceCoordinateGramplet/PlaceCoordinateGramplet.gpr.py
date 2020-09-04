@@ -24,6 +24,11 @@
 #
 #------------------------------------------------------------------------
 
+import os
+import sys
+import importlib
+import traceback
+
 from gi import Repository
 from gramps.gen.const import USER_PLUGINS
 from gramps.gen.config import logging
@@ -33,6 +38,13 @@ inifile = config.register_manager("placecoordinategramplet_warn")
 inifile.load()
 sects = inifile.get_sections()
 
+from gramps.gen.const import GRAMPS_LOCALE as glocale
+try:
+    _trans = glocale.get_addon_translator(os.path.join(USER_PLUGINS, 'PlaceCoordinateGramplet', 'PlaceCoordinateGramplet.gpr.py'))
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.gettext
+
 #-------------------------------------------------------------------------
 #
 # set up logging
@@ -40,11 +52,6 @@ sects = inifile.get_sections()
 #-------------------------------------------------------------------------
 _LOG = logging.getLogger("PlaceCoordinateGramplet")
 
-
-import os
-import sys
-import importlib
-import traceback
 
 # we should always try to see if prerequisites are there, in case they
 # appear at a later time than first run.  But we still don't need to do
@@ -71,7 +78,7 @@ while _uistate:
             warn_dialog = QuestionDialog2(
                 plugin_name + ' Plugin',
                 message,
-                "Don't show again", "OK",
+                _("Don't show again"), _("OK"),
                 parent=_uistate.window)
             if warn_dialog.run():
                 inifile.register(
