@@ -87,6 +87,8 @@ while _uistate:
     try:
         location_ = GeocodeGlib.Forward.new_for_string("Berlin")
         result = location_.search()
+        inifile.register('placecoordinategramplet_warn.connectivity', "")
+        inifile.set('placecoordinategramplet_warn.connectivity', "True")
         break
     except Exception as e:
         result = None
@@ -161,6 +163,4 @@ if locals().get('uistate') is None or not some_import_error:
 if not some_import_error:
     inifile.register('placecoordinategramplet_warn.missingmodules', "")
     inifile.set('placecoordinategramplet_warn.missingmodules', "True")
-    inifile.register('placecoordinategramplet_warn.connectivity', "")
-    inifile.set('placecoordinategramplet_warn.connectivity', "True")
     inifile.save()
