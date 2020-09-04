@@ -73,7 +73,8 @@ from gramps.gen.utils.thumbnails import get_thumbnail_path
 from gramps.gui.dialog import OptionDialog, ErrorDialog, QuestionDialog2
 from gramps.gui.display import display_url
 from gramps.gui.editors import EditPerson, EditFamily, EditTagList
-from gramps.gui.utils import color_graph_box, color_graph_family, rgb_to_hex
+from gramps.gui.utils import (color_graph_box, color_graph_family,
+                              rgb_to_hex, hex_to_rgb_float)
 from gramps.gui.views.navigationview import NavigationView
 from gramps.gui.views.bookmarks import PersonBookmarks
 from gramps.gui.views.tags import OrganizeTagsDialog
@@ -3030,8 +3031,10 @@ class DotSvgGenerator(object):
             text += ' color="%s"' % color
 
         if fillcolor:
-            text += ' fillcolor="%s"' % fillcolor
-
+            color = hex_to_rgb_float(fillcolor)
+            yiq = (color[0] * 299 + color[1] * 587 + color[2] * 114)
+            fontcolor = "white" if yiq < 500 else "black"
+            text += ' fillcolor="%s" fontcolor="%s"' % (fillcolor, fontcolor)
         if style:
             text += ' style="%s"' % style
 
