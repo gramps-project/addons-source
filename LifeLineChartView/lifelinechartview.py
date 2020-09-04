@@ -568,6 +568,7 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
         from math import pow
         slider = Gtk.Scale(orientation=Gtk.Orientation.VERTICAL,
                            adjustment=adj)
+        slider.set_size_request(40,-1)
         slider.connect('format-value', lambda s,x:"{:2.2f}".format(pow(10,-1-x/10)))
         self.hbox_split_view.pack_start(slider, False, False, 1)
         slider.connect('value-changed', self.set_zoom)
