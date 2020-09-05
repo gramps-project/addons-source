@@ -491,7 +491,7 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
 
         self.lifeline.translate_button = Gtk.ToggleButton("M")
         self.toolbar.pack_start(self.lifeline.translate_button, False, False, 1)
-        self.lifeline.translate_button.connect("toggled", self.lifeline.on_translate_button_toggle)
+        self.lifeline.translate_button.connect("toggled", self.lifeline.translate_button_clicked)
 
         # add zoom-in button
         self.zoom_in_btn = Gtk.Button.new_from_icon_name('zoom-in-symbolic',
