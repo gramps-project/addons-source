@@ -26,6 +26,7 @@ See https://github.com/CWSchulze/life_line_chart
 # Python modules
 # -------------------------------------------------------------------------
 import logging
+from math import log10
 import math
 import colorsys
 import pickle
@@ -67,6 +68,7 @@ except ValueError:
     _trans = glocale.translation
 _ = _trans.gettext
 
+TEXT_CACHE_SIZE = 2000
 
 _max_days = {
     1:31,
@@ -767,7 +769,6 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         self.set_zoom(1)
 
     def set_zoom(self, value, fix_point = None):
-        from math import log10
         zoom_level = max(0.01, min(1000, value))
         self.zoom_slider.set_value(-log10(zoom_level)*10 - 10)
         #self._set_zoom(value, fix_point)
@@ -1355,6 +1356,7 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
         self.filter = None
         self.chart_items = []
         self.image_cache = {}
+        self.text_cache = {}
         self.zoom_level = 1.0
         self.zoom_level_backup = 1.0
         self.life_line_chart_instance = None
@@ -1532,16 +1534,28 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
             for key, item in gr_individual.items:
                 sorted_individual_dict[key].append(item)
         sorted_individual_flat_item_list = []
+        pure_text_layers = ['layer_birth_label', 'layer_death_label', 'layer_marriage_label']
         for key in sorted(sorted_individual_dict.keys()):
-            sorted_individual_flat_item_list += sorted_individual_dict[key]
+            if key[1] in pure_text_layers:
+                # pure text layers are prerendered and cached in self.text_cache
+                sorted_individual_flat_item_list += [{
+                    'type': 'text_layer',
+                    'items': sorted_individual_dict[key]
+                }]
+            else:
+                sorted_individual_flat_item_list += sorted_individual_dict[key]
 
         self.chart_items = additional_items + sorted_individual_flat_item_list
         self.image_cache = {}
+        self.text_cache = {}
         try:
             if new_root_individual:
                 self.fit_to_page()
         except:
             pass
+
+    def invalidate_text_cache(self):
+        self.image_cache = {}
 
     def clear_instance_cache(self, _button=None):
         if self.life_line_chart_instance:
@@ -1603,6 +1617,7 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
             sb_v_adj.set_value((self.zoom_level / self.zoom_level_backup) * (
                 visible_range[1] * 0.5 + sb_v_adj.get_value()) - visible_range[1] * 0.5)
             self.zoom_level_backup = self.zoom_level
+            translated_position = self.upper_left_view_position
         else:  # printing
             # ??
 
@@ -1620,11 +1635,11 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
             #ctx.scale(scale, scale)
             #self.zoom_level_backup = self.zoom_level
         visible_range = (self.get_allocated_width(), self.get_allocated_height())
-        arbitrary_clip_offset = max(visible_range)*0.5 # remove text items if their start position is 50%*view_width outside
-        view_x_min = (self.upper_left_view_position[0] - arbitrary_clip_offset) / self.zoom_level
-        view_x_max = (self.upper_left_view_position[0] + arbitrary_clip_offset + visible_range[0]) / self.zoom_level
-        view_y_min = (self.upper_left_view_position[1] - arbitrary_clip_offset) / self.zoom_level
-        view_y_max = (self.upper_left_view_position[1] + arbitrary_clip_offset + visible_range[1]) / self.zoom_level
+        arbitrary_clip_offset = max(TEXT_CACHE_SIZE/2, max(visible_range)*0.5) # remove text items if their start position is 50%*view_width outside
+        view_x_min = (translated_position[0] - arbitrary_clip_offset) / self.zoom_level
+        view_x_max = (translated_position[0] + arbitrary_clip_offset + visible_range[0]) / self.zoom_level
+        view_y_min = (translated_position[1] - arbitrary_clip_offset) / self.zoom_level
+        view_y_max = (translated_position[1] + arbitrary_clip_offset + visible_range[1]) / self.zoom_level
         self.draw_items(ctx, self.chart_items, (view_x_min, view_y_min, view_x_max, view_y_max))
         ctx.restore()
         ctx.scale(1, 1)
@@ -1752,7 +1767,47 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                     ctx.show_text(line)
                 ctx.restore()
 
-            if item['type'] == 'text':
+            if item['type'] == 'text_layer':
+                width = self.life_line_chart_instance.get_full_width()*self.zoom_level
+                height = self.life_line_chart_instance.get_full_height()*self.zoom_level
+                visible_range = (self.get_allocated_width(), self.get_allocated_height())
+                ul_offset_actual = [max(0, i) for i in self.upper_left_view_position]
+                lr_offset_actual = [min(k, i+j) for i, j, k in zip(self.upper_left_view_position, visible_range,(width, height))]
+                ul_offset = [i-TEXT_CACHE_SIZE/2 for i in self.upper_left_view_position]
+                lr_offset = [i+j+TEXT_CACHE_SIZE/2 for i, j, k in zip(self.upper_left_view_position, visible_range,(width, height))]
+                caching_range = [int(j-i) for i, j in zip(ul_offset, lr_offset)]
+                if item_index not in self.text_cache or \
+                        self.text_cache[item_index]['ul_offset'][0] - ul_offset_actual[0] > 0 or \
+                        self.text_cache[item_index]['ul_offset'][1] - ul_offset_actual[1] > 0 or \
+                        self.text_cache[item_index]['lr_offset'][0] - lr_offset_actual[0] < 0 or \
+                        self.text_cache[item_index]['lr_offset'][1] - lr_offset_actual[1] < 0 or \
+                        abs(log10(self.zoom_level/self.text_cache[item_index]['zoom'])) > 0.05:
+                    text_surface = cairo.ImageSurface(cairo.FORMAT_ARGB32,
+                                                    *caching_range)
+                    text_ctx = cairo.Context(text_surface)
+
+                    text_ctx.translate(*[-i for i in ul_offset])
+                    text_ctx.scale(self.zoom_level, self.zoom_level)
+                    self.draw_items(text_ctx, item['items'], view_clip_box, limit_font_size)
+                    self.text_cache[item_index] = {
+                        'surface' : text_surface,
+                        'ul_offset': ul_offset,
+                        'lr_offset': lr_offset,
+                        'zoom': self.zoom_level
+                    }
+                else:
+                    text_surface = self.text_cache[item_index]['surface']
+
+                left, top = self.text_cache[item_index]['ul_offset'] # view_x_min, view_y_min#args['insert']
+                scale_xy = 1/self.text_cache[item_index]['zoom'] # min(height_ratio, width_ratio)
+                ctx.save()
+                ctx.scale(scale_xy, scale_xy)
+                ctx.translate(left, top)
+                ctx.set_source_surface(text_surface)
+
+                ctx.paint()
+                ctx.restore()
+            elif item['type'] == 'text':
                 args = item['config']
                 #ctx.set_font_size(float(args['font_size'][:-2]))
                 # ctx.select_font_face("Arial",
