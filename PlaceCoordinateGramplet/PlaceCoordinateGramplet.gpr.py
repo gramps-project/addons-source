@@ -58,7 +58,7 @@ _LOG = logging.getLogger("PlaceCoordinateGramplet")
 # this if there is no GUI, as Gramplet and view are not necessary.
 _uistate = locals().get('uistate')
 some_import_error = False
-while _uistate:
+if _uistate:
     plugin_name = _("Place Coordinate Gramplet")
     try:
         import gi
@@ -87,7 +87,7 @@ while _uistate:
                     'placecoordinategramplet_warn.missingmodules', "False")
                 inifile.save()
         some_import_error = True
-        break
+    #    break
 
     # # now test to make sure that we can actually perform a search.  If there
     # # is a problem with connectivity this will fail
