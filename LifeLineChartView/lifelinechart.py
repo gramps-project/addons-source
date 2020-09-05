@@ -85,9 +85,11 @@ _max_days = {
 logger = logging.getLogger("LifeLineChart View")
 
 events_key_name = {
+    EventType.MARRIAGE: 'marriage',
     EventType.BIRTH: 'birth',
     EventType.CHRISTEN: 'christening',
     EventType.DEATH: 'death',
+    EventType.CREMATION: 'cremation',
     EventType.BURIAL: 'burial',
     EventType.BAPTISM: 'baptism',
 }
@@ -165,7 +167,7 @@ def get_date(event):
             else:
                 raise
 
-        if events_key_name[event.get_type().value] in ['burial', 'death']:
+        if events_key_name[event.get_type().value] in ['burial', 'death', 'cremation']:
             # if unknown move to the end of the year
             date = date_max
         else:
@@ -218,6 +220,8 @@ def get_relevant_events(gramps_person, dbstate, target):
         target['death_or_burial'] = target['death']
     elif 'death_or_burial' not in target and 'burial' in target:
         target['death_or_burial'] = target['burial']
+    elif 'death_or_burial' not in target and 'cemation' in target:
+        target['death_or_burial'] = target['cemation']
     else:
         target['death_or_burial'] = None
 
