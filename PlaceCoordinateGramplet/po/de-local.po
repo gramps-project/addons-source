@@ -14,8 +14,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-05 20:23+0200\n"
-"PO-Revision-Date: 2020-08-26 21:42+0200\n"
+"POT-Creation-Date: 2020-09-06 22:42+0200\n"
+"PO-Revision-Date: 2020-09-06 22:49+0200\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -25,44 +25,25 @@ msgstr ""
 "X-Generator: Lokalize 19.12.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.gpr.py:42
-msgid "Place Coordinate Gramplet view"
-msgstr "Ortskoordinaten Gramplet Ansicht"
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.gpr.py:43
-msgid "View for the place coordinate gramplet."
-msgstr "Ansicht für Ortskoordinaten Gramplet."
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.gpr.py:50
-msgid "Geography"
-msgstr "Geografie"
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:145
-msgid "Place and Coordinates"
-msgstr "Ort und Koordinaten"
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:114
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:126
 msgid "Organize Bookmarks"
 msgstr "Lesezeichen organisieren"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:221
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:233
 msgid "Places map"
 msgstr "Ortekarte"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:261
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:264
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:55
 msgid "Place Coordinate Gramplet"
 msgstr "Ortskoordinaten Gramplet"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:252
-msgid "PlaceCoordinateGeoView"
-msgstr "OrtskoordinateGeoView"
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:432
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:445
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:444
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:457
 msgid "Selecting all places"
 msgstr "Alle Orte wählen"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:457
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:469
 msgid ""
 "Right click on the map and select 'show all places' to show all known places "
 "with coordinates. You can change the markers color depending on place type. "
@@ -72,7 +53,7 @@ msgstr ""
 "Orte mit Koordinaten zu zeigen. Du kannst die Markierungsfarbe abhängig vom "
 "Ortstyp ändern. Du kannst Filter verwenden."
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:472
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:484
 msgid ""
 "Right click on the map and select 'show all places' to show all known places "
 "with coordinates. You can use the history to navigate on the map. You can "
@@ -83,251 +64,257 @@ msgstr ""
 "Karte zu navigieren. Du kannst die Markierungsfarbe abhängig vom Ortstyp "
 "ändern. Du kannst Filter verwenden."
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:487
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:499
 msgid "The place name in the status bar is disabled."
 msgstr "Der Ortsname in der Statusleiste ist deaktiviert."
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:492
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:504
 #, python-format
 msgid "The maximum number of places is reached (%d)."
 msgstr "Maximale Anzahl der Orte (%d) ist erreicht."
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:495
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:507
 msgid "Some information are missing."
 msgstr "Einige Informationen fehlen."
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:497
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:509
 msgid "Please, use filtering to reduce this number."
 msgstr "Bitte verwende Filter, um die Anzahl zu reduzieren."
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:499
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:511
 msgid "You can modify this value in the geography option."
 msgstr "Du kannst diesen Wert in den Geografieoptionen ändern."
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:501
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:513
 msgid "In this case, it may take time to show all markers."
 msgstr "In diesem Fall kann es etwas dauern, alle Markierungen anzuzeigen."
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:519
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:524
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:531
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:536
 msgid "Centering on Place"
 msgstr "Auf Ort zentrieren"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:569
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:581
 msgid "Unknown"
 msgstr "Unbekannt"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:572
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:584
 msgid "Custom"
 msgstr "Selbst definiert"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:575
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:587
 msgid "Locality"
 msgstr "Lokalität"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:578
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:590
 msgid "Street"
 msgstr "Straße"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:581
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:593
 msgid "Neighborhood"
 msgstr "Viertel"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:584
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:596
 msgid "Borough"
 msgstr "Bezirk"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:587
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:599
 msgid "Village"
 msgstr "Dorf"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:590
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:602
 msgid "Hamlet"
 msgstr "Weiler"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:593
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:605
 msgid "Farm"
 msgstr "Hof"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:596
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:608
 msgid "Building"
 msgstr "Gebäude"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:599
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:611
 msgid "Number"
 msgstr "Nummer"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:602
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:614
 msgid "Country"
 msgstr "Land"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:605
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:617
 msgid "State"
-msgstr "Bundesland"
+msgstr "Staat"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:608
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:620
 msgid "County"
 msgstr "Kreis"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:611
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:623
 msgid "Province"
 msgstr "Provinz"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:614
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:626
 msgid "Region"
 msgstr "Region"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:617
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:629
 msgid "Department"
 msgstr "Amt"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:620
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:632
 msgid "District"
 msgstr "Bezirk"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:623
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:635
 msgid "Parish"
 msgstr "Kirchengemeinde"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:626
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:638
 msgid "City"
 msgstr "Stadt"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:629
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:641
 msgid "Town"
 msgstr "Kleinstadt"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:632
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:644
 msgid "Municipality"
 msgstr "Gemeinde"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:636
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:648
 msgid "Custom places name"
 msgstr "Benutzerdefinierter Ortsname"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:645
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:657
 msgid "The places marker color"
 msgstr "Die Ortemakierungsfarbe"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:734
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:764
 msgid "Map Menu"
 msgstr "Kartenmenü"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:737
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:767
 msgid "Remove cross hair"
 msgstr "Fadenkreuz entfernen"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:739
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:769
 msgid "Add cross hair"
 msgstr "Fadenkreuz hinzufügen"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:745
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:775
 msgid "Add city as place"
 msgstr "Stadt als Ort hinzufügen"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:750
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:788
 msgid "Add addess as place"
 msgstr "Adresse als Ort hinzufügen"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:756
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:801
 msgid "Link place"
 msgstr "Ort verknüpfen"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:769
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:814
 #, python-format
 msgid "Replace '%(map)s' by =>"
 msgstr "Ersetze '%(map)s' durch =>"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:788
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:833
 #, python-format
 msgid "Clear the '%(map)s' tiles cache."
 msgstr "Leert den '%(map)s' Kacheln Cache."
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:857
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:902
 msgid "Edit Place"
 msgstr "Ort bearbeiten"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:862
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:907
 msgid "Center on this place"
 msgstr "Auf diesen Ort zentrieren"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:67
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:66
 #, python-brace-format
 msgid "Failed to load the required module {module_name}."
 msgstr "Das benötigte Modul {module_name} konnte nicht geladen werden."
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:95
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:99
 #, python-brace-format
 msgid "Internet connectivity test failed for {module_name}."
 msgstr "Test der Internetverbindung ist fehlgeschlagen für {module_name}."
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:108
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:110
 msgid "Warning disabled."
 msgstr "Warnung wurde deaktiviert."
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:28
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:39
-msgid "Place Coordinates"
-msgstr "Ortskoordinaten"
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:129
+msgid "Place Coordinate Gramplet view"
+msgstr "Ortskoordinaten Gramplet Ansicht"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:30
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:130
+msgid "View for the place coordinate gramplet."
+msgstr "Ansicht für Ortskoordinaten Gramplet."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:137
+msgid "Geography"
+msgstr "Geografie"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:145
+msgid "Place and Coordinates"
+msgstr "Ort und Koordinaten"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:147
 msgid "Gramplet that simplifies setting the coordinates of a place"
 msgstr "Gramplet, das das Einstellen der Koordinaten eines Ortes vereinfacht"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:196
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:156
+msgid "Place Coordinates"
+msgstr "Ortskoordinaten"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:215
 msgid "The place was not found. You may clarify the search keywords."
 msgstr "Der Ort wurde nicht gefunden. Du kannst die Stichworte verdeutlichen."
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:216
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:244
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:219
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:247
 msgid "Failed to search for the coordinates due to some unexpected error."
 msgstr ""
 "Suche nach Koordinaten ist aufgrund eines unerwarteten Fehlers "
 "fehlgeschlagen."
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:241
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:244
 msgid "The place was not found."
 msgstr "Der Ort wurde nicht gefunden."
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:200
-msgid "Failed to search for the coordinates due to some unexpected error"
-msgstr ""
-"Suche nach Koordinaten aufgrund eines unerwarteten Fehlers fehlgeschlagen"
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:220
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:250
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:269
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:300
 msgid "The place was not identified."
 msgstr "Der Ort wurde nicht identifiziert."
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:268
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:299
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:271
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:302
 msgid "Coordinates were not given."
 msgstr "Koordinaten wurden nicht angegeben."
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:283
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:286
 msgid "Failed to interpret the input format."
 msgstr "Das Eingabeformat konnte nicht interpretiert werden."
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:236
-msgid "Failed to interpret the string format."
-msgstr "Fehler beim Interpretieren des Zeichenfolgenformats."
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:261
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:313
 #, python-format
 msgid "Edit Place (%s)"
 msgstr "Ort (%s) bearbeiten"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:280
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:332
 #, python-brace-format
 msgid "DB entry [{id}] {name}:"
 msgstr "DB Eintrag [{id}] {name}:"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:285
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:337
 #: PlaceCoordinateGramplet/placecoordinate.glade:132
 msgid "Nothing has been searched yet"
 msgstr "Es wurde noch nichts gesucht"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:307
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:359
 msgid "No place is active"
 msgstr "Kein Ort ist ausgewählt"
 
@@ -348,13 +335,9 @@ msgstr "Breitengrad:"
 msgid "No DB entry is selected"
 msgstr "Kein DB Eintrag ist ausgewählt"
 
-#: PlaceCoordinateGramplet/placecoordinate.glade:53
-msgid "label"
-msgstr "Beschriftung"
-
 #: PlaceCoordinateGramplet/placecoordinate.glade:68
 msgid "Postal-Code:"
-msgstr "Postleitzahl"
+msgstr "Postleitzahl:"
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:94
 #: PlaceCoordinateGramplet/placecoordinate.glade:107
@@ -389,6 +372,18 @@ msgstr "Los"
 msgid "Show help"
 msgstr "Hilfe anzeigen"
 
+#~ msgid "PlaceCoordinateGeoView"
+#~ msgstr "OrtskoordinateGeoView"
+
+#~ msgid "Failed to search for the coordinates due to some unexpected error"
+#~ msgstr ""
+#~ "Suche nach Koordinaten aufgrund eines unerwarteten Fehlers fehlgeschlagen"
+
+#~ msgid "Failed to interpret the string format."
+#~ msgstr "Fehler beim Interpretieren des Zeichenfolgenformats."
+
+#~ msgid "label"
+#~ msgstr "Beschriftung"
+
 #~ msgid "Take last clicked position from Geography map"
 #~ msgstr "Zuletzt geklickten Ort der Kartenansicht übernehmen"
-
