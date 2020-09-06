@@ -14,8 +14,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-06 17:59+0200\n"
-"PO-Revision-Date: 2020-08-06 18:30+0200\n"
+"POT-Creation-Date: 2020-09-06 22:31+0200\n"
+"PO-Revision-Date: 2020-09-06 22:34+0200\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -33,85 +33,96 @@ msgstr "OrtAktualisierung"
 msgid "Gramplet to manipulate multiple places"
 msgstr "Gramplet zum Ändern mehrerer Orte"
 
-#: PlaceUpdate/PlaceUpdate.py:53
+#: PlaceUpdate/PlaceUpdate.py:56
 msgid "Set properties for multiple places"
 msgstr "Setzt die Eigenschaften für mehrere Orte"
 
-#: PlaceUpdate/PlaceUpdate.py:73 PlaceUpdate/PlaceUpdate.py:110
-msgid "None"
-msgstr "Keine"
+#: PlaceUpdate/PlaceUpdate.py:77 PlaceUpdate/PlaceUpdate.py:154
+msgid "Select"
+msgstr "Auswählen"
 
-#: PlaceUpdate/PlaceUpdate.py:90
+#: PlaceUpdate/PlaceUpdate.py:96
 msgid ""
 "This gramplet allows setting properties for multiple places at the same time"
 msgstr ""
-"Mit diesem Gramplet kannst du Eigenschaften für mehrere Orte gleichzeitig"
-" festlegen"
+"Mit diesem Gramplet kannst du Eigenschaften für mehrere Orte gleichzeitig "
+"festlegen"
 
-#: PlaceUpdate/PlaceUpdate.py:95
+#: PlaceUpdate/PlaceUpdate.py:101
 msgid "Place type:"
 msgstr "Ortstyp:"
 
-#: PlaceUpdate/PlaceUpdate.py:100
+#: PlaceUpdate/PlaceUpdate.py:106
 msgid "Tag:"
 msgstr "Markierung:"
 
-#: PlaceUpdate/PlaceUpdate.py:105
+#: PlaceUpdate/PlaceUpdate.py:111
 msgid "New enclosing place"
 msgstr "Neuer einschließender Ort"
 
-#: PlaceUpdate/PlaceUpdate.py:124
-msgid "Select enclosing place"
-msgstr "Einschließenden Ort wählen"
+#: PlaceUpdate/PlaceUpdate.py:116
+msgid "None"
+msgstr "Ohne"
 
-#: PlaceUpdate/PlaceUpdate.py:128
+#: PlaceUpdate/PlaceUpdate.py:119
+msgid "Timespan:"
+msgstr "Zeitspanne:"
+
+#: PlaceUpdate/PlaceUpdate.py:123
+msgid "Set timespan for enclosing places"
+msgstr "Stellen die Zeitspanne für das Einschließen von Orten ein"
+
+#: PlaceUpdate/PlaceUpdate.py:159
 msgid "Clear original enclosing places"
 msgstr "Original einschließende Orte entfernen"
 
-#: PlaceUpdate/PlaceUpdate.py:131
+#: PlaceUpdate/PlaceUpdate.py:162
 msgid "Clear tags"
 msgstr "Markierungen entfernen"
 
-#: PlaceUpdate/PlaceUpdate.py:134
+#: PlaceUpdate/PlaceUpdate.py:165
 msgid "Generate hierarchy"
 msgstr "Hierarchie generieren"
 
-#: PlaceUpdate/PlaceUpdate.py:140
+#: PlaceUpdate/PlaceUpdate.py:171
 msgid "use spaces as separator"
 msgstr "Leerzeichen als Trennzeichen verwenden"
 
-#: PlaceUpdate/PlaceUpdate.py:144
+#: PlaceUpdate/PlaceUpdate.py:175
 msgid "reverse hierarchy"
 msgstr "Hierarchie umkehren"
 
-#: PlaceUpdate/PlaceUpdate.py:150
+#: PlaceUpdate/PlaceUpdate.py:181
 msgid "Replace text"
 msgstr "Text ersetzen"
 
-#: PlaceUpdate/PlaceUpdate.py:153
+#: PlaceUpdate/PlaceUpdate.py:184
 msgid "Use regex"
 msgstr "Reguläre Ausdrücke verwenden"
 
-#: PlaceUpdate/PlaceUpdate.py:162
+#: PlaceUpdate/PlaceUpdate.py:193
 msgid "Old text:"
 msgstr "Alter Text:"
 
-#: PlaceUpdate/PlaceUpdate.py:166
+#: PlaceUpdate/PlaceUpdate.py:197
 msgid "New text:"
 msgstr "Neuer Text:"
 
-#: PlaceUpdate/PlaceUpdate.py:178
+#: PlaceUpdate/PlaceUpdate.py:209
 msgid "Clear selections"
 msgstr "Auswahl aufheben"
 
-#: PlaceUpdate/PlaceUpdate.py:182
+#: PlaceUpdate/PlaceUpdate.py:213
 msgid "Apply to selected places"
 msgstr "Auf ausgewählte Orte anwenden"
 
-#: PlaceUpdate/PlaceUpdate.py:224
+#: PlaceUpdate/PlaceUpdate.py:266
 msgid "Setting place properties"
 msgstr "Ortseigenschaften festlegen"
 
-#: PlaceUpdate/PlaceUpdate.py:262
+#: PlaceUpdate/PlaceUpdate.py:304
 msgid "Regex operation failed: {}"
 msgstr "Regulärer-Ausdruck Operation fehlgeschlagen: {}"
+
+#~ msgid "Select enclosing place"
+#~ msgstr "Einschließenden Ort wählen"
