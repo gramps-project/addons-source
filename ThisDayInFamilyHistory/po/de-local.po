@@ -14,8 +14,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-28 16:32-0500\n"
-"PO-Revision-Date: 2020-08-10 22:47+0200\n"
+"POT-Creation-Date: 2020-09-06 22:35+0200\n"
+"PO-Revision-Date: 2020-09-06 22:40+0200\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -161,7 +161,7 @@ msgstr "Familie"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:328
 msgid "gregorian"
-msgstr ""
+msgstr "gregorianisch"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:382
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:397
@@ -438,13 +438,13 @@ msgstr "%(female_name)s heiratete in %(year)s in %(place)s."
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:627
 #, python-format
 msgid "%(male_name)s joined as a family in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(male_name)s als Familie beigetreten in %(year)s in %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:618
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:629
 #, python-format
 msgid "%(female_name)s joined as a family in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(female_name)s als Familie beigetreten in %(year)s in %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:621
 #, python-format
@@ -463,12 +463,13 @@ msgstr ""
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:632
 #, python-format
 msgid "%(male_name)s had a custom marriage in %(year)s at %(place)s."
-msgstr ""
+msgstr "%(male_name)s hat eine Gewohnheitsrecht Ehe in %(year)s in %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:634
 #, python-format
 msgid "%(female_name)s had a custom marriage in %(year)s at %(place)s."
 msgstr ""
+"%(female_name)s hat eine Gewohnheitsrecht Ehe in %(year)s in %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:638
 #, python-format
