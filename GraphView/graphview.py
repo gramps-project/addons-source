@@ -3033,7 +3033,7 @@ class DotSvgGenerator(object):
         if fillcolor:
             color = hex_to_rgb_float(fillcolor)
             yiq = (color[0] * 299 + color[1] * 587 + color[2] * 114)
-            fontcolor = "white" if yiq < 500 else "black"
+            fontcolor = "#ffffff" if yiq < 500 else "#000000"
             text += ' fillcolor="%s" fontcolor="%s"' % (fillcolor, fontcolor)
         if style:
             text += ' style="%s"' % style
