@@ -122,12 +122,13 @@ gtk_version = float("%s.%s" % (Gtk.MAJOR_VERSION, Gtk.MINOR_VERSION))
 
 #-------------------------------------------------------------------------
 #
-# Search widget module
+# GraphView modules
 #
 #-------------------------------------------------------------------------
 import sys
 sys.path.append(os.path.abspath(os.path.dirname(__file__)))
-from search_widget import SearchWidget, Popover, ListBoxRow
+from search_widget import SearchWidget, Popover, ListBoxRow, get_person_tooltip
+from avatars import Avatars
 
 
 #-------------------------------------------------------------------------
@@ -144,6 +145,9 @@ class GraphView(NavigationView):
     CONFIGSETTINGS = (
         ('interface.graphview-show-images', True),
         ('interface.graphview-show-avatars', True),
+        ('interface.graphview-avatars-style', 1),
+        ('interface.graphview-avatars-male', ''),       # custom avatar
+        ('interface.graphview-avatars-female', ''),     # custom avatar
         ('interface.graphview-show-full-dates', False),
         ('interface.graphview-show-places', False),
         ('interface.graphview-place-format', 0),
@@ -193,6 +197,8 @@ class GraphView(NavigationView):
 
         # for disable animation options in config dialog
         self.ani_widgets = []
+        # for disable custom avatar options in config dialog
+        self.avatar_widgets = []
 
         self.additional_uis.append(self.additional_ui)
         self.define_print_actions()
@@ -407,6 +413,38 @@ class GraphView(NavigationView):
         self.show_avatars = entry == 'True'
         self.graph_widget.populate(self.get_active())
 
+    def cb_update_avatars_style(self, _client, _cnxn_id, entry, _data):
+        """
+        Called when the configuration menu changes the avatars setting.
+        """
+        for widget in self.avatar_widgets:
+            widget.set_visible(entry == '0')
+        self.graph_widget.populate(self.get_active())
+
+    def cb_on_combo_show(self, combobox):
+        """
+        Called when the configuration menu show combobox widget for avatars.
+        Used to hide custom avatars settings.
+        """
+        for widget in self.avatar_widgets:
+            widget.set_visible(combobox.get_active() == 0)
+
+    def cb_male_avatar_set(self, file_chooser_button):
+        """
+        Called when the configuration menu changes the male avatar.
+        """
+        self._config.set('interface.graphview-avatars-male',
+                         file_chooser_button.get_filename())
+        self.graph_widget.populate(self.get_active())
+
+    def cb_female_avatar_set(self, file_chooser_button):
+        """
+        Called when the configuration menu changes the female avatar.
+        """
+        self._config.set('interface.graphview-avatars-female',
+                         file_chooser_button.get_filename())
+        self.graph_widget.populate(self.get_active())
+
     def cb_update_show_full_dates(self, _client, _cnxn_id, entry, _data):
         """
         Called when the configuration menu changes the date setting.
@@ -566,6 +604,8 @@ class GraphView(NavigationView):
                              self.cb_update_show_images)
         self._config.connect('interface.graphview-show-avatars',
                              self.cb_update_show_avatars)
+        self._config.connect('interface.graphview-avatars-style',
+                             self.cb_update_avatars_style)
         self._config.connect('interface.graphview-show-full-dates',
                              self.cb_update_show_full_dates)
         self._config.connect('interface.graphview-show-places',
@@ -695,6 +735,47 @@ class GraphView(NavigationView):
         grid.attach(font_btn, 2, row, 1, 1)
         font_btn.connect('font-set', self.config_change_font)
         font_btn.set_filter_func(self.font_filter_func)
+
+        # Avatars options
+        # ===================================================================
+        row += 1
+        avatars = Avatars(self._config)
+        combo = configdialog.add_combo(grid, _('Avatars style'), row,
+                                       'interface.graphview-avatars-style',
+                                       avatars.get_styles_list())
+        combo.connect('show', self.cb_on_combo_show)
+
+        file_filter = Gtk.FileFilter()
+        file_filter.set_name(_('PNG files'))
+        file_filter.add_pattern("*.png")
+
+        self.avatar_widgets.clear()
+        row += 1
+        lbl = Gtk.Label(label=_('Male avatar:'), halign=Gtk.Align.END)
+        FCB_male = Gtk.FileChooserButton.new(_('Choose male avatar'),
+                                             Gtk.FileChooserAction.OPEN)
+        FCB_male.add_filter(file_filter)
+        FCB_male.set_filename(
+            self._config.get('interface.graphview-avatars-male'))
+        FCB_male.connect('file-set', self.cb_male_avatar_set)
+        grid.attach(lbl, 1, row, 1, 1)
+        grid.attach(FCB_male, 2, row, 1, 1)
+        self.avatar_widgets.append(lbl)
+        self.avatar_widgets.append(FCB_male)
+
+        row += 1
+        lbl = Gtk.Label(label=_('Female avatar:'), halign=Gtk.Align.END)
+        FCB_female = Gtk.FileChooserButton.new(_('Choose female avatar'),
+                                               Gtk.FileChooserAction.OPEN)
+        FCB_female.connect('file-set', self.cb_female_avatar_set)
+        FCB_female.add_filter(file_filter)
+        FCB_female.set_filename(
+            self._config.get('interface.graphview-avatars-female'))
+        grid.attach(lbl, 1, row, 1, 1)
+        grid.attach(FCB_female, 2, row, 1, 1)
+        self.avatar_widgets.append(lbl)
+        self.avatar_widgets.append(FCB_female)
+        # ===================================================================
 
         return _('Themes'), grid
 
@@ -2130,6 +2211,8 @@ class DotSvgGenerator(object):
         # font if we use genealogical symbols
         self.sym_font = None
 
+        self.avatars = Avatars(self.view._config)
+
     def __del__(self):
         """
         Free stream file on destroy.
@@ -2175,6 +2258,7 @@ class DotSvgGenerator(object):
         ranksep = ranksep * 0.1
         nodesep = self.view._config.get('interface.graphview-nodesep')
         nodesep = nodesep * 0.1
+        self.avatars.update_current_style()
         # get background color from gtk theme and convert it to hex
         # else use white background
         bg_color = self.context.lookup_color('theme_bg_color')
@@ -2838,16 +2922,6 @@ class DotSvgGenerator(object):
         else:
             return person_themes[0]
 
-    def get_avatar(self, gender):
-        """
-        Return person gender avatar.
-        """
-        path, _filename = os.path.split(__file__)
-        if gender == Person.MALE:
-            return os.path.join(path, 'person_male.png')
-        if gender == Person.FEMALE:
-            return os.path.join(path, 'person_female.png')
-
     def get_person_label(self, person):
         """
         Return person label string (with tags).
@@ -2871,7 +2945,7 @@ class DotSvgGenerator(object):
             image = self.view.graph_widget.get_person_image(person,
                                                             kind='path')
             if not image and self.show_avatars:
-                image = self.get_avatar(gender=person.gender)
+                image = self.avatars.get_avatar(gender=person.gender)
 
             if image is not None:
                 image = '<IMG SRC="%s"/>' % image
