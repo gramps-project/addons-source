@@ -269,7 +269,7 @@ class ModuleProvider:
     def cleanup_old_versions(self):
         raise NotImplementedError()
 
-#
+
 ##########################################
 
 
@@ -325,7 +325,7 @@ if locals().get('uistate') is None or locals().get('uistate'):
              name=_("Life Line Ancestor Chart"),
              category=("Ancestry", _("Charts")),
              description=_("Persons and their relation in a time based chart"),
-             version = '1.3.13',
+             version = '1.3.14',
              gramps_target_version="5.1",
              status=STABLE,
              fname='lifelinechartview.py',
@@ -339,7 +339,7 @@ if locals().get('uistate') is None or locals().get('uistate'):
              name=_("Life Line Descendant Chart"),
              category=("Ancestry", _("Charts")),
              description=_("Persons and their relation in a time based chart"),
-             version = '1.3.13',
+             version = '1.3.14',
              gramps_target_version="5.1",
              status=STABLE,
              fname='lifelinechartview.py',
