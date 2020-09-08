@@ -381,8 +381,8 @@ class PluginStatus(tool.Tool, ManagedWindow):
             return
         self.__rebuild_reg_list(path)
         pdata = self._pmgr.get_plugin(pid)
-        if (status & UPDATE) and (pdata.ptype == VIEW or
-                                  pdata.ptype == GRAMPLET):
+        if pdata and (status & UPDATE) and (pdata.ptype == VIEW or
+                                            pdata.ptype == GRAMPLET):
             self.restart_needed = True
 
     def __uninstall(self, pid, path):
