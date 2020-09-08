@@ -268,7 +268,7 @@ class NavigationView(PageView):
             self.uistate.push_message(self.dbstate,
                                       _("%s has been bookmarked") % name)
         else:
-            from ..dialog import WarningDialog
+            from gramps.gui.dialog import WarningDialog
             WarningDialog(
                 _("Could Not Set a Bookmark"),
                 _("A bookmark could not be set because "
