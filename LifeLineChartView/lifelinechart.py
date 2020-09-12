@@ -1902,13 +1902,15 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
 
         for item_index, item in enumerate(chart_items):
             if item['type'] == 'text_layer':
+                translated_position = self._position_move(self.upper_left_view_position, self.center_delta_xy)
+                translated_position = self.view_position_get_limited(translated_position)
                 width = self.life_line_chart_instance.get_full_width()*self.zoom_level
                 height = self.life_line_chart_instance.get_full_height()*self.zoom_level
                 visible_range = (self.get_allocated_width(), self.get_allocated_height())
-                ul_offset_actual = [max(0, i) for i in self.upper_left_view_position]
-                lr_offset_actual = [min(k, i+j) for i, j, k in zip(self.upper_left_view_position, visible_range,(width, height))]
-                ul_offset = [i-TEXT_CACHE_SIZE/2 for i in self.upper_left_view_position]
-                lr_offset = [i+j+TEXT_CACHE_SIZE/2 for i, j, k in zip(self.upper_left_view_position, visible_range,(width, height))]
+                ul_offset_actual = [max(0, i) for i in translated_position]
+                lr_offset_actual = [min(k, i+j) for i, j, k in zip(translated_position, visible_range,(width, height))]
+                ul_offset = [i-TEXT_CACHE_SIZE/2 for i in translated_position]
+                lr_offset = [i+j+TEXT_CACHE_SIZE/2 for i, j, k in zip(translated_position, visible_range,(width, height))]
                 caching_range = [int(j-i) for i, j in zip(ul_offset, lr_offset)]
                 if item_index not in self.text_cache or \
                         self.text_cache[item_index]['ul_offset'][0] - ul_offset_actual[0] > 0 or \
