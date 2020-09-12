@@ -2341,23 +2341,68 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                     #ctx.close_path()
                     #ctx.fill()
                     #ctx.stroke()
-                #args_path['arguments']
-                pass
-                # svg_text = svg_document.text(
-                #     **args_text)
-                # if args_path['type'] == 'Line':
-                #     constructor_function = Line
-                # elif args_path['type'] == 'CubicBezier':
-                #     constructor_function = CubicBezier
-                # svg_path = Path(constructor_function(*args_path['arguments']))
-                # y = svg_document.path( svg_path.d(), fill = 'none')
-                # svg_document.add(y)
-                # #x = svg_document.add(svg_text)
-                # x = svg_document.add(svgwrite.text.Text('', dy = [args_text['dy']], font_size = args_text['font_size']))
-                # t = svgwrite.text.TextPath(y, text = args_text['text'])
-                # for span in item['spans']:
-                #     t.add(svg_document.tspan(span[0], **span[1]))
-                # x.add(t)
+                elif args_path['type'] == 'Line':
+                    args = item['config']
+                    font_size = item['font_size']
+                    if type(font_size) == str:
+                        if font_size.endswith('px') or font_size.endswith('pt'):
+                            font_size = float(font_size[:-2])
+                    if limit_font_size:
+                        font_size = min(font_size, limit_font_size[1]/self.zoom_level)
+                        font_size = max(font_size, limit_font_size[0]/self.zoom_level)
+                    rotation = 0
+                    if 'transform' in args and args['transform'].startswith('rotate('):
+                        rotation = float(args['transform'][7:-1].split(',')[0])
+
+                    anchor = args.get('text_anchor')
+                    if not anchor:
+                        anchor = 'start'
+                    color = item.get('fill', (0,0,0))
+                    pos_x = 0
+                    def get_rotation(x1,y1,x2,y2):
+                        pos = (x2-x1, y2-y1)
+                        length = math.sqrt(pos[0]*pos[0] + pos[1]*pos[1])
+                        rel_pos = [i/length for i in pos]
+                        if abs(rel_pos[0]) < abs(rel_pos[1]):
+                            rotation = math.atan(rel_pos[0]/rel_pos[1])/math.pi*180
+                            if rel_pos[1] < 0:
+                                rotation += 180
+                        else:
+                            rotation = 90 - math.atan(rel_pos[1]/rel_pos[0])/math.pi*180
+                            if rel_pos[0] < 0:
+                                rotation += 180
+                        if rotation < 0:
+                            rotation += 360
+                        return rotation
+                    rotation = get_rotation(item['path']['arguments'][0].real, item['path']['arguments'][0].imag,  item['path']['arguments'][1].real, item['path']['arguments'][1].imag)
+
+                    vertical_offset = 0
+                    if 'dy' in args:
+                        if args['dy'][0].endswith('px') or args['dy'][0].endswith('pt'):
+                            vertical_offset = float(args['dy'][0][:-2])
+                        else:
+                            vertical_offset = float(args['dy'][0])
+                    horizontal_offset = 0
+                    for span_text, span in item['spans']:
+                        if 'dx' in span:
+                            if span['dx'][0].endswith('px') or span['dx'][0].endswith('pt'):
+                                horizontal_offset = float(span['dx'][0][:-2])
+                            else:
+                                horizontal_offset = float(span['dx'][0])
+                        pos_x += text_function(
+                            ctx,
+                            span_text,
+                            item['path']['arguments'][0].real,
+                            item['path']['arguments'][0].imag,
+                            90-rotation,
+                            fontSize=font_size,
+                            fontName=item['font_name'],
+                            vertical_offset=vertical_offset,
+                            horizontal_offset=horizontal_offset + pos_x,
+                            align=anchor,
+                            position='top',
+                            color=color,
+                            bold='style' in span and 'bold' in span['style'])
 
             elif item['type'] == 'image' or (item['type'] == 'imageForHighlighting' and self._tooltip_individual_cache is not None and 'gfr' in item and \
                         item['gfr'] == self._tooltip_individual_cache[1]):
