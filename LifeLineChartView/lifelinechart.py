@@ -1549,17 +1549,34 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
             for key, item in gr_individual.items:
                 sorted_individual_dict[key].append(item)
         sorted_individual_flat_item_list = []
-        pure_text_layers = ['layer_birth_label', 'layer_death_label', 'layer_marriage_label']
+        pure_render_buffers = ['layer_birth_label', 'layer_death_label', 'layer_marriage_label']
         for key in sorted(sorted_individual_dict.keys()):
-            if key[1] in pure_text_layers:
+            if key[1] in pure_render_buffers:
                 # pure text layers are prerendered and cached in self.text_cache
                 sorted_individual_flat_item_list += [{
-                    'type': 'text_layer',
+                    'type': 'renderBuffer',
                     'items': sorted_individual_dict[key]
                 }]
             else:
-                sorted_individual_flat_item_list += sorted_individual_dict[key]
-
+                sorted_individual_flat_item_list += [{
+                    'type': 'renderBuffer',
+                    'items': sorted_individual_dict[key]
+                }]
+                for v in sorted_individual_dict[key]:
+                    if v['type']=='path':
+                        try:
+                            d = v.copy()
+                        except Exception as e:
+                            logger.error(str(e) + '\n' + str(v))
+                        d['type'] = 'pathForHighlighting'
+                        sorted_individual_flat_item_list.append(d)
+                    if v['type']=='image':
+                        try:
+                            d = v.copy()
+                        except Exception as e:
+                            logger.error(str(e) + '\n' + str(v))
+                        d['type'] = 'imageForHighlighting'
+                        sorted_individual_flat_item_list.append(d)
         self.chart_items = additional_items + sorted_individual_flat_item_list
         self.image_cache = {}
         self.text_cache = {}
@@ -1901,7 +1918,7 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
             ctx.restore()
 
         for item_index, item in enumerate(chart_items):
-            if item['type'] == 'text_layer':
+            if item['type'] == 'renderBuffer':
                 translated_position = self._position_move(self.upper_left_view_position, self.center_delta_xy)
                 translated_position = self.view_position_get_limited(translated_position)
                 width = self.life_line_chart_instance.get_full_width()*self.zoom_level
@@ -2029,11 +2046,11 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                 # svg_text = svg_document.text(
                 #     **args)
                 # x = svg_document.add(svg_text)
-            elif item['type'] == 'path':
+            elif item['type'] == 'path' or (item['type'] == 'pathForHighlighting' and self._tooltip_individual_cache is not None and 'gir' in item and item['gir'] == self._tooltip_individual_cache[0]):
                 arguments = deepcopy(item['config']['arguments'])
                 arguments = [individual_id for individual_id in arguments]
                 colors = [c/255. for c in item['color']]
-                if self._tooltip_individual_cache is not None and 'gir' in item and item['gir'] == self._tooltip_individual_cache[0]:
+                if item['type'] == 'pathForHighlighting' and self._tooltip_individual_cache is not None and 'gir' in item and item['gir'] == self._tooltip_individual_cache[0]:
                     paint_path(item, 1.4, (1,0,0))
                     paint_path(item, 1.2, (self.text_color.red, self.text_color.green, self.text_color.blue))
                 paint_path(item, 1, colors)
@@ -2342,10 +2359,11 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                 #     t.add(svg_document.tspan(span[0], **span[1]))
                 # x.add(t)
 
-            elif item['type'] == 'image':
+            elif item['type'] == 'image' or (item['type'] == 'imageForHighlighting' and self._tooltip_individual_cache is not None and 'gfr' in item and \
+                        item['gfr'] == self._tooltip_individual_cache[1]):
                 import os
 
-                if self._tooltip_individual_cache is not None and 'gfr' in item and \
+                if item['type'] == 'imageForHighlighting' and self._tooltip_individual_cache is not None and 'gfr' in item and \
                         item['gfr'] == self._tooltip_individual_cache[1]:
                     factor = 1.5
                     size = item['config']['size'][0]*factor, item['config']['size'][1]*factor
