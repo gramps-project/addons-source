@@ -690,7 +690,7 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         self.symbols = Symbols()
         self.reload_symbols()
         self.axis_widget = None
-        self.zoom_fix_point = None
+        self.set_zoom_event_handler_id = None
         self.translate_button_locked = False
 
     def set_axis_widget(self, widget):
@@ -772,14 +772,13 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
 
     def set_zoom(self, value, fix_point = None):
         zoom_level = max(0.01, min(1000, value))
-        self.zoom_fix_point = fix_point
+        self.zoom_slider.handler_block(self.set_zoom_event_handler_id)
         self.zoom_slider.set_value(-log10(zoom_level)*10 - 10)
-        #self._set_zoom(value, fix_point)
+        self.zoom_slider.handler_unblock(self.set_zoom_event_handler_id)
+        self._set_zoom(value, fix_point)
 
     def _set_zoom(self, value, fix_point = None):
         zoom_level_backup = self.zoom_level
-        if fix_point is None:
-            fix_point = self.zoom_fix_point
         self.zoom_level = max(0.01, min(1000, value))
         visible_range = (self.get_allocated_width(), self.get_allocated_height())
         if fix_point is None:
@@ -790,7 +789,6 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
             (self.zoom_level / zoom_level_backup) * (
             fix_point[1] + self.upper_left_view_position[1]) - fix_point[1]
         )
-        self.zoom_fix_point = None
         self.view_position_limit_to_bounds()
         self.queue_draw_wrapper()
 
