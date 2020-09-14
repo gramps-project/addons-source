@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-08 11:14-0500\n"
+"POT-Creation-Date: 2020-09-14 10:35-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,24 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: FilterRules/associationsofpersonmatch.gpr.py:25
+#: FilterRules/associationsofpersonmatch.gpr.py:26
+#: FilterRules/associationsofpersonmatch.py:46
+#: FilterRules/associationsofpersonmatch.py:47
+msgid "Match associations of <person filter>"
+msgstr ""
+
+#: FilterRules/associationsofpersonmatch.py:45
+#: FilterRules/isrelatedwithfiltermatch.py:52
+msgid "Filter name:"
+msgstr ""
+
+#: FilterRules/associationsofpersonmatch.py:48
+#: FilterRules/hassourcefilter.py:59 FilterRules/infamilyrule.py:127
+#: FilterRules/isfamilyfiltermatchevent.py:65
+msgid "General filters"
+msgstr ""
 
 #: FilterRules/degreesofseparation.gpr.py:24
 #: FilterRules/degreesofseparation.py:102
@@ -159,11 +177,6 @@ msgstr ""
 msgid "Matches sources with a particular value"
 msgstr ""
 
-#: FilterRules/hassourcefilter.py:59 FilterRules/infamilyrule.py:127
-#: FilterRules/isfamilyfiltermatchevent.py:65
-msgid "General filters"
-msgstr ""
-
 #: FilterRules/infamilyrule.gpr.py:25 FilterRules/infamilyrule.gpr.py:26
 #: FilterRules/infamilyrule.py:125 FilterRules/infamilyrule.py:126
 msgid "People who are part of families matching <filter>"
@@ -204,10 +217,6 @@ msgstr ""
 #: FilterRules/isrelatedwithfiltermatch.gpr.py:27
 #: FilterRules/isrelatedwithfiltermatch.py:55
 msgid "Matches people who are related to anybody matched by a person filter"
-msgstr ""
-
-#: FilterRules/isrelatedwithfiltermatch.py:52
-msgid "Filter name:"
 msgstr ""
 
 #: FilterRules/isrelatedwithfiltermatch.py:67
