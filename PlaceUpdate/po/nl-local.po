@@ -1,0 +1,117 @@
+# Dutch translation of addon PlaceUpdate.
+# Copyright (C) 2020 Gramps project
+# This file is distributed under the same license as the PlaceUpdate package.
+# Jan Sparreboom <jan@sparreboom.net>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PlaceUpdate 5.x\n"
+"Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
+"POT-Creation-Date: 2020-09-02 11:58-0500\n"
+"PO-Revision-Date: 2020-09-03 20:53+0200\n"
+"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
+"Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+
+#: PlaceUpdate/PlaceUpdate.gpr.py:3 PlaceUpdate/PlaceUpdate.gpr.py:14
+msgid "PlaceUpdate"
+msgstr "Plaatsupdate"
+
+#: PlaceUpdate/PlaceUpdate.gpr.py:4
+msgid "Gramplet to manipulate multiple places"
+msgstr "Gramplet om meerdere plaatsen te manipuleren"
+
+#: PlaceUpdate/PlaceUpdate.py:56
+msgid "Set properties for multiple places"
+msgstr "Stel eigenschappen in voor meerdere plaatsen"
+
+#: PlaceUpdate/PlaceUpdate.py:77 PlaceUpdate/PlaceUpdate.py:154
+msgid "Select"
+msgstr "Selecteren"
+
+#: PlaceUpdate/PlaceUpdate.py:96
+msgid ""
+"This gramplet allows setting properties for multiple places at the same time"
+msgstr ""
+"Met deze gramplet kunnen eigenschappen voor meerdere plaatsen tegelijk "
+"worden ingesteld"
+
+#: PlaceUpdate/PlaceUpdate.py:101
+msgid "Place type:"
+msgstr "Type plaats:"
+
+#: PlaceUpdate/PlaceUpdate.py:106
+msgid "Tag:"
+msgstr "Label:"
+
+#: PlaceUpdate/PlaceUpdate.py:111
+msgid "New enclosing place"
+msgstr "Nieuwe omsluitende plaats"
+
+#: PlaceUpdate/PlaceUpdate.py:116
+msgid "None"
+msgstr "Geen"
+
+#: PlaceUpdate/PlaceUpdate.py:119
+msgid "Timespan:"
+msgstr "Tijdspanne:"
+
+#: PlaceUpdate/PlaceUpdate.py:123
+msgid "Set timespan for enclosing places"
+msgstr "Stel een tijdspanne in voor het insluiten van plaatsen"
+
+#: PlaceUpdate/PlaceUpdate.py:159
+msgid "Clear original enclosing places"
+msgstr "Wis originele omsluitende plaatsen"
+
+#: PlaceUpdate/PlaceUpdate.py:162
+msgid "Clear tags"
+msgstr "Wis labels"
+
+#: PlaceUpdate/PlaceUpdate.py:165
+msgid "Generate hierarchy"
+msgstr "Genereer hiërarchie"
+
+#: PlaceUpdate/PlaceUpdate.py:171
+msgid "use spaces as separator"
+msgstr "gebruik spaties als scheidingsteken"
+
+#: PlaceUpdate/PlaceUpdate.py:175
+msgid "reverse hierarchy"
+msgstr "keer hiërarchie om"
+
+#: PlaceUpdate/PlaceUpdate.py:181
+msgid "Replace text"
+msgstr "Vervang tekst"
+
+#: PlaceUpdate/PlaceUpdate.py:184
+msgid "Use regex"
+msgstr "Gebruik regex"
+
+#: PlaceUpdate/PlaceUpdate.py:193
+msgid "Old text:"
+msgstr "Oude tekst:"
+
+#: PlaceUpdate/PlaceUpdate.py:197
+msgid "New text:"
+msgstr "Nieuwe tekst:"
+
+#: PlaceUpdate/PlaceUpdate.py:209
+msgid "Clear selections"
+msgstr "Wis selecties"
+
+#: PlaceUpdate/PlaceUpdate.py:213
+msgid "Apply to selected places"
+msgstr "Toepassen op geselecteerde plaatsen"
+
+#: PlaceUpdate/PlaceUpdate.py:266
+msgid "Setting place properties"
+msgstr "Plaatseigenschappen instellen"
+
+#: PlaceUpdate/PlaceUpdate.py:304
+msgid "Regex operation failed: {}"
+msgstr "Regex-bewerking mislukt: {}"
