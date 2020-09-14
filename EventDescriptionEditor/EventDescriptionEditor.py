@@ -103,8 +103,8 @@ class EventDescriptionEditor(PluginWindows.ToolManagedWindowBatch):
             db.request_rebuild()
 
             OkDialog(_("INFO"),
-                     _("%s event descriptions of %s events were changed."
-                       % (str(counter), str(num))),
+                     _("%s event descriptions of %s events were changed.")
+                       % (str(counter), str(num)),
                      parent=self.window)
 
 
