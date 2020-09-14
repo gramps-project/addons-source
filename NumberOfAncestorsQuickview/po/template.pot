@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-01 13:30-0500\n"
+"POT-Creation-Date: 2020-09-14 10:44-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,28 +25,28 @@ msgstr ""
 msgid "Shows the number of ancestors of the current person"
 msgstr ""
 
-#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:44
+#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:50
 #, python-format
 msgid "Number of %s's ancestors"
 msgstr ""
 
-#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:48
+#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:54
 msgid "Generation"
 msgstr ""
 
-#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:49
+#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:55
 msgid "Found"
 msgstr ""
 
-#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:50
+#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:56
 msgid "Theoretical"
 msgstr ""
 
-#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:51
+#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:57
 msgid "Percent"
 msgstr ""
 
-#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:59
+#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:65
 msgid ""
 "There were {} of {} ancestors ({}) found.\n"
 "Only individual ancestors were counted. Duplicates caused by pedigree "
