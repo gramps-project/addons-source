@@ -1439,7 +1439,7 @@ class DynamicWebReport(Report):
             jdata['title'] = html_escape(title)
             jdata['gramps_path'] = media.get_path()
             path = self.get_media_web_path(media)
-            jdata['path'] = path
+            jdata['path'] = urlparse.quote(path)
             jdata['mime'] = media.get_mime_type()
             # Get media date
             date = format_date(media.get_date_object())
