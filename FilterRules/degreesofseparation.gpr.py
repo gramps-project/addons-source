@@ -24,10 +24,10 @@ register(RULE,
   name = _('People separated less than <N> degrees of <person>'),
   description = _("Filter rule that matches relatives by degrees of "
                   "separation"),
-  version = '1.0.6',
+  version = '1.0.7',
   authors = ["Matthias Kemmer"],
   authors_email = ["matt.familienforschung@gmail.com"],
-  gramps_target_version = '5.1',
+  gramps_target_version = '5.2',
   status = STABLE,
   fname = "degreesofseparation.py",
   ruleclass = 'DegreesOfSeparation',  # must be rule class name

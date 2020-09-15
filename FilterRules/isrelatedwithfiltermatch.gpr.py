@@ -26,10 +26,10 @@ register(RULE,
   name  = _("People related to <filter>"),
   description = _("Matches people who are related to anybody matched by "
                   "a person filter"),
-  version = '1.0.10',
+  version = '1.0.11',
   authors = ["Matthias Kemmer"],
   authors_email = ["matt.familienforschung@gmail.com"],
-  gramps_target_version = '5.1',
+  gramps_target_version = '5.2',
   status = STABLE,
   fname = "isrelatedwithfiltermatch.py",
   ruleclass = 'IsRelatedWithFilterMatch',  # must be rule class name

@@ -24,10 +24,10 @@ register(RULE,
   name = _("Y-chromosomal inheritance of <filter>"),
   description = _("Matches recorded descendants of a filter result following"
                   " Y-chromosomal inheritance patterns."),
-  version = '1.0.4',
+  version = '1.0.5',
   authors = ["Matthias Kemmer"],
   authors_email = ["matt.familienforschung@gmail.com"],
-  gramps_target_version = '5.1',
+  gramps_target_version = '5.2',
   status = STABLE,
   fname = "yinheritanceoffiltermatch.py",
   ruleclass = 'YChromInheritanceFilterMatch',  # must be rule class name

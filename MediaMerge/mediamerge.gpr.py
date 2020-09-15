@@ -31,8 +31,8 @@ register(
     name = _("Merge Media"),
     description = _("Searches the entire database, looking for "
                     "media that have the same path and merges them."),
-    version = '1.0.7',
-    gramps_target_version = '5.1',
+    version = '1.0.8',
+    gramps_target_version = '5.2',
     status = STABLE,
     fname = 'mediamerge.py',
     authors = ["Paul Culley"],

@@ -18,6 +18,6 @@ register(REPORT,
                     'representation of ancestors/descendants (SVG) '
                     'where details about individuals become visible '
                     'upon mouse-events.'),
-    version = '2.3.42',
-    gramps_target_version = "5.1",
+    version = '2.3.43',
+    gramps_target_version = "5.2",
 )
