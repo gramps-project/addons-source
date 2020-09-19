@@ -29,6 +29,7 @@ from gi.repository import Gtk
 import cairo
 from copy import deepcopy
 import sys
+import os
 
 # -------------------------------------------------------------------------
 # Gramps modules
@@ -489,7 +490,11 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
         self.vbox.connect("key-release-event", self.on_key_release)
 
 
-        self.lifeline.translate_button = Gtk.ToggleButton("M")
+        self.lifeline.translate_button = Gtk.ToggleButton()
+        grab_hand = Gtk.Image()
+        grab_hand.set_from_file(os.path.join(os.path.dirname(__file__), "grab_cursor.png"))
+        grab_hand.show()
+        self.lifeline.translate_button.add(grab_hand)
         self.toolbar.pack_start(self.lifeline.translate_button, False, False, 1)
         self.lifeline.translate_button.connect("toggled", self.lifeline.translate_button_clicked)
 
