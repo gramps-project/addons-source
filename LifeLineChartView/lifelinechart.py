@@ -1556,6 +1556,8 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                     'type': 'renderBuffer',
                     'items': sorted_individual_dict[key]
                 }]
+                if key[1] == 'layer_life_lines':
+                    sorted_individual_flat_item_list[-1]['target'] = 'map'
                 for v in sorted_individual_dict[key]:
                     if v['type']=='path':
                         try:
@@ -1685,7 +1687,9 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
         ctx.fill()
 
         # chart area
-        ctx.set_source_rgba(0.6, 0.6, 0.6, 1)
+
+        background_color = self.uistate.window.get_style_context().get_background_color(Gtk.StateFlags.ACTIVE)
+        ctx.set_source_rgba(*([i for i in background_color]))
         ctx.rectangle(
             visible_range[0]*0 + map_area_size[0]/2 - map_chart_size[0]/2,
             visible_range[1] - map_area_size[1]/2 - map_chart_size[1]/2,
@@ -1714,6 +1718,20 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
             map_area_size[1]
         )
         ctx.stroke()
+
+        for item_index, item in self.prerender_cache.items():
+            if item_index < 0:
+                # map entry
+                prerender_cache_surface = item['surface']
+                ctx.save()
+                ctx.translate(
+                    visible_range[0]*0 + map_area_size[0]/2 - map_chart_size[0]/2,
+                    visible_range[1] - map_area_size[1]/2 - map_chart_size[1]/2
+                )
+                ctx.set_source_surface(prerender_cache_surface)
+                ctx.paint()
+                ctx.restore()
+
 
     def draw_items(self, ctx, chart_items, view_clip_box, limit_font_size = None):
         view_x_min, view_y_min, view_x_max, view_y_max = view_clip_box
@@ -1898,6 +1916,35 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
 
         for item_index, item in enumerate(chart_items):
             if item['type'] == 'renderBuffer':
+                if item.get('target') == 'map':
+                    visible_range, map_area_size, map_chart_size, map_view_size, __, scale = self.get_map_geometry(0, 0)
+                    width = self.life_line_chart_instance.get_full_width()*scale
+                    height = self.life_line_chart_instance.get_full_height()*scale
+                    caching_range = [int(width), int(height)]
+                    prerender_cache_surface = cairo.ImageSurface(cairo.FORMAT_ARGB32,
+                                                    *caching_range)
+                    prerender_cache_ctx = cairo.Context(prerender_cache_surface)
+
+                    # prerender_cache_ctx.translate(*[-i for i in ul_offset])
+                    prerender_cache_ctx.scale(scale, scale)#self.zoom_level, self.zoom_level)
+                    self.draw_items(prerender_cache_ctx, item['items'], view_clip_box, limit_font_size)
+                    self.prerender_cache[-item_index] = {
+                        'surface' : prerender_cache_surface,
+                        # 'ul_offset': [0, 0],
+                        # 'lr_offset': lr_offset,
+                        'zoom': scale
+                    }
+
+                    #left, top = self.prerender_cache[item_index]['ul_offset'] # view_x_min, view_y_min#args['insert']
+                    #scale_xy = 1/self.prerender_cache[-item_index]['zoom'] # min(height_ratio, width_ratio)
+                    #ctx.save()
+                    #ctx.scale(scale_xy, scale_xy)
+                    #ctx.translate(left, top)
+                    # ctx.set_source_surface(prerender_cache_surface)
+
+                    # ctx.paint()
+                    # ctx.restore()
+
                 translated_position = self._position_move(self.upper_left_view_position, self.center_delta_xy)
                 translated_position = self.view_position_get_limited(translated_position)
                 width = self.life_line_chart_instance.get_full_width()*self.zoom_level
