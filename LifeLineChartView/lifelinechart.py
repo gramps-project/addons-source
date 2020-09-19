@@ -1386,7 +1386,7 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
         self.filter = None
         self.chart_items = []
         self.image_cache = {}
-        self.text_cache = {}
+        self.prerender_cache = {}
         self.zoom_level = 1.0
         self.zoom_level_backup = 1.0
         self.life_line_chart_instance = None
@@ -1567,7 +1567,7 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
         pure_render_buffers = ['layer_birth_label', 'layer_death_label', 'layer_marriage_label']
         for key in sorted(sorted_individual_dict.keys()):
             if key[1] in pure_render_buffers:
-                # pure text layers are prerendered and cached in self.text_cache
+                # pure text layers are prerendered and cached in self.prerender_cache
                 sorted_individual_flat_item_list += [{
                     'type': 'renderBuffer',
                     'items': sorted_individual_dict[key]
@@ -1594,7 +1594,7 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                         sorted_individual_flat_item_list.append(d)
         self.chart_items = additional_items + sorted_individual_flat_item_list
         self.image_cache = {}
-        self.text_cache = {}
+        self.prerender_cache = {}
         try:
             if new_root_individual:
                 self.fit_to_page()
@@ -1944,12 +1944,12 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                 ul_offset = [i-TEXT_CACHE_SIZE/2 for i in translated_position]
                 lr_offset = [i+j+TEXT_CACHE_SIZE/2 for i, j, k in zip(translated_position, visible_range,(width, height))]
                 caching_range = [int(j-i) for i, j in zip(ul_offset, lr_offset)]
-                if item_index not in self.text_cache or \
-                        self.text_cache[item_index]['ul_offset'][0] - ul_offset_actual[0] > 0 or \
-                        self.text_cache[item_index]['ul_offset'][1] - ul_offset_actual[1] > 0 or \
-                        self.text_cache[item_index]['lr_offset'][0] - lr_offset_actual[0] < 0 or \
-                        self.text_cache[item_index]['lr_offset'][1] - lr_offset_actual[1] < 0 or \
-                        abs(log10(self.zoom_level/self.text_cache[item_index]['zoom'])) > 0.05:
+                if item_index not in self.prerender_cache or \
+                        self.prerender_cache[item_index]['ul_offset'][0] - ul_offset_actual[0] > 0 or \
+                        self.prerender_cache[item_index]['ul_offset'][1] - ul_offset_actual[1] > 0 or \
+                        self.prerender_cache[item_index]['lr_offset'][0] - lr_offset_actual[0] < 0 or \
+                        self.prerender_cache[item_index]['lr_offset'][1] - lr_offset_actual[1] < 0 or \
+                        abs(log10(self.zoom_level/self.prerender_cache[item_index]['zoom'])) > 0.05:
                     text_surface = cairo.ImageSurface(cairo.FORMAT_ARGB32,
                                                     *caching_range)
                     text_ctx = cairo.Context(text_surface)
@@ -1957,17 +1957,17 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                     text_ctx.translate(*[-i for i in ul_offset])
                     text_ctx.scale(self.zoom_level, self.zoom_level)
                     self.draw_items(text_ctx, item['items'], view_clip_box, limit_font_size)
-                    self.text_cache[item_index] = {
+                    self.prerender_cache[item_index] = {
                         'surface' : text_surface,
                         'ul_offset': ul_offset,
                         'lr_offset': lr_offset,
                         'zoom': self.zoom_level
                     }
                 else:
-                    text_surface = self.text_cache[item_index]['surface']
+                    text_surface = self.prerender_cache[item_index]['surface']
 
-                left, top = self.text_cache[item_index]['ul_offset'] # view_x_min, view_y_min#args['insert']
-                scale_xy = 1/self.text_cache[item_index]['zoom'] # min(height_ratio, width_ratio)
+                left, top = self.prerender_cache[item_index]['ul_offset'] # view_x_min, view_y_min#args['insert']
+                scale_xy = 1/self.prerender_cache[item_index]['zoom'] # min(height_ratio, width_ratio)
                 ctx.save()
                 ctx.scale(scale_xy, scale_xy)
                 ctx.translate(left, top)
