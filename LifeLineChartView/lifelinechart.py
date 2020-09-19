@@ -871,6 +871,10 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         # if self.surface:
         #     ctx.set_source_surface(self.surface, 0, 0)
 
+        tbl = self._config.get('interface.lifelineview-translate_button_locked')
+        if self.translate_button_locked != tbl:
+            self.translate_button.set_active(tbl)
+
         run_profiler = False
         if run_profiler:
             import cProfile
@@ -897,8 +901,10 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         accel_mask = Gtk.accelerator_get_default_mod_mask()
         if eventkey.state & accel_mask == Gdk.ModifierType.CONTROL_MASK and not self.translate_button.get_active():
             self.grab_focus()
-            self.translate_button_locked = not self.translate_button_locked
+            self.translate_button.handler_block(self.translate_button_event_handler)
             self.translate_button.set_active(True)
+            self.translate_button.handler_unblock(self.translate_button_event_handler)
+            self.on_translate_button_toggle()
         if self.translate_button.get_active():
             if Gdk.keyval_name(eventkey.keyval) == 'plus':
                 self.zoom_in()
@@ -945,8 +951,10 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         """grab key release
         """
         if Gdk.keyval_name(eventkey.keyval) in ['Control_L', 'Control_R'] and not self.translate_button_locked:
-            self.translate_button_locked = not self.translate_button_locked
+            self.translate_button.handler_block(self.translate_button_event_handler)
             self.translate_button.set_active(False)
+            self.translate_button.handler_unblock(self.translate_button_event_handler)
+            self.on_translate_button_toggle()
             return True
 
     def on_mouse_down(self, widget, event):
@@ -966,8 +974,10 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         accel_mask = Gtk.accelerator_get_default_mod_mask()
         if event.state & accel_mask == Gdk.ModifierType.CONTROL_MASK and not self.translate_button.get_active():
             self.grab_focus()
-            self.translate_button_locked = not self.translate_button_locked
+            self.translate_button.handler_block(self.translate_button_event_handler)
             self.translate_button.set_active(True)
+            self.translate_button.handler_unblock(self.translate_button_event_handler)
+            self.on_translate_button_toggle()
 
         if event.button == 1:  # left mouse
             # left mouse on center dot, we translate on left click
@@ -1059,11 +1069,15 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         accel_mask = Gtk.accelerator_get_default_mod_mask()
         if event.state & accel_mask == Gdk.ModifierType.CONTROL_MASK and not self.translate_button.get_active():
             self.grab_focus()
-            self.translate_button_locked = not self.translate_button_locked
+            self.translate_button.handler_block(self.translate_button_event_handler)
             self.translate_button.set_active(True)
+            self.translate_button.handler_unblock(self.translate_button_event_handler)
+            self.on_translate_button_toggle()
         if self.translate_button.get_active():
             # event.state & accel_mask == Gdk.ModifierType.CONTROL_MASK:
             if event.direction == Gdk.ScrollDirection.SMOOTH:
+                # smooth scrolling supported since gtk 3.24
+                # -> https://developer.gnome.org/gtk3/stable/GtkEventControllerScroll.html
                 hasdeltas, dx, dy = event.get_scroll_deltas()
                 self.set_zoom(self.zoom_level / (1 + max(-0.9, min(10, 0.25 * dy))), fix_point=(event.x, event.y))
             elif event.direction == Gdk.ScrollDirection.UP:
@@ -1100,10 +1114,11 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         return True
 
     def translate_button_clicked(self, button):
-        self.translate_button_locked = not self.translate_button_locked #not self.translate_button.get_active()
+        self.translate_button_locked = self.translate_button.get_active()
         self.on_translate_button_toggle()
 
     def on_translate_button_toggle(self):
+        self._config.set('interface.lifelineview-translate_button_locked', self.translate_button_locked)
         cursor = None
         if not self.translate_button.get_active():
             cursor = Gdk.Cursor(Gdk.CursorType.ARROW)
@@ -1233,8 +1248,10 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         accel_mask = Gtk.accelerator_get_default_mod_mask()
         if event.state & accel_mask == Gdk.ModifierType.CONTROL_MASK and not self.translate_button.get_active():
             self.grab_focus()
-            self.translate_button_locked = not self.translate_button_locked
+            self.translate_button.handler_block(self.translate_button_event_handler)
             self.translate_button.set_active(True)
+            self.translate_button.handler_unblock(self.translate_button_event_handler)
+            self.on_translate_button_toggle()
         ctrl_is_pressed = self.translate_button.get_active()
         if self.translating_ctrl or self.translating_map:
             cursor = None
@@ -2464,6 +2481,7 @@ class LifeLineChartGrampsGUI:
         self.lifeline = lifeline
         self.lifeline.format_helper = self.format_helper
         self.lifeline.goto = self.on_childmenu_changed
+        lifeline._config = self._config
 
     def main(self):
         """

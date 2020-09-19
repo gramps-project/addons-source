@@ -92,6 +92,7 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
 
     # settings for both charts
     GLOBALCONFIGSETTINGS = (
+        ('interface.lifelineview-translate_button_locked', False),
         ('interface.lifelineview-generations', 4),
         ('interface.lifelineview-background', lifelinechart.BACKGROUND_GRAD_GEN),
         ('interface.lifelineview-showid', False),
@@ -496,7 +497,9 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
         grab_hand.show()
         self.lifeline.translate_button.add(grab_hand)
         self.toolbar.pack_start(self.lifeline.translate_button, False, False, 1)
-        self.lifeline.translate_button.connect("toggled", self.lifeline.translate_button_clicked)
+        self.lifeline.translate_button_locked = self._config.get('interface.lifelineview-translate_button_locked')
+        self.lifeline.translate_button.set_active(self.lifeline.translate_button_locked)
+        self.lifeline.translate_button_event_handler = self.lifeline.translate_button.connect("toggled", self.lifeline.translate_button_clicked)
 
         # add zoom-in button
         self.zoom_in_btn = Gtk.Button.new_from_icon_name('zoom-in-symbolic',
