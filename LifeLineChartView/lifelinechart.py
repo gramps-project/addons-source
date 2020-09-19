@@ -1110,7 +1110,7 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
             self.get_window().set_cursor(cursor)
         else:
             try:
-                cursor = Gdk.Cursor.new_from_name(widget.get_display(), 'grab')
+                cursor = Gdk.Cursor.new_from_name(self.get_display(), 'grab')
             except:
                 cursor = Gdk.Cursor(Gdk.CursorType.HAND1)
         if cursor is not None:
