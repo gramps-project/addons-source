@@ -957,6 +957,32 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
             self.on_translate_button_toggle()
             return True
 
+    def get_map_geometry(self, pos_x, pos_y):
+        visible_range = (self.get_allocated_width(), self.get_allocated_height())
+
+        width = self.life_line_chart_instance.get_full_width()
+        height = self.life_line_chart_instance.get_full_height()
+        aspect_chart = width / height
+        aspect_view = visible_range[0] / visible_range[1]
+
+        map_area_size = [visible_range[0]*self.map_size, visible_range[1]*self.map_size]
+        map_chart_size = [map_area_size[0]*min(1, aspect_chart/aspect_view), map_area_size[1]/max(1, aspect_chart/aspect_view)]
+        # scale_x = map_chart_size[0] / width * self.zoom_level
+        # scale_y = map_chart_size[1] / height * self.zoom_level
+        scale_x = map_chart_size[0] / width
+        # scale_y = map_chart_size[1] / height
+        scale = scale_x
+        map_view_size = [
+            visible_range[0] * scale / self.zoom_level,
+            visible_range[1] * scale / self.zoom_level
+        ]
+
+        map_view_center_position = [
+            -self.upper_left_view_position[0] + (pos_x - (visible_range[0]*0 + map_area_size[0]/2 - map_chart_size[0]/2 + map_view_size[0]*0.5))/scale*self.zoom_level,
+            -self.upper_left_view_position[1] + (pos_y - (visible_range[1] - map_area_size[1]/2 - map_chart_size[1]/2 + map_view_size[1]*0.5))/scale*self.zoom_level
+        ]
+        return visible_range, map_area_size, map_chart_size, map_view_size, map_view_center_position, scale
+
     def on_mouse_down(self, widget, event):
         """
         What to do if we release a mouse button
@@ -991,31 +1017,7 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
                 self.get_window().set_cursor(cursor)
                 self.translating_map = True
                 self.last_x, self.last_y = event.x, event.y
-
-                visible_range = (self.get_allocated_width(), self.get_allocated_height())
-                arbitrary_clip_offset = max(visible_range)*0.5 # remove text items if their start position is 50%*view_width outside
-
-                width = self.life_line_chart_instance.get_full_width()
-                height = self.life_line_chart_instance.get_full_height()
-                aspect_chart = width / height
-                aspect_view = visible_range[0] / visible_range[1]
-
-                map_area_size = [visible_range[0]*self.map_size, visible_range[1]*self.map_size]
-                map_chart_size = [map_area_size[0]*min(1, aspect_chart/aspect_view), map_area_size[1]/max(1, aspect_chart/aspect_view)]
-                scale_x = map_chart_size[0] / width * self.zoom_level
-                scale_y = map_chart_size[1] / height * self.zoom_level
-                scale_x = map_chart_size[0] / width
-                scale_y = map_chart_size[1] / height
-                scale = scale_x
-                map_view_size = [
-                    visible_range[0] * scale / self.zoom_level,
-                    visible_range[1] * scale / self.zoom_level
-                ]
-
-                map_view_center_position = [
-                    -self.upper_left_view_position[0] + (event.x - (visible_range[0]*0 + map_area_size[0]/2 - map_chart_size[0]/2 + map_view_size[0]*0.5))/scale*self.zoom_level,
-                    -self.upper_left_view_position[1] + (event.y - (visible_range[1] - map_area_size[1]/2 - map_chart_size[1]/2 + map_view_size[1]*0.5))/scale*self.zoom_level
-                ]
+                visible_range, map_area_size, map_chart_size, map_view_size, map_view_center_position, __ = self.get_map_geometry(event.x, event.y)
 
                 self.center_delta_xy = (
                     map_view_center_position[0],
@@ -1184,30 +1186,7 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
                 self.center_delta_xy = (self.last_x - event.x,
                                         self.last_y - event.y)
         if self.translating_map:
-            visible_range = (self.get_allocated_width(), self.get_allocated_height())
-            arbitrary_clip_offset = max(visible_range)*0.5 # remove text items if their start position is 50%*view_width outside
-
-            width = self.life_line_chart_instance.get_full_width()
-            height = self.life_line_chart_instance.get_full_height()
-            aspect_chart = width / height
-            aspect_view = visible_range[0] / visible_range[1]
-
-            map_area_size = [visible_range[0]*self.map_size, visible_range[1]*self.map_size]
-            map_chart_size = [map_area_size[0]*min(1, aspect_chart/aspect_view), map_area_size[1]/max(1, aspect_chart/aspect_view)]
-            scale_x = map_chart_size[0] / width * self.zoom_level
-            scale_y = map_chart_size[1] / height * self.zoom_level
-            scale_x = map_chart_size[0] / width
-            scale_y = map_chart_size[1] / height
-            scale = scale_x
-            map_view_size = [
-                visible_range[0] * scale / self.zoom_level,
-                visible_range[1] * scale / self.zoom_level
-            ]
-
-            map_view_center_position = [
-                -self.upper_left_view_position[0] + (event.x - (visible_range[0]*0 + map_area_size[0]/2 - map_chart_size[0]/2 + map_view_size[0]*0.5))/scale*self.zoom_level,
-                -self.upper_left_view_position[1] + (event.y - (visible_range[1] - map_area_size[1]/2 - map_chart_size[1]/2 + map_view_size[1]*0.5))/scale*self.zoom_level
-            ]
+            visible_range, map_area_size, map_chart_size, map_view_size, map_view_center_position, __ = self.get_map_geometry(event.x, event.y)
 
             self.center_delta_xy = (
                 map_view_center_position[0],
@@ -1681,7 +1660,9 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                 pass
             #ctx.scale(scale, scale)
             #self.zoom_level_backup = self.zoom_level
-        visible_range = (self.get_allocated_width(), self.get_allocated_height())
+
+        visible_range, map_area_size, map_chart_size, map_view_size, __, scale = self.get_map_geometry(0, 0)
+
         arbitrary_clip_offset = max(TEXT_CACHE_SIZE/2, max(visible_range)*0.5) # remove text items if their start position is 50%*view_width outside
         view_x_min = (translated_position[0] - arbitrary_clip_offset) / self.zoom_level
         view_x_max = (translated_position[0] + arbitrary_clip_offset + visible_range[0]) / self.zoom_level
@@ -1690,23 +1671,6 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
         self.draw_items(ctx, self.chart_items, (view_x_min, view_y_min, view_x_max, view_y_max))
         ctx.restore()
         ctx.scale(1, 1)
-
-        width = self.life_line_chart_instance.get_full_width()
-        height = self.life_line_chart_instance.get_full_height()
-        aspect_chart = width / height
-        aspect_view = visible_range[0] / visible_range[1]
-
-        map_area_size = [visible_range[0]*self.map_size, visible_range[1]*self.map_size]
-        map_chart_size = [map_area_size[0]*min(1, aspect_chart/aspect_view), map_area_size[1]/max(1, aspect_chart/aspect_view)]
-        scale_x = map_chart_size[0] / width * self.zoom_level
-        scale_y = map_chart_size[1] / height * self.zoom_level
-        scale_x = map_chart_size[0] / width
-        scale_y = map_chart_size[1] / height
-        scale = scale_x
-        map_view_size = [
-            visible_range[0] * scale / self.zoom_level,
-            visible_range[1] * scale / self.zoom_level
-        ]
 
         ctx.set_line_width(1)
 
