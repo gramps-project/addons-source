@@ -1424,6 +1424,7 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                         instance_container=get_dbdstate_instance_container(self.dbstate))
 
                 self.text_color = self.uistate.window.get_style_context().get_color(Gtk.StateFlags.NORMAL)
+                self.background_color = self.uistate.window.get_style_context().get_background_color(Gtk.StateFlags.ACTIVE)
                 if self.text_color.red > 0.5:
                     # dark theme
                     self.life_line_chart_instance._colors = self.life_line_chart_instance.COLOR_CONFIGURATIONS['dark']
@@ -1688,8 +1689,7 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
 
         # chart area
 
-        background_color = self.uistate.window.get_style_context().get_background_color(Gtk.StateFlags.ACTIVE)
-        ctx.set_source_rgba(*([i for i in background_color]))
+        ctx.set_source_rgba(*([i for i in self.background_color]))
         ctx.rectangle(
             visible_range[0]*0 + map_area_size[0]/2 - map_chart_size[0]/2,
             visible_range[1] - map_area_size[1]/2 - map_chart_size[1]/2,
