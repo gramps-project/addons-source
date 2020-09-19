@@ -68,7 +68,7 @@ except ValueError:
     _trans = glocale.translation
 _ = _trans.gettext
 
-TEXT_CACHE_SIZE = 2000
+PRERENDER_CACHE_SIZE = 2000
 
 _max_days = {
     1:31,
@@ -1663,7 +1663,7 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
 
         visible_range, map_area_size, map_chart_size, map_view_size, __, scale = self.get_map_geometry(0, 0)
 
-        arbitrary_clip_offset = max(TEXT_CACHE_SIZE/2, max(visible_range)*0.5) # remove text items if their start position is 50%*view_width outside
+        arbitrary_clip_offset = max(PRERENDER_CACHE_SIZE/2, max(visible_range)*0.5) # remove text items if their start position is 50%*view_width outside
         view_x_min = (translated_position[0] - arbitrary_clip_offset) / self.zoom_level
         view_x_max = (translated_position[0] + arbitrary_clip_offset + visible_range[0]) / self.zoom_level
         view_y_min = (translated_position[1] - arbitrary_clip_offset) / self.zoom_level
@@ -1905,8 +1905,8 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                 visible_range = (self.get_allocated_width(), self.get_allocated_height())
                 ul_offset_actual = [max(0, i) for i in translated_position]
                 lr_offset_actual = [min(k, i+j) for i, j, k in zip(translated_position, visible_range,(width, height))]
-                ul_offset = [i-TEXT_CACHE_SIZE/2 for i in translated_position]
-                lr_offset = [i+j+TEXT_CACHE_SIZE/2 for i, j, k in zip(translated_position, visible_range,(width, height))]
+                ul_offset = [i-PRERENDER_CACHE_SIZE/2 for i in translated_position]
+                lr_offset = [i+j+PRERENDER_CACHE_SIZE/2 for i, j, k in zip(translated_position, visible_range,(width, height))]
                 caching_range = [int(j-i) for i, j in zip(ul_offset, lr_offset)]
                 if item_index not in self.prerender_cache or \
                         self.prerender_cache[item_index]['ul_offset'][0] - ul_offset_actual[0] > 0 or \
@@ -1914,28 +1914,28 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                         self.prerender_cache[item_index]['lr_offset'][0] - lr_offset_actual[0] < 0 or \
                         self.prerender_cache[item_index]['lr_offset'][1] - lr_offset_actual[1] < 0 or \
                         abs(log10(self.zoom_level/self.prerender_cache[item_index]['zoom'])) > 0.05:
-                    text_surface = cairo.ImageSurface(cairo.FORMAT_ARGB32,
+                    prerender_cache_surface = cairo.ImageSurface(cairo.FORMAT_ARGB32,
                                                     *caching_range)
-                    text_ctx = cairo.Context(text_surface)
+                    prerender_cache_ctx = cairo.Context(prerender_cache_surface)
 
-                    text_ctx.translate(*[-i for i in ul_offset])
-                    text_ctx.scale(self.zoom_level, self.zoom_level)
-                    self.draw_items(text_ctx, item['items'], view_clip_box, limit_font_size)
+                    prerender_cache_ctx.translate(*[-i for i in ul_offset])
+                    prerender_cache_ctx.scale(self.zoom_level, self.zoom_level)
+                    self.draw_items(prerender_cache_ctx, item['items'], view_clip_box, limit_font_size)
                     self.prerender_cache[item_index] = {
-                        'surface' : text_surface,
+                        'surface' : prerender_cache_surface,
                         'ul_offset': ul_offset,
                         'lr_offset': lr_offset,
                         'zoom': self.zoom_level
                     }
                 else:
-                    text_surface = self.prerender_cache[item_index]['surface']
+                    prerender_cache_surface = self.prerender_cache[item_index]['surface']
 
                 left, top = self.prerender_cache[item_index]['ul_offset'] # view_x_min, view_y_min#args['insert']
                 scale_xy = 1/self.prerender_cache[item_index]['zoom'] # min(height_ratio, width_ratio)
                 ctx.save()
                 ctx.scale(scale_xy, scale_xy)
                 ctx.translate(left, top)
-                ctx.set_source_surface(text_surface)
+                ctx.set_source_surface(prerender_cache_surface)
 
                 ctx.paint()
                 ctx.restore()
