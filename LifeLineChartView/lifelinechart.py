@@ -1256,6 +1256,7 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
 
         self.last_x, self.last_y = None, None
         #self.draw()
+        self.prerender_cache.clear()
         self.queue_draw_wrapper()
         return True
 
@@ -1916,7 +1917,7 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
 
         for item_index, item in enumerate(chart_items):
             if item['type'] == 'renderBuffer':
-                if item.get('target') == 'map':
+                if item.get('target') == 'map' and -item_index not in self.prerender_cache:
                     visible_range, map_area_size, map_chart_size, map_view_size, __, scale = self.get_map_geometry(0, 0)
                     width = self.life_line_chart_instance.get_full_width()*scale
                     height = self.life_line_chart_instance.get_full_height()*scale
@@ -1924,26 +1925,12 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                     prerender_cache_surface = cairo.ImageSurface(cairo.FORMAT_ARGB32,
                                                     *caching_range)
                     prerender_cache_ctx = cairo.Context(prerender_cache_surface)
-
-                    # prerender_cache_ctx.translate(*[-i for i in ul_offset])
                     prerender_cache_ctx.scale(scale, scale)#self.zoom_level, self.zoom_level)
                     self.draw_items(prerender_cache_ctx, item['items'], view_clip_box, limit_font_size)
                     self.prerender_cache[-item_index] = {
                         'surface' : prerender_cache_surface,
-                        # 'ul_offset': [0, 0],
-                        # 'lr_offset': lr_offset,
                         'zoom': scale
                     }
-
-                    #left, top = self.prerender_cache[item_index]['ul_offset'] # view_x_min, view_y_min#args['insert']
-                    #scale_xy = 1/self.prerender_cache[-item_index]['zoom'] # min(height_ratio, width_ratio)
-                    #ctx.save()
-                    #ctx.scale(scale_xy, scale_xy)
-                    #ctx.translate(left, top)
-                    # ctx.set_source_surface(prerender_cache_surface)
-
-                    # ctx.paint()
-                    # ctx.restore()
 
                 translated_position = self._position_move(self.upper_left_view_position, self.center_delta_xy)
                 translated_position = self.view_position_get_limited(translated_position)
