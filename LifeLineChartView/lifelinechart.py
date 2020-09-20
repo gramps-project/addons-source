@@ -1665,7 +1665,7 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
             #ctx.scale(scale, scale)
             #self.zoom_level_backup = self.zoom_level
 
-        visible_range, map_area_size, map_chart_size, map_view_size, __, scale = self.get_map_geometry(0, 0)
+        visible_range = (self.get_allocated_width(), self.get_allocated_height())
 
         arbitrary_clip_offset = max(PRERENDER_CACHE_SIZE/2, max(visible_range)*0.5) # remove text items if their start position is 50%*view_width outside
         view_x_min = (translated_position[0] - arbitrary_clip_offset) / self.zoom_level
@@ -1675,6 +1675,12 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
         self.draw_items(ctx, self.chart_items, (view_x_min, view_y_min, view_x_max, view_y_max))
         ctx.restore()
         ctx.scale(1, 1)
+        self.draw_map(ctx)
+
+    def draw_map(self, ctx):
+        visible_range, map_area_size, map_chart_size, map_view_size, __, scale = self.get_map_geometry(0, 0)
+        translated_position = self._position_move(self.upper_left_view_position, self.center_delta_xy)
+        translated_position = self.view_position_get_limited(translated_position)
 
         ctx.set_line_width(1)
 
