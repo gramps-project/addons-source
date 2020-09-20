@@ -1720,6 +1720,7 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
         )
         ctx.stroke()
 
+        # draw miniature chart lines
         for item_index, item in self.prerender_cache.items():
             if item_index < 0:
                 # map entry
@@ -1729,12 +1730,13 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                     visible_range[0]*0 + map_area_size[0]/2 - map_chart_size[0]/2,
                     visible_range[1] - map_area_size[1]/2 - map_chart_size[1]/2
                 )
+                ctx.scale(scale/item['zoom'], scale/item['zoom'])
                 ctx.set_source_surface(prerender_cache_surface)
                 ctx.paint()
                 ctx.restore()
 
 
-    def draw_items(self, ctx, chart_items, view_clip_box, limit_font_size = None):
+    def draw_items(self, ctx, chart_items, view_clip_box, limit_font_size=None, high_contrast=False):
         view_x_min, view_y_min, view_x_max, view_y_max = view_clip_box
 
         def text_function(ctx, text, x, y, rotation=0, fontName="Arial", fontSize=10, verticalPadding=0, vertical_offset=0, horizontal_offset=0, bold=False, align='center', position='middle', color=(0,0,0)):
@@ -1926,9 +1928,10 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                                                     *caching_range)
                     prerender_cache_ctx = cairo.Context(prerender_cache_surface)
                     prerender_cache_ctx.scale(scale, scale)#self.zoom_level, self.zoom_level)
-                    self.draw_items(prerender_cache_ctx, item['items'], view_clip_box, limit_font_size)
+                    self.draw_items(prerender_cache_ctx, item['items'], view_clip_box, limit_font_size, high_contrast=True)
                     self.prerender_cache[-item_index] = {
                         'surface' : prerender_cache_surface,
+                        'size': (width, height),
                         'zoom': scale
                     }
 
@@ -2062,7 +2065,10 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
             elif item['type'] == 'path' or (item['type'] == 'pathForHighlighting' and self._tooltip_individual_cache is not None and 'gir' in item and item['gir'] == self._tooltip_individual_cache[0]):
                 arguments = deepcopy(item['config']['arguments'])
                 arguments = [individual_id for individual_id in arguments]
-                colors = [c/255. for c in item['color']]
+                if high_contrast:
+                    colors = [max(0,min(1,(c-0.5)*2+0.5)) for c in self.text_color][:-1]
+                else:
+                    colors = [c/255. for c in item['color']]
                 if item['type'] == 'pathForHighlighting' and self._tooltip_individual_cache is not None and 'gir' in item and item['gir'] == self._tooltip_individual_cache[0]:
                     paint_path(item, 1.4, (1,0,0))
                     paint_path(item, 1.2, (self.text_color.red, self.text_color.green, self.text_color.blue))
