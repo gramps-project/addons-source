@@ -70,7 +70,7 @@ class AgeAtDeath(Rule):
     labels = [('', LesserEqualGreaterOption),
               (_("Age:"), AgeOption)]
     name = _('Filter people by their age at death')
-    category = _("General")
+    category = _("General filters")
     description = _("Filter people by their age at death")
 
     def prepare(self, db, user):
