@@ -2266,9 +2266,10 @@ class DotSvgGenerator(object):
             self.home_person = self.dbstate.db.get_default_person()
             self.set_current_list(active_person)
             self.set_current_list_desc(active_person)
-            self.person_handles_dict.update(
-                self.find_descendants(active_person))
-            self.person_handles_dict.update(self.find_ancestors(active_person))
+            #self.person_handles_dict.update(
+            #    self.find_descendants(active_person))
+            #self.person_handles_dict.update(self.find_ancestors(active_person))
+            self.person_handles_dict.update(self.find_connected(active_person))
 
             if self.person_handles_dict:
                 self.person_handles = sorted(
@@ -2364,6 +2365,82 @@ class DotSvgGenerator(object):
                         self.current_list.append(fam_handle)
                         return True
         return False
+
+    def find_connected(self, active_person):
+        """
+        Spider the database from the active person.
+        """
+        person = self.database.get_person_from_handle(active_person)
+        person_handles = {}
+        self.add_connected(person, self.descendant_generations,
+                           self.ancestor_generations, person_handles)
+        return person_handles
+
+    def add_connected(self, person, num_desc, num_anc, person_handles):
+        """
+        Include all connected to active in the list of people to graph.
+        """
+        if not person:
+            return
+
+        # generation restrictions
+        if (num_desc < 0) or (num_anc < 0):
+            return
+
+        # add self if not already processed or if we have children
+        if person.handle not in person_handles:
+            spouses = len(person.get_family_handle_list())
+            if spouses > 1:
+                person_handles[person.handle] = spouses
+            else:
+                person_handles[person.handle] = 0
+
+            # add descendants
+            for family_handle in person.get_family_handle_list():
+                family = self.database.get_family_from_handle(family_handle)
+
+                # add every child recursively
+                for child_ref in family.get_child_ref_list():
+                    self.add_connected(
+                        self.database.get_person_from_handle(child_ref.ref),
+                        num_desc-1, num_anc+1, person_handles)
+
+            self.add_spouses_connected(person, num_desc, num_anc,
+                                       person_handles)
+
+            # add ancestors
+            sp_persons = []
+            for family_handle in person.get_parent_family_handle_list():
+                family = self.database.get_family_from_handle(family_handle)
+
+                # add every spouses ancestors
+                for sp_handle in (family.get_father_handle(),
+                                  family.get_mother_handle()):
+                    if sp_handle:
+                        sp_persons.append(self.database.get_person_from_handle(
+                                          sp_handle))
+            for sp_person in sp_persons:
+                self.add_spouses_connected(sp_person, num_desc+1, num_anc-1,
+                                           person_handles)
+
+    def add_spouses_connected(self, person, num_desc, num_anc,
+                              person_handles):
+        """
+        Add spouses to the list for all connected variant.
+        """
+        if person:
+            for family_handle in person.get_family_handle_list():
+                sp_family = self.database.get_family_from_handle(family_handle)
+
+                m_handle = sp_family.get_mother_handle()
+                if m_handle and m_handle not in person_handles:
+                    mother = self.database.get_person_from_handle(m_handle)
+                    self.add_connected(mother, num_desc, num_anc, person_handles)
+
+                f_handle = sp_family.get_father_handle()
+                if f_handle and f_handle not in person_handles:
+                    father = self.database.get_person_from_handle(f_handle)
+                    self.add_connected(father, num_desc, num_anc, person_handles)
 
     def find_descendants(self, active_person):
         """
