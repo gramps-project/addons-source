@@ -2,6 +2,7 @@
 # Gramps - a GTK+/GNOME based genealogy program
 #
 # Copyright (C) 2020  Nick Hall
+# Copyright (C) 2020  Gary Griffin
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -20,7 +21,6 @@
 
 """
 DNA Gramplet
-
 This Gramplet shows a DNA segment map.
 """
 #-------------------------------------------------------------------------
@@ -39,7 +39,10 @@ from gi.repository import PangoCairo
 #
 #------------------------------------------------------------------------
 from gramps.gen.plug import Gramplet
+from gramps.gen.display.name import displayer as _nd
 from gramps.gen.const import GRAMPS_LOCALE as glocale
+import random
+from gramps.gen.relationship import get_relationship_calculator
 _ = glocale.translation.gettext
 
 class DNAGramplet(Gramplet):
@@ -54,6 +57,10 @@ class DNAGramplet(Gramplet):
         self.connect(self.dbstate.db, 'person-add', self.update)
         self.connect(self.dbstate.db, 'person-delete', self.update)
         self.connect(self.dbstate.db, 'person-update', self.update)
+        self.connect(self.dbstate.db, 'family-update', self.update)
+        self.connect(self.dbstate.db, 'family-add', self.update)
+        self.connect(self.dbstate.db, 'family-delete', self.update)
+        self.connect_signal('Person',self.update)
 
     def build_gui(self):
         self.vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
@@ -71,43 +78,38 @@ class DNAGramplet(Gramplet):
         active_handle = self.get_active('Person')
         if active_handle:
             active = self.dbstate.db.get_person_from_handle(active_handle)
-
+            self.relationship = get_relationship_calculator(glocale)
+            random.seed(0.66) # use a fixed arbitrary number so it is concistent on redraw
+            segmap = SegmentMap()
+            segmap.set_title(_('DNA Segment Map'))
+            segmap.set_axis(_('Chr'))
+            segmap.segments = []
             for assoc in active.get_person_ref_list():
                 if assoc.get_relation() == 'DNA':
+                    rgb_color = [random.random(),random.random(),random.random()]
+                    associate = self.dbstate.db.get_person_from_handle(assoc.ref)
+                    data, msg = self.relationship.get_relationship_distance_new(self.dbstate.db,active,associate)
+                    id_str = _nd.display(associate) + ' [' + associate.get_gramps_id() + ']'
+                    if data[0] == -1:
+                        side = 'U'
+                    else:
+                        side = data[2][0].upper()
                     for handle in assoc.get_note_list():
                         note = self.dbstate.db.get_note_from_handle(handle)
-                        data = get_segment_data(note)
-                        self.create_segmap(data)
-
-    def create_segmap(self, data):
-        """
-        Create a segment map based on a list of segments.
-        """
-        segmap = SegmentMap()
-        segmap.set_title(_('DNA Segment Map'))
-        segmap.set_axis(_('Chr'))
-        segmap.set_segments(data)
-        #segmap.connect('clicked', self.on_segment_clicked, handle_data)
-        segmap.show()
-        self.vbox.pack_start(segmap, True, True, 0)
-
-    def on_segment_clicked(self, _dummy, value, handle_data):
-        """
-        Called when a segment is double-clicked.
-        """
-        print ('clicked')
-
-def get_segment_data(note):
-    segments = []
-    for line in note.get().split('\n'):
-        field = line.split(',')
-        chromo = field[0]
-        start = get_base(field[1])
-        stop = get_base(field[2])
-        side = field[3]
-        cms = float(field[4])
-        segments.append([chromo, start, stop, side, cms])
-    return segments
+                        for line in note.get().split('\n'):
+                            field = line.split(',')
+                            chromo = field[0]
+                            start = get_base(field[1])
+                            stop = get_base(field[2])
+                            cms = float(field[3])
+                            try:
+                                snp = int(field[4])
+                            except IndexError:
+                                snp = 0
+                            segmap.segments.append([chromo, start, stop, side, cms, snp, id_str, rgb_color])
+            if len(segmap.segments) > 0:
+                segmap.show()
+                self.vbox.pack_start(segmap, True, True, 0)
 
 def get_base(num):
     try:
@@ -290,19 +292,25 @@ class SegmentMap(Gtk.DrawingArea):
 
         offset += spacing
 
-        # Chromosomes
-        cr.set_line_width(1)
+        # Chromosomes background
+        cr.set_line_width(0)
         for i, chromo in enumerate(self.chromosomes):
             cr.rectangle(label_width,
                          i * 2 * (chr_height + spacing) + offset,
                          chart_width * chromo[1] / maximum,
                          chr_height)
+
+            cr.set_source_rgba(0.933, 0.945, 0.970, 1)
+            cr.fill_preserve()
+            cr.set_source_rgba(*fg_color)
+            cr.stroke()
+
             cr.rectangle(label_width,
                          i * 2 * (chr_height + spacing) + offset + chr_height,
                          chart_width * chromo[1] / maximum,
                          chr_height)
 
-            cr.set_source_rgba(0.95, 0.95, 0.95, 1)
+            cr.set_source_rgba(0.976, 0.925, 0.933, 1)
             cr.fill_preserve()
             cr.set_source_rgba(*fg_color)
             cr.stroke()
@@ -310,24 +318,57 @@ class SegmentMap(Gtk.DrawingArea):
         # Segments
         cr.set_line_width(1)
         self.__rects = []
-        for chromo, start, stop, side, cms in self.segments:
-            i = self.labels.index(chromo)
+
+        legend_offset_y = 10 * (chr_height + spacing) + offset
+        legend_offset_x = allocation.width * 0.75
+        last_name = ''
+        layout = self.create_pango_layout('LEGEND')
+        cr.move_to(legend_offset_x, legend_offset_y)
+        cr.set_source_rgba(0, 0, 0, 1)
+        PangoCairo.show_layout(cr, layout)
+        legend_offset_y += chr_height + 2 * spacing
+
+        for chromo, start, stop, side, cms, snp, assoc_name, rgb_color in self.segments:
+            try:
+                i = self.labels.index(chromo)
+            except ValueError:
+                pass
             chr_offset = i * 2 * (chr_height + spacing) + offset
+            chr_mult = 1
             if side == 'M':
                 chr_offset += chr_height
+            if side == 'U':
+                chr_mult = 2
             cr.rectangle(label_width + chart_width * start / maximum,
                          chr_offset,
                          chart_width * (stop-start) / maximum,
-                         chr_height)
+                         chr_mult * chr_height)
             self.__rects.append((label_width + chart_width * start / maximum,
                          chr_offset,
                          chart_width * (stop-start) / maximum,
-                         chr_height))
+                         chr_mult * chr_height))
 
-            cr.set_source_rgba(0.5, 0.5, 1, 1)
+            cr.set_source_rgba(rgb_color[0], rgb_color[1], rgb_color[2], 1/chr_mult)
             cr.fill_preserve()
             cr.set_source_rgba(*fg_color)
             cr.stroke()
+            # Legend entry
+            if last_name != assoc_name:
+                last_name = assoc_name
+
+                cr.rectangle(legend_offset_x - chr_height - 2 * spacing,
+                             legend_offset_y,
+                             chr_height,
+                             chr_height)
+                cr.set_source_rgba(rgb_color[0], rgb_color[1], rgb_color[2], 1/chr_mult)
+                cr.fill_preserve()
+                cr.stroke()
+
+                layout = self.create_pango_layout(last_name)
+                cr.move_to(legend_offset_x, legend_offset_y)
+                cr.set_source_rgba(0,0,0,1)
+                legend_offset_y += chr_height + 2 * spacing
+                PangoCairo.show_layout(cr, layout)
 
         self.set_size_request(-1, bottom + height + 5)
 
@@ -351,7 +392,10 @@ class SegmentMap(Gtk.DrawingArea):
             if active == -1:
                 self.set_tooltip_text('')
             else:
-                self.set_tooltip_text('%s cMs' % self.segments[active][4])
+                if self.segments[active][5] > 0:
+                    self.set_tooltip_text("{0}\n{1} cMs, {2} SNPs".format(self.segments[active][6], self.segments[active][4], self.segments[active][5]))
+                else:
+                    self.set_tooltip_text("{0}\n{1} cMs".format(self.segments[active][6], self.segments[active][4]))
 
         return False
 
