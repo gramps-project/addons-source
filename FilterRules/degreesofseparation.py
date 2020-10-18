@@ -25,7 +25,7 @@
 #
 # -------------------------------------------------------------------------
 from gramps.gen.filters.rules import Rule
-from gramps.gui.editors.filtereditor import MyBoolean, MyInteger
+from gramps.gui.editors.filtereditor import MyInteger
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
     _trans = glocale.get_addon_translator(__file__)
@@ -50,34 +50,13 @@ class DegreesOption(MyInteger):
 
 # -------------------------------------------------------------------------
 #
-# IncPartners boolean option
-#
-# -------------------------------------------------------------------------
-class InclPartner(MyBoolean):
-    """Boolean option for filter editor."""
-
-    def __init__(self, database):
-        MyBoolean.__init__(self, _('Include Partners'))
-        self.set_tooltip_text(_("Include all partners."))
-        self.set_active(True)
-
-    def set_text(self, val):
-        """Set the checkbox active."""
-        is_active = bool(int(val))
-        self.set_active(is_active)
-
-
-# -------------------------------------------------------------------------
-#
 # Degrees of separation filter rule class
 #
 # -------------------------------------------------------------------------
 class DegreesOfSeparation(Rule):
     """Filter rule that matches relatives by degrees of separation."""
 
-    labels = [_('ID:'),
-              (_("Degrees:"), DegreesOption),
-              ('', InclPartner)]
+    labels = [_('ID:'), (_("Degrees:"), DegreesOption)]
     name = _('People separated less than <N> degrees of <person>')
     category = _("Relationship filters")
     description = _("Filter rule that matches relatives by degrees of"
@@ -88,23 +67,18 @@ class DegreesOfSeparation(Rule):
         self.db = db
         self.ref_list = set()
         self.persons = set()
-        opt_partners = bool(int(self.list[2]))
-        degree = 0
-        max_deg = int(self.list[1])
+        degrees = int(self.list[1])
 
         self.get_root_handle()
-        while degree <= max_deg:
+        for i in range(degrees+1):
             for handle in list(self.persons):
                 person = self.db.get_person_from_handle(handle)
                 self.get_parents(person)
                 self.get_children(person)
                 self.get_siblings(person)
+                self.get_partners(person)
                 self.persons.remove(handle)
                 self.ref_list.add(handle)
-            degree += 1
-
-        if opt_partners:
-            self.get_partners()
 
     def get_root_handle(self):
         """Get the handle of the starting person."""
@@ -149,17 +123,18 @@ class DegreesOfSeparation(Rule):
                 if mother:
                     self.get_children(mother)
 
-    def get_partners(self):
+    def get_partners(self, person):
         """Get all partners."""
-        for handle in list(self.ref_list):
-            person = self.db.get_person_from_handle(handle)
-            fam_list = person.get_family_handle_list()
-            if fam_list:
-                for fam_h in fam_list:
-                    fam = self.db.get_family_from_handle(fam_h)
-                    father_h = fam.get_father_handle()
-                    mother_h = fam.get_mother_handle()
-                    self.ref_list.update([father_h, mother_h])
+        fam_list = person.get_family_handle_list()
+        if fam_list:
+            for fam_h in fam_list:
+                fam = self.db.get_family_from_handle(fam_h)
+                father_h = fam.get_father_handle()
+                mother_h = fam.get_mother_handle()
+                if father_h:
+                    self.persons.add(father_h)
+                if mother_h:
+                    self.persons.add(mother_h)
 
     def apply(self, db, person):
         """Check if the filter applies to the person."""
