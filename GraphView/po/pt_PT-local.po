@@ -382,7 +382,7 @@ msgid "Copy"
 msgstr "Copiar"
 
 #: GraphView/graphview.py:3428 GraphView/graphview.py:3610
-msgid "Remove"
+msgid "Delete"
 msgstr "Remover"
 
 #: GraphView/graphview.py:3434 GraphView/graphview.py:3616
