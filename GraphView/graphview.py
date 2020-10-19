@@ -3479,7 +3479,7 @@ class PopupMenu(Gtk.Menu):
             add_menuitem(self, _('Copy'),
                          handle, self.actions.copy_person_to_clipboard)
 
-            add_menuitem(self, _('Remove'),
+            add_menuitem(self, _('Delete'),
                          person, self.actions.remove_person)
 
             self.add_separator()
@@ -3738,7 +3738,7 @@ class PopupMenu(Gtk.Menu):
             add_menuitem(self, _('Edit'),
                          handle, self.actions.edit_family)
 
-            add_menuitem(self, _('Remove'),
+            add_menuitem(self, _('Delete'),
                          family, self.actions.remove_family)
 
             self.add_separator()
