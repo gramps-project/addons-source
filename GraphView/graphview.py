@@ -161,7 +161,8 @@ class GraphView(NavigationView):
         ('interface.graphview-ranksep', 5),
         ('interface.graphview-nodesep', 2),
         ('interface.graphview-person-theme', 0),
-        ('interface.graphview-font', ['', 14]))
+        ('interface.graphview-font', ['', 14]),
+        ('interface.graphview-show-all-connected', False))
 
     def __init__(self, pdata, dbstate, uistate, nav_group=0):
         NavigationView.__init__(self, _('Graph View'), pdata, dbstate, uistate,
@@ -525,6 +526,12 @@ class GraphView(NavigationView):
         """
         self.graph_widget.populate(self.get_active())
 
+    def cb_show_all_connected(self, _client, _cnxd_id, _entry, _data):
+        """
+        Called when show all connected setting changed.
+        """
+        self.graph_widget.populate(self.get_active())
+
     def config_change_font(self, font_button):
         """
         Called when font is change.
@@ -586,6 +593,8 @@ class GraphView(NavigationView):
                              self.cb_update_spacing)
         self._config.connect('interface.graphview-person-theme',
                              self.cb_update_person_theme)
+        self._config.connect('interface.graphview-show-all-connected',
+                             self.cb_show_all_connected)
 
     def _get_configure_page_funcs(self):
         """
@@ -961,6 +970,16 @@ class GraphWidget(object):
         self.add_popover(spacing_btn, spacing_box)
         self.toolbar.pack_start(spacing_btn, False, False, 1)
 
+        # add button to show all connected persons
+        self.all_connected_btn = Gtk.ToggleButton(label=_('All connected'))
+        self.all_connected_btn.set_tooltip_text(
+            _("Show all connected persons limited by generation restrictions.\n"
+              "Works slow, so don't set large generation values."))
+        self.all_connected_btn.set_active(
+            self.view._config.get('interface.graphview-show-all-connected'))
+        self.all_connected_btn.connect('clicked', self.toggle_all_connected)
+        self.toolbar.pack_start(self.all_connected_btn, False, False, 1)
+
         self.vbox.pack_start(scrolled_win, True, True, 0)
 
         # if we have graph lager than graphviz paper size
@@ -1013,6 +1032,13 @@ class GraphWidget(object):
                         conf_const)
         box.pack_start(spinner, False, False, 1)
         return box
+
+    def toggle_all_connected(self, widget):
+        """
+        Change state for "Show all connected" setting.
+        """
+        self.view._config.set('interface.graphview-show-all-connected',
+                              widget.get_active())
 
     def spinners_popup(self, _widget, popover):
         """
@@ -2140,6 +2166,8 @@ class DotSvgGenerator(object):
             'interface.graphview-ancestor-generations')
         self.person_theme_index = self.view._config.get(
             'interface.graphview-person-theme')
+        self.show_all_connected = self.view._config.get(
+            'interface.graphview-show-all-connected')
         ranksep = self.view._config.get('interface.graphview-ranksep')
         ranksep = ranksep * 0.1
         nodesep = self.view._config.get('interface.graphview-nodesep')
@@ -2266,10 +2294,15 @@ class DotSvgGenerator(object):
             self.home_person = self.dbstate.db.get_default_person()
             self.set_current_list(active_person)
             self.set_current_list_desc(active_person)
-            #self.person_handles_dict.update(
-            #    self.find_descendants(active_person))
-            #self.person_handles_dict.update(self.find_ancestors(active_person))
-            self.person_handles_dict.update(self.find_connected(active_person))
+
+            if self.show_all_connected:
+                self.person_handles_dict.update(
+                    self.find_connected(active_person))
+            else:
+                self.person_handles_dict.update(
+                    self.find_descendants(active_person))
+                self.person_handles_dict.update(
+                    self.find_ancestors(active_person))
 
             if self.person_handles_dict:
                 self.person_handles = sorted(
