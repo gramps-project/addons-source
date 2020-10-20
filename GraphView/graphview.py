@@ -2415,20 +2415,17 @@ class DotSvgGenerator(object):
         if not person:
             return
 
-        # generation restrictions
-        if (num_desc < 0) or (num_anc < 0):
+        # check if handle is not already processed
+        if person.handle not in person_handles:
+            spouses_list = person.get_family_handle_list()
+            # add self
+            person_handles[person.handle] = len(spouses_list)
+        else:
             return
 
-        # add self if not already processed or if we have children
-        if person.handle not in person_handles:
-            spouses = len(person.get_family_handle_list())
-            if spouses > 1:
-                person_handles[person.handle] = spouses
-            else:
-                person_handles[person.handle] = 0
-
-            # add descendants
-            for family_handle in person.get_family_handle_list():
+        # add descendants
+        if num_desc > 0:  # generation restriction
+            for family_handle in spouses_list:
                 family = self.database.get_family_from_handle(family_handle)
 
                 # add every child recursively
@@ -2437,11 +2434,11 @@ class DotSvgGenerator(object):
                         self.database.get_person_from_handle(child_ref.ref),
                         num_desc-1, num_anc+1, person_handles)
 
-            self.add_spouses_connected(person, num_desc, num_anc,
-                                       person_handles)
+        self.add_spouses_connected(person, num_desc, num_anc,
+                                   person_handles)
 
-            # add ancestors
-            sp_persons = []
+        # add ancestors
+        if num_anc > 0:  # generation restriction
             for family_handle in person.get_parent_family_handle_list():
                 family = self.database.get_family_from_handle(family_handle)
 
@@ -2449,11 +2446,9 @@ class DotSvgGenerator(object):
                 for sp_handle in (family.get_father_handle(),
                                   family.get_mother_handle()):
                     if sp_handle:
-                        sp_persons.append(self.database.get_person_from_handle(
-                                          sp_handle))
-            for sp_person in sp_persons:
-                self.add_spouses_connected(sp_person, num_desc+1, num_anc-1,
-                                           person_handles)
+                        self.add_spouses_connected(
+                            self.database.get_person_from_handle(sp_handle),
+                            num_desc+1, num_anc-1, person_handles)
 
     def add_spouses_connected(self, person, num_desc, num_anc,
                               person_handles):
@@ -2674,8 +2669,8 @@ class DotSvgGenerator(object):
 
         # The list of families for which we have output the node,
         # so we don't do it twice
-        family_nodes_done = {}
-        family_links_done = {}
+        family_nodes_done = []
+        family_links_done = []
         for person_handle in self.person_handles:
             person = self.database.get_person_from_handle(person_handle)
             # Output the person's node
@@ -2687,7 +2682,7 @@ class DotSvgGenerator(object):
             family_list = person.get_family_handle_list()
             for fam_handle in family_list:
                 if fam_handle not in family_nodes_done:
-                    family_nodes_done[fam_handle] = 1
+                    family_nodes_done.append(fam_handle)
                     self.__add_family_node(fam_handle)
 
             # Output family links where person is a parent
@@ -2695,7 +2690,7 @@ class DotSvgGenerator(object):
             family_list = person.get_family_handle_list()
             for fam_handle in family_list:
                 if fam_handle not in family_links_done:
-                    family_links_done[fam_handle] = 1
+                    family_links_done.append(fam_handle)
                     if not subgraph_started:
                         subgraph_started = True
                         self.start_subgraph(person_handle)
