@@ -74,7 +74,8 @@ from gramps.gui.dialog import OptionDialog, ErrorDialog, QuestionDialog2
 from gramps.gui.display import display_url
 from gramps.gui.editors import EditPerson, EditFamily, EditTagList
 from gramps.gui.utils import (color_graph_box, color_graph_family,
-                              rgb_to_hex, hex_to_rgb_float)
+                              rgb_to_hex, hex_to_rgb_float,
+                              process_pending_events)
 from gramps.gui.views.navigationview import NavigationView
 from gramps.gui.views.bookmarks import PersonBookmarks
 from gramps.gui.views.tags import OrganizeTagsDialog
@@ -1326,6 +1327,8 @@ class GraphWidget(object):
         """
         # set the busy cursor, so the user knows that we are working
         self.uistate.set_busy_cursor(True)
+        if self.uistate.window.get_window().is_visible():
+            process_pending_events()
 
         self.clear()
         self.active_person_handle = active_person
