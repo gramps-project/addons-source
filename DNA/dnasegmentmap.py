@@ -126,7 +126,7 @@ def write_chromo(line, side, rgb_color, assoc, segmap):
     field = line.split(',')
     if len(field) < 4:
         return False
-    chromo = field[0]
+    chromo = field[0].strip()
     start = get_base(field[1])
     stop = get_base(field[2])
     try:
@@ -368,7 +368,7 @@ class SegmentMap(Gtk.DrawingArea):
             try:
                 i = self.labels.index(chromo)
             except ValueError:
-                pass
+                continue
             chr_offset = i * 2 * (chr_height + spacing) + offset
             chr_mult = 1
             if side == 'M':
