@@ -2491,75 +2491,45 @@ class DotSvgGenerator(object):
         if not person:
             return
 
-        if num_generations < 0:
+        # check if handle is not already processed
+        # and add self and spouses
+        if person.handle not in person_handles:
+            spouses_list = person.get_family_handle_list()
+
+            person_handles[person.handle] = len(spouses_list)
+            self.add_spouses(person, person_handles)
+        else:
             return
 
-        # look at if we have children
-        nb_child = 0
-        for family_handle in person.get_family_handle_list():
+        if num_generations <= 0:
+            return
+
+        # add every child recursively
+        for family_handle in spouses_list:
             family = self.database.get_family_from_handle(family_handle)
+
             for child_ref in family.get_child_ref_list():
-                # we have at least one child. stop
-                nb_child += 1
-                break
-            break
+                self.add_descendant(
+                    self.database.get_person_from_handle(child_ref.ref),
+                    num_generations - 1, person_handles)
 
-        # add self if not already processed or if we have children
-        if person.handle not in person_handles or nb_child != 0:
-            spouses = len(person.get_family_handle_list())
-            if spouses > 1:
-                person_handles[person.handle] = spouses
-            else:
-                person_handles[person.handle] = 0
-
-            for family_handle in person.get_family_handle_list():
-                family = self.database.get_family_from_handle(family_handle)
-
-                # add every child recursively
-                for child_ref in family.get_child_ref_list():
-                    self.add_descendant(
-                        self.database.get_person_from_handle(child_ref.ref),
-                        num_generations - 1, person_handles)
-
-                self.add_spouses(person, family, person_handles)
-
-    def add_spouses(self, person, family, person_handles):
+    def add_spouses(self, person, person_handles):
         """
         Add spouses to the list.
         """
-        # get spouse
-        if person.handle == family.get_father_handle():
-            spouse_handle = family.get_mother_handle()
-        else:
-            spouse_handle = family.get_father_handle()
+        if not person:
+            return
 
-        # add all his(her) spouses recursively
-        if spouse_handle:
-            sp_person = self.database.get_person_from_handle(spouse_handle)
-        else:
-            sp_person = None
+        for family_handle in person.get_family_handle_list():
+            sp_family = self.database.get_family_from_handle(family_handle)
 
-        # add spouse itself
-        if spouse_handle and spouse_handle not in person_handles:
-            spouses = len(sp_person.get_family_handle_list())
-            if spouses > 1:
-                person_handles[spouse_handle] = spouses
-            else:
-                person_handles[spouse_handle] = 0
-
-        if sp_person:
-            for family_handle in sp_person.get_family_handle_list():
-                sp_family = self.database.get_family_from_handle(family_handle)
-
-                m_handle = sp_family.get_mother_handle()
-                if m_handle and m_handle not in person_handles:
-                    mother = self.database.get_person_from_handle(m_handle)
-                    self.add_descendant(mother, 0, person_handles)
-
-                f_handle = sp_family.get_father_handle()
-                if f_handle and f_handle not in person_handles:
-                    father = self.database.get_person_from_handle(f_handle)
-                    self.add_descendant(father, 0, person_handles)
+            for sp_handle in (sp_family.get_father_handle(),
+                              sp_family.get_mother_handle()):
+                if sp_handle and sp_handle not in person_handles:
+                    # add only spouse (num_generations = 0)
+                    self.add_descendant(
+                        self.database.get_person_from_handle(sp_handle),
+                        0, person_handles)
 
     def find_ancestors(self, active_person):
         """
@@ -2577,35 +2547,32 @@ class DotSvgGenerator(object):
         if not person:
             return
 
+        # add self if handle is not already processed
+        if person.handle not in person_handles:
+            person_handles[person.handle] = len(person.get_family_handle_list())
+        else:
+            return
+
         if num_generations <= 0:
             return
 
-        # add self
-        if person.handle not in person_handles:
-            spouses = len(person.get_family_handle_list())
-            if spouses > 1:
-                person_handles[person.handle] = spouses
-            else:
-                person_handles[person.handle] = 0
+        for family_handle in person.get_parent_family_handle_list():
+            family = self.database.get_family_from_handle(family_handle)
 
-            for family_handle in person.get_parent_family_handle_list():
-                family = self.database.get_family_from_handle(family_handle)
+            # add parents
+            sp_persons = []
+            for sp_handle in (family.get_father_handle(),
+                              family.get_mother_handle()):
+                if sp_handle and sp_handle not in person_handles:
+                    sp_person = self.database.get_person_from_handle(sp_handle)
+                    self.add_ancestor(sp_person,
+                                      num_generations - 1,
+                                      person_handles)
+                    sp_persons.append(sp_person)
 
-                # add every spouses ancestors
-                sp_persons = []
-                for sp_handle in (family.get_father_handle(),
-                                  family.get_mother_handle()):
-                    if sp_handle:
-                        sp_person = self.database.get_person_from_handle(
-                            sp_handle)
-                        self.add_ancestor(sp_person,
-                                          num_generations - 1,
-                                          person_handles)
-                        sp_persons.append(sp_person)
-
-                # add every other spouses for father and mother
-                for sp_person in sp_persons:
-                    self.add_spouses(sp_person, family, person_handles)
+            # add every other spouses for parents
+            for sp_person in sp_persons:
+                self.add_spouses(sp_person, person_handles)
 
     def add_child_links_to_families(self):
         """
