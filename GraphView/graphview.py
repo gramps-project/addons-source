@@ -2424,28 +2424,34 @@ class DotSvgGenerator(object):
             return
 
         # add descendants
-        if num_desc > 0:  # generation restriction
+        if num_desc >= 0:  # generation restriction
             for family_handle in spouses_list:
                 family = self.database.get_family_from_handle(family_handle)
 
-                # add every child recursively
-                for child_ref in family.get_child_ref_list():
-                    self.add_connected(
-                        self.database.get_person_from_handle(child_ref.ref),
-                        num_desc-1, num_anc+1, person_handles)
+                if num_desc > 0:  # generation restriction
+                    # add every child recursively
+                    for child_ref in family.get_child_ref_list():
+                        self.add_connected(
+                            self.database.get_person_from_handle(child_ref.ref),
+                            num_desc-1, num_anc+1, person_handles)
 
-        self.add_spouses_connected(person, num_desc, num_anc,
-                                   person_handles)
+                # add person spouses
+                for sp_handle in (family.get_father_handle(),
+                                  family.get_mother_handle()):
+                    if sp_handle and sp_handle not in person_handles:
+                        self.add_connected(
+                            self.database.get_person_from_handle(sp_handle),
+                            num_desc, num_anc, person_handles)
 
         # add ancestors
         if num_anc > 0:  # generation restriction
             for family_handle in person.get_parent_family_handle_list():
                 family = self.database.get_family_from_handle(family_handle)
 
-                # add every spouses ancestors
+                # add every ancestor's spouses
                 for sp_handle in (family.get_father_handle(),
                                   family.get_mother_handle()):
-                    if sp_handle:
+                    if sp_handle and sp_handle not in person_handles:
                         self.add_spouses_connected(
                             self.database.get_person_from_handle(sp_handle),
                             num_desc+1, num_anc-1, person_handles)
@@ -2455,19 +2461,18 @@ class DotSvgGenerator(object):
         """
         Add spouses to the list for all connected variant.
         """
-        if person:
-            for family_handle in person.get_family_handle_list():
-                sp_family = self.database.get_family_from_handle(family_handle)
+        if not person:
+            return
 
-                m_handle = sp_family.get_mother_handle()
-                if m_handle and m_handle not in person_handles:
-                    mother = self.database.get_person_from_handle(m_handle)
-                    self.add_connected(mother, num_desc, num_anc, person_handles)
+        for family_handle in person.get_family_handle_list():
+            sp_family = self.database.get_family_from_handle(family_handle)
 
-                f_handle = sp_family.get_father_handle()
-                if f_handle and f_handle not in person_handles:
-                    father = self.database.get_person_from_handle(f_handle)
-                    self.add_connected(father, num_desc, num_anc, person_handles)
+            for sp_handle in (sp_family.get_father_handle(),
+                              sp_family.get_mother_handle()):
+                if sp_handle and sp_handle not in person_handles:
+                    self.add_connected(
+                        self.database.get_person_from_handle(sp_handle),
+                        num_desc, num_anc, person_handles)
 
     def find_descendants(self, active_person):
         """
