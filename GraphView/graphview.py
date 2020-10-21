@@ -2641,8 +2641,9 @@ class DotSvgGenerator(object):
 
         # The list of families for which we have output the node,
         # so we don't do it twice
-        family_nodes_done = []
-        family_links_done = []
+        # use set() as it little faster then list()
+        family_nodes_done = set()
+        family_links_done = set()
         for person_handle in self.person_handles:
             person = self.database.get_person_from_handle(person_handle)
             # Output the person's node
@@ -2654,7 +2655,7 @@ class DotSvgGenerator(object):
             family_list = person.get_family_handle_list()
             for fam_handle in family_list:
                 if fam_handle not in family_nodes_done:
-                    family_nodes_done.append(fam_handle)
+                    family_nodes_done.add(fam_handle)
                     self.__add_family_node(fam_handle)
 
             # Output family links where person is a parent
@@ -2662,7 +2663,7 @@ class DotSvgGenerator(object):
             family_list = person.get_family_handle_list()
             for fam_handle in family_list:
                 if fam_handle not in family_links_done:
-                    family_links_done.append(fam_handle)
+                    family_links_done.add(fam_handle)
                     if not subgraph_started:
                         subgraph_started = True
                         self.start_subgraph(person_handle)
