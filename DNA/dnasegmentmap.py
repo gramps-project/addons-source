@@ -465,12 +465,12 @@ class SegmentMap(Gtk.DrawingArea):
                 active = i
         # Primary Button Press
         if (event.button == 1 and
-                event.type == Gdk.EventType.BUTTON_PRESS and 
+                event.type == Gdk.EventType.BUTTON_PRESS and
                 active != -1):
             self.uistate.set_active(self.__assoc_handle[active], 'Person')
         #Secondary Button Press
         if (event.button == 3 and
-                event.type == Gdk.EventType.BUTTON_PRESS and 
+                event.type == Gdk.EventType.BUTTON_PRESS and
                 active != -1):
             try:
                 EditPerson(self.dbstate, self.uistate, [], self.__associates[active])
