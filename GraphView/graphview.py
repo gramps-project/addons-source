@@ -196,6 +196,14 @@ class GraphView(NavigationView):
         self.define_print_actions()
         self.uistate.connect('font-changed', self.font_changed)
 
+    def on_delete(self):
+        """
+        Method called on shutdown.
+        See PageView class (../gramps/gui/views/pageview.py).
+        """
+        # join threads to allow close app properly
+        self.graph_widget.search_widget.join_threads(None)
+
     def font_changed(self):
         self.graph_widget.font_changed(self.get_active())
         #self.goto_handle(None)

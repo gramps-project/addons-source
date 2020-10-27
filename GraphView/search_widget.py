@@ -20,8 +20,8 @@
 #
 
 from gi.repository import Gtk, Gdk, GLib, GObject
-from threading import Thread, Event
-from queue import Queue
+from threading import Thread
+from multiprocessing import Process, Queue, Event
 
 from gramps.gen import datehandler
 from gramps.gen.display.name import displayer
@@ -76,6 +76,7 @@ class SearchWidget(GObject.GObject):
 
         # connect signals
         self.popover_widget.connect('item-activated', self.activate_item)
+        self.popover_widget.connect('closed', self.join_threads)
         self.search_entry.connect('start-search', self.start_search)
         self.search_entry.connect('empty-search', self.hide_search_popover)
         self.search_entry.connect('focus-to-result', self.focus_results)
@@ -87,10 +88,32 @@ class SearchWidget(GObject.GObject):
 
         self.search_words = None
         # search status
-        self.in_search = False
-        # thread for search
-        self.thread = Thread()
-        self.queue = Queue()
+        self.stop_search_event = Event()
+        # process and threads for search
+        self.process = None
+        self.all_process = None
+        self.apply_thread = None
+        self.all_apply_thread = None
+
+        self.graph_queue = Queue()
+        self.other_queue = Queue()
+
+    def join_threads(self, widget):
+        """
+        Join threads on 'closed' signal of Popover.
+        """
+        self.stop_search()
+
+        self.graph_queue.put('terminate')
+        self.other_queue.put('terminate')
+        for proc in (self.apply_thread, self.all_apply_thread):
+            if proc and proc.is_alive():
+                proc.join()
+        self.apply_thread = None
+        self.all_apply_thread = None
+
+        self.graph_queue = Queue()
+        self.other_queue = Queue()
 
     def get_widget(self):
         """
@@ -126,185 +149,160 @@ class SearchWidget(GObject.GObject):
 
     def start_search(self, widget, search_words):
         """
-        Start search thread.
+        Start search Process and threads.
         """
         self.stop_search()
         self.popover_widget.clear_items()
         self.popover_widget.popup()
 
-        self.queue = Queue()
+        self.stop_search_event.clear()
 
-        all_person_handles = self.dbstate.db.get_person_handles()
-        self.thread = Thread(target=self.make_search,
-                             args=[search_words, all_person_handles])
-        self.thread.start()
+        # search for current graph
 
-    def make_search(self, search_words, all_person_handles):
-        """
-        Search persons in the current graph and after in the db.
-        Use Thread to make UI responsiveness.
-        """
-        thread_event = Event()
-        self.in_search = True
+        self.process = Process(
+            target=self.make_search,
+            args=[self.graph_queue, self.stop_search_event,
+                  self.items_list, search_words])
+        self.process.start()
 
-        # set progress to 0
-        GLib.idle_add(
-            self.popover_widget.main_panel.set_progress, 0, '')
-        GLib.idle_add(
-            self.popover_widget.other_panel.set_progress, 0, '')
+        if (self.apply_thread is None) or (self.apply_thread and
+                                           not self.apply_thread.is_alive()):
+            self.apply_thread = Thread(
+                target=self.apply_search,
+                args=[self.graph_queue, self.popover_widget.main_panel,
+                      self.stop_search_event])
+            self.apply_thread.start()
 
-        # search persons in the graph
-        # ===========================
-        found_list = []
-        self.do_thread = Thread(target=self.apply_search,
-                                args=[self.popover_widget.main_panel,
-                                      found_list])
-        self.do_thread.start()
+        # search all db
 
-        progress = 0
-        for item in self.items_list:
-            progress += 1
-
-            GLib.idle_add(self.do_this, thread_event,
-                          self.check_person,
-                          item.title, search_words)
-            while not thread_event.wait(timeout=0.01):
-                if not self.in_search:
-                    self.queue.queue.clear()
-                    self.queue.put('stop')
-                    self.do_thread.join()
-                    return
-            thread_event.clear()
-
-            GLib.idle_add(self.popover_widget.main_panel.set_progress,
-                          progress/len(self.items_list),
-                          _('found: %s') % len(found_list))
-            if not self.in_search:
-                self.queue.queue.clear()
-                self.queue.put('stop')
-                self.do_thread.join()
-                return
-
-        self.queue.put('stop')
-        self.do_thread.join()
-
-        if not found_list:
-            GLib.idle_add(self.popover_widget.main_panel.add_no_result,
-                          _('No persons found...'))
-        GLib.idle_add(self.popover_widget.main_panel.set_progress,
-                      0, _('found: %s') % len(found_list))
-
-        # search other persons from db
-        # ============================
-        GLib.idle_add(self.popover_widget.show_other_panel,
-                      self.search_all_db_option)
+        self.popover_widget.show_other_panel(self.search_all_db_option)
         if not self.search_all_db_option:
-            self.in_search = False
             return
 
-        other_found = []
-        self.do_thread = Thread(target=self.apply_search,
-                                args=[self.popover_widget.other_panel,
-                                      other_found])
-        self.do_thread.start()
+        all_person_handles = self.dbstate.db.get_person_handles()
+        self.all_process = Process(
+            target=self.make_search,
+            args=[self.other_queue, self.stop_search_event,
+                  all_person_handles, search_words, self.items_list])
+        self.all_process.start()
 
-        progress = 0
-        if all_person_handles:
-            for person_handle in all_person_handles:
-                progress += 1
-                # excluding persons found in current graph
-                if person_handle not in found_list:
-                    GLib.idle_add(self.do_this, thread_event,
-                                  self.check_person,
-                                  person_handle, search_words)
-                    while not thread_event.wait(timeout=0.01):
-                        if not self.in_search:
-                            self.queue.queue.clear()
-                            self.queue.put('stop')
-                            self.do_thread.join()
-                            return
-                    thread_event.clear()
+        if ((self.all_apply_thread is None) or
+            (self.all_apply_thread and not self.all_apply_thread.is_alive())):
+            self.all_apply_thread = Thread(
+                target=self.apply_search,
+                args=[self.other_queue, self.popover_widget.other_panel,
+                      self.stop_search_event])
+            self.all_apply_thread.start()
 
-                    GLib.idle_add(self.popover_widget.other_panel.set_progress,
-                                  progress/len(all_person_handles),
-                                  _('found: %s') % len(other_found))
-                    if not self.in_search:
-                        self.queue.queue.clear()
-                        self.queue.put('stop')
-                        self.do_thread.join()
-                        return
+    def make_search(self, queue, stop_search_event,
+                    items_list, search_words, exclude=[]):
+        """
+        Search persons in the current graph and after in the db.
+        Use Process to make UI responsiveness.
+        Params 'items_list' and 'exclude' -
+            can be list of person_handles or GooCanvas.CanvasGroup.
+        """
+        if items_list and len(items_list) > 0:
+            if isinstance(items_list[0], str):
+                items = items_list
+            else:
+                items = set()
+                for item in items_list:
+                    items.add(item.title)  # get handles
+        else:
+            return
 
-                GLib.idle_add(self.popover_widget.other_panel.set_progress,
-                              progress/len(all_person_handles),
-                              _('found: %s') % len(other_found))
+        if len(exclude) > 0:
+            if isinstance(exclude[0], str):
+                exclude_handles = exclude
+            else:
+                exclude_handles = set()
+                for item in exclude:
+                    exclude_handles.add(item.title)  # get handles
+        else:
+            exclude_handles = ()
 
-        self.queue.put('stop')
-        self.do_thread.join()
+        for item in items:
+            if stop_search_event.is_set():
+                queue.put('stop')
+                return
+            if item in exclude_handles:
+                continue
+            person = self.check_person(item, search_words)
+            if person:
+                queue.put(person)
 
-        if not other_found:
-            GLib.idle_add(self.popover_widget.other_panel.add_no_result,
-                          _('No persons found...'))
+        queue.put('stop')
 
-        GLib.idle_add(self.popover_widget.other_panel.set_progress,
-                      0, _('found: %s') % len(other_found))
-
-        self.in_search = False
-
-    def apply_search(self, panel, add_list):
+    def apply_search(self, queue, panel, stop_search_event):
         """
         Add persons to specified panel by self.queue.
+        Use Thread to make UI responsiveness.
         """
-        thread_event = Event()
         context = GLib.main_context_default()
-        while True:
-            item = self.queue.get()
 
-            if item == 'stop':
-                self.queue.task_done()
+        count = 0
+        while True:
+            person = queue.get()
+
+            if person == 'terminate':
                 return
 
-            add_list.append(item.handle)
-            task_id = GLib.idle_add(self.do_this, thread_event,
-                                    self.add_to_result,
-                                    item.handle, panel)
-            task = context.find_source_by_id(task_id)
-            # wait until person is added to list
-            while not thread_event.wait(timeout=0.01):
-                if not self.in_search:
+            if stop_search_event.is_set():
+                count = 0
+                continue
+
+            if person == 'stop':
+                GLib.idle_add(panel.set_progress, 0, _('found: %s') % count)
+                return
+
+            # add task to insert person to panel
+            task_id = GLib.idle_add(self.add_to_result, person, panel)
+            try:
+                task = context.find_source_by_id(task_id)
+            except:
+                GLib.usleep(100)
+                continue
+
+            count += 1
+            div_size = count + queue.qsize()
+            if div_size > 0:
+                progress = count/div_size
+            else:
+                progress = 0
+            GLib.idle_add(panel.set_progress, progress, _('found: %s') % count)
+
+            while True:
+                if stop_search_event.is_set():
                     if task and not task.is_destroyed():
                         GLib.source_remove(task.get_id())
-                    self.queue.task_done()
-                    return
-            thread_event.clear()
-            self.queue.task_done()
-
-    def do_this(self, event, func, *args):
-        """
-        Do some function (and wait "event" in the thread).
-        It should be called by "GLib.idle_add".
-        In the end "event" will be set.
-        """
-        func(*args)
-        event.set()
+                    count = 0
+                    break
+                # wait until person is added to list
+                if not task:
+                    break
+                if task.is_destroyed():
+                    break
+                GLib.usleep(100)
 
     def get_person_from_handle(self, person_handle):
         """
         Get person from handle.
         """
-        try:
-            # try used for not person handles
-            # and other problems to get person
-            person = self.dbstate.db.get_person_from_handle(person_handle)
-            return person
-        except:
-            return False
+        for i in range(0, 5):   # attempts to get person
+            try:
+                # try used for not person handles
+                # and other problems to get person
+                person = self.dbstate.db.get_person_from_handle(person_handle)
+                return person
+            except:
+                GLib.usleep(100*i)
+        return False
 
-    def add_to_result(self, person_handle, panel):
+    def add_to_result(self, person, panel):
         """
         Add found person to results.
-        "GLib.idle_add" used for using method in thread.
         """
-        person = self.get_person_from_handle(person_handle)
         bookmarks = self.bookmarks.get_bookmarks().bookmarks
         if person:
             name = displayer.display_name(person.get_primary_name())
@@ -326,45 +324,41 @@ class SearchWidget(GObject.GObject):
                 if person_image:
                     hbox.pack_start(person_image, False, True, 2)
 
-            if person_handle in bookmarks:
+            if person.handle in bookmarks:
                 button = Gtk.Button.new_from_icon_name(
                     starred, Gtk.IconSize.MENU)
                 button.set_tooltip_text(_('Remove from bookmarks'))
                 button.set_relief(Gtk.ReliefStyle.NONE)
                 button.connect('clicked', self.remove_from_bookmarks,
-                               person_handle)
+                               person.handle)
                 hbox.add(button)
             else:
                 button = Gtk.Button.new_from_icon_name(
                     non_starred, Gtk.IconSize.MENU)
                 button.set_tooltip_text(_('Add to bookmarks'))
                 button.set_relief(Gtk.ReliefStyle.NONE)
-                button.connect('clicked', self.add_to_bookmarks, person_handle)
+                button.connect('clicked', self.add_to_bookmarks, person.handle)
                 hbox.add(button)
 
             if self.show_marked_first:
-                row.marked = person_handle in bookmarks
+                row.marked = person.handle in bookmarks
 
             # add tooltip
             tooltip = get_person_tooltip(person, self.dbstate.db)
             if tooltip:
                 row.set_tooltip_text(tooltip)
-
             panel.add_to_panel(row)
-
-        else:
-            # we should return 'True' to restart function from GLib.idle_add
-            return True
 
     def stop_search(self):
         """
-        Stop search.
-        And wait while thread is finished.
+        Stop search Process.
         """
-        self.in_search = False
+        self.stop_search_event.set()
 
-        while self.thread.is_alive():
-            self.thread.join()
+        for proc in (self.process, self.all_process):
+            if proc and proc.is_alive():
+                proc.join(timeout=1)
+                proc.terminate()
 
     def check_person(self, person_handle, search_words):
         """
@@ -378,9 +372,8 @@ class SearchWidget(GObject.GObject):
                 if word not in search_str:
                     # if some of words not present in the person name
                     return False
-            self.queue.put(person)
-            return False
-        return True
+            return person
+        return False
 
     def focus_results(self, widget):
         """
