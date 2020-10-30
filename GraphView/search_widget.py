@@ -258,20 +258,21 @@ class SearchWidget(GObject.GObject):
 
             # add task to insert person to panel
             task_id = GLib.idle_add(self.add_to_result, person, panel)
-            try:
-                task = context.find_source_by_id(task_id)
-            except:
-                GLib.usleep(100)
-                continue
+            task = context.find_source_by_id(task_id)
 
+            # calculate and update progress
             count += 1
-            div_size = count + queue.qsize()
-            if div_size > 0:
-                progress = count/div_size
-            else:
+            try:
+                found_count = count + queue.qsize()
+                if found_count > 0:
+                    progress = count/found_count
+                else:
+                    progress = 0
+            except NotImplementedError:
                 progress = 0
             GLib.idle_add(panel.set_progress, progress, _('found: %s') % count)
 
+            # wait task is finished or search is stoped
             while True:
                 if stop_search_event.is_set():
                     if task and not task.is_destroyed():
@@ -279,9 +280,7 @@ class SearchWidget(GObject.GObject):
                     count = 0
                     break
                 # wait until person is added to list
-                if not task:
-                    break
-                if task.is_destroyed():
+                if not task or task.is_destroyed():
                     break
                 GLib.usleep(100)
 
