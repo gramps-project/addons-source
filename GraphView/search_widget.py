@@ -254,6 +254,9 @@ class SearchWidget(GObject.GObject):
 
             if person == 'stop':
                 GLib.idle_add(panel.set_progress, 0, _('found: %s') % count)
+                if count == 0:
+                    GLib.idle_add(panel.add_no_result,
+                                  _('No persons found...'))
                 return
 
             # add task to insert person to panel
@@ -649,7 +652,7 @@ class Panel(Gtk.Box):
         Remove all old items from list_box.
         """
         self.list_box.foreach(self.list_box.remove)
-        self.set_progress(0)
+        self.set_progress(0, '')
 
     def sort_func(self, row_1, row_2):
         """
