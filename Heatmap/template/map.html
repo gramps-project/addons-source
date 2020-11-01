@@ -20,7 +20,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_4f23f12a918c4360acbcb46252b7b100 {
+                #GrampsHeatmap {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -32,11 +32,11 @@
     <script src="https://leaflet.github.io/Leaflet.heat/dist/leaflet-heat.js"></script>
 </head>
 <body>
-    <div class="folium-map" id="map_4f23f12a918c4360acbcb46252b7b100" ></div>
+    <div class="folium-map" id="GrampsHeatmap" ></div>
 </body>
 <script>
-    var map_4f23f12a918c4360acbcb46252b7b100 = L.map(
-        "map_4f23f12a918c4360acbcb46252b7b100",
+    var GrampsHeatmap = L.map(
+        "GrampsHeatmap",
         {
             center: [48.0, 5.0],
             crs: L.CRS.EPSG3857,
@@ -45,14 +45,3 @@
             preferCanvas: false,
         }
     );
-    
-    var tile_layer_d9991b8fadab4083808fd78ba166d6c9 = L.tileLayer(
-        "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
-        {"attribution": "Map tiles by \u003ca href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
-    ).addTo(map_4f23f12a918c4360acbcb46252b7b100);
-    
-    var heat_map_3b8eb32a2b514f15a1f63cce903452a8 = L.heatLayer(
-        
-        {"blur": 15, "max": 43.0, "maxZoom": 18, "minOpacity": 0.5, "radius": 25}
-        ).addTo(map_4f23f12a918c4360acbcb46252b7b100);
-</script>
