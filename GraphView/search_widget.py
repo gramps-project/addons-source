@@ -213,8 +213,6 @@ class SearchWidget(GObject.GObject):
         Recursive add persons to specified panel from queue.
         Use GLib.idle_add() to communicate with GUI.
         """
-        context = GLib.main_context_default()
-
         try:
             person = queue.get(timeout=0.05)
         except Exception as err:
@@ -274,7 +272,8 @@ class SearchWidget(GObject.GObject):
         if person:
             name = displayer.display_name(person.get_primary_name())
 
-            row = ListBoxRow(description=person.handle, label=name)
+            row = ListBoxRow(person_handle=person.handle, label=name,
+                             db=self.dbstate.db)
             hbox = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
             row.add(hbox)
 
@@ -310,10 +309,6 @@ class SearchWidget(GObject.GObject):
             if self.show_marked_first:
                 row.marked = person.handle in bookmarks
 
-            # add tooltip
-            tooltip = get_person_tooltip(person, self.dbstate.db)
-            if tooltip:
-                row.set_tooltip_text(tooltip)
             panel.add_to_panel(row)
 
     def stop_search(self, widget=None):
@@ -496,7 +491,7 @@ class Popover(Gtk.Popover):
         """
         if row is None:
             return
-        handle = row.description
+        handle = row.person_handle
         if handle is not None:
             self.emit('item-activated', handle)
         # hide popover on activation
@@ -531,14 +526,29 @@ class Popover(Gtk.Popover):
 class ListBoxRow(Gtk.ListBoxRow):
     """
     Extended Gtk.ListBoxRow.
-    Include label, description and mark properties.
     """
-    def __init__(self, description=None, label='', marked=False):
+    def __init__(self, person_handle=None, label='', marked=False, db=None):
         Gtk.ListBoxRow.__init__(self)
-        self.label = label              # person name for sorting
-        self.description = description  # useed to store person handle
-        self.marked = marked            # is bookmarked (used to sorting)
 
+        self.label = label                  # person name for sorting
+        self.person_handle = person_handle
+        self.marked = marked                # is bookmarked (used for sorting)
+        self.database = db                  # database to get tooltip
+
+        self.set_has_tooltip(True)
+        self.connect('query-tooltip', self.query_tooltip)
+
+    def query_tooltip(self, widget, x, y, keyboard_mode, tooltip):
+        """
+        Get tooltip for person on demand.
+        """
+        if (self.get_tooltip_text() is None) and (self.database is not None):
+            person = self.database.get_person_from_handle(self.person_handle)
+            text = get_person_tooltip(person, self.database)
+            if text:
+                self.set_tooltip_text(text)
+            else:
+                self.set_has_tooltip(False)
 
 class ScrolledListBox(Gtk.ScrolledWindow):
     """
