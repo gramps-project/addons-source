@@ -22,6 +22,7 @@
 from gi.repository import Gtk, Gdk, GLib, GObject
 from threading import Thread
 from multiprocessing import Process, Queue, Event
+from multiprocessing.queues import Empty
 
 from gramps.gen import datehandler
 from gramps.gen.display.name import displayer
@@ -76,7 +77,7 @@ class SearchWidget(GObject.GObject):
 
         # connect signals
         self.popover_widget.connect('item-activated', self.activate_item)
-        self.popover_widget.connect('closed', self.join_threads)
+        self.popover_widget.connect('closed', self.stop_search)
         self.search_entry.connect('start-search', self.start_search)
         self.search_entry.connect('empty-search', self.hide_search_popover)
         self.search_entry.connect('focus-to-result', self.focus_results)
@@ -92,23 +93,6 @@ class SearchWidget(GObject.GObject):
         # process and threads for search
         self.process = None
         self.all_process = None
-        self.apply_thread = None
-        self.all_apply_thread = None
-
-        self.graph_queue = Queue()
-        self.other_queue = Queue()
-
-    def join_threads(self, widget):
-        """
-        Join threads on 'closed' signal of Popover.
-        """
-        self.stop_search()
-
-        self.graph_queue.put('terminate')
-        self.other_queue.put('terminate')
-        for proc in (self.apply_thread, self.all_apply_thread):
-            if proc and proc.is_alive():
-                proc.join()
         self.apply_thread = None
         self.all_apply_thread = None
 
@@ -165,13 +149,8 @@ class SearchWidget(GObject.GObject):
                   self.items_list, search_words])
         self.process.start()
 
-        if (self.apply_thread is None) or (self.apply_thread and
-                                           not self.apply_thread.is_alive()):
-            self.apply_thread = Thread(
-                target=self.apply_search,
-                args=[self.graph_queue, self.popover_widget.main_panel,
-                      self.stop_search_event])
-            self.apply_thread.start()
+        GLib.idle_add(self.apply_search, self.graph_queue,
+                      self.popover_widget.main_panel, self.stop_search_event)
 
         # search all db
 
@@ -186,13 +165,8 @@ class SearchWidget(GObject.GObject):
                   all_person_handles, search_words, self.items_list])
         self.all_process.start()
 
-        if ((self.all_apply_thread is None) or
-            (self.all_apply_thread and not self.all_apply_thread.is_alive())):
-            self.all_apply_thread = Thread(
-                target=self.apply_search,
-                args=[self.other_queue, self.popover_widget.other_panel,
-                      self.stop_search_event])
-            self.all_apply_thread.start()
+        GLib.idle_add(self.apply_search, self.other_queue,
+                      self.popover_widget.other_panel, self.stop_search_event)
 
     def make_search(self, queue, stop_search_event,
                     items_list, search_words, exclude=[]):
@@ -234,58 +208,49 @@ class SearchWidget(GObject.GObject):
 
         queue.put('stop')
 
-    def apply_search(self, queue, panel, stop_search_event):
+    def apply_search(self, queue, panel, stop_search_event, count=0):
         """
-        Add persons to specified panel by self.queue.
-        Use Thread to make UI responsiveness.
+        Recursive add persons to specified panel from queue.
+        Use GLib.idle_add() to communicate with GUI.
         """
         context = GLib.main_context_default()
 
-        count = 0
-        while True:
-            person = queue.get()
-
-            if person == 'terminate':
-                return
-
-            if stop_search_event.is_set():
-                count = 0
-                continue
-
-            if person == 'stop':
-                GLib.idle_add(panel.set_progress, 0, _('found: %s') % count)
-                if count == 0:
-                    GLib.idle_add(panel.add_no_result,
-                                  _('No persons found...'))
-                return
-
-            # add task to insert person to panel
-            task_id = GLib.idle_add(self.add_to_result, person, panel)
-            task = context.find_source_by_id(task_id)
-
-            # calculate and update progress
-            count += 1
-            try:
-                found_count = count + queue.qsize()
-                if found_count > 0:
-                    progress = count/found_count
-                else:
-                    progress = 0
-            except NotImplementedError:
-                progress = 0
-            GLib.idle_add(panel.set_progress, progress, _('found: %s') % count)
-
-            # wait task is finished or search is stoped
-            while True:
-                if stop_search_event.is_set():
-                    if task and not task.is_destroyed():
-                        GLib.source_remove(task.get_id())
-                    count = 0
-                    break
-                # wait until person is added to list
-                if not task or task.is_destroyed():
-                    break
+        try:
+            person = queue.get(timeout=0.05)
+        except Exception as err:
+            if type(err) is Empty:
                 GLib.usleep(100)
+                GLib.idle_add(self.apply_search, queue, panel,
+                              stop_search_event, count)
+            return
+
+        if stop_search_event.is_set():
+            return
+
+        if person == 'stop':
+            panel.set_progress(0, _('found: %s') % count)
+            if count == 0:
+                panel.add_no_result(_('No persons found...'))
+            return
+
+        # insert person to panel
+        self.add_to_result(person, panel)
+
+        # calculate and update progress
+        count += 1
+        try:
+            found_count = count + queue.qsize()
+            if found_count > 0:
+                progress = count/found_count
+            else:
+                progress = 0
+        except NotImplementedError:
+            progress = 0
+
+        panel.set_progress(progress, _('found: %s') % count)
+
+        GLib.idle_add(self.apply_search, queue, panel,
+                      stop_search_event, count)
 
     def get_person_from_handle(self, person_handle):
         """
@@ -351,7 +316,7 @@ class SearchWidget(GObject.GObject):
                 row.set_tooltip_text(tooltip)
             panel.add_to_panel(row)
 
-    def stop_search(self):
+    def stop_search(self, widget=None):
         """
         Stop search Process.
         """
@@ -359,8 +324,14 @@ class SearchWidget(GObject.GObject):
 
         for proc in (self.process, self.all_process):
             if proc and proc.is_alive():
-                proc.join(timeout=1)
+                proc.join(timeout=0.05)
                 proc.terminate()
+
+        self.graph_queue.close()
+        self.other_queue.close()
+
+        self.graph_queue = Queue()
+        self.other_queue = Queue()
 
     def check_person(self, person_handle, search_words):
         """

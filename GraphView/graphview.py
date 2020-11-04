@@ -201,8 +201,8 @@ class GraphView(NavigationView):
         Method called on shutdown.
         See PageView class (../gramps/gui/views/pageview.py).
         """
-        # join threads to allow close app properly
-        self.graph_widget.search_widget.join_threads(None)
+        # stop search to allow close app properly
+        self.graph_widget.search_widget.stop_search()
 
     def font_changed(self):
         self.graph_widget.font_changed(self.get_active())
