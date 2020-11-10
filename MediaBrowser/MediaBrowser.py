@@ -39,7 +39,7 @@ class MediaBrowser(Gramplet):
     def init(self):
         self.gui.WIDGET = self.build_gui()
         self.gui.get_container_widget().remove(self.gui.textview)
-        self.gui.get_container_widget().add_with_viewport(self.gui.WIDGET)
+        self.gui.get_container_widget().add(self.gui.WIDGET)
         self.gui.WIDGET.show()
 
     def build_gui(self):
@@ -66,8 +66,9 @@ class MediaBrowser(Gramplet):
 
     def update_has_data(self):
         active_handle = self.get_active('Person')
-        active = self.dbstate.db.get_person_from_handle(active_handle)
-        self.set_has_data(self.get_has_data(active))
+        if active_handle:
+            active = self.dbstate.db.get_person_from_handle(active_handle)
+            self.set_has_data(self.get_has_data(active))
 
     def main(self):
         self.model.clear()
