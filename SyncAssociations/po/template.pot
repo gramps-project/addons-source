@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-14 10:44-0500\n"
+"POT-Creation-Date: 2020-11-10 10:00-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,6 +18,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: SyncAssociations/syncAssociations.gpr.py:3
+#: SyncAssociations/syncAssociations.py:105
+#: SyncAssociations/syncAssociations.py:109
+#: SyncAssociations/syncAssociations.py:113
 msgid "Sync Associations"
 msgstr ""
 
@@ -27,7 +30,19 @@ msgid ""
 "adds any which are missing to the Associated Person."
 msgstr ""
 
-#: SyncAssociations/syncAssociations.py:93
+#: SyncAssociations/syncAssociations.py:99
 #, python-format
 msgid "Add %s reciprocal association"
+msgstr ""
+
+#: SyncAssociations/syncAssociations.py:106
+msgid "{} Reciprocal associations created"
+msgstr ""
+
+#: SyncAssociations/syncAssociations.py:110
+msgid "All reciprocal associations exist, none created"
+msgstr ""
+
+#: SyncAssociations/syncAssociations.py:114
+msgid "No existing associations, so no reciprocal ones needed"
 msgstr ""
