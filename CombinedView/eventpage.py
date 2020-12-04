@@ -42,8 +42,7 @@ from gi.repository import Gtk
 #-------------------------------------------------------------------------
 from gramps.gui import widgets
 from gramps.gen.lib import Person, EventRef
-from gramps.gui.editors import EditPerson, EditEventRef
-from gramps.gui.widgets.reorderfam import Reorder
+from gramps.gui.editors import EditPerson
 from gramps.gui.selectors import SelectorFactory
 from gramps.gen.errors import WindowActiveError
 from gramps.gen.display.place import displayer as place_displayer

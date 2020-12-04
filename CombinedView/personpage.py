@@ -30,7 +30,6 @@ Combined View - Person page
 #-------------------------------------------------------------------------
 from html import escape
 from operator import itemgetter
-import pickle
 import re
 
 #-------------------------------------------------------------------------

@@ -48,6 +48,7 @@ from gramps.gen.utils.callback import Callback
 from gramps.gen.config import config
 from gramps.gen.lib import (ChildRef, EventType, Family,
                             Name, Person, Surname)
+from gramps.gen.db import DbTxn
 from gramps.gui import widgets
 from gramps.gen.display.name import displayer as name_displayer
 from gramps.gen.display.place import displayer as place_displayer
@@ -59,8 +60,7 @@ from gramps.gui.widgets import ShadeBox
 from gramps.gui.ddtargets import DdTargets
 from gramps.gen.utils.db import (get_birth_or_fallback, get_death_or_fallback,
                                  preset_name)
-from gramps.gen.utils.thumbnails import (get_thumbnail_image, SIZE_NORMAL,
-                                         SIZE_LARGE)
+from gramps.gen.utils.thumbnails import get_thumbnail_image
 from gramps.gen.utils.file import media_path_full
 from gramps.gui.utils import open_file_with_default_application
 from gramps.gen.datehandler import displayer
