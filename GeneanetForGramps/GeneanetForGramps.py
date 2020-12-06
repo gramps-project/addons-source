@@ -1816,7 +1816,7 @@ def main():
     descendants = args.descendants
     spouses = args.spouses
     LEVEL = args.level
-	
+
     # TODO: do a backup before opening and remove fixed path
     if gname == None:
         #gname = "Test import"
@@ -1834,7 +1834,7 @@ def main():
                     _("An attempt to convert the database failed. "
                       "Perhaps it needs updating."), parent=self.top)
         sys.exit(-1)
-    	
+
     gid = args.id
     if gid == None:
         gid = "0000"
