@@ -1,0 +1,7 @@
+    var printer = L.easyPrint({
+      		tileLayer: tile_layer_gramps,
+      		sizeModes: ['Current'],
+      		filename: 'Gramps_heatmap',
+      		exportOnly: true,
+      		hideControlContainer: true
+	}).addTo(GrampsHeatmap);

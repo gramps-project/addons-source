@@ -34,11 +34,9 @@ import os
 from gramps.gen.plug.report import Report, MenuReportOptions
 from gramps.gui.dialog import ErrorDialog
 from gramps.gen.plug.menu import (
-    EnumeratedListOption, PersonOption, DestinationOption, StringOption,
-    BooleanOption)
+    EnumeratedListOption, PersonOption, DestinationOption, StringOption)
 from gramps.gen.filters import GenericFilterFactory, rules, CustomFilters
 from gramps.gen.plug.docgen import ParagraphStyle
-from gramps.gen.lib.eventtype import EventType
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
     _trans = glocale.get_addon_translator(__file__)
@@ -56,11 +54,12 @@ class ReportOptions(MenuReportOptions):
     """Heatmap report options."""
 
     def __init__(self, name, dbase):
+        self.db = dbase
         MenuReportOptions.__init__(self, name, dbase)
 
     def add_menu_options(self, menu):
         """Create menu options."""
-        self.get_filter_list(menu)
+        self.get_person_filters(menu)
         fltr = EnumeratedListOption(_("Filter"), 0)
         fltr.set_items(menu.filter_list)
         menu.add_option(_("Options"), "fltr", fltr)
@@ -93,17 +92,8 @@ class ReportOptions(MenuReportOptions):
         file_name.set_help(txt)
         menu.add_option(_("Options"), "name", file_name)
 
-        type1 = BooleanOption(_("Birth"), False)
-        menu.add_option(_("Event Types"), "Birth", type1)
-        type2 = BooleanOption(_("Death"), False)
-        menu.add_option(_("Event Types"), "Death", type2)
-        type3 = BooleanOption(_("Residence"), False)
-        menu.add_option(_("Event Types"), "Residence", type3)
-        type4 = BooleanOption(_("Occupation"), False)
-        menu.add_option(_("Event Types"), "Occupation", type4)
-
     @staticmethod
-    def get_filter_list(menu):
+    def get_person_filters(menu):
         """Get menu option filter list of custon and generic filters."""
         custom = CustomFilters.get_filters("Person")
         menu.filter_list = [(0, _("Ancestors of <selected person>")),
@@ -193,18 +183,12 @@ class ReportClass(Report):
 
     def get_place(self, events):
         """Get an event place and add it to the event dict."""
-        # Get a list of translated event types selected in the menu
-        all_types = self.options.menu.get_option_names("Event Types")
-        types = [x for x in all_types if self.opt[x]]
-        transl = [x[1] for x in EventType._DATAMAP if x[2] in types]
-
         for event_ref in events:
             event = self.db.get_event_from_handle(event_ref.ref)
-            if event.get_type() in transl:
-                handle = event.get_place_handle()
-                if handle:
-                    place = self.db.get_place_from_handle(handle)
-                    self.check_place(place)
+            handle = event.get_place_handle()
+            if handle:
+                place = self.db.get_place_from_handle(handle)
+                self.check_place(place)
 
     def check_place(self, place):
         """Check the place for latitude and longitude."""
@@ -232,8 +216,18 @@ class ReportClass(Report):
         lst = list()
         res_path = os.path.dirname(__file__) + "/template/"
 
-        # Leaflet and folium generated html
-        with open(res_path + "map.html", "r", encoding="utf-8") as file:
+        # Leaflet and folium generated html part 1
+        with open(res_path + "map1.txt", "r", encoding="utf-8") as file:
+            for line in file:
+                lst.append(line)
+
+        # leaflet-easyPrint
+        with open(res_path + "bundle.txt", "r", encoding="utf-8") as file:
+            for line in file:
+                lst.append(line)
+
+        # Leaflet and folium generated html part 2
+        with open(res_path + "map2.txt", "r", encoding="utf-8") as file:
             for line in file:
                 lst.append(line)
 
@@ -243,8 +237,13 @@ class ReportClass(Report):
             for line in file:
                 lst.append(line)
 
+        # Add print button
+        with open(res_path + "print.txt", "r", encoding="utf-8") as file:
+            for line in file:
+                lst.append(line)
+
         # Add the place data from user's Gramps database
-        lst.append("    var heat_map_3b8eb32a2b514f15a1f63cce903452a8 ")
+        lst.append("    var heat_map_data ")
         lst.append("= L.heatLayer(")
         lst.append("[")
         for key, value in self.place_dict.items():
