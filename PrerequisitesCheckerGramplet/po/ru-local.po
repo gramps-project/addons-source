@@ -36,7 +36,7 @@ msgid ""
 msgstr ""
 "Диагностический Gramplet, чтобы помочь оценить, есть ли в <a href=\"https://"
 "gramps-project.org/\">Gramps</a> все <a href=\"https://github.com/gramps-"
-"project/gramps/blob /master/README.md\">предварительные требования</a> "
+"project/gramps/blob/master/README.md\">предварительные требования</a> "
 "установлены.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:138
