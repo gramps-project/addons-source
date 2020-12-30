@@ -77,7 +77,7 @@ class MyPrefs(GrampsPreferences):
         # Copy of original __init__
         if hasattr(self, 'add_ptypes_panel'):
             page_funcs = (
-                self.add_display_panel,
+                self.add_data_panel,
                 self.add_general_panel,
                 self.add_addons_panel,
                 self.add_famtree_panel,
@@ -95,7 +95,7 @@ class MyPrefs(GrampsPreferences):
                                      on_close=self._close)
         else:
             page_funcs = (
-                self.add_display_panel,
+                self.add_data_panel,
                 self.add_general_panel,
                 self.add_addons_panel,
                 self.add_famtree_panel,
