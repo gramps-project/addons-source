@@ -74,7 +74,8 @@ from gramps.gui.dialog import OptionDialog, ErrorDialog, QuestionDialog2
 from gramps.gui.display import display_url
 from gramps.gui.editors import EditPerson, EditFamily, EditTagList
 from gramps.gui.utils import (color_graph_box, color_graph_family,
-                              rgb_to_hex, hex_to_rgb_float)
+                              rgb_to_hex, hex_to_rgb_float,
+                              process_pending_events)
 from gramps.gui.views.navigationview import NavigationView
 from gramps.gui.views.bookmarks import PersonBookmarks
 from gramps.gui.views.tags import OrganizeTagsDialog
@@ -161,7 +162,8 @@ class GraphView(NavigationView):
         ('interface.graphview-ranksep', 5),
         ('interface.graphview-nodesep', 2),
         ('interface.graphview-person-theme', 0),
-        ('interface.graphview-font', ['', 14]))
+        ('interface.graphview-font', ['', 14]),
+        ('interface.graphview-show-all-connected', False))
 
     def __init__(self, pdata, dbstate, uistate, nav_group=0):
         NavigationView.__init__(self, _('Graph View'), pdata, dbstate, uistate,
@@ -533,6 +535,12 @@ class GraphView(NavigationView):
         """
         self.graph_widget.populate(self.get_active())
 
+    def cb_show_all_connected(self, _client, _cnxd_id, _entry, _data):
+        """
+        Called when show all connected setting changed.
+        """
+        self.graph_widget.populate(self.get_active())
+
     def config_change_font(self, font_button):
         """
         Called when font is change.
@@ -594,6 +602,8 @@ class GraphView(NavigationView):
                              self.cb_update_spacing)
         self._config.connect('interface.graphview-person-theme',
                              self.cb_update_person_theme)
+        self._config.connect('interface.graphview-show-all-connected',
+                             self.cb_show_all_connected)
 
     def _get_configure_page_funcs(self):
         """
@@ -969,6 +979,16 @@ class GraphWidget(object):
         self.add_popover(spacing_btn, spacing_box)
         self.toolbar.pack_start(spacing_btn, False, False, 1)
 
+        # add button to show all connected persons
+        self.all_connected_btn = Gtk.ToggleButton(label=_('All connected'))
+        self.all_connected_btn.set_tooltip_text(
+            _("Show all connected persons limited by generation restrictions.\n"
+              "Works slow, so don't set large generation values."))
+        self.all_connected_btn.set_active(
+            self.view._config.get('interface.graphview-show-all-connected'))
+        self.all_connected_btn.connect('clicked', self.toggle_all_connected)
+        self.toolbar.pack_start(self.all_connected_btn, False, False, 1)
+
         self.vbox.pack_start(scrolled_win, True, True, 0)
 
         # if we have graph lager than graphviz paper size
@@ -1021,6 +1041,13 @@ class GraphWidget(object):
                         conf_const)
         box.pack_start(spinner, False, False, 1)
         return box
+
+    def toggle_all_connected(self, widget):
+        """
+        Change state for "Show all connected" setting.
+        """
+        self.view._config.set('interface.graphview-show-all-connected',
+                              widget.get_active())
 
     def spinners_popup(self, _widget, popover):
         """
@@ -1304,6 +1331,8 @@ class GraphWidget(object):
         """
         # set the busy cursor, so the user knows that we are working
         self.uistate.set_busy_cursor(True)
+        if self.uistate.window.get_window().is_visible():
+            process_pending_events()
 
         self.clear()
         self.active_person_handle = active_person
@@ -1497,7 +1526,6 @@ class GraphWidget(object):
 
         # perform double click on node by left mouse button
         if event.type == getattr(Gdk.EventType, "DOUBLE_BUTTON_PRESS"):
-            self.uistate.set_busy_cursor(False)
             # Remove all single click events
             for click_item in self.click_events:
                 if not click_item.is_destroyed():
@@ -1514,7 +1542,6 @@ class GraphWidget(object):
             return False
 
         if button == 1 and node_class == 'node':            # left mouse
-            self.uistate.set_busy_cursor(True)
             if handle == self.active_person_handle:
                 # Find a parent of the active person so that they can become
                 # the active person, if no parents then leave as the current
@@ -1523,8 +1550,6 @@ class GraphWidget(object):
                 if parent_handle:
                     handle = parent_handle
                 else:
-                    # unset busy cursor as we don't change active person
-                    self.uistate.set_busy_cursor(False)
                     return True
 
             # redraw the graph based on the selected person
@@ -2144,6 +2169,8 @@ class DotSvgGenerator(object):
             'interface.graphview-ancestor-generations')
         self.person_theme_index = self.view._config.get(
             'interface.graphview-person-theme')
+        self.show_all_connected = self.view._config.get(
+            'interface.graphview-show-all-connected')
         ranksep = self.view._config.get('interface.graphview-ranksep')
         ranksep = ranksep * 0.1
         nodesep = self.view._config.get('interface.graphview-nodesep')
@@ -2270,9 +2297,15 @@ class DotSvgGenerator(object):
             self.home_person = self.dbstate.db.get_default_person()
             self.set_current_list(active_person)
             self.set_current_list_desc(active_person)
-            self.person_handles_dict.update(
-                self.find_descendants(active_person))
-            self.person_handles_dict.update(self.find_ancestors(active_person))
+
+            if self.show_all_connected:
+                self.person_handles_dict.update(
+                    self.find_connected(active_person))
+            else:
+                self.person_handles_dict.update(
+                    self.find_descendants(active_person))
+                self.person_handles_dict.update(
+                    self.find_ancestors(active_person))
 
             if self.person_handles_dict:
                 self.person_handles = sorted(
@@ -2369,6 +2402,82 @@ class DotSvgGenerator(object):
                         return True
         return False
 
+    def find_connected(self, active_person):
+        """
+        Spider the database from the active person.
+        """
+        person = self.database.get_person_from_handle(active_person)
+        person_handles = {}
+        self.add_connected(person, self.descendant_generations,
+                           self.ancestor_generations, person_handles)
+        return person_handles
+
+    def add_connected(self, person, num_desc, num_anc, person_handles):
+        """
+        Include all connected to active in the list of people to graph.
+        """
+        if not person:
+            return
+
+        # check if handle is not already processed
+        if person.handle not in person_handles:
+            spouses_list = person.get_family_handle_list()
+            # add self
+            person_handles[person.handle] = len(spouses_list)
+        else:
+            return
+
+        # add descendants
+        if num_desc >= 0:  # generation restriction
+            for family_handle in spouses_list:
+                family = self.database.get_family_from_handle(family_handle)
+
+                if num_desc > 0:  # generation restriction
+                    # add every child recursively
+                    for child_ref in family.get_child_ref_list():
+                        self.add_connected(
+                            self.database.get_person_from_handle(child_ref.ref),
+                            num_desc-1, num_anc+1, person_handles)
+
+                # add person spouses
+                for sp_handle in (family.get_father_handle(),
+                                  family.get_mother_handle()):
+                    if sp_handle and sp_handle not in person_handles:
+                        self.add_connected(
+                            self.database.get_person_from_handle(sp_handle),
+                            num_desc, num_anc, person_handles)
+
+        # add ancestors
+        if num_anc > 0:  # generation restriction
+            for family_handle in person.get_parent_family_handle_list():
+                family = self.database.get_family_from_handle(family_handle)
+
+                # add every ancestor's spouses
+                for sp_handle in (family.get_father_handle(),
+                                  family.get_mother_handle()):
+                    if sp_handle and sp_handle not in person_handles:
+                        self.add_spouses_connected(
+                            self.database.get_person_from_handle(sp_handle),
+                            num_desc+1, num_anc-1, person_handles)
+
+    def add_spouses_connected(self, person, num_desc, num_anc,
+                              person_handles):
+        """
+        Add spouses to the list for all connected variant.
+        """
+        if not person:
+            return
+
+        for family_handle in person.get_family_handle_list():
+            sp_family = self.database.get_family_from_handle(family_handle)
+
+            for sp_handle in (sp_family.get_father_handle(),
+                              sp_family.get_mother_handle()):
+                if sp_handle and sp_handle not in person_handles:
+                    self.add_connected(
+                        self.database.get_person_from_handle(sp_handle),
+                        num_desc, num_anc, person_handles)
+
     def find_descendants(self, active_person):
         """
         Spider the database from the active person.
@@ -2386,75 +2495,45 @@ class DotSvgGenerator(object):
         if not person:
             return
 
-        if num_generations < 0:
+        # check if handle is not already processed
+        # and add self and spouses
+        if person.handle not in person_handles:
+            spouses_list = person.get_family_handle_list()
+
+            person_handles[person.handle] = len(spouses_list)
+            self.add_spouses(person, person_handles)
+        else:
             return
 
-        # look at if we have children
-        nb_child = 0
-        for family_handle in person.get_family_handle_list():
+        if num_generations <= 0:
+            return
+
+        # add every child recursively
+        for family_handle in spouses_list:
             family = self.database.get_family_from_handle(family_handle)
+
             for child_ref in family.get_child_ref_list():
-                # we have at least one child. stop
-                nb_child += 1
-                break
-            break
+                self.add_descendant(
+                    self.database.get_person_from_handle(child_ref.ref),
+                    num_generations - 1, person_handles)
 
-        # add self if not already processed or if we have children
-        if person.handle not in person_handles or nb_child != 0:
-            spouses = len(person.get_family_handle_list())
-            if spouses > 1:
-                person_handles[person.handle] = spouses
-            else:
-                person_handles[person.handle] = 0
-
-            for family_handle in person.get_family_handle_list():
-                family = self.database.get_family_from_handle(family_handle)
-
-                # add every child recursively
-                for child_ref in family.get_child_ref_list():
-                    self.add_descendant(
-                        self.database.get_person_from_handle(child_ref.ref),
-                        num_generations - 1, person_handles)
-
-                self.add_spouses(person, family, person_handles)
-
-    def add_spouses(self, person, family, person_handles):
+    def add_spouses(self, person, person_handles):
         """
         Add spouses to the list.
         """
-        # get spouse
-        if person.handle == family.get_father_handle():
-            spouse_handle = family.get_mother_handle()
-        else:
-            spouse_handle = family.get_father_handle()
+        if not person:
+            return
 
-        # add all his(her) spouses recursively
-        if spouse_handle:
-            sp_person = self.database.get_person_from_handle(spouse_handle)
-        else:
-            sp_person = None
+        for family_handle in person.get_family_handle_list():
+            sp_family = self.database.get_family_from_handle(family_handle)
 
-        # add spouse itself
-        if spouse_handle and spouse_handle not in person_handles:
-            spouses = len(sp_person.get_family_handle_list())
-            if spouses > 1:
-                person_handles[spouse_handle] = spouses
-            else:
-                person_handles[spouse_handle] = 0
-
-        if sp_person:
-            for family_handle in sp_person.get_family_handle_list():
-                sp_family = self.database.get_family_from_handle(family_handle)
-
-                m_handle = sp_family.get_mother_handle()
-                if m_handle and m_handle not in person_handles:
-                    mother = self.database.get_person_from_handle(m_handle)
-                    self.add_descendant(mother, 0, person_handles)
-
-                f_handle = sp_family.get_father_handle()
-                if f_handle and f_handle not in person_handles:
-                    father = self.database.get_person_from_handle(f_handle)
-                    self.add_descendant(father, 0, person_handles)
+            for sp_handle in (sp_family.get_father_handle(),
+                              sp_family.get_mother_handle()):
+                if sp_handle and sp_handle not in person_handles:
+                    # add only spouse (num_generations = 0)
+                    self.add_descendant(
+                        self.database.get_person_from_handle(sp_handle),
+                        0, person_handles)
 
     def find_ancestors(self, active_person):
         """
@@ -2472,35 +2551,32 @@ class DotSvgGenerator(object):
         if not person:
             return
 
+        # add self if handle is not already processed
+        if person.handle not in person_handles:
+            person_handles[person.handle] = len(person.get_family_handle_list())
+        else:
+            return
+
         if num_generations <= 0:
             return
 
-        # add self
-        if person.handle not in person_handles:
-            spouses = len(person.get_family_handle_list())
-            if spouses > 1:
-                person_handles[person.handle] = spouses
-            else:
-                person_handles[person.handle] = 0
+        for family_handle in person.get_parent_family_handle_list():
+            family = self.database.get_family_from_handle(family_handle)
 
-            for family_handle in person.get_parent_family_handle_list():
-                family = self.database.get_family_from_handle(family_handle)
+            # add parents
+            sp_persons = []
+            for sp_handle in (family.get_father_handle(),
+                              family.get_mother_handle()):
+                if sp_handle and sp_handle not in person_handles:
+                    sp_person = self.database.get_person_from_handle(sp_handle)
+                    self.add_ancestor(sp_person,
+                                      num_generations - 1,
+                                      person_handles)
+                    sp_persons.append(sp_person)
 
-                # add every spouses ancestors
-                sp_persons = []
-                for sp_handle in (family.get_father_handle(),
-                                  family.get_mother_handle()):
-                    if sp_handle:
-                        sp_person = self.database.get_person_from_handle(
-                            sp_handle)
-                        self.add_ancestor(sp_person,
-                                          num_generations - 1,
-                                          person_handles)
-                        sp_persons.append(sp_person)
-
-                # add every other spouses for father and mother
-                for sp_person in sp_persons:
-                    self.add_spouses(sp_person, family, person_handles)
+            # add every other spouses for parents
+            for sp_person in sp_persons:
+                self.add_spouses(sp_person, person_handles)
 
     def add_child_links_to_families(self):
         """
@@ -2569,8 +2645,9 @@ class DotSvgGenerator(object):
 
         # The list of families for which we have output the node,
         # so we don't do it twice
-        family_nodes_done = {}
-        family_links_done = {}
+        # use set() as it little faster then list()
+        family_nodes_done = set()
+        family_links_done = set()
         for person_handle in self.person_handles:
             person = self.database.get_person_from_handle(person_handle)
             # Output the person's node
@@ -2582,7 +2659,7 @@ class DotSvgGenerator(object):
             family_list = person.get_family_handle_list()
             for fam_handle in family_list:
                 if fam_handle not in family_nodes_done:
-                    family_nodes_done[fam_handle] = 1
+                    family_nodes_done.add(fam_handle)
                     self.__add_family_node(fam_handle)
 
             # Output family links where person is a parent
@@ -2590,7 +2667,7 @@ class DotSvgGenerator(object):
             family_list = person.get_family_handle_list()
             for fam_handle in family_list:
                 if fam_handle not in family_links_done:
-                    family_links_done[fam_handle] = 1
+                    family_links_done.add(fam_handle)
                     if not subgraph_started:
                         subgraph_started = True
                         self.start_subgraph(person_handle)
