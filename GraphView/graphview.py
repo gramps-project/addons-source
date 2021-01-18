@@ -126,7 +126,7 @@ gtk_version = float("%s.%s" % (Gtk.MAJOR_VERSION, Gtk.MINOR_VERSION))
 #-------------------------------------------------------------------------
 import sys
 sys.path.append(os.path.abspath(os.path.dirname(__file__)))
-from search_widget import SearchWidget, Popover, ListBoxRow, get_person_tooltip
+from search_widget import SearchWidget, Popover, ListBoxRow
 
 
 #-------------------------------------------------------------------------
@@ -195,6 +195,14 @@ class GraphView(NavigationView):
         self.additional_uis.append(self.additional_ui)
         self.define_print_actions()
         self.uistate.connect('font-changed', self.font_changed)
+
+    def on_delete(self):
+        """
+        Method called on shutdown.
+        See PageView class (../gramps/gui/views/pageview.py).
+        """
+        # stop search to allow close app properly
+        self.graph_widget.search_widget.stop_search()
 
     def font_changed(self):
         self.graph_widget.font_changed(self.get_active())
@@ -1135,13 +1143,9 @@ class GraphWidget(object):
                     person_image = self.get_person_image(person, 32, 32)
                     if person_image:
                         hbox.pack_start(person_image, False, True, 2)
-                row = ListBoxRow(description=bkmark, label=name)
+                row = ListBoxRow(person_handle=bkmark, label=name,
+                                 db=self.dbstate.db)
                 row.add(hbox)
-
-                # add tooltip
-                tooltip = get_person_tooltip(person, self.dbstate.db)
-                if tooltip:
-                    row.set_tooltip_text(tooltip)
 
                 if present is not None:
                     found = True
