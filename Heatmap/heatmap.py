@@ -244,6 +244,10 @@ class ReportClass(Report):
         try:
             start_lat = float(self.opt["start_lat"])
             start_lon = float(self.opt["start_lon"])
+            if start_lat < -90 or start_lat > 90:
+                raise ValueError
+            if start_lon < -180 or start_lon > 180:
+                raise ValueError
         except ValueError:
             txt = _(
                 "Report generation failed.\n"
