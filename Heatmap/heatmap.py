@@ -1,7 +1,7 @@
 #
 # Gramps - a GTK+/GNOME based genealogy program
 #
-# Copyright (C) 2020    Matthias Kemmer
+# Copyright (C) 2021    Matthias Kemmer
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -35,7 +35,7 @@ from gramps.gen.plug.report import Report, MenuReportOptions
 from gramps.gui.dialog import ErrorDialog
 from gramps.gen.plug.menu import (
     EnumeratedListOption, PersonOption, DestinationOption, StringOption,
-    NumberOption)
+    NumberOption, BooleanOption)
 from gramps.gen.filters import GenericFilterFactory, rules, CustomFilters
 from gramps.gen.plug.docgen import ParagraphStyle
 from gramps.gen.const import GRAMPS_LOCALE as glocale
@@ -60,13 +60,17 @@ class ReportOptions(MenuReportOptions):
 
     def add_menu_options(self, menu):
         """Create menu options."""
+
+        # -------------------
+        # GENERAL options tab
+        # -------------------
         self.get_person_filters(menu)
         fltr = EnumeratedListOption(_("Filter"), 0)
         fltr.set_items(menu.filter_list)
-        menu.add_option(_("Options"), "fltr", fltr)
+        menu.add_option(_("General"), "fltr", fltr)
 
         pers_id = PersonOption(_("Person"))
-        menu.add_option(_("Options"), "pers_id", pers_id)
+        menu.add_option(_("General"), "pers_id", pers_id)
 
         filter_list2 = [
             (0, _("OpenStreetMap")),
@@ -77,11 +81,15 @@ class ReportOptions(MenuReportOptions):
             (5, _("CartoDB DarkMatter"))]
         tiles = EnumeratedListOption(_("Map tiles"), 0)
         tiles.set_items(filter_list2)
-        menu.add_option(_("Options"), "tiles", tiles)
+        menu.add_option(_("General"), "tiles", tiles)
+
+        radius = NumberOption(_("Point size"), 15, 1, 50)
+        radius.set_help(_("Set the size of the heatmap points.\nDefault: 15"))
+        menu.add_option(_("General"), "radius", radius)
 
         path = DestinationOption(_("File path"), "")
         path.set_directory_entry(True)
-        menu.add_option(_("Options"), "path", path)
+        menu.add_option(_("General"), "path", path)
 
         txt = _("For the file name only english letters A-Z, a-z and "
                 "numbers 0-9 as well as the characters space, underline and "
@@ -90,34 +98,107 @@ class ReportOptions(MenuReportOptions):
                 "The file extention '.html' is added by the report.")
         file_name = StringOption(_("File name"), "")
         file_name.set_help(txt)
-        menu.add_option(_("Options"), "name", file_name)
+        menu.add_option(_("General"), "name", file_name)
 
-        start_lat = StringOption("Latitude", "48.0")
-        start_lat.set_help(
-            _("Set the starting latitude value\nDefault: 48.0"))
-        menu.add_option(_("Advanced options"), "start_lat", start_lat)
+        # -------------------
+        # ADVANCED options tab
+        # -------------------
+        self.enable_start = BooleanOption(
+            _("Enable custom start position"), False)
+        self.enable_start.set_help(
+            _("Enabling will force the map open at your custom "
+            "start position and zoom."))
+        menu.add_option(_("Advanced"), "enable_start", self.enable_start)
+        self.enable_start.connect('value-changed', self.update_start_options)
 
-        start_lon = StringOption("Longitude", "5.0")
-        start_lon.set_help(
-            _("Set the starting longitude value\nDefault: 5.0"))
-        menu.add_option(_("Advanced options"), "start_lon", start_lon)
+        self.start_lat = StringOption(_("Start latitude"), "50.0")
+        self.start_lat.set_help(
+            _("Set custom start position latitude\nDefault: 50.0"))
+        menu.add_option(_("Advanced"), "start_lat", self.start_lat)
 
-        start_zoom = NumberOption("Start zoom", 4, 1, 18)
-        start_zoom.set_help(
-            _("Set the value for the starting zoom\nDefault: 4"))
-        menu.add_option(_("Advanced options"), "start_zoom", start_zoom)
+        self.start_lon = StringOption(_("Start longitude"), "10.0")
+        self.start_lon.set_help(
+            _("Set custom start position longitude\nDefault: 10.0"))
+        menu.add_option(_("Advanced"), "start_lon", self.start_lon)
 
-        min_zoom = NumberOption("Min. zoom", 1, 1, 18)
-        min_zoom.set_help(_("Set minimal zoom value\nDefault: 1"))
-        menu.add_option(_("Advanced options"), "min_zoom", min_zoom)
+        self.start_zoom = NumberOption(_("Start zoom"), 5, 1, 18)
+        self.start_zoom.set_help(
+            _("Set the value for the starting zoom\nDefault: 5"))
+        menu.add_option(_("Advanced"), "start_zoom", self.start_zoom)
 
-        max_zoom = NumberOption("Max. zoom", 18, 1, 18)
-        max_zoom.set_help(_("Set maximum zoom value.\nDefault: 18"))
-        menu.add_option(_("Advanced options"), "max_zoom", max_zoom)
+        # -------------------
+        # LIMITS options tab
+        # -------------------
+        self.enable_limits = BooleanOption(_("Enable map limits"), False)
+        self.enable_limits.set_help(
+            _("Enabling map limits forces the user to stay in a predefined part"
+            " of the map."))
+        menu.add_option(_("Limits"), "enable_limits", self.enable_limits)
+        self.enable_limits.connect('value-changed', self.update_limit_options)
 
-        radius = NumberOption("Radius", 15, 1, 50)
-        radius.set_help(_("Set the radius of the points.\nDefault: 15"))
-        menu.add_option(_("Advanced options"), "radius", radius)
+        self.min_zoom = NumberOption(_("Min. zoom"), 1, 1, 18)
+        self.min_zoom.set_help(_("Set minimal zoom value\nDefault: 1"))
+        menu.add_option(_("Limits"), "min_zoom", self.min_zoom)
+
+        self.max_zoom = NumberOption(_("Max. zoom"), 18, 1, 18)
+        self.max_zoom.set_help(_("Set maximum zoom value.\nDefault: 18"))
+        menu.add_option(_("Limits"), "max_zoom", self.max_zoom)
+
+        self.lat1 = StringOption(_("Upper left corner latitude"), "")
+        self.lat1.set_help(
+            _("Set latitude for upper left corner map limit."))
+        menu.add_option(_("Limits"), "lat1", self.lat1)
+
+        self.lon1 = StringOption(_("Upper left corner longitude"), "")
+        self.lon1.set_help(
+            _("Set longitude for upper left corner map limit."))
+        menu.add_option(_("Limits"), "lon1", self.lon1)
+
+        self.lat2 = StringOption(_("Lower right corner latitude"), "")
+        self.lat2.set_help(
+            _("Set latitude for lower right corner map limit."))
+        menu.add_option(_("Limits"), "lat2", self.lat2)
+
+        self.lon2 = StringOption(_("Lower right corner longitude"), "")
+        self.lon2.set_help(
+            _("Set longitude for lower right corner map limit."))
+        menu.add_option(_("Limits"), "lon2", self.lon2)
+
+        self.render_border = BooleanOption(
+            _("Render custom map limit border"), False)
+        self.render_border.set_help(
+            _("Enabling will render the map limit border"))
+        menu.add_option(_("Limits"), "render_border", self.render_border)
+
+    def update_limit_options(self):
+        """Update menu options for limit option tab."""
+        self.min_zoom.set_available(False)
+        self.max_zoom.set_available(False)
+        self.lat1.set_available(False)
+        self.lon1.set_available(False)
+        self.lat2.set_available(False)
+        self.lon2.set_available(False)
+        self.render_border.set_available(False)
+        value = self.enable_limits.get_value()
+        if value:
+            self.min_zoom.set_available(True)
+            self.max_zoom.set_available(True)
+            self.lat1.set_available(True)
+            self.lon1.set_available(True)
+            self.lat2.set_available(True)
+            self.lon2.set_available(True)
+            self.render_border.set_available(True)
+
+    def update_start_options(self):
+        """Update menu options for start option tab."""
+        self.start_zoom.set_available(False)
+        self.start_lat.set_available(False)
+        self.start_lon.set_available(False)
+        value = self.enable_start.get_value()
+        if value:
+            self.start_zoom.set_available(True)
+            self.start_lat.set_available(True)
+            self.start_lon.set_available(True)
 
     @staticmethod
     def get_person_filters(menu):
@@ -240,46 +321,40 @@ class ReportClass(Report):
         if not self.filename:
             return  # stop if incorrect path or filename
 
-        # check if lat, lng are convertable to floats
-        try:
-            start_lat = float(self.opt["start_lat"])
-            start_lon = float(self.opt["start_lon"])
-            if start_lat < -90 or start_lat > 90:
-                raise ValueError
-            if start_lon < -180 or start_lon > 180:
-                raise ValueError
-        except ValueError:
-            txt = _(
-                "Report generation failed.\n"
-                "Please check the values for latitude and longitude.")
-            ErrorDialog(_("INFO"), txt, parent=self.user.uistate.window)
-            return  # stop if lat/lng aren't convertabe to floats
+        # define start position values (=Europe)
+        # overwrite later with custom start values if enabled
+        start_lat = 50.0
+        start_lon = 10.0
+        start_zoom = 5
 
-        # more advanced options tab values
-        radius = self.opt["radius"]
-        start_zoom = self.opt["start_zoom"]
-        min_zoom = self.opt["min_zoom"]
-        max_zoom = self.opt["max_zoom"]
+        # check if lat, lng are convertable to floats and within range
+        if self.opt["enable_start"]:
+            try:
+                start_lat = float(self.opt["start_lat"])
+                start_lon = float(self.opt["start_lon"])
+                if start_lat < -90 or start_lat > 90:
+                    raise ValueError
+                if start_lon < -180 or start_lon > 180:
+                    raise ValueError
+            except ValueError:
+                txt = _(
+                    "Report generation failed.\n"
+                    "Please check the values for start latitude and longitude."
+                    "\nLatitude: -90 to 90\nLongitude: -180 to 180")
+                ErrorDialog(_("INFO"), txt, parent=self.user.uistate.window)
+                return  # stop if lat/lng aren't convertabe to floats
 
-        # make sure user entered zoom levels do not exceed min/max values
-        zoom_error = False
-        if min_zoom > max_zoom:
-            min_zoom = max_zoom
-            zoom_error = True
-        if max_zoom < min_zoom:
-            max_zoom = min_zoom
-            zoom_error = True
-        if start_zoom < min_zoom:
-            start_zoom = min_zoom
-            zoom_error = True
-        if start_zoom > max_zoom:
-            start_zoom = max_zoom
-            zoom_error = True
-        if zoom_error:
-            txt = _(
-                "Your zoom settings were inconclusive and therefore changed "
-                "for this report generation.")
-            ErrorDialog(_("INFO"), txt, parent=self.user.uistate.window)
+        # check zoom and limit values
+        if self.opt["enable_limits"]:
+            valid_limits, limit_args = self.check_limit_values()
+            if not valid_limits:
+                return  # stop if limit values are invalid
+            start_zoom = limit_args["start_zoom"]
+            min_zoom = limit_args["min_zoom"]
+            max_zoom = limit_args["max_zoom"]
+            bounds = [
+                [limit_args["lat1"], limit_args["lon1"]],
+                [limit_args["lat2"], limit_args["lon2"]]]
 
         # Leaflet and folium header html
         lst = list()
@@ -295,12 +370,19 @@ class ReportClass(Report):
         lst.append("            center: [%f, %f],\n" % (start_lat, start_lon))
         lst.append("            crs: L.CRS.EPSG3857,\n")
         lst.append("            zoom: %d,\n" % start_zoom)
-        lst.append("            minZoom: %d,\n" % min_zoom)
-        lst.append("            maxZoom: %d,\n" % max_zoom)
+        if self.opt["enable_limits"]:
+            lst.append("            minZoom: %d,\n" % min_zoom)
+            lst.append("            maxZoom: %d,\n" % max_zoom)
+            lst.append("            maxBounds: %s,\n" % bounds)
         lst.append("            zoomControl: true,\n")
         lst.append("            preferCanvas: false,\n")
         lst.append("        }\n")
         lst.append("    );\n")
+
+        # render map limit if enabled
+        if self.opt["enable_limits"] and self.opt["render_border"]:
+            lst.append(" L.rectangle(%s).addTo(GrampsHeatmap);\n" %
+                str(bounds))
 
         # Add map tiles and attribution
         tiles = "tiles" + str(self.opt["tiles"]) + ".txt"
@@ -325,6 +407,7 @@ class ReportClass(Report):
         lst.append("],\n")
 
         # Add heatmap Layer options
+        radius = self.opt["radius"]
         lst.append('        {"blur": 15, "max": 43.0, "maxZoom": 18,')
         lst.append(' "minOpacity": 0.5, "radius": %s}\n' % radius)
         lst.append("        ).addTo(GrampsHeatmap);\n")
@@ -334,3 +417,76 @@ class ReportClass(Report):
         with open(self.filename, "w", encoding="utf-8") as file:
             for item in lst:
                 file.write(item)
+
+    def check_limit_values(self):
+        """Check if limit values are valid for report generation."""
+        args = {
+            "start_zoom": None,
+            "min_zoom": None,
+            "max_zoom": None,
+            "lat1": None,
+            "lon1": None,
+            "lat2": None,
+            "lon2": None,
+        }
+        # make sure user entered zoom levels do not exceed min/max values
+        # inconclusive zoom raises a mesg, but doesn'o't stop report generation
+        start_zoom = self.opt["start_zoom"]
+        min_zoom = self.opt["min_zoom"]
+        max_zoom = self.opt["max_zoom"]
+        zoom_error = False
+        if min_zoom > max_zoom:
+            args["min_zoom"] = max_zoom
+            zoom_error = True
+        if max_zoom < min_zoom:
+            args["max_zoom"] = min_zoom
+            zoom_error = True
+        if start_zoom < min_zoom:
+            args["start_zoom"] = min_zoom
+            zoom_error = True
+        if start_zoom > max_zoom:
+            args["start_zoom"] = max_zoom
+            zoom_error = True
+        if zoom_error:
+            txt = _(
+                "Your zoom settings were inconclusive and therefore "
+                "changed for this report generation.")
+            ErrorDialog(_("INFO"), txt, parent=self.user.uistate.window)
+
+        # Set empty dict values
+        if not args["min_zoom"]:
+            args["min_zoom"] = min_zoom
+        if not args["max_zoom"]:
+            args["max_zoom"] = max_zoom
+        if not args["start_zoom"]:
+            args["start_zoom"] = start_zoom
+
+        # check if limt lat, lng are convertable to floats and within range
+        try:
+            lat1 = float(self.opt["lat1"])
+            lon1 = float(self.opt["lon1"])
+            lat2 = float(self.opt["lat2"])
+            lon2 = float(self.opt["lon2"])
+
+            if lat1 < -90 or lat1 > 90:
+                raise ValueError
+            if lat2 < -90 or lat2 > 90:
+                raise ValueError
+            if lon1 < -180 or lon1 > 180:
+                raise ValueError
+            if lon2 < -180 or lon2 > 180:
+                raise ValueError
+
+            args["lat1"] = lat1
+            args["lon1"] =  lon1
+            args["lat2"] = lat2
+            args["lon2"] = lon2
+
+        except ValueError:
+            txt = _(
+                "Report generation failed.\n"
+                "Please check the values for limits latitude and longitude."
+                "\nLatitude: -90 to 90\nLongitude: -180 to 180")
+            ErrorDialog(_("INFO"), txt, parent=self.user.uistate.window)
+            return False, None # Not convertabe to floats or outside range
+        return True, args  # convertable to floats and within range
