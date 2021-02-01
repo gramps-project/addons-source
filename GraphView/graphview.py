@@ -209,6 +209,7 @@ class GraphView(NavigationView):
         Method called on shutdown.
         See PageView class (../gramps/gui/views/pageview.py).
         """
+        super().on_delete()
         # stop search to allow close app properly
         self.graph_widget.search_widget.stop_search()
 
