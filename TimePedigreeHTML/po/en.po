@@ -1,0 +1,195 @@
+#
+# Gramps - a GTK+/GNOME based genealogy program
+#
+# Copyright (C) 2021  Manuela Kugel (gramps@ur-ahn.de)
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, 
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
+#
+# TimePedigreeHtml - a plugin for GRAMPS - version 0.1
+# Outcome is an HTML file showing a pedigree with time scale
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-07 11:50+0100\n"
+"PO-Revision-Date: 2021-02-07 16:09+0100\n"
+"Last-Translator: gramps@ur-ahn.de\n"
+"Language-Team: English\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: TimePedigreeHTML/TimePedigreeHtml.gpr.py:57
+msgid "Timeline Pedigree"
+msgstr "Timeline Pedigree"
+
+#: TimePedigreeHTML/TimePedigreeHtml.gpr.py:58
+msgid "This view creates a website showing a pedigree with birthday relation"
+msgstr "This view creates a website showing a pedigree with birthday relation"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:138
+msgid "Failed writing "
+msgstr "Failed writing "
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:652
+msgid "Marriage"
+msgstr "Marriage"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:730
+msgid "General"
+msgstr "General"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:732
+msgid "Center Person"
+msgstr "Center Person"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:733
+msgid "The center person for the report"
+msgstr "The center person for the report"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:736
+msgid "Year of Birth of Center Person"
+msgstr "Year of Birth of Center Person"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:737
+msgid "The year of birth of the center person. Estimate a year if unknown"
+msgstr "The year of birth of the center person. Estimate a year if unknown"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:740
+msgid "Destination directory"
+msgstr "Destination directory"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:741
+msgid "Path for generated files"
+msgstr "Path for generated files"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:745
+msgid "Filename"
+msgstr "Filename"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:746
+msgid "The destination file name for html content."
+msgstr "The destination file name for html content."
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:749
+msgid "Default Age"
+msgstr "Default Age"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:750
+msgid "Default age of parent when child is born with unknown year of birth"
+msgstr "Default age of parent when child is born with unknown year of birth"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:754
+msgid "What to show"
+msgstr "What to show"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:761
+msgid "Show GrampsID"
+msgstr "Show GrampsID"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:762
+msgid "Show GrampsID on top right of the box"
+msgstr "Show GrampsID on top right of the box"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:765
+msgid "Optimize"
+msgstr "Optimize"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:766
+msgid "Use as little space in horizontal direction as possible"
+msgstr "Use as little space in horizontal direction as possible"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:770
+msgid "Color"
+msgstr "Color"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:772
+msgid "Male Box Color"
+msgstr "Male Box Color"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:773
+msgid "Box background color for male person"
+msgstr "Box background color for male person"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:776
+msgid "Female Box Color"
+msgstr "Female Box Color"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:777
+msgid "Box background color for female person"
+msgstr "Box background color for female person"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:781
+msgid "Size"
+msgstr "Size"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:783
+msgid "Number of pixel per year"
+msgstr "Number of pixel per year"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:784
+msgid "How many pixel height is one year?"
+msgstr "How many pixel height is one year?"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:787
+msgid "Offset X Coordinate"
+msgstr "Offset X Coordinate"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:788
+msgid "How many pixel are unused besides the most left and most right boxes?"
+msgstr "How many pixel are unused besides the most left and most right boxes?"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:791
+msgid "Offset Y Coordinate"
+msgstr "Offset Y Coordinate"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:792
+msgid "How many pixel are unused above first box?"
+msgstr "How many pixel are unused above first box?"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:795
+msgid "Width of a box in pixel"
+msgstr "Width of a box in pixel"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:796
+msgid "Width of the box of a person in pixel"
+msgstr "Width of the box of a person in pixel"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:799
+msgid "Horizontal space between boxes in pixel"
+msgstr "Horizontal space between boxes in pixel"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:800
+msgid "Minimum horizontal space between 2 boxes in pixel"
+msgstr "Minimum horizontal space between 2 boxes in pixel"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:803
+msgid "Length of vertical part of a line in pixel"
+msgstr "Length of vertical part of a line in pixel"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:804
+msgid ""
+"Parent and child boxes are connected with lines. This is the length of the "
+"vertical part of the lines in pixel"
+msgstr ""
+"Parent and child boxes are connected with lines. This is the length of the "
+"vertical part of the lines in pixel"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:807
+#: TimePedigreeHTML/TimePedigreeHtml.py:808
+msgid "Number of pixel between left border and scale"
+msgstr "Number of pixel between left border and scale"
