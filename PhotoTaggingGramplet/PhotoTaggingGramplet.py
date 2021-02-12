@@ -613,7 +613,7 @@ class PhotoTaggingGramplet(Gramplet):
             coords = self.selection_widget.proportional_to_real_rect(rect)
             xmp_region = Region(*coords)
             xmp_region.xmp_person = name
-            
+
             # simple check to prevent infinite regions.  If regions are already
             # defined ignore the XMP regions.  Probably there is a way to compare
             # and merge the set of regions.
