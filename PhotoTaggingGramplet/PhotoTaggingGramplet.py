@@ -615,10 +615,10 @@ class PhotoTaggingGramplet(Gramplet):
             coords = self.selection_widget.proportional_to_real_rect(rect)
             xmp_region = Region(*coords)
             xmp_region.xmp_person = name
+            
             # simple check to prevent infinite regions.  If regions are already
-            # defined ingnore the XMP regions.  Probably there is a way to compare
+            # defined ignore the XMP regions.  Probably there is a way to compare
             # and merge the set of regions.  
-            #if not xmp_region in self.regions: self.xmp_regions.append(xmp_region)
             if not len(self.regions): self.xmp_regions.append(xmp_region)
             i += 1
 
@@ -782,7 +782,6 @@ class PhotoTaggingGramplet(Gramplet):
     def region_modified(self, sender):
         region = self.selection_widget.get_current()
         person = region.person
-        xmp_person = region.xmp_person
         mediaref = region.mediaref
         if person and mediaref:
             selection = self.selection_widget.get_selection()
@@ -826,7 +825,7 @@ class PhotoTaggingGramplet(Gramplet):
         if self.selection_widget.get_current():
             SelectPerson = SelectorFactory('Person')
             sel = SelectPerson(self.dbstate, self.uistate, self.track,
-                               _("Select Person"))
+                               _("Select Person"), show_search_bar=True)
             person = sel.run()
             if person:
                 self.set_current_person(person)
