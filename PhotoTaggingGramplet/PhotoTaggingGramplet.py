@@ -380,9 +380,7 @@ class PhotoTaggingGramplet(Gramplet):
         column5.set_resizable(True)
         column5.set_reorderable(True)
         column5.set_min_width(20)
-        
 
-        
         self.treeview.set_search_column(0)
         column1.set_sort_column_id(0)
         column3.set_sort_column_id(2)
@@ -618,7 +616,7 @@ class PhotoTaggingGramplet(Gramplet):
             
             # simple check to prevent infinite regions.  If regions are already
             # defined ignore the XMP regions.  Probably there is a way to compare
-            # and merge the set of regions.  
+            # and merge the set of regions.
             if not len(self.regions): self.xmp_regions.append(xmp_region)
             i += 1
 
@@ -1043,8 +1041,8 @@ class PhotoTaggingGramplet(Gramplet):
                 name = ""
                 age = ""
                 xmp_name = region.xmp_person
-            
-            else: 
+
+            else:
                 name = ""
                 age = ""
                 xmp_name = ""
