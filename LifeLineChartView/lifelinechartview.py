@@ -29,6 +29,7 @@ from gi.repository import Gtk
 import cairo
 from copy import deepcopy
 import sys
+import os
 
 # -------------------------------------------------------------------------
 # Gramps modules
@@ -91,6 +92,7 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
 
     # settings for both charts
     GLOBALCONFIGSETTINGS = (
+        ('interface.lifelineview-translate_button_locked', False),
         ('interface.lifelineview-generations', 4),
         ('interface.lifelineview-background', lifelinechart.BACKGROUND_GRAD_GEN),
         ('interface.lifelineview-showid', False),
@@ -489,9 +491,15 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
         self.vbox.connect("key-release-event", self.on_key_release)
 
 
-        self.lifeline.translate_button = Gtk.ToggleButton("M")
+        self.lifeline.translate_button = Gtk.ToggleButton()
+        grab_hand = Gtk.Image()
+        grab_hand.set_from_file(os.path.join(os.path.dirname(__file__), "grab_cursor.png"))
+        grab_hand.show()
+        self.lifeline.translate_button.add(grab_hand)
         self.toolbar.pack_start(self.lifeline.translate_button, False, False, 1)
-        self.lifeline.translate_button.connect("toggled", self.lifeline.translate_button_clicked)
+        self.lifeline.translate_button_locked = self._config.get('interface.lifelineview-translate_button_locked')
+        self.lifeline.translate_button.set_active(self.lifeline.translate_button_locked)
+        self.lifeline.translate_button_event_handler = self.lifeline.translate_button.connect("toggled", self.lifeline.translate_button_clicked)
 
         # add zoom-in button
         self.zoom_in_btn = Gtk.Button.new_from_icon_name('zoom-in-symbolic',
@@ -571,7 +579,7 @@ class LifeLineChartView(lifelinechart.LifeLineChartGrampsGUI, NavigationView):
         slider.set_size_request(40,-1)
         slider.connect('format-value', lambda s,x:"{:2.2f}".format(pow(10,-1-x/10)))
         self.hbox_split_view.pack_start(slider, False, False, 1)
-        slider.connect('value-changed', self.set_zoom)
+        self.lifeline.set_zoom_event_handler_id = slider.connect('value-changed', self.set_zoom)
         self.lifeline.zoom_slider = slider
 
         f = Gtk.Frame()
