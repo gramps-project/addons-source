@@ -583,6 +583,8 @@ class GraphView(NavigationView):
         """
         Called when show all connected setting changed.
         """
+        value = _entry == 'True'
+        self.graph_widget.all_connected_btn.set_active(value)
         self.graph_widget.populate(self.get_active())
 
     def config_change_font(self, font_button):
@@ -1434,8 +1436,19 @@ class GraphWidget(object):
         dot = DotSvgGenerator(self.dbstate, self.view,
                               bold_size=self.bold_size,
                               norm_size=self.norm_size)
-        self.dot_data, self.svg_data = dot.build_graph(active_person)
+
+        graph_data = dot.build_graph(active_person)
         del dot
+
+        if not graph_data:
+            # something go wrong when build all-connected tree
+            # so turn off this feature
+            self.view._config.set('interface.graphview-show-all-connected',
+                                  False)
+            return
+
+        self.dot_data = graph_data[0]
+        self.svg_data = graph_data[1]
 
         parser = GraphvizSvgParser(self, self.view)
         parser.parse(self.svg_data)
@@ -2389,8 +2402,15 @@ class DotSvgGenerator(object):
             self.set_current_list_desc(active_person)
 
             if self.show_all_connected:
-                self.person_handles_dict.update(
-                    self.find_connected(active_person))
+                try:
+                    self.person_handles_dict.update(
+                        self.find_connected(active_person))
+                except:
+                    logging.warning(
+                        _("Can't build graph with all connections to active "
+                          "person. You can try to reduce generations count "
+                          "settings or check your Family Tree for loops."))
+                    return False
             else:
                 self.person_handles_dict.update(
                     self.find_descendants(active_person))
@@ -2412,7 +2432,7 @@ class DotSvgGenerator(object):
         dot_data = self.dot.getvalue().encode('utf8')
         svg_data = self.make_svg(dot_data)
 
-        return dot_data, svg_data
+        return (dot_data, svg_data)
 
     def make_svg(self, dot_data):
         """
