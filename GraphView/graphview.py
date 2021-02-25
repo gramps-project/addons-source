@@ -70,7 +70,8 @@ from gramps.gen.utils.file import search_for, media_path_full, find_file
 from gramps.gen.utils.libformatting import FormattingHelper
 from gramps.gen.utils.thumbnails import get_thumbnail_path
 
-from gramps.gui.dialog import OptionDialog, ErrorDialog, QuestionDialog2
+from gramps.gui.dialog import (OptionDialog, ErrorDialog, QuestionDialog2,
+                               WarningDialog)
 from gramps.gui.display import display_url
 from gramps.gui.editors import EditPerson, EditFamily, EditTagList
 from gramps.gui.utils import (color_graph_box, color_graph_family,
@@ -2406,10 +2407,12 @@ class DotSvgGenerator(object):
                     self.person_handles_dict.update(
                         self.find_connected(active_person))
                 except:
-                    logging.warning(
-                        _("Can't build graph with all connections to active "
-                          "person. You can try to reduce generations count "
-                          "settings or check your Family Tree for loops."))
+                    w_msg = _("Can't build graph with all connections to "
+                              "active person. This option will be disabled. "
+                              "You can try to reduce generations count "
+                              "settings and enable it again.")
+                    logging.warning(w_msg)
+                    WarningDialog(_('Disabling "All Connected" option'), w_msg)
                     return False
             else:
                 self.person_handles_dict.update(
