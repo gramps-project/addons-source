@@ -374,9 +374,9 @@ class AncestralFanChartReport(Report):
                     '    <meta http-equiv="Content-Type" ' + \
                     'content="text/html;charset=utf-8"/>\n' + \
                     '    <script type="text/javascript" ' + \
-                    'src="js/d3/d3.min.js"></script>\n' + \
+                    'src="js/d3/d3-3.5.17.min.js"></script>\n' + \
                     '    <script type="text/javascript" ' + \
-                    'src="js/jquery/jquery-2.0.3.min.js"></script>\n' + \
+                    'src="js/jquery/jquery-3.5.1.min.js"></script>\n' + \
                     '    <link type="text/css" rel="stylesheet" ' + \
                     'href="css/fanchart.css"/>\n' + \
                     '  </head>\n' + \
@@ -398,8 +398,7 @@ class AncestralFanChartReport(Report):
                 fp.write(outstr)
 
         except IOError as msg:
-            ErrorDialog(_("Failed writing %s: %s") % (self.desthtml, str(msg)),
-                        parent=self.user.uistate.window)
+            ErrorDialog(_("Failed writing %s: %s") % (self.desthtml, str(msg)))
             return
 
         # Create required directory structure
@@ -417,8 +416,7 @@ class AncestralFanChartReport(Report):
             if not os.path.exists(os.path.join(self.dest_path, "json")):
                 os.mkdir(os.path.join(self.dest_path, "json"))
         except OSError as why:
-            ErrorDialog(_("Failed to create directory structure : %s") % (why),
-                        parent=self.user.uistate.window)
+            ErrorDialog(_("Failed to create directory structure : %s") % (why))
             return
 
         try:
@@ -433,15 +431,14 @@ class AncestralFanChartReport(Report):
             shutil.copy(
                 os.path.join(plugin_dir, "images", "texture-noise.png"),
                 os.path.join(self.dest_path, "images"))
-            shutil.copy(os.path.join(plugin_dir, "js", "d3", "d3.min.js"),
+            shutil.copy(os.path.join(plugin_dir, "js", "d3", "d3-3.5.17.min.js"),
                 os.path.join(self.dest_path, "js", "d3"))
             shutil.copy(
                 os.path.join(
-                    plugin_dir, "js", "jquery", "jquery-2.0.3.min.js"),
+                    plugin_dir, "js", "jquery", "jquery-3.5.1.min.js"),
                 os.path.join(self.dest_path, "js", "jquery"))
         except OSError as why:
-            ErrorDialog(_("Failed to copy web files : %s") % (why),
-                        parent=self.user.uistate.window)
+            ErrorDialog(_("Failed to copy web files : %s") % (why))
             return
 
         # Generate <dest>.js based on colors and initial generations to
@@ -645,8 +642,7 @@ class AncestralFanChartReport(Report):
                     'replace(location);\n')
 
         except IOError as msg:
-            ErrorDialog(_("Failed writing %s: %s") % (self.destjs, str(msg)),
-                        parent=self.user.uistate.window)
+            ErrorDialog(_("Failed writing %s: %s") % (self.destjs, str(msg)))
             return
 
         if self.get_gender_str(self.center_person) == "male":
@@ -671,8 +667,7 @@ class AncestralFanChartReport(Report):
 
 
         except IOError as msg:
-            ErrorDialog(_("Failed writing %s: %s") % (self.destjson, str(msg)),
-                        parent=self.user.uistate.window)
+            ErrorDialog(_("Failed writing %s: %s") % (self.destjson, str(msg)))
             return
 
 #------------------------------------------------------------------------
