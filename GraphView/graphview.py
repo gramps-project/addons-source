@@ -2548,6 +2548,8 @@ class DotSvgGenerator(object):
                 if num_desc > 0:  # generation restriction
                     # add every child recursively
                     for child_ref in family.get_child_ref_list():
+                        if child_ref.ref in person_handles:
+                            continue
                         self.add_connected(
                             self.database.get_person_from_handle(child_ref.ref),
                             num_desc-1, num_anc+1, person_handles)
@@ -2569,27 +2571,9 @@ class DotSvgGenerator(object):
                 for sp_handle in (family.get_father_handle(),
                                   family.get_mother_handle()):
                     if sp_handle and sp_handle not in person_handles:
-                        self.add_spouses_connected(
+                        self.add_connected(
                             self.database.get_person_from_handle(sp_handle),
                             num_desc+1, num_anc-1, person_handles)
-
-    def add_spouses_connected(self, person, num_desc, num_anc,
-                              person_handles):
-        """
-        Add spouses to the list for all connected variant.
-        """
-        if not person:
-            return
-
-        for family_handle in person.get_family_handle_list():
-            sp_family = self.database.get_family_from_handle(family_handle)
-
-            for sp_handle in (sp_family.get_father_handle(),
-                              sp_family.get_mother_handle()):
-                if sp_handle and sp_handle not in person_handles:
-                    self.add_connected(
-                        self.database.get_person_from_handle(sp_handle),
-                        num_desc, num_anc, person_handles)
 
     def find_descendants(self, active_person):
         """
