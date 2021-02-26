@@ -586,8 +586,7 @@ class Printinfo():
             delim = "_"
 
         name_str = name.replace(" ", delim).lower()
-        name_out = unicodedata.normalize(
-            'NFKD', name_str).encode('ascii', 'ignore').decode('ascii')
+        name_out = unicodedata.normalize('NFKD', name_str).encode('ascii', 'ignore')
         name_out = ''.join(c for c in name_out \
             if c in valid_filename_chars)
 
@@ -936,9 +935,6 @@ class DescendantIndentedTreeReport(Report):
         self.destcss = os.path.join(self.dest_path, "css", "indentedtree-%s.css" % (self.destprefix))
         self.destjson = os.path.join(self.dest_path, "json", "indentedtree-%s.json" % (self.destprefix))
         self.destjs = os.path.join(self.dest_path, "js", "indentedtree-%s.js" % (self.destprefix))
-        self.destexpandedjs = os.path.join(
-            self.dest_path, "js", "indentedtree-%s-expanded.js" %
-            (self.destprefix))
         self.desthtml = os.path.join(self.dest_path, os.path.basename(self.dest_file))
         self.arrows = menu.get_option_by_name('arrows').get_value()
         self.showbio = menu.get_option_by_name('showbio').get_value()
@@ -998,6 +994,9 @@ class DescendantIndentedTreeReport(Report):
         self.bio_body_font_size = \
             menu.get_option_by_name('bio_body_font_size').get_value()
 
+        self.trans = menu.get_option_by_name('trans').get_value()
+        self._locale = self.set_locale(self.trans)
+
         # Copy the global NameDisplay so that we don't change application
         # defaults.
         self._name_display = copy.deepcopy(global_name_display)
@@ -1005,8 +1004,6 @@ class DescendantIndentedTreeReport(Report):
         if name_format != 0:
             self._name_display.set_default_format(name_format)
 
-        self.trans = menu.get_option_by_name('trans').get_value()
-        self._locale = self.set_locale(self.trans)
         self.objPrint = Printinfo(self.database, self.num_obj, self.marrs,
                                   self.divs, self._name_display, self.showbio,
                                   self.dest_path, self.use_call,
@@ -1366,14 +1363,13 @@ class DescendantIndentedTreeReport(Report):
                                        'exist\nDo you want to attempt to '
                                        'create it.') % self.dest_path,
                                      _('_Yes'),
-                                     _('_No'), parent=self.user.uistate.window)
+                                     _('_No'))
             if prompt.run():
                 try:
                     os.mkdir(self.dest_path)
                 except Exception as err:
                     ErrorDialog(_("Failed to create %s: %s") %
-                                (self.dest_path, str(err)),
-                                parent=self.user.uistate.window)
+                                (self.dest_path, str(err)))
                     return
             else:
                 return
@@ -1382,8 +1378,7 @@ class DescendantIndentedTreeReport(Report):
             ErrorDialog(_('Permission problem'),
                         _('You do not have permission to write under the '
                           'directory %s\n\nPlease select another directory '
-                          'or correct the permissions.') % self.dest_path,
-                        parent=self.user.uistate.window)
+                          'or correct the permissions.') % self.dest_path)
             return
 
         if os.path.isfile(self.desthtml):
@@ -1392,7 +1387,7 @@ class DescendantIndentedTreeReport(Report):
                                        'Do you want to overwrite.') %
                                      (self.desthtml),
                                      _('_Yes'),
-                                     _('_No'), parent=self.user.uistate.window)
+                                     _('_No'))
             if not prompt.run():
                 return
 
@@ -1408,13 +1403,13 @@ class DescendantIndentedTreeReport(Report):
                     '    <meta http-equiv="Content-Type" ' + \
                     'content="text/html;charset=utf-8"/>\n' + \
                     '    <script type="text/javascript" ' + \
-                    'src="js/d3/d3.min.js"></script>\n' + \
+                    'src="js/d3/d3-3.5.17.min.js"></script>\n' + \
                     '    <script type="text/javascript" ' + \
-                    'src="js/d3/d3.tip.v0.6.3.js"></script>\n' + \
+                    'src="js/d3/d3-tip-0.6.3.js"></script>\n' + \
                     '    <script type="text/javascript" ' + \
-                    'src="js/jquery/jquery-2.0.3.min.js"></script>\n' + \
+                    'src="js/jquery/jquery-3.5.1.min.js"></script>\n' + \
                     '    <link type="text/css" rel="stylesheet" ' + \
-                    'href="css/d3.tip.css"/>\n' + \
+                    'href="css/d3-tip-0.6.3.css"/>\n' + \
                     '    <link type="text/css" rel="stylesheet" ' + \
                     'href="css/indentedtree-%s.css"/>\n' % (self.destprefix) + \
                     '  </head>\n' + \
@@ -1442,12 +1437,6 @@ class DescendantIndentedTreeReport(Report):
                         'information.\n' + \
                         '        On touch-screen devices tap on person</h3>\n'
                 outstr = outstr + \
-                    '        <button class="button" id="default-button" ' + \
-                    'type="button">%s</button>\n' % (_("Default View"))
-                outstr = outstr + \
-                    '        <button class="button" id="expand-button" ' + \
-                    'type="button">%s</button>\n' % (_("Expand All"))
-                outstr = outstr + \
                     '      </div>\n' + \
                     '    </div>\n' + \
                     '    <div class="div_svg">\n' + \
@@ -1456,49 +1445,20 @@ class DescendantIndentedTreeReport(Report):
                     '    </div>\n'
                 outstr = outstr + \
                     '    <script type="text/javascript">\n' + \
-                    '      var cur_view = "DEFAULT";\n' + \
                     '      window.onload = function() {\n' + \
                     '        $.getScript("js/indentedtree-' + \
                     '%s.js",' % (self.destprefix) + \
                     ' function( data, textStatus, jqxhr ) {\n' + \
                     '          // do some stuff after script is loaded\n' + \
                     '        });\n' + \
-                    '        this.cur_view = "DEFAULT";\n' + \
                     '      };\n' + \
-                    '      $("#default-button").on("click", function() {\n' + \
-                    '        if (cur_view !== "DEFAULT") {\n' + \
-                    '          d3.select("div.div_svg").select("svg").' + \
-                    'remove();\n' + \
-                    '          d3.select("div.d3-tip").remove();\n' + \
-                    '          $.getScript("js/indentedtree-' + \
-                    '%s.js",' % (self.destprefix) + \
-                    ' function( data, textStatus, jqxhr ) {\n' + \
-                    '            // do some stuff after script is loaded\n' + \
-                    '          });\n' + \
-                    '          cur_view = "DEFAULT";\n' + \
-                    '        }\n' + \
-                    '      });\n' + \
-                    '      $("#expand-button").on("click", function() {\n' + \
-                    '        if (cur_view == "DEFAULT") {\n' + \
-                    '          d3.select("div.div_svg").select("svg").' + \
-                    'remove();\n' + \
-                    '          d3.select("div.d3-tip").remove();\n' + \
-                    '          $.getScript("js/indentedtree-' + \
-                    '%s-expanded.js",' % (self.destprefix) + \
-                    ' function( data, textStatus, jqxhr ) {\n' + \
-                    '            // do some stuff after script is loaded\n' + \
-                    '          });\n' + \
-                    '          cur_view = "EXPANDED";\n' + \
-                    '        }\n' + \
-                    '      });\n' + \
                     '    </script>\n' + \
                     '  </body>\n' + \
                     '</html>\n'
                 fp.write(outstr)
 
         except IOError as msg:
-            ErrorDialog(_("Failed writing %s: %s") % (self.desthtml, str(msg)),
-                        parent=self.user.uistate.window)
+            ErrorDialog(_("Failed writing %s: %s") % (self.desthtml, str(msg)))
             return
 
         # Create required directory structure
@@ -1516,14 +1476,13 @@ class DescendantIndentedTreeReport(Report):
             if not os.path.exists(os.path.join(self.dest_path, "json")):
                 os.mkdir(os.path.join(self.dest_path, "json"))
         except OSError as why:
-            ErrorDialog(_("Failed to create directory structure : %s") % (why),
-                        parent=self.user.uistate.window)
+            ErrorDialog(_("Failed to create directory structure : %s") % (why))
             return
 
         try:
             # Copy/overwrite css/images/js files
             plugin_dir = os.path.dirname(__file__)
-            shutil.copy(os.path.join(plugin_dir, "css", "d3.tip.css"),
+            shutil.copy(os.path.join(plugin_dir, "css", "d3-tip-0.6.3.css"),
                 os.path.join(self.dest_path, "css"))
             shutil.copy(os.path.join(plugin_dir, "images", "male.png"),
                 os.path.join(self.dest_path, "images"))
@@ -1542,34 +1501,24 @@ class DescendantIndentedTreeReport(Report):
             shutil.copy(
                 os.path.join(plugin_dir, "images", "texture-noise.png"),
                 os.path.join(self.dest_path, "images"))
-            shutil.copy(os.path.join(plugin_dir, "js", "d3", "d3.min.js"),
+            shutil.copy(os.path.join(plugin_dir, "js", "d3", "d3-3.5.17.min.js"),
                 os.path.join(self.dest_path, "js", "d3"))
             shutil.copy(
-                os.path.join(plugin_dir, "js", "d3", "d3.tip.v0.6.3.js"),
+                os.path.join(plugin_dir, "js", "d3", "d3-tip-0.6.3.js"),
                 os.path.join(self.dest_path, "js", "d3"))
             shutil.copy(
                 os.path.join(
-                    plugin_dir, "js", "jquery", "jquery-2.0.3.min.js"),
+                    plugin_dir, "js", "jquery", "jquery-3.5.1.min.js"),
                 os.path.join(self.dest_path, "js", "jquery"))
         except OSError as why:
-            ErrorDialog(_("Failed to copy web files : %s") % (why),
-                        parent=self.user.uistate.window)
+            ErrorDialog(_("Failed to copy web files : %s") % (why))
             return
 
         # Generate <dest>.js customizing based on options selected
         try:
             self.write_js(self.destjs, self.contraction)
         except IOError as msg:
-            ErrorDialog(_("Failed writing %s: %s") % (self.destjs, str(msg)),
-                        parent=self.user.uistate.window)
-
-        # Generate <destexpanded>.js customizing based on options selected
-        try:
-            self.write_js(self.destexpandedjs, 99)
-        except IOError as msg:
-            ErrorDialog(_("Failed writing %s: %s") % (self.destexpandedjs,
-                        str(msg)), parent=self.user.uistate.window)
-            return
+            ErrorDialog(_("Failed writing %s: %s") % (self.destjs, str(msg)))
 
         # Generate <dest>.css options selected such as font-size
         try:
@@ -1674,8 +1623,7 @@ class DescendantIndentedTreeReport(Report):
                 fp.write('}\n\n')
 
         except IOError as msg:
-            ErrorDialog(_("Failed writing %s: %s") % (self.destcss, str(msg)),
-                        parent=self.user.uistate.window)
+            ErrorDialog(_("Failed writing %s: %s") % (self.destcss, str(msg)))
             return
 
         # Genearte json data file to be used
@@ -1694,8 +1642,7 @@ class DescendantIndentedTreeReport(Report):
                 recurse.recurse(generation, self.center_person, None)
 
         except IOError as msg:
-            ErrorDialog(_("Failed writing %s: %s") % (self.destjson, str(msg)),
-                        parent=self.user.uistate.window)
+            ErrorDialog(_("Failed writing %s: %s") % (self.destjson, str(msg)))
             return
 
 #------------------------------------------------------------------------
