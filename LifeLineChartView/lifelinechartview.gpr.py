@@ -144,7 +144,7 @@ class ModuleProvider:
 
         # Users often refuse to download the modules. However, the modules
         # are required, so the user can only choose between installing the
-        # requirements or uninstall the plugin. If this warning would be 
+        # requirements or uninstall the plugin. If this warning would be
         # deactivated but the requirements are not available, then an
         # ImportError Exception will be caused. So deactivating this warning
         # will cause another one.
