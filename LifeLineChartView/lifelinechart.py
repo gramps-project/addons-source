@@ -45,7 +45,6 @@ from copy import deepcopy
 import sys, os
 from collections import OrderedDict
 
-from gramps.gen.config import config
 from gramps.gen.display.name import displayer as name_displayer
 from gramps.gen.display.place import displayer as place_displayer
 from gramps.gen.datehandler import displayer as date_displayer
@@ -71,14 +70,10 @@ try:
     from life_line_chart import BaseIndividual, BaseFamily, InstanceContainer, estimate_birth_date, estimate_death_date, LifeLineChartNotEnoughInformationToDisplay
     from life_line_chart.InstanceContainer import OrderedDefaultDict
 except ImportError:
-    inifile = config.register_manager("lifelinechartview_warn")
     # This should not happen. The routines in the gpr.py test the import beforehand.
     raise Exception(
         _("LifeLineChartView dependencies are missing. It is not possible to use this plugin "
-        "without them. The download dialog has been deactivated by the user.\n\n"
-        "You can either uninstall this plugin or reactivate and use the download dialog.\n\n"
-        "To reactivate the download dialog, delete the config file and restart Gramps:\n{filename}").format(
-            filename=inifile.filename))
+        "without them."))
 
 PRERENDER_CACHE_SIZE = 2000
 

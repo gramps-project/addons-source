@@ -28,9 +28,6 @@ from gramps.gen.const import USER_PLUGINS
 from gramps.gen.config import logging
 from gramps.gen.config import config
 from gramps.gen.plug.utils import Zipfile
-inifile = config.register_manager("lifelinechartview_warn")
-inifile.load()
-sects = inifile.get_sections()
 
 import importlib
 
@@ -190,7 +187,7 @@ class ModuleProvider:
         from urllib.request import urlopen
         from gramps.gen.plug.utils import urlopen_maybe_no_check_cert
         from io import StringIO, BytesIO
-        global Zipfile_bugfix, inifile
+        global Zipfile_bugfix
         import tarfile
         import os
 
@@ -279,11 +276,7 @@ life_line_chart_version_required_str = '.'.join(
 some_import_error = False
 
 try:
-    if('lifelinechartview_warn' not in sects or
-       inifile.get('lifelinechartview_warn.missingmodules') != 'False'):
-        _uistate = locals().get('uistate')
-    else:
-        _uistate = None
+    _uistate = locals().get('uistate')
 
     if _uistate:  # don't bother with any of this unless GUI
         mp=ModuleProvider('LifeLineChartView', _uistate)
@@ -348,12 +341,6 @@ if locals().get('uistate') is None or locals().get('uistate'):
              viewclass='LifeLineChartDescendantView',
              stock_icon='gramps-lifelinedescendantchart-bw',
              )
-
-# reset the warning 'on' setting if updated or new plugin or it loaded ok.
-if _uistate and not some_import_error or locals().get('new_plugin'):
-    inifile.register('lifelinechartview_warn.missingmodules', "")
-    inifile.set('lifelinechartview_warn.missingmodules', "True")
-    inifile.save()
 
 # prevent the view from starting if there is a problem; we still need to
 # register to support plugin manager 'installed' and addon updates correctly
