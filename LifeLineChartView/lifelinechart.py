@@ -1391,6 +1391,7 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
         self.set_values(None, None)
         LifeLineChartBaseWidget.__init__(
             self, dbstate, uistate, callback_popup)
+        self.background_color = self.uistate.window.get_style_context().get_background_color(Gtk.StateFlags.ACTIVE)
         #self.ic = get_dbdstate_instance_container(self.dbstate)
 
     def set_values(self, root_person_handle, filtr):
