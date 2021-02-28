@@ -145,34 +145,34 @@ class ModuleProvider:
         if module:
             return module
 
-        message = _("Failed to load the required module {module_name} "
-                    "version {module_version}.").format(**locals())
+        # Users often refuse to download the modules. However, the modules
+        # are required, so the user can only choose between installing the
+        # requirements or uninstall the plugin. If this warning would be 
+        # deactivated but the requirements are not available, then an
+        # ImportError Exception will be caused. So deactivating this warning
+        # will cause another one.
+        message = (
+            _("Failed to load the required module {module_name} "
+            "version {module_version}.")
+            + _("\n\nIt is not possible to use {self.plugin_name} "
+            "without this module. You can either uninstall this plugin, "
+            "or download the module.")).format(**locals())
         logging.warning(self.plugin_name + ': ' + message)
         if self.uistate:
-            from gramps.gui.dialog import QuestionDialog3
-            ok_no_cancel = QuestionDialog3(
+            from gramps.gui.dialog import QuestionDialog2
+            ok_cancel = QuestionDialog2(
                 _(self.plugin_name + ' Plugin'),
                 _(message),
-                _("Don't ask me again"),
                 _("Download module"),
+                _("_Cancel"),
                 parent=self.uistate.window)
-            prompt = ok_no_cancel.run()
-            if prompt == True:
-                # dont ask me again
-                inifile.register(self.plugin_name.lower() +
-                                 '_warn.missingmodules', "")
-                inifile.set(self.plugin_name.lower() +
-                            '_warn.missingmodules', "False")
-                inifile.save()
-                logging.warning(self.plugin_name + ': ' + _(
-                    'The user chose to deactivate further warnings.'))
-                return None
-            elif prompt == -1:
+            prompt = ok_cancel.run()
+            if prompt == False:
                 #cancel
                 logging.info(self.plugin_name + ': ' +
                              _('The user chose to ignore the warning once.'))
                 return None
-            elif prompt == False:
+            elif prompt == True:
                 logging.info(self.plugin_name + ': ' +
                              _('The user chose to install the module.'))
                 output_path = os.path.join(USER_PLUGINS, self.plugin_name)
