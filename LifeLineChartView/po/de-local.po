@@ -334,8 +334,7 @@ msgid ""
 "debugging purposes."
 msgstr ""
 "Visualisiert die Verbindungen zwischen Familien und Einzelpersonen. Das ist"
-" für"
-"Fehlerbehebung-Zwecke."
+" für Fehlerbehebung-Zwecke."
 
 #: LifeLineChartView//_dummy_translation_string_po.py:88
 msgid "Visualize ambiguous placement"
@@ -498,7 +497,15 @@ msgstr "Eltern umschließen Kinder"
 msgid "Cactus"
 msgstr "Kaktus"
 
-#: LifeLineChartView//lifelinechart.py:469
+#: LifeLineChartView//lifelinechart.py:75
+msgid ""
+"LifeLineChartView dependencies are missing. It is not possible to use this "
+"plugin without them."
+msgstr ""
+"LifeLineChartView Abhängigkeiten fehlen. Ohne diese ist es nicht möglich das "
+"Plugin zu nutzen."
+
+#: LifeLineChartView//lifelinechart.py:476
 msgid "calculated"
 msgstr "berechnet"
 
@@ -612,20 +619,31 @@ msgstr ""
 "geladen werden."
 
 #: LifeLineChartView//lifelinechartview.gpr.py:154
+#, python-brace-format
+msgid ""
+"\n"
+"\n"
+"It is not possible to use {self.plugin_name} without this module. You can "
+"either uninstall this plugin, or download the module."
+msgstr ""
+"\n"
+"\n"
+"Es ist nicht möglich {self.plugin_name} ohne dieses Python Modul zu nutzen."
+"Sie können entweder das Plugin deinstallieren, oder das benötigte Modul "
+"herunterladen."
+
+#: LifeLineChartView//lifelinechartview.gpr.py:161
 msgid " Plugin"
 msgstr " Zusatzmodul"
-
-#: LifeLineChartView//lifelinechartview.gpr.py:156
-msgid "Don't ask me again"
-msgstr "Nicht nochmal fragen"
 
 #: LifeLineChartView//lifelinechartview.gpr.py:157
 msgid "Download module"
 msgstr "Modul herunterladen"
 
-#: LifeLineChartView//lifelinechartview.gpr.py:168
-msgid "The user chose to deactivate further warnings."
-msgstr "Der Anwender hat weitere Warnungen deaktiviert."
+#: LifeLineChartView//lifelinechartview.gpr.py:164
+#: LifeLineChartView//lifelinechartview.py:834
+msgid "_Cancel"
+msgstr "_Abbrechen"
 
 #: LifeLineChartView//lifelinechartview.gpr.py:173
 msgid "The user chose to ignore the warning once."
@@ -736,10 +754,6 @@ msgstr "Lesezeichen organisieren"
 msgid "Export View as SVG"
 msgstr "Ansicht als SVG exportieren"
 
-#: LifeLineChartView//lifelinechartview.py:826
-msgid "_Cancel"
-msgstr "_Abbrechen"
-
 #: LifeLineChartView//lifelinechartview.py:827
 msgid "_Save"
 msgstr "_Speichern"
@@ -747,6 +761,12 @@ msgstr "_Speichern"
 #: LifeLineChartView//lifelinechartview.py:938
 msgid "Reset all settings"
 msgstr "Alle Einstellungen zurücksetzen"
+
+#~ msgid "Don't ask me again"
+#~ msgstr "Nicht nochmal fragen"
+
+#~ msgid "The user chose to deactivate further warnings."
+#~ msgstr "Der Anwender hat weitere Warnungen deaktiviert."
 
 #~ msgid "cursor position at "
 #~ msgstr "Cursorposition bei "
