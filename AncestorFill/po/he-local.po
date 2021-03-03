@@ -1,0 +1,127 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2021-03-03 13:08+0200\n"
+"Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
+"Language-Team: \n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==2 ? 1 : n>10 && n%10==0 ? "
+"2 : 3);\n"
+
+#: AncestorFill/AncestorFill.gpr.py:8
+msgid "AncestorFill"
+msgstr "אנססטורפיל"
+
+#: AncestorFill/AncestorFill.gpr.py:9
+msgid "Report on the filling of the tree"
+msgstr "דוח השלמת אילן יוחסין"
+
+#: AncestorFill/AncestorFill.py:105
+#, python-format
+msgid "Person %s is not in the Database"
+msgstr "אדם %s לא מופיע במסד הנתונים"
+
+#: AncestorFill/AncestorFill.py:190
+#, python-format
+msgid "AncestorFill for %s"
+msgstr "אנססטורפיל ל- %s"
+
+#: AncestorFill/AncestorFill.py:206
+msgid "Generation "
+msgstr "דור "
+
+#: AncestorFill/AncestorFill.py:207
+msgid "Number of Ancestors found "
+msgstr "מספר אָבוֹת קַדמוֹנִים שנמצאו "
+
+#: AncestorFill/AncestorFill.py:208
+msgid "percent of Ancestors found "
+msgstr "אחוז אָבוֹת קַדמוֹנִים שנמצאו "
+
+#: AncestorFill/AncestorFill.py:209
+msgid "Number of single Ancestors found "
+msgstr "מספר אָבוֹת קַדמוֹנִים בודדים שנמצאו "
+
+#: AncestorFill/AncestorFill.py:210
+msgid "Number of theoretical Ancestors "
+msgstr "מספר אָבוֹת קַדמוֹנִים אפשריים "
+
+#: AncestorFill/AncestorFill.py:211
+msgid "Pedigree Collapse "
+msgstr "כיווץ אילן יוחסין "
+
+#: AncestorFill/AncestorFill.py:254
+msgid "Total Number of Ancestors found "
+msgstr "סך כל מספר אָבוֹת קַדמוֹנִים שנמצאו "
+
+#: AncestorFill/AncestorFill.py:256
+msgid "Total Number of single Ancestors found "
+msgstr "סך כל מספר אָבוֹת קַדמוֹנִים בודדים שנמצאו "
+
+#: AncestorFill/AncestorFill.py:293
+msgid "Report Options"
+msgstr "אפשרויות דוח"
+
+#: AncestorFill/AncestorFill.py:295
+msgid "Center Person"
+msgstr "אדם מרכזי"
+
+#: AncestorFill/AncestorFill.py:296
+msgid "The center person for the report"
+msgstr "האדם המרכזי לדוח"
+
+#: AncestorFill/AncestorFill.py:299
+msgid "Generations"
+msgstr "דורות"
+
+#: AncestorFill/AncestorFill.py:300
+msgid "The number of generations to include in the report"
+msgstr "מספר הדורות שיכללו בדוח"
+
+#: AncestorFill/AncestorFill.py:303
+msgid "Filled digit"
+msgstr "ספרות שמולאו"
+
+#: AncestorFill/AncestorFill.py:304
+msgid ""
+"The number of digits after comma to include in the report for the percentage "
+"of ancestor found at a given generation"
+msgstr ""
+"מספר הספרות אחרי הפסיק שיש לכלול בדוח אחוז האבות הקדמונים שנמצאו בדור נתון"
+
+#: AncestorFill/AncestorFill.py:307
+msgid "Collapsed digit"
+msgstr "ספרות לכווץ"
+
+#: AncestorFill/AncestorFill.py:308
+msgid ""
+"The number of digits after comma to include in the report for the pedigree "
+"Collapse"
+msgstr "מספר הספרות אחרי פסיק שיש לכלול בדוח אילן יוחסין מכווץ"
+
+#: AncestorFill/AncestorFill.py:311
+msgid "Display theoretical"
+msgstr "המגת אָבוֹת קַדמוֹנִים אפשריים"
+
+#: AncestorFill/AncestorFill.py:312
+msgid "Whether to display the theoretical number of ancestor by generation"
+msgstr "האם להציג את המספר האפשרי של אבות הקדמונים לפי דור"
+
+#: AncestorFill/AncestorFill.py:360
+msgid "The style used for the title of the page."
+msgstr "הסגנון שמשמש לכותרת העמוד.."
+
+#: AncestorFill/AncestorFill.py:373
+msgid "The style used for the generation header."
+msgstr "הסגנון שמשמש ליצירת כותרת."
+
+#: AncestorFill/AncestorFill.py:383
+msgid "The basic style used for the text display."
+msgstr "הסגנון הבסיסי המשמש להצגת המלל."
