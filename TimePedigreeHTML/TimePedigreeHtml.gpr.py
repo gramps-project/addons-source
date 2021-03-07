@@ -21,6 +21,9 @@
 # TimePedigreeHtml - a plugin for GRAMPS - version 0.1
 # Outcome is an HTML file showing a pedigree with time scale
 
+# Version 0.0.2:
+# - register() instead of newplugin()
+
 from gramps.gen.plug._pluginreg import (newplugin, STABLE, REPORT,
     CATEGORY_WEB, REPORT_MODE_GUI, REPORT_MODE_CLI)
 from gramps.gen.const import GRAMPS_LOCALE as glocale
@@ -34,19 +37,19 @@ MODULE_VERSION="5.1"
 #
 #------------------------------------------------------------------------
 
-plg = newplugin()
-plg.id = 'Time Pedigree'
-plg.name = _("Timeline Pedigree")
-plg.description = _("This view creates a website showing a "
-    "pedigree with birthday relation")
-plg.version = '0.0.1'
-plg.gramps_target_version = MODULE_VERSION
-plg.status = STABLE
-plg.fname = 'TimePedigreeHtml.py'
-plg.ptype = REPORT
-plg.authors = ["Manuela Kugel"]
-plg.authors_email = ["gramps@ur-ahn.de"]
-plg.category = CATEGORY_WEB
-plg.reportclass = 'TimePedigreeHtml'
-plg.optionclass = 'TimePedigreeHtmlOptions'
-plg.report_modes = [REPORT_MODE_GUI, REPORT_MODE_CLI]
+register(REPORT,
+         id = 'Time Pedigree',
+         name = _("Timeline Pedigree"),
+         description = _("This view creates a website showing a "
+            "pedigree with birthday relation"),
+         version = '0.0.2',
+         gramps_target_version = MODULE_VERSION,
+         status = STABLE,
+         fname = 'TimePedigreeHtml.py',
+         authors = ["Manuela Kugel"],
+         authors_email = ["gramps@ur-ahn.de"],
+         category = CATEGORY_WEB,
+         reportclass = 'TimePedigreeHtml',
+         optionclass = 'TimePedigreeHtmlOptions',
+         report_modes = [REPORT_MODE_GUI, REPORT_MODE_CLI]
+)

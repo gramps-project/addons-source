@@ -1,5 +1,7 @@
-""" Any kind of docstring-information to avoid pylint error ;o) """
-
+""" 
+    TimePedigreeHtml - a plugin for GRAMPS - version 0.0.2
+    Outcome is an HTML file showing a pedigree with time scale
+"""
 # Gramps - a GTK+/GNOME based genealogy program
 #
 # Copyright (C) 2021  Manuela Kugel (gramps@ur-ahn.de)
@@ -17,9 +19,16 @@
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
-#
-# TimePedigreeHtml - a plugin for GRAMPS - version 0.1
-# Outcome is an HTML file showing a pedigree with time scale
+
+# Version 0.0.2:
+# - Limit of recursion with level highter than 100 to avoid endless loop on
+#   error data
+# - Person boxes with x component less or equal 0
+# - International date format
+# - Usage of symbols according to gramps class gramps.gen.utils.symbols
+# - Additional scale on the right side
+# - Added README.txt for license of background image and a js code snippet
+
 
 import io
 import math
@@ -28,7 +37,9 @@ import shutil
 from gramps.gen.config import config
 from gramps.gen.const import GRAMPS_LOCALE as glocale, USER_PLUGINS
 from gramps.gen.lib.person import Person
-from gramps.gen.plug.report import Report, MenuReportOptions
+from gramps.gen.plug.report import (Report, 
+                                    MenuReportOptions, 
+                                    stdoptions)
 from gramps.gen.plug.menu import (ColorOption,
                                   NumberOption,
                                   PersonOption,
@@ -36,7 +47,9 @@ from gramps.gen.plug.menu import (ColorOption,
                                   StringOption,
                                   BooleanOption)
 from gramps.gen.utils.db import (get_birth_or_fallback, get_death_or_fallback)
+from gramps.gen.utils.symbols import Symbols
 from gramps.gui.dialog import ErrorDialog
+from gramps.plugins.webreport.common import get_gendex_data
 
 
 try:
@@ -66,6 +79,9 @@ class TimePedigreeHtml(Report):
         self.age_difference = int(
             menu.get_option_by_name('age_diff').get_value()
         )
+        self.set_locale(options.menu.get_option_by_name('trans').get_value())
+        stdoptions.run_date_format_option(self, menu)
+        self.rlocale = self._locale
 
         # What
         self.show_id = bool(menu.get_option_by_name('show_id').get_value())
@@ -97,6 +113,8 @@ class TimePedigreeHtml(Report):
         js_target = os.path.join(dest_path, "wz_jsgraphics.js")
         jpg_source = os.path.join(utils_path, "bg.jpg")
         jpg_target = os.path.join(dest_path, "bg.jpg")
+        jpg_source = os.path.join(utils_path, "README.txt")
+        jpg_target = os.path.join(dest_path, "README.txt")
         if not os.path.isdir(dest_path):
             os.makedirs(dest_path) # create dir if necessary
         if not os.path.isfile(js_target):
@@ -140,7 +158,7 @@ class TimePedigreeHtml(Report):
         for pid in self.pid_list:
             if len(self.pid_list[pid]["parent"]) > 0 or pid == self.root_pid:
                 html = self.out_person_html(pid, html)
-        html += "</body>\n</html>\n"
+        html = self.out_extro(html)
 
         try:
             with io.open(self.dest_html, 'w', encoding='UTF-8') as file:
@@ -189,6 +207,12 @@ class TimePedigreeHtml(Report):
         )
         return html
 
+    def out_extro(self, html):
+        """ Draws the last part of html file """
+
+        html += "</body>\n</html>\n"
+        return html
+
     def out_lines_html(self, html):
         """ Draws Scale and each line between boxes in HTML """
 
@@ -214,7 +238,7 @@ class TimePedigreeHtml(Report):
                 + str(y_max) + "px;'>\n"
         )
 
-        # Draw Scale
+        # Draw Scales (vertical lines)
         sc_x = self.scale_x
         y_min = self.offset_y - 10
         if y_min < 0:
@@ -225,11 +249,17 @@ class TimePedigreeHtml(Report):
                 + "{\n"
                 + "  var jg = new jsGraphics('main');\n"
                 + "  jg.setColor('#ffffff');\n"
+                # Scale Verticale left
                 + "  jg.drawLine(" + str(sc_x) + ", "
-                + str(y_min) + ", " # Scale Verticale
+                + str(y_min) + ", " 
                 + str(sc_x) + ", " + str(y_max - self.offset_y) + ");\n"
+                # Scale Verticale Right
+                + "  jg.drawLine(" + str(x_max - sc_x) + ", " 
+                + str(y_min) + ", " 
+                + str(x_max - sc_x) + ", " + str(y_max - self.offset_y) + ");\n"
         )
 
+        # Draw scale tick on each year ending on 0 or 5
         for year in range(x_min_year, x_max_year + 5):
             if math.ceil(year/5) == year/5:
                 yyy = ( (year-x_min_year) * self.year_to_pixel_factor
@@ -239,6 +269,11 @@ class TimePedigreeHtml(Report):
                         + str(sc_x + 10) + ", " + str(yyy) + ");"
                         + "  jg.drawString('" + str(year) + "',"
                         + str(sc_x + 12) + "," + str(yyy - 7) + ");"
+                        + "  jg.drawLine(" + str(x_max - sc_x) + ", " 
+                        + str(yyy) + ", "
+                        + str(x_max - sc_x - 10) + ", " + str(yyy) + ");"
+                        + "  jg.drawString('" + str(year) + "',"
+                        + str(x_max - sc_x - 43) + "," + str(yyy - 7) + ");"
                 )
 
         # Draw Lines between people
@@ -280,6 +315,10 @@ class TimePedigreeHtml(Report):
 
     def out_person_html(self, pid, html):
         """ draws a box including most important data of a person """
+        symbols = Symbols()
+        birth_sym = symbols.get_symbol_for_html(symbols.SYMBOL_BIRTH)
+        marr_sym  = symbols.get_symbol_for_html(symbols.SYMBOL_MARRIAGE)
+        death_sym = symbols.get_death_symbol_for_html(symbols.DEATH_SYMBOL_SHADOWED_LATIN_CROSS)
 
         if self.pid_list[pid]["gender"] == Person.MALE:
             box_class = "box personbox_m"
@@ -292,11 +331,13 @@ class TimePedigreeHtml(Report):
                 + str(self.pid_list[pid]["y"]) + "px;'>\n"
                 + "<b>" + self.pid_list[pid]["firstname"] + "</b>\n"
                 + "<br><b>" + self.pid_list[pid]["name"] + "</b>\n"
-                + "<br>* " + self.pid_list[pid]["birthday"]
+                + "<br>" + birth_sym + " " + self.pid_list[pid]["birthday"]
                 + " " + self.pid_list[pid]["birthplace"] + "\n"
-                + "<br>† " + self.pid_list[pid]["deathday"]
-                + " " + self.pid_list[pid]["deathplace"] + "\n"
         )
+        if self.pid_list[pid]["deathday"]:
+            html += ( "<br>" + death_sym + " " + self.pid_list[pid]["deathday"]
+                    + " " + self.pid_list[pid]["deathplace"] + "\n"
+            )
 
         if pid in self.pair_list:
             for partner_id in self.pair_list[pid]:
@@ -305,7 +346,7 @@ class TimePedigreeHtml(Report):
                 if self.pid_list[pid]["marr"][partner_id]:
                     if ( self.pid_list[pid]["marr"][partner_id][0] != "" or
                             self.pid_list[pid]["marr"][partner_id][1] != "" ):
-                        html += ( "<font size='+1'>&infin;</font> "
+                        html += ( "<font size=+1>" + marr_sym + "</font> "
                                 + self.pid_list[pid]["marr"][partner_id][0]
                                 + " "
                                 + self.pid_list[pid]["marr"][partner_id][1]
@@ -314,11 +355,15 @@ class TimePedigreeHtml(Report):
 
                 html += ( "<b>" + self.pid_list[partner_id]["firstname"]
                         + " " + self.pid_list[partner_id]["name"] + "</b>\n"
-                        + "<br>* " + self.pid_list[partner_id]["birthday"]
+                        + "<br>" + birth_sym + " " 
+                        + self.pid_list[partner_id]["birthday"]
                         + " " + self.pid_list[partner_id]["birthplace"] + "\n"
-                        + "<br>† " + self.pid_list[partner_id]["deathday"]
-                        + " " + self.pid_list[partner_id]["deathplace"] + "\n"
                 )
+                if self.pid_list[partner_id]["deathday"]:
+                    html += ( "<br>" + death_sym + " " 
+                            + self.pid_list[partner_id]["deathday"] + " " 
+                            + self.pid_list[partner_id]["deathplace"] + "\n"
+                    )
 
         if self.show_id:
             html += ( "<div style='position:absolute;top:-12px;right:0px;'>"
@@ -340,7 +385,6 @@ class TimePedigreeHtml(Report):
         # Loop at every leaf
         for pid_left in self.pid_list:
             if len(self.pid_list[pid_left]["children"]) == 0: # is leaf
-                # print("----------------")
 
                 # find pid of next leaf
                 found = False
@@ -444,7 +488,9 @@ class TimePedigreeHtml(Report):
                         # else: not relevant
                     else:
                         if year_tmp in year_x_right:
-                            delta = min(delta, year_x_right[year_tmp])
+                            delta = min(delta, year_x_right[year_tmp]
+                                      - self.offset_x
+                                    )
                         # else: not relevant
 
                 # if gap is greater than 0 move right SUBTREE (not only
@@ -463,13 +509,22 @@ class TimePedigreeHtml(Report):
                     pid_tmp = pid_right
                     while pid_tmp != self.root_pid:
                         pid_tmp = self.pid_list[pid_tmp]["parent"][0]
-                        x_max = self.pid_list[
-                                    self.pid_list[
+                        x_max = self.pid_list[self.pid_list[
                                         pid_tmp]["children"][0]]["x"]
-                        x_min = self.pid_list[
-                                    self.pid_list[
+                        x_min = self.pid_list[self.pid_list[
                                         pid_tmp]["children"][-1]]["x"]
-                        self.pid_list[pid_tmp]["x"] = int((x_max + x_min) / 2)
+                        x_new = int((x_max + x_min) / 2)
+                        year_birth = self.pid_list[pid_tmp]["birthyear"]
+                        x_max_left = 0
+
+                        for year_tmp in range(year_birth - 2, year_birth + 10):
+                            if year_tmp in year_x_left:
+                                x_max_left = max(year_x_left[year_tmp],
+                                                 x_max_left
+                                             )
+                        if x_max_left > x_new:
+                            x_new = x_max_left
+                        self.pid_list[pid_tmp]["x"] = x_new
 
     # ---------------------------------------------------------------- *
     # ----- X - c a l c u l a t i o n s ------------------------------ *
@@ -491,6 +546,7 @@ class TimePedigreeHtml(Report):
                 if self.pid_list[pid]["x"] == 0:
                     if self.calculate_x_adjust_parents(pid):
                         something_changed = True
+
     def calculate_x_adjust_parents(self, pid):
         """ returns, whether something changed (True) or not (False) """
 
@@ -521,6 +577,10 @@ class TimePedigreeHtml(Report):
         The list of all involved persons is built recursively here.
         There is no special order, just a list of IDs in self.pid_list
         """
+        # Make recursion end at some time to avoid endless loop at wrong data
+        if level > 100:
+            return []
+
         person = self.db.get_person_from_gramps_id(pid_old)
         siblings_new  = []
         new_list_pid  = []
@@ -590,13 +650,13 @@ class TimePedigreeHtml(Report):
             # sort childPid at the correct position
             cnt = 0
             for year_in_list in new_list_year:
-                if year_in_list > year:
+                if year_in_list > year and cid not in new_list_pid:
                     new_list_pid.insert(cnt, cid)
                     new_list_year.insert(cnt, year)
                     break
                 cnt = cnt + 1
 
-            if cnt == len(new_list_pid):
+            if cnt == len(new_list_pid) and cid not in new_list_pid:
                 new_list_pid.append(cid)
                 new_list_year.append(year)
 
@@ -641,21 +701,15 @@ class TimePedigreeHtml(Report):
         # ----- Birth ----- *
         self.pid_list[pid]["birthyear"]  = 0
         self.pid_list[pid]["birthday"]   = ""
-        self.pid_list[pid]["birthplace"] = ""
+        dob, self.pid_list[pid]["birthplace"] =\
+            get_gendex_data(self.db, person.get_birth_ref())
 
         birth_evt = get_birth_or_fallback(self.db, person)
         if birth_evt:
             bth = birth_evt.get_date_object().to_calendar("gregorian")
             if bth:
                 self.pid_list[pid]["birthyear"] = bth.get_year()
-                self.pid_list[pid]["birthday"]  = self.format_date(bth)
-
-                if birth_evt.place:
-                    place_obj = self.db.get_place_from_handle(birth_evt.place)
-                    if place_obj:
-                        self.pid_list[pid]["birthplace"] = (
-                            place_obj.get_name().get_value()
-                        )
+                self.pid_list[pid]["birthday"] = self.rlocale.get_date(bth)
 
         if pid == self.root_pid:
             if self.pid_list[pid]["birthyear"] == 0:
@@ -670,19 +724,14 @@ class TimePedigreeHtml(Report):
 
         # ----- Death ----- *
         self.pid_list[pid]["deathday"]   = ""
-        self.pid_list[pid]["deathplace"] = ""
+        dod, self.pid_list[pid]["deathplace"] =\
+            get_gendex_data(self.db, person.get_death_ref())
 
         death_evt = get_death_or_fallback(self.db, person)
         if death_evt:
             dth = death_evt.get_date_object().to_calendar("gregorian")
             if dth:
-                self.pid_list[pid]["deathday"] = self.format_date(dth)
-                if death_evt.place:
-                    place_obj = self.db.get_place_from_handle(death_evt.place)
-                    if place_obj:
-                        self.pid_list[pid]["deathplace"] = (
-                            place_obj.get_name().get_value()
-                        )
+                self.pid_list[pid]["deathday"] = self.rlocale.get_date(dth)
 
         # ----- Gender ----- *
         self.pid_list[pid]["gender"] = person.gender
@@ -747,7 +796,7 @@ class TimePedigreeHtml(Report):
                                 mar_d = event.get_date_object().\
                                     to_calendar("gregorian")
                                 if mar_d:
-                                    marrday = self.format_date(mar_d)
+                                    marrday = self.rlocale.get_date(mar_d)
                                 if event.place:
                                     place_obj = self.db.get_place_from_handle(
                                         event.place
@@ -779,31 +828,6 @@ class TimePedigreeHtml(Report):
                             {marrperson:[marrday, marrplace]}
                         )
 
-    def format_date(self, date):
-        """ prework for date format, which is delivered in person box """
-        # T O D O : integrate international formats
-        ret = ""
-        day   = date.get_day()
-        month = date.get_month()
-        year  = date.get_year()
-
-        months = {1:"Jan",2:"Feb",3:"Mar",4:"Apr",5:"Mai",6:"Jun",
-                  7:"Jul",8:"Aug",9:"Sep",10:"Okt",11:"Nov",12:"Dez"}
-
-        if day == 0:
-            if month in months:
-                ret = months[month] + " " + str(year)
-            elif year not in (0, "0"):
-                ret = str(year)
-            else:
-                ret = ""
-        else:
-            ret = ( str("{:02d}".format(day)) + "."
-                + str("{:02d}".format(month)) + "."
-                + str(year)
-            )
-
-        return ret
 
 ########################################################################
 class TimePedigreeHtmlOptions(MenuReportOptions):
@@ -812,13 +836,6 @@ class TimePedigreeHtmlOptions(MenuReportOptions):
         # pmgr = BasePluginManager.get_instance()
         self.db = dbase
         MenuReportOptions.__init__(self, name, dbase)
-
-#     def validate_gen(self):
-#         """ Validate Max generation > 0 """
-#         if self._maxgen is not None:
-#             maxgen = self._maxgen.get_value()
-#             if maxgen < 1:
-#                 self._maxgen.set_value(1)
 
     def add_menu_options(self, menu):
         """ Add options to the menu for the ancestral fan chart report. """
@@ -853,6 +870,9 @@ class TimePedigreeHtmlOptions(MenuReportOptions):
             "with unknown year of birth")
         )
         menu.add_option(category_general, "age_diff", age_diff)
+
+        locale_opt = stdoptions.add_localization_option(menu, category_general)
+        stdoptions.add_date_format_option(menu, category_general, locale_opt)
 
         # ---------------------------- *
         category_what   = _("What to show")
@@ -938,5 +958,5 @@ class TimePedigreeHtmlOptions(MenuReportOptions):
         # - color, style, width of lines between boxes
         # - turn off optimization
         # check, whether self.pair_list is really necessary
-        # international format of dates
         # onclick in a box should show a hidden div with a detail form
+        # Improve to fulfill pylint policies
