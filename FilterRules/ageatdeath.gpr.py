@@ -17,19 +17,18 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
+"""Filter rule that matches people by their age at death."""
 
-"""Filter rule matching associations of <person filter>."""
-register(
-    RULE,
-    id='associationsofpersonmatch',
-    name=_("Match associations of <person filter>"),
-    description=_("Match associations of <person filter>"),
-    version = '1.0.2',
-    authors=["Matthias Kemmer"],
-    authors_email=["matt.familienforschung@gmail.com"],
-    gramps_target_version='5.1',
-    status=STABLE,
-    fname="associationsofpersonmatch.py",
-    ruleclass='AssociationsOfPersonMatch',
-    namespace='Person',
-    )
+register(RULE,
+  id = 'ageatdeath',
+  name = _('Filter people by their age at death'),
+  description = _("Filter rule that matches people by their age at death"),
+  version = '1.0.1',
+  authors = ["Matthias Kemmer"],
+  authors_email = ["matt.familienforschung@gmail.com"],
+  gramps_target_version = '5.1',
+  status = STABLE,
+  fname = "ageatdeath.py",
+  ruleclass = 'AgeAtDeath',  # must be rule class name
+  namespace = 'Person',  # one of the primary object classes
+  )

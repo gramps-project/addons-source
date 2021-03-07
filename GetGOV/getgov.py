@@ -429,6 +429,9 @@ class GetGOV(Gramplet):
         for element in top[0].getElementsByTagName('gov:isPartOf'):
             ref, date = self.__get_ispartof(element)
             ref_list.append((ref, date))
+        for element in top[0].getElementsByTagName('gov:isLocatedIn'):
+            ref, date = self.__get_ispartof(element)
+            ref_list.append((ref, date))
         for element in top[0].getElementsByTagName('gov:hasURL'):
             url = self.__get_hasurl(element)
             place.add_url(url)

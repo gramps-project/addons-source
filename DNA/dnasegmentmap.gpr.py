@@ -1,7 +1,10 @@
 #
 # Gramps - a GTK+/GNOME based genealogy program
+# http://gramps-project.org
+# Gramplet registration - plug-in/add-on to extend Gramps
 #
-# Copyright (C) 2015      Nick Hall
+# Copyright (C) 2020    Nick Hall
+# Copyright (C) 2020    Gary Griffin
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,28 +20,23 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
-#
-
-#------------------------------------------------------------------------
-#
-# GetGOV Gramplet
-#
-#------------------------------------------------------------------------
-
 register(GRAMPLET,
-         id = "GetGOV Gramplet",
-         name = _("GetGOV"),
-         description = _("Gramplet to get places from the GOV database"),
+         id = "DNASegmentMap",
+         name = _("DNA Segment Map"),
+         authors = ["Nick Hall", "Gary Griffin"],
+         authors_email = ["http://gramps-project.org", "http://gramps-project.org"],
+         description = _("Gramplet showing a matching DNA segment map"),
          status = STABLE,
-         version = '1.0.15',
-         gramps_target_version = '5.1',
-         fname = "getgov.py",
-         gramplet = 'GetGOV',
-         height = 375,
-         detached_width = 510,
-         detached_height = 480,
-         expand = True,
-         gramplet_title = _("GetGOV"),
-         help_url="GetGOV Gramplet",
+         fname="dnasegmentmap.py",
+         height=100,
+         expand=True,
+         gramplet = 'DNASegmentMap',
+         gramplet_title=_("DNA Segment Map"),
+         detached_width = 600,
+         detached_height = 450,
+         version = '1.1.1',
+         gramps_target_version='5.1',
+         help_url="Addon:DNASegmentMap",
          include_in_listing = True,
-        )
+         )
+

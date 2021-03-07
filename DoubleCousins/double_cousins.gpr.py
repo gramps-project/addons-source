@@ -1,7 +1,7 @@
 #
 # Gramps - a GTK+/GNOME based genealogy program
 #
-# Copyright (C) 2020    Matthias Kemmer
+# Copyright (C) 2020  Matthias Kemmer
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,19 +17,20 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
+"""A text report listing double cousins."""
 
-"""Filter rule matching associations of <person filter>."""
-register(
-    RULE,
-    id='associationsofpersonmatch',
-    name=_("Match associations of <person filter>"),
-    description=_("Match associations of <person filter>"),
-    version = '1.0.2',
-    authors=["Matthias Kemmer"],
-    authors_email=["matt.familienforschung@gmail.com"],
-    gramps_target_version='5.1',
-    status=STABLE,
-    fname="associationsofpersonmatch.py",
-    ruleclass='AssociationsOfPersonMatch',
-    namespace='Person',
-    )
+register(REPORT,
+         id = 'double_cousins',
+         name = _("Double Cousins"),
+         description = _("A text report listing double cousins."),
+         version = '1.0.1',
+         gramps_target_version = "5.1",
+         status = STABLE,
+         fname = "double_cousins.py",
+         authors = ["Matthias Kemmer"],
+         authors_email = ["matt.familienforschung@gmail.com"],
+         category = CATEGORY_TEXT,
+         reportclass = 'DoubleCousins',
+         optionclass = 'ReportOptions',
+         report_modes = [REPORT_MODE_CLI, REPORT_MODE_GUI],
+         )
