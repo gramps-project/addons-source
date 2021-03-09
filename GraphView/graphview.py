@@ -43,7 +43,7 @@ from io import StringIO
 from threading import Thread
 from math import sqrt, pow
 from html import escape
-from collections import abc
+from collections import abc, deque
 import gi
 from gi.repository import Gtk, Gdk, GdkPixbuf, GLib, Pango
 
@@ -2403,17 +2403,8 @@ class DotSvgGenerator(object):
             self.set_current_list_desc(active_person)
 
             if self.show_all_connected:
-                try:
-                    self.person_handles_dict.update(
-                        self.find_connected(active_person))
-                except:
-                    w_msg = _("Can't build graph with all connections to "
-                              "active person. This option will be disabled. "
-                              "You can try to reduce generations count "
-                              "settings and enable it again.")
-                    logging.warning(w_msg)
-                    WarningDialog(_('Disabling "All Connected" option'), w_msg)
-                    return False
+                self.person_handles_dict.update(
+                    self.find_connected(active_person))
             else:
                 self.person_handles_dict.update(
                     self.find_descendants(active_person))
@@ -2528,52 +2519,62 @@ class DotSvgGenerator(object):
     def add_connected(self, person, num_desc, num_anc, person_handles):
         """
         Include all connected to active in the list of people to graph.
+        Recursive algorithm is not used becasue some trees have been found
+        that exceed the standard python recursive depth.
         """
-        if not person:
-            return
+        # list of work to do, handles with generation delta,
+        # add to right and pop from left
+        todo = deque([(person, 0),])
 
-        # check if handle is not already processed
-        if person.handle not in person_handles:
-            spouses_list = person.get_family_handle_list()
-            # add self
-            person_handles[person.handle] = len(spouses_list)
-        else:
-            return
+        while todo:
+            person, delta_gen = todo.popleft()
 
-        # add descendants
-        if num_desc >= 0:  # generation restriction
+            if not person:
+                return
+            # check generation restrictions
+            if (delta_gen > num_desc) or (delta_gen < -num_anc):
+                continue
+
+            # check if handle is not already processed
+            if person.handle not in person_handles:
+                spouses_list = person.get_family_handle_list()
+                person_handles[person.handle] = len(spouses_list)
+            else:
+                continue
+
+            # add descendants
             for family_handle in spouses_list:
                 family = self.database.get_family_from_handle(family_handle)
 
-                if num_desc > 0:  # generation restriction
+                if num_desc >= (delta_gen + 1):  # generation restriction
                     # add every child recursively
                     for child_ref in family.get_child_ref_list():
                         if child_ref.ref in person_handles:
                             continue
-                        self.add_connected(
-                            self.database.get_person_from_handle(child_ref.ref),
-                            num_desc-1, num_anc+1, person_handles)
+                        todo.append(
+                            (self.database.get_person_from_handle(child_ref.ref),
+                             delta_gen+1))
 
                 # add person spouses
                 for sp_handle in (family.get_father_handle(),
                                   family.get_mother_handle()):
                     if sp_handle and sp_handle not in person_handles:
-                        self.add_connected(
-                            self.database.get_person_from_handle(sp_handle),
-                            num_desc, num_anc, person_handles)
+                        todo.append(
+                            (self.database.get_person_from_handle(sp_handle),
+                             delta_gen))
 
-        # add ancestors
-        if num_anc > 0:  # generation restriction
-            for family_handle in person.get_parent_family_handle_list():
-                family = self.database.get_family_from_handle(family_handle)
+            # add ancestors
+            if -num_anc <= (delta_gen - 1):  # generation restriction
+                for family_handle in person.get_parent_family_handle_list():
+                    family = self.database.get_family_from_handle(family_handle)
 
-                # add every ancestor's spouses
-                for sp_handle in (family.get_father_handle(),
-                                  family.get_mother_handle()):
-                    if sp_handle and sp_handle not in person_handles:
-                        self.add_connected(
-                            self.database.get_person_from_handle(sp_handle),
-                            num_desc+1, num_anc-1, person_handles)
+                    # add every ancestor's spouses
+                    for sp_handle in (family.get_father_handle(),
+                                      family.get_mother_handle()):
+                        if sp_handle and sp_handle not in person_handles:
+                            todo.append(
+                                (self.database.get_person_from_handle(sp_handle),
+                                 delta_gen-1))
 
     def find_descendants(self, active_person):
         """
