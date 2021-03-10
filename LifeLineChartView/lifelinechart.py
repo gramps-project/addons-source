@@ -45,9 +45,6 @@ from copy import deepcopy
 import sys, os
 from collections import OrderedDict
 
-from life_line_chart import AncestorChart, DescendantChart
-from life_line_chart import BaseIndividual, BaseFamily, InstanceContainer, estimate_birth_date, estimate_death_date, LifeLineChartNotEnoughInformationToDisplay
-from life_line_chart.InstanceContainer import OrderedDefaultDict
 from gramps.gen.display.name import displayer as name_displayer
 from gramps.gen.display.place import displayer as place_displayer
 from gramps.gen.datehandler import displayer as date_displayer
@@ -67,6 +64,16 @@ try:
 except ValueError:
     _trans = glocale.translation
 _ = _trans.gettext
+
+try:
+    from life_line_chart import AncestorChart, DescendantChart
+    from life_line_chart import BaseIndividual, BaseFamily, InstanceContainer, estimate_birth_date, estimate_death_date, LifeLineChartNotEnoughInformationToDisplay
+    from life_line_chart.InstanceContainer import OrderedDefaultDict
+except ImportError:
+    # This should not happen. The routines in the gpr.py test the import beforehand.
+    raise Exception(
+        _("LifeLineChartView dependencies are missing. It is not possible to use this plugin "
+        "without them."))
 
 PRERENDER_CACHE_SIZE = 2000
 
@@ -1379,6 +1386,7 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
         self.set_values(None, None)
         LifeLineChartBaseWidget.__init__(
             self, dbstate, uistate, callback_popup)
+        self.background_color = self.uistate.window.get_style_context().get_background_color(Gtk.StateFlags.ACTIVE)
         #self.ic = get_dbdstate_instance_container(self.dbstate)
 
     def set_values(self, root_person_handle, filtr):
