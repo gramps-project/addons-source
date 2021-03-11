@@ -2524,13 +2524,13 @@ class DotSvgGenerator(object):
         """
         # list of work to do, handles with generation delta,
         # add to right and pop from left
-        todo = deque([(person, 0),])
+        todo = deque([(person, 0)])
 
         while todo:
             person, delta_gen = todo.popleft()
 
             if not person:
-                return
+                continue
             # check generation restrictions
             if (delta_gen > num_desc) or (delta_gen < -num_anc):
                 continue
@@ -2546,11 +2546,12 @@ class DotSvgGenerator(object):
             for family_handle in spouses_list:
                 family = self.database.get_family_from_handle(family_handle)
 
+                # add every child recursively
                 if num_desc >= (delta_gen + 1):  # generation restriction
-                    # add every child recursively
                     for child_ref in family.get_child_ref_list():
-                        if child_ref.ref in person_handles:
-                            continue
+                        if (child_ref.ref in person_handles
+                            or child_ref.ref in todo):
+                                continue
                         todo.append(
                             (self.database.get_person_from_handle(child_ref.ref),
                              delta_gen+1))
@@ -2558,7 +2559,8 @@ class DotSvgGenerator(object):
                 # add person spouses
                 for sp_handle in (family.get_father_handle(),
                                   family.get_mother_handle()):
-                    if sp_handle and sp_handle not in person_handles:
+                    if sp_handle and (sp_handle not in person_handles
+                                      and sp_handle not in todo):
                         todo.append(
                             (self.database.get_person_from_handle(sp_handle),
                              delta_gen))
@@ -2571,7 +2573,8 @@ class DotSvgGenerator(object):
                     # add every ancestor's spouses
                     for sp_handle in (family.get_father_handle(),
                                       family.get_mother_handle()):
-                        if sp_handle and sp_handle not in person_handles:
+                        if sp_handle and (sp_handle not in person_handles
+                                          and sp_handle not in todo):
                             todo.append(
                                 (self.database.get_person_from_handle(sp_handle),
                                  delta_gen-1))
