@@ -38,9 +38,9 @@ MODULE_VERSION="5.1"
 #------------------------------------------------------------------------
 
 register(REPORT,
-         id = 'Time Pedigree',
-         name = _("Timeline Pedigree"),
-         description = _("This view creates a website showing a "
+         id = 'TimePedigreeHTML',
+         name = _("Timeline Pedigree Report"),
+         description = _("This creates a website showing a "
             "pedigree with birthday relation"),
          version = '0.0.2',
          gramps_target_version = MODULE_VERSION,

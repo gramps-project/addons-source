@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-07 11:50+0100\n"
+"POT-Creation-Date: 2021-03-15 11:14-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,161 +32,161 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: TimePedigreeHTML/TimePedigreeHtml.gpr.py:57
-msgid "Timeline Pedigree"
+#: TimePedigreeHTML/TimePedigreeHtml.gpr.py:42
+msgid "Timeline Pedigree Report"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.gpr.py:58
-msgid "This view creates a website showing a pedigree with birthday relation"
+#: TimePedigreeHTML/TimePedigreeHtml.gpr.py:43
+msgid "This creates a website showing a pedigree with birthday relation"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:138
+#: TimePedigreeHTML/TimePedigreeHtml.py:168
 msgid "Failed writing "
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:652
+#: TimePedigreeHTML/TimePedigreeHtml.py:795
 msgid "Marriage"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:730
+#: TimePedigreeHTML/TimePedigreeHtml.py:843
 msgid "General"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:732
+#: TimePedigreeHTML/TimePedigreeHtml.py:845
 msgid "Center Person"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:733
+#: TimePedigreeHTML/TimePedigreeHtml.py:846
 msgid "The center person for the report"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:736
+#: TimePedigreeHTML/TimePedigreeHtml.py:849
 msgid "Year of Birth of Center Person"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:737
+#: TimePedigreeHTML/TimePedigreeHtml.py:852
 msgid "The year of birth of the center person. Estimate a year if unknown"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:740
+#: TimePedigreeHTML/TimePedigreeHtml.py:857
 msgid "Destination directory"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:741
+#: TimePedigreeHTML/TimePedigreeHtml.py:860
 msgid "Path for generated files"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:745
+#: TimePedigreeHTML/TimePedigreeHtml.py:864
 msgid "Filename"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:746
+#: TimePedigreeHTML/TimePedigreeHtml.py:865
 msgid "The destination file name for html content."
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:749
+#: TimePedigreeHTML/TimePedigreeHtml.py:868
 msgid "Default Age"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:750
+#: TimePedigreeHTML/TimePedigreeHtml.py:869
 msgid "Default age of parent when child is born with unknown year of birth"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:754
+#: TimePedigreeHTML/TimePedigreeHtml.py:878
 msgid "What to show"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:761
+#: TimePedigreeHTML/TimePedigreeHtml.py:880
 msgid "Show GrampsID"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:762
+#: TimePedigreeHTML/TimePedigreeHtml.py:881
 msgid "Show GrampsID on top right of the box"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:765
+#: TimePedigreeHTML/TimePedigreeHtml.py:884
 msgid "Optimize"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:766
+#: TimePedigreeHTML/TimePedigreeHtml.py:885
 msgid "Use as little space in horizontal direction as possible"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:770
+#: TimePedigreeHTML/TimePedigreeHtml.py:891
 msgid "Color"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:772
+#: TimePedigreeHTML/TimePedigreeHtml.py:893
 msgid "Male Box Color"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:773
+#: TimePedigreeHTML/TimePedigreeHtml.py:894
 msgid "Box background color for male person"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:776
+#: TimePedigreeHTML/TimePedigreeHtml.py:897
 msgid "Female Box Color"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:777
+#: TimePedigreeHTML/TimePedigreeHtml.py:898
 msgid "Box background color for female person"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:781
+#: TimePedigreeHTML/TimePedigreeHtml.py:902
 msgid "Size"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:783
+#: TimePedigreeHTML/TimePedigreeHtml.py:904
 msgid "Number of pixel per year"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:784
+#: TimePedigreeHTML/TimePedigreeHtml.py:905
 msgid "How many pixel height is one year?"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:787
+#: TimePedigreeHTML/TimePedigreeHtml.py:910
 msgid "Offset X Coordinate"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:788
+#: TimePedigreeHTML/TimePedigreeHtml.py:912
 msgid "How many pixel are unused besides the most left and most right boxes?"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:791
+#: TimePedigreeHTML/TimePedigreeHtml.py:917
 msgid "Offset Y Coordinate"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:792
+#: TimePedigreeHTML/TimePedigreeHtml.py:918
 msgid "How many pixel are unused above first box?"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:795
+#: TimePedigreeHTML/TimePedigreeHtml.py:921
 msgid "Width of a box in pixel"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:796
+#: TimePedigreeHTML/TimePedigreeHtml.py:922
 msgid "Width of the box of a person in pixel"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:799
+#: TimePedigreeHTML/TimePedigreeHtml.py:925
 msgid "Horizontal space between boxes in pixel"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:800
+#: TimePedigreeHTML/TimePedigreeHtml.py:928
 msgid "Minimum horizontal space between 2 boxes in pixel"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:803
+#: TimePedigreeHTML/TimePedigreeHtml.py:934
 msgid "Length of vertical part of a line in pixel"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:804
+#: TimePedigreeHTML/TimePedigreeHtml.py:936
 msgid ""
 "Parent and child boxes are connected with lines. This is the length of the "
 "vertical part of the lines in pixel"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.py:807
-#: TimePedigreeHTML/TimePedigreeHtml.py:808
+#: TimePedigreeHTML/TimePedigreeHtml.py:943
+#: TimePedigreeHTML/TimePedigreeHtml.py:945
 msgid "Number of pixel between left border and scale"
 msgstr ""
