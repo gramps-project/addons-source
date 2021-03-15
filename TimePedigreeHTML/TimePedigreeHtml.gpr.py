@@ -42,7 +42,7 @@ register(REPORT,
          name = _("Timeline Pedigree Report"),
          description = _("This creates a website showing a "
             "pedigree with birthday relation"),
-         version = '0.0.2',
+         version = '0.0.3',
          gramps_target_version = MODULE_VERSION,
          status = STABLE,
          fname = 'TimePedigreeHtml.py',
