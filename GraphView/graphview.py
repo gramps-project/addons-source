@@ -2527,6 +2527,14 @@ class DotSvgGenerator(object):
         todo = deque([(person, 0)])
 
         while todo:
+            # check for person count
+            if len(person_handles) > 1000:
+                w_msg = _("You try to build graph containing more then 1000 "
+                          "persons. Not all persons will be shown in the graph."
+                         )
+                WarningDialog(_("Incomplete graph"), w_msg)
+                return
+
             person, delta_gen = todo.popleft()
 
             if not person:
