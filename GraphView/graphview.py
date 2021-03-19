@@ -97,11 +97,16 @@ _ = _trans.gettext
 if win():
     DETACHED_PROCESS = 8
 
-try:
-    gi.require_version('GooCanvas', '2.0')
-    from gi.repository import GooCanvas
-except ImportError:
-    raise Exception("Goocanvas 2 (http://live.gnome.org/GooCanvas) is "
+for goo_ver in ('3.0', '2.0'):
+    try:
+        gi.require_version('GooCanvas', goo_ver)
+        from gi.repository import GooCanvas
+        _GOO = True
+        break
+    except ImportError:
+        _GOO = False
+if not _GOO:
+    raise Exception("Goocanvas 2 or 3 (http://live.gnome.org/GooCanvas) is "
                     "required for this view to work")
 
 if os.sys.platform == "win32":
