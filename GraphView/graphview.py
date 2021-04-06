@@ -104,7 +104,7 @@ for goo_ver in ('3.0', '2.0'):
         from gi.repository import GooCanvas
         _GOO = True
         break
-    except ImportError:
+    except (ImportError, ValueError):
         _GOO = False
 if not _GOO:
     raise Exception("Goocanvas 2 or 3 (http://live.gnome.org/GooCanvas) is "
