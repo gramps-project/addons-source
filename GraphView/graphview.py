@@ -173,7 +173,8 @@ class GraphView(NavigationView):
         ('interface.graphview-nodesep', 2),
         ('interface.graphview-person-theme', 0),
         ('interface.graphview-font', ['', 14]),
-        ('interface.graphview-show-all-connected', False))
+        ('interface.graphview-show-all-connected', False),
+        ('interface.graphview-scale', 1))
 
     def __init__(self, pdata, dbstate, uistate, nav_group=0):
         NavigationView.__init__(self, _('Graph View'), pdata, dbstate, uistate,
@@ -243,7 +244,9 @@ class GraphView(NavigationView):
         Set up callback for changes to the database.
         """
         self._change_db(_db)
-        self.graph_widget.scale = 1
+        self.graph_widget.scale = self._config.get(
+            'interface.graphview-scale')
+
         if self.active:
             if self.get_active() != "":
                 self.graph_widget.populate(self.get_active())
@@ -1084,7 +1087,7 @@ class GraphWidget(object):
         # if we have graph lager than graphviz paper size
         # this coef is needed
         self.transform_scale = 1
-        self.scale = 1
+        self.scale = self.view._config.get('interface.graphview-scale')
 
         self.animation = CanvasAnimation(self.view, self.canvas, scrolled_win)
         self.search_widget.set_items_list(self.animation.items_list)
@@ -1609,6 +1612,7 @@ class GraphWidget(object):
         Set value for zoom of the canvas widget and apply it.
         """
         self.scale = value
+        self.view._config.set('interface.graphview-scale', value)
         self.canvas.set_scale(value / self.transform_scale)
 
     def select_node(self, item, target, event):
