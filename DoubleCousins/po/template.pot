@@ -34,7 +34,6 @@ msgid "Double Cousins Report"
 msgstr ""
 
 #: DoubleCousins/double_cousins.py:119
-#, python-format
 msgid ""
 "Double (first) cousins occur when two siblings of family A marry two "
 "siblings of family B. Their children are double cousins to each other and "
