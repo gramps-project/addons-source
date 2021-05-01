@@ -173,6 +173,9 @@ class GraphView(NavigationView):
         ('interface.graphview-nodesep', 2),
         ('interface.graphview-person-theme', 0),
         ('interface.graphview-font', ['', 14]),
+        ('interface.graphview-person-border-size', 1),
+        ('interface.graphview-active-person-border-size', 3),
+        ('interface.graphview-font', ['', 14]),
         ('interface.graphview-show-all-connected', False))
 
     def __init__(self, pdata, dbstate, uistate, nav_group=0):
@@ -588,6 +591,18 @@ class GraphView(NavigationView):
         self.graph_widget.all_connected_btn.set_active(value)
         self.graph_widget.populate(self.get_active())
 
+    def cb_update_active_person_border_size(self, _client, _cnxd_id, entry, _data):
+        """
+        Called when the active person border size changes
+        """
+        self.graph_widget.populate(self.get_active())
+
+    def cb_update_person_border_size(self, _client, _cnxd_id, entry, _data):
+        """
+        Called when the person border size changes
+        """
+        self.graph_widget.populate(self.get_active())
+
     def config_change_font(self, font_button):
         """
         Called when font is change.
@@ -653,6 +668,10 @@ class GraphView(NavigationView):
                              self.cb_update_person_theme)
         self._config.connect('interface.graphview-show-all-connected',
                              self.cb_show_all_connected)
+        self._config.connect('interface.graphview-active-person-border-size',
+                             self.cb_update_active_person_border_size)
+        self._config.connect('interface.graphview-person-border-size',
+                             self.cb_update_person_border_size)
 
     def _get_configure_page_funcs(self):
         """
@@ -785,6 +804,16 @@ class GraphView(NavigationView):
         self.avatar_widgets.append(lbl)
         self.avatar_widgets.append(FCB_female)
         # ===================================================================
+
+        row += 1
+        widget = configdialog.add_spinner(
+            grid, _('Active person border size'),
+            row, 'interface.graphview-active-person-border-size', (1, 20))
+
+        row += 1
+        widget = configdialog.add_spinner(
+            grid, _('Person border size'),
+            row, 'interface.graphview-person-border-size', (1, 20))
 
         return _('Themes'), grid
 
@@ -1812,6 +1841,10 @@ class GraphvizSvgParser(object):
         scheme = config.get('colors.scheme')
         self.home_person_color = config.get('colors.home-person')[scheme]
         self.font_size = self.view._config.get('interface.graphview-font')[1]
+        self.active_person_border_size = self.view._config.get(
+            'interface.graphview-active-person-border-size')
+        self.person_border_size = self.view._config.get(
+            'interface.graphview-person-border-size')
 
         self.tlist = []
         self.text_attrs = None
@@ -1958,9 +1991,9 @@ class GraphvizSvgParser(object):
             fill_color = attrs.get('fill')
 
         if self.handle == self.widget.active_person_handle:
-            line_width = 3  # thick box
+            line_width = self.active_person_border_size
         else:
-            line_width = 1  # thin box
+            line_width = self.person_border_size
 
         tooltip = self.view.tags_tooltips.get(self.handle)
 
