@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-21 10:45+1000\n"
+"POT-Creation-Date: 2021-04-26 09:45-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -65,128 +65,128 @@ msgstr ""
 msgid "Notes:"
 msgstr ""
 
-#: FamilySheet/FamilySheet.py:767
+#: FamilySheet/FamilySheet.py:769
 #, python-format
 msgid "on %(ymd_date)s"
 msgstr ""
 
-#: FamilySheet/FamilySheet.py:769
+#: FamilySheet/FamilySheet.py:771
 #, python-format
 msgid "in %(ym_date)s"
 msgstr ""
 
-#: FamilySheet/FamilySheet.py:771
+#: FamilySheet/FamilySheet.py:773
 #, python-format
 msgid "in %(y_date)s"
 msgstr ""
 
-#: FamilySheet/FamilySheet.py:775
+#: FamilySheet/FamilySheet.py:777
 #, python-format
 msgid "on %(placeholder)s"
 msgstr ""
 
-#: FamilySheet/FamilySheet.py:777
+#: FamilySheet/FamilySheet.py:779
 #, python-format
 msgid "on %(placeholder)s (%(partial)s)"
 msgstr ""
 
-#: FamilySheet/FamilySheet.py:822 FamilySheet/FamilySheet.py:824
+#: FamilySheet/FamilySheet.py:824 FamilySheet/FamilySheet.py:826
 #, python-format
 msgid "in %(place)s"
 msgstr ""
 
-#: FamilySheet/FamilySheet.py:859
+#: FamilySheet/FamilySheet.py:861
 msgid "Report Options"
 msgstr ""
 
-#: FamilySheet/FamilySheet.py:862
+#: FamilySheet/FamilySheet.py:864
 msgid "Center person"
 msgstr ""
 
-#: FamilySheet/FamilySheet.py:864
+#: FamilySheet/FamilySheet.py:866
 msgid "The person whose partners and children are printed"
 msgstr ""
 
-#: FamilySheet/FamilySheet.py:867
+#: FamilySheet/FamilySheet.py:869
 msgid "Print sheets for"
 msgstr ""
 
-#: FamilySheet/FamilySheet.py:869
+#: FamilySheet/FamilySheet.py:871
 msgid "Center person only"
 msgstr ""
 
-#: FamilySheet/FamilySheet.py:870
+#: FamilySheet/FamilySheet.py:872
 msgid "Center person and descendants in side branches"
 msgstr ""
 
-#: FamilySheet/FamilySheet.py:871
+#: FamilySheet/FamilySheet.py:873
 msgid "Center person and all descendants"
 msgstr ""
 
-#: FamilySheet/FamilySheet.py:872
+#: FamilySheet/FamilySheet.py:874
 msgid "Whether to include descendants, and which ones."
 msgstr ""
 
-#: FamilySheet/FamilySheet.py:875
+#: FamilySheet/FamilySheet.py:877
 msgid "Use call name"
 msgstr ""
 
-#: FamilySheet/FamilySheet.py:877
+#: FamilySheet/FamilySheet.py:879
 msgid "Don't use call name"
 msgstr ""
 
-#: FamilySheet/FamilySheet.py:878
+#: FamilySheet/FamilySheet.py:880
 msgid "Replace first name with call name"
 msgstr ""
 
-#: FamilySheet/FamilySheet.py:879
+#: FamilySheet/FamilySheet.py:881
 msgid "Underline call name in first name / add call name to first name"
 msgstr ""
 
-#: FamilySheet/FamilySheet.py:880
+#: FamilySheet/FamilySheet.py:882
 msgid "Whether to include call name, and how."
 msgstr ""
 
-#: FamilySheet/FamilySheet.py:883
+#: FamilySheet/FamilySheet.py:885
 msgid "Print placeholders for missing information"
 msgstr ""
 
-#: FamilySheet/FamilySheet.py:885
+#: FamilySheet/FamilySheet.py:887
 msgid "Whether to include fields for missing information."
 msgstr ""
 
-#: FamilySheet/FamilySheet.py:888
+#: FamilySheet/FamilySheet.py:890
 msgid "Include sources"
 msgstr ""
 
-#: FamilySheet/FamilySheet.py:889
+#: FamilySheet/FamilySheet.py:891
 msgid "Whether to include source references."
 msgstr ""
 
-#: FamilySheet/FamilySheet.py:892
+#: FamilySheet/FamilySheet.py:894
 msgid "Include notes"
 msgstr ""
 
-#: FamilySheet/FamilySheet.py:893
+#: FamilySheet/FamilySheet.py:895
 msgid "Whether to include notes."
 msgstr ""
 
-#: FamilySheet/FamilySheet.py:907
+#: FamilySheet/FamilySheet.py:909
 msgid "The basic style used for the text display"
 msgstr ""
 
-#: FamilySheet/FamilySheet.py:917
+#: FamilySheet/FamilySheet.py:919
 msgid "The style used for the page key on the top"
 msgstr ""
 
-#: FamilySheet/FamilySheet.py:926
+#: FamilySheet/FamilySheet.py:928
 msgid "The style used for names"
 msgstr ""
 
-#: FamilySheet/FamilySheet.py:936
+#: FamilySheet/FamilySheet.py:938
 msgid "The style used for numbers"
 msgstr ""
 
-#: FamilySheet/FamilySheet.py:946
+#: FamilySheet/FamilySheet.py:948
 msgid "The style used for footnotes (notes and source references)"
 msgstr ""
