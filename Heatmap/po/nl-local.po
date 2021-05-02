@@ -1,0 +1,293 @@
+# Dutch translation of addon Heatmap.
+# Copyright (C) 2021 Gramps project.
+# This file is distributed under the same license as the Heatmap package.
+# Jan Sparreboom <jan@sparreboom.net>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Heatmap 5.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-19 10:55-0600\n"
+"PO-Revision-Date: 2021-05-02 18:57+0200\n"
+"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
+"Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+
+#: Heatmap/heatmap.gpr.py:24
+msgid "Heatmap"
+msgstr "Warmtebeeld"
+
+#: Heatmap/heatmap.gpr.py:25
+msgid "Create a heatmap web report."
+msgstr "Maak een warmtebeeld-webverslag."
+
+#: Heatmap/heatmap.py:68
+msgid "Filter"
+msgstr "Filter"
+
+#: Heatmap/heatmap.py:70 Heatmap/heatmap.py:73 Heatmap/heatmap.py:84
+#: Heatmap/heatmap.py:88 Heatmap/heatmap.py:92 Heatmap/heatmap.py:101
+msgid "General"
+msgstr "Algemeen"
+
+#: Heatmap/heatmap.py:72
+msgid "Person"
+msgstr "Persoon"
+
+#: Heatmap/heatmap.py:76
+msgid "OpenStreetMap"
+msgstr "OpenStreetMap"
+
+#: Heatmap/heatmap.py:77
+msgid "Stamen Terrain"
+msgstr "Stamen terrein"
+
+#: Heatmap/heatmap.py:78
+msgid "Stamen Toner"
+msgstr "Stamen zwart-wit"
+
+#: Heatmap/heatmap.py:79
+msgid "Stamen Watercolor"
+msgstr "Stamen waterverf"
+
+#: Heatmap/heatmap.py:80
+msgid "CartoDB Positron"
+msgstr "CartoDB Positron"
+
+#: Heatmap/heatmap.py:81
+msgid "CartoDB DarkMatter"
+msgstr "CartoDB DarkMatter"
+
+#: Heatmap/heatmap.py:82
+msgid "Map tiles"
+msgstr "Kaarttegels"
+
+#: Heatmap/heatmap.py:86
+msgid "Point size"
+msgstr "Puntgrootte"
+
+#: Heatmap/heatmap.py:87
+msgid ""
+"Set the size of the heatmap points.\n"
+"Default: 15"
+msgstr ""
+"Stel de grootte van de heatmap-punten in.\n"
+"Standaard: 15"
+
+#: Heatmap/heatmap.py:90
+msgid "File path"
+msgstr "Bestandspad"
+
+#: Heatmap/heatmap.py:94
+msgid ""
+"For the file name only english letters A-Z, a-z and numbers 0-9 as well as "
+"the characters space, underline and hypen are allowed. The file name also "
+"has to start and end with an alphanumeric character.The file extention '."
+"html' is added by the report."
+msgstr ""
+"Voor de bestandsnaam zijn alleen Engelse letters A-Z, a-z en cijfers 0-9 "
+"toegestaan, evenals de spatie, onderstreping en koppelteken. De "
+"bestandsnaam moet ook beginnen en eindigen met een alfanumeriek teken. De "
+"bestandsextensie '.html' wordt door het rapport toegevoegd."
+
+#: Heatmap/heatmap.py:99
+msgid "File name"
+msgstr "Bestandsnaam"
+
+#: Heatmap/heatmap.py:107
+msgid "Enable custom start position"
+msgstr "Schakel aangepaste startpositie in"
+
+#: Heatmap/heatmap.py:109
+msgid ""
+"Enabling will force the map open at your custom start position and zoom."
+msgstr ""
+"Als u dit inschakelt, wordt de kaart geforceerd geopend op uw aangepaste "
+"startpositie en zoomt u in."
+
+#: Heatmap/heatmap.py:111 Heatmap/heatmap.py:117 Heatmap/heatmap.py:122
+#: Heatmap/heatmap.py:127
+msgid "Advanced"
+msgstr "Geavanceerd"
+
+#: Heatmap/heatmap.py:114
+msgid "Start latitude"
+msgstr "Begin breedtegraad"
+
+#: Heatmap/heatmap.py:116
+msgid ""
+"Set custom start position latitude\n"
+"Default: 50.0"
+msgstr ""
+"Stel een aangepaste breedtegraad voor de startpositie in\n"
+"Standaard: 50.0"
+
+#: Heatmap/heatmap.py:119
+msgid "Start longitude"
+msgstr "Begin lengtegraad"
+
+#: Heatmap/heatmap.py:121
+msgid ""
+"Set custom start position longitude\n"
+"Default: 10.0"
+msgstr ""
+"Stel de lengtegraad van de aangepaste startpositie in\n"
+"Standaard: 10.0"
+
+#: Heatmap/heatmap.py:124
+msgid "Start zoom"
+msgstr "Begin zoom"
+
+#: Heatmap/heatmap.py:126
+msgid ""
+"Set the value for the starting zoom\n"
+"Default: 5"
+msgstr ""
+"Stel de waarde in voor de startzoom\n"
+"Standaard: 5"
+
+#: Heatmap/heatmap.py:132
+msgid "Enable map limits"
+msgstr "Schakel kaartlimieten in"
+
+#: Heatmap/heatmap.py:134
+msgid ""
+"Enabling map limits forces the user to stay in a predefined part of the map."
+msgstr ""
+"Het inschakelen van kaartlimieten dwingt de gebruiker om in een vooraf "
+"gedefinieerd deel van de kaart te blijven."
+
+#: Heatmap/heatmap.py:136 Heatmap/heatmap.py:141 Heatmap/heatmap.py:145
+#: Heatmap/heatmap.py:150 Heatmap/heatmap.py:155 Heatmap/heatmap.py:160
+#: Heatmap/heatmap.py:165 Heatmap/heatmap.py:171
+msgid "Limits"
+msgstr "Grenzen"
+
+#: Heatmap/heatmap.py:139
+msgid "Min. zoom"
+msgstr "Min. zoom"
+
+#: Heatmap/heatmap.py:140
+msgid ""
+"Set minimal zoom value\n"
+"Default: 1"
+msgstr ""
+"Minimale zoomwaarde instellen\n"
+"Standaard: 1"
+
+#: Heatmap/heatmap.py:143
+msgid "Max. zoom"
+msgstr "Max. zoom"
+
+#: Heatmap/heatmap.py:144
+msgid ""
+"Set maximum zoom value.\n"
+"Default: 18"
+msgstr ""
+"Stel maximale zoomwaarde in.\n"
+"Standaard: 18"
+
+#: Heatmap/heatmap.py:147
+msgid "Upper left corner latitude"
+msgstr "Breedtegraad in de linkerbovenhoek"
+
+#: Heatmap/heatmap.py:149
+msgid "Set latitude for upper left corner map limit."
+msgstr "Stel de breedtegraad in voor de kaartlimiet in de linkerbovenhoek."
+
+#: Heatmap/heatmap.py:152
+msgid "Upper left corner longitude"
+msgstr "Lengtegraad in de linkerbovenhoek"
+
+#: Heatmap/heatmap.py:154
+msgid "Set longitude for upper left corner map limit."
+msgstr "Stel de lengtegraad in voor de kaartlimiet in de linkerbovenhoek."
+
+#: Heatmap/heatmap.py:157
+msgid "Lower right corner latitude"
+msgstr "Breedtegraad rechtsonder"
+
+#: Heatmap/heatmap.py:159
+msgid "Set latitude for lower right corner map limit."
+msgstr "Stel de breedtegraad in voor de kaartlimiet in de rechterbenedenhoek."
+
+#: Heatmap/heatmap.py:162
+msgid "Lower right corner longitude"
+msgstr "Lengtegraad rechtsonder"
+
+#: Heatmap/heatmap.py:164
+msgid "Set longitude for lower right corner map limit."
+msgstr "Stel de lengtegraad in voor de kaartlimiet in de rechterbenedenhoek."
+
+#: Heatmap/heatmap.py:168
+msgid "Render custom map limit border"
+msgstr "Render aangepaste kaartlimietgrens"
+
+#: Heatmap/heatmap.py:170
+msgid "Enabling will render the map limit border"
+msgstr "Inschakelen zal de grens van de kaartlimiet weergeven"
+
+#: Heatmap/heatmap.py:207
+msgid "Ancestors of <selected person>"
+msgstr "Voorouders van <geselecteerde persoon>"
+
+#: Heatmap/heatmap.py:208
+msgid "Descendants of <selected person>"
+msgstr "Afstammelingen van <geselecteerde persoon>"
+
+#: Heatmap/heatmap.py:251
+msgid "Invalid filename."
+msgstr "Ongeldige bestandsnaam."
+
+#: Heatmap/heatmap.py:252
+msgid "Path does not exist."
+msgstr "Pad bestaat niet."
+
+#: Heatmap/heatmap.py:261 Heatmap/heatmap.py:267 Heatmap/heatmap.py:269
+#: Heatmap/heatmap.py:344 Heatmap/heatmap.py:454 Heatmap/heatmap.py:490
+msgid "INFO"
+msgstr "INFO"
+
+#: Heatmap/heatmap.py:341
+msgid ""
+"Report generation failed.\n"
+"Please check the values for start latitude and longitude.\n"
+"Latitude: -90 to 90\n"
+"Longitude: -180 to 180"
+msgstr ""
+"Genereren van rapport is mislukt.\n"
+"Controleer de waarden voor de begin- en breedtegraad.\n"
+"Breedtegraad: -90 tot 90\n"
+"Lengtegraad: -180 tot 180"
+
+#: Heatmap/heatmap.py:405
+#, python-format
+msgid ""
+"[INFO]: Place '%s' was ignored because of unsupported coordinate values."
+msgstr ""
+"[INFO]: Plaats '% s' werd genegeerd vanwege niet-ondersteunde "
+"coördinaatwaarden."
+
+#: Heatmap/heatmap.py:452
+msgid ""
+"Your zoom settings were inconclusive and therefore changed for this report "
+"generation."
+msgstr ""
+"Uw zoominstellingen waren niet doorslaggevend en daarom gewijzigd voor deze "
+"verslaggeneratie."
+
+#: Heatmap/heatmap.py:487
+msgid ""
+"Report generation failed.\n"
+"Please check the values for limits latitude and longitude.\n"
+"Latitude: -90 to 90\n"
+"Longitude: -180 to 180"
+msgstr ""
+"Genereren van het verslag is mislukt.\n"
+"Controleer de waarden voor de limieten voor lengte- en breedtegraad.\n"
+"Breedtegraad: -90 tot 90\n"
+"Lengtegraad: -180 tot 180"
