@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-06 13:57-0500\n"
+"POT-Creation-Date: 2021-05-03 10:05-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -394,12 +394,6 @@ msgstr ""
 
 #: GraphView/graphview.py:2930
 msgid "Normal"
-msgstr ""
-
-#: GraphView/graphview.py:3000 GraphView/graphview.py:3013
-#: GraphView/graphview.py:3033 GraphView/graphview.py:3035
-#, python-format
-msgid "%s %s"
 msgstr ""
 
 #: GraphView/graphview.py:3007 GraphView/graphview.py:3008
