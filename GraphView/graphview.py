@@ -1777,12 +1777,12 @@ class GraphWidget(object):
         # now scan throught test boxes, finding the smallest that will hold
         # the actual text as measured.  And record the dot font that was used.
         for indx in range(3, len(font_sizes), 2):
+            bold_size = float(font_sizes[indx - 1])
             if box_w[indx] > bold_b.x2 - bold_b.x1:
-                bold_size = float(font_sizes[indx - 1])
                 break
         for indx in range(4, len(font_sizes), 2):
+            norm_size = float(font_sizes[indx - 1])
             if box_w[indx] > norm_b.x2 - norm_b.x1:
-                norm_size = float(font_sizes[indx - 1])
                 break
         self.retest_font = False  # we don't do this again until font changes
         # return the adjusted font size to tell dot to use.
@@ -2997,7 +2997,7 @@ class DotSvgGenerator(object):
         if self.show_full_dates or self.show_places:
             # add symbols
             if birth[0]:
-                birth[0] = _('%s %s') % (self.bth, birth[0])
+                birth[0] = '%s %s' % (self.bth, birth[0])
                 birth_wraped = birth[0]
                 birth_str = birth[0]
                 if birth[1]:
@@ -3010,7 +3010,7 @@ class DotSvgGenerator(object):
             birth_str += birth[1]
 
             if death[0]:
-                death[0] = _('%s %s') % (self.dth, death[0])
+                death[0] = '%s %s' % (self.dth, death[0])
                 death_wraped = death[0]
                 death_str = death[0]
                 if death[1]:
@@ -3030,9 +3030,9 @@ class DotSvgGenerator(object):
                 # add symbols
                 if image:
                     if birth[0]:
-                        birth_wraped = _('%s %s') % (self.bth, birth[0])
+                        birth_wraped = '%s %s' % (self.bth, birth[0])
                     if death[0]:
-                        death_wraped = _('%s %s') % (self.dth, death[0])
+                        death_wraped = '%s %s' % (self.dth, death[0])
                 else:
                     birth_wraped = birth_str
 
