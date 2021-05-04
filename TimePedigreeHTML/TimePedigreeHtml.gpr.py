@@ -26,8 +26,6 @@
 
 from gramps.gen.plug._pluginreg import (newplugin, STABLE, REPORT,
     CATEGORY_WEB, REPORT_MODE_GUI, REPORT_MODE_CLI)
-from gramps.gen.const import GRAMPS_LOCALE as glocale
-_ = glocale.translation.gettext
 
 MODULE_VERSION="5.1"
 
