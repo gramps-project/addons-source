@@ -8,151 +8,189 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-05 11:56+1000\n"
+"POT-Creation-Date: 2020-08-19 23:12+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: RemoveTagTool/RemoveTagTool.gpr.py:23 RemoveTagTool/RemoveTagTool.py:300
-#: RemoveTagTool/RemoveTagTool.py:417
-msgid "Remove Tag Tool"
+#: RemoveTagTool/RemoveTagTool.gpr.py:24 RemoveTagTool/RemoveTagTool.py:186
+#: RemoveTagTool/RemoveTagTool.py:246
+msgid "Add/Remove Tag Tool"
 msgstr ""
 
-#: RemoveTagTool/RemoveTagTool.gpr.py:24
-msgid "Remove a tag from groups of people, events, etc."
+#: RemoveTagTool/RemoveTagTool.gpr.py:25
+msgid "Add or remove a tag from groups of people, events, etc."
 msgstr ""
 
-#: RemoveTagTool/RemoveTagTool.py:88
-msgid ""
-"The Remove Tag Tool requires at least one person, family and tag to execute."
+#: RemoveTagTool/RemoveTagTool.py:58
+msgid "The Tool requires at least one tag to execute."
 msgstr ""
 
-#: RemoveTagTool/RemoveTagTool.py:90 RemoveTagTool/RemoveTagTool.py:91
+#: RemoveTagTool/RemoveTagTool.py:59 RemoveTagTool/RemoveTagTool.py:61
 msgid "ERROR"
 msgstr ""
 
-#: RemoveTagTool/RemoveTagTool.py:98
-msgid "Event Filter"
+#: RemoveTagTool/RemoveTagTool.py:86
+msgid "Add/Remove"
 msgstr ""
 
-#: RemoveTagTool/RemoveTagTool.py:99
-msgid "All Events"
+#: RemoveTagTool/RemoveTagTool.py:87
+msgid "Add or remove tags from objects."
 msgstr ""
 
-#: RemoveTagTool/RemoveTagTool.py:100
-msgid "Place Filter"
+#: RemoveTagTool/RemoveTagTool.py:88
+msgid "Add Tags"
 msgstr ""
 
-#: RemoveTagTool/RemoveTagTool.py:101
-msgid "All Places"
+#: RemoveTagTool/RemoveTagTool.py:88
+msgid "Remove Tags"
 msgstr ""
 
-#: RemoveTagTool/RemoveTagTool.py:102
-msgid "Source Filter"
-msgstr ""
-
-#: RemoveTagTool/RemoveTagTool.py:103
-msgid "All Sources"
-msgstr ""
-
-#: RemoveTagTool/RemoveTagTool.py:104
-msgid "Citation Filter"
-msgstr ""
-
+#: RemoveTagTool/RemoveTagTool.py:89 RemoveTagTool/RemoveTagTool.py:97
 #: RemoveTagTool/RemoveTagTool.py:105
-msgid "All Citations"
+msgid "General options"
 msgstr ""
 
-#: RemoveTagTool/RemoveTagTool.py:106
-msgid "Repository Filter"
+#: RemoveTagTool/RemoveTagTool.py:92
+msgid "People"
 msgstr ""
 
-#: RemoveTagTool/RemoveTagTool.py:107
-msgid "All Repositories"
+#: RemoveTagTool/RemoveTagTool.py:92 RemoveTagTool/RemoveTagTool.py:125
+msgid "Families"
 msgstr ""
 
-#: RemoveTagTool/RemoveTagTool.py:108
-msgid "Media Filter"
+#: RemoveTagTool/RemoveTagTool.py:92 RemoveTagTool/RemoveTagTool.py:126
+msgid "Events"
 msgstr ""
 
-#: RemoveTagTool/RemoveTagTool.py:109
-msgid "All Media"
+#: RemoveTagTool/RemoveTagTool.py:92 RemoveTagTool/RemoveTagTool.py:127
+msgid "Places"
 msgstr ""
 
-#: RemoveTagTool/RemoveTagTool.py:110
-msgid "Note Filter"
+#: RemoveTagTool/RemoveTagTool.py:92 RemoveTagTool/RemoveTagTool.py:128
+msgid "Sources"
 msgstr ""
 
-#: RemoveTagTool/RemoveTagTool.py:111
-msgid "All Notes"
+#: RemoveTagTool/RemoveTagTool.py:93 RemoveTagTool/RemoveTagTool.py:129
+msgid "Citations"
 msgstr ""
 
-#: RemoveTagTool/RemoveTagTool.py:115
-msgid "Select filter to restrict {}"
+#: RemoveTagTool/RemoveTagTool.py:93 RemoveTagTool/RemoveTagTool.py:130
+msgid "Repositories"
 msgstr ""
 
-#: RemoveTagTool/RemoveTagTool.py:117
-msgid "Option 2"
+#: RemoveTagTool/RemoveTagTool.py:93 RemoveTagTool/RemoveTagTool.py:132
+msgid "Media"
 msgstr ""
 
-#: RemoveTagTool/RemoveTagTool.py:146
+#: RemoveTagTool/RemoveTagTool.py:93 RemoveTagTool/RemoveTagTool.py:133
+msgid "Notes"
+msgstr ""
+
+#: RemoveTagTool/RemoveTagTool.py:95
 msgid "Category"
 msgstr ""
 
-#: RemoveTagTool/RemoveTagTool.py:147
+#: RemoveTagTool/RemoveTagTool.py:96
 msgid "Choose a category."
 msgstr ""
 
-#: RemoveTagTool/RemoveTagTool.py:148 RemoveTagTool/RemoveTagTool.py:156
-#: RemoveTagTool/RemoveTagTool.py:212 RemoveTagTool/RemoveTagTool.py:217
-#: RemoveTagTool/RemoveTagTool.py:256 RemoveTagTool/RemoveTagTool.py:263
-msgid "Option 1"
+#: RemoveTagTool/RemoveTagTool.py:103
+msgid "Choose Tag"
 msgstr ""
 
-#: RemoveTagTool/RemoveTagTool.py:155
+#: RemoveTagTool/RemoveTagTool.py:104
 msgid "Choose a tag to remove."
 msgstr ""
 
-#: RemoveTagTool/RemoveTagTool.py:210
+#: RemoveTagTool/RemoveTagTool.py:124
 msgid "Person Filter"
 msgstr ""
 
-#: RemoveTagTool/RemoveTagTool.py:211
-msgid "Select filter to restrict people"
+#: RemoveTagTool/RemoveTagTool.py:124
+msgid "Persons"
 msgstr ""
 
-#: RemoveTagTool/RemoveTagTool.py:215
-msgid "Center Person"
-msgstr ""
-
-#: RemoveTagTool/RemoveTagTool.py:216 RemoveTagTool/RemoveTagTool.py:262
-msgid "The center person for the filter"
-msgstr ""
-
-#: RemoveTagTool/RemoveTagTool.py:254
+#: RemoveTagTool/RemoveTagTool.py:125
 msgid "Family Filter"
 msgstr ""
 
-#: RemoveTagTool/RemoveTagTool.py:255
-msgid "Select filter to restrict families"
+#: RemoveTagTool/RemoveTagTool.py:126
+msgid "Event Filter"
 msgstr ""
 
-#: RemoveTagTool/RemoveTagTool.py:261
-msgid "Center Family"
+#: RemoveTagTool/RemoveTagTool.py:127
+msgid "Place Filter"
 msgstr ""
 
-#: RemoveTagTool/RemoveTagTool.py:306
+#: RemoveTagTool/RemoveTagTool.py:128
+msgid "Source Filter"
+msgstr ""
+
+#: RemoveTagTool/RemoveTagTool.py:129
+msgid "Citation Filter"
+msgstr ""
+
+#: RemoveTagTool/RemoveTagTool.py:130
+msgid "Repository Filter"
+msgstr ""
+
+#: RemoveTagTool/RemoveTagTool.py:132
+msgid "Media Filter"
+msgstr ""
+
+#: RemoveTagTool/RemoveTagTool.py:133
+msgid "Note Filter"
+msgstr ""
+
+#: RemoveTagTool/RemoveTagTool.py:140
+msgid "Filter options"
+msgstr ""
+
+#: RemoveTagTool/RemoveTagTool.py:151
+#, python-format
+msgid "All %s"
+msgstr ""
+
+#: RemoveTagTool/RemoveTagTool.py:190
 msgid "Options"
 msgstr ""
 
-#: RemoveTagTool/RemoveTagTool.py:420
-msgid "Removing tags..."
+#: RemoveTagTool/RemoveTagTool.py:198
+msgid ""
+"Unable to run the tool. Please check if your database contains tags, filters "
+"and objects."
 msgstr ""
 
-#: RemoveTagTool/RemoveTagTool.py:432
-msgid "Tag '{}' removed from {} {}.\n"
+#: RemoveTagTool/RemoveTagTool.py:200 RemoveTagTool/RemoveTagTool.py:235
+msgid "WARNING"
+msgstr ""
+
+#: RemoveTagTool/RemoveTagTool.py:234
+#, python-format
+msgid "No %s objects were found in database."
+msgstr ""
+
+#: RemoveTagTool/RemoveTagTool.py:249
+msgid "Process tags..."
+msgstr ""
+
+#: RemoveTagTool/RemoveTagTool.py:266
+msgid "added"
+msgstr ""
+
+#: RemoveTagTool/RemoveTagTool.py:268
+msgid "removed"
+msgstr ""
+
+#: RemoveTagTool/RemoveTagTool.py:269
+msgid "Tag '{}' was {} to {} {} objects.\n"
+msgstr ""
+
+#: RemoveTagTool/RemoveTagTool.py:271
+msgid "INFO"
 msgstr ""

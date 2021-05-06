@@ -200,8 +200,8 @@ class _cnsts:
     COLOR_COLUMN = 1
 
     mouse_events = [
-        (ONCLICK, "onclick"),
-        (ONMOUSEOVER, "onmouseover")
+        (ONCLICK, _("onclick")),
+        (ONMOUSEOVER, _("onmouseover"))
     ]
 
     chart_mode = [
@@ -2605,12 +2605,12 @@ class DenominoVisoOptions(MenuReportOptions):
 
         # strange meaning true and false
         priv = BooleanOption(_("Include private records"), True)
-        priv .set_help(_("Wheater to leave out private data."))
+        priv .set_help(_("Whether to leave out private data."))
         menu.add_option(category_name, "DNMuse_privacy", priv)
 
         inc_events = MyBooleanOption(_("Include Events"), True)
         #inc_events = BooleanOption(_("Include Events"), True)
-        inc_events.set_help(_("Wheather to include a person's events."))
+        inc_events.set_help(_("Whether to include a person's events."))
         menu.add_option(category_name, "DNMinc_events", inc_events)
 
         #inc_all_events = BooleanOption(_("Include All Events"), True)
@@ -2910,8 +2910,8 @@ class GuiImageIncludeAttrOption(Gtk.HBox):
         self.e_w.connect('changed',self.__value_changed)
         self.l2_w = Gtk.Label(label=_("should be"))
         self.cb2_w = Gtk.ComboBoxText()
-        self.cb2_w.append_text('Included')
-        self.cb2_w.append_text('Excluded')
+        self.cb2_w.append_text(_('Included'))
+        self.cb2_w.append_text(_('Excluded'))
         self.cb2_w.set_active(incl)
         self.cb2_w.connect('changed',self.__value_changed)
         self.pack_start(self.cbe_w, False, True, 0)
@@ -3017,8 +3017,8 @@ class GuiMouseHandlerOption(Gtk.HBox):
     def __init__(self, option, dbstate, uistate, track, override=False):
         Gtk.HBox.__init__(self)
         self.__option = option
-        self.r1_w = Gtk.RadioButton.new_with_label(None, 'onclick')
-        self.r2_w = Gtk.RadioButton.new_with_label_from_widget(self.r1_w, 'onmouseover')
+        self.r1_w = Gtk.RadioButton.new_with_label(None, _('onclick'))
+        self.r2_w = Gtk.RadioButton.new_with_label_from_widget(self.r1_w, _('onmouseover'))
         self.pack_start(self.r1_w, False, True, 0)
         self.pack_start(self.r2_w, False, True, 0)
         self.r2_w.set_active(self.__option.get_value())

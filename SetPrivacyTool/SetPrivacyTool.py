@@ -86,10 +86,10 @@ class SetPrivacyWindow(PluginWindows.ToolManagedWindowBatch):
             self.lock_media(date, lock_no_date)
         txt = ""
         for entry in self.cnt:
-            txt += "Set private: %d %s\n" % (entry[1], entry[0])
+            txt += _("Set private: %d %s\n") % (entry[1], entry[0])
         for entry in self.cnt:
-            txt += "Not private: %d %s\n" % (entry[2], entry[0])
-        OkDialog("Set Privacy Tool", txt, parent=self.window)
+            txt += _("Not private: %d %s\n") % (entry[2], entry[0])
+        OkDialog(_("Set Privacy Tool"), txt, parent=self.window)
 
     def lock_persons(self, date, lock_no_date):
         with DbTxn(_("Set Privacy Tool"), self.db, batch=True) as self.trans:

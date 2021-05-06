@@ -1,0 +1,103 @@
+# Dutch translation of addon PhpGedView.
+# Copyright (C) 2020 Gramps project
+# This file is distributed under the same license as the PhpGedView package.
+# Jan Sparreboom <jan@sparreboom.net>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PhpGedView 5.x\n"
+"Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
+"POT-Creation-Date: 2019-01-04 18:55-0600\n"
+"PO-Revision-Date: 2020-08-06 16:15+0200\n"
+"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
+"Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+
+#: PhpGedView/phpgedview.gpr.py:23
+msgid "PhpGedView"
+msgstr "PhpGedView"
+
+#: PhpGedView/phpgedview.gpr.py:24
+msgid "Download a GEDCOM file from a phpGedView server."
+msgstr "Download een GEDCOM-bestand van een phpGedView-server."
+
+#: PhpGedView/phpgedviewconnector.py:204 PhpGedView/phpgedviewconnector.py:215
+msgid "Fetching index list..."
+msgstr "Indexlijst ophalen..."
+
+#: PhpGedView/phpgedviewconnector.py:218 PhpGedView/phpgedviewconnector.py:222
+msgid "Fetching records..."
+msgstr "Gegevens ophalen..."
+
+#: PhpGedView/phpgedviewconnector.py:327
+msgid "Logging in..."
+msgstr "Inloggen..."
+
+#: PhpGedView/phpgedviewconnector.py:330
+msgid "Fetching GEDCOM..."
+msgstr "GEDCOM ophalen..."
+
+#: PhpGedView/phpgedviewconnector.py:334
+msgid "Importing GEDCOM..."
+msgstr "GEDCOM importeren..."
+
+#: PhpGedView/phpgedviewconnector.py:341
+msgid "Error: login failed"
+msgstr "Fout: inloggen mislukt"
+
+#: PhpGedView/phpgedviewconnector.py:342 PhpGedView/phpgedviewconnector.py:367
+msgid "done."
+msgstr "gedaan."
+
+#: PhpGedView/phpgedviewconnector.py:347
+msgid "Connecting..."
+msgstr "Verbinden..."
+
+#: PhpGedView/phpgedviewconnector.py:349
+msgid "Get version..."
+msgstr "Versie ophalen..."
+
+#: PhpGedView/phpgedviewconnector.py:352
+#, python-format
+msgid "Version %s"
+msgstr "Versie %s"
+
+#: PhpGedView/phpgedviewconnector.py:353
+msgid "Reading file list..."
+msgstr "Bestandslijst lezen..."
+
+#: PhpGedView/phpgedviewconnector.py:366
+msgid "Error: Invalid URL"
+msgstr "Fout: ongeldige URL"
+
+#: PhpGedView/phpgedview.glade:12
+msgid "- default -"
+msgstr "- standaard -"
+
+#: PhpGedView/phpgedview.glade:19 PhpGedView/phpgedview.glade:85
+msgid "phpGedView import"
+msgstr "phpGedView import"
+
+#: PhpGedView/phpgedview.glade:103
+msgid "http://"
+msgstr "http://"
+
+#: PhpGedView/phpgedview.glade:158
+msgid "File:"
+msgstr "Bestand:"
+
+#: PhpGedView/phpgedview.glade:170
+msgid "Username:"
+msgstr "Gebruikersnaam:"
+
+#: PhpGedView/phpgedview.glade:182
+msgid "Password:"
+msgstr "Wachtwoord:"
+
+#: PhpGedView/phpgedview.glade:206
+msgid "URL:"
+msgstr "URL:"

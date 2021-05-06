@@ -7,27 +7,37 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-29 16:16+1000\n"
-"PO-Revision-Date: 2019-10-24 12:06+0200\n"
-"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"POT-Creation-Date: 2020-08-12 17:40+0200\n"
+"PO-Revision-Date: 2020-08-12 18:04+0200\n"
+"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
 "Language-Team: \n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 2.3\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 
 #: SetPrivacyTool/SetPrivacyTool.gpr.py:23 SetPrivacyTool/SetPrivacyTool.py:48
-#: SetPrivacyTool/SetPrivacyTool.py:93 SetPrivacyTool/SetPrivacyTool.py:130
-#: SetPrivacyTool/SetPrivacyTool.py:157
+#: SetPrivacyTool/SetPrivacyTool.py:90 SetPrivacyTool/SetPrivacyTool.py:93
+#: SetPrivacyTool/SetPrivacyTool.py:130 SetPrivacyTool/SetPrivacyTool.py:157
 msgid "Set Privacy Tool"
 msgstr "Postavi privatnost"
 
 #: SetPrivacyTool/SetPrivacyTool.gpr.py:24
 msgid "Set all objects of the last <number> of years private."
 msgstr "Postavi sve objekte zadnjih <number> godina kao privatne."
+
+#: SetPrivacyTool/SetPrivacyTool.py:87
+#, python-format
+msgid "Set private: %d %s\n"
+msgstr "Postavite privatno: %d %s\n"
+
+#: SetPrivacyTool/SetPrivacyTool.py:89
+#, python-format
+msgid "Not private: %d %s\n"
+msgstr "Nije privatno: %d %s\n"
 
 #: SetPrivacyTool/SetPrivacyTool.py:96
 msgid "Set persons private.."

@@ -43,6 +43,7 @@ from io import StringIO
 from threading import Thread
 from math import sqrt, pow
 from html import escape
+from collections import abc, deque
 import gi
 from gi.repository import Gtk, Gdk, GdkPixbuf, GLib, Pango
 
@@ -69,16 +70,23 @@ from gramps.gen.utils.file import search_for, media_path_full, find_file
 from gramps.gen.utils.libformatting import FormattingHelper
 from gramps.gen.utils.thumbnails import get_thumbnail_path
 
-from gramps.gui.dialog import OptionDialog, ErrorDialog, QuestionDialog2
+from gramps.gui.dialog import (OptionDialog, ErrorDialog, QuestionDialog2,
+                               WarningDialog)
 from gramps.gui.display import display_url
 from gramps.gui.editors import EditPerson, EditFamily, EditTagList
-from gramps.gui.utils import color_graph_box, color_graph_family, rgb_to_hex
+from gramps.gui.utils import (color_graph_box, color_graph_family,
+                              rgb_to_hex, hex_to_rgb_float,
+                              process_pending_events)
 from gramps.gui.views.navigationview import NavigationView
 from gramps.gui.views.bookmarks import PersonBookmarks
 from gramps.gui.views.tags import OrganizeTagsDialog
 from gramps.gui.widgets import progressdialog as progressdlg
 from gramps.gui.widgets.menuitem import add_menuitem
 from gramps.gen.utils.symbols import Symbols
+
+from gramps.gui.pluginmanager import GuiPluginManager
+from gramps.gen.plug import CATEGORY_QR_PERSON, CATEGORY_QR_FAMILY
+from gramps.gui.plug.quick import run_report
 
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
@@ -90,11 +98,16 @@ _ = _trans.gettext
 if win():
     DETACHED_PROCESS = 8
 
-try:
-    gi.require_version('GooCanvas', '2.0')
-    from gi.repository import GooCanvas
-except ImportError:
-    raise Exception("Goocanvas 2 (http://live.gnome.org/GooCanvas) is "
+for goo_ver in ('3.0', '2.0'):
+    try:
+        gi.require_version('GooCanvas', goo_ver)
+        from gi.repository import GooCanvas
+        _GOO = True
+        break
+    except (ImportError, ValueError):
+        _GOO = False
+if not _GOO:
+    raise Exception("Goocanvas 2 or 3 (http://live.gnome.org/GooCanvas) is "
                     "required for this view to work")
 
 if os.sys.platform == "win32":
@@ -115,12 +128,13 @@ gtk_version = float("%s.%s" % (Gtk.MAJOR_VERSION, Gtk.MINOR_VERSION))
 
 #-------------------------------------------------------------------------
 #
-# Search widget module
+# GraphView modules
 #
 #-------------------------------------------------------------------------
 import sys
 sys.path.append(os.path.abspath(os.path.dirname(__file__)))
 from search_widget import SearchWidget, Popover, ListBoxRow, get_person_tooltip
+from avatars import Avatars
 
 
 #-------------------------------------------------------------------------
@@ -137,6 +151,9 @@ class GraphView(NavigationView):
     CONFIGSETTINGS = (
         ('interface.graphview-show-images', True),
         ('interface.graphview-show-avatars', True),
+        ('interface.graphview-avatars-style', 1),
+        ('interface.graphview-avatars-male', ''),       # custom avatar
+        ('interface.graphview-avatars-female', ''),     # custom avatar
         ('interface.graphview-show-full-dates', False),
         ('interface.graphview-show-places', False),
         ('interface.graphview-place-format', 0),
@@ -155,7 +172,8 @@ class GraphView(NavigationView):
         ('interface.graphview-ranksep', 5),
         ('interface.graphview-nodesep', 2),
         ('interface.graphview-person-theme', 0),
-        ('interface.graphview-font', ['', 14]))
+        ('interface.graphview-font', ['', 14]),
+        ('interface.graphview-show-all-connected', False))
 
     def __init__(self, pdata, dbstate, uistate, nav_group=0):
         NavigationView.__init__(self, _('Graph View'), pdata, dbstate, uistate,
@@ -185,10 +203,21 @@ class GraphView(NavigationView):
 
         # for disable animation options in config dialog
         self.ani_widgets = []
+        # for disable custom avatar options in config dialog
+        self.avatar_widgets = []
 
         self.additional_uis.append(self.additional_ui)
         self.define_print_actions()
         self.uistate.connect('font-changed', self.font_changed)
+
+    def on_delete(self):
+        """
+        Method called on shutdown.
+        See PageView class (../gramps/gui/views/pageview.py).
+        """
+        super().on_delete()
+        # stop search to allow close app properly
+        self.graph_widget.search_widget.stop_search()
 
     def font_changed(self):
         self.graph_widget.font_changed(self.get_active())
@@ -391,6 +420,38 @@ class GraphView(NavigationView):
         self.show_avatars = entry == 'True'
         self.graph_widget.populate(self.get_active())
 
+    def cb_update_avatars_style(self, _client, _cnxn_id, entry, _data):
+        """
+        Called when the configuration menu changes the avatars setting.
+        """
+        for widget in self.avatar_widgets:
+            widget.set_visible(entry == '0')
+        self.graph_widget.populate(self.get_active())
+
+    def cb_on_combo_show(self, combobox):
+        """
+        Called when the configuration menu show combobox widget for avatars.
+        Used to hide custom avatars settings.
+        """
+        for widget in self.avatar_widgets:
+            widget.set_visible(combobox.get_active() == 0)
+
+    def cb_male_avatar_set(self, file_chooser_button):
+        """
+        Called when the configuration menu changes the male avatar.
+        """
+        self._config.set('interface.graphview-avatars-male',
+                         file_chooser_button.get_filename())
+        self.graph_widget.populate(self.get_active())
+
+    def cb_female_avatar_set(self, file_chooser_button):
+        """
+        Called when the configuration menu changes the female avatar.
+        """
+        self._config.set('interface.graphview-avatars-female',
+                         file_chooser_button.get_filename())
+        self.graph_widget.populate(self.get_active())
+
     def cb_update_show_full_dates(self, _client, _cnxn_id, entry, _data):
         """
         Called when the configuration menu changes the date setting.
@@ -519,6 +580,14 @@ class GraphView(NavigationView):
         """
         self.graph_widget.populate(self.get_active())
 
+    def cb_show_all_connected(self, _client, _cnxd_id, _entry, _data):
+        """
+        Called when show all connected setting changed.
+        """
+        value = _entry == 'True'
+        self.graph_widget.all_connected_btn.set_active(value)
+        self.graph_widget.populate(self.get_active())
+
     def config_change_font(self, font_button):
         """
         Called when font is change.
@@ -544,6 +613,8 @@ class GraphView(NavigationView):
                              self.cb_update_show_images)
         self._config.connect('interface.graphview-show-avatars',
                              self.cb_update_show_avatars)
+        self._config.connect('interface.graphview-avatars-style',
+                             self.cb_update_avatars_style)
         self._config.connect('interface.graphview-show-full-dates',
                              self.cb_update_show_full_dates)
         self._config.connect('interface.graphview-show-places',
@@ -580,6 +651,8 @@ class GraphView(NavigationView):
                              self.cb_update_spacing)
         self._config.connect('interface.graphview-person-theme',
                              self.cb_update_person_theme)
+        self._config.connect('interface.graphview-show-all-connected',
+                             self.cb_show_all_connected)
 
     def _get_configure_page_funcs(self):
         """
@@ -671,6 +744,47 @@ class GraphView(NavigationView):
         grid.attach(font_btn, 2, row, 1, 1)
         font_btn.connect('font-set', self.config_change_font)
         font_btn.set_filter_func(self.font_filter_func)
+
+        # Avatars options
+        # ===================================================================
+        row += 1
+        avatars = Avatars(self._config)
+        combo = configdialog.add_combo(grid, _('Avatars style'), row,
+                                       'interface.graphview-avatars-style',
+                                       avatars.get_styles_list())
+        combo.connect('show', self.cb_on_combo_show)
+
+        file_filter = Gtk.FileFilter()
+        file_filter.set_name(_('PNG files'))
+        file_filter.add_pattern("*.png")
+
+        self.avatar_widgets.clear()
+        row += 1
+        lbl = Gtk.Label(label=_('Male avatar:'), halign=Gtk.Align.END)
+        FCB_male = Gtk.FileChooserButton.new(_('Choose male avatar'),
+                                             Gtk.FileChooserAction.OPEN)
+        FCB_male.add_filter(file_filter)
+        FCB_male.set_filename(
+            self._config.get('interface.graphview-avatars-male'))
+        FCB_male.connect('file-set', self.cb_male_avatar_set)
+        grid.attach(lbl, 1, row, 1, 1)
+        grid.attach(FCB_male, 2, row, 1, 1)
+        self.avatar_widgets.append(lbl)
+        self.avatar_widgets.append(FCB_male)
+
+        row += 1
+        lbl = Gtk.Label(label=_('Female avatar:'), halign=Gtk.Align.END)
+        FCB_female = Gtk.FileChooserButton.new(_('Choose female avatar'),
+                                               Gtk.FileChooserAction.OPEN)
+        FCB_female.connect('file-set', self.cb_female_avatar_set)
+        FCB_female.add_filter(file_filter)
+        FCB_female.set_filename(
+            self._config.get('interface.graphview-avatars-female'))
+        grid.attach(lbl, 1, row, 1, 1)
+        grid.attach(FCB_female, 2, row, 1, 1)
+        self.avatar_widgets.append(lbl)
+        self.avatar_widgets.append(FCB_female)
+        # ===================================================================
 
         return _('Themes'), grid
 
@@ -955,6 +1069,16 @@ class GraphWidget(object):
         self.add_popover(spacing_btn, spacing_box)
         self.toolbar.pack_start(spacing_btn, False, False, 1)
 
+        # add button to show all connected persons
+        self.all_connected_btn = Gtk.ToggleButton(label=_('All connected'))
+        self.all_connected_btn.set_tooltip_text(
+            _("Show all connected persons limited by generation restrictions.\n"
+              "Works slow, so don't set large generation values."))
+        self.all_connected_btn.set_active(
+            self.view._config.get('interface.graphview-show-all-connected'))
+        self.all_connected_btn.connect('clicked', self.toggle_all_connected)
+        self.toolbar.pack_start(self.all_connected_btn, False, False, 1)
+
         self.vbox.pack_start(scrolled_win, True, True, 0)
 
         # if we have graph lager than graphviz paper size
@@ -1007,6 +1131,13 @@ class GraphWidget(object):
                         conf_const)
         box.pack_start(spinner, False, False, 1)
         return box
+
+    def toggle_all_connected(self, widget):
+        """
+        Change state for "Show all connected" setting.
+        """
+        self.view._config.set('interface.graphview-show-all-connected',
+                              widget.get_active())
 
     def spinners_popup(self, _widget, popover):
         """
@@ -1129,13 +1260,9 @@ class GraphWidget(object):
                     person_image = self.get_person_image(person, 32, 32)
                     if person_image:
                         hbox.pack_start(person_image, False, True, 2)
-                row = ListBoxRow(description=bkmark, label=name)
+                row = ListBoxRow(person_handle=bkmark, label=name,
+                                 db=self.dbstate.db)
                 row.add(hbox)
-
-                # add tooltip
-                tooltip = get_person_tooltip(person, self.dbstate.db)
-                if tooltip:
-                    row.set_tooltip_text(tooltip)
 
                 if present is not None:
                     found = True
@@ -1294,6 +1421,8 @@ class GraphWidget(object):
         """
         # set the busy cursor, so the user knows that we are working
         self.uistate.set_busy_cursor(True)
+        if self.uistate.window.get_window().is_visible():
+            process_pending_events()
 
         self.clear()
         self.active_person_handle = active_person
@@ -1308,8 +1437,19 @@ class GraphWidget(object):
         dot = DotSvgGenerator(self.dbstate, self.view,
                               bold_size=self.bold_size,
                               norm_size=self.norm_size)
-        self.dot_data, self.svg_data = dot.build_graph(active_person)
+
+        graph_data = dot.build_graph(active_person)
         del dot
+
+        if not graph_data:
+            # something go wrong when build all-connected tree
+            # so turn off this feature
+            self.view._config.set('interface.graphview-show-all-connected',
+                                  False)
+            return
+
+        self.dot_data = graph_data[0]
+        self.svg_data = graph_data[1]
 
         parser = GraphvizSvgParser(self, self.view)
         parser.parse(self.svg_data)
@@ -1487,7 +1627,6 @@ class GraphWidget(object):
 
         # perform double click on node by left mouse button
         if event.type == getattr(Gdk.EventType, "DOUBLE_BUTTON_PRESS"):
-            self.uistate.set_busy_cursor(False)
             # Remove all single click events
             for click_item in self.click_events:
                 if not click_item.is_destroyed():
@@ -1504,7 +1643,6 @@ class GraphWidget(object):
             return False
 
         if button == 1 and node_class == 'node':            # left mouse
-            self.uistate.set_busy_cursor(True)
             if handle == self.active_person_handle:
                 # Find a parent of the active person so that they can become
                 # the active person, if no parents then leave as the current
@@ -1513,8 +1651,6 @@ class GraphWidget(object):
                 if parent_handle:
                     handle = parent_handle
                 else:
-                    # unset busy cursor as we don't change active person
-                    self.uistate.set_busy_cursor(False)
                     return True
 
             # redraw the graph based on the selected person
@@ -1641,12 +1777,12 @@ class GraphWidget(object):
         # now scan throught test boxes, finding the smallest that will hold
         # the actual text as measured.  And record the dot font that was used.
         for indx in range(3, len(font_sizes), 2):
+            bold_size = float(font_sizes[indx - 1])
             if box_w[indx] > bold_b.x2 - bold_b.x1:
-                bold_size = float(font_sizes[indx - 1])
                 break
         for indx in range(4, len(font_sizes), 2):
+            norm_size = float(font_sizes[indx - 1])
             if box_w[indx] > norm_b.x2 - norm_b.x1:
-                norm_size = float(font_sizes[indx - 1])
                 break
         self.retest_font = False  # we don't do this again until font changes
         # return the adjusted font size to tell dot to use.
@@ -2095,6 +2231,8 @@ class DotSvgGenerator(object):
         # font if we use genealogical symbols
         self.sym_font = None
 
+        self.avatars = Avatars(self.view._config)
+
     def __del__(self):
         """
         Free stream file on destroy.
@@ -2134,10 +2272,13 @@ class DotSvgGenerator(object):
             'interface.graphview-ancestor-generations')
         self.person_theme_index = self.view._config.get(
             'interface.graphview-person-theme')
+        self.show_all_connected = self.view._config.get(
+            'interface.graphview-show-all-connected')
         ranksep = self.view._config.get('interface.graphview-ranksep')
         ranksep = ranksep * 0.1
         nodesep = self.view._config.get('interface.graphview-nodesep')
         nodesep = nodesep * 0.1
+        self.avatars.update_current_style()
         # get background color from gtk theme and convert it to hex
         # else use white background
         bg_color = self.context.lookup_color('theme_bg_color')
@@ -2260,9 +2401,15 @@ class DotSvgGenerator(object):
             self.home_person = self.dbstate.db.get_default_person()
             self.set_current_list(active_person)
             self.set_current_list_desc(active_person)
-            self.person_handles_dict.update(
-                self.find_descendants(active_person))
-            self.person_handles_dict.update(self.find_ancestors(active_person))
+
+            if self.show_all_connected:
+                self.person_handles_dict.update(
+                    self.find_connected(active_person))
+            else:
+                self.person_handles_dict.update(
+                    self.find_descendants(active_person))
+                self.person_handles_dict.update(
+                    self.find_ancestors(active_person))
 
             if self.person_handles_dict:
                 self.person_handles = sorted(
@@ -2279,7 +2426,7 @@ class DotSvgGenerator(object):
         dot_data = self.dot.getvalue().encode('utf8')
         svg_data = self.make_svg(dot_data)
 
-        return dot_data, svg_data
+        return (dot_data, svg_data)
 
     def make_svg(self, dot_data):
         """
@@ -2359,6 +2506,87 @@ class DotSvgGenerator(object):
                         return True
         return False
 
+    def find_connected(self, active_person):
+        """
+        Spider the database from the active person.
+        """
+        person = self.database.get_person_from_handle(active_person)
+        person_handles = {}
+        self.add_connected(person, self.descendant_generations,
+                           self.ancestor_generations, person_handles)
+        return person_handles
+
+    def add_connected(self, person, num_desc, num_anc, person_handles):
+        """
+        Include all connected to active in the list of people to graph.
+        Recursive algorithm is not used becasue some trees have been found
+        that exceed the standard python recursive depth.
+        """
+        # list of work to do, handles with generation delta,
+        # add to right and pop from left
+        todo = deque([(person, 0)])
+
+        while todo:
+            # check for person count
+            if len(person_handles) > 1000:
+                w_msg = _("You try to build graph containing more then 1000 "
+                          "persons. Not all persons will be shown in the graph."
+                         )
+                WarningDialog(_("Incomplete graph"), w_msg)
+                return
+
+            person, delta_gen = todo.popleft()
+
+            if not person:
+                continue
+            # check generation restrictions
+            if (delta_gen > num_desc) or (delta_gen < -num_anc):
+                continue
+
+            # check if handle is not already processed
+            if person.handle not in person_handles:
+                spouses_list = person.get_family_handle_list()
+                person_handles[person.handle] = len(spouses_list)
+            else:
+                continue
+
+            # add descendants
+            for family_handle in spouses_list:
+                family = self.database.get_family_from_handle(family_handle)
+
+                # add every child recursively
+                if num_desc >= (delta_gen + 1):  # generation restriction
+                    for child_ref in family.get_child_ref_list():
+                        if (child_ref.ref in person_handles
+                            or child_ref.ref in todo):
+                                continue
+                        todo.append(
+                            (self.database.get_person_from_handle(child_ref.ref),
+                             delta_gen+1))
+
+                # add person spouses
+                for sp_handle in (family.get_father_handle(),
+                                  family.get_mother_handle()):
+                    if sp_handle and (sp_handle not in person_handles
+                                      and sp_handle not in todo):
+                        todo.append(
+                            (self.database.get_person_from_handle(sp_handle),
+                             delta_gen))
+
+            # add ancestors
+            if -num_anc <= (delta_gen - 1):  # generation restriction
+                for family_handle in person.get_parent_family_handle_list():
+                    family = self.database.get_family_from_handle(family_handle)
+
+                    # add every ancestor's spouses
+                    for sp_handle in (family.get_father_handle(),
+                                      family.get_mother_handle()):
+                        if sp_handle and (sp_handle not in person_handles
+                                          and sp_handle not in todo):
+                            todo.append(
+                                (self.database.get_person_from_handle(sp_handle),
+                                 delta_gen-1))
+
     def find_descendants(self, active_person):
         """
         Spider the database from the active person.
@@ -2376,75 +2604,45 @@ class DotSvgGenerator(object):
         if not person:
             return
 
-        if num_generations < 0:
+        # check if handle is not already processed
+        # and add self and spouses
+        if person.handle not in person_handles:
+            spouses_list = person.get_family_handle_list()
+
+            person_handles[person.handle] = len(spouses_list)
+            self.add_spouses(person, person_handles)
+        else:
             return
 
-        # look at if we have children
-        nb_child = 0
-        for family_handle in person.get_family_handle_list():
+        if num_generations <= 0:
+            return
+
+        # add every child recursively
+        for family_handle in spouses_list:
             family = self.database.get_family_from_handle(family_handle)
+
             for child_ref in family.get_child_ref_list():
-                # we have at least one child. stop
-                nb_child += 1
-                break
-            break
+                self.add_descendant(
+                    self.database.get_person_from_handle(child_ref.ref),
+                    num_generations - 1, person_handles)
 
-        # add self if not already processed or if we have children
-        if person.handle not in person_handles or nb_child != 0:
-            spouses = len(person.get_family_handle_list())
-            if spouses > 1:
-                person_handles[person.handle] = spouses
-            else:
-                person_handles[person.handle] = 0
-
-            for family_handle in person.get_family_handle_list():
-                family = self.database.get_family_from_handle(family_handle)
-
-                # add every child recursively
-                for child_ref in family.get_child_ref_list():
-                    self.add_descendant(
-                        self.database.get_person_from_handle(child_ref.ref),
-                        num_generations - 1, person_handles)
-
-                self.add_spouses(person, family, person_handles)
-
-    def add_spouses(self, person, family, person_handles):
+    def add_spouses(self, person, person_handles):
         """
         Add spouses to the list.
         """
-        # get spouse
-        if person.handle == family.get_father_handle():
-            spouse_handle = family.get_mother_handle()
-        else:
-            spouse_handle = family.get_father_handle()
+        if not person:
+            return
 
-        # add all his(her) spouses recursively
-        if spouse_handle:
-            sp_person = self.database.get_person_from_handle(spouse_handle)
-        else:
-            sp_person = None
+        for family_handle in person.get_family_handle_list():
+            sp_family = self.database.get_family_from_handle(family_handle)
 
-        # add spouse itself
-        if spouse_handle and spouse_handle not in person_handles:
-            spouses = len(sp_person.get_family_handle_list())
-            if spouses > 1:
-                person_handles[spouse_handle] = spouses
-            else:
-                person_handles[spouse_handle] = 0
-
-        if sp_person:
-            for family_handle in sp_person.get_family_handle_list():
-                sp_family = self.database.get_family_from_handle(family_handle)
-
-                m_handle = sp_family.get_mother_handle()
-                if m_handle and m_handle not in person_handles:
-                    mother = self.database.get_person_from_handle(m_handle)
-                    self.add_descendant(mother, 0, person_handles)
-
-                f_handle = sp_family.get_father_handle()
-                if f_handle and f_handle not in person_handles:
-                    father = self.database.get_person_from_handle(f_handle)
-                    self.add_descendant(father, 0, person_handles)
+            for sp_handle in (sp_family.get_father_handle(),
+                              sp_family.get_mother_handle()):
+                if sp_handle and sp_handle not in person_handles:
+                    # add only spouse (num_generations = 0)
+                    self.add_descendant(
+                        self.database.get_person_from_handle(sp_handle),
+                        0, person_handles)
 
     def find_ancestors(self, active_person):
         """
@@ -2462,35 +2660,32 @@ class DotSvgGenerator(object):
         if not person:
             return
 
+        # add self if handle is not already processed
+        if person.handle not in person_handles:
+            person_handles[person.handle] = len(person.get_family_handle_list())
+        else:
+            return
+
         if num_generations <= 0:
             return
 
-        # add self
-        if person.handle not in person_handles:
-            spouses = len(person.get_family_handle_list())
-            if spouses > 1:
-                person_handles[person.handle] = spouses
-            else:
-                person_handles[person.handle] = 0
+        for family_handle in person.get_parent_family_handle_list():
+            family = self.database.get_family_from_handle(family_handle)
 
-            for family_handle in person.get_parent_family_handle_list():
-                family = self.database.get_family_from_handle(family_handle)
+            # add parents
+            sp_persons = []
+            for sp_handle in (family.get_father_handle(),
+                              family.get_mother_handle()):
+                if sp_handle and sp_handle not in person_handles:
+                    sp_person = self.database.get_person_from_handle(sp_handle)
+                    self.add_ancestor(sp_person,
+                                      num_generations - 1,
+                                      person_handles)
+                    sp_persons.append(sp_person)
 
-                # add every spouses ancestors
-                sp_persons = []
-                for sp_handle in (family.get_father_handle(),
-                                  family.get_mother_handle()):
-                    if sp_handle:
-                        sp_person = self.database.get_person_from_handle(
-                            sp_handle)
-                        self.add_ancestor(sp_person,
-                                          num_generations - 1,
-                                          person_handles)
-                        sp_persons.append(sp_person)
-
-                # add every other spouses for father and mother
-                for sp_person in sp_persons:
-                    self.add_spouses(sp_person, family, person_handles)
+            # add every other spouses for parents
+            for sp_person in sp_persons:
+                self.add_spouses(sp_person, person_handles)
 
     def add_child_links_to_families(self):
         """
@@ -2559,8 +2754,9 @@ class DotSvgGenerator(object):
 
         # The list of families for which we have output the node,
         # so we don't do it twice
-        family_nodes_done = {}
-        family_links_done = {}
+        # use set() as it little faster then list()
+        family_nodes_done = set()
+        family_links_done = set()
         for person_handle in self.person_handles:
             person = self.database.get_person_from_handle(person_handle)
             # Output the person's node
@@ -2572,7 +2768,7 @@ class DotSvgGenerator(object):
             family_list = person.get_family_handle_list()
             for fam_handle in family_list:
                 if fam_handle not in family_nodes_done:
-                    family_nodes_done[fam_handle] = 1
+                    family_nodes_done.add(fam_handle)
                     self.__add_family_node(fam_handle)
 
             # Output family links where person is a parent
@@ -2580,7 +2776,7 @@ class DotSvgGenerator(object):
             family_list = person.get_family_handle_list()
             for fam_handle in family_list:
                 if fam_handle not in family_links_done:
-                    family_links_done[fam_handle] = 1
+                    family_links_done.add(fam_handle)
                     if not subgraph_started:
                         subgraph_started = True
                         self.start_subgraph(person_handle)
@@ -2751,16 +2947,6 @@ class DotSvgGenerator(object):
         else:
             return person_themes[0]
 
-    def get_avatar(self, gender):
-        """
-        Return person gender avatar.
-        """
-        path, _filename = os.path.split(__file__)
-        if gender == Person.MALE:
-            return os.path.join(path, 'person_male.png')
-        if gender == Person.FEMALE:
-            return os.path.join(path, 'person_female.png')
-
     def get_person_label(self, person):
         """
         Return person label string (with tags).
@@ -2784,7 +2970,7 @@ class DotSvgGenerator(object):
             image = self.view.graph_widget.get_person_image(person,
                                                             kind='path')
             if not image and self.show_avatars:
-                image = self.get_avatar(gender=person.gender)
+                image = self.avatars.get_avatar(gender=person.gender)
 
             if image is not None:
                 image = '<IMG SRC="%s"/>' % image
@@ -2811,7 +2997,7 @@ class DotSvgGenerator(object):
         if self.show_full_dates or self.show_places:
             # add symbols
             if birth[0]:
-                birth[0] = _('%s %s') % (self.bth, birth[0])
+                birth[0] = '%s %s' % (self.bth, birth[0])
                 birth_wraped = birth[0]
                 birth_str = birth[0]
                 if birth[1]:
@@ -2824,7 +3010,7 @@ class DotSvgGenerator(object):
             birth_str += birth[1]
 
             if death[0]:
-                death[0] = _('%s %s') % (self.dth, death[0])
+                death[0] = '%s %s' % (self.dth, death[0])
                 death_wraped = death[0]
                 death_str = death[0]
                 if death[1]:
@@ -2844,9 +3030,9 @@ class DotSvgGenerator(object):
                 # add symbols
                 if image:
                     if birth[0]:
-                        birth_wraped = _('%s %s') % (self.bth, birth[0])
+                        birth_wraped = '%s %s' % (self.bth, birth[0])
                     if death[0]:
-                        death_wraped = _('%s %s') % (self.dth, death[0])
+                        death_wraped = '%s %s' % (self.dth, death[0])
                 else:
                     birth_wraped = birth_str
 
@@ -3025,8 +3211,10 @@ class DotSvgGenerator(object):
             text += ' color="%s"' % color
 
         if fillcolor:
-            text += ' fillcolor="%s"' % fillcolor
-
+            color = hex_to_rgb_float(fillcolor)
+            yiq = (color[0] * 299 + color[1] * 587 + color[2] * 114)
+            fontcolor = "#ffffff" if yiq < 500 else "#000000"
+            text += ' fillcolor="%s" fontcolor="%s"' % (fillcolor, fontcolor)
         if style:
             text += ' style="%s"' % style
 
@@ -3471,7 +3659,7 @@ class PopupMenu(Gtk.Menu):
             add_menuitem(self, _('Copy'),
                          handle, self.actions.copy_person_to_clipboard)
 
-            add_menuitem(self, _('Remove'),
+            add_menuitem(self, _('Delete'),
                          person, self.actions.remove_person)
 
             self.add_separator()
@@ -3641,8 +3829,85 @@ class PopupMenu(Gtk.Menu):
                 add_menuitem(self, _('Add to bookmarks'), [handle, person],
                              self.actions.add_to_bookmarks)
 
+            # QuickReports and WebConnect section
             self.add_separator()
+            q_exists = self.add_quickreport_submenu(CATEGORY_QR_PERSON, handle)
+            w_exists = self.add_web_connect_submenu(handle)
+
+            if q_exists or w_exists:
+                self.add_separator()
             self.append_help_menu_entry()
+
+    def add_quickreport_submenu(self, category, handle):
+        """
+        Adds Quick Reports menu.
+        """
+        def make_quick_report_callback(pdata, category, dbstate, uistate,
+                                       handle, track=[]):
+            return lambda x: run_report(dbstate, uistate, category, handle,
+                                        pdata, track=track)
+
+        # select the reports to show
+        showlst = []
+        pmgr = GuiPluginManager.get_instance()
+        for pdata in pmgr.get_reg_quick_reports():
+            if pdata.supported and pdata.category == category:
+                showlst.append(pdata)
+
+        showlst.sort(key=lambda x: x.name)
+        if showlst:
+            menu_item, quick_menu = self.add_submenu(_("Quick View"))
+            for pdata in showlst:
+                callback = make_quick_report_callback(
+                    pdata, category, self.view.dbstate, self.view.uistate,
+                    handle)
+                self.add_menuitem(quick_menu, pdata.name, callback)
+            return True
+        return False
+
+    def add_web_connect_submenu(self, handle):
+        """
+        Adds Web Connect menu if some installed.
+        """
+        def flatten(L):
+            """
+            Flattens a possibly nested list. Removes None results, too.
+            """
+            retval = []
+            if isinstance(L, (list, tuple)):
+                for item in L:
+                    fitem = flatten(item)
+                    if fitem is not None:
+                        retval.extend(fitem)
+            elif L is not None:
+                retval.append(L)
+            return retval
+
+        # select the web connects to show
+        pmgr = GuiPluginManager.get_instance()
+        plugins = pmgr.process_plugin_data('WebConnect')
+
+        nav_group = self.view.navigation_type()
+
+        try:
+            connections = [plug(nav_group) if isinstance(plug, abc.Callable) else
+                           plug for plug in plugins]
+        except BaseException:
+            import traceback
+            traceback.print_exc()
+            connections = []
+
+        connections = flatten(connections)
+        connections.sort(key=lambda plug: plug.name)
+        if connections:
+            menu_item, web_menu = self.add_submenu(_("Web Connection"))
+
+            for connect in connections:
+                callback = connect(self.view.dbstate, self.view.uistate,
+                                   nav_group, handle)
+                self.add_menuitem(web_menu, connect.name, callback)
+            return True
+        return False
 
     def family_menu(self, handle):
         """
@@ -3653,7 +3918,7 @@ class PopupMenu(Gtk.Menu):
             add_menuitem(self, _('Edit'),
                          handle, self.actions.edit_family)
 
-            add_menuitem(self, _('Remove'),
+            add_menuitem(self, _('Delete'),
                          family, self.actions.remove_family)
 
             self.add_separator()
@@ -3692,7 +3957,12 @@ class PopupMenu(Gtk.Menu):
 
             self.add_children_submenu(family=family)
 
+            # QuickReports section
             self.add_separator()
+            q_exists = self.add_quickreport_submenu(CATEGORY_QR_FAMILY, handle)
+
+            if q_exists:
+                self.add_separator()
             self.append_help_menu_entry()
 
     def add_children_submenu(self, person=None, family=None):

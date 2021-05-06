@@ -404,7 +404,7 @@ def makeDB(db, callback):
     db.query("""CREATE TABLE url (
                  handle CHARACTER(25) PRIMARY KEY,
                  path TEXT,
-                 desc TXT,
+                 desc TEXT,
                  type0 INTEGER,
                  type1 TEXT,
                  private BOOLEAN);

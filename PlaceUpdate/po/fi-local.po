@@ -105,3 +105,7 @@ msgstr "Paikkojen ominaisuuksien asettaminen"
 #: PlaceTool/PlaceTool.py:272
 msgid "Regex operation failed: {}"
 msgstr ""
+
+msgid "Timespan:"
+msgstr "Aikaväli:"
+

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Ebene_1" xmlns:ev="http://www.w3.org/2001/xml-events"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="48px" height="48px"
+	 viewBox="0 0 48 48" enable-background="new 0 0 48 48" xml:space="preserve">
+<g>
+	<g>
+		<path fill="none" stroke="#FFFFFF" stroke-width="10.5" stroke-linecap="round" d="M18.4,43.444c0-6.078,0-6.078-5.601-6.078"/>
+		<path fill="none" stroke="#FFFFFF" stroke-width="10.5" stroke-linecap="round" d="M12.8,37.366c5.601,0,5.601,0,5.601-11.547"/>
+		<path fill="none" stroke="#FFFFFF" stroke-width="10.5" stroke-linecap="round" d="M7.2,42.954c0-5.588,0-5.588,5.6-5.588"/>
+		<path fill="none" stroke="#FFFFFF" stroke-width="10.5" stroke-linecap="round" d="M12.8,37.366c-5.6,0-5.6,0-5.6-16.381"/>
+		<path fill="none" stroke="#FFFFFF" stroke-width="10.5" stroke-linecap="round" d="M29.6,42.438c0-5.787,0-5.787,5.601-5.787"/>
+		<path fill="none" stroke="#FFFFFF" stroke-width="10.5" stroke-linecap="round" d="M35.2,36.651c-5.601,0-5.601,0-5.601-10.549"/>
+		<path fill="none" stroke="#FFFFFF" stroke-width="10.5" stroke-linecap="round" d="M40.8,42.413c0-5.762,0-5.762-5.6-5.762"/>
+		<path fill="none" stroke="#FFFFFF" stroke-width="10.5" stroke-linecap="round" d="M35.2,36.651c5.6,0,5.6,0,5.6-12.205"/>
+		<path fill="none" stroke="#FFFFFF" stroke-width="10.5" stroke-linecap="round" d="M35.2,30.308c0-7.467,0-7.467-11.2-7.467"/>
+		<path fill="none" stroke="#FFFFFF" stroke-width="10.5" stroke-linecap="round" d="M24,22.841c11.2,0,11.2,0,11.2-11.969"/>
+		<path fill="none" stroke="#FFFFFF" stroke-width="10.5" stroke-linecap="round" d="M12.8,29.683c0-6.842,0-6.842,11.2-6.842"/>
+		<path fill="none" stroke="#FFFFFF" stroke-width="10.5" stroke-linecap="round" d="M24,22.841c-11.2,0-11.2,0-11.2-9.539"/>
+		<path fill="none" stroke="#FFFFFF" stroke-width="10.5" stroke-linecap="round" d="M24,20.341V4.556"/>
+	</g>
+	<path fill="none" stroke="#000000" stroke-width="2.184" d="M18.4,43.444c0-6.078,0-6.078-5.601-6.078"/>
+	<path fill="none" stroke="#000000" stroke-width="2.184" d="M12.8,37.366c5.601,0,5.601,0,5.601-11.547"/>
+	<path fill="none" stroke="#000000" stroke-width="2.184" d="M7.2,42.954c0-5.588,0-5.588,5.6-5.588"/>
+	<path fill="none" stroke="#000000" stroke-width="2.184" d="M12.8,37.366c-5.6,0-5.6,0-5.6-16.381"/>
+	<path fill="none" stroke="#000000" stroke-width="2.184" d="M29.6,42.438c0-5.787,0-5.787,5.601-5.787"/>
+	<path fill="none" stroke="#000000" stroke-width="2.184" d="M35.2,36.651c-5.601,0-5.601,0-5.601-10.549"/>
+	<path fill="none" stroke="#000000" stroke-width="2.184" d="M40.8,42.413c0-5.762,0-5.762-5.6-5.762"/>
+	<path fill="none" stroke="#000000" stroke-width="2.184" d="M35.2,36.651c5.6,0,5.6,0,5.6-12.205"/>
+	<path fill="none" stroke="#000000" stroke-width="2.184" d="M35.2,30.308c0-7.467,0-7.467-11.2-7.467"/>
+	<path fill="none" stroke="#000000" stroke-width="2.184" d="M24,22.841c11.2,0,11.2,0,11.2-11.969"/>
+	<path fill="none" stroke="#000000" stroke-width="2.184" d="M12.8,29.683c0-6.842,0-6.842,11.2-6.842"/>
+	<path fill="none" stroke="#000000" stroke-width="2.184" d="M24,22.841c-11.2,0-11.2,0-11.2-9.539"/>
+	<path fill="none" stroke="#000000" stroke-width="2.184" d="M24,20.341V4.556"/>
+</g>
+</svg>

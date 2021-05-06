@@ -1,55 +1,65 @@
-# German translations for PACKAGE package.
-# Copyright (C) 2018 THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# German translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# translation of de.po to Deutsch
 #
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2018.
+#
+# Anton Huber <anton_huber@gmx.de>, 2005,2006.
+# Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
+# Sebastian Vöcking <voeck@web.de>, 2005.
+# Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
+# Alex Roitman <shura@gramps-project.org>, 2006.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020.
+# Alois Pöttker <alois.poettker@gmx.de>, 2017.
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-21 23:31+0200\n"
-"PO-Revision-Date: 2018-04-21 23:38+0100\n"
+"POT-Creation-Date: 2020-07-28 23:09+0200\n"
+"PO-Revision-Date: 2020-07-28 23:15+0200\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 19.12.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 2.0\n"
 
 #: DownloadMedia/DownloadMedia.gpr.py:35
 msgid "Download media files from the internet"
-msgstr "Laden Sie Mediendateien aus dem Internet herunter"
+msgstr "Mediendateien aus dem Internet herunterladen"
 
 #: DownloadMedia/DownloadMedia.gpr.py:36
-msgid "This tool downloads media files form the internet"
+msgid "This tool downloads media files from the internet"
 msgstr "Dieses Werkzeug lädt Mediendateien aus dem Internet herunter"
 
-#: DownloadMedia/DownloadMedia.py:69
+#: DownloadMedia/DownloadMedia.py:71
 msgid "Download media"
 msgstr "Medien herunterladen"
 
-#: DownloadMedia/DownloadMedia.py:81
+#: DownloadMedia/DownloadMedia.py:87
 msgid "Media downloaded"
 msgstr "Medien heruntergeladen"
 
-#: DownloadMedia/DownloadMedia.py:82
+#: DownloadMedia/DownloadMedia.py:88
 #, python-format
 msgid "%d media files downloaded"
 msgstr "%d Mediendateien heruntergeladen"
 
-#: DownloadMedia/DownloadMedia.py:94
+#: DownloadMedia/DownloadMedia.py:100
 msgid "Download media tool"
 msgstr "Medienwerkzeug herunterladen"
 
-#: DownloadMedia/DownloadMedia.py:100
+#: DownloadMedia/DownloadMedia.py:106
 msgid "Make sure you are connected to the internet before starting this tool."
 msgstr ""
-"Stellen Sie sicher, dass Sie mit dem Internet verbunden sind, bevor Sie"
-" dieses Werkzeug starten."
+"Stelle sicher, dass du mit dem Internet verbunden bist, bevor du "
+"dieses Werkzeug startest."
 
-#: DownloadMedia/DownloadMedia.py:157 DownloadMedia/DownloadMedia.py:158
+#: DownloadMedia/DownloadMedia.py:171 DownloadMedia/DownloadMedia.py:172
 msgid "Downloading files"
-msgstr "Herunterladen von Dateien"
+msgstr "Dateien herunterladen"
 
+#: DownloadMedia/DownloadMedia.py:207
+msgid "Media download errors detected"
+msgstr "Fehler beim Herunterladen von Medien festgestellt"

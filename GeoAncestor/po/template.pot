@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-06 08:50-0500\n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,81 +17,81 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: GeoAncestor/GeoAncestor.gpr.py:73
+#: GeoAncestor/GeoAncestor.gpr.py:72
 msgid "OsmGpsMap module not loaded."
 msgstr ""
 
-#: GeoAncestor/GeoAncestor.gpr.py:74
+#: GeoAncestor/GeoAncestor.gpr.py:73
 #, python-format
 msgid ""
 "Geography functionality will not be available.\n"
 "To build it for Gramps see %(gramps_wiki_build_osmgps_url)s"
 msgstr ""
 
-#: GeoAncestor/GeoAncestor.gpr.py:88
+#: GeoAncestor/GeoAncestor.gpr.py:87
 msgid "Ancestors map"
 msgstr ""
 
-#: GeoAncestor/GeoAncestor.gpr.py:89
+#: GeoAncestor/GeoAncestor.gpr.py:88
 msgid "A view showing ancestors places on the map."
 msgstr ""
 
-#: GeoAncestor/GeoAncestor.gpr.py:96
+#: GeoAncestor/GeoAncestor.gpr.py:95
 msgid "Geography"
 msgstr ""
 
-#: GeoAncestor/GeoAncestor.py:109
+#: GeoAncestor/GeoAncestor.py:119
 msgid "Organize Bookmarks"
 msgstr ""
 
-#: GeoAncestor/GeoAncestor.py:197
+#: GeoAncestor/GeoAncestor.py:207
 msgid "Ancestors places on the map"
 msgstr ""
 
-#: GeoAncestor/GeoAncestor.py:225
+#: GeoAncestor/GeoAncestor.py:235
 msgid "GeoAncestor"
 msgstr ""
 
-#: GeoAncestor/GeoAncestor.py:294
+#: GeoAncestor/GeoAncestor.py:304
 #, python-format
 msgid "Ancestors places for %s"
 msgstr ""
 
-#: GeoAncestor/GeoAncestor.py:301
+#: GeoAncestor/GeoAncestor.py:311
 msgid "Counting all places"
 msgstr ""
 
-#: GeoAncestor/GeoAncestor.py:304
+#: GeoAncestor/GeoAncestor.py:314
 msgid "Showing all places"
 msgstr ""
 
-#: GeoAncestor/GeoAncestor.py:401
+#: GeoAncestor/GeoAncestor.py:411
 #, python-format
 msgid "%(eventtype)s : %(name)s"
 msgstr ""
 
-#: GeoAncestor/GeoAncestor.py:528 GeoAncestor/GeoAncestor.py:549
-#: GeoAncestor/GeoAncestor.py:590
+#: GeoAncestor/GeoAncestor.py:538 GeoAncestor/GeoAncestor.py:559
+#: GeoAncestor/GeoAncestor.py:600
 msgid "Edit Event"
 msgstr ""
 
-#: GeoAncestor/GeoAncestor.py:533 GeoAncestor/GeoAncestor.py:554
-#: GeoAncestor/GeoAncestor.py:594
+#: GeoAncestor/GeoAncestor.py:543 GeoAncestor/GeoAncestor.py:564
+#: GeoAncestor/GeoAncestor.py:604
 msgid "Center on this place"
 msgstr ""
 
-#: GeoAncestor/GeoAncestor.py:568
+#: GeoAncestor/GeoAncestor.py:578
 msgid "Unknown"
 msgstr ""
 
-#: GeoAncestor/GeoAncestor.py:579
+#: GeoAncestor/GeoAncestor.py:589
 msgid "No description"
 msgstr ""
 
-#: GeoAncestor/GeoAncestor.py:610
+#: GeoAncestor/GeoAncestor.py:620
 msgid "Show all places"
 msgstr ""
 
-#: GeoAncestor/GeoAncestor.py:614 GeoAncestor/GeoAncestor.py:619
+#: GeoAncestor/GeoAncestor.py:624 GeoAncestor/GeoAncestor.py:629
 msgid "Centering on Place"
 msgstr ""

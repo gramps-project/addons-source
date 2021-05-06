@@ -1,0 +1,610 @@
+# Dutch translation of addon PrerequisitesCheckerGramplet.
+# Copyright (C) 2020 Gramps project
+# This file is distributed under the same license as the PrerequisitesCheckerGramplet package.
+# Jan Sparreboom <jan@sparreboom.net>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PrerequisitesCheckerGramplet 5.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-08 21:09+0200\n"
+"PO-Revision-Date: 2020-08-08 21:19+0200\n"
+"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
+"Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.gpr.py:28
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.gpr.py:36
+msgid "Prerequisites Checker"
+msgstr "Vereisten controle"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.gpr.py:29
+msgid "Prerequisites Checker Gramplet"
+msgstr "Vereistencontrole gramplet"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:133
+msgid ""
+"Diagnostic Gramplet to help evaluate if <a href=\"https://gramps-project.org/"
+"\">Gramps</a> has all <a href=\"https://github.com/gramps-project/gramps/"
+"blob/master/README.md\">prerequisites</a> installed.\n"
+msgstr ""
+"Diagnostisch gramplet om te helpen evalueren of <a href=\"https://gramps-"
+"project.org/\"> Gramps </a> alle <a href=\"https://github.com/gramps-project/"
+"gramps/blob/master/README.md\">vereisten </a> heeft geïnstalleerd.\n"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:138
+msgid ""
+"Diagnostic Gramplet to help evaluate if Gramps has all prerequisites "
+"installed."
+msgstr ""
+"Diagnostisch gramplet om te helpen evalueren of Gramps alle vereisten heeft "
+"geïnstalleerd."
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:144
+msgid ""
+"\n"
+"<u><b>REQUIREMENTS</b></u>\n"
+msgstr ""
+"\n"
+"<u><b>VEREISTEN</b></u>\n"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:145
+msgid ""
+"The following packages <b>MUST</b> be installed (Requires the minimum "
+"version or greater.):\n"
+msgstr ""
+"De volgende pakketten <b>MOETEN</b> worden geïnstalleerd (vereist de "
+"minimale versie of hoger):\n"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:160
+msgid ""
+"\n"
+"<u><b>STRONGLY RECOMMENDED</b></u>\n"
+msgstr ""
+"\n"
+"<u><b>STERK AANBEVOLEN</b></u>\n"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:161
+msgid ""
+"The following packages are <b>STRONGLY RECOMMENDED</b> to be installed "
+"(needed for geography and charts):\n"
+msgstr ""
+"De volgende pakketten zijn <b>STERK AANBEVOLEN</b> om te worden "
+"geïnstalleerd (nodig voor geografie en grafieken):\n"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:172
+msgid ""
+"\n"
+"<u><b>Optional</b></u>\n"
+msgstr ""
+"\n"
+"<u><b>Optioneel</b></u>\n"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:173
+msgid "The following packages are optional:\n"
+msgstr "De volgende pakketten zijn optioneel:\n"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:175
+msgid "Gtkspell enables spell checking in the notes.\n"
+msgstr "Gtkspell maakt spellingcontrole in de notities mogelijk.\n"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:179
+msgid ""
+"Python Image Library (PIL) is needed for cropping images and LaTeX output."
+msgstr ""
+"Python Image Library (PIL) is nodig voor het bijsnijden van afbeeldingen en "
+"LaTeX-uitvoer."
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:190
+msgid ""
+"\n"
+"<u><b>Development & Translation Requirements</b></u>\n"
+msgstr ""
+"\n"
+"<u><b>Ontwikkeling & Vertalingsvereisten</b></u>\n"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:192
+msgid ""
+"The following packages should be installed if you intend to translate or do "
+"any development (addons etc):\n"
+msgstr ""
+"De volgende pakketten moeten worden geïnstalleerd als u van plan bent te "
+"vertalen of enige ontwikkeling uit te voeren (add-ons enz.):\n"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:200
+msgid ""
+"\n"
+"<u><b>Optional packages required by Third-party Addons</b></u>\n"
+msgstr ""
+"\n"
+"<u><b>Optionele pakketten vereist door add-ons van derden</b></u>\n"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:203
+msgid ""
+"Prerequistes required for the following <a href=\"https://gramps-project.org/"
+"wiki/index.php?title=Third-party_Addons\">Third-party Addons</a> to work:\n"
+msgstr ""
+"Benodigde vereisten om de volgende <a href=\"https://gramps-project.org/wiki/"
+"index.php?title=Third-party_Addons\">addons van derden</a> te laten werken:\n"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:224
+msgid ""
+"\n"
+"<u><b>Diagnostic checks</b></u>\n"
+msgstr ""
+"\n"
+"<u><b>Diagnostische controles</b></u>\n"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:225
+msgid "Check for potential issues.\n"
+msgstr "Controleer op mogelijke problemen.\n"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:226
+msgid ""
+"\n"
+"Environment settings:\n"
+msgstr ""
+"\n"
+"Omgevingsinstellingen:\n"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:231
+msgid ""
+"\n"
+"\n"
+"<u><b>Locales available:</b></u>\n"
+msgstr ""
+"\n"
+"\n"
+"<u><b>Beschikbare landinstellingen:</b></u>\n"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:236
+msgid ""
+"\n"
+"<u><b>Back Up Your Genealogy Files.</b></u>\n"
+msgstr ""
+"\n"
+"<u><b>Maak een back-up van uw genealogiebestanden.</b></u>\n"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:237
+msgid "Time to back up your genealogy files, and then test your backups!\n"
+msgstr ""
+"Tijd om een back-up te maken van uw genealogische bestanden en vervolgens uw "
+"back-ups te testen!\n"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:240
+msgid ""
+"<i><a href=\"https://gramps-project.org/wiki/index.php?"
+"title=How_to_make_a_backup\">Backup to Gramps XML</a> You will find backup "
+"in the Family Tree menu of recent Gramps versions, otherwise use Export in "
+"the same menu but uncheck privacy options in the Exporter Assistant in order "
+"to export all data.</i>\n"
+msgstr ""
+"<i><a href=\"https://gramps-project.org/wiki/index.php?"
+"title=How_to_make_a_backup\">Backup naar Gramps XML</a> U vindt een back-up "
+"in het Stamboom-menu van recente Gramps-versies, anders gebruikt u "
+"Exporteren in hetzelfde menu, maar schakelt u de privacy-opties uit in de "
+"Exporter-assistent om alle gegevens te exporteren.</i>\n"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:246
+msgid ""
+"* Backups can be made at any time and at least on the first day of every "
+"month, if not more often.\n"
+msgstr ""
+"* Back-ups kunnen op elk moment worden gemaakt en in ieder geval op de "
+"eerste dag van elke maand, zo niet vaker.\n"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:248
+msgid ""
+"* Before any upgrade it is strongly recommended to backup each of your "
+"Family Trees.\n"
+msgstr ""
+"* Voor elke upgrade wordt het sterk aanbevolen om een back-up te maken van "
+"al uw stambomen.\n"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:250
+msgid ""
+"* Test your backups by creating a new Family Tree and importing the backup."
+msgstr ""
+"* Test uw back-ups door een nieuwe stamboom aan te maken en de back-up te "
+"importeren."
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:268
+msgid ",  released "
+msgstr ",  vrijgegeven "
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:269
+msgid ", is the most current version.\n"
+msgstr ", is de meest recente versie.\n"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:282
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:365
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:431
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:490
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:491
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:538
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:559
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:594
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:595
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:619
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:620
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:684
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:687
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:747
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:748
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:847
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:859
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:868
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:870
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:883
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:945
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:991
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1047
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1050
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1062
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1084
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1132
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1134
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1204
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1278
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1443
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1484
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1485
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1852
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1854
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1913
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1920
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1949
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1951
+msgid "not found"
+msgstr "niet gevonden"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:287
+#, python-format
+msgid ""
+"You have Gramps %s. Please make a backup and then upgrade.\n"
+"%s"
+msgstr ""
+"U heeft Gramps %s. Maak een back-up en voer een upgrade uit.\n"
+"%s"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:291
+#, python-format
+msgid ""
+"You have Gramps %s installed; an unreleased development version. Thank you "
+"for contributing and testing; please report any issues. Backups are your "
+"friend.\n"
+msgstr ""
+"U heeft Gramps %s geïnstalleerd; een nog niet uitgebrachte "
+"ontwikkelingsversie. Bedankt voor het bijdragen en testen; meld eventuele "
+"problemen. Back-ups zijn uw vriend.\n"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:299
+#, python-format
+msgid "You have Gramps %s. Congratulations, you have the current version.\n"
+msgstr "U heeft Gramps %s. Gefeliciteerd, u heeft de huidige versie.\n"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:326
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:400
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:452
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:496
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:544
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:694
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:891
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1093
+msgid " (Requires version "
+msgstr " (Vereist versie "
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:327
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:335
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:405
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:459
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:501
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:513
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:549
+msgid " or greater installed.)\n"
+msgstr " of hoger geïnstalleerd.)\n"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:334
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:404
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:457
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:500
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:511
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:548
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:690
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:886
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1089
+msgid " (Passed: version "
+msgstr " (Geslaagd: versie "
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:362
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:427
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:486
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:487
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:534
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:682
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:743
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:744
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1045
+msgid "unknown version"
+msgstr "onbekende versie"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:370
+msgid "DISPLAY not set"
+msgstr "DISPLAY niet ingesteld"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:401
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:453
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:497
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:508
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:545
+msgid " or greater.)\n"
+msgstr " of groter.)\n"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:507
+msgid " (Requires "
+msgstr " (Vereist "
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:597
+msgid "* Berkeley Database library (bsddb3: "
+msgstr "* Berkeley Database-bibliotheek (bsddb3: "
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:622
+msgid "* SQLite Database library (sqlite3: "
+msgstr "* SQLite Database-bibliotheek (sqlite3: "
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:636
+msgid "* xdg-utils (Manual check see instructions link)"
+msgstr "* xdg-utils (handmatige controle zie instructies link)"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:649
+msgid "* librsvg2 (Manual check see instructions link)"
+msgstr "* librsvg2 (handmatige controle zie instructies link)"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:660
+msgid ""
+"* language-pack-gnome-xx (Manual check see instructions link) for your "
+"Language <show locale here TBD>"
+msgstr ""
+"* language-pack-gnome-xx (handmatige check zie instructies link) voor uw "
+"taal <toon landinstellingen hier TBD>"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:692
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1090
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1094
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1490
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1495
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1689
+msgid " or greater installed.)"
+msgstr " of hoger geïnstalleerd.)"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:695
+msgid " or greater)"
+msgstr " of hoger)"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:726
+msgid "Graphviz not in system PATH"
+msgstr "Graphviz niet in systeem PATH"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:789
+msgid "Ghostscript not in system PATH"
+msgstr "Ghostscript niet in systeem PATH"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:804
+msgid " (Passed: version 0.5.x is installed.)"
+msgstr " (Geslaagd: versie 0.5.x is geïnstalleerd.)"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:807
+msgid " (Requires version 0.5.x)"
+msgstr " (Vereist versie 0.5.x)"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:809
+msgid "* python-fontconfig not found, (Requires version 0.5.x)"
+msgstr "* python-fontconfig niet gevonden, (vereist versie 0.5.x)"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:888
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:893
+msgid " or greater installed.) (enchant module: "
+msgstr " of hoger geïnstalleerd.) (enchant module: "
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:934
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:942
+msgid "installed"
+msgstr "geïnstalleerd"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:949
+#, python-format
+msgid ""
+"* rcs %s TBD (Passed: version %s or greater installed. If not on Microsoft "
+"Windows)"
+msgstr ""
+"* rcs %s TBD (Geslaagd: versie %s of hoger geïnstalleerd. Indien niet op "
+"Microsoft Windows)"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:953
+#, python-format
+msgid ""
+"* rcs %s TBD (Requires version %s or greater installed. If not on Microsoft "
+"Windows)"
+msgstr ""
+"* rcs %s TBD (vereist versie %s of hoger geïnstalleerd. Indien niet op "
+"Microsoft Windows)"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:989
+msgid "Installed but does not supply version"
+msgstr "Geïnstalleerd maar levert geen versie"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1063
+#, python-format
+msgid "GExiv2 : %s (Exiv2 library : %s)"
+msgstr "GExiv2 : %s (Exiv2 bibliotheek : %s)"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1130
+msgid "found another font"
+msgstr "een ander lettertype gevonden"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1137
+msgid ""
+"For addon Networkchart, font <a href=\"https://www.fontsquirrel.com/fonts/"
+"white-rabbit\">White Rabbit</a> provides an extremely readable result.\n"
+msgstr ""
+"Voor add-on Networkchart biedt lettertype <a href=\"https://www.fontsquirrel."
+"com/fonts/white-rabbit\"> White Rabbit </a> een buitengewoon leesbaar "
+"resultaat.\n"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1173
+msgid "Why, when same code works in Graphview"
+msgstr "Waarom, als dezelfde code werkt in Graphview"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1178
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1230
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1240
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1250
+msgid "not installed"
+msgstr "niet geïnstalleerd"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1257
+msgid "  and one of either: (pydotplus: "
+msgstr "  en een van beide: (pydotplus: "
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1258
+msgid ") or (pygraphviz: "
+msgstr ") of (pygraphviz: "
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1282
+msgid "Installed(MS-Windows)"
+msgstr "Geïnstalleerd (MS-Windows)"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1286
+msgid "Installed(Linux/Mac)"
+msgstr "Geïnstalleerd (Linux / Mac)"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1320
+msgid "not installed "
+msgstr "niet geïnstalleerd "
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1375
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1544
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1546
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1547
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1632
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1638
+msgid "not found."
+msgstr "niet gevonden."
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1397
+msgid "Standard. Passed: program installed - 32bit on 64bit Win OS."
+msgstr ""
+"Standaard. Geslaagd: programma geïnstalleerd - 32-bits op 64-bits Win OS."
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1407
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1415
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1439
+msgid "Installed"
+msgstr "Geïnstalleerd"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1449
+msgid ") (Requires the gramps addon listed under 'Plugin lib')"
+msgstr ") (Vereist de Gramps-add-on vermeld onder 'Plugin lib')"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1481
+msgid "DBF installed"
+msgstr "DBF geïnstalleerd"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1489
+msgid ".)(Requires version "
+msgstr ".) (Vereist versie "
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1494
+msgid " installed.)(Passed: version "
+msgstr " geïnstalleerd.) (Geslaagd: versie "
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1641
+#, python-format
+msgid "(OpenCV facedetection: %s)"
+msgstr "(OpenCV gezichtsherkenning: %s)"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1688
+msgid " (lxml: not found. Requires version "
+msgstr " (lxml: niet gevonden. Vereist versie "
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1706
+msgid "* Requires: MongoDB TBD / pymongo TBD"
+msgstr "* Vereist: MongoDB TBD / pymongo TBD"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1720
+#, python-format
+msgid "* Operating System: %s"
+msgstr "* Besturingssysteem: %s"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1741
+msgid ""
+"<u><b><a href=\"https://gramps-project.org/wiki/index.php?"
+"title=Gramps_5.0_Wiki_Manual_-"
+"_Command_Line#LANG.2C_LANGUAGE.2C_LC_MESSAGE.2C_LC_TIME\">Locale Settings:</"
+"a></b></u>\n"
+msgstr ""
+"<u><b><a href=\"https://gramps-project.org/wiki/index.php?"
+"title=Gramps_5.0_Wiki_Manual_-"
+"_Command_Line#LANG.2C_LANGUAGE.2C_LC_MESSAGE.2C_LC_TIME\">Lokale "
+"Instellingen:</a></b></u>\n"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1747
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1748
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1749
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1750
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1800
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1801
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1802
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1803
+msgid "not set"
+msgstr "niet ingesteld"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1752
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1753
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1754
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1755
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1805
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1806
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1807
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1808
+msgid "not tested"
+msgstr "niet getest"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1775
+msgid ""
+"\n"
+"Installed Locales\\Translations (If only English is listed please re-install "
+"Gramps again and make sure to select all the Translations and Dictionaries)\n"
+"\n"
+msgstr ""
+"\n"
+"Geïnstalleerde landinstellingen \\ vertalingen (als alleen Engels wordt "
+"vermeld, installeer Gramps dan opnieuw en zorg ervoor dat u alle vertalingen "
+"en woordenboeken selecteert)\n"
+"\n"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1811
+msgid ""
+"\n"
+"Gramps Environment variables:\n"
+msgstr ""
+"\n"
+"Gramps omgevingsvariabelen:\n"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1850
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1911
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1947
+msgid "found"
+msgstr "gevonden"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1954
+msgid ""
+"Sphinx is a tool that builds the Gramps development documentation and man "
+"pages\n"
+msgstr ""
+"Sphinx is een tool die de Gramps-ontwikkelingsdocumentatie en man-pagina's "
+"samenstelt\n"

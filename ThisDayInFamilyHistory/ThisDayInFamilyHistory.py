@@ -17,7 +17,7 @@
 # GNU General Public License for more details.
 #
 # Initial creation: 2018-05-26
-# Version: 1.0.0
+# Version: 1.0.5
 #
 # Purpose: Generate short reminders of events that have occurred
 # within the current family tree.  Allow flexibility to filter
@@ -26,12 +26,19 @@
 #
 # PEP8 check by http://pep8online.com
 # ------------------------------------------------------------
-
 from gramps.gen.plug import Gramplet
 from gramps.gen.lib import Person
 from gramps.gen.lib import FamilyRelType
+
+#------------------------------------------------------------------------
+# Internationalisation
+#------------------------------------------------------------------------
 from gramps.gen.const import GRAMPS_LOCALE as glocale
-_ = glocale.get_addon_translator(__file__).gettext
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.gettext
 
 
 class ThisDayInFamilyHistory(Gramplet):
@@ -40,17 +47,59 @@ class ThisDayInFamilyHistory(Gramplet):
     # event is trying to convey, these events are unsupported.
 
     __UNSUPPORTED_EVENTS = [
-        'alternate parentage',
-        'cause of death',
-        'education',
-        'medical information',
-        'number of marriages',
-        'occupation',
-        'property',
-        'religion',
-        'residence',
-        'will',
-        'year'
+        'Alternate Parentage',
+        'Cause Of Death',
+        'Education',
+        'Medical Information',
+        'Number of Marriages',
+        'Occupation',
+        'Property',
+        'Religion',
+        'Residence',
+        'Will',
+        'Year'
+        ]
+    # Note to translators:  the various Event types listed here are a subset
+    # of the gen.lib.eventtypes.py set, where they are already translated.
+    # this allows us to use the 'deferred' translation to fill in the GUI
+
+
+    defaultEventChoices = [
+        ('Adopted', True),
+        ('Adult Christening', True),
+        ('Alternate Marriage', False),
+        ('Annulment', False),
+        ('Baptism', False),
+        ('Bar Mitzvah', False),
+        ('Bat Mitzvah', False),
+        ('Birth', True),
+        ('Blessing', False),
+        ('Burial', False),
+        ('Census', False),
+        ('Christening', False),
+        ('Confirmation', False),
+        ('Cremation', False),
+        ('Death', True),
+        ('Degree', False),
+        ('Divorce', False),
+        ('Divorce Filing', False),
+        ('Elected', True),
+        ('Emigration', True),
+        ('Engagement', False),
+        ('First Communion', False),
+        ('Graduation', True),
+        ('Immigration', True),
+        ('Marriage', True),
+        ('Marriage Banns', False),
+        ('Marriage Contract', False),
+        ('Marriage License', False),
+        ('Marriage Settlement', False),
+        ('Military Service', True),
+        ('Naturalization', True),
+        ('Nobility Title', True),
+        ('Ordination', True),
+        ('Probate', False),
+        ('Retirement', True),
         ]
 
     __INIT = _("Database is not open, can't check history right now.")
@@ -112,7 +161,11 @@ class ThisDayInFamilyHistory(Gramplet):
             == 'Yes'
         s = self.opts[self.__OPT_SORT_BY].get_value()
         self.__sortOrder = (int(s) if s else self.__OPT_SORT_DEFAULT)
-        self.__eventsToShow = self.opts[self.__OPT_EVENTS].get_selected()
+        tf_list = self.opts[self.__OPT_EVENTS].get_value().split(',')
+        self.__eventsToShow = []
+        for (indx, choice) in enumerate(tf_list):
+            if choice == 'True':
+                self.__eventsToShow.append(self.defaultEventChoices[indx][0])
         self.__sortAscending = self.opts[self.__OPT_SORT_ASC].get_value()\
             == 'Yes'
 
@@ -134,27 +187,29 @@ class ThisDayInFamilyHistory(Gramplet):
                 == 'True'
             s = self.gui.data[self.__OPT_SORT_BY]
             self.__sortOrder = (int(s) if s else self.__OPT_SORT_DEFAULT)
-            self.__eventsToShow = self.gui.data[self.__OPT_EVENTS]
+            data = self.gui.data[self.__OPT_EVENTS]
+            data = eval(data)
+            self.__eventsToShow = [evt.title() for evt in data]
             self.__sortAscending = self.gui.data[self.__OPT_SORT_ASC] ==\
                 'True'
         else:
             self.__showOnlyLiving = False
             self.__sortOrder = self.__OPT_SORT_DEFAULT
             self.__eventsToShow = [
-                'adopted',
-                'adult christening',
-                'birth',
-                'death',
-                'elected',
-                'emigration',
-                'graduation',
-                'immigration',
-                'marriage',
-                'military service',
-                'naturalization',
-                'nobility title',
-                'ordination',
-                'retirement',
+                'Adopted',
+                'Adult Christening',
+                'Birth',
+                'Death',
+                'Elected',
+                'Emigration',
+                'Graduation',
+                'Immigration',
+                'Marriage',
+                'Military Service',
+                'Naturalization',
+                'Nobility Title',
+                'Ordination',
+                'Retirement',
                 ]
             self.__sortAscending = True
 
@@ -214,44 +269,6 @@ class ThisDayInFamilyHistory(Gramplet):
             else:
                 self.opts[self.__OPT_SORT_ASC].set_value(_('No'))
 
-        defaultEventChoices = [
-            ('adopted', True),
-            ('adult christening', True),
-            ('alternate marriage', False),
-            ('annulment', False),
-            ('baptism', False),
-            ('bar mitzvah', False),
-            ('bat mitzvah', False),
-            ('birth', True),
-            ('blessing', False),
-            ('burial', False),
-            ('census', False),
-            ('christening', False),
-            ('confirmation', False),
-            ('cremation', False),
-            ('death', True),
-            ('degree', False),
-            ('divorce', False),
-            ('divorce filing', False),
-            ('elected', True),
-            ('emigration', True),
-            ('engagement', False),
-            ('first communion', False),
-            ('graduation', True),
-            ('immigration', True),
-            ('marriage', True),
-            ('marriage banns', False),
-            ('marriage contract', False),
-            ('marriage license', False),
-            ('marriage settlement', False),
-            ('military service', True),
-            ('naturalization', True),
-            ('nobility title', True),
-            ('ordination', True),
-            ('probate', False),
-            ('retirement', True),
-            ]
-
         op = BooleanListOption(self.__SHOWEVENT)
         if len(self.gui.data) == self.__OPT_MAX:
             userOptionsAvailable = True
@@ -259,12 +276,12 @@ class ThisDayInFamilyHistory(Gramplet):
         else:
             userOptionsAvailable = False
 
-        for (e, d) in defaultEventChoices:
+        for (e, d) in self.defaultEventChoices:
             if userOptionsAvailable:
                 if e in uo:
-                    op.add_button(e, True)
+                    op.add_button(_(e), True)
                 else:
-                    op.add_button(e, False)
+                    op.add_button(_(e), False)
             else:
                 op.add_button(e, d)
 
@@ -294,8 +311,8 @@ class ThisDayInFamilyHistory(Gramplet):
         from gramps.gen.lib.date import Date
 
         eventType = eventType.lower()
-        ev = {'people': (self.dbstate.db.iter_people, 'Person'),
-              'family': (self.dbstate.db.iter_families, 'Family')}
+        ev = {'people': (self.dbstate.db.iter_people, _('Person')),
+              'family': (self.dbstate.db.iter_families, _('Family'))}
 
         eventList = []
 
@@ -308,13 +325,13 @@ class ThisDayInFamilyHistory(Gramplet):
                 eCalendar = eDate.get_calendar()
 
                 if eCalendar != Date.CAL_GREGORIAN:
-                    eDate = eDate.to_calendar('gregorian')
+                    eDate = eDate.to_calendar(_('gregorian'))
 
                 eDay = eDate.get_day()
                 eMonth = eDate.get_month()
                 eYear = eDate.get_year()
 
-                eType = event.get_type().string
+                eType = event.get_type().xml_str()
                 if eType.lower() in ['burial', 'cremation', 'death',
                                      'cause of death', 'will']:
                     if eventType == 'people':
@@ -325,8 +342,8 @@ class ThisDayInFamilyHistory(Gramplet):
                         pass
 
                 if eMonth == self.tMonth and eDay == self.tDay:
-                    if eType.lower() not in self.__UNSUPPORTED_EVENTS \
-                            and eType.lower() in self.__eventsToShow:
+                    if eType not in self.__UNSUPPORTED_EVENTS \
+                            and eType in self.__eventsToShow:
                         if eventType == 'people':
                             name = \
                                 p.get_primary_name().get_regular_name()
@@ -705,7 +722,7 @@ class ThisDayInFamilyHistory(Gramplet):
                     eStr = eStr + str(extraInfo)
 
                 if year == 0:
-                    year = "unknown"
+                    year = _("unknown")
 
                 # If gender is unknown the messages will default to
                 # the male versions.  This is arbitrary and can be redefined.

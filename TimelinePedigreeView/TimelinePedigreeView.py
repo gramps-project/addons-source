@@ -631,25 +631,25 @@ class TimelinePedigreeView(NavigationView):
 
         self.dirty = False
 
-        person = None
-        if self.get_active():
-            person_handle = self.get_active()
-            if person_handle:
-                person = self.dbstate.db.get_person_from_handle(person_handle)
-        if person is None:
-            return
-
-        layout_widget = self.gtklayout
-
-        generations = self.generations_in_tree       # Descendant and Ancestor generations
-
         # Purge current view content
+        layout_widget = self.gtklayout
         self.gtklayout_lines = []
         self.gtklayout_boxes = []
         for child in layout_widget.get_children():
             child.destroy()
 
         layout_widget.set_size(600, 600)        # set it to a dummy size
+
+        person = None
+        if self.get_active():
+            person_handle = self.get_active()
+            if person_handle:
+                person = self.dbstate.db.get_person_from_handle(person_handle)
+        if person is None:
+            layout_widget.queue_draw()      # widget needs redraw to clear
+            return
+
+        generations = self.generations_in_tree       # Descendant and Ancestor generations
 
         # Create PersonBoxes, do calculations later needed for positioning
         LstDescendants = self.Tree_Find_Relatives(layout_widget, person, 0, generations[0], 1)

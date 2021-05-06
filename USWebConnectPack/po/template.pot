@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"POT-Creation-Date: 2020-09-14 10:27-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,7 +29,7 @@ msgstr ""
 msgid "Find A Grave"
 msgstr ""
 
-#: USWebConnectPack/USWebPack.py:34
+#: USWebConnectPack/USWebPack.py:34 USWebConnectPack/USWebPack.py:46
 msgid "FamilySearch.org"
 msgstr ""
 
@@ -37,22 +37,10 @@ msgstr ""
 msgid "US Google"
 msgstr ""
 
-#: USWebConnectPack/USWebPack.py:37
-msgid "German Immigrants"
-msgstr ""
-
 #: USWebConnectPack/USWebPack.py:41
-msgid "Free Rootsweb Site Search"
-msgstr ""
-
-#: USWebConnectPack/USWebPack.py:48
-msgid "Mocavo"
-msgstr ""
-
-#: USWebConnectPack/USWebPack.py:49
 msgid "Hathi Trust Digital Library"
 msgstr ""
 
-#: USWebConnectPack/USWebPack.py:50
+#: USWebConnectPack/USWebPack.py:42
 msgid "Open Library"
 msgstr ""

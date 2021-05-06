@@ -1,0 +1,338 @@
+# Dutch translation of addon CombinedView.
+# Copyright (C) 2020 Gramps project
+# This file is distributed under the same license as the PACKAGE package.
+# Jan Sparreboom <jan@sparreboom.net>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: CombinedView 5.1.x\n"
+"Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
+"POT-Creation-Date: 2020-07-04 11:53-0500\n"
+"PO-Revision-Date: 2020-07-14 22:18+0200\n"
+"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
+"Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+
+#: CombinedView/combinedview.gpr.py:23 CombinedView/combinedview.py:125
+msgid "Combined"
+msgstr "Gecombineerd"
+
+#: CombinedView/combinedview.gpr.py:24
+msgid "A view showing relationships and events for a person"
+msgstr "Een weergave van relaties en gebeurtenissen voor een persoon"
+
+#: CombinedView/combinedview.gpr.py:31 CombinedView/combinedview.py:1631
+msgid "Relationships"
+msgstr "Verwantschappen"
+
+#: CombinedView/combinedview.py:374
+msgid "Organize Bookmarks"
+msgstr "Organiseer bladwijzers"
+
+#: CombinedView/combinedview.py:623 CombinedView/combinedview.py:684
+#: CombinedView/combinedview.py:993 CombinedView/combinedview.py:1154
+#: CombinedView/combinedview.py:1270 CombinedView/combinedview.py:1540
+#: CombinedView/combinedview.py:1867 CombinedView/combinedview.py:1918
+#, python-format
+msgid "Edit %s"
+msgstr "Bewerk %s"
+
+#: CombinedView/combinedview.py:641 CombinedView/combinedview.py:703
+#: CombinedView/navigationview.py:360
+msgid "ID"
+msgstr "ID"
+
+#: CombinedView/combinedview.py:661
+msgid "Attributes"
+msgstr "Kenmerken"
+
+#: CombinedView/combinedview.py:713
+msgid "Birth"
+msgstr "Geboorte"
+
+#: CombinedView/combinedview.py:722 CombinedView/combinedview.py:747
+msgid "Death"
+msgstr "Overlijden"
+
+#: CombinedView/combinedview.py:742
+msgid "Alive"
+msgstr "In leven"
+
+#: CombinedView/combinedview.py:749
+msgid "unknown"
+msgstr "onbekend"
+
+#: CombinedView/combinedview.py:815
+#, python-format
+msgid "%(date)s in %(place)s"
+msgstr "%(date)s in %(place)s"
+
+#: CombinedView/combinedview.py:833 CombinedView/combinedview.py:1884
+msgid "Unknown"
+msgstr "Onbekend"
+
+#: CombinedView/combinedview.py:910
+#, python-format
+msgid "%(abbrev)s %(date)s in %(place)s"
+msgstr "%(abbrev)s %(date)s in %(place)s"
+
+#: CombinedView/combinedview.py:912
+#, python-format
+msgid "%(abbrev)s %(date)s%(place)s"
+msgstr "%(abbrev)s %(date)s%(place)s"
+
+#: CombinedView/combinedview.py:949
+#, python-format
+msgid "%(birthabbrev)s %(birthdate)s, %(deathabbrev)s %(deathdate)s"
+msgstr "%(birthabbrev)s %(birthdate)s, %(deathabbrev)s %(deathdate)s"
+
+#: CombinedView/combinedview.py:956 CombinedView/combinedview.py:958
+#, python-format
+msgid "%(event)s %(date)s"
+msgstr "%(event)s %(date)s"
+
+#: CombinedView/combinedview.py:1019
+#, python-format
+msgid "Relationship type: %s"
+msgstr "Soort verwantschap: %s"
+
+#: CombinedView/combinedview.py:1056
+#, python-format
+msgid "%(event_type)s: %(date)s in %(place)s"
+msgstr "%(event_type)s: %(date)s in %(place)s"
+
+#: CombinedView/combinedview.py:1060
+#, python-format
+msgid "%(event_type)s: %(date)s"
+msgstr "%(event_type)s: %(date)s"
+
+#: CombinedView/combinedview.py:1063
+#, python-format
+msgid "%(event_type)s: %(place)s"
+msgstr "%(event_type)s: %(place)s"
+
+#: CombinedView/combinedview.py:1084
+msgid "Timeline"
+msgstr "Tijdlijn"
+
+#: CombinedView/combinedview.py:1151 CombinedView/combinedview.py:1267
+msgid "Click to make this event active"
+msgstr "Klik om deze gebeurtenis actief te maken"
+
+#: CombinedView/combinedview.py:1208
+msgid "Events"
+msgstr "Gebeurtenissen"
+
+#: CombinedView/combinedview.py:1346
+msgid "Click to visit this link"
+msgstr "Klik om deze link te bezoeken"
+
+#: CombinedView/combinedview.py:1364
+msgid "Album"
+msgstr "Album"
+
+#: CombinedView/combinedview.py:1433
+msgid "Associations"
+msgstr "Associaties"
+
+#: CombinedView/combinedview.py:1443
+msgid "Association"
+msgstr "Associatie"
+
+#: CombinedView/combinedview.py:1443 CombinedView/combinedview.py:1450
+msgid ": "
+msgstr ": "
+
+#: CombinedView/combinedview.py:1450
+msgid "Relationship"
+msgstr "Verwantschap"
+
+#: CombinedView/combinedview.py:1472
+msgid "Participants"
+msgstr "Deelnemers"
+
+#: CombinedView/combinedview.py:1507 CombinedView/combinedview.py:1572
+msgid "Order"
+msgstr "Volgorde"
+
+#: CombinedView/combinedview.py:1594
+msgid "Citations"
+msgstr "Citaten"
+
+#: CombinedView/combinedview.py:1642 CombinedView/combinedview.py:1663
+msgid "Parents"
+msgstr "Ouders"
+
+#: CombinedView/combinedview.py:1666
+msgid "Father"
+msgstr "Vader"
+
+#: CombinedView/combinedview.py:1670
+msgid "Mother"
+msgstr "Moeder"
+
+#: CombinedView/combinedview.py:1678
+msgid "Siblings"
+msgstr "Broers en zussen"
+
+#: CombinedView/combinedview.py:1688 CombinedView/combinedview.py:1749
+msgid "Add new child to family"
+msgstr "Voeg een nieuw kind toe aan het gezin"
+
+#: CombinedView/combinedview.py:1692 CombinedView/combinedview.py:1753
+msgid "Add existing child to family"
+msgstr "Voeg een bestaand kind toe aan het gezin"
+
+#: CombinedView/combinedview.py:1714
+msgid "Broken family detected"
+msgstr "Verbroken gezin gedetecteerd"
+
+#: CombinedView/combinedview.py:1715
+msgid "Please run the Check and Repair Database tool"
+msgstr "Voer het hulpmiddel 'Controleer en repareer de database' uit"
+
+#: CombinedView/combinedview.py:1727
+msgid "Family"
+msgstr "Gezin"
+
+#: CombinedView/combinedview.py:1731
+msgid "Spouse"
+msgstr "Echtgenoot"
+
+#: CombinedView/combinedview.py:1738
+msgid "Children"
+msgstr "Kinderen"
+
+#: CombinedView/combinedview.py:1788
+msgid "Add a new set of parents"
+msgstr "Voeg een nieuwe set ouders toe"
+
+#: CombinedView/combinedview.py:1789
+msgid "Add person as child to an existing family"
+msgstr "Voeg persoon als kind toe aan een bestaand gezin"
+
+#: CombinedView/combinedview.py:1790
+msgid "Edit parents"
+msgstr "Bewerk ouders"
+
+#: CombinedView/combinedview.py:1791
+msgid "Reorder parents"
+msgstr "Herorden ouders"
+
+#: CombinedView/combinedview.py:1792
+msgid "Remove person as child of these parents"
+msgstr "Verwijder persoon als kind van deze ouders"
+
+#: CombinedView/combinedview.py:1794
+msgid "Add a new family with person as parent"
+msgstr "Voeg een nieuw gezin toe met de persoon als ouder"
+
+#: CombinedView/combinedview.py:1796
+msgid "Edit family"
+msgstr "Bewerk gezin"
+
+#: CombinedView/combinedview.py:1797
+msgid "Reorder families"
+msgstr "Herorden gezinnen"
+
+#: CombinedView/combinedview.py:1798
+msgid "Remove person as parent in this family"
+msgstr "Persoon verwijderen als ouder in dit gezin"
+
+#: CombinedView/combinedview.py:2049
+msgid "Add Child to Family"
+msgstr "Voeg kind toe aan gezin"
+
+#: CombinedView/combinedview.py:2067
+msgid "Select Child"
+msgstr "Selecteer kind"
+
+#: CombinedView/combinedview.py:2187
+msgid "Use shading"
+msgstr "Gebruik schaduw"
+
+#: CombinedView/combinedview.py:2190
+msgid "Display edit buttons"
+msgstr "Bewerkingsknoppen weergeven"
+
+#: CombinedView/combinedview.py:2192
+msgid "View links as website links"
+msgstr "Geef links als links naar websites weer"
+
+#: CombinedView/combinedview.py:2198
+msgid "Layout"
+msgstr "Indeling"
+
+#: CombinedView/combinedview.py:2209
+msgid "Show Details"
+msgstr "Toon details"
+
+#: CombinedView/combinedview.py:2212
+msgid "Vertical Details"
+msgstr "Verticale details"
+
+#: CombinedView/combinedview.py:2215
+msgid "Show Siblings"
+msgstr "Toon broers en zussen"
+
+#: CombinedView/combinedview.py:2218
+msgid "Show Tags"
+msgstr "Toon labels"
+
+#: CombinedView/combinedview.py:2221
+msgid "Content"
+msgstr "Inhoud"
+
+#: CombinedView/navigationview.py:269
+#, python-format
+msgid "%s has been bookmarked"
+msgstr "%s is als bladwijzer toegevoegd"
+
+#: CombinedView/navigationview.py:273
+msgid "Could Not Set a Bookmark"
+msgstr "Kan geen bladwijzer instellen"
+
+#: CombinedView/navigationview.py:274
+msgid "A bookmark could not be set because no one was selected."
+msgstr ""
+"Er kan geen bladwijzer worden ingesteld omdat er niemand is geselecteerd."
+
+#: CombinedView/navigationview.py:340
+msgid "No Home Person"
+msgstr "Geen Beginpersoon"
+
+#: CombinedView/navigationview.py:341
+msgid ""
+"You need to set a 'default person' to go to. Select the People View, select "
+"the person you want as 'Home Person', then confirm your choice via the menu "
+"Edit -> Set Home Person."
+msgstr ""
+"U moet een 'beginpersoon' instellen om naar toe te gaan. Selecteer de "
+"weergave Personen, selecteer de gewenste persoon als 'Beginpersoon' en "
+"bevestig uw keuze via het menu Bewerken -> Beginpersoon instellen."
+
+#: CombinedView/navigationview.py:351 CombinedView/navigationview.py:354
+msgid "Jump to by Gramps ID"
+msgstr "Ga ernaar op basis van Gramps-ID"
+
+#: CombinedView/navigationview.py:360
+#, python-format
+msgid "%s: "
+msgstr "%s: "
+
+#: CombinedView/navigationview.py:365
+msgid "_Cancel"
+msgstr "_Annuleren"
+
+#: CombinedView/navigationview.py:366
+msgid "_Jump to"
+msgstr "_Spring naar"
+
+#: CombinedView/navigationview.py:378
+#, python-format
+msgid "Error: %s is not a valid Gramps ID"
+msgstr "Fout: %s is geen geldig Gramps-ID"

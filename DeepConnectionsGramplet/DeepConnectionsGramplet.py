@@ -82,6 +82,7 @@ class DeepConnectionsGramplet(Gramplet):
         If person or family changes, the relatives of active person might have
         changed
         """
+        self.selected_handles = set()
         self.connect(self.dbstate.db, 'home-person-changed', self.update)
         self.connect(self.dbstate.db, 'person-add', self.update)
         self.connect(self.dbstate.db, 'person-delete', self.update)

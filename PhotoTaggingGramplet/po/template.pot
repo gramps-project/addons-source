@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-25 16:10+0300\n"
+"POT-Creation-Date: 2021-03-05 11:11-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,148 +26,160 @@ msgstr ""
 msgid "Gramplet for tagging people in photos"
 msgstr ""
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:120
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:101
+msgid "https://www.gramps-project.org/wiki/index.php/Photo_Tagging_Gramplet"
+msgstr ""
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:125
 msgid "Selection"
 msgstr ""
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:122
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:127
 msgid "Replace existing references to the person being assigned without asking"
 msgstr ""
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:129
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:134
 msgid "Face detection"
 msgstr ""
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:132
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:137
 msgid "Minimum face width (px)"
 msgstr ""
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:134
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:139
 msgid "Minimum face height (px)"
 msgstr ""
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:137
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:142
 msgid "Detect faces inside existing boxes"
 msgstr ""
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:139
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:144
 msgid "Sensitivity (1 min .. 20 max)"
 msgstr ""
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:275
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:743
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:183
+msgid "_OK"
+msgstr ""
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:283
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:760
 msgid "Select Person"
 msgstr ""
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:276
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:284
 msgid "Add Person"
 msgstr ""
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:277
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:285
 msgid "Clear Reference"
 msgstr ""
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:278
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:286
 msgid "Remove Selection"
 msgstr ""
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:279
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:287
 msgid "Edit referenced Person"
 msgstr ""
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:280
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:288
 msgid "Zoom In"
 msgstr ""
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:281
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:289
 msgid "Zoom Out"
 msgstr ""
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:284
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:292
 msgid "Detect faces"
 msgstr ""
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:286
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:294
 msgid "Detect faces (OpenCV module required)"
 msgstr ""
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:289
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:805
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:297
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:822
 msgid "Settings"
 msgstr ""
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:337
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:298
+msgid "Help"
+msgstr ""
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:346
 msgid "Preview"
 msgstr ""
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:338
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:347
 msgid "Person"
 msgstr ""
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:339
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:348
 msgid "Age"
 msgstr ""
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:459
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:474
 msgid "Set as active person"
 msgstr ""
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:462
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:477
 msgid "_Select"
 msgstr ""
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:465
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:480
 msgid "_Add"
 msgstr ""
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:468
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:483
 msgid "_Clear"
 msgstr ""
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:471
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:486
 msgid "_Remove"
 msgstr ""
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:618
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:635
 #, python-format
 msgid "Edit Person (%s)"
 msgstr ""
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:674
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:691
 #, python-brace-format
 msgid "Replace to {0}"
 msgstr ""
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:775
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:792
 msgid "Detecting faces..."
 msgstr ""
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:800
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:817
 msgid "Detection finished"
 msgstr ""
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:850
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:867
 #, python-brace-format
 msgid "Another region of this image is associated with {name}. Remove it?"
 msgstr ""
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:853
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:870
 #, python-brace-format
 msgid ""
 "{count} other regions of this image are associated with {name}. Remove them?"
 msgstr ""
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:997
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:1014
 #, python-format
 msgid "Male person|Dead at %s"
 msgstr ""
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:999
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:1016
 #, python-format
 msgid "Female person|Dead at %s"
 msgstr ""
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:1001
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:1018
 #, python-format
 msgid "Unknown gender person|Dead at %s"
 msgstr ""

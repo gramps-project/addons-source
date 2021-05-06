@@ -398,7 +398,8 @@ class AncestralFanChartReport(Report):
                 fp.write(outstr)
 
         except IOError as msg:
-            ErrorDialog(_("Failed writing %s: %s") % (self.desthtml, str(msg)))
+            ErrorDialog(_("Failed writing %s: %s") % (self.desthtml, str(msg)),
+                        parent=self.user.uistate.window)
             return
 
         # Create required directory structure
@@ -416,7 +417,8 @@ class AncestralFanChartReport(Report):
             if not os.path.exists(os.path.join(self.dest_path, "json")):
                 os.mkdir(os.path.join(self.dest_path, "json"))
         except OSError as why:
-            ErrorDialog(_("Failed to create directory structure : %s") % (why))
+            ErrorDialog(_("Failed to create directory structure : %s") % (why),
+                        parent=self.user.uistate.window)
             return
 
         try:
@@ -438,7 +440,8 @@ class AncestralFanChartReport(Report):
                     plugin_dir, "js", "jquery", "jquery-2.0.3.min.js"),
                 os.path.join(self.dest_path, "js", "jquery"))
         except OSError as why:
-            ErrorDialog(_("Failed to copy web files : %s") % (why))
+            ErrorDialog(_("Failed to copy web files : %s") % (why),
+                        parent=self.user.uistate.window)
             return
 
         # Generate <dest>.js based on colors and initial generations to
@@ -642,7 +645,8 @@ class AncestralFanChartReport(Report):
                     'replace(location);\n')
 
         except IOError as msg:
-            ErrorDialog(_("Failed writing %s: %s") % (self.destjs, str(msg)))
+            ErrorDialog(_("Failed writing %s: %s") % (self.destjs, str(msg)),
+                        parent=self.user.uistate.window)
             return
 
         if self.get_gender_str(self.center_person) == "male":
@@ -667,7 +671,8 @@ class AncestralFanChartReport(Report):
 
 
         except IOError as msg:
-            ErrorDialog(_("Failed writing %s: %s") % (self.destjson, str(msg)))
+            ErrorDialog(_("Failed writing %s: %s") % (self.destjson, str(msg)),
+                        parent=self.user.uistate.window)
             return
 
 #------------------------------------------------------------------------

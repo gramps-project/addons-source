@@ -177,8 +177,8 @@ class PluginStatus(tool.Tool, ManagedWindow):
         _w1, dummy = help_btn.get_preferred_width()
         _w2, dummy = cls_btn.get_preferred_width()
         _w3, dummy = update_btn.get_preferred_width()
-        _wa, dummy = self.window.get_size()
-        _we = _wa - _w0 - _w1 - _w2 - _w3 - 63
+        #_wa, dummy = self.window.get_size()
+        _we = 790 - _w0 - _w1 - _w2 - _w3 - 60
         self.filter_entry.set_size_request(_we, -1)
 
         labeltitle, widget = self.registered_plugins_panel(None)
@@ -381,8 +381,8 @@ class PluginStatus(tool.Tool, ManagedWindow):
             return
         self.__rebuild_reg_list(path)
         pdata = self._pmgr.get_plugin(pid)
-        if (status & UPDATE) and (pdata.ptype == VIEW or
-                                  pdata.ptype == GRAMPLET):
+        if pdata and (status & UPDATE) and (pdata.ptype == VIEW or
+                                            pdata.ptype == GRAMPLET):
             self.restart_needed = True
 
     def __uninstall(self, pid, path):
@@ -789,7 +789,7 @@ def available_updates():
                 LOG.warning("Failed to open addon metadata for %s %s: %s",
                             lang, url, err)
                 f_ptr = None
-        if f_ptr and f_ptr.getcode() == 200:  # ok
+        if f_ptr and f_ptr.getcode() == 200 or f_ptr.file:  # ok
             break
 
     try:
@@ -800,7 +800,7 @@ def available_updates():
 
     pmgr = BasePluginManager.get_instance()
     addon_update_list = []
-    if f_ptr and f_ptr.getcode() == 200:
+    if f_ptr and f_ptr.getcode() == 200 or f_ptr.file:
         lines = list(f_ptr.readlines())
         count = 0
         for line in lines:

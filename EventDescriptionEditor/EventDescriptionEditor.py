@@ -1,7 +1,7 @@
 #
 # Gramps - a GTK+/GNOME based genealogy program
 #
-# Copyright (C) 2019  Matthias Kemmer
+# Copyright (C) 2019    Matthias Kemmer
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -16,7 +16,10 @@
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
+#
 """A tool to find and replace event descriptions."""
+
+import re
 
 # ----------------------------------------------------------------------------
 #
@@ -28,7 +31,6 @@ from gramps.gen.plug.menu import FilterOption, StringOption, BooleanOption
 from gramps.gen.filters import CustomFilters, GenericFilterFactory, rules
 from gramps.gui.dialog import OkDialog
 from gramps.gen.db import DbTxn
-
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
     _trans = glocale.get_addon_translator(__file__)
@@ -58,6 +60,7 @@ class EventDescriptionEditor(PluginWindows.ToolManagedWindowBatch):
         sub_str = opt["find"]
         replace_str = opt["replace"]
         keep_old = opt["keep_old"]
+        regex = opt["regex"]
         txt = _("Event Description Editor")
 
         iter_events = db.iter_event_handles()
@@ -74,13 +77,24 @@ class EventDescriptionEditor(PluginWindows.ToolManagedWindowBatch):
             for handle in events:
                 Event = db.get_event_from_handle(handle)
                 event_desc = Event.get_description()
-                if sub_str == "" or (sub_str in event_desc and not keep_old):
+                if sub_str == "":
+                    break
+                elif not regex and sub_str in event_desc and not keep_old:
                     Event.set_description(replace_str)
                     counter += 1
-                elif sub_str in event_desc and keep_old:
+                elif not regex and sub_str in event_desc and keep_old:
                     new_str = event_desc.replace(sub_str, replace_str)
                     Event.set_description(new_str)
                     counter += 1
+                elif regex and re.search(sub_str, event_desc) and not keep_old:
+                    Event.set_description(replace_str)
+                    counter += 1
+                elif regex and re.search(sub_str, event_desc) and keep_old:
+                    for string in re.findall(sub_str, event_desc):
+                        if string != "":
+                            new_str = event_desc.replace(string, replace_str)
+                            Event.set_description(new_str)
+                            counter += 1
 
                 db.commit_event(Event, self.trans)
                 self.progress.step()
@@ -89,8 +103,8 @@ class EventDescriptionEditor(PluginWindows.ToolManagedWindowBatch):
             db.request_rebuild()
 
             OkDialog(_("INFO"),
-                     _("%s event descriptions of %s events were changed."
-                       % (str(counter), str(num))),
+                     _("%s event descriptions of %s events were changed.")
+                       % (str(counter), str(num)),
                      parent=self.window)
 
 
@@ -133,3 +147,7 @@ class EventDescriptionEditorOptions(MenuToolOptions):
                             "otherwise the whole description will be deleted "
                             "and replaced by the new one."))
         menu.add_option(_("Option"), "keep_old", keep_old)
+
+        regex = BooleanOption(_("Allow regex"), False)
+        regex.set_help(_("Allow regular expressions."))
+        menu.add_option(_("Option"), "regex", regex)

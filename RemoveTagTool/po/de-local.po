@@ -1,158 +1,253 @@
 # German translation for Gramps
 # This file is distributed under the same license as the Gramps package.
-# Copyright (C) Gramps project
-# Milo Ivir <mail@milotype.de>, 2019.
+# translation of de.po to Deutsch
 #
+#
+# Anton Huber <anton_huber@gmx.de>, 2005,2006.
+# Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
+# Sebastian Vöcking <voeck@web.de>, 2005.
+# Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
+# Alex Roitman <shura@gramps-project.org>, 2006.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020.
+# Alois Pöttker <alois.poettker@gmx.de>, 2017.
 msgid ""
 msgstr ""
-"Project-Id-Version: Gramps 5.x\n"
+"Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-05 11:56+1000\n"
-"PO-Revision-Date: 2019-10-24 10:03+0200\n"
-"Language-Team: \n"
+"POT-Creation-Date: 2020-08-19 23:12+0200\n"
+"PO-Revision-Date: 2020-08-26 21:48+0200\n"
+"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.4\n"
-"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"X-Generator: Lokalize 19.12.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: de\n"
 
-#: RemoveTagTool/RemoveTagTool.gpr.py:23 RemoveTagTool/RemoveTagTool.py:300
-#: RemoveTagTool/RemoveTagTool.py:417
-msgid "Remove Tag Tool"
-msgstr "Markierung entfernen"
+#: RemoveTagTool/RemoveTagTool.gpr.py:24 RemoveTagTool/RemoveTagTool.py:186
+#: RemoveTagTool/RemoveTagTool.py:246
+msgid "Add/Remove Tag Tool"
+msgstr "Markierungen Hinzufügen/Entfernen Werkzeug"
 
-#: RemoveTagTool/RemoveTagTool.gpr.py:24
-msgid "Remove a tag from groups of people, events, etc."
-msgstr "Eine Markierung aus Gruppen von Menschen, Ereignissen, usw. entfernen"
+#: RemoveTagTool/RemoveTagTool.gpr.py:25
+msgid "Add or remove a tag from groups of people, events, etc."
+msgstr ""
+"Hinzufügen oder Entfernen einer Markierung zu Gruppen von Personen, "
+"Ereignissen usw."
 
-#: RemoveTagTool/RemoveTagTool.py:88
-msgid "The Remove Tag Tool requires at least one person, family and tag to execute."
-msgstr "Um das Werkzeug „Markierung entfernen” auszuführen, wird mindestens eine Person, eine Familie und eine Markierung benötigt."
+#: RemoveTagTool/RemoveTagTool.py:58
+msgid "The Tool requires at least one tag to execute."
+msgstr ""
+"Für die Ausführung des Werkzeug ist mindestens eine Markierung erforderlich."
 
-#: RemoveTagTool/RemoveTagTool.py:90 RemoveTagTool/RemoveTagTool.py:91
+#: RemoveTagTool/RemoveTagTool.py:59 RemoveTagTool/RemoveTagTool.py:61
 msgid "ERROR"
 msgstr "FEHLER"
 
-#: RemoveTagTool/RemoveTagTool.py:98
-msgid "Event Filter"
-msgstr "Ereignisfilter"
+#: RemoveTagTool/RemoveTagTool.py:86
+msgid "Add/Remove"
+msgstr "Hinzufügen/Entfernen"
 
-#: RemoveTagTool/RemoveTagTool.py:99
-msgid "All Events"
-msgstr "Alle Ereignisse"
+#: RemoveTagTool/RemoveTagTool.py:87
+msgid "Add or remove tags from objects."
+msgstr "Markierungen zu Objekten hinzufügen oder daraus entfernen."
 
-#: RemoveTagTool/RemoveTagTool.py:100
-msgid "Place Filter"
-msgstr "Ortsfilter"
+#: RemoveTagTool/RemoveTagTool.py:88
+msgid "Add Tags"
+msgstr "Markierungen Hinzufügen"
 
-#: RemoveTagTool/RemoveTagTool.py:101
-msgid "All Places"
-msgstr "Alle Orte"
+#: RemoveTagTool/RemoveTagTool.py:88
+msgid "Remove Tags"
+msgstr "Markierungen Entfernen"
 
-#: RemoveTagTool/RemoveTagTool.py:102
-msgid "Source Filter"
-msgstr "Quellenfilter"
-
-#: RemoveTagTool/RemoveTagTool.py:103
-msgid "All Sources"
-msgstr "Alle Quellen"
-
-#: RemoveTagTool/RemoveTagTool.py:104
-msgid "Citation Filter"
-msgstr "Fundstellenfilter"
-
+#: RemoveTagTool/RemoveTagTool.py:89 RemoveTagTool/RemoveTagTool.py:97
 #: RemoveTagTool/RemoveTagTool.py:105
-msgid "All Citations"
-msgstr "Alle Fundstellen"
+msgid "General options"
+msgstr "Allgemeine Optionen"
 
-#: RemoveTagTool/RemoveTagTool.py:106
-msgid "Repository Filter"
-msgstr "Aufbewahrungsortfilter"
+#: RemoveTagTool/RemoveTagTool.py:92
+msgid "People"
+msgstr "Personen"
 
-#: RemoveTagTool/RemoveTagTool.py:107
-msgid "All Repositories"
-msgstr "Alle Aufbewahrungsorte"
+#: RemoveTagTool/RemoveTagTool.py:92 RemoveTagTool/RemoveTagTool.py:125
+msgid "Families"
+msgstr "Familien"
 
-#: RemoveTagTool/RemoveTagTool.py:108
-msgid "Media Filter"
-msgstr "Medienfilter"
+#: RemoveTagTool/RemoveTagTool.py:92 RemoveTagTool/RemoveTagTool.py:126
+msgid "Events"
+msgstr "Ereignissen"
 
-#: RemoveTagTool/RemoveTagTool.py:109
-msgid "All Media"
-msgstr "Alle Medien"
+#: RemoveTagTool/RemoveTagTool.py:92 RemoveTagTool/RemoveTagTool.py:127
+msgid "Places"
+msgstr "Orte"
 
-#: RemoveTagTool/RemoveTagTool.py:110
-msgid "Note Filter"
-msgstr "Notizfilter"
+#: RemoveTagTool/RemoveTagTool.py:92 RemoveTagTool/RemoveTagTool.py:128
+msgid "Sources"
+msgstr "Quellen"
 
-#: RemoveTagTool/RemoveTagTool.py:111
-msgid "All Notes"
-msgstr "Alle Notizen"
+#: RemoveTagTool/RemoveTagTool.py:93 RemoveTagTool/RemoveTagTool.py:129
+msgid "Citations"
+msgstr "Fundstellen"
 
-#: RemoveTagTool/RemoveTagTool.py:115
-msgid "Select filter to restrict {}"
-msgstr "Filter wählen, um {} einzugrenzen"
+#: RemoveTagTool/RemoveTagTool.py:93 RemoveTagTool/RemoveTagTool.py:130
+msgid "Repositories"
+msgstr "Aufbewahrungsorte"
 
-#: RemoveTagTool/RemoveTagTool.py:117
-msgid "Option 2"
-msgstr "Option 2"
+#: RemoveTagTool/RemoveTagTool.py:93 RemoveTagTool/RemoveTagTool.py:132
+msgid "Media"
+msgstr "Medien"
 
-#: RemoveTagTool/RemoveTagTool.py:146
+#: RemoveTagTool/RemoveTagTool.py:93 RemoveTagTool/RemoveTagTool.py:133
+msgid "Notes"
+msgstr "Notizen"
+
+#: RemoveTagTool/RemoveTagTool.py:95
 msgid "Category"
 msgstr "Kategorie"
 
-#: RemoveTagTool/RemoveTagTool.py:147
+#: RemoveTagTool/RemoveTagTool.py:96
 msgid "Choose a category."
-msgstr "Kategorie wählen"
+msgstr "Wähle eine Kategorie."
 
-#: RemoveTagTool/RemoveTagTool.py:148 RemoveTagTool/RemoveTagTool.py:156
-#: RemoveTagTool/RemoveTagTool.py:212 RemoveTagTool/RemoveTagTool.py:217
-#: RemoveTagTool/RemoveTagTool.py:256 RemoveTagTool/RemoveTagTool.py:263
-msgid "Option 1"
-msgstr "Option 1"
+#: RemoveTagTool/RemoveTagTool.py:103
+msgid "Choose Tag"
+msgstr "Markierungen wählen"
 
-#: RemoveTagTool/RemoveTagTool.py:155
+#: RemoveTagTool/RemoveTagTool.py:104
 msgid "Choose a tag to remove."
-msgstr "Eine Markierung zum entfernen auswählen."
+msgstr "Wähle eine Markierung zum entfernen."
 
-#: RemoveTagTool/RemoveTagTool.py:210
+#: RemoveTagTool/RemoveTagTool.py:124
 msgid "Person Filter"
 msgstr "Personenfilter"
 
-#: RemoveTagTool/RemoveTagTool.py:211
-msgid "Select filter to restrict people"
-msgstr "Filter wählen, um Personen einzugrenzen"
+#: RemoveTagTool/RemoveTagTool.py:124
+msgid "Persons"
+msgstr "Personen"
 
-#: RemoveTagTool/RemoveTagTool.py:215
-msgid "Center Person"
-msgstr "Hauptperson"
-
-#: RemoveTagTool/RemoveTagTool.py:216 RemoveTagTool/RemoveTagTool.py:262
-msgid "The center person for the filter"
-msgstr "Die Hauptperson für den Filter"
-
-#: RemoveTagTool/RemoveTagTool.py:254
+#: RemoveTagTool/RemoveTagTool.py:125
 msgid "Family Filter"
 msgstr "Familienfilter"
 
-#: RemoveTagTool/RemoveTagTool.py:255
-msgid "Select filter to restrict families"
-msgstr "Filter wählen, um Familien einzugrenzen"
+#: RemoveTagTool/RemoveTagTool.py:126
+msgid "Event Filter"
+msgstr "Ereignisfilter"
 
-#: RemoveTagTool/RemoveTagTool.py:261
-msgid "Center Family"
-msgstr "Zentrale Familie"
+#: RemoveTagTool/RemoveTagTool.py:127
+msgid "Place Filter"
+msgstr "Ortsfilter"
 
-#: RemoveTagTool/RemoveTagTool.py:306
+#: RemoveTagTool/RemoveTagTool.py:128
+msgid "Source Filter"
+msgstr "Quellenfilter"
+
+#: RemoveTagTool/RemoveTagTool.py:129
+msgid "Citation Filter"
+msgstr "Fundstellenfilter"
+
+#: RemoveTagTool/RemoveTagTool.py:130
+msgid "Repository Filter"
+msgstr "Aufbewahrungsortfilter"
+
+#: RemoveTagTool/RemoveTagTool.py:132
+msgid "Media Filter"
+msgstr "Medienfilter"
+
+#: RemoveTagTool/RemoveTagTool.py:133
+msgid "Note Filter"
+msgstr "Notizfilter"
+
+#: RemoveTagTool/RemoveTagTool.py:140
+msgid "Filter options"
+msgstr "Filteroptionen"
+
+#: RemoveTagTool/RemoveTagTool.py:151
+#, python-format
+msgid "All %s"
+msgstr "Alle %s"
+
+#: RemoveTagTool/RemoveTagTool.py:190
 msgid "Options"
 msgstr "Optionen"
 
-#: RemoveTagTool/RemoveTagTool.py:420
-msgid "Removing tags..."
-msgstr "Entferne Markierungen …"
+#: RemoveTagTool/RemoveTagTool.py:198
+msgid ""
+"Unable to run the tool. Please check if your database contains tags, filters "
+"and objects."
+msgstr ""
+"Das Werkzeug kann nicht ausgeführt werden. Bitte überprüfe, ob deine "
+"Datenbank Markierungen, Filter und Objekte enthält."
 
-#: RemoveTagTool/RemoveTagTool.py:432
-msgid "Tag '{}' removed from {} {}.\n"
-msgstr "Markierung ‚{}‘ entfernt von {} {}.\n"
+#: RemoveTagTool/RemoveTagTool.py:200 RemoveTagTool/RemoveTagTool.py:235
+msgid "WARNING"
+msgstr "WARNUNG"
+
+#: RemoveTagTool/RemoveTagTool.py:234
+#, python-format
+msgid "No %s objects were found in database."
+msgstr "In der Datenbank wurden keine %s Objekte gefunden."
+
+#: RemoveTagTool/RemoveTagTool.py:249
+msgid "Process tags..."
+msgstr "Bearbeite Markierungen..."
+
+#: RemoveTagTool/RemoveTagTool.py:266
+msgid "added"
+msgstr "hinzugefügt"
+
+#: RemoveTagTool/RemoveTagTool.py:268
+msgid "removed"
+msgstr "entfernt"
+
+#: RemoveTagTool/RemoveTagTool.py:269
+msgid "Tag '{}' was {} to {} {} objects.\n"
+msgstr "Markierung '{}' wurde {} zu {} {} Objekten.\n"
+
+#: RemoveTagTool/RemoveTagTool.py:271
+msgid "INFO"
+msgstr "INFO"
+
+#~ msgid "Remove Tag Tool"
+#~ msgstr "Markierung entfernen"
+
+#~ msgid "Remove a tag from groups of people, events, etc."
+#~ msgstr ""
+#~ "Eine Markierung aus Gruppen von Menschen, Ereignissen, usw. entfernen"
+
+#~ msgid ""
+#~ "The Remove Tag Tool requires at least one person, family and tag to "
+#~ "execute."
+#~ msgstr ""
+#~ "Um das Werkzeug „Markierung entfernen” auszuführen, wird mindestens eine "
+#~ "Person, eine Familie und eine Markierung benötigt."
+
+#~ msgid "Select filter to restrict {}"
+#~ msgstr "Filter wählen, um {} einzugrenzen"
+
+#~ msgid "Option 2"
+#~ msgstr "Option 2"
+
+#~ msgid "Option 1"
+#~ msgstr "Option 1"
+
+#~ msgid "Select filter to restrict people"
+#~ msgstr "Filter wählen, um Personen einzugrenzen"
+
+#~ msgid "Center Person"
+#~ msgstr "Hauptperson"
+
+#~ msgid "The center person for the filter"
+#~ msgstr "Die Hauptperson für den Filter"
+
+#~ msgid "Select filter to restrict families"
+#~ msgstr "Filter wählen, um Familien einzugrenzen"
+
+#~ msgid "Center Family"
+#~ msgstr "Zentrale Familie"
+
+#~ msgid "Removing tags..."
+#~ msgstr "Entferne Markierungen …"
+
+#~ msgid "Tag '{}' removed from {} {}.\n"
+#~ msgstr "Markierung ‚{}‘ entfernt von {} {}.\n"

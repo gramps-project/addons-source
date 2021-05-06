@@ -1,0 +1,26 @@
+# Dutch translation of addon ExportProlog.
+# Copyright (C) 2020 Gramps project
+# This file is distributed under the same license as the ExportProlog package.
+# Jan Sparreboom <jan@sparreboom.net>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ExportProlog 5.x\n"
+"Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
+"POT-Creation-Date: 2019-09-07 16:28-0500\n"
+"PO-Revision-Date: 2020-07-21 16:43+0200\n"
+"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
+"Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+
+#: ExportProlog/ExportProlog.gpr.py:3
+msgid "Prolog Export"
+msgstr "Prolog Export"
+
+#: ExportProlog/ExportProlog.gpr.py:4
+msgid "Exports data into a Prolog fact format.  Data is in Unicode (utf-8)"
+msgstr "Exporteert gegevens naar een Prolog-feitenopmaak. Gegevens staan in Unicode (utf-8)"

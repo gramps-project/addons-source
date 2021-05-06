@@ -22,6 +22,7 @@
 #
 # Version 3.6
 # $Id: SourcesCitationsReport.py 2012-12-30 Frink hansulrich.frink@gmail.com $
+# Version 3.7 Jan Sparreboom <jan@sparreboom.net>
 
 """
 Reports/Text Report.
@@ -69,28 +70,30 @@ Version 3.6:
 - improved translation
 - Date formats.
 
+Version 3.7:
+- add footer
+- add some text formatting
+- improved translation
+
 next steps:
 
 - have an index on Persons
-- have footer
+- adding source notes?
 
 """
 
 #------------------------------------------------------------------------
-#
 # standard python modules
-#
 #------------------------------------------------------------------------
 import time
 from collections import defaultdict
 
 #------------------------------------------------------------------------
-#
 # Gramps modules
-#
 #------------------------------------------------------------------------
 from gramps.gen.plug.menu import StringOption, FilterOption, BooleanOption
 from gramps.gen.plug.report import Report
+from gramps.gen.plug.report import utils
 from gramps.gen.plug.report import MenuReportOptions
 from gramps.gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle,
                                     TableStyle, TableCellStyle, FONT_SERIF,
@@ -106,9 +109,7 @@ except ValueError:
 _ = _trans.sgettext
 
 #------------------------------------------------------------------------
-#
 # SourcesCitationsReport
-#
 #------------------------------------------------------------------------
 class SourcesCitationsReport(Report):
     """
@@ -166,7 +167,7 @@ class SourcesCitationsReport(Report):
         self.doc.write_text(title, mark)
         self.doc.end_paragraph()
 
-        self.doc.start_paragraph("SRC-ReportTitle")
+        self.doc.start_paragraph("SRC-ReportSubTitle")
         title = self.subtitle_string
         mark = IndexMark(title, INDEX_TYPE_TOC, 2)
         self.doc.write_text(title, mark)
@@ -174,6 +175,10 @@ class SourcesCitationsReport(Report):
 
         self.listeventref()
 
+        self.doc.start_paragraph("SRC-Footer")
+        title = self.footer_string
+        self.doc.write_text(title)
+        self.doc.end_paragraph()
 
     def _formatlocal_source_text(self, source):
         if not source: return
@@ -263,9 +268,13 @@ class SourcesCitationsReport(Report):
             self.doc.write_text(self._formatlocal_source_text(self.__db.get_source_from_handle(s)))
             self.doc.end_paragraph()
 
-            self.doc.start_paragraph("SRC-SourceDetails")
-            self.doc.write_text(_("   key: %s") %
+            self.doc.start_paragraph("SRC-SourceSubTitle")
+            self.doc.write_text(_("Key: %s") %
                                 self.__db.get_source_from_handle(s).gramps_id)
+            self.doc.end_paragraph()
+
+            self.doc.start_paragraph("SRC-SourceSubTitle")
+            self.doc.write_text(_("Citations:"))
             self.doc.end_paragraph()
 
             i = 1
@@ -321,7 +330,7 @@ class SourcesCitationsReport(Report):
                                         father = self.__db.get_person_from_handle(b)
                                     if a:
                                         mother = self.__db.get_person_from_handle(a)
-                                    self.doc.write_text(_("   Eheleute: "))
+                                    self.doc.write_text(_("   Spouses: "))
                                     if father:
                                         self.doc.write_text(_("%s ") %
                                                         self.__db.get_person_from_handle(b).primary_name.get_name())
@@ -382,9 +391,7 @@ class SourcesCitationsReport(Report):
 
 
 #------------------------------------------------------------------------
-#
 # SourcesCitationsOptions
-#
 #------------------------------------------------------------------------
 class SourcesCitationsOptions(MenuReportOptions):
     """
@@ -413,7 +420,7 @@ class SourcesCitationsOptions(MenuReportOptions):
 
         dateinfo = time.localtime(time.time())
         #rname = self.__db.get_researcher().get_name()
-        rname = "researcher name"
+        rname = _("researcher name")
 
         footer_string = _('Copyright %(year)d %(name)s') % {
             'year' : dateinfo[0], 'name' : rname }
@@ -445,7 +452,10 @@ class SourcesCitationsOptions(MenuReportOptions):
         """
         self.default_style = default_style
         self.__report_title_style()
+        self.__report_subtitle_style()
         self.__source_title_style()
+        self.__source_subtitle_style()
+        self.__report_footer_style()
         self.__source_details_style()
         self.__citation_title_style()
         self.__column_title_style()
@@ -470,6 +480,35 @@ class SourcesCitationsOptions(MenuReportOptions):
         para.set_description(_('The style used for the title of the report.'))
         self.default_style.add_paragraph_style("SRC-ReportTitle", para)
 
+    def __report_subtitle_style(self):
+        """
+        Define the style used for the report subtitle
+        """
+        font = FontStyle()
+        font.set(face=FONT_SANS_SERIF, size=13, bold=1)
+        para = ParagraphStyle()
+        para.set_font(font)
+        para.set_header_level(1)
+        para.set_top_margin(0.25)
+        para.set_bottom_margin(0.25)
+        para.set_alignment(PARA_ALIGN_CENTER)
+        para.set_description(_('The style used for the subtitle of the report.'))
+        self.default_style.add_paragraph_style("SRC-ReportSubTitle", para)
+
+    def __report_footer_style(self):
+        """
+        Define the style used for the report footer
+        """
+        font = FontStyle()
+        font.set(face=FONT_SANS_SERIF, size=10, bold=1)
+        para = ParagraphStyle()
+        para.set_font(font)
+        para.set_alignment(PARA_ALIGN_CENTER)
+        para.set_top_border(True)
+        para.set_top_margin(utils.pt2cm(6))
+        para.set_description(_('The style used for the footer of the report.'))
+        self.default_style.add_paragraph_style("SRC-Footer", para)
+
     def __source_title_style(self):
         """
         Define the style used for the source title
@@ -481,36 +520,48 @@ class SourcesCitationsOptions(MenuReportOptions):
         para.set_header_level(2)
         para.set(first_indent=0.0, lmargin=0.0)
         para.set_top_margin(0.75)
-        para.set_bottom_margin(0.25)
+        para.set_bottom_margin(0.10)
         para.set_description(_('The style used for source title.'))
         self.default_style.add_paragraph_style("SRC-SourceTitle", para)
+
+    def __source_subtitle_style(self):
+        """
+        Define the style used for the source subtitle
+        """
+        font = FontStyle()
+        font.set(face=FONT_SERIF, size=11, italic=0, bold=1)
+        para = ParagraphStyle()
+        para.set_font(font)
+        para.set(first_indent=0.0, lmargin=0.0)
+        para.set_description(_('The style used for source subtitle.'))
+        self.default_style.add_paragraph_style("SRC-SourceSubTitle", para)
+
+    def __source_details_style(self):
+        """
+        Define the style used for the source details
+        """
+        font = FontStyle()
+        font.set(face=FONT_SERIF, size=10, italic=0, bold=0)
+        para = ParagraphStyle()
+        para.set_font(font)
+        para.set(first_indent=0.0, lmargin=0.0)
+        para.set_description(_('The style used for Source details.'))
+        self.default_style.add_paragraph_style("SRC-SourceDetails", para)
 
     def __citation_title_style(self):
         """
         Define the style used for the citation title
         """
         font = FontStyle()
-        font.set(face=FONT_SERIF, size=12, italic=0, bold=1)
+        font.set(face=FONT_SERIF, size=11, italic=0, bold=1)
         para = ParagraphStyle()
         para.set_font(font)
-        para.set_header_level(3)
+        para.set_header_level(2)
         para.set(first_indent=0.0, lmargin=0.0)
-        para.set_top_margin(0.75)
+        para.set_top_margin(0.50)
         para.set_bottom_margin(0.0)
         para.set_description(_('The style used for citation title.'))
         self.default_style.add_paragraph_style("SRC-CitationTitle", para)
-
-    def __source_details_style(self):
-        """
-        Define the style used for the place details
-        """
-        font = FontStyle()
-        font.set(face=FONT_SERIF, size=10)
-        para = ParagraphStyle()
-        para.set_font(font)
-        para.set(first_indent=0.0, lmargin=0.0)
-        para.set_description(_('The style used for Source details.'))
-        self.default_style.add_paragraph_style("SRC-SourceDetails", para)
 
     def __column_title_style(self):
         """
