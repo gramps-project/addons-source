@@ -176,6 +176,7 @@ class GraphView(NavigationView):
         ('interface.graphview-person-border-size', 1),
         ('interface.graphview-active-person-border-size', 3),
         ('interface.graphview-font', ['', 14]),
+        ('interface.graphview-direction', 0),
         ('interface.graphview-show-all-connected', False))
 
     def __init__(self, pdata, dbstate, uistate, nav_group=0):
@@ -605,6 +606,12 @@ class GraphView(NavigationView):
         """
         self.graph_widget.populate(self.get_active())
 
+    def cb_update_direction(self, _client, _cnxn_id, _entry, _data):
+        """
+        Called when the configuration menu changes the direction setting.
+        """
+        self.graph_widget.populate(self.get_active())
+
     def config_change_font(self, font_button):
         """
         Called when font is change.
@@ -674,6 +681,8 @@ class GraphView(NavigationView):
                              self.cb_update_active_person_border_size)
         self._config.connect('interface.graphview-person-border-size',
                              self.cb_update_person_border_size)
+        self._config.connect('interface.graphview-direction',
+                             self.cb_update_direction)
 
     def _get_configure_page_funcs(self):
         """
@@ -728,6 +737,12 @@ class GraphView(NavigationView):
         row += 1
         configdialog.add_checkbox(
             grid, _('Show tags'), row, 'interface.graphview-show-tags')
+        row += 1
+        direction_fmts = [(0, _("Vertical: Top to Bottom")), (1, _("Vertical: Bottom to Top")), (2, _("Horizontal: Left to Right")), (3, _("Horizontal: Right to Left"))]
+        active = self._config.get('interface.graphview-direction')
+        configdialog.add_combo(grid, _('Time Direction'), row,
+                               'interface.graphview-direction',
+                               direction_fmts, setactive=active)
 
         return _('Layout'), grid
 
@@ -2354,7 +2369,8 @@ class DotSvgGenerator(object):
             self.bold_size = self.norm_size = font[1]
 
         pagedir = "BL"
-        rankdir = "TB"
+        direction = self.view._config.get('interface.graphview-direction')
+        rankdir = {0: "TB", 1: "BT", 2: "LR", 3: "RL"}
         ratio = "compress"
         # as we are not using paper,
         # choose a large 'page' size with no margin
@@ -2376,7 +2392,7 @@ class DotSvgGenerator(object):
         self.write(' nodesep="%.2f";\n' % nodesep)
         self.write(' outputorder="edgesfirst";\n')
         self.write(' pagedir="%s";\n' % pagedir)
-        self.write(' rankdir="%s";\n' % rankdir)
+        self.write(' rankdir="%s";\n' % rankdir.get(direction, "TB"))
         self.write(' ranksep="%.2f";\n' % ranksep)
         self.write(' ratio="%s";\n' % ratio)
         self.write(' searchsize="100";\n')
