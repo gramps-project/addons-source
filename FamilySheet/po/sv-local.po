@@ -3,173 +3,193 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Peter Landgren <peter.talken@telia.com>, 2011.
+# Pär Ekholm <pehlm@pekholm.org>, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-03-16 11:15+0100\n"
-"PO-Revision-Date: 2011-03-16 11:30+0100\n"
-"Last-Translator: Peter Landgren <peter.talken@telia.com>\n"
-"Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
+"POT-Creation-Date: 2021-04-26 09:45-0500\n"
+"PO-Revision-Date: 2021-05-16 13:51+0200\n"
+"Last-Translator: Pär Ekholm <pehlm@pekholm.se>\n"
+"Language-Team: \n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 1.0\n"
+"X-Generator: Poedit 2.3\n"
 
-#: FamilySheet/FamilySheet.gpr.py:3
+#: FamilySheet/FamilySheet.gpr.py:3 FamilySheet/FamilySheet.py:126
 msgid "Family Sheet"
 msgstr "Familjeark"
 
 #: FamilySheet/FamilySheet.gpr.py:4
-msgid ""
-"Produces a family sheet showing full information about a person and his/her "
-"partners and children."
-msgstr ""
-"Skapar ett familjeark visande all information om en person och dennes "
-"partner och barn."
+msgid "Produces a family sheet showing full information about a person and his/her partners and children."
+msgstr "Skapar ett familjeark som visar all information om en person och dennes partner och barn."
 
-#: FamilySheet/FamilySheet.py:213 FamilySheet/FamilySheet.py:256
+#: FamilySheet/FamilySheet.py:232 FamilySheet/FamilySheet.py:275
 #, python-format
-msgid "→ %s"
-msgstr "→ %s"
+msgid "\\u2192 %s"
+msgstr "\\u2192 %s"
 
-#: FamilySheet/FamilySheet.py:377
+#: FamilySheet/FamilySheet.py:397
 #, python-format
 msgid "Address (%(date)s): %(location)s"
 msgstr "Adress (%(date)s): %(location)s"
 
-#: FamilySheet/FamilySheet.py:381
+#: FamilySheet/FamilySheet.py:401
 #, python-format
 msgid "Address: %(location)s"
 msgstr "Adress: %(location)s"
 
-#: FamilySheet/FamilySheet.py:428
+#: FamilySheet/FamilySheet.py:469
 #, python-format
 msgid "; %(type)s: %(value)s"
 msgstr "; %(type)s: %(value)s"
 
-#: FamilySheet/FamilySheet.py:525
+#: FamilySheet/FamilySheet.py:557
 msgid "Source references:"
 msgstr "Källreferenser:"
 
-#: FamilySheet/FamilySheet.py:538
+#: FamilySheet/FamilySheet.py:571
 #, python-format
 msgid "%s: "
 msgstr "%s: "
 
-#: FamilySheet/FamilySheet.py:542
+#: FamilySheet/FamilySheet.py:575
 #, python-format
 msgid ", page %s"
 msgstr ", sida %s"
 
-#: FamilySheet/FamilySheet.py:555
+#: FamilySheet/FamilySheet.py:588
 msgid "Notes:"
 msgstr "Notiser:"
 
-#: FamilySheet/FamilySheet.py:734
+#: FamilySheet/FamilySheet.py:769
 #, python-format
 msgid "on %(ymd_date)s"
 msgstr " %(ymd_date)s"
 
-#: FamilySheet/FamilySheet.py:736
+#: FamilySheet/FamilySheet.py:771
 #, python-format
 msgid "in %(ym_date)s"
 msgstr "i %(ym_date)s"
 
-#: FamilySheet/FamilySheet.py:738
+#: FamilySheet/FamilySheet.py:773
 #, python-format
 msgid "in %(y_date)s"
 msgstr " %(y_date)s"
 
-#: FamilySheet/FamilySheet.py:742
+#: FamilySheet/FamilySheet.py:777
 #, python-format
 msgid "on %(placeholder)s"
 msgstr " %(placeholder)s"
 
-#: FamilySheet/FamilySheet.py:744
+#: FamilySheet/FamilySheet.py:779
 #, python-format
 msgid "on %(placeholder)s (%(partial)s)"
 msgstr " %(placeholder)s (%(partial)s)"
 
-#: FamilySheet/FamilySheet.py:787 FamilySheet/FamilySheet.py:789
+#: FamilySheet/FamilySheet.py:824 FamilySheet/FamilySheet.py:826
 #, python-format
 msgid "in %(place)s"
 msgstr "i %(place)s"
 
-#: FamilySheet/FamilySheet.py:817
+#: FamilySheet/FamilySheet.py:861
 msgid "Report Options"
 msgstr "Rapportalternativ"
 
-#: FamilySheet/FamilySheet.py:820
+#: FamilySheet/FamilySheet.py:864
 msgid "Center person"
 msgstr "Huvudperson"
 
-#: FamilySheet/FamilySheet.py:821
+#: FamilySheet/FamilySheet.py:866
 msgid "The person whose partners and children are printed"
-msgstr "Den person, vars partner och barn skrivs ut"
+msgstr "Den person vars partner och barn skrivs ut"
 
-#: FamilySheet/FamilySheet.py:824
+#: FamilySheet/FamilySheet.py:869
 msgid "Print sheets for"
 msgstr "Skriv ut ark för"
 
-#: FamilySheet/FamilySheet.py:826
+#: FamilySheet/FamilySheet.py:871
 msgid "Center person only"
 msgstr "Endast huvudperson"
 
-#: FamilySheet/FamilySheet.py:827
+#: FamilySheet/FamilySheet.py:872
 msgid "Center person and descendants in side branches"
 msgstr "Huvudperson och ättlingar i sidogrenar"
 
-#: FamilySheet/FamilySheet.py:828
+#: FamilySheet/FamilySheet.py:873
 msgid "Center person and all descendants"
 msgstr "Huvudperson och alla ättlingar"
 
-#: FamilySheet/FamilySheet.py:831
+#: FamilySheet/FamilySheet.py:874
+msgid "Whether to include descendants, and which ones."
+msgstr "Huruvida inkludera ättlingar, och vilka. "
+
+#: FamilySheet/FamilySheet.py:877
 msgid "Use call name"
 msgstr "Använd tilltalsnamn"
 
-#: FamilySheet/FamilySheet.py:833
+#: FamilySheet/FamilySheet.py:879
 msgid "Don't use call name"
 msgstr "Använd ej tilltalsnamn"
 
-#: FamilySheet/FamilySheet.py:834
+#: FamilySheet/FamilySheet.py:880
 msgid "Replace first name with call name"
 msgstr "Byt ut förnamn mot tilltalsnamn"
 
-#: FamilySheet/FamilySheet.py:835
+#: FamilySheet/FamilySheet.py:881
 msgid "Underline call name in first name / add call name to first name"
 msgstr "Stryk under tilltalsnamn / lägg till tilltalsnamn till förnamn"
 
-#: FamilySheet/FamilySheet.py:838
+#: FamilySheet/FamilySheet.py:882
+msgid "Whether to include call name, and how."
+msgstr "Huruvida använda tilltalsnamn, och hur."
+
+#: FamilySheet/FamilySheet.py:885
 msgid "Print placeholders for missing information"
 msgstr "Skriv ut markering för saknad information"
 
-#: FamilySheet/FamilySheet.py:841
+#: FamilySheet/FamilySheet.py:887
+msgid "Whether to include fields for missing information."
+msgstr "Huruvida inkludera fält för saknad information."
+
+#: FamilySheet/FamilySheet.py:890
 msgid "Include sources"
 msgstr "Tag med källor"
 
-#: FamilySheet/FamilySheet.py:844
+#: FamilySheet/FamilySheet.py:891
+msgid "Whether to include source references."
+msgstr "Huruvida inkludera källreferenser."
+
+#: FamilySheet/FamilySheet.py:894
 msgid "Include notes"
 msgstr "Tag med notiser"
 
-#: FamilySheet/FamilySheet.py:858
+#: FamilySheet/FamilySheet.py:895
+msgid "Whether to include notes."
+msgstr "Huruvida inkludera notiser."
+
+#: FamilySheet/FamilySheet.py:909
 msgid "The basic style used for the text display"
 msgstr "Grundläggande mall för textvisning"
 
-#: FamilySheet/FamilySheet.py:868
+#: FamilySheet/FamilySheet.py:919
 msgid "The style used for the page key on the top"
 msgstr "Mall för sidonyckeln upptill på sidan"
 
-#: FamilySheet/FamilySheet.py:877
+#: FamilySheet/FamilySheet.py:928
 msgid "The style used for names"
 msgstr "Mall använd för namn"
 
-#: FamilySheet/FamilySheet.py:887
+#: FamilySheet/FamilySheet.py:938
 msgid "The style used for numbers"
-msgstr "Mall använd till tal"
+msgstr "Mall använd för tal"
 
-#: FamilySheet/FamilySheet.py:897
+#: FamilySheet/FamilySheet.py:948
 msgid "The style used for footnotes (notes and source references)"
 msgstr "Mall använd för fotnoter (notiser och källreferenser)"
 
+#~ msgid "→ %s"
+#~ msgstr "→ %s"
