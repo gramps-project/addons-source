@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-04-26 09:45-0500\n"
-"PO-Revision-Date: 2021-05-16 13:51+0200\n"
+"PO-Revision-Date: 2021-05-17 19:42+0200\n"
 "Last-Translator: Pär Ekholm <pehlm@pekholm.se>\n"
 "Language-Team: \n"
 "Language: sv\n"
@@ -73,7 +73,7 @@ msgstr " %(ymd_date)s"
 #: FamilySheet/FamilySheet.py:771
 #, python-format
 msgid "in %(ym_date)s"
-msgstr "i %(ym_date)s"
+msgstr " %(ym_date)s"
 
 #: FamilySheet/FamilySheet.py:773
 #, python-format
@@ -93,7 +93,7 @@ msgstr " %(placeholder)s (%(partial)s)"
 #: FamilySheet/FamilySheet.py:824 FamilySheet/FamilySheet.py:826
 #, python-format
 msgid "in %(place)s"
-msgstr "i %(place)s"
+msgstr " %(place)s"
 
 #: FamilySheet/FamilySheet.py:861
 msgid "Report Options"
