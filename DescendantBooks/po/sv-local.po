@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-09 11:33-0500\n"
-"PO-Revision-Date: 2021-05-21 14:10+0200\n"
+"PO-Revision-Date: 2021-05-23 00:24+0200\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -626,7 +626,7 @@ msgstr "Huruvida ta med referenser till make/maka."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1474
 msgid "Include sign of succession ('+') in child-list"
-msgstr "Tag med tecken på avkomma ('+') i barnlista"
+msgstr "Ta med tecken på avkomma ('+') i barnlista"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1476
 msgid ""
