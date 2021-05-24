@@ -1,0 +1,89 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Pär Ekholm <pehlm@pekholm.org>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-09-14 10:31-0500\n"
+"PO-Revision-Date: 2021-05-23 10:57+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"Last-Translator: Pär Ekholm <pehlm@pekholm.se>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: sv_SE\n"
+
+#: EventDescriptionEditor/EventDescriptionEditor.gpr.py:24
+#: EventDescriptionEditor/EventDescriptionEditor.py:52
+#: EventDescriptionEditor/EventDescriptionEditor.py:64
+msgid "Event Description Editor"
+msgstr "Redigerare för händelsebeskrivningar"
+
+#: EventDescriptionEditor/EventDescriptionEditor.gpr.py:25
+msgid ""
+"A tool to find and replace a string in event description of multiple events."
+msgstr ""
+"Ett verktyg för att hitta och ersätta en sträng i händelsebeskrivningen av "
+"flera händelser."
+
+#: EventDescriptionEditor/EventDescriptionEditor.py:75
+msgid "Search substring..."
+msgstr "Sök understrängen..."
+
+#: EventDescriptionEditor/EventDescriptionEditor.py:105
+msgid "INFO"
+msgstr "INFO"
+
+#: EventDescriptionEditor/EventDescriptionEditor.py:106
+#, python-format
+msgid "%s event descriptions of %s events were changed."
+msgstr "%s händelsebeskrivningar av %s händelser ändrades."
+
+#: EventDescriptionEditor/EventDescriptionEditor.py:126
+msgid "All Events"
+msgstr "Alla händelser"
+
+#: EventDescriptionEditor/EventDescriptionEditor.py:135
+msgid "Events"
+msgstr "Händelser"
+
+#: EventDescriptionEditor/EventDescriptionEditor.py:136
+#: EventDescriptionEditor/EventDescriptionEditor.py:140
+#: EventDescriptionEditor/EventDescriptionEditor.py:143
+#: EventDescriptionEditor/EventDescriptionEditor.py:149
+#: EventDescriptionEditor/EventDescriptionEditor.py:153
+msgid "Option"
+msgstr "Alternativ"
+
+#: EventDescriptionEditor/EventDescriptionEditor.py:139
+msgid "Find"
+msgstr "Hitta"
+
+#: EventDescriptionEditor/EventDescriptionEditor.py:142
+msgid "Replace"
+msgstr "Ersätt"
+
+#: EventDescriptionEditor/EventDescriptionEditor.py:145
+msgid "Replace substring only"
+msgstr "Ersätt endast understräng"
+
+#: EventDescriptionEditor/EventDescriptionEditor.py:146
+msgid ""
+"If True only the substring will be replaced, otherwise the whole description "
+"will be deleted and replaced by the new one."
+msgstr ""
+"Om sant kommer endast understrängen att ersättas, annars raderas hela "
+"beskrivningen och ersätts med den nya."
+
+#: EventDescriptionEditor/EventDescriptionEditor.py:151
+msgid "Allow regex"
+msgstr "Tillåt reguljära uttryck"
+
+#: EventDescriptionEditor/EventDescriptionEditor.py:152
+msgid "Allow regular expressions."
+msgstr "Tillåt reguljära uttryck."

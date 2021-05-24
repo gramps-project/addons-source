@@ -1,0 +1,100 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Pär Ekholm <pehlm@pekholm.org>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"PO-Revision-Date: 2021-05-23 13:26+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"Last-Translator: Pär Ekholm <pehlm@pekholm.se>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: sv_SE\n"
+
+#: GeoAncestor/GeoAncestor.gpr.py:72
+msgid "OsmGpsMap module not loaded."
+msgstr "OsmGpsMap-modul ej laddad."
+
+#: GeoAncestor/GeoAncestor.gpr.py:73
+#, python-format
+msgid ""
+"Geography functionality will not be available.\n"
+"To build it for Gramps see %(gramps_wiki_build_osmgps_url)s"
+msgstr ""
+"Geografi-funktionalitet kommer ej att vara tillgänglig.\n"
+"För att åstadkomma det för Gramps se %(gramps_wiki_build_osmgps_url)s"
+
+#: GeoAncestor/GeoAncestor.gpr.py:87
+msgid "Ancestors map"
+msgstr "Karta för anor"
+
+#: GeoAncestor/GeoAncestor.gpr.py:88
+msgid "A view showing ancestors places on the map."
+msgstr "En vy som visar förfädernas boplatser på kartan."
+
+#: GeoAncestor/GeoAncestor.gpr.py:95
+msgid "Geography"
+msgstr "Geografi"
+
+#: GeoAncestor/GeoAncestor.py:119
+msgid "Organize Bookmarks"
+msgstr "Ordna bokmärken"
+
+#: GeoAncestor/GeoAncestor.py:207
+msgid "Ancestors places on the map"
+msgstr "Förfädernas boplatser på kartan"
+
+#: GeoAncestor/GeoAncestor.py:235
+msgid "GeoAncestor"
+msgstr "GeoAnor"
+
+#: GeoAncestor/GeoAncestor.py:304
+#, python-format
+msgid "Ancestors places for %s"
+msgstr "Förfädernas boplatser för %s"
+
+#: GeoAncestor/GeoAncestor.py:311
+msgid "Counting all places"
+msgstr "Räknar alla platser"
+
+#: GeoAncestor/GeoAncestor.py:314
+msgid "Showing all places"
+msgstr "Visar alla platser"
+
+#: GeoAncestor/GeoAncestor.py:411
+#, python-format
+msgid "%(eventtype)s : %(name)s"
+msgstr "%(eventtype)s : %(name)s"
+
+#: GeoAncestor/GeoAncestor.py:538 GeoAncestor/GeoAncestor.py:559
+#: GeoAncestor/GeoAncestor.py:600
+msgid "Edit Event"
+msgstr "Redigera händelse"
+
+#: GeoAncestor/GeoAncestor.py:543 GeoAncestor/GeoAncestor.py:564
+#: GeoAncestor/GeoAncestor.py:604
+msgid "Center on this place"
+msgstr "Centrera på denna plats"
+
+#: GeoAncestor/GeoAncestor.py:578
+msgid "Unknown"
+msgstr "Okänd"
+
+#: GeoAncestor/GeoAncestor.py:589
+msgid "No description"
+msgstr "Beskrivning saknas"
+
+#: GeoAncestor/GeoAncestor.py:620
+msgid "Show all places"
+msgstr "Visa alla platser"
+
+#: GeoAncestor/GeoAncestor.py:624 GeoAncestor/GeoAncestor.py:629
+msgid "Centering on Place"
+msgstr "Centrera på plats"
