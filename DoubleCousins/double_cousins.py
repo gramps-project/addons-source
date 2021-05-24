@@ -116,6 +116,7 @@ class DoubleCousins(Report):
         # Double cousins info text
         if self.menu.get_option_by_name("info1").get_value():
             self.doc.start_paragraph("Default")
+        # xgettext:no-python-format
             text = _("Double (first) cousins occur when two siblings of "
                      "family A marry two siblings of family B. "
                      "Their children are double cousins to each other and "
