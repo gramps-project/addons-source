@@ -1,0 +1,200 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Pär Ekholm <pehlm@pekholm.org>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-19 23:12+0200\n"
+"PO-Revision-Date: 2021-06-04 19:14+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"Last-Translator: Pär Ekholm <pehlm@pekholm.se>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: sv_SE\n"
+
+#: RemoveTagTool/RemoveTagTool.gpr.py:24 RemoveTagTool/RemoveTagTool.py:186
+#: RemoveTagTool/RemoveTagTool.py:246
+msgid "Add/Remove Tag Tool"
+msgstr "Lägg till/ta bort taggar-verktyg"
+
+#: RemoveTagTool/RemoveTagTool.gpr.py:25
+msgid "Add or remove a tag from groups of people, events, etc."
+msgstr ""
+"Lägg till eller ta bort en tagg från grupper av personer, händelser etc."
+
+#: RemoveTagTool/RemoveTagTool.py:58
+msgid "The Tool requires at least one tag to execute."
+msgstr "Verktyget kräver åtminstone en tagg för kunna köras."
+
+#: RemoveTagTool/RemoveTagTool.py:59 RemoveTagTool/RemoveTagTool.py:61
+msgid "ERROR"
+msgstr "FEL"
+
+#: RemoveTagTool/RemoveTagTool.py:86
+msgid "Add/Remove"
+msgstr "Lägg till/Ta bort"
+
+#: RemoveTagTool/RemoveTagTool.py:87
+msgid "Add or remove tags from objects."
+msgstr "Lägg till eller ta bort taggar från objekt."
+
+#: RemoveTagTool/RemoveTagTool.py:88
+msgid "Add Tags"
+msgstr "Lägg till taggar"
+
+#: RemoveTagTool/RemoveTagTool.py:88
+msgid "Remove Tags"
+msgstr "Ta bort taggar"
+
+#: RemoveTagTool/RemoveTagTool.py:89 RemoveTagTool/RemoveTagTool.py:97
+#: RemoveTagTool/RemoveTagTool.py:105
+msgid "General options"
+msgstr "Allmänna alternativ"
+
+#: RemoveTagTool/RemoveTagTool.py:92
+msgid "People"
+msgstr "Personer"
+
+#: RemoveTagTool/RemoveTagTool.py:92 RemoveTagTool/RemoveTagTool.py:125
+msgid "Families"
+msgstr "Familjer"
+
+#: RemoveTagTool/RemoveTagTool.py:92 RemoveTagTool/RemoveTagTool.py:126
+msgid "Events"
+msgstr "Händelser"
+
+#: RemoveTagTool/RemoveTagTool.py:92 RemoveTagTool/RemoveTagTool.py:127
+msgid "Places"
+msgstr "Platser"
+
+#: RemoveTagTool/RemoveTagTool.py:92 RemoveTagTool/RemoveTagTool.py:128
+msgid "Sources"
+msgstr "Källor"
+
+#: RemoveTagTool/RemoveTagTool.py:93 RemoveTagTool/RemoveTagTool.py:129
+msgid "Citations"
+msgstr "Citeringar"
+
+#: RemoveTagTool/RemoveTagTool.py:93 RemoveTagTool/RemoveTagTool.py:130
+msgid "Repositories"
+msgstr "Arkivplatser"
+
+#: RemoveTagTool/RemoveTagTool.py:93 RemoveTagTool/RemoveTagTool.py:132
+msgid "Media"
+msgstr "Media"
+
+#: RemoveTagTool/RemoveTagTool.py:93 RemoveTagTool/RemoveTagTool.py:133
+msgid "Notes"
+msgstr "Notiser"
+
+#: RemoveTagTool/RemoveTagTool.py:95
+msgid "Category"
+msgstr "Kategori"
+
+#: RemoveTagTool/RemoveTagTool.py:96
+msgid "Choose a category."
+msgstr "Välj en kategori."
+
+#: RemoveTagTool/RemoveTagTool.py:103
+msgid "Choose Tag"
+msgstr "Välj tagg"
+
+#: RemoveTagTool/RemoveTagTool.py:104
+msgid "Choose a tag to remove."
+msgstr "Välj en tagg för att ta bort."
+
+#: RemoveTagTool/RemoveTagTool.py:124
+msgid "Person Filter"
+msgstr "Personfilter"
+
+#: RemoveTagTool/RemoveTagTool.py:124
+msgid "Persons"
+msgstr "Personer"
+
+#: RemoveTagTool/RemoveTagTool.py:125
+msgid "Family Filter"
+msgstr "Familjefilter"
+
+#: RemoveTagTool/RemoveTagTool.py:126
+msgid "Event Filter"
+msgstr "Händelsefilter"
+
+#: RemoveTagTool/RemoveTagTool.py:127
+msgid "Place Filter"
+msgstr "Platsfilter"
+
+#: RemoveTagTool/RemoveTagTool.py:128
+msgid "Source Filter"
+msgstr "Källfilter"
+
+#: RemoveTagTool/RemoveTagTool.py:129
+msgid "Citation Filter"
+msgstr "Citeringsfilter"
+
+#: RemoveTagTool/RemoveTagTool.py:130
+msgid "Repository Filter"
+msgstr "Arkivplatsfilter"
+
+#: RemoveTagTool/RemoveTagTool.py:132
+msgid "Media Filter"
+msgstr "Mediafilter"
+
+#: RemoveTagTool/RemoveTagTool.py:133
+msgid "Note Filter"
+msgstr "Notisfilter"
+
+#: RemoveTagTool/RemoveTagTool.py:140
+msgid "Filter options"
+msgstr "Filteralternativ"
+
+#: RemoveTagTool/RemoveTagTool.py:151
+#, python-format
+msgid "All %s"
+msgstr "Alla %s"
+
+#: RemoveTagTool/RemoveTagTool.py:190
+msgid "Options"
+msgstr "Alternativ"
+
+#: RemoveTagTool/RemoveTagTool.py:198
+msgid ""
+"Unable to run the tool. Please check if your database contains tags, filters "
+"and objects."
+msgstr ""
+"Det går inte att köra verktyget. Vänligen kontrollera om din databas "
+"innehåller taggar, filter och objekt."
+
+#: RemoveTagTool/RemoveTagTool.py:200 RemoveTagTool/RemoveTagTool.py:235
+msgid "WARNING"
+msgstr "VARNING"
+
+#: RemoveTagTool/RemoveTagTool.py:234
+#, python-format
+msgid "No %s objects were found in database."
+msgstr "Inga %s objekt hittades i databasen."
+
+#: RemoveTagTool/RemoveTagTool.py:249
+msgid "Process tags..."
+msgstr "Bearbeta taggar..."
+
+#: RemoveTagTool/RemoveTagTool.py:266
+msgid "added"
+msgstr "tillagda"
+
+#: RemoveTagTool/RemoveTagTool.py:268
+msgid "removed"
+msgstr "borttagna"
+
+#: RemoveTagTool/RemoveTagTool.py:269
+msgid "Tag '{}' was {} to {} {} objects.\n"
+msgstr "Taggen '{}' var {} till {} {} objekten.\n"
+
+#: RemoveTagTool/RemoveTagTool.py:271
+msgid "INFO"
+msgstr "INFO"

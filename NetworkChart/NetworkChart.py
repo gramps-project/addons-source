@@ -1031,7 +1031,7 @@ class NetworkChartOptions(MenuReportOptions):
                         cfill_female_alpha)
 
         cedge_female = ColorOption(_("Female Box Edge"), "#000000")
-        cedge_female.set_help(_("RGB-color for Female box background."))
+        cedge_female.set_help(_("RGB-color for Female box edge."))
         menu.add_option(category_name, "cedge_female", cedge_female)
 
         cnone = ColorOption(_("Other Background"), "#DCDCDC")

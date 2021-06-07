@@ -1,0 +1,189 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Pär Ekholm <pehlm@pekholm.org>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-30 15:05-0500\n"
+"PO-Revision-Date: 2021-06-04 18:18+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"Last-Translator: Pär Ekholm <pehlm@pekholm.se>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: sv_SE\n"
+
+#: QuiltView/QuiltView.gpr.py:30
+msgid "Quilt Chart"
+msgstr "Quiltat diagram"
+
+#: QuiltView/QuiltView.gpr.py:31
+msgid "Charts"
+msgstr "Diagram"
+
+#: QuiltView/QuiltView.gpr.py:32
+msgid "The view shows a quilt chart visualisation of a family tree"
+msgstr "Vyn visar en quiltdiagramsvisualisering av ett släktträd"
+
+#: QuiltView/QuiltView.py:223
+msgid "Quilt chart"
+msgstr "Quiltat diagram"
+
+#: QuiltView/QuiltView.py:307
+msgid "Select the name for which you want to see."
+msgstr "Välj det namn som du vill se."
+
+#: QuiltView/QuiltView.py:312
+msgid "Clear"
+msgstr "Rensa"
+
+#: QuiltView/QuiltView.py:314
+msgid "Clear the entry field in the name selection box."
+msgstr "Rensa inmatningsfältet i namnvalsrutan."
+
+#: QuiltView/QuiltView.py:319
+msgid "Nothing is selected"
+msgstr "Inget är valt"
+
+#: QuiltView/QuiltView.py:375
+msgid "Organize Bookmarks"
+msgstr "Ordna bokmärken"
+
+#: QuiltView/QuiltView.py:572
+#, python-format
+msgid ""
+"You have %(filter)d filtered people, %(count)d people shown on the tree and "
+"%(total)d people in your database."
+msgstr ""
+"Du har %(filter)d filtrerade personer, %(count)d personer som visas i "
+"trädet och %(total)d personer i din databas."
+
+#: QuiltView/QuiltView.py:602
+msgid "Could Not Set a Bookmark"
+msgstr "Kunde inte lägga till ett bokmärke"
+
+#: QuiltView/QuiltView.py:603
+msgid "A bookmark could not be set because no one was selected."
+msgstr "Bokmärke kunde ej läggas till eftersom inget hade valts."
+
+#: QuiltView/QuiltView.py:662
+msgid "Loading individuals"
+msgstr "Laddar individer"
+
+#: QuiltView/QuiltView.py:663
+msgid "Loading the data"
+msgstr "Laddar informationen"
+
+#: QuiltView/QuiltView.py:1053
+msgid "About Quilt View"
+msgstr "Om Quiltad visning"
+
+#: QuiltView/QuiltView.py:1123
+#, python-format
+msgid "Family of %(husband)s and %(spouse)s"
+msgstr "Familj för %(husband)s och %(spouse)s"
+
+#: QuiltView/QuiltView.py:1129 QuiltView/QuiltView.py:1133
+#, python-format
+msgid "Family of %s"
+msgstr "Familj %s"
+
+#: QuiltView/QuiltView.py:1188 QuiltView/QuiltView.py:1317
+msgid "Edit"
+msgstr "Redigera"
+
+#: QuiltView/QuiltView.py:1191 QuiltView/QuiltView.py:1320
+msgid "Edit tags"
+msgstr "Redigera taggar"
+
+#: QuiltView/QuiltView.py:1207 QuiltView/QuiltView.py:1532
+msgid "Children"
+msgstr "Barn"
+
+#: QuiltView/QuiltView.py:1220 QuiltView/QuiltView.py:1545
+msgid "Add child to family"
+msgstr "Lägg till barn till familj"
+
+#: QuiltView/QuiltView.py:1290
+msgid "Add Child to Family"
+msgstr "Lägg till barn till familjen"
+
+#: QuiltView/QuiltView.py:1323
+msgid "_Copy"
+msgstr "_Kopiera"
+
+#: QuiltView/QuiltView.py:1333
+msgid "Spouses"
+msgstr "Makar"
+
+#: QuiltView/QuiltView.py:1338 QuiltView/QuiltView.py:1463
+msgid "Add"
+msgstr "Lägg till"
+
+#: QuiltView/QuiltView.py:1362
+msgid "Siblings"
+msgstr "Syskon"
+
+#: QuiltView/QuiltView.py:1430
+msgid "Parents"
+msgstr "Föräldrar"
+
+#: QuiltView/QuiltView.py:1469
+msgid "Related"
+msgstr "Släkt"
+
+#: QuiltView/QuiltView.py:1500
+msgid "Set as home person"
+msgstr "Ställ in som huvudperson"
+
+#: QuiltView/QuiltView.py:1650
+msgid "Adding Tags"
+msgstr "Lägger till taggar"
+
+#: QuiltView/QuiltView.py:1656
+#, python-format
+msgid "Adding Tags to person (%s)"
+msgstr "Lägger till taggar till person (%s)"
+
+#: QuiltView/QuiltView.py:1661
+#, python-format
+msgid "Adding Tags to family (%s)"
+msgstr "Lägger till taggar till familjen (%s)"
+
+#: QuiltView/QuiltView.py:1865
+msgid "Printing the tree"
+msgstr "Skriver ut trädet"
+
+#: QuiltView/QuiltView.py:1869
+#, python-format
+msgid "Need to print %(pages)s pages (%(format)s format)"
+msgstr "Behöver skriva ut %(pages)s sidor (%(format)s-format)"
+
+#: QuiltView/QuiltView.py:1921
+msgid ""
+"Center on the selected person.\n"
+"The new position of the person will be near the top left corner."
+msgstr ""
+"Centrera för den valda personen.\n"
+"Den nya positionen för personen kommer att bli nära det övre vänstra hörnet."
+
+#: QuiltView/QuiltView.py:1926
+msgid "The path color"
+msgstr "Linjens färg"
+
+#: QuiltView/QuiltView.py:1931
+msgid "The selected person color"
+msgstr "Färgen på den valda personen"
+
+#: QuiltView/QuiltView.py:1936
+msgid "The path transparency"
+msgstr "Linjegenomskinlighet"
+
+#: QuiltView/QuiltView.py:1939
+msgid "General options"
+msgstr "Allmänna alternativ"

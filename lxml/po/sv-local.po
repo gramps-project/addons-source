@@ -1,0 +1,520 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Pär Ekholm <pehlm@pekholm.org>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-10-21 08:49+1100\n"
+"PO-Revision-Date: 2021-05-27 13:03+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"Last-Translator: Pär Ekholm <pehlm@pekholm.se>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: sv_SE\n"
+
+#: lxml/etreeGramplet.gpr.py:9 lxml/etreeGramplet.gpr.py:18
+msgid "etree"
+msgstr "etree"
+
+#: lxml/etreeGramplet.gpr.py:10
+msgid "Gramplet for testing etree with Gramps XML"
+msgstr "Gramplet för testning av etree med Gramps XML"
+
+#: lxml/etreeGramplet.py:85 lxml/lxmlGramplet.py:110
+msgid "Invalid timestamp"
+msgstr "Ogiltig tidsstämpel"
+
+#: lxml/etreeGramplet.py:86 lxml/lxmlGramplet.py:111
+msgid "Unknown"
+msgstr "Okänd"
+
+#: lxml/etreeGramplet.py:139
+msgid "No file parsed..."
+msgstr "Ingen fil tolkades..."
+
+#: lxml/etreeGramplet.py:146 lxml/lxmlGramplet.py:171
+msgid "Run"
+msgstr "Kör"
+
+#: lxml/etreeGramplet.py:205 lxml/etreeGramplet.py:210
+msgid "Number of editions back"
+msgstr "Antal utgåvor tillbaka"
+
+#: lxml/etreeGramplet.py:220 lxml/lxmlGramplet.py:235
+msgid "Space character on filename"
+msgstr "Mellanslagstecken i filnamn"
+
+#: lxml/etreeGramplet.py:220 lxml/lxmlGramplet.py:235
+#, python-format
+msgid "Please fix space on \"%s\""
+msgstr "Vänligen korrigera utrymmet \"%s\""
+
+#: lxml/etreeGramplet.py:245 lxml/lxmlGramplet.py:265
+msgid "Sorry, no support for your OS yet!"
+msgstr "Tyvärr, inget stöd för ditt OS ännu!"
+
+#: lxml/etreeGramplet.py:254 lxml/lxmlGramplet.py:275
+msgid "Is it a compressed .gramps?"
+msgstr "Är det en komprimerad .gramps?"
+
+#: lxml/etreeGramplet.py:254 lxml/lxmlGramplet.py:275
+#, python-format
+msgid "Cannot uncompress \"%s\""
+msgstr "Kan inte packa upp \"%s\""
+
+#: lxml/etreeGramplet.py:256 lxml/etreeGramplet.py:263 lxml/lxmlGramplet.py:278
+#: lxml/lxmlGramplet.py:286
+#, python-format
+msgid ""
+"From:\n"
+" \"%(file1)s\"\n"
+" to:\n"
+" \"%(file2)s\".\n"
+msgstr ""
+"Från:\n"
+" \"%(file1)s\"\n"
+" till:\n"
+" \"%(file2)s\".\n"
+
+#: lxml/etreeGramplet.py:261 lxml/lxmlGramplet.py:283
+#, python-format
+msgid "Cannot copy \"%s\""
+msgstr "Kan inte kopiera \"%s\""
+
+#: lxml/etreeGramplet.py:418
+#, python-format
+msgid "XML: Last %s editions since %s, were at/on :\n"
+msgstr "XML: Den sista %s utgåvan sedan %s, var :\n"
+
+#: lxml/etreeGramplet.py:471
+#, python-format
+msgid ""
+"\n"
+"XML: Number of records and relations : \t%s\n"
+"\n"
+msgstr ""
+"\n"
+"XML: Antal data och relationer : \t%s\n"
+"\n"
+
+#: lxml/etreeGramplet.py:474
+#, python-format
+msgid ""
+"Number of tags : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Antal taggar : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#: lxml/etreeGramplet.py:476
+#, python-format
+msgid ""
+"Number of tags : \n"
+"\t\t\t%s\n"
+msgstr ""
+"Antal taggar : \n"
+"\t\t\t%s\n"
+
+#: lxml/etreeGramplet.py:478
+#, python-format
+msgid ""
+"Number of  events : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Antal  händelser : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#: lxml/etreeGramplet.py:481
+#, python-format
+msgid ""
+"Number of persons : \n"
+"\t\t\t%s\t|\t(%s) and (%s)* surnames\n"
+msgstr ""
+"Antal personer : \n"
+"\t\t\t%s\t|\t(%s) och (%s)* efternamn\n"
+
+#: lxml/etreeGramplet.py:483
+#, python-format
+msgid ""
+"Number of persons : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Antal personer : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#: lxml/etreeGramplet.py:484
+#, python-format
+msgid ""
+"Number of families : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Antal familjer : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#: lxml/etreeGramplet.py:485
+#, python-format
+msgid ""
+"Number of sources : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Antal källor : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#: lxml/etreeGramplet.py:487
+#, python-format
+msgid ""
+"Number of citations : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Antal citeringar : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#: lxml/etreeGramplet.py:490
+#, python-format
+msgid ""
+"Number of places : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Antal platser : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#: lxml/etreeGramplet.py:491
+#, python-format
+msgid ""
+"Number of media objects : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Antal mediaobjekt : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#: lxml/etreeGramplet.py:492
+#, python-format
+msgid ""
+"Number of repositories : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Antal arkivplatser : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#: lxml/etreeGramplet.py:493
+#, python-format
+msgid ""
+"Number of notes : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Antal notiser : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#: lxml/etreeGramplet.py:498
+#, python-format
+msgid ""
+"\n"
+"XML: Number of additional records and relations: \t%s\n"
+msgstr ""
+"\n"
+"XML: Antal ytterligare data och relationer: \t%s\n"
+
+#: lxml/etreeGramplet.py:502
+#, python-format
+msgid ""
+"* loaded Family Tree base:\n"
+" \"%s\"\n"
+msgstr ""
+"* laddade familjeträdsbasen:\n"
+" \"%s\"\n"
+
+#: lxml/lxmlGramplet.gpr.py:9 lxml/lxmlGramplet.gpr.py:18
+msgid "lxml"
+msgstr "lxml"
+
+#: lxml/lxmlGramplet.gpr.py:10
+msgid "Gramplet for testing lxml and XSLT"
+msgstr "Gramplet för testning av lxml och XSLT"
+
+#: lxml/lxmlGramplet.py:67
+msgid "Where is gzip?"
+msgstr "Var är gzip?"
+
+#: lxml/lxmlGramplet.py:67
+msgid "\"gzip\" is missing"
+msgstr "\"gzip\" saknas"
+
+#: lxml/lxmlGramplet.py:89
+msgid "Missing python3 lxml"
+msgstr "python3 lxml saknas"
+
+#: lxml/lxmlGramplet.py:89
+msgid "Please, try to install \"python3 lxml\" package."
+msgstr "Vänligen, försök installera \"python3 lxml\"-paketet."
+
+#: lxml/lxmlGramplet.py:164
+msgid "No file loaded..."
+msgstr "Ingen fil laddades..."
+
+#: lxml/lxmlGramplet.py:298
+msgid "XSD validation (lxml)"
+msgstr "XSD-validering (lxml)"
+
+#: lxml/lxmlGramplet.py:298
+#, python-format
+msgid "Cannot validate \"%(file)s\" !"
+msgstr "Kan inte validera \"%(file)s\" !"
+
+#: lxml/lxmlGramplet.py:306
+#, python-format
+msgid "xmllint: skip DTD validation for \"%(file)s\""
+msgstr "xmllint: hoppa över DTD-validering för \"%(file)s\""
+
+#: lxml/lxmlGramplet.py:318
+#, python-format
+msgid "xmllint: skip RelaxNG validation for \"%(file)s\""
+msgstr "xmllint: hoppa över RelaxNG-validering för \"%(file)s\""
+
+#: lxml/lxmlGramplet.py:329
+msgid "Parsing issue"
+msgstr "Tolkningsproblem"
+
+#: lxml/lxmlGramplet.py:329
+#, python-format
+msgid "Cannot parse content of \"%(file)s\""
+msgstr "Kan inte tolka innehållet av \"%(file)s\""
+
+#: lxml/lxmlGramplet.py:333
+msgid "Gramps version"
+msgstr "Gramps version"
+
+#: lxml/lxmlGramplet.py:333
+#, python-format
+msgid ""
+"Wrong namespace\n"
+"Need: %s"
+msgstr ""
+"Felaktig namnrymd\n"
+"Behöver: %s"
+
+#: lxml/lxmlGramplet.py:337
+msgid "RelaxNG validation"
+msgstr "RelaxNG-validering"
+
+#: lxml/lxmlGramplet.py:337
+#, python-format
+msgid "Cannot validate \"%(file)s\" via RelaxNG schema"
+msgstr "Kan inte validera \"%(file)s\" via RelaxNG-schema"
+
+#: lxml/lxmlGramplet.py:341
+msgid "File issue"
+msgstr "Filproblem"
+
+#: lxml/lxmlGramplet.py:341
+#, python-format
+msgid "Cannot parse \"%(file)s\" via etree"
+msgstr "Kan inte tolka \"%(file)s\" via etree"
+
+#: lxml/lxmlGramplet.py:359
+msgid "Parsing file..."
+msgstr "Tolkar filen..."
+
+#: lxml/lxmlGramplet.py:456
+msgid "Missing header"
+msgstr "Rubrik saknas"
+
+#: lxml/lxmlGramplet.py:456
+msgid ""
+"Not a valid .gramps.\n"
+"Cannot run the gramplet...\n"
+"Please, try to use a .gramps\n"
+"generated by Gramps 4.x."
+msgstr ""
+"Inte en giltig .gramps.\n"
+"Kan inte köra gramplet...\n"
+"Vänligen, försök använda en .gramps\n"
+"genererad av Gramps 4.x."
+
+#: lxml/lxmlGramplet.py:469 lxml/lxmlGramplet.py:474 lxml/lxmlGramplet.py:479
+#: lxml/lxmlGramplet.py:484
+msgid "0"
+msgstr "0"
+
+#: lxml/lxmlGramplet.py:495
+msgid "File parsed with"
+msgstr "Fil tolkad med"
+
+#: lxml/lxmlGramplet.py:498
+msgid "File was generated on "
+msgstr "Filen genererades "
+
+#: lxml/lxmlGramplet.py:498
+msgid " by Gramps "
+msgstr " av Gramps "
+
+#: lxml/lxmlGramplet.py:500
+msgid "Period: "
+msgstr "Period: "
+
+#: lxml/lxmlGramplet.py:502
+msgid " entries for surname(s); no frequency yet"
+msgstr " poster för efternamn; ingen frekvens än"
+
+#: lxml/lxmlGramplet.py:503
+msgid " entries for place(s)"
+msgstr " poster för plats(er)"
+
+#: lxml/lxmlGramplet.py:504
+msgid " note(s)"
+msgstr " notis(er)"
+
+#: lxml/lxmlGramplet.py:505
+msgid " source(s)"
+msgstr " källa/källor"
+
+#: lxml/lxmlGramplet.py:521 lxml/lxmlGramplet.py:717
+msgid "Gallery.html"
+msgstr "Gallery.html"
+
+#: lxml/lxmlGramplet.py:522
+#, python-format
+msgid "2. Has generated a media index on \"%(file)s\".\n"
+msgstr "2. Har genererat ett mediaindex till \"%(file)s\".\n"
+
+#: lxml/lxmlGramplet.py:525
+#, python-format
+msgid "3. Has written entries into \"%(file)s\".\n"
+msgstr "3. Har skrivit poster till \"%(file)s\".\n"
+
+#: lxml/lxmlGramplet.py:544
+msgid "Matches XSD schema."
+msgstr "Matchar XSD-schema."
+
+#: lxml/lxmlGramplet.py:565
+msgid "xmllint: skip DTD validation"
+msgstr "xmllint: hoppa över DTD-validering"
+
+#: lxml/lxmlGramplet.py:589
+msgid "I am looking at ..."
+msgstr "Jag tittar på ..."
+
+#: lxml/lxmlGramplet.py:590
+msgid "Content generated by Gramps"
+msgstr "Innehållet genererat av Gramps"
+
+#: lxml/lxmlGramplet.py:591
+msgid "Surnames"
+msgstr "Efternamn"
+
+#: lxml/lxmlGramplet.py:592
+msgid "Places"
+msgstr "Platser"
+
+#: lxml/lxmlGramplet.py:593
+msgid "List of sources"
+msgstr "Lista över källor"
+
+#: lxml/lxmlGramplet.py:611
+msgid "Australia"
+msgstr "Australien"
+
+#: lxml/lxmlGramplet.py:612
+msgid "Brazil"
+msgstr "Brasilien"
+
+#: lxml/lxmlGramplet.py:613
+msgid "Bulgaria"
+msgstr "Bulgarien"
+
+#: lxml/lxmlGramplet.py:614
+msgid "Canada"
+msgstr "Kanada"
+
+#: lxml/lxmlGramplet.py:615
+msgid "Chile"
+msgstr "Chile"
+
+#: lxml/lxmlGramplet.py:616
+msgid "China"
+msgstr "Kina"
+
+#: lxml/lxmlGramplet.py:617
+msgid "Croatia"
+msgstr "Kroatien"
+
+#: lxml/lxmlGramplet.py:618
+msgid "Czech Republic"
+msgstr "Tjeckien"
+
+#: lxml/lxmlGramplet.py:619
+msgid "England"
+msgstr "England"
+
+#: lxml/lxmlGramplet.py:620
+msgid "Finland"
+msgstr "Finland"
+
+#: lxml/lxmlGramplet.py:621
+msgid "France"
+msgstr "Frankrike"
+
+#: lxml/lxmlGramplet.py:622
+msgid "Germany"
+msgstr "Tyskland"
+
+#: lxml/lxmlGramplet.py:623
+msgid "India"
+msgstr "Indien"
+
+#: lxml/lxmlGramplet.py:624
+msgid "Japan"
+msgstr "Japan"
+
+#: lxml/lxmlGramplet.py:625
+msgid "Norway"
+msgstr "Norge"
+
+#: lxml/lxmlGramplet.py:626
+msgid "Portugal"
+msgstr "Portugal"
+
+#: lxml/lxmlGramplet.py:627
+msgid "Russia"
+msgstr "Ryssland"
+
+#: lxml/lxmlGramplet.py:628
+msgid "Sweden"
+msgstr "Sverige"
+
+#: lxml/lxmlGramplet.py:629
+msgid "United States of America"
+msgstr "Amerikas Förenta Stater"
+
+#: lxml/lxmlGramplet.py:633
+msgid "Name"
+msgstr "Namn"
+
+#: lxml/lxmlGramplet.py:634
+msgid "Country"
+msgstr "Land"
+
+#: lxml/lxmlGramplet.py:695
+#, python-format
+msgid "1. Has generated \"%s\".\n"
+msgstr "1. Har genererat \"%s\".\n"
+
+#: lxml/lxmlGramplet.py:696
+#, python-format
+msgid ""
+"Try to open\n"
+" \"%s\"\n"
+" into your prefered web navigator ..."
+msgstr ""
+"Försöker öppna\n"
+"\"%s\"\n"
+"till din föredragna webbnavigator ..."
+
+#: lxml/lxmlGramplet.py:715
+msgid "Gallery"
+msgstr "Galleri"
