@@ -1363,13 +1363,15 @@ class DescendantIndentedTreeReport(Report):
                                        'exist\nDo you want to attempt to '
                                        'create it.') % self.dest_path,
                                      _('_Yes'),
-                                     _('_No'))
+                                     _('_No'),
+                                     parent=self.user.uistate.window)
             if prompt.run():
                 try:
                     os.mkdir(self.dest_path)
                 except Exception as err:
                     ErrorDialog(_("Failed to create %s: %s") %
-                                (self.dest_path, str(err)))
+                                (self.dest_path, str(err)),
+                                parent=self.user.uistate.window)
                     return
             else:
                 return
@@ -1378,7 +1380,8 @@ class DescendantIndentedTreeReport(Report):
             ErrorDialog(_('Permission problem'),
                         _('You do not have permission to write under the '
                           'directory %s\n\nPlease select another directory '
-                          'or correct the permissions.') % self.dest_path)
+                          'or correct the permissions.') % (self.dest_path),
+                        parent=self.user.uistate.window)
             return
 
         if os.path.isfile(self.desthtml):
@@ -1387,7 +1390,8 @@ class DescendantIndentedTreeReport(Report):
                                        'Do you want to overwrite.') %
                                      (self.desthtml),
                                      _('_Yes'),
-                                     _('_No'))
+                                     _('_No'),
+                                     parent=self.user.uistate.window)
             if not prompt.run():
                 return
 
@@ -1458,7 +1462,8 @@ class DescendantIndentedTreeReport(Report):
                 fp.write(outstr)
 
         except IOError as msg:
-            ErrorDialog(_("Failed writing %s: %s") % (self.desthtml, str(msg)))
+            ErrorDialog(_("Failed writing %s: %s") % (self.desthtml, str(msg)),
+                        parent=self.user.uistate.window)
             return
 
         # Create required directory structure
@@ -1476,7 +1481,8 @@ class DescendantIndentedTreeReport(Report):
             if not os.path.exists(os.path.join(self.dest_path, "json")):
                 os.mkdir(os.path.join(self.dest_path, "json"))
         except OSError as why:
-            ErrorDialog(_("Failed to create directory structure : %s") % (why))
+            ErrorDialog(_("Failed to create directory structure : %s") % (why),
+                        parent=self.user.uistate.window)
             return
 
         try:
@@ -1511,14 +1517,16 @@ class DescendantIndentedTreeReport(Report):
                     plugin_dir, "js", "jquery", "jquery-3.5.1.min.js"),
                 os.path.join(self.dest_path, "js", "jquery"))
         except OSError as why:
-            ErrorDialog(_("Failed to copy web files : %s") % (why))
+            ErrorDialog(_("Failed to copy web files : %s") % (why),
+                        parent=self.user.uistate.window)
             return
 
         # Generate <dest>.js customizing based on options selected
         try:
             self.write_js(self.destjs, self.contraction)
         except IOError as msg:
-            ErrorDialog(_("Failed writing %s: %s") % (self.destjs, str(msg)))
+            ErrorDialog(_("Failed writing %s: %s") % (self.destjs, str(msg)),
+                        parent=self.user.uistate.window)
 
         # Generate <dest>.css options selected such as font-size
         try:
@@ -1623,7 +1631,8 @@ class DescendantIndentedTreeReport(Report):
                 fp.write('}\n\n')
 
         except IOError as msg:
-            ErrorDialog(_("Failed writing %s: %s") % (self.destcss, str(msg)))
+            ErrorDialog(_("Failed writing %s: %s") % (self.destcss, str(msg)),
+                        parent=self.user.uistate.window)
             return
 
         # Genearte json data file to be used
@@ -1642,7 +1651,8 @@ class DescendantIndentedTreeReport(Report):
                 recurse.recurse(generation, self.center_person, None)
 
         except IOError as msg:
-            ErrorDialog(_("Failed writing %s: %s") % (self.destjson, str(msg)))
+            ErrorDialog(_("Failed writing %s: %s") % (self.destjson, str(msg)),
+                        parent=self.user.uistate.window)
             return
 
 #------------------------------------------------------------------------
