@@ -1,0 +1,112 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Pär Ekholm <pehlm@pekholm.org>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-04 18:55-0600\n"
+"PO-Revision-Date: 2021-05-30 11:18+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"Last-Translator: Pär Ekholm <pehlm@pekholm.se>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: sv_SE\n"
+
+#: RelID/relation_tab.gpr.py:35
+msgid "Display relations and distances with the home person"
+msgstr "Visa relationer och avstånd till hempersonen"
+
+#: RelID/relation_tab.gpr.py:36
+msgid "Will display relational informations with the home person"
+msgstr "Kommer att visa relationsinformation till hempersonen"
+
+#: RelID/relation_tab.py:75
+msgid "Relation and distances with root"
+msgstr "Relation och avstånd till början"
+
+#: RelID/relation_tab.py:92
+msgid "Folder Chooser"
+msgstr "Mappväljare"
+
+#: RelID/relation_tab.py:95
+msgid "_Cancel"
+msgstr "_Avbryt"
+
+#: RelID/relation_tab.py:97
+msgid "_Select"
+msgstr "_Välj"
+
+#: RelID/relation_tab.py:99
+msgid "Please, select a folder"
+msgstr "Vänligen, välj en mapp"
+
+#: RelID/relation_tab.py:110
+msgid "Rel_id"
+msgstr "Rel_id"
+
+#: RelID/relation_tab.py:111
+msgid "Relation"
+msgstr "Relation"
+
+#: RelID/relation_tab.py:112
+msgid "Name"
+msgstr "Namn"
+
+#: RelID/relation_tab.py:113
+msgid "up"
+msgstr "upp"
+
+#: RelID/relation_tab.py:114
+msgid "down"
+msgstr "ner"
+
+#: RelID/relation_tab.py:115
+msgid "Common MRA"
+msgstr "Gemensam MRA"
+
+#: RelID/relation_tab.py:116
+msgid "Rank"
+msgstr "Rang"
+
+#: RelID/relation_tab.py:117
+msgid "Period"
+msgstr "Period"
+
+#: RelID/relation_tab.py:126
+msgid "Save"
+msgstr "Spara"
+
+#: RelID/relation_tab.py:164
+msgid "Please wait, filtering..."
+msgstr "Vänligen vänta, filtrerar..."
+
+#: RelID/relation_tab.py:169
+msgid "No default_person"
+msgstr "Ingen standard_person"
+
+#: RelID/relation_tab.py:174
+msgid "Generating relation map..."
+msgstr "Skapar relationskarta..."
+
+#: RelID/relation_tab.py:190
+#, python-format
+msgid ""
+"%d/%d \n"
+" %d/%d seconds \n"
+" %d/%d \n"
+"%f|\t%f"
+msgstr ""
+"%d/%d \n"
+" %d/%d sekunder \n"
+" %d/%d \n"
+"%f|\t%f"
+
+#: RelID/relation_tab.py:308
+msgid "You do not have write rights on this folder"
+msgstr "Du har inte skrivrättigheter för denna mapp"

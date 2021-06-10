@@ -1,0 +1,58 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Pär Ekholm <pehlm@pekholm.org>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-09-14 10:44-0500\n"
+"PO-Revision-Date: 2021-05-17 12:40+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"Last-Translator: Pär Ekholm <pehlm@pekholm.se>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: sv_SE\n"
+
+#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.gpr.py:3
+msgid "Number of ancestors"
+msgstr "Antal förfäder"
+
+#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.gpr.py:4
+msgid "Shows the number of ancestors of the current person"
+msgstr "Visar antalet förfäder för aktuell person"
+
+#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:50
+#, python-format
+msgid "Number of %s's ancestors"
+msgstr "Antal för %ss förfäder"
+
+#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:54
+msgid "Generation"
+msgstr "Generation"
+
+#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:55
+msgid "Found"
+msgstr "Funna"
+
+#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:56
+msgid "Theoretical"
+msgstr "Teoretiskt"
+
+#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:57
+msgid "Percent"
+msgstr "Procent"
+
+#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:65
+msgid ""
+"There were {} of {} ancestors ({}) found.\n"
+"Only individual ancestors were counted. Duplicates caused by pedigree "
+"collapse were ignored."
+msgstr ""
+"Det var {} av {} förfäder ({}) funna.\n"
+"Endast enskilda förfäder räknades. Dubletter orsakade av anförlust "
+"ignorerades."

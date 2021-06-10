@@ -1,0 +1,255 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Pär Ekholm <pehlm@pekholm.org>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-18 11:36-0500\n"
+"PO-Revision-Date: 2021-06-02 18:10+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"Last-Translator: Pär Ekholm <pehlm@pekholm.se>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: sv_SE\n"
+
+#: PluginManager/PluginManager.gpr.py:29
+msgid "Plugin Manager Enhanced"
+msgstr "Förbättrad insticksprogramshanterare"
+
+#: PluginManager/PluginManager.gpr.py:30
+msgid "An Addon/Plugin Manager with several additional capabilities"
+msgstr "En tillägg/insticksprograms-hanterare med många ytterligare funktioner"
+
+#: PluginManager/PluginManager.py:87
+msgid "Plugin Manager - Enhanced"
+msgstr "Insticksprogramshanterare - förbättrad"
+
+#: PluginManager/PluginManager.py:144
+msgid "_Help"
+msgstr "_Hjälp"
+
+#: PluginManager/PluginManager.py:151
+msgid ""
+"Enter search words to filter the addons.\n"
+"All the words must be present somewhere in the row or\n"
+"the addon filename to be included in the search.\n"
+"Word case and order is ignored."
+msgstr ""
+"Ange sökord för att filtrera tilläggen.\n"
+"Alla orden måste finnas någonstans i raden eller\n"
+"tilläggets filnamn som ska inkluderas i sökningen.\n"
+"Kapitalisering och ordning ignoreras."
+
+#: PluginManager/PluginManager.py:155
+msgid "Search..."
+msgstr "Sök..."
+
+#: PluginManager/PluginManager.py:161
+msgid "Check for updated addons now"
+msgstr "Kontrollera uppdaterade tillägg nu"
+
+#: PluginManager/PluginManager.py:168
+msgid "Reload"
+msgstr "Ladda om"
+
+#: PluginManager/PluginManager.py:174 PluginManager/PluginManager.py:739
+msgid "_Close"
+msgstr "_Stäng"
+
+#: PluginManager/PluginManager.py:207
+msgid "Restart..."
+msgstr "Omstart..."
+
+#: PluginManager/PluginManager.py:208
+msgid ""
+"Please Restart Gramps so that your addon changes can be safely completed."
+msgstr "Starta om gramps så att dina tilläggsändringar kan genomföras säkert."
+
+#: PluginManager/PluginManager.py:284
+msgid "Id"
+msgstr "Id"
+
+#: PluginManager/PluginManager.py:285
+msgid "Plugin name"
+msgstr "Insticksmodulnamn"
+
+#: PluginManager/PluginManager.py:286 PluginManager/PluginManager.py:457
+msgid "Description"
+msgstr "Beskrivning"
+
+#: PluginManager/PluginManager.py:287
+msgid "Version"
+msgstr "Version"
+
+#: PluginManager/PluginManager.py:288
+msgid "Authors"
+msgstr "Författare"
+
+#: PluginManager/PluginManager.py:289
+msgid "Email"
+msgstr "E-post"
+
+#: PluginManager/PluginManager.py:290
+msgid "Filename"
+msgstr "Filnamn"
+
+#: PluginManager/PluginManager.py:291
+msgid "Location"
+msgstr "Plats"
+
+#: PluginManager/PluginManager.py:296
+msgid "Loaded"
+msgstr "Laddade"
+
+#: PluginManager/PluginManager.py:299
+msgid "Hidden"
+msgstr "Gömd"
+
+#: PluginManager/PluginManager.py:304 PluginManager/PluginManager.py:701
+msgid "Failed"
+msgstr "Misslyckades"
+
+#: PluginManager/PluginManager.py:377
+msgid "Installation Errors"
+msgstr "Installationsfel"
+
+#: PluginManager/PluginManager.py:378
+msgid "The following addons had errors: "
+msgstr "Följande tillägg hade fel: "
+
+#: PluginManager/PluginManager.py:400
+msgid "Error"
+msgstr "Fel"
+
+#: PluginManager/PluginManager.py:401
+#, python-format
+msgid "Error removing the '%s' directory, The uninstall may have failed"
+msgstr ""
+"Fel vid borttagande av '%s'-katalogen, avinstallationen kan ha misslyckats"
+
+#: PluginManager/PluginManager.py:429
+msgid "Type"
+msgstr "Typ"
+
+#: PluginManager/PluginManager.py:438
+msgid "Status"
+msgstr "Status"
+
+#: PluginManager/PluginManager.py:441
+msgid ""
+"'*' items are supplied by 3rd party authors,\n"
+"<s>strikeout</s> items are hidden"
+msgstr ""
+"'*' poster är tillhandahållna av tredjeparts-författare,\n"
+"<s>överstrukna</s> poster är dolda"
+
+#: PluginManager/PluginManager.py:449
+msgid "Name"
+msgstr "Namn"
+
+#: PluginManager/PluginManager.py:472
+msgid "Info"
+msgstr "Info"
+
+#: PluginManager/PluginManager.py:475 PluginManager/PluginManager.py:586
+msgid "Hide"
+msgstr "Dölj"
+
+#: PluginManager/PluginManager.py:478 PluginManager/PluginManager.py:600
+msgid "Install"
+msgstr "Installera"
+
+#: PluginManager/PluginManager.py:481
+msgid "Edit"
+msgstr "Redigera"
+
+#: PluginManager/PluginManager.py:483
+msgid "Load"
+msgstr "Ladda"
+
+#: PluginManager/PluginManager.py:494
+msgid "Show hidden items"
+msgstr "Visa dolda poster"
+
+#: PluginManager/PluginManager.py:502
+msgid "Show Built-in items"
+msgstr "Visa inbyggda poster"
+
+#: PluginManager/PluginManager.py:509
+msgid "* indicates 3rd party addon"
+msgstr "* indikerar tredjeparts-tillägg"
+
+#: PluginManager/PluginManager.py:514
+msgid "Plugins"
+msgstr "Insticksprogram"
+
+#: PluginManager/PluginManager.py:584
+msgid "Unhide"
+msgstr "Gör synlig"
+
+#: PluginManager/PluginManager.py:603
+msgid "Uninstall"
+msgstr "Avinstallera"
+
+#: PluginManager/PluginManager.py:613
+msgid "Checking Addons Failed"
+msgstr "Kontroll av tillägg misslyckades"
+
+#: PluginManager/PluginManager.py:614
+msgid "The addon repository appears to be unavailable. Please try again later."
+msgstr "Arkivplatsen med tillägg verkar vara otillgänglig. Försök senare."
+
+#: PluginManager/PluginManager.py:628
+msgid ""
+"3rd party addons are not shown until the addons update list is downloaded.  "
+"Would you like to check for updated addons now?"
+msgstr ""
+"Tillägg från tredjepart visas inte förrän listan med uppdateringar är "
+"nedladdad.  Vill du kontrollera om det finns uppdateringar för tillägg?"
+
+#: PluginManager/PluginManager.py:631
+msgid "Yes"
+msgstr "Ja"
+
+#: PluginManager/PluginManager.py:631
+msgid "No"
+msgstr "Nej"
+
+#: PluginManager/PluginManager.py:674
+msgid "*Available"
+msgstr "*Tillgänglig"
+
+#: PluginManager/PluginManager.py:690
+msgid "Built-in"
+msgstr "Inbyggd"
+
+#: PluginManager/PluginManager.py:695
+msgid "*Installed"
+msgstr "*Installerad"
+
+#: PluginManager/PluginManager.py:704
+msgid "Update Available"
+msgstr "Uppdatering tillgänglig"
+
+#: PluginManager/PluginManager.py:733
+#, python-format
+msgid "%(str1)s: %(str2)s"
+msgstr "%(str1)s: %(str2)s"
+
+#: PluginManager/PluginManager.py:733
+msgid "Detailed Info"
+msgstr "Detaljinformation"
+
+#: PluginManager/PluginManager.py:832
+msgid "Updated"
+msgstr "Uppdaterade"
+
+#: PluginManager/PluginManager.py:843
+msgid "updates|New"
+msgstr "Ny"

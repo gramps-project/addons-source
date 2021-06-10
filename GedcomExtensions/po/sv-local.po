@@ -1,0 +1,52 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Pär Ekholm <pehlm@pekholm.org>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2021-05-23 13:03+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"Last-Translator: Pär Ekholm <pehlm@pekholm.se>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: sv_SE\n"
+
+#: GedcomExtensions/GedcomExtensions.gpr.py:31
+msgid "Export GEDCOM Extensions (GED2)"
+msgstr "Exportera GEDCOM-tillägg (GED2)"
+
+#: GedcomExtensions/GedcomExtensions.gpr.py:32
+msgid "GEDCOM Extensions (GED2)"
+msgstr "GEDCOM-tillägg (GED2)"
+
+#: GedcomExtensions/GedcomExtensions.gpr.py:33
+msgid "Extensions to the common GEDCOM format."
+msgstr "Tillägg för det vanliga GEDCOM-formatet."
+
+#: GedcomExtensions/GedcomExtensions.gpr.py:40
+msgid "GEDCOM Extensions options"
+msgstr "Alternativ för GEDCOM-tillägg"
+
+#: GedcomExtensions/GedcomExtensions.py:121
+msgid "Include witnesses"
+msgstr "Ta med vittnen"
+
+#: GedcomExtensions/GedcomExtensions.py:122
+msgid "Include media"
+msgstr "Ta med media"
+
+#: GedcomExtensions/GedcomExtensions.py:151
+#, python-format
+msgid "Could not create %s"
+msgstr "Kunde inte skapa %s"
+
+#: GedcomExtensions/GedcomExtensions.py:154
+msgid "Export failed"
+msgstr "Exportering misslyckades"

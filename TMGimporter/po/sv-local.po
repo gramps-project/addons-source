@@ -1,0 +1,254 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Pär Ekholm <pehlm@pekholm.org>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-10-17 11:17-0500\n"
+"PO-Revision-Date: 2021-05-30 12:42+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"Last-Translator: Pär Ekholm <pehlm@pekholm.se>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: sv_SE\n"
+
+#: TMGimporter/importtmg.gpr.py:63
+msgid "TMG Project Backup"
+msgstr "Säkerhetskopiera TMG-projekt"
+
+#: TMGimporter/importtmg.gpr.py:64 TMGimporter/importtmg.gpr.py:78
+#: TMGimporter/importtmg.gpr.py:91 TMGimporter/importtmg.gpr.py:104
+msgid "Import TMG project files"
+msgstr "Importera TMG-projektfiler"
+
+#: TMGimporter/importtmg.gpr.py:77 TMGimporter/importtmg.gpr.py:90
+#: TMGimporter/importtmg.gpr.py:103
+msgid "TMG Unsupported"
+msgstr "TMG stöds inte"
+
+#: TMGimporter/importtmg.gpr.py:116
+msgid ""
+"TMG Importer Warning: DBF (https://pypi.python.org/pypi/dbf) is required for "
+"this importer to work"
+msgstr ""
+"Varning TMG-importör: DBF (https://pypi.python.org/pypi/dbf) behövs för att "
+"denna importör ska fungera"
+
+#: TMGimporter/importtmg.gpr.py:126
+msgid "TMG Importer Failed to Load"
+msgstr "TMG-importör misslyckades vid laddning"
+
+#: TMGimporter/importtmg.gpr.py:127
+msgid ""
+"\n"
+"\n"
+"TMG Importer is missing the DBF python module.\n"
+"DBF must be installed ( https://pypi.python.org/pypi/dbf ).\n"
+"\n"
+"For more information see\n"
+"<a href=\"https://gramps-project.org/wiki/index.php?title=Addon:TMGimporter"
+"\" title=\"https://gramps-project.org/wiki/index.php?title=Addon:TMGimporter"
+"\">https://gramps-project.org/wiki/index.php?title=Addon:TMGimporter</a> \n"
+"\n"
+"To dismiss all future TMG Importer warnings click Dismiss."
+msgstr ""
+"\n"
+"\n"
+"TMG-importör saknar DBF python-modulen.\n"
+"DBF måste installeras ( https://pypi.python.org/pypi/dbf ).\n"
+"\n"
+"För mer information se\n"
+"<a href=\"https://gramps-project.org/wiki/index.php?title=Addon:TMGimporter"
+"\" title=\"https://gramps-project.org/wiki/index.php?title=Addon:TMGimporter"
+"\">https://gramps-project.org/wiki/index.php?title=Addon:TMGimporter</a> \n"
+"\n"
+"För att avvisa alla framtida TMG-importvarningar klicka på Avvisa."
+
+#: TMGimporter/importtmg.gpr.py:135
+msgid " Dismiss "
+msgstr " Avvisa "
+
+#: TMGimporter/importtmg.gpr.py:136
+msgid "Continue"
+msgstr "Fortsätt"
+
+#: TMGimporter/importtmg.py:88 TMGimporter/importtmg.py:109
+#: TMGimporter/importtmg.py:130
+#, python-format
+msgid "%s could not be opened"
+msgstr "%s kunde inte öppnas"
+
+#: TMGimporter/importtmg.py:89
+#, python-format
+msgid ""
+"Directly importing from TMG files is not supported\n"
+"by the TMG Importer Addon.\n"
+"\n"
+"You need to use an backup copy of the TMG project(*.sqz)\n"
+"\n"
+"Ensure that your TMG project was created by:\n"
+"TMG version 5.x or greater.\n"
+"\n"
+"Your file:\n"
+"*.PJC - Project Configuration File for TMG 5.0 to TMG 9.05\n"
+"\n"
+"Please refer to:\n"
+"%(gramps_wiki_import_pjc_direct_url)s"
+msgstr ""
+"Direkt import från TMG-filer stöds inte\n"
+"av TMG-import-tillägget.\n"
+"\n"
+"Du behöver använda en säkerhetskopia av TMG-projektet(*.sqz)\n"
+"\n"
+"Säkerställ att ditt TMG-projekt skapades av:\n"
+"TMG version 5.x eller högre.\n"
+"\n"
+"Din fil:\n"
+"*.PJC - projektkonfigurationsfil för TMG 5.0 till TMG 9.05\n"
+"\n"
+"Vänligen hänvisa till:\n"
+"%(gramps_wiki_import_pjc_direct_url)s"
+
+#: TMGimporter/importtmg.py:110
+#, python-format
+msgid ""
+"Directly importing from TMG files is not supportedby the TMG Importer Addon."
+"You need to use an backup copy of TMG project(*.sqz)Ensure that your TMG "
+"project was created by:TMG version 5.x or greater.Your file:*.TMG - Version "
+"Control File for TMG 2.0 to TMG 4.0dPlease refer to:"
+"%(gramps_wiki_import_pjc_direct_url)s"
+msgstr ""
+"Direkt import från TMG-filer stöds inteav TMG-import-tillägget.Du behöver "
+"använda en säkerhetskopia av TMG-projektet(*.sqz)Säkerställ att ditt TMG-"
+"projekt skapades av:TMG version 5.x eller högre.Din fil:*.TMG - "
+"versionskontrollfil för TMG 2.0 till TMG 4.0dVänligen hänvisa till:"
+"%(gramps_wiki_import_pjc_direct_url)s"
+
+#: TMGimporter/importtmg.py:131
+#, python-format
+msgid ""
+"Directly importing from TMG files is not supportedby the TMG Importer Addon."
+"You need to use an backup copy of TMG project(*.sqz)Ensure that your TMG "
+"project was created by:TMG version 5.x or greater.Your file:*.VER - Version "
+"Control File for TMG 1.2 and earlierPlease refer to:"
+"%(gramps_wiki_import_pjc_direct_url)s"
+msgstr ""
+"Direkt import från TMG-filer stöds inteav TMG-import-tillägget.Du behöver "
+"använda en säkerhetskopia av TMG-projektet(*.sqz)Säkerställ att ditt TMG-"
+"projekt skapades av:TMG version 5.x eller högre.Din fil:*.VER - "
+"versionskontrollfil för TMG 1.2 och tidigareVänligen hänvisa till:"
+"%(gramps_wiki_import_pjc_direct_url)s"
+
+#: TMGimporter/libtmg.py:1558
+#, python-format
+msgid "Could not create media directory %s"
+msgstr "Kunde inte skapa mediamappen %s"
+
+#: TMGimporter/libtmg.py:1562
+#, python-format
+msgid "Media directory %s is not writable"
+msgstr "Mediamappen %s är inte skrivbar"
+
+#: TMGimporter/libtmg.py:1568
+#, python-format
+msgid ""
+"Media directory %s exists. Delete it first, then restart the import process"
+msgstr "Mediamappen %s finns. Radera den först och starta sedan om importen"
+
+#: TMGimporter/libtmg.py:1598
+#, python-format
+msgid "Error extracting into %s"
+msgstr "Fel vid extrahering till %s"
+
+#: TMGimporter/libtmg.py:1609
+msgid "Base path for relative media set"
+msgstr "Relativ grundsökväg för media är angiven"
+
+#: TMGimporter/libtmg.py:1610
+#, python-format
+msgid ""
+"The base media path of this Family Tree has been set to %s. Consider taking "
+"a simpler path. You can change this in the Preferences, while moving your "
+"media files to the new position, and using the media manager tool, option "
+"'Replace substring in the path' to set correct paths in your media objects."
+msgstr ""
+"Den grundläggande mediasökvägen för detta släktträd har satts till %s. "
+"Fundera på en enklare sökväg. Du kan ändra denna i Inställningar under det "
+"att du flyttar dina mediafiler till den nya platsen och använder "
+"mediahanteringshjälpmedlets alternativ 'Byt ut delsträng i sökvägen' för att "
+"ställa in riktiga sökvägar för dina mediaobjekt."
+
+#: TMGimporter/libtmg.py:1618
+msgid "Cannot set base media path"
+msgstr "Kan inte ställa in mediasökväg"
+
+#: TMGimporter/libtmg.py:1619
+#, python-format
+msgid ""
+"The Family Tree you imported into already has a base media path: "
+"%(orig_path)s. The imported media objects however are relative from the path "
+"%(path)s. You can change the media path in the Preferences or you can "
+"convert the imported files to the existing base media path. You can do that "
+"by moving your media files to the new position, and using the media manager "
+"tool, option 'Replace substring in the path' to set correct paths in your "
+"media objects."
+msgstr ""
+"Det släktträd som du importerat till har redan en grundsökväg för media: "
+"%(orig_path)s. De importerade mediaobjekten är emellertid relativa från "
+"%(path)s. Du kan ändra mediasökvägen i 'Inställningar' eller också så kan du "
+"omvandla de importerade filerna till den befintliga grundsökvägen för media. "
+"Du kan göra detta genom att flytta dina mediafiler till den nya platsen och "
+"använda mediahanteringshjälpmedlets, alternativ 'Byt ut delsträng i sökväg' "
+"för att ställa in riktiga sökvägar för dina mediaobjekt."
+
+#: TMGimporter/libtmg.py:1645 TMGimporter/libtmg.py:1670
+msgid "Database Information"
+msgstr "Databasinformation"
+
+#: TMGimporter/libtmg.py:1647
+msgid "_OK"
+msgstr "_OK"
+
+#: TMGimporter/libtmg.py:1653
+msgid "Setting"
+msgstr "Inställning"
+
+#: TMGimporter/libtmg.py:1654
+msgid "Value"
+msgstr "Värde"
+
+#: TMGimporter/libtmg.glade:15
+msgid "TMG Importer"
+msgstr "TMG-importör"
+
+#: TMGimporter/libtmg.glade:31
+msgid "Unreleased Addon - Work In Progress"
+msgstr "Outgivet tillägg - Pågående arbete"
+
+#: TMGimporter/libtmg.glade:51
+msgid ""
+"Wholly Genes - The Master Genealogist (TMG) Importer\n"
+"\n"
+"Select the TMG Data Set you wish to import."
+msgstr ""
+"Wholly Genes - The Master Genealogist (TMG) importverktyg\n"
+"\n"
+"Välj datauppsättningen från TMG som du önskar importera."
+
+#: TMGimporter/libtmg.glade:77
+msgid "ID"
+msgstr "ID"
+
+#: TMGimporter/libtmg.glade:88
+msgid "Data Set Name"
+msgstr "Namn på datauppsättning"
+
+#: TMGimporter/libtmg.glade:148
+msgid "_Import TMG Data Set"
+msgstr "_Importera TMG datauppsättning"

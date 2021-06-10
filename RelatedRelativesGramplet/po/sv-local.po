@@ -1,0 +1,56 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Pär Ekholm <pehlm@pekholm.org>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-10-21 08:49+1100\n"
+"PO-Revision-Date: 2021-05-29 16:27+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"Last-Translator: Pär Ekholm <pehlm@pekholm.se>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: sv_SE\n"
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:3
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:10
+msgid "Related Relatives"
+msgstr "Relaterade släktingar"
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:4
+msgid "Gramplet showing relatives in a relation"
+msgstr "Gramplet som visar släktingar i en relation"
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:52
+msgid "No Family Tree loaded."
+msgstr "Inget släktträd laddat."
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:93
+msgid "Relations of related people in your database:"
+msgstr "Relationer mellan relaterade personer i din databas:"
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:216
+msgid "and"
+msgstr "och"
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:219
+msgid "are partners and"
+msgstr "är partners och"
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:242
+msgid "Common ancestor"
+msgstr "Gemensam förfader"
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:253
+msgid "No relatives in a relation found"
+msgstr "Inga släktingar i en relation funna"
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:254
+msgid "END"
+msgstr "SLUT"

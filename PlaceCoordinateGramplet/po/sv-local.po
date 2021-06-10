@@ -1,0 +1,364 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Pär Ekholm <pehlm@pekholm.org>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-09-14 10:55-0500\n"
+"PO-Revision-Date: 2021-06-02 10:10+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"Last-Translator: Pär Ekholm <pehlm@pekholm.se>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: sv_SE\n"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:126
+msgid "Organize Bookmarks"
+msgstr "Ordna bokmärken"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:233
+msgid "Places map"
+msgstr "Platskarta"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:264
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:62
+msgid "Place Coordinate Gramplet"
+msgstr "Platskoordinatgramplet"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:444
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:457
+msgid "Selecting all places"
+msgstr "Väljer alla platser"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:469
+msgid ""
+"Right click on the map and select 'show all places' to show all known places "
+"with coordinates. You can change the markers color depending on place type. "
+"You can use filtering."
+msgstr ""
+"Högerklicka på kartan och välj 'visa alla platser' för att visa alla kända "
+"platser med koordinater. Du kan ändra markeringarnas färg beroende på "
+"platstyp. Du kan använda filtrering."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:484
+msgid ""
+"Right click on the map and select 'show all places' to show all known places "
+"with coordinates. You can use the history to navigate on the map. You can "
+"change the markers color depending on place type. You can use filtering."
+msgstr ""
+"Högerklicka på kartan och välj 'visa alla platser' för att visa alla kända "
+"platser med koordinater. Du kan använda historiken för att navigera på "
+"kartan. Du kan ändra markeringarnas färg beroende på platstyp. Du kan "
+"använda filtrering."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:499
+msgid "The place name in the status bar is disabled."
+msgstr "Platsnamn på statusraden är avaktiverat."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:504
+#, python-format
+msgid "The maximum number of places is reached (%d)."
+msgstr "Maximalt antal platser är uppnått (%d)."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:507
+msgid "Some information are missing."
+msgstr "Viss information saknas."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:509
+msgid "Please, use filtering to reduce this number."
+msgstr "Använd filter för att minska antalet."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:511
+msgid "You can modify this value in the geography option."
+msgstr "Du kan ändra detta värde i geografialternativen."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:513
+msgid "In this case, it may take time to show all markers."
+msgstr "I detta fall kan det ta tid att visa alla markörer."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:531
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:536
+msgid "Centering on Place"
+msgstr "Centrera på plats"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:581
+msgid "Unknown"
+msgstr "Okänd"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:584
+msgid "Custom"
+msgstr "Anpassad"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:587
+msgid "Locality"
+msgstr "Trakt/ort"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:590
+msgid "Street"
+msgstr "Gatuadress"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:593
+msgid "Neighborhood"
+msgstr "Grannskap"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:596
+msgid "Borough"
+msgstr "Kommun"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:599
+msgid "Village"
+msgstr "Samhälle"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:602
+msgid "Hamlet"
+msgstr "By"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:605
+msgid "Farm"
+msgstr "Gård"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:608
+msgid "Building"
+msgstr "Byggnad"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:611
+msgid "Number"
+msgstr "Antal"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:614
+msgid "Country"
+msgstr "Land"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:617
+msgid "State"
+msgstr "Delstat"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:620
+msgid "County"
+msgstr "Län"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:623
+msgid "Province"
+msgstr "Landskap/provins"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:626
+msgid "Region"
+msgstr "Region"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:629
+msgid "Department"
+msgstr "Departement"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:632
+msgid "District"
+msgstr "Distrikt"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:635
+msgid "Parish"
+msgstr "Församling"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:638
+msgid "City"
+msgstr "Ort"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:641
+msgid "Town"
+msgstr "Stad"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:644
+msgid "Municipality"
+msgstr "Kommun/Stad"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:648
+msgid "Custom places name"
+msgstr "Vanligt platsnamn"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:657
+msgid "The places marker color"
+msgstr "Markeringsfärg för platser"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:764
+msgid "Map Menu"
+msgstr "Kartmeny"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:767
+msgid "Remove cross hair"
+msgstr "Ta bort hårkors"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:769
+msgid "Add cross hair"
+msgstr "Lägg till hårkors"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:775
+msgid "Add city as place"
+msgstr "Lägg till ort som plats"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:788
+msgid "Add addess as place"
+msgstr "Lägg till adress som plats"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:801
+msgid "Link place"
+msgstr "Länka plats"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:814
+#, python-format
+msgid "Replace '%(map)s' by =>"
+msgstr "Ersätt '%(map)s' med =>"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:833
+#, python-format
+msgid "Clear the '%(map)s' tiles cache."
+msgstr "Nollställ '%(map)s'-rutnätscachen."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:902
+msgid "Edit Place"
+msgstr "Redigera plats"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:907
+msgid "Center on this place"
+msgstr "Centrera på denna plats"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:73
+#, python-brace-format
+msgid "Failed to load the required module {module_name}."
+msgstr "Misslyckades ladda den nödvändiga modulen {module_name}."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:81
+msgid "Don't show again"
+msgstr "Visa inte igen"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:81
+msgid "OK"
+msgstr "OK"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:138
+msgid "Place Coordinate Gramplet view"
+msgstr "Platskoordinatgramplet-vy"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:139
+msgid "View for the place coordinate gramplet."
+msgstr "Visning för platskoordinatgrampleten."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:146
+msgid "Geography"
+msgstr "Geografi"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:154
+msgid "Place and Coordinates"
+msgstr "Plats och koordinater"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:156
+msgid "Gramplet that simplifies setting the coordinates of a place"
+msgstr "Gramplet som förenklar inställningen av koordinaterna för en plats"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:165
+msgid "Place Coordinates"
+msgstr "Platskoordinater"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:215
+msgid "The place was not found. You may clarify the search keywords."
+msgstr "Platsen hittades inte. Du kan klargöra sökorden."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:219
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:247
+msgid "Failed to search for the coordinates due to some unexpected error."
+msgstr ""
+"Det gick inte att söka efter koordinaterna på grund av ett oväntat fel."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:244
+msgid "The place was not found."
+msgstr "Platsen hittades inte."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:269
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:300
+msgid "The place was not identified."
+msgstr "Platsen identifierades inte."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:271
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:302
+msgid "Coordinates were not given."
+msgstr "Koordinater gavs inte."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:286
+msgid "Failed to interpret the input format."
+msgstr "Det gick inte att tolka inmatningsformatet."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:313
+#, python-format
+msgid "Edit Place (%s)"
+msgstr "Redigera plats (%s)"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:332
+#, python-brace-format
+msgid "DB entry [{id}] {name}:"
+msgstr "DB-post [{id}] {name}:"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:337
+#: PlaceCoordinateGramplet/placecoordinate.glade:132
+msgid "Nothing has been searched yet"
+msgstr "Inget har sökts ännu"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:359
+msgid "No place is active"
+msgstr "Ingen plats är aktiv"
+
+#: PlaceCoordinateGramplet/placecoordinate.glade:15
+msgid "Search for:"
+msgstr "Sök efter:"
+
+#: PlaceCoordinateGramplet/placecoordinate.glade:26
+msgid "Found place:"
+msgstr "Hittade plats:"
+
+#: PlaceCoordinateGramplet/placecoordinate.glade:39
+#: PlaceCoordinateGramplet/placecoordinate.glade:81
+msgid "Latitude:"
+msgstr "Latitud:"
+
+#: PlaceCoordinateGramplet/placecoordinate.glade:53
+msgid "No DB entry is selected"
+msgstr "Ingen DB-post är vald"
+
+#: PlaceCoordinateGramplet/placecoordinate.glade:68
+msgid "Postal-Code:"
+msgstr "Postnummer:"
+
+#: PlaceCoordinateGramplet/placecoordinate.glade:94
+#: PlaceCoordinateGramplet/placecoordinate.glade:107
+msgid "Longitude:"
+msgstr "Longitud:"
+
+#: PlaceCoordinateGramplet/placecoordinate.glade:116
+msgid "Show found place externally in Google Maps"
+msgstr "Visa hittad plats externt i Google Maps"
+
+#: PlaceCoordinateGramplet/placecoordinate.glade:203
+msgid ""
+"Take last clicked position\n"
+"from Geography map"
+msgstr ""
+"Ta den senast klickade positionen\n"
+"från geografisk karta"
+
+#: PlaceCoordinateGramplet/placecoordinate.glade:218
+msgid "Search location from DB"
+msgstr "Sök plats från DB"
+
+#: PlaceCoordinateGramplet/placecoordinate.glade:232
+msgid "Apply geo location to Database"
+msgstr "Tillämpa geolokaliseringen i databasen"
+
+#: PlaceCoordinateGramplet/placecoordinate.glade:269
+msgid "Go"
+msgstr "Gå"
+
+#: PlaceCoordinateGramplet/placecoordinate.glade:290
+msgid "Show help"
+msgstr "Visa hjälp"

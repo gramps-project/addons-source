@@ -1,0 +1,127 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Pär Ekholm <pehlm@pekholm.org>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-08 17:10-0500\n"
+"PO-Revision-Date: 2021-05-23 11:24+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"Last-Translator: Pär Ekholm <pehlm@pekholm.se>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: sv_SE\n"
+
+#: ExtractCity/extractcity.gpr.py:33
+msgid "Extract Place Data from a Place Title"
+msgstr "Hämta uppgifter om platser från deras benämning"
+
+#: ExtractCity/extractcity.gpr.py:34
+msgid "Attempts to extract city and state/province from a place title"
+msgstr "Försök att hämta namn på stad/kommun och län från platsers benämning"
+
+#: ExtractCity/extractcity.py:79
+msgid "United States of America"
+msgstr "Amerikas Förenta Stater"
+
+#: ExtractCity/extractcity.py:79
+msgid "Canada"
+msgstr "Kanada"
+
+#: ExtractCity/extractcity.py:79
+msgid "France"
+msgstr "Frankrike"
+
+#: ExtractCity/extractcity.py:79
+msgid "Sweden"
+msgstr "Sverige"
+
+#: ExtractCity/extractcity.py:402
+msgid "Place title"
+msgstr "Platsbenämning"
+
+#: ExtractCity/extractcity.py:403
+msgid "City"
+msgstr "Ort"
+
+#: ExtractCity/extractcity.py:404
+msgid "State"
+msgstr "Delstat"
+
+#: ExtractCity/extractcity.py:405
+msgid "ZIP/Postal Code"
+msgstr "Postnummer"
+
+#: ExtractCity/extractcity.py:406
+msgid "Country"
+msgstr "Land"
+
+#: ExtractCity/extractcity.py:437 ExtractCity/extractcity.py:641
+msgid "Extract Place data"
+msgstr "Extrahera platsdata"
+
+#: ExtractCity/extractcity.py:454
+msgid "Checking Place Titles"
+msgstr "Kontrollerar platstitlar"
+
+#: ExtractCity/extractcity.py:456
+msgid "Looking for place fields"
+msgstr "Söker efter platsfält"
+
+#: ExtractCity/extractcity.py:542
+msgid "No modifications made"
+msgstr "Inga modifieringar gjordes"
+
+#: ExtractCity/extractcity.py:543
+msgid "No place information could be extracted."
+msgstr "Ingen platsinformation kunde hämtas."
+
+#: ExtractCity/extractcity.py:564
+msgid ""
+"Below is a list of Places with the possible data that can be extracted from "
+"the place title. Select the places you wish Gramps to convert."
+msgstr ""
+"Nedanför är en lista med de platser med tänkbara data, som kan hämtas från "
+"platsens benämning. Välj de platser som du vill att Gramps ska konvertera."
+
+#: ExtractCity/extractcity.py:575
+msgid "Select"
+msgstr "Välj"
+
+#: ExtractCity/extractcity.py:591
+msgid "Building display"
+msgstr "Förbereder visning"
+
+#: ExtractCity/changenames.glade:37
+msgid ""
+"Below is a list of the family names that \n"
+"Gramps can convert to correct capitalization. \n"
+"Select the names you wish Gramps to convert. "
+msgstr ""
+"Nedanför är en lista med de efternamn som \n"
+"Gramps kan konvertera till korrekt skiftläge. \n"
+"Välj de namn som du vill att Gramps ska konvertera. "
+
+#: ExtractCity/changenames.glade:94
+msgid "_Toggle Selected"
+msgstr "_Växla vald"
+
+#: ExtractCity/changenames.glade:98
+msgid ""
+"Toggles the checkmarks on selected rows,  Rows can be selected with <ctrl> "
+"(add to group), or <shift> (extend group) click, or with <ctrl> or <shift> "
+"arrow keys and 'space'.  Or <ctrl>'a' for select all."
+msgstr ""
+"Växlar bockarna på valda rader,  Rader kan väljas med <ctrl> (lägg till "
+"grupp), eller <shift> (utvidga gruppen) klicka, eller med <ctrl> eller "
+"<shift> piltangenter och 'mellanslag'.  Eller <ctrl>'a' för att välja alla."
+
+#: ExtractCity/changenames.glade:126
+msgid "_Accept changes and close"
+msgstr "_Godkänn ändringar och stäng"

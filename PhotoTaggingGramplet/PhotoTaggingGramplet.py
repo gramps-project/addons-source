@@ -349,6 +349,7 @@ class PhotoTaggingGramplet(Gramplet):
         column3 = Gtk.TreeViewColumn(title=_('Person'))
         column4 = Gtk.TreeViewColumn(title=_('Age'))
         column5 = Gtk.TreeViewColumn(title=_('XMP Region Name'))
+
         self.treeview.append_column(column1)
         self.treeview.append_column(column2)
         self.treeview.append_column(column3)
