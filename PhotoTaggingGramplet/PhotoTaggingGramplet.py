@@ -182,8 +182,7 @@ class SettingsDialog(PluginWindows.ToolManagedWindowBase):
         PluginWindows.ToolManagedWindowBase.__init__(self, dbstate, uistate,
                                                      None, "SettingsDialog")
 
-        self.ok.set_use_stock(True)
-        self.ok.set_label("gtk-ok")
+        self.ok.set_label(_("_OK"))
 
     def get_title(self):
         return self.title
@@ -208,7 +207,7 @@ class PhotoTaggingGramplet(Gramplet):
 
         self.gui.WIDGET = self.build_gui()
         self.gui.get_container_widget().remove(self.gui.textview)
-        self.gui.get_container_widget().add_with_viewport(self.gui.WIDGET)
+        self.gui.get_container_widget().add(self.gui.WIDGET)
         self.top.show_all()
 
     def on_save(self):
@@ -228,13 +227,13 @@ class PhotoTaggingGramplet(Gramplet):
 
         button_panel = Gtk.HBox()
 
-        self.button_index = Gtk.ToolButton(Gtk.STOCK_INDEX)
-        self.button_add = Gtk.ToolButton(Gtk.STOCK_ADD)
-        self.button_del = Gtk.ToolButton(Gtk.STOCK_REMOVE)
-        self.button_clear = Gtk.ToolButton(Gtk.STOCK_CLEAR)
-        self.button_edit = Gtk.ToolButton(Gtk.STOCK_EDIT)
-        self.button_zoom_in = Gtk.ToolButton(Gtk.STOCK_ZOOM_IN)
-        self.button_zoom_out = Gtk.ToolButton(Gtk.STOCK_ZOOM_OUT)
+        self.button_index = Gtk.ToolButton(stock_id=Gtk.STOCK_INDEX)
+        self.button_add = Gtk.ToolButton(stock_id=Gtk.STOCK_ADD)
+        self.button_del = Gtk.ToolButton(stock_id=Gtk.STOCK_REMOVE)
+        self.button_clear = Gtk.ToolButton(stock_id=Gtk.STOCK_CLEAR)
+        self.button_edit = Gtk.ToolButton(stock_id=Gtk.STOCK_EDIT)
+        self.button_zoom_in = Gtk.ToolButton(stock_id=Gtk.STOCK_ZOOM_IN)
+        self.button_zoom_out = Gtk.ToolButton(stock_id=Gtk.STOCK_ZOOM_OUT)
         # set custom icon for face detect button
         self.button_detect = Gtk.ToolButton()
         theme = Gtk.IconTheme.get_default()
@@ -248,8 +247,8 @@ class PhotoTaggingGramplet(Gramplet):
             face_detect_icon = os.path.join(path, 'gramps-face-detection.svg')
             img.set_from_file(face_detect_icon)
             self.button_detect.set_icon_widget(img)
-        self.button_settings = Gtk.ToolButton(Gtk.STOCK_PREFERENCES)
-        self.button_help = Gtk.ToolButton(Gtk.STOCK_HELP)
+        self.button_settings = Gtk.ToolButton(stock_id=Gtk.STOCK_PREFERENCES)
+        self.button_help = Gtk.ToolButton(stock_id=Gtk.STOCK_HELP)
 
         self.button_index.connect("clicked", self.sel_person_clicked)
         self.button_add.connect("clicked", self.add_person_clicked)
@@ -340,16 +339,16 @@ class PhotoTaggingGramplet(Gramplet):
 
         self.treestore = Gtk.TreeStore(int, GdkPixbuf.Pixbuf, str, str, str)
 
-        self.treeview = Gtk.TreeView(self.treestore)
+        self.treeview = Gtk.TreeView(model=self.treestore)
         self.treeview.set_size_request(400, -1)
         self.treeview.connect("cursor-changed", self.cursor_changed)
         self.treeview.connect("row-activated", self.row_activated)
         self.treeview.connect("button-press-event", self.row_mouse_click)
-        column1 = Gtk.TreeViewColumn(_(''))
-        column2 = Gtk.TreeViewColumn(_('Preview'))
-        column3 = Gtk.TreeViewColumn(_('Person'))
-        column4 = Gtk.TreeViewColumn(_('Age'))
-        column5 = Gtk.TreeViewColumn(_('XMP Region Name'))
+        column1 = Gtk.TreeViewColumn(title='')
+        column2 = Gtk.TreeViewColumn(title=_('Preview'))
+        column3 = Gtk.TreeViewColumn(title=_('Person'))
+        column4 = Gtk.TreeViewColumn(title=_('Age'))
+        column5 = Gtk.TreeViewColumn(title=_('XMP Region Name'))
         self.treeview.append_column(column1)
         self.treeview.append_column(column2)
         self.treeview.append_column(column3)
@@ -543,11 +542,13 @@ class PhotoTaggingGramplet(Gramplet):
         self.regions = []
         self.xmp_regions = []
         image_path = media_path_full(self.dbstate.db, media.get_path())
+        self.selection_widget.loaded = False
         self.selection_widget.load_image(image_path)
-        self.retrieve_backrefs()
-        self.get_xmp_regions(image_path)
-        self.regions = self.regions + self.xmp_regions
-        self.selection_widget.set_regions(self.regions)
+        if self.selection_widget.loaded:
+            self.retrieve_backrefs()
+            self.get_xmp_regions(image_path)
+            self.regions = self.regions + self.xmp_regions
+            self.selection_widget.set_regions(self.regions)
 
     def retrieve_backrefs(self):
         """
@@ -608,8 +609,22 @@ class PhotoTaggingGramplet(Gramplet):
 
             rtype = metadata.get(region_type % i)
             unit = metadata.get(region_unit % i)
+            
+            # ensure region does not exceed bounds of image
+            rect_p1 = x - (w / 2)
+            if rect_p1 < 0:
+                rect_p1 = 0
+            rect_p2 = y - (h / 2)
+            if rect_p2 < 0:
+                rect_p2 = 0
+            rect_p3 = x + (w / 2)
+            if rect_p3 > 100:
+                rect_p3 = 100
+            rect_p4 =  y + (h / 2)
+            if rect_p4 > 100:
+                rect_p4 = 100
 
-            rect = (x - (w / 2), y - (h / 2), x + (w / 2), y + (h / 2))
+            rect = (rect_p1, rect_p2, rect_p3, rect_p4)
             coords = self.selection_widget.proportional_to_real_rect(rect)
             xmp_region = Region(*coords)
             xmp_region.xmp_person = name
@@ -955,7 +970,6 @@ class PhotoTaggingGramplet(Gramplet):
         region.person = person
         region.mediaref = mediaref
 
-
     def clear_ref(self, region):
         if region:
             if region.person:
@@ -1041,12 +1055,10 @@ class PhotoTaggingGramplet(Gramplet):
                 name = ""
                 age = ""
                 xmp_name = region.xmp_person
-
             else:
                 name = ""
                 age = ""
                 xmp_name = ""
-
             thumbnail = self.selection_widget.get_thumbnail(
                 region, THUMBNAIL_IMAGE_SIZE)
             self.treestore.append(None, (i, thumbnail, name, age, xmp_name))
