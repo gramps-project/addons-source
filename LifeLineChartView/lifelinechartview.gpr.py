@@ -28,9 +28,6 @@ from gramps.gen.const import USER_PLUGINS
 from gramps.gen.config import logging
 from gramps.gen.config import config
 from gramps.gen.plug.utils import Zipfile
-inifile = config.register_manager("lifelinechartview_warn")
-inifile.load()
-sects = inifile.get_sections()
 
 import importlib
 
@@ -145,34 +142,34 @@ class ModuleProvider:
         if module:
             return module
 
-        message = _("Failed to load the required module {module_name} "
-                    "version {module_version}.").format(**locals())
+        # Users often refuse to download the modules. However, the modules
+        # are required, so the user can only choose between installing the
+        # requirements or uninstall the plugin. If this warning would be
+        # deactivated but the requirements are not available, then an
+        # ImportError Exception will be caused. So deactivating this warning
+        # will cause another one.
+        message = (
+            _("Failed to load the required module {module_name} "
+            "version {module_version}.")
+            + _("\n\nIt is not possible to use {self.plugin_name} "
+            "without this module. You can either uninstall this plugin, "
+            "or download the module.")).format(**locals())
         logging.warning(self.plugin_name + ': ' + message)
         if self.uistate:
-            from gramps.gui.dialog import QuestionDialog3
-            ok_no_cancel = QuestionDialog3(
+            from gramps.gui.dialog import QuestionDialog2
+            ok_cancel = QuestionDialog2(
                 _(self.plugin_name + ' Plugin'),
                 _(message),
-                _("Don't ask me again"),
                 _("Download module"),
+                _("_Cancel"),
                 parent=self.uistate.window)
-            prompt = ok_no_cancel.run()
-            if prompt == True:
-                # dont ask me again
-                inifile.register(self.plugin_name.lower() +
-                                 '_warn.missingmodules', "")
-                inifile.set(self.plugin_name.lower() +
-                            '_warn.missingmodules', "False")
-                inifile.save()
-                logging.warning(self.plugin_name + ': ' + _(
-                    'The user chose to deactivate further warnings.'))
-                return None
-            elif prompt == -1:
+            prompt = ok_cancel.run()
+            if prompt == False:
                 #cancel
                 logging.info(self.plugin_name + ': ' +
                              _('The user chose to ignore the warning once.'))
                 return None
-            elif prompt == False:
+            elif prompt == True:
                 logging.info(self.plugin_name + ': ' +
                              _('The user chose to install the module.'))
                 output_path = os.path.join(USER_PLUGINS, self.plugin_name)
@@ -190,7 +187,7 @@ class ModuleProvider:
         from urllib.request import urlopen
         from gramps.gen.plug.utils import urlopen_maybe_no_check_cert
         from io import StringIO, BytesIO
-        global Zipfile_bugfix, inifile
+        global Zipfile_bugfix
         import tarfile
         import os
 
@@ -279,11 +276,7 @@ life_line_chart_version_required_str = '.'.join(
 some_import_error = False
 
 try:
-    if('lifelinechartview_warn' not in sects or
-       inifile.get('lifelinechartview_warn.missingmodules') != 'False'):
-        _uistate = locals().get('uistate')
-    else:
-        _uistate = None
+    _uistate = locals().get('uistate')
 
     if _uistate:  # don't bother with any of this unless GUI
         mp=ModuleProvider('LifeLineChartView', _uistate)
@@ -325,7 +318,7 @@ if locals().get('uistate') is None or locals().get('uistate'):
              name=_("Life Line Ancestor Chart"),
              category=("Ancestry", _("Charts")),
              description=_("Persons and their relation in a time based chart"),
-             version = '1.3.16',
+             version = '1.3.17',
              gramps_target_version="5.1",
              status=STABLE,
              fname='lifelinechartview.py',
@@ -339,7 +332,7 @@ if locals().get('uistate') is None or locals().get('uistate'):
              name=_("Life Line Descendant Chart"),
              category=("Ancestry", _("Charts")),
              description=_("Persons and their relation in a time based chart"),
-             version = '1.3.16',
+             version = '1.3.17',
              gramps_target_version="5.1",
              status=STABLE,
              fname='lifelinechartview.py',
@@ -348,12 +341,6 @@ if locals().get('uistate') is None or locals().get('uistate'):
              viewclass='LifeLineChartDescendantView',
              stock_icon='gramps-lifelinedescendantchart-bw',
              )
-
-# reset the warning 'on' setting if updated or new plugin or it loaded ok.
-if _uistate and not some_import_error or locals().get('new_plugin'):
-    inifile.register('lifelinechartview_warn.missingmodules', "")
-    inifile.set('lifelinechartview_warn.missingmodules', "True")
-    inifile.save()
 
 # prevent the view from starting if there is a problem; we still need to
 # register to support plugin manager 'installed' and addon updates correctly

@@ -1,12 +1,14 @@
 import os
 from gramps.gen.utils.file import search_for
-try:
-    import gi
-    gi.require_version('GooCanvas', '2.0')
-    from gi.repository import GooCanvas
-    _GOO = True
-except (ImportError, ValueError):
-    _GOO = False
+import gi
+for goo_ver in ('3.0', '2.0'):
+    try:
+        gi.require_version('GooCanvas', goo_ver)
+        from gi.repository import GooCanvas
+        _GOO = True
+        break
+    except (ImportError, ValueError):
+        _GOO = False
 if os.sys.platform == "win32":
     _DOT = search_for("dot.exe")
 else:
@@ -32,7 +34,7 @@ if(_GOO and _DOT or locals().get('build_script') or
         name  = _("Graph View"),
         category = ("Ancestry", _("Charts")),
         description =  _("Dynamic and interactive graph of relations"),
-        version = '1.0.121',
+        version = '1.0.124',
         gramps_target_version = "5.1",
         status = STABLE,
         fname = 'graphview.py',
@@ -44,7 +46,7 @@ if(_GOO and _DOT or locals().get('build_script') or
 
 from gramps.gen.config import logging
 if not _GOO:
-    warn_msg = _("Graphview Warning:  Goocanvas 2 "
+    warn_msg = _("Graphview Warning:  Goocanvas 2 or 3 "
                  "(https://wiki.gnome.org/action/show/Projects/GooCanvas)"
                  " is required for this view to work")
     logging.log(logging.WARNING, warn_msg)
@@ -71,7 +73,7 @@ if not (_GOO and _DOT) and locals().get('uistate'):
             ('' if _DOT else "GraphViz (<a href=\"http://www.graphviz.org\" "
              "title=\"http://www.graphviz.org\">"
              "http://www.graphviz.org</a>)\n") +
-            ('' if _GOO else "Goocanvas 2 (<a "
+            ('' if _GOO else "Goocanvas 2 or 3 (<a "
              "href=\"https://wiki.gnome.org/action/show/Projects/GooCanvas\" "
              "title=\"https://wiki.gnome.org/action/show/Projects/GooCanvas\">"
              "https://wiki.gnome.org/action/show/Projects/GooCanvas</a>)\n"),

@@ -1,0 +1,142 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Pär Ekholm <pehlm@pekholm.org>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-06 16:42-0500\n"
+"PO-Revision-Date: 2021-05-27 14:08+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"Last-Translator: Pär Ekholm <pehlm@pekholm.se>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: sv_SE\n"
+
+#: MediaReport/media_report.gpr.py:23
+msgid "Media Report"
+msgstr "Mediarapport"
+
+#: MediaReport/media_report.gpr.py:24
+msgid "Generates report including images, image data and notes."
+msgstr "Skapar rapport som inkluderar bilder, bilddata och notiser."
+
+#: MediaReport/media_report.py:106 MediaReport/media_report.py:112
+#: MediaReport/media_report.py:119 MediaReport/media_report.py:125
+msgid "INFO"
+msgstr "INFO"
+
+#: MediaReport/media_report.py:106 MediaReport/media_report.py:119
+msgid "You have to select an image to generate this report."
+msgstr "Du måste välja en bild för att skapa denna rapport."
+
+#: MediaReport/media_report.py:112
+msgid ""
+"You have to select a custom note or uncheck the option 'include custom note' "
+"to generate this report."
+msgstr ""
+"Du måste välja en anpassad notis eller avmarkera alternativet 'ta med "
+"anpassad notis' för att skapa den här rapporten."
+
+#: MediaReport/media_report.py:125
+msgid "This report only supports PDF as output file format."
+msgstr "Den här rapporten stöder endast PDF som filformat för utdata."
+
+#: MediaReport/media_report.py:229
+msgid "General:"
+msgstr "Allmänt:"
+
+#: MediaReport/media_report.py:235
+msgid "Description:"
+msgstr "Beskrivning:"
+
+#: MediaReport/media_report.py:250
+msgid "Image type:"
+msgstr "Bildtyp:"
+
+#: MediaReport/media_report.py:342
+msgid "File does not exist"
+msgstr "Filen finns inte"
+
+#: MediaReport/media_report.py:343
+msgid "Could not add photo to page"
+msgstr "Kunde inte lägga foto till sidan"
+
+#: MediaReport/media_report.py:344
+#, python-format
+msgid "%(str1)s: %(str2)s"
+msgstr "%(str1)s: %(str2)s"
+
+#: MediaReport/media_report.py:426
+msgid "Heading"
+msgstr "Rubrik"
+
+#: MediaReport/media_report.py:427 MediaReport/media_report.py:431
+#: MediaReport/media_report.py:435 MediaReport/media_report.py:439
+#: MediaReport/media_report.py:444 MediaReport/media_report.py:448
+#: MediaReport/media_report.py:453 MediaReport/media_report.py:458
+msgid "Report Options"
+msgstr "Rapportalternativ"
+
+#: MediaReport/media_report.py:429
+msgid "Media"
+msgstr "Media"
+
+#: MediaReport/media_report.py:430
+msgid "Select a media file for this report"
+msgstr "Välj en mediafil för den här rapporten"
+
+#: MediaReport/media_report.py:433
+msgid "Custom note"
+msgstr "Anpassad notis"
+
+#: MediaReport/media_report.py:434
+msgid "Select a note for this report"
+msgstr "Välj en notis för den här rapporten"
+
+#: MediaReport/media_report.py:437
+msgid "Include custom note"
+msgstr "Ta med anpassad notis"
+
+#: MediaReport/media_report.py:438
+msgid "The custom note will be included"
+msgstr "Den anpassade notisen kommer att tas med"
+
+#: MediaReport/media_report.py:442
+msgid "Include referenced people"
+msgstr "Ta med refererade personer"
+
+#: MediaReport/media_report.py:443
+msgid "Referenced people will be included"
+msgstr "Refererade personer kommer att tas med"
+
+#: MediaReport/media_report.py:446
+msgid "Include media data"
+msgstr "Ta med mediadata"
+
+#: MediaReport/media_report.py:447
+msgid "Tags, notes and attributes will be included"
+msgstr "Taggar, notiser och attribut kommer att tas med"
+
+#: MediaReport/media_report.py:450
+msgid "Media width"
+msgstr "Mediabredd"
+
+#: MediaReport/media_report.py:451
+#, no-python-format
+msgid "Maximum media width in % of available page width."
+msgstr "Maximal mediabredd i % av den tillgängliga sidbredden."
+
+#: MediaReport/media_report.py:455
+msgid "Media height"
+msgstr "Mediahöjd"
+
+#: MediaReport/media_report.py:456
+#, no-python-format
+msgid "Maximum media height in % of available page height."
+msgstr "Maximal mediahöjd i % av den tillgängliga sidhöjden."

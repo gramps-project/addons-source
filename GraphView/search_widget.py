@@ -20,9 +20,8 @@
 #
 
 from gi.repository import Gtk, Gdk, GLib, GObject
-from threading import Thread
-from multiprocessing import Process, Queue, Event
-from multiprocessing.queues import Empty
+from threading import Event
+from queue import Queue, Empty
 
 from gramps.gen import datehandler
 from gramps.gen.display.name import displayer
@@ -90,12 +89,7 @@ class SearchWidget(GObject.GObject):
         self.search_words = None
         # search status
         self.stop_search_event = Event()
-        # process and threads for search
-        self.process = None
-        self.all_process = None
-        self.apply_thread = None
-        self.all_apply_thread = None
-
+        # queues used for search
         self.graph_queue = Queue()
         self.other_queue = Queue()
 
@@ -111,6 +105,19 @@ class SearchWidget(GObject.GObject):
         'items_list' - is GooCanvas.CanvasGroup objects list.
         """
         self.items_list = items_list
+
+    def get_items_handles(self):
+        """
+        Convert self.items_list (GooCanvas.CanvasGroup objects) to handles.
+        """
+        items_list = set()
+        if self.items_list:
+            if isinstance(self.items_list[0], str):
+                items_list = self.items_list
+            else:
+                for item in self.items_list:
+                    items_list.add(item.title)  # get handles
+        return items_list
 
     def set_options(self, search_all_db=None, show_images=None,
                     marked_first=None):
@@ -133,24 +140,26 @@ class SearchWidget(GObject.GObject):
 
     def start_search(self, widget, search_words):
         """
-        Start search Process and threads.
+        Start search process.
         """
         self.stop_search()
         self.popover_widget.clear_items()
         self.popover_widget.popup()
 
-        self.stop_search_event.clear()
+        self.stop_search_event = Event()
+
+        current_person_list = self.get_items_handles()
 
         # search for current graph
 
-        self.process = Process(
-            target=self.make_search,
-            args=[self.graph_queue, self.stop_search_event,
-                  self.items_list, search_words])
-        self.process.start()
+        GLib.idle_add(self.make_search, self.graph_queue,
+                      self.stop_search_event, current_person_list.copy(),
+                      search_words,
+                      priority=GLib.PRIORITY_LOW-10)
 
         GLib.idle_add(self.apply_search, self.graph_queue,
-                      self.popover_widget.main_panel, self.stop_search_event)
+                      self.popover_widget.main_panel, self.stop_search_event,
+                      priority=GLib.PRIORITY_LOW)
 
         # search all db
 
@@ -159,70 +168,56 @@ class SearchWidget(GObject.GObject):
             return
 
         all_person_handles = self.dbstate.db.get_person_handles()
-        self.all_process = Process(
-            target=self.make_search,
-            args=[self.other_queue, self.stop_search_event,
-                  all_person_handles, search_words, self.items_list])
-        self.all_process.start()
+
+        GLib.idle_add(self.make_search, self.other_queue,
+                      self.stop_search_event, all_person_handles, search_words,
+                      current_person_list.copy(),
+                      priority=GLib.PRIORITY_LOW-10)
 
         GLib.idle_add(self.apply_search, self.other_queue,
-                      self.popover_widget.other_panel, self.stop_search_event)
+                      self.popover_widget.other_panel, self.stop_search_event,
+                      priority=GLib.PRIORITY_LOW)
 
     def make_search(self, queue, stop_search_event,
                     items_list, search_words, exclude=[]):
         """
-        Search persons in the current graph and after in the db.
-        Use Process to make UI responsiveness.
-        Params 'items_list' and 'exclude' -
-            can be list of person_handles or GooCanvas.CanvasGroup.
+        Recursive search persons in "items_list".
+        Use "GLib.idle_add()" to make UI responsiveness.
+        Params 'items_list' and 'exclude' - list of person_handles.
         """
-        if items_list and len(items_list) > 0:
-            if isinstance(items_list[0], str):
-                items = items_list
-            else:
-                items = set()
-                for item in items_list:
-                    items.add(item.title)  # get handles
-        else:
+        if not items_list or stop_search_event.is_set():
+            queue.put('stop')
             return
 
-        if len(exclude) > 0:
-            if isinstance(exclude[0], str):
-                exclude_handles = exclude
-            else:
-                exclude_handles = set()
-                for item in exclude:
-                    exclude_handles.add(item.title)  # get handles
-        else:
-            exclude_handles = ()
-
-        for item in items:
-            if stop_search_event.is_set():
+        while True:
+            try:
+                item = items_list.pop()
+            except KeyError:
                 queue.put('stop')
                 return
-            if item in exclude_handles:
-                continue
-            person = self.check_person(item, search_words)
-            if person:
-                queue.put(person)
+            if item not in exclude:
+                break
 
-        queue.put('stop')
+        person = self.check_person(item, search_words)
+        if person:
+            queue.put(person)
+
+        GLib.idle_add(self.make_search, queue,
+                      stop_search_event, items_list, search_words, exclude)
 
     def apply_search(self, queue, panel, stop_search_event, count=0):
         """
         Recursive add persons to specified panel from queue.
         Use GLib.idle_add() to communicate with GUI.
         """
+        if stop_search_event.is_set():
+            return
         try:
             person = queue.get(timeout=0.05)
         except Exception as err:
             if type(err) is Empty:
-                GLib.usleep(100)
                 GLib.idle_add(self.apply_search, queue, panel,
                               stop_search_event, count)
-            return
-
-        if stop_search_event.is_set():
             return
 
         if person == 'stop':
@@ -249,20 +244,6 @@ class SearchWidget(GObject.GObject):
 
         GLib.idle_add(self.apply_search, queue, panel,
                       stop_search_event, count)
-
-    def get_person_from_handle(self, person_handle):
-        """
-        Get person from handle.
-        """
-        for i in range(0, 5):   # attempts to get person
-            try:
-                # try used for not person handles
-                # and other problems to get person
-                person = self.dbstate.db.get_person_from_handle(person_handle)
-                return person
-            except:
-                GLib.usleep(100*i)
-        return False
 
     def add_to_result(self, person, panel):
         """
@@ -313,17 +294,9 @@ class SearchWidget(GObject.GObject):
 
     def stop_search(self, widget=None):
         """
-        Stop search Process.
+        Stop search process.
         """
         self.stop_search_event.set()
-
-        for proc in (self.process, self.all_process):
-            if proc and proc.is_alive():
-                proc.join(timeout=0.05)
-                proc.terminate()
-
-        self.graph_queue.close()
-        self.other_queue.close()
 
         self.graph_queue = Queue()
         self.other_queue = Queue()
@@ -332,7 +305,13 @@ class SearchWidget(GObject.GObject):
         """
         Check if person name and id contains all words of the search.
         """
-        person = self.get_person_from_handle(person_handle)
+        try:
+            # try used for not person handles
+            # and other problems to get person
+            person = self.dbstate.db.get_person_from_handle(person_handle)
+        except:
+            return False
+
         if person:
             name = displayer.display_name(person.get_primary_name()).lower()
             search_str = name + person.gramps_id.lower()

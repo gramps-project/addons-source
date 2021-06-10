@@ -1,0 +1,65 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Pär Ekholm <pehlm@pekholm.org>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2021-05-23 11:11+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"Last-Translator: Pär Ekholm <pehlm@pekholm.se>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: sv_SE\n"
+
+#: ExtendedAttributes/ExtendedAttributes.gpr.py:31
+msgid "Extended Person Attributes"
+msgstr "Utökade personattribut"
+
+#: ExtendedAttributes/ExtendedAttributes.gpr.py:32
+msgid "Gramplet showing the attributes of a person"
+msgstr "Gramplet visande en persons attribut"
+
+#: ExtendedAttributes/ExtendedAttributes.gpr.py:39
+#: ExtendedAttributes/ExtendedAttributes.gpr.py:53
+msgid "Extended Attributes"
+msgstr "Utökade attribut"
+
+#: ExtendedAttributes/ExtendedAttributes.gpr.py:45
+msgid "Extended Family Attributes"
+msgstr "Utökade familjeattribut"
+
+#: ExtendedAttributes/ExtendedAttributes.gpr.py:46
+msgid "Gramplet showing the attributes of a family"
+msgstr "Gramplet visande en familjs attribut"
+
+#: ExtendedAttributes/ExtendedAttributes.py:54
+msgid "Double-click on a row to edit the object containing the selected attribute."
+msgstr "Dubbelklicka på en rad för att redigera objektet som innehåller det valda attributet."
+
+#: ExtendedAttributes/ExtendedAttributes.py:58
+msgid "Date"
+msgstr "Datum"
+
+#: ExtendedAttributes/ExtendedAttributes.py:60
+msgid "Key"
+msgstr "Nyckel"
+
+#: ExtendedAttributes/ExtendedAttributes.py:61
+msgid "Value"
+msgstr "Värde"
+
+#: ExtendedAttributes/ExtendedAttributes.py:156
+#, python-format
+msgid "Edit Person (%s)"
+msgstr "Redigera person (%s)"
+
+#: ExtendedAttributes/ExtendedAttributes.py:220
+msgid "Edit Family"
+msgstr "Redigera familj"

@@ -1,0 +1,93 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Pär Ekholm <pehlm@pekholm.org>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"PO-Revision-Date: 2021-05-23 17:23+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"Last-Translator: Pär Ekholm <pehlm@pekholm.se>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: sv_SE\n"
+
+#: HouseTimelineGramplet/housetimeline.gpr.py:3
+#: HouseTimelineGramplet/housetimeline.gpr.py:14
+msgid "House Timeline"
+msgstr "Hustidslinje"
+
+#: HouseTimelineGramplet/housetimeline.gpr.py:4
+msgid "Lists the Residents of an Address by Timeline"
+msgstr "Listar de boende på en adress efter tidslinjen"
+
+#: HouseTimelineGramplet/housetimeline.py:35
+msgid "Double-click name for details"
+msgstr "Dubbelklicka på namnet för detaljer"
+
+#: HouseTimelineGramplet/housetimeline.py:51
+#: HouseTimelineGramplet/housetimeline.py:58
+msgid "House Icon Style"
+msgstr "Mall för husikon"
+
+#: HouseTimelineGramplet/housetimeline.py:59
+msgid "Standard"
+msgstr "Standard"
+
+#: HouseTimelineGramplet/housetimeline.py:60
+msgid "Small"
+msgstr "Liten"
+
+#: HouseTimelineGramplet/housetimeline.py:61
+msgid "Unicode"
+msgstr "Unicode"
+
+#: HouseTimelineGramplet/housetimeline.py:62
+msgid "None"
+msgstr "Inget"
+
+#: HouseTimelineGramplet/housetimeline.py:68
+msgid "Processing..."
+msgstr "Arbetar..."
+
+#: HouseTimelineGramplet/housetimeline.py:90
+msgid ""
+"There are no individuals with Address data. Please add Address data to "
+"people."
+msgstr ""
+"Det finns inga personer med adressdata. Lägg till adressuppgifter till "
+"personer."
+
+#: HouseTimelineGramplet/housetimeline.py:128
+msgid "Location"
+msgstr "Plats"
+
+#: HouseTimelineGramplet/housetimeline.py:129
+msgid "Time In Family"
+msgstr "Tid i familjen"
+
+#: HouseTimelineGramplet/housetimeline.py:130
+msgid "First Resident"
+msgstr "Den första boende"
+
+#: HouseTimelineGramplet/housetimeline.py:131
+msgid "Last Resident"
+msgstr "Den sista boende"
+
+#: HouseTimelineGramplet/housetimeline.py:132
+msgid "Timeline"
+msgstr "Tidslinje"
+
+#: HouseTimelineGramplet/housetimeline.py:133
+msgid "Unknown"
+msgstr "Okänd"
+
+#: HouseTimelineGramplet/housetimeline.py:134
+msgid "Total Known Residents"
+msgstr "Alla kända boende"

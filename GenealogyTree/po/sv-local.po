@@ -1,0 +1,143 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Pär Ekholm <pehlm@pekholm.org>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"PO-Revision-Date: 2021-05-23 13:18+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"Last-Translator: Pär Ekholm <pehlm@pekholm.se>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: sv_SE\n"
+
+#: GenealogyTree/gt_ancestor.py:95 GenealogyTree/gt_descendant.py:95
+#: GenealogyTree/gt_sandclock.py:103
+#, python-format
+msgid "Person %s is not in the Database"
+msgstr "Person %s saknas i databasen"
+
+#: GenealogyTree/gt_ancestor.py:160 GenealogyTree/gt_descendant.py:168
+#: GenealogyTree/gt_grandparent.py:217 GenealogyTree/gt_sandclock.py:227
+msgid "Report Options"
+msgstr "Rapportalternativ"
+
+#: GenealogyTree/gt_ancestor.py:162 GenealogyTree/gt_descendant.py:170
+#: GenealogyTree/gt_grandparent.py:219 GenealogyTree/gt_sandclock.py:230
+msgid "Center Person"
+msgstr "Huvudperson"
+
+#: GenealogyTree/gt_ancestor.py:163 GenealogyTree/gt_descendant.py:171
+#: GenealogyTree/gt_grandparent.py:220 GenealogyTree/gt_sandclock.py:231
+msgid "The center person for the report"
+msgstr "Huvudpersonen för rapporten"
+
+#: GenealogyTree/gt_ancestor.py:166 GenealogyTree/gt_descendant.py:174
+#: GenealogyTree/gt_grandparent.py:223
+msgid "Generations"
+msgstr "Generationer"
+
+#: GenealogyTree/gt_ancestor.py:167 GenealogyTree/gt_descendant.py:175
+#: GenealogyTree/gt_grandparent.py:224 GenealogyTree/gt_sandclock.py:239
+#: GenealogyTree/gt_sandclock.py:243
+msgid "The number of generations to include in the tree"
+msgstr "Antal generationer som skall tas med i trädet"
+
+#: GenealogyTree/gt_ancestor.py:170 GenealogyTree/gt_descendant.py:178
+#: GenealogyTree/gt_grandparent.py:231 GenealogyTree/gt_sandclock.py:250
+msgid "Include images"
+msgstr "Ta med bilder"
+
+#: GenealogyTree/gt_ancestor.py:171 GenealogyTree/gt_descendant.py:179
+#: GenealogyTree/gt_grandparent.py:232 GenealogyTree/gt_sandclock.py:251
+msgid "Include images of people in the nodes."
+msgstr "Ta med bilder på personer i noderna."
+
+#: GenealogyTree/gt_grandparent.py:119
+#, python-format
+msgid "Person %s does not have both a paternal and a maternal grandparent"
+msgstr "Personen %s har inte både en far- och morförälder"
+
+#: GenealogyTree/gt_grandparent.py:227
+msgid "Grandparent family spacing"
+msgstr "Mellanrum för far- och morföräldrars familjer"
+
+#: GenealogyTree/gt_grandparent.py:228
+msgid "Extra spacing of grandparent families (mm)"
+msgstr "Extra mellanrum för far- och morföräldrars familjer (mm)"
+
+#: GenealogyTree/gt_sandclock.py:108
+#, python-format
+msgid "Family %s is not in the Database"
+msgstr "Familj %s saknas i databasen"
+
+#: GenealogyTree/gt_sandclock.py:234
+msgid "Center Family"
+msgstr "Huvudfamilj"
+
+#: GenealogyTree/gt_sandclock.py:235
+msgid "The center family for the report"
+msgstr "Huvudfamiljen för rapporten"
+
+#: GenealogyTree/gt_sandclock.py:238
+msgid "Generations up"
+msgstr "Generationer upp"
+
+#: GenealogyTree/gt_sandclock.py:242
+msgid "Generations down"
+msgstr "Generationer ner"
+
+#: GenealogyTree/gt_sandclock.py:246
+msgid "Include siblings"
+msgstr "Ta med syskon"
+
+#: GenealogyTree/gt_sandclock.py:247
+msgid "Include siblings of ancestors."
+msgstr "Ta med syskon för anor."
+
+#: GenealogyTree/treeplugins.gpr.py:29
+msgid "Ancestor Tree"
+msgstr "Antavla, traditionell"
+
+#: GenealogyTree/treeplugins.gpr.py:30
+msgid "Ancestor tree using LaTeX genealogytree"
+msgstr "Antavla som använder LaTex genealogiträd"
+
+#: GenealogyTree/treeplugins.gpr.py:51
+msgid "Descendant Tree"
+msgstr "Stamtavla"
+
+#: GenealogyTree/treeplugins.gpr.py:52
+msgid "Descendant tree using LaTeX genealogytree"
+msgstr "Stamtavla som använder LaTex genealogiträd"
+
+#: GenealogyTree/treeplugins.gpr.py:73
+msgid "Grandparent Tree"
+msgstr "Träd för far- eller morförälder"
+
+#: GenealogyTree/treeplugins.gpr.py:74
+msgid "Grandparent tree using LaTeX genealogytree"
+msgstr "Träd för far- eller morförälder som använder LaTex genealogiträd"
+
+#: GenealogyTree/treeplugins.gpr.py:95
+msgid "Sandclock Tree"
+msgstr "Timglasträd"
+
+#: GenealogyTree/treeplugins.gpr.py:96
+msgid "Sandclock tree using LaTeX genealogytree"
+msgstr "Timglasträd som använder LaTex genealogiträd"
+
+#: GenealogyTree/treeplugins.gpr.py:117
+msgid "Sandclock Tree for a Family"
+msgstr "Timglasträd för en familj"
+
+#: GenealogyTree/treeplugins.gpr.py:118
+msgid "Sandclock tree for a family using LaTeX genealogytree"
+msgstr "Timglasträd för en familj som använder LaTex genealogiträd"

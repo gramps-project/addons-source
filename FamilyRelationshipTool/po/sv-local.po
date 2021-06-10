@@ -1,0 +1,83 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Pär Ekholm <pehlm@pekholm.org>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-26 17:29-0500\n"
+"PO-Revision-Date: 2021-05-23 11:35+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"Last-Translator: Pär Ekholm <pehlm@pekholm.se>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: sv_SE\n"
+
+#: FamilyRelationshipTool/FamilyRelationshipTool.gpr.py:24
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:88
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:103
+msgid "Family Relationship Tool"
+msgstr "Verktyg för familjesläktskap"
+
+#: FamilyRelationshipTool/FamilyRelationshipTool.gpr.py:25
+msgid "Mass-edit the family relationship type for a group of families."
+msgstr "Massredigera familjesläktskapstypen för en grupp familjer."
+
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:53
+msgid "All Families"
+msgstr "Alla familjer"
+
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:63
+msgid "Family Filter"
+msgstr "Familjefilter"
+
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:64
+msgid ""
+"Choose the set of families to process.\n"
+"Create custom filters if empty."
+msgstr ""
+"Välj den uppsättning familjer som ska bearbetas.\n"
+"Skapa anpassade filter om de är tomma."
+
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:67
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:75
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:92
+msgid "Options"
+msgstr "Alternativ"
+
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:70
+msgid "Relationship Type"
+msgstr "Relationstyp"
+
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:71
+msgid ""
+"Choose the new family relationship type.\n"
+"Custom relationship types aren't supported."
+msgstr ""
+"Välj den nya familjerelationstypen.\n"
+"Anpassade släktskapstyper stöds inte."
+
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:73
+msgid "Married"
+msgstr "Gift"
+
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:73
+msgid "Unmarried"
+msgstr "Ogift"
+
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:74
+msgid "Civil Union"
+msgstr "Registrerat partnerskap"
+
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:74
+msgid "Unknown"
+msgstr "Okänd"
+
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:107
+msgid "Process relationships..."
+msgstr "Bearbetar släktskap..."

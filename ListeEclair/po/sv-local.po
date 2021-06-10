@@ -1,0 +1,88 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Pär Ekholm <pehlm@pekholm.org>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2021-05-26 19:34+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"Last-Translator: Pär Ekholm <pehlm@pekholm.se>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: sv_SE\n"
+
+#: ListeEclair/ListeEclair.gpr.py:3 ListeEclair/ListeEclair.py:97
+#: ListeEclair/ListeEclair.py:104
+msgid "Liste Eclair"
+msgstr "Snabblista"
+
+#: ListeEclair/ListeEclair.gpr.py:4
+msgid "Produit une liste eclair"
+msgstr "Skapar en snabblista"
+
+#: ListeEclair/ListeEclair.py:97
+msgid "Generating report"
+msgstr "Skapar rapport"
+
+#: ListeEclair/ListeEclair.py:253
+msgid "Report Options"
+msgstr "Rapportalternativ"
+
+#: ListeEclair/ListeEclair.py:260
+msgid "Select using filter"
+msgstr "Välj filteranvändning"
+
+#: ListeEclair/ListeEclair.py:261
+msgid "Select places using a filter"
+msgstr "Välj ut platser med hjälp av ett filter"
+
+#: ListeEclair/ListeEclair.py:266
+msgid "Entire Database"
+msgstr "Hela databasen"
+
+#: ListeEclair/ListeEclair.py:273
+msgid "Select places individually"
+msgstr "Välj ut platser individuellt"
+
+#: ListeEclair/ListeEclair.py:274
+msgid "List of places to report on"
+msgstr "Lista på platser att rapportera om"
+
+#: ListeEclair/ListeEclair.py:277
+msgid "Type de Liste"
+msgstr "Listtyp"
+
+#: ListeEclair/ListeEclair.py:279
+msgid "Tiny Tafel"
+msgstr "En liten stamtavla"
+
+#: ListeEclair/ListeEclair.py:280
+msgid "cousingenweb"
+msgstr "cousingenweb"
+
+#: ListeEclair/ListeEclair.py:281
+msgid "Type de liste"
+msgstr "Listtyp"
+
+#: ListeEclair/ListeEclair.py:284
+msgid "Include private data"
+msgstr "Ta med privata objekt"
+
+#: ListeEclair/ListeEclair.py:285
+msgid "Whether to include private data"
+msgstr "Huruvida ta med privata objekt"
+
+#: ListeEclair/ListeEclair.py:301
+msgid "The style used for the liste eclair."
+msgstr "Mallen som används för snabblistan."
+
+#: ListeEclair/ListeEclair.py:314
+msgid "The style used for place title."
+msgstr "Den mall som används för platstiteln."

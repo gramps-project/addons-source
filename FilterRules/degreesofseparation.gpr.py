@@ -24,7 +24,7 @@ register(RULE,
   name = _('People separated less than <N> degrees of <person>'),
   description = _("Filter rule that matches relatives by degrees of "
                   "separation"),
-  version = '1.1.1',
+  version = '1.1.3',
   authors = ["Matthias Kemmer"],
   authors_email = ["matt.familienforschung@gmail.com"],
   gramps_target_version = '5.1',

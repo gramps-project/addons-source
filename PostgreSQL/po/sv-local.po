@@ -1,0 +1,75 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Pär Ekholm <pehlm@pekholm.org>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2021-05-29 16:08+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"Last-Translator: Pär Ekholm <pehlm@pekholm.se>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: sv_SE\n"
+
+#: PostgreSQL/postgresql.gpr.py:26
+msgid "PostgreSQL"
+msgstr "PostgreSQL"
+
+#: PostgreSQL/postgresql.gpr.py:27
+msgid "_PostgreSQL Database"
+msgstr "_PostgreSQL-databas"
+
+#: PostgreSQL/postgresql.gpr.py:28
+msgid "PostgreSQL Database"
+msgstr "PostgreSQL-databas"
+
+#: PostgreSQL/postgresql.gpr.py:42
+msgid "PostgreSQL Warning:  Python psycopg2 module not found."
+msgstr "PostgreSQL-varning: Python-psycopg2-modulen inte funnen."
+
+#: PostgreSQL/postgresql.gpr.py:48
+msgid "PostgreSQL Failed to Load"
+msgstr "PostgreSQL, fel vid laddning"
+
+#: PostgreSQL/postgresql.gpr.py:49
+msgid ""
+"\n"
+"\n"
+"PostgreSQL is missing the psycopg2 python module.\n"
+"For now, it may be possible to install the files manually. See\n"
+"\n"
+"https://gramps-project.org/wiki/index.php?title=PostgreSQL \n"
+"\n"
+"To dismiss all future PostgreSQL warnings click Dismiss."
+msgstr ""
+"\n"
+"\n"
+"PostgreSQL saknar psycopg2 python-modulen.\n"
+"För närvarande kan det vara möjligt att installera filerna manuellt. Se\n"
+"\n"
+"https://gramps-project.org/wiki/index.php?title=PostgreSQL \n"
+"\n"
+"För att avvisa alla framtida PostgreSQL-varningar, click Avvisa."
+
+#: PostgreSQL/postgresql.gpr.py:53
+msgid " Dismiss "
+msgstr " Avvisa "
+
+#: PostgreSQL/postgresql.gpr.py:54
+msgid "Continue"
+msgstr "Fortsätt"
+
+#: PostgreSQL/postgresql.py:68
+msgid "Database version"
+msgstr "Databasversion"
+
+#: PostgreSQL/postgresql.py:69
+msgid "Database module location"
+msgstr "Databasmodulplats"
