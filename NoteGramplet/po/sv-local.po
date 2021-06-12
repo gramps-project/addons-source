@@ -3,55 +3,60 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Peter Landgren <peter.talken@telia.com>, 2011.
+# Pär Ekholm <pehlm@pekholm.org>, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-11-23 19:32+0100\n"
-"PO-Revision-Date: 2011-03-16 16:07+0100\n"
-"Last-Translator: Peter Landgren <peter.talken@telia.com>\n"
-"Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
+"POT-Creation-Date: 2019-06-28 10:11-0500\n"
+"PO-Revision-Date: 2021-05-16 13:51+0200\n"
+"Last-Translator: Pär Ekholm <pehlm@pekholm.se>\n"
+"Language-Team: \n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 1.0\n"
+"X-Generator: Poedit 2.3\n"
 
 #: NoteGramplet/NoteGramplet.gpr.py:3
 msgid "Note Gramplet"
 msgstr "Gramplet för notis"
 
-#: NoteGramplet/NoteGramplet.gpr.py:9
+#: NoteGramplet/NoteGramplet.gpr.py:4
+msgid "Gramplet for editing active person's notes"
+msgstr "Gramplet för redigering av aktiv persons notiser"
+
+#: NoteGramplet/NoteGramplet.gpr.py:10
 msgid "Note"
 msgstr "Anteckning"
 
-#: NoteGramplet/NoteGramplet.py:59
+#: NoteGramplet/NoteGramplet.py:65
 msgid "Active person"
 msgstr "Aktiv person"
 
-#: NoteGramplet/NoteGramplet.py:83
+#: NoteGramplet/NoteGramplet.py:89
 msgid "Family"
 msgstr "Familj"
 
-#: NoteGramplet/NoteGramplet.py:105
+#: NoteGramplet/NoteGramplet.py:111
 msgid "Save"
 msgstr "Spara"
 
-#: NoteGramplet/NoteGramplet.py:108
+#: NoteGramplet/NoteGramplet.py:114
 msgid "Abandon"
 msgstr "Överge"
 
-#: NoteGramplet/NoteGramplet.py:167
-#: NoteGramplet/NoteGramplet.py:248
+#: NoteGramplet/NoteGramplet.py:174 NoteGramplet/NoteGramplet.py:257
 msgid "Person Note"
 msgstr "Personanteckning"
 
-#: NoteGramplet/NoteGramplet.py:252
-msgid "Add Note"
-msgstr "Lägg till notis"
+#: NoteGramplet/NoteGramplet.py:255
+msgid "Save Note"
+msgstr "Spara anteckning"
 
-#: NoteGramplet/NoteGramplet.py:257
-msgid "Edit Note"
-msgstr "Redigera notis"
+#~ msgid "Add Note"
+#~ msgstr "Lägg till notis"
 
-
+#~ msgid "Edit Note"
+#~ msgstr "Redigera notis"

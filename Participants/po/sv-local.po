@@ -1,0 +1,47 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Pär Ekholm <pehlm@pekholm.org>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2021-05-29 13:36+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"Last-Translator: Pär Ekholm <pehlm@pekholm.se>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: sv_SE\n"
+
+#: Participants/Participants.gpr.py:30 Participants/Participants.gpr.py:38
+msgid "Participants"
+msgstr "Deltagare"
+
+#: Participants/Participants.gpr.py:31
+msgid "Gramplet showing the participants in an event"
+msgstr "Gramplet som visar deltagarna i en händelse"
+
+#: Participants/Participants.py:75
+msgid "Double-click on a row to edit the selected participant."
+msgstr "Dubbelklicka på en rad för att redigera den valda deltagaren."
+
+#: Participants/Participants.py:79
+msgid "Name"
+msgstr "Namn"
+
+#: Participants/Participants.py:80
+msgid "Role"
+msgstr "Roll"
+
+#: Participants/Participants.py:81
+msgid "Birth Date"
+msgstr "Födelsedatum"
+
+#: Participants/Participants.py:83
+msgid "Spouses"
+msgstr "Makar"

@@ -296,7 +296,7 @@ msgstr ""
 msgid "Female Background"
 msgstr ""
 
-#: NetworkChart/NetworkChart.py:1023 NetworkChart/NetworkChart.py:1034
+#: NetworkChart/NetworkChart.py:1023
 msgid "RGB-color for Female box background."
 msgstr ""
 
@@ -311,6 +311,10 @@ msgstr ""
 
 #: NetworkChart/NetworkChart.py:1033
 msgid "Female Box Edge"
+msgstr ""
+
+#: NetworkChart/NetworkChart.py:1034
+msgid "RGB-color for Female box edge."
 msgstr ""
 
 #: NetworkChart/NetworkChart.py:1037

@@ -1,0 +1,399 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Pär Ekholm <pehlm@pekholm.org>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-02-10 16:28-0600\n"
+"PO-Revision-Date: 2021-05-24 14:04+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"Last-Translator: Pär Ekholm <pehlm@pekholm.se>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: sv_SE\n"
+
+#: ImportMerge/importmerge.gpr.py:30 ImportMerge/importmerge.py:328
+#: ImportMerge/importmerge.py:707
+msgid "Import and Merge tool"
+msgstr "Verktyg för att importera och slå samman"
+
+#: ImportMerge/importmerge.gpr.py:31
+msgid ""
+"Compares a Gramps XML database with the current one, and allows merging of "
+"the differences."
+msgstr ""
+"Jämför en Gramps XML-databas med den aktuella och möjliggör sammanslagning "
+"av skillnaderna."
+
+#: ImportMerge/importmerge.py:80
+msgid "Import and merge a Gramps XML"
+msgstr "Importera och slå samman en Gramps XML"
+
+#: ImportMerge/importmerge.py:89
+msgid "Missing"
+msgstr "Saknas"
+
+#: ImportMerge/importmerge.py:91
+msgid "Added"
+msgstr "Tillagd"
+
+#: ImportMerge/importmerge.py:93
+msgid "Different"
+msgstr "Olik"
+
+#: ImportMerge/importmerge.py:108
+msgid "Delete original"
+msgstr "Ta bort originalet"
+
+#: ImportMerge/importmerge.py:109 ImportMerge/importmerge.glade:334
+msgid "Ignore"
+msgstr "Ignorera"
+
+#: ImportMerge/importmerge.py:110
+msgid "Add Import"
+msgstr "Lägg till import"
+
+#: ImportMerge/importmerge.py:111
+msgid "Merge into original"
+msgstr "Slå ihop till original"
+
+#: ImportMerge/importmerge.py:112
+msgid "Merge into import"
+msgstr "Slå samman till import"
+
+#: ImportMerge/importmerge.py:113
+msgid "Replace with import"
+msgstr "Ersätt med import"
+
+#: ImportMerge/importmerge.py:114
+msgid "Keep original"
+msgstr "Behåll originalet"
+
+#: ImportMerge/importmerge.py:115 ImportMerge/importmerge.glade:293
+msgid ""
+"Use buttons below to set the 'Action' for each difference.  No changes will "
+"be made to your tree until you press 'Done' and confirm."
+msgstr ""
+"Använd knapparna nedan för att ställa in 'Åtgärd' för varje skillnad.  Inga "
+"ändringar görs i ditt träd förrän du trycker på \"Klart\" och bekräftar."
+
+#: ImportMerge/importmerge.py:118
+msgid ""
+"This item will be deleted from your tree.  Any referenced items were also "
+"marked for deletion."
+msgstr ""
+"Denna post kommer att tas bort från ditt träd.  Alla refererade poster har "
+"också markerats för radering."
+
+#: ImportMerge/importmerge.py:120
+msgid ""
+"This item will not be changed in your tree.  Any referenced items were also "
+"marked for Ignore."
+msgstr ""
+"Denna post kommer inte att ändras i ditt träd.  Alla refererade poster har "
+"också markerats för Ignorera."
+
+#: ImportMerge/importmerge.py:122
+msgid ""
+"This item will be added to your tree.  Any referenced items were also marked "
+"for adding."
+msgstr ""
+"Den här posten läggs till i ditt träd.  Alla refererade poster har också "
+"markerats för att läggas till."
+
+#: ImportMerge/importmerge.py:124
+msgid ""
+"This item will be merged, saving data from your tree.  Any referenced items "
+"were also marked for merging or adding."
+msgstr ""
+"Den här posten slås samman och sparar data från ditt träd.  Alla refererade "
+"poster var också markerade för att slå samman eller läggas till."
+
+#: ImportMerge/importmerge.py:126
+msgid ""
+"This item will be merged, using data from the import.  Any referenced items "
+"were also marked for merging or adding."
+msgstr ""
+"Denna post slås samman med hjälp av data från importen.  Alla refererade "
+"poster var också markerade för att slå samman eller läggas till."
+
+#: ImportMerge/importmerge.py:128
+msgid ""
+"The import data will entirely replace the data in your tree.  Any referenced "
+"items were also marked for replacement or removal."
+msgstr ""
+"Importdata kommer helt att ersätta data i ditt träd.  Alla refererade poster "
+"har också markerats för utbyte eller borttagning."
+
+#: ImportMerge/importmerge.py:130
+msgid ""
+"This item will not be changed in your tree.  Any referenced items were also "
+"marked to keep."
+msgstr ""
+"Denna post kommer inte att ändras i ditt träd.  Alla refererade poster har "
+"också markerats för att behålla."
+
+#: ImportMerge/importmerge.py:145
+msgid "Family"
+msgstr "Familj"
+
+#: ImportMerge/importmerge.py:145
+msgid "Person"
+msgstr "Person"
+
+#: ImportMerge/importmerge.py:145
+msgid "Citation"
+msgstr "Citat"
+
+#: ImportMerge/importmerge.py:145
+msgid "Event"
+msgstr "Händelse"
+
+#: ImportMerge/importmerge.py:145
+msgid "Media"
+msgstr "Media"
+
+#: ImportMerge/importmerge.py:146
+msgid "Note"
+msgstr "Notis"
+
+#: ImportMerge/importmerge.py:146
+msgid "Place"
+msgstr "Plats"
+
+#: ImportMerge/importmerge.py:146
+msgid "Repository"
+msgstr "Arkivplats"
+
+#: ImportMerge/importmerge.py:146
+msgid "Source"
+msgstr "Källa"
+
+#: ImportMerge/importmerge.py:146
+msgid "Tag"
+msgstr "Tagg"
+
+#: ImportMerge/importmerge.py:329
+msgid "Importing data..."
+msgstr "Importerar data..."
+
+#: ImportMerge/importmerge.py:338
+msgid "Import Failure"
+msgstr "Importfel"
+
+#: ImportMerge/importmerge.py:342
+msgid "Searching..."
+msgstr "Letar..."
+
+#: ImportMerge/importmerge.py:406
+msgid "Your Tree and import are the same."
+msgstr "Ditt träd och importen är samma."
+
+#: ImportMerge/importmerge.py:438
+msgid "Last changed"
+msgstr "Senast ändrad"
+
+#: ImportMerge/importmerge.py:451 ImportMerge/importmerge.py:460
+#: ImportMerge/importmerge.py:468 ImportMerge/importmerge.py:476
+msgid "your tree "
+msgstr "ditt träd "
+
+#: ImportMerge/importmerge.py:458 ImportMerge/importmerge.py:466
+#: ImportMerge/importmerge.py:474
+msgid "imported "
+msgstr "importerad "
+
+#: ImportMerge/importmerge.py:481 ImportMerge/importmerge.py:960
+#: ImportMerge/importmerge.py:981
+msgid "Original"
+msgstr "Originalet"
+
+#: ImportMerge/importmerge.py:482 ImportMerge/importmerge.py:961
+#: ImportMerge/importmerge.py:982
+msgid "Imported"
+msgstr "Importerad"
+
+#: ImportMerge/importmerge.py:484 ImportMerge/importmerge.py:963
+#: ImportMerge/importmerge.py:984
+msgid "Result  "
+msgstr "Resultat  "
+
+#: ImportMerge/importmerge.py:709
+msgid "Processing..."
+msgstr "Arbetar..."
+
+#: ImportMerge/importmerge.py:710
+msgid "Import and Merge"
+msgstr "Importera och lägg samman"
+
+#: ImportMerge/importmerge.py:910 ImportMerge/importmerge.glade:407
+msgid "Replace"
+msgstr "Ersätt"
+
+#: ImportMerge/importmerge.py:915
+msgid "Add"
+msgstr "Lägg till"
+
+#: ImportMerge/importmerge.py:920
+msgid "Delete"
+msgstr "Radera"
+
+#: ImportMerge/importmerge.glade:8
+msgid ""
+"A '*' indicates that the action was automarked, a '?' indicates a conflict "
+"between automarks."
+msgstr ""
+"A '*' indikerar att åtgärden var automarkerad, ett '?' indikerar en konflikt "
+"mellan automarkeringar."
+
+#: ImportMerge/importmerge.glade:9
+msgid "Action"
+msgstr "Åtgärd"
+
+#: ImportMerge/importmerge.glade:39
+msgid "Import file"
+msgstr "Importera fil"
+
+#: ImportMerge/importmerge.glade:124
+msgid "Select the difference you wish to examine."
+msgstr "Välj den skillnad du vill undersöka."
+
+#: ImportMerge/importmerge.glade:134
+msgid "Status"
+msgstr "Status"
+
+#: ImportMerge/importmerge.glade:149
+msgid "Object"
+msgstr "Objekt"
+
+#: ImportMerge/importmerge.glade:164
+msgid "ID"
+msgstr "ID"
+
+#: ImportMerge/importmerge.glade:180
+msgid "Object Name/Description"
+msgstr "Objektnamn/Beskrivning"
+
+#: ImportMerge/importmerge.glade:227
+msgid ""
+"Data item details, showing the current treeitem, imported tree item, and "
+"result (when chosen)."
+msgstr ""
+"Information om dataposter, som visar det aktuella trädet, det importerade "
+"trädet och resultatet (när det väljs)."
+
+#: ImportMerge/importmerge.glade:248
+msgid "Object and item"
+msgstr "Objekt och post"
+
+#: ImportMerge/importmerge.glade:264
+msgid "Differences"
+msgstr "Skillnader"
+
+#: ImportMerge/importmerge.glade:320
+msgid "Help"
+msgstr "Hjälp"
+
+#: ImportMerge/importmerge.glade:338
+msgid "This button will ignore the difference, no changes to your tree."
+msgstr "Denna knapp ignorerar skillnaden, inga ändringar i ditt träd."
+
+#: ImportMerge/importmerge.glade:349
+msgid "Unmark"
+msgstr "Avmarkera"
+
+#: ImportMerge/importmerge.glade:353
+msgid "This button will add the imported data as a new object to your tree."
+msgstr ""
+"Den här knappen lägger till importerad data som ett nytt objekt i ditt träd."
+
+#: ImportMerge/importmerge.glade:364
+msgid "Done"
+msgstr "Klart"
+
+#: ImportMerge/importmerge.glade:368
+msgid ""
+"This button will bring up a dialog allowing you to finalize your changes, or "
+"abandon them."
+msgstr ""
+"Denna knapp öppnar en dialogruta där du kan slutföra dina ändringar eller "
+"överge dem."
+
+#: ImportMerge/importmerge.glade:392
+msgid "Merge Original"
+msgstr "Slå samman originalet"
+
+#: ImportMerge/importmerge.glade:396
+msgid ""
+"This button will merge the imported data into your tree with your tree data "
+"as a base."
+msgstr ""
+"Denna knapp slår samman de importerade uppgifterna i ditt träd med dina "
+"träddata som bas."
+
+#: ImportMerge/importmerge.glade:411
+msgid "This button will replace your tree data with the imported data."
+msgstr "Den här knappen ersätter dina träddata med importerad data."
+
+#: ImportMerge/importmerge.glade:422
+msgid "Merge Import"
+msgstr "Slå samman import"
+
+#: ImportMerge/importmerge.glade:426
+msgid ""
+"This button will merge the imported data into your tree with the imported "
+"data as a base."
+msgstr ""
+"Den här knappen slår samman den importerade informationen i ditt träd med "
+"den importerade informationen som bas."
+
+#: ImportMerge/importmerge.glade:437
+msgid "Edit Import"
+msgstr "Redigera import"
+
+#: ImportMerge/importmerge.glade:441
+msgid ""
+"This button will edit the imported data.  The data will still need to be "
+"merged, added or replaced."
+msgstr ""
+"Den här knappen redigerar de importerade uppgifterna.  Uppgifterna måste "
+"fortfarande slås samman, läggas till eller ersättas."
+
+#: ImportMerge/importmerge.glade:464
+msgid "Show more details"
+msgstr "Visa fler detaljer"
+
+#: ImportMerge/importmerge.glade:481
+msgid "Automark Families"
+msgstr "Automarkera familjer"
+
+#: ImportMerge/importmerge.glade:498
+msgid "Automark Parent Families"
+msgstr "Automarkera föräldrafamiljer"
+
+#: ImportMerge/importmerge.glade:551
+msgid "Close _without saving"
+msgstr "Stäng _utan att spara"
+
+#: ImportMerge/importmerge.glade:566
+msgid "_Cancel"
+msgstr "_Avbryt"
+
+#: ImportMerge/importmerge.glade:582
+msgid "_Save"
+msgstr "_Spara"
+
+#: ImportMerge/importmerge.glade:613
+msgid "Save Changes?"
+msgstr "Spara ändringar?"
+
+#: ImportMerge/importmerge.glade:644
+msgid "If you close without saving, the changes you have made will be lost"
+msgstr ""
+"Om du stänger utan att spara, så kommer de ändringar du gjort att förloras"

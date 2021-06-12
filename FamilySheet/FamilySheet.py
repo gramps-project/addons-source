@@ -636,6 +636,8 @@ class FamilySheet(Report):
                 index += 1
                 family = self.database.get_family_from_handle(family_handle)
                 spouse_handle = utils.find_spouse(default_person, family)
+                if not spouse_handle:
+                    continue
                 spouse = self.database.get_person_from_handle(spouse_handle)
                 info, msg = relationship.get_relationship_distance_new(
                         self.database, spouse, person, all_dist=True)

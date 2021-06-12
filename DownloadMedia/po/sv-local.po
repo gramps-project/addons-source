@@ -1,0 +1,56 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Pär Ekholm <pehlm@pekholm.org>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-26 10:18-0500\n"
+"PO-Revision-Date: 2021-05-23 10:43+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"Last-Translator: Pär Ekholm <pehlm@pekholm.se>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: sv_SE\n"
+
+#: DownloadMedia/DownloadMedia.gpr.py:35
+msgid "Download media files from the internet"
+msgstr "Ladda ner mediafiler från internet"
+
+#: DownloadMedia/DownloadMedia.gpr.py:36
+msgid "This tool downloads media files from the internet"
+msgstr "Det här verktyget laddar ner mediafiler från internet"
+
+#: DownloadMedia/DownloadMedia.py:71
+msgid "Download media"
+msgstr "Ladda ner media"
+
+#: DownloadMedia/DownloadMedia.py:87
+msgid "Media downloaded"
+msgstr "Media nedladdat"
+
+#: DownloadMedia/DownloadMedia.py:88
+#, python-format
+msgid "%d media files downloaded"
+msgstr "%d media filer är nedladdade"
+
+#: DownloadMedia/DownloadMedia.py:100
+msgid "Download media tool"
+msgstr "Verktyg för att ladda ner media"
+
+#: DownloadMedia/DownloadMedia.py:106
+msgid "Make sure you are connected to the internet before starting this tool."
+msgstr "Se till att du är uppkopplad till internet innan du startar detta verktyg."
+
+#: DownloadMedia/DownloadMedia.py:171 DownloadMedia/DownloadMedia.py:172
+msgid "Downloading files"
+msgstr "Laddar ner filer"
+
+#: DownloadMedia/DownloadMedia.py:207
+msgid "Media download errors detected"
+msgstr "Fel upptäckt vid nedladdning av media"

@@ -45,9 +45,6 @@ from copy import deepcopy
 import sys, os
 from collections import OrderedDict
 
-from life_line_chart import AncestorChart, DescendantChart
-from life_line_chart import BaseIndividual, BaseFamily, InstanceContainer, estimate_birth_date, estimate_death_date, LifeLineChartNotEnoughInformationToDisplay
-from life_line_chart.InstanceContainer import OrderedDefaultDict
 from gramps.gen.display.name import displayer as name_displayer
 from gramps.gen.display.place import displayer as place_displayer
 from gramps.gen.datehandler import displayer as date_displayer
@@ -68,7 +65,17 @@ except ValueError:
     _trans = glocale.translation
 _ = _trans.gettext
 
-TEXT_CACHE_SIZE = 2000
+try:
+    from life_line_chart import AncestorChart, DescendantChart
+    from life_line_chart import BaseIndividual, BaseFamily, InstanceContainer, estimate_birth_date, estimate_death_date, LifeLineChartNotEnoughInformationToDisplay
+    from life_line_chart.InstanceContainer import OrderedDefaultDict
+except ImportError:
+    # This should not happen. The routines in the gpr.py test the import beforehand.
+    raise Exception(
+        _("LifeLineChartView dependencies are missing. It is not possible to use this plugin "
+        "without them."))
+
+PRERENDER_CACHE_SIZE = 2000
 
 _max_days = {
     1:31,
@@ -690,7 +697,7 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         self.symbols = Symbols()
         self.reload_symbols()
         self.axis_widget = None
-        self.zoom_fix_point = None
+        self.set_zoom_event_handler_id = None
         self.translate_button_locked = False
 
     def set_axis_widget(self, widget):
@@ -772,14 +779,13 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
 
     def set_zoom(self, value, fix_point = None):
         zoom_level = max(0.01, min(1000, value))
-        self.zoom_fix_point = fix_point
+        self.zoom_slider.handler_block(self.set_zoom_event_handler_id)
         self.zoom_slider.set_value(-log10(zoom_level)*10 - 10)
-        #self._set_zoom(value, fix_point)
+        self.zoom_slider.handler_unblock(self.set_zoom_event_handler_id)
+        self._set_zoom(value, fix_point)
 
     def _set_zoom(self, value, fix_point = None):
         zoom_level_backup = self.zoom_level
-        if fix_point is None:
-            fix_point = self.zoom_fix_point
         self.zoom_level = max(0.01, min(1000, value))
         visible_range = (self.get_allocated_width(), self.get_allocated_height())
         if fix_point is None:
@@ -790,7 +796,6 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
             (self.zoom_level / zoom_level_backup) * (
             fix_point[1] + self.upper_left_view_position[1]) - fix_point[1]
         )
-        self.zoom_fix_point = None
         self.view_position_limit_to_bounds()
         self.queue_draw_wrapper()
 
@@ -873,6 +878,10 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         # if self.surface:
         #     ctx.set_source_surface(self.surface, 0, 0)
 
+        tbl = self._config.get('interface.lifelineview-translate_button_locked')
+        if self.translate_button_locked != tbl:
+            self.translate_button.set_active(tbl)
+
         run_profiler = False
         if run_profiler:
             import cProfile
@@ -899,8 +908,10 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         accel_mask = Gtk.accelerator_get_default_mod_mask()
         if eventkey.state & accel_mask == Gdk.ModifierType.CONTROL_MASK and not self.translate_button.get_active():
             self.grab_focus()
-            self.translate_button_locked = not self.translate_button_locked
+            self.translate_button.handler_block(self.translate_button_event_handler)
             self.translate_button.set_active(True)
+            self.translate_button.handler_unblock(self.translate_button_event_handler)
+            self.on_translate_button_toggle()
         if self.translate_button.get_active():
             if Gdk.keyval_name(eventkey.keyval) == 'plus':
                 self.zoom_in()
@@ -947,9 +958,37 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         """grab key release
         """
         if Gdk.keyval_name(eventkey.keyval) in ['Control_L', 'Control_R'] and not self.translate_button_locked:
-            self.translate_button_locked = not self.translate_button_locked
+            self.translate_button.handler_block(self.translate_button_event_handler)
             self.translate_button.set_active(False)
+            self.translate_button.handler_unblock(self.translate_button_event_handler)
+            self.on_translate_button_toggle()
             return True
+
+    def get_map_geometry(self, pos_x, pos_y):
+        visible_range = (self.get_allocated_width(), self.get_allocated_height())
+
+        width = self.life_line_chart_instance.get_full_width()
+        height = self.life_line_chart_instance.get_full_height()
+        aspect_chart = width / height
+        aspect_view = visible_range[0] / visible_range[1]
+
+        map_area_size = [visible_range[0]*self.map_size, visible_range[1]*self.map_size]
+        map_chart_size = [map_area_size[0]*min(1, aspect_chart/aspect_view), map_area_size[1]/max(1, aspect_chart/aspect_view)]
+        # scale_x = map_chart_size[0] / width * self.zoom_level
+        # scale_y = map_chart_size[1] / height * self.zoom_level
+        scale_x = map_chart_size[0] / width
+        # scale_y = map_chart_size[1] / height
+        scale = scale_x
+        map_view_size = [
+            visible_range[0] * scale / self.zoom_level,
+            visible_range[1] * scale / self.zoom_level
+        ]
+
+        map_view_center_position = [
+            -self.upper_left_view_position[0] + (pos_x - (visible_range[0]*0 + map_area_size[0]/2 - map_chart_size[0]/2 + map_view_size[0]*0.5))/scale*self.zoom_level,
+            -self.upper_left_view_position[1] + (pos_y - (visible_range[1] - map_area_size[1]/2 - map_chart_size[1]/2 + map_view_size[1]*0.5))/scale*self.zoom_level
+        ]
+        return visible_range, map_area_size, map_chart_size, map_view_size, map_view_center_position, scale
 
     def on_mouse_down(self, widget, event):
         """
@@ -968,8 +1007,10 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         accel_mask = Gtk.accelerator_get_default_mod_mask()
         if event.state & accel_mask == Gdk.ModifierType.CONTROL_MASK and not self.translate_button.get_active():
             self.grab_focus()
-            self.translate_button_locked = not self.translate_button_locked
+            self.translate_button.handler_block(self.translate_button_event_handler)
             self.translate_button.set_active(True)
+            self.translate_button.handler_unblock(self.translate_button_event_handler)
+            self.on_translate_button_toggle()
 
         if event.button == 1:  # left mouse
             # left mouse on center dot, we translate on left click
@@ -983,31 +1024,7 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
                 self.get_window().set_cursor(cursor)
                 self.translating_map = True
                 self.last_x, self.last_y = event.x, event.y
-
-                visible_range = (self.get_allocated_width(), self.get_allocated_height())
-                arbitrary_clip_offset = max(visible_range)*0.5 # remove text items if their start position is 50%*view_width outside
-
-                width = self.life_line_chart_instance.get_full_width()
-                height = self.life_line_chart_instance.get_full_height()
-                aspect_chart = width / height
-                aspect_view = visible_range[0] / visible_range[1]
-
-                map_area_size = [visible_range[0]*self.map_size, visible_range[1]*self.map_size]
-                map_chart_size = [map_area_size[0]*min(1, aspect_chart/aspect_view), map_area_size[1]/max(1, aspect_chart/aspect_view)]
-                scale_x = map_chart_size[0] / width * self.zoom_level
-                scale_y = map_chart_size[1] / height * self.zoom_level
-                scale_x = map_chart_size[0] / width
-                scale_y = map_chart_size[1] / height
-                scale = scale_x
-                map_view_size = [
-                    visible_range[0] * scale / self.zoom_level,
-                    visible_range[1] * scale / self.zoom_level
-                ]
-
-                map_view_center_position = [
-                    -self.upper_left_view_position[0] + (event.x - (visible_range[0]*0 + map_area_size[0]/2 - map_chart_size[0]/2 + map_view_size[0]*0.5))/scale*self.zoom_level,
-                    -self.upper_left_view_position[1] + (event.y - (visible_range[1] - map_area_size[1]/2 - map_chart_size[1]/2 + map_view_size[1]*0.5))/scale*self.zoom_level
-                ]
+                visible_range, map_area_size, map_chart_size, map_view_size, map_view_center_position, __ = self.get_map_geometry(event.x, event.y)
 
                 self.center_delta_xy = (
                     map_view_center_position[0],
@@ -1061,11 +1078,15 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         accel_mask = Gtk.accelerator_get_default_mod_mask()
         if event.state & accel_mask == Gdk.ModifierType.CONTROL_MASK and not self.translate_button.get_active():
             self.grab_focus()
-            self.translate_button_locked = not self.translate_button_locked
+            self.translate_button.handler_block(self.translate_button_event_handler)
             self.translate_button.set_active(True)
+            self.translate_button.handler_unblock(self.translate_button_event_handler)
+            self.on_translate_button_toggle()
         if self.translate_button.get_active():
             # event.state & accel_mask == Gdk.ModifierType.CONTROL_MASK:
             if event.direction == Gdk.ScrollDirection.SMOOTH:
+                # smooth scrolling supported since gtk 3.24
+                # -> https://developer.gnome.org/gtk3/stable/GtkEventControllerScroll.html
                 hasdeltas, dx, dy = event.get_scroll_deltas()
                 self.set_zoom(self.zoom_level / (1 + max(-0.9, min(10, 0.25 * dy))), fix_point=(event.x, event.y))
             elif event.direction == Gdk.ScrollDirection.UP:
@@ -1102,17 +1123,18 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         return True
 
     def translate_button_clicked(self, button):
-        self.translate_button_locked = not self.translate_button_locked #not self.translate_button.get_active()
+        self.translate_button_locked = self.translate_button.get_active()
         self.on_translate_button_toggle()
 
     def on_translate_button_toggle(self):
+        self._config.set('interface.lifelineview-translate_button_locked', self.translate_button_locked)
         cursor = None
         if not self.translate_button.get_active():
             cursor = Gdk.Cursor(Gdk.CursorType.ARROW)
             self.get_window().set_cursor(cursor)
         else:
             try:
-                cursor = Gdk.Cursor.new_from_name(widget.get_display(), 'grab')
+                cursor = Gdk.Cursor.new_from_name(self.get_display(), 'grab')
             except:
                 cursor = Gdk.Cursor(Gdk.CursorType.HAND1)
         if cursor is not None:
@@ -1171,30 +1193,7 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
                 self.center_delta_xy = (self.last_x - event.x,
                                         self.last_y - event.y)
         if self.translating_map:
-            visible_range = (self.get_allocated_width(), self.get_allocated_height())
-            arbitrary_clip_offset = max(visible_range)*0.5 # remove text items if their start position is 50%*view_width outside
-
-            width = self.life_line_chart_instance.get_full_width()
-            height = self.life_line_chart_instance.get_full_height()
-            aspect_chart = width / height
-            aspect_view = visible_range[0] / visible_range[1]
-
-            map_area_size = [visible_range[0]*self.map_size, visible_range[1]*self.map_size]
-            map_chart_size = [map_area_size[0]*min(1, aspect_chart/aspect_view), map_area_size[1]/max(1, aspect_chart/aspect_view)]
-            scale_x = map_chart_size[0] / width * self.zoom_level
-            scale_y = map_chart_size[1] / height * self.zoom_level
-            scale_x = map_chart_size[0] / width
-            scale_y = map_chart_size[1] / height
-            scale = scale_x
-            map_view_size = [
-                visible_range[0] * scale / self.zoom_level,
-                visible_range[1] * scale / self.zoom_level
-            ]
-
-            map_view_center_position = [
-                -self.upper_left_view_position[0] + (event.x - (visible_range[0]*0 + map_area_size[0]/2 - map_chart_size[0]/2 + map_view_size[0]*0.5))/scale*self.zoom_level,
-                -self.upper_left_view_position[1] + (event.y - (visible_range[1] - map_area_size[1]/2 - map_chart_size[1]/2 + map_view_size[1]*0.5))/scale*self.zoom_level
-            ]
+            visible_range, map_area_size, map_chart_size, map_view_size, map_view_center_position, __ = self.get_map_geometry(event.x, event.y)
 
             self.center_delta_xy = (
                 map_view_center_position[0],
@@ -1235,8 +1234,10 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
         accel_mask = Gtk.accelerator_get_default_mod_mask()
         if event.state & accel_mask == Gdk.ModifierType.CONTROL_MASK and not self.translate_button.get_active():
             self.grab_focus()
-            self.translate_button_locked = not self.translate_button_locked
+            self.translate_button.handler_block(self.translate_button_event_handler)
             self.translate_button.set_active(True)
+            self.translate_button.handler_unblock(self.translate_button_event_handler)
+            self.on_translate_button_toggle()
         ctrl_is_pressed = self.translate_button.get_active()
         if self.translating_ctrl or self.translating_map:
             cursor = None
@@ -1262,6 +1263,7 @@ class LifeLineChartBaseWidget(Gtk.DrawingArea):
 
         self.last_x, self.last_y = None, None
         #self.draw()
+        self.prerender_cache.clear()
         self.queue_draw_wrapper()
         return True
 
@@ -1371,7 +1373,7 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
         self.filter = None
         self.chart_items = []
         self.image_cache = {}
-        self.text_cache = {}
+        self.prerender_cache = {}
         self.zoom_level = 1.0
         self.zoom_level_backup = 1.0
         self.life_line_chart_instance = None
@@ -1384,6 +1386,7 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
         self.set_values(None, None)
         LifeLineChartBaseWidget.__init__(
             self, dbstate, uistate, callback_popup)
+        self.background_color = self.uistate.window.get_style_context().get_background_color(Gtk.StateFlags.ACTIVE)
         #self.ic = get_dbdstate_instance_container(self.dbstate)
 
     def set_values(self, root_person_handle, filtr):
@@ -1430,6 +1433,7 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                         instance_container=get_dbdstate_instance_container(self.dbstate))
 
                 self.text_color = self.uistate.window.get_style_context().get_color(Gtk.StateFlags.NORMAL)
+                self.background_color = self.uistate.window.get_style_context().get_background_color(Gtk.StateFlags.ACTIVE)
                 if self.text_color.red > 0.5:
                     # dark theme
                     self.life_line_chart_instance._colors = self.life_line_chart_instance.COLOR_CONFIGURATIONS['dark']
@@ -1549,20 +1553,39 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
             for key, item in gr_individual.items:
                 sorted_individual_dict[key].append(item)
         sorted_individual_flat_item_list = []
-        pure_text_layers = ['layer_birth_label', 'layer_death_label', 'layer_marriage_label']
+        pure_render_buffers = ['layer_birth_label', 'layer_death_label', 'layer_marriage_label']
         for key in sorted(sorted_individual_dict.keys()):
-            if key[1] in pure_text_layers:
-                # pure text layers are prerendered and cached in self.text_cache
+            if key[1] in pure_render_buffers:
+                # pure text layers are prerendered and cached in self.prerender_cache
                 sorted_individual_flat_item_list += [{
-                    'type': 'text_layer',
+                    'type': 'renderBuffer',
                     'items': sorted_individual_dict[key]
                 }]
             else:
-                sorted_individual_flat_item_list += sorted_individual_dict[key]
-
+                sorted_individual_flat_item_list += [{
+                    'type': 'renderBuffer',
+                    'items': sorted_individual_dict[key]
+                }]
+                if key[1] == 'layer_life_lines':
+                    sorted_individual_flat_item_list[-1]['target'] = 'map'
+                for v in sorted_individual_dict[key]:
+                    if v['type']=='path':
+                        try:
+                            d = v.copy()
+                        except Exception as e:
+                            logger.error(str(e) + '\n' + str(v))
+                        d['type'] = 'pathForHighlighting'
+                        sorted_individual_flat_item_list.append(d)
+                    if v['type']=='image':
+                        try:
+                            d = v.copy()
+                        except Exception as e:
+                            logger.error(str(e) + '\n' + str(v))
+                        d['type'] = 'imageForHighlighting'
+                        sorted_individual_flat_item_list.append(d)
         self.chart_items = additional_items + sorted_individual_flat_item_list
         self.image_cache = {}
-        self.text_cache = {}
+        self.prerender_cache = {}
         try:
             if new_root_individual:
                 self.fit_to_page()
@@ -1649,8 +1672,10 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                 pass
             #ctx.scale(scale, scale)
             #self.zoom_level_backup = self.zoom_level
+
         visible_range = (self.get_allocated_width(), self.get_allocated_height())
-        arbitrary_clip_offset = max(TEXT_CACHE_SIZE/2, max(visible_range)*0.5) # remove text items if their start position is 50%*view_width outside
+
+        arbitrary_clip_offset = max(PRERENDER_CACHE_SIZE/2, max(visible_range)*0.5) # remove text items if their start position is 50%*view_width outside
         view_x_min = (translated_position[0] - arbitrary_clip_offset) / self.zoom_level
         view_x_max = (translated_position[0] + arbitrary_clip_offset + visible_range[0]) / self.zoom_level
         view_y_min = (translated_position[1] - arbitrary_clip_offset) / self.zoom_level
@@ -1658,23 +1683,12 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
         self.draw_items(ctx, self.chart_items, (view_x_min, view_y_min, view_x_max, view_y_max))
         ctx.restore()
         ctx.scale(1, 1)
+        self.draw_map(ctx)
 
-        width = self.life_line_chart_instance.get_full_width()
-        height = self.life_line_chart_instance.get_full_height()
-        aspect_chart = width / height
-        aspect_view = visible_range[0] / visible_range[1]
-
-        map_area_size = [visible_range[0]*self.map_size, visible_range[1]*self.map_size]
-        map_chart_size = [map_area_size[0]*min(1, aspect_chart/aspect_view), map_area_size[1]/max(1, aspect_chart/aspect_view)]
-        scale_x = map_chart_size[0] / width * self.zoom_level
-        scale_y = map_chart_size[1] / height * self.zoom_level
-        scale_x = map_chart_size[0] / width
-        scale_y = map_chart_size[1] / height
-        scale = scale_x
-        map_view_size = [
-            visible_range[0] * scale / self.zoom_level,
-            visible_range[1] * scale / self.zoom_level
-        ]
+    def draw_map(self, ctx):
+        visible_range, map_area_size, map_chart_size, map_view_size, __, scale = self.get_map_geometry(0, 0)
+        translated_position = self._position_move(self.upper_left_view_position, self.center_delta_xy)
+        translated_position = self.view_position_get_limited(translated_position)
 
         ctx.set_line_width(1)
 
@@ -1689,7 +1703,8 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
         ctx.fill()
 
         # chart area
-        ctx.set_source_rgba(0.6, 0.6, 0.6, 1)
+
+        ctx.set_source_rgba(*([i for i in self.background_color]))
         ctx.rectangle(
             visible_range[0]*0 + map_area_size[0]/2 - map_chart_size[0]/2,
             visible_range[1] - map_area_size[1]/2 - map_chart_size[1]/2,
@@ -1719,106 +1734,259 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
         )
         ctx.stroke()
 
-    def draw_items(self, ctx, chart_items, view_clip_box, limit_font_size = None):
-        view_x_min, view_y_min, view_x_max, view_y_max = view_clip_box
-        for item_index, item in enumerate(chart_items):
-            def text_function(ctx, text, x, y, rotation=0, fontName="Arial", fontSize=10, verticalPadding=0, vertical_offset=0, horizontal_offset=0, bold=False, align='center', position='middle', color=(0,0,0)):
-                """
-                Used to draw normal text
-                """
-                rotation = rotation * math.pi / 180
-
-                if bold:
-                    ctx.select_font_face(
-                        fontName, cairo.FONT_SLANT_NORMAL, cairo.FONT_WEIGHT_BOLD)
-                else:
-                    ctx.select_font_face(
-                        fontName, cairo.FONT_SLANT_NORMAL, cairo.FONT_WEIGHT_NORMAL)
-                f_o = cairo.FontOptions()
-
-                ctx.set_source_rgba(float(color[0]/255),
-                                    float(color[1]/255),
-                                    float(color[2]/255),
-                                    1) # transparency
-                #f_o.set_antialias(cairo.ANTIALIAS_GOOD)
-                f_o.set_hint_metrics(cairo.HINT_METRICS_OFF)
-                ctx.set_font_options(f_o)
-                ctx.set_font_size(fontSize)
-
-                # this method still quantizes the fheight!
-                # fascent, fdescent, fheight, fxadvance, fyadvance = ctx.font_extents()
-                fheight = 1.15*fontSize
-
+        # draw miniature chart lines
+        for item_index, item in self.prerender_cache.items():
+            if item_index < 0:
+                # map entry
+                prerender_cache_surface = item['surface']
                 ctx.save()
-                ctx.translate(x, y)
-                ctx.rotate(rotation)
-                ctx.translate(horizontal_offset, vertical_offset)
-
-                lines = text.split("\n")
-
-                for i, line in enumerate(lines):
-                    # ctx.set_font_size(fontSize)
-                    xoff, yoff, textWidth, textHeight = ctx.text_extents(line)[
-                        :4]
-                    # xoff *= self.zoom_level
-                    # yoff *= self.zoom_level
-                    # textWidth *= self.zoom_level
-                    # textHeight *= self.zoom_level
-
-                    if align == 'middle':
-                        offx = -textWidth / 2.0
-                    elif align == 'end':
-                        offx = -textWidth
-                    else:
-                        offx = 0
-
-                    if position == 'middle':
-                        offy = (fheight / 2.0) + \
-                            (fheight + verticalPadding) * i
-                    else:
-                        offy = (fheight + verticalPadding) * i
-
-                    ctx.move_to(offx, offy)
-                    ctx.show_text(line)
+                ctx.translate(
+                    visible_range[0]*0 + map_area_size[0]/2 - map_chart_size[0]/2,
+                    visible_range[1] - map_area_size[1]/2 - map_chart_size[1]/2
+                )
+                ctx.scale(scale/item['zoom'], scale/item['zoom'])
+                ctx.set_source_surface(prerender_cache_surface)
+                ctx.paint()
                 ctx.restore()
 
-            if item['type'] == 'text_layer':
+
+    def draw_items(self, ctx, chart_items, view_clip_box, limit_font_size=None, high_contrast=False):
+        view_x_min, view_y_min, view_x_max, view_y_max = view_clip_box
+
+        def text_function(ctx, text, x, y, rotation=0, fontName="Arial", fontSize=10, verticalPadding=0, vertical_offset=0, horizontal_offset=0, bold=False, align='center', position='middle', color=(0,0,0)):
+            """
+            Used to draw normal text
+            """
+            rotation = rotation * math.pi / 180
+
+            if bold:
+                ctx.select_font_face(
+                    fontName, cairo.FONT_SLANT_NORMAL, cairo.FONT_WEIGHT_BOLD)
+            else:
+                ctx.select_font_face(
+                    fontName, cairo.FONT_SLANT_NORMAL, cairo.FONT_WEIGHT_NORMAL)
+            f_o = cairo.FontOptions()
+
+            ctx.set_source_rgba(float(color[0]/255),
+                                float(color[1]/255),
+                                float(color[2]/255),
+                                1) # transparency
+            #f_o.set_antialias(cairo.ANTIALIAS_GOOD)
+            f_o.set_hint_metrics(cairo.HINT_METRICS_OFF)
+            ctx.set_font_options(f_o)
+            ctx.set_font_size(fontSize)
+
+            # this method still quantizes the fheight!
+            # fascent, fdescent, fheight, fxadvance, fyadvance = ctx.font_extents()
+            fheight = 1.15*fontSize
+
+            ctx.save()
+            ctx.translate(x, y)
+            ctx.rotate(rotation)
+            ctx.translate(horizontal_offset, vertical_offset)
+
+            lines = text.split("\n")
+
+            for i, line in enumerate(lines):
+                # ctx.set_font_size(fontSize)
+                xoff, yoff, textWidth, textHeight = ctx.text_extents(line)[
+                    :4]
+                # xoff *= self.zoom_level
+                # yoff *= self.zoom_level
+                # textWidth *= self.zoom_level
+                # textHeight *= self.zoom_level
+
+                if align == 'middle':
+                    offx = -textWidth / 2.0
+                elif align == 'end':
+                    offx = -textWidth
+                else:
+                    offx = 0
+
+                if position == 'middle':
+                    offy = (fheight / 2.0) + \
+                        (fheight + verticalPadding) * i
+                else:
+                    offy = (fheight + verticalPadding) * i
+
+                ctx.move_to(offx, offy)
+                ctx.show_text(line)
+                textWidth += ctx.text_extents("x x")[2]-ctx.text_extents("xx")[2]
+            ctx.restore()
+            return textWidth
+        def paint_path(item, stroke_with_multiplier, colors):
+            if self.formatting['fade_individual_color'] and 'age_color_fade_ordinal_values' in item:
+                cp = item['age_color_fade_ordinal_values']
+
+                #ctx.set_source_rgb(colors[0], colors[1], colors[2])
+                #lg3 = cairo.LinearGradient(0, item['age_color_fade_ordinal_values'][0],  0, item['age_color_fade_ordinal_values'][1])
+                lg3 = cairo.LinearGradient(
+                    arguments[0].real, item['age_color_fade_ordinal_values'][0],
+                    arguments[0].real, item['age_color_fade_ordinal_values'][1])
+                #fill = svg_document.linearGradient(("0", str(item['age_color_fade_ordinal_values'][0])+""), ("0", str(item['age_color_fade_ordinal_values'][1])+""), gradientUnits='userSpaceOnUse')
+                lg3.add_color_stop_rgba(
+                    0, colors[0], colors[1], colors[2], 1)
+                lg3.add_color_stop_rgb(1, *self.life_line_chart_instance._colors['fade_to_death'])
+
+                ctx.set_source(lg3)
+                if item['config']['type'] == 'Line':
+                    ctx.move_to(arguments[0].real, arguments[0].imag)
+                    ctx.set_line_width(item['stroke_width']*stroke_with_multiplier)
+                    ctx.line_to(arguments[1].real, arguments[1].imag)
+                    ctx.stroke()
+                elif item['config']['type'] == 'CubicBezier':
+                    ctx.move_to(arguments[0].real, arguments[0].imag)
+                    ctx.set_line_width(item['stroke_width']*stroke_with_multiplier)
+                    ctx.curve_to(
+                        arguments[1].real, arguments[1].imag,
+                        arguments[2].real, arguments[2].imag,
+                        arguments[3].real, arguments[3].imag)
+                    ctx.stroke()
+            else:# self.formatting['fade_individual_color'] and 'age_color_fade_ordinal_values' in item:
+
+                min_stops = []
+                max_stops = []
+                if 'birth_date_position_range' in item and item['birth_date_position_range'] \
+                        and item['birth_date_position_range'][0] != item['birth_date_position_range'][1]:
+                    min_stops.append((item['birth_date_position_range'][0], 0))
+                    max_stops.append((item['birth_date_position_range'][1], 1))
+                if 'death_date_position_range' in item and item['death_date_position_range'] \
+                        and item['death_date_position_range'][0] != item['death_date_position_range'][1]:
+                    min_stops.append((item['death_date_position_range'][0], 1))
+                    max_stops.append((item['death_date_position_range'][1], 0))
+                if min_stops or max_stops:
+                    min_ov = min([v[0][1] for v in min_stops + max_stops])
+                    max_ov = max([v[0][1] for v in min_stops + max_stops])
+
+                    cp = item['age_color_fade_ordinal_values']
+
+                    lg3 = cairo.LinearGradient(
+                        arguments[0].real, min_ov,
+                        arguments[0].real, max_ov)
+
+                    for stop in sorted(min_stops + max_stops):
+                        lg3.add_color_stop_rgba(
+                            (stop[0][1]-min_ov)/(max_ov-min_ov), colors[0], colors[1], colors[2], stop[1])
+
+                    ctx.set_source(lg3)
+                    if item['config']['type'] == 'Line':
+                        ctx.move_to(arguments[0].real, arguments[0].imag)
+                        ctx.set_line_width(item['stroke_width']*stroke_with_multiplier)
+                        ctx.line_to(arguments[1].real, arguments[1].imag)
+                        ctx.stroke()
+                    elif item['config']['type'] == 'CubicBezier':
+                        ctx.move_to(arguments[0].real, arguments[0].imag)
+                        ctx.set_line_width(item['stroke_width']*stroke_with_multiplier)
+                        ctx.curve_to(
+                            arguments[1].real, arguments[1].imag,
+                            arguments[2].real, arguments[2].imag,
+                            arguments[3].real, arguments[3].imag)
+                        ctx.stroke()
+                else:
+                    if item['config']['type'] == 'Line':
+                        ctx.move_to(arguments[0].real, arguments[0].imag)
+                        ctx.set_source_rgb(
+                            colors[0], colors[1], colors[2])
+                        ctx.set_line_width(item['stroke_width']*stroke_with_multiplier)
+                        ctx.line_to(arguments[1].real, arguments[1].imag)
+                        if 'stroke_dasharray' in item:
+                            ctx.set_dash([float(v) for v in item['stroke_dasharray'].split(',')])
+                        ctx.stroke()
+                        if 'stroke_dasharray' in item:
+                            ctx.set_dash([])
+                    elif item['config']['type'] == 'CubicBezier':
+
+                        ctx.move_to(arguments[0].real, arguments[0].imag)
+                        ctx.set_source_rgb(
+                            colors[0], colors[1], colors[2])
+                        ctx.set_line_width(item['stroke_width']*stroke_with_multiplier)
+                        ctx.curve_to(arguments[1].real, arguments[1].imag, arguments[2].real,
+                                        arguments[2].imag, arguments[3].real, arguments[3].imag)
+                        ctx.stroke()
+        def draw_image(ctx, image, left, top, width, height):
+            """Draw a scaled image on a given context."""
+            image_surface = self.image_cache.get(image)
+            if image_surface is None:
+                if os.path.splitext(image.upper())[1] in ['.JPG', 'JPEG']:
+                    image_surface = cairo.ImageSurface.create_from_jpg(image)
+                if os.path.splitext(image.upper())[1] in ['.PNG']:
+                    image_surface = cairo.ImageSurface.create_from_png(image)
+                self.image_cache[image] = image_surface
+            # calculate proportional scaling
+            img_height = image_surface.get_height()
+            img_width = image_surface.get_width()
+            width_ratio = float(width) / float(img_width)
+            height_ratio = float(height) / float(img_height)
+            scale_xy = min(height_ratio, width_ratio)
+            if height_ratio > scale_xy:
+                top -= (img_height * scale_xy - height)/2
+            if width_ratio - scale_xy:
+                left -= (img_width * scale_xy - width)/2
+            # scale image and add it
+            ctx.save()
+            ctx.translate(left, top)
+            ctx.scale(scale_xy, scale_xy)
+            ctx.set_source_surface(image_surface)
+
+            ctx.paint()
+            ctx.restore()
+
+        for item_index, item in enumerate(chart_items):
+            if item['type'] == 'renderBuffer':
+                if item.get('target') == 'map' and -item_index not in self.prerender_cache:
+                    visible_range, map_area_size, map_chart_size, map_view_size, __, scale = self.get_map_geometry(0, 0)
+                    width = self.life_line_chart_instance.get_full_width()*scale
+                    height = self.life_line_chart_instance.get_full_height()*scale
+                    caching_range = [int(width), int(height)]
+                    prerender_cache_surface = cairo.ImageSurface(cairo.FORMAT_ARGB32,
+                                                    *caching_range)
+                    prerender_cache_ctx = cairo.Context(prerender_cache_surface)
+                    prerender_cache_ctx.scale(scale, scale)#self.zoom_level, self.zoom_level)
+                    self.draw_items(prerender_cache_ctx, item['items'], view_clip_box, limit_font_size, high_contrast=True)
+                    self.prerender_cache[-item_index] = {
+                        'surface' : prerender_cache_surface,
+                        'size': (width, height),
+                        'zoom': scale
+                    }
+
+                translated_position = self._position_move(self.upper_left_view_position, self.center_delta_xy)
+                translated_position = self.view_position_get_limited(translated_position)
                 width = self.life_line_chart_instance.get_full_width()*self.zoom_level
                 height = self.life_line_chart_instance.get_full_height()*self.zoom_level
                 visible_range = (self.get_allocated_width(), self.get_allocated_height())
-                ul_offset_actual = [max(0, i) for i in self.upper_left_view_position]
-                lr_offset_actual = [min(k, i+j) for i, j, k in zip(self.upper_left_view_position, visible_range,(width, height))]
-                ul_offset = [i-TEXT_CACHE_SIZE/2 for i in self.upper_left_view_position]
-                lr_offset = [i+j+TEXT_CACHE_SIZE/2 for i, j, k in zip(self.upper_left_view_position, visible_range,(width, height))]
+                ul_offset_actual = [max(0, i) for i in translated_position]
+                lr_offset_actual = [min(k, i+j) for i, j, k in zip(translated_position, visible_range,(width, height))]
+                ul_offset = [i-PRERENDER_CACHE_SIZE/2 for i in translated_position]
+                lr_offset = [i+j+PRERENDER_CACHE_SIZE/2 for i, j, k in zip(translated_position, visible_range,(width, height))]
                 caching_range = [int(j-i) for i, j in zip(ul_offset, lr_offset)]
-                if item_index not in self.text_cache or \
-                        self.text_cache[item_index]['ul_offset'][0] - ul_offset_actual[0] > 0 or \
-                        self.text_cache[item_index]['ul_offset'][1] - ul_offset_actual[1] > 0 or \
-                        self.text_cache[item_index]['lr_offset'][0] - lr_offset_actual[0] < 0 or \
-                        self.text_cache[item_index]['lr_offset'][1] - lr_offset_actual[1] < 0 or \
-                        abs(log10(self.zoom_level/self.text_cache[item_index]['zoom'])) > 0.05:
-                    text_surface = cairo.ImageSurface(cairo.FORMAT_ARGB32,
+                if item_index not in self.prerender_cache or \
+                        self.prerender_cache[item_index]['ul_offset'][0] - ul_offset_actual[0] > 0 or \
+                        self.prerender_cache[item_index]['ul_offset'][1] - ul_offset_actual[1] > 0 or \
+                        self.prerender_cache[item_index]['lr_offset'][0] - lr_offset_actual[0] < 0 or \
+                        self.prerender_cache[item_index]['lr_offset'][1] - lr_offset_actual[1] < 0 or \
+                        abs(log10(self.zoom_level/self.prerender_cache[item_index]['zoom'])) > 0.05:
+                    prerender_cache_surface = cairo.ImageSurface(cairo.FORMAT_ARGB32,
                                                     *caching_range)
-                    text_ctx = cairo.Context(text_surface)
+                    prerender_cache_ctx = cairo.Context(prerender_cache_surface)
 
-                    text_ctx.translate(*[-i for i in ul_offset])
-                    text_ctx.scale(self.zoom_level, self.zoom_level)
-                    self.draw_items(text_ctx, item['items'], view_clip_box, limit_font_size)
-                    self.text_cache[item_index] = {
-                        'surface' : text_surface,
+                    prerender_cache_ctx.translate(*[-i for i in ul_offset])
+                    prerender_cache_ctx.scale(self.zoom_level, self.zoom_level)
+                    self.draw_items(prerender_cache_ctx, item['items'], view_clip_box, limit_font_size)
+                    self.prerender_cache[item_index] = {
+                        'surface' : prerender_cache_surface,
                         'ul_offset': ul_offset,
                         'lr_offset': lr_offset,
                         'zoom': self.zoom_level
                     }
                 else:
-                    text_surface = self.text_cache[item_index]['surface']
+                    prerender_cache_surface = self.prerender_cache[item_index]['surface']
 
-                left, top = self.text_cache[item_index]['ul_offset'] # view_x_min, view_y_min#args['insert']
-                scale_xy = 1/self.text_cache[item_index]['zoom'] # min(height_ratio, width_ratio)
+                left, top = self.prerender_cache[item_index]['ul_offset'] # view_x_min, view_y_min#args['insert']
+                scale_xy = 1/self.prerender_cache[item_index]['zoom'] # min(height_ratio, width_ratio)
                 ctx.save()
                 ctx.scale(scale_xy, scale_xy)
                 ctx.translate(left, top)
-                ctx.set_source_surface(text_surface)
+                ctx.set_source_surface(prerender_cache_surface)
 
                 ctx.paint()
                 ctx.restore()
@@ -1908,103 +2076,17 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                 # svg_text = svg_document.text(
                 #     **args)
                 # x = svg_document.add(svg_text)
-            elif item['type'] == 'path':
+            elif item['type'] == 'path' or (item['type'] == 'pathForHighlighting' and self._tooltip_individual_cache is not None and 'gir' in item and item['gir'] == self._tooltip_individual_cache[0]):
                 arguments = deepcopy(item['config']['arguments'])
                 arguments = [individual_id for individual_id in arguments]
-                colors = [c/255. for c in item['color']]
-                def paint_path(stroke_with_multiplier, colors):
-                    if self.formatting['fade_individual_color'] and 'age_color_fade_ordinal_values' in item:
-                        cp = item['age_color_fade_ordinal_values']
-
-                        #ctx.set_source_rgb(colors[0], colors[1], colors[2])
-                        #lg3 = cairo.LinearGradient(0, item['age_color_fade_ordinal_values'][0],  0, item['age_color_fade_ordinal_values'][1])
-                        lg3 = cairo.LinearGradient(
-                            arguments[0].real, item['age_color_fade_ordinal_values'][0],
-                            arguments[0].real, item['age_color_fade_ordinal_values'][1])
-                        #fill = svg_document.linearGradient(("0", str(item['age_color_fade_ordinal_values'][0])+""), ("0", str(item['age_color_fade_ordinal_values'][1])+""), gradientUnits='userSpaceOnUse')
-                        lg3.add_color_stop_rgba(
-                            0, colors[0], colors[1], colors[2], 1)
-                        lg3.add_color_stop_rgb(1, *self.life_line_chart_instance._colors['fade_to_death'])
-
-                        ctx.set_source(lg3)
-                        if item['config']['type'] == 'Line':
-                            ctx.move_to(arguments[0].real, arguments[0].imag)
-                            ctx.set_line_width(item['stroke_width']*stroke_with_multiplier)
-                            ctx.line_to(arguments[1].real, arguments[1].imag)
-                            ctx.stroke()
-                        elif item['config']['type'] == 'CubicBezier':
-                            ctx.move_to(arguments[0].real, arguments[0].imag)
-                            ctx.set_line_width(item['stroke_width']*stroke_with_multiplier)
-                            ctx.curve_to(
-                                arguments[1].real, arguments[1].imag,
-                                arguments[2].real, arguments[2].imag,
-                                arguments[3].real, arguments[3].imag)
-                            ctx.stroke()
-                    else:# self.formatting['fade_individual_color'] and 'age_color_fade_ordinal_values' in item:
-
-                        min_stops = []
-                        max_stops = []
-                        if 'birth_date_position_range' in item and item['birth_date_position_range'] \
-                                and item['birth_date_position_range'][0] != item['birth_date_position_range'][1]:
-                            min_stops.append((item['birth_date_position_range'][0], 0))
-                            max_stops.append((item['birth_date_position_range'][1], 1))
-                        if 'death_date_position_range' in item and item['death_date_position_range'] \
-                                and item['death_date_position_range'][0] != item['death_date_position_range'][1]:
-                            min_stops.append((item['death_date_position_range'][0], 1))
-                            max_stops.append((item['death_date_position_range'][1], 0))
-                        if min_stops or max_stops:
-                            min_ov = min([v[0][1] for v in min_stops + max_stops])
-                            max_ov = max([v[0][1] for v in min_stops + max_stops])
-
-                            cp = item['age_color_fade_ordinal_values']
-
-                            lg3 = cairo.LinearGradient(
-                                arguments[0].real, min_ov,
-                                arguments[0].real, max_ov)
-
-                            for stop in sorted(min_stops + max_stops):
-                                lg3.add_color_stop_rgba(
-                                    (stop[0][1]-min_ov)/(max_ov-min_ov), colors[0], colors[1], colors[2], stop[1])
-
-                            ctx.set_source(lg3)
-                            if item['config']['type'] == 'Line':
-                                ctx.move_to(arguments[0].real, arguments[0].imag)
-                                ctx.set_line_width(item['stroke_width']*stroke_with_multiplier)
-                                ctx.line_to(arguments[1].real, arguments[1].imag)
-                                ctx.stroke()
-                            elif item['config']['type'] == 'CubicBezier':
-                                ctx.move_to(arguments[0].real, arguments[0].imag)
-                                ctx.set_line_width(item['stroke_width']*stroke_with_multiplier)
-                                ctx.curve_to(
-                                    arguments[1].real, arguments[1].imag,
-                                    arguments[2].real, arguments[2].imag,
-                                    arguments[3].real, arguments[3].imag)
-                                ctx.stroke()
-                        else:
-                            if item['config']['type'] == 'Line':
-                                ctx.move_to(arguments[0].real, arguments[0].imag)
-                                ctx.set_source_rgb(
-                                    colors[0], colors[1], colors[2])
-                                ctx.set_line_width(item['stroke_width']*stroke_with_multiplier)
-                                ctx.line_to(arguments[1].real, arguments[1].imag)
-                                if 'stroke_dasharray' in item:
-                                    ctx.set_dash([float(v) for v in item['stroke_dasharray'].split(',')])
-                                ctx.stroke()
-                                if 'stroke_dasharray' in item:
-                                    ctx.set_dash([])
-                            elif item['config']['type'] == 'CubicBezier':
-
-                                ctx.move_to(arguments[0].real, arguments[0].imag)
-                                ctx.set_source_rgb(
-                                    colors[0], colors[1], colors[2])
-                                ctx.set_line_width(item['stroke_width']*stroke_with_multiplier)
-                                ctx.curve_to(arguments[1].real, arguments[1].imag, arguments[2].real,
-                                                arguments[2].imag, arguments[3].real, arguments[3].imag)
-                                ctx.stroke()
-                if self._tooltip_individual_cache is not None and 'gir' in item and item['gir'] == self._tooltip_individual_cache[0]:
-                    paint_path(1.4, (1,0,0))
-                    paint_path(1.2, (self.text_color.red, self.text_color.green, self.text_color.blue))
-                paint_path(1, colors)
+                if high_contrast:
+                    colors = [max(0,min(1,(c-0.5)*2+0.5)) for c in self.text_color][:-1]
+                else:
+                    colors = [c/255. for c in item['color']]
+                if item['type'] == 'pathForHighlighting' and self._tooltip_individual_cache is not None and 'gir' in item and item['gir'] == self._tooltip_individual_cache[0]:
+                    paint_path(item, 1.4, (1,0,0))
+                    paint_path(item, 1.2, (self.text_color.red, self.text_color.green, self.text_color.blue))
+                paint_path(item, 1, colors)
             elif item['type'] == 'textPath':
                 from math import cos, sin, atan2, pi
 
@@ -2162,6 +2244,7 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                 # #end pathtext
                 import svgpathtools
                 from cmath import phase
+                args = item['config']
 
                 def draw_text_along_path(ctx, textspans, start_x, start_y, cp1_x, cp1_y, cp2_x, cp2_y, end_x, end_y, show_path_line=True):
                     def warpPath(ctx, function):
@@ -2225,7 +2308,7 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                                     bold='style' in args and 'bold' in args['style'])
                                 ctx.select_font_face(
                                     item['font_name'], cairo.FONT_SLANT_NORMAL, cairo.FONT_WEIGHT_NORMAL)
-                                ctx.set_font_size(font_size)
+                                ctx.set_font_size(item['font_size'])
                                 te = ctx.text_extents(character,)
                                 ctx.restore()
                                 x_pos += te.x_advance
@@ -2291,55 +2374,74 @@ class LifeLineChartWidget(LifeLineChartBaseWidget):
                     #ctx.close_path()
                     #ctx.fill()
                     #ctx.stroke()
-                #args_path['arguments']
-                pass
-                # svg_text = svg_document.text(
-                #     **args_text)
-                # if args_path['type'] == 'Line':
-                #     constructor_function = Line
-                # elif args_path['type'] == 'CubicBezier':
-                #     constructor_function = CubicBezier
-                # svg_path = Path(constructor_function(*args_path['arguments']))
-                # y = svg_document.path( svg_path.d(), fill = 'none')
-                # svg_document.add(y)
-                # #x = svg_document.add(svg_text)
-                # x = svg_document.add(svgwrite.text.Text('', dy = [args_text['dy']], font_size = args_text['font_size']))
-                # t = svgwrite.text.TextPath(y, text = args_text['text'])
-                # for span in item['spans']:
-                #     t.add(svg_document.tspan(span[0], **span[1]))
-                # x.add(t)
+                elif args_path['type'] == 'Line':
+                    args = item['config']
+                    font_size = item['font_size']
+                    if type(font_size) == str:
+                        if font_size.endswith('px') or font_size.endswith('pt'):
+                            font_size = float(font_size[:-2])
+                    if limit_font_size:
+                        font_size = min(font_size, limit_font_size[1]/self.zoom_level)
+                        font_size = max(font_size, limit_font_size[0]/self.zoom_level)
+                    rotation = 0
+                    if 'transform' in args and args['transform'].startswith('rotate('):
+                        rotation = float(args['transform'][7:-1].split(',')[0])
 
-            elif item['type'] == 'image':
-                def draw_image(ctx, image, left, top, width, height):
-                    """Draw a scaled image on a given context."""
-                    image_surface = self.image_cache.get(image)
-                    if image_surface is None:
-                        if os.path.splitext(image.upper())[1] in ['.JPG', 'JPEG']:
-                            image_surface = cairo.ImageSurface.create_from_jpg(image)
-                        if os.path.splitext(image.upper())[1] in ['.PNG']:
-                            image_surface = cairo.ImageSurface.create_from_png(image)
-                        self.image_cache[image] = image_surface
-                    # calculate proportional scaling
-                    img_height = image_surface.get_height()
-                    img_width = image_surface.get_width()
-                    width_ratio = float(width) / float(img_width)
-                    height_ratio = float(height) / float(img_height)
-                    scale_xy = min(height_ratio, width_ratio)
-                    if height_ratio > scale_xy:
-                        top -= (img_height * scale_xy - height)/2
-                    if width_ratio - scale_xy:
-                        left -= (img_width * scale_xy - width)/2
-                    # scale image and add it
-                    ctx.save()
-                    ctx.translate(left, top)
-                    ctx.scale(scale_xy, scale_xy)
-                    ctx.set_source_surface(image_surface)
+                    anchor = args.get('text_anchor')
+                    if not anchor:
+                        anchor = 'start'
+                    color = item.get('fill', (0,0,0))
+                    pos_x = 0
+                    def get_rotation(x1,y1,x2,y2):
+                        pos = (x2-x1, y2-y1)
+                        length = math.sqrt(pos[0]*pos[0] + pos[1]*pos[1])
+                        rel_pos = [i/length for i in pos]
+                        if abs(rel_pos[0]) < abs(rel_pos[1]):
+                            rotation = math.atan(rel_pos[0]/rel_pos[1])/math.pi*180
+                            if rel_pos[1] < 0:
+                                rotation += 180
+                        else:
+                            rotation = 90 - math.atan(rel_pos[1]/rel_pos[0])/math.pi*180
+                            if rel_pos[0] < 0:
+                                rotation += 180
+                        if rotation < 0:
+                            rotation += 360
+                        return rotation
+                    rotation = get_rotation(item['path']['arguments'][0].real, item['path']['arguments'][0].imag,  item['path']['arguments'][1].real, item['path']['arguments'][1].imag)
 
-                    ctx.paint()
-                    ctx.restore()
+                    vertical_offset = 0
+                    if 'dy' in args:
+                        if args['dy'][0].endswith('px') or args['dy'][0].endswith('pt'):
+                            vertical_offset = float(args['dy'][0][:-2])
+                        else:
+                            vertical_offset = float(args['dy'][0])
+                    horizontal_offset = 0
+                    for span_text, span in item['spans']:
+                        if 'dx' in span:
+                            if span['dx'][0].endswith('px') or span['dx'][0].endswith('pt'):
+                                horizontal_offset = float(span['dx'][0][:-2])
+                            else:
+                                horizontal_offset = float(span['dx'][0])
+                        pos_x += text_function(
+                            ctx,
+                            span_text,
+                            item['path']['arguments'][0].real,
+                            item['path']['arguments'][0].imag,
+                            90-rotation,
+                            fontSize=font_size,
+                            fontName=item['font_name'],
+                            vertical_offset=vertical_offset,
+                            horizontal_offset=horizontal_offset + pos_x,
+                            align=anchor,
+                            position='top',
+                            color=color,
+                            bold='style' in span and 'bold' in span['style'])
+
+            elif item['type'] == 'image' or (item['type'] == 'imageForHighlighting' and self._tooltip_individual_cache is not None and 'gfr' in item and \
+                        item['gfr'] == self._tooltip_individual_cache[1]):
                 import os
 
-                if self._tooltip_individual_cache is not None and 'gfr' in item and \
+                if item['type'] == 'imageForHighlighting' and self._tooltip_individual_cache is not None and 'gfr' in item and \
                         item['gfr'] == self._tooltip_individual_cache[1]:
                     factor = 1.5
                     size = item['config']['size'][0]*factor, item['config']['size'][1]*factor
@@ -2397,6 +2499,7 @@ class LifeLineChartGrampsGUI:
         self.lifeline = lifeline
         self.lifeline.format_helper = self.format_helper
         self.lifeline.goto = self.on_childmenu_changed
+        lifeline._config = self._config
 
     def main(self):
         """

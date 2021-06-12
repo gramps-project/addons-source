@@ -1,0 +1,75 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Pär Ekholm <pehlm@pekholm.org>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"PO-Revision-Date: 2021-05-23 17:31+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"Last-Translator: Pär Ekholm <pehlm@pekholm.se>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: sv_SE\n"
+
+#: HtmlView/htmlview.gpr.py:30
+msgid "Html View"
+msgstr "Html-visning"
+
+#: HtmlView/htmlview.gpr.py:31
+msgid "A view showing html pages embedded in Gramps"
+msgstr "En vy som visar htmlsidor inbäddade i Gramps"
+
+#: HtmlView/htmlview.gpr.py:39
+msgid "Web"
+msgstr "Webb"
+
+#: HtmlView/htmlview.py:328
+msgid "HtmlView"
+msgstr "Html-visning"
+
+#: HtmlView/htmlview.py:494
+msgid "_Back"
+msgstr "_Bakåt"
+
+#: HtmlView/htmlview.py:495
+msgid "Go to the previous page in the history"
+msgstr "Gå till föregående sida i historiken"
+
+#: HtmlView/htmlview.py:502
+msgid "_Forward"
+msgstr "_Framåt"
+
+#: HtmlView/htmlview.py:503
+msgid "Go to the next page in the history"
+msgstr "Gå till nästa sida i historiken"
+
+#: HtmlView/htmlview.py:508
+msgid "_Refresh"
+msgstr "_Läs om"
+
+#: HtmlView/htmlview.py:511
+msgid "Stop and reload the page."
+msgstr "Stoppa och ladda om sidan."
+
+#: HtmlView/htmlview.py:555
+msgid "Start page for the Html View"
+msgstr "Startsida för Html-visningen"
+
+#: HtmlView/htmlview.py:556
+msgid ""
+"Type a webpage address at the top, and hit the execute button to load a "
+"webpage in this page\n"
+"<br>\n"
+"For example: "
+msgstr ""
+"Skriv en webbadress högst upp och tryck på kör-knappen för att ladda en "
+"webbsida på den här sidan\n"
+"<br>\n"
+"Exempelvis: "

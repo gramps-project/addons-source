@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-12 17:40+0200\n"
+"POT-Creation-Date: 2021-02-19 11:07-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,9 +17,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: SetPrivacyTool/SetPrivacyTool.gpr.py:23 SetPrivacyTool/SetPrivacyTool.py:48
-#: SetPrivacyTool/SetPrivacyTool.py:90 SetPrivacyTool/SetPrivacyTool.py:93
-#: SetPrivacyTool/SetPrivacyTool.py:130 SetPrivacyTool/SetPrivacyTool.py:157
+#: SetPrivacyTool/SetPrivacyTool.gpr.py:23 SetPrivacyTool/SetPrivacyTool.py:50
+#: SetPrivacyTool/SetPrivacyTool.py:92 SetPrivacyTool/SetPrivacyTool.py:95
+#: SetPrivacyTool/SetPrivacyTool.py:144 SetPrivacyTool/SetPrivacyTool.py:182
 msgid "Set Privacy Tool"
 msgstr ""
 
@@ -27,59 +27,89 @@ msgstr ""
 msgid "Set all objects of the last <number> of years private."
 msgstr ""
 
-#: SetPrivacyTool/SetPrivacyTool.py:87
+#: SetPrivacyTool/SetPrivacyTool.py:89
 #, python-format
 msgid "Set private: %d %s\n"
 msgstr ""
 
-#: SetPrivacyTool/SetPrivacyTool.py:89
+#: SetPrivacyTool/SetPrivacyTool.py:91
 #, python-format
 msgid "Not private: %d %s\n"
 msgstr ""
 
-#: SetPrivacyTool/SetPrivacyTool.py:96
+#: SetPrivacyTool/SetPrivacyTool.py:103
 msgid "Set persons private.."
 msgstr ""
 
-#: SetPrivacyTool/SetPrivacyTool.py:133
+#: SetPrivacyTool/SetPrivacyTool.py:152
 msgid "Set events private.."
 msgstr ""
 
-#: SetPrivacyTool/SetPrivacyTool.py:160
+#: SetPrivacyTool/SetPrivacyTool.py:190
 msgid "Set media private.."
 msgstr ""
 
-#: SetPrivacyTool/SetPrivacyTool.py:195
+#: SetPrivacyTool/SetPrivacyTool.py:232
 msgid "Persons"
 msgstr ""
 
-#: SetPrivacyTool/SetPrivacyTool.py:196 SetPrivacyTool/SetPrivacyTool.py:199
-#: SetPrivacyTool/SetPrivacyTool.py:202 SetPrivacyTool/SetPrivacyTool.py:207
-#: SetPrivacyTool/SetPrivacyTool.py:213
+#: SetPrivacyTool/SetPrivacyTool.py:233 SetPrivacyTool/SetPrivacyTool.py:237
+#: SetPrivacyTool/SetPrivacyTool.py:244 SetPrivacyTool/SetPrivacyTool.py:248
+#: SetPrivacyTool/SetPrivacyTool.py:255 SetPrivacyTool/SetPrivacyTool.py:259
+#: SetPrivacyTool/SetPrivacyTool.py:268 SetPrivacyTool/SetPrivacyTool.py:274
 msgid "Option"
 msgstr ""
 
-#: SetPrivacyTool/SetPrivacyTool.py:198
+#: SetPrivacyTool/SetPrivacyTool.py:235
+msgid "Person Filter"
+msgstr ""
+
+#: SetPrivacyTool/SetPrivacyTool.py:236
+msgid "Select filter to restrict people"
+msgstr ""
+
+#: SetPrivacyTool/SetPrivacyTool.py:239 SetPrivacyTool/SetPrivacyTool.py:250
+#: SetPrivacyTool/SetPrivacyTool.py:261
+msgid "Entire Database"
+msgstr ""
+
+#: SetPrivacyTool/SetPrivacyTool.py:243
 msgid "Events"
 msgstr ""
 
-#: SetPrivacyTool/SetPrivacyTool.py:201
+#: SetPrivacyTool/SetPrivacyTool.py:246
+msgid "Event Filter"
+msgstr ""
+
+#: SetPrivacyTool/SetPrivacyTool.py:247
+msgid "Select filter to restrict events"
+msgstr ""
+
+#: SetPrivacyTool/SetPrivacyTool.py:254
 msgid "Media"
 msgstr ""
 
-#: SetPrivacyTool/SetPrivacyTool.py:204
+#: SetPrivacyTool/SetPrivacyTool.py:257
+msgid "Media Filter"
+msgstr ""
+
+#: SetPrivacyTool/SetPrivacyTool.py:258
+msgid "Select filter to restrict medias"
+msgstr ""
+
+#: SetPrivacyTool/SetPrivacyTool.py:265
 msgid "Always private if no date."
 msgstr ""
 
-#: SetPrivacyTool/SetPrivacyTool.py:205
+#: SetPrivacyTool/SetPrivacyTool.py:266
 msgid "If checked, all objects without a date will also be set private."
 msgstr ""
 
-#: SetPrivacyTool/SetPrivacyTool.py:209
+#: SetPrivacyTool/SetPrivacyTool.py:270
 msgid "Years"
 msgstr ""
 
-#: SetPrivacyTool/SetPrivacyTool.py:210
+#: SetPrivacyTool/SetPrivacyTool.py:271
 msgid ""
 "The time range in years from today you want to set objects private.\n"
 "'0 years' = remove privacy from all objects."

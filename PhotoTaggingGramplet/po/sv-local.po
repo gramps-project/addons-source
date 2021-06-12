@@ -1,0 +1,185 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Pär Ekholm <pehlm@pekholm.org>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-03-05 11:11-0600\n"
+"PO-Revision-Date: 2021-05-29 13:50+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"Last-Translator: Pär Ekholm <pehlm@pekholm.se>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: sv_SE\n"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:3
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:11
+msgid "Photo Tagging"
+msgstr "Foto-taggning"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:4
+msgid "Gramplet for tagging people in photos"
+msgstr "Gramplet för att tagga personer i foton"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:101
+msgid "https://www.gramps-project.org/wiki/index.php/Photo_Tagging_Gramplet"
+msgstr "https://www.gramps-project.org/wiki/index.php/Photo_Tagging_Gramplet"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:125
+msgid "Selection"
+msgstr "Val"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:127
+msgid "Replace existing references to the person being assigned without asking"
+msgstr "Ersätt befintliga referenser till personen som tilldelats utan att fråga"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:134
+msgid "Face detection"
+msgstr "Ansiktsigenkänning"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:137
+msgid "Minimum face width (px)"
+msgstr "Minsta ansiktsbredd (px)"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:139
+msgid "Minimum face height (px)"
+msgstr "Minsta ansiktshöjd (px)"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:142
+msgid "Detect faces inside existing boxes"
+msgstr "Upptäck ansikten inom nuvarande rutor"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:144
+msgid "Sensitivity (1 min .. 20 max)"
+msgstr "Känslighetsgrad (1 min .. 20 max)"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:183
+msgid "_OK"
+msgstr "_OK"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:283
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:760
+msgid "Select Person"
+msgstr "Välj person"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:284
+msgid "Add Person"
+msgstr "Lägg till person"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:285
+msgid "Clear Reference"
+msgstr "Rensa referens"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:286
+msgid "Remove Selection"
+msgstr "Ta bort valda"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:287
+msgid "Edit referenced Person"
+msgstr "Redigera refererad person"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:288
+msgid "Zoom In"
+msgstr "Zooma in"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:289
+msgid "Zoom Out"
+msgstr "Zooma ut"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:292
+msgid "Detect faces"
+msgstr "Upptäck ansikten"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:294
+msgid "Detect faces (OpenCV module required)"
+msgstr "Upptäck ansikten (OpenCV-modul behövs)"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:297
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:822
+msgid "Settings"
+msgstr "Inställningar"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:298
+msgid "Help"
+msgstr "Hjälp"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:346
+msgid "Preview"
+msgstr "Förhandsgranskning"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:347
+msgid "Person"
+msgstr "Person"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:348
+msgid "Age"
+msgstr "Ålder"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:474
+msgid "Set as active person"
+msgstr "Ställ in som aktiv person"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:477
+msgid "_Select"
+msgstr "_Välj"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:480
+msgid "_Add"
+msgstr "_Lägg till"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:483
+msgid "_Clear"
+msgstr "_Rensa"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:486
+msgid "_Remove"
+msgstr "_Ta bort"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:635
+#, python-format
+msgid "Edit Person (%s)"
+msgstr "Redigera person (%s)"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:691
+#, python-brace-format
+msgid "Replace to {0}"
+msgstr "Byt ut till {0}"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:792
+msgid "Detecting faces..."
+msgstr "Upptäcker ansikten..."
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:817
+msgid "Detection finished"
+msgstr "Detektering slutförd"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:867
+#, python-brace-format
+msgid "Another region of this image is associated with {name}. Remove it?"
+msgstr "En annan del av denna bild är associerad med {name}. Ta bort den?"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:870
+#, python-brace-format
+msgid "{count} other regions of this image are associated with {name}. Remove them?"
+msgstr "{count} andra delar av denna bild är associerad med {name}. Ta bort dem?"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:1014
+#, python-format
+msgid "Male person|Dead at %s"
+msgstr "Mansperson|Död %s"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:1016
+#, python-format
+msgid "Female person|Dead at %s"
+msgstr "Kvinnoperson|Död %s"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:1018
+#, python-format
+msgid "Unknown gender person|Dead at %s"
+msgstr "Okänt kön på person|Död %s"

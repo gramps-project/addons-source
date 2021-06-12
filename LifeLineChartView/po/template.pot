@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-08 11:53-0500\n"
+"POT-Creation-Date: 2021-02-28 23:17+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -112,7 +112,7 @@ msgstr ""
 #: LifeLineChartView/_dummy_translation_string_po.py:67
 #: LifeLineChartView/_dummy_translation_string_po.py:74
 #: LifeLineChartView/_dummy_translation_string_po.py:77
-#: LifeLineChartView/lifelinechartview.py:876
+#: LifeLineChartView/lifelinechartview.py:884
 msgid "Label Configuration"
 msgstr ""
 
@@ -448,250 +448,258 @@ msgstr ""
 msgid "Cactus"
 msgstr ""
 
-#: LifeLineChartView/lifelinechart.py:469
-msgid "calculated"
-msgstr ""
-
-#: LifeLineChartView/lifelinechart.py:470
-#: LifeLineChartView/lifelinechart.py:471
-#: LifeLineChartView/lifelinechart.py:472
-#: LifeLineChartView/lifelinechart.py:473
-msgid "estimated"
-msgstr ""
-
-#: LifeLineChartView/lifelinechart.py:475
-msgid "about"
+#: LifeLineChartView/lifelinechart.py:75
+msgid ""
+"LifeLineChartView dependencies are missing. It is not possible to use this "
+"plugin without them."
 msgstr ""
 
 #: LifeLineChartView/lifelinechart.py:476
-msgid "before"
+msgid "calculated"
 msgstr ""
 
 #: LifeLineChartView/lifelinechart.py:477
+#: LifeLineChartView/lifelinechart.py:478
+#: LifeLineChartView/lifelinechart.py:479
+#: LifeLineChartView/lifelinechart.py:480
+msgid "estimated"
+msgstr ""
+
+#: LifeLineChartView/lifelinechart.py:482
+msgid "about"
+msgstr ""
+
+#: LifeLineChartView/lifelinechart.py:483
+msgid "before"
+msgstr ""
+
+#: LifeLineChartView/lifelinechart.py:484
 msgid "after"
 msgstr ""
 
-#: LifeLineChartView/lifelinechart.py:1161
+#: LifeLineChartView/lifelinechart.py:1183
 #, python-brace-format
 msgid "cursor position at {date}"
 msgstr ""
 
-#: LifeLineChartView/lifelinechart.py:2488
+#: LifeLineChartView/lifelinechart.py:2591
 msgid "Hide person"
 msgstr ""
 
-#: LifeLineChartView/lifelinechart.py:2494
+#: LifeLineChartView/lifelinechart.py:2597
 msgid "Show person"
 msgstr ""
 
-#: LifeLineChartView/lifelinechart.py:2519
+#: LifeLineChartView/lifelinechart.py:2622
 msgid "Show siblings"
 msgstr ""
 
-#: LifeLineChartView/lifelinechart.py:2524
+#: LifeLineChartView/lifelinechart.py:2627
 msgid "Hide siblings"
 msgstr ""
 
-#: LifeLineChartView/lifelinechart.py:2549
+#: LifeLineChartView/lifelinechart.py:2652
 msgid "Show ancestors above "
 msgstr ""
 
-#: LifeLineChartView/lifelinechart.py:2576
+#: LifeLineChartView/lifelinechart.py:2679
 msgid "_Edit"
 msgstr ""
 
-#: LifeLineChartView/lifelinechart.py:2584
+#: LifeLineChartView/lifelinechart.py:2687
 msgid "Edit family"
 msgstr ""
 
-#: LifeLineChartView/lifelinechart.py:2600
+#: LifeLineChartView/lifelinechart.py:2703
 msgid "Reorder families"
 msgstr ""
 
-#: LifeLineChartView/lifelinechart.py:2606
+#: LifeLineChartView/lifelinechart.py:2709
 msgid "_Copy"
 msgstr ""
 
-#: LifeLineChartView/lifelinechart.py:2616
+#: LifeLineChartView/lifelinechart.py:2719
 msgid "Spouses"
 msgstr ""
 
-#: LifeLineChartView/lifelinechart.py:2650
+#: LifeLineChartView/lifelinechart.py:2753
 msgid "Siblings"
 msgstr ""
 
-#: LifeLineChartView/lifelinechart.py:2716
+#: LifeLineChartView/lifelinechart.py:2819
 msgid "Children"
 msgstr ""
 
-#: LifeLineChartView/lifelinechart.py:2753
+#: LifeLineChartView/lifelinechart.py:2856
 msgid "Parents"
 msgstr ""
 
-#: LifeLineChartView/lifelinechart.py:2787
-#: LifeLineChartView/lifelinechart.py:2829
+#: LifeLineChartView/lifelinechart.py:2890
+#: LifeLineChartView/lifelinechart.py:2932
 msgid "_Add"
 msgstr ""
 
-#: LifeLineChartView/lifelinechart.py:2796
+#: LifeLineChartView/lifelinechart.py:2899
 msgid "Related"
 msgstr ""
 
-#: LifeLineChartView/lifelinechart.py:2836
+#: LifeLineChartView/lifelinechart.py:2939
 msgid "Add child to family"
 msgstr ""
 
-#: LifeLineChartView/lifelinechart.py:2844
+#: LifeLineChartView/lifelinechart.py:2947
 msgid "Add partner to person"
 msgstr ""
 
-#: LifeLineChartView/lifelinechart.py:2851
+#: LifeLineChartView/lifelinechart.py:2954
 msgid "Add a person"
 msgstr ""
 
-#: LifeLineChartView/lifelinechart.py:2941
+#: LifeLineChartView/lifelinechart.py:3044
 msgid "Add Child to Family"
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.gpr.py:148
+#: LifeLineChartView/lifelinechartview.gpr.py:152
 #, python-brace-format
 msgid ""
 "Failed to load the required module {module_name} version {module_version}."
 msgstr ""
 
 #: LifeLineChartView/lifelinechartview.gpr.py:154
+#, python-brace-format
+msgid ""
+"\n"
+"\n"
+"It is not possible to use {self.plugin_name} without this module. You can "
+"either uninstall this plugin, or download the module."
+msgstr ""
+
+#: LifeLineChartView/lifelinechartview.gpr.py:161
 msgid " Plugin"
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.gpr.py:156
-msgid "Don't ask me again"
-msgstr ""
-
-#: LifeLineChartView/lifelinechartview.gpr.py:157
+#: LifeLineChartView/lifelinechartview.gpr.py:163
 msgid "Download module"
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.gpr.py:168
-msgid "The user chose to deactivate further warnings."
+#: LifeLineChartView/lifelinechartview.gpr.py:164
+#: LifeLineChartView/lifelinechartview.py:834
+msgid "_Cancel"
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.gpr.py:173
+#: LifeLineChartView/lifelinechartview.gpr.py:170
 msgid "The user chose to ignore the warning once."
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.gpr.py:177
+#: LifeLineChartView/lifelinechartview.gpr.py:174
 msgid "The user chose to install the module."
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.gpr.py:209
+#: LifeLineChartView/lifelinechartview.gpr.py:206
 #, python-format
 msgid "Unable to open '%s' with curl"
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.gpr.py:220
-#: LifeLineChartView/lifelinechartview.gpr.py:227
+#: LifeLineChartView/lifelinechartview.gpr.py:217
+#: LifeLineChartView/lifelinechartview.gpr.py:224
 #, python-format
 msgid "Unable to open '%s'"
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.gpr.py:236
+#: LifeLineChartView/lifelinechartview.gpr.py:233
 #, python-format
 msgid "Error in reading '%s'"
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.gpr.py:251
+#: LifeLineChartView/lifelinechartview.gpr.py:248
 #, python-format
 msgid "Error: cannot open '%s'"
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.gpr.py:255
+#: LifeLineChartView/lifelinechartview.gpr.py:252
 #, python-format
 msgid "Error: unknown file type: '%s'"
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.gpr.py:325
+#: LifeLineChartView/lifelinechartview.gpr.py:318
 msgid "Life Line Ancestor Chart"
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.gpr.py:326
-#: LifeLineChartView/lifelinechartview.gpr.py:340
+#: LifeLineChartView/lifelinechartview.gpr.py:319
+#: LifeLineChartView/lifelinechartview.gpr.py:333
 msgid "Charts"
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.gpr.py:327
-#: LifeLineChartView/lifelinechartview.gpr.py:341
+#: LifeLineChartView/lifelinechartview.gpr.py:320
+#: LifeLineChartView/lifelinechartview.gpr.py:334
 msgid "Persons and their relation in a time based chart"
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.gpr.py:339
+#: LifeLineChartView/lifelinechartview.gpr.py:332
 msgid "Life Line Descendant Chart"
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.py:384
-#: LifeLineChartView/lifelinechartview.py:875
+#: LifeLineChartView/lifelinechartview.py:386
+#: LifeLineChartView/lifelinechartview.py:883
 msgid "General Layout"
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.py:397
+#: LifeLineChartView/lifelinechartview.py:399
 msgid "Life Line Chart"
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.py:500
+#: LifeLineChartView/lifelinechartview.py:508
 msgid "Zoom in"
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.py:501
-#: LifeLineChartView/lifelinechartview.py:502
-#: LifeLineChartView/lifelinechartview.py:511
-#: LifeLineChartView/lifelinechartview.py:512
+#: LifeLineChartView/lifelinechartview.py:509
+#: LifeLineChartView/lifelinechartview.py:510
+#: LifeLineChartView/lifelinechartview.py:519
+#: LifeLineChartView/lifelinechartview.py:520
 msgid "Ctrl"
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.py:502
-#: LifeLineChartView/lifelinechartview.py:512
+#: LifeLineChartView/lifelinechartview.py:510
+#: LifeLineChartView/lifelinechartview.py:520
 msgid "Mouse wheel"
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.py:510
+#: LifeLineChartView/lifelinechartview.py:518
 msgid "Zoom out"
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.py:519
+#: LifeLineChartView/lifelinechartview.py:527
 msgid "Zoom to original"
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.py:526
+#: LifeLineChartView/lifelinechartview.py:534
 msgid "Zoom to best fit"
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.py:533
+#: LifeLineChartView/lifelinechartview.py:541
 msgid "Rebuild data cache"
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.py:540
+#: LifeLineChartView/lifelinechartview.py:548
 msgid "Revert the placement and person selection"
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.py:556
+#: LifeLineChartView/lifelinechartview.py:564
 msgid "Open Life Line Chart help"
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.py:656
+#: LifeLineChartView/lifelinechartview.py:664
 msgid "Organize Bookmarks"
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.py:823
+#: LifeLineChartView/lifelinechartview.py:831
 msgid "Export View as SVG"
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.py:826
-msgid "_Cancel"
-msgstr ""
-
-#: LifeLineChartView/lifelinechartview.py:827
+#: LifeLineChartView/lifelinechartview.py:835
 msgid "_Save"
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.py:938
+#: LifeLineChartView/lifelinechartview.py:946
 msgid "Reset all settings"
 msgstr ""

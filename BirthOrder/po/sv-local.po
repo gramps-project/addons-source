@@ -1,0 +1,142 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Pär Ekholm <pehlm@pekholm.org>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2021-05-21 11:17+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"Last-Translator: Pär Ekholm <pehlm@pekholm.se>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: sv_SE\n"
+
+#: BirthOrder/birthorder.gpr.py:9 BirthOrder/birthorder.py:62
+msgid "Sort Children in Birth order"
+msgstr "Sortera barn i födelseordning"
+
+#: BirthOrder/birthorder.gpr.py:10
+msgid ""
+"Looks through families, looking for children that are not in birth order.  "
+"User can accept individual suggestions to correct, edit the birth order "
+"manually, accept all those families that have all children with proper birth "
+"dates, or accept all."
+msgstr ""
+"Söker genom familjer och letar efter barn som inte är i födelseordning.  "
+"Användaren kan acceptera individuella förslag för att korrigera, redigera "
+"födelseordningen manuellt, acceptera alla familjer som har alla barn med "
+"rätt födelsedatum eller acceptera alla."
+
+#: BirthOrder/birthorder.py:161
+msgid "No families need sorting"
+msgstr "Inga familjer behöver sortering"
+
+#: BirthOrder/birthorder.py:162
+msgid "No children were out of birth order."
+msgstr "Alla barn var i födelseordning."
+
+#: BirthOrder/birthorder.py:186
+msgid "Edit Family"
+msgstr "Redigera familj"
+
+#: BirthOrder/birthorder.py:203
+msgid "Processing..."
+msgstr "Arbetar..."
+
+#: BirthOrder/birthorder.py:204
+msgid "Edit Families"
+msgstr "Redigera familjer"
+
+#: BirthOrder/birthorder.py:275
+msgid "Looking for children birth order"
+msgstr "Söker efter barns födelseordning"
+
+#: BirthOrder/birthorder.py:279
+msgid "Pass 1: Building preliminary lists"
+msgstr "Pass 1: Konstruerar preliminära listor"
+
+#: BirthOrder/birthorder.glade:56
+msgid "Select the family you wish to examine."
+msgstr "Välj familjen du önskar undersöka."
+
+#: BirthOrder/birthorder.glade:78
+msgid "Family ID"
+msgstr "Familje-ID"
+
+#: BirthOrder/birthorder.glade:93
+msgid "Father"
+msgstr "Far"
+
+#: BirthOrder/birthorder.glade:108
+msgid "Mother"
+msgstr "Mor"
+
+#: BirthOrder/birthorder.glade:141
+msgid "Help"
+msgstr "Hjälp"
+
+#: BirthOrder/birthorder.glade:155
+msgid "Accept All"
+msgstr "Acceptera alla"
+
+#: BirthOrder/birthorder.glade:159
+msgid "This button will sort all of the families listed."
+msgstr "Denna knapp kommer att sortera alla listade familjer."
+
+#: BirthOrder/birthorder.glade:170
+msgid "Accept All *"
+msgstr "Acceptera alla *"
+
+#: BirthOrder/birthorder.glade:174
+msgid ""
+"This button will sort all the families with '*'.  In these families, all the "
+"children have valid dates, so the sort is unambiguous."
+msgstr ""
+"Denna knapp kommer att sortera alla familjer med '*'.  I dessa familjer har "
+"alla barn giltiga datum, så den sorteringen är entydig."
+
+#: BirthOrder/birthorder.glade:185
+msgid "Accept"
+msgstr "Acceptera"
+
+#: BirthOrder/birthorder.glade:189
+msgid ""
+"This button will accept only the family selected and save it as shown in "
+"lower right pane."
+msgstr ""
+"Denna knapp kommer endast att acceptera den valda familjen och spara det som "
+"visas i den nedre högra rutan."
+
+#: BirthOrder/birthorder.glade:232
+msgid "Done"
+msgstr "Klart"
+
+#: BirthOrder/birthorder.glade:236
+msgid "This button will exit, with remaining families unchanged."
+msgstr "Denna knapp kommer att avsluta, med kvarvarande familjer oförändrade."
+
+#: BirthOrder/birthorder.glade:256
+msgid "Current sort"
+msgstr "Aktuell sortering"
+
+#: BirthOrder/birthorder.glade:267
+msgid "Proposed sort"
+msgstr "Föreslagen sortering"
+
+#: BirthOrder/birthorder.glade:333
+msgid ""
+"When satisfied with the sort, use 'Accept' button below to accept the "
+"changes.  If you wish to adjust the order, select the child you wish to "
+"move, and use 'Up' or 'Down' buttons below to move them."
+msgstr ""
+"När du är nöjd med sorteringen använder du knappen 'Acceptera' nedan för att "
+"acceptera ändringarna.  Om du vill justera ordningen väljer du barnet du "
+"vill flytta och använder knapparna 'Upp' eller 'Ned' nedan för att flytta "
+"dem."

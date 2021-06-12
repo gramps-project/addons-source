@@ -1,0 +1,78 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Pär Ekholm <pehlm@pekholm.org>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-14 14:51+0200\n"
+"PO-Revision-Date: 2021-05-28 17:33+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"Last-Translator: Pär Ekholm <pehlm@pekholm.se>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: sv_SE\n"
+
+#: LinesOfDescendency/lines-of-descendency.gpr.py:30
+msgid "Lines of Descendency Report"
+msgstr "Rapport för ättlingalinjer"
+
+#: LinesOfDescendency/lines-of-descendency.gpr.py:31
+msgid ""
+"Prints out all descendency lines from a given ancestor to a given descendent "
+"in text."
+msgstr ""
+"Skriver ut alla ättlingalinjer från en angiven förfader till en angiven "
+"ättling som text."
+
+#: LinesOfDescendency/lines-of-descendency.py:53
+msgid "People"
+msgstr "Personer"
+
+#: LinesOfDescendency/lines-of-descendency.py:55
+msgid "Ancestor"
+msgstr "Förfader"
+
+#: LinesOfDescendency/lines-of-descendency.py:56
+msgid "The ancestor from which to start the line"
+msgstr "Förfadern som linjen ska starta från"
+
+#: LinesOfDescendency/lines-of-descendency.py:59
+msgid "Descendent"
+msgstr "Ättling"
+
+#: LinesOfDescendency/lines-of-descendency.py:60
+msgid "The descendent to which to build the line"
+msgstr "Ättlingen till vilken linjen ska byggas"
+
+#: LinesOfDescendency/lines-of-descendency.py:72
+msgid "The style used for the title of the page."
+msgstr "Mall som används för sidans titel."
+
+#: LinesOfDescendency/lines-of-descendency.py:82
+msgid "The style used for the title of a line."
+msgstr "Mall som används av en linjes titel."
+
+#: LinesOfDescendency/lines-of-descendency.py:89
+msgid "The basic style used for the text display."
+msgstr "Grundläggande mall som används för textvisning."
+
+#: LinesOfDescendency/lines-of-descendency.py:103
+#, python-format
+msgid "Person %s is not in the Database"
+msgstr "Person %s saknas i databasen"
+
+#: LinesOfDescendency/lines-of-descendency.py:111
+#, python-format
+msgid "%(line)s. line:"
+msgstr "%(line)s. linje:"
+
+#: LinesOfDescendency/lines-of-descendency.py:176
+#, python-format
+msgid "Lines of Descendency from %(ancestor)s to %(descendent)s"
+msgstr "Ättlingalinje från %(ancestor)s till %(descendent)s"

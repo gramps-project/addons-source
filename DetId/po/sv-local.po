@@ -1,0 +1,35 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Pär Ekholm <pehlm@pekholm.org>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-04 18:55-0600\n"
+"PO-Revision-Date: 2021-05-22 16:30+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"Last-Translator: Pär Ekholm <pehlm@pekholm.se>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: sv_SE\n"
+
+#: DetId/DetId.gpr.py:30
+msgid "Deterministic ID"
+msgstr "Deterministiskt ID"
+
+#: DetId/DetId.gpr.py:31
+msgid "Set/reset Gramps to use a Deterministic ID"
+msgstr "Ange/återställ Gramps att använda ett deterministiskt ID"
+
+#: DetId/DetId.py:74
+msgid "Deterministic ID Tool"
+msgstr "Verktyg för deterministiskt ID"
+
+#: DetId/DetId.py:80
+msgid "The ID and handles now start at 0x00000000, and increment by 0x100000001"
+msgstr "ID och ingångar börjar nu på 0x00000000, och ökar med 0x100000001"

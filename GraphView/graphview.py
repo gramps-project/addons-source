@@ -43,7 +43,7 @@ from io import StringIO
 from threading import Thread
 from math import sqrt, pow
 from html import escape
-from collections import abc
+from collections import abc, deque
 import gi
 from gi.repository import Gtk, Gdk, GdkPixbuf, GLib, Pango
 
@@ -70,7 +70,8 @@ from gramps.gen.utils.file import search_for, media_path_full, find_file
 from gramps.gen.utils.libformatting import FormattingHelper
 from gramps.gen.utils.thumbnails import get_thumbnail_path
 
-from gramps.gui.dialog import OptionDialog, ErrorDialog, QuestionDialog2
+from gramps.gui.dialog import (OptionDialog, ErrorDialog, QuestionDialog2,
+                               WarningDialog)
 from gramps.gui.display import display_url
 from gramps.gui.editors import EditPerson, EditFamily, EditTagList
 from gramps.gui.utils import (color_graph_box, color_graph_family,
@@ -97,11 +98,16 @@ _ = _trans.gettext
 if win():
     DETACHED_PROCESS = 8
 
-try:
-    gi.require_version('GooCanvas', '2.0')
-    from gi.repository import GooCanvas
-except ImportError:
-    raise Exception("Goocanvas 2 (http://live.gnome.org/GooCanvas) is "
+for goo_ver in ('3.0', '2.0'):
+    try:
+        gi.require_version('GooCanvas', goo_ver)
+        from gi.repository import GooCanvas
+        _GOO = True
+        break
+    except (ImportError, ValueError):
+        _GOO = False
+if not _GOO:
+    raise Exception("Goocanvas 2 or 3 (http://live.gnome.org/GooCanvas) is "
                     "required for this view to work")
 
 if os.sys.platform == "win32":
@@ -578,6 +584,8 @@ class GraphView(NavigationView):
         """
         Called when show all connected setting changed.
         """
+        value = _entry == 'True'
+        self.graph_widget.all_connected_btn.set_active(value)
         self.graph_widget.populate(self.get_active())
 
     def config_change_font(self, font_button):
@@ -1429,8 +1437,19 @@ class GraphWidget(object):
         dot = DotSvgGenerator(self.dbstate, self.view,
                               bold_size=self.bold_size,
                               norm_size=self.norm_size)
-        self.dot_data, self.svg_data = dot.build_graph(active_person)
+
+        graph_data = dot.build_graph(active_person)
         del dot
+
+        if not graph_data:
+            # something go wrong when build all-connected tree
+            # so turn off this feature
+            self.view._config.set('interface.graphview-show-all-connected',
+                                  False)
+            return
+
+        self.dot_data = graph_data[0]
+        self.svg_data = graph_data[1]
 
         parser = GraphvizSvgParser(self, self.view)
         parser.parse(self.svg_data)
@@ -1758,12 +1777,12 @@ class GraphWidget(object):
         # now scan throught test boxes, finding the smallest that will hold
         # the actual text as measured.  And record the dot font that was used.
         for indx in range(3, len(font_sizes), 2):
+            bold_size = float(font_sizes[indx - 1])
             if box_w[indx] > bold_b.x2 - bold_b.x1:
-                bold_size = float(font_sizes[indx - 1])
                 break
         for indx in range(4, len(font_sizes), 2):
+            norm_size = float(font_sizes[indx - 1])
             if box_w[indx] > norm_b.x2 - norm_b.x1:
-                norm_size = float(font_sizes[indx - 1])
                 break
         self.retest_font = False  # we don't do this again until font changes
         # return the adjusted font size to tell dot to use.
@@ -2407,7 +2426,7 @@ class DotSvgGenerator(object):
         dot_data = self.dot.getvalue().encode('utf8')
         svg_data = self.make_svg(dot_data)
 
-        return dot_data, svg_data
+        return (dot_data, svg_data)
 
     def make_svg(self, dot_data):
         """
@@ -2500,68 +2519,73 @@ class DotSvgGenerator(object):
     def add_connected(self, person, num_desc, num_anc, person_handles):
         """
         Include all connected to active in the list of people to graph.
+        Recursive algorithm is not used becasue some trees have been found
+        that exceed the standard python recursive depth.
         """
-        if not person:
-            return
+        # list of work to do, handles with generation delta,
+        # add to right and pop from left
+        todo = deque([(person, 0)])
 
-        # check if handle is not already processed
-        if person.handle not in person_handles:
-            spouses_list = person.get_family_handle_list()
-            # add self
-            person_handles[person.handle] = len(spouses_list)
-        else:
-            return
+        while todo:
+            # check for person count
+            if len(person_handles) > 1000:
+                w_msg = _("You try to build graph containing more then 1000 "
+                          "persons. Not all persons will be shown in the graph."
+                         )
+                WarningDialog(_("Incomplete graph"), w_msg)
+                return
 
-        # add descendants
-        if num_desc >= 0:  # generation restriction
+            person, delta_gen = todo.popleft()
+
+            if not person:
+                continue
+            # check generation restrictions
+            if (delta_gen > num_desc) or (delta_gen < -num_anc):
+                continue
+
+            # check if handle is not already processed
+            if person.handle not in person_handles:
+                spouses_list = person.get_family_handle_list()
+                person_handles[person.handle] = len(spouses_list)
+            else:
+                continue
+
+            # add descendants
             for family_handle in spouses_list:
                 family = self.database.get_family_from_handle(family_handle)
 
-                if num_desc > 0:  # generation restriction
-                    # add every child recursively
+                # add every child recursively
+                if num_desc >= (delta_gen + 1):  # generation restriction
                     for child_ref in family.get_child_ref_list():
-                        self.add_connected(
-                            self.database.get_person_from_handle(child_ref.ref),
-                            num_desc-1, num_anc+1, person_handles)
+                        if (child_ref.ref in person_handles
+                            or child_ref.ref in todo):
+                                continue
+                        todo.append(
+                            (self.database.get_person_from_handle(child_ref.ref),
+                             delta_gen+1))
 
                 # add person spouses
                 for sp_handle in (family.get_father_handle(),
                                   family.get_mother_handle()):
-                    if sp_handle and sp_handle not in person_handles:
-                        self.add_connected(
-                            self.database.get_person_from_handle(sp_handle),
-                            num_desc, num_anc, person_handles)
+                    if sp_handle and (sp_handle not in person_handles
+                                      and sp_handle not in todo):
+                        todo.append(
+                            (self.database.get_person_from_handle(sp_handle),
+                             delta_gen))
 
-        # add ancestors
-        if num_anc > 0:  # generation restriction
-            for family_handle in person.get_parent_family_handle_list():
-                family = self.database.get_family_from_handle(family_handle)
+            # add ancestors
+            if -num_anc <= (delta_gen - 1):  # generation restriction
+                for family_handle in person.get_parent_family_handle_list():
+                    family = self.database.get_family_from_handle(family_handle)
 
-                # add every ancestor's spouses
-                for sp_handle in (family.get_father_handle(),
-                                  family.get_mother_handle()):
-                    if sp_handle and sp_handle not in person_handles:
-                        self.add_spouses_connected(
-                            self.database.get_person_from_handle(sp_handle),
-                            num_desc+1, num_anc-1, person_handles)
-
-    def add_spouses_connected(self, person, num_desc, num_anc,
-                              person_handles):
-        """
-        Add spouses to the list for all connected variant.
-        """
-        if not person:
-            return
-
-        for family_handle in person.get_family_handle_list():
-            sp_family = self.database.get_family_from_handle(family_handle)
-
-            for sp_handle in (sp_family.get_father_handle(),
-                              sp_family.get_mother_handle()):
-                if sp_handle and sp_handle not in person_handles:
-                    self.add_connected(
-                        self.database.get_person_from_handle(sp_handle),
-                        num_desc, num_anc, person_handles)
+                    # add every ancestor's spouses
+                    for sp_handle in (family.get_father_handle(),
+                                      family.get_mother_handle()):
+                        if sp_handle and (sp_handle not in person_handles
+                                          and sp_handle not in todo):
+                            todo.append(
+                                (self.database.get_person_from_handle(sp_handle),
+                                 delta_gen-1))
 
     def find_descendants(self, active_person):
         """
@@ -2973,7 +2997,7 @@ class DotSvgGenerator(object):
         if self.show_full_dates or self.show_places:
             # add symbols
             if birth[0]:
-                birth[0] = _('%s %s') % (self.bth, birth[0])
+                birth[0] = '%s %s' % (self.bth, birth[0])
                 birth_wraped = birth[0]
                 birth_str = birth[0]
                 if birth[1]:
@@ -2986,7 +3010,7 @@ class DotSvgGenerator(object):
             birth_str += birth[1]
 
             if death[0]:
-                death[0] = _('%s %s') % (self.dth, death[0])
+                death[0] = '%s %s' % (self.dth, death[0])
                 death_wraped = death[0]
                 death_str = death[0]
                 if death[1]:
@@ -3006,9 +3030,9 @@ class DotSvgGenerator(object):
                 # add symbols
                 if image:
                     if birth[0]:
-                        birth_wraped = _('%s %s') % (self.bth, birth[0])
+                        birth_wraped = '%s %s' % (self.bth, birth[0])
                     if death[0]:
-                        death_wraped = _('%s %s') % (self.dth, death[0])
+                        death_wraped = '%s %s' % (self.dth, death[0])
                 else:
                     birth_wraped = birth_str
 
