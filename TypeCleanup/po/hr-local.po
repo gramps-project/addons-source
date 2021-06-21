@@ -1,0 +1,186 @@
+# Croatian translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) Gramps project
+# Milo Ivir <mail@milotype.de>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-12-27 13:30-0600\n"
+"PO-Revision-Date: 2020-08-24 16:59+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.1\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Language: hr\n"
+
+#: TypeCleanup/type_cleanup.gpr.py:29
+msgid "Type Cleanup"
+msgstr "Čišćenje vrsta"
+
+#: TypeCleanup/type_cleanup.gpr.py:30
+msgid "Clean up (remove) custom types"
+msgstr "Počisti (ukloni) prilagođene vrste"
+
+#: TypeCleanup/type_cleanup.py:96
+msgid "Event Attributes"
+msgstr "Svojstva događaja"
+
+#: TypeCleanup/type_cleanup.py:97
+msgid "Family Attributes"
+msgstr "Svojstva obitelji"
+
+#: TypeCleanup/type_cleanup.py:98
+msgid "Media Attributes"
+msgstr "Svojstva medija"
+
+#: TypeCleanup/type_cleanup.py:99
+msgid "Person Attributes"
+msgstr "Svojstva osobe"
+
+#: TypeCleanup/type_cleanup.py:101
+msgid "Event Roles"
+msgstr "Uloge događaja"
+
+#: TypeCleanup/type_cleanup.py:102
+msgid "Event Types"
+msgstr "Vrste događaja"
+
+#: TypeCleanup/type_cleanup.py:103
+msgid "Family Relation Types"
+msgstr "Vrste obiteljske veze"
+
+#: TypeCleanup/type_cleanup.py:104
+msgid "Child reference Types"
+msgstr "Vrste reference djeteta"
+
+#: TypeCleanup/type_cleanup.py:105
+msgid "Name Origin Types"
+msgstr "Vrste izvora imena"
+
+#: TypeCleanup/type_cleanup.py:106
+msgid "Name Types"
+msgstr "Vrste imena"
+
+#: TypeCleanup/type_cleanup.py:107
+msgid "Note Types"
+msgstr "Vrste zabilježaka"
+
+#: TypeCleanup/type_cleanup.py:108
+msgid "Place Types"
+msgstr "Vrste mjesta"
+
+#: TypeCleanup/type_cleanup.py:109
+msgid "Repository Types"
+msgstr "Vrste repozitorija"
+
+#: TypeCleanup/type_cleanup.py:110
+msgid "Source Attributes"
+msgstr "Svojstva izvora"
+
+#: TypeCleanup/type_cleanup.py:111
+msgid "Source Media Types"
+msgstr "Vrste medija izvora"
+
+#: TypeCleanup/type_cleanup.py:112
+msgid "URL Types"
+msgstr "Vrste URL adresa"
+
+#: TypeCleanup/type_cleanup.py:124
+msgid "Types Cleanup Tool"
+msgstr "Alat za čišćenje vrsta"
+
+#: TypeCleanup/type_cleanup.py:160
+msgid "Help"
+msgstr "Pomogni"
+
+#: TypeCleanup/type_cleanup.py:164
+msgid "Remove"
+msgstr "Ukloni"
+
+#: TypeCleanup/type_cleanup.py:166
+msgid ""
+"Remove the selected type from the db.\n"
+"This does not change any referenced objects."
+msgstr ""
+"Ukloni odabranu vrstu iz baze podataka.\n"
+"To ne mijenja nijedan referencirani objekt."
+
+#: TypeCleanup/type_cleanup.py:174
+msgid ""
+"Select a new name for the current type, prior to renaming the type in the "
+"referenced objects."
+msgstr ""
+"Odaberi novo ime za trenutačnu vrstu prije preimenovanja vrste u "
+"referenciranim objektima."
+
+#: TypeCleanup/type_cleanup.py:182
+msgid "Rename"
+msgstr "Preimenuj"
+
+#: TypeCleanup/type_cleanup.py:185
+msgid "Rename the selected type in all referenced objects."
+msgstr "Preimenuj odabranu vrstu u svim referenciranim objektima."
+
+#: TypeCleanup/type_cleanup.py:188
+msgid "Close"
+msgstr "Zatvori"
+
+#: TypeCleanup/type_cleanup.py:189
+msgid "Close the Type Cleanup Tool"
+msgstr "Zatvori alat za čišćenje vrsta"
+
+#: TypeCleanup/type_cleanup.py:195
+msgid "Types"
+msgstr "Vrste"
+
+#: TypeCleanup/type_cleanup.py:214
+msgid "Type"
+msgstr "Vrsta"
+
+#: TypeCleanup/type_cleanup.py:221
+msgid "References"
+msgstr "Reference"
+
+#: TypeCleanup/type_cleanup.py:242
+msgid "Type Cleanup Tool"
+msgstr "Alat za čišćenje vrsta"
+
+#: TypeCleanup/type_cleanup.py:275
+msgid "Reading database..."
+msgstr "Učitavanje baze podataka ..."
+
+#: TypeCleanup/type_cleanup.py:387
+#, python-format
+msgid "Changing type from %(old_type)s to %(new_type)s."
+msgstr "Mijenjanje vrste %(old_type)s u %(new_type)s."
+
+#: TypeCleanup/type_cleanup.py:432
+msgid ""
+"Removing this custom type will eliminate it from the type selection drop "
+"down lists\n"
+"and further runs of this tool.\n"
+"\n"
+"However, it will not remove it from the referenced items in the "
+"database.\n"
+"If you want to change it in referenced items, use 'Rename'."
+msgstr ""
+"Uklanjanje ove prilagođene vrste uklonit će je iz padajućih popisa za "
+"odabir vrste\n"
+"i ostalih izvršavanja ovog alata.\n"
+"\n"
+"Međutim, neće je ukloniti iz referenciranih objekata u bazi podataka.\n"
+"Ako je želiš promijeniti u referenciranim objektima, koristi „Preimenuj”."
+
+#: TypeCleanup/type_cleanup.py:437
+msgid "_Remove"
+msgstr "_Ukloni"
+
+#: TypeCleanup/type_cleanup.py:437
+msgid "_Stop"
+msgstr "_Prekid"
