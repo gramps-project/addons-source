@@ -1,21 +1,21 @@
 # Croatian translation for Gramps
 # This file is distributed under the same license as the Gramps package.
 # Copyright (C) Gramps project
-# Milo Ivir <mail@milotype.de>, 2019.
+# Milo Ivir <mail@milotype.de>, 2019., 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-21 08:49+1100\n"
-"PO-Revision-Date: 2019-10-24 14:50+0200\n"
+"PO-Revision-Date: 2020-08-29 20:25+0200\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: \n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 2.4.1\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 
@@ -299,7 +299,7 @@ msgid ""
 "Wrong namespace\n"
 "Need: %s"
 msgstr ""
-"Krivi nazivni prostor\n"
+"Krivi imenski prostor\n"
 "Potreban je: %s"
 
 #: lxml/lxmlGramplet.py:337
@@ -384,12 +384,12 @@ msgstr "Galerija.html"
 #: lxml/lxmlGramplet.py:522
 #, python-format
 msgid "2. Has generated a media index on \"%(file)s\".\n"
-msgstr "2. Stvoren je indeks medija za „%(file)s”.\n"
+msgstr "2. Stvorio/la je indeks medija za „%(file)s”.\n"
 
 #: lxml/lxmlGramplet.py:525
 #, python-format
 msgid "3. Has written entries into \"%(file)s\".\n"
-msgstr "3. Upisani su unosi u „%(file)s”.\n"
+msgstr "3. Dodao/la je zapise u „%(file)s”.\n"
 
 #: lxml/lxmlGramplet.py:544
 msgid "Matches XSD schema."
@@ -506,7 +506,7 @@ msgstr "Država"
 #: lxml/lxmlGramplet.py:695
 #, python-format
 msgid "1. Has generated \"%s\".\n"
-msgstr "1. Stvorena je „%s”.\n"
+msgstr "1. Stvorio/la je „%s”.\n"
 
 #: lxml/lxmlGramplet.py:696
 #, python-format
