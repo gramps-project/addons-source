@@ -1,457 +1,351 @@
 # Croatian translation for Gramps
 # This file is distributed under the same license as the Gramps package.
 # Copyright (C) Gramps project
-# Milo Ivir <mail@milotype.de>, 2019.
+# Milo Ivir <mail@milotype.de>, 2019., 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-05 13:20+0200\n"
-"PO-Revision-Date: 2020-08-05 14:10+0200\n"
-"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
+"POT-Creation-Date: 2019-10-04 16:33-0500\n"
+"PO-Revision-Date: 2019-10-23 21:10+0200\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: \n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 2.2.4\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 
-#: PersonEverything//PersonEverything.gpr.py:31
+#: PersonEverything/PersonEverything.gpr.py:31
 msgid "PersonEverything Report"
 msgstr "Izvještaj o osobi"
 
-#: PersonEverything//PersonEverything.gpr.py:32
+#: PersonEverything/PersonEverything.gpr.py:32
 msgid "Produces a report containing everything about the active person"
 msgstr "Stvara izvještaj sa svim podacima aktivne osobe"
 
-#: PersonEverything//PersonEverything.py:111
-#: PersonEverything//PersonEverything_old.py:110
+#: PersonEverything/PersonEverything.py:110
 #, python-format
 msgid "Person %s is not in the Database"
 msgstr "U bazi podataka ne postoji osoba %s"
 
-#: PersonEverything//PersonEverything.py:133
-#: PersonEverything//PersonEverything_old.py:132
+#: PersonEverything/PersonEverything.py:132
 #, python-format
 msgid "All information about %s"
 msgstr "Svi podaci o %s"
 
-#: PersonEverything//PersonEverything.py:142
-#: PersonEverything//PersonEverything_old.py:141
+#: PersonEverything/PersonEverything.py:141
 msgid "Person Events"
 msgstr "Događaji osobe"
 
-#: PersonEverything//PersonEverything.py:148
-#: PersonEverything//PersonEverything_old.py:147
+#: PersonEverything/PersonEverything.py:147
 msgid "Families"
 msgstr "Obitelji"
 
-#: PersonEverything//PersonEverything.py:154
-#: PersonEverything//PersonEverything_old.py:153
+#: PersonEverything/PersonEverything.py:153
 msgid "Endnotes"
 msgstr "Završne napomene"
 
-#: PersonEverything//PersonEverything.py:169
-msgid "Person"
-msgstr "Osoba"
-
-#: PersonEverything//PersonEverything.py:170
-#: PersonEverything//PersonEverything_old.py:169
+#: PersonEverything/PersonEverything.py:169
 msgid "Gender"
 msgstr "Spol"
 
-#: PersonEverything//PersonEverything.py:173
-#: PersonEverything//PersonEverything_old.py:172
+#: PersonEverything/PersonEverything.py:172
 msgid "Primary name"
 msgstr "Primarno ime"
 
-#: PersonEverything//PersonEverything.py:174
-#: PersonEverything//PersonEverything.py:181
-#: PersonEverything//PersonEverything.py:301
-#: PersonEverything//PersonEverything.py:595
-#: PersonEverything//PersonEverything.py:724
-#: PersonEverything//PersonEverything_old.py:173
-#: PersonEverything//PersonEverything_old.py:180
-#: PersonEverything//PersonEverything_old.py:300
-#: PersonEverything//PersonEverything_old.py:594
-#: PersonEverything//PersonEverything_old.py:723
+#: PersonEverything/PersonEverything.py:173
+#: PersonEverything/PersonEverything.py:180
+#: PersonEverything/PersonEverything.py:300
+#: PersonEverything/PersonEverything.py:594
+#: PersonEverything/PersonEverything.py:723
 msgid "Type"
 msgstr "Vrsta"
 
-#: PersonEverything//PersonEverything.py:180
-#: PersonEverything//PersonEverything_old.py:179
+#: PersonEverything/PersonEverything.py:179
 msgid "Alternate name"
 msgstr "Alternativno ime"
 
-#: PersonEverything//PersonEverything.py:196
-msgid " This is the primary birth event."
-msgstr " Ovo je primarni porođajni događaj."
-
-#: PersonEverything//PersonEverything.py:199
-msgid " This is the primary death event."
-msgstr " Ovo je primarni smrtni slučaj."
-
-#: PersonEverything//PersonEverything.py:200
-#: PersonEverything//PersonEverything_old.py:199
+#: PersonEverything/PersonEverything.py:199
 msgid "Event reference"
 msgstr "Referenca događaja"
 
-#: PersonEverything//PersonEverything.py:201
-#: PersonEverything//PersonEverything_old.py:200
+#: PersonEverything/PersonEverything.py:200
 msgid "Role"
 msgstr "Uloga"
 
-#: PersonEverything//PersonEverything.py:208
-#: PersonEverything//PersonEverything_old.py:207
+#: PersonEverything/PersonEverything.py:207
 msgid "Family"
 msgstr "Obitelj"
 
-#: PersonEverything//PersonEverything.py:214
-#: PersonEverything//PersonEverything_old.py:213
+#: PersonEverything/PersonEverything.py:213
 msgid "Child"
 msgstr "Dijete"
 
-#: PersonEverything//PersonEverything.py:220
-#: PersonEverything//PersonEverything_old.py:219
+#: PersonEverything/PersonEverything.py:219
 msgid "Relationship to Father"
 msgstr "Srodstvo s ocem"
 
-#: PersonEverything//PersonEverything.py:225
-#: PersonEverything//PersonEverything_old.py:224
+#: PersonEverything/PersonEverything.py:224
 msgid "Relationship to Mother"
 msgstr "Srodstvo s majkom"
 
-#: PersonEverything//PersonEverything.py:238
-#: PersonEverything//PersonEverything_old.py:237
+#: PersonEverything/PersonEverything.py:237
 msgid "Parent Family"
 msgstr "Obitelj roditelja"
 
-#: PersonEverything//PersonEverything.py:240
-msgid ""
-"Details of any children and events etc. would be in a similar report for the "
-"father or mother."
-msgstr ""
-"Pojedinosti o bilo kojoj djeci i događajima itd. Nalaze se u sličnom "
-"izvješću za oca ili majku."
-
-#: PersonEverything//PersonEverything.py:249
-#: PersonEverything//PersonEverything_old.py:248
+#: PersonEverything/PersonEverything.py:248
 msgid "Relationship"
 msgstr "Srodstvo"
 
-#: PersonEverything//PersonEverything.py:259
-#: PersonEverything//PersonEverything_old.py:258
+#: PersonEverything/PersonEverything.py:258
 msgid "Father"
 msgstr "Otac"
 
-#: PersonEverything//PersonEverything.py:270
-#: PersonEverything//PersonEverything_old.py:269
+#: PersonEverything/PersonEverything.py:269
 msgid "Mother"
 msgstr "Majka"
 
-#: PersonEverything//PersonEverything.py:292
-#: PersonEverything//PersonEverything.py:966
-#: PersonEverything//PersonEverything.py:982
-#: PersonEverything//PersonEverything_old.py:291
-#: PersonEverything//PersonEverything_old.py:965
-#: PersonEverything//PersonEverything_old.py:981
+#: PersonEverything/PersonEverything.py:291
+#: PersonEverything/PersonEverything.py:965
+#: PersonEverything/PersonEverything.py:981
 msgid "Private"
 msgstr "Privatno"
 
-#: PersonEverything//PersonEverything.py:316
-#: PersonEverything//PersonEverything_old.py:315
+#: PersonEverything/PersonEverything.py:315
 msgid "Address"
 msgstr "Adresa"
 
-#: PersonEverything//PersonEverything.py:326
-#: PersonEverything//PersonEverything_old.py:325
+#: PersonEverything/PersonEverything.py:325
 msgid "Attribute"
 msgstr "Svojstvo"
 
-#: PersonEverything//PersonEverything.py:354
-#: PersonEverything//PersonEverything_old.py:353
+#: PersonEverything/PersonEverything.py:353
 msgid "Confidence"
 msgstr "Pouzdanost"
 
-#: PersonEverything//PersonEverything.py:357
-#: PersonEverything//PersonEverything_old.py:356
+#: PersonEverything/PersonEverything.py:356
 msgid "Unknown"
 msgstr "Nepoznato"
 
-#: PersonEverything//PersonEverything.py:369
-#: PersonEverything//PersonEverything_old.py:368
+#: PersonEverything/PersonEverything.py:368
 msgid "Date"
 msgstr "Datum"
 
-#: PersonEverything//PersonEverything.py:378
-#: PersonEverything//PersonEverything_old.py:377
+#: PersonEverything/PersonEverything.py:377
 msgid "Description"
 msgstr "Opis"
 
-#: PersonEverything//PersonEverything.py:387
-#: PersonEverything//PersonEverything_old.py:386
+#: PersonEverything/PersonEverything.py:386
 msgid "Event"
 msgstr "Događaj"
 
-#: PersonEverything//PersonEverything.py:388
-#: PersonEverything//PersonEverything_old.py:387
+#: PersonEverything/PersonEverything.py:387
 msgid "Event type"
 msgstr "Vrsta događaja"
 
-#: PersonEverything//PersonEverything.py:403
-#: PersonEverything//PersonEverything_old.py:402
+#: PersonEverything/PersonEverything.py:402
 msgid "Temple and status"
 msgstr "Hram i status"
 
-#: PersonEverything//PersonEverything.py:414
-#: PersonEverything//PersonEverything_old.py:413
+#: PersonEverything/PersonEverything.py:413
 msgid "LDS Ordinance family"
 msgstr "Uredba CIK obitelji"
 
-#: PersonEverything//PersonEverything.py:418
-#: PersonEverything//PersonEverything_old.py:417
+#: PersonEverything/PersonEverything.py:417
 msgid "LDS "
 msgstr "CIK "
 
-#: PersonEverything//PersonEverything.py:419
-#: PersonEverything//PersonEverything_old.py:418
+#: PersonEverything/PersonEverything.py:418
 msgid "Ordinance"
 msgstr "Ordination"
 
-#: PersonEverything//PersonEverything.py:434
-#: PersonEverything//PersonEverything_old.py:433
+#: PersonEverything/PersonEverything.py:433
 msgid "Street, City, County, State, Postal Code, Country, Phone number"
 msgstr ""
-"Ulica, mjesto, pokrajina, savezna država, poštanski broj, država, telefonski "
+"Ulica, grad, okrug, pokrajina, poštanski broj, država, telefonski "
 "broj"
 
-#: PersonEverything//PersonEverything.py:448
-#: PersonEverything//PersonEverything_old.py:447
+#: PersonEverything/PersonEverything.py:447
 msgid "Media Reference"
 msgstr "Referenca medija"
 
-#: PersonEverything//PersonEverything.py:455
-#: PersonEverything//PersonEverything.py:732
-#: PersonEverything//PersonEverything_old.py:454
-#: PersonEverything//PersonEverything_old.py:731
+#: PersonEverything/PersonEverything.py:454
+#: PersonEverything/PersonEverything.py:731
 msgid "Description and Path"
 msgstr "Opis i staza"
 
-#: PersonEverything//PersonEverything.py:474
-#: PersonEverything//PersonEverything_old.py:473
+#: PersonEverything/PersonEverything.py:473
 msgid "Could not add photo to page"
 msgstr "Nije moguće sliku dodati na stranicu"
 
-#: PersonEverything//PersonEverything.py:475
-#: PersonEverything//PersonEverything_old.py:474
+#: PersonEverything/PersonEverything.py:474
 msgid "File does not exist"
 msgstr "Datoteka ne postoji"
 
-#: PersonEverything//PersonEverything.py:484
-#: PersonEverything//PersonEverything_old.py:483
+#: PersonEverything/PersonEverything.py:483
 msgid "Referenced Region"
 msgstr "Referencirano područje"
 
-#: PersonEverything//PersonEverything.py:502
-#: PersonEverything//PersonEverything_old.py:501
+#: PersonEverything/PersonEverything.py:501
 msgid "unknown"
 msgstr "nepoznato"
 
-#: PersonEverything//PersonEverything.py:503
-#: PersonEverything//PersonEverything_old.py:502
+#: PersonEverything/PersonEverything.py:502
 msgid "Media Object"
 msgstr "Medijski objekt"
 
-#: PersonEverything//PersonEverything.py:505
-#: PersonEverything//PersonEverything_old.py:504
+#: PersonEverything/PersonEverything.py:504
 msgid "Mime type"
 msgstr "MIME vrsta"
 
-#: PersonEverything//PersonEverything.py:516
-#: PersonEverything//PersonEverything_old.py:515
+#: PersonEverything/PersonEverything.py:515
 msgid ""
 "Given name(s): Title, Given, Suffix, Call Name, Nick Name, Family Nick Name"
-msgstr "Ime: titula, ime, sufiks, zvano ime, nadimak, obiteljski nadimak"
+msgstr "Ime: titula, ime, sufiks, upotrebno ime, nadimak, obiteljski nadimak"
 
-#: PersonEverything//PersonEverything.py:541
-#: PersonEverything//PersonEverything_old.py:540
+#: PersonEverything/PersonEverything.py:540
 msgid "Note"
 msgstr "Zabilješka"
 
-#: PersonEverything//PersonEverything.py:542
-#: PersonEverything//PersonEverything_old.py:541
+#: PersonEverything/PersonEverything.py:541
 msgid "Note type"
 msgstr "Vrsta zabilješke"
 
-#: PersonEverything//PersonEverything.py:553
-#: PersonEverything//PersonEverything_old.py:552
+#: PersonEverything/PersonEverything.py:552
 msgid "Parent Place"
 msgstr "Mjesto roditelja"
 
-#: PersonEverything//PersonEverything.py:568
-#: PersonEverything//PersonEverything.py:572
-#: PersonEverything//PersonEverything_old.py:567
-#: PersonEverything//PersonEverything_old.py:571
+#: PersonEverything/PersonEverything.py:567
+#: PersonEverything/PersonEverything.py:571
 msgid "Alternate Location"
 msgstr "Alternativno mjesto"
 
-#: PersonEverything//PersonEverything.py:569
-#: PersonEverything//PersonEverything_old.py:568
+#: PersonEverything/PersonEverything.py:568
 msgid "Parish"
 msgstr "Župa"
 
-#: PersonEverything//PersonEverything.py:585
-#: PersonEverything//PersonEverything_old.py:584
+#: PersonEverything/PersonEverything.py:584
 msgid "Place"
 msgstr "Mjesto"
 
-#: PersonEverything//PersonEverything.py:586
-#: PersonEverything//PersonEverything_old.py:585
+#: PersonEverything/PersonEverything.py:585
 msgid "Place Title"
-msgstr "Ime mjesta"
+msgstr "Naslov mjesta"
 
-#: PersonEverything//PersonEverything.py:591
-#: PersonEverything//PersonEverything_old.py:590
+#: PersonEverything/PersonEverything.py:590
 msgid "Name"
 msgstr "Ime"
 
-#: PersonEverything//PersonEverything.py:599
-#: PersonEverything//PersonEverything_old.py:598
+#: PersonEverything/PersonEverything.py:598
 msgid "Code"
 msgstr "Šifra"
 
-#: PersonEverything//PersonEverything.py:607
-#: PersonEverything//PersonEverything_old.py:606
+#: PersonEverything/PersonEverything.py:606
 msgid "Alternative Name"
 msgstr "Alternativno ime"
 
-#: PersonEverything//PersonEverything.py:618
-#: PersonEverything//PersonEverything_old.py:617
+#: PersonEverything/PersonEverything.py:617
 msgid "Latitude, Longitude"
 msgstr "Zemljopisna širina, visina"
 
-#: PersonEverything//PersonEverything.py:640
-#: PersonEverything//PersonEverything_old.py:639
+#: PersonEverything/PersonEverything.py:639
 msgid "Call number"
 msgstr "Pozivni broj"
 
-#: PersonEverything//PersonEverything.py:647
-#: PersonEverything//PersonEverything_old.py:646
+#: PersonEverything/PersonEverything.py:646
 msgid "Repository"
 msgstr "Spremište"
 
-#: PersonEverything//PersonEverything.py:648
-#: PersonEverything//PersonEverything_old.py:647
+#: PersonEverything/PersonEverything.py:647
 msgid "Repository type"
 msgstr "Vrsta spremišta"
 
-#: PersonEverything//PersonEverything.py:670
-#: PersonEverything//PersonEverything_old.py:669
+#: PersonEverything/PersonEverything.py:669
 msgid "Repository reference"
 msgstr "Referenca spremišta"
 
-#: PersonEverything//PersonEverything.py:671
-#: PersonEverything//PersonEverything_old.py:670
+#: PersonEverything/PersonEverything.py:670
 msgid "Media type"
 msgstr "Vrsta medija"
 
-#: PersonEverything//PersonEverything.py:678
-#: PersonEverything//PersonEverything.py:682
-#: PersonEverything//PersonEverything_old.py:677
-#: PersonEverything//PersonEverything_old.py:681
+#: PersonEverything/PersonEverything.py:677
+#: PersonEverything/PersonEverything.py:681
 msgid "Surname"
 msgstr "Prezime"
 
-#: PersonEverything//PersonEverything.py:679
-#: PersonEverything//PersonEverything_old.py:678
+#: PersonEverything/PersonEverything.py:678
 msgid "Origin type"
 msgstr "Vrsta porijekla"
 
-#: PersonEverything//PersonEverything.py:686
-#: PersonEverything//PersonEverything_old.py:685
+#: PersonEverything/PersonEverything.py:685
 msgid "Prefix, surname, connector"
 msgstr "Prefiks, prezime, veznik"
 
-#: PersonEverything//PersonEverything.py:691
-#: PersonEverything//PersonEverything_old.py:690
+#: PersonEverything/PersonEverything.py:690
 msgid "{This is the primary surname}"
 msgstr "{Ovo je primarno prezime}"
 
-#: PersonEverything//PersonEverything.py:704
-#: PersonEverything//PersonEverything_old.py:703
+#: PersonEverything/PersonEverything.py:703
 msgid "Tag name"
-msgstr "Naziv etikete"
+msgstr "Ime etikete"
 
-#: PersonEverything//PersonEverything.py:715
-#: PersonEverything//PersonEverything_old.py:714
+#: PersonEverything/PersonEverything.py:714
 msgid "Tag colour and priority"
 msgstr "Boja etikete i prioritet"
 
-#: PersonEverything//PersonEverything.py:723
-#: PersonEverything//PersonEverything_old.py:722
+#: PersonEverything/PersonEverything.py:722
 msgid "URL"
 msgstr "URL"
 
-#: PersonEverything//PersonEverything.py:906
-#: PersonEverything//PersonEverything_old.py:905
+#: PersonEverything/PersonEverything.py:905
 msgid "Source"
 msgstr "Izvor"
 
-#: PersonEverything//PersonEverything.py:912
-#: PersonEverything//PersonEverything_old.py:911
+#: PersonEverything/PersonEverything.py:911
 msgid "Citation"
 msgstr "Citat"
 
-#: PersonEverything//PersonEverything.py:960
-#: PersonEverything//PersonEverything_old.py:959
+#: PersonEverything/PersonEverything.py:959
 msgid "No source information found"
 msgstr "Podaci o izvoru nisu pronađeni"
 
-#: PersonEverything//PersonEverything.py:1001
-#: PersonEverything//PersonEverything_old.py:1000
+#: PersonEverything/PersonEverything.py:1000
 msgid "Report Options"
 msgstr "Opcije za izvještaj"
 
-#: PersonEverything//PersonEverything.py:1003
-#: PersonEverything//PersonEverything_old.py:1002
+#: PersonEverything/PersonEverything.py:1002
 msgid "Center Person"
 msgstr "Središnja osoba"
 
-#: PersonEverything//PersonEverything.py:1004
-#: PersonEverything//PersonEverything_old.py:1003
+#: PersonEverything/PersonEverything.py:1003
 msgid "The center person for the report"
 msgstr "Središnja osoba u izvještaju"
 
-#: PersonEverything//PersonEverything.py:1010
-#: PersonEverything//PersonEverything_old.py:1009
+#: PersonEverything/PersonEverything.py:1009
 msgid "Name format"
 msgstr "Format za imena"
 
-#: PersonEverything//PersonEverything.py:1011
-#: PersonEverything//PersonEverything_old.py:1010
+#: PersonEverything/PersonEverything.py:1010
 msgid "Default"
-msgstr "Zadano"
+msgstr "Standardno"
 
-#: PersonEverything//PersonEverything.py:1014
-#: PersonEverything//PersonEverything_old.py:1013
+#: PersonEverything/PersonEverything.py:1013
 msgid "Select the format to display names"
 msgstr "Odaberi format za prikaz imena"
 
-#: PersonEverything//PersonEverything.py:1028
-#: PersonEverything//PersonEverything_old.py:1027
+#: PersonEverything/PersonEverything.py:1027
 msgid "The style used for the title of the page."
-msgstr "Stil korišten za naslov stranice."
+msgstr "Stil za naslov stranice."
 
-#: PersonEverything//PersonEverything.py:1039
-#: PersonEverything//PersonEverything_old.py:1038
+#: PersonEverything/PersonEverything.py:1038
 #, python-format
 msgid "The style used for the level %d display."
-msgstr "Stil korišten za prikaz %d. razine."
+msgstr "Stil za prikaz %d. razine."
 
-#: PersonEverything//PersonEverything.py:1060
-#: PersonEverything//PersonEverything_old.py:1059
+#: PersonEverything/PersonEverything.py:1059
 msgid "The basic style used for the endnotes source display."
 msgstr "Osnovni stil za prikaz izvora u završnim zabilješkama."
