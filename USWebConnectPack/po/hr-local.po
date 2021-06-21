@@ -1,22 +1,23 @@
 # Croatian translation for Gramps
 # This file is distributed under the same license as the Gramps package.
 # Copyright (C) Gramps project
-# Milo Ivir <mail@milotype.de>, 2019.
+# Milo Ivir <mail@milotype.de>, 2019., 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2019-03-08 01:38+0100\n"
+"POT-Creation-Date: 2020-07-27 16:58-0500\n"
+"PO-Revision-Date: 2020-08-25 17:08+0200\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: \n"
+"Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.1\n"
-"Last-Translator: Milo Ivir <mail@milotype.de>\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
-"Language: hr\n"
+"X-Generator: Poedit 2.4.1\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 
 #: USWebConnectPack/USWebPack.gpr.py:10
 msgid "US Web Connect Pack"
@@ -56,4 +57,8 @@ msgstr "Hathi Trust digitalna biblioteka"
 
 #: USWebConnectPack/USWebPack.py:50
 msgid "Open Library"
-msgstr "Biblioteka otvorenog koda (Open Library)"
+msgstr "Open Library"
+
+#: USWebConnectPack/USWebPack.py:51
+msgid "Legacy.com"
+msgstr "Legacy.com"
