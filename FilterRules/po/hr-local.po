@@ -1,0 +1,216 @@
+# Croatian translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) Gramps project
+# Milo Ivir <mail@milotype.de>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-08 11:14-0500\n"
+"PO-Revision-Date: 2020-09-19 17:06+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.1\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Language: hr\n"
+
+#: FilterRules/degreesofseparation.gpr.py:24
+#: FilterRules/degreesofseparation.py:102
+msgid "People separated less than <N> degrees of <person>"
+msgstr "Osobe razdvojene manje od <N> stupnjeva od <osobe>"
+
+#: FilterRules/degreesofseparation.gpr.py:25
+#: FilterRules/degreesofseparation.py:104
+msgid "Filter rule that matches relatives by degrees of separation"
+msgstr "Pravilo filtra pronalazi srodnike po stupnjevima razdvajanja"
+
+#: FilterRules/degreesofseparation.py:47
+msgid "Number of degrees of separation from person."
+msgstr "Broj stupnjeva razdvajanja od osobe."
+
+#: FilterRules/degreesofseparation.py:60
+msgid "Include Partners"
+msgstr "Uključi partnere"
+
+#: FilterRules/degreesofseparation.py:61
+msgid "Include all partners."
+msgstr "Uključi sve partnere."
+
+#: FilterRules/degreesofseparation.py:79
+msgid "Include all parents"
+msgstr "Uključi sve roditelje"
+
+#: FilterRules/degreesofseparation.py:80
+msgid "Include parents with relationship foster, adopted, stepchild, etc."
+msgstr "Uključi roditelje sa srodstvima kao što su skrbništvo, posvojče, pastorče, itd."
+
+#: FilterRules/degreesofseparation.py:98
+msgid "ID:"
+msgstr "ID:"
+
+#: FilterRules/degreesofseparation.py:99
+msgid "Degrees:"
+msgstr "Stupnjevi:"
+
+#: FilterRules/degreesofseparation.py:103
+#: FilterRules/isrelatedwithfiltermatch.py:54
+msgid "Relationship filters"
+msgstr "Filtri za srodstva"
+
+#: FilterRules/degreesofseparation.py:158
+#: FilterRules/degreesofseparation.py:163
+msgid "Birth"
+msgstr "Rođenje"
+
+#: FilterRules/familieswitheventfiltermatch.gpr.py:24
+#: FilterRules/familieswitheventfiltermatch.py:45
+msgid "Families matching <event filter>"
+msgstr "Obitelji koje odgavaraju <filtru za događaje>"
+
+#: FilterRules/familieswitheventfiltermatch.gpr.py:25
+msgid "Matches families that are matched by an event filter"
+msgstr "Pronalazi obitelji koje odgovaraju filtru za događaje"
+
+#: FilterRules/familieswitheventfiltermatch.py:44
+msgid "Event filter name:"
+msgstr "Ime filtra za događaje:"
+
+#: FilterRules/familieswitheventfiltermatch.py:46 FilterRules/hasrolerule.py:70
+#: FilterRules/hasrolerule.py:94
+msgid "Event filters"
+msgstr "Filtri za događaje"
+
+#: FilterRules/familieswitheventfiltermatch.py:47
+msgid "Matches families matched by an event filter"
+msgstr "Pronalazi obitelji koje odgovaraju filtru za događaje"
+
+#: FilterRules/hasrolerule.gpr.py:26
+msgid "People with events with a selected role"
+msgstr "Osobe s događajima s odabranom ulogom"
+
+#: FilterRules/hasrolerule.gpr.py:27 FilterRules/hasrolerule.py:69
+msgid "Matches people with an event with a selected role"
+msgstr "Pronalazi osobe s događajima s odabranom ulogom"
+
+#: FilterRules/hasrolerule.gpr.py:40
+msgid "Families with events with a selected role"
+msgstr "Obitelji s događajima s odabranom ulogom"
+
+#: FilterRules/hasrolerule.gpr.py:41 FilterRules/hasrolerule.py:93
+msgid "Matches families with an event with a selected role"
+msgstr "Pronalazi obitelji s događajima s odabranom ulogom"
+
+#: FilterRules/hasrolerule.py:55
+msgid "Does NOT match with selected Role"
+msgstr "NE podudara se s odabranom ulogom"
+
+#: FilterRules/hasrolerule.py:56
+msgid "Finds the items that don't have event Roles of the selected type."
+msgstr "Pronalazi objekte koje nemaju uloge događaja za odabranu vrstu."
+
+#: FilterRules/hasrolerule.py:66 FilterRules/hasrolerule.py:90
+msgid "Role"
+msgstr "Uloga"
+
+#: FilterRules/hasrolerule.py:67 FilterRules/hasrolerule.py:91
+msgid "Inverse"
+msgstr "Inverzno"
+
+#: FilterRules/hasrolerule.py:68
+msgid "People with events with the <role>"
+msgstr "Osobe s događajima s <ulogom>"
+
+#: FilterRules/hasrolerule.py:92
+msgid "Families with events with the <role>"
+msgstr "Obitelji s događajima s <ulogom>"
+
+#: FilterRules/hassourcefilter.gpr.py:27
+msgid "Source matching parameters"
+msgstr "Izvor odgovara parametrima"
+
+#: FilterRules/hassourcefilter.gpr.py:28
+msgid "Matches Sources with values containing the chosen parameters"
+msgstr "Pronalazi izvore s vrijednostima koje sadrže odabrane parametre"
+
+#: FilterRules/hassourcefilter.py:53
+msgid "Title:"
+msgstr "Naslov:"
+
+#: FilterRules/hassourcefilter.py:54
+msgid "Author:"
+msgstr "Autor:"
+
+#: FilterRules/hassourcefilter.py:55
+msgid "Abbreviation:"
+msgstr "Kratica:"
+
+#: FilterRules/hassourcefilter.py:56
+msgid "Publication:"
+msgstr "Publikacija:"
+
+#: FilterRules/hassourcefilter.py:57
+msgid "Sources matching parameters"
+msgstr "Izvori odgovaraju parametrima"
+
+#: FilterRules/hassourcefilter.py:58
+msgid "Matches sources with a particular value"
+msgstr "Pronalazi izvore s određenom vrijednosti"
+
+#: FilterRules/hassourcefilter.py:59 FilterRules/infamilyrule.py:127
+#: FilterRules/isfamilyfiltermatchevent.py:65
+msgid "General filters"
+msgstr "Opći filtri"
+
+#: FilterRules/infamilyrule.gpr.py:25 FilterRules/infamilyrule.gpr.py:26
+#: FilterRules/infamilyrule.py:125 FilterRules/infamilyrule.py:126
+msgid "People who are part of families matching <filter>"
+msgstr "Osobe koje su dio obitelji koje odgovaraju <filtru>"
+
+#: FilterRules/infamilyrule.py:48 FilterRules/infamilyrule.py:123
+msgid "Include Children"
+msgstr "Uključi djecu"
+
+#: FilterRules/infamilyrule.py:49
+msgid "Include the children in the matching families."
+msgstr "Uključi djecu u pronađenoj obitelji."
+
+#: FilterRules/infamilyrule.py:75 FilterRules/infamilyrule.py:124
+msgid "Include Parents"
+msgstr "Uključi roditelje"
+
+#: FilterRules/infamilyrule.py:76
+msgid "Include the parents in the matching families."
+msgstr "Uključi roditelje u pronađenim obiteljima."
+
+#: FilterRules/infamilyrule.py:122 FilterRules/isfamilyfiltermatchevent.py:62
+msgid "Family Filter name:"
+msgstr "Ime filtra za obitelji:"
+
+#: FilterRules/isfamilyfiltermatchevent.gpr.py:24
+#: FilterRules/isfamilyfiltermatchevent.gpr.py:25
+#: FilterRules/isfamilyfiltermatchevent.py:63
+#: FilterRules/isfamilyfiltermatchevent.py:64
+msgid "Events of families matching a <family filter>"
+msgstr "Događaji obitelji koje odgovaraju <filtru za obitelji>"
+
+#: FilterRules/isrelatedwithfiltermatch.gpr.py:26
+#: FilterRules/isrelatedwithfiltermatch.py:53
+msgid "People related to <filter>"
+msgstr "Osobe u srodstvu s <filtrom>"
+
+#: FilterRules/isrelatedwithfiltermatch.gpr.py:27
+#: FilterRules/isrelatedwithfiltermatch.py:55
+msgid "Matches people who are related to anybody matched by a person filter"
+msgstr "Pronalazi osobe koje su u srodstvu s bilo kojom osobom koja je pronađena pomoću filtra za osobe"
+
+#: FilterRules/isrelatedwithfiltermatch.py:52
+msgid "Filter name:"
+msgstr "Ime filtra:"
+
+#: FilterRules/isrelatedwithfiltermatch.py:67
+msgid "Retrieving all sub-filter matches"
+msgstr "Pronalazi sve zapise koji odgovaraju podfiltru"
