@@ -1,21 +1,21 @@
 # Croatian translation for Gramps
 # This file is distributed under the same license as the Gramps package.
 # Copyright (C) Gramps project
-# Milo Ivir <mail@milotype.de>, 2019.
+# Milo Ivir <mail@milotype.de>, 2019., 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-08 21:09+0200\n"
-"PO-Revision-Date: 2020-08-16 22:56+0200\n"
-"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
+"PO-Revision-Date: 2020-08-29 19:15+0200\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: \n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 2.4.1\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 
@@ -34,17 +34,17 @@ msgid ""
 "\">Gramps</a> has all <a href=\"https://github.com/gramps-project/gramps/"
 "blob/master/README.md\">prerequisites</a> installed.\n"
 msgstr ""
-"Dijagnostički Gramplet za pomoć u procjeni ima li <a href=\"https://gramps-"
-"project.org/\">Gramps</a> sve <a href=\"https://github.com/gramps-project/"
-"gramps/blob /master/README.md\"> preduvjeti</a>.\n"
+"Dijagnostički Gramplet koji pomaže procijeniti, jesu li u <a href=\"https://"
+"gramps-project.org/\">Grampsu</a> instalirane sve <a href=\"https://github."
+"com/gramps-project/gramps/blob /master/README.md\">potrebne komponente</a>.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:138
 msgid ""
 "Diagnostic Gramplet to help evaluate if Gramps has all prerequisites "
 "installed."
 msgstr ""
-"Dijagnostički Gramplet za pomoć u procjeni da li su Gramps instalirani svi "
-"preduvjeti."
+"Dijagnostički Gramplet koji pomaže procijeniti, jesu li u Grampsu "
+"instalirane sve potrebne komponente."
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:144
 msgid ""
@@ -52,7 +52,7 @@ msgid ""
 "<u><b>REQUIREMENTS</b></u>\n"
 msgstr ""
 "\n"
-"<u><b>ZAHTJEVI</b></u>\n"
+"<u><b>PREDUVJETI</b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:145
 msgid ""
@@ -68,15 +68,15 @@ msgid ""
 "<u><b>STRONGLY RECOMMENDED</b></u>\n"
 msgstr ""
 "\n"
-"<u><b>JEDNO PREPORUČENO</b></u>\n"
+"<u><b>IZRIČITO PREPORUČENO</b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:161
 msgid ""
 "The following packages are <b>STRONGLY RECOMMENDED</b> to be installed "
 "(needed for geography and charts):\n"
 msgstr ""
-"Sljedeći su paketi <b>JAKO PREPORUČENI</b> za instaliranje (potrebni za "
-"zemljopisne karte i grafikone):\n"
+"<b>IZRIČITO PREPORUČUJEMO</b> instalirati sljedeće pakete (potrebni su za "
+"zemljopisne karte i dijagrame):\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:172
 msgid ""
@@ -84,11 +84,11 @@ msgid ""
 "<u><b>Optional</b></u>\n"
 msgstr ""
 "\n"
-"<u><b>neobavezan</b></u>\n"
+"<u><b>Opcionalno</b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:173
 msgid "The following packages are optional:\n"
-msgstr "Sljedeći paketi nisu obavezni:\n"
+msgstr "Sljedeći paketi su opcionalni:\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:175
 msgid "Gtkspell enables spell checking in the notes.\n"
@@ -98,7 +98,8 @@ msgstr "Gtkspell omogućava provjeru pravopisa u bilješkama.\n"
 msgid ""
 "Python Image Library (PIL) is needed for cropping images and LaTeX output."
 msgstr ""
-"Python Image Library (PIL) potrebna je za obrezivanje slika i LaTeX izlaza."
+"Python Image Library (PIL) potrebna je za obrezivanje slika i LaTeX "
+"rezultata."
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:190
 msgid ""
@@ -106,15 +107,15 @@ msgid ""
 "<u><b>Development & Translation Requirements</b></u>\n"
 msgstr ""
 "\n"
-"<u><b>Razvojni i prijevodni zahtjevi</b></u>\n"
+"<u><b>Preduvjeti za razvoj i prevođenje</b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:192
 msgid ""
 "The following packages should be installed if you intend to translate or do "
 "any development (addons etc):\n"
 msgstr ""
-"Sljedeće pakete treba instalirati ako namjeravate prevesti ili napraviti "
-"bilo koji razvoj (dodaci itd.):\n"
+"Instaliraj sljedeće pakete, ako namjeravaš prevoditi ili programirati "
+"(dodaci itd.):\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:200
 msgid ""
@@ -122,7 +123,7 @@ msgid ""
 "<u><b>Optional packages required by Third-party Addons</b></u>\n"
 msgstr ""
 "\n"
-"<u><b>Neobvezni paketi koji su potrebni prema dodacima treće strane</b></u>\n"
+"<u><b>Opcionalni paketi koji su potrebni za dodatke trećih strana</b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:203
 msgid ""
@@ -130,7 +131,7 @@ msgid ""
 "wiki/index.php?title=Third-party_Addons\">Third-party Addons</a> to work:\n"
 msgstr ""
 "Preduvjeti za funkcioniranje sljedećih <a href=\"https://gramps-project.org/"
-"wiki/index.php?title=Third-party_Addons\"> dodataka treće strane </a>:\n"
+"wiki/index.php?title=Third-party_Addons\">dodataka trećih strana</a>:\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:224
 msgid ""
@@ -142,7 +143,7 @@ msgstr ""
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:225
 msgid "Check for potential issues.\n"
-msgstr "Provjerite postoje li potencijalni problemi.\n"
+msgstr "Provjeri, postoje li potencijalni problemi.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:226
 msgid ""
@@ -150,7 +151,7 @@ msgid ""
 "Environment settings:\n"
 msgstr ""
 "\n"
-"Postavke okoline:\n"
+"Postavke okruženja:\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:231
 msgid ""
@@ -160,7 +161,7 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"<u><b>Dostupni lokalni jezici:</b></u>\n"
+"<u><b>Dostupni jezici:</b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:236
 msgid ""
@@ -168,13 +169,13 @@ msgid ""
 "<u><b>Back Up Your Genealogy Files.</b></u>\n"
 msgstr ""
 "\n"
-"<u><b>Izradite sigurnosnu kopiju vaših genealoških datoteka.</b></u>\n"
+"<u><b>Spremi sigurnosnu kopiju tvojih genealoških datoteka.</b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:237
 msgid "Time to back up your genealogy files, and then test your backups!\n"
 msgstr ""
-"Vrijeme je za sigurnosnu kopiju vaših genealoških datoteka, a zatim "
-"testirajte sigurnosne kopije!\n"
+"Vrijeme je za spremanje sigurnosnih kopija tvojih genealoških datoteka. "
+"Nakon toga ih provjeri!\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:240
 msgid ""
@@ -185,41 +186,42 @@ msgid ""
 "to export all data.</i>\n"
 msgstr ""
 "<i><a href=\"https://gramps-project.org/wiki/index.php?"
-"title=How_to_make_a_backup\">Izrada sigurnosne kopije u XML</a> Rezervne "
-"kopije potražite u izborniku Family Tree nedavnih verzija Gramps-a , u "
-"protivnom koristite Export u istom izborniku, ali poništite opcije "
-"privatnosti u Exporter Assistant-u kako biste izvezli sve podatke.</i>\n"
+"title=How_to_make_a_backup\">Spremi sigurnosnu kopiju u Gramps XML formatu</"
+"a> Mogućnost spremanja sigurnosne kopije nalazi se u izborniku „Rodoslovi” "
+"novijih verzija Gramps-a, u protivnom koristi „Izvezi” u istom izborniku, "
+"ali odznači opcije privatnosti u pomoćniku za izvoz, kako bi se izvezli svi "
+"podaci.</i>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:246
 msgid ""
 "* Backups can be made at any time and at least on the first day of every "
 "month, if not more often.\n"
 msgstr ""
-"* Rezervne kopije mogu se napraviti u bilo koje vrijeme i barem prvog dana "
-"svakog mjeseca, ako ne i češće.\n"
+"* Sigurnosne kopije mogu se napraviti bilo kada i barem prvog dana svakog "
+"mjeseca, ako ne i češće.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:248
 msgid ""
 "* Before any upgrade it is strongly recommended to backup each of your "
 "Family Trees.\n"
 msgstr ""
-"* Prije bilo kakve nadogradnje toplo se preporučuje sigurnosno kopiranje "
-"svakog od vaših obiteljskih stabala.\n"
+"* Prije nadogradnje programa, izričito preporučujemo da spremiš sigurnosne "
+"kopije svih tvojih rodoslova.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:250
 msgid ""
 "* Test your backups by creating a new Family Tree and importing the backup."
 msgstr ""
-"* Testirajte sigurnosne kopije tako što ćete stvoriti novo obiteljsko stablo "
-"i uvoziti sigurnosne kopije."
+"* Ispitaj tvoje sigurnosne kopije na sljedeći način: stvori novi rodoslov i "
+"uvezi sigurnosnu kopiju."
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:268
 msgid ",  released "
-msgstr ", pušten "
+msgstr ", objavljen "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:269
 msgid ", is the most current version.\n"
-msgstr ", najnovija verzija.\n"
+msgstr ", je najnovija verzija.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:282
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:365
@@ -269,7 +271,7 @@ msgid ""
 "You have Gramps %s. Please make a backup and then upgrade.\n"
 "%s"
 msgstr ""
-"Imate Gramps %s. Napravite sigurnosnu kopiju, a zatim nadogradite.\n"
+"Imaš Gramps %s. Spremi sigurnosnu kopiju, a zatim nadogradi.\n"
 "%s"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:291
@@ -279,14 +281,14 @@ msgid ""
 "for contributing and testing; please report any issues. Backups are your "
 "friend.\n"
 msgstr ""
-"Instalirani ste Gramps %s; neobjavljena razvojna verzija. Zahvaljujemo na "
-"doprinosu i testiranju; prijavite bilo koji problem. Sigurnosne kopije su "
-"vaš prijatelj.\n"
+"Imaš Gramps %s; to je neobjavljena razvojna verzija. Hvala ti na "
+"doprinošenju i testiranju; prijavi bilo koji problem. Sigurnosne kopije su "
+"tvoj prijatelj.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:299
 #, python-format
 msgid "You have Gramps %s. Congratulations, you have the current version.\n"
-msgstr "Imate Gramps %s. Čestitamo, imate trenutnu verziju.\n"
+msgstr "Imaš Gramps %s. Čestitamo, imaš aktualnu verziju.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:326
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:400
@@ -307,7 +309,7 @@ msgstr " (Zahtijeva verziju "
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:513
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:549
 msgid " or greater installed.)\n"
-msgstr " ili više instaliran.)\n"
+msgstr " ili novija instalirana.)\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:334
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:404
@@ -319,7 +321,7 @@ msgstr " ili više instaliran.)\n"
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:886
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1089
 msgid " (Passed: version "
-msgstr " (Prošao: verzija "
+msgstr " (Prošlo: verzija "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:362
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:427
@@ -343,7 +345,7 @@ msgstr "DISPLAY nije postavljen"
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:508
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:545
 msgid " or greater.)\n"
-msgstr " ili više.)\n"
+msgstr " ili novija.)\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:507
 msgid " (Requires "
@@ -351,27 +353,27 @@ msgstr " (Zahtijeva "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:597
 msgid "* Berkeley Database library (bsddb3: "
-msgstr "* Berkeley knjižnica baza podataka (bsddb3: "
+msgstr "* Berkeley biblioteka baze podataka (bsddb3: "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:622
 msgid "* SQLite Database library (sqlite3: "
-msgstr "* Biblioteka SQLite baze podataka (sqlite3: "
+msgstr "* SQLite biblioteka baze podataka (sqlite3: "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:636
 msgid "* xdg-utils (Manual check see instructions link)"
-msgstr "* xdg-utils (ručna provjera vidi vezu s uputama)"
+msgstr "* xdg-utils (za ručnu provjeru, pogledaj poveznicu za upute)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:649
 msgid "* librsvg2 (Manual check see instructions link)"
-msgstr "* librsvg2 (ručna provjera vidi vezu s uputama)"
+msgstr "* librsvg2 (za ručnu provjeru, pogledaj poveznicu za upute)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:660
 msgid ""
 "* language-pack-gnome-xx (Manual check see instructions link) for your "
 "Language <show locale here TBD>"
 msgstr ""
-"* language-pack-gnome-xx (Ručna provjera vidi vezu s uputama) za vaš jezik "
-"<prikaži lokalni jezik ovdje TBD>"
+"* language-pack-gnome-xx (za ručnu provjeru, pogledaj poveznicu za upute) za "
+"tvoj jezik <prikaži jezik ovdje TBD>"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:692
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1090
@@ -380,19 +382,19 @@ msgstr ""
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1495
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1689
 msgid " or greater installed.)"
-msgstr " ili više instaliran.)"
+msgstr " ili novija instalirana.)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:695
 msgid " or greater)"
-msgstr " ili više)"
+msgstr " ili novija)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:726
 msgid "Graphviz not in system PATH"
-msgstr "Graphviz nije u sustavu PATH"
+msgstr "Graphviz nije u STAZI sustava"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:789
 msgid "Ghostscript not in system PATH"
-msgstr "Ghostscript nije u sustavu PATH"
+msgstr "Ghostscript nije u STAZI sustava"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:804
 msgid " (Passed: version 0.5.x is installed.)"
@@ -409,12 +411,12 @@ msgstr "* python-fontconfig nije pronađen, (zahtijeva verziju 0.5.x)"
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:888
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:893
 msgid " or greater installed.) (enchant module: "
-msgstr " ili instaliran ili veći.) (očarava modul: "
+msgstr " ili novija je instalirana.) (modul enchant: "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:934
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:942
 msgid "installed"
-msgstr "instaliran"
+msgstr "instalirana"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:949
 #, python-format
@@ -422,8 +424,8 @@ msgid ""
 "* rcs %s TBD (Passed: version %s or greater installed. If not on Microsoft "
 "Windows)"
 msgstr ""
-"* rcs %s TBD (Prošao: instalirana verzija %s ili novija. Ako nije u "
-"Microsoft Windows-u)"
+"* rcs %s TBD (Prošlo: verzija %s ili novija je instalirana. Ako se ne radi o "
+"Microsoft Windowsu)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:953
 #, python-format
@@ -431,33 +433,33 @@ msgid ""
 "* rcs %s TBD (Requires version %s or greater installed. If not on Microsoft "
 "Windows)"
 msgstr ""
-"* rcs %s TBD (Zahtijeva se verzija %s ili viša. Ako nije u Microsoft Windows-"
-"u)"
+"* rcs %s TBD (Zahtijeva verziju %s ili novija je instalirana. Ako se ne radi "
+"o Microsoft Windowsu)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:989
 msgid "Installed but does not supply version"
-msgstr "Instalirana, ali ne isporučuje inačicu"
+msgstr "Instalirana, ali ne daje podatke o verziji"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1063
 #, python-format
 msgid "GExiv2 : %s (Exiv2 library : %s)"
-msgstr "GExiv2 : %s (Exiv2 knjižnica : %s)"
+msgstr "GExiv2 : %s (Exiv2 biblioteka : %s)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1130
 msgid "found another font"
-msgstr "pronašao je drugi font"
+msgstr "pronađen je jedan drugi font"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1137
 msgid ""
 "For addon Networkchart, font <a href=\"https://www.fontsquirrel.com/fonts/"
 "white-rabbit\">White Rabbit</a> provides an extremely readable result.\n"
 msgstr ""
-"Za dodatak Networkchart, font <a href=\"https://www.fontsquirrel.com/fonts/"
-"white-rabbit\">White Rabbit</a> daje izuzetno čitljiv rezultat.\n"
+"Za dodatak „Mrežni dijagram”, font <a href=\"https://www.fontsquirrel.com/"
+"fonts/white-rabbit\">White Rabbit</a> daje izuzetno čitljiv rezultat.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1173
 msgid "Why, when same code works in Graphview"
-msgstr "Zašto, kad isti kod radi u Graphview-u"
+msgstr "Zašto, kad isti kod radi u Graphviewu"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1178
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1230
@@ -497,21 +499,22 @@ msgstr "nije pronađeno."
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1397
 msgid "Standard. Passed: program installed - 32bit on 64bit Win OS."
-msgstr "Standard. Prošao: instaliran program - 32bit na 64-bitnom Win OS-u."
+msgstr ""
+"Standardno. Prošlo: instalirani program – 32-bitni na 64-bitnom Win OS-u."
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1407
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1415
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1439
 msgid "Installed"
-msgstr "Instalirani"
+msgstr "Instalirano"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1449
 msgid ") (Requires the gramps addon listed under 'Plugin lib')"
-msgstr ") (Zahtijeva dodatak za gramove naveden u \"Plugin lib\")"
+msgstr ") (Zahtijeva dodatak za gramps, navedene u „Plugin lib”)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1481
 msgid "DBF installed"
-msgstr "Instaliran DBF"
+msgstr "DBF instaliran"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1489
 msgid ".)(Requires version "
@@ -519,16 +522,16 @@ msgstr ".) (Zahtijeva verziju "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1494
 msgid " installed.)(Passed: version "
-msgstr " instaliran.) (Prošao: verzija "
+msgstr " instalirana.) (Prošlo: verzija "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1641
 #, python-format
 msgid "(OpenCV facedetection: %s)"
-msgstr "(Otkrivanje lica OpenCV: %s)"
+msgstr "(Otkrivanje lica pomoću OpenCV: %s)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1688
 msgid " (lxml: not found. Requires version "
-msgstr " (lxml: nije pronađen. Zahtijeva verzija "
+msgstr " (lxml: nije pronađen. Zahtijeva verziju "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1706
 msgid "* Requires: MongoDB TBD / pymongo TBD"
@@ -537,7 +540,7 @@ msgstr "* Zahtijeva: MongoDB TBD / pymongo TBD"
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1720
 #, python-format
 msgid "* Operating System: %s"
-msgstr "* Operativni sustav: %s"
+msgstr "* Operacijski sustav: %s"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1741
 msgid ""
@@ -560,7 +563,7 @@ msgstr ""
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1802
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1803
 msgid "not set"
-msgstr "nespreman"
+msgstr "nije postavljeno"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1752
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1753
@@ -581,8 +584,8 @@ msgid ""
 "\n"
 msgstr ""
 "\n"
-"Instalirani jezici \\ Prijevodi (Ako je naveden samo engleski jezik, ponovno "
-"instalirajte Gramps i obavezno odaberite sve prijevode i rječnike)\n"
+"Instalirani jezici\\Prijevodi (Ako u popisu postoji samo engleski jezik, "
+"ponovo instaliraj Gramps i obavezno odaberi sve prijevode i rječnike)\n"
 "\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1811
@@ -591,7 +594,7 @@ msgid ""
 "Gramps Environment variables:\n"
 msgstr ""
 "\n"
-"Promjenjive sredine Grampsa:\n"
+"Varijable Gramps okruženja:\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1850
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1911
@@ -604,4 +607,5 @@ msgid ""
 "Sphinx is a tool that builds the Gramps development documentation and man "
 "pages\n"
 msgstr ""
-"Sfinga je alat koji gradi razvojnu dokumentaciju o Grampsu i man stranice\n"
+"Sphinx je alat koji gradi dokumentaciju razvoja Grampsa i stranice "
+"priručnika\n"
