@@ -30,7 +30,7 @@ register(TOOL,
          name=_("Fix Place Coordinates"),
          description = _("Tool to correct the place coordinates for extra "
                          "spaces or comma characters."),
-         version = '1.0.2',
+         version = '1.0.3',
          gramps_target_version="5.1",
          status = STABLE,
          fname="fixcoords.py",
