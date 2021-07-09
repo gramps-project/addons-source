@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"POT-Creation-Date: 2021-07-09 10:34-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,19 +33,19 @@ msgstr ""
 msgid "GEDCOM Extensions options"
 msgstr ""
 
-#: GedcomExtensions/GedcomExtensions.py:121
+#: GedcomExtensions/GedcomExtensions.py:117
 msgid "Include witnesses"
 msgstr ""
 
-#: GedcomExtensions/GedcomExtensions.py:122
+#: GedcomExtensions/GedcomExtensions.py:118
 msgid "Include media"
 msgstr ""
 
-#: GedcomExtensions/GedcomExtensions.py:151
+#: GedcomExtensions/GedcomExtensions.py:147
 #, python-format
 msgid "Could not create %s"
 msgstr ""
 
-#: GedcomExtensions/GedcomExtensions.py:154
+#: GedcomExtensions/GedcomExtensions.py:150
 msgid "Export failed"
 msgstr ""

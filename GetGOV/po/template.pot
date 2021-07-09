@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-21 17:48-0600\n"
+"POT-Creation-Date: 2021-07-09 10:34-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,17 +38,17 @@ msgstr ""
 msgid "Add GOV-id place %s"
 msgstr ""
 
-#: GetGOV/getgov.py:518
+#: GetGOV/getgov.py:521
 #, python-format
 msgid "from %s to %s"
 msgstr ""
 
-#: GetGOV/getgov.py:520
+#: GetGOV/getgov.py:523
 #, python-format
 msgid "after %s"
 msgstr ""
 
-#: GetGOV/getgov.py:522
+#: GetGOV/getgov.py:525
 #, python-format
 msgid "before %s"
 msgstr ""
