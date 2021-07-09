@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-05 11:11-0600\n"
+"POT-Creation-Date: 2021-07-09 10:42-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -63,7 +63,7 @@ msgid "_OK"
 msgstr ""
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:283
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:760
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:762
 msgid "Select Person"
 msgstr ""
 
@@ -100,7 +100,7 @@ msgid "Detect faces (OpenCV module required)"
 msgstr ""
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:297
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:822
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:824
 msgid "Settings"
 msgstr ""
 
@@ -140,46 +140,46 @@ msgstr ""
 msgid "_Remove"
 msgstr ""
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:635
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:637
 #, python-format
 msgid "Edit Person (%s)"
 msgstr ""
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:691
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:693
 #, python-brace-format
 msgid "Replace to {0}"
 msgstr ""
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:792
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:794
 msgid "Detecting faces..."
 msgstr ""
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:817
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:819
 msgid "Detection finished"
 msgstr ""
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:867
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:869
 #, python-brace-format
 msgid "Another region of this image is associated with {name}. Remove it?"
 msgstr ""
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:870
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:872
 #, python-brace-format
 msgid ""
 "{count} other regions of this image are associated with {name}. Remove them?"
 msgstr ""
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:1014
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:1016
 #, python-format
 msgid "Male person|Dead at %s"
 msgstr ""
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:1016
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:1018
 #, python-format
 msgid "Female person|Dead at %s"
 msgstr ""
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:1018
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:1020
 #, python-format
 msgid "Unknown gender person|Dead at %s"
 msgstr ""
