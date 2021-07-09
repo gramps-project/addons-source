@@ -6,9 +6,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: DNA 5.x\n"
-"Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
-"POT-Creation-Date: 2020-03-12 08:50-0500\n"
-"PO-Revision-Date: 2020-08-31 11:30+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-19 10:36-0600\n"
+"PO-Revision-Date: 2021-04-25 12:44+0200\n"
 "Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
 "Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
 "Language: nl\n"
@@ -25,10 +25,48 @@ msgstr "DNA"
 msgid "Gramplet showing a DNA segment map"
 msgstr "Gramplet dat een DNA-segmentkaart toont"
 
-#: DNA/dna.py:87
+#: DNA/dna.py:87 DNA/dnasegmentmap.gpr.py:25 DNA/dnasegmentmap.gpr.py:34
 msgid "DNA Segment Map"
 msgstr "DNA-segmentkaart"
 
-#: DNA/dna.py:88
+#: DNA/dna.py:88 DNA/dnasegmentmap.py:87
 msgid "Chr"
 msgstr "Chr"
+
+#: DNA/dnasegmentmap.gpr.py:28
+msgid "Gramplet showing a matching DNA segment map"
+msgstr "Gramplet dat een overeenkomende DNA-segmentkaart toont"
+
+#: DNA/dnasegmentmap.py:86
+msgid "Chromosome Segment Map for "
+msgstr "Chromosoomsegmentkaart voor "
+
+#: DNA/dnasegmentmap.py:97 DNA/dnasegmentmap.py:142
+msgid " ["
+msgstr " ["
+
+#: DNA/dnasegmentmap.py:360
+msgid "LEGEND"
+msgstr "LEGENDA"
+
+#: DNA/dnasegmentmap.py:436
+#, python-brace-format
+msgid ""
+"{0}\n"
+"{1} cMs"
+msgstr ""
+"{0}\n"
+"{1} cMs"
+
+#: DNA/dnasegmentmap.py:438
+#, python-brace-format
+msgid ", {0} SNPs"
+msgstr ", {0} SNPs"
+
+#: DNA/dnasegmentmap.py:450
+msgid ""
+"Click to make this person active\n"
+"Right-click to edit this person"
+msgstr ""
+"Klik om deze persoon actief te maken\n"
+"Klik met de rechtermuisknop om deze persoon te bewerken"

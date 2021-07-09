@@ -1,0 +1,33 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Pär Ekholm <pehlm@pekholm.org>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2021-05-30 11:27+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"Last-Translator: Pär Ekholm <pehlm@pekholm.se>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: sv_SE\n"
+
+#: RestoreHist/restorehist.gpr.py:29
+msgid "Restart where you were last working"
+msgstr "Starta om där du senast arbetade"
+
+#: RestoreHist/restorehist.gpr.py:30
+msgid ""
+"This addon causes Gramps to restart on the same view and object where Gramps "
+"was previously closed.  It adds no new menus or Gramplets, but allows the "
+"last six objects visited to be found via the 'Go' menu."
+msgstr ""
+"Detta tillägg gör att Gramps startar om på samma vy och objekt där Gramps "
+"tidigare stängdes.  Det läggs inte till nya menyer eller Gramplets, men gör "
+"det möjligt att hitta de sex senaste besökta objekten via menyn \"Gå till\"."

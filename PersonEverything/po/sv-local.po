@@ -1,0 +1,370 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Pär Ekholm <pehlm@pekholm.org>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-23 10:07-0500\n"
+"PO-Revision-Date: 2021-05-17 13:16+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"Last-Translator: Pär Ekholm <pehlm@pekholm.se>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: sv_SE\n"
+
+#: PersonEverything/PersonEverything.gpr.py:31
+msgid "PersonEverything Report"
+msgstr "Allting för person rapport"
+
+#: PersonEverything/PersonEverything.gpr.py:32
+msgid "Produces a report containing everything about the active person"
+msgstr "Producerar en rapport som innehåller allt om den aktiva personen"
+
+#: PersonEverything/PersonEverything.py:111
+#, python-format
+msgid "Person %s is not in the Database"
+msgstr "Personen %s är inte i databasen"
+
+#: PersonEverything/PersonEverything.py:133
+#, python-format
+msgid "All information about %s"
+msgstr "All information om %s"
+
+#: PersonEverything/PersonEverything.py:142
+msgid "Person Events"
+msgstr "Personhändelser"
+
+#: PersonEverything/PersonEverything.py:148
+msgid "Families"
+msgstr "Familjer"
+
+#: PersonEverything/PersonEverything.py:154
+msgid "Endnotes"
+msgstr "Slutnoter"
+
+#: PersonEverything/PersonEverything.py:169
+msgid "Person"
+msgstr "Person"
+
+#: PersonEverything/PersonEverything.py:170
+msgid "Gender"
+msgstr "Kön"
+
+#: PersonEverything/PersonEverything.py:173
+msgid "Primary name"
+msgstr "Primärt namn"
+
+#: PersonEverything/PersonEverything.py:174
+#: PersonEverything/PersonEverything.py:181
+#: PersonEverything/PersonEverything.py:301
+#: PersonEverything/PersonEverything.py:595
+#: PersonEverything/PersonEverything.py:724
+msgid "Type"
+msgstr "Typ"
+
+#: PersonEverything/PersonEverything.py:180
+msgid "Alternate name"
+msgstr "Alternativt namn"
+
+#: PersonEverything/PersonEverything.py:196
+msgid " This is the primary birth event."
+msgstr " Det här är den primära födelsehändelsen."
+
+#: PersonEverything/PersonEverything.py:199
+msgid " This is the primary death event."
+msgstr " Det här är den primära dödshändelsen."
+
+#: PersonEverything/PersonEverything.py:200
+msgid "Event reference"
+msgstr "Händelsereferens"
+
+#: PersonEverything/PersonEverything.py:201
+msgid "Role"
+msgstr "Roll"
+
+#: PersonEverything/PersonEverything.py:208
+msgid "Family"
+msgstr "Familj"
+
+#: PersonEverything/PersonEverything.py:214
+msgid "Child"
+msgstr "Barn"
+
+#: PersonEverything/PersonEverything.py:220
+msgid "Relationship to Father"
+msgstr "Släktskap med far"
+
+#: PersonEverything/PersonEverything.py:225
+msgid "Relationship to Mother"
+msgstr "Släktskap med mor"
+
+#: PersonEverything/PersonEverything.py:238
+msgid "Parent Family"
+msgstr "Föräldrafamilj"
+
+#: PersonEverything/PersonEverything.py:240
+msgid ""
+"Details of any children and events etc. would be in a similar report for the "
+"father or mother."
+msgstr ""
+"Detaljer om barn och händelser etc. skulle finnas i en liknande rapport för "
+"fadern eller modern."
+
+#: PersonEverything/PersonEverything.py:249
+msgid "Relationship"
+msgstr "Släktskap"
+
+#: PersonEverything/PersonEverything.py:259
+msgid "Father"
+msgstr "Far"
+
+#: PersonEverything/PersonEverything.py:270
+msgid "Mother"
+msgstr "Mor"
+
+#: PersonEverything/PersonEverything.py:292
+#: PersonEverything/PersonEverything.py:966
+#: PersonEverything/PersonEverything.py:982
+msgid "Private"
+msgstr "Privat"
+
+#: PersonEverything/PersonEverything.py:316
+msgid "Address"
+msgstr "Adress"
+
+#: PersonEverything/PersonEverything.py:326
+msgid "Attribute"
+msgstr "Attribut"
+
+#: PersonEverything/PersonEverything.py:354
+msgid "Confidence"
+msgstr "Tillförlitlighet"
+
+#: PersonEverything/PersonEverything.py:357
+msgid "Unknown"
+msgstr "Okänd"
+
+#: PersonEverything/PersonEverything.py:369
+msgid "Date"
+msgstr "Datum"
+
+#: PersonEverything/PersonEverything.py:378
+msgid "Description"
+msgstr "Beskrivning"
+
+#: PersonEverything/PersonEverything.py:387
+msgid "Event"
+msgstr "Händelse"
+
+#: PersonEverything/PersonEverything.py:388
+msgid "Event type"
+msgstr "Händelsetyp"
+
+#: PersonEverything/PersonEverything.py:403
+msgid "Temple and status"
+msgstr "Tempel och status"
+
+#: PersonEverything/PersonEverything.py:414
+msgid "LDS Ordinance family"
+msgstr "SDH förordningsfamilj"
+
+#: PersonEverything/PersonEverything.py:418
+msgid "LDS "
+msgstr "SDH "
+
+#: PersonEverything/PersonEverything.py:419
+msgid "Ordinance"
+msgstr "Ceremoni"
+
+#: PersonEverything/PersonEverything.py:434
+msgid "Street, City, County, State, Postal Code, Country, Phone number"
+msgstr "Gata, Stad, Län, Stat, Postnummer, Land, Telefonnummer"
+
+#: PersonEverything/PersonEverything.py:448
+msgid "Media Reference"
+msgstr "Mediareferens"
+
+#: PersonEverything/PersonEverything.py:455
+#: PersonEverything/PersonEverything.py:732
+msgid "Description and Path"
+msgstr "Beskrivning och sökväg"
+
+#: PersonEverything/PersonEverything.py:474
+msgid "Could not add photo to page"
+msgstr "Kunde inte lägga foto till sidan"
+
+#: PersonEverything/PersonEverything.py:475
+msgid "File does not exist"
+msgstr "Filen finns inte"
+
+#: PersonEverything/PersonEverything.py:484
+msgid "Referenced Region"
+msgstr "Refererad region"
+
+#: PersonEverything/PersonEverything.py:502
+msgid "unknown"
+msgstr "okänd"
+
+#: PersonEverything/PersonEverything.py:503
+msgid "Media Object"
+msgstr "Mediaobjekt"
+
+#: PersonEverything/PersonEverything.py:505
+msgid "Mime type"
+msgstr "Mimetyp"
+
+#: PersonEverything/PersonEverything.py:516
+msgid ""
+"Given name(s): Title, Given, Suffix, Call Name, Nick Name, Family Nick Name"
+msgstr ""
+"Förnamn: Titel, Förnamn, Ändelse, Tilltalsnamn, Smeknamn, Familjesmeknamn"
+
+#: PersonEverything/PersonEverything.py:541
+msgid "Note"
+msgstr "Anteckning"
+
+#: PersonEverything/PersonEverything.py:542
+msgid "Note type"
+msgstr "Notistyp"
+
+#: PersonEverything/PersonEverything.py:553
+msgid "Parent Place"
+msgstr "Föräldraplats"
+
+#: PersonEverything/PersonEverything.py:568
+#: PersonEverything/PersonEverything.py:572
+msgid "Alternate Location"
+msgstr "Alternativ plats"
+
+#: PersonEverything/PersonEverything.py:569
+msgid "Parish"
+msgstr "Församling"
+
+#: PersonEverything/PersonEverything.py:585
+msgid "Place"
+msgstr "Plats"
+
+#: PersonEverything/PersonEverything.py:586
+msgid "Place Title"
+msgstr "Platstitel"
+
+#: PersonEverything/PersonEverything.py:591
+msgid "Name"
+msgstr "Namn"
+
+#: PersonEverything/PersonEverything.py:599
+msgid "Code"
+msgstr "Kod"
+
+#: PersonEverything/PersonEverything.py:607
+msgid "Alternative Name"
+msgstr "Alternativt namn"
+
+#: PersonEverything/PersonEverything.py:618
+msgid "Latitude, Longitude"
+msgstr "Latitud, Longitud"
+
+#: PersonEverything/PersonEverything.py:640
+msgid "Call number"
+msgstr "Telefonnummer"
+
+#: PersonEverything/PersonEverything.py:647
+msgid "Repository"
+msgstr "Arkivplats"
+
+#: PersonEverything/PersonEverything.py:648
+msgid "Repository type"
+msgstr "Arkivplatstyp"
+
+#: PersonEverything/PersonEverything.py:670
+msgid "Repository reference"
+msgstr "Arkivplatsreferens"
+
+#: PersonEverything/PersonEverything.py:671
+msgid "Media type"
+msgstr "Mediatyp"
+
+#: PersonEverything/PersonEverything.py:678
+#: PersonEverything/PersonEverything.py:682
+msgid "Surname"
+msgstr "Efternamn"
+
+#: PersonEverything/PersonEverything.py:679
+msgid "Origin type"
+msgstr "Ursprungstyp"
+
+#: PersonEverything/PersonEverything.py:686
+msgid "Prefix, surname, connector"
+msgstr "Prefix, efternamn, kontakt"
+
+#: PersonEverything/PersonEverything.py:691
+msgid "{This is the primary surname}"
+msgstr "{Det här är det primära efternamnet}"
+
+#: PersonEverything/PersonEverything.py:704
+msgid "Tag name"
+msgstr "Taggnamn"
+
+#: PersonEverything/PersonEverything.py:715
+msgid "Tag colour and priority"
+msgstr "Taggfärg och prioritet"
+
+#: PersonEverything/PersonEverything.py:723
+msgid "URL"
+msgstr "URL"
+
+#: PersonEverything/PersonEverything.py:906
+msgid "Source"
+msgstr "Källa"
+
+#: PersonEverything/PersonEverything.py:912
+msgid "Citation"
+msgstr "Citat"
+
+#: PersonEverything/PersonEverything.py:960
+msgid "No source information found"
+msgstr "Ingen källinformation funnen"
+
+#: PersonEverything/PersonEverything.py:1001
+msgid "Report Options"
+msgstr "Rapportalternativ"
+
+#: PersonEverything/PersonEverything.py:1003
+msgid "Center Person"
+msgstr "Huvudperson"
+
+#: PersonEverything/PersonEverything.py:1004
+msgid "The center person for the report"
+msgstr "Huvudpersonen för rapporten"
+
+#: PersonEverything/PersonEverything.py:1010
+msgid "Name format"
+msgstr "Namnformat"
+
+#: PersonEverything/PersonEverything.py:1011
+msgid "Default"
+msgstr "Standard"
+
+#: PersonEverything/PersonEverything.py:1014
+msgid "Select the format to display names"
+msgstr "Välj format vid namnvisning"
+
+#: PersonEverything/PersonEverything.py:1028
+msgid "The style used for the title of the page."
+msgstr "Mall som används för sidans titel."
+
+#: PersonEverything/PersonEverything.py:1039
+#, python-format
+msgid "The style used for the level %d display."
+msgstr "Mall som används för visning av nivå %d."
+
+#: PersonEverything/PersonEverything.py:1060
+msgid "The basic style used for the endnotes source display."
+msgstr ""
+"Den grundläggande mall, som används vid visning av slutnoterna för källor."

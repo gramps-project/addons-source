@@ -192,7 +192,7 @@ class SearchWidget(GObject.GObject):
         while True:
             try:
                 item = items_list.pop()
-            except KeyError:
+            except (KeyError, IndexError):
                 queue.put('stop')
                 return
             if item not in exclude:
