@@ -10,7 +10,7 @@ register(GRAMPLET,
          gramplet_title=_("DNA"),
          detached_width = 600,
          detached_height = 450,
-         version = '1.0.6',
+         version = '1.0.7',
          gramps_target_version='5.1',
          include_in_listing = False,
          )

@@ -86,7 +86,7 @@ else:
              id='geoancestor',
              name=_("Ancestors map"),
              description=_("A view showing ancestors places on the map."),
-             version = '1.0.6',
+             version = '1.0.7',
              gramps_target_version='5.1',
              status=STABLE,
              fname='GeoAncestor.py',
