@@ -1,26 +1,27 @@
 # Croatian translation for Gramps
 # This file is distributed under the same license as the Gramps package.
 # Copyright (C) Gramps project
-# Milo Ivir <mail@milotype.de>, 2019.
+# Milo Ivir <mail@milotype.de>, 2019., 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2019-03-08 11:10+0100\n"
+"POT-Creation-Date: 2020-02-10 08:13-0600\n"
+"PO-Revision-Date: 2020-08-23 23:09+0200\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: \n"
+"Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.1\n"
-"Last-Translator: Milo Ivir <mail@milotype.de>\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
-"Language: hr\n"
+"X-Generator: Poedit 2.4.1\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 
 #: SetAttributeTool/SetAttributeTool.gpr.py:25
-#: SetAttributeTool/SetAttributeTool.py:121
-#: SetAttributeTool/SetAttributeTool.py:129
+#: SetAttributeTool/SetAttributeTool.py:122
+#: SetAttributeTool/SetAttributeTool.py:150
 msgid "Set Attribute"
 msgstr "Postavi svojstvo"
 
@@ -29,7 +30,7 @@ msgid "Set an attribute to a given value."
 msgstr "Postavi svojstvo na određenu vrijednost."
 
 #: SetAttributeTool/SetAttributeTool.py:68
-#: SetAttributeTool/SetAttributeTool.py:124
+#: SetAttributeTool/SetAttributeTool.py:125
 msgid "Options"
 msgstr "Opcije"
 
@@ -73,21 +74,28 @@ msgstr "Ukloni"
 msgid "Remove attribute type and value set"
 msgstr "Attributart und Wertepaar entfernen"
 
-#: SetAttributeTool/SetAttributeTool.py:130
-#: SetAttributeTool/SetAttributeTool.py:189
+#: SetAttributeTool/SetAttributeTool.py:131
 msgid "Results"
 msgstr "Rezultati"
 
-#: SetAttributeTool/SetAttributeTool.py:131
-#: SetAttributeTool/SetAttributeTool.py:190
-msgid "Processing...\n"
-msgstr "Obrada …\n"
+#: SetAttributeTool/SetAttributeTool.py:133
+msgid "Cannot save attribute"
+msgstr "Nije moguće spremiti svojstvo"
 
-#: SetAttributeTool/SetAttributeTool.py:146
+#: SetAttributeTool/SetAttributeTool.py:134
+msgid "The attribute type cannot be empty"
+msgstr "Vrsta svojstva ne može biti prazna"
+
+#: SetAttributeTool/SetAttributeTool.py:151
+#: SetAttributeTool/SetAttributeTool.py:193
+msgid "Processing...\n"
+msgstr "Obrada u tijeku …\n"
+
+#: SetAttributeTool/SetAttributeTool.py:152
 msgid "Setting attributes..."
 msgstr "Postavljanje svojstva …"
 
-#: SetAttributeTool/SetAttributeTool.py:153
+#: SetAttributeTool/SetAttributeTool.py:156
 #, python-format
 msgid ""
 "Setting '%s' attributes to '%s'...\n"
@@ -96,7 +104,7 @@ msgstr ""
 "Postavljanje svojstva „%s” na „%s” …\n"
 "\n"
 
-#: SetAttributeTool/SetAttributeTool.py:184
+#: SetAttributeTool/SetAttributeTool.py:188
 #, python-format
 msgid ""
 "\n"
@@ -105,20 +113,15 @@ msgstr ""
 "\n"
 "Postavi %d svojstva „%s” na „%s”\n"
 
-#: SetAttributeTool/SetAttributeTool.py:186
-#: SetAttributeTool/SetAttributeTool.py:235
-msgid "Done!\n"
-msgstr "Gotovo!\n"
-
-#: SetAttributeTool/SetAttributeTool.py:188
+#: SetAttributeTool/SetAttributeTool.py:191
 msgid "Remove Attribute"
 msgstr "Ukloni svojstvo"
 
-#: SetAttributeTool/SetAttributeTool.py:205
+#: SetAttributeTool/SetAttributeTool.py:194
 msgid "Removing attributes..."
 msgstr "Uklanjanje svojstva …"
 
-#: SetAttributeTool/SetAttributeTool.py:230
+#: SetAttributeTool/SetAttributeTool.py:221
 #, python-format
 msgid ""
 "\n"
@@ -126,3 +129,7 @@ msgid ""
 msgstr ""
 "\n"
 "Uklanjanje %d svojstva „%s” na „%s”\n"
+
+#: SetAttributeTool/SetAttributeTool.py:226
+msgid "Done!\n"
+msgstr "Gotovo!\n"

@@ -1,0 +1,340 @@
+# Croatian translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) Gramps project
+# Milo Ivir <mivir@milotype.de>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-08 17:10-0500\n"
+"PO-Revision-Date: 2020-09-19 14:26+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.1\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Language: hr\n"
+
+#: CombinedView/combinedview.gpr.py:23 CombinedView/combinedview.py:135
+msgid "Combined"
+msgstr "Zajedno"
+
+#: CombinedView/combinedview.gpr.py:24
+msgid "A view showing relationships and events for a person"
+msgstr "Prikaz srodstva i događaja za jednu osobu"
+
+#: CombinedView/combinedview.gpr.py:31 CombinedView/combinedview.py:1641
+msgid "Relationships"
+msgstr "Srodstva"
+
+#: CombinedView/combinedview.py:384
+msgid "Organize Bookmarks"
+msgstr "Uredi knjižne oznake"
+
+#: CombinedView/combinedview.py:633 CombinedView/combinedview.py:694
+#: CombinedView/combinedview.py:1003 CombinedView/combinedview.py:1164
+#: CombinedView/combinedview.py:1280 CombinedView/combinedview.py:1550
+#: CombinedView/combinedview.py:1877 CombinedView/combinedview.py:1928
+#, python-format
+msgid "Edit %s"
+msgstr "Uredi %s"
+
+#: CombinedView/combinedview.py:651 CombinedView/combinedview.py:713
+#: CombinedView/navigationview.py:360
+msgid "ID"
+msgstr "ID"
+
+#: CombinedView/combinedview.py:671
+msgid "Attributes"
+msgstr "Svojstva"
+
+#: CombinedView/combinedview.py:723
+msgid "Birth"
+msgstr "Rođenje"
+
+#: CombinedView/combinedview.py:732 CombinedView/combinedview.py:757
+msgid "Death"
+msgstr "Smrt"
+
+#: CombinedView/combinedview.py:752
+msgid "Alive"
+msgstr "Živi"
+
+#: CombinedView/combinedview.py:759
+msgid "unknown"
+msgstr "nepoznato"
+
+#: CombinedView/combinedview.py:825
+#, python-format
+msgid "%(date)s in %(place)s"
+msgstr "%(date)s u mjestu %(place)s"
+
+#: CombinedView/combinedview.py:843 CombinedView/combinedview.py:1894
+msgid "Unknown"
+msgstr "Nepoznato"
+
+#: CombinedView/combinedview.py:920
+#, python-format
+msgid "%(abbrev)s %(date)s in %(place)s"
+msgstr "%(abbrev)s %(date)s u mjestu %(place)s"
+
+#: CombinedView/combinedview.py:922
+#, python-format
+msgid "%(abbrev)s %(date)s%(place)s"
+msgstr "%(abbrev)s %(date)s%(place)s"
+
+#: CombinedView/combinedview.py:959
+#, python-format
+msgid "%(birthabbrev)s %(birthdate)s, %(deathabbrev)s %(deathdate)s"
+msgstr "%(birthabbrev)s %(birthdate)s, %(deathabbrev)s %(deathdate)s"
+
+#: CombinedView/combinedview.py:966 CombinedView/combinedview.py:968
+#, python-format
+msgid "%(event)s %(date)s"
+msgstr "%(event)s %(date)s"
+
+#: CombinedView/combinedview.py:1029
+#, python-format
+msgid "Relationship type: %s"
+msgstr "Vrsta srodstva: %s"
+
+#: CombinedView/combinedview.py:1066
+#, python-format
+msgid "%(event_type)s: %(date)s in %(place)s"
+msgstr "%(event_type)s: %(date)s u mjestu %(place)s"
+
+#: CombinedView/combinedview.py:1070
+#, python-format
+msgid "%(event_type)s: %(date)s"
+msgstr "%(event_type)s: %(date)s"
+
+#: CombinedView/combinedview.py:1073
+#, python-format
+msgid "%(event_type)s: %(place)s"
+msgstr "%(event_type)s: %(place)s"
+
+#: CombinedView/combinedview.py:1094
+msgid "Timeline"
+msgstr "Kronologija"
+
+#: CombinedView/combinedview.py:1161 CombinedView/combinedview.py:1277
+msgid "Click to make this event active"
+msgstr "Pritisni za postavljanje ovog događaja aktivnim"
+
+#: CombinedView/combinedview.py:1218
+msgid "Events"
+msgstr "Događaji"
+
+#: CombinedView/combinedview.py:1356
+msgid "Click to visit this link"
+msgstr "Pritisni za praćenje poveznice"
+
+#: CombinedView/combinedview.py:1374
+msgid "Album"
+msgstr "Album"
+
+#: CombinedView/combinedview.py:1443
+msgid "Associations"
+msgstr "Veze"
+
+#: CombinedView/combinedview.py:1453
+msgid "Association"
+msgstr "Veza"
+
+#: CombinedView/combinedview.py:1453 CombinedView/combinedview.py:1460
+msgid ": "
+msgstr ": "
+
+#: CombinedView/combinedview.py:1460
+msgid "Relationship"
+msgstr "Srodstvo"
+
+#: CombinedView/combinedview.py:1482
+msgid "Participants"
+msgstr "Sudionici"
+
+#: CombinedView/combinedview.py:1517 CombinedView/combinedview.py:1582
+msgid "Order"
+msgstr "Narudžba"
+
+#: CombinedView/combinedview.py:1604
+msgid "Citations"
+msgstr "Citati"
+
+#: CombinedView/combinedview.py:1652 CombinedView/combinedview.py:1673
+msgid "Parents"
+msgstr "Roditelji"
+
+#: CombinedView/combinedview.py:1676
+msgid "Father"
+msgstr "Otac"
+
+#: CombinedView/combinedview.py:1680
+msgid "Mother"
+msgstr "Majka"
+
+#: CombinedView/combinedview.py:1688
+msgid "Siblings"
+msgstr "Braća/sestre"
+
+#: CombinedView/combinedview.py:1698 CombinedView/combinedview.py:1759
+msgid "Add new child to family"
+msgstr "Obitelji dodaj novo dijete"
+
+#: CombinedView/combinedview.py:1702 CombinedView/combinedview.py:1763
+msgid "Add existing child to family"
+msgstr "Obitelji dodaj postojeće dijete"
+
+#: CombinedView/combinedview.py:1724
+msgid "Broken family detected"
+msgstr "Otkrivena je pokvarena obitelj"
+
+#: CombinedView/combinedview.py:1725
+msgid "Please run the Check and Repair Database tool"
+msgstr "Pokreni alat za provjeru i popravak baze podataka"
+
+#: CombinedView/combinedview.py:1737
+msgid "Family"
+msgstr "Obitelj"
+
+#: CombinedView/combinedview.py:1741
+msgid "Spouse"
+msgstr "Supružnik"
+
+#: CombinedView/combinedview.py:1748
+msgid "Children"
+msgstr "Djeca"
+
+#: CombinedView/combinedview.py:1798
+msgid "Add a new set of parents"
+msgstr "Dodaj novi par roditelja"
+
+#: CombinedView/combinedview.py:1799
+msgid "Add person as child to an existing family"
+msgstr "Dodaj osobu kao dijete postojeće obitelji"
+
+#: CombinedView/combinedview.py:1800
+msgid "Edit parents"
+msgstr "Uredi roditelje"
+
+#: CombinedView/combinedview.py:1801
+msgid "Reorder parents"
+msgstr "Prerasporedi roditelje"
+
+#: CombinedView/combinedview.py:1802
+msgid "Remove person as child of these parents"
+msgstr "Ukloni osobu kao dijete ovih roditelja"
+
+#: CombinedView/combinedview.py:1804
+msgid "Add a new family with person as parent"
+msgstr "Dodaj novu obitelj, s osobom kao roditeljem"
+
+#: CombinedView/combinedview.py:1806
+msgid "Edit family"
+msgstr "Uredi obitelj"
+
+#: CombinedView/combinedview.py:1807
+msgid "Reorder families"
+msgstr "Prerasporedi obitelji"
+
+#: CombinedView/combinedview.py:1808
+msgid "Remove person as parent in this family"
+msgstr "Ukloni osobu kao roditelja iz obitelji"
+
+#: CombinedView/combinedview.py:2059
+msgid "Add Child to Family"
+msgstr "Obitelji dodaj dijete"
+
+#: CombinedView/combinedview.py:2077
+msgid "Select Child"
+msgstr "Odaberi dijete"
+
+#: CombinedView/combinedview.py:2197
+msgid "Use shading"
+msgstr "Koristi sjenčanje"
+
+#: CombinedView/combinedview.py:2200
+msgid "Display edit buttons"
+msgstr "Prikaži gumbove za uređivanje"
+
+#: CombinedView/combinedview.py:2202
+msgid "View links as website links"
+msgstr "Prikaži poveznice kao web poveznice"
+
+#: CombinedView/combinedview.py:2208
+msgid "Layout"
+msgstr "Raspored"
+
+#: CombinedView/combinedview.py:2219
+msgid "Show Details"
+msgstr "Prikaži detalje"
+
+#: CombinedView/combinedview.py:2222
+msgid "Vertical Details"
+msgstr "Detalji okomito"
+
+#: CombinedView/combinedview.py:2225
+msgid "Show Siblings"
+msgstr "Prikaži braću/sestre"
+
+#: CombinedView/combinedview.py:2228
+msgid "Show Tags"
+msgstr "Prikaži etikete"
+
+#: CombinedView/combinedview.py:2231
+msgid "Content"
+msgstr "Sadržaj"
+
+#: CombinedView/navigationview.py:269
+#, python-format
+msgid "%s has been bookmarked"
+msgstr "Knjižna oznaka je postavljena za %s"
+
+#: CombinedView/navigationview.py:273
+msgid "Could Not Set a Bookmark"
+msgstr "Nije bilo moguće postaviti knjižnu oznaku"
+
+#: CombinedView/navigationview.py:274
+msgid "A bookmark could not be set because no one was selected."
+msgstr ""
+"Nije bilo moguće postaviti knjižnu oznaku, jer nijedna osoba nije odabrana."
+
+#: CombinedView/navigationview.py:340
+msgid "No Home Person"
+msgstr "Nema početne osobe"
+
+#: CombinedView/navigationview.py:341
+msgid ""
+"You need to set a 'default person' to go to. Select the People View, select "
+"the person you want as 'Home Person', then confirm your choice via the menu "
+"Edit -> Set Home Person."
+msgstr ""
+"Moraš postaviti jednu „standardnu osobu” do koje želiš ići. Odaberi pogled "
+"„Osobe”, odaberi osobu koju želiš imati kao „početnu osobu”, zatim potvrdi "
+"tvoj izbor putem izbornika „Uredi > Postavi početnu osobu”."
+
+#: CombinedView/navigationview.py:351 CombinedView/navigationview.py:354
+msgid "Jump to by Gramps ID"
+msgstr "Skoči na Gramps ID oznake"
+
+#: CombinedView/navigationview.py:360
+#, python-format
+msgid "%s: "
+msgstr "%s: "
+
+#: CombinedView/navigationview.py:365
+msgid "_Cancel"
+msgstr "_Odustani"
+
+#: CombinedView/navigationview.py:366
+msgid "_Jump to"
+msgstr "_Skoči na"
+
+#: CombinedView/navigationview.py:378
+#, python-format
+msgid "Error: %s is not a valid Gramps ID"
+msgstr "Greška: %s nije ispravna Gramps ID oznaka"

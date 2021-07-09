@@ -1,19 +1,19 @@
 # Croatian translation for Gramps
 # This file is distributed under the same license as the Gramps package.
 # Copyright (C) Gramps project
-# Milo Ivir <mail@milotype.de>, 2019.
+# Milo Ivir <mail@milotype.de>, 2019., 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2019-03-08 02:37+0100\n"
+"PO-Revision-Date: 2020-08-29 18:57+0200\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 2.4.1\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
@@ -25,7 +25,7 @@ msgstr "H-stablo predaka"
 
 #: HtreePedigreeView/HtreePedigreeView.gpr.py:46
 msgid "Charts"
-msgstr "Grafikoni"
+msgstr "Dijagrami"
 
 #: HtreePedigreeView/HtreePedigreeView.gpr.py:47
 msgid ""
@@ -60,7 +60,7 @@ msgstr "krem."
 
 #: HtreePedigreeView/HtreePedigreeView.py:533
 msgid "H-tree Pedigree View"
-msgstr "Pogled za H-stablo predaka"
+msgstr "Pogled H-stabla predaka"
 
 #: HtreePedigreeView/HtreePedigreeView.py:699
 msgid "Person Filter Editor"
@@ -68,11 +68,11 @@ msgstr "Uređivač filtra za osobe"
 
 #: HtreePedigreeView/HtreePedigreeView.py:1542
 msgid "Relationship loop detected"
-msgstr "Otkrivena petlja u srodstvu"
+msgstr "Otkrivena je petlja u srodstvu"
 
 #: HtreePedigreeView/HtreePedigreeView.py:1543
 msgid "A person was found to be his/her own ancestor."
-msgstr "Pronađena osoba je sama sebi predak."
+msgstr "Pronađena je osoba, koja je sama sebi predak."
 
 #: HtreePedigreeView/HtreePedigreeView.py:1587
 msgid "Pre_vious"
@@ -88,7 +88,7 @@ msgstr "_Početna"
 
 #: HtreePedigreeView/HtreePedigreeView.py:1611
 msgid "Mouse scroll direction"
-msgstr "Smjer micanja s kotačićem miša"
+msgstr "Smjer kretanja kotačićem miša"
 
 #: HtreePedigreeView/HtreePedigreeView.py:1615
 msgid "Top <-> Bottom"
@@ -154,4 +154,4 @@ msgstr "Veličina stabla"
 
 #: HtreePedigreeView/HtreePedigreeView.py:2076
 msgid "Layout"
-msgstr "Razmještaj"
+msgstr "Raspored"

@@ -1,0 +1,37 @@
+# Croatian translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) Gramps project
+# Milo Ivir <mail@milotype.de>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-09 14:09+0200\n"
+"PO-Revision-Date: 2020-08-24 17:06+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.1\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Language: hr\n"
+
+#: SyncAssociations/syncAssociations.gpr.py:3
+msgid "Sync Associations"
+msgstr "Sinkronizacija veza"
+
+#: SyncAssociations/syncAssociations.gpr.py:4
+msgid ""
+"Traverses the Person list for all Associations that are bi-directional and "
+"adds any which are missing to the Associated Person."
+msgstr ""
+"Prolazi kroz popis osoba za sve veze koje su dvosmjerne i povezanoj osobi "
+"dodaje sve koje nedostaju."
+
+#: SyncAssociations/syncAssociations.py:86
+#, python-format
+msgid "Add %s reciprocal association"
+msgstr "Dodaj %s recipročnu vezu"

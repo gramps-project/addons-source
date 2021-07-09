@@ -1,7 +1,7 @@
 # Croatian translation for Gramps
 # This file is distributed under the same license as the Gramps package.
 # Copyright (C) Gramps project
-# Milo Ivir <mail@milotype.de>, 2019.
+# Milo Ivir <mail@milotype.de>, 2019., 2020.
 #
 msgid ""
 msgstr ""
@@ -81,8 +81,8 @@ msgid ""
 "Use buttons below to set the 'Action' for each difference.  No changes will "
 "be made to your tree until you press 'Done' and confirm."
 msgstr ""
-"Koristi gumbove ispod i postavi „radnju” za svaku razliku pojedinačno. "
-"Promjene u rodoslovu će stupiti na snagu, tek nakon pritiskanja gumba "
+"Koristi donje gumbove i postavi polje „Radnja” za svaku razliku pojedinačno. "
+"Promjene u rodoslovu stupit će na snagu tek nakon pritiskanja gumba "
 "„Gotovo”."
 
 #: ImportMerge/importmerge.py:118
@@ -114,16 +114,16 @@ msgid ""
 "This item will be merged, saving data from your tree.  Any referenced items "
 "were also marked for merging or adding."
 msgstr ""
-"Ova stavka će biti sjedinjena, koristeći podatke iz tvog rodoslova. Sve "
-"referencirajuće stavke su također označene za sjedinjavanje ili dodavanje."
+"Ova će se stavka sjediniti, spremajući podatke iz tvog rodoslova. Sve "
+"referencirajuće stavke također su označene za sjedinjavanje ili dodavanje."
 
 #: ImportMerge/importmerge.py:126
 msgid ""
 "This item will be merged, using data from the import.  Any referenced items "
 "were also marked for merging or adding."
 msgstr ""
-"Ova stavka će biti sjedinjena, koristeći podatke iz uvoza. Sve "
-"referencirajuće stavke su također označene za sjedinjavanje ili dodavanje."
+"Ova će se stavka sjediniti, koristeći podatke iz uvoza. Sve "
+"referencirajuće stavke također su označene za sjedinjavanje ili dodavanje."
 
 #: ImportMerge/importmerge.py:128
 msgid ""
@@ -228,7 +228,7 @@ msgstr "Rezultat "
 
 #: ImportMerge/importmerge.py:692
 msgid "Processing..."
-msgstr "Obrada ..."
+msgstr "Obrada u tijeku …"
 
 #: ImportMerge/importmerge.py:693
 msgid "Import and Merge"
@@ -363,8 +363,8 @@ msgid ""
 "This button will edit the imported data.  The data will still need to be "
 "merged, added or replaced."
 msgstr ""
-"Ovaj gumb će urediti uvezene podatke. Podatke će svejedno biti potrebno "
-"sjediniti, dodati ili zamijeniti."
+"Ovaj gumb će urediti uvezene podatke. Podaci će se svejedno morati sjediniti,"
+" dodati ili zamijeniti."
 
 #: ImportMerge/importmerge.glade:462
 msgid "Show more details"
