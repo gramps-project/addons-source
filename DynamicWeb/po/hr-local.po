@@ -1,21 +1,21 @@
 # Croatian translation for Gramps
 # This file is distributed under the same license as the Gramps package.
 # Copyright (C) Gramps project
-# Milo Ivir <mail@milotype.de>, 2019.
+# Milo Ivir <mail@milotype.de>, 2019., 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-07-24 17:33+0200\n"
-"PO-Revision-Date: 2019-03-08 01:48+0100\n"
+"PO-Revision-Date: 2020-08-29 19:27+0200\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: \n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 2.4.1\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 
@@ -45,11 +45,11 @@ msgstr "Župa"
 
 #: DynamicWeb//dynamicweb.py:273
 msgid "County"
-msgstr "Županija"
+msgstr "Okrug"
 
 #: DynamicWeb//dynamicweb.py:274
 msgid "State/ Province"
-msgstr "Savezna država/Pokrajina"
+msgstr "Pokrajina/Provincija"
 
 #: DynamicWeb//dynamicweb.py:275
 msgid "Postal Code"
@@ -182,7 +182,7 @@ msgstr "Gradient"
 
 #: DynamicWeb//dynamicweb.py:398
 msgid "Default"
-msgstr "Zadano"
+msgstr "Standardno"
 
 #: DynamicWeb//dynamicweb.py:399
 msgid "Mainz"
@@ -191,7 +191,7 @@ msgstr "Mainz"
 #: DynamicWeb//dynamicweb.py:707
 #, python-format
 msgid "Neither %(current)s nor %(parent)s are directories"
-msgstr "%(current)s i %(parent)s nisu direktoriji"
+msgstr "%(current)s i %(parent)s nisu mape"
 
 #: DynamicWeb//dynamicweb.py:715 DynamicWeb//dynamicweb.py:720
 #, python-format
@@ -204,7 +204,7 @@ msgstr "Dinamična web stranica"
 
 #: DynamicWeb//dynamicweb.py:746
 msgid "Exporting family tree data ..."
-msgstr "Izvoz rodoslovnih podataka …"
+msgstr "Izvoz podataka rodoslova …"
 
 #: DynamicWeb//dynamicweb.py:1237 DynamicWeb//dynamicweb.py:2461
 msgid "Author"
@@ -386,7 +386,7 @@ msgstr "Starost pri smrti"
 
 #: DynamicWeb//dynamicweb.py:2455
 msgid "Alternate Marriage"
-msgstr "Alternativni brak"
+msgstr "Alternativno vjenčanje"
 
 #: DynamicWeb//dynamicweb.py:2456
 msgid "Alternate Name"
@@ -454,7 +454,7 @@ msgstr "Citati"
 
 #: DynamicWeb//dynamicweb.py:2473
 msgid "Click on the map to show it full-screen"
-msgstr "Klikni na kartu za prikaz u cijelom zaslonu"
+msgstr "Pritisni na kartu za cjeloekranski prikaz"
 
 #: DynamicWeb//dynamicweb.py:2474
 msgid "Code"
@@ -578,7 +578,7 @@ msgstr "Uključi reference u indeksima"
 
 #: DynamicWeb//dynamicweb.py:2509 DynamicWeb//dynamicweb.py:4116
 msgid "Insert sources author in the sources title"
-msgstr "Uključi autora izvora u nazivu izvora"
+msgstr "Umetni autora izvora u naslovu izvora"
 
 #: DynamicWeb//dynamicweb.py:2510
 msgid "Last Modified"
@@ -618,11 +618,11 @@ msgstr "Karta"
 
 #: DynamicWeb//dynamicweb.py:2519
 msgid "Marriage"
-msgstr "Brak"
+msgstr "Vjenčanje"
 
 #: DynamicWeb//dynamicweb.py:2520
 msgid "Maximize"
-msgstr "Maksimiraj"
+msgstr "Otvori maksimalno"
 
 #: DynamicWeb//dynamicweb.py:2521
 msgid "Media Index"
@@ -714,7 +714,7 @@ msgstr "Pripremanje datoteke …"
 
 #: DynamicWeb//dynamicweb.py:2547
 msgid "Processing..."
-msgstr "Obrada ..."
+msgstr "Obrada u tijeku …"
 
 #: DynamicWeb//dynamicweb.py:2549
 msgid "References"
@@ -742,7 +742,7 @@ msgstr "Obnovi"
 
 #: DynamicWeb//dynamicweb.py:2557
 msgid "Restore default settings"
-msgstr "Vrati zadane postavke"
+msgstr "Vrati standardne postavke"
 
 #: DynamicWeb//dynamicweb.py:2558 DynamicWeb//dynamicweb.py:4112
 msgid "Show last modification time"
@@ -798,11 +798,11 @@ msgstr "Odaberi distribuciju roditelja (samo za lepezaste dijagrame)"
 
 #: DynamicWeb//dynamicweb.py:2571
 msgid "Select the shape of graph"
-msgstr "Odaberi oblik grafikona"
+msgstr "Odaberi oblik dijagrama"
 
 #: DynamicWeb//dynamicweb.py:2572
 msgid "Select the type of graph"
-msgstr "Odaberi vrstu grafikona"
+msgstr "Odaberi vrstu dijagrama"
 
 #: DynamicWeb//dynamicweb.py:2573
 msgid "Several matches.<br>Precise your search or choose in the lists below."
@@ -875,7 +875,7 @@ msgstr "Koristi registarske kartice umjesto odjeljaka"
 
 #: DynamicWeb//dynamicweb.py:2593
 msgid "Use the search box above in order to find a person."
-msgstr "Koristi gornju tražilicu za pronalaženje osobe"
+msgstr "Koristi gornju tražilicu za pronalaženje osobe."
 
 #: DynamicWeb//dynamicweb.py:2594
 msgid "Use a table format for the surnames index"
@@ -986,9 +986,9 @@ msgid ""
 "that you consider using a different directory to store your generated web "
 "pages."
 msgstr ""
-"Kao odredišni direktorij je postaviljen direktorij, koji služi za spremanje "
+"Kao odredišna mapa je postavljena mapa, koja služi za spremanje "
 "podataka, što može dovesti do problema u upravljanju datotekama. Preporučuje "
-"se odabir nekog drugog direktorija, za spremanje izrađenih web stranica."
+"se odabir jedne druge mape za spremanje izrađenih web stranica."
 
 #: DynamicWeb//dynamicweb.py:2989
 #, python-format
@@ -1011,7 +1011,7 @@ msgstr "Nevažeće ime datoteke"
 
 #: DynamicWeb//dynamicweb.py:3055
 msgid "The archive file must be a file, not a directory"
-msgstr "Arhiva mora biti datoteka, a ne direktorij"
+msgstr "Arhiva mora biti datoteka, a ne mapa"
 
 #: DynamicWeb//dynamicweb.py:3065 DynamicWeb//dynamicweb.py:3083
 #, python-format
@@ -1117,7 +1117,7 @@ msgstr "Ime arhivne datoteke (s dodacima „.zip” ili „.tgz”)"
 
 #: DynamicWeb//dynamicweb.py:3910
 msgid "Web site title"
-msgstr "Naslov web stranice"
+msgstr "Naslov web-stranice"
 
 #: DynamicWeb//dynamicweb.py:3910
 msgid "My Family Tree"
@@ -1175,7 +1175,7 @@ msgstr "Autorska prava"
 
 #: DynamicWeb//dynamicweb.py:3964
 msgid "The copyright to be used for the web files"
-msgstr "Autorsko pravo korišteno na web stranicama"
+msgstr "Autorsko pravo za web-stranice"
 
 #: DynamicWeb//dynamicweb.py:3972
 msgid "Privacy"
@@ -1396,7 +1396,7 @@ msgstr "Da li prikazati vrijeme zadnje promjene u podnožju stranice"
 
 #: DynamicWeb//dynamicweb.py:4117
 msgid "Whether to insert sources author in the sources title"
-msgstr "Da li uključiti autora izvora u nazivu izvora"
+msgstr "Da li uključiti autora izvora u naslovu izvora"
 
 #: DynamicWeb//dynamicweb.py:4121
 msgid "Whether to hide the Gramps ID"
@@ -1412,49 +1412,49 @@ msgstr "Tablica"
 
 #: DynamicWeb//dynamicweb.py:4134
 msgid "Default format for the surnames index"
-msgstr "Zadani format za indeks prezimena"
+msgstr "Standardni format za indeks prezimena"
 
 #: DynamicWeb//dynamicweb.py:4134
 msgid "The default format for the surnames index"
-msgstr "Ovo je zadani format za indeks prezimena"
+msgstr "Ovo je standardni format za indeks prezimena"
 
 #: DynamicWeb//dynamicweb.py:4135
 msgid "Default format for the persons index"
-msgstr "Zadani format za indeks osoba"
+msgstr "Standardni format za indeks osoba"
 
 #: DynamicWeb//dynamicweb.py:4135
 msgid "The default format for the persons index"
-msgstr "Ovo je zadani format za indeks osoba"
+msgstr "Ovo je standardni format za indeks osoba"
 
 #: DynamicWeb//dynamicweb.py:4136
 msgid "Default format for the families index"
-msgstr "Zadani format za indeks obitelji"
+msgstr "Standardni format za indeks obitelji"
 
 #: DynamicWeb//dynamicweb.py:4136
 msgid "The default format for the families index"
-msgstr "Ovo je zadani format za indeks obitelji"
+msgstr "Ovo je standardni format za indeks obitelji"
 
 #: DynamicWeb//dynamicweb.py:4137
 msgid "Default format for the sources index"
-msgstr "Zadani format za indeks izvora"
+msgstr "Standardni format za indeks izvora"
 
 #: DynamicWeb//dynamicweb.py:4137
 msgid "The default format for the sources index"
-msgstr "Ovo je zadani format za indeks izvora"
+msgstr "Ovo je standardni format za indeks izvora"
 
 #: DynamicWeb//dynamicweb.py:4138
 msgid "Default format for the places index"
-msgstr "Zadani format za indeks mjesta"
+msgstr "Standardni format za indeks mjesta"
 
 #: DynamicWeb//dynamicweb.py:4138
 msgid "The default format for the places index"
-msgstr "Ovo je zadani format za indeks mjesta"
+msgstr "Ovo je standardni format za indeks mjesta"
 
 #: DynamicWeb//dynamicweb.py:4147
 msgid ""
 "Whether to include dates columns (birth, death, marriage) on the index pages"
 msgstr ""
-"Da li uključiti stupac s datumima (rođenje, smrt, sklapanje braka) na "
+"Da li uključiti stupac s datumima (rođenje, smrt, vjenčanje) na "
 "stranicama indeksa"
 
 #: DynamicWeb//dynamicweb.py:4151
@@ -1493,7 +1493,7 @@ msgstr "Zadani broj unosa u indeksu"
 
 #: DynamicWeb//dynamicweb.py:4173
 msgid "The default number of entries shown in one index page"
-msgstr "Zadani broj unosa, prikazanih na jednoj stranici indeksa"
+msgstr "Standardni broj unosa, prikazanih na jednoj stranici indeksa"
 
 #: DynamicWeb//dynamicweb.py:4178
 msgid "Trees"
@@ -1597,7 +1597,7 @@ msgstr "Zabilješka za prilagođenu stranicu %(index)i"
 
 #: DynamicWeb//dynamicweb.py:4257
 msgid "A note to be used for the custom page content.\n"
-msgstr "Bilješka korištena za sadržaj prilagođene stranice.\n"
+msgstr "Bilješka za sadržaj prilagođene stranice.\n"
 
 #: DynamicWeb//dynamicweb.py:4260
 #, python-format

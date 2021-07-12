@@ -1,105 +1,105 @@
 # Croatian translation for Gramps
 # This file is distributed under the same license as the Gramps package.
 # Copyright (C) Gramps project
-# Milo Ivir <mail@milotype.de>, 2019.
+# Milo Ivir <mail@milotype.de>, 2019., 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2019-03-08 15:04+0100\n"
+"POT-Creation-Date: 2020-08-08 17:10-0500\n"
+"PO-Revision-Date: 2020-08-24 14:06+0200\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: \n"
+"Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.1\n"
-"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"X-Generator: Poedit 2.4.1\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
-"Language: hr\n"
 
 #: ExtractCity/extractcity.gpr.py:33
 msgid "Extract Place Data from a Place Title"
-msgstr "Izdvajanje podataka mjesta iz imena mjesta"
+msgstr "Izdvajanje podataka mjesta iz naslova mjesta"
 
 #: ExtractCity/extractcity.gpr.py:34
 msgid "Attempts to extract city and state/province from a place title"
-msgstr "Pokušava izdvojiti grad i državu/pokrajinu iz imena mjesta"
+msgstr "Pokušava izdvojiti grad i pokrajinu/provinciju iz naslova mjesta"
 
-#: ExtractCity/extractcity.py:68
+#: ExtractCity/extractcity.py:79
 msgid "United States of America"
 msgstr "Sjedinjene Američke Države"
 
-#: ExtractCity/extractcity.py:68
+#: ExtractCity/extractcity.py:79
 msgid "Canada"
 msgstr "Kanada"
 
-#: ExtractCity/extractcity.py:68
+#: ExtractCity/extractcity.py:79
 msgid "France"
 msgstr "Francuska"
 
-#: ExtractCity/extractcity.py:68
+#: ExtractCity/extractcity.py:79
 msgid "Sweden"
 msgstr "Švedska"
 
-#: ExtractCity/extractcity.py:391
+#: ExtractCity/extractcity.py:402
 msgid "Place title"
-msgstr "Ime mjesta"
+msgstr "Naslov mjesta"
 
-#: ExtractCity/extractcity.py:392
+#: ExtractCity/extractcity.py:403
 msgid "City"
 msgstr "Grad"
 
-#: ExtractCity/extractcity.py:393
+#: ExtractCity/extractcity.py:404
 msgid "State"
-msgstr "Pokrajina/Savezna država"
+msgstr "Pokrajina"
 
-#: ExtractCity/extractcity.py:394
+#: ExtractCity/extractcity.py:405
 msgid "ZIP/Postal Code"
 msgstr "Poštanski broj"
 
-#: ExtractCity/extractcity.py:395
+#: ExtractCity/extractcity.py:406
 msgid "Country"
 msgstr "Država"
 
-#: ExtractCity/extractcity.py:422 ExtractCity/extractcity.py:613
+#: ExtractCity/extractcity.py:437 ExtractCity/extractcity.py:641
 msgid "Extract Place data"
 msgstr "Izdvoji podatke mjesta"
 
-#: ExtractCity/extractcity.py:439
+#: ExtractCity/extractcity.py:454
 msgid "Checking Place Titles"
-msgstr "Provjera imena mjesta"
+msgstr "Provjera naslova mjesta"
 
-#: ExtractCity/extractcity.py:441
+#: ExtractCity/extractcity.py:456
 msgid "Looking for place fields"
 msgstr "Traženje zapisa o mjestu"
 
-#: ExtractCity/extractcity.py:527
+#: ExtractCity/extractcity.py:542
 msgid "No modifications made"
 msgstr "Nisu učinjene promjene"
 
-#: ExtractCity/extractcity.py:528
+#: ExtractCity/extractcity.py:543
 msgid "No place information could be extracted."
 msgstr "Nije bilo moguće izdvojiti podatke mjesta."
 
-#: ExtractCity/extractcity.py:547
+#: ExtractCity/extractcity.py:564
 msgid ""
 "Below is a list of Places with the possible data that can be extracted from "
 "the place title. Select the places you wish Gramps to convert."
 msgstr ""
-"Ispod se nalazi popis mjesta s podacima, koji se mogu izdvojiti iz imena "
+"Ispod se nalazi popis mjesta s podacima, koji se mogu izdvojiti iz naslova "
 "mjesta. Odaberi mjesta, koja želiš da Gramps konvertira."
 
-#: ExtractCity/extractcity.py:558
+#: ExtractCity/extractcity.py:575
 msgid "Select"
 msgstr "Odaberi"
 
-#: ExtractCity/extractcity.py:572
+#: ExtractCity/extractcity.py:591
 msgid "Building display"
 msgstr "Stvaranje prikaza"
 
-#: ExtractCity/changenames.glade:35
+#: ExtractCity/changenames.glade:37
 msgid ""
 "Below is a list of the family names that \n"
 "Gramps can convert to correct capitalization. \n"
@@ -109,6 +109,20 @@ msgstr ""
 "može ispraviti početna slova.\n"
 "Odaberi imena, koja želiš promijeniti. "
 
-#: ExtractCity/changenames.glade:108
+#: ExtractCity/changenames.glade:94
+msgid "_Toggle Selected"
+msgstr "_Uklj/Isklj odabrano"
+
+#: ExtractCity/changenames.glade:98
+msgid ""
+"Toggles the checkmarks on selected rows,  Rows can be selected with <ctrl> "
+"(add to group), or <shift> (extend group) click, or with <ctrl> or <shift> "
+"arrow keys and 'space'.  Or <ctrl>'a' for select all."
+msgstr ""
+"Uključuje i isključuje kvačice odabranih redaka. Retci se mogu odabrati "
+"tipkama <ctrl> (dodavanje grupi) ili <shift> (širenje grupu), tipkama "
+"<ctrl> ili <shift> sa strelicama i razmaknica. Ili <ctrl>a za biranje svih."
+
+#: ExtractCity/changenames.glade:126
 msgid "_Accept changes and close"
 msgstr "_Prihvati promjene i zatvori prozor"

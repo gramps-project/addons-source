@@ -1,7 +1,7 @@
 # Croatian translation for Gramps
 # This file is distributed under the same license as the Gramps package.
 # Copyright (C) Gramps project
-# Milo Ivir <mail@milotype.de>, 2019.
+# Milo Ivir <mail@milotype.de>, 2019., 2020.
 #
 msgid ""
 msgstr ""
@@ -72,7 +72,7 @@ msgid ""
 "\n"
 "Note that at least one expression must be a date."
 msgstr ""
-"Unesi jedan izraz i klikni „Izračunaj”.\n"
+"Gore upiši jedan izraz i pritisni „Izračunaj”.\n"
 "\n"
 "Izraz može biti:\n"
 "\n"

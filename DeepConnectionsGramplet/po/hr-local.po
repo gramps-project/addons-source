@@ -1,38 +1,38 @@
 # Croatian translation for Gramps
 # This file is distributed under the same license as the Gramps package.
 # Copyright (C) Gramps project
-# Milo Ivir <mail@milotype.de>, 2019.
+# Milo Ivir <mail@milotype.de>, 2019., 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2019-03-08 14:56+0100\n"
+"PO-Revision-Date: 2020-09-19 14:27+0200\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 2.4.1\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 "Language: hr\n"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:3
 msgid "Deep Connections Gramplet"
-msgstr "Daleka veza – Gramplet"
+msgstr "Duboka veza – Gramplet"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:4
 msgid "Gramplet showing a deep relationship between active and home people"
-msgstr "Gramplet prikazuje daleku vezu između aktivne i glavne osobe"
+msgstr "Gramplet prikazuje duboku vezu između aktivne i glavne osobe"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:10
 msgid "Deep Connections"
-msgstr "Daleka veza"
+msgstr "Duboka veza"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:59
 msgid "Double-click name for details"
-msgstr "Dvoklik na ime za pojedinosti"
+msgstr "Za detalje pritisni dvaput na ime"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:60
 msgid "No Family Tree loaded."
@@ -89,7 +89,7 @@ msgstr "Zabilješka o obitelji roditelja"
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:153
 #, python-format
 msgid "%s (association)"
-msgstr "%s (veze)"
+msgstr "%s (veza)"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:157
 msgid "Note on Person"
@@ -118,7 +118,7 @@ msgstr "ista osoba"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:216
 msgid "Looking for relationship between\n"
-msgstr "Traženje veza između\n"
+msgstr "Traženje veze između\n"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:217
 #, python-format
@@ -145,7 +145,7 @@ msgid ""
 "Press Continue to search for additional relations.\n"
 msgstr ""
 "Zaustavljeno.\n"
-"Pritisni gumb „Nastavi”, za traženje dodatnih veza.\n"
+"Za traženje dodatnih veza pritisni gumb „Nastavi”.\n"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:253
 #, python-format

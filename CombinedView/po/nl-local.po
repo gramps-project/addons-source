@@ -1,14 +1,14 @@
 # Dutch translation of addon CombinedView.
 # Copyright (C) 2020 Gramps project
 # This file is distributed under the same license as the PACKAGE package.
-# Jan Sparreboom <jan@sparreboom.net>, 2020.
+# Jan Sparreboom <jan@sparreboom.net>, ,2020, 2021.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: CombinedView 5.1.x\n"
-"Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
-"POT-Creation-Date: 2020-07-04 11:53-0500\n"
-"PO-Revision-Date: 2020-07-14 22:18+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-12-28 11:26-0600\n"
+"PO-Revision-Date: 2021-05-02 13:52+0200\n"
 "Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
 "Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
 "Language: nl\n"
@@ -17,7 +17,42 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.3\n"
 
-#: CombinedView/combinedview.gpr.py:23 CombinedView/combinedview.py:125
+#: CombinedView/basepage.py:215
+#, python-format
+msgid "%(date)s in %(place)s"
+msgstr "%(date)s in %(place)s"
+
+#: CombinedView/basepage.py:233 CombinedView/personpage.py:485
+msgid "Unknown"
+msgstr "Onbekend"
+
+#: CombinedView/basepage.py:368
+msgid "Add Child to Family"
+msgstr "Voeg kind toe aan gezin"
+
+#: CombinedView/basepage.py:386
+msgid "Select Child"
+msgstr "Selecteer kind"
+
+#: CombinedView/basepage.py:433 CombinedView/eventpage.py:101
+#: CombinedView/eventpage.py:235 CombinedView/personpage.py:131
+#: CombinedView/personpage.py:468 CombinedView/personpage.py:519
+#: CombinedView/personpage.py:681 CombinedView/personpage.py:894
+#, python-format
+msgid "Edit %s"
+msgstr "Bewerk %s"
+
+#: CombinedView/basepage.py:492
+#, python-format
+msgid "%(abbrev)s %(date)s in %(place)s"
+msgstr "%(abbrev)s %(date)s in %(place)s"
+
+#: CombinedView/basepage.py:494
+#, python-format
+msgid "%(abbrev)s %(date)s%(place)s"
+msgstr "%(abbrev)s %(date)s%(place)s"
+
+#: CombinedView/combinedview.gpr.py:23 CombinedView/combinedview.py:87
 msgid "Combined"
 msgstr "Gecombineerd"
 
@@ -25,267 +60,89 @@ msgstr "Gecombineerd"
 msgid "A view showing relationships and events for a person"
 msgstr "Een weergave van relaties en gebeurtenissen voor een persoon"
 
-#: CombinedView/combinedview.gpr.py:31 CombinedView/combinedview.py:1631
+#: CombinedView/combinedview.gpr.py:31 CombinedView/combinedview.py:650
+#: CombinedView/personpage.py:240
 msgid "Relationships"
 msgstr "Verwantschappen"
 
-#: CombinedView/combinedview.py:374
+#: CombinedView/combinedview.py:325
 msgid "Organize Bookmarks"
 msgstr "Organiseer bladwijzers"
 
-#: CombinedView/combinedview.py:623 CombinedView/combinedview.py:684
-#: CombinedView/combinedview.py:993 CombinedView/combinedview.py:1154
-#: CombinedView/combinedview.py:1270 CombinedView/combinedview.py:1540
-#: CombinedView/combinedview.py:1867 CombinedView/combinedview.py:1918
-#, python-format
-msgid "Edit %s"
-msgstr "Bewerk %s"
+#: CombinedView/combinedview.py:526
+msgid "Edit the active person"
+msgstr "Bewerk de actieve persoon"
 
-#: CombinedView/combinedview.py:641 CombinedView/combinedview.py:703
-#: CombinedView/navigationview.py:360
-msgid "ID"
-msgstr "ID"
+#: CombinedView/combinedview.py:528
+msgid "Edit the active event"
+msgstr "Bewerk de actieve gebeurtenis"
 
-#: CombinedView/combinedview.py:661
-msgid "Attributes"
-msgstr "Kenmerken"
-
-#: CombinedView/combinedview.py:713
-msgid "Birth"
-msgstr "Geboorte"
-
-#: CombinedView/combinedview.py:722 CombinedView/combinedview.py:747
-msgid "Death"
-msgstr "Overlijden"
-
-#: CombinedView/combinedview.py:742
-msgid "Alive"
-msgstr "In leven"
-
-#: CombinedView/combinedview.py:749
-msgid "unknown"
-msgstr "onbekend"
-
-#: CombinedView/combinedview.py:815
-#, python-format
-msgid "%(date)s in %(place)s"
-msgstr "%(date)s in %(place)s"
-
-#: CombinedView/combinedview.py:833 CombinedView/combinedview.py:1884
-msgid "Unknown"
-msgstr "Onbekend"
-
-#: CombinedView/combinedview.py:910
-#, python-format
-msgid "%(abbrev)s %(date)s in %(place)s"
-msgstr "%(abbrev)s %(date)s in %(place)s"
-
-#: CombinedView/combinedview.py:912
-#, python-format
-msgid "%(abbrev)s %(date)s%(place)s"
-msgstr "%(abbrev)s %(date)s%(place)s"
-
-#: CombinedView/combinedview.py:949
+#: CombinedView/combinedview.py:577
 #, python-format
 msgid "%(birthabbrev)s %(birthdate)s, %(deathabbrev)s %(deathdate)s"
 msgstr "%(birthabbrev)s %(birthdate)s, %(deathabbrev)s %(deathdate)s"
 
-#: CombinedView/combinedview.py:956 CombinedView/combinedview.py:958
+#: CombinedView/combinedview.py:584 CombinedView/combinedview.py:586
 #, python-format
 msgid "%(event)s %(date)s"
 msgstr "%(event)s %(date)s"
 
-#: CombinedView/combinedview.py:1019
-#, python-format
-msgid "Relationship type: %s"
-msgstr "Soort verwantschap: %s"
-
-#: CombinedView/combinedview.py:1056
-#, python-format
-msgid "%(event_type)s: %(date)s in %(place)s"
-msgstr "%(event_type)s: %(date)s in %(place)s"
-
-#: CombinedView/combinedview.py:1060
-#, python-format
-msgid "%(event_type)s: %(date)s"
-msgstr "%(event_type)s: %(date)s"
-
-#: CombinedView/combinedview.py:1063
-#, python-format
-msgid "%(event_type)s: %(place)s"
-msgstr "%(event_type)s: %(place)s"
-
-#: CombinedView/combinedview.py:1084
-msgid "Timeline"
-msgstr "Tijdlijn"
-
-#: CombinedView/combinedview.py:1151 CombinedView/combinedview.py:1267
-msgid "Click to make this event active"
-msgstr "Klik om deze gebeurtenis actief te maken"
-
-#: CombinedView/combinedview.py:1208
-msgid "Events"
-msgstr "Gebeurtenissen"
-
-#: CombinedView/combinedview.py:1346
-msgid "Click to visit this link"
-msgstr "Klik om deze link te bezoeken"
-
-#: CombinedView/combinedview.py:1364
-msgid "Album"
-msgstr "Album"
-
-#: CombinedView/combinedview.py:1433
-msgid "Associations"
-msgstr "Associaties"
-
-#: CombinedView/combinedview.py:1443
-msgid "Association"
-msgstr "Associatie"
-
-#: CombinedView/combinedview.py:1443 CombinedView/combinedview.py:1450
-msgid ": "
-msgstr ": "
-
-#: CombinedView/combinedview.py:1450
-msgid "Relationship"
-msgstr "Verwantschap"
-
-#: CombinedView/combinedview.py:1472
-msgid "Participants"
-msgstr "Deelnemers"
-
-#: CombinedView/combinedview.py:1507 CombinedView/combinedview.py:1572
-msgid "Order"
-msgstr "Volgorde"
-
-#: CombinedView/combinedview.py:1594
-msgid "Citations"
-msgstr "Citaten"
-
-#: CombinedView/combinedview.py:1642 CombinedView/combinedview.py:1663
-msgid "Parents"
-msgstr "Ouders"
-
-#: CombinedView/combinedview.py:1666
-msgid "Father"
-msgstr "Vader"
-
-#: CombinedView/combinedview.py:1670
-msgid "Mother"
-msgstr "Moeder"
-
-#: CombinedView/combinedview.py:1678
-msgid "Siblings"
-msgstr "Broers en zussen"
-
-#: CombinedView/combinedview.py:1688 CombinedView/combinedview.py:1749
-msgid "Add new child to family"
-msgstr "Voeg een nieuw kind toe aan het gezin"
-
-#: CombinedView/combinedview.py:1692 CombinedView/combinedview.py:1753
-msgid "Add existing child to family"
-msgstr "Voeg een bestaand kind toe aan het gezin"
-
-#: CombinedView/combinedview.py:1714
-msgid "Broken family detected"
-msgstr "Verbroken gezin gedetecteerd"
-
-#: CombinedView/combinedview.py:1715
-msgid "Please run the Check and Repair Database tool"
-msgstr "Voer het hulpmiddel 'Controleer en repareer de database' uit"
-
-#: CombinedView/combinedview.py:1727
-msgid "Family"
-msgstr "Gezin"
-
-#: CombinedView/combinedview.py:1731
-msgid "Spouse"
-msgstr "Echtgenoot"
-
-#: CombinedView/combinedview.py:1738
-msgid "Children"
-msgstr "Kinderen"
-
-#: CombinedView/combinedview.py:1788
-msgid "Add a new set of parents"
-msgstr "Voeg een nieuwe set ouders toe"
-
-#: CombinedView/combinedview.py:1789
-msgid "Add person as child to an existing family"
-msgstr "Voeg persoon als kind toe aan een bestaand gezin"
-
-#: CombinedView/combinedview.py:1790
-msgid "Edit parents"
-msgstr "Bewerk ouders"
-
-#: CombinedView/combinedview.py:1791
-msgid "Reorder parents"
-msgstr "Herorden ouders"
-
-#: CombinedView/combinedview.py:1792
-msgid "Remove person as child of these parents"
-msgstr "Verwijder persoon als kind van deze ouders"
-
-#: CombinedView/combinedview.py:1794
-msgid "Add a new family with person as parent"
-msgstr "Voeg een nieuw gezin toe met de persoon als ouder"
-
-#: CombinedView/combinedview.py:1796
-msgid "Edit family"
-msgstr "Bewerk gezin"
-
-#: CombinedView/combinedview.py:1797
-msgid "Reorder families"
-msgstr "Herorden gezinnen"
-
-#: CombinedView/combinedview.py:1798
-msgid "Remove person as parent in this family"
-msgstr "Persoon verwijderen als ouder in dit gezin"
-
-#: CombinedView/combinedview.py:2049
-msgid "Add Child to Family"
-msgstr "Voeg kind toe aan gezin"
-
-#: CombinedView/combinedview.py:2067
-msgid "Select Child"
-msgstr "Selecteer kind"
-
-#: CombinedView/combinedview.py:2187
+#: CombinedView/combinedview.py:624
 msgid "Use shading"
 msgstr "Gebruik schaduw"
 
-#: CombinedView/combinedview.py:2190
+#: CombinedView/combinedview.py:627
 msgid "Display edit buttons"
 msgstr "Bewerkingsknoppen weergeven"
 
-#: CombinedView/combinedview.py:2192
-msgid "View links as website links"
-msgstr "Geef links als links naar websites weer"
-
-#: CombinedView/combinedview.py:2198
-msgid "Layout"
-msgstr "Indeling"
-
-#: CombinedView/combinedview.py:2209
-msgid "Show Details"
-msgstr "Toon details"
-
-#: CombinedView/combinedview.py:2212
-msgid "Vertical Details"
-msgstr "Verticale details"
-
-#: CombinedView/combinedview.py:2215
-msgid "Show Siblings"
-msgstr "Toon broers en zussen"
-
-#: CombinedView/combinedview.py:2218
+#: CombinedView/combinedview.py:630
 msgid "Show Tags"
 msgstr "Toon labels"
 
-#: CombinedView/combinedview.py:2221
-msgid "Content"
-msgstr "Inhoud"
+#: CombinedView/combinedview.py:632
+msgid "View links as website links"
+msgstr "Geef links als links naar websites weer"
+
+#: CombinedView/combinedview.py:638
+msgid "Layout"
+msgstr "Indeling"
+
+#: CombinedView/combinedview.py:653
+msgid "Show Details"
+msgstr "Toon details"
+
+#: CombinedView/combinedview.py:656
+msgid "Vertical Details"
+msgstr "Verticale details"
+
+#: CombinedView/combinedview.py:659
+msgid "Show Siblings"
+msgstr "Toon broers en zussen"
+
+#: CombinedView/combinedview.py:662
+msgid "Person"
+msgstr "Persoon"
+
+#: CombinedView/eventpage.py:119 CombinedView/navigationview.py:360
+#: CombinedView/personpage.py:150
+msgid "ID"
+msgstr "ID"
+
+#: CombinedView/eventpage.py:140
+msgid "Attributes"
+msgstr "Kenmerken"
+
+#: CombinedView/eventpage.py:167
+msgid "Participants"
+msgstr "Deelnemers"
+
+#: CombinedView/eventpage.py:202 CombinedView/eventpage.py:267
+msgid "Order"
+msgstr "Volgorde"
+
+#: CombinedView/eventpage.py:289
+msgid "Citations"
+msgstr "Citaten"
 
 #: CombinedView/navigationview.py:269
 #, python-format
@@ -336,3 +193,155 @@ msgstr "_Spring naar"
 #, python-format
 msgid "Error: %s is not a valid Gramps ID"
 msgstr "Fout: %s is geen geldig Gramps-ID"
+
+#: CombinedView/personpage.py:160
+msgid "Birth"
+msgstr "Geboorte"
+
+#: CombinedView/personpage.py:169 CombinedView/personpage.py:194
+msgid "Death"
+msgstr "Overlijden"
+
+#: CombinedView/personpage.py:189
+msgid "Alive"
+msgstr "In leven"
+
+#: CombinedView/personpage.py:196
+msgid "unknown"
+msgstr "onbekend"
+
+#: CombinedView/personpage.py:251 CombinedView/personpage.py:272
+msgid "Parents"
+msgstr "Ouders"
+
+#: CombinedView/personpage.py:275
+msgid "Father"
+msgstr "Vader"
+
+#: CombinedView/personpage.py:279
+msgid "Mother"
+msgstr "Moeder"
+
+#: CombinedView/personpage.py:287
+msgid "Siblings"
+msgstr "Broers en zussen"
+
+#: CombinedView/personpage.py:297 CombinedView/personpage.py:358
+msgid "Add new child to family"
+msgstr "Voeg een nieuw kind toe aan het gezin"
+
+#: CombinedView/personpage.py:301 CombinedView/personpage.py:362
+msgid "Add existing child to family"
+msgstr "Voeg een bestaand kind toe aan het gezin"
+
+#: CombinedView/personpage.py:323
+msgid "Broken family detected"
+msgstr "Verbroken gezin gedetecteerd"
+
+#: CombinedView/personpage.py:324
+msgid "Please run the Check and Repair Database tool"
+msgstr "Voer het hulpmiddel 'Controleer en repareer de database' uit"
+
+#: CombinedView/personpage.py:336
+msgid "Family"
+msgstr "Gezin"
+
+#: CombinedView/personpage.py:340
+msgid "Spouse"
+msgstr "Echtgenoot"
+
+#: CombinedView/personpage.py:347
+msgid "Children"
+msgstr "Kinderen"
+
+#: CombinedView/personpage.py:397
+msgid "Add a new set of parents"
+msgstr "Voeg een nieuwe set ouders toe"
+
+#: CombinedView/personpage.py:398
+msgid "Add person as child to an existing family"
+msgstr "Voeg persoon als kind toe aan een bestaand gezin"
+
+#: CombinedView/personpage.py:399
+msgid "Edit parents"
+msgstr "Bewerk ouders"
+
+#: CombinedView/personpage.py:400
+msgid "Reorder parents"
+msgstr "Herorden ouders"
+
+#: CombinedView/personpage.py:401
+msgid "Remove person as child of these parents"
+msgstr "Verwijder persoon als kind van deze ouders"
+
+#: CombinedView/personpage.py:403
+msgid "Add a new family with person as parent"
+msgstr "Voeg een nieuw gezin toe met de persoon als ouder"
+
+#: CombinedView/personpage.py:405
+msgid "Edit family"
+msgstr "Bewerk gezin"
+
+#: CombinedView/personpage.py:406
+msgid "Reorder families"
+msgstr "Herorden gezinnen"
+
+#: CombinedView/personpage.py:407
+msgid "Remove person as parent in this family"
+msgstr "Persoon verwijderen als ouder in dit gezin"
+
+#: CombinedView/personpage.py:554
+#, python-format
+msgid "Relationship type: %s"
+msgstr "Soort verwantschap: %s"
+
+#: CombinedView/personpage.py:591
+#, python-format
+msgid "%(event_type)s: %(date)s in %(place)s"
+msgstr "%(event_type)s: %(date)s in %(place)s"
+
+#: CombinedView/personpage.py:595
+#, python-format
+msgid "%(event_type)s: %(date)s"
+msgstr "%(event_type)s: %(date)s"
+
+#: CombinedView/personpage.py:598
+#, python-format
+msgid "%(event_type)s: %(place)s"
+msgstr "%(event_type)s: %(place)s"
+
+#: CombinedView/personpage.py:619
+msgid "Events"
+msgstr "Gebeurtenissen"
+
+#: CombinedView/personpage.py:678 CombinedView/personpage.py:891
+msgid "Click to make this event active"
+msgstr "Klik om deze gebeurtenis actief te maken"
+
+#: CombinedView/personpage.py:737
+msgid "Click to visit this link"
+msgstr "Klik om deze link te bezoeken"
+
+#: CombinedView/personpage.py:755
+msgid "Album"
+msgstr "Album"
+
+#: CombinedView/personpage.py:824
+msgid "Timeline"
+msgstr "Tijdlijn"
+
+#: CombinedView/personpage.py:949
+msgid "Associations"
+msgstr "Associaties"
+
+#: CombinedView/personpage.py:959
+msgid "Association"
+msgstr "Associatie"
+
+#: CombinedView/personpage.py:959 CombinedView/personpage.py:966
+msgid ": "
+msgstr ": "
+
+#: CombinedView/personpage.py:966
+msgid "Relationship"
+msgstr "Verwantschap"

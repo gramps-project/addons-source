@@ -3,7 +3,7 @@ register(REPORT,
     id = 'database-differences-report',
     name = _("Database Differences Report"),
     description = _("Compares an external database with the current one."),
-    version = '1.0.20',
+    version = '1.0.22',
     gramps_target_version = "5.1",
     status = STABLE, # not yet tested with python 3, comparing unequal types not supported in 3.x
     fname = 'differences.py',

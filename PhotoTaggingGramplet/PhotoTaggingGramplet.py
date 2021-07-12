@@ -505,6 +505,8 @@ class PhotoTaggingGramplet(Gramplet):
 
     def db_changed(self):
         self.connect(self.dbstate.db, 'media-update', self.update)
+        self.connect(self.dbstate.db, 'person-update', self.update)
+        self.connect(self.dbstate.db, 'person-delete', self.update)
         self.connect_signal('Media', self.update)
 
     def main(self):

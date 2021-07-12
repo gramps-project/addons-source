@@ -1,46 +1,46 @@
 # Croatian translation for Gramps
 # This file is distributed under the same license as the Gramps package.
 # Copyright (C) Gramps project
-# Milo Ivir <mail@milotype.de>, 2019.
+# Milo Ivir <mivir@milotype.de>, 2019., 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-04 18:55-0600\n"
-"PO-Revision-Date: 2019-03-08 00:32+0100\n"
+"PO-Revision-Date: 2021-06-21 15:02+0200\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 3.0\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 "Language: hr\n"
 
 #: CheckPlaceTitles/checkplacetitles.gpr.py:28
 msgid "Check Place Titles"
-msgstr "Provjeri imena mjesta"
+msgstr "Provjeri naslove mjesta"
 
 #: CheckPlaceTitles/checkplacetitles.gpr.py:29
 msgid "Check place titles"
-msgstr "Provjeri imena mjesta"
+msgstr "Provjeri naslove mjesta"
 
 #: CheckPlaceTitles/checkplacetitles.py:56
 msgid "manual|Check_place_titles"
-msgstr "Provjeri_imena_mjesta"
+msgstr "Provjeri_naslove_mjesta"
 
 #: CheckPlaceTitles/checkplacetitles.py:71
 msgid "Check Place title"
-msgstr "Provjeri ime mjesta"
+msgstr "Provjeri naslov mjesta"
 
 #: CheckPlaceTitles/checkplacetitles.py:86
 msgid "Checking Place Titles"
-msgstr "Provjera imena mjesta"
+msgstr "Provjeravanje naslova mjesta"
 
 #: CheckPlaceTitles/checkplacetitles.py:88
 msgid "Looking for place fields"
-msgstr "Traženje zapisa o mjestu"
+msgstr "Traženje polja mjesta"
 
 #: CheckPlaceTitles/checkplacetitles.py:107
 msgid "Differences"
@@ -76,19 +76,19 @@ msgstr "Staro mjesto"
 
 #: CheckPlaceTitles/checkplacetitles.py:203
 msgid "Modify Place titles"
-msgstr "Provjeri imena mjesta"
+msgstr "Promijeni naslove mjesta"
 
 #: CheckPlaceTitles/checkplacetitles.py:226
 msgid "Place titles"
-msgstr "Imena mjesta"
+msgstr "Naslovi mjesta"
 
 #: CheckPlaceTitles/checkplacetitles.glade:56
 msgid "Remove content of place title field if it does not match"
-msgstr "Ukloni sadržaj u imenu mjesta, ako ne odgovara"
+msgstr "Ukloni sadržaj u polju naslova mjesta, ako ne odgovara"
 
 #: CheckPlaceTitles/checkplacetitles.glade:74
 msgid "Copy content of place title field to a new note."
-msgstr "Kopiraj sadržaj polje za ime mjesta, u novu zabilješku."
+msgstr "Kopiraj sadržaj polja naslova mjesta, u novu zabilješku."
 
 #: CheckPlaceTitles/checkplacetitles.glade:87
 msgid "Mark"
@@ -100,7 +100,7 @@ msgstr "Dodaj etiketu odabranim mjestima."
 
 #: CheckPlaceTitles/checkplacetitles.glade:150
 msgid "_Accept changes and close"
-msgstr "_Prihvati promjene i zatvori prozor"
+msgstr "_Prihvati promjene i zatvori"
 
 #: CheckPlaceTitles/checkplacetitles.glade:177
 msgid "column"

@@ -1,23 +1,23 @@
 # Croatian translation for Gramps
 # This file is distributed under the same license as the Gramps package.
 # Copyright (C) Gramps project
-# Milo Ivir <mail@milotype.de>, 2019.
+# Milo Ivir <mail@milotype.de>, 2019., 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2019-03-08 14:14+0100\n"
+"POT-Creation-Date: 2020-04-08 11:45-0500\n"
+"PO-Revision-Date: 2020-09-19 15:02+0200\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: \n"
+"Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.1\n"
-"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"X-Generator: Poedit 2.4.1\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
-"Language: hr\n"
 
 #: Form/editform.py:147
 #, python-format
@@ -108,13 +108,13 @@ msgstr "Odaberi osobu"
 #: Form\form_gb.xml.h:10 Form\form_gb.xml.h:13 Form\form_gb.xml.h:20
 #: Form\form_gb.xml.h:26 Form\form_gb.xml.h:29 Form\form_gb.xml.h:32
 #: Form\form_gb.xml.h:39 Form\form_gb.xml.h:44 Form\form_gb.xml.h:50
-#: Form\form_gb.xml.h:59 Form\form_gb.xml.h:73 Form\form_gb.xml.h:88
-#: Form\form_gb.xml.h:103 Form\form_gb.xml.h:118 Form\form_gb.xml.h:136
-#: Form\form_gb.xml.h:147 Form\form_gb.xml.h:167 Form\form_gb.xml.h:182
-#: Form\form_gb.xml.h:202 Form\form_gb.xml.h:215 Form\form_gb.xml.h:237
-#: Form\form_gb.xml.h:248 Form\form_gb.xml.h:265 Form\form_gb.xml.h:292
-#: Form\form_gb.xml.h:320 Form\form_gb.xml.h:352 Form\form_gb.xml.h:391
-#: Form\form_gb.xml.h:418 Form\form_gb.xml.h:447 Form\form_pl.xml.h:1
+#: Form\form_gb.xml.h:63 Form\form_gb.xml.h:81 Form\form_gb.xml.h:100
+#: Form\form_gb.xml.h:121 Form\form_gb.xml.h:143 Form\form_gb.xml.h:168
+#: Form\form_gb.xml.h:189 Form\form_gb.xml.h:222 Form\form_gb.xml.h:243
+#: Form\form_gb.xml.h:263 Form\form_gb.xml.h:276 Form\form_gb.xml.h:298
+#: Form\form_gb.xml.h:309 Form\form_gb.xml.h:326 Form\form_gb.xml.h:353
+#: Form\form_gb.xml.h:381 Form\form_gb.xml.h:413 Form\form_gb.xml.h:452
+#: Form\form_gb.xml.h:479 Form\form_gb.xml.h:508 Form\form_pl.xml.h:1
 #: Form\form_pl.xml.h:20 Form\form_pl.xml.h:30 Form\form_us.xml.h:8
 #: Form\form_us.xml.h:22 Form\form_us.xml.h:43 Form\form_us.xml.h:64
 #: Form\form_us.xml.h:104 Form\form_us.xml.h:173 Form\form_us.xml.h:261
@@ -159,11 +159,11 @@ msgstr "Redoslijed"
 msgid "Form"
 msgstr "Obrazac"
 
-#: Form/form.py:66
+#: Form/form.py:68
 msgid "Groom"
 msgstr "Mladoženja"
 
-#: Form/form.py:67
+#: Form/form.py:69
 msgid "Bride"
 msgstr "Mladenka"
 
@@ -194,7 +194,7 @@ msgid "Date"
 msgstr "Datum"
 
 #: Form/formgramplet.py:117 Form\form_ca.xml.h:545 Form\form_ca.xml.h:677
-#: Form\form_dk.xml.h:166 Form\form_dk.xml.h:189 Form\form_gb.xml.h:235
+#: Form\form_dk.xml.h:166 Form\form_dk.xml.h:189 Form\form_gb.xml.h:296
 #: Form\form_us.xml.h:906
 msgid "Place"
 msgstr "Mjesto"
@@ -227,13 +227,13 @@ msgstr "Raspored"
 #: Form\form_ca.xml.h:2 Form\form_ca.xml.h:93 Form\form_ca.xml.h:211
 #: Form\form_ca.xml.h:798
 msgid "EnumDistrict"
-msgstr "Broj okruga"
+msgstr "Broj distrikta"
 
 #: Form\form_ca.xml.h:3 Form\form_ca.xml.h:94 Form\form_ca.xml.h:212
 #: Form\form_ca.xml.h:644 Form\form_ca.xml.h:812 Form\form_us.xml.h:1162
 #: Form\form_us.xml.h:1223 Form\form_us.xml.h:1953
 msgid "Township"
-msgstr "Župa ili gradska uprava"
+msgstr "Naselje"
 
 #: Form\form_ca.xml.h:4 Form\form_ca.xml.h:95 Form\form_dk.xml.h:1
 #: Form\form_dk.xml.h:18 Form\form_dk.xml.h:35 Form\form_dk.xml.h:50
@@ -242,8 +242,8 @@ msgstr "Župa ili gradska uprava"
 #: Form\form_dk.xml.h:181 Form\form_dk.xml.h:204 Form\form_dk.xml.h:225
 #: Form\form_dk.xml.h:249 Form\form_dk.xml.h:283 Form\form_dk.xml.h:312
 #: Form\form_dk.xml.h:336 Form\form_dk.xml.h:362 Form\form_dk.xml.h:386
-#: Form\form_dk.xml.h:406 Form\form_dk.xml.h:426 Form\form_gb.xml.h:413
-#: Form\form_gb.xml.h:433 Form\form_us.xml.h:853 Form\form_us.xml.h:892
+#: Form\form_dk.xml.h:406 Form\form_dk.xml.h:426 Form\form_gb.xml.h:474
+#: Form\form_gb.xml.h:494 Form\form_us.xml.h:853 Form\form_us.xml.h:892
 #: Form\form_us.xml.h:1222 Form\form_us.xml.h:1291 Form\form_us.xml.h:1907
 #: Form\form_us.xml.h:1927 Form\form_us.xml.h:1951 Form\form_us.xml.h:1990
 #: Form\form_us.xml.h:2027 Form\form_us.xml.h:2065 Form\form_us.xml.h:2103
@@ -299,13 +299,13 @@ msgstr "1. Broj zatvorenika"
 #: Form\form_fr.xml.h:193 Form\form_fr.xml.h:202 Form\form_fr.xml.h:213
 #: Form\form_gb.xml.h:9 Form\form_gb.xml.h:12 Form\form_gb.xml.h:24
 #: Form\form_gb.xml.h:28 Form\form_gb.xml.h:31 Form\form_gb.xml.h:42
-#: Form\form_gb.xml.h:52 Form\form_gb.xml.h:63 Form\form_gb.xml.h:77
-#: Form\form_gb.xml.h:92 Form\form_gb.xml.h:107 Form\form_gb.xml.h:122
-#: Form\form_gb.xml.h:140 Form\form_gb.xml.h:155 Form\form_gb.xml.h:172
-#: Form\form_gb.xml.h:186 Form\form_gb.xml.h:206 Form\form_gb.xml.h:223
-#: Form\form_gb.xml.h:239 Form\form_gb.xml.h:254 Form\form_gb.xml.h:275
-#: Form\form_gb.xml.h:302 Form\form_gb.xml.h:330 Form\form_gb.xml.h:362
-#: Form\form_gb.xml.h:426 Form\form_gb.xml.h:454 Form\form_us.xml.h:265
+#: Form\form_gb.xml.h:54 Form\form_gb.xml.h:69 Form\form_gb.xml.h:87
+#: Form\form_gb.xml.h:108 Form\form_gb.xml.h:129 Form\form_gb.xml.h:151
+#: Form\form_gb.xml.h:176 Form\form_gb.xml.h:205 Form\form_gb.xml.h:231
+#: Form\form_gb.xml.h:247 Form\form_gb.xml.h:267 Form\form_gb.xml.h:284
+#: Form\form_gb.xml.h:300 Form\form_gb.xml.h:315 Form\form_gb.xml.h:336
+#: Form\form_gb.xml.h:363 Form\form_gb.xml.h:391 Form\form_gb.xml.h:423
+#: Form\form_gb.xml.h:487 Form\form_gb.xml.h:515 Form\form_us.xml.h:265
 #: Form\form_us.xml.h:341 Form\form_us.xml.h:422 Form\form_us.xml.h:440
 #: Form\form_us.xml.h:476 Form\form_us.xml.h:631 Form\form_us.xml.h:690
 #: Form\form_us.xml.h:728 Form\form_us.xml.h:777 Form\form_us.xml.h:816
@@ -350,7 +350,7 @@ msgstr "3. Mjesto rođenja"
 #: Form\form_dk.xml.h:154 Form\form_dk.xml.h:175 Form\form_dk.xml.h:198
 #: Form\form_dk.xml.h:219 Form\form_dk.xml.h:240 Form\form_dk.xml.h:268
 #: Form\form_dk.xml.h:303 Form\form_dk.xml.h:325 Form\form_fr.xml.h:80
-#: Form\form_fr.xml.h:218 Form\form_gb.xml.h:421 Form\form_gb.xml.h:450
+#: Form\form_fr.xml.h:218 Form\form_gb.xml.h:482 Form\form_gb.xml.h:511
 msgid "Religion"
 msgstr "Vjera"
 
@@ -384,14 +384,14 @@ msgstr "5. Prebivalište"
 #: Form\form_fr.xml.h:102 Form\form_fr.xml.h:110 Form\form_fr.xml.h:118
 #: Form\form_fr.xml.h:124 Form\form_fr.xml.h:131 Form\form_fr.xml.h:141
 #: Form\form_fr.xml.h:148 Form\form_fr.xml.h:165 Form\form_fr.xml.h:209
-#: Form\form_gb.xml.h:22 Form\form_gb.xml.h:41 Form\form_gb.xml.h:51
-#: Form\form_gb.xml.h:62 Form\form_gb.xml.h:76 Form\form_gb.xml.h:91
-#: Form\form_gb.xml.h:106 Form\form_gb.xml.h:121 Form\form_gb.xml.h:139
-#: Form\form_gb.xml.h:149 Form\form_gb.xml.h:185 Form\form_gb.xml.h:205
-#: Form\form_gb.xml.h:217 Form\form_gb.xml.h:238 Form\form_gb.xml.h:253
-#: Form\form_gb.xml.h:274 Form\form_gb.xml.h:301 Form\form_gb.xml.h:329
-#: Form\form_gb.xml.h:361 Form\form_gb.xml.h:401 Form\form_gb.xml.h:424
-#: Form\form_gb.xml.h:453 Form\form_pl.xml.h:7 Form\form_pl.xml.h:35
+#: Form\form_gb.xml.h:22 Form\form_gb.xml.h:41 Form\form_gb.xml.h:52
+#: Form\form_gb.xml.h:68 Form\form_gb.xml.h:86 Form\form_gb.xml.h:106
+#: Form\form_gb.xml.h:127 Form\form_gb.xml.h:149 Form\form_gb.xml.h:174
+#: Form\form_gb.xml.h:193 Form\form_gb.xml.h:246 Form\form_gb.xml.h:266
+#: Form\form_gb.xml.h:278 Form\form_gb.xml.h:299 Form\form_gb.xml.h:314
+#: Form\form_gb.xml.h:335 Form\form_gb.xml.h:362 Form\form_gb.xml.h:390
+#: Form\form_gb.xml.h:422 Form\form_gb.xml.h:462 Form\form_gb.xml.h:485
+#: Form\form_gb.xml.h:514 Form\form_pl.xml.h:7 Form\form_pl.xml.h:35
 #: Form\form_us.xml.h:262 Form\form_us.xml.h:338 Form\form_us.xml.h:415
 #: Form\form_us.xml.h:437 Form\form_us.xml.h:469 Form\form_us.xml.h:621
 #: Form\form_us.xml.h:678 Form\form_us.xml.h:717 Form\form_us.xml.h:762
@@ -442,7 +442,7 @@ msgstr "Bračno stanje"
 
 #: Form\form_ca.xml.h:27
 msgid "9. Married or Single"
-msgstr "9. Oženjen/udata ili neoženjen/neudata"
+msgstr "9. Vjenčan/a ili nevjenčan/a"
 
 #: Form\form_ca.xml.h:28 Form\form_ca.xml.h:240
 msgid "Coloured"
@@ -614,7 +614,7 @@ msgstr ""
 
 #: Form\form_ca.xml.h:70 Form\form_ca.xml.h:278
 msgid "Houses"
-msgstr ""
+msgstr "Kuće"
 
 #: Form\form_ca.xml.h:71
 msgid ""
@@ -623,7 +623,7 @@ msgstr ""
 
 #: Form\form_ca.xml.h:72 Form\form_ca.xml.h:280
 msgid "HousesStories"
-msgstr ""
+msgstr "Katovi kuće"
 
 #: Form\form_ca.xml.h:73
 msgid "32. Houses: No. of Stories"
@@ -631,7 +631,7 @@ msgstr ""
 
 #: Form\form_ca.xml.h:74 Form\form_ca.xml.h:282
 msgid "HousesFamilies"
-msgstr ""
+msgstr "Obitelji kuće"
 
 #: Form\form_ca.xml.h:75
 msgid "33. No. of Families Occupying"
@@ -640,7 +640,7 @@ msgstr ""
 #: Form\form_ca.xml.h:76 Form\form_ca.xml.h:284 Form\form_ca.xml.h:302
 #: Form\form_ca.xml.h:356 Form\form_ca.xml.h:403 Form\form_ca.xml.h:549
 msgid "HousesVacant"
-msgstr ""
+msgstr "Nenastanjene kuće"
 
 #: Form\form_ca.xml.h:77
 msgid "34. Houses: Vacant"
@@ -648,7 +648,7 @@ msgstr ""
 
 #: Form\form_ca.xml.h:78
 msgid "HousesBuilding"
-msgstr ""
+msgstr "Zgrade"
 
 #: Form\form_ca.xml.h:79
 msgid "35. Houses: Building"
@@ -960,7 +960,7 @@ msgstr ""
 
 #: Form\form_ca.xml.h:162
 msgid "HayQty"
-msgstr ""
+msgstr "Količina sjena"
 
 #: Form\form_ca.xml.h:163
 msgid "33. Hay, Bundles or Tons"
@@ -1194,23 +1194,23 @@ msgstr ""
 
 #: Form\form_ca.xml.h:235
 msgid "10. Married or Single"
-msgstr ""
+msgstr "10. Vjenčani ili nevjenčani"
 
 #: Form\form_ca.xml.h:236
 msgid "Widowers"
-msgstr ""
+msgstr "Udovci"
 
 #: Form\form_ca.xml.h:237
 msgid "11. Widowers"
-msgstr ""
+msgstr "11. Udovci"
 
 #: Form\form_ca.xml.h:238
 msgid "Widows"
-msgstr ""
+msgstr "Udovice"
 
 #: Form\form_ca.xml.h:239
 msgid "12. Widows"
-msgstr ""
+msgstr "12. Udovice"
 
 #: Form\form_ca.xml.h:241
 msgid "13. Coloured Persons, Mulato or Indians"
@@ -1374,7 +1374,7 @@ msgstr ""
 
 #: Form\form_ca.xml.h:286
 msgid "HouseBeingBuilt"
-msgstr ""
+msgstr "Kuća u izgradnji"
 
 #: Form\form_ca.xml.h:287
 msgid "36. Houses: Being built"
@@ -1390,33 +1390,33 @@ msgstr "Predio/Pokrajina"
 #: Form\form_ca.xml.h:452 Form\form_ca.xml.h:531 Form\form_ca.xml.h:617
 #: Form\form_ca.xml.h:663 Form\form_ca.xml.h:796
 msgid "District"
-msgstr "Okrug"
+msgstr "Distrikt"
 
 #: Form\form_ca.xml.h:291 Form\form_ca.xml.h:345 Form\form_ca.xml.h:393
 #: Form\form_ca.xml.h:453 Form\form_ca.xml.h:532 Form\form_ca.xml.h:618
 #: Form\form_ca.xml.h:664 Form\form_ca.xml.h:797
 msgid "SubDistrict"
-msgstr ""
+msgstr "Pod-distrikt"
 
 #: Form\form_ca.xml.h:296 Form\form_ca.xml.h:350 Form\form_ca.xml.h:399
 msgid "Vessels"
-msgstr ""
+msgstr "Plovila"
 
 #: Form\form_ca.xml.h:297 Form\form_ca.xml.h:351
 msgid "1. Vessels"
-msgstr ""
+msgstr "1. Plovila"
 
 #: Form\form_ca.xml.h:298 Form\form_ca.xml.h:352
 msgid "Shanties"
-msgstr ""
+msgstr "Kolibe"
 
 #: Form\form_ca.xml.h:299 Form\form_ca.xml.h:353
 msgid "2. Shanties"
-msgstr ""
+msgstr "2. Kolibe"
 
 #: Form\form_ca.xml.h:300 Form\form_ca.xml.h:354 Form\form_ca.xml.h:401
 msgid "HousesBeingBuilt"
-msgstr ""
+msgstr "Kuće u izgradnji"
 
 #: Form\form_ca.xml.h:301
 msgid "3. Dwelling houses in construction"
@@ -1451,7 +1451,7 @@ msgstr "7. Imena"
 #: Form\form_ca.xml.h:310 Form\form_ca.xml.h:364 Form\form_ca.xml.h:411
 #: Form\form_ca.xml.h:466 Form\form_ca.xml.h:630 Form\form_ca.xml.h:679
 #: Form\form_ca.xml.h:767 Form\form_ca.xml.h:822 Form\form_gb.xml.h:7
-#: Form\form_gb.xml.h:40 Form\form_gb.xml.h:169 Form\form_gb.xml.h:425
+#: Form\form_gb.xml.h:40 Form\form_gb.xml.h:226 Form\form_gb.xml.h:486
 #: Form\form_us.xml.h:263 Form\form_us.xml.h:339 Form\form_us.xml.h:416
 #: Form\form_us.xml.h:438 Form\form_us.xml.h:468 Form\form_us.xml.h:620
 #: Form\form_us.xml.h:675 Form\form_us.xml.h:715 Form\form_us.xml.h:760
@@ -1593,15 +1593,15 @@ msgstr ""
 
 #: Form\form_ca.xml.h:400
 msgid "1. Vessels and Shanties"
-msgstr ""
+msgstr "1. Plovila i kolibe"
 
 #: Form\form_ca.xml.h:402
 msgid "2. Houses in construction"
-msgstr ""
+msgstr "2. Kuće u izgradnji"
 
 #: Form\form_ca.xml.h:404
 msgid "3. Houses unoccupied"
-msgstr ""
+msgstr "3. Nenastanjene kuće"
 
 #: Form\form_ca.xml.h:406
 msgid "4. Houses inhabited"
@@ -1609,23 +1609,23 @@ msgstr ""
 
 #: Form\form_ca.xml.h:408
 msgid "5. Families"
-msgstr ""
+msgstr "5. Obitelji"
 
 #: Form\form_ca.xml.h:410
 msgid "6. Names"
-msgstr ""
+msgstr "6. Imena"
 
 #: Form\form_ca.xml.h:412
 msgid "7. Sex"
-msgstr ""
+msgstr "7. Spol"
 
 #: Form\form_ca.xml.h:414
 msgid "8. Age"
-msgstr ""
+msgstr "8. Starost"
 
 #: Form\form_ca.xml.h:416
 msgid "9. Married or Widowed"
-msgstr ""
+msgstr "9. Oženjen/udata ili udovac/udovica"
 
 #: Form\form_ca.xml.h:417 Form\form_ca.xml.h:470 Form\form_ca.xml.h:628
 #: Form\form_ca.xml.h:681 Form\form_ca.xml.h:769 Form\form_ca.xml.h:820
@@ -1641,20 +1641,20 @@ msgstr ""
 #: Form\form_fr.xml.h:128 Form\form_fr.xml.h:135 Form\form_fr.xml.h:142
 #: Form\form_fr.xml.h:152 Form\form_fr.xml.h:161 Form\form_fr.xml.h:169
 #: Form\form_fr.xml.h:178 Form\form_fr.xml.h:187 Form\form_fr.xml.h:196
-#: Form\form_fr.xml.h:205 Form\form_fr.xml.h:216 Form\form_gb.xml.h:60
-#: Form\form_gb.xml.h:74 Form\form_gb.xml.h:89 Form\form_gb.xml.h:104
-#: Form\form_gb.xml.h:119 Form\form_gb.xml.h:137 Form\form_gb.xml.h:148
-#: Form\form_gb.xml.h:183 Form\form_gb.xml.h:203 Form\form_gb.xml.h:216
-#: Form\form_gb.xml.h:271 Form\form_gb.xml.h:298 Form\form_gb.xml.h:326
-#: Form\form_gb.xml.h:358 Form\form_gb.xml.h:397 Form\form_gb.xml.h:419
-#: Form\form_gb.xml.h:448 Form\form_us.xml.h:1339 Form\form_us.xml.h:1877
+#: Form\form_fr.xml.h:205 Form\form_fr.xml.h:216 Form\form_gb.xml.h:65
+#: Form\form_gb.xml.h:83 Form\form_gb.xml.h:102 Form\form_gb.xml.h:123
+#: Form\form_gb.xml.h:145 Form\form_gb.xml.h:170 Form\form_gb.xml.h:191
+#: Form\form_gb.xml.h:244 Form\form_gb.xml.h:264 Form\form_gb.xml.h:277
+#: Form\form_gb.xml.h:332 Form\form_gb.xml.h:359 Form\form_gb.xml.h:387
+#: Form\form_gb.xml.h:419 Form\form_gb.xml.h:458 Form\form_gb.xml.h:480
+#: Form\form_gb.xml.h:509 Form\form_us.xml.h:1339 Form\form_us.xml.h:1877
 #: Form\form_us.xml.h:1896 Form\form_us.xml.h:1916
 msgid "Relation"
-msgstr "Odno"
+msgstr "Veza"
 
 #: Form\form_ca.xml.h:418
 msgid "10. Relationship to Head of Family"
-msgstr ""
+msgstr "10. Veza prema glavi obitelji"
 
 #: Form\form_ca.xml.h:421
 msgid "French"
@@ -1689,7 +1689,7 @@ msgid "16. Profession, Occupation or Trade"
 msgstr ""
 
 #: Form\form_ca.xml.h:431 Form\form_ca.xml.h:496 Form\form_ca.xml.h:707
-#: Form\form_gb.xml.h:123 Form\form_gb.xml.h:187 Form\form_gb.xml.h:364
+#: Form\form_gb.xml.h:153 Form\form_gb.xml.h:248 Form\form_gb.xml.h:425
 msgid "Employer"
 msgstr "Poslodavatelj"
 
@@ -1752,7 +1752,7 @@ msgstr ""
 #: Form\form_ca.xml.h:449 Form\form_ca.xml.h:528 Form\form_ca.xml.h:660
 #: Form\form_ca.xml.h:753 Form\form_ca.xml.h:793
 msgid "SubTitle"
-msgstr ""
+msgstr "Podnaslov"
 
 #: Form\form_ca.xml.h:454 Form\form_ca.xml.h:533 Form\form_ca.xml.h:665
 msgid "PollSub"
@@ -1864,7 +1864,7 @@ msgstr ""
 #: Form\form_fr.xml.h:145 Form\form_fr.xml.h:151 Form\form_fr.xml.h:160
 #: Form\form_fr.xml.h:168 Form\form_fr.xml.h:177 Form\form_fr.xml.h:186
 #: Form\form_fr.xml.h:195 Form\form_fr.xml.h:204 Form\form_fr.xml.h:215
-#: Form\form_gb.xml.h:162 Form\form_gb.xml.h:230
+#: Form\form_gb.xml.h:215 Form\form_gb.xml.h:291
 msgid "Nationality"
 msgstr ""
 
@@ -1997,7 +1997,7 @@ msgid "32. Can speak French"
 msgstr ""
 
 #: Form\form_ca.xml.h:524 Form\form_ca.xml.h:741 Form\form_ca.xml.h:789
-#: Form\form_gb.xml.h:193 Form\form_gb.xml.h:213 Form\form_gb.xml.h:232
+#: Form\form_gb.xml.h:254 Form\form_gb.xml.h:274 Form\form_gb.xml.h:293
 msgid "Language"
 msgstr "Jezik"
 
@@ -2535,7 +2535,7 @@ msgstr ""
 #: Form\form_us.xml.h:1033 Form\form_us.xml.h:1128 Form\form_us.xml.h:1776
 #: Form\form_us.xml.h:1985
 msgid "Idiotic"
-msgstr ""
+msgstr "Idiot"
 
 #: Form\form_ca.xml.h:752
 msgid "41. Idiotic or silly"
@@ -2757,7 +2757,7 @@ msgstr ""
 #: Form\form_dk.xml.h:314 Form\form_dk.xml.h:338 Form\form_dk.xml.h:364
 #: Form\form_dk.xml.h:388 Form\form_dk.xml.h:408 Form\form_dk.xml.h:428
 msgid "Town or City"
-msgstr ""
+msgstr "Grad"
 
 #: Form\form_dk.xml.h:4 Form\form_dk.xml.h:21 Form\form_dk.xml.h:38
 #: Form\form_dk.xml.h:53 Form\form_dk.xml.h:70 Form\form_dk.xml.h:87
@@ -2776,8 +2776,8 @@ msgstr ""
 #: Form\form_dk.xml.h:229 Form\form_dk.xml.h:253 Form\form_dk.xml.h:287
 #: Form\form_dk.xml.h:316 Form\form_dk.xml.h:340 Form\form_dk.xml.h:366
 #: Form\form_dk.xml.h:390 Form\form_dk.xml.h:410 Form\form_dk.xml.h:430
-#: Form\form_gb.xml.h:234 Form\form_gb.xml.h:242 Form\form_gb.xml.h:257
-#: Form\form_gb.xml.h:437
+#: Form\form_gb.xml.h:295 Form\form_gb.xml.h:303 Form\form_gb.xml.h:318
+#: Form\form_gb.xml.h:498
 msgid "Parish"
 msgstr "Župa"
 
@@ -2798,7 +2798,7 @@ msgstr ""
 #: Form\form_dk.xml.h:231 Form\form_dk.xml.h:255 Form\form_dk.xml.h:289
 #: Form\form_dk.xml.h:318 Form\form_dk.xml.h:342 Form\form_dk.xml.h:368
 #: Form\form_dk.xml.h:392 Form\form_dk.xml.h:412 Form\form_dk.xml.h:432
-#: Form\form_gb.xml.h:416 Form\form_gb.xml.h:444 Form\form_us.xml.h:1337
+#: Form\form_gb.xml.h:477 Form\form_gb.xml.h:505 Form\form_us.xml.h:1337
 #: Form\form_us.xml.h:1514 Form\form_us.xml.h:1593
 msgid "Street"
 msgstr "Ulica"
@@ -2821,13 +2821,13 @@ msgstr ""
 #: Form\form_fr.xml.h:153 Form\form_fr.xml.h:162 Form\form_fr.xml.h:170
 #: Form\form_fr.xml.h:179 Form\form_fr.xml.h:188 Form\form_fr.xml.h:197
 #: Form\form_fr.xml.h:206 Form\form_fr.xml.h:217 Form\form_gb.xml.h:23
-#: Form\form_gb.xml.h:61 Form\form_gb.xml.h:75 Form\form_gb.xml.h:90
-#: Form\form_gb.xml.h:105 Form\form_gb.xml.h:120 Form\form_gb.xml.h:138
-#: Form\form_gb.xml.h:150 Form\form_gb.xml.h:171 Form\form_gb.xml.h:184
-#: Form\form_gb.xml.h:204 Form\form_gb.xml.h:218 Form\form_gb.xml.h:252
-#: Form\form_gb.xml.h:273 Form\form_gb.xml.h:300 Form\form_gb.xml.h:328
-#: Form\form_gb.xml.h:360 Form\form_gb.xml.h:399 Form\form_gb.xml.h:427
-#: Form\form_gb.xml.h:455 Form\form_us.xml.h:1543 Form\form_us.xml.h:1557
+#: Form\form_gb.xml.h:67 Form\form_gb.xml.h:85 Form\form_gb.xml.h:104
+#: Form\form_gb.xml.h:125 Form\form_gb.xml.h:147 Form\form_gb.xml.h:172
+#: Form\form_gb.xml.h:195 Form\form_gb.xml.h:229 Form\form_gb.xml.h:245
+#: Form\form_gb.xml.h:265 Form\form_gb.xml.h:279 Form\form_gb.xml.h:313
+#: Form\form_gb.xml.h:334 Form\form_gb.xml.h:361 Form\form_gb.xml.h:389
+#: Form\form_gb.xml.h:421 Form\form_gb.xml.h:460 Form\form_gb.xml.h:488
+#: Form\form_gb.xml.h:516 Form\form_us.xml.h:1543 Form\form_us.xml.h:1557
 #: Form\form_us.xml.h:2318
 msgid "Condition"
 msgstr "Uvjet"
@@ -2876,13 +2876,13 @@ msgstr ""
 #: Form\form_fr.xml.h:103 Form\form_fr.xml.h:111 Form\form_fr.xml.h:139
 #: Form\form_fr.xml.h:157 Form\form_fr.xml.h:174 Form\form_fr.xml.h:183
 #: Form\form_fr.xml.h:192 Form\form_fr.xml.h:201 Form\form_fr.xml.h:211
-#: Form\form_gb.xml.h:53 Form\form_gb.xml.h:64 Form\form_gb.xml.h:78
-#: Form\form_gb.xml.h:93 Form\form_gb.xml.h:108 Form\form_gb.xml.h:127
-#: Form\form_gb.xml.h:145 Form\form_gb.xml.h:161 Form\form_gb.xml.h:191
-#: Form\form_gb.xml.h:211 Form\form_gb.xml.h:229 Form\form_gb.xml.h:255
-#: Form\form_gb.xml.h:277 Form\form_gb.xml.h:304 Form\form_gb.xml.h:332
-#: Form\form_gb.xml.h:368 Form\form_gb.xml.h:405 Form\form_gb.xml.h:428
-#: Form\form_gb.xml.h:460
+#: Form\form_gb.xml.h:56 Form\form_gb.xml.h:71 Form\form_gb.xml.h:89
+#: Form\form_gb.xml.h:110 Form\form_gb.xml.h:131 Form\form_gb.xml.h:157
+#: Form\form_gb.xml.h:182 Form\form_gb.xml.h:213 Form\form_gb.xml.h:252
+#: Form\form_gb.xml.h:272 Form\form_gb.xml.h:290 Form\form_gb.xml.h:316
+#: Form\form_gb.xml.h:338 Form\form_gb.xml.h:365 Form\form_gb.xml.h:393
+#: Form\form_gb.xml.h:429 Form\form_gb.xml.h:466 Form\form_gb.xml.h:489
+#: Form\form_gb.xml.h:521
 msgid "Where Born"
 msgstr "Mjesto rođenja"
 
@@ -2980,8 +2980,8 @@ msgstr ""
 msgid "År gift"
 msgstr ""
 
-#: Form\form_dk.xml.h:277 Form\form_gb.xml.h:153 Form\form_gb.xml.h:221
-#: Form\form_gb.xml.h:459
+#: Form\form_dk.xml.h:277 Form\form_gb.xml.h:201 Form\form_gb.xml.h:282
+#: Form\form_gb.xml.h:520
 msgid "Children Living"
 msgstr ""
 
@@ -3118,8 +3118,8 @@ msgstr "Godina rođenja"
 #: Form\form_fr.xml.h:133 Form\form_fr.xml.h:150 Form\form_fr.xml.h:159
 #: Form\form_fr.xml.h:167 Form\form_fr.xml.h:176 Form\form_fr.xml.h:185
 #: Form\form_fr.xml.h:194 Form\form_fr.xml.h:203 Form\form_fr.xml.h:214
-#: Form\form_gb.xml.h:250 Form\form_gb.xml.h:267 Form\form_gb.xml.h:294
-#: Form\form_gb.xml.h:322 Form\form_gb.xml.h:354 Form\form_gb.xml.h:393
+#: Form\form_gb.xml.h:311 Form\form_gb.xml.h:328 Form\form_gb.xml.h:355
+#: Form\form_gb.xml.h:383 Form\form_gb.xml.h:415 Form\form_gb.xml.h:454
 #: Form\form_us.xml.h:1047 Form\form_us.xml.h:1063
 msgid "Address"
 msgstr "Adresa"
@@ -3132,11 +3132,11 @@ msgstr "Porezi"
 msgid "Type of roof"
 msgstr "Vrsta krova"
 
-#: Form\form_fr.xml.h:81 Form\form_fr.xml.h:219 Form\form_gb.xml.h:65
-#: Form\form_gb.xml.h:79 Form\form_gb.xml.h:94 Form\form_gb.xml.h:109
-#: Form\form_gb.xml.h:128 Form\form_gb.xml.h:146 Form\form_gb.xml.h:163
-#: Form\form_gb.xml.h:192 Form\form_gb.xml.h:212 Form\form_gb.xml.h:231
-#: Form\form_gb.xml.h:431 Form\form_gb.xml.h:463 Form\form_us.xml.h:2458
+#: Form\form_fr.xml.h:81 Form\form_fr.xml.h:219 Form\form_gb.xml.h:72
+#: Form\form_gb.xml.h:90 Form\form_gb.xml.h:111 Form\form_gb.xml.h:132
+#: Form\form_gb.xml.h:158 Form\form_gb.xml.h:183 Form\form_gb.xml.h:217
+#: Form\form_gb.xml.h:253 Form\form_gb.xml.h:273 Form\form_gb.xml.h:292
+#: Form\form_gb.xml.h:492 Form\form_gb.xml.h:524 Form\form_us.xml.h:2458
 msgid "Disability"
 msgstr "Invaliditet"
 
@@ -3156,9 +3156,9 @@ msgstr "Broj za certifikat"
 msgid "Entry Number"
 msgstr "Broj unosa"
 
-#: Form\form_gb.xml.h:3 Form\form_gb.xml.h:36
+#: Form\form_gb.xml.h:3 Form\form_gb.xml.h:36 Form\form_gb.xml.h:185
 msgid "Registration District"
-msgstr "Okrug za registraciju"
+msgstr "Distrikt prijave"
 
 #: Form\form_gb.xml.h:4 Form\form_gb.xml.h:37 Form\form_us.xml.h:2257
 #: Form\form_us.xml.h:2341 Form\form_us.xml.h:2373
@@ -3195,420 +3195,641 @@ msgstr "Pokojan/pokojna"
 msgid "Cause of Death"
 msgstr "Uzrok smrti"
 
-#: Form\form_gb.xml.h:48 Form\form_gb.xml.h:56
+#: Form\form_gb.xml.h:48 Form\form_gb.xml.h:60
 msgid "City or Borough"
-msgstr "Grad ili općina"
+msgstr "Grad ili borough"
 
-#: Form\form_gb.xml.h:49 Form\form_gb.xml.h:54 Form\form_gb.xml.h:66
+#: Form\form_gb.xml.h:49 Form\form_gb.xml.h:58 Form\form_gb.xml.h:74
 msgid "Parish or Township"
-msgstr "Župa ili gradska uprava"
+msgstr "Župa ili naselje"
 
-#: Form\form_gb.xml.h:55 Form\form_gb.xml.h:72 Form\form_gb.xml.h:87
+#: Form\form_gb.xml.h:51
+msgid "NAMES of each Person who abode therein the preceding Night."
+msgstr ""
+
+#: Form\form_gb.xml.h:53
+msgid ""
+"AGE, rounded down to the nearest five years for those aged fifteen or over."
+msgstr ""
+
+#: Form\form_gb.xml.h:55
+msgid "PROFESSION, TRADE, EMPLOYMENT or of INDEPENDENT MEANS."
+msgstr ""
+
+#: Form\form_gb.xml.h:57
+msgid ""
+"Whether Born in same County (Y or N), Scotland (S), Ireland (I) or Foreign "
+"Parts (P)."
+msgstr ""
+
+#: Form\form_gb.xml.h:59 Form\form_gb.xml.h:80 Form\form_gb.xml.h:99
 msgid "Ecclesiastical District"
 msgstr ""
 
-#: Form\form_gb.xml.h:57 Form\form_gb.xml.h:70 Form\form_gb.xml.h:84
-#: Form\form_gb.xml.h:261 Form\form_gb.xml.h:289 Form\form_gb.xml.h:317
-#: Form\form_gb.xml.h:348 Form\form_gb.xml.h:387 Form\form_us.xml.h:1891
+#: Form\form_gb.xml.h:61 Form\form_gb.xml.h:78 Form\form_gb.xml.h:96
+#: Form\form_gb.xml.h:322 Form\form_gb.xml.h:350 Form\form_gb.xml.h:378
+#: Form\form_gb.xml.h:409 Form\form_gb.xml.h:448 Form\form_us.xml.h:1891
 #: Form\form_us.xml.h:1912
 msgid "Town"
-msgstr "Mjesto"
+msgstr "Grad"
 
-#: Form\form_gb.xml.h:58 Form\form_gb.xml.h:262
+#: Form\form_gb.xml.h:62 Form\form_gb.xml.h:323
 msgid "Village"
 msgstr "Selo"
 
-#: Form\form_gb.xml.h:67 Form\form_gb.xml.h:81 Form\form_gb.xml.h:96
-msgid "City or Municipal Borough"
-msgstr "Grad ili lokalna općina"
+#: Form\form_gb.xml.h:64
+msgid ""
+"Name and Surname of each Person who abode in the house, on the Night of the "
+"30th March, 1851"
+msgstr ""
 
-#: Form\form_gb.xml.h:68 Form\form_gb.xml.h:82 Form\form_gb.xml.h:97
-#: Form\form_gb.xml.h:112 Form\form_gb.xml.h:176
+#: Form\form_gb.xml.h:66 Form\form_gb.xml.h:84 Form\form_gb.xml.h:333
+#: Form\form_gb.xml.h:360 Form\form_gb.xml.h:388 Form\form_gb.xml.h:420
+#: Form\form_gb.xml.h:459 Form\form_gb.xml.h:481 Form\form_gb.xml.h:510
+msgid "Relation to Head of Family"
+msgstr ""
+
+#: Form\form_gb.xml.h:70
+msgid "Rank, Profession or Occupation"
+msgstr ""
+
+#: Form\form_gb.xml.h:73
+msgid "Whether Blind or Deaf and Dumb"
+msgstr ""
+
+#: Form\form_gb.xml.h:75 Form\form_gb.xml.h:93 Form\form_gb.xml.h:114
+msgid "City or Municipal Borough"
+msgstr ""
+
+#: Form\form_gb.xml.h:76 Form\form_gb.xml.h:94 Form\form_gb.xml.h:115
+#: Form\form_gb.xml.h:137 Form\form_gb.xml.h:237
 msgid "Municipal Ward"
 msgstr ""
 
-#: Form\form_gb.xml.h:69 Form\form_gb.xml.h:83 Form\form_gb.xml.h:98
-#: Form\form_gb.xml.h:440
+#: Form\form_gb.xml.h:77 Form\form_gb.xml.h:95 Form\form_gb.xml.h:116
+#: Form\form_gb.xml.h:501
 msgid "Parliamentary Borough"
 msgstr ""
 
-#: Form\form_gb.xml.h:71
+#: Form\form_gb.xml.h:79
 msgid "Hamlet or Tything"
 msgstr ""
 
-#: Form\form_gb.xml.h:80 Form\form_gb.xml.h:95
+#: Form\form_gb.xml.h:82 Form\form_gb.xml.h:169
+msgid "Name and Surname of each Person"
+msgstr ""
+
+#: Form\form_gb.xml.h:88
+msgid "Rank, Profession of Occupation"
+msgstr ""
+
+#: Form\form_gb.xml.h:91
+msgid "Whether Blind, or Deaf-and-Dumb"
+msgstr ""
+
+#: Form\form_gb.xml.h:92 Form\form_gb.xml.h:113
 msgid "Civil Parish or Township"
-msgstr ""
+msgstr "Župa ili naselje"
 
-#: Form\form_gb.xml.h:85 Form\form_gb.xml.h:290 Form\form_gb.xml.h:318
-#: Form\form_gb.xml.h:349 Form\form_gb.xml.h:388
+#: Form\form_gb.xml.h:97 Form\form_gb.xml.h:351 Form\form_gb.xml.h:379
+#: Form\form_gb.xml.h:410 Form\form_gb.xml.h:449
 msgid "Village or Hamlet"
-msgstr ""
+msgstr "Selo ili zaselak"
 
-#: Form\form_gb.xml.h:86
+#: Form\form_gb.xml.h:98
 msgid "Local Board or Improvement Commissioners District"
 msgstr ""
 
-#: Form\form_gb.xml.h:99 Form\form_gb.xml.h:114 Form\form_gb.xml.h:178
-msgid "Town, Village or Hamlet"
+#: Form\form_gb.xml.h:101 Form\form_gb.xml.h:122 Form\form_gb.xml.h:144
+msgid "NAME and Surname of each Person"
 msgstr ""
 
-#: Form\form_gb.xml.h:100 Form\form_gb.xml.h:113 Form\form_gb.xml.h:177
+#: Form\form_gb.xml.h:103 Form\form_gb.xml.h:124 Form\form_gb.xml.h:146
+#: Form\form_gb.xml.h:171
+msgid "RELATION to Head of Family"
+msgstr ""
+
+#: Form\form_gb.xml.h:105
+msgid "CONDITION"
+msgstr ""
+
+#: Form\form_gb.xml.h:107
+msgid "AGE of"
+msgstr ""
+
+#: Form\form_gb.xml.h:109 Form\form_gb.xml.h:130
+msgid "Rank, Profession or OCCUPATION"
+msgstr ""
+
+#: Form\form_gb.xml.h:112
+msgid ""
+"Whether\n"
+"1. Deaf-and-Dumb\n"
+"2. Blind\n"
+"3. Imbecile or Idiot\n"
+"4. Lunatic"
+msgstr ""
+
+#: Form\form_gb.xml.h:117 Form\form_gb.xml.h:139 Form\form_gb.xml.h:239
+msgid "Town, Village or Hamlet"
+msgstr "Grad, selo ili zaselak"
+
+#: Form\form_gb.xml.h:118 Form\form_gb.xml.h:138 Form\form_gb.xml.h:238
 msgid "Urban Sanitary District"
 msgstr ""
 
-#: Form\form_gb.xml.h:101 Form\form_gb.xml.h:115 Form\form_gb.xml.h:179
+#: Form\form_gb.xml.h:119 Form\form_gb.xml.h:140 Form\form_gb.xml.h:240
 msgid "Rural Sanitary District"
 msgstr ""
 
-#: Form\form_gb.xml.h:102 Form\form_gb.xml.h:117 Form\form_gb.xml.h:181
+#: Form\form_gb.xml.h:120 Form\form_gb.xml.h:142 Form\form_gb.xml.h:242
 msgid "Ecclesiastical Parish or District"
 msgstr ""
 
-#: Form\form_gb.xml.h:110 Form\form_gb.xml.h:129 Form\form_gb.xml.h:174
-#: Form\form_gb.xml.h:195 Form\form_gb.xml.h:284 Form\form_gb.xml.h:311
-#: Form\form_gb.xml.h:339 Form\form_gb.xml.h:376
+#: Form\form_gb.xml.h:126 Form\form_gb.xml.h:148
+msgid "CONDITION as to Marriage"
+msgstr ""
+
+#: Form\form_gb.xml.h:128 Form\form_gb.xml.h:150
+msgid "AGE last Birthday of"
+msgstr ""
+
+#: Form\form_gb.xml.h:133
+msgid ""
+"If\n"
+"(1) Deaf-and-Dumb\n"
+"(2) Blind\n"
+"(3) Imbecile or Idiot\n"
+"(4) Lunatic"
+msgstr ""
+
+#: Form\form_gb.xml.h:134 Form\form_gb.xml.h:160
+msgid "Administrative County"
+msgstr ""
+
+#: Form\form_gb.xml.h:135 Form\form_gb.xml.h:161 Form\form_gb.xml.h:235
+#: Form\form_gb.xml.h:256 Form\form_gb.xml.h:345 Form\form_gb.xml.h:372
+#: Form\form_gb.xml.h:400 Form\form_gb.xml.h:437
 msgid "Civil Parish"
 msgstr ""
 
-#: Form\form_gb.xml.h:111 Form\form_gb.xml.h:175
+#: Form\form_gb.xml.h:136 Form\form_gb.xml.h:236
 msgid "Municipal Borough"
 msgstr ""
 
-#: Form\form_gb.xml.h:116 Form\form_gb.xml.h:134 Form\form_gb.xml.h:180
-#: Form\form_gb.xml.h:200
+#: Form\form_gb.xml.h:141 Form\form_gb.xml.h:166 Form\form_gb.xml.h:241
+#: Form\form_gb.xml.h:261
 msgid "Parliamentary Borough or Division"
 msgstr ""
 
-#: Form\form_gb.xml.h:124 Form\form_gb.xml.h:188 Form\form_gb.xml.h:365
+#: Form\form_gb.xml.h:152
+msgid "PROFESSION or OCCUPATION"
+msgstr ""
+
+#: Form\form_gb.xml.h:154 Form\form_gb.xml.h:249 Form\form_gb.xml.h:426
 #: Form\form_us.xml.h:819
 msgid "Employed"
 msgstr "Zaposlenik"
 
-#: Form\form_gb.xml.h:125 Form\form_gb.xml.h:189 Form\form_gb.xml.h:366
+#: Form\form_gb.xml.h:155 Form\form_gb.xml.h:250 Form\form_gb.xml.h:427
 msgid "Neither"
 msgstr "Nijedno"
 
-#: Form\form_gb.xml.h:126 Form\form_gb.xml.h:190 Form\form_gb.xml.h:367
+#: Form\form_gb.xml.h:156 Form\form_gb.xml.h:251 Form\form_gb.xml.h:428
 msgid "Neither Employer nor Employed"
 msgstr "Niti poslodavatelj niti zaposlenik"
 
-#: Form\form_gb.xml.h:130 Form\form_gb.xml.h:196 Form\form_gb.xml.h:378
+#: Form\form_gb.xml.h:159
+msgid ""
+"If\n"
+"(1) Deaf-and-Blind\n"
+"(2) Blind\n"
+"(3) Lunatic, Imbecile or Idiot"
+msgstr ""
+
+#: Form\form_gb.xml.h:162 Form\form_gb.xml.h:257 Form\form_gb.xml.h:439
 msgid "Ecclesiastical Parish"
 msgstr ""
 
-#: Form\form_gb.xml.h:131 Form\form_gb.xml.h:197
+#: Form\form_gb.xml.h:163 Form\form_gb.xml.h:258
 msgid "County Borough, Municipal Borough, or Urban District"
 msgstr ""
 
-#: Form\form_gb.xml.h:132 Form\form_gb.xml.h:198
+#: Form\form_gb.xml.h:164 Form\form_gb.xml.h:259
 msgid "Ward of Municipal Borough or of Urban District"
 msgstr ""
 
-#: Form\form_gb.xml.h:133 Form\form_gb.xml.h:199
+#: Form\form_gb.xml.h:165 Form\form_gb.xml.h:260
 msgid "Rural District"
 msgstr ""
 
-#: Form\form_gb.xml.h:135 Form\form_gb.xml.h:201
+#: Form\form_gb.xml.h:167 Form\form_gb.xml.h:262
 msgid "Town or Village or Hamlet"
+msgstr "Grad ili selo ili zaselak"
+
+#: Form\form_gb.xml.h:173 Form\form_gb.xml.h:461
+msgid "Condition as to Marriage"
+msgstr "Uvjet za brak"
+
+#: Form\form_gb.xml.h:175
+msgid "Age last Birthday of"
 msgstr ""
 
-#: Form\form_gb.xml.h:141 Form\form_gb.xml.h:157 Form\form_gb.xml.h:207
-#: Form\form_gb.xml.h:225
+#: Form\form_gb.xml.h:177
+msgid "PROFESSION OR OCCUPATION"
+msgstr ""
+
+#: Form\form_gb.xml.h:178 Form\form_gb.xml.h:209 Form\form_gb.xml.h:268
+#: Form\form_gb.xml.h:286
 msgid "Work Type"
 msgstr "Vrsta rada"
 
-#: Form\form_gb.xml.h:142 Form\form_gb.xml.h:158 Form\form_gb.xml.h:208
-#: Form\form_gb.xml.h:226
+#: Form\form_gb.xml.h:179 Form\form_gb.xml.h:269 Form\form_gb.xml.h:287
 msgid "Employer, Worker or Own Account"
 msgstr "Zaposlenik, radnik ili samostalan"
 
-#: Form\form_gb.xml.h:143 Form\form_gb.xml.h:159 Form\form_gb.xml.h:209
-#: Form\form_gb.xml.h:227
+#: Form\form_gb.xml.h:180 Form\form_gb.xml.h:211 Form\form_gb.xml.h:270
+#: Form\form_gb.xml.h:288
 msgid "At Home"
 msgstr ""
 
-#: Form\form_gb.xml.h:144 Form\form_gb.xml.h:160 Form\form_gb.xml.h:210
-#: Form\form_gb.xml.h:228 Form\form_gb.xml.h:404
-msgid "Working at Home"
+#: Form\form_gb.xml.h:181
+msgid "If Working at Home"
 msgstr ""
 
-#: Form\form_gb.xml.h:151 Form\form_gb.xml.h:219 Form\form_gb.xml.h:456
+#: Form\form_gb.xml.h:184
+msgid ""
+"If\n"
+"(1) Deaf and Dumb\n"
+"(2) Blind\n"
+"(3) Lunatic\n"
+"(4) Imbecile, feeble-minded"
+msgstr ""
+
+#: Form\form_gb.xml.h:186
+msgid "Registration Sub-District"
+msgstr ""
+
+#: Form\form_gb.xml.h:187 Form\form_gb.xml.h:324
+msgid "Enumeration District"
+msgstr "Broj distrikta"
+
+#: Form\form_gb.xml.h:188
+msgid "Number of Rooms"
+msgstr ""
+
+#: Form\form_gb.xml.h:190
+msgid "NAME AND SURNAME"
+msgstr ""
+
+#: Form\form_gb.xml.h:192
+msgid "RELATIONSHIP to Head of Family"
+msgstr ""
+
+#: Form\form_gb.xml.h:194
+msgid "AGE (last Birthday)"
+msgstr ""
+
+#: Form\form_gb.xml.h:196
+msgid ""
+"\"Single,\" \"Married,\" \"Widower,\" or \"Widow,\" for all persons aged 15 "
+"years and upwards."
+msgstr ""
+
+#: Form\form_gb.xml.h:197 Form\form_gb.xml.h:280 Form\form_gb.xml.h:517
 msgid "Years Married"
 msgstr "Broj godina braka"
 
-#: Form\form_gb.xml.h:152 Form\form_gb.xml.h:220
+#: Form\form_gb.xml.h:198
+msgid "Completed Years the present Marriage has lasted."
+msgstr ""
+
+#: Form\form_gb.xml.h:199 Form\form_gb.xml.h:281
 msgid "Children Total"
 msgstr "Ukupno djece"
 
-#: Form\form_gb.xml.h:154 Form\form_gb.xml.h:222
+#: Form\form_gb.xml.h:200
+msgid "Total Children Born Alive."
+msgstr ""
+
+#: Form\form_gb.xml.h:202
+msgid "Children still Living."
+msgstr ""
+
+#: Form\form_gb.xml.h:203 Form\form_gb.xml.h:283
 msgid "Children Died"
 msgstr "Umrla djeca"
 
-#: Form\form_gb.xml.h:156 Form\form_gb.xml.h:224 Form\form_us.xml.h:778
+#: Form\form_gb.xml.h:204
+msgid "Children who have Died."
+msgstr ""
+
+#: Form\form_gb.xml.h:206
+msgid "Personal Occupation"
+msgstr ""
+
+#: Form\form_gb.xml.h:207 Form\form_gb.xml.h:285 Form\form_us.xml.h:778
 #: Form\form_us.xml.h:817 Form\form_us.xml.h:864 Form\form_us.xml.h:1529
 msgid "Industry"
 msgstr ""
 
-#: Form\form_gb.xml.h:164
+#: Form\form_gb.xml.h:208
+msgid "Industry or Service with which worker is sonnected."
+msgstr ""
+
+#: Form\form_gb.xml.h:210
+msgid "Employer, Worker or Working on Own Account"
+msgstr ""
+
+#: Form\form_gb.xml.h:212
+msgid "Whether Working at Home"
+msgstr ""
+
+#: Form\form_gb.xml.h:214
+msgid "BIRTHPLACE of every Person."
+msgstr ""
+
+#: Form\form_gb.xml.h:216
+msgid "NATIONALITY of every Person born in a Foreign Country."
+msgstr ""
+
+#: Form\form_gb.xml.h:218
+msgid "INFIRMITY"
+msgstr ""
+
+#: Form\form_gb.xml.h:219
 msgid "E.D. Letter Code"
 msgstr ""
 
-#: Form\form_gb.xml.h:165
+#: Form\form_gb.xml.h:220
 msgid "Borough, U.D. or R.D."
 msgstr ""
 
-#: Form\form_gb.xml.h:166
+#: Form\form_gb.xml.h:221
 msgid "Registration District and Sub-district"
+msgstr "Distrikt i pod-distrikt prijave"
+
+#: Form\form_gb.xml.h:223
+msgid "SURNAMES and OTHER NAMES."
 msgstr ""
 
-#: Form\form_gb.xml.h:168
+#: Form\form_gb.xml.h:224
 msgid "OVSPI"
 msgstr ""
 
-#: Form\form_gb.xml.h:170 Form\form_us.xml.h:2381
+#: Form\form_gb.xml.h:225
+msgid "O, V, S, P or I"
+msgstr ""
+
+#: Form\form_gb.xml.h:227
+msgid "M or F"
+msgstr ""
+
+#: Form\form_gb.xml.h:228 Form\form_us.xml.h:2381
 msgid "Birth Date"
 msgstr "Datum rođenja"
 
-#: Form\form_gb.xml.h:173
+#: Form\form_gb.xml.h:230
+msgid "S, M, W or D."
+msgstr ""
+
+#: Form\form_gb.xml.h:232
+msgid "PERSONAL OCCUPATION"
+msgstr "OSOBNO ZANIMANJE"
+
+#: Form\form_gb.xml.h:233
 msgid "Instructions"
 msgstr ""
 
-#: Form\form_gb.xml.h:194 Form\form_gb.xml.h:214 Form\form_gb.xml.h:233
-msgid "Language Spoken"
+#: Form\form_gb.xml.h:234
+msgid "See INSTRUCTIONS"
 msgstr ""
 
-#: Form\form_gb.xml.h:236 Form\form_gb.xml.h:247 Form\form_gb.xml.h:264
-#: Form\form_gb.xml.h:291 Form\form_gb.xml.h:319 Form\form_gb.xml.h:351
-#: Form\form_gb.xml.h:390
+#: Form\form_gb.xml.h:255 Form\form_gb.xml.h:275 Form\form_gb.xml.h:294
+msgid "Language Spoken"
+msgstr "Govoreni jezik"
+
+#: Form\form_gb.xml.h:271 Form\form_gb.xml.h:289 Form\form_gb.xml.h:465
+msgid "Working at Home"
+msgstr ""
+
+#: Form\form_gb.xml.h:297 Form\form_gb.xml.h:308 Form\form_gb.xml.h:325
+#: Form\form_gb.xml.h:352 Form\form_gb.xml.h:380 Form\form_gb.xml.h:412
+#: Form\form_gb.xml.h:451
 msgid "GROS Data"
 msgstr ""
 
-#: Form\form_gb.xml.h:240
+#: Form\form_gb.xml.h:301
 msgid "Born in County"
-msgstr "Osoba je rođena u pokrajini"
+msgstr "Rođen/a u pokrajini"
 
-#: Form\form_gb.xml.h:241
+#: Form\form_gb.xml.h:302
 msgid "Foreigner, Born England or Ireland"
 msgstr ""
 
-#: Form\form_gb.xml.h:243 Form\form_gb.xml.h:258 Form\form_gb.xml.h:285
-#: Form\form_gb.xml.h:312 Form\form_gb.xml.h:340 Form\form_gb.xml.h:379
+#: Form\form_gb.xml.h:304 Form\form_gb.xml.h:319 Form\form_gb.xml.h:346
+#: Form\form_gb.xml.h:373 Form\form_gb.xml.h:401 Form\form_gb.xml.h:440
 msgid "Quoad Sacra Parish"
 msgstr ""
 
-#: Form\form_gb.xml.h:244 Form\form_gb.xml.h:259 Form\form_gb.xml.h:286
-#: Form\form_gb.xml.h:314 Form\form_gb.xml.h:342 Form\form_gb.xml.h:381
+#: Form\form_gb.xml.h:305 Form\form_gb.xml.h:320 Form\form_gb.xml.h:347
+#: Form\form_gb.xml.h:375 Form\form_gb.xml.h:403 Form\form_gb.xml.h:442
 msgid "Parliamentary Burgh"
 msgstr ""
 
-#: Form\form_gb.xml.h:245 Form\form_gb.xml.h:260 Form\form_gb.xml.h:287
-#: Form\form_gb.xml.h:315 Form\form_gb.xml.h:344 Form\form_gb.xml.h:383
+#: Form\form_gb.xml.h:306 Form\form_gb.xml.h:321 Form\form_gb.xml.h:348
+#: Form\form_gb.xml.h:376 Form\form_gb.xml.h:405 Form\form_gb.xml.h:444
 msgid "Royal Burgh"
 msgstr ""
 
-#: Form\form_gb.xml.h:246 Form\form_gb.xml.h:443
+#: Form\form_gb.xml.h:307 Form\form_gb.xml.h:504
 msgid "Town or Village"
-msgstr ""
+msgstr "Grad ili selo"
 
-#: Form\form_gb.xml.h:249
+#: Form\form_gb.xml.h:310
 msgid "House Schedule No"
 msgstr ""
 
-#: Form\form_gb.xml.h:251
+#: Form\form_gb.xml.h:312
 msgid "Relation to Head"
-msgstr ""
+msgstr "Odnos prema glavi"
 
-#: Form\form_gb.xml.h:256
+#: Form\form_gb.xml.h:317
 msgid "Blind, or Deaf and Dumb"
 msgstr "Slijepa ili gluha i nijema"
 
-#: Form\form_gb.xml.h:263
-msgid "Enumeration District"
-msgstr "Broj okruga"
-
-#: Form\form_gb.xml.h:266 Form\form_gb.xml.h:293 Form\form_gb.xml.h:321
-#: Form\form_gb.xml.h:353 Form\form_gb.xml.h:392
+#: Form\form_gb.xml.h:327 Form\form_gb.xml.h:354 Form\form_gb.xml.h:382
+#: Form\form_gb.xml.h:414 Form\form_gb.xml.h:453
 msgid "No. Of Schedule"
 msgstr "Broj rasporeda"
 
-#: Form\form_gb.xml.h:268 Form\form_gb.xml.h:295 Form\form_gb.xml.h:323
-#: Form\form_gb.xml.h:355 Form\form_gb.xml.h:394
+#: Form\form_gb.xml.h:329 Form\form_gb.xml.h:356 Form\form_gb.xml.h:384
+#: Form\form_gb.xml.h:416 Form\form_gb.xml.h:455
 msgid "Road, Street, etc, and No. or Name of House"
-msgstr "Ulica i broj ili naziv kuće"
+msgstr "Ulica i broj ili ime kuće"
 
-#: Form\form_gb.xml.h:269 Form\form_gb.xml.h:296 Form\form_gb.xml.h:324
-#: Form\form_gb.xml.h:356 Form\form_gb.xml.h:395
+#: Form\form_gb.xml.h:330 Form\form_gb.xml.h:357 Form\form_gb.xml.h:385
+#: Form\form_gb.xml.h:417 Form\form_gb.xml.h:456
 msgid "House Inhabited"
 msgstr "Kuća je nastanjena"
 
-#: Form\form_gb.xml.h:270 Form\form_gb.xml.h:297 Form\form_gb.xml.h:325
-#: Form\form_gb.xml.h:357 Form\form_gb.xml.h:396
+#: Form\form_gb.xml.h:331 Form\form_gb.xml.h:358 Form\form_gb.xml.h:386
+#: Form\form_gb.xml.h:418 Form\form_gb.xml.h:457
 msgid "House U or B"
 msgstr "Kuća U ili B"
 
-#: Form\form_gb.xml.h:272 Form\form_gb.xml.h:299 Form\form_gb.xml.h:327
-#: Form\form_gb.xml.h:359 Form\form_gb.xml.h:398 Form\form_gb.xml.h:420
-#: Form\form_gb.xml.h:449
-msgid "Relation to Head of Family"
-msgstr ""
-
-#: Form\form_gb.xml.h:276 Form\form_gb.xml.h:303 Form\form_gb.xml.h:331
-#: Form\form_gb.xml.h:363
+#: Form\form_gb.xml.h:337 Form\form_gb.xml.h:364 Form\form_gb.xml.h:392
+#: Form\form_gb.xml.h:424
 msgid "Rank, Profession, or Occupation"
 msgstr "Titula, profesija ili zanimanje"
 
-#: Form\form_gb.xml.h:278 Form\form_gb.xml.h:305 Form\form_gb.xml.h:333
-#: Form\form_gb.xml.h:370 Form\form_gb.xml.h:407 Form\form_us.xml.h:1409
+#: Form\form_gb.xml.h:339 Form\form_gb.xml.h:366 Form\form_gb.xml.h:394
+#: Form\form_gb.xml.h:431 Form\form_gb.xml.h:468 Form\form_us.xml.h:1409
 msgid "Disabled"
 msgstr "Invaliditet"
 
-#: Form\form_gb.xml.h:279
+#: Form\form_gb.xml.h:340
 msgid "Whether Blind, or Deaf and Dumb"
 msgstr "Da li je osoba slijepa, gluha ili nijema"
 
-#: Form\form_gb.xml.h:280 Form\form_gb.xml.h:307 Form\form_gb.xml.h:335
-#: Form\form_gb.xml.h:372 Form\form_gb.xml.h:409
+#: Form\form_gb.xml.h:341 Form\form_gb.xml.h:368 Form\form_gb.xml.h:396
+#: Form\form_gb.xml.h:433 Form\form_gb.xml.h:470
 msgid "Children"
 msgstr "Djeca"
 
-#: Form\form_gb.xml.h:281 Form\form_gb.xml.h:308 Form\form_gb.xml.h:336
-#: Form\form_gb.xml.h:373 Form\form_gb.xml.h:410
+#: Form\form_gb.xml.h:342 Form\form_gb.xml.h:369 Form\form_gb.xml.h:397
+#: Form\form_gb.xml.h:434 Form\form_gb.xml.h:471
 msgid "No. of Children from 5 to 13 attending School"
 msgstr "Broj djece, starih između 5 i 13 g., koji pohađaju školu"
 
-#: Form\form_gb.xml.h:282 Form\form_gb.xml.h:309 Form\form_gb.xml.h:337
-#: Form\form_gb.xml.h:374 Form\form_gb.xml.h:411
+#: Form\form_gb.xml.h:343 Form\form_gb.xml.h:370 Form\form_gb.xml.h:398
+#: Form\form_gb.xml.h:435 Form\form_gb.xml.h:472
 msgid "WindowRooms"
 msgstr "Sobe s prozorom"
 
-#: Form\form_gb.xml.h:283 Form\form_gb.xml.h:310 Form\form_gb.xml.h:338
-#: Form\form_gb.xml.h:375 Form\form_gb.xml.h:412
+#: Form\form_gb.xml.h:344 Form\form_gb.xml.h:371 Form\form_gb.xml.h:399
+#: Form\form_gb.xml.h:436 Form\form_gb.xml.h:473
 msgid "No. of Rooms with one or more Windows"
 msgstr "Broj soba s jednim ili više prozora"
 
-#: Form\form_gb.xml.h:288 Form\form_gb.xml.h:316 Form\form_gb.xml.h:346
-#: Form\form_gb.xml.h:385
+#: Form\form_gb.xml.h:349 Form\form_gb.xml.h:377 Form\form_gb.xml.h:407
+#: Form\form_gb.xml.h:446
 msgid "Police Burgh"
 msgstr "Policijska uprava"
 
-#: Form\form_gb.xml.h:306 Form\form_gb.xml.h:334 Form\form_gb.xml.h:371
-#: Form\form_gb.xml.h:408
+#: Form\form_gb.xml.h:367 Form\form_gb.xml.h:395 Form\form_gb.xml.h:432
+#: Form\form_gb.xml.h:469
 msgid "Whether 1. Deaf and Dumb, 2. Blind, 3. Imbecile or Idiot 4. Lunatic"
 msgstr ""
 "Da li je osoba 1. gluha ili nijema, 2. slijepa, 3. imbicilna ili idiot, 4. "
 "luda"
 
-#: Form\form_gb.xml.h:313
+#: Form\form_gb.xml.h:374
 msgid "School Board District"
 msgstr ""
 
-#: Form\form_gb.xml.h:341 Form\form_gb.xml.h:380
+#: Form\form_gb.xml.h:402 Form\form_gb.xml.h:441
 msgid "School board District"
 msgstr "Školski okrug"
 
-#: Form\form_gb.xml.h:343 Form\form_gb.xml.h:382 Form\form_gb.xml.h:441
+#: Form\form_gb.xml.h:404 Form\form_gb.xml.h:443 Form\form_gb.xml.h:502
 msgid "Parliamentary Division"
 msgstr ""
 
-#: Form\form_gb.xml.h:345 Form\form_gb.xml.h:384
+#: Form\form_gb.xml.h:406 Form\form_gb.xml.h:445
 msgid "Municipal Burgh"
 msgstr "Lokalna uprava"
 
-#: Form\form_gb.xml.h:347 Form\form_gb.xml.h:386
+#: Form\form_gb.xml.h:408 Form\form_gb.xml.h:447
 msgid "Burgh Ward"
 msgstr "Upravni ured"
 
-#: Form\form_gb.xml.h:350 Form\form_gb.xml.h:389
+#: Form\form_gb.xml.h:411 Form\form_gb.xml.h:450
 msgid "Island"
 msgstr "Island"
 
-#: Form\form_gb.xml.h:369 Form\form_gb.xml.h:406
+#: Form\form_gb.xml.h:430 Form\form_gb.xml.h:467
 msgid "Gaellic or G. & E."
 msgstr ""
 
-#: Form\form_gb.xml.h:377
+#: Form\form_gb.xml.h:438
 msgid "Parish Ward"
 msgstr "Župni ured"
 
-#: Form\form_gb.xml.h:400
-msgid "Condition as to Marriage"
-msgstr "Uvjet za brak"
-
-#: Form\form_gb.xml.h:402
+#: Form\form_gb.xml.h:463
 msgid "Profession or Occupation"
 msgstr "Profesija ili zanimanje"
 
-#: Form\form_gb.xml.h:403
+#: Form\form_gb.xml.h:464
 msgid "Employer, Worker or on Own Account"
 msgstr "Zaposlenik, radnik ili samostalan"
 
-#: Form\form_gb.xml.h:414 Form\form_gb.xml.h:435
+#: Form\form_gb.xml.h:475 Form\form_gb.xml.h:496
 msgid "District Electoral Division"
 msgstr ""
 
-#: Form\form_gb.xml.h:415 Form\form_gb.xml.h:438
+#: Form\form_gb.xml.h:476 Form\form_gb.xml.h:499
 msgid "Townland"
 msgstr ""
 
-#: Form\form_gb.xml.h:417 Form\form_gb.xml.h:446
+#: Form\form_gb.xml.h:478 Form\form_gb.xml.h:507
 msgid "No. on Form B"
 msgstr ""
 
-#: Form\form_gb.xml.h:422 Form\form_gb.xml.h:451
+#: Form\form_gb.xml.h:483 Form\form_gb.xml.h:512
 msgid "Education"
 msgstr "Obrazovanje"
 
-#: Form\form_gb.xml.h:423 Form\form_gb.xml.h:452
+#: Form\form_gb.xml.h:484 Form\form_gb.xml.h:513
 msgid "\"Read and Write\", \"Read\" or \"Cannot Read\""
 msgstr ""
 
-#: Form\form_gb.xml.h:429 Form\form_gb.xml.h:461
+#: Form\form_gb.xml.h:490 Form\form_gb.xml.h:522
 msgid "Irish Language"
 msgstr ""
 
-#: Form\form_gb.xml.h:430 Form\form_gb.xml.h:462
+#: Form\form_gb.xml.h:491 Form\form_gb.xml.h:523
 msgid ""
 "\"Irish\" or \"Irish & English\", in other cases no entry should be made"
 msgstr ""
 
-#: Form\form_gb.xml.h:432 Form\form_gb.xml.h:464
+#: Form\form_gb.xml.h:493 Form\form_gb.xml.h:525
 msgid ""
 "\"Deaf and Dumb\", \"Dumb only\", \"Blind\", \"Imbecile or Idiot\", or "
 "\"Lunatic\""
 msgstr ""
 
-#: Form\form_gb.xml.h:434
+#: Form\form_gb.xml.h:495
 msgid "Poor Law Union"
 msgstr ""
 
-#: Form\form_gb.xml.h:436
+#: Form\form_gb.xml.h:497
 msgid "Barony"
 msgstr ""
 
-#: Form\form_gb.xml.h:439 Form\form_us.xml.h:1224 Form\form_us.xml.h:1958
+#: Form\form_gb.xml.h:500 Form\form_us.xml.h:1224 Form\form_us.xml.h:1958
 msgid "City"
 msgstr "Grad"
 
-#: Form\form_gb.xml.h:442
+#: Form\form_gb.xml.h:503
 msgid "Urban District"
-msgstr ""
+msgstr "Urbani distrikt"
 
-#: Form\form_gb.xml.h:445
+#: Form\form_gb.xml.h:506
 msgid "Head of Family"
-msgstr ""
+msgstr "Glava obitelji"
 
-#: Form\form_gb.xml.h:457
+#: Form\form_gb.xml.h:518
 msgid "Total Children"
-msgstr ""
+msgstr "Ukupno djece"
 
-#: Form\form_gb.xml.h:458
+#: Form\form_gb.xml.h:519
 msgid "Children born alive to present Marriage"
 msgstr ""
 
 #: Form\form_pl.xml.h:2 Form\form_pl.xml.h:21 Form\form_pl.xml.h:31
 msgid "Event Type"
-msgstr ""
+msgstr "Vrsta događaja"
 
 #: Form\form_pl.xml.h:3 Form\form_pl.xml.h:22 Form\form_pl.xml.h:32
 #: Form\form_us.xml.h:2376
@@ -3622,7 +3843,7 @@ msgstr "Mjesto događaja"
 
 #: Form\form_pl.xml.h:5
 msgid "Event Place (Original)"
-msgstr "Mjesto događaja (origiinal) "
+msgstr "Mjesto događaja (izvorno)"
 
 #: Form\form_pl.xml.h:8 Form\form_pl.xml.h:36
 msgid "Birth Year (Estimated)"
@@ -3667,11 +3888,11 @@ msgstr "Ime majke supružnika"
 
 #: Form\form_pl.xml.h:18
 msgid "Record Number"
-msgstr ""
+msgstr "Broj zapisa"
 
 #: Form\form_pl.xml.h:19
 msgid "Volume"
-msgstr ""
+msgstr "Svezak"
 
 #: Form\form_pl.xml.h:24 Form\form_us.xml.h:1338
 msgid "House Number"
@@ -3679,11 +3900,11 @@ msgstr "Kužni broj"
 
 #: Form\form_pl.xml.h:28
 msgid "Volume Beginning Year"
-msgstr ""
+msgstr "Početna godina svezaka"
 
 #: Form\form_pl.xml.h:29
 msgid "Volume Ending Year"
-msgstr ""
+msgstr "Završna godina svezaka"
 
 #: Form\form_us.xml.h:1 Form\form_us.xml.h:14 Form\form_us.xml.h:35
 #: Form\form_us.xml.h:56 Form\form_us.xml.h:96 Form\form_us.xml.h:165
@@ -3694,7 +3915,7 @@ msgstr ""
 #: Form\form_us.xml.h:743 Form\form_us.xml.h:781 Form\form_us.xml.h:824
 #: Form\form_us.xml.h:1004
 msgid "NARA publication"
-msgstr ""
+msgstr "NARA publikacija"
 
 #: Form\form_us.xml.h:2 Form\form_us.xml.h:15 Form\form_us.xml.h:36
 #: Form\form_us.xml.h:57 Form\form_us.xml.h:97 Form\form_us.xml.h:166
@@ -3705,7 +3926,7 @@ msgstr ""
 #: Form\form_us.xml.h:744 Form\form_us.xml.h:782 Form\form_us.xml.h:825
 #: Form\form_us.xml.h:1005
 msgid "Roll No."
-msgstr ""
+msgstr "Broj svitka"
 
 #: Form\form_us.xml.h:3 Form\form_us.xml.h:16 Form\form_us.xml.h:37
 #: Form\form_us.xml.h:58 Form\form_us.xml.h:98 Form\form_us.xml.h:167
@@ -3723,7 +3944,7 @@ msgstr ""
 #: Form\form_us.xml.h:2198 Form\form_us.xml.h:2208 Form\form_us.xml.h:2227
 #: Form\form_us.xml.h:2237 Form\form_us.xml.h:2414
 msgid "Page No."
-msgstr ""
+msgstr "Broj stranice"
 
 #: Form\form_us.xml.h:4 Form\form_us.xml.h:17 Form\form_us.xml.h:38
 #: Form\form_us.xml.h:59 Form\form_us.xml.h:99 Form\form_us.xml.h:168
@@ -3732,7 +3953,7 @@ msgstr ""
 #: Form\form_us.xml.h:665 Form\form_us.xml.h:707 Form\form_us.xml.h:793
 #: Form\form_us.xml.h:836 Form\form_us.xml.h:1007 Form\form_us.xml.h:1590
 msgid "Sheet No."
-msgstr ""
+msgstr "Broj lista"
 
 #: Form\form_us.xml.h:5 Form\form_us.xml.h:18 Form\form_us.xml.h:39
 #: Form\form_us.xml.h:60 Form\form_us.xml.h:100 Form\form_us.xml.h:169
@@ -3755,12 +3976,12 @@ msgstr ""
 #: Form\form_us.xml.h:1789 Form\form_us.xml.h:1810 Form\form_us.xml.h:1839
 #: Form\form_us.xml.h:1893 Form\form_us.xml.h:2201 Form\form_us.xml.h:2230
 msgid "County of"
-msgstr ""
+msgstr "Pokrajina od"
 
 #: Form\form_us.xml.h:7 Form\form_us.xml.h:20 Form\form_us.xml.h:41
 #: Form\form_us.xml.h:62 Form\form_us.xml.h:102 Form\form_us.xml.h:171
 msgid "District (or Territory) of"
-msgstr ""
+msgstr "Distrikt (ili teritorij) od"
 
 #: Form\form_us.xml.h:9
 msgid "Free white males 16 & up"
@@ -3780,7 +4001,7 @@ msgstr ""
 
 #: Form\form_us.xml.h:13 Form\form_us.xml.h:34 Form\form_us.xml.h:55
 msgid "Slaves"
-msgstr ""
+msgstr "Robovi"
 
 #: Form\form_us.xml.h:21 Form\form_us.xml.h:42 Form\form_us.xml.h:63
 #: Form\form_us.xml.h:103 Form\form_us.xml.h:172 Form\form_us.xml.h:258
@@ -4193,7 +4414,7 @@ msgstr ""
 
 #: Form\form_us.xml.h:233
 msgid "Ages"
-msgstr ""
+msgstr "Dobi"
 
 #: Form\form_us.xml.h:238
 msgid "White persons insane and idiots at public charge"
@@ -4262,13 +4483,13 @@ msgstr ""
 #: Form\form_us.xml.h:1759 Form\form_us.xml.h:2284 Form\form_us.xml.h:2306
 #: Form\form_us.xml.h:2398 Form\form_us.xml.h:2419
 msgid "Line No."
-msgstr ""
+msgstr "Redak br."
 
 #: Form\form_us.xml.h:260 Form\form_us.xml.h:336 Form\form_us.xml.h:435
 #: Form\form_us.xml.h:465 Form\form_us.xml.h:615 Form\form_us.xml.h:1017
 #: Form\form_us.xml.h:1760
 msgid "Family No."
-msgstr ""
+msgstr "Obitelj br."
 
 #: Form\form_us.xml.h:264 Form\form_us.xml.h:340 Form\form_us.xml.h:417
 #: Form\form_us.xml.h:439 Form\form_us.xml.h:467 Form\form_us.xml.h:619
@@ -4288,7 +4509,7 @@ msgstr "Boja"
 
 #: Form\form_us.xml.h:266 Form\form_us.xml.h:342 Form\form_us.xml.h:441
 msgid "Value of real estate"
-msgstr ""
+msgstr "Vrijednost nekretnine"
 
 #: Form\form_us.xml.h:267 Form\form_us.xml.h:344 Form\form_us.xml.h:420
 #: Form\form_us.xml.h:443 Form\form_us.xml.h:487 Form\form_us.xml.h:625
@@ -4301,24 +4522,24 @@ msgstr ""
 #: Form\form_us.xml.h:2248 Form\form_us.xml.h:2265 Form\form_us.xml.h:2440
 #: Form\form_us.xml.h:2489
 msgid "Place of birth"
-msgstr ""
+msgstr "Mjesto rođenja"
 
 #: Form\form_us.xml.h:268 Form\form_us.xml.h:345
 msgid "Married within the year"
-msgstr ""
+msgstr "Sklopili brak unutar godine"
 
 #: Form\form_us.xml.h:269 Form\form_us.xml.h:346 Form\form_us.xml.h:448
 #: Form\form_us.xml.h:1458 Form\form_us.xml.h:1480 Form\form_us.xml.h:1502
 msgid "Attended school within the year"
-msgstr ""
+msgstr "Pohađali školu unutar godine"
 
 #: Form\form_us.xml.h:270 Form\form_us.xml.h:347
 msgid "Illiterate and over 20"
-msgstr ""
+msgstr "Nepismeni i stariji od 20 godina"
 
 #: Form\form_us.xml.h:271 Form\form_us.xml.h:348
 msgid "Deaf, dumb, blind, insane, idiotic, pauper or convict"
-msgstr ""
+msgstr "Gluhi, glupi, slijepi, bezumni, idioti, siromasi ili osuđenici"
 
 #: Form\form_us.xml.h:276 Form\form_us.xml.h:352
 msgid "Production of Agriculture in"
@@ -4439,7 +4660,7 @@ msgstr ""
 
 #: Form\form_us.xml.h:311
 msgid "Hay"
-msgstr ""
+msgstr "Sjeno"
 
 #: Form\form_us.xml.h:312
 msgid "Clover Seed"
@@ -4590,7 +4811,7 @@ msgstr ""
 
 #: Form\form_us.xml.h:391
 msgid "Hay, tons of"
-msgstr ""
+msgstr "Sjeno, tone od"
 
 #: Form\form_us.xml.h:392
 msgid "Clover Seed, bushels of"
@@ -4734,14 +4955,14 @@ msgstr ""
 #: Form\form_us.xml.h:1023 Form\form_us.xml.h:1766 Form\form_us.xml.h:1796
 #: Form\form_us.xml.h:1818 Form\form_us.xml.h:1847 Form\form_us.xml.h:2243
 msgid "Relationship to head"
-msgstr ""
+msgstr "Veza s glavom obitelji"
 
 #: Form\form_us.xml.h:472 Form\form_us.xml.h:1024 Form\form_us.xml.h:1434
 #: Form\form_us.xml.h:1767 Form\form_us.xml.h:1824 Form\form_us.xml.h:1851
 #: Form\form_us.xml.h:1976 Form\form_us.xml.h:2012 Form\form_us.xml.h:2050
 #: Form\form_us.xml.h:2088 Form\form_us.xml.h:2126
 msgid "Single"
-msgstr "Jednostruko"
+msgstr "Nevjenčan/a"
 
 #: Form\form_us.xml.h:473 Form\form_us.xml.h:1025 Form\form_us.xml.h:1116
 #: Form\form_us.xml.h:1197 Form\form_us.xml.h:1433 Form\form_us.xml.h:1768
@@ -4749,7 +4970,7 @@ msgstr "Jednostruko"
 #: Form\form_us.xml.h:1975 Form\form_us.xml.h:2011 Form\form_us.xml.h:2049
 #: Form\form_us.xml.h:2087 Form\form_us.xml.h:2125
 msgid "Married"
-msgstr "Brak"
+msgstr "Vjenčan/a"
 
 #: Form\form_us.xml.h:474 Form\form_us.xml.h:1026 Form\form_us.xml.h:1769
 msgid "Widowed, divorced"
@@ -5198,7 +5419,7 @@ msgstr ""
 
 #: Form\form_us.xml.h:611
 msgid "Street and No."
-msgstr ""
+msgstr "Ulica i broj"
 
 #: Form\form_us.xml.h:612 Form\form_us.xml.h:1156 Form\form_us.xml.h:1184
 #: Form\form_us.xml.h:1225 Form\form_us.xml.h:1294 Form\form_us.xml.h:1585
@@ -5284,7 +5505,7 @@ msgstr ""
 
 #: Form\form_us.xml.h:651
 msgid "Regiment/Vessel"
-msgstr ""
+msgstr "Pukovnija/brod"
 
 #: Form\form_us.xml.h:652 Form\form_us.xml.h:923
 msgid "Date Enlisted"
@@ -5318,7 +5539,7 @@ msgstr ""
 
 #: Form\form_us.xml.h:668 Form\form_us.xml.h:710 Form\form_us.xml.h:752
 msgid "City, Town, Village"
-msgstr ""
+msgstr "Grad, selo"
 
 #: Form\form_us.xml.h:669 Form\form_us.xml.h:711 Form\form_us.xml.h:753
 #: Form\form_us.xml.h:787 Form\form_us.xml.h:830
@@ -5328,15 +5549,15 @@ msgstr ""
 #: Form\form_us.xml.h:670 Form\form_us.xml.h:755 Form\form_us.xml.h:795
 #: Form\form_us.xml.h:838 Form\form_us.xml.h:981 Form\form_us.xml.h:2506
 msgid "Street Address"
-msgstr ""
+msgstr "Ulična adresa"
 
 #: Form\form_us.xml.h:673 Form\form_us.xml.h:1516
 msgid "Relation to head"
-msgstr ""
+msgstr "Odnos prema glavi"
 
 #: Form\form_us.xml.h:676
 msgid "Month of birth"
-msgstr ""
+msgstr "Mjesec rođenja"
 
 #: Form\form_us.xml.h:680 Form\form_us.xml.h:719
 msgid "Years of present marriage"
@@ -5660,7 +5881,7 @@ msgstr ""
 
 #: Form\form_us.xml.h:886
 msgid "District of"
-msgstr ""
+msgstr "Distrikt od"
 
 #: Form\form_us.xml.h:889
 msgid "Married Y/N"
@@ -5672,7 +5893,7 @@ msgstr ""
 
 #: Form\form_us.xml.h:894
 msgid "File No."
-msgstr ""
+msgstr "Datoteka br."
 
 #: Form\form_us.xml.h:896 Form\form_us.xml.h:915 Form\form_us.xml.h:970
 msgid "Post Office Address"
@@ -5922,15 +6143,15 @@ msgstr ""
 
 #: Form\form_us.xml.h:973 Form\form_us.xml.h:2511
 msgid "Widow of"
-msgstr ""
+msgstr "Udovac/Udovica od"
 
 #: Form\form_us.xml.h:974
 msgid "Her age"
-msgstr ""
+msgstr "Njena dob"
 
 #: Form\form_us.xml.h:975
 msgid "Her date of birth"
-msgstr ""
+msgstr "Njen datum rođenja"
 
 #: Form\form_us.xml.h:976
 msgid "Date of marriage"
@@ -5954,7 +6175,7 @@ msgstr ""
 
 #: Form\form_us.xml.h:994 Form\form_us.xml.h:1125
 msgid "Deaf and Dumb"
-msgstr ""
+msgstr "Gluha i nijema"
 
 #: Form\form_us.xml.h:997
 msgid "Maimed, Crippled, Bedridden, or otherwise disabled."
@@ -5962,19 +6183,19 @@ msgstr ""
 
 #: Form\form_us.xml.h:999
 msgid "Can not read"
-msgstr ""
+msgstr "Ne zna čitati"
 
 #: Form\form_us.xml.h:1000
 msgid "Can not write"
-msgstr ""
+msgstr "Ne zna pisati"
 
 #: Form\form_us.xml.h:1015
 msgid "Street Name"
-msgstr ""
+msgstr "Ime ulice"
 
 #: Form\form_us.xml.h:1016
 msgid "House No."
-msgstr ""
+msgstr "Kuća broj"
 
 #: Form\form_us.xml.h:1042 Form\form_us.xml.h:1057
 msgid "Precinct No."
@@ -5982,31 +6203,31 @@ msgstr ""
 
 #: Form\form_us.xml.h:1048
 msgid "Inside or Outside City Limits"
-msgstr ""
+msgstr "Unutar ili izvan gradskih granica"
 
 #: Form\form_us.xml.h:1049 Form\form_us.xml.h:1065
 msgid "Age Male"
-msgstr ""
+msgstr "Dob muških"
 
 #: Form\form_us.xml.h:1050 Form\form_us.xml.h:1066
 msgid "Age Female"
-msgstr ""
+msgstr "Dob ženskih"
 
 #: Form\form_us.xml.h:1052
 msgid "Relation to Family"
-msgstr ""
+msgstr "Srodstvo s obitelji"
 
 #: Form\form_us.xml.h:1054 Form\form_us.xml.h:1068
 msgid "Degree of Education"
-msgstr ""
+msgstr "Stupanj obrazovanja"
 
 #: Form\form_us.xml.h:1055
 msgid "Owner or Renter"
-msgstr ""
+msgstr "Vlasnik ili unajmitelj"
 
 #: Form\form_us.xml.h:1064
 msgid "In or Out"
-msgstr ""
+msgstr "Unutar i izvan"
 
 #: Form\form_us.xml.h:1071
 msgid "White Males Under 10"
@@ -6142,13 +6363,13 @@ msgstr "Ženske osobe"
 
 #: Form\form_us.xml.h:1109 Form\form_us.xml.h:1111
 msgid "Total number"
-msgstr ""
+msgstr "Ukupni broj"
 
 #: Form\form_us.xml.h:1117 Form\form_us.xml.h:1799 Form\form_us.xml.h:1823
 #: Form\form_us.xml.h:1850 Form\form_us.xml.h:1977 Form\form_us.xml.h:2013
 #: Form\form_us.xml.h:2051 Form\form_us.xml.h:2089 Form\form_us.xml.h:2127
 msgid "Widowed"
-msgstr ""
+msgstr "Udovac/Udovica"
 
 #: Form\form_us.xml.h:1118
 msgid "Years resident in the state"
@@ -6269,20 +6490,20 @@ msgstr ""
 #: Form\form_us.xml.h:1157 Form\form_us.xml.h:1186 Form\form_us.xml.h:1534
 #: Form\form_us.xml.h:1785
 msgid "Town of"
-msgstr ""
+msgstr "Grad od"
 
 #: Form\form_us.xml.h:1158 Form\form_us.xml.h:1185 Form\form_us.xml.h:1786
 #: Form\form_us.xml.h:1873
 msgid "City of"
-msgstr ""
+msgstr "Grad od"
 
 #: Form\form_us.xml.h:1159 Form\form_us.xml.h:1187 Form\form_us.xml.h:1788
 msgid "Township of"
-msgstr ""
+msgstr "Naselje od"
 
 #: Form\form_us.xml.h:1165
 msgid "Street and Number"
-msgstr ""
+msgstr "Ulica i broj"
 
 #: Form\form_us.xml.h:1171
 msgid "Place of birth, county"
@@ -6440,19 +6661,19 @@ msgstr ""
 
 #: Form\form_us.xml.h:1228
 msgid "P.O. Address"
-msgstr ""
+msgstr "Poštanski pretinac"
 
 #: Form\form_us.xml.h:1229
 msgid "P. O. Address"
-msgstr ""
+msgstr "Poštanski pretinac"
 
 #: Form\form_us.xml.h:1233
 msgid "Can you read?"
-msgstr ""
+msgstr "Znaš čitati?"
 
 #: Form\form_us.xml.h:1235
 msgid "Can you write?"
-msgstr ""
+msgstr "Znaš pisati?"
 
 #: Form\form_us.xml.h:1237
 msgid "Color, White-Black-Yellow-Red"
@@ -6460,43 +6681,43 @@ msgstr ""
 
 #: Form\form_us.xml.h:1240
 msgid "Place of Birth-Self"
-msgstr ""
+msgstr "Mjesto rođenja, vlastito"
 
 #: Form\form_us.xml.h:1241
 msgid "Place of birth, Self"
-msgstr ""
+msgstr "Mjesto rođenja, vlastito"
 
 #: Form\form_us.xml.h:1242
 msgid "Place of Birth-Mother"
-msgstr ""
+msgstr "Mjesto rođenja, majka"
 
 #: Form\form_us.xml.h:1243
 msgid "Place of birth, Mother"
-msgstr ""
+msgstr "Mjesto rođenja, majka"
 
 #: Form\form_us.xml.h:1244
 msgid "Place of Birth-Father"
-msgstr ""
+msgstr "Mjesto rođenja, otac"
 
 #: Form\form_us.xml.h:1245
 msgid "Place of birth, Father"
-msgstr ""
+msgstr "Mjesto rođenja, otac"
 
 #: Form\form_us.xml.h:1246
 msgid "Own home or farm"
-msgstr ""
+msgstr "Posjeduje kuću ili gospodarstvo"
 
 #: Form\form_us.xml.h:1247
 msgid "Do you own your home or farm?"
-msgstr ""
+msgstr "Posjeduješ kuću ili gospodarstvo?"
 
 #: Form\form_us.xml.h:1248
 msgid "Value of home or farm"
-msgstr ""
+msgstr "Vrijednost kuće ili gospodarstva"
 
 #: Form\form_us.xml.h:1249
 msgid "Entire value of home or farm?"
-msgstr ""
+msgstr "Cijelokupna vrijednost kuće ili gospodarstva?"
 
 #: Form\form_us.xml.h:1250
 msgid "How much incumberance on home or farm"
@@ -6635,7 +6856,7 @@ msgstr ""
 #: Form\form_us.xml.h:1293 Form\form_us.xml.h:1992 Form\form_us.xml.h:2029
 #: Form\form_us.xml.h:2067 Form\form_us.xml.h:2105
 msgid "Town or Township"
-msgstr ""
+msgstr "Grad ili naselje"
 
 #: Form\form_us.xml.h:1296
 msgid "Months in 1914 Unemployed"
@@ -6758,7 +6979,7 @@ msgstr ""
 #: Form\form_us.xml.h:1331 Form\form_us.xml.h:2020 Form\form_us.xml.h:2058
 #: Form\form_us.xml.h:2096 Form\form_us.xml.h:2134
 msgid "Idiot"
-msgstr ""
+msgstr "Idiot"
 
 #: Form\form_us.xml.h:1332
 msgid "Naturalized if foreign born?"
@@ -6834,15 +7055,15 @@ msgstr ""
 
 #: Form\form_us.xml.h:1362
 msgid "Able to Read"
-msgstr ""
+msgstr "Ne zna pisati"
 
 #: Form\form_us.xml.h:1363
 msgid "Able to Write"
-msgstr ""
+msgstr "Zna pisati"
 
 #: Form\form_us.xml.h:1366
 msgid "Father's Place of Birth"
-msgstr ""
+msgstr "Mjesto rođenja oca"
 
 #: Form\form_us.xml.h:1367
 msgid "Father's Age"
@@ -6850,7 +7071,7 @@ msgstr "Starost oca"
 
 #: Form\form_us.xml.h:1369
 msgid "Mother's Place of Birth"
-msgstr ""
+msgstr "Mjesto rođenja majke"
 
 #: Form\form_us.xml.h:1370
 msgid "Mother's Age"
@@ -6858,7 +7079,7 @@ msgstr "Starost majke"
 
 #: Form\form_us.xml.h:1371
 msgid "Parents Place of Marriage"
-msgstr ""
+msgstr "Mjesto sklapanja braka roditelja"
 
 #: Form\form_us.xml.h:1372
 msgid "Civil War Veteran"
@@ -7011,7 +7232,7 @@ msgstr ""
 
 #: Form\form_us.xml.h:1435
 msgid "Widow(er)"
-msgstr ""
+msgstr "Udovac/Udovica"
 
 #: Form\form_us.xml.h:1439
 msgid "Learning"
@@ -7031,7 +7252,7 @@ msgstr "Nepismeni 21+"
 
 #: Form\form_us.xml.h:1444
 msgid "Honorably discharged"
-msgstr ""
+msgstr "Časno otpušten"
 
 #: Form\form_us.xml.h:1445
 msgid "State Enlisted"
@@ -7067,7 +7288,7 @@ msgstr "Nepismeni stariji od 21 godine"
 
 #: Form\form_us.xml.h:1462 Form\form_us.xml.h:1484 Form\form_us.xml.h:1507
 msgid "Honorably discharged from military service"
-msgstr ""
+msgstr "Časno otpušten iz vojne službe"
 
 #: Form\form_us.xml.h:1463 Form\form_us.xml.h:1485 Form\form_us.xml.h:1508
 msgid "State in which enlisted"
@@ -7180,19 +7401,19 @@ msgstr ""
 
 #: Form\form_us.xml.h:1581
 msgid "Organized Township"
-msgstr ""
+msgstr "Organizirano naselje"
 
 #: Form\form_us.xml.h:1582
 msgid "Unorganized Township"
-msgstr ""
+msgstr "Neorganizirano naselje"
 
 #: Form\form_us.xml.h:1583
 msgid "Name of Village"
-msgstr ""
+msgstr "Ime sela"
 
 #: Form\form_us.xml.h:1584
 msgid "Name of City"
-msgstr ""
+msgstr "Ime grada"
 
 #: Form\form_us.xml.h:1586
 msgid "Sub-division"
@@ -7605,11 +7826,11 @@ msgstr ""
 
 #: Form\form_us.xml.h:1836
 msgid "Formerly in army"
-msgstr ""
+msgstr "Ranije u vojsci"
 
 #: Form\form_us.xml.h:1837
 msgid "Formerly in navy"
-msgstr ""
+msgstr "Ranije u mornarici"
 
 #: Form\form_us.xml.h:1853
 msgid "Usual place of employment (if not same city/town)"
@@ -7756,7 +7977,7 @@ msgstr ""
 #: Form\form_us.xml.h:1952 Form\form_us.xml.h:1991 Form\form_us.xml.h:2028
 #: Form\form_us.xml.h:2066 Form\form_us.xml.h:2104
 msgid "P.O."
-msgstr ""
+msgstr "PP"
 
 #: Form\form_us.xml.h:1954
 msgid "Sec."
@@ -7772,7 +7993,7 @@ msgstr ""
 
 #: Form\form_us.xml.h:1959 Form\form_us.xml.h:2432
 msgid "No."
-msgstr ""
+msgstr "Br."
 
 #: Form\form_us.xml.h:1960
 msgid "St./Ave "
@@ -7780,7 +8001,7 @@ msgstr ""
 
 #: Form\form_us.xml.h:1961
 msgid "Hotel or Institution"
-msgstr ""
+msgstr "Hotel ili institucija"
 
 #: Form\form_us.xml.h:1965
 msgid "Years in South Dakota"
@@ -7792,11 +8013,11 @@ msgstr ""
 
 #: Form\form_us.xml.h:1967
 msgid "Birthplace of Father"
-msgstr ""
+msgstr "Mjesto rođenja oca"
 
 #: Form\form_us.xml.h:1968
 msgid "Birthplace of Mother"
-msgstr ""
+msgstr "Mjesto rođenja majke"
 
 #: Form\form_us.xml.h:1969
 msgid "Male"
@@ -7812,41 +8033,41 @@ msgstr "Bijela"
 
 #: Form\form_us.xml.h:1972
 msgid "Black"
-msgstr ""
+msgstr "Crna"
 
 #: Form\form_us.xml.h:1973
 msgid "Red"
-msgstr ""
+msgstr "Crvena"
 
 #: Form\form_us.xml.h:1974
 msgid "Yellow"
-msgstr ""
+msgstr "Žuta"
 
 #: Form\form_us.xml.h:1978 Form\form_us.xml.h:2014 Form\form_us.xml.h:2052
 #: Form\form_us.xml.h:2090 Form\form_us.xml.h:2128
 msgid "Divorced"
-msgstr ""
+msgstr "Rastavljen/a"
 
 #: Form\form_us.xml.h:1979
 msgid "Can Read"
-msgstr ""
+msgstr "Zna čitati"
 
 #: Form\form_us.xml.h:1980
 msgid "Can't Read"
-msgstr ""
+msgstr "Ne zna čitati"
 
 #: Form\form_us.xml.h:1981
 msgid "Can Write"
-msgstr ""
+msgstr "Zna pisati"
 
 #: Form\form_us.xml.h:1982
 msgid "Can't Write"
-msgstr ""
+msgstr "Ne zna pisati"
 
 #: Form\form_us.xml.h:1995 Form\form_us.xml.h:2032 Form\form_us.xml.h:2070
 #: Form\form_us.xml.h:2108
 msgid "Do you own your home or farm"
-msgstr ""
+msgstr "Posjeduješ kuću ili gospodarstvo"
 
 #: Form\form_us.xml.h:1997 Form\form_us.xml.h:2034 Form\form_us.xml.h:2072
 #: Form\form_us.xml.h:2110
@@ -7856,22 +8077,22 @@ msgstr "Preci"
 #: Form\form_us.xml.h:1998 Form\form_us.xml.h:2035 Form\form_us.xml.h:2073
 #: Form\form_us.xml.h:2111
 msgid "Father's birthplace"
-msgstr ""
+msgstr "Mjesto rođenja oca"
 
 #: Form\form_us.xml.h:1999 Form\form_us.xml.h:2036 Form\form_us.xml.h:2074
 #: Form\form_us.xml.h:2112
 msgid "Mother's birthplace"
-msgstr ""
+msgstr "Mjesto rođenja majke"
 
 #: Form\form_us.xml.h:2000 Form\form_us.xml.h:2037 Form\form_us.xml.h:2075
 #: Form\form_us.xml.h:2113
 msgid "Extent of Education"
-msgstr ""
+msgstr "Razina obrazovanja"
 
 #: Form\form_us.xml.h:2001 Form\form_us.xml.h:2038 Form\form_us.xml.h:2076
 #: Form\form_us.xml.h:2114
 msgid "Graduate of"
-msgstr ""
+msgstr "Matura pri"
 
 #: Form\form_us.xml.h:2002 Form\form_us.xml.h:2039 Form\form_us.xml.h:2077
 #: Form\form_us.xml.h:2115
@@ -7886,7 +8107,7 @@ msgstr "Pokrajina/Savezna država"
 #: Form\form_us.xml.h:2006 Form\form_us.xml.h:2044 Form\form_us.xml.h:2082
 #: Form\form_us.xml.h:2120
 msgid "Maiden name of wife"
-msgstr ""
+msgstr "Djevojačko ime žene"
 
 #: Form\form_us.xml.h:2008 Form\form_us.xml.h:2046 Form\form_us.xml.h:2084
 #: Form\form_us.xml.h:2122
@@ -7909,27 +8130,27 @@ msgstr ""
 
 #: Form\form_us.xml.h:2140
 msgid "Male under 21"
-msgstr ""
+msgstr "Muška osoba mlađa od 21 godine"
 
 #: Form\form_us.xml.h:2141
 msgid "Male over 21"
-msgstr ""
+msgstr "Muška osoba starija od 21 godine"
 
 #: Form\form_us.xml.h:2142
 msgid "Female under 21"
-msgstr ""
+msgstr "Ženska osoba mlađa od 21 godine"
 
 #: Form\form_us.xml.h:2143
 msgid "Female over 21"
-msgstr ""
+msgstr "Ženska osoba starija od 21 godine"
 
 #: Form\form_us.xml.h:2146 Form\form_us.xml.h:2158
 msgid "Town/City"
-msgstr ""
+msgstr "Grad"
 
 #: Form\form_us.xml.h:2148 Form\form_us.xml.h:2160 Form\form_us.xml.h:2172
 msgid "Heads of Families"
-msgstr ""
+msgstr "Glave obitelji"
 
 #: Form\form_us.xml.h:2149 Form\form_us.xml.h:2161 Form\form_us.xml.h:2173
 #: Form\form_us.xml.h:2185 Form\form_us.xml.h:2214
@@ -8026,11 +8247,11 @@ msgstr ""
 
 #: Form\form_us.xml.h:2249
 msgid "Parents place of birth"
-msgstr ""
+msgstr "Mjesto rođenja roditelja"
 
 #: Form\form_us.xml.h:2252
 msgid "Owned/Rented"
-msgstr ""
+msgstr "Vlasničko/Iznajmljeno"
 
 #: Form\form_us.xml.h:2253
 msgid "Free/Mortgaged"
@@ -8038,37 +8259,37 @@ msgstr ""
 
 #: Form\form_us.xml.h:2254
 msgid "Farm/House"
-msgstr ""
+msgstr "Gospodarstvo/Kuća"
 
 #: Form\form_us.xml.h:2261
 msgid "Twin, triplet or other"
-msgstr ""
+msgstr "Dvojček, trojček ili drugo"
 
 #: Form\form_us.xml.h:2262
 msgid "No. in order of birth"
-msgstr ""
+msgstr "Broj u redoslijedu rođenja"
 
 #: Form\form_us.xml.h:2263
 msgid "Legitimate"
-msgstr ""
+msgstr "Zakonit/a"
 
 #: Form\form_us.xml.h:2281 Form\form_us.xml.h:2302 Form\form_us.xml.h:2395
 #: Form\form_us.xml.h:2482
 msgid "Place of Record"
-msgstr ""
+msgstr "Mjesto zapisa"
 
 #: Form\form_us.xml.h:2282 Form\form_us.xml.h:2303 Form\form_us.xml.h:2396
 #: Form\form_us.xml.h:2483
 msgid "Book/Volume"
-msgstr ""
+msgstr "Knjiga/Svezak"
 
 #: Form\form_us.xml.h:2289 Form\form_us.xml.h:2405
 msgid "Race/Color"
-msgstr ""
+msgstr "Rasa/Boja"
 
 #: Form\form_us.xml.h:2290
 msgid "Illegitimate"
-msgstr ""
+msgstr "Nezakonit/a"
 
 #: Form\form_us.xml.h:2291
 msgid "Father"
@@ -8081,39 +8302,39 @@ msgstr ""
 
 #: Form\form_us.xml.h:2293
 msgid "Mother (Maiden Name)"
-msgstr ""
+msgstr "Majka (djevojačko ime)"
 
 #: Form\form_us.xml.h:2294
 msgid "Residence of Parents"
-msgstr ""
+msgstr "Prebivalište roditelja"
 
 #: Form\form_us.xml.h:2295
 msgid "By Whom Reported"
-msgstr ""
+msgstr "Izvjestitelj"
 
 #: Form\form_us.xml.h:2296 Form\form_us.xml.h:2413
 msgid "Date Recorded"
-msgstr ""
+msgstr "Datum zapisa"
 
 #: Form\form_us.xml.h:2305
 msgid "License No."
-msgstr ""
+msgstr "Licenca br."
 
 #: Form\form_us.xml.h:2307
 msgid "Date of Marriage"
-msgstr ""
+msgstr "Datum sklapanja braka"
 
 #: Form\form_us.xml.h:2308
 msgid "Married by"
-msgstr ""
+msgstr "Matičar"
 
 #: Form\form_us.xml.h:2310
 msgid "Place of Marriage"
-msgstr ""
+msgstr "Mjesto sklapanja braka"
 
 #: Form\form_us.xml.h:2312
 msgid "Consent given by"
-msgstr ""
+msgstr "Odobrenje od"
 
 #: Form\form_us.xml.h:2315
 msgid "Bond/Licence"
@@ -8121,43 +8342,43 @@ msgstr ""
 
 #: Form\form_us.xml.h:2344 Form\form_us.xml.h:2407
 msgid "Place of Death"
-msgstr ""
+msgstr "Mjesto smrti"
 
 #: Form\form_us.xml.h:2346
 msgid "Length of Residence"
-msgstr ""
+msgstr "Duljina prebivanja"
 
 #: Form\form_us.xml.h:2347
 msgid "Served in U.S. Military"
-msgstr ""
+msgstr "Vojna služba u vojsci SAD-a"
 
 #: Form\form_us.xml.h:2352
 msgid "Birth date of deceased"
-msgstr ""
+msgstr "Datum rođenja preminule osobe"
 
 #: Form\form_us.xml.h:2355
 msgid "Industry or Business"
-msgstr ""
+msgstr "Industrija ili poduzeće"
 
 #: Form\form_us.xml.h:2356
 msgid "Name of employer"
-msgstr ""
+msgstr "Ime poslodavatelja"
 
 #: Form\form_us.xml.h:2357
 msgid "Date last worked"
-msgstr ""
+msgstr "Datum zadnjeg radnog dana"
 
 #: Form\form_us.xml.h:2358
 msgid "Years in this occupation"
-msgstr ""
+msgstr "Broj godina u ovom zanimanju"
 
 #: Form\form_us.xml.h:2359
 msgid "Education Level"
-msgstr ""
+msgstr "Razina obrazovanja"
 
 #: Form\form_us.xml.h:2365
 msgid "Social Security No."
-msgstr ""
+msgstr "Broj socijalnog osiguranja"
 
 #: Form\form_us.xml.h:2366
 msgid "Informant"
@@ -8165,15 +8386,15 @@ msgstr "Izvjestitelj"
 
 #: Form\form_us.xml.h:2367 Form\form_us.xml.h:2406
 msgid "Date of Death"
-msgstr ""
+msgstr "Datum smrti"
 
 #: Form\form_us.xml.h:2369
 msgid "Place of Burial"
-msgstr ""
+msgstr "Mjesto pokopa"
 
 #: Form\form_us.xml.h:2370
 msgid "Date of Burial"
-msgstr ""
+msgstr "Datum pokopa"
 
 #: Form\form_us.xml.h:2389
 msgid "Social Security Number"
@@ -8217,7 +8438,7 @@ msgstr ""
 
 #: Form\form_us.xml.h:2426
 msgid "Former Military Service"
-msgstr ""
+msgstr "Ranija vojna služba"
 
 #: Form\form_us.xml.h:2428
 msgid "Station Headquarters"
@@ -8395,7 +8616,7 @@ msgstr "Boja očiju"
 
 #: Form\form_us.xml.h:2493
 msgid "Hair color"
-msgstr ""
+msgstr "Boja kose"
 
 #: Form\form_us.xml.h:2496
 msgid "Rank in"

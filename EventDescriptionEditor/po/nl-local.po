@@ -1,14 +1,14 @@
 # Dutch translation of addon EventDescriptionEditor.
-# Copyright (C) 2020 Gramps project
+# Copyright (C) 2021 Gramps project
 # This file is distributed under the same license as the EventDescriptionEditor package.
-# Jan Sparreboom <jan@sparreboom.net>, 2020.
+# Jan Sparreboom <jan@sparreboom.net>, 2021.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: EventDescriptionEditor 5.x\n"
-"Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
-"POT-Creation-Date: 2020-04-11 09:47-0500\n"
-"PO-Revision-Date: 2020-08-31 16:06+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-09-14 10:31-0500\n"
+"PO-Revision-Date: 2021-05-01 17:11+0200\n"
 "Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
 "Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
 "Language: nl\n"
@@ -18,8 +18,8 @@ msgstr ""
 "X-Generator: Poedit 2.3\n"
 
 #: EventDescriptionEditor/EventDescriptionEditor.gpr.py:24
-#: EventDescriptionEditor/EventDescriptionEditor.py:50
-#: EventDescriptionEditor/EventDescriptionEditor.py:61
+#: EventDescriptionEditor/EventDescriptionEditor.py:52
+#: EventDescriptionEditor/EventDescriptionEditor.py:64
 msgid "Event Description Editor"
 msgstr "Gebeurtenisbeschrijvingsbewerker"
 
@@ -30,50 +30,59 @@ msgstr ""
 "Een hulpmiddel om een string te vinden en te vervangen in de "
 "gebeurtenisbeschrijving van meerdere gebeurtenissen."
 
-#: EventDescriptionEditor/EventDescriptionEditor.py:72
+#: EventDescriptionEditor/EventDescriptionEditor.py:75
 msgid "Search substring..."
 msgstr "Zoek deeltekenreeks..."
 
-#: EventDescriptionEditor/EventDescriptionEditor.py:91
+#: EventDescriptionEditor/EventDescriptionEditor.py:105
 msgid "INFO"
 msgstr "INFO"
 
-#: EventDescriptionEditor/EventDescriptionEditor.py:92
+#: EventDescriptionEditor/EventDescriptionEditor.py:106
 #, python-format
 msgid "%s event descriptions of %s events were changed."
 msgstr "%s gebeurtenisbeschrijvingen van %s gebeurtenissen zijn gewijzigd."
 
-#: EventDescriptionEditor/EventDescriptionEditor.py:112
+#: EventDescriptionEditor/EventDescriptionEditor.py:126
 msgid "All Events"
 msgstr "Alle gebeurtenissen"
 
-#: EventDescriptionEditor/EventDescriptionEditor.py:121
+#: EventDescriptionEditor/EventDescriptionEditor.py:135
 msgid "Events"
 msgstr "Gebeurtenissen"
 
-#: EventDescriptionEditor/EventDescriptionEditor.py:122
-#: EventDescriptionEditor/EventDescriptionEditor.py:126
-#: EventDescriptionEditor/EventDescriptionEditor.py:129
-#: EventDescriptionEditor/EventDescriptionEditor.py:135
+#: EventDescriptionEditor/EventDescriptionEditor.py:136
+#: EventDescriptionEditor/EventDescriptionEditor.py:140
+#: EventDescriptionEditor/EventDescriptionEditor.py:143
+#: EventDescriptionEditor/EventDescriptionEditor.py:149
+#: EventDescriptionEditor/EventDescriptionEditor.py:153
 msgid "Option"
 msgstr "Keuze"
 
-#: EventDescriptionEditor/EventDescriptionEditor.py:125
+#: EventDescriptionEditor/EventDescriptionEditor.py:139
 msgid "Find"
-msgstr "Vind"
+msgstr "Zoek"
 
-#: EventDescriptionEditor/EventDescriptionEditor.py:128
+#: EventDescriptionEditor/EventDescriptionEditor.py:142
 msgid "Replace"
 msgstr "Vervangen"
 
-#: EventDescriptionEditor/EventDescriptionEditor.py:131
+#: EventDescriptionEditor/EventDescriptionEditor.py:145
 msgid "Replace substring only"
 msgstr "Vervang alleen het zinsdeel"
 
-#: EventDescriptionEditor/EventDescriptionEditor.py:132
+#: EventDescriptionEditor/EventDescriptionEditor.py:146
 msgid ""
 "If True only the substring will be replaced, otherwise the whole description "
 "will be deleted and replaced by the new one."
 msgstr ""
 "Indien True wordt alleen de deeltekenreeks vervangen, anders wordt de hele "
 "beschrijving verwijderd en vervangen door de nieuwe."
+
+#: EventDescriptionEditor/EventDescriptionEditor.py:151
+msgid "Allow regex"
+msgstr "Regex toestaan"
+
+#: EventDescriptionEditor/EventDescriptionEditor.py:152
+msgid "Allow regular expressions."
+msgstr "Sta reguliere expressies toe."

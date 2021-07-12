@@ -1,0 +1,205 @@
+#
+# Gramps - a GTK+/GNOME based genealogy program
+#
+# Copyright (C) 2021  Manuela Kugel (gramps@ur-ahn.de)
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
+#
+# TimePedigreeHtml - a plugin for GRAMPS - version 0.1
+# Outcome is an HTML file showing a pedigree with time scale
+# Dutch translation of addon TimePedigreeHtml.
+# Copyright (C) 2021 Gramps project.
+# This file is distributed under the same license as the SetPrivacyTool package.
+# Jan Sparreboom <jan@sparreboom.net>, 2020, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: TimePedigreeHtml 5.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-03-15 11:14-0500\n"
+"PO-Revision-Date: 2021-05-03 22:54+0200\n"
+"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
+"Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+
+#: TimePedigreeHTML/TimePedigreeHtml.gpr.py:42
+msgid "Timeline Pedigree Report"
+msgstr "Stamboomverslag met tijdlijn"
+
+#: TimePedigreeHTML/TimePedigreeHtml.gpr.py:43
+msgid "This creates a website showing a pedigree with birthday relation"
+msgstr ""
+"Dit creëert een website die een stamboom met verjaardagsrelaties toont"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:168
+msgid "Failed writing "
+msgstr "Schrijven mislukt "
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:795
+msgid "Marriage"
+msgstr "Huwelijk"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:843
+msgid "General"
+msgstr "Algemeen"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:845
+msgid "Center Person"
+msgstr "Centraal persoon"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:846
+msgid "The center person for the report"
+msgstr "De centrale persoon voor het verslag"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:849
+msgid "Year of Birth of Center Person"
+msgstr "Geboortejaar van centrale persoon"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:852
+msgid "The year of birth of the center person. Estimate a year if unknown"
+msgstr ""
+"Het geboortejaar van de centrale persoon. Schat een jaar indien onbekend"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:857
+msgid "Destination directory"
+msgstr "Doelmap"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:860
+msgid "Path for generated files"
+msgstr "Pad voor gegenereerde bestanden"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:864
+msgid "Filename"
+msgstr "Bestandsnaam"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:865
+msgid "The destination file name for html content."
+msgstr "De bestemmingsbestandsnaam voor html-inhoud."
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:868
+msgid "Default Age"
+msgstr "Standaardleeftijd"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:869
+msgid "Default age of parent when child is born with unknown year of birth"
+msgstr ""
+"Standaardleeftijd van ouder wanneer het kind wordt geboren met een "
+"onbekend geboortejaar"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:878
+msgid "What to show"
+msgstr "Wat tonen"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:880
+msgid "Show GrampsID"
+msgstr "Toon GrampsID"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:881
+msgid "Show GrampsID on top right of the box"
+msgstr "Toon GrampsID rechtsboven in het vak"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:884
+msgid "Optimize"
+msgstr "Optimaliseer"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:885
+msgid "Use as little space in horizontal direction as possible"
+msgstr "Gebruik zo min mogelijk ruimte in horizontale richting"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:891
+msgid "Color"
+msgstr "Kleur"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:893
+msgid "Male Box Color"
+msgstr "Kaderkleur man"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:894
+msgid "Box background color for male person"
+msgstr "Achtergrondkleur kader voor mannelijke persoon"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:897
+msgid "Female Box Color"
+msgstr "Kaderkleur vrouw"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:898
+msgid "Box background color for female person"
+msgstr "Achtergrondkleur kader voor vrouwelijke persoon"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:902
+msgid "Size"
+msgstr "Grootte"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:904
+msgid "Number of pixel per year"
+msgstr "Aantal pixels per jaar"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:905
+msgid "How many pixel height is one year?"
+msgstr "Hoeveel pixelhoogte is een jaar?"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:910
+msgid "Offset X Coordinate"
+msgstr "Offset X-coördinaat"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:912
+msgid "How many pixel are unused besides the most left and most right boxes?"
+msgstr ""
+"Hoeveel pixels zijn er ongebruikt behalve de meest linkse en meest rechtse "
+"kaders?"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:917
+msgid "Offset Y Coordinate"
+msgstr "Offset Y-coördinaat"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:918
+msgid "How many pixel are unused above first box?"
+msgstr "Hoeveel pixels zijn er ongebruikt boven het eerste kader?"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:921
+msgid "Width of a box in pixel"
+msgstr "Breedte van een kader in pixels"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:922
+msgid "Width of the box of a person in pixel"
+msgstr "Breedte van het kader van een persoon in pixel"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:925
+msgid "Horizontal space between boxes in pixel"
+msgstr "Horizontale ruimte tussen kaders in pixels"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:928
+msgid "Minimum horizontal space between 2 boxes in pixel"
+msgstr "Minimale horizontale ruimte tussen 2 kaders in pixels"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:934
+msgid "Length of vertical part of a line in pixel"
+msgstr "Lengte van verticaal deel van een lijn in pixels"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:936
+msgid ""
+"Parent and child boxes are connected with lines. This is the length of the "
+"vertical part of the lines in pixel"
+msgstr ""
+"Ouder- en kindkaders zijn met lijnen verbonden. Dit is de lengte van het "
+"verticale deel van de lijnen in pixels"
+
+#: TimePedigreeHTML/TimePedigreeHtml.py:943
+#: TimePedigreeHTML/TimePedigreeHtml.py:945
+msgid "Number of pixel between left border and scale"
+msgstr "Aantal pixels tussen linkerrand en schaal"
