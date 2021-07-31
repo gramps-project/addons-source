@@ -1,0 +1,67 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: SVWebConnectPack/SVWebPack.gpr.py:11
+msgid "Collection of Web sites for Sweden (requires libwebconnect)"
+msgstr ""
+
+#: SVWebConnectPack/SVWebPack.py:33
+msgid "Find A Grave"
+msgstr ""
+
+#: SVWebConnectPack/SVWebPack.py:34
+msgid "FamilySearch.org"
+msgstr ""
+
+#: SVWebConnectPack/SVWebPack.py:35
+msgid "SV Google"
+msgstr ""
+
+#: SVWebConnectPack/SVWebPack.py:36
+msgid "Geneanet"
+msgstr ""
+
+#: SVWebConnectPack/SVWebPack.py:37
+msgid "Wikipedia"
+msgstr ""
+
+#: SVWebConnectPack/SVWebPack.py:38
+msgid "FamilySearch.org Tree"
+msgstr ""
+
+#: SVWebConnectPack/SVWebPack.py:39
+msgid "WikiTree"
+msgstr ""
+
+#: SVWebConnectPack/SVWebPack.py:40
+msgid "National archives personsearch"
+msgstr ""
+
+#: SVWebConnectPack/SVWebPack.py:41
+msgid "National archives free search"
+msgstr ""
+
+#: SVWebConnectPack/SVWebPack.py:42
+msgid "Arkiv Digital estate records"
+msgstr ""
+
+#: SVWebConnectPack/SVWebPack.py:43
+msgid "Ancestry Search"
+msgstr ""
+
