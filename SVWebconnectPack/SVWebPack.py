@@ -37,10 +37,13 @@ WEBSITES = [
     ["Person", "Wikipedia", "Wikipedia", "https://sv.wikipedia.org/w/index.php?search=%(given)s+%(surname)s"],
     ["Person", "FamilySearch Släktträd", _("FamilySearch.org Tree"), "https://www.familysearch.org/tree/find/name?search=1&birth=%%7C%(birth)s-%(birth)s%%7C0&death=%%7C%(death)s-%(death)s%%7C0&self=%(given)s%%20%(middle)s%%7C%(surname)s%%7C0%%7C1"],
     ["Person", "WikiTree", "WikiTree", "https://wikitree.sdms.si/function/WTWebProfileSearch/Profiles.htm?&Query=%(given)s+%(surname)s+B%(birth)s+D%(death)s&MaxProfiles=500&SortOrder=Default&PageSize=10"],
-    ["Person", "Riksarkivet Personsök", _("National archives personsearch"), "https://sok.riksarkivet.se/person?Namn=%(given)s+%(surname)s&Ort=&Fodelsear=&AvanceradSok=True&PageSize=100"],
-    ["Person", "Riksarkivet Frisök", _("National archives free search"), "https://sok.riksarkivet.se/fritext?Sokord=%(given)s+%(surname)s&f=True&EndastDigitaliserat=false&AvanceradSok=True&PageSize=100"],
+    ["Person", "Riksarkivet Personsök", _("National archives of Sweden personsearch"), "https://sok.riksarkivet.se/person?Namn=%(given)s+%(surname)s&Ort=&Fodelsear=%(birth)s&AvanceradSok=True&PageSize=100"],
+    ["Person", "Riksarkivet Frisök", _("National archives of Sweden free search"), "https://sok.riksarkivet.se/fritext?Sokord=%(given)s+%(surname)s&f=True&EndastDigitaliserat=false&AvanceradSok=True&PageSize=100"],
     ["Person", "Arkiv Digital bouppteckningar", _("Arkiv Digital estate records"), "https://www.arkivdigital.se/registers?county_id=0&first_name=%(given)s&last_name=%(surname)s&location=&parish=&inventory_date=&type=bouppteckningar"],
     ["Person", "Ancestry Sök", _("Ancestry Search"), "https://www.ancestry.se/search/?name=%(given)s_%(surname)s"],
+    ["Person", "Porträttfynd - Rötter.se", _("Find swedish portraits - Rötter.se"), "https://www.rotter.se/faktabanken/portrattfynd/sok-portratt/advanced-search?cf30=%(given)s+%(surname)s&cat_id=0&Itemid=645&option=com_mtree&task=listall&searchcondition=1&link_name=%(given)s+%(surname)s"],
+    ["Person", "Gravar.se", _("Gravar.se - find swedish graves"), "https://gravar.se/resultat?sok=%(given)s+%(surname)s"],
+    ["Person", "Riksarkivet sök folkräkning", _("National archives of Sweden search censuses"), "https://sok.riksarkivet.se/folkrakningar?Fornamn=%(given)s&Efternamn=%(surname)s&DatumFran=%(birth)s&DatumTill=%(birth)s&Fodelseforsamling=&Folk1860=true&Folk1860=false&Folk1870=true&Folk1870=false&Folk1880=true&Folk1880=false&Folk1890=true&Folk1890=false&Folk1900=true&Folk1900=false&Folk1910=true&Folk1910=false&Folk1930=true&Folk1930=false&Lan=&Hemforsamling=&Fodelselan=&Land=&Yrke=&Hemort=&Kon=&Civilstand=&Faders_efternamn=&Moders_efternamn=&StatistikFalt=&AvanceradSok=False"],
     ]
 
 def load_on_reg(dbstate, uistate, pdata):

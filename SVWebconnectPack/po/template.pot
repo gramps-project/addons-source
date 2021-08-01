@@ -50,11 +50,11 @@ msgid "WikiTree"
 msgstr ""
 
 #: SVWebConnectPack/SVWebPack.py:40
-msgid "National archives personsearch"
+msgid "National archives of Sweden personsearch"
 msgstr ""
 
 #: SVWebConnectPack/SVWebPack.py:41
-msgid "National archives free search"
+msgid "National archives of Sweden free search"
 msgstr ""
 
 #: SVWebConnectPack/SVWebPack.py:42
@@ -65,3 +65,14 @@ msgstr ""
 msgid "Ancestry Search"
 msgstr ""
 
+#: SVWebConnectPack/SVWebPack.py:44
+msgid "Find swedish portraits - Rötter.se"
+msgstr ""
+
+#: SVWebConnectPack/SVWebPack.py:45
+msgid "Gravar.se - find swedish graves"
+msgstr ""
+
+#: SVWebConnectPack/SVWebPack.py:46
+msgid "National archives of Sweden search censuses"
+msgstr ""

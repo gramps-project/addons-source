@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-08 17:11-0500\n"
-"PO-Revision-Date: 2021-08-01 10:30+0200\n"
+"PO-Revision-Date: 2021-08-01 15:09+0200\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -51,11 +51,11 @@ msgid "WikiTree"
 msgstr ""
 
 #: SVWebConnectPack/SVWebPack.py:40
-msgid "National archives personsearch"
+msgid "National archives of Sweden personsearch"
 msgstr "Riksarkivet personsök"
 
 #: SVWebConnectPack/SVWebPack.py:41
-msgid "National archives free search"
+msgid "National archives of Sweden free search"
 msgstr "Riksarkivet frisök"
 
 #: SVWebConnectPack/SVWebPack.py:42
@@ -65,3 +65,15 @@ msgstr "Arkiv Digital bouppteckningar"
 #: SVWebConnectPack/SVWebPack.py:43
 msgid "Ancestry Search"
 msgstr "Ancestry Sök"
+
+#: SVWebConnectPack/SVWebPack.py:44
+msgid "Find swedish portraits - Rötter.se"
+msgstr "Porträttfynd - Rötter.se"
+
+#: SVWebConnectPack/SVWebPack.py:45
+msgid "Gravar.se - find swedish graves"
+msgstr "Gravar.se"
+
+#: SVWebConnectPack/SVWebPack.py:46
+msgid "National archives of Sweden search censuses"
+msgstr "Riksarkivet sök folkräkning"
