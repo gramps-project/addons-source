@@ -30,7 +30,7 @@ msgid "FamilySearch.org"
 msgstr ""
 
 #: SVWebConnectPack/SVWebPack.py:35
-msgid "SV Google"
+msgid "Google SV"
 msgstr ""
 
 #: SVWebConnectPack/SVWebPack.py:36

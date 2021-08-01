@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-08 17:11-0500\n"
-"PO-Revision-Date: 2021-07-31 14:54+0200\n"
+"PO-Revision-Date: 2021-08-01 10:30+0200\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -31,7 +31,7 @@ msgid "FamilySearch.org"
 msgstr ""
 
 #: SVWebConnectPack/SVWebPack.py:35
-msgid "SV Google"
+msgid "Google SV"
 msgstr ""
 
 #: SVWebConnectPack/SVWebPack.py:36

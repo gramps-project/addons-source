@@ -31,11 +31,11 @@ _ = _trans.gettext
 
 WEBSITES = [
     ["Person", "Finn en grav", _("Find A Grave"), "http://www.findagrave.com/cgi-bin/fg.cgi?page=gsr&GSfn=%(given)s&GSmn=%(middle)s&GSln=%(surname)s&GSby=%(birth)s&GSbyrel=in&GSdy=%(death)s&GSdyrel=in&GScntry=0&GSst=0&GSgrid=&df=all&GSob=b"],
-    ["Person", "FamilySearch", _("FamilySearch.org")+"  (Fritt konto för inloggning)", "https://familysearch.org/search/record/results?count=20&query=%%2Bgivenname%%3A%(given)s~ %%2Bsurname%%3A%(surname)s~ %%2Bbirth_year%%3A%(birth)s-%(birth)s~ %%2Bdeath_year%%3A%(death)s-%(death)s~"], #Fritt konto krävs
-    ["Person", "SV Google", _("SV Google"), '''http://www.google.com/search?&q="%(surname)s,+%(given)s"'''],
+    ["Person", "FamilySearch", _("FamilySearch.org"), "https://familysearch.org/search/record/results?count=20&query=%%2Bgivenname%%3A%(given)s~ %%2Bsurname%%3A%(surname)s~ %%2Bbirth_year%%3A%(birth)s-%(birth)s~ %%2Bdeath_year%%3A%(death)s-%(death)s~"],
+    ["Person", "Google SV", _("Google SV"), '''http://www.google.com/search?&q=%(given)s+%(surname)s'''],
     ["Person", "Geneanet", "Geneanet", "http://search.geneanet.org/result.php?lang=sv&name=%(surname)s"],
     ["Person", "Wikipedia", "Wikipedia", "https://sv.wikipedia.org/w/index.php?search=%(given)s+%(surname)s"],
-    ["Person", "FamilySearch Släktträd", _("FamilySearch.org Tree")+"  (Fritt konto för inloggning)", "https://www.familysearch.org/tree/find/name?search=1&birth=%%7C%(birth)s-%(birth)s%%7C0&death=%%7C%(death)s-%(death)s%%7C0&self=%(given)s%%20%(middle)s%%7C%(surname)s%%7C0%%7C1"], #Fritt konto krävs
+    ["Person", "FamilySearch Släktträd", _("FamilySearch.org Tree"), "https://www.familysearch.org/tree/find/name?search=1&birth=%%7C%(birth)s-%(birth)s%%7C0&death=%%7C%(death)s-%(death)s%%7C0&self=%(given)s%%20%(middle)s%%7C%(surname)s%%7C0%%7C1"],
     ["Person", "WikiTree", "WikiTree", "https://wikitree.sdms.si/function/WTWebProfileSearch/Profiles.htm?&Query=%(given)s+%(surname)s+B%(birth)s+D%(death)s&MaxProfiles=500&SortOrder=Default&PageSize=10"],
     ["Person", "Riksarkivet Personsök", _("National archives personsearch"), "https://sok.riksarkivet.se/person?Namn=%(given)s+%(surname)s&Ort=&Fodelsear=&AvanceradSok=True&PageSize=100"],
     ["Person", "Riksarkivet Frisök", _("National archives free search"), "https://sok.riksarkivet.se/fritext?Sokord=%(given)s+%(surname)s&f=True&EndastDigitaliserat=false&AvanceradSok=True&PageSize=100"],
