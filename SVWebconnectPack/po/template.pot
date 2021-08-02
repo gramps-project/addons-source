@@ -58,7 +58,7 @@ msgid "National archives of Sweden free search"
 msgstr ""
 
 #: SVWebConnectPack/SVWebPack.py:42
-msgid "Arkiv Digital estate records"
+msgid "Arkiv Digital estate records for Skåne"
 msgstr ""
 
 #: SVWebConnectPack/SVWebPack.py:43
@@ -75,4 +75,8 @@ msgstr ""
 
 #: SVWebConnectPack/SVWebPack.py:46
 msgid "National archives of Sweden search censuses"
+msgstr ""
+
+#: SVWebConnectPack/SVWebPack.py:47
+msgid "Arkiv Digital released prisoners"
 msgstr ""
