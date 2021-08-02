@@ -80,3 +80,7 @@ msgstr ""
 #: SVWebConnectPack/SVWebPack.py:47
 msgid "Arkiv Digital released prisoners"
 msgstr ""
+
+#: SVWebConnectPack/SVWebPack.py:48
+msgid "Gravestone inventory - rötter.se"
+msgstr ""
