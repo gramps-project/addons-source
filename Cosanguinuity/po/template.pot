@@ -1,0 +1,144 @@
+# Cosanguinuity - Determine relationships between ancestors and spouses
+#
+# Copyright (C) 2021  Hans Boldt
+#
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2021-08-27 11:26-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: cosanguinuity.py:80
+msgid "No Family Tree loaded."
+msgstr ""
+
+#: cosanguinuity.py:81
+msgid "Move mouse over links for options"
+msgstr ""
+
+#: cosanguinuity.py:82
+msgid ""
+"Click to make active\n"
+"Right-click to edit"
+msgstr ""
+
+#: cosanguinuity.py:83
+msgid "View style"
+msgstr ""
+
+#: cosanguinuity.py:84
+msgid "Single pane"
+msgstr ""
+
+#: cosanguinuity.py:85
+msgid "Notebook"
+msgstr ""
+
+#: cosanguinuity.py:86
+msgid "Copy"
+msgstr ""
+
+#: cosanguinuity.py:87
+msgid "Close"
+msgstr ""
+
+#: cosanguinuity.py:88
+msgid "Display pedigrees"
+msgstr ""
+
+#: cosanguinuity.py:89
+msgid "(unknown)"
+msgstr ""
+
+#: cosanguinuity.py:90
+msgid "Relationship:"
+msgstr ""
+
+#: cosanguinuity.py:91
+msgid "Relationships:"
+msgstr ""
+
+#: cosanguinuity.py:92
+msgid "Common ancestor:"
+msgstr ""
+
+#: cosanguinuity.py:93
+msgid "Common ancestors:"
+msgstr ""
+
+#: cosanguinuity.py:94
+msgid "More spouse relationships not shown."
+msgstr ""
+
+#: cosanguinuity.py:95
+msgid "More relationships not shown."
+msgstr ""
+
+#: cosanguinuity.py:96
+msgid "Pedigree collapse"
+msgstr ""
+
+#: cosanguinuity.py:97
+msgid "Spousal cosanguinity"
+msgstr ""
+
+#: cosanguinuity.py:98
+msgid "Pedigree collapse for active person"
+msgstr ""
+
+#: cosanguinuity.py:99
+msgid "No pedigree collapse found."
+msgstr ""
+
+#: cosanguinuity.py:100
+#, python-format
+msgid "Pedigree collapse at %(relationship)s:"
+msgstr ""
+
+#: cosanguinuity.py:101
+msgid "More instances of pedigree collapse not shown."
+msgstr ""
+
+#: cosanguinuity.py:102
+msgid "No partners."
+msgstr ""
+
+#: cosanguinuity.py:103
+msgid "Not married."
+msgstr ""
+
+#: cosanguinuity.py:104
+msgid "Partner:"
+msgstr ""
+
+#: cosanguinuity.py:106
+msgid "Relationships between active person and partners"
+msgstr ""
+
+#: cosanguinuity.py:107
+msgid "No common ancestors found."
+msgstr ""
+
+#: cosanguinuity.py:108
+msgid "Descendants"
+msgstr ""
+
+#: cosanguinuity.py:109
+msgid "Pedigrees"
+msgstr ""
+
+#: cosanguinuity.py:110
+msgid "More ancestors not shown."
+msgstr ""
+
