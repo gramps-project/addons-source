@@ -18,6 +18,10 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Language: sv_SE\n"
 
+#: SVWebconnectPack/SVWebPack.gpr.py:10
+msgid "SV Web Connect Pack"
+msgstr ""
+
 #: SVWebConnectPack/SVWebPack.gpr.py:11
 msgid "Collection of Web sites for Sweden (requires libwebconnect)"
 msgstr "Samling av webbplatser för Sverige (kräver libwebconnect)"
@@ -34,21 +38,9 @@ msgstr ""
 msgid "Google SV"
 msgstr ""
 
-#: SVWebConnectPack/SVWebPack.py:36
-msgid "Geneanet"
-msgstr ""
-
-#: SVWebConnectPack/SVWebPack.py:37
-msgid "Wikipedia"
-msgstr ""
-
 #: SVWebConnectPack/SVWebPack.py:38
 msgid "FamilySearch.org Tree"
 msgstr "FamilySearch.org Släktträd"
-
-#: SVWebConnectPack/SVWebPack.py:39
-msgid "WikiTree"
-msgstr ""
 
 #: SVWebConnectPack/SVWebPack.py:40
 msgid "National archives of Sweden personsearch"
