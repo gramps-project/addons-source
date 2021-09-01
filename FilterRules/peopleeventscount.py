@@ -17,7 +17,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
-"""Matches persons which have multiple events of given type."""
+"""Matches persons which have events of given type and number."""
 
 # -------------------------------------------------------------------------
 #
@@ -39,22 +39,43 @@ _ = _trans.gettext
 # Filter Rule Class
 #
 # -------------------------------------------------------------------------
-class PeronsWithMultipleEvents(Rule):
-    """Filter rule matching persons which have multiple events of given type."""
+class PeopleEventsCount(Rule):
+    """Matches persons which have events of given type and number."""
 
-    labels = [_('Event type:')]
-    name = _('Persons with multiple events of <type>')
+    labels = [
+        _('Personal event:'),
+        _('Number of instances:'),
+        _('Number must be:'),
+        _('Primary Role:')]
+    name = _('People with <count> of <event>')
+    description = _(
+        "Matches persons which have events of given type and number.")
     category = _("Event filters")
-    description = _("Matches persons which have multiple events of given type.")
-    namespace = 'Event'
+    allow_regex = False
 
-    def apply(self, db, person):
-        counter = 0
-        for event_ref in person.event_ref_list:
-            event = db.get_event_from_handle(event_ref.ref)
-            if event.type.is_type(self.list[0]) and event_ref.role == EventRoleType.PRIMARY:
-                counter += 1
-        if counter >= 2:
-            return True
+    def prepare(self, db, user):
+        if self.list[2] == 'less than':
+            self.count_type = 0
+        elif self.list[2] == 'greater than':
+            self.count_type = 2
         else:
-            return False
+            self.count_type = 1  # "equal to"
+        self.userSelectedCount = int(self.list[1])
+
+    def apply(self, dbase, person):
+        counter = 0
+        for event_ref in person.get_event_ref_list():
+            if not event_ref:
+                continue
+            if int(self.list[3]) and event_ref.role != EventRoleType.PRIMARY:
+                continue
+            event = dbase.get_event_from_handle(event_ref.ref)
+            if event.type.is_type(self.list[0]):
+                counter += 1
+
+        if self.count_type == 0:  # "less than"
+            return counter < self.userSelectedCount
+        elif self.count_type == 2:  # "greater than"
+            return counter > self.userSelectedCount
+        # "equal to"
+        return counter == self.userSelectedCount
