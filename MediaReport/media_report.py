@@ -42,7 +42,11 @@ from gramps.gen.plug.docgen import (ParagraphStyle, FontStyle, TableStyle,
                                     TableCellStyle, PARA_ALIGN_CENTER,
                                     PARA_ALIGN_LEFT)
 from gramps.gen.const import GRAMPS_LOCALE as glocale
-_ = glocale.translation.gettext
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.gettext
 
 
 # ----------------------------------------------------------------------------
@@ -61,7 +65,7 @@ class MediaReport(Report):
         self._db = self.database
         self._opt = self.get_opt_dict()
         self.user = user
-        self.window = self.user.uistate.window
+        self.window = self.user.uistate.window if self.user.uistate else None
         self.filename = None
 
     def get_opt_dict(self):
@@ -88,30 +92,33 @@ class MediaReport(Report):
         dct = self._opt
         mid = dct["mid"]
         is_img = self.__media_is_img(mid)
+        msg1 = _("You have to select an image to generate this report.")
+        msg2 = _("You have to select a custom note or uncheck the option "
+                 "'include custom note' to generate this report.")
+        msg3 = _("This report only supports PDF as output file format.")
 
         # no media file selected
         if not mid or mid == "":
-            OkDialog(_("INFO"), _("You have to select an image to generate "
-                                  "this report."), parent=self.window)
+            if self.window:
+                OkDialog(_("INFO"), msg1, parent=self.window)
             return False
 
         # 'include custom note' checked, but no custom note selected
         if dct["incl_note"] and dct["note"] == "":
-            OkDialog(_("INFO"), _("You have to select a custom note or uncheck"
-                                  " the option 'include custom note' to "
-                                  "generate this report."), parent=self.window)
+            if self.window:
+                OkDialog(_("INFO"), msg2, parent=self.window)
             return False
 
         # incorrect media file, not an image
         if not is_img:
-            OkDialog(_("INFO"), _("You have to select an image to "
-                                  "generate this report."), parent=self.window)
+            if self.window:
+                OkDialog(_("INFO"), msg1, parent=self.window)
             return False
 
         # other file output than PDF (PDF is only one supported right now)
         if self.options.get_output()[-3:] != "pdf":
-            OkDialog(_("INFO"), _("This report only supports PDF as output "
-                                  "file format."), parent=self.window)
+            if self.window:
+                OkDialog(_("INFO"), msg3, parent=self.window)
             return False
 
         # if everything is valid
