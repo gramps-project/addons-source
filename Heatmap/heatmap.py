@@ -18,6 +18,15 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 """Create a heatmap web report."""
+
+# -------------------------------------------------------------------------
+#
+# GTK Modules
+#
+# -------------------------------------------------------------------------
+from gi.repository import Gtk
+
+
 # ------------------------------------------------------------------------
 #
 # Python modules
@@ -32,12 +41,15 @@ import os
 #
 # ------------------------------------------------------------------------
 from gramps.gen.plug.report import Report, MenuReportOptions
+from gramps.gen.lib import EventType
 from gramps.gui.dialog import ErrorDialog
 from gramps.gen.plug.menu import (
     EnumeratedListOption, PersonOption, DestinationOption, StringOption,
     NumberOption, BooleanOption)
+from gramps.gen.plug.menu import Option as PlugOption
 from gramps.gen.filters import GenericFilterFactory, rules, CustomFilters
 from gramps.gen.plug.docgen import ParagraphStyle
+from gramps.gen.plug import BasePluginManager
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
     _trans = glocale.get_addon_translator(__file__)
@@ -55,6 +67,8 @@ class ReportOptions(MenuReportOptions):
     """Heatmap report options."""
 
     def __init__(self, name, dbase):
+        pmgr = BasePluginManager.get_instance()
+        pmgr.register_option(MultiSelectListBoxOption, GuiScrollMultiSelect)
         self.db = dbase
         MenuReportOptions.__init__(self, name, dbase)
 
@@ -101,13 +115,19 @@ class ReportOptions(MenuReportOptions):
         menu.add_option(_("General"), "name", file_name)
 
         # -------------------
+        # EVENTS options tab
+        # -------------------
+        multi_events = MultiSelectListBoxOption(_("Select Events"), [])
+        menu.add_option(_("Events"), "multi_events", multi_events)
+
+        # -------------------
         # ADVANCED options tab
         # -------------------
         self.enable_start = BooleanOption(
             _("Enable custom start position"), False)
         self.enable_start.set_help(
             _("Enabling will force the map open at your custom "
-            "start position and zoom."))
+              "start position and zoom."))
         menu.add_option(_("Advanced"), "enable_start", self.enable_start)
         self.enable_start.connect('value-changed', self.update_start_options)
 
@@ -132,7 +152,7 @@ class ReportOptions(MenuReportOptions):
         self.enable_limits = BooleanOption(_("Enable map limits"), False)
         self.enable_limits.set_help(
             _("Enabling map limits forces the user to stay in a predefined part"
-            " of the map."))
+              " of the map."))
         menu.add_option(_("Limits"), "enable_limits", self.enable_limits)
         self.enable_limits.connect('value-changed', self.update_limit_options)
 
@@ -287,7 +307,12 @@ class ReportClass(Report):
     def get_events(self, person_h):
         """Get all events of a person."""
         person = self.db.get_person_from_handle(person_h)
-        return person.get_event_ref_list()
+        event_list = []
+        for event_ref in person.get_event_ref_list():
+            event = self.db.get_event_from_handle(event_ref.ref)
+            if event.type.value in self.opt['multi_events']:
+                event_list.append(event_ref)
+        return event_list
 
     def get_place(self, events):
         """Get an event place and add it to the event dict."""
@@ -382,7 +407,7 @@ class ReportClass(Report):
         # render map limit if enabled
         if self.opt["enable_limits"] and self.opt["render_border"]:
             lst.append(" L.rectangle(%s).addTo(GrampsHeatmap);\n" %
-                str(bounds))
+                       str(bounds))
 
         # Add map tiles and attribution
         tiles = "tiles" + str(self.opt["tiles"]) + ".txt"
@@ -478,7 +503,7 @@ class ReportClass(Report):
                 raise ValueError
 
             args["lat1"] = lat1
-            args["lon1"] =  lon1
+            args["lon1"] = lon1
             args["lat2"] = lat2
             args["lon2"] = lon2
 
@@ -488,5 +513,90 @@ class ReportClass(Report):
                 "Please check the values for limits latitude and longitude."
                 "\nLatitude: -90 to 90\nLongitude: -180 to 180")
             ErrorDialog(_("INFO"), txt, parent=self.user.uistate.window)
-            return False, None # Not convertabe to floats or outside range
+            return False, None  # Not convertabe to floats or outside range
         return True, args  # convertable to floats and within range
+
+
+# ------------------------------------------------------------------------
+#
+# MultiSelectListBoxOption Class
+#
+# ------------------------------------------------------------------------
+class MultiSelectListBoxOption(PlugOption):
+    """Extending gramps.gen.plug.menu._option.Option"""
+
+    def __init__(self, label, value):
+        PlugOption.__init__(self, label, value)
+
+
+# ------------------------------------------------------------------------
+#
+# GuiScrollMultiSelect Class
+#
+# ------------------------------------------------------------------------
+class GuiScrollMultiSelect(Gtk.ScrolledWindow):
+    """Extending Gtk.ScrolledWindow."""
+
+    def __init__(self, option, dbstate, uistate, track, override=False):
+        Gtk.ScrolledWindow.__init__(self)
+        self.__option = option
+        self.list_box = MultiSelectListBox()
+        self.list_box.connect('selected-rows-changed', self.value_changed)
+        self.add(self.list_box)
+        self.set_min_content_height(300)
+        self.load_last_rows()
+
+    def load_last_rows(self):
+        for event_type in self.__option.get_value():
+            for row in self.list_box.rows:
+                if int(row.event_type) == int(event_type):
+                    self.list_box.select_row(row)
+
+    def value_changed(self, obj):
+        values = []
+        for row in self.list_box.get_selected_rows():
+            values.append(row.event_type)
+        self.__option.set_value(values)
+
+# ------------------------------------------------------------------------
+#
+# MultiSelectListBox Class
+#
+# ------------------------------------------------------------------------
+
+
+class MultiSelectListBox(Gtk.ListBox):
+    """Extending Gtk.ListBox."""
+
+    def __init__(self):
+        Gtk.ListBox.__init__(self)
+        self.set_selection_mode(Gtk.SelectionMode(3))
+        self.set_activate_on_single_click(False)
+        self.__row_counter = 0
+        self.rows = []
+        for event_type in EventType._DATAMAP:
+            self.add_row(event_type[0])
+
+    def add_row(self, event_type):
+        row = EventTypeRow(event_type)
+        self.insert(row, self.__row_counter)
+        self.rows.append(row)
+        self.__row_counter += 1
+
+
+# ------------------------------------------------------------------------
+#
+# EventTypeRow Class
+#
+# ------------------------------------------------------------------------
+class EventTypeRow(Gtk.ListBoxRow):
+    """Extending Gtk.ListBoxRow."""
+
+    def __init__(self, event_type):
+        Gtk.ListBoxRow.__init__(self)
+        self.label = ""
+        for entry in EventType._DATAMAP:
+            if entry[0] == event_type:
+                self.label = entry[1]
+        self.event_type = event_type
+        self.add(Gtk.Label(self.label))
