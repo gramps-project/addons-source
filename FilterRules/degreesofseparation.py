@@ -84,8 +84,9 @@ class DegreesOfSeparation(Rule):
         """Get the handle of the starting person."""
         pid = self.list[0]
         person = self.db.get_person_from_gramps_id(pid)
-        root_handle = person.get_handle()
-        self.persons.add(root_handle)
+        if person:
+            root_handle = person.get_handle()
+            self.persons.add(root_handle)
 
     def get_parents(self, person):
         """Get all parents of a person."""
