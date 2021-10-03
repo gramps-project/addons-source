@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-07 09:14-0500\n"
+"POT-Creation-Date: 2021-10-03 10:05-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -107,7 +107,7 @@ msgid "Event filter name:"
 msgstr ""
 
 #: FilterRules/familieswitheventfiltermatch.py:46 FilterRules/hasrolerule.py:70
-#: FilterRules/hasrolerule.py:94
+#: FilterRules/hasrolerule.py:94 FilterRules/peopleeventscount.py:53
 msgid "Event filters"
 msgstr ""
 
@@ -247,4 +247,28 @@ msgstr ""
 
 #: FilterRules/multipleparents.py:44
 msgid "Family filters"
+msgstr ""
+
+#: FilterRules/peopleeventscount.gpr.py:24 FilterRules/peopleeventscount.py:50
+msgid "People with <count> of <event>"
+msgstr ""
+
+#: FilterRules/peopleeventscount.gpr.py:25 FilterRules/peopleeventscount.py:52
+msgid "Matches persons which have events of given type and number."
+msgstr ""
+
+#: FilterRules/peopleeventscount.py:46
+msgid "Personal event:"
+msgstr ""
+
+#: FilterRules/peopleeventscount.py:47
+msgid "Number of instances:"
+msgstr ""
+
+#: FilterRules/peopleeventscount.py:48
+msgid "Number must be:"
+msgstr ""
+
+#: FilterRules/peopleeventscount.py:49
+msgid "Primary Role:"
 msgstr ""

@@ -24,7 +24,7 @@ register(
     id='associationsofpersonmatch',
     name=_("Match associations of <person filter>"),
     description=_("Match associations of <person filter>"),
-    version = '1.0.7',
+    version = '1.0.8',
     authors=["Matthias Kemmer"],
     authors_email=["matt.familienforschung@gmail.com"],
     gramps_target_version='5.1',
