@@ -50,6 +50,7 @@ from gramps.gen.plug.menu import Option as PlugOption
 from gramps.gen.filters import GenericFilterFactory, rules, CustomFilters
 from gramps.gen.plug.docgen import ParagraphStyle
 from gramps.gen.plug import BasePluginManager
+from gramps.gen.utils.place import conv_lat_lon
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
     _trans = glocale.get_addon_translator(__file__)
@@ -325,8 +326,9 @@ class ReportClass(Report):
 
     def check_place(self, place):
         """Check the place for latitude and longitude."""
-        lat = place.get_latitude()
-        lon = place.get_longitude()
+        coords = conv_lat_lon(place.get_latitude(), place.get_longitude(), "D.D8")
+        lat = coords[0]
+        lon = coords[1]
         name = place.get_gramps_id()
         # self.place_dict example:
         #     {place_id(str): [lat(str), lon(str), num(int)]
