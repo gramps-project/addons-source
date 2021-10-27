@@ -225,10 +225,12 @@ class ReportOptions(MenuReportOptions):
     def get_person_filters(menu):
         """Get menu option filter list of custon and generic filters."""
         custom = CustomFilters.get_filters("Person")
-        menu.filter_list = [(0, _("Ancestors of <selected person>")),
-                            (1, _("Descendants of <selected person>"))]
+        menu.filter_list = [(0, _("Entire Database")),
+                            (1, _("Ancestors of <selected person>")),
+                            (2, _("Descendants of <selected person>")),
+                            (3, _("Single Person"))]
 
-        for item in enumerate([x.get_name() for x in custom], start=2):
+        for item in enumerate([x.get_name() for x in custom], start=4):
             menu.filter_list.append(item)
 
     @staticmethod
@@ -296,9 +298,13 @@ class ReportClass(Report):
         fltr = GenericFilterFactory("Person")()
         custom = enumerate(CustomFilters.get_filters("Person"), start=2)
         if index == 0:
-            fltr.add_rule(rules.person.IsAncestorOf([pers_id, True]))
+            fltr.add_rule(rules.person.Everyone([pers_id, True]))
         elif index == 1:
+            fltr.add_rule(rules.person.IsAncestorOf([pers_id, True]))
+        elif index == 2:
             fltr.add_rule(rules.person.IsDescendantOf([pers_id, True]))
+        elif index == 3:
+            fltr.add_rule(rules.person.HasIdOf([pers_id, True]))
         else:
             for num, item in list(custom):
                 if num == index:
