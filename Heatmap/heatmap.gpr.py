@@ -19,18 +19,18 @@
 #
 """Create a heatmap web report."""
 
-register(REPORT,
-          id = 'Heatmap',
-          name = _("Heatmap"),
-          description = _("Create a heatmap web report."),
-          version = '1.0.5',
-          gramps_target_version = "5.1",
-          status = STABLE,
-          fname = "heatmap.py",
-          authors = ["Matthias Kemmer"],
-          authors_email = ["matt.familienforschung@gmail.com"],
-          category = CATEGORY_WEB,
-          reportclass = 'ReportClass',
-          optionclass = 'ReportOptions',
-          report_modes = [REPORT_MODE_CLI, REPORT_MODE_GUI],
-          )
+register(REPORT,  # type: ignore
+    id='Heatmap',
+    name=_("Heatmap"),  # type: ignore
+    description=_("Create a heatmap web report."),  # type: ignore
+    version='1.1.0',
+    gramps_target_version="5.1",
+    status=STABLE,  # type: ignore
+    fname="heatmap.py",
+    authors=["Matthias Kemmer"],
+    authors_email=["matt.familienforschung@gmail.com"],
+    category=CATEGORY_WEB,  # type: ignore
+    reportclass='ReportClass',
+    optionclass='ReportOptions',
+    report_modes=[REPORT_MODE_CLI, REPORT_MODE_GUI],  # type: ignore
+    )
