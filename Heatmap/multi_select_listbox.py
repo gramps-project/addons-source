@@ -57,7 +57,7 @@ class GuiScrollMultiSelect(Gtk.ScrolledWindow):
     def __init__(self, option, dbstate, uistate, track, override=False):
         Gtk.ScrolledWindow.__init__(self)
         self.__option = option
-        self.list_box = MultiSelectListBox()
+        self.list_box = MultiSelectListBox(dbstate)
         self.list_box.connect('selected-rows-changed', self.value_changed)
         self.add(self.list_box)
         self.set_min_content_height(300)
@@ -86,20 +86,30 @@ class GuiScrollMultiSelect(Gtk.ScrolledWindow):
 class MultiSelectListBox(Gtk.ListBox):
     """Extending Gtk.ListBox."""
 
-    def __init__(self):
+    def __init__(self, dbstate):
         Gtk.ListBox.__init__(self)
         self.set_selection_mode(Gtk.SelectionMode(3))
         self.set_activate_on_single_click(False)
-        self.__row_counter = 0
         self.rows = []
-        for event_type in EventType._DATAMAP:
-            self.add_row(event_type[0])
 
-    def add_row(self, event_type):
-        row = EventTypeRow(event_type)
-        self.insert(row, self.__row_counter)
+        # Get all event type nemes
+        event_types = []
+        for event_type_tuple in EventType._DATAMAP:
+            event_type_name = event_type_tuple[1]
+            event_types.append(event_type_name)
+        for event_type in dbstate.db.get_event_types():
+            event_types.append(event_type)
+        event_types = sorted(event_types)
+
+        # Create rows
+        for index, name in enumerate(event_types):
+            self.add_row(index, name)
+
+
+    def add_row(self, index, name):
+        row = EventTypeRow(index, name)
+        self.insert(row, index)
         self.rows.append(row)
-        self.__row_counter += 1
 
 
 # ------------------------------------------------------------------------
@@ -110,11 +120,8 @@ class MultiSelectListBox(Gtk.ListBox):
 class EventTypeRow(Gtk.ListBoxRow):
     """Extending Gtk.ListBoxRow."""
 
-    def __init__(self, event_type):
+    def __init__(self, index, name):
         Gtk.ListBoxRow.__init__(self)
-        self.label = ""
-        for entry in EventType._DATAMAP:
-            if entry[0] == event_type:
-                self.label = entry[1]
-        self.event_type = event_type
+        self.label = name
+        self.event_type = index
         self.add(Gtk.Label(self.label))

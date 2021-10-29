@@ -25,6 +25,8 @@
 # Python modules
 #
 # ------------------------------------------------------------------------
+from utils import PersonFilterEnum, MapTiles
+from multi_select_listbox import MultiSelectListBoxOption, GuiScrollMultiSelect
 import os
 from string import Template
 
@@ -33,6 +35,7 @@ from string import Template
 # GRAMPS modules
 #
 # ------------------------------------------------------------------------
+from gramps.gen.lib import EventType  # type: ignore
 from gramps.gen.plug.report import Report, MenuReportOptions   # type: ignore
 from gramps.gen.plug.menu import (  # type: ignore
     EnumeratedListOption, PersonOption,
@@ -55,14 +58,13 @@ _ = _trans.gettext
 # Heatmap modules
 #
 # ------------------------------------------------------------------------
-from multi_select_listbox import MultiSelectListBoxOption, GuiScrollMultiSelect
-from utils import PersonFilterEnum, MapTiles
 
 # ------------------------------------------------------------------------
 #
 # Report Options
 #
 # ------------------------------------------------------------------------
+
 class ReportOptions(MenuReportOptions):
     """Heatmap report options."""
 
@@ -242,13 +244,32 @@ class ReportClass(Report):
         return fltr
 
     def get_events(self, person_h):
-        """Get all events of a person."""
+        """Get all relevant events of a person."""
+        # References to selected rows
+        event_types = []
+        selected_names = []
+        for event_type_tuple in EventType._DATAMAP:
+            event_type_name = event_type_tuple[1]
+            event_types.append(event_type_name)
+        for event_type in self.db.get_event_types():
+            event_types.append(event_type)
+        event_types = enumerate(sorted(event_types))
+        for item in event_types:
+            if item[0] in self.opt['multi_events']:
+                selected_names.append(item[1])
+
+        # Use 'event type names' for comparison
         person = self.db.get_person_from_handle(person_h)
         event_list = []
         for event_ref in person.get_event_ref_list():
             event = self.db.get_event_from_handle(event_ref.ref)
-            if event.type.value in self.opt['multi_events']:
-                event_list.append(event_ref)
+            if event.type.value != EventType.CUSTOM:
+                for item in EventType._DATAMAP:
+                    if item[0] == event.type.value and item[1] in selected_names:
+                        event_list.append(event_ref)
+            if event.type.value == EventType.CUSTOM:
+                if event.type.serialize()[1] in selected_names:
+                    event_list.append(event_ref)
         return event_list
 
     def get_place(self, events):
