@@ -34,16 +34,10 @@
         const START_LAT = $start_lat;
         const START_LON = $start_lon;
         const START_ZOOM = $start_zoom;
-
-        const MAP_ZOOM_MIN = $map_zoom_min;
-        const MAP_ZOOM_MAX = $map_zoom_max;
-        const MAP_BOUNDS = $map_bounds;
-
         const MAP_TILES_URL = $map_tiles_url;
         const MAP_TILES_ATTRIBUTION = $map_tiles_attribution;
-
-        const HEATMAP_DATA = $heatmap_data;
         const HEATMAP_RADIUS = $heatmap_radius;
+        const HEATMAP_DATA = $heatmap_data;
 
         var GrampsHeatmap = L.map(
             'GrampsHeatmap',
@@ -51,9 +45,6 @@
                 center: [START_LAT, START_LON],
                 crs: L.CRS.EPSG3857,
                 zoom: START_ZOOM,
-                minZoom: MAP_ZOOM_MIN,
-                maxZoom: MAP_ZOOM_MAX,
-                maxBounds: MAP_BOUNDS,
                 zoomControl: true,
                 preferCanvas: false,
             }

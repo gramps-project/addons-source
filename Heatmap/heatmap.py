@@ -25,7 +25,6 @@
 # Python modules
 #
 # ------------------------------------------------------------------------
-from multi_select_listbox import MultiSelectListBoxOption, GuiScrollMultiSelect
 import os
 from string import Template
 
@@ -53,62 +52,17 @@ _ = _trans.gettext
 
 # ------------------------------------------------------------------------
 #
-# MapTiles Class
+# Heatmap modules
 #
 # ------------------------------------------------------------------------
-class MapTiles:
-    OPENSTREETMAP = 0
-    STEAMEN_TERRAIN = 1
-    STEAMEN_TERRAIN_BACKGROUND = 2
-    STEAMEN_TONER = 3
-    STEAMEN_WATERCOLOR = 4
-    CARTODB_POSITRON = 5
-    CARTODB_DARKMATTER = 6
-
-    _DATAMAP = [
-        (OPENSTREETMAP, _("OpenStreetMap"),
-         "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
-         "\u0026copy <a href=www.openstreetmap.org/copyright>OpenStreetMap</a> contributors"),
-        (STEAMEN_TERRAIN, _("Stamen Terrain"),
-         "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
-         "Map tiles by \u003ca href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e."),
-         (STEAMEN_TERRAIN_BACKGROUND, _("Stamen Terrain (Background only)"),
-         "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain-background/{z}/{x}/{y}.jpg",
-         "Map tiles by \u003ca href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e."),
-        (STEAMEN_TONER, _("Stamen Toner"),
-         "https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png",
-         "Map tiles by \u003ca href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e."),
-        (STEAMEN_WATERCOLOR, _("Stamen Watercolor"),
-         "https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg",
-         "Map tiles by \u003ca href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e."),
-        (CARTODB_POSITRON, _("CartoDB Positron"),
-         "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
-         "\u0026copy; \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e"),
-        (CARTODB_DARKMATTER, _("CartoDB DarkMatter"),
-         "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png",
-         "\u0026copy; \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e")
-    ]
-
-# ------------------------------------------------------------------------
-#
-# PersonFilterEnum Class
-#
-# ------------------------------------------------------------------------
-
-
-class PersonFilterEnum:
-    ALL = 0
-    ANCESTORS = 1
-    DESCENDANTS = 2
-    SINGLE = 3
+from multi_select_listbox import MultiSelectListBoxOption, GuiScrollMultiSelect
+from utils import PersonFilterEnum, MapTiles
 
 # ------------------------------------------------------------------------
 #
 # Report Options
 #
 # ------------------------------------------------------------------------
-
-
 class ReportOptions(MenuReportOptions):
     """Heatmap report options."""
 
@@ -185,69 +139,6 @@ class ReportOptions(MenuReportOptions):
         self.start_zoom.set_help(
             _("Set the value for the starting zoom\nDefault: 5"))
         menu.add_option(_("Advanced"), "start_zoom", self.start_zoom)
-
-        # -------------------
-        # LIMITS options tab
-        # -------------------
-        self.enable_limits = BooleanOption(_("Enable map limits"), False)
-        self.enable_limits.set_help(
-            _("Enabling map limits forces the user to stay in a predefined part"
-              " of the map."))
-        menu.add_option(_("Limits"), "enable_limits", self.enable_limits)
-        self.enable_limits.connect('value-changed', self.update_limit_options)
-
-        self.min_zoom = NumberOption(_("Min. zoom"), 1, 1, 18)
-        self.min_zoom.set_help(_("Set minimal zoom value\nDefault: 1"))
-        menu.add_option(_("Limits"), "min_zoom", self.min_zoom)
-
-        self.max_zoom = NumberOption(_("Max. zoom"), 18, 1, 18)
-        self.max_zoom.set_help(_("Set maximum zoom value.\nDefault: 18"))
-        menu.add_option(_("Limits"), "max_zoom", self.max_zoom)
-
-        self.lat1 = StringOption(_("Upper left corner latitude"), "")
-        self.lat1.set_help(
-            _("Set latitude for upper left corner map limit."))
-        menu.add_option(_("Limits"), "lat1", self.lat1)
-
-        self.lon1 = StringOption(_("Upper left corner longitude"), "")
-        self.lon1.set_help(
-            _("Set longitude for upper left corner map limit."))
-        menu.add_option(_("Limits"), "lon1", self.lon1)
-
-        self.lat2 = StringOption(_("Lower right corner latitude"), "")
-        self.lat2.set_help(
-            _("Set latitude for lower right corner map limit."))
-        menu.add_option(_("Limits"), "lat2", self.lat2)
-
-        self.lon2 = StringOption(_("Lower right corner longitude"), "")
-        self.lon2.set_help(
-            _("Set longitude for lower right corner map limit."))
-        menu.add_option(_("Limits"), "lon2", self.lon2)
-
-        self.render_border = BooleanOption(
-            _("Render custom map limit border"), False)
-        self.render_border.set_help(
-            _("Enabling will render the map limit border"))
-        menu.add_option(_("Limits"), "render_border", self.render_border)
-
-    def update_limit_options(self):
-        """Update menu options for limit option tab."""
-        self.min_zoom.set_available(False)
-        self.max_zoom.set_available(False)
-        self.lat1.set_available(False)
-        self.lon1.set_available(False)
-        self.lat2.set_available(False)
-        self.lon2.set_available(False)
-        self.render_border.set_available(False)
-        value = self.enable_limits.get_value()
-        if value:
-            self.min_zoom.set_available(True)
-            self.max_zoom.set_available(True)
-            self.lat1.set_available(True)
-            self.lon1.set_available(True)
-            self.lat2.set_available(True)
-            self.lon2.set_available(True)
-            self.render_border.set_available(True)
 
     def update_start_options(self):
         """Update menu options for start option tab."""
@@ -417,25 +308,6 @@ class ReportClass(Report):
                 ErrorDialog(_("INFO"), txt, parent=self.user.uistate.window)
                 return  # Stop if lat/lng aren't convertabe to floats
 
-        # Check zoom and limit values
-        limit_map = self.opt["enable_limits"]
-        start_zoom = 5
-        map_zoom_min = 1
-        map_zoom_max = 18
-        map_bounds = [[-90, -180], [90, 180]]
-
-        if limit_map:
-            valid_limits, limit_args = self.check_limit_values()
-            if not valid_limits:
-                return  # Stop if limit values are invalid
-            if limit_args:
-                start_zoom = limit_args["start_zoom"]
-                map_zoom_min = limit_args["min_zoom"]
-                map_zoom_max = limit_args["max_zoom"]
-                map_bounds = [
-                    [limit_args["lat1"], limit_args["lon1"]],
-                    [limit_args["lat2"], limit_args["lon2"]]]
-
         # Load HTML template file
         source_code = ""
         res_path = os.path.dirname(__file__)
@@ -473,9 +345,6 @@ class ReportClass(Report):
             start_lat=start_lat,
             start_lon=start_lon,
             start_zoom=start_zoom,
-            map_zoom_min=map_zoom_min,
-            map_zoom_max=map_zoom_max,
-            map_bounds=map_bounds,
             map_tiles_url=map_tiles_url,
             map_tiles_attribution=map_tiles_attribution,
             heatmap_data=heatmap_data,
@@ -485,76 +354,3 @@ class ReportClass(Report):
         # Save the generated heatmap report HTML file
         with open(self.filename, "w", encoding="utf-8") as file:
             file.write(source_code)
-
-    def check_limit_values(self):
-        """Check if limit values are valid for report generation."""
-        args = {
-            "start_zoom": None,
-            "min_zoom": None,
-            "max_zoom": None,
-            "lat1": None,
-            "lon1": None,
-            "lat2": None,
-            "lon2": None,
-        }
-        # Make sure user entered zoom levels do not exceed min/max values
-        # Inconclusive zoom raises a msg, but doesn't stop report generation
-        start_zoom = self.opt["start_zoom"]
-        min_zoom = self.opt["min_zoom"]
-        max_zoom = self.opt["max_zoom"]
-        zoom_error = False
-        if min_zoom > max_zoom:
-            args["min_zoom"] = max_zoom
-            zoom_error = True
-        if max_zoom < min_zoom:
-            args["max_zoom"] = min_zoom
-            zoom_error = True
-        if start_zoom < min_zoom:
-            args["start_zoom"] = min_zoom
-            zoom_error = True
-        if start_zoom > max_zoom:
-            args["start_zoom"] = max_zoom
-            zoom_error = True
-        if zoom_error:
-            txt = _(
-                "Your zoom settings were inconclusive and therefore "
-                "changed for this report generation.")
-            ErrorDialog(_("INFO"), txt, parent=self.user.uistate.window)
-
-        # Set empty dict values
-        if not args["min_zoom"]:
-            args["min_zoom"] = min_zoom
-        if not args["max_zoom"]:
-            args["max_zoom"] = max_zoom
-        if not args["start_zoom"]:
-            args["start_zoom"] = start_zoom
-
-        # Check if limt lat, lng are convertable to floats and within range
-        try:
-            lat1 = float(self.opt["lat1"])
-            lon1 = float(self.opt["lon1"])
-            lat2 = float(self.opt["lat2"])
-            lon2 = float(self.opt["lon2"])
-
-            if lat1 < -90 or lat1 > 90:
-                raise ValueError
-            if lat2 < -90 or lat2 > 90:
-                raise ValueError
-            if lon1 < -180 or lon1 > 180:
-                raise ValueError
-            if lon2 < -180 or lon2 > 180:
-                raise ValueError
-
-            args["lat1"] = lat1  # type: ignore
-            args["lon1"] = lon1  # type: ignore
-            args["lat2"] = lat2  # type: ignore
-            args["lon2"] = lon2  # type: ignore
-
-        except ValueError:
-            txt = _(
-                "Report generation failed.\n"
-                "Please check the values for limits latitude and longitude."
-                "\nLatitude: -90 to 90\nLongitude: -180 to 180")
-            ErrorDialog(_("INFO"), txt, parent=self.user.uistate.window)
-            return False, None  # Not convertabe to floats or outside range
-        return True, args  # Convertable to floats and within range
