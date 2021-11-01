@@ -85,3 +85,20 @@ class PersonFilterEnum:
     ANCESTORS = 1
     DESCENDANTS = 2
     SINGLE = 3
+
+
+# ------------------------------------------------------------------------
+#
+# HeatmapPlaces Class
+#
+# ------------------------------------------------------------------------
+class HeatmapPlace:
+    """CLass storing heatmap place data."""
+    def __init__(self, name, latitude, longitude, count):
+        self.name = name  # gramps_id
+        self.lat = latitude
+        self.lon = longitude
+        self.count = count
+
+    def to_list(self):
+        return [self.lat, self.lon, self.count]

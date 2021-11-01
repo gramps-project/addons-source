@@ -17,7 +17,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
-"""Create a heatmap web report."""
+"""Heatmap web report."""
 
 
 # ------------------------------------------------------------------------
@@ -25,8 +25,8 @@
 # Python modules
 #
 # ------------------------------------------------------------------------
-from utils import PersonFilterEnum, MapTiles
 from multi_select_listbox import MultiSelectListBoxOption, GuiScrollMultiSelect
+from utils import PersonFilterEnum, MapTiles, HeatmapPlace
 import os
 from string import Template
 
@@ -55,18 +55,11 @@ _ = _trans.gettext
 
 # ------------------------------------------------------------------------
 #
-# Heatmap modules
+# Heatmap Options Class
 #
 # ------------------------------------------------------------------------
-
-# ------------------------------------------------------------------------
-#
-# Report Options
-#
-# ------------------------------------------------------------------------
-
 class ReportOptions(MenuReportOptions):
-    """Heatmap report options."""
+    """Heatmap options class."""
 
     def __init__(self, name, dbase):
         pmgr = BasePluginManager.get_instance()
@@ -113,8 +106,8 @@ class ReportOptions(MenuReportOptions):
         # -------------------
         # EVENTS options tab
         # -------------------
-        multi_events = MultiSelectListBoxOption(_("Select Events"), [])
-        menu.add_option(_("Events"), "multi_events", multi_events)
+        selected_rows = MultiSelectListBoxOption(_("Select Events"), [])
+        menu.add_option(_("Events"), "selected_rows", selected_rows)
 
         # -------------------
         # ADVANCED options tab
@@ -127,12 +120,12 @@ class ReportOptions(MenuReportOptions):
         menu.add_option(_("Advanced"), "enable_start", self.enable_start)
         self.enable_start.connect('value-changed', self.update_start_options)
 
-        self.start_lat = StringOption(_("Start latitude"), "50.0")
+        self.start_lat = NumberOption(_("Start latitude"), 50, -90, 90)
         self.start_lat.set_help(
             _("Set custom start position latitude\nDefault: 50.0"))
         menu.add_option(_("Advanced"), "start_lat", self.start_lat)
 
-        self.start_lon = StringOption(_("Start longitude"), "10.0")
+        self.start_lon = NumberOption(_("Start longitude"), 10, -180, 180)
         self.start_lon.set_help(
             _("Set custom start position longitude\nDefault: 10.0"))
         menu.add_option(_("Advanced"), "start_lon", self.start_lon)
@@ -147,15 +140,14 @@ class ReportOptions(MenuReportOptions):
         self.start_zoom.set_available(False)
         self.start_lat.set_available(False)
         self.start_lon.set_available(False)
-        value = self.enable_start.get_value()
-        if value:
+        if self.enable_start.get_value():
             self.start_zoom.set_available(True)
             self.start_lat.set_available(True)
             self.start_lon.set_available(True)
 
     @staticmethod
     def get_person_filters(menu):
-        """Get menu option filter list of custon and generic filters."""
+        """Get menu option filter list of generic and custom filters."""
         custom = CustomFilters.get_filters("Person")
         menu.filter_list = [
             (PersonFilterEnum.ALL, _("Entire Database")),
@@ -163,7 +155,7 @@ class ReportOptions(MenuReportOptions):
             (PersonFilterEnum.DESCENDANTS, _("Descendants of <selected person>")),
             (PersonFilterEnum.SINGLE, _("Single Person"))]
 
-        for item in enumerate([x.get_name() for x in custom], start=4):
+        for item in enumerate([filtr.get_name() for filtr in custom], start=4):
             menu.filter_list.append(item)
 
     @staticmethod
@@ -179,6 +171,7 @@ class ReportOptions(MenuReportOptions):
 #
 # ------------------------------------------------------------------------
 class ReportClass(Report):
+    """Heatmap report class."""
 
     def __init__(self, database, options, user):
         Report.__init__(self, database, options, user)
@@ -186,7 +179,7 @@ class ReportClass(Report):
         self.options = options
         self.opt = options.options_dict
         self.db = database
-        self.place_dict = dict()
+        self.places = list()
         self.filename = False
         if not self.check_file_path_and_name():
             return  # Stop if incorrect path or filename
@@ -203,30 +196,32 @@ class ReportClass(Report):
         """Check if file path exists and file name is alphanumeric."""
         path = self.opt["path"]
         name = self.opt["name"]
-        txt = _("Invalid filename.")
-        txt2 = _("Path does not exist.")
+        txt = _("Path does not exist.")
+        txt2 = _("Invalid filename.")
 
-        if os.path.exists(path):
-            if name.isalnum():
-                self.filename = path + "/" + name + ".html"
-                return True
-            chars = [x for x in name if not x.isalnum()]
-            for char in chars:
-                if char not in ["_", "-", " "]:
-                    ErrorDialog(_("INFO"), txt,
-                                parent=self.user.uistate.window)
-                    return False
-            if name != "" and name[0].isalnum() and name[-1].isalnum():
-                self.filename = path + "/" + name + ".html"
-                return True
+        # Check if path exists
+        if not os.path.exists(path):
             ErrorDialog(_("INFO"), txt, parent=self.user.uistate.window)
             return False
-        ErrorDialog(_("INFO"), txt2, parent=self.user.uistate.window)
-        return False
+
+        # Check if file name is alphanumeric
+        if name.isalnum():
+            self.filename = path + "/" + name + ".html"
+            return True
+
+        # Check if a non-alphanumeric file name is valid
+        chars = [x for x in name if not x.isalnum()]
+        for char in chars:
+            if char not in ["_", "-", " "]:
+                ErrorDialog(_("INFO"), txt2, parent=self.user.uistate.window)
+                return False
+        if name != "" and name[0].isalnum() and name[-1].isalnum():
+            self.filename = path + "/" + name + ".html"
+            return True
 
     @staticmethod
     def get_filter(index, pers_id):
-        """Create a filter."""
+        """Create and return the filter object selected in menu options."""
         fltr = GenericFilterFactory("Person")()
         custom = enumerate(CustomFilters.get_filters("Person"), start=2)
         if index == PersonFilterEnum.ALL:
@@ -238,24 +233,17 @@ class ReportClass(Report):
         elif index == PersonFilterEnum.SINGLE:
             fltr.add_rule(rules.person.HasIdOf([pers_id, True]))
         else:
-            for num, item in list(custom):
-                if num == index:
-                    fltr = item
+            fltr = [item[1] for item in list(custom) if item[0] == index][0]
         return fltr
 
     def get_events(self, person_h):
         """Get all relevant events of a person."""
-        # References to selected rows
-        event_types = []
         selected_names = []
-        for event_type_tuple in EventType._DATAMAP:
-            event_type_name = event_type_tuple[1]
-            event_types.append(event_type_name)
-        for event_type in self.db.get_event_types():
-            event_types.append(event_type)
-        event_types = enumerate(sorted(event_types))
-        for item in event_types:
-            if item[0] in self.opt['multi_events']:
+        default_types = [name[1] for name in EventType._DATAMAP]
+        custom_types = [name for name in self.db.get_event_types()]
+        event_types = sorted([*default_types, *custom_types])
+        for item in enumerate(event_types):
+            if item[0] in self.opt['selected_rows']:
                 selected_names.append(item[1])
 
         # Use 'event type names' for comparison
@@ -273,7 +261,7 @@ class ReportClass(Report):
         return event_list
 
     def get_place(self, events):
-        """Get an event place and add it to the event dict."""
+        """Get an event places and call check_place."""
         for event_ref in events:
             event = self.db.get_event_from_handle(event_ref.ref)
             handle = event.get_place_handle()
@@ -283,21 +271,17 @@ class ReportClass(Report):
 
     def check_place(self, place):
         """Check the place for latitude and longitude."""
-        coords = conv_lat_lon(place.get_latitude(),
-                              place.get_longitude(), "D.D8")
-        lat = coords[0]
-        lon = coords[1]
+        lat, lon = conv_lat_lon(
+            place.get_latitude(), place.get_longitude(), "D.D8")
         name = place.get_gramps_id()
-        # Example for self.place_dict:
-        #     {place_id (str): [lat: str, lon: str, num: int]}
+
         if lat and lon:
-            if name in self.place_dict.keys():
-                self.place_dict[name][2] += 1
-            else:
-                self.place_dict[name] = [lat, lon, 1]
+            for place in self.places:
+                if name == place.name:
+                    place.count += 1
+            self.places.append(HeatmapPlace(name, lat, lon, 1))
         else:
-            ref_list = place.get_placeref_list()
-            for place_ref in ref_list:
+            for place_ref in place.get_placeref_list():
                 place_new = self.db.get_place_from_handle(place_ref.ref)
                 self.check_place(place_new)
 
@@ -307,27 +291,14 @@ class ReportClass(Report):
             return  # Stop if incorrect path or filename
 
         # Define start position values (=Europe)
-        # Overwrite later with custom start values if enabled
+        # If enabled, overwrite with custom start values
         start_lat = 50.0
         start_lon = 10.0
         start_zoom = 5
-
-        # Check if lat, lng are convertable to floats and within range
         if self.opt["enable_start"]:
-            try:
-                start_lat = float(self.opt["start_lat"])
-                start_lon = float(self.opt["start_lon"])
-                if start_lat < -90 or start_lat > 90:
-                    raise ValueError
-                if start_lon < -180 or start_lon > 180:
-                    raise ValueError
-            except ValueError:
-                txt = _(
-                    "Report generation failed.\n"
-                    "Please check the values for start latitude and longitude."
-                    "\nLatitude: -90 to 90\nLongitude: -180 to 180")
-                ErrorDialog(_("INFO"), txt, parent=self.user.uistate.window)
-                return  # Stop if lat/lng aren't convertabe to floats
+            start_lat = self.opt["start_lat"]
+            start_lon = self.opt["start_lon"]
+            start_zoom = self.opt["start_zoom"]
 
         # Load HTML template file
         source_code = ""
@@ -346,18 +317,8 @@ class ReportClass(Report):
                 map_tiles_url = "'%s'" % entry[2]
                 map_tiles_attribution = "'%s'" % entry[3]
 
-        # Collect heatmap data
-        heatmap_data = list()
-        for key, value in self.place_dict.items():
-            try:
-                lat = float(value[0])
-                lon = float(value[1])
-                val = float(value[2])
-                heatmap_data.append([lat, lon, val])
-            except ValueError:
-                # if place coords can't be converted to float
-                print(_("[INFO]: Place '%s' was ignored because of"
-                        " unsupported coordinate values." % key))
+        # Collect heatmap coordinates
+        heatmap_data = [place.to_list() for place in self.places]
 
         # Substitute the HTML template source code with heatmap report data
         radius = self.opt["radius"]

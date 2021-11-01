@@ -19,6 +19,7 @@
 #
 """Collection of classes creating a multi-select listbox for menu options."""
 
+
 # -------------------------------------------------------------------------
 #
 # GTK Modules
@@ -33,6 +34,7 @@ from gi.repository import Gtk  # type: ignore
 # ------------------------------------------------------------------------
 from gramps.gen.lib import EventType  # type: ignore
 from gramps.gen.plug.menu import Option as PlugOption  # type: ignore
+
 
 # ------------------------------------------------------------------------
 #
@@ -66,13 +68,11 @@ class GuiScrollMultiSelect(Gtk.ScrolledWindow):
     def load_last_rows(self):
         for event_type in self.__option.get_value():
             for row in self.list_box.rows:
-                if int(row.event_type) == int(event_type):
+                if int(row.index) == int(event_type):
                     self.list_box.select_row(row)
 
-    def value_changed(self, obj):
-        values = []
-        for row in self.list_box.get_selected_rows():
-            values.append(row.event_type)
+    def value_changed(self, _):
+        values = [row.index for row in self.list_box.get_selected_rows()]
         self.__option.set_value(values)
 
 
@@ -81,8 +81,6 @@ class GuiScrollMultiSelect(Gtk.ScrolledWindow):
 # MultiSelectListBox Class
 #
 # ------------------------------------------------------------------------
-
-
 class MultiSelectListBox(Gtk.ListBox):
     """Extending Gtk.ListBox."""
 
@@ -92,19 +90,14 @@ class MultiSelectListBox(Gtk.ListBox):
         self.set_activate_on_single_click(False)
         self.rows = []
 
-        # Get all event type nemes
-        event_types = []
-        for event_type_tuple in EventType._DATAMAP:
-            event_type_name = event_type_tuple[1]
-            event_types.append(event_type_name)
-        for event_type in dbstate.db.get_event_types():
-            event_types.append(event_type)
-        event_types = sorted(event_types)
+        # Get all event type names
+        default_types = [name[1] for name in EventType._DATAMAP]
+        custom_types = [name for name in dbstate.db.get_event_types()]
+        event_types = sorted([*default_types, *custom_types])
 
         # Create rows
         for index, name in enumerate(event_types):
             self.add_row(index, name)
-
 
     def add_row(self, index, name):
         row = EventTypeRow(index, name)
@@ -123,5 +116,5 @@ class EventTypeRow(Gtk.ListBoxRow):
     def __init__(self, index, name):
         Gtk.ListBoxRow.__init__(self)
         self.label = name
-        self.event_type = index
+        self.index = index
         self.add(Gtk.Label(self.label))

@@ -32,5 +32,5 @@ register(REPORT,  # type: ignore
     category=CATEGORY_WEB,  # type: ignore
     reportclass='ReportClass',
     optionclass='ReportOptions',
-    report_modes=[REPORT_MODE_CLI, REPORT_MODE_GUI],  # type: ignore
+    report_modes=[REPORT_MODE_GUI],  # type: ignore
     )
