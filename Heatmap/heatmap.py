@@ -20,12 +20,7 @@
 """Heatmap web report."""
 
 
-# ------------------------------------------------------------------------
-#
-# Python modules
-#
-# ------------------------------------------------------------------------
-from multi_select_listbox import MultiSelectListBoxOption, GuiScrollMultiSelect
+from multi_select import MultiSelectOption, HeatmapScrolled
 from utils import PersonFilterEnum, MapTiles, HeatmapPlace
 import os
 from string import Template
@@ -36,7 +31,7 @@ from string import Template
 #
 # ------------------------------------------------------------------------
 from gramps.gen.lib import EventType  # type: ignore
-from gramps.gen.plug.report import Report, MenuReportOptions   # type: ignore
+from gramps.gen.plug.report import Report, MenuReportOptions  # type: ignore
 from gramps.gen.plug.menu import (  # type: ignore
     EnumeratedListOption, PersonOption,
     DestinationOption, StringOption, NumberOption, BooleanOption)
@@ -63,9 +58,9 @@ class ReportOptions(MenuReportOptions):
 
     def __init__(self, name, dbase):
         pmgr = BasePluginManager.get_instance()
-        pmgr.register_option(MultiSelectListBoxOption, GuiScrollMultiSelect)
-        self.db = dbase
+        pmgr.register_option(MultiSelectOption, HeatmapScrolled)
         MenuReportOptions.__init__(self, name, dbase)
+        self.db = dbase
 
     def add_menu_options(self, menu):
         """Create menu options."""
@@ -106,7 +101,7 @@ class ReportOptions(MenuReportOptions):
         # -------------------
         # EVENTS options tab
         # -------------------
-        selected_rows = MultiSelectListBoxOption(_("Select Events"), [])
+        selected_rows = MultiSelectOption("", [])
         menu.add_option(_("Events"), "selected_rows", selected_rows)
 
         # -------------------
@@ -242,9 +237,9 @@ class ReportClass(Report):
         default_types = [name[1] for name in EventType._DATAMAP]
         custom_types = [name for name in self.db.get_event_types()]
         event_types = sorted([*default_types, *custom_types])
-        for item in enumerate(event_types):
-            if item[0] in self.opt['selected_rows']:
-                selected_names.append(item[1])
+        for index, name in enumerate(event_types):
+            if str(index) in self.opt['selected_rows']:
+                selected_names.append(name)
 
         # Use 'event type names' for comparison
         person = self.db.get_person_from_handle(person_h)

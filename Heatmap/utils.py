@@ -55,7 +55,7 @@ class MapTiles:
         (STEAMEN_TERRAIN, _("Stamen Terrain"),
          "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
          "Map tiles by \u003ca href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e."),
-         (STEAMEN_TERRAIN_BACKGROUND, _("Stamen Terrain (Background only)"),
+        (STEAMEN_TERRAIN_BACKGROUND, _("Stamen Terrain (Background only)"),
          "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain-background/{z}/{x}/{y}.jpg",
          "Map tiles by \u003ca href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e."),
         (STEAMEN_TONER, _("Stamen Toner"),
@@ -93,7 +93,8 @@ class PersonFilterEnum:
 #
 # ------------------------------------------------------------------------
 class HeatmapPlace:
-    """CLass storing heatmap place data."""
+    """Class storing heatmap place data."""
+
     def __init__(self, name, latitude, longitude, count):
         self.name = name  # gramps_id
         self.lat = latitude
