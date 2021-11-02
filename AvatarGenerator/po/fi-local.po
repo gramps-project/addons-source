@@ -1,0 +1,160 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Avatar Generator Tool\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-06-14 11:49+1000\n"
+"PO-Revision-Date: 2021-11-01 06:03+0200\n"
+"Language-Team: niememat@gmail.com\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: fi_FI\n"
+
+#: AvatarGenerator/AvatarGenerator.gpr.py:23
+msgid "Avatar Generator Tool"
+msgstr "Avatar työkalu"
+
+#: AvatarGenerator/AvatarGenerator.gpr.py:24
+msgid "A tool to add avatar pictures to your family tree"
+msgstr "Työkalu avatar kuvien käsittelyyn sukupuuussa"
+
+#: AvatarGenerator/AvatarGenerator.py:58
+msgid "male"
+msgstr "mies"
+
+#: AvatarGenerator/AvatarGenerator.py:58
+msgid "female"
+msgstr "nainen"
+
+#: AvatarGenerator/AvatarGenerator.py:58
+msgid "unknown"
+msgstr "tuntematon"
+
+#: AvatarGenerator/AvatarGenerator.py:59
+msgid "Option"
+msgstr "Valinnat"
+
+#: AvatarGenerator/AvatarGenerator.py:59
+msgid "single image mode"
+msgstr "yhden kuvan tila"
+
+#: AvatarGenerator/AvatarGenerator.py:65
+msgid "Category"
+msgstr "Kategoria"
+
+#: AvatarGenerator/AvatarGenerator.py:66
+msgid "Choose how many images you'd like to use."
+msgstr "Valitse kuinka monta kuvaa haluat käyttää."
+
+#: AvatarGenerator/AvatarGenerator.py:68 AvatarGenerator/AvatarGenerator.py:75
+#: AvatarGenerator/AvatarGenerator.py:79 AvatarGenerator/AvatarGenerator.py:83
+#: AvatarGenerator/AvatarGenerator.py:87 AvatarGenerator/AvatarGenerator.py:92
+#: AvatarGenerator/AvatarGenerator.py:98 AvatarGenerator/AvatarGenerator.py:137
+msgid "Options"
+msgstr "Valinnat"
+
+#: AvatarGenerator/AvatarGenerator.py:73
+msgid "Unknown"
+msgstr "Tuntematon"
+
+#: AvatarGenerator/AvatarGenerator.py:74
+msgid "Image for people with unknown gender."
+msgstr "Kuva henkilöille, joiden sukupuoli on tuntematon."
+
+#: AvatarGenerator/AvatarGenerator.py:77
+msgid "Male"
+msgstr "Mies"
+
+#: AvatarGenerator/AvatarGenerator.py:78
+msgid "Image for males."
+msgstr "Kuva miehille."
+
+#: AvatarGenerator/AvatarGenerator.py:81
+msgid "Female"
+msgstr "Nainen"
+
+#: AvatarGenerator/AvatarGenerator.py:82
+msgid "Image for females"
+msgstr "Kuva naisille"
+
+#: AvatarGenerator/AvatarGenerator.py:85
+msgid "Person Filter"
+msgstr "Henkilösuodin"
+
+#: AvatarGenerator/AvatarGenerator.py:86
+msgid "Select filter to restrict people"
+msgstr "Valitse suodatin rajoittaaksesi henkilöitä"
+
+#: AvatarGenerator/AvatarGenerator.py:90
+msgid "Center Person"
+msgstr "Keskushenkilö"
+
+#: AvatarGenerator/AvatarGenerator.py:91
+msgid "The center person for the filter"
+msgstr "Suotimen keskushenkilö"
+
+#: AvatarGenerator/AvatarGenerator.py:95
+msgid "Remove images from people"
+msgstr "Poista kuvia henkilöiltä"
+
+#: AvatarGenerator/AvatarGenerator.py:96
+msgid "Remove selected image(s)."
+msgstr "Poista valitut kuvat."
+
+#: AvatarGenerator/AvatarGenerator.py:134
+#: AvatarGenerator/AvatarGenerator.py:183
+#: AvatarGenerator/AvatarGenerator.py:257
+msgid "Avatar Generator"
+msgstr "Avatar lisääjä"
+
+#: AvatarGenerator/AvatarGenerator.py:186
+msgid "Remove avatar images..."
+msgstr "Poista avatar kuvat..."
+
+#: AvatarGenerator/AvatarGenerator.py:211
+#: AvatarGenerator/AvatarGenerator.py:219
+#: AvatarGenerator/AvatarGenerator.py:316
+#: AvatarGenerator/AvatarGenerator.py:320
+msgid "INFO"
+msgstr "INFO"
+
+#: AvatarGenerator/AvatarGenerator.py:211
+msgid "No media was removed."
+msgstr "Mediaa ei poistettu."
+
+#: AvatarGenerator/AvatarGenerator.py:213
+msgid "{} media references were removed from {} persons."
+msgstr "{} mediaviittausta poistettiin {} henkilöltä."
+
+#: AvatarGenerator/AvatarGenerator.py:216
+msgid ""
+"\n"
+"{} HandleError occured, but were ignored."
+msgstr ""
+"\n"
+"{} Tajpahtui käsittelyvirhe, mutta ne jätettiin huomiotta."
+
+#: AvatarGenerator/AvatarGenerator.py:263
+#: AvatarGenerator/AvatarGenerator.py:280
+msgid "Add avatar images..."
+msgstr "Lisää avatar kuvia..."
+
+#: AvatarGenerator/AvatarGenerator.py:314
+msgid "{} avatar images were sucessfully added."
+msgstr "{} avatar kuvaa lisättiin onnistuneesti."
+
+#: AvatarGenerator/AvatarGenerator.py:318
+msgid "There was no avatar image to add. "
+msgstr "Avatar kuvaa ei ollut lisättäväksi "
+
+#: AvatarGenerator/AvatarGenerator.py:319
+msgid "All persons already had one."
+msgstr "Kaikilla henkilöillä oli jo sellainen."
