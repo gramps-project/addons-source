@@ -4,21 +4,21 @@
 # Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
 # Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
 # Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010.
-# Jan Sparreboom <jan@sparreboom.net>, 2020.
+# Jan Sparreboom <jan@sparreboom.net>, 2021.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: AttachSourceTool 5.1.x\n"
-"Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2020-04-28 22:00+0200\n"
+"PO-Revision-Date: 2021-05-02 13:12+0200\n"
 "Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
 "Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 2.3\n"
 
 #: AttachSourceTool/AttachSourceTool.gpr.py:25
 #: AttachSourceTool/AttachSourceTool.py:137
@@ -88,13 +88,17 @@ msgid "Results"
 msgstr "Resultaten"
 
 #: AttachSourceTool/AttachSourceTool.py:157
-msgid "Processing..."
-msgstr "Wordt verwerkt..."
+msgid "Processing...\n"
+msgstr "Wordt verwerkt...\n"
 
-#: AttachSourceTool/AttachSourceTool.py:174, 175
+#: AttachSourceTool/AttachSourceTool.py:174
+msgid "Attaching sources...\n"
+msgstr "Bronnen worden toegevoegd...\n"
+
+#: AttachSourceTool/AttachSourceTool.py:175
 msgid "Attaching sources..."
 msgstr "Bronnen worden toegevoegd..."
 
 #: AttachSourceTool/AttachSourceTool.py:197
-msgid "Done!"
-msgstr "Uitgevoerd!"
+msgid "Done!\n"
+msgstr "Uitgevoerd!\n"

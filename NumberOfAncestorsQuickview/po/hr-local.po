@@ -1,0 +1,58 @@
+# Croatian translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) Gramps project
+# Milo Ivir <mail@milotype.de>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-01 13:30-0500\n"
+"PO-Revision-Date: 2020-08-24 18:09+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.1\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 "
+"&& n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Language: hr\n"
+
+#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.gpr.py:3
+msgid "Number of ancestors"
+msgstr "Broj predaka"
+
+#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.gpr.py:4
+msgid "Shows the number of ancestors of the current person"
+msgstr "Prikazuje broj predaka trenutačno odabrane osobe"
+
+#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:44
+#, python-format
+msgid "Number of %s's ancestors"
+msgstr "Broj predaka od %s"
+
+#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:48
+msgid "Generation"
+msgstr "Generacija"
+
+#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:49
+msgid "Found"
+msgstr "Pronađeno"
+
+#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:50
+msgid "Theoretical"
+msgstr "Teoretski"
+
+#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:51
+msgid "Percent"
+msgstr "Postotak"
+
+#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:59
+msgid ""
+"There were {} of {} ancestors ({}) found.\n"
+"Only individual ancestors were counted. Duplicates caused by pedigree "
+"collapse were ignored."
+msgstr ""
+"Pronađeno je {} od {} predaka ({}).\n"
+"Računali su samo pojedini preci. Duplikati se zanemaruju."

@@ -1,14 +1,14 @@
 # Dutch translation of addon LifeLineChartView.
-# Copyright (C) 2020 Gramps project
+# Copyright (C) 2021 Gramps project
 # This file is distributed under the same license as the LifeLineChartView package.
-# Jan Sparreboom <jan@sparreboom.net>, 2020.
+# Jan Sparreboom <jan@sparreboom.net>, 2021.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: LifeLineChartView 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-02 18:12+0200\n"
-"PO-Revision-Date: 2020-09-02 18:13+0200\n"
+"POT-Creation-Date: 2021-02-28 23:17+0100\n"
+"PO-Revision-Date: 2021-05-01 18:05+0200\n"
 "Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
 "Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
 "Language: nl\n"
@@ -53,7 +53,9 @@ msgstr "Foto grootte"
 msgid ""
 "Photos which are shown are fitted into a square of this extent. The size is "
 "given relative to the line thickness."
-msgstr "De getoonde foto's zijn in een vierkant van deze omvang ingepast. De maat wordt gegeven in verhouding tot de lijndikte."
+msgstr ""
+"De getoonde foto's zijn in een vierkant van deze omvang ingepast. De maat "
+"wordt gegeven in verhouding tot de lijndikte."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:19
 msgid "Total height"
@@ -71,7 +73,9 @@ msgstr "Relatieve lijndikte"
 msgid ""
 "The line thickness of an individual is given relatively to the horizontal "
 "step size."
-msgstr "De lijndikte van een individu wordt gegeven in verhouding tot de horizontale stapgrootte."
+msgstr ""
+"De lijndikte van een individu wordt gegeven in verhouding tot de horizontale "
+"stapgrootte."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:23
 msgid "Horizontal step size"
@@ -81,7 +85,9 @@ msgstr "Horizontale stapgrootte"
 msgid ""
 "This is the distance from one line to another. This value is also used for "
 "scaling of other items."
-msgstr "Dit is de afstand van de ene lijn naar de andere. Deze waarde wordt ook gebruikt voor het schalen van andere items."
+msgstr ""
+"Dit is de afstand van de ene lijn naar de andere. Deze waarde wordt ook "
+"gebruikt voor het schalen van andere items."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:25
 msgid "Show birth label"
@@ -112,7 +118,7 @@ msgstr "Het geboortelabel is uitgelijnd met de individuele lijn."
 #: LifeLineChartView/_dummy_translation_string_po.py:67
 #: LifeLineChartView/_dummy_translation_string_po.py:74
 #: LifeLineChartView/_dummy_translation_string_po.py:77
-#: LifeLineChartView/lifelinechartview.py:839
+#: LifeLineChartView/lifelinechartview.py:884
 msgid "Label Configuration"
 msgstr "Labelconfiguratie"
 
@@ -122,7 +128,9 @@ msgstr "Geboortelabel rotatie"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:31
 msgid "The birth label is written in a text frame rotated by this value."
-msgstr "Het geboortelabel is geschreven in een tekstkader dat met deze waarde is geroteerd."
+msgstr ""
+"Het geboortelabel is geschreven in een tekstkader dat met deze waarde is "
+"geroteerd."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:33
 msgid "Horizontal offset of birth label"
@@ -132,7 +140,9 @@ msgstr "Horizontale offset van geboortelabel"
 msgid ""
 "The birth label is moved horizontally by this value, which is given "
 "relatively to the font size."
-msgstr "Het geboortelabel wordt horizontaal verplaatst met deze waarde, die wordt gegeven in verhouding tot de lettergrootte."
+msgstr ""
+"Het geboortelabel wordt horizontaal verplaatst met deze waarde, die wordt "
+"gegeven in verhouding tot de lettergrootte."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:36
 msgid "Vertical offset of birth label"
@@ -142,7 +152,9 @@ msgstr "Verticale offset van geboortelabel"
 msgid ""
 "The birth label is moved vertically by this value, which is given relatively "
 "to the font size."
-msgstr "Het geboortelabel wordt verticaal verplaatst met deze waarde, die wordt gegeven in verhouding tot de lettergrootte."
+msgstr ""
+"Het geboortelabel wordt verticaal verplaatst met deze waarde, die wordt "
+"gegeven in verhouding tot de lettergrootte."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:39
 msgid "Wrap words in birth label"
@@ -189,7 +201,9 @@ msgstr "Rotatie overlijdenslabel"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:51
 msgid "The death label is written in a text frame rotated by this value."
-msgstr "Het overlijdenslabel wordt geschreven in een tekstkader dat met deze waarde wordt geroteerd."
+msgstr ""
+"Het overlijdenslabel wordt geschreven in een tekstkader dat met deze waarde "
+"wordt geroteerd."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:53
 msgid "Horizontal offset of death label"
@@ -199,7 +213,9 @@ msgstr "Horizontale offset overlijdenslabel"
 msgid ""
 "The death label is moved horizontally by this value, which is given "
 "relatively to the font size."
-msgstr "Het overlijdenslabel wordt horizontaal verplaatst met deze waarde, die wordt gegeven in verhouding tot de lettergrootte."
+msgstr ""
+"Het overlijdenslabel wordt horizontaal verplaatst met deze waarde, die wordt "
+"gegeven in verhouding tot de lettergrootte."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:56
 msgid "Vertical offset of death label"
@@ -209,7 +225,9 @@ msgstr "Verticale offset overlijdenslabel"
 msgid ""
 "The death label is moved vertically by this value, which is given relatively "
 "to the font size."
-msgstr "Het overlijdenslabel wordt verticaal verplaatst met deze waarde, die wordt gegeven in verhouding tot de lettergrootte."
+msgstr ""
+"Het overlijdenslabel wordt verticaal verplaatst met deze waarde, die wordt "
+"gegeven in verhouding tot de lettergrootte."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:59
 msgid "Wrap words in death label"
@@ -282,7 +300,8 @@ msgstr "Minimum marge boven jaar"
 #: LifeLineChartView/_dummy_translation_string_po.py:83
 msgid ""
 "The upper bound of the chart is extended by at least this number of years."
-msgstr "De bovengrens van het diagram wordt met minimaal dit aantal jaren verlengd."
+msgstr ""
+"De bovengrens van het diagram wordt met minimaal dit aantal jaren verlengd."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:84
 msgid "Lower year minimum margin"
@@ -291,7 +310,8 @@ msgstr "Minimum marge voor een lager jaar"
 #: LifeLineChartView/_dummy_translation_string_po.py:85
 msgid ""
 "The lower bound of the chart is extended by at least this number of years."
-msgstr "De ondergrens van het diagram wordt met minimaal dit aantal jaren verlengd."
+msgstr ""
+"De ondergrens van het diagram wordt met minimaal dit aantal jaren verlengd."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:86
 msgid "Visualize connections"
@@ -301,7 +321,9 @@ msgstr "Visualiseer verbindingen"
 msgid ""
 "Visualize the connections between families and individuals. This is for "
 "debugging purposes."
-msgstr "Visualiseer de verbindingen tussen families en individuen. Dit is voor foutopsporingsdoeleinden."
+msgstr ""
+"Visualiseer de verbindingen tussen families en individuen. Dit is voor "
+"foutopsporingsdoeleinden."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:88
 msgid "Visualize ambiguous placement"
@@ -309,7 +331,8 @@ msgstr "Visualiseer dubbelzinnige plaatsing"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:89
 msgid "Visualize automatically detected errors in the placement algorithm."
-msgstr "Visualiseer automatisch gedetecteerde fouten in het plaatsingsalgoritme."
+msgstr ""
+"Visualiseer automatisch gedetecteerde fouten in het plaatsingsalgoritme."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:90
 msgid "Coloring of individuals"
@@ -357,7 +380,10 @@ msgid ""
 "Due to pedigree collapse one individual might appear several times in a "
 "simple ancestor chart. If this is active, then every individual only appears "
 "once."
-msgstr "Door kwartierherhaling kan een persoon meerdere keren voorkomen in een eenvoudige vooroudergrafiek. Als dit actief is, komt elk individu maar één keer voor."
+msgstr ""
+"Door kwartierherhaling kan een persoon meerdere keren voorkomen in een "
+"eenvoudige vooroudergrafiek. Als dit actief is, komt elk individu maar één "
+"keer voor."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:101
 msgid "Maximum number of generations"
@@ -377,7 +403,9 @@ msgstr "Vaders hebben dezelfde kleur"
 msgid ""
 "Starting from the root person, each father of an added individual has the "
 "same color as that individual."
-msgstr "Beginnend bij de stampersoon heeft elke vader van een toegevoegd individu dezelfde kleur als dat individu."
+msgstr ""
+"Beginnend bij de stampersoon heeft elke vader van een toegevoegd individu "
+"dezelfde kleur als dat individu."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:105
 msgid "Maximum number of compression steps"
@@ -404,7 +432,10 @@ msgid ""
 "By default every individual has a unique horizontal slot. This can be "
 "inefficient with many generations. This algorithm lets several people share "
 "a horizontal slot, if they do not overlap."
-msgstr "Standaard heeft ieder individu een uniek horizontaal slot. Dit kan met vele generaties inefficiënt zijn. Met dit algoritme kunnen meerdere mensen een horizontale sleuf delen, als ze elkaar niet overlappen."
+msgstr ""
+"Standaard heeft ieder individu een uniek horizontaal slot. Dit kan met vele "
+"generaties inefficiënt zijn. Met dit algoritme kunnen meerdere mensen een "
+"horizontale sleuf delen, als ze elkaar niet overlappen."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:111
 msgid "Flip families to reduce horizontal connections"
@@ -415,7 +446,11 @@ msgid ""
 "Switch the position of mother and father in a family, to reduce the overall "
 "horizontal cross connections in larger graphs. This is happens if one person "
 "is shown in more than one family or it is caused by pedigree collapse."
-msgstr "Verander de positie van moeder en vader in een gezin om de algehele horizontale dwarsverbanden in grotere grafieken te verminderen. Dit is het geval als één persoon in meer dan één gezin voorkomt of het wordt veroorzaakt door kwartierherhaling."
+msgstr ""
+"Verander de positie van moeder en vader in een gezin om de algehele "
+"horizontale dwarsverbanden in grotere grafieken te verminderen. Dit is het "
+"geval als één persoon in meer dan één gezin voorkomt of het wordt "
+"veroorzaakt door kwartierherhaling."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:113
 msgid "Highlight descandants"
@@ -449,112 +484,120 @@ msgstr "Ouders omsluiten kinderen"
 msgid "Cactus"
 msgstr "Cactus"
 
-#: LifeLineChartView/lifelinechart.py:463
+#: LifeLineChartView/lifelinechart.py:75
+msgid ""
+"LifeLineChartView dependencies are missing. It is not possible to use this "
+"plugin without them."
+msgstr ""
+"LifeLineChartView-afhankelijkheden ontbreken. Het is niet mogelijk om deze "
+"plug-in zonder hen te gebruiken."
+
+#: LifeLineChartView/lifelinechart.py:476
 msgid "calculated"
 msgstr "berekend"
 
-#: LifeLineChartView/lifelinechart.py:464
-#: LifeLineChartView/lifelinechart.py:465
-#: LifeLineChartView/lifelinechart.py:466
-#: LifeLineChartView/lifelinechart.py:467
+#: LifeLineChartView/lifelinechart.py:477
+#: LifeLineChartView/lifelinechart.py:478
+#: LifeLineChartView/lifelinechart.py:479
+#: LifeLineChartView/lifelinechart.py:480
 msgid "estimated"
 msgstr "geschat"
 
-#: LifeLineChartView/lifelinechart.py:469
+#: LifeLineChartView/lifelinechart.py:482
 msgid "about"
 msgstr "omstreeks"
 
-#: LifeLineChartView/lifelinechart.py:470
+#: LifeLineChartView/lifelinechart.py:483
 msgid "before"
 msgstr "voor"
 
-#: LifeLineChartView/lifelinechart.py:471
+#: LifeLineChartView/lifelinechart.py:484
 msgid "after"
 msgstr "na"
 
-#: LifeLineChartView/lifelinechart.py:1072
+#: LifeLineChartView/lifelinechart.py:1183
 #, python-brace-format
 msgid "cursor position at {date}"
 msgstr "cursorpositie op {date}"
 
-#: LifeLineChartView/lifelinechart.py:2234
+#: LifeLineChartView/lifelinechart.py:2591
 msgid "Hide person"
 msgstr "Verberg persoon"
 
-#: LifeLineChartView/lifelinechart.py:2240
+#: LifeLineChartView/lifelinechart.py:2597
 msgid "Show person"
 msgstr "Toon persoon"
 
-#: LifeLineChartView/lifelinechart.py:2265
+#: LifeLineChartView/lifelinechart.py:2622
 msgid "Show siblings"
 msgstr "Toon broers en zussen"
 
-#: LifeLineChartView/lifelinechart.py:2270
+#: LifeLineChartView/lifelinechart.py:2627
 msgid "Hide siblings"
 msgstr "Verberg broers en zussen"
 
-#: LifeLineChartView/lifelinechart.py:2295
+#: LifeLineChartView/lifelinechart.py:2652
 msgid "Show ancestors above "
 msgstr "Toon voorouders boven "
 
-#: LifeLineChartView/lifelinechart.py:2322
+#: LifeLineChartView/lifelinechart.py:2679
 msgid "_Edit"
 msgstr "_Bewerken"
 
-#: LifeLineChartView/lifelinechart.py:2330
+#: LifeLineChartView/lifelinechart.py:2687
 msgid "Edit family"
 msgstr "Bewerk gezin"
 
-#: LifeLineChartView/lifelinechart.py:2346
+#: LifeLineChartView/lifelinechart.py:2703
 msgid "Reorder families"
 msgstr "Gezinnen herordenen"
 
-#: LifeLineChartView/lifelinechart.py:2352
+#: LifeLineChartView/lifelinechart.py:2709
 msgid "_Copy"
 msgstr "_Kopiëren"
 
-#: LifeLineChartView/lifelinechart.py:2362
+#: LifeLineChartView/lifelinechart.py:2719
 msgid "Spouses"
 msgstr "Echtgenoten"
 
-#: LifeLineChartView/lifelinechart.py:2396
+#: LifeLineChartView/lifelinechart.py:2753
 msgid "Siblings"
 msgstr "Broers en zussen"
 
-#: LifeLineChartView/lifelinechart.py:2462
+#: LifeLineChartView/lifelinechart.py:2819
 msgid "Children"
 msgstr "Kinderen"
 
-#: LifeLineChartView/lifelinechart.py:2499
+#: LifeLineChartView/lifelinechart.py:2856
 msgid "Parents"
 msgstr "Ouders"
 
-#: LifeLineChartView/lifelinechart.py:2533
-#: LifeLineChartView/lifelinechart.py:2575
+#: LifeLineChartView/lifelinechart.py:2890
+#: LifeLineChartView/lifelinechart.py:2932
 msgid "_Add"
 msgstr "_Toevoegen"
 
-#: LifeLineChartView/lifelinechart.py:2542
+#: LifeLineChartView/lifelinechart.py:2899
 msgid "Related"
 msgstr "Verwant"
 
-#: LifeLineChartView/lifelinechart.py:2582
+#: LifeLineChartView/lifelinechart.py:2939
 msgid "Add child to family"
 msgstr "Kind aan gezin toevoegen"
 
-#: LifeLineChartView/lifelinechart.py:2590
+#: LifeLineChartView/lifelinechart.py:2947
 msgid "Add partner to person"
 msgstr "Voeg partner toe aan persoon"
 
-#: LifeLineChartView/lifelinechart.py:2597
+#: LifeLineChartView/lifelinechart.py:2954
 msgid "Add a person"
 msgstr "Voeg een persoon toe"
 
-#: LifeLineChartView/lifelinechart.py:2687
+#: LifeLineChartView/lifelinechart.py:3044
 msgid "Add Child to Family"
 msgstr "Voeg kind toe aan gezin"
 
-#: LifeLineChartView/lifelinechartview.gpr.py:145
+#: LifeLineChartView/lifelinechartview.gpr.py:152
 #, python-brace-format
 msgid ""
 "Failed to load the required module {module_name} version {module_version}."
@@ -562,140 +605,145 @@ msgstr ""
 "Het laden van de vereiste module {module_name} versie {module_version} is "
 "mislukt."
 
-#: LifeLineChartView/lifelinechartview.gpr.py:150
+#: LifeLineChartView/lifelinechartview.gpr.py:154
+#, python-brace-format
+msgid ""
+"\n"
+"\n"
+"It is not possible to use {self.plugin_name} without this module. You can "
+"either uninstall this plugin, or download the module."
+msgstr ""
+"\n"
+"\n"
+"Het is niet mogelijk om {self.plugin_name} te gebruiken zonder deze module. "
+"U kunt deze plug-in verwijderen of de module downloaden."
+
+#: LifeLineChartView/lifelinechartview.gpr.py:161
 msgid " Plugin"
 msgstr " Extensie"
 
-#: LifeLineChartView/lifelinechartview.gpr.py:152
-msgid "Don't ask me again"
-msgstr "Vraag me dit niet nog een keer"
-
-#: LifeLineChartView/lifelinechartview.gpr.py:153
+#: LifeLineChartView/lifelinechartview.gpr.py:163
 msgid "Download module"
 msgstr "Download module"
 
-#: LifeLineChartView/lifelinechartview.gpr.py:161
-msgid "The user chose to deactivate further warnings."
-msgstr "De gebruiker koos ervoor om verdere waarschuwingen te deactiveren."
+#: LifeLineChartView/lifelinechartview.gpr.py:164
+#: LifeLineChartView/lifelinechartview.py:834
+msgid "_Cancel"
+msgstr "_Annuleren"
 
-#: LifeLineChartView/lifelinechartview.gpr.py:165
+#: LifeLineChartView/lifelinechartview.gpr.py:170
 msgid "The user chose to ignore the warning once."
 msgstr "De gebruiker heeft ervoor gekozen de waarschuwing één keer te negeren."
 
-#: LifeLineChartView/lifelinechartview.gpr.py:168
+#: LifeLineChartView/lifelinechartview.gpr.py:174
 msgid "The user chose to install the module."
 msgstr "De gebruiker heeft ervoor gekozen om de module te installeren."
 
-#: LifeLineChartView/lifelinechartview.gpr.py:198
+#: LifeLineChartView/lifelinechartview.gpr.py:206
 #, python-format
 msgid "Unable to open '%s' with curl"
 msgstr "Kan '%s' niet openen met curl"
 
-#: LifeLineChartView/lifelinechartview.gpr.py:209
-#: LifeLineChartView/lifelinechartview.gpr.py:216
+#: LifeLineChartView/lifelinechartview.gpr.py:217
+#: LifeLineChartView/lifelinechartview.gpr.py:224
 #, python-format
 msgid "Unable to open '%s'"
 msgstr "Kan '%s' niet openen"
 
-#: LifeLineChartView/lifelinechartview.gpr.py:225
+#: LifeLineChartView/lifelinechartview.gpr.py:233
 #, python-format
 msgid "Error in reading '%s'"
 msgstr "Fout bij het lezen van '%s'"
 
-#: LifeLineChartView/lifelinechartview.gpr.py:240
+#: LifeLineChartView/lifelinechartview.gpr.py:248
 #, python-format
 msgid "Error: cannot open '%s'"
 msgstr "Fout: kan '%s' niet openen"
 
-#: LifeLineChartView/lifelinechartview.gpr.py:244
+#: LifeLineChartView/lifelinechartview.gpr.py:252
 #, python-format
 msgid "Error: unknown file type: '%s'"
 msgstr "Fout: onbekend bestandstype: '%s'"
 
-#: LifeLineChartView/lifelinechartview.gpr.py:304
+#: LifeLineChartView/lifelinechartview.gpr.py:318
 msgid "Life Line Ancestor Chart"
 msgstr "Levenslijn-voorouderdiagram"
 
-#: LifeLineChartView/lifelinechartview.gpr.py:305
 #: LifeLineChartView/lifelinechartview.gpr.py:319
+#: LifeLineChartView/lifelinechartview.gpr.py:333
 msgid "Charts"
 msgstr "Diagrammen"
 
-#: LifeLineChartView/lifelinechartview.gpr.py:306
 #: LifeLineChartView/lifelinechartview.gpr.py:320
+#: LifeLineChartView/lifelinechartview.gpr.py:334
 msgid "Persons and their relation in a time based chart"
 msgstr "Personen en hun relatie in een tijdgebaseerde grafiek"
 
-#: LifeLineChartView/lifelinechartview.gpr.py:318
+#: LifeLineChartView/lifelinechartview.gpr.py:332
 msgid "Life Line Descendant Chart"
 msgstr "Levenslijn-afstammelingsdiagram"
 
-#: LifeLineChartView/lifelinechartview.py:378
-#: LifeLineChartView/lifelinechartview.py:838
+#: LifeLineChartView/lifelinechartview.py:386
+#: LifeLineChartView/lifelinechartview.py:883
 msgid "General Layout"
 msgstr "Algemene indeling"
 
-#: LifeLineChartView/lifelinechartview.py:391
+#: LifeLineChartView/lifelinechartview.py:399
 msgid "Life Line Chart"
 msgstr "Levenslijndiagram"
 
-#: LifeLineChartView/lifelinechartview.py:486
+#: LifeLineChartView/lifelinechartview.py:508
 msgid "Zoom in"
 msgstr "Inzoomen"
 
-#: LifeLineChartView/lifelinechartview.py:487
-#: LifeLineChartView/lifelinechartview.py:488
-#: LifeLineChartView/lifelinechartview.py:497
-#: LifeLineChartView/lifelinechartview.py:498
+#: LifeLineChartView/lifelinechartview.py:509
+#: LifeLineChartView/lifelinechartview.py:510
+#: LifeLineChartView/lifelinechartview.py:519
+#: LifeLineChartView/lifelinechartview.py:520
 msgid "Ctrl"
 msgstr "Ctrl"
 
-#: LifeLineChartView/lifelinechartview.py:488
-#: LifeLineChartView/lifelinechartview.py:498
+#: LifeLineChartView/lifelinechartview.py:510
+#: LifeLineChartView/lifelinechartview.py:520
 msgid "Mouse wheel"
 msgstr "Muiswiel"
 
-#: LifeLineChartView/lifelinechartview.py:496
+#: LifeLineChartView/lifelinechartview.py:518
 msgid "Zoom out"
 msgstr "Uitzoomen"
 
-#: LifeLineChartView/lifelinechartview.py:505
+#: LifeLineChartView/lifelinechartview.py:527
 msgid "Zoom to original"
 msgstr "Zoom naar origineel"
 
-#: LifeLineChartView/lifelinechartview.py:512
+#: LifeLineChartView/lifelinechartview.py:534
 msgid "Zoom to best fit"
 msgstr "Zoom naar best passend"
 
-#: LifeLineChartView/lifelinechartview.py:519
+#: LifeLineChartView/lifelinechartview.py:541
 msgid "Rebuild data cache"
 msgstr "Herbouw de gegevenscache"
 
-#: LifeLineChartView/lifelinechartview.py:526
+#: LifeLineChartView/lifelinechartview.py:548
 msgid "Revert the placement and person selection"
 msgstr "Zet de plaatsing en persoonsselectie terug"
 
-#: LifeLineChartView/lifelinechartview.py:542
+#: LifeLineChartView/lifelinechartview.py:564
 msgid "Open Life Line Chart help"
 msgstr "Open Help van levenslijndiagram"
 
-#: LifeLineChartView/lifelinechartview.py:619
+#: LifeLineChartView/lifelinechartview.py:664
 msgid "Organize Bookmarks"
 msgstr "Organiseer bladwijzers"
 
-#: LifeLineChartView/lifelinechartview.py:786
+#: LifeLineChartView/lifelinechartview.py:831
 msgid "Export View as SVG"
 msgstr "Exporteer weergave als SVG"
 
-#: LifeLineChartView/lifelinechartview.py:789
-msgid "_Cancel"
-msgstr "_Annuleren"
-
-#: LifeLineChartView/lifelinechartview.py:790
+#: LifeLineChartView/lifelinechartview.py:835
 msgid "_Save"
 msgstr "_Opslaan"
 
-#: LifeLineChartView/lifelinechartview.py:901
+#: LifeLineChartView/lifelinechartview.py:946
 msgid "Reset all settings"
 msgstr "Reset alle instellingen"
-

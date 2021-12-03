@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-15 11:14-0500\n"
+"POT-Creation-Date: 2021-07-09 11:29-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,11 +32,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: TimePedigreeHTML/TimePedigreeHtml.gpr.py:42
+#: TimePedigreeHTML/TimePedigreeHtml.gpr.py:40
 msgid "Timeline Pedigree Report"
 msgstr ""
 
-#: TimePedigreeHTML/TimePedigreeHtml.gpr.py:43
+#: TimePedigreeHTML/TimePedigreeHtml.gpr.py:41
 msgid "This creates a website showing a pedigree with birthday relation"
 msgstr ""
 

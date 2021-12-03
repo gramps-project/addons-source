@@ -1,14 +1,14 @@
 # Dutch translation of addon PlaceCoordinateGramplet.
-# Copyright (C) 2020 Gramps project
+# Copyright (C) 2021 Gramps project
 # This file is distributed under the same license as the PlaceCoordinateGramplet package.
-# Jan Sparreboom <jan@sparreboom.net>, 2020.
+# Jan Sparreboom <jan@sparreboom.net>, 2020, 2021.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PlaceCoordinateGramplet 5.x\n"
-"Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
-"POT-Creation-Date: 2020-08-26 11:18-0500\n"
-"PO-Revision-Date: 2020-09-03 13:16+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-09-14 10:55-0500\n"
+"PO-Revision-Date: 2021-05-03 18:51+0200\n"
 "Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
 "Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
 "Language: nl\n"
@@ -26,6 +26,7 @@ msgid "Places map"
 msgstr "Locaties kaart"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:264
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:62
 msgid "Place Coordinate Gramplet"
 msgstr "Plaatscoördinaten gramplet"
 
@@ -226,42 +227,41 @@ msgstr "Bewerk plaats"
 msgid "Center on this place"
 msgstr "Centreer op deze plek"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:67
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:73
 #, python-brace-format
 msgid "Failed to load the required module {module_name}."
 msgstr "Kan de vereiste module {module_name} niet laden."
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:96
-#, python-brace-format
-msgid "Internet connectivity test failed for {module_name}."
-msgstr "Internetverbindingstest mislukt voor {module_name}."
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:81
+msgid "Don't show again"
+msgstr "Niet meer laten zien"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:109
-msgid "Warning disabled."
-msgstr "Waarschuwing uitgeschakeld."
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:81
+msgid "OK"
+msgstr "OK"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:130
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:138
 msgid "Place Coordinate Gramplet view"
 msgstr "Plaatscoördinaten grampletweergave"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:131
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:139
 msgid "View for the place coordinate gramplet."
 msgstr "Weergave van de plaatscoördinatengramplet."
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:138
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:146
 msgid "Geography"
 msgstr "Geografie"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:146
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:154
 msgid "Place and Coordinates"
 msgstr "Plaats en coördinaten"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:148
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:156
 msgid "Gramplet that simplifies setting the coordinates of a place"
 msgstr ""
 "Gramplet die het instellen van de coördinaten van een plaats vereenvoudigt"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:157
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:165
 msgid "Place Coordinates"
 msgstr "Plaatscoördinaten"
 

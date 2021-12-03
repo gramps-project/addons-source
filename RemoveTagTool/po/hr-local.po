@@ -1,203 +1,193 @@
 # Croatian translation for Gramps
 # This file is distributed under the same license as the Gramps package.
 # Copyright (C) Gramps project
-# Milo Ivir <mail@milotype.de>, 2019.
+# Milo Ivir <mail@milotype.de>, 2019., 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-19 23:12+0200\n"
-"PO-Revision-Date: 2020-08-20 12:19+0200\n"
-"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
+"POT-Creation-Date: 2020-07-26 10:12-0500\n"
+"PO-Revision-Date: 2020-08-25 14:22+0200\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: \n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 2.4.1\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 
-#: RemoveTagTool/RemoveTagTool.gpr.py:24 RemoveTagTool/RemoveTagTool.py:186
-#: RemoveTagTool/RemoveTagTool.py:246
+#: RemoveTagTool/RemoveTagTool.gpr.py:24 RemoveTagTool/RemoveTagTool.py:179
+#: RemoveTagTool/RemoveTagTool.py:239
 msgid "Add/Remove Tag Tool"
-msgstr "Alat za dodavanje/uklanjanje etiketu"
+msgstr "Dodaj/Ukloni etikete"
 
 #: RemoveTagTool/RemoveTagTool.gpr.py:25
 msgid "Add or remove a tag from groups of people, events, etc."
-msgstr "Dodavanje ili uklanjanje etiketu iz grupa ljudi, događaja itd."
+msgstr "Dodaj ili ukloni etiketu iz grupa osoba, događaja, itd."
 
-#: RemoveTagTool/RemoveTagTool.py:58
+#: RemoveTagTool/RemoveTagTool.py:51
 msgid "The Tool requires at least one tag to execute."
-msgstr "Alat zahtijeva najmanje jednu etiketu da se izvrši."
+msgstr "Za pokretanje alata, potrebna je barem jedna etiketa."
 
-#: RemoveTagTool/RemoveTagTool.py:59 RemoveTagTool/RemoveTagTool.py:61
+#: RemoveTagTool/RemoveTagTool.py:52 RemoveTagTool/RemoveTagTool.py:54
 msgid "ERROR"
 msgstr "GREŠKA"
 
-#: RemoveTagTool/RemoveTagTool.py:86
+#: RemoveTagTool/RemoveTagTool.py:79
 msgid "Add/Remove"
-msgstr "Dodaj/ukloni"
+msgstr "Dodaj/Ukloni"
 
-#: RemoveTagTool/RemoveTagTool.py:87
+#: RemoveTagTool/RemoveTagTool.py:80
 msgid "Add or remove tags from objects."
-msgstr "Dodavanje ili uklanjanje etiketu iz objekata."
+msgstr "Dodaj ili ukloni etikete iz objekata."
 
-#: RemoveTagTool/RemoveTagTool.py:88
+#: RemoveTagTool/RemoveTagTool.py:81
 msgid "Add Tags"
-msgstr "Dodaj etiketu"
+msgstr "Dodaj etikete"
+
+#: RemoveTagTool/RemoveTagTool.py:81
+msgid "Remove Tags"
+msgstr "Ukloni etikete"
+
+#: RemoveTagTool/RemoveTagTool.py:82 RemoveTagTool/RemoveTagTool.py:90
+#: RemoveTagTool/RemoveTagTool.py:98
+msgid "General options"
+msgstr "Opće opcije"
 
 #: RemoveTagTool/RemoveTagTool.py:88
-msgid "Remove Tags"
-msgstr "Ukloni etiketu"
-
-#: RemoveTagTool/RemoveTagTool.py:89 RemoveTagTool/RemoveTagTool.py:97
-#: RemoveTagTool/RemoveTagTool.py:105
-msgid "General options"
-msgstr "Opće mogućnosti"
-
-#: RemoveTagTool/RemoveTagTool.py:92
-msgid "People"
-msgstr "Osobe"
-
-#: RemoveTagTool/RemoveTagTool.py:92 RemoveTagTool/RemoveTagTool.py:125
-msgid "Families"
-msgstr "Obitelji"
-
-#: RemoveTagTool/RemoveTagTool.py:92 RemoveTagTool/RemoveTagTool.py:126
-msgid "Events"
-msgstr "Događaji"
-
-#: RemoveTagTool/RemoveTagTool.py:92 RemoveTagTool/RemoveTagTool.py:127
-msgid "Places"
-msgstr "Mjesta"
-
-#: RemoveTagTool/RemoveTagTool.py:92 RemoveTagTool/RemoveTagTool.py:128
-msgid "Sources"
-msgstr "Izvori"
-
-#: RemoveTagTool/RemoveTagTool.py:93 RemoveTagTool/RemoveTagTool.py:129
-msgid "Citations"
-msgstr "Citati"
-
-#: RemoveTagTool/RemoveTagTool.py:93 RemoveTagTool/RemoveTagTool.py:130
-msgid "Repositories"
-msgstr "Spremišta"
-
-#: RemoveTagTool/RemoveTagTool.py:93 RemoveTagTool/RemoveTagTool.py:132
-msgid "Media"
-msgstr "Mediji"
-
-#: RemoveTagTool/RemoveTagTool.py:93 RemoveTagTool/RemoveTagTool.py:133
-msgid "Notes"
-msgstr "Zabilješke"
-
-#: RemoveTagTool/RemoveTagTool.py:95
 msgid "Category"
 msgstr "Kategorija"
 
-#: RemoveTagTool/RemoveTagTool.py:96
+#: RemoveTagTool/RemoveTagTool.py:89
 msgid "Choose a category."
 msgstr "Odaberi kategoriju."
 
-#: RemoveTagTool/RemoveTagTool.py:103
-msgid "Choose Tag"
-msgstr "Odaberite etiketu"
-
-#: RemoveTagTool/RemoveTagTool.py:104
+#: RemoveTagTool/RemoveTagTool.py:97
 msgid "Choose a tag to remove."
 msgstr "Odaberi etiketu koju želiš ukloniti."
 
-#: RemoveTagTool/RemoveTagTool.py:124
+#: RemoveTagTool/RemoveTagTool.py:117
 msgid "Person Filter"
 msgstr "Filtar osoba"
 
-#: RemoveTagTool/RemoveTagTool.py:124
-msgid "Persons"
-msgstr "Osoba"
-
-#: RemoveTagTool/RemoveTagTool.py:125
+#: RemoveTagTool/RemoveTagTool.py:118
 msgid "Family Filter"
 msgstr "Filtar obitelji"
 
-#: RemoveTagTool/RemoveTagTool.py:126
+#: RemoveTagTool/RemoveTagTool.py:119
 msgid "Event Filter"
 msgstr "Filtar događaja"
 
-#: RemoveTagTool/RemoveTagTool.py:127
+#: RemoveTagTool/RemoveTagTool.py:120
 msgid "Place Filter"
 msgstr "Filtar mjesta"
 
-#: RemoveTagTool/RemoveTagTool.py:128
+#: RemoveTagTool/RemoveTagTool.py:121
 msgid "Source Filter"
 msgstr "Filtar izvora"
 
-#: RemoveTagTool/RemoveTagTool.py:129
+#: RemoveTagTool/RemoveTagTool.py:122
 msgid "Citation Filter"
 msgstr "Filtar citata"
 
-#: RemoveTagTool/RemoveTagTool.py:130
+#: RemoveTagTool/RemoveTagTool.py:123
 msgid "Repository Filter"
 msgstr "Filtar spremišta"
 
-#: RemoveTagTool/RemoveTagTool.py:132
+#: RemoveTagTool/RemoveTagTool.py:125
 msgid "Media Filter"
 msgstr "Filtar medija"
 
-#: RemoveTagTool/RemoveTagTool.py:133
+#: RemoveTagTool/RemoveTagTool.py:126
 msgid "Note Filter"
 msgstr "Filtar zabilježaka"
 
-#: RemoveTagTool/RemoveTagTool.py:140
+#: RemoveTagTool/RemoveTagTool.py:133
 msgid "Filter options"
-msgstr "Opcije filtriranja"
+msgstr "Opcije filtra"
 
-#: RemoveTagTool/RemoveTagTool.py:151
+#: RemoveTagTool/RemoveTagTool.py:144
 #, python-format
 msgid "All %s"
-msgstr "Svi %s"
+msgstr "Sve %s"
 
-#: RemoveTagTool/RemoveTagTool.py:190
+#: RemoveTagTool/RemoveTagTool.py:183
 msgid "Options"
 msgstr "Opcije"
 
-#: RemoveTagTool/RemoveTagTool.py:198
+#: RemoveTagTool/RemoveTagTool.py:191
 msgid ""
 "Unable to run the tool. Please check if your database contains tags, filters "
 "and objects."
 msgstr ""
-"Alat nije moguće pokrenuti. Provjerite sadrži li vaša baza podataka oznake, "
+"Alat nije moguće pokrenuti. Provjeri, sadrži li tvoja baza podataka etikete, "
 "filtre i objekte."
 
-#: RemoveTagTool/RemoveTagTool.py:200 RemoveTagTool/RemoveTagTool.py:235
+#: RemoveTagTool/RemoveTagTool.py:193 RemoveTagTool/RemoveTagTool.py:228
 msgid "WARNING"
 msgstr "UPOZORENJE"
 
-#: RemoveTagTool/RemoveTagTool.py:234
+#: RemoveTagTool/RemoveTagTool.py:227
 #, python-format
 msgid "No %s objects were found in database."
-msgstr "U bazi podataka nije pronađen nijedan %s objekt."
+msgstr "Nijedan objekt %s nije pronađen u bazi podataka."
 
-#: RemoveTagTool/RemoveTagTool.py:249
+#: RemoveTagTool/RemoveTagTool.py:242
 msgid "Process tags..."
-msgstr "Oznake procesa..."
+msgstr "Obrada etiketa …"
 
-#: RemoveTagTool/RemoveTagTool.py:266
+#: RemoveTagTool/RemoveTagTool.py:259
 msgid "added"
 msgstr "dodano"
 
-#: RemoveTagTool/RemoveTagTool.py:268
+#: RemoveTagTool/RemoveTagTool.py:261
 msgid "removed"
-msgstr "ukloniti"
+msgstr "uklonjeno"
 
-#: RemoveTagTool/RemoveTagTool.py:269
+#: RemoveTagTool/RemoveTagTool.py:262
 msgid "Tag '{}' was {} to {} {} objects.\n"
-msgstr "Etiketa \"{}\" bila je {} do {} {} objekata.\n"
+msgstr "Etiketa „{}” je {} u {} {} objekte.\n"
 
-#: RemoveTagTool/RemoveTagTool.py:271
+#: RemoveTagTool/RemoveTagTool.py:264
 msgid "INFO"
-msgstr "INFO"
+msgstr "INFORMACIJE"
+
+#~ msgid "Remove Tag Tool"
+#~ msgstr "Ukloni etiketu"
+
+#~ msgid "Remove a tag from groups of people, events, etc."
+#~ msgstr "Ukloni etiketu iz grupa osoba, događaja, itd."
+
+#~ msgid ""
+#~ "The Remove Tag Tool requires at least one person, family and tag to "
+#~ "execute."
+#~ msgstr ""
+#~ "Za rad s alatom „Ukloni etiketu” je potrebno zadati barem jednu osobu, "
+#~ "obitelj i etiketu."
+
+#~ msgid "All Events"
+#~ msgstr "Svi događaji"
+
+#~ msgid "All Places"
+#~ msgstr "Sva mjesta"
+
+#~ msgid "All Sources"
+#~ msgstr "Svi izvori"
+
+#~ msgid "All Citations"
+#~ msgstr "Svi citati"
+
+#~ msgid "All Repositories"
+#~ msgstr "Sva spremišta"
+
+#~ msgid "All Media"
+#~ msgstr "Svi mediji"
+
+#~ msgid "All Notes"
+#~ msgstr "Sve zabilješke"
 
 #~ msgid "Select filter to restrict {}"
 #~ msgstr "Odaberi filtar za ograničavanje {}"
@@ -225,3 +215,6 @@ msgstr "INFO"
 
 #~ msgid "Removing tags..."
 #~ msgstr "Uklanjanje etiketa …"
+
+#~ msgid "Tag '{}' removed from {} {}.\n"
+#~ msgstr "Etiketa „{}” uklonjena iz {} {}.\n"

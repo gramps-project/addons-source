@@ -1,0 +1,42 @@
+# Dutch translation of addon FixCoords.
+# Copyright (C) 2021 Gramps project
+# This file is distributed under the same license as the FixCoords package.
+# Jan Sparreboom <jan@sparreboom.net>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: FixCoords 5.x\n"
+"Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
+"POT-Creation-Date: 2021-01-04 11:48-0600\n"
+"PO-Revision-Date: 2021-05-02 15:06+0200\n"
+"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
+"Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+
+#: FixCoords/fixcoords.gpr.py:30
+msgid "Fix Place Coordinates"
+msgstr "Repareer plaatscoördinaten"
+
+#: FixCoords/fixcoords.gpr.py:31
+msgid "Tool to correct the place coordinates for extra spaces or comma characters."
+msgstr "Hulpmiddel om de plaatscoördinaten te corrigeren voor extra spaties of komma-tekens."
+
+#: FixCoords/fixcoords.py:53
+msgid "Fix Coordinates"
+msgstr "Repareer coördinaten"
+
+#: FixCoords/fixcoords.py:53
+msgid "Starting"
+msgstr "Beginnen"
+
+#: FixCoords/fixcoords.py:58
+msgid "Looking for possible coords with \",\" characters"
+msgstr "Zoeken naar mogelijke coördinaten met \",\" tekens"
+
+#: FixCoords/fixcoords.py:60
+msgid "Fix coords"
+msgstr "Repareer coörds"

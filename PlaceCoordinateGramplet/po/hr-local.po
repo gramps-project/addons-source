@@ -1,0 +1,334 @@
+# Croatian translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) Gramps project
+# Milo Ivir <mail@milotype.de>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-25 17:13-0500\n"
+"PO-Revision-Date: 2020-08-28 14:28+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.1\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Language: hr\n"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.gpr.py:42
+msgid "Place Coordinate Gramplet view"
+msgstr "Koordinate mjesta"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.gpr.py:43
+msgid "View for the place coordinate gramplet."
+msgstr "Prikaz grampleta za koordinate mjesta."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.gpr.py:50
+msgid "Geography"
+msgstr "Kartografija"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:114
+msgid "Organize Bookmarks"
+msgstr "Uredi knjižne oznake"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:221
+msgid "Places map"
+msgstr "Karta mjesta"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:252
+msgid "PlaceCoordinateGeoView"
+msgstr "Prikaz geopodataka koordinata mjesta"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:432
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:445
+msgid "Selecting all places"
+msgstr "Odabiranje svih mjesta"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:457
+msgid ""
+"Right click on the map and select 'show all places' to show all known places "
+"with coordinates. You can change the markers color depending on place type. "
+"You can use filtering."
+msgstr ""
+"Pritisni desnu tipku miša na karti i odaberi „Pokaži sva mjesta”, za prikaz "
+"svih poznatih mjesta s koordinatama. Možeš promijeniti boju oznake, ovisno o "
+"vrsti mjesta. Možeš koristi filtriranje."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:472
+msgid ""
+"Right click on the map and select 'show all places' to show all known places "
+"with coordinates. You can use the history to navigate on the map. You can "
+"change the markers color depending on place type. You can use filtering."
+msgstr ""
+"Pritisni desnu tipku miša na karti i odaberi „Pokaži sva mjesta”, za prikaz "
+"svih poznatih mjesta s koordinatama. Možeš koristiti kronologiju za "
+"kretanje po karti. Možeš promijeniti boju oznake, ovisno o vrsti mjesta. "
+"Možeš koristi filtriranje."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:487
+msgid "The place name in the status bar is disabled."
+msgstr "Ime mjesta u traci stanja je deaktivirano."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:492
+#, python-format
+msgid "The maximum number of places is reached (%d)."
+msgstr "Dosegnut je maksimalni broj mjesta (%d)."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:495
+msgid "Some information are missing."
+msgstr "Neki podaci nedostaju."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:497
+msgid "Please, use filtering to reduce this number."
+msgstr "Koristi filtriranje ya smanjivanje ovog broja."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:499
+msgid "You can modify this value in the geography option."
+msgstr "Ovu vrijednost možeš promijeniti u opcijama kartografije."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:501
+msgid "In this case, it may take time to show all markers."
+msgstr "U ovom slučaju prikaz svih oznaka može potrajati."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:519
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:524
+msgid "Centering on Place"
+msgstr "Centriranje na mjesto"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:569
+msgid "Unknown"
+msgstr "Nepoznato"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:572
+msgid "Custom"
+msgstr "Prilagođeno"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:575
+msgid "Locality"
+msgstr "Lokalitet"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:578
+msgid "Street"
+msgstr "Ulica"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:581
+msgid "Neighborhood"
+msgstr "Gradska četvrt"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:584
+msgid "Borough"
+msgstr "Borough"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:587
+msgid "Village"
+msgstr "Selo"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:590
+msgid "Hamlet"
+msgstr "Zaselak"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:593
+msgid "Farm"
+msgstr "Gospodarstvo"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:596
+msgid "Building"
+msgstr "Zgrada"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:599
+msgid "Number"
+msgstr "Broj"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:602
+msgid "Country"
+msgstr "Država"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:605
+msgid "State"
+msgstr "Pokrajina"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:608
+msgid "County"
+msgstr "Okrug"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:611
+msgid "Province"
+msgstr "Provincija"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:614
+msgid "Region"
+msgstr "Regija"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:617
+msgid "Department"
+msgstr "Departman"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:620
+msgid "District"
+msgstr "Distrikt"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:623
+msgid "Parish"
+msgstr "Župa"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:626
+msgid "City"
+msgstr "Grad"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:629
+msgid "Town"
+msgstr "Grad"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:632
+msgid "Municipality"
+msgstr "Općina"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:636
+msgid "Custom places name"
+msgstr "Prilagođena imena mjesta"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:645
+msgid "The places marker color"
+msgstr "Boja za obilježavanje mjesta"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:734
+msgid "Map Menu"
+msgstr "Izbornik za kartu"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:737
+msgid "Remove cross hair"
+msgstr "Ukloni nišanski znak"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:739
+msgid "Add cross hair"
+msgstr "Dodaj nišanski znak"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:745
+msgid "Add city as place"
+msgstr "Dodaj grad kao mjesto"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:750
+msgid "Add addess as place"
+msgstr "Dodaj adresu kao mjesto"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:756
+msgid "Link place"
+msgstr "Poveži mjesto"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:769
+#, python-format
+msgid "Replace '%(map)s' by =>"
+msgstr "Zamijeni „%(map)s” sa =>"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:788
+#, python-format
+msgid "Clear the '%(map)s' tiles cache."
+msgstr "Ukloni privremenu memoriju s odsječcima karte „%(map)s”."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:857
+msgid "Edit Place"
+msgstr "Uredi mjesto"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:862
+msgid "Center on this place"
+msgstr "Centriraj na ovo mjesto"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:28
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:39
+msgid "Place Coordinates"
+msgstr "Koordinate mjesta"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:30
+msgid "Gramplet that simplifies setting the coordinates of a place"
+msgstr "Gramplet za jednostavno postavljanje koordinata mjesta"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:196
+msgid "The place was not found. You may clarify the search keywords."
+msgstr ""
+"Mjesto nije pronađeno. Možeš pojasniti ključne riječi za pretraživanje."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:200
+msgid "Failed to search for the coordinates due to some unexpected error"
+msgstr "Neuspjela pretraga koordinata zbog jedne neočekivane greške"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:220
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:250
+msgid "The place was not identified."
+msgstr "Mjesto nije identificirano."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:236
+msgid "Failed to interpret the string format."
+msgstr "Neuspjelo tumačenje formata niza."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:261
+#, python-format
+msgid "Edit Place (%s)"
+msgstr "Uredi mjesto (%s)"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:280
+#, python-brace-format
+msgid "DB entry [{id}] {name}:"
+msgstr "Zapis u bazi podataka [{id}] {name}:"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:285
+#: PlaceCoordinateGramplet/placecoordinate.glade:132
+msgid "Nothing has been searched yet"
+msgstr "Još se ništa nije tražilo"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:307
+msgid "No place is active"
+msgstr "Nijedno mjesto nije aktivno"
+
+#: PlaceCoordinateGramplet/placecoordinate.glade:15
+msgid "Search for:"
+msgstr "Traži:"
+
+#: PlaceCoordinateGramplet/placecoordinate.glade:26
+msgid "Found place:"
+msgstr "Pronađeno mjesto:"
+
+#: PlaceCoordinateGramplet/placecoordinate.glade:39
+#: PlaceCoordinateGramplet/placecoordinate.glade:81
+msgid "Latitude:"
+msgstr "Zemljopisna širina:"
+
+#: PlaceCoordinateGramplet/placecoordinate.glade:53
+msgid "label"
+msgstr "oznaka"
+
+#: PlaceCoordinateGramplet/placecoordinate.glade:68
+msgid "Postal-Code:"
+msgstr "Poštanski broj:"
+
+#: PlaceCoordinateGramplet/placecoordinate.glade:94
+#: PlaceCoordinateGramplet/placecoordinate.glade:107
+msgid "Longitude:"
+msgstr "Zemljopisna dužina:"
+
+#: PlaceCoordinateGramplet/placecoordinate.glade:116
+msgid "Show found place externally in Google Maps"
+msgstr "Pokaži pronađeno mjesto na Google kartama"
+
+#: PlaceCoordinateGramplet/placecoordinate.glade:203
+msgid ""
+"Take last clicked position\n"
+"from Geography map"
+msgstr ""
+"Uzmi zadnji pritisnuti položaj\n"
+"na karti u pogledu „Kartografija”"
+
+#: PlaceCoordinateGramplet/placecoordinate.glade:218
+msgid "Search location from DB"
+msgstr "Traži lokaciju iz baze podataka"
+
+#: PlaceCoordinateGramplet/placecoordinate.glade:232
+msgid "Apply geo location to Database"
+msgstr "Primijeni geopodatke lokacije na bazu podataka"
+
+#: PlaceCoordinateGramplet/placecoordinate.glade:269
+msgid "Go"
+msgstr "Idi"

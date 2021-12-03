@@ -26,8 +26,6 @@
 
 from gramps.gen.plug._pluginreg import (newplugin, STABLE, REPORT,
     CATEGORY_WEB, REPORT_MODE_GUI, REPORT_MODE_CLI)
-from gramps.gen.const import GRAMPS_LOCALE as glocale
-_ = glocale.translation.gettext
 
 MODULE_VERSION="5.1"
 
@@ -42,7 +40,7 @@ register(REPORT,
          name = _("Timeline Pedigree Report"),
          description = _("This creates a website showing a "
             "pedigree with birthday relation"),
-         version = '0.0.3',
+         version = '0.0.4',
          gramps_target_version = MODULE_VERSION,
          status = STABLE,
          fname = 'TimePedigreeHtml.py',

@@ -1,21 +1,21 @@
 # Croatian translation for Gramps
 # This file is distributed under the same license as the Gramps package.
 # Copyright (C) Gramps project
-# Milo Ivir <mail@milotype.de>, 2019.
+# Milo Ivir <mail@milotype.de>, 2019., 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-06 15:16-0500\n"
-"PO-Revision-Date: 2019-10-23 22:11+0200\n"
+"POT-Creation-Date: 2020-04-06 09:28-0500\n"
+"PO-Revision-Date: 2020-09-19 14:29+0200\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: \n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 2.4.1\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 
@@ -25,16 +25,24 @@ msgstr "DenominoViso"
 
 #: DenominoViso/DenominoViso.gpr.py:17
 msgid ""
-"Generates a web (XHTML) page with a graphical representation of ancestors/"
+"Generates a web (HTML) page with a graphical representation of ancestors/"
 "descendants (SVG) where details about individuals become visible upon mouse-"
 "events."
 msgstr ""
-"Stvara web stranicu (XHTML) s grafičkim prikazom predaka/potomaka (SVG), u "
+"Stvara web stranicu (HTML) s grafičkim prikazom predaka/potomaka (SVG), u "
 "kojemu se detalji prikazuju prilikom prelaženja mišem preko pojedinca."
 
 #: DenominoViso/DenominoViso.py:179
 msgid "No Source"
 msgstr "Nema izvora"
+
+#: DenominoViso/DenominoViso.py:203 DenominoViso/DenominoViso.py:3020
+msgid "onclick"
+msgstr "pritiskanje miša"
+
+#: DenominoViso/DenominoViso.py:204 DenominoViso/DenominoViso.py:3021
+msgid "onmouseover"
+msgstr "prelaženje mišem"
 
 #: DenominoViso/DenominoViso.py:208
 msgid "Ancestor"
@@ -81,31 +89,31 @@ msgid "bottom to top"
 msgstr "dolje–gore"
 
 #: DenominoViso/DenominoViso.py:305 DenominoViso/DenominoViso.py:975
-#: DenominoViso/DenominoViso.py:1259 DenominoViso/DenominoViso.py:2756
+#: DenominoViso/DenominoViso.py:1259 DenominoViso/DenominoViso.py:2751
 msgid "type"
 msgstr "vrsta"
 
 #: DenominoViso/DenominoViso.py:306 DenominoViso/DenominoViso.py:974
 #: DenominoViso/DenominoViso.py:1034 DenominoViso/DenominoViso.py:1259
-#: DenominoViso/DenominoViso.py:2755
+#: DenominoViso/DenominoViso.py:2750
 msgid "role"
 msgstr "uloga"
 
 #: DenominoViso/DenominoViso.py:307 DenominoViso/DenominoViso.py:974
 #: DenominoViso/DenominoViso.py:1039 DenominoViso/DenominoViso.py:1259
-#: DenominoViso/DenominoViso.py:2754
+#: DenominoViso/DenominoViso.py:2749
 msgid "date"
 msgstr "datum"
 
 #: DenominoViso/DenominoViso.py:308 DenominoViso/DenominoViso.py:974
 #: DenominoViso/DenominoViso.py:1045 DenominoViso/DenominoViso.py:1260
-#: DenominoViso/DenominoViso.py:2758
+#: DenominoViso/DenominoViso.py:2753
 msgid "place"
 msgstr "mjesto"
 
 #: DenominoViso/DenominoViso.py:309 DenominoViso/DenominoViso.py:975
 #: DenominoViso/DenominoViso.py:1056 DenominoViso/DenominoViso.py:1260
-#: DenominoViso/DenominoViso.py:2757
+#: DenominoViso/DenominoViso.py:2752
 msgid "description"
 msgstr "opis"
 
@@ -122,7 +130,7 @@ msgid "source"
 msgstr "izvor"
 
 #: DenominoViso/DenominoViso.py:394 DenominoViso/DenominoViso.py:411
-#: DenominoViso/DenominoViso.py:2508
+#: DenominoViso/DenominoViso.py:2503
 #, python-format
 msgid "Failure writing %s: %s"
 msgstr "Greška prilikom zapisivanja „%s”: %s"
@@ -171,7 +179,7 @@ msgstr "skraćenica"
 msgid "Sources"
 msgstr "Izvori"
 
-#: DenominoViso/DenominoViso.py:1562 DenominoViso/DenominoViso.py:2762
+#: DenominoViso/DenominoViso.py:1562 DenominoViso/DenominoViso.py:2757
 msgid "title"
 msgstr "naslov"
 
@@ -187,99 +195,99 @@ msgstr "od"
 msgid "the chart type runs out of bounds"
 msgstr "vrsta dijagrama prelazi ograničenja"
 
-#: DenominoViso/DenominoViso.py:2006
+#: DenominoViso/DenominoViso.py:2001
 msgid "Search"
 msgstr "Traži"
 
-#: DenominoViso/DenominoViso.py:2006
+#: DenominoViso/DenominoViso.py:2001
 msgid "in"
 msgstr "u"
 
-#: DenominoViso/DenominoViso.py:2476
+#: DenominoViso/DenominoViso.py:2471
 msgid "Event"
 msgstr "Događaj"
 
-#: DenominoViso/DenominoViso.py:2557
+#: DenominoViso/DenominoViso.py:2552
 msgid "DenominoViso Options"
 msgstr "Opcije za DenominoViso"
 
-#: DenominoViso/DenominoViso.py:2560
+#: DenominoViso/DenominoViso.py:2555
 msgid "Destination"
 msgstr "Odredište"
 
-#: DenominoViso/DenominoViso.py:2561
-msgid "The destination file for the xhtml-content."
-msgstr "Odredišna datoteka za xhtml-sadržaj."
+#: DenominoViso/DenominoViso.py:2556
+msgid "The destination file for the html-content."
+msgstr "Odredišna datoteka za html sadržaj."
 
-#: DenominoViso/DenominoViso.py:2564
+#: DenominoViso/DenominoViso.py:2559
 msgid "Central Person"
 msgstr "Središnja osoba"
 
-#: DenominoViso/DenominoViso.py:2565
+#: DenominoViso/DenominoViso.py:2560
 msgid "The central person for the tree"
 msgstr "Središnja osoba stabla"
 
-#: DenominoViso/DenominoViso.py:2568
+#: DenominoViso/DenominoViso.py:2563
 msgid "Title of the webpage"
 msgstr "Naslov web stranice"
 
-#: DenominoViso/DenominoViso.py:2569
+#: DenominoViso/DenominoViso.py:2564
 msgid "Any string you wish."
 msgstr "Bilo koji znakovni niz koji želiš."
 
-#: DenominoViso/DenominoViso.py:2572
+#: DenominoViso/DenominoViso.py:2567
 msgid "Display mode"
 msgstr "Modus prikaza"
 
-#: DenominoViso/DenominoViso.py:2573
+#: DenominoViso/DenominoViso.py:2568
 msgid "Either plot ancestor or descendants graph."
 msgstr "Ispiši dijagram predaka ili potomaka."
 
-#: DenominoViso/DenominoViso.py:2578
+#: DenominoViso/DenominoViso.py:2573
 msgid "Display type"
 msgstr "Vrsta prikaza"
 
-#: DenominoViso/DenominoViso.py:2579
+#: DenominoViso/DenominoViso.py:2574
 msgid "The type of graph to create."
 msgstr "Vrsta dijagrama, koji će biti stvoren."
 
-#: DenominoViso/DenominoViso.py:2587
+#: DenominoViso/DenominoViso.py:2582
 msgid "Direction of time"
 msgstr "Smjer vremena"
 
-#: DenominoViso/DenominoViso.py:2588
+#: DenominoViso/DenominoViso.py:2583
 msgid "Direction in which time increases."
 msgstr "Smjer u kojem teče vrijeme."
 
-#: DenominoViso/DenominoViso.py:2593
+#: DenominoViso/DenominoViso.py:2588
 msgid "Generations"
 msgstr "Generacija"
 
-#: DenominoViso/DenominoViso.py:2594
+#: DenominoViso/DenominoViso.py:2589
 msgid "The number of generations to include in the tree"
 msgstr "Broj generacija, uključenih u stablo"
 
-#: DenominoViso/DenominoViso.py:2597
+#: DenominoViso/DenominoViso.py:2592
 msgid "Max chart width (%)"
 msgstr "Maks. širina dijagrama (%)"
 
-#: DenominoViso/DenominoViso.py:2598
+#: DenominoViso/DenominoViso.py:2593
 msgid "Width of the tree as fraction of the browser window"
-msgstr "Širina stabla, kao postotak prozora preglednika"
+msgstr "Širina stabla u odnosu na veličinu prozora preglednika"
 
-#: DenominoViso/DenominoViso.py:2601
+#: DenominoViso/DenominoViso.py:2596
 msgid "Max chart height (px)"
 msgstr "Maks. visina dijagrama (px)"
 
-#: DenominoViso/DenominoViso.py:2602
+#: DenominoViso/DenominoViso.py:2597
 msgid "Height of the tree in pixels."
 msgstr "Visina stabla u pikselima."
 
-#: DenominoViso/DenominoViso.py:2605
+#: DenominoViso/DenominoViso.py:2600
 msgid "Closing remarks"
 msgstr "Završne primjedbe"
 
-#: DenominoViso/DenominoViso.py:2606
+#: DenominoViso/DenominoViso.py:2601
 msgid ""
 "List of strings, free text added at the bottom, for example for a copyright "
 "notice."
@@ -287,48 +295,48 @@ msgstr ""
 "Popis znakovnih nizova, slobodan tekst dodan u podnožju, npr. napomena o "
 "autorskim pravima."
 
-#: DenominoViso/DenominoViso.py:2609
+#: DenominoViso/DenominoViso.py:2604
 msgid "Include Options"
 msgstr "Uključi opcije"
 
-#: DenominoViso/DenominoViso.py:2612
+#: DenominoViso/DenominoViso.py:2607
 msgid "Include private records"
 msgstr "Uključi privatne zapise"
 
-#: DenominoViso/DenominoViso.py:2613
-msgid "Wheater to leave out private data."
+#: DenominoViso/DenominoViso.py:2608
+msgid "Whether to leave out private data."
 msgstr "Da li isključiti privatne zapise."
 
-#: DenominoViso/DenominoViso.py:2616
+#: DenominoViso/DenominoViso.py:2611
 msgid "Include Events"
 msgstr "Uključi događaje"
 
-#: DenominoViso/DenominoViso.py:2618
-msgid "Wheather to include a person's events."
-msgstr "Da li uključiti osobne događaje."
+#: DenominoViso/DenominoViso.py:2613
+msgid "Whether to include a person's events."
+msgstr "Da li uključiti događaje osobe."
 
-#: DenominoViso/DenominoViso.py:2626
+#: DenominoViso/DenominoViso.py:2621
 msgid "Include birth children"
 msgstr "Uključi rođenje djece"
 
-#: DenominoViso/DenominoViso.py:2627
+#: DenominoViso/DenominoViso.py:2622
 msgid "Whether to include the birth of children in the list of events."
 msgstr "Da li uključiti rođenje djece u popis događaja."
 
-#: DenominoViso/DenominoViso.py:2630
+#: DenominoViso/DenominoViso.py:2625
 msgid "Include death relatives"
 msgstr "Uključi smrt rodbine"
 
-#: DenominoViso/DenominoViso.py:2631
+#: DenominoViso/DenominoViso.py:2626
 msgid ""
 "Whether to include the death of relatives during the lifetime of person."
 msgstr "Da li uključiti smrt rodbine, umrle za života osobe."
 
-#: DenominoViso/DenominoViso.py:2634
+#: DenominoViso/DenominoViso.py:2629
 msgid "Include witness note"
 msgstr "Uključi zabilješku o svjedocima"
 
-#: DenominoViso/DenominoViso.py:2635
+#: DenominoViso/DenominoViso.py:2630
 msgid ""
 "Whether to include the note belonging to a witness (if the event_format "
 "contains <witnesses>)"
@@ -336,139 +344,139 @@ msgstr ""
 "Da li uključiti zabilješku, koja se odnosi na svjedoka (ako format događaja "
 "sadrži <svjedoci>)"
 
-#: DenominoViso/DenominoViso.py:2639
+#: DenominoViso/DenominoViso.py:2634
 msgid "Include Attributes"
 msgstr "Uključi svojstva"
 
-#: DenominoViso/DenominoViso.py:2640
+#: DenominoViso/DenominoViso.py:2635
 msgid "Whether to include a person's attributes"
 msgstr "Da li uključiti svojstva osobe"
 
-#: DenominoViso/DenominoViso.py:2643
+#: DenominoViso/DenominoViso.py:2638
 msgid "Include Addresses"
 msgstr "Uključi adrese"
 
-#: DenominoViso/DenominoViso.py:2644
+#: DenominoViso/DenominoViso.py:2639
 msgid "Whether to include a person's addresses."
 msgstr "Da li uključiti adrese osobe."
 
-#: DenominoViso/DenominoViso.py:2647
+#: DenominoViso/DenominoViso.py:2642
 msgid "Include Note"
 msgstr "Uključi zabilješke"
 
-#: DenominoViso/DenominoViso.py:2648
+#: DenominoViso/DenominoViso.py:2643
 msgid "Whether to include a person's note."
 msgstr "Da li uključiti zabilješku o osobi."
 
-#: DenominoViso/DenominoViso.py:2651
+#: DenominoViso/DenominoViso.py:2646
 msgid "Include URL"
 msgstr "Uključi URL adrese"
 
-#: DenominoViso/DenominoViso.py:2652
+#: DenominoViso/DenominoViso.py:2647
 msgid "Whether to include a person's internet address."
 msgstr "Da li uključiti internet adrese osobe."
 
-#: DenominoViso/DenominoViso.py:2655
+#: DenominoViso/DenominoViso.py:2650
 msgid "Include URL description"
 msgstr "Uključi URL opis"
 
-#: DenominoViso/DenominoViso.py:2656
+#: DenominoViso/DenominoViso.py:2651
 msgid "Whether to include the description of the first URL"
 msgstr "Da li uključiti opis prve URL adrese"
 
-#: DenominoViso/DenominoViso.py:2661
+#: DenominoViso/DenominoViso.py:2656
 msgid "Include Sources"
 msgstr "Uključi izvore"
 
-#: DenominoViso/DenominoViso.py:2662
+#: DenominoViso/DenominoViso.py:2657
 msgid "Whether to include a person's sources."
 msgstr "Da li uključiti izvore osobe."
 
-#: DenominoViso/DenominoViso.py:2665
+#: DenominoViso/DenominoViso.py:2660
 msgid "Image Options"
 msgstr "Opcije za slike"
 
-#: DenominoViso/DenominoViso.py:2667
+#: DenominoViso/DenominoViso.py:2662
 msgid "Include Photos/Images from Gallery"
 msgstr "Uključi fotografije/slike iz galerije"
 
-#: DenominoViso/DenominoViso.py:2668
+#: DenominoViso/DenominoViso.py:2663
 msgid "Whether to include images"
 msgstr "Da li uključiti slike"
 
-#: DenominoViso/DenominoViso.py:2671
+#: DenominoViso/DenominoViso.py:2666
 msgid "Copy Image"
 msgstr "Kopiraj sliku"
 
-#: DenominoViso/DenominoViso.py:2672
+#: DenominoViso/DenominoViso.py:2667
 msgid "Copy the images to a designated directory."
-msgstr "Kopiraj sliku u određeni direktorij."
+msgstr "Kopiraj sliku u određenu mapu."
 
-#: DenominoViso/DenominoViso.py:2679
+#: DenominoViso/DenominoViso.py:2674
 msgid "Images with Attribute"
 msgstr "Slike sa svojstvom"
 
-#: DenominoViso/DenominoViso.py:2680
+#: DenominoViso/DenominoViso.py:2675
 msgid "Determine images with which attributes to in/exclude"
 msgstr "Odredi slike, čija svojstva želite uklučiti/isključiti"
 
-#: DenominoViso/DenominoViso.py:2683
+#: DenominoViso/DenominoViso.py:2678
 msgid "Include Image source references"
 msgstr "Uključi reference izvora slika"
 
-#: DenominoViso/DenominoViso.py:2684
+#: DenominoViso/DenominoViso.py:2679
 msgid "Whether to include references for images"
 msgstr "Da li uključiti reference slika"
 
-#: DenominoViso/DenominoViso.py:2687
+#: DenominoViso/DenominoViso.py:2682
 msgid "Source reference attribute"
 msgstr "Svojstvo reference izvora"
 
-#: DenominoViso/DenominoViso.py:2688
+#: DenominoViso/DenominoViso.py:2683
 msgid "Image attribute that should be used as source reference"
 msgstr "Svojstvo slike, koje se koristi kao referenca izvora"
 
-#: DenominoViso/DenominoViso.py:2694
+#: DenominoViso/DenominoViso.py:2689
 msgid "Style Options"
 msgstr "Opcije za stil"
 
-#: DenominoViso/DenominoViso.py:2696
+#: DenominoViso/DenominoViso.py:2691
 msgid "Color of active person:"
 msgstr "Boja aktivne osobe:"
 
-#: DenominoViso/DenominoViso.py:2697
+#: DenominoViso/DenominoViso.py:2692
 msgid "RGB-color of geometric shape of the activated person."
 msgstr "RGB-boja geometrijskih oblika za aktivirnu osobu."
 
-#: DenominoViso/DenominoViso.py:2700
+#: DenominoViso/DenominoViso.py:2695
 msgid "Color of found persons:"
 msgstr "Boja pronađenih osoba:"
 
-#: DenominoViso/DenominoViso.py:2701
+#: DenominoViso/DenominoViso.py:2696
 msgid "RGB-color of geometric shape of the persons found."
 msgstr "RGB-boja geometrijskih oblika za nađene osobe."
 
-#: DenominoViso/DenominoViso.py:2704
+#: DenominoViso/DenominoViso.py:2699
 msgid "Color of male persons:"
 msgstr "Boja muških osoba:"
 
-#: DenominoViso/DenominoViso.py:2705
+#: DenominoViso/DenominoViso.py:2700
 msgid "RGB-color of geometric shape of the male persons."
 msgstr "RGB-boja geometrijskih oblika za muške osobe."
 
-#: DenominoViso/DenominoViso.py:2708
+#: DenominoViso/DenominoViso.py:2703
 msgid "Colour of female persons:"
 msgstr "Boja ženskih osoba:"
 
-#: DenominoViso/DenominoViso.py:2709
+#: DenominoViso/DenominoViso.py:2704
 msgid "RGB-color of geometric shape of the female persons."
 msgstr "RGB-boja geometrijskih oblika za ženske osobe."
 
-#: DenominoViso/DenominoViso.py:2712
+#: DenominoViso/DenominoViso.py:2707
 msgid "Width of rectangle (hrd):"
 msgstr "Širina pravokutnika:"
 
-#: DenominoViso/DenominoViso.py:2713
+#: DenominoViso/DenominoViso.py:2708
 msgid ""
 "The width of a person rectangle of the regular chart type expressed as "
 "fraction of the horizontal rectangle distance."
@@ -476,11 +484,11 @@ msgstr ""
 "Širina pravokutnika za osobu u standardnoj vrsti dijagrama, izražena kao "
 "razlomak vodoravne širine pravokutnika."
 
-#: DenominoViso/DenominoViso.py:2716
+#: DenominoViso/DenominoViso.py:2711
 msgid "Height of rectangle (hrd):"
 msgstr "Visina pravokutnika:"
 
-#: DenominoViso/DenominoViso.py:2717
+#: DenominoViso/DenominoViso.py:2712
 msgid ""
 "The height of a person rectangle of the regular chart type expressed as "
 "fraction of the horizontal rectangle distance."
@@ -488,11 +496,11 @@ msgstr ""
 "Visina pravokutnika za osobu u standardnoj vrsti dijagrama, izražena kao "
 "razlomak vodoravne širine pravokutnika."
 
-#: DenominoViso/DenominoViso.py:2720
+#: DenominoViso/DenominoViso.py:2715
 msgid "Vertical distance of rectangles (hrd):"
 msgstr "Uspravni razmak između pravokutnika:"
 
-#: DenominoViso/DenominoViso.py:2721
+#: DenominoViso/DenominoViso.py:2716
 msgid ""
 "The vertical distance of person rectangles of the regular chart type "
 "expressed as fraction of the horizontal rectangle distance."
@@ -500,59 +508,59 @@ msgstr ""
 "Uspravna duljina pravokutnika za osobu u standardnoj vrsti dijagrama, "
 "izražena kao razlomak vodoravne širine pravokutnika."
 
-#: DenominoViso/DenominoViso.py:2724
+#: DenominoViso/DenominoViso.py:2719
 msgid "Extra style settings:"
 msgstr "Dodatne postavke stilova:"
 
-#: DenominoViso/DenominoViso.py:2725
+#: DenominoViso/DenominoViso.py:2720
 msgid "Whatever css style settings are needed."
 msgstr "Sve potrebne postavke za css stilove."
 
-#: DenominoViso/DenominoViso.py:2728
+#: DenominoViso/DenominoViso.py:2723
 msgid "Advanced Options"
 msgstr "Napredne opcije"
 
-#: DenominoViso/DenominoViso.py:2735
+#: DenominoViso/DenominoViso.py:2730
 msgid "Mouse event handler"
 msgstr "Upravljač za događaj miša"
 
-#: DenominoViso/DenominoViso.py:2737
+#: DenominoViso/DenominoViso.py:2732
 msgid "Mouse handler used to interact with visitor of webpage."
 msgstr "Upravljač za događaj miša se koristi za interakcju s korisnikom."
 
-#: DenominoViso/DenominoViso.py:2741
+#: DenominoViso/DenominoViso.py:2736
 msgid "Birth relationship linestyle"
 msgstr "Stil linija za srodne veze"
 
-#: DenominoViso/DenominoViso.py:2743
+#: DenominoViso/DenominoViso.py:2738
 msgid ""
 "List of lists where each sublist is a list with information about the dash "
 "pattern of lines connecting children to parents."
 msgstr ""
-"Popis popisa, gdje je svaki podpopis, popis s informacijama o uzorku "
-"poveznih linija djece i roditelja."
+"Popis popisa, gdje je svaki podpopis popis s informacijama o uzorku poveznih "
+"linija koje povezuju djecu i roditelje."
 
-#: DenominoViso/DenominoViso.py:2749
+#: DenominoViso/DenominoViso.py:2744
 msgid "Source confidence color"
 msgstr "Boja za pouzdanost izvora"
 
-#: DenominoViso/DenominoViso.py:2751
+#: DenominoViso/DenominoViso.py:2746
 msgid ""
-"List os lists where each sublist is a list with information on the color to "
+"List of lists where each sublist is a list with information on the color to "
 "use for a certain confidence level."
 msgstr ""
 "Popis popisa, gdje je svaki podpopis, popis s informacijama o boji, koja se "
-"kosristi za razinu pouzdanosti."
+"kosristi za određenu razinu pouzdanosti."
 
-#: DenominoViso/DenominoViso.py:2754
+#: DenominoViso/DenominoViso.py:2749
 msgid "Event format"
 msgstr "Format događaja"
 
-#: DenominoViso/DenominoViso.py:2755
+#: DenominoViso/DenominoViso.py:2750
 msgid "at"
 msgstr "na"
 
-#: DenominoViso/DenominoViso.py:2759
+#: DenominoViso/DenominoViso.py:2754
 msgid ""
 "List os strings with placeholders for events. Known placeholders: <type>, "
 "<role>, <date>, <place>, <description>, <witnesses>, <source> and any "
@@ -562,71 +570,103 @@ msgstr ""
 "zamjenski tekstovi: <vrsta>, <uloga>, <datum>, <mjestp>, <opis>, <svjedok>, "
 "<izvor> i bilo koji od <vrijednost svojstva>."
 
-#: DenominoViso/DenominoViso.py:2762
+#: DenominoViso/DenominoViso.py:2757
 msgid "Source format"
 msgstr "Format izvora"
 
-#: DenominoViso/DenominoViso.py:2763
+#: DenominoViso/DenominoViso.py:2758
 msgid ""
 "List of strings with placeholders for sources. Known placeholders: <title>, "
 "<volume>, <author>, <publication_info> and <abbreviation>."
 msgstr ""
 "Popis znakovnih nizova sa zamjenskim tekstovima za izvore. Poznati zamjenski "
-"tekstovi: <naziv>, <svezak>, <autor>, <informacija o publikaciji> i "
+"tekstovi: <naslov>, <svezak>, <autor>, <informacija o publikaciji> i "
 "<skraćenica>."
 
-#: DenominoViso/DenominoViso.py:2824
+#: DenominoViso/DenominoViso.py:2819
 msgid "restricted to:"
 msgstr "ograničeno na:"
 
-#: DenominoViso/DenominoViso.py:2864
+#: DenominoViso/DenominoViso.py:2859
 msgid "to directory:"
-msgstr "u direktorij:"
+msgstr "u mapu:"
 
-#: DenominoViso/DenominoViso.py:2866
+#: DenominoViso/DenominoViso.py:2861
 msgid "Save images in ..."
 msgstr "Spremi slike u …"
 
-#: DenominoViso/DenominoViso.py:2912
+#: DenominoViso/DenominoViso.py:2907
 msgid "equal to"
 msgstr "jednako kao"
 
-#: DenominoViso/DenominoViso.py:2916
+#: DenominoViso/DenominoViso.py:2911
 msgid "should be"
 msgstr "treba biti"
 
-#: DenominoViso/DenominoViso.py:2958
+#: DenominoViso/DenominoViso.py:2913
+msgid "Included"
+msgstr "Uključeno"
+
+#: DenominoViso/DenominoViso.py:2914
+msgid "Excluded"
+msgstr "Isključeno"
+
+#: DenominoViso/DenominoViso.py:2953
 msgid "Name HTML-wrapper file"
 msgstr "Ime HTML-umotane datoteke"
 
-#: DenominoViso/DenominoViso.py:2960
+#: DenominoViso/DenominoViso.py:2955
 msgid "Save HTML-wrapper file as ..."
 msgstr "Spremi HTML-umotanu datoteku kao …"
 
-#: DenominoViso/DenominoViso.py:2985
+#: DenominoViso/DenominoViso.py:2980
 msgid "Give a filename ..."
-msgstr "Unesi naziv datoteke …"
+msgstr "Upiši ime datoteke …"
 
-#: DenominoViso/DenominoViso.py:3120
+#: DenominoViso/DenominoViso.py:3114
 msgid "Relation type"
 msgstr "Vrsta srodstva"
 
-#: DenominoViso/DenominoViso.py:3125
+#: DenominoViso/DenominoViso.py:3119
 msgid "Use dashed linestyle"
 msgstr "Koristi iscrtkanu vrstu linija"
 
-#: DenominoViso/DenominoViso.py:3130
+#: DenominoViso/DenominoViso.py:3124
 msgid "Dash length"
 msgstr "Duljina crtice"
 
-#: DenominoViso/DenominoViso.py:3134
+#: DenominoViso/DenominoViso.py:3128
 msgid "Inter-dash length"
-msgstr "Duljina razmaka između crtica"
+msgstr "Razmak između crtica"
 
-#: DenominoViso/DenominoViso.py:3185
+#: DenominoViso/DenominoViso.py:3179
 msgid "Confidence"
 msgstr "Pouzdanost"
 
-#: DenominoViso/DenominoViso.py:3187
+#: DenominoViso/DenominoViso.py:3181
 msgid "Color"
 msgstr "Boja"
+
+#~ msgid ""
+#~ "Generates a web (XHTML) page with a graphical representation of ancestors/"
+#~ "descendants (SVG) where details about individuals become visible upon "
+#~ "mouse-events."
+#~ msgstr ""
+#~ "Stvara web stranicu (XHTML) s grafičkim prikazom predaka/potomaka (SVG), "
+#~ "u kojemu se detalji prikazuju prilikom prelaženja mišem preko pojedinca."
+
+#~ msgid "The destination file for the xhtml-content."
+#~ msgstr "Odredišna datoteka za xhtml-sadržaj."
+
+#~ msgid "Wheater to leave out private data."
+#~ msgstr "Da li isključiti privatne zapise."
+
+#~ msgid "Wheather to include a person's events."
+#~ msgstr "Da li uključiti osobne događaje."
+
+#~ msgid ""
+#~ "List os lists where each sublist is a list with information on the color "
+#~ "to use for a certain confidence level."
+#~ msgstr ""
+#~ "Popis popisa, gdje je svaki podpopis, popis s informacijama o boji, koja "
+#~ "se kosristi za razinu pouzdanosti."

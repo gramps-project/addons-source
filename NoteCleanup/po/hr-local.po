@@ -1,25 +1,25 @@
 # Croatian translation for Gramps
 # This file is distributed under the same license as the Gramps package.
 # Copyright (C) Gramps project
-# Milo Ivir <mail@milotype.de>, 2019.
+# Milo Ivir <mail@milotype.de>, 2019., 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2019-10-20 15:23+0200\n"
+"POT-Creation-Date: 2020-03-12 09:03-0500\n"
+"PO-Revision-Date: 2020-08-24 16:38+0200\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: \n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 2.4.1\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 
-#: NoteCleanup/NoteCleanup.gpr.py:30 NoteCleanup/NoteCleanup.py:395
+#: NoteCleanup/NoteCleanup.gpr.py:30 NoteCleanup/NoteCleanup.py:412
 msgid "Note Cleanup"
 msgstr "Čišćenje zabilježaka"
 
@@ -27,51 +27,51 @@ msgstr "Čišćenje zabilježaka"
 msgid "Clean up Notes that contain HTML markup"
 msgstr "Počisti zabilješke, koje sadrže HTML oznake"
 
-#: NoteCleanup/NoteCleanup.py:90
+#: NoteCleanup/NoteCleanup.py:92
 msgid "Note Cleanup Tool"
 msgstr "Alat za čišćenje zabilježaka"
 
-#: NoteCleanup/NoteCleanup.py:96
+#: NoteCleanup/NoteCleanup.py:98
 msgid "Cleaned Notes"
 msgstr "Zabilješke su počišćene"
 
-#: NoteCleanup/NoteCleanup.py:96
+#: NoteCleanup/NoteCleanup.py:98
 msgid "Links Only"
 msgstr "Samo poveznice"
 
-#: NoteCleanup/NoteCleanup.py:97
+#: NoteCleanup/NoteCleanup.py:99
 msgid "Issues"
 msgstr "Problemi"
 
-#: NoteCleanup/NoteCleanup.py:119
+#: NoteCleanup/NoteCleanup.py:120
 msgid "Close"
 msgstr "Zatvori"
 
-#: NoteCleanup/NoteCleanup.py:120
+#: NoteCleanup/NoteCleanup.py:121
 msgid "Close the Note Cleanup Tool"
 msgstr "Zatvori alat za čišćenje zabilježaka"
 
-#: NoteCleanup/NoteCleanup.py:122
+#: NoteCleanup/NoteCleanup.py:123
 msgid "Save All"
 msgstr "Spremi sve"
 
-#: NoteCleanup/NoteCleanup.py:123
+#: NoteCleanup/NoteCleanup.py:124
 msgid "Save All Changes"
 msgstr "Spremi sve promjene"
 
-#: NoteCleanup/NoteCleanup.py:125
+#: NoteCleanup/NoteCleanup.py:126
 msgid "Search"
 msgstr "Traži"
 
-#: NoteCleanup/NoteCleanup.py:126
+#: NoteCleanup/NoteCleanup.py:127
 msgid "Search for Untidy Notes"
 msgstr "Traži nepočišćene zabilješke"
 
-#: NoteCleanup/NoteCleanup.py:128
+#: NoteCleanup/NoteCleanup.py:129
 msgid "Generate Test Notes"
 msgstr "Stvori testne zabilješke"
 
-#: NoteCleanup/NoteCleanup.py:130
+#: NoteCleanup/NoteCleanup.py:131
 msgid ""
 "Generate Test notes in range N99996-N99999.\n"
 "These are added to your database, so you may want to work with a test "
@@ -81,15 +81,19 @@ msgstr ""
 "Te zabilješke će biti dodane u tvoju bazu podataka. Stoga bi možda bilo "
 "dobro da radiš s testnom bazom podataka ili ih izbriši kasnije."
 
-#: NoteCleanup/NoteCleanup.py:134
+#: NoteCleanup/NoteCleanup.py:135
 msgid "Export"
 msgstr "Izvezi"
 
-#: NoteCleanup/NoteCleanup.py:135
+#: NoteCleanup/NoteCleanup.py:136
 msgid "Export the results to a text file"
 msgstr "Izvezi rezultate u tekstualnu datoteku"
 
-#: NoteCleanup/NoteCleanup.py:172
+#: NoteCleanup/NoteCleanup.py:139
+msgid "Help"
+msgstr "Pomoć"
+
+#: NoteCleanup/NoteCleanup.py:181
 msgid ""
 "Please back up your database before running this tool.\n"
 "\n"
@@ -104,32 +108,32 @@ msgstr ""
 "Pokreni alat pritiskom gumba „Traži”, zatim pregledaj rezultate.\n"
 "Ako je sve u redu, pritisni gumb „Spremi sve”, za spremanje."
 
-#: NoteCleanup/NoteCleanup.py:182
+#: NoteCleanup/NoteCleanup.py:190
 msgid "Clean up Notes"
 msgstr "Počisti zabilješke"
 
-#: NoteCleanup/NoteCleanup.py:193
+#: NoteCleanup/NoteCleanup.py:205
 msgid "Notes"
 msgstr "Zabilješke"
 
-#: NoteCleanup/NoteCleanup.py:277
+#: NoteCleanup/NoteCleanup.py:288
 msgid "Cleanup Test Notes"
 msgstr "Počisti testne zabilješke"
 
-#: NoteCleanup/NoteCleanup.py:299 NoteCleanup/NoteCleanup.py:304
+#: NoteCleanup/NoteCleanup.py:310 NoteCleanup/NoteCleanup.py:315
 msgid "Add Test Note"
 msgstr "Dodaj testnu zabilješku"
 
-#: NoteCleanup/NoteCleanup.py:313
+#: NoteCleanup/NoteCleanup.py:323
 msgid "Export results to a text file"
 msgstr "Izvezi rezultate u tekstualnu datoteku"
 
-#: NoteCleanup/NoteCleanup.py:336
+#: NoteCleanup/NoteCleanup.py:346
 #, python-format
 msgid "Error when writing the report: %s"
 msgstr "Greška prilikom pisanja izvještaja: %s"
 
-#: NoteCleanup/NoteCleanup.py:370
+#: NoteCleanup/NoteCleanup.py:383
 msgid ""
 "\n"
 "\n"
@@ -140,7 +144,7 @@ msgstr ""
 "Odabrane zabilješke na lijevoj strani se prikazuju prije čišćenja u ovom "
 "okviru."
 
-#: NoteCleanup/NoteCleanup.py:373
+#: NoteCleanup/NoteCleanup.py:386
 msgid ""
 "\n"
 "\n"
@@ -153,16 +157,16 @@ msgstr ""
 "Odabrane zabilješke na lijevoj strani se prikazuju nakon čišćenja u ovom "
 "okviru.\n"
 "Ako želiš učiniti promjene, njih možeš učiniti ovdje, te korsititi "
-"upravljače stilova u gornjem izborniku."
+"upravljače stilova u gornjoj alatnoj traci."
 
-#: NoteCleanup/NoteCleanup.py:388
+#: NoteCleanup/NoteCleanup.py:404
 msgid "Saving Notes"
 msgstr "Spremanje zabilježaka"
 
-#: NoteCleanup/NoteCleanup.py:390
+#: NoteCleanup/NoteCleanup.py:407
 msgid "Saving Cleaned Notes"
 msgstr "Spremanje počišćenih zabilježaka"
 
-#: NoteCleanup/NoteCleanup.py:415
+#: NoteCleanup/NoteCleanup.py:435
 msgid "Scanning Notes"
 msgstr "Pretraživanje zabilježaka"
