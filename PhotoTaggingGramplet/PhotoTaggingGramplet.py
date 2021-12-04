@@ -1,7 +1,12 @@
 #
 # Gramps - a GTK+/GNOME based genealogy program
+# http://gramps-project.org
+# Gramplet registration - plug-in/add-on to extend Gramps
 #
-# Copyright (C) 2013 Artem Glebov <artem.glebov@gmail.com>
+# Copyright (C) 2013    Artem Glebov <artem.glebov@gmail.com>
+# Copyright (C) 2014    Nick Hall
+# Copyright (C) 2021    Paul Culley
+# Copyright (C) 2021    Bruce Jackson
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -227,14 +232,13 @@ class PhotoTaggingGramplet(Gramplet):
 
         button_panel = Gtk.HBox()
 
-        self.button_index = Gtk.ToolButton.new(Gtk.Image.new_from_icon_name('gtk-index', Gtk.IconSize.LARGE_TOOLBAR))
-        self.button_add = Gtk.ToolButton.new(Gtk.Image.new_from_icon_name('list-add', Gtk.IconSize.LARGE_TOOLBAR))
-        self.button_del = Gtk.ToolButton.new(Gtk.Image.new_from_icon_name('list-remove', Gtk.IconSize.LARGE_TOOLBAR))
-        self.button_clear = Gtk.ToolButton.new(Gtk.Image.new_from_icon_name('edit-clear', Gtk.IconSize.LARGE_TOOLBAR))
-        self.button_edit = Gtk.ToolButton.new(Gtk.Image.new_from_icon_name('gtk-edit', Gtk.IconSize.LARGE_TOOLBAR))
-        self.button_zoom_in = Gtk.ToolButton.new(Gtk.Image.new_from_icon_name('zoom-in', Gtk.IconSize.LARGE_TOOLBAR))
-        self.button_zoom_out = Gtk.ToolButton.new(Gtk.Image.new_from_icon_name('zoom-out', Gtk.IconSize.LARGE_TOOLBAR))
-
+        self.button_index = Gtk.ToolButton(stock_id=Gtk.STOCK_INDEX)
+        self.button_add = Gtk.ToolButton(stock_id=Gtk.STOCK_ADD)
+        self.button_del = Gtk.ToolButton(stock_id=Gtk.STOCK_REMOVE)
+        self.button_clear = Gtk.ToolButton(stock_id=Gtk.STOCK_CLEAR)
+        self.button_edit = Gtk.ToolButton(stock_id=Gtk.STOCK_EDIT)
+        self.button_zoom_in = Gtk.ToolButton(stock_id=Gtk.STOCK_ZOOM_IN)
+        self.button_zoom_out = Gtk.ToolButton(stock_id=Gtk.STOCK_ZOOM_OUT)
         # set custom icon for face detect button
         self.button_detect = Gtk.ToolButton()
         theme = Gtk.IconTheme.get_default()
@@ -248,8 +252,8 @@ class PhotoTaggingGramplet(Gramplet):
             face_detect_icon = os.path.join(path, 'gramps-face-detection.svg')
             img.set_from_file(face_detect_icon)
             self.button_detect.set_icon_widget(img)
-        self.button_settings = Gtk.ToolButton.new(Gtk.Image.new_from_icon_name('preferences-system', Gtk.IconSize.LARGE_TOOLBAR))
-        self.button_help = Gtk.ToolButton.new(Gtk.Image.new_from_icon_name('help-browser', Gtk.IconSize.LARGE_TOOLBAR))
+        self.button_settings = Gtk.ToolButton(stock_id=Gtk.STOCK_PREFERENCES)
+        self.button_help = Gtk.ToolButton(stock_id=Gtk.STOCK_HELP)
 
         self.button_index.connect("clicked", self.sel_person_clicked)
         self.button_add.connect("clicked", self.add_person_clicked)
@@ -350,7 +354,6 @@ class PhotoTaggingGramplet(Gramplet):
         column3 = Gtk.TreeViewColumn(title=_('Person'))
         column4 = Gtk.TreeViewColumn(title=_('Age'))
         column5 = Gtk.TreeViewColumn(title=_('XMP Region Name'))
-
         self.treeview.append_column(column1)
         self.treeview.append_column(column2)
         self.treeview.append_column(column3)
