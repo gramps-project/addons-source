@@ -976,6 +976,7 @@ class PhotoTaggingGramplet(Gramplet):
         mediaref = self.add_reference(person, rect)
         region.person = person
         region.mediaref = mediaref
+        region.xmp_person = ""
 
     def clear_ref(self, region):
         if region:
