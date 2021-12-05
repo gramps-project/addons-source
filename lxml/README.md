@@ -25,5 +25,5 @@ Did not use as production, rather an advanced documentation
 
 - 'xpaths_x_x_x.txt'
 For XPath addict.
-Can be used for parsing, handling tags and namespaces for most Gramps XML. 
+Can be used for parsing, handling tags and namespaces for most Gramps XML
 file versions. An alternate documentation.
