@@ -327,7 +327,7 @@ class lxmlGramplet(Gramplet):
                     self.ParseXML(tree, filename)
                 except:
                     ErrorDialog(_('Parsing issue'), _('Cannot parse content of "%(file)s"') % {'file': filename})
-                    LOG.error('Cannot parse the content of the XML copy')
+                    LOG.error('Cannot parse the content of the XML copy or missing "query_html.xsl" file.')
                     return
             elif doctype != current:
                 ErrorDialog(_('Gramps version'), _('Wrong namespace\nNeed: %s') % current)
