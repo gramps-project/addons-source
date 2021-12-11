@@ -3699,6 +3699,43 @@ class PopupMenu(Gtk.Menu):
         self.add_separator()
         self.append_help_menu_entry()
 
+    def add_tags_to_menu(self, obj, otype, tag_menu):
+        """
+        Add tags to the Popup menu for person or family node.
+        """
+        idx = 0
+        tags_list = obj.get_tag_list()
+        handle = obj.get_handle()
+        for tag_handle in self.dbstate.db.get_tag_handles():
+            idx += 1
+            tag = self.dbstate.db.get_tag_from_handle(tag_handle)
+            # prepare the tag
+            if tag:
+                rgba = Gdk.RGBA()
+                rgba.parse(tag.get_color())
+                rgba2 = Gdk.RGBA()
+                # Calculate the brightness of the background.
+                # depending on this value, the text is shown
+                # either in white, either in black.
+                brightness = (int(rgba.red * 255) * 0.299 +
+                              int(rgba.green * 255) * 0.587 +
+                              int(rgba.blue * 255) * 0.114)
+                foreground = "#000" if brightness > 100 else "#fff"
+                rgba2.parse(foreground)
+                # We can't use add_menuitem here
+                tag_name = tag.get_name()
+                item = Gtk.RadioMenuItem(label=tag_name)
+                if tag_handle in tags_list:
+                    item.set_active(True)
+                else:
+                    item.set_active(False)
+                item.override_background_color(Gtk.StateFlags.NORMAL, rgba)
+                item.override_color(Gtk.StateFlags.NORMAL, rgba2)
+                item.connect("activate", self.actions.add_tag_to_object,
+                             [handle, otype, tag_handle])
+                item.show()
+                tag_menu.append(item)
+
     def person_menu(self, handle):
         """
         Popup menu for person node.
@@ -3724,6 +3761,8 @@ class PopupMenu(Gtk.Menu):
 
             add_menuitem(tag_menu, _('Organize Tags...'),
                          [handle, 'person'], self.actions.organize_tags)
+
+            self.add_tags_to_menu(person, 'person', tag_menu)
 
             # go over spouses and build their menu
             item, sp_menu = self.add_submenu(label=_("Spouses"))
@@ -3983,6 +4022,8 @@ class PopupMenu(Gtk.Menu):
 
             add_menuitem(tag_menu, _('Organize Tags...'),
                          [handle, 'family'], self.actions.organize_tags)
+
+            self.add_tags_to_menu(family, 'family', tag_menu)
 
             # build spouses menu
             _item, sp_menu = self.add_submenu(label=_("Spouses"))
@@ -4331,6 +4372,33 @@ class Actions(Callback):
 
         OrganizeTagsDialog(self.dbstate.db, self.uistate, [])
         self.emit('rebuild-graph')
+
+    def add_tag_to_object(self, obj, data):
+        handle, otype, tag_hdle = data
+        if otype == 'person':
+            target = self.dbstate.db.get_person_from_handle(handle)
+            old_tags = target.get_tag_list()
+            if tag_hdle in old_tags:
+                old_tags.remove(tag_hdle)
+            else:
+                old_tags.append(tag_hdle)
+            target.set_tag_list(old_tags)
+            self.emit('focus-person-changed', (handle, ))
+            msg = _('Adding Tags to person (%s)') % handle
+            with DbTxn(msg, self.dbstate.db) as trans:
+                self.dbstate.db.commit_person(target, trans)
+        if otype == 'family':
+            target = self.dbstate.db.get_family_from_handle(handle)
+            old_tags = target.get_tag_list()
+            if tag_hdle in old_tags:
+                old_tags.remove(tag_hdle)
+            else:
+                old_tags.append(tag_hdle)
+            target.set_tag_list(old_tags)
+            msg = _('Adding Tags to family (%s)') % handle
+            with DbTxn(msg, self.dbstate.db) as trans:
+                self.dbstate.db.commit_family(target, trans)
+            self.emit('rebuild-graph')
 
     def add_parents_to_person(self, obj):
         """
