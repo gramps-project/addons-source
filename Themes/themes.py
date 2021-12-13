@@ -278,6 +278,7 @@ class MyPrefs(GrampsPreferences):
         ''' deal with font changed '''
         font = obj.get_font()
         config.set('preferences.font', font)
+        self.uistate.emit('font-changed')
 
     def font_filter(self, family, face, *obj):
         desc = face.describe()
