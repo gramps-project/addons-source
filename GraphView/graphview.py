@@ -3734,6 +3734,12 @@ class PopupMenu(Gtk.Menu):
                 item.connect("activate", self.actions.add_tag_to_object,
                              [handle, otype, tag_handle])
                 item.show()
+                style = tag_menu.get_style_context()
+                color = style.get_property("background-color",
+                                           Gtk.StateFlags.PRELIGHT)
+                color.alpha = 0.2
+                item.override_background_color(Gtk.StateFlags.PRELIGHT,
+                                               color)
                 tag_menu.append(item)
 
     def person_menu(self, handle):
