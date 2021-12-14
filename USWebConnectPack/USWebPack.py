@@ -31,8 +31,8 @@ _ = _trans.gettext
 
 WEBSITES = [
     ["Person", "Find-A-Grave", _("Find A Grave"), "http://www.findagrave.com/cgi-bin/fg.cgi?page=gsr&GSfn=%(given)s&GSmn=%(middle)s&GSln=%(surname)s&GSby=%(birth)s&GSbyrel=in&GSdy=%(death)s&GSdyrel=in&GScntry=0&GSst=0&GSgrid=&df=all&GSob=b"],
-    ["Person", "FamilySearch", _("FamilySearch.org")+"  (Account Login; free)", "https://familysearch.org/search/record/results?count=20&query=%%2Bgivenname%%3A%(given)s~ %%2Bsurname%%3A%(surname)s~ %%2Bbirth_year%%3A%(birth)s-%(birth)s~ %%2Bdeath_year%%3A%(death)s-%(death)s~"], #Free Account Needed
-    ["Person", "US-Google", _("US Google"), '''http://www.google.com/#hl=en&q="%(surname)s,+%(given)s"'''],
+    ["Person", "FamilySearch", _("FamilySearch.org")+"  (Account Login; free)", "https://www.familysearch.org/search/record/results?q.birthLikeDate.from=%(birth)s&q.birthLikeDate.to=%(birth)s&q.deathLikeDate.from=%(death)s&q.deathLikeDate.to=%(death)s&q.givenName=%(given)s+%(middle)s&q.surname=%(surname)s"], #Free Account Needed
+    ["Person", "US-Google", _("US Google"), '''http://www.google.com/search?q="%(given)s+%(middle)s+%(surname)s+%(birth)s+%(death)s"'''],
     ["Person", "newspapers.nla.gov.au", "Australia / Newspaper Family Notices", "http://trove.nla.gov.au/newspaper/result?q=%(given)s+%(surname)s&exactPhrase=&anyWords=&notWords=&requestHandler=&dateFrom=&dateTo=&l-advcategory=Family+Notices&sortby="], # Australian
     ["Person", "Geneanet", "Geneanet", "http://search.geneanet.org/result.php?lang=en&name=%(surname)s"],
     #["Person", "Geneanet-Favrejhas", "Geneanet, Favrejhas", "http://gw1.geneanet.org/index.php3?b=favrejhas&m=NG&n=%(surname)s&t=N&x=0&y=0"], # French
