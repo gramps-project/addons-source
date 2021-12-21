@@ -420,7 +420,11 @@ class lxmlGramplet(Gramplet):
                     # with namespace ...
                     #print(desc(three))
                     (tag, items) = three.tag, three.items()
-
+                    
+                    if three.tag == NAMESPACE + 'ptitle':
+                        text = str(three.text)
+                        if text not in places:
+                            places.append(text) # temp display
                     if three.tag == NAMESPACE + 'pname':
                         text = str(three.attrib.get('value'))
                         translation = str(three.attrib.get('lang'))
