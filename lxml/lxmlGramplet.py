@@ -42,6 +42,7 @@ from gramps.gen.plug import Gramplet
 from gramps.gen.lib import date
 import gramps.gen.datehandler
 from gramps.gen.const import USER_HOME, USER_PLUGINS
+from gramps.gen.config import config
 from gramps.gui.display import display_url
 from gramps.gui.dialog import ErrorDialog
 from gramps.plugins.lib.libhtml import Html, xml_lang
@@ -366,6 +367,8 @@ class lxmlGramplet(Gramplet):
 
         surname_tag = etree.SubElement(root, NAMESPACE + 'surname')
         pname_tag = etree.SubElement(root, NAMESPACE + 'pname')
+        private_surname = config.get('preferences.private-surname-text')
+        private_record = config.get('preferences.private-record-text')
 
         # variable
 
@@ -409,6 +412,13 @@ class lxmlGramplet(Gramplet):
                 else:
                     mediapath = ''
 
+                # privacy
+
+                if two.get('priv'): # XML: optional
+                    text = private_record
+                else:
+                    text = ""
+
                 # search ptitle and time log
 
                 for three in two.iter():
@@ -422,11 +432,13 @@ class lxmlGramplet(Gramplet):
                     (tag, items) = three.tag, three.items()
                     
                     if three.tag == NAMESPACE + 'ptitle':
-                        text = str(three.text)
+                        if text != private_record:
+                            text = str(three.text)
                         if text not in places:
                             places.append(text) # temp display
                     if three.tag == NAMESPACE + 'pname':
-                        text = str(three.attrib.get('value'))
+                        if text != private_record:
+                            text = str(three.attrib.get('value'))
                         translation = str(three.attrib.get('lang'))
                         if translation == 'None':
                             translation = xml_lang()[0:2]
@@ -450,7 +462,10 @@ class lxmlGramplet(Gramplet):
                         # with namespace ...
 
                         if four.tag == NAMESPACE + 'surname' and four.text != None:
-                            surnames.append(four.text)
+                            if text != private_record:
+                                surnames.append(four.text)
+                            else:
+                                surnames.append(private_surname)
 
         LOG.info('end of loops')
 
