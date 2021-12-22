@@ -17,7 +17,12 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
-
+"""
+1.0 Matthias Kemmer
+1.1 George Baynes (baynes@ntlworld.com) adapted to give .odt .ps output
+    it still fails .rtf .txt .html and print due to attempt to find available
+    width or height. Unable to check latex output.
+"""
 
 # ----------------------------------------------------------------------------
 #
@@ -25,6 +30,7 @@
 #
 # ----------------------------------------------------------------------------
 import os
+import time
 from math import floor
 
 # ----------------------------------------------------------------------------
@@ -38,9 +44,11 @@ from gramps.gen.plug.report import Report, MenuReportOptions
 from gramps.gen.display.name import displayer as name_displayer
 from gramps.gen.plug.menu import (MediaOption, NoteOption, BooleanOption,
                                   StringOption, NumberOption)
-from gramps.gen.plug.docgen import (ParagraphStyle, FontStyle, TableStyle,
-                                    TableCellStyle, PARA_ALIGN_CENTER,
-                                    PARA_ALIGN_LEFT)
+from gramps.gen.plug.docgen import (ParagraphStyle, FontStyle, PARA_ALIGN_CENTER,
+                                    IndexMark, FONT_SERIF,
+                                    FONT_SANS_SERIF, INDEX_TYPE_TOC, TableStyle,
+                                    TableCellStyle)
+from gramps.gen.plug.report.utils import pt2cm
 
 # Old:
 #from gramps.gen.const import GRAMPS_LOCALE as glocale
@@ -120,12 +128,6 @@ class MediaReport(Report):
                                   "generate this report."), parent=self.window)
             return False
 
-        # other file output than PDF (PDF is only one supported right now)
-        if self.options.get_output()[-3:] != "pdf":
-            OkDialog(_("INFO"), _("This report only supports PDF as output "
-                                  "file format."), parent=self.window)
-            return False
-
         # if everything is valid
         return True
 
@@ -146,7 +148,10 @@ class MediaReport(Report):
 
         # Heading
         if dct["head"] != "" or dct["head"] is not None:
-            self.write_heading(self._opt["head"])
+            self.doc.start_paragraph("MMR-Title")
+            mark = IndexMark(self._opt["head"], INDEX_TYPE_TOC, 1)
+            self.doc.write_text(self._opt["head"], mark)
+            self.doc.end_paragraph()
 
         # Media File
         self.write_media(path)
@@ -171,34 +176,29 @@ class MediaReport(Report):
         if dct["incl_pers"]:
             self.write_person_reference(media)
 
+        self.doc.start_paragraph("MMR-Footer")
+        footer = self.menu.get_option_by_name('footer').get_value()
+        self.doc.write_text(footer)
+        self.doc.end_paragraph()
+
+
     def __write_media_notes(self, handles):
-        self.write_heading("Notes:", "Heading2")
+        self.write_heading("Notes:")
         for handle in handles:
             note = self._db.get_note_from_handle(handle)
             self.doc.write_styled_note(note.get_styledtext(),
-                                       note.get_format(), 'Default')
+                                       note.get_format(), "MMR-Details")
 
     def __write_media_tags(self, handles):
-        self.doc.start_table('Tags', 'tbl3')
-        self.doc.start_row()
-        self.doc.start_cell('cell')
-        self.write_heading("Tags:", "Heading2")
-        self.doc.end_cell()
-        self.doc.end_row()
+        self.write_heading("Tags:")
         for handle in handles:
             tag = self._db.get_tag_from_handle(handle)
-            self.doc.start_row()
-            self.doc.start_cell('cell')
-            self.doc.start_paragraph("Default")
+            self.doc.start_paragraph("MMR-Details")
             self.doc.write_text(tag.get_name())
             self.doc.end_paragraph()
-            self.doc.end_cell()
-            self.doc.end_row()
-        self.doc.end_table()
 
     def __write_media_citations(self, handles):
-        self.write_heading("Citations:", "Heading2")
-        self.doc.start_table('Tags', 'tbl3')
+        self.write_heading("Citations:")
         for handle in handles:
             cit = self._db.get_citation_from_handle(handle)
             for entry in cit.get_referenced_handles():
@@ -215,50 +215,24 @@ class MediaReport(Report):
                     txt += "%s, " % source.get_publication_info()
                 if cit.get_page():
                     txt += cit.get_page()
-            self.doc.start_row()
-            self.doc.start_cell('cell')
-            self.doc.start_paragraph("Default")
+            self.doc.start_paragraph("MMR-Details")
             self.doc.write_text(txt)
             self.doc.end_paragraph()
-            self.doc.end_cell()
-            self.doc.end_row()
-        self.doc.end_table()
 
     def __write_general_data(self, media):
         # General info
-        self.write_heading(_("General:"), "Heading2")
-        self.doc.start_table('General', 'tbl2')
-        self.doc.start_row()
+        self.write_heading("General:")
 
-        self.doc.start_cell('cell')
-        self.doc.start_paragraph("Default")
-        self.doc.write_text(_("Description:"))
-        self.doc.end_paragraph()
-        self.doc.end_cell()
 
-        self.doc.start_cell('cell')
-        self.doc.start_paragraph("Default")
+        self.doc.start_paragraph("MMR-Details")
+        self.doc.write_text("Description: ")
         self.doc.write_text(media.get_description())
         self.doc.end_paragraph()
-        self.doc.end_cell()
 
-        self.doc.end_row()
-        self.doc.start_row()
-
-        self.doc.start_cell('cell')
-        self.doc.start_paragraph("Default")
-        self.doc.write_text(_("Image type:"))
-        self.doc.end_paragraph()
-        self.doc.end_cell()
-
-        self.doc.start_cell('cell')
-        self.doc.start_paragraph("Default")
+        self.doc.start_paragraph("MMR-Details")
+        self.doc.write_text("Image type: ")
         self.doc.write_text(media.get_mime_type())
         self.doc.end_paragraph()
-        self.doc.end_cell()
-
-        self.doc.end_row()
-        self.doc.end_table()
 
     def __get_ref_list(self, media):
         dct = dict()
@@ -272,23 +246,15 @@ class MediaReport(Report):
 
     def __write_media_attributes(self, media):
         if media.get_attribute_list():
-            self.write_heading("Attributes:", "Heading2")
-            self.doc.start_table('Tags', 'tbl2')
+            self.write_heading("Attributes:")
             for attr in media.get_attribute_list():
-                self.doc.start_row()
-                self.doc.start_cell('cell')
-                self.doc.start_paragraph("Default")
+                self.doc.start_paragraph("MMR-Details")
                 self.doc.write_text(attr.get_type().type2base())
-                self.doc.end_paragraph()
-                self.doc.end_cell()
-
-                self.doc.start_cell('cell')
-                self.doc.start_paragraph("Default")
+#                self.doc.end_paragraph()
+                self.doc.write_text(": ")
+#                self.doc.start_paragraph("MMR-Details")
                 self.doc.write_text(attr.get_value())
                 self.doc.end_paragraph()
-                self.doc.end_cell()
-                self.doc.end_row()
-            self.doc.end_table()
 
     def pers_ref_lst(self, media_handle):
         """
@@ -317,9 +283,9 @@ class MediaReport(Report):
                             lst.append((person, rect))
         return lst
 
-    def write_heading(self, txt, heading="Heading"):
+    def write_heading(self, txt):
         """Write a report heading"""
-        self.doc.start_paragraph(heading)
+        self.doc.start_paragraph("MMR-Heading")
         self.doc.write_text(txt)
         self.doc.end_paragraph()
 
@@ -338,6 +304,8 @@ class MediaReport(Report):
                            self._opt["media_h"] * 0.009)
             # height is capped to 90% to save some space for report heading
             self.doc.add_media(self.filename, 'center', width, height)
+            self.doc.page_break()
+            self.write_heading(self.filename)
         else:
             no_file = _('File does not exist')
             self.user.warn(_("Could not add photo to page"),
@@ -351,11 +319,10 @@ class MediaReport(Report):
         :param media: the media object used in this report
         :type media: :class Media: object
         """
-        # Add some space by adding empty heading
-        self.write_heading(" ")
         # Add person references
         handle = media.serialize()[0]
         ref_lst = self.pers_ref_lst(handle)
+        self.write_heading('Referenced Persons')
         self.doc.start_table('Referenced Persons', 'tbl')
         for i in range((len(ref_lst)//2)):
             ref1 = ref_lst[2*i]
@@ -364,22 +331,22 @@ class MediaReport(Report):
             pers_name2 = name_displayer.display(ref2[0])
 
             self.doc.start_row()
-            self.doc.start_cell('cell')
+            self.doc.start_cell("cell")
             self.doc.add_media(self.filename, 'center', 2.0, 2.0, crop=ref1[1])
             self.doc.end_cell()
 
-            self.doc.start_cell('cell')
-            self.doc.start_paragraph("Default")
+            self.doc.start_cell("cell")
+            self.doc.start_paragraph("MMR-Details")
             self.doc.write_text(pers_name1)
             self.doc.end_paragraph()
             self.doc.end_cell()
 
-            self.doc.start_cell('cell')
+            self.doc.start_cell("cell")
             self.doc.add_media(self.filename, 'center', 2.0, 2.0, crop=ref2[1])
             self.doc.end_cell()
 
-            self.doc.start_cell('cell')
-            self.doc.start_paragraph("Default")
+            self.doc.start_cell("cell")
+            self.doc.start_paragraph("MMR-Details")
             self.doc.write_text(pers_name2)
             self.doc.end_paragraph()
             self.doc.end_cell()
@@ -387,13 +354,13 @@ class MediaReport(Report):
         if len(ref_lst) % 2 != 0:
             pers_name = name_displayer.display(ref_lst[-1][0])
             self.doc.start_row()
-            self.doc.start_cell('cell')
+            self.doc.start_cell("cell")
             self.doc.add_media(self.filename, 'center', 2.0, 2.0,
                                crop=ref_lst[-1][1])
             self.doc.end_cell()
 
-            self.doc.start_cell('cell')
-            self.doc.start_paragraph("Default")
+            self.doc.start_cell("cell")
+            self.doc.start_paragraph("MMR-Details")
             self.doc.write_text(pers_name)
             self.doc.end_paragraph()
             self.doc.end_cell()
@@ -402,13 +369,11 @@ class MediaReport(Report):
 
     def write_note(self):
         """Write a note, if included."""
-        # Add some space by adding empty heading
-        self.write_heading(" ")
 
         nid = self._opt["note"]  # note id
         note = self._db.get_note_from_gramps_id(nid)
         self.doc.write_styled_note(note.get_styledtext(), note.get_format(),
-                                   'Default')
+                                   'MMR-Details')
 
 
 # ----------------------------------------------------------------------------
@@ -457,6 +422,16 @@ class ReportOptions(MenuReportOptions):
                            "height."))
         menu.add_option(_("Report Options"), "media_h", media_h)
 
+        dateinfo = time.localtime(time.time())
+        rname = _("researcher name")
+
+        footer_string = _('Copyright %(year)d %(name)s') % {
+            'year' : dateinfo[0], 'name' : rname}
+        footer = StringOption(_('Footer'), footer_string)
+        footer.set_help(_("Footer string for the report."))
+        menu.add_option(_("Report Options"), "footer", footer)
+
+
     def __update_custom_note_opt(self):
         self.note.set_available(False)
         if self.incl_note.get_value():
@@ -465,25 +440,47 @@ class ReportOptions(MenuReportOptions):
     def make_default_style(self, default_style):
         """Define the default styling."""
         para = ParagraphStyle()
-        default_style.add_paragraph_style("Default", para)
+        default_style.add_paragraph_style("default_style", para)
 
         font = FontStyle()
-        font.set(size=16, bold=1)
+        font.set(face=FONT_SANS_SERIF, size=18, bold=1)
+        para = ParagraphStyle()
         para.set_font(font)
         para.set_header_level(1)
         para.set_top_margin(0.25)
         para.set_bottom_margin(0.25)
         para.set_alignment(PARA_ALIGN_CENTER)
-        default_style.add_paragraph_style("Heading", para)
+        para.set_description(_('The style used for the title of the report.'))
+        default_style.add_paragraph_style("MMR-Title", para)
 
         font = FontStyle()
-        font.set(size=12, bold=1)
+        font.set(face=FONT_SANS_SERIF, size=10, bold=1)
+        para = ParagraphStyle()
         para.set_font(font)
-        para.set_alignment(PARA_ALIGN_LEFT)
-        default_style.add_paragraph_style("Heading2", para)
+        para.set_alignment(PARA_ALIGN_CENTER)
+        para.set_top_border(True)
+        para.set_top_margin(pt2cm(6))
+        para.set_description(_('The style used for the report footer.'))
+        default_style.add_paragraph_style("MMR-Footer", para)
 
-        cell = TableCellStyle()
-        default_style.add_cell_style("cell", cell)
+        font = FontStyle()
+        font.set(face=FONT_SERIF, size=12, italic=0, bold=1)
+        para = ParagraphStyle()
+        para.set_font(font)
+        para.set_header_level(2)
+        para.set(first_indent=0.0, lmargin=1.0)
+        para.set_top_margin(0.50)
+        para.set_bottom_margin(0.0)
+        para.set_description(_('The style used for headings.'))
+        default_style.add_paragraph_style("MMR-Heading", para)
+
+        font = FontStyle()
+        font.set(face=FONT_SERIF, size=10)
+        para = ParagraphStyle()
+        para.set_font(font)
+        para.set(first_indent=0.0, lmargin=1.0)
+        para.set_description(_('The style used for details.'))
+        default_style.add_paragraph_style("MMR-Details", para)
 
         tbl = TableStyle()
         tbl.set_width(100)
@@ -494,15 +491,5 @@ class ReportOptions(MenuReportOptions):
         tbl.set_column_width(3, 30)
         default_style.add_table_style('tbl', tbl)
 
-        tbl = TableStyle()
-        tbl.set_width(100)
-        tbl.set_columns(2)
-        tbl.set_column_width(0, 50)
-        tbl.set_column_width(1, 50)
-        default_style.add_table_style('tbl2', tbl)
-
-        tbl = TableStyle()
-        tbl.set_width(100)
-        tbl.set_columns(1)
-        tbl.set_column_width(0, 100)
-        default_style.add_table_style('tbl3', tbl)
+        cell = TableCellStyle()
+        default_style.add_cell_style("cell", cell)
