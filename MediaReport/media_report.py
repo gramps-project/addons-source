@@ -1,7 +1,8 @@
 #
 # Gramps - a GTK+/GNOME based genealogy program
 #
-# Copyright (C) 2019 Matthias Kemmer
+# Copyright (C) 2019-2021 Matthias Kemmer
+# Copyright (C) 2021 George Baynes
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,12 +18,8 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
-"""
-1.0 Matthias Kemmer
-1.1 George Baynes (baynes@ntlworld.com) adapted to give .odt .ps output
-    it still fails .rtf .txt .html and print due to attempt to find available
-    width or height. Unable to check latex output.
-"""
+"""Create a Media Report containing images, image data and notes."""
+
 
 # ----------------------------------------------------------------------------
 #
@@ -30,7 +27,6 @@
 #
 # ----------------------------------------------------------------------------
 import os
-import time
 from math import floor
 
 # ----------------------------------------------------------------------------
@@ -42,30 +38,25 @@ from gramps.gui.dialog import OkDialog
 from gramps.gen.utils.file import media_path_full
 from gramps.gen.plug.report import Report, MenuReportOptions
 from gramps.gen.display.name import displayer as name_displayer
-from gramps.gen.plug.menu import (MediaOption, NoteOption, BooleanOption,
-                                  StringOption, NumberOption)
-from gramps.gen.plug.docgen import (ParagraphStyle, FontStyle, PARA_ALIGN_CENTER,
-                                    IndexMark, FONT_SERIF,
-                                    FONT_SANS_SERIF, INDEX_TYPE_TOC, TableStyle,
-                                    TableCellStyle)
-from gramps.gen.plug.report.utils import pt2cm
+from gramps.gen.plug.menu import (
+    MediaOption, NoteOption, BooleanOption, StringOption, NumberOption)
+from gramps.gen.plug.docgen import (
+    ParagraphStyle, FontStyle, PARA_ALIGN_CENTER, IndexMark, FONT_SERIF,
+    FONT_SANS_SERIF, INDEX_TYPE_TOC, TableStyle, TableCellStyle)
 
-# Old:
-#from gramps.gen.const import GRAMPS_LOCALE as glocale
-#_ = glocale.translation.gettext
 
-# New:
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # Internationalisation
 #
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
     _trans = glocale.get_addon_translator(__file__)
 except ValueError:
     _trans = glocale.translation
 _ = _trans.gettext
+
 
 # ----------------------------------------------------------------------------
 #
@@ -74,94 +65,43 @@ _ = _trans.gettext
 # ----------------------------------------------------------------------------
 class MediaReport(Report):
     """Create a Media Report containing images, image data and notes."""
+
     def __init__(self, database, options, user):
         Report.__init__(self, database, options, user)
 
         self.menu = options.menu
-        self.options = options
-        self._db = self.database
-        self._opt = self.get_opt_dict()
+        self.db = self.database
+        self.opt = options.options_dict
         self.user = user
         self.window = self.user.uistate.window
         self.filename = None
 
-    def get_opt_dict(self):
-        """
-        Get the values of the menu options
-        :return: dictionary e.g. {opt_name:value}
-        """
-        dct = dict()
-        for name in self.menu.get_all_option_names():
-            opt = self.menu.get_option_by_name(name)
-            dct[name] = opt.get_value()
-        return dct
-
-    def __media_is_img(self, mid):
-        if mid != "":
-            media = self._db.get_media_from_gramps_id(mid)
-            media_type = media.get_mime_type()
-            return "image" in media_type
-        return False
-
-    def __valid_options(self):
-        """Check if all menu options are valid for report generation."""
-        dct = self._opt
-        mid = dct["mid"]
-        is_img = self.__media_is_img(mid)
-
-        # no media file selected
-        if not mid or mid == "":
-            OkDialog(_("INFO"), _("You have to select an image to generate "
-                                  "this report."), parent=self.window)
-            return False
-
-        # 'include custom note' checked, but no custom note selected
-        if dct["incl_note"] and dct["note"] == "":
-            OkDialog(_("INFO"), _("You have to select a custom note or uncheck"
-                                  " the option 'include custom note' to "
-                                  "generate this report."), parent=self.window)
-            return False
-
-        # incorrect media file, not an image
-        if not is_img:
-            OkDialog(_("INFO"), _("You have to select an image to "
-                                  "generate this report."), parent=self.window)
-            return False
-
-        # if everything is valid
-        return True
-
     def write_report(self):
-        """
-        Inherited method; called by Report() in _ReportDialog.py
-        """
-        # check if an image is selected and a note, if include note is checked
-        # stop report generation if one is missing
-        if not self.__valid_options():
-            print("Invalid options. Stop report generation.")
-            return
+        """Report generation."""
 
-        dct = self._opt
-        mid = dct["mid"]
-        media = self._db.get_media_from_gramps_id(mid)
+        if not self.__valid_options():
+            return False
+
+        mid = self.opt["mid"]
+        media = self.db.get_media_from_gramps_id(mid)
         path = media.get_text_data_list()[0]
 
         # Heading
-        if dct["head"] != "" or dct["head"] is not None:
+        if self.opt["head"] != "" or self.opt["head"] is not None:
             self.doc.start_paragraph("MMR-Title")
-            mark = IndexMark(self._opt["head"], INDEX_TYPE_TOC, 1)
-            self.doc.write_text(self._opt["head"], mark)
+            mark = IndexMark(self.opt["head"], INDEX_TYPE_TOC, 1)
+            self.doc.write_text(self.opt["head"], mark)
             self.doc.end_paragraph()
 
         # Media File
-        self.write_media(path)
+        self.__write_media(path)
 
         # Custom Note
-        if self._opt["incl_note"]:
-            self.write_note()
+        if self.opt["incl_note"]:
+            self.__write_note()
 
         # Add all media data
-        if dct["incl_data"]:
+        if self.opt["incl_data"]:
             self.__write_general_data(media)
             self.__write_media_attributes(media)
             ref_dct = self.__get_ref_list(media)
@@ -173,40 +113,82 @@ class MediaReport(Report):
                 self.__write_media_citations(ref_dct["Citation"])
 
         # Person references
-        if dct["incl_pers"]:
-            self.write_person_reference(media)
+        if self.opt["incl_pers"]:
+            self.__write_person_reference(media)
 
-        self.doc.start_paragraph("MMR-Footer")
-        footer = self.menu.get_option_by_name('footer').get_value()
-        self.doc.write_text(footer)
-        self.doc.end_paragraph()
+    def __is_image(self, mid):
+        if mid == "":
+            return False
+        media = self.db.get_media_from_gramps_id(mid)
+        if not media:
+            return False
+        media_type = media.get_mime_type()
+        return "image" in media_type
 
+    def __valid_options(self):
+        # Check if all report options are valid:
+        # 1. A media file is selected
+        # 2. Media file is an image
+        # 3. A note is selected (if note option is checked)
+        include_note = self.opt["incl_note"]
+        note = self.opt["note"]
+        mid = self.opt["mid"]
+
+        # no media file selected
+        if self.window and (not mid or mid == ""):
+            OkDialog(
+                _("INFO"),
+                _("You have to select an image to generate this report."),
+                parent=self.window)
+            return False
+
+        # 'include custom note' checked, but no custom note selected
+        if self.window and include_note and note == "":
+            OkDialog(
+                _("INFO"),
+                _("You have to select a custom note or uncheck"
+                  " the option 'include custom note' to "
+                  "generate this report."),
+                parent=self.window)
+            return False
+
+        # incorrect media file, not an image
+        if self.window and not self.__is_image(mid):
+            OkDialog(
+                _("INFO"),
+                _("You have to select an image to generate this report."),
+                parent=self.window)
+            return False
+
+        # if everything is valid
+        return True
 
     def __write_media_notes(self, handles):
-        self.write_heading("Notes:")
+        self.__write_heading("Notes:")
         for handle in handles:
-            note = self._db.get_note_from_handle(handle)
-            self.doc.write_styled_note(note.get_styledtext(),
-                                       note.get_format(), "MMR-Details")
+            note = self.db.get_note_from_handle(handle)
+            self.doc.write_styled_note(
+                note.get_styledtext(), note.get_format(), "MMR-Details")
 
     def __write_media_tags(self, handles):
-        self.write_heading("Tags:")
+        self.__write_heading("Tags:")
         for handle in handles:
-            tag = self._db.get_tag_from_handle(handle)
+            tag = self.db.get_tag_from_handle(handle)
             self.doc.start_paragraph("MMR-Details")
             self.doc.write_text(tag.get_name())
             self.doc.end_paragraph()
 
     def __write_media_citations(self, handles):
-        self.write_heading("Citations:")
+        self.__write_heading("Citations:")
         for handle in handles:
-            cit = self._db.get_citation_from_handle(handle)
+            cit = self.db.get_citation_from_handle(handle)
+            src_handle = ""
+            txt = ""
             for entry in cit.get_referenced_handles():
                 if entry[0] == "Source":
                     src_handle = entry[1]
-            if src_handle:
-                source = self._db.get_source_from_handle(src_handle)
-                txt = ""
+            if src_handle != "":
+                source = self.db.get_source_from_handle(src_handle)
                 if source.get_author():
                     txt += "%s: " % source.get_author()
                 if source.get_title():
@@ -220,9 +202,7 @@ class MediaReport(Report):
             self.doc.end_paragraph()
 
     def __write_general_data(self, media):
-        # General info
-        self.write_heading("General:")
-
+        self.__write_heading("General:")
 
         self.doc.start_paragraph("MMR-Details")
         self.doc.write_text("Description: ")
@@ -246,134 +226,95 @@ class MediaReport(Report):
 
     def __write_media_attributes(self, media):
         if media.get_attribute_list():
-            self.write_heading("Attributes:")
+            self.__write_heading("Attributes:")
             for attr in media.get_attribute_list():
                 self.doc.start_paragraph("MMR-Details")
                 self.doc.write_text(attr.get_type().type2base())
-#                self.doc.end_paragraph()
                 self.doc.write_text(": ")
-#                self.doc.start_paragraph("MMR-Details")
                 self.doc.write_text(attr.get_value())
                 self.doc.end_paragraph()
 
-    def pers_ref_lst(self, media_handle):
-        """
-        Get a person reference list with image rectangle information.
-
-        :param media_handle: handle of the media file
-        :type media_handle: string
-        :return lst: list of reference tuples
-        :rtype lst: list
-        :example lst: (:class Person: object, (0, 0, 100, 100))
-        """
+    def __get_pers_ref_lst(self, media_handle):
         lst = list()
-        backrefs = self._db.find_backlink_handles(media_handle)
+        backrefs = self.db.find_backlink_handles(media_handle)
         for (reftype, ref) in backrefs:
-            if reftype == "Person":
-                person = self._db.get_person_from_handle(ref)
-                gallery = person.get_media_list()
-                for mediaref in gallery:
-                    referenced_handles = mediaref.get_referenced_handles()
-                    if len(referenced_handles) == 1:
-                        handle_type, handle = referenced_handles[0]
-                        if handle_type == "Media" and handle == media_handle:
-                            rect = mediaref.get_rectangle()
-                            if rect is None:
-                                rect = (0, 0, 100, 100)
-                            lst.append((person, rect))
-        return lst
+            if reftype != "Person":
+                continue
+            person = self.db.get_person_from_handle(ref)
+            if not person:
+                continue
+            gallery = person.get_media_list()
+            if not gallery:
+                continue
+            for mediaref in gallery:
+                referenced_handles = mediaref.get_referenced_handles()
+                if not referenced_handles:
+                    continue
+                handle_type, handle = referenced_handles[0]
+                if handle_type == "Media" and handle == media_handle:
+                    rect = mediaref.get_rectangle()
+                    if not rect:
+                        rect = (0, 0, 100, 100)
+                    lst.append((person, rect))
+        return lst  # [(class:Person, (0, 0, 100, 100))]
 
-    def write_heading(self, txt):
-        """Write a report heading"""
+    def __write_heading(self, txt):
         self.doc.start_paragraph("MMR-Heading")
         self.doc.write_text(txt)
         self.doc.end_paragraph()
 
-    def write_media(self, path):
-        """
-        Add the image to the report
-
-        :param path: gramps media path
-        :type path: string
-        """
-        self.filename = media_path_full(self._db, path)
+    def __write_media(self, path):
+        self.filename = media_path_full(self.db, path)
         if os.path.exists(self.filename):
-            width = floor(self.doc.get_usable_width() *
-                          self._opt["media_w"] * 0.01)
-            height = floor(self.doc.get_usable_height() *
-                           self._opt["media_h"] * 0.009)
-            # height is capped to 90% to save some space for report heading
-            self.doc.add_media(self.filename, 'center', width, height)
+            try:
+                width = floor(self.doc.get_usable_width() *
+                              self.opt["media_w"] * 0.01)
+                height = floor(self.doc.get_usable_height() *
+                               self.opt["media_h"] * 0.009)
+                # height is capped to 90% to save some space for report heading
+                self.doc.add_media(self.filename, 'center', width, height)
+            except AttributeError:
+                # AttributeError, because some docgens don't support the
+                # methods 'get_usable_width' and 'get_usable_height'
+                self.doc.add_media(self.filename, 'center', 1.0, 1.0)
             self.doc.page_break()
-            self.write_heading(self.filename)
         else:
             no_file = _('File does not exist')
             self.user.warn(_("Could not add photo to page"),
                            _("%(str1)s: %(str2)s") % {'str1': self.filename,
                                                       'str2': no_file})
 
-    def write_person_reference(self, media):
-        """
-        Add a table that list all referenced people in the image
-
-        :param media: the media object used in this report
-        :type media: :class Media: object
-        """
-        # Add person references
+    def __write_person_reference(self, media):
         handle = media.serialize()[0]
-        ref_lst = self.pers_ref_lst(handle)
-        self.write_heading('Referenced Persons')
+        ref_lst = self.__get_pers_ref_lst(handle)
+        self.__write_heading('Referenced Persons')
         self.doc.start_table('Referenced Persons', 'tbl')
-        for i in range((len(ref_lst)//2)):
-            ref1 = ref_lst[2*i]
-            ref2 = ref_lst[2*i + 1]
-            pers_name1 = name_displayer.display(ref1[0])
-            pers_name2 = name_displayer.display(ref2[0])
+        new_row = True
+        for entry in ref_lst:
+            name = name_displayer.display(entry[0])
+            border = entry[1]
 
-            self.doc.start_row()
+            if new_row:
+                self.doc.start_row()
             self.doc.start_cell("cell")
-            self.doc.add_media(self.filename, 'center', 2.0, 2.0, crop=ref1[1])
-            self.doc.end_cell()
-
-            self.doc.start_cell("cell")
-            self.doc.start_paragraph("MMR-Details")
-            self.doc.write_text(pers_name1)
-            self.doc.end_paragraph()
-            self.doc.end_cell()
-
-            self.doc.start_cell("cell")
-            self.doc.add_media(self.filename, 'center', 2.0, 2.0, crop=ref2[1])
+            self.doc.add_media(self.filename, 'center', 2.0, 2.0, crop=border)
             self.doc.end_cell()
 
             self.doc.start_cell("cell")
             self.doc.start_paragraph("MMR-Details")
-            self.doc.write_text(pers_name2)
+            self.doc.write_text(name)
             self.doc.end_paragraph()
             self.doc.end_cell()
-            self.doc.end_row()
-        if len(ref_lst) % 2 != 0:
-            pers_name = name_displayer.display(ref_lst[-1][0])
-            self.doc.start_row()
-            self.doc.start_cell("cell")
-            self.doc.add_media(self.filename, 'center', 2.0, 2.0,
-                               crop=ref_lst[-1][1])
-            self.doc.end_cell()
-
-            self.doc.start_cell("cell")
-            self.doc.start_paragraph("MMR-Details")
-            self.doc.write_text(pers_name)
-            self.doc.end_paragraph()
-            self.doc.end_cell()
-            self.doc.end_row()
+            if not new_row:
+                self.doc.end_row()
+            new_row = not new_row
         self.doc.end_table()
 
-    def write_note(self):
-        """Write a note, if included."""
-
-        nid = self._opt["note"]  # note id
-        note = self._db.get_note_from_gramps_id(nid)
-        self.doc.write_styled_note(note.get_styledtext(), note.get_format(),
-                                   'MMR-Details')
+    def __write_note(self):
+        nid = self.opt["note"]  # note id
+        note = self.db.get_note_from_gramps_id(nid)
+        self.doc.write_styled_note(
+            note.get_styledtext(), note.get_format(), 'MMR-Details')
 
 
 # ----------------------------------------------------------------------------
@@ -383,11 +324,12 @@ class MediaReport(Report):
 # ----------------------------------------------------------------------------
 class ReportOptions(MenuReportOptions):
     """Report options for Media Report"""
+
     def __init__(self, name, dbase):
         MenuReportOptions.__init__(self, name, dbase)
 
     def add_menu_options(self, menu):
-        """Add the options to the report option menu"""
+        """Add the options to the report option menu."""
         head = StringOption(_("Heading"), "")
         menu.add_option(_("Report Options"), "head", head)
 
@@ -422,16 +364,6 @@ class ReportOptions(MenuReportOptions):
                            "height."))
         menu.add_option(_("Report Options"), "media_h", media_h)
 
-        dateinfo = time.localtime(time.time())
-        rname = _("researcher name")
-
-        footer_string = _('Copyright %(year)d %(name)s') % {
-            'year' : dateinfo[0], 'name' : rname}
-        footer = StringOption(_('Footer'), footer_string)
-        footer.set_help(_("Footer string for the report."))
-        menu.add_option(_("Report Options"), "footer", footer)
-
-
     def __update_custom_note_opt(self):
         self.note.set_available(False)
         if self.incl_note.get_value():
@@ -452,16 +384,6 @@ class ReportOptions(MenuReportOptions):
         para.set_alignment(PARA_ALIGN_CENTER)
         para.set_description(_('The style used for the title of the report.'))
         default_style.add_paragraph_style("MMR-Title", para)
-
-        font = FontStyle()
-        font.set(face=FONT_SANS_SERIF, size=10, bold=1)
-        para = ParagraphStyle()
-        para.set_font(font)
-        para.set_alignment(PARA_ALIGN_CENTER)
-        para.set_top_border(True)
-        para.set_top_margin(pt2cm(6))
-        para.set_description(_('The style used for the report footer.'))
-        default_style.add_paragraph_style("MMR-Footer", para)
 
         font = FontStyle()
         font.set(face=FONT_SERIF, size=12, italic=0, bold=1)
@@ -492,4 +414,5 @@ class ReportOptions(MenuReportOptions):
         default_style.add_table_style('tbl', tbl)
 
         cell = TableCellStyle()
+        cell.set_padding(0.2)
         default_style.add_cell_style("cell", cell)
