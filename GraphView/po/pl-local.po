@@ -325,7 +325,7 @@ msgid ""
 "Works slow, so don't set large generation values."
 msgstr ""
 "Pokaż wszystkie połączone osoby ograniczone pokoleniami.\n"
-"Działa wolno, więc nie ustawiaj dużych wartości pokoleń.""
+"Działa wolno, więc nie ustawiaj dużych wartości pokoleń."
 
 #: GraphView/graphview.py:1217
 msgid "Add active person"
@@ -404,7 +404,7 @@ msgid ""
 "will be shown in the graph."
 msgstr ""
 "Próbujesz wyświetlić wykres zawierający więcej niż 1000 osób. Nie wszystkie osoby "
-"zostaną pokazane na wykresie".
+"zostaną pokazane na wykresie."
 
 #: GraphView/graphview.py:2535
 msgid "Incomplete graph"
