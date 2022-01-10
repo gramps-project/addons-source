@@ -1,0 +1,82 @@
+# German translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# translation of de.po to Deutsch
+#
+#
+# Anton Huber <anton_huber@gmx.de>, 2005,2006.
+# Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
+# Sebastian Vöcking <voeck@web.de>, 2005.
+# Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
+# Alex Roitman <shura@gramps-project.org>, 2006.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020.
+# Alois Pöttker <alois.poettker@gmx.de>, 2017.
+msgid ""
+msgstr ""
+"Project-Id-Version: de\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-06 18:43+0200\n"
+"PO-Revision-Date: 2020-08-06 18:46+0200\n"
+"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 19.12.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: PostgreSQL/postgresql.gpr.py:26
+msgid "PostgreSQL"
+msgstr "PostgreSQL"
+
+#: PostgreSQL/postgresql.gpr.py:27
+msgid "_PostgreSQL Database"
+msgstr "_PostgreSQL Datenbank"
+
+#: PostgreSQL/postgresql.gpr.py:28
+msgid "PostgreSQL Database"
+msgstr "PostgreSQL Datenbank"
+
+#: PostgreSQL/postgresql.gpr.py:42
+msgid "PostgreSQL Warning:  Python psycopg2 module not found."
+msgstr "PostgresSQL Warnung: Python psycopg2 Modul nicht gefunden."
+
+#: PostgreSQL/postgresql.gpr.py:48
+msgid "PostgreSQL Failed to Load"
+msgstr "PostgreSQL konnte nicht geladen werden"
+
+#: PostgreSQL/postgresql.gpr.py:49
+msgid ""
+"\n"
+"\n"
+"PostgreSQL is missing the psycopg2 python module.\n"
+"For now, it may be possible to install the files manually. See\n"
+"\n"
+"https://gramps-project.org/wiki/index.php?title=PostgreSQL \n"
+"\n"
+"To dismiss all future PostgreSQL warnings click Dismiss."
+msgstr ""
+"\n"
+"\n"
+"PostgreSQL vermisst das psycopg2 Python Modul.\n"
+"Momentan ist es möglich, die Dateien manuell zu installieren. Siehe\n"
+"\n"
+"https://gramps-project.org/wiki/index.php?title=PostgreSQL \n"
+"\n"
+"Um alle zukünftigen PostgreSQL Warnungen auszublenden klicke Ausblenden."
+
+#: PostgreSQL/postgresql.gpr.py:53
+msgid " Dismiss "
+msgstr "Verwerfen"
+
+#: PostgreSQL/postgresql.gpr.py:54
+msgid "Continue"
+msgstr "Fortsetzen"
+
+#: PostgreSQL/postgresql.py:68
+msgid "Database version"
+msgstr "Datenbankversion"
+
+#: PostgreSQL/postgresql.py:69
+msgid "Database module location"
+msgstr "Speicherort des Datenbankmoduls"
