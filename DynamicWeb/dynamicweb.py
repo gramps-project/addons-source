@@ -2392,8 +2392,11 @@ class DynamicWebReport(Report):
             'unknown-alive',
             'unknown-dead',
             ]:
-            sw.write("GRAMPS_PREFERENCES['%s'] = \"%s\";\n" %
-                     (pref, config.get('colors.%s' % pref)))
+            if self.options['svg_theme'] == 0:
+                value = config.get('colors.%s' % pref)[0]
+            else:
+                value = config.get('colors.%s' % pref)[1]
+            sw.write("GRAMPS_PREFERENCES['%s'] = \"%s\";\n" % (pref, value))
         sw.write("SVG_TREE_COLOR_SCHEME0 = [" + ", ".join(
             [("\"#%02x%02x%02x\"" % (r, g, b)) for (r, g, b) in GENCOLOR[BACKGROUND_WHITE]])
             + "];\n")
