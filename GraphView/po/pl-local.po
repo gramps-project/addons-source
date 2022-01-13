@@ -360,7 +360,7 @@ msgstr "Brak innych zakładek..."
 #: GraphView/search_widget.py:224 GraphView/search_widget.py:243
 #, python-format
 msgid "found: %s"
-msgstr "znaleziony: %s"
+msgstr "znaleziono: %s"
 
 #: GraphView/graphview.py:1309
 #, python-format
