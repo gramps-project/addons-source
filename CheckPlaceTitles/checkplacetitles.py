@@ -108,7 +108,6 @@ class CheckPlaceTitles(tool.BatchTool, ManagedWindow):
                      '%s/%s' % (count, self.total),
                      parent=uistate.window)
         else:
-            self.progress.close()
             self.close()
             OkDialog(_('No need modifications'),
                      _("No changes need."),
@@ -161,7 +160,6 @@ class CheckPlaceTitles(tool.BatchTool, ManagedWindow):
         for handle, title, descr in self.name_list:
             self.model.append([handle, title == descr, title, descr])
             self.progress.step()
-        self.progress.close()
 
         self.show()
 
