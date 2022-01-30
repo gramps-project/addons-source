@@ -126,7 +126,7 @@ class CheckPlaceTitles(tool.BatchTool, ManagedWindow):
 
         window = top_dialog.toplevel
         self.set_window(window, top_dialog.get_object('title'), self.label)
-        self.setup_configs('interface.changenames', 500, 450)
+        self.setup_configs('interface.checkplacetitles', 950, 450)
 
         self.clear_button = top_dialog.get_object('checkbutton1')
         self.copy_button = top_dialog.get_object('checkbutton2')
