@@ -36,7 +36,7 @@ from gi.repository import Gtk
 from gramps.gen.db import DbTxn
 from gramps.gen.const import URL_MANUAL_PAGE
 from gramps.gui.managedwindow import ManagedWindow
-from gramps.gui.display import display_help
+from gramps.gui.display import display_url
 from gramps.gen.display.place import displayer as place_displayer
 from gramps.gen.lib import (Note, NoteType, StyledText, StyledTextTag,
                             StyledTextTagType, Tag)
@@ -52,8 +52,8 @@ except ValueError:
     _trans = glocale.translation
 _ = _trans.gettext
 
-WIKI_HELP_PAGE = '%s_-_Tools' % URL_MANUAL_PAGE
-WIKI_HELP_SEC = _('manual|Check_place_titles')
+WIKI_PAGE = ('https://gramps-project.org/wiki/index.php/'
+             'Addon:CheckPlaceTitles')
 
 
 #-------------------------------------------------------------------------
@@ -171,7 +171,7 @@ class CheckPlaceTitles(tool.BatchTool, ManagedWindow):
 
     def on_help_clicked(self, obj):
         """Display the relevant portion of GRAMPS manual"""
-        display_help(WIKI_HELP_PAGE , WIKI_HELP_SEC)
+        display_url(WIKI_PAGE)
 
     def on_ok_clicked(self, obj):
 
