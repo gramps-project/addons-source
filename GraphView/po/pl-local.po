@@ -126,7 +126,7 @@ msgstr "Domyślny"
 
 #: GraphView/graphview.py:704
 msgid "Place format"
-msgstr "Format miejsc"
+msgstr "Format miejsca"
 
 #: GraphView/graphview.py:709 GraphView/graphview.py:3599
 msgid "Show tags"
@@ -142,7 +142,7 @@ msgstr "Motyw osoby"
 
 #: GraphView/graphview.py:734
 msgid "Path color to home person"
-msgstr "Kolor ścieżki do osoby domowej"
+msgstr "Kolor ścieżki do osoby głównej"
 
 #: GraphView/graphview.py:738
 msgid "Font:"
@@ -154,23 +154,23 @@ msgstr "Styl awatarów"
 
 #: GraphView/graphview.py:758
 msgid "PNG files"
-msgstr "Plik PNG"
+msgstr "Pliki PNG"
 
 #: GraphView/graphview.py:763
 msgid "Male avatar:"
-msgstr "Awatar męski:"
+msgstr "Awatar dla mężczyzny:"
 
 #: GraphView/graphview.py:764
 msgid "Choose male avatar"
-msgstr "Wybierz męski awatar"
+msgstr "Wybierz awatar dla mężczyzny"
 
 #: GraphView/graphview.py:776
 msgid "Female avatar:"
-msgstr "Awatar damski:"
+msgstr "Awatar dla kobiety:"
 
 #: GraphView/graphview.py:777
 msgid "Choose female avatar"
-msgstr "Wybierz damski awatar"
+msgstr "Wybierz kobiecy awatar"
 
 #: GraphView/graphview.py:789
 msgid "Themes"
@@ -182,7 +182,7 @@ msgstr "Pokaż animację"
 
 #: GraphView/graphview.py:806
 msgid "Animation speed (1..5 and 5 is the slower)"
-msgstr "Szybkość animacji (1..5 gdzie 5 jest wolniejsze)"
+msgstr "Szybkość animacji (1..5 gdzie 5 jest najwolniejsze)"
 
 #: GraphView/graphview.py:810
 msgid "Animation count (0..8 use 0 to turn off)"
@@ -222,7 +222,7 @@ msgstr "Szukaj"
 
 #: GraphView/graphview.py:880
 msgid "Select a dot file name"
-msgstr "Wybierz nazwę pliku kropki"
+msgstr "Wybierz nazwę pliku dot"
 
 #: GraphView/graphview.py:883
 msgid "_Cancel"
@@ -240,7 +240,7 @@ msgstr "Plik już istnieje"
 msgid ""
 "You can choose to either overwrite the file, or change the selected filename."
 msgstr ""
-"Możesz wybrać nadpisanie pliku lub zmianę wybranej nazwy pliku."
+"Możesz wybrać nadpisanie pliku lub zmianę nazwy wybranego pliku."
 
 #: GraphView/graphview.py:900
 msgid "_Overwrite"
@@ -446,7 +446,7 @@ msgstr "Krzywe"
 
 #: GraphView/graphview.py:3638
 msgid "Ortho"
-msgstr "Ortho"
+msgstr "Prostopadłe"
 
 #: GraphView/graphview.py:3659
 msgid "Copy"
