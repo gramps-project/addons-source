@@ -8,40 +8,40 @@
 # Sebastian Vöcking <voeck@web.de>, 2005.
 # Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
 # Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020.
 # Alois Pöttker <alois.poettker@gmx.de>, 2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-03 15:31+0200\n"
-"PO-Revision-Date: 2018-04-11 19:24+0100\n"
+"POT-Creation-Date: 2020-08-09 13:46+0200\n"
+"PO-Revision-Date: 2020-07-23 20:24+0200\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 2.0\n"
+"X-Generator: Lokalize 19.12.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: Sqlite/ExportSql.py:1238
+#: Sqlite/ExportSql.py:1345
 #, python-format
 msgid "Export Complete: %d second"
 msgid_plural "Export Complete: %d seconds"
 msgstr[0] "Export abgeschlossen: %d Sekunde"
 msgstr[1] "Export abgeschlossen: %d Sekunden"
 
-#: Sqlite/ImportSql.py:135
+#: Sqlite/ImportSql.py:142
 #, python-format
 msgid "%s could not be opened\n"
 msgstr "%s konnte nicht geöffnet werden\n"
 
-#: Sqlite/ImportSql.py:580
+#: Sqlite/ImportSql.py:589
 msgid "CSV import"
 msgstr "CSV Import"
 
-#: Sqlite/ImportSql.py:942
+#: Sqlite/ImportSql.py:892
 #, python-format
 msgid "Import Complete: %d second"
 msgid_plural "Import Complete: %d seconds"

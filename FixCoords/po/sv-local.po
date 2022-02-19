@@ -1,0 +1,43 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Pär Ekholm <pehlm@pekholm.org>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-04 11:48-0600\n"
+"PO-Revision-Date: 2021-05-23 11:47+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"Last-Translator: Pär Ekholm <pehlm@pekholm.se>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: sv_SE\n"
+
+#: FixCoords/fixcoords.gpr.py:30
+msgid "Fix Place Coordinates"
+msgstr "Laga platskoordinater"
+
+#: FixCoords/fixcoords.gpr.py:31
+msgid "Tool to correct the place coordinates for extra spaces or comma characters."
+msgstr "Verktyg för att korrigera platskoordinaterna för extra mellanslag eller kommatecken."
+
+#: FixCoords/fixcoords.py:53
+msgid "Fix Coordinates"
+msgstr "Laga koordinater"
+
+#: FixCoords/fixcoords.py:53
+msgid "Starting"
+msgstr "Börjar"
+
+#: FixCoords/fixcoords.py:58
+msgid "Looking for possible coords with \",\" characters"
+msgstr "Söker efter möjliga koordinater med \",\"-tecken"
+
+#: FixCoords/fixcoords.py:60
+msgid "Fix coords"
+msgstr "Laga koordinater"

@@ -1,0 +1,140 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-09-14 10:44-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: FilterRules2/matrilinealprogenitrix.gpr.py:24
+#: FilterRules2/matrilinealprogenitrix.py:45
+msgid "Matrilineal progenitrix of <person>"
+msgstr ""
+
+#: FilterRules2/matrilinealprogenitrix.gpr.py:25
+#: FilterRules2/matrilinealprogenitrix.py:47
+msgid "Matches the earliest recorded matrilineal ancestor mother."
+msgstr ""
+
+#: FilterRules2/matrilinealprogenitrix.py:44 FilterRules2/mtinheritance.py:44
+#: FilterRules2/patrilinealprogenitor.py:44 FilterRules2/xchromancestors.py:47
+#: FilterRules2/xchromdescendants.py:47 FilterRules2/yinheritance.py:44
+msgid "ID:"
+msgstr ""
+
+#: FilterRules2/matrilinealprogenitrix.py:46
+#: FilterRules2/patrilinealprogenitor.py:46 FilterRules2/xchromancestors.py:49
+msgid "Ancestral filters"
+msgstr ""
+
+#: FilterRules2/matrilinealprogenitrix.py:78 FilterRules2/mtinheritance.py:81
+#: FilterRules2/mtinheritanceoffiltermatch.py:86
+#: FilterRules2/patrilinealprogenitor.py:78 FilterRules2/xchromancestors.py:90
+#: FilterRules2/xchromancestors.py:98 FilterRules2/xchromdescendants.py:71
+#: FilterRules2/xchromdescendants.py:76 FilterRules2/yinheritance.py:104
+#: FilterRules2/yinheritanceoffiltermatch.py:110
+msgid "Birth"
+msgstr ""
+
+#: FilterRules2/mtinheritance.gpr.py:24 FilterRules2/mtinheritance.py:45
+msgid "Mitochondrial inheritance of <person>"
+msgstr ""
+
+#: FilterRules2/mtinheritance.gpr.py:25 FilterRules2/mtinheritance.py:46
+msgid ""
+"Matches recorded descendants of person following mitochondrial inheritance "
+"patterns."
+msgstr ""
+
+#: FilterRules2/mtinheritance.py:48
+#: FilterRules2/mtinheritanceoffiltermatch.py:49
+#: FilterRules2/xchromdescendants.py:49 FilterRules2/yinheritance.py:48
+#: FilterRules2/yinheritanceoffiltermatch.py:49
+msgid "Descendant filters"
+msgstr ""
+
+#: FilterRules2/mtinheritanceoffiltermatch.gpr.py:24
+#: FilterRules2/mtinheritanceoffiltermatch.py:46
+msgid "Mitochondrial inheritance of <filter>"
+msgstr ""
+
+#: FilterRules2/mtinheritanceoffiltermatch.gpr.py:25
+#: FilterRules2/mtinheritanceoffiltermatch.py:47
+msgid ""
+"Matches recorded descendants of a filter result following mitochondrial "
+"inheritance patterns."
+msgstr ""
+
+#: FilterRules2/mtinheritanceoffiltermatch.py:45
+#: FilterRules2/yinheritanceoffiltermatch.py:45
+msgid "Filter name:"
+msgstr ""
+
+#: FilterRules2/patrilinealprogenitor.gpr.py:24
+#: FilterRules2/patrilinealprogenitor.py:45
+msgid "Patrilineal progenitor of <person>"
+msgstr ""
+
+#: FilterRules2/patrilinealprogenitor.gpr.py:25
+#: FilterRules2/patrilinealprogenitor.py:47
+msgid "Matches the earliest recorded patrilineal ancestor father."
+msgstr ""
+
+#: FilterRules2/xchromancestors.gpr.py:24 FilterRules2/xchromancestors.py:48
+msgid "X-chromosomal ancestors of <person>"
+msgstr ""
+
+#: FilterRules2/xchromancestors.gpr.py:25 FilterRules2/xchromancestors.py:50
+msgid ""
+"Matches ancestors of <person> following a X-chromosomal inheritance pattern."
+msgstr ""
+
+#: FilterRules2/xchromdescendants.gpr.py:24
+#: FilterRules2/xchromdescendants.py:48
+msgid "X-chromosomal descendants of <person>"
+msgstr ""
+
+#: FilterRules2/xchromdescendants.gpr.py:25
+msgid ""
+"Matches descendants of <person> following a X-chromosomal inheritance "
+"pattern."
+msgstr ""
+
+#: FilterRules2/xchromdescendants.py:50
+msgid ""
+"Matches all descendants of <person> following a X-chromosomal inheritance "
+"pattern."
+msgstr ""
+
+#: FilterRules2/yinheritance.gpr.py:24 FilterRules2/yinheritance.py:45
+msgid "Y-chromosomal inheritance of <person>"
+msgstr ""
+
+#: FilterRules2/yinheritance.gpr.py:25 FilterRules2/yinheritance.py:46
+msgid ""
+"Matches recorded descendants of person following Y-chromosomal inheritance "
+"patterns."
+msgstr ""
+
+#: FilterRules2/yinheritanceoffiltermatch.gpr.py:24
+#: FilterRules2/yinheritanceoffiltermatch.py:46
+msgid "Y-chromosomal inheritance of <filter>"
+msgstr ""
+
+#: FilterRules2/yinheritanceoffiltermatch.gpr.py:25
+#: FilterRules2/yinheritanceoffiltermatch.py:47
+msgid ""
+"Matches recorded descendants of a filter result following Y-chromosomal "
+"inheritance patterns."
+msgstr ""

@@ -129,12 +129,8 @@ class Connection:
         """
         # Duplicating system collations works, but to delete them the schema
         # must be specified, so get the current schema
-        self.execute('SELECT current_schema()')
-        current_schema, = self.fetchone()
         collation = locale.get_collation()
-        self.execute('DROP COLLATION IF EXISTS "%s"."%s"'
-                     % (current_schema, collation))
-        self.execute('CREATE COLLATION "%s"'
+        self.execute('CREATE COLLATION IF NOT EXISTS "%s"'
                      "(LOCALE = '%s')" % (collation, locale.collation))
 
     def _hack_query(self, query):

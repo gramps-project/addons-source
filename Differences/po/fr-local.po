@@ -24,7 +24,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 4.0-beta1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-25 15:50+0100\n"
+"POT-Creation-Date: 2020-07-17 17:41+0200\n"
 "PO-Revision-Date: 2013-02-25 15:57+0100\n"
 "Last-Translator: \n"
 "Language-Team: French <traduc@traduc.org>\n"
@@ -35,7 +35,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 1.4\n"
 
-#: Differences/differences.gpr.py:4
+#: Differences/differences.gpr.py:4 Differences/differences.py:97
 msgid "Database Differences Report"
 msgstr "Rapport des différences dans la base de données"
 
@@ -43,55 +43,102 @@ msgstr "Rapport des différences dans la base de données"
 msgid "Compares an external database with the current one."
 msgstr "Compare une base de données externe avec la base actuelle."
 
-#: Differences/differences.py:157
-msgid "Differences Report"
-msgstr "Rapport des différences"
+#: Differences/differences.py:116
+msgid "File:"
+msgstr "Fichier :"
+
+#: Differences/differences.py:136
+msgid "Differences between Database and File"
+msgstr "Différences entre la base de données et le fichier"
+
+#: Differences/differences.py:140 Differences/differences_old.py:128
+msgid "Family Tree Differences"
+msgstr "Différences de l'arbre généalogique"
+
+#: Differences/differences.py:141 Differences/differences_old.py:129
+msgid "Processing..."
+msgstr "En traitement..."
 
 # Substantif (GNOME fr)
-#: Differences/differences.py:158
-msgid "Looking for differences..."
-msgstr "Recherche des différences..."
+#: Differences/differences.py:163
+msgid "No differences"
+msgstr "Pas de différences"
 
-#: Differences/differences.py:272
+#: Differences/differences.py:170
+msgid "Missing items in File that are added in Database"
+msgstr "Éléments manquants dans le fichier qui sont ajoutés dans la base de données"
+
+#: Differences/differences.py:176
+#, python-format
+msgid "Missing %s: %s"
+msgstr "Disparu %s: %s"
+
+#: Differences/differences.py:180
+msgid "Nothing missing"
+msgstr "Rien ne manque"
+
+#: Differences/differences.py:187
+msgid "Added items in File that are missing in Database"
+msgstr "Ajout d'éléments dans le fichier qui manquent dans la base de données"
+
+#: Differences/differences.py:193
+#, python-format
+msgid "Added %s: %s "
+msgstr "Ajoutée %s: %s "
+
+#: Differences/differences.py:197
+msgid "Nothing added"
+msgstr "Rien ajouté"
+
+#: Differences/differences.py:308 Differences/differences_old.py:296
 msgid "Report Options"
 msgstr "Options du rapport"
 
-#: Differences/differences.py:273
+#: Differences/differences.py:310 Differences/differences_old.py:298
 msgid "Family Tree file"
 msgstr "Fichier arbre familial"
 
-#: Differences/differences.py:274
+#: Differences/differences.py:312 Differences/differences_old.py:300
 msgid "Select a .gpkg or .gramps file"
 msgstr "Sélectionner un fichier .gpkg ou .gramps"
 
-#: Differences/differences.py:277
+#: Differences/differences.py:315 Differences/differences_old.py:303
 msgid "Show items that are different"
 msgstr "Afficher les parties différentes"
 
-#: Differences/differences.py:278
+#: Differences/differences.py:316 Differences/differences_old.py:304
 msgid "Include items that are different"
 msgstr "Inclure les parties différentes"
 
-#: Differences/differences.py:281
-msgid "Show deleted items"
-msgstr "Afficher les parties supprimées"
+#: Differences/differences.py:319 Differences/differences_old.py:307
+msgid "Show items missing from file"
+msgstr "Afficher les éléments manquants dans le fichier"
 
-#: Differences/differences.py:282
+#: Differences/differences.py:320 Differences/differences_old.py:308
 msgid "Include items not in file but in database"
-msgstr "Inclure les parties non-présentes dans le fichier mais dans la base de données"
+msgstr ""
+"Inclure les parties non-présentes dans le fichier mais dans la base de "
+"données"
 
-#: Differences/differences.py:285
-msgid "Show added items"
-msgstr "Afficher les parties nouvelles"
+#: Differences/differences.py:323 Differences/differences_old.py:311
+msgid "Show items added in file"
+msgstr "Afficher les éléments ajoutés dans le fichier"
 
-#: Differences/differences.py:286
+#: Differences/differences.py:324 Differences/differences_old.py:312
 msgid "Include items in file but not in database"
-msgstr "Inclure les parties présentes dans le fichier mais absentes dans la base de données"
+msgstr ""
+"Inclure les parties présentes dans le fichier mais absentes dans la base de "
+"données"
 
-#: Differences/differences.py:331
-#: Differences/differences.py:333
-#: Differences/differences.py:336
-#: Differences/differences.py:339
+#: Differences/differences.py:369 Differences/differences.py:371
+#: Differences/differences.py:374 Differences/differences.py:377
+#: Differences/differences_old.py:357 Differences/differences_old.py:359
+#: Differences/differences_old.py:362 Differences/differences_old.py:365
 msgid "Text"
 msgstr "Texte"
 
+#~ msgid "Differences Report"
+#~ msgstr "Rapport des différences"
+
+#~ msgid "Show deleted items"
+#~ msgstr "Afficher les parties supprimées"

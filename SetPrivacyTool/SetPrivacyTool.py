@@ -1,6 +1,7 @@
 #
 # Gramps - a GTK+/GNOME based genealogy program
 #
+# Copyright (C) 2020  David Straub
 # Copyright (C) 2019  Matthias Kemmer
 #
 # This program is free software; you can redistribute it and/or modify
@@ -22,8 +23,10 @@
 # GRAMPS modules
 #
 # ----------------------------------------------------------------------------
+from gramps.gen.filters import CustomFilters, GenericFilterFactory
 from gramps.gui.plug import MenuToolOptions, PluginWindows
-from gramps.gen.plug.menu import NumberOption, BooleanOption
+from gramps.gen.plug.menu import (NumberOption, BooleanOption, FilterOption,
+                                  EnumeratedListOption)
 from gramps.gui.dialog import OkDialog
 from gramps.gen.lib.date import Today
 from gramps.gen.db import DbTxn
@@ -51,23 +54,19 @@ class SetPrivacyWindow(PluginWindows.ToolManagedWindowBatch):
         self.db = self.dbstate.get_database()
         self.cnt = []
         opt = []
-        for entry in ["years", "person", "event", "media", "no_date"]:
+        for entry in ["years", "person", "event", "media", "address",
+                      "internet", "no_date", "internet_type"]:
             opt.append(self.get_opt(entry))
+
         # Check if the user has ticked at least on category
-        if True in opt[1:4]:
+        if True in opt[1:6]:
             self.lock_function(opt)
         else:
             OkDialog("Information", "Choose at least one category e.g. "
                      "'Persons' to progress", parent=self.window)
 
     def get_opt(self, name):
-        """Get the options value for further processing.
-
-        :param name: Name of the menu option
-        :param name: string
-        :returns: Value of the option
-        :rtype: True, False or integer
-        """
+        """Get the options value for further processing."""
         menu = self.options.menu
         opt = menu.get_option_by_name(name)
         return opt.get_value()
@@ -75,52 +74,69 @@ class SetPrivacyWindow(PluginWindows.ToolManagedWindowBatch):
     def lock_function(self, opt):
         """Lock objects depending on user selection and timeframe."""
         date = Today() - opt[0]
-        lock_no_date = opt[4]
+        lock_no_date = opt[6]
         if opt[1]:
             self.lock_persons(date, lock_no_date)
         if opt[2]:
             self.lock_events(date, lock_no_date)
         if opt[3]:
             self.lock_media(date, lock_no_date)
+        if opt[4]:
+            self.lock_address(date, lock_no_date)
+        if opt[5]:
+            self.lock_internet(date, lock_no_date)
         txt = ""
         for entry in self.cnt:
-            txt += "Set private: %d %s\n" % (entry[1], entry[0])
+            txt += _("Set private: %d %s\n") % (entry[1], entry[0])
         for entry in self.cnt:
-            txt += "Not private: %d %s\n" % (entry[2], entry[0])
-        OkDialog("Set Privacy Tool", txt, parent=self.window)
+            txt += _("Not private: %d %s\n") % (entry[2], entry[0])
+        OkDialog(_("Set Privacy Tool"), txt, parent=self.window)
 
     def lock_persons(self, date, lock_no_date):
         with DbTxn(_("Set Privacy Tool"), self.db, batch=True) as self.trans:
             self.db.disable_signals()
             person_list = list(self.db.iter_people())
-            self.progress.set_pass(_('Set persons private..'),
-                                   len(person_list))
+
+            filter_option = self.options.menu.get_option_by_name(
+                'person_filter')
+            person_filter = filter_option.get_filter()
+            filtered_person_handles = person_filter.apply(
+                self.db, self.db.iter_person_handles())
+
+            self.progress.set_pass(
+                _('Set persons private..'), len(filtered_person_handles))
             cnt = [0, 0]
+
             for Person in person_list:
+                if Person.handle not in filtered_person_handles:
+                    continue
                 birth_ref = Person.get_birth_ref()
                 if birth_ref:
                     birth = self.db.get_event_from_handle(birth_ref.ref)
                     birth_date = birth.get_date_object()
+                    set_privacy = None
                     if birth_date.get_year() == 0 and lock_no_date:
-                        Person.set_privacy(True)
+                        set_privacy = True
                         cnt[0] += 1
                     elif birth_date.get_year() == 0 and not lock_no_date:
-                        Person.set_privacy(False)
+                        set_privacy = False
                         cnt[1] += 1
                     elif birth_date.get_year() != 0 and birth_date >= date:
-                        Person.set_privacy(True)
+                        set_privacy = True
                         cnt[0] += 1
                     else:
-                        Person.set_privacy(False)
+                        set_privacy = False
                         cnt[1] += 1
                 else:
                     if lock_no_date:
-                        Person.set_privacy(True)
+                        set_privacy = True
                         cnt[0] += 1
                     else:
-                        Person.set_privacy(False)
+                        set_privacy = False
                         cnt[1] += 1
-                self.db.commit_person(Person, self.trans)
+                if set_privacy is not None and set_privacy != Person.private:
+                    Person.set_privacy(set_privacy)
+                    self.db.commit_person(Person, self.trans)
                 self.progress.step()
         self.db.enable_signals()
         self.db.request_rebuild()
@@ -130,24 +146,37 @@ class SetPrivacyWindow(PluginWindows.ToolManagedWindowBatch):
         with DbTxn(_("Set Privacy Tool"), self.db, batch=True) as self.trans:
             self.db.disable_signals()
             event_list = list(self.db.iter_events())
-            self.progress.set_pass(_('Set events private..'),
-                                   len(event_list))
+
+            filter_option = self.options.menu.get_option_by_name(
+                'event_filter')
+            event_filter = filter_option.get_filter()
+            filtered_event_handles = event_filter.apply(
+                self.db, self.db.iter_event_handles())
+
+            self.progress.set_pass(
+                _('Set events private..'), len(filtered_event_handles))
+
             cnt = [0, 0]
             for Event in event_list:
+                if Event.handle not in filtered_event_handles:
+                    continue
                 event_date = Event.get_date_object()
+                set_privacy = None
                 if event_date.get_year() == 0 and lock_no_date:
-                    Event.set_privacy(True)
+                    set_privacy = True
                     cnt[0] += 1
                 elif event_date.get_year() == 0 and not lock_no_date:
-                    Event.set_privacy(False)
+                    set_privacy = False
                     cnt[1] += 1
                 elif event_date.get_year() != 0 and event_date >= date:
-                    Event.set_privacy(True)
+                    set_privacy = True
                     cnt[0] += 1
                 else:
-                    Event.set_privacy(False)
+                    set_privacy = False
                     cnt[1] += 1
-                self.db.commit_event(Event, self.trans)
+                if set_privacy is not None and set_privacy != Event.private:
+                    Event.set_privacy(set_privacy)
+                    self.db.commit_event(Event, self.trans)
                 self.progress.step()
         self.db.enable_signals()
         self.db.request_rebuild()
@@ -157,57 +186,176 @@ class SetPrivacyWindow(PluginWindows.ToolManagedWindowBatch):
         with DbTxn(_("Set Privacy Tool"), self.db, batch=True) as self.trans:
             self.db.disable_signals()
             media_list = list(self.db.iter_media())
-            self.progress.set_pass(_('Set media private..'),
-                                   len(media_list))
+
+            filter_option = self.options.menu.get_option_by_name(
+                'media_filter')
+            media_filter = filter_option.get_filter()
+            filtered_media_handles = media_filter.apply(
+                self.db, self.db.iter_media_handles())
+
+            self.progress.set_pass(
+                _('Set media private..'), len(filtered_media_handles))
+
             cnt = [0, 0]
             for Media in media_list:
+                if Media.handle not in filtered_media_handles:
+                    continue
                 media_date = Media.get_date_object()
+                set_privacy = None
                 if media_date.get_year() == 0 and lock_no_date:
-                    Media.set_privacy(True)
+                    set_privacy = True
                     cnt[0] += 1
                 elif media_date.get_year() == 0 and not lock_no_date:
-                    Media.set_privacy(False)
+                    set_privacy = False
                     cnt[1] += 1
                 elif media_date.get_year() != 0 and media_date >= date:
-                    Media.set_privacy(True)
+                    set_privacy = True
                     cnt[0] += 1
                 else:
-                    Media.set_privacy(False)
+                    set_privacy = False
                     cnt[1] += 1
-                self.db.commit_media(Media, self.trans)
+                if set_privacy is not None and set_privacy != Media.private:
+                    Media.set_privacy(set_privacy)
+                    self.db.commit_media(Media, self.trans)
                 self.progress.step()
         self.db.enable_signals()
         self.db.request_rebuild()
         self.cnt.append(("media", cnt[0], cnt[1]))
 
+    def lock_address(self, date, lock_no_date):
+        with DbTxn(_("Set Privacy Tool"), self.db, batch=True) as self.trans:
+            self.db.disable_signals()
+            person_list = list(self.db.iter_people())
+            self.progress.set_pass(
+                _('Set adresses private..'), len(person_list))
+            cnt = [0, 0]
+            for person in person_list:
+                for address in person.address_list:
+                    if address.date.get_year() == 0 and lock_no_date:
+                        set_privacy = True
+                        cnt[0] += 1
+                    elif address.date.get_year() == 0 and not lock_no_date:
+                        set_privacy = False
+                        cnt[1] += 1
+                    elif address.date.get_year() != 0 and address.date >= date:
+                        set_privacy = True
+                        cnt[0] += 1
+                    else:
+                        set_privacy = False
+                        cnt[1] += 1
+                    if set_privacy is not None and set_privacy != address.private:
+                        address.private = set_privacy
+                        self.db.commit_person(person, self.trans)
+                self.progress.step()
+        self.db.enable_signals()
+        self.db.request_rebuild()
+        self.cnt.append(("address", cnt[0], cnt[1]))
+
+    def lock_internet(self, date, lock_no_date):
+        with DbTxn(_("Set Privacy Tool"), self.db, batch=True) as self.trans:
+            self.db.disable_signals()
+            person_list = list(self.db.iter_people())
+            self.progress.set_pass(
+                _('Set internet objects private..'), len(person_list))
+            cnt = [0, 0]
+            internet_type = self.options.menu.get_option_by_name(
+                "internet_type").get_value()
+            ALL_TYPES = -2
+            for person in person_list:
+                for url in person.urls:
+                    if (internet_type == url.type.serialize()[0]
+                            or internet_type == ALL_TYPES) and lock_no_date:
+                        set_privacy = True
+                        cnt[0] += 1
+                    elif (internet_type == url.type.serialize()[0]
+                          or internet_type == ALL_TYPES) and not lock_no_date:
+                        set_privacy = False
+                        cnt[1] += 1
+                    else:
+                        set_privacy = False
+                        cnt[1] += 1
+                    self.progress.step()
+                    if set_privacy is not None and set_privacy != url.private:
+                        url.private = set_privacy
+                        self.db.commit_person(person, self.trans)
+                self.progress.step()
+        self.db.enable_signals()
+        self.db.request_rebuild()
+        self.cnt.append(("internet objects", cnt[0], cnt[1]))
 
 # ----------------------------------------------------------------------------
 #
 # Option Class
 #
 # ----------------------------------------------------------------------------
+
+
 class SetPrivacyOptions(MenuToolOptions):
     """Handles the Set Privacy Tool menu options."""
+
     def __init__(self, name, person_id=None, dbstate=None):
         MenuToolOptions.__init__(self, name, person_id, dbstate)
 
     def add_menu_options(self, menu):
-        self.person = BooleanOption(_("Persons"), False)
-        menu.add_option(_("Option"), "person", self.person)
-
-        self.event = BooleanOption(_("Events"), False)
-        menu.add_option(_("Option"), "event", self.event)
-
-        self.media = BooleanOption(_("Media"), False)
-        menu.add_option(_("Option"), "media", self.media)
+        self.years = NumberOption(_("Years"), 0, 0, 2000)
+        self.years.set_help(_("The time range in years from today you want to "
+                              "set objects private.\n"
+                              "'0 years' = remove privacy from all objects."))
+        menu.add_option(_("Option"), "years", self.years)
 
         self.no_date = BooleanOption(_("Always private if no date."), False)
         self.no_date.set_help(_("If checked, all objects without a date will "
                                 "also be set private."))
         menu.add_option(_("Option"), "no_date", self.no_date)
 
-        self.years = NumberOption(_("Years"), 0, 0, 2000)
-        self.years.set_help(_("The time range in years from today you want to "
-                              "set objects private.\n"
-                              "'0 years' = remove privacy from all objects."))
-        menu.add_option(_("Option"), "years", self.years)
+        self.person_filter = FilterOption(_("Person Filter"), 0)
+        self.person_filter.set_help(_("Select filter to restrict people"))
+        menu.add_option(_("Option"), "person_filter", self.person_filter)
+        person_filter_all = GenericFilterFactory("Person")()
+        person_filter_all.name = _("Entire Database")
+        person_filter_list = [person_filter_all] + \
+            CustomFilters.get_filters("Person")
+        self.person_filter.set_filters(person_filter_list)
+
+        self.person = BooleanOption(_("Persons"), False)
+        menu.add_option(_("Option"), "person", self.person)
+
+        self.event_filter = FilterOption(_("Event Filter"), 0)
+        self.event_filter.set_help(_("Select filter to restrict events"))
+        menu.add_option(_("Option"), "event_filter", self.event_filter)
+        event_filter_all = GenericFilterFactory("Event")()
+        event_filter_all.name = _("Entire Database")
+        event_filter_list = [event_filter_all] + \
+            CustomFilters.get_filters('Event')
+        self.event_filter.set_filters(event_filter_list)
+
+        self.event = BooleanOption(_("Events"), False)
+        menu.add_option(_("Option"), "event", self.event)
+
+        self.media_filter = FilterOption(_("Media Filter"), 0)
+        self.media_filter.set_help(_("Select filter to restrict medias"))
+        menu.add_option(_("Option"), "media_filter", self.media_filter)
+        media_filter_all = GenericFilterFactory("Media")()
+        media_filter_all.name = _("Entire Database")
+        media_filter_list = [media_filter_all] + \
+            CustomFilters.get_filters('Media')
+        self.media_filter.set_filters(media_filter_list)
+
+        self.media = BooleanOption(_("Media"), False)
+        menu.add_option(_("Option"), "media", self.media)
+
+        self.internet_type = EnumeratedListOption(_("Internet type filter"), 0)
+        self.internet_type.add_item(-2, _("All"))
+        self.internet_type.add_item(-1, _("Unknown"))
+        # self.internet_type.add_item(0, _("Custom"))
+        self.internet_type.add_item(1, _("E-Mail"))
+        self.internet_type.add_item(2, _("Web Home"))
+        self.internet_type.add_item(3, _("Web Search"))
+        self.internet_type.add_item(4, _("FTP"))
+        menu.add_option(_("Option"), "internet_type", self.internet_type)
+
+        self.internet = BooleanOption(_("Internet"), False)
+        menu.add_option(_("Option"), "internet", self.internet)
+
+        self.address = BooleanOption(_("Address"), False)
+        menu.add_option(_("Option"), "address", self.address)

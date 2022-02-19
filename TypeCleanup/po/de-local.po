@@ -1,0 +1,192 @@
+# German translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# translation of de.po to Deutsch
+#
+#
+# Anton Huber <anton_huber@gmx.de>, 2005,2006.
+# Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
+# Sebastian Vöcking <voeck@web.de>, 2005.
+# Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
+# Alex Roitman <shura@gramps-project.org>, 2006.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020.
+# Alois Pöttker <alois.poettker@gmx.de>, 2017.
+msgid ""
+msgstr ""
+"Project-Id-Version: de\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-09 23:06+0200\n"
+"PO-Revision-Date: 2020-08-09 23:27+0200\n"
+"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 19.12.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: TypeCleanup/type_cleanup.gpr.py:29
+msgid "Type Cleanup"
+msgstr "Arten Säuberung"
+
+#: TypeCleanup/type_cleanup.gpr.py:30
+msgid "Clean up (remove) custom types"
+msgstr "Bereinigt (entfernt) benutzerdefinierte Arten"
+
+#: TypeCleanup/type_cleanup.py:96
+msgid "Event Attributes"
+msgstr "Ereignisattribute"
+
+#: TypeCleanup/type_cleanup.py:97
+msgid "Family Attributes"
+msgstr "Familienattribute"
+
+#: TypeCleanup/type_cleanup.py:98
+msgid "Media Attributes"
+msgstr "Medienattribute"
+
+#: TypeCleanup/type_cleanup.py:99
+msgid "Person Attributes"
+msgstr "Personenattribute"
+
+#: TypeCleanup/type_cleanup.py:101
+msgid "Event Roles"
+msgstr "Ereignisrollen"
+
+#: TypeCleanup/type_cleanup.py:102
+msgid "Event Types"
+msgstr "Ereignisarten"
+
+#: TypeCleanup/type_cleanup.py:103
+msgid "Family Relation Types"
+msgstr "Arten von Familienbeziehungen"
+
+#: TypeCleanup/type_cleanup.py:104
+msgid "Child reference Types"
+msgstr "Kind Referenzart"
+
+#: TypeCleanup/type_cleanup.py:105
+msgid "Name Origin Types"
+msgstr "Name Herkunftsarten"
+
+#: TypeCleanup/type_cleanup.py:106
+msgid "Name Types"
+msgstr "Namenarten"
+
+#: TypeCleanup/type_cleanup.py:107
+msgid "Note Types"
+msgstr "Notizarten"
+
+#: TypeCleanup/type_cleanup.py:108
+msgid "Place Types"
+msgstr "Ortstarten"
+
+#: TypeCleanup/type_cleanup.py:109
+msgid "Repository Types"
+msgstr "Aufbewahrungsortearten"
+
+#: TypeCleanup/type_cleanup.py:110
+msgid "Source Attributes"
+msgstr "Quellenattribute"
+
+#: TypeCleanup/type_cleanup.py:111
+msgid "Source Media Types"
+msgstr "Quellmedienarten"
+
+#: TypeCleanup/type_cleanup.py:112
+msgid "URL Types"
+msgstr "URL Arten"
+
+#: TypeCleanup/type_cleanup.py:124
+msgid "Types Cleanup Tool"
+msgstr "Arten Säuberungswerkzeug"
+
+#: TypeCleanup/type_cleanup.py:160
+msgid "Help"
+msgstr "Hilfe"
+
+#: TypeCleanup/type_cleanup.py:164
+msgid "Remove"
+msgstr "Entfernen"
+
+#: TypeCleanup/type_cleanup.py:166
+msgid ""
+"Remove the selected type from the db.\n"
+"This does not change any referenced objects."
+msgstr ""
+"Entferne den ausgewählten Typ aus der Datenbank.\n"
+"Dies ändert keine referenzierten Objekte."
+
+#: TypeCleanup/type_cleanup.py:174
+msgid ""
+"Select a new name for the current type, prior to renaming the type in the "
+"referenced objects."
+msgstr ""
+"Wähle einen neuen Namen für den aktuellen Typ aus, bevor du den Typ in den"
+" referenzierten Objekten umbenennst."
+
+#: TypeCleanup/type_cleanup.py:182
+msgid "Rename"
+msgstr "Umbenennen"
+
+#: TypeCleanup/type_cleanup.py:185
+msgid "Rename the selected type in all referenced objects."
+msgstr "Benennt den ausgewählten Typ in allen referenzierten Objekten um."
+
+#: TypeCleanup/type_cleanup.py:188
+msgid "Close"
+msgstr "Schließen"
+
+#: TypeCleanup/type_cleanup.py:189
+msgid "Close the Type Cleanup Tool"
+msgstr "Schließe das Art Säuberungswerkzeug"
+
+#: TypeCleanup/type_cleanup.py:195
+msgid "Types"
+msgstr "Arten"
+
+#: TypeCleanup/type_cleanup.py:214
+msgid "Type"
+msgstr "Art"
+
+#: TypeCleanup/type_cleanup.py:221
+msgid "References"
+msgstr "Referenzen"
+
+#: TypeCleanup/type_cleanup.py:242
+msgid "Type Cleanup Tool"
+msgstr "Art Säuberungswerkzeug"
+
+#: TypeCleanup/type_cleanup.py:275
+msgid "Reading database..."
+msgstr "Lese Datenbank..."
+
+#: TypeCleanup/type_cleanup.py:387
+#, python-format
+msgid "Changing type from %(old_type)s to %(new_type)s."
+msgstr "Ändere die Art von %(old_type)s in %(new_type)s."
+
+#: TypeCleanup/type_cleanup.py:432
+msgid ""
+"Removing this custom type will eliminate it from the type selection drop "
+"down lists\n"
+"and further runs of this tool.\n"
+"\n"
+"However, it will not remove it from the referenced items in the database.\n"
+"If you want to change it in referenced items, use 'Rename'."
+msgstr ""
+"Durch Entfernen dieser benutzerdefinierten Art wird sie aus den"
+" Dropdown-Listen\n"
+"für die Artauswahl und weiteren Ausführungen dieses Werkzeugs entfernt.\n"
+"\n"
+"Es wird jedoch nicht aus den referenzierten Elementen in der Datenbank"
+" entfernt.\n"
+"Wenn du es in referenzierten Elementen ändern möchtest, verwende 'Umbenennen'."
+
+#: TypeCleanup/type_cleanup.py:437
+msgid "_Remove"
+msgstr "_Entfernen"
+
+#: TypeCleanup/type_cleanup.py:437
+msgid "_Stop"
+msgstr "_Stopp"

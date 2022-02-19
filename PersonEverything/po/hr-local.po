@@ -1,7 +1,7 @@
 # Croatian translation for Gramps
 # This file is distributed under the same license as the Gramps package.
 # Copyright (C) Gramps project
-# Milo Ivir <mail@milotype.de>, 2019.
+# Milo Ivir <mail@milotype.de>, 2019., 2020.
 #
 msgid ""
 msgstr ""
@@ -166,7 +166,7 @@ msgstr "Ordination"
 #: PersonEverything/PersonEverything.py:433
 msgid "Street, City, County, State, Postal Code, Country, Phone number"
 msgstr ""
-"Ulica, mjesto, pokrajina, savezna država, poštanski broj, država, telefonski "
+"Ulica, grad, okrug, pokrajina, poštanski broj, država, telefonski "
 "broj"
 
 #: PersonEverything/PersonEverything.py:447
@@ -205,7 +205,7 @@ msgstr "MIME vrsta"
 #: PersonEverything/PersonEverything.py:515
 msgid ""
 "Given name(s): Title, Given, Suffix, Call Name, Nick Name, Family Nick Name"
-msgstr "Ime: titula, ime, sufiks, zvano ime, nadimak, obiteljski nadimak"
+msgstr "Ime: titula, ime, sufiks, upotrebno ime, nadimak, obiteljski nadimak"
 
 #: PersonEverything/PersonEverything.py:540
 msgid "Note"
@@ -234,7 +234,7 @@ msgstr "Mjesto"
 
 #: PersonEverything/PersonEverything.py:585
 msgid "Place Title"
-msgstr "Ime mjesta"
+msgstr "Naslov mjesta"
 
 #: PersonEverything/PersonEverything.py:590
 msgid "Name"
@@ -291,7 +291,7 @@ msgstr "{Ovo je primarno prezime}"
 
 #: PersonEverything/PersonEverything.py:703
 msgid "Tag name"
-msgstr "Naziv etikete"
+msgstr "Ime etikete"
 
 #: PersonEverything/PersonEverything.py:714
 msgid "Tag colour and priority"
@@ -331,7 +331,7 @@ msgstr "Format za imena"
 
 #: PersonEverything/PersonEverything.py:1010
 msgid "Default"
-msgstr "Zadano"
+msgstr "Standardno"
 
 #: PersonEverything/PersonEverything.py:1013
 msgid "Select the format to display names"
@@ -339,12 +339,12 @@ msgstr "Odaberi format za prikaz imena"
 
 #: PersonEverything/PersonEverything.py:1027
 msgid "The style used for the title of the page."
-msgstr "Stil korišten za naslov stranice."
+msgstr "Stil za naslov stranice."
 
 #: PersonEverything/PersonEverything.py:1038
 #, python-format
 msgid "The style used for the level %d display."
-msgstr "Stil korišten za prikaz %d. razine."
+msgstr "Stil za prikaz %d. razine."
 
 #: PersonEverything/PersonEverything.py:1059
 msgid "The basic style used for the endnotes source display."

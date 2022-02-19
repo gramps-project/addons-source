@@ -1,0 +1,74 @@
+# SDutch translation of addon HtmlView.
+# Copyright (C) 2020 Gramps project
+# This file is distributed under the same license as the HtmlView package.
+# Jan Sparreboom <jan@sparreboom.net>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: HtmlView 5.x\n"
+"Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
+"POT-Creation-Date: 2020-04-22 11:04-0500\n"
+"PO-Revision-Date: 2020-07-28 12:42+0200\n"
+"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
+"Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+
+#: HtmlView/htmlview.gpr.py:30
+msgid "Html View"
+msgstr "Html-weergave"
+
+#: HtmlView/htmlview.gpr.py:31
+msgid "A view showing html pages embedded in Gramps"
+msgstr "Een weergave van html-pagina's die zijn ingesloten in Gramps"
+
+#: HtmlView/htmlview.gpr.py:39
+msgid "Web"
+msgstr "Web"
+
+#: HtmlView/htmlview.py:318
+msgid "HtmlView"
+msgstr "HtmlWeergave"
+
+#: HtmlView/htmlview.py:484
+msgid "_Back"
+msgstr "_Terug"
+
+#: HtmlView/htmlview.py:485
+msgid "Go to the previous page in the history"
+msgstr "Ga naar de vorige pagina in de geschiedenis"
+
+#: HtmlView/htmlview.py:492
+msgid "_Forward"
+msgstr "_Vooruit"
+
+#: HtmlView/htmlview.py:493
+msgid "Go to the next page in the history"
+msgstr "Ga naar de volgende pagina in de geschiedenis"
+
+#: HtmlView/htmlview.py:498
+msgid "_Refresh"
+msgstr "_Vernieuwen"
+
+#: HtmlView/htmlview.py:501
+msgid "Stop and reload the page."
+msgstr "Stop en herlaad de pagina."
+
+#: HtmlView/htmlview.py:545
+msgid "Start page for the Html View"
+msgstr "Startpagina voor de HTML-weergave"
+
+#: HtmlView/htmlview.py:546
+msgid ""
+"Type a webpage address at the top, and hit the execute button to load a "
+"webpage in this page\n"
+"<br>\n"
+"For example: "
+msgstr ""
+"Typ bovenaan een webpagina-adres en klik op de knop Uitvoeren om een "
+"webpagina op deze pagina te laden\n"
+"<br>\n"
+"Bijvoorbeeld: "

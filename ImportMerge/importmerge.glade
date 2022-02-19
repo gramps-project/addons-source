@@ -31,6 +31,7 @@
   <object class="GtkFileFilter" id="filefilter1">
     <patterns>
       <pattern>*.gramps</pattern>
+      <pattern>*.sql</pattern>
     </patterns>
   </object>
   <object class="GtkFileChooserDialog" id="filechooserdialog1">
@@ -102,6 +103,7 @@
   </object>
   <object class="GtkWindow" id="main">
     <property name="can_focus">False</property>
+    <signal name="key-press-event" handler="on_key" swapped="no"/>
     <child>
       <object class="GtkPaned" id="paned1">
         <property name="visible">True</property>

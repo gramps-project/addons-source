@@ -7,190 +7,208 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-06 11:37+0300\n"
-"PO-Revision-Date: 2018-12-06 11:44+0300\n"
-"Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
+"POT-Creation-Date: 2020-08-13 22:18+0200\n"
+"PO-Revision-Date: 2020-08-13 23:02+0200\n"
+"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Gtranslator 2.91.7\n"
-"X-Poedit-Language: Russian\n"
-"X-Poedit-Country: RUSSIAN FEDERATION\n"
+"X-Generator: Poedit 2.3\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: SourcesCitationsReport/SourcesCitationsReport.gpr.py:10
+#: SourcesCitationsReport//SourcesCitationsReport.gpr.py:32
 msgid "Sources and Citations Report"
 msgstr "Источники и цитаты"
 
-#: SourcesCitationsReport/SourcesCitationsReport.gpr.py:11
+#: SourcesCitationsReport//SourcesCitationsReport.gpr.py:33
 msgid "Provides a source and Citations Report with notes"
 msgstr "Создаёт отчёт об источниках и цитатах с заметками"
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:267
+#: SourcesCitationsReport//SourcesCitationsReport.py:278
 #, python-format
-msgid "   key: %s"
-msgstr "   ключ: %s"
+msgid "Key: %s"
+msgstr "Ключ: %s"
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:277
+#: SourcesCitationsReport//SourcesCitationsReport.py:283
+msgid "Citations:"
+msgstr "Цитирование:"
+
+#: SourcesCitationsReport//SourcesCitationsReport.py:292
 #, python-format
 msgid "%d"
 msgstr "%d"
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:279
+#: SourcesCitationsReport//SourcesCitationsReport.py:294
 #, python-format
 msgid "  %s"
 msgstr "  %s"
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:285
+#: SourcesCitationsReport//SourcesCitationsReport.py:300
 #, python-format
 msgid " - %s "
 msgstr " - %s "
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:291
+#: SourcesCitationsReport//SourcesCitationsReport.py:306
 #, python-format
 msgid "   Type: %s"
 msgstr "   Тип: %s"
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:293
+#: SourcesCitationsReport//SourcesCitationsReport.py:308
 #, python-format
 msgid "   N-ID: %s"
 msgstr "   N-ID: %s"
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:301
+#: SourcesCitationsReport//SourcesCitationsReport.py:316
 #, python-format
 msgid "   %s"
 msgstr "   %s"
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:315
-#: SourcesCitationsReport/SourcesCitationsReport.py:336
-#: SourcesCitationsReport/SourcesCitationsReport.py:363
-#: SourcesCitationsReport/SourcesCitationsReport.py:369
-#: SourcesCitationsReport/SourcesCitationsReport.py:375
+#: SourcesCitationsReport//SourcesCitationsReport.py:330
+#: SourcesCitationsReport//SourcesCitationsReport.py:351
+#: SourcesCitationsReport//SourcesCitationsReport.py:378
+#: SourcesCitationsReport//SourcesCitationsReport.py:384
+#: SourcesCitationsReport//SourcesCitationsReport.py:390
 #, python-format
 msgid "%s"
 msgstr "%s"
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:317
-#: SourcesCitationsReport/SourcesCitationsReport.py:338
+#: SourcesCitationsReport//SourcesCitationsReport.py:332
+#: SourcesCitationsReport//SourcesCitationsReport.py:353
 #, python-format
 msgid "   ( %s )"
 msgstr "   ( %s )"
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:324
-msgid "   Eheleute: "
+#: SourcesCitationsReport//SourcesCitationsReport.py:339
+msgid "   Spouses: "
 msgstr "   Супруги: "
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:326
+#: SourcesCitationsReport//SourcesCitationsReport.py:341
 #, python-format
 msgid "%s "
 msgstr "%s "
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:329
+#: SourcesCitationsReport//SourcesCitationsReport.py:344
 #, python-format
 msgid "and %s "
 msgstr "и %s "
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:340
+#: SourcesCitationsReport//SourcesCitationsReport.py:355
 #, python-format
 msgid " %s"
 msgstr " %s"
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:348
+#: SourcesCitationsReport//SourcesCitationsReport.py:363
 msgid "Person"
 msgstr "Лицо"
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:348
+#: SourcesCitationsReport//SourcesCitationsReport.py:363
 msgid "ID"
 msgstr "ID"
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:349
+#: SourcesCitationsReport//SourcesCitationsReport.py:364
 msgid "Role"
 msgstr "Роль"
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:404
+#: SourcesCitationsReport//SourcesCitationsReport.py:419
 msgid "Report Options"
 msgstr "Параметры отчёта"
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:406
+#: SourcesCitationsReport//SourcesCitationsReport.py:421
 msgid "Report Title"
 msgstr "Заголовок отчёта"
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:406
+#: SourcesCitationsReport//SourcesCitationsReport.py:421
 msgid "Title of the Report"
 msgstr "Заголовок отчёта"
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:407
+#: SourcesCitationsReport//SourcesCitationsReport.py:422
 msgid "Title string for the report."
 msgstr "Строка для заголовка отчёта."
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:410
+#: SourcesCitationsReport//SourcesCitationsReport.py:425
 msgid "Subtitle"
 msgstr "Подзаголовок"
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:410
+#: SourcesCitationsReport//SourcesCitationsReport.py:425
 msgid "Subtitle of the Report"
 msgstr "Подзаголовок отчёта"
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:411
+#: SourcesCitationsReport//SourcesCitationsReport.py:426
 msgid "Subtitle string for the report."
 msgstr "Строка для подзаголовка отчёта."
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:418
+#: SourcesCitationsReport//SourcesCitationsReport.py:431
+msgid "researcher name"
+msgstr "имя исследователя"
+
+#: SourcesCitationsReport//SourcesCitationsReport.py:433
 #, python-format
 msgid "Copyright %(year)d %(name)s"
 msgstr "© %(year)d %(name)s"
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:420
+#: SourcesCitationsReport//SourcesCitationsReport.py:435
 msgid "Footer"
 msgstr "Нижняя строка"
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:421
+#: SourcesCitationsReport//SourcesCitationsReport.py:436
 msgid "Footer string for the page."
 msgstr "Нижний колонтитул страницы."
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:428
+#: SourcesCitationsReport//SourcesCitationsReport.py:443
 msgid "Select using filter"
 msgstr "Выбрать используя фильтр"
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:429
+#: SourcesCitationsReport//SourcesCitationsReport.py:444
 msgid "Select sources using a filter"
 msgstr "Выбор источников с помощью фильтра"
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:436
+#: SourcesCitationsReport//SourcesCitationsReport.py:451
 msgid "Show persons"
 msgstr "Показывать людей"
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:437
+#: SourcesCitationsReport//SourcesCitationsReport.py:452
 msgid "Whether to show events and persons mentioned in the note"
 msgstr "Показывать ли события и лиц упомянутых в заметках"
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:470
+#: SourcesCitationsReport//SourcesCitationsReport.py:488
 msgid "The style used for the title of the report."
 msgstr "Стиль, используемый для заголовка отчёта."
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:485
+#: SourcesCitationsReport//SourcesCitationsReport.py:503
+msgid "The style used for the subtitle of the report."
+msgstr "Стиль субтитров отчета."
+
+#: SourcesCitationsReport//SourcesCitationsReport.py:517
+msgid "The style used for the footer of the report."
+msgstr "Стиль нижнего колонтитула отчета."
+
+#: SourcesCitationsReport//SourcesCitationsReport.py:532
 msgid "The style used for source title."
 msgstr "Стиль для заголовка источника."
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:500
-msgid "The style used for citation title."
-msgstr "Стиль для заголовка цитаты."
+#: SourcesCitationsReport//SourcesCitationsReport.py:544
+msgid "The style used for source subtitle."
+msgstr "Стиль, используемый для исходных субтитров."
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:512
+#: SourcesCitationsReport//SourcesCitationsReport.py:556
 msgid "The style used for Source details."
 msgstr "Стиль для информации по источнику."
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:524
+#: SourcesCitationsReport//SourcesCitationsReport.py:571
+msgid "The style used for citation title."
+msgstr "Стиль для заголовка цитаты."
+
+#: SourcesCitationsReport//SourcesCitationsReport.py:583
 msgid "The style used for a column title."
 msgstr "Стиль используемый для заголовка столбцов таблицы."
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:540
+#: SourcesCitationsReport//SourcesCitationsReport.py:599
 msgid "The style used for each section."
 msgstr "Стиль используемый для заголовков разделов ."
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:571
+#: SourcesCitationsReport//SourcesCitationsReport.py:630
 msgid "The style used for event and person details."
 msgstr "Стиль используемый для информации о событиях и людях."

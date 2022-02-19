@@ -82,11 +82,7 @@ class GedcomWriterExtension(exportgedcom.GedcomWriter):
                         if int(ref.get_role()) in [EventRoleType.WITNESS, EventRoleType.CELEBRANT, \
                                                    EventRoleType.INFORMANT, EventRoleType.CLERGY, \
                                                    EventRoleType.AIDE, EventRoleType.CUSTOM]:
-                            relation = ref.get_role().string
-                            if ref.get_role() == EventRoleType.WITNESS:
-                                relation = "Witness"
-                            if ref.get_role().is_custom():
-                                relation = ref.get_role().get_custom()
+                            relation = str(ref.get_role())
                             level = 2
                             self._writeln(level, "ASSO", "@%s@" % person.get_gramps_id())
                             self._writeln(level+1, "TYPE", "INDI")

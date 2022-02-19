@@ -1,0 +1,476 @@
+# German translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# translation of de.po to Deutsch
+#
+#
+# Anton Huber <anton_huber@gmx.de>, 2005,2006.
+# Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
+# Sebastian Vöcking <voeck@web.de>, 2005.
+# Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
+# Alex Roitman <shura@gramps-project.org>, 2006.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020.
+# Alois Pöttker <alois.poettker@gmx.de>, 2017.
+msgid ""
+msgstr ""
+"Project-Id-Version: de\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-28 22:20+0200\n"
+"PO-Revision-Date: 2020-07-28 22:48+0200\n"
+"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 19.12.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: DetDescendantReport-images/detdescendantreport.gpr.py:3
+msgid "Detailed Descendant Report With All Images"
+msgstr "Detaillierter Nachkommenbericht mit allen Bildern"
+
+#: DetDescendantReport-images/detdescendantreport.gpr.py:4
+msgid ""
+"Produces a detailed descendant report with all images and optional todo list."
+msgstr ""
+"Erstellt einen detaillierten Nachkommenbericht mit allen Bildern und einer"
+" optionalen Aufgabenliste."
+
+#: DetDescendantReport-images/detdescendantreporti.py:175
+#, python-format
+msgid "Person %s is not in the Database"
+msgstr "Person %s ist nicht in der Datenbank"
+
+#: DetDescendantReport-images/detdescendantreporti.py:293
+#: DetDescendantReport-images/detdescendantreporti.py:387
+#: DetDescendantReport-images/detdescendantreporti.py:565
+#: DetDescendantReport-images/detdescendantreporti.py:599
+#: DetDescendantReport-images/detdescendantreporti.py:601
+#: DetDescendantReport-images/detdescendantreporti.py:608
+#: DetDescendantReport-images/detdescendantreporti.py:610
+#: DetDescendantReport-images/detdescendantreporti.py:636
+#: DetDescendantReport-images/detdescendantreporti.py:750
+msgid "Unknown"
+msgstr "Unbekannt"
+
+#: DetDescendantReport-images/detdescendantreporti.py:298
+#, python-format
+msgid "Descendant Report for %(person_name)s"
+msgstr "Nachkommenbericht für %(person_name)s"
+
+#: DetDescendantReport-images/detdescendantreporti.py:311
+#, python-format
+msgid "Generation %d"
+msgstr "Generation %d"
+
+#: DetDescendantReport-images/detdescendantreporti.py:367
+#: DetDescendantReport-images/detdescendantreporti.py:480
+msgid "; "
+msgstr "; "
+
+#: DetDescendantReport-images/detdescendantreporti.py:408
+#, python-format
+msgid "%(name)s is the same person as [%(id_str)s]."
+msgstr "%(name)s ist die gleiche Person wie [%(id_str)s]."
+
+#: DetDescendantReport-images/detdescendantreporti.py:450
+#, python-format
+msgid "%(date)s, %(place)s"
+msgstr "%(date)s, %(place)s"
+
+#: DetDescendantReport-images/detdescendantreporti.py:453
+#, python-format
+msgid "%(date)s"
+msgstr "%(date)s"
+
+#: DetDescendantReport-images/detdescendantreporti.py:455
+#, python-format
+msgid "%(place)s"
+msgstr "%(place)s"
+
+#: DetDescendantReport-images/detdescendantreporti.py:467
+#, python-format
+msgid "%(event_name)s: %(event_text)s"
+msgstr "%(event_name)s: %(event_text)s"
+
+#: DetDescendantReport-images/detdescendantreporti.py:482
+#: DetDescendantReport-images/detdescendantreporti.py:733
+#: DetDescendantReport-images/detdescendantreporti.py:862
+#, python-format
+msgid "%(type)s: %(value)s%(endnotes)s"
+msgstr "%(type)s: %(value)s%(endnotes)s"
+
+#: DetDescendantReport-images/detdescendantreporti.py:568
+#, python-format
+msgid "Spouse: %s"
+msgstr "Partner(in): %s"
+
+#: DetDescendantReport-images/detdescendantreporti.py:570
+#, python-format
+msgid "Relationship with: %s"
+msgstr "Beziehung mit: %s"
+
+#: DetDescendantReport-images/detdescendantreporti.py:585
+#, python-format
+msgid "Ref: %(number)s. %(name)s"
+msgstr "Ref: %(number)s. %(name)s"
+
+#: DetDescendantReport-images/detdescendantreporti.py:625
+#, python-format
+msgid "Children of %(mother_name)s and %(father_name)s"
+msgstr "Kinder von %(mother_name)s und %(father_name)s"
+
+#: DetDescendantReport-images/detdescendantreporti.py:686
+#, python-format
+msgid "Notes for %(mother_name)s and %(father_name)s:"
+msgstr "Notizen für %(mother_name)s und %(father_name)s:"
+
+#: DetDescendantReport-images/detdescendantreporti.py:706
+#: DetDescendantReport-images/detdescendantreporti.py:725
+#, python-format
+msgid "More about %(mother_name)s and %(father_name)s:"
+msgstr "Mehr über %(mother_name)s und %(father_name)s:"
+
+#: DetDescendantReport-images/detdescendantreporti.py:790
+#, python-format
+msgid "Notes for %s"
+msgstr "Notizen für %s"
+
+#: DetDescendantReport-images/detdescendantreporti.py:799
+#: DetDescendantReport-images/detdescendantreporti.py:818
+#: DetDescendantReport-images/detdescendantreporti.py:829
+#: DetDescendantReport-images/detdescendantreporti.py:854
+#, python-format
+msgid "More about %(person_name)s:"
+msgstr "Mehr über %(person_name)s:"
+
+#: DetDescendantReport-images/detdescendantreporti.py:807
+#, python-format
+msgid "%(name_kind)s: %(name)s%(endnotes)s"
+msgstr "%(name_kind)s: %(name)s%(endnotes)s"
+
+#: DetDescendantReport-images/detdescendantreporti.py:842
+msgid "Address: "
+msgstr "Adresse: "
+
+#: DetDescendantReport-images/detdescendantreporti.py:845
+#, python-format
+msgid "%s, "
+msgstr "%s, "
+
+#: DetDescendantReport-images/detdescendantreporti.py:929
+#, python-format
+msgid "%(str1)s, %(str2)s"
+msgstr "%(str1)s, %(str2)s"
+
+#: DetDescendantReport-images/detdescendantreporti.py:936
+#, python-format
+msgid "%(type)s: %(value)s"
+msgstr "%(type)s: %(value)s"
+
+#: DetDescendantReport-images/detdescendantreporti.py:965
+msgid "Images"
+msgstr "Bilder"
+
+#: DetDescendantReport-images/detdescendantreporti.py:976
+msgid "Non existing media found in the Gallery"
+msgstr "Nicht existierendes Medium in der Galerie gefunden"
+
+#: DetDescendantReport-images/detdescendantreporti.py:1092
+msgid "Report Options"
+msgstr "Berichtsoptionen"
+
+#: DetDescendantReport-images/detdescendantreporti.py:1095
+msgid "Center Person"
+msgstr "Hauptperson"
+
+#: DetDescendantReport-images/detdescendantreporti.py:1096
+msgid "The center person for the report"
+msgstr "Die Hauptperson für den Bericht"
+
+#: DetDescendantReport-images/detdescendantreporti.py:1103
+msgid "Numbering system"
+msgstr "Nummerierungssystem"
+
+#: DetDescendantReport-images/detdescendantreporti.py:1105
+msgid "Henry numbering"
+msgstr "Henry-Nummerierung"
+
+#: DetDescendantReport-images/detdescendantreporti.py:1106
+msgid "d'Aboville numbering"
+msgstr "d'Aboville Nummerierung"
+
+#: DetDescendantReport-images/detdescendantreporti.py:1108
+msgid "Record (Modified Register) numbering"
+msgstr "Datensatz (Modifizierte Register) Nummerierung"
+
+#: DetDescendantReport-images/detdescendantreporti.py:1109
+msgid "The numbering system to be used"
+msgstr "Das Nummerierungssystem, das verwendet wird"
+
+#: DetDescendantReport-images/detdescendantreporti.py:1112
+msgid "Generations"
+msgstr "Generationen"
+
+#: DetDescendantReport-images/detdescendantreporti.py:1114
+msgid "The number of generations to include in the report"
+msgstr "Anzahl der im Bericht enthaltenen Generationen"
+
+#: DetDescendantReport-images/detdescendantreporti.py:1118
+msgid "Page break between generations"
+msgstr "Seitenumbruch zwischen Generationen"
+
+#: DetDescendantReport-images/detdescendantreporti.py:1120
+msgid "Whether to start a new page after each generation."
+msgstr "Ob nach jeder Generation eine neue Seite begonnen wird."
+
+#: DetDescendantReport-images/detdescendantreporti.py:1123
+msgid "Page break before end notes"
+msgstr "Seitenumbruch vor Endnotiz"
+
+#: DetDescendantReport-images/detdescendantreporti.py:1125
+msgid "Whether to start a new page before the end notes."
+msgstr "Ob vor der Endnotiz eine neue Seite begonnen wird."
+
+#: DetDescendantReport-images/detdescendantreporti.py:1132
+msgid "Content"
+msgstr "Inhalt"
+
+#: DetDescendantReport-images/detdescendantreporti.py:1134
+msgid "Use callname for common name"
+msgstr "Benutze Rufnamen für Namen"
+
+#: DetDescendantReport-images/detdescendantreporti.py:1135
+msgid "Whether to use the call name as the first name."
+msgstr "Ob der Rufname als Vorname benutzt wird."
+
+#: DetDescendantReport-images/detdescendantreporti.py:1138
+msgid "Use full dates instead of only the year"
+msgstr "Zeige vollständiges Datum, anstatt nur das Jahr zu verwenden."
+
+#: DetDescendantReport-images/detdescendantreporti.py:1140
+msgid "Whether to use full dates instead of just year."
+msgstr "Ob ein vollständiges Datum anstelle der Jahreszahl benutzt wird."
+
+#: DetDescendantReport-images/detdescendantreporti.py:1143
+msgid "List children"
+msgstr "Kinder auflisten"
+
+#: DetDescendantReport-images/detdescendantreporti.py:1144
+msgid "Whether to list children."
+msgstr "Ob Kinder aufgelistet werden."
+
+#: DetDescendantReport-images/detdescendantreporti.py:1147
+msgid "Compute death age"
+msgstr "Alter bei Tot berechnen"
+
+#: DetDescendantReport-images/detdescendantreporti.py:1148
+msgid "Whether to compute a person's age at death."
+msgstr "Ob das Alter einer Person beim Tod berechnet wird."
+
+#: DetDescendantReport-images/detdescendantreporti.py:1151
+msgid "Omit duplicate ancestors"
+msgstr "Doppelte Vorfahren weglassen"
+
+#: DetDescendantReport-images/detdescendantreporti.py:1152
+msgid "Whether to omit duplicate ancestors."
+msgstr "Ob doppelte Vorfahren weglassen werden."
+
+#: DetDescendantReport-images/detdescendantreporti.py:1155
+msgid "Use complete sentences"
+msgstr "Benutze vollständige Sätze"
+
+#: DetDescendantReport-images/detdescendantreporti.py:1157
+msgid "Whether to use complete sentences or succinct language."
+msgstr "Ob vollständige Sätze oder knappe Sprache benutzt wird."
+
+#: DetDescendantReport-images/detdescendantreporti.py:1160
+msgid "Add descendant reference in child list"
+msgstr "Nachkommenreferenzen zu Kinderliste hinzufügen"
+
+#: DetDescendantReport-images/detdescendantreporti.py:1163
+msgid "Whether to add descendant references in child list."
+msgstr "Ob Verweise auf Nachfahren in die Liste der Kinder aufgenommen wird."
+
+#: DetDescendantReport-images/detdescendantreporti.py:1166
+#: DetDescendantReport-images/detdescendantreporti.py:1167
+msgid "Include"
+msgstr "Einbeziehen"
+
+#: DetDescendantReport-images/detdescendantreporti.py:1169
+msgid "Include notes"
+msgstr "Notizen aufnehmen"
+
+#: DetDescendantReport-images/detdescendantreporti.py:1170
+msgid "Whether to include notes."
+msgstr "Ob Notizen aufgenommen werden."
+
+#: DetDescendantReport-images/detdescendantreporti.py:1173
+msgid "Include TODO notes"
+msgstr "Aufgabenliste aufnehmen"
+
+#: DetDescendantReport-images/detdescendantreporti.py:1174
+msgid "Whether to include TODO notes."
+msgstr "Ob Aufgaben Notizen aufgenommen werden."
+
+#: DetDescendantReport-images/detdescendantreporti.py:1177
+msgid "Include attributes"
+msgstr "Attribute aufnehmen"
+
+#: DetDescendantReport-images/detdescendantreporti.py:1178
+msgid "Whether to include attributes."
+msgstr "Ob Attribute aufgenommen werden."
+
+#: DetDescendantReport-images/detdescendantreporti.py:1181
+msgid "Include Photo/Images from Gallery"
+msgstr "Fotos/Bilder aus der Galerie aufnehmen"
+
+#: DetDescendantReport-images/detdescendantreporti.py:1182
+msgid "Whether to include images."
+msgstr "Ob Bilder aufgenommen werden."
+
+#: DetDescendantReport-images/detdescendantreporti.py:1185
+msgid "Include alternative names"
+msgstr "Alternative Namen mit einbeziehen"
+
+#: DetDescendantReport-images/detdescendantreporti.py:1186
+msgid "Whether to include other names."
+msgstr "Ob andere Namen aufgenommen werden."
+
+#: DetDescendantReport-images/detdescendantreporti.py:1189
+msgid "Include events"
+msgstr "Ereignisse aufnehmen"
+
+#: DetDescendantReport-images/detdescendantreporti.py:1190
+msgid "Whether to include events."
+msgstr "Ob Ereignisse aufgenommen werden."
+
+#: DetDescendantReport-images/detdescendantreporti.py:1193
+msgid "Include addresses"
+msgstr "Adressen einbeziehen"
+
+#: DetDescendantReport-images/detdescendantreporti.py:1194
+msgid "Whether to include addresses."
+msgstr "Ob Adressen aufgenommen werden."
+
+#: DetDescendantReport-images/detdescendantreporti.py:1197
+msgid "Include sources"
+msgstr "Quellen einbeziehen"
+
+#: DetDescendantReport-images/detdescendantreporti.py:1198
+msgid "Whether to include source references."
+msgstr "Ob Quellennachweise einbezogen werden."
+
+#: DetDescendantReport-images/detdescendantreporti.py:1201
+msgid "Include sources notes"
+msgstr "Quellennotizen einbeziehen"
+
+#: DetDescendantReport-images/detdescendantreporti.py:1202
+msgid ""
+"Whether to include source notes in the Endnotes section. Only works if "
+"Include sources is selected."
+msgstr ""
+"Ob Notizen in die Quellennachweise aufgenommen werden. Funktioniert nur, "
+"wenn 'Quellen aufnehmen' gewählt ist."
+
+#: DetDescendantReport-images/detdescendantreporti.py:1206
+msgid "Include spouses"
+msgstr "Partner einbeziehen"
+
+#: DetDescendantReport-images/detdescendantreporti.py:1207
+msgid "Whether to include detailed spouse information."
+msgstr "Ob detaillierte Informationen über den Partner enthalten sind."
+
+#: DetDescendantReport-images/detdescendantreporti.py:1210
+msgid "Include spouse reference"
+msgstr "Partner Referenzen einbeziehen"
+
+#: DetDescendantReport-images/detdescendantreporti.py:1211
+msgid "Whether to include reference to spouse."
+msgstr "Ob Referenzen zum Partner einbezogen werden."
+
+#: DetDescendantReport-images/detdescendantreporti.py:1214
+msgid "Include sign of succession ('+') in child-list"
+msgstr "Mit Nachkommenzeichen ('+') in Kinderliste"
+
+#: DetDescendantReport-images/detdescendantreporti.py:1216
+msgid ""
+"Whether to include a sign ('+') before the descendant number in the child-"
+"list to indicate a child has succession."
+msgstr ""
+"Ob ein Zeichen ('+') vor der Nachkommennummer in der Kinderliste angezeigt "
+"wird, um anzuzeigen, dass ein Kind Nachkommen hat."
+
+#: DetDescendantReport-images/detdescendantreporti.py:1221
+msgid "Include path to start-person"
+msgstr "Mit Weg zur Start-Person"
+
+#: DetDescendantReport-images/detdescendantreporti.py:1222
+msgid ""
+"Whether to include the path of descendancy from the start-person to each "
+"descendant."
+msgstr ""
+"Ob der Pfad der Nachkommenschaft von der Startperson zu jedem Nachkommen "
+"enthalten ist."
+
+#: DetDescendantReport-images/detdescendantreporti.py:1228
+msgid "Missing information"
+msgstr "Fehlende Information"
+
+#: DetDescendantReport-images/detdescendantreporti.py:1230
+msgid "Replace missing places with ______"
+msgstr "Ersetze fehlende Orte durch ______"
+
+#: DetDescendantReport-images/detdescendantreporti.py:1231
+msgid "Whether to replace missing Places with blanks."
+msgstr "Ob fehlende Orte durch Lücken ersetzt werden."
+
+#: DetDescendantReport-images/detdescendantreporti.py:1234
+msgid "Replace missing dates with ______"
+msgstr "Ersetze fehlende Daten durch ______"
+
+#: DetDescendantReport-images/detdescendantreporti.py:1235
+msgid "Whether to replace missing Dates with blanks."
+msgstr "Ob fehlende Daten durch Lücken ersetzt werden."
+
+#: DetDescendantReport-images/detdescendantreporti.py:1248
+msgid "The style used for the title of the page."
+msgstr "Der Stil, der für den Seitentitel verwendet wird."
+
+#: DetDescendantReport-images/detdescendantreporti.py:1258
+msgid "The style used for the generation header."
+msgstr "Der Stil, der für die Generation Überschriften verwendet wird."
+
+#: DetDescendantReport-images/detdescendantreporti.py:1268
+msgid "The style used for the children list title."
+msgstr "Der Stil, der für den Titel der Kinderliste verwendet wird."
+
+#: DetDescendantReport-images/detdescendantreporti.py:1278
+msgid "The style used for the children list."
+msgstr "Der Stil, der für die Kinderliste verwendet wird."
+
+#: DetDescendantReport-images/detdescendantreporti.py:1294
+msgid "The basic style used for the text display."
+msgstr "Der Basisstil, der für die Textanzeige verwendet wird."
+
+#: DetDescendantReport-images/detdescendantreporti.py:1301
+msgid "The style used for the first personal entry."
+msgstr "Der Stil, der für den ersten persönlichen Eintrag verwendet wird."
+
+#: DetDescendantReport-images/detdescendantreporti.py:1311
+msgid "The style used for the More About header and for headers of mates."
+msgstr ""
+"Der Stil, der für die \"Mehr über\" Kopfzeile und Kopfzeile von Partnern "
+"verwendet wird."
+
+#: DetDescendantReport-images/detdescendantreporti.py:1322
+msgid "The style used for additional detail data."
+msgstr "Der Stil, der für die sonstigen genauen Daten verwendet wird."
+
+#: DetDescendantReport-images/detdescendantreporti.py:1347
+msgid "The style used for image labels."
+msgstr "Der für Bildbeschriftungen verwendete Stil."
+
+#: DetDescendantReport-images/detdescendantreporti.py:1360
+msgid "A style used for image captions."
+msgstr "Ein Stil für Bildunterschriften."

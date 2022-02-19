@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"POT-Creation-Date: 2020-02-10 08:13-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,8 +18,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: SetAttributeTool/SetAttributeTool.gpr.py:25
-#: SetAttributeTool/SetAttributeTool.py:121
-#: SetAttributeTool/SetAttributeTool.py:129
+#: SetAttributeTool/SetAttributeTool.py:122
+#: SetAttributeTool/SetAttributeTool.py:150
 msgid "Set Attribute"
 msgstr ""
 
@@ -28,7 +28,7 @@ msgid "Set an attribute to a given value."
 msgstr ""
 
 #: SetAttributeTool/SetAttributeTool.py:68
-#: SetAttributeTool/SetAttributeTool.py:124
+#: SetAttributeTool/SetAttributeTool.py:125
 msgid "Options"
 msgstr ""
 
@@ -72,50 +72,56 @@ msgstr ""
 msgid "Remove attribute type and value set"
 msgstr ""
 
-#: SetAttributeTool/SetAttributeTool.py:130
-#: SetAttributeTool/SetAttributeTool.py:189
+#: SetAttributeTool/SetAttributeTool.py:131
 msgid "Results"
 msgstr ""
 
-#: SetAttributeTool/SetAttributeTool.py:131
-#: SetAttributeTool/SetAttributeTool.py:190
+#: SetAttributeTool/SetAttributeTool.py:133
+msgid "Cannot save attribute"
+msgstr ""
+
+#: SetAttributeTool/SetAttributeTool.py:134
+msgid "The attribute type cannot be empty"
+msgstr ""
+
+#: SetAttributeTool/SetAttributeTool.py:151
+#: SetAttributeTool/SetAttributeTool.py:193
 msgid "Processing...\n"
 msgstr ""
 
-#: SetAttributeTool/SetAttributeTool.py:146
+#: SetAttributeTool/SetAttributeTool.py:152
 msgid "Setting attributes..."
 msgstr ""
 
-#: SetAttributeTool/SetAttributeTool.py:153
+#: SetAttributeTool/SetAttributeTool.py:156
 #, python-format
 msgid ""
 "Setting '%s' attributes to '%s'...\n"
 "\n"
 msgstr ""
 
-#: SetAttributeTool/SetAttributeTool.py:184
+#: SetAttributeTool/SetAttributeTool.py:188
 #, python-format
 msgid ""
 "\n"
 "Set %d '%s' attributes to '%s'\n"
 msgstr ""
 
-#: SetAttributeTool/SetAttributeTool.py:186
-#: SetAttributeTool/SetAttributeTool.py:235
-msgid "Done!\n"
-msgstr ""
-
-#: SetAttributeTool/SetAttributeTool.py:188
+#: SetAttributeTool/SetAttributeTool.py:191
 msgid "Remove Attribute"
 msgstr ""
 
-#: SetAttributeTool/SetAttributeTool.py:205
+#: SetAttributeTool/SetAttributeTool.py:194
 msgid "Removing attributes..."
 msgstr ""
 
-#: SetAttributeTool/SetAttributeTool.py:230
+#: SetAttributeTool/SetAttributeTool.py:221
 #, python-format
 msgid ""
 "\n"
 "Removing %d '%s' attributes to '%s'\n"
+msgstr ""
+
+#: SetAttributeTool/SetAttributeTool.py:226
+msgid "Done!\n"
 msgstr ""

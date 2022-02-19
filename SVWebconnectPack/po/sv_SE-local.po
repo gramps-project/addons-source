@@ -1,0 +1,79 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Pär Ekholm <pehlm@pekholm.org>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"PO-Revision-Date: 2021-08-02 17:09+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"Last-Translator: Pär Ekholm <pehlm@pekholm.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: sv_SE\n"
+
+#: SVWebconnectPack/SVWebPack.gpr.py:10
+msgid "SV Web Connect Pack"
+msgstr ""
+
+#: SVWebConnectPack/SVWebPack.gpr.py:11
+msgid "Collection of Web sites for Sweden (requires libwebconnect)"
+msgstr "Samling av webbplatser för Sverige (kräver libwebconnect)"
+
+#: SVWebConnectPack/SVWebPack.py:33
+msgid "Find A Grave"
+msgstr "Finn en grav"
+
+#: SVWebConnectPack/SVWebPack.py:34
+msgid "FamilySearch.org"
+msgstr ""
+
+#: SVWebConnectPack/SVWebPack.py:35
+msgid "Google SV"
+msgstr ""
+
+#: SVWebConnectPack/SVWebPack.py:38
+msgid "FamilySearch.org Tree"
+msgstr "FamilySearch.org Släktträd"
+
+#: SVWebConnectPack/SVWebPack.py:40
+msgid "National archives of Sweden personsearch"
+msgstr "Riksarkivet personsök"
+
+#: SVWebConnectPack/SVWebPack.py:41
+msgid "National archives of Sweden free search"
+msgstr "Riksarkivet frisök"
+
+#: SVWebConnectPack/SVWebPack.py:42
+msgid "Arkiv Digital estate records for Skåne"
+msgstr "Arkiv Digital bouppteckningar över Skåne"
+
+#: SVWebConnectPack/SVWebPack.py:43
+msgid "Ancestry Search"
+msgstr "Ancestry Sök"
+
+#: SVWebConnectPack/SVWebPack.py:44
+msgid "Find swedish portraits - Rötter.se"
+msgstr "Porträttfynd - Rötter.se"
+
+#: SVWebConnectPack/SVWebPack.py:45
+msgid "Gravar.se - find swedish graves"
+msgstr "Gravar.se"
+
+#: SVWebConnectPack/SVWebPack.py:46
+msgid "National archives of Sweden search censuses"
+msgstr "Riksarkivet sök folkräkning"
+
+#: SVWebConnectPack/SVWebPack.py:47
+msgid "Arkiv Digital released prisoners"
+msgstr "Arkiv Digital frigivna fångar"
+
+#: SVWebConnectPack/SVWebPack.py:48
+msgid "Gravestone inventory - rötter.se"
+msgstr "Gravstensinventeringen - rötter.se"

@@ -1,0 +1,35 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Pär Ekholm <pehlm@pekholm.org>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-04 18:55-0600\n"
+"PO-Revision-Date: 2021-05-28 12:02+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"Last-Translator: Pär Ekholm <pehlm@pekholm.se>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: sv_SE\n"
+
+#: MongoDB/mongodb.gpr.py:22
+msgid "MongoDB"
+msgstr "MongoDB"
+
+#: MongoDB/mongodb.gpr.py:23
+msgid "_MongoDB Database"
+msgstr "_MongoDB-databas"
+
+#: MongoDB/mongodb.gpr.py:24
+msgid "MongoDB Database"
+msgstr "MongoDB-databas"
+
+#: MongoDB/mongodb.py:84
+msgid "Database version"
+msgstr "Databasversion"

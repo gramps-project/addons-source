@@ -1,0 +1,453 @@
+# Addon PersonEverything for Gramps.
+# Copyright (C) 2020 Gramps
+# This file is distributed under the same license as the gramps package.
+# Pedro Albuquerque <pmra@protonmail.com>, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps51\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-05 13:20+0200\n"
+"PO-Revision-Date: 2020-08-05 14:15+0200\n"
+"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
+"Language-Team: Pedro Albuquerque\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.3\n"
+
+#: PersonEverything//PersonEverything.gpr.py:31
+msgid "PersonEverything Report"
+msgstr "Relatório individual"
+
+#: PersonEverything//PersonEverything.gpr.py:32
+msgid "Produces a report containing everything about the active person"
+msgstr "Produz um relatório contendo todos os dados sobre o indivíduo activo"
+
+#: PersonEverything//PersonEverything.py:111
+#: PersonEverything//PersonEverything_old.py:110
+#, python-format
+msgid "Person %s is not in the Database"
+msgstr "O indivíduo %s não está na base de dados"
+
+#: PersonEverything//PersonEverything.py:133
+#: PersonEverything//PersonEverything_old.py:132
+#, python-format
+msgid "All information about %s"
+msgstr "Toda a informação sobre %s"
+
+#: PersonEverything//PersonEverything.py:142
+#: PersonEverything//PersonEverything_old.py:141
+msgid "Person Events"
+msgstr "Eventos pessoais"
+
+#: PersonEverything//PersonEverything.py:148
+#: PersonEverything//PersonEverything_old.py:147
+msgid "Families"
+msgstr "Famílias"
+
+#: PersonEverything//PersonEverything.py:154
+#: PersonEverything//PersonEverything_old.py:153
+msgid "Endnotes"
+msgstr "Notas finais"
+
+#: PersonEverything//PersonEverything.py:169
+msgid "Person"
+msgstr "Pessoa"
+
+#: PersonEverything//PersonEverything.py:170
+#: PersonEverything//PersonEverything_old.py:169
+msgid "Gender"
+msgstr "Sexo"
+
+#: PersonEverything//PersonEverything.py:173
+#: PersonEverything//PersonEverything_old.py:172
+msgid "Primary name"
+msgstr "Nome principal"
+
+#: PersonEverything//PersonEverything.py:174
+#: PersonEverything//PersonEverything.py:181
+#: PersonEverything//PersonEverything.py:301
+#: PersonEverything//PersonEverything.py:595
+#: PersonEverything//PersonEverything.py:724
+#: PersonEverything//PersonEverything_old.py:173
+#: PersonEverything//PersonEverything_old.py:180
+#: PersonEverything//PersonEverything_old.py:300
+#: PersonEverything//PersonEverything_old.py:594
+#: PersonEverything//PersonEverything_old.py:723
+msgid "Type"
+msgstr "Tipo"
+
+#: PersonEverything//PersonEverything.py:180
+#: PersonEverything//PersonEverything_old.py:179
+msgid "Alternate name"
+msgstr "Nome alternativo"
+
+#: PersonEverything//PersonEverything.py:196
+msgid " This is the primary birth event."
+msgstr " Este é o principal evento de nascimento."
+
+#: PersonEverything//PersonEverything.py:199
+msgid " This is the primary death event."
+msgstr " Este é o principal evento de morte."
+
+#: PersonEverything//PersonEverything.py:200
+#: PersonEverything//PersonEverything_old.py:199
+msgid "Event reference"
+msgstr "Referência a evento"
+
+#: PersonEverything//PersonEverything.py:201
+#: PersonEverything//PersonEverything_old.py:200
+msgid "Role"
+msgstr "Papel"
+
+#: PersonEverything//PersonEverything.py:208
+#: PersonEverything//PersonEverything_old.py:207
+msgid "Family"
+msgstr "Família"
+
+#: PersonEverything//PersonEverything.py:214
+#: PersonEverything//PersonEverything_old.py:213
+msgid "Child"
+msgstr "Filho"
+
+#: PersonEverything//PersonEverything.py:220
+#: PersonEverything//PersonEverything_old.py:219
+msgid "Relationship to Father"
+msgstr "Relação com o pai"
+
+#: PersonEverything//PersonEverything.py:225
+#: PersonEverything//PersonEverything_old.py:224
+msgid "Relationship to Mother"
+msgstr "Relação com a mãe"
+
+#: PersonEverything//PersonEverything.py:238
+#: PersonEverything//PersonEverything_old.py:237
+msgid "Parent Family"
+msgstr "Família-mãe"
+
+#: PersonEverything//PersonEverything.py:240
+msgid ""
+"Details of any children and events etc. would be in a similar report for the "
+"father or mother."
+msgstr ""
+"Detalhes de quaisquer filhos, eventos etc. estariam em um relatório "
+"semelhante para o pai ou a mãe."
+
+#: PersonEverything//PersonEverything.py:249
+#: PersonEverything//PersonEverything_old.py:248
+msgid "Relationship"
+msgstr "Parentesco"
+
+#: PersonEverything//PersonEverything.py:259
+#: PersonEverything//PersonEverything_old.py:258
+msgid "Father"
+msgstr "Pai"
+
+#: PersonEverything//PersonEverything.py:270
+#: PersonEverything//PersonEverything_old.py:269
+msgid "Mother"
+msgstr "Mãe"
+
+#: PersonEverything//PersonEverything.py:292
+#: PersonEverything//PersonEverything.py:966
+#: PersonEverything//PersonEverything.py:982
+#: PersonEverything//PersonEverything_old.py:291
+#: PersonEverything//PersonEverything_old.py:965
+#: PersonEverything//PersonEverything_old.py:981
+msgid "Private"
+msgstr "Privado"
+
+#: PersonEverything//PersonEverything.py:316
+#: PersonEverything//PersonEverything_old.py:315
+msgid "Address"
+msgstr "Endereço"
+
+#: PersonEverything//PersonEverything.py:326
+#: PersonEverything//PersonEverything_old.py:325
+msgid "Attribute"
+msgstr "Atributo"
+
+#: PersonEverything//PersonEverything.py:354
+#: PersonEverything//PersonEverything_old.py:353
+msgid "Confidence"
+msgstr "Confiança"
+
+#: PersonEverything//PersonEverything.py:357
+#: PersonEverything//PersonEverything_old.py:356
+msgid "Unknown"
+msgstr "Desconhecido"
+
+#: PersonEverything//PersonEverything.py:369
+#: PersonEverything//PersonEverything_old.py:368
+msgid "Date"
+msgstr "Data"
+
+#: PersonEverything//PersonEverything.py:378
+#: PersonEverything//PersonEverything_old.py:377
+msgid "Description"
+msgstr "Descrição"
+
+#: PersonEverything//PersonEverything.py:387
+#: PersonEverything//PersonEverything_old.py:386
+msgid "Event"
+msgstr "Evento"
+
+#: PersonEverything//PersonEverything.py:388
+#: PersonEverything//PersonEverything_old.py:387
+msgid "Event type"
+msgstr "Tipo de evento"
+
+#: PersonEverything//PersonEverything.py:403
+#: PersonEverything//PersonEverything_old.py:402
+msgid "Temple and status"
+msgstr "Templo e estado"
+
+#: PersonEverything//PersonEverything.py:414
+#: PersonEverything//PersonEverything_old.py:413
+msgid "LDS Ordinance family"
+msgstr "Família da ordenança SUD"
+
+#: PersonEverything//PersonEverything.py:418
+#: PersonEverything//PersonEverything_old.py:417
+msgid "LDS "
+msgstr "SUD "
+
+#: PersonEverything//PersonEverything.py:419
+#: PersonEverything//PersonEverything_old.py:418
+msgid "Ordinance"
+msgstr "Ordenança"
+
+#: PersonEverything//PersonEverything.py:434
+#: PersonEverything//PersonEverything_old.py:433
+msgid "Street, City, County, State, Postal Code, Country, Phone number"
+msgstr "Rua, Cidade, Concelho, Distrito, Código Postal, País, Telefone"
+
+#: PersonEverything//PersonEverything.py:448
+#: PersonEverything//PersonEverything_old.py:447
+msgid "Media Reference"
+msgstr "Referência multimédia"
+
+#: PersonEverything//PersonEverything.py:455
+#: PersonEverything//PersonEverything.py:732
+#: PersonEverything//PersonEverything_old.py:454
+#: PersonEverything//PersonEverything_old.py:731
+msgid "Description and Path"
+msgstr "Descrição e caminho"
+
+#: PersonEverything//PersonEverything.py:474
+#: PersonEverything//PersonEverything_old.py:473
+msgid "Could not add photo to page"
+msgstr "Impossível adicionar fotografia à página"
+
+#: PersonEverything//PersonEverything.py:475
+#: PersonEverything//PersonEverything_old.py:474
+msgid "File does not exist"
+msgstr "O ficheiro não existe"
+
+#: PersonEverything//PersonEverything.py:484
+#: PersonEverything//PersonEverything_old.py:483
+msgid "Referenced Region"
+msgstr "Região referenciada"
+
+#: PersonEverything//PersonEverything.py:502
+#: PersonEverything//PersonEverything_old.py:501
+msgid "unknown"
+msgstr "desconhecido"
+
+#: PersonEverything//PersonEverything.py:503
+#: PersonEverything//PersonEverything_old.py:502
+msgid "Media Object"
+msgstr "Objecto multimédia"
+
+#: PersonEverything//PersonEverything.py:505
+#: PersonEverything//PersonEverything_old.py:504
+msgid "Mime type"
+msgstr "Tipo MIME"
+
+#: PersonEverything//PersonEverything.py:516
+#: PersonEverything//PersonEverything_old.py:515
+msgid ""
+"Given name(s): Title, Given, Suffix, Call Name, Nick Name, Family Nick Name"
+msgstr "Nomes próprios: título, nome, sufixo, usual, alcunha, diminutivo"
+
+#: PersonEverything//PersonEverything.py:541
+#: PersonEverything//PersonEverything_old.py:540
+msgid "Note"
+msgstr "Nota"
+
+#: PersonEverything//PersonEverything.py:542
+#: PersonEverything//PersonEverything_old.py:541
+msgid "Note type"
+msgstr "Tipo de nota"
+
+#: PersonEverything//PersonEverything.py:553
+#: PersonEverything//PersonEverything_old.py:552
+msgid "Parent Place"
+msgstr "Local-mãe"
+
+#: PersonEverything//PersonEverything.py:568
+#: PersonEverything//PersonEverything.py:572
+#: PersonEverything//PersonEverything_old.py:567
+#: PersonEverything//PersonEverything_old.py:571
+msgid "Alternate Location"
+msgstr "Local alternativo"
+
+#: PersonEverything//PersonEverything.py:569
+#: PersonEverything//PersonEverything_old.py:568
+msgid "Parish"
+msgstr "Paróquia"
+
+#: PersonEverything//PersonEverything.py:585
+#: PersonEverything//PersonEverything_old.py:584
+msgid "Place"
+msgstr "Local"
+
+#: PersonEverything//PersonEverything.py:586
+#: PersonEverything//PersonEverything_old.py:585
+msgid "Place Title"
+msgstr "Título do local"
+
+#: PersonEverything//PersonEverything.py:591
+#: PersonEverything//PersonEverything_old.py:590
+msgid "Name"
+msgstr "Nome"
+
+#: PersonEverything//PersonEverything.py:599
+#: PersonEverything//PersonEverything_old.py:598
+msgid "Code"
+msgstr "Código"
+
+#: PersonEverything//PersonEverything.py:607
+#: PersonEverything//PersonEverything_old.py:606
+msgid "Alternative Name"
+msgstr "Nome alternativo"
+
+#: PersonEverything//PersonEverything.py:618
+#: PersonEverything//PersonEverything_old.py:617
+msgid "Latitude, Longitude"
+msgstr "Latitude, Longitude"
+
+#: PersonEverything//PersonEverything.py:640
+#: PersonEverything//PersonEverything_old.py:639
+msgid "Call number"
+msgstr "Número de catálogo"
+
+#: PersonEverything//PersonEverything.py:647
+#: PersonEverything//PersonEverything_old.py:646
+msgid "Repository"
+msgstr "Repositório"
+
+#: PersonEverything//PersonEverything.py:648
+#: PersonEverything//PersonEverything_old.py:647
+msgid "Repository type"
+msgstr "Tipo de repositório"
+
+#: PersonEverything//PersonEverything.py:670
+#: PersonEverything//PersonEverything_old.py:669
+msgid "Repository reference"
+msgstr "Referência de repositório"
+
+#: PersonEverything//PersonEverything.py:671
+#: PersonEverything//PersonEverything_old.py:670
+msgid "Media type"
+msgstr "Tipo de multimédia"
+
+#: PersonEverything//PersonEverything.py:678
+#: PersonEverything//PersonEverything.py:682
+#: PersonEverything//PersonEverything_old.py:677
+#: PersonEverything//PersonEverything_old.py:681
+msgid "Surname"
+msgstr "Apelido"
+
+#: PersonEverything//PersonEverything.py:679
+#: PersonEverything//PersonEverything_old.py:678
+msgid "Origin type"
+msgstr "Tipo de origem"
+
+#: PersonEverything//PersonEverything.py:686
+#: PersonEverything//PersonEverything_old.py:685
+msgid "Prefix, surname, connector"
+msgstr "Prefixo, apelido, ligação"
+
+#: PersonEverything//PersonEverything.py:691
+#: PersonEverything//PersonEverything_old.py:690
+msgid "{This is the primary surname}"
+msgstr "(este é o apelido principal)"
+
+#: PersonEverything//PersonEverything.py:704
+#: PersonEverything//PersonEverything_old.py:703
+msgid "Tag name"
+msgstr "Etiquetas, nome"
+
+#: PersonEverything//PersonEverything.py:715
+#: PersonEverything//PersonEverything_old.py:714
+msgid "Tag colour and priority"
+msgstr "Etiquetas, cor e prioridade"
+
+#: PersonEverything//PersonEverything.py:723
+#: PersonEverything//PersonEverything_old.py:722
+msgid "URL"
+msgstr "URL"
+
+#: PersonEverything//PersonEverything.py:906
+#: PersonEverything//PersonEverything_old.py:905
+msgid "Source"
+msgstr "Fonte"
+
+#: PersonEverything//PersonEverything.py:912
+#: PersonEverything//PersonEverything_old.py:911
+msgid "Citation"
+msgstr "Citação"
+
+#: PersonEverything//PersonEverything.py:960
+#: PersonEverything//PersonEverything_old.py:959
+msgid "No source information found"
+msgstr "Sem informações de fontes"
+
+#: PersonEverything//PersonEverything.py:1001
+#: PersonEverything//PersonEverything_old.py:1000
+msgid "Report Options"
+msgstr "Opções do relatório"
+
+#: PersonEverything//PersonEverything.py:1003
+#: PersonEverything//PersonEverything_old.py:1002
+msgid "Center Person"
+msgstr "Indivíduo central"
+
+#: PersonEverything//PersonEverything.py:1004
+#: PersonEverything//PersonEverything_old.py:1003
+msgid "The center person for the report"
+msgstr "O indivíduo central do relatório"
+
+#: PersonEverything//PersonEverything.py:1010
+#: PersonEverything//PersonEverything_old.py:1009
+msgid "Name format"
+msgstr "Formato do nome"
+
+#: PersonEverything//PersonEverything.py:1011
+#: PersonEverything//PersonEverything_old.py:1010
+msgid "Default"
+msgstr "Predefinição"
+
+#: PersonEverything//PersonEverything.py:1014
+#: PersonEverything//PersonEverything_old.py:1013
+msgid "Select the format to display names"
+msgstr "Seleccione o formato para mostrar os nomes"
+
+#: PersonEverything//PersonEverything.py:1028
+#: PersonEverything//PersonEverything_old.py:1027
+msgid "The style used for the title of the page."
+msgstr "O estilo usado para o título da página."
+
+#: PersonEverything//PersonEverything.py:1039
+#: PersonEverything//PersonEverything_old.py:1038
+#, python-format
+msgid "The style used for the level %d display."
+msgstr "O estilo usado para mostrar o nível %d."
+
+#: PersonEverything//PersonEverything.py:1060
+#: PersonEverything//PersonEverything_old.py:1059
+msgid "The basic style used for the endnotes source display."
+msgstr "O estilo básico usado para mostrar as notas finais da fonte."

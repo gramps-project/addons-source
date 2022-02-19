@@ -1,0 +1,92 @@
+# Russian translation for HouseTimelineGramplet addon.
+# This file is distributed under the same license as the Gramps package.
+# vantu5z <vantu5z@mail.ru>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps51\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-07-08 16:29-0500\n"
+"PO-Revision-Date: 2020-04-26 16:18+0300\n"
+"Last-Translator: vantu5z <vantu5z@mail.ru>\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: HouseTimelineGramplet/housetimeline.gpr.py:3
+#: HouseTimelineGramplet/housetimeline.gpr.py:14
+msgid "House Timeline"
+msgstr "Жители дома"
+
+#: HouseTimelineGramplet/housetimeline.gpr.py:4
+msgid "Lists the Residents of an Address by Timeline"
+msgstr "Список жителей по адресу на линии времени"
+
+#: HouseTimelineGramplet/housetimeline.py:25
+msgid "Double-click name for details"
+msgstr "Двойной щелчок по имени для дополнительной информации"
+
+#: HouseTimelineGramplet/housetimeline.py:41
+#: HouseTimelineGramplet/housetimeline.py:48
+msgid "House Icon Style"
+msgstr "Стиль иконки дома"
+
+#: HouseTimelineGramplet/housetimeline.py:49
+msgid "Standard"
+msgstr "Стандартный"
+
+#: HouseTimelineGramplet/housetimeline.py:50
+msgid "Small"
+msgstr "Маленький"
+
+#: HouseTimelineGramplet/housetimeline.py:51
+msgid "Unicode"
+msgstr "Юникод"
+
+#: HouseTimelineGramplet/housetimeline.py:52
+msgid "None"
+msgstr "Отсутствует"
+
+#: HouseTimelineGramplet/housetimeline.py:58
+msgid "Processing..."
+msgstr "Обработка..."
+
+#: HouseTimelineGramplet/housetimeline.py:80
+msgid ""
+"There are no individuals with Address data. Please add Address data to "
+"people."
+msgstr ""
+"Отсутствуют лица с информацией об адресе. Пожалуйста добавьте указанную "
+"информацию для людей."
+
+#: HouseTimelineGramplet/housetimeline.py:118
+msgid "Location"
+msgstr "Местоположение"
+
+#: HouseTimelineGramplet/housetimeline.py:119
+msgid "Time In Family"
+msgstr "Время в семье"
+
+#: HouseTimelineGramplet/housetimeline.py:120
+msgid "First Resident"
+msgstr "Первое место жительства"
+
+#: HouseTimelineGramplet/housetimeline.py:121
+msgid "Last Resident"
+msgstr "Последнее место жительства"
+
+#: HouseTimelineGramplet/housetimeline.py:122
+msgid "Timeline"
+msgstr "Линия времени"
+
+#: HouseTimelineGramplet/housetimeline.py:123
+msgid "Unknown"
+msgstr "Неизвестно"
+
+#: HouseTimelineGramplet/housetimeline.py:124
+msgid "Total Known Residents"
+msgstr "Количество известных мест проживания"

@@ -1,0 +1,158 @@
+# Addon Deep Connections fo Gramps.
+# Copyright (C) 2020 Gramps
+# This file is distributed under the same license as the PACKAGE package.
+# Pedro Albuquerque <pmra@protonmail.com>, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps51\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2020-03-29 11:59Hora de Verão de GMT\n"
+"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"Language-Team: Pedro Albuquerque\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Geany / PoHelper 1.36\n"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:3
+msgid "Deep Connections Gramplet"
+msgstr "Gramplet Ligações profundas"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:4
+msgid "Gramplet showing a deep relationship between active and home people"
+msgstr ""
+"Gramplet que mostra um parentesco profundo entre o indivíduo activo e o "
+"indivíduo inicial"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:10
+msgid "Deep Connections"
+msgstr "Ligações profundas"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:59
+msgid "Double-click name for details"
+msgstr "Duplo clique no nome para detalhes"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:60
+msgid "No Family Tree loaded."
+msgstr "Sem árvore carregada."
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:65
+msgid "Pause"
+msgstr "Pausa"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:67
+msgid "Continue"
+msgstr "Continuar"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:69
+msgid "Copy"
+msgstr "Copiar"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:106
+msgid "mentioned in note"
+msgstr "mencionado na nota"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:125
+msgid "child"
+msgstr "filho"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:129
+msgid "husband"
+msgstr "marido"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:131
+msgid "wife"
+msgstr "mulher"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:132
+msgid "Note on Family"
+msgstr "Nota da família"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:142
+msgid "sibling"
+msgstr "irmão"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:146
+msgid "father"
+msgstr "pai"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:149
+msgid "mother"
+msgstr "mãe"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:150
+msgid "Note on Parent Family"
+msgstr "Nota da família-mãe"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:153
+#, python-format
+msgid "%s (association)"
+msgstr "%s (associação)"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:157
+msgid "Note on Person"
+msgstr "Nota do indivíduo"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:187
+#, python-format
+msgid ""
+"\n"
+"   %s of "
+msgstr ""
+"\n"
+"   %s de "
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:205
+msgid "No Home Person set."
+msgstr "Sem indivíduo inicial definido."
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:208
+msgid "No Active Person set."
+msgstr "Sem indivíduo activo definido."
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:212
+msgid "self"
+msgstr "de cujus"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:216
+msgid "Looking for relationship between\n"
+msgstr "A procurar parentesco entre\n"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:217
+#, python-format
+msgid "  <b>%s</b> (Home Person) and\n"
+msgstr "  <b>%s</b> (indivíduo inicial) e\n"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:218
+#, python-format
+msgid "  <b>%s</b> (Active Person)...\n"
+msgstr "  <b>%s</b> (indivíduo activo)...\n"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:228
+#, python-format
+msgid ""
+"Found relation #%d: \n"
+"   "
+msgstr ""
+"Encontrada relação nº.%d: \n"
+"   "
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:238
+msgid ""
+"Paused.\n"
+"Press Continue to search for additional relations.\n"
+msgstr ""
+"Em pausa.\n"
+"Clique em Continuar para procurar mais relações.\n"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:253
+#, python-format
+msgid ""
+"\n"
+"Search completed. %d relations found."
+msgstr ""
+"\n"
+"Procura concluída. Encontradas %d relações."

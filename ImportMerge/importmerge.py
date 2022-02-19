@@ -37,7 +37,7 @@ import os
 # GNOME libraries
 #
 #-------------------------------------------------------------------------
-from gi.repository import Gtk
+from gi.repository import Gtk, Gdk
 
 #------------------------------------------------------------------------
 #
@@ -255,6 +255,7 @@ class ImportMerge(tool.BatchTool, ManagedWindow):
             "on_help_clicked"       : self.on_help_clicked,
             "on_edit_clicked"       : self.on_edit,
             "on_details_toggled"    : self.on_details,
+            "on_key"                : self.on_key,
             "on_delete_event"       : self.close,
             "on_close"              : self.done})
 
@@ -299,6 +300,22 @@ class ImportMerge(tool.BatchTool, ManagedWindow):
             self.db2.disconnect_all()
             self.db2.close()
         ManagedWindow.close(self, *args)
+
+    def on_key(self, obj, event):
+        """
+        Called when a key is pressed on the window
+        """
+        if event.keyval in (Gdk.KEY_Up, Gdk.KEY_KP_Up):
+            sel = self.diff_sel.get_selected_rows()
+            sel[1][0].prev()
+        elif event.keyval in (Gdk.KEY_Down, Gdk.KEY_KP_Down):
+            sel = self.diff_sel.get_selected_rows()
+            sel[1][0].next()
+        else:
+            return False
+        self.diff_sel.select_path(sel[1][0])
+        self.diff_view.scroll_to_cell(sel[1][0], None, False, 0.0, 0.0)
+        return True
 
     def progress_step(self, percent):
         ''' a hack to allow import XML callback progress to work since its

@@ -1,0 +1,132 @@
+# Dutch translation of Gramps addon AncestorFill.
+# Copyright (C) 2020 Gramps Project.
+# This file is distributed under the same license as the AncestorFill package.
+# Jan Sparreboom <jan@sparreboom.net>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.1.x\n"
+"Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2020-03-15 22:06+0100\n"
+"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
+"Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+
+#: AncestorFill/AncestorFill.gpr.py:8
+msgid "AncestorFill"
+msgstr "Vooroudertelling"
+
+#: AncestorFill/AncestorFill.gpr.py:9
+msgid "Report on the filling of the tree"
+msgstr "Verslag van de bezetting van de stamboom"
+
+#: AncestorFill/AncestorFill.py:105
+#, python-format
+msgid "Person %s is not in the Database"
+msgstr "Persoon %s is niet in de Database opgenomen"
+
+#: AncestorFill/AncestorFill.py:190
+#, python-format
+msgid "AncestorFill for %s"
+msgstr "Vooroudertelling voor %s"
+
+#: AncestorFill/AncestorFill.py:206
+msgid "Generation "
+msgstr "Generatie "
+
+#: AncestorFill/AncestorFill.py:207
+msgid "Number of Ancestors found "
+msgstr "Aantal gevonden voorouders "
+
+#: AncestorFill/AncestorFill.py:208
+msgid "percent of Ancestors found "
+msgstr "Percentage gevonden voorouders "
+
+#: AncestorFill/AncestorFill.py:209
+msgid "Number of single Ancestors found "
+msgstr "Aantal gevonden individuele voorouders "
+
+#: AncestorFill/AncestorFill.py:210
+msgid "Number of theoretical Ancestors "
+msgstr "Aantal theoretische voorouders "
+
+#: AncestorFill/AncestorFill.py:211
+msgid "Pedigree Collapse "
+msgstr "Kwartierherhaling "
+
+#: AncestorFill/AncestorFill.py:254
+msgid "Total Number of Ancestors found "
+msgstr "Totaal aantal gevonden voorouders "
+
+#: AncestorFill/AncestorFill.py:256
+msgid "Total Number of single Ancestors found "
+msgstr "Totaal aantal gevonden individuele voorouders "
+
+#: AncestorFill/AncestorFill.py:293
+msgid "Report Options"
+msgstr "Rapport opties"
+
+#: AncestorFill/AncestorFill.py:295
+msgid "Center Person"
+msgstr "Hoofdpersoon"
+
+#: AncestorFill/AncestorFill.py:296
+msgid "The center person for the report"
+msgstr "De hoofdpersoon voor het rapport"
+
+#: AncestorFill/AncestorFill.py:299
+msgid "Generations"
+msgstr "Generaties"
+
+#: AncestorFill/AncestorFill.py:300
+msgid "The number of generations to include in the report"
+msgstr "Het aantal generaties dat in het rapport moet worden opgenomen"
+
+#: AncestorFill/AncestorFill.py:303
+msgid "Filled digit"
+msgstr "Aantal decimalen"
+
+#: AncestorFill/AncestorFill.py:304
+msgid ""
+"The number of digits after comma to include in the report for the percentage of "
+"ancestor found at a given generation"
+msgstr ""
+"Het aantal cijfers na de komma dat in het rapport moet worden opgenomen voor het "
+"percentage voorouders dat bij een bepaalde generatie is gevonden"
+
+#: AncestorFill/AncestorFill.py:307
+msgid "Collapsed digit"
+msgstr "Aantal decimalen Kwartierherhaling"
+
+#: AncestorFill/AncestorFill.py:308
+msgid ""
+"The number of digits after comma to include in the report for the pedigree "
+"Collapse"
+msgstr ""
+"Het aantal cijfers na de komma dat in het rapport moet worden opgenomen voor de "
+"Kwartierherhaling"
+
+#: AncestorFill/AncestorFill.py:311
+msgid "Display theoretical"
+msgstr "Theoretische weergave"
+
+#: AncestorFill/AncestorFill.py:312
+msgid "Whether to display the theoretical number of ancestor by generation"
+msgstr "Of het theoretische aantal voorouders per generatie moet worden weergegeven"
+
+#: AncestorFill/AncestorFill.py:360
+msgid "The style used for the title of the page."
+msgstr "De stijl die wordt gebruikt voor de titel van de pagina."
+
+#: AncestorFill/AncestorFill.py:373
+msgid "The style used for the generation header."
+msgstr "De stijl die wordt gebruikt voor het generatiebovenschrift."
+
+#: AncestorFill/AncestorFill.py:383
+msgid "The basic style used for the text display."
+msgstr "De basisstijl die wordt gebruikt voor de tekstweergave."

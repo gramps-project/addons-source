@@ -1,0 +1,60 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Pär Ekholm <pehlm@pekholm.org>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-04 18:55-0600\n"
+"PO-Revision-Date: 2021-05-29 16:17+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"Last-Translator: Pär Ekholm <pehlm@pekholm.se>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: sv_SE\n"
+
+#: Query/Query.gpr.py:9
+msgid "Query Gramplet"
+msgstr "Förfrågningsgramplet"
+
+#: Query/Query.gpr.py:10
+msgid "Gramplet for running SQL-like queries"
+msgstr "Gramplet för att köra SQL-liknande sökningar"
+
+#: Query/Query.gpr.py:18
+msgid "Query"
+msgstr "Sök"
+
+#: Query/Query.gpr.py:31
+msgid "Query Quickview"
+msgstr "Snabbvy sökning"
+
+#: Query/Query.gpr.py:32
+msgid "Quick view for SQL-like running queries"
+msgstr "Snabbvy för SQL-liknande körningsfrågor"
+
+#: Query/QueryGramplet.py:52
+msgid "Enter Python expressions"
+msgstr "Ange Python-uttryck"
+
+#: Query/QueryGramplet.py:176
+msgid "Enter SQL query"
+msgstr "Ange SQL-fråga"
+
+#: Query/QueryQuickview.py:347 Query/QueryQuickview.py:367
+#, python-format
+msgid "%d rows processed in %s seconds.\n"
+msgstr "%d rader bearbetade på %s sekunder.\n"
+
+#: Query/QueryQuickview.py:425
+msgid "Date"
+msgstr "Datum"
+
+#: Query/QueryQuickview.py:426
+msgid "Today"
+msgstr "Idag"

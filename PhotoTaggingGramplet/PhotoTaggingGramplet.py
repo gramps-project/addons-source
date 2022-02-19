@@ -61,6 +61,7 @@ from gramps.gen.plug.menu import BooleanOption, NumberOption
 from gramps.gui.plug import PluginWindows
 from gramps.gui.widgets import SelectionWidget, Region
 from gramps.gui.ddtargets import DdTargets
+from gramps.gui.display import display_url
 
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
@@ -95,6 +96,10 @@ MIN_FACE_SIZE = CONFIG.get("detection.box_size")
 REPLACE_WITHOUT_ASKING = CONFIG.get("selection.replace_without_asking")
 DETECT_INSIDE_EXISTING_BOXES = CONFIG.get("detection.inside_existing_boxes")
 SENSITIVITY = CONFIG.get("detection.sensitivity")
+
+# translators: you can link here to localized wiki page (if exists)
+WIKI_URL = _("https://www.gramps-project.org/wiki/index.php/"
+             "Photo_Tagging_Gramplet")
 
 def save_config():
     CONFIG.set("detection.box_size", MIN_FACE_SIZE)
@@ -175,8 +180,7 @@ class SettingsDialog(PluginWindows.ToolManagedWindowBase):
         PluginWindows.ToolManagedWindowBase.__init__(self, dbstate, uistate,
                                                      None, "SettingsDialog")
 
-        self.ok.set_use_stock(True)
-        self.ok.set_label("gtk-ok")
+        self.ok.set_label(_("_OK"))
 
     def get_title(self):
         return self.title
@@ -201,7 +205,7 @@ class PhotoTaggingGramplet(Gramplet):
 
         self.gui.WIDGET = self.build_gui()
         self.gui.get_container_widget().remove(self.gui.textview)
-        self.gui.get_container_widget().add_with_viewport(self.gui.WIDGET)
+        self.gui.get_container_widget().add(self.gui.WIDGET)
         self.top.show_all()
 
     def on_save(self):
@@ -221,13 +225,13 @@ class PhotoTaggingGramplet(Gramplet):
 
         button_panel = Gtk.HBox()
 
-        self.button_index = Gtk.ToolButton(Gtk.STOCK_INDEX)
-        self.button_add = Gtk.ToolButton(Gtk.STOCK_ADD)
-        self.button_del = Gtk.ToolButton(Gtk.STOCK_REMOVE)
-        self.button_clear = Gtk.ToolButton(Gtk.STOCK_CLEAR)
-        self.button_edit = Gtk.ToolButton(Gtk.STOCK_EDIT)
-        self.button_zoom_in = Gtk.ToolButton(Gtk.STOCK_ZOOM_IN)
-        self.button_zoom_out = Gtk.ToolButton(Gtk.STOCK_ZOOM_OUT)
+        self.button_index = Gtk.ToolButton(stock_id=Gtk.STOCK_INDEX)
+        self.button_add = Gtk.ToolButton(stock_id=Gtk.STOCK_ADD)
+        self.button_del = Gtk.ToolButton(stock_id=Gtk.STOCK_REMOVE)
+        self.button_clear = Gtk.ToolButton(stock_id=Gtk.STOCK_CLEAR)
+        self.button_edit = Gtk.ToolButton(stock_id=Gtk.STOCK_EDIT)
+        self.button_zoom_in = Gtk.ToolButton(stock_id=Gtk.STOCK_ZOOM_IN)
+        self.button_zoom_out = Gtk.ToolButton(stock_id=Gtk.STOCK_ZOOM_OUT)
         # set custom icon for face detect button
         self.button_detect = Gtk.ToolButton()
         theme = Gtk.IconTheme.get_default()
@@ -241,7 +245,8 @@ class PhotoTaggingGramplet(Gramplet):
             face_detect_icon = os.path.join(path, 'gramps-face-detection.svg')
             img.set_from_file(face_detect_icon)
             self.button_detect.set_icon_widget(img)
-        self.button_settings = Gtk.ToolButton(Gtk.STOCK_PREFERENCES)
+        self.button_settings = Gtk.ToolButton(stock_id=Gtk.STOCK_PREFERENCES)
+        self.button_help = Gtk.ToolButton(stock_id=Gtk.STOCK_HELP)
 
         self.button_index.connect("clicked", self.sel_person_clicked)
         self.button_add.connect("clicked", self.add_person_clicked)
@@ -252,6 +257,7 @@ class PhotoTaggingGramplet(Gramplet):
         self.button_zoom_out.connect("clicked", self.zoom_out_clicked)
         self.button_detect.connect("clicked", self.detect_faces_clicked)
         self.button_settings.connect("clicked", self.settings_clicked)
+        self.button_help.connect("clicked", self.on_help_clicked)
 
         button_panel.pack_start(self.button_index,
                                 expand=False, fill=False, padding=5)
@@ -271,6 +277,8 @@ class PhotoTaggingGramplet(Gramplet):
                                 expand=False, fill=False, padding=5)
         button_panel.pack_start(self.button_settings,
                                 expand=False, fill=False, padding=5)
+        button_panel.pack_start(self.button_help,
+                                expand=False, fill=False, padding=5)
 
         self.button_index.set_tooltip_text(_("Select Person"))
         self.button_add.set_tooltip_text(_("Add Person"))
@@ -287,6 +295,7 @@ class PhotoTaggingGramplet(Gramplet):
         self.button_detect.set_tooltip_text(text)
 
         self.button_settings.set_tooltip_text(_("Settings"))
+        self.button_help.set_tooltip_text(_("Help"))
 
         self.top.pack_start(button_panel, expand=False, fill=True, padding=5)
 
@@ -328,15 +337,15 @@ class PhotoTaggingGramplet(Gramplet):
 
         self.treestore = Gtk.TreeStore(int, GdkPixbuf.Pixbuf, str, str)
 
-        self.treeview = Gtk.TreeView(self.treestore)
+        self.treeview = Gtk.TreeView(model=self.treestore)
         self.treeview.set_size_request(400, -1)
         self.treeview.connect("cursor-changed", self.cursor_changed)
         self.treeview.connect("row-activated", self.row_activated)
         self.treeview.connect("button-press-event", self.row_mouse_click)
-        column1 = Gtk.TreeViewColumn(_(''))
-        column2 = Gtk.TreeViewColumn(_('Preview'))
-        column3 = Gtk.TreeViewColumn(_('Person'))
-        column4 = Gtk.TreeViewColumn(_('Age'))
+        column1 = Gtk.TreeViewColumn(title='')
+        column2 = Gtk.TreeViewColumn(title=_('Preview'))
+        column3 = Gtk.TreeViewColumn(title=_('Person'))
+        column4 = Gtk.TreeViewColumn(title=_('Age'))
         self.treeview.append_column(column1)
         self.treeview.append_column(column2)
         self.treeview.append_column(column3)
@@ -382,6 +391,12 @@ class PhotoTaggingGramplet(Gramplet):
         self.enable_buttons()
 
         return self.top
+
+    def on_help_clicked(self, widget):
+        """
+        Display the relevant portion of Gramps manual.
+        """
+        display_url(WIKI_URL)
 
     def drag_data_received(self, widget, context, x, y,
                            sel_data, info, time, on_image=None):
@@ -490,6 +505,8 @@ class PhotoTaggingGramplet(Gramplet):
 
     def db_changed(self):
         self.connect(self.dbstate.db, 'media-update', self.update)
+        self.connect(self.dbstate.db, 'person-update', self.update)
+        self.connect(self.dbstate.db, 'person-delete', self.update)
         self.connect_signal('Media', self.update)
 
     def main(self):
@@ -510,9 +527,11 @@ class PhotoTaggingGramplet(Gramplet):
     def load_image(self, media):
         self.regions = []
         image_path = media_path_full(self.dbstate.db, media.get_path())
+        self.selection_widget.loaded = False
         self.selection_widget.load_image(image_path)
-        self.retrieve_backrefs()
-        self.selection_widget.set_regions(self.regions)
+        if self.selection_widget.loaded:
+            self.retrieve_backrefs()
+            self.selection_widget.set_regions(self.regions)
 
     def retrieve_backrefs(self):
         """
@@ -525,8 +544,8 @@ class PhotoTaggingGramplet(Gramplet):
                 gallery = person.get_media_list()
                 for mediaref in gallery:
                     referenced_handles = mediaref.get_referenced_handles()
-                    if len(referenced_handles) == 1:
-                        handle_type, handle = referenced_handles[0]
+                    for referens_item  in referenced_handles:
+                        handle_type, handle = referens_item
                         if handle_type == "Media" and handle == self.get_current_handle():
                             rect = mediaref.get_rectangle()
                             if rect is None:

@@ -1,0 +1,54 @@
+# Dutch translation of addon MediaMerge.
+# Copyright (C) 2020 Gramps project
+# This file is distributed under the same license as the MediaMerge package.
+# Jan Sparreboom <jan@sparreboom.net>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: MediaMerge 5.x\n"
+"Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
+"POT-Creation-Date: 2019-01-04 18:55-0600\n"
+"PO-Revision-Date: 2020-07-31 18:07+0200\n"
+"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
+"Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.3\n"
+
+#: MediaMerge/mediamerge.gpr.py:32
+msgid "Merge Media"
+msgstr "Media samenvoegen"
+
+#: MediaMerge/mediamerge.gpr.py:33
+msgid ""
+"Searches the entire database, looking for media that have the same path and "
+"merges them."
+msgstr ""
+"Doorzoekt de hele database, zoekend naar media met hetzelfde pad en voegt "
+"deze samen."
+
+#: MediaMerge/mediamerge.py:95
+msgid "Media Merge"
+msgstr "Media samenvoegen"
+
+#: MediaMerge/mediamerge.py:140
+#, python-brace-format
+msgid "{number_of} media merged"
+msgid_plural "{number_of} media merged"
+msgstr[0] "{number_of} medium samengevoegd"
+msgstr[1] "{number_of} media samengevoegd"
+
+#: MediaMerge/mediamerge.py:144
+msgid "Number of merges done"
+msgstr "Aantal uitgevoerde samenvoegingen"
+
+#: MediaMerge/mediamerge.py:147
+msgid "No modifications made"
+msgstr "Geen wijzigingen aangebracht"
+
+#: MediaMerge/mediamerge.py:148
+msgid "No media items merged."
+msgstr "Geen media-items samengevoegd."

@@ -45,9 +45,20 @@ LOG = logging.getLogger(".Tree")
 from gramps.gen.errors import ReportError
 from gramps.gen.plug.report import Report
 from gramps.gen.plug.report import MenuReportOptions
+from gramps.gen.plug.report import stdoptions
 from gramps.gen.plug.menu import PersonOption, NumberOption, BooleanOption
+
+#------------------------------------------------------------------------
+#
+# Internationalisation
+#
+#------------------------------------------------------------------------
 from gramps.gen.const import GRAMPS_LOCALE as glocale
-_ = glocale.translation.gettext
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.gettext
 
 #------------------------------------------------------------------------
 #
@@ -72,6 +83,7 @@ class AncestorTree(Report):
         self._pid = get_value('pid')
         self.max_generations = menu.get_option_by_name('maxgen').get_value()
         self.include_images = menu.get_option_by_name('images').get_value()
+        self.set_locale(menu.get_option_by_name('trans').get_value())
 
     def write_report(self):
         """
@@ -158,3 +170,5 @@ class AncestorTreeOptions(MenuReportOptions):
         images = BooleanOption(_("Include images"), False)
         images.set_help(_("Include images of people in the nodes."))
         menu.add_option(category_name, "images", images)
+
+        locale_opt = stdoptions.add_localization_option(menu, category_name)

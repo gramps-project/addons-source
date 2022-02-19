@@ -1,0 +1,84 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-09-14 10:31-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: EventDescriptionEditor/EventDescriptionEditor.gpr.py:24
+#: EventDescriptionEditor/EventDescriptionEditor.py:52
+#: EventDescriptionEditor/EventDescriptionEditor.py:64
+msgid "Event Description Editor"
+msgstr ""
+
+#: EventDescriptionEditor/EventDescriptionEditor.gpr.py:25
+msgid ""
+"A tool to find and replace a string in event description of multiple events."
+msgstr ""
+
+#: EventDescriptionEditor/EventDescriptionEditor.py:75
+msgid "Search substring..."
+msgstr ""
+
+#: EventDescriptionEditor/EventDescriptionEditor.py:105
+msgid "INFO"
+msgstr ""
+
+#: EventDescriptionEditor/EventDescriptionEditor.py:106
+#, python-format
+msgid "%s event descriptions of %s events were changed."
+msgstr ""
+
+#: EventDescriptionEditor/EventDescriptionEditor.py:126
+msgid "All Events"
+msgstr ""
+
+#: EventDescriptionEditor/EventDescriptionEditor.py:135
+msgid "Events"
+msgstr ""
+
+#: EventDescriptionEditor/EventDescriptionEditor.py:136
+#: EventDescriptionEditor/EventDescriptionEditor.py:140
+#: EventDescriptionEditor/EventDescriptionEditor.py:143
+#: EventDescriptionEditor/EventDescriptionEditor.py:149
+#: EventDescriptionEditor/EventDescriptionEditor.py:153
+msgid "Option"
+msgstr ""
+
+#: EventDescriptionEditor/EventDescriptionEditor.py:139
+msgid "Find"
+msgstr ""
+
+#: EventDescriptionEditor/EventDescriptionEditor.py:142
+msgid "Replace"
+msgstr ""
+
+#: EventDescriptionEditor/EventDescriptionEditor.py:145
+msgid "Replace substring only"
+msgstr ""
+
+#: EventDescriptionEditor/EventDescriptionEditor.py:146
+msgid ""
+"If True only the substring will be replaced, otherwise the whole description "
+"will be deleted and replaced by the new one."
+msgstr ""
+
+#: EventDescriptionEditor/EventDescriptionEditor.py:151
+msgid "Allow regex"
+msgstr ""
+
+#: EventDescriptionEditor/EventDescriptionEditor.py:152
+msgid "Allow regular expressions."
+msgstr ""

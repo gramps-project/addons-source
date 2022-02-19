@@ -1,0 +1,121 @@
+# Dutch translation of addon SetPrivacyTool.
+# Copyright (C) 2021 Gramps project
+# This file is distributed under the same license as the SetPrivacyTool package.
+# Jan Sparreboom <jan@sparreboom.net>, 2020, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: SetPrivacyTool 5.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-19 11:07-0600\n"
+"PO-Revision-Date: 2021-05-03 22:07+0200\n"
+"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
+"Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+
+#: SetPrivacyTool/SetPrivacyTool.gpr.py:23 SetPrivacyTool/SetPrivacyTool.py:50
+#: SetPrivacyTool/SetPrivacyTool.py:92 SetPrivacyTool/SetPrivacyTool.py:95
+#: SetPrivacyTool/SetPrivacyTool.py:144 SetPrivacyTool/SetPrivacyTool.py:182
+msgid "Set Privacy Tool"
+msgstr "Markeer privé hulpmiddel"
+
+#: SetPrivacyTool/SetPrivacyTool.gpr.py:24
+msgid "Set all objects of the last <number> of years private."
+msgstr "Markeer alle objecten van de afgelopen <aantal> jaren op privé."
+
+#: SetPrivacyTool/SetPrivacyTool.py:89
+#, python-format
+msgid "Set private: %d %s\n"
+msgstr "Markeer privé %d %s\n"
+
+#: SetPrivacyTool/SetPrivacyTool.py:91
+#, python-format
+msgid "Not private: %d %s\n"
+msgstr "Niet privé: %d %s\n"
+
+#: SetPrivacyTool/SetPrivacyTool.py:103
+msgid "Set persons private.."
+msgstr "Markeer personen op privé."
+
+#: SetPrivacyTool/SetPrivacyTool.py:152
+msgid "Set events private.."
+msgstr "Markeer gebeurtenissen op privé."
+
+#: SetPrivacyTool/SetPrivacyTool.py:190
+msgid "Set media private.."
+msgstr "Markeer media op privé."
+
+#: SetPrivacyTool/SetPrivacyTool.py:232
+msgid "Persons"
+msgstr "Personen"
+
+#: SetPrivacyTool/SetPrivacyTool.py:233 SetPrivacyTool/SetPrivacyTool.py:237
+#: SetPrivacyTool/SetPrivacyTool.py:244 SetPrivacyTool/SetPrivacyTool.py:248
+#: SetPrivacyTool/SetPrivacyTool.py:255 SetPrivacyTool/SetPrivacyTool.py:259
+#: SetPrivacyTool/SetPrivacyTool.py:268 SetPrivacyTool/SetPrivacyTool.py:274
+msgid "Option"
+msgstr "Keuze"
+
+#: SetPrivacyTool/SetPrivacyTool.py:235
+msgid "Person Filter"
+msgstr "Persoonsfilter"
+
+#: SetPrivacyTool/SetPrivacyTool.py:236
+msgid "Select filter to restrict people"
+msgstr "Selecteer filter om aantal mensen te beperken"
+
+#: SetPrivacyTool/SetPrivacyTool.py:239 SetPrivacyTool/SetPrivacyTool.py:250
+#: SetPrivacyTool/SetPrivacyTool.py:261
+msgid "Entire Database"
+msgstr "Gehele database"
+
+#: SetPrivacyTool/SetPrivacyTool.py:243
+msgid "Events"
+msgstr "Gebeurtenissen"
+
+#: SetPrivacyTool/SetPrivacyTool.py:246
+msgid "Event Filter"
+msgstr "Gebeurtenisfilter"
+
+#: SetPrivacyTool/SetPrivacyTool.py:247
+msgid "Select filter to restrict events"
+msgstr "Selecteer een filter om het aantal gebeurtenissen te beperken"
+
+#: SetPrivacyTool/SetPrivacyTool.py:254
+msgid "Media"
+msgstr "Media"
+
+#: SetPrivacyTool/SetPrivacyTool.py:257
+msgid "Media Filter"
+msgstr "Mediafilter"
+
+#: SetPrivacyTool/SetPrivacyTool.py:258
+msgid "Select filter to restrict medias"
+msgstr "Selecteer een filter om het aantal media te beperken"
+
+#: SetPrivacyTool/SetPrivacyTool.py:265
+msgid "Always private if no date."
+msgstr "Altijd privé als er geen datum is."
+
+#: SetPrivacyTool/SetPrivacyTool.py:266
+msgid "If checked, all objects without a date will also be set private."
+msgstr ""
+"Indien aangevinkt, worden alle objecten zonder datum ook als privé "
+"gemarkeerd."
+
+#: SetPrivacyTool/SetPrivacyTool.py:270
+msgid "Years"
+msgstr "Jaren"
+
+#: SetPrivacyTool/SetPrivacyTool.py:271
+msgid ""
+"The time range in years from today you want to set objects private.\n"
+"'0 years' = remove privacy from all objects."
+msgstr ""
+"Het tijdsbereik in jaren vanaf vandaag dat u objecten als privé wilt "
+"markeren.\n"
+"'0 jaar' = verwijder privacy van alle objecten."

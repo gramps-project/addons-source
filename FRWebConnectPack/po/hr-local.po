@@ -1,22 +1,23 @@
 # Croatian translation for Gramps
 # This file is distributed under the same license as the Gramps package.
 # Copyright (C) Gramps project
-# Milo Ivir <mail@milotype.de>, 2019.
+# Milo Ivir <mail@milotype.de>, 2019., 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2019-03-08 01:36+0100\n"
+"POT-Creation-Date: 2019-12-24 11:34-0600\n"
+"PO-Revision-Date: 2020-08-24 14:24+0200\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: \n"
+"Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.1\n"
-"Last-Translator: Milo Ivir <mail@milotype.de>\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
-"Language: hr\n"
+"X-Generator: Poedit 2.4.1\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 
 #: FRWebConnectPack/FRWebPack.gpr.py:10
 msgid "FR Web Connect Pack"
@@ -26,30 +27,46 @@ msgstr "FR Web Connect zbirka"
 msgid "Collection of Web sites for the FR (requires libwebconnect)"
 msgstr "Zbirka web stranica za Francusku (zahtijeva libwebconnect)"
 
-#: FRWebConnectPack/FRWebPack.py:40
-msgid "French cultural ministry"
-msgstr "Francusko ministarstvo kulture"
-
 #: FRWebConnectPack/FRWebPack.py:41
+msgid "Cultural ministry (France)"
+msgstr "Ministarstvo kulture (Francuska)"
+
+#: FRWebConnectPack/FRWebPack.py:42
 msgid "Genealogical bank"
 msgstr "Genealoška banka"
 
-#: FRWebConnectPack/FRWebPack.py:43
+#: FRWebConnectPack/FRWebPack.py:44
 msgid "OrigineFile (Quebec)"
 msgstr "OrigineFile (Quebec)"
 
-#: FRWebConnectPack/FRWebPack.py:47
-msgid "FamilySearch.org"
-msgstr "FamilySearch.org"
-
-#: FRWebConnectPack/FRWebPack.py:48
+#: FRWebConnectPack/FRWebPack.py:50
 msgid "Cyber genealogy"
 msgstr "Virtualna genealogija"
 
-#: FRWebConnectPack/FRWebPack.py:54
-msgid "Hathi Trust Digital Library"
-msgstr "Hathi Trust digitalna biblioteka"
+#: FRWebConnectPack/FRWebPack.py:53
+msgid "RetroNews (Bnf)"
+msgstr "RetroNews (Bnf)"
 
-#: FRWebConnectPack/FRWebPack.py:55
-msgid "Open Library"
-msgstr "Biblioteka otvorenog koda (Open Library)"
+#: FRWebConnectPack/FRWebPack.py:58
+msgid "Hathi Trust Digital Library (fr)"
+msgstr "Hathi Trust digitalna biblioteka (fr)"
+
+#: FRWebConnectPack/FRWebPack.py:59
+msgid "Open Library (fr)"
+msgstr "Open Library (fr)"
+
+#: FRWebConnectPack/FRWebPack.py:60
+msgid "Belgium's Archives"
+msgstr "Arhive Belgije"
+
+#~ msgid "French cultural ministry"
+#~ msgstr "Francusko ministarstvo kulture"
+
+#~ msgid "FamilySearch.org"
+#~ msgstr "FamilySearch.org"
+
+#~ msgid "Hathi Trust Digital Library"
+#~ msgstr "Hathi Trust digitalna biblioteka"
+
+#~ msgid "Open Library"
+#~ msgstr "Biblioteka otvorenog koda (Open Library)"

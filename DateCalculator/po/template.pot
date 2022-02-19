@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"POT-Creation-Date: 2020-05-15 15:41-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,40 +26,40 @@ msgstr ""
 msgid "Useful for date math calculations"
 msgstr ""
 
-#: DateCalculator/DateCalculator.py:63
+#: DateCalculator/DateCalculator.py:76
 msgid "Expression 1"
 msgstr ""
 
-#: DateCalculator/DateCalculator.py:64
+#: DateCalculator/DateCalculator.py:77
 msgid "Expression 2"
 msgstr ""
 
-#: DateCalculator/DateCalculator.py:65
+#: DateCalculator/DateCalculator.py:78
 msgid "Result"
 msgstr ""
 
-#: DateCalculator/DateCalculator.py:68
+#: DateCalculator/DateCalculator.py:81
 msgid "Calculate"
 msgstr ""
 
-#: DateCalculator/DateCalculator.py:71
+#: DateCalculator/DateCalculator.py:84
 msgid "Clear"
 msgstr ""
 
-#: DateCalculator/DateCalculator.py:118
+#: DateCalculator/DateCalculator.py:131
 msgid "Error: invalid entry for expression 1"
 msgstr ""
 
-#: DateCalculator/DateCalculator.py:128
+#: DateCalculator/DateCalculator.py:141
 msgid "Error: invalid entry for expression 2"
 msgstr ""
 
-#: DateCalculator/DateCalculator.py:153 DateCalculator/DateCalculator.py:155
-#: DateCalculator/DateCalculator.py:163 DateCalculator/DateCalculator.py:165
+#: DateCalculator/DateCalculator.py:166 DateCalculator/DateCalculator.py:168
+#: DateCalculator/DateCalculator.py:176 DateCalculator/DateCalculator.py:178
 msgid "Error: at least one expression must be a date"
 msgstr ""
 
-#: DateCalculator/DateCalculator.py:171
+#: DateCalculator/DateCalculator.py:184
 msgid ""
 "Enter an expression in the entries above and click Calculate.\n"
 "\n"

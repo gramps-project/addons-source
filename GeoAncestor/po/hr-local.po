@@ -1,0 +1,100 @@
+# Croatian translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) Gramps project
+# Milo Ivir <mail@milotype.de>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"PO-Revision-Date: 2020-08-24 19:29+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.1\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Language: hr\n"
+
+#: GeoAncestor/GeoAncestor.gpr.py:72
+msgid "OsmGpsMap module not loaded."
+msgstr "OsmGpsMap modul nije učitan."
+
+#: GeoAncestor/GeoAncestor.gpr.py:73
+#, python-format
+msgid ""
+"Geography functionality will not be available.\n"
+"To build it for Gramps see %(gramps_wiki_build_osmgps_url)s"
+msgstr ""
+"Funkcionalnost kartografije neće biti dostupna.\n"
+"Da bi se izgradila za Gramps, pogledaj %(gramps_wiki_build_osmgps_url)s"
+
+#: GeoAncestor/GeoAncestor.gpr.py:87
+msgid "Ancestors map"
+msgstr "Karta predaka"
+
+#: GeoAncestor/GeoAncestor.gpr.py:88
+msgid "A view showing ancestors places on the map."
+msgstr "Pogled za prikaz mjesta predaka na karti."
+
+#: GeoAncestor/GeoAncestor.gpr.py:95
+msgid "Geography"
+msgstr "Kartografija"
+
+#: GeoAncestor/GeoAncestor.py:119
+msgid "Organize Bookmarks"
+msgstr "Uredi knjižne oznake"
+
+#: GeoAncestor/GeoAncestor.py:207
+msgid "Ancestors places on the map"
+msgstr "Mjesta predaka na karti"
+
+#: GeoAncestor/GeoAncestor.py:235
+msgid "GeoAncestor"
+msgstr "Geopodaci predaka"
+
+#: GeoAncestor/GeoAncestor.py:304
+#, python-format
+msgid "Ancestors places for %s"
+msgstr "Mjesta predaka za %s"
+
+#: GeoAncestor/GeoAncestor.py:311
+msgid "Counting all places"
+msgstr "Brojenje svih mjesta"
+
+#: GeoAncestor/GeoAncestor.py:314
+msgid "Showing all places"
+msgstr "Prikazivanje svih mjesta"
+
+#: GeoAncestor/GeoAncestor.py:411
+#, python-format
+msgid "%(eventtype)s : %(name)s"
+msgstr "%(eventtype)s : %(name)s"
+
+#: GeoAncestor/GeoAncestor.py:538 GeoAncestor/GeoAncestor.py:559
+#: GeoAncestor/GeoAncestor.py:600
+msgid "Edit Event"
+msgstr "Uredi događaj"
+
+#: GeoAncestor/GeoAncestor.py:543 GeoAncestor/GeoAncestor.py:564
+#: GeoAncestor/GeoAncestor.py:604
+msgid "Center on this place"
+msgstr "Centriraj na ovo mjesto"
+
+#: GeoAncestor/GeoAncestor.py:578
+msgid "Unknown"
+msgstr "Nepoznato"
+
+#: GeoAncestor/GeoAncestor.py:589
+msgid "No description"
+msgstr "Bez opisa"
+
+#: GeoAncestor/GeoAncestor.py:620
+msgid "Show all places"
+msgstr "Prikaži sva mjesta"
+
+#: GeoAncestor/GeoAncestor.py:624 GeoAncestor/GeoAncestor.py:629
+msgid "Centering on Place"
+msgstr "Centriranje na mjesto"

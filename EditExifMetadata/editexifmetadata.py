@@ -48,8 +48,17 @@ from gi.repository import GExiv2
 # -----------------------------------------------------------------------------
 from gramps.gui.display import display_help
 
-from gramps.gen.const import GRAMPS_LOCALE as glocale
-_ = glocale.translation.gettext
+#------------------------------------------------------------------------
+#
+# Internationalisation
+#
+#------------------------------------------------------------------------
+from gramps.gen.const import IMAGE_DIR, GRAMPS_LOCALE as glocale
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.sgettext
 
 from gramps.gen.datehandler import displayer as _dd
 from gramps.gen.datehandler import parser as _dp
@@ -200,7 +209,13 @@ _BUTTONTIPS = {
     "Delete" : _("WARNING:  This will completely erase all Exif metadata "
                  "from this image!  Are you sure that you want to do this?")
 }
-_CLEAR_GPS = _("Clear GPS")  # just to do translation
+# Words needed for translation and creating a template.pot
+_CLEAR_GPS = _("Clear GPS")
+_THUMBNAIL = _("Thumbnail")
+_COPY = _("Copy")
+_CONVERT = _("Convert")
+_CLEAR = _("Clear")
+
 # ----------------------------------------------------
 
 
@@ -557,7 +572,7 @@ class EditExifMetadata(Gramplet):
         """
         creates and returns a button for display
         """
-        button = Gtk.Button(label=text)
+        button = Gtk.Button(label=_(text))
 
         if callback is not []:
             for call_ in callback:

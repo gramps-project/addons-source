@@ -154,7 +154,11 @@ log = logging.getLogger(".DynamicWeb")
 # Gramps module
 #------------------------------------------------
 
-
+#------------------------------------------------------------------------
+#
+# Internationalisation
+#
+#------------------------------------------------------------------------
 from gramps.gen.const import IMAGE_DIR, GRAMPS_LOCALE as glocale
 try:
     _trans = glocale.get_addon_translator(__file__)
@@ -851,7 +855,8 @@ class DynamicWebReport(Report):
             name = self.get_short_name(person) or ""
             jdata['short_name'] = name
             jdata['names'] = self.get_name_data(person)
-            jdata['letter'] = first_letter(name).strip()
+            p_name = _nd.primary_surname(person.get_primary_name())
+            jdata['letter'] = first_letter(p_name).strip()
             # Gender
             gender = ""
             if (person.get_gender() == Person.MALE): gender = "M"
@@ -1434,7 +1439,7 @@ class DynamicWebReport(Report):
             jdata['title'] = html_escape(title)
             jdata['gramps_path'] = media.get_path()
             path = self.get_media_web_path(media)
-            jdata['path'] = path
+            jdata['path'] = urlparse.quote(path)
             jdata['mime'] = media.get_mime_type()
             # Get media date
             date = format_date(media.get_date_object())
@@ -2186,7 +2191,7 @@ class DynamicWebReport(Report):
         #  - Javascript code for generating the page
         self.page_list = [
             # Menu pages
-            ("index.html", _("Html|Home"), PAGE_HOME in self.page_content, True, "Dwr.Main(Dwr.PAGE_HOME);"),
+            ("index.html", _("DynWeb|Home"), PAGE_HOME in self.page_content, True, "Dwr.Main(Dwr.PAGE_HOME);"),
             ("tree_svg.html", _("Tree"), PAGE_SVG_TREE in self.page_content, True, "Dwr.Main(Dwr.PAGE_SVG_TREE);"),
             ("statistics_conf.html", _("Statistics"), True, True, "printStatisticsConf();"),
             # ("statistics_conf.html", _("Statistics"), PAGE_STATISTICS in self.page_content, True, "printStatisticsConf();"),

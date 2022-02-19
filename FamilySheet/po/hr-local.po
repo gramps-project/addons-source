@@ -1,21 +1,21 @@
 # Croatian translation for Gramps
 # This file is distributed under the same license as the Gramps package.
 # Copyright (C) Gramps project
-# Milo Ivir <mail@milotype.de>, 2019.
+# Milo Ivir <mail@milotype.de>, 2019., 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-09-21 10:45+1000\n"
-"PO-Revision-Date: 2019-10-23 21:40+0200\n"
+"PO-Revision-Date: 2020-08-29 19:51+0200\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: \n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 2.4.1\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 
@@ -28,8 +28,7 @@ msgid ""
 "Produces a family sheet showing full information about a person and his/her "
 "partners and children."
 msgstr ""
-"Stvara obiteljski list sa cjelovitim informacijama o osobi i njenim "
-"roditeljima i djecom."
+"Stvara obiteljski list s potpunim podacima osobe, njenim partnerima i djeci."
 
 #: FamilySheet/FamilySheet.py:232 FamilySheet/FamilySheet.py:275
 #, python-format
@@ -109,11 +108,11 @@ msgstr "Središnja osoba"
 
 #: FamilySheet/FamilySheet.py:864
 msgid "The person whose partners and children are printed"
-msgstr "Osoba, čiji će se parnter i djeca koristiti u ispisu"
+msgstr "Osoba, čiji će se parnter i djeca ispisati"
 
 #: FamilySheet/FamilySheet.py:867
 msgid "Print sheets for"
-msgstr "Ispiši stranice za"
+msgstr "Ispiši listove za"
 
 #: FamilySheet/FamilySheet.py:869
 msgid "Center person only"
@@ -154,7 +153,7 @@ msgstr "Da li uključiti upotrebno ime, i kako."
 
 #: FamilySheet/FamilySheet.py:883
 msgid "Print placeholders for missing information"
-msgstr "Ispiši prazna polja za nedostajuće podatke"
+msgstr "Ispiši rezervirana polja za nedostajuće podatke"
 
 #: FamilySheet/FamilySheet.py:885
 msgid "Whether to include fields for missing information."
@@ -182,16 +181,16 @@ msgstr "Osnovni stil za prikaz teksta"
 
 #: FamilySheet/FamilySheet.py:917
 msgid "The style used for the page key on the top"
-msgstr "Stil korišten za ključ stranice u vrhu"
+msgstr "Stil za ključ stranice u vrhu"
 
 #: FamilySheet/FamilySheet.py:926
 msgid "The style used for names"
-msgstr "Stil korišten za imena"
+msgstr "Stil za imena"
 
 #: FamilySheet/FamilySheet.py:936
 msgid "The style used for numbers"
-msgstr "Stil korišten za brojke"
+msgstr "Stil za brojeve"
 
 #: FamilySheet/FamilySheet.py:946
 msgid "The style used for footnotes (notes and source references)"
-msgstr "Stil korišten za fusnote (zabilješke i reference izvora)"
+msgstr "Stil za fusnote (zabilješke i reference izvora)"

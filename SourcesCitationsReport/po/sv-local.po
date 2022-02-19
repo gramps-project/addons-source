@@ -1,0 +1,213 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Pär Ekholm <pehlm@pekholm.org>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-26 15:11-0500\n"
+"PO-Revision-Date: 2021-06-07 13:07+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"Last-Translator: Pär Ekholm <pehlm@pekholm.se>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: sv_SE\n"
+
+#: SourcesCitationsReport/SourcesCitationsReport.gpr.py:32
+msgid "Sources and Citations Report"
+msgstr "Käll- och citeringsrapport"
+
+#: SourcesCitationsReport/SourcesCitationsReport.gpr.py:33
+msgid "Provides a source and Citations Report with notes"
+msgstr "Tillhandahåller en käll- och citeringsrapport med notiser"
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:272
+#, python-format
+msgid "Key: %s"
+msgstr "Nyckel: %s"
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:277
+msgid "Citations:"
+msgstr "Citeringar:"
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:286
+#, python-format
+msgid "%d"
+msgstr "%d"
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:288
+#, python-format
+msgid "  %s"
+msgstr "  %s"
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:294
+#, python-format
+msgid " - %s "
+msgstr " - %s "
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:300
+#, python-format
+msgid "   Type: %s"
+msgstr "   Typ: %s"
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:302
+#, python-format
+msgid "   N-ID: %s"
+msgstr "   N-ID: %s"
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:310
+#, python-format
+msgid "   %s"
+msgstr "   %s"
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:324
+#: SourcesCitationsReport/SourcesCitationsReport.py:345
+#: SourcesCitationsReport/SourcesCitationsReport.py:372
+#: SourcesCitationsReport/SourcesCitationsReport.py:378
+#: SourcesCitationsReport/SourcesCitationsReport.py:384
+#, python-format
+msgid "%s"
+msgstr "%s"
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:326
+#: SourcesCitationsReport/SourcesCitationsReport.py:347
+#, python-format
+msgid "   ( %s )"
+msgstr "   ( %s )"
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:333
+msgid "   Spouses: "
+msgstr "   Makar: "
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:335
+#, python-format
+msgid "%s "
+msgstr "%s "
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:338
+#, python-format
+msgid "and %s "
+msgstr "och %s "
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:349
+#, python-format
+msgid " %s"
+msgstr " %s"
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:357
+msgid "Person"
+msgstr "Person"
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:357
+msgid "ID"
+msgstr "ID"
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:358
+msgid "Role"
+msgstr "Roll"
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:411
+msgid "Report Options"
+msgstr "Rapportalternativ"
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:413
+msgid "Report Title"
+msgstr "Rapporttitel"
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:413
+msgid "Title of the Report"
+msgstr "Rapportens titel"
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:414
+msgid "Title string for the report."
+msgstr "Rapportens titelsträng."
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:417
+msgid "Subtitle"
+msgstr "Undertitel"
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:417
+msgid "Subtitle of the Report"
+msgstr "Rapportens undertitel"
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:418
+msgid "Subtitle string for the report."
+msgstr "Rapportens understräng."
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:423
+msgid "researcher name"
+msgstr "Namnet på forskaren"
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:425
+#, python-format
+msgid "Copyright %(year)d %(name)s"
+msgstr "Copyright %(year)d %(name)s"
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:427
+msgid "Footer"
+msgstr "Sidfot"
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:428
+msgid "Footer string for the page."
+msgstr "Sidans fottext."
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:435
+msgid "Select using filter"
+msgstr "Välj filteranvändning"
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:436
+msgid "Select sources using a filter"
+msgstr "Välj källor med hjälp av ett filter"
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:443
+msgid "Show persons"
+msgstr "Visa personer"
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:444
+msgid "Whether to show events and persons mentioned in the note"
+msgstr "Huruvida händelser och personer som nämns i notisen ska visas"
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:480
+msgid "The style used for the title of the report."
+msgstr "Den mall, som används för rapportens titel."
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:495
+msgid "The style used for the subtitle of the report."
+msgstr "Mallen som används för rapportens undertitel."
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:509
+msgid "The style used for the footer of the report."
+msgstr "Mallen som används för rapportens sidfot."
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:524
+msgid "The style used for source title."
+msgstr "Mallen som används för källtitel."
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:536
+msgid "The style used for source subtitle."
+msgstr "Mallen som används för källans undertitel."
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:548
+msgid "The style used for Source details."
+msgstr "Mallen som används för källdetaljer."
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:563
+msgid "The style used for citation title."
+msgstr "Mallen som används för titel på citeringar."
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:575
+msgid "The style used for a column title."
+msgstr "Den mall, som används för en kolumntitel."
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:591
+msgid "The style used for each section."
+msgstr "Den mall, som används för varje sektion."
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:622
+msgid "The style used for event and person details."
+msgstr "Den mall, som används för händelse- och persondetaljer."

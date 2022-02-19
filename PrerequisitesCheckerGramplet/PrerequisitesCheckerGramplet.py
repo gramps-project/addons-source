@@ -19,12 +19,12 @@
 #
 
 #----------------------------------------------------------------------------
-''' A diagnotic tool to help work out if users have the prerequistes installed
+''' A diagnostic tool to help work out if users have the prerequistes installed
 as well as the latest version of Gramps also helps on OS's like windows and
 mac where it's difficult for users to use the command line to get information
 on gramps via ( gramps -v )!
-Possibly only for Linux or detect if AIO for Windows or dmg for MacOS and
-mention that its only informational
+Possibly only for GNU-Linux or detect if AIO for Windows or dmg for MacOS and
+mention that its only informational.
 
 []Test that the User directory has the correct permissions?
     - list names of family tree along with total eg: You have 7 family trees.
@@ -82,7 +82,9 @@ import sys
 import os
 import time
 import gi
+from threading import Thread
 from subprocess import Popen, PIPE
+from urllib import request
 
 #-------------------------------------------------------------------------
 #
@@ -102,6 +104,18 @@ except ImportError:
     from Utils import search_for
     ENVVAR = False  # don't believe it exist in 3.x series?
 
+#------------------------------------------------------------------------
+#
+# Internationalisation
+#
+#------------------------------------------------------------------------
+from gramps.gen.const import GRAMPS_LOCALE as glocale
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.gettext
+
 #pylint: disable=W0511,C0103,W0703,E1101,W0212,E0611
 #-------------------------------------------------------------------------
 #
@@ -118,20 +132,37 @@ class PrerequisitesCheckerGramplet(Gramplet):
     def init(self):
         '''Brief description of purpose'''
         self.set_use_markup(True)
-        self.render_text("""Diagnostic Gramplet to help evaluate if """
-                         """<a href="https://gramps-project.org/">Gramps"""
-                         """</a> has all <a href="https://github.com/"""
-                         """gramps-project/gramps/blob/master/README.md">"""
-                         """prerequisites</a> installed.\n""")
-        self.set_tooltip("Diagnostic Gramplet to help evaluate if Gramps has "
-                         "all prerequisites installed.")
+        self.render_text(_(
+            """Diagnostic Gramplet to help evaluate if """
+            """<a href="https://gramps-project.org/">Gramps"""
+            """</a> has all <a href="https://github.com/"""
+            """gramps-project/gramps/blob/master/README.md">"""
+            """prerequisites</a> installed.\n"""))
+        self.set_tooltip(_(
+            "Diagnostic Gramplet to help evaluate if Gramps has "
+            "all prerequisites installed."))
+        # Get current Gramps version from wiki
+        self.latest_gramps_version = False
+        thread = Thread(target=latest_version_thread,
+                        args=(self,), daemon=True)
+        thread.start()
+
+    def main(self):
+        """
+        This gets called at initialization and again after each 'yield'.
+        Since it may be called before the gramps latest version arrives from
+        the web, we just yield again if not ready.
+        """
+        while self.latest_gramps_version is False:
+            yield True
         self.gramps_version()
         # Gramps for requirements mentioned in Gramps 5.0.0 readme & elsewhere
         # https://github.com/gramps-project/gramps/blob/master/gramps/grampsapp.py#L187
         # Requirements
-        self.render_text("""\n<u><b>Requirements</b></u>\n""")
-        self.render_text("""The following packages <b>MUST</b> be installed """
-                         """(Requires the minimum version or greater.):\n""")
+        self.render_text(_("""\n<u><b>REQUIREMENTS</b></u>\n"""))
+        self.render_text(_(
+            """The following packages <b>MUST</b> be installed """
+            """(Requires the minimum version or greater.):\n"""))
         self.check1_python()
         self.check2_gtk()
         self.check3_pygobject()
@@ -144,10 +175,12 @@ class PrerequisitesCheckerGramplet(Gramplet):
         self.check9_librsvg2()
         self.check10_languagepackgnomexx()
         self.append_text("\n")
+        yield True
         # STRONGLY RECOMMENDED
-        self.render_text("""\n<u><b>STRONGLY RECOMMENDED</b></u>\n""")
-        self.render_text("The following packages are <b>STRONGLY RECOMMENDED"
-                         "</b> to be installed:\n")   # mention why
+        self.render_text(_("""\n<u><b>STRONGLY RECOMMENDED</b></u>\n"""))
+        self.render_text(_(
+            "The following packages are <b>STRONGLY RECOMMENDED"
+            "</b> to be installed (needed for geography and charts):\n"))
         self.check11_osmgpsmap()
         self.append_text("\n* ")
         self.check12_graphviz()
@@ -156,12 +189,18 @@ class PrerequisitesCheckerGramplet(Gramplet):
         self.append_text("\n")
         self.check_fontconfig()
         self.append_text("\n")
+        yield True
         #Optional
-        self.render_text("""\n<u><b>Optional</b></u>\n""")
-        self.append_text("The following packages are optional:\n")
+        self.render_text(_("""\n<u><b>Optional</b></u>\n"""))
+        self.append_text(_("The following packages are optional:\n"))
         # TODO mention what they add
+        self.append_text(_("Gtkspell enables spell checking in the notes.\n"))
         self.check15_gtkspell()
         self.check16_rcs()
+        self.append_text("\n")
+        self.append_text(_(
+            "Python Image Library (PIL) is needed for cropping images "
+            "and LaTeX output."))
         self.append_text("\n* ")
         self.check17_pillow()
         #self.append_text("\n")
@@ -170,24 +209,26 @@ class PrerequisitesCheckerGramplet(Gramplet):
         #self.append_text("\n")
         self.check20_ttffreefont()
         self.append_text("\n")
+        yield True
         # required developement packages
         # TODO only show this section if running in development mode?
-        self.render_text("\n<u><b>Development & Translation Requirements</b>"
-                         "</u>\n")
-        self.render_text("The following packages should be installed if you "
-                         "intend to translate or do any development(addons "
-                         "etc):\n")
+        self.render_text(_("\n<u><b>Development & Translation Requirements</b>"
+                         "</u>\n"))
+        self.render_text(_("The following packages should be installed if you "
+                           "intend to translate or do any development (addons "
+                           "etc):\n"))
         self.gettext_version()
         self.intltool_version()
         self.sphinx_check()
         self.append_text("\n")
+        yield True
         #Optional packages required by Third-party Addons
-        self.render_text("\n<u><b>Optional packages required by Third-party "
-                         "Addons</b></u>\n")
-        self.render_text(
+        self.render_text(_("\n<u><b>Optional packages required by Third-party "
+                         "Addons</b></u>\n"))
+        self.render_text(_(
             """Prerequistes required for the following <a href="https://"""
             """gramps-project.org/wiki/index.php?title=Third-party_Addons">"""
-            """Third-party Addons</a> to work:\n""")
+            """Third-party Addons</a> to work:\n"""))
         self.check21_familysheet()
         self.check22_graphview()
         self.check23_pedigreechart()
@@ -204,36 +245,38 @@ class PrerequisitesCheckerGramplet(Gramplet):
         self.check34_mongodb()
         #self.render_text("""\n<u><b>List of installed Addons.</b></u>\n""")
         #self.list_all_plugins()
+        yield True
         # Diagnostic checks
         self.append_text("\n")
-        self.render_text("""\n<u><b>Diagnostic checks</b></u>\n""")
-        self.append_text("Check for potential issues.\n")
-        self.append_text("\nEnvironment settings:\n")
+        self.render_text(_("""\n<u><b>Diagnostic checks</b></u>\n"""))
+        self.append_text(_("Check for potential issues.\n"))
+        self.append_text(_("\nEnvironment settings:\n"))
         self.platform_details()
         self.append_text("\n")
         self.locale_settings()
         self.gramps_environment_variables()
-        self.render_text("\n\n<u><b>Locales available:</b>"
-                         "</u>\n")
+        self.render_text(_("\n\n<u><b>Locales available:</b>"
+                         "</u>\n"))
         self.locales_installed()
         # mention backing up
         self.append_text("\n")
-        self.render_text("""\n<u><b>Back Up Your Genealogy Files.</b></u>\n""")
-        self.append_text("Time to back up your genealogy files, and then test "
-                         "your backups!\n")
-        self.render_text(
+        self.render_text(_("\n<u><b>Back Up Your Genealogy Files.</b></u>\n"))
+        self.append_text(_("Time to back up your genealogy files, and then "
+                           "test your backups!\n"))
+        self.render_text(_(
             """<i><a href="https://gramps-project.org/wiki/index.php?title"""
             """=How_to_make_a_backup">Backup to Gramps XML</a> You will """
             """find backup in the Family Tree menu of recent Gramps """
             """versions, otherwise use Export in the same menu but uncheck """
             """privacy options in the Exporter Assistant in order to export"""
-            """ all data.</i>\n""")
-        self.append_text("* Backups can be made at any time and at least on "
-                         "the first day of every month, if not more often.\n")
-        self.append_text("* Before any upgrade it is strongly recommended to "
-                         "backup each of your Family Trees.\n")
-        self.append_text("* Test your backups by creating a new Family Tree "
-                         "and importing the backup.")
+            """ all data.</i>\n"""))
+        self.append_text(_("* Backups can be made at any time and at least on "
+                         "the first day of every month, if not more often.\n"))
+        self.append_text(_("* Before any upgrade it is strongly recommended to"
+                           " backup each of your Family Trees.\n"))
+        self.append_text(_("* Test your backups by creating a new Family Tree "
+                           "and importing the backup."),
+                         scroll_to="begin")
 
     def gramps_version(self):
         '''Report Currently installed Gramps Version
@@ -247,11 +290,9 @@ class PrerequisitesCheckerGramplet(Gramplet):
         '''
         self.append_text("\n")
         # Start check
-        LATEST_GRAMPS_VERSION = (5, 1, 2)
-        LATEST_GRAMPS_DATE = "2020-01-10"
-        latest_release_message = ("Gramps " + verstr(LATEST_GRAMPS_VERSION) +
-                                  "  released " + LATEST_GRAMPS_DATE +
-                                  " is the most current version.\n")
+        latest_release_message = ("Gramps " +
+                                  verstr(self.latest_gramps_version) +
+                                  _(", is the most current version.\n"))
 
         try:
             try:
@@ -264,25 +305,25 @@ class PrerequisitesCheckerGramplet(Gramplet):
                 gramps_str = VERSION
                 gramps_ver = VERSION_TUPLE
         except ImportError:
-            gramps_str = 'not found'
+            gramps_str = _('not found')
 
         # Test
-        if not gramps_ver >= LATEST_GRAMPS_VERSION:
+        if not gramps_ver >= self.latest_gramps_version:
             # print("Failed")
-            result = ("You have Gramps %s. Please make a backup and then "
-                      "upgrade.\n%s" % (gramps_str, latest_release_message))
+            result = (_("You have Gramps %s. Please make a backup and then "
+                        "upgrade.\n%s") % (gramps_str, latest_release_message))
         else:
-            if not gramps_ver == LATEST_GRAMPS_VERSION:
-                result = ("You have Gramps %s installed; an unreleased "
-                          "development version. Thank you for contributing and"
-                          " testing; please report any issues. Backups are "
-                          "your friend.\n" % (gramps_str))
+            if not gramps_ver == self.latest_gramps_version:
+                result = (_("You have Gramps %s installed; an unreleased "
+                            "development version. Thank you for contributing "
+                            "and testing; please report any issues. Backups "
+                            "are your friend.\n" % (gramps_str)))
                 # print(gramps_ver)
             else:
                 # print("Success")
                 # TODO add further check that this is true?
-                result = ("You have Gramps %s. Congratulations you have the"
-                          " current version.\n" % (gramps_str))
+                result = (_("You have Gramps %s. Congratulations, you have the"
+                            " current version.\n") % (gramps_str))
 
         # End check
         self.render_text(result)
@@ -308,16 +349,16 @@ class PrerequisitesCheckerGramplet(Gramplet):
 
         if not sys.version_info >= MIN_PYTHON_VERSION:
             #print("Failed")
-            messagefailed1 = " (Requires version "
-            messagefailed3 = " or greater installed.)\n"
+            messagefailed1 = _(" (Requires version ")
+            messagefailed3 = _(" or greater installed.)\n")
 
             messagefailed = messagefailed1 + min_py_str + messagefailed3
 
             result = check1 + py_str + messagefailed
         else:
             #print("Success")
-            messagesuccess1 = " (Success version "
-            messagesuccess3 = " or greater installed.)\n"
+            messagesuccess1 = _(" (Passed: version ")
+            messagesuccess3 = _(" or greater installed.)\n")
 
             messagesuccess = messagesuccess1 + min_py_str + messagesuccess3
 
@@ -344,15 +385,15 @@ class PrerequisitesCheckerGramplet(Gramplet):
                               Gtk.get_micro_version())
                 gtkver_str = '%d.%d.%d' % gtk_result
             except Exception:  # any failure to 'get' the version
-                gtkver_str = 'unknown version'
+                gtkver_str = _('unknown version')
                 gtk_result = (0, 0, 0)
         except ImportError:
-            gtkver_str = 'not found'
+            gtkver_str = _('not found')
             gtk_result = (0, 0, 0)
             # no DISPLAY is a RuntimeError in an older pygtk
             # (e.g. 2.17 in Fedora 14)
         except RuntimeError:
-            gtkver_str = 'DISPLAY not set'
+            gtkver_str = _('DISPLAY not set')
             gtk_result = (0, 0, 0)
             # exept TypeError: To handle back formatting on version split
 
@@ -382,12 +423,12 @@ class PrerequisitesCheckerGramplet(Gramplet):
         # Test
         if not gtk_result >= MIN_GTK_VERSION:
             #print("Failed")
-            result = ("* GTK+ " + gtkver_str + " (Requires version " +
-                      verstr(MIN_GTK_VERSION) + " or greater.)\n")
+            result = ("* GTK+ " + gtkver_str + _(" (Requires version ") +
+                      verstr(MIN_GTK_VERSION) + _(" or greater.)\n"))
         else:
             #print("Success")
-            result = ("* GTK+ " + gtkver_str + " (Success version " +
-                      verstr(MIN_GTK_VERSION) + " or greater installed.)\n")
+            result = ("* GTK+ " + gtkver_str + _(" (Passed: version ") +
+                      verstr(MIN_GTK_VERSION) + _(" or greater installed.)\n"))
 
         # End check
         self.append_text(result)
@@ -409,11 +450,11 @@ class PrerequisitesCheckerGramplet(Gramplet):
                 pygobjectver_str = verstr(GObject.pygobject_version)
                 pygobject_result = GObject.pygobject_version
             except Exception:  # any failure to 'get' the version
-                pygobjectver_str = 'unknown version'
+                pygobjectver_str = _('unknown version')
                 pygobject_result = (0, 0, 0)
 
         except ImportError:
-            pygobjectver_str = 'not found'
+            pygobjectver_str = _('not found')
             pygobject_result = (0, 0, 0)
 
         '''
@@ -434,14 +475,14 @@ class PrerequisitesCheckerGramplet(Gramplet):
         if not pygobject_result >= MIN_PYGOBJECT_VERSION:
             #print("Failed")
             result = ("* PyGObject " + pygobjectver_str +
-                      " (Requires version " +
-                      verstr(MIN_PYGOBJECT_VERSION) + " or greater.)\n")
+                      _(" (Requires version ") +
+                      verstr(MIN_PYGOBJECT_VERSION) + _(" or greater.)\n"))
         else:
             #print("Success")
             result = ("* PyGObject " + pygobjectver_str +
-                      " (Success version " +
+                      _(" (Passed: version ") +
                       verstr(MIN_PYGOBJECT_VERSION) +
-                      " or greater installed.)\n")
+                      _(" or greater installed.)\n"))
 
         # End check
         self.append_text(result)
@@ -468,34 +509,35 @@ class PrerequisitesCheckerGramplet(Gramplet):
                 cairo_result = cairover_tpl
                 #print("cairo_result : " + str(cairo_result))
             except Exception:  # any failure to 'get' the version
-                pycairover_str = 'unknown version'
-                cairover_str = 'unknown version'
+                pycairover_str = _('unknown version')
+                cairover_str = _('unknown version')
 
         except ImportError:
-            pycairover_str = 'not found'
-            cairover_str = 'not found'
+            pycairover_str = _('not found')
+            cairover_str = _('not found')
 
         # Test Cairo
         if not cairo_result >= MIN_CAIRO_VERSION:
             #print("Failed")
-            result = ("* Cairo " + cairover_str + " (Requires version " +
-                      verstr(MIN_CAIRO_VERSION) + " or greater.)\n")
+            result = ("* Cairo " + cairover_str + _(" (Requires version ") +
+                      verstr(MIN_CAIRO_VERSION) + _(" or greater.)\n"))
         else:
             #print("Success")
-            result = ("* Cairo " + cairover_str + " (Success version " +
-                      verstr(MIN_CAIRO_VERSION) + " or greater installed.)\n")
+            result = ("* Cairo " + cairover_str + _(" (Passed: version ") +
+                      verstr(MIN_CAIRO_VERSION) +
+                      _(" or greater installed.)\n"))
 
         self.append_text(result)
         # Test pycairo
         if not pycairo_result >= MIN_PYCAIRO_VERSION:
             #print("Failed")
-            result = ("* Pycairo " + pycairover_str + " (Requires " +
-                      verstr(MIN_PYCAIRO_VERSION) + " or greater.)\n")
+            result = ("* Pycairo " + pycairover_str + _(" (Requires ") +
+                      verstr(MIN_PYCAIRO_VERSION) + _(" or greater.)\n"))
         else:
             #print("Success")
-            result = ("* Pycairo " + pycairover_str + " (Success version " +
+            result = ("* Pycairo " + pycairover_str + _(" (Passed: version ") +
                       verstr(MIN_PYCAIRO_VERSION) +
-                      " or greater installed.)\n")
+                      _(" or greater installed.)\n"))
 
         # End check
         self.append_text(result)
@@ -516,22 +558,22 @@ class PrerequisitesCheckerGramplet(Gramplet):
                 #print("pangover_str " + pangover_str)
                 pango_result = vertup(pangover_str)
             except Exception:  # any failure to 'get' the version
-                pangover_str = 'unknown version'
+                pangover_str = _('unknown version')
                 pango_result = (0, 0, 0)
 
         except ImportError:
-            pangover_str = 'not found'
+            pangover_str = _('not found')
             pango_result = (0, 0, 0)
 
         # Test Pango
         if not pango_result >= PANGO_MIN_VER:
             #print("Failed")
-            result = ("* Pango " + pangover_str + " (Requires version " +
-                      verstr(PANGO_MIN_VER) + " or greater.)\n")
+            result = ("* Pango " + pangover_str + _(" (Requires version ") +
+                      verstr(PANGO_MIN_VER) + _(" or greater.)\n"))
         else:
             #print("Success")
-            result = ("* Pango " + pangover_str + " (Success version " +
-                      verstr(PANGO_MIN_VER) + " or greater installed.)\n")
+            result = ("* Pango " + pangover_str + _(" (Passed: version ") +
+                      verstr(PANGO_MIN_VER) + _(" or greater installed.)\n"))
 
         # TODO add the following test to gramps -v
         try:
@@ -541,7 +583,7 @@ class PrerequisitesCheckerGramplet(Gramplet):
             pangocairo_str = PangoCairo._version
             #print("pangocairo_str " + str(pangocairo_str))
         except ImportError:
-            pangocairo_str = "Not found"
+            pangocairo_str = _("not found")
 
         '''
         # Test Pangocairo
@@ -551,7 +593,7 @@ class PrerequisitesCheckerGramplet(Gramplet):
                       verstr(PANGO_MIN_VER) + " or greater.)\n")
         else:
             #print("Success")
-            result = ("* Pango " + pangover_str + " (Success version " +
+            result = ("* Pango " + pangover_str + " (Passed: version " +
                       verstr(PANGO_MIN_VER) + " or greater installed.)\n")
         '''
         # to be added here
@@ -576,10 +618,10 @@ class PrerequisitesCheckerGramplet(Gramplet):
             bsddb_db_str = str(bsddb.db.version()).replace(', ', '.')\
                 .replace('(', '').replace(')', '')
         except ImportError:
-            bsddb_str = 'not found'
-            bsddb_db_str = 'not found'
+            bsddb_str = _('not found')
+            bsddb_db_str = _('not found')
 
-        result = ("* Berkeley Database library (bsddb3: " + bsddb_db_str +
+        result = (_("* Berkeley Database library (bsddb3: ") + bsddb_db_str +
                   ") (Python-bsddb3 : " + bsddb_str + ")")
         # End check
         self.append_text(result)
@@ -601,10 +643,10 @@ class PrerequisitesCheckerGramplet(Gramplet):
             # sqlite3.sqlite_version - sqlite version
             sqlite3_version_str = sqlite3.sqlite_version
         except ImportError:
-            sqlite3_version_str = 'not found'
-            sqlite3_py_version_str = 'not found'
+            sqlite3_version_str = _('not found')
+            sqlite3_py_version_str = _('not found')
 
-        result = ("* SQLite Database library (sqlite3: " +
+        result = (_("* SQLite Database library (sqlite3: ") +
                   sqlite3_version_str + ") (Python-sqlite3: " +
                   sqlite3_py_version_str + ")")
         # End check
@@ -618,7 +660,7 @@ class PrerequisitesCheckerGramplet(Gramplet):
         self.append_text("\n")
         # Start check
 
-        result = "* xdg-utils (Manual check see instructions link)"
+        result = _("* xdg-utils (Manual check see instructions link)")
         # End check
         self.append_text(result)
 
@@ -631,7 +673,7 @@ class PrerequisitesCheckerGramplet(Gramplet):
         self.append_text("\n")
         # Start check
 
-        result = "* librsvg2 (Manual check see instructions link)"
+        result = _("* librsvg2 (Manual check see instructions link)")
         # End check
         self.append_text(result)
 
@@ -642,8 +684,8 @@ class PrerequisitesCheckerGramplet(Gramplet):
 
         #self.render_text("""<b> x :</b> """)
         # <a href="https://gramps-project.org/wiki/index.php?title=xxx">xxx</a>
-        result = ("* language-pack-gnome-xx (Manual check see instructions "
-                  "link) for your Language <show locale here TBD>")
+        result = _("* language-pack-gnome-xx (Manual check see instructions "
+                   "link) for your Language <show locale here TBD>")
         # End check
         self.append_text(result)
 
@@ -664,20 +706,21 @@ class PrerequisitesCheckerGramplet(Gramplet):
                     osmgpsmap_str = osmgpsmap._version
                     OSMGPSMAP_FOUND = True
                 except Exception:  # any failure to 'get' the version
-                    osmgpsmap_str = 'unknown version'
+                    osmgpsmap_str = _('unknown version')
             else:
-                osmgpsmap_str = 'not found'
+                osmgpsmap_str = _('not found')
 
         except ImportError:
-            osmgpsmap_str = 'not found'
+            osmgpsmap_str = _('not found')
 
         if OSMGPSMAP_FOUND:
-            result = ("* osmgpsmap " + osmgpsmap_str + " (Success version " +
-                      verstr(OSMGPSMAP_MIN_VERSION) +
-                      " or greater installed.)")
+            result = ("* osmgpsmap " + osmgpsmap_str +
+                      _(" (Passed: version ") + verstr(OSMGPSMAP_MIN_VERSION) +
+                      _(" or greater installed.)"))
         else:
-            result = ("* osmgpsmap " + osmgpsmap_str + " (Requires version " +
-                      verstr(OSMGPSMAP_MIN_VERSION) + " or greater)")
+            result = ("* osmgpsmap " + osmgpsmap_str +
+                      _(" (Requires version ") +
+                      verstr(OSMGPSMAP_MIN_VERSION) + _(" or greater)"))
 
         # End check
         self.append_text(result)
@@ -708,7 +751,7 @@ class PrerequisitesCheckerGramplet(Gramplet):
             if dotversion_str:
                 dotversion_str = dotversion_str.replace('\n', '')[23:27]
         except Exception:
-            dotversion_str = 'Graphviz not in system PATH'
+            dotversion_str = _('Graphviz not in system PATH')
 
         result = "Graphviz " + dotversion_str
         # End check
@@ -725,12 +768,12 @@ class PrerequisitesCheckerGramplet(Gramplet):
                 pyicu_str = PyICU.VERSION
                 icu_str = PyICU.ICU_VERSION
             except Exception:  # any failure to 'get' the version
-                pyicu_str = 'unknown version'
-                icu_str = 'unknown version'
+                pyicu_str = _('unknown version')
+                icu_str = _('unknown version')
 
         except ImportError:
-            pyicu_str = 'not found'
-            icu_str = 'not found'
+            pyicu_str = _('not found')
+            icu_str = _('not found')
 
         result = "* PyICU " + pyicu_str + "(ICU " + icu_str + ")"
         # End check
@@ -771,7 +814,7 @@ class PrerequisitesCheckerGramplet(Gramplet):
             if gsvers_str:
                 gsvers_str = gsvers_str.replace('\n', '')
         except Exception:
-            gsvers_str = 'Ghostscript not in system PATH'
+            gsvers_str = _('Ghostscript not in system PATH')
 
         result = "* Ghostscript " + gsvers_str
         # End check
@@ -786,12 +829,15 @@ class PrerequisitesCheckerGramplet(Gramplet):
             vers = fontconfig.__version__
             if vers.startswith("0.5."):
                 result = ("* python-fontconfig " + vers +
-                          " (Success version 0.5.x is installed.)")
+                          _(" (Passed: version 0.5.x is installed.)"))
             else:
                 result = ("* python-fontconfig " + vers +
-                          " (Requires version 0.5.x)")
+                          _(" (Requires version 0.5.x)"))
         except ImportError:
-            result = "* python-fontconfig Not found, (Requires version 0.5.x)"
+            result = _(
+                "* python-fontconfig not found, (Requires version 0.5.x)")
+        except AttributeError:
+            result = _("* python-fontconfig installed, version unavailable")
         # End check
         self.append_text(result)
 
@@ -829,7 +875,7 @@ class PrerequisitesCheckerGramplet(Gramplet):
         try:
             from gi import Repository
             repository = Repository.get_default()
-            gtkspell_ver = "Not found"
+            gtkspell_ver = _("not found")
             if repository.enumerate_versions("GtkSpell"):
                 try:
                     gi.require_version('GtkSpell', '3.0')
@@ -841,7 +887,7 @@ class PrerequisitesCheckerGramplet(Gramplet):
                     gtkspell_ver_tp = (v1, v2)
                     #print("gtkspell_ver " + gtkspell_ver)
                 except Exception:
-                    gtkspell_ver = "Not found"
+                    gtkspell_ver = _("not found")
             elif repository.enumerate_versions("Gtkspell"):
                 try:
                     gi.require_version('Gtkspell', '3.0')
@@ -850,33 +896,32 @@ class PrerequisitesCheckerGramplet(Gramplet):
                     gtkspell_ver_tp = Gtkspell._version
                     #print("gtkspell_ver " + gtkspell_ver)
                 except Exception:
-                    gtkspell_ver = "Not found"
+                    gtkspell_ver = _("not found")
         except Exception:
-            gtkspell_ver = "Not found"
+            gtkspell_ver = _("not found")
 
         # test for enchant
         try:
             from ctypes import cdll, c_char_p
-            enchant = cdll.LoadLibrary("libenchant")
+            try:
+                enchant = cdll.LoadLibrary("libenchant")
+            except FileNotFoundError:
+                enchant = cdll.LoadLibrary("libenchant-2")
             enchant_ver_call = enchant.enchant_get_version
             enchant_ver_call.restype = c_char_p
             enchant_result = enchant_ver_call().decode("utf-8")
-            #import enchant
-            #print("Success enchant found")
-            #enchant_result = "Installed"
         except Exception:
-            #print("enchant not found")
-            enchant_result = "Not found"
+            enchant_result = _("not found")
 
         if gtkspell_ver_tp >= GTKSPELL_MIN_VER:
-            result = ("* GtkSpell " + gtkspell_ver + " (Success version " +
+            result = ("* GtkSpell " + gtkspell_ver + _(" (Passed: version ") +
                       gtkspell_min_ver_str +
-                      " or greater installed.)(enchant : " +
+                      _(" or greater installed.) (enchant module: ") +
                       enchant_result + ")")
         else:
-            result = ("* GtkSpell " + gtkspell_ver + " (Requires version " +
+            result = ("* GtkSpell " + gtkspell_ver + _(" (Requires version ") +
                       gtkspell_min_ver_str +
-                      " or greater installed.)(enchant : " +
+                      _(" or greater installed.) (enchant module: ") +
                       enchant_result + ")")
 
         # End check
@@ -917,7 +962,7 @@ class PrerequisitesCheckerGramplet(Gramplet):
         try:
             if win():
                 _RCS_FOUND = os.system("rcs -V >nul 2>nul") == 0
-                RCS_RESULT = "installed"
+                RCS_RESULT = _("installed")
                 #print("rcs -V : " + os.system("rcs -V"))
                 if _RCS_FOUND and "TZ" not in os.environ:
                     # RCS requires the "TZ" variable be set.
@@ -925,19 +970,19 @@ class PrerequisitesCheckerGramplet(Gramplet):
             else:
                 _RCS_FOUND = os.system("rcs -V >/dev/null 2>/dev/null") == 0
                 #print("xx rcs -V : " + os.system("rcs -V"))
-                RCS_RESULT = "installed"
+                RCS_RESULT = _("installed")
         except Exception:
             _RCS_FOUND = False
-            RCS_RESULT = "Not found"
+            RCS_RESULT = _("not found")
 
         #Test
         if _RCS_FOUND:  # TODO actually test for version
-            result = ("* rcs %s TBD (Success version %s or greater installed."
-                      " If not on Microsoft Windows)" %
+            result = (_("* rcs %s TBD (Passed: version %s or greater "
+                        "installed. If not on Microsoft Windows)") %
                       (RCS_RESULT, rcs_ver_str))
         else:
-            result = ("* rcs %s TBD (Requires version %s or greater installed."
-                      " If not on Microsoft Windows)" %
+            result = (_("* rcs %s TBD (Requires version %s or greater "
+                        "installed. If not on Microsoft Windows)") %
                       (RCS_RESULT, rcs_ver_str))
 
         # End check
@@ -972,9 +1017,9 @@ class PrerequisitesCheckerGramplet(Gramplet):
                         #print(dir(PIL))
                         pil_ver = str(PIL.VERSION)
                     except Exception:
-                        pil_ver = "Installed but does not supply version"
+                        pil_ver = _("Installed but does not supply version")
         except ImportError:
-            pil_ver = "Not found"
+            pil_ver = _("not found")
 
         result = "(PILLOW " + pil_ver + ")"
         # End check
@@ -1028,14 +1073,14 @@ class PrerequisitesCheckerGramplet(Gramplet):
                 try:
                     gexiv2_str = GExiv2._version
                 except Exception:  # any failure to 'get' the version
-                    gexiv2_str = 'unknown version'
+                    gexiv2_str = _('unknown version')
             else:
-                gexiv2_str = 'not found'
+                gexiv2_str = _('not found')
 
         except ImportError:
-            gexiv2_str = 'not found'
+            gexiv2_str = _('not found')
         except ValueError:
-            gexiv2_str = 'not new enough'
+            gexiv2_str = ('not new enough')
 
         try:
             vers_str = Popen(['exiv2', '-V'],
@@ -1045,8 +1090,8 @@ class PrerequisitesCheckerGramplet(Gramplet):
             indx = vers_str.find('exiv2 ') + 6
             vers_str = vers_str[indx : indx + 4]
         except Exception:
-            vers_str = 'not found'
-        result = "GExiv2 : %s (Exiv2 library : %s)" % (gexiv2_str, vers_str)
+            vers_str = _('not found')
+        result = _("GExiv2 : %s (Exiv2 library : %s)") % (gexiv2_str, vers_str)
         # End check
         self.append_text(result)
 
@@ -1067,17 +1112,17 @@ class PrerequisitesCheckerGramplet(Gramplet):
             geocodeglib_ver = str(GeocodeGlib._version)
             GEOCODEGLIB = True
         except Exception:
-            geocodeglib_ver = "Not found"
+            geocodeglib_ver = _("not found")
             GEOCODEGLIB = False
 
         if GEOCODEGLIB:
             result = ("* geocodeglib " + geocodeglib_ver +
-                      " (Success version " + geocodeglib_min_ver +
-                      " or greater installed.)")
+                      _(" (Passed: version ") + geocodeglib_min_ver +
+                      _(" or greater installed.)"))
         else:
             result = ("* geocodeglib " + geocodeglib_ver +
-                      " (Requires version " + geocodeglib_min_ver +
-                      " or greater installed.)")
+                      _(" (Requires version ") + geocodeglib_min_ver +
+                      _(" or greater installed.)"))
 
         # End check
         self.append_text(result)
@@ -1095,12 +1140,36 @@ class PrerequisitesCheckerGramplet(Gramplet):
         ubuntu-based distributions) :
 
         fc-list
-        '''
-        self.append_text("\n")
         # Start check
 
-        result = "* ttf-freefont (Manual check see instructions link)"
+        result = _("* ttf-freefont (Manual check see instructions link)")
         # End check
+        self.append_text(result)
+        '''
+
+        self.append_text("\n")
+        # Start check
+        import subprocess
+        try:
+            cmd = 'fc-match "White Rabbit"'
+            retcode, version_str = subprocess.getstatusoutput(cmd)
+            _ver = version_str.find('Whi')
+            ver_ = version_str.find('bit')
+            if _ver > 0 and ver_ > 0:
+                vers = version_str[_ver:ver_ + 3]
+            else:
+                vers = _("found another font")
+            if retcode != 0:
+                vers = _("not found")
+        except Exception:
+            vers = _("not found")
+        result = "* Installed font: %s\n" % vers
+        # End check
+        self.render_text(_(
+            """For addon Networkchart, font <a href="https://"""
+            """www.fontsquirrel.com/fonts/white-rabbit">White """
+            """Rabbit</a> provides an extremely """
+            """readable result.\n"""))
         self.append_text(result)
 
     #Optional packages required by Third-party Addons
@@ -1131,12 +1200,12 @@ class PrerequisitesCheckerGramplet(Gramplet):
             try:
                 gi.require_version('GooCanvas', '2.0')
             except Exception:
-                print("Why, when same code works in Graphview")
+                print(_("Why, when same code works in Graphview"))
             from gi.repository import GooCanvas
             goocanvas_ver = str(GooCanvas._version)
             #print("GooCanvas version:" + goocanvas_ver)
         except ImportError:
-            goocanvas_ver = "Not installed"
+            goocanvas_ver = _("not installed")
 
         result = "(GooCanvas:" + goocanvas_ver + ")(PyGoocanvas: TBD?)"
         # End check
@@ -1162,7 +1231,7 @@ class PrerequisitesCheckerGramplet(Gramplet):
             #print("numpy.__version__ :" + numpy_ver )
             # NUMPY_check = True
         except ImportError:
-            numpy_ver = "Not found"
+            numpy_ver = _("not found")
             # NUMPY_check = False
 
         result = "(NumPy : " + numpy_ver + " )"
@@ -1188,7 +1257,7 @@ class PrerequisitesCheckerGramplet(Gramplet):
             networkx_ver = str(networkx.__version__)
             #print("networkx version:" + networkx_ver)
         except Exception:
-            networkx_ver = "Not installed"
+            networkx_ver = _("not installed")
             # module1 = "Not tested"
 
         try:
@@ -1198,7 +1267,7 @@ class PrerequisitesCheckerGramplet(Gramplet):
             pydotplus_ver = str(pydotplus.pyparsing_version)
             #print("pydotplus version:" + pydotplus_ver)
         except Exception:
-            pydotplus_ver = "Not Installed"
+            pydotplus_ver = _("not installed")
             # module2 = "Not tested"
 
         try:
@@ -1208,15 +1277,16 @@ class PrerequisitesCheckerGramplet(Gramplet):
             pygraphviz_ver = str(pygraphviz.__version__)
             #print("pygraphviz version:" + pygraphviz_ver)
         except Exception:
-            pygraphviz_ver = "Not Installed"
+            pygraphviz_ver = _("not installed")
             # module3 = "Not tested"
 
         # End check
         self.append_text("(networkx " + networkx_ver + ")(")
         self.check12_graphviz()
         self.append_text(")\n")
-        self.append_text("  and one of either: (pydotplus: " + pydotplus_ver +
-                         ") or (pygraphviz: " + pygraphviz_ver + ")")
+        self.append_text(_("  and one of either: (pydotplus: ") +
+                         pydotplus_ver +
+                         _(") or (pygraphviz: ") + pygraphviz_ver + ")")
 
     def check25_genealogytree(self):
         '''genealogytrees - requires texlive including the
@@ -1236,15 +1306,15 @@ class PrerequisitesCheckerGramplet(Gramplet):
                          """/index.php?title=Addon:GenealogyTree">"""
                          """Addon:GenealogyTree</a> :</b> """)
         # Start check
-        _LATEX_RESULT = "Not found"
+        _LATEX_RESULT = _("not found")
         if win():
             if search_for("lualatex.exe"):
                 #print("_LATEX_FOUND win: " + str(_LATEX_FOUND) )
-                _LATEX_RESULT = "Installed(MS-Windows)"
+                _LATEX_RESULT = _("Installed(MS-Windows)")
         else:
             if search_for("lualatex"):
                 #print("_LATEX_FOUND lin/mac: " + str(_LATEX_FOUND) )
-                _LATEX_RESULT = "Installed(Linux/Mac)"
+                _LATEX_RESULT = _("Installed(Linux/Mac)")
 
         result = "(lualatex :" + _LATEX_RESULT + ")"
         # End check
@@ -1278,7 +1348,7 @@ class PrerequisitesCheckerGramplet(Gramplet):
             #print("webkit version " + webkit_ver)
             TOOLKIT = WEBKIT
         except Exception:
-            webkit_ver = "Not installed "
+            webkit_ver = _("not installed ")
             TOOLKIT = NOWEB
 
         if TOOLKIT is NOWEB:
@@ -1333,7 +1403,7 @@ class PrerequisitesCheckerGramplet(Gramplet):
 
         # Check i googleearth is installed
         _GOOGLEEARTH_OK = False
-        _GOOGLEEARTH_STATUS = "Not found."
+        _GOOGLEEARTH_STATUS = _("not found.")
         if os.sys.platform == 'win32':
             FILE_PATH = r'"%s\Google\Google Earth\googleearth.exe"'\
                         % (os.getenv('ProgramFiles'))
@@ -1355,8 +1425,8 @@ class PrerequisitesCheckerGramplet(Gramplet):
                             % (os.getenv('ProgramFiles(x86)'))
                 NORM_PATH = os.path.normpath(FILE_PATH)
                 _GOOGLEEARTH_OK = search_for(NORM_PATH)
-                _GOOGLEEARTH_STATUS = ("Standard. Success program installed -"
-                                       " 32bit on 64bit Win OS.")
+                _GOOGLEEARTH_STATUS = _("Standard. Passed: program installed -"
+                                        " 32bit on 64bit Win OS.")
 
         else:
             FILE_PATH = "googleearth"
@@ -1365,7 +1435,7 @@ class PrerequisitesCheckerGramplet(Gramplet):
                 prog = os.path.join(lpath, FILE_PATH)
                 if os.path.isfile(prog):
                     _GOOGLEEARTH_OK = True
-                    _GOOGLEEARTH_STATUS = "Installed"
+                    _GOOGLEEARTH_STATUS = _("Installed")
             if not _GOOGLEEARTH_OK:
                 FILE_PATH = "google-earth"
                 SEARCH = os.environ['PATH'].split(':')
@@ -1373,7 +1443,7 @@ class PrerequisitesCheckerGramplet(Gramplet):
                     prog = os.path.join(lpath, FILE_PATH)
                     if os.path.isfile(prog):
                         _GOOGLEEARTH_OK = True
-                        _GOOGLEEARTH_STATUS = "Installed"
+                        _GOOGLEEARTH_STATUS = _("Installed")
 
         result = ("""(<a href="https://www.google.com/earth/desktop/">"""
                   "Google Earth on Desktop</a> : " + _GOOGLEEARTH_STATUS + ")")
@@ -1397,17 +1467,18 @@ class PrerequisitesCheckerGramplet(Gramplet):
         try:
             import libwebconnect
             LIBWEBCONNECT_test = True
-            LIBWEBCONNECT_result = "Installed"
+            LIBWEBCONNECT_result = _("Installed")
             # TODO add version addon string.
         except Exception:
             LIBWEBCONNECT_test = False
-            LIBWEBCONNECT_result = "Not found"
+            LIBWEBCONNECT_result = _("not found")
 
         if LIBWEBCONNECT_test:
-            result = "(libwebconnect : " + LIBWEBCONNECT_result + ")(Success)"
+            result = "(libwebconnect : " + LIBWEBCONNECT_result + ")(Passed)"
         else:
             result = ("(libwebconnect : " + LIBWEBCONNECT_result +
-                      ")(Requires the gramps addon listed under 'Plugin lib')")
+                      _(") (Requires the gramps addon listed under "
+                        "'Plugin lib')"))
         # End check
         self.append_text(result)
         #self.append_text("\n")
@@ -1439,21 +1510,21 @@ class PrerequisitesCheckerGramplet(Gramplet):
             dbf_ver = dbf.version
             dbf_ver_str = str(dbf_ver)
             #print("DBF version = ", dbf_ver)
-            dbfavailable = "DBF installed"
+            dbfavailable = _("DBF installed")
         except ImportError:
             dbf_ver = (0, 0, 0)
-            dbf_ver_str = "Not found"
-            dbfavailable = "Not found"
+            dbf_ver_str = _("not found")
+            dbfavailable = _("not found")
         # test version
         if not dbf_ver >= DBF_MIN_VERSION:
             #print("Failed")
-            result = (" (DBF " + dbfavailable + ".)(Requires version " +
-                      verstr(DBF_MIN_VERSION) + " or greater installed.)")
+            result = (" (DBF " + dbfavailable + _(".)(Requires version ") +
+                      verstr(DBF_MIN_VERSION) + _(" or greater installed.)"))
         else:
             #print("Success")
             result = (" (DBF " + dbf_ver_str +
-                      " installed.)(Success version " +
-                      verstr(DBF_MIN_VERSION) + " or greater installed.)")
+                      _(" installed.)(Passed: version ") +
+                      verstr(DBF_MIN_VERSION) + _(" or greater installed.)"))
 
         #result = "(DBF : " + dbf_ver + ")" + dbfavailable
         # End check
@@ -1502,10 +1573,10 @@ class PrerequisitesCheckerGramplet(Gramplet):
             try:
                 libpq_ver = str(psycopg2.__libpq_version__)
             except AttributeError:
-                libpq_ver = "Not found."
+                libpq_ver = _("not found.")
         except ImportError:
-            psycopg2_ver = "Not found."
-            libpq_ver = "Not found."
+            psycopg2_ver = _("not found.")
+            libpq_ver = _("not found.")
 
         result = ("(PostgreSQL " + libpq_ver + ")(psycopg2 : " +
                   psycopg2_ver + ")")
@@ -1590,16 +1661,16 @@ class PrerequisitesCheckerGramplet(Gramplet):
             cv2_ver = cv2.__version__
             #print(dir(cv2))
         except ImportError:
-            cv2_ver = "Not found"
+            cv2_ver = _("not found.")
         try:
             import numpy
             numpy_ver = str(numpy.__version__)
             #print("numpy.__version__ :" + numpy_ver )
         except ImportError:
-            numpy_ver = "Not found"
+            numpy_ver = _("not found.")
 
         self.append_text("(NumPy: " + numpy_ver + ")")
-        self.append_text("(OpenCV facedetection: %s)" % cv2_ver)
+        self.append_text(_("(OpenCV facedetection: %s)") % cv2_ver)
 
     def check33_lxmlgramplet(self):
         ''' Lxml Gramplet - Gramplet for testing lxml and XSLT
@@ -1646,8 +1717,8 @@ class PrerequisitesCheckerGramplet(Gramplet):
                       ")(libxslt: " + verstr(LIBXSLT_VERSION) + ")")
         else:
             #print("Failed")
-            result = (" (lxml: Not found. Requires version " +
-                      REQ_LXML_VERSION + " or greater installed.)")
+            result = (_(" (lxml: not found. Requires version ") +
+                      REQ_LXML_VERSION + _(" or greater installed.)"))
         # End checks
         self.append_text(result)
 
@@ -1664,7 +1735,7 @@ class PrerequisitesCheckerGramplet(Gramplet):
                          """wiki/index.php?title=MongoDB">"""
                          """Addon:MongoDB</a> :</b> """)
 
-        result = "* Requires: MongoDB TBD / pymongo TBD"
+        result = _("* Requires: MongoDB TBD / pymongo TBD")
         # End checks
         self.append_text(result)
 
@@ -1678,7 +1749,7 @@ class PrerequisitesCheckerGramplet(Gramplet):
         else:
             kernel = None
 
-        self.append_text('* Operating System: %s' % sys.platform)
+        self.append_text(_('* Operating System: %s' % sys.platform))
         if kernel:
             self.append_text('\n kernel: %s' % kernel)
 
@@ -1699,25 +1770,25 @@ class PrerequisitesCheckerGramplet(Gramplet):
         LC_TIME
         '''
         #self.append_text("\n")
-        self.render_text("""<u><b><a href="https://gramps-project.org/wiki"""
-                         """/index.php?title=Gramps_5.0_Wiki_Manual_-_"""
-                         """Command_Line#LANG.2C_LANGUAGE.2C_LC_MESSAGE."""
-                         """2C_LC_TIME">Locale Settings:</a></b></u>\n""")
+        self.render_text(_("""<u><b><a href="https://gramps-project.org/wiki"""
+                           """/index.php?title=Gramps_5.0_Wiki_Manual_-_"""
+                           """Command_Line#LANG.2C_LANGUAGE.2C_LC_MESSAGE."""
+                           """2C_LC_TIME">Locale Settings:</a></b></u>\n"""))
         # Start check
         if ENVVAR:
-            lang_str = get_env_var('LANG', 'not set')
-            language_str = get_env_var('LANGUAGE', 'not set')
-            lcmessage_str = get_env_var('LC_MESSAGES', 'not set')
-            lctime_str = get_env_var('LC_TIME', 'not set')
+            lang_str = get_env_var('LANG', _('not set'))
+            language_str = get_env_var('LANGUAGE', _('not set'))
+            lcmessage_str = get_env_var('LC_MESSAGES', _('not set'))
+            lctime_str = get_env_var('LC_TIME', _('not set'))
         else:
-            lang_str = 'not tested'
-            language_str = 'not tested'
-            lcmessage_str = 'not tested'
-            lctime_str = 'not tested'
+            lang_str = _('not tested')
+            language_str = _('not tested')
+            lcmessage_str = _('not tested')
+            lctime_str = _('not tested')
 
-        result = ("* LANG : " + lang_str + "\n* LANGUAGE :" + language_str +
-                  "\n* LC_MESSAGES :" + lcmessage_str +
-                  "\n* LC_TIME :" + lctime_str)
+        result = ("* LANG:  " + lang_str + "\n* LANGUAGE:  " + language_str +
+                  "\n* LC_MESSAGES:  " + lcmessage_str +
+                  "\n* LC_TIME:  " + lctime_str)
         # End check
         self.append_text(result)
 
@@ -1733,10 +1804,10 @@ class PrerequisitesCheckerGramplet(Gramplet):
         '''
         from gramps.gen.const import GRAMPS_LOCALE as glocale
 
-        self.append_text("\nInstalled Locales\Translations (If only English is"
-                         " listed please re-install Gramps again and make sure"
-                         " to select all the Translations and Dictionaries)"
-                         "\n\n")
+        self.append_text(_("\nInstalled Locales\Translations (If only English "
+                           "is listed please re-install Gramps again and make "
+                           "sure to select all the Translations and "
+                           "Dictionaries)\n\n"))
 
         result = ""
         #TODO: Add test to count languages and compare total
@@ -1758,22 +1829,23 @@ class PrerequisitesCheckerGramplet(Gramplet):
         self.append_text("\n")
         # Start check
         if ENVVAR:
-            grampsi18n_str = get_env_var('GRAMPSI18N', 'not set')
-            grampshome_str = get_env_var('GRAMPSHOME', 'not set')
-            grampsdir_str = get_env_var('GRAMPSDIR', 'not set')
-            gramps_resources_str = get_env_var('GRAMPS_RESOURCES', 'not set')
+            grampsi18n_str = get_env_var('GRAMPSI18N', _('not set'))
+            grampshome_str = get_env_var('GRAMPSHOME', _('not set'))
+            grampsdir_str = get_env_var('GRAMPSDIR', _('not set'))
+            gramps_resources_str = get_env_var('GRAMPS_RESOURCES',
+                                               _('not set'))
         else:
-            grampsi18n_str = 'not tested'
-            grampshome_str = 'not tested'
-            grampsdir_str = 'not tested'
-            gramps_resources_str = 'not tested'
+            grampsi18n_str = _('not tested')
+            grampshome_str = _('not tested')
+            grampsdir_str = _('not tested')
+            gramps_resources_str = _('not tested')
 
         # End check
-        self.append_text("\nGramps Environment variables:\n")
-        self.append_text('* GRAMPSI18N : %s' % grampsi18n_str)
-        self.append_text('\n* GRAMPSHOME : %s' % grampshome_str)
-        self.append_text('\n* GRAMPSDIR : %s' % grampsdir_str)
-        self.append_text('\n* GRAMPS_RESOURCES : %s' % gramps_resources_str)
+        self.append_text(_("\nGramps Environment variables:\n"))
+        self.append_text('* GRAMPSI18N:  %s' % grampsi18n_str)
+        self.append_text('\n* GRAMPSHOME:  %s' % grampshome_str)
+        self.append_text('\n* GRAMPSDIR:  %s' % grampsdir_str)
+        self.append_text('\n* GRAMPS_RESOURCES:  %s' % gramps_resources_str)
 
     def intltool_version(self):
         '''
@@ -1806,13 +1878,13 @@ class PrerequisitesCheckerGramplet(Gramplet):
             _ver = version_str.find(') ')
             ver_ = version_str.find('\n')
             if _ver > 0 and ver_ > 0:
-                vers = version_str[_ver:ver_]
+                vers = version_str[_ver + 2:ver_]
             else:
-                vers = 'found'
+                vers = _('found')
             if retcode != 0:
-                vers = "Not found"
+                vers = _("not found")
         except Exception:
-            vers = "Not found"
+            vers = _("not found")
         result = "* intltool-update: %s\n" % vers
         # End checks
         self.append_text(result)
@@ -1867,18 +1939,18 @@ class PrerequisitesCheckerGramplet(Gramplet):
             _ver = version_str.find(') ')
             ver_ = version_str.find('\n')
             if _ver > 0 and ver_ > 0:
-                vers = version_str[_ver:ver_]
+                vers = version_str[_ver + 2:ver_]
             else:
-                vers = 'found'
+                vers = _('found')
             if retcode != 0:
-                vers = "Not found"
+                vers = _("not found")
             #import gettext
             #print(dir(gettext))
             #import sgettext
             #print(dir(sgettext))
             #print("gettext found ")
         except Exception:
-            vers = "Not found"
+            vers = _("not found")
 
         result = "* gettext (msgfmt): %s\n" % vers
         # End checks
@@ -1891,13 +1963,50 @@ class PrerequisitesCheckerGramplet(Gramplet):
 
         http://sphinx-doc.org/
 
-        # TODO
+        # TODO ???
         https://github.com/gramps-project/gramps/blob/master/data/man/update_man.py
         https://github.com/gramps-project/gramps/blob/master/docs/update_doc.py
         '''
+        # Start check
+        import subprocess
+        try:
+            cmd = 'sphinx-quickstart --version'
+            retcode, version_str = subprocess.getstatusoutput(cmd)
+            _ver = version_str.find('t ')
+            ver_ = len(version_str)
+            if _ver > 0 and ver_ > 0:
+                vers = version_str[_ver + 2:ver_]
+            else:
+                vers = _('found')
+            if retcode != 0:
+                vers = _("not found")
+        except Exception:
+            vers = _("not found")
+        result = "* Sphinx: %s\n" % vers
+        # End check
+        self.append_text(_("Sphinx is a tool that builds the Gramps "
+                         "development documentation and man pages\n"))
+        self.append_text(result)
 
-        self.append_text("* Sphinx is a tool that builds the Gramps "
-                         "development documentation and man pages  TBD")
+
+def latest_version_thread(self):
+    """
+    Load the latest version from the wiki.  Done in thread to allow other
+    parts of GUI to continue running via the 'yield' for the Gramplet.
+    """
+    try:
+        req = request.Request("https://gramps-project.org/wiki/index.php"
+                              "?title=Template:Version&action=raw",
+                              headers={"User-Agent": "Mozilla/5.0"})
+        fp = request.urlopen(req)
+        text = str(fp.read().decode('utf-8'))
+        evers = text.find('<')
+        if 4 < evers < 8:
+            self.latest_gramps_version = vertup(text[0:evers])
+        else:
+            self.latest_gramps_version = (0, 0, 0)
+    except Exception:
+        self.latest_gramps_version = (0, 0, 0)
 
 
 def verstr(nums):

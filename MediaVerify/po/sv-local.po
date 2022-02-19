@@ -1,0 +1,145 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Pär Ekholm <pehlm@pekholm.org>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2021-05-27 14:25+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"Last-Translator: Pär Ekholm <pehlm@pekholm.se>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: sv_SE\n"
+
+#: MediaVerify/MediaVerify.gpr.py:30
+msgid "Media Verify"
+msgstr "Verifiera media"
+
+#: MediaVerify/MediaVerify.gpr.py:31
+msgid "Verify that media is present in the correct path"
+msgstr "Verifiera att media finns i rätt sökväg"
+
+#: MediaVerify/MediaVerify.py:78
+msgid "Media Verify Tool"
+msgstr "Verktyg för mediaverifiering"
+
+#: MediaVerify/MediaVerify.py:83
+msgid "Moved/Renamed Files"
+msgstr "Flyttade/ändrade namn på filer"
+
+#: MediaVerify/MediaVerify.py:83
+msgid "Missing Files"
+msgstr "Saknade filer"
+
+#: MediaVerify/MediaVerify.py:84
+msgid "Duplicate Files"
+msgstr "Dubblerade filer"
+
+#: MediaVerify/MediaVerify.py:84
+msgid "Extra Files"
+msgstr "Extra filer"
+
+#: MediaVerify/MediaVerify.py:85
+msgid "No md5 Generated"
+msgstr "Ingen md5 blev genererad"
+
+#: MediaVerify/MediaVerify.py:85
+msgid "Errors"
+msgstr "Fel"
+
+#: MediaVerify/MediaVerify.py:100
+msgid "Close"
+msgstr "Stäng"
+
+#: MediaVerify/MediaVerify.py:101
+msgid "Close the Media Verify Tool"
+msgstr "Stäng verktyget för mediaverifiering"
+
+#: MediaVerify/MediaVerify.py:103
+msgid "Generate"
+msgstr "Skapa"
+
+#: MediaVerify/MediaVerify.py:104
+msgid "Generate md5 hashes for media objects"
+msgstr "Generera md5-hashar för mediaobjekt"
+
+#: MediaVerify/MediaVerify.py:106
+msgid "Verify"
+msgstr "Verifiera"
+
+#: MediaVerify/MediaVerify.py:107
+msgid "Check media paths and report missing, duplicate and extra files"
+msgstr ""
+"Kontrollera mediasökvägar och rapportera saknade, dubblerade och extra filer"
+
+#: MediaVerify/MediaVerify.py:110
+msgid "Export"
+msgstr "Exportera"
+
+#: MediaVerify/MediaVerify.py:111
+msgid "Export the results to a text file"
+msgstr "Exportera resultatet till en textfil"
+
+#: MediaVerify/MediaVerify.py:113
+msgid "Fix"
+msgstr "Laga"
+
+#: MediaVerify/MediaVerify.py:114
+msgid "Fix media paths of moved and renamed files"
+msgstr "Laga mediasökvägar av flyttade och filer som ändrat namn"
+
+#: MediaVerify/MediaVerify.py:132
+msgid "Verify Gramps media using md5 hashes"
+msgstr "Verifiera Gramps-media med md5-hashar"
+
+#: MediaVerify/MediaVerify.py:143
+msgid "Files"
+msgstr "Filer"
+
+#: MediaVerify/MediaVerify.py:195
+msgid "Export results to a text file"
+msgstr "Exportera resultaten till en textfil"
+
+#: MediaVerify/MediaVerify.py:218
+#, python-format
+msgid "Error when writing the report: %s"
+msgstr "Fel vid skrivning av rapporten: %s"
+
+#: MediaVerify/MediaVerify.py:259
+msgid "Generating media hashes"
+msgstr "Generering av media-hashar"
+
+#: MediaVerify/MediaVerify.py:261
+msgid "Set media hashes"
+msgstr "Ange media-hashar"
+
+#: MediaVerify/MediaVerify.py:296
+msgid ""
+"Media path not set.  You must set the \"Base path for relative media paths\" "
+"in the Preferences."
+msgstr ""
+"Mediasökvägen har inte angivits.  Du måste ange \"Grundsökväg för relativ "
+"mediasökväg\" i inställningarna."
+
+#: MediaVerify/MediaVerify.py:307
+msgid "Finding files"
+msgstr "Finner filer"
+
+#: MediaVerify/MediaVerify.py:335
+msgid "Checking paths"
+msgstr "Kontrollerar sökvägar"
+
+#: MediaVerify/MediaVerify.py:388
+msgid "Fixing file paths"
+msgstr "Lagar filsökvägar"
+
+#: MediaVerify/MediaVerify.py:390
+msgid "Fix media paths"
+msgstr "Lagar mediasökvägar"

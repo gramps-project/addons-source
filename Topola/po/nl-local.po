@@ -1,0 +1,26 @@
+# Dutch translation of addon Topola.
+# Copyright (C) 2020 Gramps project
+# This file is distributed under the same license as the Topola package.
+# Jan Sparreboom <jan@sparreboom.net>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Topola 5.x\n"
+"Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
+"POT-Creation-Date: 2019-01-04 18:55-0600\n"
+"PO-Revision-Date: 2020-08-11 17:26+0200\n"
+"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
+"Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+
+#: Topola/Topola.gpr.py:3
+msgid "Interactive Family Tree"
+msgstr "Interactieve stamboom"
+
+#: Topola/Topola.gpr.py:4
+msgid "Opens an interactive tree in the browser"
+msgstr "Opent een interactieve boom in de browser"

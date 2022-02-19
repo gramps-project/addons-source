@@ -1,0 +1,141 @@
+# Dutch translation of Gramps addon MediaReport
+# Copyright (C) 2020 Gramps Project.
+# This file is distributed under the same license as the MediaReport package.
+# Jan Sparreboom <jan@sparreboom.net>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.1.x\n"
+"Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
+"POT-Creation-Date: 2019-11-27 10:32-0600\n"
+"PO-Revision-Date: 2020-03-10 21:34+0100\n"
+"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
+"Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+
+#: MediaReport/media_report.gpr.py:23
+msgid "Media Report"
+msgstr "Media Rapport"
+
+#: MediaReport/media_report.gpr.py:24
+msgid "Generates report including images, image data and notes."
+msgstr "Genereert rapport inclusief afbeeldingen, afbeeldingsgegevens en notities."
+
+#: MediaReport/media_report.py:92 MediaReport/media_report.py:98
+#: MediaReport/media_report.py:105 MediaReport/media_report.py:111
+msgid "INFO"
+msgstr "INFO"
+
+#: MediaReport/media_report.py:92 MediaReport/media_report.py:105
+msgid "You have to select an image to generate this report."
+msgstr "U moet een afbeelding selecteren om dit rapport te genereren."
+
+#: MediaReport/media_report.py:98
+msgid ""
+"You have to select a custom note or uncheck the option 'include custom note' to generate "
+"this report."
+msgstr ""
+"U moet een aangepaste notitie selecteren of de optie 'aangepaste notitie opnemen' "
+"uitschakelen om dit rapport te genereren."
+
+#: MediaReport/media_report.py:111
+msgid "This report only supports PDF as output file format."
+msgstr "Dit rapport ondersteunt alleen PDF als uitvoerbestandsindeling."
+
+#: MediaReport/media_report.py:215
+msgid "General:"
+msgstr "Algemeen:"
+
+#: MediaReport/media_report.py:221
+msgid "Description:"
+msgstr "Beschrijving:"
+
+#: MediaReport/media_report.py:236
+msgid "Image type:"
+msgstr "Afbeeldingstype:"
+
+#: MediaReport/media_report.py:328
+msgid "File does not exist"
+msgstr "Bestand bestaat niet"
+
+#: MediaReport/media_report.py:329
+msgid "Could not add photo to page"
+msgstr "Kan foto niet toevoegen aan pagina"
+
+#: MediaReport/media_report.py:330
+#, python-format
+msgid "%(str1)s: %(str2)s"
+msgstr "%(str1)s: %(str2)s"
+
+#: MediaReport/media_report.py:412
+msgid "Heading"
+msgstr "Titel"
+
+#: MediaReport/media_report.py:413 MediaReport/media_report.py:417
+#: MediaReport/media_report.py:421 MediaReport/media_report.py:425
+#: MediaReport/media_report.py:430 MediaReport/media_report.py:434
+#: MediaReport/media_report.py:439 MediaReport/media_report.py:444
+msgid "Report Options"
+msgstr "Rapport opties"
+
+#: MediaReport/media_report.py:415
+msgid "Media"
+msgstr "Media"
+
+#: MediaReport/media_report.py:416
+msgid "Select a media file for this report"
+msgstr "Selecteer een mediabestand voor dit rapport"
+
+#: MediaReport/media_report.py:419
+msgid "Custom note"
+msgstr "Aangepaste notitie"
+
+#: MediaReport/media_report.py:420
+msgid "Select a note for this report"
+msgstr "Selecteer een opmerking voor dit rapport"
+
+#: MediaReport/media_report.py:423
+msgid "Include custom note"
+msgstr "Aangepaste opmerking opnemen"
+
+#: MediaReport/media_report.py:424
+msgid "The custom note will be included"
+msgstr "De aangepaste opmerking wordt opgenomen"
+
+#: MediaReport/media_report.py:428
+msgid "Include referenced people"
+msgstr "Mensen opnemen waarnaar verwezen wordt"
+
+#: MediaReport/media_report.py:429
+msgid "Referenced people will be included"
+msgstr "Mensen waarnaar wordt verwezen, worden opgenomen"
+
+#: MediaReport/media_report.py:432
+msgid "Include media data"
+msgstr "Neem mediagegevens op"
+
+#: MediaReport/media_report.py:433
+msgid "Tags, notes and attributes will be included"
+msgstr "Tags, notities en attributen worden opgenomen"
+
+#: MediaReport/media_report.py:436
+msgid "Media width"
+msgstr "Media breedte"
+
+#: MediaReport/media_report.py:437
+#, python-format
+msgid "Maximum media width in % of available page width."
+msgstr "Maximale mediabreedte in % van de beschikbare paginabreedte."
+
+#: MediaReport/media_report.py:441
+msgid "Media height"
+msgstr "Media hoogte"
+
+#: MediaReport/media_report.py:442
+#, python-format
+msgid "Maximum media height in % of available page height."
+msgstr "Maximale mediahoogte in % van de beschikbare paginahoogte."

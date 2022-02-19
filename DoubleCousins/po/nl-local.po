@@ -1,0 +1,65 @@
+# Dutch translation of addon DNA.
+# Copyright (C) 2021 Gramps project
+# This file is distributed under the same license as the DNA package.
+# Jan Sparreboom <jan@sparreboom.net>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: DoubleCousins 5.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-19 10:36-0600\n"
+"PO-Revision-Date: 2021-04-25 15:29+0200\n"
+"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
+"Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+
+#: DoubleCousins/double_cousins.gpr.py:24
+msgid "Double Cousins"
+msgstr "Dubbele neven en nichten"
+
+#: DoubleCousins/double_cousins.gpr.py:25
+msgid "A text report listing double cousins."
+msgstr "Een tekstrapport met dubbele neven en nichten."
+
+#: DoubleCousins/double_cousins.py:104 DoubleCousins/double_cousins.py:105
+msgid "Birth"
+msgstr "Geboorte"
+
+#: DoubleCousins/double_cousins.py:112
+msgid "Double Cousins Report"
+msgstr "Dubbele neven en nichten verslag"
+
+#: DoubleCousins/double_cousins.py:119
+msgid ""
+"Double (first) cousins occur when two siblings of family A marry two siblings "
+"of family B. Their children are double cousins to each other and share the "
+"same four grandparents instead of six like normal first cousins. Therefore "
+"they are genetically closer than normal first cousins and share 25% of their "
+"DNA similar to half-siblings instead of 12.5% like normal first cousins.\n"
+msgstr ""
+"Dubbele neven en nichten komen voor wanneer twee broers en zussen van familie "
+"A trouwen met twee broers en zussen van familie B. Hun kinderen zijn dubbele "
+"neven en nichten van elkaar en delen dezelfde vier grootouders in plaats van "
+"zes zoals normale neven en nichten. Daarom zijn ze genetisch dichterbij dan "
+"normale achterneven en delen 25% van hun DNA vergelijkbaar met halfbroers en -"
+"zussen in plaats van 12,5% als normale achterneven en nichten.\n"
+
+#: DoubleCousins/double_cousins.py:135
+msgid "No double cousins were found in your database."
+msgstr "Er zijn geen dubbele neven en nichten gevonden in uw database."
+
+#: DoubleCousins/double_cousins.py:169
+msgid "Show info text"
+msgstr "Toon infotekst"
+
+#: DoubleCousins/double_cousins.py:170 DoubleCousins/double_cousins.py:172
+msgid "Report Options"
+msgstr "Verslag opties"
+
+#: DoubleCousins/double_cousins.py:171
+msgid "Show Gramps ID"
+msgstr "Toon gramps-id"

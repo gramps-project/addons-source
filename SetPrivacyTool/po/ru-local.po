@@ -1,0 +1,90 @@
+# Russian translation for SetPrivacyTool addon.
+# This file is distributed under the same license as the Gramps package.
+# vantu5z <vantu5z@mail.ru>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps51\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-12 17:40+0200\n"
+"PO-Revision-Date: 2020-08-12 18:09+0200\n"
+"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 2.3\n"
+
+#: SetPrivacyTool/SetPrivacyTool.gpr.py:23 SetPrivacyTool/SetPrivacyTool.py:48
+#: SetPrivacyTool/SetPrivacyTool.py:90 SetPrivacyTool/SetPrivacyTool.py:93
+#: SetPrivacyTool/SetPrivacyTool.py:130 SetPrivacyTool/SetPrivacyTool.py:157
+msgid "Set Privacy Tool"
+msgstr "Установка секретности"
+
+#: SetPrivacyTool/SetPrivacyTool.gpr.py:24
+msgid "Set all objects of the last <number> of years private."
+msgstr "Сделать все объекты последних <number> лет личными."
+
+#: SetPrivacyTool/SetPrivacyTool.py:87
+#, python-format
+msgid "Set private: %d %s\n"
+msgstr "Установить частный: %d %s\n"
+
+#: SetPrivacyTool/SetPrivacyTool.py:89
+#, python-format
+msgid "Not private: %d %s\n"
+msgstr "Не личное: %d %s\n"
+
+#: SetPrivacyTool/SetPrivacyTool.py:96
+msgid "Set persons private.."
+msgstr "Сделать лица личными.."
+
+#: SetPrivacyTool/SetPrivacyTool.py:133
+msgid "Set events private.."
+msgstr "Сделать события личными.."
+
+#: SetPrivacyTool/SetPrivacyTool.py:160
+msgid "Set media private.."
+msgstr "Сделать документы личными.."
+
+#: SetPrivacyTool/SetPrivacyTool.py:195
+msgid "Persons"
+msgstr "Люди"
+
+#: SetPrivacyTool/SetPrivacyTool.py:196 SetPrivacyTool/SetPrivacyTool.py:199
+#: SetPrivacyTool/SetPrivacyTool.py:202 SetPrivacyTool/SetPrivacyTool.py:207
+#: SetPrivacyTool/SetPrivacyTool.py:213
+msgid "Option"
+msgstr "Параметр"
+
+#: SetPrivacyTool/SetPrivacyTool.py:198
+msgid "Events"
+msgstr "События"
+
+#: SetPrivacyTool/SetPrivacyTool.py:201
+msgid "Media"
+msgstr "Документы"
+
+#: SetPrivacyTool/SetPrivacyTool.py:204
+msgid "Always private if no date."
+msgstr "Всегда личное, если дата отсутствует."
+
+#: SetPrivacyTool/SetPrivacyTool.py:205
+msgid "If checked, all objects without a date will also be set private."
+msgstr "Если установлено, то все объекты без даты будут переведены в личные."
+
+#: SetPrivacyTool/SetPrivacyTool.py:209
+msgid "Years"
+msgstr "Года"
+
+#: SetPrivacyTool/SetPrivacyTool.py:210
+msgid ""
+"The time range in years from today you want to set objects private.\n"
+"'0 years' = remove privacy from all objects."
+msgstr ""
+"Промежуток времени в годах (от текущей даты) для перевода объектов в "
+"личные.\n"
+"'0 лет' = удалит метки секретности со всех объектов."

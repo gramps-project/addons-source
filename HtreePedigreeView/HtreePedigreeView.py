@@ -69,8 +69,18 @@ from gramps.gen.constfunc import is_quartz, win
 from gramps.gui.dialog import RunDatabaseRepair, ErrorDialog
 from gramps.gui.utils import color_graph_box, hex_to_rgb_float, is_right_click
 from gramps.gen.constfunc import lin
+
+#------------------------------------------------------------------------
+#
+# Internationalisation
+#
+#------------------------------------------------------------------------
 from gramps.gen.const import GRAMPS_LOCALE as glocale
-_ = glocale.translation.sgettext
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.gettext
 
 #-------------------------------------------------------------------------
 #

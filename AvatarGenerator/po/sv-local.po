@@ -1,0 +1,160 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Pär Ekholm <pehlm@pekholm.org>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-06-14 11:49+1000\n"
+"PO-Revision-Date: 2021-05-20 19:44+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"Last-Translator: Pär Ekholm <pehlm@pekholm.se>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: sv_SE\n"
+
+#: AvatarGenerator/AvatarGenerator.gpr.py:23
+msgid "Avatar Generator Tool"
+msgstr "Verktyg för att skapa avatarer"
+
+#: AvatarGenerator/AvatarGenerator.gpr.py:24
+msgid "A tool to add avatar pictures to your family tree"
+msgstr "Ett verktyg för att lägga till avatarer till ditt släktträd"
+
+#: AvatarGenerator/AvatarGenerator.py:58
+msgid "male"
+msgstr "man"
+
+#: AvatarGenerator/AvatarGenerator.py:58
+msgid "female"
+msgstr "kvinna"
+
+#: AvatarGenerator/AvatarGenerator.py:58
+msgid "unknown"
+msgstr "okänt"
+
+#: AvatarGenerator/AvatarGenerator.py:59
+msgid "Option"
+msgstr "Alternativ"
+
+#: AvatarGenerator/AvatarGenerator.py:59
+msgid "single image mode"
+msgstr "enbildsläge"
+
+#: AvatarGenerator/AvatarGenerator.py:65
+msgid "Category"
+msgstr "Kategori"
+
+#: AvatarGenerator/AvatarGenerator.py:66
+msgid "Choose how many images you'd like to use."
+msgstr "Välj hur många bilder du vill använda."
+
+#: AvatarGenerator/AvatarGenerator.py:68 AvatarGenerator/AvatarGenerator.py:75
+#: AvatarGenerator/AvatarGenerator.py:79 AvatarGenerator/AvatarGenerator.py:83
+#: AvatarGenerator/AvatarGenerator.py:87 AvatarGenerator/AvatarGenerator.py:92
+#: AvatarGenerator/AvatarGenerator.py:98 AvatarGenerator/AvatarGenerator.py:137
+msgid "Options"
+msgstr "Alternativ"
+
+#: AvatarGenerator/AvatarGenerator.py:73
+msgid "Unknown"
+msgstr "Okänd"
+
+#: AvatarGenerator/AvatarGenerator.py:74
+msgid "Image for people with unknown gender."
+msgstr "Bild för personer med okänt kön."
+
+#: AvatarGenerator/AvatarGenerator.py:77
+msgid "Male"
+msgstr "Man"
+
+#: AvatarGenerator/AvatarGenerator.py:78
+msgid "Image for males."
+msgstr "Bild för män."
+
+#: AvatarGenerator/AvatarGenerator.py:81
+msgid "Female"
+msgstr "Kvinna"
+
+#: AvatarGenerator/AvatarGenerator.py:82
+msgid "Image for females"
+msgstr "Bild för kvinnor"
+
+#: AvatarGenerator/AvatarGenerator.py:85
+msgid "Person Filter"
+msgstr "Personfilter"
+
+#: AvatarGenerator/AvatarGenerator.py:86
+msgid "Select filter to restrict people"
+msgstr "Välj ett filter för att begränsa personer"
+
+#: AvatarGenerator/AvatarGenerator.py:90
+msgid "Center Person"
+msgstr "Huvudperson"
+
+#: AvatarGenerator/AvatarGenerator.py:91
+msgid "The center person for the filter"
+msgstr "Huvudpersonen för filtret"
+
+#: AvatarGenerator/AvatarGenerator.py:95
+msgid "Remove images from people"
+msgstr "Ta bort bilder från personer"
+
+#: AvatarGenerator/AvatarGenerator.py:96
+msgid "Remove selected image(s)."
+msgstr "Ta bort vald(a) bild(er)."
+
+#: AvatarGenerator/AvatarGenerator.py:134
+#: AvatarGenerator/AvatarGenerator.py:183
+#: AvatarGenerator/AvatarGenerator.py:257
+msgid "Avatar Generator"
+msgstr "Avatargenererare"
+
+#: AvatarGenerator/AvatarGenerator.py:186
+msgid "Remove avatar images..."
+msgstr "Ta bort avatarbilder..."
+
+#: AvatarGenerator/AvatarGenerator.py:211
+#: AvatarGenerator/AvatarGenerator.py:219
+#: AvatarGenerator/AvatarGenerator.py:316
+#: AvatarGenerator/AvatarGenerator.py:320
+msgid "INFO"
+msgstr "INFO"
+
+#: AvatarGenerator/AvatarGenerator.py:211
+msgid "No media was removed."
+msgstr "Inget media togs bort."
+
+#: AvatarGenerator/AvatarGenerator.py:213
+msgid "{} media references were removed from {} persons."
+msgstr "{} mediareferenser togs bort från {} personer."
+
+#: AvatarGenerator/AvatarGenerator.py:216
+msgid ""
+"\n"
+"{} HandleError occured, but were ignored."
+msgstr ""
+"\n"
+"{} Hanteringsfel inträffade, men ignorerades."
+
+#: AvatarGenerator/AvatarGenerator.py:263
+#: AvatarGenerator/AvatarGenerator.py:280
+msgid "Add avatar images..."
+msgstr "Lägg till avatarbilder..."
+
+#: AvatarGenerator/AvatarGenerator.py:314
+msgid "{} avatar images were sucessfully added."
+msgstr "{} avatarbilder lades framgångsrikt till."
+
+#: AvatarGenerator/AvatarGenerator.py:318
+msgid "There was no avatar image to add. "
+msgstr "Det fanns inga avatarbilder att lägga till. "
+
+#: AvatarGenerator/AvatarGenerator.py:319
+msgid "All persons already had one."
+msgstr "Alla personer har redan en."

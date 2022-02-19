@@ -1,0 +1,293 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Pär Ekholm <pehlm@pekholm.org>, 2021.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-19 10:55-0600\n"
+"PO-Revision-Date: 2021-05-23 17:14+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"Last-Translator: Pär Ekholm <pehlm@pekholm.se>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: sv_SE\n"
+
+#: Heatmap/heatmap.gpr.py:24
+msgid "Heatmap"
+msgstr "Färgdiagram"
+
+#: Heatmap/heatmap.gpr.py:25
+msgid "Create a heatmap web report."
+msgstr "Skapa en webbrapport med färgdiagram."
+
+#: Heatmap/heatmap.py:68
+msgid "Filter"
+msgstr "Filter"
+
+#: Heatmap/heatmap.py:70 Heatmap/heatmap.py:73 Heatmap/heatmap.py:84
+#: Heatmap/heatmap.py:88 Heatmap/heatmap.py:92 Heatmap/heatmap.py:101
+msgid "General"
+msgstr "Allmänt"
+
+#: Heatmap/heatmap.py:72
+msgid "Person"
+msgstr "Person"
+
+#: Heatmap/heatmap.py:76
+msgid "OpenStreetMap"
+msgstr "OpenStreetMap"
+
+#: Heatmap/heatmap.py:77
+msgid "Stamen Terrain"
+msgstr "Stamen Terrain"
+
+#: Heatmap/heatmap.py:78
+msgid "Stamen Toner"
+msgstr "Stamen Toner"
+
+#: Heatmap/heatmap.py:79
+msgid "Stamen Watercolor"
+msgstr "Stamen Watercolor"
+
+#: Heatmap/heatmap.py:80
+msgid "CartoDB Positron"
+msgstr "CartoDB Positron"
+
+#: Heatmap/heatmap.py:81
+msgid "CartoDB DarkMatter"
+msgstr "CartoDB DarkMatter"
+
+#: Heatmap/heatmap.py:82
+msgid "Map tiles"
+msgstr "Kartplattor"
+
+#: Heatmap/heatmap.py:86
+msgid "Point size"
+msgstr "Punktstorlek"
+
+#: Heatmap/heatmap.py:87
+msgid ""
+"Set the size of the heatmap points.\n"
+"Default: 15"
+msgstr ""
+"Storleken på färgdiagrammets punkter.\n"
+"Standard: 15"
+
+#: Heatmap/heatmap.py:90
+msgid "File path"
+msgstr "Filmål"
+
+#: Heatmap/heatmap.py:94
+msgid ""
+"For the file name only english letters A-Z, a-z and numbers 0-9 as well as "
+"the characters space, underline and hypen are allowed. The file name also "
+"has to start and end with an alphanumeric character.The file extention '."
+"html' is added by the report."
+msgstr ""
+"För filnamnet är endast engelska bokstäver A-Z, a-z och siffror 0-9 samt "
+"tecknens mellanslag, understrykning och bindestreck tillåtna. Filnamnet "
+"måste också börja och sluta med ett alfanumeriskt tecken. Filtillägget '."
+"html' läggs till i rapporten."
+
+#: Heatmap/heatmap.py:99
+msgid "File name"
+msgstr "Filnamn"
+
+#: Heatmap/heatmap.py:107
+msgid "Enable custom start position"
+msgstr "Aktivera anpassad startposition"
+
+#: Heatmap/heatmap.py:109
+msgid ""
+"Enabling will force the map open at your custom start position and zoom."
+msgstr ""
+"Aktivering tvingar kartan att öppnas vid din anpassade startposition och "
+"zooma."
+
+#: Heatmap/heatmap.py:111 Heatmap/heatmap.py:117 Heatmap/heatmap.py:122
+#: Heatmap/heatmap.py:127
+msgid "Advanced"
+msgstr "Avancerade"
+
+#: Heatmap/heatmap.py:114
+msgid "Start latitude"
+msgstr "Startlatitud"
+
+#: Heatmap/heatmap.py:116
+msgid ""
+"Set custom start position latitude\n"
+"Default: 50.0"
+msgstr ""
+"Ange anpassad startpositionslatitud\n"
+"Standard: 50.0"
+
+#: Heatmap/heatmap.py:119
+msgid "Start longitude"
+msgstr "Startlongitud"
+
+#: Heatmap/heatmap.py:121
+msgid ""
+"Set custom start position longitude\n"
+"Default: 10.0"
+msgstr ""
+"Ange anpassad startpositionslongitud\n"
+"Standard: 10.0"
+
+#: Heatmap/heatmap.py:124
+msgid "Start zoom"
+msgstr "Startzoom"
+
+#: Heatmap/heatmap.py:126
+msgid ""
+"Set the value for the starting zoom\n"
+"Default: 5"
+msgstr ""
+"Ställ in värdet för startzoomen\n"
+"Standard: 5"
+
+#: Heatmap/heatmap.py:132
+msgid "Enable map limits"
+msgstr "Aktivera kartgräns"
+
+#: Heatmap/heatmap.py:134
+msgid ""
+"Enabling map limits forces the user to stay in a predefined part of the map."
+msgstr ""
+"Aktivering av kartgränser tvingar användaren att stanna i ett fördefinierat "
+"område av kartan."
+
+#: Heatmap/heatmap.py:136 Heatmap/heatmap.py:141 Heatmap/heatmap.py:145
+#: Heatmap/heatmap.py:150 Heatmap/heatmap.py:155 Heatmap/heatmap.py:160
+#: Heatmap/heatmap.py:165 Heatmap/heatmap.py:171
+msgid "Limits"
+msgstr "Gränser"
+
+#: Heatmap/heatmap.py:139
+msgid "Min. zoom"
+msgstr "Min. zoom"
+
+#: Heatmap/heatmap.py:140
+msgid ""
+"Set minimal zoom value\n"
+"Default: 1"
+msgstr ""
+"Ställ in minimalt zoomvärde\n"
+"Standard: 1"
+
+#: Heatmap/heatmap.py:143
+msgid "Max. zoom"
+msgstr "Max. zoom"
+
+#: Heatmap/heatmap.py:144
+msgid ""
+"Set maximum zoom value.\n"
+"Default: 18"
+msgstr ""
+"Ställ in maximalt zoomvärde.\n"
+"Standard: 18"
+
+#: Heatmap/heatmap.py:147
+msgid "Upper left corner latitude"
+msgstr "Latitud för övre vänstra hörnet"
+
+#: Heatmap/heatmap.py:149
+msgid "Set latitude for upper left corner map limit."
+msgstr "Ställ in latitud för kartgränsen i övre vänstra hörnet."
+
+#: Heatmap/heatmap.py:152
+msgid "Upper left corner longitude"
+msgstr "Longitud för övre vänstra hörnet"
+
+#: Heatmap/heatmap.py:154
+msgid "Set longitude for upper left corner map limit."
+msgstr "Ställ in longitud för kartgränsen i övre vänstra hörnet."
+
+#: Heatmap/heatmap.py:157
+msgid "Lower right corner latitude"
+msgstr "Latitud för nedre högra hörnet"
+
+#: Heatmap/heatmap.py:159
+msgid "Set latitude for lower right corner map limit."
+msgstr "Ställ in latitud för kartgränsen i nedre högra hörnet."
+
+#: Heatmap/heatmap.py:162
+msgid "Lower right corner longitude"
+msgstr "Longitud för nedre högra hörnet"
+
+#: Heatmap/heatmap.py:164
+msgid "Set longitude for lower right corner map limit."
+msgstr "Ställ in longitud för kartgränsen i nedre högra hörnet."
+
+#: Heatmap/heatmap.py:168
+msgid "Render custom map limit border"
+msgstr "Rendera anpassad kartgränskant"
+
+#: Heatmap/heatmap.py:170
+msgid "Enabling will render the map limit border"
+msgstr "Aktivering renderar kartgränskanten"
+
+#: Heatmap/heatmap.py:207
+msgid "Ancestors of <selected person>"
+msgstr "Anor till <selected person>"
+
+#: Heatmap/heatmap.py:208
+msgid "Descendants of <selected person>"
+msgstr "Ättlingar till <selected person>"
+
+#: Heatmap/heatmap.py:251
+msgid "Invalid filename."
+msgstr "Ogiltigt filnamn."
+
+#: Heatmap/heatmap.py:252
+msgid "Path does not exist."
+msgstr "Sökvägen finns inte."
+
+#: Heatmap/heatmap.py:261 Heatmap/heatmap.py:267 Heatmap/heatmap.py:269
+#: Heatmap/heatmap.py:344 Heatmap/heatmap.py:454 Heatmap/heatmap.py:490
+msgid "INFO"
+msgstr "INFO"
+
+#: Heatmap/heatmap.py:341
+msgid ""
+"Report generation failed.\n"
+"Please check the values for start latitude and longitude.\n"
+"Latitude: -90 to 90\n"
+"Longitude: -180 to 180"
+msgstr ""
+"Rapportgenereringen misslyckades.\n"
+"Kontrollera värdena för startlatitud och longitud.\n"
+"Latitud: -90 till 90\n"
+"Longitud: -180 till 180"
+
+#: Heatmap/heatmap.py:405
+#, python-format
+msgid ""
+"[INFO]: Place '%s' was ignored because of unsupported coordinate values."
+msgstr ""
+"[INFO]: Platsen '%s' ignorerades på grund av koordinatvärden utan stöd."
+
+#: Heatmap/heatmap.py:452
+msgid ""
+"Your zoom settings were inconclusive and therefore changed for this report "
+"generation."
+msgstr ""
+"Dina zoominställningar var ofullständiga och ändrades därför för denna "
+"rapportgenerering."
+
+#: Heatmap/heatmap.py:487
+msgid ""
+"Report generation failed.\n"
+"Please check the values for limits latitude and longitude.\n"
+"Latitude: -90 to 90\n"
+"Longitude: -180 to 180"
+msgstr ""
+"Rapportgenereringen misslyckades.\n"
+"Kontrollera värdena för gränslatitud och longitud.\n"
+"Latitud: -90 till 90\n"
+"Longitud: -180 till 180"

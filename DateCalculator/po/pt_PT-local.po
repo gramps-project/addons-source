@@ -1,0 +1,82 @@
+# Addon Date Calculator for Gramps.
+# Copyright (C) 2020 Gramps
+# This file is distributed under the same license as the PACKAGE package.
+# Pedro Albuquerque <pmra@protonmail.com.com>, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps51\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2020-03-29 11:56+0100\n"
+"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"Language-Team: Pedro Albuquerque\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.3\n"
+
+#: DateCalculator/DateCalculator.gpr.py:21
+#: DateCalculator/DateCalculator.gpr.py:31
+msgid "Date Calculator"
+msgstr "Calculadora de datas"
+
+#: DateCalculator/DateCalculator.gpr.py:22
+msgid "Useful for date math calculations"
+msgstr "Gramplet útil para cálculos matemáticos com datas"
+
+#: DateCalculator/DateCalculator.py:63
+msgid "Expression 1"
+msgstr "Expressão 1"
+
+#: DateCalculator/DateCalculator.py:64
+msgid "Expression 2"
+msgstr "Expressão 2"
+
+#: DateCalculator/DateCalculator.py:65
+msgid "Result"
+msgstr "Resultado"
+
+#: DateCalculator/DateCalculator.py:68
+msgid "Calculate"
+msgstr "Calcular"
+
+#: DateCalculator/DateCalculator.py:71
+msgid "Clear"
+msgstr "Limpar"
+
+#: DateCalculator/DateCalculator.py:118
+msgid "Error: invalid entry for expression 1"
+msgstr "Erro: entrada inválida na expressão 1"
+
+#: DateCalculator/DateCalculator.py:128
+msgid "Error: invalid entry for expression 2"
+msgstr "Erro: entrada inválida na expressão 2"
+
+#: DateCalculator/DateCalculator.py:153 DateCalculator/DateCalculator.py:155
+#: DateCalculator/DateCalculator.py:163 DateCalculator/DateCalculator.py:165
+msgid "Error: at least one expression must be a date"
+msgstr "Erro: pelo menos uma das expressões tem de ser uma data"
+
+#: DateCalculator/DateCalculator.py:171
+msgid ""
+"Enter an expression in the entries above and click Calculate.\n"
+"\n"
+"An expression can be:\n"
+"\n"
+"1. a valid Gramps date\n"
+"2. a positive or negative number, representing years\n"
+"3. a positive or negative tuple, representing (years, months, days)\n"
+"\n"
+"Note that at least one expression must be a date."
+msgstr ""
+"Insira uma expressão nos campos acima e clique em Calcular.\n"
+"\n"
+"Uma expressão pode ser:\n"
+"\n"
+"1. uma data Gramps válida;\n"
+"2. um número positivo ou negativo, representando anos;\n"
+"3. um grupo positivo ou negativo, representando (anos, meses, dias)\n"
+"\n"
+"Note que pelo menos uma das expressões tem de ser uma data."

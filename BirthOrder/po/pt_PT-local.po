@@ -1,0 +1,141 @@
+# Portuguese translations for Gramps package.
+# Copyright (C) 2020 gramps
+# This file is distributed under the same license as the gramps package.
+# Pedro Albuquerque <pmra@protonmail.com>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps51\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-09-15 10:12+0100\n"
+"PO-Revision-Date: 2020-03-29 \n"
+"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"Language-Team: Portuguese <pmra@protonmail.com>\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Geany / PoHelper 1.36\n"
+
+#: BirthOrder/birthorder.gpr.py:9 BirthOrder/birthorder.py:62
+msgid "Sort Children in Birth order"
+msgstr "Ordenar filhos por data de nascimento"
+
+#: BirthOrder/birthorder.gpr.py:10
+msgid ""
+"Looks through families, looking for children that are not in birth order.  "
+"User can accept individual suggestions to correct, edit the birth order "
+"manually, accept all those families that have all children with proper birth "
+"dates, or accept all."
+msgstr ""
+"Procura em famílias por filhos que estejam fora da ordem de nascimento. O "
+"utilizador pode aceitar sugestões de correcção individuais, editar a ordem "
+"de nascimento manualmente, aceitar as famílias que têm os filhos bem "
+"ordenados ou aceitar tudo."
+
+#: BirthOrder/birthorder.py:161
+msgid "No families need sorting"
+msgstr "Nenhuma família precisa de ser ordenada"
+
+#: BirthOrder/birthorder.py:162
+msgid "No children were out of birth order."
+msgstr "Nenhum filho fora de ordem."
+
+#: BirthOrder/birthorder.py:186
+msgid "Edit Family"
+msgstr "Editar família"
+
+#: BirthOrder/birthorder.py:203
+msgid "Processing..."
+msgstr "A processar..."
+
+#: BirthOrder/birthorder.py:204
+msgid "Edit Families"
+msgstr "Editar famílias"
+
+#: BirthOrder/birthorder.py:275
+msgid "Looking for children birth order"
+msgstr "A procurar ordem de nascimento dos filhos"
+
+#: BirthOrder/birthorder.py:279
+msgid "Pass 1: Building preliminary lists"
+msgstr "Passo 1: construir listas preliminares"
+
+#: BirthOrder/birthorder.glade:56
+msgid "Select the family you wish to examine."
+msgstr "Seleccione a família que deseja examinar."
+
+#: BirthOrder/birthorder.glade:78
+msgid "Family ID"
+msgstr "ID da família"
+
+#: BirthOrder/birthorder.glade:93
+msgid "Father"
+msgstr "Pai"
+
+#: BirthOrder/birthorder.glade:108
+msgid "Mother"
+msgstr "Mãe"
+
+#: BirthOrder/birthorder.glade:141
+msgid "Help"
+msgstr "Ajuda"
+
+#: BirthOrder/birthorder.glade:155
+msgid "Accept All"
+msgstr "Aceitar tudo"
+
+#: BirthOrder/birthorder.glade:159
+msgid "This button will sort all of the families listed."
+msgstr "Este botão vai ordenar todas as famílias listadas"
+
+#: BirthOrder/birthorder.glade:170
+msgid "Accept All *"
+msgstr "Aceitar tudo"
+
+#: BirthOrder/birthorder.glade:174
+msgid ""
+"This button will sort all the families with '*'.  In these families, all the "
+"children have valid dates, so the sort is unambiguous."
+msgstr ""
+"Este botão vai ordenar todas as famílias com \\\"*\\\". Nestas famílias, "
+"todos os filhos têm datas válidas, a ordem é ambígua."
+
+#: BirthOrder/birthorder.glade:185
+msgid "Accept"
+msgstr "Aceitar"
+
+#: BirthOrder/birthorder.glade:189
+msgid ""
+"This button will accept only the family selected and save it as shown in "
+"lower right pane."
+msgstr ""
+"Este botão vai aceitar só a família seleccionada e gravá-la como mostrado no "
+"painel inferior direito."
+
+#: BirthOrder/birthorder.glade:232
+msgid "Done"
+msgstr "Feito"
+
+#: BirthOrder/birthorder.glade:236
+msgid "This button will exit, with remaining families unchanged."
+msgstr "Este botão sai, com as restantes famílias inalteradas."
+
+#: BirthOrder/birthorder.glade:256
+msgid "Current sort"
+msgstr "Ordem actual"
+
+#: BirthOrder/birthorder.glade:267
+msgid "Proposed sort"
+msgstr "Ordem proposta"
+
+#: BirthOrder/birthorder.glade:333
+msgid ""
+"When satisfied with the sort, use 'Accept' button below to accept the "
+"changes.  If you wish to adjust the order, select the child you wish to "
+"move, and use 'Up' or 'Down' buttons below to move them."
+msgstr ""
+"Quando a ordem estiver correcta, use \"Aceitar\" para gravar as alterações. "
+"Se desejar ajustar a ordem, seleccione o filho e use os botões \"Acima\" ou "
+"\"Abaixo\" para o mover."

@@ -4,6 +4,7 @@
 # Copyright (C) 2007-2008 Brian G. Matherly
 # Copyright (C) 2009      Gary Burton
 # Copyright (C) 2010      Jakim Friant
+# Copyright (C) 2020      Jan Sparreboom
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -40,6 +41,10 @@ from gramps.gen.plug.report import Report
 from gramps.gen.errors import ReportError
 import gramps.gen.plug.report.utils as ReportUtils
 from gramps.gen.plug.menu import EnumeratedListOption, BooleanOption
+
+#------------------------------------------------------------------------
+# Internationalisation
+#------------------------------------------------------------------------
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
     _trans = glocale.get_addon_translator(__file__)
@@ -90,8 +95,8 @@ class TodoReport(Report):
         """
         Generate the report document
         """
-        self.doc.start_paragraph("TR-Title")
-        title = _("Report on Notes Tagged %s") % self.tag
+        self.doc.start_paragraph(_("TR-Title"))
+        title = _("Report on Notes Tagged '%s'") % self.tag
         mark = docgen.IndexMark(title, docgen.INDEX_TYPE_TOC, 1)
         self.doc.write_text(title, mark)
         self.doc.end_paragraph()
@@ -190,24 +195,24 @@ class TodoReport(Report):
             return
 
         if title is not None:
-            self.doc.start_paragraph("TR-Heading")
+            self.doc.start_paragraph(_("TR-Heading"))
             header = _(title)
             mark = docgen.IndexMark(header, docgen.INDEX_TYPE_TOC, 2)
             self.doc.write_text(header, mark)
             self.doc.end_paragraph()
 
-        self.doc.start_table('NoteTable','TR-Table')
+        self.doc.start_table(_('NoteTable'),_('TR-Table'))
 
         self.doc.start_row()
 
-        self.doc.start_cell('TR-TableCell')
-        self.doc.start_paragraph('TR-Normal-Bold')
+        self.doc.start_cell(_('TR-TableCell'))
+        self.doc.start_paragraph(_('TR-Normal-Bold'))
         self.doc.write_text(_("Id"))
         self.doc.end_paragraph()
         self.doc.end_cell()
 
-        self.doc.start_cell('TR-TableCell', 3)
-        self.doc.start_paragraph('TR-Normal-Bold')
+        self.doc.start_cell(_('TR-TableCell'), 3)
+        self.doc.start_paragraph(_('TR-Normal-Bold'))
         self.doc.write_text(_("Text"))
         self.doc.end_paragraph()
         self.doc.end_cell()
@@ -220,15 +225,15 @@ class TodoReport(Report):
 
             self.doc.start_row()
 
-            self.doc.start_cell('TR-TableCell')
-            self.doc.start_paragraph('TR-Normal')
+            self.doc.start_cell(_('TR-TableCell'))
+            self.doc.start_paragraph(_('TR-Normal'))
             self.doc.write_text(note.get_gramps_id())
             self.doc.end_paragraph()
             self.doc.end_cell()
 
-            self.doc.start_cell('TR-TableCell', 3)
+            self.doc.start_cell(_('TR-TableCell'), 3)
             self.doc.write_styled_note(note.get_styledtext(),
-                                       note.get_format(), 'TR-Note')
+                                       note.get_format(), _('TR-Note'))
             self.doc.end_cell()
 
             self.doc.end_row()
@@ -237,8 +242,8 @@ class TodoReport(Report):
 
             self.doc.start_row()
 
-            self.doc.start_cell('TR-BorderCell', 4)
-            self.doc.start_paragraph('TR-Normal')
+            self.doc.start_cell(_('TR-BorderCell'), 4)
+            self.doc.start_paragraph(_('TR-Normal'))
             self.doc.write_text('')
             self.doc.end_paragraph()
             self.doc.end_cell()
@@ -255,37 +260,37 @@ class TodoReport(Report):
 
         self.doc.start_row()
 
-        self.doc.start_cell('TR-TableCell')
-        self.doc.start_paragraph('TR-Normal')
+        self.doc.start_cell(_('TR-TableCell'))
+        self.doc.start_paragraph(_('TR-Normal'))
         self.doc.write_text(person.get_gramps_id())
         self.doc.end_paragraph()
         self.doc.end_cell()
 
         name = name_displayer.display(person)
         mark = ReportUtils.get_person_mark(self.database, person)
-        self.doc.start_cell('TR-TableCell')
-        self.doc.start_paragraph('TR-Normal')
+        self.doc.start_cell(_('TR-TableCell'))
+        self.doc.start_paragraph(_('TR-Normal'))
         self.doc.write_text(name, mark)
         self.doc.end_paragraph()
         self.doc.end_cell()
 
-        self.doc.start_cell('TR-TableCell')
-        self.doc.start_paragraph('TR-Normal')
+        self.doc.start_cell(_('TR-TableCell'))
+        self.doc.start_paragraph(_('TR-Normal'))
         birth_ref = person.get_birth_ref()
         if birth_ref:
             event = self.database.get_event_from_handle(birth_ref.ref)
-            self.doc.write_text("b. " + gramps.gen.datehandler.get_date( event ))
+            self.doc.write_text(_("b. ") + gramps.gen.datehandler.get_date( event ))
         else:
-            self.doc.write_text("b. " + "_" * 12)
+            self.doc.write_text(_("b. ") + "_" * 12)
         self.doc.end_paragraph()
         self.doc.end_cell()
 
-        self.doc.start_cell('TR-TableCell')
-        self.doc.start_paragraph('TR-Normal')
+        self.doc.start_cell(_('TR-TableCell'))
+        self.doc.start_paragraph(_('TR-Normal'))
         death_ref = person.get_death_ref()
         if death_ref:
             event = self.database.get_event_from_handle(death_ref.ref)
-            self.doc.write_text("d. " + gramps.gen.datehandler.get_date( event ))
+            self.doc.write_text(_("d. ") + gramps.gen.datehandler.get_date( event ))
         self.doc.end_paragraph()
         self.doc.end_cell()
 
@@ -299,14 +304,14 @@ class TodoReport(Report):
 
         self.doc.start_row()
 
-        self.doc.start_cell('TR-TableCell')
-        self.doc.start_paragraph('TR-Normal')
+        self.doc.start_cell(_('TR-TableCell'))
+        self.doc.start_paragraph(_('TR-Normal'))
         self.doc.write_text(family.get_gramps_id())
         self.doc.end_paragraph()
         self.doc.end_cell()
 
-        self.doc.start_cell('TR-TableCell')
-        self.doc.start_paragraph('TR-Normal')
+        self.doc.start_cell(_('TR-TableCell'))
+        self.doc.start_paragraph(_('TR-Normal'))
         father_handle = family.get_father_handle()
         if father_handle:
             father = self.database.get_person_from_handle(father_handle)
@@ -315,8 +320,8 @@ class TodoReport(Report):
         self.doc.end_paragraph()
         self.doc.end_cell()
 
-        self.doc.start_cell('TR-TableCell')
-        self.doc.start_paragraph('TR-Normal')
+        self.doc.start_cell(_('TR-TableCell'))
+        self.doc.start_paragraph(_('TR-Normal'))
         mother_handle = family.get_mother_handle()
         if mother_handle:
             mother = self.database.get_person_from_handle(mother_handle)
@@ -338,8 +343,8 @@ class TodoReport(Report):
         rel_msg = _("%(relationship_type)s on %(relationship_date)s") % {'relationship_type': family.get_relationship(),
                                                                          'relationship_date': relationship_date}
 
-        self.doc.start_cell('TR-TableCell')
-        self.doc.start_paragraph('TR-Normal')
+        self.doc.start_cell(_('TR-TableCell'))
+        self.doc.start_paragraph(_('TR-Normal'))
         self.doc.write_text(rel_msg)
         self.doc.end_paragraph()
         self.doc.end_cell()
@@ -354,14 +359,14 @@ class TodoReport(Report):
 
         self.doc.start_row()
 
-        self.doc.start_cell('TR-TableCell')
-        self.doc.start_paragraph('TR-Normal')
+        self.doc.start_cell(_('TR-TableCell'))
+        self.doc.start_paragraph(_('TR-Normal'))
         self.doc.write_text(event.get_gramps_id())
         self.doc.end_paragraph()
         self.doc.end_cell()
 
-        self.doc.start_cell('TR-TableCell')
-        self.doc.start_paragraph('TR-Normal')
+        self.doc.start_cell(_('TR-TableCell'))
+        self.doc.start_paragraph(_('TR-Normal'))
         date = gramps.gen.datehandler.get_date(event)
         if date:
             self.doc.write_text(date)
@@ -370,8 +375,8 @@ class TodoReport(Report):
         self.doc.end_paragraph()
         self.doc.end_cell()
 
-        self.doc.start_cell('TR-TableCell')
-        self.doc.start_paragraph('TR-Normal')
+        self.doc.start_cell(_('TR-TableCell'))
+        self.doc.start_paragraph(_('TR-Normal'))
         place_handle = event.get_place_handle()
         place = ReportUtils.place_name(self.database, place_handle)
         if place:
@@ -381,8 +386,8 @@ class TodoReport(Report):
         self.doc.end_paragraph()
         self.doc.end_cell()
 
-        self.doc.start_cell('TR-TableCell')
-        self.doc.start_paragraph('TR-Normal')
+        self.doc.start_cell(_('TR-TableCell'))
+        self.doc.start_paragraph(_('TR-Normal'))
         descr = event.get_description()
         if descr:
             self.doc.write_text( descr )
@@ -399,14 +404,14 @@ class TodoReport(Report):
 
         self.doc.start_row()
 
-        self.doc.start_cell('TR-TableCell')
-        self.doc.start_paragraph('TR-Normal')
+        self.doc.start_cell(_('TR-TableCell'))
+        self.doc.start_paragraph(_('TR-Normal'))
         self.doc.write_text(place.get_gramps_id())
         self.doc.end_paragraph()
         self.doc.end_cell()
 
-        self.doc.start_cell('TR-TableCell', 3)
-        self.doc.start_paragraph('TR-Normal')
+        self.doc.start_cell(_('TR-TableCell'), 3)
+        self.doc.start_paragraph(_('TR-Normal'))
         self.doc.write_text(place_displayer.display(self.database, place))
         self.doc.end_paragraph()
         self.doc.end_cell()
@@ -467,9 +472,7 @@ class TodoReport(Report):
         return title.upper()
 
 #------------------------------------------------------------------------
-#
 # MarkerOptions
-#
 #------------------------------------------------------------------------
 class TodoOptions(MenuReportOptions):
     """Set up the options dialog for this report"""
@@ -520,7 +523,7 @@ class TodoOptions(MenuReportOptions):
         para.set_font(font)
         para.set_alignment(docgen.PARA_ALIGN_CENTER)
         para.set_description(_("The style used for the title of the page."))
-        default_style.add_paragraph_style("TR-Title", para)
+        default_style.add_paragraph_style(_("TR-Title"), para)
 
         font = docgen.FontStyle()
         font.set(face=docgen.FONT_SANS_SERIF, size=14, italic=1)
@@ -530,7 +533,7 @@ class TodoOptions(MenuReportOptions):
         para.set_top_margin(0.25)
         para.set_bottom_margin(0.25)
         para.set_description(_('The style used for the section headers.'))
-        default_style.add_paragraph_style("TR-Heading", para)
+        default_style.add_paragraph_style(_("TR-Heading"), para)
 
         font = docgen.FontStyle()
         font.set_size(12)
@@ -540,7 +543,7 @@ class TodoOptions(MenuReportOptions):
         para.set_top_margin(ReportUtils.pt2cm(3))
         para.set_bottom_margin(ReportUtils.pt2cm(3))
         para.set_description(_('The basic style used for the text display.'))
-        default_style.add_paragraph_style("TR-Normal", para)
+        default_style.add_paragraph_style(_("TR-Normal"), para)
 
         font = docgen.FontStyle()
         font.set_size(12)
@@ -551,22 +554,24 @@ class TodoOptions(MenuReportOptions):
         para.set_top_margin(ReportUtils.pt2cm(3))
         para.set_bottom_margin(ReportUtils.pt2cm(3))
         para.set_description(_('The basic style used for table headings.'))
-        default_style.add_paragraph_style("TR-Normal-Bold", para)
+        default_style.add_paragraph_style(_("TR-Normal-Bold"), para)
 
         para = docgen.ParagraphStyle()
         para.set(first_indent=-0.75, lmargin=.75)
         para.set_top_margin(ReportUtils.pt2cm(3))
         para.set_bottom_margin(ReportUtils.pt2cm(3))
         para.set_description(_('The basic style used for the note display.'))
-        default_style.add_paragraph_style("TR-Note", para)
+        default_style.add_paragraph_style(_("TR-Note"), para)
 
         #Table Styles
         cell = docgen.TableCellStyle()
-        default_style.add_cell_style('TR-TableCell', cell)
+        cell.set_description(_('The basic style used for the table cell display.'))
+        default_style.add_cell_style(_('TR-TableCell'), cell)
 
         cell = docgen.TableCellStyle()
         cell.set_bottom_border(1)
-        default_style.add_cell_style('TR-BorderCell', cell)
+        cell.set_description(_('The basic style used for the table border cell display.'))
+        default_style.add_cell_style(_('TR-BorderCell'), cell)
 
         table = docgen.TableStyle()
         table.set_width(100)
@@ -575,4 +580,5 @@ class TodoOptions(MenuReportOptions):
         table.set_column_width(1, 30)
         table.set_column_width(2, 30)
         table.set_column_width(3, 30)
-        default_style.add_table_style('TR-Table', table)
+        table.set_description(_('The basic style used for the table display.'))
+        default_style.add_table_style(_('TR-Table'), table)

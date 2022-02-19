@@ -1,0 +1,57 @@
+# Addon SurnameMapping for Gramps.
+# Copyright (C) 2020 Gramps
+# This file is distributed under the same license as the gramps package.
+# Pedro Albuquerque <pmra@protonmail.com>, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps51\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-04 18:55-0600\n"
+"PO-Revision-Date: 2020-04-03 09:58Hora de Verão de GMT\n"
+"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"Language-Team: Pedro Albuquerque\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Geany / PoHelper 1.36\n"
+
+#: SurnameMappingGramplet/SurnameMappingGramplet.grp.py:3
+#: SurnameMappingGramplet/SurnameMappingGramplet.grp.py:11
+msgid "Surname Mapping"
+msgstr "Mapeamento de apelidos"
+
+#: SurnameMappingGramplet/SurnameMappingGramplet.grp.py:4
+msgid "Gramplet for editing the grouping of surnames"
+msgstr "Gramplet para editar o agrupamento de apelidos"
+
+#: SurnameMappingGramplet/SurnameMappingGramplet.py:67
+msgid "Add Mapping"
+msgstr "Adicionar mapeamento"
+
+#: SurnameMappingGramplet/SurnameMappingGramplet.py:68
+#: SurnameMappingGramplet/SurnameMappingGramplet.py:158
+msgid "Edit Mapping"
+msgstr "Editar mapeamento"
+
+#: SurnameMappingGramplet/SurnameMappingGramplet.py:69
+msgid "Remove Mapping"
+msgstr "Remover mapeamento"
+
+#: SurnameMappingGramplet/SurnameMappingGramplet.py:77
+#: SurnameMappingGramplet/SurnameMappingGramplet.py:108
+msgid "Surname"
+msgstr "Apelido"
+
+#: SurnameMappingGramplet/SurnameMappingGramplet.py:78
+msgid "Group Name"
+msgstr "Nome do grupo"
+
+#: SurnameMappingGramplet/SurnameMappingGramplet.py:112
+msgid "Group"
+msgstr "Grupo"
+
+#: SurnameMappingGramplet/SurnameMappingGramplet.py:140
+msgid "Create Mapping"
+msgstr "Criar mapeamento"
