@@ -57,7 +57,7 @@ from gramps.gui.views.navigationview import NavigationView
 from gramps.gui.views.bookmarks import PersonBookmarks
 from gramps.gen.utils.file import get_empty_tempdir
 from gramps.gen.constfunc import lin, mac, win
-from gramps.gen.const import TEMP_DIR, URL_HOMEPAGE
+from gramps.gen.const import URL_HOMEPAGE
 
 #------------------------------------------------------------------------
 #
