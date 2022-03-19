@@ -270,7 +270,7 @@ class ModuleProvider:
 ##########################################
 
 
-life_line_chart_version_required = (1, 7, 5)
+life_line_chart_version_required = (1, 7, 7)
 life_line_chart_version_required_str = '.'.join(
     [str(i) for i in life_line_chart_version_required])
 some_import_error = False
