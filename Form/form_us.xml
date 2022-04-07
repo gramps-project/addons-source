@@ -2781,13 +2781,7 @@
         </heading>
         <section role='Primary' type='multi'>
             <column>
-                <_attribute>Name of street, avenue, or road</_attribute>
-            </column>
-            <column>
-                <_attribute>House (and apartment) number</_attribute>
-            </column>
-            <column>
-                <_attribute>Serial number of dwelling unit</_attribute>
+                <_attribute>Name</_attribute>
             </column>
             <column>
                 <_attribute>Is this house on a farm (or ranch)?</_attribute>
@@ -2797,9 +2791,6 @@
             </column>
             <column>
                 <_attribute>Agricultural Questionnaire Number</_attribute>
-            </column>
-            <column>
-                <_attribute>Name</_attribute>
             </column>
             <column>
                 <_attribute>Relationship</_attribute>
