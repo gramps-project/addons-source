@@ -62,12 +62,12 @@ msgstr "_סרגל כלים"
 
 #: Themes/themes.py:189
 msgid "Text"
-msgstr "מלל"
+msgstr "מילולי"
 
 #: Themes/themes.py:198
 msgid "Fixed Scrollbar (requires restart)"
-msgstr "פסי גלילה מקובעים (נדרשא תחול)"
+msgstr "פסי גלילה מקובעים (נדרשא אתחול)"
 
 #: Themes/themes.py:205
 msgid "Restore to defaults"
-msgstr "שחזור לברירת מחדל"
+msgstr "שחזור לברירות המחדל"
