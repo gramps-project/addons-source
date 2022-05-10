@@ -19,6 +19,7 @@
 # Copyright (C) 2011       Tim G L Lyons
 # Copyright (C) 2013       Benny Malengier
 # Copyright (C) 2016       Allen Crider
+# Copyright (C) 2022-      Serge Noiraud
 #
 # This program embeds some ideas from "fanchart.py" included in Gramps
 # Copyrights for "fanchart.py":
@@ -2391,8 +2392,11 @@ class DynamicWebReport(Report):
             'unknown-alive',
             'unknown-dead',
             ]:
-            sw.write("GRAMPS_PREFERENCES['%s'] = \"%s\";\n" %
-                     (pref, config.get('colors.%s' % pref)))
+            if self.options['svg_theme'] == 0:
+                value = config.get('colors.%s' % pref)[0]
+            else:
+                value = config.get('colors.%s' % pref)[1]
+            sw.write("GRAMPS_PREFERENCES['%s'] = \"%s\";\n" % (pref, value))
         sw.write("SVG_TREE_COLOR_SCHEME0 = [" + ", ".join(
             [("\"#%02x%02x%02x\"" % (r, g, b)) for (r, g, b) in GENCOLOR[BACKGROUND_WHITE]])
             + "];\n")
@@ -4206,11 +4210,23 @@ class DynamicWebOptions(MenuReportOptions):
         svg_tree_distrib_dsc.set_help(_("Choose the default SVG tree children distribution (for fan charts only)"))
         addopt("svg_tree_distrib_dsc", svg_tree_distrib_dsc)
 
-        svg_tree_background = EnumeratedListOption(_("Background"), DEFAULT_SVG_TREE_BACKGROUND)
+        svg_tree_background = EnumeratedListOption(_("Background"),
+                                                   DEFAULT_SVG_TREE_BACKGROUND)
         for (i, opt) in enumerate(SVG_TREE_BACKGROUNDS):
             svg_tree_background.add_item(i, opt)
-        svg_tree_background.set_help(_("Choose the background color scheme for the persons in the SVG tree graph"))
+        svg_tree_background.set_help(_("Choose the background color scheme for"
+                                       " the persons in the SVG tree graph"))
         addopt("svg_tree_background", svg_tree_background)
+        svg_tree_background.connect("value-changed",
+                                    self.change_theme_visibility)
+        self.svg_tree_background = svg_tree_background
+
+        self.svg_theme = EnumeratedListOption(_("Theme"), 0)
+        for (i, opt) in enumerate([_("Light colors"), _("Dark colors")]):
+            self.svg_theme.add_item(i, opt)
+        # self.svg_theme.set_help(_("Choose the background color theme for"
+        #                           " the persons in the SVG tree graph"))
+        addopt("svg_theme", self.svg_theme)
 
         svg_tree_color1 = ColorOption(_("Start gradient/Main color"), "#EF2929")
         addopt("svg_tree_color1", svg_tree_color1)
@@ -4226,6 +4242,12 @@ class DynamicWebOptions(MenuReportOptions):
         self.__svg_tree_color_dup = ColorOption(_("Color for duplicates"), "#888A85")
         addopt("svg_tree_color_dup", self.__svg_tree_color_dup)
 
+    def change_theme_visibility(self):
+        background = self.svg_tree_background.get_value()
+        if background == SVG_TREE_BACKGROUND_GENDER:
+            self.svg_theme.set_available(True)
+        else:
+            self.svg_theme.set_available(False)
 
     def __add_pages_options(self, menu):
         category_name = _("Pages")
