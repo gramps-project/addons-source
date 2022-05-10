@@ -1,0 +1,75 @@
+# Croatian translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# Copyright (C) Gramps project
+# Milo Ivir <mail@milotype.de>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2019-03-08 03:18+0100\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.1\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Language: hr\n"
+
+#: PostgreSQL/postgresql.gpr.py:26
+msgid "PostgreSQL"
+msgstr "PostgreSQL"
+
+#: PostgreSQL/postgresql.gpr.py:27
+msgid "_PostgreSQL Database"
+msgstr "_PostgreSQL baza podataka"
+
+#: PostgreSQL/postgresql.gpr.py:28
+msgid "PostgreSQL Database"
+msgstr "PostgreSQL baza podataka"
+
+#: PostgreSQL/postgresql.gpr.py:42
+msgid "PostgreSQL Warning:  Python psycopg2 module not found."
+msgstr "PostgreSQL upozorenje: Python modul psycopg2 nije pornađen."
+
+#: PostgreSQL/postgresql.gpr.py:48
+msgid "PostgreSQL Failed to Load"
+msgstr "Nije uspjelo pokretanje PostgreSQL-a"
+
+#: PostgreSQL/postgresql.gpr.py:49
+msgid ""
+"\n"
+"\n"
+"PostgreSQL is missing the psycopg2 python module.\n"
+"For now, it may be possible to install the files manually. See\n"
+"\n"
+"https://gramps-project.org/wiki/index.php?title=PostgreSQL \n"
+"\n"
+"To dismiss all future PostgreSQL warnings click Dismiss."
+msgstr ""
+"\n"
+"\n"
+"Za PostgreSQL nedostaje psycopg2 Python modul.\n"
+"Za sada je možda moguće instalirati datoteke ručno. Vidi\n"
+"\n"
+"https://gramps-project.org/wiki/index.php?title=PostgreSQL \n"
+"\n"
+"Za zanemarivanje budućih PostgreSQL upozorenja, klikni na „Zanemari”."
+
+#: PostgreSQL/postgresql.gpr.py:53
+msgid " Dismiss "
+msgstr " Zanemari "
+
+#: PostgreSQL/postgresql.gpr.py:54
+msgid "Continue"
+msgstr "Nastavi"
+
+#: PostgreSQL/postgresql.py:68
+msgid "Database version"
+msgstr "Verzija baze podatka"
+
+#: PostgreSQL/postgresql.py:69
+msgid "Database module location"
+msgstr "Mjesto modula baze podataka"

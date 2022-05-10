@@ -1,0 +1,78 @@
+# Russian translation for PostgreSQL
+# This file is distributed under the same license as the Gramps package.
+#
+# Ivan Komaritsyn <vantu5z@mail.ru>, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps50\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-12-06 09:18+0300\n"
+"PO-Revision-Date: 2018-12-06 09:21+0300\n"
+"Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Gtranslator 2.91.7\n"
+"X-Poedit-Language: Russian\n"
+"X-Poedit-Country: RUSSIAN FEDERATION\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+
+#: PostgreSQL/postgresql.gpr.py:26
+msgid "PostgreSQL"
+msgstr "PostgreSQL"
+
+#: PostgreSQL/postgresql.gpr.py:27
+msgid "_PostgreSQL Database"
+msgstr "База данных _PostgreSQL"
+
+#: PostgreSQL/postgresql.gpr.py:28
+msgid "PostgreSQL Database"
+msgstr "База данных PostgreSQL"
+
+#: PostgreSQL/postgresql.gpr.py:42
+msgid "PostgreSQL Warning:  Python psycopg2 module not found."
+msgstr "PostgreSQL ВНИМАНИЕ:  модуль Python psycopg2 не найден."
+
+#: PostgreSQL/postgresql.gpr.py:48
+msgid "PostgreSQL Failed to Load"
+msgstr "Не удалось запустить PostgreSQL"
+
+#: PostgreSQL/postgresql.gpr.py:49
+msgid ""
+"\n"
+"\n"
+"PostgreSQL is missing the psycopg2 python module.\n"
+"For now, it may be possible to install the files manually. See\n"
+"\n"
+"https://gramps-project.org/wiki/index.php?title=PostgreSQL \n"
+"\n"
+"To dismiss all future PostgreSQL warnings click Dismiss."
+msgstr ""
+"\n"
+"\n"
+"PostgreSQL не удалось найти модуль psycopg2 python.\n"
+"На данный момент модуль может быть установлен только вручную.\n"
+"Смотрите\n"
+"https://gramps-project.org/wiki/index.php?title=PostgreSQL \n"
+"\n"
+"Для отключения последующих уведомлений PostgreSQL нажмите 'Отключить'."
+
+#: PostgreSQL/postgresql.gpr.py:53
+msgid " Dismiss "
+msgstr " Отключить "
+
+#: PostgreSQL/postgresql.gpr.py:54
+msgid "Continue"
+msgstr "Продолжить"
+
+#: PostgreSQL/postgresql.py:68
+msgid "Database version"
+msgstr "Версия базы данных"
+
+#: PostgreSQL/postgresql.py:69
+msgid "Database module location"
+msgstr "Расположение модуля базы данных"
