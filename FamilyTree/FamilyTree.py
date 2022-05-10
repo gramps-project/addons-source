@@ -660,21 +660,19 @@ class FamilyTree(gramps.gen.plug.report.Report):
 
     def __family_get_display_name(self, family):
 
+        father_name = _("Unknown")
         father_handle = family.get_father_handle()
+        if father_handle:
+            father = self.database.get_person_from_handle(father_handle)
+            if father:
+                father_name = self.__person_get_display_name(father)
+
+        mother_name = _("Unknown")
         mother_handle = family.get_mother_handle()
-
-        father = self.database.get_person_from_handle(father_handle)
-        mother = self.database.get_person_from_handle(mother_handle)
-
-        if father:
-            father_name = self.__person_get_display_name(father)
-        else:
-            father_name = _("Unknown")
-
-        if mother:
-            mother_name = self.__person_get_display_name(mother)
-        else:
-            mother_name = _("Unknown")
+        if mother_handle:
+            mother = self.database.get_person_from_handle(mother_handle)
+            if mother:
+                mother_name = self.__person_get_display_name(mother)
 
         return StyledText(_("%(father)s and %(mother)s") % {
                 'father': father_name,
