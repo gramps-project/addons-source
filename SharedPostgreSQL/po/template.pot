@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"POT-Creation-Date: 2022-05-10 11:09-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,27 +17,27 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: PostgreSQL/postgresql.gpr.py:26
-msgid "PostgreSQL"
+#: SharedPostgreSQL/sharedpostgresql.gpr.py:29
+msgid "SharedPostgreSQL"
 msgstr ""
 
-#: PostgreSQL/postgresql.gpr.py:27
-msgid "_PostgreSQL Database"
+#: SharedPostgreSQL/sharedpostgresql.gpr.py:30
+msgid "Shared _PostgreSQL Database"
 msgstr ""
 
-#: PostgreSQL/postgresql.gpr.py:28
-msgid "PostgreSQL Database"
+#: SharedPostgreSQL/sharedpostgresql.gpr.py:31
+msgid "Shared PostgreSQL Database"
 msgstr ""
 
-#: PostgreSQL/postgresql.gpr.py:42
+#: SharedPostgreSQL/sharedpostgresql.gpr.py:46
 msgid "PostgreSQL Warning:  Python psycopg2 module not found."
 msgstr ""
 
-#: PostgreSQL/postgresql.gpr.py:48
+#: SharedPostgreSQL/sharedpostgresql.gpr.py:53
 msgid "PostgreSQL Failed to Load"
 msgstr ""
 
-#: PostgreSQL/postgresql.gpr.py:49
+#: SharedPostgreSQL/sharedpostgresql.gpr.py:55
 msgid ""
 "\n"
 "\n"
@@ -49,18 +49,18 @@ msgid ""
 "To dismiss all future PostgreSQL warnings click Dismiss."
 msgstr ""
 
-#: PostgreSQL/postgresql.gpr.py:53
+#: SharedPostgreSQL/sharedpostgresql.gpr.py:60
 msgid " Dismiss "
 msgstr ""
 
-#: PostgreSQL/postgresql.gpr.py:54
+#: SharedPostgreSQL/sharedpostgresql.gpr.py:61
 msgid "Continue"
 msgstr ""
 
-#: PostgreSQL/postgresql.py:68
+#: SharedPostgreSQL/sharedpostgresql.py:73
 msgid "Database version"
 msgstr ""
 
-#: PostgreSQL/postgresql.py:69
+#: SharedPostgreSQL/sharedpostgresql.py:74
 msgid "Database module location"
 msgstr ""
