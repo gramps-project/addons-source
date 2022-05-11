@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <forms>
-    <form id='CA1851EW-A' type='Census' title='1851 Canada East and West Census: Personal Census' date='1/11/1851'>
+    <form id='CA1851EW-A' type='Census' title='1851 Canada East and West Census: Personal Census' date='1851-01-11'>
         <heading>
             <_attribute>Schedule</_attribute>
         </heading>
@@ -235,7 +235,7 @@
             </column>
         </section>
     </form>
-    <form id='CA1851EW-B' type='Census' title='1851 Canada East and West Census: Agricultural Census' date='1/12/1851'>
+    <form id='CA1851EW-B' type='Census' title='1851 Canada East and West Census: Agricultural Census' date='1851-01-12'>
         <heading>
             <_attribute>Schedule</_attribute>
         </heading>
@@ -536,7 +536,7 @@
             </column>
         </section>
     </form>
-    <form id='CA1861EW' type='Census' title='1861 Canada East and West Census' date='1/14/1861'>
+    <form id='CA1861EW' type='Census' title='1861 Canada East and West Census' date='1861-01-14'>
         <heading>
             <_attribute>Schedule</_attribute>
         </heading>
@@ -737,7 +737,7 @@
             </column>
         </section>
     </form>
-    <form id='CA1871' type='Census' title='1871 Canadian Census' date='4/2/1871'>
+    <form id='CA1871' type='Census' title='1871 Canadian Census' date='1871-04-02'>
         <heading>
             <_attribute>Schedule</_attribute>
         </heading>
@@ -879,7 +879,7 @@
             </column>
         </section>
     </form>
-    <form id='CA1881' type='Census' title='1881 Canadian Census' date='4/4/1881'>
+    <form id='CA1881' type='Census' title='1881 Canadian Census' date='1881-04-04'>
         <heading>
             <_attribute>Schedule</_attribute>
         </heading>
@@ -1006,7 +1006,7 @@
             </column>
         </section>
     </form>
-    <form id='CA1891' type='Census' title='1891 Canadian Census' date='4/6/1891'>
+    <form id='CA1891' type='Census' title='1891 Canadian Census' date='1891-04-06'>
         <heading>
             <_attribute>Schedule</_attribute>
         </heading>
@@ -1161,7 +1161,7 @@
             </column>
         </section>
     </form>
-    <form id='CA1901-1' type='Census' title='1901 Canadian Census: Schedule 1' date='3/31/1901'>
+    <form id='CA1901-1' type='Census' title='1901 Canadian Census: Schedule 1' date='1901-03-31'>
         <heading>
             <_attribute>SubTitle</_attribute>
         </heading>
@@ -1367,7 +1367,7 @@
             </column>
         </section>
     </form>
-    <form id='CA1901-2' type='Census' title='1901 Canadian Census: Schedule 2' date='3/31/1901'>
+    <form id='CA1901-2' type='Census' title='1901 Canadian Census: Schedule 2' date='1901-03-31'>
         <heading>
             <_attribute>SubTitle</_attribute>
         </heading>
@@ -1593,7 +1593,7 @@
             </column>
         </section>
     </form>
-    <form id='CA1906' type='Census' title='1906 Canadian Census: Manitoba, Saskatchewan and Alberta' date='6/24/1906'>
+    <form id='CA1906' type='Census' title='1906 Canadian Census: Manitoba, Saskatchewan and Alberta' date='1906-06-24'>
         <heading>
             <_attribute>Schedule</_attribute>
         </heading>
@@ -1713,7 +1713,7 @@
             </column>
         </section>
     </form>
-    <form id='CA1911' type='Census' title='1911 Canadian Census' date='6/1/1911'>
+    <form id='CA1911' type='Census' title='1911 Canadian Census' date='1911-06-01'>
         <heading>
             <_attribute>SubTitle</_attribute>
         </heading>
@@ -1954,7 +1954,7 @@
             </column>
         </section>
     </form>
-    <form id='CA1911-A1' type='Census' title='1911 Canadian Census: Schedule A1' date='6/1/1911'>
+    <form id='CA1911-A1' type='Census' title='1911 Canadian Census: Schedule A1' date='1911-06-01'>
         <heading>
             <_attribute>SubTitle</_attribute>
         </heading>
@@ -2061,7 +2061,7 @@
             </column>
         </section>
     </form>
-    <form id='CA1916' type='Census' title='1916 Canadian Census: Manitoba, Saskatchewan and Alberta' date='6/1/1916'>
+    <form id='CA1916' type='Census' title='1916 Canadian Census: Manitoba, Saskatchewan and Alberta' date='1916-06-01'>
         <heading>
             <_attribute>SubTitle</_attribute>
         </heading>
