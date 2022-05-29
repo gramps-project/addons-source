@@ -31,7 +31,7 @@ _ = _trans.gettext
 
 WEBSITES = [
     ["Person", "Find-A-Grave", _("Find A Grave"), "http://www.findagrave.com/cgi-bin/fg.cgi?page=gsr&GSfn=%(given)s&GSmn=%(middle)s&GSln=%(surname)s&GSby=%(birth)s&GSbyrel=in&GSdy=%(death)s&GSdyrel=in&GScntry=0&GSst=0&GSgrid=&df=all&GSob=b"],
-    ["Person", "FamilySearch", _("FamilySearch.org")+"  (Account Login; free)", "https://www.familysearch.org/search/record/results?q.birthLikeDate.from=%(birth)s&q.birthLikeDate.to=%(birth)s&q.deathLikeDate.from=%(death)s&q.deathLikeDate.to=%(death)s&q.givenName=%(given)s+%(middle)s&q.surname=%(surname)s"], #Free Account Needed
+    ["Person", "FamilySearch", _("FamilySearch.org")+"  (Account Login; free)",  "https://www.familysearch.org/search/record/results?q.birthLikeDate.from=%(birth)s&q.birthLikeDate.to=%(birth)s&q.deathLikeDate.from=%(death)s&q.deathLikeDate.to=%(death)s&q.givenName=%(given)s+%(middle)s&q.surname=%(surname)s"], #Free Account Needed
     ["Person", "US-Google", _("US Google"), '''http://www.google.com/search?q="%(given)s+%(middle)s+%(surname)s+%(birth)s+%(death)s"'''],
     ["Person", "newspapers.nla.gov.au", "Australia / Newspaper Family Notices", "http://trove.nla.gov.au/newspaper/result?q=%(given)s+%(surname)s&exactPhrase=&anyWords=&notWords=&requestHandler=&dateFrom=&dateTo=&l-advcategory=Family+Notices&sortby="], # Australian
     ["Person", "Geneanet", "Geneanet", "http://search.geneanet.org/result.php?lang=en&name=%(surname)s"],
@@ -43,7 +43,7 @@ WEBSITES = [
     ["Person", "Legacy Obits", "Legacy.com", "https://www.legacy.com/search?countryId=366899&countryUrl=united-states-of-america&dateRange=All&firstName=%(given)s&lastName=%(surname)s"],
     ["Person", "Archive.org", "Archive.org", '''http://www.archive.org/search.php?query="%(given)s+%(surname)s+%(birth)s+"-"+%(death)s"'''],
     ["Person", "Wikipedia", "Wikipedia", "https://en.wikipedia.org/w/index.php?search=%(given)s+%(surname)s"],
-    ["Person", "FamilySearch-Tree", _("FamilySearch.org")+" - Family Trees  (Account Login; free)", "https://www.familysearch.org/tree/find/name?search=1&birth=%%7C%(birth)s-%(birth)s%%7C0&death=%%7C%(death)s-%(death)s%%7C0&self=%(given)s%%20%(middle)s%%7C%(surname)s%%7C0%%7C1"], #Free Account Needed
+    ["Person", "FamilySearch-Tree", _("FamilySearch.org")+" - Family Trees  (Account Login; free)", "https://www.familysearch.org/search/tree/results?count=20&q.birthLikeDate.from=%(birth)s&q.birthLikeDate.to=%(birth)s&q.deathLikeDate.from=%(death)s&q.deathLikeDate.to=%(death)s&q.givenName=%(given)s+%(middle)s&q.surname=%(surname)s"], #Free Account Needed
     ["Person", "WeRelate", "WeRelate", "https://www.werelate.org/wiki/Special:Search?sort=score&ns=Person&a=&st=&g=%(given)s+%(middle)s&s=%(surname)s&p=&bd=%(birth)s&br=1&bp=&dd=%(death)s&dr=1&rows=20&ecp=c"],
     ["Person", "WikiTree", "WikiTree", "https://wikitree.sdms.si/function/WTWebProfileSearch/Profiles.htm?&Query=%(given)s+%(surname)s+B%(birth)s+D%(death)s&MaxProfiles=500&SortOrder=Default&PageSize=10"],
     ]
