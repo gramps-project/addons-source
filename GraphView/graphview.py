@@ -46,6 +46,7 @@ from html import escape
 from collections import abc, deque
 import gi
 from gi.repository import Gtk, Gdk, GdkPixbuf, GLib, Pango
+import pickle
 
 #-------------------------------------------------------------------------
 #
@@ -70,6 +71,7 @@ from gramps.gen.utils.file import search_for, media_path_full, find_file
 from gramps.gen.utils.libformatting import FormattingHelper
 from gramps.gen.utils.thumbnails import get_thumbnail_path
 
+from gramps.gui.ddtargets import DdTargets
 from gramps.gui.dialog import (OptionDialog, ErrorDialog, QuestionDialog2,
                                WarningDialog)
 from gramps.gui.display import display_url
@@ -981,11 +983,13 @@ class GraphWidget(object):
         self._last_x = 0
         self._last_y = 0
         self._in_move = False
+        self._in_drag = False
         self.view = view
         self.dbstate = dbstate
         self.uistate = uistate
         self.parser = None
         self.active_person_handle = None
+        self.drag_person = None
 
         self.actions = Actions(dbstate, uistate, self.view.bookmarks)
         self.actions.connect('rebuild-graph', self.view.build_tree)
@@ -1151,6 +1155,22 @@ class GraphWidget(object):
         self.menu = None
         self.retest_font = True     # flag indicates need to resize font
         self.bold_size = self.norm_size = 0  # font sizes to send to dot
+
+        # setup drag and drop
+        drag_widget = self.get_widget()
+        drag_widget.drag_source_set(Gdk.ModifierType.BUTTON1_MASK, [],
+                                    Gdk.DragAction.COPY)
+        drag_widget.connect("drag_data_get", self.cb_drag_data_get)
+        drag_widget.connect("drag_begin", self.cb_drag_begin)
+        drag_widget.connect("drag_end", self.cb_drag_end)
+
+        tglist = Gtk.TargetList.new([])
+        tglist.add(DdTargets.PERSON_LINK.atom_drag_type,
+                   DdTargets.PERSON_LINK.target_flags,
+                   DdTargets.PERSON_LINK.app_id)
+        # allow drag to a text document, info on drag_get will be 0L !
+        tglist.add_text_targets(0)
+        drag_widget.drag_source_set_target_list(tglist)
 
     def add_popover(self, widget, container):
         """
@@ -1470,6 +1490,7 @@ class GraphWidget(object):
         if self.uistate.window.get_window().is_visible():
             process_pending_events()
 
+        self._in_drag = False
         self.clear()
         self.active_person_handle = active_person
 
@@ -1620,6 +1641,7 @@ class GraphWidget(object):
         """
         Exit from scroll mode when button release.
         """
+        self._in_drag = False
         button = event.get_button()[1]
         if((button == 1 or button == 2) and
            event.type == getattr(Gdk.EventType, "BUTTON_RELEASE")):
@@ -1648,6 +1670,35 @@ class GraphWidget(object):
                      (event.y_root - self._last_y) * scale_coef)
             self.vadjustment.set_value(new_y)
             return True
+
+        if self._in_drag and (event.type == Gdk.EventType.MOTION_NOTIFY):
+            # start drag when cursor moved more then 5
+            # to separate it from simple click
+            if ((abs(self._last_x - event.x) > 5)
+                    or (abs(self._last_x - event.x) > 5)):
+                self.uistate.set_busy_cursor(False)
+                # Remove all single click events
+                for click_item in self.click_events:
+                    if not click_item.is_destroyed():
+                        GLib.source_remove(click_item.get_id())
+                self.click_events.clear()
+
+                # translate to drag_widget coords
+                drag_widget = self.get_widget()
+                scale_coef = self.canvas.get_scale()
+                bounds = self.canvas.get_root_item().get_bounds()
+                height_canvas = bounds.y2 - bounds.y1
+                x = self._last_x * scale_coef - self.hadjustment.get_value()
+                y = ((height_canvas + self._last_y) * scale_coef -
+                     self.vadjustment.get_value())
+
+                drag_widget.drag_begin_with_coordinates(
+                    drag_widget.drag_source_get_target_list(),
+                    Gdk.DragAction.COPY,
+                    Gdk.ModifierType.BUTTON1_MASK,
+                    event,
+                    x, y)
+                return True
         return False
 
     def set_zoom(self, value):
@@ -1708,6 +1759,11 @@ class GraphWidget(object):
             context = GLib.main_context_default()
             self.click_events.append(context.find_source_by_id(click_event_id))
 
+            # go to drag mode, applyed on motion event
+            self._in_drag = True
+            self._last_x = event.x
+            self._last_y = event.y
+
         elif button == 3 and node_class:                    # right mouse
             if node_class == 'node':
                 self.menu = PopupMenu(self, 'person', handle)
@@ -1722,6 +1778,30 @@ class GraphWidget(object):
             self.button_press(item, target, event)
 
         return True
+
+    def cb_drag_begin(self, widget, data):
+        """Set up some inital conditions for drag. Set up icon."""
+        self._in_drag = True
+        widget.drag_source_set_icon_name('gramps-person')
+
+    def cb_drag_end(self, widget, data):
+        """Set up some inital conditions for drag. Set up icon."""
+        self._in_drag = False
+
+    def cb_drag_data_get(self, widget, context, sel_data, info, time):
+        """
+        Returned parameters after drag.
+        Specified for 'person-link', for others return text info about person.
+        """
+        tgs = [x.name() for x in context.list_targets()]
+        if info == DdTargets.PERSON_LINK.app_id:
+            data = (DdTargets.PERSON_LINK.drag_type,
+                    id(self), self.drag_person.handle, 0)
+            sel_data.set(sel_data.get_target(), 8, pickle.dumps(data))
+        elif ('TEXT' in tgs or 'text/plain' in tgs) and info == 0:
+            format_helper = FormattingHelper(self.dbstate)
+            sel_data.set_text(
+                format_helper.format_person(self.drag_person, 11),-1)
 
     def find_a_parent(self, handle):
         """
