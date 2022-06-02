@@ -46,7 +46,6 @@ from html import escape
 from collections import abc, deque
 import gi
 from gi.repository import Gtk, Gdk, GdkPixbuf, GLib, Pango
-import pickle
 
 #-------------------------------------------------------------------------
 #
@@ -71,7 +70,6 @@ from gramps.gen.utils.file import search_for, media_path_full, find_file
 from gramps.gen.utils.libformatting import FormattingHelper
 from gramps.gen.utils.thumbnails import get_thumbnail_path
 
-from gramps.gui.ddtargets import DdTargets
 from gramps.gui.dialog import (OptionDialog, ErrorDialog, QuestionDialog2,
                                WarningDialog)
 from gramps.gui.display import display_url
@@ -137,6 +135,7 @@ import sys
 sys.path.append(os.path.abspath(os.path.dirname(__file__)))
 from search_widget import SearchWidget, Popover, ListBoxRow, get_person_tooltip
 from avatars import Avatars
+from drag_n_drop import DragAndDrop
 
 
 #-------------------------------------------------------------------------
@@ -983,13 +982,11 @@ class GraphWidget(object):
         self._last_x = 0
         self._last_y = 0
         self._in_move = False
-        self._in_drag = False
         self.view = view
         self.dbstate = dbstate
         self.uistate = uistate
         self.parser = None
         self.active_person_handle = None
-        self.drag_person = None
 
         self.actions = Actions(dbstate, uistate, self.view.bookmarks)
         self.actions.connect('rebuild-graph', self.view.build_tree)
@@ -1157,10 +1154,7 @@ class GraphWidget(object):
         self.bold_size = self.norm_size = 0  # font sizes to send to dot
 
         # setup drag and drop
-        drag_widget = self.get_widget()
-        drag_widget.connect("drag_data_get", self.cb_drag_data_get)
-        drag_widget.connect("drag_begin", self.cb_drag_begin)
-        drag_widget.connect("drag_end", self.cb_drag_end)
+        self.dnd = DragAndDrop(self.get_widget(), self.dbstate)
 
     def add_popover(self, widget, container):
         """
@@ -1175,7 +1169,7 @@ class GraphWidget(object):
     def build_spinner(self, icon, start, end, tooltip, conf_const):
         """
         Build spinner with icon and pack it into box.
-        Chenges apply to config with delay.
+        Changes apply to config with delay.
         """
         box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
         img = Gtk.Image.new_from_icon_name(icon, Gtk.IconSize.MENU)
@@ -1480,8 +1474,8 @@ class GraphWidget(object):
         if self.uistate.window.get_window().is_visible():
             process_pending_events()
 
-        self._in_drag = False       # True - when drag can be started
-        self._do_drag = False       # True - when drag is started
+        self.dnd.stop()
+
         self.clear()
         self.active_person_handle = active_person
 
@@ -1632,7 +1626,7 @@ class GraphWidget(object):
         """
         Exit from scroll mode when button release.
         """
-        self._in_drag = False
+        self.dnd.stop()
         button = event.get_button()[1]
         if((button == 1 or button == 2) and
            event.type == getattr(Gdk.EventType, "BUTTON_RELEASE")):
@@ -1665,7 +1659,7 @@ class GraphWidget(object):
         if not (event.type == Gdk.EventType.MOTION_NOTIFY):
             return False
 
-        if self._in_drag and (not self._do_drag):
+        if self.dnd.is_ready():
             # start drag when cursor moved more then 5
             # to separate it from simple click
             if ((abs(self._last_x - event.x_root) > 5)
@@ -1682,32 +1676,8 @@ class GraphWidget(object):
                 x = self._last_x * scale_coef - self.hadjustment.get_value()
                 y = self._last_y * scale_coef - self.vadjustment.get_value()
 
-                # setup targets
-                tglist = Gtk.TargetList.new([])
-                if self.drag_person is not None:
-                    tglist.add(DdTargets.PERSON_LINK.atom_drag_type,
-                               DdTargets.PERSON_LINK.target_flags,
-                               DdTargets.PERSON_LINK.app_id,
-                               )
-                    # allow drag to a text document, info on drag_get will be 0
-                    tglist.add_text_targets(0)
-                if self.drag_family is not None:
-                    tglist.add(DdTargets.FAMILY_LINK.atom_drag_type,
-                               DdTargets.FAMILY_LINK.target_flags,
-                               DdTargets.FAMILY_LINK.app_id,
-                               )
-                    # allow drag to a text document, info on drag_get will be 1
-                    tglist.add_text_targets(1)
+                self.dnd.start_drag(x, y, event)
 
-                # start drag
-                drag_widget = self.get_widget()
-                drag_widget.drag_begin_with_coordinates(
-                    tglist,
-                    Gdk.DragAction.COPY,
-                    1,                      # left mouse button = 1
-                    event,
-                    x, y)
-                return True
         return False
 
     def set_zoom(self, value):
@@ -1750,16 +1720,8 @@ class GraphWidget(object):
             return False
 
         if button == 1 and node_class:                      # left mouse
-            # set drag mode, it will be applyed on motion event
-            self.drag_person = None
-            self.drag_family = None
-            if node_class == 'node':
-                self.drag_person = self.dbstate.db.get_person_from_handle(
-                    handle)
-            if node_class == 'familynode':
-                self.drag_family = self.dbstate.db.get_family_from_handle(
-                    handle)
-            self._in_drag = True
+            # set drag mode, it will be applied on motion event
+            self.dnd.set_ready(node_class, handle)
             self._last_x = event.x_root
             self._last_y = event.y_root
 
@@ -1796,62 +1758,6 @@ class GraphWidget(object):
             self.button_press(item, target, event)
 
         return True
-
-    def cb_drag_begin(self, widget, context):
-        """
-        Called on start drag.
-        """
-        self._do_drag = True
-        tgs = [x.name() for x in context.list_targets()]
-        # set icon depending on person or family drag
-        if DdTargets.PERSON_LINK.drag_type in tgs:
-            Gtk.drag_set_icon_name(context, 'gramps-person', 0, 0)
-        if DdTargets.FAMILY_LINK.drag_type in tgs:
-            Gtk.drag_set_icon_name(context, 'gramps-family', 0, 0)
-
-    def cb_drag_end(self, widget, context):
-        """
-        Called when drag is end.
-        """
-        self._in_drag = False
-        self._do_drag = False
-
-    def cb_drag_data_get(self, widget, context, sel_data, info, time):
-        """
-        Returned parameters after drag.
-        Specified for 'person-link' and 'family-link',
-        also to return text info about person or family.
-        """
-        tgs = [x.name() for x in context.list_targets()]
-
-        if info == DdTargets.PERSON_LINK.app_id:
-            data = (DdTargets.PERSON_LINK.drag_type,
-                    id(widget), self.drag_person.handle, 0)
-            sel_data.set(sel_data.get_target(), 8, pickle.dumps(data))
-        elif info == DdTargets.FAMILY_LINK.app_id:
-            data = (DdTargets.FAMILY_LINK.drag_type,
-                    id(widget), self.drag_family.handle, 0)
-            sel_data.set(sel_data.get_target(), 8, pickle.dumps(data))
-        elif ('TEXT' in tgs or 'text/plain' in tgs):
-            if info == 0:
-                format_helper = FormattingHelper(self.dbstate)
-                sel_data.set_text(
-                    format_helper.format_person(self.drag_person, 11),-1)
-            if info == 1:
-                f_handle = self.drag_family.get_father_handle()
-                m_handle = self.drag_family.get_mother_handle()
-                if f_handle:
-                    father = self.dbstate.db.get_person_from_handle(f_handle)
-                    father = displayer.display(father)
-                else:
-                    father = '...'
-                if m_handle:
-                    mother = self.dbstate.db.get_person_from_handle(m_handle)
-                    mother = displayer.display(mother)
-                else:
-                    mother = '...'
-                sel_data.set_text(
-                    _('Family of %s and %s') % (father, mother), -1)
 
     def find_a_parent(self, handle):
         """
