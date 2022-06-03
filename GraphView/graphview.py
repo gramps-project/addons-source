@@ -1154,7 +1154,8 @@ class GraphWidget(object):
         self.bold_size = self.norm_size = 0  # font sizes to send to dot
 
         # setup drag and drop
-        self.dnd = DragAndDrop(self.get_widget(), self.dbstate)
+        self.dnd = DragAndDrop(self.canvas, self.dbstate)
+        self.canvas.connect("drag-begin", self.del_click_events)
 
     def add_popover(self, widget, container):
         """
@@ -1474,8 +1475,6 @@ class GraphWidget(object):
         if self.uistate.window.get_window().is_visible():
             process_pending_events()
 
-        self.dnd.stop()
-
         self.clear()
         self.active_person_handle = active_person
 
@@ -1606,7 +1605,8 @@ class GraphWidget(object):
             return False
 
         button = event.get_button()[1]
-        if button == 1 or button == 2:
+        if button in (1, 2):
+            self.dnd.enable_dnd(False)
             window = self.canvas.get_parent().get_window()
             window.set_cursor(Gdk.Cursor.new(Gdk.CursorType.FLEUR))
             self._last_x = event.x_root
@@ -1626,7 +1626,6 @@ class GraphWidget(object):
         """
         Exit from scroll mode when button release.
         """
-        self.dnd.stop()
         button = event.get_button()[1]
         if((button == 1 or button == 2) and
            event.type == getattr(Gdk.EventType, "BUTTON_RELEASE")):
@@ -1634,6 +1633,7 @@ class GraphWidget(object):
             self.motion_notify_event(item, target, event)
             self.canvas.get_parent().get_window().set_cursor(None)
             self._in_move = False
+            self.dnd.enable_dnd(True)
             return True
         return False
 
@@ -1655,29 +1655,6 @@ class GraphWidget(object):
                      (event.y_root - self._last_y) * scale_coef)
             self.vadjustment.set_value(new_y)
             return True
-
-        if not (event.type == Gdk.EventType.MOTION_NOTIFY):
-            return False
-
-        if self.dnd.is_ready():
-            # start drag when cursor moved more then 5
-            # to separate it from simple click
-            if ((abs(self._last_x - event.x_root) > 5)
-                    or (abs(self._last_y - event.y_root) > 5)):
-                self.uistate.set_busy_cursor(False)
-                # Remove all single click events
-                for click_item in self.click_events:
-                    if not click_item.is_destroyed():
-                        GLib.source_remove(click_item.get_id())
-                self.click_events.clear()
-
-                # translate to drag_widget coords
-                scale_coef = self.canvas.get_scale()
-                x = self._last_x * scale_coef - self.hadjustment.get_value()
-                y = self._last_y * scale_coef - self.vadjustment.get_value()
-
-                self.dnd.start_drag(x, y, event)
-
         return False
 
     def set_zoom(self, value):
@@ -1687,6 +1664,15 @@ class GraphWidget(object):
         self.scale = value
         self.view._config.set('interface.graphview-scale', value)
         self.canvas.set_scale(value / self.transform_scale)
+
+    def del_click_events(self, *args):
+        """
+        Remove all single click events.
+        """
+        for click_item in self.click_events:
+            if not click_item.is_destroyed():
+                GLib.source_remove(click_item.get_id())
+        self.click_events.clear()
 
     def select_node(self, item, target, event):
         """
@@ -1704,11 +1690,7 @@ class GraphWidget(object):
 
         # perform double click on node by left mouse button
         if event.type == getattr(Gdk.EventType, "DOUBLE_BUTTON_PRESS"):
-            # Remove all single click events
-            for click_item in self.click_events:
-                if not click_item.is_destroyed():
-                    GLib.source_remove(click_item.get_id())
-            self.click_events.clear()
+            self.del_click_events()
             if button == 1 and node_class == 'node':
                 GLib.idle_add(self.actions.edit_person, None, handle)
                 return True
@@ -1719,11 +1701,8 @@ class GraphWidget(object):
         if event.type != getattr(Gdk.EventType, "BUTTON_PRESS"):
             return False
 
-        if button == 1 and node_class:                      # left mouse
-            # set drag mode, it will be applied on motion event
-            self.dnd.set_ready(node_class, handle)
-            self._last_x = event.x_root
-            self._last_y = event.y_root
+        if button == 1 and node_class in ('node', 'familynode'):
+            self.dnd.set_target(node_class, handle)
 
         if button == 1 and node_class == 'node':            # left mouse
             if handle == self.active_person_handle:

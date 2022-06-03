@@ -20,24 +20,34 @@ class DragAndDrop():
     Add Drag-n-Drop feature to GraphView addon.
     """
 
-    def __init__(self, widget, dbstate):
-        self.ready = False          # True - when drag can be started
-        self.do_drag = False        # True - when drag is started
-
+    def __init__(self, canvas, dbstate):
         self.drag_person = None
         self.drag_family = None
 
         self.dbstate = dbstate
-        self.widget = widget
-        self.widget.connect("drag_data_get", self.drag_data_get)
-        self.widget.connect("drag_begin", self.begin)
-        self.widget.connect("drag_end", self.stop)
+        self.canvas = canvas
+        self.canvas.connect("drag_data_get", self.drag_data_get)
+        self.canvas.connect("drag_begin", self.begin)
+        self.canvas.connect("drag_end", self.stop)
+
+        self.enable_dnd(True)
+
+    def enable_dnd(self, state):
+        """
+        Enable or disable drag-n-drop for canvas widget.
+        """
+        if state:
+            self.canvas.drag_source_set(
+                Gdk.ModifierType.BUTTON1_MASK,
+                [],
+                Gdk.DragAction.COPY)
+        else:
+            self.canvas.drag_source_unset()
 
     def begin(self, widget, context):
         """
         Called when drag is start.
         """
-        self.do_drag = True
         tgs = [x.name() for x in context.list_targets()]
         # set icon depending on person or family drag
         if DdTargets.PERSON_LINK.drag_type in tgs:
@@ -49,29 +59,36 @@ class DragAndDrop():
         """
         Called when drag is end.
         """
-        self.ready = False
-        self.do_drag = False
         self.drag_person = None
         self.drag_family = None
 
-    def is_ready(self):
+    def set_target(self, node_class, handle):
         """
-        Check if we ready to drag.
-        """
-        return self.ready and (not self.do_drag)
-
-    def set_ready(self, node_class, handle):
-        """
-        Set ready to drag state.
+        Set targets for drag-n-drop.
         """
         self.stop()
+        tglist = Gtk.TargetList.new([])
         if node_class == 'node':
             self.drag_person = self.dbstate.db.get_person_from_handle(handle)
+            tglist.add(DdTargets.PERSON_LINK.atom_drag_type,
+                       DdTargets.PERSON_LINK.target_flags,
+                       DdTargets.PERSON_LINK.app_id,
+                       )
+            # allow drag to a text document, info on drag_get will be 0
+            tglist.add_text_targets(0)
         elif node_class == 'familynode':
             self.drag_family = self.dbstate.db.get_family_from_handle(handle)
+            tglist.add(DdTargets.FAMILY_LINK.atom_drag_type,
+                       DdTargets.FAMILY_LINK.target_flags,
+                       DdTargets.FAMILY_LINK.app_id,
+                       )
+            # allow drag to a text document, info on drag_get will be 1
+            tglist.add_text_targets(1)
 
-        if self.drag_person or self.drag_family:
-            self.ready = True
+        if tglist:
+            self.canvas.drag_source_set_target_list(tglist)
+        else:
+            self.enable_dnd(False)
 
     def drag_data_get(self, widget, context, sel_data, info, time):
         """
@@ -109,33 +126,3 @@ class DragAndDrop():
                     mother = '...'
                 sel_data.set_text(
                     _('Family of %s and %s') % (father, mother), -1)
-
-    def start_drag(self, pos_x, pos_y, event):
-        """
-        Activate drag.
-        """
-        # setup targets
-        tglist = Gtk.TargetList.new([])
-        if self.drag_person is not None:
-            tglist.add(DdTargets.PERSON_LINK.atom_drag_type,
-                       DdTargets.PERSON_LINK.target_flags,
-                       DdTargets.PERSON_LINK.app_id,
-                       )
-            # allow drag to a text document, info on drag_get will be 0
-            tglist.add_text_targets(0)
-        if self.drag_family is not None:
-            tglist.add(DdTargets.FAMILY_LINK.atom_drag_type,
-                       DdTargets.FAMILY_LINK.target_flags,
-                       DdTargets.FAMILY_LINK.app_id,
-                       )
-            # allow drag to a text document, info on drag_get will be 1
-            tglist.add_text_targets(1)
-
-        # start drag
-        self.widget.drag_begin_with_coordinates(
-            tglist,
-            Gdk.DragAction.COPY,
-            1,                      # left mouse button = 1
-            event,
-            pos_x, pos_y)
-        return True
