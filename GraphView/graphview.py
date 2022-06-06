@@ -1154,7 +1154,8 @@ class GraphWidget(object):
         self.bold_size = self.norm_size = 0  # font sizes to send to dot
 
         # setup drag and drop
-        self.dnd = DragAndDrop(self.canvas, self.dbstate)
+        self.dnd = DragAndDrop(self.canvas, self.dbstate, self.uistate,
+                               self.hadjustment, self.vadjustment)
         self.canvas.connect("drag-begin", self.del_click_events)
 
     def add_popover(self, widget, container):
