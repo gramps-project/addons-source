@@ -6,9 +6,11 @@ from gi.repository import Gtk, Gdk
 from gramps.gen.db import DbTxn
 from gramps.gen.display.name import displayer
 from gramps.gen.utils.libformatting import FormattingHelper
-from gramps.gen.lib import ChildRef
+from gramps.gen.lib import ChildRef, PersonRef, Person
 from gramps.gui.ddtargets import DdTargets
-from gramps.gui.dialog import QuestionDialog2
+
+from gramps.gui.editors import EditPersonRef, EditFamily
+from gramps.gen.errors import WindowActiveError
 
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
@@ -18,12 +20,13 @@ except ValueError:
 _ = _trans.gettext
 ngettext = glocale.translation.ngettext
 
+gtk_version = float("%s.%s" % (Gtk.MAJOR_VERSION, Gtk.MINOR_VERSION))
+
 
 class DragAndDrop():
     """
     Add Drag-n-Drop feature to GraphView addon.
     """
-
     def __init__(self, canvas, dbstate, uistate, h_adj, v_adj):
         self.drag_person = None
         self.drag_family = None
@@ -180,19 +183,40 @@ class DragAndDrop():
         elif p_data[0] == 'person-link':
             out_data.append(p_data[2])
 
+        action_menu = Popover(self.canvas, _('Available actions'))
+        rect = Gdk.Rectangle()
+        rect.x = x
+        rect.y = y
+        rect.height = rect.width = 1
+        action_menu.set_pointing_to(rect)
+
         # if person is dropped to family node then add them to this family
         if receiver[0] == 'familynode' and out_data:
-            title = ngettext("Add child to family?",
-                             "Add children to family?",
+            title = ngettext("Add as child to family",
+                             "Add as children to family",
                              len(out_data))
-            quest = ngettext("Do you want to add child to the family?",
-                             "Do you want to add children to the family?",
-                             len(out_data))
-            dialog = QuestionDialog2(title, quest, _("Yes"), _("No"),
-                                     self.uistate.window)
-            if dialog.run():
-                for person_handle in out_data:
-                    self.__add_child_to_family(person_handle, receiver[1])
+            action_menu.add_action(title, self.add_children_to_family,
+                                   receiver[1], out_data)
+            if len(out_data) == 1:
+                person = self.dbstate.db.get_person_from_handle(out_data[0])
+                gender = person.get_gender()
+                f_handle = receiver[1].get_father_handle()
+                m_handle = receiver[1].get_mother_handle()
+
+                if not f_handle and gender in (Person.MALE, Person.UNKNOWN):
+                    action_menu.add_action(_('Add spouse as father'),
+                                           self.add_spouse,
+                                           receiver[1], out_data[0], 'father')
+                elif not m_handle and gender in (Person.FEMALE, Person.UNKNOWN):
+                    action_menu.add_action(_('Add spouse as mother'),
+                                           self.add_spouse,
+                                           receiver[1], out_data[0], 'mother')
+
+        # if drop to person node
+        if receiver[0] == 'node' and len(out_data) == 1:
+            action_menu.add_action(_('Add relation'), self.add_personref,
+                                   receiver[1], out_data[0])
+        action_menu.popup()
 
     def get_item_at_pos(self, x, y):
         """
@@ -227,18 +251,109 @@ class DragAndDrop():
             pass
         return None
 
-    def __add_child_to_family(self, person_handle, family):
+    def add_spouse(self, widget, family, person_handle, kind):
         """
-        Write data to db.
+        Add spouse to family.
         """
-        person = self.dbstate.db.get_person_from_handle(person_handle)
-        ref = ChildRef()
-        ref.ref = person_handle
-        family.add_child_ref(ref)
-        person.add_parent_family_handle(family.get_handle())
+        try:
+            dialog = EditFamily(self.dbstate, self.uistate, [], family)
+            if kind == 'father':
+                dialog.obj.set_father_handle(person_handle)
+                dialog.update_father(person_handle)
+            elif kind == 'mother':
+                dialog.obj.set_mother_handle(person_handle)
+                dialog.update_mother(person_handle)
+        except WindowActiveError:
+            pass
 
-        with DbTxn(_("Add Child to Family"), self.dbstate.db) as trans:
-            # default relationship is used
+    def add_children_to_family(self, widget, family, data):
+        """
+        Add persons to family.
+        data: list of person handles
+        """
+        for person_handle in data:
+            person = self.dbstate.db.get_person_from_handle(person_handle)
+            ref = ChildRef()
+            ref.ref = person_handle
+            family.add_child_ref(ref)
+            person.add_parent_family_handle(family.get_handle())
+
+            with DbTxn(_("Add Child to Family"), self.dbstate.db) as trans:
+                # default relationship is used
+                self.dbstate.db.commit_person(person, trans)
+                # add child to family
+                self.dbstate.db.commit_family(family, trans)
+
+    def add_personref(self, widget, source, person_handle):
+        """
+        Open dialog to add reference to person.
+        """
+        ref = PersonRef()
+        ref.rel = _('Godfather')    # default role
+        ref.source = source
+        try:
+            dialog = EditPersonRef(self.dbstate, self.uistate, [],
+                                   ref, self.__cb_add_ref)
+            dialog.update_person(
+                self.dbstate.db.get_person_from_handle(person_handle))
+        except WindowActiveError:
+            pass
+
+    def __cb_add_ref(self, obj):
+        """
+        Save person reference.
+        """
+        person = obj.source
+        person.add_person_ref(obj)
+        with DbTxn(_("Add Reference to Person"), self.dbstate.db) as trans:
             self.dbstate.db.commit_person(person, trans)
-            # add child to family
-            self.dbstate.db.commit_family(family, trans)
+
+
+class Popover(Gtk.Popover):
+    """
+    Display available actions on drop event.
+    """
+    def __init__(self, widget, label):
+        Gtk.Popover.__init__(self, relative_to=widget)
+        self.set_modal(True)
+
+        self.box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+
+        lbl = Gtk.Label(label)
+        self.box.add(lbl)
+
+        self.cancel_btn = Gtk.Button(label=_('Cancel'))
+        self.box.pack_end(self.cancel_btn, True, True, 5)
+        self.cancel_btn.connect('clicked', self.popdown)
+
+        # set all widgets visible
+        self.box.show_all()
+        self.add(self.box)
+
+    def add_action(self, label, callback, *args):
+        action = Gtk.Button(label=label)
+        self.box.pack_end(action, True, True, 5)
+        if callback:
+            action.connect('clicked', callback, *args)
+        action.connect('clicked', self.popdown)
+        action.show()
+        # move cancel button to the bottom
+        self.box.reorder_child(self.cancel_btn, 0)
+
+    def popup(self):
+        """
+        Different popup depending on gtk version.
+        """
+        if gtk_version >= 3.22:
+            super(self.__class__, self).popup()
+        else:
+            self.show()
+
+    def popdown(self, *args):
+        """
+        Different popdown depending on gtk version.
+        """
+        if gtk_version >= 3.22:
+            super(self.__class__, self).popdown()
+        else:
+            self.hide()
