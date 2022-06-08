@@ -40,6 +40,7 @@ class DragAndDrop():
         self.canvas.connect("drag_begin", self.begin)
         self.canvas.connect("drag_end", self.stop)
 
+        self.drag_enabled = False
         self.enable_dnd(True)
 
         # add drop support
@@ -64,6 +65,8 @@ class DragAndDrop():
         """
         Enable or disable drag-n-drop for canvas widget.
         """
+        if self.drag_enabled == state:
+            return
         if state:
             self.canvas.drag_source_set(
                 Gdk.ModifierType.BUTTON1_MASK,
@@ -71,6 +74,7 @@ class DragAndDrop():
                 Gdk.DragAction.COPY)
         else:
             self.canvas.drag_source_unset()
+        self.drag_enabled = state
 
     def begin(self, widget, context):
         """

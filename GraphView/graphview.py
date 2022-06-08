@@ -1154,9 +1154,9 @@ class GraphWidget(object):
         self.bold_size = self.norm_size = 0  # font sizes to send to dot
 
         # setup drag and drop
+        self.canvas.connect("drag-begin", self.del_click_events)
         self.dnd = DragAndDrop(self.canvas, self.dbstate, self.uistate,
                                self.hadjustment, self.vadjustment)
-        self.canvas.connect("drag-begin", self.del_click_events)
 
     def add_popover(self, widget, container):
         """
@@ -1471,6 +1471,7 @@ class GraphWidget(object):
         """
         Populate the graph with widgets derived from Graphviz.
         """
+        self.dnd.enable_dnd(False)
         # set the busy cursor, so the user knows that we are working
         self.uistate.set_busy_cursor(True)
         if self.uistate.window.get_window().is_visible():
@@ -1634,7 +1635,6 @@ class GraphWidget(object):
             self.motion_notify_event(item, target, event)
             self.canvas.get_parent().get_window().set_cursor(None)
             self._in_move = False
-            self.dnd.enable_dnd(True)
             return True
         return False
 
@@ -1656,6 +1656,7 @@ class GraphWidget(object):
                      (event.y_root - self._last_y) * scale_coef)
             self.vadjustment.set_value(new_y)
             return True
+        self.dnd.enable_dnd(True)
         return False
 
     def set_zoom(self, value):
