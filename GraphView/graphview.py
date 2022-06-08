@@ -1141,6 +1141,7 @@ class GraphWidget(object):
 
         # for detecting double click
         self.click_events = []
+        self.double_click = False
 
         # for timeout on changing settings by spinners
         self.timeout_event = False
@@ -1676,10 +1677,10 @@ class GraphWidget(object):
                 GLib.source_remove(click_item.get_id())
         self.click_events.clear()
 
-    def select_node(self, item, target, event):
+    def press_node(self, item, target, event):
         """
-        Perform actions when a node is clicked.
-        If middle mouse was clicked then try to set scroll mode.
+        Perform actions when a node is clicked (button press).
+        If middle mouse was pressed then try to set scroll mode.
         """
         self.search_widget.hide_search_popover()
         self.hide_bkmark_popover()
@@ -1695,16 +1696,47 @@ class GraphWidget(object):
             self.del_click_events()
             if button == 1 and node_class == 'node':
                 GLib.idle_add(self.actions.edit_person, None, handle)
-                return True
             elif button == 1 and node_class == 'familynode':
                 GLib.idle_add(self.actions.edit_family, None, handle)
-                return True
+            self.double_click = True
+            return True
 
         if event.type != getattr(Gdk.EventType, "BUTTON_PRESS"):
             return False
 
+        # set targets for drag-n-drop (object type and handle)
         if button == 1 and node_class in ('node', 'familynode'):
             self.dnd.set_target(node_class, handle)
+
+        elif button == 3 and node_class:                    # right mouse
+            if node_class == 'node':
+                self.menu = PopupMenu(self, 'person', handle)
+                self.menu.show_menu(event)
+            elif node_class == 'familynode':
+                self.menu = PopupMenu(self, 'family', handle)
+                self.menu.show_menu(event)
+
+        elif button == 2:                                   # middle mouse
+            # to enter in scroll mode (we should change "item" to root item)
+            item = self.canvas.get_root_item()
+            self.button_press(item, target, event)
+
+        return True
+
+    def release_node(self, item, target, event):
+        """
+        Perform actions when a node is clicked (button release).
+        Set timer to handle single click at node and wait double click.
+        """
+        # don't handle single click if had double click before
+        # because we came here after DOUBLE_BUTTON_PRESS event
+        if self.double_click:
+            self.double_click = False
+            return True
+
+        handle = item.title
+        node_class = item.description
+        button = event.get_button()[1]
 
         if button == 1 and node_class == 'node':            # left mouse
             if handle == self.active_person_handle:
@@ -1724,21 +1756,6 @@ class GraphWidget(object):
             # add single click events to list, it will be removed if necessary
             context = GLib.main_context_default()
             self.click_events.append(context.find_source_by_id(click_event_id))
-
-        elif button == 3 and node_class:                    # right mouse
-            if node_class == 'node':
-                self.menu = PopupMenu(self, 'person', handle)
-                self.menu.show_menu(event)
-            elif node_class == 'familynode':
-                self.menu = PopupMenu(self, 'family', handle)
-                self.menu.show_menu(event)
-
-        elif button == 2:                                   # middle mouse
-            # to enter in scroll mode (we should change "item" to root item)
-            item = self.canvas.get_root_item()
-            self.button_press(item, target, event)
-
-        return True
 
     def find_a_parent(self, handle):
         """
@@ -1954,7 +1971,8 @@ class GraphvizSvgParser(object):
                          self.widget.motion_notify_event)
         else:
             item = GooCanvas.CanvasGroup(parent=self.current_parent())
-            item.connect("button-press-event", self.widget.select_node)
+            item.connect("button-press-event", self.widget.press_node)
+            item.connect("button-release-event", self.widget.release_node)
             self.items_list.append(item)
 
         item.description = attrs.get('class')
