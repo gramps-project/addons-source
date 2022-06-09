@@ -6,7 +6,7 @@ from gi.repository import Gtk, Gdk
 from gramps.gen.db import DbTxn
 from gramps.gen.display.name import displayer
 from gramps.gen.utils.libformatting import FormattingHelper
-from gramps.gen.lib import ChildRef, PersonRef, Person
+from gramps.gen.lib import ChildRef, PersonRef, Person, Family
 from gramps.gui.ddtargets import DdTargets
 
 from gramps.gui.editors import EditPersonRef, EditFamily
@@ -194,6 +194,10 @@ class DragAndDrop():
         rect.height = rect.width = 1
         action_menu.set_pointing_to(rect)
 
+        # ===========================
+        # Generate actions popup menu
+        # ===========================
+
         # if person is dropped to family node then add them to this family
         if receiver[0] == 'familynode' and out_data:
             title = ngettext("Add as child to family",
@@ -201,6 +205,7 @@ class DragAndDrop():
                              len(out_data))
             action_menu.add_action(title, self.add_children_to_family,
                                    receiver[1], out_data)
+            # add spouse to family
             if len(out_data) == 1:
                 person = self.dbstate.db.get_person_from_handle(out_data[0])
                 gender = person.get_gender()
@@ -210,16 +215,55 @@ class DragAndDrop():
                 if not f_handle and gender in (Person.MALE, Person.UNKNOWN):
                     action_menu.add_action(_('Add spouse as father'),
                                            self.add_spouse,
-                                           receiver[1], out_data[0], 'father')
-                elif not m_handle and gender in (Person.FEMALE, Person.UNKNOWN):
+                                           out_data[0], None, receiver[1])
+                if not m_handle and gender in (Person.FEMALE, Person.UNKNOWN):
                     action_menu.add_action(_('Add spouse as mother'),
                                            self.add_spouse,
-                                           receiver[1], out_data[0], 'mother')
+                                           None, out_data[0], receiver[1])
 
         # if drop to person node
-        if receiver[0] == 'node' and len(out_data) == 1:
-            action_menu.add_action(_('Add relation'), self.add_personref,
-                                   receiver[1], out_data[0])
+        if receiver[0] == 'node' and out_data:
+            # add relation (reference)
+            if len(out_data) == 1:
+                action_menu.add_action(_('Add relation'), self.add_personref,
+                                       receiver[1], out_data[0])
+            # add as parent
+            if len(out_data) in (1, 2):
+                parent_family_list = receiver[1].get_parent_family_handle_list()
+                # dropped 1 person and 1 family exists
+                if len(parent_family_list) == 1 and len(out_data) == 1:
+                    person = self.dbstate.db.get_person_from_handle(out_data[0])
+                    gender = person.get_gender()
+                    family = self.dbstate.db.get_family_from_handle(
+                        parent_family_list[0])
+                    f_handle = family.get_father_handle()
+                    m_handle = family.get_mother_handle()
+
+                    if not f_handle and gender in (Person.MALE, Person.UNKNOWN):
+                        action_menu.add_action(_('Add as father'),
+                                               self.add_spouse,
+                                               out_data[0], None, family)
+                    elif not m_handle and gender in (Person.FEMALE,
+                                                     Person.UNKNOWN):
+                        action_menu.add_action(_('Add as mother'),
+                                               self.add_spouse,
+                                               None, out_data[0], family)
+                # create family for person
+                elif not parent_family_list:
+                    father = None
+                    mother = None
+                    for p in out_data:
+                        person = self.dbstate.db.get_person_from_handle(p)
+                        gender = person.get_gender()
+                        if gender == Person.MALE:
+                            father = p if father is None else None
+                        if gender == Person.FEMALE:
+                            mother = p if mother is None else None
+                    if father or mother:
+                        child = receiver[1].get_handle()
+                        action_menu.add_action(_('Add parents'),
+                                               self.add_spouse,
+                                               father, mother, None, child)
         action_menu.popup()
 
     def get_item_at_pos(self, x, y):
@@ -255,18 +299,28 @@ class DragAndDrop():
             pass
         return None
 
-    def add_spouse(self, widget, family, person_handle, kind):
+    def add_spouse(self, widget, father_handle, mother_handle,
+                   family=None, child=None):
         """
         Add spouse to family.
+        If family is not provided it will be created for specified child.
         """
+        if family is None:
+            if child is None:
+                # we need child to refer to new family
+                return
+            family = Family()
+            childref = ChildRef()
+            childref.set_reference_handle(child)
+            family.add_child_ref(childref)
+
+        if father_handle:
+            family.set_father_handle(father_handle)
+        if mother_handle:
+            family.set_mother_handle(mother_handle)
+
         try:
-            dialog = EditFamily(self.dbstate, self.uistate, [], family)
-            if kind == 'father':
-                dialog.obj.set_father_handle(person_handle)
-                dialog.update_father(person_handle)
-            elif kind == 'mother':
-                dialog.obj.set_mother_handle(person_handle)
-                dialog.update_mother(person_handle)
+            EditFamily(self.dbstate, self.uistate, [], family)
         except WindowActiveError:
             pass
 
@@ -335,6 +389,9 @@ class Popover(Gtk.Popover):
         self.add(self.box)
 
     def add_action(self, label, callback, *args):
+        """
+        Add button to popover with action.
+        """
         action = Gtk.Button(label=label)
         self.box.pack_end(action, True, True, 5)
         if callback:
