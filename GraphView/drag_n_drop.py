@@ -187,7 +187,7 @@ class DragAndDrop():
         elif p_data[0] == 'person-link':
             out_data.append(p_data[2])
 
-        action_menu = Popover(self.canvas, _('Available actions'))
+        action_menu = Popover(self.canvas)
         rect = Gdk.Rectangle()
         rect.x = x
         rect.y = y
@@ -371,17 +371,14 @@ class Popover(Gtk.Popover):
     """
     Display available actions on drop event.
     """
-    def __init__(self, widget, label):
+    def __init__(self, widget):
         Gtk.Popover.__init__(self, relative_to=widget)
         self.set_modal(True)
 
         self.box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
 
-        lbl = Gtk.Label(label)
-        self.box.add(lbl)
-
-        self.cancel_btn = Gtk.Button(label=_('Cancel'))
-        self.box.pack_end(self.cancel_btn, True, True, 5)
+        self.cancel_btn = Gtk.Button(label=_('Cancel'), margin_top=5)
+        self.box.pack_end(self.cancel_btn, True, True, 1)
         self.cancel_btn.connect('clicked', self.popdown)
 
         # set all widgets visible
@@ -393,13 +390,11 @@ class Popover(Gtk.Popover):
         Add button to popover with action.
         """
         action = Gtk.Button(label=label)
-        self.box.pack_end(action, True, True, 5)
+        self.box.pack_start(action, True, True, 1)
         if callback:
             action.connect('clicked', callback, *args)
         action.connect('clicked', self.popdown)
         action.show()
-        # move cancel button to the bottom
-        self.box.reorder_child(self.cancel_btn, 0)
 
     def popup(self):
         """
