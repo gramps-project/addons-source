@@ -1,0 +1,125 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-23 09:41-0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: SearchGramplet/SearchGramplet.gpr.py:9
+#: SearchGramplet/SearchGramplet.gpr.py:19
+msgid "Search"
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.gpr.py:10
+msgid "Gramplet for search objects in database."
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.py:100
+msgid "Show images"
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.py:102
+msgid "Show bookmarked first"
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.py:104
+msgid "Sort by object type"
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.py:109
+msgid "Persons"
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.py:111
+msgid "Tags"
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.py:138
+msgid "Menu to set search objects"
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.py:140
+msgid "Select objects to search"
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.py:152
+msgid "Configuration"
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.py:154
+msgid "SearchGramplet configuration menu"
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.py:259 SearchGramplet/SearchGramplet.py:281
+#, python-format
+msgid "found: %s"
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.py:261
+msgid "No matches..."
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.py:353
+msgid "Start type to search"
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.py:389
+msgid ""
+"Start type to search objects.\n"
+"To show all objects enter only «*» symbol."
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.py:391
+msgid "Search..."
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.py:637 SearchGramplet/SearchGramplet.py:769
+msgid "Remove from bookmarks"
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.py:645 SearchGramplet/SearchGramplet.py:782
+msgid "Add to bookmarks"
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.py:743
+#, python-format
+msgid "Birth: %s"
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.py:747
+#, python-format
+msgid "Death: %s"
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.py:753
+msgid "Parents:"
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.py:915 SearchGramplet/SearchGramplet.py:927
+msgid "Edit"
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.py:918
+msgid "Set as Active person"
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.py:920
+msgid "Set as Home person"
+msgstr ""
+
+#: SearchGramplet/SearchGramplet.py:995
+#, python-format
+msgid "Edit Tag (%s)"
+msgstr ""
