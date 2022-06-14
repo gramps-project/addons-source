@@ -185,31 +185,28 @@ class SearchGramplet(Gramplet):
                       priority=GLib.PRIORITY_LOW)
 
     def make_search(self, queue, stop_search_event,
-                    items_list, search_words, exclude=[]):
+                    items_list, search_words):
         """
         Recursive search persons in "items_list".
         Use "GLib.idle_add()" to make UI responsiveness.
-        Params 'items_list' and 'exclude' - list of person_handles.
+        Param 'items_list' - list of person_handles.
         """
         if not items_list or stop_search_event.is_set():
             queue.put('stop')
             return
 
-        while True:
-            try:
-                item = items_list.pop()
-            except (KeyError, IndexError):
-                queue.put('stop')
-                return
-            if item not in exclude:
-                break
+        try:
+            item = items_list.pop()
+        except (KeyError, IndexError):
+            queue.put('stop')
+            return
 
         person = self.check_person(item, search_words)
         if person:
             queue.put(person)
 
         GLib.idle_add(self.make_search, queue,
-                      stop_search_event, items_list, search_words, exclude)
+                      stop_search_event, items_list, search_words)
 
     def apply_search(self, queue, panel, stop_search_event, count=0):
         """
