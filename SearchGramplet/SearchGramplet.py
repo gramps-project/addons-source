@@ -39,6 +39,7 @@ from gramps.gen.plug import Gramplet
 
 from gramps.gen import datehandler
 from gramps.gen.display.name import displayer
+from gramps.gen.config import config
 from gramps.gen.utils.db import (get_birth_or_fallback, get_death_or_fallback,
                                  find_parents)
 from gramps.gen.utils.file import media_path_full, find_file
@@ -70,6 +71,18 @@ NON_STARRED = 'non-starred'
 
 #-------------------------------------------------------------------------
 #
+# Configuration
+#
+#-------------------------------------------------------------------------
+CONFIG = config.register_manager('search_gramplet')
+CONFIG.register("options.show_images", True)
+CONFIG.register("options.marked_first", True)
+CONFIG.register("search.persons", True)
+CONFIG.register("search.families", True)
+CONFIG.load()
+CONFIG.save()
+#-------------------------------------------------------------------------
+#
 # Search Gramplet
 #
 #-------------------------------------------------------------------------
@@ -78,6 +91,22 @@ class SearchGramplet(Gramplet):
     Search Gramplet.
     """
     def init(self):
+        # load
+        # {option_name: [value, label]}
+        self.options = {
+            "options.show_images": [CONFIG.get("options.show_images"),
+                                    _('Show images')],
+            "options.marked_first": [CONFIG.get("options.marked_first"),
+                                     _('Show bookmarked first')],
+        }
+        # {option_name: [value, label, nav_type]}
+        self.search_options = {
+            "search.persons": [CONFIG.get("search.persons"),
+                               _('Persons'), 'Person'],
+            "search.families": [CONFIG.get("search.families"),
+                                _('Families'), 'Family'],
+        }
+
         self.top = self.build_gui()
         self.gui.get_container_widget().remove(self.gui.textview)
         self.gui.get_container_widget().add(self.top)
@@ -87,10 +116,6 @@ class SearchGramplet(Gramplet):
             self.bookmarks = self.dbstate.db.get_bookmarks()
         else:
             self.bookmarks = None
-
-        # set default options
-        self.show_images_option = True
-        self.show_marked_first = True
 
         self.search_words = None
         # search status
@@ -104,12 +129,30 @@ class SearchGramplet(Gramplet):
         """
         Build gramplet GUI.
         """
-        box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        hbox = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=5,
+                       margin_top=5, margin_left=5, margin_right=5)
+        search_obj_btn = Gtk.Button.new_from_icon_name(
+            "category-search-symbolic", Gtk.IconSize.BUTTON)
+        self.obj_popover = OptionsPopover(search_obj_btn,
+                                          _('Select objects to search'),
+                                          self.search_options)
+        search_obj_btn.connect('clicked', self.obj_popover.popup)
+        hbox.add(search_obj_btn)
 
-        s_entry = SearchEntry(margin_top=5, margin_left=5, margin_right=5)
+        s_entry = SearchEntry()
         s_entry.connect('start-search', self.start_search)
         s_entry.connect('empty-search', self.empty_search)
-        box.add(s_entry)
+        hbox.add(s_entry)
+
+        config_btn = Gtk.Button.new_from_icon_name("gramps-config",
+                                                   Gtk.IconSize.BUTTON)
+        self.config_popover = OptionsPopover(config_btn, _('Configuration'),
+                                             self.options)
+        config_btn.connect('clicked', self.config_popover.popup)
+        hbox.add(config_btn)
+
+        box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        box.add(hbox)
 
         self.search_panel = Panel()
         box.pack_end(self.search_panel, True, True, 5)
@@ -225,7 +268,7 @@ class SearchGramplet(Gramplet):
             label = Gtk.Label(name, wrap=True, xalign=0)
             hbox.pack_start(label, True, True, 2)
             # add person image if needed
-            if self.show_images_option:
+            if self.options["options.show_images"][0]:
                 person_image = self.get_person_image(person, 32, 32,
                                                      kind='image')
                 if person_image:
@@ -247,7 +290,7 @@ class SearchGramplet(Gramplet):
                 button.connect('clicked', self.add_to_bookmarks, person.handle)
                 hbox.add(button)
 
-            if self.show_marked_first:
+            if self.options["options.marked_first"][0]:
                 row.marked = person.handle in bookmarks
 
             panel.add_to_panel(row)
@@ -596,6 +639,55 @@ class ListBoxRow(Gtk.ListBoxRow):
                 tooltip += ('\n  %s' % p)
 
         return tooltip
+
+
+class OptionsPopover(Gtk.Popover):
+    """
+    Configuration Popover.
+    """
+    def __init__(self, widget, label, options):
+        Gtk.Popover.__init__(self, relative_to=widget,
+                             position=Gtk.PositionType.BOTTOM)
+
+        self.box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=3,
+                           margin_top=3, margin_left=3, margin_right=3)
+        self.box.add(Gtk.Label(label))
+
+        self.options = options
+
+        for option, item in self.options.items():
+            check_btn = Gtk.CheckButton(item[1])
+            check_btn.set_active(item[0])
+            check_btn.connect('clicked', self.option_changed, option)
+            self.box.add(check_btn)
+        self.box.show_all()
+        self.add(self.box)
+
+    def popup(self, *args):
+        """
+        Different popup depending on gtk version.
+        """
+        if gtk_version >= 3.22:
+            super().popup()
+        else:
+            self.show()
+
+    def popdown(self, *args):
+        """
+        Different popdown depending on gtk version.
+        """
+        if gtk_version >= 3.22:
+            super().popdown()
+        else:
+            self.hide()
+
+    def option_changed(self, check_btn, option):
+        """
+        Save option state.
+        """
+        CONFIG.set(option, check_btn.get_active())
+        CONFIG.save()
+        self.options[option][0] = check_btn.get_active()
 
 
 class PopupMenu(Gtk.Menu):
