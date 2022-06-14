@@ -98,6 +98,8 @@ class SearchGramplet(Gramplet):
         # queues used for search
         self.queue = Queue()
 
+        self.empty_search(None)
+
     def build_gui(self):
         """
         Build gramplet GUI.
@@ -220,7 +222,7 @@ class SearchGramplet(Gramplet):
             row.add(hbox)
 
             # add person name
-            label = Gtk.Label(name, xalign=0)
+            label = Gtk.Label(name, wrap=True, xalign=0)
             hbox.pack_start(label, True, True, 2)
             # add person image if needed
             if self.show_images_option:
@@ -255,7 +257,6 @@ class SearchGramplet(Gramplet):
         Stop search process.
         """
         self.stop_search_event.set()
-
         self.queue = Queue()
 
     def check_person(self, person_handle, search_words):
