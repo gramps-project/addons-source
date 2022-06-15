@@ -47,7 +47,7 @@ from gramps.gen.utils.thumbnails import get_thumbnail_path
 from gramps.gen.errors import WindowActiveError
 
 from gramps.gui.editors import EditPerson
-from gramps.gui.ddtargets import DdTargets
+from gramps.gui.ddtargets import DdTargets, _DdType
 from gramps.gui.widgets.menuitem import add_menuitem
 
 from gramps.gen.const import GRAMPS_LOCALE as glocale
@@ -494,7 +494,6 @@ class ListBoxRow(Gtk.ListBoxRow):
                 self.build_tag(self.handle)
         self.connect('query-tooltip', self.query_tooltip)
         self.connect('button-press-event', self.button_press)
-        self.setup_dnd()
 
     def add(self, widget):
         """
@@ -503,6 +502,7 @@ class ListBoxRow(Gtk.ListBoxRow):
         """
         ebox = Gtk.EventBox()
         ebox.add(widget)
+        self.setup_dnd(ebox)
         super().add(ebox)
 
     def button_press(self, widget, event):
@@ -517,29 +517,43 @@ class ListBoxRow(Gtk.ListBoxRow):
             menu.show_menu()
         return True     # stop event emission
 
-    def setup_dnd(self):
+    def setup_dnd(self, ebox):
         """
         Setup drag-n-drop.
         """
-        self.drag_source_set(Gdk.ModifierType.BUTTON1_MASK,
+        if not self.kind:
+            return
+
+        ebox.drag_source_set(Gdk.ModifierType.BUTTON1_MASK,
                              [],
                              Gdk.DragAction.COPY)
         tglist = Gtk.TargetList.new([])
-        tglist.add(DdTargets.PERSON_LINK.atom_drag_type,
-                   DdTargets.PERSON_LINK.target_flags,
-                   DdTargets.PERSON_LINK.app_id)
-        self.drag_source_set_target_list(tglist)
+        if self.kind == self.search_options['search.persons'][2]:
+            tglist.add(DdTargets.PERSON_LINK.atom_drag_type,
+                       DdTargets.PERSON_LINK.target_flags,
+                       DdTargets.PERSON_LINK.app_id)
+            ebox.drag_source_set_icon_name('gramps-person')
+        elif self.kind == self.search_options['search.tags'][2]:
+            # add new target type for tag
+            tag_target = _DdType(DdTargets, 'gramps-tag')
+            tglist.add(tag_target.atom_drag_type,
+                       tag_target.target_flags,
+                       tag_target.app_id)
+            ebox.drag_source_set_icon_name('gramps-tag')
 
-        self.connect("drag-data-get", self.drag_data_get)
-
-        self.drag_source_set_icon_name('gramps-person')
+        ebox.drag_source_set_target_list(tglist)
+        ebox.connect("drag-data-get", self.drag_data_get)
 
     def drag_data_get(self, widget, context, sel_data, info, time):
         """
         Returned parameters after drag.
         """
-        data = (DdTargets.PERSON_LINK.drag_type,
-                id(widget), self.handle, 0)
+        if self.kind == self.search_options['search.persons'][2]:
+            data = (DdTargets.PERSON_LINK.drag_type,
+                    id(widget), self.handle, 0)
+        elif self.kind == self.search_options['search.tags'][2]:
+            data = ('gramps-tag', id(widget), self.handle, 0)
+
         sel_data.set(sel_data.get_target(), 8, pickle.dumps(data))
 
     def build_person(self, handle):
