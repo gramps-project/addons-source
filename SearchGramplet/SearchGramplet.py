@@ -38,6 +38,7 @@ from gi.repository import Gtk, Gdk, GLib, GObject, GdkPixbuf
 from gramps.gen.plug import Gramplet
 
 from gramps.gen import datehandler
+from gramps.gen.db import DbTxn
 from gramps.gen.display.name import displayer
 from gramps.gen.config import config
 from gramps.gen.utils.db import (get_birth_or_fallback, get_death_or_fallback,
@@ -47,6 +48,7 @@ from gramps.gen.utils.thumbnails import get_thumbnail_path
 from gramps.gen.errors import WindowActiveError
 
 from gramps.gui.editors import EditPerson
+from gramps.gui.views.tags import EditTag
 from gramps.gui.ddtargets import DdTargets, _DdType
 from gramps.gui.widgets.menuitem import add_menuitem
 
@@ -621,6 +623,9 @@ class ListBoxRow(Gtk.ListBoxRow):
         rgba.parse(tag.get_color())
         color = rgba.to_color()
         color_btn = Gtk.ColorButton(color=color)
+        color_btn.connect('color-set',
+                          Actions(self.dbstate, self.uistate).set_tag_color,
+                          tag)
         hbox.add(color_btn)
 
     def query_tooltip(self, widget, x, y, keyboard_mode, tooltip):
@@ -821,8 +826,8 @@ class PopupMenu(Gtk.Menu):
         self.kind = kind
         if kind == 'Person' and handle is not None:
             self.build_person_menu(handle)
-        elif kind == 'Family' and handle is not None:
-            pass
+        elif kind == 'Tag' and handle is not None:
+            self.build_tag_menu(handle)
         else:
             pass
 
@@ -850,6 +855,13 @@ class PopupMenu(Gtk.Menu):
                      [person_handle, self.kind], self.actions.set_active)
         add_menuitem(self, _('Set as Home person'),
                      person_handle, self.actions.edit_person)
+
+    def build_tag_menu(self, tag_handle):
+        """
+        Generate menu for tag item.
+        """
+        add_menuitem(self, _('Edit'),
+                     tag_handle, self.actions.edit_tag)
 
 
 class Actions():
@@ -888,3 +900,28 @@ class Actions():
         person = self.dbstate.db.get_person_from_handle(handle)
         if person:
             self.dbstate.db.set_default_person_handle(handle)
+
+    def edit_tag(self, obj):
+        """
+        Start a tag editor for the selected tag.
+        'handle' used to call not from menuitem.
+        """
+        handle = obj.get_data()
+        tag = self.dbstate.db.get_tag_from_handle(handle)
+        try:
+            EditTag(self.dbstate.db, self.uistate, [], tag)
+        except WindowActiveError:
+            pass
+
+    def set_tag_color(self, color_chooser, tag):
+        """
+        Change tag color.
+        """
+        rgba = color_chooser.get_rgba()
+        hexval = "#%02x%02x%02x" % (int(rgba.red * 255),
+                                    int(rgba.green * 255),
+                                    int(rgba.blue * 255))
+        tag.set_color(hexval)
+        msg = _("Edit Tag (%s)") % tag.get_name()
+        with DbTxn(msg, self.dbstate.db) as trans:
+            self.dbstate.db.commit_tag(tag, trans)
