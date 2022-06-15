@@ -78,7 +78,7 @@ CONFIG = config.register_manager('search_gramplet')
 CONFIG.register("options.show_images", True)
 CONFIG.register("options.marked_first", True)
 CONFIG.register("search.persons", True)
-CONFIG.register("search.families", True)
+CONFIG.register("search.tags", True)
 CONFIG.load()
 CONFIG.save()
 #-------------------------------------------------------------------------
@@ -91,7 +91,6 @@ class SearchGramplet(Gramplet):
     Search Gramplet.
     """
     def init(self):
-        # load
         # {option_name: [value, label]}
         self.options = {
             "options.show_images": [CONFIG.get("options.show_images"),
@@ -103,8 +102,8 @@ class SearchGramplet(Gramplet):
         self.search_options = {
             "search.persons": [CONFIG.get("search.persons"),
                                _('Persons'), 'Person'],
-            "search.families": [CONFIG.get("search.families"),
-                                _('Families'), 'Family'],
+            "search.tags": [CONFIG.get("search.tags"),
+                                _('Tags'), 'Tag'],
         }
 
         self.top = self.build_gui()
@@ -118,9 +117,12 @@ class SearchGramplet(Gramplet):
             self.bookmarks = None
 
         self.search_words = None
-        # search status
+        # search events
         self.stop_search_event = Event()
-        # queues used for search
+        self.finish_events = {'Person': Event(),
+                              'Tag': Event(),
+                              }
+        # queue for search
         self.queue = Queue()
 
         self.empty_search(None)
@@ -173,42 +175,69 @@ class SearchGramplet(Gramplet):
         self.search_panel.clear_items()
 
         self.stop_search_event = Event()
+        self.finish_events = {'Person': Event(),
+                              'Tag': Event(),
+                              }
 
-        all_person_handles = self.dbstate.db.get_person_handles()
+        if self.search_options['search.persons'][0]:
+            all_person_handles = self.dbstate.db.get_person_handles()
 
-        GLib.idle_add(self.make_search, self.queue,
-                      self.stop_search_event, all_person_handles, search_words,
-                      priority=GLib.PRIORITY_LOW-10)
+            GLib.idle_add(self.make_search, self.queue,
+                          self.stop_search_event, self.finish_events,
+                          all_person_handles, search_words,
+                          self.search_options['search.persons'][2],
+                          priority=GLib.PRIORITY_LOW-10)
+        else:
+            self.finish_events['Person'].set()
 
-        GLib.idle_add(self.apply_search, self.queue,
-                      self.search_panel, self.stop_search_event,
+        if self.search_options['search.tags'][0]:
+            all_tags_handles = self.dbstate.db.get_tag_handles()
+
+            GLib.idle_add(self.make_search, self.queue,
+                          self.stop_search_event, self.finish_events,
+                          all_tags_handles, search_words,
+                          self.search_options['search.tags'][2],
+                          priority=GLib.PRIORITY_LOW-10)
+        else:
+            self.finish_events['Tag'].set()
+
+        GLib.idle_add(self.apply_search, self.queue, self.search_panel,
+                      self.stop_search_event, self.finish_events,
                       priority=GLib.PRIORITY_LOW)
 
-    def make_search(self, queue, stop_search_event,
-                    items_list, search_words):
+    def make_search(self, queue, stop_search_event, finish_events,
+                    items_list, search_words, kind):
         """
         Recursive search persons in "items_list".
         Use "GLib.idle_add()" to make UI responsiveness.
         Param 'items_list' - list of person_handles.
         """
         if not items_list or stop_search_event.is_set():
-            queue.put('stop')
+            finish_events[kind].set()
             return
 
         try:
-            item = items_list.pop()
+            handle = items_list.pop()
         except (KeyError, IndexError):
-            queue.put('stop')
+            finish_events[kind].set()
             return
 
-        person = self.check_person(item, search_words)
-        if person:
-            queue.put(person)
+        if kind == self.search_options['search.persons'][2]:
+            obj = self.check_person(handle, search_words)
+        elif kind == self.search_options['search.tags'][2]:
+            obj = self.check_tag(handle, search_words)
+        else:
+            obj = False
+
+        if obj:
+            queue.put((obj, kind))
 
         GLib.idle_add(self.make_search, queue,
-                      stop_search_event, items_list, search_words)
+                      stop_search_event, finish_events,
+                      items_list, search_words, kind)
 
-    def apply_search(self, queue, panel, stop_search_event, count=0):
+    def apply_search(self, queue, panel, stop_search_event, finish_events,
+                     count=0):
         """
         Recursive add persons to specified panel from queue.
         Use GLib.idle_add() to communicate with GUI.
@@ -216,21 +245,25 @@ class SearchGramplet(Gramplet):
         if stop_search_event.is_set():
             return
         try:
-            person = queue.get(timeout=0.05)
+            item = queue.get(timeout=0.05)
         except Exception as err:
             if type(err) is Empty:
+                done = True
+                for event in finish_events.values():
+                    if not event.is_set():
+                        done = False
+                        break
+                if done:
+                    panel.set_progress(0, _('found: %s') % count)
+                    if count == 0:
+                        panel.add_no_result(_('No matches...'))
+                    return
                 GLib.idle_add(self.apply_search, queue, panel,
-                              stop_search_event, count)
-            return
-
-        if person == 'stop':
-            panel.set_progress(0, _('found: %s') % count)
-            if count == 0:
-                panel.add_no_result(_('No matches...'))
+                              stop_search_event, finish_events, count)
             return
 
         # insert person to panel
-        self.add_to_result(person, panel)
+        self.add_to_result(item[0], item[1], panel)
 
         # calculate and update progress
         count += 1
@@ -246,57 +279,25 @@ class SearchGramplet(Gramplet):
         panel.set_progress(progress, _('found: %s') % count)
 
         GLib.idle_add(self.apply_search, queue, panel,
-                      stop_search_event, count)
+                      stop_search_event, finish_events, count)
 
-    def add_to_result(self, person, panel):
+    def add_to_result(self, obj, kind, panel):
         """
         Add found person to results.
         """
-        bookmarks = self.bookmarks.get()
-        if person:
-            name = displayer.display_name(person.get_primary_name())
-
-            row = ListBoxRow(person_handle=person.handle, label=name,
-                             dbstate=self.dbstate, uistate=self.uistate)
-            hbox = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
-            row.add(hbox)
-
-            # add person name
-            label = Gtk.Label(name, wrap=True, xalign=0)
-            hbox.pack_start(label, True, True, 2)
-            # add person image if needed
-            if self.options["options.show_images"][0]:
-                person_image = self.get_person_image(person, 32, 32,
-                                                     kind='image')
-                if person_image:
-                    hbox.pack_start(person_image, False, True, 2)
-
-            if person.handle in bookmarks:
-                button = Gtk.Button.new_from_icon_name(
-                    STARRED, Gtk.IconSize.MENU)
-                button.set_tooltip_text(_('Remove from bookmarks'))
-                button.set_relief(Gtk.ReliefStyle.NONE)
-                button.connect('clicked', self.remove_from_bookmarks,
-                               person.handle)
-                hbox.add(button)
-            else:
-                button = Gtk.Button.new_from_icon_name(
-                    NON_STARRED, Gtk.IconSize.MENU)
-                button.set_tooltip_text(_('Add to bookmarks'))
-                button.set_relief(Gtk.ReliefStyle.NONE)
-                button.connect('clicked', self.add_to_bookmarks, person.handle)
-                hbox.add(button)
-
-            if self.options["options.marked_first"][0]:
-                row.marked = person.handle in bookmarks
-
-            panel.add_to_panel(row)
+        row = ListBoxRow(handle=obj.get_handle(), kind=kind,
+                         dbstate=self.dbstate, uistate=self.uistate,
+                         options=self.options,
+                         search_options=self.search_options)
+        panel.add_to_panel(row)
 
     def stop_search(self, widget=None):
         """
         Stop search process.
         """
         self.stop_search_event.set()
+        for event in self.finish_events.values():
+            event.set()
         self.queue = Queue()
 
     def check_person(self, person_handle, search_words):
@@ -320,32 +321,22 @@ class SearchGramplet(Gramplet):
             return person
         return False
 
-    def add_to_bookmarks(self, widget, handle):
+    def check_tag(self, handle, search_words):
         """
-        Adds bookmark for person.
+        Check if tag contains all words of the search.
         """
-        self.bookmarks.append(handle)
+        try:
+            tag = self.dbstate.db.get_tag_from_handle(handle)
+        except:
+            return False
 
-        # change icon and reconnect
-        img = Gtk.Image.new_from_icon_name(STARRED,
-                                           Gtk.IconSize.MENU)
-        widget.set_image(img)
-        widget.set_tooltip_text(_('Remove from bookmarks'))
-        widget.disconnect_by_func(self.add_to_bookmarks)
-        widget.connect('clicked', self.remove_from_bookmarks, handle)
-
-    def remove_from_bookmarks(self, widget, handle):
-        """
-        Remove person from the list of bookmarked people.
-        """
-        self.bookmarks.remove(handle)
-        # change icon and reconnect
-        img = Gtk.Image.new_from_icon_name(NON_STARRED,
-                                           Gtk.IconSize.MENU)
-        widget.set_image(img)
-        widget.set_tooltip_text(_('Add to bookmarks'))
-        widget.disconnect_by_func(self.remove_from_bookmarks)
-        widget.connect('clicked', self.add_to_bookmarks, handle)
+        if tag:
+            search_str = tag.get_name().lower()
+            for word in search_words:
+                if word not in search_str:
+                    return False
+            return tag
+        return False
 
     def empty_search(self, widget):
         """
@@ -353,41 +344,6 @@ class SearchGramplet(Gramplet):
         """
         self.stop_search()
         self.search_panel.add_no_result(_('Start type to search'))
-
-    def get_person_image(self, person, width=-1, height=-1, kind='image'):
-        """
-        kind - 'image', 'path', 'both'
-        Returns default person image and path or None.
-        """
-        # see if we have an image to use for this person
-        image_path = None
-        media_list = person.get_media_list()
-        if media_list:
-            media_handle = media_list[0].get_reference_handle()
-            media = self.dbstate.db.get_media_from_handle(media_handle)
-            media_mime_type = media.get_mime_type()
-            if media_mime_type[0:5] == "image":
-                rectangle = media_list[0].get_rectangle()
-                path = media_path_full(self.dbstate.db, media.get_path())
-                image_path = get_thumbnail_path(path, rectangle=rectangle)
-                # test if thumbnail actually exists in thumbs
-                # (import of data means media files might not be present
-                image_path = find_file(image_path)
-        if image_path:
-            if kind == 'path':
-                return image_path
-            # get and scale image
-            person_image = GdkPixbuf.Pixbuf.new_from_file_at_scale(
-                filename=image_path,
-                width=width, height=height,
-                preserve_aspect_ratio=True)
-            person_image = Gtk.Image.new_from_pixbuf(person_image)
-            if kind == 'image':
-                return person_image
-            elif kind == 'both':
-                return person_image, image_path
-
-        return None
 
 
 class SearchEntry(Gtk.SearchEntry):
@@ -515,18 +471,27 @@ class ListBoxRow(Gtk.ListBoxRow):
     """
     Extended Gtk.ListBoxRow with person DnD support.
     """
-    def __init__(self, person_handle=None, label='', marked=False,
-                 dbstate=None, uistate=None):
+    def __init__(self, handle=None, kind='', marked=False,
+                 dbstate=None, uistate=None,
+                 options=[], search_options=[]):
         Gtk.ListBoxRow.__init__(self)
 
-        self.label = label                  # person name for sorting
-        self.person_handle = person_handle
+        self.label = ''                     # object string for sorting
+        self.handle = handle
         self.marked = marked                # is bookmarked (used for sorting)
         self.dbstate = dbstate
         self.uistate = uistate
-        self.kind = 'Person'
+        self.kind = kind
+        self.bookmarks = None
+        self.options = options
+        self.search_options = search_options
 
-        self.set_has_tooltip(True)
+        if self.search_options:
+            if self.kind == self.search_options['search.persons'][2]:
+                self.build_person(self.handle)
+                self.set_has_tooltip(True)
+            elif self.kind == self.search_options['search.tags'][2]:
+                self.build_tag(self.handle)
         self.connect('query-tooltip', self.query_tooltip)
         self.connect('button-press-event', self.button_press)
         self.setup_dnd()
@@ -548,7 +513,7 @@ class ListBoxRow(Gtk.ListBoxRow):
         # show popup menu by right mouse button
         if button == 3 and self.dbstate:
             menu = PopupMenu(self.dbstate, self.uistate,
-                             self.kind, self.person_handle)
+                             self.kind, self.handle)
             menu.show_menu()
         return True     # stop event emission
 
@@ -574,15 +539,88 @@ class ListBoxRow(Gtk.ListBoxRow):
         Returned parameters after drag.
         """
         data = (DdTargets.PERSON_LINK.drag_type,
-                id(widget), self.person_handle, 0)
+                id(widget), self.handle, 0)
         sel_data.set(sel_data.get_target(), 8, pickle.dumps(data))
+
+    def build_person(self, handle):
+        """
+        Build person row.
+        """
+        self.bookmarks = self.dbstate.db.get_bookmarks().get()
+        person = self.dbstate.db.get_person_from_handle(handle)
+        self.label = displayer.display_name(person.get_primary_name())
+
+        hbox = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
+        self.add(hbox)
+
+        # add icon
+        hbox.add(Gtk.Image.new_from_icon_name('gramps-person',
+                                              Gtk.IconSize.MENU))
+        # add person name
+        label = Gtk.Label(self.label, wrap=True, xalign=0)
+        hbox.pack_start(label, True, True, 2)
+        # add person image if needed
+        if self.options["options.show_images"][0]:
+            person_image = self.get_person_image(person, 32, 32,
+                                                 kind='image')
+            if person_image:
+                hbox.pack_start(person_image, False, True, 2)
+
+        if handle in self.bookmarks:
+            button = Gtk.Button.new_from_icon_name(
+                STARRED, Gtk.IconSize.MENU)
+            button.set_tooltip_text(_('Remove from bookmarks'))
+            button.set_relief(Gtk.ReliefStyle.NONE)
+            button.connect('clicked', self.remove_from_bookmarks,
+                           handle)
+            hbox.add(button)
+        else:
+            button = Gtk.Button.new_from_icon_name(
+                NON_STARRED, Gtk.IconSize.MENU)
+            button.set_tooltip_text(_('Add to bookmarks'))
+            button.set_relief(Gtk.ReliefStyle.NONE)
+            button.connect('clicked', self.add_to_bookmarks, handle)
+            hbox.add(button)
+
+        if self.options["options.marked_first"][0]:
+            self.marked = handle in self.bookmarks
+
+    def build_tag(self, handle):
+        """
+        Build tag row.
+        """
+        tag = self.dbstate.db.get_tag_from_handle(handle)
+        self.label = tag.get_name()
+
+        hbox = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
+        self.add(hbox)
+
+        # add icon
+        hbox.add(Gtk.Image.new_from_icon_name('gramps-tag',
+                                              Gtk.IconSize.MENU))
+        # add tag name
+        label = Gtk.Label(self.label, wrap=True, xalign=0)
+        hbox.pack_start(label, True, True, 2)
+
+        # add color
+        rgba = Gdk.RGBA()
+        rgba.parse(tag.get_color())
+        color = rgba.to_color()
+        color_btn = Gtk.ColorButton(color=color)
+        hbox.add(color_btn)
 
     def query_tooltip(self, widget, x, y, keyboard_mode, tooltip):
         """
         Get tooltip for person on demand.
         """
-        if (self.get_tooltip_text() is None) and (self.dbstate is not None):
-            person = self.dbstate.db.get_person_from_handle(self.person_handle)
+        if self.get_tooltip_text() is not None:
+            return
+        if self.dbstate is None:
+            self.set_has_tooltip(False)
+            return
+
+        if self.kind == self.search_options['search.persons'][2]:
+            person = self.dbstate.db.get_person_from_handle(self.handle)
             text = self.get_person_tooltip(person)
             if text:
                 self.set_tooltip_text(text)
@@ -636,6 +674,68 @@ class ListBoxRow(Gtk.ListBoxRow):
                 tooltip += ('\n  %s' % p)
 
         return tooltip
+
+    def add_to_bookmarks(self, widget, handle):
+        """
+        Adds bookmark for person.
+        """
+        self.bookmarks.append(handle)
+
+        # change icon and reconnect
+        img = Gtk.Image.new_from_icon_name(STARRED,
+                                           Gtk.IconSize.MENU)
+        widget.set_image(img)
+        widget.set_tooltip_text(_('Remove from bookmarks'))
+        widget.disconnect_by_func(self.add_to_bookmarks)
+        widget.connect('clicked', self.remove_from_bookmarks, handle)
+
+    def remove_from_bookmarks(self, widget, handle):
+        """
+        Remove person from the list of bookmarked people.
+        """
+        self.bookmarks.remove(handle)
+        # change icon and reconnect
+        img = Gtk.Image.new_from_icon_name(NON_STARRED,
+                                           Gtk.IconSize.MENU)
+        widget.set_image(img)
+        widget.set_tooltip_text(_('Add to bookmarks'))
+        widget.disconnect_by_func(self.remove_from_bookmarks)
+        widget.connect('clicked', self.add_to_bookmarks, handle)
+
+    def get_person_image(self, person, width=-1, height=-1, kind='image'):
+        """
+        kind - 'image', 'path', 'both'
+        Returns default person image and path or None.
+        """
+        # see if we have an image to use for this person
+        image_path = None
+        media_list = person.get_media_list()
+        if media_list:
+            media_handle = media_list[0].get_reference_handle()
+            media = self.dbstate.db.get_media_from_handle(media_handle)
+            media_mime_type = media.get_mime_type()
+            if media_mime_type[0:5] == "image":
+                rectangle = media_list[0].get_rectangle()
+                path = media_path_full(self.dbstate.db, media.get_path())
+                image_path = get_thumbnail_path(path, rectangle=rectangle)
+                # test if thumbnail actually exists in thumbs
+                # (import of data means media files might not be present
+                image_path = find_file(image_path)
+        if image_path:
+            if kind == 'path':
+                return image_path
+            # get and scale image
+            person_image = GdkPixbuf.Pixbuf.new_from_file_at_scale(
+                filename=image_path,
+                width=width, height=height,
+                preserve_aspect_ratio=True)
+            person_image = Gtk.Image.new_from_pixbuf(person_image)
+            if kind == 'image':
+                return person_image
+            elif kind == 'both':
+                return person_image, image_path
+
+        return None
 
 
 class OptionsPopover(Gtk.Popover):
