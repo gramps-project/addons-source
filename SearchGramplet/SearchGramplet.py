@@ -137,6 +137,7 @@ class SearchGramplet(Gramplet):
                        margin_top=5, margin_left=5, margin_right=5)
         search_obj_btn = Gtk.Button.new_from_icon_name(
             "category-search-symbolic", Gtk.IconSize.BUTTON)
+        search_obj_btn.set_tooltip_text(_('Menu to set search objects'))
         self.obj_popover = OptionsPopover(search_obj_btn,
                                           _('Select objects to search'),
                                           self.search_options)
@@ -152,6 +153,7 @@ class SearchGramplet(Gramplet):
                                                    Gtk.IconSize.BUTTON)
         self.config_popover = OptionsPopover(config_btn, _('Configuration'),
                                              self.options)
+        config_btn.set_tooltip_text(_('SearchGramplet configuration menu'))
         config_btn.connect('clicked', self.config_popover.popup)
         hbox.add(config_btn)
 
@@ -364,7 +366,7 @@ class SearchEntry(Gtk.SearchEntry):
 
         self.set_hexpand(True)
         self.set_tooltip_text(
-            _('Search objects in database.'))
+            _('Start type to search objects'))
         self.set_placeholder_text(_("Search..."))
 
         self.connect("key-press-event", self.on_key_press_event)
