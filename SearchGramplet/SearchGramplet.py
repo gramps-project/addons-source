@@ -516,7 +516,8 @@ class ListBoxRow(Gtk.ListBoxRow):
 
         button = event.get_button()[1]
         # edit person by double click
-        if button == 1:
+        if button == 1 and event.type == getattr(Gdk.EventType,
+                                                 "DOUBLE_BUTTON_PRESS"):
             data = ItemWithData()
             if self.kind == self.search_options['search.persons'][2]:
                 data.set_data([self.handle, self.update_person])
