@@ -316,6 +316,8 @@ class SearchGramplet(Gramplet):
             return False
 
         if person:
+            if len(search_words) == 1 and search_words[0] == '*':
+                return person
             name = displayer.display_name(person.get_primary_name()).lower()
             search_str = name + person.gramps_id.lower()
             for word in search_words:
@@ -335,6 +337,8 @@ class SearchGramplet(Gramplet):
             return False
 
         if tag:
+            if len(search_words) == 1 and search_words[0] == '*':
+                return tag
             search_str = tag.get_name().lower()
             for word in search_words:
                 if word not in search_str:
@@ -366,7 +370,8 @@ class SearchEntry(Gtk.SearchEntry):
 
         self.set_hexpand(True)
         self.set_tooltip_text(
-            _('Start type to search objects'))
+            _('Start type to search objects.\n'
+              'To show all objects enter only «*» symbol.'))
         self.set_placeholder_text(_("Search..."))
 
         self.connect("key-press-event", self.on_key_press_event)
