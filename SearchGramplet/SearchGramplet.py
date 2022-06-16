@@ -511,9 +511,21 @@ class ListBoxRow(Gtk.ListBoxRow):
         """
         Handle mouse button press.
         """
+        if self.dbstate is None:
+            return True
+
         button = event.get_button()[1]
+        # edit person by double click
+        if button == 1:
+            data = ItemWithData()
+            if self.kind == self.search_options['search.persons'][2]:
+                data.set_data([self.handle, self.update_person])
+                Actions(self.dbstate, self.uistate).edit_person(data)
+            elif self.kind == self.search_options['search.tags'][2]:
+                data.set_data([self.handle, self.update_tag_color])
+                Actions(self.dbstate, self.uistate).edit_tag(data)
         # show popup menu by right mouse button
-        if button == 3 and self.dbstate:
+        if button == 3:
             menu = PopupMenu(self, self.dbstate, self.uistate,
                              self.kind, self.handle)
             menu.show_menu()
@@ -573,8 +585,8 @@ class ListBoxRow(Gtk.ListBoxRow):
         hbox.add(Gtk.Image.new_from_icon_name('gramps-person',
                                               Gtk.IconSize.MENU))
         # add person name
-        label = Gtk.Label(self.label, wrap=True, xalign=0)
-        hbox.pack_start(label, True, True, 2)
+        self.person_label = Gtk.Label(self.label, wrap=True, xalign=0)
+        hbox.pack_start(self.person_label, True, True, 2)
         # add person image if needed
         if self.options["options.show_images"][0]:
             person_image = self.get_person_image(person, 32, 32,
@@ -600,6 +612,13 @@ class ListBoxRow(Gtk.ListBoxRow):
 
         if self.options["options.marked_first"][0]:
             self.marked = handle in self.bookmarks
+
+    def update_person(self, person):
+        """
+        Update person row data on change.
+        """
+        self.label = displayer.display_name(person.get_primary_name())
+        self.person_label.set_label(self.label)
 
     def build_tag(self, handle):
         """
@@ -857,7 +876,8 @@ class PopupMenu(Gtk.Menu):
         Generate menu for person item.
         """
         add_menuitem(self, _('Edit'),
-                     person_handle, self.actions.edit_person)
+                     [person_handle, self.row.update_person],
+                     self.actions.edit_person)
         add_menuitem(self, _('Set as Active person'),
                      [person_handle, self.kind], self.actions.set_active)
         add_menuitem(self, _('Set as Home person'),
@@ -876,7 +896,8 @@ class Actions():
     """
     Define actions.
     Parameter "obj" packed by MenuItemWithData().set_data(...),
-    and should be unpacked by "obj.get_data()"
+    and should be unpacked by "obj.get_data()".
+    For internal usage ItemWithData class can be used.
     """
     def __init__(self, dbstate, uistate):
         self.dbstate = dbstate
@@ -886,10 +907,11 @@ class Actions():
         """
         Start a person editor for the selected person.
         """
-        handle = obj.get_data()
+        handle, callback = obj.get_data()
         person = self.dbstate.db.get_person_from_handle(handle)
         try:
-            EditPerson(self.dbstate, self.uistate, [], person)
+            EditPerson(self.dbstate, self.uistate, [], person,
+                       callback=callback)
         except WindowActiveError:
             pass
 
@@ -936,3 +958,24 @@ class Actions():
         msg = _("Edit Tag (%s)") % tag.get_name()
         with DbTxn(msg, self.dbstate.db) as trans:
             self.dbstate.db.commit_tag(tag, trans)
+
+
+class ItemWithData(GObject.GObject):
+    """
+    A Item that stores a data property.
+    Based on MenuItemWithData class.
+    As set_data in GTK3 is not working, this is a workaround to have set_data.
+    """
+    data = GObject.Property(type=object)
+
+    def __init__(self):
+        GObject.GObject.__init__(self)
+
+    def set_data(self, data):
+        self.data = data
+
+    def get_data(self, _=None):
+        """
+        Obtain the data, for backward compat, we allow a dummy argument.
+        """
+        return self.data
