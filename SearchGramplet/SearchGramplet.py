@@ -79,6 +79,7 @@ NON_STARRED = 'non-starred'
 CONFIG = config.register_manager('search_gramplet')
 CONFIG.register("options.show_images", True)
 CONFIG.register("options.marked_first", True)
+CONFIG.register("options.sort_by_kind", True)
 CONFIG.register("search.persons", True)
 CONFIG.register("search.tags", True)
 CONFIG.load()
@@ -99,24 +100,21 @@ class SearchGramplet(Gramplet):
                                     _('Show images')],
             "options.marked_first": [CONFIG.get("options.marked_first"),
                                      _('Show bookmarked first')],
+            "options.sort_by_kind": [CONFIG.get("options.sort_by_kind"),
+                                     _('Sort by object type')],
         }
         # {option_name: [value, label, nav_type]}
         self.search_options = {
             "search.persons": [CONFIG.get("search.persons"),
                                _('Persons'), 'Person'],
             "search.tags": [CONFIG.get("search.tags"),
-                                _('Tags'), 'Tag'],
+                            _('Tags'), 'Tag'],
         }
 
         self.top = self.build_gui()
         self.gui.get_container_widget().remove(self.gui.textview)
         self.gui.get_container_widget().add(self.top)
         self.top.show_all()
-
-        if self.dbstate.is_open():
-            self.bookmarks = self.dbstate.db.get_bookmarks()
-        else:
-            self.bookmarks = None
 
         self.search_words = None
         # search events
@@ -169,7 +167,7 @@ class SearchGramplet(Gramplet):
         """
         Called when db is changed.
         """
-        self.bookmarks = self.dbstate.db.get_bookmarks()
+        pass
 
     def start_search(self, widget, search_words):
         """
@@ -432,6 +430,8 @@ class Panel(Gtk.Box):
         self.add(vbox)
         self.add(sw)
 
+        CONFIG.connect("options.sort_by_kind", self.invalidate_sort)
+
     def set_progress(self, fraction, text=None):
         """
         Set progress and label.
@@ -467,13 +467,24 @@ class Panel(Gtk.Box):
     def sort_func(self, row_1, row_2):
         """
         Function to sort rows by person name.
+        Return True if row_1 should be placed after row_2.
         Priority for bookmarked persons.
         """
+        # different kind
+        if CONFIG.get('options.sort_by_kind'):
+            if row_1.kind != row_2.kind:
+                return row_1.kind > row_2.kind
         # both rows are marked or not
         if row_1.marked == row_2.marked:
             return row_1.label > row_2.label
         # if one row is marked
         return row_2.marked
+
+    def invalidate_sort(self, *args):
+        """
+        Update sorting.
+        """
+        self.list_box.invalidate_sort()
 
 
 class ListBoxRow(Gtk.ListBoxRow):
@@ -834,9 +845,9 @@ class OptionsPopover(Gtk.Popover):
         """
         Save option state.
         """
+        self.options[option][0] = check_btn.get_active()
         CONFIG.set(option, check_btn.get_active())
         CONFIG.save()
-        self.options[option][0] = check_btn.get_active()
 
 
 class PopupMenu(Gtk.Menu):
