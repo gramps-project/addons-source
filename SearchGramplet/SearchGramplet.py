@@ -318,6 +318,7 @@ class SearchGramplet(Gramplet):
                 return person
             name = displayer.display_name(person.get_primary_name()).lower()
             search_str = name + person.gramps_id.lower()
+            search_str += self.get_person_dates(person)
             for word in search_words:
                 if word not in search_str:
                     # if some of words not present in the person name
@@ -350,6 +351,23 @@ class SearchGramplet(Gramplet):
         """
         self.stop_search()
         self.search_panel.add_no_result(_('Start type to search'))
+
+    def get_person_dates(self, person):
+        """
+        Get birth/christening and death/burying dates strings.
+        """
+        birth_event = get_birth_or_fallback(self.dbstate.db, person)
+        if birth_event:
+            birth = datehandler.get_date(birth_event)
+        else:
+            birth = ''
+
+        death_event = get_death_or_fallback(self.dbstate.db, person)
+        if death_event:
+            death = datehandler.get_date(death_event)
+        else:
+            death = ''
+        return birth + death
 
 
 class SearchEntry(Gtk.SearchEntry):
