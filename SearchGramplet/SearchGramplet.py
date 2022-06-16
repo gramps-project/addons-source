@@ -514,7 +514,7 @@ class ListBoxRow(Gtk.ListBoxRow):
         button = event.get_button()[1]
         # show popup menu by right mouse button
         if button == 3 and self.dbstate:
-            menu = PopupMenu(self.dbstate, self.uistate,
+            menu = PopupMenu(self, self.dbstate, self.uistate,
                              self.kind, self.handle)
             menu.show_menu()
         return True     # stop event emission
@@ -618,15 +618,21 @@ class ListBoxRow(Gtk.ListBoxRow):
         label = Gtk.Label(self.label, wrap=True, xalign=0)
         hbox.pack_start(label, True, True, 2)
 
-        # add color
+        # add color button
+        self.color_btn = Gtk.ColorButton()
+        self.update_tag_color(tag)
+        self.color_btn.connect(
+            'color-set', Actions(self.dbstate, self.uistate).set_tag_color, tag)
+        hbox.add(self.color_btn)
+
+    def update_tag_color(self, tag):
+        """
+        Update tag color in button.
+        """
         rgba = Gdk.RGBA()
         rgba.parse(tag.get_color())
         color = rgba.to_color()
-        color_btn = Gtk.ColorButton(color=color)
-        color_btn.connect('color-set',
-                          Actions(self.dbstate, self.uistate).set_tag_color,
-                          tag)
-        hbox.add(color_btn)
+        self.color_btn.set_color(color)
 
     def query_tooltip(self, widget, x, y, keyboard_mode, tooltip):
         """
@@ -810,7 +816,7 @@ class PopupMenu(Gtk.Menu):
     """
     Produce popup widget for right-click menu.
     """
-    def __init__(self, dbstate, uistate, kind=None, handle=None):
+    def __init__(self, row, dbstate, uistate, kind=None, handle=None):
         """
         db:     dbstate.db
         kind:   'Person', 'Family'
@@ -819,6 +825,7 @@ class PopupMenu(Gtk.Menu):
         Gtk.Menu.__init__(self)
         self.set_reserve_toggle_size(False)
 
+        self.row = row
         self.dbstate = dbstate
         self.uistate = uistate
         self.actions = Actions(self.dbstate, self.uistate)
@@ -861,7 +868,8 @@ class PopupMenu(Gtk.Menu):
         Generate menu for tag item.
         """
         add_menuitem(self, _('Edit'),
-                     tag_handle, self.actions.edit_tag)
+                     [tag_handle, self.row.update_tag_color],
+                     self.actions.edit_tag)
 
 
 class Actions():
@@ -904,14 +912,17 @@ class Actions():
     def edit_tag(self, obj):
         """
         Start a tag editor for the selected tag.
-        'handle' used to call not from menuitem.
         """
-        handle = obj.get_data()
+        handle, callback = obj.get_data()
         tag = self.dbstate.db.get_tag_from_handle(handle)
+        color = tag.get_color()
         try:
             EditTag(self.dbstate.db, self.uistate, [], tag)
+
         except WindowActiveError:
             pass
+        if callback is not None and color != tag.get_color():
+            callback(tag)
 
     def set_tag_color(self, color_chooser, tag):
         """
