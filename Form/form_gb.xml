@@ -681,12 +681,12 @@
             <column>
                 <_attribute>Industry</_attribute>
                 <size>6</size>
-                <_longname>Industry or Service with which worker is sonnected.</_longname>
+                <_longname>Industry or Service with which worker is connected.</_longname>
             </column>
             <column>
                 <_attribute>Work Type</_attribute>
                 <size>6</size>
-                <_longname>Employer, Worker or Working on Own Account</_longname>
+                <_longname>Whether Employer, Worker or Working on Own Account</_longname>
             </column>
             <column>
                 <_attribute>At Home</_attribute>
@@ -707,6 +707,83 @@
                 <_attribute>Disability</_attribute>
                 <size>5</size>
                 <_longname>INFIRMITY</_longname>
+            </column>
+        </section>
+    </form>
+    <form id='UK1921' type='Census' title='1921 England Census' date='19 Jun 1921'>
+        <heading>
+            <_attribute>Registration District</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Registration Sub-District</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Enumeration District</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Number of Rooms</_attribute>
+        </heading>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+                <size>13</size>
+                <_longname>NAME and SURNAME</_longname>
+            </column>
+            <column>
+                <_attribute>Relation</_attribute>
+                <size>6</size>
+                <_longname>RELATIONSHIP to Head of Household</_longname>
+            </column>
+            <column>
+                <_attribute>Age</_attribute>
+                <size>5</size>
+                <_longname>AGE</_longname>
+            </column>
+            <column>
+                <_attribute>Sex</_attribute>
+                <size>5</size>
+                <_longname>SEX</_longname>
+            </column>
+            <column>
+                <_attribute>Condition</_attribute>
+                <size>6</size>
+                <_longname>MARRIAGE or ORPHANHOOD</_longname>
+            </column>
+            <column>
+                <_attribute>Birthplace</_attribute>
+                <size>7</size>
+            </column>
+            <column>
+                <_attribute>Nationality</_attribute>
+                <size>6</size>
+            </column>
+            <column>
+                <_attribute>Education</_attribute>
+                <size>6</size>
+                <_longname>If attending a School or any kind of Educational Institution for the purpose of receiving Instruction</_longname>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+                <size>12</size>
+                <_longname>State here the precise branch of Profession, Trade, Manufacture, Service, &amp;c.</_longname>
+            </column>
+            <column>
+                <_attribute>Employment</_attribute>
+                <size>12</size>
+            </column>
+            <column>
+                <_attribute>Place of Work</_attribute>
+                <size>12</size>
+            </column>
+            <column>
+                <_attribute>Number of living children</_attribute>
+                <size>5</size>
+                <_longname>Total number under sixteen years of age. If none write "None."</_longname>
+            </column>
+            <column>
+                <_attribute>Ages of living children</_attribute>
+                <size>5</size>
+                <_longname>For each child place a X in the column corresponding to its age.</_longname>
             </column>
         </section>
     </form>
@@ -759,6 +836,9 @@
     </form>
     <form id='CY1891' type='Census' title='1891 Wales Census' date='5 Apr 1891'>
         <heading>
+            <_attribute>Administrative County</_attribute>
+        </heading>
+        <heading>
             <_attribute>Civil Parish</_attribute>
         </heading>
         <heading>
@@ -786,22 +866,27 @@
             <column>
                 <_attribute>Name</_attribute>
                 <size>25</size>
+                <_longname>NAME and Surname of each Person</_longname>
             </column>
             <column>
                 <_attribute>Relation</_attribute>
                 <size>6</size>
+                <_longname>RELATION to Head of Family</_longname>
             </column>
             <column>
                 <_attribute>Condition</_attribute>
                 <size>6</size>
+                <_longname>CONDITION as to Marriage</_longname>
             </column>
             <column>
                 <_attribute>Age</_attribute>
                 <size>5</size>
+                <_longname>AGE last Birthday of</_longname>
             </column>
             <column>
                 <_attribute>Occupation</_attribute>
                 <size>18</size>
+                <_longname>PROFESSION or OCCUPATION</_longname>
             </column>
             <column>
                 <_attribute>Employer</_attribute>
@@ -823,6 +908,10 @@
             <column>
                 <_attribute>Disability</_attribute>
                 <size>6</size>
+                <_longname>If
+(1) Deaf-and-Blind
+(2) Blind
+(3) Lunatic, Imbecile or Idiot</_longname>
             </column>
             <column>
                 <_attribute>Language</_attribute>
@@ -832,6 +921,9 @@
         </section>
     </form>
     <form id='CY1901' type='Census' title='1901 Wales Census' date='31 Mar 1901'>
+        <heading>
+            <_attribute>Administrative County</_attribute>
+        </heading>
         <heading>
             <_attribute>Civil Parish</_attribute>
         </heading>
@@ -857,32 +949,37 @@
             <column>
                 <_attribute>Name</_attribute>
                 <size>25</size>
+                <_longname>Name and Surname of each Person</_longname>
             </column>
             <column>
                 <_attribute>Relation</_attribute>
                 <size>6</size>
+                <_longname>RELATION to Head of Family</_longname>
             </column>
             <column>
                 <_attribute>Condition</_attribute>
                 <size>6</size>
+                <_longname>Condition as to Marriage</_longname>
             </column>
             <column>
                 <_attribute>Age</_attribute>
-                <size>6</size>
+                <size>5</size>
+                <_longname>Age last Birthday of</_longname>
             </column>
             <column>
                 <_attribute>Occupation</_attribute>
-                <size>18</size>
+                <size>19</size>
+                <_longname>PROFESSION OR OCCUPATION</_longname>
             </column>
             <column>
                 <_attribute>Work Type</_attribute>
-                <size>12</size>
+                <size>11</size>
                 <_longname>Employer, Worker or Own Account</_longname>
             </column>
             <column>
                 <_attribute>At Home</_attribute>
                 <size>6</size>
-                <_longname>Working at Home</_longname>
+                <_longname>If Working at Home</_longname>
             </column>
             <column>
                 <_attribute>Where Born</_attribute>
@@ -891,6 +988,11 @@
             <column>
                 <_attribute>Disability</_attribute>
                 <size>6</size>
+                <_longname>If
+(1) Deaf and Dumb
+(2) Blind
+(3) Lunatic
+(4) Imbecile, feeble-minded</_longname>
             </column>
             <column>
                 <_attribute>Language</_attribute>
@@ -900,73 +1002,180 @@
         </section>
     </form>
     <form id='CY1911' type='Census' title='1911 Wales Census' date='2 Apr 1911'>
+        <heading>
+            <_attribute>Registration District</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Registration Sub-District</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Enumeration District</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Number of Rooms</_attribute>
+        </heading>
         <section role='Primary' type='multi'>
             <column>
                 <_attribute>Name</_attribute>
-                <size>15</size>
+                <size>18</size>
+                <_longname>NAME AND SURNAME</_longname>
             </column>
             <column>
                 <_attribute>Relation</_attribute>
                 <size>5</size>
+                <_longname>RELATIONSHIP to Head of Family</_longname>
             </column>
             <column>
                 <_attribute>Age</_attribute>
-                <size>5</size>
+                <size>4</size>
+                <_longname>AGE (last Birthday)</_longname>
             </column>
             <column>
                 <_attribute>Condition</_attribute>
-                <size>5</size>
+                <size>6</size>
+                <_longname>&quot;Single,&quot; &quot;Married,&quot; &quot;Widower,&quot; or &quot;Widow,&quot; for all persons aged 15 years and upwards.</_longname>
             </column>
             <column>
                 <_attribute>Years Married</_attribute>
-                <size>5</size>
+                <size>4</size>
+                <_longname>Completed Years the present Marriage has lasted.</_longname>
             </column>
             <column>
                 <_attribute>Children Total</_attribute>
-                <size>5</size>
+                <size>4</size>
+                <_longname>Total Children Born Alive.</_longname>
             </column>
             <column>
                 <_attribute>Children Living</_attribute>
-                <size>5</size>
+                <size>4</size>
+                <_longname>Children still Living.</_longname>
             </column>
             <column>
                 <_attribute>Children Died</_attribute>
-                <size>5</size>
+                <size>4</size>
+                <_longname>Children who have Died.</_longname>
             </column>
             <column>
                 <_attribute>Occupation</_attribute>
-                <size>10</size>
+                <size>9</size>
+                <_longname>Personal Occupation</_longname>
             </column>
             <column>
                 <_attribute>Industry</_attribute>
-                <size>5</size>
+                <size>6</size>
+                <_longname>Industry or Service with which worker is connected.</_longname>
             </column>
             <column>
                 <_attribute>Work Type</_attribute>
                 <size>5</size>
-                <_longname>Employer, Worker or Own Account</_longname>
+                <_longname>Whether Employer, Worker or Working on Own Account</_longname>
             </column>
             <column>
                 <_attribute>At Home</_attribute>
                 <size>5</size>
-                <_longname>Working at Home</_longname>
+                <_longname>Whether Working at Home</_longname>
             </column>
             <column>
                 <_attribute>Where Born</_attribute>
-                <size>5</size>
+                <size>10</size>
+                <_longname>BIRTHPLACE of every Person.</_longname>
             </column>
             <column>
                 <_attribute>Nationality</_attribute>
                 <size>5</size>
+                <_longname>NATIONALITY of every Person born in a Foreign Country.</_longname>
             </column>
             <column>
                 <_attribute>Disability</_attribute>
                 <size>5</size>
+                <_longname>INFIRMITY</_longname>
             </column>
             <column>
                 <_attribute>Language</_attribute>
                 <size>5</size>
                 <_longname>Language Spoken</_longname>
+            </column>
+        </section>
+    </form>
+    <form id='CY1921' type='Census' title='1921 Wales Census' date='19 Jun 1921'>
+        <heading>
+            <_attribute>Registration District</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Registration Sub-District</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Enumeration District</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Number of Rooms</_attribute>
+        </heading>
+        <section role='Primary' type='multi'>
+            <column>
+                <_attribute>Name</_attribute>
+                <size>13</size>
+                <_longname>NAME and SURNAME</_longname>
+            </column>
+            <column>
+                <_attribute>Relation</_attribute>
+                <size>6</size>
+                <_longname>RELATIONSHIP to Head of Household</_longname>
+            </column>
+            <column>
+                <_attribute>Age</_attribute>
+                <size>4</size>
+                <_longname>AGE</_longname>
+            </column>
+            <column>
+                <_attribute>Sex</_attribute>
+                <size>4</size>
+                <_longname>SEX</_longname>
+            </column>
+            <column>
+                <_attribute>Condition</_attribute>
+                <size>5</size>
+                <_longname>MARRIAGE or ORPHANHOOD</_longname>
+            </column>
+            <column>
+                <_attribute>Birthplace</_attribute>
+                <size>7</size>
+            </column>
+            <column>
+                <_attribute>Nationality</_attribute>
+                <size>6</size>
+            </column>
+            <column>
+                <_attribute>Education</_attribute>
+                <size>5</size>
+                <_longname>If attending a School or any kind of Educational Institution for the purpose of receiving Instruction</_longname>
+            </column>
+            <column>
+                <_attribute>Occupation</_attribute>
+                <size>12</size>
+                <_longname>State here the precise branch of Profession, Trade, Manufacture, Service, &amp;c.</_longname>
+            </column>
+            <column>
+                <_attribute>Employment</_attribute>
+                <size>12</size>
+            </column>
+            <column>
+                <_attribute>Place of Work</_attribute>
+                <size>12</size>
+            </column>
+            <column>
+                <_attribute>Number of living children</_attribute>
+                <size>4</size>
+                <_longname>Total number under sixteen years of age. If none write "None."</_longname>
+            </column>
+            <column>
+                <_attribute>Ages of living children</_attribute>
+                <size>5</size>
+                <_longname>For each child place a X in the column corresponding to its age.</_longname>
+            </column>
+            <column>
+                <_attribute>Language</_attribute>
+                <size>5</size>
+                <_longname>LANGUAGE SPOKEN.</_longname>
             </column>
         </section>
     </form>
