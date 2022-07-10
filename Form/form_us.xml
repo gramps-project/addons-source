@@ -2748,13 +2748,11 @@
             </column>
         </section>
     </form>
+<!--
+ 1950 U.S. Decennial Census
+ https://1950census.archives.gov/
+-->
     <form id='US1950' type='Census' title='1950 US Census' date='1950-04-01'>
-        <heading>
-            <_attribute>NARA publication</_attribute>
-        </heading>
-        <heading>
-            <_attribute>Roll No.</_attribute>
-        </heading>
         <heading>
             <_attribute>State</_attribute>
         </heading>
@@ -2762,14 +2760,22 @@
             <_attribute>County</_attribute>
         </heading>
         <heading>
-            <_attribute>Incorporated place or township</_attribute>
+            <_attribute>Incorporated Place or Township</_attribute>
         </heading>
         <heading>
-            <_attribute>E. D. Number</_attribute>
+            <_attribute>E.D. Number</_attribute>
         </heading>
         <heading>
             <_attribute>Institution</_attribute>
-            <_longname>Hotel, large rooming house, institution, military installation, etc.</_longname>
+        </heading>
+        <heading>
+            <_attribute>Name</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Type</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Date Sheet Started</_attribute>
         </heading>
         <heading>
             <_attribute>Page No.</_attribute>
@@ -2778,177 +2784,339 @@
             <_attribute>Sheet No.</_attribute>
         </heading>
         <heading>
-            <_attribute>Date</_attribute>
-            <_longname>Enumeration Date</_longname>
+            <_attribute>Street Name</_attribute>
+        </heading>
+        <heading>
+            <_attribute>House No.</_attribute>
+        </heading>
+        <heading>
+            <_attribute>No. of dwelling unit</_attribute>
         </heading>
         <section role='Primary' type='multi'>
             <column>
+                <_attribute>Line No.</_attribute>
+                <_longname>This person
+appears on
+line number</_longname>
+            </column>
+            <column>
+                <_attribute>Farm or ranch</_attribute>
+                <_longname>(4) Is this house
+      on a farm or ranch?</_longname>
+            </column>
+            <column>
+                <_attribute>Three or more acres?</_attribute>
+                <_longname>(5) Is this house on
+      a place of three or
+      more acres?</_longname>
+            </column>
+            <column>
+                <_attribute>Agriculture Questionnaire No.</_attribute>
+                <_longname>(6) Complete 1950 Agriculture
+      Questionnaire</_longname>
+            </column>
+            <column>
                 <_attribute>Name</_attribute>
-            </column>
-            <column>
-                <_attribute>Farm?</_attribute>
-                <_longname>Is this house on a farm (or ranch)?</_longname>
-            </column>
-            <column>
-                <_attribute>On 3+ acres of land?</_attribute>
-                <_longname>Is this house on a place of three or more acres?</_longname>
-            </column>
-            <column>
-                <_attribute>Agricultural Questionnaire Number</_attribute>
+                <_longname>(7) Name of each person
+      in this household</_longname>
             </column>
             <column>
                 <_attribute>Relationship</_attribute>
+                <_longname>(8) Relationship of person to head of household,
+       Head
+       Wife
+       Son
+       Daughter
+       Grandson
+       Granddaughter
+       Father-in-law
+       Mother-in-law
+       Ladger
+       Ladger's Wife
+       Maid
+       Hired hand
+       Patient</_longname>
             </column>
             <column>
                 <_attribute>Race</_attribute>
+                <_longname>(9) Race
+       White (W)
+       Negro (Neg)
+       American Indian (Ind)
+       Japanese (Jap)
+       Chinese (Chi)
+       Pilipino (Pil)
+       Other (Spell out)</_longname>
             </column>
             <column>
                 <_attribute>Sex</_attribute>
+                <_longname>(10) Sex
+         Male
+         Female</_longname>
             </column>
             <column>
-                <_attribute>Age at last birthday</_attribute>
-                <_longname>How old was he on his last birthday?</_longname>
+                <_attribute>Age</_attribute>
+                <_longname>(11) Age at Last Birthday</_longname>
             </column>
             <column>
-                <_attribute>Marital status</_attribute>
-                <_longname>Is he now married, widowed, divorced, separated, or never married?</_longname>
+                <_attribute>Marital Status</_attribute>
+                <_longname>(12) Marital Status
+          Married (Mar)
+          Widowed (Wd)
+          Divorced (D)
+          Separated (Sep)
+          Never married (Nev)</_longname>
             </column>
             <column>
                 <_attribute>Place of birth</_attribute>
-                <_longname>What State (or foreign country) was he born in?</_longname>
+                <_longname>(13) State or foreign country</_longname>
             </column>
             <column>
-                <_attribute>Is he naturalized?</_attribute>
+                <_attribute>Naturalized</_attribute>
+                <_longname>(14) Is he naturalized?</_longname>
             </column>
             <column>
-                <_attribute>housework (H), work (W), unable to work (U) or other (Ot)<_attribute>
-                <_longname>What was this person doing most of last week—working, keeping house, or something else?</_longname>
+                <_attribute>Job last week</_attribute>
+                <_longname>(15) What was this person doing
+        most of last week
+          Working (Wk)
+          Keeping house (H)
+          Something else (Ot)
+          Unable to work (U)</_longname>
             </column>
             <column>
-                <_attribute>Worked last week? (Y/N)<_attribute>
-                <_longname>Did this person do any work at all last week, not counting work around the house?</_longname>
+                <_attribute>Worked last week</_attribute>
+                <_longname>(16) Did this person do any work
+        at all last week, not counting
+        work around the house</_longname>
             </column>
             <column>
-                <_attribute>Looking for work?</_attribute>
-                <_longname>Was this person looking for work?</_longname>
+                <_attribute>Looking for work</_attribute>
+                <_longname>(17) Was this person
+        looking for work</_longname>
             </column>
             <column>
-                <_attribute>Has a job or business?</_attribute>
-                <_longname>Even though he didn’t work last week, does he have a job or business?</_longname>
+                <_attribute>Have a job or business?</_attribute>
+                <_longname>(18) Even though he didn't work
+        last week does he have a job
+        or business</_longname>
             </column>
             <column>
-                <_attribute># hours worked last week</_attribute>
-                <_longname>How many hours did he work last week?</_longname>
+                <_attribute>Hours worked last week</_attribute>
+                <_longname>(19) How many hours
+        did he work last
+        week?</_longname>
             </column>
             <column>
-                <_attribute>Type of work</_attribute>
-                <_longname>What kind of work was he doing?</_longname>
+                <_attribute>Occupation</_attribute>
+                <_longname>(20a) What kind of work
+          was he doing?</_longname>
             </column>
             <column>
-                <_attribute>Business or industry</_attribute>
-                <_longname>What kind of business or industry was he working in?</_longname>
+                <_attribute>Industry</_attribute>
+                <_longname>(20b) What kind of business
+          or industry was he
+          working in?</_longname>
             </column>
             <column>
-                <_attribute>Class of worker</_attribute>
+                <_attribute>Class of Worker</_attribute>
+                <_longname>(20c) Class of Worker
+            For Private employer (P)
+            For Government (G)
+            Own business (O)
+            Without Pay
+             on family farm
+             or business (NP)</_longname>
             </column>
             <column>
-                <_attribute>Same house in Apr 1949?</_attribute>
-                <_longname>Was he living in this same house a year ago?</_longname>
+                <_attribute>Living in same house a year ago?</_attribute>
+                <_longname>(Supplemental Question 21)
+ Was he living in this same
+ house a year ago</_longname>
             </column>
             <column>
-                <_attribute>Farm in Apr 1949?</_attribute>
-                <_longname>Was he living on a farm a year ago?</_longname>
+                <_attribute>Living on a farm a year ago?</_attribute>
+                <_longname>(Supplemental Question 22)
+ Was he living on a farm a
+ year ago</_longname>
             </column>
             <column>
-                <_attribute>Same county in Apr 1949?</_attribute>
-                <_attribute>Was he living in this same county a year ago?</_attribute>
+                <_attribute>Living in this county a year ago?</_attribute>
+                <_longname>(Supplemental Question 23)
+ Was he living in this same
+ county a year ago</_longname>
             </column>
             <column>
-                <_attribute>County</_attribute>
+                <_attribute>County and State living in a year ago?</_attribute>
+                <_longname>(Supplemental Question 24a and 24b)
+ If No in item 23 What county and State
+ was he living in a year ago</_longname>
             </column>
             <column>
-                <_attribute>State or foreign country</_attribute>
+                <_attribute>Father&apos;s birthplace</_attribute>
+                <_longname>(Supplemental Question 25)
+ What country was the
+ father born in</_longname>
             </column>
             <column>
-                <_attribute>Place of birth of father</_attribute>
-                <_longname>What country was his father born in?</_longname>
+                <_attribute>Mother&apos;s birthplace</_attribute>
+                <_longname>(Supplemental Question 25)
+ What country was the
+ mother born in</_longname>
             </column>
             <column>
-                <_attribute>Place of birth of mother</_attribute>
-                <_longname>What country was his mother born in?</_longname>
+                <_attribute>Highest grade in school</_attribute>
+                <_longname>(Supplemental Question 26)
+ What is the highest grade of
+ school that he has attended
+   None (O)
+   Kindergarten (K)
+   Elementary (S1 to S6)
+   Junior High (S7 to S9)
+   Senior High (S10 to S12)
+   College (C1 to C4)
+   Graduate/Professional School
+     1 year or more (C5)</_longname>
             </column>
             <column>
-                <_attribute>Highest grade attended</_attribute>
-                <_longname>What is the highest grade of school that he has attended?</_longname>
+                <_attribute>Finished this grade?</_attribute>
+                <_longname>(Supplemental Question 27)
+ Yes
+ No</_longname>
             </column>
             <column>
-                <_attribute>Completed?</_attribute>
-                <_longname>Did he finish this grade?</_longname>
+                <_attribute>Attended school since February 1</_attribute>
+                <_longname>(Supplemental Question 28)
+ Attended school at any time
+ since February 1</_longname>
             </column>
             <column>
-                <_attribute>Attended school since Feb 1, 1950?</_attribute>
-                <_longname>Has he attended school at any time since February 1st?</_longname>
+                <_attribute>Weeks looking for work</_attribute>
+                <_longname>(Supplemental Question 29)
+ How many weeks has he
+ been looking for work</_longname>
             </column>
             <column>
-                <_attribute>How many weeks has he been looking for work?</_attribute>
+                <_attribute>Weeks worked in 1949</_attribute>
+                <_longname>(Supplemental Question 30)
+ Last year how many weeks
+ did this person do any work
+ at all, not counting work
+ around the house</_longname>
             </column>
             <column>
-                <_attribute># weeks worked in 1949</_attribute>
-                <_longname>Last year, in how many weeks did this person do any work at all, not counting work around the house?</_longname>
+                <_attribute>Income earned as an employee</_attribute>
+                <_longname>(Supplemental Question 31a)
+ Last year (1949), how much money
+ did he earn working as an employee
+ for wages or salary</_longname>
             </column>
             <column>
-                <_attribute>Amount of wages/salary in 1949</_attribute>
-                <_longname>Last year, how much money did he earn working as an employee for wages or salary?</_longname>
+                <_attribute>Income earned in his own business</_attribute>
+                <_longname>(Supplemental Question 31b)
+ Last year (1949), how much money
+ did he earn working in his own
+ business, professional practice,
+ or farm</_longname>
             </column>
             <column>
-                <_attribute>Amount of money from own business in 1949</_attribute>
-                <_longname>Last year, how much money did he earn working in his own business, professional practice, or farm?</_longname>
+                <_attribute>Other income</_attribute>
+                <_longname>(Supplemental Question 31c)
+ Last year (1949), how much money
+ did he receive from interest,
+ dividends, veteran's allowances,
+ pensions, rents, or other income
+ (aside from earnings)</_longname>
             </column>
             <column>
-                <_attribute>Amount of other income in 1949</_attribute>
-                <_longname>Last year, how much money did he receive from interest, dividends, veteran’s allowances, pensions, rents, or other income?</_longname>
+                <_attribute>Income of relatives in household</_attribute>
+                <_longname>(Supplemental Question 32a)
+ Last year (1949), how much money
+ did the relatives in this household
+ earn working for wages or salary</_longname>
             </column>
             <column>
-                <_attribute>Relatives in household wages/salary in 1949</_attribute>
-                <_longname>Last year, how much money did his relatives in this household earn working for wages or salary?</_longname>
+                <_attribute>Income relatives earned in own business?</_attribute>
+                <_longname>(Supplemental Question 32b)
+ Last year (1949), how much money
+ did the relatives in this household
+ earn in own business, professional
+ practice, or farm</_longname>
             </column>
             <column>
-                <_attribute>Relatives in household earnings from own business in 1949</_attribute>
-                <_longname>Last year, how much money did his relatives in this household earn in own business, professional practice, or farm?</_longname>
+                <_attribute>Income of relatives earned in other income</_attribute>
+                <_longname>(Supplemental Question 32c)
+ Last year (1949), how much money
+ did the relatives in this household
+ receive from interest, dividends,
+ veteran's allowances, pensions,
+ rents, or other income (aside from
+ earnings)</_longname>
             </column>
             <column>
-                <_attribute>Relatives in household other income in 1949</_attribute>
-                <_longname>Last year, how much money did his relatives in this household receive from interest, dividends, veteran’s allowances, pensions, rents, or other income?</_longname>
+                <_attribute>Served in World War II</_attribute>
+                <_longname>(Supplemental Question 33a)
+ Served in the U.S. Armed Forces
+ during World War II</_longname>
             </column>
             <column>
-                <_attribute>WWII Veteran?</_attribute>
-                <_longname>Did he ever serve in the U. S. Armed Forces during World War II?</_longname>
+                <_attribute>Served in World War I</_attribute>
+                <_longname>(Supplemental Question 33b)
+ Served in the U.S. Armed Forces
+ during World War I</_longname>
             </column>
             <column>
-                <_attribute>WWI Veteran?</_attribute>
-                <_longname>World War I?</_longname>
+                <_attribute>Served in the U.S. Armed Forces any other time</_attribute>
+                <_longname>(Supplemental Question 33c)
+ Served in the U.S. Armed Forces
+ any other time</_longname>
             </column>
             <column>
-                <_attribute>Any other time, including present service?</_attribute>
+                <_attribute>Entry in Items 20a, 20b, or 20c?</_attribute>
+                <_longname>(Supplemental Question 34)
+ Is there any entry in Items
+ 20a, 20b, or 20c</_longname>
             </column>
             <column>
-                <_attribute>What kind of work did this person do in his last job?</_attribute>
+                <_attribute>Work did in last job?</_attribute>
+                <_longname>(Supplemental Question 35a)
+ What kind of work did this
+ person do in his last job</_longname>
             </column>
             <column>
-                <_attribute>What kind of business or industry did he work in?</_attribute>
+                <_attribute>Type of business or industry worked in?</_attribute>
+                <_longname>(Supplemental Question 35b)
+ What kind of business or
+ industry did he work in</_longname>
             </column>
             <column>
-                <_attribute>Class of worker</_attribute>
+                <_attribute>Class of worker [last job]</_attribute>
+                <_longname>(Supplemental Question 35c)
+ Class of Worker
+   For Private employer (P)
+   For Government (G)
+   Own business (O)
+   Without Pay on family
+     farm or business (NP)</_longname>
             </column>
             <column>
-                <_attribute>Has this person been married more than once?</_attribute>
+                <_attribute>Married more than once?</_attribute>
+                <_longname>(Supplemental Question 36)
+ Has this person been married
+ more than once</_longname>
             </column>
             <column>
-                <_attribute># years since marriage ended</_attribute>
-                <_longname>How many years since this person was married, widowed, divorced, or separated?</_longname>
+                <_attribute>Years of Marital Status</_attribute>
+                <_longname>(Supplemental Question 37)
+ How many years in last Marital
+ Status (Column 12)</_longname>
             </column>
             <column>
-                <_attribute>How many children has she ever borne, not counting stillbirths?</_attribute>
+                <_attribute>Number of children ever born</_attribute>
+                <_longname>(Supplemental Question 38)
+ If female and ever (Mar, Wd, D, or Sep)
+ How many children has she ever borne,
+ not counting stillbirths</_longname>
             </column>
         </section>
     </form>
