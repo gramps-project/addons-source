@@ -228,7 +228,7 @@ msgstr "Afficher les images des individus"
 #: GraphView/graphview.py:841
 msgid "Show persons thumbnails in search result list."
 msgstr ""
-"Afficher les miniatures des individus dans la liste des résultats de la "
+"Afficher les miniatures des individus dans les résultats de la "
 "recherche."
 
 #: GraphView/graphview.py:844
@@ -266,7 +266,7 @@ msgstr "Le fichier existe déjà"
 msgid ""
 "You can choose to either overwrite the file, or change the selected filename."
 msgstr ""
-"Vous pouvez soit choisir d’écraser le fichier, soit de changer le nom du "
+"Vous pouvez choisir d’écraser le fichier ou modifier le nom du "
 "fichier sélectionné."
 
 # éviter le raccourci sur la majuscule accentuée
@@ -345,7 +345,7 @@ msgstr "Espacement"
 
 #: GraphView/graphview.py:1073
 msgid "All connected"
-msgstr "Tous les reliés"
+msgstr "Collatéraux"
 
 #: GraphView/graphview.py:1075
 msgid ""
@@ -375,7 +375,7 @@ msgid ""
 "Try to add some frequently used persons to speedup navigation."
 msgstr ""
 "Vous n’avez pas encore de signets…\n"
-"Essayez d’ajouter des individus consultés fréquemment pour accélérer la "
+"Ajouter des individus consultés fréquemment pour accélérer la "
 "navigation."
 
 #: GraphView/graphview.py:1287
@@ -408,7 +408,7 @@ msgid ""
 "Do you want to set it active and rebuild view?"
 msgstr ""
 "L’individu <b><i>%s</i></b> n’est pas dans la vue.\n"
-"Voulez-vous le rendre actif et reconstruire la vue ?"
+"Voulez-vous l'activer et reconstruire la vue ?"
 
 #: GraphView/graphview.py:1399
 msgid "Change active person?"
