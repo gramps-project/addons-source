@@ -352,7 +352,7 @@ msgid ""
 "Show all connected persons limited by generation restrictions.\n"
 "Works slow, so don't set large generation values."
 msgstr ""
-"Affiche tous les individus reliés (la parenté) dans les limites définies "
+"Affiche tous les collatéraux (la parenté) dans les limites définies "
 "pour les générations.\n"
 "Fonctionnement lent ; ne réglez pas sur un grand nombre de générations."
 
