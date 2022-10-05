@@ -88,6 +88,8 @@ from gramps.gui.pluginmanager import GuiPluginManager
 from gramps.gen.plug import CATEGORY_QR_PERSON, CATEGORY_QR_FAMILY
 from gramps.gui.plug.quick import run_report
 
+from gramps.gen.filters import GenericFilterFactory, rules
+
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
     _trans = glocale.get_addon_translator(__file__)
@@ -991,6 +993,7 @@ class GraphWidget(object):
         self.actions.connect('rebuild-graph', self.view.build_tree)
         self.actions.connect('active-changed', self.populate)
         self.actions.connect('focus-person-changed', self.set_person_to_focus)
+        self.actions.connect('path-to-home-person', self.populate)
 
         self.dot_data = None
         self.svg_data = None
@@ -1461,7 +1464,7 @@ class GraphWidget(object):
         # to prevent window scrolling
         return True
 
-    def populate(self, active_person):
+    def populate(self, active_person, path_to_home_person=False):
         """
         Populate the graph with widgets derived from Graphviz.
         """
@@ -1484,7 +1487,7 @@ class GraphWidget(object):
                               bold_size=self.bold_size,
                               norm_size=self.norm_size)
 
-        graph_data = dot.build_graph(active_person)
+        graph_data = dot.build_graph(active_person, path_to_home_person)
         del dot
 
         if not graph_data:
@@ -2442,7 +2445,7 @@ class DotSvgGenerator(object):
         self.bth = '<FONT FACE="%s">%s</FONT>' % (self.sym_font, self.bth)
         self.dth = '<FONT FACE="%s">%s</FONT>' % (self.sym_font, self.dth)
 
-    def build_graph(self, active_person):
+    def build_graph(self, active_person, path_to_home_person):
         """
         Builds a GraphViz tree based on the active person.
         """
@@ -2453,15 +2456,20 @@ class DotSvgGenerator(object):
             self.home_person = self.dbstate.db.get_default_person()
             self.set_current_list(active_person)
             self.set_current_list_desc(active_person)
+            self.path_to_home_person = True
 
-            if self.show_all_connected:
+            if path_to_home_person:
                 self.person_handles_dict.update(
-                    self.find_connected(active_person))
+                    self.find_path_to_home(active_person))
             else:
-                self.person_handles_dict.update(
-                    self.find_descendants(active_person))
-                self.person_handles_dict.update(
-                    self.find_ancestors(active_person))
+                if self.show_all_connected:
+                    self.person_handles_dict.update(
+                        self.find_connected(active_person))
+                else:
+                    self.person_handles_dict.update(
+                        self.find_descendants(active_person))
+                    self.person_handles_dict.update(
+                        self.find_ancestors(active_person))
 
             if self.person_handles_dict:
                 self.person_handles = sorted(
@@ -2677,6 +2685,22 @@ class DotSvgGenerator(object):
                 self.add_descendant(
                     self.database.get_person_from_handle(child_ref.ref),
                     num_generations - 1, person_handles)
+
+    def find_path_to_home(self, active_person):
+        """
+        Find all the people in the direct path between the active person
+        and the home person.
+        """
+        home_person = self.dbstate.db.get_default_person()
+        active_person = self.database.get_person_from_handle(active_person)
+        FilterClass = GenericFilterFactory('Person')
+        filter = FilterClass()
+        plist = self.database.iter_person_handles()
+        path = rules.person.RelationshipPathBetween([active_person.gramps_id, home_person.gramps_id])
+        filter.add_rule(path)
+        person_list = filter.apply(self.database, plist)
+        person_handles = dict.fromkeys(person_list,0)
+        return person_handles
 
     def add_spouses(self, person, person_handles):
         """
@@ -3872,6 +3896,9 @@ class PopupMenu(Gtk.Menu):
             add_menuitem(self, _('Set as home person'),
                          handle, self.actions.set_home_person)
 
+            add_menuitem(self, _('Show path to home person'),
+                         handle, self.actions.path_to_home_person)
+
             # check if we have person in bookmarks
             marks = self.graph_widget.view.bookmarks.get_bookmarks().bookmarks
             if handle in marks:
@@ -4116,6 +4143,7 @@ class Actions(Callback):
         'focus-person-changed' : (str, ),
         'active-changed' : (str, ),
         'rebuild-graph' :  None,
+        'path-to-home-person' : (str, bool),
         }
 
     def __init__(self, dbstate, uistate, bookmarks):
@@ -4203,6 +4231,13 @@ class Actions(Callback):
         if person:
             self.dbstate.db.set_default_person_handle(handle)
             self.emit('active-changed', (handle, ))
+
+    def path_to_home_person(self, obj):
+        """
+        Draw the relationship between the active and home people
+        """
+        handle = obj.get_data()
+        self.emit('path-to-home-person', (handle, True))
 
     def edit_family(self, obj, family_handle=None):
         """
