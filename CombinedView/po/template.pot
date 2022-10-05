@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-28 11:26-0600\n"
+"POT-Creation-Date: 2022-10-05 17:09-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,15 +26,15 @@ msgstr ""
 msgid "Unknown"
 msgstr ""
 
-#: CombinedView/basepage.py:368
+#: CombinedView/basepage.py:369
 msgid "Add Child to Family"
 msgstr ""
 
-#: CombinedView/basepage.py:386
+#: CombinedView/basepage.py:387
 msgid "Select Child"
 msgstr ""
 
-#: CombinedView/basepage.py:433 CombinedView/eventpage.py:101
+#: CombinedView/basepage.py:434 CombinedView/eventpage.py:101
 #: CombinedView/eventpage.py:235 CombinedView/personpage.py:131
 #: CombinedView/personpage.py:468 CombinedView/personpage.py:519
 #: CombinedView/personpage.py:681 CombinedView/personpage.py:894
@@ -42,12 +42,12 @@ msgstr ""
 msgid "Edit %s"
 msgstr ""
 
-#: CombinedView/basepage.py:492
+#: CombinedView/basepage.py:493
 #, python-format
 msgid "%(abbrev)s %(date)s in %(place)s"
 msgstr ""
 
-#: CombinedView/basepage.py:494
+#: CombinedView/basepage.py:495
 #, python-format
 msgid "%(abbrev)s %(date)s%(place)s"
 msgstr ""
