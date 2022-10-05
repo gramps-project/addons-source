@@ -789,7 +789,7 @@ def available_updates():
                 LOG.warning("Failed to open addon metadata for %s %s: %s",
                             lang, url, err)
                 f_ptr = None
-        if f_ptr and f_ptr.getcode() == 200 or f_ptr.file:  # ok
+        if f_ptr and (f_ptr.getcode() == 200 or f_ptr.file):  # ok
             break
 
     try:
@@ -800,7 +800,7 @@ def available_updates():
 
     pmgr = BasePluginManager.get_instance()
     addon_update_list = []
-    if f_ptr and f_ptr.getcode() == 200 or f_ptr.file:
+    if f_ptr and (f_ptr.getcode() == 200 or f_ptr.file):
         lines = list(f_ptr.readlines())
         count = 0
         for line in lines:
