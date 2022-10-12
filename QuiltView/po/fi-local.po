@@ -1,0 +1,189 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Quilt Charts\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-30 15:05-0500\n"
+"PO-Revision-Date: 2022-10-12 15:00+0300\n"
+"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"Language-Team: niememat@gmail.com\n"
+"Language: fi_FI\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: QuiltView/QuiltView.gpr.py:30
+msgid "Quilt Chart"
+msgstr "Peittokaavio"
+
+#: QuiltView/QuiltView.gpr.py:31
+msgid "Charts"
+msgstr "Kaaviot"
+
+#: QuiltView/QuiltView.gpr.py:32
+msgid "The view shows a quilt chart visualisation of a family tree"
+msgstr "Näyttää visualisoidun peittokaavion sukupuusta"
+
+#: QuiltView/QuiltView.py:223
+msgid "Quilt chart"
+msgstr "Peittokaavio"
+
+#: QuiltView/QuiltView.py:307
+msgid "Select the name for which you want to see."
+msgstr "Valitse nimi, jonka haluat nähdä."
+
+#: QuiltView/QuiltView.py:312
+msgid "Clear"
+msgstr "Tyhjennä"
+
+#: QuiltView/QuiltView.py:314
+msgid "Clear the entry field in the name selection box."
+msgstr "Tyhjennä nimenvalintakenttä."
+
+#: QuiltView/QuiltView.py:319
+msgid "Nothing is selected"
+msgstr "Mitään ei ole valittu"
+
+#: QuiltView/QuiltView.py:375
+msgid "Organize Bookmarks"
+msgstr "Järjestä kirjanmerkkejä"
+
+#: QuiltView/QuiltView.py:572
+#, python-format
+msgid ""
+"You have %(filter)d filtered people, %(count)d people shown on the tree and "
+"%(total)d people in your database."
+msgstr ""
+"Sinulla on %(filter)d suodatettua henkilöä, %(count)d henkilöä näkyy puussa "
+"ja %(total)d henkilöä tietokannassasi."
+
+#: QuiltView/QuiltView.py:602
+msgid "Could Not Set a Bookmark"
+msgstr "Kirjanmerkkiä ei voitu asettaa"
+
+#: QuiltView/QuiltView.py:603
+msgid "A bookmark could not be set because no one was selected."
+msgstr "Kirjanmerkin asetus epäonnistui, koska mitään ei ollut valittu."
+
+#: QuiltView/QuiltView.py:662
+msgid "Loading individuals"
+msgstr "Henkilöiden lataaminen"
+
+#: QuiltView/QuiltView.py:663
+msgid "Loading the data"
+msgstr "Tietojen lataaminen"
+
+#: QuiltView/QuiltView.py:1053
+msgid "About Quilt View"
+msgstr "Tietoja Peittokaaviosta"
+
+#: QuiltView/QuiltView.py:1123
+#, python-format
+msgid "Family of %(husband)s and %(spouse)s"
+msgstr "%(husband)s ja %(spouse)s muodostama perhe"
+
+#: QuiltView/QuiltView.py:1129 QuiltView/QuiltView.py:1133
+#, python-format
+msgid "Family of %s"
+msgstr "Perhe %s"
+
+#: QuiltView/QuiltView.py:1188 QuiltView/QuiltView.py:1317
+msgid "Edit"
+msgstr "Muokkaa"
+
+#: QuiltView/QuiltView.py:1191 QuiltView/QuiltView.py:1320
+msgid "Edit tags"
+msgstr "Muokkaa tageja"
+
+#: QuiltView/QuiltView.py:1207 QuiltView/QuiltView.py:1532
+msgid "Children"
+msgstr "Lapset"
+
+#: QuiltView/QuiltView.py:1220 QuiltView/QuiltView.py:1545
+msgid "Add child to family"
+msgstr "Lisää perheeseen lapsi"
+
+#: QuiltView/QuiltView.py:1290
+msgid "Add Child to Family"
+msgstr "Lisää perheeseen lapsi"
+
+#: QuiltView/QuiltView.py:1323
+msgid "_Copy"
+msgstr "_Kopioi"
+
+#: QuiltView/QuiltView.py:1333
+msgid "Spouses"
+msgstr "Puolisot"
+
+#: QuiltView/QuiltView.py:1338 QuiltView/QuiltView.py:1463
+msgid "Add"
+msgstr "Lisää"
+
+#: QuiltView/QuiltView.py:1362
+msgid "Siblings"
+msgstr "Sisarukset"
+
+#: QuiltView/QuiltView.py:1430
+msgid "Parents"
+msgstr "Vanhemmat"
+
+#: QuiltView/QuiltView.py:1469
+msgid "Related"
+msgstr "Sukua"
+
+#: QuiltView/QuiltView.py:1500
+msgid "Set as home person"
+msgstr "Aseta kotihenkilö"
+
+#: QuiltView/QuiltView.py:1650
+msgid "Adding Tags"
+msgstr "Lisätään tageja"
+
+#: QuiltView/QuiltView.py:1656
+#, python-format
+msgid "Adding Tags to person (%s)"
+msgstr "Lisää tageja henkilölle (%s)"
+
+#: QuiltView/QuiltView.py:1661
+#, python-format
+msgid "Adding Tags to family (%s)"
+msgstr "Lisää tageja perheelle (%s)"
+
+#: QuiltView/QuiltView.py:1865
+msgid "Printing the tree"
+msgstr "Puun tulostus"
+
+#: QuiltView/QuiltView.py:1869
+#, python-format
+msgid "Need to print %(pages)s pages (%(format)s format)"
+msgstr "Tulostetaan %(pages)s sivua (%(format)s muodossa)"
+
+#: QuiltView/QuiltView.py:1921
+msgid ""
+"Center on the selected person.\n"
+"The new position of the person will be near the top left corner."
+msgstr ""
+"Keskitä valittu henkilö.\n"
+"Henkilön uusi sijainti on lähellä vasenta yläkulmaa."
+
+#: QuiltView/QuiltView.py:1926
+msgid "The path color"
+msgstr "Polun väri"
+
+#: QuiltView/QuiltView.py:1931
+msgid "The selected person color"
+msgstr "Valitun henkilön väri"
+
+#: QuiltView/QuiltView.py:1936
+msgid "The path transparency"
+msgstr "Polun läpinäkyvyys"
+
+#: QuiltView/QuiltView.py:1939
+msgid "General options"
+msgstr "Yleiset valinnat"
