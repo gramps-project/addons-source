@@ -181,7 +181,7 @@ class DNASegmentMap(Gramplet):
         associate = segmap.dbstate.db.get_person_from_handle(assoc.ref)
         id_str = _(_nd.display(associate) )
         if segmap.show_assoc_id : 
-                id_str += ' [' + segmap.active.get_gramps_id() + ']'
+                id_str += ' [' + associate.get_gramps_id() + ']'
         segmap.segments.append([chromo, start, stop, updated_side, cms, snp, id_str, rgb_color, associate, handle, note])
 #        print(id_str,"|", chromo, "|",start, "|",stop, "|",side)
 
