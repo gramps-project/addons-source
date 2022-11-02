@@ -4,7 +4,7 @@
 # Gramplet registration - plug-in/add-on to extend Gramps
 #
 # Copyright (C) 2020    Nick Hall
-# Copyright (C) 2020    Gary Griffin
+# Copyright (C) 2020-2022    Gary Griffin
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -34,7 +34,7 @@ register(GRAMPLET,
          gramplet_title=_("DNA Segment Map"),
          detached_width = 600,
          detached_height = 450,
-         version = '1.1.4',
+         version = '2.0.0',
          gramps_target_version='5.1',
          help_url="Addon:DNASegmentMap",
          include_in_listing = True,
