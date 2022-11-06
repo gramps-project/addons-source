@@ -58,8 +58,8 @@ CONFIG = config.register_manager('DNASegmentMap')
 CONFIG.register('map.chromosome-build', 37)
 CONFIG.register('map.legend-swatch-offset-y', 0)
 CONFIG.register('map.show_associate_id',1)
-CONFIG.register('map.paternal-background', (0.926, 0.825, 0.92))
-CONFIG.register('map.maternal-background', (0.833, 0.845, 0.92))
+CONFIG.register('map.paternal-background', (0.926, 0.825, 0.92, 1.0))
+CONFIG.register('map.maternal-background', (0.833, 0.845, 0.92, 1.0))
 CONFIG.register('map.legend-single-chromosome-y-offset', 25)
 
 CONFIG.init()
@@ -452,7 +452,7 @@ class SegmentMap(Gtk.DrawingArea):
                          chart_width * chromo[1] / self.maximum,
                          chr_height)
 
-                cr.set_source_rgba(self.paternal_background[0], self.paternal_background[1], self.paternal_background[2], 1)
+                cr.set_source_rgba(self.paternal_background[0], self.paternal_background[1], self.paternal_background[2], self.paternal_background[3])
                 cr.fill_preserve()
                 cr.set_source_rgba(*fg_color)
                 cr.stroke()
@@ -462,7 +462,7 @@ class SegmentMap(Gtk.DrawingArea):
                          chart_width * chromo[1] / self.maximum,
                          chr_height)
 
-                cr.set_source_rgba(self.maternal_background[0], self.maternal_background[1], self.maternal_background[2], 1)
+                cr.set_source_rgba(self.maternal_background[0], self.maternal_background[1], self.maternal_background[2], self.maternal_background[3])
                 cr.fill_preserve()
                 cr.set_source_rgba(*fg_color)
                 cr.stroke()
@@ -494,7 +494,7 @@ class SegmentMap(Gtk.DrawingArea):
         last_name = ''
         layout = self.create_pango_layout(_('LEGEND'))
         cr.move_to(legend_offset_x, legend_offset_y)
-        cr.set_source_rgba(0, 0, 0, 1)
+        cr.set_source_rgba(*fg_color)
         PangoCairo.show_layout(cr, layout)
         legend_offset_y += chr_height + 2 * spacing
         chromo_count = -1
@@ -510,14 +510,14 @@ class SegmentMap(Gtk.DrawingArea):
 # Background
                 cr.rectangle(label_width, row_num * 2 * (chr_height + spacing) + offset, chart_width, chr_height)
 
-                cr.set_source_rgba(self.paternal_background[0], self.paternal_background[1], self.paternal_background[2], 1)
+                cr.set_source_rgba(self.paternal_background[0], self.paternal_background[1], self.paternal_background[2], self.paternal_background[3])
                 cr.fill_preserve()
 #                cr.set_source_rgba(*fg_color)
                 cr.stroke()
                 cr.rectangle(label_width, row_num * 2 * (chr_height + spacing) + offset + chr_height, chart_width, chr_height)
 
 
-                cr.set_source_rgba(self.maternal_background[0], self.maternal_background[1], self.maternal_background[2], 1)
+                cr.set_source_rgba(self.maternal_background[0], self.maternal_background[1], self.maternal_background[2], self.maternal_background[3])
                 cr.fill_preserve()
 #                cr.set_source_rgba(*fg_color)
                 cr.stroke()
@@ -542,7 +542,7 @@ class SegmentMap(Gtk.DrawingArea):
                 self.__associates.append(associate)
                 self.__assoc_handle.append(handle)
                 self.__legend_str.append(last_name)
-                cr.set_source_rgba(0,0,0,1)
+                cr.set_source_rgba(*fg_color)
                 legend_offset_y += chr_height + 2 * spacing
                 PangoCairo.show_layout(cr, layout)
 # Segment Info
@@ -585,7 +585,7 @@ class SegmentMap(Gtk.DrawingArea):
                 self.__associates.append(associate)
                 self.__assoc_handle.append(handle)
                 self.__legend_str.append(last_name)
-                cr.set_source_rgba(0,0,0,1)
+                cr.set_source_rgba(*fg_color)
                 legend_offset_y += chr_height + 2 * spacing
                 PangoCairo.show_layout(cr, layout)
         else: # Drawing all chromosome segments
@@ -633,7 +633,7 @@ class SegmentMap(Gtk.DrawingArea):
                 self.__associates.append(associate)
                 self.__assoc_handle.append(handle)
                 self.__legend_str.append(last_name)
-                cr.set_source_rgba(0,0,0,1)
+                cr.set_source_rgba(*fg_color)
                 legend_offset_y += chr_height + 2 * spacing
                 PangoCairo.show_layout(cr, layout)
 
