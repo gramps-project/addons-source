@@ -1,6 +1,24 @@
 """Constants for Gramps Web Sync."""
 
-from typing import List, Optional, Tuple
+
+class TypeMeta(type):
+    """Workaround for missing typing module in Gramps AIO."""
+
+    def __getitem__(self, *args, **kwargs):
+        return self
+
+
+class Type(metaclass=TypeMeta):
+    """Workaround for missing typing module in Gramps AIO."""
+
+
+
+try:
+    from typing import List, Optional, Tuple
+except ImportError:
+    List = Type
+    Optional = Type
+    Tuple = Type
 from gramps.gen.lib.primaryobj import BasicPrimaryObject
 
 

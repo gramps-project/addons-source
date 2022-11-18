@@ -1,7 +1,14 @@
 """Class managing the difference between two databases."""
 
 from copy import deepcopy
-from typing import List, Optional, Set, Tuple
+try:
+    from typing import List, Optional, Set, Tuple
+except ImportError:
+    from const import Type
+    List = Type
+    Optional = Type
+    Set = Type
+    Tuple = Type
 
 from gramps.gen.db import DbTxn
 from gramps.gen.db.base import DbReadBase
