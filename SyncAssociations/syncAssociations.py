@@ -58,6 +58,11 @@ _ = _trans.gettext
 ASSOC_LOOKUP = {
 "DNA": "DNA",
 "Godparent": "Godchild",
+"Godchild": "Godparent",
+"Godson": "Godparent",
+"Goddaughter": "Godparent",
+"Godfather": "Godchild",
+"Godmother": "Godchild",
 "Landlord": "Tenant"
 }
 WIKI_HELP_PAGE = 'https://gramps-project.org/wiki/index.php/Addon:SyncAssociation'
