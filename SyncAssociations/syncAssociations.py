@@ -56,10 +56,8 @@ _ = _trans.gettext
 #
 #-------------------------------------------------------------------------
 ASSOC_LOOKUP = {
-"cM": "cM",
 "DNA": "DNA",
-"Godfather": "Godchild",
-"Godmother": "Godchild",
+"Godparent": "Godchild",
 "Landlord": "Tenant"
 }
 WIKI_HELP_PAGE = 'https://gramps-project.org/wiki/index.php/Addon:SyncAssociation'
