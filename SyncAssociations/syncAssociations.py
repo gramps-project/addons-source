@@ -63,7 +63,29 @@ ASSOC_LOOKUP = {
 "Goddaughter": "Godparent",
 "Godfather": "Godchild",
 "Godmother": "Godchild",
-"Landlord": "Tenant"
+"Namesake": "Eponym",
+"Eponym": "Namesake",
+"Slave Holder": "Enslaved",
+"Enslaved": "Slave Holder",
+"Bond Holder": "Indentured",
+"Master": "Apprentice",
+"Apprentice": "Master",
+"Employer": "Employee",
+"Employee": "Employer",
+"Guardian": "Ward",
+"Ward": "Guardian",
+"Namesake": "Named After",
+"Named After": "Namesake",
+"Pallbearer": "Pallbearer for",
+"Pallbearer for": "Pallbearer",
+"Owned Slave": "Enslaved by",
+"Enslaved by": "Owned Slave",
+"Indentured Servant": "Bond Holder",
+"Bond Holder": "Indentured Servant",
+"Apprentice": "Apprenticed to",
+"Apprenticed to": "Apprentice",
+"Landlord": "Tenant",
+"Tenant": "Landlord"
 }
 WIKI_HELP_PAGE = 'https://gramps-project.org/wiki/index.php/Addon:SyncAssociation'
 
