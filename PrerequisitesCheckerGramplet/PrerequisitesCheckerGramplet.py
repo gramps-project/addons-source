@@ -150,6 +150,7 @@ class PrerequisitesCheckerGramplet(Gramplet):
             "all prerequisites installed."))
         # Get current Gramps version from wiki
         self.latest_gramps_version = False
+        self.count = 0 # used to avoid three loads
         thread = Thread(target=latest_version_thread,
                         args=(self,), daemon=True)
         thread.start()
@@ -160,6 +161,14 @@ class PrerequisitesCheckerGramplet(Gramplet):
         Since it may be called before the gramps latest version arrives from
         the web, we just yield again if not ready.
         """
+        self.count += 1
+        if self.uistate.viewmanager.active_page.bottombar:
+            # The dashboard has no sidebar and bottombar.
+            # For all other views, the database must be opened
+            if not self.dbstate.db.is_open():
+                return
+            if self.count < 3:
+                return
         while self.latest_gramps_version is False:
             yield True
         self.gramps_version()
