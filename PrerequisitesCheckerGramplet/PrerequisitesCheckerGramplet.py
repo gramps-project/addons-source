@@ -3,6 +3,7 @@
 #
 # Copyright (C) 2016-2018 Sam Manzi
 # Copyright (C) 2022      Brian McCullough
+# Copyright (C) 2022      Serge Noiraud
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -782,12 +783,17 @@ class PrerequisitesCheckerGramplet(Gramplet):
             except Exception:  # any failure to 'get' the version
                 pyicu_str = _('unknown version')
                 icu_str = _('unknown version')
+            result = " • PyICU " + pyicu_str + " (ICU " + icu_str + ")"
 
         except ImportError:
             pyicu_str = _('not found')
-            icu_str = _('not found')
+            try:
+                import icu
+                icu_str = icu.PY_VERSION
+            except Exception:
+                icu_str = _('not found')
+            result = " • PyICU " + pyicu_str + " but we have ICU " + icu_str
 
-        result = " • PyICU " + pyicu_str + "(ICU " + icu_str + ")"
         # End check
         self.append_text(result)
 
@@ -1077,8 +1083,8 @@ class PrerequisitesCheckerGramplet(Gramplet):
         # Start check
 
         try:
-            from gi import Repository
-            repository = Repository.get_default()
+            import gi
+            repository = gi.Repository.get_default()
             if repository.enumerate_versions("GExiv2"):
                 gi.require_version('GExiv2', '0.10')
                 from gi.repository import GExiv2
@@ -1097,12 +1103,17 @@ class PrerequisitesCheckerGramplet(Gramplet):
         try:
             vers_str = Popen(['exiv2', '-V'],
                              stdout=PIPE).communicate(input=None)[0]
-            if isinstance(vers_str, bytes) and sys.stdin.encoding:
-                vers_str = vers_str.decode(sys.stdin.encoding)
-            indx = vers_str.find('exiv2 ') + 6
-            vers_str = vers_str[indx: indx + 4]
+            try:
+                if isinstance(vers_str, bytes) and sys.stdin.encoding:
+                    vers_str = vers_str.decode(sys.stdin.encoding)
+                indx = vers_str.find('exiv2 ') + 6
+                vers_str = vers_str[indx: indx + 4]
+            except Exception:
+                vers_str = _('not found')
+
         except Exception:
-            vers_str = _('not found')
+            # By default, exiv2 is not installed in most linux. Not important.
+            vers_str = _("can't found it because exiv2 not installed")
         result = _("GExiv2 : %s (Exiv2 library : %s)") % (gexiv2_str, vers_str)
         # End check
         self.append_text(result)
