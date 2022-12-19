@@ -144,7 +144,7 @@ class HeadlineNewsGramplet(Gramplet):
                     fresh = False
                 self.render_text(
                     '<u><b>%s</b></u> [<a href="%s">wiki</a>]\n' %
-                    (feed_description, pretty_url))
+                    (feed_description, pretty_url.replace(' ', '%20')))
                 self.render_text(self.decode_wiki(text).strip())
                 self.append_text("\n")
                 yield True
@@ -265,21 +265,21 @@ class HeadlineNewsGramplet(Gramplet):
         for (g1, g2) in matches:
             text = text.replace("[[%s|%s]]" % (g1, g2),
                                 ("""<A HREF="%s">%s</A>""" %
-                                 (self.wiki(g1), self.nice_title(g2))))
+                                 (self.wiki(g1.replace(' ', '%20')), self.nice_title(g2))))
         # Internal wiki URL:
         pattern = re.compile(r'\[\[(.*?)\]\]')
         matches = pattern.findall(text)
         for match in matches:
             text = text.replace("[[%s]]" % match,
                                 ("""<A HREF="%s">%s</A>""" %
-                                 (self.wiki(match), self.nice_title(match))))
+                                 (self.wiki(match).replace(' ', '%20'), self.nice_title(match))))
         # URL with title:
         pattern = re.compile(r'\[https\:\/\/(.*?) (.*?)\]')
         matches = pattern.findall(text)
         for (g1, g2) in matches:
             text = text.replace("[https://%s %s]" % (g1, g2),
                                 ("""<A HREF="https://%s">%s</A>""" %
-                                 (g1, g2)))
+                                 (g1.replace(' ', '%20'), g2)))
         # URL:
         pattern = re.compile(r'\[https\:\/\/(.*?)\]')
         matches = pattern.findall(text)
@@ -287,7 +287,7 @@ class HeadlineNewsGramplet(Gramplet):
         for g1 in matches:
             text = text.replace("[https://%s]" % (g1),
                                 ("""<A HREF="https://%s">%s</A>""" %
-                                 (g1, ("[%d]" % count))))
+                                 (g1.replace(' ', '%20'), ("[%d]" % count))))
             count += 1
         # Bold:
         pattern = re.compile("'''(.*?)'''")
