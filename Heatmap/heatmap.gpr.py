@@ -1,7 +1,7 @@
 #
 # Gramps - a GTK+/GNOME based genealogy program
 #
-# Copyright (C) 2023    Matthias Kemmer
+# Copyright (C) 2021    Matthias Kemmer
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -20,17 +20,17 @@
 """Create a heatmap web report."""
 
 register(REPORT,
-    id='Heatmap',
-    name=_("Heatmap"),
-    description=_("Create a heatmap web report."),
-    version='1.2.0',
-    gramps_target_version="5.1",
-    status=STABLE,
-    fname="heatmap.py",
-    authors=["Matthias Kemmer"],
-    authors_email=["matt.familienforschung@gmail.com"],
-    category=CATEGORY_WEB,
-    reportclass='ReportClass',
-    optionclass='ReportOptions',
-    report_modes=[REPORT_MODE_GUI],
-    )
+          id = 'Heatmap',
+          name = _("Heatmap"),
+          description = _("Create a heatmap web report."),
+          version = '1.0.4',
+          gramps_target_version = "5.1",
+          status = STABLE,
+          fname = "heatmap.py",
+          authors = ["Matthias Kemmer"],
+          authors_email = ["matt.familienforschung@gmail.com"],
+          category = CATEGORY_WEB,
+          reportclass = 'ReportClass',
+          optionclass = 'ReportOptions',
+          report_modes = [REPORT_MODE_CLI, REPORT_MODE_GUI],
+          )
