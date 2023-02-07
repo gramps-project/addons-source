@@ -102,7 +102,7 @@ class ReportOptions(MenuReportOptions):
             "The file extention '.html' is added by the report.")
         file_name = StringOption(_("File name"), "")
         file_name.set_help(txt)
-        menu.add_option(_("General"), "name", file_name)
+        menu.add_option(_("General"), "fname", file_name)
 
         # -------------------
         # EVENTS options tab
@@ -205,7 +205,7 @@ class ReportClass(Report):
     def check_file_path_and_name(self):
         """Check if file path exists and file name is alphanumeric."""
         path = self.opt["path"]
-        name = self.opt["name"]
+        name = self.opt["fname"]
         txt = _("Path does not exist.")
         txt2 = _("Invalid filename.")
 
