@@ -1,0 +1,43 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Juan Saavedra <jcsaaver@gmail.com>, 2023.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-10-21 08:49+1100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Juan Saavedra <jcsaaver@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: DescendantCount/DescendantCount.gpr.py:22
+#: DescendantCount/DescendantCount.gpr.py:31
+msgid "Descendant Count"
+msgstr "Número de descendientes"
+
+#: DescendantCount/DescendantCount.gpr.py:23
+msgid "Gramplet for showing people and descendant counts"
+msgstr "Gramplete que muestra personas y número de descendientes"
+
+#: DescendantCount/DescendantCount.py:87
+msgid ""
+"Click name to change active\n"
+"Double-click name to edit"
+msgstr ""
+"Haga click sobre un nombre para cambiar la persona activa\n"
+"Haga doble click sobre un nombre para editar"
+
+#: DescendantCount/DescendantCount.py:94
+msgid "Person"
+msgstr "Persona"
+
+#: DescendantCount/DescendantCount.py:101
+msgid "Descendants"
+msgstr "Descendientes"
