@@ -61,6 +61,7 @@ CONFIG.register('map.show_associate_id',1)
 CONFIG.register('map.paternal-background', (0.926, 0.825, 0.92, 1.0))
 CONFIG.register('map.maternal-background', (0.833, 0.845, 0.92, 1.0))
 CONFIG.register('map.legend-single-chromosome-y-offset', 25)
+CONFIG.register('map.show-centromere',0)
 
 CONFIG.init()
 
@@ -121,7 +122,7 @@ class DNASegmentMap(Gramplet):
                     rgb_color = [random.random(),random.random(),random.random()]
                     associate = self.dbstate.db.get_person_from_handle(assoc.ref)
                     data, msg = self.relationship.get_relationship_distance_new(self.dbstate.db,active,associate,False, True, True)
-                    if data[0][0] == -1: # Unrelated
+                    if data[0][0] <= 0 : # Unrelated
                         side = 'U'
                     elif data[0][0] == 1: #parent / child
                         if self.dbstate.db.get_person_from_handle(data[0][1]).gender == 0:
@@ -228,6 +229,7 @@ class SegmentMap(Gtk.DrawingArea):
         self.maternal_background = self._config.get('map.maternal-background')
         self.paternal_background = self._config.get('map.paternal-background')
         self.legend_single_chromosome = self._config.get('map.legend-single-chromosome-y-offset')
+        self.show_centromere = self._config.get('map.show-centromere')
         self._config.save()
         self.chromosomesThirtySeven = (
             ('1', 249250621),
@@ -303,12 +305,87 @@ class SegmentMap(Gtk.DrawingArea):
             ('21', 46944323),
             ('22', 49691432),
             ('X', 154913754))
+        self.centromereThirtySix = (
+            ('1', 121236957, 123476957),
+            ('2', 91689898, 94689898),
+            ('3', 90587544, 93487544),
+            ('4', 49354874, 52354874),
+            ('5', 46441398, 49441398),
+            ('6', 58938125, 61938125),
+            ('7', 58058273, 61058273),
+            ('8', 43958052, 46958052),
+            ('9', 47107499, 50107499),
+            ('10', 39244941, 41624941),
+            ('11', 51450781, 54450781),
+            ('12', 34747961, 36142961),
+            ('13', 16000000, 17868000),
+            ('14', 15070000, 18070000),
+            ('15', 15260000, 18260000),
+            ('16', 35143302, 36943302),
+            ('17', 22187133, 22287133),
+            ('18', 15400898, 16764896),
+            ('19', 26923622, 29923622),
+            ('20', 26267569, 28033230),
+            ('21', 10260000, 13260000),
+            ('22', 11330000, 14330000),
+            ('X', 58598737, 61598737))
+        self.centromereThirtySeven = (
+            ('1', 121535434, 124535434),
+            ('2', 92326171, 95326171),
+            ('3', 90504854, 93504854),
+            ('4', 49660117, 52660117),
+            ('5', 46405641, 49405641),
+            ('6', 58830166, 61830166),
+            ('7', 58054331, 61054331),
+            ('8', 43838887, 46838887),
+            ('9', 47367679, 50367679),
+            ('10', 39254935, 42254935),
+            ('11', 51644205, 54644205),
+            ('12', 34856694, 37856694),
+            ('13', 16000000, 19000000),
+            ('14', 16000000, 19000000),
+            ('15', 17000000, 20000000),
+            ('16', 35335801, 38335801),
+            ('17', 22263006, 25263006),
+            ('18', 15460898, 18460898),
+            ('19', 24681782, 27681782),
+            ('20', 26369569, 29369569),
+            ('21', 11288129, 14288129),
+            ('22', 13000000, 16000000),
+            ('X', 58632012, 61632012))
+        self.centromereThirtyEight = (
+            ('1', 121700000, 125100000),
+            ('2', 91800000, 96000000),
+            ('3', 87800000, 94000000),
+            ('4', 48200000, 51800000),
+            ('5', 46100000, 51400000),
+            ('6', 58500000, 62600000),
+            ('7', 58100000, 62100000),
+            ('8', 43200000, 47200000),
+            ('9', 42200000, 45500000),
+            ('10', 38000000, 41600000),
+            ('11', 51000000, 55800000),
+            ('12', 33200000, 37800000),
+            ('13', 16500000, 18900000),
+            ('14', 16100000, 18200000),
+            ('15', 17500000, 20500000),
+            ('16', 35300000, 38400000),
+            ('17', 22700000, 27400000),
+            ('18', 15400000, 21500000),
+            ('19', 24200000, 28100000),
+            ('20', 25700000, 30400000),
+            ('21', 10900000, 13000000),
+            ('22', 13700000, 17400000),
+            ('X', 58100000, 63800000))
         if build == 36: 
             self.chromosomes = self.chromosomesThirtySix
+            self.centromere = self.centromereThirtySix
         elif build == 38:
             self.chromosomes = self.chromosomesThirtyEight
+            self.centromere = self.centromereThirtyEight
         else:
             self.chromosomes = self.chromosomesThirtySeven
+            self.centromere = self.centromereThirtySeven
             build = 37
         self.labels = [chromo[0] for chromo in self.chromosomes]
 
@@ -447,21 +524,63 @@ class SegmentMap(Gtk.DrawingArea):
         if not draw_single_chromosome:
             cr.set_line_width(0)
             for i, chromo in enumerate(self.chromosomes):
+                if self.show_centromere :
+                    centloc = self.centromere[i][2]
+                else:
+                    centloc = self.centromere[i][1]
+# draw paternal
                 cr.rectangle(label_width,
                          i * 2 * (chr_height + spacing) + offset,
-                         chart_width * chromo[1] / self.maximum,
+                         chart_width * self.centromere[i][1] / self.maximum,
                          chr_height)
-
+                cr.rectangle(label_width+chart_width * centloc / self.maximum,
+                         i * 2 * (chr_height + spacing) + offset,
+                         chart_width * (chromo[1]-centloc) / self.maximum,
+                         chr_height)
+                if self.show_centromere:
+                    cr.move_to(label_width + chart_width * self.centromere[i][1] / self.maximum, 
+                        i * 2 * (chr_height + spacing) + offset)
+                    cr.line_to(label_width + chart_width * self.centromere[i][1] / self.maximum, 
+                        i * 2 * (chr_height + spacing) + offset + chr_height)
+                    cr.line_to(label_width + chart_width * (self.centromere[i][1] + (self.centromere[i][2] - self.centromere[i][1])/2) / self.maximum,
+                        i * 2 * (chr_height + spacing) + offset + chr_height/2)
+                    cr.close_path()
+                    cr.move_to(label_width + chart_width * self.centromere[i][2] / self.maximum, 
+                        i * 2 * (chr_height + spacing) + offset)
+                    cr.line_to(label_width + chart_width * self.centromere[i][2] / self.maximum, 
+                        i * 2 * (chr_height + spacing) + offset + chr_height)
+                    cr.line_to(label_width + chart_width * (self.centromere[i][1] + (self.centromere[i][2] - self.centromere[i][1])/2) / self.maximum,
+                        i * 2 * (chr_height + spacing) + offset + chr_height/2)
+                    cr.close_path()
                 cr.set_source_rgba(self.paternal_background[0], self.paternal_background[1], self.paternal_background[2], self.paternal_background[3])
                 cr.fill_preserve()
                 cr.set_source_rgba(*fg_color)
                 cr.stroke()
 
+# draw Maternal
                 cr.rectangle(label_width,
                          i * 2 * (chr_height + spacing) + offset + chr_height,
-                         chart_width * chromo[1] / self.maximum,
+                         chart_width * self.centromere[i][1] / self.maximum,
                          chr_height)
-
+                cr.rectangle(label_width+chart_width * centloc / self.maximum,
+                         i * 2 * (chr_height + spacing) + offset + chr_height,
+                         chart_width * (chromo[1]-centloc) / self.maximum,
+                         chr_height)
+                if self.show_centromere:
+                    cr.move_to(label_width + chart_width * self.centromere[i][1] / self.maximum, 
+                        i * 2 * (chr_height + spacing) + offset + chr_height)
+                    cr.line_to(label_width + chart_width * self.centromere[i][1] / self.maximum, 
+                        i * 2 * (chr_height + spacing) + offset + chr_height + chr_height)
+                    cr.line_to(label_width + chart_width * (self.centromere[i][1] + (self.centromere[i][2] - self.centromere[i][1])/2) / self.maximum,
+                        i * 2 * (chr_height + spacing) + offset + chr_height + chr_height/2)
+                    cr.close_path()
+                    cr.move_to(label_width + chart_width * self.centromere[i][2] / self.maximum, 
+                        i * 2 * (chr_height + spacing) + offset + chr_height)
+                    cr.line_to(label_width + chart_width * self.centromere[i][2] / self.maximum, 
+                        i * 2 * (chr_height + spacing) + offset + chr_height + chr_height)
+                    cr.line_to(label_width + chart_width * (self.centromere[i][1] + (self.centromere[i][2] - self.centromere[i][1])/2) / self.maximum,
+                        i * 2 * (chr_height + spacing) + offset + chr_height + chr_height/2)
+                    cr.close_path()
                 cr.set_source_rgba(self.maternal_background[0], self.maternal_background[1], self.maternal_background[2], self.maternal_background[3])
                 cr.fill_preserve()
                 cr.set_source_rgba(*fg_color)
@@ -503,23 +622,72 @@ class SegmentMap(Gtk.DrawingArea):
         if draw_single_chromosome:
           for chromo, start, stop, side, cms, snp, assoc_name, rgb_color, associate, handle, note in self.segments:
             chromo_count += 1
+            try:
+                this_chromo = self.labels.index(chromo)
+            except ValueError:
+                continue
             if chromo == current_chromosome:
               if last_name != assoc_name: 
                 last_name = assoc_name
                 row_num += 1
 # Background
-                cr.rectangle(label_width, row_num * 2 * (chr_height + spacing) + offset, chart_width, chr_height)
-
+                if self.show_centromere :
+                    centloc = self.centromere[this_chromo][2]
+                else:
+                    centloc = self.centromere[this_chromo][1]
+# draw paternal
+                cr.rectangle(label_width, 
+                        row_num * 2 * (chr_height + spacing) + offset, 
+                        chart_width * self.centromere[this_chromo][1] / maximum, 
+                        chr_height)
+                cr.rectangle(label_width + chart_width * centloc / maximum, 
+                        row_num * 2 * (chr_height + spacing) + offset, 
+                        chart_width * (maximum - centloc) / maximum, 
+                        chr_height)
+                if self.show_centromere:
+                    cr.move_to(label_width + chart_width * self.centromere[this_chromo][1] / self.maximum, 
+                        row_num * 2 * (chr_height + spacing) + offset)
+                    cr.line_to(label_width + chart_width * self.centromere[this_chromo][1] / self.maximum, 
+                        row_num * 2 * (chr_height + spacing) + offset + chr_height)
+                    cr.line_to(label_width + chart_width * (self.centromere[this_chromo][1] + (self.centromere[this_chromo][2] - self.centromere[this_chromo][1])/2) / self.maximum,
+                        row_num * 2 * (chr_height + spacing) + offset + chr_height/2)
+                    cr.close_path()
+                    cr.move_to(label_width + chart_width * self.centromere[this_chromo][2] / self.maximum, 
+                        row_num * 2 * (chr_height + spacing) + offset)
+                    cr.line_to(label_width + chart_width * self.centromere[this_chromo][2] / self.maximum, 
+                        row_num * 2 * (chr_height + spacing) + offset + chr_height)
+                    cr.line_to(label_width + chart_width * (self.centromere[this_chromo][1] + (self.centromere[this_chromo][2] - self.centromere[this_chromo][1])/2) / self.maximum,
+                        row_num * 2 * (chr_height + spacing) + offset + chr_height/2)
+                    cr.close_path()
                 cr.set_source_rgba(self.paternal_background[0], self.paternal_background[1], self.paternal_background[2], self.paternal_background[3])
                 cr.fill_preserve()
-#                cr.set_source_rgba(*fg_color)
                 cr.stroke()
-                cr.rectangle(label_width, row_num * 2 * (chr_height + spacing) + offset + chr_height, chart_width, chr_height)
-
-
+# draw maternal
+                cr.rectangle(label_width, 
+                        row_num * 2 * (chr_height + spacing) + offset + chr_height, 
+                        chart_width * self.centromere[this_chromo][1] / maximum, 
+                        chr_height)
+                cr.rectangle(label_width+ chart_width * centloc / maximum, 
+                        row_num * 2 * (chr_height + spacing) + offset + chr_height, 
+                        chart_width* (maximum - centloc) / maximum, 
+                        chr_height)
+                if self.show_centromere:
+                    cr.move_to(label_width + chart_width * self.centromere[this_chromo][1] / self.maximum, 
+                        row_num * 2 * (chr_height + spacing) + offset + chr_height)
+                    cr.line_to(label_width + chart_width * self.centromere[this_chromo][1] / self.maximum, 
+                        row_num * 2 * (chr_height + spacing) + offset + chr_height + chr_height)
+                    cr.line_to(label_width + chart_width * (self.centromere[this_chromo][1] + (self.centromere[this_chromo][2] - self.centromere[this_chromo][1])/2) / self.maximum,
+                        row_num * 2 * (chr_height + spacing) + offset + chr_height + chr_height/2)
+                    cr.close_path()
+                    cr.move_to(label_width + chart_width * self.centromere[this_chromo][2] / self.maximum, 
+                        row_num * 2 * (chr_height + spacing) + offset + chr_height)
+                    cr.line_to(label_width + chart_width * self.centromere[this_chromo][2] / self.maximum, 
+                        row_num * 2 * (chr_height + spacing) + offset + chr_height + chr_height)
+                    cr.line_to(label_width + chart_width * (self.centromere[this_chromo][1] + (self.centromere[this_chromo][2] - self.centromere[this_chromo][1])/2) / self.maximum,
+                        row_num * 2 * (chr_height + spacing) + offset + chr_height + chr_height/2)
+                    cr.close_path()
                 cr.set_source_rgba(self.maternal_background[0], self.maternal_background[1], self.maternal_background[2], self.maternal_background[3])
                 cr.fill_preserve()
-#                cr.set_source_rgba(*fg_color)
                 cr.stroke()
         # Grey out paternal X background for males
                 if (self.gender == 1) and (current_chromosome == 'X'): 
