@@ -1,0 +1,145 @@
+# Addon MediaVerify for Gramps.
+# Copyright (C) 2020 Gramps
+# This file is distributed under the same license as the gramps package.
+# Juan Saavedra <jcsaaver@gmail.com>, 2023.
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps51\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2023-02-18 14:00\n"
+"Last-Translator: Juan Saavedra <jcsaaver@gmail.com>\n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Geany / PoHelper 1.36\n"
+
+#: MediaVerify/MediaVerify.gpr.py:30
+msgid "Media Verify"
+msgstr "Verificar objetos audiovisuales"
+
+#: MediaVerify/MediaVerify.gpr.py:31
+msgid "Verify that media is present in the correct path"
+msgstr "Verifica que los objetos audiovisuales estén presentes en la ruta correcta"
+
+#: MediaVerify/MediaVerify.py:78
+msgid "Media Verify Tool"
+msgstr "Herramienta para verificar objetos audiovisuales"
+
+#: MediaVerify/MediaVerify.py:83
+msgid "Moved/Renamed Files"
+msgstr "Archivos movidos/renombrados"
+
+#: MediaVerify/MediaVerify.py:83
+msgid "Missing Files"
+msgstr "Archivos faltantes"
+
+#: MediaVerify/MediaVerify.py:84
+msgid "Duplicate Files"
+msgstr "Archivos duplicados"
+
+#: MediaVerify/MediaVerify.py:84
+msgid "Extra Files"
+msgstr "Archivos extra"
+
+#: MediaVerify/MediaVerify.py:85
+msgid "No md5 Generated"
+msgstr "Sin md5 generado"
+
+#: MediaVerify/MediaVerify.py:85
+msgid "Errors"
+msgstr "Errores"
+
+#: MediaVerify/MediaVerify.py:100
+msgid "Close"
+msgstr "Cerrar"
+
+#: MediaVerify/MediaVerify.py:101
+msgid "Close the Media Verify Tool"
+msgstr "Cerrar la Herramienta para verificar objetos audiovisuales"
+
+#: MediaVerify/MediaVerify.py:103
+msgid "Generate"
+msgstr "Generar"
+
+#: MediaVerify/MediaVerify.py:104
+msgid "Generate md5 hashes for media objects"
+msgstr "Generar md5 hashes para los objetos audiovisuales"
+
+#: MediaVerify/MediaVerify.py:106
+msgid "Verify"
+msgstr "Verificar"
+
+#: MediaVerify/MediaVerify.py:107
+msgid "Check media paths and report missing, duplicate and extra files"
+msgstr ""
+"Verificar rutas a objetos audiovisuales y reportar archivos faltantes, duplicados y "
+"extra"
+
+#: MediaVerify/MediaVerify.py:110
+msgid "Export"
+msgstr "Exportar"
+
+#: MediaVerify/MediaVerify.py:111
+msgid "Export the results to a text file"
+msgstr "Exportar los resultados a un archivo de texto"
+
+#: MediaVerify/MediaVerify.py:113
+msgid "Fix"
+msgstr "Reparar"
+
+#: MediaVerify/MediaVerify.py:114
+msgid "Fix media paths of moved and renamed files"
+msgstr "Reparar rutas de objetos audiovisuales movidos/renombrados"
+
+#: MediaVerify/MediaVerify.py:132
+msgid "Verify Gramps media using md5 hashes"
+msgstr "Verificar objetos audiovisuales usando md5 hashes"
+
+#: MediaVerify/MediaVerify.py:143
+msgid "Files"
+msgstr "Archivos"
+
+#: MediaVerify/MediaVerify.py:195
+msgid "Export results to a text file"
+msgstr "Exportar resultados a un archivo de texto"
+
+#: MediaVerify/MediaVerify.py:218
+#, python-format
+msgid "Error when writing the report: %s"
+msgstr "Error al escribir el reporte: %s"
+
+#: MediaVerify/MediaVerify.py:259
+msgid "Generating media hashes"
+msgstr "Generando hashes de los objetos audiovisuales"
+
+#: MediaVerify/MediaVerify.py:261
+msgid "Set media hashes"
+msgstr "Definir hashes de los objetos audiovisuales"
+
+#: MediaVerify/MediaVerify.py:296
+msgid ""
+"Media path not set.  You must set the \"Base path for relative media paths\" "
+"in the Preferences."
+msgstr ""
+"Ruta de objetos audiovisuales no definida. Debe definir la, \"Ruta base para las rutas relativas a objetos\" "
+"en las preferencias."
+
+#: MediaVerify/MediaVerify.py:307
+msgid "Finding files"
+msgstr "Buscando archivos"
+
+#: MediaVerify/MediaVerify.py:335
+msgid "Checking paths"
+msgstr "Verificando rutas"
+
+#: MediaVerify/MediaVerify.py:388
+msgid "Fixing file paths"
+msgstr "Reparando rutas"
+
+#: MediaVerify/MediaVerify.py:390
+msgid "Fix media paths"
+msgstr "Reparar rutas"
