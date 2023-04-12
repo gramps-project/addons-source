@@ -1,0 +1,199 @@
+# Spanish translation for Gramps
+# Copyright (C) 2022 Gramps
+# This file is distributed under the same license as the Gramps package.
+# Hilario Coronado, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-26 09:45-0500\n"
+"PO-Revision-Date: 2022-11-27 12:27+0100\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"Last-Translator: Hilario Coronado\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: es_ES\n"
+
+#: FamilySheet/FamilySheet.gpr.py:3 FamilySheet/FamilySheet.py:126
+msgid "Family Sheet"
+msgstr "Hoja de familia"
+
+#: FamilySheet/FamilySheet.gpr.py:4
+msgid ""
+"Produces a family sheet showing full information about a person and his/her "
+"partners and children."
+msgstr ""
+"Produce una hoja de familia que muestra información completa sobre una "
+"persona y sus parejas e hijos."
+
+#: FamilySheet/FamilySheet.py:232 FamilySheet/FamilySheet.py:275
+#, python-format
+msgid "\\u2192 %s"
+msgstr "\\u2192 %s"
+
+#: FamilySheet/FamilySheet.py:397
+#, python-format
+msgid "Address (%(date)s): %(location)s"
+msgstr "Dirección (%(date)s): %(location)s"
+
+#: FamilySheet/FamilySheet.py:401
+#, python-format
+msgid "Address: %(location)s"
+msgstr "Dirección: %(location)s"
+
+#: FamilySheet/FamilySheet.py:469
+#, python-format
+msgid "; %(type)s: %(value)s"
+msgstr "; %(type)s: %(value)s"
+
+#: FamilySheet/FamilySheet.py:557
+msgid "Source references:"
+msgstr "Referencias de fuentes:"
+
+#: FamilySheet/FamilySheet.py:571
+#, python-format
+msgid "%s: "
+msgstr "%s: "
+
+#: FamilySheet/FamilySheet.py:575
+#, python-format
+msgid ", page %s"
+msgstr ", página %s"
+
+#: FamilySheet/FamilySheet.py:588
+msgid "Notes:"
+msgstr "Notas:"
+
+#: FamilySheet/FamilySheet.py:769
+#, python-format
+msgid "on %(ymd_date)s"
+msgstr "el %(ymd_date)s"
+
+#: FamilySheet/FamilySheet.py:771
+#, python-format
+msgid "in %(ym_date)s"
+msgstr "el %(ym_date)s"
+
+#: FamilySheet/FamilySheet.py:773
+#, python-format
+msgid "in %(y_date)s"
+msgstr "el %(y_date)s"
+
+#: FamilySheet/FamilySheet.py:777
+#, python-format
+msgid "on %(placeholder)s"
+msgstr "en %(placeholder)s"
+
+#: FamilySheet/FamilySheet.py:779
+#, python-format
+msgid "on %(placeholder)s (%(partial)s)"
+msgstr "en %(placeholder)s (%(partial)s)"
+
+#: FamilySheet/FamilySheet.py:824 FamilySheet/FamilySheet.py:826
+#, python-format
+msgid "in %(place)s"
+msgstr "en %(place)s"
+
+#: FamilySheet/FamilySheet.py:861
+msgid "Report Options"
+msgstr "Opciones de informe"
+
+#: FamilySheet/FamilySheet.py:864
+msgid "Center person"
+msgstr "Persona central"
+
+#: FamilySheet/FamilySheet.py:866
+msgid "The person whose partners and children are printed"
+msgstr "La persona cuyas parejas e hijos van a ser incluidas en el informe"
+
+#: FamilySheet/FamilySheet.py:869
+msgid "Print sheets for"
+msgstr "Imprimir hojas para"
+
+#: FamilySheet/FamilySheet.py:871
+msgid "Center person only"
+msgstr "Solo la persona central"
+
+#: FamilySheet/FamilySheet.py:872
+msgid "Center person and descendants in side branches"
+msgstr "Persona central y descendientes en ramas laterales"
+
+#: FamilySheet/FamilySheet.py:873
+msgid "Center person and all descendants"
+msgstr "Persona central y todos los descendientes"
+
+#: FamilySheet/FamilySheet.py:874
+msgid "Whether to include descendants, and which ones."
+msgstr "Si se incluye a los descendientes, y cuáles."
+
+#: FamilySheet/FamilySheet.py:877
+msgid "Use call name"
+msgstr "Usar su nombre habitual"
+
+#: FamilySheet/FamilySheet.py:879
+msgid "Don't use call name"
+msgstr "No usar su nombre habitual"
+
+#: FamilySheet/FamilySheet.py:880
+msgid "Replace first name with call name"
+msgstr "Reemplazar su nombre por el nombre habitual"
+
+#: FamilySheet/FamilySheet.py:881
+msgid "Underline call name in first name / add call name to first name"
+msgstr ""
+"Subrayar el nombre habitual en el nombre de pila / añadir el nombre "
+"habitual al nombre de pila"
+
+#: FamilySheet/FamilySheet.py:882
+msgid "Whether to include call name, and how."
+msgstr "Si se incluye el nombre habitual, y cómo."
+
+#: FamilySheet/FamilySheet.py:885
+msgid "Print placeholders for missing information"
+msgstr "Imprimir marcadores para la información que falta"
+
+#: FamilySheet/FamilySheet.py:887
+msgid "Whether to include fields for missing information."
+msgstr "Si se incluyen campos para la información que falta."
+
+#: FamilySheet/FamilySheet.py:890
+msgid "Include sources"
+msgstr "Incluir fuentes"
+
+#: FamilySheet/FamilySheet.py:891
+msgid "Whether to include source references."
+msgstr "Si se incluyen las referencias de las fuentes."
+
+#: FamilySheet/FamilySheet.py:894
+msgid "Include notes"
+msgstr "Incluir notas"
+
+#: FamilySheet/FamilySheet.py:895
+msgid "Whether to include notes."
+msgstr "Si se incluyen notas."
+
+#: FamilySheet/FamilySheet.py:909
+msgid "The basic style used for the text display"
+msgstr "Estilo básico utilizado para la visualización del texto"
+
+#: FamilySheet/FamilySheet.py:919
+msgid "The style used for the page key on the top"
+msgstr "Estilo utilizado para el número de la página en la parte superior"
+
+#: FamilySheet/FamilySheet.py:928
+msgid "The style used for names"
+msgstr "Estilo para los nombres"
+
+#: FamilySheet/FamilySheet.py:938
+msgid "The style used for numbers"
+msgstr "Estilo para los números"
+
+#: FamilySheet/FamilySheet.py:948
+msgid "The style used for footnotes (notes and source references)"
+msgstr ""
+"Estilo utilizado para las notas a pie de página (notas y referencias a las "
+"fuentes)"

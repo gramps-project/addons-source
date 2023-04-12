@@ -536,8 +536,8 @@
   <complexType>
    <sequence>
     <element ref='gramps:ptitle' minOccurs='0' maxOccurs='1'/>
-    <element ref='gramps:pname' maxOccurs='unbounded'/>
     <element ref='gramps:code' minOccurs='0' maxOccurs='1'/>
+    <element ref='gramps:pname' maxOccurs='unbounded'/>
     <element ref='gramps:coord' minOccurs='0' maxOccurs='1'/>
     <element ref='gramps:placeref' minOccurs='0' maxOccurs='unbounded'/>
     <element ref='gramps:location' minOccurs='0' maxOccurs='unbounded'/>
@@ -1210,3 +1210,4 @@
   </complexType>
  </element>
 </schema>
+
