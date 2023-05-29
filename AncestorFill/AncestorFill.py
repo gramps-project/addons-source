@@ -249,8 +249,8 @@ class AncestorFillReport(Report):
                 text = form % (nextgen, longueur, percent, nbhand, implexe)
                 self.doc.write_text(text)
                 self.doc.end_paragraph()
-        totalnbanc = len(self.trouve)
-        timplexe= ( total - totalnbanc) * 100.0 / total
+        totalnbanc = len(self.trouve)-1
+        timplexe = 0 if total == 0 else ( total - totalnbanc ) * 100.0 / total
         strtotalanc = self._("Total Number of Ancestors found ")
         form = strtotalanc + "%d\n"
         totaluniqfoundanc = self._("Total Number of single Ancestors found ")
