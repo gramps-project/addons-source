@@ -205,7 +205,7 @@ class AncestorFillReport(Report):
 
         strgen = self._("Generation ")
         strfoundanc = self._("Number of Ancestors found ")
-        pctfoundanc = self._("percent of Ancestors found ")
+        pctfoundanc = self._("Percent of Ancestors found ")
         uniqfoundanc = self._("Number of single Ancestors found ")
         strtheoanc = self._("Number of theoretical Ancestors ")
         strimplex = self._("Pedigree Collapse ")
