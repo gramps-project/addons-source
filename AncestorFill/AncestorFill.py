@@ -3,8 +3,9 @@
 #
 # Copyright (C) 2000-2007  Donald N. Allingham
 # Copyright (C) 2007-2009  Brian G. Matherly
-# Copyright (C) 2010       Jakim Friant
-# Copyright (C) 2012       Jerome Rapinat
+# Copyright (C) 2010-2023  Jakim Friant
+# Copyright (C) 2012-2023  Jerome Rapinat
+# Copyright (C) 2023-      Matthias Kemmer
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -300,11 +301,11 @@ class AncestorFillOptions(MenuReportOptions):
         maxgen.set_help(_("The number of generations to include in the report"))
         menu.add_option(category_name, "maxgen", maxgen)
 
-        Filleddigit = NumberOption(_("Filled digit"), 10, 1, 50)
+        Filleddigit = NumberOption(_("Filled digit"), 2, 1, 10)
         Filleddigit.set_help(_("The number of digits after comma to include in the report for the percentage of ancestor found at a given generation"))
         menu.add_option(category_name, "Filled_digit", Filleddigit)
 
-        Collapsedigit = NumberOption(_("Collapsed digit"), 10, 1, 50)
+        Collapsedigit = NumberOption(_("Collapsed digit"), 2, 1, 10)
         Collapsedigit.set_help(_("The number of digits after comma to include in the report for the pedigree Collapse"))
         menu.add_option(category_name, "Collapsed_digit", Collapsedigit)
 
