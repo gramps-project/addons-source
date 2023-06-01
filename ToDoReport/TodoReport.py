@@ -268,33 +268,40 @@ class TodoReport(Report):
 
         name = name_displayer.display(person)
         mark = ReportUtils.get_person_mark(self.database, person)
-        self.doc.start_cell(_('TR-TableCell'))
+        self.doc.start_cell(_('TR-TableCell'), 3)
         self.doc.start_paragraph(_('TR-Normal'))
         self.doc.write_text(name, mark)
         self.doc.end_paragraph()
         self.doc.end_cell()
 
-        self.doc.start_cell(_('TR-TableCell'))
-        self.doc.start_paragraph(_('TR-Normal'))
-        birth_ref = person.get_birth_ref()
-        if birth_ref:
-            event = self.database.get_event_from_handle(birth_ref.ref)
-            self.doc.write_text(_("b. ") + gramps.gen.datehandler.get_date( event ))
-        else:
-            self.doc.write_text(_("b. ") + "_" * 12)
-        self.doc.end_paragraph()
-        self.doc.end_cell()
-
-        self.doc.start_cell(_('TR-TableCell'))
-        self.doc.start_paragraph(_('TR-Normal'))
-        death_ref = person.get_death_ref()
-        if death_ref:
-            event = self.database.get_event_from_handle(death_ref.ref)
-            self.doc.write_text(_("d. ") + gramps.gen.datehandler.get_date( event ))
-        self.doc.end_paragraph()
-        self.doc.end_cell()
-
         self.doc.end_row()
+
+        events_by_type = dict() # type -> list<event>
+        for event_ref in person.get_event_ref_list():
+            event = self.database.get_event_from_handle(event_ref.ref)
+            event_type = str(event.get_type())
+            type_events = events_by_type.get(event_type, list())
+            type_events.append(event)
+            events_by_type[event_type] = type_events
+
+        for event_type, events in events_by_type.items():
+            for event in events:
+                self.doc.start_row()
+
+                self.doc.start_cell(_('TR-TableCell'), 4)
+                self.doc.start_paragraph(_('TR-Normal'))
+
+                event_place_handle = event.get_place_handle()
+                event_place_string = ''
+                if event_place_handle:
+                    place = self.database.get_place_from_handle(event_place_handle)
+                    event_place_string = ' @ ' + place_displayer.display(self.database, place)
+                self.doc.write_text(event_type + ': ' + gramps.gen.datehandler.get_date(event) + event_place_string)
+
+                self.doc.end_paragraph()
+                self.doc.end_cell()
+
+                self.doc.end_row()
 
     def _write_family(self, family_handle):
         """
