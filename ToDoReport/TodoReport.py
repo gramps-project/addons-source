@@ -297,44 +297,8 @@ class TodoReport(Report):
                 self.doc.end_cell()
                 self.doc.end_row()
 
-
-        event_keys = list()
-        for event_ref in person.get_event_ref_list():
-            event = self.database.get_event_from_handle(event_ref.ref)
-            key = EventSortKey(event)
-            event_keys.append(key)
-
-        for event_key in sorted(event_keys):
-            event = event_key.event
-            self.doc.start_row()
-
-            # blank the first column to do an indent
-            self.doc.start_cell(_('TR-TableCell'))
-            self.doc.start_paragraph(_('TR-Normal'))
-            self.doc.end_paragraph()
-            self.doc.end_cell()
-
-            self.doc.start_cell(_('TR-TableCell'))
-            self.doc.start_paragraph(_('TR-Normal'))
-            self.doc.write_text(event.get_type().string)
-            self.doc.end_paragraph()
-            self.doc.end_cell()
-
-            self.doc.start_cell(_('TR-TableCell'), 2)
-            self.doc.start_paragraph(_('TR-Normal'))
-
-            event_place_handle = event.get_place_handle()
-            event_place_string = ''
-            if event_place_handle:
-                place = self.database.get_place_from_handle(event_place_handle)
-                event_place_string = ' @ ' + place_displayer.display(self.database, place)
-            self.doc.write_text(gramps.gen.datehandler.get_date(event) + event_place_string)
-
-            self.doc.end_paragraph()
-            self.doc.end_cell()
-
-            self.doc.end_row()
-
+        self._output_events(person)
+        
 
     def _write_family(self, family_handle):
         """
@@ -370,26 +334,16 @@ class TodoReport(Report):
         self.doc.end_paragraph()
         self.doc.end_cell()
 
-        # see if we can find a relationship event to include
-        relationship_date = _PLACEHOLDER
-        for evt_ref in family.get_event_ref_list():
-            evt_handle = evt_ref.get_reference_handle()
-            evt = self.database.get_event_from_handle(evt_handle)
-            # FIXME: where are the event types defined in Gramps,
-            # and are these the only important ones?
-            #print repr(evt.get_type().string)
-            if evt.get_type().string in ["Marriage", "Civil Union"]:
-                relationship_date = gramps.gen.datehandler.get_date(evt)
-        rel_msg = _("%(relationship_type)s on %(relationship_date)s") % {'relationship_type': family.get_relationship(),
-                                                                         'relationship_date': relationship_date}
-
         self.doc.start_cell(_('TR-TableCell'))
         self.doc.start_paragraph(_('TR-Normal'))
-        self.doc.write_text(rel_msg)
+        self.doc.write_text(family.get_relationship().string)
         self.doc.end_paragraph()
         self.doc.end_cell()
-
+        
         self.doc.end_row()
+
+        self._output_events(family)
+
 
     def _write_event(self, event_handle):
         """
@@ -457,6 +411,47 @@ class TodoReport(Report):
         self.doc.end_cell()
 
         self.doc.end_row()
+
+
+    def _output_events(self, event_base):
+        """Write out all events for an object that subclasses EventBase"""
+        event_keys = list()
+        for event_ref in event_base.get_event_ref_list():
+            event = self.database.get_event_from_handle(event_ref.ref)
+            key = EventSortKey(event)
+            event_keys.append(key)
+
+        for event_key in sorted(event_keys):
+            event = event_key.event
+            self.doc.start_row()
+
+            # blank the first column to do an indent
+            self.doc.start_cell(_('TR-TableCell'))
+            self.doc.start_paragraph(_('TR-Normal'))
+            self.doc.end_paragraph()
+            self.doc.end_cell()
+
+            self.doc.start_cell(_('TR-TableCell'))
+            self.doc.start_paragraph(_('TR-Normal'))
+            self.doc.write_text(event.get_type().string)
+            self.doc.end_paragraph()
+            self.doc.end_cell()
+
+            self.doc.start_cell(_('TR-TableCell'), 2)
+            self.doc.start_paragraph(_('TR-Normal'))
+
+            event_place_handle = event.get_place_handle()
+            event_place_string = ''
+            if event_place_handle:
+                place = self.database.get_place_from_handle(event_place_handle)
+                event_place_string = ' @ ' + place_displayer.display(self.database, place)
+            self.doc.write_text(gramps.gen.datehandler.get_date(event) + event_place_string)
+
+            self.doc.end_paragraph()
+            self.doc.end_cell()
+
+            self.doc.end_row()
+
 
     #
     # Sort Functions
