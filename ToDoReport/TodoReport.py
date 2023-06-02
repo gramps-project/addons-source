@@ -41,6 +41,9 @@ from gramps.gen.plug.report import Report
 from gramps.gen.errors import ReportError
 import gramps.gen.plug.report.utils as ReportUtils
 from gramps.gen.plug.menu import EnumeratedListOption, BooleanOption
+from gramps.gen.lib.eventtype import EventType
+
+from functools import total_ordering
 
 #------------------------------------------------------------------------
 # Internationalisation
@@ -295,44 +298,43 @@ class TodoReport(Report):
                 self.doc.end_row()
 
 
-        events_by_type = dict() # type -> list<event>
+        event_keys = list()
         for event_ref in person.get_event_ref_list():
             event = self.database.get_event_from_handle(event_ref.ref)
-            event_type = str(event.get_type())
-            type_events = events_by_type.get(event_type, list())
-            type_events.append(event)
-            events_by_type[event_type] = type_events
+            key = EventSortKey(event)
+            event_keys.append(key)
 
-        for event_type, events in events_by_type.items():
-            for event in events:
-                self.doc.start_row()
+        for event_key in sorted(event_keys):
+            event = event_key.event
+            self.doc.start_row()
 
-                # blank the first column to do an indent
-                self.doc.start_cell(_('TR-TableCell'))
-                self.doc.start_paragraph(_('TR-Normal'))
-                self.doc.end_paragraph()
-                self.doc.end_cell()
-                
-                self.doc.start_cell(_('TR-TableCell'))
-                self.doc.start_paragraph(_('TR-Normal'))
-                self.doc.write_text(event_type)
-                self.doc.end_paragraph()
-                self.doc.end_cell()
-                
-                self.doc.start_cell(_('TR-TableCell'), 2)
-                self.doc.start_paragraph(_('TR-Normal'))
+            # blank the first column to do an indent
+            self.doc.start_cell(_('TR-TableCell'))
+            self.doc.start_paragraph(_('TR-Normal'))
+            self.doc.end_paragraph()
+            self.doc.end_cell()
 
-                event_place_handle = event.get_place_handle()
-                event_place_string = ''
-                if event_place_handle:
-                    place = self.database.get_place_from_handle(event_place_handle)
-                    event_place_string = ' @ ' + place_displayer.display(self.database, place)
-                self.doc.write_text(gramps.gen.datehandler.get_date(event) + event_place_string)
+            self.doc.start_cell(_('TR-TableCell'))
+            self.doc.start_paragraph(_('TR-Normal'))
+            self.doc.write_text(event.get_type().string)
+            self.doc.end_paragraph()
+            self.doc.end_cell()
 
-                self.doc.end_paragraph()
-                self.doc.end_cell()
+            self.doc.start_cell(_('TR-TableCell'), 2)
+            self.doc.start_paragraph(_('TR-Normal'))
 
-                self.doc.end_row()
+            event_place_handle = event.get_place_handle()
+            event_place_string = ''
+            if event_place_handle:
+                place = self.database.get_place_from_handle(event_place_handle)
+                event_place_string = ' @ ' + place_displayer.display(self.database, place)
+            self.doc.write_text(gramps.gen.datehandler.get_date(event) + event_place_string)
+
+            self.doc.end_paragraph()
+            self.doc.end_cell()
+
+            self.doc.end_row()
+
 
     def _write_family(self, family_handle):
         """
@@ -508,6 +510,49 @@ class TodoReport(Report):
         place = self.database.get_place_from_handle(p_handle)
         title = place_displayer.display(self.database, place)
         return title.upper()
+
+
+@total_ordering
+class EventSortKey(object):
+    """Class for sorting events by type and then date.
+    1. Birth
+    2. Other event types
+    3. Death
+    4. Burial
+    """
+
+
+    def __init__(self, event):
+        self.event = event
+
+    def __eq__(self, other):
+        return self.event.are_equal(other.event)
+
+    def __ne__(self, other):
+        return not (self == other)
+
+    def __lt__(self, other):
+        self_type = self.event.get_type()
+        other_type = other.event.get_type()
+
+        if self_type.value == EventType.BIRTH and other_type.value != EventType.BIRTH:
+            return True
+        if self_type.value != EventType.BIRTH and other_type.value == EventType.BIRTH:
+            return False
+
+        if self_type.value == EventType.BURIAL and other_type.value != EventType.BURIAL:
+            return False
+        if self_type.value != EventType.BURIAL and other_type.value == EventType.BURIAL:
+            return True
+
+        if self_type.value == EventType.DEATH and other_type.value not in [EventType.DEATH, EventType.BURIAL]:
+            return False
+        if self_type.value not in [EventType.DEATH, EventType.BURIAL] and other_type.value == EventType.DEATH:
+            return True
+
+        # compare dates
+        return self.event.get_date_object() < other.event.get_date_object()
+
 
 #------------------------------------------------------------------------
 # MarkerOptions
