@@ -276,6 +276,25 @@ class TodoReport(Report):
 
         self.doc.end_row()
 
+        alternate_names = person.get_alternate_names()
+        if len(alternate_names) > 0:
+            for alt_name in alternate_names:
+                self.doc.start_row()
+                self.doc.start_cell(_('TR-TableCell'))
+                self.doc.start_paragraph(_('TR-Normal'))
+                self.doc.write_text('')
+                self.doc.end_paragraph()
+                self.doc.end_cell()
+
+                alt_name_display = name_displayer.display_name(alt_name)
+                self.doc.start_cell(_('TR-TableCell'), 3)
+                self.doc.start_paragraph(_('TR-Normal'))
+                self.doc.write_text(alt_name_display)
+                self.doc.end_paragraph()
+                self.doc.end_cell()
+                self.doc.end_row()
+
+
         events_by_type = dict() # type -> list<event>
         for event_ref in person.get_event_ref_list():
             event = self.database.get_event_from_handle(event_ref.ref)
@@ -288,7 +307,13 @@ class TodoReport(Report):
             for event in events:
                 self.doc.start_row()
 
-                self.doc.start_cell(_('TR-TableCell'), 4)
+                self.doc.start_cell(_('TR-TableCell'))
+                self.doc.start_paragraph(_('TR-Normal'))
+                self.doc.write_text(event_type)
+                self.doc.end_paragraph()
+                self.doc.end_cell()
+                
+                self.doc.start_cell(_('TR-TableCell'), 3)
                 self.doc.start_paragraph(_('TR-Normal'))
 
                 event_place_handle = event.get_place_handle()
@@ -296,7 +321,7 @@ class TodoReport(Report):
                 if event_place_handle:
                     place = self.database.get_place_from_handle(event_place_handle)
                     event_place_string = ' @ ' + place_displayer.display(self.database, place)
-                self.doc.write_text(event_type + ': ' + gramps.gen.datehandler.get_date(event) + event_place_string)
+                self.doc.write_text(gramps.gen.datehandler.get_date(event) + event_place_string)
 
                 self.doc.end_paragraph()
                 self.doc.end_cell()
