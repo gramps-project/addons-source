@@ -298,7 +298,7 @@ class TodoReport(Report):
                 self.doc.end_row()
 
         self._output_events(person)
-        
+
 
     def _write_family(self, family_handle):
         """
@@ -339,7 +339,7 @@ class TodoReport(Report):
         self.doc.write_text(family.get_relationship().string)
         self.doc.end_paragraph()
         self.doc.end_cell()
-        
+
         self.doc.end_row()
 
         self._output_events(family)
@@ -361,11 +361,13 @@ class TodoReport(Report):
 
         self.doc.start_cell(_('TR-TableCell'))
         self.doc.start_paragraph(_('TR-Normal'))
+        type_date = event.get_type().string
         date = gramps.gen.datehandler.get_date(event)
         if date:
-            self.doc.write_text(date)
+            type_date = type_date + " " + date
         else:
-            self.doc.write_text(_("date: ") + _PLACEHOLDER)
+            type_date = type_date + " " + (_("date: ") + _PLACEHOLDER)
+        self.doc.write_text(type_date)
         self.doc.end_paragraph()
         self.doc.end_cell()
 
@@ -389,6 +391,79 @@ class TodoReport(Report):
         self.doc.end_cell()
 
         self.doc.end_row()
+
+        # make smart use of space and put as many names in a row as possible
+        # always skip the first column to show that this is part of the same object
+        next_cell_index = 0
+        for (class_name, r_handle) in self.database.find_backlink_handles(event_handle, include_classes=['Person']):
+            if next_cell_index == 0:
+                self.doc.start_row()
+                self.doc.start_cell(_('TR-TableCell'))
+                self.doc.start_paragraph(_('TR-Normal'))
+                self.doc.end_paragraph()
+                self.doc.end_cell()
+                next_cell_index = next_cell_index + 1
+
+            person = self.database.get_person_from_handle(r_handle)
+            self.doc.start_cell(_('TR-TableCell'))
+            self.doc.start_paragraph(_('TR-Normal'))
+            self.doc.write_text(name_displayer.display(person))
+            self.doc.end_paragraph()
+            self.doc.end_cell()
+            next_cell_index = next_cell_index + 1
+
+            if next_cell_index > 3:
+                # end of row
+                self.doc.end_row()
+                next_cell_index = 0
+
+        # finish up empty cells
+        if next_cell_index > 0:
+            self.doc.start_cell(_('TR-TableCell'), (4 - next_cell_index))
+            self.doc.start_paragraph(_('TR-Normal'))
+            self.doc.end_paragraph()
+            self.doc.end_cell()
+            self.doc.end_row()
+            
+
+        for (class_name, r_handle) in self.database.find_backlink_handles(event_handle, include_classes=['Family']):
+            family = self.database.get_family_from_handle(r_handle)
+            self.doc.start_row()
+
+            self.doc.start_cell(_('TR-TableCell'))
+            self.doc.start_paragraph(_('TR-Normal'))
+            self.doc.end_paragraph()
+            self.doc.end_cell()
+
+            self.doc.start_cell(_('TR-TableCell'))
+            self.doc.start_paragraph(_('TR-Normal'))
+            self.doc.write_text('Family')
+            self.doc.end_paragraph()
+            self.doc.end_cell()
+
+            self.doc.start_cell(_('TR-TableCell'))
+            self.doc.start_paragraph(_('TR-Normal'))
+            father_handle = family.get_father_handle()
+            if father_handle:
+                father = self.database.get_person_from_handle(father_handle)
+                mark = ReportUtils.get_person_mark(self.database, father)
+                self.doc.write_text(name_displayer.display(father), mark)
+            self.doc.end_paragraph()
+            self.doc.end_cell()
+
+            self.doc.start_cell(_('TR-TableCell'))
+            self.doc.start_paragraph(_('TR-Normal'))
+            mother_handle = family.get_mother_handle()
+            if mother_handle:
+                mother = self.database.get_person_from_handle(mother_handle)
+                mark = ReportUtils.get_person_mark(self.database, mother)
+                self.doc.write_text(name_displayer.display(mother), mark)
+            self.doc.end_paragraph()
+            self.doc.end_cell()
+
+            self.doc.end_row()
+
+
 
     def _write_place(self, place_handle):
         """
