@@ -279,10 +279,10 @@ class TodoReport(Report):
         alternate_names = person.get_alternate_names()
         if len(alternate_names) > 0:
             for alt_name in alternate_names:
+                # blank first column
                 self.doc.start_row()
                 self.doc.start_cell(_('TR-TableCell'))
                 self.doc.start_paragraph(_('TR-Normal'))
-                self.doc.write_text('')
                 self.doc.end_paragraph()
                 self.doc.end_cell()
 
@@ -307,13 +307,19 @@ class TodoReport(Report):
             for event in events:
                 self.doc.start_row()
 
+                # blank the first column to do an indent
+                self.doc.start_cell(_('TR-TableCell'))
+                self.doc.start_paragraph(_('TR-Normal'))
+                self.doc.end_paragraph()
+                self.doc.end_cell()
+                
                 self.doc.start_cell(_('TR-TableCell'))
                 self.doc.start_paragraph(_('TR-Normal'))
                 self.doc.write_text(event_type)
                 self.doc.end_paragraph()
                 self.doc.end_cell()
                 
-                self.doc.start_cell(_('TR-TableCell'), 3)
+                self.doc.start_cell(_('TR-TableCell'), 2)
                 self.doc.start_paragraph(_('TR-Normal'))
 
                 event_place_handle = event.get_place_handle()
