@@ -40,7 +40,7 @@ from gramps.gen.plug.report import MenuReportOptions
 from gramps.gen.plug.report import Report
 from gramps.gen.errors import ReportError
 import gramps.gen.plug.report.utils as ReportUtils
-from gramps.gen.plug.menu import EnumeratedListOption, BooleanOption
+from gramps.gen.plug.menu import EnumeratedListOption, BooleanOption, StringOption
 from gramps.gen.lib.eventtype import EventType
 from gramps.gen.utils.file import media_path_full
 from gramps.gen.db import dbconst
@@ -97,13 +97,17 @@ class TodoReport(Report):
             raise ReportError(_('ToDo Report'),
                 _('You must first create a tag before running this report.'))
         self.can_group = menu.get_option_by_name('can_group').get_value()
+        self.title = menu.get_option_by_name('title').get_value()
 
     def write_report(self):
         """
         Generate the report document
         """
         self.doc.start_paragraph(_("TR-Title"))
-        title = _("Report on Notes Tagged '%s'") % self.tag
+        if self.title:
+            title = self.title
+        else:
+            title = _("Report on Notes Tagged '%s'") % self.tag
         mark = docgen.IndexMark(title, docgen.INDEX_TYPE_TOC, 1)
         self.doc.write_text(title, mark)
         self.doc.end_paragraph()
@@ -845,6 +849,9 @@ class TodoOptions(MenuReportOptions):
         Add options to the menu for the marker report.
         """
         category_name = _("Report Options")
+
+        title = StringOption(_('Title'), '')
+        menu.add_option(category_name, "title", title)
 
         all_tags = []
         for handle in self.__db.get_tag_handles():
