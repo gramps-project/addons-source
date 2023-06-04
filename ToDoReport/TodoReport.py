@@ -42,6 +42,9 @@ from gramps.gen.errors import ReportError
 import gramps.gen.plug.report.utils as ReportUtils
 from gramps.gen.plug.menu import EnumeratedListOption, BooleanOption
 from gramps.gen.lib.eventtype import EventType
+from gramps.gen.utils.file import media_path_full
+
+import os.path
 
 from functools import total_ordering
 
@@ -191,6 +194,8 @@ class TodoReport(Report):
                 self._write_place(r_handle)
             elif class_name == "Citation":
                 self._write_citation(r_handle)
+            elif class_name == "Media":
+                self._write_media(r_handle)
 
     def _write_notes(self, note_list, title=None):
         """
@@ -524,6 +529,43 @@ class TodoReport(Report):
         self.doc.end_paragraph()
         self.doc.end_cell()
         
+        self.doc.end_row()
+
+
+    def _write_media(self, handle):
+        """
+        Generate a table row with the citation information.
+        """
+        media = self.database.get_media_from_handle(handle)
+
+        self.doc.start_row()
+
+        self.doc.start_cell(_('TR-TableCell'))
+        self.doc.start_paragraph(_('TR-Normal'))
+        self.doc.write_text(media.get_gramps_id())
+        self.doc.end_paragraph()
+        self.doc.end_cell()
+
+        self.doc.start_cell(_('TR-TableCell'))
+        self.doc.start_paragraph(_('TR-Normal'))
+        self.doc.write_text(media.get_description())
+        self.doc.end_paragraph()
+        self.doc.end_cell()
+
+        self.doc.start_cell(_('TR-TableCell'))
+        self.doc.start_paragraph(_('TR-Normal'))
+        self.doc.write_text(gramps.gen.datehandler.get_date(media))
+        self.doc.end_paragraph()
+        self.doc.end_cell()
+
+        self.doc.start_cell(_('TR-TableCell'))
+        mime_type = media.get_mime_type()
+        if mime_type and mime_type.startswith("image"):
+            filename = media_path_full(self.database, media.get_path())
+            if os.path.exists(filename):
+                self.doc.add_media(filename, 'center', 5.0, 5.0)
+        self.doc.end_cell()
+
         self.doc.end_row()
         
 
