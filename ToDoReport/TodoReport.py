@@ -148,6 +148,14 @@ class TodoReport(Report):
                 note_list = sorted(note_groups[k], key=self.getEventKey)
             elif k == "Place":
                 note_list = sorted(note_groups[k], key=self.getPlaceKey)
+            elif k == "Repository":
+                note_list = sorted(note_groups[k], key=self.getRepositoryKey)
+            elif k == "Source":
+                note_list = sorted(note_groups[k], key=self.getSourceKey)
+            elif k == "Citation":
+                note_list = sorted(note_groups[k], key=self.getCitationKey)
+            elif k == "Media":
+                note_list = sorted(note_groups[k], key=self.getMediaKey)
             else:
                 note_list = note_groups[k]
             self._write_notes(note_list, k)
@@ -167,6 +175,14 @@ class TodoReport(Report):
                     key = self.getEventKey((r_handle,))
                 elif class_name == "Place":
                     key = self.getPlaceKey((r_handle,))
+                elif class_name == "Repository":
+                     key = self.getRepositoryKey((r_handle,))
+                elif class_name == "Source":
+                    key = self.getSourceKey((r_handle,))
+                elif class_name == "Citation":
+                    key = self.getCitationKey((r_handle,))
+                elif class_name == "Media":
+                    key = self.getMediaKey((r_handle,))
                 else:
                     note = self.database.get_note_from_handle(note_handle)
                     key = note.get_gramps_id()
@@ -729,6 +745,45 @@ class TodoReport(Report):
         place = self.database.get_place_from_handle(p_handle)
         title = place_displayer.display(self.database, place)
         return title.upper()
+
+
+    def getRepositoryKey(self, group_entry):
+        """
+        Return the repository name to use when sorting the repository records.
+        """
+        p_handle = group_entry[_REF_HANDLE_POS]
+        repo = self.database.get_repository_from_handle(p_handle)
+        return (repo.get_name() or '').upper()
+
+
+    def getSourceKey(self, group_entry):
+        """
+        Return the source abbreviation or title to use when sorting the source records.
+        """
+        p_handle = group_entry[_REF_HANDLE_POS]
+        source = self.database.get_source_from_handle(p_handle)
+        abbrev = source.get_abbreviation()
+        if abbrev:
+            return abbrev.upper()
+        return (source.get_title() or '').upper()
+
+
+    def getCitationKey(self, group_entry):
+        """
+        Return the citation page to use when sorting the citation records.
+        """
+        p_handle = group_entry[_REF_HANDLE_POS]
+        citation = self.database.get_citation_from_handle(p_handle)
+        return (citation.get_page() or '').upper()
+
+
+    def getMediaKey(self, group_entry):
+        """
+        Return the media description to use when sorting the media records.
+        """
+        p_handle = group_entry[_REF_HANDLE_POS]
+        media = self.database.get_media_from_handle(p_handle)
+        return (media.get_description() or '').upper()
 
 
 @total_ordering
