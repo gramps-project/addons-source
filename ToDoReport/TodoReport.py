@@ -189,6 +189,8 @@ class TodoReport(Report):
                 self._write_event(r_handle)
             elif class_name == "Place":
                 self._write_place(r_handle)
+            elif class_name == "Citation":
+                self._write_citation(r_handle)
 
     def _write_notes(self, note_list, title=None):
         """
@@ -487,6 +489,43 @@ class TodoReport(Report):
 
         self.doc.end_row()
 
+
+    def _write_citation(self, handle):
+        """
+        Generate a table row with the citation information.
+        """
+        citation = self.database.get_citation_from_handle(handle)
+
+        self.doc.start_row()
+
+        self.doc.start_cell(_('TR-TableCell'))
+        self.doc.start_paragraph(_('TR-Normal'))
+        self.doc.write_text(citation.get_gramps_id())
+        self.doc.end_paragraph()
+        self.doc.end_cell()
+
+        source_handle = citation.get_reference_handle()
+        source = self.database.get_source_from_handle(source_handle)
+        self.doc.start_cell(_('TR-TableCell'))
+        self.doc.start_paragraph(_('TR-Normal'))
+        self.doc.write_text(source.get_title())
+        self.doc.end_paragraph()
+        self.doc.end_cell()
+
+        self.doc.start_cell(_('TR-TableCell'))
+        self.doc.start_paragraph(_('TR-Normal'))
+        self.doc.write_text(gramps.gen.datehandler.get_date(citation))
+        self.doc.end_paragraph()
+        self.doc.end_cell()
+
+        self.doc.start_cell(_('TR-TableCell'))
+        self.doc.start_paragraph(_('TR-Normal'))
+        self.doc.write_text(citation.get_page())
+        self.doc.end_paragraph()
+        self.doc.end_cell()
+        
+        self.doc.end_row()
+        
 
     def _output_events(self, event_base):
         """Write out all events for an object that subclasses EventBase"""
