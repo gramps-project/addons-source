@@ -43,6 +43,7 @@ import gramps.gen.plug.report.utils as ReportUtils
 from gramps.gen.plug.menu import EnumeratedListOption, BooleanOption
 from gramps.gen.lib.eventtype import EventType
 from gramps.gen.utils.file import media_path_full
+from gramps.gen.db import dbconst
 
 import os.path
 
@@ -140,21 +141,21 @@ class TodoReport(Report):
         for k in sorted(note_groups.keys(), reverse=True):
             # now sort the handles based on the class name, if we don't find
             # a match, the data will not be sorted.
-            if k == "Family":
+            if k == dbconst.KEY_TO_CLASS_MAP[dbconst.FAMILY_KEY]:
                 note_list = sorted(note_groups[k], key=self.getFamilyKey)
-            elif k == "Person":
+            elif k == dbconst.KEY_TO_CLASS_MAP[dbconst.PERSON_KEY]:
                 note_list = sorted(note_groups[k], key=self.getPersonKey)
-            elif k == "Event":
+            elif k == dbconst.KEY_TO_CLASS_MAP[dbconst.EVENT_KEY]:
                 note_list = sorted(note_groups[k], key=self.getEventKey)
-            elif k == "Place":
+            elif k == dbconst.KEY_TO_CLASS_MAP[dbconst.PLACE_KEY]:
                 note_list = sorted(note_groups[k], key=self.getPlaceKey)
-            elif k == "Repository":
+            elif k == dbconst.KEY_TO_CLASS_MAP[dbconst.REPOSITORY_KEY]:
                 note_list = sorted(note_groups[k], key=self.getRepositoryKey)
-            elif k == "Source":
+            elif k == dbconst.KEY_TO_CLASS_MAP[dbconst.SOURCE_KEY]:
                 note_list = sorted(note_groups[k], key=self.getSourceKey)
-            elif k == "Citation":
+            elif k == dbconst.KEY_TO_CLASS_MAP[dbconst.CITATION_KEY]:
                 note_list = sorted(note_groups[k], key=self.getCitationKey)
-            elif k == "Media":
+            elif k == dbconst.KEY_TO_CLASS_MAP[dbconst.MEDIA_KEY]:
                 note_list = sorted(note_groups[k], key=self.getMediaKey)
             else:
                 note_list = note_groups[k]
@@ -167,21 +168,21 @@ class TodoReport(Report):
             # grouping by the first reference
             try:
                 (class_name, r_handle) = list(refs)[0]
-                if class_name == "Family":
+                if class_name == dbconst.KEY_TO_CLASS_MAP[dbconst.FAMILY_KEY]:
                     key = self.getFamilyKey((r_handle,))
-                elif class_name == "Person":
+                elif class_name == dbconst.KEY_TO_CLASS_MAP[dbconst.PERSON_KEY]:
                     key = self.getPersonKey((r_handle,))
-                elif class_name == "Event":
+                elif class_name == dbconst.KEY_TO_CLASS_MAP[dbconst.EVENT_KEY]:
                     key = self.getEventKey((r_handle,))
-                elif class_name == "Place":
+                elif class_name == dbconst.KEY_TO_CLASS_MAP[dbconst.PLACE_KEY]:
                     key = self.getPlaceKey((r_handle,))
-                elif class_name == "Repository":
+                elif class_name == dbconst.KEY_TO_CLASS_MAP[dbconst.REPOSITORY_KEY]:
                      key = self.getRepositoryKey((r_handle,))
-                elif class_name == "Source":
+                elif class_name == dbconst.KEY_TO_CLASS_MAP[dbconst.SOURCE_KEY]:
                     key = self.getSourceKey((r_handle,))
-                elif class_name == "Citation":
+                elif class_name == dbconst.KEY_TO_CLASS_MAP[dbconst.CITATION_KEY]:
                     key = self.getCitationKey((r_handle,))
-                elif class_name == "Media":
+                elif class_name == dbconst.KEY_TO_CLASS_MAP[dbconst.MEDIA_KEY]:
                     key = self.getMediaKey((r_handle,))
                 else:
                     note = self.database.get_note_from_handle(note_handle)
@@ -200,21 +201,21 @@ class TodoReport(Report):
         """
         refs = self.database.find_backlink_handles(note_handle)
         for (class_name, r_handle) in refs:
-            if class_name == "Family":
+            if class_name == dbconst.KEY_TO_CLASS_MAP[dbconst.FAMILY_KEY]:
                 self._write_family(r_handle)
-            elif class_name == "Person":
+            elif class_name == dbconst.KEY_TO_CLASS_MAP[dbconst.PERSON_KEY]:
                 self._write_person(r_handle)
-            elif class_name == "Event":
+            elif class_name == dbconst.KEY_TO_CLASS_MAP[dbconst.EVENT_KEY]:
                 self._write_event(r_handle)
-            elif class_name == "Place":
+            elif class_name == dbconst.KEY_TO_CLASS_MAP[dbconst.PLACE_KEY]:
                 self._write_place(r_handle)
-            elif class_name == "Repository":
+            elif class_name == dbconst.KEY_TO_CLASS_MAP[dbconst.REPOSITORY_KEY]:
                 self._write_repository(r_handle)
-            elif class_name == "Source":
+            elif class_name == dbconst.KEY_TO_CLASS_MAP[dbconst.SOURCE_KEY]:
                 self._write_source(r_handle)
-            elif class_name == "Citation":
+            elif class_name == dbconst.KEY_TO_CLASS_MAP[dbconst.CITATION_KEY]:
                 self._write_citation(r_handle)
-            elif class_name == "Media":
+            elif class_name == dbconst.KEY_TO_CLASS_MAP[dbconst.MEDIA_KEY]:
                 self._write_media(r_handle)
 
     def _write_notes(self, note_list, title=None):
