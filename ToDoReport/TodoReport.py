@@ -192,6 +192,10 @@ class TodoReport(Report):
                 self._write_event(r_handle)
             elif class_name == "Place":
                 self._write_place(r_handle)
+            elif class_name == "Repository":
+                self._write_repository(r_handle)
+            elif class_name == "Source":
+                self._write_source(r_handle)
             elif class_name == "Citation":
                 self._write_citation(r_handle)
             elif class_name == "Media":
@@ -495,6 +499,70 @@ class TodoReport(Report):
         self.doc.end_row()
 
 
+    def _write_repository(self, handle):
+        """
+        Generate a table row with the repository information.
+        """
+        repository = self.database.get_repository_from_handle(handle)
+
+        self.doc.start_row()
+
+        self.doc.start_cell(_('TR-TableCell'))
+        self.doc.start_paragraph(_('TR-Normal'))
+        self.doc.write_text(repository.get_gramps_id())
+        self.doc.end_paragraph()
+        self.doc.end_cell()
+
+        self.doc.start_cell(_('TR-TableCell'), 2)
+        self.doc.start_paragraph(_('TR-Normal'))
+        self.doc.write_text(repository.get_name())
+        self.doc.end_paragraph()
+        self.doc.end_cell()
+
+        self.doc.start_cell(_('TR-TableCell'))
+        self.doc.start_paragraph(_('TR-Normal'))
+        self.doc.write_text(repository.get_type().string)
+        self.doc.end_paragraph()
+        self.doc.end_cell()
+
+        self.doc.end_row()
+
+
+    def _write_source(self, handle):
+        """
+        Generate a table row with the source information.
+        """
+        source = self.database.get_source_from_handle(handle)
+
+        self.doc.start_row()
+
+        self.doc.start_cell(_('TR-TableCell'))
+        self.doc.start_paragraph(_('TR-Normal'))
+        self.doc.write_text(source.get_gramps_id())
+        self.doc.end_paragraph()
+        self.doc.end_cell()
+
+        self.doc.start_cell(_('TR-TableCell'))
+        self.doc.start_paragraph(_('TR-Normal'))
+        self.doc.write_text(source.get_title())
+        self.doc.end_paragraph()
+        self.doc.end_cell()
+
+        self.doc.start_cell(_('TR-TableCell'))
+        self.doc.start_paragraph(_('TR-Normal'))
+        self.doc.write_text(source.get_author())
+        self.doc.end_paragraph()
+        self.doc.end_cell()
+
+        self.doc.start_cell(_('TR-TableCell'))
+        self.doc.start_paragraph(_('TR-Normal'))
+        self.doc.write_text(source.get_publication_info())
+        self.doc.end_paragraph()
+        self.doc.end_cell()
+
+        self.doc.end_row()
+
+
     def _write_citation(self, handle):
         """
         Generate a table row with the citation information.
@@ -534,7 +602,7 @@ class TodoReport(Report):
 
     def _write_media(self, handle):
         """
-        Generate a table row with the citation information.
+        Generate a table row with the media information.
         """
         media = self.database.get_media_from_handle(handle)
 
