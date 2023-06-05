@@ -42,6 +42,7 @@ from gramps.gen.errors import ReportError
 import gramps.gen.plug.report.utils as ReportUtils
 from gramps.gen.plug.menu import EnumeratedListOption, BooleanOption, StringOption
 from gramps.gen.lib.eventtype import EventType
+from gramps.gen.lib import NoteType
 from gramps.gen.utils.file import media_path_full
 from gramps.gen.db import dbconst
 
@@ -63,6 +64,8 @@ _REF_HANDLE_POS = 0
 _NOTE_HANDLE_POS = 1
 
 _PLACEHOLDER = "_" * 12
+_ALL_OPTION = "Entire Database"
+_NOTE_TYPE_OPTION_NAME = 'note_type'
 
 #------------------------------------------------------------------------
 #
@@ -93,9 +96,7 @@ class TodoReport(Report):
         Report.__init__(self, database, options, user)
         menu = options.menu
         self.tag = menu.get_option_by_name('tag').get_value()
-        if not self.tag:
-            raise ReportError(_('ToDo Report'),
-                _('You must first create a tag before running this report.'))
+        self.note_type = menu.get_option_by_name(_NOTE_TYPE_OPTION_NAME).get_value()
         self.can_group = menu.get_option_by_name('can_group').get_value()
         self.title = menu.get_option_by_name('title').get_value()
 
@@ -116,7 +117,10 @@ class TodoReport(Report):
         nlist = self.database.get_note_handles()
         FilterClass = GenericFilterFactory('Note')
         my_filter = FilterClass()
-        my_filter.add_rule(rules.note.HasTag([self.tag]))
+        if self.tag != _ALL_OPTION:
+            my_filter.add_rule(rules.note.HasTag([self.tag]))
+        if self.note_type != _ALL_OPTION:
+            my_filter.add_rule(rules.note.HasType([self.note_type]))
         note_list = my_filter.apply(self.database, nlist)
 
         if self.can_group:
@@ -854,6 +858,7 @@ class TodoOptions(MenuReportOptions):
         menu.add_option(category_name, "title", title)
 
         all_tags = []
+        all_tags.append(_ALL_OPTION)
         for handle in self.__db.get_tag_handles():
             tag = self.__db.get_tag_from_handle(handle)
             all_tags.append(tag.get_name())
@@ -869,6 +874,14 @@ class TodoOptions(MenuReportOptions):
         tag_option.set_help( _("The tag to use for the report"))
         menu.add_option(category_name, "tag", tag_option)
 
+        type_option = EnumeratedListOption(_('Note Type'), _ALL_OPTION)
+        type_option.add_item(_ALL_OPTION, _ALL_OPTION)
+        for note_type in NoteType().get_standard_names():
+            type_option.add_item(note_type, note_type)
+        for note_type in self.__db.get_note_types():
+            type_option.add_item(note_type, note_type)
+        menu.add_option(category_name, _NOTE_TYPE_OPTION_NAME, type_option)
+        
         can_group = BooleanOption(_("Group by reference type"), False)
         can_group.set_help( _("Group notes by Family, Person, Place, etc."))
         menu.add_option(category_name, "can_group", can_group)
