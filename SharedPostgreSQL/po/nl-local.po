@@ -6,38 +6,38 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PostgreSQL 5.x\n"
-"Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
-"POT-Creation-Date: 2019-01-04 18:55-0600\n"
-"PO-Revision-Date: 2020-08-07 14:37+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-10 11:09-0500\n"
+"PO-Revision-Date: 2023-06-09 21:08+0200\n"
 "Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
 "Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 3.0.1\n"
 
-#: PostgreSQL/postgresql.gpr.py:26
-msgid "PostgreSQL"
-msgstr "PostgreSQL"
+#: SharedPostgreSQL/sharedpostgresql.gpr.py:29
+msgid "SharedPostgreSQL"
+msgstr "GedeeldPostgreSQL"
 
-#: PostgreSQL/postgresql.gpr.py:27
-msgid "_PostgreSQL Database"
-msgstr "_PostgreSQL Database"
+#: SharedPostgreSQL/sharedpostgresql.gpr.py:30
+msgid "Shared _PostgreSQL Database"
+msgstr "Shared _PostgreSQL Database"
 
-#: PostgreSQL/postgresql.gpr.py:28
-msgid "PostgreSQL Database"
-msgstr "PostgreSQL-database"
+#: SharedPostgreSQL/sharedpostgresql.gpr.py:31
+msgid "Shared PostgreSQL Database"
+msgstr "Gedeelde PostgreSQL Database"
 
-#: PostgreSQL/postgresql.gpr.py:42
+#: SharedPostgreSQL/sharedpostgresql.gpr.py:46
 msgid "PostgreSQL Warning:  Python psycopg2 module not found."
 msgstr "PostgreSQL-waarschuwing: Python psycopg2-module niet gevonden."
 
-#: PostgreSQL/postgresql.gpr.py:48
+#: SharedPostgreSQL/sharedpostgresql.gpr.py:53
 msgid "PostgreSQL Failed to Load"
 msgstr "PostgreSQL kan niet worden geladen"
 
-#: PostgreSQL/postgresql.gpr.py:49
+#: SharedPostgreSQL/sharedpostgresql.gpr.py:55
 msgid ""
 "\n"
 "\n"
@@ -57,18 +57,18 @@ msgstr ""
 "\n"
 "Om alle toekomstige PostgreSQL-waarschuwingen af te wijzen, klikt u op Negeren."
 
-#: PostgreSQL/postgresql.gpr.py:53
+#: SharedPostgreSQL/sharedpostgresql.gpr.py:60
 msgid " Dismiss "
 msgstr " Negeren "
 
-#: PostgreSQL/postgresql.gpr.py:54
+#: SharedPostgreSQL/sharedpostgresql.gpr.py:61
 msgid "Continue"
 msgstr "Doorgaan"
 
-#: PostgreSQL/postgresql.py:68
+#: SharedPostgreSQL/sharedpostgresql.py:73
 msgid "Database version"
 msgstr "Database versie"
 
-#: PostgreSQL/postgresql.py:69
+#: SharedPostgreSQL/sharedpostgresql.py:74
 msgid "Database module location"
 msgstr "Databasemodule locatie"

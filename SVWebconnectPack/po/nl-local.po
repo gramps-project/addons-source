@@ -1,0 +1,78 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-08-29 10:33-0500\n"
+"PO-Revision-Date: 2023-06-09 21:17+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: SVWebconnectPack/SVWebPack.gpr.py:10
+msgid "SV Web Connect Pack"
+msgstr "SV Web Connect Pack"
+
+#: SVWebconnectPack/SVWebPack.gpr.py:11
+msgid "Collection of Web sites for Sweden (requires libwebconnect)"
+msgstr "Verzameling websites voor Zweden (vereist libwebconnect)"
+
+#: SVWebconnectPack/SVWebPack.py:33
+msgid "Find A Grave"
+msgstr "Zoek een graf"
+
+#: SVWebconnectPack/SVWebPack.py:34
+msgid "FamilySearch.org"
+msgstr "FamilySearch.org"
+
+#: SVWebconnectPack/SVWebPack.py:35
+msgid "Google SV"
+msgstr "Google SV"
+
+#: SVWebconnectPack/SVWebPack.py:38
+msgid "FamilySearch.org Tree"
+msgstr "FamilySearch.org Stamboom"
+
+#: SVWebconnectPack/SVWebPack.py:40
+msgid "National archives of Sweden personsearch"
+msgstr "Nationaal archief van Zweden persoonsonderzoek"
+
+#: SVWebconnectPack/SVWebPack.py:41
+msgid "National archives of Sweden free search"
+msgstr "Nationaal archief van Zweden gratis zoeken"
+
+#: SVWebconnectPack/SVWebPack.py:42
+msgid "Arkiv Digital estate records for Skåne"
+msgstr "Arkiv Digitale boedelbeschrijvingen voor Skåne"
+
+#: SVWebconnectPack/SVWebPack.py:43
+msgid "Ancestry Search"
+msgstr "Ancestry Search"
+
+#: SVWebconnectPack/SVWebPack.py:44
+msgid "Find swedish portraits - Rötter.se"
+msgstr "Zweedse portretten zoeken - Rötter.se"
+
+#: SVWebconnectPack/SVWebPack.py:45
+msgid "Gravar.se - find swedish graves"
+msgstr "Gravar.se - Zweedse graven zoeken"
+
+#: SVWebconnectPack/SVWebPack.py:46
+msgid "National archives of Sweden search censuses"
+msgstr "Nationale archieven van Zweden zoek volkstellingen"
+
+#: SVWebconnectPack/SVWebPack.py:47
+msgid "Arkiv Digital released prisoners"
+msgstr "Arkiv Digital vrijgelaten gevangenen "
+
+#: SVWebconnectPack/SVWebPack.py:48
+msgid "Gravestone inventory - rötter.se"
+msgstr "Grafsteen inventaris - rötter.se"
