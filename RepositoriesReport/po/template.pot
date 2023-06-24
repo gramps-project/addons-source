@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"POT-Creation-Date: 2023-06-24 09:27-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,22 +33,22 @@ msgid "Repositories Report"
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReport.py:151
-#: RepositoriesReport/RepositoriesReportAlt.py:409
+#: RepositoriesReport/RepositoriesReportAlt.py:410
 msgid "Report Options"
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReport.py:175
-#: RepositoriesReport/RepositoriesReportAlt.py:503
+#: RepositoriesReport/RepositoriesReportAlt.py:504
 msgid "The style used for the title of the report."
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReport.py:189
-#: RepositoriesReport/RepositoriesReportAlt.py:517
+#: RepositoriesReport/RepositoriesReportAlt.py:518
 msgid "The style used for repository title."
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReport.py:203
-#: RepositoriesReport/RepositoriesReportAlt.py:532
+#: RepositoriesReport/RepositoriesReportAlt.py:533
 msgid "The style used for each section."
 msgstr ""
 
@@ -72,130 +72,130 @@ msgstr ""
 msgid "Data:"
 msgstr ""
 
-#: RepositoriesReport/RepositoriesReportAlt.py:360
+#: RepositoriesReport/RepositoriesReportAlt.py:361
 msgid "Confidence level:"
 msgstr ""
 
-#: RepositoriesReport/RepositoriesReportAlt.py:365
+#: RepositoriesReport/RepositoriesReportAlt.py:366
 msgid "Citation:"
 msgstr ""
 
-#: RepositoriesReport/RepositoriesReportAlt.py:371
+#: RepositoriesReport/RepositoriesReportAlt.py:372
 msgid "Date:"
 msgstr ""
 
-#: RepositoriesReport/RepositoriesReportAlt.py:377
+#: RepositoriesReport/RepositoriesReportAlt.py:378
 msgid "Page:"
 msgstr ""
 
-#: RepositoriesReport/RepositoriesReportAlt.py:410
+#: RepositoriesReport/RepositoriesReportAlt.py:411
 msgid "Repositories"
 msgstr ""
 
-#: RepositoriesReport/RepositoriesReportAlt.py:411
+#: RepositoriesReport/RepositoriesReportAlt.py:412
 msgid "Sources"
 msgstr ""
 
-#: RepositoriesReport/RepositoriesReportAlt.py:417
+#: RepositoriesReport/RepositoriesReportAlt.py:418
 msgid "Select using filter"
 msgstr ""
 
-#: RepositoriesReport/RepositoriesReportAlt.py:418
+#: RepositoriesReport/RepositoriesReportAlt.py:419
 msgid "Selection with a filter"
 msgstr ""
 
-#: RepositoriesReport/RepositoriesReportAlt.py:430
+#: RepositoriesReport/RepositoriesReportAlt.py:431
 msgid "Include repository's urls"
 msgstr ""
 
-#: RepositoriesReport/RepositoriesReportAlt.py:431
+#: RepositoriesReport/RepositoriesReportAlt.py:432
 msgid "Whether to include urls on repository."
 msgstr ""
 
-#: RepositoriesReport/RepositoriesReportAlt.py:434
+#: RepositoriesReport/RepositoriesReportAlt.py:435
 msgid "Include repository's address"
 msgstr ""
 
-#: RepositoriesReport/RepositoriesReportAlt.py:435
+#: RepositoriesReport/RepositoriesReportAlt.py:436
 msgid "Whether to include addresses on repository."
 msgstr ""
 
-#: RepositoriesReport/RepositoriesReportAlt.py:438
+#: RepositoriesReport/RepositoriesReportAlt.py:439
 msgid "Include source's author"
 msgstr ""
 
-#: RepositoriesReport/RepositoriesReportAlt.py:439
+#: RepositoriesReport/RepositoriesReportAlt.py:440
 msgid "Whether to include author."
 msgstr ""
 
-#: RepositoriesReport/RepositoriesReportAlt.py:442
+#: RepositoriesReport/RepositoriesReportAlt.py:443
 msgid "Include source's abbreviation"
 msgstr ""
 
-#: RepositoriesReport/RepositoriesReportAlt.py:443
+#: RepositoriesReport/RepositoriesReportAlt.py:444
 msgid "Whether to include abbreviation."
 msgstr ""
 
-#: RepositoriesReport/RepositoriesReportAlt.py:446
+#: RepositoriesReport/RepositoriesReportAlt.py:447
 msgid "Include source's publication information"
 msgstr ""
 
-#: RepositoriesReport/RepositoriesReportAlt.py:447
+#: RepositoriesReport/RepositoriesReportAlt.py:448
 msgid "Whether to include publication information."
 msgstr ""
 
-#: RepositoriesReport/RepositoriesReportAlt.py:450
+#: RepositoriesReport/RepositoriesReportAlt.py:451
 msgid "Include source's data"
 msgstr ""
 
-#: RepositoriesReport/RepositoriesReportAlt.py:451
+#: RepositoriesReport/RepositoriesReportAlt.py:452
 msgid "Whether to include keys and values."
 msgstr ""
 
-#: RepositoriesReport/RepositoriesReportAlt.py:454
+#: RepositoriesReport/RepositoriesReportAlt.py:455
 msgid "Include notes"
 msgstr ""
 
-#: RepositoriesReport/RepositoriesReportAlt.py:455
+#: RepositoriesReport/RepositoriesReportAlt.py:456
 msgid "Whether to include notes on repositories and sources."
 msgstr ""
 
-#: RepositoriesReport/RepositoriesReportAlt.py:458
+#: RepositoriesReport/RepositoriesReportAlt.py:459
 msgid "Include media"
 msgstr ""
 
-#: RepositoriesReport/RepositoriesReportAlt.py:459
+#: RepositoriesReport/RepositoriesReportAlt.py:460
 msgid "Whether to include media."
 msgstr ""
 
-#: RepositoriesReport/RepositoriesReportAlt.py:462
+#: RepositoriesReport/RepositoriesReportAlt.py:463
 msgid "Include citations"
 msgstr ""
 
-#: RepositoriesReport/RepositoriesReportAlt.py:463
+#: RepositoriesReport/RepositoriesReportAlt.py:464
 msgid "Whether to include citations on sources."
 msgstr ""
 
-#: RepositoriesReport/RepositoriesReportAlt.py:466
+#: RepositoriesReport/RepositoriesReportAlt.py:467
 msgid "Include private records"
 msgstr ""
 
-#: RepositoriesReport/RepositoriesReportAlt.py:467
+#: RepositoriesReport/RepositoriesReportAlt.py:468
 msgid "Whether to include repositories and sources marked as private."
 msgstr ""
 
-#: RepositoriesReport/RepositoriesReportAlt.py:470
+#: RepositoriesReport/RepositoriesReportAlt.py:471
 msgid "Display empty values"
 msgstr ""
 
-#: RepositoriesReport/RepositoriesReportAlt.py:471
+#: RepositoriesReport/RepositoriesReportAlt.py:472
 msgid "Whether to include key records with empty values."
 msgstr ""
 
-#: RepositoriesReport/RepositoriesReportAlt.py:547
+#: RepositoriesReport/RepositoriesReportAlt.py:548
 msgid "The style used for child section."
 msgstr ""
 
-#: RepositoriesReport/RepositoriesReportAlt.py:559
+#: RepositoriesReport/RepositoriesReportAlt.py:560
 msgid "The basic style used for the note display."
 msgstr ""
