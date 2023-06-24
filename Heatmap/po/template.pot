@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-19 10:55-0600\n"
+"POT-Creation-Date: 2023-06-24 10:57-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,62 +25,39 @@ msgstr ""
 msgid "Create a heatmap web report."
 msgstr ""
 
-#: Heatmap/heatmap.py:68
+#: Heatmap/heatmap.py:72
 msgid "Filter"
 msgstr ""
 
-#: Heatmap/heatmap.py:70 Heatmap/heatmap.py:73 Heatmap/heatmap.py:84
-#: Heatmap/heatmap.py:88 Heatmap/heatmap.py:92 Heatmap/heatmap.py:101
+#: Heatmap/heatmap.py:73 Heatmap/heatmap.py:77 Heatmap/heatmap.py:80
+#: Heatmap/heatmap.py:87 Heatmap/heatmap.py:91 Heatmap/heatmap.py:95
+#: Heatmap/heatmap.py:105
 msgid "General"
 msgstr ""
 
-#: Heatmap/heatmap.py:72
-msgid "Person"
-msgstr ""
-
 #: Heatmap/heatmap.py:76
-msgid "OpenStreetMap"
+msgid "Filter Person"
 msgstr ""
 
-#: Heatmap/heatmap.py:77
-msgid "Stamen Terrain"
-msgstr ""
-
-#: Heatmap/heatmap.py:78
-msgid "Stamen Toner"
-msgstr ""
-
-#: Heatmap/heatmap.py:79
-msgid "Stamen Watercolor"
-msgstr ""
-
-#: Heatmap/heatmap.py:80
-msgid "CartoDB Positron"
-msgstr ""
-
-#: Heatmap/heatmap.py:81
-msgid "CartoDB DarkMatter"
-msgstr ""
-
-#: Heatmap/heatmap.py:82
+#: Heatmap/heatmap.py:85
 msgid "Map tiles"
 msgstr ""
 
-#: Heatmap/heatmap.py:86
+#: Heatmap/heatmap.py:89
 msgid "Point size"
 msgstr ""
 
-#: Heatmap/heatmap.py:87
+#: Heatmap/heatmap.py:90
 msgid ""
 "Set the size of the heatmap points.\n"
 "Default: 15"
 msgstr ""
 
-#: Heatmap/heatmap.py:90
+#: Heatmap/heatmap.py:93
 msgid "File path"
 msgstr ""
 
-#: Heatmap/heatmap.py:94
+#: Heatmap/heatmap.py:98
 msgid ""
 "For the file name only english letters A-Z, a-z and numbers 0-9 as well as "
 "the characters space, underline and hypen are allowed. The file name also "
@@ -88,174 +65,98 @@ msgid ""
 "html' is added by the report."
 msgstr ""
 
-#: Heatmap/heatmap.py:99
+#: Heatmap/heatmap.py:103
 msgid "File name"
 msgstr ""
 
-#: Heatmap/heatmap.py:107
+#: Heatmap/heatmap.py:111
+msgid "Events"
+msgstr ""
+
+#: Heatmap/heatmap.py:117
 msgid "Enable custom start position"
 msgstr ""
 
-#: Heatmap/heatmap.py:109
+#: Heatmap/heatmap.py:119
 msgid ""
 "Enabling will force the map open at your custom start position and zoom."
 msgstr ""
 
-#: Heatmap/heatmap.py:111 Heatmap/heatmap.py:117 Heatmap/heatmap.py:122
-#: Heatmap/heatmap.py:127
+#: Heatmap/heatmap.py:121 Heatmap/heatmap.py:127 Heatmap/heatmap.py:132
+#: Heatmap/heatmap.py:137
 msgid "Advanced"
 msgstr ""
 
-#: Heatmap/heatmap.py:114
+#: Heatmap/heatmap.py:124
 msgid "Start latitude"
 msgstr ""
 
-#: Heatmap/heatmap.py:116
+#: Heatmap/heatmap.py:126
 msgid ""
 "Set custom start position latitude\n"
 "Default: 50.0"
 msgstr ""
 
-#: Heatmap/heatmap.py:119
+#: Heatmap/heatmap.py:129
 msgid "Start longitude"
 msgstr ""
 
-#: Heatmap/heatmap.py:121
+#: Heatmap/heatmap.py:131
 msgid ""
 "Set custom start position longitude\n"
 "Default: 10.0"
 msgstr ""
 
-#: Heatmap/heatmap.py:124
+#: Heatmap/heatmap.py:134
 msgid "Start zoom"
 msgstr ""
 
-#: Heatmap/heatmap.py:126
+#: Heatmap/heatmap.py:136
 msgid ""
 "Set the value for the starting zoom\n"
 "Default: 5"
 msgstr ""
 
-#: Heatmap/heatmap.py:132
-msgid "Enable map limits"
-msgstr ""
-
-#: Heatmap/heatmap.py:134
-msgid ""
-"Enabling map limits forces the user to stay in a predefined part of the map."
-msgstr ""
-
-#: Heatmap/heatmap.py:136 Heatmap/heatmap.py:141 Heatmap/heatmap.py:145
-#: Heatmap/heatmap.py:150 Heatmap/heatmap.py:155 Heatmap/heatmap.py:160
-#: Heatmap/heatmap.py:165 Heatmap/heatmap.py:171
-msgid "Limits"
-msgstr ""
-
-#: Heatmap/heatmap.py:139
-msgid "Min. zoom"
-msgstr ""
-
-#: Heatmap/heatmap.py:140
-msgid ""
-"Set minimal zoom value\n"
-"Default: 1"
-msgstr ""
-
-#: Heatmap/heatmap.py:143
-msgid "Max. zoom"
-msgstr ""
-
-#: Heatmap/heatmap.py:144
-msgid ""
-"Set maximum zoom value.\n"
-"Default: 18"
-msgstr ""
-
-#: Heatmap/heatmap.py:147
-msgid "Upper left corner latitude"
-msgstr ""
-
-#: Heatmap/heatmap.py:149
-msgid "Set latitude for upper left corner map limit."
-msgstr ""
-
-#: Heatmap/heatmap.py:152
-msgid "Upper left corner longitude"
-msgstr ""
-
-#: Heatmap/heatmap.py:154
-msgid "Set longitude for upper left corner map limit."
-msgstr ""
-
-#: Heatmap/heatmap.py:157
-msgid "Lower right corner latitude"
-msgstr ""
-
-#: Heatmap/heatmap.py:159
-msgid "Set latitude for lower right corner map limit."
-msgstr ""
-
-#: Heatmap/heatmap.py:162
-msgid "Lower right corner longitude"
-msgstr ""
-
-#: Heatmap/heatmap.py:164
-msgid "Set longitude for lower right corner map limit."
-msgstr ""
-
-#: Heatmap/heatmap.py:168
-msgid "Render custom map limit border"
-msgstr ""
-
-#: Heatmap/heatmap.py:170
-msgid "Enabling will render the map limit border"
-msgstr ""
-
-#: Heatmap/heatmap.py:207
-msgid "Ancestors of <selected person>"
-msgstr ""
-
-#: Heatmap/heatmap.py:208
-msgid "Descendants of <selected person>"
-msgstr ""
-
-#: Heatmap/heatmap.py:251
-msgid "Invalid filename."
-msgstr ""
-
-#: Heatmap/heatmap.py:252
+#: Heatmap/heatmap.py:209
 msgid "Path does not exist."
 msgstr ""
 
-#: Heatmap/heatmap.py:261 Heatmap/heatmap.py:267 Heatmap/heatmap.py:269
-#: Heatmap/heatmap.py:344 Heatmap/heatmap.py:454 Heatmap/heatmap.py:490
+#: Heatmap/heatmap.py:210
+msgid "Invalid filename."
+msgstr ""
+
+#: Heatmap/heatmap.py:214 Heatmap/heatmap.py:226
 msgid "INFO"
 msgstr ""
 
-#: Heatmap/heatmap.py:341
-msgid ""
-"Report generation failed.\n"
-"Please check the values for start latitude and longitude.\n"
-"Latitude: -90 to 90\n"
-"Longitude: -180 to 180"
+#: Heatmap/multi_select.py:104
+msgid "Event type"
 msgstr ""
 
-#: Heatmap/heatmap.py:405
-#, python-format
-msgid ""
-"[INFO]: Place '%s' was ignored because of unsupported coordinate values."
+#: Heatmap/utils.py:52
+msgid "OpenStreetMap"
 msgstr ""
 
-#: Heatmap/heatmap.py:452
-msgid ""
-"Your zoom settings were inconclusive and therefore changed for this report "
-"generation."
+#: Heatmap/utils.py:55
+msgid "Stamen Terrain"
 msgstr ""
 
-#: Heatmap/heatmap.py:487
-msgid ""
-"Report generation failed.\n"
-"Please check the values for limits latitude and longitude.\n"
-"Latitude: -90 to 90\n"
-"Longitude: -180 to 180"
+#: Heatmap/utils.py:58
+msgid "Stamen Terrain (Background only)"
+msgstr ""
+
+#: Heatmap/utils.py:61
+msgid "Stamen Toner"
+msgstr ""
+
+#: Heatmap/utils.py:64
+msgid "Stamen Watercolor"
+msgstr ""
+
+#: Heatmap/utils.py:67
+msgid "CartoDB Positron"
+msgstr ""
+
+#: Heatmap/utils.py:70
+msgid "CartoDB DarkMatter"
 msgstr ""
