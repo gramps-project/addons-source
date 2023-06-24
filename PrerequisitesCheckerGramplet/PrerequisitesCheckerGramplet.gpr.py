@@ -17,22 +17,22 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # Diagnostic check that prerequisites have been met for the current install.
 #
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 
 register(GRAMPLET,
          id="Prerequisites Checker Gramplet",
          name=_("Prerequisites Checker"),
-         description = _("Prerequisites Checker Gramplet"),
-         version = '1.2.2',
+         description=_("Prerequisites Checker Gramplet"),
+         version = '1.2.3',
          gramps_target_version='5.2',
-         status = STABLE,
+         status=STABLE,
          fname="PrerequisitesCheckerGramplet.py",
-         height = 300,
-         gramplet = 'PrerequisitesCheckerGramplet',
+         height=300,
+         gramplet='PrerequisitesCheckerGramplet',
          gramplet_title=_("Prerequisites Checker"),
-         help_url="PrerequisitesCheckerGramplet"
+         help_url="Addon:Prerequisites_Checker_Gramplet"
          )
