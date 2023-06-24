@@ -143,10 +143,23 @@
                 <_attribute>Sex</_attribute>
             </column>
             <column>
+                <_attribute>Maiden Surname</_attribute>
+                <_longname>Maiden surname of woman who was married</_longname>
+            </column>
+            <column>
                 <_attribute>Age</_attribute>
             </column>
             <column>
+                <_attribute>Date of Birth</_attribute>
+            </column>
+            <column>
+                <_attribute>Place of Birth</_attribute>
+            </column>
+            <column>
                 <_attribute>Occupation</_attribute>
+            </column>
+            <column>
+                <_attribute>Usual Address</_attribute>
             </column>
             <column>
                 <_attribute>Cause of Death</_attribute>
