@@ -1,33 +1,29 @@
 # Dutch translation of Gramps addon ChangeGivenNames
 # Copyright (C) 2020 Gramps Project.
 # This file is distributed under the same license as the ChangeGivenNames package.
-# Jan Sparreboom <jan@sparreboom.net>, 2020.
+# Jan Sparreboom <jan@sparreboom.net>, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.1.x\n"
-"Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2020-04-13 17:24+0200\n"
+"PO-Revision-Date: 2023-06-09 12:50+0200\n"
 "Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
 "Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: ChangeGivenNames/ChangeGivenNames.gpr.py:36
 msgid "Fix Capitalization of Given Names"
 msgstr "Hoofdlettergebruik van voornamen corrigeren"
 
 #: ChangeGivenNames/ChangeGivenNames.gpr.py:37
-msgid ""
-"Searches the entire database and attempts to fix capitalization of the given "
-"names."
-msgstr ""
-"Doorzoekt de hele database en probeert het hoofdlettergebruik van de "
-"opgegeven namen te herstellen."
+msgid "Searches the entire database and attempts to fix capitalization of the given names."
+msgstr "Doorzoekt de hele database en probeert het hoofdlettergebruik van de opgegeven namen te herstellen."
 
 #: ChangeGivenNames/ChangeGivenNames.py:66
 msgid "manual|Fix_Capitalization_of_Given_Names..."
@@ -90,4 +86,4 @@ msgstr "Selectie bewerken"
 
 #: ChangeGivenNames/changenames.glade:123
 msgid "_Accept changes and close"
-msgstr "Accepteer de wijzigingen en sluit af"
+msgstr "_Wijzigingen accepteren en sluiten"
