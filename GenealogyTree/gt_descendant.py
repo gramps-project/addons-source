@@ -83,6 +83,7 @@ class DescendantTree(Report):
         self._pid = get_value('pid')
         self.max_generations = menu.get_option_by_name('maxgen').get_value()
         self.include_images = menu.get_option_by_name('images').get_value()
+        self.put_first_spouse_on_left = menu.get_option_by_name('firstspouseleft').get_value()
         self.set_locale(menu.get_option_by_name('trans').get_value())
 
     def write_report(self):
@@ -124,9 +125,14 @@ class DescendantTree(Report):
             return
         family = self._db.get_family_from_handle(family_handles[0])
         self.doc.start_subgraph(level, subgraph_type, family)
-        for handle in family_handles[1:]:
-            self.write_subgraph(level+1, 'union', [handle], ghandle)
-        for handle in (family.get_father_handle(), family.get_mother_handle()):
+
+        #mother on the left only if multiple marriages & father is the "ghandle"
+        if len(family_handles) > 1 and family.get_father_handle() == ghandle and self.put_first_spouse_on_left == True:
+            parent_list = [family.get_mother_handle(), family.get_father_handle()]
+        else: #normally father on the left
+            parent_list = [family.get_father_handle(), family.get_mother_handle()]
+
+        for handle in (parent_list):
             if handle:
                 parent = self._db.get_person_from_handle(handle)
                 if handle == ghandle:
@@ -135,18 +141,21 @@ class DescendantTree(Report):
                                             False)
                 else:
                     self.doc.write_node(self._db, level+1, 'p', parent, True)
+
         for childref in family.get_child_ref_list():
             child = self._db.get_person_from_handle(childref.ref)
-            family_handles = child.get_family_handle_list()
-            if len(family_handles) > 0:
-                family_handles = child.get_family_handle_list()
+            child_family_handles = child.get_family_handle_list()
+            if len(child_family_handles) > 0:
+                child_family_handles = child.get_family_handle_list()
                 if level+1 >= self.max_generations:
                     self.doc.write_node(self._db, level+1, 'c', child, True)
                 else:
-                    self.write_subgraph(level+1, 'child', family_handles,
+                    self.write_subgraph(level+1, 'child', child_family_handles,
                                         childref.ref)
             else:
                 self.doc.write_node(self._db, level+1, 'c', child, True)
+        for handle in family_handles[1:]:
+            self.write_subgraph(level+1, 'union', [handle], ghandle)
         self.doc.end_subgraph(level)
 
 #------------------------------------------------------------------------
@@ -178,5 +187,9 @@ class DescendantTreeOptions(MenuReportOptions):
         images = BooleanOption(_("Include images"), False)
         images.set_help(_("Include images of people in the nodes."))
         menu.add_option(category_name, "images", images)
+
+        firstspouseleft = BooleanOption(_("First spouse left"), True)
+        firstspouseleft.set_help(_("Always put first of multiple spouses on the left. This can help reduce line-crossings with multiple marriages."))
+        menu.add_option(category_name, "firstspouseleft", firstspouseleft)
 
         locale_opt = stdoptions.add_localization_option(menu, category_name)
