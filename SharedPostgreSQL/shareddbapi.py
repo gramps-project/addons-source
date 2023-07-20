@@ -499,11 +499,11 @@ class SharedDBAPI(DbGeneric):
             sql = (
                 "SELECT family.handle "
                 + "FROM family "
-                + "WHERE family.treeid = ? "
                 + "LEFT JOIN person AS father "
                 + "ON (family.father_handle = father.handle AND family.treeid = father.treeid) "
                 + "LEFT JOIN person AS mother "
                 + "ON (family.mother_handle = mother.handle AND family.treeid = mother.treeid) "
+                + "WHERE family.treeid = ? "
                 + "ORDER BY (CASE WHEN father.handle IS NULL "
                 + "THEN mother.surname "
                 + "ELSE father.surname "
