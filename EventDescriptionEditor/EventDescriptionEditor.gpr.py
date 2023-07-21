@@ -24,7 +24,7 @@ register(TOOL,
          name = _("Event Description Editor"),
          description = _("A tool to find and replace a string in event "
                          "description of multiple events."),
-         version = '1.0.10',
+         version = '1.0.11',
          gramps_target_version = "5.2",
          status = STABLE,
          fname = 'EventDescriptionEditor.py',

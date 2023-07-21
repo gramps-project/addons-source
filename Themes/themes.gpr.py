@@ -28,7 +28,7 @@ id    = 'ThemesPrefs',
 name  = _("Theme preferences"),
 description =  _("An addition to Preferences for simple Theme and Font"
                  " adjustment.  Especially useful for Windows users."),
-version = '0.0.9',
+version = '0.0.10',
 gramps_target_version = '5.2',
 fname = "themes_load.py",
 authors = ["Paul Culley"],
