@@ -17,14 +17,6 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
-if locals().get('uistate'):  # don't start GUI if in CLI mode, just ignore
-    from gi.repository import Gtk, GdkPixbuf
-    import os
-    from gramps.gen.const import USER_PLUGINS
-    fname = os.path.join(USER_PLUGINS, 'QuiltView')
-    icons = Gtk.IconTheme().get_default()
-    icons.append_search_path(fname)
-
 register(VIEW,
     id = 'QuiltView',
     name = _('Quilt Chart'),

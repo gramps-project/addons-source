@@ -18,51 +18,18 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
-import importlib
-
-module1 = importlib.find_loader("psycopg2") is not None
-# Don't register if not runnable, but have to 'Make build' anyway
-if module1 or locals().get("build_script"):
-    register(
-        DATABASE,
-        id="sharedpostgresql",
-        name=_("SharedPostgreSQL"),
-        name_accell=_("Shared _PostgreSQL Database"),
-        description=_("Shared PostgreSQL Database"),
-        version = '0.1.4',
-        gramps_target_version="5.2",
-        status=STABLE,
-        fname="sharedpostgresql.py",
-        databaseclass="SharedPostgreSQL",
-        authors=["Doug Blank", "David Straub"],
-        authors_email=["doug.blank@gmail.com", "straub@protonmail.com"],
-    )
-elif locals().get("uistate"):  # don't start GUI if in CLI mode, just ignore
-    from gramps.gen.config import config
-    from gramps.gui.dialog import QuestionDialog2
-    from gramps.gen.config import logging
-
-    if not module1:
-        warn_msg = _("PostgreSQL Warning:  Python psycopg2 module not found.")
-        logging.log(logging.WARNING, warn_msg)
-    inifile = config.register_manager("postgresqlwarn")
-    inifile.load()
-    sects = inifile.get_sections()
-    if "postgresqlwarn" not in sects:
-        yes_no = QuestionDialog2(
-            _("PostgreSQL Failed to Load"),
-            _(
-                "\n\nPostgreSQL is missing the psycopg2 python module.\n"
-                "For now, it may be possible to install the files manually. See\n\n"
-                "https://gramps-project.org/wiki/index.php?title=PostgreSQL \n\n"
-                "To dismiss all future PostgreSQL warnings click Dismiss."
-            ),
-            _(" Dismiss "),
-            _("Continue"),
-            parent=uistate.window,
-        )
-        prompt = yes_no.run()
-        if prompt is True:
-            inifile.register("postgresqlwarn.MissingModules", "")
-            inifile.set("postgresqlwarn.MissingModules", "True")
-            inifile.save()
+register(
+    DATABASE,
+    id="sharedpostgresql",
+    name=_("SharedPostgreSQL"),
+    name_accell=_("Shared _PostgreSQL Database"),
+    description=_("Shared PostgreSQL Database"),
+    version = '0.1.4',
+    gramps_target_version="5.2",
+    status=STABLE,
+    fname="sharedpostgresql.py",
+    databaseclass="SharedPostgreSQL",
+    authors=["Doug Blank", "David Straub"],
+    authors_email=["doug.blank@gmail.com", "straub@protonmail.com"],
+    requires_mod=['psycopg2'],
+)

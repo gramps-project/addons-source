@@ -27,14 +27,6 @@
 # default views of Gramps
 #
 #------------------------------------------------------------------------
-if locals().get('uistate'):  # don't start GUI if in CLI mode, just ignore
-    from gi.repository import Gtk, GdkPixbuf
-    import os
-    from gramps.gen.const import USER_PLUGINS
-    fname = os.path.join(USER_PLUGINS, 'TimelinePedigreeView')
-    icons = Gtk.IconTheme().get_default()
-    icons.append_search_path(fname)
-
 register(VIEW,
     id    = 'TimelinePedigreeView',
     name  = _("Timeline Pedigree"),

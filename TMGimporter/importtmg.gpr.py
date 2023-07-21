@@ -42,100 +42,59 @@ dbfavailable = False
 direct_tmg_pjc_ver_support = False
 grampsversion = "5.2"
 
-try:
-    # External Library: dbf.pypi
-    # https://pypi.python.org/pypi/dbf
-    import dbf
-    dbfavailable = True
-except (ImportError, ValueError):
-    dbfavailable = False
-
-if not dbfavailable:
-    from gramps.gen.config import config
-    inifile = config.register_manager("tmgimporterwarn")
-    inifile.load()
-    sects = inifile.get_sections()
-
-# Don't register if not runnable, but have to 'Make build' anyway
-if(dbfavailable or locals().get('build_script')):
+register(IMPORT,
+         id    = 'im_sqz',
+         name  = _('TMG Project Backup'),
+         description =  _('Import TMG project files'),
+         version = '0.0.78',
+         gramps_target_version = grampsversion,
+         include_in_listing = False,
+         status = STABLE,
+         fname = 'importtmg.py',
+         import_function = 'importSqzData',
+         extension = "sqz", # Only detects lower case extensions (TODO: add SQZ uppercase)
+         requires_mod=['dbf'],
+)
+if direct_tmg_pjc_ver_support:
+# Only Load when importer directly supports (tmg/pjc/ver)
     register(IMPORT,
-             id    = 'im_sqz',
-             name  = _('TMG Project Backup'),
+             id    = 'im_pjc',
+             name  = _('TMG Unsupported'),
              description =  _('Import TMG project files'),
              version = '0.0.78',
              gramps_target_version = grampsversion,
              include_in_listing = False,
-             status = STABLE,
+             status = UNSTABLE,
              fname = 'importtmg.py',
-             import_function = 'importSqzData',
-             extension = "sqz" # Only detects lower case extensions (TODO: add SQZ uppercase)
+             import_function = 'importpjc',
+             extension = "pjc",
+             requires_mod=['dbf'],
     )
-    if direct_tmg_pjc_ver_support:
-    # Only Load when importer directly supports (tmg/pjc/ver)
-        register(IMPORT,
-                 id    = 'im_pjc',
-                 name  = _('TMG Unsupported'),
-                 description =  _('Import TMG project files'),
-                 version = '0.0.78',
-                 gramps_target_version = grampsversion,
-                 include_in_listing = False,
-                 status = UNSTABLE,
-                 fname = 'importtmg.py',
-                 import_function = 'importpjc',
-                 extension = "pjc"
-        )
 
-        register(IMPORT,
-                 id    = 'im_tmg',
-                 name  = _('TMG Unsupported'),
-                 description =  _('Import TMG project files'),
-                 version = '0.0.78',
-                 gramps_target_version = grampsversion,
-                 include_in_listing = False,
-                 status = UNSTABLE,
-                 fname = 'importtmg.py',
-                 import_function = 'importtmg',
-                 extension = "tmg"
-        )
+    register(IMPORT,
+             id    = 'im_tmg',
+             name  = _('TMG Unsupported'),
+             description =  _('Import TMG project files'),
+             version = '0.0.78',
+             gramps_target_version = grampsversion,
+             include_in_listing = False,
+             status = UNSTABLE,
+             fname = 'importtmg.py',
+             import_function = 'importtmg',
+             extension = "tmg",
+             requires_mod=['dbf'],
+    )
 
-        register(IMPORT,
-                 id    = 'im_ver',
-                 name  = _('TMG Unsupported'),
-                 description =  _('Import TMG project files'),
-                 version = '0.0.78',
-                 gramps_target_version = grampsversion,
-                 include_in_listing = False,
-                 status = UNSTABLE,
-                 fname = 'importtmg.py',
-                 import_function = 'importver',
-                 extension = "ver"
-        )
-
-from gramps.gen.config import logging
-if not dbfavailable:
-    warn_msg = _("TMG Importer Warning: DBF "
-                 "(https://pypi.python.org/pypi/dbf)"
-                 " is required for this importer to work")
-    logging.log(logging.WARNING, warn_msg)
-
-# don't start GUI if in CLI mode, just ignore
-if not dbfavailable and locals().get('uistate'):
-    from gramps.gui.dialog import QuestionDialog2
-    if 'tmgimporterwarn' not in sects:
-        yes_no = QuestionDialog2(
-            _("TMG Importer Failed to Load"),
-            _("\n\nTMG Importer is missing the DBF python module.\n"
-              "DBF must be installed ( https://pypi.python.org/pypi/dbf ).\n\n"
-              "For more information see\n<a href=\"https://gramps-project.org/wiki/index.php?"
-              "title=Addon:TMGimporter\" "
-              "title=\"https://gramps-project.org/wiki/index.php?"
-              "title=Addon:TMGimporter\">https://gramps-project.org/wiki/index.php?"
-              "title=Addon:TMGimporter</a> \n\n"
-              "To dismiss all future TMG Importer warnings click Dismiss."),
-            _(" Dismiss "),
-            _("Continue"), parent=uistate.window)
-        prompt = yes_no.run()
-        if prompt is True:
-            inifile.register('tmgimporterwarn.MissingModules', "")
-            inifile.set('tmgimporterwarn.MissingModules', "True")
-            inifile.save()
+    register(IMPORT,
+             id    = 'im_ver',
+             name  = _('TMG Unsupported'),
+             description =  _('Import TMG project files'),
+             version = '0.0.78',
+             gramps_target_version = grampsversion,
+             include_in_listing = False,
+             status = UNSTABLE,
+             fname = 'importtmg.py',
+             import_function = 'importver',
+             extension = "ver",
+             requires_mod=['dbf'],
+    )
