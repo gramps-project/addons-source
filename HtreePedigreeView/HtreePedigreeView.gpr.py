@@ -41,5 +41,6 @@ register(VIEW,
     authors = ["Pat Lefebre"],
     authors_email = [""],
     viewclass = 'HtreePedigreeView',
+    icons = [('gramps-htree', _('H-Tree Pedigree'))],
     stock_icon = 'gramps-htree',
 )

@@ -29,5 +29,6 @@ register(VIEW,
     authors = ['Nick Hall', 'Serge Noiraud'],
     authors_email = ['nick__hall@hotmail.com', 'serge.noiraud@free.fr'],
     viewclass = 'QuiltView',
+    icons = [('gramps-quilt', _('Quilt Chart'))],
     stock_icon = 'gramps-quilt',
 )

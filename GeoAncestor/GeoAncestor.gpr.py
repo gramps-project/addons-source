@@ -37,6 +37,7 @@ register(VIEW,
          authors_email=[""],
          category=("Geography", _("Geography")),
          viewclass='GeoAncestor',
+         icons = [('geo-ancestor', _('Ancestors map'))],
          stock_icon='geo-ancestor',
          requires_gi=[('OsmGpsMap', '1.0')],
          )

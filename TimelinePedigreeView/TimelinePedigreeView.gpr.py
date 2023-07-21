@@ -40,5 +40,6 @@ register(VIEW,
     authors = ["Felix Heß"],
     authors_email = ["xilef@nurfuerspam.de"],
     viewclass = 'TimelinePedigreeView',
+    icons = [('gramps-timelinepedigree', _('Timeline Pedigree'))],
     stock_icon = 'gramps-timelinepedigree',
     )
