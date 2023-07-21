@@ -27,7 +27,7 @@ register(
     version = '1.0.10',
     authors=["Matthias Kemmer"],
     authors_email=["matt.familienforschung@gmail.com"],
-    gramps_target_version='5.1',
+    gramps_target_version='5.2',
     status=STABLE,
     fname="associationsofpersonmatch.py",
     ruleclass='AssociationsOfPersonMatch',

@@ -11,7 +11,7 @@ register(GRAMPLET,
          detached_width = 500,
          detached_height = 400,
          version = '1.0.36',
-         gramps_target_version="5.1",
+         gramps_target_version="5.2",
          help_url = "NoteGramplet",
          navtypes=["Person"],
          )

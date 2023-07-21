@@ -13,7 +13,7 @@ description =  _("Looks through families, looking for children that are not "
                  "families that have all children with proper birth dates, or "
                  "accept all."),
 version = '0.0.14',
-gramps_target_version = '5.1',
+gramps_target_version = '5.2',
 status = STABLE,
 fname = 'birthorder.py',
 authors = ["Paul R. Culley"],

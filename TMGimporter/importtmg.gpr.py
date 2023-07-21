@@ -40,7 +40,7 @@ _ = glocale.translation.sgettext
 #------------------------------------------------------------------------
 dbfavailable = False
 direct_tmg_pjc_ver_support = False
-grampsversion = "5.1"
+grampsversion = "5.2"
 
 try:
     # External Library: dbf.pypi

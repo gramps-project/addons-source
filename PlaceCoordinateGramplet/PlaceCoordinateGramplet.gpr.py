@@ -138,7 +138,7 @@ if locals().get('uistate') is None or not some_import_error:
             name=_("Place Coordinate Gramplet view"),
             description=_("View for the place coordinate gramplet."),
             version = '1.1.18',
-            gramps_target_version="5.1",
+            gramps_target_version="5.2",
             status=STABLE,
             fname='PlaceCoordinateGeoView.py',
             authors=["Christian Schulze"],
@@ -155,7 +155,7 @@ if locals().get('uistate') is None or not some_import_error:
             description=_(
                 "Gramplet that simplifies setting the coordinates of a place"),
             version = '1.1.18',
-            gramps_target_version="5.1",
+            gramps_target_version="5.2",
             status=STABLE,
             fname="PlaceCoordinateGramplet.py",
             height=280,

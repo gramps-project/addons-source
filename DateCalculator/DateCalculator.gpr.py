@@ -27,7 +27,7 @@ register(GRAMPLET,
          authors_email=["doug.blank@gmail.com"],
          height=250,
          gramplet='DateCalculator',
-         gramps_target_version="5.1",
+         gramps_target_version="5.2",
          gramplet_title=_("Date Calculator"),
          help_url = "DateCalculator",
          )

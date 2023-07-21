@@ -35,7 +35,7 @@ if(_GOO and _DOT or locals().get('build_script') or
         category = ("Ancestry", _("Charts")),
         description =  _("Dynamic and interactive graph of relations"),
         version = '1.0.131',
-        gramps_target_version = "5.1",
+        gramps_target_version = "5.2",
         status = STABLE,
         fname = 'graphview.py',
         authors = ["Gary Burton"],

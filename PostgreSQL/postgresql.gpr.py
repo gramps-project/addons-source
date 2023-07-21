@@ -27,7 +27,7 @@ if module1 or locals().get('build_script'):
              name_accell=_('_PostgreSQL Database'),
              description=_('PostgreSQL Database'),
              version = '1.0.13',
-             gramps_target_version='5.1',
+             gramps_target_version='5.2',
              status=STABLE,
              fname='postgresql.py',
              databaseclass='PostgreSQL',

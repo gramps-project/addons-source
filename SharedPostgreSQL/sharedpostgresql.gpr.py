@@ -30,7 +30,7 @@ if module1 or locals().get("build_script"):
         name_accell=_("Shared _PostgreSQL Database"),
         description=_("Shared PostgreSQL Database"),
         version = '0.1.4',
-        gramps_target_version="5.1",
+        gramps_target_version="5.2",
         status=STABLE,
         fname="sharedpostgresql.py",
         databaseclass="SharedPostgreSQL",

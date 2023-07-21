@@ -36,5 +36,5 @@ register(
     authors_email=["straub@protonmail.com"],
     description=_("Upload media files to S3 (or compatible) object-based storage via the command line."),
     version = '0.1.2',
-    gramps_target_version="5.1",
+    gramps_target_version="5.2",
 )

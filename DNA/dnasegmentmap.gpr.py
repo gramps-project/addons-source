@@ -35,7 +35,7 @@ register(GRAMPLET,
          detached_width = 600,
          detached_height = 450,
          version = '2.0.1',
-         gramps_target_version='5.1',
+         gramps_target_version='5.2',
          help_url="Addon:DNASegmentMap",
          include_in_listing = True,
          )

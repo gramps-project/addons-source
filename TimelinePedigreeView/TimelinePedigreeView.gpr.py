@@ -42,7 +42,7 @@ register(VIEW,
     description =  _("The view shows a timeline pedigree with ancestors and "
                      "descendants of the selected person"),
     version = '0.1.61',
-    gramps_target_version = "5.1",
+    gramps_target_version = "5.2",
     status = STABLE,
     fname = 'TimelinePedigreeView.py',
     authors = ["Felix Heß"],

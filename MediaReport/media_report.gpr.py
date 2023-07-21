@@ -24,7 +24,7 @@ register(REPORT,
          description = _("Generates report including images, image data"
                          " and notes."),
          version = '1.1.7',
-         gramps_target_version = "5.1",
+         gramps_target_version = "5.2",
          status = STABLE,
          fname = "media_report.py",
          authors = ["Matthias Kemmer"],
