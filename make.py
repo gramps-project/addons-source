@@ -47,6 +47,7 @@ import glob
 import sys
 import os
 import tarfile
+import json
 from xml.etree import ElementTree
 
 if "GRAMPSPATH" in os.environ:
@@ -550,6 +551,9 @@ elif command == "as-needed":
                             "v": p["version"].replace("'", "\\'"),
                             "g": p["gramps_target_version"].replace("'",
                                                                     "\\'"),
+                            "h": p.get("help_url", "").replace("'", "\\'"),
+                            "a": p.get("audience", 0),
+                            "s": p["status"],
                             "z": ("%s.addon.tgz" % addon)}
                         listings[lang].append(plugin)
                         if lang == 'en':
@@ -601,11 +605,12 @@ elif command == "as-needed":
     # write out the listings
     for lang in languages:
         fp = open(r("../addons/%(gramps_version)s/listings/") +
-                  ("addons-%s.txt" % lang), "w", encoding="utf-8",
+                  ("addons-%s.json" % lang), "w", encoding="utf-8",
                   newline='')
         for plugin in sorted(listings[lang], key=lambda p: (p["t"], p["i"])):
             print("""{"t":'%(t)s',"i":'%(i)s',"n":'%(n)s',"v":'%(v)s',"""
-                  """"g":'%(g)s',"d":'%(d)s',"z":'%(z)s'}""" % plugin, file=fp)
+                  """"g":'%(g)s',"d":'%(d)s',"h":'%(h)s',"a":%(a)d,"""
+                  """"s":%(s)d,"z":'%(z)s'}""" % plugin, file=fp)
         fp.close()
 
 elif command == "manifest-check":
@@ -633,7 +638,7 @@ elif command == "unlist":
     for lang in languages:
         lines = []
         fp = open(r("../addons/%(gramps_version)s/listings/") +
-                  ("addons-%s.txt" % lang), "r", encoding="utf-8")
+                  ("addons-%s.json" % lang), "r", encoding="utf-8")
         for line in fp:
             if cmd_arg + ".addon.tgz" not in line:
                 lines.append(line)
@@ -641,7 +646,7 @@ elif command == "unlist":
                 print("unlisting", line)
         fp.close()
         fp = open(r("../addons/%(gramps_version)s/listings/") +
-                  ("addons-%s.txt" % lang), "w", encoding="utf-8", newline='')
+                  ("addons-%s.json" % lang), "w", encoding="utf-8", newline='')
         for line in lines:
             fp.write(line)
         fp.close()
@@ -658,7 +663,7 @@ elif command == "fix":
     for lang in languages:
         addons = {}
         fp = open(r("../addons/%(gramps_version)s/listings/") +
-                  ("addons-%s.txt" % lang), "r", encoding="utf-8")
+                  ("addons-%s.json" % lang), "r", encoding="utf-8")
         for line in fp:
             dictionary = eval(line)
             if dictionary["i"] in addons:
@@ -667,7 +672,7 @@ elif command == "fix":
                 addons[dictionary["i"]] = dictionary
         fp.close()
         fp = open(r("../addons/%(gramps_version)s/listings/") +
-                  ("addons-%s.txt" % lang), "w", encoding="utf-8", newline='')
+                  ("addons-%s.json" % lang), "w", encoding="utf-8", newline='')
         for p in sorted(addons.values(), key=lambda p: (p["t"], p["i"])):
             plugin = {"n": p["n"].replace("'", "\\'"),
                       "i": p["i"].replace("'", "\\'"),
@@ -675,10 +680,12 @@ elif command == "fix":
                       "d": p["d"].replace("'", "\\'"),
                       "v": p["v"].replace("'", "\\'"),
                       "g": p["g"].replace("'", "\\'"),
+                      "h": p["h"].replace("'", "\\'"),
                       "z": p["z"].replace("'", "\\'"),
                       }
             print("""{"t":'%(t)s',"i":'%(i)s',"n":'%(n)s',"v":'%(v)s',"""
-                  """"g":'%(g)s',"d":'%(d)s',"z":'%(z)s'}""" % plugin, file=fp)
+                  """"g":'%(g)s',"d":'%(d)s',"h":'%(h)s',"a":%(a)d,"""
+                  """"s":%(s)d,"z":'%(z)s'}""" % plugin, file=fp)
         fp.close()
 
 elif command == "check":
@@ -791,91 +798,71 @@ elif command == "listing":
                     tgz_exists = os.path.isfile(
                         r("../addons/%(gramps_version)s/download/") + tgz_file)
                     if p.get("include_in_listing", True) and tgz_exists:
-                        plugin = {"n": p["name"].replace("'", "\\'"),
-                                  "i": p["id"].replace("'", "\\'"),
-                                  "t": p["ptype"].replace("'", "\\'"),
-                                  "d": p["description"].replace("'", "\\'"),
-                                  "v": p["version"].replace("'", "\\'"),
-                                  "g": p["gramps_target_version"].replace(
-                                      "'", "\\'"),
+                        plugin = {"n": p["name"],
+                                  "i": p["id"],
+                                  "t": p["ptype"],
+                                  "d": p["description"],
+                                  "v": p["version"],
+                                  "g": p["gramps_target_version"],
+                                  "s": p["status"],
                                   "z": (tgz_file),
                                   }
+                        if "requires_mod" in p:
+                            plugin["rm"] = p["requires_mod"]
+                        if "requires_gi" in p:
+                            plugin["rg"] = p["requires_gi"]
+                        if "requires_exe" in p:
+                            plugin["re"] = p["requires_exe"]
+                        if "help_url" in p:
+                            plugin["h"] = p["help_url"]
+                        if "audience" in p:
+                            plugin["a"] = p["audience"]
                         listings.append(plugin)
                     else:
                         print("   ignoring '%s'" % (p["name"]))
         # Write out new listing:
+        output = []
         if cmd_arg == "all":
             # Replace it!
-            fp = open(r("../addons/%(gramps_version)s/listings/") +
-                      ("addons-%s.txt" % lang), "w", encoding="utf-8",
-                      newline='')
             for plugin in sorted(listings, key=lambda p: (p["t"], p["i"])):
-                print("""{"t":'%(t)s',"i":'%(i)s',"n":'%(n)s',"v":'%(v)s',"""
-                      """"g":'%(g)s',"d":'%(d)s',"z":'%(z)s'}""" % plugin,
-                      file=fp)
-            fp.close()
+                output.append(plugin)
         elif not os.path.isfile(r("../addons/%(gramps_version)s/listings/") +
-                                ("addons-%s.txt" % lang)):
-            fp_out = open(r("../addons/%(gramps_version)s/listings/") +
-                          ("addons-%s.txt" % lang), "w", encoding="utf-8",
-                          newline='')
+                                ("addons-%s.json" % lang)):
             for plugin in sorted(listings, key=lambda p: (p["t"], p["i"])):
-                print("""{"t":'%(t)s',"i":'%(i)s',"n":'%(n)s',"v":'%(v)s',"""
-                      """"g":'%(g)s',"d":'%(d)s',"z":'%(z)s'}""" % plugin,
-                      file=fp_out)
-            fp_out.close()
+                output.append(plugin)
         else:
             # just update the lines from these addons:
             for plugin in sorted(listings, key=lambda p: (p["t"], p["i"])):
                 already_added = []
                 fp_in = open(r("../addons/%(gramps_version)s/listings/") +
-                             ("addons-%s.txt" % lang), "r", encoding="utf-8")
-                fp_out = open(r("../addons/%(gramps_version)s/listings/") +
-                              ("addons-%s.new" % lang), "w", encoding="utf-8",
-                              newline='')
+                             ("addons-%s.json" % lang), "r", encoding="utf-8")
                 added = False
-                for line in fp_in:
-                    dictionary = eval(line)
-                    if("""{"t":'%(t)s',"i":'%(i)s',"n":'%(n)s'}""" %
-                       dictionary) in already_added:
+                for line in json.load(fp_in):
+                    if line["i"] in already_added:
                         continue
-                    if(cmd_arg + ".addon.tgz" in line and
-                       plugin["t"] == dictionary["t"] and not added):
+                    if (cmd_arg + ".addon.tgz" == line["z"] and
+                        plugin["t"] == line["t"] and not added):
                         #print("UPDATED")
-                        print("""{"t":'%(t)s',"i":'%(i)s',"n":'%(n)s',"""
-                              """"v":'%(v)s',"g":'%(g)s',"d":'%(d)s',"""
-                              """"z":'%(z)s'}""" % plugin, file=fp_out)
+                        output.append(plugin)
                         added = True
-                        already_added.append("""{"t":'%(t)s',"i":'%(i)s',"""
-                                             """"n":'%(n)s'}""" % plugin)
+                        already_added.append(line["i"])
                     elif ((plugin["t"], plugin["i"]) <
-                          (dictionary["t"], dictionary["i"])) and not added:
+                          (line["t"], line["i"])) and not added:
                         #print("ADDED in middle")
-                        print("""{"t":'%(t)s',"i":'%(i)s',"n":'%(n)s',"""
-                              """"v":'%(v)s',"g":'%(g)s',"d":'%(d)s',"""
-                              """"z":'%(z)s'}""" % plugin, file=fp_out)
+                        output.append(plugin)
                         added = True
-                        print(line, end="", file=fp_out)
-                        already_added.append("""{"t":'%(t)s',"i":'%(i)s',"""
-                                             """"n":'%(n)s'}""" % plugin)
+                        output.append(line)
+                        already_added.append(line["i"])
                     else:
-                        print(line, end="", file=fp_out)
-                        already_added.append("""{"t":'%(t)s',"i":'%(i)s',"""
-                                             """"n":'%(n)s'}""" % dictionary)
+                        output.append(line)
+                        already_added.append(line["i"])
                 if not added:
-                    if("""{"t":'%(t)s',"i":'%(i)s',"n":'%(n)s',"v":'%(v)s',"""
-                       """"g":'%(g)s',"d":'%(d)s',"z":'%(z)s'}""" %
-                       plugin) not in already_added:
+                    if plugin["i"] not in already_added:
                         #print("ADDED at end")
-                        print("""{"t":'%(t)s',"i":'%(i)s',"n":'%(n)s',"""
-                              """"v":'%(v)s',"g":'%(g)s',"d":'%(d)s',"""
-                              """"z":'%(z)s'}""" % plugin, file=fp_out)
-                fp_in.close()
-                fp_out.close()
-                shutil.move(r("../addons/%(gramps_version)s/listings/") +
-                            ("addons-%s.new" % lang),
-                            r("../addons/%(gramps_version)s/listings/") +
-                            ("addons-%s.txt" % lang))
+                        output.append(plugin)
+        fp_out = open(r("../addons/%(gramps_version)s/listings/") +
+                      ("addons-%s.json" % lang), "w", encoding="utf-8")
+        json.dump(output, fp_out)
 
 else:
     raise AttributeError("unknown command")
