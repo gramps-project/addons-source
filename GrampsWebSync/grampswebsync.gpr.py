@@ -30,14 +30,14 @@ register(
     description=_(
         "Synchronizes a local database with a Gramps Web instance."
     ),
-    version = '1.0.2',
+    version="1.0.3",
     gramps_target_version="5.1",
     status=STABLE,
-    fname="webapisync.py",
+    fname="grampswebsync.py",
     authors=["David Straub"],
     authors_email=["straub@protonmail.com"],
     category=TOOL_DBPROC,
-    toolclass="WebApiSyncTool",
-    optionclass="WebApiSyncOptions",
+    toolclass="GrampsWebSyncTool",
+    optionclass="GrampsWebSyncOptions",
     tool_modes=[TOOL_MODE_GUI],
 )

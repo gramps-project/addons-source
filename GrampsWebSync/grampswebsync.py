@@ -16,15 +16,17 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
-"""Gramps addon to synchronize with a Gramps Web API server."""
+"""Gramps addon to synchronize with a Gramps Web server."""
 
 import os
 import threading
 from datetime import datetime
+
 try:
     from typing import Callable, Optional
 except ImportError:
     from const import Type
+
     Callable = Type
     Optional = Type
 from urllib.error import HTTPError, URLError
@@ -218,9 +220,7 @@ class WebApiSyncTool(BatchTool, ManagedWindow):
         elif page == self.file_sync_page:
             self.assistant.commit()
             if self.file_sync_page.unchanged:
-                self.file_sync_page.label.set_text(
-                    _("Both trees are the same.")
-                )
+                self.file_sync_page.label.set_text(_("Both trees are the same."))
             else:
                 self.file_sync_page.label.set_text(
                     _("Successfully synchronized %s objects.") % len(self.actions)
@@ -241,10 +241,13 @@ class WebApiSyncTool(BatchTool, ManagedWindow):
             t = threading.Thread(target=self.async_transfer_media)
             t.start()
         elif page == self.conclusion:
-            text = ""
-            if self.conclusion.unchanged:
-                text += _("Media files are in sync.")
+            if self.conclusion.error:
+                pass
+            elif self.conclusion.unchanged:
+                text = _("Media files are in sync.")
+                self.conclusion.label.set_text(text)
             else:
+                text = ""
                 if self.downloaded:
                     ok = sum([b for gid, b in self.downloaded.items()])
                     nok = sum([not b for gid, b in self.downloaded.items()])
@@ -262,7 +265,8 @@ class WebApiSyncTool(BatchTool, ManagedWindow):
                         text += " "
                     if nok:
                         text += _("Encountered %s errors during upload.") % nok
-            self.conclusion.label.set_text(text)
+                self.conclusion.label.set_text(text)
+
             self.conclusion.set_complete()
 
     def handle_files_unchanged(self):
@@ -341,8 +345,8 @@ class WebApiSyncTool(BatchTool, ManagedWindow):
     def handle_error(self, message):
         """Handle an error message during sync."""
         self.conclusion.error = True
-        self.conclusion.label.set_text(message)  #
         self.assistant.next_page()
+        self.conclusion.label.set_text(message)  #
         self.conclusion.set_complete()
 
     def handle_unchanged(self):
@@ -486,7 +490,7 @@ class WebApiSyncTool(BatchTool, ManagedWindow):
 
     def get_missing_files_remote(self):
         """Get a list of media files missing remotely."""
-        missing_files = self.api.get_missing_files()
+        missing_files = self.handle_server_errors(self.api.get_missing_files)
         return [(media["gramps_id"], media["handle"]) for media in missing_files]
 
 
@@ -723,7 +727,7 @@ class ConfirmationPage(Page):
                         else:
                             if class_name == "Tag":
                                 gid = obj2.name
-                            else:    
+                            else:
                                 gid = obj2.gramps_id
                         obj_details = [class_name, gid]
                         rows.append(obj_details)
@@ -752,7 +756,7 @@ class FileSyncPage(Page):
         self.label = label
         self.unchanged = False
         self.pack_start(self.label, False, False, 0)
-        label = Gtk.Label(label=_("Click Next to synchonize media files."))
+        label = Gtk.Label(label=_("Click Next to synchronize media files."))
         label.set_line_wrap(True)
         label.set_use_markup(True)
         label.set_max_width_chars(60)
@@ -783,10 +787,10 @@ class FileConfirmationPage(Page):
 
     def prepare(self, missing_local, missing_remote):
         iter_local = self.store.append(None, [_("Missing locally")])
-        for (gramps_id, handle) in missing_local:
+        for gramps_id, handle in missing_local:
             self.store.append(iter_local, [gramps_id])
         iter_remote = self.store.append(None, [_("Missing remotely")])
-        for (gramps_id, handle) in missing_remote:
+        for gramps_id, handle in missing_remote:
             self.store.append(iter_remote, [gramps_id])
 
         # expand first level
