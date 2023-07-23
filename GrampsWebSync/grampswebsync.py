@@ -82,7 +82,7 @@ def set_password(service: str, username: str, password: str) -> None:
     keyring.set_password(service, username, password)
 
 
-class WebApiSyncTool(BatchTool, ManagedWindow):
+class GrampsWebSyncTool(BatchTool, ManagedWindow):
     """Main class for the Gramps Web Sync tool."""
 
     def __init__(self, dbstate, user, options_class, name, *args, **kwargs) -> None:
@@ -815,5 +815,5 @@ class ConclusionPage(Page):
         self.pack_start(self.label, False, False, 0)
 
 
-class WebApiSyncOptions(ToolOptions):
+class GrampsWebSyncOptions(ToolOptions):
     """Options for Gramps Web Sync."""
