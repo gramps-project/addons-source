@@ -544,17 +544,24 @@ elif command == "as-needed":
                     if p.get("include_in_listing", True):
                         do_list = True  # got at least one listable plugin
                         plugin = {
-                            "n": p["name"].replace("'", "\\'"),
-                            "i": p["id"].replace("'", "\\'"),
-                            "t": p["ptype"].replace("'", "\\'"),
-                            "d": p["description"].replace("'", "\\'"),
-                            "v": p["version"].replace("'", "\\'"),
-                            "g": p["gramps_target_version"].replace("'",
-                                                                    "\\'"),
-                            "h": p.get("help_url", "").replace("'", "\\'"),
-                            "a": p.get("audience", 0),
+                            "n": p["name"],
+                            "i": p["id"],
+                            "t": p["ptype"],
+                            "d": p["description"],
+                            "v": p["version"],
+                            "g": p["gramps_target_version"],
                             "s": p["status"],
                             "z": ("%s.addon.tgz" % addon)}
+                        if "requires_mod" in p:
+                            plugin["rm"] = p["requires_mod"]
+                        if "requires_gi" in p:
+                            plugin["rg"] = p["requires_gi"]
+                        if "requires_exe" in p:
+                            plugin["re"] = p["requires_exe"]
+                        if "help_url" in p:
+                            plugin["h"] = p["help_url"]
+                        if "audience" in p:
+                            plugin["a"] = p["audience"]
                         listings[lang].append(plugin)
                         if lang == 'en':
                             print("Listed:          %s" % p["name"])
@@ -604,14 +611,13 @@ elif command == "as-needed":
                           r('''%(addon)s/po/template.pot'''))
     # write out the listings
     for lang in languages:
-        fp = open(r("../addons/%(gramps_version)s/listings/") +
-                  ("addons-%s.json" % lang), "w", encoding="utf-8",
-                  newline='')
+        output = []
         for plugin in sorted(listings[lang], key=lambda p: (p["t"], p["i"])):
-            print("""{"t":'%(t)s',"i":'%(i)s',"n":'%(n)s',"v":'%(v)s',"""
-                  """"g":'%(g)s',"d":'%(d)s',"h":'%(h)s',"a":%(a)d,"""
-                  """"s":%(s)d,"z":'%(z)s'}""" % plugin, file=fp)
-        fp.close()
+            output.append(plugin)
+        with open(r("../addons/%(gramps_version)s/listings/") +
+                      ("addons-%s.json" % lang), "w", encoding="utf-8",
+                      newline='') as fp_out:
+            json.dump(output, fp_out, indent=0)
 
 elif command == "manifest-check":
     import re
@@ -671,22 +677,17 @@ elif command == "fix":
             else:
                 addons[dictionary["i"]] = dictionary
         fp.close()
-        fp = open(r("../addons/%(gramps_version)s/listings/") +
-                  ("addons-%s.json" % lang), "w", encoding="utf-8", newline='')
+        output = []
         for p in sorted(addons.values(), key=lambda p: (p["t"], p["i"])):
-            plugin = {"n": p["n"].replace("'", "\\'"),
-                      "i": p["i"].replace("'", "\\'"),
-                      "t": p["t"].replace("'", "\\'"),
-                      "d": p["d"].replace("'", "\\'"),
-                      "v": p["v"].replace("'", "\\'"),
-                      "g": p["g"].replace("'", "\\'"),
-                      "h": p["h"].replace("'", "\\'"),
-                      "z": p["z"].replace("'", "\\'"),
-                      }
-            print("""{"t":'%(t)s',"i":'%(i)s',"n":'%(n)s',"v":'%(v)s',"""
-                  """"g":'%(g)s',"d":'%(d)s',"h":'%(h)s',"a":%(a)d,"""
-                  """"s":%(s)d,"z":'%(z)s'}""" % plugin, file=fp)
+            plugin = {}
+            for key, val in p:
+                plugin[key] = val  # .replace("'", "\\'")
+            output.append(plugin)
         fp.close()
+        fp_out = open(r("../addons/%(gramps_version)s/listings/") +
+                      ("addons-%s.json" % lang), "w", encoding="utf-8",
+                      newline='')
+        json.dump(output, fp_out, indent=0)
 
 elif command == "check":
     try:
@@ -861,8 +862,9 @@ elif command == "listing":
                         #print("ADDED at end")
                         output.append(plugin)
         fp_out = open(r("../addons/%(gramps_version)s/listings/") +
-                      ("addons-%s.json" % lang), "w", encoding="utf-8")
-        json.dump(output, fp_out)
+                      ("addons-%s.json" % lang), "w", encoding="utf-8",
+                      newline='')
+        json.dump(output, fp_out, indent=0)
 
 else:
     raise AttributeError("unknown command")
