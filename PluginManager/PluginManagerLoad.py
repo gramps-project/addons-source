@@ -32,14 +32,7 @@ def load_on_reg(dbstate, uistate, plugin):
         # It is necessary to avoid load GUI elements when run under CLI mode.
         # So we just don't load it at all.
         sys.path.append(os.path.abspath(os.path.dirname(__file__)))
-        from PluginManager import available_updates, PluginStatus
-        # Monkey patch my version of available_updates into the system
-        import gramps.gen.plug.utils
-        gramps.gen.plug.utils.__dict__['available_updates'] = available_updates
-        import gramps.gui.configure
-        gramps.gui.configure.__dict__['available_updates'] = available_updates
-        import gramps.gui.utils
-        gramps.gui.utils.__dict__['available_updates'] = available_updates
+        from PluginManager import PluginStatus
         import gramps.gui.viewmanager
         gramps.gui.viewmanager.__dict__[
             'PluginWindows'].PluginStatus = PluginStatus

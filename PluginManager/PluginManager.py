@@ -33,7 +33,6 @@ import sys
 import os
 import traceback
 import logging
-import datetime
 from operator import itemgetter
 import shutil
 #-------------------------------------------------------------------------
@@ -50,24 +49,22 @@ from gi.repository.GLib import markup_escape_text
 # gramps modules
 #
 #-------------------------------------------------------------------------
-#from gramps.gen.plug.utils import available_updates
 from gramps.gen.config import config
 from gramps.gen.const import GRAMPS_LOCALE as glocale
-from gramps.gen.const import VERSION_DIR
-from gramps.gen.utils.configmanager import safe_eval
-from gramps.gen.plug import PluginRegister, BasePluginManager
-from gramps.gen.plug import load_addon_file, version_str_to_tup
+from gramps.gen.const import URL_MANUAL_PAGE
+from gramps.gen.utils.requirements import Requirements
+from gramps.gen.plug import (
+    PluginRegister, load_addon_file, version_str_to_tup,
+    AUDIENCETEXT, STATUSTEXT)
 from gramps.gen.plug._pluginreg import VIEW, GRAMPLET, PTYPE_STR
-from gramps.gen.plug.utils import urlopen_maybe_no_check_cert
+from gramps.gen.plug.utils import get_all_addons
 from gramps.cli.grampscli import CLIManager
 from gramps.gui.plug import tool
 from gramps.gui.managedwindow import ManagedWindow
 from gramps.gui.pluginmanager import GuiPluginManager
-from gramps.gui.display import display_help
+from gramps.gui.display import display_help, display_url
 from gramps.gui.utils import open_file_with_default_application
-from gramps.gui.dialog import OkDialog, QuestionDialog2
-#from gramps.gui.widgets.progressdialog import (LongOpStatus, ProgressMonitor,
-#                                               GtkProgressDialog)
+from gramps.gui.dialog import OkDialog
 
 #-------------------------------------------------------------------------
 #
@@ -83,7 +80,7 @@ ngettext = _trans.ngettext  # else "nearby" comments are ignored
 
 LOG = logging.getLogger(".gui.plug")
 
-WIKI_PAGE = 'Plugin_Manager_Plugin'
+WIKI_PAGE = 'Addon:Plugin_ManagerV2'
 TITLE = _("Plugin Manager - Enhanced")
 # some static data, available across instantiations
 static = sys.modules[__name__]
@@ -116,7 +113,7 @@ R_STAT = 5
 
 #-------------------------------------------------------------------------
 #
-# Plugin Manager
+# Enhanced Plugin Manager
 #
 #-------------------------------------------------------------------------
 class PluginStatus(tool.Tool, ManagedWindow):
@@ -127,6 +124,12 @@ class PluginStatus(tool.Tool, ManagedWindow):
         self.dbstate = dbstate
         self._show_builtins = None
         self._show_hidden = None
+        self.addons = []
+        self.infodata = ''  # information pane text
+        self.name = ''
+        self.help = ''
+        self.helpname = ''
+
         self.options = PluginManagerOptions('pluginmanager')
         #tool.Tool.__init__(self, dbstate, options_class, 'pluginmanager')
         self.options.load_previous_values()
@@ -138,7 +141,7 @@ class PluginStatus(tool.Tool, ManagedWindow):
         self._preg = PluginRegister.get_instance()
         # obtain hidden plugins from the pluginmanager
         self.hidden = self._pmgr.get_hidden_plugin_ids()
-        self.setup_configs('interface.pluginstatus', 750, 400)
+        self.setup_configs('interface.pluginstatus', 750, 600)
 
         help_btn = self.window.add_button(  # pylint: disable=no-member
             _("_Help"), Gtk.ResponseType.HELP)
@@ -157,10 +160,6 @@ class PluginStatus(tool.Tool, ManagedWindow):
         #self.btn_box.set_child_non_homogeneous(self.filter_entry, True)
         self.filter_entry.connect('search-changed', self.filter_str_changed)
 
-        update_btn = self.window.add_button(  # pylint: disable=no-member
-            _("Check for updated addons now"), UPDATE_RES)
-        self.btn_box.set_child_non_homogeneous(update_btn, True)
-
         if __debug__:
             # Only show the "Reload" button when in debug mode
             # (without -O on the command line)
@@ -173,18 +172,31 @@ class PluginStatus(tool.Tool, ManagedWindow):
 
         cls_btn = self.window.add_button(_('_Close'), Gtk.ResponseType.CLOSE)
         self.btn_box.set_child_non_homogeneous(cls_btn, True)
-
+        # make room for a larger filter entry
         _w1, dummy = help_btn.get_preferred_width()
         _w2, dummy = cls_btn.get_preferred_width()
-        _w3, dummy = update_btn.get_preferred_width()
-        #_wa, dummy = self.window.get_size()
-        _we = 790 - _w0 - _w1 - _w2 - _w3 - 60
+        _we = 790 - _w0 - _w1 - _w2 - 60
         self.filter_entry.set_size_request(_we, -1)
-
-        labeltitle, widget = self.registered_plugins_panel(None)
-        self.window.vbox.pack_start(widget, True, True, 0)
+        # set up double pane window
+        self.vpane = Gtk.Paned(orientation=Gtk.Orientation.VERTICAL)
+        self.vpane.set_position(self.options_dict['pane_setting'])
+        self.window.vbox.pack_start(self.vpane, True, True, 0)
+        # upper pane
+        vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        _labeltitle, widget = self.registered_plugins_panel(None)
+        vbox.pack_start(widget, True, True, 0)
         sep = Gtk.Separator.new(Gtk.Orientation.HORIZONTAL)
-        self.window.vbox.pack_start(sep, False, False, 3)
+        vbox.pack_start(sep, False, False, 3)
+        self.vpane.pack1(vbox, resize=True, shrink=False)
+        # lower pane
+        scrolled_window = Gtk.ScrolledWindow(expand=True)
+        info_text_view = Gtk.TextView()
+        scrolled_window.add(info_text_view)
+        self.info_text_buf = info_text_view.get_buffer()
+        self.info_text_buf.set_text(self.infodata)
+        vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        vbox.pack_start(scrolled_window, True, True, 0)
+        self.vpane.pack2(vbox, resize=True, shrink=False)
         self.restart_needed = False
         self.window.connect('response', self.done)
         self.show()
@@ -193,9 +205,6 @@ class PluginStatus(tool.Tool, ManagedWindow):
     def done(self, dialog, response_id):
         if response_id == RELOAD_RES:
             self.__reload(dialog)
-            return
-        elif response_id == UPDATE_RES:
-            self._check_for_updates()
             return
         elif response_id == Gtk.ResponseType.HELP:
             self._web_help()
@@ -208,6 +217,7 @@ class PluginStatus(tool.Tool, ManagedWindow):
                          _("Please Restart Gramps so that your addon changes "
                            "can be safely completed."),
                          parent=self.window)
+            self.options_dict['pane_setting'] = self.vpane.get_position()
             self.options.handler.save_options()
             self.close(dialog)
 
@@ -231,81 +241,6 @@ class PluginStatus(tool.Tool, ManagedWindow):
         # config.set('behavior.do-not-show-builtins',
         #            bool(self._show_builtins))
         self.__rebuild_reg_list('0', rescan=False)
-
-    def __info(self, _obj, list_obj):
-        """ Callback function from the "Info" button
-        """
-        model, node = list_obj.get_selection().get_selected()
-        if not node:
-            return
-        pid = model.get_value(node, R_ID)
-        pdata = self._preg.get_plugin(pid)
-        if pdata:
-            name = pdata.name
-            typestr = PTYPE_STR[pdata.ptype]
-            desc = pdata.description
-            vers = pdata.version
-            auth = ' - '.join(pdata.authors)
-            email = ' - '.join(pdata.authors_email)
-            fname = pdata.fname
-            fpath = pdata.fpath
-        else:
-            for addon in self.addons:
-                if addon['i'] == pid:
-                    name = addon['n']
-                    typestr = addon['t']
-                    desc = addon['d']
-                    vers = addon['v']
-                    auth = ''
-                    email = ''
-                    fname = addon['z']
-                    fpath = ''
-                    break
-
-        if len(auth) > 60:
-            auth = auth[:60] + '...'
-        if len(email) > 60:
-            email = email[:60] + '...'
-        infotxt = (
-            "%(plugnam)s: %(name)s [%(typestr)s]\n\n"
-            "%(plug_id)s: %(id)s\n"
-            "%(plugdes)s: %(descr)s\n%(plugver)s: %(version)s\n"
-            "%(plugaut)s: %(authors)s\n%(plugmel)s: %(email)s\n"
-            "%(plugfil)s: %(fname)s\n%(plugpat)s: %(fpath)s\n\n" % {
-                'id': pid,
-                'name': name,
-                'typestr': typestr,
-                'descr': desc,
-                'version': vers,
-                'authors': auth,
-                'email': email,
-                'fname': fname,
-                'fpath': fpath,
-                'plug_id': _("Id"),
-                'plugnam': _("Plugin name"),
-                'plugdes': _("Description"),
-                'plugver': _("Version"),
-                'plugaut': _("Authors"),
-                'plugmel': _("Email"),
-                'plugfil': _("Filename"),
-                'plugpat': _("Location")})
-        success_list = self._pmgr.get_success_list()
-        if pdata:
-            for i in success_list:
-                if pdata.id == i[2].id:
-                    infotxt += _('Loaded') + ' '
-                    break
-        if pid in self.hidden:
-            infotxt += _('Hidden')
-        fail_list = self._pmgr.get_fail_list()
-        for i in fail_list:
-            # i = (filename, (exception-type, exception, traceback), pdata)
-            if pdata == i[2]:
-                infotxt += '\n\n' + _('Failed') + '\n\n' + str(i[1][0]) + \
-                    '\n' + str(i[1][1]) + '\n' + ''.join(
-                        traceback.format_exception(i[1][0], i[1][1], i[1][2]))
-                break
-        PluginInfo(self.uistate, self.track, infotxt, name)
 
     def __hide(self, _obj, list_obj):
         """ Callback function from the "Hide" button
@@ -469,9 +404,9 @@ class PluginStatus(tool.Tool, ManagedWindow):
         hbutbox = Gtk.ButtonBox()
         hbutbox.set_layout(Gtk.ButtonBoxStyle.SPREAD)
 
-        __info_btn = Gtk.Button(label=_("Info"))
-        hbutbox.add(__info_btn)
-        __info_btn.connect('clicked', self.__info, self._list_reg)
+        self._wiki_btn = Gtk.Button(label=_("Wiki"))
+        hbutbox.add(self._wiki_btn)
+        self._wiki_btn.connect('clicked', self._wiki)
         self._hide_btn = Gtk.Button(label=_("Hide"))
         hbutbox.add(self._hide_btn)
         self._hide_btn.connect('clicked', self.__hide, self._list_reg)
@@ -486,6 +421,7 @@ class PluginStatus(tool.Tool, ManagedWindow):
             hbutbox.add(self._edit_btn)
             hbutbox.add(self._load_btn)
         vbox_reg.pack_start(hbutbox, False, False, 2)
+
         # checkbox row
         hbutbox = Gtk.ButtonBox()
         hbutbox.set_layout(Gtk.ButtonBoxStyle.SPREAD)
@@ -518,7 +454,7 @@ class PluginStatus(tool.Tool, ManagedWindow):
         """
         # pylint: disable=protected-access
         if event.type == Gdk.EventType._2BUTTON_PRESS and event.button == 1:
-            self.__info(obj, self._list_reg)
+            self._cursor_changed(obj)
 
     def filter_str_changed(self, _widget):
         """
@@ -555,6 +491,9 @@ class PluginStatus(tool.Tool, ManagedWindow):
         return True
 
     def __rebuild_reg_list(self, path=None, rescan=True):
+        """
+        Called when creating list of plugins.
+        """
         self._selection_reg.handler_block(self._cursor_hndlr)
         self._model_reg.clear()
         if rescan:
@@ -567,11 +506,16 @@ class PluginStatus(tool.Tool, ManagedWindow):
         self._selection_reg.select_path(path)
         if len(self._tree_filter):
             self._list_reg.scroll_to_cell(path, None, True, 0.5, 0)
-            self._cursor_changed(None)
+        self._cursor_changed(None)
 
     def _cursor_changed(self, _obj):
+        """
+        Update buttons etc, when selecting a new row
+        """
         model, node = self._selection_reg.get_selected()
         if not node:
+            self.infodata = ''
+            self.info_text_buf.set_text(self.infodata)
             return
         status = model.get_value(node, R_STAT)
         pid = model.get_value(node, R_ID)
@@ -604,53 +548,165 @@ class PluginStatus(tool.Tool, ManagedWindow):
             self._install_btn.set_sensitive(True)
         else:
             self._install_btn.set_sensitive(False)
+        self.infodata, faildata = self.__info(pid)  # get text of plugin data
+        self.info_text_buf.set_text('')
+        _iter = self.info_text_buf.get_start_iter()
+        self.info_text_buf.insert_markup(_iter, self.infodata, -1)
+        _iter = self.info_text_buf.get_end_iter()
+        self.info_text_buf.insert(_iter, faildata, -1)
+        if self.help:
+            self._wiki_btn.set_sensitive(True)
+        else:
+            self._wiki_btn.set_sensitive(False)
 
-    def _check_for_updates(self):
-        """ handle the check for updates button """
-        try:
-            available_updates()
-        except:  # pylint: disable=bare-except
-            OkDialog(_("Checking Addons Failed"),
-                     _("The addon repository appears to be unavailable. "
-                       "Please try again later."),
-                     parent=self.window)
-        self.__rebuild_reg_list()
+    def __info(self, pid):
+        """ Gather information on a plugin
+        """
+        # from uninstalled plugins
+        pdata = self._preg.get_plugin(pid)
+        if pdata:
+            name = pdata.name
+            typestr = PTYPE_STR[pdata.ptype]
+            desc = pdata.description
+            vers = pdata.version
+            auth = ' - '.join(pdata.authors)
+            email = ' - '.join(pdata.authors_email)
+            fname = pdata.fname
+            fpath = pdata.fpath
+            self.help = pdata.help_url if pdata.help_url else ''
+            aud = AUDIENCETEXT[pdata.audience]
+            status = STATUSTEXT[pdata.status]
+
+            # assemble requirements
+            reqs = ''
+            dep_re = pdata.requires_exe
+            if dep_re:
+                reqs += "    <b>{0}:</b>: {1}\n".format(
+                    _("Executables"), ' '.join(dep_re))
+            dep_rg = pdata.requires_gi
+            if dep_rg:
+                reqs += "    <b>{0}:</b> ".format(
+                    _("GObject introspection modules"))
+                tup = dep_rg[0]
+                reqs += tup[0] + ' ' + tup[1]
+                for i in range(1, len(dep_rg)):
+                    if i != 0:
+                        reqs += ', '
+                    tup = dep_rg[i]
+                    reqs += tup[0] + ' ' + tup[1]
+                reqs += '\n'
+            dep_rm = pdata.requires_mod
+            if dep_rm:
+                reqs += "    <b>{0}:</b>: {1}\n".format(
+                    _("Python modules"), ' '.join(dep_rm))
+        else:   # from installed plugins
+            for addon in self.addons:
+                if addon['i'] == pid:
+                    name = addon['n']
+                    typestr = addon['t']
+                    desc = addon['d']
+                    vers = addon['v']
+                    auth = ''
+                    email = ''
+                    fname = addon['z']
+                    fpath = addon['_u']
+                    self.help = addon['h']
+                    aud = AUDIENCETEXT[addon['a']]
+                    status = STATUSTEXT[addon['s']]
+
+                    # Requirements
+                    reqs = ''
+                    info = Requirements().info(addon)
+                    for i in range(0, len(info), 2):
+                        reqs += '    <b>{0}:</b> '.format(info[i])
+                        req_lst = info[i+1]
+                        reqs += ' '.join(req_lst[0])
+                        for j in range(1, len(req_lst)):
+                            reqs += ', ' + ' '.join(req_lst[j])
+                        reqs += '\n'
+                    break
+
+        if len(auth) > 60:
+            auth = auth[:60] + '...'
+        if len(email) > 60:
+            email = email[:60] + '...'
+        infotxt = (
+            "<b>%(plugnam)s:</b> %(name)s [%(typestr)s]    "
+            "<b>%(plug_id)s:</b> %(id)s    <b>%(plugver)s:</b> %(version)s\n"
+            "<b>%(plugdes)s:</b> %(descr)s\n"
+            "<b>%(plugfil)s:</b> %(fname)s    <b>%(plugpat)s:</b> %(fpath)s\n"
+             % {
+                'id': pid,
+                'name': name,
+                'typestr': typestr,
+                'descr': desc,
+                'version': vers,
+                'fname': fname,
+                'fpath': fpath,
+                'plug_id': _("Id"),
+                'plugnam': _("Plugin name"),
+                'plugdes': _("Description"),
+                'plugver': _("Version"),
+                'plugfil': _("Filename"),
+                'plugpat': _("Location")})
+        if auth:
+            infotxt += "<b>{0}:</b> {1}\n".format(_("Authors"), auth)
+        if email:
+            infotxt += "<b>{0}:</b> {1}\n".format(_("Email"), email)
+        infotxt += ("<b>%(plugaud)s:</b> %(aud)s    <b>%(plugstat)s:</b> %(status)s\n"
+            % {
+                'aud' : aud,
+                'status': status,
+                'plugaud': _("Audience"),
+                'plugstat': _("Status")})
+        self.helpname = ""
+        if not self.help:
+            if 'gramplet' in fpath:
+                self.help = URL_MANUAL_PAGE + "_-_Gramplets"
+                self.helpname = name
+            if 'tools' in fpath:
+                self.help = URL_MANUAL_PAGE + "_-_Tools"
+                self.helpname = name
+            if 'report' in fpath:
+                self.help = URL_MANUAL_PAGE + "_-_Reports"
+                self.helpname = name
+
+        if self.help:   # Wiki help
+            infotxt += ("<b>{0}:</b> {1}".format(_("Help"), self.help) +
+                        (('#' + self.helpname) if self.helpname else '') + '\n')
+
+        if reqs:        # Requirements
+            infotxt += "<b>{0}:</b>\n {1}".format(_("Requires"), reqs)
+        # Loaded plugins
+        success_list = self._pmgr.get_success_list()
+        if pdata:
+            for i in success_list:
+                if pdata.id == i[2].id:
+                    infotxt += '<span color="green">{0}</span>  '.format(_('Loaded'))
+                    break
+        if pid in self.hidden:  # hidden plugins
+            infotxt += '<span color="red">{0}</span>'.format(_('Hidden'))
+        # Handle failed plugins
+        fail_list = self._pmgr.get_fail_list()
+        failtxt = ''
+        for i in fail_list:
+            # i = (filename, (exception-type, exception, traceback), pdata)
+            if pdata == i[2]:
+                tb = ''.join(
+                    traceback.format_exception(i[1][0], i[1][1], i[1][2]))
+                infotxt += '<span color="red">{0}</span>\n'.format(_('Failed'))
+                failtxt = '{0}\n{1}\n<{2}'.format(str(i[1][0]),
+                    str(i[1][1]), tb)
+                break
+        return infotxt, failtxt
 
     def _web_help(self):
         display_help(WIKI_PAGE)
 
     def __populate_reg_list(self):
         """ Build list of plugins"""
-        self.addons = []
-        new_addons_file = os.path.join(VERSION_DIR, "new_addons.txt")
-        if not os.path.isfile(new_addons_file) and not static.check_done:
-            if QuestionDialog2(TITLE,
-                               _("3rd party addons are not shown until the "
-                                 "addons update list is downloaded.  Would "
-                                 "you like to check for updated addons now?"),
-                               _("Yes"), _("No"),
-                               parent=self.window).run():
-                self._check_for_updates()
-            else:
-                static.check_done = True
-        try:
-            with open(new_addons_file,
-                      encoding='utf-8') as filep:
-                for line in filep:
-                    try:
-                        plugin_dict = safe_eval(line)
-                        if not isinstance(plugin_dict, dict):
-                            raise TypeError("Line with addon metadata is not "
-                                            "a dictionary")
-                    except:  # pylint: disable=bare-except
-                        LOG.warning("Skipped a line in the addon listing: " +
-                                    str(line))
-                        continue
-                    self.addons.append(plugin_dict)
-        except FileNotFoundError:
-            pass
-        except Exception as err:  # pylint: disable=broad-except
-            LOG.warning("Failed to open addon status file: %s", err)
+        if not self.addons:
+            self.addons = get_all_addons()
 
         addons = []
         updateable = []
@@ -719,146 +775,16 @@ class PluginStatus(tool.Tool, ManagedWindow):
     def build_menu_names(self, _obj):
         return (TITLE, ' ')
 
-
-#-------------------------------------------------------------------------
-#
-# Details for an individual plugin
-#
-#-------------------------------------------------------------------------
-class PluginInfo(ManagedWindow):
-    """Displays a dialog showing the status of plugins"""
-
-    def __init__(self, uistate, track, data, name):
-        self.name = name
-        title = _("%(str1)s: %(str2)s") % {'str1': _("Detailed Info"),
-                                           'str2': name}
-        ManagedWindow.__init__(self, uistate, track, self)
-
-        dlg = Gtk.Dialog(title="", transient_for=uistate.window,
-                         destroy_with_parent=True)
-        dlg.add_button(_('_Close'), Gtk.ResponseType.CLOSE)
-        self.set_window(dlg, None, title)
-        self.setup_configs('interface.plugininfo', 720, 520)
-        self.window.connect('response',  # pylint: disable=no-member
-                            self.close)
-
-        scrolled_window = Gtk.ScrolledWindow(expand=True)
-#         scrolled_window.set_policy(Gtk.PolicyType.AUTOMATIC,
-#                                    Gtk.PolicyType.AUTOMATIC)
-        self.text = Gtk.TextView()
-        scrolled_window.add(self.text)
-        self.text.get_buffer().set_text(data)
-
-        # pylint: disable=no-member
-        self.window.get_content_area().add(scrolled_window)
-        self.show()
-
-    def build_menu_names(self, _obj):
-        return (self.name, None)
+    def _wiki(self, _obj):
+        """
+        Display the wiki page for the addon.
+        """
+        if self.help.startswith(("http://", "https://")):
+            display_url(self.help)
+        else:
+            display_help(self.help, self.helpname)
 
 
-#-------------------------------------------------------------------------
-#
-# Local Functions
-#
-#-------------------------------------------------------------------------
-
-def available_updates():
-    whattypes = config.get('behavior.check-for-addon-update-types')
-    do_not_show_prev = config.get(
-        'behavior.do-not-show-previously-seen-addon-updates')
-    prev_seen = config.get('behavior.previously-seen-addon-updates')
-
-    LOG.debug("Checking for updated addons...")
-    langs = glocale.get_language_list()
-    langs.append("en")
-    # now we have a list of languages to try:
-    f_ptr = None
-    for lang in langs:
-        url = ("%s/listings/addons-%s.txt" %
-               (config.get("behavior.addons-url"), lang))
-        LOG.debug("   trying: %s", url)
-        try:
-            f_ptr = urlopen_maybe_no_check_cert(url)
-        except:
-            try:
-                url = ("%s/listings/addons-%s.txt" %
-                       (config.get("behavior.addons-url"), lang[:2]))
-                f_ptr = urlopen_maybe_no_check_cert(url)
-            except Exception as err:  # some error
-                LOG.warning("Failed to open addon metadata for %s %s: %s",
-                            lang, url, err)
-                f_ptr = None
-        if f_ptr and (f_ptr.getcode() == 200 or f_ptr.file):  # ok
-            break
-
-    try:
-        wfp = open(os.path.join(VERSION_DIR, "new_addons.txt"), mode='wt',
-                   encoding='utf-8')
-    except Exception as err:
-        LOG.warning("Failed to open addon status file: %s", err)
-
-    pmgr = BasePluginManager.get_instance()
-    addon_update_list = []
-    if f_ptr and (f_ptr.getcode() == 200 or f_ptr.file):
-        lines = list(f_ptr.readlines())
-        count = 0
-        for line in lines:
-            line = line.decode('utf-8')
-            try:
-                plugin_dict = safe_eval(line)
-                if type(plugin_dict) != type({}):
-                    raise TypeError("Line with addon metadata is not "
-                                    "a dictionary")
-            except:
-                LOG.warning("Skipped a line in the addon listing: " +
-                            str(line))
-                continue
-            if wfp:
-                wfp.write(str(plugin_dict) + '\n')
-            pid = plugin_dict["i"]
-            plugin = pmgr.get_plugin(pid)
-            if plugin:
-                LOG.debug("Comparing %s > %s",
-                          version_str_to_tup(plugin_dict["v"], 3),
-                          version_str_to_tup(plugin.version, 3))
-                if (version_str_to_tup(plugin_dict["v"], 3) >
-                        version_str_to_tup(plugin.version, 3)):
-                    LOG.debug("   Downloading '%s'...", plugin_dict["z"])
-                    if "update" in whattypes:
-                        if (not do_not_show_prev or
-                                plugin_dict["i"] not in prev_seen):
-                            addon_update_list.append(
-                                (_("Updated"), "%s/download/%s" %
-                                 (config.get("behavior.addons-url"),
-                                  plugin_dict["z"]), plugin_dict))
-                else:
-                    LOG.debug("   '%s' is ok", plugin_dict["n"])
-            else:
-                LOG.debug("   '%s' is not installed", plugin_dict["n"])
-                if "new" in whattypes:
-                    if (not do_not_show_prev or
-                            plugin_dict["i"] not in prev_seen):
-                        addon_update_list.append(
-                            (_("updates|New"), "%s/download/%s" %
-                             (config.get("behavior.addons-url"),
-                              plugin_dict["z"]), plugin_dict))
-        config.set("behavior.last-check-for-addon-updates",
-                   datetime.date.today().strftime("%Y/%m/%d"))
-        count += 1
-        if f_ptr:
-            f_ptr.close()
-        if wfp:
-            wfp.close()
-    else:
-        LOG.debug("Checking Addons Failed")
-    LOG.debug("Done checking!")
-
-    return addon_update_list
-#------------------------------------------------------------------------
-#
-#
-#
 #------------------------------------------------------------------------
 
 
@@ -874,6 +800,7 @@ class PluginManagerOptions(tool.ToolOptions):
         self.options_dict = {
             'show_hidden'   : True,
             'show_builtins' : True,
+            'pane_setting'  : 400
         }
         self.options_help = {
             'show_hidden': ("=0/1", "Show hidden Plugins",
@@ -883,4 +810,5 @@ class PluginManagerOptions(tool.ToolOptions):
             'show_builtins': ("=0/1", "Show builtin Plugins",
                               ["Do not show builtin Plugins",
                                "Show builtin Plugins"],
-                              True),}
+                              True),
+            'pane_setting': ("=num", "pane setting", 'pane setting in pix')}

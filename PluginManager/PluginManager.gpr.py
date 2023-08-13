@@ -29,13 +29,13 @@ id    = 'PluginManager',
 name  = _("Plugin Manager Enhanced"),
 description =  _("An Addon/Plugin Manager with several additional "
                  "capabilities"),
-version = '1.0.31',
+version = '1.2.0',
 gramps_target_version = '5.2',
 fname = "PluginManagerLoad.py",
 authors = ["Paul Culley"],
 authors_email = ["paulr2787@gmail.com"],
 category = TOOL_UTILS,
 load_on_reg = True,
-#process = "process_list",
+help_url = 'Addon:Plugin_ManagerV2',
 status = STABLE
   )
