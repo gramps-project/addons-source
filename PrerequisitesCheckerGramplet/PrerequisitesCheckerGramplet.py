@@ -146,6 +146,7 @@ class PrerequisitesCheckerGramplet(Gramplet):
         thread = Thread(target=latest_version_thread,
                         args=(self,), daemon=True)
         thread.start()
+        self.has_run = False
 
     def main(self):
         """
@@ -155,6 +156,8 @@ class PrerequisitesCheckerGramplet(Gramplet):
         """
         while self.latest_gramps_version is False:
             yield True
+        if self.has_run:
+            return
         self.gramps_version()
         # Gramps for requirements mentioned in Gramps 5.0.0 readme & elsewhere
         # https://github.com/gramps-project/gramps/blob/master/gramps/grampsapp.py#L187
@@ -277,6 +280,7 @@ class PrerequisitesCheckerGramplet(Gramplet):
         self.append_text(_("* Test your backups by creating a new Family Tree "
                            "and importing the backup."),
                          scroll_to="begin")
+        self.has_run = True
 
     def gramps_version(self):
         '''Report Currently installed Gramps Version
@@ -339,7 +343,7 @@ class PrerequisitesCheckerGramplet(Gramplet):
         test)
         '''
         # Start check
-        MIN_PYTHON_VERSION = (3, 3, 0)
+        MIN_PYTHON_VERSION = (3, 8, 0)
         min_py_str = verstr(MIN_PYTHON_VERSION)
 
         # version to check against
@@ -375,7 +379,7 @@ class PrerequisitesCheckerGramplet(Gramplet):
         min: GTK+ 3.10.0
         '''
         # Start check
-        MIN_GTK_VERSION = (3, 12, 0)
+        MIN_GTK_VERSION = (3, 24, 0)
 
         try:
             gi.require_version('Gtk', '3.0')
@@ -436,13 +440,13 @@ class PrerequisitesCheckerGramplet(Gramplet):
     def check3_pygobject(self):
         '''Check for pygobject
 
-        pygobject 3.12 or greater - Python Bindings for GLib/GObject/GIO/GTK+
+        pygobject 3.29 or greater - Python Bindings for GLib/GObject/GIO/GTK+
         https://wiki.gnome.org/Projects/PyGObject
 
-         # pygobject 3.12+
+         # pygobject 3.29+
         '''
         # Start check
-        MIN_PYGOBJECT_VERSION = (3, 12, 0)
+        MIN_PYGOBJECT_VERSION = (3, 29, 0)
 
         try:
             from gi.repository import GObject
