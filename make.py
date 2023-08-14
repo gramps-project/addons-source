@@ -216,7 +216,7 @@ elif command == "init":
         def register(ptype, **kwargs):
             global plugins
             # need to take care of translated types
-            kwargs["ptype"] = PTYPE_STR[ptype]
+            kwargs["ptype"] = ptype
             plugins.append(kwargs)
 
         for addon in dirs:
@@ -426,7 +426,7 @@ elif command == "as-needed":
     def register(ptype, **kwargs):
         global plugins
         # need to take care of translated types
-        kwargs["ptype"] = PTYPE_STR[ptype]
+        kwargs["ptype"] = ptype
         plugins.append(kwargs)
 
     from filecmp import cmp
@@ -704,7 +704,7 @@ elif command == "check":
     def register(ptype, **kwargs):
         global plugins
         # need to take care of translated types
-        kwargs["ptype"] = PTYPE_STR[ptype]
+        kwargs["ptype"] = ptype
         plugins.append(kwargs)
     # get current build numbers from English listing
     fp_in = open(r("../addons/%(gramps_version)s/listings/addons-en.txt"),
@@ -753,7 +753,7 @@ elif command == "listing":
     def register(ptype, **kwargs):
         global plugins
         # need to take care of translated types
-        kwargs["ptype"] = PTYPE_STR[ptype]
+        kwargs["ptype"] = ptype
         plugins.append(kwargs)
     cmd_arg = addon
     # first, get a list of all of the possible languages
