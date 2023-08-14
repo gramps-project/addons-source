@@ -1,24 +1,40 @@
-# German translations for PACKAGE package.
-# Copyright (C) 2022 THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# David Straub <straub@protonmail.com>, 2022.
+# German translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# translation of de.po to Deutsch
 #
+#
+# Anton Huber <anton_huber@gmx.de>, 2005,2006.
+# Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
+# Sebastian Vöcking <voeck@web.de>, 2005.
+# Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
+# Alex Roitman <shura@gramps-project.org>, 2006.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
+# Alois Pöttker <alois.poettker@gmx.de>, 2017.
+# Allan Nordhøy <epost@anotheragency.no>, 2021.
+# R. B. <weblate@macdefender.org>, 2021.
+# RiseT <tareiss1971@yahoo.de>, 2021.
+# David Straub <straub@protonmail.com>, 2021.
+# nautilusx <translate@disroot.org>, 2021.
+# Andreas Abraham <andreas.abraham@gmx.de>, 2021.
+# RiseT <twilite505-4bf24909@yahoo.com>, 2022.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-21 22:23+0200\n"
-"PO-Revision-Date: 2022-07-21 22:03+0200\n"
-"Last-Translator: David Straub <straub@protonmail.com>\n"
-"Language-Team: German <translation-team-de@lists.sourceforge.net>\n"
+"POT-Creation-Date: 2023-06-24 10:49-0500\n"
+"PO-Revision-Date: 2023-01-18 16:24+0000\n"
+"Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
+"gramps/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.15.1-dev\n"
 
-#: GrampsWebSync/webapisync.gpr.py:29 GrampsWebSync/webapisync.py:96
-#: GrampsWebSync/webapisync.py:171
+#: GrampsWebSync/webapisync.gpr.py:29 GrampsWebSync/webapisync.py:101
+#: GrampsWebSync/webapisync.py:176
 msgid "Gramps Web Sync"
 msgstr "Gramps-Web-Synchronisierung"
 
@@ -26,114 +42,114 @@ msgstr "Gramps-Web-Synchronisierung"
 msgid "Synchronizes a local database with a Gramps Web instance."
 msgstr "Synchronisiert eine lokale Datenbank mit einer Gramps-Web-Instanz."
 
-#: GrampsWebSync/webapisync.py:105
+#: GrampsWebSync/webapisync.py:110
 msgid "Introduction"
-msgstr ""
+msgstr "Einleitung"
 
-#: GrampsWebSync/webapisync.py:116
+#: GrampsWebSync/webapisync.py:121
 msgid "Login"
-msgstr "Einloggen"
+msgstr "Anmeldung"
 
-#: GrampsWebSync/webapisync.py:122 GrampsWebSync/webapisync.py:148
+#: GrampsWebSync/webapisync.py:127 GrampsWebSync/webapisync.py:153
 msgid "Progress Information"
-msgstr ""
+msgstr "Fortschrittsinformationen"
 
-#: GrampsWebSync/webapisync.py:127
+#: GrampsWebSync/webapisync.py:132
 msgid "Final confirmation"
-msgstr ""
+msgstr "Endgültige Bestätigung"
 
-#: GrampsWebSync/webapisync.py:134 GrampsWebSync/webapisync.py:152
+#: GrampsWebSync/webapisync.py:139 GrampsWebSync/webapisync.py:157
 msgid "Summary"
-msgstr ""
+msgstr "Zusammenfassung"
 
-#: GrampsWebSync/webapisync.py:141
+#: GrampsWebSync/webapisync.py:146
 msgid "Media Files"
-msgstr ""
+msgstr "Mediendateien"
 
-#: GrampsWebSync/webapisync.py:208
+#: GrampsWebSync/webapisync.py:213
 msgid "Fetching remote data..."
 msgstr "Lade Daten vom Server herunter..."
 
-#: GrampsWebSync/webapisync.py:217
+#: GrampsWebSync/webapisync.py:222
 msgid "Both trees are the same."
 msgstr "Beide Stammbäume sind identisch."
 
-#: GrampsWebSync/webapisync.py:221
+#: GrampsWebSync/webapisync.py:226
 #, python-format
 msgid "Successfully synchronized %s objects."
 msgstr "%s Objekte erfolgreich synchronisiert."
 
-#: GrampsWebSync/webapisync.py:241
+#: GrampsWebSync/webapisync.py:246
 msgid "Media files are in sync."
 msgstr "Mediendateien sind schon synchron."
 
-#: GrampsWebSync/webapisync.py:247
+#: GrampsWebSync/webapisync.py:252
 #, python-format
 msgid "Successfully downloaded %s media files."
 msgstr "%s Mediendateien erfolgreich heruntergeladen"
 
-#: GrampsWebSync/webapisync.py:250
+#: GrampsWebSync/webapisync.py:255
 #, python-format
 msgid "Encountered %s errors during download."
 msgstr "Beim Herunterladen sind %s Fehler aufgetreten."
 
-#: GrampsWebSync/webapisync.py:256
+#: GrampsWebSync/webapisync.py:261
 #, python-format
 msgid "Successfully uploaded %s media files."
 msgstr "%s Mediendateien erfolgreich hochgeladen."
 
-#: GrampsWebSync/webapisync.py:259
+#: GrampsWebSync/webapisync.py:264
 #, python-format
 msgid "Encountered %s errors during upload."
 msgstr "Beim Hochladen sind %s Fehler aufgetreten."
 
-#: GrampsWebSync/webapisync.py:275
+#: GrampsWebSync/webapisync.py:280
 msgid "Unexpected error while applying changes."
 msgstr "Unerwarteter Fehler beim Anwenden der Änderungen."
 
-#: GrampsWebSync/webapisync.py:303 GrampsWebSync/webapisync.py:323
+#: GrampsWebSync/webapisync.py:308 GrampsWebSync/webapisync.py:328
 msgid "Error accessing media object."
 msgstr "Fehler beim Zugriff auf das Medienobjekt."
 
-#: GrampsWebSync/webapisync.py:361
+#: GrampsWebSync/webapisync.py:366
 msgid "Comparing local and remote data..."
 msgstr "Vergleiche lokale und entfernte Daten..."
 
-#: GrampsWebSync/webapisync.py:391
+#: GrampsWebSync/webapisync.py:396
 msgid "Server authorization error."
 msgstr "Server-Authorisierungsfehler."
 
-#: GrampsWebSync/webapisync.py:394
+#: GrampsWebSync/webapisync.py:399
 msgid "Server authorization error: insufficient permissions."
 msgstr "Server-Authorisierungsfehler: unzureichende Berechtigungen."
 
-#: GrampsWebSync/webapisync.py:397
+#: GrampsWebSync/webapisync.py:402
 msgid "Error: URL not found."
 msgstr "Fehler: URL nicht gefunden."
 
-#: GrampsWebSync/webapisync.py:401
+#: GrampsWebSync/webapisync.py:406
 msgid "Unable to synchronize changes to server: objects have been modified."
 msgstr ""
 "Kann Änderungen nicht zum Server synchronisieren: Objekte wurden verändert."
 
-#: GrampsWebSync/webapisync.py:405
+#: GrampsWebSync/webapisync.py:410
 #, python-format
 msgid "Error %s while connecting to server."
 msgstr "Fehler %s beim Zugriff auf den Server."
 
-#: GrampsWebSync/webapisync.py:408
+#: GrampsWebSync/webapisync.py:413
 msgid "Error connecting to server."
 msgstr "Fehler beim Zugriff auf den Server."
 
-#: GrampsWebSync/webapisync.py:411
+#: GrampsWebSync/webapisync.py:416
 msgid "Error while parsing response from server."
 msgstr "Fehler beim Verarbeiten der Serverantwort."
 
-#: GrampsWebSync/webapisync.py:436
+#: GrampsWebSync/webapisync.py:441
 msgid "Continue without transport encryption?"
 msgstr "Mit unverschlüsselter Datenübertragung fortsetzen?"
 
-#: GrampsWebSync/webapisync.py:438
+#: GrampsWebSync/webapisync.py:443
 msgid ""
 "You have specified a URL with http scheme. If you continue, your password "
 "will be sent in clear text over the network. Use only for local testing!"
@@ -142,15 +158,15 @@ msgstr ""
 "Passwort unverschlüsselt übers Netzwerk übertragen. Nur für lokales Testen "
 "geeignet!"
 
-#: GrampsWebSync/webapisync.py:443
+#: GrampsWebSync/webapisync.py:448
 msgid "Continue with HTTP"
 msgstr "Mit HTTP weitermachen"
 
-#: GrampsWebSync/webapisync.py:444
+#: GrampsWebSync/webapisync.py:449
 msgid "Use HTTPS"
 msgstr "HTTPS verwenden"
 
-#: GrampsWebSync/webapisync.py:529
+#: GrampsWebSync/webapisync.py:534
 msgid ""
 "This tool allows to synchronize the currently opened family tree with a "
 "remote family tree served by Gramps Web.\n"
@@ -166,61 +182,61 @@ msgid ""
 "option to make manual modifications, use the Import Merge Tool instead."
 msgstr ""
 
-#: GrampsWebSync/webapisync.py:556
+#: GrampsWebSync/webapisync.py:561
 msgid "Server URL: "
 msgstr "Server-URL: "
 
-#: GrampsWebSync/webapisync.py:565
+#: GrampsWebSync/webapisync.py:570
 msgid "Username: "
 msgstr "Benutzername: "
 
-#: GrampsWebSync/webapisync.py:573
+#: GrampsWebSync/webapisync.py:578
 msgid "Password: "
-msgstr "Passwort: "
+msgstr "Kennwort: "
 
-#: GrampsWebSync/webapisync.py:640
+#: GrampsWebSync/webapisync.py:645
 #, python-format
 msgid "Downloading %s media file(s)"
 msgstr "Lade %s Mediendatei(en) herunter"
 
-#: GrampsWebSync/webapisync.py:648
+#: GrampsWebSync/webapisync.py:653
 #, python-format
 msgid "Uploading %s media file(s)"
 msgstr "Lade %s Mediendatei(en) hoch"
 
-#: GrampsWebSync/webapisync.py:693
+#: GrampsWebSync/webapisync.py:698
 msgid "Local changes"
 msgstr "Lokale Änderungen"
 
-#: GrampsWebSync/webapisync.py:694 GrampsWebSync/webapisync.py:699
+#: GrampsWebSync/webapisync.py:699 GrampsWebSync/webapisync.py:704
 msgid "Added"
 msgstr "Hinzugefügt"
 
-#: GrampsWebSync/webapisync.py:695 GrampsWebSync/webapisync.py:700
+#: GrampsWebSync/webapisync.py:700 GrampsWebSync/webapisync.py:705
 msgid "Deleted"
 msgstr "Gelöscht"
 
-#: GrampsWebSync/webapisync.py:696 GrampsWebSync/webapisync.py:701
-#: GrampsWebSync/webapisync.py:703
+#: GrampsWebSync/webapisync.py:701 GrampsWebSync/webapisync.py:706
+#: GrampsWebSync/webapisync.py:708
 msgid "Modified"
 msgstr "Verändert"
 
-#: GrampsWebSync/webapisync.py:698
+#: GrampsWebSync/webapisync.py:703
 msgid "Remote changes"
 msgstr "Entfernte Änderungen"
 
-#: GrampsWebSync/webapisync.py:703
+#: GrampsWebSync/webapisync.py:708
 msgid "Simultaneous changes"
 msgstr "Gleichzeitige Änderungen"
 
-#: GrampsWebSync/webapisync.py:744
+#: GrampsWebSync/webapisync.py:755
 msgid "Click Next to synchonize media files."
 msgstr "Auf Weiter klicken, um Mediendateien zu synchronisieren."
 
-#: GrampsWebSync/webapisync.py:774
+#: GrampsWebSync/webapisync.py:785
 msgid "Missing locally"
 msgstr "Fehlt lokal"
 
-#: GrampsWebSync/webapisync.py:777
+#: GrampsWebSync/webapisync.py:788
 msgid "Missing remotely"
 msgstr "Fehlt auf dem Server"
