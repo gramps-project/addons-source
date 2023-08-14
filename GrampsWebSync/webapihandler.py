@@ -61,7 +61,7 @@ class WebApiHandler:
         try:
             with urlopen(req) as res:
                 res_json = json.load(res)
-        except (UnicodeDecodeError, json.JSONDecodeError):
+        except (UnicodeDecodeError, json.JSONDecodeError, HTTPError):
             self.url = f"{self.url}/api"
             return self.fetch_token()
         self._access_token = res_json["access_token"]
