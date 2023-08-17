@@ -603,7 +603,7 @@ class PluginStatus(tool.Tool, ManagedWindow):
             for addon in self.addons:
                 if addon['i'] == pid:
                     name = addon['n']
-                    typestr = addon['t']
+                    typestr = PTYPE_STR[addon['t']]
                     desc = addon['d']
                     vers = addon['v']
                     auth = ''
@@ -732,7 +732,7 @@ class PluginStatus(tool.Tool, ManagedWindow):
                 if hidden:
                     status_str = "<s>%s</s>" % status_str
                     status |= HIDDEN
-                row = [_(plugin_dict["t"]), status_str,
+                row = [PTYPE_STR[plugin_dict["t"]], status_str,
                        markup_escape_text(plugin_dict["n"]),
                        markup_escape_text(plugin_dict["d"]),
                        plugin_dict["i"], status]
