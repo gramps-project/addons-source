@@ -548,16 +548,23 @@ class PluginStatus(tool.Tool, ManagedWindow):
             self._install_btn.set_sensitive(True)
         else:
             self._install_btn.set_sensitive(False)
-        self.infodata, faildata = self.__info(pid)  # get text of plugin data
         self.info_text_buf.set_text('')
-        _iter = self.info_text_buf.get_start_iter()
-        self.info_text_buf.insert_markup(_iter, self.infodata, -1)
-        _iter = self.info_text_buf.get_end_iter()
-        self.info_text_buf.insert(_iter, faildata, -1)
+        self.__info(pid)  # get text of plugin data
+        
         if self.help:
             self._wiki_btn.set_sensitive(True)
         else:
             self._wiki_btn.set_sensitive(False)
+
+    def _bufin(self, label, txt, color=None):
+        _iter = self.info_text_buf.get_end_iter()
+        if color:
+            self.info_text_buf.insert_markup(
+                _iter, '<span color="{0}">{1}</span>  '.format(color, label), -1)
+        else:
+            self.info_text_buf.insert_markup(_iter, "<b>{0}:</b> ".format(label), -1)
+        _iter = self.info_text_buf.get_end_iter()
+        self.info_text_buf.insert(_iter, txt, -1)
 
     def __info(self, pid):
         """ Gather information on a plugin
@@ -576,29 +583,26 @@ class PluginStatus(tool.Tool, ManagedWindow):
             self.help = pdata.help_url if pdata.help_url else ''
             aud = AUDIENCETEXT[pdata.audience]
             status = STATUSTEXT[pdata.status]
-
             # assemble requirements
-            reqs = ''
+            reqs = []
             dep_re = pdata.requires_exe
             if dep_re:
-                reqs += "    <b>{0}:</b>: {1}\n".format(
-                    _("Executables"), ' '.join(dep_re))
-            dep_rg = pdata.requires_gi
-            if dep_rg:
-                reqs += "    <b>{0}:</b> ".format(
-                    _("GObject introspection modules"))
-                tup = dep_rg[0]
-                reqs += tup[0] + ' ' + tup[1]
-                for i in range(1, len(dep_rg)):
-                    if i != 0:
-                        reqs += ', '
-                    tup = dep_rg[i]
-                    reqs += tup[0] + ' ' + tup[1]
-                reqs += '\n'
+                reqs.append(("    " + _("Executables"), ' '.join(dep_re)))
             dep_rm = pdata.requires_mod
             if dep_rm:
-                reqs += "    <b>{0}:</b>: {1}\n".format(
-                    _("Python modules"), ' '.join(dep_rm))
+                reqs.append(("    " + _("Python modules"), ' '.join(dep_rm)))
+            dep_rg = pdata.requires_gi
+            if dep_rg:
+                tup = dep_rg[0]
+                txt = tup[0] + ' ' + tup[1]
+                for i in range(1, len(dep_rg)):
+                    if i != 0:
+                        txt += ', '
+                    tup = dep_rg[i]
+                    txt += tup[0] + ' ' + tup[1]
+                txt += '\n'
+                reqs.append(("    " + _("GObject introspection modules"), txt))
+
         else:   # from installed plugins
             for addon in self.addons:
                 if addon['i'] == pid:
@@ -615,50 +619,34 @@ class PluginStatus(tool.Tool, ManagedWindow):
                     status = STATUSTEXT[addon['s']]
 
                     # Requirements
-                    reqs = ''
+                    reqs = []
                     info = Requirements().info(addon)
                     for i in range(0, len(info), 2):
-                        reqs += '    <b>{0}:</b> '.format(info[i])
+                        label = '    ' + info[i]
                         req_lst = info[i+1]
-                        reqs += ' '.join(req_lst[0])
+                        txt = ' '.join(req_lst[0])
                         for j in range(1, len(req_lst)):
-                            reqs += ', ' + ' '.join(req_lst[j])
-                        reqs += '\n'
+                            txt += ', ' + ' '.join(req_lst[j])
+                        txt += '\n'
+                        reqs.append((label, txt))
                     break
 
         if len(auth) > 60:
             auth = auth[:60] + '...'
         if len(email) > 60:
             email = email[:60] + '...'
-        infotxt = (
-            "<b>%(plugnam)s:</b> %(name)s [%(typestr)s]    "
-            "<b>%(plug_id)s:</b> %(id)s    <b>%(plugver)s:</b> %(version)s\n"
-            "<b>%(plugdes)s:</b> %(descr)s\n"
-            "<b>%(plugfil)s:</b> %(fname)s    <b>%(plugpat)s:</b> %(fpath)s\n"
-             % {
-                'id': pid,
-                'name': name,
-                'typestr': typestr,
-                'descr': desc,
-                'version': vers,
-                'fname': fname,
-                'fpath': fpath,
-                'plug_id': _("Id"),
-                'plugnam': _("Plugin name"),
-                'plugdes': _("Description"),
-                'plugver': _("Version"),
-                'plugfil': _("Filename"),
-                'plugpat': _("Location")})
+        self._bufin(_("Plugin name"), name + " [" + typestr + "]    ")
+        self._bufin(_("Id"), pid + "    ")
+        self._bufin(_("Version"), vers + '\n')
+        self._bufin(_("Description"), desc + '\n')
+        self._bufin(_("Filename"), fname +  "    ")
+        self._bufin(_("Location"), fpath + '\n')
         if auth:
-            infotxt += "<b>{0}:</b> {1}\n".format(_("Authors"), auth)
+            self._bufin(_("Authors"), auth + '\n')
         if email:
-            infotxt += "<b>{0}:</b> {1}\n".format(_("Email"), email)
-        infotxt += ("<b>%(plugaud)s:</b> %(aud)s    <b>%(plugstat)s:</b> %(status)s\n"
-            % {
-                'aud' : aud,
-                'status': status,
-                'plugaud': _("Audience"),
-                'plugstat': _("Status")})
+            self._bufin(_("Email"), email + '\n')
+        self._bufin(_("Audience"), aud + "    ")
+        self._bufin(_("Status"), status + '\n')
         self.helpname = ""
         if not self.help:
             if 'gramplet' in fpath:
@@ -672,33 +660,36 @@ class PluginStatus(tool.Tool, ManagedWindow):
                 self.helpname = name
 
         if self.help:   # Wiki help
-            infotxt += ("<b>{0}:</b> {1}".format(_("Help"), self.help) +
+            self._bufin(_("Help"), self.help +
                         (('#' + self.helpname) if self.helpname else '') + '\n')
 
         if reqs:        # Requirements
-            infotxt += "<b>{0}:</b>\n {1}".format(_("Requires"), reqs)
+            self._bufin(_("Requires"), '\n')
+            for req in reqs:
+                self._bufin(req[0], req[1])
         # Loaded plugins
         success_list = self._pmgr.get_success_list()
         if pdata:
             for i in success_list:
                 if pdata.id == i[2].id:
-                    infotxt += '<span color="green">{0}</span>  '.format(_('Loaded'))
+                    self._bufin(_('Loaded'), '', color="green")
                     break
         if pid in self.hidden:  # hidden plugins
-            infotxt += '<span color="red">{0}</span>'.format(_('Hidden'))
+            self._bufin(_('Hidden'), '', color="red")
         # Handle failed plugins
         fail_list = self._pmgr.get_fail_list()
-        failtxt = ''
         for i in fail_list:
             # i = (filename, (exception-type, exception, traceback), pdata)
             if pdata == i[2]:
                 tb = ''.join(
                     traceback.format_exception(i[1][0], i[1][1], i[1][2]))
-                infotxt += '<span color="red">{0}</span>\n'.format(_('Failed'))
-                failtxt = '{0}\n{1}\n<{2}'.format(str(i[1][0]),
-                    str(i[1][1]), tb)
+                self._bufin(_('Failed') + "\n",
+                            '{0}\n{1}\n{2}'.format(str(i[1][0]),
+                                                   str(i[1][1]),
+                                                   tb),
+                         color="red")
                 break
-        return infotxt, failtxt
+        return
 
     def _web_help(self):
         display_help(WIKI_PAGE)
