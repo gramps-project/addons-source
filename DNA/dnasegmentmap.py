@@ -827,12 +827,12 @@ class SegmentMap(Gtk.DrawingArea):
                 tooltip_text += _("\n{0}\n{1} cMs".format(self.segments[active][6], self.segments[active][4]))
                 if self.segments[active][5] > 0:
                     tooltip_text += _(", ")
-                    tooltip_text += glocale.format('%d',self.segments[active][5], grouping = True)
+                    tooltip_text += glocale.format_string('%d',self.segments[active][5], grouping = True)
                     tooltip_text += _(" SNPs")
                 tooltip_text += _("\nStarts at ")
-                tooltip_text += glocale.format('%d',self.segments[active][1], grouping = True)
+                tooltip_text += glocale.format_string('%d',self.segments[active][1], grouping = True)
                 tooltip_text += _(" and ends at ")
-                tooltip_text += glocale.format('%d',self.segments[active][2], grouping = True)
+                tooltip_text += glocale.format_string('%d',self.segments[active][2], grouping = True)
                 rel_strings , common_an = self.relationship.get_all_relationships(self.dbstate.db,self.active,self.segments[active][8])
                 if len(rel_strings) > 0 :
                     tooltip_text += _("\nRelationship: {0}".format(rel_strings[0]))
