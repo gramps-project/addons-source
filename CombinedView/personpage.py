@@ -85,6 +85,7 @@ class PersonPage(BasePage):
     def __init__(self, dbstate, uistate, config):
         BasePage.__init__(self, dbstate, uistate, config)
         self.reorder_sensitive = True
+        self.expanders = {}
 
     def obj_type(self):
         return 'Person'
@@ -230,6 +231,9 @@ class PersonPage(BasePage):
 #
 ##############################################################################
 
+    def expander_toggled(self, expander, handle):
+        self.expanders[handle] = not expander.get_expanded()
+
     def write_families(self, person, stack):
 
         self.vbox2 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
@@ -285,8 +289,9 @@ class PersonPage(BasePage):
 
             count = len(family.get_child_ref_list())
             ex2 = Gtk.Expander(label='%s (%s):' % (_('Siblings'), count))
+            ex2.connect("activate", self.expander_toggled, family_handle)
+            ex2.set_expanded(self.expanders.get(family_handle, True))
             ex2.set_margin_start(24)
-            ex2.set_expanded(True)
             vbox.pack_start(ex2, False, False, 6)
 
             vbox2 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
@@ -345,7 +350,8 @@ class PersonPage(BasePage):
 
         count = len(family.get_child_ref_list())
         ex2 = Gtk.Expander(label='%s (%s):' % (_('Children'), count))
-        ex2.set_expanded(True)
+        ex2.connect("activate", self.expander_toggled, family_handle)
+        ex2.set_expanded(self.expanders.get(family_handle, True))
         ex2.set_margin_start(24)
         vbox.pack_start(ex2, False, False, 6)
 
