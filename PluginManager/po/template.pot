@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-14 11:31-0500\n"
+"POT-Creation-Date: 2023-09-01 14:05-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -83,7 +83,7 @@ msgstr ""
 msgid "Type"
 msgstr ""
 
-#: PluginManager/PluginManager.py:373 PluginManager/PluginManager.py:661
+#: PluginManager/PluginManager.py:373 PluginManager/PluginManager.py:649
 msgid "Status"
 msgstr ""
 
@@ -97,7 +97,7 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: PluginManager/PluginManager.py:392 PluginManager/PluginManager.py:648
+#: PluginManager/PluginManager.py:392 PluginManager/PluginManager.py:641
 msgid "Description"
 msgstr ""
 
@@ -145,82 +145,82 @@ msgstr ""
 msgid "Uninstall"
 msgstr ""
 
-#: PluginManager/PluginManager.py:585
+#: PluginManager/PluginManager.py:590
 msgid "Executables"
 msgstr ""
 
-#: PluginManager/PluginManager.py:589
-msgid "GObject introspection modules"
-msgstr ""
-
-#: PluginManager/PluginManager.py:601
+#: PluginManager/PluginManager.py:593
 msgid "Python modules"
 msgstr ""
 
-#: PluginManager/PluginManager.py:646
-msgid "Id"
+#: PluginManager/PluginManager.py:604
+msgid "GObject introspection modules"
 msgstr ""
 
-#: PluginManager/PluginManager.py:647
+#: PluginManager/PluginManager.py:638
 msgid "Plugin name"
 msgstr ""
 
-#: PluginManager/PluginManager.py:649
+#: PluginManager/PluginManager.py:639
+msgid "Id"
+msgstr ""
+
+#: PluginManager/PluginManager.py:640
 msgid "Version"
 msgstr ""
 
-#: PluginManager/PluginManager.py:650
+#: PluginManager/PluginManager.py:642
 msgid "Filename"
 msgstr ""
 
-#: PluginManager/PluginManager.py:651
+#: PluginManager/PluginManager.py:643
 msgid "Location"
 msgstr ""
 
-#: PluginManager/PluginManager.py:653
+#: PluginManager/PluginManager.py:645
 msgid "Authors"
 msgstr ""
 
-#: PluginManager/PluginManager.py:655
+#: PluginManager/PluginManager.py:647
 msgid "Email"
 msgstr ""
 
-#: PluginManager/PluginManager.py:660
+#: PluginManager/PluginManager.py:648
 msgid "Audience"
 msgstr ""
 
-#: PluginManager/PluginManager.py:675
+#: PluginManager/PluginManager.py:663
 msgid "Help"
 msgstr ""
 
-#: PluginManager/PluginManager.py:679
+#: PluginManager/PluginManager.py:667
 msgid "Requires"
 msgstr ""
 
-#: PluginManager/PluginManager.py:685
+#: PluginManager/PluginManager.py:675
 msgid "Loaded"
 msgstr ""
 
-#: PluginManager/PluginManager.py:688
+#: PluginManager/PluginManager.py:678
 msgid "Hidden"
 msgstr ""
 
-#: PluginManager/PluginManager.py:697 PluginManager/PluginManager.py:757
+#: PluginManager/PluginManager.py:686 PluginManager/PluginManager.py:748
 msgid "Failed"
 msgstr ""
 
-#: PluginManager/PluginManager.py:730
+#: PluginManager/PluginManager.py:721
 msgid "*Available"
 msgstr ""
 
-#: PluginManager/PluginManager.py:746
+#: PluginManager/PluginManager.py:737
 msgid "Built-in"
 msgstr ""
 
-#: PluginManager/PluginManager.py:751
+#: PluginManager/PluginManager.py:742
 msgid "*Installed"
 msgstr ""
 
-#: PluginManager/PluginManager.py:760
+#: PluginManager/PluginManager.py:751
 msgid "Update Available"
 msgstr ""
