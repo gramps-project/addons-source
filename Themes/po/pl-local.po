@@ -28,7 +28,7 @@ msgid ""
 "useful for Windows users."
 msgstr ""
 "Dodatek do Preferencji umożliwiający proste dostosowanie motywu i czcionki. "
-"Szczególnie przydatny dla użytkowników systemu Windows”."
+"Szczególnie przydatny dla użytkowników systemu Windows."
 
 #: Themes/themes.py:126
 msgid "_Help"
