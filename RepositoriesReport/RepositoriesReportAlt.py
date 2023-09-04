@@ -287,8 +287,9 @@ class RepositoryReportAlt(Report):
 
                             # on tuple : [0] = classname ; [1] = handle
 
-                            note_handle = note_handle[1]
-                            self.__write_referenced_notes(note_handle)
+                            if note_handle[0] == 'Note':  # We can have 'Tag' here.
+                                note_handle = note_handle[1]
+                                self.__write_referenced_notes(note_handle)
 
                     if src.get_citation_child_list() and self.incl_media:
                         medialist = src.get_citation_child_list()

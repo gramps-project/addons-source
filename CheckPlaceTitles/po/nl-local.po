@@ -10,15 +10,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: CheckPlaceTitles 5.1.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-04 18:55-0600\n"
-"PO-Revision-Date: 2020-04-30 22:23+0200\n"
+"POT-Creation-Date: 2022-05-10 10:10-0500\n"
+"PO-Revision-Date: 2023-06-09 18:27+0200\n"
 "Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
 "Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: CheckPlaceTitles/checkplacetitles.gpr.py:28
 msgid "Check Place Titles"
@@ -27,10 +27,6 @@ msgstr "Controleer locatienamen"
 #: CheckPlaceTitles/checkplacetitles.gpr.py:29
 msgid "Check place titles"
 msgstr "Controleer locatienamen"
-
-#: CheckPlaceTitles/checkplacetitles.py:56
-msgid "manual|Check_place_titles"
-msgstr "Handmatig | Controleer locatienamen"
 
 #: CheckPlaceTitles/checkplacetitles.py:71
 msgid "Check Place title"
@@ -48,39 +44,39 @@ msgstr "Naar locatievelden zoeken"
 msgid "Differences"
 msgstr "Verschillen"
 
-#: CheckPlaceTitles/checkplacetitles.py:113
+#: CheckPlaceTitles/checkplacetitles.py:112
 msgid "No need modifications"
 msgstr "Geen aanpassingen nodig"
 
-#: CheckPlaceTitles/checkplacetitles.py:114
+#: CheckPlaceTitles/checkplacetitles.py:113
 msgid "No changes need."
 msgstr "Geen wijzigingen nodig."
 
-#: CheckPlaceTitles/checkplacetitles.py:143
+#: CheckPlaceTitles/checkplacetitles.py:142
 msgid "Select"
 msgstr "Selecteren"
 
-#: CheckPlaceTitles/checkplacetitles.py:146
+#: CheckPlaceTitles/checkplacetitles.py:145
 msgid "Database"
 msgstr "Database"
 
-#: CheckPlaceTitles/checkplacetitles.py:150
+#: CheckPlaceTitles/checkplacetitles.py:149
 msgid "Display"
 msgstr "Weergave"
 
-#: CheckPlaceTitles/checkplacetitles.py:160
+#: CheckPlaceTitles/checkplacetitles.py:159
 msgid "Building display"
 msgstr "Weergave opbouwen"
 
-#: CheckPlaceTitles/checkplacetitles.py:189
+#: CheckPlaceTitles/checkplacetitles.py:187
 msgid "Legacy place"
 msgstr "Oude locatie"
 
-#: CheckPlaceTitles/checkplacetitles.py:203
+#: CheckPlaceTitles/checkplacetitles.py:201
 msgid "Modify Place titles"
 msgstr "Locatienamen aanpassen"
 
-#: CheckPlaceTitles/checkplacetitles.py:226
+#: CheckPlaceTitles/checkplacetitles.py:224
 msgid "Place titles"
 msgstr "Locatienamen"
 
@@ -102,8 +98,11 @@ msgstr "Bevestig een tag op geselecteerde plaatsen."
 
 #: CheckPlaceTitles/checkplacetitles.glade:150
 msgid "_Accept changes and close"
-msgstr "Wijzigingen accepteren en sluiten"
+msgstr "_Wijzigingen accepteren en sluiten"
 
 #: CheckPlaceTitles/checkplacetitles.glade:177
 msgid "column"
 msgstr "kolom"
+
+#~ msgid "manual|Check_place_titles"
+#~ msgstr "Handmatig | Controleer locatienamen"

@@ -11,6 +11,10 @@
             <_attribute>Registration District</_attribute>
         </heading>
         <heading>
+            <_attribute>Administrative Area</_attribute>
+            <_longname>County/Administrative Area</_longname>
+        </heading>
+        <heading>
             <_attribute>Date Registered</_attribute>
         </heading>
         <heading>
@@ -64,6 +68,10 @@
         </heading>
         <heading>
             <_attribute>Entry Number</_attribute>
+        </heading>
+        <heading>
+            <_attribute>Administrative Area</_attribute>
+            <_longname>County/Administrative Area</_longname>
         </heading>
         <heading>
             <_attribute>Banns/Licence</_attribute>
@@ -130,6 +138,10 @@
             <_attribute>Registration District</_attribute>
         </heading>
         <heading>
+            <_attribute>Administrative Area</_attribute>
+            <_longname>County/Administrative Area</_longname>
+        </heading>
+        <heading>
             <_attribute>Date Registered</_attribute>
         </heading>
         <heading>
@@ -143,10 +155,23 @@
                 <_attribute>Sex</_attribute>
             </column>
             <column>
+                <_attribute>Maiden Surname</_attribute>
+                <_longname>Maiden surname of woman who was married</_longname>
+            </column>
+            <column>
                 <_attribute>Age</_attribute>
             </column>
             <column>
+                <_attribute>Date of Birth</_attribute>
+            </column>
+            <column>
+                <_attribute>Place of Birth</_attribute>
+            </column>
+            <column>
                 <_attribute>Occupation</_attribute>
+            </column>
+            <column>
+                <_attribute>Usual Address</_attribute>
             </column>
             <column>
                 <_attribute>Cause of Death</_attribute>

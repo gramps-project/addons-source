@@ -1,0 +1,74 @@
+# Addon PostgreSQL for Gramps.
+# Copyright (C) 2020 Gramps
+# This file is distributed under the same license as the gramps package.
+# Pedro Albuquerque <pmra@protonmail.com>, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps51\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2020-04-02 11:09Hora de Verão de GMT\n"
+"Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
+"Language-Team: Pedro Albuquerque\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Geany / PoHelper 1.36\n"
+
+#: PostgreSQL/postgresql.gpr.py:26
+msgid "PostgreSQL"
+msgstr "PostgreSQL"
+
+#: PostgreSQL/postgresql.gpr.py:27
+msgid "_PostgreSQL Database"
+msgstr "Base de dados _PostgreSQL"
+
+#: PostgreSQL/postgresql.gpr.py:28
+msgid "PostgreSQL Database"
+msgstr "Base de dados PostgreSQL"
+
+#: PostgreSQL/postgresql.gpr.py:42
+msgid "PostgreSQL Warning:  Python psycopg2 module not found."
+msgstr "Aviso PostgreSQL: módulo Python psycopg2não encontrado."
+
+#: PostgreSQL/postgresql.gpr.py:48
+msgid "PostgreSQL Failed to Load"
+msgstr "Falha ao carregar o PostgreSQL"
+
+#: PostgreSQL/postgresql.gpr.py:49
+msgid ""
+"\n"
+"\n"
+"PostgreSQL is missing the psycopg2 python module.\n"
+"For now, it may be possible to install the files manually. See\n"
+"\n"
+"https://gramps-project.org/wiki/index.php?title=PostgreSQL \n"
+"\n"
+"To dismiss all future PostgreSQL warnings click Dismiss."
+msgstr ""
+"\n"
+"\n"
+"O PostgreSQL tem o módulo python psycopg2 em falta.\n"
+"Por agora, é possível instalar os ficheiros manualmente. Veja\n"
+"\n"
+"https://gramps-project.org/wiki/index.php?title=PostgreSQL \n"
+"\n"
+"Para descartar todos os futuros avisos do PostgreSQL clique em Descartar."
+
+#: PostgreSQL/postgresql.gpr.py:53
+msgid " Dismiss "
+msgstr "Descartar"
+
+#: PostgreSQL/postgresql.gpr.py:54
+msgid "Continue"
+msgstr "Continuar"
+
+#: PostgreSQL/postgresql.py:68
+msgid "Database version"
+msgstr "Versão da base de dados"
+
+#: PostgreSQL/postgresql.py:69
+msgid "Database module location"
+msgstr "Localização do módulo da base de dados"

@@ -14,6 +14,7 @@
 # Copyright (C) 2011      Tim G L Lyons
 # Copyright (C) 2013-2014 Paul Franklin
 # Copyright (C) 2017      Jon Schewe <jpschewe@mtu.net> - modifications to add all images
+# Copyright (C) 2022      Gary Griffin - added event media
 #
 # This report is a modification of the detailed descendant report. It has
 # been modified to include as many images as possible. This is useful for
@@ -443,6 +444,9 @@ class DetailedDescendantReportI(Report):
             date = event.get_date_object().get_year()
 
         place = place_displayer.display_event(self.db, event)
+
+        if self.addimages:
+            self.write_images(event.get_media_list())
 
         self.doc.start_paragraph('DDRI-MoreDetails')
         event_name = self._get_type(event.get_type())

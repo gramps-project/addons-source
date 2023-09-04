@@ -332,7 +332,7 @@ class GetGOV(Gramplet):
         except AttributeError:
             fmt = config.get('preferences.place-format')
             pf = _pd.get_formats()[fmt]
-            preferred_lang = pf.language
+            preferred_lang = pf.language.lower()
         if len(preferred_lang) != 2:
             preferred_lang = 'de'
         visited = {}

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-04 18:55-0600\n"
+"POT-Creation-Date: 2022-05-10 10:10-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,10 +23,6 @@ msgstr ""
 
 #: CheckPlaceTitles/checkplacetitles.gpr.py:29
 msgid "Check place titles"
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.py:56
-msgid "manual|Check_place_titles"
 msgstr ""
 
 #: CheckPlaceTitles/checkplacetitles.py:71
@@ -45,39 +41,39 @@ msgstr ""
 msgid "Differences"
 msgstr ""
 
-#: CheckPlaceTitles/checkplacetitles.py:113
+#: CheckPlaceTitles/checkplacetitles.py:112
 msgid "No need modifications"
 msgstr ""
 
-#: CheckPlaceTitles/checkplacetitles.py:114
+#: CheckPlaceTitles/checkplacetitles.py:113
 msgid "No changes need."
 msgstr ""
 
-#: CheckPlaceTitles/checkplacetitles.py:143
+#: CheckPlaceTitles/checkplacetitles.py:142
 msgid "Select"
 msgstr ""
 
-#: CheckPlaceTitles/checkplacetitles.py:146
+#: CheckPlaceTitles/checkplacetitles.py:145
 msgid "Database"
 msgstr ""
 
-#: CheckPlaceTitles/checkplacetitles.py:150
+#: CheckPlaceTitles/checkplacetitles.py:149
 msgid "Display"
 msgstr ""
 
-#: CheckPlaceTitles/checkplacetitles.py:160
+#: CheckPlaceTitles/checkplacetitles.py:159
 msgid "Building display"
 msgstr ""
 
-#: CheckPlaceTitles/checkplacetitles.py:189
+#: CheckPlaceTitles/checkplacetitles.py:187
 msgid "Legacy place"
 msgstr ""
 
-#: CheckPlaceTitles/checkplacetitles.py:203
+#: CheckPlaceTitles/checkplacetitles.py:201
 msgid "Modify Place titles"
 msgstr ""
 
-#: CheckPlaceTitles/checkplacetitles.py:226
+#: CheckPlaceTitles/checkplacetitles.py:224
 msgid "Place titles"
 msgstr ""
 

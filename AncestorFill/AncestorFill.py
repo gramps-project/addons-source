@@ -3,8 +3,9 @@
 #
 # Copyright (C) 2000-2007  Donald N. Allingham
 # Copyright (C) 2007-2009  Brian G. Matherly
-# Copyright (C) 2010       Jakim Friant
-# Copyright (C) 2012       Jerome Rapinat
+# Copyright (C) 2010-2023  Jakim Friant
+# Copyright (C) 2012-2023  Jerome Rapinat
+# Copyright (C) 2023-      Matthias Kemmer
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -29,9 +30,6 @@
 # python modules
 #
 #------------------------------------------------------------------------
-import copy
-import os
-import gettext
 from collections import defaultdict
 
 #------------------------------------------------------------------------
@@ -43,13 +41,14 @@ from gramps.gen.const import GRAMPS_LOCALE as glocale
 from gramps.gen.errors import ReportError
 from gramps.gen.lib import ChildRefType
 from gramps.gen.plug.menu import NumberOption, PersonOption, BooleanOption
-from gramps.gen.plug.docgen import (IndexMark, FontStyle, ParagraphStyle,
-                                    FONT_SANS_SERIF, INDEX_TYPE_TOC,
-                                    PARA_ALIGN_CENTER)
+from gramps.gen.plug.docgen import (
+    IndexMark, FontStyle, ParagraphStyle, FONT_SANS_SERIF, INDEX_TYPE_TOC,
+    PARA_ALIGN_CENTER)
 from gramps.gen.plug.report import Report
 from gramps.gen.plug.report import MenuReportOptions
 from gramps.gen.plug.report import stdoptions
 from gramps.gen.plug.report import utils
+from gramps.gen.display.name import displayer as _nd
 
 try:
     _trans = glocale.get_addon_translator(__file__)
@@ -79,9 +78,9 @@ class AncestorFillReport(Report):
         This report needs the following parameters (class variables)
         that come in the options class.
 
-        gen       - Maximum number of generations to include.
-        name_format   - Preferred format to display names
-        Filled_digit     - Number of decimal for the fill percentage
+        gen             - Maximum number of generations to include.
+        name_format     - Preferred format to display names
+        Filled_digit    - Number of decimal for the fill percentage
 
         """
         Report.__init__(self, database, options, user)
@@ -139,7 +138,7 @@ class AncestorFillReport(Report):
             # the passed person. There should be exactly one, but there is
             # nothing that prevents the same child in the list multiple times.
 
-            ref = [ c for c in family.get_child_ref_list()
+            ref = [c for c in family.get_child_ref_list()
                     if c.get_reference_handle() == person_handle]
             if ref:
 
@@ -205,8 +204,8 @@ class AncestorFillReport(Report):
 
         strgen = self._("Generation ")
         strfoundanc = self._("Number of Ancestors found ")
-        pctfoundanc = self._("percent of Ancestors found ")
-        uniqfoundanc = self._("Number of single Ancestors found ")
+        pctfoundanc = self._("Percent of Ancestors found ")
+        uniqfoundanc = self._("Number of unique Ancestors found ")
         strtheoanc = self._("Number of theoretical Ancestors ")
         strimplex = self._("Pedigree Collapse ")
 
@@ -249,14 +248,16 @@ class AncestorFillReport(Report):
                 text = form % (nextgen, longueur, percent, nbhand, implexe)
                 self.doc.write_text(text)
                 self.doc.end_paragraph()
-        totalnbanc = len(self.trouve)
-        timplexe= ( total - totalnbanc) * 100.0 / total
+        totalnbanc = len(self.trouve)-1
+        timplexe = 0 if total == 0 else ( total - totalnbanc ) * 100.0 / total
         strtotalanc = self._("Total Number of Ancestors found ")
         form = strtotalanc + "%d\n"
-        totaluniqfoundanc = self._("Total Number of single Ancestors found ")
+        totaluniqfoundanc = self._("Total Number of unique Ancestors found ")
         form2 = totaluniqfoundanc + "%d\n"
         form3 = strimplex + "%3." + str(self.Collapsedigit) + "f%%"
-        text = (form % total) + (form2 % totalnbanc) + (form3 % timplexe)
+        text = (form % total) + (form2 % totalnbanc) + (form3 % timplexe) \
+            + _("\n\nNote: This report only counts ancestors with a "
+                "parent-child relationship of birth.")
         self.doc.start_paragraph("ANF-Generation")
         self.doc.write_text(text)
         self.doc.end_paragraph()
@@ -281,7 +282,8 @@ class AncestorFillOptions(MenuReportOptions):
 
     def get_subject(self):
         """ Return a string that describes the subject of the report. """
-        from gramps.gen.display.name import displayer as _nd
+        if not self.__pid:
+            return ""
         gid = self.__pid.get_value()
         person = self.__db.get_person_from_gramps_id(gid)
         return _nd.display(person)
@@ -296,20 +298,25 @@ class AncestorFillOptions(MenuReportOptions):
         self.__pid.set_help(_("The center person for the report"))
         menu.add_option(category_name, "pid", self.__pid)
 
-        maxgen = NumberOption(_("Generations"), 10, 1, 300)
+        maxgen = NumberOption(_("Generations"), 5, 1, 100)
         maxgen.set_help(_("The number of generations to include in the report"))
         menu.add_option(category_name, "maxgen", maxgen)
 
-        Filleddigit = NumberOption(_("Filled digit"), 10, 1, 50)
-        Filleddigit.set_help(_("The number of digits after comma to include in the report for the percentage of ancestor found at a given generation"))
+        Filleddigit = NumberOption(_("Filled digit"), 2, 1, 10)
+        Filleddigit.set_help(
+            _("The number of digits after comma to include in the report for "
+              "the percentage of ancestor found at a given generation"))
         menu.add_option(category_name, "Filled_digit", Filleddigit)
 
-        Collapsedigit = NumberOption(_("Collapsed digit"), 10, 1, 50)
-        Collapsedigit.set_help(_("The number of digits after comma to include in the report for the pedigree Collapse"))
+        Collapsedigit = NumberOption(_("Collapsed digit"), 2, 1, 10)
+        Collapsedigit.set_help(
+            _("The number of digits after comma to include in the report for "
+              "the pedigree Collapse"))
         menu.add_option(category_name, "Collapsed_digit", Collapsedigit)
 
         displayth = BooleanOption(_("Display theoretical"), False)
-        displayth.set_help(_("Whether to display the theoretical number of ancestor by generation"))
+        displayth.set_help(
+            _("Whether to display the theoretical number of ancestor by generation"))
         menu.add_option(category_name, "Display_theoretical", displayth)
 
         stdoptions.add_name_format_option(menu, category_name)
@@ -337,12 +344,6 @@ class AncestorFillOptions(MenuReportOptions):
                         Italic
                         14pt
             Paragraph : Second level header
-                        0.125cm top and bottom margins
-
-        ANF - Normal text display for each entry
-
-            Font      : default
-            Paragraph : 1cm margin, with first indent of -1cm
                         0.125cm top and bottom margins
         """
 
@@ -372,13 +373,3 @@ class AncestorFillOptions(MenuReportOptions):
         para.set_bottom_margin(0.125)
         para.set_description(_('The style used for the generation header.'))
         default_style.add_paragraph_style("ANF-Generation", para)
-
-        #
-        # ANF-Entry
-        #
-        para = ParagraphStyle()
-        para.set(first_indent=-1.0, lmargin=1.0)
-        para.set_top_margin(0.125)
-        para.set_bottom_margin(0.125)
-        para.set_description(_('The basic style used for the text display.'))
-        default_style.add_paragraph_style("ANF-Entry", para)

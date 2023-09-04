@@ -1,6 +1,7 @@
 // Gramps - a GTK+/GNOME based genealogy program
 //
 // Copyright (C) 2014 Pierre Bélissent
+// Copyright (C) 2022 Serge Noiraud
 // See also https://github.com/andrewseddon/raphael-zpd/blob/master/raphael-zpd.js for parts of code from Raphael-ZPD
 //
 // This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
@@ -741,8 +742,8 @@ function SvgSetStyle(p, text, x_elt, lev)
 		if (I(elt[SVGELT_IDX], 'gender') == 'M') g = 'male';
 		if (I(elt[SVGELT_IDX], 'gender') == 'F') g = 'female';
 		var d = 'alive';
-		if (I(elt[SVGELT_IDX], 'death_date') != "") d = 'death';
-		fill = GRAMPS_PREFERENCES['color-gender-' + g + '-' + d];
+		if (I(elt[SVGELT_IDX], 'death_date') != "") d = 'dead';
+		fill = GRAMPS_PREFERENCES[g + '-' + d];
 	}
 	if (typeof(lev) !== 'undefined' && Dwr.search.SvgBackground == SVG_TREE_BACKGROUND_GENERATION)
 	{
