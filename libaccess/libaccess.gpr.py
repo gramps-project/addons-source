@@ -31,7 +31,7 @@ id    = 'libaccess',
 name  = "Generic DB Access lib",
 description =  _("Provides a library for generic access to "
                  "the database and gen.lib."),
-version = '1.0.31',
+version = '1.0.32',
 gramps_target_version = "5.2",
 status = STABLE,
 audience = DEVELOPER,

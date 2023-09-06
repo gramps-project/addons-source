@@ -34,7 +34,10 @@ register(
     tool_modes=[TOOL_MODE_CLI],
     authors=["David M. Straub"],
     authors_email=["straub@protonmail.com"],
-    description=_("Upload media files to S3 (or compatible) object-based storage via the command line."),
-    version = '0.1.3',
+    description=_(
+        "Upload media files to S3 (or compatible) object-based storage via the command line."
+    ),
+    version = '0.1.4',
     gramps_target_version="5.2",
+    requires_mod=["boto3"],
 )

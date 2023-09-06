@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-10 11:09-0500\n"
+"POT-Creation-Date: 2023-09-06 11:40-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,7 +21,7 @@ msgstr ""
 msgid "S3 Media Uploader"
 msgstr ""
 
-#: S3MediaUploader/S3MediaUploader.gpr.py:37
+#: S3MediaUploader/S3MediaUploader.gpr.py:38
 msgid ""
 "Upload media files to S3 (or compatible) object-based storage via the "
 "command line."

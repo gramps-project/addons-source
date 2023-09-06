@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-30 15:05-0500\n"
+"POT-Creation-Date: 2023-09-06 11:50-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,15 +17,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: QuiltView/QuiltView.gpr.py:30
+#: QuiltView/QuiltView.gpr.py:22 QuiltView/QuiltView.gpr.py:33
 msgid "Quilt Chart"
 msgstr ""
 
-#: QuiltView/QuiltView.gpr.py:31
+#: QuiltView/QuiltView.gpr.py:23
 msgid "Charts"
 msgstr ""
 
-#: QuiltView/QuiltView.gpr.py:32
+#: QuiltView/QuiltView.gpr.py:24
 msgid "The view shows a quilt chart visualisation of a family tree"
 msgstr ""
 

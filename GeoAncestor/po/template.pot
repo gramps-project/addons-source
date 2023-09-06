@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"POT-Creation-Date: 2023-09-06 11:50-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,26 +17,15 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: GeoAncestor/GeoAncestor.gpr.py:72
-msgid "OsmGpsMap module not loaded."
-msgstr ""
-
-#: GeoAncestor/GeoAncestor.gpr.py:73
-#, python-format
-msgid ""
-"Geography functionality will not be available.\n"
-"To build it for Gramps see %(gramps_wiki_build_osmgps_url)s"
-msgstr ""
-
-#: GeoAncestor/GeoAncestor.gpr.py:87
+#: GeoAncestor/GeoAncestor.gpr.py:30 GeoAncestor/GeoAncestor.gpr.py:40
 msgid "Ancestors map"
 msgstr ""
 
-#: GeoAncestor/GeoAncestor.gpr.py:88
+#: GeoAncestor/GeoAncestor.gpr.py:31
 msgid "A view showing ancestors places on the map."
 msgstr ""
 
-#: GeoAncestor/GeoAncestor.gpr.py:95
+#: GeoAncestor/GeoAncestor.gpr.py:38
 msgid "Geography"
 msgstr ""
 

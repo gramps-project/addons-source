@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-01 13:52-0500\n"
+"POT-Creation-Date: 2023-09-06 11:50-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,48 +17,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: NetworkChart/NetworkChart.gpr.py:31
+#: NetworkChart/NetworkChart.gpr.py:23
 msgid "Network Chart"
 msgstr ""
 
-#: NetworkChart/NetworkChart.gpr.py:41
+#: NetworkChart/NetworkChart.gpr.py:34
 msgid "Generates a family network chart."
-msgstr ""
-
-#: NetworkChart/NetworkChart.gpr.py:51
-msgid "NetworkChart Warning:  Python networkx module not found."
-msgstr ""
-
-#: NetworkChart/NetworkChart.gpr.py:54
-msgid ""
-"NetworkChart Warning:  NetworkChart needs one of the following to work: \n"
-"     Python module  pydotplus            OR\n"
-"     Python module  pygraphviz           OR\n"
-msgstr ""
-
-#: NetworkChart/NetworkChart.gpr.py:62
-msgid "NetworkChart Failed to Load"
-msgstr ""
-
-#: NetworkChart/NetworkChart.gpr.py:63
-msgid ""
-"\n"
-"\n"
-"NetworkChart is missing python modules or programs.  Networkx AND at\n"
-"least one of (pydotplus OR pygraphviz) must be\n"
-"installed.  For now, it may be possible to install the files manually. See\n"
-"\n"
-"https://gramps-project.org/wiki/index.php?title=NetworkChart \n"
-"\n"
-"To dismiss all future NetworkChart warnings click Dismiss."
-msgstr ""
-
-#: NetworkChart/NetworkChart.gpr.py:68
-msgid " Dismiss "
-msgstr ""
-
-#: NetworkChart/NetworkChart.gpr.py:69
-msgid "Continue"
 msgstr ""
 
 #: NetworkChart/NetworkChart.py:133

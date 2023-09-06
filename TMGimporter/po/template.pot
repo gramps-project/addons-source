@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-17 11:17-0500\n"
+"POT-Creation-Date: 2023-09-06 11:51-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,51 +17,18 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: TMGimporter/importtmg.gpr.py:63
+#: TMGimporter/importtmg.gpr.py:47
 msgid "TMG Project Backup"
 msgstr ""
 
-#: TMGimporter/importtmg.gpr.py:64 TMGimporter/importtmg.gpr.py:78
-#: TMGimporter/importtmg.gpr.py:91 TMGimporter/importtmg.gpr.py:104
+#: TMGimporter/importtmg.gpr.py:48 TMGimporter/importtmg.gpr.py:63
+#: TMGimporter/importtmg.gpr.py:77 TMGimporter/importtmg.gpr.py:91
 msgid "Import TMG project files"
 msgstr ""
 
-#: TMGimporter/importtmg.gpr.py:77 TMGimporter/importtmg.gpr.py:90
-#: TMGimporter/importtmg.gpr.py:103
+#: TMGimporter/importtmg.gpr.py:62 TMGimporter/importtmg.gpr.py:76
+#: TMGimporter/importtmg.gpr.py:90
 msgid "TMG Unsupported"
-msgstr ""
-
-#: TMGimporter/importtmg.gpr.py:116
-msgid ""
-"TMG Importer Warning: DBF (https://pypi.python.org/pypi/dbf) is required for "
-"this importer to work"
-msgstr ""
-
-#: TMGimporter/importtmg.gpr.py:126
-msgid "TMG Importer Failed to Load"
-msgstr ""
-
-#: TMGimporter/importtmg.gpr.py:127
-msgid ""
-"\n"
-"\n"
-"TMG Importer is missing the DBF python module.\n"
-"DBF must be installed ( https://pypi.python.org/pypi/dbf ).\n"
-"\n"
-"For more information see\n"
-"<a href=\"https://gramps-project.org/wiki/index.php?title=Addon:TMGimporter"
-"\" title=\"https://gramps-project.org/wiki/index.php?title=Addon:TMGimporter"
-"\">https://gramps-project.org/wiki/index.php?title=Addon:TMGimporter</a> \n"
-"\n"
-"To dismiss all future TMG Importer warnings click Dismiss."
-msgstr ""
-
-#: TMGimporter/importtmg.gpr.py:135
-msgid " Dismiss "
-msgstr ""
-
-#: TMGimporter/importtmg.gpr.py:136
-msgid "Continue"
 msgstr ""
 
 #: TMGimporter/importtmg.py:88 TMGimporter/importtmg.py:109
