@@ -34,7 +34,7 @@
 #
 # $Id: $
 
-'''
+"""
 Dynamic Web Report
 
 This report could build a complete set of web pages that contain most of the database data.
@@ -82,35 +82,35 @@ Classes:
 
  - DynamicWebOptions: class that defines the options and provides the handling interface
 
- '''
+ """
 
-#TODO: User documentation (wiki?)
-#TODO: Other bootstrap templates
-#TODO: export change times (get_change_time) for events (or other referenced objects ?) into person or family pages
-#TODO: Export tags
-#TODO: LDS stuff
-#TODO: Statistic charts
-#TODO: Calendar page (see web calendar and calendar report)
-#TODO: approximate search, which includes all the fields (names, attributes, notes, etc.) and not only titles and names
-#TODO: pages for events and notes
-#TODO: media copy like narrative web (in several directories), or without obfuscated names.
-#TODO: Unify idexes (surnames and others)
+# TODO: User documentation (wiki?)
+# TODO: Other bootstrap templates
+# TODO: export change times (get_change_time) for events (or other referenced objects ?) into person or family pages
+# TODO: Export tags
+# TODO: LDS stuff
+# TODO: Statistic charts
+# TODO: Calendar page (see web calendar and calendar report)
+# TODO: approximate search, which includes all the fields (names, attributes, notes, etc.) and not only titles and names
+# TODO: pages for events and notes
+# TODO: media copy like narrative web (in several directories), or without obfuscated names.
+# TODO: Unify idexes (surnames and others)
 #      surnames presented as table (like other indexes)
 #      persons, families, sources, places presented as lists, with a section per letter (like surnames index)
 #      Add a configuration parameter to choose between both
 
 # For the SVG graph:
-#TODO: The right-click on the persons is not user-friendly (user usually don't use right click). should be replaced by something else
-#TODO: Refactor: the scaling should be performed by SVG transform
-#TODO: very small texts not printed properly
-#TODO: Shrunk the fonts for the largest generation to fit it on the page (same font size for all the persons of the same generation)
-#TODO: if possible, add a feature to expand/minimize branches of the graphs. accessible with Ctrl-click
-#TODO: Thumbnails in graphs
+# TODO: The right-click on the persons is not user-friendly (user usually don't use right click). should be replaced by something else
+# TODO: Refactor: the scaling should be performed by SVG transform
+# TODO: very small texts not printed properly
+# TODO: Shrunk the fonts for the largest generation to fit it on the page (same font size for all the persons of the same generation)
+# TODO: if possible, add a feature to expand/minimize branches of the graphs. accessible with Ctrl-click
+# TODO: Thumbnails in graphs
 
 
-#------------------------------------------------
+# ------------------------------------------------
 # python modules
-#------------------------------------------------
+# ------------------------------------------------
 from __future__ import print_function, division
 from functools import partial
 import os
@@ -122,16 +122,20 @@ import shutil
 import codecs
 import tarfile
 import tempfile
+
 if sys.version_info[0] < 3:
     from cStringIO import StringIO
+
     string_types = basestring
 else:
     from io import StringIO
+
     string_types = str
 from unicodedata import normalize
 from collections import defaultdict, OrderedDict
 from xml.sax.saxutils import escape
-if (sys.version_info[0] < 3):
+
+if sys.version_info[0] < 3:
     import urlparse, urllib
 else:
     import urllib.parse as urlparse, urllib.request as urllib
@@ -141,26 +145,29 @@ from hashlib import md5
 
 from operator import itemgetter
 from decimal import Decimal, getcontext
+
 getcontext().prec = 8
 
 
-#------------------------------------------------
+# ------------------------------------------------
 # Set up logging
-#------------------------------------------------
+# ------------------------------------------------
 import logging
+
 log = logging.getLogger(".DynamicWeb")
 # The log initialization shall be performed after Gramps start-up (i.e. not here)
 
-#------------------------------------------------
+# ------------------------------------------------
 # Gramps module
-#------------------------------------------------
+# ------------------------------------------------
 
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # Internationalisation
 #
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 from gramps.gen.const import IMAGE_DIR, GRAMPS_LOCALE as glocale
+
 try:
     _trans = glocale.get_addon_translator(__file__)
 except ValueError:
@@ -168,28 +175,62 @@ except ValueError:
 _ = _trans.sgettext
 
 from gramps.version import VERSION, VERSION_TUPLE
-DWR_VERSION_410 = (VERSION_TUPLE[0] >= 5) or ((VERSION_TUPLE[0] >= 4) and (VERSION_TUPLE[1] >= 1))
-DWR_VERSION_412 = (VERSION_TUPLE[0] >= 5) or ((VERSION_TUPLE[0] >= 4) and (VERSION_TUPLE[1] >= 1) and (VERSION_TUPLE[2] >= 2))
-DWR_VERSION_420 = (VERSION_TUPLE[0] >= 5) or ((VERSION_TUPLE[0] >= 4) and (VERSION_TUPLE[1] >= 2))
-DWR_VERSION_500 = (VERSION_TUPLE[0] >= 5)
-from gramps.gen.lib import (ChildRefType, Date, EventType, FamilyRelType, Name,
-                            NameType, Person, UrlType, NoteType,
-                            EventRoleType, Family, Event, Place, Source,
-                            Citation, Repository, Note, Tag,
-                            MediaRef, Location)
-if (DWR_VERSION_500):
+
+DWR_VERSION_410 = (VERSION_TUPLE[0] >= 5) or (
+    (VERSION_TUPLE[0] >= 4) and (VERSION_TUPLE[1] >= 1)
+)
+DWR_VERSION_412 = (VERSION_TUPLE[0] >= 5) or (
+    (VERSION_TUPLE[0] >= 4) and (VERSION_TUPLE[1] >= 1) and (VERSION_TUPLE[2] >= 2)
+)
+DWR_VERSION_420 = (VERSION_TUPLE[0] >= 5) or (
+    (VERSION_TUPLE[0] >= 4) and (VERSION_TUPLE[1] >= 2)
+)
+DWR_VERSION_500 = VERSION_TUPLE[0] >= 5
+from gramps.gen.lib import (
+    ChildRefType,
+    Date,
+    EventType,
+    FamilyRelType,
+    Name,
+    NameType,
+    Person,
+    UrlType,
+    NoteType,
+    EventRoleType,
+    Family,
+    Event,
+    Place,
+    Source,
+    Citation,
+    Repository,
+    Note,
+    Tag,
+    MediaRef,
+    Location,
+)
+
+if DWR_VERSION_500:
     from gramps.gen.lib import Media as _Media
 else:
     from gramps.gen.lib import MediaObject as _Media
-if (DWR_VERSION_410):
+if DWR_VERSION_410:
     from gramps.gen.lib import PlaceType
 from gramps.gen.lib.date import Today
 from gramps.gen.lib.gcalendar import gregorian_ymd
 from gramps.gen.const import PROGRAM_NAME, URL_HOMEPAGE
-from gramps.gen.plug.menu import (PersonOption, NumberOption, StringOption,
-    BooleanOption, EnumeratedListOption, FilterOption,
-    NoteOption, MediaOption, DestinationOption, ColorOption)
-from gramps.gen.plug.report import (Report, Bibliography)
+from gramps.gen.plug.menu import (
+    PersonOption,
+    NumberOption,
+    StringOption,
+    BooleanOption,
+    EnumeratedListOption,
+    FilterOption,
+    NoteOption,
+    MediaOption,
+    DestinationOption,
+    ColorOption,
+)
+from gramps.gen.plug.report import Report, Bibliography
 from gramps.gen.plug.report import utils
 from gramps.gen.plug.report import MenuReportOptions
 from gramps.gen.plug.report import stdoptions
@@ -198,18 +239,25 @@ from gramps.gen.utils.config import get_researcher
 from gramps.gen.utils.string import conf_strings
 from gramps.gen.utils.file import media_path_full
 from gramps.gen.utils.alive import probably_alive
-from gramps.gen.utils.db import get_birth_or_fallback, get_death_or_fallback, get_marriage_or_fallback
+from gramps.gen.utils.db import (
+    get_birth_or_fallback,
+    get_death_or_fallback,
+    get_marriage_or_fallback,
+)
 from gramps.gen.constfunc import win, get_curr_dir
 from gramps.gen.config import config
-if (DWR_VERSION_500):
+
+if DWR_VERSION_500:
     from gramps.gen.utils.thumbnails import get_thumbnail_path
 else:
     from gramps.gui.thumbnails import get_thumbnail_path
 from gramps.gen.utils.image import image_size, resize_to_jpeg_buffer
 from gramps.gen.display.name import displayer as _nd
-if (DWR_VERSION_412):
+
+if DWR_VERSION_412:
     from gramps.gen.display.place import displayer as _pd
 from gramps.gen.datehandler import get_date, format_time, displayer as _dd
+
 if DWR_VERSION_500:
     from gramps.gen.proxy import CacheProxyDb
 else:
@@ -229,11 +277,12 @@ from gramps.plugins.webreport.alphabeticindex import first_letter
 from gramps.gen.utils.place import conv_lat_lon
 
 from gramps.gen.relationship import get_relationship_calculator
-if (DWR_VERSION_410):
+
+if DWR_VERSION_410:
     from gramps.gen.utils.location import get_main_location
 
 
-if (DWR_VERSION_500):
+if DWR_VERSION_500:
     from gramps.gen.const import (
         GENCOLOR,
         GRADIENTSCALE,
@@ -263,9 +312,9 @@ from gramps.gui.utils import hex_to_rgb
 
 SORT_KEY = glocale.sort_key
 
-#------------------------------------------------
+# ------------------------------------------------
 # constants
-#------------------------------------------------
+# ------------------------------------------------
 
 STREET = _("Street")
 LOCALITY = _("Locality")
@@ -289,8 +338,7 @@ PAGES_NAMES = [
 ]
 #: Custom pages names
 CUSTOM_PAGES_NAMES = [
-    _("Custom page %(index)i") % {"index": i + 1}
-    for i in range(NB_CUSTOM_PAGES)
+    _("Custom page %(index)i") % {"index": i + 1} for i in range(NB_CUSTOM_PAGES)
 ]
 #: Maximum number of pages
 NB_TOTAL_PAGES_MAX = len(PAGES_NAMES) + NB_CUSTOM_PAGES
@@ -302,7 +350,7 @@ NB_TOTAL_PAGES_MAX = len(PAGES_NAMES) + NB_CUSTOM_PAGES
     # PAGE_STATISTICS,
     # PAGE_CALENDAR,
     PAGE_INDEX,
-    PAGE_CUSTOM
+    PAGE_CUSTOM,
 ) = range(len(PAGES_NAMES) + 1)
 
 # List of the descriptions of the tree graphs types
@@ -318,7 +366,7 @@ SVG_TREE_TYPES = [
     SVG_TREE_TYPE_DESCENDING,
     SVG_TREE_TYPE_DESCENDING_SPOUSES,
     SVG_TREE_TYPE_ASCDESC,
-    SVG_TREE_TYPE_ASCDESC_SPOUSES
+    SVG_TREE_TYPE_ASCDESC_SPOUSES,
 ) = range(len(SVG_TREE_TYPES))
 DEFAULT_SVG_TREE_TYPE = SVG_TREE_TYPE_ASCDESC
 
@@ -331,36 +379,39 @@ SVG_TREE_SHAPES = [
     _("Half Circle"),
     _("Quadrant"),
 ]
-(SVG_TREE_SHAPE_VERTICAL_TOP_BOTTOM,
-SVG_TREE_SHAPE_VERTICAL_BOTTOM_TOP,
-SVG_TREE_SHAPE_HORIZONTAL_LEFT_RIGHT,
-SVG_TREE_SHAPE_HORIZONTAL_RIGHT_LEFT,
-SVG_TREE_SHAPE_CIRCLE,
-SVG_TREE_SHAPE_HALF_CIRCLE,
-SVG_TREE_SHAPE_QUADRANT) = range(len(SVG_TREE_SHAPES))
+(
+    SVG_TREE_SHAPE_VERTICAL_TOP_BOTTOM,
+    SVG_TREE_SHAPE_VERTICAL_BOTTOM_TOP,
+    SVG_TREE_SHAPE_HORIZONTAL_LEFT_RIGHT,
+    SVG_TREE_SHAPE_HORIZONTAL_RIGHT_LEFT,
+    SVG_TREE_SHAPE_CIRCLE,
+    SVG_TREE_SHAPE_HALF_CIRCLE,
+    SVG_TREE_SHAPE_QUADRANT,
+) = range(len(SVG_TREE_SHAPES))
 DEFAULT_SVG_TREE_SHAPE = SVG_TREE_SHAPE_HORIZONTAL_LEFT_RIGHT
 
 SVG_TREE_DISTRIB_ASC = [
-    _('Size proportional to number of ancestors'),
-    _('Homogeneous parents distribution'),
+    _("Size proportional to number of ancestors"),
+    _("Homogeneous parents distribution"),
 ]
 SVG_TREE_DISTRIB_DSC = [
-    _('Size proportional to number of descendants'),
-    _('Homogeneous children distribution'),
+    _("Size proportional to number of descendants"),
+    _("Homogeneous children distribution"),
 ]
-(SVG_TREE_DISTRIB_PROPORTIONAL,
-SVG_TREE_DISTRIB_HOMOGENEOUS) = range(len(SVG_TREE_DISTRIB_ASC))
+(SVG_TREE_DISTRIB_PROPORTIONAL, SVG_TREE_DISTRIB_HOMOGENEOUS) = range(
+    len(SVG_TREE_DISTRIB_ASC)
+)
 DEFAULT_SVG_TREE_DISTRIB = SVG_TREE_DISTRIB_PROPORTIONAL
 
 SVG_TREE_BACKGROUNDS = [
-    _('Gender colors'),
-    _('Generation based gradient'),
-    _('Age based gradient'),
-    _('Single main (filter) color'),
-    _('Time period based gradient'),
-    _('White'),
-    _('Color scheme classic report'),
-    _('Color scheme classic view'),
+    _("Gender colors"),
+    _("Generation based gradient"),
+    _("Age based gradient"),
+    _("Single main (filter) color"),
+    _("Time period based gradient"),
+    _("White"),
+    _("Color scheme classic report"),
+    _("Color scheme classic view"),
 ]
 (
     SVG_TREE_BACKGROUND_GENDER,
@@ -375,12 +426,12 @@ SVG_TREE_BACKGROUNDS = [
 DEFAULT_SVG_TREE_BACKGROUND = SVG_TREE_BACKGROUND_GENERATION
 
 CHART_BACKGROUNDS = [
-    _('Single main (filter) color'),
-    _('Gender colors'),
-    _('Gradient'),
-    _('Color scheme classic report'),
-    _('Color scheme classic view'),
-    _('White'),
+    _("Single main (filter) color"),
+    _("Gender colors"),
+    _("Gradient"),
+    _("Color scheme classic report"),
+    _("Color scheme classic view"),
+    _("White"),
 ]
 (
     CHART_BACKGROUND_SINGLE,
@@ -401,26 +452,26 @@ WEB_TEMPLATE_LIST = (
 )
 
 # Files not copied from the template directory to the website
-# (as regex)
+# (as regex)
 WEB_TEMPLATE_EXCLUDED = [
-    r'\.less',
-    r'bootstrap[/\\]CNAME',
-    r'bootstrap[/\\]fonts',
-    r'bootstrap[/\\]grunt',
-    r'bootstrap[/\\]less',
-    r'bootstrap[/\\]node_modules',
-    r'bootstrap[/\\]js',
-    r'bootstrap[/\\]\w*\.\w*',
+    r"\.less",
+    r"bootstrap[/\\]CNAME",
+    r"bootstrap[/\\]fonts",
+    r"bootstrap[/\\]grunt",
+    r"bootstrap[/\\]less",
+    r"bootstrap[/\\]node_modules",
+    r"bootstrap[/\\]js",
+    r"bootstrap[/\\]\w*\.\w*",
 ]
 
 
-INCLUDE_LIVING_VALUE = 99 #: Arbitrary number
+INCLUDE_LIVING_VALUE = 99  #: Arbitrary number
 
 (
     COPY_MEDIA_RENAME,
     COPY_MEDIA_UNCHANGED,
     REFERENCE_MEDIA,
-) = range (3)
+) = range(3)
 
 # Indexes in the L{DynamicWebReport.obj_dict} and L{DynamicWebReport.bkref_dict} elements
 OBJDICT_NAME = 0
@@ -434,15 +485,19 @@ BKREF_REFOBJ = 2
 SPLIT = 5000
 
 # Default number of entries in the indexes
-#INDEXES_SIZES = [[10, 50, 100, 500, 1000, -1], [10, 50, 100, 500, 1000, _('all')]] # too long to render over 5000
-INDEXES_SIZES = [[10, 50, 100, 500, 1000, 5000], ["10", "50", "100", "500", "1000",  "5000"]]
+# INDEXES_SIZES = [[10, 50, 100, 500, 1000, -1], [10, 50, 100, 500, 1000, _('all')]] # too long to render over 5000
+INDEXES_SIZES = [
+    [10, 50, 100, 500, 1000, 5000],
+    ["10", "50", "100", "500", "1000", "5000"],
+]
 
 #
 _html_dbl_quotes = re.compile(r'([^"]*) " ([^"]*) " (.*)', re.VERBOSE)
 _html_sng_quotes = re.compile(r"([^']*) ' ([^']*) ' (.*)", re.VERBOSE)
 
+
 def html_escape(text):
-    '''Convert the text and replace some characters with a &# variant.'''
+    """Convert the text and replace some characters with a &# variant."""
     # First single characters, no quotes
     text = escape(text)
     # Deal with double quotes.
@@ -451,52 +506,53 @@ def html_escape(text):
         text = "%s" "&#8220;" "%s" "&#8221;" "%s" % m.groups()
         m = _html_dbl_quotes.match(text)
     # Replace remaining double quotes.
-    text = text.replace('"', '&#34;')
+    text = text.replace('"', "&#34;")
     # Deal with single quotes.
-    text = text.replace("'s ", '&#8217;s ')
+    text = text.replace("'s ", "&#8217;s ")
     m = _html_sng_quotes.match(text)
     while m:
         text = "%s" "&#8216;" "%s" "&#8217;" "%s" % m.groups()
         m = _html_sng_quotes.match(text)
     # Replace remaining single quotes.
-    text = text.replace("'", '&#39;')
+    text = text.replace("'", "&#39;")
 
     return text
 
 
 def script_escape(text):
-    '''Convert the text and escape quotes, backslashes and end-of-lines
-    '''
-    return(text.
-        replace("\\", "\\\\").
-        replace("'", "\\'").
-        replace("\"", "\\\"").
-        replace("\n", "\\n")
+    """Convert the text and escape quotes, backslashes and end-of-lines"""
+    return (
+        text.replace("\\", "\\\\")
+        .replace("'", "\\'")
+        .replace('"', '\\"')
+        .replace("\n", "\\n")
     )
 
 
 def html_text(html):
-    '''Get the string corresponding to an L{Html} object'''
-    if (isinstance(html, string_types)): return(html.strip())
+    """Get the string corresponding to an L{Html} object"""
+    if isinstance(html, string_types):
+        return html.strip()
     sw = StringIO()
-    html.write(partial(print, file = sw), indent = "", tabs = "")
-    return(sw.getvalue().strip())
+    html.write(partial(print, file=sw), indent="", tabs="")
+    return sw.getvalue().strip()
 
 
-def format_date(date, gedcom = False, iso = False):
-    '''Give the date as a string
+def format_date(date, gedcom=False, iso=False):
+    """Give the date as a string
     @param iso: If True, the date should be given in ISO format: YYYY-MM-DD
     @type iso: Boolean
-    '''
-    if (not date): return("")
+    """
+    if not date:
+        return ""
 
     val = ""
 
-    if (iso):
+    if iso:
         # TODO: export ISO dates
         val = _dd.display_iso(date) or ""
 
-    elif (gedcom):
+    elif gedcom:
         start = date.get_start_date()
         if start != Date.EMPTY:
             cal = date.get_calendar()
@@ -510,12 +566,14 @@ def format_date(date, gedcom = False, iso = False):
                 val = "%sFROM %s TO %s" % (
                     qual_text,
                     make_gedcom_date(start, cal, mod, None),
-                    make_gedcom_date(date.get_stop_date(), cal, mod, None))
+                    make_gedcom_date(date.get_stop_date(), cal, mod, None),
+                )
             elif mod == Date.MOD_RANGE:
                 val = "%sBET %s AND %s" % (
                     qual_text,
                     make_gedcom_date(start, cal, mod, None),
-                    make_gedcom_date(date.get_stop_date(), cal, mod, None))
+                    make_gedcom_date(date.get_stop_date(), cal, mod, None),
+                )
             else:
                 val = make_gedcom_date(start, cal, mod, quality)
 
@@ -523,31 +581,32 @@ def format_date(date, gedcom = False, iso = False):
         # Regular Gramps place displayer
         val = _dd.display(date) or ""
 
-    return(val)
+    return val
 
 
 def rmtree_fix(dirname):
-    '''Windows fix: Python shutil.rmtree does not work properly on Windows.
+    """Windows fix: Python shutil.rmtree does not work properly on Windows.
     Unfortunately this fix is not completely working. Don't know why.
     The strategy is to rename the directory first, in order to let Windows delete it in differed time.
-    '''
-    #TODO: Fix shutil.rmtree on Windows
+    """
+    # TODO: Fix shutil.rmtree on Windows
     tmp = dirname + "_removetree_tmp"
     os.rename(dirname, tmp)
     shutil.rmtree(tmp)
     # Wait for rmtree to complete
     for i in range(100):
-        if (not os.path.exists(tmp)): break
+        if not os.path.exists(tmp):
+            break
         time.sleep(0.1)
 
 
-
-#------------------------------------------------
+# ------------------------------------------------
 #
-#------------------------------------------------
+# ------------------------------------------------
+
 
 class DynamicWebReport(Report):
-    '''
+    """
     Class DynamicWebReport
 
     Extracts information from the database and exports the data into Javascript and HTML files
@@ -578,10 +637,10 @@ class DynamicWebReport(Report):
      - reference object (MediaRef, EventRef) if any.
 
     The report is generated by L{write_report}
-    '''
+    """
 
     def __init__(self, database, options, user):
-        '''
+        """
         Create WebReport object that produces the report.
 
         The arguments are:
@@ -589,7 +648,7 @@ class DynamicWebReport(Report):
         database - the Gramps database instance
         options - instance of the Options class for this report
         user - instance of a gen.user.User()
-        '''
+        """
 
         Report.__init__(self, database, options, user)
         self.user = user
@@ -606,90 +665,93 @@ class DynamicWebReport(Report):
             stdoptions.run_living_people_option(self, menu)
             self.database = CacheProxyDb(self.database)
         else:
-            if not self.options['incl_private']:
+            if not self.options["incl_private"]:
                 self.database = PrivateProxyDb(database)
             else:
                 self.database = database
-            livinginfo = self.options['living_people']
-            yearsafterdeath = self.options['years_past_death']
+            livinginfo = self.options["living_people"]
+            yearsafterdeath = self.options["years_past_death"]
             if livinginfo != INCLUDE_LIVING_VALUE:
-                self.database = LivingProxyDb(self.database, livinginfo, None, yearsafterdeath)
+                self.database = LivingProxyDb(
+                    self.database, livinginfo, None, yearsafterdeath
+                )
 
-        filters_option = menu.get_option_by_name('filter')
+        filters_option = menu.get_option_by_name("filter")
         self.filter = filters_option.get_filter()
 
-        self.target_path = self.options['target'] #: Destination directory
-        self.title = self.options['title'] #: Web site title. Web pages title are in the form "title of the page - title of the site"
+        self.target_path = self.options["target"]  #: Destination directory
+        self.title = self.options[
+            "title"
+        ]  #: Web site title. Web pages title are in the form "title of the page - title of the site"
 
-        self.author = get_researcher().get_name() #: Database author name. Used in copyright text.
+        self.author = (
+            get_researcher().get_name()
+        )  #: Database author name. Used in copyright text.
         if self.author:
-            self.author = self.author.replace(',,,', '')
+            self.author = self.author.replace(",,,", "")
 
         # The following data are local copies of the options. Refer to the L{DynamicWebOptions} class for more details.
         # self.inc_events = self.options['inc_events']
         self.inc_events = False
-        self.inc_places = self.options['inc_places']
-        self.inc_families = self.options['inc_families']
-        self.inc_families_index = self.options['inc_families_index']
-        self.inc_gallery = self.options['inc_gallery']
-        self.copy_media = int(self.options['copy_media'])
-        self.inc_notes = self.options['inc_notes']
-        self.print_notes_type = self.options['print_notes_type']
-        self.inc_sources = self.options['inc_sources']
-        self.inc_repositories = self.options['inc_repositories']
+        self.inc_places = self.options["inc_places"]
+        self.inc_families = self.options["inc_families"]
+        self.inc_families_index = self.options["inc_families_index"]
+        self.inc_gallery = self.options["inc_gallery"]
+        self.copy_media = int(self.options["copy_media"])
+        self.inc_notes = self.options["inc_notes"]
+        self.print_notes_type = self.options["print_notes_type"]
+        self.inc_sources = self.options["inc_sources"]
+        self.inc_repositories = self.options["inc_repositories"]
         # Repositories are not exported unless sources are exported
         self.inc_repositories = self.inc_repositories and self.inc_sources
-        self.inc_addresses = self.options['inc_addresses']
-        self.name_format = self.options['name_format']
-        self.short_name_format = self.options['short_name_format']
-        self.encoding = self.options['encoding']
-        self.copyright = self.options['copyright']
-        self.inc_gendex = self.options['inc_gendex']
-        self.sourceauthor = self.options['sourceauthor']
-        self.template = self.options['template']
-        self.inc_pageconf = self.options['inc_pageconf']
-        self.pages_number = self.options['pages_number']
+        self.inc_addresses = self.options["inc_addresses"]
+        self.name_format = self.options["name_format"]
+        self.short_name_format = self.options["short_name_format"]
+        self.encoding = self.options["encoding"]
+        self.copyright = self.options["copyright"]
+        self.inc_gendex = self.options["inc_gendex"]
+        self.sourceauthor = self.options["sourceauthor"]
+        self.template = self.options["template"]
+        self.inc_pageconf = self.options["inc_pageconf"]
+        self.pages_number = self.options["pages_number"]
         # Validate pages number in proper range
         self.pages_number = max(1, min(NB_TOTAL_PAGES_MAX, self.pages_number))
         self.page_content = [
-            self.options['page_content_%i' %i]
-            for i in range(self.pages_number)
+            self.options["page_content_%i" % i] for i in range(self.pages_number)
         ]
         # Remove duplicates in self.page_content
         seen = set()
-        self.page_content = [x for x in self.page_content if not (x in seen or seen.add(x))]
+        self.page_content = [
+            x for x in self.page_content if not (x in seen or seen.add(x))
+        ]
         self.custom_page_name = [
-            self.options['custom_page_name_%i' %i]
-            for i in range(NB_CUSTOM_PAGES)
+            self.options["custom_page_name_%i" % i] for i in range(NB_CUSTOM_PAGES)
         ]
         self.custom_menu = [
-            self.options['custom_menu_%i' %i]
-            for i in range(NB_CUSTOM_PAGES)
+            self.options["custom_menu_%i" % i] for i in range(NB_CUSTOM_PAGES)
         ]
         self.custom_note = [
-            self.options['custom_note_%i' %i]
-            for i in range(NB_CUSTOM_PAGES)
+            self.options["custom_note_%i" % i] for i in range(NB_CUSTOM_PAGES)
         ]
         self._backend = HtmlBackend()
         self._backend.build_link = self.build_link
 
         # Initialize dictionary of db_sizes
         self.db_sizes = {
-            'I': 0,
-            'F': 0,
-            'S': 0,
-            'C': 0,
-            'R': 0,
-            'M': 0,
-            'P': 0,
-            'N': 0,
+            "I": 0,
+            "F": 0,
+            "S": 0,
+            "C": 0,
+            "R": 0,
+            "M": 0,
+            "P": 0,
+            "N": 0,
         }
 
-
     def write_report(self):
-        '''
+        """
         Report generation
-        '''
+        """
 
         # Initialize the logger
         # This initialization shall be performed after Gramps has start-up
@@ -705,8 +767,10 @@ class DynamicWebReport(Report):
         elif not os.path.isdir(dir_name):
             parent_dir = os.path.dirname(dir_name)
             if not os.path.isdir(parent_dir):
-                msg = _("Neither %(current)s nor %(parent)s are directories") % \
-                      {'current': dir_name, 'parent': parent_dir}
+                msg = _("Neither %(current)s nor %(parent)s are directories") % {
+                    "current": dir_name,
+                    "parent": parent_dir,
+                }
                 self.user.notify_error(msg)
                 return
             else:
@@ -714,15 +778,19 @@ class DynamicWebReport(Report):
                     os.mkdir(dir_name)
                 except IOError as value:
                     msg = _("Could not create the directory: %(path)s") % {
-                          "path": dir_name + "\n" + value[1]}
+                        "path": dir_name + "\n" + value[1]
+                    }
                     self.user.notify_error(msg)
                     return
                 except:
-                    msg = _("Could not create the directory: %(path)s") % {"path":  dir_name}
+                    msg = _("Could not create the directory: %(path)s") % {
+                        "path": dir_name
+                    }
                     self.user.notify_error(msg)
                     return
-        config.set('paths.website-directory', os.path.dirname(self.target_path) + os.sep)
-
+        config.set(
+            "paths.website-directory", os.path.dirname(self.target_path) + os.sep
+        )
 
         # for use with discovering biological, half, and step siblings for use
         # in display_ind_parents()...
@@ -744,12 +812,19 @@ class DynamicWebReport(Report):
         #################################################
         # Pass 2 Generate the web pages
 
-        with self.user.progress(_("Dynamic Web Site Report"), _("Exporting family tree data ..."), 11) as step:
+        with self.user.progress(
+            _("Dynamic Web Site Report"), _("Exporting family tree data ..."), 11
+        ) as step:
             self.created_files = []
             # Create directories
-            for dirname in ["thumb"] + (["image"] if (self.copy_media in [COPY_MEDIA_RENAME, COPY_MEDIA_UNCHANGED]) else []):
+            for dirname in ["thumb"] + (
+                ["image"]
+                if (self.copy_media in [COPY_MEDIA_RENAME, COPY_MEDIA_UNCHANGED])
+                else []
+            ):
                 dirpath = os.path.join(self.target_path, dirname)
-                if (not os.path.isdir(dirpath)): os.mkdir(dirpath)
+                if not os.path.isdir(dirpath):
+                    os.mkdir(dirpath)
             # Copy web site files
             self.copy_template_files()
             step()
@@ -780,9 +855,8 @@ class DynamicWebReport(Report):
             self.create_archive()
             step()
 
-
     def _export_individuals(self):
-        '''
+        """
         Export individuals data in Javascript file
         The individuals data is stored in the Javascript Array "I"
         'I' is sorted by person name
@@ -842,63 +916,65 @@ class DynamicWebReport(Report):
           - assoc: A list of associations in the form:
               [person index (in table 'I'), relationship, notes, list of citations (in table 'C')]
           - change_time: last record modification date
-        '''
+        """
         jdatas = []
         person_list = list(self.obj_dict[Person].keys())
-        person_list.sort(key = lambda x: self.obj_dict[Person][x][OBJDICT_INDEX])
+        person_list.sort(key=lambda x: self.obj_dict[Person][x][OBJDICT_INDEX])
         for person_handle in person_list:
             jdata = {}
             person = self.database.get_person_from_handle(person_handle)
-            jdata['gid'] = self.obj_dict[Person][person_handle][OBJDICT_GID]
+            jdata["gid"] = self.obj_dict[Person][person_handle][OBJDICT_GID]
             # Names
             name = self.get_name(person) or ""
-            jdata['name'] = name
+            jdata["name"] = name
             name = self.get_short_name(person) or ""
-            jdata['short_name'] = name
-            jdata['names'] = self.get_name_data(person)
+            jdata["short_name"] = name
+            jdata["names"] = self.get_name_data(person)
             p_name = _nd.primary_surname(person.get_primary_name())
-            jdata['letter'] = first_letter(p_name).strip()
+            jdata["letter"] = first_letter(p_name).strip()
             # Gender
             gender = ""
-            if (person.get_gender() == Person.MALE): gender = "M"
-            if (person.get_gender() == Person.FEMALE): gender = "F"
-            if (person.get_gender() == Person.UNKNOWN): gender = "U"
-            jdata['gender'] = gender
+            if person.get_gender() == Person.MALE:
+                gender = "M"
+            if person.get_gender() == Person.FEMALE:
+                gender = "F"
+            if person.get_gender() == Person.UNKNOWN:
+                gender = "U"
+            jdata["gender"] = gender
             # Years
-            jdata['birth_date'] = self.get_birth_date(person)
-            jdata['birth_sdn'] = self.get_birth_sdn(person)
-            jdata['birth_place'] = self.get_birth_place(person)
-            jdata['death_date'] = self.get_death_date(person)
-            jdata['death_sdn'] = self.get_death_sdn(person)
-            jdata['death_place'] = self.get_death_place(person)
+            jdata["birth_date"] = self.get_birth_date(person)
+            jdata["birth_sdn"] = self.get_birth_sdn(person)
+            jdata["birth_place"] = self.get_birth_place(person)
+            jdata["death_date"] = self.get_death_date(person)
+            jdata["death_sdn"] = self.get_death_sdn(person)
+            jdata["death_place"] = self.get_death_place(person)
             # Age at death
-            jdata['death_age'] = self.get_death_age(person)
+            jdata["death_age"] = self.get_death_age(person)
             # Events
-            jdata['events'] = self._data_events(person)
+            jdata["events"] = self._data_events(person)
             # Addresses
-            jdata['addrs'] = self._data_addresses(person)
+            jdata["addrs"] = self._data_addresses(person)
             # Get individual notes
-            jdata['note'] = self.get_notes_text(person)
+            jdata["note"] = self.get_notes_text(person)
             # Get individual media
-            jdata['media'] = self._data_media_reference_index(person)
+            jdata["media"] = self._data_media_reference_index(person)
             # Get individual sources
-            jdata['cita'] = self._data_source_citation_index(person)
+            jdata["cita"] = self._data_source_citation_index(person)
             # Get individual attributes
-            jdata['attr'] = self._data_attributes(person)
+            jdata["attr"] = self._data_attributes(person)
             # Get individual URL
-            jdata['urls'] = self._data_url_list(person)
+            jdata["urls"] = self._data_url_list(person)
             # Families (partners)
-            jdata['fams'] = self._data_families_index(person)
+            jdata["fams"] = self._data_families_index(person)
             # Families (parents)
-            jdata['famc'] = self._data_parents_families_index(person)
+            jdata["famc"] = self._data_parents_families_index(person)
             # Associations
-            jdata['assoc'] = self._data_associations(person)
+            jdata["assoc"] = self._data_associations(person)
             # Last change date
-            jdata['change_time'] = format_time(person.get_change_time())
+            jdata["change_time"] = format_time(person.get_change_time())
             #
             jdatas.append(jdata)
         self.update_db_file("I", jdatas)
-
 
     def get_name_data(self, person):
         primary_name = person.get_primary_name()
@@ -910,51 +986,54 @@ class DynamicWebReport(Report):
             jdata = {}
             name.set_display_as(self.name_format)
             pname = _nd.display_name(name)
-            jdata['full'] = pname
+            jdata["full"] = pname
             # Type
-            jdata['type'] = str(name.get_type())
+            jdata["type"] = str(name.get_type())
             # Title
             title = name.get_title() or ""
-            jdata['title'] = str(title)
+            jdata["title"] = str(title)
             # Nickname
             nick_name = name.get_nick_name()
-            if (nick_name == first_name or not nick_name): nick_name = ""
-            jdata['nick'] = str(nick_name)
+            if nick_name == first_name or not nick_name:
+                nick_name = ""
+            jdata["nick"] = str(nick_name)
             # Callname
             call_name = name.get_call_name()
-            if (call_name == first_name or not call_name): call_name = ""
-            jdata['call'] = str(call_name)
+            if call_name == first_name or not call_name:
+                call_name = ""
+            jdata["call"] = str(call_name)
             # Given
             given = name.get_first_name() or ""
-            jdata['given'] = str(given)
+            jdata["given"] = str(given)
             # Suffix
             suffix = name.get_suffix() or ""
-            jdata['suffix'] = str(suffix)
+            jdata["suffix"] = str(suffix)
             # Surnames
             surnames = name.get_surname_list()
-            jdata['surnames'] = [str(surname.get_surname() or "") for surname in surnames]
+            jdata["surnames"] = [
+                str(surname.get_surname() or "") for surname in surnames
+            ]
             # Family nickname
             fnick = name.get_family_nick_name() or ""
-            jdata['fam_nick'] = str(fnick)
+            jdata["fam_nick"] = str(fnick)
             # Get name date
             datetext = format_date(name.date) or ""
-            jdata['date'] = datetext
+            jdata["date"] = datetext
             # Get name notes
-            jdata['note'] = self.get_notes_text(name)
+            jdata["note"] = self.get_notes_text(name)
             # Get name sources
-            jdata['cita'] = self._data_source_citation_index(name)
+            jdata["cita"] = self._data_source_citation_index(name)
             #
             jdatas.append(jdata)
-        return(jdatas)
+        return jdatas
 
-
-    def get_name_object(self, person, maiden_name = None):
-        '''
+    def get_name_object(self, person, maiden_name=None):
+        """
         Return person's name, unless maiden_name given, unless married_name
         listed.
         @param: person -- person object from database
         @param: maiden_name -- Female's family surname
-        '''
+        """
         # Get all of a person's names
         primary_name = person.get_primary_name()
         married_name = None
@@ -962,7 +1041,7 @@ class DynamicWebReport(Report):
         for name in names:
             if int(name.get_type()) == NameType.MARRIED:
                 married_name = name
-                break # use first
+                break  # use first
         # Now, decide which to use:
         if maiden_name is not None:
             if married_name is not None:
@@ -973,23 +1052,20 @@ class DynamicWebReport(Report):
                 surname_obj.set_surname(maiden_name)
         else:
             name = Name(primary_name)
-        return(name)
+        return name
 
-
-    def get_name(self, person, maiden_name = None):
+    def get_name(self, person, maiden_name=None):
         name = self.get_name_object(person, maiden_name)
         name.set_display_as(self.name_format)
         return _nd.display_name(name)
 
-
-    def get_short_name(self, person, maiden_name = None):
+    def get_short_name(self, person, maiden_name=None):
         name = self.get_name_object(person, maiden_name)
         name.set_display_as(self.short_name_format)
         return _nd.display_name(name)
 
-
     def _export_families(self):
-        '''
+        """
         Export families data in Javascript file
         The families data is stored in the Javascript Array "F"
         'F' is sorted by family full name
@@ -1030,49 +1106,48 @@ class DynamicWebReport(Report):
           - chil: A list of child in the form:
               [index (in table 'I'), relation to father, relation to mother, notes, list of citations]
           - change_time: last record modification date
-        '''
+        """
         jdatas = []
         family_list = list(self.obj_dict[Family].keys())
-        family_list.sort(key = lambda x: self.obj_dict[Family][x][OBJDICT_INDEX])
+        family_list.sort(key=lambda x: self.obj_dict[Family][x][OBJDICT_INDEX])
         for family_handle in family_list:
             family = self.database.get_family_from_handle(family_handle)
             jdata = {}
-            jdata['gid'] = self.obj_dict[Family][family_handle][OBJDICT_GID]
+            jdata["gid"] = self.obj_dict[Family][family_handle][OBJDICT_GID]
             # Names
             name = self.get_family_name(family) or ""
-            jdata['name'] = name
-            jdata['type'] = str(family.get_relationship())
+            jdata["name"] = name
+            jdata["type"] = str(family.get_relationship())
             # Years
-            jdata['marr_date'] = self.get_marriage_date(family)
-            jdata['marr_sdn'] = self.get_marriage_sdn(family)
-            jdata['marr_place'] = self.get_marriage_place(family)
+            jdata["marr_date"] = self.get_marriage_date(family)
+            jdata["marr_sdn"] = self.get_marriage_sdn(family)
+            jdata["marr_place"] = self.get_marriage_place(family)
             # Events
-            jdata['events'] = self._data_events(family)
+            jdata["events"] = self._data_events(family)
             # Get family notes
-            jdata['note'] = self.get_notes_text(family)
+            jdata["note"] = self.get_notes_text(family)
             # Get family media
-            jdata['media'] = self._data_media_reference_index(family)
+            jdata["media"] = self._data_media_reference_index(family)
             # Get family sources
-            jdata['cita'] = self._data_source_citation_index(family)
+            jdata["cita"] = self._data_source_citation_index(family)
             # Get family attributes
-            jdata['attr'] = self._data_attributes(family)
+            jdata["attr"] = self._data_attributes(family)
             # Partners
-            jdata['spou'] = self._data_partners_index(family)
+            jdata["spou"] = self._data_partners_index(family)
             # Children
-            jdata['chil'] = self._data_children_index(family)
+            jdata["chil"] = self._data_children_index(family)
             # Last change date
-            jdata['change_time'] = format_time(family.get_change_time())
+            jdata["change_time"] = format_time(family.get_change_time())
             #
             jdatas.append(jdata)
         self.update_db_file("F", jdatas)
 
-
     def _data_events(self, object):
-        '''
+        """
         Build events data related to L{object} in a string representing a Javascript Array
         L{object} could be: a person or a family
         @return: events as a string representing a Javascript Array
-        '''
+        """
         # Builds an event list that gives for each event:
         #  - gid: Gramps ID\n"
         #  - type: The event name
@@ -1091,70 +1166,87 @@ class DynamicWebReport(Report):
         #  - part_person: Participants to the event (persons)
         #  - part_family: Participants to the event (families)
         event_ref_list = object.get_event_ref_list()
-        if not event_ref_list: return([])
+        if not event_ref_list:
+            return []
         jdatas = []
         for event_ref in event_ref_list:
-            if (event_ref.ref not in self.obj_dict[Event]): continue
+            if event_ref.ref not in self.obj_dict[Event]:
+                continue
             event = self.database.get_event_from_handle(event_ref.ref)
-            if (not event): continue
+            if not event:
+                continue
             jdata = {}
             evt_type = str(event.get_type())
             event_role = event_ref.get_role()
-            if (event_role != EventRoleType.PRIMARY and event_role != EventRoleType.FAMILY):
+            if (
+                event_role != EventRoleType.PRIMARY
+                and event_role != EventRoleType.FAMILY
+            ):
                 evt_type += " (%s)" % event_role
             place_index = -1
             place_handle = event.get_place_handle()
-            if (place_handle and (place_handle in self.obj_dict[Place])):
+            if place_handle and (place_handle in self.obj_dict[Place]):
                 place_index = self.obj_dict[Place][place_handle][OBJDICT_INDEX]
             evt_desc = event.get_description()
-            jdata['gid'] = self.obj_dict[Event][event_ref.ref][OBJDICT_GID]
-            jdata['type'] = html_escape(evt_type)
+            jdata["gid"] = self.obj_dict[Event][event_ref.ref][OBJDICT_GID]
+            jdata["type"] = html_escape(evt_type)
             evt_date = format_date(event.get_date_object())
-            jdata['date'] = html_escape(evt_date)
-            jdata['date_sdn'] = event.get_date_object().get_sort_value()
-            jdata['place'] = place_index
-            if (evt_desc is None): evt_desc = ""
-            jdata['descr'] = html_escape(evt_desc)
+            jdata["date"] = html_escape(evt_date)
+            jdata["date_sdn"] = event.get_date_object().get_sort_value()
+            jdata["place"] = place_index
+            if evt_desc is None:
+                evt_desc = ""
+            jdata["descr"] = html_escape(evt_desc)
             # Get event notes
-            notelist = event.get_note_list()[:]  # we don't want to modify cached original
+            notelist = event.get_note_list()[
+                :
+            ]  # we don't want to modify cached original
             notelist.extend(event_ref.get_note_list())
-            attrlist = event.get_attribute_list()[:]  # we don't want to modify cached original
+            attrlist = event.get_attribute_list()[
+                :
+            ]  # we don't want to modify cached original
             attrlist.extend(event_ref.get_attribute_list())
-            jdata['text'] = self.get_notes_attributes_text(notelist, attrlist)
+            jdata["text"] = self.get_notes_attributes_text(notelist, attrlist)
             # Get event media
-            jdata['media'] = self._data_media_reference_index(event)
+            jdata["media"] = self._data_media_reference_index(event)
             # Get event sources
             citationlist = set(event.get_citation_list())
             citationlist.update(event_ref.get_citation_list())
-            for attr in attrlist: citationlist.update(attr.get_citation_list())
-            jdata['cita'] = self._data_source_citation_index_from_list(citationlist)
+            for attr in attrlist:
+                citationlist.update(attr.get_citation_list())
+            jdata["cita"] = self._data_source_citation_index_from_list(citationlist)
             # Get event participants
-            result_list = list(self.database.find_backlink_handles(event.handle, include_classes=['Person', 'Family']))
-            persons = set([x[1] for x in result_list if x[0] == 'Person'])
+            result_list = list(
+                self.database.find_backlink_handles(
+                    event.handle, include_classes=["Person", "Family"]
+                )
+            )
+            persons = set([x[1] for x in result_list if x[0] == "Person"])
             part_person = []
             for personhandle in persons:
-                if (personhandle not in self.obj_dict[Person]): continue
+                if personhandle not in self.obj_dict[Person]:
+                    continue
                 part_person.append(self.obj_dict[Person][personhandle][OBJDICT_INDEX])
             part_person.sort()
-            jdata['part_person'] = part_person
-            families = set([x[1] for x in result_list if x[0] == 'Family'])
+            jdata["part_person"] = part_person
+            families = set([x[1] for x in result_list if x[0] == "Family"])
             part_family = []
             for familyhandle in persons:
-                if (familyhandle not in self.obj_dict[Family]): continue
+                if familyhandle not in self.obj_dict[Family]:
+                    continue
                 part_family.append(self.obj_dict[Family][familyhandle][OBJDICT_INDEX])
             part_family.sort()
-            jdata['part_family'] = part_family
+            jdata["part_family"] = part_family
             #
             jdatas.append(jdata)
-        return(jdatas)
-
+        return jdatas
 
     def _data_addresses(self, object):
-        '''
+        """
         Export addresses data related to L{object} in a string representing a Javascript Array
         L{object} could be: a person or a repository
         @return: events as a string representing a Javascript Array
-        '''
+        """
         # Builds an address list that gives for each address:
         #  - date: The address date\n"
         #  - date_sdn: The address serial date number (sortable)\n"
@@ -1162,15 +1254,17 @@ class DynamicWebReport(Report):
         #      [street, locality, parish, city, state, county, zip, country]\n"\n"
         #  - note: The address notes\n"
         #  - cita: A list of the address source citations index (in table 'C')\n"
-        if (not self.inc_addresses): return([])
+        if not self.inc_addresses:
+            return []
         addrlist = object.get_address_list()
-        if not addrlist: return([])
+        if not addrlist:
+            return []
         jdatas = []
         for addr in addrlist:
             jdata = {}
             addr_date = format_date(addr.get_date_object())
-            jdata['date'] = html_escape(addr_date)
-            jdata['date_sdn'] = addr.get_date_object().get_sort_value()
+            jdata["date"] = html_escape(addr_date)
+            jdata["date_sdn"] = addr.get_date_object().get_sort_value()
             addr_data = [
                 addr.get_street(),
                 addr.get_locality(),
@@ -1182,18 +1276,17 @@ class DynamicWebReport(Report):
                 addr.get_country(),
                 addr.get_phone(),
             ]
-            jdata['location'] = addr_data
+            jdata["location"] = addr_data
             # Get address notes
-            jdata['note'] = self.get_notes_text(addr)
+            jdata["note"] = self.get_notes_text(addr)
             # Get address sources
-            jdata['cita'] = self._data_source_citation_index(addr)
+            jdata["cita"] = self._data_source_citation_index(addr)
             #
             jdatas.append(jdata)
-        return(jdatas)
-
+        return jdatas
 
     def _export_sources(self):
-        '''
+        """
         Export sources data in Javascript file
         The sources data is stored in the Javascript Array "S"
         'S' is sorted by source title
@@ -1221,51 +1314,52 @@ class DynamicWebReport(Report):
           - attr: The list of the sources attributes in the form:
               [attribute, value, note, list of citations]
           - change_time: last record modification date
-        '''
+        """
         jdatas = []
         source_list = list(self.obj_dict[Source])
-        if (not self.inc_sources): source_list = []
-        source_list.sort(key = lambda x: self.obj_dict[Source][x][OBJDICT_INDEX])
+        if not self.inc_sources:
+            source_list = []
+        source_list.sort(key=lambda x: self.obj_dict[Source][x][OBJDICT_INDEX])
         for source_handle in source_list:
             source = self.database.get_source_from_handle(source_handle)
             jdata = {}
-            jdata['gid'] = self.obj_dict[Source][source_handle][OBJDICT_GID]
+            jdata["gid"] = self.obj_dict[Source][source_handle][OBJDICT_GID]
             title = source.get_title() or ""
-            jdata['title'] = html_escape(title)
-            jdata['letter'] = first_letter(title).strip()
-            jdata['text'] = ""
-            for (field, label, value) in [
-                ('author', _("Author"), source.get_author()),
-                ('abbrev', _("Abbreviation"), source.get_abbreviation()),
-                ('publ', _("Publication information"), source.get_publication_info())]:
+            jdata["title"] = html_escape(title)
+            jdata["letter"] = first_letter(title).strip()
+            jdata["text"] = ""
+            for field, label, value in [
+                ("author", _("Author"), source.get_author()),
+                ("abbrev", _("Abbreviation"), source.get_abbreviation()),
+                ("publ", _("Publication information"), source.get_publication_info()),
+            ]:
                 if value:
                     html = Html("p") + Html("b", label + ": ") + value
-                    jdata['text'] += html_text(html)
+                    jdata["text"] += html_text(html)
                     jdata[field] = value
                 else:
                     jdata[field] = ""
             # Get source notes
-            jdata['note'] = self.get_notes_text(source)
+            jdata["note"] = self.get_notes_text(source)
             # Get source media
-            jdata['media'] = self._data_media_reference_index(source)
+            jdata["media"] = self._data_media_reference_index(source)
             # Get source citations
-            jdata['bkc'] = self._data_bkref_index(Source, source_handle, Citation)
+            jdata["bkc"] = self._data_bkref_index(Source, source_handle, Citation)
             # Get repositories references
-            jdata['repo'] = self._data_repo_reference_index(source)
+            jdata["repo"] = self._data_repo_reference_index(source)
             # Get source attributes
-            if (DWR_VERSION_410):
-                jdata['attr'] = self._data_attributes_src(source)
+            if DWR_VERSION_410:
+                jdata["attr"] = self._data_attributes_src(source)
             else:
-                jdata['attr'] = []
+                jdata["attr"] = []
             # Last change date
-            jdata['change_time'] = format_time(source.get_change_time())
+            jdata["change_time"] = format_time(source.get_change_time())
             #
             jdatas.append(jdata)
         self.update_db_file("S", jdatas)
 
-
     def _export_citations(self):
-        '''
+        """
         Export citations data in Javascript file
         The citations data is stored in the Javascript Array "C"
         'C' gives for each source citation:
@@ -1289,50 +1383,50 @@ class DynamicWebReport(Report):
             (including the media references referencing this citation)
           - bkr: A list of the repository index (in table 'R') referencing this citation
           - change_time: last record modification date
-        '''
+        """
         jdatas = []
         citation_list = list(self.obj_dict[Citation])
-        if (not self.inc_sources): citation_list = []
-        citation_list.sort(key = lambda x: self.obj_dict[Citation][x][OBJDICT_INDEX])
+        if not self.inc_sources:
+            citation_list = []
+        citation_list.sort(key=lambda x: self.obj_dict[Citation][x][OBJDICT_INDEX])
         for citation_handle in citation_list:
             citation = self.database.get_citation_from_handle(citation_handle)
             source_handle = citation.get_reference_handle()
             jdata = {}
-            jdata['gid'] = self.obj_dict[Citation][citation_handle][OBJDICT_GID]
-            jdata['source'] = str(self.obj_dict[Source][source_handle][OBJDICT_INDEX])
+            jdata["gid"] = self.obj_dict[Citation][citation_handle][OBJDICT_GID]
+            jdata["source"] = str(self.obj_dict[Source][source_handle][OBJDICT_INDEX])
             confidence = citation.get_confidence_level()
-            if ((confidence in conf_strings) and confidence != Citation.CONF_NORMAL):
+            if (confidence in conf_strings) and confidence != Citation.CONF_NORMAL:
                 confidence = _(conf_strings[confidence])
             else:
                 confidence = None
-            jdata['text'] = ""
-            for (label, value) in [
+            jdata["text"] = ""
+            for label, value in [
                 (_("Date"), format_date(citation.get_date_object())),
                 (_("Page"), citation.get_page()),
                 (_("Confidence"), confidence),
             ]:
                 if value:
                     html = Html("p") + Html("b", label + ": ") + value
-                    jdata['text'] += html_text(html)
+                    jdata["text"] += html_text(html)
             # Get citation notes
-            jdata['note'] = self.get_notes_text(citation)
+            jdata["note"] = self.get_notes_text(citation)
             # Get citation media
-            jdata['media'] = self._data_media_reference_index(citation)
+            jdata["media"] = self._data_media_reference_index(citation)
             # Get references
-            jdata['bki'] = self._data_bkref_index(Citation, citation_handle, Person)
-            jdata['bkf'] = self._data_bkref_index(Citation, citation_handle, Family)
-            jdata['bkm'] = self._data_bkref_index(Citation, citation_handle, _Media)
-            jdata['bkp'] = self._data_bkref_index(Citation, citation_handle, Place)
-            jdata['bkr'] = self._data_bkref_index(Citation, citation_handle, Repository)
+            jdata["bki"] = self._data_bkref_index(Citation, citation_handle, Person)
+            jdata["bkf"] = self._data_bkref_index(Citation, citation_handle, Family)
+            jdata["bkm"] = self._data_bkref_index(Citation, citation_handle, _Media)
+            jdata["bkp"] = self._data_bkref_index(Citation, citation_handle, Place)
+            jdata["bkr"] = self._data_bkref_index(Citation, citation_handle, Repository)
             # Last change date
-            jdata['change_time'] = format_time(citation.get_change_time())
+            jdata["change_time"] = format_time(citation.get_change_time())
             #
             jdatas.append(jdata)
         self.update_db_file("C", jdatas)
 
-
     def _export_repositories(self):
-        '''
+        """
         Export repositories data in Javascript file
         The repositories data is stored in the Javascript Array "R"
         'R' is sorted by repository name
@@ -1356,36 +1450,36 @@ class DynamicWebReport(Report):
               - call_number: call number
               - note: notes of the repository reference
           - change_time: last record modification date
-        '''
+        """
         jdatas = []
         repo_list = list(self.obj_dict[Repository])
-        if (not self.inc_repositories): repo_list = []
-        repo_list.sort(key = lambda x: self.obj_dict[Repository][x][OBJDICT_INDEX])
+        if not self.inc_repositories:
+            repo_list = []
+        repo_list.sort(key=lambda x: self.obj_dict[Repository][x][OBJDICT_INDEX])
         for repo_handle in repo_list:
             repo = self.database.get_repository_from_handle(repo_handle)
             jdata = {}
-            jdata['gid'] = self.obj_dict[Repository][repo_handle][OBJDICT_GID]
+            jdata["gid"] = self.obj_dict[Repository][repo_handle][OBJDICT_GID]
             name = repo.get_name() or ""
-            jdata['name'] = name
+            jdata["name"] = name
             type = repo.get_type() or ""
-            jdata['type'] = str(type)
+            jdata["type"] = str(type)
             # Addresses
-            jdata['addrs'] = self._data_addresses(repo)
+            jdata["addrs"] = self._data_addresses(repo)
             # Get repository notes
-            jdata['note'] = self.get_notes_text(repo)
+            jdata["note"] = self.get_notes_text(repo)
             # Get repository URL
-            jdata['urls'] = self._data_url_list(repo)
+            jdata["urls"] = self._data_url_list(repo)
             # Get source references
-            jdata['bks'] = self._data_repo_backref_index(repo, Source)
+            jdata["bks"] = self._data_repo_backref_index(repo, Source)
             # Last change date
-            jdata['change_time'] = format_time(repo.get_change_time())
+            jdata["change_time"] = format_time(repo.get_change_time())
             #
             jdatas.append(jdata)
         self.update_db_file("R", jdatas)
 
-
     def _export_media(self):
-        '''
+        """
         Export media data in Javascript file
         The media data is stored in the Javascript Array "M"
         'M' is sorted by media title
@@ -1427,47 +1521,47 @@ class DynamicWebReport(Report):
               - note: notes of the media reference
               - cita: list of the media reference source citations index (in table 'C')
           - change_time: last record modification date
-        '''
+        """
         jdatas = []
         media_list = list(self.obj_dict[_Media])
-        if (not self.inc_gallery): media_list = []
-        media_list.sort(key = lambda x: self.obj_dict[_Media][x][OBJDICT_INDEX])
+        if not self.inc_gallery:
+            media_list = []
+        media_list.sort(key=lambda x: self.obj_dict[_Media][x][OBJDICT_INDEX])
         for media_handle in media_list:
             media = self.get_from_handle(_Media, media_handle)
             jdata = {}
-            jdata['gid'] = self.obj_dict[_Media][media_handle][OBJDICT_GID]
+            jdata["gid"] = self.obj_dict[_Media][media_handle][OBJDICT_GID]
             title = media.get_description() or ""
-            jdata['title'] = html_escape(title)
-            jdata['gramps_path'] = media.get_path()
+            jdata["title"] = html_escape(title)
+            jdata["gramps_path"] = media.get_path()
             path = self.get_media_web_path(media)
-            jdata['path'] = urlparse.quote(path)
-            jdata['mime'] = media.get_mime_type()
+            jdata["path"] = urlparse.quote(path)
+            jdata["mime"] = media.get_mime_type()
             # Get media date
             date = format_date(media.get_date_object())
-            jdata['date'] = date
-            jdata['date_sdn'] = media.get_date_object().get_sort_value()
+            jdata["date"] = date
+            jdata["date_sdn"] = media.get_date_object().get_sort_value()
             # Get media notes
-            jdata['note'] = self.get_notes_text(media)
+            jdata["note"] = self.get_notes_text(media)
             # Get media sources
-            jdata['cita'] = self._data_source_citation_index(media)
+            jdata["cita"] = self._data_source_citation_index(media)
             # Get media attributes
-            jdata['attr'] = self._data_attributes(media)
+            jdata["attr"] = self._data_attributes(media)
             # Get media thumbnail
-            jdata['thumb'] = self.copy_thumbnail(media, (0,0,100,100))
+            jdata["thumb"] = self.copy_thumbnail(media, (0, 0, 100, 100))
             # Get media references
-            jdata['bki'] = self._data_media_backref_index(media, Person)
-            jdata['bkf'] = self._data_media_backref_index(media, Family)
-            jdata['bks'] = self._data_media_backref_index(media, Source)
-            jdata['bkp'] = self._data_media_backref_index(media, Place)
+            jdata["bki"] = self._data_media_backref_index(media, Person)
+            jdata["bkf"] = self._data_media_backref_index(media, Family)
+            jdata["bks"] = self._data_media_backref_index(media, Source)
+            jdata["bkp"] = self._data_media_backref_index(media, Place)
             # Last change date
-            jdata['change_time'] = format_time(media.get_change_time())
+            jdata["change_time"] = format_time(media.get_change_time())
             #
             jdatas.append(jdata)
         self.update_db_file("M", jdatas)
 
-
     def _export_places(self):
-        '''
+        """
         Export places data in Javascript file
         The places data is stored in the Javascript Array "P"
         'P' is sorted by place name
@@ -1504,55 +1598,59 @@ class DynamicWebReport(Report):
           - bkf: A list of the family index (in table 'F') for events referencing this place
           - bkp: A list of the places index (in table 'P') for places enclosed by this place (empty for version 4.0 and below)
           - change_time: last record modification date
-        '''
+        """
         if DWR_VERSION_500:
-            fmt = config.get('preferences.place-format')
+            fmt = config.get("preferences.place-format")
             pf = _pd.get_formats()[fmt]
             pref_lang = pf.language
         else:
-            pref_lang = config.get('preferences.place-lang')
+            pref_lang = config.get("preferences.place-lang")
         jdatas = []
         place_list = list(self.obj_dict[Place])
-        place_list.sort(key = lambda x: self.obj_dict[Place][x][OBJDICT_INDEX])
+        place_list.sort(key=lambda x: self.obj_dict[Place][x][OBJDICT_INDEX])
         for place_handle in place_list:
             place = self.database.get_place_from_handle(place_handle)
             jdata = {}
-            jdata['gid'] = self.obj_dict[Place][place_handle][OBJDICT_GID]
+            jdata["gid"] = self.obj_dict[Place][place_handle][OBJDICT_GID]
             place_name = utils.place_name(self.database, place_handle)
-            jdata['name'] = place_name
-            jdata['letter'] = first_letter(place_name).strip()
-            if (not self.inc_places):
+            jdata["name"] = place_name
+            jdata["letter"] = first_letter(place_name).strip()
+            if not self.inc_places:
                 jdatas.append(jdata)
                 continue
             if DWR_VERSION_410:
-                jdata['type'] = str(place.get_type())
+                jdata["type"] = str(place.get_type())
             else:
-                jdata['type'] = ''
-            jdata['names'] = []
+                jdata["type"] = ""
+            jdata["names"] = []
             if DWR_VERSION_410:
                 for pn in place.get_all_names():
                     lang = pn.get_language()
-                    if lang != '' and pref_lang!= '' and lang != pref_lang: continue
+                    if lang != "" and pref_lang != "" and lang != pref_lang:
+                        continue
                     date = format_date(pn.get_date_object())
                     date_sdn = pn.get_date_object().get_sort_value()
-                    jdata['names'].append({
-                        'name': pn.get_value(),
-                        'date': date,
-                        'date_sdn': date_sdn,
-                    })
-            jdata['locations'] = []
+                    jdata["names"].append(
+                        {
+                            "name": pn.get_value(),
+                            "date": date,
+                            "date_sdn": date_sdn,
+                        }
+                    )
+            jdata["locations"] = []
             if not DWR_VERSION_410:
                 locations = []
-                if (place.main_loc):
+                if place.main_loc:
                     ml = place.get_main_location()
-                    if (ml and not ml.is_empty()): locations.append(ml)
+                    if ml and not ml.is_empty():
+                        locations.append(ml)
                 altloc = place.get_alternate_locations()
-                if (altloc):
+                if altloc:
                     altloc = [nonempt for nonempt in altloc if (not nonempt.is_empty())]
                     locations += altloc
                 for loc in locations:
                     jdataloc = []
-                    for (label, data) in [
+                    for label, data in [
                         (STREET, loc.street),
                         (LOCALITY, loc.locality),
                         (CITY, loc.city),
@@ -1561,274 +1659,302 @@ class DynamicWebReport(Report):
                         (STATE, loc.state),
                         (POSTAL, loc.postal),
                         (COUNTRY, loc.country),
-                        (PHONE, loc.phone)
+                        (PHONE, loc.phone),
                     ]:
-                        if not data or data == '': continue
-                        jdataloc.append({
-                            'type': label,
-                            'name': data,
-                        })
-                    jdata['locations'].append(jdataloc)
-            jdata['enclosed_by'] = []
+                        if not data or data == "":
+                            continue
+                        jdataloc.append(
+                            {
+                                "type": label,
+                                "name": data,
+                            }
+                        )
+                    jdata["locations"].append(jdataloc)
+            jdata["enclosed_by"] = []
             if DWR_VERSION_410:
                 for ref in place.get_placeref_list():
                     placeref_handle = ref.get_reference_handle()
-                    if placeref_handle not in self.obj_dict[Place]: continue
+                    if placeref_handle not in self.obj_dict[Place]:
+                        continue
                     date = format_date(ref.get_date_object())
                     date_sdn = ref.get_date_object().get_sort_value()
                     enc = {
-                        'pdx': self.obj_dict[Place][placeref_handle][OBJDICT_INDEX],
-                        'date': date,
-                        'date_sdn': date_sdn,
+                        "pdx": self.obj_dict[Place][placeref_handle][OBJDICT_INDEX],
+                        "date": date,
+                        "date_sdn": date_sdn,
                     }
-                    jdata['enclosed_by'].append(enc)
+                    jdata["enclosed_by"].append(enc)
             latitude = place.get_latitude()
             longitude = place.get_longitude()
-            if (latitude and longitude):
+            if latitude and longitude:
                 coords = conv_lat_lon(latitude, longitude, "D.D8")
             else:
                 coords = ("", "")
-            jdata['coords'] = coords
-            jdata['code'] = place.get_code()
+            jdata["coords"] = coords
+            jdata["code"] = place.get_code()
             # Get place notes
-            jdata['note'] = self.get_notes_text(place)
+            jdata["note"] = self.get_notes_text(place)
             # Get place media
-            jdata['media'] = self._data_media_reference_index(place)
+            jdata["media"] = self._data_media_reference_index(place)
             # Get place sources
-            jdata['cita'] = self._data_source_citation_index(place)
+            jdata["cita"] = self._data_source_citation_index(place)
             # Get place URL
-            jdata['urls'] = self._data_url_list(place)
+            jdata["urls"] = self._data_url_list(place)
             # Get back references
-            jdata['bki'] = self._data_bkref_index(Place, place_handle, Person)
-            jdata['bkf'] = self._data_bkref_index(Place, place_handle, Family)
+            jdata["bki"] = self._data_bkref_index(Place, place_handle, Person)
+            jdata["bkf"] = self._data_bkref_index(Place, place_handle, Family)
             if DWR_VERSION_410:
-                jdata['bkp'] = self._data_bkref_index(Place, place_handle, Place)
+                jdata["bkp"] = self._data_bkref_index(Place, place_handle, Place)
             else:
-                jdata['bkp'] = []
+                jdata["bkp"] = []
             # Last change date
-            jdata['change_time'] = format_time(place.get_change_time())
+            jdata["change_time"] = format_time(place.get_change_time())
             #
             jdatas.append(jdata)
         self.update_db_file("P", jdatas)
 
-
     def get_notes_text(self, object):
-        if (not self.inc_notes): return("")
+        if not self.inc_notes:
+            return ""
         notelist = object.get_note_list()
         htmllist = self.dump_notes(notelist)
-        if (not htmllist): return("")
-        return(html_text(htmllist))
-
+        if not htmllist:
+            return ""
+        return html_text(htmllist)
 
     def get_notes_attributes_text(self, notelist, attrlist):
-        if (not self.inc_notes): return("")
+        if not self.inc_notes:
+            return ""
         # Get notes
         htmllist = self.dump_notes(notelist)
         # Get attributes
         for attr in attrlist:
-            if (not htmllist): htmllist = Html("div")
-            htmllist.extend(Html(
-                "p", _("%(type)s: %(value)s") % {
-                'type': Html("b", attr.get_type()),
-                'value': attr.get_value()
-                }
-            ))
+            if not htmllist:
+                htmllist = Html("div")
+            htmllist.extend(
+                Html(
+                    "p",
+                    _("%(type)s: %(value)s")
+                    % {"type": Html("b", attr.get_type()), "value": attr.get_value()},
+                )
+            )
             # Also output notes attached to the attributes
             notelist2 = attr.get_note_list()
             htmlnotelist = self.dump_notes(notelist2)
-            if (htmlnotelist): htmllist.extend(htmlnotelist)
-        if (not htmllist): return("")
-        return(html_text(htmllist))
-
+            if htmlnotelist:
+                htmllist.extend(htmlnotelist)
+        if not htmllist:
+            return ""
+        return html_text(htmllist)
 
     def dump_notes(self, notelist):
-        '''
+        """
         dump out of list of notes with very little elements of its own
 
         @param: notelist -- list of notes
-        '''
+        """
         notesection = None
-        if (not notelist): return(notesection)
-        if (not self.inc_notes): return(notesection)
+        if not notelist:
+            return notesection
+        if not self.inc_notes:
+            return notesection
         for note_handle in notelist:
-            if (not notesection): notesection = Html("div")
+            if not notesection:
+                notesection = Html("div")
             this_note = self.database.get_note_from_handle(note_handle)
             if this_note is not None:
-                if (self.print_notes_type):
-                    notesection.extend(Html("i", str(this_note.type), class_="NoteType"))
+                if self.print_notes_type:
+                    notesection.extend(
+                        Html("i", str(this_note.type), class_="NoteType")
+                    )
                 notesection.extend(self.get_note_format(this_note))
-        return(notesection)
+        return notesection
 
     def get_note_format(self, note):
-        '''
+        """
         will get the note from the database, and will return either the
         styled text or plain note
-        '''
+        """
         text = ""
         if note is not None:
             # retrieve the body of the note
             note_text = note.get()
             # styled notes
-            htmlnotetext = self.styled_note(note.get_styledtext(),
-                                            note.get_format(), contains_html =
-                                            note.get_type() == NoteType.HTML_CODE)
+            htmlnotetext = self.styled_note(
+                note.get_styledtext(),
+                note.get_format(),
+                contains_html=note.get_type() == NoteType.HTML_CODE,
+            )
             text = htmlnotetext or Html("p", note_text)
         # return text of the note to its callers
-        return(text)
+        return text
 
     def styled_note(self, styledtext, format, contains_html=False):
-        '''
+        """
         styledtext : assumed a StyledText object to write
         format : = 0 : Flowed, = 1 : Preformatted
         style_name : name of the style to use for default presentation
-        '''
+        """
         text = str(styledtext)
 
-        if (not text): return('')
+        if not text:
+            return ""
 
         s_tags = styledtext.get_tags()
         htmllist = Html("div", class_="grampsstylednote")
         if contains_html:
-            markuptext = self._backend.add_markup_from_styled(text,
-                                                              s_tags,
-                                                              split='\n',
-                                                              escape=False)
+            markuptext = self._backend.add_markup_from_styled(
+                text, s_tags, split="\n", escape=False
+            )
             htmllist += markuptext
         else:
-            markuptext = self._backend.add_markup_from_styled(text,
-                                                              s_tags,
-                                                              split='\n')
+            markuptext = self._backend.add_markup_from_styled(text, s_tags, split="\n")
             linelist = []
             linenb = 1
             sigcount = 0
-            for line in markuptext.split('\n'):
+            for line in markuptext.split("\n"):
                 [line, sigcount] = process_spaces(line, format)
                 if sigcount == 0:
                     # The rendering of an empty paragraph '<p></p>'
                     # is undefined so we use a non-breaking space
                     if linenb == 1:
-                        linelist.append('&nbsp;')
-                    htmllist.extend(Html('p') + linelist)
+                        linelist.append("&nbsp;")
+                    htmllist.extend(Html("p") + linelist)
                     linelist = []
                     linenb = 1
                 else:
                     if linenb > 1:
-                        linelist[-1] += '<br />'
+                        linelist[-1] += "<br />"
                     linelist.append(line)
                     linenb += 1
             if linenb > 1:
-                htmllist.extend(Html('p') + linelist)
+                htmllist.extend(Html("p") + linelist)
             # if the last line was blank, then as well as outputting the previous para,
             # which we have just done,
             # we also output a new blank para
             if sigcount == 0:
                 linelist = ["&nbsp;"]
-                htmllist.extend(Html('p') + linelist)
-        return(htmllist)
-
+                htmllist.extend(Html("p") + linelist)
+        return htmllist
 
     def _data_source_citation_index(self, object):
-        '''
+        """
         Export sources citations indexes related to L{object}
         See L{_data_source_citation_index_from_list}
-        '''
+        """
         citationlist = object.get_citation_list()
-        return(self._data_source_citation_index_from_list(citationlist))
+        return self._data_source_citation_index_from_list(citationlist)
 
     def _data_source_citation_index_from_list(self, citationlist):
-        '''
+        """
         List sources citations indexes of the L{citationlist} in a string representing a Javascript Array
         @return: citations indexes as a string representing a Javascript Array
-        '''
-        if (not self.inc_sources): return([])
-        if not citationlist: return([])
+        """
+        if not self.inc_sources:
+            return []
+        if not citationlist:
+            return []
         jdatas = []
         for citation_handle in citationlist:
             citation = self.database.get_citation_from_handle(citation_handle)
-            if (citation is not None and (citation_handle in self.obj_dict[Citation])):
+            if citation is not None and (citation_handle in self.obj_dict[Citation]):
                 source_handle = citation.get_reference_handle()
                 source = self.database.get_source_from_handle(source_handle)
-                if (source is not None and (source_handle in self.obj_dict[Source])):
-                    jdatas.append(self.obj_dict[Citation][citation_handle][OBJDICT_INDEX])
+                if source is not None and (source_handle in self.obj_dict[Source]):
+                    jdatas.append(
+                        self.obj_dict[Citation][citation_handle][OBJDICT_INDEX]
+                    )
         jdatas.sort()
-        return(jdatas)
-
+        return jdatas
 
     def _data_repo_reference_index(self, object):
-        '''
+        """
         Build a list of the repositories references index, in the form given by L{_data_repo_ref}
-        '''
-        if (not self.inc_repositories): return([])
+        """
+        if not self.inc_repositories:
+            return []
         refs = object.get_reporef_list()
-        if (not refs): return([])
+        if not refs:
+            return []
         jdatas = []
         for ref in refs:
             repo_handle = ref.get_reference_handle()
-            if (repo_handle in self.obj_dict[Repository]):
-                jdatas.append(self._data_repo_ref(ref, self.obj_dict[Repository][repo_handle][OBJDICT_INDEX]))
-        jdatas.sort(key = lambda x: x['r_idx'])
-        return(jdatas)
+            if repo_handle in self.obj_dict[Repository]:
+                jdatas.append(
+                    self._data_repo_ref(
+                        ref, self.obj_dict[Repository][repo_handle][OBJDICT_INDEX]
+                    )
+                )
+        jdatas.sort(key=lambda x: x["r_idx"])
+        return jdatas
 
     def _data_repo_ref(self, ref, index):
-        '''
+        """
         Build a repository reference, in the form:
          - repository index (in table 'R')
          - media type
          - call number
          - notes of the repository reference
-        '''
+        """
         repo_handle = ref.get_reference_handle()
         repo = self.database.get_repository_from_handle(repo_handle)
         jdata = {}
-        jdata['r_idx'] = index
-        jdata['media_type'] = str(ref.get_media_type())
-        jdata['call_number'] = ref.get_call_number()
-        jdata['note'] = self.get_notes_text(ref)
-        return(jdata)
-
+        jdata["r_idx"] = index
+        jdata["media_type"] = str(ref.get_media_type())
+        jdata["call_number"] = ref.get_call_number()
+        jdata["note"] = self.get_notes_text(ref)
+        return jdata
 
     def _data_media_reference_index(self, object):
-        '''
+        """
         Build a list of the media references index, in the form given by L{_data_media_ref}
-        '''
-        if (not self.inc_gallery): return([])
+        """
+        if not self.inc_gallery:
+            return []
         refs = object.get_media_list()
-        if (not refs): return([])
+        if not refs:
+            return []
         jdatas = []
         for ref in refs:
             media_handle = ref.get_reference_handle()
-            if (media_handle in self.obj_dict[_Media]):
-                jdatas.append(self._data_media_ref(ref, self.obj_dict[_Media][media_handle][OBJDICT_INDEX]))
-        jdatas.sort(key = lambda x: x['m_idx'])
-        return(jdatas)
+            if media_handle in self.obj_dict[_Media]:
+                jdatas.append(
+                    self._data_media_ref(
+                        ref, self.obj_dict[_Media][media_handle][OBJDICT_INDEX]
+                    )
+                )
+        jdatas.sort(key=lambda x: x["m_idx"])
+        return jdatas
 
     def _data_media_ref(self, ref, index):
-        '''
+        """
         Build a media reference, in the form:
          - m_idx: media index (in table 'M')
          - thumb: media thumbnail path
          - rect: [x1, y1, x2, y2] of the media reference
          - note: notes of the media reference
          - cita: list of the media reference source citations index (in table 'C')
-        '''
+        """
         media_handle = ref.get_reference_handle()
         media = self.get_from_handle(_Media, media_handle)
         jdata = {}
-        jdata['m_idx'] = index
-        jdata['thumb'] = self.copy_thumbnail(media, ref.get_rectangle())
-        rect = ref.get_rectangle() or (0,0,100,100)
-        jdata['rect'] = list(rect)
+        jdata["m_idx"] = index
+        jdata["thumb"] = self.copy_thumbnail(media, ref.get_rectangle())
+        rect = ref.get_rectangle() or (0, 0, 100, 100)
+        jdata["rect"] = list(rect)
         attrlist = ref.get_attribute_list()
-        jdata['note'] = self.get_notes_attributes_text(ref.get_note_list(), attrlist)
-        citationlist = ref.get_citation_list()[:]  # we don't want to modify cached original
-        for attr in attrlist: citationlist.extend(attr.get_citation_list())
+        jdata["note"] = self.get_notes_attributes_text(ref.get_note_list(), attrlist)
+        citationlist = ref.get_citation_list()[
+            :
+        ]  # we don't want to modify cached original
+        for attr in attrlist:
+            citationlist.extend(attr.get_citation_list())
         # BUG: it seems that attribute references are given by both ref.get_citation_list and attr.get_citation_list
-        jdata['cita'] = self._data_source_citation_index_from_list(citationlist)
-        return(jdata)
-
+        jdata["cita"] = self._data_source_citation_index_from_list(citationlist)
+        return jdata
 
     def get_media_web_path(self, media):
-        '''
+        """
         Return the path of the media from the web pages
         This function could be called several times for the same media
         This function copies the media to the web pages directories if necessary.
@@ -1837,53 +1963,63 @@ class DynamicWebReport(Report):
          - extracted from the media handle (for COPY_MEDIA_RENAME),
          - or, hash from media origin directory (for COPY_MEDIA_UNCHANGED)
         The reason is to prevent directories with too many entries.
-        '''
+        """
         media_path = media.get_path()
-        if (media_path):
+        if media_path:
             norm_path = media_path_full(self.database, media_path)
-            if (os.path.isfile(norm_path)):
-                if (self.copy_media == COPY_MEDIA_RENAME):
+            if os.path.isfile(norm_path):
+                if self.copy_media == COPY_MEDIA_RENAME:
                     handle = media.get_handle()
-                    if (handle not in self.images_copied):
+                    if handle not in self.images_copied:
                         ext = os.path.splitext(norm_path)[1]
                         iname = str(handle).lower()
                         subdir1 = iname[-1]
                         subdir2 = iname[-2]
                         iname += ext.lower()
-                        self.copy_file(norm_path, iname, os.path.join("image", subdir1, subdir2))
-                        web_path = "image/" + subdir1 + '/' + subdir2 + '/' + iname
+                        self.copy_file(
+                            norm_path, iname, os.path.join("image", subdir1, subdir2)
+                        )
+                        web_path = "image/" + subdir1 + "/" + subdir2 + "/" + iname
                         self.images_copied[handle] = web_path
                     else:
                         web_path = self.images_copied[handle]
-                elif (self.copy_media == COPY_MEDIA_UNCHANGED):
+                elif self.copy_media == COPY_MEDIA_UNCHANGED:
                     handle = media.get_handle()
-                    if (handle not in self.images_copied):
+                    if handle not in self.images_copied:
                         dir = os.path.dirname(norm_path)
                         filename = os.path.basename(norm_path)
                         if dir not in self.media_paths:
-                            hash = md5(dir.encode('utf-8')).hexdigest().lower()
-                            subdir1 = hash[0 : 1]
-                            subdir2 = hash[2 : 10]
-                            self.media_paths[dir] = os.path.join("image", subdir1, subdir2)
+                            hash = md5(dir.encode("utf-8")).hexdigest().lower()
+                            subdir1 = hash[0:1]
+                            subdir2 = hash[2:10]
+                            self.media_paths[dir] = os.path.join(
+                                "image", subdir1, subdir2
+                            )
                         self.copy_file(norm_path, filename, self.media_paths[dir])
-                        web_path = self.media_paths[dir].replace('\\', '/') + '/' + filename
+                        web_path = (
+                            self.media_paths[dir].replace("\\", "/") + "/" + filename
+                        )
                         self.images_copied[handle] = web_path
                     else:
                         web_path = self.images_copied[handle]
-                else: # self.copy_media == REFERENCE_MEDIA
+                else:  # self.copy_media == REFERENCE_MEDIA
                     try:
                         web_path = os.path.relpath(norm_path, self.target_path)
                         web_path = web_path.replace("\\", "/")
                     except:
-                        log.warning(_("Impossible to convert \"%(path)s\" to a relative path.") % {"path": norm_path})
-                        web_path = urlparse.urljoin('file:', urllib.pathname2url(norm_path))
-                return(web_path)
-        log.warning("Warning: File not found \"%(path)s\"" % {"path": str(media_path)})
-        return(media_path)
+                        log.warning(
+                            _('Impossible to convert "%(path)s" to a relative path.')
+                            % {"path": norm_path}
+                        )
+                        web_path = urlparse.urljoin(
+                            "file:", urllib.pathname2url(norm_path)
+                        )
+                return web_path
+        log.warning('Warning: File not found "%(path)s"' % {"path": str(media_path)})
+        return media_path
 
-
-    def copy_thumbnail(self, media, region = None):
-        '''
+    def copy_thumbnail(self, media, region=None):
+        """
         Given a handle (and optional region) make (if needed) an
         up-to-date cache of a thumbnail, and call copy_file
         to copy the cached thumbnail to the website.
@@ -1891,103 +2027,108 @@ class DynamicWebReport(Report):
         2 levels of subdirectory are inserted.
         These subdrectories names are extracted from the media handle, in order to always have the same path when exporting
         The reason is to prevent directories with too many entries.
-        '''
-        if (region and region[0] == 0 and region[1] == 0 and region[2] == 100 and region[3] == 100):
+        """
+        if (
+            region
+            and region[0] == 0
+            and region[1] == 0
+            and region[2] == 100
+            and region[3] == 100
+        ):
             region = None
         handle = media.get_handle()
         tname = str(handle).lower()
         subdir1 = tname[-1]
         subdir2 = tname[-2]
         tname = tname + (("-%d,%d-%d,%d.png" % region) if region else ".png")
-        if (tname not in self.thumbnail_created):
-            if (media.get_mime_type()):
+        if tname not in self.thumbnail_created:
+            if media.get_mime_type():
                 from_path = get_thumbnail_path(
                     media_path_full(self.database, media.get_path()),
                     media.get_mime_type(),
-                    region)
+                    region,
+                )
                 if not os.path.isfile(from_path):
                     from_path = os.path.join(IMAGE_DIR, "document.png")
             else:
                 from_path = os.path.join(IMAGE_DIR, "document.png")
             self.copy_file(from_path, tname, os.path.join("thumb", subdir1, subdir2))
-            web_path = "thumb/" + subdir1 + '/' + subdir2 + '/' + tname
+            web_path = "thumb/" + subdir1 + "/" + subdir2 + "/" + tname
             self.thumbnail_created[tname] = web_path
         else:
             web_path = self.thumbnail_created[tname]
-        return(web_path)
-
+        return web_path
 
     def _data_attributes(self, object):
-        '''
+        """
         Build the list of the L{object} attributes as a Javascript string, in the form:
           [attribute, value, note, list of citations]
-        '''
+        """
         attrlist = object.get_attribute_list()
         jdatas = []
         for attr in attrlist:
             jdata = {}
-            jdata['type'] = str(attr.get_type())
-            jdata['value'] = str(attr.get_value())
+            jdata["type"] = str(attr.get_type())
+            jdata["value"] = str(attr.get_value())
             # Get attribute notes
-            jdata['note'] = self.get_notes_text(attr)
+            jdata["note"] = self.get_notes_text(attr)
             # Get attribute sources
-            jdata['cita'] = self._data_source_citation_index(attr)
+            jdata["cita"] = self._data_source_citation_index(attr)
             #
             jdatas.append(jdata)
-        return(jdatas)
+        return jdatas
 
     def _data_attributes_src(self, source):
-        '''
+        """
         Build the list of the L{source} sources attributes as a Javascript string, in the form:
           [attribute, value, "", []]
-        '''
+        """
         attrlist = source.get_attribute_list()
         jdatas = []
         for attr in attrlist:
             jdata = {}
-            jdata['type'] = str(attr.get_type())
-            jdata['value'] = str(attr.get_value())
+            jdata["type"] = str(attr.get_type())
+            jdata["value"] = str(attr.get_value())
             # Get attribute notes
-            jdata['note'] = ""
+            jdata["note"] = ""
             # Get attribute sources
-            jdata['cita'] = []
+            jdata["cita"] = []
             #
             jdatas.append(jdata)
-        return(jdatas)
+        return jdatas
 
     def _data_url_list(self, object):
-        '''
+        """
         Build the list of the L{object} URL as a Javascript string, in the form:
           [type, url, description]
-        '''
+        """
         urllist = object.get_url_list()
         jdatas = []
         for url in urllist:
             jdata = {}
             _type = url.get_type()
-            jdata['type'] = str(_type)
+            jdata["type"] = str(_type)
             descr = url.get_description()
-            jdata['descr'] = descr
+            jdata["descr"] = descr
             uri = url.get_path()
             # Email address
             if _type == UrlType.EMAIL:
                 if not uri.startswith("mailto:"):
-                    uri = "mailto:%(email)s" % { 'email' : uri }
+                    uri = "mailto:%(email)s" % {"email": uri}
             # Web Site address
             elif _type == UrlType.WEB_HOME:
                 if not (uri.startswith("http://") or uri.startswith("https://")):
-                    uri = "http://%(website)s" % { "website" : uri }
+                    uri = "http://%(website)s" % {"website": uri}
             # FTP server address
             elif _type == UrlType.WEB_FTP:
                 if not (uri.startswith("ftp://") or uri.startswith("ftps://")):
-                    uri = "ftp://%(ftpsite)s" % { "ftpsite" : uri }
-            jdata['uri'] = uri
+                    uri = "ftp://%(ftpsite)s" % {"ftpsite": uri}
+            jdata["uri"] = uri
             jdatas.append(jdata)
-        return(jdatas)
-
+        return jdatas
 
     def _export_surnames(self):
-        '''
+        """
         Export surnames data in Javascript file
         The surnames data is stored in the Javascript Array "N"
         'N' is sorted by surname
@@ -1995,193 +2136,223 @@ class DynamicWebReport(Report):
          - surname: the surname
          - letter: the surname first letter
          - persons: the list of persion index (in table 'I') with this surname
-        '''
+        """
         # Extract the surnames data
-        surnames = defaultdict(list) #: Dictionary giving for each surname: the list of person handles with this surname
-        sortnames = {} #: Dictionary giving for each person handle: a sortable string for the person
+        surnames = defaultdict(
+            list
+        )  #: Dictionary giving for each surname: the list of person handles with this surname
+        sortnames = (
+            {}
+        )  #: Dictionary giving for each person handle: a sortable string for the person
         person_list = list(self.obj_dict[Person].keys())
         for person_handle in person_list:
             person = self.database.get_person_from_handle(person_handle)
             primary_name = person.get_primary_name()
-            if (primary_name.group_as):
+            if primary_name.group_as:
                 surname = primary_name.group_as
             else:
-                surname = self.database.get_name_group_mapping(_nd.primary_surname(primary_name))
+                surname = self.database.get_name_group_mapping(
+                    _nd.primary_surname(primary_name)
+                )
             # Treat people who have no name with those whose name is just 'whitespace'
-            if (surname is None or surname.isspace()):
+            if surname is None or surname.isspace():
                 surname = ""
-            sortnames[person_handle] = _nd.sort_string(primary_name) + " " + str(person_handle)
+            sortnames[person_handle] = (
+                _nd.sort_string(primary_name) + " " + str(person_handle)
+            )
             surnames[surname].append(person_handle)
         # Sort surnames
         surns_keys = list(surnames.keys())
-        surns_keys.sort(key = SORT_KEY)
+        surns_keys.sort(key=SORT_KEY)
         # Generate the file
         jdatas = []
         for s in surns_keys:
             # Sort persons
             jdata = {}
-            jdata['surname'] = s
-            jdata['letter'] = first_letter(s).strip()
-            surnames[s].sort(key = lambda x: sortnames[x])
+            jdata["surname"] = s
+            jdata["letter"] = first_letter(s).strip()
+            surnames[s].sort(key=lambda x: sortnames[x])
             tab = [self.obj_dict[Person][x][OBJDICT_INDEX] for x in surnames[s]]
-            jdata['persons'] = tab
+            jdata["persons"] = tab
             jdatas.append(jdata)
         self.update_db_file("N", jdatas)
-
 
     def _data_families_index(self, person):
         fams = []
         family_list = person.get_family_handle_list()
-        if (family_list):
-            fams = [self.obj_dict[Family][family_handle][OBJDICT_INDEX] for family_handle in family_list if (family_handle in self.obj_dict[Family])]
-        return(fams)
+        if family_list:
+            fams = [
+                self.obj_dict[Family][family_handle][OBJDICT_INDEX]
+                for family_handle in family_list
+                if (family_handle in self.obj_dict[Family])
+            ]
+        return fams
 
     def _data_partners_index(self, family):
         indis = []
         person_handle = family.get_father_handle()
-        if (person_handle and (person_handle in self.obj_dict[Person])):
+        if person_handle and (person_handle in self.obj_dict[Person]):
             indis.append(self.obj_dict[Person][person_handle][OBJDICT_INDEX])
         person_handle = family.get_mother_handle()
-        if (person_handle and (person_handle in self.obj_dict[Person])):
+        if person_handle and (person_handle in self.obj_dict[Person]):
             indis.append(self.obj_dict[Person][person_handle][OBJDICT_INDEX])
-        return(indis)
+        return indis
 
     def _data_parents_families_index(self, person):
         links = []
         family_list = person.get_parent_family_handle_list()
-        if (family_list):
+        if family_list:
             for family_handle in family_list:
-                if (family_handle not in self.obj_dict[Family]): continue
+                if family_handle not in self.obj_dict[Family]:
+                    continue
                 family = self.database.get_family_from_handle(family_handle)
                 child_refs = [
                     child_ref
                     for child_ref in family.get_child_ref_list()
                     if (child_ref.ref == person.get_handle())
                 ]
-                if (len(child_refs) >= 1):
+                if len(child_refs) >= 1:
                     index = self.obj_dict[Family][family_handle][OBJDICT_INDEX]
                     links.append(self._data_child_ref(index, child_refs[0]))
-        return(links)
+        return links
 
     def _data_children_index(self, family):
         links = [
-            self._data_child_ref(self.obj_dict[Person][child_ref.ref][OBJDICT_INDEX], child_ref)
+            self._data_child_ref(
+                self.obj_dict[Person][child_ref.ref][OBJDICT_INDEX], child_ref
+            )
             for child_ref in family.get_child_ref_list()
             if (child_ref.ref in self.obj_dict[Person])
         ]
-        return(links)
+        return links
 
     def _data_child_ref(self, index, child_ref):
         #  Child reference in the form:
         #    [index, relation to father, relation to mother, notes, list of citations]
         jdata = {}
-        jdata['index'] = index
-        jdata['to_father'] = str(child_ref.get_father_relation())
-        jdata['to_mother'] = str(child_ref.get_mother_relation())
+        jdata["index"] = index
+        jdata["to_father"] = str(child_ref.get_father_relation())
+        jdata["to_mother"] = str(child_ref.get_mother_relation())
         # Get child reference notes
-        jdata['note'] = self.get_notes_text(child_ref)
+        jdata["note"] = self.get_notes_text(child_ref)
         # Get child reference sources
-        jdata['cita'] = self._data_source_citation_index(child_ref)
-        return(jdata)
-
+        jdata["cita"] = self._data_source_citation_index(child_ref)
+        return jdata
 
     def _data_associations(self, person):
         assoclist = person.get_person_ref_list()
         jdatas = []
         for person_ref in assoclist:
-            if (person_ref.ref not in self.obj_dict[Person]): continue
+            if person_ref.ref not in self.obj_dict[Person]:
+                continue
             jdata = {}
-            jdata['person'] = self.obj_dict[Person][person_ref.ref][OBJDICT_INDEX]
-            jdata['relationship'] = str(person_ref.get_relation())
+            jdata["person"] = self.obj_dict[Person][person_ref.ref][OBJDICT_INDEX]
+            jdata["relationship"] = str(person_ref.get_relation())
             # Get association notes
-            jdata['note'] = self.get_notes_text(person_ref)
+            jdata["note"] = self.get_notes_text(person_ref)
             # Get association sources
-            jdata['cita'] = self._data_source_citation_index(person_ref)
+            jdata["cita"] = self._data_source_citation_index(person_ref)
             #
             jdatas.append(jdata)
-        return(jdatas)
-
+        return jdatas
 
     def get_birth_date(self, person):
         ev = get_birth_or_fallback(self.database, person)
-        return(self._get_date_text(ev) or "?")
+        return self._get_date_text(ev) or "?"
+
     def get_birth_sdn(self, person):
         ev = get_birth_or_fallback(self.database, person)
-        return(self._get_sdn(ev))
+        return self._get_sdn(ev)
+
     def get_death_date(self, person):
         ev = get_death_or_fallback(self.database, person)
-        return(self._get_date_text(ev))
+        return self._get_date_text(ev)
+
     def get_death_sdn(self, person):
         ev = get_death_or_fallback(self.database, person)
-        return(self._get_sdn(ev))
+        return self._get_sdn(ev)
+
     def get_marriage_date(self, family):
         ev = get_marriage_or_fallback(self.database, family)
-        return(self._get_date_text(ev))
+        return self._get_date_text(ev)
+
     def get_marriage_sdn(self, family):
         ev = get_marriage_or_fallback(self.database, family)
-        return(self._get_sdn(ev))
+        return self._get_sdn(ev)
 
     def _get_date_text(self, event):
-        '''Get a data as string
+        """Get a data as string
         This data is used in indexes, or when linking to a person page
         This code is inspired from PedigreeGramplet.info_string
-        '''
+        """
         txt = ""
-        if (event):
+        if event:
             txt = escape(get_date(event))
-            if txt != '' and event.get_type() not in (EventType.BIRTH, EventType.DEATH, EventType.MARRIAGE):
+            if txt != "" and event.get_type() not in (
+                EventType.BIRTH,
+                EventType.DEATH,
+                EventType.MARRIAGE,
+            ):
                 # The date comes from a fallback event
                 txt = "<span class='dwr-fallback'>%s</span>" % txt
         return txt
 
     def _get_sdn(self, event):
         sdn = 0
-        if (event):
+        if event:
             sdn = event.get_date_object().get_sort_value()
         return sdn
 
     def get_birth_place(self, person):
         ev = get_birth_or_fallback(self.database, person)
-        return(self._get_place_text(ev))
+        return self._get_place_text(ev)
+
     def get_death_place(self, person):
         ev = get_death_or_fallback(self.database, person)
-        return(self._get_place_text(ev))
+        return self._get_place_text(ev)
+
     def get_marriage_place(self, family):
         ev = get_marriage_or_fallback(self.database, family)
-        return(self._get_place_text(ev))
+        return self._get_place_text(ev)
+
     def _get_place_text(self, event):
         place_name = ""
-        if (event):
+        if event:
             place_handle = event.get_place_handle()
-            if (place_handle and (place_handle in self.obj_dict[Place])):
+            if place_handle and (place_handle in self.obj_dict[Place]):
                 place_name = utils.place_name(self.database, place_handle)
-        return(place_name)
+        return place_name
 
     def get_death_age(self, person):
         ev_birth = get_birth_or_fallback(self.database, person)
         birth_date = None
-        if (ev_birth): birth_date = ev_birth.get_date_object()
+        if ev_birth:
+            birth_date = ev_birth.get_date_object()
         ev_death = get_death_or_fallback(self.database, person)
         death_date = None
-        if (ev_death): death_date = ev_death.get_date_object()
-        if (birth_date):
+        if ev_death:
+            death_date = ev_death.get_date_object()
+        if birth_date:
             alive = probably_alive(person, self.database, Today())
-            if (not alive and death_date):
+            if not alive and death_date:
                 nyears = death_date - birth_date
-                nyears.format(precision = 3)
-                return(str(nyears))
-        return("");
-
+                nyears.format(precision=3)
+                return str(nyears)
+        return ""
 
     def _export_pages(self):
-        '''
+        """
         Generate the HTML pages
-        '''
+        """
 
         # Check pages configuration (in the options)
         pcset = set(self.page_content)
-        if (len(pcset) != len(self.page_content)):
-            log.error(_("The pages configuration is not valid: several pages have the same content"))
+        if len(pcset) != len(self.page_content):
+            log.error(
+                _(
+                    "The pages configuration is not valid: several pages have the same content"
+                )
+            )
             return
 
         # List of page to generate:
@@ -2192,39 +2363,177 @@ class DynamicWebReport(Report):
         #  - Javascript code for generating the page
         self.page_list = [
             # Menu pages
-            ("index.html", _("DynWeb|Home"), PAGE_HOME in self.page_content, True, "Dwr.Main(Dwr.PAGE_HOME);"),
-            ("tree_svg.html", _("Tree"), PAGE_SVG_TREE in self.page_content, True, "Dwr.Main(Dwr.PAGE_SVG_TREE);"),
-            ("statistics_conf.html", _("Statistics"), True, True, "printStatisticsConf();"),
+            (
+                "index.html",
+                _("DynWeb|Home"),
+                PAGE_HOME in self.page_content,
+                True,
+                "Dwr.Main(Dwr.PAGE_HOME);",
+            ),
+            (
+                "tree_svg.html",
+                _("Tree"),
+                PAGE_SVG_TREE in self.page_content,
+                True,
+                "Dwr.Main(Dwr.PAGE_SVG_TREE);",
+            ),
+            (
+                "statistics_conf.html",
+                _("Statistics"),
+                True,
+                True,
+                "printStatisticsConf();",
+            ),
             # ("statistics_conf.html", _("Statistics"), PAGE_STATISTICS in self.page_content, True, "printStatisticsConf();"),
             # ("calendar.html", _("Calendar"), PAGE_CALENDAR in self.page_content, True, "printCalendar();"),
-            ("conf.html", _("Configuration"), self.inc_pageconf, True, "Dwr.Main(Dwr.PAGE_CONF);"),
+            (
+                "conf.html",
+                _("Configuration"),
+                self.inc_pageconf,
+                True,
+                "Dwr.Main(Dwr.PAGE_CONF);",
+            ),
             # Objects pages
             ("person.html", _("Person"), True, True, "Dwr.Main(Dwr.PAGE_INDI);"),
-            ("family.html", _("Family"), self.inc_families, True, "Dwr.Main(Dwr.PAGE_FAM);"),
-            ("source.html", _("Source"), self.inc_sources, True, "Dwr.Main(Dwr.PAGE_SOURCE);"),
-            ("media.html", _("Media"), self.inc_gallery, True, "Dwr.Main(Dwr.PAGE_MEDIA);"),
-            ("place.html", _("Place"), self.inc_places, True, "Dwr.Main(Dwr.PAGE_PLACE);"),
-            ("repository.html", _("Repository"), self.inc_repositories, True, "Dwr.Main(Dwr.PAGE_REPO);"),
-            ("search.html", _("Search results"), True, True, "Dwr.Main(Dwr.PAGE_SEARCH);"),
-            ("tree_svg_full.html", _("Tree"), PAGE_SVG_TREE in self.page_content, False, "Dwr.Main(Dwr.PAGE_SVG_TREE_FULL);"),
-            ("tree_svg_conf.html", _("Tree"), PAGE_SVG_TREE in self.page_content, True, "Dwr.Main(Dwr.PAGE_SVG_TREE_CONF);"),
-            ("tree_svg_save.html", _("Tree"), PAGE_SVG_TREE in self.page_content, True, "Dwr.Main(Dwr.PAGE_SVG_TREE_SAVE);"),
+            (
+                "family.html",
+                _("Family"),
+                self.inc_families,
+                True,
+                "Dwr.Main(Dwr.PAGE_FAM);",
+            ),
+            (
+                "source.html",
+                _("Source"),
+                self.inc_sources,
+                True,
+                "Dwr.Main(Dwr.PAGE_SOURCE);",
+            ),
+            (
+                "media.html",
+                _("Media"),
+                self.inc_gallery,
+                True,
+                "Dwr.Main(Dwr.PAGE_MEDIA);",
+            ),
+            (
+                "place.html",
+                _("Place"),
+                self.inc_places,
+                True,
+                "Dwr.Main(Dwr.PAGE_PLACE);",
+            ),
+            (
+                "repository.html",
+                _("Repository"),
+                self.inc_repositories,
+                True,
+                "Dwr.Main(Dwr.PAGE_REPO);",
+            ),
+            (
+                "search.html",
+                _("Search results"),
+                True,
+                True,
+                "Dwr.Main(Dwr.PAGE_SEARCH);",
+            ),
+            (
+                "tree_svg_full.html",
+                _("Tree"),
+                PAGE_SVG_TREE in self.page_content,
+                False,
+                "Dwr.Main(Dwr.PAGE_SVG_TREE_FULL);",
+            ),
+            (
+                "tree_svg_conf.html",
+                _("Tree"),
+                PAGE_SVG_TREE in self.page_content,
+                True,
+                "Dwr.Main(Dwr.PAGE_SVG_TREE_CONF);",
+            ),
+            (
+                "tree_svg_save.html",
+                _("Tree"),
+                PAGE_SVG_TREE in self.page_content,
+                True,
+                "Dwr.Main(Dwr.PAGE_SVG_TREE_SAVE);",
+            ),
             ("statistics.html", _("Statistics"), True, True, "printStatistics();"),
-            ("statistics_full.html", _("Statistics"), True, True, "printStatisticsExpand();"),
-            ("statistics_link.html", _("Statistics"), True, True, "printStatisticsLinks();"),
+            (
+                "statistics_full.html",
+                _("Statistics"),
+                True,
+                True,
+                "printStatisticsExpand();",
+            ),
+            (
+                "statistics_link.html",
+                _("Statistics"),
+                True,
+                True,
+                "printStatisticsLinks();",
+            ),
             # ("statistics.html", _("Statistics"), PAGE_STATISTICS in self.page_content, True, "printStatistics();"),
             # ("statistics_full.html", _("Statistics"), PAGE_STATISTICS in self.page_content, True, "printStatisticsExpand();"),
             # ("statistics_link.html", _("Statistics"), PAGE_STATISTICS in self.page_content, True, "printStatisticsLinks();"),
             # Index pages
-            ("surnames.html", _("Surnames"), True, True, "Dwr.Main(Dwr.PAGE_SURNAMES_INDEX);"),
-            ("surname.html", _("Surnames"), True, True, "Dwr.Main(Dwr.PAGE_SURNAME_INDEX);"),
-            ("persons.html", _("Individuals"), True, True, "Dwr.Main(Dwr.PAGE_PERSONS_INDEX);"),
-            ("families.html", _("Families"), False, True, "Dwr.Main(Dwr.PAGE_FAMILIES_INDEX);"),
-            ("sources.html", _("Sources"), False, True, "Dwr.Main(Dwr.PAGE_SOURCES_INDEX);"),
+            (
+                "surnames.html",
+                _("Surnames"),
+                True,
+                True,
+                "Dwr.Main(Dwr.PAGE_SURNAMES_INDEX);",
+            ),
+            (
+                "surname.html",
+                _("Surnames"),
+                True,
+                True,
+                "Dwr.Main(Dwr.PAGE_SURNAME_INDEX);",
+            ),
+            (
+                "persons.html",
+                _("Individuals"),
+                True,
+                True,
+                "Dwr.Main(Dwr.PAGE_PERSONS_INDEX);",
+            ),
+            (
+                "families.html",
+                _("Families"),
+                False,
+                True,
+                "Dwr.Main(Dwr.PAGE_FAMILIES_INDEX);",
+            ),
+            (
+                "sources.html",
+                _("Sources"),
+                False,
+                True,
+                "Dwr.Main(Dwr.PAGE_SOURCES_INDEX);",
+            ),
             ("medias.html", _("Media"), False, True, "Dwr.Main(Dwr.PAGE_MEDIA_INDEX);"),
-            ("places.html", _("Places"), False, True, "Dwr.Main(Dwr.PAGE_PLACES_INDEX);"),
-            ("address.html", _("Addresses"), False, True, "Dwr.Main(Dwr.PAGE_ADDRESSES_INDEX);"),
-            ("repositories.html", _("Repositories"), False, True, "Dwr.Main(Dwr.PAGE_REPOS_INDEX);"),
+            (
+                "places.html",
+                _("Places"),
+                False,
+                True,
+                "Dwr.Main(Dwr.PAGE_PLACES_INDEX);",
+            ),
+            (
+                "address.html",
+                _("Addresses"),
+                False,
+                True,
+                "Dwr.Main(Dwr.PAGE_ADDRESSES_INDEX);",
+            ),
+            (
+                "repositories.html",
+                _("Repositories"),
+                False,
+                True,
+                "Dwr.Main(Dwr.PAGE_REPOS_INDEX);",
+            ),
         ]
 
         # Build the list of index pages
@@ -2238,19 +2547,26 @@ class DynamicWebReport(Report):
             "repositories.html",
             "address.html",
         ]
-        self.index_pages = [p for p in  self.index_pages if (
-            (p != "families.html" or (self.inc_families and self.inc_families_index)) and
-            (p != "sources.html" or self.inc_sources) and
-            (p != "medias.html" or self.inc_gallery) and
-            (p != "places.html" or self.inc_places) and
-            (p != "repositories.html" or self.inc_repositories) and
-            (p != "address.html" or self.inc_addresses)
-        )]
+        self.index_pages = [
+            p
+            for p in self.index_pages
+            if (
+                (
+                    p != "families.html"
+                    or (self.inc_families and self.inc_families_index)
+                )
+                and (p != "sources.html" or self.inc_sources)
+                and (p != "medias.html" or self.inc_gallery)
+                and (p != "places.html" or self.inc_places)
+                and (p != "repositories.html" or self.inc_repositories)
+                and (p != "address.html" or self.inc_addresses)
+            )
+        ]
 
         self.map_pages = []
-        if self.options['placemappages']:
+        if self.options["placemappages"]:
             self.map_pages.append("place.html")
-        if self.options['familymappages']:
+        if self.options["familymappages"]:
             self.map_pages.append("person.html")
             self.map_pages.append("family.html")
         self.tree_pages = [
@@ -2267,26 +2583,29 @@ class DynamicWebReport(Report):
         ]
 
         # Export the HTML pages (not custom)
-        for (filename, title, test, menu, code) in self.page_list:
-            if not test and filename not in self.index_pages: continue
+        for filename, title, test, menu, code in self.page_list:
+            if not test and filename not in self.index_pages:
+                continue
             self._export_html_page(filename, title, code, menu)
 
         # Build the list of pages in the correct order
         self.pages_menu = []
         for pc in self.page_content:
-            if (pc == PAGE_INDEX):
-                self.pages_menu.append(['', _('Indexes')])
-            elif (pc < PAGE_INDEX):
+            if pc == PAGE_INDEX:
+                self.pages_menu.append(["", _("Indexes")])
+            elif pc < PAGE_INDEX:
                 self.pages_menu.append(self.page_list[pc][0:2])
             else:
                 i = pc - PAGE_CUSTOM
                 filename = "custom_%i.html" % (i + 1)
-                self.pages_menu.append([
-                    filename,
-                    self.custom_page_name[i]
-                ])
+                self.pages_menu.append([filename, self.custom_page_name[i]])
                 # Export the custom HTML pages
-                self._export_custom_page(filename, self.custom_page_name[i], self.custom_menu[i], self.custom_note[i])
+                self._export_custom_page(
+                    filename,
+                    self.custom_page_name[i],
+                    self.custom_menu[i],
+                    self.custom_note[i],
+                )
         self.pages_menu_index = [
             [filename, next(p[1] for p in self.page_list if p[0] == filename)]
             for filename in self.index_pages
@@ -2295,80 +2614,119 @@ class DynamicWebReport(Report):
         # Export the script containing the web  pages configuration
         self._export_script_configuration()
 
-
     def _export_script_configuration(self):
-        '''
+        """
         Generate "dwr_conf.js", which contains:
          - The pages configuration (mostly extract of the report options),
          - The localization (translated strings)
          - Gramps constants that could be used in the Javascript
-        '''
+        """
         sw = StringIO()
         sw.write("// This file is generated\n\n")
-        sw.write("DWR_VERSION_410 = " + ("true" if (DWR_VERSION_410) else "false") + ";\n")
-        sw.write("DWR_VERSION_412 = " + ("true" if (DWR_VERSION_412) else "false") + ";\n")
-        sw.write("DWR_VERSION_420 = " + ("true" if (DWR_VERSION_420) else "false") + ";\n")
-        sw.write("DWR_VERSION_500 = " + ("true" if (DWR_VERSION_500) else "false") + ";\n")
-        sw.write("TITLE = \"%s\";\n" % script_escape(self.title))
+        sw.write(
+            "DWR_VERSION_410 = " + ("true" if (DWR_VERSION_410) else "false") + ";\n"
+        )
+        sw.write(
+            "DWR_VERSION_412 = " + ("true" if (DWR_VERSION_412) else "false") + ";\n"
+        )
+        sw.write(
+            "DWR_VERSION_420 = " + ("true" if (DWR_VERSION_420) else "false") + ";\n"
+        )
+        sw.write(
+            "DWR_VERSION_500 = " + ("true" if (DWR_VERSION_500) else "false") + ";\n"
+        )
+        sw.write('TITLE = "%s";\n' % script_escape(self.title))
         sw.write("SPLIT = %i;\n" % SPLIT)
         sw_sizes = StringIO()
-        json.dump(self.db_sizes, sw_sizes, sort_keys = True, indent = 4)
+        json.dump(self.db_sizes, sw_sizes, sort_keys=True, indent=4)
         sw.write("DB_SIZES = %s;" % sw_sizes.getvalue())
         sw.write("NB_GENERATIONS_MAX = %i;\n" % int(self.options["graphgens"]))
         sw.write("PAGES_FILE = [")
-        sw.write(", ".join([
-            ("\"" + script_escape(page_menu[0]) + "\"")
-            for page_menu in self.pages_menu]))
+        sw.write(
+            ", ".join(
+                [
+                    ('"' + script_escape(page_menu[0]) + '"')
+                    for page_menu in self.pages_menu
+                ]
+            )
+        )
         sw.write("];\n")
         sw.write("PAGES_TITLE = [")
-        sw.write(", ".join([
-            ("\"" + script_escape(page_menu[1]) + "\"")
-            for page_menu in self.pages_menu]))
+        sw.write(
+            ", ".join(
+                [
+                    ('"' + script_escape(page_menu[1]) + '"')
+                    for page_menu in self.pages_menu
+                ]
+            )
+        )
         sw.write("];\n")
         sw.write("PAGES_FILE_INDEX = [")
-        sw.write(", ".join([
-            ("\"" + script_escape(page_menu[0]) + "\"")
-            for page_menu in self.pages_menu_index]))
+        sw.write(
+            ", ".join(
+                [
+                    ('"' + script_escape(page_menu[0]) + '"')
+                    for page_menu in self.pages_menu_index
+                ]
+            )
+        )
         sw.write("];\n")
         sw.write("PAGES_TITLE_INDEX = [")
-        sw.write(", ".join([
-            ("\"" + script_escape(page_menu[1]) + "\"")
-            for page_menu in self.pages_menu_index]))
+        sw.write(
+            ", ".join(
+                [
+                    ('"' + script_escape(page_menu[1]) + '"')
+                    for page_menu in self.pages_menu_index
+                ]
+            )
+        )
         sw.write("];\n")
         sw.write("SVG_TREE_TYPES_NAMES = [")
-        sw.write(", ".join([("\"" + script_escape(n) + "\"") for n in SVG_TREE_TYPES]))
+        sw.write(", ".join([('"' + script_escape(n) + '"') for n in SVG_TREE_TYPES]))
         sw.write("];\n")
         sw.write("SVG_TREE_SHAPES_NAMES = [")
-        sw.write(", ".join([("\"" + script_escape(n) + "\"") for n in SVG_TREE_SHAPES]))
+        sw.write(", ".join([('"' + script_escape(n) + '"') for n in SVG_TREE_SHAPES]))
         sw.write("];\n")
         sw.write("SVG_TREE_DISTRIB_ASC_NAMES = [")
-        sw.write(", ".join([("\"" + script_escape(n) + "\"") for n in SVG_TREE_DISTRIB_ASC]))
+        sw.write(
+            ", ".join([('"' + script_escape(n) + '"') for n in SVG_TREE_DISTRIB_ASC])
+        )
         sw.write("];\n")
         sw.write("SVG_TREE_DISTRIB_DSC_NAMES = [")
-        sw.write(", ".join([("\"" + script_escape(n) + "\"") for n in SVG_TREE_DISTRIB_DSC]))
+        sw.write(
+            ", ".join([('"' + script_escape(n) + '"') for n in SVG_TREE_DISTRIB_DSC])
+        )
         sw.write("];\n")
         sw.write("SVG_TREE_BACKGROUND_NAMES = [")
-        sw.write(", ".join([("\"" + script_escape(n) + "\"") for n in SVG_TREE_BACKGROUNDS]))
+        sw.write(
+            ", ".join([('"' + script_escape(n) + '"') for n in SVG_TREE_BACKGROUNDS])
+        )
         sw.write("];\n")
         sw.write("SVG_TREE_BACKGROUND_GENDER = %i;\n" % SVG_TREE_BACKGROUND_GENDER)
-        sw.write("SVG_TREE_BACKGROUND_GENERATION = %i;\n" % SVG_TREE_BACKGROUND_GENERATION)
+        sw.write(
+            "SVG_TREE_BACKGROUND_GENERATION = %i;\n" % SVG_TREE_BACKGROUND_GENERATION
+        )
         sw.write("SVG_TREE_BACKGROUND_AGE = %i;\n" % SVG_TREE_BACKGROUND_AGE)
         sw.write("SVG_TREE_BACKGROUND_SINGLE = %i;\n" % SVG_TREE_BACKGROUND_SINGLE)
         sw.write("SVG_TREE_BACKGROUND_PERIOD = %i;\n" % SVG_TREE_BACKGROUND_PERIOD)
         sw.write("SVG_TREE_BACKGROUND_WHITE = %i;\n" % SVG_TREE_BACKGROUND_WHITE)
         sw.write("SVG_TREE_BACKGROUND_SCHEME1 = %i;\n" % SVG_TREE_BACKGROUND_SCHEME1)
         sw.write("SVG_TREE_BACKGROUND_SCHEME2 = %i;\n" % SVG_TREE_BACKGROUND_SCHEME2)
-        sw.write("SVG_TREE_TYPE = %s;\n" % self.options['svg_tree_type'])
-        sw.write("SVG_TREE_SHAPE = %s;\n" % self.options['svg_tree_shape'])
-        sw.write("SVG_TREE_DISTRIB_ASC = %s;\n" % self.options['svg_tree_distrib_asc'])
-        sw.write("SVG_TREE_DISTRIB_DSC = %s;\n" % self.options['svg_tree_distrib_dsc'])
-        sw.write("SVG_TREE_BACKGROUND = %s;\n" % self.options['svg_tree_background'])
-        sw.write("SVG_TREE_COLOR1 = \"%s\";\n" % self.options['svg_tree_color1'])
-        sw.write("SVG_TREE_COLOR2 = \"%s\";\n" % self.options['svg_tree_color2'])
-        sw.write("SVG_TREE_SHOW_DUP = " + ("true" if (self.options['svg_tree_dup']) else "false") + ";\n")
-        sw.write("SVG_TREE_COLOR_DUP = \"%s\";\n" % self.options['svg_tree_color_dup'])
+        sw.write("SVG_TREE_TYPE = %s;\n" % self.options["svg_tree_type"])
+        sw.write("SVG_TREE_SHAPE = %s;\n" % self.options["svg_tree_shape"])
+        sw.write("SVG_TREE_DISTRIB_ASC = %s;\n" % self.options["svg_tree_distrib_asc"])
+        sw.write("SVG_TREE_DISTRIB_DSC = %s;\n" % self.options["svg_tree_distrib_dsc"])
+        sw.write("SVG_TREE_BACKGROUND = %s;\n" % self.options["svg_tree_background"])
+        sw.write('SVG_TREE_COLOR1 = "%s";\n' % self.options["svg_tree_color1"])
+        sw.write('SVG_TREE_COLOR2 = "%s";\n' % self.options["svg_tree_color2"])
+        sw.write(
+            "SVG_TREE_SHOW_DUP = "
+            + ("true" if (self.options["svg_tree_dup"]) else "false")
+            + ";\n"
+        )
+        sw.write('SVG_TREE_COLOR_DUP = "%s";\n' % self.options["svg_tree_color_dup"])
         sw.write("CHART_BACKGROUND_NAMES = [")
-        sw.write(", ".join([("\"" + script_escape(n) + "\"") for n in CHART_BACKGROUNDS]))
+        sw.write(", ".join([('"' + script_escape(n) + '"') for n in CHART_BACKGROUNDS]))
         sw.write("];\n")
         sw.write("CHART_BACKGROUND_GENDER = %i;\n" % CHART_BACKGROUND_GENDER)
         sw.write("CHART_BACKGROUND_GRADIENT = %i;\n" % CHART_BACKGROUND_GRADIENT)
@@ -2379,79 +2737,203 @@ class DynamicWebReport(Report):
         sw.write("STATISTICS_CHART_OPACITY = 70;\n")
         sw.write("GRAMPS_PREFERENCES = [];\n")
         for pref in [
-            'border-female-alive',
-            'border-female-dead',
-            'border-male-alive',
-            'border-male-dead',
-            'border-unknown-alive',
-            'border-unknown-dead',
-            'female-alive',
-            'female-dead',
-            'male-alive',
-            'male-dead',
-            'unknown-alive',
-            'unknown-dead',
-            ]:
-            if self.options['svg_theme'] == 0:
-                value = config.get('colors.%s' % pref)[0]
+            "border-female-alive",
+            "border-female-dead",
+            "border-male-alive",
+            "border-male-dead",
+            "border-unknown-alive",
+            "border-unknown-dead",
+            "female-alive",
+            "female-dead",
+            "male-alive",
+            "male-dead",
+            "unknown-alive",
+            "unknown-dead",
+        ]:
+            if self.options["svg_theme"] == 0:
+                value = config.get("colors.%s" % pref)[0]
             else:
-                value = config.get('colors.%s' % pref)[1]
+                value = config.get("colors.%s" % pref)[1]
             sw.write("GRAMPS_PREFERENCES['%s'] = \"%s\";\n" % (pref, value))
-        sw.write("SVG_TREE_COLOR_SCHEME0 = [" + ", ".join(
-            [("\"#%02x%02x%02x\"" % (r, g, b)) for (r, g, b) in GENCOLOR[BACKGROUND_WHITE]])
-            + "];\n")
-        sw.write("SVG_TREE_COLOR_SCHEME1 = [" + ", ".join(
-            [("\"#%02x%02x%02x\"" % (r, g, b)) for (r, g, b) in GENCOLOR[BACKGROUND_SCHEME1]])
-            + "];\n")
-        sw.write("SVG_TREE_COLOR_SCHEME2 = [" + ", ".join(
-            [("\"#%02x%02x%02x\"" % (r, g, b)) for (r, g, b) in GENCOLOR[BACKGROUND_SCHEME2]])
-            + "];\n")
-        sw.write("FOOTER=\"" + script_escape(self.get_header_footer_notes("footernote")) + "\";\n")
-        sw.write("HEADER=\"" + script_escape(self.get_header_footer_notes("headernote")) + "\";\n")
-        sw.write("BRAND_TITLE=\"" + script_escape(self.get_header_footer_notes("brandnote")) + "\";\n")
-        sw.write("COPYRIGHT=\"" + script_escape(self.get_copyright_license()) + "\";\n")
-        sw.write("INDEX_SURNAMES_TYPE=" + ("true" if (int(self.options['index_surnames_type'])) else "false") + ";\n")
-        sw.write("INDEX_PERSONS_TYPE=" + ("true" if (int(self.options['index_persons_type'])) else "false") + ";\n")
-        sw.write("INDEX_FAMILIES_TYPE=" + ("true" if (int(self.options['index_families_type'])) else "false") + ";\n")
-        sw.write("INDEX_SOURCES_TYPE=" + ("true" if (int(self.options['index_sources_type'])) else "false") + ";\n")
-        sw.write("INDEX_PLACES_TYPE=" + ("true" if (int(self.options['index_places_type'])) else "false") + ";\n")
-        sw.write("INDEX_SHOW_DATES=" + ("true" if (self.options['showdates']) else "false") + ";\n")
-        sw.write("INDEX_SHOW_PARTNER=" + ("true" if (self.options['showpartner']) else "false") + ";\n")
-        sw.write("INDEX_SHOW_PARENTS=" + ("true" if (self.options['showparents']) else "false") + ";\n")
-        sw.write("INDEX_SHOW_PATH=" + ("true" if (self.options['showpath']) else "false") + ";\n")
-        sw.write("INDEX_SHOW_BKREF_TYPE=" + ("true" if (self.options['bkref_type']) else "false") + ";\n")
-        sw.write("INDEX_DEFAULT_SIZE = %s;\n" % self.options['entries_shown'])
+        sw.write(
+            "SVG_TREE_COLOR_SCHEME0 = ["
+            + ", ".join(
+                [
+                    ('"#%02x%02x%02x"' % (r, g, b))
+                    for (r, g, b) in GENCOLOR[BACKGROUND_WHITE]
+                ]
+            )
+            + "];\n"
+        )
+        sw.write(
+            "SVG_TREE_COLOR_SCHEME1 = ["
+            + ", ".join(
+                [
+                    ('"#%02x%02x%02x"' % (r, g, b))
+                    for (r, g, b) in GENCOLOR[BACKGROUND_SCHEME1]
+                ]
+            )
+            + "];\n"
+        )
+        sw.write(
+            "SVG_TREE_COLOR_SCHEME2 = ["
+            + ", ".join(
+                [
+                    ('"#%02x%02x%02x"' % (r, g, b))
+                    for (r, g, b) in GENCOLOR[BACKGROUND_SCHEME2]
+                ]
+            )
+            + "];\n"
+        )
+        sw.write(
+            'FOOTER="'
+            + script_escape(self.get_header_footer_notes("footernote"))
+            + '";\n'
+        )
+        sw.write(
+            'HEADER="'
+            + script_escape(self.get_header_footer_notes("headernote"))
+            + '";\n'
+        )
+        sw.write(
+            'BRAND_TITLE="'
+            + script_escape(self.get_header_footer_notes("brandnote"))
+            + '";\n'
+        )
+        sw.write('COPYRIGHT="' + script_escape(self.get_copyright_license()) + '";\n')
+        sw.write(
+            "INDEX_SURNAMES_TYPE="
+            + ("true" if (int(self.options["index_surnames_type"])) else "false")
+            + ";\n"
+        )
+        sw.write(
+            "INDEX_PERSONS_TYPE="
+            + ("true" if (int(self.options["index_persons_type"])) else "false")
+            + ";\n"
+        )
+        sw.write(
+            "INDEX_FAMILIES_TYPE="
+            + ("true" if (int(self.options["index_families_type"])) else "false")
+            + ";\n"
+        )
+        sw.write(
+            "INDEX_SOURCES_TYPE="
+            + ("true" if (int(self.options["index_sources_type"])) else "false")
+            + ";\n"
+        )
+        sw.write(
+            "INDEX_PLACES_TYPE="
+            + ("true" if (int(self.options["index_places_type"])) else "false")
+            + ";\n"
+        )
+        sw.write(
+            "INDEX_SHOW_DATES="
+            + ("true" if (self.options["showdates"]) else "false")
+            + ";\n"
+        )
+        sw.write(
+            "INDEX_SHOW_PARTNER="
+            + ("true" if (self.options["showpartner"]) else "false")
+            + ";\n"
+        )
+        sw.write(
+            "INDEX_SHOW_PARENTS="
+            + ("true" if (self.options["showparents"]) else "false")
+            + ";\n"
+        )
+        sw.write(
+            "INDEX_SHOW_PATH="
+            + ("true" if (self.options["showpath"]) else "false")
+            + ";\n"
+        )
+        sw.write(
+            "INDEX_SHOW_BKREF_TYPE="
+            + ("true" if (self.options["bkref_type"]) else "false")
+            + ";\n"
+        )
+        sw.write("INDEX_DEFAULT_SIZE = %s;\n" % self.options["entries_shown"])
         sw.write("INDEXES_SIZES = %s;\n" % repr(INDEXES_SIZES))
-        sw.write("SHOW_ALL_SIBLINGS=" + ("true" if (self.options['showallsiblings']) else "false") + ";\n")
+        sw.write(
+            "SHOW_ALL_SIBLINGS="
+            + ("true" if (self.options["showallsiblings"]) else "false")
+            + ";\n"
+        )
         sw.write("INC_EVENTS=" + ("true" if (self.inc_events) else "false") + ";\n")
         sw.write("INC_FAMILIES=" + ("true" if (self.inc_families) else "false") + ";\n")
         sw.write("INC_SOURCES=" + ("true" if (self.inc_sources) else "false") + ";\n")
         sw.write("INC_MEDIA=" + ("true" if (self.inc_gallery) else "false") + ";\n")
         sw.write("INC_PLACES=" + ("true" if (self.inc_places) else "false") + ";\n")
-        sw.write("INC_REPOSITORIES=" + ("true" if (self.inc_repositories) else "false") + ";\n")
+        sw.write(
+            "INC_REPOSITORIES="
+            + ("true" if (self.inc_repositories) else "false")
+            + ";\n"
+        )
         sw.write("INC_NOTES=" + ("true" if (self.inc_notes) else "false") + ";\n")
-        sw.write("INC_ADDRESSES=" + ("true" if (self.inc_addresses) else "false") + ";\n")
-        sw.write("MAP_PLACE=" + ("true" if (self.options['placemappages']) else "false") + ";\n")
-        sw.write("MAP_FAMILY=" + ("true" if (self.options['familymappages']) else "false") + ";\n")
-        sw.write("MAP_SERVICE=\"" + script_escape(self.options['mapservice']) + "\";\n")
-        sw.write("SOURCE_AUTHOR_IN_TITLE=" + ("true" if (self.sourceauthor) else "false") + ";\n")
-        sw.write("TABBED_PANELS=" + ("true" if (self.options['tabbed_panels']) else "false") + ";\n")
-        sw.write("INC_CHANGE_TIME=" + ("true" if (self.options['inc_change_time']) else "false") + ";\n")
-        sw.write("HIDE_GID=" + ("true" if (self.options['hide_gid']) else "false") + ";\n")
-        sw.write("INC_PAGECONF = " + ("true" if (self.inc_pageconf) else "false") + ";\n")
+        sw.write(
+            "INC_ADDRESSES=" + ("true" if (self.inc_addresses) else "false") + ";\n"
+        )
+        sw.write(
+            "MAP_PLACE="
+            + ("true" if (self.options["placemappages"]) else "false")
+            + ";\n"
+        )
+        sw.write(
+            "MAP_FAMILY="
+            + ("true" if (self.options["familymappages"]) else "false")
+            + ";\n"
+        )
+        sw.write('MAP_SERVICE="' + script_escape(self.options["mapservice"]) + '";\n')
+        sw.write(
+            "SOURCE_AUTHOR_IN_TITLE="
+            + ("true" if (self.sourceauthor) else "false")
+            + ";\n"
+        )
+        sw.write(
+            "TABBED_PANELS="
+            + ("true" if (self.options["tabbed_panels"]) else "false")
+            + ";\n"
+        )
+        sw.write(
+            "INC_CHANGE_TIME="
+            + ("true" if (self.options["inc_change_time"]) else "false")
+            + ";\n"
+        )
+        sw.write(
+            "HIDE_GID=" + ("true" if (self.options["hide_gid"]) else "false") + ";\n"
+        )
+        sw.write(
+            "INC_PAGECONF = " + ("true" if (self.inc_pageconf) else "false") + ";\n"
+        )
         sw.write("__ = {")
         sep = "\n"
-        for (s, translated) in (
-            ("(b. %(birthdate)s, d. %(deathdate)s)", _("(b. %(birthdate)s, d. %(deathdate)s)")),
+        for s, translated in (
+            (
+                "(b. %(birthdate)s, d. %(deathdate)s)",
+                _("(b. %(birthdate)s, d. %(deathdate)s)"),
+            ),
             ("(b. %s)", _("(b. %s)")),
             ("(d. %s)", _("(d. %s)")),
-            ("(filtered from _MAX_ total entries)", _("(filtered from _MAX_ total entries)")),
+            (
+                "(filtered from _MAX_ total entries)",
+                _("(filtered from _MAX_ total entries)"),
+            ),
             ("(m. %s)", _("(m. %s)")),
             ("(sort by name)", _("(sort by name)")),
             ("(sort by quantity)", _("(sort by quantity)")),
-            (": activate to sort column ascending", _(": activate to sort column ascending")),
-            (": activate to sort column descending", _(": activate to sort column descending")),
-            ("<p>This page provides the SVG raw code.<br>Copy the contents into a text editor and save as an SVG file.<br>Make sure that the text editor encoding is UTF-8.</p>", _("<p>This page provides the SVG raw code.<br>Copy the contents into a text editor and save as an SVG file.<br>Make sure that the text editor encoding is UTF-8.</p>")),
+            (
+                ": activate to sort column ascending",
+                _(": activate to sort column ascending"),
+            ),
+            (
+                ": activate to sort column descending",
+                _(": activate to sort column descending"),
+            ),
+            (
+                "<p>This page provides the SVG raw code.<br>Copy the contents into a text editor and save as an SVG file.<br>Make sure that the text editor encoding is UTF-8.</p>",
+                _(
+                    "<p>This page provides the SVG raw code.<br>Copy the contents into a text editor and save as an SVG file.<br>Make sure that the text editor encoding is UTF-8.</p>"
+                ),
+            ),
             ("Abbreviation", _("Abbreviation")),
             ("Address", _("Address")),
             ("Addresses", _("Addresses")),
@@ -2474,7 +2956,10 @@ class DynamicWebReport(Report):
             ("Christening", _("Christening")),
             ("Citation", _("Citation")),
             ("Citations", _("Citations")),
-            ("Click on the map to show it full-screen", _("Click on the map to show it full-screen")),
+            (
+                "Click on the map to show it full-screen",
+                _("Click on the map to show it full-screen"),
+            ),
             ("Code", _("Code")),
             ("Configuration", _("Configuration")),
             ("Configure", _("Configure")),
@@ -2501,16 +2986,37 @@ class DynamicWebReport(Report):
             ("Help", _("Help")),
             ("ID", _("ID")),
             ("Include Place map on Place Pages", _("Include Place map on Place Pages")),
-            ("Include dates columns on the index pages", _("Include dates columns on the index pages")),
-            ("Include a column for parents on the index pages", _("Include a column for parents on the index pages")),
-            ("Include a column for media path on the index pages", _("Include a column for media path on the index pages")),
-            ("Include a column for partners on the index pages", _("Include a column for partners on the index pages")),
-            ("Include a map in the individuals and family pages", _("Include a map in the individuals and family pages")),
-            ("Include half and/ or step-siblings on the individual pages", _("Include half and/ or step-siblings on the individual pages")),
+            (
+                "Include dates columns on the index pages",
+                _("Include dates columns on the index pages"),
+            ),
+            (
+                "Include a column for parents on the index pages",
+                _("Include a column for parents on the index pages"),
+            ),
+            (
+                "Include a column for media path on the index pages",
+                _("Include a column for media path on the index pages"),
+            ),
+            (
+                "Include a column for partners on the index pages",
+                _("Include a column for partners on the index pages"),
+            ),
+            (
+                "Include a map in the individuals and family pages",
+                _("Include a map in the individuals and family pages"),
+            ),
+            (
+                "Include half and/ or step-siblings on the individual pages",
+                _("Include half and/ or step-siblings on the individual pages"),
+            ),
             ("Include references in indexes", _("Include references in indexes")),
             ("Indexes", _("Indexes")),
             ("Individuals", _("Individuals")),
-            ("Insert sources author in the sources title", _("Insert sources author in the sources title")),
+            (
+                "Insert sources author in the sources title",
+                _("Insert sources author in the sources title"),
+            ),
             ("Last Modified", _("Last Modified")),
             ("Latitude", _("Latitude")),
             ("Link", _("Link")),
@@ -2567,18 +3073,41 @@ class DynamicWebReport(Report):
             ("SVG tree parents distribution", _("SVG tree parents distribution")),
             ("Save tree as file", _("Save tree as file")),
             ("Search:", _("Search:")),
-            ("Select the background color scheme", _("Select the background color scheme")),
-            ("Select the children distribution (fan charts only)", _("Select the children distribution (fan charts only)")),
-            ("Select the number of ascending generations", _("Select the number of ascending generations")),
-            ("Select the number of descending generations", _("Select the number of descending generations")),
-            ("Select the parents distribution (fan charts only)", _("Select the parents distribution (fan charts only)")),
+            (
+                "Select the background color scheme",
+                _("Select the background color scheme"),
+            ),
+            (
+                "Select the children distribution (fan charts only)",
+                _("Select the children distribution (fan charts only)"),
+            ),
+            (
+                "Select the number of ascending generations",
+                _("Select the number of ascending generations"),
+            ),
+            (
+                "Select the number of descending generations",
+                _("Select the number of descending generations"),
+            ),
+            (
+                "Select the parents distribution (fan charts only)",
+                _("Select the parents distribution (fan charts only)"),
+            ),
             ("Select the shape of graph", _("Select the shape of graph")),
             ("Select the type of graph", _("Select the type of graph")),
-            ("Several matches.<br>Precise your search or choose in the lists below.", _("Several matches.<br>Precise your search or choose in the lists below.")),
+            (
+                "Several matches.<br>Precise your search or choose in the lists below.",
+                _(
+                    "Several matches.<br>Precise your search or choose in the lists below."
+                ),
+            ),
             ("Show _MENU_ entries", _("Show _MENU_ entries")),
             ("Show duplicates", _("Show duplicates")),
             ("Showing 0 to 0 of 0 entries", _("Showing 0 to 0 of 0 entries")),
-            ("Showing _START_ to _END_ of _TOTAL_ entries", _("Showing _START_ to _END_ of _TOTAL_ entries")),
+            (
+                "Showing _START_ to _END_ of _TOTAL_ entries",
+                _("Showing _START_ to _END_ of _TOTAL_ entries"),
+            ),
             ("Siblings", _("Siblings")),
             ("Sort by:", _("Sort by:")),
             ("Source", _("Source")),
@@ -2593,13 +3122,34 @@ class DynamicWebReport(Report):
             ("Type", _("Type")),
             ("U", _("U")),
             ("Unknown", _("Unknown")),
-            ("Use tabbed panels instead of sections", _("Use tabbed panels instead of sections")),
-            ("Use the search box above in order to find a person.", _("Use the search box above in order to find a person.")),
-            ("Use a table format for the surnames index", _("Use a table format for the surnames index")),
-            ("Use a table format for the persons index", _("Use a table format for the persons index")),
-            ("Use a table format for the families index", _("Use a table format for the families index")),
-            ("Use a table format for the sources index", _("Use a table format for the sources index")),
-            ("Use a table format for the places index", _("Use a table format for the places index")),
+            (
+                "Use tabbed panels instead of sections",
+                _("Use tabbed panels instead of sections"),
+            ),
+            (
+                "Use the search box above in order to find a person.",
+                _("Use the search box above in order to find a person."),
+            ),
+            (
+                "Use a table format for the surnames index",
+                _("Use a table format for the surnames index"),
+            ),
+            (
+                "Use a table format for the persons index",
+                _("Use a table format for the persons index"),
+            ),
+            (
+                "Use a table format for the families index",
+                _("Use a table format for the families index"),
+            ),
+            (
+                "Use a table format for the sources index",
+                _("Use a table format for the sources index"),
+            ),
+            (
+                "Use a table format for the places index",
+                _("Use a table format for the places index"),
+            ),
             ("Used for family", _("Used for family")),
             ("Used for media", _("Used for media")),
             ("Used for person", _("Used for person")),
@@ -2608,7 +3158,12 @@ class DynamicWebReport(Report):
             ("Value", _("Value")),
             ("Web Link", _("Web Link")),
             ("Web Links", _("Web Links")),
-            ("Whether to use a special color for the persons that appear several times in the SVG tree", _("Whether to use a special color for the persons that appear several times in the SVG tree")),
+            (
+                "Whether to use a special color for the persons that appear several times in the SVG tree",
+                _(
+                    "Whether to use a special color for the persons that appear several times in the SVG tree"
+                ),
+            ),
             ("Without name", _("Without name")),
             ("Without surname", _("Without surname")),
             ("Without title", _("Without title")),
@@ -2616,130 +3171,157 @@ class DynamicWebReport(Report):
             ("Zoom out", _("Zoom out")),
             ("all", _("all")),
         ):
-            sw.write(sep + "\"" + script_escape(s) + "\": \"" + script_escape(translated) + "\"")
+            sw.write(
+                sep + '"' + script_escape(s) + '": "' + script_escape(translated) + '"'
+            )
             sep = ",\n"
-        for (code, translated, s) in EventType._DATAMAP:
-            sw.write(sep + "\"" + script_escape(s) + "\": \"" + script_escape(translated) + "\"")
+        for code, translated, s in EventType._DATAMAP:
+            sw.write(
+                sep + '"' + script_escape(s) + '": "' + script_escape(translated) + '"'
+            )
             sep = ",\n"
         sw.write("\n};\n")
         sw.write(
-            ("URLTYPE_UNKNOWN = %i;\n" % UrlType.UNKNOWN) +
-            ("URLTYPE_CUSTOM = %i;\n" % UrlType.CUSTOM) +
-            ("URLTYPE_EMAIL = %i;\n" % UrlType.EMAIL) +
-            ("URLTYPE_WEB_HOME = %i;\n" % UrlType.WEB_HOME) +
-            ("URLTYPE_WEB_SEARCH = %i;\n" % UrlType.WEB_SEARCH) +
-            ("URLTYPE_WEB_FTP = %i;\n" % UrlType.WEB_FTP))
+            ("URLTYPE_UNKNOWN = %i;\n" % UrlType.UNKNOWN)
+            + ("URLTYPE_CUSTOM = %i;\n" % UrlType.CUSTOM)
+            + ("URLTYPE_EMAIL = %i;\n" % UrlType.EMAIL)
+            + ("URLTYPE_WEB_HOME = %i;\n" % UrlType.WEB_HOME)
+            + ("URLTYPE_WEB_SEARCH = %i;\n" % UrlType.WEB_SEARCH)
+            + ("URLTYPE_WEB_FTP = %i;\n" % UrlType.WEB_FTP)
+        )
         for placetype in (
-            'STREET', 'LOCALITY', 'CITY', 'PARISH', 'COUNTY', 'STATE', 'POSTAL', 'COUNTRY', 'PHONE',
+            "STREET",
+            "LOCALITY",
+            "CITY",
+            "PARISH",
+            "COUNTY",
+            "STATE",
+            "POSTAL",
+            "COUNTRY",
+            "PHONE",
         ):
-            sw.write("%s = \"%s\";\n" % (placetype, globals()[placetype]))
+            sw.write('%s = "%s";\n' % (placetype, globals()[placetype]))
         self.update_file("dwr_conf.js", sw.getvalue(), "UTF-8")
 
-
     def _export_html_page(self, filename, title, cmd, menu):
-        '''
+        """
         Generate an HTML page
         @param filename: output HTML file name
         @param title: Title of the page (prepended to L{self.title}
         @param cmd: Javascript code that generates the page
         @param menu: Whether to put a menu on the page
-        '''
+        """
         svg = "false"
         stats = "false"
         google = "false"
         key = ""
         osm = "false"
-        if filename in self.tree_pages: svg = "true"
-        if filename in self.statistics_pages: stats = "true"
+        if filename in self.tree_pages:
+            svg = "true"
+        if filename in self.statistics_pages:
+            stats = "true"
         if filename in self.map_pages:
-            if self.options['mapservice'] == "Google":
+            if self.options["mapservice"] == "Google":
                 google = "true"
-                key = self.options['googlemapkey']
+                key = self.options["googlemapkey"]
             else:
                 osm = "true"
-        script = Html("script", (
-            "LOAD_SVG_SCRIPTS = %s;\n"
-            "LOAD_STATS_SCRIPTS = %s;\n"
-            "LOAD_GOOGLEMAP_SCRIPTS = %s;\n"
-            "GOOGLEMAPKEY = '%s';\n"
-            "LOAD_OSM_SCRIPTS = %s;\n"
-            ) % (svg, stats, google, key, osm),
-            language = "javascript"
+        script = Html(
+            "script",
+            (
+                "LOAD_SVG_SCRIPTS = %s;\n"
+                "LOAD_STATS_SCRIPTS = %s;\n"
+                "LOAD_GOOGLEMAP_SCRIPTS = %s;\n"
+                "GOOGLEMAPKEY = '%s';\n"
+                "LOAD_OSM_SCRIPTS = %s;\n"
+            )
+            % (svg, stats, google, key, osm),
+            language="javascript",
         )
         (page, head, body) = self.write_header(title, menu, script)
-        body += Html("script", cmd, language = "javascript")
+        body += Html("script", cmd, language="javascript")
         self.update_file(filename, html_text(page))
 
-
     def _export_custom_page(self, filename, title, menu, note):
-        '''
+        """
         Generate an HTML custom page
         @param filename: output HTML file name
         @param title: Title of the page (prepended to L{self.title}
         @param menu: Whether to put a menu on the page
         @param note: note that contains the page contents
-        '''
+        """
         (page, head, body) = self.write_header(title, menu)
-        if (note):
+        if note:
             html = self.get_note_format(self.database.get_note_from_gramps_id(note))
             body += self.replace_note_fields(html)
         self.update_file(filename, html_text(page))
 
-
-    def write_header(self, title, menu, script = None):
-        '''
+    def write_header(self, title, menu, script=None):
+        """
         Generate an HTML page header
         @param title: Title of the page (prepended to L{self.title}
         @param menu: Whether to put a menu on the page
         @return: List of L{Html} objects as follows: (page, head, body)
-        '''
-        '''
+        """
+        """
         Note. 'title' is used as currentsection in the navigation links and
         as part of the header title.
-        '''
+        """
         # Begin each html page...
         xmllang = xml_lang()
-        (page, head, body) = Html.page('%s - %s' % (
+        (page, head, body) = Html.page(
+            "%s - %s"
+            % (
                 html_escape(title),
                 html_escape(self.title.strip()),
             ),
-            self.encoding, xmllang)
+            self.encoding,
+            xmllang,
+        )
         # Header constants
-        head += Html("meta", attr = 'name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1"')
-        head += Html("meta", attr = 'name="apple-mobile-web-app-capable" content="yes"')
-        head += Html("meta", attr = 'name="generator" content="%s %s %s"' % (PROGRAM_NAME, VERSION, URL_HOMEPAGE))
-        head += Html("meta", attr = 'name="author" content="%s"' % self.author)
+        head += Html(
+            "meta",
+            attr='name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1"',
+        )
+        head += Html("meta", attr='name="apple-mobile-web-app-capable" content="yes"')
+        head += Html(
+            "meta",
+            attr='name="generator" content="%s %s %s"'
+            % (PROGRAM_NAME, VERSION, URL_HOMEPAGE),
+        )
+        head += Html("meta", attr='name="author" content="%s"' % self.author)
         # Create script and favicon links
-        head += Html("link", type = "image/x-icon", href = "data/favicon.ico", rel = "shortcut icon")
-        if script is not None: head += script
-        head += Html("script", language = 'javascript', src = 'data/dwr_start.js')
+        head += Html(
+            "link", type="image/x-icon", href="data/favicon.ico", rel="shortcut icon"
+        )
+        if script is not None:
+            head += script
+        head += Html("script", language="javascript", src="data/dwr_start.js")
         # Disable menu
-        if (not menu):
+        if not menu:
             body.attr = "class='dwr-menuless'"
-        return(page, head, body)
-
+        return (page, head, body)
 
     def get_header_footer_notes(self, item):
-        '''
+        """
         Give the header/footer note converted to an HTML string
         @param item: Option giving the note. See options "footernote", "headernote", "brandnote"
         @return: text of the note
         @rtype: L{String}
-        '''
+        """
         note = self.options[item]
-        if (note):
+        if note:
             html = self.get_note_format(self.database.get_note_from_gramps_id(note))
-            return(self.replace_note_fields(html))
-        return("")
-
+            return self.replace_note_fields(html)
+        return ""
 
     def replace_note_fields(self, html):
-        '''
+        """
         Modify the notes for HTML pages generation
         This allow to add special features or computed data in the pages
         @param html: Note converted to HTML string
         @return: Modified string
-        '''
+        """
         text = html_text(html)
         # __SEARCH_FORM__ is replaced by a search form
         text = text.replace("__SEARCH_FORM__", "<div class='embed-search'></div>\n")
@@ -2761,50 +3343,85 @@ class DynamicWebReport(Report):
         # __NB_TOTAL_SOURCES__ is replaced by the number of sources in the whole database
         # __NB_TOTAL_REPOSITORIES__ is replaced by the number of repositories in the whole database
         # __NB_TOTAL_PLACES__ is replaced by the number of places in the whole database
-        text = text.replace("__NB_TOTAL_INDIVIDUALS__", str(self.database.get_number_of_people()))
-        text = text.replace("__NB_TOTAL_FAMILIES__", str(self.database.get_number_of_families()))
-        text = text.replace("__NB_TOTAL_MEDIA__", str(
-            self.database.get_number_of_media() if DWR_VERSION_500 else self.database.get_number_of_media_objects()))
-        text = text.replace("__NB_TOTAL_SOURCES__", str(self.database.get_number_of_sources()))
-        text = text.replace("__NB_TOTAL_REPOSITORIES__", str(self.database.get_number_of_repositories()))
-        text = text.replace("__NB_TOTAL_PLACES__", str(self.database.get_number_of_places()))
+        text = text.replace(
+            "__NB_TOTAL_INDIVIDUALS__", str(self.database.get_number_of_people())
+        )
+        text = text.replace(
+            "__NB_TOTAL_FAMILIES__", str(self.database.get_number_of_families())
+        )
+        text = text.replace(
+            "__NB_TOTAL_MEDIA__",
+            str(
+                self.database.get_number_of_media()
+                if DWR_VERSION_500
+                else self.database.get_number_of_media_objects()
+            ),
+        )
+        text = text.replace(
+            "__NB_TOTAL_SOURCES__", str(self.database.get_number_of_sources())
+        )
+        text = text.replace(
+            "__NB_TOTAL_REPOSITORIES__", str(self.database.get_number_of_repositories())
+        )
+        text = text.replace(
+            "__NB_TOTAL_PLACES__", str(self.database.get_number_of_places())
+        )
         # __MEDIA_<gid>__ is replaced by the media with Gramps ID <gid>
         # __THUMB_<gid>__ is replaced by the thumbnail of the media with Gramps ID <gid>
         text2 = text
         for mo in re.finditer(r"__(MEDIA|THUMB)_(.*?)__", text):
             gid = mo.group(2)
             media = self.get_from_gramps_id(_Media, gid)
-            if (not media): continue
+            if not media:
+                continue
             tm = mo.group(1)
-            if (tm == "THUMB"):
+            if tm == "THUMB":
                 path = self.copy_thumbnail(media)
                 text2 = (
-                    text2[ : -(len(text) - mo.start(0))] +
-                    "<img id='" + mo.group(0) + "' class='note_thumb' src='" + path + "'>" +
-                    text2[-(len(text) - mo.end(0)) : ])
+                    text2[: -(len(text) - mo.start(0))]
+                    + "<img id='"
+                    + mo.group(0)
+                    + "' class='note_thumb' src='"
+                    + path
+                    + "'>"
+                    + text2[-(len(text) - mo.end(0)) :]
+                )
             else:
                 path = self.get_media_web_path(media)
-                text2 =  (
-                    text2[ : -(len(text) - mo.start(0))] +
-                    "<img id='" + mo.group(0) + "' class='note_media' src='" + path + "'>" +
-                    text2[-(len(text) - mo.end(0)) : ])
+                text2 = (
+                    text2[: -(len(text) - mo.start(0))]
+                    + "<img id='"
+                    + mo.group(0)
+                    + "' class='note_media' src='"
+                    + path
+                    + "'>"
+                    + text2[-(len(text) - mo.end(0)) :]
+                )
         text = text2
         # __EXPORT_DATE__ is replaced by the current date
         # __GRAMPS_VERSION__ is replaced by the Gramps version
         # __GRAMPS_HOMEPAGE__ is replaced by the Gramps homepage
         text = text.replace("__EXPORT_DATE__", format_date(Today()))
         text = text.replace("__GRAMPS_VERSION__", VERSION)
-        text = text.replace("__GRAMPS_HOMEPAGE__", "<a href='" + URL_HOMEPAGE + "' class='gramps_homepage'>Gramps</a>")
+        text = text.replace(
+            "__GRAMPS_HOMEPAGE__",
+            "<a href='" + URL_HOMEPAGE + "' class='gramps_homepage'>Gramps</a>",
+        )
         # Relative URL are managed
         text = text.replace("relative://relative.", "")
         # __HOME_PERSON__ is replaced by the center person name, or the default person name, and links to its page
-        center_person = self.database.get_person_from_gramps_id(self.options['pid'])
-        filt_number = self.options['filter']
-        home_person_txt = ''
-        if center_person and center_person.handle in self.obj_dict[Person] and filt_number > 0 and  filt_number < 5:
+        center_person = self.database.get_person_from_gramps_id(self.options["pid"])
+        filt_number = self.options["filter"]
+        home_person_txt = ""
+        if (
+            center_person
+            and center_person.handle in self.obj_dict[Person]
+            and filt_number > 0
+            and filt_number < 5
+        ):
             home_person_txt = '<a href="person.html?idx=%i">%s</a>' % (
                 self.obj_dict[Person][center_person.handle][OBJDICT_INDEX],
-                self.filter.get_name()
+                self.filter.get_name(),
             )
         else:
             default_person = self.database.get_default_person()
@@ -2812,36 +3429,39 @@ class DynamicWebReport(Report):
                 if default_person.handle in self.obj_dict[Person]:
                     home_person_txt = '<a href="person.html?idx=%i">%s</a>' % (
                         self.obj_dict[Person][default_person.handle][OBJDICT_INDEX],
-                        self.get_name(default_person)
+                        self.get_name(default_person),
                     )
                 else:
                     home_person_txt = self.get_name(default_person)
             else:
-                home_person_txt = _('No Home Person')
+                home_person_txt = _("No Home Person")
         text = text.replace("__HOME_PERSON__", home_person_txt)
-        return(text)
-
+        return text
 
     def get_copyright_license(self):
-        '''
+        """
         will return either the text or image of the copyright license
-        '''
+        """
         text = ""
-        if (self.copyright == 0):
+        if self.copyright == 0:
             if self.author:
                 year = Today().get_year()
                 text = "<p class='copyright'>&copy; %(year)d %(person)s</p>" % {
-                    'person' : self.author,
-                    'year' : year}
-        elif (0 < self.copyright < len(_CC)):
+                    "person": self.author,
+                    "year": year,
+                }
+        elif 0 < self.copyright < len(_CC):
             url = "data/somerights20.gif"
-            text = "<p class='copyright'>" + _CC[self.copyright] % {'gif_fname' : url} + "</p>"
+            text = (
+                "<p class='copyright'>"
+                + _CC[self.copyright] % {"gif_fname": url}
+                + "</p>"
+            )
         # return text or image to its callers
-        return(text)
-
+        return text
 
     def update_db_file(self, name, jdatas):
-        '''
+        """
         Write JSON data into one or several files.
         jdatas is a list of dictionaries
         The files are organized as follows:
@@ -2858,67 +3478,70 @@ class DynamicWebReport(Report):
          - dwr_db_<name>_descr_1.js : contains the 'descr' fields of the first SPLIT elements
          - dwr_db_<name>_gid_1.js : contains the 'gid' fields of the first SPLIT elements
          etc.
-        '''
+        """
         self.db_sizes[name] = len(jdatas)
         for i in range(1 + (len(jdatas) - 1) // SPLIT):
             for k in jdatas[0].keys():
                 partial = [elt[k] for elt in jdatas[i * SPLIT : (i + 1) * SPLIT]]
                 sw = StringIO()
+                sw.write("// This file is generated\n\n" "%s_%s_%i = " % (name, k, i))
+                json.dump(partial, sw, sort_keys=True, indent=0)
                 sw.write(
-                    "// This file is generated\n\n"
-                    "%s_%s_%i = " % (name, k, i))
-                json.dump(partial, sw, sort_keys = True, indent = 0)
-                sw.write("\n"
-                    "Dwr.ScriptLoaded('dwr_db_%s_%s_%i.js');\n" % (name, k, i))
+                    "\n" "Dwr.ScriptLoaded('dwr_db_%s_%s_%i.js');\n" % (name, k, i)
+                )
                 self.update_file("dwr_db_%s_%s_%i.js" % (name, k, i), sw.getvalue())
-        if name in ["I", "F", "S", "M", "P", "R",]:
+        if name in [
+            "I",
+            "F",
+            "S",
+            "M",
+            "P",
+            "R",
+        ]:
             self.update_gid_xref_file(name, jdatas)
 
     def update_gid_xref_file(self, name, jdatas):
-        '''
+        """
         Write JSON data for cross references from GID to table indexes
-        '''
+        """
         gids = OrderedDict()
-        for (x, jdata) in enumerate(jdatas):
-            gids[jdata['gid']] = x
+        for x, jdata in enumerate(jdatas):
+            gids[jdata["gid"]] = x
         sw = StringIO()
-        sw.write(
-            "// This file is generated\n\n"
-            "%s_xgid = " % name)
-        json.dump(gids, sw, sort_keys = True, indent = 0)
-        sw.write("\n"
-            "Dwr.ScriptLoaded('dwr_db_%s_xgid.js');\n" % (name))
+        sw.write("// This file is generated\n\n" "%s_xgid = " % name)
+        json.dump(gids, sw, sort_keys=True, indent=0)
+        sw.write("\n" "Dwr.ScriptLoaded('dwr_db_%s_xgid.js');\n" % (name))
         self.update_file("dwr_db_%s_xgid.js" % name, sw.getvalue())
 
-
-    def update_file(self, fout, txt, encoding = None):
-        '''
+    def update_file(self, fout, txt, encoding=None):
+        """
         Write a string in a file.
         The file is not overwritten if the file exists and already contains the string
         @param fout: output file name
         @param txt: file contents
         @param encoding: encoding as passed to Python function codecs.open
-        '''
-        if (encoding is None): encoding = self.encoding
+        """
+        if encoding is None:
+            encoding = self.encoding
         f = os.path.join(self.target_path, fout)
         self.created_files.append(f)
-        if (os.path.exists(f)):
+        if os.path.exists(f):
             try:
-                fr = codecs.open(f, "r", encoding = encoding, errors="xmlcharrefreplace")
+                fr = codecs.open(f, "r", encoding=encoding, errors="xmlcharrefreplace")
                 txtr = fr.read()
                 fr.close()
-                if (txtr == txt):
-                    log.info("File \"%s\" not overwritten (identical)" % fout)
+                if txtr == txt:
+                    log.info('File "%s" not overwritten (identical)' % fout)
                     return
             except:
                 pass
-        fw = codecs.open(f, "w", encoding = encoding, errors="xmlcharrefreplace")
+        fw = codecs.open(f, "w", encoding=encoding, errors="xmlcharrefreplace")
         fw.write(txt)
         fw.close()
-        log.info("File \"%s\" generated" % fout)
+        log.info('File "%s" generated' % fout)
 
     def copy_file(self, from_fname, to_fname, to_dir=""):
-        '''
+        """
         Copy a file from a source to a (report) destination.
         If to_dir is not present and if the target is not an archive,
         then the destination directory will be created.
@@ -2929,7 +3552,7 @@ class DynamicWebReport(Report):
         be prepended before 'to_fname'.
 
         The file is not copied if the contents of 'from_fname' 'to_fname' are identical
-        '''
+        """
         # log.debug("copying '%s' to '%s/%s'" % (from_fname, to_dir, to_fname))
         dest = os.path.join(self.target_path, to_dir, to_fname)
         destdir = os.path.dirname(dest)
@@ -2941,237 +3564,314 @@ class DynamicWebReport(Report):
                 dest_temp = dest + ".temp"
                 shutil.copyfile(from_fname, dest_temp)
                 self.created_files.append(dest)
-                if (os.path.exists(dest)):
+                if os.path.exists(dest):
                     fr = codecs.open(dest, "rb")
                     old_bytes = fr.read()
                     fr.close()
                     fr = codecs.open(dest_temp, "rb")
                     new_bytes = fr.read()
                     fr.close()
-                    if (old_bytes == new_bytes):
+                    if old_bytes == new_bytes:
                         os.remove(dest_temp)
-                        log.info("File \"%s\" not overwritten (identical)" % dest)
+                        log.info('File "%s" not overwritten (identical)' % dest)
                         return
                     os.remove(dest)
                 os.rename(dest_temp, dest)
                 mtime = os.stat(from_fname).st_mtime
                 os.utime(dest, (mtime, mtime))
-                log.info("File \"%s\" generated" % dest)
+                log.info('File "%s" generated' % dest)
             except:
-                log.warning(_("Copying error: %(error)s") % {"error": sys.exc_info()[1]})
-                log.error(_("Impossible to copy \"%(src)s\" to \"%(dst)s\"") % {"src": from_fname, "dst": to_fname})
+                log.warning(
+                    _("Copying error: %(error)s") % {"error": sys.exc_info()[1]}
+                )
+                log.error(
+                    _('Impossible to copy "%(src)s" to "%(dst)s"')
+                    % {"src": from_fname, "dst": to_fname}
+                )
         elif self.warn_dir:
             self.user.warn(
-                _("Possible destination error") + "\n" +
-                _("You appear to have set your target directory "
-                  "to a directory used for data storage. This "
-                  "could create problems with file management. "
-                  "It is recommended that you consider using "
-                  "a different directory to store your generated "
-                  "web pages."))
+                _("Possible destination error")
+                + "\n"
+                + _(
+                    "You appear to have set your target directory "
+                    "to a directory used for data storage. This "
+                    "could create problems with file management. "
+                    "It is recommended that you consider using "
+                    "a different directory to store your generated "
+                    "web pages."
+                )
+            )
             self.warn_dir = False
 
-
-
     def copy_template_files(self):
-        '''
+        """
         Copy the template files to the target directory
 
         The template files are:
          - The files contained in the chosen template directory,
          - The files contained in the default template directory, unless they are also present in the chosen template directory
-        '''
+        """
         # Get template path
-        tmpl_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "templates", WEB_TEMPLATE_LIST[self.template][0])
-        default_tmpl_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "templates", WEB_TEMPLATE_LIST[0][0])
+        tmpl_path = os.path.join(
+            os.path.dirname(os.path.abspath(__file__)),
+            "templates",
+            WEB_TEMPLATE_LIST[self.template][0],
+        )
+        default_tmpl_path = os.path.join(
+            os.path.dirname(os.path.abspath(__file__)),
+            "templates",
+            WEB_TEMPLATE_LIST[0][0],
+        )
         try:
             # Copy template files
             self.copy_template_files_sub(tmpl_path)
             # Copy default template files if not already copied
             self.copy_template_files_sub(default_tmpl_path)
         except:
-            log.error(_("Unable to copy web site template files from \"%(path)s\"") % {"path": tmpl_path})
+            log.error(
+                _('Unable to copy web site template files from "%(path)s"')
+                % {"path": tmpl_path}
+            )
             raise
 
     def copy_template_files_sub(self, tmpl_path):
-        '''
+        """
         Copy the template files from L{tmpl_path} to the target directory
         The files already present in the target directory are not overwritten
         @param tmpl_path: template directory, as listed in L{WEB_TEMPLATE_LIST}
-        '''
-        for (root, dirnames, files) in os.walk(tmpl_path):
+        """
+        for root, dirnames, files in os.walk(tmpl_path):
             dst_path = root.replace(tmpl_path, self.target_path, 1)
+
             # Exclude unwanted files
             def _in_exclude(root, d):
                 d = os.path.normpath(os.path.abspath(os.path.join(root, d)))
                 for e in WEB_TEMPLATE_EXCLUDED:
-                    if (re.search(e, d)):
-                        return(True)
-                return(False)
+                    if re.search(e, d):
+                        return True
+                return False
+
             dirnames[:] = [d for d in dirnames if not _in_exclude(root, d)]
             files[:] = [d for d in files if not _in_exclude(root, d)]
             # Create sub-directories
             for dirname in dirnames:
                 # Remove files that have the same name as directories
                 dstdirname = os.path.join(dst_path, dirname)
-                if (os.path.isfile(dstdirname) or os.path.islink(dstdirname)):
+                if os.path.isfile(dstdirname) or os.path.islink(dstdirname):
                     os.remove(dstdirname)
                 # Create directory if needed
-                if (not os.path.isdir(dstdirname)):
+                if not os.path.isdir(dstdirname):
                     os.mkdir(dstdirname)
             # Copy files
             for file in files:
                 src = os.path.join(root, file)
                 dst = os.path.join(dst_path, file)
-                if (dst in self.created_files):
+                if dst in self.created_files:
                     # File was already copied
                     continue
-                if (os.path.isfile(dst)):
+                if os.path.isfile(dst):
                     # If file already exists, check dates
                     stat_src = os.stat(src)
                     stat_dst = os.stat(dst)
                     # If target file is newer, do not overwrite => If target file is older, delete it
-                    if (stat_src.st_mtime >= stat_dst.st_mtime):
+                    if stat_src.st_mtime >= stat_dst.st_mtime:
                         os.remove(dst)
                     else:
-                        log.info(_("Keeping \"%(dst)s\" (newer than \"%(src)s\")") % {'src': src, 'dst': dst})
-                if (not os.path.exists(dst)):
+                        log.info(
+                            _('Keeping "%(dst)s" (newer than "%(src)s")')
+                            % {"src": src, "dst": dst}
+                        )
+                if not os.path.exists(dst):
                     shutil.copyfile(src, dst)
-                    log.info(_("Copying \"%(src)s\" to \"%(dst)s\"") % {'src': src, 'dst': dst})
+                    log.info(
+                        _('Copying "%(src)s" to "%(dst)s"') % {"src": src, "dst": dst}
+                    )
                 self.created_files.append(dst)
 
-
     def create_archive(self):
-        '''
+        """
         Create an archive of the whole web site
-        '''
-        if (not self.options['archive']): return
+        """
+        if not self.options["archive"]:
+            return
 
         # Get archive path and type
-        arch_path = self.options['archive_file']
+        arch_path = self.options["archive_file"]
         ext = os.path.splitext(arch_path)[1].lower()
-        if (ext not in [".zip", ".tgz"]):
+        if ext not in [".zip", ".tgz"]:
             arch_path += ".zip"
             ext = ".zip"
 
-        if (os.path.isdir(arch_path)):
-            log.error(_('Invalid file name'))
-            log.error(_('The archive file must be a file, not a directory'))
+        if os.path.isdir(arch_path):
+            log.error(_("Invalid file name"))
+            log.error(_("The archive file must be a file, not a directory"))
             return
 
         # Get base path for the files inside the archive
         basepath = os.path.splitext(os.path.basename(arch_path))[0]
 
-        if (ext == ".zip"):
+        if ext == ".zip":
             try:
                 fzip = zipfile.ZipFile(arch_path, "w", zipfile.ZIP_DEFLATED, True)
             except:
-                log.error(_("Unable to overwrite archive file \"%(path)s\"") % {"path": arch_path})
+                log.error(
+                    _('Unable to overwrite archive file "%(path)s"')
+                    % {"path": arch_path}
+                )
                 raise
             for file in self.created_files:
                 arc_rel_path = file.replace(self.target_path, basepath, 1)
-                if (sys.version_info[0] < 3):
+                if sys.version_info[0] < 3:
                     file = file.encode("cp437")
                     arc_rel_path = arc_rel_path.encode("cp437")
                 try:
                     fzip.write(file, arc_rel_path)
                 except:
-                    log.error(_("Unable to add file \"%(file)s\" to archive \"%(archive)s\"") % {"file": file, "archive": arch_path})
+                    log.error(
+                        _('Unable to add file "%(file)s" to archive "%(archive)s"')
+                        % {"file": file, "archive": arch_path}
+                    )
                     raise
             fzip.close()
 
-        if (ext == ".tgz"):
+        if ext == ".tgz":
             try:
                 tgz = tarfile.open(arch_path, "w:gz")
             except:
-                log.error(_("Unable to overwrite archive file \"%(path)s\"") % {"path": arch_path})
+                log.error(
+                    _('Unable to overwrite archive file "%(path)s"')
+                    % {"path": arch_path}
+                )
                 raise
             for file in self.created_files:
                 arc_rel_path = file.replace(self.target_path, basepath, 1)
                 try:
                     tgz.add(file, arc_rel_path)
                 except:
-                    log.error(_("Unable to add file \"%(file)s\" to archive \"%(archive)s\"") % {"file": arc_rel_path, "archive": arch_path})
+                    log.error(
+                        _('Unable to add file "%(file)s" to archive "%(archive)s"')
+                        % {"file": arc_rel_path, "archive": arch_path}
+                    )
                     raise
             tgz.close()
 
-
     def build_link(self, prop, handle, obj_class):
-        '''
+        """
         Build a link to an item.
 
         This function is used when converting a Gramps note with hyperlinks into an HTML string
-        '''
+        """
         if prop == "gramps_id":
-            func = self.database.method('get_%s_from_gramps_id', obj_class)
+            func = self.database.method("get_%s_from_gramps_id", obj_class)
             if func:
                 obj = func(handle)
                 if obj:
                     handle = obj.get_handle()
                 else:
-                    raise AttributeError("gramps_id '%s' not found in '%s'" % handle, obj_class)
+                    raise AttributeError(
+                        "gramps_id '%s' not found in '%s'" % handle, obj_class
+                    )
             else:
-                raise AttributeError("invalid gramps_id lookup in table name '%s'" % obj_class)
+                raise AttributeError(
+                    "invalid gramps_id lookup in table name '%s'" % obj_class
+                )
         href = "search.html"
         i = -1
-        if (obj_class == "Person"):
+        if obj_class == "Person":
             href = "person.html"
-            if (handle in self.obj_dict[Person]):
-                href = "%s?idx=%i" % (href, self.obj_dict[Person][handle][OBJDICT_INDEX])
-        elif (obj_class == "Family"):
+            if handle in self.obj_dict[Person]:
+                href = "%s?idx=%i" % (
+                    href,
+                    self.obj_dict[Person][handle][OBJDICT_INDEX],
+                )
+        elif obj_class == "Family":
             href = "family.html"
-            if (handle in self.obj_dict[Family]):
-                href = "%s?fdx=%i" % (href, self.obj_dict[Family][handle][OBJDICT_INDEX])
-        elif (obj_class == "Source"):
+            if handle in self.obj_dict[Family]:
+                href = "%s?fdx=%i" % (
+                    href,
+                    self.obj_dict[Family][handle][OBJDICT_INDEX],
+                )
+        elif obj_class == "Source":
             href = "source.html"
-            if (handle in self.obj_dict[Source]):
-                href = "%s?sdx=%i" % (href, self.obj_dict[Source][handle][OBJDICT_INDEX])
-        elif (obj_class == "Citation"):
+            if handle in self.obj_dict[Source]:
+                href = "%s?sdx=%i" % (
+                    href,
+                    self.obj_dict[Source][handle][OBJDICT_INDEX],
+                )
+        elif obj_class == "Citation":
             href = "source.html"
-            source_handle = self.database.get_citation_from_handle(handle).get_reference_handle()
-            if (source_handle in self.obj_dict[Source]):
-                href = "%s?sdx=%i" % (href, self.obj_dict[Source][source_handle][OBJDICT_INDEX])
-        elif (obj_class == "Repository"):
+            source_handle = self.database.get_citation_from_handle(
+                handle
+            ).get_reference_handle()
+            if source_handle in self.obj_dict[Source]:
+                href = "%s?sdx=%i" % (
+                    href,
+                    self.obj_dict[Source][source_handle][OBJDICT_INDEX],
+                )
+        elif obj_class == "Repository":
             href = "repository.html"
-            if (handle in self.obj_dict[Repository]):
-                href = "%s?rdx=%i" % (href, self.obj_dict[Repository][handle][OBJDICT_INDEX])
-        elif (obj_class == "Media"):
+            if handle in self.obj_dict[Repository]:
+                href = "%s?rdx=%i" % (
+                    href,
+                    self.obj_dict[Repository][handle][OBJDICT_INDEX],
+                )
+        elif obj_class == "Media":
             href = "media.html"
-            if (handle in self.obj_dict[_Media]):
-                href = "%s?mdx=%i" % (href, self.obj_dict[_Media][handle][OBJDICT_INDEX])
-        elif (obj_class == "Place"):
+            if handle in self.obj_dict[_Media]:
+                href = "%s?mdx=%i" % (
+                    href,
+                    self.obj_dict[_Media][handle][OBJDICT_INDEX],
+                )
+        elif obj_class == "Place":
             href = "place.html"
-            if (handle in self.obj_dict[Place]):
+            if handle in self.obj_dict[Place]:
                 href = "%s?pdx=%i" % (href, self.obj_dict[Place][handle][OBJDICT_INDEX])
         else:
-            print(_("DynamicWebReport ignoring link type '%(class)s'") % {"class": obj_class})
-        return(href)
-
+            print(
+                _("DynamicWebReport ignoring link type '%(class)s'")
+                % {"class": obj_class}
+            )
+        return href
 
     def _data_bkref_index(self, obj_class, obj_handle, ref_class):
-        '''
+        """
         Build a list of object indexes referencing a given object
         @param obj_class: Referenced object class
         @param obj_handle: Referenced object handle
         @param ref_class: Class of the refencing objects
         @return: String representing the Javascript Array of the object indexes (of class L{ref_class}) referencing a given object (L{obj_class}, L{obj_handle})
-        '''
+        """
         bkref_list = self.bkref_dict[obj_class][obj_handle]
-        if (not bkref_list): return ([])
+        if not bkref_list:
+            return []
         # Sort by referenced object
-        bkref_list = sorted(bkref_list, key = lambda bkref: self.obj_dict[bkref[BKREF_CLASS]][bkref[BKREF_HANDLE]][OBJDICT_NAME] + " " + str(BKREF_HANDLE))
+        bkref_list = sorted(
+            bkref_list,
+            key=lambda bkref: self.obj_dict[bkref[BKREF_CLASS]][bkref[BKREF_HANDLE]][
+                OBJDICT_NAME
+            ]
+            + " "
+            + str(BKREF_HANDLE),
+        )
         # Filter bkref_list (keep only ref_class) and remove duplicates
         seen = set()
-        bkref_list = [bkref_handle
+        bkref_list = [
+            bkref_handle
             for (bkref_class, bkref_handle, media_ref) in bkref_list
-            if (bkref_class == ref_class and not (bkref_handle in seen or seen.add(bkref_handle)))]
-        bkref_index = [self.obj_dict[ref_class][bkref_handle][OBJDICT_INDEX] for bkref_handle in bkref_list]
+            if (
+                bkref_class == ref_class
+                and not (bkref_handle in seen or seen.add(bkref_handle))
+            )
+        ]
+        bkref_index = [
+            self.obj_dict[ref_class][bkref_handle][OBJDICT_INDEX]
+            for bkref_handle in bkref_list
+        ]
         bkref_index.sort()
-        return(bkref_index)
-
+        return bkref_index
 
     def _data_repo_backref_index(self, repo, ref_class):
-        '''
+        """
         Build a list of sources referencing a given repository, in the form:
          - s_idx: source index (in table 'S')
          - media_type: media type
@@ -3180,25 +3880,28 @@ class DynamicWebReport(Report):
         @param repo: Referenced repository
         @param ref_class: Class of the refencing objects
         @return: String representing the Javascript Array of the references to L{repo}
-        '''
+        """
         repo_handle = repo.get_handle()
-        if (repo_handle not in self.obj_dict[Repository]): return([])
+        if repo_handle not in self.obj_dict[Repository]:
+            return []
         bkref_list = self.bkref_dict[Repository][repo_handle]
-        if (not bkref_list): return ([])
+        if not bkref_list:
+            return []
         jdatas = []
-        for (bkref_class, bkref_handle, repo_ref) in bkref_list:
-            if (ref_class != bkref_class): continue
+        for bkref_class, bkref_handle, repo_ref in bkref_list:
+            if ref_class != bkref_class:
+                continue
             i = self.obj_dict[ref_class][bkref_handle][OBJDICT_INDEX]
             object = self.get_from_handle(bkref_class, bkref_handle)
             jdata = self._data_repo_ref(repo_ref, i)
-            jdata['s_idx'] = jdata['r_idx']
-            del jdata['r_idx']
+            jdata["s_idx"] = jdata["r_idx"]
+            del jdata["r_idx"]
             jdatas.append(jdata)
-        jdatas.sort(key = lambda x: x['s_idx'])
-        return(jdatas)
+        jdatas.sort(key=lambda x: x["s_idx"])
+        return jdatas
 
     def _data_media_backref_index(self, media, ref_class):
-        '''
+        """
         Build a list of object referencing a given media, in the form:
          - bk_idx: object index (in table 'I', 'F', 'S')
          - thumb: media thumbnail path
@@ -3208,93 +3911,94 @@ class DynamicWebReport(Report):
         @param media: Referenced repository
         @param ref_class: Class of the refencing objects
         @return: String representing the Javascript Array of the references to L{media}
-        '''
+        """
         media_handle = media.get_handle()
-        if (media_handle not in self.obj_dict[_Media]): return([])
+        if media_handle not in self.obj_dict[_Media]:
+            return []
         bkref_list = self.bkref_dict[_Media][media_handle]
-        if (not bkref_list): return ([])
+        if not bkref_list:
+            return []
         jdatas = []
-        for (bkref_class, bkref_handle, media_ref) in bkref_list:
-            if (ref_class != bkref_class): continue
+        for bkref_class, bkref_handle, media_ref in bkref_list:
+            if ref_class != bkref_class:
+                continue
             i = self.obj_dict[ref_class][bkref_handle][OBJDICT_INDEX]
             object = self.get_from_handle(bkref_class, bkref_handle)
             jdata = self._data_media_ref(media_ref, i)
-            jdata['bk_idx'] = jdata['m_idx']
-            del jdata['m_idx']
+            jdata["bk_idx"] = jdata["m_idx"]
+            del jdata["m_idx"]
             jdatas.append(jdata)
-        jdatas.sort(key = lambda x: x['bk_idx'])
-        return(jdatas)
-
+        jdatas.sort(key=lambda x: x["bk_idx"])
+        return jdatas
 
     def get_from_handle(self, class_, handle):
-        '''
+        """
         Get an object from its handle and class
-        '''
+        """
         object = None
-        if (class_ == Person):
+        if class_ == Person:
             object = self.database.get_person_from_handle(handle)
-        elif (class_ == Family):
+        elif class_ == Family:
             object = self.database.get_family_from_handle(handle)
-        elif (class_ == Event):
+        elif class_ == Event:
             object = self.database.get_event_from_handle(handle)
-        elif (class_ == Source):
+        elif class_ == Source:
             object = self.database.get_source_from_handle(handle)
-        elif (class_ == Citation):
+        elif class_ == Citation:
             object = self.database.get_citation_from_handle(handle)
-        elif (class_ == Place):
+        elif class_ == Place:
             object = self.database.get_place_from_handle(handle)
-        elif (class_ == Repository):
+        elif class_ == Repository:
             object = self.database.get_repository_from_handle(handle)
-        elif (class_ == _Media):
-            if (DWR_VERSION_500):
+        elif class_ == _Media:
+            if DWR_VERSION_500:
                 object = self.database.get_media_from_handle(handle)
             else:
                 object = self.database.get_object_from_handle(handle)
-        return(object)
-
+        return object
 
     def get_from_gramps_id(self, class_, gid):
-        '''
+        """
         Get an object from its Gramps ID and class
-        '''
+        """
         object = None
-        if (class_ == Person):
+        if class_ == Person:
             object = self.database.get_person_from_gramps_id(gid)
-        elif (class_ == Family):
+        elif class_ == Family:
             object = self.database.get_family_from_gramps_id(gid)
-        elif (class_ == Event):
+        elif class_ == Event:
             object = self.database.get_event_from_gramps_id(gid)
-        elif (class_ == Source):
+        elif class_ == Source:
             object = self.database.get_source_from_gramps_id(gid)
-        elif (class_ == Citation):
+        elif class_ == Citation:
             object = self.database.get_citation_from_gramps_id(gid)
-        elif (class_ == Place):
+        elif class_ == Place:
             object = self.database.get_place_from_gramps_id(gid)
-        elif (class_ == Repository):
+        elif class_ == Repository:
             object = self.database.get_repository_from_gramps_id(gid)
-        elif (class_ == _Media):
-            if (DWR_VERSION_500):
+        elif class_ == _Media:
+            if DWR_VERSION_500:
                 object = self.database.get_media_from_gramps_id(gid)
             else:
                 object = self.database.get_object_from_gramps_id(gid)
-        return(object)
-
+        return object
 
     ##############################################################################################
     ################################################################################## GENDEX data
     ##############################################################################################
 
     def build_gendex(self):
-        if (not self.inc_gendex): return
+        if not self.inc_gendex:
+            return
         fp_gendex = StringIO()
         person_list = list(self.obj_dict[Person].keys())
-        person_list.sort(key = lambda x: self.obj_dict[Person][x][OBJDICT_INDEX])
+        person_list.sort(key=lambda x: self.obj_dict[Person][x][OBJDICT_INDEX])
         for person_handle in person_list:
             self.write_gendex(fp_gendex, person_handle)
         self.update_file("gendex.txt", fp_gendex.getvalue())
 
     def write_gendex(self, fp, person_handle):
-        '''
+        """
         Reference|SURNAME|given name /SURNAME/|date of birth|place of birth|date of death|place of death|
         * field 1: file name of web page referring to the individual
         * field 2: surname of the individual
@@ -3303,8 +4007,9 @@ class DynamicWebReport(Report):
         * field 5: place of birth or christening (optional)
         * field 6: date of death or burial (optional)
         * field 7: place of death or burial (optional)
-        '''
-        if (not(person_handle and (person_handle in self.obj_dict[Person]))): return
+        """
+        if not (person_handle and (person_handle in self.obj_dict[Person])):
+            return
         person = self.database.get_person_from_handle(person_handle)
         url = "person.html?idx=%i" % self.obj_dict[Person][person_handle][OBJDICT_INDEX]
         surname = person.get_primary_name().get_surname()
@@ -3315,31 +4020,29 @@ class DynamicWebReport(Report):
 
         # get death info:
         (dod, pod) = self.get_gendex_data(person.get_death_ref())
-        fp.write(
-            '|'.join((url, surname, fullname, dob, pob, dod, pod)) + '|\n')
+        fp.write("|".join((url, surname, fullname, dob, pob, dod, pod)) + "|\n")
 
     def get_gendex_data(self, event_ref):
-        '''
+        """
         Given an event, return the date and place a strings
-        '''
-        doe = "" # date of event
-        poe = "" # place of event
-        if (event_ref):
+        """
+        doe = ""  # date of event
+        poe = ""  # place of event
+        if event_ref:
             event = self.database.get_event_from_handle(event_ref.ref)
-            if (event):
+            if event:
                 date = event.get_date_object()
-                doe = format_date(date, gedcom = True)
-                if (event.get_place_handle()):
+                doe = format_date(date, gedcom=True)
+                if event.get_place_handle():
                     place_handle = event.get_place_handle()
-                    if (place_handle):
+                    if place_handle:
                         place = self.database.get_place_from_handle(place_handle)
-                        if (place):
-                            if DWR_VERSION_412 and config.get('preferences.place-auto'):
+                        if place:
+                            if DWR_VERSION_412 and config.get("preferences.place-auto"):
                                 poe = _pd.display(self.database, place)
                             else:
                                 poe = place.get_title()
-        return(doe, poe)
-
+        return (doe, poe)
 
     ##############################################################################################
     ##############################################################################################
@@ -3350,7 +4053,7 @@ class DynamicWebReport(Report):
     ##############################################################################################
 
     def _build_obj_dict(self):
-        '''
+        """
         Construct the dictionaries of objects to be included in the reports. There
         are two dictionaries, which have the same structure: they are two level
         dictionaries,the first key is the class of object (e.g. gen.lib.Person).
@@ -3369,14 +4072,23 @@ class DynamicWebReport(Report):
             - for media it is a MediaRef object
 
         This method recursively calls the methods "_add_***"
-        '''
-        _obj_class_list = (Person, Family, Event, Place, Source, Citation,
-                           _Media, Repository, Note, Tag)
+        """
+        _obj_class_list = (
+            Person,
+            Family,
+            Event,
+            Place,
+            Source,
+            Citation,
+            _Media,
+            Repository,
+            Note,
+            Tag,
+        )
 
         # setup a dictionary of the required structure
         self.obj_dict = defaultdict(lambda: defaultdict(set))
         self.bkref_dict = defaultdict(lambda: defaultdict(set))
-
 
         # initialise the dictionary to empty in case no objects of any
         # particular class are included in the web report
@@ -3386,35 +4098,48 @@ class DynamicWebReport(Report):
         ind_list = self.database.iter_person_handles()
         ind_list = self.filter.apply(self.database, ind_list, user=self.user)
 
-        with self.user.progress(_("Dynamic Web Site Report"),
-                                  _("Constructing list of other objects..."),
-                                  sum(1 for _ in ind_list)) as step:
+        with self.user.progress(
+            _("Dynamic Web Site Report"),
+            _("Constructing list of other objects..."),
+            sum(1 for _ in ind_list),
+        ) as step:
             for handle in ind_list:
                 step()
                 self._add_person(handle)
 
         # Debug output
-        log.debug("final object dictionary \n" +
-                  "".join(("%s: %s\n" % item) for item in self.obj_dict.items()))
+        log.debug(
+            "final object dictionary \n"
+            + "".join(("%s: %s\n" % item) for item in self.obj_dict.items())
+        )
 
-        log.debug("final backref dictionary \n" +
-                  "".join(("%s: %s\n" % item) for item in self.bkref_dict.items()))
+        log.debug(
+            "final backref dictionary \n"
+            + "".join(("%s: %s\n" % item) for item in self.bkref_dict.items())
+        )
 
-
-    def _add_person(self, person_handle, bkref_class = None, bkref_handle = None):
-        '''
+    def _add_person(self, person_handle, bkref_class=None, bkref_handle=None):
+        """
         Add person_handle to the L{self.obj_dict}, and recursively all referenced objects
-        '''
+        """
         # Update the dictionaries of objects back references
-        if (bkref_class is not None):
-            self.bkref_dict[Person][person_handle].add((bkref_class, bkref_handle, None))
+        if bkref_class is not None:
+            self.bkref_dict[Person][person_handle].add(
+                (bkref_class, bkref_handle, None)
+            )
         # Check if the person is already added
-        if (person_handle in self.obj_dict[Person]): return
+        if person_handle in self.obj_dict[Person]:
+            return
         # Add person in the dictionaries of objects
         person = self.database.get_person_from_handle(person_handle)
-        if (not person): return
+        if not person:
+            return
         person_name = self.get_person_name(person)
-        self.obj_dict[Person][person_handle] = [person_name, person.gramps_id, len(self.obj_dict[Person])]
+        self.obj_dict[Person][person_handle] = [
+            person_name,
+            person.gramps_id,
+            len(self.obj_dict[Person]),
+        ]
         # Person events
         evt_ref_list = person.get_event_ref_list()
         if evt_ref_list:
@@ -3424,8 +4149,7 @@ class DynamicWebReport(Report):
         for citation_handle in person.get_citation_list():
             self._add_citation(citation_handle, Person, person_handle)
         # Person name citations
-        for name in [person.get_primary_name()] + \
-                        person.get_alternate_names():
+        for name in [person.get_primary_name()] + person.get_alternate_names():
             for citation_handle in name.get_citation_list():
                 self._add_citation(citation_handle, Person, person_handle)
         # LDS Ordinance citations
@@ -3454,32 +4178,37 @@ class DynamicWebReport(Report):
             for citation_handle in addr.get_citation_list():
                 self._add_citation(citation_handle, Person, person_handle)
 
-
     def get_person_name(self, person):
-        '''
+        """
         Return a string containing the person's primary name in the name format chosen in the web report options
         @param: person -- person object from database
-        '''
-        name_format = self.options['name_format']
+        """
+        name_format = self.options["name_format"]
         primary_name = person.get_primary_name()
         name = Name(primary_name)
         name.set_display_as(name_format)
         return _nd.display_name(name)
 
-
-    def _add_family(self, family_handle, bkref_class = None, bkref_handle = None):
-        '''
+    def _add_family(self, family_handle, bkref_class=None, bkref_handle=None):
+        """
         Add family_handle to the L{self.obj_dict}, and recursively all referenced objects
-        '''
+        """
         # Update the dictionaries of objects back references
-        if (bkref_class is not None):
-            self.bkref_dict[Family][family_handle].add((bkref_class, bkref_handle, None))
+        if bkref_class is not None:
+            self.bkref_dict[Family][family_handle].add(
+                (bkref_class, bkref_handle, None)
+            )
         # Check if the family is already added
-        if (family_handle in self.obj_dict[Family]): return
+        if family_handle in self.obj_dict[Family]:
+            return
         # Add family in the dictionaries of objects
         family = self.database.get_family_from_handle(family_handle)
         family_name = self.get_family_name(family)
-        self.obj_dict[Family][family_handle] = [family_name, family.gramps_id, len(self.obj_dict[Family])]
+        self.obj_dict[Family][family_handle] = [
+            family_name,
+            family.gramps_id,
+            len(self.obj_dict[Family]),
+        ]
         # Family events
         evt_ref_list = family.get_event_ref_list()
         if evt_ref_list:
@@ -3505,26 +4234,28 @@ class DynamicWebReport(Report):
             media_handle = media_ref.get_reference_handle()
             self._add_media(media_handle, Family, family_handle, media_ref)
 
-
     def get_family_name(self, family):
-        '''
+        """
         Return a string containing the name of the family (e.g. 'Family of John Doe and Jane Doe')
         @param: family -- family object from database
-        '''
+        """
         father_handle = family.get_father_handle()
         mother_handle = family.get_mother_handle()
 
         father = None
         mother = None
-        if father_handle: father = self.database.get_person_from_handle(father_handle)
-        if mother_handle: mother = self.database.get_person_from_handle(mother_handle)
+        if father_handle:
+            father = self.database.get_person_from_handle(father_handle)
+        if mother_handle:
+            mother = self.database.get_person_from_handle(mother_handle)
 
         if father and mother:
             father_name = self.get_person_name(father)
             mother_name = self.get_person_name(mother)
             title_str = _("Family of %(husband)s and %(spouse)s") % {
                 "husband": father_name,
-                "spouse": mother_name}
+                "spouse": mother_name,
+            }
         elif father:
             father_name = self.get_person_name(father)
             # Only the name of the father is known
@@ -3538,28 +4269,36 @@ class DynamicWebReport(Report):
 
         return title_str
 
-
-    def _add_event(self, event_handle, bkref_class = None, bkref_handle = None, event_ref = None):
-        '''
+    def _add_event(
+        self, event_handle, bkref_class=None, bkref_handle=None, event_ref=None
+    ):
+        """
         Add event_handle to the L{self.obj_dict}, and recursively all referenced objects
-        '''
+        """
         # Check if event reference already added
-        if (event_handle in self.bkref_dict[Event]):
-            refs = [bkref[BKREF_REFOBJ] for bkref in self.bkref_dict[Event][event_handle]]
+        if event_handle in self.bkref_dict[Event]:
+            refs = [
+                bkref[BKREF_REFOBJ] for bkref in self.bkref_dict[Event][event_handle]
+            ]
             # The event reference is already recorded
-            if (event_ref in refs): return
+            if event_ref in refs:
+                return
         # Update the dictionaries of objects back references
-        if (bkref_class is not None):
-            self.bkref_dict[Event][event_handle].add((bkref_class, bkref_handle, event_ref))
+        if bkref_class is not None:
+            self.bkref_dict[Event][event_handle].add(
+                (bkref_class, bkref_handle, event_ref)
+            )
             # Event reference attributes citations
             for attr in event_ref.get_attribute_list():
                 for citation_handle in attr.get_citation_list():
                     self._add_citation(citation_handle, bkref_class, bkref_handle)
         # Check if the event is already added
-        if (event_handle in self.obj_dict[Event]): return
+        if event_handle in self.obj_dict[Event]:
+            return
         # Add event in the dictionaries of objects
         event = self.database.get_event_from_handle(event_handle)
-        if (not event): return
+        if not event:
+            return
         event_name = str(event.get_type())
         event_desc = event.get_description()
         # The event description can be Y on import from GEDCOM. See the
@@ -3568,12 +4307,16 @@ class DynamicWebReport(Report):
         # and value in the event structure. When neither the date value nor the
         # place value are known then a Y(es) value on the parent event tag line
         # is required to assert that the event happened.""
-        if not (event_desc == "" or event_desc is None or event_desc =="Y"):
+        if not (event_desc == "" or event_desc is None or event_desc == "Y"):
             event_name = event_name + ": " + event_desc
-        self.obj_dict[Event][event_handle] = [event_name, event.gramps_id, len(self.obj_dict[Event])]
+        self.obj_dict[Event][event_handle] = [
+            event_name,
+            event.gramps_id,
+            len(self.obj_dict[Event]),
+        ]
         # Event place
         place_handle = event.get_place_handle()
-        if (place_handle):
+        if place_handle:
             self._add_place(place_handle, bkref_class, bkref_handle)
         # Event citations
         for citation_handle in event.get_citation_list():
@@ -3587,31 +4330,42 @@ class DynamicWebReport(Report):
             media_handle = media_ref.get_reference_handle()
             self._add_media(media_handle, bkref_class, bkref_handle, media_ref)
 
-
-    def _add_place(self, place_handle, bkref_class = None, bkref_handle = None, place_ref = None):
-        '''
+    def _add_place(
+        self, place_handle, bkref_class=None, bkref_handle=None, place_ref=None
+    ):
+        """
         Add place_handle to the L{self.obj_dict}, and recursively all referenced objects
-        '''
+        """
         # Check if place reference already added
-        if (place_handle in self.bkref_dict[Place]):
-            refs = [bkref[BKREF_REFOBJ] for bkref in self.bkref_dict[Place][place_handle]]
+        if place_handle in self.bkref_dict[Place]:
+            refs = [
+                bkref[BKREF_REFOBJ] for bkref in self.bkref_dict[Place][place_handle]
+            ]
             # The place reference is already recorded
-            if place_ref and (place_ref in refs): return
+            if place_ref and (place_ref in refs):
+                return
         # Update the dictionaries of objects back references
-        if (bkref_class is not None):
-            self.bkref_dict[Place][place_handle].add((bkref_class, bkref_handle, place_ref))
+        if bkref_class is not None:
+            self.bkref_dict[Place][place_handle].add(
+                (bkref_class, bkref_handle, place_ref)
+            )
         # Check if the place is already added
-        if (place_handle in self.obj_dict[Place]): return
+        if place_handle in self.obj_dict[Place]:
+            return
         # Add place in the dictionaries of objects
         if not self.database.has_place_handle(place_handle):
             return
         place = self.database.get_place_from_handle(place_handle)
-        if DWR_VERSION_412 and config.get('preferences.place-auto'):
+        if DWR_VERSION_412 and config.get("preferences.place-auto"):
             place_name = _pd.display(self.database, place)
         else:
             place_name = place.get_title()
-        self.obj_dict[Place][place_handle] = [place_name, place.gramps_id, len(self.obj_dict[Place])]
-        if (self.inc_places):
+        self.obj_dict[Place][place_handle] = [
+            place_name,
+            place.gramps_id,
+            len(self.obj_dict[Place]),
+        ]
+        if self.inc_places:
             # Enclosing places
             if DWR_VERSION_410:
                 for place_ref2 in place.get_placeref_list():
@@ -3625,24 +4379,31 @@ class DynamicWebReport(Report):
                 media_handle = media_ref.get_reference_handle()
                 self._add_media(media_handle, Place, place_handle, media_ref)
 
-
-    def _add_source(self, source_handle, bkref_class = None, bkref_handle = None):
-        '''
+    def _add_source(self, source_handle, bkref_class=None, bkref_handle=None):
+        """
         Add source_handle to the L{self.obj_dict}, and recursively all referenced objects
-        '''
-        if (not self.inc_sources): return
+        """
+        if not self.inc_sources:
+            return
         # Update the dictionaries of objects back references
-        if (bkref_class is not None):
-            self.bkref_dict[Source][source_handle].add((bkref_class, bkref_handle, None))
+        if bkref_class is not None:
+            self.bkref_dict[Source][source_handle].add(
+                (bkref_class, bkref_handle, None)
+            )
         # Check if the source is already added
-        if (source_handle in self.obj_dict[Source]): return
+        if source_handle in self.obj_dict[Source]:
+            return
         # Add source in the dictionaries of objects
         source = self.database.get_source_from_handle(source_handle)
         source_name = source.get_title()
         source_author = source.get_author()
-        if (self.sourceauthor and source_author):
+        if self.sourceauthor and source_author:
             source_name = source_author + ": " + source_name
-        self.obj_dict[Source][source_handle] = [source_name, source.gramps_id, len(self.obj_dict[Source])]
+        self.obj_dict[Source][source_handle] = [
+            source_name,
+            source.gramps_id,
+            len(self.obj_dict[Source]),
+        ]
         # Source repository
         if self.inc_repositories:
             for repo_ref in source.get_reporef_list():
@@ -3653,22 +4414,29 @@ class DynamicWebReport(Report):
             media_handle = media_ref.get_reference_handle()
             self._add_media(media_handle, Source, source_handle, media_ref)
 
-
-    def _add_citation(self, citation_handle, bkref_class = None, bkref_handle = None):
-        '''
+    def _add_citation(self, citation_handle, bkref_class=None, bkref_handle=None):
+        """
         Add citation_handle to the L{self.obj_dict}, and recursively all referenced objects
-        '''
-        if (not self.inc_sources): return
+        """
+        if not self.inc_sources:
+            return
         # Update the dictionaries of objects back references
-        if (bkref_class is not None):
-            self.bkref_dict[Citation][citation_handle].add((bkref_class, bkref_handle, None))
+        if bkref_class is not None:
+            self.bkref_dict[Citation][citation_handle].add(
+                (bkref_class, bkref_handle, None)
+            )
         # Check if the citation is already added
-        if (citation_handle in self.obj_dict[Citation]): return
+        if citation_handle in self.obj_dict[Citation]:
+            return
         # Add citation in the dictionaries of objects
         citation = self.database.get_citation_from_handle(citation_handle)
         citation_name = citation.get_page() or ""
         source_handle = citation.get_reference_handle()
-        self.obj_dict[Citation][citation_handle] = [citation_name, citation.gramps_id, len(self.obj_dict[Citation])]
+        self.obj_dict[Citation][citation_handle] = [
+            citation_name,
+            citation.gramps_id,
+            len(self.obj_dict[Citation]),
+        ]
         # Citation source
         self._add_source(source_handle, Citation, citation_handle)
         # Citation media
@@ -3676,64 +4444,92 @@ class DynamicWebReport(Report):
             media_handle = media_ref.get_reference_handle()
             self._add_media(media_handle, Source, source_handle, media_ref)
 
-
-    def _add_media(self, media_handle, bkref_class = None, bkref_handle = None, media_ref = None):
-        '''
+    def _add_media(
+        self, media_handle, bkref_class=None, bkref_handle=None, media_ref=None
+    ):
+        """
         Add media_handle to the L{self.obj_dict}, and recursively all referenced objects
-        '''
-        if (not self.inc_gallery): return
+        """
+        if not self.inc_gallery:
+            return
         # Check if media reference already added
-        if (media_handle in self.bkref_dict[_Media]):
-            refs = [bkref[BKREF_REFOBJ] for bkref in self.bkref_dict[_Media][media_handle]]
+        if media_handle in self.bkref_dict[_Media]:
+            refs = [
+                bkref[BKREF_REFOBJ] for bkref in self.bkref_dict[_Media][media_handle]
+            ]
             # The media reference is already recorded
-            if (media_ref in refs): return
+            if media_ref in refs:
+                return
         # Update the dictionaries of objects back references
-        if (bkref_class is not None):
-            self.bkref_dict[_Media][media_handle].add((bkref_class, bkref_handle, media_ref))
+        if bkref_class is not None:
+            self.bkref_dict[_Media][media_handle].add(
+                (bkref_class, bkref_handle, media_ref)
+            )
             # Citations for media reference, media reference attributes
-            citation_list = media_ref.get_citation_list()[:]  # we don't want to modify cached original
+            citation_list = media_ref.get_citation_list()[
+                :
+            ]  # we don't want to modify cached original
             for attr in media_ref.get_attribute_list():
                 citation_list.extend(attr.get_citation_list())
             for citation_handle in citation_list:
                 self._add_citation(citation_handle, _Media, media_handle)
         # Check if the media is already added
-        if (media_handle in self.obj_dict[_Media]): return
+        if media_handle in self.obj_dict[_Media]:
+            return
         # Add media in the dictionaries of objects
         media = self.get_from_handle(_Media, media_handle)
         media_name = media.get_description() or media.get_path() or ""
-        self.obj_dict[_Media][media_handle] = [media_name, media.gramps_id, len(self.obj_dict[_Media])]
+        self.obj_dict[_Media][media_handle] = [
+            media_name,
+            media.gramps_id,
+            len(self.obj_dict[_Media]),
+        ]
         # Citations for media, media attributes
-        citation_list = media.get_citation_list()[:]  # we don't want to modify cached original
+        citation_list = media.get_citation_list()[
+            :
+        ]  # we don't want to modify cached original
         for attr in media.get_attribute_list():
             citation_list.extend(attr.get_citation_list())
         for citation_handle in citation_list:
             self._add_citation(citation_handle, _Media, media_handle)
 
-
-    def _add_repository(self, repo_handle, bkref_class = None, bkref_handle = None, repo_ref = None):
-        '''
+    def _add_repository(
+        self, repo_handle, bkref_class=None, bkref_handle=None, repo_ref=None
+    ):
+        """
         Add repo_handle to the L{self.obj_dict}, and recursively all referenced objects
-        '''
-        if (not self.inc_repositories): return
+        """
+        if not self.inc_repositories:
+            return
         # Check if repository reference already added
-        if (repo_handle in self.bkref_dict[Repository]):
-            refs = [bkref[BKREF_REFOBJ] for bkref in self.bkref_dict[Repository][repo_handle]]
+        if repo_handle in self.bkref_dict[Repository]:
+            refs = [
+                bkref[BKREF_REFOBJ]
+                for bkref in self.bkref_dict[Repository][repo_handle]
+            ]
             # The repository reference is already recorded
-            if (repo_ref in refs): return
+            if repo_ref in refs:
+                return
         # Update the dictionaries of objects back references
-        if (bkref_class is not None):
-            self.bkref_dict[Repository][repo_handle].add((bkref_class, bkref_handle, repo_ref))
+        if bkref_class is not None:
+            self.bkref_dict[Repository][repo_handle].add(
+                (bkref_class, bkref_handle, repo_ref)
+            )
         # Check if the repository is already added
-        if (repo_handle in self.obj_dict[Repository]): return
+        if repo_handle in self.obj_dict[Repository]:
+            return
         # Add repository in the dictionaries of objects
         repo = self.database.get_repository_from_handle(repo_handle)
         repo_name = repo.name
-        self.obj_dict[Repository][repo_handle] = [repo_name, repo.gramps_id, len(self.obj_dict[Repository])]
+        self.obj_dict[Repository][repo_handle] = [
+            repo_name,
+            repo.gramps_id,
+            len(self.obj_dict[Repository]),
+        ]
         # Addresses citations
         for addr in repo.get_address_list():
             for citation_handle in addr.get_citation_list():
                 self._add_citation(citation_handle, Repository, repo_handle)
-
 
     ##############################################################################################
     ##############################################################################################
@@ -3743,30 +4539,37 @@ class DynamicWebReport(Report):
     ##############################################################################################
     ##############################################################################################
 
-
     def _sort_obj_dict(self):
-        '''
+        """
         Sort the dictionaries of objects to be included in the reports.
         The dictionaries are sorted by name.
         The sorting is performed by modifying the index of the objects.
-        '''
+        """
 
         # Sort persons
         sortkeys = {}
         objs = list(self.obj_dict[Person].keys())
         for handle in objs:
-            sortkeys[handle] = (self.get_person_name_sort_key(handle), self.obj_dict[Person][handle][OBJDICT_GID], SORT_KEY(" " + str(handle)))
-        objs.sort(key = lambda x: sortkeys[x])
-        for (i, x) in enumerate(objs):
+            sortkeys[handle] = (
+                self.get_person_name_sort_key(handle),
+                self.obj_dict[Person][handle][OBJDICT_GID],
+                SORT_KEY(" " + str(handle)),
+            )
+        objs.sort(key=lambda x: sortkeys[x])
+        for i, x in enumerate(objs):
             self.obj_dict[Person][x][OBJDICT_INDEX] = i
 
         # Sort families
         sortkeys = {}
         objs = list(self.obj_dict[Family].keys())
         for handle in objs:
-            sortkeys[handle] = (self.get_family_name_sort_key(handle), self.obj_dict[Family][handle][OBJDICT_GID], SORT_KEY(str(handle)))
-        objs.sort(key = lambda x: sortkeys[x])
-        for (i, x) in enumerate(objs):
+            sortkeys[handle] = (
+                self.get_family_name_sort_key(handle),
+                self.obj_dict[Family][handle][OBJDICT_GID],
+                SORT_KEY(str(handle)),
+            )
+        objs.sort(key=lambda x: sortkeys[x])
+        for i, x in enumerate(objs):
             self.obj_dict[Family][x][OBJDICT_INDEX] = i
 
         # Sort others
@@ -3774,37 +4577,45 @@ class DynamicWebReport(Report):
             objs = list(self.obj_dict[cls].keys())
             sortkeys = {}
             for handle in objs:
-                sortkeys[handle] = (SORT_KEY(self.obj_dict[cls][handle][OBJDICT_NAME]), self.obj_dict[cls][handle][OBJDICT_GID], SORT_KEY(str(handle)))
-            objs.sort(key = lambda x: sortkeys[x])
-            for (i, x) in enumerate(objs):
+                sortkeys[handle] = (
+                    SORT_KEY(self.obj_dict[cls][handle][OBJDICT_NAME]),
+                    self.obj_dict[cls][handle][OBJDICT_GID],
+                    SORT_KEY(str(handle)),
+                )
+            objs.sort(key=lambda x: sortkeys[x])
+            for i, x in enumerate(objs):
                 self.obj_dict[cls][x][OBJDICT_INDEX] = i
 
-
     def get_person_name_sort_key(self, handle):
-        '''
+        """
         Return a sort key for a person
-        '''
+        """
         person = self.database.get_person_from_handle(handle)
         primary_name = person.get_primary_name()
         sort_str = _nd.sort_string(primary_name)
-        return(SORT_KEY(sort_str))
-
+        return SORT_KEY(sort_str)
 
     def get_family_name_sort_key(self, handle):
-        '''
+        """
         Return a sort key for a family
-        '''
+        """
         family = self.database.get_family_from_handle(handle)
         father_handle = family.get_father_handle()
         mother_handle = family.get_mother_handle()
 
         father = None
         mother = None
-        if father_handle: father = self.database.get_person_from_handle(father_handle)
-        if mother_handle: mother = self.database.get_person_from_handle(mother_handle)
+        if father_handle:
+            father = self.database.get_person_from_handle(father_handle)
+        if mother_handle:
+            mother = self.database.get_person_from_handle(mother_handle)
 
         if father and mother:
-            sort_key = self.get_person_name_sort_key(father_handle) + SORT_KEY(" ") + self.get_person_name_sort_key(mother_handle)
+            sort_key = (
+                self.get_person_name_sort_key(father_handle)
+                + SORT_KEY(" ")
+                + self.get_person_name_sort_key(mother_handle)
+            )
         elif father:
             sort_key = self.get_person_name_sort_key(father_handle)
         elif mother:
@@ -3812,9 +4623,7 @@ class DynamicWebReport(Report):
         else:
             sort_key = SORT_KEY("")
 
-        return(sort_key)
-
-
+        return sort_key
 
 
 ##################################################################################################
@@ -3825,8 +4634,9 @@ class DynamicWebReport(Report):
 ##################################################################################################
 ##################################################################################################
 
+
 class DynamicWebOptions(MenuReportOptions):
-    '''
+    """
     Creates the DynamicWebReport Menu Options
     Defines options and provides handling interface.
 
@@ -3834,10 +4644,10 @@ class DynamicWebOptions(MenuReportOptions):
     - add_menu_options: called by Gramps to generate the options menu. It calls all the other methods "__add_***_options"
     - __add_***_options: One method for each tab of the options menu.
     - __***_changed: methods called when an option impacts other options
-    '''
-    def __init__(self, name, dbase):
+    """
 
-        self.__db = dbase #: Gramps database
+    def __init__(self, name, dbase):
+        self.__db = dbase  #: Gramps database
 
         # The data below are used when some options change the behavior of other options. For example: a boolean option enables/disables another option. These data are used in the methods "__***_changed".
         self.__pid = None
@@ -3860,17 +4670,17 @@ class DynamicWebOptions(MenuReportOptions):
             "__EXPORT_DATE__ is replaced by the current date.\n"
             "__GRAMPS_VERSION__ is replaced by the Gramps version.\n"
             "__GRAMPS_HOMEPAGE__ is replaced by the Gramps homepage link.\n"
-            "URL starting with \"relative://relative.<link>\" are replaced by the relative URL \"<link>\".\n")
+            'URL starting with "relative://relative.<link>" are replaced by the relative URL "<link>".\n'
+        )
 
         MenuReportOptions.__init__(self, name, dbase)
 
-
     def add_menu_options(self, menu):
-        '''
+        """
         Add options to the menu for the web site.
 
         It calls all the other methods "__add_***_options" (one method for each tab of the options menu).
-        '''
+        """
         self.__add_report_options(menu)
         self.__add_privacy_options(menu)
         self.__add_options_options(menu)
@@ -3880,32 +4690,43 @@ class DynamicWebOptions(MenuReportOptions):
         self.__add_trees_options(menu)
         self.__add_custom_pages_options(menu)
         self.__add_select_pages_options(menu)
-        self.help_url = (
-            "https://gramps-project.org/wiki/index.php/DynamicWeb_report")
+        self.help_url = "https://gramps-project.org/wiki/index.php/DynamicWeb_report"
 
     def __add_report_options(self, menu):
-        '''
+        """
         Options on the "Report" tab.
-        '''
+        """
         category_name = _("Report")
         addopt = partial(menu.add_option, category_name)
 
         dbname = self.__db.get_dbname()
         default_dir = dbname + "_" + "dynamicweb"
-        target = DestinationOption(_("Destination"),
-            os.path.join(config.get("paths.website-directory"), default_dir))
+        target = DestinationOption(
+            _("Destination"),
+            os.path.join(config.get("paths.website-directory"), default_dir),
+        )
         target.set_help(_("The destination directory for the web files"))
         target.set_directory_entry(True)
         addopt("target", target)
 
-        self.__archive = BooleanOption(_('Store web pages in archive'), False)
-        self.__archive.set_help(_("Whether to create an archive file (in ZIP or TGZ format) containing the web site"))
+        self.__archive = BooleanOption(_("Store web pages in archive"), False)
+        self.__archive.set_help(
+            _(
+                "Whether to create an archive file (in ZIP or TGZ format) containing the web site"
+            )
+        )
         addopt("archive", self.__archive)
         self.__archive.connect("value-changed", self.__archive_changed)
 
-        self.__archive_file = DestinationOption(_("Archive file"),
-            os.path.join(config.get("paths.website-directory"), default_dir, "archive.zip"))
-        self.__archive_file.set_help(_("The archive file name (with \".zip\" or \".tgz\" extension)"))
+        self.__archive_file = DestinationOption(
+            _("Archive file"),
+            os.path.join(
+                config.get("paths.website-directory"), default_dir, "archive.zip"
+            ),
+        )
+        self.__archive_file.set_help(
+            _('The archive file name (with ".zip" or ".tgz" extension)')
+        )
         self.__archive_file.set_directory_entry(False)
         addopt("archive_file", self.__archive_file)
 
@@ -3917,7 +4738,8 @@ class DynamicWebOptions(MenuReportOptions):
 
         self.__filter = FilterOption(_("Filter"), 0)
         self.__filter.set_help(
-               _("Select filter to restrict people that appear on web site"))
+            _("Select filter to restrict people that appear on web site")
+        )
         addopt("filter", self.__filter)
         self.__filter.connect("value-changed", self.__filter_changed)
 
@@ -3931,7 +4753,9 @@ class DynamicWebOptions(MenuReportOptions):
         if DWR_VERSION_500:
             name_format = stdoptions.add_name_format_option(menu, category_name)
             short_name_format = EnumeratedListOption(_("Name format (short)"), 0)
-            short_name_format.set_help(_("Select the format to display a shorter version of the names"))
+            short_name_format.set_help(
+                _("Select the format to display a shorter version of the names")
+            )
             for value, description in name_format.get_items():
                 short_name_format.add_item(value, description)
             short_name_format.set_value(name_format.get_value())
@@ -3950,29 +4774,32 @@ class DynamicWebOptions(MenuReportOptions):
                 name_format.add_item(num, name)
             name_format.set_help(_("Select the format to display names"))
             addopt("name_format", name_format)
-            short_name_format = EnumeratedListOption(_("Name format (short)"), fmt_list[default][0])
+            short_name_format = EnumeratedListOption(
+                _("Name format (short)"), fmt_list[default][0]
+            )
             for num, name, fmt_str, act in fmt_list:
                 short_name_format.add_item(num, name)
-            short_name_format.set_help(_("Select the format to display a shorter version of the names"))
+            short_name_format.set_help(
+                _("Select the format to display a shorter version of the names")
+            )
             addopt("short_name_format", short_name_format)
 
         template = EnumeratedListOption(_("Web site template"), 0)
-        for (i, (directory, name)) in enumerate(WEB_TEMPLATE_LIST):
+        for i, (directory, name) in enumerate(WEB_TEMPLATE_LIST):
             template.add_item(i, name)
         template.set_help(_("Select the template of the web site"))
         addopt("template", template)
 
-        cright = EnumeratedListOption(_('Copyright'), 0)
+        cright = EnumeratedListOption(_("Copyright"), 0)
         for index, copt in enumerate(_COPY_OPTIONS):
             cright.add_item(index, copt)
         cright.set_help(_("The copyright to be used for the web files"))
         addopt("copyright", cright)
 
-
     def __add_privacy_options(self, menu):
-        '''
+        """
         Options on the "Privacy" tab.
-        '''
+        """
         category_name = _("Privacy")
         addopt = partial(menu.add_option, category_name)
 
@@ -3984,16 +4811,28 @@ class DynamicWebOptions(MenuReportOptions):
             incl_private = BooleanOption(_("Include records marked private"), False)
             incl_private.set_help(_("Whether to include private objects"))
             addopt("incl_private", incl_private)
-            self.__living = EnumeratedListOption(_("Living People"), LivingProxyDb.MODE_EXCLUDE_ALL)
+            self.__living = EnumeratedListOption(
+                _("Living People"), LivingProxyDb.MODE_EXCLUDE_ALL
+            )
             self.__living.add_item(LivingProxyDb.MODE_EXCLUDE_ALL, _("Exclude"))
-            self.__living.add_item(LivingProxyDb.MODE_INCLUDE_LAST_NAME_ONLY, _("Include Last Name Only"))
-            self.__living.add_item(LivingProxyDb.MODE_INCLUDE_FULL_NAME_ONLY, _("Include Full Name Only"))
+            self.__living.add_item(
+                LivingProxyDb.MODE_INCLUDE_LAST_NAME_ONLY, _("Include Last Name Only")
+            )
+            self.__living.add_item(
+                LivingProxyDb.MODE_INCLUDE_FULL_NAME_ONLY, _("Include Full Name Only")
+            )
             self.__living.add_item(INCLUDE_LIVING_VALUE, _("Include"))
             self.__living.set_help(_("How to handle living people"))
             addopt("living_people", self.__living)
             self.__living.connect("value-changed", self.__living_changed)
-            self.__yearsafterdeath = NumberOption(_("Years from death to consider living"), 30, 0, 100)
-            self.__yearsafterdeath.set_help(_("This allows you to restrict information on people who have not been dead for very long"))
+            self.__yearsafterdeath = NumberOption(
+                _("Years from death to consider living"), 30, 0, 100
+            )
+            self.__yearsafterdeath.set_help(
+                _(
+                    "This allows you to restrict information on people who have not been dead for very long"
+                )
+            )
             addopt("years_past_death", self.__yearsafterdeath)
             self.__living_changed()
 
@@ -4002,20 +4841,21 @@ class DynamicWebOptions(MenuReportOptions):
         addopt("inc_notes", inc_notes)
 
         inc_sources = BooleanOption(_("Export sources"), True)
-        inc_sources.set_help(_("Whether to export sources and citations in the web pages"))
+        inc_sources.set_help(
+            _("Whether to export sources and citations in the web pages")
+        )
         addopt("inc_sources", inc_sources)
 
         inc_addresses = BooleanOption(_("Export addresses"), True)
         inc_addresses.set_help(_("Whether to export addresses in the web pages"))
         addopt("inc_addresses", inc_addresses)
 
-
     def __add_options_options(self, menu):
         category_name = _("Options")
         addopt = partial(menu.add_option, category_name)
 
-        inc_repositories = BooleanOption(_('Include repository pages'), False)
-        inc_repositories.set_help(_('Whether or not to include the Repository Pages.'))
+        inc_repositories = BooleanOption(_("Include repository pages"), False)
+        inc_repositories.set_help(_("Whether or not to include the Repository Pages."))
         addopt("inc_repositories", inc_repositories)
 
         inc_gallery = BooleanOption(_("Include images and media"), True)
@@ -4023,7 +4863,10 @@ class DynamicWebOptions(MenuReportOptions):
         addopt("inc_gallery", inc_gallery)
 
         copy_media_opts = [
-            [_("Copy, rename files with an internal Gramps identifier"), COPY_MEDIA_RENAME],
+            [
+                _("Copy, rename files with an internal Gramps identifier"),
+                COPY_MEDIA_RENAME,
+            ],
             [_("Copy, keep file names unchanged"), COPY_MEDIA_UNCHANGED],
             [_("Do not copy, reference existing files"), REFERENCE_MEDIA],
         ]
@@ -4034,7 +4877,9 @@ class DynamicWebOptions(MenuReportOptions):
         addopt("copy_media", copy_media)
 
         print_notes_type = BooleanOption(_("Print the notes type"), True)
-        print_notes_type.set_help(_("Whether to print the notes type in the notes text"))
+        print_notes_type.set_help(
+            _("Whether to print the notes type in the notes text")
+        )
         addopt("print_notes_type", print_notes_type)
 
         self.__inc_places = BooleanOption(_("Print place pages"), True)
@@ -4042,46 +4887,55 @@ class DynamicWebOptions(MenuReportOptions):
         addopt("inc_places", self.__inc_places)
         self.__inc_places.connect("value-changed", self.__placemap_options_changed)
 
-        self.__placemappages = BooleanOption(_("Include Place map on Place Pages"), False)
-        self.__placemappages.set_help(_(
-            "Whether to include a place map on the Place Pages, "
-            "where Latitude/ Longitude are available."))
+        self.__placemappages = BooleanOption(
+            _("Include Place map on Place Pages"), False
+        )
+        self.__placemappages.set_help(
+            _(
+                "Whether to include a place map on the Place Pages, "
+                "where Latitude/ Longitude are available."
+            )
+        )
         self.__placemappages.connect("value-changed", self.__placemap_options_changed)
         addopt("placemappages", self.__placemappages)
 
-        self.__familymappages = BooleanOption(_(
-            "Include a map in the individuals and family pages"), False)
-        self.__familymappages.set_help(_(
-            "Whether or not to add an individual page map "
-            "showing all the places on this page. "
-            "This will allow you to see how your family "
-            "traveled around the country."))
+        self.__familymappages = BooleanOption(
+            _("Include a map in the individuals and family pages"), False
+        )
+        self.__familymappages.set_help(
+            _(
+                "Whether or not to add an individual page map "
+                "showing all the places on this page. "
+                "This will allow you to see how your family "
+                "traveled around the country."
+            )
+        )
         self.__familymappages.connect("value-changed", self.__placemap_options_changed)
         addopt("familymappages", self.__familymappages)
 
-        mapopts = [
-            [_("Google"), "Google"],
-            [_("OpenStreetMap"), "OpenStreetMap"]
-        ]
+        mapopts = [[_("Google"), "Google"], [_("OpenStreetMap"), "OpenStreetMap"]]
         self.__mapservice = EnumeratedListOption(_("Map Service"), mapopts[0][1])
         for trans, opt in mapopts:
             self.__mapservice.add_item(opt, trans)
-        self.__mapservice.set_help(_("Choose your choice of map service for creating the Place Map Pages"))
+        self.__mapservice.set_help(
+            _("Choose your choice of map service for creating the Place Map Pages")
+        )
         self.__mapservice.connect("value-changed", self.__placemap_options_changed)
         addopt("mapservice", self.__mapservice)
 
-        self.__googlemapkey = StringOption(_("Google map API key"),"")
+        self.__googlemapkey = StringOption(_("Google map API key"), "")
         self.__googlemapkey.set_help(_("The API key used for the Google map"))
         addopt("googlemapkey", self.__googlemapkey)
 
         self.__placemap_options_changed()
 
-
     def __add_pages_advanced_options(self, menu):
         category_name = _("Advanced")
         addopt = partial(menu.add_option, category_name)
 
-        encoding = EnumeratedListOption(_('Character set encoding'), _CHARACTER_SETS[0][1])
+        encoding = EnumeratedListOption(
+            _("Character set encoding"), _CHARACTER_SETS[0][1]
+        )
         for eopt in _CHARACTER_SETS:
             encoding.add_item(eopt[1], eopt[0])
         encoding.set_help(_("The encoding to be used for the web files"))
@@ -4097,34 +4951,47 @@ class DynamicWebOptions(MenuReportOptions):
         # addopt("inc_events", inc_events)
         # inc_events.set_available(False)
 
-        showallsiblings = BooleanOption(_("Include half and/ or step-siblings on the individual pages"), False)
-        showallsiblings.set_help(_( "Whether to include half and/ or step-siblings with the parents and siblings"))
-        addopt('showallsiblings', showallsiblings)
+        showallsiblings = BooleanOption(
+            _("Include half and/ or step-siblings on the individual pages"), False
+        )
+        showallsiblings.set_help(
+            _(
+                "Whether to include half and/ or step-siblings with the parents and siblings"
+            )
+        )
+        addopt("showallsiblings", showallsiblings)
 
-        inc_gendex = BooleanOption(_('Include GENDEX file (/gendex.txt)'), False)
-        inc_gendex.set_help(_('Whether to include a GENDEX file or not'))
+        inc_gendex = BooleanOption(_("Include GENDEX file (/gendex.txt)"), False)
+        inc_gendex.set_help(_("Whether to include a GENDEX file or not"))
         addopt("inc_gendex", inc_gendex)
 
         inc_pageconf = BooleanOption(_("Enable page configuration"), True)
-        inc_pageconf.set_help(_( "Whether to enable page configuration"))
-        addopt('inc_pageconf', inc_pageconf)
+        inc_pageconf.set_help(_("Whether to enable page configuration"))
+        addopt("inc_pageconf", inc_pageconf)
 
         tabbed_panels = BooleanOption(_("Use tabbed panels instead of sections"), True)
-        tabbed_panels.set_help(_('Whether to use tabbed panels for the different sections of the pages.'))
+        tabbed_panels.set_help(
+            _("Whether to use tabbed panels for the different sections of the pages.")
+        )
         addopt("tabbed_panels", tabbed_panels)
 
         inc_change_time = BooleanOption(_("Show last modification time"), False)
-        inc_change_time.set_help(_( "Whether to show the last modification time in the pages footer"))
-        addopt('inc_change_time', inc_change_time)
+        inc_change_time.set_help(
+            _("Whether to show the last modification time in the pages footer")
+        )
+        addopt("inc_change_time", inc_change_time)
 
-        sourceauthor = BooleanOption(_("Insert sources author in the sources title"), False)
-        sourceauthor.set_help(_( "Whether to insert sources author in the sources title"))
-        addopt('sourceauthor', sourceauthor)
+        sourceauthor = BooleanOption(
+            _("Insert sources author in the sources title"), False
+        )
+        sourceauthor.set_help(
+            _("Whether to insert sources author in the sources title")
+        )
+        addopt("sourceauthor", sourceauthor)
 
         hide_gid = BooleanOption(_("Suppress Gramps ID"), True)
-        hide_gid.set_help(_( "Whether to hide the Gramps ID"))
-        addopt('hide_gid', hide_gid)
-
+        hide_gid.set_help(_("Whether to hide the Gramps ID"))
+        addopt("hide_gid", hide_gid)
 
     def __add_pages_indexes_options(self, menu):
         category_name = _("Indexes")
@@ -4134,95 +5001,161 @@ class DynamicWebOptions(MenuReportOptions):
             _("List"),
             _("Table"),
         ]
-        for (index, default, option_text, option_help) in [
-            ["surnames", 0, _("Default format for the surnames index"), _("The default format for the surnames index")],
-            ["persons", 1, _("Default format for the persons index"), _("The default format for the persons index")],
-            ["families", 1, _("Default format for the families index"), _("The default format for the families index")],
-            ["sources", 1, _("Default format for the sources index"), _("The default format for the sources index")],
-            ["places", 1, _("Default format for the places index"), _("The default format for the places index")],
+        for index, default, option_text, option_help in [
+            [
+                "surnames",
+                0,
+                _("Default format for the surnames index"),
+                _("The default format for the surnames index"),
+            ],
+            [
+                "persons",
+                1,
+                _("Default format for the persons index"),
+                _("The default format for the persons index"),
+            ],
+            [
+                "families",
+                1,
+                _("Default format for the families index"),
+                _("The default format for the families index"),
+            ],
+            [
+                "sources",
+                1,
+                _("Default format for the sources index"),
+                _("The default format for the sources index"),
+            ],
+            [
+                "places",
+                1,
+                _("Default format for the places index"),
+                _("The default format for the places index"),
+            ],
         ]:
             index_type = EnumeratedListOption(option_text, default)
-            for (i, eopt) in enumerate(index_types):
+            for i, eopt in enumerate(index_types):
                 index_type.add_item(i, eopt)
             index_type.set_help(option_help)
             addopt("index_" + index + "_type", index_type)
 
         showdates = BooleanOption(_("Include dates columns on the index pages"), True)
-        showdates.set_help(_('Whether to include dates columns (birth, death, marriage) on the index pages'))
+        showdates.set_help(
+            _(
+                "Whether to include dates columns (birth, death, marriage) on the index pages"
+            )
+        )
         addopt("showdates", showdates)
 
-        showpartner = BooleanOption(_("Include a column for partners on the index pages"), False)
-        showpartner.set_help(_('Whether to include a partners column'))
+        showpartner = BooleanOption(
+            _("Include a column for partners on the index pages"), False
+        )
+        showpartner.set_help(_("Whether to include a partners column"))
         addopt("showpartner", showpartner)
 
-        showparents = BooleanOption(_("Include a column for parents on the index pages"), False)
-        showparents.set_help(_('Whether to include a parents column'))
+        showparents = BooleanOption(
+            _("Include a column for parents on the index pages"), False
+        )
+        showparents.set_help(_("Whether to include a parents column"))
         addopt("showparents", showparents)
 
-        self.__inc_families_index = BooleanOption(_("Generate a families index page"), False)
-        self.__inc_families_index.set_help(_('Whether to generate an index page for families'))
+        self.__inc_families_index = BooleanOption(
+            _("Generate a families index page"), False
+        )
+        self.__inc_families_index.set_help(
+            _("Whether to generate an index page for families")
+        )
         addopt("inc_families_index", self.__inc_families_index)
 
-        showpath = BooleanOption(_("Include a column for media path on the index pages"), False)
-        showpath.set_help(_('Whether to include a column showing the media path'))
+        showpath = BooleanOption(
+            _("Include a column for media path on the index pages"), False
+        )
+        showpath.set_help(_("Whether to include a column showing the media path"))
         addopt("showpath", showpath)
 
-        bkref_type = BooleanOption(_('Include references in indexes'), False)
-        bkref_type.set_help(_('Whether to include the references to the items in the index pages. For example, in the media index page, the names of the individuals, families, places, sources that reference the media.'))
+        bkref_type = BooleanOption(_("Include references in indexes"), False)
+        bkref_type.set_help(
+            _(
+                "Whether to include the references to the items in the index pages. For example, in the media index page, the names of the individuals, families, places, sources that reference the media."
+            )
+        )
         addopt("bkref_type", bkref_type)
 
-        entries_shown = EnumeratedListOption(_('Default number of entries in the indexes'), 0)
-        for (i, eopt) in enumerate(INDEXES_SIZES[1]):
+        entries_shown = EnumeratedListOption(
+            _("Default number of entries in the indexes"), 0
+        )
+        for i, eopt in enumerate(INDEXES_SIZES[1]):
             entries_shown.add_item(i, eopt)
-        entries_shown.set_help(_("The default number of entries shown in one index page"))
+        entries_shown.set_help(
+            _("The default number of entries shown in one index page")
+        )
         addopt("entries_shown", entries_shown)
-
 
     def __add_trees_options(self, menu):
         category_name = _("Trees")
         addopt = partial(menu.add_option, category_name)
 
         graphgens = NumberOption(_("Maximum number of generations"), 10, 3, 30)
-        graphgens.set_help(_("The maximum number of generations to include in the ancestor and descendant trees and graphs"))
+        graphgens.set_help(
+            _(
+                "The maximum number of generations to include in the ancestor and descendant trees and graphs"
+            )
+        )
         addopt("graphgens", graphgens)
 
-        svg_tree_type = EnumeratedListOption(_("SVG tree graph type"), DEFAULT_SVG_TREE_TYPE)
-        for (i, opt) in enumerate(SVG_TREE_TYPES):
+        svg_tree_type = EnumeratedListOption(
+            _("SVG tree graph type"), DEFAULT_SVG_TREE_TYPE
+        )
+        for i, opt in enumerate(SVG_TREE_TYPES):
             svg_tree_type.add_item(i, opt)
         svg_tree_type.set_help(_("Choose the default SVG tree graph type"))
         addopt("svg_tree_type", svg_tree_type)
 
-        svg_tree_shape = EnumeratedListOption(_("SVG tree graph shape"), DEFAULT_SVG_TREE_SHAPE)
-        for (i, opt) in enumerate(SVG_TREE_SHAPES):
+        svg_tree_shape = EnumeratedListOption(
+            _("SVG tree graph shape"), DEFAULT_SVG_TREE_SHAPE
+        )
+        for i, opt in enumerate(SVG_TREE_SHAPES):
             svg_tree_shape.add_item(i, opt)
         svg_tree_shape.set_help(_("Choose the default SVG tree graph shape"))
         addopt("svg_tree_shape", svg_tree_shape)
 
-        svg_tree_distrib_asc = EnumeratedListOption(_("SVG tree parents distribution"), DEFAULT_SVG_TREE_DISTRIB)
-        for (i, opt) in enumerate(SVG_TREE_DISTRIB_ASC):
+        svg_tree_distrib_asc = EnumeratedListOption(
+            _("SVG tree parents distribution"), DEFAULT_SVG_TREE_DISTRIB
+        )
+        for i, opt in enumerate(SVG_TREE_DISTRIB_ASC):
             svg_tree_distrib_asc.add_item(i, opt)
-        svg_tree_distrib_asc.set_help(_("Choose the default SVG tree parents distribution (for fan charts only)"))
+        svg_tree_distrib_asc.set_help(
+            _("Choose the default SVG tree parents distribution (for fan charts only)")
+        )
         addopt("svg_tree_distrib_asc", svg_tree_distrib_asc)
 
-        svg_tree_distrib_dsc = EnumeratedListOption(_("SVG tree children distribution"), DEFAULT_SVG_TREE_DISTRIB)
-        for (i, opt) in enumerate(SVG_TREE_DISTRIB_DSC):
+        svg_tree_distrib_dsc = EnumeratedListOption(
+            _("SVG tree children distribution"), DEFAULT_SVG_TREE_DISTRIB
+        )
+        for i, opt in enumerate(SVG_TREE_DISTRIB_DSC):
             svg_tree_distrib_dsc.add_item(i, opt)
-        svg_tree_distrib_dsc.set_help(_("Choose the default SVG tree children distribution (for fan charts only)"))
+        svg_tree_distrib_dsc.set_help(
+            _("Choose the default SVG tree children distribution (for fan charts only)")
+        )
         addopt("svg_tree_distrib_dsc", svg_tree_distrib_dsc)
 
-        svg_tree_background = EnumeratedListOption(_("Background"),
-                                                   DEFAULT_SVG_TREE_BACKGROUND)
-        for (i, opt) in enumerate(SVG_TREE_BACKGROUNDS):
+        svg_tree_background = EnumeratedListOption(
+            _("Background"), DEFAULT_SVG_TREE_BACKGROUND
+        )
+        for i, opt in enumerate(SVG_TREE_BACKGROUNDS):
             svg_tree_background.add_item(i, opt)
-        svg_tree_background.set_help(_("Choose the background color scheme for"
-                                       " the persons in the SVG tree graph"))
+        svg_tree_background.set_help(
+            _(
+                "Choose the background color scheme for"
+                " the persons in the SVG tree graph"
+            )
+        )
         addopt("svg_tree_background", svg_tree_background)
-        svg_tree_background.connect("value-changed",
-                                    self.change_theme_visibility)
+        svg_tree_background.connect("value-changed", self.change_theme_visibility)
         self.svg_tree_background = svg_tree_background
 
         self.svg_theme = EnumeratedListOption(_("Theme"), 0)
-        for (i, opt) in enumerate([_("Light colors"), _("Dark colors")]):
+        for i, opt in enumerate([_("Light colors"), _("Dark colors")]):
             self.svg_theme.add_item(i, opt)
         # self.svg_theme.set_help(_("Choose the background color theme for"
         #                           " the persons in the SVG tree graph"))
@@ -4235,7 +5168,11 @@ class DynamicWebOptions(MenuReportOptions):
         addopt("svg_tree_color2", svg_tree_color2)
 
         self.__svg_tree_dup = BooleanOption(_("Show duplicates"), True)
-        self.__svg_tree_dup.set_help(_("Whether to use a special color for the persons that appear several times in the SVG tree"))
+        self.__svg_tree_dup.set_help(
+            _(
+                "Whether to use a special color for the persons that appear several times in the SVG tree"
+            )
+        )
         self.__svg_tree_dup.connect("value-changed", self.__svg_tree_dup_changed)
         addopt("svg_tree_dup", self.__svg_tree_dup)
 
@@ -4253,90 +5190,109 @@ class DynamicWebOptions(MenuReportOptions):
         category_name = _("Pages")
         addopt = partial(menu.add_option, category_name)
 
-        headernote = NoteOption(_('HTML user header'))
-        headernote.set_help( _("A note to be used as the page header"))
+        headernote = NoteOption(_("HTML user header"))
+        headernote.set_help(_("A note to be used as the page header"))
         addopt("headernote", headernote)
 
-        brandnote = NoteOption(_('HTML user brand name / icon'))
-        brandnote.set_help( _("A note to be used as the brand name or image in the menu"))
+        brandnote = NoteOption(_("HTML user brand name / icon"))
+        brandnote.set_help(
+            _("A note to be used as the brand name or image in the menu")
+        )
         addopt("brandnote", brandnote)
 
-        footernote = NoteOption(_('HTML user footer'))
-        footernote.set_help( _("A note to be used as the page footer"))
+        footernote = NoteOption(_("HTML user footer"))
+        footernote.set_help(_("A note to be used as the page footer"))
         addopt("footernote", footernote)
-
 
     def __add_custom_pages_options(self, menu):
         category_name = _("Custom pages")
         addopt = partial(menu.add_option, category_name)
 
         for page_def in range(NB_CUSTOM_PAGES):
-            page_name = StringOption(_("Title for the custom page %(index)i") % {"index": page_def + 1}, _("Custom page %(index)i") % {"index": page_def + 1})
-            page_name.set_help(_("Name for the custom page %(index)i") % {"index": page_def + 1})
+            page_name = StringOption(
+                _("Title for the custom page %(index)i") % {"index": page_def + 1},
+                _("Custom page %(index)i") % {"index": page_def + 1},
+            )
+            page_name.set_help(
+                _("Name for the custom page %(index)i") % {"index": page_def + 1}
+            )
             addopt("custom_page_name_%i" % page_def, page_name)
 
-            custom_note = NoteOption(_("Note for custom page %(index)i") % {"index": page_def + 1})
-            custom_note.set_help(_("A note to be used for the custom page content.\n") + self.note_help)
+            custom_note = NoteOption(
+                _("Note for custom page %(index)i") % {"index": page_def + 1}
+            )
+            custom_note.set_help(
+                _("A note to be used for the custom page content.\n") + self.note_help
+            )
             addopt("custom_note_%i" % page_def, custom_note)
 
-            custom_menu = BooleanOption(_("Menu for the custom page %(index)i") % {"index": page_def + 1}, True)
+            custom_menu = BooleanOption(
+                _("Menu for the custom page %(index)i") % {"index": page_def + 1}, True
+            )
             custom_menu.set_help(_("Whether to print a menu for the custom page"))
             addopt("custom_menu_%i" % page_def, custom_menu)
-
 
     def __add_select_pages_options(self, menu):
         category_name = _("Pages selection")
         addopt = partial(menu.add_option, category_name)
 
-        self.__pages_number = NumberOption(_("Number of pages"), len(PAGES_NAMES), 1, NB_TOTAL_PAGES_MAX)
+        self.__pages_number = NumberOption(
+            _("Number of pages"), len(PAGES_NAMES), 1, NB_TOTAL_PAGES_MAX
+        )
         self.__pages_number.set_help(_("Number pages in the web site menu."))
         addopt("pages_number", self.__pages_number)
         self.__pages_number.connect("value-changed", self.__pages_contents_changed)
 
-        page_defs = [
-            PAGE_HOME,
-            PAGE_INDEX,
-            PAGE_SVG_TREE,
-            # PAGE_STATISTICS,
-            # PAGE_CALENDAR,
-        ] + [PAGE_CUSTOM + i for i in range (NB_CUSTOM_PAGES)
-        ] + [PAGE_CUSTOM] * NB_TOTAL_PAGES_MAX
+        page_defs = (
+            [
+                PAGE_HOME,
+                PAGE_INDEX,
+                PAGE_SVG_TREE,
+                # PAGE_STATISTICS,
+                # PAGE_CALENDAR,
+            ]
+            + [PAGE_CUSTOM + i for i in range(NB_CUSTOM_PAGES)]
+            + [PAGE_CUSTOM] * NB_TOTAL_PAGES_MAX
+        )
 
         self.__page_content = []
         for i in range(NB_TOTAL_PAGES_MAX):
             page_def = page_defs[i]
-            page_content = EnumeratedListOption(_("Contents of page %(index)i") % {"index": i + 1}, page_def)
-            for (j, pname) in enumerate(PAGES_NAMES + CUSTOM_PAGES_NAMES):
+            page_content = EnumeratedListOption(
+                _("Contents of page %(index)i") % {"index": i + 1}, page_def
+            )
+            for j, pname in enumerate(PAGES_NAMES + CUSTOM_PAGES_NAMES):
                 page_content.add_item(j, pname)
             page_content.set_help(_("Contents of the page"))
             addopt("page_content_%i" % i, page_content)
             self.__page_content.append(page_content)
-            self.__page_content[i].connect("value-changed", self.__pages_contents_changed)
+            self.__page_content[i].connect(
+                "value-changed", self.__pages_contents_changed
+            )
 
         self.__pages_contents_changed()
 
-
     def __archive_changed(self):
-        '''
+        """
         Disable the archive file when archive is disabled
-        '''
+        """
         enable = self.__archive.get_value()
         self.__archive_file.set_available(enable)
 
     def __pid_changed(self):
-        '''
+        """
         Update the filter list based on the selected person
-        '''
+        """
         gid = self.__pid.get_value()
         person = self.__db.get_person_from_gramps_id(gid)
         filter_list = utils.get_person_filters(person, False)
         self.__filter.set_filters(filter_list)
 
     def __filter_changed(self):
-        '''
+        """
         Handle filter change. If the filter is not specific to a person,
         disable the person option
-        '''
+        """
         filter_value = self.__filter.get_value()
         if filter_value in [1, 2, 3, 4]:
             # Filters 1, 2, 3 and 4 rely on the center person
@@ -4346,9 +5302,9 @@ class DynamicWebOptions(MenuReportOptions):
             self.__pid.set_available(False)
 
     def __living_changed(self):
-        '''
+        """
         Handle a change in the living option
-        '''
+        """
         if self.__living.get_value() == INCLUDE_LIVING_VALUE:
             self.__yearsafterdeath.set_available(False)
         else:
@@ -4357,15 +5313,15 @@ class DynamicWebOptions(MenuReportOptions):
     def __pages_contents_changed(self):
         nb = self.__pages_number.get_value()
         for i in range(NB_TOTAL_PAGES_MAX):
-            if (i < nb):
+            if i < nb:
                 self.__page_content[i].set_available(True)
             else:
                 self.__page_content[i].set_available(False)
 
     def __placemap_options_changed(self):
-        '''
+        """
         Handles the changing nature of the place map Options
-        '''
+        """
         # get values for all Place Map Options tab...
         place_active = self.__inc_places.get_value()
         place_map_active = self.__placemappages.get_value()
@@ -4373,28 +5329,28 @@ class DynamicWebOptions(MenuReportOptions):
         mapservice_opts = self.__mapservice.get_value()
         # google_opts = self.__googleopts.get_value()
 
-        if (place_active):
+        if place_active:
             self.__placemappages.set_available(True)
             self.__familymappages.set_available(True)
             self.__mapservice.set_available(True)
             # self.__googleopts.set_available(True)
 
-        if (place_map_active or family_active):
+        if place_map_active or family_active:
             self.__mapservice.set_available(True)
         else:
             self.__mapservice.set_available(False)
 
-        if ((place_map_active or family_active) and mapservice_opts == "Google"):
-             self.__googlemapkey.set_available(True)
+        if (place_map_active or family_active) and mapservice_opts == "Google":
+            self.__googlemapkey.set_available(True)
         else:
-             self.__googlemapkey.set_available(False)
+            self.__googlemapkey.set_available(False)
 
         # if (family_active and mapservice_opts == "Google"):
-            # self.__googleopts.set_available(True)
+        # self.__googleopts.set_available(True)
         # else:
-            # self.__googleopts.set_available(False)
+        # self.__googleopts.set_available(False)
 
-        if (not place_active):
+        if not place_active:
             self.__placemappages.set_available(False)
             self.__familymappages.set_available(False)
             self.__mapservice.set_available(False)
@@ -4405,8 +5361,8 @@ class DynamicWebOptions(MenuReportOptions):
         self.__inc_families_index.set_available(enable)
 
     def __svg_tree_dup_changed(self):
-        '''
+        """
         Handles the duplicate color enable
-        '''
+        """
         enable = self.__svg_tree_dup.get_value()
         self.__svg_tree_color_dup.set_available(enable)
