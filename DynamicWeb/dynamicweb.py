@@ -224,7 +224,7 @@ from gramps.plugins.lib.libhtmlbackend import HtmlBackend, process_spaces
 
 from gramps.plugins.lib.libgedcom import make_gedcom_date, DATE_QUALITY
 
-from gramps.plugins.webreport.common import first_letter
+from gramps.plugins.webreport.alphabeticindex import first_letter
 
 from gramps.gen.utils.place import conv_lat_lon
 
