@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-24 11:53-0500\n"
+"POT-Creation-Date: 2023-09-08 15:58-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -5746,7 +5746,6 @@ msgid "Language before coming to US"
 msgstr ""
 
 #: Form\form_us.xml.h:818 Form\form_us.xml.h:865 Form\form_us.xml.h:927
-#: Form\form_us.xml.h:968
 msgid "Class of worker"
 msgstr ""
 
@@ -6178,6 +6177,10 @@ msgstr ""
 
 #: Form\form_us.xml.h:967
 msgid "What kind of business or industry did he work in?"
+msgstr ""
+
+#: Form\form_us.xml.h:968
+msgid "Class of worker [last job]"
 msgstr ""
 
 #: Form\form_us.xml.h:969
