@@ -2938,7 +2938,7 @@
                 <_attribute>What kind of business or industry did he work in?</_attribute>
             </column>
             <column>
-                <_attribute>Class of worker</_attribute>
+                <_attribute>Class of worker [last job]</_attribute>
             </column>
             <column>
                 <_attribute>Has this person been married more than once?</_attribute>
