@@ -37,7 +37,7 @@ register(
     description=_(
         "Upload media files to S3 (or compatible) object-based storage via the command line."
     ),
-    version = '0.1.4',
+    version = '0.1.5',
     gramps_target_version="5.2",
-    requires_mod=["boto3"],
+    requires_mod=["botocore", "jmespath", "s3transfer", "boto3"],
 )
