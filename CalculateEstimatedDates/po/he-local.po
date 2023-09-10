@@ -1,0 +1,364 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.2.0 – CalculateEstimatedDates\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2023-09-10 09:33+0300\n"
+"Last-Translator: \n"
+"Language-Team: Avi Markovitz\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==2 ? 1 : n>10 && n%10==0 ? "
+"2 : 3);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:9
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:190
+msgid "Calculate Estimated Dates"
+msgstr "חישוב תאריכים משוערים"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
+msgid "Calculates estimated dates for birth and death."
+msgstr "חישוב תאריכים משוערים ללידה ופטירה."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:80
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:193
+msgid "Options"
+msgstr "אפשרויות"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:82
+msgid "Filter"
+msgstr "מסנן"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:83
+msgid "Select filter to restrict people"
+msgstr "בחירת מסנן להגבלת האנשים"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:87
+msgid "Filter Person"
+msgstr "מסנן אדם"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:88
+msgid "The center person for the filter"
+msgstr "האדם המרכזי למסנן"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:94
+msgid "Source text"
+msgstr "מלל מקור"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:95
+msgid "Calculated Date Estimates"
+msgstr "תאריכים משוערים מחושבים"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:96
+msgid "Source to remove and/or add"
+msgstr "מקור להוספה ו/או הסרה"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:99
+msgid "Remove previously added events, notes, and source"
+msgstr "הסרת אירועים קודמים, הערות ומקורות, ולבחור נתונים מחדש"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:100
+msgid ""
+"Remove calculated events, notes, and source; occurs immediately on Execute"
+msgstr "הסרת אירועים מחושבים, הערות ומקורות; מתבצע באופן מיידי"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:103
+msgid "Birth"
+msgstr "לידה"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:104
+msgid "Do not add birth events"
+msgstr "לא להוסיף אירועי לידה"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:105
+msgid "Add birth events without dates"
+msgstr "הוספת אירועי לידה ללא תאריכים"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:106
+msgid "Add birth events with dates"
+msgstr "הוספת אירועי לידה עם תאריכים"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:107
+msgid "Add a birth events with or without estimated dates"
+msgstr "אירוע לידה עם או ללא תאריכים משוערים"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:110
+msgid "Death"
+msgstr "פטירה"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:111
+msgid "Do not add death events"
+msgstr "לא להוסיף אירועי פטירה"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:112
+msgid "Add death events without dates"
+msgstr "הוספת אירועי פטירה ללא תאריכים"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:113
+msgid "Add death events with dates"
+msgstr "הוספת ארוע פטירה עם תאריכים"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:114
+msgid "Add death events with or without estimated dates"
+msgstr "אירוע פטירה עם או ללא תאריכים משוערים"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:118
+msgid "Maximum age"
+msgstr "גיל מרבי"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:121
+msgid "Maximum age that one can live to"
+msgstr "תוחלת חיים מירבית (בשנים) לאדם"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:124
+msgid "Maximum sibling age difference"
+msgstr "הפרש גילאים מרבי בין אחאים"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:127
+msgid "Maximum age difference between siblings"
+msgstr "הפרש גילאים מרבי בין אחאים"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:130
+msgid "Average years between generations"
+msgstr "מספר שנים ממוצע בין דורות"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:133
+msgid "Average years between two generations"
+msgstr "מספר שנים ממוצע בין שני דורות"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:136
+msgid "Estimated Dates"
+msgstr "תאריכים משוערים"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:137
+msgid "Approximate (about)"
+msgstr "מקורב (בסביבות)"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:138
+msgid "Extremes (after and before)"
+msgstr "קיצוניים (אחרי ולפני)"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:139
+msgid "Dates on events are either about or after/before"
+msgstr "תאריכי אירועים הם מסוג, בקרוב או אחרי/לפני"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:170
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:187
+msgid "Help"
+msgstr "עזרה"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:172
+msgid ""
+"The Calculate Estimated Dates Tool is used to add and remove birth and death "
+"events for people that are missing these events.\n"
+"\n"
+"To use:\n"
+"1. Go to the Options tab\n"
+"2. Check the [ ] Remove option to remove previous estimates\n"
+"3. Select the Add date options to date events with or without dates\n"
+"4. Click on Execute\n"
+"5. Select the people with which to add events\n"
+"6. Click on 'Add Selected Events' button to create\n"
+"\n"
+"NOTES: if you decide to make an event permanent, remove it from the Source. "
+"Otherwise, it will get removed the next time you automatically remove these "
+"events.\n"
+"\n"
+"You may have to run the tool repeatedly (without removing previous events) "
+"to add all of the events possible."
+msgstr ""
+"הכלי ל'חשוב תאריכים משוערים' נועד להוספת והסרת אירועי לידה ופטירה לאנשים "
+"באילן־היוחסין להם אירועים אלה חסרים.\n"
+"\n"
+"אופן השימוש:\n"
+"1. מעבר ללשונית 'אפשרויות'\n"
+"2. סימון אפשרות [ ] ''הסרה' לניקוי אומדנים קודמים\n"
+"3. בחריה באפשרות 'הוספת תאריך לאירועים עם או בלי תאריכים\n"
+"4. הקשה על ביצוע\n"
+"5. בחירת האנשים להם יש להוסיף אירועים\n"
+"6. הקשה על לחצן 'הוספת אירועים שנבחרו' על מנת ליצור אירועים\n"
+"\n"
+"הערות: כדי לקבע אירוע לצמיתות, יש להסיר אותו מהמקור. אחרת, הוא יוסר בפעם "
+"הבאה שתתבצע הסרת אירועים האלה באופן אוטומטי.\n"
+"\n"
+"ייתכן שתדרש הפעלת הכלי שוב ושוב (מבלי להסיר אירועים קודמים) כדי להוסיף את כל "
+"האירועים האפשריים."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:199
+msgid "Select All"
+msgstr "בחירת הכול"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:200
+msgid "Select None"
+msgstr "לא לבחור דבר"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:201
+msgid "Toggle Selection"
+msgstr "החלפת בחירה"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:202
+msgid "Add Selected Events"
+msgstr "הוספת אירועים שנבחרו"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:208
+msgid "Remove Events, Notes, and Source and Reselect Data"
+msgstr "הסרת אירועים, הערות ומקורות, ולבחור נתונים מחדש"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:209
+msgid ""
+"Are you sure you want to remove previous events, notes, and source and "
+"reselect data?"
+msgstr "האם להסיר אירועים קודמים, הערות ומקורות, ולבחור נתונים מחדש?"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:210
+msgid "Remove and Run Select Again"
+msgstr "הסרה והרצת בחירה חוזרת"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:214
+msgid "Reselect Data"
+msgstr "בחירת נתונים מחדש"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:215
+msgid "Are you sure you want to reselect data?"
+msgstr "האם לבחור נתונים מחדש?"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:216
+msgid "Run Select Again"
+msgstr "הרצת 'לבחור שוב'"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:225
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:234
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:401
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:415
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:420
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:425
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:436
+msgid "Select"
+msgstr "בחירה"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:234
+msgid "Person"
+msgstr "אדם"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:234
+msgid "Action"
+msgstr "פעולה"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:235
+msgid "Birth Date"
+msgstr "תאריך לידה"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:235
+msgid "Death Date"
+msgstr "תאריך פטירה"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:236
+msgid "Evidence"
+msgstr "ראיה"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:236
+msgid "Relative"
+msgstr "יחסי"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:237
+msgid "Processing...\n"
+msgstr "עיבוד מתבצע...\n"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:255
+msgid "Removing old estimations... "
+msgstr "הסרת אמדנים ישנים... "
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:256
+#, python-format
+msgid "Removing '%s'..."
+msgstr "מתבצעת הסרת '%s'..."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:319
+msgid "done!\n"
+msgstr "בוצע!\n"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:323
+msgid ""
+"Selecting... \n"
+"\n"
+msgstr ""
+"בחירה...\n"
+"\n"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:324
+msgid "Selecting..."
+msgstr "בחירה..."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:359
+msgid "Add birth and death events"
+msgstr "הוספת אירועי לידה ופטירה"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:361
+msgid "Add birth event"
+msgstr "הוספת אירוע לידה"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:363
+msgid "Add death event"
+msgstr "הוספת אירוע פטירה"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:398
+msgid "No events to be added."
+msgstr "אין אירועים להוספה."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:439
+msgid "Selecting... "
+msgstr "בחירה... "
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:440
+#, python-format
+msgid "Adding events '%s'..."
+msgstr "הוספת אירועים '%s' מתבצעת..."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:465
+#, python-format
+msgid "Added birth event based on %(evidence)s, from %(name)s"
+msgstr "נוספו אירועי לידה בהתבסס על %(evidence)s, מתוך %(name)s"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:468
+#, python-format
+msgid "Added birth event based on %s"
+msgstr "נוספו אירועי לידה בהתבסס על %s"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:470
+msgid "Estimated birth date"
+msgstr "תאריך פטירה משוער"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:480
+#, python-format
+msgid "Added death event based on %(evidence)s, from %(person)s"
+msgstr "נוספו אירועי פטירה בהתבסס על %(evidence)s, של %(person)s"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:483
+#, python-format
+msgid "Added death event based on %s"
+msgstr "נוספו אירועי פטירה בהתבסס על %s"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:485
+msgid "Estimated death date"
+msgstr "תאריך פטירה משוער"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:495
+msgid " Done! Committing..."
+msgstr " מתבצע הידוד..."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:499
+#, python-format
+msgid "Added %d events."
+msgstr "נוספו %d אירועים."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:527
+msgid "Estimated date"
+msgstr "תאריך משוער"
