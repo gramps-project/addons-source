@@ -1,0 +1,55 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-09-10 07:59+0300\n"
+"PO-Revision-Date: 2023-09-10 08:07+0300\n"
+"Last-Translator: \n"
+"Language-Team: Avi Markovitz\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==2 ? 1 : n>10 && n%10==0 ? "
+"2 : 3);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: MediaMerge/mediamerge.gpr.py:31
+msgid "Merge Media"
+msgstr "מיזוג מדיה"
+
+#: MediaMerge/mediamerge.gpr.py:32
+msgid ""
+"Searches the entire database, looking for media that have the same path and "
+"merges them."
+msgstr "חיפוש בכלל מסד־הנתונים, לאיתור ומזוג פרטי מדיה בעלי נתיבים זהים."
+
+#: MediaMerge/mediamerge.py:104
+msgid "Media Merge"
+msgstr "מיזוג מדיה"
+
+#: MediaMerge/mediamerge.py:149
+#, python-brace-format
+msgid "{number_of} media merged"
+msgid_plural "{number_of} media merged"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: MediaMerge/mediamerge.py:153
+msgid "Number of merges done"
+msgstr "מספר מזוגים שבוצעו"
+
+#: MediaMerge/mediamerge.py:156
+msgid "No modifications made"
+msgstr "לא נעשו הסגלות"
+
+#: MediaMerge/mediamerge.py:157
+msgid "No media items merged."
+msgstr "לא מוזגו פרטי מדיה."
