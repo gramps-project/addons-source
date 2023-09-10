@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Prerequisites Checker\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-20 16:40-0500\n"
-"PO-Revision-Date: 2022-04-23 10:37+0300\n"
+"POT-Creation-Date: 2023-09-10 07:03+0300\n"
+"PO-Revision-Date: 2023-09-10 07:51+0300\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language: he\n"
@@ -35,8 +35,8 @@ msgid ""
 "blob/master/README.md\">prerequisites</a> installed.\n"
 msgstr ""
 "גרמפלט אבחון שנועד להעריך אם <a href=\"https://gramps-project.org/\">גרמפס</"
-"a> , <a href=\"https://github.com/gramps-project/gramps/blob/master/README.md"
-"\">כל דרישות הקדם הנחוצות להפעלה תקינה של</a> מותקנות.\n"
+"a> , <a href=\"https://github.com/gramps-project/gramps/blob/master/README."
+"md\">כל דרישות הקדם הנחוצות להפעלה תקינה של</a> מותקנות.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:142
 msgid ""
@@ -57,8 +57,7 @@ msgstr ""
 msgid ""
 "The following packages <b>MUST</b> be installed (Requires the minimum "
 "version or greater.):\n"
-msgstr ""
-"<b>חובה</b> על החבילות הבאות להיות מותקנות (מצריך גרסה מזערית ומעלה):\n"
+msgstr "<b>חובה</b>    (מצריך גרסה מזערית ומעלה):\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:180
 msgid ""
@@ -66,7 +65,7 @@ msgid ""
 "<u><b>STRONGLY RECOMMENDED</b></u>\n"
 msgstr ""
 "\n"
-"<u><b>מומלץ בחום</b></u>\n"
+"<u><b>ממלצים בחום</b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:182
 msgid ""
@@ -86,7 +85,7 @@ msgstr ""
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:195
 msgid "The following packages are optional:\n"
-msgstr "החבילות הבאות חלופיות:\n"
+msgstr "החבילות הבאות הן חלופיות:\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:197
 msgid "Gtkspell enables spell checking in the notes.\n"
@@ -109,7 +108,7 @@ msgstr ""
 msgid ""
 "The following packages should be installed if you intend to translate or do "
 "any development (addons etc):\n"
-msgstr "למפתחים (תוספים ועוד) ומתרגמים, יש להתקין גם את החבילות הבאות:\n"
+msgstr "למפתחים ומתרגמים (תוספים ועוד), נא להתקין גם את החבילות הבאות:\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:226
 msgid ""
@@ -117,7 +116,7 @@ msgid ""
 "<u><b>Optional packages required by Third-party Addons</b></u>\n"
 msgstr ""
 "\n"
-"<u><b>חבילות חלופיות הדרושות לתוספים צד שלישי</b></u>\n"
+"<u><b>חבילות חלופיות שדרושות לתוספי צד ג'</b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:229
 msgid ""
@@ -133,7 +132,7 @@ msgid ""
 "<u><b>Diagnostic checks</b></u>\n"
 msgstr ""
 "\n"
-"<u><b>בדיקת אבחון</b></u>\n"
+"<u><b>בדיקות אבחון</b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:252
 msgid "Check for potential issues.\n"
@@ -154,7 +153,7 @@ msgid ""
 "<u><b>Locales available:</b></u>\n"
 msgstr ""
 "\n"
-"<u><b>מיקמומים זמינים</b></u>\n"
+"<u><b>מקמים זמינים</b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:263
 msgid ""
@@ -162,11 +161,11 @@ msgid ""
 "<u><b>Back Up Your Genealogy Files.</b></u>\n"
 msgstr ""
 "\n"
-"<u><b>נא לגבות את קובצי הגנאלוגיה.</b></u>\n"
+"<u><b>נא לגבות את קובצי אילן־היוחסין.</b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:264
 msgid "Time to back up your genealogy files, and then test your backups!\n"
-msgstr "זה הזמן לגבות את כל קבצי הגנאלוגיה, ולבדוק את תקינות הגיבויים!\n"
+msgstr "זה הזמן לגבות את כל קבצי אילן־היוחסין ולבדוק את תקינות הגיבויים!\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:267
 msgid ""
@@ -255,7 +254,7 @@ msgid ""
 "You have Gramps %s. Please make a backup and then upgrade.\n"
 "%s"
 msgstr ""
-"גרסת גרמפס המותקנת היא %s. נא לבצע גיבוי, לאחר מכן לשדרג.\n"
+"מותקנת גרסת גרמפס %s. נא לבצע גיבוי ורק לאחר מכן שדרוג.\n"
 "%s"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:317
@@ -265,13 +264,13 @@ msgid ""
 "for contributing and testing; please report any issues. Backups are your "
 "friend.\n"
 msgstr ""
-"גרסת גרמפס המותקנת היא %s. זוהי גרסת פתוח שטרם שוחררה. תודה על התרומה ובדיקת "
-"התכנה, נא לדווח על כל הסוגיות ככל שהיו. גיבויים הם 'חברים יקרים'.\n"
+"מותקנת גרסת גרמפס %s. זוהי גרסת פתוח שטרם שוחררה. תודה על התרומה ובדיקת "
+"התכנה, נא לדווח על סוגיות ככל שהיו. גיבויים הם 'חברים יקרים'.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:325
 #, python-format
 msgid "You have Gramps %s. Congratulations, you have the current version.\n"
-msgstr "גרסת גרמפס המותקנת היא %s. ברכות! הגרסה העדכנית ביותר מותקנת.\n"
+msgstr "מותקנת גרסת גרמפס %s. ברכות! הגרסה העדכנית ביותר מותקנת.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:352
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:426
@@ -454,7 +453,7 @@ msgstr "לא מותקן"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1287
 msgid "  and one of either: (pydotplus: "
-msgstr "  אחד מהבאים: (pydotplus: "
+msgstr "  ואחד מהבאים: (pydotplus: "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1289
 msgid ") or (pygraphviz: "
@@ -483,7 +482,7 @@ msgstr "לא נמצא."
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1428
 msgid "Standard. Passed: program installed - 32bit on 64bit Win OS."
-msgstr "תקני. עבר: תכנה מותקנת - 32 ביט, על מערכת הפעלה וינדוס 64 ביט."
+msgstr "תקני. עבר: תוכנה מותקנת – 32 ביט, על מערכת הפעלה וינדוס 64 ביט."
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1438
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1446
@@ -514,7 +513,7 @@ msgstr "(זיהוי פנים OpenCV: %s)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1720
 msgid " (lxml: not found. Requires version "
-msgstr " (lxml: לא נמצא. נדרשת גרסה "
+msgstr " (lxml: לא נמצאו. נדרשת גרסה "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1738
 msgid "* Requires: MongoDB TBD / pymongo TBD"
@@ -566,8 +565,8 @@ msgid ""
 "\n"
 msgstr ""
 "\n"
-"מיקומים\\תרגומים מותקנים (אם רק 'אנגלית' מופיעה ברשימה, נא להתקין את גרמפס "
-"שוב ולוודא שכול התרגומים והמילונים שברשימה, נבחרו)\n"
+"מקמים\\תרגומים מותקנים (אם רק השפה ה'אנגלית' מופיעה ברשימה, נא להתקין את "
+"גרמפס שוב ולוודא שכול התרגומים והמילונים שברשימה, נבחרו)\n"
 "\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1844
