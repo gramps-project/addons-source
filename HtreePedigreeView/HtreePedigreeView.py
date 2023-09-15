@@ -1689,7 +1689,6 @@ class HtreePedigreeView(NavigationView):
         menu.append(item)
 
         # Help menu entry
-        menu.append(item)
         item = Gtk.MenuItem(label=_("About H-Tree"))
         item.connect("activate", self.on_help_clicked)
         item.show()
