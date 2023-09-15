@@ -7,17 +7,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PlaceCleanup\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2019-10-07 20:15+0300\n"
+"POT-Creation-Date: 2020-02-08 15:56-0600\n"
+"PO-Revision-Date: 2023-09-15 13:47+0300\n"
+"Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
+"Language-Team: he\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==2 ? 1 : n>10 && n%10==0 ? "
 "2 : 3);\n"
-"Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
-"Language-Team: he\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: PlaceCleanup/placecleanup.gpr.py:28 PlaceCleanup/placecleanup.gpr.py:44
 msgid "Place Cleanup"
@@ -28,8 +28,8 @@ msgid ""
 "Place Cleanup Gramplet assists in merging places, as well as completing "
 "places from the GeoNames web database"
 msgstr ""
-"ניקוי המקום מסייע במיזוג מקומות, כמו גם השלמת מקומות מתוך מסד נתוני המרשתת "
-"של גאו-נאמס"
+"ארגון־מקומות מסייע במיזוג מקומות והשלמת תכונות מקומות מתוך מסד־נתוני המרשתת "
+"של GeoNames"
 
 #: PlaceCleanup/placecleanup.py:266 PlaceCleanup/placecleanup.glade:1020
 msgid ""
@@ -37,7 +37,7 @@ msgid ""
 "Matches"
 msgstr ""
 "אין\n"
-" התאמות"
+"התאמות"
 
 #: PlaceCleanup/placecleanup.py:267 PlaceCleanup/placecleanup.glade:827
 msgid "Find"
@@ -56,11 +56,11 @@ msgstr ""
 
 #: PlaceCleanup/placecleanup.py:295
 msgid "Find GeoNames"
-msgstr "חיפוש גאו-נאמס"
+msgstr "חיפוש GeoNames"
 
 #: PlaceCleanup/placecleanup.py:303
 msgid "Need to set GeoNames ID"
-msgstr "נדרש להגדיר מזהה גאו-נאמס"
+msgstr "נדרש להגדיר מזהה GeoNames"
 
 #: PlaceCleanup/placecleanup.py:304
 msgid "Use the Help button for more information"
@@ -87,7 +87,7 @@ msgid ""
 msgstr ""
 "%s\n"
 "התאמות\n"
-"גאו-‏נאמס"
+"GeoNames"
 
 #: PlaceCleanup/placecleanup.py:353
 #, python-format
@@ -100,103 +100,103 @@ msgid ""
 "To see additional results, press the search button again.\n"
 "Or try changing the Title with more detail, such as a country."
 msgstr ""
-"רק 10 התאמות מוצגות.\n"
-"כדי לראות תוצאות נוספות, נא להקיש שוב על לחצן החיפוש.\n"
+"מוצגות 10 התאמות בלבד.\n"
+"לצפיה בתוצאות נוספות, נא להקיש שוב על לחצן החיפוש.\n"
 "לחלופין, ניתן לנסות ולשנות את הכותרת בפרטים נוספים, כגון מדינה."
 
-#: PlaceCleanup/placecleanup.py:396 PlaceCleanup/placecleanup.py:398
-#: PlaceCleanup/placecleanup.py:787
+#: PlaceCleanup/placecleanup.py:399 PlaceCleanup/placecleanup.py:401
+#: PlaceCleanup/placecleanup.py:797
 msgid ", "
 msgstr ", "
 
-#: PlaceCleanup/placecleanup.py:418 PlaceCleanup/placecleanup.py:423
+#: PlaceCleanup/placecleanup.py:421 PlaceCleanup/placecleanup.py:426
 msgid "Problem getting data from web"
 msgstr "הייתה בעיה באחזור הנתונים מהרשת"
 
-#: PlaceCleanup/placecleanup.py:424
+#: PlaceCleanup/placecleanup.py:427
 msgid "Web request Timeout, you can try again..."
-msgstr "פסק-זמן בקשת רשת, נא לנסות שנית..."
+msgstr "פסק־זמן בקשת רשת, נא לנסות שנית..."
 
-#: PlaceCleanup/placecleanup.py:432
+#: PlaceCleanup/placecleanup.py:435
 msgid "Problem getting data from GeoNames"
-msgstr "הייתה בעיה באחזור הנתונים נגאו-נאמס"
+msgstr "הייתה בעיה באחזור נתונים מ־GeoNames"
 
-#: PlaceCleanup/placecleanup.py:477 PlaceCleanup/placecleanup.py:748
+#: PlaceCleanup/placecleanup.py:480 PlaceCleanup/placecleanup.py:758
 msgid "Place cycle detected"
 msgstr "זוהתה הפניה מעגלית במקומות"
 
-#: PlaceCleanup/placecleanup.py:478
+#: PlaceCleanup/placecleanup.py:481
 msgid ""
 "One of the places you are merging encloses the other!\n"
 "Please choose another place."
 msgstr ""
-"אחד המקומות הממוזגים מכליל בתוכו את השני!\n"
+"אחד המקומות שמיועדים למיזוג מכיל בתוכו את המקום שני!\n"
 "נא לבחור מקום אחר."
 
-#: PlaceCleanup/placecleanup.py:740
+#: PlaceCleanup/placecleanup.py:750
 #, python-format
 msgid "Add Place (%s)"
 msgstr "הוספת מקום (%s)"
 
-#: PlaceCleanup/placecleanup.py:749
+#: PlaceCleanup/placecleanup.py:759
 msgid ""
 "The place you chose is enclosed in the place you are workin on!\n"
 "Please cancel and choose another place."
 msgstr ""
-"המקום שנבחר מוכלל במקום שבעבודה!\n"
+"המקום שנבחר מוכל במקום שנמצא כעת בעבודה!\n"
 "נא לבטל ולבחור מקום אחר."
 
-#: PlaceCleanup/placecleanup.py:772
+#: PlaceCleanup/placecleanup.py:782
 #, python-format
 msgid "Add Citation (%s)"
-msgstr "הוספת אזכור (%s)"
+msgstr "הוספת מובאה (%s)"
 
-#: PlaceCleanup/placecleanup.py:777
+#: PlaceCleanup/placecleanup.py:787
 #, python-format
 msgid "Edit Place (%s)"
 msgstr "עריכת מקום (%s)"
 
-#: PlaceCleanup/placecleanup.py:935
-msgid "GeoNames web site"
-msgstr "אתר מרשתת גאו-נאמס"
-
-#: PlaceCleanup/placecleanup.py:940
-msgid "GeoNames author"
-msgstr "יוצר גאו-נאמס"
-
 #: PlaceCleanup/placecleanup.py:945
-msgid "GeoNames was founded by Marc Wick. You can reach him at "
-msgstr "גאו-נאמס נוסדה על ידי מארק וויק. ניתן לפנות אליו ב "
+msgid "GeoNames web site"
+msgstr "אתר מרשתת GeoNames"
 
-#: PlaceCleanup/placecleanup.py:948
+#: PlaceCleanup/placecleanup.py:950
+msgid "GeoNames author"
+msgstr "יוצרי GeoNames"
+
+#: PlaceCleanup/placecleanup.py:955
+msgid "GeoNames was founded by Marc Wick. You can reach him at "
+msgstr "GeoNamesנוסדה על ידי מארק וויק. אפשר לפנות אליו ב־ "
+
+#: PlaceCleanup/placecleanup.py:958
 msgid ""
 "GeoNames is a project of Unxos GmbH, Weingartenstrasse 8, 8708 Männedorf, "
 "Switzerland.\n"
 "This work is licensed under a "
 msgstr ""
-"גאו-נאמס הוא פרוייקט של Unxos GmbH, ויינגרטנשטראסה 8, 8708 מנדורף, שוויץ.\n"
+"GeoNames הוא מיזם של Unxos GmbH, ויינגרטנשטראסה 8, 8708 מנדורף, שוויץ.\n"
 "עבודה זו מורשית תחת "
 
-#: PlaceCleanup/placecleanup.py:951
+#: PlaceCleanup/placecleanup.py:961
 msgid "Creative Commons Attribution 3.0 License"
 msgstr "רישיון קריאטיב קומונס אטריביושן 3.0"
 
-#: PlaceCleanup/placecleanup.py:963
+#: PlaceCleanup/placecleanup.py:973
 #, python-format
 msgid "Add Souce/Repo/Note (%s)"
 msgstr "הוספת מקור/מאגר/הערה (%s)"
 
-#: PlaceCleanup/placecleanup.py:1064
+#: PlaceCleanup/placecleanup.py:1074
 msgid "This Place is not used!"
 msgstr "מקום זה אינו בשימוש!"
 
-#: PlaceCleanup/placecleanup.py:1065
+#: PlaceCleanup/placecleanup.py:1075
 msgid ""
 "You should delete it, or, if it contains useful notes or other data, use the "
 "Find to merge it into a valid place."
 msgstr ""
-"נא למחוק זאת, או, במידה והוא מכיל הערות שימושיות או נתונים אחרים, נא להשתמש "
-"בחיפוש כדי למזג אותו למקום חוקי."
+"נא למחוק מקום זה, אך אם רשומת המקום כוללת בתוכה הערות שימושיות או נתונים "
+"אחרים, נא להשתמש בחיפוש כדי למזג מקום זה עם מקום תקין."
 
 #: PlaceCleanup/placecleanup.glade:27
 msgid "City, County, State, Country"
@@ -224,7 +224,7 @@ msgstr "המיקוד של המקום, אם קיים."
 
 #: PlaceCleanup/placecleanup.glade:115
 msgid "What type of place this is. Eg 'Country', 'City', ... ."
-msgstr "איזה סוג מקום הוא זה. למשל 'מדינה', 'עיר', ... ."
+msgstr "סוג מקום. לדוגמה:  'מדינה', 'עיר', ... ."
 
 #: PlaceCleanup/placecleanup.glade:132 PlaceCleanup/placecleanup.glade:150
 #: PlaceCleanup/placecleanup.glade:281
@@ -233,11 +233,11 @@ msgstr "מקור"
 
 #: PlaceCleanup/placecleanup.glade:136
 msgid "Check this box if you want to keep the original Postal code."
-msgstr "סימון תיבה זאת לשמירת קוד המקום המקורי."
+msgstr "סימון תיבה זו לשמירת קוד המקום המקורי."
 
 #: PlaceCleanup/placecleanup.glade:154
 msgid "Check this box if you want to keep the original Place Type."
-msgstr "סימון תיבה זאת לשמירת סוג המקום המקורי."
+msgstr "סימון תיבה זו לשמירת סוג המקום המקורי."
 
 #: PlaceCleanup/placecleanup.glade:196
 msgid "Longitude"
@@ -249,15 +249,15 @@ msgstr "קו רוחב"
 
 #: PlaceCleanup/placecleanup.glade:232
 msgid "Keep Original"
-msgstr "שמירת מקור"
+msgstr "להשאיר מקור"
 
 #: PlaceCleanup/placecleanup.glade:236
 msgid "Check this box if you want to keep the original Latitude and Longitude."
-msgstr "סימון תיבה זאת לשמירת קווי האורך והרוחב המקורים."
+msgstr "סימון תיבה זו לשמירת קווי האורך והרוחב המקורים."
 
 #: PlaceCleanup/placecleanup.glade:254
 msgid "The Gramps ID.."
-msgstr "מזהה גראמפס.."
+msgstr "מזהה גרמפס.."
 
 #: PlaceCleanup/placecleanup.glade:272
 msgid "ID"
@@ -265,7 +265,7 @@ msgstr "מזהה"
 
 #: PlaceCleanup/placecleanup.glade:285
 msgid "Check this box if you want to keep the original Gramps ID."
-msgstr "סימון תיבה זאת לשמירת מזהה גראמפס המקורי."
+msgstr "סימון תיבה זו לשמירת מזהה גרמפס המקורי."
 
 #: PlaceCleanup/placecleanup.glade:315
 msgid ""
@@ -273,11 +273,12 @@ msgid ""
 "Select one or more rows and press 'Keep' button to toggle the 'include into "
 "place' status ."
 msgstr ""
-"בחירת שורה אחת או יותר והקשה על לחצן 'שמירה' כדי לעבור למצב 'הכללה במקום'."
+"שמות חלופיים\n"
+"בחירה בשורה אחת או יותר והקשה על לחצן 'שמירה' למעבר למצב 'הכללה בתוך מקום'."
 
 #: PlaceCleanup/placecleanup.glade:330
 msgid "Inc"
-msgstr "כולל"
+msgstr "Inc"
 
 #: PlaceCleanup/placecleanup.glade:350
 msgid "Name"
@@ -335,7 +336,7 @@ msgstr "עזרה"
 
 #: PlaceCleanup/placecleanup.glade:605
 msgid "Keep Web Links"
-msgstr "שמירת קישורי רשת"
+msgstr "להשאיר קישורי רשת"
 
 #: PlaceCleanup/placecleanup.glade:609
 msgid "Puts web links (typically wikipedia) into your place."
@@ -343,23 +344,23 @@ msgstr "משלב קישורי רשת (וויקי‎פדיה באופן טיפו�
 
 #: PlaceCleanup/placecleanup.glade:622
 msgid "Add citation and source to Place"
-msgstr "הוספת מקור ואזכור למקום"
+msgstr "הוספת מובאה ומקור למקום"
 
 #: PlaceCleanup/placecleanup.glade:626
 msgid "This Adds a Citation to your place, citing GeoNames."
-msgstr "הוספת אזכור למקום, אזכור גאו-נאמס."
+msgstr "הוספת מובאה למקום, מובאה מ־GeoNames."
 
 #: PlaceCleanup/placecleanup.glade:641
 msgid "GeoNames User ID"
-msgstr "מזהה משתמש גאו-נאמס"
+msgstr "מזהה משתמש GeoNames"
 
 #: PlaceCleanup/placecleanup.glade:653
 msgid "Enter you Geonames user ID here."
-msgstr "הזנת מזהה משתמש גאו-נאמס כאן."
+msgstr "הזנת מזהה משתמש GeoNames כאן."
 
 #: PlaceCleanup/placecleanup.glade:665
 msgid "Alternative Names Languages to keep"
-msgstr "שפות שמות חלופיים לשמירה"
+msgstr "שמות ושפות חלופיים לניהול"
 
 #: PlaceCleanup/placecleanup.glade:677
 msgid ""
@@ -378,7 +379,7 @@ msgstr ""
 
 #: PlaceCleanup/placecleanup.glade:693
 msgid "Currently Enclosed Places"
-msgstr "מקומות מוכללים נוכחיים"
+msgstr "מקומות מוכלים נוכחיים"
 
 #: PlaceCleanup/placecleanup.glade:705
 msgid ""
@@ -389,11 +390,11 @@ msgid ""
 "is changed to the next level GeoNames place.  This may result in some unused "
 "places remaining in your database."
 msgstr ""
-"כאשר מארגנים מקום שכבר הוכלל, הדבר משפיע על מה שכבר נעשה.\n"
-"אם האפשרות '<b>שמירת הכללה נוכחית</b>' נבחרה, לא יעשו שינויים במקום המכיל.\n"
-"אם האפשרות '<b>החלפה בהכללת גאו-נאמס</b>' נבחרה, המקום המוכלל משתנה לרמה "
-"הבאה של מקומות גאו-נאמס.  הדבר עשוי לגרום לכך שיישארו מספר מקומות שאינם "
-"בשימוש במסד הנתונים."
+"ארגון מקום שכבר מוכל במקום אחר, ישפע גם על מה שכבר נעשה.\n"
+"אם  נבחרה האפשרות '<b>שמירת הכללה נוכחית</b>', לא יעשו שינויים במקום המכיל.\n"
+"אם  נבחרה האפשרות '<b>החלפה בהכללת GeoNames</b>', פרטי המקום המוכל ישתנו "
+"לרמה הבאה של מקומות GeoNames. מצב זה עשוי לגרום לכך שמספר מקומות במסד "
+"הנתונים יוותרו ללא שימוש."
 
 #: PlaceCleanup/placecleanup.glade:710
 msgid "Keep current Enclosure"
@@ -401,7 +402,7 @@ msgstr "שמירת הכללה נוכחית"
 
 #: PlaceCleanup/placecleanup.glade:726
 msgid "Replace with GeoNames Enclosure"
-msgstr "מקומות מוכללים גאו-נאמס"
+msgstr "מקומות מוכלים גאו-נאמס"
 
 #: PlaceCleanup/placecleanup.glade:771
 msgid "Title"
@@ -414,11 +415,12 @@ msgid ""
 "number of results."
 msgstr ""
 "כותרת מקום נוכחי.\n"
-"ניתן לערוך זאת על מנת לסייע באיתור מקומות אחרים, במיוחד לצמצום מספר התוצאות."
+"ניתן לעריכה על מנת לסייע באיתור מקומות אחרים, במיוחד כדי לצמצום את מספר "
+"התוצאות."
 
 #: PlaceCleanup/placecleanup.glade:831
 msgid "Search your local places and GeoNames for a match."
-msgstr "חיפוש התאמה במקומות מקומיים ומקומות גאו-נאמס."
+msgstr "חיפוש התאמה במקומות local ומקומות GeoNames."
 
 #: PlaceCleanup/placecleanup.glade:843
 msgid "Select"
@@ -427,8 +429,7 @@ msgstr "בחירה"
 #: PlaceCleanup/placecleanup.glade:847
 msgid ""
 "Continue to merge (for local places), or to complete a place (for GeoNames)."
-msgstr ""
-"המשך מיזוג (עבור מקומות מקומיים), או השלמת מקום (עבור מקומות גאו-נשמס)."
+msgstr "להמשיך במיזוג (מקומות local), או להשלים תכונות מקום (מקומות GeoNames)."
 
 #: PlaceCleanup/placecleanup.glade:860
 msgid "Edit"
@@ -468,20 +469,20 @@ msgid ""
 "Checking the 'Populated' checkbox causes the GeoNames search to include "
 "'Populted places', places where people live and work."
 msgstr ""
-"סימון תיבת הסימון 'מאוכלס' גורמת לחיפוש לגאו-נאמס לכלול 'אזורים מאוכלסים' "
-"בהם אנשים גרים ועובדים."
+"סימון תיבת 'אכלוס' תגרום לחיפוש GeoNames לכלול בתוצאות החיפוש גם 'אזורים "
+"מאוכלסים' בהם אנשים גרים ועובדים."
 
 #: PlaceCleanup/placecleanup.glade:1053
 msgid "Populated"
-msgstr "מאוכלס"
+msgstr "אכלוס"
 
 #: PlaceCleanup/placecleanup.glade:1065
 msgid ""
 "Checking the 'Admin' checkbox cause the GeoNames search to include "
 "adminstrative subdivisions in the search (countries, states, counties etc.)."
 msgstr ""
-"סימון תיבת הסימון 'מנהל' גורמת לחיפוש לגאו-נאמס לכלול אזורי מנהל משנים "
-"בחיפוש (ארצות, מדינות, מחוזות וכו')."
+"סימון תיבת 'מנהלתי' תגרום לחיפוש GeoNames לכלול בתוצאות החיפוש גם אזורים "
+"מנהליים משניים (מדינות, חבלים, מחוזות וכיוצא בזה)."
 
 #: PlaceCleanup/placecleanup.glade:1084
 msgid ""
@@ -489,13 +490,13 @@ msgid ""
 "variety of other places in the search (churches, burial grounds, buildings "
 "etc.)."
 msgstr ""
-"סימון תיבת הסימון 'נקודה' גורמת לחיפוש לגאו-נאמס לכלול מגוון רחב של מקומות "
-"אחרים בחיפוש (כנסיות, אתרי קבורה, מבנים וכו')."
+"סימון תיבת הסימון 'כתם' תגרום לחיפוש GeoNames לכלול בתוצאות החיפוש מגוון רחב "
+"של מקומות אחרים (כנסיות, אתרי קבורה, מבני ציבור, וכדומה)."
 
 #: PlaceCleanup/placecleanup.glade:1101
 msgid "Admin"
-msgstr "מנהל"
+msgstr "מנהלתי"
 
 #: PlaceCleanup/placecleanup.glade:1112
 msgid "Spot"
-msgstr "נקודה"
+msgstr "כתם"
