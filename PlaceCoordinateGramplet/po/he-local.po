@@ -1,0 +1,363 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.2.0 – PlaceCoordinateGramplet\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-09-14 10:55-0500\n"
+"PO-Revision-Date: 2023-09-16 13:26+0300\n"
+"Last-Translator: \n"
+"Language-Team: Avi Markovitz\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==2 ? 1 : n>10 && n%10==0 ? "
+"2 : 3);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:126
+msgid "Organize Bookmarks"
+msgstr "ארגון סימניות"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:233
+msgid "Places map"
+msgstr "מפת מקומות"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:264
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:62
+msgid "Place Coordinate Gramplet"
+msgstr "גרמפלט נקודות־ציון מקום"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:444
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:457
+msgid "Selecting all places"
+msgstr "בחירת כל המקומות"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:469
+msgid ""
+"Right click on the map and select 'show all places' to show all known places "
+"with coordinates. You can change the markers color depending on place type. "
+"You can use filtering."
+msgstr ""
+"הקשת עכבר ימנית על נקודה במפה ובחירת 'הצגת כל המקומות' כדי להציג את כל "
+"המקומות הידועים עם נקודות־ציון. ניתן לשנות את צבע הסמנים בהתאם לסוג המקום. "
+"ניתן להשתמש בסינון."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:484
+msgid ""
+"Right click on the map and select 'show all places' to show all known places "
+"with coordinates. You can use the history to navigate on the map. You can "
+"change the markers color depending on place type. You can use filtering."
+msgstr ""
+"הקשת עכבר ימנית על נקודה במפה ובחירת 'הצגת כל המקומות' כדי להציג את כל "
+"המקומות הידועים עבור נקודות־ציון. ניתן להשתמש בהיסטוריה לניווט במפה. ניתן "
+"לשנות את צבע הסמנים בהתאם לסוג המקום. ניתן להשתמש בסנון."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:499
+msgid "The place name in the status bar is disabled."
+msgstr "שם המקום בסרגל המצב מושבת."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:504
+#, python-format
+msgid "The maximum number of places is reached (%d)."
+msgstr "מספר המקומות המירבי (%d) הושג."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:507
+msgid "Some information are missing."
+msgstr "מידע מסויים חסר."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:509
+msgid "Please, use filtering to reduce this number."
+msgstr "נא להשתמש במסנן לצמום מספר זה."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:511
+msgid "You can modify this value in the geography option."
+msgstr "ניתן להסגיל ערך זה בתפריט 'אפשרות גאוגרפיה'."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:513
+msgid "In this case, it may take time to show all markers."
+msgstr ""
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:531
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:536
+msgid "Centering on Place"
+msgstr "מרכוז על מקום"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:581
+msgid "Unknown"
+msgstr "לא ידוע"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:584
+msgid "Custom"
+msgstr "מותאם אישית"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:587
+msgid "Locality"
+msgstr "שכונה"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:590
+msgid "Street"
+msgstr "רחוב"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:593
+msgid "Neighborhood"
+msgstr "שכונה"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:596
+msgid "Borough"
+msgstr "מקוף"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:599
+msgid "Village"
+msgstr "כפר"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:602
+msgid "Hamlet"
+msgstr "כפר קטן"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:605
+msgid "Farm"
+msgstr "חווה"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:608
+msgid "Building"
+msgstr "בניין"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:611
+msgid "Number"
+msgstr "מספר"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:614
+msgid "Country"
+msgstr "מדינה"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:617
+msgid "State"
+msgstr "חבל"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:620
+msgid "County"
+msgstr "מחוז"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:623
+msgid "Province"
+msgstr "מטה"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:626
+msgid "Region"
+msgstr "אזור"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:629
+msgid "Department"
+msgstr "מחלקה"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:632
+msgid "District"
+msgstr "מחוז"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:635
+msgid "Parish"
+msgstr "קהילה"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:638
+msgid "City"
+msgstr "עיר"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:641
+msgid "Town"
+msgstr "עירה"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:644
+msgid "Municipality"
+msgstr "רשות מקומית"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:648
+msgid "Custom places name"
+msgstr "שם מקום מותאם אישית"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:657
+msgid "The places marker color"
+msgstr "צבע סמן המקום"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:764
+msgid "Map Menu"
+msgstr "תפריט מפה"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:767
+msgid "Remove cross hair"
+msgstr "הסרת צְלַב־נִימוֹת"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:769
+msgid "Add cross hair"
+msgstr "הוספת צְלַב־נִימוֹת"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:775
+msgid "Add city as place"
+msgstr "הוספת עיר כ'מקום'"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:788
+msgid "Add addess as place"
+msgstr "הוספת כתובת כ'מקום'"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:801
+msgid "Link place"
+msgstr "קישור מקום"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:814
+#, python-format
+msgid "Replace '%(map)s' by =>"
+msgstr "החלפת '%(map)s' ב־=>"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:833
+#, python-format
+msgid "Clear the '%(map)s' tiles cache."
+msgstr "ניקוי זיכרון מטמון האריחים '%(map)s'."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:902
+msgid "Edit Place"
+msgstr "עריכת מקום"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:907
+msgid "Center on this place"
+msgstr "מרכוז על מיקום זה"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:73
+#, python-brace-format
+msgid "Failed to load the required module {module_name}."
+msgstr "כשל בטעינת פרקן נדרש {module_name}."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:81
+msgid "Don't show again"
+msgstr "לא להציג שוב"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:81
+msgid "OK"
+msgstr "בסדר"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:138
+msgid "Place Coordinate Gramplet view"
+msgstr "מצג גרמפלט נקודות־ציון מקום"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:139
+msgid "View for the place coordinate gramplet."
+msgstr "מצג גרמפלט נקודות־ציון מקום."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:146
+msgid "Geography"
+msgstr "גאוגרפיה"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:154
+msgid "Place and Coordinates"
+msgstr "מקום ונקודות־ציון"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:156
+msgid "Gramplet that simplifies setting the coordinates of a place"
+msgstr "גרמפלט לפישוט קביעת נקודות־הציון של מקום"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:165
+msgid "Place Coordinates"
+msgstr "נקודות־ציון מקום"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:215
+msgid "The place was not found. You may clarify the search keywords."
+msgstr "המקום לא נמצא. נא להבהיר מילות־מפתח לחיפוש."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:219
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:247
+msgid "Failed to search for the coordinates due to some unexpected error."
+msgstr "כשל בחיפוש נקודות־ציון כתוצאה משגיאה לא צפויה."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:244
+msgid "The place was not found."
+msgstr "המקום לא נמצא."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:269
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:300
+msgid "The place was not identified."
+msgstr "המקוםלא זוהה."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:271
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:302
+msgid "Coordinates were not given."
+msgstr "לא ניתנו נקודות־ציון."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:286
+msgid "Failed to interpret the input format."
+msgstr "כשל בפרוש תסדיר הקלט."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:313
+#, python-format
+msgid "Edit Place (%s)"
+msgstr "עריכת מקום (%s)"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:332
+#, python-brace-format
+msgid "DB entry [{id}] {name}:"
+msgstr "רשומת מסד־נתונים [{id}] {name}:"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:337
+#: PlaceCoordinateGramplet/placecoordinate.glade:132
+msgid "Nothing has been searched yet"
+msgstr "טרם בוצע חיפוש"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:359
+msgid "No place is active"
+msgstr "אין מקום פעיל"
+
+#: PlaceCoordinateGramplet/placecoordinate.glade:15
+msgid "Search for:"
+msgstr "חיפוש:"
+
+#: PlaceCoordinateGramplet/placecoordinate.glade:26
+msgid "Found place:"
+msgstr "נמצא מקום:"
+
+#: PlaceCoordinateGramplet/placecoordinate.glade:39
+#: PlaceCoordinateGramplet/placecoordinate.glade:81
+msgid "Latitude:"
+msgstr "קו רוחב:"
+
+#: PlaceCoordinateGramplet/placecoordinate.glade:53
+msgid "No DB entry is selected"
+msgstr "לא נבחרה רשומת מסד־נתונים"
+
+#: PlaceCoordinateGramplet/placecoordinate.glade:68
+msgid "Postal-Code:"
+msgstr "מיקוד"
+
+#: PlaceCoordinateGramplet/placecoordinate.glade:94
+#: PlaceCoordinateGramplet/placecoordinate.glade:107
+msgid "Longitude:"
+msgstr "קו אורך:"
+
+#: PlaceCoordinateGramplet/placecoordinate.glade:116
+msgid "Show found place externally in Google Maps"
+msgstr "הצגת מקום שנמצא במפות גוגל באופן חיצוני"
+
+#: PlaceCoordinateGramplet/placecoordinate.glade:203
+msgid ""
+"Take last clicked position\n"
+"from Geography map"
+msgstr ""
+"לקיחת איות מהקשה אחרונה\n"
+"על מפה גיאוגרפית"
+
+#: PlaceCoordinateGramplet/placecoordinate.glade:218
+msgid "Search location from DB"
+msgstr "חיפוש מקום ממסד־נתונים"
+
+#: PlaceCoordinateGramplet/placecoordinate.glade:232
+msgid "Apply geo location to Database"
+msgstr "החלת איכון (גאו־לוקיישן) על מסד הנתונים"
+
+#: PlaceCoordinateGramplet/placecoordinate.glade:269
+msgid "Go"
+msgstr "מעבר אל"
+
+#: PlaceCoordinateGramplet/placecoordinate.glade:290
+msgid "Show help"
+msgstr "הצגת עזרה"
