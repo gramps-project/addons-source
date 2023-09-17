@@ -1,0 +1,170 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2023-09-17 17:01+0300\n"
+"Last-Translator: Avi Markovitz\n"
+"Language-Team: Avi Markovitz\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==2 ? 1 : n>10 && n%10==0 ? "
+"2 : 3);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: MediaVerify/MediaVerify.gpr.py:30
+msgid "Media Verify"
+msgstr "אימות מדיה"
+
+#: MediaVerify/MediaVerify.gpr.py:31
+msgid "Verify that media is present in the correct path"
+msgstr "נא לודא שקיימת מדיה בנתיב הנוכחי"
+
+#: MediaVerify/MediaVerify.py:78
+msgid "Media Verify Tool"
+msgstr "כלי לאימות אוביקטי מדיה"
+
+#: MediaVerify/MediaVerify.py:83
+msgid "Moved/Renamed Files"
+msgstr "קבצים שהועברו או ששם השתנה"
+
+#: MediaVerify/MediaVerify.py:83
+msgid "Missing Files"
+msgstr "קבצים חסרים"
+
+#: MediaVerify/MediaVerify.py:84
+msgid "Duplicate Files"
+msgstr "שכפול קבצים"
+
+#: MediaVerify/MediaVerify.py:84
+msgid "Extra Files"
+msgstr "קבצים נוספים"
+
+#: MediaVerify/MediaVerify.py:85
+msgid "No md5 Generated"
+msgstr "לא חולל md5"
+
+#: MediaVerify/MediaVerify.py:85
+msgid "Errors"
+msgstr "שגיאות"
+
+#: MediaVerify/MediaVerify.py:100
+msgid "Close"
+msgstr "סגירה"
+
+#: MediaVerify/MediaVerify.py:101
+msgid "Close the Media Verify Tool"
+msgstr "סגירת הכלי לאימות נתונים"
+
+#: MediaVerify/MediaVerify.py:103
+msgid "Generate"
+msgstr "חילול"
+
+#: MediaVerify/MediaVerify.py:104
+msgid "Generate md5 hashes for media objects"
+msgstr "חילול האש md5 לאוביקטי מדיה"
+
+#: MediaVerify/MediaVerify.py:106
+msgid "Verify"
+msgstr "אימות"
+
+#: MediaVerify/MediaVerify.py:107
+msgid "Check media paths and report missing, duplicate and extra files"
+msgstr "בדיקת נתיבי מדיה ודיווח על פריטים חסרים, שכפול וחילוץ קבצים"
+
+#: MediaVerify/MediaVerify.py:110
+msgid "Export"
+msgstr "ייצוא"
+
+#: MediaVerify/MediaVerify.py:111
+msgid "Export the results to a text file"
+msgstr "ייצוא התוצאות לקובץ מלל"
+
+#: MediaVerify/MediaVerify.py:113
+msgid "Fix"
+msgstr "תיקון"
+
+#: MediaVerify/MediaVerify.py:114
+msgid "Fix media paths of moved and renamed files"
+msgstr "תיקון נתיבי מדיה לקבצים שהועברו או ששם השתנה"
+
+#: MediaVerify/MediaVerify.py:132
+msgid "Verify Gramps media using md5 hashes"
+msgstr "לאמת מדית גרמפס תוך שימוש בהאש md5"
+
+#: MediaVerify/MediaVerify.py:143
+msgid "Files"
+msgstr "קבצים"
+
+#: MediaVerify/MediaVerify.py:195
+msgid "Export results to a text file"
+msgstr "ייצוא תוצאות לקובץ מלל"
+
+#: MediaVerify/MediaVerify.py:218
+#, python-format
+msgid "Error when writing the report: %s"
+msgstr "שגיאה בעת כתיבת דוח: %s"
+
+#: MediaVerify/MediaVerify.py:259
+msgid "Generating media hashes"
+msgstr "חילול האש למדיה"
+
+#: MediaVerify/MediaVerify.py:261
+msgid "Set media hashes"
+msgstr "הגדרת האש לאוביקטי מדיה"
+
+#: MediaVerify/MediaVerify.py:296
+msgid ""
+"Media path not set.  You must set the \"Base path for relative media paths\" "
+"in the Preferences."
+msgstr ""
+"לא הוגדר נתיב מדיה.  נדרש להגדיר בהעדפות את \"נתיב הבסיס לנתיבי מדיה יחסיים\""
+
+#: MediaVerify/MediaVerify.py:307
+msgid "Finding files"
+msgstr "איתור קבצים"
+
+#: MediaVerify/MediaVerify.py:335
+msgid "Checking paths"
+msgstr "בדיקת נתיבים"
+
+#: MediaVerify/MediaVerify.py:388
+msgid "Fixing file paths"
+msgstr "תיקון נתיבי קובץ"
+
+#: MediaVerify/MediaVerify.py:390
+msgid "Fix media paths"
+msgstr "תיקון נתיבי מדיה"
+
+#~ msgid "Merge Media"
+#~ msgstr "מיזוג מדיה"
+
+#~ msgid ""
+#~ "Searches the entire database, looking for media that have the same path "
+#~ "and merges them."
+#~ msgstr ""
+#~ "חיפוש בכלל מסד־הנתונים, לאיתור ומיזוג פרטי מדיה  שהנתיבים שלהם זהים."
+
+#, python-brace-format
+#~ msgid "{number_of} media merged"
+#~ msgid_plural "{number_of} media merged"
+#~ msgstr[0] "עצם מדיה {number_of} מוזג"
+#~ msgstr[1] "מוזגו {number_of} עצמי מדיה"
+#~ msgstr[2] "מוזגו {number_of} עצמי מדיה"
+#~ msgstr[3] "מוזגו {number_of} עצמי מדיה"
+
+#~ msgid "Number of merges done"
+#~ msgstr "מספר מזוגים שבוצעו"
+
+#~ msgid "No modifications made"
+#~ msgstr "לא נעשו הסגלות"
+
+#~ msgid "No media items merged."
+#~ msgstr "לא מוזגו פרטי מדיה."
