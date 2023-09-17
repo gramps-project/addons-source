@@ -1,0 +1,56 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-26 10:18-0500\n"
+"PO-Revision-Date: 2023-09-17 17:14+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==2 ? 1 : n>10 && n%10==0 ? 2 : 3);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: DownloadMedia/DownloadMedia.gpr.py:35
+msgid "Download media files from the internet"
+msgstr "הורדת קבצי מדיה מהמרשתת"
+
+#: DownloadMedia/DownloadMedia.gpr.py:36
+msgid "This tool downloads media files from the internet"
+msgstr "כלי זה נועד להורדת קבצי מדיה מהמרשתת"
+
+#: DownloadMedia/DownloadMedia.py:71
+msgid "Download media"
+msgstr "הורדת מדיה"
+
+#: DownloadMedia/DownloadMedia.py:87
+msgid "Media downloaded"
+msgstr "מדיה ירדה"
+
+#: DownloadMedia/DownloadMedia.py:88
+#, python-format
+msgid "%d media files downloaded"
+msgstr "ירדו %d קבצים"
+
+#: DownloadMedia/DownloadMedia.py:100
+msgid "Download media tool"
+msgstr "כלי הורדת מדיה"
+
+#: DownloadMedia/DownloadMedia.py:106
+msgid "Make sure you are connected to the internet before starting this tool."
+msgstr "נא לודא שניתן להתחבר למרשתת לפני אתחול כלי זה."
+
+#: DownloadMedia/DownloadMedia.py:171 DownloadMedia/DownloadMedia.py:172
+msgid "Downloading files"
+msgstr "מתבצעת הורדת קבצים"
+
+#: DownloadMedia/DownloadMedia.py:207
+msgid "Media download errors detected"
+msgstr "זוהו שגיאות הורדת מדיה"
