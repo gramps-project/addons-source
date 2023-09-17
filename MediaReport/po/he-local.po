@@ -1,0 +1,143 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.2.0 – MediaReport\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-09-10 07:59+0300\n"
+"PO-Revision-Date: 2023-09-17 17:40+0300\n"
+"Last-Translator: Avi Markovitz\n"
+"Language-Team: Avi Markovitz\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==2 ? 1 : n>10 && n%10==0 ? "
+"2 : 3);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: MediaReport/media_report.gpr.py:23
+msgid "Media Report"
+msgstr "דוח מדיה"
+
+#: MediaReport/media_report.gpr.py:24
+msgid "Generates report including images, image data and notes."
+msgstr "חילול דוח שכולל תמונות, מידע על תמונות והערות."
+
+#: MediaReport/media_report.py:106 MediaReport/media_report.py:112
+#: MediaReport/media_report.py:119 MediaReport/media_report.py:125
+msgid "INFO"
+msgstr "מידע"
+
+#: MediaReport/media_report.py:106 MediaReport/media_report.py:119
+msgid "You have to select an image to generate this report."
+msgstr "יש לבחור תמונה כדי לחולל דוח זה."
+
+#: MediaReport/media_report.py:112
+msgid ""
+"You have to select a custom note or uncheck the option 'include custom note' "
+"to generate this report."
+msgstr ""
+"לחילול הדוח, יש לבחור בהערה מותאמת אישית, או לבטל סימון 'הכללת הערה מותאמת "
+"אישית'."
+
+#: MediaReport/media_report.py:125
+msgid "This report only supports PDF as output file format."
+msgstr "דוח זה תומך בפלט בתסדיר קובץ PDF בלבד."
+
+#: MediaReport/media_report.py:229
+msgid "General:"
+msgstr "כללי:"
+
+#: MediaReport/media_report.py:235
+msgid "Description:"
+msgstr "תיאור:"
+
+#: MediaReport/media_report.py:250
+msgid "Image type:"
+msgstr "סוג תמונה:"
+
+#: MediaReport/media_report.py:342
+msgid "File does not exist"
+msgstr "קובץ לא קיים"
+
+#: MediaReport/media_report.py:343
+msgid "Could not add photo to page"
+msgstr "לא ניתן להוסיף תמונה לעמוד"
+
+#: MediaReport/media_report.py:344
+#, python-format
+msgid "%(str1)s: %(str2)s"
+msgstr "%(str1)s: %(str2)s"
+
+#: MediaReport/media_report.py:426
+msgid "Heading"
+msgstr "כותרת"
+
+#: MediaReport/media_report.py:427 MediaReport/media_report.py:431
+#: MediaReport/media_report.py:435 MediaReport/media_report.py:439
+#: MediaReport/media_report.py:444 MediaReport/media_report.py:448
+#: MediaReport/media_report.py:453 MediaReport/media_report.py:458
+msgid "Report Options"
+msgstr "אפשרויות דוח"
+
+#: MediaReport/media_report.py:429
+msgid "Media"
+msgstr "מדיה"
+
+#: MediaReport/media_report.py:430
+msgid "Select a media file for this report"
+msgstr "בחירת קובץ מדיה עבור דוח זה"
+
+#: MediaReport/media_report.py:433
+msgid "Custom note"
+msgstr "הערה מותאם אישית"
+
+#: MediaReport/media_report.py:434
+msgid "Select a note for this report"
+msgstr "בחירת הערה עבור דוח זה"
+
+#: MediaReport/media_report.py:437
+msgid "Include custom note"
+msgstr "הכללת הערה מותאם אישית"
+
+#: MediaReport/media_report.py:438
+msgid "The custom note will be included"
+msgstr "הערה תותאמת אישית תכלל בדוח"
+
+#: MediaReport/media_report.py:442
+msgid "Include referenced people"
+msgstr "הכללת אנשים שאליהם קיימת הפניה"
+
+#: MediaReport/media_report.py:443
+msgid "Referenced people will be included"
+msgstr "אנשים שאליהם קיימת הפניה יכללו בדוח"
+
+#: MediaReport/media_report.py:446
+msgid "Include media data"
+msgstr "הכללת נתונים על מדיה"
+
+#: MediaReport/media_report.py:447
+msgid "Tags, notes and attributes will be included"
+msgstr "תגים, הערות ותכונות יכללו בדוח"
+
+#: MediaReport/media_report.py:450
+msgid "Media width"
+msgstr "רוחב מדיה"
+
+#: MediaReport/media_report.py:451
+#, python-format
+msgid "Maximum media width in % of available page width."
+msgstr "רוחב מדיה מרבי באחוזים (%) מרוחב זמין בעמוד."
+
+#: MediaReport/media_report.py:455
+msgid "Media height"
+msgstr "גובה מדיה"
+
+#: MediaReport/media_report.py:456
+#, python-format
+msgid "Maximum media height in % of available page height."
+msgstr "גובה מדיה מרבי באחוזים (%) מגובה זמין בעמוד."
