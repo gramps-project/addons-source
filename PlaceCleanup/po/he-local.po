@@ -318,6 +318,10 @@ msgid ""
 "Select one or more rows and use this button to discard the alternative names."
 msgstr "בחירת שורה אחת או יותר ושימוש בלחצן זה לשמיטת השמות החלופיים."
 
+#: PlaceCleanup/placecleanup.glade:576
+msgid "Cancel"
+msgstr "ביטול"
+
 #: PlaceCleanup/placecleanup.glade:504
 msgid "Cancel the operation, no changes are made to your Place."
 msgstr "ביטול פעולה, לא נעשו שינויים ברשומת המקום."
