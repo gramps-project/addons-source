@@ -37,16 +37,8 @@ try:
         STR_ADDRESS_CONFIG = ['house_number', 'road', 'suburb', 'town', 'county', 'state', 'country']
     else:
         import gi
-        for geocode_ver in ('2.0', '1.0'):
-            try:
-                gi.require_version('GeocodeGlib', geocode_ver)
-                from gi.repository import GeocodeGlib
-                _GEOCODE = True
-                break
-            except (ImportError, ValueError):
-                _GEOCODE = False
-        if not _GEOCODE:
-            raise Exception("GeocodeGlib 1 or 2 is required for this gramplet to work")
+        gi.require_version('GeocodeGlib', '1.0')
+        from gi.repository import GeocodeGlib
         STR_CITY_CONFIG = ['town', 'county', 'state', 'country']
         STR_ADDRESS_CONFIG = ['building', 'street', 'area', 'town', 'county', 'state', 'country']
 except:
