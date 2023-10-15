@@ -153,10 +153,17 @@ class DNASegmentMap(Gramplet):
 
     def write_chromo(self, line, side, rgb_color, assoc, note, segmap):
 
-        if re.search('\t',line) != None:
-            line2 = re.sub(',','',line)
-            line = re.sub('\t',',',line2)
-
+        if "\t" in line:
+# Tabs are the field separators. Now determine THOUSEP and RADIXCHAR. Use Field 2 (Stop Pos) to see if there are THOUSEP there. Use Field 3 (SNPs) to see if there is a radixchar
+            field = line.split('\t')
+            if "," in field[2]:
+                line = line.replace(",", "")
+            elif "." in field[2]:
+                line = line.replace(".", "")
+            if "," in field[3]:
+                line = line.replace(",", ".")
+            line = line.replace("\t", ",")
+# If Tab is not the field separator, then comma is. And point is the radixchar.
         field = line.split(',')
         if len(field) < 4:
             return False
