@@ -60,10 +60,10 @@ msgstr ""
 msgid "unknown"
 msgstr ""
 
-#: dnamatches.py:182 dnamatches.py:185
+#: dnamatches.py:181 dnamatches.py:184
 msgid "cM"
 msgstr ""
 
-#: dnamatches.py:223 dnamatches.py:227
+#: dnamatches.py:224 dnamatches.py:235
 msgid "Not specified"
 msgstr ""

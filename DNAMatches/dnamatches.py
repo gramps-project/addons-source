@@ -130,19 +130,19 @@ class DNAMatches(Gramplet):
                     # Get Notes attached to Association
                     for handle in assoc.get_note_list():
                         note = self.dbstate.db.get_note_from_handle(handle)
-                        self.__get_match_info(active, assoc, note)
+                        self.__get_match_info(active, assoc, note, False)
                     # Get Notes attached to Citation which is attached to the Association
                     for citation_handle in assoc.get_citation_list():
                         citation = self.dbstate.db.get_citation_from_handle(citation_handle)
                         for handle in citation.get_note_list():
                             note = self.dbstate.db.get_note_from_handle(handle)
-                            self.__get_match_info(active, assoc, note)
+                            self.__get_match_info(active, assoc, note, True)
 
         # Sort by shared DNA initially
         model.model.set_sort_column_id(self.model.cids[4], 1)
         model.sort()
 
-    def __get_match_info(self, active, assoc, note):
+    def __get_match_info(self, active, assoc, note, is_citation_note):
         """
         Get and display all relevant DNA match information.
         """
@@ -154,19 +154,18 @@ class DNAMatches(Gramplet):
         lines = note.get().split('\n')
         for line in lines:
             segments, total_cms, largest_cms = self.__process_line(line,
-                                                                 segments,
-                                                                 total_cms,
-                                                                 largest_cms)
+                                                                   segments,
+                                                                   total_cms,
+                                                                   largest_cms)
         if segments == 0 or total_cms == 0 or largest_cms == 0:
             return
 
         # Relationship
         relationship = _('unknown')
         associate = self.dbstate.db.get_person_from_handle(assoc.ref)
-        rel = get_relationship_calculator(glocale)
-        rel_strings = rel.get_all_relationships(self.dbstate.db,
-                                                active,
-                                                associate)[0]
+        rel_strings = get_relationship_calculator(glocale).get_all_relationships(self.dbstate.db,
+                                                                                 active,
+                                                                                 associate)[0]
         if len(rel_strings) > 0 :
             relationship = rel_strings[0]
 
@@ -183,7 +182,7 @@ class DNAMatches(Gramplet):
                        segments,
                        self.__sort_number_columns(largest_cms_rounded),
                        str(largest_cms_rounded) + " " + _('cM'),
-                       self.__get_sources(assoc)))
+                       self.__get_sources(assoc, note.get_handle(), is_citation_note)))
 
     def __process_line(self, line, segments, total_cms, largest_cms):
         """
@@ -216,19 +215,29 @@ class DNAMatches(Gramplet):
 
         return (segments, total_cms, largest_cms)
 
-    def __get_sources(self, assoc):
+    def __get_sources(self, assoc, note, is_citation_note):
         """
         Get sources for the association.
         """
+        db = self.dbstate.db
+        found_note = False
         sources = _('Not specified')
         for citation_handle in assoc.get_citation_list():
-            citation = self.dbstate.db.get_citation_from_handle(citation_handle)
-            source = self.dbstate.db.get_source_from_handle(citation.get_reference_handle())
-            if sources == _('Not specified'):
-                sources = ""
-                sources += source.get_title()
-            else:
-                sources += ", " + source.get_title()
+            citation = db.get_citation_from_handle(citation_handle)
+            if is_citation_note and not found_note:
+                for note_handle in citation.get_note_list():
+                    if note_handle == note:
+                        found_note = True
+                        break
+                    found_note = False
+            if (is_citation_note and found_note) or not is_citation_note:
+                source = db.get_source_from_handle(citation.get_reference_handle())
+                if sources == _('Not specified'):
+                    sources = ""
+                    sources += source.get_title()
+                else:
+                    sources += ", " + source.get_title()
+            found_note = False
         return sources
 
     def __sort_number_columns(self, number):
