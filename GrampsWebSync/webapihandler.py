@@ -6,10 +6,12 @@ import os
 from pathlib import Path
 from tempfile import NamedTemporaryFile
 from time import sleep
+
 try:
     from typing import Any, Callable, Dict, List, Optional
 except ImportError:
     from const import Type
+
     Any = Type
     Callable = Type
     Dict = Type
@@ -62,8 +64,10 @@ class WebApiHandler:
             with urlopen(req) as res:
                 res_json = json.load(res)
         except (UnicodeDecodeError, json.JSONDecodeError, HTTPError):
-            self.url = f"{self.url}/api"
-            return self.fetch_token()
+            if "/api" not in self.url:
+                self.url = f"{self.url}/api"
+                return self.fetch_token()
+            raise
         self._access_token = res_json["access_token"]
 
     def get_lang(self) -> Optional[str]:
@@ -94,23 +98,31 @@ class WebApiHandler:
         os.remove(temp.name)
         return Path(unzipped_name)
 
-    def commit(self, trans: DbTxn) -> None:
+    def commit(self, trans: DbTxn, force: bool = True) -> None:
         """Commit the changes to the remote database."""
         lang = self.get_lang()
         payload = transaction_to_json(trans, lang)
         if payload:
             data = json.dumps(payload).encode()
+            endpoint = f"{self.url}/transactions/"
+            if force:
+                endpoint = f"{endpoint}?force=1"
             req = Request(
-                f"{self.url}/transactions/",
+                endpoint,
                 data=data,
                 headers={
                     "Content-Type": "application/json",
                     "Authorization": f"Bearer {self.access_token}",
                 },
             )
-            urlopen(req)
+            try:
+                urlopen(req)
+            except HTTPError as exc:
+                if exc.code == 422 and force:
+                    # Web API version might not support force parameter yet
+                    self.commit(trans, force=False)
 
-    def get_missing_files(self, retry: bool = True) -> None:
+    def get_missing_files(self, retry: bool = True) -> List:
         """Get a list of remote media objects with missing files."""
         req = Request(
             f"{self.url}/media/?filemissing=1",

@@ -32,7 +32,7 @@ except ImportError:
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlparse
 
-from gi.repository import Gtk, GLib
+from gi.repository import GLib, Gtk
 from gramps.gen.config import config as configman
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 from gramps.gen.db import DbTxn
@@ -51,6 +51,16 @@ from const import (
     A_MRG_REM,
     A_UPD_LOC,
     A_UPD_REM,
+    C_ADD_LOC,
+    C_ADD_REM,
+    C_DEL_LOC,
+    C_DEL_REM,
+    C_UPD_BOTH,
+    C_UPD_LOC,
+    C_UPD_REM,
+    MODE_BIDIRECTIONAL,
+    MODE_RESET_TO_LOCAL,
+    MODE_RESET_TO_REMOTE,
     Actions,
 )
 from diffhandler import WebApiSyncDiffHandler
@@ -166,7 +176,7 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
         self.db1 = dbstate.db
         self.db2 = None
         self._download_timestamp = 0
-        self.actions = None
+        self.changes = None
         self.sync = None
         self.files_missing_local = []
         self.files_missing_remote = []
@@ -216,14 +226,14 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
             t = threading.Thread(target=self.async_compare_dbs)
             t.start()
         elif page == self.confirmation:
-            self.confirmation.prepare(self.actions)
+            self.confirmation.prepare(self.changes)
         elif page == self.file_sync_page:
             self.assistant.commit()
             if self.file_sync_page.unchanged:
                 self.file_sync_page.label.set_text(_("Both trees are the same."))
             else:
                 self.file_sync_page.label.set_text(
-                    _("Successfully synchronized %s objects.") % len(self.actions)
+                    _("Successfully synchronized %s objects.") % len(self.changes)
                 )
         elif page == self.file_confirmation:
             self.files_missing_local = self.get_missing_files_local()
@@ -364,6 +374,8 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
     def get_diff_actions(self):
         """Download the remote data, import it and compare it to local."""
         path = self.handle_server_errors(self.api.download_xml)
+        if path is None:
+            return None
         db2 = import_as_dict(str(path), self._user)
         path.unlink()  # delete temporary file
         self.db2 = db2
@@ -372,10 +384,10 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
         self.sync = WebApiSyncDiffHandler(
             self.db1, self.db2, user=self._user, last_synced=timestamp
         )
-        self.actions = self.sync.get_actions()
+        self.changes = self.sync.get_changes()
         self.progress_page.label.set_text("")
         self.progress_page.set_complete()
-        if len(self.actions) == 0:
+        if len(self.changes) == 0:
             self.handle_unchanged()
         else:
             self.assistant.next_page()
@@ -470,8 +482,11 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
         msg = "Apply Gramps Web Sync changes"
         with DbTxn(msg, self.sync.db1) as trans1:
             with DbTxn(msg, self.sync.db2) as trans2:
-                self.sync.commit_actions(self.actions, trans1, trans2)
-                self.handle_server_errors(self.api.commit, trans2)
+                actions = self.sync.changes_to_actions(self.changes, self.confirmation.sync_mode)
+                self.sync.commit_actions(actions, trans1, trans2)
+                # force the sync if mode is NOT bidirectional
+                force = self.confirmation.sync_mode != MODE_BIDIRECTIONAL
+                self.handle_server_errors(self.api.commit, trans2, force)
         self.save_timestamp()
 
     def save_timestamp(self):
@@ -490,7 +505,7 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
 
     def get_missing_files_remote(self):
         """Get a list of media files missing remotely."""
-        missing_files = self.handle_server_errors(self.api.get_missing_files)
+        missing_files = self.handle_server_errors(self.api.get_missing_files) or []
         return [(media["gramps_id"], media["handle"]) for media in missing_files]
 
 
@@ -680,6 +695,7 @@ class ConfirmationPage(Page):
 
     def __init__(self, assistant):
         super().__init__(assistant)
+        self.sync_mode = MODE_BIDIRECTIONAL
         self.store = Gtk.TreeStore(str, str)
 
         # tree view
@@ -694,31 +710,77 @@ class ConfirmationPage(Page):
         scrolled_window = Gtk.ScrolledWindow()
         scrolled_window.add(self.tree_view)
 
-        self.pack_start(scrolled_window, True, True, 0)
+        self.sync_label = Gtk.Label()
+        self.sync_label.set_text("Sync mode")
 
-    def prepare(self, actions: Actions):
-        """Convert the actions list to a tree store."""
-        action_labels = {
+        # Box for radio buttons
+        self.radio_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
+
+        # Radio buttons
+        option_name = _("Bidirectional Synchronization")
+        self.radio_button1 = Gtk.RadioButton.new_with_label_from_widget(
+            None, option_name
+        )
+        self.radio_button1.connect(
+            "toggled", self.on_radio_button_toggled, MODE_BIDIRECTIONAL
+        )
+        self.radio_box.pack_start(self.radio_button1, False, False, 0)
+
+        option_name = _("Reset remote to local")
+        self.radio_button2 = Gtk.RadioButton.new_from_widget(self.radio_button1)
+        self.radio_button2.set_label(option_name)
+        self.radio_button2.connect(
+            "toggled", self.on_radio_button_toggled, MODE_RESET_TO_LOCAL
+        )
+        self.radio_box.pack_start(self.radio_button2, False, False, 0)
+
+        option_name = _("Reset local to remote")
+        self.radio_button3 = Gtk.RadioButton.new_from_widget(self.radio_button1)
+        self.radio_button3.set_label(option_name)
+        self.radio_button3.connect(
+            "toggled", self.on_radio_button_toggled, MODE_RESET_TO_REMOTE
+        )
+        self.radio_box.pack_start(self.radio_button3, False, False, 0)
+
+        # Box to hold the label and radio buttons
+        self.label_radio_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=5)
+        self.label_radio_box.pack_start(self.sync_label, False, False, 0)
+        self.label_radio_box.pack_start(self.radio_box, False, False, 0)
+
+        self.outer_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
+        self.outer_box.pack_start(scrolled_window, True, True, 0)
+        self.outer_box.pack_start(self.label_radio_box, False, False, 10)
+
+        self.pack_start(self.outer_box, True, True, 0)
+
+    def on_radio_button_toggled(self, button, name):
+        """Callback for radio buttons setting sync mode."""
+        if button.get_active():
+            self.sync_mode = int(name)
+
+    def prepare(self, changes: Actions):
+        """Convert the changes list to a tree store."""
+        change_labels = {
             _("Local changes"): {
-                _("Added"): A_ADD_REM,
-                _("Deleted"): A_DEL_REM,
-                _("Modified"): A_UPD_REM,
+                _("Added"): C_ADD_LOC,
+                _("Deleted"): C_DEL_LOC,
+                _("Modified"): C_UPD_LOC,
             },
             _("Remote changes"): {
-                _("Added"): A_ADD_LOC,
-                _("Deleted"): A_DEL_LOC,
-                _("Modified"): A_UPD_LOC,
+                _("Added"): C_ADD_REM,
+                _("Deleted"): C_DEL_REM,
+                _("Modified"): C_UPD_REM,
             },
-            _("Simultaneous changes"): {_("Modified"): A_MRG_REM},
+            _("Simultaneous changes"): {_("Modified"): C_UPD_BOTH},
         }
 
-        for label1, v1 in action_labels.items():
+        for label1, v1 in change_labels.items():
             iter1 = self.store.append(None, [label1, ""])
-            for label2, action_type in v1.items():
+            for label2, change_type in v1.items():
                 rows = []
-                for action in actions:
-                    _type, handle, class_name, obj1, obj2 = action
-                    if _type == action_type:
+                for change in changes:
+                    _type, handle, class_name, obj1, obj2 = change
+                    if _type == change_type:
                         if obj1 is not None:
                             if class_name == "Tag":
                                 gid = obj1.name
