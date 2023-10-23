@@ -38,7 +38,7 @@ from gi.repository import Gtk
 #
 #------------------------------------------------------------------------
 from gramps.gui.listmodel import ListModel, NOSORT
-from gramps.gui.editors import EditPersonRef
+from gramps.gui.editors import EditPerson, EditPersonRef
 from gramps.gen.plug import Gramplet
 from gramps.gen.lib import Date
 from gramps.gen.errors import WindowActiveError
@@ -86,8 +86,7 @@ class DNAMatches(Gramplet):
         self.connect(self.dbstate.db, 'source-update', self.update)
         self.connect(self.dbstate.db, 'source-add', self.update)
         self.connect(self.dbstate.db, 'source-delete', self.update)
-        self.connect_signal('Person',self.update)
-
+        self.connect_signal('Person', self.update)
 
     def build_gui(self):
         """
@@ -100,14 +99,15 @@ class DNAMatches(Gramplet):
 
         top = Gtk.TreeView()
         titles = [('', NOSORT, 50),
-                  (_('Person'), 1, 200),
-                  (_('Relationship'), 2, 250),
+                  (_('ID'), 1, 50),
+                  (_('Person'), 2, 150),
+                  (_('Relationship'), 3, 125),
                   ('', NOSORT, 50),
-                  (_('Shared DNA'), 3, 125),
-                  (_('Shared segments'), 5, 150, 4),
+                  (_('Shared DNA'), 4, 125),
+                  (_('Segments'), 6, 105, 4),
                   ('', NOSORT, 50),
-                  (_('Largest segment'), 6, 150),
-                  (_('Source(s)'), 8, 200)]
+                  (_('Largest Segment'), 7, 150),
+                  (_('Source(s)'), 9, 200)]
 
         self.model = ListModel(top,
                                titles,
@@ -139,7 +139,7 @@ class DNAMatches(Gramplet):
                             self.__get_match_info(active, assoc, note, True)
 
         # Sort by shared DNA initially
-        model.model.set_sort_column_id(self.model.cids[4], 1)
+        model.model.set_sort_column_id(self.model.cids[5], 1)
         model.sort()
 
     def __get_match_info(self, active, assoc, note, is_citation_note):
@@ -175,6 +175,7 @@ class DNAMatches(Gramplet):
 
         # Adding a row of DNA match data
         self.model.add((assoc.ref,
+                       associate.get_gramps_id(),
                        _nd.display_name(associate.get_primary_name()),
                        relationship,
                        self.__sort_number_columns(total_cms_rounded),
@@ -268,6 +269,7 @@ class DNAMatches(Gramplet):
                 for assoc in active.get_person_ref_list():
                     if assoc.ref == handle:
                         try:
-                            EditPersonRef(self.dbstate, self.uistate, [], assoc, None)
+                            EditPerson(self.dbstate, self.uistate, [], active)
+                            EditPersonRef(self.dbstate, self.uistate, [0], assoc, None)
                         except WindowActiveError:
                             pass

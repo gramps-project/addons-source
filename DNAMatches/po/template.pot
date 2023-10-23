@@ -32,6 +32,10 @@ msgstr ""
 msgid "Right click to edit selected association."
 msgstr ""
 
+#: dnamatches.py:102
+msgid "ID"
+msgstr ""
+
 #: dnamatches.py:103
 msgid "Person"
 msgstr ""
@@ -45,11 +49,11 @@ msgid "Shared DNA"
 msgstr ""
 
 #: dnamatches.py:107
-msgid "Shared segments"
+msgid "Segments"
 msgstr ""
 
 #: dnamatches.py:109
-msgid "Largest segment"
+msgid "Largest Segment"
 msgstr ""
 
 #: dnamatches.py:110
@@ -60,10 +64,10 @@ msgstr ""
 msgid "unknown"
 msgstr ""
 
-#: dnamatches.py:181 dnamatches.py:184
+#: dnamatches.py:182 dnamatches.py:185
 msgid "cM"
 msgstr ""
 
-#: dnamatches.py:224 dnamatches.py:235
+#: dnamatches.py:225 dnamatches.py:236
 msgid "Not specified"
 msgstr ""

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2023-10-19 21:03+0100\n"
-"PO-Revision-Date: 2023-10-21 02:02+0100\n"
+"PO-Revision-Date: 2023-10-23 02:23+0100\n"
 "Last-Translator: MILAN KUROVSKY\n"
 "Language-Team: Slovak\n"
 "Language: sk\n"
@@ -32,6 +32,10 @@ msgstr "Dvojklikom myši na riadok sa môžete presunúť na zvolenú osobu.\n"
 msgid "Right click to edit selected association."
 msgstr "Kliknutím pravého tlačítka myši môžete upraviť zvolenú asociáciu."
 
+#: dnamatches.py:102
+msgid "ID"
+msgstr "ID"
+
 #: dnamatches.py:103
 msgid "Person"
 msgstr "Osoba"
@@ -45,11 +49,11 @@ msgid "Shared DNA"
 msgstr "Zdieľaná DNA"
 
 #: dnamatches.py:107
-msgid "Shared segments"
-msgstr "Zdieľané segmenty"
+msgid "Segments"
+msgstr "Segmenty"
 
 #: dnamatches.py:109
-msgid "Largest segment"
+msgid "Largest Segment"
 msgstr "Najväčší segment"
 
 #: dnamatches.py:110
@@ -60,10 +64,10 @@ msgstr "Zdroje"
 msgid "unknown"
 msgstr "neznámy"
 
-#: dnamatches.py:181 dnamatches.py:184
+#: dnamatches.py:182 dnamatches.py:185
 msgid "cM"
 msgstr "cM"
 
-#: dnamatches.py:224 dnamatches.py:235
+#: dnamatches.py:225 dnamatches.py:236
 msgid "Not specified"
 msgstr "Neuvedené"
