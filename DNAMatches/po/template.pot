@@ -24,50 +24,82 @@ msgstr ""
 msgid "Gramplet to display a list of DNA matches"
 msgstr ""
 
-#: dnamatches.py:96
-msgid "Double-click on a row to navigate to the matched person.\n"
+#: dnamatches.py:153
+msgid "Pers."
 msgstr ""
 
-#: dnamatches.py:97
-msgid "Right click to edit selected association."
+#: dnamatches.py:153
+msgid "Rel."
 msgstr ""
 
-#: dnamatches.py:102
-msgid "ID"
+#: dnamatches.py:153
+msgid "S. DNA"
 msgstr ""
 
-#: dnamatches.py:103
+#: dnamatches.py:153
+msgid "S. Leg."
+msgstr ""
+
+#: dnamatches.py:153
+msgid "L. Seg"
+msgstr ""
+
+#: dnamatches.py:153
+msgid "Src(s)"
+msgstr ""
+
+#: dnamatches.py:154
 msgid "Person"
 msgstr ""
 
-#: dnamatches.py:104
+#: dnamatches.py:155
 msgid "Relationship"
 msgstr ""
 
-#: dnamatches.py:106
+#: dnamatches.py:156
 msgid "Shared DNA"
 msgstr ""
 
-#: dnamatches.py:107
-msgid "Segments"
+#: dnamatches.py:157
+msgid "Shared Segments"
 msgstr ""
 
-#: dnamatches.py:109
+#: dnamatches.py:158
 msgid "Largest Segment"
 msgstr ""
 
-#: dnamatches.py:110
+#: dnamatches.py:159
 msgid "Source(s)"
 msgstr ""
 
-#: dnamatches.py:164
+#: dnamatches.py:165
+msgid "ID"
+msgstr ""
+
+#: dnamatches.py:194
+msgid "Double-click on a row to navigate to the matched person."
+msgstr ""
+
+#: dnamatches.py:195
+msgid "Right click to edit selected association."
+msgstr ""
+
+#: dnamatches.py:210
+msgid "LEGEND"
+msgstr ""
+
+#: dnamatches.py:228
+msgid "="
+msgstr ""
+
+#: dnamatches.py:310 dnamatches.py:409 dnamatches.py:420
+msgid "Not specified"
+msgstr ""
+
+#: dnamatches.py:348
 msgid "unknown"
 msgstr ""
 
-#: dnamatches.py:182 dnamatches.py:185
+#: dnamatches.py:366 dnamatches.py:369
 msgid "cM"
-msgstr ""
-
-#: dnamatches.py:225 dnamatches.py:236
-msgid "Not specified"
 msgstr ""

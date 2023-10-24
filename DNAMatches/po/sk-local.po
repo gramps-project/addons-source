@@ -6,10 +6,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2023-10-19 21:03+0100\n"
-"PO-Revision-Date: 2023-10-23 02:23+0100\n"
-"Last-Translator: MILAN KUROVSKY\n"
-"Language-Team: Slovak\n"
+"POT-Creation-Date: 2023-10-24 01:49+0100\n"
+"PO-Revision-Date: 2023-10-24 01:52+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,50 +24,82 @@ msgstr "DNA zhody"
 msgid "Gramplet to display a list of DNA matches"
 msgstr "Gramplet na zobrazenie zoznamu DNA zhôd"
 
-#: dnamatches.py:96
-msgid "Double-click on a row to navigate to the matched person.\n"
-msgstr "Dvojklikom myši na riadok sa môžete presunúť na zvolenú osobu.\n"
+#: dnamatches.py:153
+msgid "Pers."
+msgstr "Osob."
 
-#: dnamatches.py:97
-msgid "Right click to edit selected association."
-msgstr "Kliknutím pravého tlačítka myši môžete upraviť zvolenú asociáciu."
+#: dnamatches.py:153
+msgid "Rel."
+msgstr "Vzťh."
 
-#: dnamatches.py:102
-msgid "ID"
-msgstr "ID"
+#: dnamatches.py:153
+msgid "S. DNA"
+msgstr "DNA"
 
-#: dnamatches.py:103
+#: dnamatches.py:153
+msgid "S. Leg."
+msgstr "Seg."
+
+#: dnamatches.py:153
+msgid "L. Seg"
+msgstr "Naj. seg."
+
+#: dnamatches.py:153
+msgid "Src(s)"
+msgstr "Zdrj(e)"
+
+#: dnamatches.py:154
 msgid "Person"
 msgstr "Osoba"
 
-#: dnamatches.py:104
+#: dnamatches.py:155
 msgid "Relationship"
 msgstr "Vzťah"
 
-#: dnamatches.py:106
+#: dnamatches.py:156
 msgid "Shared DNA"
 msgstr "Zdieľaná DNA"
 
-#: dnamatches.py:107
-msgid "Segments"
-msgstr "Segmenty"
+#: dnamatches.py:157
+msgid "Shared Segments"
+msgstr "Zdieľané segmenty"
 
-#: dnamatches.py:109
+#: dnamatches.py:158
 msgid "Largest Segment"
 msgstr "Najväčší segment"
 
-#: dnamatches.py:110
+#: dnamatches.py:159
 msgid "Source(s)"
-msgstr "Zdroje"
+msgstr "Zdroj(e)"
 
-#: dnamatches.py:164
+#: dnamatches.py:165
+msgid "ID"
+msgstr "ID"
+
+#: dnamatches.py:194
+msgid "Double-click on a row to navigate to the matched person."
+msgstr "Dvojklikom myši na riadok sa môžete presunúť na zvolenú osobu."
+
+#: dnamatches.py:195
+msgid "Right click to edit selected association."
+msgstr "Kliknutím pravého tlačítka myši môžete upraviť zvolenú asociáciu."
+
+#: dnamatches.py:210
+msgid "LEGEND"
+msgstr "VYSVETLIVKY"
+
+#: dnamatches.py:228
+msgid "="
+msgstr "="
+
+#: dnamatches.py:310 dnamatches.py:409 dnamatches.py:420
+msgid "Not specified"
+msgstr "Neuvedené"
+
+#: dnamatches.py:348
 msgid "unknown"
 msgstr "neznámy"
 
-#: dnamatches.py:182 dnamatches.py:185
+#: dnamatches.py:366 dnamatches.py:369
 msgid "cM"
 msgstr "cM"
-
-#: dnamatches.py:225 dnamatches.py:236
-msgid "Not specified"
-msgstr "Neuvedené"

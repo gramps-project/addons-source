@@ -39,6 +39,7 @@ from gi.repository import Gtk
 #------------------------------------------------------------------------
 from gramps.gui.listmodel import ListModel, NOSORT
 from gramps.gui.editors import EditPerson, EditPersonRef
+from gramps.gen.config import config
 from gramps.gen.plug import Gramplet
 from gramps.gen.lib import Date
 from gramps.gen.errors import WindowActiveError
@@ -57,6 +58,34 @@ except ValueError:
     _trans = glocale.translation
 _ = _trans.gettext
 
+#------------------------------------------------------------------------
+#
+# Configuration file
+#
+#------------------------------------------------------------------------
+CONFIG = config.register_manager('DNAMatches')
+CONFIG.register('hide-columns.id', False)
+CONFIG.register('hide-columns.person', False)
+CONFIG.register('hide-columns.relationship', False)
+CONFIG.register('hide-columns.shared-dna', False)
+CONFIG.register('hide-columns.shared-segments', False)
+CONFIG.register('hide-columns.largest-segment', False)
+CONFIG.register('hide-columns.sources', False)
+CONFIG.register('short-names.person', False)
+CONFIG.register('short-names.relationship', False)
+CONFIG.register('short-names.shared-dna', False)
+CONFIG.register('short-names.shared-segments', False)
+CONFIG.register('short-names.largest-segment', False)
+CONFIG.register('short-names.sources', False)
+CONFIG.register('widths.id', 50)
+CONFIG.register('widths.person', 150)
+CONFIG.register('widths.relationship', 125)
+CONFIG.register('widths.shared-dna', 125)
+CONFIG.register('widths.shared-segments', 155)
+CONFIG.register('widths.largest-segment', 150)
+CONFIG.register('widths.sources', 200)
+
+CONFIG.init()
 
 class DNAMatches(Gramplet):
     """
@@ -64,6 +93,35 @@ class DNAMatches(Gramplet):
     """
     def __init__(self, gui, nav_group=0):
         Gramplet.__init__(self, gui, nav_group)
+
+        self._config = config.get_manager('DNAMatches')
+
+        self._hidden_columns = []
+        self._hidden_columns.append(self._config.get('hide-columns.id'))
+        self._hidden_columns.append(self._config.get('hide-columns.person'))
+        self._hidden_columns.append(self._config.get('hide-columns.relationship'))
+        self._hidden_columns.append(self._config.get('hide-columns.shared-dna'))
+        self._hidden_columns.append(self._config.get('hide-columns.shared-segments'))
+        self._hidden_columns.append(self._config.get('hide-columns.largest-segment'))
+        self._hidden_columns.append(self._config.get('hide-columns.sources'))
+
+        self._short_names = []
+        self._short_names.append(self._config.get('short-names.person'))
+        self._short_names.append(self._config.get('short-names.relationship'))
+        self._short_names.append(self._config.get('short-names.shared-dna'))
+        self._short_names.append(self._config.get('short-names.shared-segments'))
+        self._short_names.append(self._config.get('short-names.largest-segment'))
+        self._short_names.append(self._config.get('short-names.sources'))
+
+        self._widths = []
+        self._widths.append(self._config.get('widths.id'))
+        self._widths.append(self._config.get('widths.person'))
+        self._widths.append(self._config.get('widths.relationship'))
+        self._widths.append(self._config.get('widths.shared-dna'))
+        self._widths.append(self._config.get('widths.shared-segments'))
+        self._widths.append(self._config.get('widths.largest-segment'))
+        self._widths.append(self._config.get('widths.sources'))
+        self._config.save()
 
         self.gui.WIDGET = self.build_gui()
         self.gui.get_container_widget().remove(self.gui.textview)
@@ -92,28 +150,82 @@ class DNAMatches(Gramplet):
         """
         Build the GUI interface.
         """
-        tip1 = _('Double-click on a row to navigate to the matched person.\n')
-        tip2 = _('Right click to edit selected association.')
-        tooltip = tip1 + tip2
-        self.set_tooltip(tooltip)
+        short_names = [_('Pers.'), _('Rel.'), _('S. DNA'), _('S. Leg.'), _('L. Seg'), _('Src(s)')]
+        full_names = [_('Person'),
+                      _('Relationship'),
+                      _('Shared DNA'),
+                      _('Shared Segments'),
+                      _('Largest Segment'),
+                      _('Source(s)')]
+
+        self.set_tooltip(self.__create_tooltip(short_names, full_names))
 
         top = Gtk.TreeView()
+
+        names = [_('ID'),
+                 full_names[0] if not self._short_names[0] else short_names[0],
+                 full_names[1] if not self._short_names[1] else short_names[1],
+                 full_names[2] if not self._short_names[2] else short_names[2],
+                 full_names[3] if not self._short_names[3] else short_names[3],
+                 full_names[4] if not self._short_names[4] else short_names[4],
+                 full_names[5] if not self._short_names[5] else short_names[5]]
+
         titles = [('', NOSORT, 50),
-                  (_('ID'), 1, 50),
-                  (_('Person'), 2, 150),
-                  (_('Relationship'), 3, 125),
+                  (names[0] if not self._hidden_columns[0] else '', 1, self._widths[0]),
+                  (names[1] if not self._hidden_columns[1] else '', 2, self._widths[1]),
+                  (names[2] if not self._hidden_columns[2] else '', 3, self._widths[2]),
                   ('', NOSORT, 50),
-                  (_('Shared DNA'), 4, 125),
-                  (_('Segments'), 6, 105, 4),
+                  (names[3] if not self._hidden_columns[3] else '', 4, self._widths[3]),
+                  (names[4] if not self._hidden_columns[4] else '', 6, self._widths[4], 4),
                   ('', NOSORT, 50),
-                  (_('Largest Segment'), 7, 150),
-                  (_('Source(s)'), 9, 200)]
+                  (names[5] if not self._hidden_columns[5] else '', 7, self._widths[5]),
+                  (names[6] if not self._hidden_columns[6] else '', 9, self._widths[6])]
 
         self.model = ListModel(top,
                                titles,
                                event_func=self.go_to_person,
                                right_click=self.edit_association)
         return top
+
+    def __create_tooltip(self, short_names, full_names):
+        """
+        Create the tooltip based on the config.
+        """
+        tip1 = _('Double-click on a row to navigate to the matched person.') + '\n'
+        tip2 = _('Right click to edit selected association.')
+
+        name_tips = ['', '', '', '', '', '']
+        processed_num = 0
+        short_names_num = self.__get_short_names_num()
+
+        for count, _name in enumerate(name_tips):
+            if self._short_names[count] and not self._hidden_columns[count + 1]:
+                processed_num += 1
+                name_tips[count] = self.__explain_short_name(short_names[count],
+                                                             full_names[count],
+                                                             processed_num is short_names_num)
+
+        tip3 = ""
+        if True in self._short_names:
+            tip3 = '\n\n' + _('LEGEND') + '\n'
+
+        return tip1 + tip2 + tip3 + ''.join(name_tips)
+
+    def __get_short_names_num(self):
+        """
+        Get the total number of short names (leaving out hidden columns).
+        """
+        number = 0
+        for count, _name in enumerate(self._short_names):
+            if self._short_names[count] and not self._hidden_columns[count + 1]:
+                number += 1
+        return number
+
+    def __explain_short_name(self, short_name, full_name, is_last):
+        """
+        Creates an explanation of a short name for use in the tooltip.
+        """
+        return short_name + ' ' + _('=') + ' ' + full_name + ('\n' if not is_last else '')
 
     def main(self):
         """
@@ -123,6 +235,8 @@ class DNAMatches(Gramplet):
         model = self.model
         model.clear()
 
+        matches = []
+
         if active_handle:
             active = self.dbstate.db.get_person_from_handle(active_handle)
             for assoc in active.get_person_ref_list():
@@ -130,21 +244,91 @@ class DNAMatches(Gramplet):
                     # Get Notes attached to Association
                     for handle in assoc.get_note_list():
                         note = self.dbstate.db.get_note_from_handle(handle)
-                        self.__get_match_info(active, assoc, note, False)
+                        match = self.__get_match_info(active, assoc, note, False)
+                        self.__should_append(match, matches)
                     # Get Notes attached to Citation which is attached to the Association
                     for citation_handle in assoc.get_citation_list():
                         citation = self.dbstate.db.get_citation_from_handle(citation_handle)
                         for handle in citation.get_note_list():
                             note = self.dbstate.db.get_note_from_handle(handle)
-                            self.__get_match_info(active, assoc, note, True)
+                            match = self.__get_match_info(active, assoc, note, True)
+                            self.__should_append(match, matches)
+
+        # Merge duplicate match entries
+        self.__resolve_duplicates(matches)
+
+        # Add all matches to the model
+        for match in matches:
+            model.add(match)
 
         # Sort by shared DNA initially
         model.model.set_sort_column_id(self.model.cids[5], 1)
         model.sort()
 
+    def __resolve_duplicates(self, matches):
+        """
+        Merge duplicate entries.
+        """
+        marked_for_deletion = []
+        for i, match in  enumerate(matches):
+            for j, match2 in enumerate(matches):
+                not_marked = i not in marked_for_deletion
+                if i != j and not_marked and self.__check_is_duplicate(match, match2):
+                    resolved_sources = self.__resolve_sources(match[9], match2[9])
+                    matches[i] = (match[0],
+                                  match[1],
+                                  match[2],
+                                  match[3],
+                                  match[4],
+                                  match[5],
+                                  match[6],
+                                  match[7],
+                                  match[8],
+                                  resolved_sources)
+                    marked_for_deletion.append(j)
+        # Delete merged entries (from back to front)
+        marked_for_deletion.sort(reverse=True)
+        for marked in marked_for_deletion:
+            matches.pop(marked)
+
+    def __check_is_duplicate(self, match, match2):
+        """
+        Check if two matches are duplicates of each other (except for their source)
+        """
+        # Check Gramps IDs
+        if match[1] != match2[1]:
+            return False
+        # Check DNA data
+        if match[5] == match2[5] and match[6] == match2[6] and match[8] == match2[8]:
+            return True
+        return False
+
+    def __resolve_sources(self, source, source2):
+        """
+        Merge sources for duplicate entries (if possible).
+        """
+        unspecified = _('Not specified')
+        if source is source2:
+            return source
+        main_source = source if source != unspecified else source2
+        other_source = source2 if main_source == source else source
+
+        sources = other_source.split(', ')
+        for split_source in sources:
+            if split_source not in main_source and split_source != unspecified:
+                main_source = ', '.join([main_source, split_source])
+        return main_source
+
+    def __should_append(self, match, matches):
+        """
+        Append the match only if it is populated.
+        """
+        if len(match) > 0:
+            matches.append(match)
+
     def __get_match_info(self, active, assoc, note, is_citation_note):
         """
-        Get and display all relevant DNA match information.
+        Get and store all relevant DNA match information.
         """
         # DNA
         segments = 0
@@ -158,7 +342,7 @@ class DNAMatches(Gramplet):
                                                                    total_cms,
                                                                    largest_cms)
         if segments == 0 or total_cms == 0 or largest_cms == 0:
-            return
+            return ()
 
         # Relationship
         relationship = _('unknown')
@@ -173,17 +357,17 @@ class DNAMatches(Gramplet):
         total_cms_rounded = round(total_cms, 1)
         largest_cms_rounded = round (largest_cms, 1)
 
-        # Adding a row of DNA match data
-        self.model.add((assoc.ref,
-                       associate.get_gramps_id(),
-                       _nd.display_name(associate.get_primary_name()),
-                       relationship,
-                       self.__sort_number_columns(total_cms_rounded),
-                       str(total_cms_rounded) + " " + _('cM'),
-                       segments,
-                       self.__sort_number_columns(largest_cms_rounded),
-                       str(largest_cms_rounded) + " " + _('cM'),
-                       self.__get_sources(assoc, note.get_handle(), is_citation_note)))
+        # Return DNA match data
+        return (assoc.ref,
+                associate.get_gramps_id(),
+                _nd.display_name(associate.get_primary_name()),
+                relationship,
+                self.__sort_number_columns(total_cms_rounded),
+                str(total_cms_rounded) + " " + _('cM'),
+                segments,
+                self.__sort_number_columns(largest_cms_rounded),
+                str(largest_cms_rounded) + " " + _('cM'),
+                self.__get_sources(assoc, note.get_handle(), is_citation_note))
 
     def __process_line(self, line, segments, total_cms, largest_cms):
         """
