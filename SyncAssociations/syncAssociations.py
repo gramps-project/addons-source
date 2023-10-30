@@ -94,12 +94,18 @@ WIKI_HELP_PAGE = 'https://gramps-project.org/wiki/index.php/Addon:SyncAssociatio
 # syncAssociations class
 #
 #------------------------------------------------------------------------
-class syncAssociations(ManagedWindow):
+class syncAssociations(tool.BatchTool):
     """
     Sync Associations by adding an Association for the person mentioned in another Association.
     """
     def __init__(self, dbstate, user, options_class, name, callback=None):
         uistate = user.uistate
+# Add Batch Tool check
+        self._user = user
+        tool.BatchTool.__init__(self, dbstate, user, options_class, name)
+        if self.fail:
+            return
+# End Batch Tool check
         self.dbstate = dbstate
         self.db = dbstate.db
         count = 0
