@@ -64,6 +64,7 @@ from gramps.gui.plug import tool
 from gramps.gui.managedwindow import ManagedWindow
 from gramps.gui.pluginmanager import GuiPluginManager
 from gramps.gui.display import display_help
+from gramps.gui.widgets.persistenttreeview import PersistentTreeView
 from gramps.gui.utils import open_file_with_default_application
 from gramps.gui.dialog import OkDialog, QuestionDialog2
 #from gramps.gui.widgets.progressdialog import (LongOpStatus, ProgressMonitor,
@@ -209,6 +210,7 @@ class PluginStatus(tool.Tool, ManagedWindow):
                            "can be safely completed."),
                          parent=self.window)
             self.options.handler.save_options()
+            self._list_reg.save_column_info()
             self.close(dialog)
 
     def __reload(self, _obj):
@@ -408,7 +410,7 @@ class PluginStatus(tool.Tool, ManagedWindow):
         """ This implements the gui portion of the Plugins panel """
         vbox_reg = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         scrolled_window_reg = Gtk.ScrolledWindow()
-        self._list_reg = Gtk.TreeView()
+        self._list_reg = PersistentTreeView()
         self._list_reg.set_grid_lines(Gtk.TreeViewGridLines.HORIZONTAL)
 
         # model: plugintype, hidden, pluginname, plugindescr, pluginid
@@ -511,6 +513,10 @@ class PluginStatus(tool.Tool, ManagedWindow):
 
         vbox_reg.pack_start(hbutbox, False, False, 0)
 
+        if not config.is_set('spacing.plugins'):
+            config.register('spacing.plugins', [])
+        self._list_reg.set_config_name('plugins')
+        self._list_reg.restore_column_size()
         return _('Plugins'), vbox_reg
 
     def button_press_reg(self, obj, event):
