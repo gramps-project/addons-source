@@ -29,7 +29,7 @@ register(REPORT,
     category = CATEGORY_TEXT,
     reportclass = 'DescendantBookReport',
     optionclass = 'DescendantBookOptions',
-    report_modes = [REPORT_MODE_GUI, REPORT_MODE_CLI],
+    report_modes = [REPORT_MODE_GUI, REPORT_MODE_BKI, REPORT_MODE_CLI],
     require_active = True
     )
 
@@ -46,7 +46,7 @@ register(REPORT,
     category = CATEGORY_TEXT,
     reportclass = 'DetailedDescendantBookReport',
     optionclass = 'DetailedDescendantBookOptions',
-    report_modes = [REPORT_MODE_GUI, REPORT_MODE_CLI],
+    report_modes = [REPORT_MODE_GUI, REPORT_MODE_BKI, REPORT_MODE_CLI],
     require_active = True
     )
 
