@@ -77,15 +77,15 @@ class EditForm(ManagedWindow):
     """
     Form Editor.
     """
-    def __init__(self, dbstate, uistate, track, citation, callback):
+    def __init__(self, dbstate, uistate, track, event, citation, callback):
 
         self.dbstate = dbstate
         self.uistate = uistate
         self.track = track
         self.db = dbstate.db
 
+        self.event = event
         self.citation = citation
-        self.event = find_form_event(self.db, self.citation)
         self.callback = callback
 
         ManagedWindow.__init__(self, uistate, track, citation)
@@ -1214,18 +1214,3 @@ def set_attribute(citation, event_ref, name, value):
         elif attr.get_value() != value:
             # Update
             attr.set_value(value)
-
-def find_form_event(db, citation):
-    """
-    Given a citation for a form source, find the corresponding event.
-    """
-    handle = citation.get_reference_handle()
-    source = db.get_source_from_handle(handle)
-    form_type = get_form_type(get_form_id(source))
-
-    for item in db.find_backlink_handles(citation.handle, ['Event']):
-        event = db.get_event_from_handle(item[1])
-        if event.get_type().xml_str() == form_type:
-            return event
-
-    return Event()

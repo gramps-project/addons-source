@@ -42,7 +42,7 @@ from gramps.gui.dbguielement import DbGUIElement
 from gramps.gen.display.place import displayer as place_displayer
 from gramps.gen.datehandler import get_date
 from gramps.gen.errors import WindowActiveError
-from gramps.gen.lib import Citation
+from gramps.gen.lib import (Citation, Event)
 from editform import EditForm
 from selectform import SelectForm
 from form import get_form_citation
@@ -102,19 +102,19 @@ class FormGramplet(Gramplet, DbGUIElement):
         """
         vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
 
-        self.model = Gtk.ListStore(object, str, str, str, str)
+        self.model = Gtk.ListStore(object, object, str, str, str, str)
         view = Gtk.TreeView(model=self.model)
         renderer = Gtk.CellRendererText()
-        column = Gtk.TreeViewColumn(_("Source"), renderer, text=1)
+        column = Gtk.TreeViewColumn(_("Source"), renderer, text=2)
         view.append_column(column)
         renderer = Gtk.CellRendererText()
-        column = Gtk.TreeViewColumn(_("Role"), renderer, text=2)
+        column = Gtk.TreeViewColumn(_("Role"), renderer, text=3)
         view.append_column(column)
         renderer = Gtk.CellRendererText()
-        column = Gtk.TreeViewColumn(_("Date"), renderer, text=3)
+        column = Gtk.TreeViewColumn(_("Date"), renderer, text=4)
         view.append_column(column)
         renderer = Gtk.CellRendererText()
-        column = Gtk.TreeViewColumn(_("Place"), renderer, text=4)
+        column = Gtk.TreeViewColumn(_("Place"), renderer, text=5)
         view.append_column(column)
         view.add_events(Gdk.EventMask.BUTTON_PRESS_MASK)
         view.connect("button_press_event", self.__list_clicked)
@@ -149,10 +149,11 @@ class FormGramplet(Gramplet, DbGUIElement):
         sel = SelectForm(self.dbstate, self.uistate, [])
         source_handle = sel.run()
         if source_handle:
+            event = Event()
             citation = Citation()
             citation.set_reference_handle(source_handle)
             try:
-                EditForm(self.gui.dbstate, self.gui.uistate, [], citation,
+                EditForm(self.gui.dbstate, self.gui.uistate, [], event, citation,
                          self.update)
             except WindowActiveError:
                 pass
@@ -163,9 +164,10 @@ class FormGramplet(Gramplet, DbGUIElement):
         """
         model, iter_ = selection.get_selected()
         if iter_:
-            citation = model.get_value(iter_, 0)
+            event = model.get_value(iter_, 0)
+            citation = model.get_value(iter_, 1)
             try:
-                EditForm(self.gui.dbstate, self.gui.uistate, [], citation,
+                EditForm(self.gui.dbstate, self.gui.uistate, [], event, citation,
                          self.update)
             except WindowActiveError:
                 pass
@@ -201,7 +203,8 @@ class FormGramplet(Gramplet, DbGUIElement):
                 source_handle = citation.get_reference_handle()
                 source = db.get_source_from_handle(source_handle)
                 source_text = source.get_title()
-                self.model.append((citation,
+                self.model.append((event, 
+                                  citation,
                                   source_text,
                                   role_text,
                                   get_date(event),
