@@ -100,7 +100,7 @@ class syncAssociations(tool.BatchTool):
     """
     def __init__(self, dbstate, user, options_class, name, callback=None):
         uistate = user.uistate
-# Add Batch Tool check
+# Add Batch Tool check warning: Irreversible changes with bailout option
         self._user = user
         tool.BatchTool.__init__(self, dbstate, user, options_class, name)
         if self.fail:
