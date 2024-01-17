@@ -60,7 +60,7 @@ from gramps.gen.display.name import displayer
 from gramps.gen.display.place import displayer as place_displayer
 from gramps.gen.errors import WindowActiveError
 from gramps.gen.lib import (Person, Family, ChildRef, Name, Surname,
-                            ChildRefType, EventType, EventRoleType)
+                            ChildRefType, Event, EventRef, EventType, EventRoleType)
 from gramps.gen.utils.alive import probably_alive
 from gramps.gen.utils.callback import Callback
 from gramps.gen.utils.db import (get_birth_or_fallback, get_death_or_fallback,
@@ -73,7 +73,7 @@ from gramps.gen.utils.thumbnails import get_thumbnail_path
 from gramps.gui.dialog import (OptionDialog, ErrorDialog, QuestionDialog2,
                                WarningDialog)
 from gramps.gui.display import display_url
-from gramps.gui.editors import EditPerson, EditFamily, EditTagList
+from gramps.gui.editors import EditPerson, EditFamily, EditTagList, EditEventRef
 from gramps.gui.utils import (color_graph_box, color_graph_family,
                               rgb_to_hex, hex_to_rgb_float,
                               process_pending_events)
@@ -3801,6 +3801,28 @@ class PopupMenu(Gtk.Menu):
 
             self.add_separator()
 
+            # build events submenu
+            if len(person.get_event_ref_list()) != 0:
+                iteme, evt_menu = self.add_submenu(label=_("Events"))
+            else:
+                iteme = self.add_menuitem(self, _("No Events for this person"), self.menu_no_action)
+
+            nbe = 0
+            for event_ref in person.get_event_ref_list():
+                if not event_ref:
+                    continue
+                nbe += 1
+                event = self.dbstate.db.get_event_from_handle(event_ref.ref)
+                role = _(event_ref.get_role().xml_str())
+                etype = _(event.get_type().xml_str())
+
+                # text = displayer.display(person)
+                if event_ref.get_role() != EventRoleType.PRIMARY:
+                    etype += " (" + role + ") "
+                self.add_menuitem(evt_menu, etype,
+                                  self.actions.edit_person_event,
+                                  person.get_gramps_id(), event, event_ref)
+
             # build tag submenu
             item, tag_menu = self.add_submenu(label=_("Tags"))
 
@@ -4065,6 +4087,28 @@ class PopupMenu(Gtk.Menu):
 
             self.add_separator()
 
+            # build events submenu
+            if len(family.get_event_ref_list()) != 0:
+                iteme, evt_menu = self.add_submenu(label=_("Events"))
+            else:
+                iteme = self.add_menuitem(self, _("No Events for this family"), self.menu_no_action)
+
+            nbe = 0
+            for event_ref in family.get_event_ref_list():
+                if not event_ref:
+                    continue
+                nbe += 1
+                event = self.dbstate.db.get_event_from_handle(event_ref.ref)
+                role = _(event_ref.get_role().xml_str())
+                etype = _(event.get_type().xml_str())
+
+                # text = displayer.display(person)
+                if event_ref.get_role() != EventRoleType.FAMILY:
+                    etype += " (" + role + ") "
+                self.add_menuitem(evt_menu, etype,
+                                  self.actions.edit_family_event,
+                                  family.get_gramps_id(), event, event_ref)
+
             # build tag submenu
             _item, tag_menu = self.add_submenu(label=_("Tags"))
 
@@ -4178,6 +4222,12 @@ class PopupMenu(Gtk.Menu):
         submenu = item.get_submenu()
         submenu.set_reserve_toggle_size(False)
         return item, submenu
+
+    def menu_no_action(self, *args):
+        """
+        Do nothing
+        """
+        return True
 
     def add_separator(self, menu=None):
         """
@@ -4330,6 +4380,27 @@ class Actions(Callback):
             m_handle = family.get_mother_handle()
             if m_handle:
                 self.emit('focus-person-changed', (m_handle, ))
+
+    def edit_family_event(self, obj, family_id, event, evt_ref):
+        """
+        Edit the events for this family
+        """
+        try:
+            EditEventRef(self.dbstate, self.uistate, [], event, evt_ref, self.obj_added)
+        except WindowActiveError:
+            pass
+
+    def edit_person_event(self, obj, person_id, event, evt_ref):
+        """
+        Edit the events for this person
+        """
+        try:
+            EditEventRef(self.dbstate, self.uistate, [], event, evt_ref, self.obj_added)
+        except WindowActiveError:
+            pass
+
+    def obj_added(self, reference, primary):
+        reference.ref = primary.handle
 
     def copy_person_to_clipboard(self, obj):
         """
