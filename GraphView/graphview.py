@@ -152,6 +152,7 @@ class GraphView(NavigationView):
     # default settings in the config file
     CONFIGSETTINGS = (
         ('interface.graphview-show-images', True),
+        ('interface.graphview-show-ID', True),
         ('interface.graphview-show-avatars', True),
         ('interface.graphview-avatars-style', 1),
         ('interface.graphview-avatars-male', ''),       # custom avatar
@@ -186,6 +187,7 @@ class GraphView(NavigationView):
                                 PersonBookmarks, nav_group)
 
         self.show_images = self._config.get('interface.graphview-show-images')
+        self.show_ID = self._config.get('interface.graphview-show-ID')
         self.show_full_dates = self._config.get(
             'interface.graphview-show-full-dates')
         self.show_places = self._config.get('interface.graphview-show-places')
@@ -421,6 +423,13 @@ class GraphView(NavigationView):
         self.show_images = entry == 'True'
         self.graph_widget.populate(self.get_active())
 
+    def cb_update_show_ID(self, _client, _cnxn_id, entry, _data):
+        """
+        Called when the configuration menu changes the ID setting.
+        """
+        self.show_ID = entry == 'True'
+        self.graph_widget.populate(self.get_active())
+
     def cb_update_show_avatars(self, _client, _cnxn_id, entry, _data):
         """
         Called when the configuration menu changes the avatars setting.
@@ -637,6 +646,8 @@ class GraphView(NavigationView):
         """
         self._config.connect('interface.graphview-show-images',
                              self.cb_update_show_images)
+        self._config.connect('interface.graphview-show-ID',
+                             self.cb_update_show_ID)
         self._config.connect('interface.graphview-show-avatars',
                              self.cb_update_show_avatars)
         self._config.connect('interface.graphview-avatars-style',
@@ -711,6 +722,9 @@ class GraphView(NavigationView):
         row = 0
         configdialog.add_checkbox(
             grid, _('Show images'), row, 'interface.graphview-show-images')
+        row += 1
+        configdialog.add_checkbox(
+            grid, _('Show IDs'), row, 'interface.graphview-show-ID')
         row += 1
         configdialog.add_checkbox(
             grid, _('Show avatars'), row, 'interface.graphview-show-avatars')
@@ -2308,6 +2322,8 @@ class DotSvgGenerator(object):
 
         self.show_images = self.view._config.get(
             'interface.graphview-show-images')
+        self.show_ID = self.view._config.get(
+            'interface.graphview-show-ID')
         self.show_avatars = self.view._config.get(
             'interface.graphview-show-avatars')
         self.show_full_dates = self.view._config.get(
@@ -3057,6 +3073,8 @@ class DotSvgGenerator(object):
         name = displayer.display_name(person.get_primary_name())
         # name string should not be empty
         name = escape(name) if name else ' '
+        if self.show_ID:
+            name += " (%s)" % person.get_gramps_id()
 
         # birth, death is a lists [date, place]
         birth, death = self.get_date_strings(person)
