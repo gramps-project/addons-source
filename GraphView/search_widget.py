@@ -19,6 +19,8 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
+import re
+
 from gi.repository import Gtk, Gdk, GLib, GObject
 from threading import Event
 from queue import Queue, Empty
@@ -26,7 +28,8 @@ from queue import Queue, Empty
 from gramps.gen import datehandler
 from gramps.gen.display.name import displayer
 from gramps.gen.utils.db import (get_birth_or_fallback, get_death_or_fallback,
-                                 find_parents)
+                                 find_parents, find_children)
+from gramps.gen.display.place import displayer as _pd
 
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 try:
@@ -34,6 +37,12 @@ try:
 except ValueError:
     _trans = glocale.translation
 _ = _trans.gettext
+
+# The following is used to ignore accented characters.
+# If someone has a better solution to compare "hervé" with "herve"
+# which are the same, please provide it.
+ORIGIN_TXT = "áàâäåéèêëïîíìóòôöûúùüÿŷ"
+DESTIN_TXT = "aaaaaeeeeiiiioooouuuuyy"
 
 # gtk version
 gtk_version = float("%s.%s" % (Gtk.MAJOR_VERSION, Gtk.MINOR_VERSION))
@@ -309,15 +318,22 @@ class SearchWidget(GObject.GObject):
             # try used for not person handles
             # and other problems to get person
             person = self.dbstate.db.get_person_from_handle(person_handle)
-        except:
+        except Exception:
             return False
 
         if person:
             name = displayer.display_name(person.get_primary_name()).lower()
             search_str = name + person.gramps_id.lower()
+            search_x = search_str.maketrans(ORIGIN_TXT, DESTIN_TXT)
+            search_str = search_str.translate(search_x)
             for word in search_words:
-                if word not in search_str:
-                    # if some of words not present in the person name
+                word_x = word.maketrans(ORIGIN_TXT, DESTIN_TXT)
+                word = ".*" + word.translate(word_x)
+                try:
+                    res = re.compile(word)
+                    if not res.match(search_str):
+                        return False
+                except Exception:
                     return False
             return person
         return False
@@ -529,6 +545,7 @@ class ListBoxRow(Gtk.ListBoxRow):
             else:
                 self.set_has_tooltip(False)
 
+
 class ScrolledListBox(Gtk.ScrolledWindow):
     """
     Extended Gtk.ScrolledWindow with max_height property.
@@ -563,7 +580,7 @@ class Panel(Gtk.Box):
     def __init__(self, label):
         Gtk.Box.__init__(self, orientation=Gtk.Orientation.VERTICAL)
 
-        slb = ScrolledListBox(max_height=200)
+        slb = ScrolledListBox(max_height=300)
         slb.set_policy(Gtk.PolicyType.NEVER,
                        Gtk.PolicyType.AUTOMATIC)
 
@@ -626,6 +643,22 @@ class Panel(Gtk.Box):
         return row_2.marked
 
 
+def find_partners(db, p):
+    """
+    Return the unique list of all family partners IDs for a person.
+    """
+    partnerlist = []
+    for f in p.get_family_handle_list():
+        family = db.get_family_from_handle(f)
+        father_handle = family.get_father_handle()
+        mother_handle = family.get_mother_handle()
+        if p.get_handle() == father_handle:
+            partnerlist.append(mother_handle)
+        elif p.get_handle() == mother_handle:
+            partnerlist.append(father_handle)
+    return partnerlist
+
+
 def get_person_tooltip(person, database):
     """
     Get Person tooltip string.
@@ -634,14 +667,72 @@ def get_person_tooltip(person, database):
     birth_event = get_birth_or_fallback(database, person)
     if birth_event:
         birth = datehandler.get_date(birth_event)
+        pl_handle = birth_event.get_place_handle()
+        bplacetitle = ''
+        if pl_handle:
+            place = database.get_place_from_handle(pl_handle)
+            if place:
+                bplacetitle = _pd.display(database, place)
     else:
         birth = ''
 
     death_event = get_death_or_fallback(database, person)
     if death_event:
         death = datehandler.get_date(death_event)
+        pl_handle = death_event.get_place_handle()
+        dplacetitle = ''
+        if pl_handle:
+            place = database.get_place_from_handle(pl_handle)
+            if place:
+                dplacetitle = _pd.display(database, place)
     else:
         death = ''
+
+    # get list of partners.
+    partners = []
+
+    partners_list = find_partners(database, person)
+    for partner_id in partners_list:
+        if not partner_id:
+            continue
+        partner = database.get_person_from_handle(partner_id)
+        if not partner:
+            continue
+        birthd = deathd = None
+        birth_event = get_birth_or_fallback(database, partner)
+        if birth_event:
+            birthd = datehandler.get_date(birth_event)
+        death_event = get_death_or_fallback(database, partner)
+        if death_event:
+            deathd = datehandler.get_date(death_event)
+        if not birthd:
+            birthd = ""
+        if not deathd:
+            deathd = ""
+        partners.append((displayer.display(partner), birthd, deathd))
+
+    # get list of children
+    children = []
+
+    children_list = find_children(database, person)
+    for child_id in children_list:
+        if not child_id:
+            continue
+        child = database.get_person_from_handle(child_id)
+        if not child:
+            continue
+        birthd = deathd = None
+        birth_event = get_birth_or_fallback(database, child)
+        if birth_event:
+            birthd = datehandler.get_date(birth_event)
+        death_event = get_death_or_fallback(database, child)
+        if death_event:
+            deathd = datehandler.get_date(death_event)
+        if not birthd:
+            birthd = ""
+        if not deathd:
+            deathd = ""
+        children.append((displayer.display(child), birthd, deathd))
 
     # get list of parents.
     parents = []
@@ -653,23 +744,66 @@ def get_person_tooltip(person, database):
         parent = database.get_person_from_handle(parent_id)
         if not parent:
             continue
-        parents.append(displayer.display(parent))
+        birthd = deathd = None
+        birth_event = get_birth_or_fallback(database, parent)
+        if birth_event:
+            birthd = datehandler.get_date(birth_event)
+        death_event = get_death_or_fallback(database, parent)
+        if death_event:
+            deathd = datehandler.get_date(death_event)
+        if not birthd:
+            birthd = ""
+        if not deathd:
+            deathd = ""
+        parents.append((displayer.display(parent), birthd, deathd))
 
     # build tooltip string
     tooltip = ''
     if birth:
-        tooltip += _('Birth: %s' % birth)
+        tooltip += _('Birth')
+        tooltip += _(':')
+        tooltip += ' %s' % birth
+        if bplacetitle:
+            tooltip += '\n\t%s' % bplacetitle
+
     if death:
         if tooltip:
             tooltip += '\n'
-        tooltip += _('Death: %s' % death)
+        tooltip += _('Death')
+        tooltip += _(':')
+        tooltip += ' %s' % death
+        if dplacetitle:
+            tooltip += '\n\t%s' % dplacetitle
 
-    if (birth or death) and parents:
+    if (birth or death) and (parents or partners or children):
+        tooltip += '\n\n'
+
+    if partners:
+        if len(partners) > 1:
+            tooltip += _('Partners')
+        else:
+            tooltip += _('Partner')
+        tooltip += _(':')
+        for p in partners:
+            tooltip += ('\n  %s (%s - %s)' % (p[0], p[1], p[2]))
+    if partners and (parents or children):
+        tooltip += '\n\n'
+
+    if children:
+        if len(children) > 1:
+            tooltip += _('Children')
+        else:
+            tooltip += _('Child')
+        tooltip += _(':')
+        for p in children:
+            tooltip += ('\n  %s (%s - %s)' % (p[0], p[1], p[2]))
+    if children and parents:
         tooltip += '\n\n'
 
     if parents:
-        tooltip += _('Parents:')
+        tooltip += _('Parents')
+        tooltip += _(':')
         for p in parents:
-            tooltip += ('\n  %s' % p)
+            tooltip += ('\n  %s (%s - %s)' % (p[0], p[1], p[2]))
 
     return tooltip
