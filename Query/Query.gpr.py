@@ -35,7 +35,7 @@ register(QUICKREPORT,
          include_in_listing = False,
          fname="QueryQuickview.py",
          authors="Douglas Blank",
-         authors_email="dblank@cs.brynmawr.edu",
+         authors_email="doug.blank@gmail.com",
          version = '1.0.38',
          gramps_target_version = "5.2",
          )
