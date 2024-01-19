@@ -7,7 +7,7 @@ register(QUICKREPORT,
          status = STABLE,
          fname = 'AllNames.py',
          authors = ["Douglas Blank"],
-         authors_email = ["dblank@cs.brynmawr.edu"],
+         authors_email = ["doug.blank@gmail.com"],
          category = CATEGORY_QR_PERSON,
          runfunc = 'run'
   )
