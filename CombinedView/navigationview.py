@@ -97,6 +97,11 @@ class NavigationView(PageView):
             self.hist[hist_type] = self.uistate.get_history(hist_type)
             self.hist[hist_type].connect('active-changed', self.sync(hist_type))
 
+        # Push the current active person onto the history (bug #13013)
+        active_handle = self.uistate.get_history('Person').present()
+        if active_handle:
+            self.history.push(('Person', active_handle))
+
     # A partial would be neater here but it doesn't work.
     def sync(self, hist_type):
         def sync(handle):
