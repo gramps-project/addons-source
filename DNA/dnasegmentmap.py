@@ -153,10 +153,17 @@ class DNASegmentMap(Gramplet):
 
     def write_chromo(self, line, side, rgb_color, assoc, note, segmap):
 
-        if re.search('\t',line) != None:
-            line2 = re.sub(',','',line)
-            line = re.sub('\t',',',line2)
-
+        if "\t" in line:
+# Tabs are the field separators. Now determine THOUSEP and RADIXCHAR. Use Field 2 (Stop Pos) to see if there are THOUSEP there. Use Field 3 (SNPs) to see if there is a radixchar
+            field = line.split('\t')
+            if "," in field[2]:
+                line = line.replace(",", "")
+            elif "." in field[2]:
+                line = line.replace(".", "")
+            if "," in field[3]:
+                line = line.replace(",", ".")
+            line = line.replace("\t", ",")
+# If Tab is not the field separator, then comma is. And point is the radixchar.
         field = line.split(',')
         if len(field) < 4:
             return False
@@ -827,12 +834,12 @@ class SegmentMap(Gtk.DrawingArea):
                 tooltip_text += _("\n{0}\n{1} cMs".format(self.segments[active][6], self.segments[active][4]))
                 if self.segments[active][5] > 0:
                     tooltip_text += _(", ")
-                    tooltip_text += glocale.format('%d',self.segments[active][5], grouping = True)
+                    tooltip_text += glocale.format_string('%d',self.segments[active][5], grouping = True)
                     tooltip_text += _(" SNPs")
                 tooltip_text += _("\nStarts at ")
-                tooltip_text += glocale.format('%d',self.segments[active][1], grouping = True)
+                tooltip_text += glocale.format_string('%d',self.segments[active][1], grouping = True)
                 tooltip_text += _(" and ends at ")
-                tooltip_text += glocale.format('%d',self.segments[active][2], grouping = True)
+                tooltip_text += glocale.format_string('%d',self.segments[active][2], grouping = True)
                 rel_strings , common_an = self.relationship.get_all_relationships(self.dbstate.db,self.active,self.segments[active][8])
                 if len(rel_strings) > 0 :
                     tooltip_text += _("\nRelationship: {0}".format(rel_strings[0]))
