@@ -47,7 +47,7 @@ from gramps.gui.managedwindow import ManagedWindow
 from gramps.gui.utils import ProgressMeter, open_file_with_default_application
 from gramps.gen.db import DbTxn
 from gramps.gen.utils.file import (media_path_full, relative_path,
-                                   create_checksum)
+                                   create_checksum, expand_media_path)
 from gramps.gui.dialog import WarningDialog
 from gramps.gui.editors import EditMedia
 from gramps.gen.errors import WindowActiveError
@@ -290,7 +290,7 @@ class MediaVerify(tool.Tool, ManagedWindow):
         self.clear_models()
         self.moved_files = []
 
-        media_path = self.db.get_mediapath()
+        media_path = expand_media_path(self.db.get_mediapath(), self.db)
         if media_path is None:
             WarningDialog(self.window_name,
                           _('Media path not set.  You must set the "Base path '
