@@ -192,7 +192,7 @@
             </column>
         </section>
     </form>
-    <form id='UK1841' type='Census' title='1841 England and Wales Census' date='6 Jun 1841'>
+    <form id='UK1841' type='Census' title='1841 England and Wales Census' date='1841-06-06'>
         <heading>
             <_attribute>City or Borough</_attribute>
         </heading>
@@ -222,7 +222,7 @@
             </column>
         </section>
     </form>
-    <form id='UK1851' type='Census' title='1851 England and Wales Census' date='30 Mar 1851'>
+    <form id='UK1851' type='Census' title='1851 England and Wales Census' date='1851-03-30'>
         <heading>
             <_attribute>Parish or Township</_attribute>
         </heading>
@@ -273,7 +273,7 @@
             </column>
         </section>
     </form>
-    <form id='UK1861' type='Census' title='1861 England and Wales Census' date='7 Apr 1861'>
+    <form id='UK1861' type='Census' title='1861 England and Wales Census' date='1861-04-07'>
         <heading>
             <_attribute>Parish or Township</_attribute>
         </heading>
@@ -330,7 +330,7 @@
             </column>
         </section>
     </form>
-    <form id='UK1871' type='Census' title='1871 England and Wales Census' date='2 Apr 1871'>
+    <form id='UK1871' type='Census' title='1871 England and Wales Census' date='1871-04-02'>
         <heading>
             <_attribute>Civil Parish or Township</_attribute>
         </heading>
@@ -396,7 +396,7 @@
             </column>
         </section>
     </form>
-    <form id='UK1881' type='Census' title='1881 England and Wales Census' date='3 Apr 1881'>
+    <form id='UK1881' type='Census' title='1881 England and Wales Census' date='1881-04-03'>
         <heading>
             <_attribute>Civil Parish or Township</_attribute>
         </heading>
@@ -462,7 +462,7 @@
             </column>
         </section>
     </form>
-    <form id='UK1891' type='Census' title='1891 England Census' date='5 Apr 1891'>
+    <form id='UK1891' type='Census' title='1891 England Census' date='1891-04-05'>
         <heading>
             <_attribute>Administrative County</_attribute>
         </heading>
@@ -543,7 +543,7 @@
             </column>
         </section>
     </form>
-    <form id='UK1901' type='Census' title='1901 England Census' date='31 Mar 1901'>
+    <form id='UK1901' type='Census' title='1901 England Census' date='1901-03-31'>
         <heading>
             <_attribute>Administrative County</_attribute>
         </heading>
@@ -619,7 +619,7 @@
             </column>
         </section>
     </form>
-    <form id='UK1911' type='Census' title='1911 England Census' date='2 Apr 1911'>
+    <form id='UK1911' type='Census' title='1911 England Census' date='1911-04-02'>
         <heading>
             <_attribute>Registration District</_attribute>
         </heading>
@@ -710,7 +710,7 @@
             </column>
         </section>
     </form>
-    <form id='UK1921' type='Census' title='1921 England Census' date='19 Jun 1921'>
+    <form id='UK1921' type='Census' title='1921 England Census' date='1921-06-19'>
         <heading>
             <_attribute>Registration District</_attribute>
         </heading>
@@ -787,7 +787,7 @@
             </column>
         </section>
     </form>
-    <form id='UK1939' type='Census' title='1939 England and Wales Register' date='29 Sep 1939'>
+    <form id='UK1939' type='Census' title='1939 England and Wales Register' date='1939-09-29'>
         <heading>
             <_attribute>E.D. Letter Code</_attribute>
         </heading>
@@ -834,7 +834,7 @@
             </column>
         </section>
     </form>
-    <form id='CY1891' type='Census' title='1891 Wales Census' date='5 Apr 1891'>
+    <form id='CY1891' type='Census' title='1891 Wales Census' date='1891-04-05'>
         <heading>
             <_attribute>Administrative County</_attribute>
         </heading>
@@ -920,7 +920,7 @@
             </column>
         </section>
     </form>
-    <form id='CY1901' type='Census' title='1901 Wales Census' date='31 Mar 1901'>
+    <form id='CY1901' type='Census' title='1901 Wales Census' date='1901-03-31'>
         <heading>
             <_attribute>Administrative County</_attribute>
         </heading>
@@ -1001,7 +1001,7 @@
             </column>
         </section>
     </form>
-    <form id='CY1911' type='Census' title='1911 Wales Census' date='2 Apr 1911'>
+    <form id='CY1911' type='Census' title='1911 Wales Census' date='1911-04-02'>
         <heading>
             <_attribute>Registration District</_attribute>
         </heading>
@@ -1097,7 +1097,7 @@
             </column>
         </section>
     </form>
-    <form id='CY1921' type='Census' title='1921 Wales Census' date='19 Jun 1921'>
+    <form id='CY1921' type='Census' title='1921 Wales Census' date='1921-06-19'>
         <heading>
             <_attribute>Registration District</_attribute>
         </heading>
@@ -1179,7 +1179,7 @@
             </column>
         </section>
     </form>
-    <form id='SC1841' type='Census' title='1841 SC Census' date='6 Jun 1841'>
+    <form id='SC1841' type='Census' title='1841 SC Census' date='1841-06-06'>
         <heading>
             <_attribute>Parish</_attribute>
         </heading>
@@ -1212,7 +1212,7 @@
             </column>
         </section>
     </form>
-    <form id='SC1851' type='Census' title='1851 SC Census' date='30 Mar 1851'>
+    <form id='SC1851' type='Census' title='1851 SC Census' date='1851-03-30'>
         <heading>
             <_attribute>Parish</_attribute>
         </heading>
@@ -1270,7 +1270,7 @@
             </column>
         </section>
     </form>
-    <form id='SC1861' type='Census' title='1861 SC Census' date='7 Apr 1861'>
+    <form id='SC1861' type='Census' title='1861 SC Census' date='1861-04-07'>
         <heading>
             <_attribute>Parish</_attribute>
         </heading>
@@ -1356,7 +1356,7 @@
             </column>
         </section>
     </form>
-    <form id='SC1871' type='Census' title='1871 SC Census' date='2 Apr 1871'>
+    <form id='SC1871' type='Census' title='1871 SC Census' date='1871-04-02'>
         <heading>
             <_attribute>Civil Parish</_attribute>
         </heading>
@@ -1442,7 +1442,7 @@
             </column>
         </section>
     </form>
-    <form id='SC1881' type='Census' title='1881 SC Census' date='3 Apr 1881'>
+    <form id='SC1881' type='Census' title='1881 SC Census' date='1881-04-03'>
         <heading>
             <_attribute>Civil Parish</_attribute>
         </heading>
@@ -1531,7 +1531,7 @@
             </column>
         </section>
     </form>
-    <form id='SC1891' type='Census' title='1891 SC Census' date='5 Apr 1891'>
+    <form id='SC1891' type='Census' title='1891 SC Census' date='1891-04-05'>
         <heading>
             <_attribute>Civil Parish</_attribute>
         </heading>
@@ -1649,7 +1649,7 @@
             </column>
         </section>
     </form>
-    <form id='SC1901' type='Census' title='1901 SC Census' date='31 Mar 1901'>
+    <form id='SC1901' type='Census' title='1901 SC Census' date='1901-03-31'>
         <heading>
             <_attribute>Civil Parish</_attribute>
         </heading>
@@ -1768,7 +1768,7 @@
             </column>
         </section>
     </form>
-    <form id='IE1901' type='Census' title='1901 Census of Ireland' date='31 March 1901'>
+    <form id='IE1901' type='Census' title='1901 Census of Ireland' date='1901-03-31'>
         <heading>
             <_attribute>County</_attribute>
         </heading>
@@ -1835,7 +1835,7 @@
             </column>
         </section>
     </form>
-    <form id='IE1911' type='Census' title='1911 Census of Ireland' date='2 April 1911'>
+    <form id='IE1911' type='Census' title='1911 Census of Ireland' date='1911-04-02'>
         <heading>
             <_attribute>County</_attribute>
         </heading>
