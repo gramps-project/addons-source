@@ -3,13 +3,16 @@
 import gzip
 import json
 import os
+import platform
 from pathlib import Path
 from tempfile import NamedTemporaryFile
 from time import sleep
+
 try:
     from typing import Any, Callable, Dict, List, Optional
 except ImportError:
     from const import Type
+
     Any = Type
     Callable = Type
     Dict = Type
@@ -22,6 +25,30 @@ import gramps
 from gramps.gen.db import KEY_TO_CLASS_MAP, DbTxn
 from gramps.gen.db.dbconst import TXNADD, TXNDEL, TXNUPD
 from gramps.gen.utils.grampslocale import GrampsLocale
+
+
+def create_macos_ssl_context():
+    import ssl
+    import subprocess
+
+    """Creates an SSL context using macOS system certificates."""
+    ctx = ssl.create_default_context()
+    macos_ca_certs = subprocess.run(
+        [
+            "security",
+            "find-certificate",
+            "-a",
+            "-p",
+            "/System/Library/Keychains/SystemRootCertificates.keychain",
+        ],
+        stdout=subprocess.PIPE,
+    ).stdout
+
+    with NamedTemporaryFile("w+b") as tmp_file:
+        tmp_file.write(macos_ca_certs)
+        ctx.load_verify_locations(tmp_file.name)
+
+    return ctx
 
 
 class WebApiHandler:
@@ -40,6 +67,11 @@ class WebApiHandler:
         self.password = password
         self._access_token: Optional[str] = None
         self.download_callback = download_callback
+        # Determine the appropriate SSL context based on platform
+        self._ctx = (
+            create_macos_ssl_context() if platform.system() == "Darwin" else None
+        )
+
         # get and cache the access token
         self.fetch_token()
 
@@ -59,11 +91,13 @@ class WebApiHandler:
             headers={"Content-Type": "application/json"},
         )
         try:
-            with urlopen(req) as res:
+            with urlopen(req, context=self._ctx) as res:
                 res_json = json.load(res)
         except (UnicodeDecodeError, json.JSONDecodeError, HTTPError):
-            self.url = f"{self.url}/api"
-            return self.fetch_token()
+            if "/api" not in self.url:
+                self.url = f"{self.url}/api"
+                return self.fetch_token()
+            raise
         self._access_token = res_json["access_token"]
 
     def get_lang(self) -> Optional[str]:
@@ -72,7 +106,7 @@ class WebApiHandler:
             f"{self.url}/metadata/",
             headers={"Authorization": f"Bearer {self.access_token}"},
         )
-        with urlopen(req) as res:
+        with urlopen(req, context=self._ctx) as res:
             try:
                 res_json = json.load(res)
             except (UnicodeDecodeError, json.JSONDecodeError, HTTPError):
@@ -94,30 +128,38 @@ class WebApiHandler:
         os.remove(temp.name)
         return Path(unzipped_name)
 
-    def commit(self, trans: DbTxn) -> None:
+    def commit(self, trans: DbTxn, force: bool = True) -> None:
         """Commit the changes to the remote database."""
         lang = self.get_lang()
         payload = transaction_to_json(trans, lang)
         if payload:
             data = json.dumps(payload).encode()
+            endpoint = f"{self.url}/transactions/"
+            if force:
+                endpoint = f"{endpoint}?force=1"
             req = Request(
-                f"{self.url}/transactions/",
+                endpoint,
                 data=data,
                 headers={
                     "Content-Type": "application/json",
                     "Authorization": f"Bearer {self.access_token}",
                 },
             )
-            urlopen(req)
+            try:
+                urlopen(req, context=self._ctx)
+            except HTTPError as exc:
+                if exc.code == 422 and force:
+                    # Web API version might not support force parameter yet
+                    self.commit(trans, force=False)
 
-    def get_missing_files(self, retry: bool = True) -> None:
+    def get_missing_files(self, retry: bool = True) -> List:
         """Get a list of remote media objects with missing files."""
         req = Request(
             f"{self.url}/media/?filemissing=1",
             headers={"Authorization": f"Bearer {self.access_token}"},
         )
         try:
-            with urlopen(req) as res:
+            with urlopen(req, context=self._ctx) as res:
                 res_json = json.load(res)
         except HTTPError as exc:
             if exc.code == 401 and retry:
@@ -140,7 +182,7 @@ class WebApiHandler:
                 headers={"Authorization": f"Bearer {self.access_token}"},
             )
         try:
-            with urlopen(req) as res:
+            with urlopen(req, context=self._ctx) as res:
                 chunk_size = 1024
                 chunk = res.read(chunk_size)
                 fobj.write(chunk)
@@ -187,7 +229,7 @@ class WebApiHandler:
             method="PUT",
         )
         try:
-            with urlopen(req) as res:
+            with urlopen(req, context=self._ctx) as res:
                 pass
         except HTTPError as exc:
             if exc.code == 401 and retry:

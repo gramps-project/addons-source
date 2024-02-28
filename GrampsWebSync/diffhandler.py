@@ -1,10 +1,12 @@
 """Class managing the difference between two databases."""
 
 from copy import deepcopy
+
 try:
     from typing import List, Optional, Set, Tuple
 except ImportError:
     from const import Type
+
     List = Type
     Optional = Type
     Set = Type
@@ -23,6 +25,16 @@ from const import (
     A_MRG_REM,
     A_UPD_LOC,
     A_UPD_REM,
+    C_ADD_LOC,
+    C_ADD_REM,
+    C_DEL_LOC,
+    C_DEL_REM,
+    C_UPD_BOTH,
+    C_UPD_LOC,
+    C_UPD_REM,
+    MODE_BIDIRECTIONAL,
+    MODE_RESET_TO_LOCAL,
+    MODE_RESET_TO_REMOTE,
     OBJ_LST,
     Action,
     Actions,
@@ -170,6 +182,25 @@ class WebApiSyncDiffHandler:
             k: v for k, v in self.missing_from_db2.items() if k not in self.added_to_db1
         }
 
+    def get_changes(self) -> Actions:
+        """Get a list of objects and corresponding changes."""
+        lst = []
+        for (handle, obj_type), (obj1, obj2) in self.modified_in_both.items():
+            lst.append((C_UPD_BOTH, handle, obj_type, obj1, obj2))
+        for (handle, obj_type), obj in self.added_to_db1.items():
+            lst.append((C_ADD_LOC, handle, obj_type, obj, None))
+        for (handle, obj_type), obj in self.added_to_db2.items():
+            lst.append((C_ADD_REM, handle, obj_type, None, obj))
+        for (handle, obj_type), obj in self.deleted_from_db1.items():
+            lst.append((C_DEL_LOC, handle, obj_type, None, obj))
+        for (handle, obj_type), obj in self.deleted_from_db2.items():
+            lst.append((C_DEL_REM, handle, obj_type, obj, None))
+        for (handle, obj_type), (obj1, obj2) in self.modified_in_db1.items():
+            lst.append((C_UPD_LOC, handle, obj_type, obj1, obj2))
+        for (handle, obj_type), (obj1, obj2) in self.modified_in_db2.items():
+            lst.append((C_UPD_REM, handle, obj_type, obj1, obj2))
+        return lst
+
     def get_actions(self) -> Actions:
         """Get a list of objects and corresponding actions."""
         lst = []
@@ -188,6 +219,46 @@ class WebApiSyncDiffHandler:
         for (handle, obj_type), (obj1, obj2) in self.modified_in_db2.items():
             lst.append((A_UPD_LOC, handle, obj_type, obj1, obj2))
         return lst
+
+    def changes_to_actions(self, changes, sync_mode: int) -> Actions:
+        """Get actions from changes depending on sync mode."""
+        if sync_mode == MODE_BIDIRECTIONAL:
+            change_to_action = {
+                C_UPD_BOTH: A_MRG_REM,
+                C_ADD_LOC: A_ADD_REM,
+                C_ADD_REM: A_ADD_LOC,
+                C_DEL_LOC: A_DEL_REM,
+                C_DEL_REM: A_DEL_LOC,
+                C_UPD_LOC: A_UPD_REM,
+                C_UPD_REM: A_UPD_LOC,
+            }
+        elif sync_mode == MODE_RESET_TO_LOCAL:
+            change_to_action = {
+                C_UPD_BOTH: A_UPD_REM,
+                C_ADD_LOC: A_ADD_REM,
+                C_ADD_REM: A_DEL_REM,
+                C_DEL_LOC: A_DEL_REM,
+                C_DEL_REM: A_ADD_REM,
+                C_UPD_LOC: A_UPD_REM,
+                C_UPD_REM: A_UPD_REM,
+            }
+        elif sync_mode == MODE_RESET_TO_REMOTE:
+            change_to_action = {
+                C_UPD_BOTH: A_UPD_LOC,
+                C_ADD_LOC: A_DEL_LOC,
+                C_ADD_REM: A_ADD_LOC,
+                C_DEL_LOC: A_ADD_LOC,
+                C_DEL_REM: A_DEL_LOC,
+                C_UPD_LOC: A_UPD_LOC,
+                C_UPD_REM: A_UPD_LOC,
+            }
+        actions = []
+        for change in changes:
+            change_type, handle, obj_type, obj1, obj2 = change
+            action_type = change_to_action[change_type]
+            action = action_type, handle, obj_type, obj1, obj2
+            actions.append(action)
+        return actions
 
     def commit_action(self, action: Action, trans1: DbTxn, trans2: DbTxn) -> None:
         """Commit an action into local and remote transaction objects."""
