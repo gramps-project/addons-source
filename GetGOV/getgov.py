@@ -349,7 +349,7 @@ class GetGOV(Gramplet):
                 else:
                     place, ref_list = self.__get_place(gov_id, self.type_dic,
                                                        preferred_lang)
-                    if place.get_name().get_value is not '':
+                    if place.get_name().get_value != '':
                         self.dbstate.db.add_place(place, trans)
                         visited[gov_id] = (place, ref_list)
                         for ref, date in ref_list:
