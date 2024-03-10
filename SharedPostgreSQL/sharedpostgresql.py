@@ -24,26 +24,17 @@
 Backend for PostgreSQL database.
 """
 
-# -------------------------------------------------------------------------
-#
-# Standard python modules
-#
-# -------------------------------------------------------------------------
-import psycopg2
 import os
+import pickle
 import re
 from uuid import uuid4
 
-# -------------------------------------------------------------------------
-#
-# Gramps modules
-#
-# -------------------------------------------------------------------------
-from gramps.gen.utils.configmanager import ConfigManager
+import psycopg2
 from gramps.gen.config import config
+from gramps.gen.const import GRAMPS_LOCALE as glocale
 from gramps.gen.db.dbconst import ARRAYSIZE
 from gramps.gen.db.exceptions import DbConnectionError
-from gramps.gen.const import GRAMPS_LOCALE as glocale
+from gramps.gen.utils.configmanager import ConfigManager
 
 try:
     _trans = glocale.get_addon_translator(__file__)
@@ -53,8 +44,8 @@ _ = _trans.gettext
 
 from shareddbapi import SharedDBAPI
 
-
 psycopg2.paramstyle = "format"
+
 
 # -------------------------------------------------------------------------
 #
@@ -134,6 +125,18 @@ class Connection:
     def treeid(self):
         """Return an integer treeid from the UUID."""
         # return cached value
+        treeid = self._get_treeid()
+        if treeid:
+            return treeid
+        # create new ID
+        self.execute("INSERT INTO trees (uuid) VALUES (%s)", [self.uuid])
+        # set schema version for the new tree
+        self._update_schema_version()
+        return self.treeid
+
+    def _get_treeid(self):
+        """Get the tree ID"""
+        # return cached value
         if self._treeid:
             return self._treeid
         # try to fetch ID from database
@@ -141,10 +144,19 @@ class Connection:
         row = self.fetchone()
         if row:
             self._treeid = row[0]
-            return self.treeid
-        # create new ID
-        self.execute("INSERT INTO trees (uuid) VALUES (%s)", [self.uuid])
-        return self.treeid
+            return self._treeid
+        return None
+
+    def _update_schema_version(self):
+        """Update the schema version for the tree."""
+        treeid = self._get_treeid()
+        if not treeid:
+            raise ValueError("Tree ID not found")
+        version = SharedPostgreSQL.VERSION[0]
+        self.execute(
+            "INSERT INTO metadata (treeid, setting, value) VALUES (?, ?, ?)",
+            [treeid, "version", pickle.dumps(str(version))],
+        )
 
     def check_collation(self, locale):
         """
@@ -247,7 +259,6 @@ class Cursor:
             return self.__cursor.fetchmany()
         except:
             return None
-
 
 
 def _hack_query(query):
