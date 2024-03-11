@@ -34,5 +34,6 @@ register(GRAMPLET,
          height=300,
          gramplet='PrerequisitesCheckerGramplet',
          gramplet_title=_("Prerequisites Checker"),
-         help_url="Addon:Prerequisites_Checker_Gramplet"
+         help_url="Addon:Prerequisites_Checker_Gramplet",
+         navtypes=["Dashboard"],
          )
