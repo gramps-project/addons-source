@@ -76,7 +76,7 @@ def lookup(index, event_ref_list):
     else:
         count = 0
         for event_ref in event_ref_list:
-            (_private, _note_list, _attribute_list, ref, _role) = event_ref
+            (_private, _citation_list, _note_list, _attribute_list, ref, _role) = event_ref
             if index == count:
                 return ref
             count += 1
@@ -660,7 +660,7 @@ def export_event(db, data):
 
 
 def export_event_ref(db, from_type, from_handle, event_ref):
-    (private, note_list, attribute_list, ref, role) = event_ref
+    (private, citation_list, note_list, attribute_list, ref, role) = event_ref
     handle = create_id()
     db.query("""insert INTO event_ref (
                  handle,
@@ -675,6 +675,7 @@ def export_event_ref(db, from_type, from_handle, event_ref):
              private)
     export_list(db, "event_ref", handle, "note", note_list)
     export_attribute_list(db, "event_ref", handle, attribute_list)
+    export_citation_list(db, "event_ref", handle, citation_list)
     # finally, link this to parent
     export_link(db, from_type, from_handle, "event_ref", handle)
 

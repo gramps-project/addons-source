@@ -70,7 +70,7 @@ def lookup(handle, event_ref_list):
     else:
         count = 0
         for event_ref in event_ref_list:
-            (_private, _note_list, _attribute_list, ref, _role) = event_ref
+            (_private, _citation_list, _note_list, _attribute_list, ref, _role) = event_ref
             if handle == ref:
                 return count
             count += 1
@@ -372,8 +372,9 @@ class SQLReader(object):
          private) = data
         note_list = self.get_note_list(sql, "event_ref", handle)
         attribute_list = self.get_attribute_list(sql, "event_ref", handle)
+        citation_list = self.get_citation_list(sql, "event_ref", handle)
         role = (role0, role1)
-        return (bool(private), note_list, attribute_list, ref, role)
+        return (bool(private), citation_list, note_list, attribute_list, ref, role)
 
     def pack_citation(self, sql, data):
         (handle,
