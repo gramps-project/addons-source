@@ -741,8 +741,8 @@ elif command == "unlist":
             "r",
             encoding="utf-8",
         )
-        for line in fp:
-            if cmd_arg + ".addon.tgz" not in line:
+        for line in json.load(fp):
+            if line["z"] != cmd_arg + ".addon.tgz":
                 lines.append(line)
             else:
                 print("unlisting", line)
@@ -753,8 +753,7 @@ elif command == "unlist":
             encoding="utf-8",
             newline="",
         )
-        for line in lines:
-            fp.write(line)
+        json.dump(lines, fp, indent=0)
         fp.close()
 
 elif command == "fix":
