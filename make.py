@@ -55,14 +55,6 @@ if "GRAMPSPATH" in os.environ:
 else:
     GRAMPSPATH = "../../.."
 
-if ("LANGUAGE" not in os.environ) or (not os.environ["LANGUAGE"].startswith("en")):
-    raise ValueError(
-        "LANGUAGE should explicitly be english; Use "
-        "'LANGUAGE=en_US.UTF-8 python3 make.py...' or similar"
-    )
-else:
-    print("make.py: LANGUAGE is %s... good!" % os.environ["LANGUAGE"])
-
 gramps_version = sys.argv[1]
 
 command = sys.argv[2]
