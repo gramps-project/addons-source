@@ -211,7 +211,17 @@ elif command == "init":
     else:
         dirs = [addon]
     if len(sys.argv) == 4:
-        from gramps.gen.plug import make_environment
+        try:
+            sys.path.insert(0, GRAMPSPATH)
+            os.environ["GRAMPS_RESOURCES"] = os.path.abspath(GRAMPSPATH)
+            from gramps.gen.plug import make_environment
+        except ImportError:
+            print(
+                "Where is Gramps: '%s'? Use "
+                "'GRAMPSPATH=path python3 make.py %s init'"
+                % (os.path.abspath(GRAMPSPATH), gramps_version)
+            )
+            exit()
 
         def register(ptype, **kwargs):
             global plugins
