@@ -816,15 +816,14 @@ elif command == "check":
 
     # get current build numbers from English listing
     fp_in = open(
-        r("../addons/%(gramps_version)s/listings/addons-en.txt"), "r", encoding="utf-8"
+        r("../addons/%(gramps_version)s/listings/addons-en.json"), "r", encoding="utf-8"
     )
     addons = {}
-    for line in fp_in:
-        dictionary = eval(line)
-        if dictionary["i"] in addons:
-            print("Repeated addon ID:", dictionary["i"])
+    for line in json.load(fp_in):
+        if line["i"] in addons:
+            print("Repeated addon ID:", line["i"])
         else:
-            addons[dictionary["i"]] = dictionary
+            addons[line["i"]] = line
     # go through all gpr's, check their build versions
     for gpr in glob.glob(r("""*/*.gpr.py""")):
         local_gettext = glocale.get_addon_translator(
