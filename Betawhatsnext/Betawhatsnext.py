@@ -4,8 +4,8 @@
 # (Gramps - the genealogy software suite built on GTK+/GNOME)
 #
 # Copyright (C) 2008 Reinhard Mueller
-# Copyright (C) 2010       Jakim Friant
-# Copyright (C) 2023       Brian McCullough
+# Copyright (C) 2010 Jakim Friant
+# Copyright (C) 2023 Brian McCullough
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of version 2 of the GNU General Public License as
@@ -37,9 +37,9 @@ from gramps.gen.plug.report import utils
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 _ = glocale.translation.sgettext
 
-initial_message = _("\n⛔ A local Genealogical Tree database has not yet been"
+initial_message = _(" ⛔ A local Genealogical Tree database has not yet been"
                     " loaded."
-                    "\n\n👣 Next Steps:"
+                    "\n\n 👣 Next Steps:"
                     "\n  •  From the \"Family Trees\" menu,"
                     " use the \"Manage Family Trees...\" option to"
                     " create a New (or to select an existing) Tree database."
@@ -174,6 +174,9 @@ class BetaWhatNextGramplet(Gramplet):
         self.connect(self.dbstate.db, 'family-add', self.update)
         self.connect(self.dbstate.db, 'family-delete', self.update)
         self.connect(self.dbstate.db, 'family-update', self.update)
+        self.connect(self.dbstate.db, 'person-rebuild', self.update)
+        self.connect(self.dbstate.db, 'event-rebuild', self.update)
+        self.connect(self.dbstate.db, 'family-rebuild', self.update)
 
     def _no_db(self):
         super()._no_db()
@@ -196,8 +199,8 @@ class BetaWhatNextGramplet(Gramplet):
         if not people:
             # Set padding/margin
 
-            self.set_text(_("\n⛔ The current Tree database contains no people."
-                            "\n\n👣 Next Steps:"
+            self.set_text(_(" ⛔ The current Tree database contains no people."
+                            "\n\n 👣 Next Steps:"
                             "\nAdd a Family and a person in that family:"
                             "\n  • A Family may be added via the \"Add\" menu"
                             "\n  • A person may be added by pressing the \"+\""
@@ -222,8 +225,8 @@ class BetaWhatNextGramplet(Gramplet):
 # complain if no Home Person
         default_person = self.dbstate.db.get_default_person()
         if default_person is None:
-            self.set_text(_("\n⛔ No Person has been set as the focal Home Person."
-                            "\n\n👣 Next Steps:"
+            self.set_text(_(" ⛔ No Person has been set as the focal Home Person."
+                            "\n\n 👣 Next Steps:"
                             "\nIn the People view,"
                             " select someone to make them the \"Active Person\", and set"
                             " them as the focal \"Home Person\" via the Edit menu."))
