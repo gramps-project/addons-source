@@ -211,11 +211,10 @@ elif command == "init":
     else:
         dirs = [addon]
     if len(sys.argv) == 4:
-        from gramps.gen.plug import make_environment, PTYPE_STR
+        from gramps.gen.plug import make_environment
 
         def register(ptype, **kwargs):
             global plugins
-            # need to take care of translated types
             kwargs["ptype"] = ptype
             plugins.append(kwargs)
 
@@ -463,7 +462,7 @@ elif command == "as-needed":
         sys.path.insert(0, GRAMPSPATH)
         os.environ["GRAMPS_RESOURCES"] = os.path.abspath(GRAMPSPATH)
         from gramps.gen.const import GRAMPS_LOCALE as glocale
-        from gramps.gen.plug import make_environment, PTYPE_STR
+        from gramps.gen.plug import make_environment
     except ImportError:
         print(
             "Where is Gramps: '%s'? Use "
@@ -474,7 +473,6 @@ elif command == "as-needed":
 
     def register(ptype, **kwargs):
         global plugins
-        # need to take care of translated types
         kwargs["ptype"] = ptype
         plugins.append(kwargs)
 
@@ -791,7 +789,7 @@ elif command == "check":
         sys.path.insert(0, GRAMPSPATH)
         os.environ["GRAMPS_RESOURCES"] = os.path.abspath(GRAMPSPATH)
         from gramps.gen.const import GRAMPS_LOCALE as glocale
-        from gramps.gen.plug import make_environment, PTYPE_STR
+        from gramps.gen.plug import make_environment
     except ImportError:
         print(
             "Where is Gramps: '%s'? Use "
@@ -802,7 +800,6 @@ elif command == "check":
 
     def register(ptype, **kwargs):
         global plugins
-        # need to take care of translated types
         kwargs["ptype"] = ptype
         plugins.append(kwargs)
 
@@ -848,7 +845,7 @@ elif command == "listing":
         sys.path.insert(0, GRAMPSPATH)
         os.environ["GRAMPS_RESOURCES"] = os.path.abspath(GRAMPSPATH)
         from gramps.gen.const import GRAMPS_LOCALE as glocale
-        from gramps.gen.plug import make_environment, PTYPE_STR
+        from gramps.gen.plug import make_environment
     except ImportError:
         print(
             "Where is Gramps: '%s'? Use "
@@ -859,7 +856,6 @@ elif command == "listing":
 
     def register(ptype, **kwargs):
         global plugins
-        # need to take care of translated types
         kwargs["ptype"] = ptype
         plugins.append(kwargs)
 
