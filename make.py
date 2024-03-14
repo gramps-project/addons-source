@@ -694,6 +694,7 @@ elif command == "as-needed":
                     r("""%(addon)s/po/temp.pot"""), r("""%(addon)s/po/template.pot""")
                 )
     # write out the listings
+    mkdir(r("../addons/%(gramps_version)s/listings"))
     for lang in languages:
         output = []
         for plugin in sorted(listings[lang], key=lambda p: (p["t"], p["i"])):
@@ -991,6 +992,7 @@ elif command == "listing":
                     if plugin["i"] not in already_added:
                         # print("ADDED at end")
                         output.append(plugin)
+        mkdir(r("../addons/%(gramps_version)s/listings"))
         fp_out = open(
             r("../addons/%(gramps_version)s/listings/") + ("addons-%s.json" % lang),
             "w",
