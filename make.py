@@ -756,44 +756,6 @@ elif command == "unlist":
         json.dump(lines, fp, indent=0)
         fp.close()
 
-elif command == "fix":
-    # Get all languages from all addons:
-    languages = set(["en"])
-    for addon in [file for file in glob.glob("*") if os.path.isdir(file)]:
-        for po in glob.glob(r("""%(addon)s/po/*-local.po""")):
-            length = len(po)
-            locale = po[length - 11 : length - 9]
-            locale_path, locale = po.rsplit(os.sep, 1)
-            languages.add(locale[:-9])
-    for lang in languages:
-        addons = {}
-        fp = open(
-            r("../addons/%(gramps_version)s/listings/") + ("addons-%s.json" % lang),
-            "r",
-            encoding="utf-8",
-        )
-        for line in fp:
-            dictionary = eval(line)
-            if dictionary["i"] in addons:
-                print(lang, "Repeated addon ID:", dictionary["i"])
-            else:
-                addons[dictionary["i"]] = dictionary
-        fp.close()
-        output = []
-        for p in sorted(addons.values(), key=lambda p: (p["t"], p["i"])):
-            plugin = {}
-            for key, val in p:
-                plugin[key] = val  # .replace("'", "\\'")
-            output.append(plugin)
-        fp.close()
-        fp_out = open(
-            r("../addons/%(gramps_version)s/listings/") + ("addons-%s.json" % lang),
-            "w",
-            encoding="utf-8",
-            newline="",
-        )
-        json.dump(output, fp_out, indent=0)
-
 elif command == "check":
     try:
         sys.path.insert(0, GRAMPSPATH)
