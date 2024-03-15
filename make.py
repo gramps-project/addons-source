@@ -145,6 +145,20 @@ def version(sversion):
     return [myint(x or "0") for x in (sversion + "..").split(".")][0:3]
 
 
+def get_all_languages():
+    """
+    Return a list of all languages from all addons.
+    """
+    languages = set(["en"])
+    for addon in [file for file in glob.glob("*") if os.path.isdir(file)]:
+        for po in glob.glob(r("""%(addon)s/po/*-local.po""")):
+            length = len(po)
+            locale = po[length - 11 : length - 9]
+            locale_path, locale = po.rsplit(os.sep, 1)
+            languages.add(locale[:-9])
+    return languages
+
+
 def cleanup(addon_dir):
     """
     An OS agnostic cleanup routine
@@ -488,14 +502,7 @@ elif command == "as-needed":
 
     from filecmp import cmp
 
-    # Get all languages from all addons:
-    languages = set(["en"])
-    for addon in [file for file in glob.glob("*") if os.path.isdir(file)]:
-        for po in glob.glob(r("""%(addon)s/po/*-local.po""")):
-            length = len(po)
-            locale = po[length - 11 : length - 9]
-            locale_path, locale = po.rsplit(os.sep, 1)
-            languages.add(locale[:-9])
+    languages = get_all_languages()
     listings = {lang: [] for lang in languages}
     dirs = [
         file for file in glob.glob("*") if os.path.isdir(file) and file != "__pycache__"
@@ -727,13 +734,7 @@ elif command == "manifest-check":
 elif command == "unlist":
     # Get all languages from all addons:
     cmd_arg = addon
-    languages = set(["en"])
-    for addon in [file for file in glob.glob("*") if os.path.isdir(file)]:
-        for po in glob.glob(r("""%(addon)s/po/*-local.po""")):
-            length = len(po)
-            locale = po[length - 11 : length - 9]
-            locale_path, locale = po.rsplit(os.sep, 1)
-            languages.add(locale[:-9])
+    languages = get_all_languages()
     for lang in languages:
         lines = []
         fp = open(
@@ -846,14 +847,7 @@ elif command == "listing":
                 """msgfmt %(po)s """
                 '''-o "%(addon)s/locale/%(locale)s/LC_MESSAGES/addon.mo"'''
             )
-    # Get all languages from all addons:
-    languages = set(["en"])
-    for addon in [file for file in glob.glob("*") if os.path.isdir(file)]:
-        for po in glob.glob(r("""%(addon)s/po/*-local.po""")):
-            length = len(po)
-            locale = po[length - 11 : length - 9]
-            locale_path, locale = po.rsplit(os.sep, 1)
-            languages.add(locale[:-9])
+    languages = get_all_languages()
     # next, create/edit a file for all languages listing plugins
     for lang in languages:
         print("Building listing for '%s'..." % lang)
