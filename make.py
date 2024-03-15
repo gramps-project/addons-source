@@ -606,6 +606,7 @@ elif command == "as-needed":
             do_list = False  # to avoid multiple pass per lang if not listing
             for gpr in glob.glob(r("""%(addon)s/*.gpr.py""")):
                 # Make fallback language English (rather than current LANG)
+                glocale.language = [lang]
                 local_gettext = glocale.get_addon_translator(
                     gpr, languages=[lang, "en.UTF-8"]
                 ).gettext
@@ -788,6 +789,7 @@ elif command == "check":
             addons[line["i"]] = line
     # go through all gpr's, check their build versions
     for gpr in glob.glob(r("""*/*.gpr.py""")):
+        glocale.language = ["en"]
         local_gettext = glocale.get_addon_translator(
             gpr, languages=["en", "en.UTF-8"]
         ).gettext
@@ -855,6 +857,7 @@ elif command == "listing":
         for addon in dirs:
             for gpr in glob.glob(r("""%(addon)s/*.gpr.py""")):
                 # Make fallback language English (rather than current LANG)
+                glocale.language = [lang]
                 local_gettext = glocale.get_addon_translator(
                     gpr, languages=[lang, "en.UTF-8"]
                 ).gettext
