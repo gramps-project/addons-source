@@ -151,7 +151,7 @@ def get_all_languages():
     """
     languages = set(["en"])
     for addon in [file for file in glob.glob("*") if os.path.isdir(file)]:
-        for po in glob.glob(r("""%(addon)s/po/*-local.po""")):
+        for po in glob.glob(f"{addon}/po/*-local.po"):
             length = len(po)
             locale = po[length - 11 : length - 9]
             locale_path, locale = po.rsplit(os.sep, 1)
@@ -194,10 +194,10 @@ def do_tar(inc_files):
         tinfo.uname = tinfo.gname = "gramps"
         return tinfo
 
-    mkdir(r("../addons/%(gramps_version)s/download"))
-    increment_target(glob.glob(r("""%(addon)s/*gpr.py""")))
+    mkdir(f"../addons/{gramps_version}/download")
+    increment_target(glob.glob(f"{addon}/*gpr.py"))
     tar = tarfile.open(
-        r("../addons/%(gramps_version)s/download/" "%(addon)s.addon.tgz"),
+        f"../addons/{gramps_version}/download/{addon}.addon.tgz",
         mode="w:gz",
         encoding="utf-8",
     )
@@ -248,7 +248,7 @@ elif command == "init":
                 continue
             # check if we need to initialize based on listing
             listed = False
-            for gpr in glob.glob(r("""%(addon)s/*.gpr.py""")):
+            for gpr in glob.glob(f"{addon}/*.gpr.py"):
                 plugins = []
                 with open(gpr.encode("utf-8", errors="backslashreplace")) as f:
                     code = compile(
@@ -265,18 +265,18 @@ elif command == "init":
             if not listed:
                 continue  # skip this one if not listed
 
-            mkdir("%(addon)s/po")
+            mkdir(f"{addon}/po")
             system(
-                """xgettext --language=Python --keyword=_ --keyword=N_"""
-                """ --from-code=UTF-8"""
-                """ -o "%(addon)s/po/template.pot" "%(addon)s"/*.py """
+                f"xgettext --language=Python --keyword=_ --keyword=N_"
+                f" --from-code=UTF-8"
+                f' -o "{addon}/po/template.pot" "{addon}"/*.py '
             )
             fnames = glob.glob("%s/*.glade" % addon)
             if fnames:
                 system(
-                    """xgettext -j --add-comments -L Glade """
-                    """--from-code=UTF-8 -o "%(addon)s/po/template.pot" """
-                    """"%(addon)s"/*.glade"""
+                    "xgettext -j --add-comments -L Glade "
+                    f'--from-code=UTF-8 -o "{addon}/po/template.pot" '
+                    f'"{addon}"/*.glade'
                 )
 
             # scan for xml files and get translation text where the tag
@@ -294,9 +294,9 @@ elif command == "init":
                 root.clear()
                 # now append XML text to the pot
                 system(
-                    """xgettext -j --keyword=_ --from-code=UTF-8 """
-                    """--language=Python -o "%(addon)s/po/template.pot" """
-                    '''"%(filename)s.h"'''
+                    "xgettext -j --keyword=_ --from-code=UTF-8 "
+                    f'--language=Python -o "{addon}/po/template.pot" '
+                    f'"{filename}.h"'
                 )
                 os.remove(filename + ".h")
             # fix up the charset setting in the pot
@@ -312,50 +312,44 @@ elif command == "init":
     elif len(sys.argv) > 4:
         locale = sys.argv[4]
         # make a copy for locale
-        if os.path.isfile(r("""%(addon)s/po/%(locale)s-local.po""")):
-            raise ValueError(
-                r("""%(addon)s/po/%(locale)s-local.po""") + " already exists!"
-            )
+        if os.path.isfile(f"{addon}/po/{locale}-local.po"):
+            raise ValueError(f'"{addon}/po/{locale}-local.po" already exists!')
         system(
-            """msginit --locale=%(locale)s """
-            """--input="%(addon)s/po/template.pot" """
-            '''--output="%(addon)s/po/%(locale)s-local.po"'''
+            f"msginit --locale={locale} "
+            f'--input="{addon}/po/template.pot" '
+            f'--output="{addon}/po/{locale}-local.po"'
         )
-        echo('''You can now edit "%(addon)s/po/%(locale)s-local.po"''')
+        echo(f'You can now edit "{addon}/po/{locale}-local.po"')
     else:
         raise AttributeError("init what?")
 
 elif command == "update":
     locale = sys.argv[4]
     # Update the template file:
-    if not os.path.isfile(r("""%(addon)s/po/template.pot""")):
+    if not os.path.isfile(f"{addon}/po/template.pot"):
         raise ValueError(
-            r(
-                """%(addon)s/po/template.pot"""
-                """ is missing!\n  run """
-                """./make.py %(gramps_version)s init %(addon)s"""
-            )
+            f"{addon}/po/template.pot"
+            " is missing!\n  run "
+            f"./make.py {gramps_version} init {addon}"
         )
     # Check existing translation
-    if not os.path.isfile(r("""%(addon)s/po/%(locale)s-local.po""")):
+    if not os.path.isfile(f"{addon}/po/{locale}-local.po"):
         raise ValueError(
-            r(
-                """%(addon)s/po/%(locale)s-local.po"""
-                """ is missing!\n run ./make.py """
-                """%(gramps_version)s init %(addon)s %(locale)s"""
-            )
+            f"{addon}/po/{locale}-local.po"
+            " is missing!\n run ./make.py "
+            f"{gramps_version} init {addon} {locale}"
         )
     # Retrieve updated data for locale:
     system(
-        """msginit --locale=%(locale)s """
-        """--input="%(addon)s/po/template.pot" """
-        '''--output="%(addon)s/po/%(locale)s.po"'''
+        f"msginit --locale={locale} "
+        f'--input="{addon}/po/template.pot" '
+        f'--output="{addon}/po/%(locale)s.po"'
     )
     # Merge existing local translation with last data:
     system(
-        """msgmerge --no-fuzzy-matching %(addon)s/po/%(locale)s-local.po """
-        """%(addon)s/po/%(locale)s.po"""
-        """ -o %(addon)s/po/%(locale)s-local.po"""
+        f"msgmerge --no-fuzzy-matching {addon}/po/{locale}-local.po "
+        f"{addon}/po/{locale}.po"
+        f' -o "{addon}/po/%(locale)s-local.po"'
     )
     # Start with Gramps main PO file:
     if not os.path.isdir(GRAMPSPATH + "/po"):
@@ -364,92 +358,80 @@ elif command == "update":
             " 'GRAMPSPATH=path python3 make.py %s update'"
             % (GRAMPSPATH, gramps_version)
         )
-    locale_po_files = [r("%(GRAMPSPATH)s/po/%(locale)s.po")]
+    locale_po_files = [f"{GRAMPSPATH}/po/{locale}.po"]
     # Next, get all of the translations from other addons:
     for module in [name for name in os.listdir(".") if os.path.isdir(name)]:
         # skip the addon we are updating:
         if module == addon:
             continue
-        po_file = r("%(module)s/po/%(locale)s-local.po", module=module)
+        po_file = f"{module}/po/{locale}-local.po"
         if os.path.isfile(po_file):
             locale_po_files.append(po_file)
     # Concat those together:
-    system(
-        """msgcat --use-first %(list)s """ '''-o "%(addon)s/po/%(locale)s-global.po"''',
-        list=" ".join(['''"%s"''' % name for name in locale_po_files]),
-    )
+    file_list = " ".join(['''"%s"''' % name for name in locale_po_files])
+    system(f'msgcat --use-first {file_list} -o "{addon}/po/{locale}-global.po"')
     # Merge the local and global:
-    # locale_local = r("%(module)s/po/%(locale)s-local.po", module=module)
+    # locale_local = f"{module}/po/{locale}-local.po"
     # if os.path.isfile(locale_local):
     system(
-        """msgmerge --no-fuzzy-matching -U """
-        """"%(addon)s/po/%(locale)s-global.po" """
-        """"%(addon)s/po/%(locale)s-local.po" """
+        f"msgmerge --no-fuzzy-matching -U "
+        f'"{addon}/po/{locale}-global.po" '
+        f'"{addon}/po/{locale}-local.po" '
     )
     # Get all of the addon strings out of the catalog:
     system(
-        """msggrep --location=%(addon)s/* """
-        """"%(addon)s/po/%(locale)s-global.po" """
-        '''--output-file="%(addon)s/po/%(locale)s-temp.po"'''
+        f"msggrep --location={addon}/* "
+        f'"{addon}/po/{locale}-global.po" '
+        f'--output-file="{addon}/po/{locale}-temp.po"'
     )
     # Finally, add back any updates to the local version:
     system(
-        """msgcat --use-first """
-        """"%(addon)s/po/%(locale)s-temp.po" """
-        """"%(addon)s/po/%(locale)s-local.po" """
-        """-o "%(addon)s/po/%(locale)s-local.po.2" """
+        f"msgcat --use-first "
+        f'"{addon}/po/{locale}-temp.po" '
+        f'"{addon}/po/{locale}-local.po" '
+        f'-o "{addon}/po/{locale}-local.po.2" '
     )
-    os.remove(r("%(addon)s/po/%(locale)s-local.po"))
-    os.rename(
-        r("%(addon)s/po/%(locale)s-local.po.2"), r("%(addon)s/po/%(locale)s-local.po")
-    )
+    os.remove(f"{addon}/po/{locale}-local.po")
+    os.rename(f"{addon}/po/{locale}-local.po.2", f"{addon}/po/{locale}-local.po")
     # # Done!
-    echo('''\nYou can edit "%(addon)s/po/%(locale)s-local.po"''')
+    echo(f'\nYou can edit "{addon}/po/{locale}-local.po"')
 
 elif command in ["compile"]:
     if addon == "all":
         dirs = [file for file in glob.glob("*") if os.path.isdir(file)]
         for addon in dirs:
-            for po in glob.glob(r("""%(addon)s/po/*.po""")):
+            for po in glob.glob(f"{addon}/po/*.po"):
                 locale = os.path.basename(po[:-9])
-                mkdir("%(addon)s/locale/%(locale)s/LC_MESSAGES/")
-                system(
-                    "msgfmt %(po)s -o "
-                    '"%(addon)s/locale/%(locale)s/LC_MESSAGES/addon.mo"'
-                )
+                mkdir(f"{addon}/locale/{locale}/LC_MESSAGES/")
+                system(f'msgfmt {po} -o "{addon}/locale/{locale}/LC_MESSAGES/addon.mo"')
     else:
-        for po in glob.glob(r("""%(addon)s/po/*.po""")):
+        for po in glob.glob(f"{addon}/po/*.po"):
             locale = os.path.basename(po[:-9])
-            mkdir("%(addon)s/locale/%(locale)s/LC_MESSAGES/")
-            system(
-                "msgfmt %(po)s -o " '"%(addon)s/locale/%(locale)s/LC_MESSAGES/addon.mo"'
-            )
+            mkdir(f"{addon}/locale/{locale}/LC_MESSAGES/")
+            system(f'msgfmt {po} -o "{addon}/locale/{locale}/LC_MESSAGES/addon.mo"')
 elif command == "build":
     if addon == "all":
         dirs = [file for file in glob.glob("*") if os.path.isdir(file)]
         # Compile all:
         for addon in dirs:
-            for po in glob.glob(r("""%(addon)s/po/*.po""")):
+            for po in glob.glob(f"{addon}/po/*.po"):
                 locale = os.path.basename(po[:-9])
-                mkdir("%(addon)s/locale/%(locale)s/LC_MESSAGES/")
-                system(
-                    "msgfmt %(po)s -o "
-                    '"%(addon)s/locale/%(locale)s/LC_MESSAGES/addon.mo"'
-                )
+                mkdir(f"{addon}/locale/{locale}/LC_MESSAGES/")
+                system(f'msgfmt {po} -o "{addon}/locale/{locale}/LC_MESSAGES/addon.mo"')
         # Build all:
         for addon in dirs:
-            if os.path.isfile(r("""%(addon)s/setup.py""")):
-                system("""cd %s; python3 setup.py --build""" % addon)
+            if os.path.isfile(f"{addon}/setup.py"):
+                system("cd %s; python3 setup.py --build" % addon)
                 continue
             patts = [
-                r("""%(addon)s/*.py"""),
-                r("""%(addon)s/*.glade"""),
-                r("""%(addon)s/*.xml"""),
-                r("""%(addon)s/*.txt"""),
-                r("""%(addon)s/locale/*/LC_MESSAGES/*.mo"""),
+                f"{addon}/*.py",
+                f"{addon}/*.glade",
+                f"{addon}/*.xml",
+                f"{addon}/*.txt",
+                f"{addon}/locale/*/LC_MESSAGES/*.mo",
             ]
-            if os.path.isfile(r("""%(addon)s/MANIFEST""")):
-                patts.extend(open(r("""%(addon)s/MANIFEST"""), "r").read().split())
+            if os.path.isfile(f"{addon}/MANIFEST"):
+                patts.extend(open(f"{addon}/MANIFEST", "r").read().split())
             files = []
             for patt in patts:
                 files.extend(glob.glob(patt))
@@ -458,21 +440,19 @@ elif command == "build":
                 continue
             do_tar(files)
     else:
-        for po in glob.glob(r("""%(addon)s/po/*.po""")):
+        for po in glob.glob(f"{addon}/po/*.po"):
             locale = os.path.basename(po[:-9])
-            mkdir("%(addon)s/locale/%(locale)s/LC_MESSAGES/")
-            system(
-                "msgfmt %(po)s -o " '"%(addon)s/locale/%(locale)s/LC_MESSAGES/addon.mo"'
-            )
+            mkdir(f"{addon}/locale/{locale}/LC_MESSAGES/")
+            system(f'msgfmt {po} -o "{addon}/locale/{locale}/LC_MESSAGES/addon.mo"')
         patts = [
-            r("""%(addon)s/*.py"""),
-            r("""%(addon)s/*.glade"""),
-            r("""%(addon)s/*.xml"""),
-            r("""%(addon)s/*.txt"""),
-            r("""%(addon)s/locale/*/LC_MESSAGES/*.mo"""),
+            f"{addon}/*.py",
+            f"{addon}/*.glade",
+            f"{addon}/*.xml",
+            f"{addon}/*.txt",
+            f"{addon}/locale/*/LC_MESSAGES/*.mo",
         ]
-        if os.path.isfile(r("""%(addon)s/MANIFEST""")):
-            patts.extend(open(r("""%(addon)s/MANIFEST"""), "r").read().split())
+        if os.path.isfile(f"{addon}/MANIFEST"):
+            patts.extend(open(f"{addon}/MANIFEST", "r").read().split())
         files = []
         for patt in patts:
             files.extend(glob.glob(patt))
@@ -509,25 +489,22 @@ elif command == "as-needed":
     ]
     for addon in sorted(dirs):
         todo = False
-        for po in glob.glob(r("""%(addon)s/po/*-local.po""")):
+        for po in glob.glob(f"{addon}/po/*-local.po"):
             locale = os.path.basename(po[:-9])
-            mkdir("%(addon)s/locale/%(locale)s/LC_MESSAGES/")
-            system(
-                """msgfmt %(po)s """
-                '''-o "%(addon)s/locale/%(locale)s/LC_MESSAGES/addon.mo"'''
-            )
+            mkdir(f"{addon}/locale/{locale}/LC_MESSAGES/")
+            system(f'msgfmt {po} -o "{addon}/locale/{locale}/LC_MESSAGES/addon.mo"')
         tgz = os.path.join(
             "..", "addons", gramps_version, "download", addon + ".addon.tgz"
         )
         patts = [
-            r("""%(addon)s/*.py"""),
-            r("""%(addon)s/*.glade"""),
-            r("""%(addon)s/*.xml"""),
-            r("""%(addon)s/*.txt"""),
-            r("""%(addon)s/locale/*/LC_MESSAGES/*.mo"""),
+            f"{addon}/*.py",
+            f"{addon}/*.glade",
+            f"{addon}/*.xml",
+            f"{addon}/*.txt",
+            f"{addon}/locale/*/LC_MESSAGES/*.mo",
         ]
-        if os.path.isfile(r("""%(addon)s/MANIFEST""")):
-            patts.extend(open(r("""%(addon)s/MANIFEST"""), "r").read().split())
+        if os.path.isfile(f"{addon}/MANIFEST"):
+            patts.extend(open(f"{addon}/MANIFEST", "r").read().split())
         sfiles = []
         for patt in patts:
             sfiles.extend(glob.glob(patt))
@@ -604,7 +581,7 @@ elif command == "as-needed":
         for lang in languages:
             gpr_bad = False  # to flag a bad gpr
             do_list = False  # to avoid multiple pass per lang if not listing
-            for gpr in glob.glob(r("""%(addon)s/*.gpr.py""")):
+            for gpr in glob.glob(f"{addon}/*.gpr.py"):
                 # Make fallback language English (rather than current LANG)
                 glocale.language = [lang]
                 local_gettext = glocale.get_addon_translator(
@@ -657,16 +634,16 @@ elif command == "as-needed":
         if todo:  # make an updated pot file
             mkdir("%(addon)s/po")
             system(
-                """xgettext --language=Python --keyword=_ --keyword=N_"""
-                """ --from-code=UTF-8"""
-                """ -o "%(addon)s/po/temp.pot" "%(addon)s"/*.py """
+                "xgettext --language=Python --keyword=_ --keyword=N_"
+                " --from-code=UTF-8"
+                f' -o "{addon}/po/temp.pot" "{addon}"/*.py '
             )
             fnames = glob.glob("%s/*.glade" % addon)
             if fnames:
                 system(
-                    """xgettext -j --add-comments -L Glade """
-                    """--from-code=UTF-8 -o "%(addon)s/po/temp.pot" """
-                    """"%(addon)s"/*.glade"""
+                    "xgettext -j --add-comments -L Glade "
+                    f'--from-code=UTF-8 -o "{addon}/po/temp.pot" '
+                    f'"{addon}"/*.glade'
                 )
 
             # scan for xml files and get translation text where the tag
@@ -684,31 +661,29 @@ elif command == "as-needed":
                 root.clear()
                 # now append XML text to the pot
                 system(
-                    """xgettext -j --keyword=_ --from-code=UTF-8 """
-                    """--language=Python -o "%(addon)s/po/temp.pot" """
-                    '''"%(filename)s.h"'''
+                    "xgettext -j --keyword=_ --from-code=UTF-8 "
+                    f'--language=Python -o "{addon}/po/temp.pot" '
+                    f'"{filename}.h"'
                 )
                 os.remove(filename + ".h")
-            if os.path.isfile(r("""%(addon)s/po/template.pot""")):
+            if os.path.isfile(f"{addon}/po/template.pot"):
                 # we do a merge so changes to header are not lost
                 system(
-                    """msgmerge --no-fuzzy-matching -U """
-                    """%(addon)s/po/template.pot """
-                    """%(addon)s/po/temp.pot"""
+                    "msgmerge --no-fuzzy-matching -U "
+                    f"{addon}/po/template.pot "
+                    f"{addon}/po/temp.pot"
                 )
-                os.remove(r("""%(addon)s/po/temp.pot"""))
+                os.remove(f"{addon}/po/temp.pot")
             else:
-                os.rename(
-                    r("""%(addon)s/po/temp.pot"""), r("""%(addon)s/po/template.pot""")
-                )
+                os.rename(f"{addon}/po/temp.pot", f"{addon}/po/template.pot")
     # write out the listings
-    mkdir(r("../addons/%(gramps_version)s/listings"))
+    mkdir(f"../addons/{gramps_version}/listings")
     for lang in languages:
         output = []
         for plugin in sorted(listings[lang], key=lambda p: (p["t"], p["i"])):
             output.append(plugin)
         with open(
-            r("../addons/%(gramps_version)s/listings/") + ("addons-%s.json" % lang),
+            f"../addons/{gramps_version}/listings/" + ("addons-%s.json" % lang),
             "w",
             encoding="utf-8",
             newline="",
@@ -718,7 +693,7 @@ elif command == "as-needed":
 elif command == "manifest-check":
     import re
 
-    for tgz in glob.glob(r("../addons/%(gramps_version)s/download/*.tgz")):
+    for tgz in glob.glob(f"../addons/{gramps_version}/download/*.tgz"):
         files = tarfile.open(tgz).getnames()
         for file in files:
             if not any(
@@ -739,7 +714,7 @@ elif command == "unlist":
     for lang in languages:
         lines = []
         fp = open(
-            r("../addons/%(gramps_version)s/listings/") + ("addons-%s.json" % lang),
+            f"../addons/{gramps_version}/listings/" + ("addons-%s.json" % lang),
             "r",
             encoding="utf-8",
         )
@@ -750,7 +725,7 @@ elif command == "unlist":
                 print("unlisting", line)
         fp.close()
         fp = open(
-            r("../addons/%(gramps_version)s/listings/") + ("addons-%s.json" % lang),
+            f"../addons/{gramps_version}/listings/" + ("addons-%s.json" % lang),
             "w",
             encoding="utf-8",
             newline="",
@@ -779,7 +754,7 @@ elif command == "check":
 
     # get current build numbers from English listing
     fp_in = open(
-        r("../addons/%(gramps_version)s/listings/addons-en.json"), "r", encoding="utf-8"
+        f"../addons/{gramps_version}/listings/addons-en.json", "r", encoding="utf-8"
     )
     addons = {}
     for line in json.load(fp_in):
@@ -788,7 +763,7 @@ elif command == "check":
         else:
             addons[line["i"]] = line
     # go through all gpr's, check their build versions
-    for gpr in glob.glob(r("""*/*.gpr.py""")):
+    for gpr in glob.glob(f"*/*.gpr.py"):
         glocale.language = ["en"]
         local_gettext = glocale.get_addon_translator(
             gpr, languages=["en", "en.UTF-8"]
@@ -841,21 +816,18 @@ elif command == "listing":
         dirs = [addon]
     # Make the locale for for any local languages for Addon:
     for addon in dirs:
-        for po in glob.glob(r("""%(addon)s/po/*-local.po""")):
+        for po in glob.glob(f"{addon}/po/*-local.po"):
             # Compile
             locale = os.path.basename(po[:-9])
-            mkdir("%(addon)s/locale/%(locale)s/LC_MESSAGES/")
-            system(
-                """msgfmt %(po)s """
-                '''-o "%(addon)s/locale/%(locale)s/LC_MESSAGES/addon.mo"'''
-            )
+            mkdir(f"{addon}/locale/{locale}/LC_MESSAGES/")
+            system(f'msgfmt {po} -o "{addon}/locale/{locale}/LC_MESSAGES/addon.mo"')
     languages = get_all_languages()
     # next, create/edit a file for all languages listing plugins
     for lang in languages:
         print("Building listing for '%s'..." % lang)
         listings = []
         for addon in dirs:
-            for gpr in glob.glob(r("""%(addon)s/*.gpr.py""")):
+            for gpr in glob.glob(f"%(addon)s/*.gpr.py"):
                 # Make fallback language English (rather than current LANG)
                 glocale.language = [lang]
                 local_gettext = glocale.get_addon_translator(
@@ -874,7 +846,7 @@ elif command == "listing":
                 for p in plugins:
                     tgz_file = "%s.addon.tgz" % gpr.split(os.sep, 1)[0]
                     tgz_exists = os.path.isfile(
-                        r("../addons/%(gramps_version)s/download/") + tgz_file
+                        f"../addons/{gramps_version}/download/" + tgz_file
                     )
                     if p.get("include_in_listing", True) and tgz_exists:
                         plugin = {
@@ -907,7 +879,7 @@ elif command == "listing":
             for plugin in sorted(listings, key=lambda p: (p["t"], p["i"])):
                 output.append(plugin)
         elif not os.path.isfile(
-            r("../addons/%(gramps_version)s/listings/") + ("addons-%s.json" % lang)
+            f"../addons/{gramps_version}/listings/" + ("addons-%s.json" % lang)
         ):
             for plugin in sorted(listings, key=lambda p: (p["t"], p["i"])):
                 output.append(plugin)
@@ -916,8 +888,7 @@ elif command == "listing":
             for plugin in sorted(listings, key=lambda p: (p["t"], p["i"])):
                 already_added = []
                 fp_in = open(
-                    r("../addons/%(gramps_version)s/listings/")
-                    + ("addons-%s.json" % lang),
+                    f"../addons/{gramps_version}/listings/" + ("addons-%s.json" % lang),
                     "r",
                     encoding="utf-8",
                 )
@@ -949,9 +920,9 @@ elif command == "listing":
                     if plugin["i"] not in already_added:
                         # print("ADDED at end")
                         output.append(plugin)
-        mkdir(r("../addons/%(gramps_version)s/listings"))
+        mkdir(f"../addons/{gramps_version}/listings")
         fp_out = open(
-            r("../addons/%(gramps_version)s/listings/") + ("addons-%s.json" % lang),
+            f"../addons/{gramps_version}/listings/" + ("addons-%s.json" % lang),
             "w",
             encoding="utf-8",
             newline="",
