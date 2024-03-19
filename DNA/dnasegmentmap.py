@@ -131,6 +131,8 @@ class DNASegmentMap(Gramplet):
                             side = 'P'
                     elif (len(data) > 1 and data[0][0] == data[1][0] and data[0][2][0] != data[1][2][0]): #shares both parents
                         side = 'U'
+                    elif (len(data[0][2]) == 0): # association is descendant of active
+                        side = 'U'
                     else:
                         side = data[0][2][0].upper()
                     # Get Notes attached to Association
