@@ -1,0 +1,56 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-10-21 08:49+1100\n"
+"PO-Revision-Date: 2024-04-08 10:19+0300\n"
+"Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
+"Language-Team: \n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.4.2\n"
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:3
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:10
+msgid "Related Relatives"
+msgstr "קרובי משפחה"
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:4
+msgid "Gramplet showing relatives in a relation"
+msgstr "גרמפלט להצגת קרובי משפחה וקשרי קירבה"
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:52
+msgid "No Family Tree loaded."
+msgstr "לא נטען אילן־יוחסין."
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:93
+msgid "Relations of related people in your database:"
+msgstr "קשרי משפחה של קרובי משפחה במסד הנתונים:"
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:216
+msgid "and"
+msgstr "ו"
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:219
+msgid "are partners and"
+msgstr "שותפים וגם"
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:242
+msgid "Common ancestor"
+msgstr "אבות קדמונים משותפים"
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:253
+msgid "No relatives in a relation found"
+msgstr "לא נמצאו קרובי משפחה בקשרי הקירבה"
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:254
+msgid "END"
+msgstr "סיום"
