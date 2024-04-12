@@ -114,9 +114,9 @@ def get_sources(database, person):
             title = source.title
             author = source.author
             if author:
-                source_desc = '* {}, {} - {}'.format(author, title, page)
+                source_desc = '• {}, {} - {}'.format(author, title, page)
             else:
-                source_desc = '* {} - {}'.format(title, page)
+                source_desc = '• {} - {}'.format(title, page)
 
             if source_desc not in sources:
                 sources.append(source_desc)
