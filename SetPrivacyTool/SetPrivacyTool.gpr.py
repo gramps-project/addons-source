@@ -32,4 +32,5 @@ register(TOOL,
          toolclass = 'SetPrivacyWindow',
          optionclass = 'SetPrivacyOptions',
          tool_modes = [TOOL_MODE_GUI],
+         help_url="Addon:SetPrivacyTool",
          )
