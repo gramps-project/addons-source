@@ -60,7 +60,7 @@ from gramps.gen.display.name import displayer
 from gramps.gen.display.place import displayer as place_displayer
 from gramps.gen.errors import WindowActiveError
 from gramps.gen.lib import (Person, Family, ChildRef, Name, Surname,
-                            ChildRefType, EventType, EventRoleType)
+                            ChildRefType, Event, EventRef, EventType, EventRoleType)
 from gramps.gen.utils.alive import probably_alive
 from gramps.gen.utils.callback import Callback
 from gramps.gen.utils.db import (get_birth_or_fallback, get_death_or_fallback,
@@ -73,7 +73,7 @@ from gramps.gen.utils.thumbnails import get_thumbnail_path
 from gramps.gui.dialog import (OptionDialog, ErrorDialog, QuestionDialog2,
                                WarningDialog)
 from gramps.gui.display import display_url
-from gramps.gui.editors import EditPerson, EditFamily, EditTagList
+from gramps.gui.editors import EditPerson, EditFamily, EditTagList, EditEventRef
 from gramps.gui.utils import (color_graph_box, color_graph_family,
                               rgb_to_hex, hex_to_rgb_float,
                               process_pending_events)
@@ -152,6 +152,7 @@ class GraphView(NavigationView):
     # default settings in the config file
     CONFIGSETTINGS = (
         ('interface.graphview-show-images', True),
+        ('interface.graphview-show-ID', True),
         ('interface.graphview-show-avatars', True),
         ('interface.graphview-avatars-style', 1),
         ('interface.graphview-avatars-male', ''),       # custom avatar
@@ -186,6 +187,7 @@ class GraphView(NavigationView):
                                 PersonBookmarks, nav_group)
 
         self.show_images = self._config.get('interface.graphview-show-images')
+        self.show_ID = self._config.get('interface.graphview-show-ID')
         self.show_full_dates = self._config.get(
             'interface.graphview-show-full-dates')
         self.show_places = self._config.get('interface.graphview-show-places')
@@ -421,6 +423,13 @@ class GraphView(NavigationView):
         self.show_images = entry == 'True'
         self.graph_widget.populate(self.get_active())
 
+    def cb_update_show_ID(self, _client, _cnxn_id, entry, _data):
+        """
+        Called when the configuration menu changes the ID setting.
+        """
+        self.show_ID = entry == 'True'
+        self.graph_widget.populate(self.get_active())
+
     def cb_update_show_avatars(self, _client, _cnxn_id, entry, _data):
         """
         Called when the configuration menu changes the avatars setting.
@@ -637,6 +646,8 @@ class GraphView(NavigationView):
         """
         self._config.connect('interface.graphview-show-images',
                              self.cb_update_show_images)
+        self._config.connect('interface.graphview-show-ID',
+                             self.cb_update_show_ID)
         self._config.connect('interface.graphview-show-avatars',
                              self.cb_update_show_avatars)
         self._config.connect('interface.graphview-avatars-style',
@@ -711,6 +722,9 @@ class GraphView(NavigationView):
         row = 0
         configdialog.add_checkbox(
             grid, _('Show images'), row, 'interface.graphview-show-images')
+        row += 1
+        configdialog.add_checkbox(
+            grid, _('Show IDs'), row, 'interface.graphview-show-ID')
         row += 1
         configdialog.add_checkbox(
             grid, _('Show avatars'), row, 'interface.graphview-show-avatars')
@@ -2308,6 +2322,8 @@ class DotSvgGenerator(object):
 
         self.show_images = self.view._config.get(
             'interface.graphview-show-images')
+        self.show_ID = self.view._config.get(
+            'interface.graphview-show-ID')
         self.show_avatars = self.view._config.get(
             'interface.graphview-show-avatars')
         self.show_full_dates = self.view._config.get(
@@ -3057,6 +3073,8 @@ class DotSvgGenerator(object):
         name = displayer.display_name(person.get_primary_name())
         # name string should not be empty
         name = escape(name) if name else ' '
+        if self.show_ID:
+            name += " (%s)" % person.get_gramps_id()
 
         # birth, death is a lists [date, place]
         birth, death = self.get_date_strings(person)
@@ -3783,6 +3801,28 @@ class PopupMenu(Gtk.Menu):
 
             self.add_separator()
 
+            # build events submenu
+            if len(person.get_event_ref_list()) != 0:
+                iteme, evt_menu = self.add_submenu(label=_("Events"))
+            else:
+                iteme = self.add_menuitem(self, _("No Events for this person"), self.menu_no_action)
+
+            nbe = 0
+            for event_ref in person.get_event_ref_list():
+                if not event_ref:
+                    continue
+                nbe += 1
+                event = self.dbstate.db.get_event_from_handle(event_ref.ref)
+                role = _(event_ref.get_role().xml_str())
+                etype = _(event.get_type().xml_str())
+
+                # text = displayer.display(person)
+                if event_ref.get_role() != EventRoleType.PRIMARY:
+                    etype += " (" + role + ") "
+                self.add_menuitem(evt_menu, etype,
+                                  self.actions.edit_person_event,
+                                  person.get_gramps_id(), event, event_ref)
+
             # build tag submenu
             item, tag_menu = self.add_submenu(label=_("Tags"))
 
@@ -4047,6 +4087,28 @@ class PopupMenu(Gtk.Menu):
 
             self.add_separator()
 
+            # build events submenu
+            if len(family.get_event_ref_list()) != 0:
+                iteme, evt_menu = self.add_submenu(label=_("Events"))
+            else:
+                iteme = self.add_menuitem(self, _("No Events for this family"), self.menu_no_action)
+
+            nbe = 0
+            for event_ref in family.get_event_ref_list():
+                if not event_ref:
+                    continue
+                nbe += 1
+                event = self.dbstate.db.get_event_from_handle(event_ref.ref)
+                role = _(event_ref.get_role().xml_str())
+                etype = _(event.get_type().xml_str())
+
+                # text = displayer.display(person)
+                if event_ref.get_role() != EventRoleType.FAMILY:
+                    etype += " (" + role + ") "
+                self.add_menuitem(evt_menu, etype,
+                                  self.actions.edit_family_event,
+                                  family.get_gramps_id(), event, event_ref)
+
             # build tag submenu
             _item, tag_menu = self.add_submenu(label=_("Tags"))
 
@@ -4160,6 +4222,12 @@ class PopupMenu(Gtk.Menu):
         submenu = item.get_submenu()
         submenu.set_reserve_toggle_size(False)
         return item, submenu
+
+    def menu_no_action(self, *args):
+        """
+        Do nothing
+        """
+        return True
 
     def add_separator(self, menu=None):
         """
@@ -4312,6 +4380,27 @@ class Actions(Callback):
             m_handle = family.get_mother_handle()
             if m_handle:
                 self.emit('focus-person-changed', (m_handle, ))
+
+    def edit_family_event(self, obj, family_id, event, evt_ref):
+        """
+        Edit the events for this family
+        """
+        try:
+            EditEventRef(self.dbstate, self.uistate, [], event, evt_ref, self.obj_added)
+        except WindowActiveError:
+            pass
+
+    def edit_person_event(self, obj, person_id, event, evt_ref):
+        """
+        Edit the events for this person
+        """
+        try:
+            EditEventRef(self.dbstate, self.uistate, [], event, evt_ref, self.obj_added)
+        except WindowActiveError:
+            pass
+
+    def obj_added(self, reference, primary):
+        reference.ref = primary.handle
 
     def copy_person_to_clipboard(self, obj):
         """
