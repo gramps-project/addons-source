@@ -60,6 +60,7 @@ class Avatars():
                        1: (_('Dark (default)'), 'dark'),
                        2: (_('Light'), 'light'),
                        3: (_('Cartoon'), 'cartoon'),
+                       4: (_('Modern'), 'modern'),
                       }
 
         self.style = 1
@@ -87,6 +88,10 @@ class Avatars():
                 avatar = self.config.get('interface.graphview-avatars-male')
             elif gender == Person.FEMALE:
                 avatar = self.config.get('interface.graphview-avatars-female')
+            elif gender == Person.UNKNOWN:
+                avatar = self.config.get('interface.graphview-avatars-unknown')
+            elif gender == Person.OTHER:
+                avatar = self.config.get('interface.graphview-avatars-other')
             if avatar:
                 return avatar
             else:
@@ -98,6 +103,10 @@ class Avatars():
             return os.path.join(self.path, style, 'person_male.png')
         if gender == Person.FEMALE:
             return os.path.join(self.path, style, 'person_female.png')
+        if gender == Person.UNKNOWN:
+            return os.path.join(self.path, style, 'person_unknown.png')
+        if gender == Person.OTHER:
+            return os.path.join(self.path, style, 'person_other.png')
 
     def get_styles_list(self):
         """
@@ -108,4 +117,3 @@ class Avatars():
         for key, item in self.styles.items():
             styles_list.append((key, item[0]))
         return styles_list
-
