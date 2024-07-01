@@ -157,6 +157,8 @@ class GraphView(NavigationView):
         ('interface.graphview-avatars-style', 1),
         ('interface.graphview-avatars-male', ''),       # custom avatar
         ('interface.graphview-avatars-female', ''),     # custom avatar
+        ('interface.graphview-avatars-unknown', ''),    # custom avatar
+        ('interface.graphview-avatars-other', ''),      # custom avatar
         ('interface.graphview-show-full-dates', False),
         ('interface.graphview-show-places', False),
         ('interface.graphview-place-format', 0),
@@ -466,6 +468,22 @@ class GraphView(NavigationView):
         Called when the configuration menu changes the female avatar.
         """
         self._config.set('interface.graphview-avatars-female',
+                         file_chooser_button.get_filename())
+        self.graph_widget.populate(self.get_active())
+
+    def cb_unknown_avatar_set(self, file_chooser_button):
+        """
+        Called when the configuration menu changes the unknown sex avatar.
+        """
+        self._config.set('interface.graphview-avatars-unknown',
+                         file_chooser_button.get_filename())
+        self.graph_widget.populate(self.get_active())
+
+    def cb_other_avatar_set(self, file_chooser_button):
+        """
+        Called when the configuration menu changes the other sex avatar.
+        """
+        self._config.set('interface.graphview-avatars-other',
                          file_chooser_button.get_filename())
         self.graph_widget.populate(self.get_active())
 
@@ -836,6 +854,32 @@ class GraphView(NavigationView):
         grid.attach(FCB_female, 2, row, 1, 1)
         self.avatar_widgets.append(lbl)
         self.avatar_widgets.append(FCB_female)
+
+        row += 1
+        lbl = Gtk.Label(label=_('Unknown avatar:'), halign=Gtk.Align.END)
+        FCB_unknown = Gtk.FileChooserButton.new(_('Choose Unknown avatar'),
+                                             Gtk.FileChooserAction.OPEN)
+        FCB_unknown.add_filter(file_filter)
+        FCB_unknown.set_filename(
+            self._config.get('interface.graphview-avatars-unknown'))
+        FCB_unknown.connect('file-set', self.cb_unknown_avatar_set)
+        grid.attach(lbl, 1, row, 1, 1)
+        grid.attach(FCB_unknown, 2, row, 1, 1)
+        self.avatar_widgets.append(lbl)
+        self.avatar_widgets.append(FCB_unknown)
+
+        row += 1
+        lbl = Gtk.Label(label=_('Other avatar:'), halign=Gtk.Align.END)
+        FCB_other = Gtk.FileChooserButton.new(_('Choose Other avatar'),
+                                             Gtk.FileChooserAction.OPEN)
+        FCB_other.add_filter(file_filter)
+        FCB_other.set_filename(
+            self._config.get('interface.graphview-avatars-other'))
+        FCB_other.connect('file-set', self.cb_other_avatar_set)
+        grid.attach(lbl, 1, row, 1, 1)
+        grid.attach(FCB_other, 2, row, 1, 1)
+        self.avatar_widgets.append(lbl)
+        self.avatar_widgets.append(FCB_other)
         # ===================================================================
 
         row += 1
