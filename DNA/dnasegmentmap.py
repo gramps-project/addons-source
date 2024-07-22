@@ -62,6 +62,8 @@ CONFIG.register('map.maternal-background', (0.926, 0.825, 0.92, 1.0))
 CONFIG.register('map.paternal-background', (0.833, 0.845, 0.92, 1.0))
 CONFIG.register('map.legend-single-chromosome-y-offset', 25)
 CONFIG.register('map.show-centromere',0)
+CONFIG.register('map.legend-char-height',12)
+CONFIG.register('map.include-citation-notes',1)
 
 CONFIG.init()
 
@@ -116,6 +118,7 @@ class DNASegmentMap(Gramplet):
             segmap.gender = active.gender
             segmap.active = active
             segmap.relationship = self.relationship
+            include_citation_notes = segmap._config.get('map.include-citation-notes')
 
             for assoc in active.get_person_ref_list():
                 if assoc.get_relation() == 'DNA':
@@ -142,13 +145,14 @@ class DNASegmentMap(Gramplet):
                             assoc_handle = assoc.ref
                             self.write_chromo(line, side, rgb_color, assoc, note, segmap)
                     # Get Notes attached to Citation which is attached to the Association
-                    for citation_handle in assoc.get_citation_list():
-                        citation = self.dbstate.db.get_citation_from_handle(citation_handle)
-                        for handle in citation.get_note_list():
-                            note = self.dbstate.db.get_note_from_handle(handle)
-                            for line in note.get().split('\n'):
-                                assoc_handle = assoc.ref
-                                self.write_chromo(line, side, rgb_color, assoc, note, segmap)
+                    if include_citation_notes :
+                        for citation_handle in assoc.get_citation_list():
+                            citation = self.dbstate.db.get_citation_from_handle(citation_handle)
+                            for handle in citation.get_note_list():
+                                note = self.dbstate.db.get_note_from_handle(handle)
+                                for line in note.get().split('\n'):
+                                    assoc_handle = assoc.ref
+                                    self.write_chromo(line, side, rgb_color, assoc, note, segmap)
             if len(segmap.segments) > 0:
                 segmap.show()
                 self.vbox.pack_start(segmap, True, True, 0)
@@ -158,12 +162,17 @@ class DNASegmentMap(Gramplet):
         if "\t" in line:
 # Tabs are the field separators. Now determine THOUSEP and RADIXCHAR. Use Field 2 (Stop Pos) to see if there are THOUSEP there. Use Field 3 (SNPs) to see if there is a radixchar
             field = line.split('\t')
-            if "," in field[2]:
-                line = line.replace(",", "")
-            elif "." in field[2]:
-                line = line.replace(".", "")
-            if "," in field[3]:
-                line = line.replace(",", ".")
+            if len(field) > 3:
+                if "," in field[2]:
+                    line = line.replace(",", "")
+                elif "." in field[2]:
+                    line = line.replace(".", "")
+                if "," in field[3]:
+                    line = line.replace(",", ".")
+            else:
+                associate = segmap.dbstate.db.get_person_from_handle(assoc.ref)
+                id_str = _(_nd.display(associate) )
+                print("Skipping: ",id_str,line)
             line = line.replace("\t", ",")
 # If Tab is not the field separator, then comma is. And point is the radixchar.
         field = line.split(',')
@@ -239,6 +248,7 @@ class SegmentMap(Gtk.DrawingArea):
         self.paternal_background = self._config.get('map.paternal-background')
         self.legend_single_chromosome = self._config.get('map.legend-single-chromosome-y-offset')
         self.show_centromere = self._config.get('map.show-centromere')
+        self.legend_char_height = self._config.get('map.legend-char-height')
         self._config.save()
         self.chromosomesThirtySeven = (
             ('1', 249250621),
@@ -477,7 +487,7 @@ class SegmentMap(Gtk.DrawingArea):
                     label_width = width
                 offset_x = -(len(label)-2)* 6
                 cr.move_to(offset_x, i * 2 * (chr_height + spacing) + offset+7)
-                self.__chrrects.append((offset_x, i * 2 * (chr_height + spacing) + offset+7, 12, chr_height))
+                self.__chrrects.append((offset_x, i * 2 * (chr_height + spacing) + offset+7, chr_height, chr_height))
                 PangoCairo.show_layout(cr, layout)
 
             self.set_axis(_('Chr'))
@@ -625,6 +635,7 @@ class SegmentMap(Gtk.DrawingArea):
         cr.set_source_rgba(*fg_color)
         PangoCairo.show_layout(cr, layout)
         legend_offset_y += chr_height + 2 * spacing
+        legend_chr_height = self.legend_char_height
         chromo_count = -1
         row_num = 0
         maximum = self.maximum
@@ -706,21 +717,21 @@ class SegmentMap(Gtk.DrawingArea):
                     cr.set_source_rgba(*fg_color)
                     cr.stroke()
 # Legend
-                cr.rectangle(legend_offset_x - chr_height - 2 * spacing,
+                cr.rectangle(legend_offset_x - legend_chr_height - 2 * spacing,
                              legend_offset_y + self.legend_swatch_offset_y,
-                             chr_height,
-                             chr_height)
+                             legend_chr_height,
+                             legend_chr_height)
                 cr.set_source_rgba(rgb_color[0], rgb_color[1], rgb_color[2], 1)
                 cr.fill_preserve()
                 cr.stroke()
                 layout = self.create_pango_layout(last_name)
                 cr.move_to(legend_offset_x, legend_offset_y)
-                self.__legendrects.append((legend_offset_x, legend_offset_y,len(assoc_name) * 6, chr_height))
+                self.__legendrects.append((legend_offset_x, legend_offset_y,len(assoc_name) * 6, legend_chr_height))
                 self.__associates.append(associate)
                 self.__assoc_handle.append(handle)
                 self.__legend_str.append(last_name)
                 cr.set_source_rgba(*fg_color)
-                legend_offset_y += chr_height + 2 * spacing
+                legend_offset_y += legend_chr_height + 2 * spacing
                 PangoCairo.show_layout(cr, layout)
 # Segment Info
               chr_offset = row_num * 2 * (chr_height + spacing) + offset
@@ -748,22 +759,22 @@ class SegmentMap(Gtk.DrawingArea):
               if last_name != assoc_name:
                 last_name = assoc_name
 
-                cr.rectangle(legend_offset_x - chr_height - 2 * spacing,
+                cr.rectangle(legend_offset_x - legend_chr_height - 2 * spacing,
                              legend_offset_y,
-                             chr_height,
-                             chr_height)
+                             legend_chr_height,
+                             legend_chr_height)
                 cr.set_source_rgba(rgb_color[0], rgb_color[1], rgb_color[2], 1/chr_mult)
                 cr.fill_preserve()
                 cr.stroke()
 
                 layout = self.create_pango_layout(last_name)
                 cr.move_to(legend_offset_x, legend_offset_y)
-                self.__legendrects.append((legend_offset_x, legend_offset_y,len(assoc_name) * 6, chr_height))
+                self.__legendrects.append((legend_offset_x, legend_offset_y,len(assoc_name) * 6, legend_chr_height))
                 self.__associates.append(associate)
                 self.__assoc_handle.append(handle)
                 self.__legend_str.append(last_name)
                 cr.set_source_rgba(*fg_color)
-                legend_offset_y += chr_height + 2 * spacing
+                legend_offset_y += legend_chr_height + 2 * spacing
                 PangoCairo.show_layout(cr, layout)
         else: # Drawing all chromosome segments
           for chromo, start, stop, side, cms, snp, assoc_name, rgb_color, associate, handle, note in self.segments:
@@ -796,22 +807,22 @@ class SegmentMap(Gtk.DrawingArea):
 # Legend entry
             if last_name != assoc_name:
                 last_name = assoc_name
-                cr.rectangle(legend_offset_x - chr_height - 2 * spacing,
+                cr.rectangle(legend_offset_x - legend_chr_height - 2 * spacing,
                              legend_offset_y + self.legend_swatch_offset_y,
-                             chr_height,
-                             chr_height)
+                             legend_chr_height,
+                             legend_chr_height)
                 cr.set_source_rgba(rgb_color[0], rgb_color[1], rgb_color[2], 1/chr_mult)
                 cr.fill_preserve()
                 cr.stroke()
 
                 layout = self.create_pango_layout(last_name)
                 cr.move_to(legend_offset_x, legend_offset_y)
-                self.__legendrects.append((legend_offset_x, legend_offset_y,len(assoc_name) * 6, chr_height))
+                self.__legendrects.append((legend_offset_x, legend_offset_y,len(assoc_name) * 6, legend_chr_height))
                 self.__associates.append(associate)
                 self.__assoc_handle.append(handle)
                 self.__legend_str.append(last_name)
                 cr.set_source_rgba(*fg_color)
-                legend_offset_y += chr_height + 2 * spacing
+                legend_offset_y += legend_chr_height + 2 * spacing
                 PangoCairo.show_layout(cr, layout)
 
         self.set_size_request(-1, bottom + height + 5)
