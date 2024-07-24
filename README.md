@@ -7,7 +7,7 @@ To develop your own addon:
 
 * https://gramps-project.org/wiki/index.php?title=Addons_development
 
-Note: The default git branch is `master`.  The master branch should only be used to develop addons that require features or changes found in the Gramps master branch.  Most of the time addons should be developed to work with the current released version of Gramps (`maintenance/gramps51` for the Gramps 5.2.x versions for example).
+Note: The default git branch is `master`.  The master branch should only be used to develop addons that require features or changes found in the Gramps master branch.  Most of the time addons should be developed to work with the current released version of Gramps (`maintenance/gramps52` for the Gramps 5.2.x versions for example).
 
 So use care when creating your addon to base off of the correct branch, and also to select the correct branch when creating a PR on Github.
 
