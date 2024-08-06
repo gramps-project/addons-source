@@ -1,7 +1,7 @@
 #
 # Gramps - a GTK+/GNOME based genealogy program
 #
-# Copyright (C) 2019 Matthias Kemmer
+# Copyright (C)    2019 Matthias Kemmer
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -17,7 +17,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
-
+"""A text report for media containing images, image data and notes."""
 
 # ----------------------------------------------------------------------------
 #
@@ -29,7 +29,7 @@ from math import floor
 
 # ----------------------------------------------------------------------------
 #
-# Gramps module
+# Gramps modules
 #
 # ----------------------------------------------------------------------------
 from gramps.gui.dialog import OkDialog
@@ -41,10 +41,12 @@ from gramps.gen.plug.menu import (MediaOption, NoteOption, BooleanOption,
 from gramps.gen.plug.docgen import (ParagraphStyle, FontStyle, TableStyle,
                                     TableCellStyle, PARA_ALIGN_CENTER,
                                     PARA_ALIGN_LEFT)
-
-# Old:
-#from gramps.gen.const import GRAMPS_LOCALE as glocale
-#_ = glocale.translation.gettext
+from gramps.gen.const import GRAMPS_LOCALE as glocale
+try:
+    _trans = glocale.get_addon_translator(__file__)
+except ValueError:
+    _trans = glocale.translation
+_ = _trans.gettext
 
 # New:
 #------------------------------------------------------------------------
@@ -66,6 +68,7 @@ _ = _trans.gettext
 # ----------------------------------------------------------------------------
 class MediaReport(Report):
     """Create a Media Report containing images, image data and notes."""
+
     def __init__(self, database, options, user):
         Report.__init__(self, database, options, user)
 
@@ -74,12 +77,13 @@ class MediaReport(Report):
         self._db = self.database
         self._opt = self.get_opt_dict()
         self.user = user
-        self.window = self.user.uistate.window
+        self.window = self.user.uistate.window if self.user.uistate else None
         self.filename = None
 
     def get_opt_dict(self):
         """
-        Get the values of the menu options
+        Get the values of the menu options.
+
         :return: dictionary e.g. {opt_name:value}
         """
         dct = dict()
@@ -100,39 +104,40 @@ class MediaReport(Report):
         dct = self._opt
         mid = dct["mid"]
         is_img = self.__media_is_img(mid)
+        msg1 = _("You have to select an image to generate this report.")
+        msg2 = _("You have to select a custom note or uncheck the option "
+                 "'include custom note' to generate this report.")
+        msg3 = _("This report only supports PDF as output file format.")
 
         # no media file selected
         if not mid or mid == "":
-            OkDialog(_("INFO"), _("You have to select an image to generate "
-                                  "this report."), parent=self.window)
+            if self.window:
+                OkDialog(_("INFO"), msg1, parent=self.window)
             return False
 
         # 'include custom note' checked, but no custom note selected
         if dct["incl_note"] and dct["note"] == "":
-            OkDialog(_("INFO"), _("You have to select a custom note or uncheck"
-                                  " the option 'include custom note' to "
-                                  "generate this report."), parent=self.window)
+            if self.window:
+                OkDialog(_("INFO"), msg2, parent=self.window)
             return False
 
         # incorrect media file, not an image
         if not is_img:
-            OkDialog(_("INFO"), _("You have to select an image to "
-                                  "generate this report."), parent=self.window)
+            if self.window:
+                OkDialog(_("INFO"), msg1, parent=self.window)
             return False
 
         # other file output than PDF (PDF is only one supported right now)
         if self.options.get_output()[-3:] != "pdf":
-            OkDialog(_("INFO"), _("This report only supports PDF as output "
-                                  "file format."), parent=self.window)
+            if self.window:
+                OkDialog(_("INFO"), msg3, parent=self.window)
             return False
 
         # if everything is valid
         return True
 
     def write_report(self):
-        """
-        Inherited method; called by Report() in _ReportDialog.py
-        """
+        """Inherited method; called by Report() in '_ReportDialog.py'."""
         # check if an image is selected and a note, if include note is checked
         # stop report generation if one is missing
         if not self.__valid_options():
@@ -260,7 +265,8 @@ class MediaReport(Report):
         self.doc.end_row()
         self.doc.end_table()
 
-    def __get_ref_list(self, media):
+    @staticmethod
+    def __get_ref_list(media):
         dct = dict()
         for category in media.get_referenced_handles():
             name, handle = category
@@ -318,14 +324,14 @@ class MediaReport(Report):
         return lst
 
     def write_heading(self, txt, heading="Heading"):
-        """Write a report heading"""
+        """Write a report heading."""
         self.doc.start_paragraph(heading)
         self.doc.write_text(txt)
         self.doc.end_paragraph()
 
     def write_media(self, path):
         """
-        Add the image to the report
+        Add the image to the report.
 
         :param path: gramps media path
         :type path: string
@@ -337,7 +343,8 @@ class MediaReport(Report):
             height = floor(self.doc.get_usable_height() *
                            self._opt["media_h"] * 0.009)
             # height is capped to 90% to save some space for report heading
-            self.doc.add_media(self.filename, 'center', width, height)
+            dpi = self._opt['dpi']
+            self.doc.add_media(self.filename, 'center', width, height, dpi)
         else:
             no_file = _('File does not exist')
             self.user.warn(_("Could not add photo to page"),
@@ -346,11 +353,12 @@ class MediaReport(Report):
 
     def write_person_reference(self, media):
         """
-        Add a table that list all referenced people in the image
+        Add a table that list all referenced people in the image.
 
         :param media: the media object used in this report
         :type media: :class Media: object
         """
+        dpi = self._opt['dpi']
         # Add some space by adding empty heading
         self.write_heading(" ")
         # Add person references
@@ -365,7 +373,8 @@ class MediaReport(Report):
 
             self.doc.start_row()
             self.doc.start_cell('cell')
-            self.doc.add_media(self.filename, 'center', 2.0, 2.0, crop=ref1[1])
+            self.doc.add_media(self.filename, 'center', 2.0, 2.0, dpi,
+                               crop=ref1[1])
             self.doc.end_cell()
 
             self.doc.start_cell('cell')
@@ -375,7 +384,8 @@ class MediaReport(Report):
             self.doc.end_cell()
 
             self.doc.start_cell('cell')
-            self.doc.add_media(self.filename, 'center', 2.0, 2.0, crop=ref2[1])
+            self.doc.add_media(self.filename, 'center', 2.0, 2.0, dpi,
+                               crop=ref2[1])
             self.doc.end_cell()
 
             self.doc.start_cell('cell')
@@ -388,7 +398,7 @@ class MediaReport(Report):
             pers_name = name_displayer.display(ref_lst[-1][0])
             self.doc.start_row()
             self.doc.start_cell('cell')
-            self.doc.add_media(self.filename, 'center', 2.0, 2.0,
+            self.doc.add_media(self.filename, 'center', 2.0, 2.0, dpi,
                                crop=ref_lst[-1][1])
             self.doc.end_cell()
 
@@ -417,17 +427,18 @@ class MediaReport(Report):
 #
 # ----------------------------------------------------------------------------
 class ReportOptions(MenuReportOptions):
-    """Report options for Media Report"""
+    """Report options for Media Report."""
+
     def __init__(self, name, dbase):
         MenuReportOptions.__init__(self, name, dbase)
 
     def add_menu_options(self, menu):
-        """Add the options to the report option menu"""
+        """Add the options to the report option menu."""
         head = StringOption(_("Heading"), "")
         menu.add_option(_("Report Options"), "head", head)
 
-        media = MediaOption(_("Media"))
-        media.set_help(_("Select a media file for this report"))
+        media = MediaOption(_("Image"))
+        media.set_help(_("Select an image file for this report"))
         menu.add_option(_("Report Options"), "mid", media)
 
         self.note = NoteOption(_("Custom note"))
@@ -443,26 +454,31 @@ class ReportOptions(MenuReportOptions):
         incl_pers.set_help(_("Referenced people will be included"))
         menu.add_option(_("Report Options"), "incl_pers", incl_pers)
 
-        incl_data = BooleanOption(_("Include media data"), False)
+        incl_data = BooleanOption(_("Include image data"), False)
         incl_data.set_help(_("Tags, notes and attributes will be included"))
         menu.add_option(_("Report Options"), "incl_data", incl_data)
 
-        media_w = NumberOption(_("Media width"), 100, 10, 100, 10)
-        media_w.set_help(_("Maximum media width in % of available "
+        media_w = NumberOption(_("Image width"), 100, 10, 100, 10)
+        media_w.set_help(_("Maximum image width in % of available "
                            "page width."))
         menu.add_option(_("Report Options"), "media_w", media_w)
 
-        media_h = NumberOption(_("Media height"), 100, 10, 100, 10)
-        media_h.set_help(_("Maximum media height in % of available page "
+        media_h = NumberOption(_("Image height"), 100, 10, 100, 10)
+        media_h.set_help(_("Maximum image height in % of available page "
                            "height."))
         menu.add_option(_("Report Options"), "media_h", media_h)
+
+        media_dpi = NumberOption(_("Image DPI"), 72, 1, 1000)
+        media_dpi.set_help(_("Set the DPI value for the images."))
+        menu.add_option(_("Report Options"), "dpi", media_dpi)
 
     def __update_custom_note_opt(self):
         self.note.set_available(False)
         if self.incl_note.get_value():
             self.note.set_available(True)
 
-    def make_default_style(self, default_style):
+    @staticmethod
+    def make_default_style(default_style):
         """Define the default styling."""
         para = ParagraphStyle()
         default_style.add_paragraph_style("Default", para)
