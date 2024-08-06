@@ -721,8 +721,8 @@ def tag_merge(old_tags, tag_list):
     styles = {}  # key:name  value:quad
     outstyles = {}  # key:tuple(name, value), value:list(ranges)
     tags = []
-    for (prior, tags) in enumerate((old_tags, tag_list)):
-        for tag in tags:
+    for (prior, tags_) in enumerate((old_tags, tag_list)):
+        for tag in tags_:
             if tag.name.value not in styles:
                 styles[tag.name.value] = []
             out_range = outstyles.get((tag.name.value, tag.value))
