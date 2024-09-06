@@ -2,7 +2,7 @@
 # Gramps - a GTK+/GNOME based genealogy program
 #
 # Copyright (C) 2020  Nick Hall
-# Copyright (C) 2020-2022  Gary Griffin
+# Copyright (C) 2020-2024  Gary Griffin
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -57,13 +57,15 @@ _ = glocale.translation.gettext
 CONFIG = config.register_manager('DNASegmentMap')
 CONFIG.register('map.chromosome-build', 37)
 CONFIG.register('map.legend-swatch-offset-y', 0)
-CONFIG.register('map.show_associate_id',1)
-CONFIG.register('map.maternal-background', (0.926, 0.825, 0.92, 1.0))
-CONFIG.register('map.paternal-background', (0.833, 0.845, 0.92, 1.0))
-CONFIG.register('map.legend-single-chromosome-y-offset', 25)
-CONFIG.register('map.show-centromere',0)
+CONFIG.register('map.show_associate_id',0)
+CONFIG.register('map.maternal-background', (0.996, 0.8, 0.941, 1.0))
+CONFIG.register('map.paternal-background', (0.722, 0.808, 0.902, 1.0))
+CONFIG.register('map.legend-single-chromosome-y-offset', 0)
+CONFIG.register('map.show-centromere',1)
 CONFIG.register('map.legend-char-height',12)
-CONFIG.register('map.include-citation-notes',1)
+CONFIG.register('map.include-citation-notes',0)
+CONFIG.register('map.chromosome-x-scale',1.4)
+CONFIG.register('map.chromosome-y-scale',1)
 
 CONFIG.init()
 
@@ -128,10 +130,13 @@ class DNASegmentMap(Gramplet):
                     if data[0][0] <= 0 : # Unrelated
                         side = 'U'
                     elif data[0][0] == 1: #parent / child
-                        if self.dbstate.db.get_person_from_handle(data[0][1]).gender == 0:
-                            side = 'M'
+                        if self.dbstate.db.get_person_from_handle(data[0][1]).get_gramps_id() == active.get_gramps_id():
+                            side = 'U'
                         else:
-                            side = 'P'
+                            if self.dbstate.db.get_person_from_handle(data[0][1]).gender == 0:
+                                side = 'M'
+                            else:
+                                side = 'P'
                     elif (len(data) > 1 and data[0][0] == data[1][0] and data[0][2][0] != data[1][2][0]): #shares both parents
                         side = 'U'
                     elif (len(data[0][2]) == 0): # association is descendant of active
@@ -249,6 +254,8 @@ class SegmentMap(Gtk.DrawingArea):
         self.legend_single_chromosome = self._config.get('map.legend-single-chromosome-y-offset')
         self.show_centromere = self._config.get('map.show-centromere')
         self.legend_char_height = self._config.get('map.legend-char-height')
+        self.x_scale = self._config.get('map.chromosome-x-scale')
+        self.y_scale = self._config.get('map.chromosome-y-scale')
         self._config.save()
         self.chromosomesThirtySeven = (
             ('1', 249250621),
@@ -473,9 +480,10 @@ class SegmentMap(Gtk.DrawingArea):
         chr_height = 12
         spacing = 2
         self.maximum = 250000000
+        self.maximum *= self.x_scale
         if draw_single_chromosome :
             for i, label in enumerate (self.chromosomes):
-                if label[0] == current_chromosome: self.maximum = label[1]
+                if label[0] == current_chromosome: self.maximum = label[1] * self.x_scale
 # Chromosome labels
         self.__chrrects = []
         label_width = 0
@@ -502,42 +510,43 @@ class SegmentMap(Gtk.DrawingArea):
         chart_width = (allocation.width - label_width) * 0.95
 
         # Border
-        cr.move_to(0, offset)
-        cr.line_to(allocation.width, offset)
-        cr.stroke()
+#        cr.move_to(0, offset)
+#        cr.line_to(allocation.width, offset)
+#        cr.stroke()
 
         bottom = len(self.chromosomes) * 2 * (chr_height + spacing) + offset
-        cr.move_to(0, bottom)
-        cr.line_to(allocation.width, bottom)
-        cr.stroke()
+#        cr.move_to(0, bottom)
+#        cr.line_to(allocation.width, bottom)
+#        cr.stroke()
 
-        cr.move_to(label_width, 0)
-        cr.line_to(label_width, bottom)
-        cr.stroke()
+#        cr.move_to(label_width, 0)
+#        cr.line_to(label_width, bottom)
+#        cr.stroke()
 
-        cr.move_to(allocation.width, 0)
-        cr.line_to(allocation.width, bottom)
-        cr.stroke()
+#        cr.move_to(allocation.width, 0)
+#        cr.line_to(allocation.width, bottom)
+#        cr.stroke()
 
         # Ticks and grid lines
-        tick_step, maximum = 50000000, 250000000
-        count = 0
-        while count <= self.maximum:
-            # draw tick
-            tick_pos = label_width + chart_width * count / self.maximum
-            cr.move_to(tick_pos, bottom)
-            cr.line_to(tick_pos, bottom + 5)
-            cr.stroke()
-            # draw grid line
-            if self.grid_lines:
-                cr.set_dash([1, 2])
+        if not draw_single_chromosome :
+            tick_step, maximum = 50000000 , 250000000 * self.x_scale
+            count = 0
+            while count <= 250000000:
+                # draw tick
+                tick_pos = label_width + chart_width * count / self.maximum
                 cr.move_to(tick_pos, bottom)
-                cr.line_to(tick_pos, (2 * spacing) + offset)
+                cr.line_to(tick_pos, bottom + 5)
                 cr.stroke()
-                cr.set_dash([])
-            count += tick_step
+                # draw grid line
+                if self.grid_lines:
+                    cr.set_dash([1, 2])
+                    cr.move_to(tick_pos, bottom)
+                    cr.line_to(tick_pos, (2 * spacing) + offset)
+                    cr.stroke()
+                    cr.set_dash([])
+                count += tick_step
 
-        offset += spacing
+            offset += spacing
 
         # Chromosomes background
         if not draw_single_chromosome:
@@ -550,7 +559,7 @@ class SegmentMap(Gtk.DrawingArea):
 # draw paternal
                 cr.rectangle(label_width,
                          i * 2 * (chr_height + spacing) + offset,
-                         chart_width * self.centromere[i][1] / self.maximum,
+                         chart_width * self.centromere[i][1] / self.maximum ,
                          chr_height)
                 cr.rectangle(label_width+chart_width * centloc / self.maximum,
                          i * 2 * (chr_height + spacing) + offset,
@@ -624,9 +633,9 @@ class SegmentMap(Gtk.DrawingArea):
 
         if draw_single_chromosome:
             legend_offset_y = self.legend_single_chromosome * (chr_height + spacing) + offset
-            legend_offset_x = allocation.width * 0.10
+            legend_offset_x = allocation.width * 0.75
         else:
-            legend_offset_y = 10 * (chr_height + spacing) + offset
+            legend_offset_y = 0 * (chr_height + spacing) + offset
             legend_offset_x = allocation.width * 0.75
 #        legend_offset_x = allocation.width * 0.75
         last_name = ''
@@ -638,8 +647,9 @@ class SegmentMap(Gtk.DrawingArea):
         legend_chr_height = self.legend_char_height
         chromo_count = -1
         row_num = 0
-        maximum = self.maximum
+        legend_count = 0
         if draw_single_chromosome:
+          maximum = self.maximum 
           for chromo, start, stop, side, cms, snp, assoc_name, rgb_color, associate, handle, note in self.segments:
             chromo_count += 1
             try:
@@ -660,9 +670,9 @@ class SegmentMap(Gtk.DrawingArea):
                         row_num * 2 * (chr_height + spacing) + offset, 
                         chart_width * self.centromere[this_chromo][1] / maximum, 
                         chr_height)
-                cr.rectangle(label_width + chart_width * centloc / maximum, 
+                cr.rectangle(label_width + chart_width * centloc / maximum , 
                         row_num * 2 * (chr_height + spacing) + offset, 
-                        chart_width * (maximum - centloc) / maximum, 
+                        chart_width * (maximum/ self.x_scale - centloc) / maximum, 
                         chr_height)
                 if self.show_centromere:
                     cr.move_to(label_width + chart_width * self.centromere[this_chromo][1] / self.maximum, 
@@ -689,7 +699,7 @@ class SegmentMap(Gtk.DrawingArea):
                         chr_height)
                 cr.rectangle(label_width+ chart_width * centloc / maximum, 
                         row_num * 2 * (chr_height + spacing) + offset + chr_height, 
-                        chart_width* (maximum - centloc) / maximum, 
+                        chart_width* (maximum/ self.x_scale - centloc) / maximum, 
                         chr_height)
                 if self.show_centromere:
                     cr.move_to(label_width + chart_width * self.centromere[this_chromo][1] / self.maximum, 
@@ -758,7 +768,7 @@ class SegmentMap(Gtk.DrawingArea):
 # Legend entry
               if last_name != assoc_name:
                 last_name = assoc_name
-
+                print("Single ",legend_count)
                 cr.rectangle(legend_offset_x - legend_chr_height - 2 * spacing,
                              legend_offset_y,
                              legend_chr_height,
@@ -777,6 +787,8 @@ class SegmentMap(Gtk.DrawingArea):
                 legend_offset_y += legend_chr_height + 2 * spacing
                 PangoCairo.show_layout(cr, layout)
         else: # Drawing all chromosome segments
+          row_num = 24
+          maximum = self.maximum 
           for chromo, start, stop, side, cms, snp, assoc_name, rgb_color, associate, handle, note in self.segments:
             chromo_count += 1
             try:
@@ -806,6 +818,7 @@ class SegmentMap(Gtk.DrawingArea):
                 self.__notes.append(note)
 # Legend entry
             if last_name != assoc_name:
+                legend_count += 1
                 last_name = assoc_name
                 cr.rectangle(legend_offset_x - legend_chr_height - 2 * spacing,
                              legend_offset_y + self.legend_swatch_offset_y,
@@ -824,8 +837,8 @@ class SegmentMap(Gtk.DrawingArea):
                 cr.set_source_rgba(*fg_color)
                 legend_offset_y += legend_chr_height + 2 * spacing
                 PangoCairo.show_layout(cr, layout)
-
-        self.set_size_request(-1, bottom + height + 5)
+        y_scale = max(1,row_num/20, self.y_scale, legend_count / 30 )  # rescale Y to max of user-specified and number of rows
+        self.set_size_request(-1, y_scale * bottom + height + 5)
 
     def on_pointer_motion(self, _dummy, event):
         """
