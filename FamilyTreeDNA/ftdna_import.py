@@ -251,66 +251,68 @@ class FamilyTreeDNA(Gramplet):
         for match in self.__FFdata :
             gid = match[3][len(self.note_string):]
             match_person = self.dbstate.db.get_person_from_gramps_id(gid)
-            match_handle = match_person.get_handle()
-            note_txt = ""
-            new_match = True
-            for seg in self.__Segment :
-                if match[0] == seg[0] : 
-                    need_note = True
-                    if new_match : 
-                        update_needed = True
-                        for existing_assoc in active_person.get_person_ref_list() :
-                            if existing_assoc.get_relation() == rel: 
-                                existing_person = self.dbstate.db.get_person_from_handle(existing_assoc.ref)
-                                if match_handle == existing_person.get_handle() :
-                                    update_needed = False
-                        if update_needed : 
-                            personRef = PersonRef()
-                            personRef.set_reference_handle(match_handle)
-                            personRef.set_relation(rel)
-                            with DbTxn (_('Add %s DNA Association' ) % _nd.display(active_person), self.dbstate.db) as self.trans:
-                                active_person.add_person_ref(personRef)
-                                self.dbstate.db.commit_person(active_person, self.trans)
-                            new_match = False
-                            count += 1
-                        else:
-                            print("DNA Association already exists for {} to {}".format(_nd.display(active_person), _nd.display(match_person)))
-                            need_note = False
-                    if need_note: 
-                        note_txt += seg[1]+","+seg[2]+","+seg[3]+","+seg[4]+","+seg[5]+"\n"
-            if note_txt :
-                new_note = Note()
-                new_note.set(note_txt)
-                new_note.set_type(NoteType.ASSOCIATION)
-                with DbTxn (_('Create Note for %s DNA Association' ) % _nd.display(match_person), self.dbstate.db) as self.trans:
-                    self.dbstate.db.add_note(new_note, self.trans)
-                with DbTxn (_('Add Note to %s DNA Association' ) % _nd.display(match_person), self.dbstate.db) as self.trans:
-                    personRef.add_note(new_note.handle)
-                    self.dbstate.db.commit_person(active_person, self.trans)
-                if make_cit :
-                    citID = self.CitationID.get_text()
-                    if citID : 
-                        cit = self.dbstate.db.get_citation_from_gramps_id(gid)
-                    else : 
-                        cit_source = Source()
-                        cit_source.set_title("Family Tree DNA")
-                        cit_source.set_abbreviation("FTDNA")
-                        cit_source.set_author("Family Tree")
-                        cit_source.set_publication_info("https://www.familytreedna.com")
-                        with DbTxn (_('Create Source Citation for %s DNA Association' ) % _nd.display(match_person), self.dbstate.db) as self.trans:
-                           self.dbstate.db.add_source(cit_source, self.trans)
-                           self.dbstate.db.commit_source(cit_source, self.trans)
-                        cit = Citation()
-                        cit.set_reference_handle(cit_source.handle)
-                        with DbTxn (_('Create Citation for %s DNA Association' ) % _nd.display(match_person), self.dbstate.db) as self.trans:
-                           self.dbstate.db.add_citation(cit, self.trans)
-                           self.dbstate.db.commit_citation(cit, self.trans)
-                make_cit = False
-                with DbTxn (_('Add Citation to %s DNA Association' ) % _nd.display(match_person), self.dbstate.db) as self.trans:
-                    personRef.add_citation(cit.handle)
-                    self.dbstate.db.commit_person(active_person, self.trans)
+            if match_person : 
+                match_handle = match_person.get_handle()
+                note_txt = ""
+                new_match = True
+                for seg in self.__Segment :
+                    if match[0] == seg[0] : 
+                        need_note = True
+                        if new_match : 
+                            update_needed = True
+                            for existing_assoc in active_person.get_person_ref_list() :
+                                if existing_assoc.get_relation() == rel: 
+                                    existing_person = self.dbstate.db.get_person_from_handle(existing_assoc.ref)
+                                    if match_handle == existing_person.get_handle() :
+                                        update_needed = False
+                            if update_needed : 
+                                personRef = PersonRef()
+                                personRef.set_reference_handle(match_handle)
+                                personRef.set_relation(rel)
+                                with DbTxn (_('Add %s DNA Association' ) % _nd.display(active_person), self.dbstate.db) as self.trans:
+                                    active_person.add_person_ref(personRef)
+                                    self.dbstate.db.commit_person(active_person, self.trans)
+                                new_match = False
+                                count += 1
+                            else:
+                                print("DNA Association already exists for {} to {}".format(_nd.display(active_person), _nd.display(match_person)))
+                                need_note = False
+                        if need_note: 
+                            note_txt += seg[1]+","+seg[2]+","+seg[3]+","+seg[4]+","+seg[5]+"\n"
+                if note_txt :
+                    new_note = Note()
+                    new_note.set(note_txt)
+                    new_note.set_type(NoteType.ASSOCIATION)
+                    with DbTxn (_('Create Note for %s DNA Association' ) % _nd.display(match_person), self.dbstate.db) as self.trans:
+                        self.dbstate.db.add_note(new_note, self.trans)
+                    with DbTxn (_('Add Note to %s DNA Association' ) % _nd.display(match_person), self.dbstate.db) as self.trans:
+                        personRef.add_note(new_note.handle)
+                        self.dbstate.db.commit_person(active_person, self.trans)
+                    if make_cit :
+                        citID = self.CitationID.get_text()
+                        if citID : 
+                            cit = self.dbstate.db.get_citation_from_gramps_id(gid)
+                        else : 
+                            cit_source = Source()
+                            cit_source.set_title("Family Tree DNA")
+                            cit_source.set_abbreviation("FTDNA")
+                            cit_source.set_author("Family Tree")
+                            cit_source.set_publication_info("https://www.familytreedna.com")
+                            with DbTxn (_('Create Source Citation for %s DNA Association' ) % _nd.display(match_person), self.dbstate.db) as self.trans:
+                               self.dbstate.db.add_source(cit_source, self.trans)
+                               self.dbstate.db.commit_source(cit_source, self.trans)
+                            cit = Citation()
+                            cit.set_reference_handle(cit_source.handle)
+                            with DbTxn (_('Create Citation for %s DNA Association' ) % _nd.display(match_person), self.dbstate.db) as self.trans:
+                               self.dbstate.db.add_citation(cit, self.trans)
+                               self.dbstate.db.commit_citation(cit, self.trans)
+                    make_cit = False
+                    with DbTxn (_('Add Citation to %s DNA Association' ) % _nd.display(match_person), self.dbstate.db) as self.trans:
+                        personRef.add_citation(cit.handle)
+                        self.dbstate.db.commit_person(active_person, self.trans)
+            else : 
+                print("Invalid match ID {}".format(gid))
         return count
 
     def main(self):
         pass
-        
