@@ -13,6 +13,6 @@ register(GRAMPLET,
          detached_height = 480,
          expand = True,
          gramplet_title = _("FamilyTree DNA"),
-         help_url="FamilyTree DNA Gramplet",
+         help_url="Addon:FamilyTree_DNA",
          include_in_listing = True,
         )
