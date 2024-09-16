@@ -81,10 +81,10 @@ class FamilyTreeDNA(Gramplet):
         FamilyFinder_label = Gtk.Label(_('Enter FTDNA Family Finder Filename:'))
         FamilyFinder_label.set_valign(Gtk.Align.START)
 
-        self.FamilyFinderName = Gtk.FileChooserButton()
+        self.FamilyFinderName = Gtk.FileChooserButton(title="FTDNA Family Finder Filename")
 
         Segment_label = Gtk.Label(_('Enter FTDNA Chromosome Segment Filename:'))
-        self.SegmentName = Gtk.FileChooserButton()
+        self.SegmentName = Gtk.FileChooserButton(title="FTDNA Chromosome Segment Filename")
 
         Haplo_label = Gtk.Label(_('Import Haplogroups'))
         self.ImportHaplo = Gtk.CheckButton()
