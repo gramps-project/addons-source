@@ -226,16 +226,23 @@ class FamilyTreeDNA(Gramplet):
     def __process_haplogroup(self) :
         mt_count = 0
         y_count = 0
-        for i in self.__FFdata:
-            gid = i[3][len(self.note_string):]
+        for match in self.__FFdata:
+            substring = match[3].split()
+            start_pos = len(self.note_string)
+            stop_pos = len(match[3])
+            for i in substring :
+                if self.note_string in i :
+                    start_pos = i.find(self.note_string) + len(self.note_string)
+                    stop_pos = len(i)
+                    gid = i[start_pos:stop_pos]
             person = self.dbstate.db.get_person_from_gramps_id(gid)
             if person : 
-                if i[1] : 
-                    y_count += self.__process_specific_haplogroup(person, i[1],"Y-DNA")
-                if i[2] : 
-                    mt_count += self.__process_specific_haplogroup(person, i[2],"mtDNA")
+                if match[1] : 
+                    y_count += self.__process_specific_haplogroup(person, match[1],"Y-DNA")
+                if match[2] : 
+                    mt_count += self.__process_specific_haplogroup(person, match[2],"mtDNA")
             else:
-                print("No person found for ID {}".format(i[3]))
+                print("No person found for ID {}".format(match[3]))
                 self.msg[0] += 1
         count = mt_count + y_count
         return count
@@ -266,7 +273,14 @@ class FamilyTreeDNA(Gramplet):
         active_handle = self.get_active('Person')
         active_person = self.dbstate.db.get_person_from_handle(active_handle)
         for match in self.__FFdata :
-            gid = match[3][len(self.note_string):]
+            substring = match[3].split()
+            start_pos = len(self.note_string)
+            stop_pos = len(match[3])
+            for i in substring :
+                if self.note_string in i :
+                    start_pos = i.find(self.note_string) + len(self.note_string)
+                    stop_pos = len(i)
+                    gid = i[start_pos:stop_pos]
             match_person = self.dbstate.db.get_person_from_gramps_id(gid)
             if match_person : 
                 match_handle = match_person.get_handle()
