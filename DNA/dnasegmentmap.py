@@ -872,6 +872,7 @@ class SegmentMap(Gtk.DrawingArea):
                 if len(common_an) > 0:
                     common = common_an[0]
                     length = len(common)
+                    commontext = ""
                     if length == 1:
                         p1 = self.dbstate.db.get_person_from_handle(common[0])
                         if common[0] in [self.segments[active][8].handle, self.active.handle]:
