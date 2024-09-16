@@ -140,6 +140,8 @@ class FamilyTreeDNA(Gramplet):
             return
         active = self.dbstate.db.get_person_from_handle(active_handle)
         count = 0
+        self.msg = [0,0,0,0,0]
+        warn_str = ""
         haplo_count = 0
         uistate = self.uistate
 
@@ -157,12 +159,25 @@ class FamilyTreeDNA(Gramplet):
             if ImportHaplo : haplo_count = self.__process_haplogroup()
             count = self.__add_associations()
 #
+# Summarize Issues
+#
+        if self.msg[0] : 
+            warn_str += str(self.msg[0])+" GrampsID error extracting haplogroup" + "\n"
+        if self.msg[1] :
+            warn_str += str(self.msg[1])+" Haplogroup already set"  + "\n"
+        if self.msg[2] :
+            warn_str += str(self.msg[2])+" DNA Association already exists" + "\n"
+        if self.msg[3] :
+            warn_str += str(self.msg[3]) + " GrampsID error extracting segment info" + "\n"
+        if self.msg[4] :
+            warn_str += " Invalid Citation ID - generated Citation"
+#
 # Report Results
 #
         if uistate:
             if count + haplo_count > 0:
                 OkDialog(_("FamilyTree DNA Import"),
-                         _("{} Associations with DNA data created. {} haplogroup Attributes created".format(count, haplo_count)),
+                         _("{} Associations with DNA data created. {} haplogroup Attributes created \n".format(count, haplo_count))+warn_str,
                          parent = uistate.window)
             elif FamilyFinderName == None:
                 OkDialog(_("FamilyTree DNA Import"),
@@ -221,6 +236,7 @@ class FamilyTreeDNA(Gramplet):
                     mt_count += self.__process_specific_haplogroup(person, i[2],"mtDNA")
             else:
                 print("No person found for ID {}".format(i[3]))
+                self.msg[0] += 1
         count = mt_count + y_count
         return count
 
@@ -233,6 +249,7 @@ class FamilyTreeDNA(Gramplet):
             if attr_type == i.get_type() : attr_found = True
         if attr_found : 
             print("{} attribute already present - not adding to {}".format(attr_type, _nd.display(person)))
+            self.msg[1] += 1
         else:
             att.set_type(attr_type)
             att.set_value(attr_val)
@@ -290,9 +307,12 @@ class FamilyTreeDNA(Gramplet):
                         self.dbstate.db.commit_person(active_person, self.trans)
                     if make_cit :
                         citID = self.CitationID.get_text()
+                        cit = None
                         if citID : 
                             cit = self.dbstate.db.get_citation_from_gramps_id(gid)
-                        else : 
+                            if not cit : 
+                                self.msg[4] = 1
+                        if not cit :
                             cit_source = Source()
                             cit_source.set_title("Family Tree DNA")
                             cit_source.set_abbreviation("FTDNA")
@@ -312,6 +332,7 @@ class FamilyTreeDNA(Gramplet):
                         self.dbstate.db.commit_person(active_person, self.trans)
             else : 
                 print("Invalid match ID {}".format(gid))
+                self.msg[3] += 1
         return count
 
     def main(self):
