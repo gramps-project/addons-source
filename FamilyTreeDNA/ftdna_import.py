@@ -61,6 +61,7 @@ _ = _trans.gettext
 #-------------------------------------------------------------------------
 
 WIKI_PAGE = 'Addon:FamilyTree_DNA'
+WARN_MODULE = 'FamilyTreeDNA : '
 
 class FamilyFinder(tool.Tool,ManagedWindow):
     """
@@ -143,7 +144,10 @@ class FamilyFinder(tool.Tool,ManagedWindow):
         active_handle = self.uistate.get_active('Person')
         if active_handle == None:
             return
-        active = self.dbstate.db.get_person_from_handle(active_handle)
+        try:
+            active = self.dbstate.db.get_person_from_handle(active_handle)
+        except:
+            return
         self.Active_label = Gtk.Label(_('Active Person : ') + _nd.display(active))
         
         vbox.pack_start(self.Active_label, False, True, 0)
@@ -282,7 +286,7 @@ class FamilyFinder(tool.Tool,ManagedWindow):
                 if match[2] : 
                     mt_count += self.__process_specific_haplogroup(person, match[2],"mtDNA")
             else:
-                print("No person found for ID {}".format(match[3]))
+                print(WARN_MODULE, "No person found for FamilyFinder note {} ".format(match[3][0:30]))
                 self.msg[0] += 1
         count = mt_count + y_count
         return count
@@ -295,7 +299,7 @@ class FamilyFinder(tool.Tool,ManagedWindow):
         for i in attr_list :
             if attr_type == i.get_type() : attr_found = True
         if attr_found : 
-            print("{} attribute already present - not adding to {}".format(attr_type, _nd.display(person)))
+            print(WARN_MODULE, "{} attribute already present - not adding to {}".format(attr_type, _nd.display(person)))
             self.msg[1] += 1
         else:
             att.set_type(attr_type)
@@ -326,8 +330,8 @@ class FamilyFinder(tool.Tool,ManagedWindow):
                 match_handle = match_person.get_handle()
                 note_txt = ""
                 new_match = True
+                assoc_needed = True
                 for seg in self.__Segment :
-                    personRef = None
                     if match[0] == seg[0] : 
                         need_note = True
                         if new_match : 
@@ -337,6 +341,8 @@ class FamilyFinder(tool.Tool,ManagedWindow):
                                     existing_person = self.dbstate.db.get_person_from_handle(existing_assoc.ref)
                                     if match_handle == existing_person.get_handle() :
                                         update_needed = False
+                                        need_note = False
+                                        note_txt = ""
                             if update_needed : 
                                 personRef = PersonRef()
                                 personRef.set_reference_handle(match_handle)
@@ -347,12 +353,14 @@ class FamilyFinder(tool.Tool,ManagedWindow):
                                 new_match = False
                                 count += 1
                             else:
-                                print("DNA Association already exists for {} to {}".format(_nd.display(active_person), _nd.display(match_person)))
+                                if assoc_needed : 
+                                    print(WARN_MODULE, "DNA Association already exists for {} to {}".format(_nd.display(active_person), _nd.display(match_person)))
+                                    assoc_needed = False
                                 need_note = False
-                                new_match = False 
+                                note_txt = ""
                         if need_note: 
                             note_txt += seg[1]+","+seg[2]+","+seg[3]+","+seg[4]+","+seg[5]+"\n"
-                if note_txt and personRef :
+                if note_txt :
                     new_note = Note()
                     new_note.set(note_txt)
                     new_note.set_type(NoteType.ASSOCIATION)
@@ -387,7 +395,7 @@ class FamilyFinder(tool.Tool,ManagedWindow):
                         personRef.add_citation(cit.handle)
                         self.dbstate.db.commit_person(active_person, self.trans)
             else : 
-                print("Invalid match ID {}".format(gid))
+                print(WARN_MODULE, "Gramps ID in FamilyFinder note {} not valid".format(gid))
                 self.msg[3] += 1
         return count
 
