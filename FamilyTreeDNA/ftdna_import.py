@@ -37,9 +37,11 @@ from gi.repository import GObject
 from gramps.gui.plug import tool
 from gramps.gen.display.name import displayer as _nd
 from gramps.gen.plug import Gramplet
+from gramps.gui.managedwindow import ManagedWindow
 from gramps.gen.db import DbTxn
 from gramps.gen.lib import Attribute, Note, Citation, PersonRef, NoteType, Source
 from gramps.gui.dialog import OkDialog
+from gramps.gui.display import display_help, display_url
 import csv
 import re
 # -------------------------------------------------------------------------
@@ -58,19 +60,39 @@ _ = _trans.gettext
 #
 #-------------------------------------------------------------------------
 
-class FamilyTreeDNA(Gramplet):
+WIKI_PAGE = 'Addon:FamilyTree_DNA'
+
+class FamilyFinder(tool.Tool,ManagedWindow):
     """
     Import DNA data from Family Tree
     """
-    def init(self):
+    def __init__(self, dbstate, user, options_class, name, callback=None):
+        uistate = user.uistate
+        
+        tool.Tool.__init__(self, dbstate, options_class, name)
+
+        self.window_name = _('Family Finder Tool')
+        ManagedWindow.__init__(self, uistate, [], self.__class__)
+
+        self.dbstate = dbstate
+        self.db = dbstate.db
         """
         Initialise the gramplet.
         """
+        
+        window = Gtk.Window()
+        
         root = self.__create_gui()
-        self.gui.get_container_widget().remove(self.gui.textview)
-        self.gui.get_container_widget().add_with_viewport(root)
+#        self.gui.get_container_widget().remove(self.gui.textview)
+#        self.gui.get_container_widget().add_with_viewport(root)
         root.show_all()
 
+        window.add(root)
+        window.set_size_request(500, 300)
+        window.set_position(Gtk.WindowPosition.CENTER_ON_PARENT)
+        self.set_window(window, None, self.window_name)
+        self.show()
+        
     def __create_gui(self):
         """
         Create and display the GUI components of the gramplet.
@@ -89,12 +111,6 @@ class FamilyTreeDNA(Gramplet):
         Haplo_label = Gtk.Label(_('Import Haplogroups'))
         self.ImportHaplo = Gtk.CheckButton()
 
-        button_box = Gtk.ButtonBox()
-        button_box.set_layout(Gtk.ButtonBoxStyle.START)
-
-        get = Gtk.Button(label=_('Import'))
-        get.connect("clicked", self.__import_ftdna_data)
-        button_box.add(get)
 
         vbox2 = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
         vbox2.pack_start(FamilyFinder_label, False, True, 20)
@@ -124,21 +140,45 @@ class FamilyTreeDNA(Gramplet):
         vbox6.pack_start(CitationString_label, False, True, 20)
         vbox6.pack_start(self.CitationID, False, True, 10) 
         
+        active_handle = self.uistate.get_active('Person')
+        if active_handle == None:
+            return
+        active = self.dbstate.db.get_person_from_handle(active_handle)
+        self.Active_label = Gtk.Label(_('Active Person : ') + _nd.display(active))
+        
+        vbox.pack_start(self.Active_label, False, True, 0)
         vbox.pack_start(vbox2, False, True, 0)
         vbox.pack_start(vbox3, False, True, 0)
         vbox.pack_start(vbox4, False, True, 0)
         vbox.pack_start(vbox5, False, True, 0)
         vbox.pack_start(vbox6, False, True, 0)
+        
+        
+        button_box = Gtk.HButtonBox()
+        button_box.set_layout(Gtk.ButtonBoxStyle.SPREAD)
+
+        get = Gtk.Button(label=_('Import'))
+        get.set_tooltip_text(_('Import data from Family Finder files'))
+        get.connect("clicked", self.__import_ftdna_data)
+        
+        close = Gtk.Button(_('Close'))
+        close.set_tooltip_text(_('Close the Family Finder Tool'))
+        close.connect('clicked', self.close)
+        
+        help = Gtk.Button(_('Help'))
+        help.set_tooltip_text(_('Read Help manual'))
+        help.connect('clicked', self.__web_help)
+        
+        button_box.add(help)
+        button_box.add(get)
+        button_box.add(close)
+        button_box.set_child_non_homogeneous(help, True)
         vbox.pack_start(button_box, False, True, 0)
 
         return vbox
- 
+
     def __import_ftdna_data(self, obj):
-        active_handle = self.get_active('Person')
-        if active_handle == None:
-            print("No Active Person. Cannot import FTDNA data")
-            return
-        active = self.dbstate.db.get_person_from_handle(active_handle)
+
         count = 0
         self.msg = [0,0,0,0,0]
         warn_str = ""
@@ -270,7 +310,7 @@ class FamilyTreeDNA(Gramplet):
         count = 0
         make_cit = True
         rel = "DNA"
-        active_handle = self.get_active('Person')
+        active_handle = self.uistate.get_active('Person')
         active_person = self.dbstate.db.get_person_from_handle(active_handle)
         for match in self.__FFdata :
             substring = match[3].split()
@@ -287,6 +327,7 @@ class FamilyTreeDNA(Gramplet):
                 note_txt = ""
                 new_match = True
                 for seg in self.__Segment :
+                    personRef = None
                     if match[0] == seg[0] : 
                         need_note = True
                         if new_match : 
@@ -308,9 +349,10 @@ class FamilyTreeDNA(Gramplet):
                             else:
                                 print("DNA Association already exists for {} to {}".format(_nd.display(active_person), _nd.display(match_person)))
                                 need_note = False
+                                new_match = False 
                         if need_note: 
                             note_txt += seg[1]+","+seg[2]+","+seg[3]+","+seg[4]+","+seg[5]+"\n"
-                if note_txt :
+                if note_txt and personRef :
                     new_note = Note()
                     new_note.set(note_txt)
                     new_note.set_type(NoteType.ASSOCIATION)
@@ -323,7 +365,7 @@ class FamilyTreeDNA(Gramplet):
                         citID = self.CitationID.get_text()
                         cit = None
                         if citID : 
-                            cit = self.dbstate.db.get_citation_from_gramps_id(gid)
+                            cit = self.dbstate.db.get_citation_from_gramps_id(citID)
                             if not cit : 
                                 self.msg[4] = 1
                         if not cit :
@@ -349,5 +391,16 @@ class FamilyTreeDNA(Gramplet):
                 self.msg[3] += 1
         return count
 
+    def __web_help(self, obj):
+
+        display_help(WIKI_PAGE)
+
     def main(self):
         pass
+class FamilyFinderOptions(tool.ToolOptions):
+    """
+    Defines options and provides handling interface.
+    """
+    def __init__(self, name, person_id=None):
+        """ Initialize the options class """
+        tool.ToolOptions.__init__(self, name, person_id)
