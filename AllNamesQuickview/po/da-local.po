@@ -1,0 +1,43 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2024-09-22 16:06+0200\n"
+"Last-Translator: \n"
+"Language-Team: Kaj Mikkelsen\n"
+"Language: da\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: AllNamesQuickview/AllNames.gpr.py:3 AllNamesQuickview/AllNames.py:51
+msgid "All Names of All People"
+msgstr "Alle navne på alle personer"
+
+#: AllNamesQuickview/AllNames.gpr.py:4
+msgid "Display all names of all people"
+msgstr "Vis alle navne for alle personer"
+
+#: AllNamesQuickview/AllNames.py:54
+msgid "Name"
+msgstr "Navn"
+
+#: AllNamesQuickview/AllNames.py:54
+msgid "Primary Name"
+msgstr "Primære navn"
+
+#: AllNamesQuickview/AllNames.py:54
+msgid "Name Type"
+msgstr "Navn type"
+
+#: AllNamesQuickview/AllNames.py:71
+#, python-format
+msgid "Total names %d"
+msgstr "Antal navne i alt %d"
