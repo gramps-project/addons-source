@@ -1,0 +1,139 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Kaj Mikkelsen <kmi@vgdata.dk>, 2024.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-24 11:04-0500\n"
+"PO-Revision-Date: 2024-09-23 08:08+0200\n"
+"Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
+"Language-Team: Danish <>\n"
+"Language: da\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 21.12.3\n"
+
+#: AncestorFill/AncestorFill.gpr.py:8
+msgid "AncestorFill"
+msgstr "AneUdfyld"
+
+#: AncestorFill/AncestorFill.gpr.py:9
+msgid "Report on the filling of the tree"
+msgstr "Rapport om udfyldelse af træet"
+
+#: AncestorFill/AncestorFill.py:104
+#, python-format
+msgid "Person %s is not in the Database"
+msgstr "Person %s findes ikke i Databasen"
+
+#: AncestorFill/AncestorFill.py:189
+#, python-format
+msgid "AncestorFill for %s"
+msgstr "AneUfyldelse for %s"
+
+#: AncestorFill/AncestorFill.py:205
+msgid "Generation "
+msgstr "Generation"
+
+#: AncestorFill/AncestorFill.py:206
+msgid "Number of Ancestors found "
+msgstr "Antal fundne aner"
+
+#: AncestorFill/AncestorFill.py:207
+msgid "Percent of Ancestors found "
+msgstr "Procent fundne aner"
+
+#: AncestorFill/AncestorFill.py:208
+msgid "Number of unique Ancestors found "
+msgstr "Antal af fundne unikke aner"
+
+#: AncestorFill/AncestorFill.py:209
+msgid "Number of theoretical Ancestors "
+msgstr "Teoretisk antal aner"
+
+#: AncestorFill/AncestorFill.py:210
+msgid "Pedigree Collapse "
+msgstr "Sammenfold anetavle"
+
+#: AncestorFill/AncestorFill.py:253
+msgid "Total Number of Ancestors found "
+msgstr "Totalt antal fundne aner"
+
+#: AncestorFill/AncestorFill.py:255
+msgid "Total Number of unique Ancestors found "
+msgstr "Totalt antal fundne unikke aner"
+
+#: AncestorFill/AncestorFill.py:259
+msgid ""
+"\n"
+"\n"
+"Note: This report only counts ancestors with a parent-child relationship of "
+"birth."
+msgstr ""
+"\n "
+"\n"
+"Note: Denne rapport tæller kun aner med et forældre-barn forhold via fødsel"
+
+#: AncestorFill/AncestorFill.py:295
+msgid "Report Options"
+msgstr "Rapport Tilvalg"
+
+#: AncestorFill/AncestorFill.py:297
+msgid "Center Person"
+msgstr "Hovedperson"
+
+#: AncestorFill/AncestorFill.py:298
+msgid "The center person for the report"
+msgstr "Rapportens hovedperson"
+
+#: AncestorFill/AncestorFill.py:301
+msgid "Generations"
+msgstr "Generationer"
+
+#: AncestorFill/AncestorFill.py:302
+msgid "The number of generations to include in the report"
+msgstr "Antal generationer, der skal medtages i rapporten"
+
+#: AncestorFill/AncestorFill.py:305
+msgid "Filled digit"
+msgstr "Udfyldt ciffer"
+
+#: AncestorFill/AncestorFill.py:307
+msgid ""
+"The number of digits after comma to include in the report for the percentage "
+"of ancestor found at a given generation"
+msgstr ""
+"Antal cifre efter kommaet for rapporten om procent fundne aner i en given"
+" generation"
+
+#: AncestorFill/AncestorFill.py:311
+msgid "Collapsed digit"
+msgstr "Sammenfoldet ciffer"
+
+#: AncestorFill/AncestorFill.py:313
+msgid ""
+"The number of digits after comma to include in the report for the pedigree "
+"Collapse"
+msgstr ""
+"Antal cifre efter kommaet som skal medtages i rapporten om sammenfoldet"
+" anetavle"
+
+#: AncestorFill/AncestorFill.py:317
+msgid "Display theoretical"
+msgstr "Vis teoretisk"
+
+#: AncestorFill/AncestorFill.py:319
+msgid "Whether to display the theoretical number of ancestor by generation"
+msgstr "Hvorvidt det teoretiske anta aber per generation skal medtagesl"
+
+#: AncestorFill/AncestorFill.py:361
+msgid "The style used for the title of the page."
+msgstr "Fontformat for sidens titel"
+
+#: AncestorFill/AncestorFill.py:374
+msgid "The style used for the generation header."
+msgstr "Fontformat for generationsoverskriften"
