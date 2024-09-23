@@ -19,15 +19,16 @@ msgstr ""
 "Project-Id-Version: GRAMPS SVN13333 (trunk)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-08 16:54+0100\n"
-"PO-Revision-Date: 2009-10-07 17:51+0200\n"
+"PO-Revision-Date: 2024-09-23 14:38+0200\n"
 "Last-Translator: Morten Bo Johansen <mojo@mbjnet.dk>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
+"Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Generated-By: pygettext.py 1.4\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"X-Generator: http://jedmodes.sourceforge.net/mode/po_mode\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:9
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:182
@@ -72,60 +73,53 @@ msgid "Source to remove and/or add"
 msgstr "Kilde der skal fjernes og/eller tilføjes"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:91
-#, fuzzy
 msgid "Remove previously added events, notes, and source"
-msgstr "Fjern tidligere tilføjede datoer"
+msgstr "Fjern tidligere tilføjede hændelser. noter, og kilder"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:92
 msgid ""
 "Remove calculated events, notes, and source; occurs immediately on Execute"
-msgstr ""
+msgstr "Fjern anslåede hændelser, noter og kilder; sker umiddelbart ved Udfør"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:95
 msgid "Birth"
 msgstr "Fødsel"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:96
-#, fuzzy
 msgid "Do not add birth events"
-msgstr " tilføjede fødsel d. %s"
+msgstr "Tilføj ikke fødselshændelser"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:97
-#, fuzzy
 msgid "Add birth events without dates"
-msgstr "fødselshændelse, men ingen dato"
+msgstr "Tilføj fødselshændelser, men uden dato"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:98
-#, fuzzy
 msgid "Add birth events with dates"
-msgstr "fødselshændelse, men ingen dato"
+msgstr "Tilføj fødselshændelser med dato"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:99
 msgid "Add a birth events with or without estimated dates"
-msgstr ""
+msgstr "Tilføj en fødselshændelse med eller uden anslåede datoer"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:102
 msgid "Death"
 msgstr "Død"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:103
-#, fuzzy
 msgid "Do not add death events"
-msgstr " tilføjede død d. %s"
+msgstr " Tilføj ikke dødshændelser"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:104
-#, fuzzy
 msgid "Add death events without dates"
-msgstr "Tilføj anslåede fødselsdatoer"
+msgstr "Tilføj dødshændelses uden datoer"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:105
-#, fuzzy
 msgid "Add death events with dates"
-msgstr "Tilføj anslåede fødselsdatoer"
+msgstr "Tilføj dødshændelser med datoer"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:106
 msgid "Add death events with or without estimated dates"
-msgstr ""
+msgstr "Tilføj dødshændelser med eller uden anslåede datoer"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:110
 msgid "Maximum age"
@@ -152,27 +146,25 @@ msgid "Average years between two generations"
 msgstr "Gennemsnitligt antal år mellem to generationer"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:128
-#, fuzzy
 msgid "Estimated Dates"
-msgstr "Anslået dato"
+msgstr "Anslåede datoer"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:129
 msgid "Approximate (about)"
-msgstr ""
+msgstr "Anslået (omkring)"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:130
 msgid "Extremes (after and before)"
-msgstr ""
+msgstr "Ekstremer (efter og før)"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:131
 msgid "Dates on events are either about or after/before"
-msgstr ""
+msgstr "Datoer for hændelser er enten omkring eller før/efter"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:162
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:179
-#, fuzzy
 msgid "Help"
-msgstr "_Hjælp"
+msgstr "Hjælp"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:164
 msgid ""
@@ -194,56 +186,67 @@ msgid ""
 "You may have to run the tool repeatedly (without removing previous events) "
 "to add all of the events possible."
 msgstr ""
+"Beregn anslåede datoer værktøjet bruges til at lægge fødselshændelse og "
+"dødshændelse til for personer der mangler disse hændelser\n"
+"\n"
+"For at benytte:\n"
+"1. Gå til Tilvalgfanebladet\n"
+"2. Kontroller [] Fjern tilvalget for at fjerne tidligere estimater\n"
+"3. Vælg Tillæg dato valg for dater hændelser med eller uden datoer\n"
+"4. Klik på Udfør\n"
+"5. Vælg hvilke personer der skal have lagt hændelse til\n"
+"6. Klik på 'Læg valgte Hændelser til' for at danne\n"
+"\n"
+"Note: Hvis du vælger a gøre en hændelse permanent, fjern den fra Kilden. "
+"Ellers vil den blive fjernet næste gang du automatisk fjerne disse "
+"hændelser.\n"
+"\n"
+"Du kan blive nødt til at udføre værktøjet flere gange (uden at fjerne "
+"tidligere hændelser) for at tilføje alle mulige hændelser."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:191
-#, fuzzy
 msgid "Select All"
-msgstr "Vælg fil"
+msgstr "Vælg alt"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:192
-#, fuzzy
 msgid "Select None"
-msgstr "Vælg note"
+msgstr "Vælg intet"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:193
-#, fuzzy
 msgid "Toggle Selection"
-msgstr "Valg af værktøj"
+msgstr "Skift Valget"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:194
-#, fuzzy
 msgid "Add Selected Events"
-msgstr "Vælg hændelse"
+msgstr "Tilføj Valgte Hændelse"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:200
 msgid "Remove Events, Notes, and Source and Reselect Data"
-msgstr ""
+msgstr "Fjern Hændelser, Noter, og Kilde og Genvælg Data"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:201
 msgid ""
 "Are you sure you want to remove previous events, notes, and source and "
 "reselect data?"
 msgstr ""
+"Er du sikker på at du vil fjerne tidligere hændelser, noter, og kilder og "
+"genvælge data?"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:202
-#, fuzzy
 msgid "Remove and Run Select Again"
-msgstr "Fjern den valgte person"
+msgstr "Fjern og Udfør Valg igen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:206
-#, fuzzy
 msgid "Reselect Data"
-msgstr "Vælg Fader"
+msgstr "Genvælg Data"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:207
-#, fuzzy
 msgid "Are you sure you want to reselect data?"
-msgstr "Er du sikker på at du vil rydde Fortryd-historikken?"
+msgstr "Er du sikker på at du vil genvælge data?"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:208
-#, fuzzy
 msgid "Run Select Again"
-msgstr "Valg af rapport"
+msgstr "Udfør Valg Igen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:217
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:226
@@ -272,14 +275,12 @@ msgid "Death Date"
 msgstr "Dødsdato"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:228
-#, fuzzy
 msgid "Evidence"
-msgstr "Bopæl"
+msgstr "Dokumentation"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:228
-#, fuzzy
 msgid "Relative"
-msgstr "Slægtninge"
+msgstr "Slægtning"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:229
 msgid "Processing...\n"
@@ -287,7 +288,7 @@ msgstr "Behandler ...\n"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:247
 msgid "Removing old estimations... "
-msgstr ""
+msgstr "Fjerner gamle estimater"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:248
 #, python-format
@@ -295,66 +296,59 @@ msgid "Removing '%s'..."
 msgstr "Fjerner \"%s\" ..."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:302
-#, fuzzy
 msgid "done!\n"
-msgstr "Færdig!\n"
+msgstr "udført!\n"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:303
-#, fuzzy
 msgid "Removed date estimates"
-msgstr "Fjern det eksisterende navn"
+msgstr "Fjernede dato forlag"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:307
-#, fuzzy
 msgid ""
 "Selecting... \n"
 "\n"
-msgstr "Vælg ..."
+msgstr ""
+"Vælger...\n"
+"\n"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:308
-#, fuzzy
 msgid "Selecting..."
-msgstr "Vælg ..."
+msgstr "Vælger...."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:343
-#, fuzzy
 msgid "Add birth and death events"
-msgstr "Tilføj en ny hændelse"
+msgstr "Tilføj fødsels- og dødshændelser"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:345
-#, fuzzy
 msgid "Add birth event"
-msgstr "manglende fødselshændelse"
+msgstr "Tilføj fødselshændelse"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:347
-#, fuzzy
 msgid "Add death event"
-msgstr "Tilføj en ny hændelse"
+msgstr "Tilføj dødshændelse"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:382
-#, fuzzy
 msgid "No events to be added."
-msgstr "Ingen hændelsesbeskrivelse er blev tilføjet."
+msgstr "Ingen hændelser skal tilføjes."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:424
-#, fuzzy
 msgid "Selecting... "
-msgstr "Vælg ..."
+msgstr "Vælger ..."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:425
-#, fuzzy, python-format
+#, python-format
 msgid "Adding events '%s'..."
-msgstr "Tilføj et eksisterende par forældre ..."
+msgstr "Tilføjer hændelser '%s'..."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:447
 #, python-format
 msgid "Added birth event based on %(evidence)s, from %(name)s"
-msgstr ""
+msgstr "Tilføjet fødselshændelse baseret på %(evidence)s, fra %(name)s"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:450
-#, fuzzy, python-format
+#, python-format
 msgid "Added birth event based on %s"
-msgstr " tilføjede fødsel d. %s"
+msgstr " Tilføjet fødselshændelse baseret på %s"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:452
 msgid "Estimated birth date"
@@ -363,12 +357,12 @@ msgstr "Anslået fødselsdato"
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:463
 #, python-format
 msgid "Added death event based on %(evidence)s, from %(person)s"
-msgstr ""
+msgstr "Tilføjet dødshændelse baseret på %(evidence)s, from %(person)s"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:466
-#, fuzzy, python-format
+#, python-format
 msgid "Added death event based on %s"
-msgstr " tilføjede død d. %s"
+msgstr " Tilføjet dødshændelse baseret på %s"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:468
 msgid "Estimated death date"
@@ -376,17 +370,16 @@ msgstr "Anslået dødsdato"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:478
 msgid " Done! Committing..."
-msgstr ""
+msgstr "Udført! Gemmer....."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:480
-#, fuzzy
 msgid "Add date estimates"
-msgstr "Beregn anslåede datoer"
+msgstr "Tilføj anslåede datoer"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:483
-#, fuzzy, python-format
+#, python-format
 msgid "Added %d events."
-msgstr "Tilføj en ny hændelse"
+msgstr "Tilføjet %d hændelser."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:511
 msgid "Estimated date"

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2024-09-23 11:55+0200\n"
+"PO-Revision-Date: 2024-09-23 14:22+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: da\n"
@@ -30,7 +30,7 @@ msgid ""
 msgstr ""
 "Søger gennem familier efter børn der ikke er i fødselsorden. Brugeren kan "
 "godkende individuelle forslag til at rette fødselsordenen manuelt, godkende "
-"alle familier, der har børn med korrekte fødseldatoer, eller godkende alt"
+"alle familier, der har børn med korrekte fødseldatoer, eller godkende alt."
 
 #: BirthOrder/birthorder.py:161
 msgid "No families need sorting"
@@ -38,7 +38,7 @@ msgstr "Ingen familier har brug for sortering"
 
 #: BirthOrder/birthorder.py:162
 msgid "No children were out of birth order."
-msgstr "Alle børn var i fødselsorden"
+msgstr "Alle børn var i fødselsorden."
 
 #: BirthOrder/birthorder.py:186
 msgid "Edit Family"
@@ -58,7 +58,7 @@ msgstr "Søger efter børn i fødselsorden"
 
 #: BirthOrder/birthorder.py:279
 msgid "Pass 1: Building preliminary lists"
-msgstr "Pass 1: Danner præliminære  lister "
+msgstr "Pass 1: Danner foreløbige  lister"
 
 #: BirthOrder/birthorder.glade:56
 msgid "Select the family you wish to examine."
@@ -136,4 +136,4 @@ msgid ""
 msgstr ""
 "Når du er tilfreds med sorteringen, benyt nedenstående 'Godkend' knap til at "
 "godkende ændringen. Hvis du ønsker at rette ordenen, vælg det barn, du vil "
-"flytte, og benyt nedestående 'Op' eller 'Ned' knap til at flytte dem"
+"flytte, og benyt nedestående 'Op' eller 'Ned' knap til at flytte dem."
