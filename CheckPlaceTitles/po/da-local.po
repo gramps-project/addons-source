@@ -1,146 +1,102 @@
-# Danish translation for Gramps
-# $Id$
-# This file is distributed under the same license as the Gramps package.
-# Dansk oversættelse til GRAMPS
-# Copyright (C) 2002 Free Software Foundation, Inc.
-# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
-# Morten Bo Johansen <mbj@spamcop.net>, 2006-, >= Gramps 0.7.3
-# Kaj Mikkelsen <kmi@vgdata.dk>, 2016.
-# *** Vedr. ordstilling: ***
-# Ofte vil det lyde mere naturligt at ændre en ordstilling ved at
-# bytte om på hoved- og ledsætning, som f.eks.
-#   
-#   "Før reparationen udføres, forvis dig om at databasen virkelig
-#   "ikke længere kan åbnes"
-# til
-#   
-#   "forvis dig om at databasen virkelig ikke kan åbnes før du
-#   "udfører reparationen."
-#   
-# Jeg har dog i mange tilfælde valgt at bevare den oprindelige
-# ordstilling, da der ligger en opmærksomhedsskabende værdi i denne. Her
-# bliver man f.eks. som det første i sætningen gjort opmærksom på at man
-# IKKE skal udføre reparationen FØR .. -MBJ
-# *** Oversættelser af visse ord/vendinger: ***
-# LDS: SDH (Latter Day Saints -> Sidste Dages Hellige)
-# home person: proband
-# ancestor: ane
-# given name: fornavn
-# preferences: indstillinger
-# link: forbindelse
-# family tree: slægtsbog (men se nedenfor)
-# First Communion: Førstekommunion
-# probate: skifte
-# record: optegnelse
-#
-# Anvendt af Lars Kr. Lundin:
-# citation: citering (fremfor f.eks. 'kildehenvisning')
-#      citering er i 2016 blevet ændret til kildehenvisning af Kaj Mikkelsen
-# database: database (fremfor det tidligere 'slægtsbog')
-# matches: matcher (fremfor det tidligere 'passer med')
-# locale: landestandard (i mangel af bedre)
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-12 14:42+0100\n"
-"PO-Revision-Date: 2016-07-19 19:49+0200\n"
-"Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
-"Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
+"POT-Creation-Date: 2022-05-10 10:10-0500\n"
+"PO-Revision-Date: 2024-09-23 14:58+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: pygettext.py 1.4\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Gtranslator 2.91.6\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: CheckPlaceTitles/checkplacetitles.gpr.py:28
 msgid "Check Place Titles"
-msgstr ""
+msgstr "Kontroller Sted Titler"
 
 #: CheckPlaceTitles/checkplacetitles.gpr.py:29
 msgid "Check place titles"
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.py:56
-msgid "manual|Check_place_titles"
-msgstr ""
+msgstr "Kontroller sted titel"
 
 #: CheckPlaceTitles/checkplacetitles.py:71
 msgid "Check Place title"
-msgstr ""
+msgstr "Kontroller Sted Title"
 
 #: CheckPlaceTitles/checkplacetitles.py:86
 msgid "Checking Place Titles"
-msgstr ""
+msgstr "Kontrollerer Sted Titler"
 
-#: CheckPlaceTitles/checkplacetitles.py:87
+#: CheckPlaceTitles/checkplacetitles.py:88
 msgid "Looking for place fields"
-msgstr ""
+msgstr "Leder efter sted felter"
 
-#: CheckPlaceTitles/checkplacetitles.py:103
+#: CheckPlaceTitles/checkplacetitles.py:107
 msgid "Differences"
-msgstr ""
+msgstr "Forskelle"
 
-#: CheckPlaceTitles/checkplacetitles.py:109
+#: CheckPlaceTitles/checkplacetitles.py:112
 msgid "No need modifications"
-msgstr ""
+msgstr "Ingen ændring nødvendig"
 
-#: CheckPlaceTitles/checkplacetitles.py:110
+#: CheckPlaceTitles/checkplacetitles.py:113
 msgid "No changes need."
-msgstr ""
+msgstr "Ingen ændring nødvendig."
 
-#: CheckPlaceTitles/checkplacetitles.py:139
+#: CheckPlaceTitles/checkplacetitles.py:142
 msgid "Select"
 msgstr "Vælg"
 
-#: CheckPlaceTitles/checkplacetitles.py:142
+#: CheckPlaceTitles/checkplacetitles.py:145
 msgid "Database"
-msgstr "Hele databasen"
+msgstr "Database"
 
-#: CheckPlaceTitles/checkplacetitles.py:146
+#: CheckPlaceTitles/checkplacetitles.py:149
 msgid "Display"
-msgstr "Vis"
+msgstr "Visning"
 
-#: CheckPlaceTitles/checkplacetitles.py:156
+#: CheckPlaceTitles/checkplacetitles.py:159
 msgid "Building display"
-msgstr "Opdaterer skærmbillede"
+msgstr "Danner visning"
 
-#: CheckPlaceTitles/checkplacetitles.py:185
+#: CheckPlaceTitles/checkplacetitles.py:187
 msgid "Legacy place"
-msgstr ""
+msgstr "Forældet sted"
 
-#: CheckPlaceTitles/checkplacetitles.py:199
+#: CheckPlaceTitles/checkplacetitles.py:201
 msgid "Modify Place titles"
-msgstr ""
+msgstr "Ændre Sted titler"
 
-#: CheckPlaceTitles/checkplacetitles.py:222
+#: CheckPlaceTitles/checkplacetitles.py:224
 msgid "Place titles"
-msgstr ""
+msgstr "Sted titler"
 
-#: CheckPlaceTitles/checkplacetitles.glade.h:1
+#: CheckPlaceTitles/checkplacetitles.glade:56
 msgid "Remove content of place title field if it does not match"
-msgstr ""
+msgstr "Fjern indholdet af sted titel felt, hvis det ikke matcher"
 
-#: CheckPlaceTitles/checkplacetitles.glade.h:2
+#: CheckPlaceTitles/checkplacetitles.glade:74
 msgid "Copy content of place title field to a new note."
-msgstr ""
+msgstr "Kopier indholdet af sted titel feltet til en ny note."
 
-# mærke?
-#: CheckPlaceTitles/checkplacetitles.glade.h:3
+#: CheckPlaceTitles/checkplacetitles.glade:87
 msgid "Mark"
-msgstr "Markér"
+msgstr "Mærk"
 
-#: CheckPlaceTitles/checkplacetitles.glade.h:4
+#: CheckPlaceTitles/checkplacetitles.glade:91
 msgid "Attach a tag on selected places."
-msgstr ""
+msgstr "Tilføj en ettiket til valgte steder."
 
-#: CheckPlaceTitles/checkplacetitles.glade.h:5
+#: CheckPlaceTitles/checkplacetitles.glade:150
 msgid "_Accept changes and close"
-msgstr "_Accepter ændringer og afslut"
+msgstr "_Godkend rettelser og luk"
 
-#: CheckPlaceTitles/checkplacetitles.glade.h:6
+#: CheckPlaceTitles/checkplacetitles.glade:177
 msgid "column"
-msgstr ""
+msgstr "kolonne"
