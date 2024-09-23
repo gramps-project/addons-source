@@ -1,0 +1,101 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2024-09-23 08:39+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: da\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: AttachSourceTool/AttachSourceTool.gpr.py:25
+#: AttachSourceTool/AttachSourceTool.py:137
+#: AttachSourceTool/AttachSourceTool.py:155
+msgid "Attach Source"
+msgstr "Vedæft Kilde"
+
+#: AttachSourceTool/AttachSourceTool.gpr.py:26
+msgid "Attaches a shared source to multiple objects."
+msgstr "Vedhæfter en delt kilde til flere objekter."
+
+#: AttachSourceTool/AttachSourceTool.py:67
+#: AttachSourceTool/AttachSourceTool.py:140
+msgid "Options"
+msgstr "Tilvalg"
+
+#: AttachSourceTool/AttachSourceTool.py:69
+msgid "Person Filter"
+msgstr "Person Filter"
+
+#: AttachSourceTool/AttachSourceTool.py:70
+msgid "Select filter to restrict people"
+msgstr "Vælg filter for at begrænse personer"
+
+#: AttachSourceTool/AttachSourceTool.py:74
+msgid "Filter Person"
+msgstr "Filter Person"
+
+#: AttachSourceTool/AttachSourceTool.py:75
+msgid "The center person for the filter"
+msgstr "Hovedpersonen for filteret"
+
+#: AttachSourceTool/AttachSourceTool.py:81
+msgid "Source type"
+msgstr "Kilde type"
+
+#: AttachSourceTool/AttachSourceTool.py:82
+msgid "New source"
+msgstr "Ny kilde"
+
+#: AttachSourceTool/AttachSourceTool.py:83
+msgid "Existing source"
+msgstr "Eksisterende kilde"
+
+#: AttachSourceTool/AttachSourceTool.py:84
+msgid "Select the type of source to attach"
+msgstr "Vælg ttype af kilde til at vedhæfte"
+
+#: AttachSourceTool/AttachSourceTool.py:89
+msgid "New Source Title"
+msgstr "Ny Kilde Titel"
+
+#: AttachSourceTool/AttachSourceTool.py:90
+msgid "Text of source to attach"
+msgstr "Tekst af kilden der skal vedhæftes"
+
+#: AttachSourceTool/AttachSourceTool.py:94
+msgid "Existing Source ID"
+msgstr "Eksisterende KildeID"
+
+#: AttachSourceTool/AttachSourceTool.py:95
+msgid "ID of source to attach"
+msgstr "ID for kilden, der skal vedhæftes"
+
+#: AttachSourceTool/AttachSourceTool.py:156
+msgid "Results"
+msgstr "Resultater"
+
+#: AttachSourceTool/AttachSourceTool.py:157
+msgid "Processing...\n"
+msgstr "Arbejder...\n"
+
+#: AttachSourceTool/AttachSourceTool.py:174
+msgid "Attaching sources...\n"
+msgstr "Vedhæfter Kilder\n"
+
+#: AttachSourceTool/AttachSourceTool.py:175
+msgid "Attaching sources..."
+msgstr "Vedhæfter Kilder...."
+
+#: AttachSourceTool/AttachSourceTool.py:197
+msgid "Done!\n"
+msgstr "Færdig!\n"
