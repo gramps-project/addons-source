@@ -1,0 +1,35 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-01 13:52-0500\n"
+"PO-Revision-Date: 2024-09-23 11:35+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: da\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: BiographyQuickview/BiographyQuickview.gpr.py:9
+msgid "Biography"
+msgstr "Biografi"
+
+#: BiographyQuickview/BiographyQuickview.gpr.py:10
+msgid "Display a text biography"
+msgstr "Vis en tekst biografi"
+
+#: BiographyQuickview/BiographyQuickview.py:48
+#, python-format
+msgid "Biography for %s"
+msgstr "Biografi for %s"
+
+#: BiographyQuickview/BiographyQuickview.py:92
+msgid "Sources"
+msgstr "Kilder"
