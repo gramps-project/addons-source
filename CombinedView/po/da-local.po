@@ -1,0 +1,346 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-10-05 17:09-0500\n"
+"PO-Revision-Date: 2024-09-23 15:35+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: da\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: CombinedView/basepage.py:215
+#, python-format
+msgid "%(date)s in %(place)s"
+msgstr "%(date)s i %(place)s"
+
+#: CombinedView/basepage.py:233 CombinedView/personpage.py:485
+msgid "Unknown"
+msgstr "Ukendt"
+
+#: CombinedView/basepage.py:369
+msgid "Add Child to Family"
+msgstr "Tilføj Barn til Familien"
+
+#: CombinedView/basepage.py:387
+msgid "Select Child"
+msgstr "Vælg Barn"
+
+#: CombinedView/basepage.py:434 CombinedView/eventpage.py:101
+#: CombinedView/eventpage.py:235 CombinedView/personpage.py:131
+#: CombinedView/personpage.py:468 CombinedView/personpage.py:519
+#: CombinedView/personpage.py:681 CombinedView/personpage.py:894
+#, python-format
+msgid "Edit %s"
+msgstr "Ret %s"
+
+#: CombinedView/basepage.py:493
+#, python-format
+msgid "%(abbrev)s %(date)s in %(place)s"
+msgstr "%(abbrev)s %(date)s i %(place)s"
+
+#: CombinedView/basepage.py:495
+#, python-format
+msgid "%(abbrev)s %(date)s%(place)s"
+msgstr "%(abbrev)s %(date)s%(place)s"
+
+#: CombinedView/combinedview.gpr.py:23 CombinedView/combinedview.py:87
+msgid "Combined"
+msgstr "Kombineret"
+
+#: CombinedView/combinedview.gpr.py:24
+msgid "A view showing relationships and events for a person"
+msgstr "En visning af slægtsforhold og hændelser for en person"
+
+#: CombinedView/combinedview.gpr.py:31 CombinedView/combinedview.py:650
+#: CombinedView/personpage.py:240
+msgid "Relationships"
+msgstr "Slægtskabsforhold"
+
+#: CombinedView/combinedview.py:325
+msgid "Organize Bookmarks"
+msgstr "Organiser Bogmærker"
+
+#: CombinedView/combinedview.py:526
+msgid "Edit the active person"
+msgstr "Ret den aktive person"
+
+#: CombinedView/combinedview.py:528
+msgid "Edit the active event"
+msgstr "ret den aktive hændelse"
+
+#: CombinedView/combinedview.py:577
+#, python-format
+msgid "%(birthabbrev)s %(birthdate)s, %(deathabbrev)s %(deathdate)s"
+msgstr "%(birthabbrev)s %(birthdate)s, %(deathabbrev)s %(deathdate)s"
+
+#: CombinedView/combinedview.py:584 CombinedView/combinedview.py:586
+#, python-format
+msgid "%(event)s %(date)s"
+msgstr "%(event)s %(date)s"
+
+#: CombinedView/combinedview.py:624
+msgid "Use shading"
+msgstr "Benyt skygger"
+
+#: CombinedView/combinedview.py:627
+msgid "Display edit buttons"
+msgstr "Vis Ret-knappen"
+
+#: CombinedView/combinedview.py:630
+msgid "Show Tags"
+msgstr "Vis Ettiketter"
+
+#: CombinedView/combinedview.py:632
+msgid "View links as website links"
+msgstr "Se links som wesite links"
+
+#: CombinedView/combinedview.py:638
+msgid "Layout"
+msgstr "Layout"
+
+#: CombinedView/combinedview.py:653
+msgid "Show Details"
+msgstr "Vis Detaljer"
+
+#: CombinedView/combinedview.py:656
+msgid "Vertical Details"
+msgstr "Lodrette Detaljer"
+
+#: CombinedView/combinedview.py:659
+msgid "Show Siblings"
+msgstr "Vis Søskende"
+
+#: CombinedView/combinedview.py:662
+msgid "Person"
+msgstr "Person"
+
+#: CombinedView/eventpage.py:119 CombinedView/navigationview.py:360
+#: CombinedView/personpage.py:150
+msgid "ID"
+msgstr "ID"
+
+#: CombinedView/eventpage.py:140
+msgid "Attributes"
+msgstr "Attributter"
+
+#: CombinedView/eventpage.py:167
+msgid "Participants"
+msgstr "Deltager"
+
+#: CombinedView/eventpage.py:202 CombinedView/eventpage.py:267
+msgid "Order"
+msgstr "Rækkefølge"
+
+#: CombinedView/eventpage.py:289
+msgid "Citations"
+msgstr "Kildehenvvisninger"
+
+#: CombinedView/navigationview.py:269
+#, python-format
+msgid "%s has been bookmarked"
+msgstr "%s er har fået et bogmærke"
+
+#: CombinedView/navigationview.py:273
+msgid "Could Not Set a Bookmark"
+msgstr "Kunne ikke tilføje bogmærke"
+
+#: CombinedView/navigationview.py:274
+msgid "A bookmark could not be set because no one was selected."
+msgstr "Et bogmærke kunne ikke tilføjes, da ingen var valgt"
+
+#: CombinedView/navigationview.py:340
+msgid "No Home Person"
+msgstr "Ingen Hovedperson"
+
+#: CombinedView/navigationview.py:341
+msgid ""
+"You need to set a 'default person' to go to. Select the People View, select "
+"the person you want as 'Home Person', then confirm your choice via the menu "
+"Edit -> Set Home Person."
+msgstr ""
+"Du skal vælge en \"standard person\" for at fortsætte. Vælg PersonVisning, "
+"vælg den person du vil benytte som 'Hovedperson' via menuen Rediger -> vælg "
+"Hovedperson."
+
+#: CombinedView/navigationview.py:351 CombinedView/navigationview.py:354
+msgid "Jump to by Gramps ID"
+msgstr "Hop til Gramps ID"
+
+#: CombinedView/navigationview.py:360
+#, python-format
+msgid "%s: "
+msgstr "%s: "
+
+#: CombinedView/navigationview.py:365
+msgid "_Cancel"
+msgstr "_Afbryd"
+
+#: CombinedView/navigationview.py:366
+msgid "_Jump to"
+msgstr "_Hop til"
+
+#: CombinedView/navigationview.py:378
+#, python-format
+msgid "Error: %s is not a valid Gramps ID"
+msgstr "Fejl: %s er ikke et gyldigt Gramps ID"
+
+#: CombinedView/personpage.py:160
+msgid "Birth"
+msgstr "Fødsel"
+
+#: CombinedView/personpage.py:169 CombinedView/personpage.py:194
+msgid "Death"
+msgstr "Død"
+
+#: CombinedView/personpage.py:189
+msgid "Alive"
+msgstr "Levende"
+
+#: CombinedView/personpage.py:196
+msgid "unknown"
+msgstr "ukendt"
+
+#: CombinedView/personpage.py:251 CombinedView/personpage.py:272
+msgid "Parents"
+msgstr "Forældre"
+
+#: CombinedView/personpage.py:275
+msgid "Father"
+msgstr "Far"
+
+#: CombinedView/personpage.py:279
+msgid "Mother"
+msgstr "Mor"
+
+#: CombinedView/personpage.py:287
+msgid "Siblings"
+msgstr "Søskende"
+
+#: CombinedView/personpage.py:297 CombinedView/personpage.py:358
+msgid "Add new child to family"
+msgstr "Tilføj nyt barn til familien"
+
+#: CombinedView/personpage.py:301 CombinedView/personpage.py:362
+msgid "Add existing child to family"
+msgstr "Tilføj eksisterende barn til familien"
+
+#: CombinedView/personpage.py:323
+msgid "Broken family detected"
+msgstr "Fejl i familien opdaget"
+
+#: CombinedView/personpage.py:324
+msgid "Please run the Check and Repair Database tool"
+msgstr "Kør venligst check and repair database tool"
+
+#: CombinedView/personpage.py:336
+msgid "Family"
+msgstr "Familie"
+
+#: CombinedView/personpage.py:340
+msgid "Spouse"
+msgstr "Ægtefælle"
+
+#: CombinedView/personpage.py:347
+msgid "Children"
+msgstr "Børn"
+
+#: CombinedView/personpage.py:397
+msgid "Add a new set of parents"
+msgstr "Tilføj et nyt forældrepar"
+
+#: CombinedView/personpage.py:398
+msgid "Add person as child to an existing family"
+msgstr "Tilføj personen som barn til en eksisterende familie"
+
+#: CombinedView/personpage.py:399
+msgid "Edit parents"
+msgstr "Ret forældre"
+
+#: CombinedView/personpage.py:400
+msgid "Reorder parents"
+msgstr "Ændre forældre rækkefølge"
+
+#: CombinedView/personpage.py:401
+msgid "Remove person as child of these parents"
+msgstr "Fjern personen som barn af disse forældre"
+
+#: CombinedView/personpage.py:403
+msgid "Add a new family with person as parent"
+msgstr "Tilføj en ny familie med personen som forælder"
+
+#: CombinedView/personpage.py:405
+msgid "Edit family"
+msgstr "Rediger familie"
+
+#: CombinedView/personpage.py:406
+msgid "Reorder families"
+msgstr "Ændre familie rækkefølgen"
+
+#: CombinedView/personpage.py:407
+msgid "Remove person as parent in this family"
+msgstr "Fjern personen som forælder i denne familie"
+
+#: CombinedView/personpage.py:554
+#, python-format
+msgid "Relationship type: %s"
+msgstr "Slægtskabstype: %s"
+
+#: CombinedView/personpage.py:591
+#, python-format
+msgid "%(event_type)s: %(date)s in %(place)s"
+msgstr "%(event_type)s: %(date)s in %(place)s"
+
+#: CombinedView/personpage.py:595
+#, python-format
+msgid "%(event_type)s: %(date)s"
+msgstr "%(event_type)s: %(date)s"
+
+#: CombinedView/personpage.py:598
+#, python-format
+msgid "%(event_type)s: %(place)s"
+msgstr "%(event_type)s: %(place)s"
+
+#: CombinedView/personpage.py:619
+msgid "Events"
+msgstr "Hændelser"
+
+#: CombinedView/personpage.py:678 CombinedView/personpage.py:891
+msgid "Click to make this event active"
+msgstr "Klik for at gøre denne hændelse aktiv"
+
+#: CombinedView/personpage.py:737
+msgid "Click to visit this link"
+msgstr ""
+
+#: CombinedView/personpage.py:755
+msgid "Album"
+msgstr ""
+
+#: CombinedView/personpage.py:824
+msgid "Timeline"
+msgstr ""
+
+#: CombinedView/personpage.py:949
+msgid "Associations"
+msgstr ""
+
+#: CombinedView/personpage.py:959
+msgid "Association"
+msgstr ""
+
+#: CombinedView/personpage.py:959 CombinedView/personpage.py:966
+msgid ": "
+msgstr ""
+
+#: CombinedView/personpage.py:966
+msgid "Relationship"
+msgstr ""
