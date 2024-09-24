@@ -71,6 +71,15 @@ CONFIG.init()
 
 draw_single_chromosome = False
 current_chromosome = '1'
+#
+# draw_grandparent_color is a quick and dirty pass at visual phasing to the grandparent. 
+# The DNA segment will be painted one of 4 colors, depending on the grandparent found in the path of the tree. 
+# The maternal side has 2 color options (maternal grandfather or maternal grandmother).
+# The paternal side has 2 color options (paternal grandmother or paternal grandfather).
+# first cousins or closer are not displayed. 
+# If there is no known path based on the tree, the segment is not displayed.
+#
+draw_grandparent_color = False
 
 class DNASegmentMap(Gramplet):
 
@@ -134,15 +143,15 @@ class DNASegmentMap(Gramplet):
                             side = 'U'
                         else:
                             if self.dbstate.db.get_person_from_handle(data[0][1]).gender == 0:
-                                side = 'M'
+                                side = 'F'
                             else:
-                                side = 'P'
+                                side = 'M'
                     elif (len(data) > 1 and data[0][0] == data[1][0] and data[0][2][0] != data[1][2][0]): #shares both parents
                         side = 'U'
                     elif (len(data[0][2]) == 0): # association is descendant of active
                         side = 'U'
                     else:
-                        side = data[0][2][0].upper()
+                        side = data[0][2].upper()
                     # Get Notes attached to Association
                     for handle in assoc.get_note_list():
                         note = self.dbstate.db.get_note_from_handle(handle)
@@ -197,8 +206,10 @@ class DNASegmentMap(Gramplet):
         seg_comment = ''
         updated_side = side
         if len(field) > 5:
-            if field[5] in { "M", "P", "U"}: 
+            if field[5] in { "M", "U"}: 
                 updated_side = field[5].strip()
+            elif field[5] in { "P"} :
+                updated_side = "F"
             else:
                 seg_comment = field[5].strip()
         handle = assoc.ref
@@ -237,7 +248,7 @@ class SegmentMap(Gtk.DrawingArea):
 
         self.add_events(Gdk.EventMask.POINTER_MOTION_MASK |
                         Gdk.EventMask.BUTTON_PRESS_MASK |
-                        Gdk.EventMask.BUTTON_RELEASE_MASK)
+                        Gdk.EventMask.BUTTON_RELEASE_MASK )
         self.connect('motion-notify-event', self.on_pointer_motion)
         self.connect('button-press-event', self.on_button_press)
         self.title = ''
@@ -246,6 +257,7 @@ class SegmentMap(Gtk.DrawingArea):
         self.__rects = None
         self.__active = -1
         self.highlight = None
+
         self._config = config.get_manager('DNASegmentMap')
         build = self._config.get('map.chromosome-build')
         self.legend_swatch_offset_y = self._config.get('map.legend-swatch-offset-y')
@@ -414,7 +426,22 @@ class SegmentMap(Gtk.DrawingArea):
             self.centromere = self.centromereThirtySeven
             build = 37
         self.labels = [chromo[0] for chromo in self.chromosomes]
-
+# fixed colormap (partial) to use to MyHeritage color based on grandparent instead of association name
+        self.colormap = {
+            'U':(1,1,1),
+            'M':(0,0,1),
+            'F':(1,0,0),
+            'FF':(0.72, 0.94, 1),
+            'FM':(0.81, 0.94, 0.62),
+            'MF':(1, 0.85, 0.85),
+            'MM':(1, 0.92, 0.67)
+        }
+        self.grandparent = {
+	        'MM':"Maternal Grandmother",
+            'MF':"Maternal Grandfather",
+            'FM':"Paternal Grandmother",
+            'FF':"Paternal Grandfather"
+        }
     def set_title(self, title):
         """
         Set the main chart title.
@@ -746,7 +773,7 @@ class SegmentMap(Gtk.DrawingArea):
 # Segment Info
               chr_offset = row_num * 2 * (chr_height + spacing) + offset
               chr_mult = 1
-              if side == 'M':
+              if side[0] == 'M':
                 chr_offset += chr_height
               if side == 'U':
                 chr_mult = 2
@@ -797,7 +824,7 @@ class SegmentMap(Gtk.DrawingArea):
                 continue
             chr_offset = i * 2 * (chr_height + spacing) + offset
             chr_mult = 1
-            if side == 'M':
+            if side[0] == 'M':
                 chr_offset += chr_height
             if side == 'U':
                 chr_mult = 2
@@ -812,12 +839,23 @@ class SegmentMap(Gtk.DrawingArea):
                              chart_width * (stop-start) / maximum,
                              chr_mult * chr_height))
                 self.__rect_count.append(chromo_count)
-                cr.set_source_rgba(rgb_color[0], rgb_color[1], rgb_color[2], alpha_color)
+#
+# Reset color here if desired. self.colormap can be used to paint based on common ancestor path
+#
+                local_color = rgb_color
+                if draw_grandparent_color :
+                    if len(side) < 3 :
+                        sub_side = side[0]
+                        alpha_color = 0
+                    else :
+                        sub_side = side[0:2]
+                    local_color = self.colormap.get(sub_side)
+                cr.set_source_rgba(local_color[0], local_color[1], local_color[2], alpha_color)
                 cr.fill_preserve()
                 cr.stroke()
                 self.__notes.append(note)
 # Legend entry
-            if last_name != assoc_name:
+            if (last_name != assoc_name) and (not draw_grandparent_color) :
                 legend_count += 1
                 last_name = assoc_name
                 cr.rectangle(legend_offset_x - legend_chr_height - 2 * spacing,
@@ -837,6 +875,22 @@ class SegmentMap(Gtk.DrawingArea):
                 cr.set_source_rgba(*fg_color)
                 legend_offset_y += legend_chr_height + 2 * spacing
                 PangoCairo.show_layout(cr, layout)
+          if draw_grandparent_color :
+                for i in "FF","FM","MF","MM" :
+                    cr.rectangle(legend_offset_x - legend_chr_height - 2 * spacing,
+                             legend_offset_y + self.legend_swatch_offset_y,
+                             legend_chr_height,
+                             legend_chr_height)
+                    local_color = self.colormap.get(i)
+                    cr.set_source_rgba(local_color[0], local_color[1], local_color[2], alpha_color)
+                    cr.fill_preserve()
+                    cr.stroke()
+                    layout = self.create_pango_layout(self.grandparent.get(i))
+                    cr.move_to(legend_offset_x, legend_offset_y)
+                    cr.set_source_rgba(*fg_color)
+                    legend_offset_y += legend_chr_height + 2 * spacing
+                    PangoCairo.show_layout(cr, layout)
+                    
         y_scale = max(1,row_num/20, self.y_scale, legend_count / 30 )  # rescale Y to max of user-specified and number of rows
         self.set_size_request(-1, y_scale * bottom + height + 5)
 
@@ -868,7 +922,7 @@ class SegmentMap(Gtk.DrawingArea):
                 tooltip_text += glocale.format_string('%d',self.segments[active][2], grouping = True)
                 rel_strings , common_an = self.relationship.get_all_relationships(self.dbstate.db,self.active,self.segments[active][8])
                 if len(rel_strings) > 0 :
-                    tooltip_text += _("\nRelationship: {0}".format(rel_strings[0]))
+                    tooltip_text += _("\nRelationship : {0} ".format(rel_strings[0]))
                 if len(common_an) > 0:
                     common = common_an[0]
                     length = len(common)
@@ -923,7 +977,7 @@ class SegmentMap(Gtk.DrawingArea):
         @param event: An event.
         @type event: Gdk.Event
         """
-        global draw_single_chromosome, current_chromosome
+        global draw_single_chromosome, current_chromosome, draw_grandparent_color
         active = -1
 #
 #   Traverse legend for pointer
@@ -957,7 +1011,7 @@ class SegmentMap(Gtk.DrawingArea):
                     EditNote(self.dbstate, self.uistate, [], self.__notes[active])
                 except:
                     return False
-                return
+            return
 #
 #   Traverse chromosome labels for pointer
 #
@@ -971,5 +1025,8 @@ class SegmentMap(Gtk.DrawingArea):
 #
 # Pressed button but didnt hit anything. Assume meant to change back to full view
 #
-        draw_single_chromosome = False
+        if draw_single_chromosome :
+            draw_single_chromosome = False
+        else :
+            draw_grandparent_color = not draw_grandparent_color
         self.emit('clicked')
