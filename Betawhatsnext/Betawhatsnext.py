@@ -5,7 +5,7 @@
 #
 # Copyright (C) 2008 Reinhard Mueller
 # Copyright (C) 2010 Jakim Friant
-# Copyright (C) 2023 Brian McCullough
+# Copyright (C) 2023, 2024 Brian McCullough
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of version 2 of the GNU General Public License as
@@ -32,21 +32,28 @@ from gi.repository import Gtk
 from gramps.gen.lib import EventType, FamilyRelType
 from gramps.gen.plug import Gramplet
 from gramps.gen.display.name import displayer as name_displayer
-# from gramps.gen.errors import ValidationError, WindowActiveError
+import inspect
+from gramps.gen.errors import ValidationError, WindowActiveError
 from gramps.gen.plug.report import utils
 from gramps.gen.const import GRAMPS_LOCALE as glocale
+
 _ = glocale.translation.sgettext
 
-initial_message = _(" ⛔ A local Genealogical Tree database has not yet been"
-                    " loaded."
-                    "\n\n 👣 Next Steps:"
-                    "\n  •  From the \"Family Trees\" menu,"
-                    " use the \"Manage Family Trees...\" option to"
-                    " create a New (or to select an existing) Tree database."
-                    "\n  •  Click the \"Load Family Tree\" button to begin"
-                    " working with the selected genealogical tree."
-                    "\n\nAn empty new tree is also used to receive a backup or"
-                    " imported data.")
+verbose_suggestions = True
+show_diagnostic = False
+
+initial_message = _(
+    "\n ⛔ A local Genealogical Tree database has not yet been loaded.\n\n"
+)
+if verbose_suggestions:
+    initial_message += _(" 👣 Next Steps:\n")
+    initial_message += _('  •  From the "Family Trees" menu,')
+    initial_message += _(' use the "Manage Family Trees..." option to')
+    initial_message += _(" create a New (or to select an existing) Tree database.\n")
+    initial_message += _('  •  Click the "Load Family Tree" button to begin')
+    initial_message += _(" working with the selected genealogical tree.\n\n")
+    initial_message += _("Create and load an empty new tree to import a backup (or")
+    initial_message += _(" GEDCOM file) from another genealogical tool.\n\n")
 
 # ------------------------------------------------------------------------
 #
@@ -58,8 +65,12 @@ initial_message = _(" ⛔ A local Genealogical Tree database has not yet been"
 class BetaWhatNextGramplet(Gramplet):
 
     def init(self):
-
-        self.set_tooltip(_("Double-click name for details"))
+        self.set_tooltip(
+            _(
+                'Use the "Configure" in the "View" menu to'
+                " change the Gramplet options."
+            )
+        )
         self.set_text(initial_message)
 
     def build_options(self):
@@ -72,45 +83,45 @@ class BetaWhatNextGramplet(Gramplet):
 
         # Minimum number of lines we want to see. Further lines with the same
         # distance to the main person will be added on top of this.
-        name = _("Minimum number of items to display")
+        name = _("Seach Quota ")
         opt = NumberOption(name, self.__todos_wanted, 1, 300)
         self.opts.append(opt)
 
         # How many generations of descendants to process before we go up to the
         # next level of ancestors.
-        name = _("Descendant generations per ancestor generation")
+        name = _("Depth per loop")
         opt = NumberOption(name, self.__downs_per_up, 1, 15)
         self.opts.append(opt)
 
         # After an ancestor was processed, how many extra rounds to delay until
         # the descendants of this ancestor are processed.
-        name = _("Delay before processing descendants of an ancestor")
+        name = _("Pause search expansion")
         opt = NumberOption(name, self.__ancestor_delay, 1, 10)
         self.opts.append(opt)
 
         # Tag to use to indicate that this person has no further marriages, if
         # the person is not tagged, warn about this at the time the marriages
         # for the person are processed.
-        name = _("Tag to indicate that a person is complete")
+        name = _("Completed Person")
         opt = EnumeratedListOption(name, self.__person_complete_tag)
         self.opts.append(opt)
 
         # Tag to use to indicate that there are no further children in this
         # family, if this family is not tagged, warn about this at the time the
         # children of this family are processed.
-        name = _("Tag to indicate that a family is complete")
+        name = _(" Completed offspring Families")
         opt = EnumeratedListOption(name, self.__family_complete_tag)
         self.opts.append(opt)
 
-        # Tag to use to specify people and families to ignore. In his way,
+        # Tag to use to specify people and families to ignore. In this way,
         # hopeless cases can be marked separately and don't clutter up the list.
-        name = _("Tag to indicate that a person or family should be ignored")
+        name = _("Ignore Person or Family")
         opt = EnumeratedListOption(name, self.__ignore_tag)
         self.opts.append(opt)
 
-        self.opts[3].add_item('', '')
-        self.opts[4].add_item('', '')
-        self.opts[5].add_item('', '')
+        self.opts[3].add_item("", "")
+        self.opts[4].add_item("", "")
+        self.opts[5].add_item("", "")
         if self.dbstate.db.is_open():
             for tag_handle in self.dbstate.db.get_tag_handles(sort_handles=True):
                 tag = self.dbstate.db.get_tag_from_handle(tag_handle)
@@ -137,12 +148,14 @@ class BetaWhatNextGramplet(Gramplet):
         Save a gramplet's options to file.
         """
         self.save_options()
-        self.gui.data = [self.__todos_wanted,
-                         self.__downs_per_up,
-                         self.__ancestor_delay,
-                         self.__person_complete_tag,
-                         self.__family_complete_tag,
-                         self.__ignore_tag]
+        self.gui.data = [
+            self.__todos_wanted,
+            self.__downs_per_up,
+            self.__ancestor_delay,
+            self.__person_complete_tag,
+            self.__family_complete_tag,
+            self.__ignore_tag,
+        ]
         self.update()
 
     def on_load(self):
@@ -159,28 +172,34 @@ class BetaWhatNextGramplet(Gramplet):
         else:
             self.__todos_wanted = 10
             self.__downs_per_up = 1
-            self.__ancestor_delay = 1
-            self.__person_complete_tag = ''
-            self.__family_complete_tag = ''
-            self.__ignore_tag = ''
+            self.__ancestor_delay = 5
+            self.__person_complete_tag = ""
+            self.__family_complete_tag = ""
+            self.__ignore_tag = ""
 
     def db_changed(self):
 
-        self.connect(self.dbstate.db, 'home-person-changed', self.update)
-#        self.connect(self.dbstate.db, 'active_changed', self.update)
-        self.connect(self.dbstate.db, 'person-add', self.update)
-        self.connect(self.dbstate.db, 'person-delete', self.update)
-        self.connect(self.dbstate.db, 'person-update', self.update)
-        self.connect(self.dbstate.db, 'family-add', self.update)
-        self.connect(self.dbstate.db, 'family-delete', self.update)
-        self.connect(self.dbstate.db, 'family-update', self.update)
-        self.connect(self.dbstate.db, 'person-rebuild', self.update)
-        self.connect(self.dbstate.db, 'event-rebuild', self.update)
-        self.connect(self.dbstate.db, 'family-rebuild', self.update)
+        self.connect(self.dbstate.db, "home-person-changed", self.update)
+        # self.connect(self.dbstate.db, 'active_changed', self.update)
+        self.connect(self.dbstate.db, "person-add", self.update)
+        self.connect(self.dbstate.db, "person-delete", self.update)
+        self.connect(self.dbstate.db, "person-update", self.update)
+        self.connect(self.dbstate.db, "family-add", self.update)
+        self.connect(self.dbstate.db, "family-delete", self.update)
+        self.connect(self.dbstate.db, "family-update", self.update)
+        self.connect(self.dbstate.db, "person-rebuild", self.update)
+        self.connect(self.dbstate.db, "event-add", self.update)
+        self.connect(self.dbstate.db, "event-delete", self.update)
+        self.connect(self.dbstate.db, "event-update", self.update)
+        self.connect(self.dbstate.db, "event-rebuild", self.update)
+        self.connect(self.dbstate.db, "family-add", self.update)
+        self.connect(self.dbstate.db, "family-delete", self.update)
+        self.connect(self.dbstate.db, "family-update", self.update)
+        self.connect(self.dbstate.db, "family-rebuild", self.update)
 
     def _no_db(self):
         super()._no_db()
-#        print("No database open at this point")
+        # print("No database open at this point")
         self.set_text(initial_message)
 
     def main(self):
@@ -190,48 +209,63 @@ class BetaWhatNextGramplet(Gramplet):
         self.label.set_margin_right(2)
         # Fail gracefully if no database is loaded; warn or no entry ⚠ ☡ ⛔ 🚫 🛑 🚧 🚨 👣
         if not self.dbstate.db.is_open():
-            self.label.set_text(initial_message)
-            # self.add(self.label)
+            self.label.set_text(
+                "What's next for this session of Gramps genealogy research'"
+            )
+            #            self.label.set_text(initial_message)
+            #            self.add(self.label)
             return
 
-# complain if database is empty
+        # complain if database is empty
         people = self.dbstate.db.get_number_of_people()
         if not people:
             # Set padding/margin
-
-            self.set_text(_(" ⛔ The current Tree database contains no people."
-                            "\n\n 👣 Next Steps:"
-                            "\nAdd a Family and a person in that family:"
-                            "\n  • A Family may be added via the \"Add\" menu"
-                            "\n  • A person may be added by pressing the \"+\""
-                            " (plus) in the spouse (\"Father/partner1\" or"
-                            " \"Mother/partner2\") panels or \"Children\" tab."
-                            "\n\nOr Import People from an external file:"
-                            "\n  • An external file may be used to populate the"
-                            " tree via \"Import...\" in the \"Family Trees\" menu."
-                            "\n\nAfter adding at least 1 person, go to the People view, then"
-                            " select someone to make them the \"Active Person\", and set"
-                            " them as the focal \"Home Person\" via the Edit menu."))
+            initial_message = _("\n ⛔ The current Tree database contains no people.\n")
+            if verbose_suggestions:
+                initial_message += _(
+                    "\n 👣 Next Steps:"
+                    "\n Add a Family and a person in that family:"
+                    '\n  • A Family may be added via the "Add" menu'
+                    '\n  • A person may be added by pressing the "+"'
+                    ' (plus) in the spouse ("Father/partner1" or'
+                    ' "Mother/partner2") panels or "Children" tab.'
+                    "\n\nOr Import People from an external file:"
+                    "\n  • An external file may be used to populate the"
+                    ' tree via "Import..." in the "Family Trees" menu.'
+                    # "\n\n After adding at least 1 person, go to the People view, then"
+                    # ' select someone to make them the "Active Person", and set'
+                    # ' them as the focal "Home Person" via the Edit menu.'
+                )
+            self.set_text(initial_message)
             return
 
-# complain if no Active Person  - not critical. Gramplet focus is on Home Person
-#        active_person = self.dbstate.get_active("Person")
-#        if active_person:  # will be empty string in none active, else person handle  len(active_person) == 0:
-#           self.set_text(_("\nThere is currently no person selected to be the Active Person."
-#                           "\n\nGo to the People view, then clicking a row will"
-#                           " select someone to make them the \"Active Person\"."))
-#           return
+        # complain if no Active Person  - not critical. Gramplet focus is on Home Person
+        #        active_person = self.dbstate.get_active("Person")
+        #        if active_person:  # will be empty string in none active, else person handle  len(active_person) == 0:
+        #           self.set_text(_("\nThere is currently no person selected to be the Active Person."
+        #                           "\n\nGo to the People view, then clicking a row will"
+        #                           " select someone to make them the \"Active Person\"."))
+        #           return
 
-# complain if no Home Person
+        # complain if no Home Person
         default_person = self.dbstate.db.get_default_person()
         if default_person is None:
-            self.set_text(_(" ⛔ No Person has been set as the focal Home Person."
-                            "\n\n 👣 Next Steps:"
-                            "\nIn the People view,"
-                            " select someone to make them the \"Active Person\", and set"
-                            " them as the focal \"Home Person\" via the Edit menu."))
+            initial_message = _(
+                '\n ⛔ No Person has been chosen as the focal "Home Person".\n'
+            )
+            if verbose_suggestions:
+                initial_message += _(
+                    "\n 👣 Next Steps:"
+                    "\n  •  Select the People view icon in the Navigator sidebar."
+                    '\n  •  Select someone to make them the "Active Person".'
+                    '\n  •  Choose "Set Home Person" from the Edit menu or from the'
+                    " (right-click) context menu."
+                    '\n\n This sets them as the focal "Home Person".'
+                )
+            self.set_text(initial_message)
             return
 
+        self.set_tooltip(_("Double-click color text to edit details"))
         self.__person_complete_handle = None
         self.__family_complete_handle = None
         self.__ignore_handle = None
@@ -254,6 +288,9 @@ class BetaWhatNextGramplet(Gramplet):
         self.__counter = 0
 
         self.set_text("")
+        base_message = " focal Home Person.\n"
+        self.__missing_link(default_person, base_message)
+        self.__counter = 0
 
         # List of already processed persons and families, to avoid recursing
         # back down to ourselves or meeting the same person through different
@@ -268,8 +305,9 @@ class BetaWhatNextGramplet(Gramplet):
         # parent's other spouses, the ancestors of my grandchildren's spouses,
         # the ancestors of my sibling's spouses etc.
         ancestors = [[default_person]]
-        ancestors_queue = ([[[default_person]]] +
-                           [[] for i in range(self.__ancestor_delay)])
+        ancestors_queue = [[[default_person]]] + [
+            [] for i in range(self.__ancestor_delay)
+        ]
 
         # List of lists of families of relatives in currently processed
         # distance. We go up one level of distance in each round.
@@ -314,46 +352,70 @@ class BetaWhatNextGramplet(Gramplet):
                     families.append(new_family_group)
                 if new_spouses_group:
                     spouses.append(new_spouses_group)
+            show_diagnostic and self.append_text(
+                f"Line {inspect.currentframe().f_lineno} quota test: (Other) families of parents:{self.__counter}/{self.__todos_wanted}\n"
+            )
             if self.__counter >= self.__todos_wanted:
                 break
 
             # Next generation of children
-            for down in range(self.__downs_per_up):
-                new_families = []
-                for family_group in families:
-                    children = []
-                    for (family, person, spouse) in family_group:
-                        for child in self.__get_children(family):
-                            self.__process_person(child, children)
-                        self.__process_family_2(family, person, spouse)
-                    if self.__counter >= self.__todos_wanted:
-                        break
+            if self.__downs_per_up:
 
-                    # Families of children
-                    new_family_group = []
-                    new_spouses_group = []
-                    for person in children:
-                        for family in self.__get_families(person):
-                            spouse = self.__get_spouse(person, family)
-                            if spouse is UnknownPerson:
-                                self.__missing_spouse(person)
-                            elif spouse is not None:
-                                self.__process_person(spouse, new_spouses_group)
-                            self.__process_family(family, person, spouse, new_family_group)
-                        self.__process_person_2(person)
-                    if new_family_group:
-                        new_families.append(new_family_group)
-                    if new_spouses_group:
-                        spouses.append(new_spouses_group)
+                for down in range(self.__downs_per_up):
+                    new_families = []
+                    for family_group in families:
+                        children = []
+                        for family, person, spouse in family_group:
+                            for child in self.__get_children(family):
+                                self.__process_person(child, children)
+                            self.__process_family_2(family, person, spouse)
+                        show_diagnostic and self.append_text(
+                            f"Line {inspect.currentframe().f_lineno} quota test: Family Group in Families:{self.__counter}/{self.__todos_wanted}\n"
+                        )
+                        if self.__counter >= self.__todos_wanted:
+                            break
+
+                        # Families of children
+                        new_family_group = []
+                        new_spouses_group = []
+                        for person in children:
+                            show_diagnostic and self.append_text(
+                                f"Line {inspect.currentframe().f_lineno} quota test: children: {self.__counter}/{self.__todos_wanted}\n"
+                            )
+                            if self.__counter >= self.__todos_wanted:
+                                break
+                            for family in self.__get_families(person):
+                                spouse = self.__get_spouse(person, family)
+                                if spouse is UnknownPerson:
+                                    self.__missing_spouse(person)
+                                elif spouse is not None:
+                                    self.__process_person(spouse, new_spouses_group)
+                                self.__process_family(
+                                    family, person, spouse, new_family_group
+                                )
+                            self.__process_person_2(person)
+                        if new_family_group:
+                            new_families.append(new_family_group)
+                        if new_spouses_group:
+                            spouses.append(new_spouses_group)
+                        show_diagnostic and self.append_text(
+                            f"Line {inspect.currentframe().f_lineno} quota test: Families of children: {self.__counter}/{self.__todos_wanted}\n"
+                        )
+                        if self.__counter >= self.__todos_wanted:
+                            break
+                    families = new_families
+                    spouses_queue.append(spouses)
+                    spouses = []
+                    show_diagnostic and self.append_text(
+                        f"Line {inspect.currentframe().f_lineno} quota test: Spouses: {self.__counter}/{self.__todos_wanted}\n"
+                    )
                     if self.__counter >= self.__todos_wanted:
                         break
-                families = new_families
-                spouses_queue.append(spouses)
-                spouses = []
+                show_diagnostic and self.append_text(
+                    f"Line {inspect.currentframe().f_lineno} quota test: Next generation of children: {self.__counter}/{self.__todos_wanted}\n"
+                )
                 if self.__counter >= self.__todos_wanted:
                     break
-            if self.__counter >= self.__todos_wanted:
-                break
 
             # Parents
             new_ancestors = []
@@ -383,20 +445,29 @@ class BetaWhatNextGramplet(Gramplet):
                     new_ancestors.append(new_ancestor_group_1 + new_ancestor_group_2)
                 if new_family_group:
                     new_families.append(new_family_group)
+                show_diagnostic and self.append_text(
+                    f"Line {inspect.currentframe().f_lineno} quota test: ancestor_group in ancestors: {self.__counter}/{self.__todos_wanted}\n"
+                )
                 if self.__counter >= self.__todos_wanted:
                     break
             ancestors = new_ancestors + spouses_queue.pop(0)
             ancestors_queue.append(ancestors)
             families_queue.append(new_families)
             families += families_queue.pop(0)
+            show_diagnostic and self.append_text(
+                f"Line {inspect.currentframe().f_lineno} quota test: Parents: {self.__counter}/{self.__todos_wanted}\n"
+            )
             if self.__counter >= self.__todos_wanted:
                 break
 
             # Separator between rounds
             if self.__counter > 0:
+                show_diagnostic and self.append_text(
+                    f"Line {inspect.currentframe().f_lineno} quota test: New Round of Generations {self.__counter}\n"
+                )
                 self.append_text("\n")
 
-        self.append_text("", scroll_to='begin')
+        self.append_text("", scroll_to="begin")
 
     def __process_person(self, person, append_list):
 
@@ -430,12 +501,17 @@ class BetaWhatNextGramplet(Gramplet):
                 has_birth = True
 
         if not has_birth:
-            missingbits.append(_("Birth event missing. Add via the Edit Person Menu."))
+            base_message = _("Birth event missing.")
+            suggestion_message = _("Add via the Events tab of the Edit Person dialog.")
+            if verbose_suggestions:
+                base_message = f"{base_message}\n  👣{suggestion_message}\n"
+            missingbits.append(base_message)
 
         if missingbits:
-            self.link(name, 'Person', person.get_handle())
-            self.append_text(_(": %(list)s\n") % {
-                'list': _(", ").join(missingbits)})  # Arabic OK
+            self.link(name, "Person", person.get_handle())
+            self.append_text(
+                _(": %(list)s\n") % {"list": _(", ").join(missingbits)}
+            )  # Arabic OK
             self.__counter += 1
 
         append_list.append(person)
@@ -449,14 +525,19 @@ class BetaWhatNextGramplet(Gramplet):
         if not name:
             name = _("(person with unknown name)")
 
-        if self.__person_complete_handle is not None and \
-           self.__person_complete_handle not in person.get_tag_list():
-            missingbits.append(_("person not complete"))
+        if (
+            self.__person_complete_handle is not None
+            and self.__person_complete_handle not in person.get_tag_list()
+        ):
+            missingbits.append(
+                _(f"{inspect.currentframe().f_lineno} person not complete")
+            )
 
         if missingbits:
-            self.link(name, 'Person', person.get_handle())
-            self.append_text(_(": %(list)s\n") % {
-                'list': _(", ").join(missingbits)})  # Arabic OK
+            self.link(name, "Person", person.get_handle())
+            self.append_text(
+                _(": %(list)s\n") % {"list": _(", ").join(missingbits)}
+            )  # Arabic OK
             self.__counter += 1
 
     def __process_family(self, family, person1, person2, append_list):
@@ -482,7 +563,7 @@ class BetaWhatNextGramplet(Gramplet):
             if not name2:
                 name2 = _("(person with unknown name)")
 
-        name = _("%(name1)s and %(name2)s") % {'name1': name1, 'name2': name2}
+        name = _("%(name1)s and %(name2)s") % {"name1": name1, "name2": name2}
 
         has_marriage = False
 
@@ -498,15 +579,20 @@ class BetaWhatNextGramplet(Gramplet):
             if not has_marriage:
                 missingbits.append(_("marriage event missing"))
         elif family.get_relationship() == FamilyRelType.UNKNOWN:
-            missingbits.append(_("relation type unknown"))
+            missingbits.append(_("relationship type unknown"))
 
         if missingbits:
-            self.link(name, 'Family', family.get_handle())
-            self.append_text(_(": %(list)s\n") % {
-                'list': _(", ").join(missingbits)})  # Arabic OK
+            self.link(name, "Family", family.get_handle())
+            self.append_text(
+                _(": %(list)s\n") % {"list": _(", ").join(missingbits)}
+            )  # Arabic OK
             self.__counter += 1
 
         append_list.append((family, person1, person2))
+        suggestion_message = _("Add via the Events tab of the Edit Family dialog.")
+
+    #        if verbose_suggestions:
+    #            base_message = f"{base_message}\n  👣{suggestion_message}\n"
 
     def __process_family_2(self, family, person1, person2):
 
@@ -526,16 +612,19 @@ class BetaWhatNextGramplet(Gramplet):
             if not name2:
                 name2 = _("(person with unknown name)")
 
-        name = _("%(name1)s and %(name2)s") % {'name1': name1, 'name2': name2}
+        name = _("%(name1)s and %(name2)s") % {"name1": name1, "name2": name2}
 
-        if self.__family_complete_handle is not None and \
-           self.__family_complete_handle not in family.get_tag_list():
-            missingbits.append(_("family not complete"))
+        if (
+            self.__family_complete_handle is not None
+            and self.__family_complete_handle not in family.get_tag_list()
+        ):
+            missingbits.append(_("591 family not complete"))
 
         if missingbits:
-            self.link(name, 'Family', family.get_handle())
-            self.append_text(_(": %(list)s\n") % {
-                'list': _(", ").join(missingbits)})  # Arabic OK
+            self.link(name, "Family", family.get_handle())
+            self.append_text(
+                _(": %(list)s\n") % {"list": _(", ").join(missingbits)}
+            )  # Arabic OK
             self.__counter += 1
 
     def __process_event(self, event):
@@ -554,30 +643,42 @@ class BetaWhatNextGramplet(Gramplet):
 
         if missingbits:
             # translators: needed for French, ignore otherwise
-            return [_("%(str1)s: %(str2)s"
-                     ) % {'str1': event.get_type(),
-                          'str2': _(", ").join(missingbits)}]  # Arabic OK
+            return [
+                _("%(str1)s: %(str2)s")
+                % {"str1": event.get_type(), "str2": _(", ").join(missingbits)}
+            ]  # Arabic OK
         else:
             return []
 
     def __missing_spouse(self, person):
-        self.__missing_link(person, _("A partner relation exists but the spouse is missing"))
+        self.__missing_link(
+            person, _("A partner relationship exists but the spouse is missing")
+        )
+        suggestion_message = _("Add missing partner using the Edit Family dialog.")
 
     def __missing_father(self, person):
         self.__missing_link(person, _("Father missing from the parent family"))
+        suggestion_message = _("Add missing partner using the Edit Family dialog.")
 
     def __missing_mother(self, person):
         self.__missing_link(person, _("Mother missing from the parent family"))
+        suggestion_message = _("Add missing partner using the Edit Family dialog.")
 
     def __missing_parents(self, person):
-        self.__missing_link(person, _("Parent family is unknown. Choose an option"
-                                      " from the Edit menu of the Relationships view."))
+        base_message = _("Parent family is unknown.")
+        suggestion_message = _(
+            '"Add New/Existing Parents" from the Edit menu of the Relationships view.'
+        )
 
     def __missing_link(self, person, text):
 
         name = name_displayer.display(person)
-        self.link(name, 'Person', person.get_handle())
+        self.link(name, "Person", person.get_handle())
         self.append_text(_(": %s\n") % text)
+        #        self.append_text(_(": %s\n") % (text, self.__counter))
+        show_diagnostic and self.append_text(
+            f"\nLine {inspect.currentframe().f_lineno} quota test: Missing Link: count {self.__counter} \n"
+        )
         self.__counter += 1
 
     def __get_spouse(self, person, family):
@@ -589,8 +690,10 @@ class BetaWhatNextGramplet(Gramplet):
             else:
                 return None
         spouse = self.dbstate.db.get_person_from_handle(spouse_handle)
-        if self.__ignore_handle is not None and \
-           self.__ignore_handle in spouse.get_tag_list():
+        if (
+            self.__ignore_handle is not None
+            and self.__ignore_handle in spouse.get_tag_list()
+        ):
             return None
         else:
             return spouse
@@ -599,8 +702,10 @@ class BetaWhatNextGramplet(Gramplet):
 
         for child_ref in family.get_child_ref_list():
             child = self.dbstate.db.get_person_from_handle(child_ref.ref)
-            if self.__ignore_handle is not None and \
-               self.__ignore_handle in child.get_tag_list():
+            if (
+                self.__ignore_handle is not None
+                and self.__ignore_handle in child.get_tag_list()
+            ):
                 continue
             yield child
 
@@ -610,8 +715,10 @@ class BetaWhatNextGramplet(Gramplet):
             if family_handle in self.__processed_families:
                 continue
             family = self.dbstate.db.get_family_from_handle(family_handle)
-            if self.__ignore_handle is not None and \
-               self.__ignore_handle in family.get_tag_list():
+            if (
+                self.__ignore_handle is not None
+                and self.__ignore_handle in family.get_tag_list()
+            ):
                 continue
             yield family
 
@@ -624,8 +731,10 @@ class BetaWhatNextGramplet(Gramplet):
             return (None, None, None)
 
         family = self.dbstate.db.get_family_from_handle(family_handle)
-        if self.__ignore_handle is not None and \
-           self.__ignore_handle in family.get_tag_list():
+        if (
+            self.__ignore_handle is not None
+            and self.__ignore_handle in family.get_tag_list()
+        ):
             return (None, None, None)
 
         father_handle = family.get_father_handle()
@@ -636,8 +745,10 @@ class BetaWhatNextGramplet(Gramplet):
                 father = None
         else:
             father = self.dbstate.db.get_person_from_handle(father_handle)
-            if self.__ignore_handle is not None and \
-               self.__ignore_handle in father.get_tag_list():
+            if (
+                self.__ignore_handle is not None
+                and self.__ignore_handle in father.get_tag_list()
+            ):
                 father = None
 
         mother_handle = family.get_mother_handle()
@@ -645,8 +756,10 @@ class BetaWhatNextGramplet(Gramplet):
             mother = UnknownPerson
         else:
             mother = self.dbstate.db.get_person_from_handle(mother_handle)
-            if self.__ignore_handle is not None and \
-               self.__ignore_handle in mother.get_tag_list():
+            if (
+                self.__ignore_handle is not None
+                and self.__ignore_handle in mother.get_tag_list()
+            ):
                 mother = None
 
         return (father, mother, family)
