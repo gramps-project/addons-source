@@ -58,7 +58,7 @@ register(
     expand=True,
     gramplet="BetaWhatNextGramplet",
     gramplet_title=_("Beta What's Next?"),
-    version="0.1.8",
+    version = '0.1.9',
     help_url="https://github.com/emyoulation/_BetaDashboards",
     # help_url="Gramps_5.2_Wiki_Manual_-_Gramplets#What.27s_Next",
     gramps_target_version=MODULE_VERSION,
