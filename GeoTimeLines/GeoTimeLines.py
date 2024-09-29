@@ -202,7 +202,8 @@ class GeoTimeLines(GeoGraphyView):
         ('geotimelines.animation_step_time', 200),
         
         ('geotimelines.use_custom_icons', True),
-        ('geotimelines.initial_view_type', 0),
+        ('geotimelines.initial_view_type', 1),
+        ('geotimelines.active_view_type', 1),
         ('geotimelines.default_icon', 'geo-timelines-dot'),
         ('geotimelines.generalplace', [
                 "Country",
@@ -215,7 +216,7 @@ class GeoTimeLines(GeoGraphyView):
         ),
         ('geotimelines.assumeage', 30),
         ('geotimelines.assumedeath', 100),
-        ('geotimelines.show_missing_gen', 2),
+        ('geotimelines.show_missing_gen', 0),
         ('geotimelines.show_missing_gen_radius', 10),
     )
     #probably better to use the following, but trouble converting
@@ -229,10 +230,12 @@ class GeoTimeLines(GeoGraphyView):
             PlaceType.DEPARTMENT,
     '''
     def __init__(self, pdata, dbstate, uistate, nav_group=0):
-        self.window_name = _("GeoTimeLines")
+        self.window_name = _("TimeLines Map")
         GeoGraphyView.__init__(
             self, self.window_name, pdata, dbstate, uistate, PersonBookmarks, nav_group
         )
+        self.initial_view = True
+        self.dialog = False
         self.dbstate = dbstate
         self.uistate = uistate
         self.active_db_phandle = (None, None)
@@ -272,15 +275,22 @@ class GeoTimeLines(GeoGraphyView):
         self.DB_CHOICE_REL = 5
         self.DB_CHOICE_DB = 6
         self.DB_CHOICE_FILTER = 7
-        self.DB_CHOICES = {
-            self.DB_CHOICE_POPUP : 'Ask in popup',
-            self.DB_CHOICE_ACTIVE : 'Active Individual',
+        self.DB_CHOICES_INITIAL = {
+            self.DB_CHOICE_POPUP : 'Ask in Popup',
+            self.DB_CHOICE_ACTIVE : 'Active Person',
             self.DB_CHOICE_ANC : 'Ancestors',
             self.DB_CHOICE_DESC : 'Descendants',
             self.DB_CHOICE_ANCDES : 'Ancestors and Descendants',
             self.DB_CHOICE_REL : 'All Relatives',
             self.DB_CHOICE_DB : 'Entire Database',
             self.DB_CHOICE_FILTER : 'From Filter'
+        }
+        
+        self.DB_CHOICE_SAME = 2
+        self.DB_CHOICES_SWITCH = {
+            self.DB_CHOICE_POPUP : 'Ask in Popup',
+            self.DB_CHOICE_ACTIVE : 'Active Person',
+            self.DB_CHOICE_SAME : 'Same as Initial Map View'
         }
         self.show_startup_dialog = False
         self.database_choice = self._config.get('geotimelines.initial_view_type')
@@ -326,7 +336,7 @@ class GeoTimeLines(GeoGraphyView):
         """
         Used to set the titlebar in the configuration window.
         """
-        return _('GeoTimeLines')
+        return _('TimeLines Map')
 
     def get_stock(self):
         """
@@ -368,6 +378,12 @@ class GeoTimeLines(GeoGraphyView):
         """
         active = self.get_active()
         if self.active_db_phandle != (self.dbstate.db.get_dbid, handle):
+            #behaviour if you switched persons
+            if(not self.initial_view and not self.dialog):
+                if self._config.get('geotimelines.active_view_type') == self.DB_CHOICE_SAME:
+                    self.database_choice = self._config.get('geotimelines.initial_view_type')
+                else:
+                    self.database_choice = self._config.get('geotimelines.active_view_type')
             #### these need to be cleared on switching active person
             self._cleardata()
             self._createmap(None)
@@ -758,6 +774,7 @@ class GeoTimeLines(GeoGraphyView):
         self.remove_all_markers()
         self.lifeway_layer.clear_ways()
         self.date_layer.clear_dates()
+        self.dialog = False
         
         if self.database_choice == self.DB_CHOICE_POPUP and not self.show_startup_dialog:
             self.show_startup_dialog = True
@@ -766,13 +783,14 @@ class GeoTimeLines(GeoGraphyView):
         elif self.database_choice == self.DB_CHOICE_POPUP:
             return
         person = None
-        if self.database_choice in self.DB_CHOICES.keys():
+        if self.database_choice in self.DB_CHOICES_INITIAL.keys():
             if person_handle:
                 person = self.dbstate.db.get_person_from_handle(person_handle)
             if self.active_db_phandle != (self.dbstate.db.get_dbid, person_handle):
                 self.active_db_phandle = (self.dbstate.db.get_dbid, person_handle)
                 #build data
                 if person is not None:
+                    self.initial_view = False
                     self._datacollection(person)
                     self.all_sort = sorted(self.place_list,
                                        key=operator.itemgetter(6)
@@ -801,7 +819,7 @@ class GeoTimeLines(GeoGraphyView):
                     self._generateIcons()
                     progress.step()
                     progress.close()
-                    self.message_layer.add_message("Welcome to GeoTimeLines!")
+                    self.message_layer.add_message("Welcome to TimeLines Map!")
                     
                     self._calculateminmax()
                     
@@ -1355,7 +1373,7 @@ class GeoTimeLines(GeoGraphyView):
         
         rightboxgrid = Gtk.Grid()
         rightboxgrid.set_border_width(0)  #width around?
-        rightboxgrid.set_column_spacing(0) #space between col
+        rightboxgrid.set_column_spacing(4) #space between col
         rightboxgrid.set_row_spacing(0)
         rightboxgrid.show()
         
@@ -1418,14 +1436,20 @@ class GeoTimeLines(GeoGraphyView):
         self.btn_showall.set_label("Show All")
         self.btn_showall.set_active(True)
         self.btn_showall.connect('clicked', self._button_showall, playbtn)
-        rightboxgrid.attach(self.btn_showall, 2, 1, 1, 2)
+        rightboxgrid.attach(self.btn_showall, 1, 1, 1, 1)
+        
+        self.btn_setview = Gtk.Button()
+        self.btn_setview.show()
+        self.btn_setview.set_label("Set View")
+        self.btn_setview.connect('clicked', lambda s : self._startupdialog())
+        rightboxgrid.attach(self.btn_setview, 2, 1, 1, 1)
         
         ckbtn = Gtk.CheckButton()
         ckbtn.show()
-        ckbtn.set_label("Show Map Lines")
+        ckbtn.set_label("Show Lines")
         ckbtn.set_active(self._config.get("geotimelines.default_show_lines"))
         ckbtn.connect('toggled', self._checkbutton_lines )
-        rightboxgrid.attach(ckbtn, 1, 1, 1, 1)
+        rightboxgrid.attach(ckbtn, 2, 2, 1, 1)
         
         ckbtn = Gtk.CheckButton()
         ckbtn.show()
@@ -1659,7 +1683,7 @@ class GeoTimeLines(GeoGraphyView):
         self.date_layer.last = ""
         self.message_layer.clear_messages()
         #self.message_layer.add_message(_("d: %s") % scale.get_value())
-        self.message_layer.add_message(_("Number of Individuals: %s") % currentpeople)
+        self.message_layer.add_message(_("Number of Persons: %s") % currentpeople)
         
 
 
@@ -1727,30 +1751,6 @@ class GeoTimeLines(GeoGraphyView):
         #########################################
         # Left Grid                             #
         #########################################
-        
-        defaultoptions = Gtk.Grid()
-        defaultoptions.set_border_width(12)
-        defaultoptions.set_column_spacing(6)
-        defaultoptions.set_row_spacing(6)
-        defaultoptions.set_margin_top(topframemargin)
-                
-        leftgrid.attach(defaultoptions, 1, 1, 2, 1)
-        f = Gtk.Frame.new("Default Options")
-        f.set_label_align(0.5, 0.5)
-        leftgrid.attach(f, 1, 1, 2, 1)
-        
-        configdialog.add_checkbox(
-            defaultoptions,
-            _('Show map travel lines on startup'),
-            1, 
-            'geotimelines.default_show_lines',
-            )
-        configdialog.add_checkbox(
-            defaultoptions,
-                _('Show time ticks on navigation bar on startup'),
-            2, 
-            'geotimelines.default_show_ticks',
-            )
             
         preferenceoptions = Gtk.Grid()
         preferenceoptions.set_border_width(12)
@@ -1773,9 +1773,9 @@ class GeoTimeLines(GeoGraphyView):
         preferenceoptions.attach(staggergrid, 1, staggerrow, 1, 1)
         configdialog.add_checkbox(
             staggergrid,
-            _('Stagger map markers.\n'
-              'to more easier see different\n'
-              'makers at the same location'),
+            _('Stagger the map markers\n'
+              'to differentiate different\n'
+              'markers at the same location'),
             1, 
             'geotimelines.separate_markers')
         staggergrid2 = Gtk.Grid()
@@ -1794,13 +1794,13 @@ class GeoTimeLines(GeoGraphyView):
             _("Display markers for unknown ancestors\nbased on earliest descendant location"),
             2,
             'geotimelines.show_missing_gen',
-            [(0,"Do Not Show "), (1,"If Missing Any Parent"), (2,"If Missing Both Parents")],
+            [(0,"Do Not Show"), (1,"If Missing Any Parent"), (2,"If Missing Both Parents")],
             #callback=self.cb_update_font,
             #valueactive=True, #store value or position
         )
         configdialog.add_spinner(
             preferenceoptions,
-            _("Days to keep map travel lines"),
+            _("Days to keep lines on the map after\nan event"),
             3,
             'geotimelines.persist_drawn_lines_days',
             (1, 36500),
@@ -1826,14 +1826,14 @@ class GeoTimeLines(GeoGraphyView):
             )
         configdialog.add_spinner(
             mapiconoptions,
-            _("If no record of birth, their assumed age at first event"),
+            _("If there is no birth event for a person, their age\nis assumed to be this at their first event"),
             2,
             'geotimelines.assumeage',
             (1, 120),
         ) 
         configdialog.add_spinner(
             mapiconoptions,
-            _("If no death event, assumed dead by"),
+            _("If there is no death event for a person, they will\nbe assumed dead at this age"),
             3,
             'geotimelines.assumedeath',
             (1, 120),
@@ -1896,29 +1896,55 @@ class GeoTimeLines(GeoGraphyView):
             #callback=self.cb_update_maxgen,
         )
         
-        startupgrid = Gtk.Grid()
-        startupgrid.set_border_width(12)
-        startupgrid.set_column_spacing(6)
-        startupgrid.set_row_spacing(6)
-        startupgrid.set_margin_top(topframemargin)
+        defaultoptions = Gtk.Grid()
+        defaultoptions.set_border_width(12)
+        defaultoptions.set_column_spacing(6)
+        defaultoptions.set_row_spacing(6)
+        defaultoptions.set_margin_top(topframemargin)
         
-        rightgrid.attach(startupgrid, 1, 2, 2, 1)
-        f = Gtk.Frame.new("Default Startup Options")
+        rightgrid.attach(defaultoptions, 1, 2, 2, 1)
+        f = Gtk.Frame.new("Default Behaviour Options")
         f.set_label_align(0.5, 0.5)
         rightgrid.attach(f, 1, 2, 2, 1)
         
         startupreflist = []
-        for c in self.DB_CHOICES.values():
+        for c in self.DB_CHOICES_INITIAL.values():
             startupreflist.append((len(startupreflist), c))
         configdialog.add_combo(
-            startupgrid,
-            _("Initial Mapview"),
+            defaultoptions,
+            _("Initial map view on Gramps startup"),
             1,
             "geotimelines.initial_view_type",
             startupreflist,
             #callback=self.cb_update_font,
             #valueactive=True, #store value or position
         )
+        onchangereflist = []
+        for c in self.DB_CHOICES_SWITCH.values():
+            onchangereflist.append((len(onchangereflist), c))
+        configdialog.add_combo(
+            defaultoptions,
+            _("Initial map view after startup and\nafter changing the active person"),
+            2,
+            "geotimelines.active_view_type",
+            onchangereflist,
+            #callback=self.cb_update_font,
+            #valueactive=True, #store value or position
+        )        
+        configdialog.add_checkbox(
+            defaultoptions,
+            _('Show map travel lines on startup'),
+            3, 
+            'geotimelines.default_show_lines',
+            )
+        configdialog.add_checkbox(
+            defaultoptions,
+                _('Show time ticks on navigation bar on startup'),
+            4, 
+            'geotimelines.default_show_ticks',
+            )
+        
+        
         notesgrid = Gtk.Grid()
         notesgrid.set_border_width(12)
         notesgrid.set_column_spacing(6)
@@ -1945,7 +1971,7 @@ class GeoTimeLines(GeoGraphyView):
         lbl.set_label(str(int(avg_animate_calc_time)))
         notesgrid.attach(lbl, 2, 1, 1, 1)
         
-        return _('GeoTimeLines options'), grid
+        return _('TimeLines Map options'), grid
 
     def _refreshdisplay(self):
         self._set_default_marker()
@@ -1959,7 +1985,7 @@ class GeoTimeLines(GeoGraphyView):
             if self.database_choice == self.DB_CHOICE_ACTIVE:
                 self.message_layer.add_message(f"TimeLines for {_nd.display(self.dbstate.db.get_person_from_handle(self.uistate.get_active('Person')))}")
             else:
-                self.message_layer.add_message(_("Number of Individuals: %s") % len(self.all_sort_lines_dict))
+                self.message_layer.add_message(_("Number of Persons: %s") % len(self.all_sort_lines_dict))
         else:
             self._slideraction(self.slider)
         
@@ -1979,6 +2005,7 @@ class GeoTimeLines(GeoGraphyView):
         self._refreshdisplay()
 
     def _startupdialog(self):
+        self.dialog = True
         dialog = Gtk.Dialog()
         dialog.set_title("Choose how to draw the map!")
         dialog.set_size_request(400, 100)

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-27 19:36-0700\n"
+"POT-Creation-Date: 2024-09-28 22:35-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: GeoTimeLines/GeoTimeLines.gpr.py:4
+#: GeoTimeLines/GeoTimeLines.gpr.py:4 GeoTimeLines/GeoTimeLines.py:233
+#: GeoTimeLines/GeoTimeLines.py:339
 msgid "TimeLines Map"
 msgstr ""
 
@@ -26,11 +27,11 @@ msgid ""
 "A view showing all the places visited by a person or persons on various date."
 msgstr ""
 
-#: GeoTimeLines/GeoTimeLines.gpr.py:12
+#: GeoTimeLines/GeoTimeLines.gpr.py:14
 msgid "Geography"
 msgstr ""
 
-#: GeoTimeLines/GeoTimeLines.gpr.py:14
+#: GeoTimeLines/GeoTimeLines.gpr.py:16
 msgid "TimeLines map"
 msgstr ""
 
@@ -38,66 +39,54 @@ msgstr ""
 msgid "Organize Bookmarks"
 msgstr ""
 
-#: GeoTimeLines/GeoTimeLines.py:232 GeoTimeLines/GeoTimeLines.py:329
-msgid "GeoTimeLines"
-msgstr ""
-
-#: GeoTimeLines/GeoTimeLines.py:639
+#: GeoTimeLines/GeoTimeLines.py:655
 msgid "Unknown"
 msgstr ""
 
-#: GeoTimeLines/GeoTimeLines.py:668
+#: GeoTimeLines/GeoTimeLines.py:684
 msgid "Edit Event"
 msgstr ""
 
-#: GeoTimeLines/GeoTimeLines.py:672 GeoTimeLines/GeoTimeLines.py:699
-#: GeoTimeLines/GeoTimeLines.py:729
+#: GeoTimeLines/GeoTimeLines.py:688 GeoTimeLines/GeoTimeLines.py:715
+#: GeoTimeLines/GeoTimeLines.py:745
 msgid "Center on this place"
 msgstr ""
 
-#: GeoTimeLines/GeoTimeLines.py:695
+#: GeoTimeLines/GeoTimeLines.py:711
 msgid "Edit Place"
 msgstr ""
 
-#: GeoTimeLines/GeoTimeLines.py:725
+#: GeoTimeLines/GeoTimeLines.py:741
 msgid "Edit Person"
 msgstr ""
 
-#: GeoTimeLines/GeoTimeLines.py:739
+#: GeoTimeLines/GeoTimeLines.py:755
 msgid "Choose View Format"
 msgstr ""
 
-#: GeoTimeLines/GeoTimeLines.py:782
+#: GeoTimeLines/GeoTimeLines.py:800
 msgid "Almost done"
 msgstr ""
 
-#: GeoTimeLines/GeoTimeLines.py:898
+#: GeoTimeLines/GeoTimeLines.py:916
 msgid "Gathering data"
 msgstr ""
 
-#: GeoTimeLines/GeoTimeLines.py:1003 GeoTimeLines/GeoTimeLines.py:1103
+#: GeoTimeLines/GeoTimeLines.py:1021 GeoTimeLines/GeoTimeLines.py:1121
 #, python-format
 msgid "%(eventtype)s : %(name)s"
 msgstr ""
 
-#: GeoTimeLines/GeoTimeLines.py:1662 GeoTimeLines/GeoTimeLines.py:1962
+#: GeoTimeLines/GeoTimeLines.py:1686 GeoTimeLines/GeoTimeLines.py:1988
 #, python-format
-msgid "Number of Individuals: %s"
-msgstr ""
-
-#: GeoTimeLines/GeoTimeLines.py:1744
-msgid "Show map travel lines on startup"
-msgstr ""
-
-#: GeoTimeLines/GeoTimeLines.py:1750
-msgid "Show time ticks on navigation bar on startup"
+msgid "Number of Persons: %s"
 msgstr ""
 
 #: GeoTimeLines/GeoTimeLines.py:1776
 msgid ""
-"Stagger map markers.\n"
-"to more easier see different\n"
-"makers at the same location"
+"Stagger the map markers\n"
+"to differentiate different\n"
+"markers at the same location"
 msgstr ""
 
 #: GeoTimeLines/GeoTimeLines.py:1786
@@ -114,7 +103,9 @@ msgid ""
 msgstr ""
 
 #: GeoTimeLines/GeoTimeLines.py:1803
-msgid "Days to keep map travel lines"
+msgid ""
+"Days to keep lines on the map after\n"
+"an event"
 msgstr ""
 
 #: GeoTimeLines/GeoTimeLines.py:1822
@@ -122,11 +113,15 @@ msgid "Use custom map icons"
 msgstr ""
 
 #: GeoTimeLines/GeoTimeLines.py:1829
-msgid "If no record of birth, their assumed age at first event"
+msgid ""
+"If there is no birth event for a person, their age\n"
+"is assumed to be this at their first event"
 msgstr ""
 
 #: GeoTimeLines/GeoTimeLines.py:1836
-msgid "If no death event, assumed dead by"
+msgid ""
+"If there is no death event for a person, they will\n"
+"be assumed dead at this age"
 msgstr ""
 
 #: GeoTimeLines/GeoTimeLines.py:1875
@@ -142,9 +137,23 @@ msgid "Steps per millisecond"
 msgstr ""
 
 #: GeoTimeLines/GeoTimeLines.py:1915
-msgid "Initial Mapview"
+msgid "Initial map view on Gramps startup"
 msgstr ""
 
-#: GeoTimeLines/GeoTimeLines.py:1948
-msgid "GeoTimeLines options"
+#: GeoTimeLines/GeoTimeLines.py:1927
+msgid ""
+"Initial map view after startup and\n"
+"after changing the active person"
+msgstr ""
+
+#: GeoTimeLines/GeoTimeLines.py:1936
+msgid "Show map travel lines on startup"
+msgstr ""
+
+#: GeoTimeLines/GeoTimeLines.py:1942
+msgid "Show time ticks on navigation bar on startup"
+msgstr ""
+
+#: GeoTimeLines/GeoTimeLines.py:1974
+msgid "TimeLines Map options"
 msgstr ""
