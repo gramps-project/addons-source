@@ -1,0 +1,68 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-24 19:33+0200\n"
+"PO-Revision-Date: 2024-09-29 17:42+0200\n"
+"Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
+"Language-Team: \n"
+"Language: da_DK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: DoubleCousins/double_cousins.gpr.py:24
+msgid "Double Cousins"
+msgstr "Dobbelt kusiner/fætre"
+
+#: DoubleCousins/double_cousins.gpr.py:25
+msgid "A text report listing double cousins."
+msgstr "En tekstrapport, der visér dobbelt kusiner/fætre."
+
+#: DoubleCousins/double_cousins.py:104 DoubleCousins/double_cousins.py:105
+msgid "Birth"
+msgstr "Fødsel"
+
+#: DoubleCousins/double_cousins.py:112
+msgid "Double Cousins Report"
+msgstr "Rapport over dobbelt kusiner/fætre"
+
+#: DoubleCousins/double_cousins.py:120
+#, no-python-format
+msgid ""
+"Double (first) cousins occur when two siblings of family A marry two "
+"siblings of family B. Their children are double cousins to each other and "
+"share the same four grandparents instead of six like normal first cousins. "
+"Therefore they are genetically closer than normal first cousins and share "
+"25% of their DNA similar to half-siblings instead of 12.5% like normal first "
+"cousins.\n"
+msgstr ""
+"Dobbelt kusiner/fætre (første) opstår når to søskende fra familie A gifter "
+"sig med to søskende fra familie B. Deres børn er dobbelt kusiner/fætre og "
+"deler de samme fire bedsteforældre i stedet for seks som almindelige første "
+"kusiner.Derfor er de genetisk tættere end normale første kusiner/fætre og "
+"deler 25% af deres DNA ligesom halvsøskende i stedet for 12.5% som normale "
+"første kusiner/fætre.\n"
+
+#: DoubleCousins/double_cousins.py:136
+msgid "No double cousins were found in your database."
+msgstr "Ingen dobbelt kusiner/fætre blev fundet i din database."
+
+#: DoubleCousins/double_cousins.py:170
+msgid "Show info text"
+msgstr "Vis informatiostekst"
+
+#: DoubleCousins/double_cousins.py:171 DoubleCousins/double_cousins.py:173
+msgid "Report Options"
+msgstr "Rapport tilvalg"
+
+#: DoubleCousins/double_cousins.py:172
+msgid "Show Gramps ID"
+msgstr "Vis Gramps ID"
