@@ -1,0 +1,512 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-02-02 14:37-0600\n"
+"PO-Revision-Date: 2024-09-29 09:12+0200\n"
+"Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
+"Language-Team: \n"
+"Language: da_DK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: DescendantsLines/DescendantsLines.gpr.py:26
+msgid "Descendants Lines"
+msgstr "Efterkommerlinier"
+
+#: DescendantsLines/DescendantsLines.gpr.py:27
+msgid "Produces descendants lines of a person"
+msgstr "Danner efterkommerlinier for en person"
+
+#: DescendantsLines/DescendantsLines.py:463
+msgid "Using SVG type for supplemental document is not supported!"
+msgstr "At benytte SVG type til supplerende dokument er ikke understøttet!"
+
+#: DescendantsLines/DescendantsLines.py:1329
+msgid "Unknown"
+msgstr "Ukendt"
+
+#: DescendantsLines/DescendantsLines.py:1525
+msgid "Report Options"
+msgstr "Rapport tilvalg"
+
+#: DescendantsLines/DescendantsLines.py:1527
+msgid "Center Person"
+msgstr "Fokusperson"
+
+#: DescendantsLines/DescendantsLines.py:1528
+msgid "The center person for the report"
+msgstr "Person som er i fokus for rapporten"
+
+#: DescendantsLines/DescendantsLines.py:1531
+msgid "Output format"
+msgstr "Uddataformat"
+
+#: DescendantsLines/DescendantsLines.py:1532
+msgid "PNG format"
+msgstr "PNG format"
+
+#: DescendantsLines/DescendantsLines.py:1533
+msgid "SVG format"
+msgstr "SVG format"
+
+#: DescendantsLines/DescendantsLines.py:1534
+msgid "PDF format"
+msgstr "PDF format"
+
+#: DescendantsLines/DescendantsLines.py:1535
+msgid "PS format"
+msgstr "PS format"
+
+#: DescendantsLines/DescendantsLines.py:1536
+msgid "The output format to be used"
+msgstr "Uddataformat der benyttes"
+
+#: DescendantsLines/DescendantsLines.py:1540
+msgid "Destination"
+msgstr "Bestemmelsessted"
+
+#: DescendantsLines/DescendantsLines.py:1541
+msgid "The destination file for the content."
+msgstr "Bestemmelsessted for indholdet."
+
+#: DescendantsLines/DescendantsLines.py:1544
+msgid "Generations"
+msgstr "Generationer"
+
+#: DescendantsLines/DescendantsLines.py:1545
+msgid "The number of generations to include in the chart. (0 for unlimited)"
+msgstr "Antal generationer der skal medtages i diagrammet. (0 for ubegrænset)"
+
+#: DescendantsLines/DescendantsLines.py:1550
+msgid "Use d'Aboville descendant numbering system"
+msgstr "Benyt d'Aboville efterkommer nummersystem"
+
+#: DescendantsLines/DescendantsLines.py:1552
+msgid "Prepend name with d'Aboville descendant number in the chart."
+msgstr "Foranstil navnet med d'Aboville efterkommer nummer i diagrammet"
+
+#: DescendantsLines/DescendantsLines.py:1555
+msgid "Include an image"
+msgstr "Medtag et billede"
+
+#: DescendantsLines/DescendantsLines.py:1556
+msgid "Whether to include an image if one is available."
+msgstr "Hvorvidt et eksisterende billede skal medtages."
+
+#: DescendantsLines/DescendantsLines.py:1560
+msgid "Max Image height"
+msgstr "Max billedhøjde"
+
+#: DescendantsLines/DescendantsLines.py:1561
+msgid "Maximum image height in pixels, 0=don't scale for height."
+msgstr "Maksimum billedhøjde i pixels, 0=undlad at skalere højden."
+
+#: DescendantsLines/DescendantsLines.py:1565
+msgid "Max Image width"
+msgstr "Max billedbredde"
+
+#: DescendantsLines/DescendantsLines.py:1566
+msgid "Maximum image width in pixels, 0=don't scale for width."
+msgstr "Maksimum billedbredde i pixels, 0=undlad at skalere bredde"
+
+#: DescendantsLines/DescendantsLines.py:1570
+msgid "Image Location"
+msgstr "Billedplacering"
+
+#: DescendantsLines/DescendantsLines.py:1571
+msgid "Above text"
+msgstr "Over tekst"
+
+#: DescendantsLines/DescendantsLines.py:1572
+msgid "Left of text"
+msgstr "Til venstre for tekst"
+
+#: DescendantsLines/DescendantsLines.py:1573
+msgid "Position of image relative to text"
+msgstr "Billedets placering i forhold til tekst"
+
+#: DescendantsLines/DescendantsLines.py:1577
+msgid "Report Options (2)"
+msgstr "Rapport-tilvalg (2)"
+
+#: DescendantsLines/DescendantsLines.py:1579
+msgid "Colour Name by Gender"
+msgstr "Farv navnet efter køn"
+
+#: DescendantsLines/DescendantsLines.py:1581
+msgid "Color the name to indicate a person's gender in the chart."
+msgstr "Farv navnet for at angive en persons køn i diagrammet."
+
+#: DescendantsLines/DescendantsLines.py:1585
+msgid "Use alternate events, if Primary event is not found"
+msgstr "Benyt alternativ hændelse, hvis den primære hændelse ikke er fundet"
+
+#: DescendantsLines/DescendantsLines.py:1586
+msgid ""
+"For Birth (baptism, christen)\n"
+"   Marriage (marr_lic, engagement)\n"
+"   Divorce (annulment, div_filing),\n"
+"   Death (burial, cremation, probate)."
+msgstr ""
+"For fødsel (dåb)\n"
+"  Ægteskab(vielsesattest, trolovelse)\n"
+"  Skilsmisse(og.forkl, skilsm.ans(,\n"
+"  Død (Begravelse, kremering, testamente)."
+
+#: DescendantsLines/DescendantsLines.py:1592
+msgid "Sort Events by Date"
+msgstr "Sorter hændelser efter dato"
+
+#: DescendantsLines/DescendantsLines.py:1593
+msgid "Sort events by date (else use the order of the 'Display Format' above)."
+msgstr ""
+"Sorter hændelser efter dato (eller benyt sorteringen i ovenstående 'Visnings "
+"format'"
+
+#: DescendantsLines/DescendantsLines.py:1597
+msgid "Text style"
+msgstr "Tekststil"
+
+#: DescendantsLines/DescendantsLines.py:1598
+msgid "Center-aligned text"
+msgstr "Centreret tekst"
+
+#: DescendantsLines/DescendantsLines.py:1599
+msgid "Left-aligned text"
+msgstr "Venstrestillet tekst"
+
+#: DescendantsLines/DescendantsLines.py:1600
+msgid "Alignment of the text in the block for each person on the chart"
+msgstr "Justering af teksten i blokken for enhver person i diagrammet"
+
+#: DescendantsLines/DescendantsLines.py:1604
+msgid "Max Note Length"
+msgstr "Max notelængde"
+
+#: DescendantsLines/DescendantsLines.py:1605
+msgid ""
+"Maximum length of an event's note field in a text block, '$e(n)'\n"
+" 0=no limit "
+msgstr ""
+"Maksimum længde af en hændelses notefelt i en tekstblok, '$e(n)\n"
+"0=ubegrænset "
+
+#: DescendantsLines/DescendantsLines.py:1610
+msgid "Display"
+msgstr "Vis"
+
+#: DescendantsLines/DescendantsLines.py:1612
+msgid "Box around Person's block"
+msgstr "Firkant rundt o personens blok"
+
+#: DescendantsLines/DescendantsLines.py:1613
+msgid "Draw a thin black box around each person' text block."
+msgstr "Tegner en tynd sort firkant omkring hver oersons tekstblok."
+
+#: DescendantsLines/DescendantsLines.py:1617
+msgid "All Person's blocks have the same height"
+msgstr "Alle personers blokke har den samme højde"
+
+#: DescendantsLines/DescendantsLines.py:1618
+msgid ""
+"All the blocks of all the person have the same height, which is the height "
+"of the highest block."
+msgstr ""
+"Alle personernes blokke har den samme højde, som er højden af den højeste "
+"blok."
+
+#: DescendantsLines/DescendantsLines.py:1623
+msgid "All Person's blocks have the same width"
+msgstr "Alle personers blokke har den samme bredde"
+
+#: DescendantsLines/DescendantsLines.py:1624
+msgid ""
+"All the blocks of all the person have the same width, which is the width of "
+"the widthest block."
+msgstr ""
+"Alle personers blokke har den samme bredde. som er bredden af den bredeste "
+"blok."
+
+#: DescendantsLines/DescendantsLines.py:1629
+msgid "Colour blocks by Generation"
+msgstr "Farv blokkene efter generation"
+
+#: DescendantsLines/DescendantsLines.py:1630
+msgid "Colour the background of text blocks by generation."
+msgstr "Farv baggrunden i tekstblokkene efter generation"
+
+#: DescendantsLines/DescendantsLines.py:1634
+msgid "Descend block colour intensity"
+msgstr "Formindsk farve intensiteten på blokken"
+
+#: DescendantsLines/DescendantsLines.py:1635
+msgid ""
+"Intensity of backgound colour in Descendant's Block, 0=faint, 255=intense "
+"colour"
+msgstr ""
+"Intensitet af baggrundsfarve i efterkommerblokken, 0=svag, 255=intens farve"
+
+#: DescendantsLines/DescendantsLines.py:1639
+msgid "Spouse block colour intensity"
+msgstr "Farveintensiteten på ægtefælleblok"
+
+#: DescendantsLines/DescendantsLines.py:1640
+msgid ""
+"Intensity of backgound colour in Spouse's Block, 0=faint 255=intense colour"
+msgstr ""
+"Intensiteten af baggrundsfarven i ægtefælleblokken, 0=svag, 255=intens farve"
+
+#: DescendantsLines/DescendantsLines.py:1645
+msgid "Display Formats"
+msgstr "Visningsformat"
+
+#: DescendantsLines/DescendantsLines.py:1647
+msgid "Name Display Format"
+msgstr "Visningsformat for navne"
+
+#: DescendantsLines/DescendantsLines.py:1650
+msgid ""
+"f=first & middle names, l=surname, n=nickname,\n"
+"c=commonly used given name, t=title, s=suffix, g=family nick name\n"
+"See Wiki Manual > Reports > part 2"
+msgstr ""
+"f=for &  mellemnavn, l=efternavn, n=kælenavn,\n"
+"c=det almindeligste brugte fornav, t=titel, s=endelse, g=familiekælenavn\\n\n"
+"Se Wiki manualen > rapporter > del 2"
+
+#: DescendantsLines/DescendantsLines.py:1656
+msgid ""
+"Descendant\n"
+"Display Format"
+msgstr ""
+"Efterkommer\n"
+"Visningsformat"
+
+#: DescendantsLines/DescendantsLines.py:1662
+#: DescendantsLines/DescendantsLines.py:1681
+msgid ""
+"[event, list]$e(formating)\n"
+"See Wiki Manual > Reports > part 2\n"
+"formating: dates=d(ymdMo) places=D(elcuspnoitxy) notes=n abbreviated_type=t"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1675
+msgid ""
+"Spousal\n"
+"Display Format"
+msgstr ""
+"Ægtefællerelateret\n"
+"Visningsformat"
+
+#: DescendantsLines/DescendantsLines.py:1688
+msgid "Replace"
+msgstr "Erstat"
+
+#: DescendantsLines/DescendantsLines.py:1691
+msgid ""
+"Replace Display Format:\n"
+"'Replace this'/' with this'"
+msgstr ""
+"Erstat visningsformat:\n"
+"'Erstat dette'/' med dette'"
+
+#: DescendantsLines/DescendantsLines.py:1693
+msgid ""
+"i.e.\n"
+"United States of America/USA"
+msgstr ""
+"f.eks.\n"
+"Amerikas Forenede Stater/USA."
+
+#: DescendantsLines/DescendantsLines.py:1697
+msgid "Spouse and Family"
+msgstr "Ægtefælleog familie"
+
+#: DescendantsLines/DescendantsLines.py:1699
+msgid "Vertical edge descendant to spouse-bar"
+msgstr "Lodret linie, efterkommer til ægtefælle-feltet"
+
+#: DescendantsLines/DescendantsLines.py:1700
+msgid "The length of the vertical edge from descendant to spouse-bar."
+msgstr "Længden af den lodrette linie fra efterkommer til ægtefælle-feltet."
+
+#: DescendantsLines/DescendantsLines.py:1704
+msgid "Vertical edge spouse-bar to spouse"
+msgstr "Lodret linje ægtefælle-feltet til ægtefælle"
+
+#: DescendantsLines/DescendantsLines.py:1705
+msgid "The length of the vertical edge from spouse-bar to spouse."
+msgstr "Længden af den lodrette linje fra ægtefælle-feltet til ægtefælle."
+
+#: DescendantsLines/DescendantsLines.py:1709
+msgid "Vertical space spouse-bar to other spouse"
+msgstr "Lodret linje ægtefælle-felt til anden ægtefælle"
+
+#: DescendantsLines/DescendantsLines.py:1710
+msgid ""
+"The space to add between one spouse-bar and another spouse in case of "
+"multiple families with the same descendant."
+msgstr ""
+"Lodret afstand der skal lægges til et ægtefælle-felt og en anden ægtefælle "
+"hvis flere familier med samme efterkommere."
+
+#: DescendantsLines/DescendantsLines.py:1715
+msgid "Horizontal space descendant to spouse"
+msgstr "Vandret adstand mellem efterkommere og ægtefælle"
+
+#: DescendantsLines/DescendantsLines.py:1716
+msgid "The space to add between the descendant and the spouse."
+msgstr "Afstand der skal lægges til mellem efterkommere og ægtefællen."
+
+#: DescendantsLines/DescendantsLines.py:1721
+msgid "Horizonal space family to family"
+msgstr "Vandret afstand mellem familier"
+
+#: DescendantsLines/DescendantsLines.py:1722
+msgid ""
+"The space to add between the more extern descendant (or spouse) of a family "
+"and the more extern descendant (or spouse) of the next family."
+msgstr ""
+"Afstand mellem mere fjerne efterkommere (eller ægtefælle) i en familie og "
+"mere fjerne efterkommere (eller ægtefælle) i den næste familie."
+
+#: DescendantsLines/DescendantsLines.py:1727
+msgid "Horizontal distance spouse to family edge"
+msgstr "Vandret afstand mellem ægtefælle og familie linje"
+
+#: DescendantsLines/DescendantsLines.py:1728
+msgid ""
+"If this value is 0, the children bar is centered under the spouse. The "
+"bigger the value, more the center is moved to the left towards the "
+"descendant."
+msgstr ""
+"Hvis denne værdi er 0, vil børne-feltet blive centreret under ægtefællen. Jo "
+"større værdi, jo mere er feltet flyttet til venstre mod efterkommeren."
+
+#: DescendantsLines/DescendantsLines.py:1733
+msgid "Children"
+msgstr "Børn"
+
+#: DescendantsLines/DescendantsLines.py:1735
+msgid "OL_PAD"
+msgstr "OL_PAD"
+
+#: DescendantsLines/DescendantsLines.py:1736
+msgid "The number of ??? pad"
+msgstr "Antal ???? pad"
+
+#: DescendantsLines/DescendantsLines.py:1739
+msgid "Vertical edge spouse-bar to child-bar"
+msgstr "Lodret linjeægtefælle-felt til børne-felt"
+
+#: DescendantsLines/DescendantsLines.py:1740
+msgid "The length of the vertical edge from spouse-bar to child-bar."
+msgstr "Længden af den lodrette linje fra ægtefælle-felt til børne-felt."
+
+#: DescendantsLines/DescendantsLines.py:1746
+msgid "Children distance"
+msgstr "Afstand mellem børn"
+
+#: DescendantsLines/DescendantsLines.py:1747
+msgid "The horizontal distance between two children of the same family."
+msgstr "Den vandrette afstand mellem to børn i samme familie."
+
+#: DescendantsLines/DescendantsLines.py:1751
+msgid "Vertical edge child to child-bar"
+msgstr "Lodret linje fra barn til børne-felt"
+
+#: DescendantsLines/DescendantsLines.py:1753
+msgid "The length of the vertical edge from child to child-bar."
+msgstr "Længden af den lodrette linje fra barn til børne-felt."
+
+#: DescendantsLines/DescendantsLines.py:1756
+msgid "MIN_C_WIDTH"
+msgstr "MIN_C_WIDTH"
+
+#: DescendantsLines/DescendantsLines.py:1757
+msgid "The number of ??? min width"
+msgstr "Antallet af ??? min bredde"
+
+#: DescendantsLines/DescendantsLines.py:1762
+msgid "Space around text"
+msgstr "Afstand rundt om tekst"
+
+#: DescendantsLines/DescendantsLines.py:1763
+msgid "The space to add around the text block of a person."
+msgstr "Afstanden  der skal lægges til rundt om en persons tekstblok."
+
+#: DescendantsLines/DescendantsLines.py:1767
+msgid "Space between lines of text"
+msgstr "Afstand mellem tekstlinjer"
+
+#: DescendantsLines/DescendantsLines.py:1768
+msgid "The space to add between a line and the next in a person text block."
+msgstr ""
+"Afstanden der skal lægges til mellen en linje og den næste i en person "
+"tekstblok."
+
+#: DescendantsLines/DescendantsLines.py:1773
+msgid "Header and Footer"
+msgstr "Sidehoved og sidefod"
+
+#: DescendantsLines/DescendantsLines.py:1775
+msgid "Title text"
+msgstr "Titeltekst"
+
+#: DescendantsLines/DescendantsLines.py:1776
+msgid "The text that will be written in the header of the document"
+msgstr "Teksten der vil blive skrevet i sidehovedet af  dokumentet"
+
+#: DescendantsLines/DescendantsLines.py:1780
+msgid "Footer text"
+msgstr "Tekst til sidefod"
+
+#: DescendantsLines/DescendantsLines.py:1781
+msgid "The text that will be written in the footer of the document"
+msgstr "Teksten der vil blive skrevet i sidfoden af dokumentet"
+
+#: DescendantsLines/DescendantsLines.py:1785
+msgid "Title and footer coefficient"
+msgstr "Titel og sidefodskoefficient"
+
+#: DescendantsLines/DescendantsLines.py:1786
+msgid ""
+"A number that multiply the base size of the text in the title and in the "
+"footer"
+msgstr ""
+"Et tal der multiplicerer basisstørrelsen af teksten i titlen og sidefoden"
+
+#: DescendantsLines/DescendantsLines.py:1791
+msgid "Privacy"
+msgstr "Persondatabeskyttelse"
+
+#: DescendantsLines/DescendantsLines.py:1793
+msgid "Protect People, Images or Events that are marked Private"
+msgstr "Beskyt personer, billeder eller hændelser, der er markeret Privat"
+
+#: DescendantsLines/DescendantsLines.py:1795
+msgid "The Privacy setting of only these types of Gramps objects are checked"
+msgstr ""
+"Privatlivsinstillingern er kun kontrolleret for disse typer af Gramps "
+"objekter"
+
+#: DescendantsLines/DescendantsLines.py:1799
+msgid "Privacy text"
+msgstr "Persondatabeskyttelses tekst"
+
+#: DescendantsLines/DescendantsLines.py:1800
+msgid "Text to display in block, when a Person is marked private"
+msgstr "Tekst, der skal vises i en blok, når en person er markeret privat."
+
+#: DescendantsLines/DescendantsLines.py:1815
+msgid "The default style."
+msgstr "Standardstil."
