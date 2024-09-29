@@ -46,6 +46,7 @@ from gramps.gen.const import GRAMPS_LOCALE as glocale
 from gramps.gen.config import config
 import random
 import re
+import csv
 from gramps.gen.relationship import get_relationship_calculator
 _ = glocale.translation.gettext
 
@@ -66,6 +67,14 @@ CONFIG.register('map.legend-char-height',12)
 CONFIG.register('map.include-citation-notes',0)
 CONFIG.register('map.chromosome-x-scale',1.4)
 CONFIG.register('map.chromosome-y-scale',1)
+#
+# disabled config options
+#
+#CONFIG.register('map.association-string',"DNA")
+#CONFIG.register('map.output-visual-segments',0)
+#
+# Visual Phasing only to grandparent, not including great-grandparent
+#
 
 CONFIG.init()
 
@@ -130,9 +139,13 @@ class DNASegmentMap(Gramplet):
             segmap.active = active
             segmap.relationship = self.relationship
             include_citation_notes = segmap._config.get('map.include-citation-notes')
-
+            association_string = "DNA"
+#
+# Disabled Config
+#
+#            association_string = segmap._config.get('map.association-string')
             for assoc in active.get_person_ref_list():
-                if assoc.get_relation() == 'DNA':
+                if assoc.get_relation() == association_string:
                     rgb_color = [random.random(),random.random(),random.random()]
                     associate = self.dbstate.db.get_person_from_handle(assoc.ref)
                     data, msg = self.relationship.get_relationship_distance_new(self.dbstate.db,active,associate,False, True, True)
@@ -143,9 +156,9 @@ class DNASegmentMap(Gramplet):
                             side = 'U'
                         else:
                             if self.dbstate.db.get_person_from_handle(data[0][1]).gender == 0:
-                                side = 'F'
-                            else:
                                 side = 'M'
+                            else:
+                                side = 'P'
                     elif (len(data) > 1 and data[0][0] == data[1][0] and data[0][2][0] != data[1][2][0]): #shares both parents
                         side = 'U'
                     elif (len(data[0][2]) == 0): # association is descendant of active
@@ -268,6 +281,13 @@ class SegmentMap(Gtk.DrawingArea):
         self.legend_char_height = self._config.get('map.legend-char-height')
         self.x_scale = self._config.get('map.chromosome-x-scale')
         self.y_scale = self._config.get('map.chromosome-y-scale')
+        self.output_segments = False
+#
+# Disabled Config
+#
+#
+#        self.output_segments = self._config.get('map.output-visual-segments')
+
         self._config.save()
         self.chromosomesThirtySeven = (
             ('1', 249250621),
@@ -434,13 +454,35 @@ class SegmentMap(Gtk.DrawingArea):
             'FF':(0.72, 0.94, 1),
             'FM':(0.81, 0.94, 0.62),
             'MF':(1, 0.85, 0.85),
-            'MM':(1, 0.92, 0.67)
+            'MM':(1, 0.92, 0.67),
+            'FFF':(0.75,0,0),
+            'FFM':(0.75,0,0.5),
+            'FMF':(0.75,0.5,0),
+            'FMM':(0.75,0.5,0.5),
+            'MFF':(0,0,0.75),
+            'MFM':(0,0.5,0.75),
+            'MMF':(0.5,0,0.75),
+            'MMM':(0.5,0.5,0.75)
         }
         self.grandparent = {
-	        'MM':"Maternal Grandmother",
-            'MF':"Maternal Grandfather",
-            'FM':"Paternal Grandmother",
-            'FF':"Paternal Grandfather"
+	        'f':"Father",
+	        'm':"Mother",
+	        "u": "Unknown",
+	        'F':"Father",
+	        'M':"Mother",
+	        "U":"Unknown",
+	        'mm':"Maternal Grandmother",
+            'mf':"Maternal Grandfather",
+            'fm':"Paternal Grandmother",
+            'ff':"Paternal Grandfather",
+            'mmm':"Maternal Grandmothers Mother",
+            'mfm':"Maternal Grandfathers Mother",
+            'fmm':"Paternal Grandmothers Mother",
+            'ffm':"Paternal Grandfathers Mother",
+            'mmf':"Maternal Grandmothers Father",
+            'mff':"Maternal Grandfathers Father",
+            'fmf':"Paternal Grandmothers Father",
+            'fff':"Paternal Grandfathers Father"
         }
     def set_title(self, title):
         """
@@ -484,6 +526,11 @@ class SegmentMap(Gtk.DrawingArea):
         context = self.get_style_context()
         fg_color = context.get_color(context.get_state())
         cr.set_source_rgba(*fg_color)
+        
+# If no active person, return
+        if not self.active:
+            return
+
 # Title
        
         assoc_label_str = _('Chromosome ' )
@@ -493,6 +540,55 @@ class SegmentMap(Gtk.DrawingArea):
             assoc_label_str += 'Segment'
             
         assoc_label_str += _(' Map for '+_nd.display(self.active))
+# Define grandparents and great grandparents for visual phasing. Trap if user changed tree while in this view
+        try: 
+            mother, father = self.relationship.get_birth_parents(self.dbstate.db,self.active)
+        except :
+            return
+        grand_handle = {}
+        if mother : 
+            grand_handle['mm'], grand_handle['mf'] = self.relationship.get_birth_parents(self.dbstate.db,self.dbstate.db.get_person_from_handle(mother))
+            if grand_handle['mm'] :
+                grand_handle['mmm'], grand_handle['mmf'] = self.relationship.get_birth_parents(self.dbstate.db,self.dbstate.db.get_person_from_handle(grand_handle['mm']))
+            else :
+                grand_handle['mmm'] = None
+                grand_handle['mmf'] = None
+            if grand_handle['mf'] :
+                grand_handle['mfm'], grand_handle['mff'] = self.relationship.get_birth_parents(self.dbstate.db,self.dbstate.db.get_person_from_handle(grand_handle['mf']))
+            else :
+                grand_handle['mfm'] = None
+                grand_handle['mff'] = None
+        else :
+            grand_handle['mm'] = None
+            grand_handle['mf'] = None
+            grand_handle['mfm'] = None
+            grand_handle['mff'] = None
+            grand_handle['mmm'] = None
+            grand_handle['mmf'] = None
+        if father : 
+            grand_handle['fm'], grand_handle['ff'] = self.relationship.get_birth_parents(self.dbstate.db,self.dbstate.db.get_person_from_handle(father))
+            if grand_handle['fm'] :
+                grand_handle['fmm'], grand_handle['fmf'] = self.relationship.get_birth_parents(self.dbstate.db,self.dbstate.db.get_person_from_handle(grand_handle['fm']))
+            else :
+                grand_handle['fmm'] = None
+                grand_handle['fmf'] = None
+            if grand_handle['ff'] :
+                grand_handle['ffm'], grand_handle['fff'] = self.relationship.get_birth_parents(self.dbstate.db,self.dbstate.db.get_person_from_handle(grand_handle['ff']))
+            else :
+                grand_handle['ffm'] = None
+                grand_handle['fff'] = None
+        else : 
+            grand_handle['fm'] = None
+            grand_handle['ff'] = None
+            grand_handle['fmm'] = None
+            grand_handle['fmf'] = None
+            grand_handle['ffm'] = None
+            grand_handle['fff'] = None
+        for i in 'mm','mf','fm','ff', 'mmm','mmf','mfm','mff','fmm','fmf','ffm','fff' :
+            if grand_handle[i] :
+                self.grandparent[i.upper()] = _nd.display(self.dbstate.db.get_person_from_handle(grand_handle[i]))
+            else :
+                self.grandparent[i.upper()] = self.grandparent[i]
         if self.show_assoc_id : 
             assoc_label_str += ' [' + self.active.get_gramps_id() + ']'
         self.set_title(_(assoc_label_str))
@@ -536,23 +632,7 @@ class SegmentMap(Gtk.DrawingArea):
 
         chart_width = (allocation.width - label_width) * 0.95
 
-        # Border
-#        cr.move_to(0, offset)
-#        cr.line_to(allocation.width, offset)
-#        cr.stroke()
-
         bottom = len(self.chromosomes) * 2 * (chr_height + spacing) + offset
-#        cr.move_to(0, bottom)
-#        cr.line_to(allocation.width, bottom)
-#        cr.stroke()
-
-#        cr.move_to(label_width, 0)
-#        cr.line_to(label_width, bottom)
-#        cr.stroke()
-
-#        cr.move_to(allocation.width, 0)
-#        cr.line_to(allocation.width, bottom)
-#        cr.stroke()
 
         # Ticks and grid lines
         if not draw_single_chromosome :
@@ -666,7 +746,10 @@ class SegmentMap(Gtk.DrawingArea):
             legend_offset_x = allocation.width * 0.75
 #        legend_offset_x = allocation.width * 0.75
         last_name = ''
-        layout = self.create_pango_layout(_('LEGEND'))
+        legend = _('Legend')
+        if draw_grandparent_color and not draw_single_chromosome :
+            legend += _(': Grandparent')
+        layout = self.create_pango_layout(legend)
         cr.move_to(legend_offset_x, legend_offset_y)
         cr.set_source_rgba(*fg_color)
         PangoCairo.show_layout(cr, layout)
@@ -815,6 +898,16 @@ class SegmentMap(Gtk.DrawingArea):
                 PangoCairo.show_layout(cr, layout)
         else: # Drawing all chromosome segments
           row_num = 24
+#
+# open TSV file for writing visual phasing info
+#
+          if draw_grandparent_color and self.output_segments :
+              try:
+                  csvfile = open('visualphasing.tsv', 'w', newline='')
+                  visualphasing = csv.writer(csvfile, delimiter='\t')
+                  visualphasing.writerow(["Relationship","Name", "Chr","Start","Stop","cM","SNP"])
+              except :
+                  self.output_segments = False
           maximum = self.maximum 
           for chromo, start, stop, side, cms, snp, assoc_name, rgb_color, associate, handle, note in self.segments:
             chromo_count += 1
@@ -848,8 +941,19 @@ class SegmentMap(Gtk.DrawingArea):
                         sub_side = side[0]
                         alpha_color = 0
                     else :
-                        sub_side = side[0:2]
+# Limit to grandparents - do not include great grandparents
+#                        if len(side) < 4 :
+                            sub_side = side[0:2]
+#                        else :
+#                            sub_side = side[0:3]
                     local_color = self.colormap.get(sub_side)
+#
+# Remove Comment to print visual phasing segments to stdout. Only output the grand and great grand entries. Ignore the invisible
+#
+                    if self.output_segments and len(sub_side) > 1 : 
+                        visualphasing.writerow([sub_side, self.grandparent.get(sub_side), chromo, start, stop, cms, snp])
+                if not local_color :
+                    local_color = [0,0,0]
                 cr.set_source_rgba(local_color[0], local_color[1], local_color[2], alpha_color)
                 cr.fill_preserve()
                 cr.stroke()
@@ -876,6 +980,11 @@ class SegmentMap(Gtk.DrawingArea):
                 legend_offset_y += legend_chr_height + 2 * spacing
                 PangoCairo.show_layout(cr, layout)
           if draw_grandparent_color :
+                alpha_color = 1
+#
+# Limit to grandparent. Do not include great grandparent
+#
+#                for i in "FF","FM","MF","MM","FFM","FMM","MFM","MMM","FFF","FMF","MFF","MMF" :
                 for i in "FF","FM","MF","MM" :
                     cr.rectangle(legend_offset_x - legend_chr_height - 2 * spacing,
                              legend_offset_y + self.legend_swatch_offset_y,
@@ -980,23 +1089,24 @@ class SegmentMap(Gtk.DrawingArea):
         global draw_single_chromosome, current_chromosome, draw_grandparent_color
         active = -1
 #
-#   Traverse legend for pointer
+#   Traverse legend for pointer if not in visual phasing view
 #
-        for i, rect in enumerate(self.__legendrects):
-            if (event.x > rect[0] and event.x < rect[0] + rect[2] and
-                    event.y > rect[1] and event.y < rect[1] + rect[3]):
-                active = i
-        if active != -1:
+        if not draw_grandparent_color :
+            for i, rect in enumerate(self.__legendrects):
+                if (event.x > rect[0] and event.x < rect[0] + rect[2] and
+                        event.y > rect[1] and event.y < rect[1] + rect[3]):
+                    active = i
+            if active != -1:
         # Primary Button Press
-            if (event.button == 1 and event.type == Gdk.EventType.BUTTON_PRESS):
-                    self.uistate.set_active(self.__assoc_handle[active], 'Person')
+                if (event.button == 1 and event.type == Gdk.EventType.BUTTON_PRESS):
+                        self.uistate.set_active(self.__assoc_handle[active], 'Person')
         #Secondary Button Press
-            if (event.button == 3 and event.type == Gdk.EventType.BUTTON_PRESS):
-                try:
-                    EditPerson(self.dbstate, self.uistate, [], self.__associates[active])
-                except:
-                    return False
-            return
+                if (event.button == 3 and event.type == Gdk.EventType.BUTTON_PRESS):
+                    try:
+                        EditPerson(self.dbstate, self.uistate, [], self.__associates[active])
+                    except:
+                        return False
+                return
 #
 #   Traverse painted chromosomes for pointer
 #
