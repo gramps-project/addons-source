@@ -1,0 +1,35 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-04 18:55-0600\n"
+"PO-Revision-Date: 2024-09-29 16:13+0200\n"
+"Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
+"Language-Team: \n"
+"Language: da_DK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: DetId/DetId.gpr.py:30
+msgid "Deterministic ID"
+msgstr "Deterministisk ID"
+
+#: DetId/DetId.gpr.py:31
+msgid "Set/reset Gramps to use a Deterministic ID"
+msgstr "Indstil/nulstil Gramps for at bruge et deterministisk ID"
+
+#: DetId/DetId.py:74
+msgid "Deterministic ID Tool"
+msgstr "Deterministisk ID værktøj"
+
+#: DetId/DetId.py:80
+msgid "The ID and handles now start at 0x00000000, and increment by 0x100000001"
+msgstr "ID'et og håndtagene starter nu ved 0x00000000 og stiger med 0x100000001"

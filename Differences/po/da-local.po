@@ -1,0 +1,114 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-08 17:10-0500\n"
+"PO-Revision-Date: 2024-09-29 17:24+0200\n"
+"Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
+"Language-Team: \n"
+"Language: da_DK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: Differences/differences.gpr.py:4 Differences/differences.py:95
+msgid "Database Differences Report"
+msgstr "Rapport over forskelle i databaser"
+
+#: Differences/differences.gpr.py:5
+msgid "Compares an external database with the current one."
+msgstr "Sammenligner en ekstern database med den aktuelle."
+
+#: Differences/differences.py:114
+msgid "File:"
+msgstr "Fil:"
+
+#: Differences/differences.py:134
+msgid "Differences between Database and File"
+msgstr "Forskelle mellem database og fil"
+
+#: Differences/differences.py:138
+msgid "Family Tree Differences"
+msgstr "Slægtsbogsforskelle"
+
+#: Differences/differences.py:139
+msgid "Processing..."
+msgstr "Arbejder....."
+
+#: Differences/differences.py:161
+msgid "No differences"
+msgstr "Ingen forskelle"
+
+#: Differences/differences.py:168
+msgid "Missing items in File that are added in Database"
+msgstr "Manglende element i filen, er lagt til i databasen"
+
+#: Differences/differences.py:174
+#, python-format
+msgid "Missing %s: %s"
+msgstr "Mangler %s: %s"
+
+#: Differences/differences.py:178
+msgid "Nothing missing"
+msgstr "Intet mangler"
+
+#: Differences/differences.py:185
+msgid "Added items in File that are missing in Database"
+msgstr "Elementer fra filen der mangler i databasen er tilføjet"
+
+#: Differences/differences.py:191
+#, python-format
+msgid "Added %s: %s "
+msgstr "Tilføjet %s: %s "
+
+#: Differences/differences.py:195
+msgid "Nothing added"
+msgstr "Intet tilføjet"
+
+#: Differences/differences.py:306
+msgid "Report Options"
+msgstr "Rapport tilvalg"
+
+#: Differences/differences.py:308
+msgid "Family Tree file"
+msgstr "Slægtsbog"
+
+#: Differences/differences.py:310
+msgid "Select a .gpkg or .gramps file"
+msgstr "Vælg en .gpkg eller .gramps fil"
+
+#: Differences/differences.py:313
+msgid "Show items that are different"
+msgstr "Vis elementer som er forskellige"
+
+#: Differences/differences.py:314
+msgid "Include items that are different"
+msgstr "Medtag elementer der er forskellige"
+
+#: Differences/differences.py:317
+msgid "Show items missing from file"
+msgstr "Hvis elementer der mangler i filen"
+
+#: Differences/differences.py:318
+msgid "Include items not in file but in database"
+msgstr "Medtag elementer der ikke er i filen men databasen"
+
+#: Differences/differences.py:321
+msgid "Show items added in file"
+msgstr "Hvis tilføjede elementer i filen"
+
+#: Differences/differences.py:322
+msgid "Include items in file but not in database"
+msgstr "Medtag elementer i filen men ikke i databasen"
+
+#: Differences/differences.py:367 Differences/differences.py:369
+#: Differences/differences.py:372 Differences/differences.py:375
+msgid "Text"
+msgstr "Tekst"
