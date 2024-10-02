@@ -1,0 +1,320 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-10 10:19-0500\n"
+"PO-Revision-Date: 2024-10-02 15:41+0200\n"
+"Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
+"Language-Team: \n"
+"Language: da_DK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: FamilyTree/FamilyTree.gpr.py:3
+msgid "Family Tree"
+msgstr "Slægtsbog"
+
+#: FamilyTree/FamilyTree.gpr.py:4
+msgid "Produces a graphical family tree."
+msgstr "Danner en grafisk familietræ."
+
+#: FamilyTree/FamilyTree.py:102
+#, python-format
+msgid "Family Tree for %s"
+msgstr "Familietræ for %s"
+
+#: FamilyTree/FamilyTree.py:152
+msgid "Paper too small"
+msgstr "Papiret er for lille"
+
+#: FamilyTree/FamilyTree.py:153
+msgid "Some elements may not appear or be badly rendered."
+msgstr "Nogle elementer kan måske ikke ses eller er dårlig opløst."
+
+#: FamilyTree/FamilyTree.py:663 FamilyTree/FamilyTree.py:670
+msgid "Unknown"
+msgstr "Ukendt"
+
+#: FamilyTree/FamilyTree.py:677
+#, python-format
+msgid "%(father)s and %(mother)s"
+msgstr "%(father)s og %(mother)s"
+
+#: FamilyTree/FamilyTree.py:684
+msgid "Anonymous"
+msgstr "Anonymt"
+
+#: FamilyTree/FamilyTree.py:911
+msgid "born"
+msgstr "født"
+
+#: FamilyTree/FamilyTree.py:913
+msgid "baptised"
+msgstr "døbt"
+
+#: FamilyTree/FamilyTree.py:915
+msgid "died"
+msgstr "død"
+
+#: FamilyTree/FamilyTree.py:917
+msgid "buried"
+msgstr "begravet"
+
+#: FamilyTree/FamilyTree.py:919
+msgid "cremated"
+msgstr "kremeret"
+
+#: FamilyTree/FamilyTree.py:921
+msgid "married"
+msgstr "gift"
+
+#: FamilyTree/FamilyTree.py:923
+msgid "divorced"
+msgstr "skilt"
+
+#: FamilyTree/FamilyTree.py:925
+msgid "resident"
+msgstr "bor"
+
+#: FamilyTree/FamilyTree.py:932
+#, python-format
+msgid "on %(ymd_date)s"
+msgstr "på %(ymd_date)s"
+
+#: FamilyTree/FamilyTree.py:934
+#, python-format
+msgid "in %(ym_date)s"
+msgstr "i %(ym_date)s"
+
+#: FamilyTree/FamilyTree.py:936
+#, python-format
+msgid "in %(y_date)s"
+msgstr "i %(y_date)s"
+
+#: FamilyTree/FamilyTree.py:940
+#, python-format
+msgid "on %(placeholder)s"
+msgstr "på %(placeholder)s"
+
+#: FamilyTree/FamilyTree.py:943
+#, python-format
+msgid "on %(placeholder)s (%(partial)s)"
+msgstr "på %(placeholder)s (%(partial)s)"
+
+#: FamilyTree/FamilyTree.py:960
+#, python-format
+msgid "in %(place)s"
+msgstr "i %(place)s"
+
+#: FamilyTree/FamilyTree.py:971
+#, python-format
+msgid "(%(description)s)"
+msgstr "(%(description)s)"
+
+#: FamilyTree/FamilyTree.py:1041
+msgid "Tree Options"
+msgstr "Træ tilvalg"
+
+#: FamilyTree/FamilyTree.py:1043
+msgid "Center Family"
+msgstr "Fokusfamilie"
+
+#: FamilyTree/FamilyTree.py:1044
+msgid "The center family for the tree"
+msgstr "Fokusfamilie for træet"
+
+#: FamilyTree/FamilyTree.py:1047
+msgid "Ancestor Generations"
+msgstr "Ane generationer"
+
+#: FamilyTree/FamilyTree.py:1048
+msgid "The number of ancestor generations to include in the tree"
+msgstr "Antal generationer af aner der skal medtages i træet"
+
+#: FamilyTree/FamilyTree.py:1051
+msgid "Descendant Generations"
+msgstr "Anegenerationer"
+
+#: FamilyTree/FamilyTree.py:1052
+msgid "The number of descendant generations to include in the tree"
+msgstr "Antal efterkommer generationer der skal medtages i træet"
+
+#: FamilyTree/FamilyTree.py:1055
+msgid "Kekule number of husband"
+msgstr "Kekule nummer for ægtemand"
+
+#: FamilyTree/FamilyTree.py:1056
+msgid ""
+"The Kekule number of the husband (central family). Set 0 to not show Kekule "
+"numbers"
+msgstr ""
+"Kekule nummeret for ægtemanden (fokusfamilie). Sæt til 0 hvis Kekule "
+"nummeret ikke skal vises"
+
+#: FamilyTree/FamilyTree.py:1059
+msgid "Scale to fit on a single page"
+msgstr "Skalér til at passe på en side"
+
+#: FamilyTree/FamilyTree.py:1060
+msgid "Whether to scale to fit on a single page."
+msgstr "Hvorvidt der skal skaléres for at passe til en side."
+
+#: FamilyTree/FamilyTree.py:1063
+msgid "Color"
+msgstr "Farve"
+
+#: FamilyTree/FamilyTree.py:1065
+msgid "No color"
+msgstr "Ingen farve"
+
+#: FamilyTree/FamilyTree.py:1066
+msgid "Generations"
+msgstr "Generationer"
+
+#: FamilyTree/FamilyTree.py:1067
+msgid "First generation"
+msgstr "Første generation"
+
+#: FamilyTree/FamilyTree.py:1068
+msgid "Second generation"
+msgstr "Anden generation"
+
+#: FamilyTree/FamilyTree.py:1069
+msgid "Third generation"
+msgstr "Tredje generation"
+
+#: FamilyTree/FamilyTree.py:1070
+msgid "Male line"
+msgstr "Mandlig linje"
+
+#: FamilyTree/FamilyTree.py:1071
+msgid "Male line and illegitimate children"
+msgstr "Mandlig linje og børn udenfor ægteskab"
+
+#: FamilyTree/FamilyTree.py:1072
+msgid "Female line"
+msgstr "Kvindelig linje"
+
+#: FamilyTree/FamilyTree.py:1075
+msgid "Shuffle colors"
+msgstr "Bland farver"
+
+#: FamilyTree/FamilyTree.py:1076
+msgid "Whether to shuffle colors or order them in rainbow fashion."
+msgstr "Hvorvidt farver skal blandes eller ordnes efter regnbuen."
+
+#: FamilyTree/FamilyTree.py:1079
+msgid "Content"
+msgstr "Indhold"
+
+#: FamilyTree/FamilyTree.py:1081
+msgid "Use call name"
+msgstr "Brug tilnavn"
+
+#: FamilyTree/FamilyTree.py:1083
+msgid "Don't use call name"
+msgstr "Brug ikke tilnavn"
+
+#: FamilyTree/FamilyTree.py:1084
+msgid "Replace first name with call name"
+msgstr "Erstat fornavne med tilnavn"
+
+#: FamilyTree/FamilyTree.py:1085
+msgid "Underline call name in first name / add call name to first name"
+msgstr "Understreg tilnavnet i fornavnet / og føj tilnavn til fornavn"
+
+#: FamilyTree/FamilyTree.py:1091
+msgid "Include Occupation"
+msgstr "Medtag beskæftigelse"
+
+#: FamilyTree/FamilyTree.py:1094
+msgid "Include Notes"
+msgstr "Medtag noter"
+
+#: FamilyTree/FamilyTree.py:1097
+msgid "Include Residence"
+msgstr "Medtag bopæl"
+
+#: FamilyTree/FamilyTree.py:1100
+msgid "Print event data (dead person)"
+msgstr "Udskriv hændelsesdata (død person)"
+
+#: FamilyTree/FamilyTree.py:1102 FamilyTree/FamilyTree.py:1110
+msgid "None"
+msgstr "Intet"
+
+#: FamilyTree/FamilyTree.py:1103 FamilyTree/FamilyTree.py:1111
+msgid "Year only"
+msgstr "Kun år"
+
+#: FamilyTree/FamilyTree.py:1104 FamilyTree/FamilyTree.py:1112
+msgid "Full date"
+msgstr "Fuld dato"
+
+#: FamilyTree/FamilyTree.py:1105 FamilyTree/FamilyTree.py:1113
+msgid "Full date and place"
+msgstr "Fuld dato og sted"
+
+#: FamilyTree/FamilyTree.py:1108
+msgid "Print event data (living person)"
+msgstr "Udskriv hændelsesdata (levende person)"
+
+#: FamilyTree/FamilyTree.py:1116
+msgid "Fall back to baptism if birth event missing"
+msgstr "Fald tilbage til dåb hvis fødselshændelse mangler"
+
+#: FamilyTree/FamilyTree.py:1119
+msgid "Fall back to burial or cremation if death event missing"
+msgstr "Fald tilbage til begravelse eller kremering hvis dødshændelse mangler"
+
+#: FamilyTree/FamilyTree.py:1122
+msgid "Protect private items"
+msgstr "Beskyt private elementer"
+
+#: FamilyTree/FamilyTree.py:1127
+msgid "Print fields for missing information"
+msgstr "Udskriv felter for manglende information"
+
+#: FamilyTree/FamilyTree.py:1128
+msgid "Whether to include fields for missing information."
+msgstr "Vælg om felter for manglende oplysninger skal medtages."
+
+#: FamilyTree/FamilyTree.py:1131
+msgid "Include event description"
+msgstr "Medtag hændelsesbeskrivelse"
+
+#: FamilyTree/FamilyTree.py:1134
+msgid "Text Options"
+msgstr "Tekst tilvalg"
+
+#: FamilyTree/FamilyTree.py:1136
+msgid "Title text"
+msgstr "Titeltekst"
+
+#: FamilyTree/FamilyTree.py:1139
+msgid "Footer text"
+msgstr "Tekst til sidefod"
+
+#: FamilyTree/FamilyTree.py:1154
+msgid "The style used for the title."
+msgstr "Stilen der bruges til titlen."
+
+#: FamilyTree/FamilyTree.py:1162
+msgid "The style used for names."
+msgstr "Stilen der benyttes til navne."
+
+#: FamilyTree/FamilyTree.py:1170
+msgid "The style used for data (birth, death, marriage, divorce)."
+msgstr "Stilen der benyttes for data (fødsel, død, ægteskab, skilsmisse)."
+
+#: FamilyTree/FamilyTree.py:1180
+msgid "The style used for the footer."
+msgstr "Stilen der bruges til sidefoden."
