@@ -1,0 +1,89 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-09-14 10:31-0500\n"
+"PO-Revision-Date: 2024-10-02 09:11+0200\n"
+"Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
+"Language-Team: \n"
+"Language: da_DK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: EventDescriptionEditor/EventDescriptionEditor.gpr.py:24
+#: EventDescriptionEditor/EventDescriptionEditor.py:52
+#: EventDescriptionEditor/EventDescriptionEditor.py:64
+msgid "Event Description Editor"
+msgstr "Hændelsesbeskrivelsesredigering"
+
+#: EventDescriptionEditor/EventDescriptionEditor.gpr.py:25
+msgid ""
+"A tool to find and replace a string in event description of multiple events."
+msgstr ""
+"Et værktøj til at finde og erstatte strenge i hændelsesbeskrivelsen for "
+"flere hændelser."
+
+#: EventDescriptionEditor/EventDescriptionEditor.py:75
+msgid "Search substring..."
+msgstr "Søg delstreng..."
+
+#: EventDescriptionEditor/EventDescriptionEditor.py:105
+msgid "INFO"
+msgstr "INFO"
+
+#: EventDescriptionEditor/EventDescriptionEditor.py:106
+#, python-format
+msgid "%s event descriptions of %s events were changed."
+msgstr "%s hændelsesbeskrivelse af %s hændelser blev ændret."
+
+#: EventDescriptionEditor/EventDescriptionEditor.py:126
+msgid "All Events"
+msgstr "Alle hændelser"
+
+#: EventDescriptionEditor/EventDescriptionEditor.py:135
+msgid "Events"
+msgstr "Hændelser"
+
+#: EventDescriptionEditor/EventDescriptionEditor.py:136
+#: EventDescriptionEditor/EventDescriptionEditor.py:140
+#: EventDescriptionEditor/EventDescriptionEditor.py:143
+#: EventDescriptionEditor/EventDescriptionEditor.py:149
+#: EventDescriptionEditor/EventDescriptionEditor.py:153
+msgid "Option"
+msgstr "Tilvalg"
+
+#: EventDescriptionEditor/EventDescriptionEditor.py:139
+msgid "Find"
+msgstr "Find"
+
+#: EventDescriptionEditor/EventDescriptionEditor.py:142
+msgid "Replace"
+msgstr "Erstat"
+
+#: EventDescriptionEditor/EventDescriptionEditor.py:145
+msgid "Replace substring only"
+msgstr "Erstat kun delstreng"
+
+#: EventDescriptionEditor/EventDescriptionEditor.py:146
+msgid ""
+"If True only the substring will be replaced, otherwise the whole description "
+"will be deleted and replaced by the new one."
+msgstr ""
+"Hvis Sandt vil kun delstrengen blive erstattes, ellers vil hele beskrivelsen "
+"blive slettet og erstattet med den nye."
+
+#: EventDescriptionEditor/EventDescriptionEditor.py:151
+msgid "Allow regex"
+msgstr "Tillad regex"
+
+#: EventDescriptionEditor/EventDescriptionEditor.py:152
+msgid "Allow regular expressions."
+msgstr "Tillad regular expressions."
