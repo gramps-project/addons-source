@@ -1,0 +1,43 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-04 11:48-0600\n"
+"PO-Revision-Date: 2024-10-03 08:12+0200\n"
+"Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
+"Language-Team: \n"
+"Language: da_DK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: FixCoords/fixcoords.gpr.py:30
+msgid "Fix Place Coordinates"
+msgstr "Ordn stedkoordinater"
+
+#: FixCoords/fixcoords.gpr.py:31
+msgid "Tool to correct the place coordinates for extra spaces or comma characters."
+msgstr "Værktøj til at rette stedkoordinater for ekstar mellemrum- eller kommategn."
+
+#: FixCoords/fixcoords.py:53
+msgid "Fix Coordinates"
+msgstr "Ordn koordinater"
+
+#: FixCoords/fixcoords.py:53
+msgid "Starting"
+msgstr "Starter"
+
+#: FixCoords/fixcoords.py:58
+msgid "Looking for possible coords with \",\" characters"
+msgstr "Leder efter mulige koordinater med ',' tegn"
+
+#: FixCoords/fixcoords.py:60
+msgid "Fix coords"
+msgstr "Ordn koordinater"
