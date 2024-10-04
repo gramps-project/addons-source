@@ -1,0 +1,143 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-09-06 11:50-0500\n"
+"PO-Revision-Date: 2024-10-03 16:27+0200\n"
+"Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
+"Language-Team: \n"
+"Language: da_DK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: GenealogyTree/gt_ancestor.py:95 GenealogyTree/gt_descendant.py:95
+#: GenealogyTree/gt_sandclock.py:103
+#, python-format
+msgid "Person %s is not in the Database"
+msgstr "Personen %s findes ikke i databasen"
+
+#: GenealogyTree/gt_ancestor.py:160 GenealogyTree/gt_descendant.py:168
+#: GenealogyTree/gt_grandparent.py:217 GenealogyTree/gt_sandclock.py:227
+msgid "Report Options"
+msgstr "Rapport tilvalg"
+
+#: GenealogyTree/gt_ancestor.py:162 GenealogyTree/gt_descendant.py:170
+#: GenealogyTree/gt_grandparent.py:219 GenealogyTree/gt_sandclock.py:230
+msgid "Center Person"
+msgstr "Fokusperson"
+
+#: GenealogyTree/gt_ancestor.py:163 GenealogyTree/gt_descendant.py:171
+#: GenealogyTree/gt_grandparent.py:220 GenealogyTree/gt_sandclock.py:231
+msgid "The center person for the report"
+msgstr "Fokuspersonen for rapporten"
+
+#: GenealogyTree/gt_ancestor.py:166 GenealogyTree/gt_descendant.py:174
+#: GenealogyTree/gt_grandparent.py:223
+msgid "Generations"
+msgstr "Generationer"
+
+#: GenealogyTree/gt_ancestor.py:167 GenealogyTree/gt_descendant.py:175
+#: GenealogyTree/gt_grandparent.py:224 GenealogyTree/gt_sandclock.py:239
+#: GenealogyTree/gt_sandclock.py:243
+msgid "The number of generations to include in the tree"
+msgstr "Antal generationer der skal medtages i træet"
+
+#: GenealogyTree/gt_ancestor.py:170 GenealogyTree/gt_descendant.py:178
+#: GenealogyTree/gt_grandparent.py:231 GenealogyTree/gt_sandclock.py:250
+msgid "Include images"
+msgstr "Medtag billeder"
+
+#: GenealogyTree/gt_ancestor.py:171 GenealogyTree/gt_descendant.py:179
+#: GenealogyTree/gt_grandparent.py:232 GenealogyTree/gt_sandclock.py:251
+msgid "Include images of people in the nodes."
+msgstr "Medtag billeder af personer i noderne."
+
+#: GenealogyTree/gt_grandparent.py:119
+#, python-format
+msgid "Person %s does not have both a paternal and a maternal grandparent"
+msgstr "Person %s har ikke både en bedsteforældre på fars og mors side"
+
+#: GenealogyTree/gt_grandparent.py:227
+msgid "Grandparent family spacing"
+msgstr "Bedsteforældre familie afstand"
+
+#: GenealogyTree/gt_grandparent.py:228
+msgid "Extra spacing of grandparent families (mm)"
+msgstr "Ekstra afstand mellem bedsteforældres familie (mm)"
+
+#: GenealogyTree/gt_sandclock.py:108
+#, python-format
+msgid "Family %s is not in the Database"
+msgstr "Familien %s findes ikke i databasen"
+
+#: GenealogyTree/gt_sandclock.py:234
+msgid "Center Family"
+msgstr "Fokusfamilie"
+
+#: GenealogyTree/gt_sandclock.py:235
+msgid "The center family for the report"
+msgstr "Fokusfamilie for rapporten"
+
+#: GenealogyTree/gt_sandclock.py:238
+msgid "Generations up"
+msgstr "Generationer op"
+
+#: GenealogyTree/gt_sandclock.py:242
+msgid "Generations down"
+msgstr "Generationer ned"
+
+#: GenealogyTree/gt_sandclock.py:246
+msgid "Include siblings"
+msgstr "Medtag søskende"
+
+#: GenealogyTree/gt_sandclock.py:247
+msgid "Include siblings of ancestors."
+msgstr "Medtag søskende til aner."
+
+#: GenealogyTree/treeplugins.gpr.py:29
+msgid "Ancestor Tree"
+msgstr "Anetræ"
+
+#: GenealogyTree/treeplugins.gpr.py:30
+msgid "Ancestor tree using LaTeX genealogytree"
+msgstr "Anetræ der benytter LaTeX genealogytree"
+
+#: GenealogyTree/treeplugins.gpr.py:52
+msgid "Descendant Tree"
+msgstr "Efterkommertræ"
+
+#: GenealogyTree/treeplugins.gpr.py:53
+msgid "Descendant tree using LaTeX genealogytree"
+msgstr "Efterkommertræ der benytter LaTeX genealogytree"
+
+#: GenealogyTree/treeplugins.gpr.py:75
+msgid "Grandparent Tree"
+msgstr "Bedsteforøldre træ"
+
+#: GenealogyTree/treeplugins.gpr.py:76
+msgid "Grandparent tree using LaTeX genealogytree"
+msgstr "Bedsteforældretræ der benytter LaTeX genealogytree"
+
+#: GenealogyTree/treeplugins.gpr.py:98
+msgid "Sandclock Tree"
+msgstr "Timeglas træ"
+
+#: GenealogyTree/treeplugins.gpr.py:99
+msgid "Sandclock tree using LaTeX genealogytree"
+msgstr "Timeglas træ der benytter LaTeX genealogytree"
+
+#: GenealogyTree/treeplugins.gpr.py:121
+msgid "Sandclock Tree for a Family"
+msgstr "Timeglastræ for en familie"
+
+#: GenealogyTree/treeplugins.gpr.py:122
+msgid "Sandclock tree for a family using LaTeX genealogytree"
+msgstr "Timeglas træ for en familie der benytter LaTeX genealogytree"
