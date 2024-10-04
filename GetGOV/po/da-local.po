@@ -1,0 +1,55 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-09-06 11:50-0500\n"
+"PO-Revision-Date: 2024-10-04 09:18+0200\n"
+"Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
+"Language-Team: \n"
+"Language: da_DK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: GetGOV/getgov.gpr.py:30 GetGOV/getgov.gpr.py:42
+msgid "GetGOV"
+msgstr "GetGOV"
+
+#: GetGOV/getgov.gpr.py:31
+msgid "Gramplet to get places from the GOV database"
+msgstr "Gramplet til at hente steder fra GOV databasen"
+
+#: GetGOV/getgov.py:303
+msgid "Enter GOV-id:"
+msgstr "Indtast GOV-id"
+
+#: GetGOV/getgov.py:311
+msgid "Get Place"
+msgstr "Hent sted"
+
+#: GetGOV/getgov.py:343
+#, python-format
+msgid "Add GOV-id place %s"
+msgstr "Tilføj GOV-id sted %s"
+
+#: GetGOV/getgov.py:521
+#, python-format
+msgid "from %s to %s"
+msgstr "fra %s til %s"
+
+#: GetGOV/getgov.py:523
+#, python-format
+msgid "after %s"
+msgstr "efter %s"
+
+#: GetGOV/getgov.py:525
+#, python-format
+msgid "before %s"
+msgstr "før %s"
