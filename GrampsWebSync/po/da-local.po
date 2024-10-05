@@ -1,0 +1,239 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-24 10:49-0500\n"
+"PO-Revision-Date: 2024-10-05 09:52+0200\n"
+"Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
+"Language-Team: \n"
+"Language: da_DK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: GrampsWebSync/webapisync.gpr.py:29 GrampsWebSync/webapisync.py:101
+#: GrampsWebSync/webapisync.py:176
+msgid "Gramps Web Sync"
+msgstr "Gramps Web Sync"
+
+#: GrampsWebSync/webapisync.gpr.py:31
+msgid "Synchronizes a local database with a Gramps Web instance."
+msgstr "Synkroniserer en lokal database med em Gramps web instans."
+
+#: GrampsWebSync/webapisync.py:110
+msgid "Introduction"
+msgstr "Introduktion"
+
+#: GrampsWebSync/webapisync.py:121
+msgid "Login"
+msgstr "Login"
+
+#: GrampsWebSync/webapisync.py:127 GrampsWebSync/webapisync.py:153
+msgid "Progress Information"
+msgstr "Oplysning om forløb"
+
+#: GrampsWebSync/webapisync.py:132
+msgid "Final confirmation"
+msgstr "Endelig bekræftelse"
+
+#: GrampsWebSync/webapisync.py:139 GrampsWebSync/webapisync.py:157
+msgid "Summary"
+msgstr "Opsummering"
+
+#: GrampsWebSync/webapisync.py:146
+msgid "Media Files"
+msgstr "Mediefiler"
+
+#: GrampsWebSync/webapisync.py:213
+msgid "Fetching remote data..."
+msgstr "Henter eksterne data ..."
+
+#: GrampsWebSync/webapisync.py:222
+msgid "Both trees are the same."
+msgstr "Begge træer er ens."
+
+#: GrampsWebSync/webapisync.py:226
+#, python-format
+msgid "Successfully synchronized %s objects."
+msgstr "Synkroniserede %s objekter problemfrit."
+
+#: GrampsWebSync/webapisync.py:246
+msgid "Media files are in sync."
+msgstr "Mediefiler er synkrone."
+
+#: GrampsWebSync/webapisync.py:252
+#, python-format
+msgid "Successfully downloaded %s media files."
+msgstr "Hentede %s mediefiler problemfrit."
+
+#: GrampsWebSync/webapisync.py:255
+#, python-format
+msgid "Encountered %s errors during download."
+msgstr "Fik %s fejl ved hentning."
+
+#: GrampsWebSync/webapisync.py:261
+#, python-format
+msgid "Successfully uploaded %s media files."
+msgstr "Overførte %s mediefiler problemfrit."
+
+#: GrampsWebSync/webapisync.py:264
+#, python-format
+msgid "Encountered %s errors during upload."
+msgstr "Fik %s fejl ved overførsel."
+
+#: GrampsWebSync/webapisync.py:280
+msgid "Unexpected error while applying changes."
+msgstr "Uventet fejl ved anvendelse af ændringer."
+
+#: GrampsWebSync/webapisync.py:308 GrampsWebSync/webapisync.py:328
+msgid "Error accessing media object."
+msgstr "Fejl ved tilgang til medieobjekt."
+
+#: GrampsWebSync/webapisync.py:366
+msgid "Comparing local and remote data..."
+msgstr "Sammeligner lokale og eksterne data..."
+
+#: GrampsWebSync/webapisync.py:396
+msgid "Server authorization error."
+msgstr "Server godkendelsesfejl."
+
+#: GrampsWebSync/webapisync.py:399
+msgid "Server authorization error: insufficient permissions."
+msgstr "Server godkendelsesfejl: ikke tilstrækkelige tilladelser."
+
+#: GrampsWebSync/webapisync.py:402
+msgid "Error: URL not found."
+msgstr "Fejl: Kan ikke finde URL."
+
+#: GrampsWebSync/webapisync.py:406
+msgid "Unable to synchronize changes to server: objects have been modified."
+msgstr ""
+"Kan ikke synkronisere ændringer til serveres: objekter er blevet ændret."
+
+#: GrampsWebSync/webapisync.py:410
+#, python-format
+msgid "Error %s while connecting to server."
+msgstr "Fejl %s ved forbindelse til server."
+
+#: GrampsWebSync/webapisync.py:413
+msgid "Error connecting to server."
+msgstr "Fejl ved forbindelse til server."
+
+#: GrampsWebSync/webapisync.py:416
+msgid "Error while parsing response from server."
+msgstr "Fejl ved fortolkning af svar fra server."
+
+#: GrampsWebSync/webapisync.py:441
+msgid "Continue without transport encryption?"
+msgstr "Fortsæt uden transport kryptering?"
+
+#: GrampsWebSync/webapisync.py:443
+msgid ""
+"You have specified a URL with http scheme. If you continue, your password "
+"will be sent in clear text over the network. Use only for local testing!"
+msgstr ""
+"Du har angivet en URL med http skema. Hvis du fortsætter vil dit kodeord "
+"blive sendt i klartekst over netværket. Benyt kun til lokal test!"
+
+#: GrampsWebSync/webapisync.py:448
+msgid "Continue with HTTP"
+msgstr "Fortsæt med HTTP"
+
+#: GrampsWebSync/webapisync.py:449
+msgid "Use HTTPS"
+msgstr "Benyt HTTPS"
+
+#: GrampsWebSync/webapisync.py:534
+msgid ""
+"This tool allows to synchronize the currently opened family tree with a "
+"remote family tree served by Gramps Web.\n"
+"\n"
+"The tool assumes that the two trees are derivatives of each other, i.e. one "
+"of the two was created from a Gramps XML (not GEDCOM!) export of the "
+"other.\n"
+"\n"
+"After successful synchronization, the two trees will be identical. "
+"Modifications will be propagated based on timestamps. You will be prompted "
+"for confirmation before any changes are made to the local or remote trees.\n"
+"\n"
+"If you instead want to merge two significantly different trees with the "
+"option to make manual modifications, use the Import Merge Tool instead."
+msgstr ""
+"Dette værktøj muliggør synkronisering af din indlæste slægtsbog med en "
+"ekstern slægtsbog på Gramps Web.\n"
+"\n"
+"Værktøjet forudsætter at de to bøger er derivativer af hinanden. dvs en af "
+"de to var dannet fra en Gramps XML (ikke GEDCOM!) eksport af den anden.\n"
+"\n"
+"Efter problemfri synkronisering, vil de to ræer være identiske. Ændringer "
+"vil blive udbredt baseret på tidstempler. Du vil blive bedt om bekræftelse "
+"før nogen ændringer vil blive udført på det lokale eller eksterne træ.\n"
+"\n"
+"Hvis du istedet ønsker ar samle to signifikant forskellige træer med "
+"mulighed for at lave manuelle ændringer, benyt Import Merge Tool istedet."
+
+#: GrampsWebSync/webapisync.py:561
+msgid "Server URL: "
+msgstr "Server URL: "
+
+#: GrampsWebSync/webapisync.py:570
+msgid "Username: "
+msgstr "Brugernavn: "
+
+#: GrampsWebSync/webapisync.py:578
+msgid "Password: "
+msgstr "Kodeord: "
+
+#: GrampsWebSync/webapisync.py:645
+#, python-format
+msgid "Downloading %s media file(s)"
+msgstr "Henter %s mediefil(er)"
+
+#: GrampsWebSync/webapisync.py:653
+#, python-format
+msgid "Uploading %s media file(s)"
+msgstr "Uploader %s mediefil(er)"
+
+#: GrampsWebSync/webapisync.py:698
+msgid "Local changes"
+msgstr "Lokale ændringer"
+
+#: GrampsWebSync/webapisync.py:699 GrampsWebSync/webapisync.py:704
+msgid "Added"
+msgstr "Tilføjet"
+
+#: GrampsWebSync/webapisync.py:700 GrampsWebSync/webapisync.py:705
+msgid "Deleted"
+msgstr "Slettet"
+
+#: GrampsWebSync/webapisync.py:701 GrampsWebSync/webapisync.py:706
+#: GrampsWebSync/webapisync.py:708
+msgid "Modified"
+msgstr "Ændret"
+
+#: GrampsWebSync/webapisync.py:703
+msgid "Remote changes"
+msgstr "Eksterne ændringer"
+
+#: GrampsWebSync/webapisync.py:708
+msgid "Simultaneous changes"
+msgstr "Samtidige ændringer"
+
+#: GrampsWebSync/webapisync.py:755
+msgid "Click Next to synchonize media files."
+msgstr "Klik næste for at synkronisere mediefiler."
+
+#: GrampsWebSync/webapisync.py:785
+msgid "Missing locally"
+msgstr "Mangler lokalt"
+
+#: GrampsWebSync/webapisync.py:788
+msgid "Missing remotely"
+msgstr "Mangler eksternt"
