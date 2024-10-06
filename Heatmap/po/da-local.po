@@ -1,0 +1,175 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-24 10:57-0500\n"
+"PO-Revision-Date: 2024-10-06 09:39+0200\n"
+"Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
+"Language-Team: \n"
+"Language: da_DK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: Heatmap/heatmap.gpr.py:24
+msgid "Heatmap"
+msgstr "Heatmap"
+
+#: Heatmap/heatmap.gpr.py:25
+msgid "Create a heatmap web report."
+msgstr "Dan et heatmap web rapport."
+
+#: Heatmap/heatmap.py:72
+msgid "Filter"
+msgstr "Filter"
+
+#: Heatmap/heatmap.py:73 Heatmap/heatmap.py:77 Heatmap/heatmap.py:80
+#: Heatmap/heatmap.py:87 Heatmap/heatmap.py:91 Heatmap/heatmap.py:95
+#: Heatmap/heatmap.py:105
+msgid "General"
+msgstr "Generelt"
+
+#: Heatmap/heatmap.py:76
+msgid "Filter Person"
+msgstr "Person til filter"
+
+#: Heatmap/heatmap.py:85
+msgid "Map tiles"
+msgstr "Kort titler"
+
+#: Heatmap/heatmap.py:89
+msgid "Point size"
+msgstr "Punktstørrelse"
+
+#: Heatmap/heatmap.py:90
+msgid ""
+"Set the size of the heatmap points.\n"
+"Default: 15"
+msgstr ""
+"Sæt størrelsen på heatmap punkter.\n"
+"Standard er 15"
+
+#: Heatmap/heatmap.py:93
+msgid "File path"
+msgstr "Sti til filen"
+
+#: Heatmap/heatmap.py:98
+msgid ""
+"For the file name only english letters A-Z, a-z and numbers 0-9 as well as "
+"the characters space, underline and hypen are allowed. The file name also "
+"has to start and end with an alphanumeric character.The file extention '."
+"html' is added by the report."
+msgstr ""
+"Benyt kun engelske bogstaver A-Z, a-z og cifrene 0-9, mellemrum "
+"undersstregning og bindestreg til filnavn. Filnavnet skal også begynde med "
+"alfanumerisk tegn. Filtilnavnet '-html' tilføjes automatisk af rapporten."
+
+#: Heatmap/heatmap.py:103
+msgid "File name"
+msgstr "Filnavn"
+
+#: Heatmap/heatmap.py:111
+msgid "Events"
+msgstr "Hændelser"
+
+#: Heatmap/heatmap.py:117
+msgid "Enable custom start position"
+msgstr "Aktiver brugervalgt startposition"
+
+#: Heatmap/heatmap.py:119
+msgid ""
+"Enabling will force the map open at your custom start position and zoom."
+msgstr ""
+"Aktivering vil få kortet til at begynde ved din valgte position og zoom."
+
+#: Heatmap/heatmap.py:121 Heatmap/heatmap.py:127 Heatmap/heatmap.py:132
+#: Heatmap/heatmap.py:137
+msgid "Advanced"
+msgstr "Avanceret"
+
+#: Heatmap/heatmap.py:124
+msgid "Start latitude"
+msgstr "Start breddegrad"
+
+#: Heatmap/heatmap.py:126
+msgid ""
+"Set custom start position latitude\n"
+"Default: 50.0"
+msgstr ""
+"Sæt din valgte startpositions breddegrad\n"
+"Standard 50.0"
+
+#: Heatmap/heatmap.py:129
+msgid "Start longitude"
+msgstr "Start længdegrad"
+
+#: Heatmap/heatmap.py:131
+msgid ""
+"Set custom start position longitude\n"
+"Default: 10.0"
+msgstr ""
+"Sæt din valgte startpositions længdegrad\n"
+"Standard 10.0"
+
+#: Heatmap/heatmap.py:134
+msgid "Start zoom"
+msgstr "Start zoom"
+
+#: Heatmap/heatmap.py:136
+msgid ""
+"Set the value for the starting zoom\n"
+"Default: 5"
+msgstr ""
+"Sæt værdien for stratzoom\n"
+"Standard 5"
+
+#: Heatmap/heatmap.py:209
+msgid "Path does not exist."
+msgstr "Filsti findes ikke."
+
+#: Heatmap/heatmap.py:210
+msgid "Invalid filename."
+msgstr "Ugyldigt filnavn."
+
+#: Heatmap/heatmap.py:214 Heatmap/heatmap.py:226
+msgid "INFO"
+msgstr "INFO"
+
+#: Heatmap/multi_select.py:104
+msgid "Event type"
+msgstr "Hændelsestype"
+
+#: Heatmap/utils.py:52
+msgid "OpenStreetMap"
+msgstr "OpenStreetMap"
+
+#: Heatmap/utils.py:55
+msgid "Stamen Terrain"
+msgstr "Stamen Terrain"
+
+#: Heatmap/utils.py:58
+msgid "Stamen Terrain (Background only)"
+msgstr "Stamen Terrain (Background only)"
+
+#: Heatmap/utils.py:61
+msgid "Stamen Toner"
+msgstr "Stamen Toner"
+
+#: Heatmap/utils.py:64
+msgid "Stamen Watercolor"
+msgstr "Stamen Watercolor"
+
+#: Heatmap/utils.py:67
+msgid "CartoDB Positron"
+msgstr "CartoDB Positron"
+
+#: Heatmap/utils.py:70
+msgid "CartoDB DarkMatter"
+msgstr "CartoDB DarkMatter"
