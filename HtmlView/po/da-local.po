@@ -1,0 +1,75 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"PO-Revision-Date: 2024-10-06 10:18+0200\n"
+"Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
+"Language-Team: \n"
+"Language: da_DK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: HtmlView/htmlview.gpr.py:30
+msgid "Html View"
+msgstr "Html View"
+
+#: HtmlView/htmlview.gpr.py:31
+msgid "A view showing html pages embedded in Gramps"
+msgstr "En visning i HTML sider indlejret i Gramps"
+
+#: HtmlView/htmlview.gpr.py:39
+msgid "Web"
+msgstr "Web"
+
+#: HtmlView/htmlview.py:328
+msgid "HtmlView"
+msgstr "HtmlView"
+
+#: HtmlView/htmlview.py:494
+msgid "_Back"
+msgstr "_Tilbage"
+
+#: HtmlView/htmlview.py:495
+msgid "Go to the previous page in the history"
+msgstr "Gå til forrige side i historiken"
+
+#: HtmlView/htmlview.py:502
+msgid "_Forward"
+msgstr "_Frem"
+
+#: HtmlView/htmlview.py:503
+msgid "Go to the next page in the history"
+msgstr "Gå til næste side i historiken"
+
+#: HtmlView/htmlview.py:508
+msgid "_Refresh"
+msgstr "_Genindlæs"
+
+#: HtmlView/htmlview.py:511
+msgid "Stop and reload the page."
+msgstr "Stop og genindlæs siden."
+
+#: HtmlView/htmlview.py:555
+msgid "Start page for the Html View"
+msgstr "Startside for Html View"
+
+#: HtmlView/htmlview.py:556
+msgid ""
+"Type a webpage address at the top, and hit the execute button to load a "
+"webpage in this page\n"
+"<br>\n"
+"For example: "
+msgstr ""
+"Indtast en adresse på en webside i toppen, og klik på udførknappen for "
+"at hente en webside på denne side\n"
+"<br>\n"
+"For eksempel: "
