@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-28 22:35-0700\n"
+"POT-Creation-Date: 2024-10-06 11:31-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,21 +17,21 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: GeoTimeLines/GeoTimeLines.gpr.py:4 GeoTimeLines/GeoTimeLines.py:233
+#: GeoTimeLines/GeoTimeLines.gpr.py:24 GeoTimeLines/GeoTimeLines.py:233
 #: GeoTimeLines/GeoTimeLines.py:339
 msgid "TimeLines Map"
 msgstr ""
 
-#: GeoTimeLines/GeoTimeLines.gpr.py:5
+#: GeoTimeLines/GeoTimeLines.gpr.py:25
 msgid ""
 "A view showing all the places visited by a person or persons on various date."
 msgstr ""
 
-#: GeoTimeLines/GeoTimeLines.gpr.py:14
+#: GeoTimeLines/GeoTimeLines.gpr.py:34
 msgid "Geography"
 msgstr ""
 
-#: GeoTimeLines/GeoTimeLines.gpr.py:16
+#: GeoTimeLines/GeoTimeLines.gpr.py:36
 msgid "TimeLines map"
 msgstr ""
 
@@ -77,7 +77,7 @@ msgstr ""
 msgid "%(eventtype)s : %(name)s"
 msgstr ""
 
-#: GeoTimeLines/GeoTimeLines.py:1686 GeoTimeLines/GeoTimeLines.py:1988
+#: GeoTimeLines/GeoTimeLines.py:1686 GeoTimeLines/GeoTimeLines.py:1992
 #, python-format
 msgid "Number of Persons: %s"
 msgstr ""

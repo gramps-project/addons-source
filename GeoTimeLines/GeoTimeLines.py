@@ -1983,7 +1983,11 @@ class GeoTimeLines(GeoGraphyView):
 
             self.message_layer.clear_messages()
             if self.database_choice == self.DB_CHOICE_ACTIVE:
-                self.message_layer.add_message(f"TimeLines for {_nd.display(self.dbstate.db.get_person_from_handle(self.uistate.get_active('Person')))}")
+                person_handle = self.uistate.get_active('Person')
+                if person_handle:
+                    self.message_layer.add_message(f"TimeLines for {_nd.display(self.dbstate.db.get_person_from_handle(person_handle))}")
+                else:
+                    self.message_layer.add_message("Welcome to TimeLines!")
             else:
                 self.message_layer.add_message(_("Number of Persons: %s") % len(self.all_sort_lines_dict))
         else:
