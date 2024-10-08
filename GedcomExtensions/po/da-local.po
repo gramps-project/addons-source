@@ -1,0 +1,52 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-09-06 11:50-0500\n"
+"PO-Revision-Date: 2024-10-03 15:22+0200\n"
+"Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
+"Language-Team: \n"
+"Language: da_DK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: GedcomExtensions/GedcomExtensions.gpr.py:31
+msgid "Export GEDCOM Extensions (GED2)"
+msgstr "Eksporter GEDCOM udvidelser (GED2)"
+
+#: GedcomExtensions/GedcomExtensions.gpr.py:32
+msgid "GEDCOM Extensions (GED2)"
+msgstr "GEDCOM udvidelser (GED2)"
+
+#: GedcomExtensions/GedcomExtensions.gpr.py:33
+msgid "Extensions to the common GEDCOM format."
+msgstr "Udvidelser til det almidenlige GEDCOM format."
+
+#: GedcomExtensions/GedcomExtensions.gpr.py:41
+msgid "GEDCOM Extensions options"
+msgstr "GEDCOM Udvidelsers tilvalg"
+
+#: GedcomExtensions/GedcomExtensions.py:117
+msgid "Include witnesses"
+msgstr "Medtag vidner"
+
+#: GedcomExtensions/GedcomExtensions.py:118
+msgid "Include media"
+msgstr "Medtag medier"
+
+#: GedcomExtensions/GedcomExtensions.py:147
+#, python-format
+msgid "Could not create %s"
+msgstr "Kunne ikke danne %s"
+
+#: GedcomExtensions/GedcomExtensions.py:150
+msgid "Export failed"
+msgstr "Eksporten mislykkedes"

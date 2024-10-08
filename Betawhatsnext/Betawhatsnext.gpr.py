@@ -5,7 +5,7 @@
 # Copyright (C) 2009 Benny Malengier
 # Copyright (C) 2011 Nick Hall
 # Copyright (C) 2011 Tim G L Lyons
-# Copyright (C) 2023 Brian McCullough
+# Copyright (C) 2023-2024 Brian McCullough
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -42,20 +42,25 @@ MODULE_VERSION = "5.2"
 # ------------------------------------------------------------------------
 
 
-register(GRAMPLET,
-         id="Beta What's Next",
-         name=_("Beta What's Next"),
-         description=_("Beta Gramplet suggesting items to research"),
-         status=STABLE,
-         audience=EVERYONE,
-         maintainers=["Reinhard Mueller", "Jakim Friant", "Brian McCullough"],
-         maintainers_email=["", "jmodule@friant.org" ,"emyoulation@yahoo.com"],
-         fname="Betawhatsnext.py",
-         height=300,
-         expand=True,
-         gramplet='BetaWhatNextGramplet',
-         gramplet_title=_("Beta What's Next?"),
-         version = '0.1.7',
-         help_url="Gramps_5.2_Wiki_Manual_-_Gramplets#What.27s_Next",
-         gramps_target_version=MODULE_VERSION,
-         )
+register(
+    GRAMPLET,
+    id="Beta What's Next",
+    name=_("Beta What's Next"),
+    description=_("Beta Gramplet suggesting items to research"),
+    status=BETA,
+    audience=EVERYONE,
+    authors=["Reinhard Mueller"],
+    authors_email=[""],
+    maintainers=["Jakim Friant", "Brian McCullough"],
+    maintainers_email=["jmodule@friant.org", "emyoulation@yahoo.com"],
+    fname="Betawhatsnext.py",
+    height=300,
+    expand=True,
+    gramplet="BetaWhatNextGramplet",
+    gramplet_title=_("Beta What's Next?"),
+    version = '0.1.9',
+    help_url="https://github.com/emyoulation/_BetaDashboards",
+    # help_url="Gramps_5.2_Wiki_Manual_-_Gramplets#What.27s_Next",
+    gramps_target_version=MODULE_VERSION,
+)
+

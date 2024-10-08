@@ -1,0 +1,93 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"PO-Revision-Date: 2024-10-06 09:43+0200\n"
+"Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
+"Language-Team: \n"
+"Language: da_DK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: HouseTimelineGramplet/housetimeline.gpr.py:3
+#: HouseTimelineGramplet/housetimeline.gpr.py:14
+msgid "House Timeline"
+msgstr "House Timeline"
+
+#: HouseTimelineGramplet/housetimeline.gpr.py:4
+msgid "Lists the Residents of an Address by Timeline"
+msgstr "Lister beboerne for en adresse gennem tiden"
+
+#: HouseTimelineGramplet/housetimeline.py:35
+msgid "Double-click name for details"
+msgstr "Dobbeltklik på et navn for at se detaljer"
+
+#: HouseTimelineGramplet/housetimeline.py:51
+#: HouseTimelineGramplet/housetimeline.py:58
+msgid "House Icon Style"
+msgstr "Hus ikonstil"
+
+#: HouseTimelineGramplet/housetimeline.py:59
+msgid "Standard"
+msgstr "Standard"
+
+#: HouseTimelineGramplet/housetimeline.py:60
+msgid "Small"
+msgstr "Lille"
+
+#: HouseTimelineGramplet/housetimeline.py:61
+msgid "Unicode"
+msgstr "Unicode"
+
+#: HouseTimelineGramplet/housetimeline.py:62
+msgid "None"
+msgstr "Ingen"
+
+#: HouseTimelineGramplet/housetimeline.py:68
+msgid "Processing..."
+msgstr "Behandler ..."
+
+#: HouseTimelineGramplet/housetimeline.py:90
+msgid ""
+"There are no individuals with Address data. Please add Address data to "
+"people."
+msgstr ""
+"Der er ingen personer med adressedata. Tilføj venligst adresse til "
+"personer."
+
+#: HouseTimelineGramplet/housetimeline.py:128
+msgid "Location"
+msgstr "Sted"
+
+#: HouseTimelineGramplet/housetimeline.py:129
+msgid "Time In Family"
+msgstr "Tid i familien"
+
+#: HouseTimelineGramplet/housetimeline.py:130
+msgid "First Resident"
+msgstr "Første beboer"
+
+#: HouseTimelineGramplet/housetimeline.py:131
+msgid "Last Resident"
+msgstr "Sidste beboer"
+
+#: HouseTimelineGramplet/housetimeline.py:132
+msgid "Timeline"
+msgstr "Tidslinje"
+
+#: HouseTimelineGramplet/housetimeline.py:133
+msgid "Unknown"
+msgstr "Ukendt"
+
+#: HouseTimelineGramplet/housetimeline.py:134
+msgid "Total Known Residents"
+msgstr "Total kendte beboere"

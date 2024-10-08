@@ -1,0 +1,76 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2024-10-04 09:29+0200\n"
+"Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
+"Language-Team: \n"
+"Language: da_DK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.gpr.py:30
+msgid "GoogleEarth"
+msgstr "GoogleEarth"
+
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.gpr.py:35
+msgid "Creates data file for GoogleEarth and opens it"
+msgstr "Danner data til GoogleEarth og åbner deen"
+
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:119
+msgid "No place description"
+msgstr "Ingen stedbeskirvelse"
+
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:152
+msgid "GoogleEarth not installed!"
+msgstr "GoogleEarth ikke installeret!!"
+
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:153
+#, python-format
+msgid ""
+"Create kmz/kml file ''%s''\n"
+"in user directory ''%s''?"
+msgstr ""
+"Dan kmz/kml file ''%s''\n"
+"i bruger folder ''%s''?"
+
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:156
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:177
+msgid "Yes"
+msgstr "Ja"
+
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:157
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:178
+msgid "No"
+msgstr "Nej"
+
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:163
+#, python-format
+msgid "Failure writing to %s"
+msgstr "Fejl ved skrivning til %s"
+
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:164
+msgid "Directory does not exist"
+msgstr "Folder findes ikke"
+
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:173
+msgid "GoogleEarth file exists!"
+msgstr "GoogleEarth fil findes!"
+
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:174
+#, python-format
+msgid ""
+"Overwrite kmz/kml file ''%s''\n"
+"in user home directory ''%s''?"
+msgstr ""
+"Overskirv kmz/kml fil ''%s''\n"
+"i brugerens hjemmefolder ''%s''?"

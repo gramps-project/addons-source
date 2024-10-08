@@ -1,0 +1,158 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-09-27 19:36-0700\n"
+"PO-Revision-Date: 2024-10-04 09:14+0200\n"
+"Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
+"Language-Team: \n"
+"Language: da_DK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: GeoTimeLines/GeoTimeLines.gpr.py:4
+msgid "TimeLines Map"
+msgstr "Tidsliniekort"
+
+#: GeoTimeLines/GeoTimeLines.gpr.py:5
+msgid "A view showing all the places visited by a person or persons on various date."
+msgstr "Et billede der viser alle steder som en person har besøgt på forskellige datoer."
+
+#: GeoTimeLines/GeoTimeLines.gpr.py:12
+msgid "Geography"
+msgstr "Geografi"
+
+#: GeoTimeLines/GeoTimeLines.gpr.py:14
+msgid "TimeLines map"
+msgstr "Tidsliniekort"
+
+#: GeoTimeLines/GeoTimeLines.py:116
+msgid "Organize Bookmarks"
+msgstr "Organisér bogmærker"
+
+#: GeoTimeLines/GeoTimeLines.py:232 GeoTimeLines/GeoTimeLines.py:329
+msgid "GeoTimeLines"
+msgstr "GeoTimeLines"
+
+#: GeoTimeLines/GeoTimeLines.py:639
+msgid "Unknown"
+msgstr "Ukendt"
+
+#: GeoTimeLines/GeoTimeLines.py:668
+msgid "Edit Event"
+msgstr "Redigér hændelse"
+
+#: GeoTimeLines/GeoTimeLines.py:672 GeoTimeLines/GeoTimeLines.py:699
+#: GeoTimeLines/GeoTimeLines.py:729
+msgid "Center on this place"
+msgstr "Centrér på dette sted"
+
+#: GeoTimeLines/GeoTimeLines.py:695
+msgid "Edit Place"
+msgstr "Redigér sted"
+
+#: GeoTimeLines/GeoTimeLines.py:725
+msgid "Edit Person"
+msgstr "Redigér person"
+
+#: GeoTimeLines/GeoTimeLines.py:739
+msgid "Choose View Format"
+msgstr "Vælg format på visning"
+
+#: GeoTimeLines/GeoTimeLines.py:782
+msgid "Almost done"
+msgstr "Næsten udført"
+
+#: GeoTimeLines/GeoTimeLines.py:898
+msgid "Gathering data"
+msgstr "Samler data"
+
+#: GeoTimeLines/GeoTimeLines.py:1003 GeoTimeLines/GeoTimeLines.py:1103
+#, python-format
+msgid "%(eventtype)s : %(name)s"
+msgstr "%(eventtype)s : %(name)s"
+
+#: GeoTimeLines/GeoTimeLines.py:1662 GeoTimeLines/GeoTimeLines.py:1962
+#, python-format
+msgid "Number of Individuals: %s"
+msgstr "Antal personer: %s"
+
+#: GeoTimeLines/GeoTimeLines.py:1744
+msgid "Show map travel lines on startup"
+msgstr "Viser kortrejselinier ved opstart"
+
+#: GeoTimeLines/GeoTimeLines.py:1750
+msgid "Show time ticks on navigation bar on startup"
+msgstr "Vis tidsmærker i navigationsfeltet ved opstart"
+
+#: GeoTimeLines/GeoTimeLines.py:1776
+msgid ""
+"Stagger map markers.\n"
+"to more easier see different\n"
+"makers at the same location"
+msgstr ""
+"Flyt kortmærker.\n"
+"for at lettere se forskellige\\n\n"
+"mærker på samme sted"
+
+#: GeoTimeLines/GeoTimeLines.py:1786
+msgid ""
+"Stagger Radius (hectometers)\n"
+"as measured along the equator\n"
+"(includes latitude distortion)"
+msgstr ""
+"Flyt Radius (hektometer)\n"
+"som målt ved ækvator\n"
+"(medtag breddegradsforvrængning)"
+
+#: GeoTimeLines/GeoTimeLines.py:1794
+msgid ""
+"Display markers for unknown ancestors\n"
+"based on earliest descendant location"
+msgstr ""
+"Vis mærker for ukendte aner\n"
+"baseret på tidligste efterkommersted"
+
+#: GeoTimeLines/GeoTimeLines.py:1803
+msgid "Days to keep map travel lines"
+msgstr "Dage hvor kortrejselinier beholdes"
+
+#: GeoTimeLines/GeoTimeLines.py:1822
+msgid "Use custom map icons"
+msgstr "Benyt brugerdefineredee kortikoner"
+
+#: GeoTimeLines/GeoTimeLines.py:1829
+msgid "If no record of birth, their assumed age at first event"
+msgstr "Hvis der ikke er poster over fødsel, deres beregnede alder ved første hændelse"
+
+#: GeoTimeLines/GeoTimeLines.py:1836
+msgid "If no death event, assumed dead by"
+msgstr "Hvis ingen poster med død, beregnet død ved"
+
+#: GeoTimeLines/GeoTimeLines.py:1875
+msgid "Number of steps"
+msgstr "Antal trin"
+
+#: GeoTimeLines/GeoTimeLines.py:1883
+msgid "Type of steps"
+msgstr "Typer trin"
+
+#: GeoTimeLines/GeoTimeLines.py:1892
+msgid "Steps per millisecond"
+msgstr "Trin per millisekund"
+
+#: GeoTimeLines/GeoTimeLines.py:1915
+msgid "Initial Mapview"
+msgstr "Indledende kortvisning"
+
+#: GeoTimeLines/GeoTimeLines.py:1948
+msgid "GeoTimeLines options"
+msgstr "GeoTimeLines tilvalg"
