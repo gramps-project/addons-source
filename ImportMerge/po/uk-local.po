@@ -1,0 +1,379 @@
+# Ukrainian translation for ImportMerge
+# This file is distributed under the same license as the Gramps package.
+#
+# Illia Maier <illia@maier.page>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-02-10 16:28-0600\n"
+"PO-Revision-Date: 2024-10-09 23:00+0300\n"
+"Last-Translator: Illia Maier <illia@maier.page>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
+"gramps/uk/>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+
+#: ImportMerge/importmerge.gpr.py:30 ImportMerge/importmerge.py:328
+#: ImportMerge/importmerge.py:707
+msgid "Import and Merge tool"
+msgstr "Інструмент імпорту та злиття"
+
+#: ImportMerge/importmerge.gpr.py:31
+msgid ""
+"Compares a Gramps XML database with the current one, and allows merging of "
+"the differences."
+msgstr "Порівнює базу даних Gramps XML із поточною та дозволяє обʼєднати відмінності."
+
+#: ImportMerge/importmerge.py:80
+msgid "Import and merge a Gramps XML"
+msgstr "Імпортувати та обʼєднати Gramps XML"
+
+#: ImportMerge/importmerge.py:89
+msgid "Missing"
+msgstr "Відсутнє"
+
+#: ImportMerge/importmerge.py:91
+msgid "Added"
+msgstr "Додано"
+
+#: ImportMerge/importmerge.py:93
+msgid "Different"
+msgstr "Відрізняється"
+
+#: ImportMerge/importmerge.py:108
+msgid "Delete original"
+msgstr "Видалити оригінал"
+
+#: ImportMerge/importmerge.py:109 ImportMerge/importmerge.glade:334
+msgid "Ignore"
+msgstr "Ігнорувати"
+
+#: ImportMerge/importmerge.py:110
+msgid "Add Import"
+msgstr "Додати з імпорту"
+
+#: ImportMerge/importmerge.py:111
+msgid "Merge into original"
+msgstr "Об'єднати з оригіналом"
+
+#: ImportMerge/importmerge.py:112
+msgid "Merge into import"
+msgstr "Об'єднати з імпортом"
+
+#: ImportMerge/importmerge.py:113
+msgid "Replace with import"
+msgstr "Замінити з імпорту"
+
+#: ImportMerge/importmerge.py:114
+msgid "Keep original"
+msgstr "Залишити оригінал"
+
+#: ImportMerge/importmerge.py:115 ImportMerge/importmerge.glade:293
+msgid ""
+"Use buttons below to set the 'Action' for each difference.  No changes will "
+"be made to your tree until you press 'Done' and confirm."
+msgstr ""
+"Використовуйте кнопки нижче, щоб встановити 'Дію' для кожної відмінності. "
+"Зміни не будуть внесені до вашого дерева, доки ви не натиснете 'Завершити' і не підтвердите."
+
+#: ImportMerge/importmerge.py:118
+msgid ""
+"This item will be deleted from your tree.  Any referenced items were also "
+"marked for deletion."
+msgstr ""
+"Цей елемент буде видалено з вашого дерева. Усі посилання також позначені для видалення."
+
+#: ImportMerge/importmerge.py:120
+msgid ""
+"This item will not be changed in your tree.  Any referenced items were also "
+"marked for Ignore."
+msgstr ""
+"Цей елемент не буде змінено у вашому дереві. Усі посилання також позначені для ігнорування."
+
+#: ImportMerge/importmerge.py:122
+msgid ""
+"This item will be added to your tree.  Any referenced items were also marked "
+"for adding."
+msgstr ""
+"Цей елемент буде додано до вашого дерева. Усі посилання також позначені для додавання."
+
+#: ImportMerge/importmerge.py:124
+msgid ""
+"This item will be merged, saving data from your tree.  Any referenced items "
+"were also marked for merging or adding."
+msgstr ""
+"Цей елемент буде об'єднано, зберігаючи дані з вашого дерева. Усі посилання також позначені для об'єднання або додавання."
+
+#: ImportMerge/importmerge.py:126
+msgid ""
+"This item will be merged, using data from the import.  Any referenced items "
+"were also marked for merging or adding."
+msgstr ""
+"Цей елемент буде об'єднано, використовуючи дані з імпорту. Усі посилання також позначені для об'єднання або додавання."
+
+#: ImportMerge/importmerge.py:128
+msgid ""
+"The import data will entirely replace the data in your tree.  Any referenced "
+"items were also marked for replacement or removal."
+msgstr ""
+"Імпортовані дані повністю замінять дані у вашому дереві. Усі посилання також будуть позначені для заміни або видалення."
+
+#: ImportMerge/importmerge.py:130
+msgid ""
+"This item will not be changed in your tree.  Any referenced items were also "
+"marked to keep."
+msgstr ""
+"Цей елемент не буде змінено у вашому дереві. Усі посилання також залишаться без змін."
+
+#: ImportMerge/importmerge.py:145
+msgid "Family"
+msgstr "Сім'я"
+
+#: ImportMerge/importmerge.py:145
+msgid "Person"
+msgstr "Особа"
+
+#: ImportMerge/importmerge.py:145
+msgid "Citation"
+msgstr "Цитата"
+
+#: ImportMerge/importmerge.py:145
+msgid "Event"
+msgstr "Подія"
+
+#: ImportMerge/importmerge.py:145
+msgid "Media"
+msgstr "Медіа"
+
+#: ImportMerge/importmerge.py:146
+msgid "Note"
+msgstr "Примітка"
+
+#: ImportMerge/importmerge.py:146
+msgid "Place"
+msgstr "Місце"
+
+#: ImportMerge/importmerge.py:146
+msgid "Repository"
+msgstr "Сховище"
+
+#: ImportMerge/importmerge.py:146
+msgid "Source"
+msgstr "Джерело"
+
+#: ImportMerge/importmerge.py:146
+msgid "Tag"
+msgstr "Тег"
+
+#: ImportMerge/importmerge.py:329
+msgid "Importing data..."
+msgstr "Імпорт даних..."
+
+#: ImportMerge/importmerge.py:338
+msgid "Import Failure"
+msgstr "Помилка імпорту"
+
+#: ImportMerge/importmerge.py:342
+msgid "Searching..."
+msgstr "Пошук..."
+
+#: ImportMerge/importmerge.py:406
+msgid "Your Tree and import are the same."
+msgstr "Ваше дерево і імпортовані дані однакові."
+
+#: ImportMerge/importmerge.py:438
+msgid "Last changed"
+msgstr "Остання зміна"
+
+#: ImportMerge/importmerge.py:451 ImportMerge/importmerge.py:460
+#: ImportMerge/importmerge.py:468 ImportMerge/importmerge.py:476
+msgid "your tree "
+msgstr "ваше дерево "
+
+#: ImportMerge/importmerge.py:458 ImportMerge/importmerge.py:466
+#: ImportMerge/importmerge.py:474
+msgid "imported "
+msgstr "імпортовано "
+
+#: ImportMerge/importmerge.py:481 ImportMerge/importmerge.py:960
+#: ImportMerge/importmerge.py:981
+msgid "Original"
+msgstr "Оригінал"
+
+#: ImportMerge/importmerge.py:482 ImportMerge/importmerge.py:961
+#: ImportMerge/importmerge.py:982
+msgid "Imported"
+msgstr "Імпортовано"
+
+#: ImportMerge/importmerge.py:484 ImportMerge/importmerge.py:963
+#: ImportMerge/importmerge.py:984
+msgid "Result  "
+msgstr "Результат  "
+
+#: ImportMerge/importmerge.py:709
+msgid "Processing..."
+msgstr "Обробка..."
+
+#: ImportMerge/importmerge.py:710
+msgid "Import and Merge"
+msgstr "Імпорт і злиття"
+
+#: ImportMerge/importmerge.py:910 ImportMerge/importmerge.glade:407
+msgid "Replace"
+msgstr "Замінити"
+
+#: ImportMerge/importmerge.py:915
+msgid "Add"
+msgstr "Додати"
+
+#: ImportMerge/importmerge.py:920
+msgid "Delete"
+msgstr "Видалити"
+
+#: ImportMerge/importmerge.glade:8
+msgid ""
+"A '*' indicates that the action was automarked, a '?' indicates a conflict "
+"between automarks."
+msgstr ""
+"'*' означає, що дія була позначена автоматично. '?' означає конфлікт між автоматичними позначками."
+
+#: ImportMerge/importmerge.glade:9
+msgid "Action"
+msgstr "Дія"
+
+#: ImportMerge/importmerge.glade:39
+msgid "Import file"
+msgstr "Імпортувати файл"
+
+#: ImportMerge/importmerge.glade:124
+msgid "Select the difference you wish to examine."
+msgstr "Виберіть відмінність, яку хочете дослідити."
+
+#: ImportMerge/importmerge.glade:134
+msgid "Status"
+msgstr "Статус"
+
+#: ImportMerge/importmerge.glade:149
+msgid "Object"
+msgstr "Обʼєкт"
+
+#: ImportMerge/importmerge.glade:164
+msgid "ID"
+msgstr "ID"
+
+#: ImportMerge/importmerge.glade:180
+msgid "Object Name/Description"
+msgstr "Назва обʼєкта / Опис"
+
+#: ImportMerge/importmerge.glade:227
+msgid ""
+"Data item details, showing the current treeitem, imported tree item, and "
+"result (when chosen)."
+msgstr ""
+"Деталі елемента даних, показуючи поточний елемент дерева, імпортований елемент і результат (коли вибрано)."
+
+#: ImportMerge/importmerge.glade:248
+msgid "Object and item"
+msgstr "Обʼєкт і елемент"
+
+#: ImportMerge/importmerge.glade:264
+msgid "Differences"
+msgstr "Відмінності"
+
+#: ImportMerge/importmerge.glade:320
+msgid "Help"
+msgstr "Допомога"
+
+#: ImportMerge/importmerge.glade:338
+msgid "This button will ignore the difference, no changes to your tree."
+msgstr "Ця кнопка ігноруватиме відмінність, не змінюючи ваше дерево."
+
+#: ImportMerge/importmerge.glade:349
+msgid "Unmark"
+msgstr "Зняти позначку"
+
+#: ImportMerge/importmerge.glade:353
+msgid "This button will add the imported data as a new object to your tree."
+msgstr "Додати імпортовані дані у дерево як новий об'єкт."
+
+#: ImportMerge/importmerge.glade:364
+msgid "Done"
+msgstr "Завершити"
+
+#: ImportMerge/importmerge.glade:368
+msgid ""
+"This button will bring up a dialog allowing you to finalize your changes, or "
+"abandon them."
+msgstr "Ця кнопка відкриє діалог для підтвердження ваших змін або їх скасування."
+
+#: ImportMerge/importmerge.glade:392
+msgid "Merge Original"
+msgstr "Об'єднати з оригіналом"
+
+#: ImportMerge/importmerge.glade:396
+msgid ""
+"This button will merge the imported data into your tree with your tree data "
+"as a base."
+msgstr "Ця кнопка об'єднає імпортовані дані з вашим деревом, використовуючи його як базу."
+
+#: ImportMerge/importmerge.glade:411
+msgid "This button will replace your tree data with the imported data."
+msgstr "Ця кнопка замінить дані у вашому дереві на імпортовані дані."
+
+#: ImportMerge/importmerge.glade:422
+msgid "Merge Import"
+msgstr "Об'єднати з імпортом"
+
+#: ImportMerge/importmerge.glade:426
+msgid ""
+"This button will merge the imported data into your tree with the imported "
+"data as a base."
+msgstr "Ця кнопка об'єднає імпортовані дані з деревом, використовуючи імпортовані дані як базу."
+
+#: ImportMerge/importmerge.glade:437
+msgid "Edit Import"
+msgstr "Редагувати імпорт"
+
+#: ImportMerge/importmerge.glade:441
+msgid ""
+"This button will edit the imported data.  The data will still need to be "
+"merged, added or replaced."
+msgstr "Ця кнопка дозволяє редагувати імпортовані дані. Дані все ще потрібно буде об'єднати, додати або замінити."
+
+#: ImportMerge/importmerge.glade:464
+msgid "Show more details"
+msgstr "Показати більше деталей"
+
+#: ImportMerge/importmerge.glade:481
+msgid "Automark Families"
+msgstr "Автоматично позначати сім'ї"
+
+#: ImportMerge/importmerge.glade:498
+msgid "Automark Parent Families"
+msgstr "Автоматично позначати сім'ї батьків"
+
+#: ImportMerge/importmerge.glade:551
+msgid "Close _without saving"
+msgstr "Закрити _без збереження"
+
+#: ImportMerge/importmerge.glade:566
+msgid "_Cancel"
+msgstr "_Скасувати"
+
+#: ImportMerge/importmerge.glade:582
+msgid "_Save"
+msgstr "_Зберегти"
+
+#: ImportMerge/importmerge.glade:613
+msgid "Save Changes?"
+msgstr "Зберегти зміни?"
+
+#: ImportMerge/importmerge.glade:644
+msgid "If you close without saving, the changes you have made will be lost"
+msgstr "Якщо ви закриєте без збереження, усі зроблені зміни будуть втрачені."
