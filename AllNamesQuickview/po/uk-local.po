@@ -1,0 +1,45 @@
+# Ukrainian translation for AllNamesQuickview
+# This file is distributed under the same license as the Gramps package.
+#
+# Illia Maier <illia@maier.page>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.x\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-09 23:00+0300\n"
+"PO-Revision-Date: 2024-10-09 23:00+0300\n"
+"Last-Translator: Illia Maier <illia@maier.page>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
+"gramps/uk/>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+
+#: AllNamesQuickview/AllNames.gpr.py:3 AllNamesQuickview/AllNames.py:51
+msgid "All Names of All People"
+msgstr "Всі імена всіх людей"
+
+#: AllNamesQuickview/AllNames.gpr.py:4
+msgid "Display all names of all people"
+msgstr "Відображає всі імена всіх людей"
+
+#: AllNamesQuickview/AllNames.py:54
+msgid "Name"
+msgstr "Ім'я"
+
+#: AllNamesQuickview/AllNames.py:54
+msgid "Primary Name"
+msgstr "Основне ім'я"
+
+#: AllNamesQuickview/AllNames.py:54
+msgid "Name Type"
+msgstr "Тип імені"
+
+#: AllNamesQuickview/AllNames.py:71
+#, python-format
+msgid "Total names %d"
+msgstr "Усього імен %d"
