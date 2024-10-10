@@ -30,7 +30,7 @@ msgstr "Грамплет для позначення людей на фотог�
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:108
 msgid "https://www.gramps-project.org/wiki/index.php/Photo_Tagging_Gramplet"
-msgstr ""
+msgstr "https://www.gramps-project.org/wiki/index.php/Photo_Tagging_Gramplet"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:132
 msgid "Selection"
