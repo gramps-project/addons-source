@@ -1,0 +1,84 @@
+# Ukrainian translation for FamilyRelationshipTool
+# This file is distributed under the same license as the Gramps package.
+#
+# Illia Maier <illia@maier.page>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-26 17:29-0500\n"
+"PO-Revision-Date: 2024-10-10 20:45+0300\n"
+"Last-Translator: Illia Maier <illia@maier.page>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
+"gramps/uk/>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: FamilyRelationshipTool/FamilyRelationshipTool.gpr.py:24
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:88
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:103
+msgid "Family Relationship Tool"
+msgstr "Інструмент сімейних відносин"
+
+#: FamilyRelationshipTool/FamilyRelationshipTool.gpr.py:25
+msgid "Mass-edit the family relationship type for a group of families."
+msgstr "Масове редагування типу сімейних відносин для групи сімей."
+
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:53
+msgid "All Families"
+msgstr "Усі сімʼї"
+
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:63
+msgid "Family Filter"
+msgstr "Фільтр сімей"
+
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:64
+msgid ""
+"Choose the set of families to process.\n"
+"Create custom filters if empty."
+msgstr ""
+"Виберіть набір сімей для обробки.\n"
+"Створіть користувацькі фільтри, якщо порожньо."
+
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:67
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:75
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:92
+msgid "Options"
+msgstr "Опції"
+
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:70
+msgid "Relationship Type"
+msgstr "Тип відносин"
+
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:71
+msgid ""
+"Choose the new family relationship type.\n"
+"Custom relationship types aren't supported."
+msgstr ""
+"Виберіть новий тип сімейних відносин.\n"
+"Користувацькі типи відносин не підтримуються."
+
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:73
+msgid "Married"
+msgstr "Одружені"
+
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:73
+msgid "Unmarried"
+msgstr "Неодружені"
+
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:74
+msgid "Civil Union"
+msgstr "Цивільний союз"
+
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:74
+msgid "Unknown"
+msgstr "Невідомо"
+
+#: FamilyRelationshipTool/FamilyRelationshipTool.py:107
+msgid "Process relationships..."
+msgstr "Обробка відносин..."

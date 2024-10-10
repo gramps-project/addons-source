@@ -1,0 +1,144 @@
+# Ukrainian translation for GenealogyTree
+# This file is distributed under the same license as the Gramps package.
+#
+# Illia Maier <illia@maier.page>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-09-06 11:50-0500\n"
+"PO-Revision-Date: 2024-10-10 22:43+0300\n"
+"Last-Translator: Illia Maier <illia@maier.page>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
+"gramps/uk/>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: GenealogyTree/gt_ancestor.py:95 GenealogyTree/gt_descendant.py:95
+#: GenealogyTree/gt_sandclock.py:103
+#, python-format
+msgid "Person %s is not in the Database"
+msgstr "Особа %s відсутня в базі даних"
+
+#: GenealogyTree/gt_ancestor.py:160 GenealogyTree/gt_descendant.py:168
+#: GenealogyTree/gt_grandparent.py:217 GenealogyTree/gt_sandclock.py:227
+msgid "Report Options"
+msgstr "Параметри звіту"
+
+#: GenealogyTree/gt_ancestor.py:162 GenealogyTree/gt_descendant.py:170
+#: GenealogyTree/gt_grandparent.py:219 GenealogyTree/gt_sandclock.py:230
+msgid "Center Person"
+msgstr "Центральна особа"
+
+#: GenealogyTree/gt_ancestor.py:163 GenealogyTree/gt_descendant.py:171
+#: GenealogyTree/gt_grandparent.py:220 GenealogyTree/gt_sandclock.py:231
+msgid "The center person for the report"
+msgstr "Центральна особа для звіту"
+
+#: GenealogyTree/gt_ancestor.py:166 GenealogyTree/gt_descendant.py:174
+#: GenealogyTree/gt_grandparent.py:223
+msgid "Generations"
+msgstr "Покоління"
+
+#: GenealogyTree/gt_ancestor.py:167 GenealogyTree/gt_descendant.py:175
+#: GenealogyTree/gt_grandparent.py:224 GenealogyTree/gt_sandclock.py:239
+#: GenealogyTree/gt_sandclock.py:243
+msgid "The number of generations to include in the tree"
+msgstr "Кількість поколінь, що будуть включені в дерево"
+
+#: GenealogyTree/gt_ancestor.py:170 GenealogyTree/gt_descendant.py:178
+#: GenealogyTree/gt_grandparent.py:231 GenealogyTree/gt_sandclock.py:250
+msgid "Include images"
+msgstr "Включити зображення"
+
+#: GenealogyTree/gt_ancestor.py:171 GenealogyTree/gt_descendant.py:179
+#: GenealogyTree/gt_grandparent.py:232 GenealogyTree/gt_sandclock.py:251
+msgid "Include images of people in the nodes."
+msgstr "Включити зображення людей у вузлах."
+
+#: GenealogyTree/gt_grandparent.py:119
+#, python-format
+msgid "Person %s does not have both a paternal and a maternal grandparent"
+msgstr "Особа %s не має обох — бабусі та дідуся по материнській і батьківській лінії"
+
+#: GenealogyTree/gt_grandparent.py:227
+msgid "Grandparent family spacing"
+msgstr "Відстань між сім'ями дідусів і бабусь"
+
+#: GenealogyTree/gt_grandparent.py:228
+msgid "Extra spacing of grandparent families (mm)"
+msgstr "Додаткова відстань між сім'ями дідусів і бабусь (мм)"
+
+#: GenealogyTree/gt_sandclock.py:108
+#, python-format
+msgid "Family %s is not in the Database"
+msgstr "Сім'я %s відсутня в базі даних"
+
+#: GenealogyTree/gt_sandclock.py:234
+msgid "Center Family"
+msgstr "Центральна сім'я"
+
+#: GenealogyTree/gt_sandclock.py:235
+msgid "The center family for the report"
+msgstr "Центральна сім'я для звіту"
+
+#: GenealogyTree/gt_sandclock.py:238
+msgid "Generations up"
+msgstr "Покоління вгору"
+
+#: GenealogyTree/gt_sandclock.py:242
+msgid "Generations down"
+msgstr "Покоління вниз"
+
+#: GenealogyTree/gt_sandclock.py:246
+msgid "Include siblings"
+msgstr "Включити братів і сестер"
+
+#: GenealogyTree/gt_sandclock.py:247
+msgid "Include siblings of ancestors."
+msgstr "Включити братів і сестер предків."
+
+#: GenealogyTree/treeplugins.gpr.py:29
+msgid "Ancestor Tree"
+msgstr "Дерево предків"
+
+#: GenealogyTree/treeplugins.gpr.py:30
+msgid "Ancestor tree using LaTeX genealogytree"
+msgstr "Дерево предків за допомогою LaTeX genealogytree"
+
+#: GenealogyTree/treeplugins.gpr.py:52
+msgid "Descendant Tree"
+msgstr "Дерево нащадків"
+
+#: GenealogyTree/treeplugins.gpr.py:53
+msgid "Descendant tree using LaTeX genealogytree"
+msgstr "Дерево нащадків за допомогою LaTeX genealogytree"
+
+#: GenealogyTree/treeplugins.gpr.py:75
+msgid "Grandparent Tree"
+msgstr "Дерево дідусів і бабусь"
+
+#: GenealogyTree/treeplugins.gpr.py:76
+msgid "Grandparent tree using LaTeX genealogytree"
+msgstr "Дерево дідусів і бабусь за допомогою LaTeX genealogytree"
+
+#: GenealogyTree/treeplugins.gpr.py:98
+msgid "Sandclock Tree"
+msgstr "Пісочний годинник"
+
+#: GenealogyTree/treeplugins.gpr.py:99
+msgid "Sandclock tree using LaTeX genealogytree"
+msgstr "Пісочний годинник за допомогою LaTeX genealogytree"
+
+#: GenealogyTree/treeplugins.gpr.py:121
+msgid "Sandclock Tree for a Family"
+msgstr "Пісочний годинник для сім'ї"
+
+#: GenealogyTree/treeplugins.gpr.py:122
+msgid "Sandclock tree for a family using LaTeX genealogytree"
+msgstr "Пісочний годинник для сім'ї за допомогою LaTeX genealogytree"

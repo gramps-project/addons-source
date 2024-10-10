@@ -1,0 +1,88 @@
+# Ukrainian translation for GeoAncestor
+# This file is distributed under the same license as the Gramps package.
+#
+# Illia Maier <illia@maier.page>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-09-06 11:50-0500\n"
+"PO-Revision-Date: 2024-10-10 22:43+0300\n"
+"Last-Translator: Illia Maier <illia@maier.page>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
+"gramps/uk/>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: GeoAncestor/GeoAncestor.gpr.py:30 GeoAncestor/GeoAncestor.gpr.py:40
+msgid "Ancestors map"
+msgstr "Мапа предків"
+
+#: GeoAncestor/GeoAncestor.gpr.py:31
+msgid "A view showing ancestors places on the map."
+msgstr "Вид, що показує місця предків на мапі."
+
+#: GeoAncestor/GeoAncestor.gpr.py:38
+msgid "Geography"
+msgstr "Географія"
+
+#: GeoAncestor/GeoAncestor.py:119
+msgid "Organize Bookmarks"
+msgstr "Організувати закладки"
+
+#: GeoAncestor/GeoAncestor.py:207
+msgid "Ancestors places on the map"
+msgstr "Місця предків на мапі"
+
+#: GeoAncestor/GeoAncestor.py:235
+msgid "GeoAncestor"
+msgstr "GeoAncestor"
+
+#: GeoAncestor/GeoAncestor.py:304
+#, python-format
+msgid "Ancestors places for %s"
+msgstr "Місця предків для %s"
+
+#: GeoAncestor/GeoAncestor.py:311
+msgid "Counting all places"
+msgstr "Підрахунок усіх місць"
+
+#: GeoAncestor/GeoAncestor.py:314
+msgid "Showing all places"
+msgstr "Показ усіх місць"
+
+#: GeoAncestor/GeoAncestor.py:411
+#, python-format
+msgid "%(eventtype)s : %(name)s"
+msgstr "%(eventtype)s : %(name)s"
+
+#: GeoAncestor/GeoAncestor.py:538 GeoAncestor/GeoAncestor.py:559
+#: GeoAncestor/GeoAncestor.py:600
+msgid "Edit Event"
+msgstr "Редагувати Подію"
+
+#: GeoAncestor/GeoAncestor.py:543 GeoAncestor/GeoAncestor.py:564
+#: GeoAncestor/GeoAncestor.py:604
+msgid "Center on this place"
+msgstr "Центрувати на цьому місці"
+
+#: GeoAncestor/GeoAncestor.py:578
+msgid "Unknown"
+msgstr "Невідомо"
+
+#: GeoAncestor/GeoAncestor.py:589
+msgid "No description"
+msgstr "Немає опису"
+
+#: GeoAncestor/GeoAncestor.py:620
+msgid "Show all places"
+msgstr "Показати всі місця"
+
+#: GeoAncestor/GeoAncestor.py:624 GeoAncestor/GeoAncestor.py:629
+msgid "Centering on Place"
+msgstr "Центрування на Місці"
