@@ -1,0 +1,239 @@
+# Ukrainian translation for GrampsWebSync
+# This file is distributed under the same license as the Gramps package.
+#
+# Illia Maier <illia@maier.page>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-24 10:49-0500\n"
+"PO-Revision-Date: 2024-10-09 23:14+0300\n"
+"Last-Translator: Illia Maier <illia@maier.page>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
+"gramps/uk/>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: GrampsWebSync/webapisync.gpr.py:29 GrampsWebSync/webapisync.py:101
+#: GrampsWebSync/webapisync.py:176
+msgid "Gramps Web Sync"
+msgstr "Gramps Web Sync"
+
+#: GrampsWebSync/webapisync.gpr.py:31
+msgid "Synchronizes a local database with a Gramps Web instance."
+msgstr "Синхронізує локальну базу даних з Gramps Web."
+
+#: GrampsWebSync/webapisync.py:110
+msgid "Introduction"
+msgstr "Вступ"
+
+#: GrampsWebSync/webapisync.py:121
+msgid "Login"
+msgstr "Вхід"
+
+#: GrampsWebSync/webapisync.py:127 GrampsWebSync/webapisync.py:153
+msgid "Progress Information"
+msgstr "Інформація про прогрес"
+
+#: GrampsWebSync/webapisync.py:132
+msgid "Final confirmation"
+msgstr "Остаточне підтвердження"
+
+#: GrampsWebSync/webapisync.py:139 GrampsWebSync/webapisync.py:157
+msgid "Summary"
+msgstr "Підсумок"
+
+#: GrampsWebSync/webapisync.py:146
+msgid "Media Files"
+msgstr "Медіафайли"
+
+#: GrampsWebSync/webapisync.py:213
+msgid "Fetching remote data..."
+msgstr "Отримання віддалених даних..."
+
+#: GrampsWebSync/webapisync.py:222
+msgid "Both trees are the same."
+msgstr "Обидва дерева однакові."
+
+#: GrampsWebSync/webapisync.py:226
+#, python-format
+msgid "Successfully synchronized %s objects."
+msgstr "Успішно синхронізовано %s обʼєктів."
+
+#: GrampsWebSync/webapisync.py:246
+msgid "Media files are in sync."
+msgstr "Медіафайли синхронізовані."
+
+#: GrampsWebSync/webapisync.py:252
+#, python-format
+msgid "Successfully downloaded %s media files."
+msgstr "Успішно завантажено %s медіафайлів."
+
+#: GrampsWebSync/webapisync.py:255
+#, python-format
+msgid "Encountered %s errors during download."
+msgstr "Виявлено %s помилок під час завантаження."
+
+#: GrampsWebSync/webapisync.py:261
+#, python-format
+msgid "Successfully uploaded %s media files."
+msgstr "Успішно завантажено %s медіафайлів."
+
+#: GrampsWebSync/webapisync.py:264
+#, python-format
+msgid "Encountered %s errors during upload."
+msgstr "Виявлено %s помилок під час завантаження."
+
+#: GrampsWebSync/webapisync.py:280
+msgid "Unexpected error while applying changes."
+msgstr "Несподівана помилка під час застосування змін."
+
+#: GrampsWebSync/webapisync.py:308 GrampsWebSync/webapisync.py:328
+msgid "Error accessing media object."
+msgstr "Помилка доступу до медіаобʼєкта."
+
+#: GrampsWebSync/webapisync.py:366
+msgid "Comparing local and remote data..."
+msgstr "Порівняння локальних та віддалених даних..."
+
+#: GrampsWebSync/webapisync.py:396
+msgid "Server authorization error."
+msgstr "Помилка авторизації на сервері."
+
+#: GrampsWebSync/webapisync.py:399
+msgid "Server authorization error: insufficient permissions."
+msgstr "Помилка авторизації на сервері: недостатньо прав."
+
+#: GrampsWebSync/webapisync.py:402
+msgid "Error: URL not found."
+msgstr "Помилка: URL не знайдено."
+
+#: GrampsWebSync/webapisync.py:406
+msgid "Unable to synchronize changes to server: objects have been modified."
+msgstr "Не вдалося синхронізувати зміни з сервером: обʼєкти було змінено."
+
+#: GrampsWebSync/webapisync.py:410
+#, python-format
+msgid "Error %s while connecting to server."
+msgstr "Помилка %s під час підключення до сервера."
+
+#: GrampsWebSync/webapisync.py:413
+msgid "Error connecting to server."
+msgstr "Помилка підключення до сервера."
+
+#: GrampsWebSync/webapisync.py:416
+msgid "Error while parsing response from server."
+msgstr "Помилка під час розбору(парсингу) відповіді від сервера."
+
+#: GrampsWebSync/webapisync.py:441
+msgid "Continue without transport encryption?"
+msgstr "Продовжити без транспортного шифрування?"
+
+#: GrampsWebSync/webapisync.py:443
+msgid ""
+"You have specified a URL with http scheme. If you continue, your password "
+"will be sent in clear text over the network. Use only for local testing!"
+msgstr ""
+"Ви вказали URL зі схемою http. Якщо ви продовжите, ваш пароль буде надіслано "
+"незашифрованим через мережу. Використовуйте тільки для локального тестування!"
+
+#: GrampsWebSync/webapisync.py:448
+msgid "Continue with HTTP"
+msgstr "Продовжити з HTTP"
+
+#: GrampsWebSync/webapisync.py:449
+msgid "Use HTTPS"
+msgstr "Використати HTTPS"
+
+#: GrampsWebSync/webapisync.py:534
+msgid ""
+"This tool allows to synchronize the currently opened family tree with a "
+"remote family tree served by Gramps Web.\n"
+"\n"
+"The tool assumes that the two trees are derivatives of each other, i.e. one "
+"of the two was created from a Gramps XML (not GEDCOM!) export of the "
+"other.\n"
+"\n"
+"After successful synchronization, the two trees will be identical. "
+"Modifications will be propagated based on timestamps. You will be prompted "
+"for confirmation before any changes are made to the local or remote trees.\n"
+"\n"
+"If you instead want to merge two significantly different trees with the "
+"option to make manual modifications, use the Import Merge Tool instead."
+msgstr ""
+"Цей інструмент дозволяє синхронізувати відкриту родинну базу даних з "
+"віддаленою базою на Gramps Web.\n"
+"\n"
+"Інструмент передбачає, що обидві бази є похідними одна від одної, тобто "
+"одна з них була створена через експорт з Gramps XML (не GEDCOM!) другої.\n"
+"\n"
+"Після успішної синхронізації обидві бази будуть однаковими. Зміни "
+"пропагуються за мітками часу. Вам буде запропоновано підтвердження перед "
+"тим, як будь-які зміни будуть внесені в локальну або віддалену базу.\n"
+"\n"
+"Якщо ви хочете об'єднати дві значно різні бази з можливістю ручних змін, "
+"використовуйте інструмент Import Merge Tool."
+
+#: GrampsWebSync/webapisync.py:561
+msgid "Server URL: "
+msgstr "URL сервера: "
+
+#: GrampsWebSync/webapisync.py:570
+msgid "Username: "
+msgstr "Ім'я користувача: "
+
+#: GrampsWebSync/webapisync.py:578
+msgid "Password: "
+msgstr "Пароль: "
+
+#: GrampsWebSync/webapisync.py:645
+#, python-format
+msgid "Downloading %s media file(s)"
+msgstr "Завантаження %s медіафайлу(ів)"
+
+#: GrampsWebSync/webapisync.py:653
+#, python-format
+msgid "Uploading %s media file(s)"
+msgstr "Завантаження %s медіафайлу(ів)"
+
+#: GrampsWebSync/webapisync.py:698
+msgid "Local changes"
+msgstr "Локальні зміни"
+
+#: GrampsWebSync/webapisync.py:699 GrampsWebSync/webapisync.py:704
+msgid "Added"
+msgstr "Додано"
+
+#: GrampsWebSync/webapisync.py:700 GrampsWebSync/webapisync.py:705
+msgid "Deleted"
+msgstr "Видалено"
+
+#: GrampsWebSync/webapisync.py:701 GrampsWebSync/webapisync.py:706
+#: GrampsWebSync/webapisync.py:708
+msgid "Modified"
+msgstr "Змінено"
+
+#: GrampsWebSync/webapisync.py:703
+msgid "Remote changes"
+msgstr "Віддалені зміни"
+
+#: GrampsWebSync/webapisync.py:708
+msgid "Simultaneous changes"
+msgstr "Одночасно змінено"
+
+#: GrampsWebSync/webapisync.py:755
+msgid "Click Next to synchonize media files."
+msgstr "Натисніть «Далі», щоб синхронізувати медіафайли."
+
+#: GrampsWebSync/webapisync.py:785
+msgid "Missing locally"
+msgstr "Відсутнє локально"
+
+#: GrampsWebSync/webapisync.py:788
+msgid "Missing remotely"
+msgstr "Відсутнє віддалено"

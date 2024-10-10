@@ -1,0 +1,145 @@
+# Ukrainian translation for MediaVerify
+# This file is distributed under the same license as the Gramps package.
+#
+# Illia Maier <illia@maier.page>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2024-10-09 23:44+0300\n"
+"Last-Translator: Illia Maier <illia@maier.page>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
+"gramps/uk/>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: MediaVerify/MediaVerify.gpr.py:30
+msgid "Media Verify"
+msgstr "Перевірка медіа"
+
+#: MediaVerify/MediaVerify.gpr.py:31
+msgid "Verify that media is present in the correct path"
+msgstr "Перевіряє наявність медіа за правильним шляхом"
+
+#: MediaVerify/MediaVerify.py:78
+msgid "Media Verify Tool"
+msgstr "Інструмент перевірки медіа"
+
+#: MediaVerify/MediaVerify.py:83
+msgid "Moved/Renamed Files"
+msgstr "Переміщені/Перейменовані файли"
+
+#: MediaVerify/MediaVerify.py:83
+msgid "Missing Files"
+msgstr "Відсутні файли"
+
+#: MediaVerify/MediaVerify.py:84
+msgid "Duplicate Files"
+msgstr "Дублікати файлів"
+
+#: MediaVerify/MediaVerify.py:84
+msgid "Extra Files"
+msgstr "Зайві файли"
+
+#: MediaVerify/MediaVerify.py:85
+msgid "No md5 Generated"
+msgstr "md5 не створено"
+
+#: MediaVerify/MediaVerify.py:85
+msgid "Errors"
+msgstr "Помилки"
+
+#: MediaVerify/MediaVerify.py:100
+msgid "Close"
+msgstr "Закрити"
+
+#: MediaVerify/MediaVerify.py:101
+msgid "Close the Media Verify Tool"
+msgstr "Закрити Media Verify Tool"
+
+#: MediaVerify/MediaVerify.py:103
+msgid "Generate"
+msgstr "Згенерувати"
+
+#: MediaVerify/MediaVerify.py:104
+msgid "Generate md5 hashes for media objects"
+msgstr "Створити md5 хеші для медіа обʼєктів"
+
+#: MediaVerify/MediaVerify.py:106
+msgid "Verify"
+msgstr "Перевірити"
+
+#: MediaVerify/MediaVerify.py:107
+msgid "Check media paths and report missing, duplicate and extra files"
+msgstr "Перевіряє шляхи до медіа та повідомляє про відсутні, дублікати і зайві файли"
+
+#: MediaVerify/MediaVerify.py:110
+msgid "Export"
+msgstr "Експорт"
+
+#: MediaVerify/MediaVerify.py:111
+msgid "Export the results to a text file"
+msgstr "Експортувати результати у текстовий файл"
+
+#: MediaVerify/MediaVerify.py:113
+msgid "Fix"
+msgstr "Виправити"
+
+#: MediaVerify/MediaVerify.py:114
+msgid "Fix media paths of moved and renamed files"
+msgstr "Виправити шляхи для переміщених та перейменованих файлів"
+
+#: MediaVerify/MediaVerify.py:132
+msgid "Verify Gramps media using md5 hashes"
+msgstr "Перевірити медіа Gramps за допомогою md5 хешів"
+
+#: MediaVerify/MediaVerify.py:143
+msgid "Files"
+msgstr "Файли"
+
+#: MediaVerify/MediaVerify.py:195
+msgid "Export results to a text file"
+msgstr "Експортувати результати у текстовий файл"
+
+#: MediaVerify/MediaVerify.py:218
+#, python-format
+msgid "Error when writing the report: %s"
+msgstr "Помилка при записі звіту: %s"
+
+#: MediaVerify/MediaVerify.py:259
+msgid "Generating media hashes"
+msgstr "Створення хешів для медіа"
+
+#: MediaVerify/MediaVerify.py:261
+msgid "Set media hashes"
+msgstr "Додати хеші для медіа"
+
+#: MediaVerify/MediaVerify.py:296
+msgid ""
+"Media path not set.  You must set the \"Base path for relative media paths\" "
+"in the Preferences."
+msgstr ""
+"Шлях до медіа не встановлено. Необхідно встановити 'Базовий шлях для "
+"відносних шляхів медіа' у налаштуваннях."
+
+#: MediaVerify/MediaVerify.py:307
+msgid "Finding files"
+msgstr "Пошук файлів"
+
+#: MediaVerify/MediaVerify.py:335
+msgid "Checking paths"
+msgstr "Перевірка шляхів"
+
+#: MediaVerify/MediaVerify.py:388
+msgid "Fixing file paths"
+msgstr "Виправлення шляхів до файлів"
+
+#: MediaVerify/MediaVerify.py:390
+msgid "Fix media paths"
+msgstr "Виправити шляхи до медіа"
