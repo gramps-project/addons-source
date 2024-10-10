@@ -1,0 +1,88 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2024-10-10 09:31+0200\n"
+"Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
+"Language-Team: \n"
+"Language: da_DK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: ListeEclair/ListeEclair.gpr.py:3 ListeEclair/ListeEclair.py:97
+#: ListeEclair/ListeEclair.py:104
+msgid "Liste Eclair"
+msgstr "Kvikliste"
+
+#: ListeEclair/ListeEclair.gpr.py:4
+msgid "Produit une liste eclair"
+msgstr "Dan en kvikliste"
+
+#: ListeEclair/ListeEclair.py:97
+msgid "Generating report"
+msgstr "Danner rapport"
+
+#: ListeEclair/ListeEclair.py:253
+msgid "Report Options"
+msgstr "Rapport tilvalg"
+
+#: ListeEclair/ListeEclair.py:260
+msgid "Select using filter"
+msgstr "Vælg brug af filter"
+
+#: ListeEclair/ListeEclair.py:261
+msgid "Select places using a filter"
+msgstr "Vælg steder ved brug af filter"
+
+#: ListeEclair/ListeEclair.py:266
+msgid "Entire Database"
+msgstr "Hele databasen"
+
+#: ListeEclair/ListeEclair.py:273
+msgid "Select places individually"
+msgstr "Vælg steder enkeltvis"
+
+#: ListeEclair/ListeEclair.py:274
+msgid "List of places to report on"
+msgstr "Liste over steder til rapport"
+
+#: ListeEclair/ListeEclair.py:277
+msgid "Type de Liste"
+msgstr "Listetype"
+
+#: ListeEclair/ListeEclair.py:279
+msgid "Tiny Tafel"
+msgstr "Tiny Tafel"
+
+#: ListeEclair/ListeEclair.py:280
+msgid "cousingenweb"
+msgstr "cousingenweb"
+
+#: ListeEclair/ListeEclair.py:281
+msgid "Type de liste"
+msgstr "Listetype"
+
+#: ListeEclair/ListeEclair.py:284
+msgid "Include private data"
+msgstr "Medtag private data"
+
+#: ListeEclair/ListeEclair.py:285
+msgid "Whether to include private data"
+msgstr "Vælg om private data skal medtages"
+
+#: ListeEclair/ListeEclair.py:301
+msgid "The style used for the liste eclair."
+msgstr "Stilen for kviklisten."
+
+#: ListeEclair/ListeEclair.py:314
+msgid "The style used for place title."
+msgstr "Stilen der bruges til stedtitlen."

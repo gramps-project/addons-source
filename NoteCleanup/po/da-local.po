@@ -1,0 +1,173 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-12 09:03-0500\n"
+"PO-Revision-Date: 2024-10-10 19:25+0200\n"
+"Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
+"Language-Team: \n"
+"Language: da_DK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: NoteCleanup/NoteCleanup.gpr.py:30 NoteCleanup/NoteCleanup.py:412
+msgid "Note Cleanup"
+msgstr "Noterensning"
+
+#: NoteCleanup/NoteCleanup.gpr.py:31
+msgid "Clean up Notes that contain HTML markup"
+msgstr "Rens i noter der indeholder HTML markup"
+
+#: NoteCleanup/NoteCleanup.py:92
+msgid "Note Cleanup Tool"
+msgstr "Værktøj til noterensning"
+
+#: NoteCleanup/NoteCleanup.py:98
+msgid "Cleaned Notes"
+msgstr "Rensede noter"
+
+#: NoteCleanup/NoteCleanup.py:98
+msgid "Links Only"
+msgstr "Kun links"
+
+#: NoteCleanup/NoteCleanup.py:99
+msgid "Issues"
+msgstr "Problemer"
+
+#: NoteCleanup/NoteCleanup.py:120
+msgid "Close"
+msgstr "Luk"
+
+#: NoteCleanup/NoteCleanup.py:121
+msgid "Close the Note Cleanup Tool"
+msgstr "Afslut værktøjet til noterensning"
+
+#: NoteCleanup/NoteCleanup.py:123
+msgid "Save All"
+msgstr "Gem alt"
+
+#: NoteCleanup/NoteCleanup.py:124
+msgid "Save All Changes"
+msgstr "Gem alle ændringer"
+
+#: NoteCleanup/NoteCleanup.py:126
+msgid "Search"
+msgstr "Søg"
+
+#: NoteCleanup/NoteCleanup.py:127
+msgid "Search for Untidy Notes"
+msgstr "Søg efter urensede noter"
+
+#: NoteCleanup/NoteCleanup.py:129
+msgid "Generate Test Notes"
+msgstr "Dan testnoter"
+
+#: NoteCleanup/NoteCleanup.py:131
+msgid ""
+"Generate Test notes in range N99996-N99999.\n"
+"These are added to your database, so you may want to work with a test "
+"database or delete them later."
+msgstr ""
+"Dan testnoter i området N99996-N99999.\n"
+"Disse bliver tilføjet til din database, så du skal nok arbejde med en "
+"testbase eller slette dem senere."
+
+#: NoteCleanup/NoteCleanup.py:135
+msgid "Export"
+msgstr "Eksportér"
+
+#: NoteCleanup/NoteCleanup.py:136
+msgid "Export the results to a text file"
+msgstr "Eksporter resultatet til en tekstfil"
+
+#: NoteCleanup/NoteCleanup.py:139
+msgid "Help"
+msgstr "Hjælp"
+
+#: NoteCleanup/NoteCleanup.py:181
+msgid ""
+"Please back up your database before running this tool.\n"
+"\n"
+"Start the tool by pressing the 'Search' button, then review the "
+"results.\n"
+"When satisifed press the 'Save All' button to save your work.\n"
+"You may export a summary list of the notes that were found using the "
+"'Export' button."
+msgstr ""
+"Tag en sikkerhedskopi af din database før du udfører dette værktøj.\n"
+"\n"
+"Start værkstøjet ved at klikke på 'Søg' knappen, og gennemse så "
+"resultatet.\n"
+"Når du er tilfreds, tryk på 'Gem alle' knappen for at gemme dit "
+"arbejde.\n"
+"Du kan eksportere en summarisk liste over alle noter, der blev fundet "
+"ved at bruge 'Eksporter' knappen."
+
+#: NoteCleanup/NoteCleanup.py:190
+msgid "Clean up Notes"
+msgstr "Rens noter"
+
+#: NoteCleanup/NoteCleanup.py:205
+msgid "Notes"
+msgstr "Noter"
+
+#: NoteCleanup/NoteCleanup.py:288
+msgid "Cleanup Test Notes"
+msgstr "Rens testnoter"
+
+#: NoteCleanup/NoteCleanup.py:310 NoteCleanup/NoteCleanup.py:315
+msgid "Add Test Note"
+msgstr "Tilføj testnote"
+
+#: NoteCleanup/NoteCleanup.py:323
+msgid "Export results to a text file"
+msgstr "Eksporter resultatet til en tekstfil"
+
+#: NoteCleanup/NoteCleanup.py:346
+#, python-format
+msgid "Error when writing the report: %s"
+msgstr "Fejl ved skrivning af rapport: %s"
+
+#: NoteCleanup/NoteCleanup.py:383
+msgid ""
+"\n"
+"\n"
+"Notes selected on the left pane are shown Before cleanup in this box."
+msgstr ""
+"\n"
+"\n"
+"Noter valgt på det venstre felt er vist før rensning i denne boks."
+
+#: NoteCleanup/NoteCleanup.py:386
+msgid ""
+"\n"
+"\n"
+"Notes selected on the left pane are shown After cleanup in this box.\n"
+"If you wish to make changes, you can make them here and use the style "
+"controls in the toolbar above."
+msgstr ""
+"\n"
+"\n"
+"Noter valgt i det venstre felt er vist efter rensning i denne boks.\n"
+"Hvis du ønsker at ændre noget, kan du gøre det her og bruge "
+"stilkontrollerne i ovenstående værktøjsbjælke."
+
+#: NoteCleanup/NoteCleanup.py:404
+msgid "Saving Notes"
+msgstr "Gemmer noter"
+
+#: NoteCleanup/NoteCleanup.py:407
+msgid "Saving Cleaned Notes"
+msgstr "Gemmer rensede noter"
+
+#: NoteCleanup/NoteCleanup.py:435
+msgid "Scanning Notes"
+msgstr "Skanner noter"

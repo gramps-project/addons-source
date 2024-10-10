@@ -1,0 +1,741 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-28 23:17+0100\n"
+"PO-Revision-Date: 2024-10-10 09:10+0200\n"
+"Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
+"Language-Team: \n"
+"Language: da_DK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:10
+msgid "Warp the chart shape"
+msgstr "Vrid diagramformen"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:11
+msgid "The overall shape of the chart can be warped."
+msgstr "Hele formen på diagrammet kan vrides."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:12
+msgid "Normal grid shape"
+msgstr "Normal gitter form"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:13
+msgid "Sine shape"
+msgstr "Sinusvridning"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:14
+msgid "Triangular shape"
+msgstr "Trekantet form"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:15
+msgid "Show photos"
+msgstr "Vis fotos"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:16
+msgid "Photos of the individual are shown."
+msgstr "Fotografier af personerne bliver vist."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:17
+msgid "Photo size"
+msgstr "Foto størrelse"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:18
+msgid ""
+"Photos which are shown are fitted into a square of this extent. The size is "
+"given relative to the line thickness."
+msgstr ""
+"Fotografier der bliver vist i en kvadrat af denne størrelse- Størrelsen "
+"gives i forhold til linjetykkelsen."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:19
+msgid "Total height"
+msgstr "Total højde"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:20
+msgid "Total height of the whole chart."
+msgstr "Total højde af hele diagrammet."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:21
+msgid "Relative line thickness"
+msgstr "Relativ linjetykkelse"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:22
+msgid ""
+"The line thickness of an individual is given relatively to the horizontal "
+"step size."
+msgstr ""
+"Linjetykkelsen af en person er givet i forhold til den vandrette trin "
+"størrelse."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:23
+msgid "Horizontal step size"
+msgstr "Vandret trin størrelse"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:24
+msgid ""
+"This is the distance from one line to another. This value is also used for "
+"scaling of other items."
+msgstr ""
+"Dette er afstanden fra en linje til en anden. Denne værdi benyttes også til "
+"skalering af andre elementer."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:25
+msgid "Show birth label"
+msgstr "Vis fødsels tekst"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:26
+msgid "Activate the birth label."
+msgstr "Aktiver fødsels tekst."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:27
+msgid "Birth label along path"
+msgstr "Fødsels tekst langs stien"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:28
+msgid "The birth label is aligned to the individual line."
+msgstr "Fødselsteksten justeres efter personlinjen."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:29
+#: LifeLineChartView/_dummy_translation_string_po.py:32
+#: LifeLineChartView/_dummy_translation_string_po.py:35
+#: LifeLineChartView/_dummy_translation_string_po.py:38
+#: LifeLineChartView/_dummy_translation_string_po.py:41
+#: LifeLineChartView/_dummy_translation_string_po.py:47
+#: LifeLineChartView/_dummy_translation_string_po.py:52
+#: LifeLineChartView/_dummy_translation_string_po.py:55
+#: LifeLineChartView/_dummy_translation_string_po.py:58
+#: LifeLineChartView/_dummy_translation_string_po.py:61
+#: LifeLineChartView/_dummy_translation_string_po.py:67
+#: LifeLineChartView/_dummy_translation_string_po.py:74
+#: LifeLineChartView/_dummy_translation_string_po.py:77
+#: LifeLineChartView/lifelinechartview.py:884
+msgid "Label Configuration"
+msgstr "Tekstopsætning"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:30
+msgid "Birth label rotation"
+msgstr "Fødselstekst rotation"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:31
+msgid "The birth label is written in a text frame rotated by this value."
+msgstr "Fødselsteksten er vist i en tekstboks roteret med denne værdi."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:33
+msgid "Horizontal offset of birth label"
+msgstr "Vandret forskydning af fødselsteksten"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:34
+msgid ""
+"The birth label is moved horizontally by this value, which is given "
+"relatively to the font size."
+msgstr ""
+"Fødselsteksten er flyttet vandret med denne værdi, som er relativ til "
+"fontstørrelsen."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:36
+msgid "Vertical offset of birth label"
+msgstr "Lodret forskydning af fødselsteksten"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:37
+msgid ""
+"The birth label is moved vertically by this value, which is given relatively "
+"to the font size."
+msgstr ""
+"Fødselsteksten er flyttet lodret med denne værdi, som er relativ til "
+"fontstørrelsen."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:39
+msgid "Wrap words in birth label"
+msgstr "Ombryd ordene i fødselsteksten"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:40
+msgid "The birth label content is wrapped where possible."
+msgstr "Fødselstekstens indhold er ombrudt hvor det er muligt."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:42
+msgid "Birth label anchor"
+msgstr "Anker for fødselsteksten"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:43
+msgid "Text alignment of the birth label."
+msgstr "Justering af fødselsteksten."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:44
+#: LifeLineChartView/_dummy_translation_string_po.py:64
+msgid "Left"
+msgstr "Venstre"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:45
+#: LifeLineChartView/_dummy_translation_string_po.py:65
+msgid "Center"
+msgstr "Centrér"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:46
+#: LifeLineChartView/_dummy_translation_string_po.py:66
+msgid "Right"
+msgstr "Højre"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:48
+msgid "Show death label"
+msgstr "Vis døds tekst"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:49
+msgid "Activate the death label."
+msgstr "Aktiver døds tekst."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:50
+msgid "Death label rotation"
+msgstr "Dødstekst rotation"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:51
+msgid "The death label is written in a text frame rotated by this value."
+msgstr "Dødsteksten er vist i en tekstboks roteret med denne værdi."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:53
+msgid "Horizontal offset of death label"
+msgstr "Vandret forskydning af dødssteksten"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:54
+msgid ""
+"The death label is moved horizontally by this value, which is given "
+"relatively to the font size."
+msgstr ""
+"Dødsteksten er flyttet vandret med denne værdi, som er relativ til "
+"fontstørrelsen."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:56
+msgid "Vertical offset of death label"
+msgstr "Lodret forskydning af dødsteksten"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:57
+msgid ""
+"The death label is moved vertically by this value, which is given relatively "
+"to the font size."
+msgstr ""
+"Dødsteksten er flyttet lodret med denne værdi, som er relativ til "
+"fontstørrelsen."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:59
+msgid "Wrap words in death label"
+msgstr "Ombryd ordene i dødsteksten"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:60
+msgid "The death label content is wrapped where possible."
+msgstr "Dødstekstens indhold er vredet hvor det er muligt."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:62
+msgid "Death label anchor"
+msgstr "Anker for dødsteksten"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:63
+msgid "Text alignment of the death label."
+msgstr "Justering af dødsteksten."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:68
+msgid "Show marriage label"
+msgstr "Vis ægteskabstekst"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:69
+msgid "Activate the marriage label."
+msgstr "Aktiver ægteskabstekst."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:70
+msgid "Fade individual color"
+msgstr "Falm personfarve"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:71
+msgid "The color of the individuals is faded to black with increasing age."
+msgstr "Farven på personer er falmet til sort med stigende alder."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:72
+msgid "Font name"
+msgstr "Fontnavn"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:73
+msgid "Name of the font family used for labels."
+msgstr "Navnet på fontfamilien der benyttes til tekst."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:75
+msgid "Relative font size"
+msgstr "Forholdsmæssig fontstørrelse"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:76
+msgid "The font size is given relatively to the line thickness."
+msgstr "Fontstørrelsen er angivet i forhold til linjetykkelsen."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:78
+msgid "Family shape"
+msgstr "Familieform"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:79
+msgid "The shape of the families can be varied."
+msgstr "Formen for familier kan varieres."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:80
+msgid "Rectangular"
+msgstr "Rektangulær"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:81
+msgid "Softer"
+msgstr "Blødere"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:82
+msgid "Upper year minimum margin"
+msgstr "Øvre år for minimum margin"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:83
+msgid ""
+"The upper bound of the chart is extended by at least this number of years."
+msgstr "Den øvre grænse for diagrammet er udvidet med mindst dette antal år."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:84
+msgid "Lower year minimum margin"
+msgstr "Nedre års minimum margin"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:85
+msgid ""
+"The lower bound of the chart is extended by at least this number of years."
+msgstr "Den nedre grænse for diagrammet er udvidet med mindst dette antal år."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:86
+msgid "Visualize connections"
+msgstr "Visualiser slægtskaber"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:87
+msgid ""
+"Visualize the connections between families and individuals. This is for "
+"debugging purposes."
+msgstr ""
+"Visualiser slægtskabet mellem familier og personer. Dette er til "
+"fejlfindingsformål."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:88
+msgid "Visualize ambiguous placement"
+msgstr "Visualiser tvetydig placering"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:89
+msgid "Visualize automatically detected errors in the placement algorithm."
+msgstr "Visualiser automatisk opdagede fejl i placeringsalgoritmen."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:90
+msgid "Coloring of individuals"
+msgstr "Farve for personer"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:91
+msgid "There are different ways to determine the color of an individual."
+msgstr "Der er forskellige måder at beslutte farven af personer."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:92
+msgid "Unique"
+msgstr "Entydig"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:93
+msgid "Based on surname"
+msgstr "Baseret på efternavn"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:94
+msgid "Flip vertically"
+msgstr "Vend lodret"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:95
+msgid "If active, the chart is flipped vertically."
+msgstr "Hvis aktiv, er diagrammet vendt lodret."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:96
+msgid "Line weighting"
+msgstr "Linjebredde"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:97
+msgid "The line width can be configured."
+msgstr "Linjebredden kan konfigureres."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:98
+msgid "none"
+msgstr "ingen"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:99
+msgid "Show pedigree collapse"
+msgstr "Vis anetab"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:100
+msgid ""
+"Due to pedigree collapse one individual might appear several times in a "
+"simple ancestor chart. If this is active, then every individual only appears "
+"once."
+msgstr ""
+"På grund af anetab kan en person optræde flere gange på en simpel anetavle. "
+"Hvis dette er aktivet, så vil alle personer kun optræde en gang."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:101
+msgid "Maximum number of generations"
+msgstr "Det største antal generationer"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:102
+msgid ""
+"if this number of generations has been reached, the algorithm doesn't go any "
+"deeper"
+msgstr ""
+"hvis antallet generationer er opnået, vil algoritmen ikke fortsætte dybere"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:103
+msgid "Fathers have the same color"
+msgstr "Fædre har den samme farve"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:104
+msgid ""
+"Starting from the root person, each father of an added individual has the "
+"same color as that individual."
+msgstr ""
+"Begyndende fra probanden, vil hver far til en tilføjet person have samme "
+"farve som personen."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:105
+msgid "Maximum number of compression steps"
+msgstr "Højeste antal komprimeringstrin"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:106
+msgid "Debugging of the compression algorithm. Abort after x steps."
+msgstr "Fejlfinding i komprimeringsalgoritmen. Afslut efter x trin."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:107
+msgid "Maximum number of flipping steps"
+msgstr "Højeste antal vendestrin"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:108
+msgid "Debugging of the flipping algorithm. Abort after x steps."
+msgstr "Fejlfinder vendealgoritmen. Afslut efter x trin."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:109
+msgid "Compress the chart horizontally"
+msgstr "Komprimer diagrammet lodret"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:110
+msgid ""
+"By default every individual has a unique horizontal slot. This can be "
+"inefficient with many generations. This algorithm lets several people share "
+"a horizontal slot, if they do not overlap."
+msgstr ""
+"Som standard har hver person en unikt vandret plads. Dette kan være "
+"uhensigtsmæssigt ved mange generationer. Denne algoritme lader flere "
+"personer dele en vandret plads, hvis de ikke overlapper."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:111
+msgid "Flip families to reduce horizontal connections"
+msgstr "Vand familier for at reducere vandrette slægtskaber"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:112
+msgid ""
+"Switch the position of mother and father in a family, to reduce the overall "
+"horizontal cross connections in larger graphs. This is happens if one person "
+"is shown in more than one family or it is caused by pedigree collapse."
+msgstr ""
+"Skift position for moderen og faderen i en familier, for at reducere vandret "
+"krydsslægtskaber i større diagrammer. Dette sker hvis en person er vist i "
+"mere end en familie eller skyldes anesammenfald."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:113
+msgid "Highlight descandants"
+msgstr "Fremhæv efterkommere"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:114
+msgid "Highlight the persons which are descendants."
+msgstr "Fremhæv de personer, der er efterkommere."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:115
+msgid "Number of descendants"
+msgstr "Antal efterkommere"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:116
+msgid "Very soft"
+msgstr "Meget blødt"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:117
+msgid "General chart layout"
+msgstr "Generelt layout for diagrammet"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:118
+msgid "There are different layouts for descendant charts."
+msgstr "Der er forskellige layouts til efterkommerdiagrammer."
+
+#: LifeLineChartView/_dummy_translation_string_po.py:119
+msgid "Parents enclose children"
+msgstr "Forældre omslutter børn"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:120
+msgid "Cactus"
+msgstr "Kaktus"
+
+#: LifeLineChartView/lifelinechart.py:75
+msgid ""
+"LifeLineChartView dependencies are missing. It is not possible to use this "
+"plugin without them."
+msgstr ""
+"LifeLineChartView afhængigheder mangler. Det er ikke muligt at benytte dette "
+"plugin uden dem."
+
+#: LifeLineChartView/lifelinechart.py:476
+msgid "calculated"
+msgstr "beregnet"
+
+#: LifeLineChartView/lifelinechart.py:477
+#: LifeLineChartView/lifelinechart.py:478
+#: LifeLineChartView/lifelinechart.py:479
+#: LifeLineChartView/lifelinechart.py:480
+msgid "estimated"
+msgstr "anslået"
+
+#: LifeLineChartView/lifelinechart.py:482
+msgid "about"
+msgstr "omkring"
+
+#: LifeLineChartView/lifelinechart.py:483
+msgid "before"
+msgstr "før"
+
+#: LifeLineChartView/lifelinechart.py:484
+msgid "after"
+msgstr "efter"
+
+#: LifeLineChartView/lifelinechart.py:1183
+#, python-brace-format
+msgid "cursor position at {date}"
+msgstr "markørposition på {date}"
+
+#: LifeLineChartView/lifelinechart.py:2591
+msgid "Hide person"
+msgstr "Skjul person"
+
+#: LifeLineChartView/lifelinechart.py:2597
+msgid "Show person"
+msgstr "Vis person"
+
+#: LifeLineChartView/lifelinechart.py:2622
+msgid "Show siblings"
+msgstr "Vis søskende"
+
+#: LifeLineChartView/lifelinechart.py:2627
+msgid "Hide siblings"
+msgstr "Skjul søskende"
+
+#: LifeLineChartView/lifelinechart.py:2652
+msgid "Show ancestors above "
+msgstr "Vis aner ovenfor "
+
+#: LifeLineChartView/lifelinechart.py:2679
+msgid "_Edit"
+msgstr "R_edigér"
+
+#: LifeLineChartView/lifelinechart.py:2687
+msgid "Edit family"
+msgstr "Redigér familie"
+
+#: LifeLineChartView/lifelinechart.py:2703
+msgid "Reorder families"
+msgstr "Omorganisér familier"
+
+#: LifeLineChartView/lifelinechart.py:2709
+msgid "_Copy"
+msgstr "_Kopier"
+
+#: LifeLineChartView/lifelinechart.py:2719
+msgid "Spouses"
+msgstr "Ægtefæller"
+
+#: LifeLineChartView/lifelinechart.py:2753
+msgid "Siblings"
+msgstr "Søskende"
+
+#: LifeLineChartView/lifelinechart.py:2819
+msgid "Children"
+msgstr "Børn"
+
+#: LifeLineChartView/lifelinechart.py:2856
+msgid "Parents"
+msgstr "Forældre"
+
+#: LifeLineChartView/lifelinechart.py:2890
+#: LifeLineChartView/lifelinechart.py:2932
+msgid "_Add"
+msgstr "_Tilføj"
+
+#: LifeLineChartView/lifelinechart.py:2899
+msgid "Related"
+msgstr "Beslægtede"
+
+#: LifeLineChartView/lifelinechart.py:2939
+msgid "Add child to family"
+msgstr "Tilføj barn til familien"
+
+#: LifeLineChartView/lifelinechart.py:2947
+msgid "Add partner to person"
+msgstr "Tilføj partner til en person"
+
+#: LifeLineChartView/lifelinechart.py:2954
+msgid "Add a person"
+msgstr "Tilføj en person"
+
+#: LifeLineChartView/lifelinechart.py:3044
+msgid "Add Child to Family"
+msgstr "Føj barn til familie"
+
+#: LifeLineChartView/lifelinechartview.gpr.py:152
+#, python-brace-format
+msgid ""
+"Failed to load the required module {module_name} version {module_version}."
+msgstr ""
+"Kunne ikke indlæse det nødvendige modul {module_name} version "
+"{module_version}."
+
+#: LifeLineChartView/lifelinechartview.gpr.py:154
+#, python-brace-format
+msgid ""
+"\n"
+"\n"
+"It is not possible to use {self.plugin_name} without this module. You can "
+"either uninstall this plugin, or download the module."
+msgstr ""
+"\n"
+"\n"
+"Det er ikke muligt at benytte {self.plugin_name} uden dette modul. Du kan "
+"enten afinstallere dette plugin, eller hente modulet."
+
+#: LifeLineChartView/lifelinechartview.gpr.py:161
+msgid " Plugin"
+msgstr " Plugin"
+
+#: LifeLineChartView/lifelinechartview.gpr.py:163
+msgid "Download module"
+msgstr "Hent modul"
+
+#: LifeLineChartView/lifelinechartview.gpr.py:164
+#: LifeLineChartView/lifelinechartview.py:834
+msgid "_Cancel"
+msgstr "_Afbryd"
+
+#: LifeLineChartView/lifelinechartview.gpr.py:170
+msgid "The user chose to ignore the warning once."
+msgstr "Brugeren valgte at ignorere advarslen en gang."
+
+#: LifeLineChartView/lifelinechartview.gpr.py:174
+msgid "The user chose to install the module."
+msgstr "Brugeren valgt at installere modulet."
+
+#: LifeLineChartView/lifelinechartview.gpr.py:206
+#, python-format
+msgid "Unable to open '%s' with curl"
+msgstr "Kan ikke åbne '%s' med curl"
+
+#: LifeLineChartView/lifelinechartview.gpr.py:217
+#: LifeLineChartView/lifelinechartview.gpr.py:224
+#, python-format
+msgid "Unable to open '%s'"
+msgstr "Kan ikke åbne '%s'"
+
+#: LifeLineChartView/lifelinechartview.gpr.py:233
+#, python-format
+msgid "Error in reading '%s'"
+msgstr "Fejl ved læsning af '%s'"
+
+#: LifeLineChartView/lifelinechartview.gpr.py:248
+#, python-format
+msgid "Error: cannot open '%s'"
+msgstr "Fejl: Kan ikke åbne '%s'"
+
+#: LifeLineChartView/lifelinechartview.gpr.py:252
+#, python-format
+msgid "Error: unknown file type: '%s'"
+msgstr "Fejl: ukendt filtype: '%s'"
+
+#: LifeLineChartView/lifelinechartview.gpr.py:318
+msgid "Life Line Ancestor Chart"
+msgstr "Life Line Anetavle"
+
+#: LifeLineChartView/lifelinechartview.gpr.py:319
+#: LifeLineChartView/lifelinechartview.gpr.py:333
+msgid "Charts"
+msgstr "Diagrammer"
+
+#: LifeLineChartView/lifelinechartview.gpr.py:320
+#: LifeLineChartView/lifelinechartview.gpr.py:334
+msgid "Persons and their relation in a time based chart"
+msgstr "Personer og deres slægtskaber i et tidsbaseret diagram"
+
+#: LifeLineChartView/lifelinechartview.gpr.py:332
+msgid "Life Line Descendant Chart"
+msgstr "Life Line Efterkommerdiagram"
+
+#: LifeLineChartView/lifelinechartview.py:386
+#: LifeLineChartView/lifelinechartview.py:883
+msgid "General Layout"
+msgstr "Generelt layout"
+
+#: LifeLineChartView/lifelinechartview.py:399
+msgid "Life Line Chart"
+msgstr "Life Line Diagram"
+
+#: LifeLineChartView/lifelinechartview.py:508
+msgid "Zoom in"
+msgstr "Zoom ind"
+
+#: LifeLineChartView/lifelinechartview.py:509
+#: LifeLineChartView/lifelinechartview.py:510
+#: LifeLineChartView/lifelinechartview.py:519
+#: LifeLineChartView/lifelinechartview.py:520
+msgid "Ctrl"
+msgstr "Ctrl"
+
+#: LifeLineChartView/lifelinechartview.py:510
+#: LifeLineChartView/lifelinechartview.py:520
+msgid "Mouse wheel"
+msgstr "Mushjul"
+
+#: LifeLineChartView/lifelinechartview.py:518
+msgid "Zoom out"
+msgstr "Zoom ud"
+
+#: LifeLineChartView/lifelinechartview.py:527
+msgid "Zoom to original"
+msgstr "Zoom til original"
+
+#: LifeLineChartView/lifelinechartview.py:534
+msgid "Zoom to best fit"
+msgstr "Zoom så den passer bedst"
+
+#: LifeLineChartView/lifelinechartview.py:541
+msgid "Rebuild data cache"
+msgstr "Gendan datacache"
+
+#: LifeLineChartView/lifelinechartview.py:548
+msgid "Revert the placement and person selection"
+msgstr "Fortryd placerings og personvalget"
+
+#: LifeLineChartView/lifelinechartview.py:564
+msgid "Open Life Line Chart help"
+msgstr "Åbn Life Line Chart hjælp"
+
+#: LifeLineChartView/lifelinechartview.py:664
+msgid "Organize Bookmarks"
+msgstr "Organisér bogmærker"
+
+#: LifeLineChartView/lifelinechartview.py:831
+msgid "Export View as SVG"
+msgstr "Eksporter oversigt som SVG"
+
+#: LifeLineChartView/lifelinechartview.py:835
+msgid "_Save"
+msgstr "_Gem"
+
+#: LifeLineChartView/lifelinechartview.py:946
+msgid "Reset all settings"
+msgstr "Gendan alle indstillinger"
