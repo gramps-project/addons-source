@@ -1,0 +1,177 @@
+# Ukrainian translation for Heatmap
+# This file is distributed under the same license as the Gramps package.
+#
+# Illia Maier <illia@maier.page>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-24 10:57-0500\n"
+"PO-Revision-Date: 2024-10-11 22:00+0300\n"
+"Last-Translator: Illia Maier <illia@maier.page>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
+"gramps/uk/>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: Heatmap/heatmap.gpr.py:24
+msgid "Heatmap"
+msgstr "Теплова мапа (Heatmap)"
+
+#: Heatmap/heatmap.gpr.py:25
+msgid "Create a heatmap web report."
+msgstr "Створити веб-звіт теплової мапи (Heatmap)."
+
+#: Heatmap/heatmap.py:72
+msgid "Filter"
+msgstr "Фільтр"
+
+#: Heatmap/heatmap.py:73 Heatmap/heatmap.py:77 Heatmap/heatmap.py:80
+#: Heatmap/heatmap.py:87 Heatmap/heatmap.py:91 Heatmap/heatmap.py:95
+#: Heatmap/heatmap.py:105
+msgid "General"
+msgstr "Загальне"
+
+#: Heatmap/heatmap.py:76
+msgid "Filter Person"
+msgstr "Фільтрувати Особу"
+
+#: Heatmap/heatmap.py:85
+msgid "Map tiles"
+msgstr "Шари мапи"
+
+#: Heatmap/heatmap.py:89
+msgid "Point size"
+msgstr "Розмір точки"
+
+#: Heatmap/heatmap.py:90
+msgid ""
+"Set the size of the heatmap points.\n"
+"Default: 15"
+msgstr ""
+"Встановіть розмір точок теплової карти.\n"
+"За замовчуванням: 15"
+
+#: Heatmap/heatmap.py:93
+msgid "File path"
+msgstr "Шлях до файлу"
+
+#: Heatmap/heatmap.py:98
+msgid ""
+"For the file name only english letters A-Z, a-z and numbers 0-9 as well as "
+"the characters space, underline and hypen are allowed. The file name also "
+"has to start and end with an alphanumeric character.The file extention '."
+"html' is added by the report."
+msgstr ""
+"Для імені файлу дозволені лише англійські літери A-Z, a-z і цифри 0-9, а "
+"також пробіл, підкреслення і дефіс. Ім'я файлу має починатися і закінчуватися "
+"алфавітно-цифровим символом. Розширення файлу '.html' додається звітом."
+
+#: Heatmap/heatmap.py:103
+msgid "File name"
+msgstr "Імʼя файлу"
+
+#: Heatmap/heatmap.py:111
+msgid "Events"
+msgstr "Події"
+
+#: Heatmap/heatmap.py:117
+msgid "Enable custom start position"
+msgstr "Увімкнути користувацьку початкову позицію"
+
+#: Heatmap/heatmap.py:119
+msgid ""
+"Enabling will force the map open at your custom start position and zoom."
+msgstr ""
+"Увімкнення змусить мапу відкриватися з користувацької початкової позиції та "
+"масштабу."
+
+#: Heatmap/heatmap.py:121 Heatmap/heatmap.py:127 Heatmap/heatmap.py:132
+#: Heatmap/heatmap.py:137
+msgid "Advanced"
+msgstr "Розширене"
+
+#: Heatmap/heatmap.py:124
+msgid "Start latitude"
+msgstr "Початкова широта"
+
+#: Heatmap/heatmap.py:126
+msgid ""
+"Set custom start position latitude\n"
+"Default: 50.0"
+msgstr ""
+"Встановіть користувацьку початкову широту\n"
+"За замовчуванням: 50.0"
+
+#: Heatmap/heatmap.py:129
+msgid "Start longitude"
+msgstr "Початкова довгота"
+
+#: Heatmap/heatmap.py:131
+msgid ""
+"Set custom start position longitude\n"
+"Default: 10.0"
+msgstr ""
+"Встановіть користувацьку початкову довготу\n"
+"За замовчуванням: 10.0"
+
+#: Heatmap/heatmap.py:134
+msgid "Start zoom"
+msgstr "Початковий масштаб"
+
+#: Heatmap/heatmap.py:136
+msgid ""
+"Set the value for the starting zoom\n"
+"Default: 5"
+msgstr ""
+"Встановіть значення початкового масштабу\n"
+"За замовчуванням: 5"
+
+#: Heatmap/heatmap.py:209
+msgid "Path does not exist."
+msgstr "Шлях не існує."
+
+#: Heatmap/heatmap.py:210
+msgid "Invalid filename."
+msgstr "Недійсне імʼя файлу."
+
+#: Heatmap/heatmap.py:214 Heatmap/heatmap.py:226
+msgid "INFO"
+msgstr "ІНФОРМАЦІЯ"
+
+#: Heatmap/multi_select.py:104
+msgid "Event type"
+msgstr "Тип події"
+
+#: Heatmap/utils.py:52
+msgid "OpenStreetMap"
+msgstr "OpenStreetMap"
+
+#: Heatmap/utils.py:55
+msgid "Stamen Terrain"
+msgstr "Stamen Terrain"
+
+#: Heatmap/utils.py:58
+msgid "Stamen Terrain (Background only)"
+msgstr "Stamen Terrain (лише фон)"
+
+#: Heatmap/utils.py:61
+msgid "Stamen Toner"
+msgstr "Stamen Toner"
+
+#: Heatmap/utils.py:64
+msgid "Stamen Watercolor"
+msgstr "Stamen Watercolor"
+
+#: Heatmap/utils.py:67
+msgid "CartoDB Positron"
+msgstr "CartoDB Positron"
+
+#: Heatmap/utils.py:70
+msgid "CartoDB DarkMatter"
+msgstr "CartoDB DarkMatter"

@@ -1,0 +1,94 @@
+# Ukrainian translation for HouseTimelineGramplet
+# This file is distributed under the same license as the Gramps package.
+#
+# Illia Maier <illia@maier.page>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"PO-Revision-Date: 2024-10-11 22:00+0300\n"
+"Last-Translator: Illia Maier <illia@maier.page>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
+"gramps/uk/>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: HouseTimelineGramplet/housetimeline.gpr.py:3
+#: HouseTimelineGramplet/housetimeline.gpr.py:14
+msgid "House Timeline"
+msgstr "Хронологія Будинку"
+
+#: HouseTimelineGramplet/housetimeline.gpr.py:4
+msgid "Lists the Residents of an Address by Timeline"
+msgstr "Перелік мешканців за адресою у хронологічному порядку"
+
+#: HouseTimelineGramplet/housetimeline.py:35
+msgid "Double-click name for details"
+msgstr "Двічі клацніть на імені для деталей"
+
+#: HouseTimelineGramplet/housetimeline.py:51
+#: HouseTimelineGramplet/housetimeline.py:58
+msgid "House Icon Style"
+msgstr "Стиль іконки будинку"
+
+#: HouseTimelineGramplet/housetimeline.py:59
+msgid "Standard"
+msgstr "Стандартний"
+
+#: HouseTimelineGramplet/housetimeline.py:60
+msgid "Small"
+msgstr "Малий"
+
+#: HouseTimelineGramplet/housetimeline.py:61
+msgid "Unicode"
+msgstr "Unicode"
+
+#: HouseTimelineGramplet/housetimeline.py:62
+msgid "None"
+msgstr "Немає"
+
+#: HouseTimelineGramplet/housetimeline.py:68
+msgid "Processing..."
+msgstr "Обробка..."
+
+#: HouseTimelineGramplet/housetimeline.py:90
+msgid ""
+"There are no individuals with Address data. Please add Address data to "
+"people."
+msgstr ""
+"Немає осіб з даними про адресу. Будь ласка, додайте дані про адресу до "
+"людей."
+
+#: HouseTimelineGramplet/housetimeline.py:128
+msgid "Location"
+msgstr "Місцезнаходження"
+
+#: HouseTimelineGramplet/housetimeline.py:129
+msgid "Time In Family"
+msgstr "Час у сім'ї"
+
+#: HouseTimelineGramplet/housetimeline.py:130
+msgid "First Resident"
+msgstr "Перший мешканець"
+
+#: HouseTimelineGramplet/housetimeline.py:131
+msgid "Last Resident"
+msgstr "Останній мешканець"
+
+#: HouseTimelineGramplet/housetimeline.py:132
+msgid "Timeline"
+msgstr "Хронологія"
+
+#: HouseTimelineGramplet/housetimeline.py:133
+msgid "Unknown"
+msgstr "Невідомо"
+
+#: HouseTimelineGramplet/housetimeline.py:134
+msgid "Total Known Residents"
+msgstr "Загальна кількість відомих мешканців"
