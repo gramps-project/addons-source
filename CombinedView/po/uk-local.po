@@ -1,0 +1,346 @@
+# Ukrainian translation for CombinedView
+# This file is distributed under the same license as the Gramps package.
+#
+# Illia Maier <illia@maier.page>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-26 10:18-0500\n"
+"PO-Revision-Date: 2024-10-10 22:54+0300\n"
+"Last-Translator: Illia Maier <illia@maier.page>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
+"gramps/uk/>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: CombinedView/basepage.py:215
+#, python-format
+msgid "%(date)s in %(place)s"
+msgstr "%(date)s у %(place)s"
+
+#: CombinedView/basepage.py:233 CombinedView/personpage.py:485
+msgid "Unknown"
+msgstr "Невідомо"
+
+#: CombinedView/basepage.py:369
+msgid "Add Child to Family"
+msgstr "Додати дитину до сім'ї"
+
+#: CombinedView/basepage.py:387
+msgid "Select Child"
+msgstr "Вибрати дитину"
+
+#: CombinedView/basepage.py:434 CombinedView/eventpage.py:101
+#: CombinedView/eventpage.py:235 CombinedView/personpage.py:131
+#: CombinedView/personpage.py:468 CombinedView/personpage.py:519
+#: CombinedView/personpage.py:681 CombinedView/personpage.py:894
+#, python-format
+msgid "Edit %s"
+msgstr "Редагувати %s"
+
+#: CombinedView/basepage.py:493
+#, python-format
+msgid "%(abbrev)s %(date)s in %(place)s"
+msgstr "%(abbrev)s %(date)s у %(place)s"
+
+#: CombinedView/basepage.py:495
+#, python-format
+msgid "%(abbrev)s %(date)s%(place)s"
+msgstr "%(abbrev)s %(date)s%(place)s"
+
+#: CombinedView/combinedview.gpr.py:23 CombinedView/combinedview.py:87
+msgid "Combined"
+msgstr "Комбінований"
+
+#: CombinedView/combinedview.gpr.py:24
+msgid "A view showing relationships and events for a person"
+msgstr "Перегляд, що показує стосунки та події для особи"
+
+#: CombinedView/combinedview.gpr.py:31 CombinedView/combinedview.py:650
+#: CombinedView/personpage.py:240
+msgid "Relationships"
+msgstr "Стосунки"
+
+#: CombinedView/combinedview.py:325
+msgid "Organize Bookmarks"
+msgstr "Організувати закладки"
+
+#: CombinedView/combinedview.py:526
+msgid "Edit the active person"
+msgstr "Редагувати активну особу"
+
+#: CombinedView/combinedview.py:528
+msgid "Edit the active event"
+msgstr "Редагувати активну подію"
+
+#: CombinedView/combinedview.py:577
+#, python-format
+msgid "%(birthabbrev)s %(birthdate)s, %(deathabbrev)s %(deathdate)s"
+msgstr "%(birthabbrev)s %(birthdate)s, %(deathabbrev)s %(deathdate)s"
+
+#: CombinedView/combinedview.py:584 CombinedView/combinedview.py:586
+#, python-format
+msgid "%(event)s %(date)s"
+msgstr "%(event)s %(date)s"
+
+#: CombinedView/combinedview.py:624
+msgid "Use shading"
+msgstr "Використовувати затінення"
+
+#: CombinedView/combinedview.py:627
+msgid "Display edit buttons"
+msgstr "Показати кнопки редагування"
+
+#: CombinedView/combinedview.py:630
+msgid "Show Tags"
+msgstr "Показати теги"
+
+#: CombinedView/combinedview.py:632
+msgid "View links as website links"
+msgstr "Переглядати посилання як вебсайти"
+
+#: CombinedView/combinedview.py:638
+msgid "Layout"
+msgstr "Макет"
+
+#: CombinedView/combinedview.py:653
+msgid "Show Details"
+msgstr "Показати деталі"
+
+#: CombinedView/combinedview.py:656
+msgid "Vertical Details"
+msgstr "Вертикальні деталі"
+
+#: CombinedView/combinedview.py:659
+msgid "Show Siblings"
+msgstr "Показати братів і сестер"
+
+#: CombinedView/combinedview.py:662
+msgid "Person"
+msgstr "Особа"
+
+#: CombinedView/eventpage.py:119 CombinedView/navigationview.py:360
+#: CombinedView/personpage.py:150
+msgid "ID"
+msgstr "ID"
+
+#: CombinedView/eventpage.py:140
+msgid "Attributes"
+msgstr "Атрибути"
+
+#: CombinedView/eventpage.py:167
+msgid "Participants"
+msgstr "Учасники"
+
+#: CombinedView/eventpage.py:202 CombinedView/eventpage.py:267
+msgid "Order"
+msgstr "Порядок"
+
+#: CombinedView/eventpage.py:289
+msgid "Citations"
+msgstr "Цитати"
+
+#: CombinedView/navigationview.py:269
+#, python-format
+msgid "%s has been bookmarked"
+msgstr "%s було додано в закладки"
+
+#: CombinedView/navigationview.py:273
+msgid "Could Not Set a Bookmark"
+msgstr "Не вдалося додати в закладки"
+
+#: CombinedView/navigationview.py:274
+msgid "A bookmark could not be set because no one was selected."
+msgstr "Закладку не вдалося встановити, оскільки ніхто не був вибраний."
+
+#: CombinedView/navigationview.py:340
+msgid "No Home Person"
+msgstr "Немає головної особи"
+
+#: CombinedView/navigationview.py:341
+msgid ""
+"You need to set a 'default person' to go to. Select the People View, select "
+"the person you want as 'Home Person', then confirm your choice via the menu "
+"Edit -> Set Home Person."
+msgstr ""
+"Вам потрібно встановити \"особу за замовчуванням\". Виберіть Перегляд осіб, виберіть особу, яку ви хочете як \"Головну особу\", потім підтвердіть свій вибір через меню Редагування -> Встановити Головну особу."
+
+#: CombinedView/navigationview.py:351 CombinedView/navigationview.py:354
+msgid "Jump to by Gramps ID"
+msgstr "Перейти за Gramps ID"
+
+#: CombinedView/navigationview.py:360
+#, python-format
+msgid "%s: "
+msgstr "%s: "
+
+#: CombinedView/navigationview.py:365
+msgid "_Cancel"
+msgstr "_Скасувати"
+
+#: CombinedView/navigationview.py:366
+msgid "_Jump to"
+msgstr "_Перейти до"
+
+#: CombinedView/navigationview.py:378
+#, python-format
+msgid "Error: %s is not a valid Gramps ID"
+msgstr "Помилка: %s не є дійсним Gramps ID"
+
+#: CombinedView/personpage.py:160
+msgid "Birth"
+msgstr "Народження"
+
+#: CombinedView/personpage.py:169 CombinedView/personpage.py:194
+msgid "Death"
+msgstr "Смерть"
+
+#: CombinedView/personpage.py:189
+msgid "Alive"
+msgstr "Живий"
+
+#: CombinedView/personpage.py:196
+msgid "unknown"
+msgstr "невідомо"
+
+#: CombinedView/personpage.py:251 CombinedView/personpage.py:272
+msgid "Parents"
+msgstr "Батьки"
+
+#: CombinedView/personpage.py:275
+msgid "Father"
+msgstr "Батько"
+
+#: CombinedView/personpage.py:279
+msgid "Mother"
+msgstr "Мати"
+
+#: CombinedView/personpage.py:287
+msgid "Siblings"
+msgstr "Брати і сестри"
+
+#: CombinedView/personpage.py:297 CombinedView/personpage.py:358
+msgid "Add new child to family"
+msgstr "Додати нову дитину до сім'ї"
+
+#: CombinedView/personpage.py:301 CombinedView/personpage.py:362
+msgid "Add existing child to family"
+msgstr "Додати існуючу дитину до сім'ї"
+
+#: CombinedView/personpage.py:323
+msgid "Broken family detected"
+msgstr "Виявлено проблеми у сім'ї"
+
+#: CombinedView/personpage.py:324
+msgid "Please run the Check and Repair Database tool"
+msgstr "Будь ласка, запустіть інструмент перевірки та відновлення бази даних"
+
+#: CombinedView/personpage.py:336
+msgid "Family"
+msgstr "Сім'я"
+
+#: CombinedView/personpage.py:340
+msgid "Spouse"
+msgstr "Подружжя"
+
+#: CombinedView/personpage.py:347
+msgid "Children"
+msgstr "Діти"
+
+#: CombinedView/personpage.py:397
+msgid "Add a new set of parents"
+msgstr "Додати нову пару батьків"
+
+#: CombinedView/personpage.py:398
+msgid "Add person as child to an existing family"
+msgstr "Додати особу як дитину до існуючої сім'ї"
+
+#: CombinedView/personpage.py:399
+msgid "Edit parents"
+msgstr "Редагувати батьків"
+
+#: CombinedView/personpage.py:400
+msgid "Reorder parents"
+msgstr "Змінити порядок батьків"
+
+#: CombinedView/personpage.py:401
+msgid "Remove person as child of these parents"
+msgstr "Видалити особу як дитину цих батьків"
+
+#: CombinedView/personpage.py:403
+msgid "Add a new family with person as parent"
+msgstr "Додати нову сім'ю з особою як батьком або матір'ю"
+
+#: CombinedView/personpage.py:405
+msgid "Edit family"
+msgstr "Редагувати сім'ю"
+
+#: CombinedView/personpage.py:406
+msgid "Reorder families"
+msgstr "Змінити порядок сімей"
+
+#: CombinedView/personpage.py:407
+msgid "Remove person as parent in this family"
+msgstr "Видалити особу як батька або матір у цій сім'ї"
+
+#: CombinedView/personpage.py:554
+#, python-format
+msgid "Relationship type: %s"
+msgstr "Тип стосунків: %s"
+
+#: CombinedView/personpage.py:591
+#, python-format
+msgid "%(event_type)s: %(date)s in %(place)s"
+msgstr "%(event_type)s: %(date)s у %(place)s"
+
+#: CombinedView/personpage.py:595
+#, python-format
+msgid "%(event_type)s: %(date)s"
+msgstr "%(event_type)s: %(date)s"
+
+#: CombinedView/personpage.py:598
+#, python-format
+msgid "%(event_type)s: %(place)s"
+msgstr "%(event_type)s: %(place)s"
+
+#: CombinedView/personpage.py:619
+msgid "Events"
+msgstr "Події"
+
+#: CombinedView/personpage.py:678 CombinedView/personpage.py:891
+msgid "Click to make this event active"
+msgstr "Натисніть, щоб зробити цю подію активною"
+
+#: CombinedView/personpage.py:737
+msgid "Click to visit this link"
+msgstr "Натисніть, щоб відвідати це посилання"
+
+#: CombinedView/personpage.py:755
+msgid "Album"
+msgstr "Альбом"
+
+#: CombinedView/personpage.py:824
+msgid "Timeline"
+msgstr "Хронологія"
+
+#: CombinedView/personpage.py:949
+msgid "Associations"
+msgstr "Асоціації"
+
+#: CombinedView/personpage.py:959
+msgid "Association"
+msgstr "Асоціація"
+
+#: CombinedView/personpage.py:959 CombinedView/personpage.py:966
+msgid ": "
+msgstr ": "
+
+#: CombinedView/personpage.py:966
+msgid "Relationship"
+msgstr "Відношення"

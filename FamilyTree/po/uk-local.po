@@ -1,0 +1,320 @@
+# Ukrainian translation for FamilyTree
+# This file is distributed under the same license as the Gramps package.
+#
+# Illia Maier <illia@maier.page>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-04 18:55-0600\n"
+"PO-Revision-Date: 2024-10-10 20:45+0300\n"
+"Last-Translator: Illia Maier <illia@maier.page>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
+"gramps/uk/>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: FamilyTree/FamilyTree.gpr.py:3
+msgid "Family Tree"
+msgstr "Сімейне дерево"
+
+#: FamilyTree/FamilyTree.gpr.py:4
+msgid "Produces a graphical family tree."
+msgstr "Створює графічне сімейне дерево."
+
+#: FamilyTree/FamilyTree.py:102
+#, python-format
+msgid "Family Tree for %s"
+msgstr "Сімейне дерево для %s"
+
+#: FamilyTree/FamilyTree.py:152
+msgid "Paper too small"
+msgstr "Занадто маленький аркуш"
+
+#: FamilyTree/FamilyTree.py:153
+msgid "Some elements may not appear or be badly rendered."
+msgstr "Деякі елементи можуть не відображатися або бути відображені неправильно."
+
+#: FamilyTree/FamilyTree.py:663 FamilyTree/FamilyTree.py:670
+msgid "Unknown"
+msgstr "Невідомо"
+
+#: FamilyTree/FamilyTree.py:677
+#, python-format
+msgid "%(father)s and %(mother)s"
+msgstr "%(father)s та %(mother)s"
+
+#: FamilyTree/FamilyTree.py:684
+msgid "Anonymous"
+msgstr "Анонім"
+
+#: FamilyTree/FamilyTree.py:911
+msgid "born"
+msgstr "народився"
+
+#: FamilyTree/FamilyTree.py:913
+msgid "baptised"
+msgstr "охрещений"
+
+#: FamilyTree/FamilyTree.py:915
+msgid "died"
+msgstr "помер"
+
+#: FamilyTree/FamilyTree.py:917
+msgid "buried"
+msgstr "похований"
+
+#: FamilyTree/FamilyTree.py:919
+msgid "cremated"
+msgstr "кремований"
+
+#: FamilyTree/FamilyTree.py:921
+msgid "married"
+msgstr "одружений"
+
+#: FamilyTree/FamilyTree.py:923
+msgid "divorced"
+msgstr "розлучений"
+
+#: FamilyTree/FamilyTree.py:925
+msgid "resident"
+msgstr "мешканець"
+
+#: FamilyTree/FamilyTree.py:932
+#, python-format
+msgid "on %(ymd_date)s"
+msgstr "на %(ymd_date)s"
+
+#: FamilyTree/FamilyTree.py:934
+#, python-format
+msgid "in %(ym_date)s"
+msgstr "у %(ym_date)s"
+
+#: FamilyTree/FamilyTree.py:936
+#, python-format
+msgid "in %(y_date)s"
+msgstr "у %(y_date)s"
+
+#: FamilyTree/FamilyTree.py:940
+#, python-format
+msgid "on %(placeholder)s"
+msgstr "на %(placeholder)s"
+
+#: FamilyTree/FamilyTree.py:943
+#, python-format
+msgid "on %(placeholder)s (%(partial)s)"
+msgstr "на %(placeholder)s (%(partial)s)"
+
+#: FamilyTree/FamilyTree.py:960
+#, python-format
+msgid "in %(place)s"
+msgstr "у %(place)s"
+
+#: FamilyTree/FamilyTree.py:971
+#, python-format
+msgid "(%(description)s)"
+msgstr "(%(description)s)"
+
+#: FamilyTree/FamilyTree.py:1041
+msgid "Tree Options"
+msgstr "Опції дерева"
+
+#: FamilyTree/FamilyTree.py:1043
+msgid "Center Family"
+msgstr "Центральна сім'я"
+
+#: FamilyTree/FamilyTree.py:1044
+msgid "The center family for the tree"
+msgstr "Центральна сім'я для дерева"
+
+#: FamilyTree/FamilyTree.py:1047
+msgid "Ancestor Generations"
+msgstr "Покоління предків"
+
+#: FamilyTree/FamilyTree.py:1048
+msgid "The number of ancestor generations to include in the tree"
+msgstr "Кількість поколінь предків, що включатимуться в дерево"
+
+#: FamilyTree/FamilyTree.py:1051
+msgid "Descendant Generations"
+msgstr "Покоління нащадків"
+
+#: FamilyTree/FamilyTree.py:1052
+msgid "The number of descendant generations to include in the tree"
+msgstr "Кількість поколінь нащадків, що включатимуться в дерево"
+
+#: FamilyTree/FamilyTree.py:1055
+msgid "Kekule number of husband"
+msgstr "Число Кекуле(Kekule) для чоловіка"
+
+#: FamilyTree/FamilyTree.py:1056
+msgid ""
+"The Kekule number of the husband (central family). Set 0 to not show Kekule "
+"numbers"
+msgstr ""
+"Число Кекуле(Kekule) для чоловіка (центральна сім'я). Встановіть 0, щоб не показувати числа Кекуле(Kekule)"
+
+#: FamilyTree/FamilyTree.py:1059
+msgid "Scale to fit on a single page"
+msgstr "Масштабувати для одного аркуша"
+
+#: FamilyTree/FamilyTree.py:1060
+msgid "Whether to scale to fit on a single page."
+msgstr "Чи масштабувати для одного аркуша."
+
+#: FamilyTree/FamilyTree.py:1063
+msgid "Color"
+msgstr "Колір"
+
+#: FamilyTree/FamilyTree.py:1065
+msgid "No color"
+msgstr "Без кольору"
+
+#: FamilyTree/FamilyTree.py:1066
+msgid "Generations"
+msgstr "Покоління"
+
+#: FamilyTree/FamilyTree.py:1067
+msgid "First generation"
+msgstr "Перше покоління"
+
+#: FamilyTree/FamilyTree.py:1068
+msgid "Second generation"
+msgstr "Друге покоління"
+
+#: FamilyTree/FamilyTree.py:1069
+msgid "Third generation"
+msgstr "Третє покоління"
+
+#: FamilyTree/FamilyTree.py:1070
+msgid "Male line"
+msgstr "Чоловіча лінія"
+
+#: FamilyTree/FamilyTree.py:1071
+msgid "Male line and illegitimate children"
+msgstr "Чоловіча лінія та незаконнонароджені діти"
+
+#: FamilyTree/FamilyTree.py:1072
+msgid "Female line"
+msgstr "Жіноча лінія"
+
+#: FamilyTree/FamilyTree.py:1075
+msgid "Shuffle colors"
+msgstr "Перемішати кольори"
+
+#: FamilyTree/FamilyTree.py:1076
+msgid "Whether to shuffle colors or order them in rainbow fashion."
+msgstr "Чи перемішати кольори або впорядкувати їх як веселку."
+
+#: FamilyTree/FamilyTree.py:1079
+msgid "Content"
+msgstr "Вміст"
+
+#: FamilyTree/FamilyTree.py:1081
+msgid "Use call name"
+msgstr "Використовувати прізвисько"
+
+#: FamilyTree/FamilyTree.py:1083
+msgid "Don't use call name"
+msgstr "Не використовувати прізвисько"
+
+#: FamilyTree/FamilyTree.py:1084
+msgid "Replace first name with call name"
+msgstr "Замінити перше ім'я на прізвисько"
+
+#: FamilyTree/FamilyTree.py:1085
+msgid "Underline call name in first name / add call name to first name"
+msgstr "Підкреслити прізвисько в першому імені / додати прізвисько до першого імені"
+
+#: FamilyTree/FamilyTree.py:1091
+msgid "Include Occupation"
+msgstr "Включити професію"
+
+#: FamilyTree/FamilyTree.py:1094
+msgid "Include Notes"
+msgstr "Включити примітки"
+
+#: FamilyTree/FamilyTree.py:1097
+msgid "Include Residence"
+msgstr "Включити місце проживання"
+
+#: FamilyTree/FamilyTree.py:1100
+msgid "Print event data (dead person)"
+msgstr "Друкувати дані події (померла особа)"
+
+#: FamilyTree/FamilyTree.py:1102 FamilyTree/FamilyTree.py:1110
+msgid "None"
+msgstr "Немає"
+
+#: FamilyTree/FamilyTree.py:1103 FamilyTree/FamilyTree.py:1111
+msgid "Year only"
+msgstr "Тільки рік"
+
+#: FamilyTree/FamilyTree.py:1104 FamilyTree/FamilyTree.py:1112
+msgid "Full date"
+msgstr "Повна дата"
+
+#: FamilyTree/FamilyTree.py:1105 FamilyTree/FamilyTree.py:1113
+msgid "Full date and place"
+msgstr "Повна дата і місце"
+
+#: FamilyTree/FamilyTree.py:1108
+msgid "Print event data (living person)"
+msgstr "Друкувати дані події (жива особа)"
+
+#: FamilyTree/FamilyTree.py:1116
+msgid "Fall back to baptism if birth event missing"
+msgstr "Перейти до хрещення, якщо подія народження відсутня"
+
+#: FamilyTree/FamilyTree.py:1119
+msgid "Fall back to burial or cremation if death event missing"
+msgstr "Перейти до поховання або кремації, якщо подія смерті відсутня"
+
+#: FamilyTree/FamilyTree.py:1122
+msgid "Protect private items"
+msgstr "Захистити приватні дані"
+
+#: FamilyTree/FamilyTree.py:1127
+msgid "Print fields for missing information"
+msgstr "Друкувати поля для відсутньої інформації"
+
+#: FamilyTree/FamilyTree.py:1128
+msgid "Whether to include fields for missing information."
+msgstr "Чи включати поля для відсутньої інформації."
+
+#: FamilyTree/FamilyTree.py:1131
+msgid "Include event description"
+msgstr "Включити опис події"
+
+#: FamilyTree/FamilyTree.py:1134
+msgid "Text Options"
+msgstr "Опції тексту"
+
+#: FamilyTree/FamilyTree.py:1136
+msgid "Title text"
+msgstr "Текст заголовку"
+
+#: FamilyTree/FamilyTree.py:1139
+msgid "Footer text"
+msgstr "Текст нижнього колонтитулу"
+
+#: FamilyTree/FamilyTree.py:1154
+msgid "The style used for the title."
+msgstr "Стиль, що використовується для заголовку."
+
+#: FamilyTree/FamilyTree.py:1162
+msgid "The style used for names."
+msgstr "Стиль, що використовується для імен."
+
+#: FamilyTree/FamilyTree.py:1170
+msgid "The style used for data (birth, death, marriage, divorce)."
+msgstr "Стиль, що використовується для даних (народження, смерть, шлюб, розлучення)."
+
+#: FamilyTree/FamilyTree.py:1180
+msgid "The style used for the footer."
+msgstr "Стиль, що використовується для нижнього колонтитулу."

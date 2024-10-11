@@ -1,0 +1,57 @@
+# Ukrainian translation for DownloadMedia
+# This file is distributed under the same license as the Gramps package.
+#
+# Illia Maier <illia@maier.page>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-26 10:18-0500\n"
+"PO-Revision-Date: 2024-10-10 22:54+0300\n"
+"Last-Translator: Illia Maier <illia@maier.page>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
+"gramps/uk/>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: DownloadMedia/DownloadMedia.gpr.py:35
+msgid "Download media files from the internet"
+msgstr "Завантаження медіафайлів з інтернету"
+
+#: DownloadMedia/DownloadMedia.gpr.py:36
+msgid "This tool downloads media files from the internet"
+msgstr "Цей інструмент завантажує медіафайли з інтернету"
+
+#: DownloadMedia/DownloadMedia.py:71
+msgid "Download media"
+msgstr "Завантажити медіа"
+
+#: DownloadMedia/DownloadMedia.py:87
+msgid "Media downloaded"
+msgstr "Медіа завантажено"
+
+#: DownloadMedia/DownloadMedia.py:88
+#, python-format
+msgid "%d media files downloaded"
+msgstr "Завантажено %d медіафайлів"
+
+#: DownloadMedia/DownloadMedia.py:100
+msgid "Download media tool"
+msgstr "Інструмент для завантаження медіа"
+
+#: DownloadMedia/DownloadMedia.py:106
+msgid "Make sure you are connected to the internet before starting this tool."
+msgstr "Переконайтеся, що ви підключені до інтернету перед запуском цього інструменту."
+
+#: DownloadMedia/DownloadMedia.py:171 DownloadMedia/DownloadMedia.py:172
+msgid "Downloading files"
+msgstr "Завантаження файлів"
+
+#: DownloadMedia/DownloadMedia.py:207
+msgid "Media download errors detected"
+msgstr "Виявлено помилки під час завантаження медіа"

@@ -1,0 +1,355 @@
+# Ukrainian translation for CalculateEstimatedDates
+# This file is distributed under the same license as the Gramps package.
+#
+# Illia Maier <illia@maier.page>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2024-10-10 22:54+0300\n"
+"Last-Translator: Illia Maier <illia@maier.page>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
+"gramps/uk/>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:9
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:190
+msgid "Calculate Estimated Dates"
+msgstr "Розрахувати орієнтовні дати"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
+msgid "Calculates estimated dates for birth and death."
+msgstr "Розраховує орієнтовні дати народження та смерті."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:80
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:193
+msgid "Options"
+msgstr "Опції"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:82
+msgid "Filter"
+msgstr "Фільтр"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:83
+msgid "Select filter to restrict people"
+msgstr "Виберіть фільтр для обмеження людей"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:87
+msgid "Filter Person"
+msgstr "Фільтр осіб"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:88
+msgid "The center person for the filter"
+msgstr "Центральна особа для фільтра"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:94
+msgid "Source text"
+msgstr "Текст джерела"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:95
+msgid "Calculated Date Estimates"
+msgstr "Орієнтовні розраховані дати"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:96
+msgid "Source to remove and/or add"
+msgstr "Джерело для видалення та/або додавання"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:99
+msgid "Remove previously added events, notes, and source"
+msgstr "Видалити раніше додані події, примітки та джерело"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:100
+msgid "Remove calculated events, notes, and source; occurs immediately on Execute"
+msgstr "Видалити розраховані події, примітки та джерело; виконується негайно після виконання"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:103
+msgid "Birth"
+msgstr "Народження"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:104
+msgid "Do not add birth events"
+msgstr "Не додавати події народження"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:105
+msgid "Add birth events without dates"
+msgstr "Додати події народження без дат"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:106
+msgid "Add birth events with dates"
+msgstr "Додати події народження з датами"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:107
+msgid "Add a birth events with or without estimated dates"
+msgstr "Додати події народження з або без орієнтовних дат"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:110
+msgid "Death"
+msgstr "Смерть"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:111
+msgid "Do not add death events"
+msgstr "Не додавати події смерті"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:112
+msgid "Add death events without dates"
+msgstr "Додати події смерті без дат"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:113
+msgid "Add death events with dates"
+msgstr "Додати події смерті з датами"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:114
+msgid "Add death events with or without estimated dates"
+msgstr "Додати події смерті з або без орієнтовних дат"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:118
+msgid "Maximum age"
+msgstr "Максимальний вік"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:121
+msgid "Maximum age that one can live to"
+msgstr "Максимальний вік, до якого можна дожити"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:124
+msgid "Maximum sibling age difference"
+msgstr "Максимальна різниця у віці між братами та сестрами"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:127
+msgid "Maximum age difference between siblings"
+msgstr "Максимальна різниця у віці між братами та сестрами"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:130
+msgid "Average years between generations"
+msgstr "Середня кількість років між поколіннями"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:133
+msgid "Average years between two generations"
+msgstr "Середня кількість років між двома поколіннями"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:136
+msgid "Estimated Dates"
+msgstr "Орієнтовні дати"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:137
+msgid "Approximate (about)"
+msgstr "Приблизно (приблизно)"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:138
+msgid "Extremes (after and before)"
+msgstr "Екстремуми (після і до)"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:139
+msgid "Dates on events are either about or after/before"
+msgstr "Дати на подіях або приблизні, або після/до"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:170
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:187
+msgid "Help"
+msgstr "Допомога"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:172
+msgid ""
+"The Calculate Estimated Dates Tool is used to add and remove birth and death "
+"events for people that are missing these events.\n"
+"\n"
+"To use:\n"
+"1. Go to the Options tab\n"
+"2. Check the [ ] Remove option to remove previous estimates\n"
+"3. Select the Add date options to date events with or without dates\n"
+"4. Click on Execute\n"
+"5. Select the people with which to add events\n"
+"6. Click on 'Add Selected Events' button to create\n"
+"\n"
+"NOTES: if you decide to make an event permanent, remove it from the Source. "
+"Otherwise, it will get removed the next time you automatically remove these "
+"events.\n"
+"\n"
+"You may have to run the tool repeatedly (without removing previous events) "
+"to add all of the events possible."
+msgstr "Інструмент 'Розрахунок орієнтовних дат' використовується для додавання та видалення подій народження і смерті для осіб, "
+"у яких відсутні ці події.\n\n"
+"Як використовувати:\n"
+"1. Перейдіть на вкладку 'Опції'\n"
+"2. Виберіть опцію [ ] Видалити для видалення попередніх оцінок\n"
+"3. Виберіть опції додавання дат для подій з або без дат\n"
+"4. Натисніть 'Виконати'\n"
+"5. Виберіть осіб, для яких потрібно додати події\n"
+"6. Натисніть кнопку 'Додати вибрані події', щоб створити події\n\n"
+"ПРИМІТКИ: якщо ви вирішили зробити подію постійною, видаліть її з джерела. "
+"В іншому випадку її буде видалено наступного разу, коли ви автоматично видалите ці події.\n\n"
+"Можливо, вам доведеться запускати інструмент кілька разів (без видалення попередніх подій), "
+"щоб додати всі можливі події."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:199
+msgid "Select All"
+msgstr "Вибрати все"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:200
+msgid "Select None"
+msgstr "Зняти виділення"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:201
+msgid "Toggle Selection"
+msgstr "Перемкнути вибір"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:202
+msgid "Add Selected Events"
+msgstr "Додати вибрані події"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:208
+msgid "Remove Events, Notes, and Source and Reselect Data"
+msgstr "Видалити події, примітки та джерело і повторно вибрати дані"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:209
+msgid "Are you sure you want to remove previous events, notes, and source and reselect data?"
+msgstr "Ви впевнені, що хочете видалити попередні події, примітки та джерело і повторно вибрати дані?"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:210
+msgid "Remove and Run Select Again"
+msgstr "Видалити та знову виконати вибір"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:214
+msgid "Reselect Data"
+msgstr "Повторно вибрати дані"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:215
+msgid "Are you sure you want to reselect data?"
+msgstr "Ви впевнені, що хочете повторно вибрати дані?"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:216
+msgid "Run Select Again"
+msgstr "Знову виконати вибір"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:225
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:234
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:401
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:415
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:420
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:425
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:436
+msgid "Select"
+msgstr "Вибрати"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:234
+msgid "Person"
+msgstr "Особа"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:234
+msgid "Action"
+msgstr "Дія"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:235
+msgid "Birth Date"
+msgstr "Дата народження"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:235
+msgid "Death Date"
+msgstr "Дата смерті"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:236
+msgid "Evidence"
+msgstr "Доказ"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:236
+msgid "Relative"
+msgstr "Родич"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:237
+msgid "Processing...\n"
+msgstr "Обробка...\n"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:255
+msgid "Removing old estimations... "
+msgstr "Видалення старих оцінок... "
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:256
+#, python-format
+msgid "Removing '%s'..."
+msgstr "Видалення '%s'..."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:319
+msgid "done!\n"
+msgstr "готово!\n"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:323
+msgid ""
+"Selecting... \n"
+"\n"
+msgstr "Вибір...\n\n"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:324
+msgid "Selecting..."
+msgstr "Вибір..."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:359
+msgid "Add birth and death events"
+msgstr "Додати події народження і смерті"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:361
+msgid "Add birth event"
+msgstr "Додати подію народження"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:363
+msgid "Add death event"
+msgstr "Додати подію смерті"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:398
+msgid "No events to be added."
+msgstr "Немає подій для додавання."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:439
+msgid "Selecting... "
+msgstr "Вибір... "
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:440
+#, python-format
+msgid "Adding events '%s'..."
+msgstr "Додавання подій '%s'..."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:465
+#, python-format
+msgid "Added birth event based on %(evidence)s, from %(name)s"
+msgstr "Додана подія народження на основі %(evidence)s, від %(name)s"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:468
+#, python-format
+msgid "Added birth event based on %s"
+msgstr "Додана подія народження на основі %s"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:470
+msgid "Estimated birth date"
+msgstr "Орієнтовна дата народження"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:480
+#, python-format
+msgid "Added death event based on %(evidence)s, from %(person)s"
+msgstr "Додана подія смерті на основі %(evidence)s, від %(person)s"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:483
+#, python-format
+msgid "Added death event based on %s"
+msgstr "Додана подія смерті на основі %s"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:485
+msgid "Estimated death date"
+msgstr "Орієнтовна дата смерті"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:495
+msgid " Done! Committing..."
+msgstr "Готово! Застосування змін..."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:499
+#, python-format
+msgid "Added %d events."
+msgstr "Додано %d подій."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:527
+msgid "Estimated date"
+msgstr "Орієнтовна дата"

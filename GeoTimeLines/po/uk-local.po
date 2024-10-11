@@ -1,0 +1,159 @@
+# Ukrainian translation for GeoTimeLines
+# This file is distributed under the same license as the Gramps package.
+#
+# Illia Maier <illia@maier.page>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-06 11:31-0700\n"
+"PO-Revision-Date: 2024-10-10 20:45+0300\n"
+"Last-Translator: Illia Maier <illia@maier.page>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
+"gramps/uk/>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: GeoTimeLines/GeoTimeLines.gpr.py:4
+msgid "TimeLines Map"
+msgstr "Мапа хронології"
+
+#: GeoTimeLines/GeoTimeLines.gpr.py:5
+msgid "A view showing all the places visited by a person or persons on various date."
+msgstr "Вигляд, що показує всі місця, відвідані особою або особами в різні дати."
+
+#: GeoTimeLines/GeoTimeLines.gpr.py:12
+msgid "Geography"
+msgstr "Географія"
+
+#: GeoTimeLines/GeoTimeLines.gpr.py:14
+msgid "TimeLines map"
+msgstr "Мапа хронології"
+
+#: GeoTimeLines/GeoTimeLines.py:116
+msgid "Organize Bookmarks"
+msgstr "Упорядкувати закладки"
+
+#: GeoTimeLines/GeoTimeLines.py:232 GeoTimeLines/GeoTimeLines.py:329
+msgid "GeoTimeLines"
+msgstr "GeoTimeLines"
+
+#: GeoTimeLines/GeoTimeLines.py:639
+msgid "Unknown"
+msgstr "Невідомо"
+
+#: GeoTimeLines/GeoTimeLines.py:668
+msgid "Edit Event"
+msgstr "Редагувати подію"
+
+#: GeoTimeLines/GeoTimeLines.py:672 GeoTimeLines/GeoTimeLines.py:699
+#: GeoTimeLines/GeoTimeLines.py:729
+msgid "Center on this place"
+msgstr "Центрувати на цьому місці"
+
+#: GeoTimeLines/GeoTimeLines.py:695
+msgid "Edit Place"
+msgstr "Редагувати місце"
+
+#: GeoTimeLines/GeoTimeLines.py:725
+msgid "Edit Person"
+msgstr "Редагувати Особу"
+
+#: GeoTimeLines/GeoTimeLines.py:739
+msgid "Choose View Format"
+msgstr "Вибрати формат відображення"
+
+#: GeoTimeLines/GeoTimeLines.py:782
+msgid "Almost done"
+msgstr "Майже завершено"
+
+#: GeoTimeLines/GeoTimeLines.py:898
+msgid "Gathering data"
+msgstr "Збирання даних"
+
+#: GeoTimeLines/GeoTimeLines.py:1003 GeoTimeLines/GeoTimeLines.py:1103
+#, python-format
+msgid "%(eventtype)s : %(name)s"
+msgstr "%(eventtype)s : %(name)s"
+
+#: GeoTimeLines/GeoTimeLines.py:1662 GeoTimeLines/GeoTimeLines.py:1962
+#, python-format
+msgid "Number of Individuals: %s"
+msgstr "Кількість осіб: %s"
+
+#: GeoTimeLines/GeoTimeLines.py:1744
+msgid "Show map travel lines on startup"
+msgstr "Показувати лінії подорожей на мапі при запуску"
+
+#: GeoTimeLines/GeoTimeLines.py:1750
+msgid "Show time ticks on navigation bar on startup"
+msgstr "Показувати позначки часу на панелі навігації при запуску"
+
+#: GeoTimeLines/GeoTimeLines.py:1776
+msgid ""
+"Stagger map markers.\n"
+"to more easier see different\n"
+"makers at the same location"
+msgstr ""
+"Розмістити маркери мапи.\n"
+"для зручнішого перегляду різних\n"
+"маркерів у тому ж місці"
+
+#: GeoTimeLines/GeoTimeLines.py:1786
+msgid ""
+"Stagger Radius (hectometers)\n"
+"as measured along the equator\n"
+"(includes latitude distortion)"
+msgstr ""
+"Радіус розташування (гектометри = 100 м)\n"
+"виміряно вздовж екватора\n"
+"(включає спотворення широти)"
+
+#: GeoTimeLines/GeoTimeLines.py:1794
+msgid ""
+"Display markers for unknown ancestors\n"
+"based on earliest descendant location"
+msgstr ""
+"Відображати маркери для невідомих предків\n"
+"на основі найранішого місця нащадків"
+
+#: GeoTimeLines/GeoTimeLines.py:1803
+msgid "Days to keep map travel lines"
+msgstr "Кількість днів для збереження ліній подорожей на мапі"
+
+#: GeoTimeLines/GeoTimeLines.py:1822
+msgid "Use custom map icons"
+msgstr "Використовувати користувацькі іконки мапи"
+
+#: GeoTimeLines/GeoTimeLines.py:1829
+msgid "If no record of birth, their assumed age at first event"
+msgstr "Якщо немає запису про народження, їх припущений вік на першу подію"
+
+#: GeoTimeLines/GeoTimeLines.py:1836
+msgid "If no death event, assumed dead by"
+msgstr "Якщо немає запису про смерть, припущений час смерті до"
+
+#: GeoTimeLines/GeoTimeLines.py:1875
+msgid "Number of steps"
+msgstr "Кількість кроків"
+
+#: GeoTimeLines/GeoTimeLines.py:1883
+msgid "Type of steps"
+msgstr "Тип кроків"
+
+#: GeoTimeLines/GeoTimeLines.py:1892
+msgid "Steps per millisecond"
+msgstr "Кроків за мілісекунду"
+
+#: GeoTimeLines/GeoTimeLines.py:1915
+msgid "Initial Mapview"
+msgstr "Початковий вигляд мапи"
+
+#: GeoTimeLines/GeoTimeLines.py:1948
+msgid "GeoTimeLines options"
+msgstr "Налаштування GeoTimeLines"
