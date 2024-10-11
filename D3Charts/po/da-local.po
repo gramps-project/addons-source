@@ -73,7 +73,7 @@ msgstr "Hovedperson"
 #: D3Charts/AncestralCollapsibleTree.py:819 D3Charts/AncestralFanChart.py:710
 #: D3Charts/DescendantIndentedTree.py:1788
 msgid "The center person for the report"
-msgstr "Hovedprson for rapporten"
+msgstr "Hovedperson for rapporten"
 
 #: D3Charts/AncestralCollapsibleTree.py:833 D3Charts/AncestralFanChart.py:716
 msgid "Name format"
