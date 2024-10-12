@@ -1,0 +1,84 @@
+# Ukrainian translation for DateCalculator
+# This file is distributed under the same license as the Gramps package.
+#
+# Illia Maier <illia@maier.page>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-05-15 15:41-0500\n"
+"PO-Revision-Date: 2024-10-10 22:54+0300\n"
+"Last-Translator: Illia Maier <illia@maier.page>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
+"gramps/uk/>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: DateCalculator/DateCalculator.gpr.py:21
+#: DateCalculator/DateCalculator.gpr.py:31
+msgid "Date Calculator"
+msgstr "Калькулятор дат"
+
+#: DateCalculator/DateCalculator.gpr.py:22
+msgid "Useful for date math calculations"
+msgstr "Корисно для математичних обчислень з датами"
+
+#: DateCalculator/DateCalculator.py:76
+msgid "Expression 1"
+msgstr "Вираз 1"
+
+#: DateCalculator/DateCalculator.py:77
+msgid "Expression 2"
+msgstr "Вираз 2"
+
+#: DateCalculator/DateCalculator.py:78
+msgid "Result"
+msgstr "Результат"
+
+#: DateCalculator/DateCalculator.py:81
+msgid "Calculate"
+msgstr "Обчислити"
+
+#: DateCalculator/DateCalculator.py:84
+msgid "Clear"
+msgstr "Очистити"
+
+#: DateCalculator/DateCalculator.py:131
+msgid "Error: invalid entry for expression 1"
+msgstr "Помилка: неправильний ввід для виразу 1"
+
+#: DateCalculator/DateCalculator.py:141
+msgid "Error: invalid entry for expression 2"
+msgstr "Помилка: неправильний ввід для виразу 2"
+
+#: DateCalculator/DateCalculator.py:166 DateCalculator/DateCalculator.py:168
+#: DateCalculator/DateCalculator.py:176 DateCalculator/DateCalculator.py:178
+msgid "Error: at least one expression must be a date"
+msgstr "Помилка: принаймні один вираз має бути датою"
+
+#: DateCalculator/DateCalculator.py:184
+msgid ""
+"Enter an expression in the entries above and click Calculate.\n"
+"\n"
+"An expression can be:\n"
+"\n"
+"1. a valid Gramps date\n"
+"2. a positive or negative number, representing years\n"
+"3. a positive or negative tuple, representing (years, months, days)\n"
+"\n"
+"Note that at least one expression must be a date."
+msgstr ""
+"Введіть вирази у поля вище та натисніть Обчислити.\n"
+"\n"
+"Вираз може бути:\n"
+"\n"
+"1. дійсною датою в Gramps\n"
+"2. позитивним або негативним числом, що представляє кількість років\n"
+"3. позитивною або негативною кортежем, що представляє (роки, місяці, дні)\n"
+"\n"
+"Зверніть увагу, що принаймні один вираз повинен бути датою."

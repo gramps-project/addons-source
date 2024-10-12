@@ -1,0 +1,252 @@
+# Ukrainian translation for DataEntryGramplet
+# This file is distributed under the same license as the Gramps package.
+#
+# Illia Maier <illia@maier.page>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2024-10-11 19:17+0300\n"
+"Last-Translator: Illia Maier <illia@maier.page>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
+"gramps/uk/>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: DataEntryGramplet/DataEntryGramplet.gpr.py:8
+msgid "Data Entry Gramplet"
+msgstr "Грамплет для введення даних"
+
+#: DataEntryGramplet/DataEntryGramplet.gpr.py:9
+msgid "Gramplet for quick data entry"
+msgstr "Грамплет для швидкого введення даних"
+
+#: DataEntryGramplet/DataEntryGramplet.gpr.py:13
+msgid "Data Entry"
+msgstr "Введення даних"
+
+#: DataEntryGramplet/DataEntryGramplet.py:71
+msgid "Active person"
+msgstr "Активна особа"
+
+#: DataEntryGramplet/DataEntryGramplet.py:73
+msgid "Family:"
+msgstr "Сім'я:"
+
+#: DataEntryGramplet/DataEntryGramplet.py:74
+msgid "Sources?"
+msgstr "Джерела?"
+
+#: DataEntryGramplet/DataEntryGramplet.py:76
+#: DataEntryGramplet/DataEntryGramplet.py:109
+msgid "Surname, Given"
+msgstr "Прізвище, Ім'я"
+
+#: DataEntryGramplet/DataEntryGramplet.py:77
+#: DataEntryGramplet/DataEntryGramplet.py:110
+msgid "Gender"
+msgstr "Стать"
+
+#: DataEntryGramplet/DataEntryGramplet.py:77
+#: DataEntryGramplet/DataEntryGramplet.py:111
+msgid "female"
+msgstr "жінка"
+
+#: DataEntryGramplet/DataEntryGramplet.py:77
+#: DataEntryGramplet/DataEntryGramplet.py:111
+msgid "male"
+msgstr "чоловік"
+
+#: DataEntryGramplet/DataEntryGramplet.py:77
+#: DataEntryGramplet/DataEntryGramplet.py:111
+msgid "unknown"
+msgstr "невідомо"
+
+#: DataEntryGramplet/DataEntryGramplet.py:77
+#: DataEntryGramplet/DataEntryGramplet.py:111
+msgid "other"
+msgstr "інше"
+
+#: DataEntryGramplet/DataEntryGramplet.py:78
+#: DataEntryGramplet/DataEntryGramplet.py:80
+#: DataEntryGramplet/DataEntryGramplet.py:81
+#: DataEntryGramplet/DataEntryGramplet.py:111
+#: DataEntryGramplet/DataEntryGramplet.py:112
+#: DataEntryGramplet/DataEntryGramplet.py:113
+msgid "Source"
+msgstr "Джерело"
+
+#: DataEntryGramplet/DataEntryGramplet.py:80
+#: DataEntryGramplet/DataEntryGramplet.py:112
+msgid "Birth"
+msgstr "Народження"
+
+#: DataEntryGramplet/DataEntryGramplet.py:81
+#: DataEntryGramplet/DataEntryGramplet.py:113
+msgid "Death"
+msgstr "Смерть"
+
+#: DataEntryGramplet/DataEntryGramplet.py:89
+msgid "Save"
+msgstr "Зберегти"
+
+#: DataEntryGramplet/DataEntryGramplet.py:92
+msgid "Abandon"
+msgstr "Відмовитися"
+
+#: DataEntryGramplet/DataEntryGramplet.py:97
+msgid "New person"
+msgstr "Нова особа"
+
+#: DataEntryGramplet/DataEntryGramplet.py:98
+msgid "Add relation"
+msgstr "Додати відношення"
+
+#: DataEntryGramplet/DataEntryGramplet.py:99
+msgid "No relation to active person"
+msgstr "Немає відношення до активної особи"
+
+#: DataEntryGramplet/DataEntryGramplet.py:100
+msgid "Add as a Parent"
+msgstr "Додати як батька"
+
+#: DataEntryGramplet/DataEntryGramplet.py:101
+msgid "Add as a Mother"
+msgstr "Додати як матір"
+
+#: DataEntryGramplet/DataEntryGramplet.py:102
+msgid "Add as a Father"
+msgstr "Додати як батька"
+
+#: DataEntryGramplet/DataEntryGramplet.py:103
+msgid "Add as a Spouse"
+msgstr "Додати як подружжя"
+
+#: DataEntryGramplet/DataEntryGramplet.py:104
+msgid "Add as a Wife"
+msgstr "Додати як дружину"
+
+#: DataEntryGramplet/DataEntryGramplet.py:105
+msgid "Add as a Husband"
+msgstr "Додати як чоловіка"
+
+#: DataEntryGramplet/DataEntryGramplet.py:106
+msgid "Add as a Sibling"
+msgstr "Додати як брата/сестру"
+
+#: DataEntryGramplet/DataEntryGramplet.py:107
+msgid "Add as a Child"
+msgstr "Додати як дитину"
+
+#: DataEntryGramplet/DataEntryGramplet.py:121
+msgid "Add"
+msgstr "Додати"
+
+#: DataEntryGramplet/DataEntryGramplet.py:124
+msgid "Copy Active Data"
+msgstr "Копіювати активні дані"
+
+#: DataEntryGramplet/DataEntryGramplet.py:127
+msgid "Clear"
+msgstr "Очистити"
+
+#: DataEntryGramplet/DataEntryGramplet.py:167
+#: DataEntryGramplet/DataEntryGramplet.py:178
+#: DataEntryGramplet/DataEntryGramplet.py:315
+msgid "in"
+msgstr "в"
+
+#: DataEntryGramplet/DataEntryGramplet.py:441
+#: DataEntryGramplet/DataEntryGramplet.py:569
+#, python-format
+msgid "Gramplet Data Edit: %s"
+msgstr "Редагування даних грамплета: %s"
+
+#: DataEntryGramplet/DataEntryGramplet.py:515
+msgid "Please provide a name."
+msgstr "Будь ласка, вкажіть ім'я."
+
+#: DataEntryGramplet/DataEntryGramplet.py:515
+msgid "Can't add new person."
+msgstr "Неможливо додати нову особу."
+
+#: DataEntryGramplet/DataEntryGramplet.py:523
+#: DataEntryGramplet/DataEntryGramplet.py:531
+#: DataEntryGramplet/DataEntryGramplet.py:536
+#: DataEntryGramplet/DataEntryGramplet.py:541
+#: DataEntryGramplet/DataEntryGramplet.py:550
+#: DataEntryGramplet/DataEntryGramplet.py:555
+#: DataEntryGramplet/DataEntryGramplet.py:560
+#: DataEntryGramplet/DataEntryGramplet.py:565
+msgid "Please set an active person."
+msgstr "Будь ласка, виберіть активну особу."
+
+#: DataEntryGramplet/DataEntryGramplet.py:523
+#: DataEntryGramplet/DataEntryGramplet.py:526
+msgid "Can't add new person as a parent."
+msgstr "Неможливо додати нову особу як батька."
+
+#: DataEntryGramplet/DataEntryGramplet.py:526
+#: DataEntryGramplet/DataEntryGramplet.py:545
+msgid "Please set the new person's gender."
+msgstr "Будь ласка, вкажіть стать нової особи."
+
+#: DataEntryGramplet/DataEntryGramplet.py:531
+msgid "Can't add new person as a mother."
+msgstr "Неможливо додати нову особу як матір."
+
+#: DataEntryGramplet/DataEntryGramplet.py:536
+msgid "Can't add new person as a father."
+msgstr "Неможливо додати нову особу як батька."
+
+#: DataEntryGramplet/DataEntryGramplet.py:541
+#: DataEntryGramplet/DataEntryGramplet.py:545
+#: DataEntryGramplet/DataEntryGramplet.py:768
+#: DataEntryGramplet/DataEntryGramplet.py:805
+#: DataEntryGramplet/DataEntryGramplet.py:838
+msgid "Can't add new person as a spouse."
+msgstr "Неможливо додати нову особу як подружжя."
+
+#: DataEntryGramplet/DataEntryGramplet.py:550
+msgid "Can't add new person as a wife."
+msgstr "Неможливо додати нову особу як дружину."
+
+#: DataEntryGramplet/DataEntryGramplet.py:555
+msgid "Can't add new person as a husband."
+msgstr "Неможливо додати нову особу як чоловіка."
+
+#: DataEntryGramplet/DataEntryGramplet.py:560
+msgid "Can't add new person as a sibling."
+msgstr "Неможливо додати нову особу як брата/сестру."
+
+#: DataEntryGramplet/DataEntryGramplet.py:565
+#: DataEntryGramplet/DataEntryGramplet.py:938
+msgid "Can't add new person as a child."
+msgstr "Неможливо додати нову особу як дитину."
+
+#: DataEntryGramplet/DataEntryGramplet.py:763
+msgid "Please set Active person."
+msgstr "Будь ласка, виберіть активну особу."
+
+#: DataEntryGramplet/DataEntryGramplet.py:764
+msgid "Can't add new person as a spouse to no one."
+msgstr "Неможливо додати нову особу як подружжя, якщо ніхто не вибраний."
+
+#: DataEntryGramplet/DataEntryGramplet.py:767
+msgid "Please set gender on Active or new person."
+msgstr "Будь ласка, вкажіть стать для активної або нової особи."
+
+#: DataEntryGramplet/DataEntryGramplet.py:804
+#: DataEntryGramplet/DataEntryGramplet.py:837
+msgid "Same genders on Active and new person."
+msgstr "Однакова стать у активної та нової особи."
+
+#: DataEntryGramplet/DataEntryGramplet.py:937
+msgid "Please set gender on Active person."
+msgstr "Будь ласка, вкажіть стать активної особи."

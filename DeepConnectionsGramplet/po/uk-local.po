@@ -1,0 +1,142 @@
+# Ukrainian translation for DeepConnectionsGramplet
+# This file is distributed under the same license as the Gramps package.
+#
+# Illia Maier <illia@maier.page>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-08 10:42-0500\n"
+"PO-Revision-Date: 2024-10-11 19:17+0300\n"
+"Last-Translator: Illia Maier <illia@maier.page>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
+"gramps/uk/>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:3
+msgid "Deep Connections Gramplet"
+msgstr "Грамплет Глибоких Звʼязків"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:4
+msgid "Gramplet showing a deep relationship between active and home people"
+msgstr "Грамплет, що показує глибокий звʼязок між активною та головною особами"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:10
+msgid "Deep Connections"
+msgstr "Глибокі Звʼязки"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:59
+msgid "Double-click name for details"
+msgstr "Двічі клацніть на імені для деталей"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:60
+msgid "No Family Tree loaded."
+msgstr "Сімейне дерево не завантажене."
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:65
+msgid "Pause"
+msgstr "Призупинити"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:67
+msgid "Continue"
+msgstr "Продовжити"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:69
+msgid "Copy"
+msgstr "Скопіювати"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:107
+msgid "mentioned in note"
+msgstr "згадується в примітці"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:126
+msgid "child"
+msgstr "дитина"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:130
+msgid "husband"
+msgstr "чоловік"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:132
+msgid "wife"
+msgstr "дружина"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:133
+msgid "Note on Family"
+msgstr "Примітка до родини"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:143
+msgid "sibling"
+msgstr "брат/сестра"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:147
+msgid "father"
+msgstr "батько"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:150
+msgid "mother"
+msgstr "мати"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:151
+msgid "Note on Parent Family"
+msgstr "Примітка до батьківської сімʼї"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:154
+#, python-format
+msgid "%s (association)"
+msgstr "%s (асоціація)"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:158
+msgid "Note on Person"
+msgstr "Записка про особу"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:188
+#, python-format
+msgid "\n   %s of "
+msgstr "\n   %s з "
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:206
+msgid "No Home Person set."
+msgstr "Не вибрано головну Особу."
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:209
+msgid "No Active Person set."
+msgstr "Не вибрано активну Особу."
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:213
+msgid "self"
+msgstr "сам"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:217
+msgid "Looking for relationship between\n"
+msgstr "Пошук зв'язку між\n"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:218
+#, python-format
+msgid "  <b>%s</b> (Home Person) and\n"
+msgstr "  <b>%s</b> (Головна Особа) та\n"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:219
+#, python-format
+msgid "  <b>%s</b> (Active Person)...\n"
+msgstr "  <b>%s</b> (Активна Особа)...\n"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:229
+#, python-format
+msgid "Found relation #%d: \n   "
+msgstr "Знайдено зв'язок №%d: \n   "
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:239
+msgid "Paused.\nPress Continue to search for additional relations.\n"
+msgstr "Призупинено.\nНатисніть «Продовжити» для пошуку додаткових звʼязків.\n"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:254
+#, python-format
+msgid "\nSearch completed. %d relations found."
+msgstr "\nПошук завершено. Знайдено %d звʼязків."

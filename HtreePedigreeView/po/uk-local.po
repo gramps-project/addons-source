@@ -1,0 +1,156 @@
+# Ukrainian translation for HtreePedigreeView
+# This file is distributed under the same license as the Gramps package.
+#
+# Illia Maier <illia@maier.page>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"PO-Revision-Date: 2024-10-11 22:00+0300\n"
+"Last-Translator: Illia Maier <illia@maier.page>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
+"gramps/uk/>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: HtreePedigreeView/HtreePedigreeView.gpr.py:41
+msgid "H-Tree Pedigree"
+msgstr "Педигрі H-дерева (H-Tree Pedigree)"
+
+#: HtreePedigreeView/HtreePedigreeView.gpr.py:42
+msgid "Charts"
+msgstr "Графіки"
+
+#: HtreePedigreeView/HtreePedigreeView.gpr.py:43
+msgid ""
+"The view shows a space-efficient pedigree with ancestors of the selected "
+"person"
+msgstr "Цей вигляд показує просторово ефективне родовідне дерево з предками обраної особи"
+
+#: HtreePedigreeView/HtreePedigreeView.py:93
+msgid "short for born|b."
+msgstr "скорочено для народжений|н."
+
+#: HtreePedigreeView/HtreePedigreeView.py:94
+msgid "short for died|d."
+msgstr "скорочено для помер|п."
+
+#: HtreePedigreeView/HtreePedigreeView.py:95
+msgid "short for baptized|bap."
+msgstr "скорочено для охрещений|охр."
+
+#: HtreePedigreeView/HtreePedigreeView.py:96
+msgid "short for christened|chr."
+msgstr "скорочено для хрещений|хр."
+
+#: HtreePedigreeView/HtreePedigreeView.py:97
+msgid "short for buried|bur."
+msgstr "скорочено для похований|пох."
+
+#: HtreePedigreeView/HtreePedigreeView.py:98
+msgid "short for cremated|crem."
+msgstr "скорочено для кремований|крем."
+
+#: HtreePedigreeView/HtreePedigreeView.py:543
+msgid "H-tree Pedigree View"
+msgstr "Вигляд родоводу H-дерева"
+
+#: HtreePedigreeView/HtreePedigreeView.py:691
+msgid "Organize Bookmarks"
+msgstr "Організувати закладки"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1595
+msgid "Relationship loop detected"
+msgstr "Виявлено цикл відносин"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1596
+msgid "A person was found to be his/her own ancestor."
+msgstr "Виявлено, що особа є своїм власним предком."
+
+#: HtreePedigreeView/HtreePedigreeView.py:1640
+msgid "Pre_vious"
+msgstr "По_передній"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1641
+msgid "_Next"
+msgstr "_Наступний"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1642
+msgid "_Home"
+msgstr "_Домівка"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1664
+msgid "Mouse scroll direction"
+msgstr "Напрямок прокрутки миші"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1668
+msgid "Top <-> Bottom"
+msgstr "Згори <-> донизу"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1675
+msgid "Left <-> Right"
+msgstr "Зліва <-> вправо"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1693
+msgid "About H-Tree"
+msgstr "Про H-дерево"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1704
+msgid "_Add"
+msgstr "_Додати"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1739
+#: HtreePedigreeView/HtreePedigreeView.py:1967
+msgid "_Edit"
+msgstr "_Редагувати"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1744
+#: HtreePedigreeView/HtreePedigreeView.py:1972
+msgid "_Copy"
+msgstr "_Копіювати"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1754
+msgid "Spouses"
+msgstr "Подружжя"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1788
+msgid "Siblings"
+msgstr "Брати і сестри"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1830
+msgid "Children"
+msgstr "Діти"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1867
+msgid "Parents"
+msgstr "Батьки"
+
+#: HtreePedigreeView/HtreePedigreeView.py:1904
+msgid "Add New Parents..."
+msgstr "Додати нових батьків..."
+
+#: HtreePedigreeView/HtreePedigreeView.py:1915
+msgid "Related"
+msgstr "Рідні"
+
+#: HtreePedigreeView/HtreePedigreeView.py:2099
+msgid "Show images"
+msgstr "Показати зображення"
+
+#: HtreePedigreeView/HtreePedigreeView.py:2108
+msgid "Show tags"
+msgstr "Показати теги"
+
+#: HtreePedigreeView/HtreePedigreeView.py:2125
+msgid "Tree size"
+msgstr "Розмір дерева"
+
+#: HtreePedigreeView/HtreePedigreeView.py:2129
+msgid "Layout"
+msgstr "Розташування"

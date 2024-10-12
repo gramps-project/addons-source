@@ -1,0 +1,190 @@
+# Ukrainian translation for QuiltView
+# This file is distributed under the same license as the Gramps package.
+#
+# Illia Maier <illia@maier.page>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-09-06 11:50-0500\n"
+"PO-Revision-Date: 2024-10-11 22:00+0300\n"
+"Last-Translator: Illia Maier <illia@maier.page>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
+"gramps/uk/>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: QuiltView/QuiltView.gpr.py:22 QuiltView/QuiltView.gpr.py:33
+msgid "Quilt Chart"
+msgstr "Діаграма Quilt"
+
+#: QuiltView/QuiltView.gpr.py:23
+msgid "Charts"
+msgstr "Діаграми"
+
+#: QuiltView/QuiltView.gpr.py:24
+msgid "The view shows a quilt chart visualisation of a family tree"
+msgstr "Вид показує візуалізацію сімейного дерева у вигляді діаграми Quilt"
+
+#: QuiltView/QuiltView.py:223
+msgid "Quilt chart"
+msgstr "Діаграма Quilt"
+
+#: QuiltView/QuiltView.py:307
+msgid "Select the name for which you want to see."
+msgstr "Виберіть ім'я, яке ви хочете побачити."
+
+#: QuiltView/QuiltView.py:312
+msgid "Clear"
+msgstr "Очистити"
+
+#: QuiltView/QuiltView.py:314
+msgid "Clear the entry field in the name selection box."
+msgstr "Очистити поле введення у вікні вибору імені."
+
+#: QuiltView/QuiltView.py:319
+msgid "Nothing is selected"
+msgstr "Нічого не вибрано"
+
+#: QuiltView/QuiltView.py:375
+msgid "Organize Bookmarks"
+msgstr "Організувати закладки"
+
+#: QuiltView/QuiltView.py:572
+#, python-format
+msgid ""
+"You have %(filter)d filtered people, %(count)d people shown on the tree and "
+"%(total)d people in your database."
+msgstr ""
+"Ви маєте %(filter)d відфільтрованих осіб, %(count)d осіб показано на дереві та "
+"%(total)d осіб у вашій базі даних."
+
+#: QuiltView/QuiltView.py:602
+msgid "Could Not Set a Bookmark"
+msgstr "Не вдалося встановити закладку"
+
+#: QuiltView/QuiltView.py:603
+msgid "A bookmark could not be set because no one was selected."
+msgstr "Не вдалося встановити закладку, оскільки ніхто не був вибраний."
+
+#: QuiltView/QuiltView.py:662
+msgid "Loading individuals"
+msgstr "Завантаження осіб"
+
+#: QuiltView/QuiltView.py:663
+msgid "Loading the data"
+msgstr "Завантаження даних"
+
+#: QuiltView/QuiltView.py:1053
+msgid "About Quilt View"
+msgstr "Про Quilt View"
+
+#: QuiltView/QuiltView.py:1123
+#, python-format
+msgid "Family of %(husband)s and %(spouse)s"
+msgstr "Сім'я %(husband)s і %(spouse)s"
+
+#: QuiltView/QuiltView.py:1129 QuiltView/QuiltView.py:1133
+#, python-format
+msgid "Family of %s"
+msgstr "Сім'я %s"
+
+#: QuiltView/QuiltView.py:1188 QuiltView/QuiltView.py:1317
+msgid "Edit"
+msgstr "Редагувати"
+
+#: QuiltView/QuiltView.py:1191 QuiltView/QuiltView.py:1320
+msgid "Edit tags"
+msgstr "Редагувати теги"
+
+#: QuiltView/QuiltView.py:1207 QuiltView/QuiltView.py:1532
+msgid "Children"
+msgstr "Діти"
+
+#: QuiltView/QuiltView.py:1220 QuiltView/QuiltView.py:1545
+msgid "Add child to family"
+msgstr "Додати дитину до сім'ї"
+
+#: QuiltView/QuiltView.py:1290
+msgid "Add Child to Family"
+msgstr "Додати дитину до сім'ї"
+
+#: QuiltView/QuiltView.py:1323
+msgid "_Copy"
+msgstr "_Копіювати"
+
+#: QuiltView/QuiltView.py:1333
+msgid "Spouses"
+msgstr "Подружжя"
+
+#: QuiltView/QuiltView.py:1338 QuiltView/QuiltView.py:1463
+msgid "Add"
+msgstr "Додати"
+
+#: QuiltView/QuiltView.py:1362
+msgid "Siblings"
+msgstr "Брати і сестри"
+
+#: QuiltView/QuiltView.py:1430
+msgid "Parents"
+msgstr "Батьки"
+
+#: QuiltView/QuiltView.py:1469
+msgid "Related"
+msgstr "Пов'язані"
+
+#: QuiltView/QuiltView.py:1500
+msgid "Set as home person"
+msgstr "Встановити як домашню особу"
+
+#: QuiltView/QuiltView.py:1650
+msgid "Adding Tags"
+msgstr "Додавання тегів"
+
+#: QuiltView/QuiltView.py:1656
+#, python-format
+msgid "Adding Tags to person (%s)"
+msgstr "Додавання тегів до особи (%s)"
+
+#: QuiltView/QuiltView.py:1661
+#, python-format
+msgid "Adding Tags to family (%s)"
+msgstr "Додавання тегів до сім'ї (%s)"
+
+#: QuiltView/QuiltView.py:1865
+msgid "Printing the tree"
+msgstr "Друк дерева"
+
+#: QuiltView/QuiltView.py:1869
+#, python-format
+msgid "Need to print %(pages)s pages (%(format)s format)"
+msgstr "Потрібно надрукувати %(pages)s сторінок (формат %(format)s)"
+
+#: QuiltView/QuiltView.py:1921
+msgid ""
+"Center on the selected person.\n"
+"The new position of the person will be near the top left corner."
+msgstr ""
+"Центрувати на вибраній особі.\n"
+"Нова позиція особи буде біля верхнього лівого кута."
+
+#: QuiltView/QuiltView.py:1926
+msgid "The path color"
+msgstr "Колір шляху"
+
+#: QuiltView/QuiltView.py:1931
+msgid "The selected person color"
+msgstr "Колір вибраної особи"
+
+#: QuiltView/QuiltView.py:1936
+msgid "The path transparency"
+msgstr "Прозорість шляху"
+
+#: QuiltView/QuiltView.py:1939
+msgid "General options"
+msgstr "Загальні параметри"
