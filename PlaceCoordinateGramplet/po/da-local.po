@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-14 10:55-0500\n"
-"PO-Revision-Date: 2024-10-12 16:05+0200\n"
+"PO-Revision-Date: 2024-10-12 16:09+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
 "Language: da_DK\n"
@@ -356,7 +356,7 @@ msgstr "Anvend geo lokation til database"
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:269
 msgid "Go"
-msgstr "Gå"
+msgstr "Udfør"
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:290
 msgid "Show help"
