@@ -1,0 +1,368 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2024-10-12 15:41+0200\n"
+"Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
+"Language-Team: \n"
+"Language: da_DK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: PlaceCompletion/PlaceCompletion.gpr.py:25
+msgid "PlaceCompletion"
+msgstr "PlaceCompletion"
+
+#: PlaceCompletion/PlaceCompletion.gpr.py:26
+msgid ""
+"Provides a browsable list of selected places, with possibility to complete/"
+"parse/set the attribute fields."
+msgstr ""
+"Giver en liste over udvalgte steder, med mulighed for at komplettere/"
+"fortolke/sætte sttributfelterne."
+
+#: PlaceCompletion/PlaceCompletion.py:95
+msgid ""
+"Place Completion by parsing, file lookup and batch setting of place "
+"attributes"
+msgstr ""
+"Stedkomplettering ved at fortolke, feltopslag mængdesætning af sted "
+"attributter"
+
+#: PlaceCompletion/PlaceCompletion.py:258
+msgid "Error in PlaceCompletion.py"
+msgstr "Fejl i PlaceCompletion.py"
+
+#: PlaceCompletion/PlaceCompletion.py:259
+msgid "Non existing group used in get"
+msgstr "Ikke eksisterende gruppe brugt i get"
+
+#: PlaceCompletion/PlaceCompletion.py:282
+#, python-format
+msgid "PlaceCompletion is unable to create %s %s"
+msgstr "PlaceCompletion kan ikke danne %s %s"
+
+#: PlaceCompletion/PlaceCompletion.py:340
+msgid "Places tool"
+msgstr "Sted værktøj"
+
+#: PlaceCompletion/PlaceCompletion.py:408
+msgid "Missing regex groups in match lat/lon"
+msgstr "Manglende regex gruppe i match længde/bredde"
+
+#: PlaceCompletion/PlaceCompletion.py:409
+#, python-format
+msgid ""
+"Regex groups %(lat)s and %(lon)s must be present in lat/lon match. Quiting"
+msgstr ""
+"Regex grupper %(lat)s og %(lon)s skal være tilstede i Bredde/længde match. "
+"Afslutter."
+
+#: PlaceCompletion/PlaceCompletion.py:419
+msgid "Non valid regex for match lat/lon"
+msgstr "Ingen gyldige regex for match bredde/længde"
+
+#: PlaceCompletion/PlaceCompletion.py:420
+msgid "Non valid regular expression given to find lat/lon. Quiting."
+msgstr ""
+"Ingen gyldig Regular expression er givet for at finde bredde/længde. "
+"Afslutter."
+
+#: PlaceCompletion/PlaceCompletion.py:479
+msgid "Finding Places and appropriate changes"
+msgstr "Finder steder og passende ændringer"
+
+#: PlaceCompletion/PlaceCompletion.py:481
+msgid "Filtering"
+msgstr "Filrtrerer"
+
+#: PlaceCompletion/PlaceCompletion.py:491
+msgid "Loading lat/lon file in Memory..."
+msgstr "Indlæser bredde/længde fil i Hukommelsen..."
+
+#: PlaceCompletion/PlaceCompletion.py:497
+msgid "Examining places"
+msgstr "Undersøger steder"
+
+#: PlaceCompletion/PlaceCompletion.py:520
+msgid "City"
+msgstr "By"
+
+#: PlaceCompletion/PlaceCompletion.py:523
+msgid "State"
+msgstr "Stat"
+
+#: PlaceCompletion/PlaceCompletion.py:526
+msgid "Country"
+msgstr "Land"
+
+#: PlaceCompletion/PlaceCompletion.py:685
+msgid "Set Tag"
+msgstr "Sæt mærkat"
+
+#: PlaceCompletion/PlaceCompletion.py:687
+msgid "Doing Place changes"
+msgstr "Danner stedændringer"
+
+#: PlaceCompletion/PlaceCompletion.py:731
+msgid "No place record was modified."
+msgstr "Ingen stedpost blev ænddret"
+
+#: PlaceCompletion/PlaceCompletion.py:733
+msgid "1 place record was modified."
+msgstr "1 Stedpost blev ændret"
+
+#: PlaceCompletion/PlaceCompletion.py:735
+#, python-format
+msgid "%d place records were modified."
+msgstr "%d stedposter blev ændret"
+
+#: PlaceCompletion/PlaceCompletion.py:736
+msgid "Change places"
+msgstr "Ret steder"
+
+#: PlaceCompletion/PlaceCompletion.py:808
+#: PlaceCompletion/PlaceCompletion.py:814
+#: PlaceCompletion/PlaceCompletion.py:819
+#: PlaceCompletion/PlaceCompletion.py:825
+msgid "Cannot open file"
+msgstr "Kan ikke åbne fil"
+
+#: PlaceCompletion/PlaceCompletion.py:809
+msgid "The selected file is a directory, not a file."
+msgstr "den valgte fil er en mappe, ikke en fil."
+
+#: PlaceCompletion/PlaceCompletion.py:815
+msgid "You do not have read access to the selected file."
+msgstr "Du har ikke rettigheder for at tilgå den valgte fil."
+
+#: PlaceCompletion/PlaceCompletion.py:820
+msgid "The file you want to access is not a regular file."
+msgstr "Filen som du vil tilgå er ikke en almindelig fil."
+
+#: PlaceCompletion/PlaceCompletion.py:826
+msgid "The file does not exist."
+msgstr "Filen findes ikke."
+
+#: PlaceCompletion/PlaceCompletion.py:858
+msgid "Problem reading file"
+msgstr "Problem ved læsning af filen"
+
+#: PlaceCompletion/PlaceCompletion.py:970
+#: PlaceCompletion/PlaceCompletion.py:982
+#, python-format
+msgid "invalid lat or lon value, %(lat)s, %(lon)s"
+msgstr "ugyldige bredde eller længde værdier, %(lat)s, %(lon)s"
+
+#: PlaceCompletion/PlaceCompletion.py:1135
+msgid "No lat/lon conversion"
+msgstr "Ingen bredde/længde konvertering"
+
+#: PlaceCompletion/PlaceCompletion.py:1136
+msgid "All in degree notation"
+msgstr "Alt i gradnotation"
+
+#: PlaceCompletion/PlaceCompletion.py:1137
+msgid "All in decimal notation"
+msgstr "Alt i decimalnotation"
+
+#: PlaceCompletion/PlaceCompletion.py:1138
+msgid "Correct -50° in 50°S"
+msgstr "Ret -50° i 50°S"
+
+#: PlaceCompletion/PlaceCompletion.py:1142
+msgid "No changes"
+msgstr "Ingen ændringer"
+
+#: PlaceCompletion/PlaceCompletion.py:1143
+msgid "City[, State]"
+msgstr "By[,stat]"
+
+#: PlaceCompletion/PlaceCompletion.py:1145
+msgid "City,PostalCode,Country"
+msgstr "By,Postnummer,Land"
+
+#: PlaceCompletion/PlaceCompletion.py:1147
+msgid "City[(Street;Locality;Parish)],PostalCode,Country"
+msgstr "City[(Gade;Lokalitet;Sogn)],Postnummer,Land"
+
+#: PlaceCompletion/PlaceCompletion.py:1149
+msgid "TitleStart [, City] [, State]"
+msgstr "StartTitel[,By][,Stat]"
+
+#: PlaceCompletion/PlaceCompletion.py:1151
+msgid "TitleStart [, City] [, County] [, State] [, Country]"
+msgstr "Starttitel [, By] [, Amt] [, Stat] [, Land]"
+
+#: PlaceCompletion/PlaceCompletion.py:1153
+msgid "TitleStart [, City] [, Zip] [, County] [, State] [, Country]"
+msgstr "StartTitel [, By] [, Postnr] [, AMt] [, Stat] [, Land]"
+
+#: PlaceCompletion/PlaceCompletion.py:1177
+msgid "Don't search"
+msgstr "Søg ikke"
+
+#: PlaceCompletion/PlaceCompletion.py:1180
+msgid "GeoNames country file, city search"
+msgstr "GeoNames landefil, Bysøgning"
+
+#: PlaceCompletion/PlaceCompletion.py:1185
+msgid "GeoNames country file, city localized variants search"
+msgstr "GeoNames landefil, Bylokaliseret variant søgning"
+
+#: PlaceCompletion/PlaceCompletion.py:1190
+msgid "GeoNames country file, county/city search"
+msgstr "GeoNames landefil, amt/by søgning"
+
+#: PlaceCompletion/PlaceCompletion.py:1202
+msgid "GeoNames country file, title begin, general search"
+msgstr "GeoNames landefil, titel begynd, standardsøgning"
+
+#: PlaceCompletion/PlaceCompletion.py:1207
+msgid "GeoNames USA state file, city search"
+msgstr "GeoNames USA statsfil, bysøgning"
+
+#: PlaceCompletion/PlaceCompletion.py:1221
+msgid "GNS Geonet country file, city search"
+msgstr "GNS Geonet landefil, bysøgning"
+
+#: PlaceCompletion/PlaceCompletion.py:1228
+msgid "GNS Geonet country file, county/city search"
+msgstr "GNS Geonet landefil, amt/by søgning"
+
+#: PlaceCompletion/PlaceCompletion.py:1236
+msgid "GNS Geonet country file, title begin, general search"
+msgstr "GNS Geonet landefil, titel begynd, standardsøgning"
+
+#: PlaceCompletion/PlaceCompletion.py:1244
+msgid "Wikipedia CSV Dump"
+msgstr "Wikipedia CSV Dump"
+
+#: PlaceCompletion/PlaceCompletion.py:1332
+msgid "All Places"
+msgstr "Alle steder"
+
+#: PlaceCompletion/PlaceCompletion.py:1335
+msgid "No Latitude/Longitude given"
+msgstr "Ingen breddegrad/længdegrad angivet"
+
+#: PlaceCompletion/placecompletion.glade:85
+msgid "_Google Maps"
+msgstr "_Google Maps"
+
+#: PlaceCompletion/placecompletion.glade:112
+msgid "Apply all suggested changes"
+msgstr "Anvend alle foreslåede ændringer"
+
+#: PlaceCompletion/placecompletion.glade:148
+msgid "Selection of the Places you want to complete:"
+msgstr "Valg af pladser du vil komplettere: "
+
+#: PlaceCompletion/placecompletion.glade:178
+msgid "C_ity:"
+msgstr "B_y:"
+
+#: PlaceCompletion/placecompletion.glade:195
+msgid "Parish:"
+msgstr "Sogn:"
+
+#: PlaceCompletion/placecompletion.glade:240
+msgid "County:"
+msgstr "Amt:"
+
+#: PlaceCompletion/placecompletion.glade:271
+msgid "Place _filter:"
+msgstr "Sted_filter"
+
+#: PlaceCompletion/placecompletion.glade:321
+msgid "State:"
+msgstr "Stat:"
+
+#: PlaceCompletion/placecompletion.glade:336
+msgid "Count_ry:"
+msgstr "Lan_nd:"
+
+#: PlaceCompletion/placecompletion.glade:366
+msgid "C_enter latitude:"
+msgstr "C_entrums breddegrad:"
+
+#: PlaceCompletion/placecompletion.glade:383
+msgid "Center longitude:"
+msgstr "Centrum længdegrad:"
+
+#: PlaceCompletion/placecompletion.glade:430
+msgid "Places in a rectangle:"
+msgstr "Steder i en firkant:"
+
+#: PlaceCompletion/placecompletion.glade:443
+msgid "Width:"
+msgstr "Bredde::"
+
+#: PlaceCompletion/placecompletion.glade:460
+msgid "Height:"
+msgstr "Højde:"
+
+#: PlaceCompletion/placecompletion.glade:527
+msgid "1. Look up latitude and longitude:"
+msgstr "1. Slå breddegrad og længdegrad op:"
+
+#: PlaceCompletion/placecompletion.glade:554
+msgid "Search in:"
+msgstr "Søg i:"
+
+#: PlaceCompletion/placecompletion.glade:566
+msgid "Select A File"
+msgstr "Vælg en fil"
+
+#: PlaceCompletion/placecompletion.glade:579
+msgid "Parse as:"
+msgstr "Fortolk som:"
+
+#: PlaceCompletion/placecompletion.glade:619
+msgid "2. Conversion of existing title or position:"
+msgstr "2. Konvertering af eksisterende titel eller position:"
+
+#: PlaceCompletion/placecompletion.glade:649
+msgid "Change title into:"
+msgstr "Ret titlen til:"
+
+#: PlaceCompletion/placecompletion.glade:664
+msgid "Convert lat/lon as:"
+msgstr "Konverter bredde/længde som:"
+
+#: PlaceCompletion/placecompletion.glade:701
+msgid ""
+"Or define a simple\n"
+"title format:"
+msgstr ""
+"Eller definer et simpelt\n"
+"titelformat:"
+
+#: PlaceCompletion/placecompletion.glade:730
+msgid ""
+"Available variables: city, street, locality, parish, county, state, country, "
+"postal_code"
+msgstr ""
+"Tilgengælige variabler: by, gade, lokalitet, sogn, amt, stat, land, "
+"postnummer"
+
+#: PlaceCompletion/placecompletion.glade:820
+msgid ""
+"Delete to delete a row, Double-click on the row to edit place with changes "
+"pre-entered, \n"
+"Press Tab on a row or Google Maps button to see place on a map. Press Apply "
+"to do all changes automatically"
+msgstr ""
+"Slet for at slette en række.Dobbelklik på rækken for at rette stedet med "
+"ændringerne forudindtastet.\n"
+"Tryk tab på en række eller google Maps knappen for at se stedet på et kort. "
+"Tryk anvend for at udføre alle ændringerne automatisk"
