@@ -1,0 +1,232 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-09-01 14:05-0500\n"
+"PO-Revision-Date: 2024-10-13 09:22+0200\n"
+"Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
+"Language-Team: \n"
+"Language: da_DK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: PluginManager/PluginManager.gpr.py:29
+msgid "Plugin Manager Enhanced"
+msgstr "Udvidet plugin kontrol"
+
+#: PluginManager/PluginManager.gpr.py:30
+msgid "An Addon/Plugin Manager with several additional capabilities"
+msgstr "En tillægs/plugin kontrol med flere adskillige flere muligheder"
+
+#: PluginManager/PluginManager.py:84
+msgid "Plugin Manager - Enhanced"
+msgstr "Udvidet plugin kontrol"
+
+#: PluginManager/PluginManager.py:147
+msgid "_Help"
+msgstr "_Hjælp"
+
+#: PluginManager/PluginManager.py:154
+msgid ""
+"Enter search words to filter the addons.\n"
+"All the words must be present somewhere in the row or\n"
+"the addon filename to be included in the search.\n"
+"Word case and order is ignored."
+msgstr ""
+"Angiv søgeord for at filtrere tillægene.\n"
+"Alle ordene skal være tilstede i rækken eller\n"
+"i tillægsfilnavnet for at komme med i søgningen.\n"
+"Små/store bogstaver eller rækkefølge bliver ignoreret."
+
+#: PluginManager/PluginManager.py:158
+msgid "Search..."
+msgstr "Søg...."
+
+#: PluginManager/PluginManager.py:167
+msgid "Reload"
+msgstr "Genindlæs"
+
+#: PluginManager/PluginManager.py:173
+msgid "_Close"
+msgstr "_Luk"
+
+#: PluginManager/PluginManager.py:216
+msgid "Restart..."
+msgstr "Genstart..."
+
+#: PluginManager/PluginManager.py:217
+msgid "Please Restart Gramps so that your addon changes can be safely completed."
+msgstr "Genstart venligst Gramps så dine ændringer til tillægget kan blive sikkert afsluttet."
+
+#: PluginManager/PluginManager.py:312
+msgid "Installation Errors"
+msgstr "Installationsfejl"
+
+#: PluginManager/PluginManager.py:313
+msgid "The following addons had errors: "
+msgstr "De følgende tillægsprogrammer havde fejl: "
+
+#: PluginManager/PluginManager.py:335
+msgid "Error"
+msgstr "Fejl"
+
+#: PluginManager/PluginManager.py:336
+#, python-format
+msgid "Error removing the '%s' directory, The uninstall may have failed"
+msgstr "Fejl ved sletning af '%s' mappen. Afinstalleringen har måske fejlet"
+
+#: PluginManager/PluginManager.py:364
+msgid "Type"
+msgstr "Type"
+
+#: PluginManager/PluginManager.py:373 PluginManager/PluginManager.py:649
+msgid "Status"
+msgstr "Status"
+
+#: PluginManager/PluginManager.py:376
+msgid ""
+"'*' items are supplied by 3rd party authors,\n"
+"<s>strikeout</s> items are hidden"
+msgstr ""
+"'*' elementer leveret fa 3 parts ophavsmand,\n"
+"<s>overstregede</s> er skjult"
+
+#: PluginManager/PluginManager.py:384
+msgid "Name"
+msgstr "Navn"
+
+#: PluginManager/PluginManager.py:392 PluginManager/PluginManager.py:641
+msgid "Description"
+msgstr "Beskrivelse"
+
+#: PluginManager/PluginManager.py:407
+msgid "Wiki"
+msgstr "Wiki"
+
+#: PluginManager/PluginManager.py:410 PluginManager/PluginManager.py:530
+msgid "Hide"
+msgstr "Skjul"
+
+#: PluginManager/PluginManager.py:413 PluginManager/PluginManager.py:544
+msgid "Install"
+msgstr "Installer"
+
+#: PluginManager/PluginManager.py:416
+msgid "Edit"
+msgstr "Redigér"
+
+#: PluginManager/PluginManager.py:418
+msgid "Load"
+msgstr "Indlæs"
+
+#: PluginManager/PluginManager.py:430
+msgid "Show hidden items"
+msgstr "Vis skjulte elementer"
+
+#: PluginManager/PluginManager.py:438
+msgid "Show Built-in items"
+msgstr "Vis indbyggede elementer"
+
+#: PluginManager/PluginManager.py:445
+msgid "* indicates 3rd party addon"
+msgstr "* indikerer 3 parts tillæg"
+
+#: PluginManager/PluginManager.py:450
+msgid "Plugins"
+msgstr "Udvidelsesmoduler"
+
+#: PluginManager/PluginManager.py:528
+msgid "Unhide"
+msgstr "Gør synlig"
+
+#: PluginManager/PluginManager.py:547
+msgid "Uninstall"
+msgstr "Afinstaller"
+
+#: PluginManager/PluginManager.py:590
+msgid "Executables"
+msgstr "Eksekverbare filer"
+
+#: PluginManager/PluginManager.py:593
+msgid "Python modules"
+msgstr "Python-moduler"
+
+#: PluginManager/PluginManager.py:604
+msgid "GObject introspection modules"
+msgstr "GObject-introspektionsmoduler"
+
+#: PluginManager/PluginManager.py:638
+msgid "Plugin name"
+msgstr "Navn på udvidelsesmodul"
+
+#: PluginManager/PluginManager.py:639
+msgid "Id"
+msgstr "Id"
+
+#: PluginManager/PluginManager.py:640
+msgid "Version"
+msgstr "Version"
+
+#: PluginManager/PluginManager.py:642
+msgid "Filename"
+msgstr "Filnavn"
+
+#: PluginManager/PluginManager.py:643
+msgid "Location"
+msgstr "Sted"
+
+#: PluginManager/PluginManager.py:645
+msgid "Authors"
+msgstr "Ophavsmænd"
+
+#: PluginManager/PluginManager.py:647
+msgid "Email"
+msgstr "E-post"
+
+#: PluginManager/PluginManager.py:648
+msgid "Audience"
+msgstr "Publikum"
+
+#: PluginManager/PluginManager.py:663
+msgid "Help"
+msgstr "Hjælp"
+
+#: PluginManager/PluginManager.py:667
+msgid "Requires"
+msgstr "Kræver"
+
+#: PluginManager/PluginManager.py:675
+msgid "Loaded"
+msgstr "Indlæste"
+
+#: PluginManager/PluginManager.py:678
+msgid "Hidden"
+msgstr "Skjulte"
+
+#: PluginManager/PluginManager.py:686 PluginManager/PluginManager.py:748
+msgid "Failed"
+msgstr "Fejlede"
+
+#: PluginManager/PluginManager.py:721
+msgid "*Available"
+msgstr "*Tilgængelige"
+
+#: PluginManager/PluginManager.py:737
+msgid "Built-in"
+msgstr "Indbyggede"
+
+#: PluginManager/PluginManager.py:742
+msgid "*Installed"
+msgstr "*Installerede"
+
+#: PluginManager/PluginManager.py:751
+msgid "Update Available"
+msgstr "Opdatering tilgængelig"
