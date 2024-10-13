@@ -589,6 +589,7 @@ class TimelinePedigreeView(NavigationView):
         is no need to store the database, since we will get the value
         from self.state.db
         """
+        db.connect('event-update', self.person_rebuild)
         db.connect('person-add', self.person_rebuild)
         db.connect('person-update', self.person_rebuild)
         db.connect('person-delete', self.person_rebuild)
@@ -600,6 +601,9 @@ class TimelinePedigreeView(NavigationView):
         self.bookmarks.update_bookmarks()
         if self.active:
             self.bookmarks.redraw()
+        # clear the caches on loading a different tree
+        self._birth_cache = {}              
+        self.format_helper.clear_cache()
         self.build_tree()
 
     def navigation_type(self):
@@ -620,6 +624,7 @@ class TimelinePedigreeView(NavigationView):
     def person_rebuild(self, dummy=None):
         """Callback function for signals of change database."""
         self.format_helper.clear_cache()
+        self._birth_cache = {}
         self.dirty = True
         self.Tree_Rebuild()
 
