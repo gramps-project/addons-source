@@ -1,0 +1,166 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-08-29 10:15-0500\n"
+"PO-Revision-Date: 2024-10-14 11:23+0200\n"
+"Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
+"Language-Team: \n"
+"Language: da_DK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: SetPrivacyTool/SetPrivacyTool.gpr.py:23 SetPrivacyTool/SetPrivacyTool.py:51
+#: SetPrivacyTool/SetPrivacyTool.py:93 SetPrivacyTool/SetPrivacyTool.py:96
+#: SetPrivacyTool/SetPrivacyTool.py:146 SetPrivacyTool/SetPrivacyTool.py:186
+#: SetPrivacyTool/SetPrivacyTool.py:226 SetPrivacyTool/SetPrivacyTool.py:255
+msgid "Set Privacy Tool"
+msgstr "Sæt Personbeskyttelse Værktøj"
+
+#: SetPrivacyTool/SetPrivacyTool.gpr.py:24
+msgid "Set all objects of the last <number> of years private."
+msgstr "Sæt alle objekter for de seneste <number> år til privat."
+
+#: SetPrivacyTool/SetPrivacyTool.py:90
+#, python-format
+msgid "Set private: %d %s\n"
+msgstr "Sæt privat: %d %s\n"
+
+#: SetPrivacyTool/SetPrivacyTool.py:92
+#, python-format
+msgid "Not private: %d %s\n"
+msgstr "Ikke privat: %d %s\n"
+
+#: SetPrivacyTool/SetPrivacyTool.py:107
+msgid "Set persons private.."
+msgstr "Sæt personer til privat.."
+
+#: SetPrivacyTool/SetPrivacyTool.py:157
+msgid "Set events private.."
+msgstr "Sæt hændelser til privat.."
+
+#: SetPrivacyTool/SetPrivacyTool.py:197
+msgid "Set media private.."
+msgstr "Sæt medier til privat.."
+
+#: SetPrivacyTool/SetPrivacyTool.py:230
+msgid "Set adresses private.."
+msgstr "Sæt adresser til privat.."
+
+#: SetPrivacyTool/SetPrivacyTool.py:259
+msgid "Set internet objects private.."
+msgstr "Sæt internetobjekter til privat.."
+
+#: SetPrivacyTool/SetPrivacyTool.py:300
+msgid "Years"
+msgstr "År"
+
+#: SetPrivacyTool/SetPrivacyTool.py:301
+msgid ""
+"The time range in years from today you want to set objects private.\n"
+"'0 years' = remove privacy from all objects."
+msgstr ""
+"Tidsrummet i år fra i dag som du vil sætte  objekter til privat.\n"
+"'0 år' = fjern privat fra alle objekter."
+
+#: SetPrivacyTool/SetPrivacyTool.py:304 SetPrivacyTool/SetPrivacyTool.py:309
+#: SetPrivacyTool/SetPrivacyTool.py:313 SetPrivacyTool/SetPrivacyTool.py:321
+#: SetPrivacyTool/SetPrivacyTool.py:325 SetPrivacyTool/SetPrivacyTool.py:333
+#: SetPrivacyTool/SetPrivacyTool.py:337 SetPrivacyTool/SetPrivacyTool.py:345
+#: SetPrivacyTool/SetPrivacyTool.py:355 SetPrivacyTool/SetPrivacyTool.py:358
+#: SetPrivacyTool/SetPrivacyTool.py:361
+msgid "Option"
+msgstr "Tilvalg"
+
+#: SetPrivacyTool/SetPrivacyTool.py:306
+msgid "Always private if no date."
+msgstr "Altid privat hvis ingen dato."
+
+#: SetPrivacyTool/SetPrivacyTool.py:307
+msgid "If checked, all objects without a date will also be set private."
+msgstr "Hvis valgt vil alle objekter uden en dato blive sat til privat."
+
+#: SetPrivacyTool/SetPrivacyTool.py:311
+msgid "Person Filter"
+msgstr "Personfilter"
+
+#: SetPrivacyTool/SetPrivacyTool.py:312
+msgid "Select filter to restrict people"
+msgstr "Vælg filter til personafgrænsning"
+
+#: SetPrivacyTool/SetPrivacyTool.py:315 SetPrivacyTool/SetPrivacyTool.py:327
+#: SetPrivacyTool/SetPrivacyTool.py:339
+msgid "Entire Database"
+msgstr "Hele databasen"
+
+#: SetPrivacyTool/SetPrivacyTool.py:320
+msgid "Persons"
+msgstr "Personer"
+
+#: SetPrivacyTool/SetPrivacyTool.py:323
+msgid "Event Filter"
+msgstr "Hændelsesfilter"
+
+#: SetPrivacyTool/SetPrivacyTool.py:324
+msgid "Select filter to restrict events"
+msgstr "Vælg filter til afgrænsning af hændelser"
+
+#: SetPrivacyTool/SetPrivacyTool.py:332
+msgid "Events"
+msgstr "Hændelser"
+
+#: SetPrivacyTool/SetPrivacyTool.py:335
+msgid "Media Filter"
+msgstr "Mediefilter"
+
+#: SetPrivacyTool/SetPrivacyTool.py:336
+msgid "Select filter to restrict medias"
+msgstr "Vælg filter til afgrænsning af medier"
+
+#: SetPrivacyTool/SetPrivacyTool.py:344
+msgid "Media"
+msgstr "Medier"
+
+#: SetPrivacyTool/SetPrivacyTool.py:347
+msgid "Internet type filter"
+msgstr "Internet type filter"
+
+#: SetPrivacyTool/SetPrivacyTool.py:348
+msgid "All"
+msgstr "Alle"
+
+#: SetPrivacyTool/SetPrivacyTool.py:349
+msgid "Unknown"
+msgstr "Ukendt"
+
+#: SetPrivacyTool/SetPrivacyTool.py:351
+msgid "E-Mail"
+msgstr "E-post"
+
+#: SetPrivacyTool/SetPrivacyTool.py:352
+msgid "Web Home"
+msgstr "Hjemmeside"
+
+#: SetPrivacyTool/SetPrivacyTool.py:353
+msgid "Web Search"
+msgstr "Søgning på internet"
+
+#: SetPrivacyTool/SetPrivacyTool.py:354
+msgid "FTP"
+msgstr "FTP"
+
+#: SetPrivacyTool/SetPrivacyTool.py:357
+msgid "Internet"
+msgstr "Internet"
+
+#: SetPrivacyTool/SetPrivacyTool.py:360
+msgid "Address"
+msgstr "Adresse"
