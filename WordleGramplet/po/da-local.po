@@ -1,0 +1,72 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-10-21 08:49+1100\n"
+"PO-Revision-Date: 2024-10-14 16:12+0200\n"
+"Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
+"Language-Team: \n"
+"Language: da_DK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: WordleGramplet/WordleGramplet.gpr.py:4
+#: WordleGramplet/WordleGramplet.gpr.py:10
+msgid "Wordle"
+msgstr "Wordle"
+
+#: WordleGramplet/WordleGramplet.gpr.py:13
+msgid "Gramplet used to make word clouds with wordle.net"
+msgstr "Gramplet der benyttes til at danne ordskyer fra wordle.net"
+
+#: WordleGramplet/WordleGramplet.py:72
+msgid "Double-click surname for details"
+msgstr "Dobbeltklik på et efternavn for detaljer"
+
+#: WordleGramplet/WordleGramplet.py:74
+msgid "No Family Tree loaded."
+msgstr "Ingen slægtsbog indlæst."
+
+#: WordleGramplet/WordleGramplet.py:91
+msgid "Processing..."
+msgstr "Behandler ..."
+
+#: WordleGramplet/WordleGramplet.py:126
+msgid "[Missing]"
+msgstr "[Mangler]"
+
+#: WordleGramplet/WordleGramplet.py:134
+msgid "Total unique surnames"
+msgstr "Sum af unikke efternavne"
+
+#: WordleGramplet/WordleGramplet.py:136
+msgid "Total people"
+msgstr "Sum af personer"
+
+#: WordleGramplet/WordleGramplet.py:140
+msgid "Number of font sizes"
+msgstr "Antal af fontstørrelser"
+
+#: WordleGramplet/WordleGramplet.py:143
+msgid "Filter"
+msgstr "Filter"
+
+#: WordleGramplet/WordleGramplet.py:144
+msgid "Select filter to restrict list"
+msgstr "Vælg filter til afgrænse listen"
+
+#: WordleGramplet/WordleGramplet.py:148
+msgid "Filter Person"
+msgstr "Person til filter"
+
+#: WordleGramplet/WordleGramplet.py:149
+msgid "The center person for the filter"
+msgstr "Fokusperson for filteret"

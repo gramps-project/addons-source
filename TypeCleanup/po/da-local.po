@@ -1,0 +1,185 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-12-27 13:30-0600\n"
+"PO-Revision-Date: 2024-10-14 16:09+0200\n"
+"Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
+"Language-Team: \n"
+"Language: da_DK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: TypeCleanup/type_cleanup.gpr.py:29
+msgid "Type Cleanup"
+msgstr "Typerensning"
+
+#: TypeCleanup/type_cleanup.gpr.py:30
+msgid "Clean up (remove) custom types"
+msgstr "Rens (fjern) tilpassede typer"
+
+#: TypeCleanup/type_cleanup.py:96
+msgid "Event Attributes"
+msgstr "Hændelsesattributter"
+
+#: TypeCleanup/type_cleanup.py:97
+msgid "Family Attributes"
+msgstr "Familieattributter"
+
+#: TypeCleanup/type_cleanup.py:98
+msgid "Media Attributes"
+msgstr "Medie-attributter"
+
+#: TypeCleanup/type_cleanup.py:99
+msgid "Person Attributes"
+msgstr "Personattributter"
+
+#: TypeCleanup/type_cleanup.py:101
+msgid "Event Roles"
+msgstr "Hændelsesroller"
+
+#: TypeCleanup/type_cleanup.py:102
+msgid "Event Types"
+msgstr "Hændelsestyper"
+
+#: TypeCleanup/type_cleanup.py:103
+msgid "Family Relation Types"
+msgstr "Familie slægtskabstyper"
+
+#: TypeCleanup/type_cleanup.py:104
+msgid "Child reference Types"
+msgstr "Børne henvisningstyper"
+
+#: TypeCleanup/type_cleanup.py:105
+msgid "Name Origin Types"
+msgstr "Navne oprindelsestyper"
+
+#: TypeCleanup/type_cleanup.py:106
+msgid "Name Types"
+msgstr "Navne typer"
+
+#: TypeCleanup/type_cleanup.py:107
+msgid "Note Types"
+msgstr "Note typer"
+
+#: TypeCleanup/type_cleanup.py:108
+msgid "Place Types"
+msgstr "Sted typer"
+
+#: TypeCleanup/type_cleanup.py:109
+msgid "Repository Types"
+msgstr "Arkiv typer"
+
+#: TypeCleanup/type_cleanup.py:110
+msgid "Source Attributes"
+msgstr "Kilde-attributter"
+
+#: TypeCleanup/type_cleanup.py:111
+msgid "Source Media Types"
+msgstr "Kilde medietyper"
+
+#: TypeCleanup/type_cleanup.py:112
+msgid "URL Types"
+msgstr "URL typer"
+
+#: TypeCleanup/type_cleanup.py:124
+msgid "Types Cleanup Tool"
+msgstr "Type rensningsværktøj"
+
+#: TypeCleanup/type_cleanup.py:160
+msgid "Help"
+msgstr "Hjælp"
+
+#: TypeCleanup/type_cleanup.py:164
+msgid "Remove"
+msgstr "Fjern"
+
+#: TypeCleanup/type_cleanup.py:166
+msgid ""
+"Remove the selected type from the db.\n"
+"This does not change any referenced objects."
+msgstr ""
+"Fjern de valgte typer fra db.\n"
+"Dette ændre ikke nogen af de henviste objekter."
+
+#: TypeCleanup/type_cleanup.py:174
+msgid ""
+"Select a new name for the current type, prior to renaming the type in the "
+"referenced objects."
+msgstr ""
+"Vælg et nyt navn for den nuværende type, før at typen omdøbes i de "
+"henviste objekter."
+
+#: TypeCleanup/type_cleanup.py:182
+msgid "Rename"
+msgstr "Omdøb"
+
+#: TypeCleanup/type_cleanup.py:185
+msgid "Rename the selected type in all referenced objects."
+msgstr "Omdøb de valgte typer i alle henviste objekter."
+
+#: TypeCleanup/type_cleanup.py:188
+msgid "Close"
+msgstr "Luk"
+
+#: TypeCleanup/type_cleanup.py:189
+msgid "Close the Type Cleanup Tool"
+msgstr "Afslut værktøjet til typerensning"
+
+#: TypeCleanup/type_cleanup.py:195
+msgid "Types"
+msgstr "Typer"
+
+#: TypeCleanup/type_cleanup.py:214
+msgid "Type"
+msgstr "Type"
+
+#: TypeCleanup/type_cleanup.py:221
+msgid "References"
+msgstr "Henvisninger"
+
+#: TypeCleanup/type_cleanup.py:242
+msgid "Type Cleanup Tool"
+msgstr "Typer rensningsværktøj"
+
+#: TypeCleanup/type_cleanup.py:275
+msgid "Reading database..."
+msgstr "Læser database ..."
+
+#: TypeCleanup/type_cleanup.py:387
+#, python-format
+msgid "Changing type from %(old_type)s to %(new_type)s."
+msgstr "Skifter type fra %(old_type)s til %(new_type)s."
+
+#: TypeCleanup/type_cleanup.py:432
+msgid ""
+"Removing this custom type will eliminate it from the type selection drop "
+"down lists\n"
+"and further runs of this tool.\n"
+"\n"
+"However, it will not remove it from the referenced items in the "
+"database.\n"
+"If you want to change it in referenced items, use 'Rename'."
+msgstr ""
+"Fjernelse af denne tilpassede type vil fjerne den fra \"drop down "
+"lister\"\n"
+"og yderligere udførsler af dette værktøj.\n"
+"\n"
+"Men den vil ikke fjerne den fra henviste elementer i databasen.\n"
+"Hvis du vil skifte den i henviste elementer, så benyt 'Omdøb'."
+
+#: TypeCleanup/type_cleanup.py:437
+msgid "_Remove"
+msgstr "_Fjern"
+
+#: TypeCleanup/type_cleanup.py:437
+msgid "_Stop"
+msgstr "_Stop"
