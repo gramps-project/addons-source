@@ -1,0 +1,161 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-10-06 15:58-0500\n"
+"PO-Revision-Date: 2024-10-14 15:24+0200\n"
+"Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
+"Language-Team: \n"
+"Language: da_DK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:40
+msgid "Timeline Pedigree"
+msgstr "Tidslinje anetræ"
+
+#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:41
+msgid "Ancestry"
+msgstr "Aner"
+
+#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:42
+msgid ""
+"The view shows a timeline pedigree with ancestors and descendants of the "
+"selected person"
+msgstr ""
+"Visningen viser en tidslinje med aner og efterkommere af den valgte "
+"person"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:82
+msgid "short for born|b."
+msgstr "f."
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:83
+msgid "short for died|d."
+msgstr "d."
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:84
+msgid "short for baptized|bap."
+msgstr "døbt"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:85
+msgid "short for christened|chr."
+msgstr "døbt"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:86
+msgid "short for buried|bur."
+msgstr "begr."
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:87
+msgid "short for cremated|crem."
+msgstr "krem."
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:339
+msgid "Timeline pedigree"
+msgstr "Tidslinje anetræ"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:502
+msgid "Organize Bookmarks"
+msgstr "Organisér bogmærker"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:854
+msgid "Relationship loop detected"
+msgstr "Slægtskabsløkke fundet"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:855
+msgid "A person was found to be his/her own ancestor."
+msgstr "En person er angivet som hans eller hendes egen ane."
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1408
+msgid "_Home"
+msgstr "_Hjem"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1428
+msgid "Show images"
+msgstr "Vis billeder"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1430
+msgid "Show marriage data"
+msgstr "Vis oplysninger om ægteskab"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1432
+msgid "Order by timeline"
+msgstr "Orden efter tidslinje"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1434
+msgid "Show lifespan"
+msgstr "Vis livstidsomfang"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1437
+msgid "Mouse scroll direction"
+msgstr "Retning for muserulning"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1441
+msgid "Top <-> Bottom"
+msgstr "Top <-> bund"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1448
+msgid "Left <-> Right"
+msgstr "Venstre <-> højre"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1460
+msgid "Descendant Generations"
+msgstr "Efterkommer generationer"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1465
+#: TimelinePedigreeView/TimelinePedigreeView.py:1481
+#, python-format
+msgid "%d generation"
+msgid_plural "%d generations"
+msgstr[0] "%d generation"
+msgstr[1] "%d generationer"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1476
+msgid "Ancestor Generations"
+msgstr "Ane generationer"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1500
+msgid "About Timeline Pedigree View"
+msgstr "Om tidslinjeanetræ"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1519
+msgid "_Add"
+msgstr "_Tilføj"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1549
+#: TimelinePedigreeView/TimelinePedigreeView.py:1766
+msgid "_Edit"
+msgstr "_Redigér"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1554
+#: TimelinePedigreeView/TimelinePedigreeView.py:1771
+msgid "_Copy"
+msgstr "_Kopier"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1564
+msgid "Spouses"
+msgstr "Ægtefæller"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1597
+msgid "Siblings"
+msgstr "Søskende"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1639
+msgid "Children"
+msgstr "Børn"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1676
+msgid "Parents"
+msgstr "Forældre"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1714
+msgid "Related"
+msgstr "Beslægtede"

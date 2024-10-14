@@ -1,0 +1,209 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-09-06 11:51-0500\n"
+"PO-Revision-Date: 2024-10-14 15:43+0200\n"
+"Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
+"Language-Team: \n"
+"Language: da_DK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: TMGimporter/importtmg.gpr.py:47
+msgid "TMG Project Backup"
+msgstr "Sikkerhedskopier TMG projekt"
+
+#: TMGimporter/importtmg.gpr.py:48 TMGimporter/importtmg.gpr.py:63
+#: TMGimporter/importtmg.gpr.py:77 TMGimporter/importtmg.gpr.py:91
+msgid "Import TMG project files"
+msgstr "Importer TMG projekt filer"
+
+#: TMGimporter/importtmg.gpr.py:62 TMGimporter/importtmg.gpr.py:76
+#: TMGimporter/importtmg.gpr.py:90
+msgid "TMG Unsupported"
+msgstr "TMG ikke understøttet"
+
+#: TMGimporter/importtmg.py:88 TMGimporter/importtmg.py:109
+#: TMGimporter/importtmg.py:130
+#, python-format
+msgid "%s could not be opened"
+msgstr "%s kunne ikke åbnes"
+
+#: TMGimporter/importtmg.py:89
+#, python-format
+msgid ""
+"Directly importing from TMG files is not supported\n"
+"by the TMG Importer Addon.\n"
+"\n"
+"You need to use an backup copy of the TMG project(*.sqz)\n"
+"\n"
+"Ensure that your TMG project was created by:\n"
+"TMG version 5.x or greater.\n"
+"\n"
+"Your file:\n"
+"*.PJC - Project Configuration File for TMG 5.0 to TMG 9.05\n"
+"\n"
+"Please refer to:\n"
+"%(gramps_wiki_import_pjc_direct_url)s"
+msgstr ""
+"Direkte import fra TMG filer er ikke understøttet\n"
+"af TMG import tillægget.\n"
+"\n"
+"Du skal benytte en sikkerhedskopi af TMG projektet(*sqz)\n"
+"\n"
+"Forsikkr dig om at dit TMG projekt var dannet af:\n"
+"TMG version 5.x eller nyere.\n"
+"Din fil:\n"
+"*PJC projekt konfigurationfil for TMG 5.0 til TMG 9.05\n"
+"\n"
+"Se venligst:\n"
+"%(gramps_wiki_import_pjc_direct_url)s"
+
+#: TMGimporter/importtmg.py:110
+#, python-format
+msgid ""
+"Directly importing from TMG files is not supportedby the TMG Importer Addon."
+"You need to use an backup copy of TMG project(*.sqz)Ensure that your TMG "
+"project was created by:TMG version 5.x or greater.Your file:*.TMG - Version "
+"Control File for TMG 2.0 to TMG 4.0dPlease refer to:"
+"%(gramps_wiki_import_pjc_direct_url)s"
+msgstr ""
+"Direkte import fra TMG filer er ikke understøttet af TMG import tillægget. "
+"Du skal benytte en sikkerhedskopi af TMG projektet(*sqz), Forsikr dig om at "
+"dit TMG projekt var dannet af: TMG version 5.x eller nyere. Din fil: *PJC "
+"projekt konfigurationfil for TMG 5.0 til TMG 9.05 Se venligst: "
+"%(gramps_wiki_import_pjc_direct_url)s"
+
+#: TMGimporter/importtmg.py:131
+#, python-format
+msgid ""
+"Directly importing from TMG files is not supportedby the TMG Importer Addon."
+"You need to use an backup copy of TMG project(*.sqz)Ensure that your TMG "
+"project was created by:TMG version 5.x or greater.Your file:*.VER - Version "
+"Control File for TMG 1.2 and earlierPlease refer to:"
+"%(gramps_wiki_import_pjc_direct_url)s"
+msgstr ""
+"Direkte import fra TMG filer er ikke understøttet af TMG import tillægget. "
+"Du skal benytte en sikkerhedskopi af TMG projektet(*sqz), Forsikr dig om at "
+"dit TMG projekt var dannet af: TMG version 5.x eller nyere. Din fil: *.VER "
+"Version kontrol fil for TMG 1.2 og tidligere.  Se venligst: "
+"%(gramps_wiki_import_pjc_direct_url)s"
+
+#: TMGimporter/libtmg.py:1558
+#, python-format
+msgid "Could not create media directory %s"
+msgstr "Kunne ikke danne mediemappe %s"
+
+#: TMGimporter/libtmg.py:1562
+#, python-format
+msgid "Media directory %s is not writable"
+msgstr "Mediemappe %s er ikke skrivbar"
+
+#: TMGimporter/libtmg.py:1568
+#, python-format
+msgid ""
+"Media directory %s exists. Delete it first, then restart the import process"
+msgstr "Mediemappe %s finde.Slet den først, genstart så importen"
+
+#: TMGimporter/libtmg.py:1598
+#, python-format
+msgid "Error extracting into %s"
+msgstr "Fejl ved udtræk ind i %s"
+
+#: TMGimporter/libtmg.py:1609
+msgid "Base path for relative media set"
+msgstr "Søgesti, som er udgangspunkt for placering af medieobjekter, angivet"
+
+#: TMGimporter/libtmg.py:1610
+#, python-format
+msgid ""
+"The base media path of this Family Tree has been set to %s. Consider taking "
+"a simpler path. You can change this in the Preferences, while moving your "
+"media files to the new position, and using the media manager tool, option "
+"'Replace substring in the path' to set correct paths in your media objects."
+msgstr ""
+"Denne slægtsbogs basis søgesti til medieobjektfiler er sat til %s. Overvej "
+"en enklere søgesti. Du kan rette den i \"Indstillinger\", og flytte dine "
+"medieobjektfiler til den nye placering og så vælge menupunkterne Værktøjer-"
+">Redskaber->Mediehåndtering. Herfra vælges \"Erstat delstrenge i søgestien\" "
+"for at angive de korrekte søgestier til dine medieobjektfiler."
+
+#: TMGimporter/libtmg.py:1618
+msgid "Cannot set base media path"
+msgstr "Kan ikke angive basis søgesti til medieobjekter"
+
+#: TMGimporter/libtmg.py:1619
+#, python-format
+msgid ""
+"The Family Tree you imported into already has a base media path: "
+"%(orig_path)s. The imported media objects however are relative from the path "
+"%(path)s. You can change the media path in the Preferences or you can "
+"convert the imported files to the existing base media path. You can do that "
+"by moving your media files to the new position, and using the media manager "
+"tool, option 'Replace substring in the path' to set correct paths in your "
+"media objects."
+msgstr ""
+"Den slægtsbog du har importeret data ind i har allerede en basis søgesti til "
+"medieobjektfiler: %(orig_path)s. Placeringen af de importerede "
+"medieobjektfiler er dog relativ i forhold til søgestien %(path)s. Du kan "
+"ændre søgestien til medieobjektfiler under \"Indstillinger\", eller du kan "
+"konvertere søgestien for de importerede filer til den gældende basis søgesti "
+"for medieobjektfiler. Dette kan du gøre ved at flytte medieobjektfilerne til "
+"den nye placering og så bruge \"Erstat delstrenge i søgesti\" fra værktøjet "
+"\"Mediehåndtering\" til at angive de korrekte søgestier til dine "
+"medieobjektfiler."
+
+#: TMGimporter/libtmg.py:1645 TMGimporter/libtmg.py:1670
+msgid "Database Information"
+msgstr "Database Information"
+
+#: TMGimporter/libtmg.py:1647
+msgid "_OK"
+msgstr "_OK"
+
+#: TMGimporter/libtmg.py:1653
+msgid "Setting"
+msgstr "Indstilling"
+
+#: TMGimporter/libtmg.py:1654
+msgid "Value"
+msgstr "Værdi"
+
+#: TMGimporter/libtmg.glade:15
+msgid "TMG Importer"
+msgstr "TMG importer"
+
+#: TMGimporter/libtmg.glade:31
+msgid "Unreleased Addon - Work In Progress"
+msgstr "Ikke frigivet tillæg - igangværende arbejde"
+
+#: TMGimporter/libtmg.glade:51
+msgid ""
+"Wholly Genes - The Master Genealogist (TMG) Importer\n"
+"\n"
+"Select the TMG Data Set you wish to import."
+msgstr ""
+"Wholly Genes - The Master Genealogist (TMG) Importer\n"
+"\n"
+"Vælg de TMG data du vil importere ."
+
+#: TMGimporter/libtmg.glade:77
+msgid "ID"
+msgstr "ID"
+
+#: TMGimporter/libtmg.glade:88
+msgid "Data Set Name"
+msgstr "Anvn på dataopsætning"
+
+#: TMGimporter/libtmg.glade:148
+msgid "_Import TMG Data Set"
+msgstr "_Importer TMG dataopsætning"
