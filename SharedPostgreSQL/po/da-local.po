@@ -1,0 +1,75 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-10 11:09-0500\n"
+"PO-Revision-Date: 2024-10-14 11:30+0200\n"
+"Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
+"Language-Team: \n"
+"Language: da_DK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: SharedPostgreSQL/sharedpostgresql.gpr.py:29
+msgid "SharedPostgreSQL"
+msgstr "DeltPostgreSQL"
+
+#: SharedPostgreSQL/sharedpostgresql.gpr.py:30
+msgid "Shared _PostgreSQL Database"
+msgstr "Delt _PostgreSQL Database"
+
+#: SharedPostgreSQL/sharedpostgresql.gpr.py:31
+msgid "Shared PostgreSQL Database"
+msgstr "Delt PostgreSQL Database"
+
+#: SharedPostgreSQL/sharedpostgresql.gpr.py:46
+msgid "PostgreSQL Warning:  Python psycopg2 module not found."
+msgstr "PostgreSQL Advarsel:  Python psycopg2 modul ikke fundet.."
+
+#: SharedPostgreSQL/sharedpostgresql.gpr.py:53
+msgid "PostgreSQL Failed to Load"
+msgstr "PostgreSQL kunne ikke indlæses"
+
+#: SharedPostgreSQL/sharedpostgresql.gpr.py:55
+msgid ""
+"\n"
+"\n"
+"PostgreSQL is missing the psycopg2 python module.\n"
+"For now, it may be possible to install the files manually. See\n"
+"\n"
+"https://gramps-project.org/wiki/index.php?title=PostgreSQL \n"
+"\n"
+"To dismiss all future PostgreSQL warnings click Dismiss."
+msgstr ""
+"\n"
+"\n"
+"PostgreSQL mangler psycopg2 python modulet.\n"
+"Det kan muligvis installeres manuelt. Se\n"
+"\n"
+"https://gramps-project.org/wiki/index.php?title=PostgreSQL \n"
+"\n"
+"For at afvise fremtidige PostgreeSQL advarsler tryk Afvis ."
+
+#: SharedPostgreSQL/sharedpostgresql.gpr.py:60
+msgid " Dismiss "
+msgstr " Afvis "
+
+#: SharedPostgreSQL/sharedpostgresql.gpr.py:61
+msgid "Continue"
+msgstr "Fortsæt"
+
+#: SharedPostgreSQL/sharedpostgresql.py:73
+msgid "Database version"
+msgstr "Database version"
+
+#: SharedPostgreSQL/sharedpostgresql.py:74
+msgid "Database module location"
+msgstr "Database modul sted"
