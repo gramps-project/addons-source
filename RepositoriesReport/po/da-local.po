@@ -1,0 +1,202 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-24 09:27-0500\n"
+"PO-Revision-Date: 2024-10-14 08:39+0200\n"
+"Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
+"Language-Team: \n"
+"Language: da_DK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: RepositoriesReport/RepositoriesReport.gpr.py:25
+msgid "Repositories Report Options"
+msgstr "Arkivrapport tilvalg"
+
+#: RepositoriesReport/RepositoriesReport.gpr.py:26
+#: RepositoriesReport/RepositoriesReport.gpr.py:43
+msgid "Produces a textual repositories report"
+msgstr "Danner en tekstbaseret arkivrapport"
+
+#: RepositoriesReport/RepositoriesReport.gpr.py:42
+#: RepositoriesReport/RepositoriesReport.py:80
+#: RepositoriesReport/RepositoriesReportAlt.py:139
+msgid "Repositories Report"
+msgstr "Arkivrapport"
+
+#: RepositoriesReport/RepositoriesReport.py:151
+#: RepositoriesReport/RepositoriesReportAlt.py:410
+msgid "Report Options"
+msgstr "Rapport tilvalg"
+
+#: RepositoriesReport/RepositoriesReport.py:175
+#: RepositoriesReport/RepositoriesReportAlt.py:504
+msgid "The style used for the title of the report."
+msgstr "Stilen der benyttes til rapportens titel."
+
+#: RepositoriesReport/RepositoriesReport.py:189
+#: RepositoriesReport/RepositoriesReportAlt.py:518
+msgid "The style used for repository title."
+msgstr "Stilen der benyttes til arkivet titel."
+
+#: RepositoriesReport/RepositoriesReport.py:203
+#: RepositoriesReport/RepositoriesReportAlt.py:533
+msgid "The style used for each section."
+msgstr "Stilen der benyttes til hver sektion."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:202
+msgid "Address:"
+msgstr "Adresse:"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:263
+msgid "Author:"
+msgstr "Ophavsmand:"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:268
+msgid "Abbreviation:"
+msgstr "Forkortelse:"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:273
+msgid "Publication information:"
+msgstr "Udgivelsesoplysninger:"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:278
+msgid "Data:"
+msgstr "Data:"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:361
+msgid "Confidence level:"
+msgstr "Troværdighedsniveau:"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:366
+msgid "Citation:"
+msgstr "Kildehenvisning:"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:372
+msgid "Date:"
+msgstr "Dato:"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:378
+msgid "Page:"
+msgstr "Side:"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:411
+msgid "Repositories"
+msgstr "Arkiver"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:412
+msgid "Sources"
+msgstr "Kilder"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:418
+msgid "Select using filter"
+msgstr "Vælg ved brug af filter"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:419
+msgid "Selection with a filter"
+msgstr "Valg med et filter"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:431
+msgid "Include repository's urls"
+msgstr "Medtag arkivets URL"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:432
+msgid "Whether to include urls on repository."
+msgstr "Hvorvidt arkivets url skal medtages."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:435
+msgid "Include repository's address"
+msgstr "Medtag arkivets adresse"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:436
+msgid "Whether to include addresses on repository."
+msgstr "Hvorvidt arkivets adresse skal medtages."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:439
+msgid "Include source's author"
+msgstr "Medtag kildens ophavsmand"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:440
+msgid "Whether to include author."
+msgstr "Horvidt kildens ophavsmand skal medtages."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:443
+msgid "Include source's abbreviation"
+msgstr "Medtag kildens forkortelse"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:444
+msgid "Whether to include abbreviation."
+msgstr "Hvorvidt forkortelse skal medtages."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:447
+msgid "Include source's publication information"
+msgstr "Medtag kildens udgivelsesoplysninger"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:448
+msgid "Whether to include publication information."
+msgstr "Hvorvidt kildens udgivelsesoplysninger skal medtages."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:451
+msgid "Include source's data"
+msgstr "Medtag kildens data"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:452
+msgid "Whether to include keys and values."
+msgstr "Hvorvidt nøgler og værdier skal medtages."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:455
+msgid "Include notes"
+msgstr "Medtag noter"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:456
+msgid "Whether to include notes on repositories and sources."
+msgstr "Hvorvidt noter på arkiver og kilder skal medtages."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:459
+msgid "Include media"
+msgstr "Medtag medier"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:460
+msgid "Whether to include media."
+msgstr "Hvorvidt medier skal medtages."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:463
+msgid "Include citations"
+msgstr "Medtag kildehenvisninger"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:464
+msgid "Whether to include citations on sources."
+msgstr "Hvorvidt kildehenvisninger skal medtages."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:467
+msgid "Include private records"
+msgstr "Medtage private poster"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:468
+msgid "Whether to include repositories and sources marked as private."
+msgstr "Hvorvidt arkiver og kilder mærket privat skal medtages."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:471
+msgid "Display empty values"
+msgstr "Vis tomme værdier"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:472
+msgid "Whether to include key records with empty values."
+msgstr "Hvorvidt nøgleposter med tomme værdier skal medtages."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:548
+msgid "The style used for child section."
+msgstr "Stilen der benyttes til børnesektion."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:560
+msgid "The basic style used for the note display."
+msgstr "Standardstil benyttet til visning af noter."
