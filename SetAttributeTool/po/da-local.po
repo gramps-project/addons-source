@@ -1,0 +1,134 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-02-10 08:13-0600\n"
+"PO-Revision-Date: 2024-10-14 11:12+0200\n"
+"Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
+"Language-Team: \n"
+"Language: da_DK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: SetAttributeTool/SetAttributeTool.gpr.py:25
+#: SetAttributeTool/SetAttributeTool.py:122
+#: SetAttributeTool/SetAttributeTool.py:150
+msgid "Set Attribute"
+msgstr "Sæt attribut"
+
+#: SetAttributeTool/SetAttributeTool.gpr.py:26
+msgid "Set an attribute to a given value."
+msgstr "Sæt en attribut til en specifik værdi."
+
+#: SetAttributeTool/SetAttributeTool.py:68
+#: SetAttributeTool/SetAttributeTool.py:125
+msgid "Options"
+msgstr "Tilvalg"
+
+#: SetAttributeTool/SetAttributeTool.py:70
+msgid "Person Filter"
+msgstr "Personfilter"
+
+#: SetAttributeTool/SetAttributeTool.py:71
+msgid "Select filter to restrict people"
+msgstr "Vælg filter til personafgrænsning"
+
+#: SetAttributeTool/SetAttributeTool.py:75
+msgid "Filter Person"
+msgstr "Person til filter"
+
+#: SetAttributeTool/SetAttributeTool.py:76
+msgid "The center person for the filter"
+msgstr "Fokusperson for filteret"
+
+#: SetAttributeTool/SetAttributeTool.py:80
+msgid "Attribute"
+msgstr "Attribut"
+
+#: SetAttributeTool/SetAttributeTool.py:81
+msgid "Value"
+msgstr "Værdi"
+
+#: SetAttributeTool/SetAttributeTool.py:83
+msgid "Attribute type to add or edit"
+msgstr "Attributtype der skal filføjes eller redigeres"
+
+#: SetAttributeTool/SetAttributeTool.py:84
+msgid "Attribute value to add or edit"
+msgstr "Attributværdi der skal filføjes eller redigeres"
+
+#: SetAttributeTool/SetAttributeTool.py:91
+msgid "Remove"
+msgstr "Fjern"
+
+#: SetAttributeTool/SetAttributeTool.py:92
+msgid "Remove attribute type and value set"
+msgstr "Fjern attributtype og værdi"
+
+#: SetAttributeTool/SetAttributeTool.py:131
+msgid "Results"
+msgstr "Resultater"
+
+#: SetAttributeTool/SetAttributeTool.py:133
+msgid "Cannot save attribute"
+msgstr "Kan ikke gemme attribut"
+
+#: SetAttributeTool/SetAttributeTool.py:134
+msgid "The attribute type cannot be empty"
+msgstr "Attribut-typen kan ikke være tom"
+
+#: SetAttributeTool/SetAttributeTool.py:151
+#: SetAttributeTool/SetAttributeTool.py:193
+msgid "Processing...\n"
+msgstr "Behandler ...\n"
+
+#: SetAttributeTool/SetAttributeTool.py:152
+msgid "Setting attributes..."
+msgstr "Sætter attributter..."
+
+#: SetAttributeTool/SetAttributeTool.py:156
+#, python-format
+msgid ""
+"Setting '%s' attributes to '%s'...\n"
+"\n"
+msgstr ""
+"Sætter '%s' attributter to '%s'...\n"
+"\n"
+
+#: SetAttributeTool/SetAttributeTool.py:188
+#, python-format
+msgid ""
+"\n"
+"Set %d '%s' attributes to '%s'\n"
+msgstr ""
+"\n"
+"Sæt %d '%s' attributter to '%s'\n"
+
+#: SetAttributeTool/SetAttributeTool.py:191
+msgid "Remove Attribute"
+msgstr "Fjern attibut"
+
+#: SetAttributeTool/SetAttributeTool.py:194
+msgid "Removing attributes..."
+msgstr "Fjerner attributter..."
+
+#: SetAttributeTool/SetAttributeTool.py:221
+#, python-format
+msgid ""
+"\n"
+"Removing %d '%s' attributes to '%s'\n"
+msgstr ""
+"\n"
+"Fjerner %d '%s' attributter til '%s'\n"
+
+#: SetAttributeTool/SetAttributeTool.py:226
+msgid "Done!\n"
+msgstr "Færdig!\n"
