@@ -1,0 +1,62 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-04 18:55-0600\n"
+"PO-Revision-Date: 2024-10-14 14:28+0200\n"
+"Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
+"Language-Team: \n"
+"Language: da_DK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: SourceReferences/SourceReferences.gpr.py:31
+msgid "Source References"
+msgstr "Kildehenvisninger"
+
+#: SourceReferences/SourceReferences.gpr.py:32
+msgid "Gramplet showing the references for a source"
+msgstr "Gramplet der viser henvisninger for en kilde"
+
+#: SourceReferences/SourceReferences.gpr.py:40
+msgid "References"
+msgstr "Henvisninger"
+
+#: SourceReferences/SourceReferences.py:50
+msgid "Type"
+msgstr "Type"
+
+#: SourceReferences/SourceReferences.py:51
+msgid "Name"
+msgstr "Navn"
+
+#: SourceReferences/SourceReferences.py:141
+msgid ""
+"Cannot open new citation editor at this time. Either the citation is already "
+"being edited, or the associated source is already being edited, and opening "
+"a citation editor (which also allows the source to be edited), would create "
+"ambiguity by opening two editors on the same source. \n"
+"\n"
+"To edit the citation, close the source editor and open an editor for the "
+"citation alone"
+msgstr ""
+"Kan ikke åbne kildehenvisningsredigeringen lige nu. Enten bliver "
+"kildehenvisningen eller dens tilhørende kilde allerede redigeret, og åbning "
+"af en kildehenvisningsredigering (som også tillader redigering af kilden), "
+"ville føre til uklarhed ved at tillade dobbel redigering af den samme "
+"kilde.\n"
+"\n"
+"Luk kilderedigeringen og åben kildehenvisningsredigeringen for at redigere "
+"kildehenvisningen"
+
+#: SourceReferences/SourceReferences.py:154
+msgid "Cannot open new citation editor"
+msgstr "Kan ikke åbne en ny kildehenvisningsredigering"

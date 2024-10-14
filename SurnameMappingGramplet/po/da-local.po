@@ -1,0 +1,58 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-04 18:55-0600\n"
+"PO-Revision-Date: 2024-10-14 14:45+0200\n"
+"Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
+"Language-Team: \n"
+"Language: da_DK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: SurnameMappingGramplet/SurnameMappingGramplet.grp.py:3
+#: SurnameMappingGramplet/SurnameMappingGramplet.grp.py:11
+msgid "Surname Mapping"
+msgstr "Efternavnstildeling"
+
+#: SurnameMappingGramplet/SurnameMappingGramplet.grp.py:4
+msgid "Gramplet for editing the grouping of surnames"
+msgstr "Gramplet til at redigere grupperingen af efternavne"
+
+#: SurnameMappingGramplet/SurnameMappingGramplet.py:67
+msgid "Add Mapping"
+msgstr "Tilføj oplysning"
+
+#: SurnameMappingGramplet/SurnameMappingGramplet.py:68
+#: SurnameMappingGramplet/SurnameMappingGramplet.py:158
+msgid "Edit Mapping"
+msgstr "Rediger oplysning"
+
+#: SurnameMappingGramplet/SurnameMappingGramplet.py:69
+msgid "Remove Mapping"
+msgstr "Fjern oplysning"
+
+#: SurnameMappingGramplet/SurnameMappingGramplet.py:77
+#: SurnameMappingGramplet/SurnameMappingGramplet.py:108
+msgid "Surname"
+msgstr "Efternavn"
+
+#: SurnameMappingGramplet/SurnameMappingGramplet.py:78
+msgid "Group Name"
+msgstr "Gruppenavn"
+
+#: SurnameMappingGramplet/SurnameMappingGramplet.py:112
+msgid "Group"
+msgstr "Gruppe"
+
+#: SurnameMappingGramplet/SurnameMappingGramplet.py:140
+msgid "Create Mapping"
+msgstr "Dan oplysning"
