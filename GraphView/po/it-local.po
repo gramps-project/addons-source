@@ -1,0 +1,640 @@
+# Italian translation for Gramps
+# This file is distributed under the same license as the Gramps package.
+# translation of de.po to Deutsch
+#
+# Sebastiano Pistore <SebastianoPistore.info@protonmail.ch>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: GraphView\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-10-05 16:32-0500\n"
+"PO-Revision-Date: 2024-10-20 16:43+0200\n"
+"Last-Translator: Sebastiano Pistore <SebastianoPistore.info@protonmail.ch>\n"
+"Language-Team: Italian\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.5\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: GraphView/avatars.py:59
+msgid "Custom"
+msgstr "Personalizzato"
+
+#: GraphView/avatars.py:60
+msgid "Dark (default)"
+msgstr "Scuro (predefinito)"
+
+#: GraphView/avatars.py:61
+msgid "Light"
+msgstr "Chiaro"
+
+#: GraphView/avatars.py:62
+msgid "Cartoon"
+msgstr "Stile fumetto"
+
+#: GraphView/graphview.gpr.py:34 GraphView/graphview.py:185
+msgid "Graph View"
+msgstr "Graph View"
+
+#: GraphView/graphview.gpr.py:35
+msgid "Charts"
+msgstr "Grafici"
+
+#: GraphView/graphview.gpr.py:36
+msgid "Dynamic and interactive graph of relations"
+msgstr ""
+
+#: GraphView/graphview.gpr.py:49
+msgid ""
+"Graphview Warning:  Goocanvas 2 or 3 (https://wiki.gnome.org/action/show/"
+"Projects/GooCanvas) is required for this view to work"
+msgstr ""
+
+#: GraphView/graphview.gpr.py:54
+msgid ""
+"Graphview Warning:  GraphViz (http://www.graphviz.org) is required for this "
+"view to work"
+msgstr ""
+
+#: GraphView/graphview.gpr.py:63
+msgid "Graphview Failed to Load"
+msgstr ""
+
+#: GraphView/graphview.gpr.py:64
+#, python-format
+msgid ""
+"\n"
+"\n"
+"Graphview is missing python modules or programs.\n"
+"%smust be installed.\n"
+"\n"
+"For now, it may be possible to install the files manually. See\n"
+"<a href=\"https://gramps-project.org/wiki/index.php?title=Graph_View\" "
+"title=\"https://gramps-project.org/wiki/index.php?title=Graph_View\">https://"
+"gramps-project.org/wiki/index.php?title=Graph_View</a> \n"
+"\n"
+"To dismiss all future Graphview warnings click Dismiss."
+msgstr ""
+
+#: GraphView/graphview.gpr.py:80
+msgid " Dismiss "
+msgstr ""
+
+#: GraphView/graphview.gpr.py:81
+msgid "Continue"
+msgstr "Continua"
+
+#: GraphView/graphview.py:713 GraphView/graphview.py:3643
+msgid "Show images"
+msgstr "Mostra immagini"
+
+#: GraphView/graphview.py:716
+msgid "Show avatars"
+msgstr "Mostra avatar"
+
+#: GraphView/graphview.py:719 GraphView/graphview.py:3651
+msgid "Highlight the home person"
+msgstr "Evidenzia persona principale"
+
+#: GraphView/graphview.py:723 GraphView/graphview.py:3659
+msgid "Show full dates"
+msgstr "Mostra date complete"
+
+#: GraphView/graphview.py:727 GraphView/graphview.py:3667
+msgid "Show places"
+msgstr "Mostra luoghi"
+
+#: GraphView/graphview.py:730 GraphView/graphview.py:2953
+msgid "Default"
+msgstr "Predefinito"
+
+#: GraphView/graphview.py:736
+msgid "Place format"
+msgstr ""
+
+#: GraphView/graphview.py:741 GraphView/graphview.py:3675
+msgid "Show tags"
+msgstr "Mostra tag"
+
+#: GraphView/graphview.py:743
+msgid "Vertical: Top to Bottom"
+msgstr ""
+
+#: GraphView/graphview.py:743
+msgid "Vertical: Bottom to Top"
+msgstr ""
+
+#: GraphView/graphview.py:743
+msgid "Horizontal: Left to Right"
+msgstr ""
+
+#: GraphView/graphview.py:743
+msgid "Horizontal: Right to Left"
+msgstr ""
+
+#: GraphView/graphview.py:745
+msgid "Time Direction"
+msgstr ""
+
+#: GraphView/graphview.py:749
+msgid "Layout"
+msgstr ""
+
+#: GraphView/graphview.py:767
+msgid "Person theme"
+msgstr "Stile persone"
+
+#: GraphView/graphview.py:772
+msgid "Path color to home person"
+msgstr ""
+
+#: GraphView/graphview.py:776
+msgid "Font:"
+msgstr "Carattere:"
+
+#: GraphView/graphview.py:790
+msgid "Avatars style"
+msgstr "Stile avatar"
+
+#: GraphView/graphview.py:796
+msgid "PNG files"
+msgstr "File PNG"
+
+#: GraphView/graphview.py:801
+msgid "Male avatar:"
+msgstr "Avatar maschile:"
+
+#: GraphView/graphview.py:802
+msgid "Choose male avatar"
+msgstr ""
+
+#: GraphView/graphview.py:814
+msgid "Female avatar:"
+msgstr "Avatar femminile:"
+
+#: GraphView/graphview.py:815
+msgid "Choose female avatar"
+msgstr ""
+
+#: GraphView/graphview.py:829
+msgid "Active person border size"
+msgstr "Spessore bordo persona attiva"
+
+#: GraphView/graphview.py:834
+msgid "Person border size"
+msgstr "Spessore bordo persona"
+
+#: GraphView/graphview.py:837
+msgid "Themes"
+msgstr "Stili"
+
+#: GraphView/graphview.py:850 GraphView/graphview.py:3685
+msgid "Show animation"
+msgstr "Mostra immagini animate"
+
+#: GraphView/graphview.py:854
+msgid "Animation speed (1..5 and 5 is the slower)"
+msgstr "Velocità animazione (da 1 a 5 dove 5 è il più lento)"
+
+#: GraphView/graphview.py:858
+msgid "Animation count (0..8 use 0 to turn off)"
+msgstr ""
+
+#: GraphView/graphview.py:867
+msgid "Animation"
+msgstr "Animazioni"
+
+#: GraphView/graphview.py:881
+msgid "Search in all database"
+msgstr "Cerca in tutto il database"
+
+#: GraphView/graphview.py:883
+msgid "Also apply search by all database."
+msgstr ""
+
+#: GraphView/graphview.py:886
+msgid "Show person images"
+msgstr "Mostra immagini delle persone"
+
+#: GraphView/graphview.py:889
+msgid "Show persons thumbnails in search result list."
+msgstr ""
+
+#: GraphView/graphview.py:892
+msgid "Show bookmarked first"
+msgstr ""
+
+#: GraphView/graphview.py:895
+msgid "Show bookmarked persons first in search result list."
+msgstr ""
+
+#: GraphView/graphview.py:897
+msgid "Search"
+msgstr "Cerca"
+
+#: GraphView/graphview.py:928
+msgid "Select a dot file name"
+msgstr ""
+
+#: GraphView/graphview.py:931
+msgid "_Cancel"
+msgstr "_Cancella"
+
+#: GraphView/graphview.py:932
+msgid "_Apply"
+msgstr "_Applica"
+
+#: GraphView/graphview.py:945
+msgid "File already exists"
+msgstr "File già esistente"
+
+#: GraphView/graphview.py:946
+msgid ""
+"You can choose to either overwrite the file, or change the selected filename."
+msgstr ""
+
+#: GraphView/graphview.py:948
+msgid "_Overwrite"
+msgstr "_Sovrascrivi"
+
+#: GraphView/graphview.py:949
+msgid "_Change filename"
+msgstr ""
+
+#: GraphView/graphview.py:964
+#, python-format
+msgid "Could not create %s"
+msgstr ""
+
+#: GraphView/graphview.py:1024
+msgid "Zoom in"
+msgstr ""
+
+#: GraphView/graphview.py:1031
+msgid "Zoom out"
+msgstr ""
+
+#: GraphView/graphview.py:1038
+msgid "Zoom to original"
+msgstr ""
+
+#: GraphView/graphview.py:1045
+msgid "Zoom to best fit"
+msgstr ""
+
+#: GraphView/graphview.py:1052
+msgid "Go to active person"
+msgstr "Andare alla persona attiva"
+
+#: GraphView/graphview.py:1057
+msgid "Go to bookmark"
+msgstr ""
+
+#: GraphView/graphview.py:1059
+msgid "Center view on selected bookmark"
+msgstr ""
+
+#: GraphView/graphview.py:1061
+msgid "Bookmarks for current graph"
+msgstr ""
+
+#: GraphView/graphview.py:1062
+msgid "Other Bookmarks"
+msgstr ""
+
+#: GraphView/graphview.py:1093
+msgid "Ancestor generations"
+msgstr ""
+
+#: GraphView/graphview.py:1097
+msgid "Descendant generations"
+msgstr ""
+
+#: GraphView/graphview.py:1101
+msgid "Generations"
+msgstr "Generazioni"
+
+#: GraphView/graphview.py:1108
+msgid "Vertical spacing between generations"
+msgstr ""
+
+#: GraphView/graphview.py:1113
+msgid "Horizontal spacing between generations"
+msgstr ""
+
+#: GraphView/graphview.py:1117
+msgid "Spacings"
+msgstr ""
+
+#: GraphView/graphview.py:1122
+msgid "All connected"
+msgstr ""
+
+#: GraphView/graphview.py:1124
+msgid ""
+"Show all connected persons limited by generation restrictions.\n"
+"Works slow, so don't set large generation values."
+msgstr ""
+
+#: GraphView/graphview.py:1266
+msgid "Add active person"
+msgstr ""
+
+#: GraphView/graphview.py:1270 GraphView/graphview.py:3775
+#: GraphView/graphview.py:4042
+msgid "Edit"
+msgstr "Modifica"
+
+#: GraphView/graphview.py:1271
+msgid "Call the bookmark editor"
+msgstr ""
+
+#: GraphView/graphview.py:1328
+msgid ""
+"You don't have any bookmarks yet...\n"
+"Try to add some frequently used persons to speedup navigation."
+msgstr ""
+
+#: GraphView/graphview.py:1336
+msgid "No bookmarks for this graph..."
+msgstr ""
+
+#: GraphView/graphview.py:1341
+msgid "No other bookmarks..."
+msgstr ""
+
+#: GraphView/graphview.py:1346 GraphView/graphview.py:1348
+#: GraphView/search_widget.py:224 GraphView/search_widget.py:243
+#, python-format
+msgid "found: %s"
+msgstr ""
+
+#: GraphView/graphview.py:1358
+#, python-format
+msgid ""
+"Add active person to bookmarks\n"
+"%s"
+msgstr ""
+
+#: GraphView/graphview.py:1445
+#, python-format
+msgid ""
+"Person <b><i>%s</i></b> is not in the current view.\n"
+"Do you want to set it active and rebuild view?"
+msgstr ""
+
+#: GraphView/graphview.py:1448
+msgid "Change active person?"
+msgstr "Modificare persona attiva?"
+
+#: GraphView/graphview.py:1449 GraphView/graphview.py:4516
+#: GraphView/graphview.py:4545
+msgid "Yes"
+msgstr "Sì"
+
+#: GraphView/graphview.py:1449 GraphView/graphview.py:4516
+#: GraphView/graphview.py:4545
+msgid "No"
+msgstr "No"
+
+#: GraphView/graphview.py:2519 GraphView/graphview.py:2552
+msgid "Relationship loop detected"
+msgstr ""
+
+#: GraphView/graphview.py:2592
+msgid ""
+"You try to build graph containing more then 1000 persons. Not all persons "
+"will be shown in the graph."
+msgstr ""
+
+#: GraphView/graphview.py:2595
+msgid "Incomplete graph"
+msgstr ""
+
+#: GraphView/graphview.py:2964
+msgid "Image on right side"
+msgstr "Immagine a destra"
+
+#: GraphView/graphview.py:2985
+msgid "Image on left side"
+msgstr "Immagine a sinistra"
+
+#: GraphView/graphview.py:3006
+msgid "Normal"
+msgstr "Normale"
+
+#: GraphView/graphview.py:3083 GraphView/graphview.py:3084
+#: GraphView/graphview.py:3096 GraphView/graphview.py:3097
+#, python-format
+msgid "%s "
+msgstr "%s "
+
+#: GraphView/graphview.py:3314
+msgid "<b>Tags:</b>"
+msgstr "<b>Tag:</b>"
+
+#: GraphView/graphview.py:3694
+msgid "Lines type"
+msgstr "Tipo collegamento"
+
+#: GraphView/graphview.py:3698
+msgid "Direct"
+msgstr ""
+
+#: GraphView/graphview.py:3706
+msgid "Curves"
+msgstr ""
+
+#: GraphView/graphview.py:3714
+msgid "Ortho"
+msgstr ""
+
+#: GraphView/graphview.py:3778
+msgid "Copy"
+msgstr ""
+
+#: GraphView/graphview.py:3781 GraphView/graphview.py:4045
+msgid "Delete"
+msgstr ""
+
+#: GraphView/graphview.py:3787 GraphView/graphview.py:4051
+msgid "Tags"
+msgstr "Tag"
+
+#: GraphView/graphview.py:3789
+msgid "Select tags for person"
+msgstr ""
+
+#: GraphView/graphview.py:3792 GraphView/graphview.py:4056
+msgid "Organize Tags..."
+msgstr ""
+
+#: GraphView/graphview.py:3798 GraphView/graphview.py:4062
+msgid "Spouses"
+msgstr "Coniugi"
+
+#: GraphView/graphview.py:3800
+msgid "Add new family"
+msgstr "Aggiungi nuova famiglia"
+
+#: GraphView/graphview.py:3821
+msgid "Siblings"
+msgstr "Fratelli e sorelle"
+
+#: GraphView/graphview.py:3887
+msgid "Parents"
+msgstr "Genitori"
+
+#: GraphView/graphview.py:3918
+msgid "Add parents"
+msgstr ""
+
+#: GraphView/graphview.py:3922
+msgid "Related"
+msgstr ""
+
+#: GraphView/graphview.py:3941
+msgid "Set as home person"
+msgstr ""
+
+#: GraphView/graphview.py:3944
+msgid "Show path to home person"
+msgstr ""
+
+#: GraphView/graphview.py:3950 GraphView/search_widget.py:277
+#: GraphView/search_widget.py:348
+msgid "Remove from bookmarks"
+msgstr ""
+
+#: GraphView/graphview.py:3953 GraphView/search_widget.py:285
+#: GraphView/search_widget.py:361
+msgid "Add to bookmarks"
+msgstr ""
+
+#: GraphView/graphview.py:3983
+msgid "Quick View"
+msgstr ""
+
+#: GraphView/graphview.py:4027
+msgid "Web Connection"
+msgstr ""
+
+#: GraphView/graphview.py:4053
+msgid "Select tags for family"
+msgstr ""
+
+#: GraphView/graphview.py:4072
+msgid "Add father"
+msgstr "Aggiungi padre"
+
+#: GraphView/graphview.py:4081
+msgid "Add mother"
+msgstr "Aggiungi madre"
+
+#: GraphView/graphview.py:4098
+msgid "Children"
+msgstr "Figlio"
+
+#: GraphView/graphview.py:4107
+msgid "Add child to family"
+msgstr ""
+
+#: GraphView/graphview.py:4178
+msgid "About Graph View"
+msgstr "Informazioni su Graph View"
+
+#: GraphView/graphview.py:4376
+msgid "Adding Tags"
+msgstr ""
+
+#: GraphView/graphview.py:4382 GraphView/graphview.py:4428
+#, python-format
+msgid "Adding Tags to person (%s)"
+msgstr ""
+
+#: GraphView/graphview.py:4387 GraphView/graphview.py:4439
+#, python-format
+msgid "Adding Tags to family (%s)"
+msgstr ""
+
+#: GraphView/graphview.py:4497
+msgid "Add Child to Family"
+msgstr ""
+
+#: GraphView/graphview.py:4512
+#, python-format
+msgid "Delete %s?"
+msgstr "Cancellare %s?"
+
+#: GraphView/graphview.py:4513
+#, python-format
+msgid "Deleting the person [%s] will remove it from the database."
+msgstr "L'eliminazione della persona [%s] la rimuoverà dal database."
+
+#: GraphView/graphview.py:4525
+#, python-format
+msgid "Delete Person (%s)"
+msgstr "Cancellare persona (%s)"
+
+#: GraphView/graphview.py:4542
+#, python-format
+msgid "Delete family [%s]?"
+msgstr "Vuoi cancellare la famiglia [%s]?"
+
+#: GraphView/graphview.py:4543
+msgid "Deleting the family will remove it from the database."
+msgstr "Cancellare la famiglia la rimuoverà dal database."
+
+#: GraphView/graphview.py:4554
+#, python-format
+msgid "Delete Family [%s]"
+msgstr "Cancellare famiglia [%s]"
+
+#: GraphView/graphview.py:4573
+#, python-format
+msgid "%s has been bookmarked"
+msgstr ""
+
+#: GraphView/search_widget.py:73
+msgid "Persons from current graph"
+msgstr ""
+
+#: GraphView/search_widget.py:74
+msgid "Other persons from database"
+msgstr ""
+
+#: GraphView/search_widget.py:226
+msgid "No persons found..."
+msgstr "Nessuna persona trovata..."
+
+#: GraphView/search_widget.py:382
+msgid ""
+"Search people in the current visible graph and database.\n"
+"Use <Ctrl+F> to make search entry active."
+msgstr ""
+
+#: GraphView/search_widget.py:384
+msgid "Search..."
+msgstr "Ricerca..."
+
+#: GraphView/search_widget.py:575
+#, python-format
+msgid "<b>%s:</b>"
+msgstr "<b>%s:</b>"
+
+#: GraphView/search_widget.py:661
+#, python-format
+msgid "Birth: %s"
+msgstr "Nascita: %s"
+
+#: GraphView/search_widget.py:665
+#, python-format
+msgid "Death: %s"
+msgstr "Morte: %s"
+
+#: GraphView/search_widget.py:671
+msgid "Parents:"
+msgstr "Genitori:"
