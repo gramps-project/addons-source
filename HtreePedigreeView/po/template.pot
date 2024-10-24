@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"POT-Creation-Date: 2024-10-24 14:14-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,15 +17,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: HtreePedigreeView/HtreePedigreeView.gpr.py:41
+#: HtreePedigreeView/HtreePedigreeView.gpr.py:33
+#: HtreePedigreeView/HtreePedigreeView.gpr.py:44
 msgid "H-Tree Pedigree"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.gpr.py:42
+#: HtreePedigreeView/HtreePedigreeView.gpr.py:34
 msgid "Charts"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.gpr.py:43
+#: HtreePedigreeView/HtreePedigreeView.gpr.py:35
 msgid ""
 "The view shows a space-efficient pedigree with ancestors of the selected "
 "person"
@@ -95,60 +96,60 @@ msgstr ""
 msgid "Left <-> Right"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:1693
+#: HtreePedigreeView/HtreePedigreeView.py:1692
 msgid "About H-Tree"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:1704
+#: HtreePedigreeView/HtreePedigreeView.py:1703
 msgid "_Add"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:1739
-#: HtreePedigreeView/HtreePedigreeView.py:1967
+#: HtreePedigreeView/HtreePedigreeView.py:1738
+#: HtreePedigreeView/HtreePedigreeView.py:1966
 msgid "_Edit"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:1744
-#: HtreePedigreeView/HtreePedigreeView.py:1972
+#: HtreePedigreeView/HtreePedigreeView.py:1743
+#: HtreePedigreeView/HtreePedigreeView.py:1971
 msgid "_Copy"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:1754
+#: HtreePedigreeView/HtreePedigreeView.py:1753
 msgid "Spouses"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:1788
+#: HtreePedigreeView/HtreePedigreeView.py:1787
 msgid "Siblings"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:1830
+#: HtreePedigreeView/HtreePedigreeView.py:1829
 msgid "Children"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:1867
+#: HtreePedigreeView/HtreePedigreeView.py:1866
 msgid "Parents"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:1904
+#: HtreePedigreeView/HtreePedigreeView.py:1903
 msgid "Add New Parents..."
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:1915
+#: HtreePedigreeView/HtreePedigreeView.py:1914
 msgid "Related"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:2099
+#: HtreePedigreeView/HtreePedigreeView.py:2098
 msgid "Show images"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:2108
+#: HtreePedigreeView/HtreePedigreeView.py:2107
 msgid "Show tags"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:2125
+#: HtreePedigreeView/HtreePedigreeView.py:2124
 msgid "Tree size"
 msgstr ""
 
-#: HtreePedigreeView/HtreePedigreeView.py:2129
+#: HtreePedigreeView/HtreePedigreeView.py:2128
 msgid "Layout"
 msgstr ""

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-05 17:09-0500\n"
+"POT-Creation-Date: 2024-10-24 14:13-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,7 +22,7 @@ msgstr ""
 msgid "%(date)s in %(place)s"
 msgstr ""
 
-#: CombinedView/basepage.py:233 CombinedView/personpage.py:485
+#: CombinedView/basepage.py:233 CombinedView/personpage.py:491
 msgid "Unknown"
 msgstr ""
 
@@ -35,9 +35,9 @@ msgid "Select Child"
 msgstr ""
 
 #: CombinedView/basepage.py:434 CombinedView/eventpage.py:101
-#: CombinedView/eventpage.py:235 CombinedView/personpage.py:131
-#: CombinedView/personpage.py:468 CombinedView/personpage.py:519
-#: CombinedView/personpage.py:681 CombinedView/personpage.py:894
+#: CombinedView/eventpage.py:235 CombinedView/personpage.py:132
+#: CombinedView/personpage.py:474 CombinedView/personpage.py:525
+#: CombinedView/personpage.py:687 CombinedView/personpage.py:900
 #, python-format
 msgid "Edit %s"
 msgstr ""
@@ -61,7 +61,7 @@ msgid "A view showing relationships and events for a person"
 msgstr ""
 
 #: CombinedView/combinedview.gpr.py:31 CombinedView/combinedview.py:650
-#: CombinedView/personpage.py:240
+#: CombinedView/personpage.py:244
 msgid "Relationships"
 msgstr ""
 
@@ -123,8 +123,8 @@ msgstr ""
 msgid "Person"
 msgstr ""
 
-#: CombinedView/eventpage.py:119 CombinedView/navigationview.py:360
-#: CombinedView/personpage.py:150
+#: CombinedView/eventpage.py:119 CombinedView/navigationview.py:365
+#: CombinedView/personpage.py:151
 msgid "ID"
 msgstr ""
 
@@ -144,200 +144,200 @@ msgstr ""
 msgid "Citations"
 msgstr ""
 
-#: CombinedView/navigationview.py:269
+#: CombinedView/navigationview.py:274
 #, python-format
 msgid "%s has been bookmarked"
 msgstr ""
 
-#: CombinedView/navigationview.py:273
+#: CombinedView/navigationview.py:278
 msgid "Could Not Set a Bookmark"
 msgstr ""
 
-#: CombinedView/navigationview.py:274
+#: CombinedView/navigationview.py:279
 msgid "A bookmark could not be set because no one was selected."
 msgstr ""
 
-#: CombinedView/navigationview.py:340
+#: CombinedView/navigationview.py:345
 msgid "No Home Person"
 msgstr ""
 
-#: CombinedView/navigationview.py:341
+#: CombinedView/navigationview.py:346
 msgid ""
 "You need to set a 'default person' to go to. Select the People View, select "
 "the person you want as 'Home Person', then confirm your choice via the menu "
 "Edit -> Set Home Person."
 msgstr ""
 
-#: CombinedView/navigationview.py:351 CombinedView/navigationview.py:354
+#: CombinedView/navigationview.py:356 CombinedView/navigationview.py:359
 msgid "Jump to by Gramps ID"
 msgstr ""
 
-#: CombinedView/navigationview.py:360
+#: CombinedView/navigationview.py:365
 #, python-format
 msgid "%s: "
 msgstr ""
 
-#: CombinedView/navigationview.py:365
+#: CombinedView/navigationview.py:370
 msgid "_Cancel"
 msgstr ""
 
-#: CombinedView/navigationview.py:366
+#: CombinedView/navigationview.py:371
 msgid "_Jump to"
 msgstr ""
 
-#: CombinedView/navigationview.py:378
+#: CombinedView/navigationview.py:383
 #, python-format
 msgid "Error: %s is not a valid Gramps ID"
 msgstr ""
 
-#: CombinedView/personpage.py:160
+#: CombinedView/personpage.py:161
 msgid "Birth"
 msgstr ""
 
-#: CombinedView/personpage.py:169 CombinedView/personpage.py:194
+#: CombinedView/personpage.py:170 CombinedView/personpage.py:195
 msgid "Death"
 msgstr ""
 
-#: CombinedView/personpage.py:189
+#: CombinedView/personpage.py:190
 msgid "Alive"
 msgstr ""
 
-#: CombinedView/personpage.py:196
+#: CombinedView/personpage.py:197
 msgid "unknown"
 msgstr ""
 
-#: CombinedView/personpage.py:251 CombinedView/personpage.py:272
+#: CombinedView/personpage.py:255 CombinedView/personpage.py:276
 msgid "Parents"
 msgstr ""
 
-#: CombinedView/personpage.py:275
+#: CombinedView/personpage.py:279
 msgid "Father"
 msgstr ""
 
-#: CombinedView/personpage.py:279
+#: CombinedView/personpage.py:283
 msgid "Mother"
 msgstr ""
 
-#: CombinedView/personpage.py:287
+#: CombinedView/personpage.py:291
 msgid "Siblings"
 msgstr ""
 
-#: CombinedView/personpage.py:297 CombinedView/personpage.py:358
+#: CombinedView/personpage.py:302 CombinedView/personpage.py:364
 msgid "Add new child to family"
 msgstr ""
 
-#: CombinedView/personpage.py:301 CombinedView/personpage.py:362
+#: CombinedView/personpage.py:306 CombinedView/personpage.py:368
 msgid "Add existing child to family"
 msgstr ""
 
-#: CombinedView/personpage.py:323
+#: CombinedView/personpage.py:328
 msgid "Broken family detected"
 msgstr ""
 
-#: CombinedView/personpage.py:324
+#: CombinedView/personpage.py:329
 msgid "Please run the Check and Repair Database tool"
 msgstr ""
 
-#: CombinedView/personpage.py:336
+#: CombinedView/personpage.py:341
 msgid "Family"
 msgstr ""
 
-#: CombinedView/personpage.py:340
+#: CombinedView/personpage.py:345
 msgid "Spouse"
 msgstr ""
 
-#: CombinedView/personpage.py:347
+#: CombinedView/personpage.py:352
 msgid "Children"
 msgstr ""
 
-#: CombinedView/personpage.py:397
+#: CombinedView/personpage.py:403
 msgid "Add a new set of parents"
 msgstr ""
 
-#: CombinedView/personpage.py:398
+#: CombinedView/personpage.py:404
 msgid "Add person as child to an existing family"
 msgstr ""
 
-#: CombinedView/personpage.py:399
+#: CombinedView/personpage.py:405
 msgid "Edit parents"
 msgstr ""
 
-#: CombinedView/personpage.py:400
+#: CombinedView/personpage.py:406
 msgid "Reorder parents"
 msgstr ""
 
-#: CombinedView/personpage.py:401
+#: CombinedView/personpage.py:407
 msgid "Remove person as child of these parents"
 msgstr ""
 
-#: CombinedView/personpage.py:403
+#: CombinedView/personpage.py:409
 msgid "Add a new family with person as parent"
 msgstr ""
 
-#: CombinedView/personpage.py:405
+#: CombinedView/personpage.py:411
 msgid "Edit family"
 msgstr ""
 
-#: CombinedView/personpage.py:406
+#: CombinedView/personpage.py:412
 msgid "Reorder families"
 msgstr ""
 
-#: CombinedView/personpage.py:407
+#: CombinedView/personpage.py:413
 msgid "Remove person as parent in this family"
 msgstr ""
 
-#: CombinedView/personpage.py:554
+#: CombinedView/personpage.py:560
 #, python-format
 msgid "Relationship type: %s"
 msgstr ""
 
-#: CombinedView/personpage.py:591
+#: CombinedView/personpage.py:597
 #, python-format
 msgid "%(event_type)s: %(date)s in %(place)s"
 msgstr ""
 
-#: CombinedView/personpage.py:595
+#: CombinedView/personpage.py:601
 #, python-format
 msgid "%(event_type)s: %(date)s"
 msgstr ""
 
-#: CombinedView/personpage.py:598
+#: CombinedView/personpage.py:604
 #, python-format
 msgid "%(event_type)s: %(place)s"
 msgstr ""
 
-#: CombinedView/personpage.py:619
+#: CombinedView/personpage.py:625
 msgid "Events"
 msgstr ""
 
-#: CombinedView/personpage.py:678 CombinedView/personpage.py:891
+#: CombinedView/personpage.py:684 CombinedView/personpage.py:897
 msgid "Click to make this event active"
 msgstr ""
 
-#: CombinedView/personpage.py:737
+#: CombinedView/personpage.py:743
 msgid "Click to visit this link"
 msgstr ""
 
-#: CombinedView/personpage.py:755
+#: CombinedView/personpage.py:761
 msgid "Album"
 msgstr ""
 
-#: CombinedView/personpage.py:824
+#: CombinedView/personpage.py:830
 msgid "Timeline"
 msgstr ""
 
-#: CombinedView/personpage.py:949
+#: CombinedView/personpage.py:955
 msgid "Associations"
 msgstr ""
 
-#: CombinedView/personpage.py:959
+#: CombinedView/personpage.py:965
 msgid "Association"
 msgstr ""
 
-#: CombinedView/personpage.py:959 CombinedView/personpage.py:966
+#: CombinedView/personpage.py:965 CombinedView/personpage.py:972
 msgid ": "
 msgstr ""
 
-#: CombinedView/personpage.py:966
+#: CombinedView/personpage.py:972
 msgid "Relationship"
 msgstr ""

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 11:51-0500\n"
+"POT-Creation-Date: 2024-10-24 14:14-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: Sqlite/ExportSql.py:1345
+#: Sqlite/ExportSql.py:1346
 #, python-format
 msgid "Export Complete: %d second"
 msgid_plural "Export Complete: %d seconds"
@@ -30,11 +30,11 @@ msgstr[1] ""
 msgid "%s could not be opened\n"
 msgstr ""
 
-#: Sqlite/ImportSql.py:589
+#: Sqlite/ImportSql.py:590
 msgid "CSV import"
 msgstr ""
 
-#: Sqlite/ImportSql.py:892
+#: Sqlite/ImportSql.py:893
 #, python-format
 msgid "Import Complete: %d second"
 msgid_plural "Import Complete: %d seconds"

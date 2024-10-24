@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-26 14:50-0500\n"
+"POT-Creation-Date: 2024-10-24 14:14-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,43 +27,43 @@ msgid ""
 "useful for Windows users."
 msgstr ""
 
-#: Themes/themes.py:126
+#: Themes/themes.py:128
 msgid "_Help"
 msgstr ""
 
-#: Themes/themes.py:170 Themes/themes.py:188
+#: Themes/themes.py:172 Themes/themes.py:190
 msgid "Theme is hardcoded by GTK_THEME"
 msgstr ""
 
-#: Themes/themes.py:173 Themes/themes.py:196
+#: Themes/themes.py:175 Themes/themes.py:198
 #, python-format
 msgid "%s: "
 msgstr ""
 
-#: Themes/themes.py:173 Themes/themes.py:223
+#: Themes/themes.py:175 Themes/themes.py:225
 msgid "Theme"
 msgstr ""
 
-#: Themes/themes.py:178
+#: Themes/themes.py:180
 msgid "Dark Variant"
 msgstr ""
 
-#: Themes/themes.py:196
+#: Themes/themes.py:198
 msgid "Font"
 msgstr ""
 
-#: Themes/themes.py:203
+#: Themes/themes.py:205
 msgid "_Toolbar"
 msgstr ""
 
-#: Themes/themes.py:203
+#: Themes/themes.py:205
 msgid "Text"
 msgstr ""
 
-#: Themes/themes.py:212
+#: Themes/themes.py:214
 msgid "Fixed Scrollbar (requires restart)"
 msgstr ""
 
-#: Themes/themes.py:219
+#: Themes/themes.py:221
 msgid "Restore to defaults"
 msgstr ""

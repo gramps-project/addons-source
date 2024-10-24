@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 11:50-0500\n"
+"POT-Creation-Date: 2024-10-24 14:14-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,46 +17,56 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: GenealogyTree/gt_ancestor.py:95 GenealogyTree/gt_descendant.py:95
+#: GenealogyTree/gt_ancestor.py:95 GenealogyTree/gt_descendant.py:96
 #: GenealogyTree/gt_sandclock.py:103
 #, python-format
 msgid "Person %s is not in the Database"
 msgstr ""
 
-#: GenealogyTree/gt_ancestor.py:160 GenealogyTree/gt_descendant.py:168
+#: GenealogyTree/gt_ancestor.py:160 GenealogyTree/gt_descendant.py:177
 #: GenealogyTree/gt_grandparent.py:217 GenealogyTree/gt_sandclock.py:227
 msgid "Report Options"
 msgstr ""
 
-#: GenealogyTree/gt_ancestor.py:162 GenealogyTree/gt_descendant.py:170
+#: GenealogyTree/gt_ancestor.py:162 GenealogyTree/gt_descendant.py:179
 #: GenealogyTree/gt_grandparent.py:219 GenealogyTree/gt_sandclock.py:230
 msgid "Center Person"
 msgstr ""
 
-#: GenealogyTree/gt_ancestor.py:163 GenealogyTree/gt_descendant.py:171
+#: GenealogyTree/gt_ancestor.py:163 GenealogyTree/gt_descendant.py:180
 #: GenealogyTree/gt_grandparent.py:220 GenealogyTree/gt_sandclock.py:231
 msgid "The center person for the report"
 msgstr ""
 
-#: GenealogyTree/gt_ancestor.py:166 GenealogyTree/gt_descendant.py:174
+#: GenealogyTree/gt_ancestor.py:166 GenealogyTree/gt_descendant.py:183
 #: GenealogyTree/gt_grandparent.py:223
 msgid "Generations"
 msgstr ""
 
-#: GenealogyTree/gt_ancestor.py:167 GenealogyTree/gt_descendant.py:175
+#: GenealogyTree/gt_ancestor.py:167 GenealogyTree/gt_descendant.py:184
 #: GenealogyTree/gt_grandparent.py:224 GenealogyTree/gt_sandclock.py:239
 #: GenealogyTree/gt_sandclock.py:243
 msgid "The number of generations to include in the tree"
 msgstr ""
 
-#: GenealogyTree/gt_ancestor.py:170 GenealogyTree/gt_descendant.py:178
+#: GenealogyTree/gt_ancestor.py:170 GenealogyTree/gt_descendant.py:187
 #: GenealogyTree/gt_grandparent.py:231 GenealogyTree/gt_sandclock.py:250
 msgid "Include images"
 msgstr ""
 
-#: GenealogyTree/gt_ancestor.py:171 GenealogyTree/gt_descendant.py:179
+#: GenealogyTree/gt_ancestor.py:171 GenealogyTree/gt_descendant.py:188
 #: GenealogyTree/gt_grandparent.py:232 GenealogyTree/gt_sandclock.py:251
 msgid "Include images of people in the nodes."
+msgstr ""
+
+#: GenealogyTree/gt_descendant.py:191
+msgid "First spouse left"
+msgstr ""
+
+#: GenealogyTree/gt_descendant.py:192
+msgid ""
+"Always put first of multiple spouses on the left. This can help reduce line-"
+"crossings with multiple marriages."
 msgstr ""
 
 #: GenealogyTree/gt_grandparent.py:119

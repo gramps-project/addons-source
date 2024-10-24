@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-24 11:24-0500\n"
+"POT-Creation-Date: 2024-10-24 14:13-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,23 +25,27 @@ msgstr ""
 msgid "Gramplet showing a matching DNA segment map"
 msgstr ""
 
-#: DNA/dnasegmentmap.py:436
+#: DNA/dnasegmentmap.py:546
 msgid "Chromosome "
 msgstr ""
 
-#: DNA/dnasegmentmap.py:442
+#: DNA/dnasegmentmap.py:552
 msgid " Map for "
 msgstr ""
 
-#: DNA/dnasegmentmap.py:474
+#: DNA/dnasegmentmap.py:634
 msgid "Chr"
 msgstr ""
 
-#: DNA/dnasegmentmap.py:614
-msgid "LEGEND"
+#: DNA/dnasegmentmap.py:759
+msgid "Legend"
 msgstr ""
 
-#: DNA/dnasegmentmap.py:827
+#: DNA/dnasegmentmap.py:761
+msgid ": Grandparent"
+msgstr ""
+
+#: DNA/dnasegmentmap.py:1056
 #, python-brace-format
 msgid ""
 "\n"
@@ -49,49 +53,45 @@ msgid ""
 "{1} cMs"
 msgstr ""
 
-#: DNA/dnasegmentmap.py:829
+#: DNA/dnasegmentmap.py:1058
 msgid ", "
 msgstr ""
 
-#: DNA/dnasegmentmap.py:831
+#: DNA/dnasegmentmap.py:1060
 msgid " SNPs"
 msgstr ""
 
-#: DNA/dnasegmentmap.py:832
-msgid ""
-"\n"
-"Starts at "
+#: DNA/dnasegmentmap.py:1061
+msgid " : Starts at "
 msgstr ""
 
-#: DNA/dnasegmentmap.py:834
+#: DNA/dnasegmentmap.py:1063
 msgid " and ends at "
 msgstr ""
 
-#: DNA/dnasegmentmap.py:838
+#: DNA/dnasegmentmap.py:1079 DNA/dnasegmentmap.py:1082
 #, python-brace-format
-msgid ""
-"\n"
-"Relationship: {0}"
+msgid "{0}"
 msgstr ""
 
-#: DNA/dnasegmentmap.py:848
-#, python-format
-msgid "%s"
-msgstr ""
-
-#: DNA/dnasegmentmap.py:852
+#: DNA/dnasegmentmap.py:1086
 #, python-format
 msgid "%(ancestor1)s and %(ancestor2)s"
 msgstr ""
 
-#: DNA/dnasegmentmap.py:856
+#: DNA/dnasegmentmap.py:1090
 #, python-brace-format
 msgid ""
 "\n"
-"Common Ancestors: {0}"
+"Relationship: {0} "
 msgstr ""
 
-#: DNA/dnasegmentmap.py:879
+#: DNA/dnasegmentmap.py:1091
+#, python-brace-format
+msgid " Ancestor: {0}"
+msgstr ""
+
+#: DNA/dnasegmentmap.py:1115
 msgid ""
 "Click to make this person active\n"
 "Right-click to edit this person"

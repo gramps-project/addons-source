@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-28 23:17+0100\n"
+"POT-Creation-Date: 2024-10-24 14:14-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -559,93 +559,33 @@ msgstr ""
 msgid "Add Child to Family"
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.gpr.py:152
-#, python-brace-format
-msgid ""
-"Failed to load the required module {module_name} version {module_version}."
-msgstr ""
-
-#: LifeLineChartView/lifelinechartview.gpr.py:154
-#, python-brace-format
-msgid ""
-"\n"
-"\n"
-"It is not possible to use {self.plugin_name} without this module. You can "
-"either uninstall this plugin, or download the module."
-msgstr ""
-
-#: LifeLineChartView/lifelinechartview.gpr.py:161
-msgid " Plugin"
-msgstr ""
-
-#: LifeLineChartView/lifelinechartview.gpr.py:163
-msgid "Download module"
-msgstr ""
-
-#: LifeLineChartView/lifelinechartview.gpr.py:164
-#: LifeLineChartView/lifelinechartview.py:834
-msgid "_Cancel"
-msgstr ""
-
-#: LifeLineChartView/lifelinechartview.gpr.py:170
-msgid "The user chose to ignore the warning once."
-msgstr ""
-
-#: LifeLineChartView/lifelinechartview.gpr.py:174
-msgid "The user chose to install the module."
-msgstr ""
-
-#: LifeLineChartView/lifelinechartview.gpr.py:206
-#, python-format
-msgid "Unable to open '%s' with curl"
-msgstr ""
-
-#: LifeLineChartView/lifelinechartview.gpr.py:217
-#: LifeLineChartView/lifelinechartview.gpr.py:224
-#, python-format
-msgid "Unable to open '%s'"
-msgstr ""
-
-#: LifeLineChartView/lifelinechartview.gpr.py:233
-#, python-format
-msgid "Error in reading '%s'"
-msgstr ""
-
-#: LifeLineChartView/lifelinechartview.gpr.py:248
-#, python-format
-msgid "Error: cannot open '%s'"
-msgstr ""
-
-#: LifeLineChartView/lifelinechartview.gpr.py:252
-#, python-format
-msgid "Error: unknown file type: '%s'"
-msgstr ""
-
-#: LifeLineChartView/lifelinechartview.gpr.py:318
+#: LifeLineChartView/lifelinechartview.gpr.py:23
 msgid "Life Line Ancestor Chart"
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.gpr.py:319
-#: LifeLineChartView/lifelinechartview.gpr.py:333
+#: LifeLineChartView/lifelinechartview.gpr.py:24
+#: LifeLineChartView/lifelinechartview.gpr.py:40
 msgid "Charts"
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.gpr.py:320
-#: LifeLineChartView/lifelinechartview.gpr.py:334
+#: LifeLineChartView/lifelinechartview.gpr.py:25
+#: LifeLineChartView/lifelinechartview.gpr.py:41
 msgid "Persons and their relation in a time based chart"
 msgstr ""
 
-#: LifeLineChartView/lifelinechartview.gpr.py:332
+#: LifeLineChartView/lifelinechartview.gpr.py:33
+#: LifeLineChartView/lifelinechartview.gpr.py:49
+#: LifeLineChartView/lifelinechartview.py:399
+msgid "Life Line Chart"
+msgstr ""
+
+#: LifeLineChartView/lifelinechartview.gpr.py:39
 msgid "Life Line Descendant Chart"
 msgstr ""
 
 #: LifeLineChartView/lifelinechartview.py:386
 #: LifeLineChartView/lifelinechartview.py:883
 msgid "General Layout"
-msgstr ""
-
-#: LifeLineChartView/lifelinechartview.py:399
-msgid "Life Line Chart"
 msgstr ""
 
 #: LifeLineChartView/lifelinechartview.py:508
@@ -694,6 +634,10 @@ msgstr ""
 
 #: LifeLineChartView/lifelinechartview.py:831
 msgid "Export View as SVG"
+msgstr ""
+
+#: LifeLineChartView/lifelinechartview.py:834
+msgid "_Cancel"
 msgstr ""
 
 #: LifeLineChartView/lifelinechartview.py:835

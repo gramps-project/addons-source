@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-14 10:55-0500\n"
+"POT-Creation-Date: 2024-10-24 14:14-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,7 +26,6 @@ msgid "Places map"
 msgstr ""
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:264
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:62
 msgid "Place Coordinate Gramplet"
 msgstr ""
 
@@ -217,40 +216,27 @@ msgstr ""
 msgid "Center on this place"
 msgstr ""
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:73
-#, python-brace-format
-msgid "Failed to load the required module {module_name}."
-msgstr ""
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:81
-msgid "Don't show again"
-msgstr ""
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:81
-msgid "OK"
-msgstr ""
-
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:138
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:23
 msgid "Place Coordinate Gramplet view"
 msgstr ""
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:139
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:24
 msgid "View for the place coordinate gramplet."
 msgstr ""
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:146
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:31
 msgid "Geography"
 msgstr ""
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:154
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:40
 msgid "Place and Coordinates"
 msgstr ""
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:156
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:42
 msgid "Gramplet that simplifies setting the coordinates of a place"
 msgstr ""
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:165
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:51
 msgid "Place Coordinates"
 msgstr ""
 

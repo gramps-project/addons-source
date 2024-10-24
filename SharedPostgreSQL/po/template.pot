@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-10 11:09-0500\n"
+"POT-Creation-Date: 2024-10-24 14:14-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,50 +17,22 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: SharedPostgreSQL/sharedpostgresql.gpr.py:29
+#: SharedPostgreSQL/sharedpostgresql.gpr.py:24
 msgid "SharedPostgreSQL"
 msgstr ""
 
-#: SharedPostgreSQL/sharedpostgresql.gpr.py:30
+#: SharedPostgreSQL/sharedpostgresql.gpr.py:25
 msgid "Shared _PostgreSQL Database"
 msgstr ""
 
-#: SharedPostgreSQL/sharedpostgresql.gpr.py:31
+#: SharedPostgreSQL/sharedpostgresql.gpr.py:26
 msgid "Shared PostgreSQL Database"
 msgstr ""
 
-#: SharedPostgreSQL/sharedpostgresql.gpr.py:46
-msgid "PostgreSQL Warning:  Python psycopg2 module not found."
-msgstr ""
-
-#: SharedPostgreSQL/sharedpostgresql.gpr.py:53
-msgid "PostgreSQL Failed to Load"
-msgstr ""
-
-#: SharedPostgreSQL/sharedpostgresql.gpr.py:55
-msgid ""
-"\n"
-"\n"
-"PostgreSQL is missing the psycopg2 python module.\n"
-"For now, it may be possible to install the files manually. See\n"
-"\n"
-"https://gramps-project.org/wiki/index.php?title=PostgreSQL \n"
-"\n"
-"To dismiss all future PostgreSQL warnings click Dismiss."
-msgstr ""
-
-#: SharedPostgreSQL/sharedpostgresql.gpr.py:60
-msgid " Dismiss "
-msgstr ""
-
-#: SharedPostgreSQL/sharedpostgresql.gpr.py:61
-msgid "Continue"
-msgstr ""
-
-#: SharedPostgreSQL/sharedpostgresql.py:73
+#: SharedPostgreSQL/sharedpostgresql.py:64
 msgid "Database version"
 msgstr ""
 
-#: SharedPostgreSQL/sharedpostgresql.py:74
+#: SharedPostgreSQL/sharedpostgresql.py:65
 msgid "Database module location"
 msgstr ""
