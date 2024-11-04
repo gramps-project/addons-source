@@ -5,7 +5,7 @@ Gramplet to display historical events with the year they happened, and optionall
 
 A double-click on a row will open your browser at the provided Link
 
-The gramplet works on the person and the relations view and will us the bith and death of the active person.
+The gramplet works on the People and the Relationship Category view and will use the birth and death of the active person.
 
 If either of the dates are missing the gramplet assumes a life span of 100 years
  
