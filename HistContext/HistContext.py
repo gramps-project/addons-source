@@ -29,8 +29,8 @@
 
 import os
 import logging
-import gi
 import glob
+import gi
 from gramps.gen.plug import Gramplet
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 from gramps.gen.utils.db import (get_birth_or_fallback, get_death_or_fallback)
@@ -62,8 +62,8 @@ local_log.info('Sprog = %s',lang)
 
 
 class HistContext(Gramplet):
-    """ 
-    class for showing a timeline 
+    """
+    class for showing a timeline
     """
     def init(self):
         self.model = Gtk.ListStore(str, str, str,str,str)
@@ -94,9 +94,21 @@ class HistContext(Gramplet):
         name = _("Files")
         flnam = os.path.join(os.path.dirname(__file__), '*.txt')
         files = [f for f in glob.glob(flnam)]
-        opt = EnumeratedListOption(name,self.__selFile)
+        opt = EnumeratedListOption(name,self.__sel_file)
         for filnm in files:
             opt.add_item(filnm,os.path.basename(filnm))
+        self.opts.append(opt)
+        name =_("Foreground color items in lifespan")
+        opt = StringOption(name,self.__fg_sel)
+        self.opts.append(opt)
+        name =_("Background color items in lifespan")
+        opt = StringOption(name,self.__bg_sel)
+        self.opts.append(opt)
+        name =_("Foreground color items outside lifespan")
+        opt = StringOption(name,self.__fg_not_sel)
+        self.opts.append(opt)
+        name =_("Background color items outside lifespan")
+        opt = StringOption(name,self.__bg_not_sel)
         self.opts.append(opt)
         if self.dbstate.db.is_open():
             for tag_handle in self.dbstate.db.get_tag_handles(sort_handles=True):
@@ -111,8 +123,12 @@ class HistContext(Gramplet):
         self.__start_filter_st = self.opts[0].get_value()
         self.__use_filter = self.opts[1].get_value()
         self.__hide_it = self.opts[2].get_value()
-        self.__selFile = self.opts[3].get_value()
-        local_log.info('1 stored Filename = %s',self.__selFile)
+        self.__sel_file = self.opts[3].get_value()
+        self.__fg_sel = self.opts[4].get_value()
+        self.__bg_sel = self.opts[5].get_value()
+        self.__fg_not_sel = self.opts[6].get_value()
+        self.__bg_not_sel = self.opts[7].get_value()
+        local_log.info('1 stored Filename = %s',self.__sel_file)
 
     def save_update_options(self, obj):
         """
@@ -123,9 +139,14 @@ class HistContext(Gramplet):
             self.__start_filter_st,
             self.__use_filter,
             self.__hide_it,
-            self.__selFile,
+            self.__sel_file,
+            self.__fg_sel,
+            self.__bg_sel,
+            self.__fg_not_sel,
+            self.__bg_not_sel,
+
         ]
-        local_log.info('3 stored Filename = %s',self.__selFile)
+        local_log.info('3 stored Filename = %s',self.__sel_file)
         self.update()
 
     def on_load(self):
@@ -133,17 +154,25 @@ class HistContext(Gramplet):
         Load stored configuration data.
         """
         local_log.info('Antal = %d',len(self.gui.data))
-        if len(self.gui.data) == 4:
+        if len(self.gui.data) == 8:
             self.__start_filter_st = self.gui.data[0]
             self.__use_filter = (self.gui.data[1] == 'True')
             self.__hide_it = (self.gui.data[2] == 'True')
-            self.__selFile = self.gui.data[3]
+            self.__sel_file = self.gui.data[3]
+            self.__fg_sel = self.gui.data[4]
+            self.__bg_sel = self.gui.data[5]
+            self.__fg_not_sel = self.gui.data[6]
+            self.__bg_not_sel = self.gui.data[7]
         else:
             self.__start_filter_st = "Census"
             self.__use_filter = True
             self.__hide_it = True
-            self.__selFile = os.path.join(os.path.dirname(__file__),'default_data_v1_0.txt')
-        local_log.info('2 stored Filename = %s',self.__selFile)
+            self.__sel_file = os.path.join(os.path.dirname(__file__),'default_data_v1_0.txt')
+            self.__fg_sel = '#000000'
+            self.__bg_sel = '#ffffff'
+            self.__fg_not_sel = '#000000'
+            self.__bg_not_sel = '#ededed'
+        local_log.info('2 stored Filename = %s',self.__sel_file)
 
 
     def get_birth_year(self):
@@ -154,7 +183,7 @@ class HistContext(Gramplet):
         deathyear = 0
         active_person = self.get_active_object("Person")
         if active_person:
-            navn = active_person.get_primary_name().get_name()
+#            navn = active_person.get_primary_name().get_name()
             birth = get_birth_or_fallback(self.dbstate.db, active_person)
             if birth:
                 birthdate = birth.get_date_object()
@@ -175,9 +204,12 @@ class HistContext(Gramplet):
         if (deathyear > 0) and (birthyear == 0):
             birthyear = deathyear - 100
         return birthyear, deathyear
-    
+
     def load_file(self,flnm):
-        local_log.info('FILENANME %s',flnm);
+        """
+        loading the file into the treeview
+        """
+        local_log.info('FILENANME %s',flnm)
         birthyear,deathyear = self.get_birth_year()
         linenbr = 0
         with open(flnm,encoding='utf-8') as myfile:
@@ -199,11 +231,11 @@ class HistContext(Gramplet):
 
                     if ((int(words[0]) >= int(birthyear)) and (int(words[0]) <= int(deathyear))) or \
                      ((int(end_year) >= int(birthyear)) and (int(end_year) <= int(deathyear))):
-                        mytupple = (words[0],words[1],words[2],words[3],'#000000','#ffffff')
+                        mytupple = (words[0],words[1],words[2],words[3],self.__fg_sel,self.__bg_sel)
                         hide_this = False
                     else:
                         hide_this = self.__hide_it
-                        mytupple = (words[0],words[1],words[2],words[3],'#000000','#ededed')
+                        mytupple = (words[0],words[1],words[2],words[3],self.__fg_not_sel,self.__bg_not_sel)
                     if not hide_this:
                         if  self.__use_filter:
                             if not words[2].startswith(self.__start_filter_st):
@@ -219,7 +251,7 @@ class HistContext(Gramplet):
         local_log.info('testing string %s ',self.__start_filter_st)
         local_log.info('testing boolean %r ',self.__use_filter)
         self.model.clear()
-        flnm = self.__selFile
+        flnm = self.__sel_file
         if not os.path.exists(flnm):
             flnm =  os.path.join(os.path.dirname(__file__), 'default'+'_data_v1_0.txt')
 
@@ -235,7 +267,7 @@ class HistContext(Gramplet):
             if os.path.exists(def_flnm):
                 if os.path.isfile(def_flnm):
                     self.load_file(def_flnm)
-    
+
     def active_changed(self, handle):
         """
         Called when the active person is changed.
@@ -248,11 +280,11 @@ class HistContext(Gramplet):
         Called when the user double-click a row
         """
         tree_iter = self.model.get_iter(path)
-        URL = self.model.get_value(tree_iter, 3)
-        if URL.startswith("https://"):
-            display_url(URL)
+        url = self.model.get_value(tree_iter, 3)
+        if url.startswith("https://"):
+            display_url(url)
         else:
-            errormessage = _('Cannot open URL: ')+URL
+            errormessage = _('Cannot open URL: ')+url
             ErrorDialog(_('Error:'),errormessage)
 
 

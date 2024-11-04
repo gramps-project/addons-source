@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-31 12:25+0100\n"
+"POT-Creation-Date: 2024-11-03 15:46+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -41,30 +41,46 @@ msgstr ""
 msgid "Files"
 msgstr ""
 
-#: HistContext.py:189
+#: HistContext.py:101
+msgid "Foreground color items in lifespan"
+msgstr ""
+
+#: HistContext.py:104
+msgid "Background color items in lifespan"
+msgstr ""
+
+#: HistContext.py:107
+msgid "Foreground color items outside lifespan"
+msgstr ""
+
+#: HistContext.py:110
+msgid "Background color items outside lifespan"
+msgstr ""
+
+#: HistContext.py:222
 msgid ": not four semicolons in : \""
 msgstr ""
 
-#: HistContext.py:191 HistContext.py:255
+#: HistContext.py:224 HistContext.py:288
 msgid "Error:"
 msgstr ""
 
-#: HistContext.py:254
+#: HistContext.py:287
 msgid "Cannot open URL: "
 msgstr ""
 
-#: HistContext.py:264
+#: HistContext.py:297
 msgid "Double click row to follow link"
 msgstr ""
 
-#: HistContext.py:272
+#: HistContext.py:305
 msgid "From"
 msgstr ""
 
-#: HistContext.py:281
+#: HistContext.py:314
 msgid "To"
 msgstr ""
 
-#: HistContext.py:286
+#: HistContext.py:319
 msgid "Text"
 msgstr ""
