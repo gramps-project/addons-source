@@ -34,11 +34,10 @@ import gi
 from gramps.gen.plug import Gramplet
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 from gramps.gen.utils.db import (get_birth_or_fallback, get_death_or_fallback)
+from gramps.gen.config import config as configman
 from gramps.gui.display import display_url
 from gramps.gui.dialog import ErrorDialog
 from gramps.gen.plug.menu import EnumeratedListOption,BooleanOption,StringOption
-
-
 from gi.repository import  Pango
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
@@ -59,7 +58,15 @@ except ValueError:
 _ = _trans.gettext
 lang = glocale.lang
 local_log.info('Sprog = %s',lang)
-
+config = configman.register_manager("HistContext/HistContext")
+config.register("myopt.filter_text" ,"String in beginning of text")
+config.register("myopt.use_filter",False);
+config.register("myopt.hide_outside_span",True)
+config.register("myopt.files", 'custom_v1_0.txt')
+config.register("myopt.fg_sel_col", '#000000')
+config.register("myopt.bg_sel_col", '#ffffff')
+config.register("myopt.fg_usel_col", '#000000')
+config.register("myopt.bg_usel_col", '#ededed')
 
 class HistContext(Gramplet):
     """
@@ -72,6 +79,7 @@ class HistContext(Gramplet):
         self.gui.get_container_widget().add(self.gui.WIDGET)
         self.gui.WIDGET.show()
         self.model.clear()
+        config.load();
 
 
     def build_options(self):
@@ -129,23 +137,21 @@ class HistContext(Gramplet):
         self.__fg_not_sel = self.opts[6].get_value()
         self.__bg_not_sel = self.opts[7].get_value()
         local_log.info('1 stored Filename = %s',self.__sel_file)
+        config.set("myopt.filter_text",self.__start_filter_st)
+        config.set("myopt.use_filter",self.__use_filter)
+        config.set("myopt.hide_outside_span",self.__hide_it)
+        config.set("myopt.files",self.__sel_file)
+        config.set("myopt.fg_sel_col",self.__fg_sel)
+        config.set("myopt.bg_sel_col",self.__bg_sel)
+        config.set("myopt.fg_usel_col",self.__fg_not_sel)
+        config.set("myopt.bg_usel_col",self.__bg_not_sel)
+        config.save()
 
     def save_update_options(self, obj):
         """
         Save a gramplet's options to file.
         """
         self.save_options()
-        self.gui.data = [
-            self.__start_filter_st,
-            self.__use_filter,
-            self.__hide_it,
-            self.__sel_file,
-            self.__fg_sel,
-            self.__bg_sel,
-            self.__fg_not_sel,
-            self.__bg_not_sel,
-
-        ]
         local_log.info('3 stored Filename = %s',self.__sel_file)
         self.update()
 
@@ -154,24 +160,14 @@ class HistContext(Gramplet):
         Load stored configuration data.
         """
         local_log.info('Antal = %d',len(self.gui.data))
-        if len(self.gui.data) == 8:
-            self.__start_filter_st = self.gui.data[0]
-            self.__use_filter = (self.gui.data[1] == 'True')
-            self.__hide_it = (self.gui.data[2] == 'True')
-            self.__sel_file = self.gui.data[3]
-            self.__fg_sel = self.gui.data[4]
-            self.__bg_sel = self.gui.data[5]
-            self.__fg_not_sel = self.gui.data[6]
-            self.__bg_not_sel = self.gui.data[7]
-        else:
-            self.__start_filter_st = "Census"
-            self.__use_filter = True
-            self.__hide_it = True
-            self.__sel_file = os.path.join(os.path.dirname(__file__),'default_data_v1_0.txt')
-            self.__fg_sel = '#000000'
-            self.__bg_sel = '#ffffff'
-            self.__fg_not_sel = '#000000'
-            self.__bg_not_sel = '#ededed'
+        self.__start_filter_st = config.get("myopt.filter_text")
+        self.__use_filter =  config.get("myopt.use_filter")
+        self.__hide_it =  config.get("myopt.hide_outside_span")
+        self.__sel_file =  config.get("myopt.files")
+        self.__fg_sel =  config.get("myopt.fg_sel_col")
+        self.__bg_sel = config.get("myopt.bg_sel_col")
+        self.__fg_not_sel = config.get("myopt.fg_usel_col")
+        self.__bg_not_sel = config.get("myopt.bg_usel_col")
         local_log.info('2 stored Filename = %s',self.__sel_file)
 
 
