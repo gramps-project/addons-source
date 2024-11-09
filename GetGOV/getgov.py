@@ -48,7 +48,7 @@ from gramps.gen.lib import Place, PlaceName, PlaceType, PlaceRef, Url, UrlType
 from gramps.gen.datehandler import parser
 from gramps.gen.config import config
 from gramps.gen.display.place import displayer as _pd
-
+from gramps.gui.dialog import WarningDialog
 #------------------------------------------------------------------------
 #
 # Internationalisation
@@ -368,7 +368,11 @@ class GetGOV(Gramplet):
 
     def __get_types(self):
         type_url = 'http://gov.genealogy.net/types.owl/'
-        response = urlopen(type_url)
+        try:
+            response = urlopen(type_url)
+        except:
+            WarningDialog(_('GetGOV: access to GOV gazetteer OWL files failed. Returning blank location'))
+            return
         data = response.read()
         dom = parseString(data)
         for group in dom.getElementsByTagName('owl:Class') :
@@ -393,15 +397,17 @@ class GetGOV(Gramplet):
 
     def __get_place(self, gov_id, type_dic, preferred_lang):
         gov_url = 'http://gov.genealogy.net/semanticWeb/about/' + quote(gov_id)
-
-        response = urlopen(gov_url)
+        place = Place()
+        place.gramps_id = gov_id
+        try:
+            response = urlopen(gov_url)
+        except:
+            return place, []
         data = response.read()
 
         dom = parseString(data)
         top = dom.getElementsByTagName('gov:GovObject')
 
-        place = Place()
-        place.gramps_id = gov_id
         if not len(top) :
             return place, []
 
