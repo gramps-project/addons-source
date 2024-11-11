@@ -367,7 +367,7 @@ class GetGOV(Gramplet):
                     self.dbstate.db.commit_place(place, trans)
 
     def __get_types(self):
-        type_url = 'http://gov.genealogy.net/types.owl/'
+        type_url = 'https://gov.genealogy.net/types.owl'
         try:
             response = urlopen(type_url)
         except:
@@ -396,7 +396,7 @@ class GetGOV(Gramplet):
                     self.type_dic[type_number,type_lang] = type_text
 
     def __get_place(self, gov_id, type_dic, preferred_lang):
-        gov_url = 'http://gov.genealogy.net/semanticWeb/about/' + quote(gov_id)
+        gov_url = 'https://gov.genealogy.net/semanticWeb/about/' + quote(gov_id)
         place = Place()
         place.gramps_id = gov_id
         try:
