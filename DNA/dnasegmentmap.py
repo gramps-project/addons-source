@@ -841,7 +841,7 @@ class SegmentMap(Gtk.DrawingArea):
                 cr.stroke()
         # Grey out paternal X background for males
                 if (self.gender == 1) and (current_chromosome == 'X'): 
-                    cr.rectangle(label_width, row_num * 2 * (chr_height + spacing) + offset, chart_width, chr_height)
+                    cr.rectangle(label_width, row_num * 2 * (chr_height + spacing) + offset, chart_width / self.x_scale, chr_height)
                     cr.set_source_rgba(0.8, 0.8, 0.8, 1)
                     cr.fill_preserve()
                     cr.set_source_rgba(*fg_color)
