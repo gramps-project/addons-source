@@ -2,6 +2,7 @@
 # Gramps - a GTK+/GNOME based genealogy program
 #
 # Copyright (C) 2015      Nick Hall
+# Copyright (C) 2024      Gary Griffin
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -27,7 +28,12 @@ GetGOV Gramplet.
 # Python modules
 #
 #------------------------------------------------------------------------
-from urllib.request import urlopen, quote
+
+import urllib.parse
+import urllib.request
+import urllib.error
+import ssl
+
 from xml.dom.minidom import parseString
 
 #------------------------------------------------------------------------
@@ -49,6 +55,7 @@ from gramps.gen.datehandler import parser
 from gramps.gen.config import config
 from gramps.gen.display.place import displayer as _pd
 from gramps.gui.dialog import WarningDialog
+
 #------------------------------------------------------------------------
 #
 # Internationalisation
@@ -291,6 +298,8 @@ class GetGOV(Gramplet):
         self.gui.get_container_widget().add_with_viewport(root)
         root.show_all()
         self.type_dic = dict()
+        self._scontext = ssl.SSLContext(ssl.PROTOCOL_TLS)
+        self._scontext.verify_mode = ssl.VerifyMode.CERT_NONE
 
 
     def __create_gui(self):
@@ -300,7 +309,7 @@ class GetGOV(Gramplet):
         vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         vbox.set_spacing(4)
 
-        label = Gtk.Label(_('Enter GOV-id:'))
+        label = Gtk.Label(_('Place ID to import from GOV (Historical Gazetteer):'))
         label.set_halign(Gtk.Align.START)
 
         self.entry = Gtk.Entry()
@@ -339,7 +348,8 @@ class GetGOV(Gramplet):
 
         if not self.type_dic:
             self.__get_types()
-
+        if not self.type_dic:
+            return
         with DbTxn(_('Add GOV-id place %s') % gov_id, self.dbstate.db) as trans:
             while to_do:
                 gov_id = to_do.pop()
@@ -369,9 +379,9 @@ class GetGOV(Gramplet):
     def __get_types(self):
         type_url = 'https://gov.genealogy.net/types.owl'
         try:
-            response = urlopen(type_url)
-        except:
-            WarningDialog(_('GetGOV: access to GOV gazetteer OWL files failed. Returning blank location'))
+            response = urllib.request.urlopen(url = type_url, context = self._scontext)
+        except urllib.error.URLError as e:
+            WarningDialog(_('GetGOV error: %s') % e.reason)
             return
         data = response.read()
         dom = parseString(data)
@@ -396,12 +406,14 @@ class GetGOV(Gramplet):
                     self.type_dic[type_number,type_lang] = type_text
 
     def __get_place(self, gov_id, type_dic, preferred_lang):
-        gov_url = 'https://gov.genealogy.net/semanticWeb/about/' + quote(gov_id)
+        gov_url = 'https://gov.genealogy.net/semanticWeb/about/' + urllib.parse.quote(gov_id)
         place = Place()
         place.gramps_id = gov_id
         try:
-            response = urlopen(gov_url)
-        except:
+            response = urllib.request.urlopen(url=gov_url,context=self._scontext)
+        except urllib.error.URLError as e:
+            eMsg = _('GOV error on id %s with code: ' %gov_id)
+            WarningDialog(eMsg+e.reason)
             return place, []
         data = response.read()
 
