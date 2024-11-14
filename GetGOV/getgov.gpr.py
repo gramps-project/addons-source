@@ -20,27 +20,28 @@
 #
 #
 
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # GetGOV Gramplet
 #
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 
-register(GRAMPLET,
-         id = "GetGOV Gramplet",
-         name = _("GetGOV"),
-         description = _("Gramplet to get places from the GOV database"),
-         status = STABLE,
-         audience = EXPERT,
-         version = '1.0.22',
-         gramps_target_version = '5.2',
-         fname = "getgov.py",
-         gramplet = 'GetGOV',
-         height = 375,
-         detached_width = 510,
-         detached_height = 480,
-         expand = True,
-         gramplet_title = _("GetGOV"),
-         help_url="GetGOV Gramplet",
-         include_in_listing = True,
-        )
+register(
+    GRAMPLET,
+    id="GetGOV Gramplet",
+    name=_("GetGOV"),
+    description=_("Gramplet to get places from the GOV database"),
+    status=STABLE,
+    audience=EXPERT,
+    version="1.0.20",
+    gramps_target_version="5.2",
+    fname="getgov.py",
+    gramplet="GetGOV",
+    height=375,
+    detached_width=510,
+    detached_height=480,
+    expand=True,
+    gramplet_title=_("GetGOV"),
+    help_url="GetGOV Gramplet",
+    include_in_listing=True,
+)
