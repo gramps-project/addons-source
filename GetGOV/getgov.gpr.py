@@ -2,6 +2,7 @@
 # Gramps - a GTK+/GNOME based genealogy program
 #
 # Copyright (C) 2015      Nick Hall
+# Copyright (C) 2024      Gary Griffin
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -19,27 +20,28 @@
 #
 #
 
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # GetGOV Gramplet
 #
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 
-register(GRAMPLET,
-         id = "GetGOV Gramplet",
-         name = _("GetGOV"),
-         description = _("Gramplet to get places from the GOV database"),
-         status = STABLE,
-         audience = EXPERT,
-         version = '1.0.22',
-         gramps_target_version = '5.2',
-         fname = "getgov.py",
-         gramplet = 'GetGOV',
-         height = 375,
-         detached_width = 510,
-         detached_height = 480,
-         expand = True,
-         gramplet_title = _("GetGOV"),
-         help_url="GetGOV Gramplet",
-         include_in_listing = True,
-        )
+register(
+    GRAMPLET,
+    id="GetGOV Gramplet",
+    name=_("GetGOV"),
+    description=_("Gramplet to get places from the GOV database"),
+    status=STABLE,
+    audience=EXPERT,
+    version="1.0.20",
+    gramps_target_version="5.2",
+    fname="getgov.py",
+    gramplet="GetGOV",
+    height=375,
+    detached_width=510,
+    detached_height=480,
+    expand=True,
+    gramplet_title=_("GetGOV"),
+    help_url="GetGOV Gramplet",
+    include_in_listing=True,
+)
