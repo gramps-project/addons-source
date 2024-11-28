@@ -193,8 +193,9 @@ class HistContext(Gramplet):
         self.__fg_not_sel = config.get("myopt.fg_usel_col")
         self.__bg_not_sel = config.get("myopt.bg_usel_col")
         self.__fl_ar = config.get("myopt.fl_ar")
-        if self.__fl_ar[0] == "None":
-            self.__fl_ar[0] = os.path.basename(self.__sel_file)
+
+    #        if self.__fl_ar[0] == "None":
+    #           self.__fl_ar[0] = os.path.basename(self.__sel_file)
 
     def get_birth_year(self):
         """

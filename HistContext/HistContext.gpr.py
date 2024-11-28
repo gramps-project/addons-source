@@ -4,7 +4,7 @@ register(
     name=_("Historical Context"),
     description=_("Lists relevant historical events during the lifetime of a Person"),
     status=STABLE,
-    version="0.2.15",
+    version="0.2.16",
     fname="HistContext.py",
     height=20,
     detached_width=510,
