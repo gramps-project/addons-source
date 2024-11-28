@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-03 15:46+0100\n"
-"PO-Revision-Date: 2024-11-03 15:50+0100\n"
+"POT-Creation-Date: 2024-11-28 15:35+0100\n"
+"PO-Revision-Date: 2024-11-28 15:40+0100\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
 "Language: da_DK\n"
@@ -18,70 +18,91 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
 
-#: HistContext.gpr.py:3 HistContext.gpr.py:13
+#: HistContext.gpr.py:4 HistContext.gpr.py:14
 msgid "Historical Context"
 msgstr "Historisk Sammhæng"
 
-#: HistContext.gpr.py:4
-msgid "Displaying a historical context"
-msgstr "Viser den historiske sammenhæng"
+#: HistContext.gpr.py:5
+msgid "Lists relevant historical events during the lifetime of a Person"
+msgstr "Viser relevante historiske hændelser igennem en persons levetid"
 
-#: HistContext.py:85
-msgid "Filter string "
-msgstr "Filter streng "
+#: HistContext.py:115
+msgid "Rows starting with this in the text column will be hidden "
+msgstr "Rækker der begynder med dette i tekstkolonnen vil blive skjult "
 
-#: HistContext.py:88
+#: HistContext.py:118
 msgid "Use filter "
 msgstr "Benyt filter "
 
-#: HistContext.py:91
+#: HistContext.py:121
 msgid "Hide outside life span "
 msgstr "Skjul udenfor livsforløb "
 
-#: HistContext.py:94
-msgid "Files"
-msgstr "Filer"
+#: HistContext.py:124
+msgid "Compare on years"
+msgstr "Benyt år til sammenligning"
 
-#: HistContext.py:101
+#: HistContext.py:127
 msgid "Foreground color items in lifespan"
 msgstr "Forgrundsfarve indefor livsforløb"
 
-#: HistContext.py:104
+#: HistContext.py:130
 msgid "Background color items in lifespan"
 msgstr "Baggrundsfarve indefor livsforløb"
 
-#: HistContext.py:107
+#: HistContext.py:133
 msgid "Foreground color items outside lifespan"
 msgstr "Forgrundsfarve  udenfor livsforløb"
 
-#: HistContext.py:110
+#: HistContext.py:136
 msgid "Background color items outside lifespan"
 msgstr "Baggrundsfarve udenfor livsforløb"
 
-#: HistContext.py:222
-msgid ": not four semicolons in : \""
-msgstr ": ikke fire semikoloner i :\""
+#: HistContext.py:141
+msgid "Select from files"
+msgstr "Vælg fra filer"
 
-#: HistContext.py:224 HistContext.py:288
+#: HistContext.py:267
+msgid "Invalid date "
+msgstr "Ugyldig dato "
+
+#: HistContext.py:268
+msgid " in line: "
+msgstr " i linje: "
+
+#: HistContext.py:269 HistContext.py:312 HistContext.py:398
 msgid "Error:"
 msgstr "Fejl:"
 
-#: HistContext.py:287
+#: HistContext.py:306
+msgid ": not four semicolons in : \""
+msgstr ": ikke fire semikoloner i :\""
+
+#: HistContext.py:397
 msgid "Cannot open URL: "
 msgstr "Kan ikke åbne URL: "
 
-#: HistContext.py:297
+#: HistContext.py:405
 msgid "Double click row to follow link"
 msgstr "Dobbeltklik for at følge linket"
 
-#: HistContext.py:305
+#: HistContext.py:416
 msgid "From"
-msgstr "Fra år"
+msgstr "Fra"
 
-#: HistContext.py:314
+#: HistContext.py:427
 msgid "To"
-msgstr "Til år"
+msgstr "Til"
 
-#: HistContext.py:319
+#: HistContext.py:436
 msgid "Text"
 msgstr "Tekst"
+
+#~ msgid "Files"
+#~ msgstr "Filer"
+
+#~ msgid "Filter string "
+#~ msgstr "Filter streng "
+
+#~ msgid "Displaying a historical context"
+#~ msgstr "Viser den historiske sammenhæng"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-03 15:46+0100\n"
+"POT-Creation-Date: 2024-11-28 15:35+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,70 +17,82 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: HistContext.gpr.py:3 HistContext.gpr.py:13
+#: HistContext.gpr.py:4 HistContext.gpr.py:14
 msgid "Historical Context"
 msgstr ""
 
-#: HistContext.gpr.py:4
-msgid "Displaying a historical context"
+#: HistContext.gpr.py:5
+msgid "Lists relevant historical events during the lifetime of a Person"
 msgstr ""
 
-#: HistContext.py:85
-msgid "Filter string "
+#: HistContext.py:115
+msgid "Rows starting with this in the text column will be hidden "
 msgstr ""
 
-#: HistContext.py:88
+#: HistContext.py:118
 msgid "Use filter "
 msgstr ""
 
-#: HistContext.py:91
+#: HistContext.py:121
 msgid "Hide outside life span "
 msgstr ""
 
-#: HistContext.py:94
-msgid "Files"
+#: HistContext.py:124
+msgid "Compare on years"
 msgstr ""
 
-#: HistContext.py:101
+#: HistContext.py:127
 msgid "Foreground color items in lifespan"
 msgstr ""
 
-#: HistContext.py:104
+#: HistContext.py:130
 msgid "Background color items in lifespan"
 msgstr ""
 
-#: HistContext.py:107
+#: HistContext.py:133
 msgid "Foreground color items outside lifespan"
 msgstr ""
 
-#: HistContext.py:110
+#: HistContext.py:136
 msgid "Background color items outside lifespan"
 msgstr ""
 
-#: HistContext.py:222
-msgid ": not four semicolons in : \""
+#: HistContext.py:141
+msgid "Select from files"
 msgstr ""
 
-#: HistContext.py:224 HistContext.py:288
+#: HistContext.py:267
+msgid "Invalid date "
+msgstr ""
+
+#: HistContext.py:268
+msgid " in line: "
+msgstr ""
+
+#: HistContext.py:269 HistContext.py:312 HistContext.py:398
 msgid "Error:"
 msgstr ""
 
-#: HistContext.py:287
+#: HistContext.py:306
+msgid ": not four semicolons in : \""
+msgstr ""
+
+#: HistContext.py:397
 msgid "Cannot open URL: "
 msgstr ""
 
-#: HistContext.py:297
+#: HistContext.py:405
 msgid "Double click row to follow link"
 msgstr ""
 
-#: HistContext.py:305
+#: HistContext.py:416
 msgid "From"
 msgstr ""
 
-#: HistContext.py:314
+#: HistContext.py:427
 msgid "To"
 msgstr ""
 
-#: HistContext.py:319
+#: HistContext.py:436
 msgid "Text"
 msgstr ""
