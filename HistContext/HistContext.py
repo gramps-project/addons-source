@@ -64,7 +64,11 @@ from gi.repository import Gtk
 # ------------------------------------------------------------------------
 
 local_log = logging.getLogger("HistContext")
-local_log.setLevel(logging.INFO)
+_level = os.environ.get("GRAMPS_LOG_LEVEL", "WARNING")
+if _level == "info":
+    local_log.setLevel(logging.INFO)
+else:
+    local_log.setLevel(logging.WARNING)
 
 try:
     _trans = glocale.get_addon_translator(__file__)
@@ -80,7 +84,7 @@ _config_file = os.path.join(os.path.dirname(__file__), "HistContext")
 config = configman.register_manager(_config_file)
 config.register("myopt.filter_text", "Filter out")
 config.register("myopt.use_filter", False)
-config.register("myopt.hide_outside_span", True)
+config.register("myopt.show_outside_span", True)
 config.register("myopt.files", "default_data_v1_0.txt")
 config.register("myopt.fg_sel_col", "#000000")
 config.register("myopt.bg_sel_col", "#ffffff")
@@ -122,8 +126,8 @@ class HistContext(Gramplet):
         name = _("Use filter ")
         opt = BooleanOption(name, self.__use_filter)
         self.opts.append(opt)
-        name = _("Hide outside life span ")
-        opt = BooleanOption(name, self.__hide_it)
+        name = _("Show outside life span ")
+        opt = BooleanOption(name, self.__show_it)
         self.opts.append(opt)
         name = _("Compare on years")
         opt = BooleanOption(name, self.__use_year)
@@ -157,7 +161,7 @@ class HistContext(Gramplet):
         # pylint: disable=attribute-defined-outside-init
         self.__start_filter_st = self.opts[0].get_value()
         self.__use_filter = self.opts[1].get_value()
-        self.__hide_it = self.opts[2].get_value()
+        self.__show_it = self.opts[2].get_value()
         self.__use_year = self.opts[3].get_value()
         self.__fg_sel = self.opts[4].get_value()
         self.__bg_sel = self.opts[5].get_value()
@@ -166,7 +170,7 @@ class HistContext(Gramplet):
         self.__fl_ar = self.opts[8].get_selected()
         config.set("myopt.filter_text", self.__start_filter_st)
         config.set("myopt.use_filter", self.__use_filter)
-        config.set("myopt.hide_outside_span", self.__hide_it)
+        config.set("myopt.show_outside_span", self.__show_it)
         config.set("myopt.use_year", self.__use_year)
         config.set("myopt.fg_sel_col", self.__fg_sel)
         config.set("myopt.bg_sel_col", self.__bg_sel)
@@ -190,7 +194,7 @@ class HistContext(Gramplet):
         local_log.info("Antal = %d", len(self.gui.data))
         self.__start_filter_st = config.get("myopt.filter_text")
         self.__use_filter = config.get("myopt.use_filter")
-        self.__hide_it = config.get("myopt.hide_outside_span")
+        self.__show_it = config.get("myopt.show_outside_span")
         self.__use_year = config.get("myopt.use_year")
         self.__fg_sel = config.get("myopt.fg_sel_col")
         self.__bg_sel = config.get("myopt.bg_sel_col")
@@ -349,7 +353,7 @@ class HistContext(Gramplet):
                         )
                         hide_this = False
                     else:
-                        hide_this = self.__hide_it
+                        hide_this = not self.__show_it
                         mytupple = (
                             words[0],
                             words[1],
