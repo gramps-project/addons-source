@@ -75,7 +75,9 @@ lang = glocale.lang
 local_log.info("Sprog = %s", lang)
 show_error = True
 # local_log.info("Maximum age = %s",_MAX_AGE_PROB_ALIVE);
-config = configman.register_manager("HistContext/HistContext")
+_config_file = os.path.join(os.path.dirname(__file__), "HistContext")
+
+config = configman.register_manager(_config_file)
 config.register("myopt.filter_text", "Filter out")
 config.register("myopt.use_filter", False)
 config.register("myopt.hide_outside_span", True)
