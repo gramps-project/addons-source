@@ -37,6 +37,7 @@ import gramps.gen.utils.alive as est
 from gramps.gen.utils.alive import probably_alive_range
 from gramps.gen.plug import Gramplet
 from gramps.gen.const import GRAMPS_LOCALE as glocale
+from gramps.version import VERSION as GRAMPSVERSION, VERSION_TUPLE
 from gramps.gen.datehandler import parser
 from gramps.gen.lib.date import Today
 
@@ -96,6 +97,7 @@ class HistContext(Gramplet):
 
     def init(self):
         local_log.info("--> dette var init")
+        # local_log.info("version: %s",HistContext.)
         #        self.gui.model = Gtk.ListStore(str, str, str, str, str)
         self.gui.WIDGET = self.build_gui()
         self.gui.get_container_widget().remove(self.gui.textview)
@@ -391,7 +393,7 @@ class HistContext(Gramplet):
         Called when the user double-click a row
         """
         tree_iter = self.model.get_iter(path)
-        url = self.model.get_value(tree_iter, 3)
+        url = self.model.get_value(tree_iter, 4)
         if url.startswith("https://"):
             display_url(url)
         else:
