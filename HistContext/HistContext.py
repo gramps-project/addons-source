@@ -90,8 +90,8 @@ config.register("myopt.fg_sel_col", "#000000")
 config.register("myopt.bg_sel_col", "#ffffff")
 config.register("myopt.fg_usel_col", "#000000")
 config.register("myopt.bg_usel_col", "#ededed")
-config.register("myopt.fl_ar", ["None"])
-config.register("myopt.use_year", True)
+config.register("myopt.fl_ar", ["default_data_v1_0.txt"])
+config.register("myopt.use_full_date", False)
 
 
 class HistContext(Gramplet):
@@ -129,8 +129,8 @@ class HistContext(Gramplet):
         name = _("Show outside life span ")
         opt = BooleanOption(name, self.__show_it)
         self.opts.append(opt)
-        name = _("Compare on years")
-        opt = BooleanOption(name, self.__use_year)
+        name = _("Use full date")
+        opt = BooleanOption(name, self.__use_full_date)
         self.opts.append(opt)
         name = _("Foreground color items in lifespan")
         opt = ColorOption(name, self.__fg_sel)
@@ -162,7 +162,8 @@ class HistContext(Gramplet):
         self.__start_filter_st = self.opts[0].get_value()
         self.__use_filter = self.opts[1].get_value()
         self.__show_it = self.opts[2].get_value()
-        self.__use_year = self.opts[3].get_value()
+        self.__use_full_date = self.opts[3].get_value()
+        self.__use_year = not self.__use_full_date
         self.__fg_sel = self.opts[4].get_value()
         self.__bg_sel = self.opts[5].get_value()
         self.__fg_not_sel = self.opts[6].get_value()
@@ -171,7 +172,7 @@ class HistContext(Gramplet):
         config.set("myopt.filter_text", self.__start_filter_st)
         config.set("myopt.use_filter", self.__use_filter)
         config.set("myopt.show_outside_span", self.__show_it)
-        config.set("myopt.use_year", self.__use_year)
+        config.set("myopt.use_full_date", self.__use_full_date)
         config.set("myopt.fg_sel_col", self.__fg_sel)
         config.set("myopt.bg_sel_col", self.__bg_sel)
         config.set("myopt.fg_usel_col", self.__fg_not_sel)
@@ -195,7 +196,8 @@ class HistContext(Gramplet):
         self.__start_filter_st = config.get("myopt.filter_text")
         self.__use_filter = config.get("myopt.use_filter")
         self.__show_it = config.get("myopt.show_outside_span")
-        self.__use_year = config.get("myopt.use_year")
+        self.__use_full_date = config.get("myopt.use_full_date")
+        self.__use_year = not self.__use_full_date
         self.__fg_sel = config.get("myopt.fg_sel_col")
         self.__bg_sel = config.get("myopt.bg_sel_col")
         self.__fg_not_sel = config.get("myopt.fg_usel_col")
@@ -219,16 +221,25 @@ class HistContext(Gramplet):
             est._MAX_AGE_PROB_ALIVE,
             est._AVG_GENERATION_GAP,
         )
+
         if date1:
             if self.__use_year:
                 birthyear = date1.to_calendar("gregorian").get_year()
             else:
                 birthyear = str(date1).replace("-", "")
+                if not birthyear[0].isdigit():
+                    mydate = birthyear
+                    birthyear = date1.to_calendar("gregorian").get_year() * 10000 + 101
+                    local_log.info("1 Special date %s %s", birthyear, mydate)
         if date2:
             if self.__use_year:
                 deathyear = date2.to_calendar("gregorian").get_year()
             else:
                 deathyear = str(date2).replace("-", "")
+                if not deathyear[0].isdigit():
+                    mydate = deathyear
+                    deathyear = date2.to_calendar("gregorian").get_year() * 10000 + 101
+                    local_log.info("2 Special date %s %s", deathyear, mydate)
         local_log.info("Født: %s", birthyear)
         local_log.info("Død: %s", deathyear)
         return birthyear, deathyear
@@ -303,6 +314,7 @@ class HistContext(Gramplet):
         local_log.info("FILENANME %s", flnm)
         self.sort_date = ""
         birthyear, deathyear = self.get_birth_year()
+
         self.linenbr = 0
         with open(flnm, encoding="utf-8") as myfile:
             for line in myfile:
@@ -335,6 +347,7 @@ class HistContext(Gramplet):
                         end_year = str(self.normalize_date(words[1], False, False))
                     begin_year = begin_year.replace("-", "")
                     end_year = end_year.replace("-", "")
+
                     if (
                         (int(begin_year) >= int(birthyear))
                         and (int(begin_year) <= int(deathyear))
