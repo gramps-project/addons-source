@@ -129,7 +129,7 @@ class HistContext(Gramplet):
         name = _("Show outside life span ")
         opt = BooleanOption(name, self.__show_it)
         self.opts.append(opt)
-        name = _("Use full date")
+        name = _("Use full dates")
         opt = BooleanOption(name, self.__use_full_date)
         self.opts.append(opt)
         name = _("Foreground color items in lifespan")
@@ -238,7 +238,7 @@ class HistContext(Gramplet):
                 deathyear = str(date2).replace("-", "")
                 if not deathyear[0].isdigit():
                     mydate = deathyear
-                    deathyear = date2.to_calendar("gregorian").get_year() * 10000 + 101
+                    deathyear = date2.to_calendar("gregorian").get_year() * 10000 + 1231
                     local_log.info("2 Special date %s %s", deathyear, mydate)
         local_log.info("Født: %s", birthyear)
         local_log.info("Død: %s", deathyear)
@@ -324,7 +324,7 @@ class HistContext(Gramplet):
                 if len(words) != 5:
                     if len(line) > 10:
                         errormessage = (
-                            _(': not four semicolons in : "')
+                            _(': line does not contain four sections separated by semicolons in : "')
                             + line
                             + 'i" File: '
                             + flnm
