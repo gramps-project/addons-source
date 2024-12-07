@@ -320,7 +320,7 @@ class EditForm(ManagedWindow):
         event_type.set_from_xml_str(get_form_type(form_id))
         self.event.set_type(event_type)
 
-        # Set reference iff this is a new form
+        # Set reference if this is a new form
         if not event.get_handle():
             form_reference = get_form_reference(form_id)
             if form_reference:
