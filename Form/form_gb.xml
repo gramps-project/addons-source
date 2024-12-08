@@ -737,12 +737,12 @@
             <column>
                 <_attribute>Age</_attribute>
                 <size>5</size>
-                <_longname>AGE</_longname>
+                <_longname>AGE years</_longname>
             </column>
             <column>
                 <_attribute>Age Months</_attribute>
                 <size>5</size>
-                <_longname>AGE</_longname>
+                <_longname>AGE months</_longname>
             </column>
             <column>
                 <_attribute>Sex</_attribute>
