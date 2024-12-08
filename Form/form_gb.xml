@@ -740,6 +740,11 @@
                 <_longname>AGE</_longname>
             </column>
             <column>
+                <_attribute>Age Months</_attribute>
+                <size>5</size>
+                <_longname>AGE</_longname>
+            </column>
+            <column>
                 <_attribute>Sex</_attribute>
                 <size>5</size>
                 <_longname>SEX</_longname>
