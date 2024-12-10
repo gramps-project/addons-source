@@ -134,7 +134,7 @@ class DateCalculator(Gramplet):
                 if not val1.is_valid():
                     raise Exception()
             except:
-                self.result.set_text(_("Error: invalid entry for expression 1"))
+                self.result.set_text(_("Error: invalid date for expression 1"))
                 return
         try:
             val2 = eval(text2)
@@ -144,44 +144,47 @@ class DateCalculator(Gramplet):
                 if not val2.is_valid():
                     raise Exception()
             except:
-                self.result.set_text(_("Error: invalid entry for expression 2"))
+                self.result.set_text(_("Error: invalid offset for expression 2"))
                 return
+        result = None
         if isinstance(val1, Date):
             if isinstance(val2, Date):
                 if neg1:
-                    self.result.set_text(str(val2 - val1))
+                    result = val2 - val1
                 else:
-                    self.result.set_text(str(val1 - val2))
+                    result = val1 - val2
             elif isinstance(val2, tuple):
                 if neg2:
-                    self.result.set_text(str(val1 - val2))
+                    result = val1 - val2
                 else:
-                    self.result.set_text(str(val1 + val2))
+                    result = val1 + val2
             elif isinstance(val2, int):
                 if neg2:
-                    self.result.set_text(str(val1 - val2))
+                    result = val1 - val2
                 else:
-                    self.result.set_text(str(val1 + val2))
+                    result = val1 + val2
         elif isinstance(val1, tuple):
             if isinstance(val2, Date):
                 if neg1:
-                    self.result.set_text(str(val2 - val1))
+                    result = val2 - val1
                 else:
-                    self.result.set_text(str(val2 + val1))
+                    result = val2 + val1
             elif isinstance(val2, tuple):
-                self.result.set_text(_("Error: at least one expression must be a date"))
+                result = _("Error: at least one expression must be a date")
             elif isinstance(val2, int):
-                self.result.set_text(_("Error: at least one expression must be a date"))
+                result = _("Error: at least one expression must be a date")
         elif isinstance(val1, int):
             if isinstance(val2, Date):
                 if neg1:
-                    self.result.set_text(str(val2 - val1))
+                    result = val2 - val1
                 else:
-                    self.result.set_text(str(val2 + val1))
+                    result = val2 + val1
             elif isinstance(val2, tuple):
-                self.result.set_text(_("Error: at least one expression must be a date"))
+                result = _("Error: at least one expression must be a date")
             elif isinstance(val2, int):
-                self.result.set_text(_("Error: at least one expression must be a date"))
+                result = _("Error: at least one expression must be a date")
+        if result:
+            self.result.set_text(str(result))
 
     def copy_clicked(self, obj):
         text_to_clipboard(self.result.get_text())
