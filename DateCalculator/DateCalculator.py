@@ -36,6 +36,7 @@ from gi.repository import Gtk
 #
 #------------------------------------------------------------------------
 from gramps.gen.plug import Gramplet
+from gramps.gen.datehandler import displayer
 from gramps.gen.lib import Date
 from gramps.gui.utils import text_to_clipboard
 
@@ -186,6 +187,7 @@ class DateCalculator(Gramplet):
         if result:
             if isinstance(result, Date):                
                 result.set_quality(Date.QUAL_CALCULATED)
+                result = displayer.display(result)
             self.result.set_text(str(result))
 
     def copy_clicked(self, obj):
