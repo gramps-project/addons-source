@@ -184,6 +184,8 @@ class DateCalculator(Gramplet):
             elif isinstance(val2, int):
                 result = _("Error: at least one expression must be a date")
         if result:
+            if isinstance(result, Date):                
+                result.set_quality(Date.QUAL_CALCULATED)
             self.result.set_text(str(result))
 
     def copy_clicked(self, obj):
