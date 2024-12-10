@@ -113,7 +113,7 @@ class DateCalculator(Gramplet):
 
     def __add_entry(self, name, tooltip=""):
         """
-        Add a text view to the interface.
+        Add a Entry widget to the interface.
         """
         label = Gtk.Label(halign=Gtk.Align.START)
         label.set_markup("<b>%s</b>" % name)
