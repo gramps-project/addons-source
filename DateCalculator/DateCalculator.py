@@ -37,6 +37,7 @@ from gi.repository import Gtk
 #------------------------------------------------------------------------
 from gramps.gen.plug import Gramplet
 from gramps.gen.lib import Date
+from gramps.gui.utils import text_to_clipboard
 
 #------------------------------------------------------------------------
 #
@@ -87,6 +88,9 @@ class DateCalculator(Gramplet):
         apply_button = Gtk.Button(label=_("Calculate"))
         apply_button.connect('clicked', self.apply_clicked)
         button_box.add(apply_button)
+        copy_button = Gtk.Button(label=_("Copy"))
+        copy_button.connect('clicked', self.copy_clicked)
+        button_box.add(copy_button)
         clear_button = Gtk.Button(label=_("Clear"))
         clear_button.connect('clicked', self.clear_clicked)
         button_box.add(clear_button)
@@ -178,6 +182,9 @@ class DateCalculator(Gramplet):
                 self.result.set_text(_("Error: at least one expression must be a date"))
             elif isinstance(val2, int):
                 self.result.set_text(_("Error: at least one expression must be a date"))
+
+    def copy_clicked(self, obj):
+        text_to_clipboard(self.result.get_text())
 
     def clear_clicked(self, obj):
         self.entry1.set_text("")
