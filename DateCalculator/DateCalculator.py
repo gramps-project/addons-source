@@ -80,10 +80,10 @@ class DateCalculator(Gramplet):
         self.top.set_border_width(6)
 
         self.entry1 = self.__add_entry(
-            _("Expression 1: Reference Date or Date Range"), _("a valid Gramps date")
+            _("Reference Date or Date Range"), _("a valid Gramps date")
         )
         self.entry2 = self.__add_entry(
-            _("Expression 2: Date or offset ±y or ±y, m, d"),
+            _("Date or offset ±y or ±y, m, d"),
             _(
                 "1. a Date\n2. a positive or negative number, representing years\n3. a positive or negative list of values, representing years, months, days"
             ),
@@ -145,7 +145,7 @@ class DateCalculator(Gramplet):
                 if not val1.is_valid():
                     raise Exception()
             except:
-                self.result.set_text(_("Error: invalid date for expression 1"))
+                self.result.set_text(_("Error: invalid date for first expression"))
                 return
         try:
             val2 = eval(text2)
@@ -155,7 +155,7 @@ class DateCalculator(Gramplet):
                 if not val2.is_valid():
                     raise Exception()
             except:
-                self.result.set_text(_("Error: invalid offset for expression 2"))
+                self.result.set_text(_("Error: invalid offset for second expression"))
                 return
         result = None
         if isinstance(val1, Date):
