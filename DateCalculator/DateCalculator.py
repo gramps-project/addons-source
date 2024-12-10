@@ -79,14 +79,18 @@ class DateCalculator(Gramplet):
         self.result = self.__add_entry(_("Result"))
         self.result.set_editable(False)
 
-        bbox = Gtk.ButtonBox()
+        button_box = Gtk.ButtonBox()
+        button_box.set_layout(Gtk.ButtonBoxStyle.START)
+        button_box.set_spacing(6)
+        button_box.set_border_width(12)
+
         apply_button = Gtk.Button(label=_("Calculate"))
         apply_button.connect('clicked', self.apply_clicked)
-        bbox.pack_start(apply_button, False, False, 6)
+        button_box.add(apply_button)
         clear_button = Gtk.Button(label=_("Clear"))
         clear_button.connect('clicked', self.clear_clicked)
-        bbox.pack_start(clear_button, False, False, 6)
-        self.top.pack_start(bbox, False, False, 6)
+        button_box.add(clear_button)
+        self.top.pack_start(button_box, False, False, 6)
 
         self.top.show_all()
         self.clear_clicked(None)
