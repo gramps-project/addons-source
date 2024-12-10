@@ -23,29 +23,30 @@
 DateCalculator does date math.
 """
 
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # Python modules
 #
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 from gi.repository import Gtk
 
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # GRAMPS modules
 #
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 from gramps.gen.plug import Gramplet
 from gramps.gen.datehandler import displayer
 from gramps.gen.lib import Date
 from gramps.gui.utils import text_to_clipboard
 
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # Internationalisation
 #
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 from gramps.gen.const import GRAMPS_LOCALE as glocale
+
 try:
     trans = glocale.get_addon_translator(__file__)
 except ValueError:
@@ -55,15 +56,17 @@ ngettext = trans.ngettext
 
 from gramps.gen.datehandler import parser
 
-#------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------
 #
 # Classes
 #
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 class DateCalculator(Gramplet):
     """
     Gramplet that computes date math.
     """
+
     def init(self):
         self.gui.WIDGET = self.build_gui()
         self.gui.get_container_widget().remove(self.gui.textview)
@@ -76,8 +79,15 @@ class DateCalculator(Gramplet):
         self.top = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         self.top.set_border_width(6)
 
-        self.entry1 = self.__add_entry(_("Expression 1: Reference Date or Date Range"), _("a valid Gramps date"))
-        self.entry2 = self.__add_entry(_("Expression 2: Date or offset ±y or ±y, m, d"), _("1. a Date\n2. a positive or negative number, representing years\n3. a positive or negative list of values, representing years, months, days"))
+        self.entry1 = self.__add_entry(
+            _("Expression 1: Reference Date or Date Range"), _("a valid Gramps date")
+        )
+        self.entry2 = self.__add_entry(
+            _("Expression 2: Date or offset ±y or ±y, m, d"),
+            _(
+                "1. a Date\n2. a positive or negative number, representing years\n3. a positive or negative list of values, representing years, months, days"
+            ),
+        )
         self.result = self.__add_entry(_("Result"))
         self.result.set_editable(False)
 
@@ -87,13 +97,13 @@ class DateCalculator(Gramplet):
         button_box.set_border_width(12)
 
         apply_button = Gtk.Button(label=_("Calculate"))
-        apply_button.connect('clicked', self.apply_clicked)
+        apply_button.connect("clicked", self.apply_clicked)
         button_box.add(apply_button)
         copy_button = Gtk.Button(label=_("Copy"))
-        copy_button.connect('clicked', self.copy_clicked)
+        copy_button.connect("clicked", self.copy_clicked)
         button_box.add(copy_button)
         clear_button = Gtk.Button(label=_("Clear"))
-        clear_button.connect('clicked', self.clear_clicked)
+        clear_button.connect("clicked", self.clear_clicked)
         button_box.add(clear_button)
         self.top.pack_start(button_box, False, False, 6)
 
@@ -101,12 +111,12 @@ class DateCalculator(Gramplet):
         self.clear_clicked(None)
         return self.top
 
-    def __add_entry(self, name, tooltip = ""):
+    def __add_entry(self, name, tooltip=""):
         """
         Add a text view to the interface.
         """
         label = Gtk.Label(halign=Gtk.Align.START)
-        label.set_markup('<b>%s</b>' % name)
+        label.set_markup("<b>%s</b>" % name)
         self.top.pack_start(label, False, False, 6)
         entry = Gtk.Entry()
         entry.set_tooltip_text(tooltip)
@@ -185,7 +195,7 @@ class DateCalculator(Gramplet):
             elif isinstance(val2, int):
                 result = _("Error: at least one expression must be a date")
         if result:
-            if isinstance(result, Date):                
+            if isinstance(result, Date):
                 result.set_quality(Date.QUAL_CALCULATED)
                 result = displayer.display(result)
             self.result.set_text(str(result))
@@ -197,5 +207,5 @@ class DateCalculator(Gramplet):
         self.entry1.set_text("")
         self.entry2.set_text("")
         self.result.set_text(
-            _("Enter an expression in the entries above and click Calculate."
-          ))
+            _("Enter an expression in the entries above and click Calculate.")
+        )
