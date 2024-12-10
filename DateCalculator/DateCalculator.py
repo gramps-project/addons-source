@@ -77,6 +77,7 @@ class DateCalculator(Gramplet):
         self.entry1 = self.__add_entry(_("Expression 1: Reference Date or Date Range"), _("a valid Gramps date"))
         self.entry2 = self.__add_entry(_("Expression 2: Date or offset ±y or ±y, m, d"), _("1. a Date\n2. a positive or negative number, representing years\n3. a positive or negative list of values, representing years, months, days"))
         self.result = self.__add_entry(_("Result"))
+        self.result.set_editable(False)
 
         bbox = Gtk.ButtonBox()
         apply_button = Gtk.Button(label=_("Calculate"))
