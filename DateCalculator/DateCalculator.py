@@ -74,9 +74,9 @@ class DateCalculator(Gramplet):
         self.top = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         self.top.set_border_width(6)
 
-        self.entry1 = self.__add_text_view(_("Expression 1: Reference Date or Date Range"), _("a valid Gramps date"))
-        self.entry2 = self.__add_text_view(_("Expression 2: Date or offset ±y or ±y, m, d"), _("1. a Date\n2. a positive or negative number, representing years\n3. a positive or negative list of values, representing years, months, days"))
-        self.result = self.__add_text_view(_("Result"))
+        self.entry1 = self.__add_entry(_("Expression 1: Reference Date or Date Range"), _("a valid Gramps date"))
+        self.entry2 = self.__add_entry(_("Expression 2: Date or offset ±y or ±y, m, d"), _("1. a Date\n2. a positive or negative number, representing years\n3. a positive or negative list of values, representing years, months, days"))
+        self.result = self.__add_entry(_("Result"))
 
         bbox = Gtk.ButtonBox()
         apply_button = Gtk.Button(label=_("Calculate"))
@@ -91,29 +91,24 @@ class DateCalculator(Gramplet):
         self.clear_clicked(None)
         return self.top
 
-    def __add_text_view(self, name, tooltip = ""):
+    def __add_entry(self, name, tooltip = ""):
         """
         Add a text view to the interface.
         """
         label = Gtk.Label(halign=Gtk.Align.START)
         label.set_markup('<b>%s</b>' % name)
         self.top.pack_start(label, False, False, 6)
-        swin = Gtk.ScrolledWindow()
-        swin.set_shadow_type(Gtk.ShadowType.IN)
-        tview = Gtk.TextView()
-        tview.set_tooltip_text(tooltip)
-        swin.add(tview)
-        self.top.pack_start(swin, True, True, 6)
-        return tview.get_buffer()
+        entry = Gtk.Entry()
+        entry.set_tooltip_text(tooltip)
+        self.top.pack_start(entry, False, False, 6)
+        return entry
 
     def apply_clicked(self, obj):
         """
         Method that is run when you click the Calculate button.
         """
-        text1 = str(self.entry1.get_text(self.entry1.get_start_iter(),
-                                         self.entry1.get_end_iter(), False))
-        text2 = str(self.entry2.get_text(self.entry2.get_start_iter(),
-                                         self.entry2.get_end_iter(), False))
+        text1 = str(self.entry1.get_text())
+        text2 = str(self.entry2.get_text())
         neg1 = False
         neg2 = False
         if text1.startswith("-"):
