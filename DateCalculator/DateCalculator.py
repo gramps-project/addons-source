@@ -3,6 +3,7 @@
 # Copyright (C) 2010       Jakim Friant
 # Copyright (c) 2015       Douglas S. Blank <doug.blank@gmail.com>
 # Copyright (c) 2020       Jan Sparreboom <jan@sparreboom.net>
+# Copyright (c) 2024       Steve Youngs <steve@youngs.cc>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -73,8 +74,8 @@ class DateCalculator(Gramplet):
         self.top = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
         self.top.set_border_width(6)
 
-        self.entry1 = self.__add_text_view(_("Expression 1"))
-        self.entry2 = self.__add_text_view(_("Expression 2"))
+        self.entry1 = self.__add_text_view(_("Expression 1: Reference Date or Date Range"))
+        self.entry2 = self.__add_text_view(_("Expression 2: Date or offset ±y or ±y, m, d"))
         self.result = self.__add_text_view(_("Result"))
 
         bbox = Gtk.ButtonBox()
