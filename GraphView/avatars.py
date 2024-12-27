@@ -61,7 +61,6 @@ class Avatars():
                        2: (_('Light'), 'light'),
                        3: (_('Cartoon'), 'cartoon'),
                        4: (_('Modern'), 'modern'),
-                       5: (_('Updated'), 'updated'),
                       }
 
         self.style = 1
