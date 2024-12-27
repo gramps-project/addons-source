@@ -2,7 +2,7 @@
 #
 # Gramps - a GTK+/GNOME based genealogy program
 #
-# Copyright (C) 2021  Manuela Kugel (gramps@ur-ahn.de)
+# Copyright (C) 2021-2024  Manuela Kugel (gramps@ur-ahn.de)
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -31,15 +31,15 @@ MODULE_VERSION="5.2"
 
 #------------------------------------------------------------------------
 #
-# Narrated Web Site
+# for use with the Narrated Web Site
 #
 #------------------------------------------------------------------------
 
 register(REPORT,
          id = 'TimePedigreeHTML',
          name = _("Timeline Pedigree Report"),
-         description = _("This creates a website showing a "
-            "pedigree with birthday relation"),
+         description = _("Creates an HTML webpage that uses JavaScript to "
+            "show a pedigree block diagram arranged vertically by birth date"),
          version = '0.0.6',
          gramps_target_version = MODULE_VERSION,
          status = STABLE,
@@ -49,5 +49,6 @@ register(REPORT,
          category = CATEGORY_WEB,
          reportclass = 'TimePedigreeHtml',
          optionclass = 'TimePedigreeHtmlOptions',
-         report_modes = [REPORT_MODE_GUI, REPORT_MODE_CLI]
+         report_modes = [REPORT_MODE_GUI, REPORT_MODE_CLI],
+         help_url ='Addon:Timeline_Pedigree_Report'
 )
