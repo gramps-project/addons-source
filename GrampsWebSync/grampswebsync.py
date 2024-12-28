@@ -28,8 +28,6 @@ from datetime import datetime
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlparse
 
-from gdb import Value
-
 from const import (
     C_ADD_LOC,
     C_ADD_REM,
