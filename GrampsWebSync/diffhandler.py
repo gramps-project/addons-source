@@ -68,14 +68,14 @@ class WebApiSyncDiffHandler:
         self.db2 = db2
         self.user = user
         self._diff_dbs = self.get_diff_dbs()
-        self.differences = {
+        self.differences: dict[tuple[str, str], tuple[GrampsObject, GrampsObject]] = {
             (obj1.handle, obj_type): (obj1, obj2)
             for (obj_type, obj1, obj2) in self._diff_dbs[0]
         }
-        self.missing_from_db1 = {
+        self.missing_from_db1: dict[tuple[str, str], GrampsObject] = {
             (obj.handle, obj_type): obj for (obj_type, obj) in self._diff_dbs[1]
         }
-        self.missing_from_db2 = {
+        self.missing_from_db2: dict[tuple[str, str], GrampsObject] = {
             (obj.handle, obj_type): obj for (obj_type, obj) in self._diff_dbs[2]
         }
         self._latest_common_timestamp = self.get_latest_common_timestamp()
@@ -106,6 +106,7 @@ class WebApiSyncDiffHandler:
         handles_func = self.db1.method("get_%s_handles", class_name)
         handle_func = self.db1.method("get_%s_from_handle", class_name)
         handle_func_db2 = self.db2.method("get_%s_from_handle", class_name)
+        assert handles_func and handle_func and handle_func_db2  # for type checker
         # all handles in db1
         all_handles = set(handles_func())
         # all handles missing in db2
@@ -133,7 +134,7 @@ class WebApiSyncDiffHandler:
         return date
 
     @property
-    def modified_in_db1(self) -> dict[tuple[str, str], tuple[str, str]]:
+    def modified_in_db1(self) -> dict[tuple[str, str], tuple[GrampsObject, GrampsObject]]:
         """Objects that have been modifed in db1."""
         return {
             k: (obj1, obj2)
@@ -267,6 +268,8 @@ class WebApiSyncDiffHandler:
                 C_UPD_LOC: A_UPD_LOC,
                 C_UPD_REM: A_UPD_LOC,
             }
+        else:
+            raise ValueError(f"Invalid sync mode: {sync_mode}")
         actions = []
         for change in changes:
             change_type, handle, obj_type, obj1, obj2 = change

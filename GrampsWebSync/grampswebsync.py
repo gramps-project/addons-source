@@ -28,6 +28,8 @@ from datetime import datetime
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlparse
 
+from gdb import Value
+
 from const import (
     C_ADD_LOC,
     C_ADD_REM,
@@ -55,6 +57,8 @@ from gramps.gui.managedwindow import ManagedWindow
 from gramps.gui.plug.tool import BatchTool, ToolOptions
 from webapihandler import WebApiHandler
 
+
+assert glocale is not None  # for type checker
 try:
     _trans = glocale.get_addon_translator(__file__)
 except ValueError:
@@ -160,19 +164,38 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
         self.show()
         self.assistant.set_forward_page_func(self.forward_page, None)
 
-        self.api: WebApiHandler | None = None
+        self._api: WebApiHandler | None = None
 
         self.db1 = dbstate.db
         self.db2 = None
         self._download_timestamp = 0
-        self.changes = None
-        self.sync = None
+        self._changes: Actions | None = None
+        self._sync: WebApiSyncDiffHandler | None = None
         self.files_missing_local: list[tuple[str, str]] = []
         self.files_missing_remote: list[tuple[str, str]] = []
         self.uploaded: dict[str, bool] = {}
         self.downloaded: dict[str, bool] = {}
 
-    def build_menu_names(self, obj):
+    @property
+    def api(self) -> WebApiHandler:
+        if self._api is None:
+            raise ValueError("No WebApiHandler found")  # shouldn't happen!
+        return self._api
+
+    @property
+    def sync(self) -> WebApiSyncDiffHandler:
+        if self._sync is None:
+            raise ValueError("No WebApiSyncDiffHandler found")  # shouldn't happen!
+        return self._sync
+
+
+    @property
+    def changes(self) -> Actions:
+        if self._changes is None:
+            raise ValueError("No change actions found")  # shouldn't happen!
+        return self._changes
+
+    def build_menu_names(self, obj):  # type: ignore
         """Override :class:`.ManagedWindow` method."""
         return (_("Gramps Web Sync"), None)
 
@@ -206,10 +229,10 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
         if page == self.progress_page:
             self.save_credentials()
             url, username, password = self.get_credentials()
-            self.api = self.handle_server_errors(
+            self._api = self.handle_server_errors(
                 WebApiHandler, url, username, password, None
             )
-            if self.api is None:
+            if self._api is None:
                 return None
             self.progress_page.label.set_text(_("Fetching remote data..."))
             t = threading.Thread(target=self.async_compare_dbs)
@@ -360,20 +383,23 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
         self._download_timestamp = datetime.now().timestamp()
         GLib.idle_add(self.get_diff_actions)
 
-    def get_diff_actions(self):
+    def get_diff_actions(self) -> None:
         """Download the remote data, import it and compare it to local."""
         path = self.handle_server_errors(self.api.download_xml)
         if path is None:
-            return None
+            return
         db2 = import_as_dict(str(path), self._user)
+        if db2 is None:
+            self.handle_error(_("Failed importing downloaded XML file."))
+            return
         path.unlink()  # delete temporary file
         self.db2 = db2
         self.progress_page.label.set_text(_("Comparing local and remote data..."))
         timestamp = self.config.get("credentials.timestamp") or None
-        self.sync = WebApiSyncDiffHandler(
+        self._sync = WebApiSyncDiffHandler(
             self.db1, self.db2, user=self._user, last_synced=timestamp
         )
-        self.changes = self.sync.get_changes()
+        self._changes = self.sync.get_changes()
         self.progress_page.label.set_text("")
         self.progress_page.set_complete()
         if len(self.changes) == 0:
@@ -421,10 +447,13 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
             self.handle_error(_("Error while parsing response from server."))
             return None
 
-    def save_credentials(self):
+    def save_credentials(self) -> None:
         """Save the login credentials."""
         url = self.loginpage.url.get_text()
         url = self.sanitize_url(url)
+        if url is None:
+            self.handle_error("No URL provided")
+            return
         username = self.loginpage.username.get_text()
         password = self.loginpage.password.get_text()
         if url != self.config.get("credentials.url"):

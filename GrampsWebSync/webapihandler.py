@@ -299,6 +299,7 @@ def to_json(obj, lang: str | None = None) -> str:
                 # handle exceptional cases
                 s_untrans = _type_name_special_cases.get(s_untrans, s_untrans)
                 # translate
+                assert glocale is not None  # for type checker
                 obj_dict["string"] = glocale.translation.gettext(s_untrans)
         if isinstance(obj, gramps.gen.lib.Date):
             if obj.is_empty() and not obj.text:
