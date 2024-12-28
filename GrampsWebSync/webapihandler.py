@@ -1,30 +1,28 @@
 """Web API handler class for the Gramps Web Sync plugin."""
 
+from __future__ import annotations
+
 import gzip
 import json
 import os
 import platform
+from collections.abc import Callable
 from pathlib import Path
 from tempfile import NamedTemporaryFile
 from time import sleep
-
-try:
-    from typing import Any, Callable, Dict, List, Optional
-except ImportError:
-    from const import Type
-
-    Any = Type
-    Callable = Type
-    Dict = Type
-    List = Type
-    Optional = Type
 from urllib.error import HTTPError
 from urllib.request import Request, urlopen
 
 import gramps
+import gramps.gen.lib
 from gramps.gen.db import KEY_TO_CLASS_MAP, DbTxn
 from gramps.gen.db.dbconst import TXNADD, TXNDEL, TXNUPD
 from gramps.gen.utils.grampslocale import GrampsLocale
+
+try:
+    from typing import Any
+except ImportError:
+    pass
 
 
 def create_macos_ssl_context():
@@ -59,13 +57,13 @@ class WebApiHandler:
         url: str,
         username: str,
         password: str,
-        download_callback: Optional[Callable] = None,
+        download_callback: Callable | None = None,
     ) -> None:
         """Initialize given URL, user name, and password."""
         self.url = url.rstrip("/")
         self.username = username
         self.password = password
-        self._access_token: Optional[str] = None
+        self._access_token: str | None = None
         self.download_callback = download_callback
         # Determine the appropriate SSL context based on platform
         self._ctx = (
@@ -80,6 +78,7 @@ class WebApiHandler:
         """Get the access token. Cached after first call"""
         if not self._access_token:
             self.fetch_token()
+        assert self._access_token  # for type checker
         return self._access_token
 
     def fetch_token(self) -> None:
@@ -100,7 +99,7 @@ class WebApiHandler:
             raise
         self._access_token = res_json["access_token"]
 
-    def get_lang(self) -> Optional[str]:
+    def get_lang(self) -> str | None:
         """Fetch language information."""
         req = Request(
             f"{self.url}/metadata/",
@@ -152,7 +151,7 @@ class WebApiHandler:
                     # Web API version might not support force parameter yet
                     self.commit(trans, force=False)
 
-    def get_missing_files(self, retry: bool = True) -> List:
+    def get_missing_files(self, retry: bool = True) -> list:
         """Get a list of remote media objects with missing files."""
         req = Request(
             f"{self.url}/media/?filemissing=1",
@@ -259,7 +258,7 @@ _type_name_special_cases = {
 }
 
 
-def to_json(obj, lang: Optional[str] = None) -> str:
+def to_json(obj, lang: str | None = None) -> str:
     """
     Encode a Gramps object to a JSON object.
 
@@ -298,8 +297,8 @@ def to_json(obj, lang: Optional[str] = None) -> str:
 
 
 def transaction_to_json(
-    transaction: DbTxn, lang: Optional[str] = None
-) -> List[Dict[str, Any]]:
+    transaction: DbTxn, lang: str | None = None
+) -> list[dict[str, "Any"]]:
     """Return a JSON representation of a database transaction."""
     out = []
     for recno in transaction.get_recnos(reverse=False):

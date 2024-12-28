@@ -1,16 +1,8 @@
 """Class managing the difference between two databases."""
 
+from __future__ import annotations
+
 from copy import deepcopy
-
-try:
-    from typing import List, Optional, Set, Tuple
-except ImportError:
-    from const import Type
-
-    List = Type
-    Optional = Type
-    Set = Type
-    Tuple = Type
 
 from gramps.gen.db import DbTxn
 from gramps.gen.db.base import DbReadBase
@@ -50,7 +42,7 @@ class WebApiSyncDiffHandler:
         db1: DbReadBase,
         db2: DbReadBase,
         user: User,
-        last_synced: Optional[float] = None,
+        last_synced: float | None = None,
     ) -> None:
         """Initialize given the two databases and a User instance."""
         self.db1 = db1
@@ -71,14 +63,14 @@ class WebApiSyncDiffHandler:
         if last_synced and last_synced > self._latest_common_timestamp:
             # if the last sync timestamp in the config is later than
             # the latest common timestamp, use it
-            self._latest_common_timestamp = last_synced
+            self._latest_common_timestamp = int(last_synced)
 
     def get_diff_dbs(
         self,
-    ) -> Tuple[
-        List[Tuple[str, GrampsObject, GrampsObject]],
-        List[Tuple[str, GrampsObject]],
-        List[Tuple[str, GrampsObject]],
+    ) -> tuple[
+        list[tuple[str, GrampsObject, GrampsObject]],
+        list[tuple[str, GrampsObject]],
+        list[tuple[str, GrampsObject]],
     ]:
         """Return a database diff tuple: changed, missing from 1, missing from 2."""
         return diff_dbs(self.db1, self.db2, user=self.user)
@@ -90,7 +82,7 @@ class WebApiSyncDiffHandler:
         ]
         return max(dates)
 
-    def _get_latest_common_timestamp(self, class_name: str) -> int:
+    def _get_latest_common_timestamp(self, class_name: str) -> int | None:
         """Get the timestamp of the latest common object of given type."""
         handles_func = self.db1.method("get_%s_handles", class_name)
         handle_func = self.db1.method("get_%s_from_handle", class_name)
@@ -122,7 +114,7 @@ class WebApiSyncDiffHandler:
         return date
 
     @property
-    def modified_in_db1(self) -> Set[Tuple[str, str]]:
+    def modified_in_db1(self) -> dict[tuple[str, str], tuple[str, str]]:
         """Objects that have been modifed in db1."""
         return {
             k: (obj1, obj2)
@@ -132,7 +124,9 @@ class WebApiSyncDiffHandler:
         }
 
     @property
-    def modified_in_db2(self) -> Set[Tuple[GrampsObject, GrampsObject]]:
+    def modified_in_db2(
+        self,
+    ) -> dict[tuple[str, str], tuple[GrampsObject, GrampsObject]]:
         """Objects that have been modifed in db1."""
         return {
             k: (obj1, obj2)
@@ -142,7 +136,9 @@ class WebApiSyncDiffHandler:
         }
 
     @property
-    def modified_in_both(self) -> Set[Tuple[GrampsObject, GrampsObject]]:
+    def modified_in_both(
+        self,
+    ) -> dict[tuple[str, str], tuple[GrampsObject, GrampsObject]]:
         """Objects that have been modifed in both databases."""
         return {
             k: v
@@ -151,7 +147,7 @@ class WebApiSyncDiffHandler:
         }
 
     @property
-    def added_to_db1(self) -> Set[GrampsObject]:
+    def added_to_db1(self) -> dict[tuple[str, str], GrampsObject]:
         """Objects that have been added to db1."""
         return {
             k: obj
@@ -160,7 +156,7 @@ class WebApiSyncDiffHandler:
         }
 
     @property
-    def added_to_db2(self) -> Set[GrampsObject]:
+    def added_to_db2(self) -> dict[tuple[str, str], GrampsObject]:
         """Objects that have been added to db2."""
         return {
             k: obj
@@ -169,14 +165,14 @@ class WebApiSyncDiffHandler:
         }
 
     @property
-    def deleted_from_db1(self) -> Set[GrampsObject]:
+    def deleted_from_db1(self) -> dict[tuple[str, str], GrampsObject]:
         """Objects that have been deleted from db1."""
         return {
             k: v for k, v in self.missing_from_db1.items() if k not in self.added_to_db2
         }
 
     @property
-    def deleted_from_db2(self) -> Set[GrampsObject]:
+    def deleted_from_db2(self) -> dict[tuple[str, str], GrampsObject]:
         """Objects that have been deleted from db2."""
         return {
             k: v for k, v in self.missing_from_db2.items() if k not in self.added_to_db1
@@ -264,24 +260,41 @@ class WebApiSyncDiffHandler:
         """Commit an action into local and remote transaction objects."""
         typ, handle, obj_type, obj1, obj2 = action
         if typ == A_DEL_LOC:
-            self.db1.method("remove_%s", obj_type)(handle, trans1)
+            method = self.db1.method("remove_%s", obj_type)
+            assert method  # for type checker
+            method(handle, trans1)
         elif typ == A_DEL_REM:
-            self.db2.method("remove_%s", obj_type)(handle, trans2)
+            method = self.db2.method("remove_%s", obj_type)
+            assert method  # for type checker
+            method(handle, trans2)
         elif typ == A_ADD_LOC:
-            self.db1.method("add_%s", obj_type)(obj2, trans1)
+            method = self.db1.method("add_%s", obj_type)
+            assert method  # for type checker
+            method(obj2, trans1)
         elif typ == A_ADD_REM:
-            self.db2.method("add_%s", obj_type)(obj1, trans2)
+            method = self.db2.method("add_%s", obj_type)
+            assert method  # for type checker
+            method(obj1, trans2)
         elif typ == A_UPD_LOC:
-            self.db1.method("commit_%s", obj_type)(obj2, trans1)
+            method = self.db1.method("commit_%s", obj_type)
+            assert method  # for type checker
+            method(obj2, trans1)
         elif typ == A_UPD_REM:
-            self.db2.method("commit_%s", obj_type)(obj1, trans2)
+            method = self.db2.method("commit_%s", obj_type)
+            assert method  # for type checker
+            method(obj1, trans2)
         elif typ == A_MRG_REM:
+            assert obj1 and obj2  # for type checker
             obj_merged = deepcopy(obj2)
             obj1_nogid = deepcopy(obj1)
             obj1_nogid.gramps_id = None
             obj_merged.merge(obj1_nogid)
-            self.db1.method("commit_%s", obj_type)(obj_merged, trans1)
-            self.db2.method("commit_%s", obj_type)(obj_merged, trans2)
+            method = self.db1.method("commit_%s", obj_type)
+            assert method  # for type checker
+            method(obj_merged, trans1)
+            method = self.db2.method("commit_%s", obj_type)
+            assert method  # for type checker
+            method(obj_merged, trans2)
 
     def commit_actions(self, actions: Actions, trans1: DbTxn, trans2: DbTxn) -> None:
         """Commit several actions into local and remote transaction objects."""

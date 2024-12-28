@@ -18,39 +18,16 @@
 
 """Gramps addon to synchronize with a Gramps Web server."""
 
+from __future__ import annotations
+
 import os
 import threading
+from collections.abc import Callable
 from datetime import datetime
-
-try:
-    from typing import Callable, Optional
-except ImportError:
-    from const import Type
-
-    Callable = Type
-    Optional = Type
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlparse
 
-from gi.repository import GLib, Gtk
-from gramps.gen.config import config as configman
-from gramps.gen.const import GRAMPS_LOCALE as glocale
-from gramps.gen.db import DbTxn
-from gramps.gen.db.utils import import_as_dict
-from gramps.gen.errors import HandleError
-from gramps.gen.utils.file import media_path_full
-from gramps.gui.dialog import QuestionDialog2
-from gramps.gui.managedwindow import ManagedWindow
-from gramps.gui.plug.tool import BatchTool, ToolOptions
-
 from const import (
-    A_ADD_LOC,
-    A_ADD_REM,
-    A_DEL_LOC,
-    A_DEL_REM,
-    A_MRG_REM,
-    A_UPD_LOC,
-    A_UPD_REM,
     C_ADD_LOC,
     C_ADD_REM,
     C_DEL_LOC,
@@ -64,6 +41,17 @@ from const import (
     Actions,
 )
 from diffhandler import WebApiSyncDiffHandler
+from gi.repository import GLib, Gtk
+from gramps.gen.config import config as configman
+from gramps.gen.const import GRAMPS_LOCALE as glocale
+from gramps.gen.db import DbTxn
+from gramps.gen.db.utils import import_as_dict
+from gramps.gen.errors import HandleError
+from gramps.gen.lib import Tag
+from gramps.gen.utils.file import media_path_full
+from gramps.gui.dialog import QuestionDialog2
+from gramps.gui.managedwindow import ManagedWindow
+from gramps.gui.plug.tool import BatchTool, ToolOptions
 from webapihandler import WebApiHandler
 
 try:
@@ -74,7 +62,7 @@ _ = _trans.gettext
 ngettext = _trans.ngettext
 
 
-def get_password(service: str, username: str) -> Optional[str]:
+def get_password(service: str, username: str) -> str | None:
     """If keyring is installed, return the user's password or None."""
     try:
         import keyring
@@ -171,17 +159,17 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
         self.show()
         self.assistant.set_forward_page_func(self.forward_page, None)
 
-        self.api = None
+        self.api: WebApiHandler | None = None
 
         self.db1 = dbstate.db
         self.db2 = None
         self._download_timestamp = 0
         self.changes = None
         self.sync = None
-        self.files_missing_local = []
-        self.files_missing_remote = []
-        self.uploaded = {}
-        self.downloaded = {}
+        self.files_missing_local: list[tuple[str, str]] = []
+        self.files_missing_remote: list[tuple[str, str]] = []
+        self.uploaded: dict[str, bool] = {}
+        self.downloaded: dict[str, bool] = {}
 
     def build_menu_names(self, obj):
         """Override :class:`.ManagedWindow` method."""
@@ -446,7 +434,7 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
         set_password(url, username, password)
         self.config.save()
 
-    def sanitize_url(self, url: str) -> Optional[str]:
+    def sanitize_url(self, url: str) -> str | None:
         """Warn if http and prepend https if missing."""
         parsed_url = urlparse(url)
         if parsed_url.scheme == "":
@@ -482,7 +470,9 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
         msg = "Apply Gramps Web Sync changes"
         with DbTxn(msg, self.sync.db1) as trans1:
             with DbTxn(msg, self.sync.db2) as trans2:
-                actions = self.sync.changes_to_actions(self.changes, self.confirmation.sync_mode)
+                actions = self.sync.changes_to_actions(
+                    self.changes, self.confirmation.sync_mode
+                )
                 self.sync.commit_actions(actions, trans1, trans2)
                 # force the sync if mode is NOT bidirectional
                 force = self.confirmation.sync_mode != MODE_BIDIRECTIONAL
@@ -495,7 +485,7 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
         self.config.set("credentials.timestamp", datetime.now().timestamp())
         self.config.save()
 
-    def get_missing_files_local(self):
+    def get_missing_files_local(self) -> list[tuple[str, str]]:
         """Get a list of media files missing locally."""
         return [
             (media.gramps_id, media.handle)
@@ -519,7 +509,7 @@ class Page(Gtk.Box):
         self._complete = False
 
     def set_complete(self):
-        """Set as complete."""
+        """set as complete."""
         self._complete = True
         self.update_complete()
 
@@ -528,7 +518,7 @@ class Page(Gtk.Box):
         return self._complete
 
     def update_complete(self):
-        """Set the current page's complete status."""
+        """set the current page's complete status."""
         page_number = self.assistant.get_current_page()
         current_page = self.assistant.get_nth_page(page_number)
         self.assistant.set_page_complete(current_page, self.complete)
@@ -783,11 +773,14 @@ class ConfirmationPage(Page):
                     if _type == change_type:
                         if obj1 is not None:
                             if class_name == "Tag":
+                                assert isinstance(obj1, Tag)  # for type checker
                                 gid = obj1.name
                             else:
                                 gid = obj1.gramps_id
                         else:
+                            assert obj2  # for type checker
                             if class_name == "Tag":
+                                assert isinstance(obj2, Tag)  # for type checker
                                 gid = obj2.name
                             else:
                                 gid = obj2.gramps_id
