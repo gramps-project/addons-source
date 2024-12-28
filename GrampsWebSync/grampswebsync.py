@@ -537,7 +537,7 @@ class Page(Gtk.Box):
         self._complete = False
 
     def set_complete(self):
-        """set as complete."""
+        """Set as complete."""
         self._complete = True
         self.update_complete()
 
@@ -546,7 +546,7 @@ class Page(Gtk.Box):
         return self._complete
 
     def update_complete(self):
-        """set the current page's complete status."""
+        """Set the current page's complete status."""
         page_number = self.assistant.get_current_page()
         current_page = self.assistant.get_nth_page(page_number)
         self.assistant.set_page_complete(current_page, self.complete)
