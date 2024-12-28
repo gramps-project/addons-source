@@ -24,51 +24,54 @@ Form Gramplet.
 
 import os
 
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # GTK modules
 #
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 from gi.repository import Gtk
 from gi.repository import Gdk
 
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # Gramps modules
 #
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 from gramps.gen.plug import Gramplet
 from gramps.gui.dbguielement import DbGUIElement
 from gramps.gen.display.place import displayer as place_displayer
 from gramps.gen.datehandler import get_date
 from gramps.gen.errors import WindowActiveError
-from gramps.gen.lib import (Citation, Event)
+from gramps.gen.lib import Citation, Event
 from editform import EditForm
 from selectform import SelectForm
 from form import get_form_citation
 
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # Internationalisation
 #
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 from gramps.gen.const import GRAMPS_LOCALE as glocale
+
 try:
     _trans = glocale.get_addon_translator(__file__)
 except ValueError:
     _trans = glocale.translation
 _ = _trans.gettext
 
-#------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------
 #
 # FormGramplet class
 #
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 class FormGramplet(Gramplet, DbGUIElement):
     """
     Gramplet to display form events for the active person.
     It allows a form to be created or edited with a form editor.
     """
+
     def __init__(self, gui, nav_group=0):
         Gramplet.__init__(self, gui, nav_group)
         DbGUIElement.__init__(self, self.dbstate.db)
@@ -86,9 +89,9 @@ class FormGramplet(Gramplet, DbGUIElement):
         """
         called on init of DbGUIElement, connect to db as required.
         """
-        self.callman.register_callbacks({'person-update': self.changed})
-        self.callman.register_callbacks({'event-update': self.changed})
-        self.callman.connect_all(keys=['person', 'event'])
+        self.callman.register_callbacks({"person-update": self.changed})
+        self.callman.register_callbacks({"event-update": self.changed})
+        self.callman.connect_all(keys=["person", "event"])
 
     def changed(self, handle):
         """
@@ -122,11 +125,11 @@ class FormGramplet(Gramplet, DbGUIElement):
         button_box = Gtk.ButtonBox()
         button_box.set_layout(Gtk.ButtonBoxStyle.START)
 
-        new = Gtk.Button(label=_('_New'), use_underline=True)
+        new = Gtk.Button(label=_("_New"), use_underline=True)
         new.connect("clicked", self.__new_form)
         button_box.add(new)
 
-        edit = Gtk.Button(label=_('_Edit'), use_underline=True)
+        edit = Gtk.Button(label=_("_Edit"), use_underline=True)
         edit.connect("clicked", self.__edit_form, view.get_selection())
         button_box.add(edit)
 
@@ -153,8 +156,9 @@ class FormGramplet(Gramplet, DbGUIElement):
             citation = Citation()
             citation.set_reference_handle(source_handle)
             try:
-                EditForm(self.gui.dbstate, self.gui.uistate, [], event, citation,
-                         self.update)
+                EditForm(
+                    self.gui.dbstate, self.gui.uistate, [], event, citation, self.update
+                )
             except WindowActiveError:
                 pass
 
@@ -167,8 +171,9 @@ class FormGramplet(Gramplet, DbGUIElement):
             event = model.get_value(iter_, 0)
             citation = model.get_value(iter_, 1)
             try:
-                EditForm(self.gui.dbstate, self.gui.uistate, [], event, citation,
-                         self.update)
+                EditForm(
+                    self.gui.dbstate, self.gui.uistate, [], event, citation, self.update
+                )
             except WindowActiveError:
                 pass
 
@@ -183,7 +188,7 @@ class FormGramplet(Gramplet, DbGUIElement):
 
         self.callman.unregister_all()
         self.callman.register_obj(active_person)
-        self.callman.register_handles({'person': [active_person.get_handle()]})
+        self.callman.register_handles({"person": [active_person.get_handle()]})
 
         for event_ref in active_person.get_event_ref_list():
             self.add_event_ref(event_ref)
@@ -203,12 +208,16 @@ class FormGramplet(Gramplet, DbGUIElement):
                 source_handle = citation.get_reference_handle()
                 source = db.get_source_from_handle(source_handle)
                 source_text = source.get_title()
-                self.model.append((event, 
-                                  citation,
-                                  source_text,
-                                  role_text,
-                                  get_date(event),
-                                  place_text))
+                self.model.append(
+                    (
+                        event,
+                        citation,
+                        source_text,
+                        role_text,
+                        get_date(event),
+                        place_text,
+                    )
+                )
 
     def active_changed(self, handle):
         """
