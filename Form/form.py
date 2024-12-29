@@ -21,28 +21,29 @@
 """
 Form definitions.
 """
-#---------------------------------------------------------------
+# ---------------------------------------------------------------
 #
 # Python imports
 #
-#---------------------------------------------------------------
+# ---------------------------------------------------------------
 import os
 import xml.dom.minidom
 
-#---------------------------------------------------------------
+# ---------------------------------------------------------------
 #
 # Gramps imports
 #
-#---------------------------------------------------------------
+# ---------------------------------------------------------------
 from gramps.gen.datehandler import parser
 from gramps.gen.config import config
 
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # Internationalisation
 #
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 from gramps.gen.const import GRAMPS_LOCALE as glocale
+
 try:
     _trans = glocale.get_addon_translator(__file__)
 except ValueError:
@@ -50,51 +51,61 @@ except ValueError:
 
 _ = _trans.gettext
 
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # Form definitions
 #
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 
 # The attribute used to store the order of people on the form.
-ORDER_ATTR = _('Order')
+ORDER_ATTR = _("Order")
 
 # The key of the data item in a source to define it as a form source.
-DEFINITION_KEY = _('Form')
+DEFINITION_KEY = _("Form")
 # the following should be all the translations of "Form" in our po files
 INTL_FORM = {"Form", "Formular", "Formulaire", "Obrazac", "Форма"}
 
 # Prefixes for family attributes.
-GROOM = _('Groom')
-BRIDE = _('Bride')
+GROOM = _("Groom")
+BRIDE = _("Bride")
 
 # Files which may contain form definitions
-definition_files = ['form_be.xml', 'form_ca.xml', 'form_dk.xml', 'form_fr.xml',
-                    'form_gb.xml', 'form_pl.xml', 'form_us.xml',
-                    'test.xml', 'custom.xml']
+definition_files = [
+    "form_be.xml",
+    "form_ca.xml",
+    "form_dk.xml",
+    "form_fr.xml",
+    "form_gb.xml",
+    "form_pl.xml",
+    "form_us.xml",
+    "test.xml",
+    "custom.xml",
+]
 
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # Configuration file
 #
-#------------------------------------------------------------------------
-CONFIG = config.register_manager('form')
-CONFIG.register('interface.form-width', 600)
-CONFIG.register('interface.form-height', 400)
-CONFIG.register('interface.form-horiz-position', -1)
-CONFIG.register('interface.form-vert-position', -1)
+# ------------------------------------------------------------------------
+CONFIG = config.register_manager("form")
+CONFIG.register("interface.form-width", 600)
+CONFIG.register("interface.form-height", 400)
+CONFIG.register("interface.form-horiz-position", -1)
+CONFIG.register("interface.form-vert-position", -1)
 
 CONFIG.init()
 
-#------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------
 #
 # From class
 #
-#------------------------------------------------------------------------
-class Form():
+# ------------------------------------------------------------------------
+class Form:
     """
     A class to read form definitions from an XML file.
     """
+
     def __init__(self):
         self.__dates = {}
         self.__headings = {}
@@ -112,101 +123,103 @@ class Form():
 
     def __load_definitions(self, definition_file):
         dom = xml.dom.minidom.parse(definition_file)
-        top = dom.getElementsByTagName('forms')
+        top = dom.getElementsByTagName("forms")
 
-        for form in top[0].getElementsByTagName('form'):
-            id = form.attributes['id'].value
-            self.__names[id] = form.attributes['title'].value
-            self.__types[id] = form.attributes['type'].value
-            if 'date' in form.attributes:
-                self.__dates[id] = form.attributes['date'].value
+        for form in top[0].getElementsByTagName("form"):
+            id = form.attributes["id"].value
+            self.__names[id] = form.attributes["title"].value
+            self.__types[id] = form.attributes["type"].value
+            if "date" in form.attributes:
+                self.__dates[id] = form.attributes["date"].value
             else:
                 self.__dates[id] = None
 
-            headings = form.getElementsByTagName('heading')
+            headings = form.getElementsByTagName("heading")
             self.__headings[id] = []
             for heading in headings:
-                attr = heading.getElementsByTagName('_attribute')
+                attr = heading.getElementsByTagName("_attribute")
                 attr_text = _(attr[0].childNodes[0].data)
                 self.__headings[id].append(attr_text)
 
-            sections = form.getElementsByTagName('section')
+            sections = form.getElementsByTagName("section")
             self.__sections[id] = []
             self.__columns[id] = {}
             self.__titles[id] = {}
             self.__section_types[id] = {}
             for section in sections:
-                if 'title' in section.attributes:
-                    title = section.attributes['title'].value
+                if "title" in section.attributes:
+                    title = section.attributes["title"].value
                 else:
-                    title = ''
-                role = section.attributes['role'].value
-                section_type = section.attributes['type'].value
+                    title = ""
+                role = section.attributes["role"].value
+                section_type = section.attributes["type"].value
                 self.__sections[id].append(role)
                 self.__titles[id][role] = title
                 self.__section_types[id][role] = section_type
                 self.__columns[id][role] = []
-                columns = section.getElementsByTagName('column')
+                columns = section.getElementsByTagName("column")
                 for column in columns:
-                    attr = column.getElementsByTagName('_attribute')
-                    size = column.getElementsByTagName('size')
-                    longname = column.getElementsByTagName('_longname')
+                    attr = column.getElementsByTagName("_attribute")
+                    size = column.getElementsByTagName("size")
+                    longname = column.getElementsByTagName("_longname")
                     attr_text = _(attr[0].childNodes[0].data)
                     if size:
                         size_text = size[0].childNodes[0].data
                     else:
-                        size_text = '0'
+                        size_text = "0"
                     if longname:
                         long_text = _(longname[0].childNodes[0].data)
                     else:
                         long_text = attr_text
-                    self.__columns[id][role].append((attr_text,
-                                                     long_text,
-                                                     int(size_text)))
+                    self.__columns[id][role].append(
+                        (attr_text, long_text, int(size_text))
+                    )
         dom.unlink()
 
     def get_form_ids(self):
-        """ Return a list of ids for all form definitions. """
+        """Return a list of ids for all form definitions."""
         return self.__dates.keys()
 
     def get_title(self, form_id):
-        """ Return the title for a given form. """
+        """Return the title for a given form."""
         return self.__names[form_id]
 
     def get_date(self, form_id):
-        """ Return a textual date for a given form. """
+        """Return a textual date for a given form."""
         return self.__dates[form_id]
 
     def get_type(self, form_id):
-        """ Return a textual event type for a given form. """
+        """Return a textual event type for a given form."""
         return self.__types[form_id]
 
     def get_headings(self, form_id):
-        """ Return a list of headings for a given form. """
+        """Return a list of headings for a given form."""
         return self.__headings[form_id]
 
     def get_sections(self, form_id):
-        """ Return a list of sections for a given form. """
+        """Return a list of sections for a given form."""
         return self.__sections[form_id]
 
     def get_section_title(self, form_id, section):
-        """ Return the title for a given section. """
+        """Return the title for a given section."""
         return self.__titles[form_id][section]
 
     def get_section_type(self, form_id, section):
-        """ Return the section type for a given section. """
+        """Return the section type for a given section."""
         return self.__section_types[form_id][section]
 
     def get_section_columns(self, form_id, section):
-        """ Return a list of column definitions for a given section. """
+        """Return a list of column definitions for a given section."""
         return self.__columns[form_id][section]
 
-#------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------
 #
 # Helper functions
 #
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 FORM = Form()
+
 
 def get_form_ids():
     """
@@ -214,11 +227,13 @@ def get_form_ids():
     """
     return FORM.get_form_ids()
 
+
 def get_form_title(form_id):
     """
     Return the title for a given form.
     """
     return FORM.get_title(form_id)
+
 
 def get_form_date(form_id):
     """
@@ -230,11 +245,13 @@ def get_form_date(form_id):
     else:
         return None
 
+
 def get_form_type(form_id):
     """
     Return the type for a given form.
     """
     return FORM.get_type(form_id)
+
 
 def get_form_headings(form_id):
     """
@@ -242,11 +259,13 @@ def get_form_headings(form_id):
     """
     return FORM.get_headings(form_id)
 
+
 def get_form_sections(form_id):
     """
     Return a list of sections for a given form.
     """
     return FORM.get_sections(form_id)
+
 
 def get_section_title(form_id, section):
     """
@@ -254,17 +273,20 @@ def get_section_title(form_id, section):
     """
     return FORM.get_section_title(form_id, section)
 
+
 def get_section_type(form_id, section):
     """
     Return the type for a given section.
     """
     return FORM.get_section_type(form_id, section)
 
+
 def get_section_columns(form_id, section):
     """
     Return a list of column definitions for a given section.
     """
     return FORM.get_section_columns(form_id, section)
+
 
 def get_form_id(source):
     """
@@ -274,6 +296,7 @@ def get_form_id(source):
         if str(attr.get_type()) in INTL_FORM:
             return attr.get_value()
     return None
+
 
 def get_form_citation(db, event):
     """
@@ -285,10 +308,12 @@ def get_form_citation(db, event):
         source_handle = citation.get_reference_handle()
         source = db.get_source_from_handle(source_handle)
         form_id = get_form_id(source)
-        if (form_id in get_form_ids() and
-                event.get_type().xml_str() == get_form_type(form_id)):
+        if form_id in get_form_ids() and event.get_type().xml_str() == get_form_type(
+            form_id
+        ):
             return citation
     return None
+
 
 def get_form_sources(db):
     """

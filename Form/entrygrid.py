@@ -22,23 +22,24 @@
 EntryGrid widget.
 """
 
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # GTK modules
 #
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 from gi.repository import Gtk
 
-#------------------------------------------------------------------------
+
+# ------------------------------------------------------------------------
 #
 # Indicator class
 #
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 class Indicator(Gtk.DrawingArea):
 
     def __init__(self):
         Gtk.DrawingArea.__init__(self)
-        self.connect('draw', self._draw)
+        self.connect("draw", self._draw)
         self.active = False
         self.set_size_request(5, -1)
 
@@ -49,24 +50,24 @@ class Indicator(Gtk.DrawingArea):
     def _draw(self, widget, cr):
 
         # clip area to avoid extra work
-        #cr.rectangle(event.area.x, event.area.y,
-                     #event.area.width, event.area.height)
-        #cr.clip()
+        # cr.rectangle(event.area.x, event.area.y,
+        # event.area.width, event.area.height)
+        # cr.clip()
 
         alloc = self.get_allocation()
         if self.active:
             cr.set_source_rgba(1, 0, 0, 1)
         else:
             cr.set_source_rgba(1, 0, 0, 0)
-        cr.rectangle(0, 3, alloc.width, alloc.height-6)
+        cr.rectangle(0, 3, alloc.width, alloc.height - 6)
         cr.fill()
 
 
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # EntryGrid class
 #
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 class EntryGrid(Gtk.Grid):
 
     def __init__(self, headings=None, tooltips=None, model=None, callback=None):
@@ -83,10 +84,10 @@ class EntryGrid(Gtk.Grid):
     def set_model(self, model):
         self.model = model
 
-        model.connect('row-inserted', self.row_inserted)
-        model.connect('row-deleted', self.row_deleted)
-        model.connect('rows-reordered', self.rows_reordered)
-        self.sig_id = model.connect('row-changed', self.row_changed)
+        model.connect("row-inserted", self.row_inserted)
+        model.connect("row-deleted", self.row_deleted)
+        model.connect("rows-reordered", self.rows_reordered)
+        self.sig_id = model.connect("row-changed", self.row_changed)
 
         if len(self.model) > 0:
             self.selected = model.get_iter((0,))
@@ -114,11 +115,11 @@ class EntryGrid(Gtk.Grid):
 
         for row in range(len(self.model)):
             image = Gtk.Image()
-            image.set_from_icon_name('gtk-index', Gtk.IconSize.BUTTON)
+            image.set_from_icon_name("gtk-index", Gtk.IconSize.BUTTON)
             button = Gtk.Button()
             button.set_relief(Gtk.ReliefStyle.NONE)
             button.add(image)
-            button.connect('clicked', self.clicked, row)
+            button.connect("clicked", self.clicked, row)
             button.set_can_focus(False)
             button.show_all()
             self.attach(button, 0, row + 1, 1, 1)
@@ -138,8 +139,8 @@ class EntryGrid(Gtk.Grid):
                     entry.set_text(value)
                     set_size(entry)
                 entry.set_tooltip_text(self.tooltips[column - 1])
-                entry.connect('changed', self.changed, row, column)
-                entry.connect('focus-in-event', self.got_focus, row)
+                entry.connect("changed", self.changed, row, column)
+                entry.connect("focus-in-event", self.got_focus, row)
                 entry.show()
                 self.attach(entry, column + 1, row + 1, 1, 1)
                 entry_row.append(entry)
@@ -192,6 +193,7 @@ class EntryGrid(Gtk.Grid):
         self.indicators = None
         self.selected = None
         self.callback = None
+
 
 def set_size(entry):
     layout = entry.get_layout()
