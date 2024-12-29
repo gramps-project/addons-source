@@ -326,7 +326,6 @@ class EditForm(ManagedWindow):
         if form_date is not None:
             date_text.set_text(displayer.display(form_date))
             self.event.set_date_object(form_date)
-            self.citation.set_date_object(form_date)
             date_text.set_editable(False)
             date_button.set_sensitive(False)
         else:
@@ -358,6 +357,7 @@ class EditForm(ManagedWindow):
         """
         Called when the user clicks the OK button.
         """
+        self.citation.set_date_object(self.event.get_date_object())
         with DbTxn(self.get_menu_title(), self.db) as trans:
             if not self.event.get_handle():
                 self.db.add_event(self.event, trans)
