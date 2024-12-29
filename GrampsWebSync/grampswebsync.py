@@ -637,7 +637,7 @@ class IntroductionPage(Page):
 
 
 class LoginPage(Page):
-    """A page to log in."""
+    """A page to provide server credentials."""
 
     def __init__(self, assistant, url, username, password):
         super().__init__(assistant)
@@ -693,7 +693,7 @@ class LoginPage(Page):
 
 
 class ProgressPage(Page):
-    """A progress 2page."""
+    """A progress page."""
 
     def __init__(self, assistant):
         super().__init__(assistant)
@@ -707,11 +707,6 @@ class ProgressPage(Page):
 
 class ConfirmationPage(Page):
     """Page showing the differences before applying them."""
-
-    # def diff_dialog(self) -> bool:
-    #     """Edit the automatically generated actions via user interaction."""
-    #     dialog = DiffDetailDialog(self._user.uistate, self.actions, on_ok=self.commit)
-    #     dialog.show()
 
     def __init__(self, assistant):
         super().__init__(assistant)
