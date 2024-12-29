@@ -705,57 +705,6 @@ class ProgressPage(Page):
         self.pack_start(self.label, False, False, 0)
 
 
-class FileProgressPage(Page):
-    """A file progress page."""
-
-    def __init__(self, assistant):
-        """Initialize page."""
-        super().__init__(assistant)
-        self.label1 = Gtk.Label(label="Media file download")
-        self.pack_start(self.label1, False, False, 20)
-
-        # self.progressbar1 = Gtk.ProgressBar()
-        # self.pack_start(self.progressbar1, False, False, 20)
-
-        self.label2 = Gtk.Label(label="Media file upload")
-        self.pack_start(self.label2, False, False, 20)
-
-        # self.progressbar2 = Gtk.ProgressBar()
-        # self.pack_start(self.progressbar2, False, False, 20)
-
-    def prepare(self, files_missing_local, files_missing_remote):
-        """Prepare."""
-        n_down = len(files_missing_local)
-        if not n_down:
-            self.label1.hide()
-            # self.progressbar1.hide()
-        else:
-            self.label1.show()
-            # self.progressbar1.show()
-            self.label1.set_text(_("Downloading %s media file(s)") % n_down)
-        n_up = len(files_missing_remote)
-        if not n_up:
-            self.label2.hide()
-            # self.progressbar2.hide()
-        else:
-            self.label2.show()
-            # self.progressbar2.show()
-            self.label2.set_text(_("Uploading %s media file(s)") % n_up)
-
-    def update_progress(
-        self, files_missing_local, files_missing_remote, downloaded, uploaded
-    ):
-        """Update the progress bar."""
-        n_down = len(files_missing_local)
-        n_up = len(files_missing_remote)
-        i_down = len(downloaded)
-        i_up = len(uploaded)
-        # if n_down:
-        #     self.progressbar1.set_fraction(i_down / n_down)
-        # if n_up:
-        #     self.progressbar2.set_fraction(i_up / n_up)
-
-
 class ConfirmationPage(Page):
     """Page showing the differences before applying them."""
 
@@ -816,9 +765,7 @@ class ConfirmationPage(Page):
         option_name = _("Merge")
         self.radio_button4 = Gtk.RadioButton.new_from_widget(self.radio_button1)
         self.radio_button4.set_label(option_name)
-        self.radio_button4.connect(
-            "toggled", self.on_radio_button_toggled, MODE_MERGE
-        )
+        self.radio_button4.connect("toggled", self.on_radio_button_toggled, MODE_MERGE)
         self.radio_box.pack_start(self.radio_button4, False, False, 0)
 
         # Box to hold the label and radio buttons
@@ -942,6 +889,57 @@ class FileConfirmationPage(Page):
             self.tree_view.expand_row(Gtk.TreePath(i), False)
 
         self.set_complete()
+
+
+class FileProgressPage(Page):
+    """A file progress page."""
+
+    def __init__(self, assistant):
+        """Initialize page."""
+        super().__init__(assistant)
+        self.label1 = Gtk.Label(label="Media file download")
+        self.pack_start(self.label1, False, False, 20)
+
+        # self.progressbar1 = Gtk.ProgressBar()
+        # self.pack_start(self.progressbar1, False, False, 20)
+
+        self.label2 = Gtk.Label(label="Media file upload")
+        self.pack_start(self.label2, False, False, 20)
+
+        # self.progressbar2 = Gtk.ProgressBar()
+        # self.pack_start(self.progressbar2, False, False, 20)
+
+    def prepare(self, files_missing_local, files_missing_remote):
+        """Prepare."""
+        n_down = len(files_missing_local)
+        if not n_down:
+            self.label1.hide()
+            # self.progressbar1.hide()
+        else:
+            self.label1.show()
+            # self.progressbar1.show()
+            self.label1.set_text(_("Downloading %s media file(s)") % n_down)
+        n_up = len(files_missing_remote)
+        if not n_up:
+            self.label2.hide()
+            # self.progressbar2.hide()
+        else:
+            self.label2.show()
+            # self.progressbar2.show()
+            self.label2.set_text(_("Uploading %s media file(s)") % n_up)
+
+    def update_progress(
+        self, files_missing_local, files_missing_remote, downloaded, uploaded
+    ):
+        """Update the progress bar."""
+        n_down = len(files_missing_local)
+        n_up = len(files_missing_remote)
+        i_down = len(downloaded)
+        i_up = len(uploaded)
+        # if n_down:
+        #     self.progressbar1.set_fraction(i_down / n_down)
+        # if n_up:
+        #     self.progressbar2.set_fraction(i_up / n_up)
 
 
 class ConclusionPage(Page):
