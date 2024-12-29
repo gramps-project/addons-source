@@ -40,6 +40,7 @@ from const import (
     MODE_BIDIRECTIONAL,
     MODE_RESET_TO_LOCAL,
     MODE_RESET_TO_REMOTE,
+    MODE_MERGE,
     Actions,
 )
 from diffhandler import WebApiSyncDiffHandler
@@ -547,8 +548,11 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
                     self.changes, self.confirmation.sync_mode
                 )
                 self.sync.commit_actions(actions, trans1, trans2)
-                # force the sync if mode is NOT bidirectional
-                force = self.confirmation.sync_mode != MODE_BIDIRECTIONAL
+                # force the sync if mode is reset
+                force = self.confirmation.sync_mode in {
+                    MODE_RESET_TO_LOCAL,
+                    MODE_RESET_TO_REMOTE,
+                }
                 self.handle_server_errors(self.api.commit, trans2, force)
         self.save_timestamp()
 
@@ -808,6 +812,14 @@ class ConfirmationPage(Page):
             "toggled", self.on_radio_button_toggled, MODE_RESET_TO_REMOTE
         )
         self.radio_box.pack_start(self.radio_button3, False, False, 0)
+
+        option_name = _("Merge")
+        self.radio_button4 = Gtk.RadioButton.new_from_widget(self.radio_button1)
+        self.radio_button4.set_label(option_name)
+        self.radio_button4.connect(
+            "toggled", self.on_radio_button_toggled, MODE_MERGE
+        )
+        self.radio_box.pack_start(self.radio_button4, False, False, 0)
 
         # Box to hold the label and radio buttons
         self.label_radio_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=5)

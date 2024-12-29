@@ -46,6 +46,7 @@ from const import (
     MODE_BIDIRECTIONAL,
     MODE_RESET_TO_LOCAL,
     MODE_RESET_TO_REMOTE,
+    MODE_MERGE,
     OBJ_LST,
     Action,
     Actions,
@@ -266,6 +267,16 @@ class WebApiSyncDiffHandler:
                 C_DEL_LOC: A_ADD_LOC,
                 C_DEL_REM: A_DEL_LOC,
                 C_UPD_LOC: A_UPD_LOC,
+                C_UPD_REM: A_UPD_LOC,
+            }
+        elif sync_mode == MODE_MERGE:
+            change_to_action = {
+                C_UPD_BOTH: A_MRG_REM,
+                C_ADD_LOC: A_ADD_REM,
+                C_ADD_REM: A_ADD_LOC,
+                C_DEL_LOC: A_ADD_LOC,
+                C_DEL_REM: A_ADD_REM,
+                C_UPD_LOC: A_UPD_REM,
                 C_UPD_REM: A_UPD_LOC,
             }
         else:
