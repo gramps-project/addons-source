@@ -2,6 +2,7 @@
 # Gramps - a GTK+/GNOME based genealogy program
 #
 # Copyright (C) 2009-2015 Nick Hall
+# Copyright (C) 2019-2024 Steve Youngs
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -107,6 +108,7 @@ class Form:
     """
 
     def __init__(self):
+        self.__references = {}
         self.__dates = {}
         self.__headings = {}
         self.__sections = {}
@@ -129,6 +131,10 @@ class Form:
             id = form.attributes["id"].value
             self.__names[id] = form.attributes["title"].value
             self.__types[id] = form.attributes["type"].value
+            if "reference" in form.attributes:
+                self.__references[id] = form.attributes["reference"].value
+            else:
+                self.__references[id] = None
             if "date" in form.attributes:
                 self.__dates[id] = form.attributes["date"].value
             else:
@@ -184,6 +190,10 @@ class Form:
         """Return the title for a given form."""
         return self.__names[form_id]
 
+    def get_reference(self, form_id):
+        """ Return the reference for a given form. """
+        return self.__references[form_id]
+
     def get_date(self, form_id):
         """Return a textual date for a given form."""
         return self.__dates[form_id]
@@ -234,6 +244,11 @@ def get_form_title(form_id):
     """
     return FORM.get_title(form_id)
 
+def get_form_reference(form_id):
+    """
+    Return the reference for a given form.
+    """
+    return FORM.get_reference(form_id)
 
 def get_form_date(form_id):
     """

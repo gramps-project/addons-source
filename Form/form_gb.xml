@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <forms>
-    <form id='UKBirth' type='Birth' title='English Birth Certificate'>
+    <form id='UKBirth' type='Birth' title='English Birth Certificate' reference='Registration District: , Registration Sub-District: , Entry Number: '>
         <heading>
             <_attribute>Certificate Number</_attribute>
         </heading>
@@ -62,7 +62,7 @@
             </column>
         </section>
     </form>
-    <form id='UKMarriage' type='Marriage' title='English Marriage Certificate'>
+    <form id='UKMarriage' type='Marriage' title='English Marriage Certificate' reference='Registration District: , Entry Number: '>
         <heading>
             <_attribute>Certificate Number</_attribute>
         </heading>
@@ -127,7 +127,7 @@
             </column>
         </section>
     </form>
-    <form id='UKDeath' type='Death' title='English Death Certificate'>
+    <form id='UKDeath' type='Death' title='English Death Certificate' reference='Registration District: , Registration Sub-District: , Entry Number: '>
         <heading>
             <_attribute>Certificate Number</_attribute>
         </heading>
@@ -192,7 +192,7 @@
             </column>
         </section>
     </form>
-    <form id='UK1841' type='Census' title='1841 England and Wales Census' date='1841-06-06'>
+    <form id='UK1841' type='Census' title='1841 England and Wales Census' date='1841-06-06' reference='Department: HO, Series: 107, Piece: , Book: , Folio: , Page: , Line: '>
         <heading>
             <_attribute>City or Borough</_attribute>
         </heading>
@@ -222,7 +222,7 @@
             </column>
         </section>
     </form>
-    <form id='UK1851' type='Census' title='1851 England and Wales Census' date='1851-03-30'>
+    <form id='UK1851' type='Census' title='1851 England and Wales Census' date='1851-03-30' reference='Department: HO, Series: 107, Piece: , Folio: , Page: , Schedule: '>
         <heading>
             <_attribute>Parish or Township</_attribute>
         </heading>
@@ -273,7 +273,7 @@
             </column>
         </section>
     </form>
-    <form id='UK1861' type='Census' title='1861 England and Wales Census' date='1861-04-07'>
+    <form id='UK1861' type='Census' title='1861 England and Wales Census' date='1861-04-07' reference='Department: RG, Series: 9, Piece: , Folio: , Page: , Schedule: '>
         <heading>
             <_attribute>Parish or Township</_attribute>
         </heading>
@@ -330,7 +330,7 @@
             </column>
         </section>
     </form>
-    <form id='UK1871' type='Census' title='1871 England and Wales Census' date='1871-04-02'>
+    <form id='UK1871' type='Census' title='1871 England and Wales Census' date='1871-04-02' reference='Department: RG, Series: 10, Piece: , Folio: , Page: , Schedule: '>
         <heading>
             <_attribute>Civil Parish or Township</_attribute>
         </heading>
@@ -396,7 +396,7 @@
             </column>
         </section>
     </form>
-    <form id='UK1881' type='Census' title='1881 England and Wales Census' date='1881-04-03'>
+    <form id='UK1881' type='Census' title='1881 England and Wales Census' date='1881-04-03' reference='Department: RG, Series: 11, Piece: , Folio: , Page: , Schedule: '>
         <heading>
             <_attribute>Civil Parish or Township</_attribute>
         </heading>
@@ -462,7 +462,7 @@
             </column>
         </section>
     </form>
-    <form id='UK1891' type='Census' title='1891 England Census' date='1891-04-05'>
+    <form id='UK1891' type='Census' title='1891 England Census' date='1891-04-05' reference='Department: RG, Series: 12, Piece: , Folio: , Page: , Schedule: '>
         <heading>
             <_attribute>Administrative County</_attribute>
         </heading>
@@ -543,7 +543,7 @@
             </column>
         </section>
     </form>
-    <form id='UK1901' type='Census' title='1901 England Census' date='1901-03-31'>
+    <form id='UK1901' type='Census' title='1901 England Census' date='1901-03-31' reference='Department: RG, Series: 13, Piece: , Folio: , Page: , Schedule: '>
         <heading>
             <_attribute>Administrative County</_attribute>
         </heading>
@@ -619,7 +619,7 @@
             </column>
         </section>
     </form>
-    <form id='UK1911' type='Census' title='1911 England Census' date='1911-04-02'>
+    <form id='UK1911' type='Census' title='1911 England Census' date='1911-04-02' reference='Department: RG, Series: 14, Piece: , Schedule: '>
         <heading>
             <_attribute>Registration District</_attribute>
         </heading>
@@ -710,7 +710,7 @@
             </column>
         </section>
     </form>
-    <form id='UK1921' type='Census' title='1921 England Census' date='1921-06-19'>
+    <form id='UK1921' type='Census' title='1921 England Census' date='1921-06-19' reference='Department: RG, Series: 15, Piece: , Schedule: '>
         <heading>
             <_attribute>Registration District</_attribute>
         </heading>
@@ -792,7 +792,7 @@
             </column>
         </section>
     </form>
-    <form id='UK1939' type='Census' title='1939 England and Wales Register' date='1939-09-29'>
+    <form id='UK1939' type='Census' title='1939 England and Wales Register' date='1939-09-29' reference='Department: RG, Series: 101, Piece: , Item: , Schedule: '>
         <heading>
             <_attribute>E.D. Letter Code</_attribute>
         </heading>
@@ -839,7 +839,7 @@
             </column>
         </section>
     </form>
-    <form id='CY1891' type='Census' title='1891 Wales Census' date='1891-04-05'>
+    <form id='CY1891' type='Census' title='1891 Wales Census' date='1891-04-05' reference='Department: RG, Series: 12, Piece: , Folio: , Page: , Schedule: '>
         <heading>
             <_attribute>Administrative County</_attribute>
         </heading>
@@ -925,7 +925,7 @@
             </column>
         </section>
     </form>
-    <form id='CY1901' type='Census' title='1901 Wales Census' date='1901-03-31'>
+    <form id='CY1901' type='Census' title='1901 Wales Census' date='1901-03-31' reference='Department: RG, Series: 13, Piece: , Folio: , Page: , Schedule: '>
         <heading>
             <_attribute>Administrative County</_attribute>
         </heading>
@@ -1006,7 +1006,7 @@
             </column>
         </section>
     </form>
-    <form id='CY1911' type='Census' title='1911 Wales Census' date='1911-04-02'>
+    <form id='CY1911' type='Census' title='1911 Wales Census' date='1911-04-02' reference='Department: RG, Series: 14, Piece: , Schedule: '>
         <heading>
             <_attribute>Registration District</_attribute>
         </heading>
@@ -1102,7 +1102,7 @@
             </column>
         </section>
     </form>
-    <form id='CY1921' type='Census' title='1921 Wales Census' date='1921-06-19'>
+    <form id='CY1921' type='Census' title='1921 Wales Census' date='1921-06-19' reference='Department: RG, Series: 15, Piece: , Schedule: '>
         <heading>
             <_attribute>Registration District</_attribute>
         </heading>

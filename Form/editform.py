@@ -3,7 +3,7 @@
 #
 # Copyright (C) 2009-2015 Nick Hall
 # Copyright (C) 2011      Gary Burton
-# Copyright (C) 2024      Steve Youngs
+# Copyright (C) 2019-2024 Steve Youngs
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -67,6 +67,7 @@ from gramps.gen.datehandler import get_date, displayer
 from form import ORDER_ATTR, GROOM, BRIDE
 from form import (
     get_form_id,
+    get_form_reference,
     get_form_date,
     get_form_type,
     get_form_headings,
@@ -318,6 +319,13 @@ class EditForm(ManagedWindow):
         event_type = EventType()
         event_type.set_from_xml_str(get_form_type(form_id))
         self.event.set_type(event_type)
+
+        # Set reference if this is a new form
+        if not event.get_handle():
+            form_reference = get_form_reference(form_id)
+            if form_reference:
+                ref_entry = self.widgets['ref_entry']
+                ref_entry.set_text(form_reference)
 
         # Set date
         form_date = get_form_date(form_id)
