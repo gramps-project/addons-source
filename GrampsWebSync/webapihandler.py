@@ -21,8 +21,10 @@
 
 from __future__ import annotations
 
+import base64
 import gzip
 import json
+import logging
 import os
 import platform
 from collections.abc import Callable
@@ -42,6 +44,9 @@ try:
     from typing import Any
 except ImportError:
     pass
+
+
+LOG = logging.getLogger("grampswebsync")
 
 
 def create_macos_ssl_context():
@@ -68,6 +73,17 @@ def create_macos_ssl_context():
     return ctx
 
 
+def decode_jwt_payload(jwt: str) -> dict[str, "Any"]:
+    """Decode and return the payload from a JWT."""
+    payload_part = jwt.split(".")[1]
+    padding = len(payload_part) % 4
+    if padding > 0:
+        payload_part += "=" * (4 - padding)
+    decoded_bytes = base64.urlsafe_b64decode(payload_part)
+    decoded_str = decoded_bytes.decode("utf-8")
+    return json.loads(decoded_str)
+
+
 class WebApiHandler:
     """Web API connection handler."""
 
@@ -91,6 +107,7 @@ class WebApiHandler:
 
         # get and cache the access token
         self.fetch_token()
+        self._metadata: dict | None = None
 
     @property
     def access_token(self) -> str:
@@ -99,6 +116,22 @@ class WebApiHandler:
             self.fetch_token()
         assert self._access_token  # for type checker
         return self._access_token
+
+    @property
+    def metadata(self) -> dict:
+        """Get server metadata. Cached after first call."""
+        if not self._metadata:
+            self.fetch_metadata()
+        assert self._metadata
+        return self._metadata
+
+    def fetch_metadata(self) -> None:
+        req = Request(
+            f"{self.url}/metadata/",
+            headers={"Authorization": f"Bearer {self.access_token}"},
+        )
+        with urlopen(req, context=self._ctx) as res:
+            self._metadata = json.load(res)
 
     def fetch_token(self) -> None:
         """Fetch and store an access token."""
@@ -118,18 +151,29 @@ class WebApiHandler:
             raise
         self._access_token = res_json["access_token"]
 
+    def check_token_permissions_ok(self) -> bool:
+        """Check if the token has the necessary permissions."""
+        token = self._access_token
+        if token is None:
+            return False
+        permissions: set[str] | None = decode_jwt_payload(token).get("permissions")
+        if permissions is None:
+            return False
+        if (
+            "EditObject" in permissions
+            and "DeleteObject" in permissions
+            and "AddObject" in permissions
+        ):
+            return True
+        return False
+
     def get_lang(self) -> str | None:
         """Fetch language information."""
-        req = Request(
-            f"{self.url}/metadata/",
-            headers={"Authorization": f"Bearer {self.access_token}"},
-        )
-        with urlopen(req, context=self._ctx) as res:
-            try:
-                res_json = json.load(res)
-            except (UnicodeDecodeError, json.JSONDecodeError, HTTPError):
-                return None
-        return (res_json.get("locale") or {}).get("lang")
+        return (self.metadata.get("locale") or {}).get("lang")
+
+    def get_api_version(self) -> str | None:
+        """Fet API version info."""
+        return (self.metadata.get("gramps_webapi") or {}).get("version")
 
     def download_xml(self) -> Path:
         """Download an XML export and return the path of the temp file."""

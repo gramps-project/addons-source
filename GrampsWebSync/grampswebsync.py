@@ -21,6 +21,7 @@
 
 from __future__ import annotations
 
+import logging
 import os
 import threading
 from collections.abc import Callable
@@ -65,11 +66,16 @@ _ = _trans.gettext
 ngettext = _trans.ngettext
 
 
+LOG = logging.getLogger("grampswebsync")
+
+
 def get_password(service: str, username: str) -> str | None:
     """If keyring is installed, return the user's password or None."""
+    LOG.debug("Retrieving password for user %s", username)
     try:
         import keyring
     except ImportError:
+        LOG.warning("Keyring is not installed, cannot retrieve password.")
         return None
     return keyring.get_password(service, username)
 
@@ -80,6 +86,7 @@ def set_password(service: str, username: str, password: str) -> None:
         import keyring
     except ImportError:
         return None
+    LOG.debug("Storing password for user %s", username)
     keyring.set_password(service, username, password)
 
 
@@ -88,6 +95,7 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
 
     def __init__(self, dbstate, user, options_class, name, *args, **kwargs) -> None:
         """Initialize GUI."""
+        LOG.debug("Initializing Gramps Web Sync addon.")
         BatchTool.__init__(self, dbstate, user, options_class, name)
         ManagedWindow.__init__(self, user.uistate, [], self.__class__)
 
@@ -186,7 +194,6 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
             raise ValueError("No WebApiSyncDiffHandler found")  # shouldn't happen!
         return self._sync
 
-
     @property
     def changes(self) -> Actions:
         if self._changes is None:
@@ -199,6 +206,7 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
 
     def do_close(self, assistant):
         """Close the assistant."""
+        LOG.debug("Closing Gramps Web Sync addon.")
         position = self.window.get_position()  # crock
         self.assistant.hide()
         self.window.move(position[0], position[1])
@@ -207,10 +215,13 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
     def forward_page(self, page, data):
         """Specify the next page to be displayed."""
         if self.conclusion.error:
+            LOG.debug("Skipping to last page due to error.")
             return 7
         if page == 2 and self.file_sync_page.unchanged:
+            LOG.debug("Skipping to media sync as databases are in sync.")
             return 4
         if page == 5 and self.conclusion.unchanged:
+            LOG.debug("Skipping to last page as media files are in sync.")
             return 7
         return page + 1
 
@@ -227,10 +238,17 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
         if page == self.progress_page:
             self.save_credentials()
             url, username, password = self.get_credentials()
-            self._api = self.handle_server_errors(
+            self._api: WebApiHandler | None = self.handle_server_errors(
                 WebApiHandler, url, username, password, None
             )
             if self._api is None:
+                return None
+            if not self._api.check_token_permissions_ok():
+                self.handle_error(
+                    _(
+                        f"The user {username} does not have sufficient server permissions to use sync."
+                    )
+                )
                 return None
             self.progress_page.label.set_text(_("Fetching remote data..."))
             t = threading.Thread(target=self.async_compare_dbs)
@@ -247,7 +265,23 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
                 )
         elif page == self.file_confirmation:
             self.files_missing_local = self.get_missing_files_local()
+            if self.files_missing_local:
+                LOG.debug(
+                    "The following media files are missing on the local side: %s",
+                    ", ".join([gramps_id for gramps_id, _ in self.files_missing_local]),
+                )
+            else:
+                LOG.debug("No files missing locally.")
             self.files_missing_remote = self.get_missing_files_remote()
+            if self.files_missing_remote:
+                LOG.debug(
+                    "The following media files are missing on the remote side: %s",
+                    ", ".join(
+                        [gramps_id for gramps_id, _ in self.files_missing_remote]
+                    ),
+                )
+            else:
+                LOG.debug("No files missing remotely.")
             if not self.files_missing_local and not self.files_missing_remote:
                 self.handle_files_unchanged()
             else:
@@ -266,6 +300,7 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
             elif self.conclusion.unchanged:
                 text = _("Media files are in sync.")
                 self.conclusion.label.set_text(text)
+                LOG.info("Media files are in sync.")
             else:
                 text = ""
                 if self.downloaded:
@@ -311,6 +346,7 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
             return
         res = {}
         for gramps_id, handle in self.files_missing_local:
+            LOG.debug("Downloading file %s", gramps_id)
             self.downloaded[gramps_id] = self._download_file(handle)
             self._update_file_progress()
         return res
@@ -340,6 +376,7 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
             return
         res = {}
         for gramps_id, handle in self.files_missing_remote:
+            LOG.debug("Uploading file %s", gramps_id)
             self.uploaded[gramps_id] = self._upload_file(handle)
             self._update_file_progress()
         return res
@@ -364,6 +401,7 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
 
     def handle_error(self, message):
         """Handle an error message during sync."""
+        LOG.error(message)
         self.conclusion.error = True
         self.assistant.next_page()
         self.conclusion.label.set_text(message)  #
@@ -383,16 +421,21 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
 
     def get_diff_actions(self) -> None:
         """Download the remote data, import it and compare it to local."""
+        LOG.info("Downloading Gramps XML file.")
         path = self.handle_server_errors(self.api.download_xml)
         if path is None:
             return
+        LOG.debug("Importing Gramps XML file.")
         db2 = import_as_dict(str(path), self._user)
         if db2 is None:
             self.handle_error(_("Failed importing downloaded XML file."))
             return
+        else:
+            LOG.debug("Successfully imported Gramps XML file.")
         path.unlink()  # delete temporary file
         self.db2 = db2
         self.progress_page.label.set_text(_("Comparing local and remote data..."))
+        LOG.info("Comparing local and remote data...")
         timestamp = self.config.get("credentials.timestamp") or None
         self._sync = WebApiSyncDiffHandler(
             self.db1, self.db2, user=self._user, last_synced=timestamp
@@ -401,6 +444,7 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
         self.progress_page.label.set_text("")
         self.progress_page.set_complete()
         if len(self.changes) == 0:
+            LOG.info("Databases are in sync.")
             self.handle_unchanged()
         else:
             self.assistant.next_page()
@@ -416,7 +460,7 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
         self.file_progress_page.set_complete()
         self.assistant.next_page()
 
-    def handle_server_errors(self, callback: Callable, *args):
+    def handle_server_errors(self, callback: Callable, *args) -> None:
         """Handle server errors while executing a function."""
         try:
             return callback(*args)
@@ -439,7 +483,7 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
                 self.handle_error(_("Error %s while connecting to server.") % exc.code)
             return None
         except URLError:
-            self.handle_error(_("Error connecting to server."))
+            self.handle_error(_("URL error while connecting to server."))
             return None
         except ValueError:
             self.handle_error(_("Error while parsing response from server."))
@@ -495,6 +539,7 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
 
     def commit(self):
         """Commit all changes to the databases."""
+        LOG.info("Committing all changes to the databases.")
         msg = "Apply Gramps Web Sync changes"
         with DbTxn(msg, self.sync.db1) as trans1:
             with DbTxn(msg, self.sync.db2) as trans2:
@@ -510,7 +555,11 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
     def save_timestamp(self):
         """Save last sync timestamp."""
         # self.config.set("credentials.timestamp", self._download_timestamp)
-        self.config.set("credentials.timestamp", datetime.now().timestamp())
+        timestamp = datetime.now().timestamp()
+        LOG.debug(
+            "Saving current time stamp (%s) as last successful sync time.", timestamp
+        )
+        self.config.set("credentials.timestamp", timestamp)
         self.config.save()
 
     def get_missing_files_local(self) -> list[tuple[str, str]]:
