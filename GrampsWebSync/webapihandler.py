@@ -31,21 +31,15 @@ from collections.abc import Callable
 from pathlib import Path
 from tempfile import NamedTemporaryFile
 from time import sleep
-from urllib.error import HTTPError
+from typing import Any
+from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
-from urllib.error import URLError
 
 import gramps
 import gramps.gen.lib
 from gramps.gen.db import KEY_TO_CLASS_MAP, DbTxn
 from gramps.gen.db.dbconst import TXNADD, TXNDEL, TXNUPD
 from gramps.gen.utils.grampslocale import GrampsLocale
-
-try:
-    from typing import Any
-except ImportError:
-    pass
-
 
 LOG = logging.getLogger("grampswebsync")
 
@@ -86,7 +80,7 @@ def create_macos_ssl_context():
     return ctx
 
 
-def decode_jwt_payload(jwt: str) -> dict[str, "Any"]:
+def decode_jwt_payload(jwt: str) -> dict[str, Any]:
     """Decode and return the payload from a JWT."""
     payload_part = jwt.split(".")[1]
     padding = len(payload_part) % 4
@@ -196,7 +190,7 @@ class WebApiHandler:
 
     def commit(
         self,
-        payload: dict[str, "Any"],
+        payload: dict[str, Any],
         force: bool = True,
         progress_callback: Callable | None = None,
     ) -> None:
@@ -274,7 +268,6 @@ class WebApiHandler:
             LOG.error(f"HTTPError while fetching task status: {e.code} - {e.reason}")
         except URLError as e:
             LOG.error(f"URLError while fetching task status: {e.reason}")
-
 
     def get_missing_files(self, retry: bool = True) -> list:
         """Get a list of remote media objects with missing files."""
@@ -424,7 +417,7 @@ def to_json(obj, lang: str | None = None) -> str:
 
 def transaction_to_json(
     transaction: DbTxn, lang: str | None = None
-) -> list[dict[str, "Any"]]:
+) -> list[dict[str, Any]]:
     """Return a JSON representation of a database transaction."""
     out = []
     for recno in transaction.get_recnos(reverse=False):
