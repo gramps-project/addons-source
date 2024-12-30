@@ -27,6 +27,7 @@ import json
 import logging
 import os
 import platform
+import time
 from collections.abc import Callable
 from pathlib import Path
 from tempfile import NamedTemporaryFile
@@ -118,11 +119,25 @@ class WebApiHandler:
 
     @property
     def access_token(self) -> str:
-        """Get the access token. Cached after first call"""
+        """Get the access token. Cached after first call unless refresh needed. Auto-refreshing"""
         if not self._access_token:
+            self.fetch_token()
+        remaining_time = self.get_access_token_remaining_time()
+        if remaining_time is not None and remaining_time < 60:
             self.fetch_token()
         assert self._access_token  # for type checker
         return self._access_token
+
+    def get_access_token_remaining_time(self) -> int | None:
+        """Get the remaining time of the access token in seconds."""
+        if self._access_token is None:
+            return None
+        payload = decode_jwt_payload(self._access_token)
+        if "exp" not in payload:
+            return None
+        expires = payload["exp"]
+        now = time.time()
+        return int(expires - now)
 
     @property
     def metadata(self) -> dict:
