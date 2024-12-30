@@ -38,12 +38,17 @@ from const import (
     C_UPD_LOC,
     C_UPD_REM,
     MODE_BIDIRECTIONAL,
+    MODE_MERGE,
     MODE_RESET_TO_LOCAL,
     MODE_RESET_TO_REMOTE,
-    MODE_MERGE,
     Actions,
 )
-from diffhandler import WebApiSyncDiffHandler
+from diffhandler import (
+    WebApiSyncDiffHandler,
+    changes_to_actions,
+    has_local_actions,
+    has_remote_actions,
+)
 from gi.repository import GLib, Gtk
 from gramps.gen.config import config as configman
 from gramps.gen.const import GRAMPS_LOCALE as glocale
@@ -55,8 +60,7 @@ from gramps.gen.utils.file import media_path_full
 from gramps.gui.dialog import QuestionDialog2
 from gramps.gui.managedwindow import ManagedWindow
 from gramps.gui.plug.tool import BatchTool, ToolOptions
-from webapihandler import WebApiHandler
-
+from webapihandler import WebApiHandler, transaction_to_json
 
 assert glocale is not None  # for type checker
 try:
@@ -132,9 +136,9 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
         )
         self.add_page(self.loginpage, Gtk.AssistantPageType.CONTENT, _("Login"))
 
-        self.progress_page = ProgressPage(self.assistant)
+        self.diff_progress_page = DiffProgressPage(self.assistant)
         self.add_page(
-            self.progress_page,
+            self.diff_progress_page,
             Gtk.AssistantPageType.PROGRESS,
             _("Progress Information"),
         )
@@ -144,10 +148,10 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
             self.confirmation, Gtk.AssistantPageType.CONFIRM, _("Final confirmation")
         )
 
-        self.file_sync_page = FileSyncPage(self.assistant)
+        self.sync_progress_page = SyncProgressPage(self.assistant)
         self.add_page(
-            self.file_sync_page,
-            Gtk.AssistantPageType.CONTENT,
+            self.sync_progress_page,
+            Gtk.AssistantPageType.PROGRESS,
             _("Summary"),
         )
 
@@ -215,10 +219,11 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
 
     def forward_page(self, page, data):
         """Specify the next page to be displayed."""
+        LOG.debug(f"Moving to next page from page {page}.")
         if self.conclusion.error:
             LOG.debug("Skipping to last page due to error.")
             return 7
-        if page == 2 and self.file_sync_page.unchanged:
+        if page == 2 and self._changes is not None and len(self.changes) == 0:
             LOG.debug("Skipping to media sync as databases are in sync.")
             return 4
         if page == 5 and self.conclusion.unchanged:
@@ -233,10 +238,19 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
         self.assistant.set_page_title(page, title)
         self.assistant.set_page_type(page, page_type)
 
+
+    def handle_done_syncing_dbs(self):
+        """Handle the completion of syncing the databases."""
+        self.save_timestamp()
+        self.sync_progress_page.handle_done_syncing_dbs()
+        self.files_missing_local = self.get_missing_files_local()
+        self.assistant.next_page()
+
+
     def prepare(self, assistant, page):
         """Run page preparation code."""
         page.update_complete()
-        if page == self.progress_page:
+        if page == self.diff_progress_page:
             self.save_credentials()
             url, username, password = self.get_credentials()
             self._api: WebApiHandler | None = self.handle_server_errors(
@@ -244,28 +258,34 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
             )
             if self._api is None:
                 return None
-            if not self._api.check_token_permissions_ok():
+            if "ViewPrivate" not in self.api.get_permissions():
                 self.handle_error(
                     _(
                         f"The user {username} does not have sufficient server permissions to use sync."
                     )
                 )
                 return None
-            self.progress_page.label.set_text(_("Fetching remote data..."))
+            self.diff_progress_page.label.set_text(_("Fetching remote data..."))
             t = threading.Thread(target=self.async_compare_dbs)
             t.start()
         elif page == self.confirmation:
             self.confirmation.prepare(self.changes)
-        elif page == self.file_sync_page:
-            self.assistant.commit()
-            if self.file_sync_page.unchanged:
-                self.file_sync_page.label.set_text(_("Both trees are the same."))
+        elif page == self.sync_progress_page:
+            self.assistant.commit()  # just erases the visited page history
+            actions = changes_to_actions(self.changes, self.confirmation.sync_mode)
+            self.sync_progress_page.prepare(actions)
+            if len(actions) == 0:
+                self.handle_done_syncing_dbs()
             else:
-                self.file_sync_page.label.set_text(
-                    _("Successfully synchronized %s objects.") % len(self.changes)
-                )
+                try:
+                    self.commit_all_actions(actions)
+                except Exception as e:
+                    self.handle_error(
+                        _("Unexpected error while applying changes.") + f" {e}"
+                    )
+                
+            # now, get missing media files
         elif page == self.file_confirmation:
-            self.files_missing_local = self.get_missing_files_local()
             if self.files_missing_local:
                 LOG.debug(
                     "The following media files are missing on the local side: %s",
@@ -334,10 +354,7 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
         page_number = assistant.get_current_page()
         page = assistant.get_nth_page(page_number)
         if page == self.confirmation:
-            try:
-                self.commit()
-            except:
-                self.handle_error(_("Unexpected error while applying changes."))
+            pass
         elif page == self.file_confirmation:
             pass
 
@@ -413,7 +430,6 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
 
     def handle_unchanged(self):
         """Return a message if nothing has changed."""
-        self.file_sync_page.unchanged = True
         self.save_timestamp()
         self.assistant.next_page()
 
@@ -438,15 +454,15 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
             LOG.debug("Successfully imported Gramps XML file.")
         path.unlink()  # delete temporary file
         self.db2 = db2
-        self.progress_page.label.set_text(_("Comparing local and remote data..."))
+        self.diff_progress_page.label.set_text(_("Comparing local and remote data..."))
         LOG.info("Comparing local and remote data...")
         timestamp = self.config.get("credentials.timestamp") or None
         self._sync = WebApiSyncDiffHandler(
             self.db1, self.db2, user=self._user, last_synced=timestamp
         )
         self._changes = self.sync.get_changes()
-        self.progress_page.label.set_text("")
-        self.progress_page.set_complete()
+        self.diff_progress_page.label.set_text("")
+        self.diff_progress_page.set_complete()
         if len(self.changes) == 0:
             LOG.info("Databases are in sync.")
             self.handle_unchanged()
@@ -541,23 +557,43 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
             self.loginpage.password.get_text(),
         )
 
-    def commit(self):
+    def commit_all_actions(self, actions: Actions) -> None:
         """Commit all changes to the databases."""
         LOG.info("Committing all changes to the databases.")
         msg = "Apply Gramps Web Sync changes"
         with DbTxn(msg, self.sync.db1) as trans1:
             with DbTxn(msg, self.sync.db2) as trans2:
-                actions = self.sync.changes_to_actions(
-                    self.changes, self.confirmation.sync_mode
-                )
+                if has_local_actions(actions):
+                    LOG.debug("Committing changes to local database.")
+                else:
+                    LOG.debug("No changes to apply to local database.")
                 self.sync.commit_actions(actions, trans1, trans2)
+                self.sync_progress_page.handle_local_sync_complete(actions)
                 # force the sync if mode is reset
                 force = self.confirmation.sync_mode in {
                     MODE_RESET_TO_LOCAL,
                     MODE_RESET_TO_REMOTE,
                 }
-                self.handle_server_errors(self.api.commit, trans2, force)
-        self.save_timestamp()
+                lang = self.api.get_lang()
+                payload = transaction_to_json(trans2, lang)
+        GLib.idle_add(
+            self.async_commit_actions_to_remote, payload, force
+        )
+
+    def async_commit_actions_to_remote(self, payload: dict[str, "Any"], force: bool) -> None:
+        """Commit all changes to the remote database."""
+        GLib.idle_add(self._async_commit_actions_to_remote, payload, force)
+
+    def _async_commit_actions_to_remote(self, payload: dict[str, "Any"], force: bool) -> None:
+        """Upload/download media files."""
+        LOG.debug("Committing changes to remote database.")
+        self.handle_server_errors(
+            self.api.commit,
+            payload,
+            force,
+            self.sync_progress_page.update_api_progress,
+        )
+        self.handle_done_syncing_dbs()
 
     def save_timestamp(self):
         """Save last sync timestamp."""
@@ -695,7 +731,7 @@ class LoginPage(Page):
         self.update_complete()
 
 
-class ProgressPage(Page):
+class DiffProgressPage(Page):
     """A progress page."""
 
     def __init__(self, assistant):
@@ -833,8 +869,8 @@ class ConfirmationPage(Page):
         self.set_complete()
 
 
-class FileSyncPage(Page):
-    """Page to start media file sync."""
+class SyncProgressPage(Page):
+    """Page showing database sync progress."""
 
     def __init__(self, assistant):
         super().__init__(assistant)
@@ -843,14 +879,62 @@ class FileSyncPage(Page):
         label.set_use_markup(True)
         label.set_max_width_chars(60)
         self.label = label
-        self.unchanged = False
         self.pack_start(self.label, False, False, 0)
-        label = Gtk.Label(label=_("Click Next to synchronize media files."))
-        label.set_line_wrap(True)
-        label.set_use_markup(True)
-        label.set_max_width_chars(60)
-        self.pack_start(label, False, False, 0)
-        self.set_complete()
+
+        self.label_progressbar_api = Gtk.Label(label="")
+        self.label_progressbar_api.set_margin_top(50)
+        self.pack_start(self.label_progressbar_api, False, False, 20)
+
+        self.progressbar_api = Gtk.ProgressBar()
+        self.pack_start(self.progressbar_api, False, False, 20)
+
+        media_label = Gtk.Label(label=_("Fetching information about media files..."))
+        media_label.set_line_wrap(True)
+        media_label.set_use_markup(True)
+        media_label.set_max_width_chars(60)
+        self.media_label = media_label
+        self.media_label.set_margin_top(50)
+        self.pack_start(self.media_label, False, False, 0)
+
+    def update_api_progress(self, progress: float) -> None:
+        """Update the progress bar for the API transaction endpoint."""
+        if progress >= 0:
+            self.progressbar_api.set_fraction(progress)
+        else:
+            self.progressbar_api.pulse()
+        # force updating progress bar
+        while Gtk.events_pending():
+            Gtk.main_iteration()
+
+
+    def prepare(self, actions: Actions):
+        if len(actions) == 0:
+            self.label.set_text(_("Both trees are the same."))
+            self.label_progressbar_api.hide()
+            self.progressbar_api.hide()
+        else:
+            self.media_label.hide()
+        if has_local_actions(actions):
+            self.label.set_text(_("Applying changes to local database ..."))
+        else:
+            self.label.set_text(_("No changes to apply to local database."))
+        if has_remote_actions(actions):
+            self.label_progressbar_api.show()
+            self.label_progressbar_api.set_text(_("Applying changes to remote database ..."))
+            self.progressbar_api.show()
+        else:
+            self.label_progressbar_api.set_text(_("No changes to apply to remote database."))
+            self.progressbar_api.hide()
+
+    def handle_local_sync_complete(self, actions: Actions) -> None:
+        """Handle completion of local sync."""
+        if not has_local_actions(actions):
+            return
+        self.label.set_text(_("Successfully applied changes to local database."))
+
+    def handle_done_syncing_dbs(self) -> None:
+        """Handle completion of syncing the databases."""
+        self.media_label.show()
 
 
 class FileConfirmationPage(Page):
@@ -934,7 +1018,6 @@ class FileProgressPage(Page):
         n_up = len(files_missing_remote)
         i_down = len(downloaded)
         i_up = len(uploaded)
-        LOG.debug([n_down, n_up, i_down, i_up])
         if n_down:
             self.progressbar1.set_fraction(i_down / n_down)
         if n_up:

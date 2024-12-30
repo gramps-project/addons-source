@@ -33,6 +33,7 @@ from tempfile import NamedTemporaryFile
 from time import sleep
 from urllib.error import HTTPError
 from urllib.request import Request, urlopen
+from urllib.error import URLError
 
 import gramps
 import gramps.gen.lib
@@ -47,6 +48,18 @@ except ImportError:
 
 
 LOG = logging.getLogger("grampswebsync")
+
+
+def parse_version(version) -> tuple[int, int]:
+    """Simple dependency-free version to parse a SemVer into a list of ints."""
+    # Split version on the first "-" or "+" and take the main version part
+    main_version = version.split("-", 1)[0].split("+", 1)[0]
+    parts = [int(part) for part in main_version.split(".")]
+    if not parts:
+        return (0, 0)
+    if len(parts) == 1:
+        parts.append(0)
+    return (parts[0], parts[1])
 
 
 def create_macos_ssl_context():
@@ -126,6 +139,8 @@ class WebApiHandler:
         return self._metadata
 
     def fetch_metadata(self) -> None:
+        """Fetch and store server metadata."""
+        LOG.debug("Fetching metadata from the server")
         req = Request(
             f"{self.url}/metadata/",
             headers={"Authorization": f"Bearer {self.access_token}"},
@@ -135,6 +150,7 @@ class WebApiHandler:
 
     def fetch_token(self) -> None:
         """Fetch and store an access token."""
+        LOG.debug("Fetching an access token from the server")
         data = json.dumps({"username": self.username, "password": self.password})
         req = Request(
             f"{self.url}/token/",
@@ -151,21 +167,9 @@ class WebApiHandler:
             raise
         self._access_token = res_json["access_token"]
 
-    def check_token_permissions_ok(self) -> bool:
-        """Check if the token has the necessary permissions."""
-        token = self._access_token
-        if token is None:
-            return False
-        permissions: set[str] | None = decode_jwt_payload(token).get("permissions")
-        if permissions is None:
-            return False
-        if (
-            "EditObject" in permissions
-            and "DeleteObject" in permissions
-            and "AddObject" in permissions
-        ):
-            return True
-        return False
+    def get_permissions(self) -> set[str]:
+        """Get the permissions of the current user."""
+        return decode_jwt_payload(self.access_token).get("permissions", set())
 
     def get_lang(self) -> str | None:
         """Fetch language information."""
@@ -190,15 +194,24 @@ class WebApiHandler:
         os.remove(temp.name)
         return Path(unzipped_name)
 
-    def commit(self, trans: DbTxn, force: bool = True) -> None:
+    def commit(
+        self,
+        payload: dict[str, "Any"],
+        force: bool = True,
+        progress_callback: Callable | None = None,
+    ) -> None:
         """Commit the changes to the remote database."""
-        lang = self.get_lang()
-        payload = transaction_to_json(trans, lang)
         if payload:
+            api_version = self.get_api_version()
+            background = api_version and parse_version(api_version) >= (2, 7)
             data = json.dumps(payload).encode()
             endpoint = f"{self.url}/transactions/"
             if force:
                 endpoint = f"{endpoint}?force=1"
+                if background:
+                    endpoint = f"{endpoint}&background=1"
+            elif background:
+                endpoint = f"{endpoint}?background=1"
             req = Request(
                 endpoint,
                 data=data,
@@ -207,12 +220,61 @@ class WebApiHandler:
                     "Authorization": f"Bearer {self.access_token}",
                 },
             )
-            try:
-                urlopen(req, context=self._ctx)
-            except HTTPError as exc:
-                if exc.code == 422 and force:
-                    # Web API version might not support force parameter yet
-                    self.commit(trans, force=False)
+            json_response: dict | None = None
+            with urlopen(req, context=self._ctx) as res:
+                status_code = res.getcode()
+                if status_code == 202:
+                    json_response = json.load(res)
+            if status_code == 202 and json_response:
+                self.monitor_task_status(json_response, progress_callback)
+
+    def monitor_task_status(
+        self, task_response: dict, progress_callback: Callable | None
+    ):
+        """Monitor the status of a background task."""
+        task_id = task_response["task"]["id"]
+        while True:
+            is_done = self.update_task_status(
+                task_id, progress_callback=progress_callback
+            )
+            if is_done:
+                if progress_callback:
+                    progress_callback(1)  # 100%
+                break
+            sleep(1)
+
+    def update_task_status(
+        self, task_id: str, progress_callback: Callable | None
+    ) -> bool:
+        """Update the status of a background task.
+
+        Returns True if the task is finished, False otherwise.
+        """
+        endpoint = f"{self.url}/tasks/{task_id}"
+        req = Request(
+            endpoint,
+            headers={"Authorization": f"Bearer {self.access_token}"},
+        )
+        try:
+            with urlopen(req, context=self._ctx) as res:
+                task_status = json.load(res)
+                if task_status["state"] == "SUCCESS":
+                    return True
+                if task_status["state"] in {"FAILURE", "REVOKED"}:
+                    LOG.error(f"Server task failed: {task_status}")
+                    raise ValueError(task_status.get("info", "Server task failed"))
+                if progress_callback:
+                    try:
+                        progress = task_status["result_object"]["progress"]
+                    except (KeyError, TypeError):
+                        progress = -1
+                    progress_callback(progress)
+                return False
+        except HTTPError as e:
+            LOG.error(f"HTTPError while fetching task status: {e.code} - {e.reason}")
+        except URLError as e:
+            LOG.error(f"URLError while fetching task status: {e.reason}")
+
 
     def get_missing_files(self, retry: bool = True) -> list:
         """Get a list of remote media objects with missing files."""

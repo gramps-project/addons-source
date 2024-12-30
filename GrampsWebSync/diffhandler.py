@@ -135,7 +135,9 @@ class WebApiSyncDiffHandler:
         return date
 
     @property
-    def modified_in_db1(self) -> dict[tuple[str, str], tuple[GrampsObject, GrampsObject]]:
+    def modified_in_db1(
+        self,
+    ) -> dict[tuple[str, str], tuple[GrampsObject, GrampsObject]]:
         """Objects that have been modifed in db1."""
         return {
             k: (obj1, obj2)
@@ -237,58 +239,6 @@ class WebApiSyncDiffHandler:
             lst.append((A_UPD_LOC, handle, obj_type, obj1, obj2))
         return lst
 
-    def changes_to_actions(self, changes, sync_mode: int) -> Actions:
-        """Get actions from changes depending on sync mode."""
-        if sync_mode == MODE_BIDIRECTIONAL:
-            change_to_action = {
-                C_UPD_BOTH: A_MRG_REM,
-                C_ADD_LOC: A_ADD_REM,
-                C_ADD_REM: A_ADD_LOC,
-                C_DEL_LOC: A_DEL_REM,
-                C_DEL_REM: A_DEL_LOC,
-                C_UPD_LOC: A_UPD_REM,
-                C_UPD_REM: A_UPD_LOC,
-            }
-        elif sync_mode == MODE_RESET_TO_LOCAL:
-            change_to_action = {
-                C_UPD_BOTH: A_UPD_REM,
-                C_ADD_LOC: A_ADD_REM,
-                C_ADD_REM: A_DEL_REM,
-                C_DEL_LOC: A_DEL_REM,
-                C_DEL_REM: A_ADD_REM,
-                C_UPD_LOC: A_UPD_REM,
-                C_UPD_REM: A_UPD_REM,
-            }
-        elif sync_mode == MODE_RESET_TO_REMOTE:
-            change_to_action = {
-                C_UPD_BOTH: A_UPD_LOC,
-                C_ADD_LOC: A_DEL_LOC,
-                C_ADD_REM: A_ADD_LOC,
-                C_DEL_LOC: A_ADD_LOC,
-                C_DEL_REM: A_DEL_LOC,
-                C_UPD_LOC: A_UPD_LOC,
-                C_UPD_REM: A_UPD_LOC,
-            }
-        elif sync_mode == MODE_MERGE:
-            change_to_action = {
-                C_UPD_BOTH: A_MRG_REM,
-                C_ADD_LOC: A_ADD_REM,
-                C_ADD_REM: A_ADD_LOC,
-                C_DEL_LOC: A_ADD_LOC,
-                C_DEL_REM: A_ADD_REM,
-                C_UPD_LOC: A_UPD_REM,
-                C_UPD_REM: A_UPD_LOC,
-            }
-        else:
-            raise ValueError(f"Invalid sync mode: {sync_mode}")
-        actions = []
-        for change in changes:
-            change_type, handle, obj_type, obj1, obj2 = change
-            action_type = change_to_action[change_type]
-            action = action_type, handle, obj_type, obj1, obj2
-            actions.append(action)
-        return actions
-
     def commit_action(self, action: Action, trans1: DbTxn, trans2: DbTxn) -> None:
         """Commit an action into local and remote transaction objects."""
         typ, handle, obj_type, obj1, obj2 = action
@@ -333,3 +283,74 @@ class WebApiSyncDiffHandler:
         """Commit several actions into local and remote transaction objects."""
         for action in actions:
             self.commit_action(action, trans1, trans2)
+
+
+def changes_to_actions(changes, sync_mode: int) -> Actions:
+    """Get actions from changes depending on sync mode."""
+    if sync_mode == MODE_BIDIRECTIONAL:
+        change_to_action = {
+            C_UPD_BOTH: A_MRG_REM,
+            C_ADD_LOC: A_ADD_REM,
+            C_ADD_REM: A_ADD_LOC,
+            C_DEL_LOC: A_DEL_REM,
+            C_DEL_REM: A_DEL_LOC,
+            C_UPD_LOC: A_UPD_REM,
+            C_UPD_REM: A_UPD_LOC,
+        }
+    elif sync_mode == MODE_RESET_TO_LOCAL:
+        change_to_action = {
+            C_UPD_BOTH: A_UPD_REM,
+            C_ADD_LOC: A_ADD_REM,
+            C_ADD_REM: A_DEL_REM,
+            C_DEL_LOC: A_DEL_REM,
+            C_DEL_REM: A_ADD_REM,
+            C_UPD_LOC: A_UPD_REM,
+            C_UPD_REM: A_UPD_REM,
+        }
+    elif sync_mode == MODE_RESET_TO_REMOTE:
+        change_to_action = {
+            C_UPD_BOTH: A_UPD_LOC,
+            C_ADD_LOC: A_DEL_LOC,
+            C_ADD_REM: A_ADD_LOC,
+            C_DEL_LOC: A_ADD_LOC,
+            C_DEL_REM: A_DEL_LOC,
+            C_UPD_LOC: A_UPD_LOC,
+            C_UPD_REM: A_UPD_LOC,
+        }
+    elif sync_mode == MODE_MERGE:
+        change_to_action = {
+            C_UPD_BOTH: A_MRG_REM,
+            C_ADD_LOC: A_ADD_REM,
+            C_ADD_REM: A_ADD_LOC,
+            C_DEL_LOC: A_ADD_LOC,
+            C_DEL_REM: A_ADD_REM,
+            C_UPD_LOC: A_UPD_REM,
+            C_UPD_REM: A_UPD_LOC,
+        }
+    else:
+        raise ValueError(f"Invalid sync mode: {sync_mode}")
+    actions = []
+    for change in changes:
+        change_type, handle, obj_type, obj1, obj2 = change
+        action_type = change_to_action[change_type]
+        action = action_type, handle, obj_type, obj1, obj2
+        actions.append(action)
+    return actions
+
+
+def has_local_actions(actions: Actions) -> bool:
+    """Whether any of the changes affect the local database."""
+    for action in actions:
+        # note: A_MRG_REM affects both dbs
+        if action[0] in (A_ADD_LOC, A_DEL_LOC, A_UPD_LOC, A_MRG_REM):
+            return True
+    return False
+
+
+def has_remote_actions(actions: Actions) -> bool:
+    """Whether any of the changes affect the remote database."""
+    for action in actions:
+        # note: A_MRG_REM affects both dbs
+        if action[0] in (A_ADD_REM, A_DEL_REM, A_UPD_REM, A_MRG_REM):
+            return True
+    return False
