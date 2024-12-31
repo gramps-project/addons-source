@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-24 14:14-0700\n"
+"POT-Creation-Date: 2024-12-31 10:11+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,136 +17,135 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: GrampsWebSync/grampswebsync.gpr.py:29 GrampsWebSync/grampswebsync.py:113
-#: GrampsWebSync/grampswebsync.py:188
+#: GrampsWebSync//grampswebsync.gpr.py:29 GrampsWebSync//grampswebsync.py:117
+#: GrampsWebSync//grampswebsync.py:210
 msgid "Gramps Web Sync"
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.gpr.py:30
+#: GrampsWebSync//grampswebsync.gpr.py:30
 msgid "Synchronizes a local database with a Gramps Web instance."
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:122
+#: GrampsWebSync//grampswebsync.py:126
 msgid "Introduction"
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:133
+#: GrampsWebSync//grampswebsync.py:137
 msgid "Login"
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:139 GrampsWebSync/grampswebsync.py:165
+#: GrampsWebSync//grampswebsync.py:143 GrampsWebSync//grampswebsync.py:169
 msgid "Progress Information"
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:144
+#: GrampsWebSync//grampswebsync.py:148
 msgid "Final confirmation"
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:151 GrampsWebSync/grampswebsync.py:169
+#: GrampsWebSync//grampswebsync.py:155 GrampsWebSync//grampswebsync.py:173
 msgid "Summary"
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:158
+#: GrampsWebSync//grampswebsync.py:162
 msgid "Media Files"
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:225
+#: GrampsWebSync//grampswebsync.py:264
+msgid "Your user does not have sufficient server permissions to use sync."
+msgstr ""
+
+#: GrampsWebSync//grampswebsync.py:268
 msgid "Fetching remote data..."
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:233
-msgid "Both trees are the same."
+#: GrampsWebSync//grampswebsync.py:284
+msgid "Unexpected error while applying changes."
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:236
-#, python-format
-msgid "Successfully synchronized %s objects."
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:257
+#: GrampsWebSync//grampswebsync.py:322
 msgid "Media files are in sync."
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:265
+#: GrampsWebSync//grampswebsync.py:331
 #, python-format
 msgid "Successfully downloaded %s media files."
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:268
+#: GrampsWebSync//grampswebsync.py:334
 #, python-format
 msgid "Encountered %s errors during download."
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:274
+#: GrampsWebSync//grampswebsync.py:340
 #, python-format
 msgid "Successfully uploaded %s media files."
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:277
+#: GrampsWebSync//grampswebsync.py:343
 #, python-format
 msgid "Encountered %s errors during upload."
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:294
-msgid "Unexpected error while applying changes."
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:322 GrampsWebSync/grampswebsync.py:342
+#: GrampsWebSync//grampswebsync.py:389 GrampsWebSync//grampswebsync.py:410
 msgid "Error accessing media object."
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:382
+#: GrampsWebSync//grampswebsync.py:451
+msgid "Failed importing downloaded XML file."
+msgstr ""
+
+#: GrampsWebSync//grampswebsync.py:457
 msgid "Comparing local and remote data..."
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:412
+#: GrampsWebSync//grampswebsync.py:489
 msgid "Server authorization error."
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:415
+#: GrampsWebSync//grampswebsync.py:492
 msgid "Server authorization error: insufficient permissions."
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:418
+#: GrampsWebSync//grampswebsync.py:495
 msgid "Error: URL not found."
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:422
+#: GrampsWebSync//grampswebsync.py:499
 msgid "Unable to synchronize changes to server: objects have been modified."
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:426
+#: GrampsWebSync//grampswebsync.py:503
 #, python-format
 msgid "Error %s while connecting to server."
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:429
-msgid "Error connecting to server."
+#: GrampsWebSync//grampswebsync.py:506
+msgid "URL error while connecting to server."
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:432
+#: GrampsWebSync//grampswebsync.py:509
 msgid "Error while parsing response from server."
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:457
+#: GrampsWebSync//grampswebsync.py:537
 msgid "Continue without transport encryption?"
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:459
+#: GrampsWebSync//grampswebsync.py:539
 msgid ""
 "You have specified a URL with http scheme. If you continue, your password "
 "will be sent in clear text over the network. Use only for local testing!"
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:464
+#: GrampsWebSync//grampswebsync.py:544
 msgid "Continue with HTTP"
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:465
+#: GrampsWebSync//grampswebsync.py:545
 msgid "Use HTTPS"
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:553
+#: GrampsWebSync//grampswebsync.py:663
 msgid ""
 "This tool allows to synchronize the currently opened family tree with a "
 "remote family tree served by Gramps Web.\n"
@@ -162,73 +161,101 @@ msgid ""
 "option to make manual modifications, use the Import Merge Tool instead."
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:580
+#: GrampsWebSync//grampswebsync.py:690
 msgid "Server URL: "
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:589
+#: GrampsWebSync//grampswebsync.py:699
 msgid "Username: "
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:597
+#: GrampsWebSync//grampswebsync.py:707
 msgid "Password: "
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:664
+#: GrampsWebSync//grampswebsync.py:774
+msgid "Bidirectional Synchronization"
+msgstr ""
+
+#: GrampsWebSync//grampswebsync.py:783
+msgid "Reset remote to local"
+msgstr ""
+
+#: GrampsWebSync//grampswebsync.py:791
+msgid "Reset local to remote"
+msgstr ""
+
+#: GrampsWebSync//grampswebsync.py:799
+msgid "Merge"
+msgstr ""
+
+#: GrampsWebSync//grampswebsync.py:824
+msgid "Local changes"
+msgstr ""
+
+#: GrampsWebSync//grampswebsync.py:825 GrampsWebSync//grampswebsync.py:830
+msgid "Added"
+msgstr ""
+
+#: GrampsWebSync//grampswebsync.py:826 GrampsWebSync//grampswebsync.py:831
+msgid "Deleted"
+msgstr ""
+
+#: GrampsWebSync//grampswebsync.py:827 GrampsWebSync//grampswebsync.py:832
+#: GrampsWebSync//grampswebsync.py:834
+msgid "Modified"
+msgstr ""
+
+#: GrampsWebSync//grampswebsync.py:829
+msgid "Remote changes"
+msgstr ""
+
+#: GrampsWebSync//grampswebsync.py:834
+msgid "Simultaneous changes"
+msgstr ""
+
+#: GrampsWebSync//grampswebsync.py:891
+msgid "Fetching information about media files..."
+msgstr ""
+
+#: GrampsWebSync//grampswebsync.py:912
+msgid "Both trees are the same."
+msgstr ""
+
+#: GrampsWebSync//grampswebsync.py:918
+msgid "Applying changes to local database ..."
+msgstr ""
+
+#: GrampsWebSync//grampswebsync.py:920
+msgid "No changes to apply to local database."
+msgstr ""
+
+#: GrampsWebSync//grampswebsync.py:923
+msgid "Applying changes to remote database ..."
+msgstr ""
+
+#: GrampsWebSync//grampswebsync.py:926
+msgid "No changes to apply to remote database."
+msgstr ""
+
+#: GrampsWebSync//grampswebsync.py:933
+msgid "Successfully applied changes to local database."
+msgstr ""
+
+#: GrampsWebSync//grampswebsync.py:962
+msgid "Missing locally"
+msgstr ""
+
+#: GrampsWebSync//grampswebsync.py:965
+msgid "Missing remotely"
+msgstr ""
+
+#: GrampsWebSync//grampswebsync.py:1003
 #, python-format
 msgid "Downloading %s media file(s)"
 msgstr ""
 
-#: GrampsWebSync/grampswebsync.py:672
+#: GrampsWebSync//grampswebsync.py:1011
 #, python-format
 msgid "Uploading %s media file(s)"
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:720
-msgid "Bidirectional Synchronization"
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:729
-msgid "Reset remote to local"
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:737
-msgid "Reset local to remote"
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:764
-msgid "Local changes"
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:765 GrampsWebSync/grampswebsync.py:770
-msgid "Added"
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:766 GrampsWebSync/grampswebsync.py:771
-msgid "Deleted"
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:767 GrampsWebSync/grampswebsync.py:772
-#: GrampsWebSync/grampswebsync.py:774
-msgid "Modified"
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:769
-msgid "Remote changes"
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:774
-msgid "Simultaneous changes"
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:821
-msgid "Click Next to synchronize media files."
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:851
-msgid "Missing locally"
-msgstr ""
-
-#: GrampsWebSync/grampswebsync.py:854
-msgid "Missing remotely"
 msgstr ""

@@ -261,7 +261,7 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
             if "ViewPrivate" not in self.api.get_permissions():
                 self.handle_error(
                     _(
-                        f"The user {username} does not have sufficient server permissions to use sync."
+                        f"Your user does not have sufficient server permissions to use sync."
                     )
                 )
                 return None
