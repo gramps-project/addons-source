@@ -1,6 +1,6 @@
 # Gramps - a GTK+/GNOME based genealogy program
 #
-# Copyright (C) 2021-2022       David Straub
+# Copyright (C) 2021-2024       David Straub
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -16,41 +16,20 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
+
 """Gramps addon to synchronize with a Gramps Web server."""
 
+from __future__ import annotations
+
+import logging
 import os
 import threading
+from collections.abc import Callable
 from datetime import datetime
-
-try:
-    from typing import Callable, Optional
-except ImportError:
-    from const import Type
-
-    Callable = Type
-    Optional = Type
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlparse
 
-from gi.repository import GLib, Gtk
-from gramps.gen.config import config as configman
-from gramps.gen.const import GRAMPS_LOCALE as glocale
-from gramps.gen.db import DbTxn
-from gramps.gen.db.utils import import_as_dict
-from gramps.gen.errors import HandleError
-from gramps.gen.utils.file import media_path_full
-from gramps.gui.dialog import QuestionDialog2
-from gramps.gui.managedwindow import ManagedWindow
-from gramps.gui.plug.tool import BatchTool, ToolOptions
-
 from const import (
-    A_ADD_LOC,
-    A_ADD_REM,
-    A_DEL_LOC,
-    A_DEL_REM,
-    A_MRG_REM,
-    A_UPD_LOC,
-    A_UPD_REM,
     C_ADD_LOC,
     C_ADD_REM,
     C_DEL_LOC,
@@ -59,13 +38,31 @@ from const import (
     C_UPD_LOC,
     C_UPD_REM,
     MODE_BIDIRECTIONAL,
+    MODE_MERGE,
     MODE_RESET_TO_LOCAL,
     MODE_RESET_TO_REMOTE,
     Actions,
 )
-from diffhandler import WebApiSyncDiffHandler
-from webapihandler import WebApiHandler
+from diffhandler import (
+    WebApiSyncDiffHandler,
+    changes_to_actions,
+    has_local_actions,
+    has_remote_actions,
+)
+from gi.repository import GLib, Gtk
+from gramps.gen.config import config as configman
+from gramps.gen.const import GRAMPS_LOCALE as glocale
+from gramps.gen.db import DbTxn
+from gramps.gen.db.utils import import_as_dict
+from gramps.gen.errors import HandleError
+from gramps.gen.lib import Tag
+from gramps.gen.utils.file import media_path_full
+from gramps.gui.dialog import QuestionDialog2
+from gramps.gui.managedwindow import ManagedWindow
+from gramps.gui.plug.tool import BatchTool, ToolOptions
+from webapihandler import WebApiHandler, transaction_to_json
 
+assert glocale is not None  # for type checker
 try:
     _trans = glocale.get_addon_translator(__file__)
 except ValueError:
@@ -74,11 +71,16 @@ _ = _trans.gettext
 ngettext = _trans.ngettext
 
 
-def get_password(service: str, username: str) -> Optional[str]:
+LOG = logging.getLogger("grampswebsync")
+
+
+def get_password(service: str, username: str) -> str | None:
     """If keyring is installed, return the user's password or None."""
+    LOG.debug("Retrieving password for user %s", username)
     try:
         import keyring
     except ImportError:
+        LOG.warning("Keyring is not installed, cannot retrieve password.")
         return None
     return keyring.get_password(service, username)
 
@@ -89,6 +91,7 @@ def set_password(service: str, username: str, password: str) -> None:
         import keyring
     except ImportError:
         return None
+    LOG.debug("Storing password for user %s", username)
     keyring.set_password(service, username, password)
 
 
@@ -97,6 +100,7 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
 
     def __init__(self, dbstate, user, options_class, name, *args, **kwargs) -> None:
         """Initialize GUI."""
+        LOG.debug("Initializing Gramps Web Sync addon.")
         BatchTool.__init__(self, dbstate, user, options_class, name)
         ManagedWindow.__init__(self, user.uistate, [], self.__class__)
 
@@ -132,9 +136,9 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
         )
         self.add_page(self.loginpage, Gtk.AssistantPageType.CONTENT, _("Login"))
 
-        self.progress_page = ProgressPage(self.assistant)
+        self.diff_progress_page = DiffProgressPage(self.assistant)
         self.add_page(
-            self.progress_page,
+            self.diff_progress_page,
             Gtk.AssistantPageType.PROGRESS,
             _("Progress Information"),
         )
@@ -144,10 +148,10 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
             self.confirmation, Gtk.AssistantPageType.CONFIRM, _("Final confirmation")
         )
 
-        self.file_sync_page = FileSyncPage(self.assistant)
+        self.sync_progress_page = SyncProgressPage(self.assistant)
         self.add_page(
-            self.file_sync_page,
-            Gtk.AssistantPageType.CONTENT,
+            self.sync_progress_page,
+            Gtk.AssistantPageType.PROGRESS,
             _("Summary"),
         )
 
@@ -171,24 +175,43 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
         self.show()
         self.assistant.set_forward_page_func(self.forward_page, None)
 
-        self.api = None
+        self._api: WebApiHandler | None = None
 
         self.db1 = dbstate.db
         self.db2 = None
         self._download_timestamp = 0
-        self.changes = None
-        self.sync = None
-        self.files_missing_local = []
-        self.files_missing_remote = []
-        self.uploaded = {}
-        self.downloaded = {}
+        self._changes: Actions | None = None
+        self._sync: WebApiSyncDiffHandler | None = None
+        self.files_missing_local: list[tuple[str, str]] = []
+        self.files_missing_remote: list[tuple[str, str]] = []
+        self.uploaded: dict[str, bool] = {}
+        self.downloaded: dict[str, bool] = {}
 
-    def build_menu_names(self, obj):
+    @property
+    def api(self) -> WebApiHandler:
+        if self._api is None:
+            raise ValueError("No WebApiHandler found")  # shouldn't happen!
+        return self._api
+
+    @property
+    def sync(self) -> WebApiSyncDiffHandler:
+        if self._sync is None:
+            raise ValueError("No WebApiSyncDiffHandler found")  # shouldn't happen!
+        return self._sync
+
+    @property
+    def changes(self) -> Actions:
+        if self._changes is None:
+            raise ValueError("No change actions found")  # shouldn't happen!
+        return self._changes
+
+    def build_menu_names(self, obj):  # type: ignore
         """Override :class:`.ManagedWindow` method."""
         return (_("Gramps Web Sync"), None)
 
     def do_close(self, assistant):
         """Close the assistant."""
+        LOG.debug("Closing Gramps Web Sync addon.")
         position = self.window.get_position()  # crock
         self.assistant.hide()
         self.window.move(position[0], position[1])
@@ -196,11 +219,15 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
 
     def forward_page(self, page, data):
         """Specify the next page to be displayed."""
+        LOG.debug(f"Moving to next page from page {page}.")
         if self.conclusion.error:
+            LOG.debug("Skipping to last page due to error.")
             return 7
-        if page == 2 and self.file_sync_page.unchanged:
+        if page == 2 and self._changes is not None and len(self.changes) == 0:
+            LOG.debug("Skipping to media sync as databases are in sync.")
             return 4
         if page == 5 and self.conclusion.unchanged:
+            LOG.debug("Skipping to last page as media files are in sync.")
             return 7
         return page + 1
 
@@ -211,33 +238,71 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
         self.assistant.set_page_title(page, title)
         self.assistant.set_page_type(page, page_type)
 
+
+    def handle_done_syncing_dbs(self):
+        """Handle the completion of syncing the databases."""
+        self.save_timestamp()
+        self.sync_progress_page.handle_done_syncing_dbs()
+        self.files_missing_local = self.get_missing_files_local()
+        self.assistant.next_page()
+
+
     def prepare(self, assistant, page):
         """Run page preparation code."""
         page.update_complete()
-        if page == self.progress_page:
+        if page == self.diff_progress_page:
             self.save_credentials()
             url, username, password = self.get_credentials()
-            self.api = self.handle_server_errors(
+            self._api: WebApiHandler | None = self.handle_server_errors(
                 WebApiHandler, url, username, password, None
             )
-            if self.api is None:
+            if self._api is None:
                 return None
-            self.progress_page.label.set_text(_("Fetching remote data..."))
+            if "ViewPrivate" not in self.api.get_permissions():
+                self.handle_error(
+                    _(
+                        f"Your user does not have sufficient server permissions to use sync."
+                    )
+                )
+                return None
+            self.diff_progress_page.label.set_text(_("Fetching remote data..."))
             t = threading.Thread(target=self.async_compare_dbs)
             t.start()
         elif page == self.confirmation:
             self.confirmation.prepare(self.changes)
-        elif page == self.file_sync_page:
-            self.assistant.commit()
-            if self.file_sync_page.unchanged:
-                self.file_sync_page.label.set_text(_("Both trees are the same."))
+        elif page == self.sync_progress_page:
+            self.assistant.commit()  # just erases the visited page history
+            actions = changes_to_actions(self.changes, self.confirmation.sync_mode)
+            self.sync_progress_page.prepare(actions)
+            if len(actions) == 0:
+                self.handle_done_syncing_dbs()
             else:
-                self.file_sync_page.label.set_text(
-                    _("Successfully synchronized %s objects.") % len(self.changes)
-                )
+                try:
+                    self.commit_all_actions(actions)
+                except Exception as e:
+                    self.handle_error(
+                        _("Unexpected error while applying changes.") + f" {e}"
+                    )
+                
+            # now, get missing media files
         elif page == self.file_confirmation:
-            self.files_missing_local = self.get_missing_files_local()
+            if self.files_missing_local:
+                LOG.debug(
+                    "The following media files are missing on the local side: %s",
+                    ", ".join([gramps_id for gramps_id, _ in self.files_missing_local]),
+                )
+            else:
+                LOG.debug("No files missing locally.")
             self.files_missing_remote = self.get_missing_files_remote()
+            if self.files_missing_remote:
+                LOG.debug(
+                    "The following media files are missing on the remote side: %s",
+                    ", ".join(
+                        [gramps_id for gramps_id, _ in self.files_missing_remote]
+                    ),
+                )
+            else:
+                LOG.debug("No files missing remotely.")
             if not self.files_missing_local and not self.files_missing_remote:
                 self.handle_files_unchanged()
             else:
@@ -256,6 +321,7 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
             elif self.conclusion.unchanged:
                 text = _("Media files are in sync.")
                 self.conclusion.label.set_text(text)
+                LOG.info("Media files are in sync.")
             else:
                 text = ""
                 if self.downloaded:
@@ -288,10 +354,7 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
         page_number = assistant.get_current_page()
         page = assistant.get_nth_page(page_number)
         if page == self.confirmation:
-            try:
-                self.commit()
-            except:
-                self.handle_error(_("Unexpected error while applying changes."))
+            pass
         elif page == self.file_confirmation:
             pass
 
@@ -301,6 +364,7 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
             return
         res = {}
         for gramps_id, handle in self.files_missing_local:
+            LOG.debug("Downloading file %s", gramps_id)
             self.downloaded[gramps_id] = self._download_file(handle)
             self._update_file_progress()
         return res
@@ -313,6 +377,9 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
             self.downloaded,
             self.uploaded,
         )
+        # force updating progress bar
+        while Gtk.events_pending():
+            Gtk.main_iteration()
 
     def _download_file(self, handle):
         """Download a single media file."""
@@ -330,6 +397,7 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
             return
         res = {}
         for gramps_id, handle in self.files_missing_remote:
+            LOG.debug("Uploading file %s", gramps_id)
             self.uploaded[gramps_id] = self._upload_file(handle)
             self._update_file_progress()
         return res
@@ -354,6 +422,7 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
 
     def handle_error(self, message):
         """Handle an error message during sync."""
+        LOG.error(message)
         self.conclusion.error = True
         self.assistant.next_page()
         self.conclusion.label.set_text(message)  #
@@ -361,7 +430,6 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
 
     def handle_unchanged(self):
         """Return a message if nothing has changed."""
-        self.file_sync_page.unchanged = True
         self.save_timestamp()
         self.assistant.next_page()
 
@@ -371,23 +439,32 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
         self._download_timestamp = datetime.now().timestamp()
         GLib.idle_add(self.get_diff_actions)
 
-    def get_diff_actions(self):
+    def get_diff_actions(self) -> None:
         """Download the remote data, import it and compare it to local."""
+        LOG.info("Downloading Gramps XML file.")
         path = self.handle_server_errors(self.api.download_xml)
         if path is None:
-            return None
+            return
+        LOG.debug("Importing Gramps XML file.")
         db2 = import_as_dict(str(path), self._user)
+        if db2 is None:
+            self.handle_error(_("Failed importing downloaded XML file."))
+            return
+        else:
+            LOG.debug("Successfully imported Gramps XML file.")
         path.unlink()  # delete temporary file
         self.db2 = db2
-        self.progress_page.label.set_text(_("Comparing local and remote data..."))
+        self.diff_progress_page.label.set_text(_("Comparing local and remote data..."))
+        LOG.info("Comparing local and remote data...")
         timestamp = self.config.get("credentials.timestamp") or None
-        self.sync = WebApiSyncDiffHandler(
+        self._sync = WebApiSyncDiffHandler(
             self.db1, self.db2, user=self._user, last_synced=timestamp
         )
-        self.changes = self.sync.get_changes()
-        self.progress_page.label.set_text("")
-        self.progress_page.set_complete()
+        self._changes = self.sync.get_changes()
+        self.diff_progress_page.label.set_text("")
+        self.diff_progress_page.set_complete()
         if len(self.changes) == 0:
+            LOG.info("Databases are in sync.")
             self.handle_unchanged()
         else:
             self.assistant.next_page()
@@ -403,7 +480,7 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
         self.file_progress_page.set_complete()
         self.assistant.next_page()
 
-    def handle_server_errors(self, callback: Callable, *args):
+    def handle_server_errors(self, callback: Callable, *args) -> None:
         """Handle server errors while executing a function."""
         try:
             return callback(*args)
@@ -426,16 +503,19 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
                 self.handle_error(_("Error %s while connecting to server.") % exc.code)
             return None
         except URLError:
-            self.handle_error(_("Error connecting to server."))
+            self.handle_error(_("URL error while connecting to server."))
             return None
         except ValueError:
             self.handle_error(_("Error while parsing response from server."))
             return None
 
-    def save_credentials(self):
+    def save_credentials(self) -> None:
         """Save the login credentials."""
         url = self.loginpage.url.get_text()
         url = self.sanitize_url(url)
+        if url is None:
+            self.handle_error("No URL provided")
+            return
         username = self.loginpage.username.get_text()
         password = self.loginpage.password.get_text()
         if url != self.config.get("credentials.url"):
@@ -446,7 +526,7 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
         set_password(url, username, password)
         self.config.save()
 
-    def sanitize_url(self, url: str) -> Optional[str]:
+    def sanitize_url(self, url: str) -> str | None:
         """Warn if http and prepend https if missing."""
         parsed_url = urlparse(url)
         if parsed_url.scheme == "":
@@ -477,25 +557,55 @@ class GrampsWebSyncTool(BatchTool, ManagedWindow):
             self.loginpage.password.get_text(),
         )
 
-    def commit(self):
+    def commit_all_actions(self, actions: Actions) -> None:
         """Commit all changes to the databases."""
+        LOG.info("Committing all changes to the databases.")
         msg = "Apply Gramps Web Sync changes"
         with DbTxn(msg, self.sync.db1) as trans1:
             with DbTxn(msg, self.sync.db2) as trans2:
-                actions = self.sync.changes_to_actions(self.changes, self.confirmation.sync_mode)
+                if has_local_actions(actions):
+                    LOG.debug("Committing changes to local database.")
+                else:
+                    LOG.debug("No changes to apply to local database.")
                 self.sync.commit_actions(actions, trans1, trans2)
-                # force the sync if mode is NOT bidirectional
-                force = self.confirmation.sync_mode != MODE_BIDIRECTIONAL
-                self.handle_server_errors(self.api.commit, trans2, force)
-        self.save_timestamp()
+                self.sync_progress_page.handle_local_sync_complete(actions)
+                # force the sync if mode is reset
+                force = self.confirmation.sync_mode in {
+                    MODE_RESET_TO_LOCAL,
+                    MODE_RESET_TO_REMOTE,
+                }
+                lang = self.api.get_lang()
+                payload = transaction_to_json(trans2, lang)
+        GLib.idle_add(
+            self.async_commit_actions_to_remote, payload, force
+        )
+
+    def async_commit_actions_to_remote(self, payload: dict[str, "Any"], force: bool) -> None:
+        """Commit all changes to the remote database."""
+        GLib.idle_add(self._async_commit_actions_to_remote, payload, force)
+
+    def _async_commit_actions_to_remote(self, payload: dict[str, "Any"], force: bool) -> None:
+        """Upload/download media files."""
+        LOG.debug("Committing changes to remote database.")
+        self.handle_server_errors(
+            self.api.commit,
+            payload,
+            force,
+            self.sync_progress_page.update_api_progress,
+        )
+        self.handle_done_syncing_dbs()
 
     def save_timestamp(self):
         """Save last sync timestamp."""
         # self.config.set("credentials.timestamp", self._download_timestamp)
-        self.config.set("credentials.timestamp", datetime.now().timestamp())
+        timestamp = datetime.now().timestamp()
+        LOG.debug(
+            "Saving current time stamp (%s) as last successful sync time.", timestamp
+        )
+        self.config.set("credentials.timestamp", timestamp)
         self.config.save()
 
-    def get_missing_files_local(self):
+    def get_missing_files_local(self) -> list[tuple[str, str]]:
         """Get a list of media files missing locally."""
         return [
             (media.gramps_id, media.handle)
@@ -566,7 +676,7 @@ class IntroductionPage(Page):
 
 
 class LoginPage(Page):
-    """A page to log in."""
+    """A page to provide server credentials."""
 
     def __init__(self, assistant, url, username, password):
         super().__init__(assistant)
@@ -621,8 +731,8 @@ class LoginPage(Page):
         self.update_complete()
 
 
-class ProgressPage(Page):
-    """A progress 2page."""
+class DiffProgressPage(Page):
+    """A progress page."""
 
     def __init__(self, assistant):
         super().__init__(assistant)
@@ -634,64 +744,8 @@ class ProgressPage(Page):
         self.pack_start(self.label, False, False, 0)
 
 
-class FileProgressPage(Page):
-    """A file progress page."""
-
-    def __init__(self, assistant):
-        """Initialize page."""
-        super().__init__(assistant)
-        self.label1 = Gtk.Label(label="Media file download")
-        self.pack_start(self.label1, False, False, 20)
-
-        # self.progressbar1 = Gtk.ProgressBar()
-        # self.pack_start(self.progressbar1, False, False, 20)
-
-        self.label2 = Gtk.Label(label="Media file upload")
-        self.pack_start(self.label2, False, False, 20)
-
-        # self.progressbar2 = Gtk.ProgressBar()
-        # self.pack_start(self.progressbar2, False, False, 20)
-
-    def prepare(self, files_missing_local, files_missing_remote):
-        """Prepare."""
-        n_down = len(files_missing_local)
-        if not n_down:
-            self.label1.hide()
-            # self.progressbar1.hide()
-        else:
-            self.label1.show()
-            # self.progressbar1.show()
-            self.label1.set_text(_("Downloading %s media file(s)") % n_down)
-        n_up = len(files_missing_remote)
-        if not n_up:
-            self.label2.hide()
-            # self.progressbar2.hide()
-        else:
-            self.label2.show()
-            # self.progressbar2.show()
-            self.label2.set_text(_("Uploading %s media file(s)") % n_up)
-
-    def update_progress(
-        self, files_missing_local, files_missing_remote, downloaded, uploaded
-    ):
-        """Update the progress bar."""
-        n_down = len(files_missing_local)
-        n_up = len(files_missing_remote)
-        i_down = len(downloaded)
-        i_up = len(uploaded)
-        # if n_down:
-        #     self.progressbar1.set_fraction(i_down / n_down)
-        # if n_up:
-        #     self.progressbar2.set_fraction(i_up / n_up)
-
-
 class ConfirmationPage(Page):
     """Page showing the differences before applying them."""
-
-    # def diff_dialog(self) -> bool:
-    #     """Edit the automatically generated actions via user interaction."""
-    #     dialog = DiffDetailDialog(self._user.uistate, self.actions, on_ok=self.commit)
-    #     dialog.show()
 
     def __init__(self, assistant):
         super().__init__(assistant)
@@ -742,6 +796,12 @@ class ConfirmationPage(Page):
         )
         self.radio_box.pack_start(self.radio_button3, False, False, 0)
 
+        option_name = _("Merge")
+        self.radio_button4 = Gtk.RadioButton.new_from_widget(self.radio_button1)
+        self.radio_button4.set_label(option_name)
+        self.radio_button4.connect("toggled", self.on_radio_button_toggled, MODE_MERGE)
+        self.radio_box.pack_start(self.radio_button4, False, False, 0)
+
         # Box to hold the label and radio buttons
         self.label_radio_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=5)
         self.label_radio_box.pack_start(self.sync_label, False, False, 0)
@@ -783,11 +843,14 @@ class ConfirmationPage(Page):
                     if _type == change_type:
                         if obj1 is not None:
                             if class_name == "Tag":
+                                assert isinstance(obj1, Tag)  # for type checker
                                 gid = obj1.name
                             else:
                                 gid = obj1.gramps_id
                         else:
+                            assert obj2  # for type checker
                             if class_name == "Tag":
+                                assert isinstance(obj2, Tag)  # for type checker
                                 gid = obj2.name
                             else:
                                 gid = obj2.gramps_id
@@ -806,8 +869,8 @@ class ConfirmationPage(Page):
         self.set_complete()
 
 
-class FileSyncPage(Page):
-    """Page to start media file sync."""
+class SyncProgressPage(Page):
+    """Page showing database sync progress."""
 
     def __init__(self, assistant):
         super().__init__(assistant)
@@ -816,14 +879,62 @@ class FileSyncPage(Page):
         label.set_use_markup(True)
         label.set_max_width_chars(60)
         self.label = label
-        self.unchanged = False
         self.pack_start(self.label, False, False, 0)
-        label = Gtk.Label(label=_("Click Next to synchronize media files."))
-        label.set_line_wrap(True)
-        label.set_use_markup(True)
-        label.set_max_width_chars(60)
-        self.pack_start(label, False, False, 0)
-        self.set_complete()
+
+        self.label_progressbar_api = Gtk.Label(label="")
+        self.label_progressbar_api.set_margin_top(50)
+        self.pack_start(self.label_progressbar_api, False, False, 20)
+
+        self.progressbar_api = Gtk.ProgressBar()
+        self.pack_start(self.progressbar_api, False, False, 20)
+
+        media_label = Gtk.Label(label=_("Fetching information about media files..."))
+        media_label.set_line_wrap(True)
+        media_label.set_use_markup(True)
+        media_label.set_max_width_chars(60)
+        self.media_label = media_label
+        self.media_label.set_margin_top(50)
+        self.pack_start(self.media_label, False, False, 0)
+
+    def update_api_progress(self, progress: float) -> None:
+        """Update the progress bar for the API transaction endpoint."""
+        if progress >= 0:
+            self.progressbar_api.set_fraction(progress)
+        else:
+            self.progressbar_api.pulse()
+        # force updating progress bar
+        while Gtk.events_pending():
+            Gtk.main_iteration()
+
+
+    def prepare(self, actions: Actions):
+        if len(actions) == 0:
+            self.label.set_text(_("Both trees are the same."))
+            self.label_progressbar_api.hide()
+            self.progressbar_api.hide()
+        else:
+            self.media_label.hide()
+        if has_local_actions(actions):
+            self.label.set_text(_("Applying changes to local database ..."))
+        else:
+            self.label.set_text(_("No changes to apply to local database."))
+        if has_remote_actions(actions):
+            self.label_progressbar_api.show()
+            self.label_progressbar_api.set_text(_("Applying changes to remote database ..."))
+            self.progressbar_api.show()
+        else:
+            self.label_progressbar_api.set_text(_("No changes to apply to remote database."))
+            self.progressbar_api.hide()
+
+    def handle_local_sync_complete(self, actions: Actions) -> None:
+        """Handle completion of local sync."""
+        if not has_local_actions(actions):
+            return
+        self.label.set_text(_("Successfully applied changes to local database."))
+
+    def handle_done_syncing_dbs(self) -> None:
+        """Handle completion of syncing the databases."""
+        self.media_label.show()
 
 
 class FileConfirmationPage(Page):
@@ -860,6 +971,57 @@ class FileConfirmationPage(Page):
             self.tree_view.expand_row(Gtk.TreePath(i), False)
 
         self.set_complete()
+
+
+class FileProgressPage(Page):
+    """A file progress page."""
+
+    def __init__(self, assistant):
+        """Initialize page."""
+        super().__init__(assistant)
+        self.label1 = Gtk.Label(label="Media file download")
+        self.pack_start(self.label1, False, False, 20)
+
+        self.progressbar1 = Gtk.ProgressBar()
+        self.pack_start(self.progressbar1, False, False, 20)
+
+        self.label2 = Gtk.Label(label="Media file upload")
+        self.pack_start(self.label2, False, False, 20)
+
+        self.progressbar2 = Gtk.ProgressBar()
+        self.pack_start(self.progressbar2, False, False, 20)
+
+    def prepare(self, files_missing_local, files_missing_remote):
+        """Prepare."""
+        n_down = len(files_missing_local)
+        if not n_down:
+            self.label1.hide()
+            self.progressbar1.hide()
+        else:
+            self.label1.show()
+            self.progressbar1.show()
+            self.label1.set_text(_("Downloading %s media file(s)") % n_down)
+        n_up = len(files_missing_remote)
+        if not n_up:
+            self.label2.hide()
+            self.progressbar2.hide()
+        else:
+            self.label2.show()
+            self.progressbar2.show()
+            self.label2.set_text(_("Uploading %s media file(s)") % n_up)
+
+    def update_progress(
+        self, files_missing_local, files_missing_remote, downloaded, uploaded
+    ):
+        """Update the progress bar."""
+        n_down = len(files_missing_local)
+        n_up = len(files_missing_remote)
+        i_down = len(downloaded)
+        i_up = len(uploaded)
+        if n_down:
+            self.progressbar1.set_fraction(i_down / n_down)
+        if n_up:
+            self.progressbar2.set_fraction(i_up / n_up)
 
 
 class ConclusionPage(Page):

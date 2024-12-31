@@ -1,30 +1,32 @@
+# Gramps - a GTK+/GNOME based genealogy program
+#
+# Copyright (C) 2021-2024       David Straub
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+
 """Constants for Gramps Web Sync."""
 
+from __future__ import annotations
 
-class TypeMeta(type):
-    """Workaround for missing typing module in Gramps AIO."""
-
-    def __getitem__(self, *args, **kwargs):
-        return self
-
-
-class Type(metaclass=TypeMeta):
-    """Workaround for missing typing module in Gramps AIO."""
-
-
-try:
-    from typing import List, Optional, Tuple
-except ImportError:
-    List = Type
-    Optional = Type
-    Tuple = Type
-from gramps.gen.lib.primaryobj import BasicPrimaryObject
+from gramps.gen.lib.primaryobj import BasicPrimaryObject as GrampsObject
 
 
 # types
-GrampsObject = BasicPrimaryObject
-Action = Tuple[str, str, str, Optional[GrampsObject], Optional[GrampsObject]]
-Actions = List[Action]
+Action = tuple[str, str, str, GrampsObject | None, GrampsObject | None]
+Actions = list[Action]
 
 
 # changed: added, deleteed, updated - local/remote/both
@@ -63,3 +65,4 @@ OBJ_LST = [
 MODE_BIDIRECTIONAL = 0
 MODE_RESET_TO_LOCAL = 1
 MODE_RESET_TO_REMOTE = 2
+MODE_MERGE = 3

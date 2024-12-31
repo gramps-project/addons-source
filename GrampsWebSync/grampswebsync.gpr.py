@@ -1,7 +1,7 @@
 #
 # Gramps - a GTK+/GNOME based genealogy program
 #
-# Copyright (C) 2021-2022 David Straub
+# Copyright (C) 2021-2024 David Straub
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -28,7 +28,7 @@ register(
     id="gramps_web_sync",
     name=_("Gramps Web Sync"),
     description=_("Synchronizes a local database with a Gramps Web instance."),
-    version = '1.1.2',
+    version="1.2.0",
     gramps_target_version="5.2",
     status=STABLE,
     fname="grampswebsync.py",
