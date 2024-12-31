@@ -380,6 +380,9 @@ elif command == "update":
     )
     # Get all of the addon strings out of the catalog:
     system(
+        f"touch {addon}/po/{locale}-temp.po"
+    )
+    system(
         f"msggrep --location={addon}/* "
         f'"{addon}/po/{locale}-global.po" '
         f'--output-file="{addon}/po/{locale}-temp.po"'
