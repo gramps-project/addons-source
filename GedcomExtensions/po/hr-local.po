@@ -51,3 +51,15 @@ msgstr "Nije moguće stvoriti %s"
 #: GedcomExtensions/GedcomExtensions.py:154
 msgid "Export failed"
 msgstr "Izvoz neuspio"
+
+#: GedcomExtensions/GedcomExtensions.py:178
+msgid "Don't change"
+msgstr "Ne mijenjaj"
+
+#: GedcomExtensions/GedcomExtensions.py:179
+msgid "Add Patronymic name after Given name"
+msgstr "Dodaj Očinsko ime nakon Imena"
+
+#: GedcomExtensions/GedcomExtensions.py:180
+msgid "Ignore Patronymic name"
+msgstr "Zanemari Očinsko ime"

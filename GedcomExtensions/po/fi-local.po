@@ -56,3 +56,15 @@ msgstr "Ei voitu luoda %s"
 #: GedcomExtensions.py:154
 msgid "Export failed"
 msgstr "Vienti epäonnistui"
+
+#: GedcomExtensions/GedcomExtensions.py:178
+msgid "Don't change"
+msgstr "Älä muuta"
+
+#: GedcomExtensions/GedcomExtensions.py:179
+msgid "Add Patronymic name after Given name"
+msgstr "Lisää Isännimi Etunimen jälkeen"
+
+#: GedcomExtensions/GedcomExtensions.py:180
+msgid "Ignore Patronymic name"
+msgstr "Ohita Isännimi"

@@ -34,13 +34,24 @@ from gi.repository import Gtk
 from gramps.plugins.export import exportgedcom
 from gramps.gui.plug.export import WriterOptionBox
 from gramps.gen.errors import DatabaseError
-from gramps.gen.lib import EventRoleType
+from gramps.gen.lib import EventRoleType, NameOriginType
 from gramps.gen.const import GRAMPS_LOCALE as glocale
+
 try:
     _trans = glocale.get_addon_translator(__file__)
 except ValueError:
     _trans = glocale.translation
 _ = _trans.gettext
+
+CHECK_OFF = 0
+CHECK_ON = 1
+PATRONYMIC_NOOP = 0
+PATRONYMIC_ADD = 1
+PATRONYMIC_IGNORE = 2
+
+def normalize(name):
+    return name.strip().replace("/", "?")
+
 
 class GedcomWriterExtension(exportgedcom.GedcomWriter):
     """
@@ -52,9 +63,11 @@ class GedcomWriterExtension(exportgedcom.GedcomWriter):
             # Already parsed in GedcomWriter
             self.include_witnesses = option_box.include_witnesses
             self.include_media = option_box.include_media
+            self.process_patronymic = option_box.process_patronymic
         else:
-            self.include_witnesses = 1
-            self.include_media = 1
+            self.include_witnesses = CHECK_ON
+            self.include_media = CHECK_ON
+            self.process_patronymic = PATRONYMIC_NOOP
 
     def _photo(self, photo, level):
         """
@@ -89,6 +102,47 @@ class GedcomWriterExtension(exportgedcom.GedcomWriter):
                             self._writeln(level+1, "RELA", relation)
                             self._note_references(ref.get_note_list(), level+1)
 
+    def move_patronymic_name_to_given_name(self, name):
+        """
+        Remove patronymic name from surnames and add it to the given name.
+        Example:  Fyodor (given), Dostoevsky(inherited surname) Mikhailovich (patronymic surname)
+                  => Fyodor Mikhailovich (given),  Dostoevsky (inherited surname)
+        """
+        surnames = []
+        givens = [name.first_name]
+        for surname in name.get_surname_list():
+            if surname.get_origintype() == NameOriginType.PATRONYMIC:
+                givens.append(normalize(surname.get_surname()))
+            else:
+                surnames.append(surname)
+
+        name.first_name = " ".join(givens)
+        name.set_surname_list(surnames)
+        return name
+
+    def remove_patronymic_name(self, name):
+        """
+        Remove patronymic name from surnames and add it to the given name.
+        Example:  Fyodor (given), Dostoevsky(inherited surname) Mikhailovich (patronymic surname)
+                  => Fyodor,  Dostoevsky (inherited surname)
+        """
+        surnames = [s for s in name.get_surname_list() if s.get_origintype() != NameOriginType.PATRONYMIC]
+        name.set_surname_list(surnames)
+        return name
+
+    def _person_name(self, name, attr_nick):
+        """
+        Overloaded name-handling method to handle patronymic names.
+        """
+
+        # TODO: Should Matronymic names be handled similarly?
+        if self.process_patronymic == PATRONYMIC_IGNORE:
+            name = self.remove_patronymic_name(name)
+        elif self.process_patronymic == PATRONYMIC_ADD:
+            name = self.move_patronymic_name_to_given_name(name)
+
+        super(GedcomWriterExtension, self)._person_name(name, attr_nick)
+
 #-------------------------------------------------------------------------
 #
 # GedcomWriter Options
@@ -106,23 +160,35 @@ class GedcomWriterOptionBox(WriterOptionBox):
         """
         super(GedcomWriterOptionBox, self).__init__(person, dbstate, uistate,
                                                     track=track, window=window)
-        self.include_witnesses = 1
+        self.include_witnesses = CHECK_ON
         self.include_witnesses_check = None
-        self.include_media = 1
+        self.include_media = CHECK_ON
         self.include_media_check = None
+        self.process_patronymic = PATRONYMIC_NOOP
+        self.process_patronymic_list = None
 
     def get_option_box(self):
         option_box = super(GedcomWriterOptionBox, self).get_option_box()
+
         # Make options:
         self.include_witnesses_check = Gtk.CheckButton(_("Include witnesses"))
         self.include_media_check = Gtk.CheckButton(_("Include media"))
+
+        self.process_patronymic_list = Gtk.ComboBoxText()
+        self.process_patronymic_list.append_text(_("Don't change"))
+        self.process_patronymic_list.append_text(_("Add Patronymic name after Given name"))
+        self.process_patronymic_list.append_text(_("Ignore Patronymic name"))
+
         # Set defaults:
-        self.include_witnesses_check.set_active(1)
-        self.include_media_check.set_active(1)
+        self.include_witnesses_check.set_active(CHECK_ON)
+        self.include_media_check.set_active(CHECK_ON)
+        self.process_patronymic_list.set_active(PATRONYMIC_NOOP)
+
         # Add to gui:
         option_box.pack_start(self.include_witnesses_check, False, False, 0)
         option_box.pack_start(self.include_media_check, False, False, 0)
-        # Return option box:
+        option_box.pack_start(self.process_patronymic_list, False, False, 0)
+
         return option_box
 
     def parse_options(self):
@@ -134,6 +200,8 @@ class GedcomWriterOptionBox(WriterOptionBox):
             self.include_witnesses = self.include_witnesses_check.get_active()
         if self.include_media_check:
             self.include_media = self.include_media_check.get_active()
+        if self.process_patronymic_list:
+            self.process_patronymic = self.process_patronymic_list.get_active()
 
 def export_data(database, filename, user, option_box=None):
     """

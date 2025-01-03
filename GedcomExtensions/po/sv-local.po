@@ -50,3 +50,15 @@ msgstr "Kunde inte skapa %s"
 #: GedcomExtensions/GedcomExtensions.py:154
 msgid "Export failed"
 msgstr "Exportering misslyckades"
+
+#: GedcomExtensions/GedcomExtensions.py:178
+msgid "Don't change"
+msgstr "Ändra inte"
+
+#: GedcomExtensions/GedcomExtensions.py:179
+msgid "Add Patronymic name after Given name"
+msgstr "Lägg till Patronymiskt namn efter Förnamn"
+
+#: GedcomExtensions/GedcomExtensions.py:180
+msgid "Ignore Patronymic name"
+msgstr "Ignorera Patronymiskt namn"
