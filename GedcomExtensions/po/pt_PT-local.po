@@ -61,3 +61,7 @@ msgstr "Adicionar Nome Patronímico após o Primeiro Nome"
 #: GedcomExtensions/GedcomExtensions.py:180
 msgid "Ignore Patronymic name"
 msgstr "Ignorar Nome Patronímico"
+
+#: GedcomExtensions/GedcomExtensions.py
+msgid "Patronymic names:"
+msgstr "Nomes Patronímicos:"

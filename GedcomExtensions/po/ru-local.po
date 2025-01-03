@@ -65,3 +65,7 @@ msgstr "Добавить Отчество после Имени"
 #: GedcomExtensions/GedcomExtensions.py:180
 msgid "Ignore Patronymic name"
 msgstr "Игнорировать Отчество"
+
+#: GedcomExtensions/GedcomExtensions.py
+msgid "Patronymic names:"
+msgstr "Отчества:"

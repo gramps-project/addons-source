@@ -68,3 +68,7 @@ msgstr "Lisää Isännimi Etunimen jälkeen"
 #: GedcomExtensions/GedcomExtensions.py:180
 msgid "Ignore Patronymic name"
 msgstr "Ohita Isännimi"
+
+#: GedcomExtensions/GedcomExtensions.py
+msgid "Patronymic names:"
+msgstr "Isännimet:"

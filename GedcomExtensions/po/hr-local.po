@@ -63,3 +63,7 @@ msgstr "Dodaj Očinsko ime nakon Imena"
 #: GedcomExtensions/GedcomExtensions.py:180
 msgid "Ignore Patronymic name"
 msgstr "Zanemari Očinsko ime"
+
+#: GedcomExtensions/GedcomExtensions.py
+msgid "Patronymic names:"
+msgstr "Očinska imena:"

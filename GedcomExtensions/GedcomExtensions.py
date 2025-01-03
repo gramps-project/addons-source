@@ -174,6 +174,8 @@ class GedcomWriterOptionBox(WriterOptionBox):
         self.include_witnesses_check = Gtk.CheckButton(_("Include witnesses"))
         self.include_media_check = Gtk.CheckButton(_("Include media"))
 
+        hbox = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
+        label = Gtk.Label(label=_("Patronymic names:"))
         self.process_patronymic_list = Gtk.ComboBoxText()
         self.process_patronymic_list.append_text(_("Don't change"))
         self.process_patronymic_list.append_text(_("Add Patronymic name after Given name"))
@@ -187,7 +189,10 @@ class GedcomWriterOptionBox(WriterOptionBox):
         # Add to gui:
         option_box.pack_start(self.include_witnesses_check, False, False, 0)
         option_box.pack_start(self.include_media_check, False, False, 0)
-        option_box.pack_start(self.process_patronymic_list, False, False, 0)
+
+        hbox.pack_start(label, False, False, 0)
+        hbox.pack_start(self.process_patronymic_list, False, False, 0)
+        option_box.pack_start(hbox, False, False, 0)
 
         return option_box
 

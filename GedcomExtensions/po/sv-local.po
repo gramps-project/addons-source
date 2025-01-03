@@ -62,3 +62,7 @@ msgstr "Lägg till Patronymiskt namn efter Förnamn"
 #: GedcomExtensions/GedcomExtensions.py:180
 msgid "Ignore Patronymic name"
 msgstr "Ignorera Patronymiskt namn"
+
+#: GedcomExtensions/GedcomExtensions.py
+msgid "Patronymic names:"
+msgstr "Patronymiska namn:"

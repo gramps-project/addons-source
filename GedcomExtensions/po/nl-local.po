@@ -61,3 +61,7 @@ msgstr "Voeg Patroniem toe na Voornaam"
 #: GedcomExtensions/GedcomExtensions.py:180
 msgid "Ignore Patronymic name"
 msgstr "Negeer Patroniem"
+
+#: GedcomExtensions/GedcomExtensions.py
+msgid "Patronymic names:"
+msgstr "Patroniemen:"
