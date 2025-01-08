@@ -21,7 +21,7 @@ msgstr ""
 
 #: AvatarGenerator/AvatarGenerator.gpr.py:23
 msgid "Avatar Generator Tool"
-msgstr "Avatar Generator Tool"
+msgstr "Generatore di avatar"
 
 #: AvatarGenerator/AvatarGenerator.gpr.py:24
 msgid "A tool to add avatar pictures to your family tree"
@@ -53,7 +53,7 @@ msgstr "Categoria"
 
 #: AvatarGenerator/AvatarGenerator.py:66
 msgid "Choose how many images you'd like to use."
-msgstr "Scegliete quante immagini utilizzare."
+msgstr "Scegliere quante immagini utilizzare."
 
 #: AvatarGenerator/AvatarGenerator.py:68 AvatarGenerator/AvatarGenerator.py:75
 #: AvatarGenerator/AvatarGenerator.py:79 AvatarGenerator/AvatarGenerator.py:83
@@ -68,7 +68,7 @@ msgstr "Sconosciuto"
 
 #: AvatarGenerator/AvatarGenerator.py:74
 msgid "Image for people with unknown gender."
-msgstr "Immagine per persone con sesso sconosciuto."
+msgstr "Immagine per persone di genere sconosciuto."
 
 #: AvatarGenerator/AvatarGenerator.py:77
 msgid "Male"
@@ -92,7 +92,7 @@ msgstr "Filtro persone"
 
 #: AvatarGenerator/AvatarGenerator.py:86
 msgid "Select filter to restrict people"
-msgstr "Utilizza il filtro per applicare l'immagine solo ad alcune persone"
+msgstr "Utilizza il filtro per restringere l'insieme di persone"
 
 #: AvatarGenerator/AvatarGenerator.py:90
 msgid "Center Person"
@@ -129,7 +129,7 @@ msgstr "INFO"
 
 #: AvatarGenerator/AvatarGenerator.py:211
 msgid "No media was removed."
-msgstr "Nessun media è stato cancellato."
+msgstr "Nessun media è stato rimosso."
 
 #: AvatarGenerator/AvatarGenerator.py:213
 msgid "{} media references were removed from {} persons."
