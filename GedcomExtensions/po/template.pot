@@ -49,3 +49,19 @@ msgstr ""
 #: GedcomExtensions/GedcomExtensions.py:150
 msgid "Export failed"
 msgstr ""
+
+#: GedcomExtensions/GedcomExtensions.py
+msgid "Don't change"
+msgstr ""
+
+#: GedcomExtensions/GedcomExtensions.py
+msgid "Add Patronymic name after Given name"
+msgstr ""
+
+#: GedcomExtensions/GedcomExtensions.py
+msgid "Ignore Patronymic name"
+msgstr ""
+
+#: GedcomExtensions/GedcomExtensions.py
+msgid "Patronymic names:"
+msgstr ""

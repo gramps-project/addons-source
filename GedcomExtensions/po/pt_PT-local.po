@@ -49,3 +49,19 @@ msgstr "Impossível criar %s"
 #: GedcomExtensions/GedcomExtensions.py:154
 msgid "Export failed"
 msgstr "A exportação falhou"
+
+#: GedcomExtensions/GedcomExtensions.py:178
+msgid "Don't change"
+msgstr "Não alterar"
+
+#: GedcomExtensions/GedcomExtensions.py:179
+msgid "Add Patronymic name after Given name"
+msgstr "Adicionar Nome Patronímico após o Primeiro Nome"
+
+#: GedcomExtensions/GedcomExtensions.py:180
+msgid "Ignore Patronymic name"
+msgstr "Ignorar Nome Patronímico"
+
+#: GedcomExtensions/GedcomExtensions.py
+msgid "Patronymic names:"
+msgstr "Nomes Patronímicos:"
