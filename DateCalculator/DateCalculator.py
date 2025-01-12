@@ -3,7 +3,7 @@
 # Copyright (C) 2010       Jakim Friant
 # Copyright (c) 2015       Douglas S. Blank <doug.blank@gmail.com>
 # Copyright (c) 2020       Jan Sparreboom <jan@sparreboom.net>
-# Copyright (c) 2024       Steve Youngs <steve@youngs.cc>
+# Copyright (c) 2024-2025  Steve Youngs <steve@youngs.cc>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -28,7 +28,7 @@ DateCalculator does date math.
 # Python modules
 #
 # ------------------------------------------------------------------------
-from gi.repository import Gtk
+from gi.repository import Gdk, Gtk
 
 # ------------------------------------------------------------------------
 #
@@ -38,7 +38,7 @@ from gi.repository import Gtk
 from gramps.gen.plug import Gramplet
 from gramps.gen.datehandler import displayer
 from gramps.gen.lib import Date
-from gramps.gui.utils import text_to_clipboard
+from gramps.gui.utils import no_match_primary_mask, text_to_clipboard
 
 # ------------------------------------------------------------------------
 #
@@ -56,6 +56,8 @@ ngettext = trans.ngettext
 
 from gramps.gen.datehandler import parser
 
+_RETURN = Gdk.keyval_from_name("Return")
+_KP_ENTER = Gdk.keyval_from_name("KP_Enter")
 
 # ------------------------------------------------------------------------
 #
@@ -82,12 +84,14 @@ class DateCalculator(Gramplet):
         self.entry1 = self.__add_entry(
             _("Reference Date or Date Range"), _("a valid Gramps date")
         )
+        self.entry1.connect("key-press-event", self.key_press)
         self.entry2 = self.__add_entry(
             _("Date or offset ±y or ±y, m, d"),
             _(
                 "1. a Date\n2. a positive or negative number, representing years\n3. a positive or negative list of values, representing years, months, days"
             ),
         )
+        self.entry2.connect("key-press-event", self.key_press)
         self.result = self.__add_entry(_("Result"))
         self.result.set_editable(False)
 
@@ -122,6 +126,12 @@ class DateCalculator(Gramplet):
         entry.set_tooltip_text(tooltip)
         self.top.pack_start(entry, False, False, 6)
         return entry
+
+    def key_press(self, obj, event):
+        if no_match_primary_mask(event.get_state()):
+            if event.keyval in (_RETURN, _KP_ENTER):
+                self.apply_clicked(obj)
+        return False
 
     def apply_clicked(self, obj):
         """
