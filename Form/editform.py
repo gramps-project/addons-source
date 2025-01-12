@@ -324,7 +324,7 @@ class EditForm(ManagedWindow):
         if not event.get_handle():
             form_reference = get_form_reference(form_id)
             if form_reference:
-                ref_entry = self.widgets['ref_entry']
+                ref_entry = self.widgets["ref_entry"]
                 ref_entry.set_text(form_reference)
 
         # Set date
@@ -384,6 +384,9 @@ class EditForm(ManagedWindow):
         self.close()
         self.callback()
 
+    def clean_up(self):
+        self.gallery_list.clean_up()
+
     def close(self, *args):
         """
         Close the editor window.
@@ -395,7 +398,6 @@ class EditForm(ManagedWindow):
         self._config.set("interface.form-horiz-position", width)
         self._config.set("interface.form-vert-position", height)
         self._config.save()
-        self.gallery_list.clean_up()
         ManagedWindow.close(self)
 
     def help_clicked(self, obj):
