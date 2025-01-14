@@ -67,3 +67,7 @@ msgstr "Zanemari Očinsko ime"
 #: GedcomExtensions/GedcomExtensions.py
 msgid "Patronymic names:"
 msgstr "Očinska imena:"
+
+#: GedcomExtensions/GedcomExtensions.py:208
+msgid "Keep one type of surnames:"
+msgstr "Zadrži jedan tip prezimena:"

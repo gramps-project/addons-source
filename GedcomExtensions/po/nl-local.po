@@ -65,3 +65,7 @@ msgstr "Negeer Patroniem"
 #: GedcomExtensions/GedcomExtensions.py
 msgid "Patronymic names:"
 msgstr "Patroniemen:"
+
+#: GedcomExtensions/GedcomExtensions.py:208
+msgid "Keep one type of surnames:"
+msgstr "Behoud één type achternamen:"

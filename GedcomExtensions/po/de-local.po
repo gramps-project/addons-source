@@ -73,3 +73,7 @@ msgstr "Patronym ignorieren"
 #: GedcomExtensions/GedcomExtensions.py
 msgid "Patronymic names:"
 msgstr "Patronymische Namen:"
+
+#: GedcomExtensions/GedcomExtensions.py:208
+msgid "Keep one type of surnames:"
+msgstr "Behalte einen Typ von Nachnamen:"
