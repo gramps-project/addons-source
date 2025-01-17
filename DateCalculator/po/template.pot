@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-15 15:41-0500\n"
+"POT-Creation-Date: 2025-01-17 11:59-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,48 +26,54 @@ msgstr ""
 msgid "Useful for date math calculations"
 msgstr ""
 
-#: DateCalculator/DateCalculator.py:76
-msgid "Expression 1"
+#: DateCalculator/DateCalculator.py:85
+msgid "Reference Date or Date Range"
 msgstr ""
 
-#: DateCalculator/DateCalculator.py:77
-msgid "Expression 2"
+#: DateCalculator/DateCalculator.py:85
+msgid "a valid Gramps date"
 msgstr ""
 
-#: DateCalculator/DateCalculator.py:78
+#: DateCalculator/DateCalculator.py:89
+msgid "Date or offset ±y or ±y, m, d"
+msgstr ""
+
+#: DateCalculator/DateCalculator.py:91
+msgid ""
+"1. a Date\n"
+"2. a positive or negative number, representing years\n"
+"3. a positive or negative list of values, representing years, months, days"
+msgstr ""
+
+#: DateCalculator/DateCalculator.py:95
 msgid "Result"
 msgstr ""
 
-#: DateCalculator/DateCalculator.py:81
+#: DateCalculator/DateCalculator.py:103
 msgid "Calculate"
 msgstr ""
 
-#: DateCalculator/DateCalculator.py:84
+#: DateCalculator/DateCalculator.py:106
+msgid "Copy"
+msgstr ""
+
+#: DateCalculator/DateCalculator.py:109
 msgid "Clear"
 msgstr ""
 
-#: DateCalculator/DateCalculator.py:131
-msgid "Error: invalid entry for expression 1"
+#: DateCalculator/DateCalculator.py:158
+msgid "Error: invalid date for first expression"
 msgstr ""
 
-#: DateCalculator/DateCalculator.py:141
-msgid "Error: invalid entry for expression 2"
+#: DateCalculator/DateCalculator.py:168
+msgid "Error: invalid offset for second expression"
 msgstr ""
 
-#: DateCalculator/DateCalculator.py:166 DateCalculator/DateCalculator.py:168
-#: DateCalculator/DateCalculator.py:176 DateCalculator/DateCalculator.py:178
+#: DateCalculator/DateCalculator.py:194 DateCalculator/DateCalculator.py:196
+#: DateCalculator/DateCalculator.py:204 DateCalculator/DateCalculator.py:206
 msgid "Error: at least one expression must be a date"
 msgstr ""
 
-#: DateCalculator/DateCalculator.py:184
-msgid ""
-"Enter an expression in the entries above and click Calculate.\n"
-"\n"
-"An expression can be:\n"
-"\n"
-"1. a valid Gramps date\n"
-"2. a positive or negative number, representing years\n"
-"3. a positive or negative tuple, representing (years, months, days)\n"
-"\n"
-"Note that at least one expression must be a date."
+#: DateCalculator/DateCalculator.py:220
+msgid "Enter an expression in the entries above and click Calculate."
 msgstr ""
