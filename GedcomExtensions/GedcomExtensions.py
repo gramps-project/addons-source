@@ -65,8 +65,8 @@ class GedcomWriterExtension(exportgedcom.GedcomWriter):
             self.include_media = option_box.include_media
             self.process_patronymic = option_box.process_patronymic
         else:
-            self.include_witnesses = CHECK_ON
-            self.include_media = CHECK_ON
+            self.include_witnesses = CHECK_OFF
+            self.include_media = CHECK_OFF
             self.process_patronymic = PATRONYMIC_NOOP
 
     def _photo(self, photo, level):
@@ -160,9 +160,9 @@ class GedcomWriterOptionBox(WriterOptionBox):
         """
         super(GedcomWriterOptionBox, self).__init__(person, dbstate, uistate,
                                                     track=track, window=window)
-        self.include_witnesses = CHECK_ON
+        self.include_witnesses = CHECK_OFF
         self.include_witnesses_check = None
-        self.include_media = CHECK_ON
+        self.include_media = CHECK_OFF
         self.include_media_check = None
         self.process_patronymic = PATRONYMIC_NOOP
         self.process_patronymic_list = None
@@ -182,8 +182,8 @@ class GedcomWriterOptionBox(WriterOptionBox):
         self.process_patronymic_list.append_text(_("Ignore Patronymic name"))
 
         # Set defaults:
-        self.include_witnesses_check.set_active(CHECK_ON)
-        self.include_media_check.set_active(CHECK_ON)
+        self.include_witnesses_check.set_active(CHECK_OFF)
+        self.include_media_check.set_active(CHECK_OFF)
         self.process_patronymic_list.set_active(PATRONYMIC_NOOP)
 
         # Add to gui:
