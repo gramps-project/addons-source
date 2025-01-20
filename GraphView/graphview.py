@@ -2663,10 +2663,17 @@ class DotSvgGenerator(object):
 
         while todo:
             # check for person count
-            if self.people_limit > 0 and len(person_handles) > self.people_limit:
-                w_msg = _("The number of people in this graph exceeds the "
-                          "limit of {people_limit}. Not all people will "
-                          "be shown.".format(people_limit=self.people_limit)
+            if (self.people_limit > 0
+                and len(person_handles) >= self.people_limit):
+                w_msg = _("This graph would contain at least {people_count} "
+                          "people, which exceeds the limit of {people_limit} "
+                          "people. For performance reasons, at least "
+                          "{people_missing} people won't be shown. You can "
+                          "change this limit in the view configuration.".format(
+                              people_count=len(todo) + len(person_handles),
+                              people_limit=self.people_limit,
+                              people_missing=len(todo),
+                            )
                          )
                 WarningDialog(_("Incomplete graph"), w_msg)
                 return
