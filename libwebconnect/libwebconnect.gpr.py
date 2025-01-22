@@ -9,7 +9,7 @@ register(GENERAL,
          name="libwebconnect",
          description = _("Library for web site collections"),
          status = STABLE, # not yet tested with python 3
-         version = '1.0.34',
+         version = '1.0.35',
          gramps_target_version = "6.0",
          fname="libwebconnect.py",
          load_on_reg = True,

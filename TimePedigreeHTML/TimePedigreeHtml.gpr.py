@@ -40,7 +40,7 @@ register(REPORT,
          name = _("Timeline Pedigree Report"),
          description = _("Creates an HTML webpage that uses JavaScript to "
             "show a pedigree block diagram arranged vertically by birth date"),
-         version = '0.0.7',
+         version = '0.0.8',
          gramps_target_version = MODULE_VERSION,
          status = STABLE,
          fname = 'TimePedigreeHtml.py',
