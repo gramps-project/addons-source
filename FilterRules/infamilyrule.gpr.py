@@ -27,7 +27,7 @@ register(RULE,
   version = '1.0.18',
   authors = ["Matthias Kemmer", "Paul Culley"],
   authors_email = ["matt.familienforschung@gmail.com", "paulr2787@gmail.com"],
-  gramps_target_version = '5.2',
+  gramps_target_version = '6.0',
   status = STABLE,
   fname = "infamilyrule.py",
   ruleclass = 'PersonsInFamilyFilterMatch',  # must be rule class name

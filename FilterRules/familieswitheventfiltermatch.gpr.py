@@ -26,7 +26,7 @@ register(RULE,
   version = '1.0.18',
   authors = ["Matthias Kemmer"],
   authors_email = ["matt.familienforschung@gmail.com"],
-  gramps_target_version = '5.2',
+  gramps_target_version = '6.0',
   status = STABLE,
   fname = "familieswitheventfiltermatch.py",
   ruleclass = 'FamiliesWithEventFilterMatch',  # must be rule class name

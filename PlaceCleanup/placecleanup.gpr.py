@@ -33,7 +33,7 @@ register(
     authors_email = ["paulr2787@gmail.com"],
     status = STABLE,
     version = '1.0.21',
-    gramps_target_version = '5.2',
+    gramps_target_version = '6.0',
     fname = "placecleanup.py",
     gramplet = 'PlaceCleanup',
     navtypes=["Place"],

@@ -28,7 +28,7 @@ register(RULE,
   version = '0.0.10',
   authors = ["Paul Culley"],
   authors_email = ["paulr2787@gmail.com"],
-  gramps_target_version = '5.2',
+  gramps_target_version = '6.0',
   status = STABLE,
   fname = "activepersonrule.py",
   ruleclass = 'IsActivePerson',  # must be rule class name

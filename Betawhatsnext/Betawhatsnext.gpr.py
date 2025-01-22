@@ -32,7 +32,7 @@
 # from gramps.gen.const import GRAMPS_LOCALE as glocale
 # _ = glocale.translation.sgettext
 
-MODULE_VERSION = "5.2"
+MODULE_VERSION = "6.0"
 
 
 # ------------------------------------------------------------------------

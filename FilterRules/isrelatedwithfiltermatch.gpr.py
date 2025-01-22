@@ -29,7 +29,7 @@ register(RULE,
   version = '1.0.21',
   authors = ["Matthias Kemmer"],
   authors_email = ["matt.familienforschung@gmail.com"],
-  gramps_target_version = '5.2',
+  gramps_target_version = '6.0',
   status = STABLE,
   fname = "isrelatedwithfiltermatch.py",
   ruleclass = 'IsRelatedWithFilterMatch',  # must be rule class name

@@ -27,7 +27,7 @@
 from gramps.gen.plug._pluginreg import (newplugin, STABLE, REPORT,
     CATEGORY_WEB, REPORT_MODE_GUI, REPORT_MODE_CLI)
 
-MODULE_VERSION="5.2"
+MODULE_VERSION="6.0"
 
 #------------------------------------------------------------------------
 #

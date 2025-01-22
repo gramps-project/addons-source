@@ -32,7 +32,7 @@ register(
     name  = _("Sources and Citations Report"),
     description =  _("Provides a source and Citations Report with notes"),
     version = '3.6.12',
-    gramps_target_version = '5.2',
+    gramps_target_version = '6.0',
     status = STABLE,
     fname = 'SourcesCitationsReport.py',
     authors = ["Uli22"],

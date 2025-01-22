@@ -34,7 +34,7 @@ register(
     status=STABLE,
     audience=EXPERT,
     version = '1.0.21',
-    gramps_target_version="5.2",
+    gramps_target_version="6.0",
     fname="getgov.py",
     gramplet="GetGOV",
     height=375,

@@ -30,7 +30,7 @@ name  = _("Plugin Manager Enhanced"),
 description =  _("An Addon/Plugin Manager with several additional "
                  "capabilities"),
 version = '1.2.3',
-gramps_target_version = '5.2',
+gramps_target_version = '6.0',
 fname = "PluginManagerLoad.py",
 authors = ["Paul Culley"],
 authors_email = ["paulr2787@gmail.com"],

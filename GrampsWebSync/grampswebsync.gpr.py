@@ -29,7 +29,7 @@ register(
     name=_("Gramps Web Sync"),
     description=_("Synchronizes a local database with a Gramps Web instance."),
     version = '1.2.1',
-    gramps_target_version="5.2",
+    gramps_target_version="6.0",
     status=STABLE,
     fname="grampswebsync.py",
     authors=["David Straub"],

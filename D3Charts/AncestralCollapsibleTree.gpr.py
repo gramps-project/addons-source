@@ -33,5 +33,5 @@ register(REPORT,
                     'represented as a Collapsible Tree Layout from the D3.js '
                     'JavaScript library.'),
     version = '1.0.33',
-    gramps_target_version = "5.2",
+    gramps_target_version = "6.0",
 )

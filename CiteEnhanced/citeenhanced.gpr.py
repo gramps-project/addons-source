@@ -35,7 +35,7 @@ register(
         "An enhanced citation formatter that adds a repository and call number to the standard functionality."
     ),
     version = '1.0.1',
-    gramps_target_version="5.2",
+    gramps_target_version="6.0",
     status=BETA,
     audience=EXPERT,
     fname="citeenhanced.py",

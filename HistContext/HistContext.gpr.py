@@ -12,7 +12,7 @@ register(
     expand=True,
     gramplet="HistContext",
     gramplet_title=_("Historical Context"),
-    gramps_target_version="5.2",
+    gramps_target_version="6.0",
     help_url="Addon:Historical_Context",
     navtypes=["Person", "Dashboard"],
     include_in_listing=True,
