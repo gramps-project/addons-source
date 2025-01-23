@@ -37,7 +37,7 @@ from gi.repository import Gdk, Gtk
 # ------------------------------------------------------------------------
 from gramps.gen.plug import Gramplet
 from gramps.gen.datehandler import displayer
-from gramps.gen.lib import Date
+from gramps.gen.lib import Date, Span
 from gramps.gui.utils import no_match_primary_mask, text_to_clipboard
 
 # ------------------------------------------------------------------------
@@ -58,6 +58,7 @@ from gramps.gen.datehandler import parser
 
 _RETURN = Gdk.keyval_from_name("Return")
 _KP_ENTER = Gdk.keyval_from_name("KP_Enter")
+
 
 # ------------------------------------------------------------------------
 #
@@ -208,6 +209,8 @@ class DateCalculator(Gramplet):
             if isinstance(result, Date):
                 result.set_quality(Date.QUAL_CALCULATED)
                 result = displayer.display(result)
+            elif isinstance(result, Span):
+                result = result.format(3)
             self.result.set_text(str(result))
 
     def copy_clicked(self, obj):
