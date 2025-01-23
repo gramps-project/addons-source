@@ -26,7 +26,7 @@ register(
     fname="DateCalculator.py",
     authors=["Doug Blank", "Steve Youngs"],
     authors_email=["doug.blank@gmail.com", "steve@youngs.cc"],
-    height=250,
+    height=300,
     gramplet="DateCalculator",
     gramps_target_version="5.2",
     gramplet_title=_("Date Calculator"),
