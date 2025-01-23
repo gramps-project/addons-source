@@ -16,19 +16,19 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
-register(GRAMPLET,
-         id="DateCalculator",
-         name=_("Date Calculator"),
-         description=_("Useful for date math calculations"),
-         status=STABLE,
-         version = '0.0.20',
-         fname="DateCalculator.py",
-         authors=['Doug Blank'],
-         authors_email=["doug.blank@gmail.com"],
-         height=250,
-         gramplet='DateCalculator',
-         gramps_target_version="6.0",
-         gramplet_title=_("Date Calculator"),
-         help_url = "DateCalculator",
-         )
-
+register(
+    GRAMPLET,
+    id="DateCalculator",
+    name=_("Date Calculator"),
+    description=_("Useful for date math calculations"),
+    status=STABLE,
+    version="0.0.20",
+    fname="DateCalculator.py",
+    authors=["Doug Blank"],
+    authors_email=["doug.blank@gmail.com"],
+    height=250,
+    gramplet="DateCalculator",
+    gramps_target_version="6.0",
+    gramplet_title=_("Date Calculator"),
+    help_url="DateCalculator",
+)
