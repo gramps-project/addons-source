@@ -168,6 +168,7 @@ class GraphView(NavigationView):
         ('interface.graphview-home-path-color', '#000000'),
         ('interface.graphview-descendant-generations', 10),
         ('interface.graphview-ancestor-generations', 3),
+        ('interface.graphview-people-limit', 1000),
         ('interface.graphview-show-animation', True),
         ('interface.graphview-animation-speed', 3),
         ('interface.graphview-animation-count', 4),
@@ -202,6 +203,8 @@ class GraphView(NavigationView):
             'interface.graphview-descendant-generations')
         self.ancestor_generations = self._config.get(
             'interface.graphview-ancestor-generations')
+        self.people_limit = self._config.get(
+            'interface.graphview-people-limit')
 
         self.dbstate = dbstate
         self.uistate = uistate
@@ -550,6 +553,10 @@ class GraphView(NavigationView):
         """
         self.ancestor_generations = entry
         self.graph_widget.populate(self.get_active())
+    
+    def cb_update_people_limit(self, _client, _cnxd_id, entry, _data):
+        self.people_limit = entry
+        self.graph_widget.populate(self.get_active())
 
     def cb_update_show_animation(self, _client, _cnxd_id, entry, _data):
         """
@@ -688,6 +695,8 @@ class GraphView(NavigationView):
                              self.cb_update_desc_generations)
         self._config.connect('interface.graphview-ancestor-generations',
                              self.cb_update_ancestor_generations)
+        self._config.connect('interface.graphview-people-limit',
+                             self.cb_update_people_limit)
         self._config.connect('interface.graphview-show-animation',
                              self.cb_update_show_animation)
         self._config.connect('interface.graphview-animation-speed',
@@ -777,6 +786,10 @@ class GraphView(NavigationView):
         configdialog.add_combo(grid, _('Time Direction'), row,
                                'interface.graphview-direction',
                                direction_fmts, setactive=active)
+        row += 1
+        configdialog.add_spinner(
+            grid, _('Limit number of people displayed (use 0 for unlimited)'),
+            row, 'interface.graphview-people-limit', (0, 50_000))
 
         return _('Layout'), grid
 
@@ -2384,6 +2397,8 @@ class DotSvgGenerator(object):
             'interface.graphview-descendant-generations')
         self.ancestor_generations = self.view._config.get(
             'interface.graphview-ancestor-generations')
+        self.people_limit = self.view._config.get(
+            'interface.graphview-people-limit')
         self.person_theme_index = self.view._config.get(
             'interface.graphview-person-theme')
         self.show_all_connected = self.view._config.get(
@@ -2648,9 +2663,17 @@ class DotSvgGenerator(object):
 
         while todo:
             # check for person count
-            if len(person_handles) > 1000:
-                w_msg = _("You try to build graph containing more then 1000 "
-                          "persons. Not all persons will be shown in the graph."
+            if (self.people_limit > 0
+                and len(person_handles) >= self.people_limit):
+                w_msg = _("This graph would contain at least {people_count} "
+                          "people, which exceeds the limit of {people_limit} "
+                          "people. For performance reasons, at least "
+                          "{people_missing} people won't be shown. You can "
+                          "change this limit in the view configuration.".format(
+                              people_count=len(todo) + len(person_handles),
+                              people_limit=self.people_limit,
+                              people_missing=len(todo),
+                            )
                          )
                 WarningDialog(_("Incomplete graph"), w_msg)
                 return
