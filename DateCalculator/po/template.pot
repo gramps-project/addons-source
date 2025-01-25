@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-17 11:59-0800\n"
+"POT-Creation-Date: 2025-01-25 10:25-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,63 +17,63 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: DateCalculator/DateCalculator.gpr.py:21
-#: DateCalculator/DateCalculator.gpr.py:31
+#: DateCalculator/DateCalculator.gpr.py:22
+#: DateCalculator/DateCalculator.gpr.py:32
 msgid "Date Calculator"
 msgstr ""
 
-#: DateCalculator/DateCalculator.gpr.py:22
-msgid "Useful for date math calculations"
+#: DateCalculator/DateCalculator.gpr.py:23
+msgid "Perform date math calculations"
 msgstr ""
 
-#: DateCalculator/DateCalculator.py:85
+#: DateCalculator/DateCalculator.py:86
 msgid "Reference Date or Date Range"
 msgstr ""
 
-#: DateCalculator/DateCalculator.py:85
+#: DateCalculator/DateCalculator.py:86
 msgid "a valid Gramps date"
 msgstr ""
 
-#: DateCalculator/DateCalculator.py:89
+#: DateCalculator/DateCalculator.py:90
 msgid "Date or offset ±y or ±y, m, d"
 msgstr ""
 
-#: DateCalculator/DateCalculator.py:91
+#: DateCalculator/DateCalculator.py:92
 msgid ""
 "1. a Date\n"
 "2. a positive or negative number, representing years\n"
 "3. a positive or negative list of values, representing years, months, days"
 msgstr ""
 
-#: DateCalculator/DateCalculator.py:95
+#: DateCalculator/DateCalculator.py:96
 msgid "Result"
 msgstr ""
 
-#: DateCalculator/DateCalculator.py:103
+#: DateCalculator/DateCalculator.py:104
 msgid "Calculate"
 msgstr ""
 
-#: DateCalculator/DateCalculator.py:106
+#: DateCalculator/DateCalculator.py:107
 msgid "Copy"
 msgstr ""
 
-#: DateCalculator/DateCalculator.py:109
+#: DateCalculator/DateCalculator.py:110
 msgid "Clear"
 msgstr ""
 
-#: DateCalculator/DateCalculator.py:158
+#: DateCalculator/DateCalculator.py:159
 msgid "Error: invalid date for first expression"
 msgstr ""
 
-#: DateCalculator/DateCalculator.py:168
+#: DateCalculator/DateCalculator.py:169
 msgid "Error: invalid offset for second expression"
 msgstr ""
 
-#: DateCalculator/DateCalculator.py:194 DateCalculator/DateCalculator.py:196
-#: DateCalculator/DateCalculator.py:204 DateCalculator/DateCalculator.py:206
+#: DateCalculator/DateCalculator.py:195 DateCalculator/DateCalculator.py:197
+#: DateCalculator/DateCalculator.py:205 DateCalculator/DateCalculator.py:207
 msgid "Error: at least one expression must be a date"
 msgstr ""
 
-#: DateCalculator/DateCalculator.py:220
+#: DateCalculator/DateCalculator.py:223
 msgid "Enter an expression in the entries above and click Calculate."
 msgstr ""
