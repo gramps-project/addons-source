@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-11 09:25-0800\n"
+"POT-Creation-Date: 2025-02-01 15:09-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,39 +33,40 @@ msgstr ""
 msgid "GEDCOM Extensions options"
 msgstr ""
 
-#: GedcomExtensions/GedcomExtensions.py:174
+#: GedcomExtensions/GedcomExtensions.py:197
 msgid "Include witnesses"
 msgstr ""
 
-#: GedcomExtensions/GedcomExtensions.py:175
+#: GedcomExtensions/GedcomExtensions.py:198
 msgid "Include media"
 msgstr ""
 
-#: GedcomExtensions/GedcomExtensions.py:178
+#: GedcomExtensions/GedcomExtensions.py:201
 msgid "Patronymic names:"
 msgstr ""
 
-#: GedcomExtensions/GedcomExtensions.py:180
+#: GedcomExtensions/GedcomExtensions.py:203
+#: GedcomExtensions/GedcomExtensions.py:210
 msgid "Don't change"
 msgstr ""
 
-#: GedcomExtensions/GedcomExtensions.py:181
+#: GedcomExtensions/GedcomExtensions.py:204
 msgid "Add Patronymic name after Given name"
 msgstr ""
 
-#: GedcomExtensions/GedcomExtensions.py:182
+#: GedcomExtensions/GedcomExtensions.py:205
 msgid "Ignore Patronymic name"
-msgstr ""
-
-#: GedcomExtensions/GedcomExtensions.py:220
-#, python-format
-msgid "Could not create %s"
-msgstr ""
-
-#: GedcomExtensions/GedcomExtensions.py:223
-msgid "Export failed"
 msgstr ""
 
 #: GedcomExtensions/GedcomExtensions.py:208
 msgid "Type of surname:"
+msgstr ""
+
+#: GedcomExtensions/GedcomExtensions.py:258
+#, python-format
+msgid "Could not create %s"
+msgstr ""
+
+#: GedcomExtensions/GedcomExtensions.py:261
+msgid "Export failed"
 msgstr ""
