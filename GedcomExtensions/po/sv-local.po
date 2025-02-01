@@ -68,5 +68,5 @@ msgid "Patronymic names:"
 msgstr "Patronymiska namn:"
 
 #: GedcomExtensions/GedcomExtensions.py:208
-msgid "Keep one type of surnames:"
-msgstr "Behåll en typ av efternamn:"
+msgid "Type of surname:"
+msgstr "Typ av efternamn:"

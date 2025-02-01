@@ -205,7 +205,7 @@ class GedcomWriterOptionBox(WriterOptionBox):
         self.process_patronymic_list.append_text(_("Ignore Patronymic name"))
 
         hbox2 = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
-        label2 = Gtk.Label(label=_("Keep one type of surnames:"))
+        label2 = Gtk.Label(label=_("Type of surname:"))
         self.filter_surname_list = Gtk.ComboBoxText()
         self.filter_surname_list.append_text(_("Don't change"))
         type_names = NameOriginType().get_standard_names()

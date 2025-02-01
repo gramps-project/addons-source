@@ -69,5 +69,5 @@ msgid "Patronymic names:"
 msgstr "Očinska imena:"
 
 #: GedcomExtensions/GedcomExtensions.py:208
-msgid "Keep one type of surnames:"
-msgstr "Zadrži jedan tip prezimena:"
+msgid "Type of surname:"
+msgstr "Vrsta prezimena:"

@@ -71,5 +71,5 @@ msgid "Patronymic names:"
 msgstr "Отчества:"
 
 #: GedcomExtensions/GedcomExtensions.py:208
-msgid "Keep one type of surnames:"
-msgstr "Сохранить один тип фамилий:"
+msgid "Type of surname:"
+msgstr "Тип фамилии:"
