@@ -48,6 +48,8 @@ CHECK_ON = 1
 PATRONYMIC_NOOP = 0
 PATRONYMIC_ADD = 1
 PATRONYMIC_IGNORE = 2
+SURNAME_FILTER_NOOP = 0
+# the rest of surname types come from NameOriginType
 
 def normalize(name):
     return name.strip().replace("/", "?")
@@ -64,10 +66,12 @@ class GedcomWriterExtension(exportgedcom.GedcomWriter):
             self.include_witnesses = option_box.include_witnesses
             self.include_media = option_box.include_media
             self.process_patronymic = option_box.process_patronymic
+            self.filter_surname = option_box.filter_surname
         else:
             self.include_witnesses = CHECK_OFF
             self.include_media = CHECK_OFF
             self.process_patronymic = PATRONYMIC_NOOP
+            self.filter_surname = SURNAME_FILTER_NOOP
 
     def _photo(self, photo, level):
         """
@@ -130,16 +134,33 @@ class GedcomWriterExtension(exportgedcom.GedcomWriter):
         name.set_surname_list(surnames)
         return name
 
+    def keep_one_type_of_surname(self, name, type_to_keep):
+        """
+        Keep only one type of surnames.
+
+        Example:  Maria (given) Skłodowska (inherited) Curie (taken)
+                  => noop => Maria (given) Skłodowska (inherited) Curie (taken)
+                  => keep inherited => Maria (given) Skłodowska (inherited)
+                  => keep taken => Maria (given) Curie (taken)
+        """
+        surnames = [s for s in name.get_surname_list() if s.get_origintype() == type_to_keep]
+        name.set_surname_list(surnames)
+        return name
+
     def _person_name(self, name, attr_nick):
         """
         Overloaded name-handling method to handle patronymic names.
         """
-
         # TODO: Should Matronymic names be handled similarly?
         if self.process_patronymic == PATRONYMIC_IGNORE:
             name = self.remove_patronymic_name(name)
         elif self.process_patronymic == PATRONYMIC_ADD:
             name = self.move_patronymic_name_to_given_name(name)
+
+        # surname filtering must happen after the patronymic processing
+        # as "patronymic" is a type of surname
+        if self.filter_surname != SURNAME_FILTER_NOOP:
+            name = self.keep_one_type_of_surname(name, self.filter_surname)
 
         super(GedcomWriterExtension, self)._person_name(name, attr_nick)
 
@@ -166,6 +187,8 @@ class GedcomWriterOptionBox(WriterOptionBox):
         self.include_media_check = None
         self.process_patronymic = PATRONYMIC_NOOP
         self.process_patronymic_list = None
+        self.filter_surname = SURNAME_FILTER_NOOP
+        self.filter_surname_list = None
 
     def get_option_box(self):
         option_box = super(GedcomWriterOptionBox, self).get_option_box()
@@ -181,10 +204,19 @@ class GedcomWriterOptionBox(WriterOptionBox):
         self.process_patronymic_list.append_text(_("Add Patronymic name after Given name"))
         self.process_patronymic_list.append_text(_("Ignore Patronymic name"))
 
+        hbox2 = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=10)
+        label2 = Gtk.Label(label=_("Type of surname:"))
+        self.filter_surname_list = Gtk.ComboBoxText()
+        self.filter_surname_list.append_text(_("Don't change"))
+        type_names = NameOriginType().get_standard_names()
+        for name in type_names:
+            self.filter_surname_list.append_text(name)
+
         # Set defaults:
         self.include_witnesses_check.set_active(CHECK_OFF)
         self.include_media_check.set_active(CHECK_OFF)
         self.process_patronymic_list.set_active(PATRONYMIC_NOOP)
+        self.filter_surname_list.set_active(SURNAME_FILTER_NOOP)
 
         # Add to gui:
         option_box.pack_start(self.include_witnesses_check, False, False, 0)
@@ -193,6 +225,10 @@ class GedcomWriterOptionBox(WriterOptionBox):
         hbox.pack_start(label, False, False, 0)
         hbox.pack_start(self.process_patronymic_list, False, False, 0)
         option_box.pack_start(hbox, False, False, 0)
+
+        hbox2.pack_start(label2, False, False, 0)
+        hbox2.pack_start(self.filter_surname_list, False, False, 0)
+        option_box.pack_start(hbox2, False, False, 0)
 
         return option_box
 
@@ -207,6 +243,8 @@ class GedcomWriterOptionBox(WriterOptionBox):
             self.include_media = self.include_media_check.get_active()
         if self.process_patronymic_list:
             self.process_patronymic = self.process_patronymic_list.get_active()
+        if self.filter_surname_list:
+            self.filter_surname = self.filter_surname_list.get_active()
 
 def export_data(database, filename, user, option_box=None):
     """
