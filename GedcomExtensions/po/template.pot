@@ -65,3 +65,7 @@ msgstr ""
 #: GedcomExtensions/GedcomExtensions.py:223
 msgid "Export failed"
 msgstr ""
+
+#: GedcomExtensions/GedcomExtensions.py:208
+msgid "Type of surname:"
+msgstr ""

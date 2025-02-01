@@ -69,3 +69,7 @@ msgstr "Игнорировать Отчество"
 #: GedcomExtensions/GedcomExtensions.py
 msgid "Patronymic names:"
 msgstr "Отчества:"
+
+#: GedcomExtensions/GedcomExtensions.py:208
+msgid "Type of surname:"
+msgstr "Тип фамилии:"
