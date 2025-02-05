@@ -3,7 +3,7 @@
 #
 # Copyright (C) 2015-2016 Douglas S. Blank <doug.blank@gmail.com>
 # Copyright (C) 2016-2017 Nick Hall
-# Copyright (C) 2022 David Straub
+# Copyright (C) 2022-2025 David Straub
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -26,7 +26,7 @@
 #
 # -------------------------------------------------------------------------
 import time
-import pickle
+import json
 import logging
 
 # ------------------------------------------------------------------------
@@ -68,6 +68,7 @@ from gramps.gen.lib import (
     Repository,
     Note,
 )
+from gramps.gen.lib.serialize import from_dict, to_dict
 from gramps.gen.lib.genderstats import GenderStats
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 
@@ -82,6 +83,23 @@ class SharedDBAPI(DbGeneric):
 
     def _initialize(self, directory, username, password):
         raise NotImplementedError
+
+    def use_json_data(self):
+        """
+        A DBAPI level method for testing if the
+        database supports JSON access.
+        """
+        # Check if json_data exists on metadata as a proxy to see
+        # if the database has been converted to use JSON data
+        return self.dbapi.column_exists("metadata", "json_data")
+
+    def upgrade_table_for_json_data(self, table_name):
+        """
+        A DBAPI level method for upgrading the given table
+        adding a json_data column.
+        """
+        if not self.dbapi.column_exists(table_name, "json_data"):
+            self.dbapi.execute("ALTER TABLE %s ADD COLUMN json_data TEXT;" % table_name)
 
     def _schema_exists(self):
         """
@@ -114,7 +132,7 @@ class SharedDBAPI(DbGeneric):
             "PRIMARY KEY (treeid, handle), "
             "given_name TEXT, "
             "surname TEXT, "
-            "blob_data BLOB"
+            "json_data TEXT"
             ")"
         )
         self.dbapi.execute(
@@ -123,7 +141,7 @@ class SharedDBAPI(DbGeneric):
             "treeid INTEGER NOT NULL, "
             "handle VARCHAR(50) NOT NULL, "
             "PRIMARY KEY (treeid, handle), "
-            "blob_data BLOB"
+            "json_data TEXT"
             ")"
         )
         self.dbapi.execute(
@@ -132,7 +150,7 @@ class SharedDBAPI(DbGeneric):
             "treeid INTEGER NOT NULL, "
             "handle VARCHAR(50) NOT NULL, "
             "PRIMARY KEY (treeid, handle), "
-            "blob_data BLOB"
+            "json_data TEXT"
             ")"
         )
         self.dbapi.execute(
@@ -141,7 +159,7 @@ class SharedDBAPI(DbGeneric):
             "treeid INTEGER NOT NULL, "
             "handle VARCHAR(50) NOT NULL, "
             "PRIMARY KEY (treeid, handle), "
-            "blob_data BLOB"
+            "json_data TEXT"
             ")"
         )
         self.dbapi.execute(
@@ -150,7 +168,7 @@ class SharedDBAPI(DbGeneric):
             "treeid INTEGER NOT NULL, "
             "handle VARCHAR(50) NOT NULL, "
             "PRIMARY KEY (treeid, handle), "
-            "blob_data BLOB"
+            "json_data TEXT"
             ")"
         )
         self.dbapi.execute(
@@ -159,7 +177,7 @@ class SharedDBAPI(DbGeneric):
             "treeid INTEGER NOT NULL, "
             "handle VARCHAR(50) NOT NULL, "
             "PRIMARY KEY (treeid, handle), "
-            "blob_data BLOB"
+            "json_data TEXT"
             ")"
         )
         self.dbapi.execute(
@@ -169,7 +187,7 @@ class SharedDBAPI(DbGeneric):
             "handle VARCHAR(50) NOT NULL, "
             "PRIMARY KEY (treeid, handle), "
             "enclosed_by VARCHAR(50), "
-            "blob_data BLOB"
+            "json_data TEXT"
             ")"
         )
         self.dbapi.execute(
@@ -178,7 +196,7 @@ class SharedDBAPI(DbGeneric):
             "treeid INTEGER NOT NULL, "
             "handle VARCHAR(50) NOT NULL, "
             "PRIMARY KEY (treeid, handle), "
-            "blob_data BLOB"
+            "json_data TEXT"
             ")"
         )
         self.dbapi.execute(
@@ -187,7 +205,7 @@ class SharedDBAPI(DbGeneric):
             "treeid INTEGER NOT NULL, "
             "handle VARCHAR(50) NOT NULL, "
             "PRIMARY KEY (treeid, handle), "
-            "blob_data BLOB"
+            "json_data TEXT"
             ")"
         )
         self.dbapi.execute(
@@ -196,7 +214,7 @@ class SharedDBAPI(DbGeneric):
             "treeid INTEGER NOT NULL, "
             "handle VARCHAR(50) NOT NULL, "
             "PRIMARY KEY (treeid, handle), "
-            "blob_data BLOB"
+            "json_data TEXT"
             ")"
         )
         # Secondary:
@@ -225,7 +243,7 @@ class SharedDBAPI(DbGeneric):
             "treeid INTEGER NOT NULL, "
             "setting VARCHAR(50) NOT NULL, "
             "PRIMARY KEY (treeid, setting), "
-            "value BLOB"
+            "json_data TEXT"
             ")"
         )
         self.dbapi.execute(
@@ -382,6 +400,14 @@ class SharedDBAPI(DbGeneric):
         txn.last = None
         self._after_commit(txn)
 
+    def _get_metadata_keys(self):
+        """
+        Get all of the metadata setting names from the
+        database.
+        """
+        self.dbapi.execute("SELECT setting FROM metadata WHERE treeid = ?", [self.dbapi.treeid])
+        return [row[0] for row in self.dbapi.fetchall()]
+
     def _get_metadata(self, key, default=[]):
         """
         Get an item from the database.
@@ -393,23 +419,26 @@ class SharedDBAPI(DbGeneric):
         its use here is ok.
         """
         self.dbapi.execute(
-            "SELECT value FROM metadata WHERE setting = ? AND treeid = ?",
+            f"SELECT {self.serializer.metadata_field} FROM metadata WHERE setting = ? AND treeid = ?",
             [key, self.dbapi.treeid],
         )
         row = self.dbapi.fetchone()
         if row:
-            return pickle.loads(row[0])
-        elif default == []:
+            return self.serializer.metadata_to_object(row[0])
+        elif default == "_":
             return []
         else:
             return default
 
-    def _set_metadata(self, key, value):
+    def _set_metadata(self, key, value, use_txn=True):
         """
         key: string
         value: item, will be serialized here
+
+        Note: if use_txn, then begin/commit txn
         """
-        self._txn_begin()
+        if use_txn:
+            self._txn_begin()
         self.dbapi.execute(
             "SELECT 1 FROM metadata WHERE setting = ? AND treeid = ?",
             [key, self.dbapi.treeid],
@@ -417,15 +446,16 @@ class SharedDBAPI(DbGeneric):
         row = self.dbapi.fetchone()
         if row:
             self.dbapi.execute(
-                "UPDATE metadata SET value = ? WHERE setting = ? AND treeid = ?",
-                [pickle.dumps(value), key, self.dbapi.treeid],
+                f"UPDATE metadata SET {self.serializer.metadata_field} = ? WHERE setting = ? AND treeid = ?",
+                [self.serializer.object_to_metadata(value), key, self.dbapi.treeid],
             )
         else:
             self.dbapi.execute(
-                "INSERT INTO metadata (treeid, setting, value) VALUES (?, ?, ?)",
-                [self.dbapi.treeid, key, pickle.dumps(value)],
+                f"INSERT INTO metadata (treeid, setting, {self.serializer.metadata_field}) VALUES (?, ?, ?)",
+                [self.dbapi.treeid, key, self.serializer.object_to_metadata(value)],
             )
-        self._txn_commit()
+        if use_txn:
+            self._txn_commit()
 
     def get_name_group_keys(self):
         """
@@ -702,12 +732,12 @@ class SharedDBAPI(DbGeneric):
         If no such Tag exists, None is returned.
         """
         self.dbapi.execute(
-            "SELECT blob_data FROM tag WHERE name = ? AND treeid = ?",
+            f"SELECT {self.serializer.data_field} FROM tag WHERE name = ? AND treeid = ?",
             [name, self.dbapi.treeid],
         )
         row = self.dbapi.fetchone()
         if row:
-            return Tag.create(pickle.loads(row[0]))
+            return self.serializer.string_to_object(Tag, row[0])
         return None
 
     def _get_number_of(self, obj_key):
@@ -769,25 +799,25 @@ class SharedDBAPI(DbGeneric):
         if self._has_handle(obj_key, obj.handle):
             old_data = self._get_raw_data(obj_key, obj.handle)
             # update the object:
-            sql = "UPDATE %s SET blob_data = ? WHERE handle = ? AND treeid = ?" % table
+            sql = f"UPDATE %s SET {self.serializer.data_field} = ? WHERE handle = ? AND treeid = ?" % table
             self.dbapi.execute(
-                sql, [pickle.dumps(obj.serialize()), obj.handle, self.dbapi.treeid]
+                sql, [self.serializer.object_to_string(obj), obj.handle, self.dbapi.treeid]
             )
         else:
             # Insert the object:
             sql = (
-                "INSERT INTO %s (treeid, handle, blob_data) VALUES (?, ?, ?)"
+                f"INSERT INTO %s (treeid, handle, {self.serializer.data_field}) VALUES (?, ?, ?)"
             ) % table
             self.dbapi.execute(
-                sql, [self.dbapi.treeid, obj.handle, pickle.dumps(obj.serialize())]
+                sql, [self.dbapi.treeid, obj.handle, self.serializer.object_to_string(obj)]
             )
         self._update_secondary_values(obj)
         if not trans.batch:
             self._update_backlinks(obj, trans)
             if old_data:
-                trans.add(obj_key, TXNUPD, obj.handle, old_data, obj.serialize())
+                trans.add(obj_key, TXNUPD, obj.handle, old_data, to_dict(obj))
             else:
-                trans.add(obj_key, TXNADD, obj.handle, None, obj.serialize())
+                trans.add(obj_key, TXNADD, obj.handle, None, to_dict(obj))
 
         return old_data
 
@@ -797,16 +827,16 @@ class SharedDBAPI(DbGeneric):
         changes as part of the transaction.
         """
         table = KEY_TO_NAME_MAP[obj_key]
-        handle = data[0]
+        handle = data["handle"]
 
         if self._has_handle(obj_key, handle):
             # update the object:
-            sql = "UPDATE %s SET blob_data = ? WHERE handle = ? AND treeid = ?" % table
-            self.dbapi.execute(sql, [pickle.dumps(data), handle, self.dbapi.treeid])
+            sql = f"UPDATE %s SET {self.serializer.data_field} = ? WHERE handle = ? AND treeid = ?" % table
+            self.dbapi.execute(sql, [self.serializer.data_to_string(data), handle, self.dbapi.treeid])
         else:
             # Insert the object:
-            sql = ("INSERT INTO %s (treeid, handle, blob_data) VALUES (?, ?)") % table
-            self.dbapi.execute(sql, [self.dbapi.treeid, handle, pickle.dumps(data)])
+            sql = (f"INSERT INTO %s (treeid, handle, {self.serializer.data_field}) VALUES (?, ?)") % table
+            self.dbapi.execute(sql, [self.dbapi.treeid, handle, self.serializer.data_to_string(data)])
 
         return
 
@@ -962,13 +992,13 @@ class SharedDBAPI(DbGeneric):
         Return an iterator over raw data in the database.
         """
         table = KEY_TO_NAME_MAP[obj_key]
-        sql = "SELECT handle, blob_data FROM %s WHERE treeid = ?" % table
+        sql = f"SELECT handle, {self.serializer.data_field} FROM %s WHERE treeid = ?" % table
         with self.dbapi.cursor() as cursor:
             cursor.execute(sql, [self.dbapi.treeid])
             rows = cursor.fetchmany()
             while rows:
                 for row in rows:
-                    yield (row[0], pickle.loads(row[1]))
+                    yield (row[0], self.serializer.string_to_data(row[1]))
                 rows = cursor.fetchmany()
 
     def _iter_raw_place_tree_data(self):
@@ -976,14 +1006,14 @@ class SharedDBAPI(DbGeneric):
         Return an iterator over raw data in the place hierarchy.
         """
         to_do = [""]
-        sql = "SELECT handle, blob_data FROM place WHERE enclosed_by = ? AND treeid = ?"
+        sql = f"SELECT handle, {self.serializer.data_field} FROM place WHERE enclosed_by = ? AND treeid = ?"
         while to_do:
             handle = to_do.pop()
             self.dbapi.execute(sql, [handle, self.dbapi.treeid])
             rows = self.dbapi.fetchall()
             for row in rows:
                 to_do.append(row[0])
-                yield (row[0], pickle.loads(row[1]))
+                yield (row[0], self.serializer.string_to_data(row[1]))
 
     def reindex_reference_map(self, callback):
         """
@@ -1027,7 +1057,7 @@ class SharedDBAPI(DbGeneric):
             logging.info("Rebuilding %s reference map", class_func.__name__)
             with cursor_func() as cursor:
                 for found_handle, val in cursor:
-                    obj = class_func.create(val)
+                    obj = self.serializer.data_to_object(class_func, val)
                     references = set(obj.get_referenced_handles_recursively())
                     # handle addition of new references
                     for (ref_class_name, ref_handle) in references:
@@ -1115,19 +1145,19 @@ class SharedDBAPI(DbGeneric):
 
     def _get_raw_data(self, obj_key, handle):
         table = KEY_TO_NAME_MAP[obj_key]
-        sql = "SELECT blob_data FROM %s WHERE handle = ? AND treeid = ?" % table
+        sql = f"SELECT {self.serializer.data_field} FROM %s WHERE handle = ? AND treeid = ?" % table
         self.dbapi.execute(sql, [handle, self.dbapi.treeid])
         row = self.dbapi.fetchone()
         if row:
-            return pickle.loads(row[0])
+            return self.serializer.string_to_data(row[0])
 
     def _get_raw_from_id_data(self, obj_key, gramps_id):
         table = KEY_TO_NAME_MAP[obj_key]
-        sql = "SELECT blob_data FROM %s WHERE gramps_id = ? AND treeid = ?" % table
+        sql = f"SELECT {self.serializer.data_field} FROM %s WHERE gramps_id = ? AND treeid = ?" % table
         self.dbapi.execute(sql, [gramps_id, self.dbapi.treeid])
         row = self.dbapi.fetchone()
         if row:
-            return pickle.loads(row[0])
+            return self.serializer.string_to_data(row[0])
 
     def get_gender_stats(self):
         """
@@ -1185,16 +1215,16 @@ class SharedDBAPI(DbGeneric):
         else:
             if self._has_handle(obj_key, handle):
                 sql = (
-                    "UPDATE %s SET blob_data = ? WHERE handle = ? AND treeid = ?"
+                    f"UPDATE %s SET {self.serializer.data_field} = ? WHERE handle = ? AND treeid = ?"
                     % table
                 )
-                self.dbapi.execute(sql, [pickle.dumps(data), handle, self.dbapi.treeid])
+                self.dbapi.execute(sql, [self.serializer.data_to_string(data), handle, self.dbapi.treeid])
             else:
                 sql = (
-                    "INSERT INTO %s (treeid, handle, blob_data) VALUES (?, ?, ?)"
+                    f"INSERT INTO %s (treeid, handle, {self.serializer.data_field}) VALUES (?, ?, ?)"
                     % table
                 )
-                self.dbapi.execute(sql, [self.dbapi.treeid, handle, pickle.dumps(data)])
+                self.dbapi.execute(sql, [self.dbapi.treeid, handle, self.serializer.data_to_string(data)])
             obj = self._get_table_func(cls)["class_func"].create(data)
             self._update_secondary_values(obj)
 
