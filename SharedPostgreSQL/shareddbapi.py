@@ -68,7 +68,6 @@ from gramps.gen.lib import (
     Repository,
     Note,
 )
-from gramps.gen.lib.serialize import from_dict, to_dict
 from gramps.gen.lib.genderstats import GenderStats
 from gramps.gen.const import GRAMPS_LOCALE as glocale
 
@@ -815,9 +814,21 @@ class SharedDBAPI(DbGeneric):
         if not trans.batch:
             self._update_backlinks(obj, trans)
             if old_data:
-                trans.add(obj_key, TXNUPD, obj.handle, old_data, to_dict(obj))
+                trans.add(
+                    obj_key,
+                    TXNUPD,
+                    obj.handle,
+                    old_data,
+                    self.serializer.object_to_data(obj),
+                )
             else:
-                trans.add(obj_key, TXNADD, obj.handle, None, to_dict(obj))
+                trans.add(
+                    obj_key,
+                    TXNADD,
+                    obj.handle,
+                    None,
+                    self.serializer.object_to_data(obj),
+                )
 
         return old_data
 
@@ -1057,7 +1068,7 @@ class SharedDBAPI(DbGeneric):
             logging.info("Rebuilding %s reference map", class_func.__name__)
             with cursor_func() as cursor:
                 for found_handle, val in cursor:
-                    obj = self.serializer.data_to_object(class_func, val)
+                    obj = self.serializer.data_to_object(val, class_func)
                     references = set(obj.get_referenced_handles_recursively())
                     # handle addition of new references
                     for (ref_class_name, ref_handle) in references:
@@ -1225,7 +1236,7 @@ class SharedDBAPI(DbGeneric):
                     % table
                 )
                 self.dbapi.execute(sql, [self.dbapi.treeid, handle, self.serializer.data_to_string(data)])
-            obj = self._get_table_func(cls)["class_func"].create(data)
+            obj = self.serializer.data_to_object(data)
             self._update_secondary_values(obj)
 
     def get_surname_list(self):
