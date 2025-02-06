@@ -136,4 +136,5 @@ register(
     reportclass="SandclockTree",
     optionclass="SandclockTreeOptions",
     report_modes=[REPORT_MODE_GUI, REPORT_MODE_CLI],
+    help_url="Addon:GenealogyTree#Sandclock_Tree_for_a_Family",
 )

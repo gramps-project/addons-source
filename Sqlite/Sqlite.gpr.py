@@ -25,4 +25,5 @@ register(
     export_function="exportData",
     extension="sql",
     export_options="WriterOptionBox",
+    help_url="Addon:SQLite_Export_Import#Export_SQLite",
 )

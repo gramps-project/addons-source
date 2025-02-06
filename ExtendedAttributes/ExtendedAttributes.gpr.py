@@ -39,6 +39,7 @@ register(
     gramplet="ExtendedPersonAttributes",
     gramplet_title=_("Extended Attributes"),
     navtypes=["Person"],
+    help_url="Addon:ExtendedAttributesGramplet#Extended_Person_Attributes_Gramplet",
 )
 
 register(

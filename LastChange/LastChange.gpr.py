@@ -33,7 +33,7 @@ register(
     gramplet="LastChangeGramplet",
     gramps_target_version="6.0",
     gramplet_title=_("Latest Changes"),
-    help_url="LastChange",
+    help_url="Addon:LastChange#Latest_Changes_Gramplet",
 )
 
 register(

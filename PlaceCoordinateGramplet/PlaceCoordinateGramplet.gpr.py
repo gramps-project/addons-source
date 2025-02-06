@@ -52,4 +52,5 @@ register(
     gramplet_title=_("Place Coordinates"),
     navtypes=["Place"],
     requires_gi=[("GeocodeGlib", "1.0")],
+    help_url="Addon:PlaceCoordinatesGramplet",
 )

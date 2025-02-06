@@ -36,6 +36,7 @@ register(
     optionclass="RepositoryOptionsAlt",
     report_modes=[REPORT_MODE_GUI, REPORT_MODE_BKI, REPORT_MODE_CLI],
     require_active=False,
+    help_url="Addon:RepositoriesReport#Repositories_Report_Options",
 )
 
 register(

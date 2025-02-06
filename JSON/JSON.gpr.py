@@ -11,6 +11,7 @@ register(
     export_options="WriterOptionBox",
     export_options_title=_("JSON options"),
     extension="json",
+    help_url="Addon:JSON_Export_Import#Export_JSON",
 )
 
 register(

@@ -51,4 +51,5 @@ register(
     gramplet="FamilyOverview",
     gramplet_title=_("Overview"),
     navtypes=["Family"],
+    help_url="Addon:Family_Overview",
 )
