@@ -52,4 +52,5 @@ register(
     optionclass="LastChangeOptions",
     report_modes=[REPORT_MODE_GUI, REPORT_MODE_BKI, REPORT_MODE_CLI],
     require_active=False,
+    help_url="Addon:LastChange#Last_Change_Report",
 )

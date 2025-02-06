@@ -34,6 +34,7 @@ register(
     icons=[("gramps-lifelineancestorchart-bw", _("Life Line Chart"))],
     stock_icon="gramps-lifelineancestorchart-bw",
     requires_mod=["life_line_chart", "svgwrite"],
+    help_url="Addon:Life_Line_Chart_View",
 )
 register(
     VIEW,

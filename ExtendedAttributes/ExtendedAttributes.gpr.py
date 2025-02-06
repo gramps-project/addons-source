@@ -55,4 +55,5 @@ register(
     gramplet="ExtendedFamilyAttributes",
     gramplet_title=_("Extended Attributes"),
     navtypes=["Family"],
+    help_url="Addon:ExtendedAttributesGramplet#Extended_Family_Attributes_Gramplet",
 )

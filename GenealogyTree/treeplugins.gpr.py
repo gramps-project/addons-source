@@ -40,6 +40,7 @@ register(
     reportclass="AncestorTree",
     optionclass="AncestorTreeOptions",
     report_modes=[REPORT_MODE_GUI, REPORT_MODE_CLI],
+    help_url="Addon:GenealogyTree#Ancestor_tree",
 )
 
 # ------------------------------------------------------------------------
@@ -64,6 +65,7 @@ register(
     reportclass="DescendantTree",
     optionclass="DescendantTreeOptions",
     report_modes=[REPORT_MODE_GUI, REPORT_MODE_CLI],
+    help_url="Addon:GenealogyTree#Descendant_tree",
 )
 
 # ------------------------------------------------------------------------
@@ -88,6 +90,7 @@ register(
     reportclass="GrandparentTree",
     optionclass="GrandparentTreeOptions",
     report_modes=[REPORT_MODE_GUI, REPORT_MODE_CLI],
+    help_url="Addon:GenealogyTree#Grandparent_tree",
 )
 
 # ------------------------------------------------------------------------
@@ -112,6 +115,7 @@ register(
     reportclass="SandclockTree",
     optionclass="SandclockTreeOptions",
     report_modes=[REPORT_MODE_GUI, REPORT_MODE_CLI],
+    help_url="Addon:GenealogyTree#Sandclock_tree",
 )
 
 # ------------------------------------------------------------------------

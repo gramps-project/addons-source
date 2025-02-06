@@ -25,4 +25,5 @@ register(
     fname="JSONImport.py",
     import_function="importData",
     extension="json",
+    help_url="Addon:JSON_Export_Import#Import_JSON",
 )

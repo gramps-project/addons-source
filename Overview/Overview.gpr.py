@@ -36,6 +36,7 @@ register(
     gramplet="PersonOverview",
     gramplet_title=_("Overview"),
     navtypes=["Person"],
+    help_url="Addon:Person_Overview",
 )
 
 register(
