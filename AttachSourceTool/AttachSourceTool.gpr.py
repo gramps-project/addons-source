@@ -20,19 +20,20 @@
 
 # $Id$
 
-register(TOOL,
-         id    = 'AttachSource',
-         name  = _("Attach Source"),
-         description =  _("Attaches a shared source to multiple objects."),
-         version = '0.0.39',
-         gramps_target_version = "6.0",
-         status = STABLE, # not yet tested with python 3
-         fname = 'AttachSourceTool.py',
-         authors = ["Douglas S. Blank"],
-         authors_email = ["doug.blank@gmail.com"],
-         category = TOOL_DBPROC,
-         toolclass = 'AttachSourceWindow',
-         optionclass = 'AttachSourceOptions',
-         tool_modes = [TOOL_MODE_GUI]
-         )
-
+register(
+    TOOL,
+    id="AttachSource",
+    name=_("Attach Source"),
+    description=_("Attaches a shared source to multiple objects."),
+    version="0.0.39",
+    gramps_target_version="6.0",
+    status=STABLE,  # not yet tested with python 3
+    fname="AttachSourceTool.py",
+    authors=["Douglas S. Blank"],
+    authors_email=["doug.blank@gmail.com"],
+    category=TOOL_DBPROC,
+    toolclass="AttachSourceWindow",
+    optionclass="AttachSourceOptions",
+    tool_modes=[TOOL_MODE_GUI],
+    help_url="Addon:AttachSourceTool",
+)

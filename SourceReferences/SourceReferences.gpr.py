@@ -21,22 +21,23 @@
 
 # $Id: SourceReferences.gpr.py 2374 2014-05-02 13:29:19Z romjerome $
 
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # Register Gramplet
 #
-#------------------------------------------------------------------------
-register(GRAMPLET,
-         id="Source References",
-         name=_("Source References"),
-         description = _("Gramplet showing the references for a source"),
-         version = '1.0.20',
-         gramps_target_version="6.0",
-         include_in_listing = False,
-         status = UNSTABLE,
-         fname="SourceReferences.py",
-         height=200,
-         gramplet = 'SourceReferences',
-         gramplet_title=_("References"),
-         navtypes=["Source"],
-         )
+# ------------------------------------------------------------------------
+register(
+    GRAMPLET,
+    id="Source References",
+    name=_("Source References"),
+    description=_("Gramplet showing the references for a source"),
+    version="1.0.20",
+    gramps_target_version="6.0",
+    include_in_listing=False,
+    status=UNSTABLE,
+    fname="SourceReferences.py",
+    height=200,
+    gramplet="SourceReferences",
+    gramplet_title=_("References"),
+    navtypes=["Source"],
+)

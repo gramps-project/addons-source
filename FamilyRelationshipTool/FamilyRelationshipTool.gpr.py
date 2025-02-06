@@ -19,18 +19,20 @@
 #
 """Mass-edit the family relationship type for a group of families."""
 
-register(TOOL,
-         id = 'FamilyRelationshipTool',
-         name = _("Family Relationship Tool"),
-         description = _("Mass-edit the family relationship type for a group of families."),
-         version = '1.1.9',
-         gramps_target_version = "6.0",
-         status = STABLE,
-         fname = 'FamilyRelationshipTool.py',
-         authors = ["Matthias Kemmer"],
-         authors_email = ["matt.familienforschung@gmail.com"],
-         category = TOOL_DBPROC,
-         toolclass = 'FamilyRelationshipTool',
-         optionclass = 'FamilyRelationshipToolOptions',
-         tool_modes = [TOOL_MODE_GUI],
-         )
+register(
+    TOOL,
+    id="FamilyRelationshipTool",
+    name=_("Family Relationship Tool"),
+    description=_("Mass-edit the family relationship type for a group of families."),
+    version="1.1.9",
+    gramps_target_version="6.0",
+    status=STABLE,
+    fname="FamilyRelationshipTool.py",
+    authors=["Matthias Kemmer"],
+    authors_email=["matt.familienforschung@gmail.com"],
+    category=TOOL_DBPROC,
+    toolclass="FamilyRelationshipTool",
+    optionclass="FamilyRelationshipToolOptions",
+    tool_modes=[TOOL_MODE_GUI],
+    help_url="Addon:FamilyRelationship",
+)

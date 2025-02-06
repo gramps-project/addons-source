@@ -21,21 +21,27 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
-register(REPORT,
-         id    = 'Descendants Lines',
-         name  = _("Descendants Lines"),
-         description =  _("Produces descendants lines of a person"),
-         version = '1.1.10',
-         gramps_target_version = "6.0",
-         status = STABLE,
-         fname = 'DescendantsLines.py',
-         category = CATEGORY_DRAW,
-         reportclass = 'DescendantsLinesReport',
-         optionclass = 'DescendantsLinesOptions',
-         report_modes = [REPORT_MODE_GUI, REPORT_MODE_CLI],
-         authors = ['Jerome Rapinat', 'lcc', 'Adam Sampson', 'Don Piercy', \
-                    'Giansalvo Gusinu'],
-         authors_email = ['romjerome@yahoo.fr', 'lcc.mailaddress@gmail.com', \
-                 'ats-familytree@offog.org', '', "giansalvo.gusinu@gmail.com"],
-         require_active = True
-         )
+register(
+    REPORT,
+    id="Descendants Lines",
+    name=_("Descendants Lines"),
+    description=_("Produces descendants lines of a person"),
+    version="1.1.10",
+    gramps_target_version="6.0",
+    status=STABLE,
+    fname="DescendantsLines.py",
+    category=CATEGORY_DRAW,
+    reportclass="DescendantsLinesReport",
+    optionclass="DescendantsLinesOptions",
+    report_modes=[REPORT_MODE_GUI, REPORT_MODE_CLI],
+    authors=["Jerome Rapinat", "lcc", "Adam Sampson", "Don Piercy", "Giansalvo Gusinu"],
+    authors_email=[
+        "romjerome@yahoo.fr",
+        "lcc.mailaddress@gmail.com",
+        "ats-familytree@offog.org",
+        "",
+        "giansalvo.gusinu@gmail.com",
+    ],
+    require_active=True,
+    help_url="Addon:DescendantsLines",
+)

@@ -17,22 +17,22 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
-register(GRAMPLET,
-         id="Descendant Count Gramplet",
-         name=_("Descendant Count"),
-         description = _("Gramplet for showing people and descendant counts"),
-         status= STABLE,
-         fname="DescendantCount.py",
-         authors=["Douglas S. Blank, Paul Culley"],
-         authors_email=["doug.blank@gmail.com, paulr2787@gmail.com"],
-         height=300,
-         expand=True,
-         gramplet = "DescendantCountGramplet",
-         gramplet_title=_("Descendant Count"),
-         detached_width = 600,
-         detached_height = 400,
-         version = '2.0.14',
-         gramps_target_version = "6.0",
-         help_url="Descendant_Count_Gramplet",
-         )
-
+register(
+    GRAMPLET,
+    id="Descendant Count Gramplet",
+    name=_("Descendant Count"),
+    description=_("Gramplet for showing people and descendant counts"),
+    status=STABLE,
+    fname="DescendantCount.py",
+    authors=["Douglas S. Blank, Paul Culley"],
+    authors_email=["doug.blank@gmail.com, paulr2787@gmail.com"],
+    height=300,
+    expand=True,
+    gramplet="DescendantCountGramplet",
+    gramplet_title=_("Descendant Count"),
+    detached_width=600,
+    detached_height=400,
+    version="2.0.14",
+    gramps_target_version="6.0",
+    help_url="Descendant_Count_Gramplet",
+)

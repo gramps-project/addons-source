@@ -20,25 +20,26 @@
 
 # $Id$
 
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # PersonEverything Report
 #
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 
-register(REPORT,
-        id    = 'PersonEverythingReport',
-        name  = _("PersonEverything Report"),
-        description =  _("Produces a report containing everything about the active person"),
-        version = '1.0.22',
-        gramps_target_version = "6.0",
-        status = STABLE, # not yet tested with python 3
-        fname = 'PersonEverything.py',
-        category = CATEGORY_TEXT,
-        reportclass = 'PersonEverythingReport',
-        optionclass = 'PersonEverthingOptions',
-        report_modes = [REPORT_MODE_GUI, REPORT_MODE_BKI, REPORT_MODE_CLI],
-        authors = ["Tim G L Lyons"],
-        authors_email = ["gramps-project.org"]
-        )
-
+register(
+    REPORT,
+    id="PersonEverythingReport",
+    name=_("PersonEverything Report"),
+    description=_("Produces a report containing everything about the active person"),
+    version="1.0.22",
+    gramps_target_version="6.0",
+    status=STABLE,  # not yet tested with python 3
+    fname="PersonEverything.py",
+    category=CATEGORY_TEXT,
+    reportclass="PersonEverythingReport",
+    optionclass="PersonEverthingOptions",
+    report_modes=[REPORT_MODE_GUI, REPORT_MODE_BKI, REPORT_MODE_CLI],
+    authors=["Tim G L Lyons"],
+    authors_email=["gramps-project.org"],
+    help_url="Addon:PersonEverything_Report",
+)

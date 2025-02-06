@@ -20,22 +20,25 @@
 
 # $Id$
 
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # Register Gramplet
 #
-#------------------------------------------------------------------------
-register(TOOL,
-         id="FixCoords",
-         name=_("Fix Place Coordinates"),
-         description = _("Tool to correct the place coordinates for extra "
-                         "spaces or comma characters."),
-         version = '1.0.6',
-         gramps_target_version="6.0",
-         status = STABLE,
-         fname="fixcoords.py",
-         category = TOOL_DBPROC,
-         toolclass = 'FixCoords',
-         optionclass = 'FixCoordsOptions',
-         tool_modes = [TOOL_MODE_GUI],
-         )
+# ------------------------------------------------------------------------
+register(
+    TOOL,
+    id="FixCoords",
+    name=_("Fix Place Coordinates"),
+    description=_(
+        "Tool to correct the place coordinates for extra " "spaces or comma characters."
+    ),
+    version="1.0.6",
+    gramps_target_version="6.0",
+    status=STABLE,
+    fname="fixcoords.py",
+    category=TOOL_DBPROC,
+    toolclass="FixCoords",
+    optionclass="FixCoordsOptions",
+    tool_modes=[TOOL_MODE_GUI],
+    help_url="https://github.com/gramps-project/addons-source/blob/maintenance/gramps60/FixCoords",
+)

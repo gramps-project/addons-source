@@ -17,18 +17,19 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
-register(DATABASE,
-         id='mongodb',
-         name=_('MongoDB'),
-         name_accell=_('_MongoDB Database'),
-         description=_('MongoDB Database'),
-         version = '1.0.12',
-         gramps_target_version='6.0',
-         status=UNSTABLE,
-         audience=DEVELOPER,
-         fname='mongodb.py',
-         databaseclass='MongoDB',
-         authors=['Nick Hall'],
-         authors_email=['nick-h@gramps-project.org'],
-         include_in_listing = False
+register(
+    DATABASE,
+    id="mongodb",
+    name=_("MongoDB"),
+    name_accell=_("_MongoDB Database"),
+    description=_("MongoDB Database"),
+    version="1.0.12",
+    gramps_target_version="6.0",
+    status=UNSTABLE,
+    audience=DEVELOPER,
+    fname="mongodb.py",
+    databaseclass="MongoDB",
+    authors=["Nick Hall"],
+    authors_email=["nick-h@gramps-project.org"],
+    include_in_listing=False,
 )

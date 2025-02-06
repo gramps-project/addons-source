@@ -22,28 +22,28 @@
 GRAMPS registration file
 """
 
-MODULE_VERSION="6.0"
+MODULE_VERSION = "6.0"
 
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # Map relations with home person
 #
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 
-register(TOOL,
-id    = 'relationtab',
-name  = _("Display relations and distances with the home person"),
-description =  _("Will display relational informations with the home person"),
-version = '1.0.20',
-gramps_target_version = MODULE_VERSION,
-include_in_listing = False,
-status = STABLE,
-fname = 'relation_tab.py',
-authors = ["Jerome Rapinat"],
-authors_email = ["romjerome@yahoo.fr"],
-category = TOOL_ANAL,
-toolclass = 'RelationTab',
-optionclass = 'RelationTabOptions',
-tool_modes = [TOOL_MODE_GUI, TOOL_MODE_CLI]
-  )
-
+register(
+    TOOL,
+    id="relationtab",
+    name=_("Display relations and distances with the home person"),
+    description=_("Will display relational informations with the home person"),
+    version="1.0.20",
+    gramps_target_version=MODULE_VERSION,
+    include_in_listing=False,
+    status=STABLE,
+    fname="relation_tab.py",
+    authors=["Jerome Rapinat"],
+    authors_email=["romjerome@yahoo.fr"],
+    category=TOOL_ANAL,
+    toolclass="RelationTab",
+    optionclass="RelationTabOptions",
+    tool_modes=[TOOL_MODE_GUI, TOOL_MODE_CLI],
+)

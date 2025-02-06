@@ -21,16 +21,18 @@
 """
 People with multiple parent records
 """
-register(RULE,
-  id    = 'multipleparents',
-  name  = _("Multiple Parents Filter"),
-  description = _("Multiple Parents Filter"),
-  version = '0.0.11',
-  authors = ["Dave Scheipers"],
-  authors_email = ["dave.scheipers@gmail.com"],
-  gramps_target_version = '6.0',
-  status = STABLE,
-  fname = "multipleparents.py",
-  ruleclass = 'MultipleParents',  # must be rule class name
-  namespace = 'Person',  # one of the primary object classes
-  )
+register(
+    RULE,
+    id="multipleparents",
+    name=_("Multiple Parents Filter"),
+    description=_("Multiple Parents Filter"),
+    version="0.0.11",
+    authors=["Dave Scheipers"],
+    authors_email=["dave.scheipers@gmail.com"],
+    gramps_target_version="6.0",
+    status=STABLE,
+    fname="multipleparents.py",
+    ruleclass="MultipleParents",  # must be rule class name
+    namespace="Person",  # one of the primary object classes
+    help_url="Addon:Rule_expansions#People_with_multiple_parent_records",
+)

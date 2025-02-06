@@ -1,4 +1,4 @@
-#-------------------------------------------------------------------------
+# -------------------------------------------------------------------------
 #
 # Copyright (C) 2014  Matt Keenan <matt.keenan@gmail.com>
 #
@@ -16,22 +16,26 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
-#-------------------------------------------------------------------------
-register(REPORT,
-    id = 'd3-ancestralcollapsibletree',
-    name = _('Ancestral Collapsible Tree'),
-    category = CATEGORY_WEB,
-    status = STABLE,
-    fname = 'AncestralCollapsibleTree.py',
-    reportclass = 'AncestralCollapsibleTreeReport',
-    optionclass = 'AncestralCollapsibleTreeOptions',
-    report_modes = [REPORT_MODE_GUI, REPORT_MODE_CLI],
-    authors = ['Matt Keenan'],
-    authors_email = ['matt.keenan@gmail.com'],
-    description = _('Generates a web page with a graphical '
-                    'representation of ancestors (SVG) '
-                    'represented as a Collapsible Tree Layout from the D3.js '
-                    'JavaScript library.'),
-    version = '1.0.34',
-    gramps_target_version = "6.0",
+# -------------------------------------------------------------------------
+register(
+    REPORT,
+    id="d3-ancestralcollapsibletree",
+    name=_("Ancestral Collapsible Tree"),
+    category=CATEGORY_WEB,
+    status=STABLE,
+    fname="AncestralCollapsibleTree.py",
+    reportclass="AncestralCollapsibleTreeReport",
+    optionclass="AncestralCollapsibleTreeOptions",
+    report_modes=[REPORT_MODE_GUI, REPORT_MODE_CLI],
+    authors=["Matt Keenan"],
+    authors_email=["matt.keenan@gmail.com"],
+    description=_(
+        "Generates a web page with a graphical "
+        "representation of ancestors (SVG) "
+        "represented as a Collapsible Tree Layout from the D3.js "
+        "JavaScript library."
+    ),
+    version="1.0.34",
+    gramps_target_version="6.0",
+    help_url="Addon:D3_Ancestral_and_Descendant_Charts#Ancestral_Collapsible_Tree",
 )

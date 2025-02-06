@@ -19,18 +19,20 @@
 #
 """Add/Remove a tag from groups of people, events, etc."""
 
-register(TOOL,
-         id = 'RemoveTagTool',
-         name = _("Add/Remove Tag Tool"),
-         description = _("Add or remove a tag from groups of people, events, etc."),
-         version = '1.1.10',
-         gramps_target_version = "6.0",
-         status = STABLE,
-         fname = 'RemoveTagTool.py',
-         authors = ["Matthias Kemmer"],
-         authors_email = ["matt.familienforschung@gmail.com"],
-         category = TOOL_DBPROC,
-         toolclass = 'RemoveTagWindow',
-         optionclass = 'RemoveTagOptions',
-         tool_modes = [TOOL_MODE_GUI],
-         )
+register(
+    TOOL,
+    id="RemoveTagTool",
+    name=_("Add/Remove Tag Tool"),
+    description=_("Add or remove a tag from groups of people, events, etc."),
+    version="1.1.10",
+    gramps_target_version="6.0",
+    status=STABLE,
+    fname="RemoveTagTool.py",
+    authors=["Matthias Kemmer"],
+    authors_email=["matt.familienforschung@gmail.com"],
+    category=TOOL_DBPROC,
+    toolclass="RemoveTagWindow",
+    optionclass="RemoveTagOptions",
+    tool_modes=[TOOL_MODE_GUI],
+    help_url="Addon:AddRemoveTagTool",
+)

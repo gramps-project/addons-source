@@ -18,18 +18,19 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
-register(VIEW,
-id = 'combinedview',
-name = _("Combined"),
-description = _("A view showing relationships and events for a person"),
-version = '2.0.13',
-gramps_target_version = '6.0',
-status = STABLE,
-fname = 'combinedview.py',
-authors = ["The Gramps project"],
-authors_email = ["http://gramps-project.org"],
-category = ("Relationships", _("Relationships")),
-viewclass = 'CombinedView',
-order = END,
+register(
+    VIEW,
+    id="combinedview",
+    name=_("Combined"),
+    description=_("A view showing relationships and events for a person"),
+    version="2.0.13",
+    gramps_target_version="6.0",
+    status=STABLE,
+    fname="combinedview.py",
+    authors=["The Gramps project"],
+    authors_email=["http://gramps-project.org"],
+    category=("Relationships", _("Relationships")),
+    viewclass="CombinedView",
+    order=END,
+    help_url="Addon:CombinedView",
 )
-

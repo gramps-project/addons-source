@@ -21,15 +21,16 @@
 """Filter rule matching associations of <person filter>."""
 register(
     RULE,
-    id='associationsofpersonmatch',
+    id="associationsofpersonmatch",
     name=_("Match associations of <person filter>"),
     description=_("Match associations of <person filter>"),
-    version = '1.0.13',
+    version="1.0.13",
     authors=["Matthias Kemmer"],
     authors_email=["matt.familienforschung@gmail.com"],
-    gramps_target_version='6.0',
+    gramps_target_version="6.0",
     status=STABLE,
     fname="associationsofpersonmatch.py",
-    ruleclass='AssociationsOfPersonMatch',
-    namespace='Person',
-    )
+    ruleclass="AssociationsOfPersonMatch",
+    namespace="Person",
+    help_url="Addon:Rule_expansions#Match_associations_of_.3Cperson_filter.3E",
+)

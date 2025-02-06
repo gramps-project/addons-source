@@ -19,25 +19,27 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # Geography view for the ancestor view
 #
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 
-register(VIEW,
-         id='geoancestor',
-         name=_("Ancestors map"),
-         description=_("A view showing ancestors places on the map."),
-         version = '1.0.11',
-         gramps_target_version='6.0',
-         status=STABLE,
-         fname='GeoAncestor.py',
-         authors=["Serge Noiraud"],
-         authors_email=[""],
-         category=("Geography", _("Geography")),
-         viewclass='GeoAncestor',
-         icons = [('geo-ancestor', _('Ancestors map'))],
-         stock_icon='geo-ancestor',
-         requires_gi=[('OsmGpsMap', '1.0')],
-         )
+register(
+    VIEW,
+    id="geoancestor",
+    name=_("Ancestors map"),
+    description=_("A view showing ancestors places on the map."),
+    version="1.0.11",
+    gramps_target_version="6.0",
+    status=STABLE,
+    fname="GeoAncestor.py",
+    authors=["Serge Noiraud"],
+    authors_email=[""],
+    category=("Geography", _("Geography")),
+    viewclass="GeoAncestor",
+    icons=[("geo-ancestor", _("Ancestors map"))],
+    stock_icon="geo-ancestor",
+    requires_gi=[("OsmGpsMap", "1.0")],
+    help_url="Addon:AncestorsMap",
+)

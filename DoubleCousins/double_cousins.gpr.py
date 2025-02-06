@@ -19,18 +19,20 @@
 #
 """A text report listing double cousins."""
 
-register(REPORT,
-         id = 'double_cousins',
-         name = _("Double Cousins"),
-         description = _("A text report listing double cousins."),
-         version = '1.0.7',
-         gramps_target_version = "6.0",
-         status = STABLE,
-         fname = "double_cousins.py",
-         authors = ["Matthias Kemmer"],
-         authors_email = ["matt.familienforschung@gmail.com"],
-         category = CATEGORY_TEXT,
-         reportclass = 'DoubleCousins',
-         optionclass = 'ReportOptions',
-         report_modes = [REPORT_MODE_CLI, REPORT_MODE_GUI],
-         )
+register(
+    REPORT,
+    id="double_cousins",
+    name=_("Double Cousins"),
+    description=_("A text report listing double cousins."),
+    version="1.0.7",
+    gramps_target_version="6.0",
+    status=STABLE,
+    fname="double_cousins.py",
+    authors=["Matthias Kemmer"],
+    authors_email=["matt.familienforschung@gmail.com"],
+    category=CATEGORY_TEXT,
+    reportclass="DoubleCousins",
+    optionclass="ReportOptions",
+    report_modes=[REPORT_MODE_CLI, REPORT_MODE_GUI],
+    help_url="Addon:DoubleCousinReport",
+)

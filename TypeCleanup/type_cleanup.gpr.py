@@ -18,24 +18,26 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # Type Cleanup tool
 #
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 
-register(TOOL,
-id = 'typecleanup',
-name = _("Type Cleanup"),
-description = _("Clean up (remove) custom types"),
-version = '1.0.12',
-gramps_target_version = '6.0',
-status = STABLE,
-fname = 'type_cleanup.py',
-authors = ["Paul Culley"],
-authors_email = ["paulr2787@gmail.com"],
-category = TOOL_UTILS,
-toolclass = 'TypeCleanup',
-optionclass = 'TypeCleanupOptions',
-tool_modes = [TOOL_MODE_GUI]
-  )
+register(
+    TOOL,
+    id="typecleanup",
+    name=_("Type Cleanup"),
+    description=_("Clean up (remove) custom types"),
+    version="1.0.12",
+    gramps_target_version="6.0",
+    status=STABLE,
+    fname="type_cleanup.py",
+    authors=["Paul Culley"],
+    authors_email=["paulr2787@gmail.com"],
+    category=TOOL_UTILS,
+    toolclass="TypeCleanup",
+    optionclass="TypeCleanupOptions",
+    tool_modes=[TOOL_MODE_GUI],
+    help_url="Addon:Types_Cleanup_Tool",
+)

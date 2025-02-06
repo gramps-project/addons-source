@@ -20,27 +20,31 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 # Created by
-#authors = ["Pat Lefebre"],
-#authors_email = ["patbree49@zoho.com"],
+# authors = ["Pat Lefebre"],
+# authors_email = ["patbree49@zoho.com"],
 
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # H-tree view for Gramps
 #
-#------------------------------------------------------------------------
-register(VIEW,
-    id    = 'HtreePedigreeView',
-    name  = _("H-Tree Pedigree"),
-    category = ("Ancestry", _("Charts")),
-    description =  _("The view shows a space-efficient pedigree with "
-                     "ancestors of the selected person"),
-    version = '0.0.33',
-    gramps_target_version = "6.0",
-    status = STABLE,
-    fname = 'HtreePedigreeView.py',
-    authors = ["Pat Lefebre"],
-    authors_email = [""],
-    viewclass = 'HtreePedigreeView',
-    icons = [('gramps-htree', _('H-Tree Pedigree'))],
-    stock_icon = 'gramps-htree',
+# ------------------------------------------------------------------------
+register(
+    VIEW,
+    id="HtreePedigreeView",
+    name=_("H-Tree Pedigree"),
+    category=("Ancestry", _("Charts")),
+    description=_(
+        "The view shows a space-efficient pedigree with "
+        "ancestors of the selected person"
+    ),
+    version="0.0.33",
+    gramps_target_version="6.0",
+    status=STABLE,
+    fname="HtreePedigreeView.py",
+    authors=["Pat Lefebre"],
+    authors_email=[""],
+    viewclass="HtreePedigreeView",
+    icons=[("gramps-htree", _("H-Tree Pedigree"))],
+    stock_icon="gramps-htree",
+    help_url="Addon:HtreePedigreeView",
 )

@@ -24,7 +24,7 @@ register(
     name=_("SharedPostgreSQL"),
     name_accell=_("Shared _PostgreSQL Database"),
     description=_("Shared PostgreSQL Database"),
-    version = '0.1.9',
+    version="0.1.9",
     gramps_target_version="6.0",
     status=STABLE,
     fname="sharedpostgresql.py",
@@ -32,4 +32,5 @@ register(
     authors=["Doug Blank", "David Straub"],
     authors_email=["doug.blank@gmail.com", "straub@protonmail.com"],
     requires_mod=["psycopg2"],
+    help_url="https://www.grampsweb.org/install_setup/postgres/",
 )

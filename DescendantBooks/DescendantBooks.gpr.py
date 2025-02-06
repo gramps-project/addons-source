@@ -16,38 +16,44 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
-register(REPORT,
-    id   = 'DescendantBook',
-    name = _('Descendant Book'),
-    description = _("Produces one or more descendant reports based on a supplied query."),
-    version = '1.1.28',
-    gramps_target_version = "6.0",
-    status = STABLE,
-    fname = 'DescendantBookReport.py',
-    authors = ["Matt Keenan", "Giansalvo Gusinu"],
-    authors_email = ["matt.keenan@gmail.com", "giansalvo.gusinu@gmail.com"],
-    category = CATEGORY_TEXT,
-    reportclass = 'DescendantBookReport',
-    optionclass = 'DescendantBookOptions',
-    report_modes = [REPORT_MODE_GUI, REPORT_MODE_BKI, REPORT_MODE_CLI],
-    require_active = True
-    )
+register(
+    REPORT,
+    id="DescendantBook",
+    name=_("Descendant Book"),
+    description=_("Produces one or more descendant reports based on a supplied query."),
+    version="1.1.28",
+    gramps_target_version="6.0",
+    status=STABLE,
+    fname="DescendantBookReport.py",
+    authors=["Matt Keenan", "Giansalvo Gusinu"],
+    authors_email=["matt.keenan@gmail.com", "giansalvo.gusinu@gmail.com"],
+    category=CATEGORY_TEXT,
+    reportclass="DescendantBookReport",
+    optionclass="DescendantBookOptions",
+    report_modes=[REPORT_MODE_GUI, REPORT_MODE_BKI, REPORT_MODE_CLI],
+    require_active=True,
+    help_url="Addon:Descendant_and_Detailed_Descendant_Book_Reports",
+)
 
-register(REPORT,
-    id   = 'DetailedDescendantBook',
-    name = _('Detailed Descendant Book'),
-    description = _("Produces one or more detailed descendant reports based on a supplied query."),
-    version = '1.1.28',
-    gramps_target_version = "6.0",
-    status = STABLE,
-    fname = 'DetailedDescendantBookReport.py',
-    authors = ["Matt Keenan", "Giansalvo Gusinu"],
-    authors_email = ["matt.keenan@gmail.com", "giansalvo.gusinu@gmail.com"],
-    category = CATEGORY_TEXT,
-    reportclass = 'DetailedDescendantBookReport',
-    optionclass = 'DetailedDescendantBookOptions',
-    report_modes = [REPORT_MODE_GUI, REPORT_MODE_BKI, REPORT_MODE_CLI],
-    require_active = True
-    )
+register(
+    REPORT,
+    id="DetailedDescendantBook",
+    name=_("Detailed Descendant Book"),
+    description=_(
+        "Produces one or more detailed descendant reports based on a supplied query."
+    ),
+    version="1.1.28",
+    gramps_target_version="6.0",
+    status=STABLE,
+    fname="DetailedDescendantBookReport.py",
+    authors=["Matt Keenan", "Giansalvo Gusinu"],
+    authors_email=["matt.keenan@gmail.com", "giansalvo.gusinu@gmail.com"],
+    category=CATEGORY_TEXT,
+    reportclass="DetailedDescendantBookReport",
+    optionclass="DetailedDescendantBookOptions",
+    report_modes=[REPORT_MODE_GUI, REPORT_MODE_BKI, REPORT_MODE_CLI],
+    require_active=True,
+    help_url="Addon:Descendant_and_Detailed_Descendant_Book_Reports",
+)
 
 __author__ = "mattman"

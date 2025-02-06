@@ -19,23 +19,24 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # HtmlView
 #
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 
-register(VIEW,
-    id = 'htmlview',
-    name = _("Html View"),
-    description = _("A view showing html pages embedded in Gramps"),
-    version = '1.0.14',
-    gramps_target_version = "6.0",
-    status = STABLE,
-    include_in_listing = False,
-    fname = 'htmlview.py',
-    authors = ["The Gramps project"],
-    authors_email = ["http://gramps-project.org"],
-    category = ("Web", _("Web")),
-    viewclass = 'HtmlView',
+register(
+    VIEW,
+    id="htmlview",
+    name=_("Html View"),
+    description=_("A view showing html pages embedded in Gramps"),
+    version="1.0.14",
+    gramps_target_version="6.0",
+    status=STABLE,
+    include_in_listing=False,
+    fname="htmlview.py",
+    authors=["The Gramps project"],
+    authors_email=["http://gramps-project.org"],
+    category=("Web", _("Web")),
+    viewclass="HtmlView",
 )

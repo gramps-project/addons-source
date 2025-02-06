@@ -21,30 +21,32 @@
 """
 Filter rule to match an Event Role with a particular value.
 """
-register(RULE,
-  id    = 'HasPersonEventRole',
-  name  = _("People with events with a selected role"),
-  description = _("Matches people with an event with a selected role"),
-  version = '0.0.24',
-  authors = ["Paul Culley"],
-  authors_email = ["paulr2787@gmail.com"],
-  gramps_target_version = '6.0',
-  status = STABLE,
-  fname = "hasrolerule.py",
-  ruleclass = 'HasPersonEventRole',  # must be rule class name
-  namespace = 'Person',  # one of the primary object classes
-  )
+register(
+    RULE,
+    id="HasPersonEventRole",
+    name=_("People with events with a selected role"),
+    description=_("Matches people with an event with a selected role"),
+    version="0.0.24",
+    authors=["Paul Culley"],
+    authors_email=["paulr2787@gmail.com"],
+    gramps_target_version="6.0",
+    status=STABLE,
+    fname="hasrolerule.py",
+    ruleclass="HasPersonEventRole",  # must be rule class name
+    namespace="Person",  # one of the primary object classes
+)
 
-register(RULE,
-  id    = 'HasFamilyEventRole',
-  name  = _("Families with events with a selected role"),
-  description = _("Matches families with an event with a selected role"),
-  version = '0.0.24',
-  authors = ["Paul Culley"],
-  authors_email = ["paulr2787@gmail.com"],
-  gramps_target_version = '6.0',
-  status = STABLE,
-  fname = "hasrolerule.py",
-  ruleclass = 'HasFamilyEventRole',  # must be rule class name
-  namespace = 'Family',  # one of the primary object classes
-  )
+register(
+    RULE,
+    id="HasFamilyEventRole",
+    name=_("Families with events with a selected role"),
+    description=_("Matches families with an event with a selected role"),
+    version="0.0.24",
+    authors=["Paul Culley"],
+    authors_email=["paulr2787@gmail.com"],
+    gramps_target_version="6.0",
+    status=STABLE,
+    fname="hasrolerule.py",
+    ruleclass="HasFamilyEventRole",  # must be rule class name
+    namespace="Family",  # one of the primary object classes
+)

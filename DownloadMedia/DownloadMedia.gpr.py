@@ -24,24 +24,26 @@
 GRAMPS registration file
 """
 
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # Download media files form the internet
 #
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 
-register(TOOL,
-id    = 'downloadmedia',
-name  = _("Download media files from the internet"),
-description =  _("This tool downloads media files from the internet"),
-version = '1.0.19',
-gramps_target_version = "6.0",
-status = STABLE,
-fname = 'DownloadMedia.py',
-authors = ["Tim Lyons"],
-authors_email = [""],
-category = TOOL_UTILS,
-toolclass = 'DownloadMedia',
-optionclass = 'DownloadMediaOptions',
-tool_modes = [TOOL_MODE_GUI, TOOL_MODE_CLI]
-  )
+register(
+    TOOL,
+    id="downloadmedia",
+    name=_("Download media files from the internet"),
+    description=_("This tool downloads media files from the internet"),
+    version="1.0.19",
+    gramps_target_version="6.0",
+    status=STABLE,
+    fname="DownloadMedia.py",
+    authors=["Tim Lyons"],
+    authors_email=[""],
+    category=TOOL_UTILS,
+    toolclass="DownloadMedia",
+    optionclass="DownloadMediaOptions",
+    tool_modes=[TOOL_MODE_GUI, TOOL_MODE_CLI],
+    help_url="Addon:DownloadMedia",
+)

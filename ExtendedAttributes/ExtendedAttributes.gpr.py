@@ -20,36 +20,38 @@
 
 # $Id$
 
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # Register Gramplet
 #
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 
-register(GRAMPLET,
-         id="Extended Person Attributes",
-         name=_("Extended Person Attributes"),
-         description = _("Gramplet showing the attributes of a person"),
-         version = '1.0.33',
-         gramps_target_version="6.0",
-         status = STABLE, # not yet tested with python 3
-         fname="ExtendedAttributes.py",
-         height=200,
-         gramplet = 'ExtendedPersonAttributes',
-         gramplet_title=_("Extended Attributes"),
-         navtypes=["Person"],
-         )
+register(
+    GRAMPLET,
+    id="Extended Person Attributes",
+    name=_("Extended Person Attributes"),
+    description=_("Gramplet showing the attributes of a person"),
+    version="1.0.33",
+    gramps_target_version="6.0",
+    status=STABLE,  # not yet tested with python 3
+    fname="ExtendedAttributes.py",
+    height=200,
+    gramplet="ExtendedPersonAttributes",
+    gramplet_title=_("Extended Attributes"),
+    navtypes=["Person"],
+)
 
-register(GRAMPLET,
-         id="Extended Family Attributes",
-         name=_("Extended Family Attributes"),
-         description = _("Gramplet showing the attributes of a family"),
-         version = '1.0.33',
-         gramps_target_version="6.0",
-         status = STABLE, # not yet tested with python 3
-         fname="ExtendedAttributes.py",
-         height=200,
-         gramplet = 'ExtendedFamilyAttributes',
-         gramplet_title=_("Extended Attributes"),
-         navtypes=["Family"],
-         )
+register(
+    GRAMPLET,
+    id="Extended Family Attributes",
+    name=_("Extended Family Attributes"),
+    description=_("Gramplet showing the attributes of a family"),
+    version="1.0.33",
+    gramps_target_version="6.0",
+    status=STABLE,  # not yet tested with python 3
+    fname="ExtendedAttributes.py",
+    height=200,
+    gramplet="ExtendedFamilyAttributes",
+    gramplet_title=_("Extended Attributes"),
+    navtypes=["Family"],
+)

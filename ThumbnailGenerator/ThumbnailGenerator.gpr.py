@@ -19,24 +19,26 @@
 #
 # $Id$
 
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # Thumbnail Generator
 #
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 
-register(TOOL,
-id = 'thumbgen',
-name = _("Thumbnail Generator"),
-description = _("Generates thumbnails for media files"),
-version = '1.0.29',
-gramps_target_version = "6.0",
-status = STABLE,
-fname = 'ThumbnailGenerator.py',
-authors = ["Nick Hall"],
-authors_email = ["nick__hall@hotmail.com"],
-category = TOOL_UTILS,
-toolclass = 'ThumbnailGenerator',
-optionclass = 'ThumbnailGeneratorOptions',
-tool_modes = [TOOL_MODE_GUI, TOOL_MODE_CLI]
-  )
+register(
+    TOOL,
+    id="thumbgen",
+    name=_("Thumbnail Generator"),
+    description=_("Generates thumbnails for media files"),
+    version="1.0.29",
+    gramps_target_version="6.0",
+    status=STABLE,
+    fname="ThumbnailGenerator.py",
+    authors=["Nick Hall"],
+    authors_email=["nick__hall@hotmail.com"],
+    category=TOOL_UTILS,
+    toolclass="ThumbnailGenerator",
+    optionclass="ThumbnailGeneratorOptions",
+    tool_modes=[TOOL_MODE_GUI, TOOL_MODE_CLI],
+    help_url="Addon:ThumbnailGenerator",
+)

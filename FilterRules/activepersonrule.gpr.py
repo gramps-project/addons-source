@@ -21,16 +21,18 @@
 """
 Filter rule to match an active Person.
 """
-register(RULE,
-  id    = 'ActivePerson',
-  name  = _("The active Person"),
-  description = _("The active Person"),
-  version = '0.0.11',
-  authors = ["Paul Culley"],
-  authors_email = ["paulr2787@gmail.com"],
-  gramps_target_version = '6.0',
-  status = STABLE,
-  fname = "activepersonrule.py",
-  ruleclass = 'IsActivePerson',  # must be rule class name
-  namespace = 'Person',  # one of the primary object classes
-  )
+register(
+    RULE,
+    id="ActivePerson",
+    name=_("The active Person"),
+    description=_("The active Person"),
+    version="0.0.11",
+    authors=["Paul Culley"],
+    authors_email=["paulr2787@gmail.com"],
+    gramps_target_version="6.0",
+    status=STABLE,
+    fname="activepersonrule.py",
+    ruleclass="IsActivePerson",  # must be rule class name
+    namespace="Person",  # one of the primary object classes
+    help_url="Addon:Rule_expansions#Active_Person",
+)

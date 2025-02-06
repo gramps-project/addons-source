@@ -20,23 +20,23 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
-register(GRAMPLET,
-         id = "DNASegmentMap",
-         name = _("DNA Segment Map"),
-         authors = ["Nick Hall", "Gary Griffin"],
-         authors_email = ["http://gramps-project.org", "http://gramps-project.org"],
-         description = _("Gramplet showing a matching DNA segment map"),
-         status = STABLE,
-         fname="dnasegmentmap.py",
-         height=100,
-         expand=True,
-         gramplet = 'DNASegmentMap',
-         gramplet_title=_("DNA Segment Map"),
-         detached_width = 600,
-         detached_height = 450,
-         version = '2.0.11',
-         gramps_target_version='6.0',
-         help_url="Addon:DNASegmentMap",
-         include_in_listing = True,
-         )
-
+register(
+    GRAMPLET,
+    id="DNASegmentMap",
+    name=_("DNA Segment Map"),
+    authors=["Nick Hall", "Gary Griffin"],
+    authors_email=["http://gramps-project.org", "http://gramps-project.org"],
+    description=_("Gramplet showing a matching DNA segment map"),
+    status=STABLE,
+    fname="dnasegmentmap.py",
+    height=100,
+    expand=True,
+    gramplet="DNASegmentMap",
+    gramplet_title=_("DNA Segment Map"),
+    detached_width=600,
+    detached_height=450,
+    version="2.0.11",
+    gramps_target_version="6.0",
+    help_url="Addon:DNASegmentMap",
+    include_in_listing=True,
+)

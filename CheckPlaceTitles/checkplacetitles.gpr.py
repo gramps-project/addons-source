@@ -23,19 +23,20 @@ GRAMPS registration file
 """
 
 
-register(TOOL,
-id    = 'checkplacetitle',
-name  = _("Check Place Titles"),
-description =  _("Check place titles"),
-version = '1.0.17',
-gramps_target_version = "6.0",
-include_in_listing = False,
-status = STABLE,
-fname = 'checkplacetitles.py',
-authors = [""],
-authors_email = [""],
-category = TOOL_DBPROC,
-toolclass = 'CheckPlaceTitles',
-optionclass = 'CheckPlaceTitlesOptions',
-tool_modes = [TOOL_MODE_GUI]
-  )
+register(
+    TOOL,
+    id="checkplacetitle",
+    name=_("Check Place Titles"),
+    description=_("Check place titles"),
+    version="1.0.17",
+    gramps_target_version="6.0",
+    include_in_listing=False,
+    status=STABLE,
+    fname="checkplacetitles.py",
+    authors=[""],
+    authors_email=[""],
+    category=TOOL_DBPROC,
+    toolclass="CheckPlaceTitles",
+    optionclass="CheckPlaceTitlesOptions",
+    tool_modes=[TOOL_MODE_GUI],
+)

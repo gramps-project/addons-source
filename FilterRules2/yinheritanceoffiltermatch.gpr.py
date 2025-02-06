@@ -19,17 +19,21 @@
 #
 """Matches descendants of filter result following Y-chrom inheritance patterns."""
 
-register(RULE,
-  id = 'yinheritanceoffiltermatch',
-  name = _("Y-chromosomal inheritance of <filter>"),
-  description = _("Matches recorded descendants of a filter result following"
-                  " Y-chromosomal inheritance patterns."),
-  version = '1.0.10',
-  authors = ["Matthias Kemmer"],
-  authors_email = ["matt.familienforschung@gmail.com"],
-  gramps_target_version = '6.0',
-  status = STABLE,
-  fname = "yinheritanceoffiltermatch.py",
-  ruleclass = 'YChromInheritanceFilterMatch',  # must be rule class name
-  namespace = 'Person',  # one of the primary object classes
-  )
+register(
+    RULE,
+    id="yinheritanceoffiltermatch",
+    name=_("Y-chromosomal inheritance of <filter>"),
+    description=_(
+        "Matches recorded descendants of a filter result following"
+        " Y-chromosomal inheritance patterns."
+    ),
+    version="1.0.10",
+    authors=["Matthias Kemmer"],
+    authors_email=["matt.familienforschung@gmail.com"],
+    gramps_target_version="6.0",
+    status=STABLE,
+    fname="yinheritanceoffiltermatch.py",
+    ruleclass="YChromInheritanceFilterMatch",  # must be rule class name
+    namespace="Person",  # one of the primary object classes
+    help_url="Addon:Rule_expansions#Y-chromosomal_inheritance_of_.3Cperson_filter.3E",
+)

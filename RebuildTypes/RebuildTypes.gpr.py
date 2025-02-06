@@ -20,19 +20,20 @@
 
 # $Id: RebuildTypes.gpr.py 2374 2014-05-02 13:29:19Z romjerome $
 
-register(TOOL,
-id    = 'rebuild_types',
-name  = _("Rebuild Gramps Types"),
-description =  _("Rebuilds Gramps Types"),
-version = '1.0.19',
-gramps_target_version = "6.0",
-include_in_listing = False,
-status = UNSTABLE,
-fname = 'RebuildTypes.py',
-authors = ["Nick Hall"],
-authors_email = ["nick__hall@hotmail.com"],
-category = TOOL_DBFIX,
-toolclass = 'RebuildTypes',
-optionclass = 'RebuildTypesOptions',
-tool_modes = [TOOL_MODE_GUI, TOOL_MODE_CLI]
-  )
+register(
+    TOOL,
+    id="rebuild_types",
+    name=_("Rebuild Gramps Types"),
+    description=_("Rebuilds Gramps Types"),
+    version="1.0.19",
+    gramps_target_version="6.0",
+    include_in_listing=False,
+    status=UNSTABLE,
+    fname="RebuildTypes.py",
+    authors=["Nick Hall"],
+    authors_email=["nick__hall@hotmail.com"],
+    category=TOOL_DBFIX,
+    toolclass="RebuildTypes",
+    optionclass="RebuildTypesOptions",
+    tool_modes=[TOOL_MODE_GUI, TOOL_MODE_CLI],
+)

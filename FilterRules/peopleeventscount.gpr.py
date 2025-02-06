@@ -19,16 +19,18 @@
 #
 """Matches persons which have multiple events of given type."""
 
-register(RULE,
-  id = 'peopleeventscount',
-  name = _("People with <count> of <event>"),
-  description = _("Matches persons which have events of given type and number."),
-  version = '1.0.6',
-  authors = ["Matthias Kemmer"],
-  authors_email = ["matt.familienforschung@gmail.com"],
-  gramps_target_version = '6.0',
-  status = STABLE,
-  fname = "peopleeventscount.py",
-  ruleclass = 'PeopleEventsCount',  # must be rule class name
-  namespace = 'Person',  # one of the primary object classes
-  )
+register(
+    RULE,
+    id="peopleeventscount",
+    name=_("People with <count> of <event>"),
+    description=_("Matches persons which have events of given type and number."),
+    version="1.0.6",
+    authors=["Matthias Kemmer"],
+    authors_email=["matt.familienforschung@gmail.com"],
+    gramps_target_version="6.0",
+    status=STABLE,
+    fname="peopleeventscount.py",
+    ruleclass="PeopleEventsCount",  # must be rule class name
+    namespace="Person",  # one of the primary object classes
+    help_url="Addon:Rule_expansions#People_with_.3Ccount.3E_of_.3Cevent.3E",
+)

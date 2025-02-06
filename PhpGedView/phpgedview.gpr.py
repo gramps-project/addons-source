@@ -18,20 +18,20 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
-register(TOOL,
-         id    = 'PhpGedView',
-         name  = _("PhpGedView"),
-         description =  _("Download a GEDCOM file from a phpGedView server."),
-         version = '0.0.14',
-         gramps_target_version = "6.0",
-         include_in_listing = False,
-         status = UNSTABLE,
-         fname = 'phpgedviewconnector.py',
-         authors = ["Martin Hawlisch"],
-         authors_email = ["martin.hawlisch@gmx.de"],
-         category = TOOL_UTILS,
-         toolclass = 'PHPGedViewConnector',
-         optionclass = 'phpGedViewImporter',
-         tool_modes = [TOOL_MODE_GUI],
-         )
-
+register(
+    TOOL,
+    id="PhpGedView",
+    name=_("PhpGedView"),
+    description=_("Download a GEDCOM file from a phpGedView server."),
+    version="0.0.14",
+    gramps_target_version="6.0",
+    include_in_listing=False,
+    status=UNSTABLE,
+    fname="phpgedviewconnector.py",
+    authors=["Martin Hawlisch"],
+    authors_email=["martin.hawlisch@gmx.de"],
+    category=TOOL_UTILS,
+    toolclass="PHPGedViewConnector",
+    optionclass="phpGedViewImporter",
+    tool_modes=[TOOL_MODE_GUI],
+)

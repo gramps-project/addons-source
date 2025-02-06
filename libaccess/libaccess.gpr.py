@@ -21,22 +21,25 @@
 
 # $Id $
 
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # libaccess
 #
-#------------------------------------------------------------------------
-register(GENERAL,
-id    = 'libaccess',
-name  = "Generic DB Access lib",
-description =  _("Provides a library for generic access to "
-                 "the database and gen.lib."),
-version = '1.0.34',
-gramps_target_version = "6.0",
-status = STABLE,
-audience = DEVELOPER,
-fname = 'libaccess.py',
-authors = ["Doug Blank"],
-authors_email = ["doug.blank@gmail.com"],
-load_on_reg = True
-  )
+# ------------------------------------------------------------------------
+register(
+    GENERAL,
+    id="libaccess",
+    name="Generic DB Access lib",
+    description=_(
+        "Provides a library for generic access to " "the database and gen.lib."
+    ),
+    version="1.0.34",
+    gramps_target_version="6.0",
+    status=STABLE,
+    audience=DEVELOPER,
+    fname="libaccess.py",
+    authors=["Doug Blank"],
+    authors_email=["doug.blank@gmail.com"],
+    load_on_reg=True,
+    help_url="Addon:Generic_DB_Access_lib",
+)

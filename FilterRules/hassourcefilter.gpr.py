@@ -22,16 +22,18 @@
 """
 Filter rule to match source with a particular value.
 """
-register(RULE,
-  id    = 'HasSourceParameter',
-  name  = _("Source matching parameters"),
-  description = _("Matches Sources with values containing the chosen parameters"),
-  version = '0.0.24',
-  authors = ["Dave Scheipers", "Paul Culley"],
-  authors_email = ["paulr2787@gmail.com"],
-  gramps_target_version = '6.0',
-  status = STABLE,
-  fname = "hassourcefilter.py",
-  ruleclass = 'HasSourceParameter',  # must be rule class name
-  namespace = 'Source',  # one of the primary object classes
-  )
+register(
+    RULE,
+    id="HasSourceParameter",
+    name=_("Source matching parameters"),
+    description=_("Matches Sources with values containing the chosen parameters"),
+    version="0.0.24",
+    authors=["Dave Scheipers", "Paul Culley"],
+    authors_email=["paulr2787@gmail.com"],
+    gramps_target_version="6.0",
+    status=STABLE,
+    fname="hassourcefilter.py",
+    ruleclass="HasSourceParameter",  # must be rule class name
+    namespace="Source",  # one of the primary object classes
+    help_url="Addon:Rule_expansions#Source_matching_parameters",
+)

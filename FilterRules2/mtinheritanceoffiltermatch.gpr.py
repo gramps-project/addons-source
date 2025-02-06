@@ -19,17 +19,21 @@
 #
 """Matches descendants of a filter result following mitochondrial inheritance patterns."""
 
-register(RULE,
-  id = 'mtinheritanceoffiltermatch',
-  name = _("Mitochondrial inheritance of <filter>"),
-  description = _("Matches recorded descendants of a filter result "
-                  "following mitochondrial inheritance patterns."),
-  version = '1.0.10',
-  authors = ["Matthias Kemmer"],
-  authors_email = ["matt.familienforschung@gmail.com"],
-  gramps_target_version = '6.0',
-  status = STABLE,
-  fname = "mtinheritanceoffiltermatch.py",
-  ruleclass = 'MtInheritanceFilterMatch',  # must be rule class name
-  namespace = 'Person',  # one of the primary object classes
-  )
+register(
+    RULE,
+    id="mtinheritanceoffiltermatch",
+    name=_("Mitochondrial inheritance of <filter>"),
+    description=_(
+        "Matches recorded descendants of a filter result "
+        "following mitochondrial inheritance patterns."
+    ),
+    version="1.0.10",
+    authors=["Matthias Kemmer"],
+    authors_email=["matt.familienforschung@gmail.com"],
+    gramps_target_version="6.0",
+    status=STABLE,
+    fname="mtinheritanceoffiltermatch.py",
+    ruleclass="MtInheritanceFilterMatch",  # must be rule class name
+    namespace="Person",  # one of the primary object classes
+    help_url="Addon:Rule_expansions#Mitochondrial_inheritance_of_.3Cfilter.3E",
+)

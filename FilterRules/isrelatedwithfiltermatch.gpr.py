@@ -21,17 +21,20 @@
 """
 Filter rule to match related persons to anybody that matched a person filter.
 """
-register(RULE,
-  id    = 'IsRelatedWithFilterMatch',
-  name  = _("People related to <filter>"),
-  description = _("Matches people who are related to anybody matched by "
-                  "a person filter"),
-  version = '1.0.22',
-  authors = ["Matthias Kemmer"],
-  authors_email = ["matt.familienforschung@gmail.com"],
-  gramps_target_version = '6.0',
-  status = STABLE,
-  fname = "isrelatedwithfiltermatch.py",
-  ruleclass = 'IsRelatedWithFilterMatch',  # must be rule class name
-  namespace = 'Person',  # one of the primary object classes
-  )
+register(
+    RULE,
+    id="IsRelatedWithFilterMatch",
+    name=_("People related to <filter>"),
+    description=_(
+        "Matches people who are related to anybody matched by " "a person filter"
+    ),
+    version="1.0.22",
+    authors=["Matthias Kemmer"],
+    authors_email=["matt.familienforschung@gmail.com"],
+    gramps_target_version="6.0",
+    status=STABLE,
+    fname="isrelatedwithfiltermatch.py",
+    ruleclass="IsRelatedWithFilterMatch",  # must be rule class name
+    namespace="Person",  # one of the primary object classes
+    help_url="Addon:Rule_expansions#People_related_to_.3Cfilter.3E",
+)

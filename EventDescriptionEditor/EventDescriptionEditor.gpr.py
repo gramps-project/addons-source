@@ -19,19 +19,23 @@
 #
 """A tool to find and replace event descriptions."""
 
-register(TOOL,
-         id = 'EventDescriptionEditor',
-         name = _("Event Description Editor"),
-         description = _("A tool to find and replace a string in event "
-                         "description of multiple events."),
-         version = '1.0.14',
-         gramps_target_version = "6.0",
-         status = STABLE,
-         fname = 'EventDescriptionEditor.py',
-         authors = ["Matthias Kemmer"],
-         authors_email = ["matt.familienforschung@gmail.com"],
-         category = TOOL_DBPROC,
-         toolclass = 'EventDescriptionEditor',
-         optionclass = 'EventDescriptionEditorOptions',
-         tool_modes = [TOOL_MODE_GUI],
-         )
+register(
+    TOOL,
+    id="EventDescriptionEditor",
+    name=_("Event Description Editor"),
+    description=_(
+        "A tool to find and replace a string in event "
+        "description of multiple events."
+    ),
+    version="1.0.14",
+    gramps_target_version="6.0",
+    status=STABLE,
+    fname="EventDescriptionEditor.py",
+    authors=["Matthias Kemmer"],
+    authors_email=["matt.familienforschung@gmail.com"],
+    category=TOOL_DBPROC,
+    toolclass="EventDescriptionEditor",
+    optionclass="EventDescriptionEditorOptions",
+    tool_modes=[TOOL_MODE_GUI],
+    help_url="Addon:EventDescriptionEditor",
+)
