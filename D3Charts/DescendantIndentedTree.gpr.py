@@ -1,4 +1,4 @@
-#-------------------------------------------------------------------------
+# -------------------------------------------------------------------------
 #
 # Copyright (C) 2014  Matt Keenan <matt.keenan@gmail.com>
 #
@@ -16,22 +16,26 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
-#-------------------------------------------------------------------------
-register(REPORT,
-    id = 'd3-descendantindentedtree',
-    name = _('Descendant Indented Tree'),
-    category = CATEGORY_WEB,
-    status = STABLE,
-    fname = 'DescendantIndentedTree.py',
-    reportclass = 'DescendantIndentedTreeReport',
-    optionclass = 'DescendantIndentedTreeOptions',
-    report_modes = [REPORT_MODE_GUI, REPORT_MODE_CLI],
-    authors = ['Matt Keenan'],
-    authors_email = ['matt.keenan@gmail.com'],
-    description = _('Generates a web page with a graphical '
-                    'representation of descendants (SVG) represented'
-                    'as a Collapsible Indented Tree Layout from the D3.js '
-                    'JavaScript library.'),
-    version = '1.0.34',
-    gramps_target_version = "6.0",
+# -------------------------------------------------------------------------
+register(
+    REPORT,
+    id="d3-descendantindentedtree",
+    name=_("Descendant Indented Tree"),
+    category=CATEGORY_WEB,
+    status=STABLE,
+    fname="DescendantIndentedTree.py",
+    reportclass="DescendantIndentedTreeReport",
+    optionclass="DescendantIndentedTreeOptions",
+    report_modes=[REPORT_MODE_GUI, REPORT_MODE_CLI],
+    authors=["Matt Keenan"],
+    authors_email=["matt.keenan@gmail.com"],
+    description=_(
+        "Generates a web page with a graphical "
+        "representation of descendants (SVG) represented"
+        "as a Collapsible Indented Tree Layout from the D3.js "
+        "JavaScript library."
+    ),
+    version="1.0.34",
+    gramps_target_version="6.0",
+    help_url="Addon:D3_Ancestral_and_Descendant_Charts#Descendant_Indented_Tree",
 )

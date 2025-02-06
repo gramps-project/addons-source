@@ -19,16 +19,18 @@
 #
 """Matches the earliest recorded matrilineal ancestor mother."""
 
-register(RULE,
-  id = 'MatrilinealProgenitrix',
-  name = _("Matrilineal progenitrix of <person>"),
-  description = _("Matches the earliest recorded matrilineal ancestor mother."),
-  version = '1.0.10',
-  authors = ["Matthias Kemmer"],
-  authors_email = ["matt.familienforschung@gmail.com"],
-  gramps_target_version = '6.0',
-  status = STABLE,
-  fname = "matrilinealprogenitrix.py",
-  ruleclass = 'MatrilinealProgenitrix',  # must be rule class name
-  namespace = 'Person',  # one of the primary object classes
-  )
+register(
+    RULE,
+    id="MatrilinealProgenitrix",
+    name=_("Matrilineal progenitrix of <person>"),
+    description=_("Matches the earliest recorded matrilineal ancestor mother."),
+    version="1.0.10",
+    authors=["Matthias Kemmer"],
+    authors_email=["matt.familienforschung@gmail.com"],
+    gramps_target_version="6.0",
+    status=STABLE,
+    fname="matrilinealprogenitrix.py",
+    ruleclass="MatrilinealProgenitrix",  # must be rule class name
+    namespace="Person",  # one of the primary object classes
+    help_url="Addon:Rule_expansions#Matrilineal_progenitrix_of_.3Cperson.3E",
+)

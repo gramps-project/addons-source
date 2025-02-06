@@ -19,18 +19,20 @@
 #
 """Create a heatmap web report."""
 
-register(REPORT,
-    id='Heatmap',
+register(
+    REPORT,
+    id="Heatmap",
     name=_("Heatmap"),
     description=_("Create a heatmap web report."),
-    version = '1.2.5',
+    version="1.2.5",
     gramps_target_version="6.0",
     status=STABLE,
     fname="heatmap.py",
     authors=["Matthias Kemmer"],
     authors_email=["matt.familienforschung@gmail.com"],
     category=CATEGORY_WEB,
-    reportclass='ReportClass',
-    optionclass='ReportOptions',
+    reportclass="ReportClass",
+    optionclass="ReportOptions",
     report_modes=[REPORT_MODE_GUI],
-    )
+    help_url="Addon:HeatmapWebReport",
+)

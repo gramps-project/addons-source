@@ -19,24 +19,26 @@
 #
 # $Id$
 
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # Media Verify tool
 #
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 
-register(TOOL,
-id = 'mediaverify',
-name = _("Media Verify"),
-description = _("Verify that media is present in the correct path"),
-version = '1.0.29',
-gramps_target_version = "6.0",
-status = STABLE,
-fname = 'MediaVerify.py',
-authors = ["Nick Hall"],
-authors_email = ["nick__hall@hotmail.com"],
-category = TOOL_UTILS,
-toolclass = 'MediaVerify',
-optionclass = 'MediaVerifyOptions',
-tool_modes = [TOOL_MODE_GUI, TOOL_MODE_CLI]
-  )
+register(
+    TOOL,
+    id="mediaverify",
+    name=_("Media Verify"),
+    description=_("Verify that media is present in the correct path"),
+    version="1.0.29",
+    gramps_target_version="6.0",
+    status=STABLE,
+    fname="MediaVerify.py",
+    authors=["Nick Hall"],
+    authors_email=["nick__hall@hotmail.com"],
+    category=TOOL_UTILS,
+    toolclass="MediaVerify",
+    optionclass="MediaVerifyOptions",
+    tool_modes=[TOOL_MODE_GUI, TOOL_MODE_CLI],
+    help_url="Addon:Media_Verify_Tool",
+)

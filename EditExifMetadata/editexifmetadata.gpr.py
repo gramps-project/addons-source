@@ -21,26 +21,27 @@
 
 # $Id$
 
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 # Edit Image Exif Metadata class
-#------------------------------------------------------------------------
-register(GRAMPLET,
-         id                    = "Edit Image Exif Metadata",
-         name                  = _("Edit Image Exif Metadata"),
-         description           = _("Gramplet to view, edit, and save image Exif metadata"),
-         height                = 450,
-         expand                = False,
-         gramplet              = 'EditExifMetadata',
-         gramplet_title        = _("Edit Exif Metadata"),
-         detached_width        = 550,
-         detached_height       = 550,
-         version = '2.0.13',
-         gramps_target_version = "6.0",
-         status                = STABLE,
-         include_in_listing    = True,
-         fname                 = "editexifmetadata.py",
-         help_url              = "Edit Image Exif Metadata",
-         authors               = ['Rob G. Healey', 'Paul Culley'],
-         authors_email         = ['robhealey1@gmail.com', 'paulr2787@gmail.com'],
-         navtypes              = ["Media"],
-    )
+# ------------------------------------------------------------------------
+register(
+    GRAMPLET,
+    id="Edit Image Exif Metadata",
+    name=_("Edit Image Exif Metadata"),
+    description=_("Gramplet to view, edit, and save image Exif metadata"),
+    height=450,
+    expand=False,
+    gramplet="EditExifMetadata",
+    gramplet_title=_("Edit Exif Metadata"),
+    detached_width=550,
+    detached_height=550,
+    version="2.0.13",
+    gramps_target_version="6.0",
+    status=STABLE,
+    include_in_listing=True,
+    fname="editexifmetadata.py",
+    help_url="Edit Image Exif Metadata",
+    authors=["Rob G. Healey", "Paul Culley"],
+    authors_email=["robhealey1@gmail.com", "paulr2787@gmail.com"],
+    navtypes=["Media"],
+)

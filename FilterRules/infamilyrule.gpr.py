@@ -20,16 +20,18 @@
 #
 """Filter rule that matches people who are matched by a family filter."""
 
-register(RULE,
-  id = 'PersonsInFamilyFilterMatch',
-  name = _('People who are part of families matching <filter>'),
-  description = _('People who are part of families matching <filter>'),
-  version = '1.0.19',
-  authors = ["Matthias Kemmer", "Paul Culley"],
-  authors_email = ["matt.familienforschung@gmail.com", "paulr2787@gmail.com"],
-  gramps_target_version = '6.0',
-  status = STABLE,
-  fname = "infamilyrule.py",
-  ruleclass = 'PersonsInFamilyFilterMatch',  # must be rule class name
-  namespace = 'Person',  # one of the primary object classes
-  )
+register(
+    RULE,
+    id="PersonsInFamilyFilterMatch",
+    name=_("People who are part of families matching <filter>"),
+    description=_("People who are part of families matching <filter>"),
+    version="1.0.19",
+    authors=["Matthias Kemmer", "Paul Culley"],
+    authors_email=["matt.familienforschung@gmail.com", "paulr2787@gmail.com"],
+    gramps_target_version="6.0",
+    status=STABLE,
+    fname="infamilyrule.py",
+    ruleclass="PersonsInFamilyFilterMatch",  # must be rule class name
+    namespace="Person",  # one of the primary object classes
+    help_url="Addon:Rule_expansions#People_who_are_part_of_families_matching_.3Cfilter.3E",
+)

@@ -18,18 +18,20 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
-register(TOOL,
-         id = 'AvatarGenerator',
-         name = _("Avatar Generator Tool"),
-         description =  _("A tool to add avatar pictures to your family tree"),
-         version = '1.0.16',
-         gramps_target_version = "6.0",
-         status = STABLE,
-         fname = 'AvatarGenerator.py',
-         authors = ["Matthias Kemmer"],
-         authors_email = ["matt.familienforschung@gmail.com"],
-         category = TOOL_DBPROC,
-         toolclass = 'AvatarGeneratorWindow',
-         optionclass = 'AvatarGeneratorOptions',
-         tool_modes = [TOOL_MODE_GUI],
-         )
+register(
+    TOOL,
+    id="AvatarGenerator",
+    name=_("Avatar Generator Tool"),
+    description=_("A tool to add avatar pictures to your family tree"),
+    version="1.0.16",
+    gramps_target_version="6.0",
+    status=STABLE,
+    fname="AvatarGenerator.py",
+    authors=["Matthias Kemmer"],
+    authors_email=["matt.familienforschung@gmail.com"],
+    category=TOOL_DBPROC,
+    toolclass="AvatarGeneratorWindow",
+    optionclass="AvatarGeneratorOptions",
+    tool_modes=[TOOL_MODE_GUI],
+    help_url="Addon:AvatarGenerator",
+)

@@ -19,17 +19,18 @@
 #
 """Filter rule that matches relatives by degrees of separation."""
 
-register(RULE,
-  id = 'degreesofseparation',
-  name = _('People separated less than <N> degrees of <person>'),
-  description = _("Filter rule that matches relatives by degrees of "
-                  "separation"),
-  version = '1.1.12',
-  authors = ["Matthias Kemmer"],
-  authors_email = ["matt.familienforschung@gmail.com"],
-  gramps_target_version = '6.0',
-  status = STABLE,
-  fname = "degreesofseparation.py",
-  ruleclass = 'DegreesOfSeparation',  # must be rule class name
-  namespace = 'Person',  # one of the primary object classes
-  )
+register(
+    RULE,
+    id="degreesofseparation",
+    name=_("People separated less than <N> degrees of <person>"),
+    description=_("Filter rule that matches relatives by degrees of " "separation"),
+    version="1.1.12",
+    authors=["Matthias Kemmer"],
+    authors_email=["matt.familienforschung@gmail.com"],
+    gramps_target_version="6.0",
+    status=STABLE,
+    fname="degreesofseparation.py",
+    ruleclass="DegreesOfSeparation",  # must be rule class name
+    namespace="Person",  # one of the primary object classes
+    help_url="Addon:Rule_expansions#People_Separated_less_than_.3CN.3E_degrees_of_.3Cperson.3E",
+)

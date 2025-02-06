@@ -20,21 +20,23 @@
 # $Id$
 #
 
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # Register Gramplet
 #
-#------------------------------------------------------------------------
-register(GRAMPLET,
-         id="Participants",
-         name=_("Participants"),
-         description = _("Gramplet showing the participants in an event"),
-         version = '1.0.19',
-         gramps_target_version="6.0",
-         status = STABLE,
-         fname="Participants.py",
-         height=200,
-         gramplet = 'Participants',
-         gramplet_title=_("Participants"),
-         navtypes=["Event"],
-         )
+# ------------------------------------------------------------------------
+register(
+    GRAMPLET,
+    id="Participants",
+    name=_("Participants"),
+    description=_("Gramplet showing the participants in an event"),
+    version="1.0.19",
+    gramps_target_version="6.0",
+    status=STABLE,
+    fname="Participants.py",
+    height=200,
+    gramplet="Participants",
+    gramplet_title=_("Participants"),
+    navtypes=["Event"],
+    help_url="Addon:ParticipantsGramplet",
+)

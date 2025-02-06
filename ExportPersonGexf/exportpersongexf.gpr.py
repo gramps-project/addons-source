@@ -18,25 +18,27 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # GraphML
 #
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 
-register(EXPORT,
-         id = "ex_person_gexf",
-         name = _('Person GEXF'),
-         name_accell = _('_Person GEXF'),
-         description = _('GEXF is used in many network graph applications.'),
-         version = '1.0.2',
-         gramps_target_version = '6.0',
-         status = BETA,
-         audience = EXPERT,
-         fname = 'exportpersongexf.py',
-         export_function = 'exportData',
-         export_options = 'WriterOptionBox',
-         export_options_title = _('GEXF export options'),
-         extension = 'gexf',
-         include_in_listing = True,
-        )
+register(
+    EXPORT,
+    id="ex_person_gexf",
+    name=_("Person GEXF"),
+    name_accell=_("_Person GEXF"),
+    description=_("GEXF is used in many network graph applications."),
+    version="1.0.2",
+    gramps_target_version="6.0",
+    status=BETA,
+    audience=EXPERT,
+    fname="exportpersongexf.py",
+    export_function="exportData",
+    export_options="WriterOptionBox",
+    export_options_title=_("GEXF export options"),
+    extension="gexf",
+    include_in_listing=True,
+    help_url="https://github.com/gramps-project/addons-source/blob/maintenance/gramps60/ExportPersonGexf",
+)

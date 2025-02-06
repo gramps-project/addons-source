@@ -1,4 +1,4 @@
-#-------------------------------------------------------------------------
+# -------------------------------------------------------------------------
 #
 # Copyright (C) 2017 Mark B. <familynetworkchart@gmail.com>
 #
@@ -17,23 +17,24 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor,
 # Boston, MA 02110-1301  USA
 #
-#-------------------------------------------------------------------------
-register(REPORT,
-    id = 'networkchart',
-    name = _('Network Chart'),
-    category = CATEGORY_WEB,
-    status = STABLE,
-    audience = EXPERT,
-    fname = 'NetworkChart.py',
-    reportclass = 'NetworkChartReport',
-    optionclass = 'NetworkChartOptions',
-    report_modes = [REPORT_MODE_GUI, REPORT_MODE_CLI],
-    authors = ['Mark B.'],
-    authors_email = ['familynetworkchart@gmail.com'],
-    #help_url = URL_WIKISTRING+'NetworkChart',
-    description = _('Generates a family network chart.'),
-    version = '0.0.29',
-    gramps_target_version = '6.0',
-    include_in_listing = True,
+# -------------------------------------------------------------------------
+register(
+    REPORT,
+    id="networkchart",
+    name=_("Network Chart"),
+    category=CATEGORY_WEB,
+    status=STABLE,
+    audience=EXPERT,
+    fname="NetworkChart.py",
+    reportclass="NetworkChartReport",
+    optionclass="NetworkChartOptions",
+    report_modes=[REPORT_MODE_GUI, REPORT_MODE_CLI],
+    authors=["Mark B."],
+    authors_email=["familynetworkchart@gmail.com"],
+    # help_url = URL_WIKISTRING+'NetworkChart',
+    description=_("Generates a family network chart."),
+    version="0.0.29",
+    gramps_target_version="6.0",
+    include_in_listing=True,
     requires_mod=["networkx", "pygraphviz"],
 )

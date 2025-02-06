@@ -19,24 +19,26 @@
 #
 # $Id$
 
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # Note Cleanup tool
 #
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 
-register(TOOL,
-id = 'notecleanup',
-name = _("Note Cleanup"),
-description = _("Clean up Notes that contain HTML markup"),
-version = '1.0.22',
-gramps_target_version = '6.0',
-status = STABLE,
-fname = 'NoteCleanup.py',
-authors = ["Paul Culley"],
-authors_email = ["paulr2787@gmail.com"],
-category = TOOL_UTILS,
-toolclass = 'NoteCleanup',
-optionclass = 'NoteCleanupOptions',
-tool_modes = [TOOL_MODE_GUI]
-  )
+register(
+    TOOL,
+    id="notecleanup",
+    name=_("Note Cleanup"),
+    description=_("Clean up Notes that contain HTML markup"),
+    version="1.0.22",
+    gramps_target_version="6.0",
+    status=STABLE,
+    fname="NoteCleanup.py",
+    authors=["Paul Culley"],
+    authors_email=["paulr2787@gmail.com"],
+    category=TOOL_UTILS,
+    toolclass="NoteCleanup",
+    optionclass="NoteCleanupOptions",
+    tool_modes=[TOOL_MODE_GUI],
+    help_url="Addon:NoteCleanupTool",
+)

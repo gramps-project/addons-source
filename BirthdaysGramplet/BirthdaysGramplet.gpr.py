@@ -19,16 +19,17 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
-register(GRAMPLET,
-    id = 'Birthdays',
-    name = _("Birthdays"),
-    description = _("a gramplet that displays the birthdays of the living people"),
-    status = STABLE,
-    version = '1.1.14',
+register(
+    GRAMPLET,
+    id="Birthdays",
+    name=_("Birthdays"),
+    description=_("a gramplet that displays the birthdays of the living people"),
+    status=STABLE,
+    version="1.1.14",
     fname="BirthdaysGramplet.py",
-    height = 200,
-    gramplet = 'BirthdaysGramplet',
-    gramps_target_version = "6.0",
-    gramplet_title = _("Birthdays"),
-    help_url = "BirthdaysGramplet",
-    )
+    height=200,
+    gramplet="BirthdaysGramplet",
+    gramps_target_version="6.0",
+    gramplet_title=_("Birthdays"),
+    help_url="BirthdaysGramplet",
+)

@@ -20,21 +20,23 @@
 
 # $Id$
 
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # Register Gramplet
 #
-#------------------------------------------------------------------------
-register(GRAMPLET,
-         id="MediaBrowser",
-         name=_("Media Browser"),
-         description = _("Gramplet showing details of a person"),
-         version = '1.0.36',
-         gramps_target_version="6.0",
-         status = STABLE, # not yet tested with python 3
-         fname="MediaBrowser.py",
-         height=200,
-         gramplet = 'MediaBrowser',
-         gramplet_title=_("Browser"),
-         navtypes=["Person"],
-         )
+# ------------------------------------------------------------------------
+register(
+    GRAMPLET,
+    id="MediaBrowser",
+    name=_("Media Browser"),
+    description=_("Gramplet showing details of a person"),
+    version="1.0.36",
+    gramps_target_version="6.0",
+    status=STABLE,  # not yet tested with python 3
+    fname="MediaBrowser.py",
+    height=200,
+    gramplet="MediaBrowser",
+    gramplet_title=_("Browser"),
+    navtypes=["Person"],
+    help_url="Addon:MediaMerge",
+)

@@ -18,35 +18,37 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # Register Gramplet
 #
-#------------------------------------------------------------------------
-register(GRAMPLET,
-         id="Person Overview",
-         name=_("Person Overview"),
-         description = _("Gramplet showing an overview of events for a person"),
-         version = '1.0.19',
-         gramps_target_version="6.0",
-         status = STABLE,
-         fname="Overview.py",
-         height=200,
-         gramplet = 'PersonOverview',
-         gramplet_title=_("Overview"),
-         navtypes=["Person"],
-         )
+# ------------------------------------------------------------------------
+register(
+    GRAMPLET,
+    id="Person Overview",
+    name=_("Person Overview"),
+    description=_("Gramplet showing an overview of events for a person"),
+    version="1.0.19",
+    gramps_target_version="6.0",
+    status=STABLE,
+    fname="Overview.py",
+    height=200,
+    gramplet="PersonOverview",
+    gramplet_title=_("Overview"),
+    navtypes=["Person"],
+)
 
-register(GRAMPLET,
-         id="Family Overview",
-         name=_("Family Overview"),
-         description = _("Gramplet showing an overview of events for a family"),
-         version = '1.0.19',
-         gramps_target_version="6.0",
-         status = STABLE,
-         fname="Overview.py",
-         height=200,
-         gramplet = 'FamilyOverview',
-         gramplet_title=_("Overview"),
-         navtypes=["Family"],
-         )
+register(
+    GRAMPLET,
+    id="Family Overview",
+    name=_("Family Overview"),
+    description=_("Gramplet showing an overview of events for a family"),
+    version="1.0.19",
+    gramps_target_version="6.0",
+    status=STABLE,
+    fname="Overview.py",
+    height=200,
+    gramplet="FamilyOverview",
+    gramplet_title=_("Overview"),
+    navtypes=["Family"],
+)

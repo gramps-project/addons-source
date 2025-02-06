@@ -19,16 +19,18 @@
 #
 """Filter rule that matches people by their age at death."""
 
-register(RULE,
-  id = 'ageatdeath',
-  name = _('Filter people by their age at death'),
-  description = _("Filter rule that matches people by their age at death"),
-  version = '1.0.12',
-  authors = ["Matthias Kemmer"],
-  authors_email = ["matt.familienforschung@gmail.com"],
-  gramps_target_version = '6.0',
-  status = STABLE,
-  fname = "ageatdeath.py",
-  ruleclass = 'AgeAtDeath',  # must be rule class name
-  namespace = 'Person',  # one of the primary object classes
-  )
+register(
+    RULE,
+    id="ageatdeath",
+    name=_("Filter people by their age at death"),
+    description=_("Filter rule that matches people by their age at death"),
+    version="1.0.12",
+    authors=["Matthias Kemmer"],
+    authors_email=["matt.familienforschung@gmail.com"],
+    gramps_target_version="6.0",
+    status=STABLE,
+    fname="ageatdeath.py",
+    ruleclass="AgeAtDeath",  # must be rule class name
+    namespace="Person",  # one of the primary object classes
+    help_url="Addon:Rule_expansions#Filter_people_by_their_age_at_death",
+)

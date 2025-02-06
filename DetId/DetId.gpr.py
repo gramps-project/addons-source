@@ -19,25 +19,26 @@
 #
 # $Id$
 
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # Deterministic ID (Handle) tool
 #
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 
-register(TOOL,
-id = 'deterministicid',
-name = _("Deterministic ID"),
-description = _("Set/reset Gramps to use a Deterministic ID"),
-version = '1.0.12',
-gramps_target_version = '6.0',
-status = STABLE,
-fname = 'DetId.py',
-authors = ["Paul Culley"],
-authors_email = ["paulr2787@gmail.com"],
-category = TOOL_UTILS,
-toolclass = 'DetId',
-optionclass = 'DetIdOptions',
-include_in_listing = False,
-tool_modes = [TOOL_MODE_GUI, TOOL_MODE_CLI]
-  )
+register(
+    TOOL,
+    id="deterministicid",
+    name=_("Deterministic ID"),
+    description=_("Set/reset Gramps to use a Deterministic ID"),
+    version="1.0.12",
+    gramps_target_version="6.0",
+    status=STABLE,
+    fname="DetId.py",
+    authors=["Paul Culley"],
+    authors_email=["paulr2787@gmail.com"],
+    category=TOOL_UTILS,
+    toolclass="DetId",
+    optionclass="DetIdOptions",
+    include_in_listing=False,
+    tool_modes=[TOOL_MODE_GUI, TOOL_MODE_CLI],
+)

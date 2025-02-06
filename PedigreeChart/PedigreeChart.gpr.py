@@ -19,22 +19,24 @@
 #
 # $Id$
 #
-register(REPORT,
-         id="PedigreeChart",
-         name=_("Pedigree Chart"),
-         description=_("Alternate version of the traditional pedigree chart."),
-         status = STABLE,
-         version = '1.0.38',
-         fname="PedigreeChart.py",
-         gramps_target_version="6.0",
-         authors=['Jakim Friant'],
-         authors_email=["jmodule@friant.org"],
-         category=CATEGORY_DRAW,
-         reportclass='PedigreeChart',
-         optionclass='PedigreeChartOptions',
-         report_modes=[REPORT_MODE_GUI, REPORT_MODE_CLI],
-         require_active=False
-         )
+register(
+    REPORT,
+    id="PedigreeChart",
+    name=_("Pedigree Chart"),
+    description=_("Alternate version of the traditional pedigree chart."),
+    status=STABLE,
+    version="1.0.38",
+    fname="PedigreeChart.py",
+    gramps_target_version="6.0",
+    authors=["Jakim Friant"],
+    authors_email=["jmodule@friant.org"],
+    category=CATEGORY_DRAW,
+    reportclass="PedigreeChart",
+    optionclass="PedigreeChartOptions",
+    report_modes=[REPORT_MODE_GUI, REPORT_MODE_CLI],
+    require_active=False,
+    help_url="Addon:PedigreeChart",
+)
 
-__author__="jfriant"
-__date__ ="$May 13, 2010 10:48:00 AM$"
+__author__ = "jfriant"
+__date__ = "$May 13, 2010 10:48:00 AM$"

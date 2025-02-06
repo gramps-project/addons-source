@@ -22,24 +22,28 @@
 
 # $Id: TimelinePedigreeview.gpr.py 13881 2009-12-21 13:43:50Z flix007 $
 
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # default views of Gramps
 #
-#------------------------------------------------------------------------
-register(VIEW,
-    id    = 'TimelinePedigreeView',
-    name  = _("Timeline Pedigree"),
-    category = ("Ancestry", _("Ancestry")),
-    description =  _("The view shows a timeline pedigree with ancestors and "
-                     "descendants of the selected person"),
-    version = '0.1.64',
-    gramps_target_version = "6.0",
-    status = STABLE,
-    fname = 'TimelinePedigreeView.py',
-    authors = ["Felix Heß"],
-    authors_email = ["xilef@nurfuerspam.de"],
-    viewclass = 'TimelinePedigreeView',
-    icons = [('gramps-timelinepedigree', _('Timeline Pedigree'))],
-    stock_icon = 'gramps-timelinepedigree',
-    )
+# ------------------------------------------------------------------------
+register(
+    VIEW,
+    id="TimelinePedigreeView",
+    name=_("Timeline Pedigree"),
+    category=("Ancestry", _("Ancestry")),
+    description=_(
+        "The view shows a timeline pedigree with ancestors and "
+        "descendants of the selected person"
+    ),
+    version="0.1.64",
+    gramps_target_version="6.0",
+    status=STABLE,
+    fname="TimelinePedigreeView.py",
+    authors=["Felix Heß"],
+    authors_email=["xilef@nurfuerspam.de"],
+    viewclass="TimelinePedigreeView",
+    icons=[("gramps-timelinepedigree", _("Timeline Pedigree"))],
+    stock_icon="gramps-timelinepedigree",
+    help_url="Addon:TimelinePedigreeView",
+)

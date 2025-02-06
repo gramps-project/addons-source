@@ -18,19 +18,20 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
-register(TOOL,
-         id = 'SetPrivacyTool',
-         name = _("Set Privacy Tool"),
-         description = _("Set all objects of the last <number> of years private."),
-         version = '1.0.17',
-         gramps_target_version = "6.0",
-         status = STABLE,
-         fname = 'SetPrivacyTool.py',
-         authors = ["Matthias Kemmer"],
-         authors_email = ["matt.familienforschung@gmail.com"],
-         category = TOOL_DBPROC,
-         toolclass = 'SetPrivacyWindow',
-         optionclass = 'SetPrivacyOptions',
-         tool_modes = [TOOL_MODE_GUI],
-         help_url="Addon:SetPrivacyTool",
-         )
+register(
+    TOOL,
+    id="SetPrivacyTool",
+    name=_("Set Privacy Tool"),
+    description=_("Set all objects of the last <number> of years private."),
+    version="1.0.17",
+    gramps_target_version="6.0",
+    status=STABLE,
+    fname="SetPrivacyTool.py",
+    authors=["Matthias Kemmer"],
+    authors_email=["matt.familienforschung@gmail.com"],
+    category=TOOL_DBPROC,
+    toolclass="SetPrivacyWindow",
+    optionclass="SetPrivacyOptions",
+    tool_modes=[TOOL_MODE_GUI],
+    help_url="Addon:SetPrivacyTool",
+)

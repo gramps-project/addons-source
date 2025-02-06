@@ -19,16 +19,20 @@
 #
 """X-chromosomal descendants of <person>."""
 
-register(RULE,
-  id = 'xchromdescendants',
-  name = _("X-chromosomal descendants of <person>"),
-  description = _("Matches descendants of <person> following a X-chromosomal inheritance pattern."),
-  version = '1.0.10',
-  authors = ["Matthias Kemmer"],
-  authors_email = ["matt.familienforschung@gmail.com"],
-  gramps_target_version = '6.0',
-  status = STABLE,
-  fname = "xchromdescendants.py",
-  ruleclass = 'XChromDescendants',  # must be rule class name
-  namespace = 'Person',  # one of the primary object classes
-  )
+register(
+    RULE,
+    id="xchromdescendants",
+    name=_("X-chromosomal descendants of <person>"),
+    description=_(
+        "Matches descendants of <person> following a X-chromosomal inheritance pattern."
+    ),
+    version="1.0.10",
+    authors=["Matthias Kemmer"],
+    authors_email=["matt.familienforschung@gmail.com"],
+    gramps_target_version="6.0",
+    status=STABLE,
+    fname="xchromdescendants.py",
+    ruleclass="XChromDescendants",  # must be rule class name
+    namespace="Person",  # one of the primary object classes
+    help_url="Addon:Rule_expansions#X-chromosomal_descendants_of_.3Cperson.3E",
+)

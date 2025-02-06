@@ -20,25 +20,26 @@
 
 # $Id: $
 
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # Extensions to the GEDCOM format (GED2)
 #
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 
-register(EXPORT,
-    id    = 'Export GEDCOM Extensions',
-    name  = _("Export GEDCOM Extensions (GED2)"),
-    name_accell  = _("GEDCOM Extensions (GED2)"),
-    description =  _("Extensions to the common GEDCOM format."),
-    version = '1.0.38',
-    gramps_target_version = "6.0",
-    status = STABLE,
-    audience = EXPERT,
-    fname = 'GedcomExtensions.py',
-    export_function = 'export_data',
-    export_options = 'GedcomWriterOptionBox',
-    export_options_title = _('GEDCOM Extensions options'),
-    extension = "ged2",
+register(
+    EXPORT,
+    id="Export GEDCOM Extensions",
+    name=_("Export GEDCOM Extensions (GED2)"),
+    name_accell=_("GEDCOM Extensions (GED2)"),
+    description=_("Extensions to the common GEDCOM format."),
+    version="1.0.38",
+    gramps_target_version="6.0",
+    status=STABLE,
+    audience=EXPERT,
+    fname="GedcomExtensions.py",
+    export_function="export_data",
+    export_options="GedcomWriterOptionBox",
+    export_options_title=_("GEDCOM Extensions options"),
+    extension="ged2",
+    help_url="Addon:GEDCOM_Extensions",
 )
-

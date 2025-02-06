@@ -20,20 +20,22 @@
 
 # $Id: GoogleEarthWriteKML.py.py 11946 2009-02-13 06:06:14Z ldnp $
 
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # Register map service
 #
-#------------------------------------------------------------------------
-register(MAPSERVICE,
-    id = 'GoogleEarth',
-    name = _('GoogleEarth'),
-    version = '1.0.51',
+# ------------------------------------------------------------------------
+register(
+    MAPSERVICE,
+    id="GoogleEarth",
+    name=_("GoogleEarth"),
+    version="1.0.51",
     gramps_target_version="6.0",
-    status = STABLE,
-    fname = 'GoogleEarthWriteKML.py',
-    description = _("Creates data file for GoogleEarth and opens it"),
-    mapservice = 'GoogleEarthService',
+    status=STABLE,
+    fname="GoogleEarthWriteKML.py",
+    description=_("Creates data file for GoogleEarth and opens it"),
+    mapservice="GoogleEarthService",
     authors=["Peter Landgren"],
     authors_email=["peter.talken@telia.com"],
-    )
+    help_url="Addon:MapService-GoogleEarth",
+)

@@ -19,17 +19,21 @@
 #
 """Matches descendants following mitochondrial inheritance patterns."""
 
-register(RULE,
-  id = 'mtinheritance',
-  name = _("Mitochondrial inheritance of <person>"),
-  description = _("Matches recorded descendants of person following "
-                  "mitochondrial inheritance patterns."),
-  version = '1.0.10',
-  authors = ["Matthias Kemmer"],
-  authors_email = ["matt.familienforschung@gmail.com"],
-  gramps_target_version = '6.0',
-  status = STABLE,
-  fname = "mtinheritance.py",
-  ruleclass = 'MtChromInheritance',  # must be rule class name
-  namespace = 'Person',  # one of the primary object classes
-  )
+register(
+    RULE,
+    id="mtinheritance",
+    name=_("Mitochondrial inheritance of <person>"),
+    description=_(
+        "Matches recorded descendants of person following "
+        "mitochondrial inheritance patterns."
+    ),
+    version="1.0.10",
+    authors=["Matthias Kemmer"],
+    authors_email=["matt.familienforschung@gmail.com"],
+    gramps_target_version="6.0",
+    status=STABLE,
+    fname="mtinheritance.py",
+    ruleclass="MtChromInheritance",  # must be rule class name
+    namespace="Person",  # one of the primary object classes
+    help_url="Addon:Rule_expansions#Patrilineal_progenitor_of_.3Cperson.3E",
+)

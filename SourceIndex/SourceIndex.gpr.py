@@ -18,92 +18,98 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
-register(TOOL,
-         id    = 'BirthIndex',
-         name  = _("BirthIndex"),
-         description =  _(""),
-         version = '0.0.36',
-         gramps_target_version = "6.0",
-         include_in_listing = False,
-         status = UNSTABLE, # not yet tested with python 3, toplevel + signals + managedwindow
-         fname = 'birth.py',
-         category = TOOL_UTILS,
-         toolclass = 'BirthIndex',
-         optionclass = 'BirthIndexOptions',
-         tool_modes = [TOOL_MODE_GUI]
-         )
+register(
+    TOOL,
+    id="BirthIndex",
+    name=_("BirthIndex"),
+    description=_(""),
+    version="0.0.36",
+    gramps_target_version="6.0",
+    include_in_listing=False,
+    status=UNSTABLE,  # not yet tested with python 3, toplevel + signals + managedwindow
+    fname="birth.py",
+    category=TOOL_UTILS,
+    toolclass="BirthIndex",
+    optionclass="BirthIndexOptions",
+    tool_modes=[TOOL_MODE_GUI],
+)
 
-register(TOOL,
-         id    = 'MarriageIndex',
-         name  = _("MarriageIndex"),
-         description =  _(""),
-         version = '0.0.34',
-         gramps_target_version = "6.0",
-         include_in_listing = False,
-         status = STABLE, # not yet tested with python 3,
-         fname = 'marriage.py',
-         category = TOOL_UTILS,
-         toolclass = 'MarriageIndex',
-         optionclass = 'MarriageIndexOptions',
-         tool_modes = [TOOL_MODE_GUI]
-         )
+register(
+    TOOL,
+    id="MarriageIndex",
+    name=_("MarriageIndex"),
+    description=_(""),
+    version="0.0.34",
+    gramps_target_version="6.0",
+    include_in_listing=False,
+    status=STABLE,  # not yet tested with python 3,
+    fname="marriage.py",
+    category=TOOL_UTILS,
+    toolclass="MarriageIndex",
+    optionclass="MarriageIndexOptions",
+    tool_modes=[TOOL_MODE_GUI],
+)
 
-register(TOOL,
-         id    = 'DeathIndex',
-         name  = _("DeathIndex"),
-         description =  _(""),
-         version = '0.0.34',
-         gramps_target_version = "6.0",
-         include_in_listing = False,
-         status = UNSTABLE, # not yet tested with python 3, toplevel + signals + managedwindow
-         fname = 'death.py',
-         category = TOOL_UTILS,
-         toolclass = 'DeathIndex',
-         optionclass = 'DeathIndexOptions',
-         tool_modes = [TOOL_MODE_GUI]
-         )
+register(
+    TOOL,
+    id="DeathIndex",
+    name=_("DeathIndex"),
+    description=_(""),
+    version="0.0.34",
+    gramps_target_version="6.0",
+    include_in_listing=False,
+    status=UNSTABLE,  # not yet tested with python 3, toplevel + signals + managedwindow
+    fname="death.py",
+    category=TOOL_UTILS,
+    toolclass="DeathIndex",
+    optionclass="DeathIndexOptions",
+    tool_modes=[TOOL_MODE_GUI],
+)
 
-register(TOOL,
-         id    = 'CensusIndex',
-         name  = _("CensusIndex"),
-         description =  _(""),
-         version = '0.0.34',
-         gramps_target_version = "6.0",
-         include_in_listing = False,
-         status = UNSTABLE, # not yet tested with python 3, toplevel + signals + managedwindow
-         fname = 'census.py',
-         category = TOOL_UTILS,
-         toolclass = 'CensusIndex',
-         optionclass = 'CensusIndexOptions',
-         tool_modes = [TOOL_MODE_GUI]
-         )
+register(
+    TOOL,
+    id="CensusIndex",
+    name=_("CensusIndex"),
+    description=_(""),
+    version="0.0.34",
+    gramps_target_version="6.0",
+    include_in_listing=False,
+    status=UNSTABLE,  # not yet tested with python 3, toplevel + signals + managedwindow
+    fname="census.py",
+    category=TOOL_UTILS,
+    toolclass="CensusIndex",
+    optionclass="CensusIndexOptions",
+    tool_modes=[TOOL_MODE_GUI],
+)
 
-register(TOOL,
-         id    = 'Witness',
-         name  = _("Witness"),
-         description =  _(""),
-         version = '0.0.34',
-         gramps_target_version = "6.0",
-         include_in_listing = False,
-         status = UNSTABLE, # not yet tested with python 3, toplevel + signals + managedwindow
-         fname = 'witness.py',
-         category = TOOL_UTILS,
-         toolclass = 'Witness',
-         optionclass = 'WitnessOptions',
-         tool_modes = [TOOL_MODE_GUI]
-         )
+register(
+    TOOL,
+    id="Witness",
+    name=_("Witness"),
+    description=_(""),
+    version="0.0.34",
+    gramps_target_version="6.0",
+    include_in_listing=False,
+    status=UNSTABLE,  # not yet tested with python 3, toplevel + signals + managedwindow
+    fname="witness.py",
+    category=TOOL_UTILS,
+    toolclass="Witness",
+    optionclass="WitnessOptions",
+    tool_modes=[TOOL_MODE_GUI],
+)
 
-register(TOOL,
-         id    = 'Index',
-         name  = _("SourceIndex"),
-         description =  _(""),
-         version = '0.0.38',
-         gramps_target_version = "6.0",
-         include_in_listing = False,
-         status = STABLE, # not yet tested with python 3, see feature 5552
-         fname = 'index.py',
-         category = TOOL_UTILS,
-         toolclass = 'Index',
-         optionclass = 'IndexOptions',
-         tool_modes = [TOOL_MODE_GUI]
-         )
+register(
+    TOOL,
+    id="Index",
+    name=_("SourceIndex"),
+    description=_(""),
+    version="0.0.38",
+    gramps_target_version="6.0",
+    include_in_listing=False,
+    status=STABLE,  # not yet tested with python 3, see feature 5552
+    fname="index.py",
+    category=TOOL_UTILS,
+    toolclass="Index",
+    optionclass="IndexOptions",
+    tool_modes=[TOOL_MODE_GUI],
+)

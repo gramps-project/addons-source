@@ -19,21 +19,24 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
-register(VIEW,
-         id='geotimelines',
-         name=_("TimeLines Map"),
-         description=_("A view showing all the places visited by a person or persons on various date."),
-         version = '1.0.3',
-         gramps_target_version='6.0',
-         status=BETA,
-         audience = EXPERT,
-         help_url="https://gramps.discourse.group/t/timelines-map-addon-beta-testing/6130",
-         fname='GeoTimeLines.py',
-         authors=["Thomas B"],
-         authors_email=[""],
-         category=("Geography", _("Geography")),
-         viewclass='GeoTimeLines',
-         icons = [('geo-timelines', _('TimeLines map'))],
-         stock_icon='geo-timelines',
-         requires_gi=[('OsmGpsMap', '1.0')],
-         )
+register(
+    VIEW,
+    id="geotimelines",
+    name=_("TimeLines Map"),
+    description=_(
+        "A view showing all the places visited by a person or persons on various date."
+    ),
+    version="1.0.3",
+    gramps_target_version="6.0",
+    status=BETA,
+    audience=EXPERT,
+    help_url="https://gramps.discourse.group/t/timelines-map-addon-beta-testing/6130",
+    fname="GeoTimeLines.py",
+    authors=["Thomas B"],
+    authors_email=[""],
+    category=("Geography", _("Geography")),
+    viewclass="GeoTimeLines",
+    icons=[("geo-timelines", _("TimeLines map"))],
+    stock_icon="geo-timelines",
+    requires_gi=[("OsmGpsMap", "1.0")],
+)

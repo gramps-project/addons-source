@@ -19,25 +19,29 @@
 #
 from gramps.gen.plug._pluginreg import newplugin, STABLE, RELCALC
 
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # Merge citations
 #
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 
 register(
     TOOL,
-    id = 'mediamerge',
-    name = _("Merge Media"),
-    description = _("Searches the entire database, looking for "
-                    "media that have the same path and merges them."),
-    version = '1.0.12',
-    gramps_target_version = '6.0',
-    status = STABLE,
-    fname = 'mediamerge.py',
-    authors = ["Paul Culley"],
-    authors_email = ["paulr2787@gmail.com"],
-    category = TOOL_DBPROC,
-    toolclass = 'MediaMerge',
-    optionclass = 'MediaMergeOptions',
-    tool_modes = [TOOL_MODE_GUI])
+    id="mediamerge",
+    name=_("Merge Media"),
+    description=_(
+        "Searches the entire database, looking for "
+        "media that have the same path and merges them."
+    ),
+    version="1.0.12",
+    gramps_target_version="6.0",
+    status=STABLE,
+    fname="mediamerge.py",
+    authors=["Paul Culley"],
+    authors_email=["paulr2787@gmail.com"],
+    category=TOOL_DBPROC,
+    toolclass="MediaMerge",
+    optionclass="MediaMergeOptions",
+    tool_modes=[TOOL_MODE_GUI],
+    help_url="Addon:MediaMerge",
+)

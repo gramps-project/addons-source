@@ -25,25 +25,29 @@
 GRAMPS registration file
 """
 
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # Fix Capitalization of Given Names
 #
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 
-register(TOOL,
-id    = 'chgivenname',
-name  = _("Fix Capitalization of Given Names"),
-description =  _("Searches the entire database and attempts to "
-                    "fix capitalization of the given names."),
-version = '1.0.38',
-gramps_target_version = "6.0",
-status = STABLE, # not yet tested with python 3
-fname = 'ChangeGivenNames.py',
-authors = ["Donald N. Allingham", "Doug Blank"],
-authors_email = ["don@gramps-project.org", "doug.blank@gmail.com"],
-category = TOOL_DBPROC,
-toolclass = 'ChangeGivenNames',
-optionclass = 'ChangeGivenNamesOptions',
-tool_modes = [TOOL_MODE_GUI]
-  )
+register(
+    TOOL,
+    id="chgivenname",
+    name=_("Fix Capitalization of Given Names"),
+    description=_(
+        "Searches the entire database and attempts to "
+        "fix capitalization of the given names."
+    ),
+    version="1.0.38",
+    gramps_target_version="6.0",
+    status=STABLE,  # not yet tested with python 3
+    fname="ChangeGivenNames.py",
+    authors=["Donald N. Allingham", "Doug Blank"],
+    authors_email=["don@gramps-project.org", "doug.blank@gmail.com"],
+    category=TOOL_DBPROC,
+    toolclass="ChangeGivenNames",
+    optionclass="ChangeGivenNamesOptions",
+    tool_modes=[TOOL_MODE_GUI],
+    help_url="Addon:Fix_Capitalization_of_Given_Names",
+)

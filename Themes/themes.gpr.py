@@ -18,22 +18,26 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #
 
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # Themes
 #
-#------------------------------------------------------------------------
-register(GENERAL,
-id    = 'ThemesPrefs',
-name  = _("Theme preferences"),
-description =  _("An addition to Preferences for simple Theme and Font"
-                 " adjustment.  Especially useful for Windows users."),
-version = '0.0.13',
-gramps_target_version = '6.0',
-fname = "themes_load.py",
-authors = ["Paul Culley"],
-authors_email = ["paulr2787@gmail.com"],
-category = TOOL_UTILS,
-load_on_reg = True,
-status = STABLE
-  )
+# ------------------------------------------------------------------------
+register(
+    GENERAL,
+    id="ThemesPrefs",
+    name=_("Theme preferences"),
+    description=_(
+        "An addition to Preferences for simple Theme and Font"
+        " adjustment.  Especially useful for Windows users."
+    ),
+    version="0.0.13",
+    gramps_target_version="6.0",
+    fname="themes_load.py",
+    authors=["Paul Culley"],
+    authors_email=["paulr2787@gmail.com"],
+    category=TOOL_UTILS,
+    load_on_reg=True,
+    status=STABLE,
+    help_url="Addon:ThemePreferences",
+)

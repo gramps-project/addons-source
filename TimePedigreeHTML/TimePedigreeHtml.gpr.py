@@ -1,4 +1,5 @@
 """ Options """
+
 #
 # Gramps - a GTK+/GNOME based genealogy program
 #
@@ -24,31 +25,40 @@
 # Version 0.0.2:
 # - register() instead of newplugin()
 
-from gramps.gen.plug._pluginreg import (newplugin, STABLE, REPORT,
-    CATEGORY_WEB, REPORT_MODE_GUI, REPORT_MODE_CLI)
+from gramps.gen.plug._pluginreg import (
+    newplugin,
+    STABLE,
+    REPORT,
+    CATEGORY_WEB,
+    REPORT_MODE_GUI,
+    REPORT_MODE_CLI,
+)
 
-MODULE_VERSION="6.0"
+MODULE_VERSION = "6.0"
 
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # for use with the Narrated Web Site
 #
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 
-register(REPORT,
-         id = 'TimePedigreeHTML',
-         name = _("Timeline Pedigree Report"),
-         description = _("Creates an HTML webpage that uses JavaScript to "
-            "show a pedigree block diagram arranged vertically by birth date"),
-         version = '0.0.8',
-         gramps_target_version = MODULE_VERSION,
-         status = STABLE,
-         fname = 'TimePedigreeHtml.py',
-         authors = ["Manuela Kugel"],
-         authors_email = ["gramps@ur-ahn.de"],
-         category = CATEGORY_WEB,
-         reportclass = 'TimePedigreeHtml',
-         optionclass = 'TimePedigreeHtmlOptions',
-         report_modes = [REPORT_MODE_GUI, REPORT_MODE_CLI],
-         help_url ='Addon:Timeline_Pedigree_Report'
+register(
+    REPORT,
+    id="TimePedigreeHTML",
+    name=_("Timeline Pedigree Report"),
+    description=_(
+        "Creates an HTML webpage that uses JavaScript to "
+        "show a pedigree block diagram arranged vertically by birth date"
+    ),
+    version="0.0.8",
+    gramps_target_version=MODULE_VERSION,
+    status=STABLE,
+    fname="TimePedigreeHtml.py",
+    authors=["Manuela Kugel"],
+    authors_email=["gramps@ur-ahn.de"],
+    category=CATEGORY_WEB,
+    reportclass="TimePedigreeHtml",
+    optionclass="TimePedigreeHtmlOptions",
+    report_modes=[REPORT_MODE_GUI, REPORT_MODE_CLI],
+    help_url="Addon:Timeline_Pedigree_Report",
 )

@@ -19,17 +19,21 @@
 #
 """Matches descendants of person following Y-chrom inheritance patterns."""
 
-register(RULE,
-  id = 'yinheritance',
-  name = _("Y-chromosomal inheritance of <person>"),
-  description = _("Matches recorded descendants of person following "
-                  "Y-chromosomal inheritance patterns."),
-  version = '1.0.10',
-  authors = ["Matthias Kemmer"],
-  authors_email = ["matt.familienforschung@gmail.com"],
-  gramps_target_version = '6.0',
-  status = STABLE,
-  fname = "yinheritance.py",
-  ruleclass = 'YChromInheritance',  # must be rule class name
-  namespace = 'Person',  # one of the primary object classes
-  )
+register(
+    RULE,
+    id="yinheritance",
+    name=_("Y-chromosomal inheritance of <person>"),
+    description=_(
+        "Matches recorded descendants of person following "
+        "Y-chromosomal inheritance patterns."
+    ),
+    version="1.0.10",
+    authors=["Matthias Kemmer"],
+    authors_email=["matt.familienforschung@gmail.com"],
+    gramps_target_version="6.0",
+    status=STABLE,
+    fname="yinheritance.py",
+    ruleclass="YChromInheritance",  # must be rule class name
+    namespace="Person",  # one of the primary object classes
+    help_url="Addon:Rule_expansions#Y-chromosomal_inheritance_of_.3Cperson.3E",
+)

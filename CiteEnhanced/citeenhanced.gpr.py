@@ -34,11 +34,12 @@ register(
     description=_(
         "An enhanced citation formatter that adds a repository and call number to the standard functionality."
     ),
-    version = '1.0.2',
+    version="1.0.2",
     gramps_target_version="6.0",
     status=BETA,
     audience=EXPERT,
     fname="citeenhanced.py",
     authors=["The Gramps project"],
     authors_email=["http://gramps-project.org"],
+    help_url="https://github.com/gramps-project/addons-source/blob/maintenance/gramps60/CiteEnhanced",
 )

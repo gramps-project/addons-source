@@ -20,25 +20,27 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 #
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # SourcesCitations Report
 #
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 
 register(
     REPORT,
-    id    = 'SourcesCitationsReport',
-    name  = _("Sources and Citations Report"),
-    description =  _("Provides a source and Citations Report with notes"),
-    version = '3.6.13',
-    gramps_target_version = '6.0',
-    status = STABLE,
-    fname = 'SourcesCitationsReport.py',
-    authors = ["Uli22"],
-    authors_email = ["hansulrich.frink@gmail.com"],
-    category = CATEGORY_TEXT,
-    reportclass = 'SourcesCitationsReport',
-    optionclass = 'SourcesCitationsOptions',
-    report_modes = [REPORT_MODE_GUI, REPORT_MODE_BKI, REPORT_MODE_CLI],
-    require_active = False)
+    id="SourcesCitationsReport",
+    name=_("Sources and Citations Report"),
+    description=_("Provides a source and Citations Report with notes"),
+    version="3.6.13",
+    gramps_target_version="6.0",
+    status=STABLE,
+    fname="SourcesCitationsReport.py",
+    authors=["Uli22"],
+    authors_email=["hansulrich.frink@gmail.com"],
+    category=CATEGORY_TEXT,
+    reportclass="SourcesCitationsReport",
+    optionclass="SourcesCitationsOptions",
+    report_modes=[REPORT_MODE_GUI, REPORT_MODE_BKI, REPORT_MODE_CLI],
+    require_active=False,
+    help_url="Addon:SourcesCitationsReport",
+)

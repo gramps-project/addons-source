@@ -19,16 +19,18 @@
 #
 
 """Filter rule which matches families that are matched by an event filter."""
-register(RULE,
-  id = 'familieswitheventfiltermatch',
-  name = _("Families matching <event filter>"),
-  description = _("Matches families that are matched by an event filter"),
-  version = '1.0.19',
-  authors = ["Matthias Kemmer"],
-  authors_email = ["matt.familienforschung@gmail.com"],
-  gramps_target_version = '6.0',
-  status = STABLE,
-  fname = "familieswitheventfiltermatch.py",
-  ruleclass = 'FamiliesWithEventFilterMatch',  # must be rule class name
-  namespace = 'Family',  # one of the primary object classes
-  )
+register(
+    RULE,
+    id="familieswitheventfiltermatch",
+    name=_("Families matching <event filter>"),
+    description=_("Matches families that are matched by an event filter"),
+    version="1.0.19",
+    authors=["Matthias Kemmer"],
+    authors_email=["matt.familienforschung@gmail.com"],
+    gramps_target_version="6.0",
+    status=STABLE,
+    fname="familieswitheventfiltermatch.py",
+    ruleclass="FamiliesWithEventFilterMatch",  # must be rule class name
+    namespace="Family",  # one of the primary object classes
+    help_url="Addon:Rule_expansions#Families_matching_.3Cevent_filter.3E",
+)

@@ -10,19 +10,21 @@
 #
 # $Id: $
 
-register(REPORT,
-	id = 'DynamicWeb',
-	name = _("Dynamic Web Report"),
-	description =  _("Produces dynamic web pages for the database"),
-	version = '0.0.98',
-	gramps_target_version = "6.0",
-	status = STABLE,
-	fname = 'dynamicweb.py',
-	category = CATEGORY_WEB,
-	reportclass = 'DynamicWebReport',
-	optionclass = 'DynamicWebOptions',
-	report_modes = [REPORT_MODE_GUI, REPORT_MODE_CLI],
-	authors = ['Pierre Bélissent'],
-	authors_email = ['pierre.belissent@gmail.com'],
-	require_active = True
+register(
+    REPORT,
+    id="DynamicWeb",
+    name=_("Dynamic Web Report"),
+    description=_("Produces dynamic web pages for the database"),
+    version="0.0.98",
+    gramps_target_version="6.0",
+    status=STABLE,
+    fname="dynamicweb.py",
+    category=CATEGORY_WEB,
+    reportclass="DynamicWebReport",
+    optionclass="DynamicWebOptions",
+    report_modes=[REPORT_MODE_GUI, REPORT_MODE_CLI],
+    authors=["Pierre Bélissent"],
+    authors_email=["pierre.belissent@gmail.com"],
+    require_active=True,
+    help_url="Addon:DynamicWeb_report",
 )

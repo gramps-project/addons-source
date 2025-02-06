@@ -25,19 +25,23 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 #
-register(REPORT,
-        id = 'LinesOfDescendency',
-        name = _('Lines of Descendency Report'),
-        description = _('Prints out all descendency lines '
-            'from a given ancestor to a given descendent in text.'),
-        version = '1.1.37',
-        gramps_target_version = "6.0",
-        status = STABLE, # not yet tested with python 3
-        fname = 'lines-of-descendency.py',
-        authors = ['lcc'],
-        authors_email = ['lcc.mailaddress@gmail.com'],
-        category = CATEGORY_TEXT,
-        reportclass = 'LinesOfDescendency',
-        optionclass = 'LODOptions',
-        report_modes = [REPORT_MODE_GUI, REPORT_MODE_CLI]
-        )
+register(
+    REPORT,
+    id="LinesOfDescendency",
+    name=_("Lines of Descendency Report"),
+    description=_(
+        "Prints out all descendency lines "
+        "from a given ancestor to a given descendent in text."
+    ),
+    version="1.1.37",
+    gramps_target_version="6.0",
+    status=STABLE,  # not yet tested with python 3
+    fname="lines-of-descendency.py",
+    authors=["lcc"],
+    authors_email=["lcc.mailaddress@gmail.com"],
+    category=CATEGORY_TEXT,
+    reportclass="LinesOfDescendency",
+    optionclass="LODOptions",
+    report_modes=[REPORT_MODE_GUI, REPORT_MODE_CLI],
+    help_url="Addon:Lines_of_Descendency_Report",
+)

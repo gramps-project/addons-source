@@ -22,25 +22,26 @@
 Gramps registration file
 """
 
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # Extract Place Data from a Place Title
 #
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 
-register(TOOL,
-id    = 'excity',
-name  = _("Extract Place Data from a Place Title"),
-description =  _("Attempts to extract city and state/province "
-                 "from a place title"),
-version = '1.0.15',
-gramps_target_version = "6.0",
-status = STABLE,
-fname = 'extractcity.py',
-authors = ["Donald N. Allingham"],
-authors_email = ["don@gramps-project.org"],
-category = TOOL_DBPROC,
-toolclass = 'ExtractCity',
-optionclass = 'ExtractCityOptions',
-tool_modes = [TOOL_MODE_GUI]
-  )
+register(
+    TOOL,
+    id="excity",
+    name=_("Extract Place Data from a Place Title"),
+    description=_("Attempts to extract city and state/province " "from a place title"),
+    version="1.0.15",
+    gramps_target_version="6.0",
+    status=STABLE,
+    fname="extractcity.py",
+    authors=["Donald N. Allingham"],
+    authors_email=["don@gramps-project.org"],
+    category=TOOL_DBPROC,
+    toolclass="ExtractCity",
+    optionclass="ExtractCityOptions",
+    tool_modes=[TOOL_MODE_GUI],
+    help_url="Addon:Extract_Place_Data_from_a_Place_Title",
+)

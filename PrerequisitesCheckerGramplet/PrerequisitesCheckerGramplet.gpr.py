@@ -23,17 +23,18 @@
 #
 # ------------------------------------------------------------------------
 
-register(GRAMPLET,
-         id="Prerequisites Checker Gramplet",
-         name=_("Prerequisites Checker"),
-         description=_("Prerequisites Checker Gramplet"),
-         version = '1.2.6',
-         gramps_target_version='6.0',
-         status=STABLE,
-         fname="PrerequisitesCheckerGramplet.py",
-         height=300,
-         gramplet='PrerequisitesCheckerGramplet',
-         gramplet_title=_("Prerequisites Checker"),
-         help_url="Addon:Prerequisites_Checker_Gramplet",
-         navtypes=["Dashboard"],
-         )
+register(
+    GRAMPLET,
+    id="Prerequisites Checker Gramplet",
+    name=_("Prerequisites Checker"),
+    description=_("Prerequisites Checker Gramplet"),
+    version="1.2.6",
+    gramps_target_version="6.0",
+    status=STABLE,
+    fname="PrerequisitesCheckerGramplet.py",
+    height=300,
+    gramplet="PrerequisitesCheckerGramplet",
+    gramplet_title=_("Prerequisites Checker"),
+    help_url="Addon:Prerequisites_Checker_Gramplet",
+    navtypes=["Dashboard"],
+)

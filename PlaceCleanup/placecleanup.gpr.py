@@ -24,24 +24,26 @@ Place Cleanup Gramplet.
 
 register(
     GRAMPLET,
-    id = "PlaceCleanup",
-    name = _("Place Cleanup"),
-    description = _("Place Cleanup Gramplet assists in merging places, as"
-                    " well as completing places from the GeoNames web"
-                    " database"),
-    authors = ["Paul R. Culley"],
-    authors_email = ["paulr2787@gmail.com"],
-    status = STABLE,
-    version = '1.0.22',
-    gramps_target_version = '6.0',
-    fname = "placecleanup.py",
-    gramplet = 'PlaceCleanup',
+    id="PlaceCleanup",
+    name=_("Place Cleanup"),
+    description=_(
+        "Place Cleanup Gramplet assists in merging places, as"
+        " well as completing places from the GeoNames web"
+        " database"
+    ),
+    authors=["Paul R. Culley"],
+    authors_email=["paulr2787@gmail.com"],
+    status=STABLE,
+    version="1.0.22",
+    gramps_target_version="6.0",
+    fname="placecleanup.py",
+    gramplet="PlaceCleanup",
     navtypes=["Place"],
-    height = 375,
-    detached_width = 510,
-    detached_height = 480,
-    expand = True,
-    gramplet_title = _("Place Cleanup"),
+    height=375,
+    detached_width=510,
+    detached_height=480,
+    expand=True,
+    gramplet_title=_("Place Cleanup"),
     help_url="Addon:PlaceCleanup",
-    include_in_listing = True,
-    )
+    include_in_listing=True,
+)

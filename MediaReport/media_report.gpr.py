@@ -18,19 +18,20 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
 
-register(REPORT,
-         id = 'MediaReport',
-         name = _("Media Report"),
-         description = _("Generates report including images, image data"
-                         " and notes."),
-         version = '1.1.13',
-         gramps_target_version = "6.0",
-         status = STABLE,
-         fname = "media_report.py",
-         authors = ["Matthias Kemmer"],
-         authors_email = ["matt.familienforschung@gmail.com"],
-         category = CATEGORY_TEXT,
-         reportclass = 'MediaReport',
-         optionclass = 'ReportOptions',
-         report_modes = [REPORT_MODE_CLI, REPORT_MODE_GUI],
-         )
+register(
+    REPORT,
+    id="MediaReport",
+    name=_("Media Report"),
+    description=_("Generates report including images, image data" " and notes."),
+    version="1.1.13",
+    gramps_target_version="6.0",
+    status=STABLE,
+    fname="media_report.py",
+    authors=["Matthias Kemmer"],
+    authors_email=["matt.familienforschung@gmail.com"],
+    category=CATEGORY_TEXT,
+    reportclass="MediaReport",
+    optionclass="ReportOptions",
+    report_modes=[REPORT_MODE_CLI, REPORT_MODE_GUI],
+    help_url="Addon:MediaReport",
+)

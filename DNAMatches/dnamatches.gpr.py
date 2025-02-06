@@ -21,22 +21,23 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 #
-register(GRAMPLET,
-         id = "DNAMatches",
-         name = _("DNA Matches"),
-         authors = ["Milan Kurovsky"],
-         authors_email = ["gxm210@gmail.com"],
-         description = _("Gramplet to display a list of DNA matches"),
-         status = STABLE,
-         fname="dnamatches.py",
-         height=100,
-         expand=True,
-         gramplet = 'DNAMatches',
-         gramplet_title=_("DNA Matches"),
-         detached_width = 600,
-         detached_height = 450,
-         version = '2.0.2',
-         gramps_target_version='6.0',
-         help_url="Addon:DNAMatches",
-         include_in_listing = True
-         )
+register(
+    GRAMPLET,
+    id="DNAMatches",
+    name=_("DNA Matches"),
+    authors=["Milan Kurovsky"],
+    authors_email=["gxm210@gmail.com"],
+    description=_("Gramplet to display a list of DNA matches"),
+    status=STABLE,
+    fname="dnamatches.py",
+    height=100,
+    expand=True,
+    gramplet="DNAMatches",
+    gramplet_title=_("DNA Matches"),
+    detached_width=600,
+    detached_height=450,
+    version="2.0.2",
+    gramps_target_version="6.0",
+    help_url="Addon:DNAMatches",
+    include_in_listing=True,
+)

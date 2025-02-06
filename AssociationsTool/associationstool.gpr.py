@@ -22,29 +22,29 @@
 Gramps registration file
 """
 
-MODULE_VERSION="6.0"
+MODULE_VERSION = "6.0"
 
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 #
 # Association State
 #
-#------------------------------------------------------------------------
+# ------------------------------------------------------------------------
 
-register(TOOL,
-id    = 'associationstool',
-name  = _("Check Associations data"),
-description =  _("Will check the data on Association for people."),
-version = '1.1.13',
-gramps_target_version = MODULE_VERSION,
-include_in_listing = True,
-status = STABLE,
-fname = 'associationstool.py',
-authors = ["Jerome Rapinat"],
-authors_email = ["romjerome@yahoo.fr"],
-category = TOOL_UTILS,
-toolclass = 'AssociationsTool',
-optionclass = 'AssociationsToolOptions',
-tool_modes = [TOOL_MODE_GUI, TOOL_MODE_CLI]
-  )
-
-
+register(
+    TOOL,
+    id="associationstool",
+    name=_("Check Associations data"),
+    description=_("Will check the data on Association for people."),
+    version="1.1.13",
+    gramps_target_version=MODULE_VERSION,
+    include_in_listing=True,
+    status=STABLE,
+    fname="associationstool.py",
+    authors=["Jerome Rapinat"],
+    authors_email=["romjerome@yahoo.fr"],
+    category=TOOL_UTILS,
+    toolclass="AssociationsTool",
+    optionclass="AssociationsToolOptions",
+    tool_modes=[TOOL_MODE_GUI, TOOL_MODE_CLI],
+    help_url="Addon:Check_Associations",
+)
