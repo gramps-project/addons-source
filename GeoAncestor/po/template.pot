@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 11:50-0500\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,15 +17,15 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: GeoAncestor/GeoAncestor.gpr.py:30 GeoAncestor/GeoAncestor.gpr.py:40
+#: GeoAncestor/GeoAncestor.gpr.py:31 GeoAncestor/GeoAncestor.gpr.py:41
 msgid "Ancestors map"
 msgstr ""
 
-#: GeoAncestor/GeoAncestor.gpr.py:31
+#: GeoAncestor/GeoAncestor.gpr.py:32
 msgid "A view showing ancestors places on the map."
 msgstr ""
 
-#: GeoAncestor/GeoAncestor.gpr.py:38
+#: GeoAncestor/GeoAncestor.gpr.py:39
 msgid "Geography"
 msgstr ""
 

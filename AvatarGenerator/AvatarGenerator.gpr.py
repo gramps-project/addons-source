@@ -23,7 +23,7 @@ register(
     id="AvatarGenerator",
     name=_("Avatar Generator Tool"),
     description=_("A tool to add avatar pictures to your family tree"),
-    version="1.0.16",
+    version = '1.0.17',
     gramps_target_version="6.0",
     status=STABLE,
     fname="AvatarGenerator.py",

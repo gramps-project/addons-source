@@ -23,7 +23,7 @@ register(
     id="PhpGedView",
     name=_("PhpGedView"),
     description=_("Download a GEDCOM file from a phpGedView server."),
-    version="0.0.14",
+    version = '0.0.15',
     gramps_target_version="6.0",
     include_in_listing=False,
     status=UNSTABLE,

@@ -34,7 +34,7 @@ register(
     description=_(
         "An enhanced citation formatter that adds a repository and call number to the standard functionality."
     ),
-    version="1.0.2",
+    version = '1.0.3',
     gramps_target_version="6.0",
     status=BETA,
     audience=EXPERT,

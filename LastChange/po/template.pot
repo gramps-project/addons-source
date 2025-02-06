@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-21 08:49+1100\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,24 +17,24 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: LastChange/LastChange.gpr.py:24
+#: LastChange/LastChange.gpr.py:25
 msgid "Last Change"
 msgstr ""
 
-#: LastChange/LastChange.gpr.py:25
+#: LastChange/LastChange.gpr.py:26
 msgid "List the last ten person records that have been changed"
 msgstr ""
 
-#: LastChange/LastChange.gpr.py:34
+#: LastChange/LastChange.gpr.py:35
 msgid "Latest Changes"
 msgstr ""
 
-#: LastChange/LastChange.gpr.py:40 LastChange/LastChangeReport.py:74
+#: LastChange/LastChange.gpr.py:42 LastChange/LastChangeReport.py:74
 #: LastChange/LastChangeReport.py:113
 msgid "Last Change Report"
 msgstr ""
 
-#: LastChange/LastChange.gpr.py:41
+#: LastChange/LastChange.gpr.py:43
 msgid "Report of the last records that have been changed"
 msgstr ""
 

@@ -36,7 +36,7 @@ register(
         "The view shows a timeline pedigree with ancestors and "
         "descendants of the selected person"
     ),
-    version="0.1.64",
+    version = '0.1.65',
     gramps_target_version="6.0",
     status=STABLE,
     fname="TimelinePedigreeView.py",

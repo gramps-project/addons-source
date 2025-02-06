@@ -13,7 +13,7 @@ register(
     gramplet_title=_("Deep Connections"),
     detached_width=510,
     detached_height=480,
-    version="1.0.43",
+    version = '1.0.44',
     gramps_target_version="6.0",
     help_url="Deep_Connections_Gramplet",
     navtypes=["Person"],

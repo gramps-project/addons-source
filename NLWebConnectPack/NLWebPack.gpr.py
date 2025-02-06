@@ -13,7 +13,7 @@ register(
         "Collection of Web sites for the Netherlands (requires libwebconnect)"
     ),
     status=STABLE,
-    version="1.0.7",
+    version = '1.0.8',
     gramps_target_version="6.0",
     fname="NLWebPack.py",
     load_on_reg=True,

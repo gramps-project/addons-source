@@ -35,7 +35,7 @@ register(
         "as a Collapsible Indented Tree Layout from the D3.js "
         "JavaScript library."
     ),
-    version="1.0.34",
+    version = '1.0.35',
     gramps_target_version="6.0",
     help_url="Addon:D3_Ancestral_and_Descendant_Charts#Descendant_Indented_Tree",
 )

@@ -1,0 +1,135 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: FamilyTreeDNA/ftdna_import.gpr.py:4
+msgid "FamilyTree DNA"
+msgstr ""
+
+#: FamilyTreeDNA/ftdna_import.gpr.py:5
+msgid "Tool to import FamilyFinder DNA data from Family Tree"
+msgstr ""
+
+#: FamilyTreeDNA/ftdna_import.py:75
+msgid "Family Finder Tool"
+msgstr ""
+
+#: FamilyTreeDNA/ftdna_import.py:104
+msgid "Enter FTDNA Family Finder Filename:"
+msgstr ""
+
+#: FamilyTreeDNA/ftdna_import.py:109
+msgid "Enter FTDNA Chromosome Segment Filename:"
+msgstr ""
+
+#: FamilyTreeDNA/ftdna_import.py:112
+msgid "Import Haplogroups"
+msgstr ""
+
+#: FamilyTreeDNA/ftdna_import.py:128
+msgid "FTDNA Note string :"
+msgstr ""
+
+#: FamilyTreeDNA/ftdna_import.py:137
+msgid "Shared Citation ID :"
+msgstr ""
+
+#: FamilyTreeDNA/ftdna_import.py:151
+msgid "Active Person : "
+msgstr ""
+
+#: FamilyTreeDNA/ftdna_import.py:164
+msgid "Import"
+msgstr ""
+
+#: FamilyTreeDNA/ftdna_import.py:165
+msgid "Import data from Family Finder files"
+msgstr ""
+
+#: FamilyTreeDNA/ftdna_import.py:168
+msgid "Close"
+msgstr ""
+
+#: FamilyTreeDNA/ftdna_import.py:169
+msgid "Close the Family Finder Tool"
+msgstr ""
+
+#: FamilyTreeDNA/ftdna_import.py:172
+msgid "Help"
+msgstr ""
+
+#: FamilyTreeDNA/ftdna_import.py:173
+msgid "Read Help manual"
+msgstr ""
+
+#: FamilyTreeDNA/ftdna_import.py:223 FamilyTreeDNA/ftdna_import.py:227
+#: FamilyTreeDNA/ftdna_import.py:231 FamilyTreeDNA/ftdna_import.py:235
+msgid "FamilyTree DNA Import"
+msgstr ""
+
+#: FamilyTreeDNA/ftdna_import.py:224
+msgid ""
+"{} Associations with DNA data created. {} haplogroup Attributes created \n"
+msgstr ""
+
+#: FamilyTreeDNA/ftdna_import.py:228
+msgid "No Family Finder File specified"
+msgstr ""
+
+#: FamilyTreeDNA/ftdna_import.py:232
+msgid "No Segment File specified"
+msgstr ""
+
+#: FamilyTreeDNA/ftdna_import.py:236
+msgid "No Associations found in FTdna Notes. No haplogroup Attributes created."
+msgstr ""
+
+#: FamilyTreeDNA/ftdna_import.py:307
+#, python-format
+msgid "Add %s haplogroup attribute"
+msgstr ""
+
+#: FamilyTreeDNA/ftdna_import.py:350
+#, python-format
+msgid "Add %s DNA Association"
+msgstr ""
+
+#: FamilyTreeDNA/ftdna_import.py:367
+#, python-format
+msgid "Create Note for %s DNA Association"
+msgstr ""
+
+#: FamilyTreeDNA/ftdna_import.py:369
+#, python-format
+msgid "Add Note to %s DNA Association"
+msgstr ""
+
+#: FamilyTreeDNA/ftdna_import.py:385
+#, python-format
+msgid "Create Source Citation for %s DNA Association"
+msgstr ""
+
+#: FamilyTreeDNA/ftdna_import.py:390
+#, python-format
+msgid "Create Citation for %s DNA Association"
+msgstr ""
+
+#: FamilyTreeDNA/ftdna_import.py:394
+#, python-format
+msgid "Add Citation to %s DNA Association"
+msgstr ""

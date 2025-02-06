@@ -8,7 +8,7 @@ register(
     description=_(
         "A configurable program that shows you the connected events from your family tree that match today's day and month."
     ),
-    version="1.0.11",
+    version = '1.0.12',
     fname="ThisDayInFamilyHistory.py",
     authors="Stephen Adams",
     gramplet="ThisDayInFamilyHistory",

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-03 10:05-0500\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,8 +17,8 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: FilterRules/activepersonrule.gpr.py:26
 #: FilterRules/activepersonrule.gpr.py:27
+#: FilterRules/activepersonrule.gpr.py:28
 msgid "The active Person"
 msgstr ""
 
@@ -37,12 +37,12 @@ msgstr ""
 msgid "Matches the active person"
 msgstr ""
 
-#: FilterRules/ageatdeath.gpr.py:24 FilterRules/ageatdeath.py:72
+#: FilterRules/ageatdeath.gpr.py:25 FilterRules/ageatdeath.py:72
 #: FilterRules/ageatdeath.py:74
 msgid "Filter people by their age at death"
 msgstr ""
 
-#: FilterRules/ageatdeath.gpr.py:25
+#: FilterRules/ageatdeath.gpr.py:26
 msgid "Filter rule that matches people by their age at death"
 msgstr ""
 
@@ -66,12 +66,12 @@ msgstr ""
 msgid "Filter name:"
 msgstr ""
 
-#: FilterRules/degreesofseparation.gpr.py:24
+#: FilterRules/degreesofseparation.gpr.py:25
 #: FilterRules/degreesofseparation.py:60
 msgid "People separated less than <N> degrees of <person>"
 msgstr ""
 
-#: FilterRules/degreesofseparation.gpr.py:25
+#: FilterRules/degreesofseparation.gpr.py:26
 #: FilterRules/degreesofseparation.py:62
 msgid "Filter rule that matches relatives by degrees of separation"
 msgstr ""
@@ -93,12 +93,12 @@ msgstr ""
 msgid "Relationship filters"
 msgstr ""
 
-#: FilterRules/familieswitheventfiltermatch.gpr.py:24
+#: FilterRules/familieswitheventfiltermatch.gpr.py:25
 #: FilterRules/familieswitheventfiltermatch.py:45
 msgid "Families matching <event filter>"
 msgstr ""
 
-#: FilterRules/familieswitheventfiltermatch.gpr.py:25
+#: FilterRules/familieswitheventfiltermatch.gpr.py:26
 msgid "Matches families that are matched by an event filter"
 msgstr ""
 
@@ -115,19 +115,19 @@ msgstr ""
 msgid "Matches families matched by an event filter"
 msgstr ""
 
-#: FilterRules/hasrolerule.gpr.py:26
+#: FilterRules/hasrolerule.gpr.py:27
 msgid "People with events with a selected role"
 msgstr ""
 
-#: FilterRules/hasrolerule.gpr.py:27 FilterRules/hasrolerule.py:69
+#: FilterRules/hasrolerule.gpr.py:28 FilterRules/hasrolerule.py:69
 msgid "Matches people with an event with a selected role"
 msgstr ""
 
-#: FilterRules/hasrolerule.gpr.py:40
+#: FilterRules/hasrolerule.gpr.py:43
 msgid "Families with events with a selected role"
 msgstr ""
 
-#: FilterRules/hasrolerule.gpr.py:41 FilterRules/hasrolerule.py:93
+#: FilterRules/hasrolerule.gpr.py:44 FilterRules/hasrolerule.py:93
 msgid "Matches families with an event with a selected role"
 msgstr ""
 
@@ -155,11 +155,11 @@ msgstr ""
 msgid "Families with events with the <role>"
 msgstr ""
 
-#: FilterRules/hassourcefilter.gpr.py:27
+#: FilterRules/hassourcefilter.gpr.py:28
 msgid "Source matching parameters"
 msgstr ""
 
-#: FilterRules/hassourcefilter.gpr.py:28
+#: FilterRules/hassourcefilter.gpr.py:29
 msgid "Matches Sources with values containing the chosen parameters"
 msgstr ""
 
@@ -187,7 +187,7 @@ msgstr ""
 msgid "Matches sources with a particular value"
 msgstr ""
 
-#: FilterRules/infamilyrule.gpr.py:25 FilterRules/infamilyrule.gpr.py:26
+#: FilterRules/infamilyrule.gpr.py:26 FilterRules/infamilyrule.gpr.py:27
 #: FilterRules/infamilyrule.py:125 FilterRules/infamilyrule.py:126
 msgid "People who are part of families matching <filter>"
 msgstr ""
@@ -212,19 +212,19 @@ msgstr ""
 msgid "Family Filter name:"
 msgstr ""
 
-#: FilterRules/isfamilyfiltermatchevent.gpr.py:24
 #: FilterRules/isfamilyfiltermatchevent.gpr.py:25
+#: FilterRules/isfamilyfiltermatchevent.gpr.py:26
 #: FilterRules/isfamilyfiltermatchevent.py:63
 #: FilterRules/isfamilyfiltermatchevent.py:64
 msgid "Events of families matching a <family filter>"
 msgstr ""
 
-#: FilterRules/isrelatedwithfiltermatch.gpr.py:26
+#: FilterRules/isrelatedwithfiltermatch.gpr.py:27
 #: FilterRules/isrelatedwithfiltermatch.py:53
 msgid "People related to <filter>"
 msgstr ""
 
-#: FilterRules/isrelatedwithfiltermatch.gpr.py:27
+#: FilterRules/isrelatedwithfiltermatch.gpr.py:29
 #: FilterRules/isrelatedwithfiltermatch.py:55
 msgid "Matches people who are related to anybody matched by a person filter"
 msgstr ""
@@ -233,7 +233,7 @@ msgstr ""
 msgid "Retrieving all sub-filter matches"
 msgstr ""
 
-#: FilterRules/multipleparents.gpr.py:26 FilterRules/multipleparents.gpr.py:27
+#: FilterRules/multipleparents.gpr.py:27 FilterRules/multipleparents.gpr.py:28
 msgid "Multiple Parents Filter"
 msgstr ""
 
@@ -249,11 +249,11 @@ msgstr ""
 msgid "Family filters"
 msgstr ""
 
-#: FilterRules/peopleeventscount.gpr.py:24 FilterRules/peopleeventscount.py:50
+#: FilterRules/peopleeventscount.gpr.py:25 FilterRules/peopleeventscount.py:50
 msgid "People with <count> of <event>"
 msgstr ""
 
-#: FilterRules/peopleeventscount.gpr.py:25 FilterRules/peopleeventscount.py:52
+#: FilterRules/peopleeventscount.gpr.py:26 FilterRules/peopleeventscount.py:52
 msgid "Matches persons which have events of given type and number."
 msgstr ""
 

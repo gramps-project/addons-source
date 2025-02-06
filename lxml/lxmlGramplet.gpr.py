@@ -10,7 +10,7 @@ register(
     name=_("lxml"),
     description=_("Gramplet for testing lxml and XSLT"),
     status=STABLE,
-    version="1.0.20",
+    version = '1.0.21',
     gramps_target_version="6.0",
     include_in_listing=False,
     height=300,

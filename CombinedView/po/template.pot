@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-24 14:13-0700\n"
+"POT-Creation-Date: 2025-02-06 08:57-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -52,15 +52,15 @@ msgstr ""
 msgid "%(abbrev)s %(date)s%(place)s"
 msgstr ""
 
-#: CombinedView/combinedview.gpr.py:23 CombinedView/combinedview.py:87
+#: CombinedView/combinedview.gpr.py:24 CombinedView/combinedview.py:87
 msgid "Combined"
 msgstr ""
 
-#: CombinedView/combinedview.gpr.py:24
+#: CombinedView/combinedview.gpr.py:25
 msgid "A view showing relationships and events for a person"
 msgstr ""
 
-#: CombinedView/combinedview.gpr.py:31 CombinedView/combinedview.py:650
+#: CombinedView/combinedview.gpr.py:32 CombinedView/combinedview.py:650
 #: CombinedView/personpage.py:244
 msgid "Relationships"
 msgstr ""

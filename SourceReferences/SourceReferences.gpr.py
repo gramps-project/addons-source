@@ -31,7 +31,7 @@ register(
     id="Source References",
     name=_("Source References"),
     description=_("Gramplet showing the references for a source"),
-    version="1.0.20",
+    version = '1.0.21',
     gramps_target_version="6.0",
     include_in_listing=False,
     status=UNSTABLE,

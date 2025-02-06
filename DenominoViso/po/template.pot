@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-06 09:28-0500\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: DenominoViso/DenominoViso.gpr.py:8
+#: DenominoViso/DenominoViso.gpr.py:9
 msgid "DenominoViso"
 msgstr ""
 
-#: DenominoViso/DenominoViso.gpr.py:17
+#: DenominoViso/DenominoViso.gpr.py:19
 msgid ""
 "Generates a web (HTML) page with a graphical representation of ancestors/"
 "descendants (SVG) where details about individuals become visible upon mouse-"
@@ -32,13 +32,11 @@ msgstr ""
 msgid "No Source"
 msgstr ""
 
-#: DenominoViso/DenominoViso.py:203
-#: DenominoViso/DenominoViso.py:3020
+#: DenominoViso/DenominoViso.py:203 DenominoViso/DenominoViso.py:3020
 msgid "onclick"
 msgstr ""
 
-#: DenominoViso/DenominoViso.py:204
-#: DenominoViso/DenominoViso.py:3021
+#: DenominoViso/DenominoViso.py:204 DenominoViso/DenominoViso.py:3021
 msgid "onmouseover"
 msgstr ""
 

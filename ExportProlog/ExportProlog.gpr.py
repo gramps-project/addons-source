@@ -5,7 +5,7 @@ register(
     description=_(
         "Exports data into a Prolog fact format.  " "Data is in Unicode (utf-8)"
     ),
-    version="1.0.19",
+    version = '1.0.20',
     gramps_target_version="6.0",
     status=STABLE,
     fname="ExportProlog.py",

@@ -33,7 +33,7 @@ register(
         "Prints out all descendency lines "
         "from a given ancestor to a given descendent in text."
     ),
-    version="1.1.37",
+    version = '1.1.38',
     gramps_target_version="6.0",
     status=STABLE,  # not yet tested with python 3
     fname="lines-of-descendency.py",

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-06 11:31-0700\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,21 +17,21 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: GeoTimeLines/GeoTimeLines.gpr.py:24 GeoTimeLines/GeoTimeLines.py:233
+#: GeoTimeLines/GeoTimeLines.gpr.py:25 GeoTimeLines/GeoTimeLines.py:233
 #: GeoTimeLines/GeoTimeLines.py:339
 msgid "TimeLines Map"
 msgstr ""
 
-#: GeoTimeLines/GeoTimeLines.gpr.py:25
+#: GeoTimeLines/GeoTimeLines.gpr.py:27
 msgid ""
 "A view showing all the places visited by a person or persons on various date."
 msgstr ""
 
-#: GeoTimeLines/GeoTimeLines.gpr.py:34
+#: GeoTimeLines/GeoTimeLines.gpr.py:37
 msgid "Geography"
 msgstr ""
 
-#: GeoTimeLines/GeoTimeLines.gpr.py:36
+#: GeoTimeLines/GeoTimeLines.gpr.py:39
 msgid "TimeLines map"
 msgstr ""
 

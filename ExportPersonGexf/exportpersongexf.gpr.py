@@ -30,7 +30,7 @@ register(
     name=_("Person GEXF"),
     name_accell=_("_Person GEXF"),
     description=_("GEXF is used in many network graph applications."),
-    version="1.0.2",
+    version = '1.0.3',
     gramps_target_version="6.0",
     status=BETA,
     audience=EXPERT,

@@ -37,7 +37,7 @@ register(
         "The view shows a space-efficient pedigree with "
         "ancestors of the selected person"
     ),
-    version="0.0.33",
+    version = '0.0.34',
     gramps_target_version="6.0",
     status=STABLE,
     fname="HtreePedigreeView.py",

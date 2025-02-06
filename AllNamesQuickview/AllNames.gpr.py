@@ -3,7 +3,7 @@ register(
     id="allnames",
     name=_("All Names of All People"),
     description=_("Display all names of all people"),
-    version="1.0.33",
+    version = '1.0.34',
     gramps_target_version="6.0",
     status=STABLE,
     fname="AllNames.py",

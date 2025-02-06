@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-09 11:33-0500\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -234,19 +234,19 @@ msgstr ""
 msgid "The style used for the spouse level %d display."
 msgstr ""
 
-#: DescendantBooks/DescendantBooks.gpr.py:21
+#: DescendantBooks/DescendantBooks.gpr.py:22
 msgid "Descendant Book"
 msgstr ""
 
-#: DescendantBooks/DescendantBooks.gpr.py:22
+#: DescendantBooks/DescendantBooks.gpr.py:23
 msgid "Produces one or more descendant reports based on a supplied query."
 msgstr ""
 
-#: DescendantBooks/DescendantBooks.gpr.py:38
+#: DescendantBooks/DescendantBooks.gpr.py:41
 msgid "Detailed Descendant Book"
 msgstr ""
 
-#: DescendantBooks/DescendantBooks.gpr.py:39
+#: DescendantBooks/DescendantBooks.gpr.py:43
 msgid ""
 "Produces one or more detailed descendant reports based on a supplied query."
 msgstr ""

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-24 14:14-0700\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,27 +17,27 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: SourceIndex/SourceIndex.gpr.py:23
+#: SourceIndex/SourceIndex.gpr.py:24
 msgid "BirthIndex"
 msgstr ""
 
-#: SourceIndex/SourceIndex.gpr.py:38
+#: SourceIndex/SourceIndex.gpr.py:40
 msgid "MarriageIndex"
 msgstr ""
 
-#: SourceIndex/SourceIndex.gpr.py:53
+#: SourceIndex/SourceIndex.gpr.py:56
 msgid "DeathIndex"
 msgstr ""
 
-#: SourceIndex/SourceIndex.gpr.py:68
+#: SourceIndex/SourceIndex.gpr.py:72
 msgid "CensusIndex"
 msgstr ""
 
-#: SourceIndex/SourceIndex.gpr.py:83
+#: SourceIndex/SourceIndex.gpr.py:88
 msgid "Witness"
 msgstr ""
 
-#: SourceIndex/SourceIndex.gpr.py:98
+#: SourceIndex/SourceIndex.gpr.py:104
 msgid "SourceIndex"
 msgstr ""
 

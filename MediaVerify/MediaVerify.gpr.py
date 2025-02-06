@@ -30,7 +30,7 @@ register(
     id="mediaverify",
     name=_("Media Verify"),
     description=_("Verify that media is present in the correct path"),
-    version="1.0.29",
+    version = '1.0.30',
     gramps_target_version="6.0",
     status=STABLE,
     fname="MediaVerify.py",

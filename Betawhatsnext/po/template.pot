@@ -1,0 +1,256 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:56-0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: Betawhatsnext/Betawhatsnext.gpr.py:48
+msgid "Beta What's Next"
+msgstr ""
+
+#: Betawhatsnext/Betawhatsnext.gpr.py:49
+msgid "Beta Gramplet suggesting items to research"
+msgstr ""
+
+#: Betawhatsnext/Betawhatsnext.gpr.py:60
+msgid "Beta What's Next?"
+msgstr ""
+
+#: Betawhatsnext/Betawhatsnext.py:46
+msgid ""
+"\n"
+" ⛔ A local Genealogical Tree database has not yet been loaded.\n"
+"\n"
+msgstr ""
+
+#: Betawhatsnext/Betawhatsnext.py:49
+msgid " 👣 Next Steps:\n"
+msgstr ""
+
+#: Betawhatsnext/Betawhatsnext.py:50
+msgid "  •  From the \"Family Trees\" menu,"
+msgstr ""
+
+#: Betawhatsnext/Betawhatsnext.py:51
+msgid " use the \"Manage Family Trees...\" option to"
+msgstr ""
+
+#: Betawhatsnext/Betawhatsnext.py:52
+msgid " create a New (or to select an existing) Tree database.\n"
+msgstr ""
+
+#: Betawhatsnext/Betawhatsnext.py:53
+msgid "  •  Click the \"Load Family Tree\" button to begin"
+msgstr ""
+
+#: Betawhatsnext/Betawhatsnext.py:54
+msgid ""
+" working with the selected genealogical tree.\n"
+"\n"
+msgstr ""
+
+#: Betawhatsnext/Betawhatsnext.py:55
+msgid "Create and load an empty new tree to import a backup (or"
+msgstr ""
+
+#: Betawhatsnext/Betawhatsnext.py:56
+msgid ""
+" GEDCOM file) from another genealogical tool.\n"
+"\n"
+msgstr ""
+
+#: Betawhatsnext/Betawhatsnext.py:70
+msgid ""
+"Use the \"Configure\" in the \"View\" menu to change the Gramplet options."
+msgstr ""
+
+#: Betawhatsnext/Betawhatsnext.py:86
+msgid "Seach Quota "
+msgstr ""
+
+#: Betawhatsnext/Betawhatsnext.py:92
+msgid "Depth per loop"
+msgstr ""
+
+#: Betawhatsnext/Betawhatsnext.py:98
+msgid "Pause search expansion"
+msgstr ""
+
+#: Betawhatsnext/Betawhatsnext.py:105
+msgid "Completed Person"
+msgstr ""
+
+#: Betawhatsnext/Betawhatsnext.py:112
+msgid " Completed offspring Families"
+msgstr ""
+
+#: Betawhatsnext/Betawhatsnext.py:118
+msgid "Ignore Person or Family"
+msgstr ""
+
+#: Betawhatsnext/Betawhatsnext.py:223
+msgid ""
+"\n"
+" ⛔ The current Tree database contains no people.\n"
+msgstr ""
+
+#: Betawhatsnext/Betawhatsnext.py:226
+msgid ""
+"\n"
+" 👣 Next Steps:\n"
+" Add a Family and a person in that family:\n"
+"  • A Family may be added via the \"Add\" menu\n"
+"  • A person may be added by pressing the \"+\" (plus) in the spouse "
+"(\"Father/partner1\" or \"Mother/partner2\") panels or \"Children\" tab.\n"
+"\n"
+"Or Import People from an external file:\n"
+"  • An external file may be used to populate the tree via \"Import...\" in "
+"the \"Family Trees\" menu."
+msgstr ""
+
+#: Betawhatsnext/Betawhatsnext.py:254
+msgid ""
+"\n"
+" ⛔ No Person has been chosen as the focal \"Home Person\".\n"
+msgstr ""
+
+#: Betawhatsnext/Betawhatsnext.py:258
+msgid ""
+"\n"
+" 👣 Next Steps:\n"
+"  •  Select the People view icon in the Navigator sidebar.\n"
+"  •  Select someone to make them the \"Active Person\".\n"
+"  •  Choose \"Set Home Person\" from the Edit menu or from the (right-click) "
+"context menu.\n"
+"\n"
+" This sets them as the focal \"Home Person\"."
+msgstr ""
+
+#: Betawhatsnext/Betawhatsnext.py:268
+msgid "Double-click color text to edit details"
+msgstr ""
+
+#: Betawhatsnext/Betawhatsnext.py:484
+msgid "first name unknown"
+msgstr ""
+
+#: Betawhatsnext/Betawhatsnext.py:487
+msgid "surname unknown"
+msgstr ""
+
+#: Betawhatsnext/Betawhatsnext.py:491 Betawhatsnext/Betawhatsnext.py:526
+#: Betawhatsnext/Betawhatsnext.py:557 Betawhatsnext/Betawhatsnext.py:564
+#: Betawhatsnext/Betawhatsnext.py:606 Betawhatsnext/Betawhatsnext.py:613
+msgid "(person with unknown name)"
+msgstr ""
+
+#: Betawhatsnext/Betawhatsnext.py:504
+msgid "Birth event missing."
+msgstr ""
+
+#: Betawhatsnext/Betawhatsnext.py:505
+msgid "Add via the Events tab of the Edit Person dialog."
+msgstr ""
+
+#: Betawhatsnext/Betawhatsnext.py:513 Betawhatsnext/Betawhatsnext.py:539
+#: Betawhatsnext/Betawhatsnext.py:587 Betawhatsnext/Betawhatsnext.py:626
+#, python-format
+msgid ": %(list)s\n"
+msgstr ""
+
+#: Betawhatsnext/Betawhatsnext.py:513 Betawhatsnext/Betawhatsnext.py:539
+#: Betawhatsnext/Betawhatsnext.py:587 Betawhatsnext/Betawhatsnext.py:626
+#: Betawhatsnext/Betawhatsnext.py:648
+msgid ", "
+msgstr ""
+
+#: Betawhatsnext/Betawhatsnext.py:533
+msgid "{inspect.currentframe().f_lineno} person not complete"
+msgstr ""
+
+#: Betawhatsnext/Betawhatsnext.py:553 Betawhatsnext/Betawhatsnext.py:560
+#: Betawhatsnext/Betawhatsnext.py:602 Betawhatsnext/Betawhatsnext.py:609
+msgid "(unknown person)"
+msgstr ""
+
+#: Betawhatsnext/Betawhatsnext.py:566 Betawhatsnext/Betawhatsnext.py:615
+#, python-format
+msgid "%(name1)s and %(name2)s"
+msgstr ""
+
+#: Betawhatsnext/Betawhatsnext.py:580
+msgid "marriage event missing"
+msgstr ""
+
+#: Betawhatsnext/Betawhatsnext.py:582
+msgid "relationship type unknown"
+msgstr ""
+
+#: Betawhatsnext/Betawhatsnext.py:592
+msgid "Add via the Events tab of the Edit Family dialog."
+msgstr ""
+
+#: Betawhatsnext/Betawhatsnext.py:621
+msgid "591 family not complete"
+msgstr ""
+
+#: Betawhatsnext/Betawhatsnext.py:636
+msgid "date unknown"
+msgstr ""
+
+#: Betawhatsnext/Betawhatsnext.py:638
+msgid "date incomplete"
+msgstr ""
+
+#: Betawhatsnext/Betawhatsnext.py:642
+msgid "place unknown for the Event"
+msgstr ""
+
+#: Betawhatsnext/Betawhatsnext.py:647
+#, python-format
+msgid "%(str1)s: %(str2)s"
+msgstr ""
+
+#: Betawhatsnext/Betawhatsnext.py:655
+msgid "A partner relationship exists but the spouse is missing"
+msgstr ""
+
+#: Betawhatsnext/Betawhatsnext.py:657 Betawhatsnext/Betawhatsnext.py:661
+#: Betawhatsnext/Betawhatsnext.py:665
+msgid "Add missing partner using the Edit Family dialog."
+msgstr ""
+
+#: Betawhatsnext/Betawhatsnext.py:660
+msgid "Father missing from the parent family"
+msgstr ""
+
+#: Betawhatsnext/Betawhatsnext.py:664
+msgid "Mother missing from the parent family"
+msgstr ""
+
+#: Betawhatsnext/Betawhatsnext.py:668
+msgid "Parent family is unknown."
+msgstr ""
+
+#: Betawhatsnext/Betawhatsnext.py:670
+msgid ""
+"\"Add New/Existing Parents\" from the Edit menu of the Relationships view."
+msgstr ""
+
+#: Betawhatsnext/Betawhatsnext.py:677
+#, python-format
+msgid ": %s\n"
+msgstr ""

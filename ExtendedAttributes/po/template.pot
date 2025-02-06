@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,24 +17,24 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ExtendedAttributes/ExtendedAttributes.gpr.py:31
+#: ExtendedAttributes/ExtendedAttributes.gpr.py:32
 msgid "Extended Person Attributes"
 msgstr ""
 
-#: ExtendedAttributes/ExtendedAttributes.gpr.py:32
+#: ExtendedAttributes/ExtendedAttributes.gpr.py:33
 msgid "Gramplet showing the attributes of a person"
 msgstr ""
 
-#: ExtendedAttributes/ExtendedAttributes.gpr.py:39
-#: ExtendedAttributes/ExtendedAttributes.gpr.py:53
+#: ExtendedAttributes/ExtendedAttributes.gpr.py:40
+#: ExtendedAttributes/ExtendedAttributes.gpr.py:56
 msgid "Extended Attributes"
 msgstr ""
 
-#: ExtendedAttributes/ExtendedAttributes.gpr.py:45
+#: ExtendedAttributes/ExtendedAttributes.gpr.py:48
 msgid "Extended Family Attributes"
 msgstr ""
 
-#: ExtendedAttributes/ExtendedAttributes.gpr.py:46
+#: ExtendedAttributes/ExtendedAttributes.gpr.py:49
 msgid "Gramplet showing the attributes of a family"
 msgstr ""
 

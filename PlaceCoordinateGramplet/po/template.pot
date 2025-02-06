@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-24 14:14-0700\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -216,27 +216,27 @@ msgstr ""
 msgid "Center on this place"
 msgstr ""
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:23
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:24
 msgid "Place Coordinate Gramplet view"
 msgstr ""
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:24
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:25
 msgid "View for the place coordinate gramplet."
 msgstr ""
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:31
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:32
 msgid "Geography"
 msgstr ""
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:40
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:43
 msgid "Place and Coordinates"
 msgstr ""
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:42
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:44
 msgid "Gramplet that simplifies setting the coordinates of a place"
 msgstr ""
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:51
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:53
 msgid "Place Coordinates"
 msgstr ""
 

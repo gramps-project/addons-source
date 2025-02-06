@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-04 18:55-0600\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,23 +17,23 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: Query/Query.gpr.py:9
+#: Query/Query.gpr.py:10
 msgid "Query Gramplet"
 msgstr ""
 
-#: Query/Query.gpr.py:10
+#: Query/Query.gpr.py:11
 msgid "Gramplet for running SQL-like queries"
 msgstr ""
 
-#: Query/Query.gpr.py:18
+#: Query/Query.gpr.py:19
 msgid "Query"
 msgstr ""
 
-#: Query/Query.gpr.py:31
+#: Query/Query.gpr.py:33
 msgid "Query Quickview"
 msgstr ""
 
-#: Query/Query.gpr.py:32
+#: Query/Query.gpr.py:34
 msgid "Quick view for SQL-like running queries"
 msgstr ""
 

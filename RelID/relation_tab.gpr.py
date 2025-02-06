@@ -35,7 +35,7 @@ register(
     id="relationtab",
     name=_("Display relations and distances with the home person"),
     description=_("Will display relational informations with the home person"),
-    version="1.0.20",
+    version = '1.0.21',
     gramps_target_version=MODULE_VERSION,
     include_in_listing=False,
     status=STABLE,

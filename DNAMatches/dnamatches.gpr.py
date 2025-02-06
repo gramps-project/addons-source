@@ -36,7 +36,7 @@ register(
     gramplet_title=_("DNA Matches"),
     detached_width=600,
     detached_height=450,
-    version="2.0.2",
+    version = '2.0.3',
     gramps_target_version="6.0",
     help_url="Addon:DNAMatches",
     include_in_listing=True,

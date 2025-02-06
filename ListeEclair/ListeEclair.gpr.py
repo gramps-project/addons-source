@@ -3,7 +3,7 @@ register(
     id="ListeEclair",
     name=_("Liste Eclair"),
     description=_("Produit une liste eclair"),
-    version="1.0.28",
+    version = '1.0.29',
     gramps_target_version="6.0",
     status=STABLE,
     fname="ListeEclair.py",

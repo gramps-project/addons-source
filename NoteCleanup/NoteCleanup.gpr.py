@@ -30,7 +30,7 @@ register(
     id="notecleanup",
     name=_("Note Cleanup"),
     description=_("Clean up Notes that contain HTML markup"),
-    version="1.0.22",
+    version = '1.0.23',
     gramps_target_version="6.0",
     status=STABLE,
     fname="NoteCleanup.py",

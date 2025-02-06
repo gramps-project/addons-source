@@ -27,7 +27,7 @@ register(
     id="HasSourceParameter",
     name=_("Source matching parameters"),
     description=_("Matches Sources with values containing the chosen parameters"),
-    version="0.0.24",
+    version = '0.0.25',
     authors=["Dave Scheipers", "Paul Culley"],
     authors_email=["paulr2787@gmail.com"],
     gramps_target_version="6.0",

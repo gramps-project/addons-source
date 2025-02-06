@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-04 11:53-0500\n"
+"POT-Creation-Date: 2025-02-06 08:57-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: D3Charts/AncestralCollapsibleTree.gpr.py:22
+#: D3Charts/AncestralCollapsibleTree.gpr.py:23
 msgid "Ancestral Collapsible Tree"
 msgstr ""
 
-#: D3Charts/AncestralCollapsibleTree.gpr.py:31
+#: D3Charts/AncestralCollapsibleTree.gpr.py:33
 msgid ""
 "Generates a web page with a graphical representation of ancestors (SVG) "
 "represented as a Collapsible Tree Layout from the D3.js JavaScript library."
@@ -146,11 +146,11 @@ msgstr ""
 msgid "The destination file name for html content."
 msgstr ""
 
-#: D3Charts/AncestralFanChart.gpr.py:22
+#: D3Charts/AncestralFanChart.gpr.py:23
 msgid "Ancestral Fan Chart"
 msgstr ""
 
-#: D3Charts/AncestralFanChart.gpr.py:31
+#: D3Charts/AncestralFanChart.gpr.py:33
 msgid ""
 "Generates a web page with a graphical representation of ancestors (SVG) "
 "represented as a Fan Chart from the D3.js JavaScript library."
@@ -176,12 +176,12 @@ msgstr ""
 msgid "RGB-color for maternal box background."
 msgstr ""
 
-#: D3Charts/DescendantIndentedTree.gpr.py:22
+#: D3Charts/DescendantIndentedTree.gpr.py:23
 #: D3Charts/DescendantIndentedTree.py:909
 msgid "Descendant Indented Tree"
 msgstr ""
 
-#: D3Charts/DescendantIndentedTree.gpr.py:31
+#: D3Charts/DescendantIndentedTree.gpr.py:33
 msgid ""
 "Generates a web page with a graphical representation of descendants (SVG) "
 "representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "

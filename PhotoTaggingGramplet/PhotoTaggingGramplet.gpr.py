@@ -29,7 +29,7 @@ register(
     name=_("Photo Tagging"),
     description=_("Gramplet for tagging people in photos"),
     authors=["Artem Glebov", "Nick Hall", "Paul Culley", "Bruce Jackson"],
-    version="1.0.44",
+    version = '1.0.45',
     gramps_target_version="6.0",
     status=STABLE,
     fname="PhotoTaggingGramplet.py",

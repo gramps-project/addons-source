@@ -23,7 +23,7 @@ register(
     id="MediaReport",
     name=_("Media Report"),
     description=_("Generates report including images, image data" " and notes."),
-    version="1.1.13",
+    version = '1.1.14',
     gramps_target_version="6.0",
     status=STABLE,
     fname="media_report.py",

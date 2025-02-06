@@ -29,7 +29,7 @@ register(
     id="typecleanup",
     name=_("Type Cleanup"),
     description=_("Clean up (remove) custom types"),
-    version="1.0.12",
+    version = '1.0.13',
     gramps_target_version="6.0",
     status=STABLE,
     fname="type_cleanup.py",

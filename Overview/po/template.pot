@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,23 +17,23 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: Overview/Overview.gpr.py:28
+#: Overview/Overview.gpr.py:29
 msgid "Person Overview"
 msgstr ""
 
-#: Overview/Overview.gpr.py:29
+#: Overview/Overview.gpr.py:30
 msgid "Gramplet showing an overview of events for a person"
 msgstr ""
 
-#: Overview/Overview.gpr.py:36 Overview/Overview.gpr.py:50
+#: Overview/Overview.gpr.py:37 Overview/Overview.gpr.py:53
 msgid "Overview"
 msgstr ""
 
-#: Overview/Overview.gpr.py:42
+#: Overview/Overview.gpr.py:45
 msgid "Family Overview"
 msgstr ""
 
-#: Overview/Overview.gpr.py:43
+#: Overview/Overview.gpr.py:46
 msgid "Gramplet showing an overview of events for a family"
 msgstr ""
 

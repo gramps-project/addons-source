@@ -34,7 +34,7 @@ register(
     authors=["Paul R. Culley"],
     authors_email=["paulr2787@gmail.com"],
     status=STABLE,
-    version="1.0.22",
+    version = '1.0.23',
     gramps_target_version="6.0",
     fname="placecleanup.py",
     gramplet="PlaceCleanup",

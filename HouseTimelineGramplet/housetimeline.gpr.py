@@ -3,7 +3,7 @@ register(
     id="House Timeline",
     name=_("House Timeline"),
     description=_("Lists the Residents of an Address by Timeline"),
-    version="1.0.14",
+    version = '1.0.15',
     gramps_target_version="6.0",
     status=STABLE,
     fname="housetimeline.py",

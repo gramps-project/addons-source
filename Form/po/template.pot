@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-11 16:45-0800\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -166,15 +166,15 @@ msgstr ""
 msgid "Bride"
 msgstr ""
 
-#: Form/formgramplet.gpr.py:30
+#: Form/formgramplet.gpr.py:31
 msgid "Form Gramplet"
 msgstr ""
 
-#: Form/formgramplet.gpr.py:31
+#: Form/formgramplet.gpr.py:32
 msgid "Gramplet interface for Forms"
 msgstr ""
 
-#: Form/formgramplet.gpr.py:42
+#: Form/formgramplet.gpr.py:43
 msgid "Forms"
 msgstr ""
 

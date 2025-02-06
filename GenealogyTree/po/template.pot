@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-24 14:14-0700\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -111,42 +111,42 @@ msgstr ""
 msgid "Include siblings of ancestors."
 msgstr ""
 
-#: GenealogyTree/treeplugins.gpr.py:29
+#: GenealogyTree/treeplugins.gpr.py:30
 msgid "Ancestor Tree"
 msgstr ""
 
-#: GenealogyTree/treeplugins.gpr.py:30
+#: GenealogyTree/treeplugins.gpr.py:31
 msgid "Ancestor tree using LaTeX genealogytree"
 msgstr ""
 
-#: GenealogyTree/treeplugins.gpr.py:52
+#: GenealogyTree/treeplugins.gpr.py:55
 msgid "Descendant Tree"
 msgstr ""
 
-#: GenealogyTree/treeplugins.gpr.py:53
+#: GenealogyTree/treeplugins.gpr.py:56
 msgid "Descendant tree using LaTeX genealogytree"
 msgstr ""
 
-#: GenealogyTree/treeplugins.gpr.py:75
+#: GenealogyTree/treeplugins.gpr.py:80
 msgid "Grandparent Tree"
 msgstr ""
 
-#: GenealogyTree/treeplugins.gpr.py:76
+#: GenealogyTree/treeplugins.gpr.py:81
 msgid "Grandparent tree using LaTeX genealogytree"
 msgstr ""
 
-#: GenealogyTree/treeplugins.gpr.py:98
+#: GenealogyTree/treeplugins.gpr.py:105
 msgid "Sandclock Tree"
 msgstr ""
 
-#: GenealogyTree/treeplugins.gpr.py:99
+#: GenealogyTree/treeplugins.gpr.py:106
 msgid "Sandclock tree using LaTeX genealogytree"
 msgstr ""
 
-#: GenealogyTree/treeplugins.gpr.py:121
+#: GenealogyTree/treeplugins.gpr.py:130
 msgid "Sandclock Tree for a Family"
 msgstr ""
 
-#: GenealogyTree/treeplugins.gpr.py:122
+#: GenealogyTree/treeplugins.gpr.py:131
 msgid "Sandclock tree for a family using LaTeX genealogytree"
 msgstr ""

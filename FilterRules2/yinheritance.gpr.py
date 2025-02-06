@@ -27,7 +27,7 @@ register(
         "Matches recorded descendants of person following "
         "Y-chromosomal inheritance patterns."
     ),
-    version="1.0.10",
+    version = '1.0.11',
     authors=["Matthias Kemmer"],
     authors_email=["matt.familienforschung@gmail.com"],
     gramps_target_version="6.0",

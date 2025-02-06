@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 11:50-0500\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,14 +17,14 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ExportRaw/ExportRaw.gpr.py:3
+#: ExportRaw/ExportRaw.gpr.py:4
 msgid "Raw Export"
 msgstr ""
 
-#: ExportRaw/ExportRaw.gpr.py:4
+#: ExportRaw/ExportRaw.gpr.py:5
 msgid "This is a raw python object dump"
 msgstr ""
 
-#: ExportRaw/ExportRaw.gpr.py:12
+#: ExportRaw/ExportRaw.gpr.py:13
 msgid "Raw options"
 msgstr ""

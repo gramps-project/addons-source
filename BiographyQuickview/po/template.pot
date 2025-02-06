@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-01 13:52-0500\n"
+"POT-Creation-Date: 2025-02-06 08:56-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: BiographyQuickview/BiographyQuickview.gpr.py:9
+#: BiographyQuickview/BiographyQuickview.gpr.py:10
 msgid "Biography"
 msgstr ""
 
-#: BiographyQuickview/BiographyQuickview.gpr.py:10
+#: BiographyQuickview/BiographyQuickview.gpr.py:11
 msgid "Display a text biography"
 msgstr ""
 

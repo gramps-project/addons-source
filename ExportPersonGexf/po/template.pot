@@ -1,0 +1,68 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ExportPersonGexf/exportpersongexf.gpr.py:30
+msgid "Person GEXF"
+msgstr ""
+
+#: ExportPersonGexf/exportpersongexf.gpr.py:31
+msgid "_Person GEXF"
+msgstr ""
+
+#: ExportPersonGexf/exportpersongexf.gpr.py:32
+msgid "GEXF is used in many network graph applications."
+msgstr ""
+
+#: ExportPersonGexf/exportpersongexf.gpr.py:40
+msgid "GEXF export options"
+msgstr ""
+
+#: ExportPersonGexf/exportpersongexf.py:58
+#: ExportPersonGexf/exportpersongexf.py:62
+#, python-format
+msgid "Could not create %s"
+msgstr ""
+
+#: ExportPersonGexf/exportpersongexf.py:66
+msgid "Male"
+msgstr ""
+
+#: ExportPersonGexf/exportpersongexf.py:67
+msgid "Female"
+msgstr ""
+
+#: ExportPersonGexf/exportpersongexf.py:68
+msgid "Other"
+msgstr ""
+
+#: ExportPersonGexf/exportpersongexf.py:69
+msgid "Unknown"
+msgstr ""
+
+#: ExportPersonGexf/exportpersongexf.py:142
+msgid "Mother"
+msgstr ""
+
+#: ExportPersonGexf/exportpersongexf.py:146
+msgid "Father"
+msgstr ""
+
+#: ExportPersonGexf/exportpersongexf.py:150
+msgid "Spouse"
+msgstr ""

@@ -9,7 +9,7 @@ register(
     gramplet_title=_("Clock"),
     status=STABLE,
     audience=DEVELOPER,
-    version="0.0.36",
+    version = '0.0.37',
     gramps_target_version="6.0",
     fname="ClockGramplet.py",
     help_url="Gramplets#GUI_Interface",

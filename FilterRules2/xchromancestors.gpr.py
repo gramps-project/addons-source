@@ -26,7 +26,7 @@ register(
     description=_(
         "Matches ancestors of <person> following a X-chromosomal inheritance pattern."
     ),
-    version="1.0.10",
+    version = '1.0.11',
     authors=["Matthias Kemmer"],
     authors_email=["matt.familienforschung@gmail.com"],
     gramps_target_version="6.0",

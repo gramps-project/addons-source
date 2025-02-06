@@ -25,7 +25,7 @@ register(
     id="PersonsInFamilyFilterMatch",
     name=_("People who are part of families matching <filter>"),
     description=_("People who are part of families matching <filter>"),
-    version="1.0.19",
+    version = '1.0.20',
     authors=["Matthias Kemmer", "Paul Culley"],
     authors_email=["matt.familienforschung@gmail.com", "paulr2787@gmail.com"],
     gramps_target_version="6.0",
