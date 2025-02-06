@@ -10,6 +10,7 @@ register(
     fname="ImportSql.py",
     import_function="importData",
     extension="sql",
+    help_url="Addon:SQLite_Export_Import#Import_SQLite",
 )
 
 register(
@@ -25,4 +26,5 @@ register(
     export_function="exportData",
     extension="sql",
     export_options="WriterOptionBox",
+    help_url="Addon:SQLite_Export_Import#Export_SQLite",
 )

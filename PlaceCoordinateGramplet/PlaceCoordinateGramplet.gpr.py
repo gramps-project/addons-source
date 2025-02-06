@@ -34,6 +34,7 @@ register(
     # order = START,
     stock_icon="geo-place-add",
     requires_gi=[("GeocodeGlib", "1.0")],
+    help_url="Addon:PlaceCoordinatesGramplet#Additional_geography_view_with_a_context_menu",
 )
 
 register(
@@ -52,4 +53,5 @@ register(
     gramplet_title=_("Place Coordinates"),
     navtypes=["Place"],
     requires_gi=[("GeocodeGlib", "1.0")],
+    help_url="Addon:PlaceCoordinatesGramplet",
 )

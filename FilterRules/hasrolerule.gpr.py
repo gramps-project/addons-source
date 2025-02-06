@@ -34,6 +34,7 @@ register(
     fname="hasrolerule.py",
     ruleclass="HasPersonEventRole",  # must be rule class name
     namespace="Person",  # one of the primary object classes
+    help_url="Addon:Rule_expansions#People_with_events_with_a_selected_role",
 )
 
 register(
@@ -49,4 +50,5 @@ register(
     fname="hasrolerule.py",
     ruleclass="HasFamilyEventRole",  # must be rule class name
     namespace="Family",  # one of the primary object classes
+    help_url="Addon:Rule_expansions#Families_with_Events_with_a_selected_role",
 )

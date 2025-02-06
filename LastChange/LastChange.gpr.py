@@ -33,7 +33,7 @@ register(
     gramplet="LastChangeGramplet",
     gramps_target_version="6.0",
     gramplet_title=_("Latest Changes"),
-    help_url="LastChange",
+    help_url="Addon:LastChange#Latest_Changes_Gramplet",
 )
 
 register(
@@ -52,4 +52,5 @@ register(
     optionclass="LastChangeOptions",
     report_modes=[REPORT_MODE_GUI, REPORT_MODE_BKI, REPORT_MODE_CLI],
     require_active=False,
+    help_url="Addon:LastChange#Last_Change_Report",
 )

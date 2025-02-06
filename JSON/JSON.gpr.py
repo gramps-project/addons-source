@@ -11,6 +11,7 @@ register(
     export_options="WriterOptionBox",
     export_options_title=_("JSON options"),
     extension="json",
+    help_url="Addon:JSON_Export_Import#Export_JSON",
 )
 
 register(
@@ -24,4 +25,5 @@ register(
     fname="JSONImport.py",
     import_function="importData",
     extension="json",
+    help_url="Addon:JSON_Export_Import#Import_JSON",
 )
