@@ -1,0 +1,3549 @@
+# Italian translation for GRAMPS
+# Copyright (C) 2001-2010 the Gramps Project
+#
+# Common and noteworthy translations:
+#
+#   alternate              alternativo
+#   ancestor               ascendente
+#   ancestral              ascendenza
+#   autosave               salvataggio automatico
+#   baptism                battesimo
+#   birth                  nascita
+#   christening            battesimo (anachronistic - see gramps-devel ML)
+#   church parish          parrocchia
+#   county                 provincia
+#   country                stato
+#   common-law             (relazione) di fatto
+#   dead                   decedere
+#   death                  decesso
+#   descendant             discendente/discendenza
+#   had a child %(child)s  divenne padre/madre di %(child)s
+#                          (copes with male and femail children)
+#   he was son of          fu figlio di
+#   home person            persona-casa
+#   family (adj)           famigliare
+#   half-sibling           fratelli unilaterali
+#   in %(place)s           in quel di (copes with all sort of place names)
+#   location               località
+#   merge, to              fondere
+#   partner                partner
+#   province               provincia, regione
+#   record                 elemento
+#   relationship path      percorso (delle) relazioni
+#   report                 resoconto
+#   state (geog)           regione, stato
+#   step-sibling           fratellastri
+#   thumbnail              anteprima
+#   unmarried              celibe/nubile
+#
+# A special remark are required by some sentences related to reports.
+#
+# * "%s was born on %s"
+#
+#   In Italian, we use a tense equivalent to the English's past simple
+#   for living people, and the equivalent to English's present perfect
+#   for people who died.  Unfortunately, the program cannot distinguish
+#   between these two cases.
+#
+# * ", and was buried on %s."
+#
+#   In Italian, the word for buried declines accordingly to its subject
+#   gender.
+#
+# * "born %(date)s in %(place)s%(endnotes)s"
+#
+#   The same rule as for "buried" applies to born, as well.
+#
+# Marco Molteni <molter@gufi.org>, 2001-2002.
+# Lorenzo Cappelletti <lorenzo.cappelletti@email.it>, 2003.
+# Luigi Toscano <luigi.toscano@tiscali.it>, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019.
+# Giansalvo Gusinu <giansalvo.gusinu@gmail.com>, 2019.
+# Sebastiano Pistore <SebastianoPistore.info@protonmail.ch>, 2025.
+# Vincenzo Alfano <vinc.alfano@gmail.com>, 2016.
+msgid ""
+msgstr ""
+"Project-Id-Version: gramps 3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-03-08 16:37+0100\n"
+"PO-Revision-Date: 2010-03-07 22:48+0100\n"
+"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
+"Language-Team: Italian <tp@lists.linux.it>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:9
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:182
+#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:190
+msgid "Calculate Estimated Dates"
+msgstr "Effettua stima date"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
+#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:11
+msgid "Calculates estimated dates for birth and death."
+msgstr "Effettua stima per date di nascita e di decesso."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:75
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:83
+msgid "Select filter to restrict people"
+msgstr "Seleziona filtro per restringere le persone"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:87
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:95
+msgid "Calculated Date Estimates"
+msgstr "Calcolo stima date"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:88
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:96
+msgid "Source to remove and/or add"
+msgstr "Fonti da rimuovere o aggiungere"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:91
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:99
+msgid "Remove previously added events, notes, and source"
+msgstr "Rimuove eventi, note e fonti aggiunti precedentemente"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:92
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:100
+#, fuzzy
+msgid ""
+"Remove calculated events, notes, and source; occurs immediately on Execute"
+msgstr ""
+"Rimuove eventi, note e fonti calcolati; è eseguito immediatamente "
+"selezionando Esegui"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:96
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:104
+msgid "Do not add birth events"
+msgstr "Non aggiungere eventi di tipo nascita"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:97
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:105
+msgid "Add birth events without dates"
+msgstr "Aggiunge eventi di tipo nascita senza data"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:98
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:106
+msgid "Add birth events with dates"
+msgstr "Aggiunge eventi di tipo nascita con data"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:99
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:107
+msgid "Add a birth events with or without estimated dates"
+msgstr "Aggiunge eventi di tipo nascita con o senza data stimata"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:103
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:111
+msgid "Do not add death events"
+msgstr "Non aggiungere eventi di tipo decesso"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:104
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:112
+msgid "Add death events without dates"
+msgstr "Aggiunge eventi di tipo decesso senza date"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:105
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:113
+msgid "Add death events with dates"
+msgstr "Aggiunge eventi di tipo decesso con date"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:106
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:114
+msgid "Add death events with or without estimated dates"
+msgstr "Aggiunge eventi di tipo decesso con o senza data stimata"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:110
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:118
+msgid "Maximum age"
+msgstr "Età massima"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:113
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:121
+msgid "Maximum age that one can live to"
+msgstr "Età massima fino a cui è possibile vivere"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:119
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:127
+msgid "Maximum age difference between siblings"
+msgstr "Massima differenza d'età tra fratelli"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:125
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:133
+msgid "Average years between two generations"
+msgstr "Numero medio di anni tra due generazioni"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:128
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:136
+msgid "Estimated Dates"
+msgstr "Date stimate"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:129
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:137
+#, fuzzy
+msgid "Approximate (about)"
+msgstr "Approssimata (circa)"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:130
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:138
+msgid "Extremes (after and before)"
+msgstr "Estremi (dopo e prima)"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:131
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:139
+#, fuzzy
+msgid "Dates on events are either about or after/before"
+msgstr "Le date degli eventi sono o circa o dopo/prima"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:164
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:172
+msgid ""
+"The Calculate Estimated Dates Tool is used to add and remove birth and death "
+"events for people that are missing these events.\n"
+"\n"
+"To use:\n"
+"1. Go to the Options tab\n"
+"2. Check the [ ] Remove option to remove previous estimates\n"
+"3. Select the Add date options to date events with or without dates\n"
+"4. Click on Execute\n"
+"5. Select the people with which to add events\n"
+"6. Click on 'Add Selected Events' button to create\n"
+"\n"
+"NOTES: if you decide to make an event permanent, remove it from the Source. "
+"Otherwise, it will get removed the next time you automatically remove these "
+"events.\n"
+"\n"
+"You may have to run the tool repeatedly (without removing previous events) "
+"to add all of the events possible."
+msgstr ""
+"Lo strumento per la stima delle date è usato per aggiungere o rimuovere "
+"eventi di tipo nascita o decesso per le persone che ne sono sprovviste.\n"
+"\n"
+"Per utilizzarlo:\n"
+"1. Andare nella scheda Opzioni\n"
+"2. Marcare l'opzione [ ] Rimuovi per rimuovere le stime esistenti\n"
+"3. Selezionare l'opzione Aggiungi date per assegnare una data agli eventi "
+"con o senza date\n"
+"4. Fare clic su Esegui\n"
+"5. Selezionare le persone a cui aggiungere gli eventi\n"
+"6. Fare clic sul pulsante «Aggiunge eventi selezionati» per generarle\n"
+"\n"
+"NOTE: se si desidera rendere permanente un evento, bisogna rimuoverlo dalla "
+"Fonte. In caso contrario sarà rimosso nella prossima occasione in cui questi "
+"eventi saranno rimossi automaticamente.\n"
+"\n"
+"Potrebbe essere necessario eseguire ripetutamente questo strumento (senza "
+"rimuovere i precedenti eventi) per aggiungere tutti gli eventi possibili."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:191
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:199
+msgid "Select All"
+msgstr "Selezionare tutto"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:192
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:200
+msgid "Select None"
+msgstr "Non selezionare nulla"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:193
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:201
+#, fuzzy
+msgid "Toggle Selection"
+msgstr "Invertire la selezione"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:194
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:202
+msgid "Add Selected Events"
+msgstr "Aggiunge eventi selezionati"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:200
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:208
+msgid "Remove Events, Notes, and Source and Reselect Data"
+msgstr "Rimuove eventi, note e fonti e riseleziona i dati"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:201
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:209
+msgid ""
+"Are you sure you want to remove previous events, notes, and source and "
+"reselect data?"
+msgstr ""
+"Si desidera davvero rimuovere i precedenti eventi, note e fonti e "
+"selezionare nuovamente i dati?"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:202
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:210
+msgid "Remove and Run Select Again"
+msgstr "Rimuovi ed esegui nuovamente la selezione"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:206
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:214
+msgid "Reselect Data"
+msgstr "Riseleziona dati"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:207
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:215
+msgid "Are you sure you want to reselect data?"
+msgstr "Riselezionare veramente i dati?"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:208
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:216
+msgid "Run Select Again"
+msgstr "Esegue nuovamente la selezione"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:228
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:236
+#, fuzzy
+msgid "Evidence"
+msgstr "Prova"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:228
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:236
+msgid "Relative"
+msgstr ""
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:229
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:237
+msgid "Processing...\n"
+msgstr "Elaborazione in corso...\n"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:247
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:255
+msgid "Removing old estimations... "
+msgstr "Rimozione delle vecchie stime in corso... "
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:248
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:256
+#, python-format
+msgid "Removing '%s'..."
+msgstr "Rimozione di «%s»..."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:302
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:319
+msgid "done!\n"
+msgstr "fatto!\n"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:307
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:323
+msgid ""
+"Selecting... \n"
+"\n"
+msgstr ""
+"Selezione... \n"
+"\n"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:343
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:359
+msgid "Add birth and death events"
+msgstr "Aggiunge eventi di tipo nascita e decesso"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:345
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:361
+msgid "Add birth event"
+msgstr "Aggiunge un evento di tipo nascita"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:347
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:363
+msgid "Add death event"
+msgstr "Aggiunge un evento di tipo decesso"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:382
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:398
+msgid "No events to be added."
+msgstr "Nessun evento da aggiungere."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:424
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:439
+msgid "Selecting... "
+msgstr "Selezione... "
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:425
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:440
+#, python-format
+msgid "Adding events '%s'..."
+msgstr "Aggiunta degli eventi «%s»..."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:447
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:465
+#, python-format
+msgid "Added birth event based on %(evidence)s, from %(name)s"
+msgstr ""
+"Aggiunto evento di tipo nascita sulla base di %(evidence)s, da %(name)s"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:450
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:468
+#, python-format
+msgid "Added birth event based on %s"
+msgstr "Aggiunto evento di tipo nascita sulla base di %s"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:452
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:470
+msgid "Estimated birth date"
+msgstr "Data di nascita stimata"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:463
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:480
+#, python-format
+msgid "Added death event based on %(evidence)s, from %(person)s"
+msgstr ""
+"Aggiunto evento di tipo decesso sulla base di %(evidence)s, da %(person)s"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:466
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:483
+#, python-format
+msgid "Added death event based on %s"
+msgstr "Aggiunto evento di tipo decesso sulla base di %s"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:468
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:485
+msgid "Estimated death date"
+msgstr "Data di decesso stimata"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:478
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:495
+msgid " Done! Committing..."
+msgstr " Fatto! Salvataggio..."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:483
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:499
+#, python-format
+msgid "Added %d events."
+msgstr "Aggiunti %d eventi."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:511
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:527
+msgid "Estimated date"
+msgstr "Data stimata"
+
+#: PluginManager/PluginManager.gpr.py:29 PluginManager/PluginManager.gpr.py:30
+msgid "Plugin Manager Enhanced"
+msgstr "Gestore plugin avanzato"
+
+#: PluginManager/PluginManager.gpr.py:30 PluginManager/PluginManager.gpr.py:31
+msgid "An Addon/Plugin Manager with several additional capabilities"
+msgstr ""
+"Un gestore di componenti aggiuntivi/plugin con varie funzionalità addizionali"
+
+#: PluginManager/PluginManager.py:87 PluginManager/PluginManager.py:84
+msgid "Plugin Manager - Enhanced"
+msgstr "Gestore dei plugin - avanzato"
+
+#: PluginManager/PluginManager.py:151 PluginManager/PluginManager.py:154
+msgid ""
+"Enter search words to filter the addons.\n"
+"All the words must be present somewhere in the row or\n"
+"the addon filename to be included in the search.\n"
+"Word case and order is ignored."
+msgstr ""
+"Inserisce le parole da cercare per filtrare i componenti aggiuntivi.\n"
+"Tutte le parole devono essere presenti da qualche parte nella riga oppure\n"
+"il nome del componente aggiuntivo da includere nella ricerca.\n"
+"Maiuscole/minuscole e l'ordine delle parole sono ignorate."
+
+#: PluginManager/PluginManager.py:155 PluginManager/PluginManager.py:158
+msgid "Search..."
+msgstr "Ricerca..."
+
+#: PluginManager/PluginManager.py:161 ../gramps/gui/plug/_windows.py:816
+msgid "Check for updated addons now"
+msgstr "Cerca adesso i componenti aggiuntivi aggiornati"
+
+#: PluginManager/PluginManager.py:207 PluginManager/PluginManager.py:216
+msgid "Restart..."
+msgstr "Riavvia..."
+
+#: PluginManager/PluginManager.py:208 PluginManager/PluginManager.py:217
+msgid ""
+"Please Restart Gramps so that your addon changes can be safely completed."
+msgstr ""
+"Riavvia Gramps in modo da completare l'aggiornamento dei componenti "
+"aggiuntivi in maniera sicura."
+
+#: PluginManager/PluginManager.py:401 PluginManager/PluginManager.py:336
+#, python-format
+msgid "Error removing the '%s' directory, The uninstall may have failed"
+msgstr ""
+"Errore nella cancellazione della cartella '%s'. La disinstallazione potrebbe "
+"non essere andata a buon fine"
+
+#: PluginManager/PluginManager.py:441 PluginManager/PluginManager.py:376
+msgid ""
+"'*' items are supplied by 3rd party authors,\n"
+"<s>strikeout</s> items are hidden"
+msgstr ""
+"Gli elementi '*' sono forniti da autori di terze parti,\n"
+"gli elementi <s>barrati</s> sono nascosti"
+
+#: PluginManager/PluginManager.py:472 ../gramps/gui/plug/_windows.py:1079
+#: ../gramps/gui/plug/_windows.py:1137
+msgid "Info"
+msgstr "Informazioni"
+
+#: PluginManager/PluginManager.py:475 PluginManager/PluginManager.py:586
+#: PluginManager/PluginManager.py:410 PluginManager/PluginManager.py:530
+msgid "Hide"
+msgstr "Nascondi"
+
+#: PluginManager/PluginManager.py:494 PluginManager/PluginManager.py:430
+msgid "Show hidden items"
+msgstr "Mostra gli elementi nascosti"
+
+#: PluginManager/PluginManager.py:502 PluginManager/PluginManager.py:438
+msgid "Show Built-in items"
+msgstr "Mostra gli elementi interni"
+
+#: PluginManager/PluginManager.py:509 PluginManager/PluginManager.py:445
+msgid "* indicates 3rd party addon"
+msgstr "* indica i componenti aggiuntivi di terze parti"
+
+#: PluginManager/PluginManager.py:514 PluginManager/PluginManager.py:450
+msgid "Plugins"
+msgstr "Plugin"
+
+#: PluginManager/PluginManager.py:584 PluginManager/PluginManager.py:528
+msgid "Unhide"
+msgstr "Mostra"
+
+#: PluginManager/PluginManager.py:603 PluginManager/PluginManager.py:547
+msgid "Uninstall"
+msgstr "Disinstalla"
+
+#: PluginManager/PluginManager.py:613 ../gramps/gui/plug/_windows.py:962
+msgid "Checking Addons Failed"
+msgstr "Il controllo dei componenti aggiuntivi non è riuscito"
+
+#: PluginManager/PluginManager.py:614 ../gramps/gui/plug/_windows.py:964
+msgid "The addon repository appears to be unavailable. Please try again later."
+msgstr ""
+"Il repository dei componenti aggiuntivi non è disponibile. Riprovare più "
+"tardi."
+
+#: PluginManager/PluginManager.py:674 PluginManager/PluginManager.py:721
+msgid "*Available"
+msgstr "*Disponibile"
+
+#: PluginManager/PluginManager.py:688 PluginManager/PluginManager.py:737
+msgid "Built-in"
+msgstr "Interno"
+
+#: PluginManager/PluginManager.py:693 PluginManager/PluginManager.py:742
+msgid "*Installed"
+msgstr "*Installato"
+
+#: PluginManager/PluginManager.py:702 PluginManager/PluginManager.py:751
+msgid "Update Available"
+msgstr "Aggiornamento disponibile"
+
+#: PluginManager/PluginManager.py:729 ../gramps/gui/plug/_windows.py:1648
+msgid "Detailed Info"
+msgstr "Informazioni dettagliate"
+
+#: ExportRaw/ExportRaw.gpr.py:3 ExportRaw/ExportRaw.gpr.py:4
+msgid "Raw Export"
+msgstr ""
+
+#: ExportRaw/ExportRaw.gpr.py:4 ExportRaw/ExportRaw.gpr.py:5
+msgid "This is a raw python object dump"
+msgstr ""
+
+#: ExportRaw/ExportRaw.gpr.py:10 ExportRaw/ExportRaw.gpr.py:13
+msgid "Raw options"
+msgstr ""
+
+#: ImportSql/ImportSql.gpr.py:3 Sqlite/Sqlite.gpr.py:4
+msgid "SQLite Import"
+msgstr ""
+
+#: ImportSql/ImportSql.gpr.py:4 Sqlite/Sqlite.gpr.py:5 Sqlite/Sqlite.gpr.py:20
+msgid "SQLite is a common local database format"
+msgstr ""
+
+#: ImportSql/ImportSql.py:824 Sqlite/ImportSql.py:893
+#, fuzzy, python-format
+msgid "Import Complete: %d second"
+msgid_plural "Import Complete: %d seconds"
+msgstr[0] "Importazione completata: %d secondo"
+msgstr[1] ""
+
+#: DataEntryGramplet/DataEntryGramplet.gpr.py:8
+#: DataEntryGramplet/DataEntryGramplet.gpr.py:9
+msgid "Data Entry Gramplet"
+msgstr ""
+
+#: DataEntryGramplet/DataEntryGramplet.py:55 FilterRules/activepersonrule.py:45
+#, fuzzy
+msgid "Active person"
+msgstr "Persona attiva: <b>%s</b>"
+
+#: DataEntryGramplet/DataEntryGramplet.py:56
+#: DataEntryGramplet/DataEntryGramplet.py:73
+msgid "Family:"
+msgstr "Famiglia:"
+
+#: DataEntryGramplet/DataEntryGramplet.py:58
+#: DataEntryGramplet/DataEntryGramplet.py:85
+#: DataEntryGramplet/DataEntryGramplet.py:76
+#: DataEntryGramplet/DataEntryGramplet.py:109
+#, fuzzy
+msgid "Surname, Given"
+msgstr "Cognome"
+
+#: DataEntryGramplet/DataEntryGramplet.py:69
+#: DataEntryGramplet/DataEntryGramplet.py:89
+msgid "Save"
+msgstr ""
+
+#: DataEntryGramplet/DataEntryGramplet.py:72
+#: DataEntryGramplet/DataEntryGramplet.py:92
+msgid "Abandon"
+msgstr ""
+
+#: DataEntryGramplet/DataEntryGramplet.py:77
+#: DataEntryGramplet/DataEntryGramplet.py:97
+msgid "New person"
+msgstr "Nuova persona"
+
+#: DataEntryGramplet/DataEntryGramplet.py:78
+#: DataEntryGramplet/DataEntryGramplet.py:98
+msgid "Add relation"
+msgstr ""
+
+#: DataEntryGramplet/DataEntryGramplet.py:79
+#: DataEntryGramplet/DataEntryGramplet.py:99
+msgid "No relation to active person"
+msgstr ""
+
+#: DataEntryGramplet/DataEntryGramplet.py:80
+#: DataEntryGramplet/DataEntryGramplet.py:100
+msgid "Add as a Parent"
+msgstr ""
+
+#: DataEntryGramplet/DataEntryGramplet.py:81
+#: DataEntryGramplet/DataEntryGramplet.py:103
+msgid "Add as a Spouse"
+msgstr ""
+
+#: DataEntryGramplet/DataEntryGramplet.py:82
+#: DataEntryGramplet/DataEntryGramplet.py:106
+msgid "Add as a Sibling"
+msgstr ""
+
+#: DataEntryGramplet/DataEntryGramplet.py:83
+#: DataEntryGramplet/DataEntryGramplet.py:107
+msgid "Add as a Child"
+msgstr ""
+
+#: DataEntryGramplet/DataEntryGramplet.py:99
+#: DataEntryGramplet/DataEntryGramplet.py:124
+msgid "Copy Active Data"
+msgstr ""
+
+#: DataEntryGramplet/DataEntryGramplet.py:145
+#: DataEntryGramplet/DataEntryGramplet.py:159
+#: DataEntryGramplet/DataEntryGramplet.py:266
+#: DataEntryGramplet/DataEntryGramplet.py:167
+#: DataEntryGramplet/DataEntryGramplet.py:178
+#: DataEntryGramplet/DataEntryGramplet.py:315
+msgid "in"
+msgstr ""
+
+#: DataEntryGramplet/DataEntryGramplet.py:387
+#: DataEntryGramplet/DataEntryGramplet.py:441
+#: DataEntryGramplet/DataEntryGramplet.py:569
+#, python-format
+msgid "Gramplet Data Edit: %s"
+msgstr ""
+
+#: DataEntryGramplet/DataEntryGramplet.py:407
+#: DataEntryGramplet/DataEntryGramplet.py:515
+msgid "Please provide a name."
+msgstr ""
+
+#: DataEntryGramplet/DataEntryGramplet.py:407
+#: DataEntryGramplet/DataEntryGramplet.py:515
+msgid "Can't add new person."
+msgstr ""
+
+#: DataEntryGramplet/DataEntryGramplet.py:415
+#: DataEntryGramplet/DataEntryGramplet.py:423
+#: DataEntryGramplet/DataEntryGramplet.py:432
+#: DataEntryGramplet/DataEntryGramplet.py:437
+#: DataEntryGramplet/DataEntryGramplet.py:523
+#: DataEntryGramplet/DataEntryGramplet.py:531
+#: DataEntryGramplet/DataEntryGramplet.py:536
+#: DataEntryGramplet/DataEntryGramplet.py:541
+#: DataEntryGramplet/DataEntryGramplet.py:550
+#: DataEntryGramplet/DataEntryGramplet.py:555
+#: DataEntryGramplet/DataEntryGramplet.py:560
+#: DataEntryGramplet/DataEntryGramplet.py:565
+msgid "Please set an active person."
+msgstr ""
+
+#: DataEntryGramplet/DataEntryGramplet.py:415
+#: DataEntryGramplet/DataEntryGramplet.py:418
+#: DataEntryGramplet/DataEntryGramplet.py:523
+#: DataEntryGramplet/DataEntryGramplet.py:526
+msgid "Can't add new person as a parent."
+msgstr ""
+
+#: DataEntryGramplet/DataEntryGramplet.py:418
+#: DataEntryGramplet/DataEntryGramplet.py:427
+#: DataEntryGramplet/DataEntryGramplet.py:526
+#: DataEntryGramplet/DataEntryGramplet.py:545
+msgid "Please set the new person's gender."
+msgstr ""
+
+#: DataEntryGramplet/DataEntryGramplet.py:423
+#: DataEntryGramplet/DataEntryGramplet.py:427
+#: DataEntryGramplet/DataEntryGramplet.py:559
+#: DataEntryGramplet/DataEntryGramplet.py:596
+#: DataEntryGramplet/DataEntryGramplet.py:629
+#: DataEntryGramplet/DataEntryGramplet.py:541
+#: DataEntryGramplet/DataEntryGramplet.py:545
+#: DataEntryGramplet/DataEntryGramplet.py:768
+#: DataEntryGramplet/DataEntryGramplet.py:805
+#: DataEntryGramplet/DataEntryGramplet.py:838
+msgid "Can't add new person as a spouse."
+msgstr ""
+
+#: DataEntryGramplet/DataEntryGramplet.py:432
+#: DataEntryGramplet/DataEntryGramplet.py:560
+msgid "Can't add new person as a sibling."
+msgstr ""
+
+#: DataEntryGramplet/DataEntryGramplet.py:437
+#: DataEntryGramplet/DataEntryGramplet.py:675
+#: DataEntryGramplet/DataEntryGramplet.py:565
+#: DataEntryGramplet/DataEntryGramplet.py:938
+msgid "Can't add new person as a child."
+msgstr ""
+
+#: DataEntryGramplet/DataEntryGramplet.py:558
+#: DataEntryGramplet/DataEntryGramplet.py:767
+msgid "Please set gender on Active or new person."
+msgstr ""
+
+#: DataEntryGramplet/DataEntryGramplet.py:595
+#: DataEntryGramplet/DataEntryGramplet.py:628
+#: DataEntryGramplet/DataEntryGramplet.py:804
+#: DataEntryGramplet/DataEntryGramplet.py:837
+msgid "Same genders on Active and new person."
+msgstr ""
+
+#: DataEntryGramplet/DataEntryGramplet.py:674
+#: DataEntryGramplet/DataEntryGramplet.py:937
+msgid "Please set gender on Active person."
+msgstr ""
+
+#: Themes/themes.gpr.py:28 Themes/themes.gpr.py:29
+msgid "Theme preferences"
+msgstr "Preferenze tematiche"
+
+#: Themes/themes.gpr.py:29 Themes/themes.gpr.py:31
+msgid ""
+"An addition to Preferences for simple Theme and Font adjustment.  Especially "
+"useful for Windows users."
+msgstr ""
+"Un'aggiunta alle preferenze per la semplice correzione di temi e caratteri. "
+"Particolarmente utile per gli utenti di Windows."
+
+#: Themes/themes.py:137 Themes/themes.py:155 Themes/themes.py:172
+#: Themes/themes.py:190
+msgid "Theme is hardcoded by GTK_THEME"
+msgstr "Il tema è preimpostato da GTK_THEME"
+
+#: Themes/themes.py:140 Themes/themes.py:190 DynamicWeb/dynamicweb.py:5157
+msgid "Theme"
+msgstr "Tema"
+
+#: Themes/themes.py:145 Themes/themes.py:180
+msgid "Dark Variant"
+msgstr "Variante scura"
+
+#: Themes/themes.py:163 Themes/themes.py:198
+msgid "Font"
+msgstr "Carattere"
+
+#: Themes/themes.py:179 Themes/themes.py:214
+msgid "Fixed Scrollbar (requires restart)"
+msgstr "Scrollbar classica (richiede il riavvio)"
+
+#: AttachSourceTool/AttachSourceTool.gpr.py:25
+#: AttachSourceTool/AttachSourceTool.py:137
+#: AttachSourceTool/AttachSourceTool.py:191
+#: AttachSourceTool/AttachSourceTool.py:215
+#: AttachSourceTool/AttachSourceTool.gpr.py:26
+#: AttachSourceTool/AttachSourceTool.py:155
+msgid "Attach Source"
+msgstr ""
+
+#: AttachSourceTool/AttachSourceTool.gpr.py:26
+#: AttachSourceTool/AttachSourceTool.py:219
+#: AttachSourceTool/AttachSourceTool.gpr.py:27
+msgid "Attaches a shared source to multiple objects."
+msgstr ""
+
+#: AttachSourceTool/AttachSourceTool.py:81
+msgid "Source type"
+msgstr ""
+
+#: AttachSourceTool/AttachSourceTool.py:82
+msgid "New source"
+msgstr "Nuova fonte"
+
+#: AttachSourceTool/AttachSourceTool.py:83
+msgid "Existing source"
+msgstr ""
+
+#: AttachSourceTool/AttachSourceTool.py:84
+msgid "Select the type of source to attach"
+msgstr ""
+
+#: AttachSourceTool/AttachSourceTool.py:89
+msgid "New Source Title"
+msgstr ""
+
+#: AttachSourceTool/AttachSourceTool.py:90
+msgid "Text of source to attach"
+msgstr ""
+
+#: AttachSourceTool/AttachSourceTool.py:94
+msgid "Existing Source ID"
+msgstr ""
+
+#: AttachSourceTool/AttachSourceTool.py:95
+msgid "ID of source to attach"
+msgstr ""
+
+#: AttachSourceTool/AttachSourceTool.py:173
+#: AttachSourceTool/AttachSourceTool.py:174
+msgid "Attaching sources...\n"
+msgstr ""
+
+#: AttachSourceTool/AttachSourceTool.py:174
+#: AttachSourceTool/AttachSourceTool.py:175
+msgid "Attaching sources..."
+msgstr ""
+
+#: AttachSourceTool/AttachSourceTool.py:194
+#: AttachSourceTool/AttachSourceTool.py:197
+msgid "Done!\n"
+msgstr "Fatto!\n"
+
+#: AttachSourceTool/AttachSourceTool.py:216 ../gramps/gen/plug/_pluginreg.py:71
+msgid "Beta"
+msgstr "Beta"
+
+#: PythonGramplet/PythonGramplet.gpr.py:8
+#: PythonGramplet/PythonGramplet.gpr.py:4
+#: PythonGramplet/PythonGramplet.gpr.py:11
+msgid "Python Shell"
+msgstr ""
+
+#: PythonGramplet/PythonGramplet.py:48 PythonGramplet/PythonGramplet.py:55
+msgid "Enter Python expressions"
+msgstr ""
+
+#: DenominoViso/DenominoViso.gpr.py:9
+msgid "DenominoViso"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:167 DenominoViso/DenominoViso.py:179
+msgid "No Source"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:196 DenominoViso/DenominoViso.py:208
+msgid "Ancestor"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:197 DenominoViso/DenominoViso.py:209
+msgid "Descendant"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:202 DenominoViso/DenominoViso.py:214
+msgid "Fan"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:203 DenominoViso/DenominoViso.py:215
+msgid "Growth Spiral"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:204 DenominoViso/DenominoViso.py:216
+msgid "Mandelbrot Tree"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:205 DenominoViso/DenominoViso.py:217
+msgid "Pythagoras Tree"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:209 DenominoViso/DenominoViso.py:221
+msgid "right to left"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:210 DenominoViso/DenominoViso.py:222
+msgid "left to right"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:211 DenominoViso/DenominoViso.py:223
+msgid "top to bottom"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:212 DenominoViso/DenominoViso.py:224
+msgid "bottom to top"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:288 DenominoViso/DenominoViso.py:961
+#: DenominoViso/DenominoViso.py:1021 DenominoViso/DenominoViso.py:1244
+#: DenominoViso/DenominoViso.py:2721 DenominoViso/DenominoViso.py:306
+#: DenominoViso/DenominoViso.py:974 DenominoViso/DenominoViso.py:1034
+#: DenominoViso/DenominoViso.py:1259 DenominoViso/DenominoViso.py:2750
+#, fuzzy
+msgid "role"
+msgstr "Ruolo"
+
+#: DenominoViso/DenominoViso.py:291 DenominoViso/DenominoViso.py:962
+#: DenominoViso/DenominoViso.py:1041 DenominoViso/DenominoViso.py:1245
+#: DenominoViso/DenominoViso.py:2723 DenominoViso/DenominoViso.py:309
+#: DenominoViso/DenominoViso.py:975 DenominoViso/DenominoViso.py:1056
+#: DenominoViso/DenominoViso.py:1260 DenominoViso/DenominoViso.py:2752
+msgid "description"
+msgstr "descrizione"
+
+#: DenominoViso/DenominoViso.py:292 DenominoViso/DenominoViso.py:963
+#: DenominoViso/DenominoViso.py:1048 DenominoViso/DenominoViso.py:1246
+#: DenominoViso/DenominoViso.py:310 DenominoViso/DenominoViso.py:976
+#: DenominoViso/DenominoViso.py:1063 DenominoViso/DenominoViso.py:1261
+msgid "witnesses"
+msgstr "testimoni"
+
+#: DenominoViso/DenominoViso.py:363 DenominoViso/DenominoViso.py:2489
+#: ../gramps/plugins/export/exportpkg.py:213
+#: ../gramps/plugins/export/exportxml.py:151
+#: ../gramps/plugins/export/exportxml.py:175
+#: ../gramps/plugins/export/exportxml.py:196
+#, python-format
+msgid "Failure writing %s"
+msgstr "Errore durante la scrittura di %s"
+
+#: DenominoViso/DenominoViso.py:755 DenominoViso/DenominoViso.py:769
+msgid "Unknown time direction"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:1548 DenominoViso/DenominoViso.py:1562
+msgid "volume"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:1548 DenominoViso/DenominoViso.py:1508
+#: DenominoViso/DenominoViso.py:1562
+#, fuzzy
+msgid "author"
+msgstr "Autore"
+
+#: DenominoViso/DenominoViso.py:1549 DenominoViso/DenominoViso.py:1513
+#: DenominoViso/DenominoViso.py:1563
+msgid "publication_info"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:1550 DenominoViso/DenominoViso.py:1518
+#: DenominoViso/DenominoViso.py:1564
+#, fuzzy
+msgid "abbreviation"
+msgstr "Abbreviazione"
+
+#: DenominoViso/DenominoViso.py:1739 DenominoViso/DenominoViso.py:1754
+msgid "of"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:1940 DenominoViso/DenominoViso.py:1959
+msgid "the chart type runs out of bounds"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:1985 DenominoViso/DenominoViso.py:2001
+msgid "Search"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2528 DenominoViso/DenominoViso.py:2552
+msgid "DenominoViso Options"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2535 DenominoViso/DenominoViso.py:2559
+msgid "Central Person"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2536 DenominoViso/DenominoViso.py:2560
+msgid "The central person for the tree"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2539 DenominoViso/DenominoViso.py:2563
+msgid "Title of the webpage"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2540 DenominoViso/DenominoViso.py:2564
+msgid "Any string you wish."
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2544 DenominoViso/DenominoViso.py:2568
+msgid "Either plot ancestor or descendants graph."
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2549 DenominoViso/DenominoViso.py:2573
+msgid "Display type"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2550 DenominoViso/DenominoViso.py:2574
+msgid "The type of graph to create."
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2555 DenominoViso/DenominoViso.py:2582
+msgid "Direction of time"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2556 DenominoViso/DenominoViso.py:2583
+msgid "Direction in which time increases."
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2565 DenominoViso/DenominoViso.py:2592
+msgid "Max chart width (%)"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2566 DenominoViso/DenominoViso.py:2593
+msgid "Width of the tree as fraction of the browser window"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2569 DenominoViso/DenominoViso.py:2596
+msgid "Max chart height (px)"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2570 DenominoViso/DenominoViso.py:2597
+msgid "Height of the tree in pixels."
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2573 DenominoViso/DenominoViso.py:2600
+msgid "Closing remarks"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2574 DenominoViso/DenominoViso.py:2601
+msgid ""
+"List of strings, free text added at the bottom, for example for a copyright "
+"notice."
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2577 DenominoViso/DenominoViso.py:2604
+msgid "Include Options"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2580 DenominoViso/DenominoViso.py:2607
+msgid "Include private records"
+msgstr "Includere informazioni private"
+
+#: DenominoViso/DenominoViso.py:2584 DenominoViso/DenominoViso.py:2611
+msgid "Include Events"
+msgstr "Includere gli eventi"
+
+#: DenominoViso/DenominoViso.py:2594 DenominoViso/DenominoViso.py:2621
+msgid "Include birth children"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2595 DenominoViso/DenominoViso.py:2622
+msgid "Whether to include the birth of children in the list of events."
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2598 DenominoViso/DenominoViso.py:2625
+msgid "Include death relatives"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2599 DenominoViso/DenominoViso.py:2626
+msgid ""
+"Whether to include the death of relatives during the lifetime of person."
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2602 DenominoViso/DenominoViso.py:2629
+msgid "Include witness note"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2603 DenominoViso/DenominoViso.py:2630
+msgid ""
+"Whether to include the note belonging to a witness (if the event_format "
+"contains <witnesses>)"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2608 DenominoViso/DenominoViso.py:2635
+msgid "Whether to include a person's attributes"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2611 DenominoViso/DenominoViso.py:2638
+msgid "Include Addresses"
+msgstr "Includere gli indirizzi"
+
+#: DenominoViso/DenominoViso.py:2612 DenominoViso/DenominoViso.py:2639
+msgid "Whether to include a person's addresses."
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2615 DenominoViso/DenominoViso.py:2642
+msgid "Include Note"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2616 DenominoViso/DenominoViso.py:2643
+msgid "Whether to include a person's note."
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2619 DenominoViso/DenominoViso.py:2646
+msgid "Include URL"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2620 DenominoViso/DenominoViso.py:2647
+msgid "Whether to include a person's internet address."
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2623 DenominoViso/DenominoViso.py:2650
+msgid "Include URL description"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2624 DenominoViso/DenominoViso.py:2651
+msgid "Whether to include the description of the first URL"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2629 DenominoViso/DenominoViso.py:2656
+msgid "Include Sources"
+msgstr "Includere le fonti"
+
+#: DenominoViso/DenominoViso.py:2630 DenominoViso/DenominoViso.py:2657
+msgid "Whether to include a person's sources."
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2633 DenominoViso/DenominoViso.py:2660
+msgid "Image Options"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2635 DenominoViso/DenominoViso.py:2662
+msgid "Include Photos/Images from Gallery"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2636 DenominoViso/DenominoViso.py:2663
+msgid "Whether to include images"
+msgstr "Indica se includere le immagini."
+
+#: DenominoViso/DenominoViso.py:2639 DenominoViso/DenominoViso.py:2666
+msgid "Copy Image"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2640 DenominoViso/DenominoViso.py:2667
+msgid "Copy the images to a designated directory."
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2646 DenominoViso/DenominoViso.py:2674
+msgid "Images with Attribute"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2647 DenominoViso/DenominoViso.py:2675
+msgid "Determine images with which attributes to in/exclude"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2650 DenominoViso/DenominoViso.py:2678
+msgid "Include Image source references"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2651 DenominoViso/DenominoViso.py:2679
+msgid "Whether to include references for images"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2654 DenominoViso/DenominoViso.py:2682
+msgid "Source reference attribute"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2655 DenominoViso/DenominoViso.py:2683
+msgid "Image attribute that should be used as source reference"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2661 DenominoViso/DenominoViso.py:2689
+msgid "Style Options"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2663 DenominoViso/DenominoViso.py:2691
+msgid "Color of active person:"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2664 DenominoViso/DenominoViso.py:2692
+msgid "RGB-color of geometric shape of the activated person."
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2667 DenominoViso/DenominoViso.py:2695
+msgid "Color of found persons:"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2668 DenominoViso/DenominoViso.py:2696
+msgid "RGB-color of geometric shape of the persons found."
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2671 DenominoViso/DenominoViso.py:2699
+msgid "Color of male persons:"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2672 DenominoViso/DenominoViso.py:2700
+msgid "RGB-color of geometric shape of the male persons."
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2675 DenominoViso/DenominoViso.py:2703
+msgid "Colour of female persons:"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2676 DenominoViso/DenominoViso.py:2704
+msgid "RGB-color of geometric shape of the female persons."
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2679 DenominoViso/DenominoViso.py:2707
+msgid "Width of rectangle (hrd):"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2683 DenominoViso/DenominoViso.py:2711
+msgid "Height of rectangle (hrd):"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2687 DenominoViso/DenominoViso.py:2715
+msgid "Vertical distance of rectangles (hrd):"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2691 DenominoViso/DenominoViso.py:2719
+msgid "Extra style settings:"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2701 DenominoViso/DenominoViso.py:2730
+msgid "Mouse event handler"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2703 DenominoViso/DenominoViso.py:2732
+msgid "Mouse handler used to interact with visitor of webpage."
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2707 DenominoViso/DenominoViso.py:2736
+msgid "Birth relationship linestyle"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2709 DenominoViso/DenominoViso.py:2738
+msgid ""
+"List of lists where each sublist is a list with information about the dash "
+"pattern of lines connecting children to parents."
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2715 DenominoViso/DenominoViso.py:2744
+msgid "Source confidence color"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2720 DenominoViso/DenominoViso.py:2749
+msgid "Event format"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2721 DenominoViso/DenominoViso.py:2750
+msgid "at"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2725 DenominoViso/DenominoViso.py:2754
+msgid ""
+"List os strings with placeholders for events. Known placeholders: <type>, "
+"<role>, <date>, <place>, <description>, <witnesses>, <source> and any "
+"<attribute-value>."
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2728 DenominoViso/DenominoViso.py:2757
+msgid "Source format"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2729 DenominoViso/DenominoViso.py:2758
+msgid ""
+"List of strings with placeholders for sources. Known placeholders: <title>, "
+"<volume>, <author>, <publication_info> and <abbreviation>."
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2787 DenominoViso/DenominoViso.py:2819
+msgid "restricted to:"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2828 DenominoViso/DenominoViso.py:2859
+msgid "to directory:"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2830 DenominoViso/DenominoViso.py:2861
+msgid "Save images in ..."
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2880 DenominoViso/DenominoViso.py:2911
+msgid "should be"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2922 DenominoViso/DenominoViso.py:2953
+msgid "Name HTML-wrapper file"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2924 DenominoViso/DenominoViso.py:2955
+msgid "Save HTML-wrapper file as ..."
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:2951 DenominoViso/DenominoViso.py:2980
+msgid "Give a filename ..."
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:3098 DenominoViso/DenominoViso.py:3114
+msgid "Relation type"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:3103 DenominoViso/DenominoViso.py:3119
+msgid "Use dashed linestyle"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:3108 DenominoViso/DenominoViso.py:3124
+msgid "Dash length"
+msgstr ""
+
+#: DenominoViso/DenominoViso.py:3112 DenominoViso/DenominoViso.py:3128
+msgid "Inter-dash length"
+msgstr ""
+
+#: DescendantBooks/CollectAscendants.py:178
+#, python-format
+msgid "Deep pruning ascendants from %s people..."
+msgstr "Rimozione approfondita degli ascendenti in eccesso da %s persone..."
+
+#: DescendantBooks/CollectAscendants.py:182
+#, python-format
+msgid "Pruning ascendants from %s people..."
+msgstr "Rimozione degli ascendenti in eccesso da %s persone..."
+
+#: DescendantBooks/CollectAscendants.py:320
+#: DescendantBooks/CollectAscendants.py:413
+#, python-format
+msgid "Getting ascendants from %s people..."
+msgstr "Lettura degli ascendenti da %s persone..."
+
+#: DescendantBooks/CollectAscendants.py:331
+#, python-format
+msgid "Verifying descendants from %s people..."
+msgstr "Verifica dei discendenti da %s persone..."
+
+#: DescendantBooks/CollectAscendants.py:348
+#, python-format
+msgid "Getting missing descendants from %s people..."
+msgstr "Recupero dei discendenti mancanti da %s persone..."
+
+#: DescendantBooks/CollectAscendants.py:367
+#, python-format
+msgid "Verifying descendants from %s people after pruning..."
+msgstr "Verifica dei discendenti da %s persone dopo la rimozione..."
+
+#: DescendantBooks/CollectAscendants.py:383
+#, python-format
+msgid "Getting missing descendants from %s people ..."
+msgstr "Recupero dei discendenti mancanti da %s persone..."
+
+#: DescendantBooks/DescendantBookReport.py:233
+#: DescendantBooks/DescendantBookReport.py:238
+#, python-format
+msgid "sp. see  %(reference)s : %(spouse)s"
+msgstr "sp. vedi %(reference)s : %(spouse)s"
+
+#: DescendantBooks/DescendantBookReport.py:244
+#: DescendantBooks/DescendantBookReport.py:249
+#, python-format
+msgid "see report: %(report)s, ref: %(reference)s : %(person)s & %(spouse)s"
+msgstr ""
+"vedi resoconto: %(report)s, rif: %(reference)s : %(person)s & %(spouse)s"
+
+#: DescendantBooks/DescendantBookReport.py:369
+#: DescendantBooks/DescendantBookReport.py:374
+msgid "Descendants Report"
+msgstr "Resoconto dei discendenti"
+
+#: DescendantBooks/DescendantBookReport.py:418
+#: DescendantBooks/DetailedDescendantBookReport.py:409
+#: DescendantBooks/DescendantBookReport.py:423
+#: DescendantBooks/DetailedDescendantBookReport.py:421
+#, python-format
+msgid "Writing %s reports..."
+msgstr "Scrittura di %s resoconti..."
+
+#: DescendantBooks/DescendantBookReport.py:437
+#: DescendantBooks/DescendantBookReport.py:442
+#, python-format
+msgid "%s. Descendants of %s"
+msgstr "%s. discendenti di %s"
+
+#: DescendantBooks/DescendantBookReport.py:476
+#: DescendantBooks/DetailedDescendantBookReport.py:602
+#: DescendantBooks/DescendantBookReport.py:481
+#: DescendantBooks/DetailedDescendantBookReport.py:617
+#, python-format
+msgid "%d. %s"
+msgstr "%d. %s"
+
+#: DescendantBooks/DescendantBookReport.py:505
+#: DescendantBooks/DetailedDescendantBookReport.py:1329
+#: DescendantBooks/DescendantBookReport.py:510
+#: DescendantBooks/DetailedDescendantBookReport.py:1345
+msgid "Select filter to restrict people that appear in the report"
+msgstr ""
+"Seleziona il filtro per restringere le persone che appariranno nel resoconto"
+
+#: DescendantBooks/DescendantBookReport.py:547
+#: D3Charts/DescendantIndentedTree.py:1848
+msgid "Whether to show duplicate family trees in the report."
+msgstr ""
+"Indica se visualizzare o meno gli alberi familiari duplicati nel resoconto."
+
+#: DescendantBooks/DescendantBookReport.py:570
+#: DescendantBooks/DetailedDescendantBookReport.py:1516
+#: AncestorFill/AncestorFill.py:361
+msgid "The style used for the title of the page."
+msgstr "Lo stile usato per il titolo della pagina."
+
+#: DescendantBooks/DescendantBookReport.py:580
+#: DescendantBooks/DescendantBookReport.py:585
+msgid "The style used for the table of contents header."
+msgstr "Lo stile usato per l'intestazione del sommario."
+
+#: DescendantBooks/DescendantBookReport.py:590
+#: DescendantBooks/DescendantBookReport.py:595
+msgid "The style used for the table of contents detail."
+msgstr "Lo stile usato per i dettagli del sommario."
+
+#: DescendantBooks/DescendantBooks.gpr.py:20
+#: DescendantBooks/DescendantBooks.gpr.py:22
+msgid "Descendant Book"
+msgstr "Libro discendenza"
+
+#: DescendantBooks/DescendantBooks.gpr.py:21
+#: DescendantBooks/DescendantBooks.gpr.py:23
+msgid "Produces one or more descendant reports based on a supplied query."
+msgstr ""
+"Fornisce uno o più resoconti dei discendenti basati sulla richiesta indicata."
+
+#: DescendantBooks/DescendantBooks.gpr.py:37
+#: DescendantBooks/DescendantBooks.gpr.py:41
+msgid "Detailed Descendant Book"
+msgstr "Libro discendenza dettagliato"
+
+#: DescendantBooks/DescendantBooks.gpr.py:38
+#: DescendantBooks/DescendantBooks.gpr.py:43
+msgid ""
+"Produces one or more detailed descendant reports based on a supplied query."
+msgstr ""
+"Produce uno o più resoconti dettagliati dei discendenti basati sulla "
+"richiesta indicata."
+
+#: DescendantBooks/DetailedDescendantBookReport.py:130
+#: DescendantBooks/DetailedDescendantBookReport.py:134
+msgid "Detailed Descendants Report"
+msgstr "Resoconto dettagliato dei discendenti"
+
+#: DescendantBooks/DetailedDescendantBookReport.py:347
+#: DescendantBooks/DetailedDescendantBookReport.py:359
+#, python-format
+msgid "Generating %s report references..."
+msgstr "Generazione di %s riferimenti del resoconto..."
+
+#: DescendantBooks/DetailedDescendantBookReport.py:441
+#: DescendantBooks/DetailedDescendantBookReport.py:453
+#, python-format
+msgid "%(report_count)s. Descendant Report for %(person_name)s"
+msgstr "%(report_count)s. resoconto discendenza di %(person_name)s"
+
+#: DescendantBooks/DetailedDescendantBookReport.py:682
+#: DescendantBooks/DetailedDescendantBookReport.py:697
+#, python-format
+msgid "See Report : %s, Generation : %s, Person : %s"
+msgstr "Vedi resoconto: %s, generazione: %s, persona: %s"
+
+#: DescendantBooks/DetailedDescendantBookReport.py:749
+#: DescendantBooks/DetailedDescendantBookReport.py:762
+#: DescendantBooks/DetailedDescendantBookReport.py:766
+#: DescendantBooks/DetailedDescendantBookReport.py:779
+#, python-format
+msgid "Report appearances for %s"
+msgstr "Occorrenze nel resoconto di %s"
+
+#: DescendantBooks/DetailedDescendantBookReport.py:793
+#: DescendantBooks/DetailedDescendantBookReport.py:809
+#, python-format
+msgid "%(event_name)s of %(name)s "
+msgstr "%(event_name)s di %(name)s "
+
+#: DescendantBooks/DetailedDescendantBookReport.py:797
+#: DescendantBooks/DetailedDescendantBookReport.py:813
+#, python-format
+msgid "%(event_name)s of %(name)s and %(mate)s "
+msgstr "%(event_name)s di %(name)s e %(mate)s "
+
+#: DescendantBooks/DetailedDescendantBookReport.py:801
+#: DescendantBooks/DetailedDescendantBookReport.py:845
+#: DescendantBooks/DetailedDescendantBookReport.py:817
+#: DescendantBooks/DetailedDescendantBookReport.py:861
+#, python-format
+msgid "%(date)s, %(place)s"
+msgstr "%(date)s, %(place)s"
+
+#: DescendantBooks/DetailedDescendantBookReport.py:804
+#: DescendantBooks/DetailedDescendantBookReport.py:848
+#: DescendantBooks/DetailedDescendantBookReport.py:820
+#: DescendantBooks/DetailedDescendantBookReport.py:864
+#, python-format
+msgid "%(date)s"
+msgstr "%(date)s"
+
+#: DescendantBooks/DetailedDescendantBookReport.py:806
+#: DescendantBooks/DetailedDescendantBookReport.py:850
+#: DescendantBooks/DetailedDescendantBookReport.py:822
+#: DescendantBooks/DetailedDescendantBookReport.py:866
+#, python-format
+msgid "%(place)s"
+msgstr "%(place)s"
+
+#: DescendantBooks/DetailedDescendantBookReport.py:808
+#: DescendantBooks/DetailedDescendantBookReport.py:824
+#, python-format
+msgid ". Ref: %(repno)s %(gen)s %(per)s "
+msgstr ". Rif: %(repno)s %(gen)s %(per)s "
+
+#: DescendantBooks/DetailedDescendantBookReport.py:837
+#: DescendantBooks/DetailedDescendantBookReport.py:853
+#, python-format
+msgid "%(event_name)s:"
+msgstr "%(event_name)s:"
+
+#: DescendantBooks/DetailedDescendantBookReport.py:862
+#: DescendantBooks/DetailedDescendantBookReport.py:878
+#, python-format
+msgid " %(event_text)s"
+msgstr " %(event_text)s"
+
+#: DescendantBooks/DetailedDescendantBookReport.py:980
+#: DescendantBooks/DetailedDescendantBookReport.py:996
+#, python-format
+msgid "Ref: %s. %s"
+msgstr "Rif: %s. %s"
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1221
+#: DescendantBooks/DetailedDescendantBookReport.py:1237
+#, python-format
+msgid "%(name_kind)s: %(name)s%(endnotes)s"
+msgstr "%(name_kind)s: %(name)s%(endnotes)s"
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1282
+#: DescendantBooks/DetailedDescendantBookReport.py:1298
+#, python-format
+msgid "%(type)s:"
+msgstr "%(type)s:"
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1287
+#: DescendantBooks/DetailedDescendantBookReport.py:1303
+#, python-format
+msgid " %(value)s%(endnotes)s"
+msgstr " %(value)s%(endnotes)s"
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1389
+#: DescendantBooks/DetailedDescendantBookReport.py:1405
+msgid "List children"
+msgstr "Elenca i figli"
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1406
+#: DescendantBooks/DetailedDescendantBookReport.py:1422
+msgid "Add descendant reference in child list"
+msgstr "Aggiungi riferimento all'antenato nella elenco dei figli"
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1468
+#: DescendantBooks/DetailedDescendantBookReport.py:1486
+msgid "Include Index of Names"
+msgstr "Includi l'indice dei nomi"
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1469
+#: DescendantBooks/DetailedDescendantBookReport.py:1487
+msgid "Whether to include the index of Names at the end of the report."
+msgstr "Indica se includere o meno l'indice dei nomi alla fine del resoconto."
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1473
+#: DescendantBooks/DetailedDescendantBookReport.py:1491
+msgid "Include index of Dates"
+msgstr "Includi l'indice delle date"
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1474
+#: DescendantBooks/DetailedDescendantBookReport.py:1492
+msgid "Whether to include the index of Dates at the end of the report."
+msgstr ""
+"Indica se includere o meno l'indice delle date alla fine del resoconto."
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1478
+#: DescendantBooks/DetailedDescendantBookReport.py:1496
+msgid "Include index of Places"
+msgstr "Includi l'indice dei luoghi"
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1479
+#: DescendantBooks/DetailedDescendantBookReport.py:1497
+msgid "Whether to include the index of Places at the end of the report."
+msgstr ""
+"Indica se includere o meno l'Indice dei luoghi alla fine del resoconto."
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1546
+#: DescendantBooks/DetailedDescendantBookReport.py:1570
+msgid "The style used for the children list."
+msgstr "Lo stile usato per la elenco dei figli."
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1556
+#: DescendantBooks/DetailedDescendantBookReport.py:1580
+msgid "The basic style used for Note header."
+msgstr "Lo stile di base usato per l'intestazione delle note."
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1573
+#: DescendantBooks/DetailedDescendantBookReport.py:1597
+msgid "The style used for the first personal entry."
+msgstr "Lo stile usato la prima registrazione personale."
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1583
+#: DescendantBooks/DetailedDescendantBookReport.py:1607
+msgid "The style used for the More About header and for headers of mates."
+msgstr ""
+"Lo stile usato per l'intestazione di 'Altre informazioni su' e per "
+"l'intestazione degli amici."
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1594
+#: DescendantBooks/DetailedDescendantBookReport.py:1618
+msgid "The style used for additional detail data."
+msgstr "Lo stile usato per i dettagli addizionali."
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1604
+#: DescendantBooks/DetailedDescendantBookReport.py:1614
+#: DescendantBooks/DetailedDescendantBookReport.py:1628
+#: DescendantBooks/DetailedDescendantBookReport.py:1638
+msgid "The style used for note detail data."
+msgstr "Lo stile usato per i dettagli delle annotazioni."
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1624
+#: DescendantBooks/DetailedDescendantBookReport.py:1648
+msgid "The style used for the date in the Index of Dates."
+msgstr "Lo stile usato per le date nell'indice delle date."
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1634
+#: DescendantBooks/DetailedDescendantBookReport.py:1658
+msgid "The style used for the events in the Index of Dates."
+msgstr "Lo stile usato per gli eventi nell'indice delle date."
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1644
+#: DescendantBooks/DetailedDescendantBookReport.py:1668
+msgid "The style used for the header in the Index of Names."
+msgstr "Lo stile usato per le intestazioni nell'indice dei nomi."
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1654
+#: DescendantBooks/DetailedDescendantBookReport.py:1678
+msgid "The style used for the references in the Index of Names."
+msgstr "Lo stile usato per i riferimenti nell'indice dei nomi."
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1664
+#: DescendantBooks/DetailedDescendantBookReport.py:1688
+msgid "The style used for the header in the Index of Places."
+msgstr "Lo stile usato per le intestazioni nell'indice dei luoghi."
+
+#: DescendantBooks/DetailedDescendantBookReport.py:1675
+#: DescendantBooks/DetailedDescendantBookReport.py:1699
+msgid "The style used for the references in the Index of Places."
+msgstr "Lo stile usato per i riferimenti nell'indice dei luoghi."
+
+#: NoteGramplet/NoteGramplet.gpr.py:3 NoteGramplet/NoteGramplet.gpr.py:4
+msgid "Note Gramplet"
+msgstr ""
+
+#: NoteGramplet/NoteGramplet.py:252 ../gramps/gui/editors/editnote.py:373
+msgid "Add Note"
+msgstr "Aggiunge nota"
+
+#: NoteGramplet/NoteGramplet.py:257 ../gramps/gui/editors/editnote.py:324
+#: ../gramps/gui/editors/editnote.py:377
+#: ../gramps/gui/editors/objectentries.py:589
+msgid "Edit Note"
+msgstr "Modifica nota"
+
+#: AllNamesQuickview/AllNames.gpr.py:3 AllNamesQuickview/AllNames.py:46
+#: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
+msgid "All Names of All People"
+msgstr ""
+
+#: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.gpr.py:5
+msgid "Display all names of all people"
+msgstr ""
+
+#: AllNamesQuickview/AllNames.py:49 PlaceCleanup/placecleanup.glade:52
+msgid "Primary Name"
+msgstr ""
+
+#: AllNamesQuickview/AllNames.py:49 AllNamesQuickview/AllNames.py:54
+msgid "Name Type"
+msgstr "Tipo nome"
+
+#: AllNamesQuickview/AllNames.py:66 AllNamesQuickview/AllNames.py:71
+#, python-format
+msgid "Total names %d"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.gpr.py:29
+#: EditExifMetadata/editexifmetadata.py:753
+#: EditExifMetadata/editexifmetadata.py:1159
+#: EditExifMetadata/editexifmetadata.gpr.py:30
+#: EditExifMetadata/editexifmetadata.py:723
+#: EditExifMetadata/editexifmetadata.py:1135
+#: EditExifMetadata/editexifmetadata.py:1147
+msgid "Edit Image Exif Metadata"
+msgstr "Modifica i metadati Exif dell'immagine"
+
+#: EditExifMetadata/editexifmetadata.gpr.py:30
+#: EditExifMetadata/editexifmetadata.gpr.py:31
+msgid "Gramplet to view, edit, and save image Exif metadata"
+msgstr ""
+"Gramplet per visualizzare, modificare e salvare i metadati Exif di "
+"un'immagine"
+
+#: EditExifMetadata/editexifmetadata.gpr.py:34
+#: EditExifMetadata/editexifmetadata.gpr.py:35
+msgid "Edit Exif Metadata"
+msgstr "Modifica metadati Exif"
+
+#: EditExifMetadata/editexifmetadata.py:148
+#: EditExifMetadata/editexifmetadata.py:135
+msgid "<-- Image Types -->"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:171
+#: EditExifMetadata/editexifmetadata.py:158
+msgid ""
+"Warning:  Changing this entry will update the Media object title field in "
+"Gramps not Exiv2 metadata."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:174
+#: EditExifMetadata/editexifmetadata.py:161
+#, fuzzy
+msgid "Provide a short description for this image."
+msgstr "Fornire una breve descrizione per questa immagine."
+
+#: EditExifMetadata/editexifmetadata.py:176
+#: EditExifMetadata/editexifmetadata.py:163
+msgid ""
+"Enter the Artist/ Author of this image.  The person's name or the company "
+"who is responsible for the creation of this image."
+msgstr ""
+"Inserire l'artista/autore di questa immagine.  Il nome della persona o "
+"dell'azienda responsabile per la creazione di questa immagine."
+
+#: EditExifMetadata/editexifmetadata.py:179
+#: EditExifMetadata/editexifmetadata.py:167
+#, fuzzy
+msgid "Enter the copyright information for this image. \n"
+msgstr ""
+"Inserire le informazioni di copyright per questa immagine. \n"
+"Ad esempio: (C) 2010 Smith and Wesson"
+
+#: EditExifMetadata/editexifmetadata.py:181
+#: EditExifMetadata/editexifmetadata.py:169
+msgid ""
+"The original date/ time when the image was first created/ taken as in a "
+"photograph.\n"
+"Example: 1830-01-1 09:30:59"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:184
+#: EditExifMetadata/editexifmetadata.py:173
+msgid ""
+"This is the date/ time that the image was last changed/ modified.\n"
+"Example: 2011-05-24 14:30:00"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:202
+#: EditExifMetadata/editexifmetadata.py:191
+msgid ""
+"Displays the Gramps Wiki Help page for 'Edit Image Exif Metadata' in your "
+"web browser."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:205
+#: EditExifMetadata/editexifmetadata.py:194
+msgid ""
+"This will open up a new window to allow you to edit/ modify this image's "
+"Exif metadata.\n"
+"  It will also allow you to be able to Save the modified metadata."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:209
+#: EditExifMetadata/editexifmetadata.py:198
+msgid "Will produce a Popup window showing a Thumbnail Viewing Area"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:211
+#: EditExifMetadata/editexifmetadata.py:201
+msgid ""
+"Select from a drop- down box the image file type that you would like to "
+"convert your non- Exiv2 compatible media object to."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:214
+#: EditExifMetadata/editexifmetadata.py:205
+msgid ""
+"If your image is not of an image type that can have Exif metadata read/ "
+"written to/from, convert it to a type that can?"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:217
+#: EditExifMetadata/editexifmetadata.py:209
+msgid ""
+"WARNING:  This will completely erase all Exif metadata from this image!  Are "
+"you sure that you want to do this?"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:315
+#: EditExifMetadata/editexifmetadata.py:214
+#, fuzzy
+msgid "Thumbnail"
+msgstr "Posizione miniature"
+
+#: EditExifMetadata/editexifmetadata.py:397
+#: EditExifMetadata/editexifmetadata.py:402
+msgid "Select an image to begin..."
+msgstr "Selezionare un'immagine per iniziare..."
+
+#: EditExifMetadata/editexifmetadata.py:419
+#: EditExifMetadata/editexifmetadata.py:421
+#, fuzzy
+msgid ""
+"Image is NOT readable,\n"
+"Please choose a different image..."
+msgstr ""
+"L'immagine NON è leggibile,\n"
+"Scegliere un'immagine differente..."
+
+#: EditExifMetadata/editexifmetadata.py:435
+#: EditExifMetadata/editexifmetadata.py:481
+#: EditExifMetadata/editexifmetadata.py:1440
+msgid ""
+"Image is NOT writable,\n"
+"You will NOT be able to save Exif metadata...."
+msgstr ""
+"L'immagine NON è scrivibile,\n"
+"NON sarà possibile salvare i metadati Exif..."
+
+#: EditExifMetadata/editexifmetadata.py:447
+#: EditExifMetadata/editexifmetadata.py:441
+msgid "Please convert this image to an Exiv2- compatible image type..."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:670
+#: EditExifMetadata/editexifmetadata.py:648
+msgid "Click Close to close this Thumbnail View Area."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:674
+#: EditExifMetadata/editexifmetadata.py:654
+msgid "Thumbnail View Area"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:753
+#: EditExifMetadata/editexifmetadata.py:724
+msgid ""
+"WARNING: You are about to convert this image into a .jpeg image.  Are you "
+"sure that you want to do this?"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:755
+#: EditExifMetadata/editexifmetadata.py:726
+#, fuzzy
+msgid "Convert and Delete"
+msgstr "Converti ed elimina"
+
+#: EditExifMetadata/editexifmetadata.py:841
+#: EditExifMetadata/editexifmetadata.py:807
+#, fuzzy
+msgid ""
+"Your image has been converted and the original file has been deleted, and "
+"the full path has been updated!"
+msgstr ""
+"L'immagine è stata convertita ed il file originale è stato eliminato..."
+
+#: EditExifMetadata/editexifmetadata.py:845
+#: EditExifMetadata/editexifmetadata.py:812
+msgid ""
+"There has been an error, Please check your source and destination file "
+"paths..."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:848
+#: EditExifMetadata/editexifmetadata.py:816
+msgid ""
+"There was an error in deleting the original file.  You will need to delete "
+"it yourself!"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:865
+#: EditExifMetadata/editexifmetadata.py:834
+#, fuzzy
+msgid "There was an error in converting your image file."
+msgstr ""
+"Si è verificato un errore nella rimozione dei metadati Exif da questa "
+"immagine..."
+
+#: EditExifMetadata/editexifmetadata.py:876
+#: EditExifMetadata/editexifmetadata.py:844
+#, fuzzy
+msgid "Media Path Update"
+msgstr "data del decesso"
+
+#: EditExifMetadata/editexifmetadata.py:882
+#: EditExifMetadata/editexifmetadata.py:853
+#, fuzzy
+msgid "There has been an error in updating the image file's path!"
+msgstr ""
+"Si è verificato un errore nella rimozione dei metadati Exif da questa "
+"immagine..."
+
+#: EditExifMetadata/editexifmetadata.py:916
+#: EditExifMetadata/editexifmetadata.py:886
+msgid ""
+"Click the close button when you are finished modifying this image's Exif "
+"metadata."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:954
+#: EditExifMetadata/editexifmetadata.py:924
+msgid "Saves a copy of the data fields into the image's Exif metadata."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:957
+#: EditExifMetadata/editexifmetadata.py:928
+msgid "Re -display the data fields that were cleared from the Edit Area."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:960
+#: EditExifMetadata/editexifmetadata.py:932
+msgid "This button will clear all of the data fields shown here."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:963
+#: EditExifMetadata/editexifmetadata.py:940
+msgid ""
+"Closes this popup Edit window.\n"
+"WARNING: This action will NOT Save any changes/ modification made to this "
+"image's Exif metadata."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:990
+#: EditExifMetadata/editexifmetadata.py:969
+#, fuzzy
+msgid "Media Object Title"
+msgstr "Filtri oggetti multimediali"
+
+#: EditExifMetadata/editexifmetadata.py:1000
+#: EditExifMetadata/editexifmetadata.py:978
+#, fuzzy
+msgid "media Title: "
+msgstr "Titolo calendario"
+
+#: EditExifMetadata/editexifmetadata.py:1014
+#: EditExifMetadata/editexifmetadata.py:993
+#, fuzzy
+msgid "General Data"
+msgstr "Generale"
+
+#: EditExifMetadata/editexifmetadata.py:1024
+#: EditExifMetadata/editexifmetadata.py:1003
+#, fuzzy
+msgid "Description: "
+msgstr "Descrizione:"
+
+#: EditExifMetadata/editexifmetadata.py:1025
+#: EditExifMetadata/editexifmetadata.py:1004
+#, fuzzy
+msgid "Artist: "
+msgstr "Artista"
+
+#: EditExifMetadata/editexifmetadata.py:1026
+#: EditExifMetadata/editexifmetadata.py:1005
+#, fuzzy
+msgid "Copyright: "
+msgstr "Copyright"
+
+#: EditExifMetadata/editexifmetadata.py:1039
+#: EditExifMetadata/editexifmetadata.py:1019
+msgid "Date/ Time"
+msgstr "Data/ Ora"
+
+#: EditExifMetadata/editexifmetadata.py:1053
+#: EditExifMetadata/editexifmetadata.py:1034
+#, fuzzy
+msgid "Original: "
+msgstr "Orario originale"
+
+#: EditExifMetadata/editexifmetadata.py:1054
+#: EditExifMetadata/editexifmetadata.py:1035
+#, fuzzy
+msgid "Modified: "
+msgstr "Ultima modifica"
+
+#: EditExifMetadata/editexifmetadata.py:1071
+#: EditExifMetadata/editexifmetadata.py:1054
+msgid "Latitude/ Longitude/ Altitude GPS coordinates"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:1085
+#: EditExifMetadata/editexifmetadata.py:1069
+#, fuzzy
+msgid "Latitude :"
+msgstr "Latitudine:"
+
+#: EditExifMetadata/editexifmetadata.py:1086
+#: EditExifMetadata/editexifmetadata.py:1070
+#, fuzzy
+msgid "Longitude :"
+msgstr "Longitudine:"
+
+#: EditExifMetadata/editexifmetadata.py:1087
+#: EditExifMetadata/editexifmetadata.py:1071
+#, fuzzy
+msgid "Altitude :"
+msgstr "Latitudine"
+
+#: EditExifMetadata/editexifmetadata.py:1139
+#: EditExifMetadata/editexifmetadata.py:1114
+#, fuzzy
+msgid "Bad Date/Time"
+msgstr "Data/ Ora"
+
+#: EditExifMetadata/editexifmetadata.py:1147
+#: EditExifMetadata/editexifmetadata.py:1122
+#, fuzzy
+msgid "Invalid latitude (syntax: 18\\u00b09'"
+msgstr "Latitudine non valida (sintassi: 18°9'"
+
+#: EditExifMetadata/editexifmetadata.py:1148
+#: EditExifMetadata/editexifmetadata.py:1123
+msgid "48.21\"S, -18.2412 or -18:9:48.21)"
+msgstr "48.21\"S, -18.2412 o -18:9:48.21)"
+
+#: EditExifMetadata/editexifmetadata.py:1152
+#: EditExifMetadata/editexifmetadata.py:1127
+#, fuzzy
+msgid "Invalid longitude (syntax: 18\\u00b09'"
+msgstr "Longitudine non valida (sintassi: 18°9'"
+
+#: EditExifMetadata/editexifmetadata.py:1153
+#: EditExifMetadata/editexifmetadata.py:1128
+msgid "48.21\"E, -18.2412 or -18:9:48.21)"
+msgstr "48.21\"E, -18.2412 o -18:9:48.21)"
+
+#: EditExifMetadata/editexifmetadata.py:1159
+#: EditExifMetadata/editexifmetadata.py:1136
+msgid ""
+"WARNING!  You are about to completely delete the Exif metadata from this "
+"image?"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:1324
+#: EditExifMetadata/editexifmetadata.py:1333
+#, fuzzy
+msgid "Media Title Update"
+msgstr "Filtro oggetti multimediali"
+
+#: EditExifMetadata/editexifmetadata.py:1350
+#: EditExifMetadata/editexifmetadata.py:1357
+#, fuzzy
+msgid "Media Object Date Created"
+msgstr "Oggetti multimediali marcati come privati"
+
+#: EditExifMetadata/editexifmetadata.py:1422
+#, fuzzy
+msgid "Saving Exif metadata to this image..."
+msgstr "Salvataggio dei metadati Exif nell'immagine..."
+
+#: EditExifMetadata/editexifmetadata.py:1469
+#: EditExifMetadata/editexifmetadata.py:1465
+msgid "All Exif metadata has been deleted from this image..."
+msgstr "Tutti i metadati Exif sono stati eliminati da questa immagine..."
+
+#: EditExifMetadata/editexifmetadata.py:1474
+#: EditExifMetadata/editexifmetadata.py:1470
+msgid "There was an error in stripping the Exif metadata from this image..."
+msgstr ""
+"Si è verificato un errore nella rimozione dei metadati Exif da questa "
+"immagine..."
+
+#: ToDoReport//TodoReport.gpr.py:24 ToDoReport/TodoReport.gpr.py:25
+msgid "Todo Report"
+msgstr "Per fare rapporto"
+
+#: ToDoReport//TodoReport.gpr.py:25 ToDoReport/TodoReport.gpr.py:27
+msgid ""
+"Produces a list of all the notes with a given tag along with the records "
+"that it references, the Person, Family, Event, etc."
+msgstr ""
+"Produce un elenco di tutte le note con un dato tag insieme ai record a cui "
+"fa riferimento, la persona, la famiglia, l'evento, ecc."
+
+#: ToDoReport//TodoReport.py:91 ../gramps/plugins/textreport/tagreport.py:115
+msgid "You must first create a tag before running this report."
+msgstr "Devi prima creare un tag prima di eseguire questo rapporto."
+
+#: ToDoReport//TodoReport.py:98 ToDoReport//TodoReport.py:526
+#: ToDoReport/TodoReport.py:107 ToDoReport/TodoReport.py:904
+msgid "TR-Title"
+msgstr "TR-Titolo"
+
+#: ToDoReport//TodoReport.py:99 ToDoReport/TodoReport.py:111
+#, python-format
+msgid "Report on Notes Tagged '%s'"
+msgstr "Rapporto sulle note contrassegnate con '% s'"
+
+#: ToDoReport//TodoReport.py:198 ToDoReport//TodoReport.py:536
+#: ToDoReport/TodoReport.py:237 ToDoReport/TodoReport.py:914
+msgid "TR-Heading"
+msgstr "TR-voce"
+
+#: ToDoReport//TodoReport.py:204 ToDoReport/TodoReport.py:243
+msgid "NoteTable"
+msgstr "TabellaDelleNote"
+
+#: ToDoReport//TodoReport.py:204 ToDoReport//TodoReport.py:584
+#: ToDoReport/TodoReport.py:243 ToDoReport/TodoReport.py:962
+msgid "TR-Table"
+msgstr "TR-Tabella"
+
+#: ToDoReport//TodoReport.py:208 ToDoReport//TodoReport.py:214
+#: ToDoReport//TodoReport.py:228 ToDoReport//TodoReport.py:234
+#: ToDoReport//TodoReport.py:263 ToDoReport//TodoReport.py:271
+#: ToDoReport//TodoReport.py:277 ToDoReport//TodoReport.py:288
+#: ToDoReport//TodoReport.py:307 ToDoReport//TodoReport.py:313
+#: ToDoReport//TodoReport.py:323 ToDoReport//TodoReport.py:346
+#: ToDoReport//TodoReport.py:362 ToDoReport//TodoReport.py:368
+#: ToDoReport//TodoReport.py:378 ToDoReport//TodoReport.py:389
+#: ToDoReport//TodoReport.py:407 ToDoReport//TodoReport.py:413
+#: ToDoReport//TodoReport.py:569 ToDoReport/TodoReport.py:247
+#: ToDoReport/TodoReport.py:253 ToDoReport/TodoReport.py:267
+#: ToDoReport/TodoReport.py:273 ToDoReport/TodoReport.py:302
+#: ToDoReport/TodoReport.py:310 ToDoReport/TodoReport.py:323
+#: ToDoReport/TodoReport.py:329 ToDoReport/TodoReport.py:347
+#: ToDoReport/TodoReport.py:353 ToDoReport/TodoReport.py:363
+#: ToDoReport/TodoReport.py:373 ToDoReport/TodoReport.py:392
+#: ToDoReport/TodoReport.py:398 ToDoReport/TodoReport.py:410
+#: ToDoReport/TodoReport.py:421 ToDoReport/TodoReport.py:437
+#: ToDoReport/TodoReport.py:444 ToDoReport/TodoReport.py:458
+#: ToDoReport/TodoReport.py:469 ToDoReport/TodoReport.py:474
+#: ToDoReport/TodoReport.py:480 ToDoReport/TodoReport.py:490
+#: ToDoReport/TodoReport.py:512 ToDoReport/TodoReport.py:518
+#: ToDoReport/TodoReport.py:535 ToDoReport/TodoReport.py:541
+#: ToDoReport/TodoReport.py:547 ToDoReport/TodoReport.py:564
+#: ToDoReport/TodoReport.py:570 ToDoReport/TodoReport.py:576
+#: ToDoReport/TodoReport.py:582 ToDoReport/TodoReport.py:599
+#: ToDoReport/TodoReport.py:607 ToDoReport/TodoReport.py:613
+#: ToDoReport/TodoReport.py:619 ToDoReport/TodoReport.py:636
+#: ToDoReport/TodoReport.py:642 ToDoReport/TodoReport.py:648
+#: ToDoReport/TodoReport.py:654 ToDoReport/TodoReport.py:678
+#: ToDoReport/TodoReport.py:683 ToDoReport/TodoReport.py:689
+#: ToDoReport/TodoReport.py:947
+msgid "TR-TableCell"
+msgstr "TR-TabellaCella"
+
+#: ToDoReport//TodoReport.py:209 ToDoReport//TodoReport.py:215
+#: ToDoReport//TodoReport.py:557 ToDoReport/TodoReport.py:248
+#: ToDoReport/TodoReport.py:254 ToDoReport/TodoReport.py:935
+msgid "TR-Normal-Bold"
+msgstr "TR-Normale-Grassetto"
+
+#: ToDoReport//TodoReport.py:229 ToDoReport//TodoReport.py:246
+#: ToDoReport//TodoReport.py:264 ToDoReport//TodoReport.py:272
+#: ToDoReport//TodoReport.py:278 ToDoReport//TodoReport.py:289
+#: ToDoReport//TodoReport.py:308 ToDoReport//TodoReport.py:314
+#: ToDoReport//TodoReport.py:324 ToDoReport//TodoReport.py:347
+#: ToDoReport//TodoReport.py:363 ToDoReport//TodoReport.py:369
+#: ToDoReport//TodoReport.py:379 ToDoReport//TodoReport.py:390
+#: ToDoReport//TodoReport.py:408 ToDoReport//TodoReport.py:414
+#: ToDoReport//TodoReport.py:546 ToDoReport/TodoReport.py:268
+#: ToDoReport/TodoReport.py:285 ToDoReport/TodoReport.py:303
+#: ToDoReport/TodoReport.py:311 ToDoReport/TodoReport.py:324
+#: ToDoReport/TodoReport.py:330 ToDoReport/TodoReport.py:348
+#: ToDoReport/TodoReport.py:354 ToDoReport/TodoReport.py:364
+#: ToDoReport/TodoReport.py:374 ToDoReport/TodoReport.py:393
+#: ToDoReport/TodoReport.py:399 ToDoReport/TodoReport.py:411
+#: ToDoReport/TodoReport.py:422 ToDoReport/TodoReport.py:438
+#: ToDoReport/TodoReport.py:445 ToDoReport/TodoReport.py:459
+#: ToDoReport/TodoReport.py:470 ToDoReport/TodoReport.py:475
+#: ToDoReport/TodoReport.py:481 ToDoReport/TodoReport.py:491
+#: ToDoReport/TodoReport.py:513 ToDoReport/TodoReport.py:519
+#: ToDoReport/TodoReport.py:536 ToDoReport/TodoReport.py:542
+#: ToDoReport/TodoReport.py:548 ToDoReport/TodoReport.py:565
+#: ToDoReport/TodoReport.py:571 ToDoReport/TodoReport.py:577
+#: ToDoReport/TodoReport.py:583 ToDoReport/TodoReport.py:600
+#: ToDoReport/TodoReport.py:608 ToDoReport/TodoReport.py:614
+#: ToDoReport/TodoReport.py:620 ToDoReport/TodoReport.py:637
+#: ToDoReport/TodoReport.py:643 ToDoReport/TodoReport.py:649
+#: ToDoReport/TodoReport.py:679 ToDoReport/TodoReport.py:684
+#: ToDoReport/TodoReport.py:690 ToDoReport/TodoReport.py:924
+msgid "TR-Normal"
+msgstr "TR-Normale"
+
+#: ToDoReport//TodoReport.py:236 ToDoReport//TodoReport.py:564
+#: ToDoReport/TodoReport.py:275 ToDoReport/TodoReport.py:942
+msgid "TR-Note"
+msgstr "TR-Nota"
+
+#: ToDoReport//TodoReport.py:245 ToDoReport//TodoReport.py:574
+#: ToDoReport/TodoReport.py:284 ToDoReport/TodoReport.py:952
+msgid "TR-BorderCell"
+msgstr "TR-CellaDiConfine"
+
+#: ToDoReport//TodoReport.py:374 ToDoReport/TodoReport.py:405
+msgid "date: "
+msgstr "data: "
+
+#: ToDoReport//TodoReport.py:385 ToDoReport/TodoReport.py:417
+msgid "place: "
+msgstr "posto: "
+
+#: ToDoReport//TodoReport.py:507 ToDoReport/TodoReport.py:885
+msgid "Group by reference type"
+msgstr "Raggruppa per tipo di riferimento"
+
+#: ToDoReport//TodoReport.py:508 ToDoReport/TodoReport.py:886
+msgid "Group notes by Family, Person, Place, etc."
+msgstr "Appunti di gruppo per famiglia, persona, luogo, ecc."
+
+#: ToDoReport//TodoReport.py:568 ToDoReport/TodoReport.py:946
+msgid "The basic style used for the table cell display."
+msgstr ""
+"Lo stile di base utilizzato per la visualizzazione delle celle della tabella."
+
+#: ToDoReport//TodoReport.py:573 ToDoReport/TodoReport.py:951
+msgid "The basic style used for the table border cell display."
+msgstr ""
+"Lo stile di base utilizzato per la visualizzazione della cella del bordo "
+"della tabella."
+
+#: ToDoReport//TodoReport.py:583 ToDoReport/TodoReport.py:961
+msgid "The basic style used for the table display."
+msgstr "Lo stile di base utilizzato per la visualizzazione del tavolo."
+
+#: DescendantsLines/DescendantsLines.gpr.py:25
+#: DescendantsLines/DescendantsLines.gpr.py:27
+msgid "Descendants Lines"
+msgstr "Linee dei discendenti"
+
+#: DescendantsLines/DescendantsLines.gpr.py:26
+#: DescendantsLines/DescendantsLines.gpr.py:28
+msgid "Produces descendants lines of a person"
+msgstr "Produce le linee dei discendenti di una persona"
+
+#: DescendantsLines/DescendantsLines.py:424
+#: DescendantsLines/DescendantsLines.py:463
+msgid "Using SVG type for supplemental document is not supported!"
+msgstr "L'utilizzo del tipo SVG per documento supplementare non è supportato!"
+
+#: DescendantsLines/DescendantsLines.py:1444
+#: DescendantsLines/DescendantsLines.py:1531
+msgid "Output format"
+msgstr "Formato di output"
+
+#: DescendantsLines/DescendantsLines.py:1445
+#: DescendantsLines/DescendantsLines.py:1532
+msgid "PNG format"
+msgstr "Formato PNG"
+
+#: DescendantsLines/DescendantsLines.py:1446
+#: DescendantsLines/DescendantsLines.py:1533
+msgid "SVG format"
+msgstr "Formato SVG"
+
+#: DescendantsLines/DescendantsLines.py:1447
+#: DescendantsLines/DescendantsLines.py:1534
+msgid "PDF format"
+msgstr "Formato PDF"
+
+#: DescendantsLines/DescendantsLines.py:1448
+#: DescendantsLines/DescendantsLines.py:1535
+msgid "PS format"
+msgstr "Formato PS"
+
+#: DescendantsLines/DescendantsLines.py:1449
+#: DescendantsLines/DescendantsLines.py:1536
+msgid "The output format to be used"
+msgstr "Il formato di output da usare"
+
+#: DescendantsLines/DescendantsLines.py:1454
+#: DescendantsLines/DescendantsLines.py:1541
+msgid "The destination file for the content."
+msgstr "Il file di destinazione per il contenuto"
+
+#: DescendantsLines/DescendantsLines.py:1458
+#: DescendantsLines/DescendantsLines.py:1545
+msgid "The number of generations to include in the chart. (0 for unlimited)"
+msgstr "Il numero di generazioni da includere nel grafico. (0 per illimitato)"
+
+#: DescendantsLines/DescendantsLines.py:1462
+#: DescendantsLines/DescendantsLines.py:1612
+msgid "Box around Person's block"
+msgstr "Rettangolo intorno al blocco della persona"
+
+#: DescendantsLines/DescendantsLines.py:1463
+#: DescendantsLines/DescendantsLines.py:1613
+msgid "Draw a thin black box around each person' text block."
+msgstr ""
+"Disegna un rettangolo nero leggero intorno ad ogni blocco di testo di una "
+"persona."
+
+#: DescendantsLines/DescendantsLines.py:1467
+#: DescendantsLines/DescendantsLines.py:1629
+msgid "Colour blocks by Generation"
+msgstr "Colora i blocchi secondo la generazione"
+
+#: DescendantsLines/DescendantsLines.py:1468
+#: DescendantsLines/DescendantsLines.py:1630
+msgid "Colour the background of text blocks by generation."
+msgstr "Colora lo sfondo dei blocchi di testo secondo la generazione."
+
+#: DescendantsLines/DescendantsLines.py:1472
+#: DescendantsLines/DescendantsLines.py:1634
+msgid "Descend block colour intensity"
+msgstr "Intensità del colore del blocco del discendente"
+
+#: DescendantsLines/DescendantsLines.py:1473
+#: DescendantsLines/DescendantsLines.py:1635
+msgid ""
+"Intensity of backgound colour in Descendant's Block, 0=faint, 255=intense "
+"colour"
+msgstr ""
+"Intensità del colore di sfondo del blocco del discendente, 0=colore leggero, "
+"255=colore intenso"
+
+#: DescendantsLines/DescendantsLines.py:1477
+#: DescendantsLines/DescendantsLines.py:1639
+msgid "Spouse block colour intensity"
+msgstr "Intensità di colore del blocco coniuge"
+
+#: DescendantsLines/DescendantsLines.py:1478
+#: DescendantsLines/DescendantsLines.py:1640
+msgid ""
+"Intensity of backgound colour in Spouse's Block, 0=faint 255=intense colour"
+msgstr ""
+"Intensità di colore dello sfondo del blocco del coniuge, 0=colore leggero, "
+"255=colore intenso"
+
+#: DescendantsLines/DescendantsLines.py:1482
+#: DescendantsLines/DescendantsLines.py:1555
+msgid "Include an image"
+msgstr "Includi un'immagine"
+
+#: DescendantsLines/DescendantsLines.py:1483
+#: DescendantsLines/DescendantsLines.py:1556
+msgid "Whether to include an image if one is available."
+msgstr "Se includere un'immagine se una è disponibile."
+
+#: DescendantsLines/DescendantsLines.py:1487
+#: DescendantsLines/DescendantsLines.py:1560
+msgid "Max Image height"
+msgstr "Massima altezza dell'immagine"
+
+#: DescendantsLines/DescendantsLines.py:1488
+#: DescendantsLines/DescendantsLines.py:1561
+msgid "Maximum image height in pixels, 0=don't scale for height."
+msgstr ""
+"Massima altezza dell'immagine in pixels, 0=non ridimensionare per l'altezza."
+
+#: DescendantsLines/DescendantsLines.py:1492
+#: DescendantsLines/DescendantsLines.py:1565
+msgid "Max Image width"
+msgstr "Massima larghezza dell'immagine"
+
+#: DescendantsLines/DescendantsLines.py:1493
+#: DescendantsLines/DescendantsLines.py:1566
+msgid "Maximum image width in pixels, 0=don't scale for width."
+msgstr ""
+"Massima larghezza dell'immagine in pixels, 0=non ridimensionare per la "
+"larghezza"
+
+#: DescendantsLines/DescendantsLines.py:1497
+#: DescendantsLines/DescendantsLines.py:1570
+msgid "Image Location"
+msgstr "Posizione dell'immagine"
+
+#: DescendantsLines/DescendantsLines.py:1498
+#: DescendantsLines/DescendantsLines.py:1571
+msgid "Above text"
+msgstr "Sopra il testo"
+
+#: DescendantsLines/DescendantsLines.py:1499
+#: DescendantsLines/DescendantsLines.py:1572
+msgid "Left of text"
+msgstr "A sinistra del testo"
+
+#: DescendantsLines/DescendantsLines.py:1500
+#: DescendantsLines/DescendantsLines.py:1573
+msgid "Position of image relative to text"
+msgstr "Posizione dell'immagine in relazione al testo"
+
+#: DescendantsLines/DescendantsLines.py:1506
+#: DescendantsLines/DescendantsLines.py:1647
+msgid "Name Display Format"
+msgstr "Formato di visualizzazione del nome"
+
+#: DescendantsLines/DescendantsLines.py:1509
+#: DescendantsLines/DescendantsLines.py:1650
+msgid ""
+"f=first & middle names, l=surname, n=nickname,\n"
+"c=commonly used given name, t=title, s=suffix, g=family nick name\n"
+"See Wiki Manual > Reports > part 2"
+msgstr ""
+"f=primo nome & secondo nome, l=cognome, n=soprannome,\n"
+"c=pseudonimo, t=titolo, s=suffisso, g=soprannome famiglia\n"
+"Consultare il manuale Wiki > Resoconti > parte 2"
+
+#: DescendantsLines/DescendantsLines.py:1516
+#: DescendantsLines/DescendantsLines.py:1550
+msgid "Use d'Aboville descendant numbering system"
+msgstr "Usa il sistema di numerazione dei discendenti d'Aboville"
+
+#: DescendantsLines/DescendantsLines.py:1518
+#: DescendantsLines/DescendantsLines.py:1552
+msgid "Prepend name with d'Aboville descendant number in the chart."
+msgstr "Anteponi al nome il numero del discendente d'Aboville nel grafico"
+
+#: DescendantsLines/DescendantsLines.py:1521
+#: DescendantsLines/DescendantsLines.py:1579
+msgid "Colour Name by Gender"
+msgstr "Colora il nome secondo il genere"
+
+#: DescendantsLines/DescendantsLines.py:1523
+#: DescendantsLines/DescendantsLines.py:1581
+msgid "Color the name to indicate a person's gender in the chart."
+msgstr "Colora il nome per indicare il genere della persona nel grafico."
+
+#: DescendantsLines/DescendantsLines.py:1532
+#: DescendantsLines/DescendantsLines.py:1551
+#: DescendantsLines/DescendantsLines.py:1662
+#: DescendantsLines/DescendantsLines.py:1681
+msgid ""
+"[event, list]$e(formating)\n"
+"See Wiki Manual > Reports > part 2\n"
+"formating: dates=d(ymdMo) places=D(elcuspnoitxy) notes=n abbreviated_type=t"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1558
+#: DescendantsLines/DescendantsLines.py:1585
+msgid "Use alternate events, if Primary event is not found"
+msgstr "Usa eventi alternativi se il primo evento non viene trovato"
+
+#: DescendantsLines/DescendantsLines.py:1559
+#: DescendantsLines/DescendantsLines.py:1586
+#, fuzzy
+msgid ""
+"For Birth (baptism, christen)\n"
+"   Marriage (marr_lic, engagement)\n"
+"   Divorce (annulment, div_filing),\n"
+"   Death (burial, cremation, probate)."
+msgstr ""
+"Per nascita (battesimo, christen)\n"
+"  Matrimonio (marr_lic, fidanzamento)\n"
+"  Divorzio (annullamento, div_filing),\n"
+"  Morte (sepoltura, cremazione, omologazione testamento)."
+
+#: DescendantsLines/DescendantsLines.py:1565
+#: DescendantsLines/DescendantsLines.py:1592
+msgid "Sort Events by Date"
+msgstr "Ordina gli eventi per data"
+
+#: DescendantsLines/DescendantsLines.py:1566
+#: DescendantsLines/DescendantsLines.py:1593
+msgid "Sort events by date (else use the order of the 'Display Format' above)."
+msgstr ""
+"Ordina gli eventi per data (altrimenti usa l'ordine di \"Formato "
+"visualizzazione\" sopra)."
+
+#: DescendantsLines/DescendantsLines.py:1570
+#: DescendantsLines/DescendantsLines.py:1793
+msgid "Protect People, Images or Events that are marked Private"
+msgstr "Proteggi persone, immagini e eventi che sono marcati come privati"
+
+#: DescendantsLines/DescendantsLines.py:1572
+#: DescendantsLines/DescendantsLines.py:1795
+msgid "The Privacy setting of only these types of Gramps objects are checked"
+msgstr ""
+"L'impostazione di privacy è controllata solo per questo tipo di oggetti "
+"Gramps"
+
+#: DescendantsLines/DescendantsLines.py:1576
+#: DescendantsLines/DescendantsLines.py:1799
+msgid "Privacy text"
+msgstr "Testo per la privacy"
+
+#: DescendantsLines/DescendantsLines.py:1577
+#: DescendantsLines/DescendantsLines.py:1800
+msgid "Text to display in block, when a Person is marked private"
+msgstr "Testo da visualizzare nel blocco quando una persona è marcata privata"
+
+#: DescendantsLines/DescendantsLines.py:1581
+#: DescendantsLines/DescendantsLines.py:1597
+msgid "Text style"
+msgstr "Style del testo"
+
+#: DescendantsLines/DescendantsLines.py:1582
+#: DescendantsLines/DescendantsLines.py:1598
+msgid "Center-aligned text"
+msgstr "Testo allineato al centro"
+
+#: DescendantsLines/DescendantsLines.py:1583
+#: DescendantsLines/DescendantsLines.py:1599
+msgid "Left-aligned text"
+msgstr "Testo allineato a sinistra"
+
+#: DescendantsLines/DescendantsLines.py:1584
+#: DescendantsLines/DescendantsLines.py:1600
+msgid "Alignment of the text in the block for each person on the chart"
+msgstr "Allineamento del testo nel blocco per ogni persona nel grafico"
+
+#: DescendantsLines/DescendantsLines.py:1588
+#: DescendantsLines/DescendantsLines.py:1604
+msgid "Max Note Length"
+msgstr "Lunghezza massima della nota"
+
+#: DescendantsLines/DescendantsLines.py:1589
+#: DescendantsLines/DescendantsLines.py:1605
+msgid ""
+"Maximum length of an event's note field in a text block, '$e(n)'\n"
+" 0=no limit "
+msgstr ""
+"Lunghezza massima del campo nota di un evento all'interno di un blocco di "
+"testo, '$e(n)'\n"
+"0=illimitato"
+
+#: DescendantsLines/DescendantsLines.py:1594
+#: EventDescriptionEditor/EventDescriptionEditor.py:142
+msgid "Replace"
+msgstr "Sostituzioni"
+
+#: DescendantsLines/DescendantsLines.py:1599
+#: DescendantsLines/DescendantsLines.py:1693
+msgid ""
+"i.e.\n"
+"United States of America/USA"
+msgstr ""
+"per esempio\n"
+"United States of America/USA"
+
+#: DescendantsLines/DescendantsLines.py:1606
+#: DescendantsLines/DescendantsLines.py:1700
+msgid "The length of the vertical edge from descendant to spouse-bar."
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1611
+#: DescendantsLines/DescendantsLines.py:1705
+msgid "The length of the vertical edge from spouse-bar to spouse."
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1620
+#: DescendantsLines/DescendantsLines.py:1626
+#: DescendantsLines/DescendantsLines.py:1630
+#: DescendantsLines/DescendantsLines.py:1636
+#: DescendantsLines/DescendantsLines.py:1647
+#: DescendantsLines/DescendantsLines.py:1736
+msgid "The number of ??? pad"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1635
+#: DescendantsLines/DescendantsLines.py:1735
+msgid "OL_PAD"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1640
+#: DescendantsLines/DescendantsLines.py:1740
+msgid "The length of the vertical edge from spouse-bar to child-bar."
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1652
+#: DescendantsLines/DescendantsLines.py:1753
+msgid "The length of the vertical edge from child to child-bar."
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1655
+#: DescendantsLines/DescendantsLines.py:1756
+msgid "MIN_C_WIDTH"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1656
+#: DescendantsLines/DescendantsLines.py:1757
+msgid "The number of ??? min width"
+msgstr ""
+
+#: DescendantsLines/DescendantsLines.py:1680
+#: DescendantsLines/DescendantsLines.py:1815
+msgid "The default style."
+msgstr "Lo stile di default."
+
+#: PlaceCompletion/PlaceCompletion.gpr.py:25
+#: PlaceCompletion/PlaceCompletion.gpr.py:26
+msgid "PlaceCompletion"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.gpr.py:26
+#: PlaceCompletion/PlaceCompletion.gpr.py:28
+msgid ""
+"Provides a browsable list of selected places, with possibility to complete/"
+"parse/set the attribute fields."
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:86 PlaceCompletion/PlaceCompletion.py:95
+msgid ""
+"Place Completion by parsing, file lookup and batch setting of place "
+"attributes"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:236
+#: PlaceCompletion/PlaceCompletion.py:275
+#: PlaceCompletion/PlaceCompletion.py:258
+msgid "Error in PlaceCompletion.py"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:237
+#: PlaceCompletion/PlaceCompletion.py:259
+msgid "Non existing group used in get"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:334
+#: PlaceCompletion/PlaceCompletion.py:340
+msgid "Places tool"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:442
+#: PlaceCompletion/PlaceCompletion.py:408
+msgid "Missing regex groups in match lat/lon"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:443
+#: PlaceCompletion/PlaceCompletion.py:409
+#, python-format
+msgid ""
+"Regex groups %(lat)s and %(lon)s must be present in lat/lon match. Quiting"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:453
+#: PlaceCompletion/PlaceCompletion.py:419
+msgid "Non valid regex for match lat/lon"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:454
+#: PlaceCompletion/PlaceCompletion.py:420
+msgid "Non valid regular expression given to find lat/lon. Quiting."
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:512
+#: PlaceCompletion/PlaceCompletion.py:479
+msgid "Finding Places and appropriate changes"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:514
+#: PlaceCompletion/PlaceCompletion.py:481
+msgid "Filtering"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:524
+#: PlaceCompletion/PlaceCompletion.py:491
+msgid "Loading lat/lon file in Memory..."
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:529
+#: PlaceCompletion/PlaceCompletion.py:497
+msgid "Examining places"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:717
+#: PlaceCompletion/PlaceCompletion.py:687
+msgid "Doing Place changes"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:754
+#: PlaceCompletion/PlaceCompletion.py:764
+#: PlaceCompletion/PlaceCompletion.py:736
+msgid "Change places"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:759
+#: PlaceCompletion/PlaceCompletion.py:731
+msgid "No place record was modified."
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:761
+#: PlaceCompletion/PlaceCompletion.py:733
+msgid "1 place record was modified."
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:763
+#: PlaceCompletion/PlaceCompletion.py:735
+#, python-format
+msgid "%d place records were modified."
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:837
+#: PlaceCompletion/PlaceCompletion.py:809
+msgid "The selected file is a directory, not a file."
+msgstr "Il file selezionato è una directory, non un file."
+
+#: PlaceCompletion/PlaceCompletion.py:850
+#: PlaceCompletion/PlaceCompletion.py:820
+msgid "The file you want to access is not a regular file."
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:856
+#: PlaceCompletion/PlaceCompletion.py:826
+msgid "The file does not exist."
+msgstr "Il file non esiste"
+
+#: PlaceCompletion/PlaceCompletion.py:875
+#: PlaceCompletion/PlaceCompletion.py:858
+msgid "Problem reading file"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:993
+#: PlaceCompletion/PlaceCompletion.py:1005
+#: PlaceCompletion/PlaceCompletion.py:970
+#: PlaceCompletion/PlaceCompletion.py:982
+#, python-format
+msgid "invalid lat or lon value, %(lat)s, %(lon)s"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:1074
+#: PlaceCompletion/PlaceCompletion.py:1135
+msgid "No lat/lon conversion"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:1075
+#: PlaceCompletion/PlaceCompletion.py:1136
+msgid "All in degree notation"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:1076
+#: PlaceCompletion/PlaceCompletion.py:1137
+msgid "All in decimal notation"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:1077
+#: PlaceCompletion/PlaceCompletion.py:1138
+msgid "Correct -50° in 50°S"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:1081
+#: PlaceCompletion/PlaceCompletion.py:1142
+msgid "No changes"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:1082
+#: PlaceCompletion/PlaceCompletion.py:1143
+msgid "City[, State]"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:1084
+#: PlaceCompletion/PlaceCompletion.py:1149
+msgid "TitleStart [, City] [, State]"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:1117
+#: PlaceCompletion/PlaceCompletion.py:1177
+msgid "Don't search"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:1120
+#: PlaceCompletion/PlaceCompletion.py:1180
+msgid "GeoNames country file, city search"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:1125
+#: PlaceCompletion/PlaceCompletion.py:1185
+msgid "GeoNames country file, city localized variants search"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:1136
+#: PlaceCompletion/PlaceCompletion.py:1202
+msgid "GeoNames country file, title begin, general search"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:1141
+#: PlaceCompletion/PlaceCompletion.py:1207
+msgid "GeoNames USA state file, city search"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:1155
+#: PlaceCompletion/PlaceCompletion.py:1221
+msgid "GNS Geonet country file, city search"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:1164
+#: PlaceCompletion/PlaceCompletion.py:1236
+msgid "GNS Geonet country file, title begin, general search"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:1172
+#: PlaceCompletion/PlaceCompletion.py:1244
+msgid "Wikipedia CSV Dump"
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.py:1260
+#: PlaceCompletion/PlaceCompletion.py:1332
+msgid "All Places"
+msgstr "Tutti i luoghi"
+
+#: PlaceCompletion/PlaceCompletion.py:1263
+#: PlaceCompletion/PlaceCompletion.py:1335
+msgid "No Latitude/Longitude given"
+msgstr ""
+
+#: PlaceCompletion/placecompletion.glade.h:7
+#: PlaceCompletion/placecompletion.glade:112
+msgid "Apply all suggested changes"
+msgstr ""
+
+#: PlaceCompletion/placecompletion.glade.h:8
+#: PlaceCompletion/placecompletion.glade:366
+msgid "C_enter latitude:"
+msgstr ""
+
+#: PlaceCompletion/placecompletion.glade.h:10
+#: PlaceCompletion/placecompletion.glade:383
+msgid "Center longitude:"
+msgstr ""
+
+#: PlaceCompletion/placecompletion.glade.h:11
+#: PlaceCompletion/placecompletion.glade:649
+msgid "Change title into:"
+msgstr ""
+
+#: PlaceCompletion/placecompletion.glade.h:12
+#: ../gramps/gen/filters/rules/place/_hasplace.py:63
+msgid "City:"
+msgstr "Città:"
+
+#: PlaceCompletion/placecompletion.glade.h:13
+#: PlaceCompletion/placecompletion.glade:664
+msgid "Convert lat/lon as:"
+msgstr ""
+
+#: PlaceCompletion/placecompletion.glade.h:14
+#: PlaceCompletion/placecompletion.glade:336
+msgid "Count_ry:"
+msgstr "Sta_to:"
+
+#: PlaceCompletion/placecompletion.glade.h:15
+#: ../gramps/gen/filters/rules/place/_hasplace.py:66
+msgid "Country:"
+msgstr "Stato:"
+
+#: PlaceCompletion/placecompletion.glade.h:17
+#: PlaceCompletion/placecompletion.glade:460
+msgid "Height:"
+msgstr "Altezza:"
+
+#: PlaceCompletion/placecompletion.glade.h:19
+#: PlaceCompletion/placecompletion.glade:195
+msgid "Parish:"
+msgstr "Parrocchia:"
+
+#: PlaceCompletion/placecompletion.glade.h:20
+#: PlaceCompletion/placecompletion.glade:579
+msgid "Parse as:"
+msgstr ""
+
+#: PlaceCompletion/placecompletion.glade.h:22
+#: PlaceCompletion/placecompletion.glade:271
+msgid "Place _filter:"
+msgstr ""
+
+#: PlaceCompletion/placecompletion.glade.h:23
+#: PlaceCompletion/placecompletion.glade:430
+msgid "Places in a rectangle:"
+msgstr ""
+
+#: PlaceCompletion/placecompletion.glade.h:24
+#: PlaceCompletion/placecompletion.glade:554
+msgid "Search in:"
+msgstr ""
+
+#: PlaceCompletion/placecompletion.glade.h:25
+#: PlaceCompletion/placecompletion.glade:566
+msgid "Select A File"
+msgstr "Selezione file"
+
+#: PlaceCompletion/placecompletion.glade.h:28
+#: ../gramps/gen/filters/rules/place/_hasplace.py:67
+msgid "ZIP/Postal Code:"
+msgstr "CAP:"
+
+#: PlaceCompletion/placecompletion.glade.h:29
+#: PlaceCompletion/placecompletion.glade:85
+msgid "_Google Maps"
+msgstr "_Google Maps"
+
+#: CheckPlaceTitles/checkplacetitles.gpr.py:28
+#: CheckPlaceTitles/checkplacetitles.gpr.py:29
+msgid "Check Place Titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.gpr.py:29
+#: CheckPlaceTitles/checkplacetitles.gpr.py:30
+msgid "Check place titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:71
+msgid "Check Place title"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:86 ExtractCity/extractcity.py:454
+msgid "Checking Place Titles"
+msgstr "Controllo titoli luoghi"
+
+#: CheckPlaceTitles/checkplacetitles.py:87 ExtractCity/extractcity.py:456
+msgid "Looking for place fields"
+msgstr "Ricerca campi dei luoghi"
+
+#: CheckPlaceTitles/checkplacetitles.py:103
+#: CheckPlaceTitles/checkplacetitles.py:107
+msgid "Differences"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:109
+#: CheckPlaceTitles/checkplacetitles.py:112
+msgid "No need modifications"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:110
+#: CheckPlaceTitles/checkplacetitles.py:113
+msgid "No changes need."
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:185
+#: CheckPlaceTitles/checkplacetitles.py:187
+msgid "Legacy place"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:199
+#: CheckPlaceTitles/checkplacetitles.py:201
+msgid "Modify Place titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:222
+#: CheckPlaceTitles/checkplacetitles.py:224
+msgid "Place titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:1
+#: CheckPlaceTitles/checkplacetitles.glade:56
+msgid "Remove content of place title field if it does not match"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:2
+#: CheckPlaceTitles/checkplacetitles.glade:74
+msgid "Copy content of place title field to a new note."
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:4
+#: CheckPlaceTitles/checkplacetitles.glade:91
+msgid "Attach a tag on selected places."
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:6
+#: CheckPlaceTitles/checkplacetitles.glade:177
+msgid "column"
+msgstr ""
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:3
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:4
+msgid "Deep Connections Gramplet"
+msgstr ""
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:9
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:13
+msgid "Deep Connections"
+msgstr ""
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:57
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:65
+msgid "Pause"
+msgstr ""
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:140
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:209
+msgid "No Active Person set."
+msgstr "Nessuna persona attiva impostata."
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:147
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:217
+msgid "Looking for relationship between\n"
+msgstr ""
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:148
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:218
+#, python-format
+msgid "  <b>%s</b> (Home Person) and\n"
+msgstr ""
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:149
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:219
+#, fuzzy, python-format
+msgid "  <b>%s</b> (Active Person)...\n"
+msgstr "Persona attiva: <b>%s</b>"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:157
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:229
+#, python-format
+msgid ""
+"Found relation #%d: \n"
+"   "
+msgstr ""
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:163
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:239
+msgid ""
+"Paused.\n"
+"Press Continue to search for additional relations.\n"
+msgstr ""
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:176
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:254
+#, python-format
+msgid ""
+"\n"
+"Search completed. %d relations found."
+msgstr ""
+
+#: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:9
+#: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:4
+#: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:11
+msgid "Headline News"
+msgstr ""
+
+#: HeadlineNewsGramplet/HeadlineNewsGramplet.py:98
+#: HeadlineNewsGramplet/HeadlineNewsGramplet.py:113
+msgid "Read Gramps headline news"
+msgstr ""
+
+#: TimelineQuickview/TimelineQuickview.gpr.py:10
+#: TimelineQuickview/TimelineQuickview.gpr.py:11
+msgid "Display a person's events on a timeline"
+msgstr ""
+
+#: TimelineQuickview/TimelineQuickview.py:43
+#: TimelineQuickview/TimelineQuickview.py:48
+msgid "Inlaw Parents"
+msgstr ""
+
+#: TimelineQuickview/TimelineQuickview.py:46
+#: TimelineQuickview/TimelineQuickview.py:51
+msgid "Grandparents"
+msgstr ""
+
+#: TimelineQuickview/TimelineQuickview.py:48
+#: TimelineQuickview/TimelineQuickview.py:53
+msgid "Inlaw Grandparents"
+msgstr ""
+
+#: TimelineQuickview/TimelineQuickview.py:51
+#: TimelineQuickview/TimelineQuickview.py:56
+msgid "Great grandparents"
+msgstr ""
+
+#: TimelineQuickview/TimelineQuickview.py:53
+#: TimelineQuickview/TimelineQuickview.py:58
+msgid "Inlaw Great grandparents"
+msgstr ""
+
+#: TimelineQuickview/TimelineQuickview.py:56
+#: TimelineQuickview/TimelineQuickview.py:61
+msgid "Great, "
+msgstr ""
+
+#: TimelineQuickview/TimelineQuickview.py:56
+#: TimelineQuickview/TimelineQuickview.py:58
+#: TimelineQuickview/TimelineQuickview.py:61
+#: TimelineQuickview/TimelineQuickview.py:63
+msgid "great, "
+msgstr ""
+
+#: TimelineQuickview/TimelineQuickview.py:56
+#: TimelineQuickview/TimelineQuickview.py:58
+#: TimelineQuickview/TimelineQuickview.py:61
+#: TimelineQuickview/TimelineQuickview.py:63
+msgid "great grandparents"
+msgstr ""
+
+#: TimelineQuickview/TimelineQuickview.py:58
+#: TimelineQuickview/TimelineQuickview.py:63
+msgid "Inlaw Great, "
+msgstr ""
+
+#: TimelineQuickview/TimelineQuickview.py:88
+#: TimelineQuickview/TimelineQuickview.py:102
+msgid "Partner's spouse"
+msgstr ""
+
+#: TimelineQuickview/TimelineQuickview.py:138
+#: TimelineQuickview/TimelineQuickview.py:156
+#, python-format
+msgid "Timeline for %s"
+msgstr ""
+
+#: TimelineQuickview/TimelineQuickview.py:145
+#: TimelineQuickview/TimelineQuickview.py:163
+msgid "People involved"
+msgstr ""
+
+#: TimelineQuickview/TimelineQuickview.py:169 Query/QueryQuickview.py:426
+msgid "Today"
+msgstr ""
+
+#: AvatarGenerator/AvatarGenerator.gpr.py:23
+#: AvatarGenerator/AvatarGenerator.gpr.py:24
+msgid "Avatar Generator Tool"
+msgstr "Generatore di avatar"
+
+#: AvatarGenerator/AvatarGenerator.gpr.py:24
+#: AvatarGenerator/AvatarGenerator.gpr.py:25
+msgid "A tool to add avatar pictures to your family tree"
+msgstr ""
+"Strumento per aggiungere avatar alle persone senza alcuna immagine che le "
+"rappresenti"
+
+#: AvatarGenerator/AvatarGenerator.py:59
+msgid "single image mode"
+msgstr "immagine singola"
+
+#: AvatarGenerator/AvatarGenerator.py:66
+msgid "Choose how many images you'd like to use."
+msgstr "Scegliere quante immagini utilizzare."
+
+#: AvatarGenerator/AvatarGenerator.py:74
+msgid "Image for people with unknown gender."
+msgstr "Immagine per persone di genere sconosciuto."
+
+#: AvatarGenerator/AvatarGenerator.py:78
+msgid "Image for males."
+msgstr "Immagine per maschi."
+
+#: AvatarGenerator/AvatarGenerator.py:82
+msgid "Image for females"
+msgstr "Immagine per femmine"
+
+#: AvatarGenerator/AvatarGenerator.py:95
+msgid "Remove images from people"
+msgstr "Rimuovi immagini dalle persone"
+
+#: AvatarGenerator/AvatarGenerator.py:96
+msgid "Remove selected image(s)."
+msgstr "Rimuovi le immagini selezionate."
+
+#: AvatarGenerator/AvatarGenerator.py:134
+#: AvatarGenerator/AvatarGenerator.py:183
+#: AvatarGenerator/AvatarGenerator.py:257
+msgid "Avatar Generator"
+msgstr "Generatore di avatar"
+
+#: AvatarGenerator/AvatarGenerator.py:186
+msgid "Remove avatar images..."
+msgstr "Rimozione avatar..."
+
+#: AvatarGenerator/AvatarGenerator.py:211
+#: AvatarGenerator/AvatarGenerator.py:219
+#: AvatarGenerator/AvatarGenerator.py:316
+#: AvatarGenerator/AvatarGenerator.py:320
+#: EventDescriptionEditor/EventDescriptionEditor.py:105
+msgid "INFO"
+msgstr "INFO"
+
+#: AvatarGenerator/AvatarGenerator.py:211
+msgid "No media was removed."
+msgstr "Nessun media è stato rimosso."
+
+#: AvatarGenerator/AvatarGenerator.py:213
+msgid "{} media references were removed from {} persons."
+msgstr "{} riferimenti a dei media sono stati rimossi da {} persone."
+
+#: AvatarGenerator/AvatarGenerator.py:216
+msgid ""
+"\n"
+"{} HandleError occured, but were ignored."
+msgstr ""
+"\n"
+"Si sono verificati {} HandleError, ma sono stati ignorati."
+
+#: AvatarGenerator/AvatarGenerator.py:263
+#: AvatarGenerator/AvatarGenerator.py:280
+msgid "Add avatar images..."
+msgstr "Aggiunta avatar..."
+
+#: AvatarGenerator/AvatarGenerator.py:314
+msgid "{} avatar images were sucessfully added."
+msgstr "Sono stati aggiunti {} avatar."
+
+#: AvatarGenerator/AvatarGenerator.py:318
+msgid "There was no avatar image to add. "
+msgstr "Non c'è alcuna immagine da aggiungere. "
+
+#: AvatarGenerator/AvatarGenerator.py:319
+msgid "All persons already had one."
+msgstr "Tutte le persone ne hanno già uno."
+
+#: FamilyTree/FamilyTree.gpr.py:4 FamilyTree/FamilyTree.gpr.py:5
+msgid "Produces a graphical family tree."
+msgstr "Genera un albero genealogico grafico"
+
+#: FamilyTree/FamilyTree.py:102
+#, python-format
+msgid "Family Tree for %s"
+msgstr "Albero genealogico per %s"
+
+#: FamilyTree/FamilyTree.py:682 FamilyTree/FamilyTree.py:684
+msgid "Anonymous"
+msgstr "Anonimo"
+
+#: FamilyTree/FamilyTree.py:905 FamilyTree/FamilyTree.py:911
+msgid "born"
+msgstr "nato"
+
+#: FamilyTree/FamilyTree.py:907 FamilyTree/FamilyTree.py:913
+msgid "baptised"
+msgstr "battezzato"
+
+#: FamilyTree/FamilyTree.py:909 FamilyTree/FamilyTree.py:915
+msgid "died"
+msgstr "deceduto"
+
+#: FamilyTree/FamilyTree.py:911 FamilyTree/FamilyTree.py:917
+msgid "buried"
+msgstr "seppellito"
+
+#: FamilyTree/FamilyTree.py:913 FamilyTree/FamilyTree.py:919
+msgid "cremated"
+msgstr "cremato"
+
+#: FamilyTree/FamilyTree.py:915 FamilyTree/FamilyTree.py:921
+msgid "married"
+msgstr "sposato"
+
+#: FamilyTree/FamilyTree.py:917 FamilyTree/FamilyTree.py:923
+msgid "divorced"
+msgstr "divorziato"
+
+#: FamilyTree/FamilyTree.py:919 FamilyTree/FamilyTree.py:925
+msgid "resident"
+msgstr "residente"
+
+#: FamilyTree/FamilyTree.py:926 FamilySheet/FamilySheet.py:769
+#, python-format
+msgid "on %(ymd_date)s"
+msgstr "il %(ymd_date)s"
+
+#: FamilyTree/FamilyTree.py:928 FamilySheet/FamilySheet.py:771
+#, python-format
+msgid "in %(ym_date)s"
+msgstr "il %(ym_date)s"
+
+#: FamilyTree/FamilyTree.py:930 FamilySheet/FamilySheet.py:773
+#, python-format
+msgid "in %(y_date)s"
+msgstr "nel %(y_date)s"
+
+#: FamilyTree/FamilyTree.py:934 FamilySheet/FamilySheet.py:777
+#, python-format
+msgid "on %(placeholder)s"
+msgstr "in %(placeholder)s"
+
+#: FamilyTree/FamilyTree.py:937 FamilySheet/FamilySheet.py:779
+#, python-format
+msgid "on %(placeholder)s (%(partial)s)"
+msgstr "in %(placeholder)s (%(partial)s)"
+
+#: FamilyTree/FamilyTree.py:954 FamilySheet/FamilySheet.py:824
+#: FamilySheet/FamilySheet.py:826
+#, python-format
+msgid "in %(place)s"
+msgstr "in %(place)s"
+
+#: FamilyTree/FamilyTree.py:965 FamilyTree/FamilyTree.py:971
+#, python-format
+msgid "(%(description)s)"
+msgstr "(%(description)s)"
+
+#: FamilyTree/FamilyTree.py:1046 FamilyTree/FamilyTree.py:1044
+msgid "The center family for the tree"
+msgstr "La famiglia principale dell'albero"
+
+#: FamilyTree/FamilyTree.py:1049 FamilyTree/FamilyTree.py:1047
+msgid "Ancestor Generations"
+msgstr "Generazioni ascendenti"
+
+#: FamilyTree/FamilyTree.py:1050 FamilyTree/FamilyTree.py:1048
+msgid "The number of ancestor generations to include in the tree"
+msgstr "Il numero di generazioni di antenati da includere nell'albero"
+
+#: FamilyTree/FamilyTree.py:1053 FamilyTree/FamilyTree.py:1051
+msgid "Descendant Generations"
+msgstr "Generazioni discendenti"
+
+#: FamilyTree/FamilyTree.py:1054 FamilyTree/FamilyTree.py:1052
+msgid "The number of descendant generations to include in the tree"
+msgstr "Il numero di generazioni di discendenti da includere nell'albero"
+
+#: FamilyTree/FamilyTree.py:1057 FamilyTree/FamilyTree.py:1055
+msgid "Kekule number of husband"
+msgstr "Numero Kekule di mariti"
+
+#: FamilyTree/FamilyTree.py:1058 FamilyTree/FamilyTree.py:1056
+msgid ""
+"The Kekule number of the husband (central family). Set 0 to not show Kekule "
+"numbers"
+msgstr ""
+"Il numero Kekule del marito (famiglia principale). Scegli 0 per non mostrarlo"
+
+#: FamilyTree/FamilyTree.py:1061 FamilyTree/FamilyTree.py:1059
+msgid "Scale to fit on a single page"
+msgstr "Ridimensiona su una singola pagina"
+
+#: FamilyTree/FamilyTree.py:1062 FamilyTree/FamilyTree.py:1060
+msgid "Whether to scale to fit on a single page."
+msgstr "Se ridimensionare per farlo entrare in una sola pagina"
+
+#: FamilyTree/FamilyTree.py:1067 FamilyTree/FamilyTree.py:1065
+msgid "No color"
+msgstr "Nessun colore"
+
+#: FamilyTree/FamilyTree.py:1069 FamilyTree/FamilyTree.py:1067
+msgid "First generation"
+msgstr "Prima generazione"
+
+#: FamilyTree/FamilyTree.py:1070 FamilyTree/FamilyTree.py:1068
+msgid "Second generation"
+msgstr "Seconda generazione"
+
+#: FamilyTree/FamilyTree.py:1071 FamilyTree/FamilyTree.py:1069
+msgid "Third generation"
+msgstr "Terza generazione"
+
+#: FamilyTree/FamilyTree.py:1072 FamilyTree/FamilyTree.py:1070
+msgid "Male line"
+msgstr "Linea maschile"
+
+#: FamilyTree/FamilyTree.py:1073 FamilyTree/FamilyTree.py:1071
+msgid "Male line and illegitimate children"
+msgstr "Linea maschile e figli illegittimi"
+
+#: FamilyTree/FamilyTree.py:1074 FamilyTree/FamilyTree.py:1072
+msgid "Female line"
+msgstr "Linea femminile"
+
+#: FamilyTree/FamilyTree.py:1077 FamilyTree/FamilyTree.py:1075
+msgid "Shuffle colors"
+msgstr "Mischia i colori"
+
+#: FamilyTree/FamilyTree.py:1078 FamilyTree/FamilyTree.py:1076
+msgid "Whether to shuffle colors or order them in rainbow fashion."
+msgstr "Se mischiare i colori o ordinarli a mo di arcobaleno"
+
+#: FamilyTree/FamilyTree.py:1086 FamilySheet/FamilySheet.py:880
+msgid "Replace first name with call name"
+msgstr "Sostituisci il nome con lo pseudonimo"
+
+#: FamilyTree/FamilyTree.py:1087 FamilySheet/FamilySheet.py:881
+msgid "Underline call name in first name / add call name to first name"
+msgstr "Sottolinea lo pseudonimo nel nome / aggiungi lo pseudonimo al nome"
+
+#: FamilyTree/FamilyTree.py:1093 FamilyTree/FamilyTree.py:1091
+msgid "Include Occupation"
+msgstr "Includi occupazione"
+
+#: FamilyTree/FamilyTree.py:1099 FamilyTree/FamilyTree.py:1097
+msgid "Include Residence"
+msgstr "Includi residenza"
+
+#: FamilyTree/FamilyTree.py:1102 FamilyTree/FamilyTree.py:1100
+msgid "Print event data (dead person)"
+msgstr "Stampa dati sugli eventi (dei morti)"
+
+#: FamilyTree/FamilyTree.py:1105 FamilyTree/FamilyTree.py:1113
+#: FamilyTree/FamilyTree.py:1103 FamilyTree/FamilyTree.py:1111
+msgid "Year only"
+msgstr "Solo anno"
+
+#: FamilyTree/FamilyTree.py:1106 FamilyTree/FamilyTree.py:1114
+#: FamilyTree/FamilyTree.py:1104 FamilyTree/FamilyTree.py:1112
+msgid "Full date"
+msgstr "Data completa"
+
+#: FamilyTree/FamilyTree.py:1107 FamilyTree/FamilyTree.py:1115
+#: FamilyTree/FamilyTree.py:1105 FamilyTree/FamilyTree.py:1113
+msgid "Full date and place"
+msgstr "Data completa e luogo"
+
+#: FamilyTree/FamilyTree.py:1110 FamilyTree/FamilyTree.py:1108
+msgid "Print event data (living person)"
+msgstr "Stampa i dati sugli eventi (dei vivi)"
+
+#: FamilyTree/FamilyTree.py:1118 FamilyTree/FamilyTree.py:1116
+msgid "Fall back to baptism if birth event missing"
+msgstr "Usa il battesimo se manca l'evento nascita"
+
+#: FamilyTree/FamilyTree.py:1121 FamilyTree/FamilyTree.py:1119
+msgid "Fall back to burial or cremation if death event missing"
+msgstr "Usa sepoltura o cremazione se manca l'evento morte"
+
+#: FamilyTree/FamilyTree.py:1124 FamilyTree/FamilyTree.py:1122
+msgid "Protect private items"
+msgstr "Proteggi gli elementi privati"
+
+#: FamilyTree/FamilyTree.py:1133 FamilyTree/FamilyTree.py:1131
+msgid "Include event description"
+msgstr "Includi descrizione dell'evento"
+
+#: FamilyTree/FamilyTree.py:1136 FamilyTree/FamilyTree.py:1134
+msgid "Text Options"
+msgstr "Opzioni di testo"
+
+#: FamilyTree/FamilyTree.py:1164 FamilyTree/FamilyTree.py:1162
+msgid "The style used for names."
+msgstr "Lo stile usato per i nomi."
+
+#: FamilyTree/FamilyTree.py:1172 FamilyTree/FamilyTree.py:1170
+msgid "The style used for data (birth, death, marriage, divorce)."
+msgstr "Lo stile usato per i dati (nascita, morte, matrimonio, divorzio)."
+
+#: RepositoriesReport/RepositoriesReport.gpr.py:25
+#: RepositoriesReport/RepositoriesReport.gpr.py:26
+msgid "Repositories Report Options"
+msgstr ""
+
+#: RepositoriesReport/RepositoriesReport.gpr.py:26
+#: RepositoriesReport/RepositoriesReport.gpr.py:42
+#: RepositoriesReport/RepositoriesReport.gpr.py:27
+#: RepositoriesReport/RepositoriesReport.gpr.py:46
+msgid "Produces a textual repositories report"
+msgstr ""
+
+#: RepositoriesReport/RepositoriesReport.gpr.py:41
+#: RepositoriesReport/RepositoriesReport.py:71
+#: RepositoriesReport/RepositoriesReportAlt.py:92
+#: RepositoriesReport/RepositoriesReport.gpr.py:45
+#: RepositoriesReport/RepositoriesReport.py:80
+#: RepositoriesReport/RepositoriesReportAlt.py:139
+msgid "Repositories Report"
+msgstr ""
+
+#: RepositoriesReport/RepositoriesReport.py:166
+#: RepositoriesReport/RepositoriesReportAlt.py:385
+#: SourcesCitationsReport/SourcesCitationsReport.py:480
+msgid "The style used for the title of the report."
+msgstr "Lo stile usato per il titolo del resoconto."
+
+#: RepositoriesReport/RepositoriesReport.py:180
+#: RepositoriesReport/RepositoriesReportAlt.py:399
+#: RepositoriesReport/RepositoriesReport.py:189
+#: RepositoriesReport/RepositoriesReportAlt.py:518
+msgid "The style used for repository title."
+msgstr ""
+
+#: RepositoriesReport/RepositoriesReport.py:194
+#: RepositoriesReport/RepositoriesReportAlt.py:414
+#: SourcesCitationsReport/SourcesCitationsReport.py:591
+msgid "The style used for each section."
+msgstr "Lo stile usato per ogni sezione."
+
+#: RepositoriesReport/RepositoriesReportAlt.py:235
+#: RepositoriesReport/RepositoriesReportAlt.py:273
+#, python-format
+msgid "Publication information:"
+msgstr ""
+
+#: RepositoriesReport/RepositoriesReportAlt.py:237
+#: RepositoriesReport/RepositoriesReportAlt.py:278
+#, python-format
+msgid "Data:"
+msgstr ""
+
+#: RepositoriesReport/RepositoriesReportAlt.py:323
+#: RepositoriesReport/RepositoriesReportAlt.py:431
+msgid "Include repository's urls"
+msgstr ""
+
+#: RepositoriesReport/RepositoriesReportAlt.py:324
+#: RepositoriesReport/RepositoriesReportAlt.py:432
+msgid "Whether to include urls on repository."
+msgstr ""
+
+#: RepositoriesReport/RepositoriesReportAlt.py:327
+#: RepositoriesReport/RepositoriesReportAlt.py:435
+msgid "Include repository's address"
+msgstr ""
+
+#: RepositoriesReport/RepositoriesReportAlt.py:328
+#: RepositoriesReport/RepositoriesReportAlt.py:436
+msgid "Whether to include addresses on repository."
+msgstr ""
+
+#: RepositoriesReport/RepositoriesReportAlt.py:331
+#: RepositoriesReport/RepositoriesReportAlt.py:439
+msgid "Include source's author"
+msgstr ""
+
+#: RepositoriesReport/RepositoriesReportAlt.py:332
+#: RepositoriesReport/RepositoriesReportAlt.py:440
+msgid "Whether to include author."
+msgstr ""
+
+#: RepositoriesReport/RepositoriesReportAlt.py:335
+#: RepositoriesReport/RepositoriesReportAlt.py:443
+msgid "Include source's abbreviation"
+msgstr ""
+
+#: RepositoriesReport/RepositoriesReportAlt.py:336
+#: RepositoriesReport/RepositoriesReportAlt.py:444
+msgid "Whether to include abbreviation."
+msgstr ""
+
+#: RepositoriesReport/RepositoriesReportAlt.py:339
+#: RepositoriesReport/RepositoriesReportAlt.py:447
+msgid "Include source's publication information"
+msgstr ""
+
+#: RepositoriesReport/RepositoriesReportAlt.py:340
+#: RepositoriesReport/RepositoriesReportAlt.py:448
+msgid "Whether to include publication information."
+msgstr ""
+
+#: RepositoriesReport/RepositoriesReportAlt.py:343
+#: RepositoriesReport/RepositoriesReportAlt.py:451
+msgid "Include source's data"
+msgstr ""
+
+#: RepositoriesReport/RepositoriesReportAlt.py:344
+#: RepositoriesReport/RepositoriesReportAlt.py:452
+msgid "Whether to include keys and values."
+msgstr ""
+
+#: RepositoriesReport/RepositoriesReportAlt.py:348
+#: RepositoriesReport/RepositoriesReportAlt.py:456
+msgid "Whether to include notes on repositories and sources."
+msgstr ""
+
+#: RepositoriesReport/RepositoriesReportAlt.py:351
+#: RepositoriesReport/RepositoriesReportAlt.py:459
+msgid "Include media"
+msgstr ""
+
+#: RepositoriesReport/RepositoriesReportAlt.py:356
+#: RepositoriesReport/RepositoriesReportAlt.py:468
+msgid "Whether to include repositories and sources marked as private."
+msgstr ""
+
+#: RepositoriesReport/RepositoriesReportAlt.py:429
+#: RepositoriesReport/RepositoriesReportAlt.py:548
+msgid "The style used for child section."
+msgstr ""
+
+#: ClockGramplet/ClockGramplet.gpr.py:7 ClockGramplet/ClockGramplet.gpr.py:4
+#: ClockGramplet/ClockGramplet.gpr.py:9
+msgid "Clock"
+msgstr ""
+
+#: ../gramps/gui/configure.py:983
+msgid "Colors"
+msgstr "Colori"

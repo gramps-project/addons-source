@@ -1,0 +1,1638 @@
+# Brazilian-Portuguese translation for Gramps.
+# Tradução português-brasileiro para o Gramps.
+# Copyright (C) 2002 Free Software Foundation, Inc.
+#
+#
+# Marcos Bedinelli <bedinelli@sourceforge.net>, 2002, 2003, 2004, 2005, 2006.
+# Luiz Gonzaga dos Santos Filho <lfilho@gmail.com>, 2007.
+# lcc <lcc@6zap.com>, 2009.
+# André Marcelo Alvarenga <andrealvarenga@gmx.net>, 2011, 2012, 2013, 2014.
+# Paulo Henrique Paiva de Moraes <paulohpmoraes@gmail.com>, 2016, 2017, 2018.
+# Paulo Terezani de Paiva <terezani_ppaiva@yahoo.com.br>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: trunk\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-08-26 19:54-0300\n"
+"PO-Revision-Date: 2012-08-26 20:57-0300\n"
+"Last-Translator: André Marcelo Alvarenga <andrealvarenga@gmx.net>\n"
+"Language-Team: Brazilian Portuguese>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.0\n"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:9
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:185
+#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:190
+msgid "Calculate Estimated Dates"
+msgstr "Calcular datas estimadas"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
+#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:11
+msgid "Calculates estimated dates for birth and death."
+msgstr "Calcula datas estimadas para nascimento e morte"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:78
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:83
+msgid "Select filter to restrict people"
+msgstr "Selecione o filtro para restringir as pessoas"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:90
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:95
+msgid "Calculated Date Estimates"
+msgstr "Datas estimadas calculadas"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:91
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:96
+msgid "Source to remove and/or add"
+msgstr "Fonte para remover e/ou adicionar"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:94
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:99
+msgid "Remove previously added events, notes, and source"
+msgstr "Remover eventos, notas e fonte previamente adicionados"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:95
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:100
+msgid ""
+"Remove calculated events, notes, and source; occurs immediately on Execute"
+msgstr ""
+"Remove os eventos, notas e fonte calculados. Isto é realizado imediatamente "
+"após clicar em Executar"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:99
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:104
+msgid "Do not add birth events"
+msgstr "Não adicionar eventos de nascimento"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:100
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:105
+msgid "Add birth events without dates"
+msgstr "Adicionar eventos de nascimento sem datas"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:101
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:106
+msgid "Add birth events with dates"
+msgstr "Adicionar eventos de nascimento com datas"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:102
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:107
+msgid "Add a birth events with or without estimated dates"
+msgstr "Adiciona eventos de nascimento com ou sem datas estimadas"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:106
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:111
+msgid "Do not add death events"
+msgstr "Não adicionar eventos de falecimento"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:107
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:112
+msgid "Add death events without dates"
+msgstr "Adicionar eventos de falecimento sem datas"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:108
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:113
+msgid "Add death events with dates"
+msgstr "Adicionar eventos de falecimento com datas"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:109
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:114
+msgid "Add death events with or without estimated dates"
+msgstr "Adiciona eventos de falecimento com ou sem datas estimadas"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:113
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:118
+msgid "Maximum age"
+msgstr "Idade máxima"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:116
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:121
+msgid "Maximum age that one can live to"
+msgstr "Idade máxima que alguém pode viver"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:122
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:127
+msgid "Maximum age difference between siblings"
+msgstr "Diferença máxima de idade entre irmãos"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:128
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:133
+msgid "Average years between two generations"
+msgstr "Média de anos entre duas gerações"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:131
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:136
+msgid "Estimated Dates"
+msgstr "Datas estimadas"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:132
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:137
+msgid "Approximate (about)"
+msgstr "Aproximado (cerca de)"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:133
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:138
+msgid "Extremes (after and before)"
+msgstr "Extremos (antes e depois de)"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:134
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:139
+msgid "Dates on events are either about or after/before"
+msgstr "Datas em eventos são 'cerca de' ou 'antes/depois de'"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:167
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:172
+msgid ""
+"The Calculate Estimated Dates Tool is used to add and remove birth and death "
+"events for people that are missing these events.\n"
+"\n"
+"To use:\n"
+"1. Go to the Options tab\n"
+"2. Check the [ ] Remove option to remove previous estimates\n"
+"3. Select the Add date options to date events with or without dates\n"
+"4. Click on Execute\n"
+"5. Select the people with which to add events\n"
+"6. Click on 'Add Selected Events' button to create\n"
+"\n"
+"NOTES: if you decide to make an event permanent, remove it from the Source. "
+"Otherwise, it will get removed the next time you automatically remove these "
+"events.\n"
+"\n"
+"You may have to run the tool repeatedly (without removing previous events) "
+"to add all of the events possible."
+msgstr ""
+"A ferramenta de cálculo de datas estimadas é usada para adicionar e remover "
+"eventos de nascimento e falecimento para as pessoas que não possuem essa "
+"informação.\n"
+"\n"
+"Como usar:\n"
+"1. Vá para a aba Opções\n"
+"2. Assinale a opção [ ] para remover as estimativas anteriores\n"
+"3. Selecione as opções para adicionar eventos com ou sem datas\n"
+"4. Clique em Executar\n"
+"5. Selecione as pessoas que terão eventos adicionados\n"
+"6. Clique no botão 'Adicionar os eventos selecionados' para criar\n"
+"\n"
+"Observações: Se você decidir tornar uma evento permanente, remova-o a partir "
+"da Fonte. Caso contrário, ele será removido na próxima vez que você remover "
+"estes eventos automaticamente.\n"
+"\n"
+"Você pode precisar executar a ferramenta várias (sem remoção de eventos "
+"anteriores) para adicionar todos os eventos possíveis."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:194
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:199
+msgid "Select All"
+msgstr "Selecionar todos"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:195
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:200
+msgid "Select None"
+msgstr "Sem seleção"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:196
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:201
+msgid "Toggle Selection"
+msgstr "Alternar seleção"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:197
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:202
+msgid "Add Selected Events"
+msgstr "Adicionar os eventos selecionados"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:203
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:208
+msgid "Remove Events, Notes, and Source and Reselect Data"
+msgstr "Remover Eventos, Notas e Fontes e selecionar os dados novamente"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:204
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:209
+msgid ""
+"Are you sure you want to remove previous events, notes, and source and "
+"reselect data?"
+msgstr ""
+"Deseja realmente remover os eventos, notas e fontes anteriores e selecionar "
+"os dados novamente?"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:205
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:210
+msgid "Remove and Run Select Again"
+msgstr "Remover e executar a seleção novamente"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:209
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:214
+msgid "Reselect Data"
+msgstr "Selecionar os dados novamente"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:210
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:215
+msgid "Are you sure you want to reselect data?"
+msgstr "Tem certeza de que deseja selecionar os dados novamente?"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:211
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:216
+msgid "Run Select Again"
+msgstr "Executar a seleção novamente"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:231
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:236
+msgid "Evidence"
+msgstr "Evidência"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:231
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:236
+msgid "Relative"
+msgstr "Parente"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:232
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:237
+msgid "Processing...\n"
+msgstr "Processando...\n"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:250
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:255
+msgid "Removing old estimations... "
+msgstr "Removendo as estimativas antigas... "
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:251
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:256
+#, python-format
+msgid "Removing '%s'..."
+msgstr "Removendo '%s'..."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:305
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:319
+msgid "done!\n"
+msgstr "concluído!\n"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:309
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:323
+msgid ""
+"Selecting... \n"
+"\n"
+msgstr ""
+"Selecionando... \n"
+"\n"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:345
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:359
+msgid "Add birth and death events"
+msgstr "Adicionar eventos de nascimento e falecimento"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:347
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:361
+msgid "Add birth event"
+msgstr "Adicionar evento de nascimento"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:349
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:363
+msgid "Add death event"
+msgstr "Adicionar evento de falecimento"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:384
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:398
+msgid "No events to be added."
+msgstr "Nenhum evento a ser adicionado."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:426
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:439
+msgid "Selecting... "
+msgstr "Selecionando... "
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:427
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:440
+#, python-format
+msgid "Adding events '%s'..."
+msgstr "Adicionando eventos '%s'..."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:449
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:465
+#, python-format
+msgid "Added birth event based on %(evidence)s, from %(name)s"
+msgstr "Evento de nascimento adicionado com base em %(evidence)s, de %(name)s"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:452
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:468
+#, python-format
+msgid "Added birth event based on %s"
+msgstr "Evento de nascimento adicionado com base em %s"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:454
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:470
+msgid "Estimated birth date"
+msgstr "Data de nascimento estimada"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:465
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:480
+#, python-format
+msgid "Added death event based on %(evidence)s, from %(person)s"
+msgstr ""
+"Evento de falecimento adicionado com base em %(evidence)s, de %(person)s"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:468
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:483
+#, python-format
+msgid "Added death event based on %s"
+msgstr "Evento de falecimento adicionado com base em %s"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:470
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:485
+msgid "Estimated death date"
+msgstr "Data de falecimento estimada"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:480
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:495
+msgid " Done! Committing..."
+msgstr " Concluído! Gravando..."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:484
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:499
+#, python-format
+msgid "Added %d events."
+msgstr "Foram adicionados %d eventos."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:512
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:527
+msgid "Estimated date"
+msgstr "Data estimada"
+
+#: Differences/differences.gpr.py:4 Differences/differences.py:95
+msgid "Database Differences Report"
+msgstr "Relatório de diferenças do banco de dados"
+
+#: Differences/differences.gpr.py:5
+msgid "Compares an external database with the current one."
+msgstr "Compara um banco de dados externo com o atual."
+
+#: Differences/differences.py:276 Differences/differences.py:308
+msgid "Family Tree file"
+msgstr "Arquivo de árvore genealógica"
+
+#: Differences/differences.py:277 Differences/differences.py:310
+msgid "Select a .gpkg or .gramps file"
+msgstr "Selecione um arquivo .gpkg ou .gramps"
+
+#: Differences/differences.py:280 Differences/differences.py:313
+msgid "Show items that are different"
+msgstr "Mostrar os itens com diferenças"
+
+#: Differences/differences.py:281 Differences/differences.py:314
+msgid "Include items that are different"
+msgstr "Incluir os itens com diferenças"
+
+#: Differences/differences.py:285 Differences/differences.py:318
+msgid "Include items not in file but in database"
+msgstr "Não incluir os itens no arquivo, mas apenas no banco de dados"
+
+#: Differences/differences.py:289 Differences/differences.py:322
+msgid "Include items in file but not in database"
+msgstr "Incluir os itens no arquivo, mas não no banco de dados"
+
+#: DataEntryGramplet/DataEntryGramplet.gpr.py:8
+#: DataEntryGramplet/DataEntryGramplet.gpr.py:9
+msgid "Data Entry Gramplet"
+msgstr "Gramplet de inserção de dados"
+
+#: DataEntryGramplet/DataEntryGramplet.gpr.py:9
+#: DataEntryGramplet/DataEntryGramplet.gpr.py:10
+msgid "Gramplet for quick data entry"
+msgstr "Gramplet para rápida inserção de dados"
+
+#: DataEntryGramplet/DataEntryGramplet.py:63 FilterRules/activepersonrule.py:45
+msgid "Active person"
+msgstr "Pessoa ativa"
+
+#: DataEntryGramplet/DataEntryGramplet.py:65
+#: DataEntryGramplet/DataEntryGramplet.py:73
+msgid "Family:"
+msgstr "Família:"
+
+#: DataEntryGramplet/DataEntryGramplet.py:66
+#: DataEntryGramplet/DataEntryGramplet.py:74
+msgid "Sources?"
+msgstr "Fontes?"
+
+#: DataEntryGramplet/DataEntryGramplet.py:68
+#: DataEntryGramplet/DataEntryGramplet.py:101
+#: DataEntryGramplet/DataEntryGramplet.py:76
+#: DataEntryGramplet/DataEntryGramplet.py:109
+msgid "Surname, Given"
+msgstr "Sobrenome, Nome próprio"
+
+#: DataEntryGramplet/DataEntryGramplet.py:81
+#: DataEntryGramplet/DataEntryGramplet.py:89
+msgid "Save"
+msgstr "Salvar"
+
+#: DataEntryGramplet/DataEntryGramplet.py:84
+#: DataEntryGramplet/DataEntryGramplet.py:92
+msgid "Abandon"
+msgstr "Abandonar"
+
+#: DataEntryGramplet/DataEntryGramplet.py:89
+#: DataEntryGramplet/DataEntryGramplet.py:97
+msgid "New person"
+msgstr "Nova pessoa"
+
+#: DataEntryGramplet/DataEntryGramplet.py:90
+#: DataEntryGramplet/DataEntryGramplet.py:98
+msgid "Add relation"
+msgstr "Adicionar relação"
+
+#: DataEntryGramplet/DataEntryGramplet.py:91
+#: DataEntryGramplet/DataEntryGramplet.py:99
+msgid "No relation to active person"
+msgstr "Nenhuma relação para a pessoa ativa"
+
+#: DataEntryGramplet/DataEntryGramplet.py:92
+#: DataEntryGramplet/DataEntryGramplet.py:100
+msgid "Add as a Parent"
+msgstr "Adicionar como pai/mãe"
+
+#: DataEntryGramplet/DataEntryGramplet.py:93
+#: DataEntryGramplet/DataEntryGramplet.py:101
+msgid "Add as a Mother"
+msgstr "Adicionar como mãe"
+
+#: DataEntryGramplet/DataEntryGramplet.py:94
+#: DataEntryGramplet/DataEntryGramplet.py:102
+msgid "Add as a Father"
+msgstr "Adicionar como pai"
+
+#: DataEntryGramplet/DataEntryGramplet.py:95
+#: DataEntryGramplet/DataEntryGramplet.py:103
+msgid "Add as a Spouse"
+msgstr "Adicionar como cônjuge"
+
+#: DataEntryGramplet/DataEntryGramplet.py:96
+#: DataEntryGramplet/DataEntryGramplet.py:104
+msgid "Add as a Wife"
+msgstr "Adicionar como esposa"
+
+#: DataEntryGramplet/DataEntryGramplet.py:97
+#: DataEntryGramplet/DataEntryGramplet.py:105
+msgid "Add as a Husband"
+msgstr "Adicionar como marido"
+
+#: DataEntryGramplet/DataEntryGramplet.py:98
+#: DataEntryGramplet/DataEntryGramplet.py:106
+msgid "Add as a Sibling"
+msgstr "Adicionar como irmã(o)"
+
+#: DataEntryGramplet/DataEntryGramplet.py:99
+#: DataEntryGramplet/DataEntryGramplet.py:107
+msgid "Add as a Child"
+msgstr "Adicionar como filho(a)"
+
+#: DataEntryGramplet/DataEntryGramplet.py:116
+#: DataEntryGramplet/DataEntryGramplet.py:124
+msgid "Copy Active Data"
+msgstr "Copiar os dados ativos"
+
+#: DataEntryGramplet/DataEntryGramplet.py:162
+#: DataEntryGramplet/DataEntryGramplet.py:176
+#: DataEntryGramplet/DataEntryGramplet.py:307
+#: DataEntryGramplet/DataEntryGramplet.py:167
+#: DataEntryGramplet/DataEntryGramplet.py:178
+#: DataEntryGramplet/DataEntryGramplet.py:315
+msgid "in"
+msgstr "em"
+
+#: DataEntryGramplet/DataEntryGramplet.py:428
+#: DataEntryGramplet/DataEntryGramplet.py:555
+#: DataEntryGramplet/DataEntryGramplet.py:441
+#: DataEntryGramplet/DataEntryGramplet.py:569
+#, python-format
+msgid "Gramplet Data Edit: %s"
+msgstr "Gramplet de edição de dados: %s"
+
+#: DataEntryGramplet/DataEntryGramplet.py:501
+#: DataEntryGramplet/DataEntryGramplet.py:515
+msgid "Please provide a name."
+msgstr "Indique um nome."
+
+#: DataEntryGramplet/DataEntryGramplet.py:501
+#: DataEntryGramplet/DataEntryGramplet.py:515
+msgid "Can't add new person."
+msgstr "Adicionar uma nova pessoa."
+
+#: DataEntryGramplet/DataEntryGramplet.py:509
+#: DataEntryGramplet/DataEntryGramplet.py:517
+#: DataEntryGramplet/DataEntryGramplet.py:522
+#: DataEntryGramplet/DataEntryGramplet.py:527
+#: DataEntryGramplet/DataEntryGramplet.py:536
+#: DataEntryGramplet/DataEntryGramplet.py:541
+#: DataEntryGramplet/DataEntryGramplet.py:546
+#: DataEntryGramplet/DataEntryGramplet.py:551
+#: DataEntryGramplet/DataEntryGramplet.py:523
+#: DataEntryGramplet/DataEntryGramplet.py:531
+#: DataEntryGramplet/DataEntryGramplet.py:550
+#: DataEntryGramplet/DataEntryGramplet.py:555
+#: DataEntryGramplet/DataEntryGramplet.py:560
+#: DataEntryGramplet/DataEntryGramplet.py:565
+msgid "Please set an active person."
+msgstr "Defina uma pessoa como ativa."
+
+#: DataEntryGramplet/DataEntryGramplet.py:509
+#: DataEntryGramplet/DataEntryGramplet.py:512
+#: DataEntryGramplet/DataEntryGramplet.py:523
+#: DataEntryGramplet/DataEntryGramplet.py:526
+msgid "Can't add new person as a parent."
+msgstr "Não foi possível adicionar a nova pessoa como mãe/pai"
+
+#: DataEntryGramplet/DataEntryGramplet.py:512
+#: DataEntryGramplet/DataEntryGramplet.py:531
+#: DataEntryGramplet/DataEntryGramplet.py:526
+#: DataEntryGramplet/DataEntryGramplet.py:545
+msgid "Please set the new person's gender."
+msgstr "Defina o sexo da nova pessoa."
+
+#: DataEntryGramplet/DataEntryGramplet.py:517
+#: DataEntryGramplet/DataEntryGramplet.py:531
+msgid "Can't add new person as a mother."
+msgstr "Não foi possível adicionar a nova pessoa como mãe."
+
+#: DataEntryGramplet/DataEntryGramplet.py:522
+#: DataEntryGramplet/DataEntryGramplet.py:536
+msgid "Can't add new person as a father."
+msgstr "Não foi possível adicionar a nova pessoa como pai."
+
+#: DataEntryGramplet/DataEntryGramplet.py:527
+#: DataEntryGramplet/DataEntryGramplet.py:531
+#: DataEntryGramplet/DataEntryGramplet.py:754
+#: DataEntryGramplet/DataEntryGramplet.py:791
+#: DataEntryGramplet/DataEntryGramplet.py:824
+#: DataEntryGramplet/DataEntryGramplet.py:541
+#: DataEntryGramplet/DataEntryGramplet.py:545
+#: DataEntryGramplet/DataEntryGramplet.py:768
+#: DataEntryGramplet/DataEntryGramplet.py:805
+#: DataEntryGramplet/DataEntryGramplet.py:838
+msgid "Can't add new person as a spouse."
+msgstr "Não foi possível adicionar a nova pessoa como cônjuge."
+
+#: DataEntryGramplet/DataEntryGramplet.py:536
+#: DataEntryGramplet/DataEntryGramplet.py:550
+msgid "Can't add new person as a wife."
+msgstr "Não foi possível adicionar a nova pessoa como esposa."
+
+#: DataEntryGramplet/DataEntryGramplet.py:541
+#: DataEntryGramplet/DataEntryGramplet.py:555
+msgid "Can't add new person as a husband."
+msgstr "Não foi possível adicionar a nova pessoa como marido."
+
+#: DataEntryGramplet/DataEntryGramplet.py:546
+#: DataEntryGramplet/DataEntryGramplet.py:560
+msgid "Can't add new person as a sibling."
+msgstr "Não foi possível adicionar a nova pessoa como irmã(o)."
+
+#: DataEntryGramplet/DataEntryGramplet.py:551
+#: DataEntryGramplet/DataEntryGramplet.py:924
+#: DataEntryGramplet/DataEntryGramplet.py:565
+#: DataEntryGramplet/DataEntryGramplet.py:938
+msgid "Can't add new person as a child."
+msgstr "Não foi possível adicionar a nova pessoa como filho(a)."
+
+#: DataEntryGramplet/DataEntryGramplet.py:749
+#: DataEntryGramplet/DataEntryGramplet.py:763
+msgid "Please set Active person."
+msgstr "Defina a pessoa ativa."
+
+#: DataEntryGramplet/DataEntryGramplet.py:750
+#: DataEntryGramplet/DataEntryGramplet.py:764
+msgid "Can't add new person as a spouse to no one."
+msgstr "Não foi possível adicionar a nova pessoa como cônjuge de ninguém."
+
+#: DataEntryGramplet/DataEntryGramplet.py:753
+#: DataEntryGramplet/DataEntryGramplet.py:767
+msgid "Please set gender on Active or new person."
+msgstr "Defina o sexo na pessoa ativa ou nova."
+
+#: DataEntryGramplet/DataEntryGramplet.py:790
+#: DataEntryGramplet/DataEntryGramplet.py:823
+#: DataEntryGramplet/DataEntryGramplet.py:804
+#: DataEntryGramplet/DataEntryGramplet.py:837
+msgid "Same genders on Active and new person."
+msgstr "Mesmo sexo da pessoa ativa e nova."
+
+#: DataEntryGramplet/DataEntryGramplet.py:923
+#: DataEntryGramplet/DataEntryGramplet.py:937
+msgid "Please set gender on Active person."
+msgstr "Defina o sexo da pessoa ativa."
+
+#: Themes/themes.gpr.py:28 Themes/themes.gpr.py:29
+msgid "Theme preferences"
+msgstr "Preferências do tema"
+
+#: Themes/themes.gpr.py:29 Themes/themes.gpr.py:31
+msgid ""
+"An addition to Preferences for simple Theme and Font adjustment.  Especially "
+"useful for Windows users."
+msgstr ""
+"Uma adição às Preferências para ajuste simples de Tema e Fonte. "
+"Especialmente útil para usuários do Windows."
+
+#: Themes/themes.py:137 Themes/themes.py:155 Themes/themes.py:172
+#: Themes/themes.py:190
+msgid "Theme is hardcoded by GTK_THEME"
+msgstr "Tema está codificado por GTK_THEME"
+
+#: Themes/themes.py:140 Themes/themes.py:190 DynamicWeb/dynamicweb.py:5157
+msgid "Theme"
+msgstr "Tema"
+
+#: Themes/themes.py:145 Themes/themes.py:180
+msgid "Dark Variant"
+msgstr "Variante escura"
+
+#: Themes/themes.py:163 Themes/themes.py:198
+msgid "Font"
+msgstr "Font"
+
+#: Themes/themes.py:179 Themes/themes.py:214
+msgid "Fixed Scrollbar (requires restart)"
+msgstr "Barra de rolagem clássica (requer reinicialização)"
+
+#: AttachSourceTool/AttachSourceTool.gpr.py:25
+#: AttachSourceTool/AttachSourceTool.py:133
+#: AttachSourceTool/AttachSourceTool.py:150
+#: AttachSourceTool/AttachSourceTool.gpr.py:26
+#: AttachSourceTool/AttachSourceTool.py:137
+#: AttachSourceTool/AttachSourceTool.py:155
+msgid "Attach Source"
+msgstr "Anexar fonte"
+
+#: AttachSourceTool/AttachSourceTool.gpr.py:26
+#: AttachSourceTool/AttachSourceTool.gpr.py:27
+msgid "Attaches a shared source to multiple objects."
+msgstr "Anexa uma fonte comum a vários objetos"
+
+#: AttachSourceTool/AttachSourceTool.py:77
+#: AttachSourceTool/AttachSourceTool.py:81
+msgid "Source type"
+msgstr "Tipo de fonte"
+
+#: AttachSourceTool/AttachSourceTool.py:78
+#: AttachSourceTool/AttachSourceTool.py:82
+msgid "New source"
+msgstr "Nova fonte"
+
+#: AttachSourceTool/AttachSourceTool.py:79
+#: AttachSourceTool/AttachSourceTool.py:83
+msgid "Existing source"
+msgstr "Fonte existente"
+
+#: AttachSourceTool/AttachSourceTool.py:80
+#: AttachSourceTool/AttachSourceTool.py:84
+msgid "Select the type of source to attach"
+msgstr "Selecione o tipo de fonte a anexar"
+
+#: AttachSourceTool/AttachSourceTool.py:85
+#: AttachSourceTool/AttachSourceTool.py:89
+msgid "New Source Title"
+msgstr "Novo título da fonte"
+
+#: AttachSourceTool/AttachSourceTool.py:86
+#: AttachSourceTool/AttachSourceTool.py:90
+msgid "Text of source to attach"
+msgstr "Texto da fonte a anexar"
+
+#: AttachSourceTool/AttachSourceTool.py:90
+#: AttachSourceTool/AttachSourceTool.py:94
+msgid "Existing Source ID"
+msgstr "ID da fonte existente"
+
+#: AttachSourceTool/AttachSourceTool.py:91
+#: AttachSourceTool/AttachSourceTool.py:95
+msgid "ID of source to attach"
+msgstr "ID da fonte a anexar"
+
+#: AttachSourceTool/AttachSourceTool.py:169
+#: AttachSourceTool/AttachSourceTool.py:174
+msgid "Attaching sources...\n"
+msgstr "Anexando fontes...\n"
+
+#: AttachSourceTool/AttachSourceTool.py:170
+#: AttachSourceTool/AttachSourceTool.py:175
+msgid "Attaching sources..."
+msgstr "Anexando fontes..."
+
+#: AttachSourceTool/AttachSourceTool.py:189
+#: AttachSourceTool/AttachSourceTool.py:197
+msgid "Done!\n"
+msgstr "Concluído!\n"
+
+#: AllNamesQuickview/AllNames.gpr.py:3 AllNamesQuickview/AllNames.py:47
+#: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
+msgid "All Names of All People"
+msgstr "Todos os nomes de todas as pessoas"
+
+#: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.gpr.py:5
+msgid "Display all names of all people"
+msgstr "Exibe todos os nomes de todas as pessoas"
+
+#: AllNamesQuickview/AllNames.py:50 PlaceCleanup/placecleanup.glade:52
+msgid "Primary Name"
+msgstr "Nome principal"
+
+#: AllNamesQuickview/AllNames.py:50 AllNamesQuickview/AllNames.py:54
+msgid "Name Type"
+msgstr "Tipo de nome"
+
+#: AllNamesQuickview/AllNames.py:67 AllNamesQuickview/AllNames.py:71
+#, python-format
+msgid "Total names %d"
+msgstr "Total de nomes %d"
+
+#: ChangeGivenNames/ChangeGivenNames.gpr.py:36
+#: ChangeGivenNames/ChangeGivenNames.gpr.py:37
+msgid "Fix Capitalization of Given Names"
+msgstr "Corrigir maiúsculas/minúsculas de nomes próprios"
+
+#: ChangeGivenNames/ChangeGivenNames.gpr.py:37
+#: ChangeGivenNames/ChangeGivenNames.gpr.py:39
+msgid ""
+"Searches the entire database and attempts to fix capitalization of the given "
+"names."
+msgstr ""
+"Pesquisa em todo o banco de dados e tenta corrigir as maiúsculas/minúsculas "
+"dos nomes próprios"
+
+#: ChangeGivenNames/ChangeGivenNames.py:61
+#: ChangeGivenNames/ChangeGivenNames.py:66
+msgid "manual|Fix_Capitalization_of_Given_Names..."
+msgstr "Corrigir_maiúsculas/minúsculas_de_nomes_próprios..."
+
+#: ChangeGivenNames/ChangeGivenNames.py:99
+#: ChangeGivenNames/ChangeGivenNames.py:105
+msgid "Checking Given Names"
+msgstr "Verificando os nomes próprios"
+
+#: ChangeGivenNames/ChangeGivenNames.py:100
+#: ChangeGivenNames/ChangeGivenNames.py:107
+msgid "Searching given names"
+msgstr "Pesquisando nomes próprios"
+
+#: ChangeGivenNames/ChangeGivenNames.py:165
+#: ChangeGivenNames/ChangeGivenNames.py:204
+msgid "Affected Names"
+msgstr "Nomes afetados"
+
+#: ChangeGivenNames/changenames.glade.h:1 ChangeGivenNames/changenames.glade:32
+msgid ""
+"Below is a list of the given names that \n"
+"Gramps can convert to correct capitalization. \n"
+"Select the names you wish Gramps to convert. "
+msgstr ""
+"A lista abaixo mostra os nomes próprios que o \n"
+"Gramps pode corrigir as maiúsculas/minúsculas. \n"
+"Selecione os nomes que gostaria de converter com o Gramps. "
+
+#: ChangeGivenNames/changenames.glade.h:4
+#: ChangeGivenNames/changenames.glade:107
+msgid "Edit selection"
+msgstr "Editar seleção"
+
+#: EditExifMetadata/editexifmetadata.gpr.py:29
+#: EditExifMetadata/editexifmetadata.py:753
+#: EditExifMetadata/editexifmetadata.py:1159
+#: EditExifMetadata/editexifmetadata.gpr.py:30
+#: EditExifMetadata/editexifmetadata.py:723
+#: EditExifMetadata/editexifmetadata.py:1135
+#: EditExifMetadata/editexifmetadata.py:1147
+msgid "Edit Image Exif Metadata"
+msgstr "Editar metadados EXIF da imagem"
+
+#: EditExifMetadata/editexifmetadata.gpr.py:30
+#: EditExifMetadata/editexifmetadata.gpr.py:31
+msgid "Gramplet to view, edit, and save image Exif metadata"
+msgstr "Gramplet para exibir, editar e salvar os metadados EXIF das imagens"
+
+#: EditExifMetadata/editexifmetadata.gpr.py:34
+#: EditExifMetadata/editexifmetadata.gpr.py:35
+msgid "Edit Exif Metadata"
+msgstr "Editar metadados EXIF"
+
+#: EditExifMetadata/editexifmetadata.py:148
+#: EditExifMetadata/editexifmetadata.py:135
+msgid "<-- Image Types -->"
+msgstr "<-- Tipos de imagem -->"
+
+#: EditExifMetadata/editexifmetadata.py:171
+#: EditExifMetadata/editexifmetadata.py:158
+msgid ""
+"Warning:  Changing this entry will update the Media object title field in "
+"Gramps not Exiv2 metadata."
+msgstr ""
+"Aviso: A alteração deste item irá atualizar o campo de título do objeto "
+"multimídia no Gramps e não nos metadados Exiv2."
+
+#: EditExifMetadata/editexifmetadata.py:174
+#: EditExifMetadata/editexifmetadata.py:161
+msgid "Provide a short description for this image."
+msgstr "Forneça uma breve descrição para esta imagem."
+
+#: EditExifMetadata/editexifmetadata.py:176
+#: EditExifMetadata/editexifmetadata.py:163
+msgid ""
+"Enter the Artist/ Author of this image.  The person's name or the company "
+"who is responsible for the creation of this image."
+msgstr ""
+"Insira o Artista/Autor desta imagem. O nome da pessoa ou empresa que é "
+"responsável pela criação desta imagem."
+
+#: EditExifMetadata/editexifmetadata.py:179
+#: EditExifMetadata/editexifmetadata.py:167
+msgid "Enter the copyright information for this image. \n"
+msgstr "Insira as informações sobre direitos autorais desta imagem. \n"
+
+#: EditExifMetadata/editexifmetadata.py:181
+#: EditExifMetadata/editexifmetadata.py:169
+msgid ""
+"The original date/ time when the image was first created/ taken as in a "
+"photograph.\n"
+"Example: 1830-01-1 09:30:59"
+msgstr ""
+"A data/hora quando a imagem foi criada/obtida como e uma fotografia.\n"
+"Exemplo: 1830-01-1 09:30:59"
+
+#: EditExifMetadata/editexifmetadata.py:184
+#: EditExifMetadata/editexifmetadata.py:173
+msgid ""
+"This is the date/ time that the image was last changed/ modified.\n"
+"Example: 2011-05-24 14:30:00"
+msgstr ""
+"A data/hora quando a imagem foi alterada/modificada pela última vez.\n"
+"Exemplo: 2011-05-24 14:30:00"
+
+#: EditExifMetadata/editexifmetadata.py:202
+#: EditExifMetadata/editexifmetadata.py:191
+msgid ""
+"Displays the Gramps Wiki Help page for 'Edit Image Exif Metadata' in your "
+"web browser."
+msgstr ""
+"Apresenta a página de ajuda do Wiki Gramps para 'Editar metadados EXIF da "
+"imagem' no seu navegador Web."
+
+#: EditExifMetadata/editexifmetadata.py:205
+#: EditExifMetadata/editexifmetadata.py:194
+msgid ""
+"This will open up a new window to allow you to edit/ modify this image's "
+"Exif metadata.\n"
+"  It will also allow you to be able to Save the modified metadata."
+msgstr ""
+"Isto irá abrir uma nova janela para permitir que você edite ou modifique "
+"este metadados EXIF da imagem.\n"
+"  Também permitirá salvar os metadados modificados."
+
+#: EditExifMetadata/editexifmetadata.py:209
+#: EditExifMetadata/editexifmetadata.py:198
+msgid "Will produce a Popup window showing a Thumbnail Viewing Area"
+msgstr ""
+"Irá produzir uma janela instantânea mostrando uma área de exibição de "
+"miniaturas"
+
+#: EditExifMetadata/editexifmetadata.py:211
+#: EditExifMetadata/editexifmetadata.py:201
+msgid ""
+"Select from a drop- down box the image file type that you would like to "
+"convert your non- Exiv2 compatible media object to."
+msgstr ""
+"Selecione o tipo de arquivo de imagem a partir de uma lista, que você "
+"gostaria de converter para um objeto multimídia não compatível com o Exiv2."
+
+#: EditExifMetadata/editexifmetadata.py:214
+#: EditExifMetadata/editexifmetadata.py:205
+msgid ""
+"If your image is not of an image type that can have Exif metadata read/ "
+"written to/from, convert it to a type that can?"
+msgstr ""
+"Se a sua imagem não é de um tipo que pode armazenar metadados EXIF, deseja "
+"converter para um tipo compatível?"
+
+#: EditExifMetadata/editexifmetadata.py:217
+#: EditExifMetadata/editexifmetadata.py:209
+msgid ""
+"WARNING:  This will completely erase all Exif metadata from this image!  Are "
+"you sure that you want to do this?"
+msgstr ""
+"AVISO: Isto apagará todos os metadados EXIF desta imagem! Deseja realmente "
+"fazer isto?"
+
+#: EditExifMetadata/editexifmetadata.py:315
+#: EditExifMetadata/editexifmetadata.py:214
+msgid "Thumbnail"
+msgstr "Miniatura"
+
+#: EditExifMetadata/editexifmetadata.py:397
+#: EditExifMetadata/editexifmetadata.py:402
+msgid "Select an image to begin..."
+msgstr "Selecione uma imagem para iniciar..."
+
+#: EditExifMetadata/editexifmetadata.py:419
+#: EditExifMetadata/editexifmetadata.py:421
+msgid ""
+"Image is NOT readable,\n"
+"Please choose a different image..."
+msgstr ""
+"A imagem não é legível.\n"
+"Escolha outra imagem..."
+
+#: EditExifMetadata/editexifmetadata.py:435
+#: EditExifMetadata/editexifmetadata.py:481
+#: EditExifMetadata/editexifmetadata.py:1440
+msgid ""
+"Image is NOT writable,\n"
+"You will NOT be able to save Exif metadata...."
+msgstr ""
+"A imagem não pode ser gravada.\n"
+"Você não poderá salvar os metadados EXIF..."
+
+#: EditExifMetadata/editexifmetadata.py:447
+#: EditExifMetadata/editexifmetadata.py:441
+msgid "Please convert this image to an Exiv2- compatible image type..."
+msgstr ""
+"Por favor, converta esta imagem para um tipo de imagem compatível com o "
+"Exiv2..."
+
+#: EditExifMetadata/editexifmetadata.py:670
+#: EditExifMetadata/editexifmetadata.py:648
+msgid "Click Close to close this Thumbnail View Area."
+msgstr ""
+"Clique no botão Fechar para fechar esta área de exibição de miniaturas."
+
+#: EditExifMetadata/editexifmetadata.py:674
+#: EditExifMetadata/editexifmetadata.py:654
+msgid "Thumbnail View Area"
+msgstr "Área de exibição de miniaturas"
+
+#: EditExifMetadata/editexifmetadata.py:753
+#: EditExifMetadata/editexifmetadata.py:724
+msgid ""
+"WARNING: You are about to convert this image into a .jpeg image.  Are you "
+"sure that you want to do this?"
+msgstr ""
+"AVISO: Você está prestes a converter esta imagem para JPEG. Deseja realmente "
+"fazer isto?"
+
+#: EditExifMetadata/editexifmetadata.py:755
+#: EditExifMetadata/editexifmetadata.py:726
+msgid "Convert and Delete"
+msgstr "Converter e excluir"
+
+#: EditExifMetadata/editexifmetadata.py:841
+#: EditExifMetadata/editexifmetadata.py:807
+msgid ""
+"Your image has been converted and the original file has been deleted, and "
+"the full path has been updated!"
+msgstr ""
+"A sua imagem foi convertida com exclusão do arquivo original e a localização "
+"completa foi atualizada!"
+
+#: EditExifMetadata/editexifmetadata.py:845
+#: EditExifMetadata/editexifmetadata.py:812
+msgid ""
+"There has been an error, Please check your source and destination file "
+"paths..."
+msgstr ""
+"Ocorreu um erro. Verifique a localização do seu arquivo de origem e de "
+"destino..."
+
+#: EditExifMetadata/editexifmetadata.py:848
+#: EditExifMetadata/editexifmetadata.py:816
+msgid ""
+"There was an error in deleting the original file.  You will need to delete "
+"it yourself!"
+msgstr ""
+"Ocorreu um erro durante a exclusão do arquivo original. Você precisará "
+"excluí-lo manualmente."
+
+#: EditExifMetadata/editexifmetadata.py:865
+#: EditExifMetadata/editexifmetadata.py:834
+msgid "There was an error in converting your image file."
+msgstr "Ocorreu um erro na conversão do seu arquivo de imagem."
+
+#: EditExifMetadata/editexifmetadata.py:876
+#: EditExifMetadata/editexifmetadata.py:844
+msgid "Media Path Update"
+msgstr "Atualização do caminho da mídia"
+
+#: EditExifMetadata/editexifmetadata.py:882
+#: EditExifMetadata/editexifmetadata.py:853
+msgid "There has been an error in updating the image file's path!"
+msgstr "Ocorreu um erro na atualização do caminho do arquivo de imagem!"
+
+#: EditExifMetadata/editexifmetadata.py:916
+#: EditExifMetadata/editexifmetadata.py:886
+msgid ""
+"Click the close button when you are finished modifying this image's Exif "
+"metadata."
+msgstr ""
+"Clique no botão Fechar quando concluir a modificação dos metadados EXIF "
+"desta imagem."
+
+#: EditExifMetadata/editexifmetadata.py:954
+#: EditExifMetadata/editexifmetadata.py:924
+msgid "Saves a copy of the data fields into the image's Exif metadata."
+msgstr "Salva uma cópia dos campos de dados para os metadados EXIF da imagem."
+
+#: EditExifMetadata/editexifmetadata.py:957
+#: EditExifMetadata/editexifmetadata.py:928
+msgid "Re -display the data fields that were cleared from the Edit Area."
+msgstr ""
+"Mostrar novamente os campos de dados que foram apagados da área de edição."
+
+#: EditExifMetadata/editexifmetadata.py:960
+#: EditExifMetadata/editexifmetadata.py:932
+msgid "This button will clear all of the data fields shown here."
+msgstr "Este botão irá apagar todos os campos de dados mostrados aqui."
+
+#: EditExifMetadata/editexifmetadata.py:963
+#: EditExifMetadata/editexifmetadata.py:940
+msgid ""
+"Closes this popup Edit window.\n"
+"WARNING: This action will NOT Save any changes/ modification made to this "
+"image's Exif metadata."
+msgstr ""
+"Fecha esta janela de edição.\n"
+"AVISO: Esta ação não salvará quaisquer alterações feitas nos metadados EXIF "
+"desta imagem."
+
+#: EditExifMetadata/editexifmetadata.py:990
+#: EditExifMetadata/editexifmetadata.py:969
+msgid "Media Object Title"
+msgstr "Título do objeto multimídia"
+
+#: EditExifMetadata/editexifmetadata.py:1000
+#: EditExifMetadata/editexifmetadata.py:978
+msgid "media Title: "
+msgstr "Título da mídia: "
+
+#: EditExifMetadata/editexifmetadata.py:1014
+#: EditExifMetadata/editexifmetadata.py:993
+msgid "General Data"
+msgstr "Dados gerais"
+
+#: EditExifMetadata/editexifmetadata.py:1024
+#: EditExifMetadata/editexifmetadata.py:1003
+msgid "Description: "
+msgstr "Descrição: "
+
+#: EditExifMetadata/editexifmetadata.py:1025
+#: EditExifMetadata/editexifmetadata.py:1004
+msgid "Artist: "
+msgstr "Artista: "
+
+#: EditExifMetadata/editexifmetadata.py:1026
+#: EditExifMetadata/editexifmetadata.py:1005
+msgid "Copyright: "
+msgstr "Direitos autorais: "
+
+#: EditExifMetadata/editexifmetadata.py:1039
+#: EditExifMetadata/editexifmetadata.py:1019
+msgid "Date/ Time"
+msgstr "Data/Hora"
+
+#: EditExifMetadata/editexifmetadata.py:1053
+#: EditExifMetadata/editexifmetadata.py:1034
+msgid "Original: "
+msgstr "Original: "
+
+#: EditExifMetadata/editexifmetadata.py:1054
+#: EditExifMetadata/editexifmetadata.py:1035
+msgid "Modified: "
+msgstr "Modificado: "
+
+#: EditExifMetadata/editexifmetadata.py:1071
+#: EditExifMetadata/editexifmetadata.py:1054
+msgid "Latitude/ Longitude/ Altitude GPS coordinates"
+msgstr "Coordenadas de GPS Latitude/ Longitude/ Altitude"
+
+#: EditExifMetadata/editexifmetadata.py:1085
+#: EditExifMetadata/editexifmetadata.py:1069
+msgid "Latitude :"
+msgstr "Latitude:"
+
+#: EditExifMetadata/editexifmetadata.py:1086
+#: EditExifMetadata/editexifmetadata.py:1070
+msgid "Longitude :"
+msgstr "Longitude:"
+
+#: EditExifMetadata/editexifmetadata.py:1087
+#: EditExifMetadata/editexifmetadata.py:1071
+msgid "Altitude :"
+msgstr "Altitude:"
+
+#: EditExifMetadata/editexifmetadata.py:1139
+#: EditExifMetadata/editexifmetadata.py:1114
+msgid "Bad Date/Time"
+msgstr "Data/Hora incorreta"
+
+#: EditExifMetadata/editexifmetadata.py:1147
+#: EditExifMetadata/editexifmetadata.py:1122
+#, fuzzy
+msgid "Invalid latitude (syntax: 18\\u00b09'"
+msgstr "Latitude inválida (sintaxe: 18°9'"
+
+#: EditExifMetadata/editexifmetadata.py:1148
+#: EditExifMetadata/editexifmetadata.py:1123
+msgid "48.21\"S, -18.2412 or -18:9:48.21)"
+msgstr "48.21\"S, -18.2412 ou -18:9:48.21)"
+
+#: EditExifMetadata/editexifmetadata.py:1152
+#: EditExifMetadata/editexifmetadata.py:1127
+#, fuzzy
+msgid "Invalid longitude (syntax: 18\\u00b09'"
+msgstr "Longitude inválida (sintaxe: 18°9'"
+
+#: EditExifMetadata/editexifmetadata.py:1153
+#: EditExifMetadata/editexifmetadata.py:1128
+msgid "48.21\"E, -18.2412 or -18:9:48.21)"
+msgstr "48.21\"E, -18.2412 ou -18:9:48.21)"
+
+#: EditExifMetadata/editexifmetadata.py:1159
+#: EditExifMetadata/editexifmetadata.py:1136
+msgid ""
+"WARNING!  You are about to completely delete the Exif metadata from this "
+"image?"
+msgstr "AVISO! Deseja apagar completamente os metadados EXIF desta imagem?"
+
+#: EditExifMetadata/editexifmetadata.py:1324
+#: EditExifMetadata/editexifmetadata.py:1333
+msgid "Media Title Update"
+msgstr "Atualização do título da mídia"
+
+#: EditExifMetadata/editexifmetadata.py:1350
+#: EditExifMetadata/editexifmetadata.py:1357
+msgid "Media Object Date Created"
+msgstr "Data do objeto multimídia criada"
+
+#: EditExifMetadata/editexifmetadata.py:1422
+msgid "Saving Exif metadata to this image..."
+msgstr "Salvando os metadados EXIF nesta imagem..."
+
+#: EditExifMetadata/editexifmetadata.py:1469
+#: EditExifMetadata/editexifmetadata.py:1465
+msgid "All Exif metadata has been deleted from this image..."
+msgstr "Todos os metadados EXIF desta imagem foram excluídos..."
+
+#: EditExifMetadata/editexifmetadata.py:1474
+#: EditExifMetadata/editexifmetadata.py:1470
+msgid "There was an error in stripping the Exif metadata from this image..."
+msgstr "Ocorreu um erro na extração dos metadados EXIF desta imagem..."
+
+#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:5
+#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:26
+msgid "a gramplet that displays the birthdays of the living people"
+msgstr "Gramplet que mostra os aniversários das pessoas vivas"
+
+#: CheckPlaceTitles/checkplacetitles.gpr.py:28
+#: CheckPlaceTitles/checkplacetitles.gpr.py:29
+msgid "Check Place Titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.gpr.py:29
+#: CheckPlaceTitles/checkplacetitles.gpr.py:30
+msgid "Check place titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:71
+msgid "Check Place title"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:86 ExtractCity/extractcity.py:454
+msgid "Checking Place Titles"
+msgstr "Verificando os nomes dos locais"
+
+#: CheckPlaceTitles/checkplacetitles.py:87 ExtractCity/extractcity.py:456
+msgid "Looking for place fields"
+msgstr "Procurando os campos dos locais"
+
+#: CheckPlaceTitles/checkplacetitles.py:103
+#: CheckPlaceTitles/checkplacetitles.py:107
+msgid "Differences"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:109
+#: CheckPlaceTitles/checkplacetitles.py:112
+msgid "No need modifications"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:110
+#: CheckPlaceTitles/checkplacetitles.py:113
+msgid "No changes need."
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:185
+#: CheckPlaceTitles/checkplacetitles.py:187
+msgid "Legacy place"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:199
+#: CheckPlaceTitles/checkplacetitles.py:201
+msgid "Modify Place titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:222
+#: CheckPlaceTitles/checkplacetitles.py:224
+msgid "Place titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:1
+#: CheckPlaceTitles/checkplacetitles.glade:56
+msgid "Remove content of place title field if it does not match"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:2
+#: CheckPlaceTitles/checkplacetitles.glade:74
+msgid "Copy content of place title field to a new note."
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:4
+#: CheckPlaceTitles/checkplacetitles.glade:91
+msgid "Attach a tag on selected places."
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:6
+#: CheckPlaceTitles/checkplacetitles.glade:177
+msgid "column"
+msgstr ""
+
+#: CliMerge/CliMerge.gpr.py:17 CliMerge/CliMerge.gpr.py:19
+msgid "Merge primary objects via the command line."
+msgstr "Mesclar os objetos primários através da linha de comando."
+
+#: ClipboardGramplet/ClipboardGramplet.gpr.py:17
+#: ../gramps/gui/clipboard.py:1384 ../gramps/gui/clipboard.py:1392
+#: ../gramps/gui/clipboard.py:1435 ../gramps/gui/clipboard.py:1482
+#: ../gramps/gui/glade/clipboard.glade:8
+msgid "Clipboard"
+msgstr "Área de transferência"
+
+#: ClipboardGramplet/ClipboardGramplet.py:92
+#: ClipboardGramplet/ClipboardGramplet.py:83
+#, python-format
+msgid "Clipboard Gramplet: %s"
+msgstr "Gramplet de área de transferência: %s"
+
+#: DEWebConnectPack/DEWebPack.gpr.py:10 DEWebConnectPack/DEWebPack.gpr.py:11
+msgid "DE Web Connect Pack"
+msgstr "Pacote de conexão Web para DE"
+
+#: DEWebConnectPack/DEWebPack.gpr.py:11 DEWebConnectPack/DEWebPack.gpr.py:12
+msgid "Collection of Web sites for the DE (requires libwebconnect)"
+msgstr "Coleção de páginas Web para DE (precisa do libwebconnect)"
+
+#: DEWebConnectPack/DEWebPack.py:33 DEWebConnectPack/DEWebPack.py:37
+msgid "Bielefeld Academic Search"
+msgstr "BASE (Bielefeld Academic Search Engine)"
+
+#: DEWebConnectPack/DEWebPack.py:35 SVWebconnectPack/SVWebPack.py:34
+msgid "FamilySearch.org"
+msgstr "FamilySearch.org"
+
+#: DEWebConnectPack/DEWebPack.py:38 DEWebConnectPack/DEWebPack.py:42
+msgid "Google Archives"
+msgstr "Arquivos do Google"
+
+#: DEWebConnectPack/DEWebPack.py:39 DEWebConnectPack/DEWebPack.py:43
+msgid "DE Google"
+msgstr "Google DE"
+
+#: DEWebConnectPack/DEWebPack.py:40 UKWebConnectPack/UKWebPack.py:39
+msgid "Open Library"
+msgstr "Open Library"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:3
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:4
+msgid "Deep Connections Gramplet"
+msgstr "Gramplet de relação detalhada"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:4
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:6
+msgid "Gramplet showing a deep relationship between active and home people"
+msgstr ""
+"Gramplet que mostra uma relação detalhada entre a pessoa ativa e a inicial"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:10
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:13
+msgid "Deep Connections"
+msgstr "Relação detalhada"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:61
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:65
+msgid "Pause"
+msgstr "Pausar"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:65
+#: EditExifMetadata/editexifmetadata.py:215
+msgid "Copy"
+msgstr "Copiar"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:106
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:143
+msgid "sibling"
+msgstr "irmã(o)"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:117
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:154
+#, python-format
+msgid "%s (association)"
+msgstr "%s (associação)"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:150
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:188
+#, python-format
+msgid ""
+"\n"
+"   %s of "
+msgstr ""
+"\n"
+"   %s de "
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:171
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:209
+msgid "No Active Person set."
+msgstr "Não foi definida uma pessoa ativa."
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:179
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:217
+msgid "Looking for relationship between\n"
+msgstr "Procurando por parentesco entre\n"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:180
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:218
+#, python-format
+msgid "  <b>%s</b> (Home Person) and\n"
+msgstr "  <b>%s</b> (Pessoa inicial) e\n"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:181
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:219
+#, python-format
+msgid "  <b>%s</b> (Active Person)...\n"
+msgstr "  <b>%s</b> (Pessoa ativa)...\n"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:191
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:229
+#, python-format
+msgid ""
+"Found relation #%d: \n"
+"   "
+msgstr ""
+"Parentesco encontrado #%d: \n"
+"   "
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:201
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:239
+msgid ""
+"Paused.\n"
+"Press Continue to search for additional relations.\n"
+msgstr ""
+"Pausado.\n"
+"Clique em Continuar para procurar outros parentescos.\n"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:216
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:254
+#, python-format
+msgid ""
+"\n"
+"Search completed. %d relations found."
+msgstr ""
+"\n"
+"Pesquisa concluída. %d parentescos encontrados."
+
+#: DescendantCount/DescendantCount.gpr.py:3
+#: DescendantCount/DescendantCount.gpr.py:24
+#: DescendantCount/DescendantCount.py:91
+#: DescendantCount/DescendantCount.gpr.py:23
+#: DescendantCount/DescendantCount.gpr.py:32
+msgid "Descendant Count"
+msgstr "Contagem de descendentes"
+
+#: DescendantCount/DescendantCount.gpr.py:18
+#: DescendantCount/DescendantCount.gpr.py:24
+msgid "Gramplet for showing people and descendant counts"
+msgstr "Gramplet para mostrar a quantidade de pessoas e descendentes"
+
+#: FamilyTree/FamilyTree.gpr.py:4 FamilyTree/FamilyTree.gpr.py:5
+msgid "Produces a graphical family tree."
+msgstr "Gera uma árvore genealógica gráfica"
+
+#: FamilyTree/FamilyTree.py:90 FamilyTree/FamilyTree.py:102
+#, python-format
+msgid "Family Tree for %s"
+msgstr "Arvore genealógica para %s"
+
+#: FamilyTree/FamilyTree.py:640 FamilyTree/FamilyTree.py:684
+msgid "Anonymous"
+msgstr "Anônimo"
+
+#: FamilyTree/FamilyTree.py:837 FamilyTree/FamilyTree.py:911
+msgid "born"
+msgstr "nascido(a)"
+
+#: FamilyTree/FamilyTree.py:839 FamilyTree/FamilyTree.py:913
+msgid "baptised"
+msgstr "batisado(a)"
+
+#: FamilyTree/FamilyTree.py:841 FamilyTree/FamilyTree.py:915
+msgid "died"
+msgstr "falecido(a)"
+
+#: FamilyTree/FamilyTree.py:843 FamilyTree/FamilyTree.py:917
+msgid "buried"
+msgstr "sepultado(a)"
+
+#: FamilyTree/FamilyTree.py:845 FamilyTree/FamilyTree.py:919
+msgid "cremated"
+msgstr "cremado(a)"
+
+#: FamilyTree/FamilyTree.py:847 FamilyTree/FamilyTree.py:921
+msgid "married"
+msgstr "casado(a)"
+
+#: FamilyTree/FamilyTree.py:849 FamilyTree/FamilyTree.py:923
+msgid "divorced"
+msgstr "divorciado(a)"
+
+#: FamilyTree/FamilyTree.py:851 FamilyTree/FamilyTree.py:925
+msgid "resident"
+msgstr "residência"
+
+#: FamilyTree/FamilyTree.py:858 FamilySheet/FamilySheet.py:769
+#, python-format
+msgid "on %(ymd_date)s"
+msgstr "em %(ymd_date)s"
+
+#: FamilyTree/FamilyTree.py:860 FamilySheet/FamilySheet.py:771
+#, python-format
+msgid "in %(ym_date)s"
+msgstr "em %(ym_date)s"
+
+#: FamilyTree/FamilyTree.py:862 FamilySheet/FamilySheet.py:773
+#, python-format
+msgid "in %(y_date)s"
+msgstr "em %(y_date)s"
+
+#: FamilyTree/FamilyTree.py:866 FamilySheet/FamilySheet.py:777
+#, python-format
+msgid "on %(placeholder)s"
+msgstr "em %(placeholder)s"
+
+#: FamilyTree/FamilyTree.py:869 FamilySheet/FamilySheet.py:779
+#, python-format
+msgid "on %(placeholder)s (%(partial)s)"
+msgstr "em %(placeholder)s (%(partial)s)"
+
+#: FamilyTree/FamilyTree.py:886 FamilySheet/FamilySheet.py:824
+#: FamilySheet/FamilySheet.py:826
+#, python-format
+msgid "in %(place)s"
+msgstr "em %(place)s"
+
+#: FamilyTree/FamilyTree.py:897 FamilyTree/FamilyTree.py:971
+#, python-format
+msgid "(%(description)s)"
+msgstr "(%(description)s)"
+
+#: FamilyTree/FamilyTree.py:978 FamilyTree/FamilyTree.py:1044
+msgid "The center family for the tree"
+msgstr "A família principal para o relatório"
+
+#: FamilyTree/FamilyTree.py:981 FamilyTree/FamilyTree.py:1047
+msgid "Ancestor Generations"
+msgstr "Número máximo de gerações de ascendentes"
+
+#: FamilyTree/FamilyTree.py:982 FamilyTree/FamilyTree.py:1048
+msgid "The number of ancestor generations to include in the tree"
+msgstr "Número de gerações a serem incluídas na árvore"
+
+#: FamilyTree/FamilyTree.py:985 FamilyTree/FamilyTree.py:1051
+msgid "Descendant Generations"
+msgstr "Número máximo de gerações de descendentes"
+
+#: FamilyTree/FamilyTree.py:986 FamilyTree/FamilyTree.py:1052
+msgid "The number of descendant generations to include in the tree"
+msgstr "Número de gerações a serem incluídas na árvore"
+
+#: FamilyTree/FamilyTree.py:990 FamilyTree/FamilyTree.py:1060
+msgid "Whether to scale to fit on a single page."
+msgstr "Ajustar para caber em uma única página"
+
+#: FamilyTree/FamilyTree.py:995 FamilyTree/FamilyTree.py:1065
+msgid "No color"
+msgstr "Sem cor"
+
+#: FamilyTree/FamilyTree.py:997 FamilyTree/FamilyTree.py:1067
+msgid "First generation"
+msgstr "Primeira geração"
+
+#: FamilyTree/FamilyTree.py:998 FamilyTree/FamilyTree.py:1068
+msgid "Second generation"
+msgstr "Segunda geração"
+
+#: FamilyTree/FamilyTree.py:999 FamilyTree/FamilyTree.py:1069
+msgid "Third generation"
+msgstr "Terceira geração"
+
+#: FamilyTree/FamilyTree.py:1000 FamilyTree/FamilyTree.py:1070
+msgid "Male line"
+msgstr "Linhagem masculina"
+
+#: FamilyTree/FamilyTree.py:1001 FamilyTree/FamilyTree.py:1071
+msgid "Male line and illegitimate children"
+msgstr "Linhagem masculina e filhos ilegitimos"
+
+#: FamilyTree/FamilyTree.py:1002 FamilyTree/FamilyTree.py:1072
+msgid "Female line"
+msgstr "Linhagem feminina"
+
+#: FamilyTree/FamilyTree.py:1005 FamilyTree/FamilyTree.py:1075
+msgid "Shuffle colors"
+msgstr "Embaralhar cores"
+
+#: FamilyTree/FamilyTree.py:1006 FamilyTree/FamilyTree.py:1076
+msgid "Whether to shuffle colors or order them in rainbow fashion."
+msgstr "Embaralhar as cores ou ordenar como arco-iris"
+
+#: FamilyTree/FamilyTree.py:1014 FamilySheet/FamilySheet.py:880
+msgid "Replace first name with call name"
+msgstr "Substituir o primeiro nome pelo nome vocativo"
+
+#: FamilyTree/FamilyTree.py:1015 FamilySheet/FamilySheet.py:881
+msgid "Underline call name in first name / add call name to first name"
+msgstr ""
+"Sublinhar o nome vocativo no primeiro nome / adicionar nome vocativo ao "
+"primeiro nome"
+
+#: FamilyTree/FamilyTree.py:1018 FamilyTree/FamilyTree.py:1091
+msgid "Include Occupation"
+msgstr "Incluir profissão"
+
+#: FamilyTree/FamilyTree.py:1021 FamilyTree/FamilyTree.py:1097
+msgid "Include Residence"
+msgstr "Incluir residência"
+
+#: FamilyTree/FamilyTree.py:1024 FamilyTree/FamilyTree.py:1100
+msgid "Print event data (dead person)"
+msgstr "Imprimir dados de evento (pessoa falecida)"
+
+#: FamilyTree/FamilyTree.py:1027 FamilyTree/FamilyTree.py:1035
+#: FamilyTree/FamilyTree.py:1103 FamilyTree/FamilyTree.py:1111
+msgid "Year only"
+msgstr "Somente ano"
+
+#: FamilyTree/FamilyTree.py:1028 FamilyTree/FamilyTree.py:1036
+#: FamilyTree/FamilyTree.py:1104 FamilyTree/FamilyTree.py:1112
+msgid "Full date"
+msgstr "Data completa"
+
+#: FamilyTree/FamilyTree.py:1029 FamilyTree/FamilyTree.py:1037
+#: FamilyTree/FamilyTree.py:1105 FamilyTree/FamilyTree.py:1113
+msgid "Full date and place"
+msgstr "Data e local completo"
+
+#: FamilyTree/FamilyTree.py:1032 FamilyTree/FamilyTree.py:1108
+msgid "Print event data (living person)"
+msgstr "Imprimir dados de evento (pessoa viva)"
+
+#: FamilyTree/FamilyTree.py:1040 FamilyTree/FamilyTree.py:1116
+msgid "Fall back to baptism if birth event missing"
+msgstr "Exibir evento de batismo se nascimento faltando"
+
+#: FamilyTree/FamilyTree.py:1043 FamilyTree/FamilyTree.py:1119
+msgid "Fall back to burial or cremation if death event missing"
+msgstr "Exibir evento de sepultamento ou cremação se falecimento faltando"
+
+#: FamilyTree/FamilyTree.py:1052 FamilyTree/FamilyTree.py:1131
+msgid "Include event description"
+msgstr "Incluir descrição de eventos"
+
+#: FamilyTree/FamilyTree.py:1055 FamilyTree/FamilyTree.py:1134
+msgid "Text Options"
+msgstr "Opções de texto"
+
+#: FamilyTree/FamilyTree.py:1083 FamilyTree/FamilyTree.py:1162
+msgid "The style used for names."
+msgstr "O estilo usado para nomes."
+
+#: FamilyTree/FamilyTree.py:1091 FamilyTree/FamilyTree.py:1170
+msgid "The style used for data (birth, death, marriage, divorce)."
+msgstr ""
+"O estilo usado para dados (nascimento, falecimento, casamento, divórcio."
+
+#: ClockGramplet/ClockGramplet.gpr.py:4 ClockGramplet/ClockGramplet.gpr.py:5
+msgid "Gramplet for demonstrating Cairo graphics"
+msgstr "Gramplet para demonstração de gráficos Cairo"
+
+#: ClockGramplet/ClockGramplet.gpr.py:8 ClockGramplet/ClockGramplet.gpr.py:4
+#: ClockGramplet/ClockGramplet.gpr.py:9
+msgid "Clock"
+msgstr "Relógio"
+
+#: ../gramps/gui/configure.py:983
+msgid "Colors"
+msgstr "Cores"

@@ -1,0 +1,934 @@
+# translation of lt.po to
+# GRAMPS
+# Copyright (C) YEAR ORGANIZATION, 2005.
+# Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: lt\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-03-08 16:37+0100\n"
+"PO-Revision-Date: 2010-03-07 23:17+0300\n"
+"Last-Translator: Artursa Sleinius <asleinius@users.sourceforge.net>\n"
+"Language-Team:  <en@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.4\n"
+"X-Generator: KBabel 1.11\n"
+"X-Poedit-Language: Lithuanian\n"
+"X-Poedit-Country: LITHUANIA\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"(n%100<10 || n%100>=20) ? 1 : 2)\n"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:9
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:182
+#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:190
+msgid "Calculate Estimated Dates"
+msgstr "Paskaičiuoti įvertinamas datas"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
+#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:11
+msgid "Calculates estimated dates for birth and death."
+msgstr "Apskaičiuoja įvertintas  gimimo ir mirties datas."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:75
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:83
+msgid "Select filter to restrict people"
+msgstr "Pasirinkite filtrą asmenų apribojimui"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:87
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:95
+msgid "Calculated Date Estimates"
+msgstr "Apskaičiuotos  apytikrės datos"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:88
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:96
+msgid "Source to remove and/or add"
+msgstr "Šaltinis kurį išmesti ir/arba pridėti"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:91
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:99
+msgid "Remove previously added events, notes, and source"
+msgstr "Ištrinti anksčiau įkeltus įvykius, pastabas ir šaltinius"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:92
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:100
+msgid ""
+"Remove calculated events, notes, and source; occurs immediately on Execute"
+msgstr ""
+"Pašalina apskaičiuotus įvykius, pastabas ir šaltinius; įvykdoma iškart  "
+"nuspaudus Vykdyti"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:96
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:104
+msgid "Do not add birth events"
+msgstr "Neįtraukti gimimo įvykių"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:97
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:105
+msgid "Add birth events without dates"
+msgstr "Įtraukti gimimo įvykius be datos"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:98
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:106
+msgid "Add birth events with dates"
+msgstr "Įdėti gimimo įvykius su data"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:99
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:107
+msgid "Add a birth events with or without estimated dates"
+msgstr "Įdėti gimimo įvykius su ar be įvertinamos datos"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:103
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:111
+msgid "Do not add death events"
+msgstr "Neįtraukti mirties įvykių"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:104
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:112
+msgid "Add death events without dates"
+msgstr "Įtraukti mirties įvykius be datų"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:105
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:113
+msgid "Add death events with dates"
+msgstr "Įtraukti mirties įvykius su data"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:106
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:114
+msgid "Add death events with or without estimated dates"
+msgstr "Įdėti mirties įvykius su ar be įvertinamos datos"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:110
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:118
+msgid "Maximum age"
+msgstr "Vyriausias asmens amžius"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:113
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:121
+msgid "Maximum age that one can live to"
+msgstr "Vyriausias amžius, kiek gali asmuo gyventi"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:119
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:127
+msgid "Maximum age difference between siblings"
+msgstr "Didelis amžiaus skirtumas  tarp brolių/seserų"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:125
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:133
+msgid "Average years between two generations"
+msgstr "Metų vidurkis tarp dviejų kartų"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:128
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:136
+msgid "Estimated Dates"
+msgstr "Įvertintos Datos"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:129
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:137
+msgid "Approximate (about)"
+msgstr "Apytikslė (apie)"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:130
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:138
+msgid "Extremes (after and before)"
+msgstr "Ekstremalumai (po ir prieš)"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:131
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:139
+msgid "Dates on events are either about or after/before"
+msgstr "Datos įvykiuose yra arba apie arba po/prieš"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:164
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:172
+msgid ""
+"The Calculate Estimated Dates Tool is used to add and remove birth and death "
+"events for people that are missing these events.\n"
+"\n"
+"To use:\n"
+"1. Go to the Options tab\n"
+"2. Check the [ ] Remove option to remove previous estimates\n"
+"3. Select the Add date options to date events with or without dates\n"
+"4. Click on Execute\n"
+"5. Select the people with which to add events\n"
+"6. Click on 'Add Selected Events' button to create\n"
+"\n"
+"NOTES: if you decide to make an event permanent, remove it from the Source. "
+"Otherwise, it will get removed the next time you automatically remove these "
+"events.\n"
+"\n"
+"You may have to run the tool repeatedly (without removing previous events) "
+"to add all of the events possible."
+msgstr ""
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:191
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:199
+msgid "Select All"
+msgstr "Pasirinkite Viską"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:192
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:200
+msgid "Select None"
+msgstr "Pasirinkite Nieko"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:193
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:201
+msgid "Toggle Selection"
+msgstr "Pasirinkimo inversija"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:194
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:202
+msgid "Add Selected Events"
+msgstr "Pridėkite Pasirinktus Įvykius"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:200
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:208
+msgid "Remove Events, Notes, and Source and Reselect Data"
+msgstr ""
+"Pašalinti Įvykius, Pastabas ir Šaltinius, bei  pakartotinai  Pažymėti "
+"Duomenis"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:201
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:209
+msgid ""
+"Are you sure you want to remove previous events, notes, and source and "
+"reselect data?"
+msgstr ""
+"Ar įsitikinę, kad norite pašalinti  prieš tai buvusius įvykius, pastabas ir "
+"šaltinius, bei pakartotinai pažymėti duomenis?"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:202
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:210
+msgid "Remove and Run Select Again"
+msgstr "Ištrinti ir Vėl Vykdyti Pažymėjimą"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:206
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:214
+msgid "Reselect Data"
+msgstr "Iš Naujo Pasirinkite Datą"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:207
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:215
+msgid "Are you sure you want to reselect data?"
+msgstr "Ar tikrai norite iš naujo pažymėti datą?"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:208
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:216
+msgid "Run Select Again"
+msgstr "Paleisti pasirinkimą dar kartą"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:228
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:236
+msgid "Evidence"
+msgstr "Liudijimas"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:228
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:236
+msgid "Relative"
+msgstr ""
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:229
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:237
+msgid "Processing...\n"
+msgstr "Apdorojimas...\n"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:247
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:255
+msgid "Removing old estimations... "
+msgstr "Pašalinami seni įverčiai... "
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:248
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:256
+#, python-format
+msgid "Removing '%s'..."
+msgstr "Išmetamas '%s'..."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:302
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:319
+msgid "done!\n"
+msgstr "padaryta!\n"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:307
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:323
+msgid ""
+"Selecting... \n"
+"\n"
+msgstr ""
+"Pasirenkame...\n"
+"\n"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:343
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:359
+msgid "Add birth and death events"
+msgstr "Pridėti gimimo ir mirties įvykius"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:345
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:361
+msgid "Add birth event"
+msgstr "Pridėti gimimo įvykį"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:347
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:363
+msgid "Add death event"
+msgstr "Pridėti mirties įvykį"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:382
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:398
+msgid "No events to be added."
+msgstr "Nebuvo pridėta jokio  įvykio."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:424
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:439
+msgid "Selecting... "
+msgstr "Pasirenkame... "
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:425
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:440
+#, python-format
+msgid "Adding events '%s'..."
+msgstr "Pridedami įvykiai '%s'..."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:447
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:465
+#, python-format
+msgid "Added birth event based on %(evidence)s, from %(name)s"
+msgstr "Pridėtas gimimo įvykis remiantis %(evidence)s,  iš %(name)s"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:450
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:468
+#, python-format
+msgid "Added birth event based on %s"
+msgstr "pridėtas gimimo įvykis remiantis  %s"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:452
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:470
+msgid "Estimated birth date"
+msgstr "Įvertinta gimimo data"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:463
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:480
+#, python-format
+msgid "Added death event based on %(evidence)s, from %(person)s"
+msgstr "Pridėtas mirties įvykis remiantis  %(evidence)s, iš %(person)s"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:466
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:483
+#, python-format
+msgid "Added death event based on %s"
+msgstr "Pridėta mirties įvykis remiantis  %s"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:468
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:485
+msgid "Estimated death date"
+msgstr "Įvertinta mirties data"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:478
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:495
+msgid " Done! Committing..."
+msgstr "Baigta! Siunčiama..."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:483
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:499
+#, python-format
+msgid "Added %d events."
+msgstr "Pridėta %d įvykių."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:511
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:527
+msgid "Estimated date"
+msgstr "Įvertinta data"
+
+#: EditExifMetadata/editexifmetadata.gpr.py:29
+#: EditExifMetadata/editexifmetadata.py:753
+#: EditExifMetadata/editexifmetadata.py:1159
+#: EditExifMetadata/editexifmetadata.gpr.py:30
+#: EditExifMetadata/editexifmetadata.py:723
+#: EditExifMetadata/editexifmetadata.py:1135
+#: EditExifMetadata/editexifmetadata.py:1147
+msgid "Edit Image Exif Metadata"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.gpr.py:30
+#: EditExifMetadata/editexifmetadata.gpr.py:31
+msgid "Gramplet to view, edit, and save image Exif metadata"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.gpr.py:34
+#: EditExifMetadata/editexifmetadata.gpr.py:35
+msgid "Edit Exif Metadata"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:148
+#: EditExifMetadata/editexifmetadata.py:135
+msgid "<-- Image Types -->"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:171
+#: EditExifMetadata/editexifmetadata.py:158
+msgid ""
+"Warning:  Changing this entry will update the Media object title field in "
+"Gramps not Exiv2 metadata."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:174
+#: EditExifMetadata/editexifmetadata.py:161
+#, fuzzy
+msgid "Provide a short description for this image."
+msgstr "Nurodykite bylos aprašymą."
+
+#: EditExifMetadata/editexifmetadata.py:176
+#: EditExifMetadata/editexifmetadata.py:163
+msgid ""
+"Enter the Artist/ Author of this image.  The person's name or the company "
+"who is responsible for the creation of this image."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:179
+#: EditExifMetadata/editexifmetadata.py:167
+#, fuzzy
+msgid "Enter the copyright information for this image. \n"
+msgstr "Ar įtraukti vaikų santuokos informaciją."
+
+#: EditExifMetadata/editexifmetadata.py:181
+#: EditExifMetadata/editexifmetadata.py:169
+msgid ""
+"The original date/ time when the image was first created/ taken as in a "
+"photograph.\n"
+"Example: 1830-01-1 09:30:59"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:184
+#: EditExifMetadata/editexifmetadata.py:173
+msgid ""
+"This is the date/ time that the image was last changed/ modified.\n"
+"Example: 2011-05-24 14:30:00"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:202
+#: EditExifMetadata/editexifmetadata.py:191
+msgid ""
+"Displays the Gramps Wiki Help page for 'Edit Image Exif Metadata' in your "
+"web browser."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:205
+#: EditExifMetadata/editexifmetadata.py:194
+msgid ""
+"This will open up a new window to allow you to edit/ modify this image's "
+"Exif metadata.\n"
+"  It will also allow you to be able to Save the modified metadata."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:209
+#: EditExifMetadata/editexifmetadata.py:198
+msgid "Will produce a Popup window showing a Thumbnail Viewing Area"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:211
+#: EditExifMetadata/editexifmetadata.py:201
+msgid ""
+"Select from a drop- down box the image file type that you would like to "
+"convert your non- Exiv2 compatible media object to."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:214
+#: EditExifMetadata/editexifmetadata.py:205
+msgid ""
+"If your image is not of an image type that can have Exif metadata read/ "
+"written to/from, convert it to a type that can?"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:217
+#: EditExifMetadata/editexifmetadata.py:209
+msgid ""
+"WARNING:  This will completely erase all Exif metadata from this image!  Are "
+"you sure that you want to do this?"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:315
+#: EditExifMetadata/editexifmetadata.py:214
+#, fuzzy
+msgid "Thumbnail"
+msgstr "Mažo paveikslėlio vieta"
+
+#: EditExifMetadata/editexifmetadata.py:397
+#: EditExifMetadata/editexifmetadata.py:402
+#, fuzzy
+msgid "Select an image to begin..."
+msgstr "Pasirinkite vaizdo/garso bylą"
+
+#: EditExifMetadata/editexifmetadata.py:419
+#: EditExifMetadata/editexifmetadata.py:421
+msgid ""
+"Image is NOT readable,\n"
+"Please choose a different image..."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:435
+#: EditExifMetadata/editexifmetadata.py:481
+#: EditExifMetadata/editexifmetadata.py:1440
+msgid ""
+"Image is NOT writable,\n"
+"You will NOT be able to save Exif metadata...."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:447
+#: EditExifMetadata/editexifmetadata.py:441
+msgid "Please convert this image to an Exiv2- compatible image type..."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:670
+#: EditExifMetadata/editexifmetadata.py:648
+msgid "Click Close to close this Thumbnail View Area."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:674
+#: EditExifMetadata/editexifmetadata.py:654
+msgid "Thumbnail View Area"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:753
+#: EditExifMetadata/editexifmetadata.py:724
+msgid ""
+"WARNING: You are about to convert this image into a .jpeg image.  Are you "
+"sure that you want to do this?"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:755
+#: EditExifMetadata/editexifmetadata.py:726
+#, fuzzy
+msgid "Convert and Delete"
+msgstr "Pakeisti į sąlyginį kelią"
+
+#: EditExifMetadata/editexifmetadata.py:841
+#: EditExifMetadata/editexifmetadata.py:807
+msgid ""
+"Your image has been converted and the original file has been deleted, and "
+"the full path has been updated!"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:845
+#: EditExifMetadata/editexifmetadata.py:812
+msgid ""
+"There has been an error, Please check your source and destination file "
+"paths..."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:848
+#: EditExifMetadata/editexifmetadata.py:816
+msgid ""
+"There was an error in deleting the original file.  You will need to delete "
+"it yourself!"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:865
+#: EditExifMetadata/editexifmetadata.py:834
+msgid "There was an error in converting your image file."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:876
+#: EditExifMetadata/editexifmetadata.py:844
+#, fuzzy
+msgid "Media Path Update"
+msgstr "mirties data"
+
+#: EditExifMetadata/editexifmetadata.py:882
+#: EditExifMetadata/editexifmetadata.py:853
+msgid "There has been an error in updating the image file's path!"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:916
+#: EditExifMetadata/editexifmetadata.py:886
+msgid ""
+"Click the close button when you are finished modifying this image's Exif "
+"metadata."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:954
+#: EditExifMetadata/editexifmetadata.py:924
+msgid "Saves a copy of the data fields into the image's Exif metadata."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:957
+#: EditExifMetadata/editexifmetadata.py:928
+msgid "Re -display the data fields that were cleared from the Edit Area."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:960
+#: EditExifMetadata/editexifmetadata.py:932
+msgid "This button will clear all of the data fields shown here."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:963
+#: EditExifMetadata/editexifmetadata.py:940
+msgid ""
+"Closes this popup Edit window.\n"
+"WARNING: This action will NOT Save any changes/ modification made to this "
+"image's Exif metadata."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:990
+#: EditExifMetadata/editexifmetadata.py:969
+#, fuzzy
+msgid "Media Object Title"
+msgstr "Audio/Video Bylų Filtrai"
+
+#: EditExifMetadata/editexifmetadata.py:1000
+#: EditExifMetadata/editexifmetadata.py:978
+#, fuzzy
+msgid "media Title: "
+msgstr "Kalendoriaus Antraštė"
+
+#: EditExifMetadata/editexifmetadata.py:1014
+#: EditExifMetadata/editexifmetadata.py:993
+#, fuzzy
+msgid "General Data"
+msgstr "Paprastas"
+
+#: EditExifMetadata/editexifmetadata.py:1024
+#: EditExifMetadata/editexifmetadata.py:1003
+#, fuzzy
+msgid "Description: "
+msgstr "Aprašymas:"
+
+#: EditExifMetadata/editexifmetadata.py:1025
+#: EditExifMetadata/editexifmetadata.py:1004
+#, fuzzy
+msgid "Artist: "
+msgstr "Autorius"
+
+#: EditExifMetadata/editexifmetadata.py:1026
+#: EditExifMetadata/editexifmetadata.py:1005
+#, fuzzy
+msgid "Copyright: "
+msgstr "Autoriaus teisės"
+
+#: EditExifMetadata/editexifmetadata.py:1039
+#: EditExifMetadata/editexifmetadata.py:1019
+msgid "Date/ Time"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:1053
+#: EditExifMetadata/editexifmetadata.py:1034
+#, fuzzy
+msgid "Original: "
+msgstr "Pradinis laikas"
+
+#: EditExifMetadata/editexifmetadata.py:1054
+#: EditExifMetadata/editexifmetadata.py:1035
+#, fuzzy
+msgid "Modified: "
+msgstr "Paskutinis Pataisymas"
+
+#: EditExifMetadata/editexifmetadata.py:1071
+#: EditExifMetadata/editexifmetadata.py:1054
+msgid "Latitude/ Longitude/ Altitude GPS coordinates"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:1085
+#: EditExifMetadata/editexifmetadata.py:1069
+#, fuzzy
+msgid "Latitude :"
+msgstr "Platuma:"
+
+#: EditExifMetadata/editexifmetadata.py:1086
+#: EditExifMetadata/editexifmetadata.py:1070
+#, fuzzy
+msgid "Longitude :"
+msgstr "Ilguma:"
+
+#: EditExifMetadata/editexifmetadata.py:1087
+#: EditExifMetadata/editexifmetadata.py:1071
+#, fuzzy
+msgid "Altitude :"
+msgstr "Platuma:"
+
+#: EditExifMetadata/editexifmetadata.py:1139
+#: EditExifMetadata/editexifmetadata.py:1114
+#, fuzzy
+msgid "Bad Date/Time"
+msgstr "Bloga Data"
+
+#: EditExifMetadata/editexifmetadata.py:1147
+#: EditExifMetadata/editexifmetadata.py:1122
+#, fuzzy
+msgid "Invalid latitude (syntax: 18\\u00b09'"
+msgstr "Bloga platuma (sintaksė: 18°9'"
+
+#: EditExifMetadata/editexifmetadata.py:1148
+#: EditExifMetadata/editexifmetadata.py:1123
+msgid "48.21\"S, -18.2412 or -18:9:48.21)"
+msgstr "48.21\"P, -18.2412 or -18:9:48.21)"
+
+#: EditExifMetadata/editexifmetadata.py:1152
+#: EditExifMetadata/editexifmetadata.py:1127
+#, fuzzy
+msgid "Invalid longitude (syntax: 18\\u00b09'"
+msgstr "Bloga ilguma (sintaksė: 18°9'"
+
+#: EditExifMetadata/editexifmetadata.py:1153
+#: EditExifMetadata/editexifmetadata.py:1128
+msgid "48.21\"E, -18.2412 or -18:9:48.21)"
+msgstr "48.21\"R, -18.2412 or -18:9:48.21)"
+
+#: EditExifMetadata/editexifmetadata.py:1159
+#: EditExifMetadata/editexifmetadata.py:1136
+msgid ""
+"WARNING!  You are about to completely delete the Exif metadata from this "
+"image?"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:1324
+#: EditExifMetadata/editexifmetadata.py:1333
+#, fuzzy
+msgid "Media Title Update"
+msgstr "Audio/video filtrų redaktorius"
+
+#: EditExifMetadata/editexifmetadata.py:1350
+#: EditExifMetadata/editexifmetadata.py:1357
+#, fuzzy
+msgid "Media Object Date Created"
+msgstr "Audio/video objektai pažymėti privačiais"
+
+#: EditExifMetadata/editexifmetadata.py:1422
+msgid "Saving Exif metadata to this image..."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:1469
+#: EditExifMetadata/editexifmetadata.py:1465
+msgid "All Exif metadata has been deleted from this image..."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:1474
+#: EditExifMetadata/editexifmetadata.py:1470
+msgid "There was an error in stripping the Exif metadata from this image..."
+msgstr ""
+
+#: ToDoReport//TodoReport.gpr.py:24 ToDoReport/TodoReport.gpr.py:25
+msgid "Todo Report"
+msgstr "Norėdami atlikti ataskaitą"
+
+#: ToDoReport//TodoReport.gpr.py:25 ToDoReport/TodoReport.gpr.py:27
+msgid ""
+"Produces a list of all the notes with a given tag along with the records "
+"that it references, the Person, Family, Event, etc."
+msgstr ""
+"Sudaro visų užrašų su duota etikete sąrašą kartu su įrašais, kuriais jis "
+"remiasi, asmeniu, šeima, įvykiu ir kt."
+
+#: ToDoReport//TodoReport.py:91 ../gramps/plugins/textreport/tagreport.py:115
+msgid "You must first create a tag before running this report."
+msgstr "Prieš paleisdami šią ataskaitą, pirmiausia turite sukurti žymą."
+
+#: ToDoReport//TodoReport.py:98 ToDoReport//TodoReport.py:526
+#: ToDoReport/TodoReport.py:107 ToDoReport/TodoReport.py:904
+msgid "TR-Title"
+msgstr "TR-Pavadinimas"
+
+#: ToDoReport//TodoReport.py:99 ToDoReport/TodoReport.py:111
+#, python-format
+msgid "Report on Notes Tagged '%s'"
+msgstr "Ataskaita apie užrašus, pažymėtus „%s“"
+
+#: ToDoReport//TodoReport.py:198 ToDoReport//TodoReport.py:536
+#: ToDoReport/TodoReport.py:237 ToDoReport/TodoReport.py:914
+msgid "TR-Heading"
+msgstr "TR-Antraštė"
+
+#: ToDoReport//TodoReport.py:204 ToDoReport/TodoReport.py:243
+msgid "NoteTable"
+msgstr "UžrašųLentelė"
+
+#: ToDoReport//TodoReport.py:204 ToDoReport//TodoReport.py:584
+#: ToDoReport/TodoReport.py:243 ToDoReport/TodoReport.py:962
+msgid "TR-Table"
+msgstr "TR-Lentelė"
+
+#: ToDoReport//TodoReport.py:208 ToDoReport//TodoReport.py:214
+#: ToDoReport//TodoReport.py:228 ToDoReport//TodoReport.py:234
+#: ToDoReport//TodoReport.py:263 ToDoReport//TodoReport.py:271
+#: ToDoReport//TodoReport.py:277 ToDoReport//TodoReport.py:288
+#: ToDoReport//TodoReport.py:307 ToDoReport//TodoReport.py:313
+#: ToDoReport//TodoReport.py:323 ToDoReport//TodoReport.py:346
+#: ToDoReport//TodoReport.py:362 ToDoReport//TodoReport.py:368
+#: ToDoReport//TodoReport.py:378 ToDoReport//TodoReport.py:389
+#: ToDoReport//TodoReport.py:407 ToDoReport//TodoReport.py:413
+#: ToDoReport//TodoReport.py:569 ToDoReport/TodoReport.py:247
+#: ToDoReport/TodoReport.py:253 ToDoReport/TodoReport.py:267
+#: ToDoReport/TodoReport.py:273 ToDoReport/TodoReport.py:302
+#: ToDoReport/TodoReport.py:310 ToDoReport/TodoReport.py:323
+#: ToDoReport/TodoReport.py:329 ToDoReport/TodoReport.py:347
+#: ToDoReport/TodoReport.py:353 ToDoReport/TodoReport.py:363
+#: ToDoReport/TodoReport.py:373 ToDoReport/TodoReport.py:392
+#: ToDoReport/TodoReport.py:398 ToDoReport/TodoReport.py:410
+#: ToDoReport/TodoReport.py:421 ToDoReport/TodoReport.py:437
+#: ToDoReport/TodoReport.py:444 ToDoReport/TodoReport.py:458
+#: ToDoReport/TodoReport.py:469 ToDoReport/TodoReport.py:474
+#: ToDoReport/TodoReport.py:480 ToDoReport/TodoReport.py:490
+#: ToDoReport/TodoReport.py:512 ToDoReport/TodoReport.py:518
+#: ToDoReport/TodoReport.py:535 ToDoReport/TodoReport.py:541
+#: ToDoReport/TodoReport.py:547 ToDoReport/TodoReport.py:564
+#: ToDoReport/TodoReport.py:570 ToDoReport/TodoReport.py:576
+#: ToDoReport/TodoReport.py:582 ToDoReport/TodoReport.py:599
+#: ToDoReport/TodoReport.py:607 ToDoReport/TodoReport.py:613
+#: ToDoReport/TodoReport.py:619 ToDoReport/TodoReport.py:636
+#: ToDoReport/TodoReport.py:642 ToDoReport/TodoReport.py:648
+#: ToDoReport/TodoReport.py:654 ToDoReport/TodoReport.py:678
+#: ToDoReport/TodoReport.py:683 ToDoReport/TodoReport.py:689
+#: ToDoReport/TodoReport.py:947
+msgid "TR-TableCell"
+msgstr "TR-LentelėLąstelė"
+
+#: ToDoReport//TodoReport.py:209 ToDoReport//TodoReport.py:215
+#: ToDoReport//TodoReport.py:557 ToDoReport/TodoReport.py:248
+#: ToDoReport/TodoReport.py:254 ToDoReport/TodoReport.py:935
+msgid "TR-Normal-Bold"
+msgstr "TR -Normalus-Paryškintas"
+
+#: ToDoReport//TodoReport.py:229 ToDoReport//TodoReport.py:246
+#: ToDoReport//TodoReport.py:264 ToDoReport//TodoReport.py:272
+#: ToDoReport//TodoReport.py:278 ToDoReport//TodoReport.py:289
+#: ToDoReport//TodoReport.py:308 ToDoReport//TodoReport.py:314
+#: ToDoReport//TodoReport.py:324 ToDoReport//TodoReport.py:347
+#: ToDoReport//TodoReport.py:363 ToDoReport//TodoReport.py:369
+#: ToDoReport//TodoReport.py:379 ToDoReport//TodoReport.py:390
+#: ToDoReport//TodoReport.py:408 ToDoReport//TodoReport.py:414
+#: ToDoReport//TodoReport.py:546 ToDoReport/TodoReport.py:268
+#: ToDoReport/TodoReport.py:285 ToDoReport/TodoReport.py:303
+#: ToDoReport/TodoReport.py:311 ToDoReport/TodoReport.py:324
+#: ToDoReport/TodoReport.py:330 ToDoReport/TodoReport.py:348
+#: ToDoReport/TodoReport.py:354 ToDoReport/TodoReport.py:364
+#: ToDoReport/TodoReport.py:374 ToDoReport/TodoReport.py:393
+#: ToDoReport/TodoReport.py:399 ToDoReport/TodoReport.py:411
+#: ToDoReport/TodoReport.py:422 ToDoReport/TodoReport.py:438
+#: ToDoReport/TodoReport.py:445 ToDoReport/TodoReport.py:459
+#: ToDoReport/TodoReport.py:470 ToDoReport/TodoReport.py:475
+#: ToDoReport/TodoReport.py:481 ToDoReport/TodoReport.py:491
+#: ToDoReport/TodoReport.py:513 ToDoReport/TodoReport.py:519
+#: ToDoReport/TodoReport.py:536 ToDoReport/TodoReport.py:542
+#: ToDoReport/TodoReport.py:548 ToDoReport/TodoReport.py:565
+#: ToDoReport/TodoReport.py:571 ToDoReport/TodoReport.py:577
+#: ToDoReport/TodoReport.py:583 ToDoReport/TodoReport.py:600
+#: ToDoReport/TodoReport.py:608 ToDoReport/TodoReport.py:614
+#: ToDoReport/TodoReport.py:620 ToDoReport/TodoReport.py:637
+#: ToDoReport/TodoReport.py:643 ToDoReport/TodoReport.py:649
+#: ToDoReport/TodoReport.py:679 ToDoReport/TodoReport.py:684
+#: ToDoReport/TodoReport.py:690 ToDoReport/TodoReport.py:924
+msgid "TR-Normal"
+msgstr "TR -Normalus"
+
+#: ToDoReport//TodoReport.py:236 ToDoReport//TodoReport.py:564
+#: ToDoReport/TodoReport.py:275 ToDoReport/TodoReport.py:942
+msgid "TR-Note"
+msgstr "TR -Pastaba"
+
+#: ToDoReport//TodoReport.py:245 ToDoReport//TodoReport.py:574
+#: ToDoReport/TodoReport.py:284 ToDoReport/TodoReport.py:952
+msgid "TR-BorderCell"
+msgstr "TR -PasienioLąstelė"
+
+#: ToDoReport//TodoReport.py:374 ToDoReport/TodoReport.py:405
+msgid "date: "
+msgstr "data: "
+
+#: ToDoReport//TodoReport.py:385 ToDoReport/TodoReport.py:417
+msgid "place: "
+msgstr "vieta: "
+
+#: ToDoReport//TodoReport.py:507 ToDoReport/TodoReport.py:885
+msgid "Group by reference type"
+msgstr "Grupuoti pagal atskaitos tipą"
+
+#: ToDoReport//TodoReport.py:508 ToDoReport/TodoReport.py:886
+msgid "Group notes by Family, Person, Place, etc."
+msgstr "Grupės pastabos pagal šeimą, asmenį, vietą ir kt."
+
+#: ToDoReport//TodoReport.py:525 AncestorFill/AncestorFill.py:361
+msgid "The style used for the title of the page."
+msgstr "Stilius, naudojamas puslapio antraštei."
+
+#: ToDoReport//TodoReport.py:568 ToDoReport/TodoReport.py:946
+msgid "The basic style used for the table cell display."
+msgstr "Pagrindinis elementas, naudojamas lentelės langelių rodymui."
+
+#: ToDoReport//TodoReport.py:573 ToDoReport/TodoReport.py:951
+msgid "The basic style used for the table border cell display."
+msgstr "Pagrindinis staliuko langelių rodymo stilius."
+
+#: ToDoReport//TodoReport.py:583 ToDoReport/TodoReport.py:961
+msgid "The basic style used for the table display."
+msgstr "Pagrindinis stalo rodymo stilius."
+
+#: CheckPlaceTitles/checkplacetitles.gpr.py:28
+#: CheckPlaceTitles/checkplacetitles.gpr.py:29
+msgid "Check Place Titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.gpr.py:29
+#: CheckPlaceTitles/checkplacetitles.gpr.py:30
+msgid "Check place titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:71
+msgid "Check Place title"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:86 ExtractCity/extractcity.py:454
+msgid "Checking Place Titles"
+msgstr "Tikrinti vietovių antraštes"
+
+#: CheckPlaceTitles/checkplacetitles.py:87 ExtractCity/extractcity.py:456
+msgid "Looking for place fields"
+msgstr "Ieškoma vietovių laukų"
+
+#: CheckPlaceTitles/checkplacetitles.py:103
+#: CheckPlaceTitles/checkplacetitles.py:107
+msgid "Differences"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:109
+#: CheckPlaceTitles/checkplacetitles.py:112
+msgid "No need modifications"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:110
+#: CheckPlaceTitles/checkplacetitles.py:113
+msgid "No changes need."
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:185
+#: CheckPlaceTitles/checkplacetitles.py:187
+msgid "Legacy place"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:199
+#: CheckPlaceTitles/checkplacetitles.py:201
+msgid "Modify Place titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:222
+#: CheckPlaceTitles/checkplacetitles.py:224
+msgid "Place titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:1
+#: CheckPlaceTitles/checkplacetitles.glade:56
+msgid "Remove content of place title field if it does not match"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:2
+#: CheckPlaceTitles/checkplacetitles.glade:74
+msgid "Copy content of place title field to a new note."
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:4
+#: CheckPlaceTitles/checkplacetitles.glade:91
+msgid "Attach a tag on selected places."
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:6
+#: CheckPlaceTitles/checkplacetitles.glade:177
+msgid "column"
+msgstr ""

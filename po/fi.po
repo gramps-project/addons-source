@@ -1,0 +1,4630 @@
+# translation of fi.po to Finnish
+# GRAMPS
+# Copyright (C) YEAR ORGANIZATION.
+#
+# Eero Tamminen <eerot@sf>, 2005, 2006, 2007, 2008.
+# Janne Kovesjärvi <janne.kovesjarvi@gmail.com>, 2008, 2009, 2013.
+# Matti Niemelä <niememat@gmail.com>, 2014, 2015, 2016, 2017, 2018.
+# Pekka Valta <pekka.valta@kolumbus.fi>, 2014, 2018.
+# Niemelä <niememat@gmail.com>, 2017, 2018.
+# Bo Rosén <bo.rosen@home.se>, 2001.
+# Jens Arvidsson <jya@sverige.nu>, 2002, 2003, 2004, 2005.
+# Stefan Björk <betula@users.sourceforge.net>, 2005, 2006.
+# Peter Landgren <peter.talken@telia.com>, 2007, 2008, 2009, 2010, 2011.
+# Anton Huber <anton_huber@gmx.de>, 2005, 2006.
+# Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
+# Sebastian Vöcking <voeck@web.de>, 2005.
+# Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
+# Alex Roitman <shura@gramps-project.org>, 2006.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: fi\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-10-02 02:13+0300\n"
+"PO-Revision-Date: 2019-12-10 13:09+0200\n"
+"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"Language-Team: niememat@gmail.com\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.0.6\n"
+
+#: CalculateEstimatedDates.gpr.py:9 CalculateEstimatedDates.py:190
+#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:190
+msgid "Calculate Estimated Dates"
+msgstr "Laske arvioidut päivämäärät"
+
+#: CalculateEstimatedDates.gpr.py:10
+#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:11
+msgid "Calculates estimated dates for birth and death."
+msgstr "Laskee syntymälle ja kuolemalle päivämääräarvioita."
+
+#: CalculateEstimatedDates.py:83
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:83
+msgid "Select filter to restrict people"
+msgstr "Rajoita henkilöitä valitsemalla suodatin"
+
+#: CalculateEstimatedDates.py:95
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:95
+msgid "Calculated Date Estimates"
+msgstr "Lasketut päivämääräarviot"
+
+#: CalculateEstimatedDates.py:96
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:96
+msgid "Source to remove and/or add"
+msgstr "Poistettavat ja/tai lisättävät lähteet"
+
+#: CalculateEstimatedDates.py:99
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:99
+msgid "Remove previously added events, notes, and source"
+msgstr "Poista aiemmin lisätyt tapahtumat, muistiinpanot ja lähde"
+
+#: CalculateEstimatedDates.py:100
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:100
+msgid ""
+"Remove calculated events, notes, and source; occurs immediately on Execute"
+msgstr ""
+"Poista lasketut tapahtumat, muistiinpanot ja lähde; Tapahtuu välittömästi "
+"Suorita painikkeesta"
+
+#: CalculateEstimatedDates.py:104
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:104
+msgid "Do not add birth events"
+msgstr "Älä lisää syntymätapahtumia"
+
+#: CalculateEstimatedDates.py:105
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:105
+msgid "Add birth events without dates"
+msgstr "Lisää syntymätapahtumat ilman päivämääriä"
+
+#: CalculateEstimatedDates.py:106
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:106
+msgid "Add birth events with dates"
+msgstr "Lisää syntymätapahtumat päivämäärillä"
+
+#: CalculateEstimatedDates.py:107
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:107
+msgid "Add a birth events with or without estimated dates"
+msgstr "Lisää syntymätapahtumat arvioidun päivämäärän kanssa tai ilman niitä"
+
+#: CalculateEstimatedDates.py:111
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:111
+msgid "Do not add death events"
+msgstr "Älä lisää kuolintapahtumia"
+
+#: CalculateEstimatedDates.py:112
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:112
+msgid "Add death events without dates"
+msgstr "Lisää kuolintapahtumat ilman päivämääriä"
+
+#: CalculateEstimatedDates.py:113
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:113
+msgid "Add death events with dates"
+msgstr "Lisää kuolintapahtumat päivämäärillä"
+
+#: CalculateEstimatedDates.py:114
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:114
+msgid "Add death events with or without estimated dates"
+msgstr "Lisää kuolintapahtumat arvioidun päivämäärän kanssa tai ilman niitä"
+
+#: CalculateEstimatedDates.py:118
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:118
+msgid "Maximum age"
+msgstr "Suurin mahdollinen ikä"
+
+#: CalculateEstimatedDates.py:121
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:121
+msgid "Maximum age that one can live to"
+msgstr "Suurin mahdollinen ikä jonka voi elää"
+
+#: CalculateEstimatedDates.py:127
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:127
+msgid "Maximum age difference between siblings"
+msgstr "Suurin mahdollinen sisarusten välinen ikäero"
+
+#: CalculateEstimatedDates.py:133
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:133
+msgid "Average years between two generations"
+msgstr "Keskimääräinen vuosimäärä kahden sukupolven välillä"
+
+#: CalculateEstimatedDates.py:136
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:136
+msgid "Estimated Dates"
+msgstr "Arvioidut päivämäärät"
+
+#: CalculateEstimatedDates.py:137
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:137
+msgid "Approximate (about)"
+msgstr "Arvioitu (noin)"
+
+#: CalculateEstimatedDates.py:138
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:138
+msgid "Extremes (after and before)"
+msgstr "Ääripäät (jälkeen ja ennen)"
+
+#: CalculateEstimatedDates.py:139
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:139
+msgid "Dates on events are either about or after/before"
+msgstr "Tapahtumien päivämäärät ovat joko noin tai jälkeen/ennen"
+
+#: CalculateEstimatedDates.py:172
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:172
+msgid ""
+"The Calculate Estimated Dates Tool is used to add and remove birth and death "
+"events for people that are missing these events.\n"
+"\n"
+"To use:\n"
+"1. Go to the Options tab\n"
+"2. Check the [ ] Remove option to remove previous estimates\n"
+"3. Select the Add date options to date events with or without dates\n"
+"4. Click on Execute\n"
+"5. Select the people with which to add events\n"
+"6. Click on 'Add Selected Events' button to create\n"
+"\n"
+"NOTES: if you decide to make an event permanent, remove it from the Source. "
+"Otherwise, it will get removed the next time you automatically remove these "
+"events.\n"
+"\n"
+"You may have to run the tool repeatedly (without removing previous events) "
+"to add all of the events possible."
+msgstr ""
+"Laske arvioidut päivämäärät työkalua käytetään lisäämään ja poistamaan "
+"syntymä- ja kuolintapahtumia ihmisille, joilla ei näitä tapahtumia ole.\n"
+"\n"
+"Käyttö:\n"
+"1. Siirry valinnat välilehteen\n"
+"2. Tarkista [ ] Poista valinta aikaisemmin lisätyt tapahtuma-arviot\n"
+"3. Valitse Lisää päivämääräasetukset tapahtumiin päivämäärien kanssa tai "
+"ilman\n"
+"4. Napsauta Suorita\n"
+"5. Valitse henkilöt, joille voit lisätä tapahtumia\n"
+"6. Napsauta 'Lisää valitut tapahtumat' painiketta luodaksesi\n"
+"\n"
+"HUOMAUTUKSET: jos päätät tehdä tapahtuman pysyväksi, poista sen lähde. "
+"Muussa tapauksessa se poistetaan, kun seuraavan kerran poistat nämä "
+"tapahtumat automaattisesti.\n"
+"\n"
+"Voit joutua käyttämään työkalua toistuvasti (poistamatta aiempia tapahtumia) "
+"lisätä kaikki mahdolliset tapahtumat."
+
+#: CalculateEstimatedDates.py:199
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:199
+msgid "Select All"
+msgstr "Valitse kaikki"
+
+#: CalculateEstimatedDates.py:200
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:200
+msgid "Select None"
+msgstr "Älä valitse mitään"
+
+#: CalculateEstimatedDates.py:201
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:201
+msgid "Toggle Selection"
+msgstr "Vaihda valinta"
+
+#: CalculateEstimatedDates.py:202
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:202
+msgid "Add Selected Events"
+msgstr "Lisää valitut tapahtumat"
+
+#: CalculateEstimatedDates.py:208
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:208
+msgid "Remove Events, Notes, and Source and Reselect Data"
+msgstr "Poista tapahtumat, huomautukset ja lähde ja nollaa tiedot uudelleen"
+
+#: CalculateEstimatedDates.py:209
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:209
+msgid ""
+"Are you sure you want to remove previous events, notes, and source and "
+"reselect data?"
+msgstr ""
+"Haluatko varmasti poistaa aiemmat tapahtumat, muistiinpanot ja lähdekoodin "
+"sekä valita uudelleen tietoja?"
+
+#: CalculateEstimatedDates.py:210
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:210
+msgid "Remove and Run Select Again"
+msgstr "Poista ja suorita valinta uudelleen"
+
+#: CalculateEstimatedDates.py:214
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:214
+msgid "Reselect Data"
+msgstr "Valitse tiedot uudelleen"
+
+#: CalculateEstimatedDates.py:215
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:215
+msgid "Are you sure you want to reselect data?"
+msgstr "Haluatko varmasti valita tiedot uudelleen?"
+
+#: CalculateEstimatedDates.py:216
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:216
+msgid "Run Select Again"
+msgstr "Suorita valinta uudelleen"
+
+#: CalculateEstimatedDates.py:236
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:236
+msgid "Evidence"
+msgstr "Todisteet"
+
+#: CalculateEstimatedDates.py:236
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:236
+msgid "Relative"
+msgstr "Sukulaiset"
+
+#: CalculateEstimatedDates.py:237
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:237
+msgid "Processing...\n"
+msgstr "Käsitellään...\n"
+
+#: CalculateEstimatedDates.py:255
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:255
+msgid "Removing old estimations... "
+msgstr "Vanhojen arvioiden poistaminen... "
+
+#: CalculateEstimatedDates.py:256
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:256
+#, python-format
+msgid "Removing '%s'..."
+msgstr "Poistetaan '%s'..."
+
+#: CalculateEstimatedDates.py:319
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:319
+msgid "done!\n"
+msgstr "valmis!\n"
+
+#: CalculateEstimatedDates.py:323
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:323
+msgid ""
+"Selecting... \n"
+"\n"
+msgstr ""
+"Valitaan... \n"
+"\n"
+
+#: CalculateEstimatedDates.py:359
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:359
+msgid "Add birth and death events"
+msgstr "Lisää syntymä- ja kuolintapahtuma"
+
+#: CalculateEstimatedDates.py:361
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:361
+msgid "Add birth event"
+msgstr "Lisää syntymätapahtuma"
+
+#: CalculateEstimatedDates.py:363
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:363
+msgid "Add death event"
+msgstr "Lisää kuolintapahtuma"
+
+#: CalculateEstimatedDates.py:398
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:398
+msgid "No events to be added."
+msgstr "Ei lisättäviä tapahtumia."
+
+#: CalculateEstimatedDates.py:439
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:439
+msgid "Selecting... "
+msgstr "Valitaan... "
+
+#: CalculateEstimatedDates.py:440
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:440
+#, python-format
+msgid "Adding events '%s'..."
+msgstr "Lisätään tapahtuma '%s'..."
+
+#: CalculateEstimatedDates.py:465
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:465
+#, python-format
+msgid "Added birth event based on %(evidence)s, from %(name)s"
+msgstr "Lisätyn syntymätapahtuman peruste on %(evidence)s henkilöltä %(name)s"
+
+#: CalculateEstimatedDates.py:468
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:468
+#, python-format
+msgid "Added birth event based on %s"
+msgstr "Lisätyn syntymätapahtuman peruste on %s"
+
+#: CalculateEstimatedDates.py:470
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:470
+msgid "Estimated birth date"
+msgstr "Arvioitu syntymäaika"
+
+#: CalculateEstimatedDates.py:480
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:480
+#, python-format
+msgid "Added death event based on %(evidence)s, from %(person)s"
+msgstr "Lisätyn kuolintapahtuman peruste on %(evidence)s henkilöltä %(person)s"
+
+#: CalculateEstimatedDates.py:483
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:483
+#, python-format
+msgid "Added death event based on %s"
+msgstr "Lisätyn kuolintapahtuman peruste on %s"
+
+#: CalculateEstimatedDates.py:485
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:485
+msgid "Estimated death date"
+msgstr "Arvioitu kuolinaika"
+
+#: CalculateEstimatedDates.py:495
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:495
+msgid " Done! Committing..."
+msgstr " Tehty! Sitoutuminen ..."
+
+#: CalculateEstimatedDates.py:499
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:499
+#, python-format
+msgid "Added %d events."
+msgstr "Tapahtumia lisätty %d."
+
+#: CalculateEstimatedDates.py:527
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:527
+msgid "Estimated date"
+msgstr "Arvioitu päivä"
+
+#: placecleanup.glade:27 PlaceCleanup/placecleanup.glade:27
+msgid "City, County, State, Country"
+msgstr "Kaupunki, maakunta, osavaltio, valtio"
+
+#: placecleanup.glade:48 PlaceCleanup/placecleanup.glade:52
+msgid "Primary Name"
+msgstr "Ensisijainen nimi"
+
+#: placecleanup.glade:88 PlaceCleanup/placecleanup.glade:89
+msgid "The current Primary name."
+msgstr "Nykyinen ensisijainen nimi."
+
+#: placecleanup.glade:102 PlaceCleanup/placecleanup.glade:102
+msgid "The postal code for the place, if any."
+msgstr "Paikan postinumero, jos sellainen on."
+
+#: placecleanup.glade:115 PlaceCleanup/placecleanup.glade:114
+msgid "What type of place this is. Eg 'Country', 'City', ... ."
+msgstr ""
+"Minkä tyyppinen paikka tämä on. Esimerkiksi \"Valtio\", \"Paikkakunta\", ...."
+
+#: placecleanup.glade:132 placecleanup.glade:150 placecleanup.glade:281
+#: PlaceCleanup/placecleanup.glade:166 PlaceCleanup/placecleanup.glade:180
+#: PlaceCleanup/placecleanup.glade:339 PlaceCleanup/placecleanup.glade:353
+msgid "Orig"
+msgstr "Alkuperäinen"
+
+#: placecleanup.glade:136 PlaceCleanup/placecleanup.glade:133
+msgid "Check this box if you want to keep the original Postal code."
+msgstr "Valitse tämä ruutu, jos haluat säilyttää alkuperäisen postinumeron."
+
+#: placecleanup.glade:154 PlaceCleanup/placecleanup.glade:148
+msgid "Check this box if you want to keep the original Place Type."
+msgstr "Valitse tämä ruutu, jos haluat säilyttää alkuperäisen paikkatyypin."
+
+#: placecleanup.glade:236 PlaceCleanup/placecleanup.glade:280
+msgid "Check this box if you want to keep the original Latitude and Longitude."
+msgstr ""
+"Valitse tämä ruutu, jos haluat säilyttää alkuperäisen leveys- ja "
+"pituusasteen."
+
+#: placecleanup.glade:254 PlaceCleanup/placecleanup.glade:295
+msgid "The Gramps ID.."
+msgstr "Gramps ID.."
+
+#: placecleanup.glade:285 PlaceCleanup/placecleanup.glade:322
+msgid "Check this box if you want to keep the original Gramps ID."
+msgstr "Valitse tämä ruutu, jos haluat säilyttää alkuperäisen Gramps ID."
+
+#: placecleanup.glade:315 PlaceCleanup/placecleanup.glade:391
+msgid ""
+"Alterative Names\n"
+"Select one or more rows and press 'Keep' button to toggle the 'include into "
+"place' status ."
+msgstr ""
+"Vaihtoehtoiset nimet\n"
+"Valitse yksi tai useampi rivi ja paina 'Pidä' painiketta, jos haluat vaihtaa "
+"\"sisällytä paikka\" tilaan."
+
+#: placecleanup.glade:330 PlaceCleanup/placecleanup.glade:406
+msgid "Inc"
+msgstr "Valittu"
+
+#: placecleanup.glade:370 PlaceCleanup/placecleanup.glade:446
+msgid "Lang"
+msgstr "Kieli"
+
+#: placecleanup.glade:444 PlaceCleanup/placecleanup.glade:520
+msgid ""
+"Select one or more rows and use this button to keep the alternative names."
+msgstr ""
+"Valitse yksi tai useampi rivi ja käytä tätä painiketta pitämään "
+"vaihtoehtoiset nimet."
+
+#: placecleanup.glade:460 PlaceCleanup/placecleanup.glade:536
+msgid "Select one row and use this button to make the row the primary name."
+msgstr ""
+"Valitse yksi rivi ja käytä tätä painiketta, jos haluat rivin ensisijaiseksi "
+"nimeksi."
+
+#: placecleanup.glade:472 PlaceCleanup/placecleanup.glade:548
+msgid "Discard"
+msgstr "Hylkää"
+
+#: placecleanup.glade:476 PlaceCleanup/placecleanup.glade:552
+msgid ""
+"Select one or more rows and use this button to discard the alternative names."
+msgstr ""
+"Valitse yksi tai useampi rivi ja käytä tätä painiketta hylkäämään "
+"vaihtoehtoiset nimet."
+
+#: placecleanup.glade:504 PlaceCleanup/placecleanup.glade:580
+msgid "Cancel the operation, no changes are made to your Place."
+msgstr "Peruuta toiminta, paikkaa ei tehdä."
+
+#: placecleanup.glade:520 PlaceCleanup/placecleanup.glade:595
+msgid "Store the values in your Place."
+msgstr "Tallenna arvot paikkaasi."
+
+#: placecleanup.glade:605 PlaceCleanup/placecleanup.glade:677
+msgid "Keep Web Links"
+msgstr "Pidä nettilinkit"
+
+#: placecleanup.glade:609 PlaceCleanup/placecleanup.glade:681
+msgid "Puts web links (typically wikipedia) into your place."
+msgstr "Lisää nettilinkit (tyypillisesti Wikipedia) paikkaasi."
+
+#: placecleanup.glade:622 PlaceCleanup/placecleanup.glade:693
+msgid "Add citation and source to Place"
+msgstr "Lisää paikkaan lainaus ja lähde"
+
+#: placecleanup.glade:626 PlaceCleanup/placecleanup.glade:697
+msgid "This Adds a Citation to your place, citing GeoNames."
+msgstr "Tämä lisää viitetiedot GeoNames paikkaasi."
+
+#: placecleanup.glade:641 PlaceCleanup/placecleanup.glade:711
+msgid "GeoNames User ID"
+msgstr "GeoNames käyttäjätunus"
+
+#: placecleanup.glade:653 PlaceCleanup/placecleanup.glade:723
+msgid "Enter you Geonames user ID here."
+msgstr "Anna tässä Geonames käyttäjätunnus."
+
+#: placecleanup.glade:665 PlaceCleanup/placecleanup.glade:735
+msgid "Alternative Names Languages to keep"
+msgstr "Vaihtoehtoiset maatunnukset, joita käytetään"
+
+#: placecleanup.glade:677 PlaceCleanup/placecleanup.glade:747
+msgid ""
+"Enter the two or three letter codes for the languages you wish to keep, "
+"seperated by spaces.\n"
+"For example \"en fr ru\".\n"
+"These languages will initially be checked off on the Names result display.\n"
+"If you often see an un-checked name in a specific language you want, add the "
+"language code here."
+msgstr ""
+"Anna kahden tai kolmen kirjaimen koodit kielille, jotka haluat säilyttää, "
+"erota välilyönnillä.\n"
+"Esimerkiksi \"en fi sv ru\".\n"
+"Nämä kielet tarkistetaan ensin nimien tulosnäytössä.\n"
+"Jos näet usein haluamasi kielen, joka ei ole tarkistettu, lisää kielikoodi "
+"tähän."
+
+#: placecleanup.glade:693 PlaceCleanup/placecleanup.glade:763
+msgid "Currently Enclosed Places"
+msgstr "Nykyiset ympärillä olevat paikat"
+
+#: placecleanup.glade:705 PlaceCleanup/placecleanup.glade:775
+msgid ""
+"When cleaning a place that is already enclosed, this affects what is done.\n"
+"If '<b>Keep current Enclosure</b>' is selected, no changes to the enclosing "
+"place is made.\n"
+"If '<b>Replace with GeoNames Enclosure</b>' is selected, the enclosed place "
+"is changed to the next level GeoNames place.  This may result in some unused "
+"places remaining in your database."
+msgstr ""
+"Kun puhdistat jo ympärillä olevan paikan, se vaikuttaa siihen, mitä "
+"tehdään.\n"
+"Jos '<b>Pidä nykyiset paikat ympärillä</b>' on valittu, ei muutoksia "
+"ympäröiviin paikkoihin.\n"
+"Jos '<b>Vaihda GeoNames paikat ympärille</b>' on valittu, ympäröivät paikat "
+"seuraavalla tasolla muuttuvat GeoNames paikoiksi.  Tämä voi johtaa siihen, "
+"että osa tietokantasi paikoista jää käyttämättä."
+
+#: placecleanup.glade:710 PlaceCleanup/placecleanup.glade:780
+msgid "Keep current Enclosure"
+msgstr "Pidä nykyiset paikat ympärillä"
+
+#: placecleanup.glade:726 PlaceCleanup/placecleanup.glade:795
+msgid "Replace with GeoNames Enclosure"
+msgstr "Vaihda GeoNames paikat ympärille"
+
+#: placecleanup.glade:782 PlaceCleanup/placecleanup.glade:851
+msgid ""
+"Current Place title.\n"
+"You can edit this to help find other places, particularly to reduce the "
+"number of results."
+msgstr ""
+"Paikan nykyinen nimike.\n"
+"Voit muokata tätä, jotta voit löytää muita paikkoja, erityisesti tulosten "
+"määrän vähentämiseksi."
+
+#: placecleanup.glade:827 placecleanup.py:267 PlaceCleanup/placecleanup.py:267
+#: PlaceCleanup/placecleanup.glade:895
+msgid "Find"
+msgstr "Etsi"
+
+#: placecleanup.glade:831 PlaceCleanup/placecleanup.glade:899
+msgid "Search your local places and GeoNames for a match."
+msgstr "Etsi paikallisten paikkojen ja GeoNames osumia."
+
+#: placecleanup.glade:847 PlaceCleanup/placecleanup.glade:915
+msgid ""
+"Continue to merge (for local places), or to complete a place (for GeoNames)."
+msgstr ""
+"Jatka yhdistämistä (paikallisiin paikkoihin) tai täydennä (GeoNames) paikka."
+
+#: placecleanup.glade:864 PlaceCleanup/placecleanup.glade:932
+msgid ""
+"Split up Title, Edit manually, and enclose with next level of hierarchy.  "
+"For use when the initial component of the Title is too detailed to be found "
+"in the gazetteer."
+msgstr ""
+"Katkaise nimike, muokkaa se manuaalisesti hierarkian seuraavalle tasolle. "
+"Käytetään, kun nimikkeen alkuosa on liian yksityiskohtainen, löytyäkseen "
+"hakemistosta."
+
+#: placecleanup.glade:890 PlaceCleanup/placecleanup.glade:958
+msgid "Next Place"
+msgstr "Seuraava paikka"
+
+#: placecleanup.glade:894 PlaceCleanup/placecleanup.glade:962
+msgid "Find an incomplete place."
+msgstr "Etsi epätäydellinen paikka."
+
+#: placecleanup.glade:917 PlaceCleanup/placecleanup.glade:985
+msgid "Set preferences"
+msgstr "Määritä asetukset"
+
+#: placecleanup.glade:940 PlaceCleanup/placecleanup.glade:1008
+msgid "Select one of these places to continue the cleanup process."
+msgstr "Jatka puhdistusprosessia valitsemalla yksi näistä paikoista."
+
+#: placecleanup.glade:967 PlaceCleanup/placecleanup.glade:1035
+msgid "Search result places"
+msgstr "Paikkojen hakutulos"
+
+#: placecleanup.glade:1020 placecleanup.py:266 PlaceCleanup/placecleanup.py:266
+#: PlaceCleanup/placecleanup.glade:1088
+msgid ""
+"No\n"
+"Matches"
+msgstr ""
+"Ei\n"
+"osumia"
+
+#: placecleanup.glade:1034 PlaceCleanup/placecleanup.glade:1102
+msgid ""
+"Checking the 'Populated' checkbox causes the GeoNames search to include "
+"'Populted places', places where people live and work."
+msgstr ""
+"Valintaruudun \"Asutut\" valinta lisää GeoNames hakuun \"asutut paikat\", "
+"paikat joissa ihmiset elävät ja toimivat."
+
+#: placecleanup.glade:1053 PlaceCleanup/placecleanup.glade:1119
+msgid "Populated"
+msgstr "Asutut"
+
+#: placecleanup.glade:1065 PlaceCleanup/placecleanup.glade:1131
+msgid ""
+"Checking the 'Admin' checkbox cause the GeoNames search to include "
+"adminstrative subdivisions in the search (countries, states, counties etc.)."
+msgstr ""
+"Valintaruudun \"Hallinnolliset\" valinta lisää GeoNames hakuun "
+"hallinnolliset osa-alueet, kuten (maat, valtiot, maakunnat jne.)."
+
+#: placecleanup.glade:1084 PlaceCleanup/placecleanup.glade:1148
+msgid ""
+"Checking the 'Spot' checkbox cause the GeoNames search to include a wide "
+"variety of other places in the search (churches, burial grounds, buildings "
+"etc.)."
+msgstr ""
+"Valintaruudun \"Muu kohde\" valinta lisää GeoNames hakun monenlaisia muita "
+"paikkoja, kuten (kirkot, hautausmaat, rakennukset jne.)."
+
+#: placecleanup.glade:1101 PlaceCleanup/placecleanup.glade:1163
+msgid "Admin"
+msgstr "Hallinnolliset"
+
+#: placecleanup.glade:1112 PlaceCleanup/placecleanup.glade:1174
+msgid "Spot"
+msgstr "Muu kohde"
+
+#: placecleanup.gpr.py:28 placecleanup.gpr.py:44
+#: PlaceCleanup/placecleanup.gpr.py:28 PlaceCleanup/placecleanup.gpr.py:46
+msgid "Place Cleanup"
+msgstr "Paikan puhdistus"
+
+#: placecleanup.gpr.py:29 PlaceCleanup/placecleanup.gpr.py:30
+msgid ""
+"Place Cleanup Gramplet assists in merging places, as well as completing "
+"places from the GeoNames web database"
+msgstr ""
+"Paikan puhdistus Gramplet auttaa yhdistämään paikkoja ja täyttämään "
+"paikkatietoja GeoNames tietokannasta"
+
+#: placecleanup.py:293 PlaceCleanup/placecleanup.py:293
+#, python-format
+msgid ""
+"%s\n"
+"Local\n"
+"Matches"
+msgstr ""
+"%s\n"
+"paikallista\n"
+"osumaa"
+
+#: placecleanup.py:295 PlaceCleanup/placecleanup.py:295
+msgid "Find GeoNames"
+msgstr "GeoNames etsintä"
+
+#: placecleanup.py:303 PlaceCleanup/placecleanup.py:303
+msgid "Need to set GeoNames ID"
+msgstr "Tarvitset GeoNames käyttäjätunnuksen"
+
+#: placecleanup.py:304 PlaceCleanup/placecleanup.py:304
+msgid "Use the Help button for more information"
+msgstr "Käytä ohjepainiketta saadaksesi lisätietoja"
+
+#: placecleanup.py:337 PlaceCleanup/placecleanup.py:337
+msgid ""
+"Try changing the Title, or use the \"Edit\" button to finish this level of "
+"the place manually."
+msgstr ""
+"Yritä muuttaa nimikettä tai käytä \"Muokkaa\" painiketta, jos haluat "
+"viimeistellä tämän paikan manuaalisesti."
+
+#: placecleanup.py:347 PlaceCleanup/placecleanup.py:347
+#, python-format
+msgid ""
+"%s\n"
+"GeoNames\n"
+"Matches"
+msgstr ""
+"%s\n"
+"GeoNames\n"
+"osumaa"
+
+#: placecleanup.py:353 PlaceCleanup/placecleanup.py:353
+#, python-format
+msgid "%s matches were found"
+msgstr "%s osumaa löytynyt"
+
+#: placecleanup.py:354 PlaceCleanup/placecleanup.py:354
+msgid ""
+"Only 10 matches are shown.\n"
+"To see additional results, press the search button again.\n"
+"Or try changing the Title with more detail, such as a country."
+msgstr ""
+"Näytetään vain 10 osumaa.\n"
+"Jos haluat nähdä lisää tuloksia, paina \"etsi\" painiketta uudelleen.\n"
+"Tai yritä muuttaa nimikettä tarkemmaksi, esimerkiksi valtio."
+
+#: placecleanup.py:418 placecleanup.py:423 PlaceCleanup/placecleanup.py:421
+#: PlaceCleanup/placecleanup.py:426
+msgid "Problem getting data from web"
+msgstr "Ongelmia tietojen saannissa netistä"
+
+#: placecleanup.py:424 PlaceCleanup/placecleanup.py:427
+msgid "Web request Timeout, you can try again..."
+msgstr "Nettikysely aikakatkaistu, voit yrittää uudelleen ..."
+
+#: placecleanup.py:432 PlaceCleanup/placecleanup.py:435
+msgid "Problem getting data from GeoNames"
+msgstr "GeoNames tietojen saannissa ongelmia"
+
+#: placecleanup.py:478 PlaceCleanup/placecleanup.py:481
+msgid ""
+"One of the places you are merging encloses the other!\n"
+"Please choose another place."
+msgstr ""
+"Yksi paikoista, joita yhdistät, ympäröi muut!\n"
+"Valitse toinen paikka."
+
+#: placecleanup.py:749 PlaceCleanup/placecleanup.py:759
+msgid ""
+"The place you chose is enclosed in the place you are workin on!\n"
+"Please cancel and choose another place."
+msgstr ""
+"Paikka, jonka valitsit ympäröi työstämääsi paikkaa!\n"
+"Peruuta ja valitse toinen paikka."
+
+#: placecleanup.py:933 PlaceCleanup/placecleanup.py:945
+msgid "GeoNames web site"
+msgstr "GeoNames nettisivu"
+
+#: placecleanup.py:938 PlaceCleanup/placecleanup.py:950
+msgid "GeoNames author"
+msgstr "GeoNames tekijä"
+
+#: placecleanup.py:943 PlaceCleanup/placecleanup.py:955
+msgid "GeoNames was founded by Marc Wick. You can reach him at "
+msgstr "GeoNames on perustanut Marc Wick. Voit tavoittaa hänet osoitteesta "
+
+#: placecleanup.py:946 PlaceCleanup/placecleanup.py:958
+msgid ""
+"GeoNames is a project of Unxos GmbH, Weingartenstrasse 8, 8708 Männedorf, "
+"Switzerland.\n"
+"This work is licensed under a "
+msgstr ""
+"GeoNames projektin osoite on Unxos GmbH, Weingartenstrasse 8, 8708 "
+"Männedorf, Sveitsi.\n"
+"Tämän teoksen lisenssi on "
+
+#: placecleanup.py:949 PlaceCleanup/placecleanup.py:961
+msgid "Creative Commons Attribution 3.0 License"
+msgstr "Creative Commons Attribution 3.0 License"
+
+#: placecleanup.py:961 PlaceCleanup/placecleanup.py:973
+#, python-format
+msgid "Add Souce/Repo/Note (%s)"
+msgstr "Lisää lähde/selvitys/muistio  (%s)"
+
+#: placecleanup.py:1062 PlaceCleanup/placecleanup.py:1074
+msgid "This Place is not used!"
+msgstr "Paikka ei ole käytössä!"
+
+#: placecleanup.py:1063 PlaceCleanup/placecleanup.py:1075
+msgid ""
+"You should delete it, or, if it contains useful notes or other data, use the "
+"Find to merge it into a valid place."
+msgstr ""
+"Sinun pitäisi poistaa se tai, jos se sisältää hyödyllisiä muistiinpanoja tai "
+"muita tietoja, käytä Etsi-painiketta yhdistääksesi sen voimassa olevaan "
+"paikkaan."
+
+#: FilterRules/hasrolerule.gpr.py:26 FilterRules/hasrolerule.gpr.py:27
+msgid "People with events with a selected role"
+msgstr "Henkilöt, joiden tapahtumissa on valittu rooli"
+
+#: FilterRules/hasrolerule.gpr.py:27 FilterRules/hasrolerule.py:65
+#: FilterRules/hasrolerule.gpr.py:28 FilterRules/hasrolerule.py:69
+msgid "Matches people with an event with a selected role"
+msgstr "Poimii henkilöt, joiden tapahtumissa on valittu rooli"
+
+#: FilterRules/hasrolerule.gpr.py:40 FilterRules/hasrolerule.gpr.py:43
+msgid "Families with events with a selected role"
+msgstr "Perheet, joiden tapahtumissa on valittu rooli"
+
+#: FilterRules/hasrolerule.gpr.py:41 FilterRules/hasrolerule.py:89
+#: FilterRules/hasrolerule.gpr.py:44 FilterRules/hasrolerule.py:93
+msgid "Matches families with an event with a selected role"
+msgstr "Poimii perheet, joiden tapahtumissa on valittu rooli"
+
+#: FilterRules/hasrolerule.py:51 FilterRules/hasrolerule.py:55
+msgid "Does NOT match with selected Role"
+msgstr "EI vastaa valittua roolia"
+
+#: FilterRules/hasrolerule.py:52 FilterRules/hasrolerule.py:56
+msgid "Finds the items that don't have event Roles of the selected type."
+msgstr "Poimii tapahtumat, joilla ei ole valittua roolia."
+
+#: FilterRules/hasrolerule.py:63 FilterRules/hasrolerule.py:87
+#: FilterRules/hasrolerule.py:67 FilterRules/hasrolerule.py:91
+msgid "Inverse"
+msgstr "Käänteinen"
+
+#: FilterRules/hasrolerule.py:64 FilterRules/hasrolerule.py:68
+msgid "People with events with the <role>"
+msgstr "Henkilöt, joiden tapahtumissa on <rooli>"
+
+#: FilterRules/hasrolerule.py:88 FilterRules/hasrolerule.py:92
+msgid "Families with events with the <role>"
+msgstr "Perheet, joiden tapahtumissa on <rooli>"
+
+#: FilterRules/hassourcefilter.gpr.py:27 FilterRules/hassourcefilter.gpr.py:28
+msgid "Source matching parameters"
+msgstr "Lähteet valitulla arvolla"
+
+#: FilterRules/hassourcefilter.gpr.py:28 FilterRules/hassourcefilter.gpr.py:29
+msgid "Matches Sources with values containing the chosen parameters"
+msgstr "Poimii lähteet, jotka sisältävät valitun arvon"
+
+#: FilterRules/hassourcefilter.py:54 FilterRules/hassourcefilter.py:58
+msgid "Matches sources with a particular value"
+msgstr "Poimii lähteet, jotka sisältävät valitun arvon"
+
+#: FilterRules/isrelatedwithfiltermatch.gpr.py:26
+#: FilterRules/isrelatedwithfiltermatch.py:49
+#: FilterRules/isrelatedwithfiltermatch.gpr.py:27
+#: FilterRules/isrelatedwithfiltermatch.py:53
+msgid "People related to <filter>"
+msgstr "Henkilöt, jotka liittyvät <suotimeen>"
+
+#: FilterRules/isrelatedwithfiltermatch.gpr.py:27
+#: FilterRules/isrelatedwithfiltermatch.py:51
+#: FilterRules/isrelatedwithfiltermatch.gpr.py:29
+#: FilterRules/isrelatedwithfiltermatch.py:55
+msgid "Matches people who are related to anybody matched by a person filter"
+msgstr ""
+"Poimii henkilöt, jotka ovat liitetty johonkin henkilösuotimen poimimista "
+"henkilöistä"
+
+#: PluginManager.gpr.py:29 PluginManager/PluginManager.gpr.py:30
+msgid "Plugin Manager Enhanced"
+msgstr "Laajennusten parannettu hallinta"
+
+#: PluginManager.gpr.py:30 PluginManager/PluginManager.gpr.py:31
+msgid "An Addon/Plugin Manager with several additional capabilities"
+msgstr "Lisäosien/Laajennusten hallinta, jolla on useita lisäominaisuuksia"
+
+#: PluginManager.py:90 PluginManager/PluginManager.py:84
+msgid "Plugin Manager - Enhanced"
+msgstr "Laajennusten hallinta - parannettu"
+
+#: PluginManager.py:150 ../gramps/gui/plug/_windows.py:816
+msgid "Check for updated addons now"
+msgstr "Tarkista päivitetyt laajennukset nyt"
+
+#: PluginManager.py:184 PluginManager/PluginManager.py:216
+msgid "Restart..."
+msgstr "Käynnistää uudelleen..."
+
+#: PluginManager.py:185 PluginManager/PluginManager.py:217
+msgid ""
+"Please Restart Gramps so that your addon changes can be safely completed."
+msgstr ""
+"Käynnistä Gramps uudelleen, jotta laajennusten muutokset voidaan "
+"turvallisesti suorittaa."
+
+#: PluginManager.py:305 PluginManager.py:458 PluginManager.py:534
+#: PluginManager/PluginManager.py:410 PluginManager/PluginManager.py:530
+msgid "Hide"
+msgstr "Piilota"
+
+#: PluginManager.py:315 PluginManager.py:532 PluginManager/PluginManager.py:528
+msgid "Unhide"
+msgstr "Näytä"
+
+#: PluginManager.py:391 PluginManager/PluginManager.py:336
+#, python-format
+msgid "Error removing the '%s' directory, The uninstall may have failed"
+msgstr ""
+"Virhe poistettaessa '% s' -hakemistoa, asennuksen poisto voi olla "
+"epäonnistunut"
+
+#: PluginManager.py:425 PluginManager/PluginManager.py:376
+msgid ""
+"'*' items are supplied by 3rd party authors,\n"
+"<s>strikeout</s> items are hidden"
+msgstr ""
+"'*' kohteita toimittavat 3. osapuolen kirjoittajat,\n"
+"<s>yliviivatut</s> kohteet on piilotettu"
+
+#: PluginManager.py:455 ../gramps/gui/plug/_windows.py:1079
+#: ../gramps/gui/plug/_windows.py:1137
+msgid "Info"
+msgstr "Tiedot"
+
+#: PluginManager.py:477 PluginManager/PluginManager.py:430
+msgid "Show hidden items"
+msgstr "Näytä piilotetut kohteet"
+
+#: PluginManager.py:485 PluginManager/PluginManager.py:438
+msgid "Show Built-in items"
+msgstr "Näytä sisäänrakennetut kohteet"
+
+#: PluginManager.py:492 PluginManager/PluginManager.py:445
+msgid "* indicates 3rd party addon"
+msgstr "* ilmaisee 3. osapuolen laajennukset"
+
+#: PluginManager.py:497 PluginManager/PluginManager.py:450
+msgid "Plugins"
+msgstr "Laajennukset"
+
+#: PluginManager.py:551 PluginManager/PluginManager.py:547
+msgid "Uninstall"
+msgstr "Poista asennus"
+
+#: PluginManager.py:561 ../gramps/gui/plug/_windows.py:962
+msgid "Checking Addons Failed"
+msgstr "Laajennusten tarkistus epäonnistui"
+
+#: PluginManager.py:562 ../gramps/gui/plug/_windows.py:964
+msgid "The addon repository appears to be unavailable. Please try again later."
+msgstr "Laajennushakemisto ei ole käytettävissä. Yritä uudelleen myöhemmin."
+
+#: PluginManager.py:622 PluginManager/PluginManager.py:721
+msgid "*Available"
+msgstr "*Saatavissa"
+
+#: PluginManager.py:636 PluginManager/PluginManager.py:737
+msgid "Built-in"
+msgstr "Sisäänrakennettu"
+
+#: PluginManager.py:641 PluginManager/PluginManager.py:742
+msgid "*Installed"
+msgstr "*Asennettu"
+
+#: PluginManager.py:650 PluginManager/PluginManager.py:751
+msgid "Update Available"
+msgstr "Päivitys saatavilla"
+
+#: PluginManager.py:677 ../gramps/gui/plug/_windows.py:1648
+msgid "Detailed Info"
+msgstr "Lisätietoja"
+
+#: DynamicWeb//dynamicweb.gpr.py:15 DynamicWeb/dynamicweb.gpr.py:16
+msgid "Dynamic Web Report"
+msgstr "Dynaaminen-nettisivusto"
+
+#: DynamicWeb//dynamicweb.gpr.py:16 DynamicWeb/dynamicweb.gpr.py:17
+msgid "Produces dynamic web pages for the database"
+msgstr "Tuottaa dynaamiset verkkosivut tietokannasta"
+
+#: DynamicWeb//dynamicweb.py:284 DynamicWeb/dynamicweb.py:334
+msgid "SVG graphical tree"
+msgstr "SVG graafinen sukupuu"
+
+#: DynamicWeb//dynamicweb.py:287 DynamicWeb/dynamicweb.py:337
+msgid "Indexes pages"
+msgstr "Hakemistosivut"
+
+#: DynamicWeb//dynamicweb.py:291 DynamicWeb//dynamicweb.py:4252
+#: DynamicWeb/dynamicweb.py:341 DynamicWeb/dynamicweb.py:5214
+#, python-format
+msgid "Custom page %(index)i"
+msgstr "Mukautettu sivu %(index)i"
+
+#: DynamicWeb//dynamicweb.py:309 DynamicWeb/dynamicweb.py:358
+msgid "Ascending tree"
+msgstr "Esivanhempien sukupuu"
+
+#: DynamicWeb//dynamicweb.py:310 DynamicWeb/dynamicweb.py:359
+msgid "Descending tree"
+msgstr "Jälkeläisten sukupuu"
+
+#: DynamicWeb//dynamicweb.py:311 DynamicWeb/dynamicweb.py:360
+msgid "Descending tree with spouses"
+msgstr "Jälkeläisten sukupuu puolisot mukana"
+
+#: DynamicWeb//dynamicweb.py:312 DynamicWeb/dynamicweb.py:361
+msgid "Ascending and descending tree"
+msgstr "Jälkeläisten ja esivanhempien sukupuu"
+
+#: DynamicWeb//dynamicweb.py:313 DynamicWeb/dynamicweb.py:362
+msgid "Ascending and descending tree with spouses"
+msgstr "Jälkeläisten ja esivanhempien sukupuu puolisoiden kanssa"
+
+#: DynamicWeb//dynamicweb.py:343 DynamicWeb/dynamicweb.py:394
+msgid "Size proportional to number of ancestors"
+msgstr "Koko suhteessa esivanhempien määrään"
+
+#: DynamicWeb//dynamicweb.py:344 DynamicWeb/dynamicweb.py:395
+msgid "Homogeneous parents distribution"
+msgstr "Tasainen vanhempien jakautuma"
+
+#: DynamicWeb//dynamicweb.py:357 DynamicWeb/dynamicweb.py:409
+msgid "Age based gradient"
+msgstr "Ikäperusteinen liukuväri (0-100)"
+
+#: DynamicWeb//dynamicweb.py:379 DynamicWeb/dynamicweb.py:431
+msgid "Gradient"
+msgstr "Liukuväri"
+
+#: DynamicWeb//dynamicweb.py:715 DynamicWeb//dynamicweb.py:720
+#: DynamicWeb/dynamicweb.py:780 DynamicWeb/dynamicweb.py:786
+#, python-format
+msgid "Could not create the directory: %(path)s"
+msgstr "Ei voitu luoda hakemistoa: %(path)s"
+
+#: DynamicWeb//dynamicweb.py:746 DynamicWeb//dynamicweb.py:3385
+#: DynamicWeb/dynamicweb.py:816 DynamicWeb/dynamicweb.py:4102
+msgid "Dynamic Web Site Report"
+msgstr "Dynaaminen nettiraportti"
+
+#: DynamicWeb//dynamicweb.py:746 DynamicWeb/dynamicweb.py:816
+msgid "Exporting family tree data ..."
+msgstr "Viedään sukupuun tietoja ..."
+
+#: DynamicWeb//dynamicweb.py:1630 DynamicWeb/dynamicweb.py:1737
+#, python-format
+msgid "%(type)s: %(value)s"
+msgstr "%(type)s: %(value)s"
+
+#: DynamicWeb//dynamicweb.py:1877 DynamicWeb/dynamicweb.py:2011
+#, python-format
+msgid "Impossible to convert \"%(path)s\" to a relative path."
+msgstr "Polkua \"%(path)s\" ei ole mahdollista muuntaa suhteelliseksi."
+
+#: DynamicWeb//dynamicweb.py:2183 DynamicWeb/dynamicweb.py:2353
+msgid ""
+"The pages configuration is not valid: several pages have the same content"
+msgstr "Sivujen kokoonpano ei ole voimassa: useilla sivuilla on sama sisältö"
+
+#: DynamicWeb//dynamicweb.py:2194 DynamicWeb/dynamicweb.py:2368
+msgid "DynWeb|Home"
+msgstr "Kotisivu"
+
+#: DynamicWeb//dynamicweb.py:2195 DynamicWeb//dynamicweb.py:2208
+#: DynamicWeb//dynamicweb.py:2209 DynamicWeb//dynamicweb.py:2210
+#: DynamicWeb/dynamicweb.py:2375 DynamicWeb/dynamicweb.py:2442
+#: DynamicWeb/dynamicweb.py:2449 DynamicWeb/dynamicweb.py:2456
+msgid "Tree"
+msgstr "Sukupuu"
+
+#: DynamicWeb//dynamicweb.py:2207 DynamicWeb/dynamicweb.py:2435
+msgid "Search results"
+msgstr "Hakutulokset"
+
+#: DynamicWeb//dynamicweb.py:2277 DynamicWeb//dynamicweb.py:2507
+#: DynamicWeb//dynamicweb.py:4126 DynamicWeb/dynamicweb.py:2595
+#: DynamicWeb/dynamicweb.py:3014 DynamicWeb/dynamicweb.py:4997
+msgid "Indexes"
+msgstr "Hakemistot"
+
+#: DynamicWeb//dynamicweb.py:2444 DynamicWeb/dynamicweb.py:2918
+msgid "(filtered from _MAX_ total entries)"
+msgstr "(suodatettu _MAX_ kokonaismäärästä)"
+
+#: DynamicWeb//dynamicweb.py:2445 DynamicWeb/dynamicweb.py:2920
+#, python-format
+msgid "(m. %s)"
+msgstr "(∞ %s)"
+
+#: DynamicWeb//dynamicweb.py:2446 DynamicWeb/dynamicweb.py:2921
+msgid "(sort by name)"
+msgstr "(lajittele nimen mukaan)"
+
+#: DynamicWeb//dynamicweb.py:2447 DynamicWeb/dynamicweb.py:2922
+msgid "(sort by quantity)"
+msgstr "(lajittele määrän mukaan)"
+
+#: DynamicWeb//dynamicweb.py:2448 DynamicWeb/dynamicweb.py:2925
+msgid ": activate to sort column ascending"
+msgstr ": aktivoi lajittelu sarake nousevaksi"
+
+#: DynamicWeb//dynamicweb.py:2449 DynamicWeb/dynamicweb.py:2929
+msgid ": activate to sort column descending"
+msgstr ": aktivoi lajittelu sarake laskevaksi"
+
+#: DynamicWeb//dynamicweb.py:2450 DynamicWeb/dynamicweb.py:2934
+msgid ""
+"<p>This page provides the SVG raw code.<br>Copy the contents into a text "
+"editor and save as an SVG file.<br>Make sure that the text editor encoding "
+"is UTF-8.</p>"
+msgstr ""
+"<p>Tämä sivu tarjoaa SVG-raakakoodin.<br>Kopioi sisältö tekstieditoriin ja "
+"tallenna se SVG-tiedostoksi.<br>Varmista, että tekstieditorin koodaus on "
+"UTF-8.</p>"
+
+#: DynamicWeb//dynamicweb.py:2456 DynamicWeb/dynamicweb.py:2942
+msgid "Alternate Name"
+msgstr "Vaihtoehtoinen nimi"
+
+#: DynamicWeb//dynamicweb.py:2473 DynamicWeb/dynamicweb.py:2961
+msgid "Click on the map to show it full-screen"
+msgstr "Napsauta karttaa näyttääksesi sen koko näytöllä"
+
+#: DynamicWeb//dynamicweb.py:2476 DynamicWeb/dynamicweb.py:2965
+msgid "Configure"
+msgstr "Asetukset"
+
+#: DynamicWeb//dynamicweb.py:2483 DynamicWeb/dynamicweb.py:2972
+msgid "DynamicWeb_report#Help"
+msgstr "Dynaaminen_nettiraportti#Ohje"
+
+#: DynamicWeb//dynamicweb.py:2488 DynamicWeb/dynamicweb.py:2977
+msgid "Examples"
+msgstr "Esimerkkejä"
+
+#: DynamicWeb//dynamicweb.py:2489 DynamicWeb/dynamicweb.py:2978
+msgid "F"
+msgstr "F"
+
+#: DynamicWeb//dynamicweb.py:2490 DynamicWeb/dynamicweb.py:2979
+msgid "Families Index"
+msgstr "Perhehakemisto"
+
+#: DynamicWeb//dynamicweb.py:2492 DynamicWeb/dynamicweb.py:2981
+msgid "Family Nick Name"
+msgstr "Perheen lempinimi"
+
+#: DynamicWeb//dynamicweb.py:2495 DynamicWeb/dynamicweb.py:2984
+msgid "File ready"
+msgstr "Tiedosto valmis"
+
+#: DynamicWeb//dynamicweb.py:2500 DynamicWeb//dynamicweb.py:4146
+#: DynamicWeb/dynamicweb.py:2991 DynamicWeb/dynamicweb.py:5042
+msgid "Include dates columns on the index pages"
+msgstr "Lisää päivämääräsarakkeet hakemistosivulle"
+
+#: DynamicWeb//dynamicweb.py:2502 DynamicWeb//dynamicweb.py:4162
+#: DynamicWeb/dynamicweb.py:2999 DynamicWeb/dynamicweb.py:5071
+msgid "Include a column for media path on the index pages"
+msgstr "Lisää hakemistosivuille mediapolun sarake"
+
+#: DynamicWeb//dynamicweb.py:2504 DynamicWeb//dynamicweb.py:4049
+#: DynamicWeb/dynamicweb.py:3007 DynamicWeb/dynamicweb.py:4903
+msgid "Include a map in the individuals and family pages"
+msgstr "Lisää kartta henkilö- ja perhesivuihin"
+
+#: DynamicWeb//dynamicweb.py:2505 DynamicWeb//dynamicweb.py:4096
+#: DynamicWeb/dynamicweb.py:3011 DynamicWeb/dynamicweb.py:4955
+msgid "Include half and/ or step-siblings on the individual pages"
+msgstr "Lisää henkilösivuille sarake sisarpuolille"
+
+#: DynamicWeb//dynamicweb.py:2506 DynamicWeb//dynamicweb.py:4166
+#: DynamicWeb/dynamicweb.py:3013 DynamicWeb/dynamicweb.py:5076
+msgid "Include references in indexes"
+msgstr "Lisää lähdeviitteet hakemistoihin"
+
+#: DynamicWeb//dynamicweb.py:2509 DynamicWeb//dynamicweb.py:4116
+#: DynamicWeb/dynamicweb.py:3018 DynamicWeb/dynamicweb.py:4985
+msgid "Insert sources author in the sources title"
+msgstr "Lisää lähdeaineiston tekijä lähteen otsikkoon"
+
+#: DynamicWeb//dynamicweb.py:2516 DynamicWeb/dynamicweb.py:3026
+msgid "M"
+msgstr "M"
+
+#: DynamicWeb//dynamicweb.py:2520 DynamicWeb/dynamicweb.py:3030
+msgid "Maximize"
+msgstr "Maksimoi"
+
+#: DynamicWeb//dynamicweb.py:2521 DynamicWeb/dynamicweb.py:3031
+msgid "Media Index"
+msgstr "Mediahakemisto"
+
+#: DynamicWeb//dynamicweb.py:2522 DynamicWeb/dynamicweb.py:3032
+msgid "Media Type"
+msgstr "Mediatyyppi"
+
+#: DynamicWeb//dynamicweb.py:2527 DynamicWeb/dynamicweb.py:3037
+msgid "No data available in table"
+msgstr "Taulukon tietoja ei ole saatavilla"
+
+#: DynamicWeb//dynamicweb.py:2529 DynamicWeb/dynamicweb.py:3039
+msgid "No matching records found"
+msgstr "Vastaavia merkintöjä ei löydy"
+
+#: DynamicWeb//dynamicweb.py:2530 DynamicWeb/dynamicweb.py:3040
+msgid "No matching surname."
+msgstr "Vastaavia sukunimiä ei löydy"
+
+#: DynamicWeb//dynamicweb.py:2535 DynamicWeb/dynamicweb.py:3045
+msgid "Other participants"
+msgstr "Muut osallistujat"
+
+#: DynamicWeb//dynamicweb.py:2538 DynamicWeb/dynamicweb.py:3048
+msgid "Person page"
+msgstr "Henkilösivu"
+
+#: DynamicWeb//dynamicweb.py:2539 DynamicWeb/dynamicweb.py:3049
+msgid "Person to search for"
+msgstr "Henkilöhaku"
+
+#: DynamicWeb//dynamicweb.py:2541 DynamicWeb/dynamicweb.py:3051
+msgid "Persons Index"
+msgstr "Henkilöhakemisto"
+
+#: DynamicWeb//dynamicweb.py:2542 DynamicWeb/dynamicweb.py:3052
+msgid "Persons"
+msgstr "Henkilöt"
+
+#: DynamicWeb//dynamicweb.py:2544 DynamicWeb/dynamicweb.py:3054
+msgid "Places Index"
+msgstr "Paikkahakemisto"
+
+#: DynamicWeb//dynamicweb.py:2546 DynamicWeb/dynamicweb.py:3056
+msgid "Preparing file ..."
+msgstr "Tiedoston valmistelu ..."
+
+#: DynamicWeb//dynamicweb.py:2550 DynamicWeb/dynamicweb.py:3060
+msgid "Relationship to Father"
+msgstr "Suhde isään"
+
+#: DynamicWeb//dynamicweb.py:2551 DynamicWeb/dynamicweb.py:3061
+msgid "Relationship to Mother"
+msgstr "Suhde äitiin"
+
+#: DynamicWeb//dynamicweb.py:2553 DynamicWeb/dynamicweb.py:3063
+#, fuzzy
+msgid "Repositories Index"
+msgstr "Arkistot"
+
+#: DynamicWeb//dynamicweb.py:2556 DynamicWeb/dynamicweb.py:3066
+msgid "Restore"
+msgstr "Palauta"
+
+#: DynamicWeb//dynamicweb.py:2557 DynamicWeb/dynamicweb.py:3067
+msgid "Restore default settings"
+msgstr "Palauta oletusasetukset"
+
+#: DynamicWeb//dynamicweb.py:2558 DynamicWeb//dynamicweb.py:4112
+#: DynamicWeb/dynamicweb.py:3068 DynamicWeb/dynamicweb.py:4978
+msgid "Show last modification time"
+msgstr "Näytä viimeinen muutosaika"
+
+#: DynamicWeb//dynamicweb.py:2559 DynamicWeb//dynamicweb.py:4203
+#: DynamicWeb/dynamicweb.py:3069 DynamicWeb/dynamicweb.py:5133
+msgid "SVG tree children distribution"
+msgstr "SVG-puun lasten jakauma"
+
+#: DynamicWeb//dynamicweb.py:2560 DynamicWeb/dynamicweb.py:3070
+msgid "SVG tree configuration"
+msgstr "SVG-puun kokoonpano"
+
+#: DynamicWeb//dynamicweb.py:2561 DynamicWeb//dynamicweb.py:4191
+#: DynamicWeb/dynamicweb.py:3071 DynamicWeb/dynamicweb.py:5115
+msgid "SVG tree graph shape"
+msgstr "SVG-puun kaavion muoto"
+
+#: DynamicWeb//dynamicweb.py:2562 DynamicWeb//dynamicweb.py:4185
+#: DynamicWeb/dynamicweb.py:3072 DynamicWeb/dynamicweb.py:5107
+msgid "SVG tree graph type"
+msgstr "SVG-puun kaaviotyyppi"
+
+#: DynamicWeb//dynamicweb.py:2563 DynamicWeb//dynamicweb.py:4197
+#: DynamicWeb/dynamicweb.py:3073 DynamicWeb/dynamicweb.py:5123
+msgid "SVG tree parents distribution"
+msgstr "SVG-puun vanhempien jakauma"
+
+#: DynamicWeb//dynamicweb.py:2564 DynamicWeb/dynamicweb.py:3074
+msgid "Save tree as file"
+msgstr "Tallenna puu tiedostona"
+
+#: DynamicWeb//dynamicweb.py:2565 DynamicWeb/dynamicweb.py:3075
+msgid "Search:"
+msgstr "Etsi:"
+
+#: DynamicWeb//dynamicweb.py:2566 DynamicWeb/dynamicweb.py:3078
+msgid "Select the background color scheme"
+msgstr "Valitse taustan värijärjestelmä"
+
+#: DynamicWeb//dynamicweb.py:2567 DynamicWeb/dynamicweb.py:3082
+msgid "Select the children distribution (fan charts only)"
+msgstr "Valitse lasten jakautuma (vain viuhkamallit)"
+
+#: DynamicWeb//dynamicweb.py:2568 DynamicWeb/dynamicweb.py:3086
+msgid "Select the number of ascending generations"
+msgstr "Valitse esivanhempien sukupolvien lukumäärä"
+
+#: DynamicWeb//dynamicweb.py:2569 DynamicWeb/dynamicweb.py:3090
+msgid "Select the number of descending generations"
+msgstr "Valitse jälkeläisten sukupolvien lukumäärä"
+
+#: DynamicWeb//dynamicweb.py:2570 DynamicWeb/dynamicweb.py:3094
+msgid "Select the parents distribution (fan charts only)"
+msgstr "Valitse SVG-sukupuun vanhempien jakautuma (vain viuhkamallit)"
+
+#: DynamicWeb//dynamicweb.py:2571 DynamicWeb/dynamicweb.py:3096
+msgid "Select the shape of graph"
+msgstr "Valitse kaavion muoto"
+
+#: DynamicWeb//dynamicweb.py:2572 DynamicWeb/dynamicweb.py:3097
+msgid "Select the type of graph"
+msgstr "Valitse kaavion tyyppi"
+
+#: DynamicWeb//dynamicweb.py:2573 DynamicWeb/dynamicweb.py:3101
+msgid "Several matches.<br>Precise your search or choose in the lists below."
+msgstr ""
+"Löydetty useita.<br>Tarkenna hakuasi tai valitse alla olevista listoista."
+
+#: DynamicWeb//dynamicweb.py:2574 DynamicWeb/dynamicweb.py:3104
+msgid "Show _MENU_ entries"
+msgstr "Näytä _MENU_ merkinnät"
+
+#: DynamicWeb//dynamicweb.py:2575 DynamicWeb//dynamicweb.py:4221
+#: DynamicWeb/dynamicweb.py:3105 DynamicWeb/dynamicweb.py:5170
+msgid "Show duplicates"
+msgstr "Näytä kaksoiskappaleet"
+
+#: DynamicWeb//dynamicweb.py:2576 DynamicWeb/dynamicweb.py:3106
+msgid "Showing 0 to 0 of 0 entries"
+msgstr "Näytetään 0-0 0 merkinnästä"
+
+#: DynamicWeb//dynamicweb.py:2577 DynamicWeb/dynamicweb.py:3109
+msgid "Showing _START_ to _END_ of _TOTAL_ entries"
+msgstr "Näytetään _START_ - _END_ / _TOTAL_ merkinnöille"
+
+#: DynamicWeb//dynamicweb.py:2579 DynamicWeb/dynamicweb.py:3112
+msgid "Sort by:"
+msgstr ""
+
+#: DynamicWeb//dynamicweb.py:2581 DynamicWeb/dynamicweb.py:3114
+msgid "Sources Index"
+msgstr "Lähteet valikko"
+
+#: DynamicWeb//dynamicweb.py:2584 DynamicWeb//dynamicweb.py:4120
+#: DynamicWeb/dynamicweb.py:3117 DynamicWeb/dynamicweb.py:4992
+msgid "Suppress Gramps ID"
+msgstr "Jätä pois Gramps ID"
+
+#: DynamicWeb//dynamicweb.py:2586 DynamicWeb/dynamicweb.py:3119
+msgid "Surnames Index"
+msgstr "Sukunimihakemisto"
+
+#: DynamicWeb//dynamicweb.py:2590 DynamicWeb/dynamicweb.py:3123
+msgid "U"
+msgstr "U"
+
+#: DynamicWeb//dynamicweb.py:2592 DynamicWeb//dynamicweb.py:4108
+#: DynamicWeb/dynamicweb.py:3127 DynamicWeb/dynamicweb.py:4972
+msgid "Use tabbed panels instead of sections"
+msgstr "Käytä välilehtiä paneeleiden sijaan"
+
+#: DynamicWeb//dynamicweb.py:2593 DynamicWeb/dynamicweb.py:3131
+msgid "Use the search box above in order to find a person."
+msgstr "Käytä hakukenttää yllä löytääksesi henkilön."
+
+#: DynamicWeb//dynamicweb.py:2594 DynamicWeb/dynamicweb.py:3135
+#, fuzzy
+msgid "Use a table format for the surnames index"
+msgstr "Sukunimihakemiston oletusmuoto"
+
+#: DynamicWeb//dynamicweb.py:2595 DynamicWeb/dynamicweb.py:3139
+#, fuzzy
+msgid "Use a table format for the persons index"
+msgstr "Henkilöhakemiston oletusmuoto"
+
+#: DynamicWeb//dynamicweb.py:2596 DynamicWeb/dynamicweb.py:3143
+#, fuzzy
+msgid "Use a table format for the families index"
+msgstr "Perheluettelon oletusmuoto"
+
+#: DynamicWeb//dynamicweb.py:2597 DynamicWeb/dynamicweb.py:3147
+#, fuzzy
+msgid "Use a table format for the sources index"
+msgstr "Lähdeluettelon oletusmuoto"
+
+#: DynamicWeb//dynamicweb.py:2598 DynamicWeb/dynamicweb.py:3151
+#, fuzzy
+msgid "Use a table format for the places index"
+msgstr "Paikkaluettelon oletusmuoto"
+
+#: DynamicWeb//dynamicweb.py:2599 DynamicWeb/dynamicweb.py:3153
+msgid "Used for family"
+msgstr "Käytetään perheelle"
+
+#: DynamicWeb//dynamicweb.py:2600 DynamicWeb/dynamicweb.py:3154
+msgid "Used for media"
+msgstr "Käytetään medialle"
+
+#: DynamicWeb//dynamicweb.py:2601 DynamicWeb/dynamicweb.py:3155
+msgid "Used for person"
+msgstr "Käytetään henkilölle"
+
+#: DynamicWeb//dynamicweb.py:2602 DynamicWeb/dynamicweb.py:3156
+msgid "Used for place"
+msgstr "Käytä paikalle"
+
+#: DynamicWeb//dynamicweb.py:2603 DynamicWeb/dynamicweb.py:3157
+msgid "Used for source"
+msgstr "Käytä lähteelle"
+
+#: DynamicWeb//dynamicweb.py:2605 DynamicWeb/dynamicweb.py:3159
+msgid "Web Link"
+msgstr "Nettilinkki"
+
+#: DynamicWeb//dynamicweb.py:2607 DynamicWeb//dynamicweb.py:4222
+#: DynamicWeb/dynamicweb.py:3164 DynamicWeb/dynamicweb.py:5173
+msgid ""
+"Whether to use a special color for the persons that appear several times in "
+"the SVG tree"
+msgstr ""
+"Käytetäänkö erityistä väriä henkilöille, jotka näkyvät useita kertoja SVG-"
+"sukupuussa"
+
+#: DynamicWeb//dynamicweb.py:2608 DynamicWeb/dynamicweb.py:3167
+msgid "Without name"
+msgstr "Ilman nimeä"
+
+#: DynamicWeb//dynamicweb.py:2609 DynamicWeb/dynamicweb.py:3168
+msgid "Without surname"
+msgstr "Sukunimi puuttuu"
+
+#: DynamicWeb//dynamicweb.py:2610 DynamicWeb/dynamicweb.py:3169
+msgid "Without title"
+msgstr "Ilman nimikettä"
+
+#: DynamicWeb//dynamicweb.py:2611 DynamicWeb/dynamicweb.py:3170
+msgid "Zoom in"
+msgstr "Lähennä"
+
+#: DynamicWeb//dynamicweb.py:2612 DynamicWeb/dynamicweb.py:3171
+msgid "Zoom out"
+msgstr "Loitonna"
+
+#: DynamicWeb//dynamicweb.py:2613 DynamicWeb/dynamicweb.py:3172
+msgid "all"
+msgstr "kaikki"
+
+#: DynamicWeb//dynamicweb.py:2957 DynamicWeb/dynamicweb.py:3585
+#, python-format
+msgid "Copying error: %(error)s"
+msgstr "Kopiointivirhe: %(error)s"
+
+#: DynamicWeb//dynamicweb.py:2958 DynamicWeb/dynamicweb.py:3588
+#, python-format
+msgid "Impossible to copy \"%(src)s\" to \"%(dst)s\""
+msgstr "Mahdotonta kopioida \"%(src)s\" - \"%(dst)s\""
+
+#: DynamicWeb//dynamicweb.py:2989 DynamicWeb/dynamicweb.py:3632
+#, python-format
+msgid "Unable to copy web site template files from \"%(path)s\""
+msgstr "Sivustojen mallitiedostoja ei voi kopioida \"%(path)s\""
+
+#: DynamicWeb//dynamicweb.py:3033 DynamicWeb/dynamicweb.py:3681
+#, python-format
+msgid "Keeping \"%(dst)s\" (newer than \"%(src)s\")"
+msgstr "Pidä \"%(dst)s\" (uudempi kuin \"%(src)s\")"
+
+#: DynamicWeb//dynamicweb.py:3036 DynamicWeb/dynamicweb.py:3687
+#, python-format
+msgid "Copying \"%(src)s\" to \"%(dst)s\""
+msgstr "Kopioidaan \"%(src)s\" - \"%(dst)s\""
+
+#: DynamicWeb//dynamicweb.py:3065 DynamicWeb//dynamicweb.py:3083
+#: DynamicWeb/dynamicweb.py:3718 DynamicWeb/dynamicweb.py:3742
+#, python-format
+msgid "Unable to overwrite archive file \"%(path)s\""
+msgstr "Arkistotiedostoa \"%(path)s\" ei voi korvata"
+
+#: DynamicWeb//dynamicweb.py:3075 DynamicWeb//dynamicweb.py:3090
+#: DynamicWeb/dynamicweb.py:3731 DynamicWeb/dynamicweb.py:3752
+#, python-format
+msgid "Unable to add file \"%(file)s\" to archive \"%(archive)s\""
+msgstr "Tiedoston \"%(file)s\" lisääminen ei onnistu arkistoon \"%(archive)s\""
+
+#: DynamicWeb//dynamicweb.py:3143 DynamicWeb/dynamicweb.py:3831
+#, python-format
+msgid "DynamicWebReport ignoring link type '%(class)s'"
+msgstr "DynaaminenNettiraportti ohittaa linkki tyyppi '%(class)s'"
+
+#: DynamicWeb//dynamicweb.py:3527 DynamicWeb/dynamicweb.py:4262
+#, python-format
+msgid "Family of %(father)s"
+msgstr "Perhe isälle %(father)s"
+
+#: DynamicWeb//dynamicweb.py:3531 DynamicWeb/dynamicweb.py:4266
+#, python-format
+msgid "Family of %(mother)s"
+msgstr "Perhe äidille %(mother)s"
+
+#: DynamicWeb//dynamicweb.py:3846 DynamicWeb/dynamicweb.py:4660
+msgid ""
+"In this note, the following special words are processed:\n"
+"__SEARCH_FORM__ is replaced by a search form.\n"
+"__NB_INDIVIDUALS__ is replaced by the number of persons.\n"
+"__NB_FAMILIES__ is replaced by the number of families.\n"
+"__NB_MEDIA__ is replaced by the number of media.\n"
+"__NB_SOURCES__ is replaced by the number of sources.\n"
+"__NB_REPOSITORIES__ is replaced by the number of repositories.\n"
+"__NB_PLACES__ is replaced by the number of places.\n"
+"__MEDIA_<gid>__ is replaced by the media with Gramps ID <gid>.\n"
+"__THUMB_<gid>__ is replaced by the thumbnail of the media with Gramps ID "
+"<gid>.\n"
+"__EXPORT_DATE__ is replaced by the current date.\n"
+"__GRAMPS_VERSION__ is replaced by the Gramps version.\n"
+"__GRAMPS_HOMEPAGE__ is replaced by the Gramps homepage link.\n"
+"URL starting with \"relative://relative.<link>\" are replaced by the "
+"relative URL \"<link>\".\n"
+msgstr ""
+"Huomautuksessa käsitellään seuraavia erikoismerkkejä:\n"
+"__SEARCH_FORM__ korvataan hakulomakkeella.\n"
+"__NB_INDIVIDUALS__ korvataan henkilöiden määrällä.\n"
+"__NB_FAMILIES__ korvataan perheiden määrällä.\n"
+"__NB_MEDIA__ korvataan median määrällä.\n"
+"__NB_SOURCES__ korvataan lähteiden määrällä.\n"
+"__NB_REPOSITORIES__ is replaced by the number of repositories.\n"
+"__NB_PLACES__ korvataan paikkamäärällä.\n"
+"__MEDIA_<gid>__ korvataan median Gramps ID: llä<gid>.\n"
+"__THUMB_<gid>__ korvataa median pikkukuvalla ja Gramps ID:llä<gid>.\n"
+"__EXPORT_DATE__ korvataan nykyisellä päivämäärällä.\n"
+"__GRAMPS_VERSION__ korvataan Gramps-versiolla.\n"
+"__GRAMPS_HOMEPAGE__ Korvataan Gramps kotisivun linkillä.\n"
+"URL-osoite, joka alkaa suhteessa://suhteellinen <linkki>, korvataan "
+"suhteellisella URL-osoitteella \"<linkki>\".\n"
+
+#: DynamicWeb//dynamicweb.py:3897 DynamicWeb/dynamicweb.py:4712
+msgid "Store web pages in archive"
+msgstr "Tallenna verkkosivut arkistoon"
+
+#: DynamicWeb//dynamicweb.py:3898 DynamicWeb/dynamicweb.py:4715
+msgid ""
+"Whether to create an archive file (in ZIP or TGZ format) containing the web "
+"site"
+msgstr ""
+"Luodaanko arkistotiedosto (ZIP- tai TGZ-muodossa), joka sisältää verkkosivun"
+
+#: DynamicWeb//dynamicweb.py:3902 DynamicWeb/dynamicweb.py:4722
+msgid "Archive file"
+msgstr "Arkistotiedosto"
+
+#: DynamicWeb//dynamicweb.py:3904 DynamicWeb/dynamicweb.py:4728
+msgid "The archive file name (with \".zip\" or \".tgz\" extension)"
+msgstr "Arkistotiedoston nimi (\".zip\" tai \".tgz\" -laajennuksella)"
+
+#: DynamicWeb//dynamicweb.py:3910 DynamicWeb/dynamicweb.py:4735
+msgid "Web site title"
+msgstr "Nettisivuston otsikko"
+
+#: DynamicWeb//dynamicweb.py:3911 DynamicWeb/dynamicweb.py:4736
+msgid "The title of the web site"
+msgstr "Sivuston otsikko"
+
+#: DynamicWeb//dynamicweb.py:3916 DynamicWeb/dynamicweb.py:4741
+msgid "Select filter to restrict people that appear on web site"
+msgstr "Valitse suodin rajoittamaan henkilöitä jotka näkyvät nettisivustossa"
+
+#: DynamicWeb//dynamicweb.py:3929 DynamicWeb//dynamicweb.py:3949
+#: DynamicWeb/dynamicweb.py:4755 DynamicWeb/dynamicweb.py:4778
+msgid "Name format (short)"
+msgstr "Nimen muoto (lyhyt)"
+
+#: DynamicWeb//dynamicweb.py:3930 DynamicWeb//dynamicweb.py:3952
+#: DynamicWeb/dynamicweb.py:4757 DynamicWeb/dynamicweb.py:4783
+msgid "Select the format to display a shorter version of the names"
+msgstr "Valitse muoto, joka näyttää lyhyemmän version nimistä"
+
+#: DynamicWeb//dynamicweb.py:3955 DynamicWeb/dynamicweb.py:4787
+msgid "Web site template"
+msgstr "Sivuston mallipohja"
+
+#: DynamicWeb//dynamicweb.py:3958 DynamicWeb/dynamicweb.py:4790
+msgid "Select the template of the web site"
+msgstr "Valitse verkkosivuston malli"
+
+#: DynamicWeb//dynamicweb.py:3980 D3Charts/DescendantIndentedTree.py:1867
+msgid "Include records marked private"
+msgstr "Lisää yksityisiksi merkityt tiedot"
+
+#: DynamicWeb//dynamicweb.py:3981 DynamicWeb/dynamicweb.py:4812
+msgid "Whether to include private objects"
+msgstr "Lisätäänkö yksityiset tiedot"
+
+#: DynamicWeb//dynamicweb.py:3985 D3Charts/DescendantIndentedTree.py:1877
+msgid "Include Last Name Only"
+msgstr "Lisää vain sukunimi"
+
+#: DynamicWeb//dynamicweb.py:3986 D3Charts/DescendantIndentedTree.py:1879
+msgid "Include Full Name Only"
+msgstr "Lisää vain koko nimi"
+
+#: DynamicWeb//dynamicweb.py:3992 DynamicWeb/dynamicweb.py:4833
+msgid ""
+"This allows you to restrict information on people who have not been dead for "
+"very long"
+msgstr ""
+"Tällä voit rajoittaa tietoja henkilöistä, jotka eivät ole olleet kuolleina "
+"kovin pitkään"
+
+#: DynamicWeb//dynamicweb.py:3996 DynamicWeb/dynamicweb.py:4839
+msgid "Export notes"
+msgstr "Viedään lisätiedot"
+
+#: DynamicWeb//dynamicweb.py:3997 DynamicWeb/dynamicweb.py:4840
+msgid "Whether to export notes in the web pages"
+msgstr "Viedäänkö lisätiedot nettisivulle"
+
+#: DynamicWeb//dynamicweb.py:4000 DynamicWeb/dynamicweb.py:4843
+msgid "Export sources"
+msgstr "Viedään lähteet"
+
+#: DynamicWeb//dynamicweb.py:4001 DynamicWeb/dynamicweb.py:4845
+msgid "Whether to export sources and citations in the web pages"
+msgstr "Viedäänkö lähteet ja lainaukset nettisivulle"
+
+#: DynamicWeb//dynamicweb.py:4004 DynamicWeb/dynamicweb.py:4849
+msgid "Export addresses"
+msgstr "Viedään osoitteet"
+
+#: DynamicWeb//dynamicweb.py:4005 DynamicWeb/dynamicweb.py:4850
+msgid "Whether to export addresses in the web pages"
+msgstr "Viedäänkö osoitteet nettisivulle"
+
+#: DynamicWeb//dynamicweb.py:4014 DynamicWeb/dynamicweb.py:4858
+msgid "Whether or not to include the Repository Pages."
+msgstr "Lisätäänkö arkistosivut"
+
+#: DynamicWeb//dynamicweb.py:4017 DynamicWeb/dynamicweb.py:4861
+msgid "Include images and media"
+msgstr "Lisää kuvat ja muut mediatiedostot"
+
+#: DynamicWeb//dynamicweb.py:4018 DynamicWeb/dynamicweb.py:4862
+msgid "Whether to include images and media in the web pages"
+msgstr "Lisätäänkö kuvat ja media nettisivulle"
+
+#: DynamicWeb//dynamicweb.py:4022 DynamicWeb/dynamicweb.py:4867
+msgid "Copy, rename files with an internal Gramps identifier"
+msgstr "Kopioi ja nimeä uudelleen tiedostot, joilla on sisäinen Gramps ID"
+
+#: DynamicWeb//dynamicweb.py:4023 DynamicWeb/dynamicweb.py:4870
+msgid "Copy, keep file names unchanged"
+msgstr "Kopioi, säilytä tiedostonimet ennallaan"
+
+#: DynamicWeb//dynamicweb.py:4024 DynamicWeb/dynamicweb.py:4871
+msgid "Do not copy, reference existing files"
+msgstr "Älä kopioi olemassa olevia tiedostoja"
+
+#: DynamicWeb//dynamicweb.py:4026 DynamicWeb/dynamicweb.py:4873
+msgid "Images and media"
+msgstr "Kuvat ja media"
+
+#: DynamicWeb//dynamicweb.py:4029 DynamicWeb/dynamicweb.py:4876
+msgid "Whether to make a copy of the media"
+msgstr "Kopioidaanko media"
+
+#: DynamicWeb//dynamicweb.py:4032 DynamicWeb/dynamicweb.py:4879
+msgid "Print the notes type"
+msgstr "Tulosta lisätiedon tyyppi"
+
+#: DynamicWeb//dynamicweb.py:4033 DynamicWeb/dynamicweb.py:4881
+msgid "Whether to print the notes type in the notes text"
+msgstr "Tulostetaanko muistiinpanoja kirjoittamalla lisätietoja tekstinä"
+
+#: DynamicWeb//dynamicweb.py:4036 DynamicWeb/dynamicweb.py:4885
+msgid "Print place pages"
+msgstr "Tulosta paikkasivut"
+
+#: DynamicWeb//dynamicweb.py:4037 DynamicWeb/dynamicweb.py:4886
+msgid "Whether to show pages for the places"
+msgstr "Näytetäänkö paikkasivut"
+
+#: DynamicWeb//dynamicweb.py:4065 DynamicWeb/dynamicweb.py:4921
+msgid "Choose your choice of map service for creating the Place Map Pages"
+msgstr "Valitse karttapalvelu, jota haluat käyttää paikkakarttasivuilla."
+
+#: DynamicWeb//dynamicweb.py:4069 DynamicWeb/dynamicweb.py:4926
+msgid "Google map API key"
+msgstr "Google kartat API-avain"
+
+#: DynamicWeb//dynamicweb.py:4070 DynamicWeb/dynamicweb.py:4927
+msgid "The API key used for the Google map"
+msgstr "Käytetään Google kartat API-avainta"
+
+#: DynamicWeb//dynamicweb.py:4087 DynamicWeb/dynamicweb.py:4945
+msgid "Whether or not to include family pages"
+msgstr "Lisätäänkö perhesivut."
+
+#: DynamicWeb//dynamicweb.py:4097 DynamicWeb/dynamicweb.py:4959
+msgid ""
+"Whether to include half and/ or step-siblings with the parents and siblings"
+msgstr ""
+"Lisätäänkö hakemistosivuille sarake sisaruspuolille, vanhempineen ja "
+"sisaruksineen"
+
+#: DynamicWeb//dynamicweb.py:4104 DynamicWeb/dynamicweb.py:4968
+msgid "Enable page configuration"
+msgstr "Ota sivun kokoonpano käyttöön"
+
+#: DynamicWeb//dynamicweb.py:4105 DynamicWeb/dynamicweb.py:4969
+msgid "Whether to enable page configuration"
+msgstr "Otetaanko sivun kokoonpano"
+
+#: DynamicWeb//dynamicweb.py:4109 DynamicWeb/dynamicweb.py:4974
+msgid "Whether to use tabbed panels for the different sections of the pages."
+msgstr "Käytetäänkö välilehtipaneeleja sivujen eri osiin."
+
+#: DynamicWeb//dynamicweb.py:4113 DynamicWeb/dynamicweb.py:4980
+msgid "Whether to show the last modification time in the pages footer"
+msgstr "Näytetäänkö muokkausaika sivun alatunnisteessa"
+
+#: DynamicWeb//dynamicweb.py:4117 DynamicWeb/dynamicweb.py:4988
+msgid "Whether to insert sources author in the sources title"
+msgstr "Lisätäänkö lähteiden tekijä lähteet otsikkoon"
+
+#: DynamicWeb//dynamicweb.py:4121 DynamicWeb/dynamicweb.py:4993
+msgid "Whether to hide the Gramps ID"
+msgstr "Piilotetaanko Gramps ID"
+
+#: DynamicWeb//dynamicweb.py:4130 DynamicWeb/dynamicweb.py:5001
+msgid "List"
+msgstr "Lista"
+
+#: DynamicWeb//dynamicweb.py:4131 DynamicWeb/dynamicweb.py:5002
+msgid "Table"
+msgstr "Taulukko"
+
+#: DynamicWeb//dynamicweb.py:4134 DynamicWeb/dynamicweb.py:5008
+msgid "Default format for the surnames index"
+msgstr "Sukunimihakemiston oletusmuoto"
+
+#: DynamicWeb//dynamicweb.py:4134 DynamicWeb/dynamicweb.py:5009
+msgid "The default format for the surnames index"
+msgstr "Sukunimihakemiston oletusmuoto"
+
+#: DynamicWeb//dynamicweb.py:4135 DynamicWeb/dynamicweb.py:5014
+msgid "Default format for the persons index"
+msgstr "Henkilöhakemiston oletusmuoto"
+
+#: DynamicWeb//dynamicweb.py:4135 DynamicWeb/dynamicweb.py:5015
+msgid "The default format for the persons index"
+msgstr "Henkilöhakemiston oletusmuoto"
+
+#: DynamicWeb//dynamicweb.py:4136 DynamicWeb/dynamicweb.py:5020
+msgid "Default format for the families index"
+msgstr "Perheluettelon oletusmuoto"
+
+#: DynamicWeb//dynamicweb.py:4136 DynamicWeb/dynamicweb.py:5021
+msgid "The default format for the families index"
+msgstr "Perheluettelon oletusmuoto"
+
+#: DynamicWeb//dynamicweb.py:4137 DynamicWeb/dynamicweb.py:5026
+msgid "Default format for the sources index"
+msgstr "Lähdeluettelon oletusmuoto"
+
+#: DynamicWeb//dynamicweb.py:4137 DynamicWeb/dynamicweb.py:5027
+msgid "The default format for the sources index"
+msgstr "Lähdeluettelon oletusmuoto"
+
+#: DynamicWeb//dynamicweb.py:4138 DynamicWeb/dynamicweb.py:5032
+msgid "Default format for the places index"
+msgstr "Paikkaluettelon oletusmuoto"
+
+#: DynamicWeb//dynamicweb.py:4138 DynamicWeb/dynamicweb.py:5033
+msgid "The default format for the places index"
+msgstr "Paikkaluettelon oletusmuoto"
+
+#: DynamicWeb//dynamicweb.py:4147 DynamicWeb/dynamicweb.py:5045
+msgid ""
+"Whether to include dates columns (birth, death, marriage) on the index pages"
+msgstr ""
+"Lisätäänkö hakemistosivuihin päivämääräsarakkeet (syntymälle, kuolemalle ja "
+"avioliitolle)"
+
+#: DynamicWeb//dynamicweb.py:4158 DynamicWeb/dynamicweb.py:5063
+msgid "Generate a families index page"
+msgstr "Luo perheiden hakemistosivu"
+
+#: DynamicWeb//dynamicweb.py:4159 DynamicWeb/dynamicweb.py:5066
+msgid "Whether to generate an index page for families"
+msgstr "Luodaanko perheille hakemistosivu"
+
+#: DynamicWeb//dynamicweb.py:4163 DynamicWeb/dynamicweb.py:5073
+msgid "Whether to include a column showing the media path"
+msgstr "Lisätäänkö sarake, joka näyttää mediapolun"
+
+#: DynamicWeb//dynamicweb.py:4167 DynamicWeb/dynamicweb.py:5079
+msgid ""
+"Whether to include the references to the items in the index pages. For "
+"example, in the media index page, the names of the individuals, families, "
+"places, sources that reference the media."
+msgstr ""
+"Lisätäänkö viittaukset hakemistosivujen kohteisiin. Esimerkiksi media-"
+"hakemistosivulla henkilöden, perheiden ja paikkojen lähteet, jotka "
+"viittaavat mediaan."
+
+#: DynamicWeb//dynamicweb.py:4170 DynamicWeb/dynamicweb.py:5085
+msgid "Default number of entries in the indexes"
+msgstr "Hakemiston merkintöjen oletusmäärä"
+
+#: DynamicWeb//dynamicweb.py:4173 DynamicWeb/dynamicweb.py:5090
+msgid "The default number of entries shown in one index page"
+msgstr "Yhdellä hakemistosivulla näkyvien merkintöjen oletusmäärä"
+
+#: DynamicWeb//dynamicweb.py:4181 DynamicWeb/dynamicweb.py:5098
+msgid "Maximum number of generations"
+msgstr "Sukupolvien enimmäismäärä"
+
+#: DynamicWeb//dynamicweb.py:4182 DynamicWeb/dynamicweb.py:5101
+msgid ""
+"The maximum number of generations to include in the ancestor and descendant "
+"trees and graphs"
+msgstr ""
+"Sukupolvien enimmäismäärä, jotka lisätään esivanhempien ja jälkeläisten "
+"sukupuihin ja kaavioihin"
+
+#: DynamicWeb//dynamicweb.py:4188 DynamicWeb/dynamicweb.py:5111
+msgid "Choose the default SVG tree graph type"
+msgstr "Valitse SVG-sukupuukaavion oletustyyppi"
+
+#: DynamicWeb//dynamicweb.py:4194 DynamicWeb/dynamicweb.py:5119
+msgid "Choose the default SVG tree graph shape"
+msgstr "Valitse SVG-sukupuukaavion oletusmuoto"
+
+#: DynamicWeb//dynamicweb.py:4200 DynamicWeb/dynamicweb.py:5128
+msgid "Choose the default SVG tree parents distribution (for fan charts only)"
+msgstr "Valitse vanhempien oletusjakautuma SVG-sukupuuhun (vain viuhkamallit)"
+
+#: DynamicWeb//dynamicweb.py:4206 DynamicWeb/dynamicweb.py:5138
+msgid "Choose the default SVG tree children distribution (for fan charts only)"
+msgstr "Valitse lasten oletusjakautuma SVG-sukupuuhun (vain viuhkamallit)"
+
+#: DynamicWeb//dynamicweb.py:4212 DynamicWeb/dynamicweb.py:5149
+msgid ""
+"Choose the background color scheme for the persons in the SVG tree graph"
+msgstr "Valitse henkilöiden taustaväri SVG-sukupuu kaaviolle"
+
+#: DynamicWeb//dynamicweb.py:4231 DynamicWeb/dynamicweb.py:5190
+msgid "Pages"
+msgstr "Sivut"
+
+#: DynamicWeb//dynamicweb.py:4235 DynamicWeb/dynamicweb.py:5194
+msgid "A note to be used as the page header"
+msgstr "Sivun ylätunnisteena käytettävä lisätieto"
+
+#: DynamicWeb//dynamicweb.py:4238 DynamicWeb/dynamicweb.py:5197
+msgid "HTML user brand name / icon"
+msgstr "HTML käyttäjän tuotemerkki / kuvake"
+
+#: DynamicWeb//dynamicweb.py:4239 DynamicWeb/dynamicweb.py:5199
+msgid "A note to be used as the brand name or image in the menu"
+msgstr "Merkki, jota käytetään valikossa tuotemerkkinä tai kuvana"
+
+#: DynamicWeb//dynamicweb.py:4248 DynamicWeb/dynamicweb.py:5208
+msgid "Custom pages"
+msgstr "Mukautetut sivut"
+
+#: DynamicWeb//dynamicweb.py:4252 DynamicWeb/dynamicweb.py:5213
+#, python-format
+msgid "Title for the custom page %(index)i"
+msgstr "Mukautetun sivun otsikko %(index)i"
+
+#: DynamicWeb//dynamicweb.py:4253 DynamicWeb/dynamicweb.py:5217
+#, python-format
+msgid "Name for the custom page %(index)i"
+msgstr "Mukautetun sivun nimi %(index)i"
+
+#: DynamicWeb//dynamicweb.py:4256 DynamicWeb/dynamicweb.py:5222
+#, python-format
+msgid "Note for custom page %(index)i"
+msgstr "Lisätieto mukautetulle sivulle %(index)i"
+
+#: DynamicWeb//dynamicweb.py:4257 DynamicWeb/dynamicweb.py:5225
+msgid "A note to be used for the custom page content.\n"
+msgstr "Mukautetun sivun sisältöä koskeva lisätieto.\n"
+
+#: DynamicWeb//dynamicweb.py:4260 DynamicWeb/dynamicweb.py:5230
+#, python-format
+msgid "Menu for the custom page %(index)i"
+msgstr "Mukautetun sivun valikko %(index)i"
+
+#: DynamicWeb//dynamicweb.py:4261 DynamicWeb/dynamicweb.py:5232
+msgid "Whether to print a menu for the custom page"
+msgstr "Tulostetaanko valikko muokatulle sivulle"
+
+#: DynamicWeb//dynamicweb.py:4266 DynamicWeb/dynamicweb.py:5236
+msgid "Pages selection"
+msgstr "Sivujen valinta"
+
+#: DynamicWeb//dynamicweb.py:4269 DynamicWeb/dynamicweb.py:5240
+msgid "Number of pages"
+msgstr "Sivujen määrä"
+
+#: DynamicWeb//dynamicweb.py:4270 DynamicWeb/dynamicweb.py:5242
+msgid "Number pages in the web site menu."
+msgstr "Sivunumerot verkkosivun valikossa."
+
+#: DynamicWeb//dynamicweb.py:4286 DynamicWeb/dynamicweb.py:5262
+#, python-format
+msgid "Contents of page %(index)i"
+msgstr "Sivun sisältö %(index)i"
+
+#: DynamicWeb//dynamicweb.py:4289 DynamicWeb/dynamicweb.py:5266
+msgid "Contents of the page"
+msgstr "Sivun sisältö"
+
+#: Topola/Topola.gpr.py:3 Topola/Topola.gpr.py:4
+msgid "Interactive Family Tree"
+msgstr "Interaktiivinen sukupuu"
+
+#: Topola/Topola.gpr.py:4 Topola/Topola.gpr.py:5
+msgid "Opens an interactive tree in the browser"
+msgstr "Avaa interaktiivisen puun selaimessa"
+
+#: CombinedView/basepage.py:493
+#, python-format
+msgid "%(abbrev)s %(date)s in %(place)s"
+msgstr "%(abbrev)s %(date)s - %(place)s"
+
+#: CombinedView/basepage.py:495
+#, python-format
+msgid "%(abbrev)s %(date)s%(place)s"
+msgstr "%(abbrev)s %(date)s%(place)s"
+
+#: CombinedView/combinedview.gpr.py:23 CombinedView/combinedview.py:87
+#: CombinedView/combinedview.gpr.py:24
+msgid "Combined"
+msgstr "Yhdistetty"
+
+#: CombinedView/combinedview.gpr.py:24 CombinedView/combinedview.gpr.py:25
+msgid "A view showing relationships and events for a person"
+msgstr "Yhdistetty näkymä henkilön suhteista ja tapahtumista"
+
+#: CombinedView/combinedview.py:528
+msgid "Edit the active event"
+msgstr "Muokkaa aktiivista tapahtumaa"
+
+#: CombinedView/combinedview.py:630
+msgid "Show Tags"
+msgstr "Näytä tagit"
+
+#: CombinedView/combinedview.py:656
+msgid "Vertical Details"
+msgstr "Alekkaiset tiedot"
+
+#: CombinedView/eventpage.py:202 CombinedView/eventpage.py:267
+msgid "Order"
+msgstr "Järjestys"
+
+#: CombinedView/navigationview.py:341 CombinedView/navigationview.py:346
+msgid ""
+"You need to set a 'default person' to go to. Select the People View, select "
+"the person you want as 'Home Person', then confirm your choice via the menu "
+"Edit -> Set Home Person."
+msgstr ""
+"Sinun on määritettävä 'oletushenkilö' jatkaaksesi. Avaa Henkilöt näkymä, "
+"valitse haluamasi henkilö kotihenkilöksi ja vahvista valintasi valikossa "
+"Muokkaa -> Aseta kotihenkilö."
+
+#: CombinedView/personpage.py:591 CombinedView/personpage.py:597
+#, python-format
+msgid "%(event_type)s: %(date)s in %(place)s"
+msgstr "%(event_type)s: %(date)s - %(place)s"
+
+#: CombinedView/personpage.py:595 CombinedView/personpage.py:601
+#, python-format
+msgid "%(event_type)s: %(date)s"
+msgstr "%(event_type)s: %(date)s"
+
+#: CombinedView/personpage.py:598 CombinedView/personpage.py:604
+#, python-format
+msgid "%(event_type)s: %(place)s"
+msgstr "%(event_type)s: %(place)s"
+
+#: CombinedView/personpage.py:678 CombinedView/personpage.py:891
+#: CombinedView/personpage.py:684 CombinedView/personpage.py:897
+msgid "Click to make this event active"
+msgstr "Aktivoi tapahtuma napsauttamalla"
+
+#: CombinedView/personpage.py:737 CombinedView/personpage.py:743
+msgid "Click to visit this link"
+msgstr "Napsauta käydäksesi tässä linkkissä"
+
+#: CombinedView/personpage.py:959 CombinedView/personpage.py:966
+#: CombinedView/personpage.py:965 CombinedView/personpage.py:972
+msgid ": "
+msgstr ": "
+
+#: Themes/themes.gpr.py:28 Themes/themes.gpr.py:29
+msgid "Theme preferences"
+msgstr "Teeman asetukset"
+
+#: Themes/themes.gpr.py:29 Themes/themes.gpr.py:31
+msgid ""
+"An addition to Preferences for simple Theme and Font adjustment.  Especially "
+"useful for Windows users."
+msgstr ""
+"Lisäys asetuksiin yksinkertaisen teeman ja fontin säätämiseksi. Erityisen "
+"hyödyllinen Windows-käyttäjille."
+
+#: Themes/themes.py:137 Themes/themes.py:155 Themes/themes.py:172
+#: Themes/themes.py:190
+msgid "Theme is hardcoded by GTK_THEME"
+msgstr "Teema on koodattu GTK_THEME"
+
+#: Themes/themes.py:140 Themes/themes.py:190 DynamicWeb/dynamicweb.py:5157
+msgid "Theme"
+msgstr "Teema"
+
+#: Themes/themes.py:145 Themes/themes.py:180
+msgid "Dark Variant"
+msgstr "Tumma muunnos"
+
+#: Themes/themes.py:163 Themes/themes.py:198
+msgid "Font"
+msgstr "Fontti"
+
+#: Themes/themes.py:179 Themes/themes.py:214
+msgid "Fixed Scrollbar (requires restart)"
+msgstr "Kiinteä vierityspalkki (edellyttää uudelleenkäynnistystä)"
+
+#: QuiltView/QuiltView.gpr.py:30 QuiltView/QuiltView.gpr.py:23
+#: QuiltView/QuiltView.gpr.py:34
+msgid "Quilt Chart"
+msgstr "Peittokaavio"
+
+#: QuiltView/QuiltView.gpr.py:32 QuiltView/QuiltView.gpr.py:25
+msgid "The view shows a quilt chart visualisation of a family tree"
+msgstr "Näyttää visualisoidun peittokaavion sukupuusta"
+
+#: QuiltView/QuiltView.py:223
+msgid "Quilt chart"
+msgstr "Peittokaavio"
+
+#: QuiltView/QuiltView.py:307
+msgid "Select the name for which you want to see."
+msgstr "Valitse nimi, jonka haluat nähdä."
+
+#: QuiltView/QuiltView.py:314
+msgid "Clear the entry field in the name selection box."
+msgstr "Tyhjennä nimenvalintakenttä."
+
+#: QuiltView/QuiltView.py:319
+msgid "Nothing is selected"
+msgstr "Mitään ei ole valittu"
+
+#: QuiltView/QuiltView.py:572
+#, python-format
+msgid ""
+"You have %(filter)d filtered people, %(count)d people shown on the tree and "
+"%(total)d people in your database."
+msgstr ""
+"Sinulla on %(filter)d suodatettua henkilöä, %(count)d henkilöä näkyy puussa "
+"ja %(total)d henkilöä tietokannassasi."
+
+#: QuiltView/QuiltView.py:662
+msgid "Loading individuals"
+msgstr "Henkilöiden lataaminen"
+
+#: QuiltView/QuiltView.py:663
+msgid "Loading the data"
+msgstr "Tietojen lataaminen"
+
+#: QuiltView/QuiltView.py:1053
+msgid "About Quilt View"
+msgstr "Tietoja Peittokaaviosta"
+
+#: QuiltView/QuiltView.py:1191 QuiltView/QuiltView.py:1320
+msgid "Edit tags"
+msgstr "Muokkaa tageja"
+
+#: QuiltView/QuiltView.py:1500
+msgid "Set as home person"
+msgstr "Aseta kotihenkilö"
+
+#: QuiltView/QuiltView.py:1656
+#, python-format
+msgid "Adding Tags to person (%s)"
+msgstr "Lisää tageja henkilölle (%s)"
+
+#: QuiltView/QuiltView.py:1661
+#, python-format
+msgid "Adding Tags to family (%s)"
+msgstr "Lisää tageja perheelle (%s)"
+
+#: QuiltView/QuiltView.py:1865
+msgid "Printing the tree"
+msgstr "Puun tulostus"
+
+#: QuiltView/QuiltView.py:1869
+#, python-format
+msgid "Need to print %(pages)s pages (%(format)s format)"
+msgstr "Tulostetaan %(pages)s sivua (%(format)s muodossa)"
+
+#: QuiltView/QuiltView.py:1921
+msgid ""
+"Center on the selected person.\n"
+"The new position of the person will be near the top left corner."
+msgstr ""
+"Keskitä valittu henkilö.\n"
+"Henkilön uusi sijainti on lähellä vasenta yläkulmaa."
+
+#: QuiltView/QuiltView.py:1926
+msgid "The path color"
+msgstr "Polun väri"
+
+#: QuiltView/QuiltView.py:1931
+msgid "The selected person color"
+msgstr "Valitun henkilön väri"
+
+#: QuiltView/QuiltView.py:1936
+msgid "The path transparency"
+msgstr "Polun läpinäkyvyys"
+
+#: QuiltView/QuiltView.py:1939
+msgid "General options"
+msgstr "Yleiset valinnat"
+
+#: GoogleEarthWriteKML.gpr.py:30
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.gpr.py:31
+msgid "GoogleEarth"
+msgstr "GoogleEarth"
+
+#: GoogleEarthWriteKML.gpr.py:35
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.gpr.py:36
+msgid "Creates data file for GoogleEarth and opens it"
+msgstr "Luo GoogleEarth tiedostoa ja avaa sen"
+
+#: GoogleEarthWriteKML.py:140 GoogleEarthWriteKML/GoogleEarthWriteKML.py:119
+msgid "No place description"
+msgstr "Ei paikkatietoa"
+
+#: GoogleEarthWriteKML.py:173 GoogleEarthWriteKML/GoogleEarthWriteKML.py:152
+msgid "GoogleEarth not installed!"
+msgstr "GoogleEarth ei ole asennettu!"
+
+#: GoogleEarthWriteKML.py:174 GoogleEarthWriteKML/GoogleEarthWriteKML.py:153
+#, python-format
+msgid ""
+"Create kmz/kml file ''%s''\n"
+"in user directory ''%s''?"
+msgstr ""
+"Luodaan kmz/kml tiedosto ''%s''\n"
+"käyttäjän hakemistoon ''%s''?"
+
+#: GoogleEarthWriteKML.py:184 GoogleEarthWriteKML/GoogleEarthWriteKML.py:163
+#, python-format
+msgid "Failure writing to %s"
+msgstr "Kirjoitus epäonnistui %s"
+
+#: GoogleEarthWriteKML.py:185 GoogleEarthWriteKML/GoogleEarthWriteKML.py:164
+msgid "Directory does not exist"
+msgstr "Hakemistoa ei ole olemassa"
+
+#: GoogleEarthWriteKML.py:194 GoogleEarthWriteKML/GoogleEarthWriteKML.py:173
+msgid "GoogleEarth file exists!"
+msgstr "GoogleEarth tiedosto on olemassa!"
+
+#: GoogleEarthWriteKML.py:195 GoogleEarthWriteKML/GoogleEarthWriteKML.py:174
+#, python-format
+msgid ""
+"Overwrite kmz/kml file ''%s''\n"
+"in user home directory ''%s''?"
+msgstr ""
+"Korvaa kmz/kml tiedosto ''%s''\n"
+"käyttäjän hakemistossa ''%s''?"
+
+#: EditExifMetadata/editexifmetadata.gpr.py:29
+#: EditExifMetadata/editexifmetadata.py:753
+#: EditExifMetadata/editexifmetadata.py:1159
+#: EditExifMetadata/editexifmetadata.gpr.py:30
+#: EditExifMetadata/editexifmetadata.py:723
+#: EditExifMetadata/editexifmetadata.py:1135
+#: EditExifMetadata/editexifmetadata.py:1147
+msgid "Edit Image Exif Metadata"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.gpr.py:30
+#: EditExifMetadata/editexifmetadata.gpr.py:31
+msgid "Gramplet to view, edit, and save image Exif metadata"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.gpr.py:34
+#: EditExifMetadata/editexifmetadata.gpr.py:35
+msgid "Edit Exif Metadata"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:148
+#: EditExifMetadata/editexifmetadata.py:135
+msgid "<-- Image Types -->"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:171
+#: EditExifMetadata/editexifmetadata.py:158
+msgid ""
+"Warning:  Changing this entry will update the Media object title field in "
+"Gramps not Exiv2 metadata."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:174
+#: EditExifMetadata/editexifmetadata.py:161
+#, fuzzy
+msgid "Provide a short description for this image."
+msgstr "Lisätäänkö lasten avioliittotiedot."
+
+#: EditExifMetadata/editexifmetadata.py:176
+#: EditExifMetadata/editexifmetadata.py:163
+msgid ""
+"Enter the Artist/ Author of this image.  The person's name or the company "
+"who is responsible for the creation of this image."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:179
+#: EditExifMetadata/editexifmetadata.py:167
+#, fuzzy
+msgid "Enter the copyright information for this image. \n"
+msgstr "Lisätäänkö lasten avioliittotiedot."
+
+#: EditExifMetadata/editexifmetadata.py:181
+#: EditExifMetadata/editexifmetadata.py:169
+msgid ""
+"The original date/ time when the image was first created/ taken as in a "
+"photograph.\n"
+"Example: 1830-01-1 09:30:59"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:184
+#: EditExifMetadata/editexifmetadata.py:173
+msgid ""
+"This is the date/ time that the image was last changed/ modified.\n"
+"Example: 2011-05-24 14:30:00"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:202
+#: EditExifMetadata/editexifmetadata.py:191
+msgid ""
+"Displays the Gramps Wiki Help page for 'Edit Image Exif Metadata' in your "
+"web browser."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:205
+#: EditExifMetadata/editexifmetadata.py:194
+msgid ""
+"This will open up a new window to allow you to edit/ modify this image's "
+"Exif metadata.\n"
+"  It will also allow you to be able to Save the modified metadata."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:209
+#: EditExifMetadata/editexifmetadata.py:198
+msgid "Will produce a Popup window showing a Thumbnail Viewing Area"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:211
+#: EditExifMetadata/editexifmetadata.py:201
+msgid ""
+"Select from a drop- down box the image file type that you would like to "
+"convert your non- Exiv2 compatible media object to."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:214
+#: EditExifMetadata/editexifmetadata.py:205
+msgid ""
+"If your image is not of an image type that can have Exif metadata read/ "
+"written to/from, convert it to a type that can?"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:217
+#: EditExifMetadata/editexifmetadata.py:209
+msgid ""
+"WARNING:  This will completely erase all Exif metadata from this image!  Are "
+"you sure that you want to do this?"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:315
+#: EditExifMetadata/editexifmetadata.py:214
+#, fuzzy
+msgid "Thumbnail"
+msgstr "Pikkukuvien sijainti"
+
+#: EditExifMetadata/editexifmetadata.py:397
+#: EditExifMetadata/editexifmetadata.py:402
+#, fuzzy
+msgid "Select an image to begin..."
+msgstr "Valitse mediatiedosto"
+
+#: EditExifMetadata/editexifmetadata.py:419
+#: EditExifMetadata/editexifmetadata.py:421
+msgid ""
+"Image is NOT readable,\n"
+"Please choose a different image..."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:435
+#: EditExifMetadata/editexifmetadata.py:481
+#: EditExifMetadata/editexifmetadata.py:1440
+msgid ""
+"Image is NOT writable,\n"
+"You will NOT be able to save Exif metadata...."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:447
+#: EditExifMetadata/editexifmetadata.py:441
+msgid "Please convert this image to an Exiv2- compatible image type..."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:670
+#: EditExifMetadata/editexifmetadata.py:648
+msgid "Click Close to close this Thumbnail View Area."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:674
+#: EditExifMetadata/editexifmetadata.py:654
+msgid "Thumbnail View Area"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:753
+#: EditExifMetadata/editexifmetadata.py:724
+msgid ""
+"WARNING: You are about to convert this image into a .jpeg image.  Are you "
+"sure that you want to do this?"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:755
+#: EditExifMetadata/editexifmetadata.py:726
+#, fuzzy
+msgid "Convert and Delete"
+msgstr "Muunna suhteelliseksi poluksi"
+
+#: EditExifMetadata/editexifmetadata.py:841
+#: EditExifMetadata/editexifmetadata.py:807
+msgid ""
+"Your image has been converted and the original file has been deleted, and "
+"the full path has been updated!"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:845
+#: EditExifMetadata/editexifmetadata.py:812
+msgid ""
+"There has been an error, Please check your source and destination file "
+"paths..."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:848
+#: EditExifMetadata/editexifmetadata.py:816
+msgid ""
+"There was an error in deleting the original file.  You will need to delete "
+"it yourself!"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:865
+#: EditExifMetadata/editexifmetadata.py:834
+msgid "There was an error in converting your image file."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:876
+#: EditExifMetadata/editexifmetadata.py:844
+#, fuzzy
+msgid "Media Path Update"
+msgstr "kuolinpäivä"
+
+#: EditExifMetadata/editexifmetadata.py:882
+#: EditExifMetadata/editexifmetadata.py:853
+msgid "There has been an error in updating the image file's path!"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:916
+#: EditExifMetadata/editexifmetadata.py:886
+msgid ""
+"Click the close button when you are finished modifying this image's Exif "
+"metadata."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:954
+#: EditExifMetadata/editexifmetadata.py:924
+msgid "Saves a copy of the data fields into the image's Exif metadata."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:957
+#: EditExifMetadata/editexifmetadata.py:928
+msgid "Re -display the data fields that were cleared from the Edit Area."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:960
+#: EditExifMetadata/editexifmetadata.py:932
+msgid "This button will clear all of the data fields shown here."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:963
+#: EditExifMetadata/editexifmetadata.py:940
+msgid ""
+"Closes this popup Edit window.\n"
+"WARNING: This action will NOT Save any changes/ modification made to this "
+"image's Exif metadata."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:990
+#: EditExifMetadata/editexifmetadata.py:969
+#, fuzzy
+msgid "Media Object Title"
+msgstr "Mediatiedostosuotimet"
+
+#: EditExifMetadata/editexifmetadata.py:1000
+#: EditExifMetadata/editexifmetadata.py:978
+#, fuzzy
+msgid "media Title: "
+msgstr "Kalenteriotsikko"
+
+#: EditExifMetadata/editexifmetadata.py:1014
+#: EditExifMetadata/editexifmetadata.py:993
+#, fuzzy
+msgid "General Data"
+msgstr "Yleiset"
+
+#: EditExifMetadata/editexifmetadata.py:1024
+#: EditExifMetadata/editexifmetadata.py:1003
+#, fuzzy
+msgid "Description: "
+msgstr "Kuvaus:"
+
+#: EditExifMetadata/editexifmetadata.py:1025
+#: EditExifMetadata/editexifmetadata.py:1004
+#, fuzzy
+msgid "Artist: "
+msgstr "Tekijä"
+
+#: EditExifMetadata/editexifmetadata.py:1026
+#: EditExifMetadata/editexifmetadata.py:1005
+#, fuzzy
+msgid "Copyright: "
+msgstr "Tekijänoikeudet"
+
+#: EditExifMetadata/editexifmetadata.py:1039
+#: EditExifMetadata/editexifmetadata.py:1019
+msgid "Date/ Time"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:1053
+#: EditExifMetadata/editexifmetadata.py:1034
+#, fuzzy
+msgid "Original: "
+msgstr "Alkuperäinen aika"
+
+#: EditExifMetadata/editexifmetadata.py:1054
+#: EditExifMetadata/editexifmetadata.py:1035
+#, fuzzy
+msgid "Modified: "
+msgstr "Viimeisin muutos"
+
+#: EditExifMetadata/editexifmetadata.py:1071
+#: EditExifMetadata/editexifmetadata.py:1054
+msgid "Latitude/ Longitude/ Altitude GPS coordinates"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:1085
+#: EditExifMetadata/editexifmetadata.py:1069
+#, fuzzy
+msgid "Latitude :"
+msgstr "Leveysaste:"
+
+#: EditExifMetadata/editexifmetadata.py:1086
+#: EditExifMetadata/editexifmetadata.py:1070
+#, fuzzy
+msgid "Longitude :"
+msgstr "Pituusaste:"
+
+#: EditExifMetadata/editexifmetadata.py:1087
+#: EditExifMetadata/editexifmetadata.py:1071
+#, fuzzy
+msgid "Altitude :"
+msgstr "Leveysaste:"
+
+#: EditExifMetadata/editexifmetadata.py:1139
+#: EditExifMetadata/editexifmetadata.py:1114
+#, fuzzy
+msgid "Bad Date/Time"
+msgstr "Virheellinen päivämäärä"
+
+#: EditExifMetadata/editexifmetadata.py:1147
+#: EditExifMetadata/editexifmetadata.py:1122
+#, fuzzy
+msgid "Invalid latitude (syntax: 18\\u00b09'"
+msgstr "Kelvoton leveysaste (muotoa: 18°9'"
+
+#: EditExifMetadata/editexifmetadata.py:1148
+#: EditExifMetadata/editexifmetadata.py:1123
+msgid "48.21\"S, -18.2412 or -18:9:48.21)"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:1152
+#: EditExifMetadata/editexifmetadata.py:1127
+#, fuzzy
+msgid "Invalid longitude (syntax: 18\\u00b09'"
+msgstr "Kelvoton pituusaste (muotoa: 18°9'"
+
+#: EditExifMetadata/editexifmetadata.py:1153
+#: EditExifMetadata/editexifmetadata.py:1128
+msgid "48.21\"E, -18.2412 or -18:9:48.21)"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:1159
+#: EditExifMetadata/editexifmetadata.py:1136
+msgid ""
+"WARNING!  You are about to completely delete the Exif metadata from this "
+"image?"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:1324
+#: EditExifMetadata/editexifmetadata.py:1333
+#, fuzzy
+msgid "Media Title Update"
+msgstr "Mediasuotimet"
+
+#: EditExifMetadata/editexifmetadata.py:1350
+#: EditExifMetadata/editexifmetadata.py:1357
+#, fuzzy
+msgid "Media Object Date Created"
+msgstr "Yksityisiksi merkityt mediatiedostot"
+
+#: EditExifMetadata/editexifmetadata.py:1422
+msgid "Saving Exif metadata to this image..."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:1469
+#: EditExifMetadata/editexifmetadata.py:1465
+msgid "All Exif metadata has been deleted from this image..."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:1474
+#: EditExifMetadata/editexifmetadata.py:1470
+msgid "There was an error in stripping the Exif metadata from this image..."
+msgstr ""
+
+#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:24
+#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:32
+#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:25
+#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:33
+msgid "Birthdays"
+msgstr "Syntymäpäivät"
+
+#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:25
+#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:26
+msgid "a gramplet that displays the birthdays of the living people"
+msgstr "Gramplet, joka näyttää elävien ihmisten syntymä päivät ja iät"
+
+#: BirthdaysGramplet/BirthdaysGramplet.py:45
+msgid "Ignore birthdays with tag"
+msgstr "Jätä pois syntymäpäivät, joissa on tagi"
+
+#: BirthdaysGramplet/BirthdaysGramplet.py:46
+msgid "Only show birthdays with tag"
+msgstr "Näytä vain syntymäpäivät, joissa on tagi"
+
+#: CheckPlaceTitles/checkplacetitles.gpr.py:28
+#: CheckPlaceTitles/checkplacetitles.gpr.py:29
+msgid "Check Place Titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.gpr.py:29
+#: CheckPlaceTitles/checkplacetitles.gpr.py:30
+msgid "Check place titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:71
+msgid "Check Place title"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:86 ExtractCity/extractcity.py:454
+msgid "Checking Place Titles"
+msgstr "Tarkistetaan paikkojen nimiä"
+
+#: CheckPlaceTitles/checkplacetitles.py:87 ExtractCity/extractcity.py:456
+msgid "Looking for place fields"
+msgstr "Etsitään paikkatietoja"
+
+#: CheckPlaceTitles/checkplacetitles.py:107
+msgid "Differences"
+msgstr "Erot"
+
+#: CheckPlaceTitles/checkplacetitles.py:109
+#: CheckPlaceTitles/checkplacetitles.py:112
+msgid "No need modifications"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:110
+#: CheckPlaceTitles/checkplacetitles.py:113
+msgid "No changes need."
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:185
+#: CheckPlaceTitles/checkplacetitles.py:187
+msgid "Legacy place"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:199
+#: CheckPlaceTitles/checkplacetitles.py:201
+msgid "Modify Place titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:222
+#: CheckPlaceTitles/checkplacetitles.py:224
+msgid "Place titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:1
+#: CheckPlaceTitles/checkplacetitles.glade:56
+msgid "Remove content of place title field if it does not match"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:2
+#: CheckPlaceTitles/checkplacetitles.glade:74
+msgid "Copy content of place title field to a new note."
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:4
+#: CheckPlaceTitles/checkplacetitles.glade:91
+msgid "Attach a tag on selected places."
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:6
+#: CheckPlaceTitles/checkplacetitles.glade:177
+msgid "column"
+msgstr ""
+
+#: UKWebPack.gpr.py:10 UKWebConnectPack/UKWebPack.gpr.py:11
+msgid "UK Web Connect Pack"
+msgstr "UK Web Connect Pack"
+
+#: UKWebPack.gpr.py:11 UKWebConnectPack/UKWebPack.gpr.py:12
+msgid "Collection of Web sites for the UK (requires libwebconnect)"
+msgstr "Nettisivustojen kokoelma UK (vaatii libwebconnectin)"
+
+#: UKWebPack.py:33 UKWebConnectPack/UKWebPack.py:33
+msgid "UK Google"
+msgstr "Google UK"
+
+#: UKWebPack.py:34 UKWebConnectPack/UKWebPack.py:34
+msgid "British, UK, and Ireland"
+msgstr "Englanti, UK, ja Irlanti (RootsWeb's)"
+
+#: UKWebPack.py:35 SVWebconnectPack/SVWebPack.py:34
+msgid "FamilySearch.org"
+msgstr "FamilySearch.org UK"
+
+#: UKWebPack.py:37 UKWebConnectPack/UKWebPack.py:37
+msgid "National Archives"
+msgstr "National Archives UK"
+
+#: UKWebPack.py:38 UKWebConnectPack/UKWebPack.py:38
+msgid "Hathi Trust Digital Library"
+msgstr "Hathi Trust Digital kirjasto"
+
+#: UKWebPack.py:39 UKWebConnectPack/UKWebPack.py:39
+msgid "Open Library"
+msgstr "Open Library UK"
+
+#: DeepConnectionsGramplet.gpr.py:3
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:4
+msgid "Deep Connections Gramplet"
+msgstr "Syväsuhteet Gramplet"
+
+#: DeepConnectionsGramplet.gpr.py:4
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:6
+msgid "Gramplet showing a deep relationship between active and home people"
+msgstr "Gramplet näyttää aktiivi- ja kotihenkilön väliset suhteet syvemmältä"
+
+#: DeepConnectionsGramplet.gpr.py:10
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:13
+msgid "Deep Connections"
+msgstr "Syväsuhteet"
+
+#: DeepConnectionsGramplet.py:65
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:65
+msgid "Pause"
+msgstr "Pysäytä"
+
+#: DeepConnectionsGramplet.py:69 EditExifMetadata/editexifmetadata.py:215
+msgid "Copy"
+msgstr "Kopioi"
+
+#: DeepConnectionsGramplet.py:106
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:107
+msgid "mentioned in note"
+msgstr "mainitussa huomautuksessa"
+
+#: DeepConnectionsGramplet.py:132
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:133
+msgid "Note on Family"
+msgstr "Perheen lisätietoja"
+
+#: DeepConnectionsGramplet.py:142
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:143
+msgid "sibling"
+msgstr "sisarus"
+
+#: DeepConnectionsGramplet.py:150
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:151
+msgid "Note on Parent Family"
+msgstr "Vanhempien perheen lisätietoja"
+
+#: DeepConnectionsGramplet.py:153
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:154
+#, python-format
+msgid "%s (association)"
+msgstr "%s (liitoksen lisätietoja)"
+
+#: DeepConnectionsGramplet.py:157
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:158
+msgid "Note on Person"
+msgstr "Henkilön lisätietoja"
+
+#: DeepConnectionsGramplet.py:187
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:188
+#, python-format
+msgid ""
+"\n"
+"   %s of "
+msgstr ""
+"\n"
+"   %s henkilölle "
+
+#: DeepConnectionsGramplet.py:208
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:209
+msgid "No Active Person set."
+msgstr "Aktiivihenkilöä ei ole asetettu."
+
+#: DeepConnectionsGramplet.py:216
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:217
+msgid "Looking for relationship between\n"
+msgstr ""
+"Etsitään henkilöiden väliset sukulaisuussuhteeet\n"
+" \n"
+
+#: DeepConnectionsGramplet.py:217
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:218
+#, python-format
+msgid "  <b>%s</b> (Home Person) and\n"
+msgstr "  <b>%s</b> (kotihenkilö) ja\n"
+
+#: DeepConnectionsGramplet.py:218
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:219
+#, python-format
+msgid "  <b>%s</b> (Active Person)...\n"
+msgstr "  <b>%s</b> (aktiivihenkilö)...\n"
+
+#: DeepConnectionsGramplet.py:228
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:229
+#, python-format
+msgid ""
+"Found relation #%d: \n"
+"   "
+msgstr ""
+"Löydetyt suhteet #%d: \n"
+"   "
+
+#: DeepConnectionsGramplet.py:238
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:239
+msgid ""
+"Paused.\n"
+"Press Continue to search for additional relations.\n"
+msgstr ""
+"Pysäytetty.\n"
+"Etsi lisää suhteita painamalla Jatka.\n"
+
+#: DeepConnectionsGramplet.py:253
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:254
+#, python-format
+msgid ""
+"\n"
+"Search completed. %d relations found."
+msgstr ""
+"\n"
+"Haku valmis. %d suhdetta löytynyt."
+
+#: ImportMerge/importmerge.glade:8
+msgid ""
+"A '*' indicates that the action was automarked, a '?' indicates a conflict "
+"between automarks."
+msgstr ""
+"Merkki '*' osoittaa, että toiminta on merkitty automaattisesti. '?' Osoittaa "
+"ristiriitaa automaattisessa merkinnässä."
+
+# Lisää tuonti
+#: ImportMerge/importmerge.py:110
+msgid "Add Import"
+msgstr "Lisätään tuonnista"
+
+#: ImportMerge/importmerge.glade:481
+msgid "Automark Families"
+msgstr "Automaattisesti merkityt perheet"
+
+#: ImportMerge/importmerge.glade:498
+msgid "Automark Parent Families"
+msgstr "Automaattisesti merkattujen vanhempien perheet"
+
+#: ImportMerge/importmerge.gpr.py:33
+msgid ""
+"Compares a Gramps XML database with the current one, and allows merging of "
+"the differences."
+msgstr ""
+"Vertaa Gramps XML -tietokantaa nykyiseen ja mahdollistaa erojen yhdistämisen."
+
+#: ImportMerge/importmerge.glade:227
+msgid ""
+"Data item details, showing the current treeitem, imported tree item, and "
+"result (when chosen)."
+msgstr ""
+"Tietoja kohteen yksityiskohdista, joka näyttää nykyisen sukupuun kohteen, "
+"tuodun sukupuun kohteen ja tuloksen (kun se on valittu)."
+
+#: ImportMerge/importmerge.py:108
+msgid "Delete original"
+msgstr "Poista alkuperäinen"
+
+#: ImportMerge/importmerge.py:93
+msgid "Different"
+msgstr "Erilainen"
+
+#: BirthOrder/birthorder.glade:232
+msgid "Done"
+msgstr "Valmis"
+
+#: ImportMerge/importmerge.glade:437
+msgid "Edit Import"
+msgstr "Muokkaa tuontia"
+
+#: ImportMerge/importmerge.py:109 ImportMerge/importmerge.glade:334
+msgid "Ignore"
+msgstr "Ohita"
+
+#: ImportMerge/importmerge.py:338
+msgid "Import Failure"
+msgstr "Tuonti epäonnistui"
+
+#: ImportMerge/importmerge.py:710
+msgid "Import and Merge"
+msgstr "Tuo ja yhdistä"
+
+#: ImportMerge/importmerge.gpr.py:31 ImportMerge/importmerge.py:328
+#: ImportMerge/importmerge.py:707
+msgid "Import and Merge tool"
+msgstr "Tuo ja yhdistä työkalu"
+
+#: ImportMerge/importmerge.py:80
+msgid "Import and merge a Gramps XML"
+msgstr "Tuo ja yhdistä Gramps XML"
+
+#: ImportMerge/importmerge.glade:39
+msgid "Import file"
+msgstr "Tuo tiedosto"
+
+#: ImportMerge/importmerge.py:482 ImportMerge/importmerge.py:961
+#: ImportMerge/importmerge.py:982
+msgid "Imported"
+msgstr "Tuotu"
+
+# Säilytä alkuperäinen
+#: ImportMerge/importmerge.py:114
+msgid "Keep original"
+msgstr "Säilytetään alkuperäinen"
+
+#: ImportMerge/importmerge.glade:422
+msgid "Merge Import"
+msgstr "Yhdistä tuonnista"
+
+#: ImportMerge/importmerge.glade:392
+msgid "Merge Original"
+msgstr "Yhdistä alkuperäisestä"
+
+# Yhdistä tuontiin
+#: ImportMerge/importmerge.py:112
+msgid "Merge into import"
+msgstr "Yhdistetään tuonnista"
+
+# Yhdistä alkuperäiseen
+#: ImportMerge/importmerge.py:111
+msgid "Merge into original"
+msgstr "Ydistetään alkuperäisestä"
+
+#: ImportMerge/importmerge.py:89
+msgid "Missing"
+msgstr "Puuttuva"
+
+#: ImportMerge/importmerge.glade:180
+msgid "Object Name/Description"
+msgstr "Kohteen nimi/kuvaus"
+
+#: ImportMerge/importmerge.glade:248
+msgid "Object and item"
+msgstr "Kohde ja nimike"
+
+#: ImportMerge/importmerge.py:481 ImportMerge/importmerge.py:960
+#: ImportMerge/importmerge.py:981
+msgid "Original"
+msgstr "Alkuperäinen"
+
+#: EventDescriptionEditor/EventDescriptionEditor.py:142
+msgid "Replace"
+msgstr "Korvaa"
+
+#: ImportMerge/importmerge.py:113
+msgid "Replace with import"
+msgstr "Korvaa tuonnilla"
+
+#: ImportMerge/importmerge.py:484 ImportMerge/importmerge.py:963
+#: ImportMerge/importmerge.py:984
+msgid "Result  "
+msgstr "Tulos "
+
+#: ImportMerge/importmerge.glade:124
+msgid "Select the difference you wish to examine."
+msgstr "Valitse ero, jota haluat tarkastella."
+
+#: ImportMerge/importmerge.glade:464
+msgid "Show more details"
+msgstr "Näytä lisää tietoja"
+
+#: ImportMerge/importmerge.py:128
+msgid ""
+"The import data will entirely replace the data in your tree.  Any referenced "
+"items were also marked for replacement or removal."
+msgstr ""
+"Tuontitiedot korvaavat kokonaan sukupuun tiedot. Kaikki kohteet on merkitty "
+"vaihdettavaksi tai poistettavaksi."
+
+#: ImportMerge/importmerge.glade:353
+msgid "This button will add the imported data as a new object to your tree."
+msgstr "Painike lisää tuodut tiedot uusiksi kohteiksi sukupuuhusi."
+
+#: ImportMerge/importmerge.glade:368
+msgid ""
+"This button will bring up a dialog allowing you to finalize your changes, or "
+"abandon them."
+msgstr ""
+"Painikkeella avataan valintaikkunan, jonka avulla voit viimeistellä tai "
+"hylätä muutokset."
+
+#: ImportMerge/importmerge.glade:441
+msgid ""
+"This button will edit the imported data.  The data will still need to be "
+"merged, added or replaced."
+msgstr ""
+"Painikkeella muokataan tuotuja tietoja. Tiedot on vielä yhdistettävä, "
+"lisättävä tai vaihdettava."
+
+#: ImportMerge/importmerge.glade:338
+msgid "This button will ignore the difference, no changes to your tree."
+msgstr "Painikkeella ohitetaan erot, ei muutoksia sukupuuhusi."
+
+#: ImportMerge/importmerge.glade:426
+msgid ""
+"This button will merge the imported data into your tree with the imported "
+"data as a base."
+msgstr "Painike yhdistää tuodut tiedot sukupuuhun, pohjana tuodut tiedot."
+
+#: ImportMerge/importmerge.glade:396
+msgid ""
+"This button will merge the imported data into your tree with your tree data "
+"as a base."
+msgstr "Painike yhdistää tuodut tiedot sukupuuhun, pohjana sukupuusi tiedot."
+
+#: ImportMerge/importmerge.glade:411
+msgid "This button will replace your tree data with the imported data."
+msgstr "Painikkeella korvataan sukupuusi tiedot tuodulla tiedolla."
+
+#: ImportMerge/importmerge.py:122
+msgid ""
+"This item will be added to your tree.  Any referenced items were also marked "
+"for adding."
+msgstr ""
+"Tämä kohde lisätään puuhusi. Kaikki kohteet on merkitty myös lisättäväksi."
+
+#: ImportMerge/importmerge.py:118
+msgid ""
+"This item will be deleted from your tree.  Any referenced items were also "
+"marked for deletion."
+msgstr ""
+"Tämä kohde poistetaan sukupuusta. Kaikki merkatut kohteet on myös merkitty "
+"poistettavaksi."
+
+#: ImportMerge/importmerge.py:124
+msgid ""
+"This item will be merged, saving data from your tree.  Any referenced items "
+"were also marked for merging or adding."
+msgstr ""
+"Tämä kohta yhdistetään tallentamalla tietoja sukupuustasi. Kaikki viitatut "
+"kohteet merkittiin myös yhdistämiseen tai lisäämiseen."
+
+#: ImportMerge/importmerge.py:126
+msgid ""
+"This item will be merged, using data from the import.  Any referenced items "
+"were also marked for merging or adding."
+msgstr ""
+"Tämä merkintä yhdistetään, käyttäen tuotuja tietoja. Kaikki kohteet "
+"merkittiin myös yhdistämiseksi tai lisäämiseksi."
+
+#: ImportMerge/importmerge.py:120
+msgid ""
+"This item will not be changed in your tree.  Any referenced items were also "
+"marked for Ignore."
+msgstr ""
+"Tätä kohtaa ei muuteta puussa. Kaikki viittaamattomat kohteet merkittiin "
+"myös ohitettavaksi."
+
+#: ImportMerge/importmerge.py:130
+msgid ""
+"This item will not be changed in your tree.  Any referenced items were also "
+"marked to keep."
+msgstr ""
+"Tätä kohtaa sukupuussa ei muuteta. Kaikki viitatut kohteet oli myös merkitty "
+"pidettäväksi."
+
+#: ImportMerge/importmerge.glade:349
+msgid "Unmark"
+msgstr "Poista merkintä"
+
+#: ImportMerge/importmerge.py:115 ImportMerge/importmerge.glade:293
+msgid ""
+"Use buttons below to set the 'Action' for each difference.  No changes will "
+"be made to your tree until you press 'Done' and confirm."
+msgstr ""
+"Käytä alla olevia painikkeita asettaaksesi \"Toiminto\" jokaiselle erolle. "
+"Puuhun ei tehdä muutoksia, ennen kuin painat Valmis ja vahvistat."
+
+#: ImportMerge/importmerge.py:406
+msgid "Your Tree and import are the same."
+msgstr "Puu ja tuonti ovat samat."
+
+# tuotu
+#: ImportMerge/importmerge.py:458 ImportMerge/importmerge.py:466
+#: ImportMerge/importmerge.py:474
+msgid "imported "
+msgstr "tuodaan "
+
+# sukupuusi
+#: ImportMerge/importmerge.py:451 ImportMerge/importmerge.py:460
+#: ImportMerge/importmerge.py:468 ImportMerge/importmerge.py:476
+msgid "your tree "
+msgstr "sukupuun "
+
+#: PhotoTaggingGramplet.gpr.py:3 PhotoTaggingGramplet.gpr.py:11
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:29
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:38
+msgid "Photo Tagging"
+msgstr "Valokuvien merkintä"
+
+#: PhotoTaggingGramplet.gpr.py:4
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:30
+msgid "Gramplet for tagging people in photos"
+msgstr "Gramplet henkilöiden merkintään valokuvissa"
+
+#: PhotoTaggingGramplet.py:120 PhotoTaggingGramplet/PhotoTaggingGramplet.py:134
+msgid "Replace existing references to the person being assigned without asking"
+msgstr "Korvaa nykyiset viittaukset määrittämääsi henkilöön kysymättä"
+
+#: PhotoTaggingGramplet.py:127 PhotoTaggingGramplet/PhotoTaggingGramplet.py:141
+msgid "Face detection"
+msgstr "Kasvojentunnistus"
+
+#: PhotoTaggingGramplet.py:130 PhotoTaggingGramplet/PhotoTaggingGramplet.py:144
+msgid "Minimum face width (px)"
+msgstr "Kasvojen minimileveys (px)"
+
+#: PhotoTaggingGramplet.py:132 PhotoTaggingGramplet/PhotoTaggingGramplet.py:146
+msgid "Minimum face height (px)"
+msgstr "Kasvojen minimikorkeus (px)"
+
+#: PhotoTaggingGramplet.py:135 PhotoTaggingGramplet/PhotoTaggingGramplet.py:149
+msgid "Detect faces inside existing boxes"
+msgstr "Tunnista kasvot nykyisissä laatikoissa"
+
+#: PhotoTaggingGramplet.py:137 PhotoTaggingGramplet/PhotoTaggingGramplet.py:151
+msgid "Sensitivity (1 min .. 20 max)"
+msgstr "Herkkyys (1 min .. 20 max)"
+
+#: PhotoTaggingGramplet.py:272 PhotoTaggingGramplet/PhotoTaggingGramplet.py:291
+msgid "Add Person"
+msgstr "Lisää henkilö"
+
+#: PhotoTaggingGramplet.py:273 PhotoTaggingGramplet/PhotoTaggingGramplet.py:292
+msgid "Clear Reference"
+msgstr "Tyhjennä viittaus"
+
+#: PhotoTaggingGramplet.py:274 PhotoTaggingGramplet/PhotoTaggingGramplet.py:293
+msgid "Remove Selection"
+msgstr "Poista valinta"
+
+#: PhotoTaggingGramplet.py:275 PhotoTaggingGramplet/PhotoTaggingGramplet.py:294
+msgid "Edit referenced Person"
+msgstr "Muokkaa viitattua henkilöä"
+
+#: PhotoTaggingGramplet.py:276 PhotoTaggingGramplet/PhotoTaggingGramplet.py:295
+msgid "Zoom In"
+msgstr "Lähennä"
+
+#: PhotoTaggingGramplet.py:277 PhotoTaggingGramplet/PhotoTaggingGramplet.py:296
+msgid "Zoom Out"
+msgstr "Loitonna"
+
+#: PhotoTaggingGramplet.py:280 PhotoTaggingGramplet/PhotoTaggingGramplet.py:299
+msgid "Detect faces"
+msgstr "Tunnista kasvot"
+
+#: PhotoTaggingGramplet.py:282 PhotoTaggingGramplet/PhotoTaggingGramplet.py:301
+msgid "Detect faces (OpenCV module required)"
+msgstr "Tunnista kasvot (OpenCV-moduuli vaaditaan)"
+
+#: PhotoTaggingGramplet.py:450 PhotoTaggingGramplet/PhotoTaggingGramplet.py:495
+msgid "Set as active person"
+msgstr "Aseta aktiiviseksi henkilöksi"
+
+#: PhotoTaggingGramplet.py:453 RelID/relation_tab.py:97
+msgid "_Select"
+msgstr "_Valitse"
+
+#: PhotoTaggingGramplet.py:665 PhotoTaggingGramplet/PhotoTaggingGramplet.py:779
+#, python-brace-format
+msgid "Replace to {0}"
+msgstr "Vaihda henkilöksi {0}"
+
+#: PhotoTaggingGramplet.py:764 PhotoTaggingGramplet/PhotoTaggingGramplet.py:880
+msgid "Detecting faces..."
+msgstr "Kasvojentunnistus..."
+
+#: PhotoTaggingGramplet.py:789 PhotoTaggingGramplet/PhotoTaggingGramplet.py:905
+msgid "Detection finished"
+msgstr "Kasvojentunnistus valmis"
+
+#: PhotoTaggingGramplet.py:839 PhotoTaggingGramplet/PhotoTaggingGramplet.py:955
+#, python-brace-format
+msgid "Another region of this image is associated with {name}. Remove it?"
+msgstr "Tämän kuvan alue liittyy kuvaan {name}. Poistetaanko se?"
+
+#: PhotoTaggingGramplet.py:842 PhotoTaggingGramplet/PhotoTaggingGramplet.py:958
+#, python-brace-format
+msgid ""
+"{count} other regions of this image are associated with {name}. Remove them?"
+msgstr "{count} muun kuvan alueet liittyvät kuvaan {name}. Poistetaanko ne?"
+
+#: RemoveTagTool/RemoveTagTool.gpr.py:24 RemoveTagTool/RemoveTagTool.py:186
+#: RemoveTagTool/RemoveTagTool.py:246 RemoveTagTool/RemoveTagTool.gpr.py:25
+msgid "Add/Remove Tag Tool"
+msgstr "Lisää/poista tagi työkalu"
+
+#: RemoveTagTool/RemoveTagTool.gpr.py:25 RemoveTagTool/RemoveTagTool.gpr.py:26
+msgid "Add or remove a tag from groups of people, events, etc."
+msgstr "Lisää tai poista tagi henkilöryhmistä, tapahtumista jne."
+
+#: RemoveTagTool/RemoveTagTool.py:58
+msgid "The Tool requires at least one tag to execute."
+msgstr "Työkalun suorittaminen vaatii vähintään yhden tagin."
+
+#: RemoveTagTool/RemoveTagTool.py:59 RemoveTagTool/RemoveTagTool.py:61
+msgid "ERROR"
+msgstr "VIRHE"
+
+#: RemoveTagTool/RemoveTagTool.py:86
+msgid "Add/Remove"
+msgstr "Lisää/poista"
+
+#: RemoveTagTool/RemoveTagTool.py:87
+msgid "Add or remove tags from objects."
+msgstr "Lisää tai poista tageja objekteista."
+
+#: RemoveTagTool/RemoveTagTool.py:88
+msgid "Add Tags"
+msgstr "Lisää tageja"
+
+#: RemoveTagTool/RemoveTagTool.py:88
+msgid "Remove Tags"
+msgstr "Poista tageja"
+
+#: RemoveTagTool/RemoveTagTool.py:96
+msgid "Choose a category."
+msgstr "Valitse kategoria."
+
+#: RemoveTagTool/RemoveTagTool.py:103
+msgid "Choose Tag"
+msgstr "Valitse tagi"
+
+#: RemoveTagTool/RemoveTagTool.py:104
+msgid "Choose a tag to remove."
+msgstr "Valitse poistettava tagi."
+
+#: RemoveTagTool/RemoveTagTool.py:140
+msgid "Filter options"
+msgstr "Suodinvalinnat"
+
+#: RemoveTagTool/RemoveTagTool.py:151
+#, python-format
+msgid "All %s"
+msgstr "Kaikki %s"
+
+#: RemoveTagTool/RemoveTagTool.py:198
+msgid ""
+"Unable to run the tool. Please check if your database contains tags, filters "
+"and objects."
+msgstr ""
+"Työkalua ei voi käyttää. Tarkista, sisältääkö tietokantasi tageja, "
+"suodattimia ja objekteja."
+
+#: RemoveTagTool/RemoveTagTool.py:200 RemoveTagTool/RemoveTagTool.py:235
+msgid "WARNING"
+msgstr "VAROITUS"
+
+#: RemoveTagTool/RemoveTagTool.py:234
+#, python-format
+msgid "No %s objects were found in database."
+msgstr "Tietokannasta ei löytynyt %s kohteita."
+
+#: RemoveTagTool/RemoveTagTool.py:249
+msgid "Process tags..."
+msgstr "Käsittelee tageja..."
+
+#: RemoveTagTool/RemoveTagTool.py:266
+msgid "added"
+msgstr "lisätty"
+
+#: RemoveTagTool/RemoveTagTool.py:268
+msgid "removed"
+msgstr "poistettu"
+
+#: RemoveTagTool/RemoveTagTool.py:269
+msgid "Tag '{}' was {} to {} {} objects.\n"
+msgstr "Tageja '{}' on {} - {} {} kohteessa.\n"
+
+#: RemoveTagTool/RemoveTagTool.py:271
+#: EventDescriptionEditor/EventDescriptionEditor.py:105
+msgid "INFO"
+msgstr "INFO"
+
+#: TimelineQuickview.gpr.py:10 TimelineQuickview/TimelineQuickview.gpr.py:11
+msgid "Display a person's events on a timeline"
+msgstr "Näytä henkilön tapahtumat aikajanalla"
+
+#: TimelineQuickview.py:48 TimelineQuickview/TimelineQuickview.py:48
+msgid "Inlaw Parents"
+msgstr "Appivanhemmat"
+
+#: TimelineQuickview.py:51 TimelineQuickview/TimelineQuickview.py:51
+msgid "Grandparents"
+msgstr "Isovanhemmat"
+
+#: TimelineQuickview.py:53 TimelineQuickview/TimelineQuickview.py:53
+msgid "Inlaw Grandparents"
+msgstr "Puolison vanhemmat"
+
+#: TimelineQuickview.py:56 TimelineQuickview/TimelineQuickview.py:56
+msgid "Great grandparents"
+msgstr "Isoisovanhemmat"
+
+#: TimelineQuickview.py:58 TimelineQuickview/TimelineQuickview.py:58
+msgid "Inlaw Great grandparents"
+msgstr "Puolison isoisovanhemmat"
+
+#: TimelineQuickview.py:61 TimelineQuickview/TimelineQuickview.py:61
+msgid "Great, "
+msgstr "Iso, "
+
+#: TimelineQuickview.py:61 TimelineQuickview.py:63
+#: TimelineQuickview/TimelineQuickview.py:61
+#: TimelineQuickview/TimelineQuickview.py:63
+msgid "great, "
+msgstr "iso, "
+
+#: TimelineQuickview.py:61 TimelineQuickview.py:63
+#: TimelineQuickview/TimelineQuickview.py:61
+#: TimelineQuickview/TimelineQuickview.py:63
+msgid "great grandparents"
+msgstr "iso isovanhemmat"
+
+#: TimelineQuickview.py:63 TimelineQuickview/TimelineQuickview.py:63
+msgid "Inlaw Great, "
+msgstr "Puolison iso, "
+
+#: TimelineQuickview.py:102 TimelineQuickview/TimelineQuickview.py:102
+msgid "Partner's spouse"
+msgstr "Kumppanin puoliso"
+
+#: TimelineQuickview.py:156 TimelineQuickview/TimelineQuickview.py:156
+#, python-format
+msgid "Timeline for %s"
+msgstr "Aikajana henkilölle %s"
+
+#: TimelineQuickview.py:163 TimelineQuickview/TimelineQuickview.py:163
+msgid "People involved"
+msgstr "Mukana olevat henkilöt"
+
+#: TimelineQuickview.py:186 Query/QueryQuickview.py:426
+msgid "Today"
+msgstr "Tänään"
+
+#: AvatarGenerator/AvatarGenerator.gpr.py:23
+#: AvatarGenerator/AvatarGenerator.gpr.py:24
+msgid "Avatar Generator Tool"
+msgstr "Avatar työkalu"
+
+#: AvatarGenerator/AvatarGenerator.gpr.py:24
+#: AvatarGenerator/AvatarGenerator.gpr.py:25
+msgid "A tool to add avatar pictures to your family tree"
+msgstr "Työkalu avatar kuvien käsittelyyn sukupuuussa"
+
+#: AvatarGenerator/AvatarGenerator.py:59
+msgid "single image mode"
+msgstr "yhden kuvan tila"
+
+#: AvatarGenerator/AvatarGenerator.py:66
+msgid "Choose how many images you'd like to use."
+msgstr "Valitse kuinka monta kuvaa haluat käyttää."
+
+#: AvatarGenerator/AvatarGenerator.py:74
+msgid "Image for people with unknown gender."
+msgstr "Kuva henkilöille, joiden sukupuoli on tuntematon."
+
+#: AvatarGenerator/AvatarGenerator.py:78
+msgid "Image for males."
+msgstr "Kuva miehille."
+
+#: AvatarGenerator/AvatarGenerator.py:82
+msgid "Image for females"
+msgstr "Kuva naisille"
+
+#: AvatarGenerator/AvatarGenerator.py:95
+msgid "Remove images from people"
+msgstr "Poista kuvia henkilöiltä"
+
+#: AvatarGenerator/AvatarGenerator.py:96
+msgid "Remove selected image(s)."
+msgstr "Poista valitut kuvat."
+
+#: AvatarGenerator/AvatarGenerator.py:134
+#: AvatarGenerator/AvatarGenerator.py:183
+#: AvatarGenerator/AvatarGenerator.py:257
+msgid "Avatar Generator"
+msgstr "Avatar lisääjä"
+
+#: AvatarGenerator/AvatarGenerator.py:186
+msgid "Remove avatar images..."
+msgstr "Poista avatar kuvat..."
+
+#: AvatarGenerator/AvatarGenerator.py:211
+msgid "No media was removed."
+msgstr "Mediaa ei poistettu."
+
+#: AvatarGenerator/AvatarGenerator.py:213
+msgid "{} media references were removed from {} persons."
+msgstr "{} mediaviittausta poistettiin {} henkilöltä."
+
+#: AvatarGenerator/AvatarGenerator.py:216
+msgid ""
+"\n"
+"{} HandleError occured, but were ignored."
+msgstr ""
+"\n"
+"{} Tajpahtui käsittelyvirhe, mutta ne jätettiin huomiotta."
+
+#: AvatarGenerator/AvatarGenerator.py:263
+#: AvatarGenerator/AvatarGenerator.py:280
+msgid "Add avatar images..."
+msgstr "Lisää avatar kuvia..."
+
+#: AvatarGenerator/AvatarGenerator.py:314
+msgid "{} avatar images were sucessfully added."
+msgstr "{} avatar kuvaa lisättiin onnistuneesti."
+
+#: AvatarGenerator/AvatarGenerator.py:318
+msgid "There was no avatar image to add. "
+msgstr "Avatar kuvaa ei ollut lisättäväksi "
+
+#: AvatarGenerator/AvatarGenerator.py:319
+msgid "All persons already had one."
+msgstr "Kaikilla henkilöillä oli jo sellainen."
+
+#: NumberOfDescendantsQuickview.gpr.py:3
+#: LifeLineChartView/_dummy_translation_string_po.py:115
+msgid "Number of descendants"
+msgstr "Jälkeläisten määrä"
+
+#: NumberOfDescendantsQuickview.gpr.py:4
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:5
+msgid "Shows the number of descendants of the current person"
+msgstr "Näyttää nykyisen henkilön jälkeläisten lukumäärän"
+
+#: NumberOfDescendantsQuickview.py:62
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:62
+#, python-format
+msgid "Number of %s's descendants"
+msgstr "Henkilön %s jälkeläisten lukumäärä"
+
+#: NumberOfDescendantsQuickview.py:87 NumberOfDescendantsQuickview.py:94
+#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:54
+msgid "Generation"
+msgstr "Sukupolvi"
+
+#: NumberOfDescendantsQuickview.py:89
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:89
+msgid "Seen"
+msgstr "Nähnyt"
+
+#: NumberOfDescendantsQuickview.py:90
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:90
+msgid "Outlived"
+msgstr "Kuollut"
+
+#: NumberOfDescendantsQuickview.py:91 NumberOfDescendantsQuickview.py:96
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:91
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:96
+msgid "Now alive"
+msgstr "Elossa"
+
+#: NumberOfDescendantsQuickview.py:122
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:122
+#, python-format
+msgid "Seen = number of descendants whose birth %s has lived to see"
+msgstr "Nähnyt = jälkeläisten määrä, joiden syntymän %s on eläessään nähnyt"
+
+#: NumberOfDescendantsQuickview.py:124
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:124
+#, python-format
+msgid "Outlived = number of descendants who died while %s was still alive"
+msgstr ""
+"Kuollut = jälkeläisten lukumäärä, jotka kuolivat, kun %s on ollut vielä "
+"elossa"
+
+#: PlaceTool/PlaceTool.gpr.py:3 PlaceTool/PlaceTool.gpr.py:14
+#: PlaceUpdate/PlaceUpdate.gpr.py:4 PlaceUpdate/PlaceUpdate.gpr.py:15
+msgid "PlaceUpdate"
+msgstr "Paikkatyökalu"
+
+#: PlaceTool/PlaceTool.gpr.py:4 PlaceUpdate/PlaceUpdate.gpr.py:5
+msgid "Gramplet to manipulate multiple places"
+msgstr "Gramplet, joka käsittelee useita paikkoja kerrallaan"
+
+#: PlaceTool/PlaceTool.py:57 PlaceUpdate/PlaceUpdate.py:56
+msgid "Set properties for multiple places"
+msgstr "Aseta usean paikan ominaisuuksia"
+
+#: PlaceTool/PlaceTool.py:93 PlaceUpdate/PlaceUpdate.py:96
+msgid ""
+"This gramplet allows setting properties for multiple places at the same time"
+msgstr ""
+"Tällä Grampletilla voi asettaa ominaisuuksia monelle paikalle kerrallaan"
+
+#: PlaceTool/PlaceTool.py:111 PlaceUpdate/PlaceUpdate.py:111
+msgid "New enclosing place"
+msgstr "Uusi ympäröivä paikka:"
+
+#: PlaceTool/PlaceTool.py:134 PlaceUpdate/PlaceUpdate.py:159
+msgid "Clear original enclosing places"
+msgstr "Poista aiemmat ympäröivät paikat"
+
+#: PlaceTool/PlaceTool.py:137 PlaceUpdate/PlaceUpdate.py:162
+msgid "Clear tags"
+msgstr "Poista aiemmat tagit"
+
+#: PlaceTool/PlaceTool.py:140 PlaceUpdate/PlaceUpdate.py:165
+msgid "Generate hierarchy"
+msgstr "Generoi paikkahierarkia"
+
+#: PlaceTool/PlaceTool.py:146 PlaceUpdate/PlaceUpdate.py:171
+msgid "use spaces as separator"
+msgstr "välilyönti erotinmerkkinä"
+
+#: PlaceTool/PlaceTool.py:150 PlaceUpdate/PlaceUpdate.py:175
+msgid "reverse hierarchy"
+msgstr "käänteinen hierarkia"
+
+#: PlaceTool/PlaceTool.py:156 PlaceUpdate/PlaceUpdate.py:181
+msgid "Replace text"
+msgstr "Korvaa teksti"
+
+#: PlaceTool/PlaceTool.py:159 PlaceUpdate/PlaceUpdate.py:184
+msgid "Use regex"
+msgstr "Käytä säännöllisiä lausekkeita"
+
+#: PlaceTool/PlaceTool.py:169 PlaceUpdate/PlaceUpdate.py:193
+msgid "Old text:"
+msgstr "Korvattava teksti:"
+
+#: PlaceTool/PlaceTool.py:174 PlaceUpdate/PlaceUpdate.py:197
+msgid "New text:"
+msgstr "Uusi teksti:"
+
+#: PlaceTool/PlaceTool.py:186 PlaceUpdate/PlaceUpdate.py:209
+msgid "Clear selections"
+msgstr "Poista valinnat"
+
+#: PlaceTool/PlaceTool.py:190 PlaceUpdate/PlaceUpdate.py:213
+msgid "Apply to selected places"
+msgstr "Suorita valituille paikoilla"
+
+#: PlaceTool/PlaceTool.py:231 PlaceUpdate/PlaceUpdate.py:266
+msgid "Setting place properties"
+msgstr "Paikkojen ominaisuuksien asettaminen"
+
+#: PlaceTool/PlaceTool.py:272 PlaceUpdate/PlaceUpdate.py:304
+msgid "Regex operation failed: {}"
+msgstr ""
+
+#: PlaceUpdate/PlaceUpdate.py:119
+msgid "Timespan:"
+msgstr "Aikaväli:"
+
+#: GedcomExtensions.gpr.py:31 GedcomExtensions/GedcomExtensions.gpr.py:32
+msgid "Export GEDCOM Extensions (GED2)"
+msgstr "Laajennettu GEDCOM vienti (GED2)"
+
+#: GedcomExtensions.gpr.py:32 GedcomExtensions/GedcomExtensions.gpr.py:33
+msgid "GEDCOM Extensions (GED2)"
+msgstr "GEDCOM Laajennukset (GED2)"
+
+#: GedcomExtensions.gpr.py:33 GedcomExtensions/GedcomExtensions.gpr.py:34
+msgid "Extensions to the common GEDCOM format."
+msgstr "Laajennukset yleiseen GEDCOM muotoon."
+
+#: GedcomExtensions.gpr.py:40 GedcomExtensions/GedcomExtensions.gpr.py:42
+msgid "GEDCOM Extensions options"
+msgstr "GEDCOM laajennusten valinnat"
+
+#: GedcomExtensions.py:121 GedcomExtensions/GedcomExtensions.py:197
+msgid "Include witnesses"
+msgstr "Lisää todistajat"
+
+#: GedcomExtensions.py:122 RepositoriesReport/RepositoriesReportAlt.py:459
+msgid "Include media"
+msgstr "Lisää media"
+
+#: GedcomExtensions.py:154 GedcomExtensions/GedcomExtensions.py:261
+msgid "Export failed"
+msgstr "Vienti epäonnistui"
+
+#: GedcomExtensions/GedcomExtensions.py:178
+#: GedcomExtensions/GedcomExtensions.py:203
+#: GedcomExtensions/GedcomExtensions.py:210
+msgid "Don't change"
+msgstr "Älä muuta"
+
+#: GedcomExtensions/GedcomExtensions.py:179
+#: GedcomExtensions/GedcomExtensions.py:204
+msgid "Add Patronymic name after Given name"
+msgstr "Lisää Isännimi Etunimen jälkeen"
+
+#: GedcomExtensions/GedcomExtensions.py:180
+#: GedcomExtensions/GedcomExtensions.py:205
+msgid "Ignore Patronymic name"
+msgstr "Ohita Isännimi"
+
+#: GedcomExtensions/GedcomExtensions.py
+#: GedcomExtensions/GedcomExtensions.py:201
+msgid "Patronymic names:"
+msgstr "Isännimet:"
+
+#: GedcomExtensions/GedcomExtensions.py:208
+msgid "Type of surname:"
+msgstr "Sukunimityyppi:"
+
+#: TimelinePedigreeView.gpr.py:44
+#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:33
+#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:46
+msgid "Timeline Pedigree"
+msgstr "Aikajana sukupuu"
+
+#: TimelinePedigreeView.gpr.py:45 Form/form_us.xml.h:2085
+#: Form/form_us.xml.h:2122 Form/form_us.xml.h:2160 Form/form_us.xml.h:2198
+msgid "Ancestry"
+msgstr "Esivanhemmat"
+
+#: TimelinePedigreeView.gpr.py:46
+#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:36
+msgid ""
+"The view shows a timeline pedigree with ancestors and descendants of the "
+"selected person"
+msgstr ""
+"Näkymä näyttää valitun henkilön esivanhempien ja jälkeläisten sukupuun "
+"aikajanalla"
+
+#: TimelinePedigreeView.py:79 TimelinePedigreeView/TimelinePedigreeView.py:82
+msgid "short for born|b."
+msgstr "s."
+
+#: TimelinePedigreeView.py:80 TimelinePedigreeView/TimelinePedigreeView.py:83
+msgid "short for died|d."
+msgstr "k."
+
+#: TimelinePedigreeView.py:81 TimelinePedigreeView/TimelinePedigreeView.py:84
+msgid "short for baptized|bap."
+msgstr "kast."
+
+#: TimelinePedigreeView.py:82 TimelinePedigreeView/TimelinePedigreeView.py:85
+msgid "short for christened|chr."
+msgstr "rist."
+
+#: TimelinePedigreeView.py:83 TimelinePedigreeView/TimelinePedigreeView.py:86
+msgid "short for buried|bur."
+msgstr "haud."
+
+#: TimelinePedigreeView.py:84 TimelinePedigreeView/TimelinePedigreeView.py:87
+msgid "short for cremated|crem."
+msgstr "tuhk."
+
+#: TimelinePedigreeView.py:334 TimelinePedigreeView/TimelinePedigreeView.py:339
+msgid "Timeline pedigree"
+msgstr "Aikajana sukupuu"
+
+#: TimelinePedigreeView.py:515 ../gramps/plugins/lib/libpersonview.py:275
+#: ../gramps/plugins/view/pedigreeview.py:724
+#: ../gramps/plugins/view/relview.py:411
+msgid "Person Filter Editor"
+msgstr "Henkilösuodinmuokkain"
+
+#: TimelinePedigreeView.py:1415
+#: TimelinePedigreeView/TimelinePedigreeView.py:1437
+msgid "Order by timeline"
+msgstr "Järjestys aikajanalla"
+
+#: TimelinePedigreeView.py:1417
+#: TimelinePedigreeView/TimelinePedigreeView.py:1439
+msgid "Show lifespan"
+msgstr "Näytä elinkaari"
+
+#: TimelinePedigreeView.py:1443 FamilyTree/FamilyTree.py:1051
+msgid "Descendant Generations"
+msgstr "Jälkeläisten sukupolvet"
+
+#: TimelinePedigreeView.py:1448 TimelinePedigreeView.py:1464
+#: TimelinePedigreeView/TimelinePedigreeView.py:1470
+#: TimelinePedigreeView/TimelinePedigreeView.py:1486
+#, python-format
+msgid "%d generation"
+msgid_plural "%d generations"
+msgstr[0] "%d sukupolvi"
+msgstr[1] "%d sukupolvea"
+
+#: TimelinePedigreeView.py:1459 FamilyTree/FamilyTree.py:1047
+msgid "Ancestor Generations"
+msgstr "Esivanhempien sukupolvet"
+
+#: TimelinePedigreeView.py:1483
+#: TimelinePedigreeView/TimelinePedigreeView.py:1505
+msgid "About Timeline Pedigree View"
+msgstr "Tietoja Aikajana sukupuu näkymästä"
+
+#: GraphView/avatars.py:60
+msgid "Dark (default)"
+msgstr "Tumma (oletus)"
+
+#: GraphView/avatars.py:61
+msgid "Light"
+msgstr "Vaalea"
+
+#: GraphView/avatars.py:62
+msgid "Cartoon"
+msgstr "Väripiirros"
+
+#: GraphView/graphview.gpr.py:34 GraphView/graphview.py:183
+#: GraphView/graphview.gpr.py:4 GraphView/graphview.gpr.py:14
+#: GraphView/graphview.py:189
+msgid "Graph View"
+msgstr "Kaavionäkymä"
+
+#: GraphView/graphview.gpr.py:36 GraphView/graphview.gpr.py:6
+msgid "Dynamic and interactive graph of relations"
+msgstr "Dynaaminen ja vuorovaikutteinen suhteiden kuvaaja"
+
+#: GraphView/graphview.py:714 GraphView/graphview.py:757
+msgid "Show avatars"
+msgstr "Näytä hahmot"
+
+#: GraphView/graphview.py:717 GraphView/graphview.py:3627
+#: GraphView/graphview.py:760 GraphView/graphview.py:3736
+msgid "Highlight the home person"
+msgstr "Korosta kotihenkilö"
+
+#: GraphView/graphview.py:721 GraphView/graphview.py:3635
+#: GraphView/graphview.py:764 GraphView/graphview.py:3744
+msgid "Show full dates"
+msgstr "Näytä täydelliset päivämäärät"
+
+#: GraphView/graphview.py:725 GraphView/graphview.py:3643
+#: GraphView/graphview.py:768 GraphView/graphview.py:3752
+msgid "Show places"
+msgstr "Näytä paikat"
+
+#: GraphView/graphview.py:741 GraphView/graphview.py:784
+msgid "Vertical: Top to Bottom"
+msgstr "Pystysuora: ylhäältä alas"
+
+#: GraphView/graphview.py:741 GraphView/graphview.py:784
+msgid "Vertical: Bottom to Top"
+msgstr "Pystysuora: Alhaalta ylös"
+
+#: GraphView/graphview.py:741 GraphView/graphview.py:784
+msgid "Horizontal: Left to Right"
+msgstr "Vaakasuora: Vasemmalta oikealle"
+
+#: GraphView/graphview.py:741 GraphView/graphview.py:784
+msgid "Horizontal: Right to Left"
+msgstr "Vaakasuora: Oikealta vasemmalle"
+
+#: GraphView/graphview.py:743 GraphView/graphview.py:786
+msgid "Time Direction"
+msgstr "Ajan suunta"
+
+#: GraphView/graphview.py:765 GraphView/graphview.py:812
+msgid "Person theme"
+msgstr "Henkilöteema"
+
+#: GraphView/graphview.py:770 GraphView/graphview.py:817
+msgid "Path color to home person"
+msgstr "Polun väri kotihenkilölle"
+
+#: GraphView/graphview.py:774 GraphView/graphview.py:821
+msgid "Font:"
+msgstr "Kirjasin:"
+
+#: GraphView/graphview.py:788 GraphView/graphview.py:835
+msgid "Avatars style"
+msgstr "Hahmon tyyli"
+
+#: GraphView/graphview.py:794 GraphView/graphview.py:841
+msgid "PNG files"
+msgstr "PNG tiedosto"
+
+#: GraphView/graphview.py:799 GraphView/graphview.py:846
+msgid "Male avatar:"
+msgstr "Miehen hahmo:"
+
+#: GraphView/graphview.py:800 GraphView/graphview.py:847
+msgid "Choose male avatar"
+msgstr "Valitse miehen hahmo"
+
+#: GraphView/graphview.py:812 GraphView/graphview.py:859
+msgid "Female avatar:"
+msgstr "Naisen hahmo:"
+
+#: GraphView/graphview.py:813 GraphView/graphview.py:860
+msgid "Choose female avatar"
+msgstr "Valitse naisen hahmo"
+
+#: GraphView/graphview.py:827 GraphView/graphview.py:900
+msgid "Active person border size"
+msgstr "Aktiivisen henkilön rajauskoko"
+
+#: GraphView/graphview.py:832 GraphView/graphview.py:905
+msgid "Person border size"
+msgstr "Henkilön rajauskoko"
+
+#: GraphView/graphview.py:835 GraphView/graphview.py:908
+msgid "Themes"
+msgstr "Teemat"
+
+#: GraphView/graphview.py:848 GraphView/graphview.py:3661
+#: GraphView/graphview.py:921 GraphView/graphview.py:3770
+msgid "Show animation"
+msgstr "Näytä animaatio"
+
+#: GraphView/graphview.py:852 GraphView/graphview.py:925
+msgid "Animation speed (1..5 and 5 is the slower)"
+msgstr "Animaationopeus (1..5 ja 5 on hitaampi)"
+
+#: GraphView/graphview.py:856 GraphView/graphview.py:929
+msgid "Animation count (0..8 use 0 to turn off)"
+msgstr "Animaatio määrä (0..8 käytössä, 0 sammuttaa)"
+
+#: GraphView/graphview.py:865 GraphView/graphview.py:938
+msgid "Animation"
+msgstr "Animaatio"
+
+#: GraphView/graphview.py:879 GraphView/graphview.py:952
+msgid "Search in all database"
+msgstr "Haku kaikista tietokannoista"
+
+#: GraphView/graphview.py:881 GraphView/graphview.py:954
+msgid "Also apply search by all database."
+msgstr "Käytä myös hakua kaikista tietokannoista."
+
+#: GraphView/graphview.py:884 GraphView/graphview.py:957
+msgid "Show person images"
+msgstr "Näytä henkilökuvat"
+
+#: GraphView/graphview.py:887 GraphView/graphview.py:960
+msgid "Show persons thumbnails in search result list."
+msgstr "Näytä henkilöiden pikkukuvat hakutulosluettelossa."
+
+#: GraphView/graphview.py:890 GraphView/graphview.py:963
+msgid "Show bookmarked first"
+msgstr "Näytä kirjanmerkityt ensin"
+
+#: GraphView/graphview.py:893 GraphView/graphview.py:966
+msgid "Show bookmarked persons first in search result list."
+msgstr "Näytä kirjanmerkityt henkilöt ensimmäisenä hakutulosluettelossa."
+
+#: GraphView/graphview.py:895 DenominoViso/DenominoViso.py:2001
+msgid "Search"
+msgstr "Hae"
+
+#: GraphView/graphview.py:926 GraphView/graphview.py:999
+msgid "Select a dot file name"
+msgstr "Valitse pistetiedoston nimi"
+
+#: GraphView/graphview.py:1035 LifeLineChartView/lifelinechartview.py:527
+msgid "Zoom to original"
+msgstr "Alkuperäinen koko"
+
+#: GraphView/graphview.py:1042 LifeLineChartView/lifelinechartview.py:534
+msgid "Zoom to best fit"
+msgstr "Ikkunaan sopivaksi"
+
+#: GraphView/graphview.py:1049 GraphView/graphview.py:1123
+msgid "Go to active person"
+msgstr "Siirry aktiivihenkilöön"
+
+#: GraphView/graphview.py:1054 GraphView/graphview.py:1128
+msgid "Go to bookmark"
+msgstr "Siirry kirjanmerkkiin"
+
+#: GraphView/graphview.py:1056 GraphView/graphview.py:1130
+msgid "Center view on selected bookmark"
+msgstr "Keskitä näkymä valittuun kirjanmerkkiin"
+
+#: GraphView/graphview.py:1058 GraphView/graphview.py:1132
+msgid "Bookmarks for current graph"
+msgstr "Nykyisen kaavion kirjanmerkit"
+
+#: GraphView/graphview.py:1059 GraphView/graphview.py:1133
+msgid "Other Bookmarks"
+msgstr "Muut kirjanmerkit"
+
+#: GraphView/graphview.py:1090 GraphView/graphview.py:1164
+msgid "Ancestor generations"
+msgstr "Esivanhempien sukupolvien enimmäismäärä"
+
+#: GraphView/graphview.py:1094 GraphView/graphview.py:1168
+msgid "Descendant generations"
+msgstr "Jälkeläissukupolvien enimmäismäärä"
+
+#: GraphView/graphview.py:1105 GraphView/graphview.py:1179
+msgid "Vertical spacing between generations"
+msgstr "Sukupolvien välinen pystysuora väli"
+
+#: GraphView/graphview.py:1110 GraphView/graphview.py:1184
+msgid "Horizontal spacing between generations"
+msgstr "Sukupolvien välinen vaakasuora väli"
+
+#: GraphView/graphview.py:1114 GraphView/graphview.py:1188
+msgid "Spacings"
+msgstr "Välit"
+
+#: GraphView/graphview.py:1119 GraphView/graphview.py:1193
+msgid "All connected"
+msgstr "Kaikki yhdistetty"
+
+#: GraphView/graphview.py:1121 GraphView/graphview.py:1195
+msgid ""
+"Show all connected persons limited by generation restrictions.\n"
+"Works slow, so don't set large generation values."
+msgstr ""
+"Näytä kaikki sukupolvirajoitusten rajoittamat yhdistetyt henkilöt.\n"
+"Toimii hitaasti, joten älä aseta suuria sukupolviarvoja."
+
+#: GraphView/graphview.py:1263 GraphView/graphview.py:1337
+msgid "Add active person"
+msgstr "Lisää aktiivihenkilö"
+
+#: GraphView/graphview.py:1268 GraphView/graphview.py:1342
+msgid "Call the bookmark editor"
+msgstr "Kutsu kirjanmerkkieditori"
+
+#: GraphView/graphview.py:1325 GraphView/graphview.py:1399
+msgid ""
+"You don't have any bookmarks yet...\n"
+"Try to add some frequently used persons to speedup navigation."
+msgstr ""
+"Sinulla ei ole vielä yhtään kirjanmerkkiä...\n"
+"Yritä lisätä joitakin usein käytettyjä henkilöitä nopeuttaaksesi navigointia."
+
+#: GraphView/graphview.py:1333 GraphView/graphview.py:1407
+msgid "No bookmarks for this graph..."
+msgstr "Ei kirjanmerkkejä tälle kaaviolle..."
+
+#: GraphView/graphview.py:1338 GraphView/graphview.py:1412
+msgid "No other bookmarks..."
+msgstr "Ei muita kirjanmerkkejä..."
+
+#: GraphView/graphview.py:1343 GraphView/graphview.py:1345
+#: GraphView/search_widget.py:224 GraphView/search_widget.py:243
+#: GraphView/graphview.py:1417 GraphView/graphview.py:1419
+#: GraphView/search_widget.py:233 GraphView/search_widget.py:252
+#, python-format
+msgid "found: %s"
+msgstr "löytyi: %s"
+
+#: GraphView/graphview.py:1355 GraphView/graphview.py:1429
+#, python-format
+msgid ""
+"Add active person to bookmarks\n"
+"%s"
+msgstr ""
+"Lisää aktiivinen henkilö kirjanmerkkeihin\n"
+"%s"
+
+#: GraphView/graphview.py:1442 GraphView/graphview.py:1516
+#, python-format
+msgid ""
+"Person <b><i>%s</i></b> is not in the current view.\n"
+"Do you want to set it active and rebuild view?"
+msgstr ""
+"Henkilö <b><i>%s</i></b> ei ole nykyisessä näkymässä.\n"
+"Haluatko aktivoida henkilön ja katsella uudelleen?"
+
+#: GraphView/graphview.py:1445 GraphView/graphview.py:1519
+msgid "Change active person?"
+msgstr "Vaihdetaanko aktiivihenkilö?"
+
+#: GraphView/graphview.py:2587 GraphView/graphview.py:2678
+msgid "Incomplete graph"
+msgstr "Epätäydellinen kaavio"
+
+#: GraphView/graphview.py:2940 GraphView/graphview.py:3047
+msgid "Image on right side"
+msgstr "Kuva oikealla"
+
+#: GraphView/graphview.py:2961 GraphView/graphview.py:3068
+msgid "Image on left side"
+msgstr "Kuva vasemmalla"
+
+#: GraphView/graphview.py:3059 GraphView/graphview.py:3060
+#: GraphView/graphview.py:3072 GraphView/graphview.py:3073
+#: SourcesCitationsReport/SourcesCitationsReport.py:335
+#, python-format
+msgid "%s "
+msgstr "%s "
+
+#: GraphView/graphview.py:3290 GraphView/graphview.py:3399
+msgid "<b>Tags:</b>"
+msgstr "<b>Tagit:</b>"
+
+#: GraphView/graphview.py:3670 GraphView/graphview.py:3779
+msgid "Lines type"
+msgstr "Viivan tyyppi"
+
+#: GraphView/graphview.py:3674 GraphView/graphview.py:3783
+msgid "Direct"
+msgstr "Suora"
+
+#: GraphView/graphview.py:3682 GraphView/graphview.py:3791
+msgid "Curves"
+msgstr "Kaareva"
+
+#: GraphView/graphview.py:3690 GraphView/graphview.py:3799
+msgid "Ortho"
+msgstr "Suorakulmainen"
+
+#: GraphView/graphview.py:3722 GraphView/graphview.py:3896
+msgid "Select tags for person"
+msgstr "Valitse tagi henkilölle"
+
+#: GraphView/graphview.py:3731 GraphView/graphview.py:3907
+msgid "Add new family"
+msgstr "Lisää uusi perhe"
+
+#: GraphView/graphview.py:3849 GraphView/graphview.py:4025
+msgid "Add parents"
+msgstr "Lisää vanhemmat"
+
+#: GraphView/graphview.py:3878 GraphView/search_widget.py:277
+#: GraphView/search_widget.py:348 GraphView/graphview.py:4057
+#: GraphView/search_widget.py:286 GraphView/search_widget.py:364
+msgid "Remove from bookmarks"
+msgstr "Poista kirjanmerkeistä"
+
+#: GraphView/graphview.py:3881 GraphView/search_widget.py:285
+#: GraphView/search_widget.py:361 GraphView/graphview.py:4060
+#: GraphView/search_widget.py:294 GraphView/search_widget.py:377
+msgid "Add to bookmarks"
+msgstr "Lisää kirjanmerkkeihin"
+
+#: GraphView/graphview.py:3981 GraphView/graphview.py:4182
+msgid "Select tags for family"
+msgstr "Valitse tagi perheelle"
+
+#: GraphView/graphview.py:3998 GraphView/graphview.py:4201
+msgid "Add father"
+msgstr "Lisää isä"
+
+#: GraphView/graphview.py:4007 GraphView/graphview.py:4210
+msgid "Add mother"
+msgstr "Lisää äiti"
+
+#: GraphView/graphview.py:4104 GraphView/graphview.py:4313
+msgid "About Graph View"
+msgstr "Tietoja kaavionäkymästä"
+
+#: GraphView/graphview.py:4404 GraphView/graphview.py:4669
+#, python-format
+msgid "Deleting the person [%s] will remove it from the database."
+msgstr "Henkilön [%s] poistaminen poistaa sen tietokannasta."
+
+#: GraphView/graphview.py:4433 GraphView/graphview.py:4698
+#, python-format
+msgid "Delete family [%s]?"
+msgstr "Poista perhe [%s]?"
+
+#: GraphView/graphview.py:4434 GraphView/graphview.py:4699
+msgid "Deleting the family will remove it from the database."
+msgstr "Perheen poistaminen poistaa sen tietokannasta."
+
+#: GraphView/graphview.py:4445 GraphView/graphview.py:4710
+#, python-format
+msgid "Delete Family [%s]"
+msgstr "Poista perhe [%s]"
+
+#: GraphView/search_widget.py:73 GraphView/search_widget.py:82
+msgid "Persons from current graph"
+msgstr "Henkilöt nykyisestä kaaviosta"
+
+#: GraphView/search_widget.py:74 GraphView/search_widget.py:83
+msgid "Other persons from database"
+msgstr "Muut henkilöt tietokannasta"
+
+#: GraphView/search_widget.py:226 GraphView/search_widget.py:235
+msgid "No persons found..."
+msgstr "Henkilöitä ei löytynyt..."
+
+#: GraphView/search_widget.py:382 GraphView/search_widget.py:398
+msgid ""
+"Search people in the current visible graph and database.\n"
+"Use <Ctrl+F> to make search entry active."
+msgstr ""
+"Etsi ihmisiä nykyisestä näkyvästä kaaviosta ja tietokannasta.\n"
+"Aktivoi haku painamalla <Ctrl+F>."
+
+#: GraphView/search_widget.py:384 PluginManager/PluginManager.py:158
+msgid "Search..."
+msgstr "Hae..."
+
+#: GraphView/search_widget.py:575 GraphView/search_widget.py:592
+#, python-format
+msgid "<b>%s:</b>"
+msgstr "<b>%s:</b>"
+
+#: GraphView/search_widget.py:671
+#: ../gramps/plugins/gramplet/relativegramplet.py:116
+msgid "Parents:"
+msgstr "Vanhemmat:"
+
+#: HtreePedigreeView.gpr.py:45 HtreePedigreeView/HtreePedigreeView.gpr.py:34
+#: HtreePedigreeView/HtreePedigreeView.gpr.py:47
+msgid "H-Tree Pedigree"
+msgstr "H-Sukupuu"
+
+#: HtreePedigreeView.gpr.py:47 HtreePedigreeView/HtreePedigreeView.gpr.py:37
+msgid ""
+"The view shows a space-efficient pedigree with ancestors of the selected "
+"person"
+msgstr "Näkymä näyttää valitulle henkilölle tilaa säästävän sukupuun"
+
+#: HtreePedigreeView.py:531 HtreePedigreeView/HtreePedigreeView.py:543
+msgid "H-tree Pedigree View"
+msgstr "H-Sukupuu"
+
+#: HtreePedigreeView.py:1638 HtreePedigreeView/HtreePedigreeView.py:1692
+msgid "About H-Tree"
+msgstr "Tietoja H-Sukupuusta"
+
+#: NetworkChart.gpr.py:31 NetworkChart/NetworkChart.gpr.py:24
+msgid "Network Chart"
+msgstr "Nettikaavio"
+
+#: NetworkChart.gpr.py:41 NetworkChart/NetworkChart.gpr.py:35
+msgid "Generates a family network chart."
+msgstr "Tuota perheiden nettikaavio."
+
+#: NetworkChart.py:133 NetworkChart/NetworkChart.py:133
+msgid "birth abbreviation|b."
+msgstr "s."
+
+#: NetworkChart.py:134 NetworkChart/NetworkChart.py:134
+msgid "death abbreviation|d."
+msgstr "k."
+
+#: NetworkChart.py:135 NetworkChart/NetworkChart.py:135
+msgid "marriage abbreviation|m."
+msgstr "∞"
+
+#: NetworkChart.py:856 NetworkChart/NetworkChart.py:244
+msgid "File exists. Overwrite?"
+msgstr "Tiedosto on jo olemassa. Korvataanko?"
+
+#: NetworkChart.py:903 NetworkChart/NetworkChart.py:898
+msgid "created"
+msgstr "tuotettu"
+
+#: NetworkChart.py:904 NetworkChart.py:907 NetworkChart/NetworkChart.py:899
+#: NetworkChart/NetworkChart.py:902
+msgid "last_written"
+msgstr "viimeinen_kirjaus"
+
+#: NetworkChart.py:917 NetworkChart/NetworkChart.py:912
+msgid "Main"
+msgstr "Päävalikko"
+
+#: NetworkChart.py:921 NetworkChart/NetworkChart.py:916
+msgid "Orthogonal (right angles in connectors)"
+msgstr "Suorakulmainen (suorat kulmat yhdysviivoissa)"
+
+#: NetworkChart.py:922 NetworkChart/NetworkChart.py:917
+msgid "Straight (no right angles in connectors)"
+msgstr "Suora (ei kulmia yhdysviivoissa)"
+
+#: NetworkChart.py:923 NetworkChart/NetworkChart.py:918
+msgid "Curved (curved and straight connectors)"
+msgstr "Kaarevat (kaarevat ja suorat yhdysviivat)"
+
+#: NetworkChart.py:925 NetworkChart/NetworkChart.py:920
+msgid "Default (Orthogonal)"
+msgstr "Oletus (Suorakulmainen)"
+
+#: NetworkChart.py:930 NetworkChart/NetworkChart.py:925
+msgid "Select the graph line connector format."
+msgstr "Valitse kaavion yhdysviivan muoto."
+
+#: NetworkChart.py:935 NetworkChart/NetworkChart.py:930
+msgid "Top to Bottom"
+msgstr "Ylhäältä alas"
+
+#: NetworkChart.py:935 NetworkChart/NetworkChart.py:930
+msgid "Left to Right"
+msgstr "Vasemmalta oikealle"
+
+#: NetworkChart.py:936 NetworkChart/NetworkChart.py:931
+msgid "Bottom to Top"
+msgstr "Alhaalta ylös"
+
+#: NetworkChart.py:936 NetworkChart/NetworkChart.py:931
+msgid "Right to Left"
+msgstr "Oikealta vasemmalle"
+
+#: NetworkChart.py:938 NetworkChart/NetworkChart.py:933
+msgid "Default (Top to Bottom)"
+msgstr "Oletus (Ylhäältä alas)"
+
+#: NetworkChart.py:941 NetworkChart/NetworkChart.py:936
+msgid "Select the graph direction."
+msgstr "Valitse kaavion suunta."
+
+#: NetworkChart.py:944 NetworkChart/NetworkChart.py:939
+msgid "URL Style"
+msgstr "Tyylitiedosto"
+
+#: NetworkChart.py:946 NetworkChart/NetworkChart.py:941
+msgid "Include URLs from database."
+msgstr "Lisää URL-osoitteet tietokannasta."
+
+#: NetworkChart.py:947 NetworkChart/NetworkChart.py:942
+msgid "Dynamic URL = Prefix + GrampID + Suffix"
+msgstr "Dynaaminen URL = etuliite + GrampID + loppuliite"
+
+#: NetworkChart.py:948 NetworkChart/NetworkChart.py:943
+msgid "Static URL = Prefix"
+msgstr "Staattinen URL = etuliite"
+
+#: NetworkChart.py:949 NetworkChart/NetworkChart.py:944
+msgid "Don't include URLs"
+msgstr "Älä lisää URL-osoitteita"
+
+#: NetworkChart.py:950 NetworkChart/NetworkChart.py:945
+msgid "Default (include)"
+msgstr "Oletus (lisää)"
+
+#: NetworkChart.py:953 NetworkChart/NetworkChart.py:948
+msgid "Select URL style."
+msgstr "Valitse tyylitiedosto."
+
+#: NetworkChart.py:956 NetworkChart/NetworkChart.py:951
+msgid "URL Prefix,Suffix"
+msgstr "URL etuliite, loppuliite"
+
+#: NetworkChart.py:957 NetworkChart/NetworkChart.py:952
+msgid ""
+"Enter the Prefix,Suffix (use comma)\n"
+"for dynamically generated URLs.\n"
+"URL = Prefix + GrampsID + Suffix."
+msgstr ""
+"Syötä etuliite, loppuliite (käytä pilkkua)\n"
+"dynaamisesti luotuihin URL-osoitteisiin.\n"
+"URL = etuliite + GrampsID + loppuliite."
+
+#: NetworkChart.py:962 NetworkChart/NetworkChart.py:957
+msgid "Enter Font Name"
+msgstr "Anna kirjasimen nimi"
+
+#: NetworkChart.py:964 NetworkChart/NetworkChart.py:959
+msgid ""
+"Enter the primary font style for the chart.\n"
+"Must already be installed.\n"
+"White Rabbit can be obtained from\n"
+"https://www.fontsquirrel.com/fonts/white-rabbit"
+msgstr ""
+"Syötä kaavion ensisijainen kirjasintyyli.\n"
+"Sen on oltava asennettuna.\n"
+"White Rabbit voi saada\n"
+"https://www.fontsquirrel.com/fonts/white-rabbit"
+
+#: NetworkChart.py:969 NetworkChart/NetworkChart.py:964
+msgid "Spacing (inch)"
+msgstr "Väli (in)"
+
+#: NetworkChart.py:970 NetworkChart/NetworkChart.py:965
+msgid ""
+"Enter the seperation distance between \"Generations\" in inches (0.1-5.0)."
+msgstr "Syötä erotusväli \"sukupolvien\" välillä tuumina (0,1-5,0)."
+
+#: NetworkChart.py:974 NetworkChart/NetworkChart.py:969
+msgid "Enter Chart Title"
+msgstr "Anna kaavion otsikko"
+
+#: NetworkChart.py:976 NetworkChart/NetworkChart.py:971
+msgid "Set the title of the chart."
+msgstr "Aseta kaaaviolle otsikko."
+
+#: NetworkChart.py:982 NetworkChart/NetworkChart.py:986
+msgid "The destination folder for generated files."
+msgstr "Luodun tiedoston kohdehakemisto."
+
+#: NetworkChart.py:986 NetworkChart.py:1284 NetworkChart.py:1292
+#: NetworkChart/NetworkChart.py:990 NetworkChart/NetworkChart.py:1280
+#: NetworkChart/NetworkChart.py:1288
+msgid "network"
+msgstr "netti"
+
+#: NetworkChart.py:991 NetworkChart/NetworkChart.py:995
+msgid "The filename for the generated svg network chart."
+msgstr "Luodun svg-nettikaavion tiedostonimi."
+
+#: NetworkChart.py:998 NetworkChart/NetworkChart.py:1002
+msgid "Different node shapes/edges for gender."
+msgstr "Erilaiset solujen muodot/reunat sukupuolelle."
+
+#: NetworkChart.py:999 NetworkChart/NetworkChart.py:1003
+msgid "Node differences for gender."
+msgstr "Erilaiset solumuodot sukupuolelle."
+
+#: NetworkChart.py:1004 NetworkChart/NetworkChart.py:1008
+msgid "Male Background"
+msgstr "Miehen taustaväri"
+
+#: NetworkChart.py:1005 D3Charts/AncestralCollapsibleTree.py:847
+msgid "RGB-color for male box background."
+msgstr "RGB-väri miessolun taustalle."
+
+#: NetworkChart.py:1008 NetworkChart/NetworkChart.py:1012
+msgid "Male Background Alpha"
+msgstr "Miesvärin läpinäkyvyys"
+
+#: NetworkChart.py:1010 NetworkChart/NetworkChart.py:1014
+msgid "Alpha for Male box background (transparent=0, solid=255)."
+msgstr "Miessolun taustavärin läpinäkyvyys (läpinäkyvä = 0, kiinteä = 255)."
+
+#: NetworkChart.py:1014 NetworkChart/NetworkChart.py:1018
+msgid "Male Box Edge"
+msgstr "Miessolun reuna"
+
+#: NetworkChart.py:1015 NetworkChart/NetworkChart.py:1019
+msgid "RGB-color for Male box edge."
+msgstr "RGB-väri miessolun reunalle."
+
+#: NetworkChart.py:1018 D3Charts/AncestralCollapsibleTree.py:855
+msgid "Female Background"
+msgstr "Naisen taustaväri"
+
+#: NetworkChart.py:1019 NetworkChart.py:1030 NetworkChart/NetworkChart.py:1023
+msgid "RGB-color for Female box background."
+msgstr "RGB-väri naissolun taustalle."
+
+#: NetworkChart.py:1024 NetworkChart/NetworkChart.py:1028
+msgid "Alpha for Female box background (transparent=0, solid=255)."
+msgstr "Naissolun taustavärin läpinäkyvyys (läpinäkyvä = 0, kiinteä = 255)."
+
+#: NetworkChart.py:1029 NetworkChart/NetworkChart.py:1033
+msgid "Female Box Edge"
+msgstr "Naissolun reuna"
+
+#: NetworkChart.py:1033 NetworkChart/NetworkChart.py:1037
+msgid "Other Background"
+msgstr "Muiden taustaväri"
+
+#: NetworkChart.py:1034 NetworkChart/NetworkChart.py:1038
+msgid "RGB-color for other box background."
+msgstr "RGB-väri muiden solujen taustalle."
+
+#: NetworkChart.py:1037 NetworkChart/NetworkChart.py:1041
+msgid "Other Background Alpha"
+msgstr "Muiden värien läpinäkyvyys"
+
+#: NetworkChart.py:1039 NetworkChart/NetworkChart.py:1043
+msgid "Alpha for Other box background (transparent=0, solid=255)."
+msgstr "Muiden taustavärin läpinäkyvyys (läpinäkyvä = 0, kiinteä = 255)."
+
+#: NetworkChart.py:1043 NetworkChart/NetworkChart.py:1047
+msgid "Family Connector Line"
+msgstr "Perheen yhdysviiva"
+
+#: NetworkChart.py:1044 NetworkChart/NetworkChart.py:1048
+msgid "RGB-color for family connector line."
+msgstr "RGB-väri perheen yhdysviivalle."
+
+#: NetworkChart.py:1047 NetworkChart/NetworkChart.py:1051
+msgid "Marriage Connector Line"
+msgstr "Avioliiton yhdysviiva"
+
+#: NetworkChart.py:1048 NetworkChart/NetworkChart.py:1052
+msgid "RGB-color for marriage connector line."
+msgstr "RGB-väri avioliiton yhdysviivalle."
+
+#: NetworkChart.py:1051 NetworkChart/NetworkChart.py:1055
+msgid "Highlight Connector Line"
+msgstr "Korosta yhdysviiva"
+
+#: NetworkChart.py:1052 NetworkChart/NetworkChart.py:1056
+msgid ""
+"RGB-color for the highlighted path between two individuals.  If the "
+"graph.inverts, reverse the order to change."
+msgstr ""
+"RGB-väri korostetulle polulle kahden henkilön välillä.  Jos kaavio "
+"käännetään, muuta järjestys käänteiseksi."
+
+#: NetworkChart.py:1057 NetworkChart/NetworkChart.py:1061
+msgid "Trim Box Edge"
+msgstr "Rajaa solun reunat"
+
+#: NetworkChart.py:1058 NetworkChart/NetworkChart.py:1062
+msgid "RGB-color for box edge that has been trimmed."
+msgstr "RGB-väri solun reunalle, joka on rajattu."
+
+#: NetworkChart.py:1062 NetworkChart/NetworkChart.py:1066
+msgid "Remove color background on all nodes."
+msgstr "Poista kaikkien solujen taustaväri."
+
+#: NetworkChart.py:1064 NetworkChart/NetworkChart.py:1068
+msgid "Removes color background for individuals (nodes) on chart."
+msgstr "Poistaa taustavärin henkilöiden (soluista) kaaviossa."
+
+#: NetworkChart.py:1069 NetworkChart/NetworkChart.py:1073
+msgid ""
+"Enter year to start\n"
+"rounding birthday\n"
+"to year only"
+msgstr ""
+"Anna aloitusvuosi, josta\n"
+"alkaen syntymäpäivät\n"
+"pyöristetään vain vuosiksi"
+
+#: NetworkChart.py:1072 NetworkChart/NetworkChart.py:1076
+msgid ""
+"Birthdays after this year are represented by the year only.  Invalid entries "
+"will be ignored."
+msgstr ""
+"Syntymäpäiviä tämän jälkeen edustaa vain vuosi. Virheelliset merkinnät "
+"jätetään huomiotta."
+
+#: NetworkChart.py:1076 NetworkChart/NetworkChart.py:1080
+msgid "Round birthday to year after year entered (above)."
+msgstr "Pyöristää syntymäpäivät vuosi vuodelta (yllä)."
+
+#: NetworkChart.py:1078 NetworkChart/NetworkChart.py:1082
+msgid "Represent birthday by year only."
+msgstr "Edistää syntymäpäivästä vain vuoden."
+
+#: NetworkChart.py:1082 NetworkChart/NetworkChart.py:1086
+msgid ""
+"Enter year to start\n"
+"rounding marriage\n"
+"date to year only"
+msgstr ""
+"Anna aloitusvuosi, josta\n"
+"alkaen avioitumispäivät \n"
+"pyöristetään vain vuosiksi"
+
+#: NetworkChart.py:1083 NetworkChart/NetworkChart.py:1087
+msgid ""
+"Marriages after this year are represented bythe year only. Invalid entries "
+"will be ignored."
+msgstr ""
+"Tämän vuoden jälkeen avioitumispäiviä edustaa vain vuosi. Virheelliset "
+"merkinnät jätetään huomiotta."
+
+#: NetworkChart.py:1088 NetworkChart/NetworkChart.py:1092
+msgid "Round marriage to year after year entered (above)."
+msgstr "Pyöristää avioitumispäivän vuosi vuodelta (yllä)."
+
+#: NetworkChart.py:1090 NetworkChart/NetworkChart.py:1094
+msgid "Represent marriage by year only."
+msgstr "Edistää avioitumispäivästä vain vuoden."
+
+#: NetworkChart.py:1095 NetworkChart/NetworkChart.py:1099
+msgid ""
+"Attempts to remove middle names.  Only works for entries with birth year in "
+"the record."
+msgstr ""
+"Yrität poistaa keskimmäiset nimet. Toimii vain syntymävuoden merkinnöissä."
+
+#: NetworkChart.py:1103 NetworkChart/NetworkChart.py:1107
+msgid "Remove middle names."
+msgstr "Poista keskimmäiset nimet."
+
+#: NetworkChart.py:1108 NetworkChart/NetworkChart.py:1112
+msgid "Allow inclusion of private records in chart."
+msgstr "Lisää yksityiset tiedot kaavioon."
+
+#: NetworkChart.py:1113 NetworkChart/NetworkChart.py:1117
+msgid "Trim"
+msgstr "Rajaukset"
+
+#: NetworkChart.py:1115 NetworkChart/NetworkChart.py:1119
+msgid "Trim descendants"
+msgstr "Rajaa jälkeläiset"
+
+#: NetworkChart.py:1117 NetworkChart/NetworkChart.py:1121
+msgid "All descendants (children) of selected individuals will not be shown."
+msgstr "Valitun henkilön jälkeläisiä (lapsia) ei näytetä."
+
+#: NetworkChart.py:1123 NetworkChart/NetworkChart.py:1127
+msgid "Enable trimming of descendants."
+msgstr "Käytä jälkeläisten rajausta."
+
+#: NetworkChart.py:1125 NetworkChart/NetworkChart.py:1129
+msgid ""
+"You must enter valid person(s) before \n"
+"enabling trimming of descendants from tree."
+msgstr ""
+"Sinun on annettava vapaa(t) henkilö(t) ennen\n"
+"mahdollisuutta jälkeläisten rajaamiseen sukupuusta."
+
+#: NetworkChart.py:1130 NetworkChart/NetworkChart.py:1134
+msgid "Trim ancestors"
+msgstr "Rajaa esivanhemmat"
+
+#: NetworkChart.py:1131 NetworkChart/NetworkChart.py:1135
+msgid "All ancestors (parents) of selected individuals will not be shown."
+msgstr "Valitun henkilön esivanhempia (vanhempia) ei näytetä."
+
+#: NetworkChart.py:1137 NetworkChart/NetworkChart.py:1141
+msgid "Enable trimming of ancestors."
+msgstr "Käytä esivanhempien rajausta."
+
+#: NetworkChart.py:1139 NetworkChart/NetworkChart.py:1143
+msgid "Enable trimming of ancestors from tree."
+msgstr "Käytä rajausta esivanhempien sukupuussa."
+
+#: NetworkChart.py:1143 NetworkChart/NetworkChart.py:1147
+msgid "Enable trim groups."
+msgstr "Käytä rajattua ryhmää."
+
+#: NetworkChart.py:1145 NetworkChart/NetworkChart.py:1149
+msgid ""
+"Remove groups less than Min Group Size.  Automatic\n"
+"for databases with more than 1500 individuals."
+msgstr ""
+"Poista ryhmät, jotka ovat pienempiä kuin pienryhmäkoko. Automaattinen\n"
+"tietokannoissa, joissa on yli 1500 henkilöä."
+
+#: NetworkChart.py:1150 NetworkChart/NetworkChart.py:1154
+msgid "Min Group Size"
+msgstr "Min. Ryhmän koko"
+
+#: NetworkChart.py:1152 NetworkChart/NetworkChart.py:1156
+msgid ""
+"Enter the minimum size group to display.\n"
+"Value may be 2 or greater."
+msgstr ""
+"Anna näytettävä vähimmäisryhmä.\n"
+"Arvo voi olla 2 tai suurempi."
+
+#: NetworkChart.py:1160 NetworkChart/NetworkChart.py:1164
+msgid ""
+"Select Start and\n"
+"End Individuals in\n"
+"displayed path(s).\n"
+"Select two"
+msgstr ""
+"Valitse näytettäville\n"
+"poluille alku ja loppu\n"
+"henkilöt.\n"
+"Valitse kaksi"
+
+#: NetworkChart.py:1163 NetworkChart/NetworkChart.py:1167
+msgid ""
+"Starting and ending person for displayed path(s).\n"
+"Select two people"
+msgstr ""
+"Alku ja loppu henkilöiden näytetettävälle poluille.\n"
+"Valitse kaksi henkilöä"
+
+#: NetworkChart.py:1167 NetworkChart/NetworkChart.py:1171
+msgid "Highlight path(s)"
+msgstr "Korosta polut"
+
+#: NetworkChart.py:1171 NetworkChart/NetworkChart.py:1176
+msgid "Default (None)"
+msgstr "Oletus (tyhjä)"
+
+#: NetworkChart.py:1176 NetworkChart/NetworkChart.py:1181
+msgid ""
+"None - Don't highlight paths.\n"
+"Direct - Highlight direct descendant/ancestor paths.\n"
+"Any - Highlight any path(s) including direct or indirect."
+msgstr ""
+"Tyhjä - Älä korosta polkuja.\n"
+"Suora - Korosta suoria jälkeläisten/esivanhempien polkuja.\n"
+"Kaikki - Korosta kaikki polut, mukaan lukien suorat tai epäsuorat."
+
+#: NetworkChart.py:1181 NetworkChart/NetworkChart.py:1186
+msgid "Show only path(s)"
+msgstr "Näytä vain polut"
+
+#: NetworkChart.py:1183 NetworkChart/NetworkChart.py:1174
+#: NetworkChart/NetworkChart.py:1188
+msgid "Any"
+msgstr "Kaikki"
+
+#: NetworkChart.py:1184 NetworkChart/NetworkChart.py:1189
+msgid "Default (none)"
+msgstr "Oletus (tyhjä)"
+
+#: NetworkChart.py:1188 NetworkChart/NetworkChart.py:1193
+msgid ""
+"None - Don't show paths only.\n"
+"Direct - Show only direct descendant/ancestor paths.\n"
+"Any - Show only path(s) direct or indirect."
+msgstr ""
+"Tyhjä - Älä näytä vain polkuja.\n"
+"Suora - Näyttää vain suoria jälkeläisten/esivanhempien polkuja.\n"
+"Kaikki - Näytä vain suorat tai epäsuorat polut."
+
+#: NetworkChart.py:1195 NetworkChart/NetworkChart.py:1200
+msgid "Select person at center of selection radius in graph."
+msgstr "Valitse henkilö kaavion valintaruudun keskellä."
+
+#: NetworkChart.py:1198 NetworkChart/NetworkChart.py:1203
+msgid ""
+"Max connections\n"
+"from center"
+msgstr ""
+"Maksimiyhteydet\n"
+"keskustasta"
+
+#: NetworkChart.py:1201 NetworkChart/NetworkChart.py:1206
+msgid ""
+"Enter the maximum number of connections allowed from\n"
+"the center person.  Value may be 1 or greater."
+msgstr ""
+"Anna suurin sallittu yhteyksien määrä\n"
+"keskushenkilölle. Arvo voi olla 1 tai suurempi."
+
+#: NetworkChart.py:1206 NetworkChart/NetworkChart.py:1211
+msgid "Limit graph to max connections from center."
+msgstr "Rajoita kaavion enimmäisyhteyksiä keskeltä."
+
+#: NetworkChart.py:1208 NetworkChart/NetworkChart.py:1213
+msgid "Display up to max connections from central person."
+msgstr "Näytä max. yhteydet keskushenkilöltä."
+
+#: NetworkChart.py:1212 NetworkChart/NetworkChart.py:1217
+msgid "Highlight central person in graph."
+msgstr "Korosta kaavion keskushenkilö."
+
+#: NetworkChart.py:1214 NetworkChart/NetworkChart.py:1219
+msgid "Add yellow color background to central person."
+msgstr "Lisää keltainen väri keskushenkilön taustalle."
+
+#: NetworkChart.py:1230 NetworkChart/NetworkChart.py:976
+msgid "Default (svg)"
+msgstr "Oletus (svg)"
+
+#: NetworkChart.py:1233 NetworkChart/NetworkChart.py:979
+msgid ""
+"svg - Scalable Vector Graphics file.\n"
+"pdf - Adobe Portable Document Format.\n"
+msgstr ""
+"svg - Scalable Vector Graphics tiedosto.\n"
+"pdf - Adobe Portable Document Format.\n"
+
+#: NetworkChart.py:1238 NetworkChart/NetworkChart.py:1234
+msgid "Use database handle instead of GrampID id in URLs."
+msgstr "Käytä tietokannan kahvan sijasta GrampID ja URL-osoitteita."
+
+#: NetworkChart.py:1240 NetworkChart/NetworkChart.py:1236
+msgid ""
+"Use database handle instead of the gramps id for URLs.\n"
+"The handle should never change whereas gramps ids can."
+msgstr ""
+"Käytä tietokannan kahvaa URL-osoitteiden gramps-tunnuksen sijaan.\n"
+"Kahvan ei pitäisi koskaan muuttua, kun taas gramps id voi."
+
+#: NetworkChart.py:1244 NetworkChart/NetworkChart.py:1240
+msgid "Confirm overwrite file."
+msgstr "Vahvista ylikirjoitustiedosto."
+
+#: NetworkChart.py:1247 NetworkChart/NetworkChart.py:1243
+msgid "Enable/disable confirmation of file overwrite."
+msgstr "Ota tiedoston päällekirjoitus käyttöön/poista se käytöstä."
+
+#: ../gramps/gui/configure.py:983
+msgid "Colors"
+msgstr "Värit"
+
+#: SourcesCitationsReport/SourcesCitationsReport.py:324
+#: SourcesCitationsReport/SourcesCitationsReport.py:345
+#: SourcesCitationsReport/SourcesCitationsReport.py:372
+#: SourcesCitationsReport/SourcesCitationsReport.py:378
+#: SourcesCitationsReport/SourcesCitationsReport.py:384
+#, python-format
+msgid "%s"
+msgstr "%s"
+
+#: LifeLineChartView/_dummy_translation_string_po.py:98
+msgid "none"
+msgstr "ei mitään"
+
+#: ../gramps/gen/plug/report/stdoptions.py:307
+msgid "Date format"
+msgstr "Päivämäärän muoto"
+
+# added:
+#: NetworkChart/NetworkChart.py:1026
+msgid "Female Background Alpha"
+msgstr "Naisvärin läpinäkyvyys"

@@ -1,0 +1,3134 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Igal Shapira <igal.shapira@gmail.com>, 2009, 2010, 2011.
+# Avi Markovitz <avi.markovitz@gmail.com>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-09-10 07:59+0300\n"
+"PO-Revision-Date: 2023-09-10 08:07+0300\n"
+"Last-Translator: \n"
+"Language-Team: Avi Markovitz\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==2 ? 1 : n>10 && n%10==0 ? "
+"2 : 3);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: MediaMerge/mediamerge.gpr.py:31
+msgid "Merge Media"
+msgstr "מיזוג מדיה"
+
+#: MediaMerge/mediamerge.gpr.py:32 MediaMerge/mediamerge.gpr.py:33
+msgid ""
+"Searches the entire database, looking for media that have the same path and "
+"merges them."
+msgstr "חיפוש בכלל מסד־הנתונים, לאיתור ומזוג פרטי מדיה בעלי נתיבים זהים."
+
+#: MediaMerge/mediamerge.py:104
+msgid "Media Merge"
+msgstr "מיזוג מדיה"
+
+#: MediaMerge/mediamerge.py:157
+msgid "No media items merged."
+msgstr "לא מוזגו פרטי מדיה."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:9
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:190
+#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
+msgid "Calculate Estimated Dates"
+msgstr "חישוב תאריכים משוערים"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
+#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:11
+msgid "Calculates estimated dates for birth and death."
+msgstr "חישוב תאריכים משוערים ללידה ופטירה."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:83
+msgid "Select filter to restrict people"
+msgstr "בחירת מסנן להגבלת האנשים"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:95
+msgid "Calculated Date Estimates"
+msgstr "תאריכים משוערים מחושבים"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:96
+msgid "Source to remove and/or add"
+msgstr "מקור להוספה ו/או הסרה"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:99
+msgid "Remove previously added events, notes, and source"
+msgstr "הסרת אירועים קודמים, הערות ומקורות, ולבחור נתונים מחדש"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:100
+msgid ""
+"Remove calculated events, notes, and source; occurs immediately on Execute"
+msgstr "הסרת אירועים מחושבים, הערות ומקורות; מתבצע באופן מיידי"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:104
+msgid "Do not add birth events"
+msgstr "לא להוסיף אירועי לידה"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:105
+msgid "Add birth events without dates"
+msgstr "הוספת אירועי לידה ללא תאריכים"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:106
+msgid "Add birth events with dates"
+msgstr "הוספת אירועי לידה עם תאריכים"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:107
+msgid "Add a birth events with or without estimated dates"
+msgstr "אירוע לידה עם או ללא תאריכים משוערים"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:111
+msgid "Do not add death events"
+msgstr "לא להוסיף אירועי פטירה"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:112
+msgid "Add death events without dates"
+msgstr "הוספת אירועי פטירה ללא תאריכים"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:113
+msgid "Add death events with dates"
+msgstr "הוספת ארוע פטירה עם תאריכים"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:114
+msgid "Add death events with or without estimated dates"
+msgstr "אירוע פטירה עם או ללא תאריכים משוערים"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:118
+msgid "Maximum age"
+msgstr "גיל מרבי"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:121
+msgid "Maximum age that one can live to"
+msgstr "תוחלת חיים מירבית (בשנים) לאדם"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:127
+msgid "Maximum age difference between siblings"
+msgstr "הפרש גילאים מרבי בין אחאים"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:133
+msgid "Average years between two generations"
+msgstr "מספר שנים ממוצע בין שני דורות"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:136
+msgid "Estimated Dates"
+msgstr "תאריכים משוערים"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:137
+msgid "Approximate (about)"
+msgstr "מקורב (בסביבות)"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:138
+msgid "Extremes (after and before)"
+msgstr "קיצוניים (אחרי ולפני)"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:139
+msgid "Dates on events are either about or after/before"
+msgstr "תאריכי אירועים הם מסוג, בקרוב או אחרי/לפני"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:172
+msgid ""
+"The Calculate Estimated Dates Tool is used to add and remove birth and death "
+"events for people that are missing these events.\n"
+"\n"
+"To use:\n"
+"1. Go to the Options tab\n"
+"2. Check the [ ] Remove option to remove previous estimates\n"
+"3. Select the Add date options to date events with or without dates\n"
+"4. Click on Execute\n"
+"5. Select the people with which to add events\n"
+"6. Click on 'Add Selected Events' button to create\n"
+"\n"
+"NOTES: if you decide to make an event permanent, remove it from the Source. "
+"Otherwise, it will get removed the next time you automatically remove these "
+"events.\n"
+"\n"
+"You may have to run the tool repeatedly (without removing previous events) "
+"to add all of the events possible."
+msgstr ""
+"הכלי ל'חשוב תאריכים משוערים' נועד להוספת והסרת אירועי לידה ופטירה לאנשים "
+"באילן־היוחסין להם אירועים אלה חסרים.\n"
+"\n"
+"אופן השימוש:\n"
+"1. מעבר ללשונית 'אפשרויות'\n"
+"2. סימון אפשרות [ ] ''הסרה' לניקוי אומדנים קודמים\n"
+"3. בחריה באפשרות 'הוספת תאריך לאירועים עם או בלי תאריכים\n"
+"4. הקשה על ביצוע\n"
+"5. בחירת האנשים להם יש להוסיף אירועים\n"
+"6. הקשה על לחצן 'הוספת אירועים שנבחרו' על מנת ליצור אירועים\n"
+"\n"
+"הערות: כדי לקבע אירוע לצמיתות, יש להסיר אותו מהמקור. אחרת, הוא יוסר בפעם "
+"הבאה שתתבצע הסרת אירועים האלה באופן אוטומטי.\n"
+"\n"
+"ייתכן שתדרש הפעלת הכלי שוב ושוב (מבלי להסיר אירועים קודמים) כדי להוסיף את כל "
+"האירועים האפשריים."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:199
+msgid "Select All"
+msgstr "בחירת הכול"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:200
+msgid "Select None"
+msgstr "לא לבחור דבר"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:201
+msgid "Toggle Selection"
+msgstr "החלפת בחירה"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:202
+msgid "Add Selected Events"
+msgstr "הוספת אירועים שנבחרו"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:208
+msgid "Remove Events, Notes, and Source and Reselect Data"
+msgstr "הסרת אירועים, הערות ומקורות, ולבחור נתונים מחדש"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:209
+msgid ""
+"Are you sure you want to remove previous events, notes, and source and "
+"reselect data?"
+msgstr "האם להסיר אירועים קודמים, הערות ומקורות, ולבחור נתונים מחדש?"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:210
+msgid "Remove and Run Select Again"
+msgstr "הסרה והרצת בחירה חוזרת"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:214
+msgid "Reselect Data"
+msgstr "בחירת נתונים מחדש"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:215
+msgid "Are you sure you want to reselect data?"
+msgstr "האם לבחור נתונים מחדש?"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:216
+msgid "Run Select Again"
+msgstr "הרצת 'לבחור שוב'"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:236
+msgid "Evidence"
+msgstr "ראיה"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:236
+msgid "Relative"
+msgstr "יחסי"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:237
+msgid "Processing...\n"
+msgstr "עיבוד מתבצע...\n"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:255
+msgid "Removing old estimations... "
+msgstr "הסרת אמדנים ישנים... "
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:256
+#, python-format
+msgid "Removing '%s'..."
+msgstr "מתבצעת הסרת '%s'..."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:319
+msgid "done!\n"
+msgstr "בוצע!\n"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:323
+msgid ""
+"Selecting... \n"
+"\n"
+msgstr ""
+"בחירה...\n"
+"\n"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:359
+msgid "Add birth and death events"
+msgstr "הוספת אירועי לידה ופטירה"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:361
+msgid "Add birth event"
+msgstr "הוספת אירוע לידה"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:363
+msgid "Add death event"
+msgstr "הוספת אירוע פטירה"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:398
+msgid "No events to be added."
+msgstr "אין אירועים להוספה."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:439
+msgid "Selecting... "
+msgstr "בחירה... "
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:440
+#, python-format
+msgid "Adding events '%s'..."
+msgstr "הוספת אירועים '%s' מתבצעת..."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:465
+#, python-format
+msgid "Added birth event based on %(evidence)s, from %(name)s"
+msgstr "נוספו אירועי לידה בהתבסס על %(evidence)s, מתוך %(name)s"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:468
+#, python-format
+msgid "Added birth event based on %s"
+msgstr "נוספו אירועי לידה בהתבסס על %s"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:470
+msgid "Estimated birth date"
+msgstr "תאריך פטירה משוער"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:480
+#, python-format
+msgid "Added death event based on %(evidence)s, from %(person)s"
+msgstr "נוספו אירועי פטירה בהתבסס על %(evidence)s, של %(person)s"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:483
+#, python-format
+msgid "Added death event based on %s"
+msgstr "נוספו אירועי פטירה בהתבסס על %s"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:485
+msgid "Estimated death date"
+msgstr "תאריך פטירה משוער"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:495
+msgid " Done! Committing..."
+msgstr " מתבצע הידוד..."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:499
+#, python-format
+msgid "Added %d events."
+msgstr "נוספו %d אירועים."
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:527
+msgid "Estimated date"
+msgstr "תאריך משוער"
+
+#: MediaBrowser/MediaBrowser.gpr.py:30 MediaBrowser/MediaBrowser.gpr.py:31
+msgid "Media Browser"
+msgstr "דפדפן קבצי מדיה"
+
+#: MediaBrowser/MediaBrowser.gpr.py:38 MediaBrowser/MediaBrowser.gpr.py:39
+msgid "Browser"
+msgstr "דפדפן"
+
+#: PlaceCleanup/placecleanup.gpr.py:28 PlaceCleanup/placecleanup.gpr.py:44
+#: PlaceCleanup/placecleanup.gpr.py:46
+msgid "Place Cleanup"
+msgstr "ארגון מקומות"
+
+#: PlaceCleanup/placecleanup.gpr.py:29 PlaceCleanup/placecleanup.gpr.py:30
+msgid ""
+"Place Cleanup Gramplet assists in merging places, as well as completing "
+"places from the GeoNames web database"
+msgstr ""
+"ארגון־מקומות מסייע במיזוג מקומות והשלמת תכונות מקומות מתוך מסד־נתוני המרשתת "
+"של GeoNames"
+
+#: PlaceCleanup/placecleanup.py:266 PlaceCleanup/placecleanup.glade:1020
+#: PlaceCleanup/placecleanup.glade:1088
+msgid ""
+"No\n"
+"Matches"
+msgstr ""
+"אין\n"
+"התאמות"
+
+#: PlaceCleanup/placecleanup.py:267 PlaceCleanup/placecleanup.glade:827
+#: PlaceCleanup/placecleanup.glade:895
+msgid "Find"
+msgstr "חיפוש"
+
+#: PlaceCleanup/placecleanup.py:293
+#, python-format
+msgid ""
+"%s\n"
+"Local\n"
+"Matches"
+msgstr ""
+"%s\n"
+"התאמות\n"
+"מקומיות"
+
+#: PlaceCleanup/placecleanup.py:295
+msgid "Find GeoNames"
+msgstr "חיפוש GeoNames"
+
+#: PlaceCleanup/placecleanup.py:303
+msgid "Need to set GeoNames ID"
+msgstr "נדרש להגדיר מזהה GeoNames"
+
+#: PlaceCleanup/placecleanup.py:304
+msgid "Use the Help button for more information"
+msgstr "הקשה על לחצן העזרה למידע נוסף"
+
+#: PlaceCleanup/placecleanup.py:337
+msgid ""
+"Try changing the Title, or use the \"Edit\" button to finish this level of "
+"the place manually."
+msgstr ""
+"נא לנסות לשנות את הכותרת, או להשתמש בלחצן 'עריכה' כדי לסיים רמה זו של המקום "
+"באופן ידני."
+
+#: PlaceCleanup/placecleanup.py:347
+#, python-format
+msgid ""
+"%s\n"
+"GeoNames\n"
+"Matches"
+msgstr ""
+"%s\n"
+"התאמות\n"
+"GeoNames"
+
+#: PlaceCleanup/placecleanup.py:353
+#, python-format
+msgid "%s matches were found"
+msgstr "נמצאו %s התאמות"
+
+#: PlaceCleanup/placecleanup.py:354
+msgid ""
+"Only 10 matches are shown.\n"
+"To see additional results, press the search button again.\n"
+"Or try changing the Title with more detail, such as a country."
+msgstr ""
+"מוצגות 10 התאמות בלבד.\n"
+"לצפיה בתוצאות נוספות, נא להקיש שוב על לחצן החיפוש.\n"
+"לחלופין, ניתן לנסות ולשנות את הכותרת בפרטים נוספים, כגון מדינה."
+
+#: PlaceCleanup/placecleanup.py:421 PlaceCleanup/placecleanup.py:426
+msgid "Problem getting data from web"
+msgstr "הייתה בעיה באחזור הנתונים מהרשת"
+
+#: PlaceCleanup/placecleanup.py:427
+msgid "Web request Timeout, you can try again..."
+msgstr "פסק־זמן בקשת רשת, נא לנסות שנית..."
+
+#: PlaceCleanup/placecleanup.py:435
+msgid "Problem getting data from GeoNames"
+msgstr "הייתה בעיה באחזור נתונים מ־GeoNames"
+
+#: PlaceCleanup/placecleanup.py:481
+msgid ""
+"One of the places you are merging encloses the other!\n"
+"Please choose another place."
+msgstr ""
+"אחד המקומות שמיועדים למיזוג מכיל בתוכו את המקום שני!\n"
+"נא לבחור מקום אחר."
+
+#: PlaceCleanup/placecleanup.py:759
+msgid ""
+"The place you chose is enclosed in the place you are workin on!\n"
+"Please cancel and choose another place."
+msgstr ""
+"המקום שנבחר מוכל במקום שנמצא כעת בעבודה!\n"
+"נא לבטל ולבחור מקום אחר."
+
+#: PlaceCleanup/placecleanup.py:945
+msgid "GeoNames web site"
+msgstr "אתר מרשתת GeoNames"
+
+#: PlaceCleanup/placecleanup.py:950
+msgid "GeoNames author"
+msgstr "יוצרי GeoNames"
+
+#: PlaceCleanup/placecleanup.py:955
+msgid "GeoNames was founded by Marc Wick. You can reach him at "
+msgstr "GeoNamesנוסדה על ידי מארק וויק. אפשר לפנות אליו ב־ "
+
+#: PlaceCleanup/placecleanup.py:958
+msgid ""
+"GeoNames is a project of Unxos GmbH, Weingartenstrasse 8, 8708 Männedorf, "
+"Switzerland.\n"
+"This work is licensed under a "
+msgstr ""
+"GeoNames הוא מיזם של Unxos GmbH, ויינגרטנשטראסה 8, 8708 מנדורף, שוויץ.\n"
+"עבודה זו מורשית תחת "
+
+#: PlaceCleanup/placecleanup.py:961
+msgid "Creative Commons Attribution 3.0 License"
+msgstr "רישיון קריאטיב קומונס אטריביושן 3.0"
+
+#: PlaceCleanup/placecleanup.py:973
+#, python-format
+msgid "Add Souce/Repo/Note (%s)"
+msgstr "הוספת מקור/מאגר/הערה (%s)"
+
+#: PlaceCleanup/placecleanup.py:1074
+msgid "This Place is not used!"
+msgstr "מקום זה אינו בשימוש!"
+
+#: PlaceCleanup/placecleanup.py:1075
+msgid ""
+"You should delete it, or, if it contains useful notes or other data, use the "
+"Find to merge it into a valid place."
+msgstr ""
+"נא למחוק מקום זה, אך אם רשומת המקום כוללת בתוכה הערות שימושיות או נתונים "
+"אחרים, נא להשתמש בחיפוש כדי למזג מקום זה עם מקום תקין."
+
+#: PlaceCleanup/placecleanup.glade:27
+msgid "City, County, State, Country"
+msgstr "עיר, מחוז, מדינה, ארץ"
+
+#: PlaceCleanup/placecleanup.glade:48 PlaceCleanup/placecleanup.glade:52
+msgid "Primary Name"
+msgstr "שם עיקרי"
+
+#: PlaceCleanup/placecleanup.glade:88 PlaceCleanup/placecleanup.glade:89
+msgid "The current Primary name."
+msgstr "שם ראשי נוכחי."
+
+#: PlaceCleanup/placecleanup.glade:102
+msgid "The postal code for the place, if any."
+msgstr "המיקוד של המקום, אם קיים."
+
+#: PlaceCleanup/placecleanup.glade:115 PlaceCleanup/placecleanup.glade:114
+msgid "What type of place this is. Eg 'Country', 'City', ... ."
+msgstr "סוג מקום. לדוגמה:  'מדינה', 'עיר', ... ."
+
+#: PlaceCleanup/placecleanup.glade:132 PlaceCleanup/placecleanup.glade:150
+#: PlaceCleanup/placecleanup.glade:281 PlaceCleanup/placecleanup.glade:166
+#: PlaceCleanup/placecleanup.glade:180 PlaceCleanup/placecleanup.glade:339
+#: PlaceCleanup/placecleanup.glade:353
+msgid "Orig"
+msgstr "מקור"
+
+#: PlaceCleanup/placecleanup.glade:136 PlaceCleanup/placecleanup.glade:133
+msgid "Check this box if you want to keep the original Postal code."
+msgstr "סימון תיבה זו לשמירת קוד המקום המקורי."
+
+#: PlaceCleanup/placecleanup.glade:154 PlaceCleanup/placecleanup.glade:148
+msgid "Check this box if you want to keep the original Place Type."
+msgstr "סימון תיבה זו לשמירת סוג המקום המקורי."
+
+#: PlaceCleanup/placecleanup.glade:236 PlaceCleanup/placecleanup.glade:280
+msgid "Check this box if you want to keep the original Latitude and Longitude."
+msgstr "סימון תיבה זו לשמירת קווי האורך והרוחב המקורים."
+
+#: PlaceCleanup/placecleanup.glade:254 PlaceCleanup/placecleanup.glade:295
+msgid "The Gramps ID.."
+msgstr "מזהה גרמפס.."
+
+#: PlaceCleanup/placecleanup.glade:285 PlaceCleanup/placecleanup.glade:322
+msgid "Check this box if you want to keep the original Gramps ID."
+msgstr "סימון תיבה זו לשמירת מזהה גרמפס המקורי."
+
+#: PlaceCleanup/placecleanup.glade:315 PlaceCleanup/placecleanup.glade:391
+msgid ""
+"Alterative Names\n"
+"Select one or more rows and press 'Keep' button to toggle the 'include into "
+"place' status ."
+msgstr ""
+"שמות חלופיים\n"
+"בחירה בשורה אחת או יותר והקשה על לחצן 'שמירה' למעבר למצב 'הכללה בתוך מקום'."
+
+#: PlaceCleanup/placecleanup.glade:330 PlaceCleanup/placecleanup.glade:406
+msgid "Inc"
+msgstr "Inc"
+
+#: PlaceCleanup/placecleanup.glade:370 PlaceCleanup/placecleanup.glade:446
+msgid "Lang"
+msgstr "שפה"
+
+#: PlaceCleanup/placecleanup.glade:444 PlaceCleanup/placecleanup.glade:520
+msgid ""
+"Select one or more rows and use this button to keep the alternative names."
+msgstr "בחירת שורה אחת או יותר ושימוש בלחצן זה לשמירת השמות החלופיים."
+
+#: PlaceCleanup/placecleanup.glade:460 PlaceCleanup/placecleanup.glade:536
+msgid "Select one row and use this button to make the row the primary name."
+msgstr "בחירת שורה אחת ושימוש בלחצן זה להפיכת השורה לשם העיקרי."
+
+#: PlaceCleanup/placecleanup.glade:472 PlaceCleanup/placecleanup.glade:548
+msgid "Discard"
+msgstr "להסיר"
+
+#: PlaceCleanup/placecleanup.glade:476 PlaceCleanup/placecleanup.glade:552
+msgid ""
+"Select one or more rows and use this button to discard the alternative names."
+msgstr "בחירת שורה אחת או יותר ושימוש בלחצן זה לשמיטת השמות החלופיים."
+
+#: PlaceCleanup/placecleanup.glade:504 PlaceCleanup/placecleanup.glade:580
+msgid "Cancel the operation, no changes are made to your Place."
+msgstr "ביטול פעולה, לא נעשו שינויים ברשומת המקום."
+
+#: PlaceCleanup/placecleanup.glade:520 PlaceCleanup/placecleanup.glade:595
+msgid "Store the values in your Place."
+msgstr "אחסון הערכים במקום."
+
+#: PlaceCleanup/placecleanup.glade:605 PlaceCleanup/placecleanup.glade:677
+msgid "Keep Web Links"
+msgstr "להשאיר קישורי רשת"
+
+#: PlaceCleanup/placecleanup.glade:609 PlaceCleanup/placecleanup.glade:681
+msgid "Puts web links (typically wikipedia) into your place."
+msgstr "משלב קישורי רשת (וויקי‎פדיה באופן טיפוסי)‎ במקומות."
+
+#: PlaceCleanup/placecleanup.glade:622 PlaceCleanup/placecleanup.glade:693
+msgid "Add citation and source to Place"
+msgstr "הוספת מובאה ומקור למקום"
+
+#: PlaceCleanup/placecleanup.glade:626 PlaceCleanup/placecleanup.glade:697
+msgid "This Adds a Citation to your place, citing GeoNames."
+msgstr "הוספת מובאה למקום, מובאה מ־GeoNames."
+
+#: PlaceCleanup/placecleanup.glade:641 PlaceCleanup/placecleanup.glade:711
+msgid "GeoNames User ID"
+msgstr "מזהה משתמש GeoNames"
+
+#: PlaceCleanup/placecleanup.glade:653 PlaceCleanup/placecleanup.glade:723
+msgid "Enter you Geonames user ID here."
+msgstr "הזנת מזהה משתמש GeoNames כאן."
+
+#: PlaceCleanup/placecleanup.glade:665 PlaceCleanup/placecleanup.glade:735
+msgid "Alternative Names Languages to keep"
+msgstr "שמות ושפות חלופיים לניהול"
+
+#: PlaceCleanup/placecleanup.glade:677 PlaceCleanup/placecleanup.glade:747
+msgid ""
+"Enter the two or three letter codes for the languages you wish to keep, "
+"seperated by spaces.\n"
+"For example \"en fr ru\".\n"
+"These languages will initially be checked off on the Names result display.\n"
+"If you often see an un-checked name in a specific language you want, add the "
+"language code here."
+msgstr ""
+"הזנת קוד שפה בשתיים או שלוש אותיות עבור השפות לשמירה, מופרדים ברווחים.\n"
+"לדוגמה \"en fr ru\" \n"
+"שפות אלה יסומנו מלכתחילה במצג 'תוצאות שמות'.\n"
+"במידה ומופיעים לעתים קרובות שמות לא מסומנים בשפה הרצויה, ניתן להוסיף כאן את "
+"קוד השפה."
+
+#: PlaceCleanup/placecleanup.glade:693 PlaceCleanup/placecleanup.glade:763
+msgid "Currently Enclosed Places"
+msgstr "מקומות מוכלים נוכחיים"
+
+#: PlaceCleanup/placecleanup.glade:705 PlaceCleanup/placecleanup.glade:775
+msgid ""
+"When cleaning a place that is already enclosed, this affects what is done.\n"
+"If '<b>Keep current Enclosure</b>' is selected, no changes to the enclosing "
+"place is made.\n"
+"If '<b>Replace with GeoNames Enclosure</b>' is selected, the enclosed place "
+"is changed to the next level GeoNames place.  This may result in some unused "
+"places remaining in your database."
+msgstr ""
+"ארגון מקום שכבר מוכל במקום אחר, ישפע גם על מה שכבר נעשה.\n"
+"אם  נבחרה האפשרות '<b>שמירת הכללה נוכחית</b>', לא יעשו שינויים במקום המכיל.\n"
+"אם  נבחרה האפשרות '<b>החלפה בהכללת GeoNames</b>', פרטי המקום המוכל ישתנו "
+"לרמה הבאה של מקומות GeoNames. מצב זה עשוי לגרום לכך שמספר מקומות במסד "
+"הנתונים יוותרו ללא שימוש."
+
+#: PlaceCleanup/placecleanup.glade:710 PlaceCleanup/placecleanup.glade:780
+msgid "Keep current Enclosure"
+msgstr "שמירת הכללה נוכחית"
+
+#: PlaceCleanup/placecleanup.glade:726 PlaceCleanup/placecleanup.glade:795
+msgid "Replace with GeoNames Enclosure"
+msgstr "מקומות מוכלים גאו-נאמס"
+
+#: PlaceCleanup/placecleanup.glade:782 PlaceCleanup/placecleanup.glade:851
+msgid ""
+"Current Place title.\n"
+"You can edit this to help find other places, particularly to reduce the "
+"number of results."
+msgstr ""
+"כותרת מקום נוכחי.\n"
+"ניתן לעריכה על מנת לסייע באיתור מקומות אחרים, במיוחד כדי לצמצום את מספר "
+"התוצאות."
+
+#: PlaceCleanup/placecleanup.glade:831 PlaceCleanup/placecleanup.glade:899
+msgid "Search your local places and GeoNames for a match."
+msgstr "חיפוש התאמה במקומות local ומקומות GeoNames."
+
+#: PlaceCleanup/placecleanup.glade:847 PlaceCleanup/placecleanup.glade:915
+msgid ""
+"Continue to merge (for local places), or to complete a place (for GeoNames)."
+msgstr "להמשיך במיזוג (מקומות local), או להשלים תכונות מקום (מקומות GeoNames)."
+
+#: PlaceCleanup/placecleanup.glade:864 PlaceCleanup/placecleanup.glade:932
+msgid ""
+"Split up Title, Edit manually, and enclose with next level of hierarchy.  "
+"For use when the initial component of the Title is too detailed to be found "
+"in the gazetteer."
+msgstr ""
+"פיצול כותרת, עריכה באופן ידני והכללה ברמה הבאה של ההיררכיה.  לשימוש כאשר "
+"הרכיב הראשוני של הכותרת מפורט מכדי להימצא במִלוֹן הגֵאוֹגרָפִי."
+
+#: PlaceCleanup/placecleanup.glade:890 PlaceCleanup/placecleanup.glade:958
+msgid "Next Place"
+msgstr "המקום הבא"
+
+#: PlaceCleanup/placecleanup.glade:894 PlaceCleanup/placecleanup.glade:962
+msgid "Find an incomplete place."
+msgstr "מציאת מקום חלקי."
+
+#: PlaceCleanup/placecleanup.glade:917 PlaceCleanup/placecleanup.glade:985
+msgid "Set preferences"
+msgstr "קביעת העדפות"
+
+#: PlaceCleanup/placecleanup.glade:940 PlaceCleanup/placecleanup.glade:1008
+msgid "Select one of these places to continue the cleanup process."
+msgstr "בחירת אחד מהמקומות הללו להמשך בתהליך הארגון."
+
+#: PlaceCleanup/placecleanup.glade:967 PlaceCleanup/placecleanup.glade:1035
+msgid "Search result places"
+msgstr "תוצאות חיפוש מקומות"
+
+#: PlaceCleanup/placecleanup.glade:1034 PlaceCleanup/placecleanup.glade:1102
+msgid ""
+"Checking the 'Populated' checkbox causes the GeoNames search to include "
+"'Populted places', places where people live and work."
+msgstr ""
+"סימון תיבת 'אכלוס' תגרום לחיפוש GeoNames לכלול בתוצאות החיפוש גם 'אזורים "
+"מאוכלסים' בהם אנשים גרים ועובדים."
+
+#: PlaceCleanup/placecleanup.glade:1053 PlaceCleanup/placecleanup.glade:1119
+msgid "Populated"
+msgstr "אכלוס"
+
+#: PlaceCleanup/placecleanup.glade:1065 PlaceCleanup/placecleanup.glade:1131
+msgid ""
+"Checking the 'Admin' checkbox cause the GeoNames search to include "
+"adminstrative subdivisions in the search (countries, states, counties etc.)."
+msgstr ""
+"סימון תיבת 'מנהלתי' תגרום לחיפוש GeoNames לכלול בתוצאות החיפוש גם אזורים "
+"מנהליים משניים (מדינות, חבלים, מחוזות וכיוצא בזה)."
+
+#: PlaceCleanup/placecleanup.glade:1084 PlaceCleanup/placecleanup.glade:1148
+msgid ""
+"Checking the 'Spot' checkbox cause the GeoNames search to include a wide "
+"variety of other places in the search (churches, burial grounds, buildings "
+"etc.)."
+msgstr ""
+"סימון תיבת הסימון 'כתם' תגרום לחיפוש GeoNames לכלול בתוצאות החיפוש מגוון רחב "
+"של מקומות אחרים (כנסיות, אתרי קבורה, מבני ציבור, וכדומה)."
+
+#: PlaceCleanup/placecleanup.glade:1101 PlaceCleanup/placecleanup.glade:1163
+msgid "Admin"
+msgstr "מנהלתי"
+
+#: PlaceCleanup/placecleanup.glade:1112 PlaceCleanup/placecleanup.glade:1174
+msgid "Spot"
+msgstr "כתם"
+
+#: PluginManager/PluginManager.gpr.py:29 PluginManager/PluginManager.gpr.py:30
+msgid "Plugin Manager Enhanced"
+msgstr "מנהל מתקעים משופר"
+
+#: PluginManager/PluginManager.gpr.py:30 PluginManager/PluginManager.gpr.py:31
+msgid "An Addon/Plugin Manager with several additional capabilities"
+msgstr "מנהל מתקעים/תוספים עם יכולות רבות נוספות"
+
+#: PluginManager/PluginManager.py:87 PluginManager/PluginManager.py:84
+msgid "Plugin Manager - Enhanced"
+msgstr "מנהל מתקעים - משופר"
+
+#: PluginManager/PluginManager.py:151 PluginManager/PluginManager.py:154
+msgid ""
+"Enter search words to filter the addons.\n"
+"All the words must be present somewhere in the row or\n"
+"the addon filename to be included in the search.\n"
+"Word case and order is ignored."
+msgstr ""
+"הזנת מילות חיפוש לסינון התוספים.\n"
+"כל המילים חייבות להיות במקום כלשהו בשורה או\n"
+"שקובץ התוסף יכלל בחיפוש.\n"
+"המערכת תתעלם מסדר המילים ורישיות."
+
+#: PluginManager/PluginManager.py:155 PluginManager/PluginManager.py:158
+msgid "Search..."
+msgstr "חיפוש..."
+
+#: PluginManager/PluginManager.py:161 ../gramps/gui/plug/_windows.py:816
+msgid "Check for updated addons now"
+msgstr "בדיקת זמינות עדכוני תוספים כעט"
+
+#: PluginManager/PluginManager.py:207 PluginManager/PluginManager.py:216
+msgid "Restart..."
+msgstr "אתחול..."
+
+#: PluginManager/PluginManager.py:208 PluginManager/PluginManager.py:217
+msgid ""
+"Please Restart Gramps so that your addon changes can be safely completed."
+msgstr "נא לאתחל את גראמפס כדי שהשינויים במתקעים יושלמו בבטחה."
+
+#: PluginManager/PluginManager.py:401 PluginManager/PluginManager.py:336
+#, python-format
+msgid "Error removing the '%s' directory, The uninstall may have failed"
+msgstr "שגיאה בהסרת המחיצה '%s', ייתכן שהסרת ההתקנה כשלה"
+
+#: PluginManager/PluginManager.py:441 PluginManager/PluginManager.py:376
+msgid ""
+"'*' items are supplied by 3rd party authors,\n"
+"<s>strikeout</s> items are hidden"
+msgstr ""
+"'*' פריטים שסופקו על ידי יוצרים צד שלישי,\n"
+"‏<s>קו חוצה</s> פריטים מוסתרים"
+
+#: PluginManager/PluginManager.py:472 ../gramps/gui/plug/_windows.py:1079
+#: ../gramps/gui/plug/_windows.py:1137
+msgid "Info"
+msgstr "מידע"
+
+#: PluginManager/PluginManager.py:475 PluginManager/PluginManager.py:586
+#: PluginManager/PluginManager.py:410 PluginManager/PluginManager.py:530
+msgid "Hide"
+msgstr "הסתרה"
+
+#: PluginManager/PluginManager.py:494 PluginManager/PluginManager.py:430
+msgid "Show hidden items"
+msgstr "הצג פריטים מוסתרים"
+
+#: PluginManager/PluginManager.py:502 PluginManager/PluginManager.py:438
+msgid "Show Built-in items"
+msgstr "הצג פריטים מובנים"
+
+#: PluginManager/PluginManager.py:509 PluginManager/PluginManager.py:445
+msgid "* indicates 3rd party addon"
+msgstr "*מציין מתקע צג שלישי"
+
+#: PluginManager/PluginManager.py:514 PluginManager/PluginManager.py:450
+msgid "Plugins"
+msgstr "מתקעים"
+
+#: PluginManager/PluginManager.py:584 PluginManager/PluginManager.py:528
+msgid "Unhide"
+msgstr "ביטול הסתרה"
+
+#: PluginManager/PluginManager.py:603 PluginManager/PluginManager.py:547
+msgid "Uninstall"
+msgstr "הסרה"
+
+#: PluginManager/PluginManager.py:613 ../gramps/gui/plug/_windows.py:962
+msgid "Checking Addons Failed"
+msgstr "בדיקת תוספים כשלה"
+
+#: PluginManager/PluginManager.py:614 ../gramps/gui/plug/_windows.py:964
+msgid "The addon repository appears to be unavailable. Please try again later."
+msgstr "נראה כי מאגר התוסף אינו זמין. נא לנסות שוב מאוחר יותר."
+
+#: PluginManager/PluginManager.py:674 PluginManager/PluginManager.py:721
+msgid "*Available"
+msgstr "*זמין"
+
+#: PluginManager/PluginManager.py:690 PluginManager/PluginManager.py:737
+msgid "Built-in"
+msgstr "מובנה"
+
+#: PluginManager/PluginManager.py:695 PluginManager/PluginManager.py:742
+msgid "*Installed"
+msgstr "*מותקן"
+
+#: PluginManager/PluginManager.py:704 PluginManager/PluginManager.py:751
+msgid "Update Available"
+msgstr "עדכון זמין"
+
+#: PluginManager/PluginManager.py:733 ../gramps/gui/plug/_windows.py:1648
+msgid "Detailed Info"
+msgstr "מידע מפורט"
+
+#: MediaVerify/MediaVerify.gpr.py:30 MediaVerify/MediaVerify.gpr.py:31
+msgid "Media Verify"
+msgstr "אימות מדיה"
+
+#: MediaVerify/MediaVerify.gpr.py:31 MediaVerify/MediaVerify.gpr.py:32
+msgid "Verify that media is present in the correct path"
+msgstr "נא לודא שקיימת מדיה בנתיב הנוכחי"
+
+#: MediaVerify/MediaVerify.py:78
+msgid "Media Verify Tool"
+msgstr "כלי לאימות אוביקטי מדיה"
+
+#: MediaVerify/MediaVerify.py:83
+msgid "Moved/Renamed Files"
+msgstr "קבצים שהועברו או ששם השתנה"
+
+#: MediaVerify/MediaVerify.py:83
+msgid "Missing Files"
+msgstr "קבצים חסרים"
+
+#: MediaVerify/MediaVerify.py:84
+msgid "Duplicate Files"
+msgstr "שכפול קבצים"
+
+#: MediaVerify/MediaVerify.py:84
+msgid "Extra Files"
+msgstr "קבצים נוספים"
+
+#: MediaVerify/MediaVerify.py:85
+msgid "No md5 Generated"
+msgstr "לא חולל md5"
+
+#: MediaVerify/MediaVerify.py:85
+msgid "Errors"
+msgstr "שגיאות"
+
+#: MediaVerify/MediaVerify.py:101
+msgid "Close the Media Verify Tool"
+msgstr "סגירת הכלי לאימות נתונים"
+
+#: MediaVerify/MediaVerify.py:103
+msgid "Generate"
+msgstr "חילול"
+
+#: MediaVerify/MediaVerify.py:104
+msgid "Generate md5 hashes for media objects"
+msgstr "חילול האש md5 לאוביקטי מדיה"
+
+#: MediaVerify/MediaVerify.py:106
+msgid "Verify"
+msgstr "אימות"
+
+#: MediaVerify/MediaVerify.py:107
+msgid "Check media paths and report missing, duplicate and extra files"
+msgstr "בדיקת נתיבי מדיה ודיווח על פריטים חסרים, שכפול וחילוץ קבצים"
+
+#: MediaVerify/MediaVerify.py:110
+msgid "Export"
+msgstr "ייצוא"
+
+#: MediaVerify/MediaVerify.py:111
+msgid "Export the results to a text file"
+msgstr "ייצוא התוצאות לקובץ מלל"
+
+#: MediaVerify/MediaVerify.py:113
+msgid "Fix"
+msgstr "תיקון"
+
+#: MediaVerify/MediaVerify.py:114
+msgid "Fix media paths of moved and renamed files"
+msgstr "תיקון נתיבי מדיה לקבצים שהועברו או ששם השתנה"
+
+#: MediaVerify/MediaVerify.py:132
+msgid "Verify Gramps media using md5 hashes"
+msgstr "לאמת מדית גרמפס תוך שימוש בהאש md5"
+
+#: MediaVerify/MediaVerify.py:143
+msgid "Files"
+msgstr "קבצים"
+
+#: MediaVerify/MediaVerify.py:195
+msgid "Export results to a text file"
+msgstr "ייצוא תוצאות לקובץ מלל"
+
+#: MediaVerify/MediaVerify.py:218
+#, python-format
+msgid "Error when writing the report: %s"
+msgstr "שגיאה בעת כתיבת דוח: %s"
+
+#: MediaVerify/MediaVerify.py:259
+msgid "Generating media hashes"
+msgstr "חילול האש למדיה"
+
+#: MediaVerify/MediaVerify.py:261
+msgid "Set media hashes"
+msgstr "הגדרת האש לאוביקטי מדיה"
+
+#: MediaVerify/MediaVerify.py:296
+msgid ""
+"Media path not set.  You must set the \"Base path for relative media paths\" "
+"in the Preferences."
+msgstr ""
+"לא הוגדר נתיב מדיה.  נדרש להגדיר בהעדפות את \"נתיב הבסיס לנתיבי מדיה יחסיים\""
+
+#: MediaVerify/MediaVerify.py:307
+msgid "Finding files"
+msgstr "איתור קבצים"
+
+#: MediaVerify/MediaVerify.py:335
+msgid "Checking paths"
+msgstr "בדיקת נתיבים"
+
+#: MediaVerify/MediaVerify.py:388
+msgid "Fixing file paths"
+msgstr "תיקון נתיבי קובץ"
+
+#: MediaVerify/MediaVerify.py:390
+msgid "Fix media paths"
+msgstr "תיקון נתיבי מדיה"
+
+#: GetGOV/getgov.gpr.py:30 GetGOV/getgov.gpr.py:41 GetGOV/getgov.gpr.py:42
+msgid "GetGOV"
+msgstr "גטגוב"
+
+#: GetGOV/getgov.gpr.py:31
+msgid "Gramplet to get places from the GOV database"
+msgstr "גראמפלט לאחזור מקומות ממסד נתונים GOV"
+
+#: GetGOV/getgov.py:303
+msgid "Enter GOV-id:"
+msgstr "הזנת מזהה GOV:"
+
+#: GetGOV/getgov.py:311
+msgid "Get Place"
+msgstr "אחזור מקום"
+
+#: GetGOV/getgov.py:343
+#, python-format
+msgid "Add GOV-id place %s"
+msgstr "הוספת מקום מזהה GOV ‏%s"
+
+#: GetGOV/getgov.py:518 GetGOV/getgov.py:521
+#, python-format
+msgid "from %s to %s"
+msgstr "מ %s ל %s"
+
+#: GetGOV/getgov.py:520 GetGOV/getgov.py:523
+#, python-format
+msgid "after %s"
+msgstr "אחרי %s"
+
+#: GetGOV/getgov.py:522 GetGOV/getgov.py:525
+#, python-format
+msgid "before %s"
+msgstr "לפני %s"
+
+#: AssociationsTool/associationstool.gpr.py:35
+#: AssociationsTool/associationstool.gpr.py:36
+msgid "Check Associations data"
+msgstr "בדיקת נתוני שיוכים"
+
+#: AssociationsTool/associationstool.gpr.py:36
+#: AssociationsTool/associationstool.gpr.py:37
+msgid "Will check the data on Association for people."
+msgstr "בדיקת המידע לשיוכ‏ים לאנשים."
+
+#: AssociationsTool/associationstool.py:52
+#: AssociationsTool/associationstool.py:53
+msgid "Associations state tool"
+msgstr "כלי מצב שיוכים"
+
+#: AssociationsTool/associationstool.py:76
+#: AssociationsTool/associationstool.py:81
+msgid "Type of link"
+msgstr "סוג קישור"
+
+#: AssociationsTool/associationstool.py:77
+#: AssociationsTool/associationstool.py:82
+msgid "Of"
+msgstr "מ"
+
+#: Topola/Topola.gpr.py:3 Topola/Topola.gpr.py:4
+msgid "Interactive Family Tree"
+msgstr "אילן־יוחסין הדודי"
+
+#: Topola/Topola.gpr.py:4 Topola/Topola.gpr.py:5
+msgid "Opens an interactive tree in the browser"
+msgstr "פתיחת אילן־יוחסין הדודי בדפדפן"
+
+#: DataEntryGramplet/DataEntryGramplet.gpr.py:8
+#: DataEntryGramplet/DataEntryGramplet.gpr.py:9
+msgid "Data Entry Gramplet"
+msgstr "גראמפלט הזנת נתונים"
+
+#: DataEntryGramplet/DataEntryGramplet.gpr.py:9
+#: DataEntryGramplet/DataEntryGramplet.gpr.py:10
+msgid "Gramplet for quick data entry"
+msgstr "גראמפלט להזנת נתונים מהירה"
+
+#: DataEntryGramplet/DataEntryGramplet.py:71 FilterRules/activepersonrule.py:45
+msgid "Active person"
+msgstr "אדם פעיל"
+
+#: DataEntryGramplet/DataEntryGramplet.py:73
+msgid "Family:"
+msgstr "משפחה:"
+
+#: DataEntryGramplet/DataEntryGramplet.py:74
+msgid "Sources?"
+msgstr "מקורות?"
+
+#: DataEntryGramplet/DataEntryGramplet.py:76
+#: DataEntryGramplet/DataEntryGramplet.py:109
+msgid "Surname, Given"
+msgstr "שם משפחה, שם פרטי"
+
+#: DataEntryGramplet/DataEntryGramplet.py:89
+msgid "Save"
+msgstr "שמירה"
+
+#: DataEntryGramplet/DataEntryGramplet.py:92
+msgid "Abandon"
+msgstr "נטישה"
+
+#: DataEntryGramplet/DataEntryGramplet.py:97
+msgid "New person"
+msgstr "אדם חדש"
+
+#: DataEntryGramplet/DataEntryGramplet.py:98
+msgid "Add relation"
+msgstr "הוספת קשר-גומלין"
+
+#: DataEntryGramplet/DataEntryGramplet.py:99
+msgid "No relation to active person"
+msgstr "אין קשר לאדם הפעיל"
+
+#: DataEntryGramplet/DataEntryGramplet.py:100
+msgid "Add as a Parent"
+msgstr "הוספה כהורה"
+
+#: DataEntryGramplet/DataEntryGramplet.py:101
+msgid "Add as a Mother"
+msgstr "הוספה כאם"
+
+#: DataEntryGramplet/DataEntryGramplet.py:102
+msgid "Add as a Father"
+msgstr "הוספה כאב"
+
+#: DataEntryGramplet/DataEntryGramplet.py:103
+msgid "Add as a Spouse"
+msgstr "הוספה כבן(ת) זוג"
+
+#: DataEntryGramplet/DataEntryGramplet.py:104
+msgid "Add as a Wife"
+msgstr "הוספה כרעיה"
+
+#: DataEntryGramplet/DataEntryGramplet.py:105
+msgid "Add as a Husband"
+msgstr "הוספה כבעל"
+
+#: DataEntryGramplet/DataEntryGramplet.py:106
+msgid "Add as a Sibling"
+msgstr "הוספה כצאצא"
+
+#: DataEntryGramplet/DataEntryGramplet.py:107
+msgid "Add as a Child"
+msgstr "הוספת צאצא"
+
+#: DataEntryGramplet/DataEntryGramplet.py:124
+msgid "Copy Active Data"
+msgstr "העתקת נתונים פעילים."
+
+#: DataEntryGramplet/DataEntryGramplet.py:167
+#: DataEntryGramplet/DataEntryGramplet.py:178
+#: DataEntryGramplet/DataEntryGramplet.py:315
+msgid "in"
+msgstr "ב"
+
+#: DataEntryGramplet/DataEntryGramplet.py:441
+#: DataEntryGramplet/DataEntryGramplet.py:569
+#, python-format
+msgid "Gramplet Data Edit: %s"
+msgstr "גראמפלט הזנת נתונים: %s"
+
+#: DataEntryGramplet/DataEntryGramplet.py:515
+msgid "Please provide a name."
+msgstr "נא להזין שם."
+
+#: DataEntryGramplet/DataEntryGramplet.py:515
+msgid "Can't add new person."
+msgstr "לא ניתן להוסיף אדם חדש."
+
+#: DataEntryGramplet/DataEntryGramplet.py:523
+#: DataEntryGramplet/DataEntryGramplet.py:531
+#: DataEntryGramplet/DataEntryGramplet.py:536
+#: DataEntryGramplet/DataEntryGramplet.py:541
+#: DataEntryGramplet/DataEntryGramplet.py:550
+#: DataEntryGramplet/DataEntryGramplet.py:555
+#: DataEntryGramplet/DataEntryGramplet.py:560
+#: DataEntryGramplet/DataEntryGramplet.py:565
+msgid "Please set an active person."
+msgstr "נא להגדיר אדם פעיל"
+
+#: DataEntryGramplet/DataEntryGramplet.py:523
+#: DataEntryGramplet/DataEntryGramplet.py:526
+msgid "Can't add new person as a parent."
+msgstr "לא ניתן להוסיף אדם חדש כהורה."
+
+#: DataEntryGramplet/DataEntryGramplet.py:526
+#: DataEntryGramplet/DataEntryGramplet.py:545
+msgid "Please set the new person's gender."
+msgstr "נא להגדיר מגדר לאדם החדש."
+
+#: DataEntryGramplet/DataEntryGramplet.py:531
+msgid "Can't add new person as a mother."
+msgstr "לא ניתן להוסיף אדם חדש כאם."
+
+#: DataEntryGramplet/DataEntryGramplet.py:536
+msgid "Can't add new person as a father."
+msgstr "לא ניתן להוסיף אדם חדש כאב."
+
+#: DataEntryGramplet/DataEntryGramplet.py:541
+#: DataEntryGramplet/DataEntryGramplet.py:545
+#: DataEntryGramplet/DataEntryGramplet.py:768
+#: DataEntryGramplet/DataEntryGramplet.py:805
+#: DataEntryGramplet/DataEntryGramplet.py:838
+msgid "Can't add new person as a spouse."
+msgstr "לא ניתן להוסיף אדם חדש כבן(ת) זוג."
+
+#: DataEntryGramplet/DataEntryGramplet.py:550
+msgid "Can't add new person as a wife."
+msgstr "לא ניתן להוסיף אדם חדש כרעיה."
+
+#: DataEntryGramplet/DataEntryGramplet.py:555
+msgid "Can't add new person as a husband."
+msgstr "לא ניתן להוסיף אדם חדש כבעל."
+
+#: DataEntryGramplet/DataEntryGramplet.py:560
+msgid "Can't add new person as a sibling."
+msgstr "לא ניתן להוסיף אדם חדש כאח או אחות."
+
+#: DataEntryGramplet/DataEntryGramplet.py:565
+#: DataEntryGramplet/DataEntryGramplet.py:938
+msgid "Can't add new person as a child."
+msgstr "לא ניתן להוסיף אדם חדש כצאצא."
+
+#: DataEntryGramplet/DataEntryGramplet.py:763
+msgid "Please set Active person."
+msgstr "נא להגדיר אדם פעיל"
+
+#: DataEntryGramplet/DataEntryGramplet.py:764
+msgid "Can't add new person as a spouse to no one."
+msgstr "לא ניתן להוסיף אדם חדש כבן(ת) זוג לאף אחד."
+
+#: DataEntryGramplet/DataEntryGramplet.py:767
+msgid "Please set gender on Active or new person."
+msgstr "נא להגדיר מגדר לאדם פעיל או אדם חדש."
+
+#: DataEntryGramplet/DataEntryGramplet.py:804
+#: DataEntryGramplet/DataEntryGramplet.py:837
+msgid "Same genders on Active and new person."
+msgstr "מגדר זהה לאדם הפעיל והאדם החדש."
+
+#: DataEntryGramplet/DataEntryGramplet.py:937
+msgid "Please set gender on Active person."
+msgstr "נא להגדיר מגדר לאדם פעיל."
+
+#: Themes/themes.gpr.py:28 Themes/themes.gpr.py:29
+msgid "Theme preferences"
+msgstr "העדפות ערכת נושא"
+
+#: Themes/themes.gpr.py:29 Themes/themes.gpr.py:31
+msgid ""
+"An addition to Preferences for simple Theme and Font adjustment.  Especially "
+"useful for Windows users."
+msgstr ""
+"תוספת למועדפים להתאמת ערכת נושא וגופן פשוטים. שימושי במיוחד עבור משתמשי "
+"ווינדווז."
+
+#: Themes/themes.py:156 Themes/themes.py:174 Themes/themes.py:172
+#: Themes/themes.py:190
+msgid "Theme is hardcoded by GTK_THEME"
+msgstr "ערכת נושא מקודדת באופן מובנה על ידי GTK_THEME"
+
+#: Themes/themes.py:159 Themes/themes.py:209 DynamicWeb/dynamicweb.py:5157
+msgid "Theme"
+msgstr "ערכת נושא"
+
+#: Themes/themes.py:164 Themes/themes.py:180
+msgid "Dark Variant"
+msgstr "חלופת צבעים כהים"
+
+#: Themes/themes.py:182 Themes/themes.py:198
+msgid "Font"
+msgstr "גופן"
+
+#: Themes/themes.py:198 Themes/themes.py:214
+msgid "Fixed Scrollbar (requires restart)"
+msgstr "פסי גלילה מקובעים (נדרשת הפעלה מחדש)"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.gpr.py:28
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.gpr.py:36
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.gpr.py:29
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.gpr.py:37
+msgid "Prerequisites Checker"
+msgstr "בדיקת דרישות־קדם"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.gpr.py:29
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.gpr.py:30
+msgid "Prerequisites Checker Gramplet"
+msgstr "גרמפלט בדיקת דרישות־קדם"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:136
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:143
+msgid ""
+"Diagnostic Gramplet to help evaluate if <a href=\"https://gramps-project.org/"
+"\">Gramps</a> has all <a href=\"https://github.com/gramps-project/gramps/"
+"blob/master/README.md\">prerequisites</a> installed.\n"
+msgstr ""
+"גרמפלט אבחון שנועד להעריך אם <a href=\"https://gramps-project.org/\">גרמפס</"
+"a> , <a href=\"https://github.com/gramps-project/gramps/blob/master/"
+"README.md\">כל דרישות הקדם הנחוצות להפעלה תקינה של</a> מותקנות.\n"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:142
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:149
+msgid ""
+"Diagnostic Gramplet to help evaluate if Gramps has all prerequisites "
+"installed."
+msgstr ""
+"גרמפלט אבחון שנועד להעריך אם כל דרישות הקדם הנחוצות להפעלה תקינה, מותקנות."
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:194
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:215
+msgid ""
+"\n"
+"<u><b>Optional</b></u>\n"
+msgstr ""
+"\n"
+"<u><b>חלופי</b></u>\n"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:197
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:220
+msgid "Gtkspell enables spell checking in the notes.\n"
+msgstr "Gtkspell מאפשר בדיקת־איות שדות 'הערה'\n"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:202
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:225
+msgid ""
+"Python Image Library (PIL) is needed for cropping images and LaTeX output."
+msgstr "נדרשת ספריית פייתון (PIL) לחיתוך תמונות ופלט LaTeX."
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:215
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:238
+msgid ""
+"\n"
+"<u><b>Development & Translation Requirements</b></u>\n"
+msgstr ""
+"\n"
+"<u><b>דרישות פתוח ותרגום</b></u>\n"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:226
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:250
+msgid ""
+"\n"
+"<u><b>Optional packages required by Third-party Addons</b></u>\n"
+msgstr ""
+"\n"
+"<u><b>חבילות חלופיות שדרושות לתוספי צד ג'</b></u>\n"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:251
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:275
+msgid ""
+"\n"
+"<u><b>Diagnostic checks</b></u>\n"
+msgstr ""
+"\n"
+"<u><b>בדיקות אבחון</b></u>\n"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:252
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:276
+msgid "Check for potential issues.\n"
+msgstr "בדיקת סוגיות אפשריות.\n"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:253
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:277
+msgid ""
+"\n"
+"Environment settings:\n"
+msgstr ""
+"\n"
+"הגדרות סביבת־עבודה:\n"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:258
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:282
+msgid ""
+"\n"
+"\n"
+"<u><b>Locales available:</b></u>\n"
+msgstr ""
+"\n"
+"<u><b>מקמים זמינים</b></u>\n"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:263
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:287
+msgid ""
+"\n"
+"<u><b>Back Up Your Genealogy Files.</b></u>\n"
+msgstr ""
+"\n"
+"<u><b>נא לגבות את קובצי אילן־היוחסין.</b></u>\n"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:295
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:321
+msgid ", is the most current version.\n"
+msgstr ",זוהי הגרסה העדכנית ביותר.\n"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:313
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:339
+#, python-format
+msgid ""
+"You have Gramps %s. Please make a backup and then upgrade.\n"
+"%s"
+msgstr ""
+"מותקנת גרסת גרמפס %s. נא לבצע גיבוי ורק לאחר מכן שדרוג.\n"
+"%s"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:317
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:343
+#, python-format
+msgid ""
+"You have Gramps %s installed; an unreleased development version. Thank you "
+"for contributing and testing; please report any issues. Backups are your "
+"friend.\n"
+msgstr ""
+"מותקנת גרסת גרמפס %s. זוהי גרסת פתוח שטרם שוחררה. תודה על התרומה ובדיקת "
+"התכנה, נא לדווח על סוגיות ככל שהיו. גיבויים הם 'חברים יקרים'.\n"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:325
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:351
+#, python-format
+msgid "You have Gramps %s. Congratulations, you have the current version.\n"
+msgstr "מותקנת גרסת גרמפס %s. ברכות! הגרסה העדכנית ביותר מותקנת.\n"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:352
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:426
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:478
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:522
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:571
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:722
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:922
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1124
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:378
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:452
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:504
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:548
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:597
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:748
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:953
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1160
+msgid " (Requires version "
+msgstr " (נדרשת גרסה "
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:353
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:361
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:431
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:485
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:528
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:540
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:576
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:379
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:387
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:457
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:511
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:554
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:566
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:602
+msgid " or greater installed.)\n"
+msgstr " או מאוחרת יותר מותקנת).\n"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:360
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:430
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:483
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:526
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:538
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:575
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:718
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:917
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1120
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:386
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:456
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:509
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:552
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:564
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:601
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:744
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:948
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1156
+msgid " (Passed: version "
+msgstr " (עבר: גרסה "
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:388
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:453
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:512
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:513
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:561
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:709
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:771
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:772
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1076
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:414
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:479
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:538
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:539
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:587
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:735
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:797
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:798
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1107
+msgid "unknown version"
+msgstr "גרסה לא ידועה"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:396
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:422
+msgid "DISPLAY not set"
+msgstr "מצג לא הוגדר"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:427
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:479
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:523
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:535
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:572
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:453
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:505
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:549
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:561
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:598
+msgid " or greater.)\n"
+msgstr " או מאוחר יותר).\n"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:534
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:560
+msgid " (Requires "
+msgstr " (נדרש "
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:719
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1121
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1125
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1522
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1527
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1721
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:745
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1157
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1161
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1560
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1565
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1759
+msgid " or greater installed.)"
+msgstr " או מאוחרת יותר מותקנת.)"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:723
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:749
+msgid " or greater)"
+msgstr " או מאוחר יותר)"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:754
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:780
+msgid "Graphviz not in system PATH"
+msgstr "Graphviz לא כלול בנתיב המערכת"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:817
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:848
+msgid "Ghostscript not in system PATH"
+msgstr "Ghostscript לא כלול בנתיב המערכת"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:832
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:863
+msgid " (Passed: version 0.5.x is installed.)"
+msgstr " (עבר: גרסה 0.5.x מותקנת.)"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:835
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:866
+msgid " (Requires version 0.5.x)"
+msgstr " (נדרשת גרסה 0.5.x)"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:919
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:924
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:950
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:955
+msgid " or greater installed.) (enchant module: "
+msgstr " או מאוחרת יותר מותקנת). (פרקן enchant: "
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1094
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1130
+#, python-format
+msgid "GExiv2 : %s (Exiv2 library : %s)"
+msgstr "GExiv2 : %s (Exiv2 ספריית : %s)"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1161
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1197
+msgid "found another font"
+msgstr "נמצא גופן אחר"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1169
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1205
+msgid ""
+"For addon Networkchart, font <a href=\"https://www.fontsquirrel.com/fonts/"
+"white-rabbit\">White Rabbit</a> provides an extremely readable result.\n"
+msgstr ""
+"לתוסף Networkchart, גופן <a href=\"https://www.fontsquirrel.com/fonts/white-"
+"rabbit\">ארנב לבן</a> מספק תוצאה קריאה להפליא.\n"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1203
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1241
+msgid "Why, when same code works in Graphview"
+msgstr "מדוע, כאשר אותו קוד עובד ב־Graphview"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1208
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1260
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1270
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1280
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1246
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1298
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1308
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1318
+msgid "not installed"
+msgstr "לא מותקן"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1289
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1327
+msgid ") or (pygraphviz: "
+msgstr ") או (pygraphviz: "
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1313
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1351
+msgid "Installed(MS-Windows)"
+msgstr "תותקן (וינדוס MS)"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1317
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1355
+msgid "Installed(Linux/Mac)"
+msgstr "מותקן (לינוקס/מק)"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1351
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1389
+msgid "not installed "
+msgstr "לא מותקן "
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1406
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1576
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1578
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1579
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1664
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1670
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1444
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1614
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1616
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1617
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1702
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1708
+msgid "not found."
+msgstr "לא נמצא."
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1428
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1466
+msgid "Standard. Passed: program installed - 32bit on 64bit Win OS."
+msgstr "תקני. עבר: תוכנה מותקנת – 32 ביט, על מערכת הפעלה וינדוס 64 ביט."
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1480
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1518
+msgid ") (Requires the gramps addon listed under 'Plugin lib')"
+msgstr ") (נדרש תוסף גרמפס שמופיע ברשימה 'Plugin lib')"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1513
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1551
+msgid "DBF installed"
+msgstr "DBF מותקן"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1521
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1559
+msgid ".)(Requires version "
+msgstr ".)(נדרשת גרסה "
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1526
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1564
+msgid " installed.)(Passed: version "
+msgstr " מותקן.)(עבר: גרסה "
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1673
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1711
+#, python-format
+msgid "(OpenCV facedetection: %s)"
+msgstr "(זיהוי פנים OpenCV: %s)"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1720
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1758
+msgid " (lxml: not found. Requires version "
+msgstr " (lxml: לא נמצאו. נדרשת גרסה "
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1773
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1811
+msgid ""
+"<u><b><a href=\"https://gramps-project.org/wiki/index.php?"
+"title=Gramps_5.0_Wiki_Manual_-"
+"_Command_Line#LANG.2C_LANGUAGE.2C_LC_MESSAGE.2C_LC_TIME\">Locale Settings:</"
+"a></b></u>\n"
+msgstr ""
+"<u><b><a href=\"https://gramps-project.org/wiki/index.php?"
+"title=Gramps_5.0_Wiki_Manual_-_Command_Line/"
+"he#LANG.2C_LANGUAGE.2C_LC_MESSAGE.2C_LC_TIME\">הגדרות מיקמום:</a></b></u>\n"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1779
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1780
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1781
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1782
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1832
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1833
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1834
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1836
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1817
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1818
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1819
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1820
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1870
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1871
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1872
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1874
+msgid "not set"
+msgstr "לא מוגדר"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1784
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1785
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1786
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1787
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1838
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1839
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1840
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1841
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1822
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1823
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1824
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1825
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1876
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1877
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1878
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1879
+msgid "not tested"
+msgstr "לא נבדק"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1807
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1845
+msgid ""
+"\n"
+"Installed Locales\\Translations (If only English is listed please re-install "
+"Gramps again and make sure to select all the Translations and Dictionaries)\n"
+"\n"
+msgstr ""
+"\n"
+"מקמים\\תרגומים מותקנים (אם רק השפה ה'אנגלית' מופיעה ברשימה, נא להתקין את "
+"גרמפס שוב ולוודא שכול התרגומים והמילונים שברשימה, נבחרו)\n"
+"\n"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1844
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1882
+msgid ""
+"\n"
+"Gramps Environment variables:\n"
+msgstr ""
+"\n"
+"משתני סביבת־עבודה גרמפס:\n"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1883
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1944
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1980
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1921
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1983
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2019
+msgid "found"
+msgstr "נמצא"
+
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1987
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2026
+msgid ""
+"Sphinx is a tool that builds the Gramps development documentation and man "
+"pages\n"
+msgstr "ספינקס הוא כלי לבנית תיעוד הפיתוח ועמודי מדריך הויקי של גרמפס\n"
+
+#: BiographyQuickview/BiographyQuickview.gpr.py:9
+#: BiographyQuickview/BiographyQuickview.gpr.py:10
+msgid "Biography"
+msgstr "תולדות חיים"
+
+#: BiographyQuickview/BiographyQuickview.gpr.py:10
+#: BiographyQuickview/BiographyQuickview.gpr.py:11
+msgid "Display a text biography"
+msgstr "הצגת תולדות חיים מילוליים"
+
+#: BiographyQuickview/BiographyQuickview.py:48
+#, python-format
+msgid "Biography for %s"
+msgstr "תולדות חיים של %s"
+
+#: EditExifMetadata/editexifmetadata.gpr.py:29
+#: EditExifMetadata/editexifmetadata.py:753
+#: EditExifMetadata/editexifmetadata.py:1159
+#: EditExifMetadata/editexifmetadata.gpr.py:30
+#: EditExifMetadata/editexifmetadata.py:723
+#: EditExifMetadata/editexifmetadata.py:1135
+#: EditExifMetadata/editexifmetadata.py:1147
+msgid "Edit Image Exif Metadata"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.gpr.py:30
+#: EditExifMetadata/editexifmetadata.gpr.py:31
+msgid "Gramplet to view, edit, and save image Exif metadata"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.gpr.py:34
+#: EditExifMetadata/editexifmetadata.gpr.py:35
+msgid "Edit Exif Metadata"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:148
+#: EditExifMetadata/editexifmetadata.py:135
+msgid "<-- Image Types -->"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:171
+#: EditExifMetadata/editexifmetadata.py:158
+msgid ""
+"Warning:  Changing this entry will update the Media object title field in "
+"Gramps not Exiv2 metadata."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:174
+#: EditExifMetadata/editexifmetadata.py:161
+#, fuzzy
+msgid "Provide a short description for this image."
+msgstr "קבעי תיאור עבור קובץ זה."
+
+#: EditExifMetadata/editexifmetadata.py:176
+#: EditExifMetadata/editexifmetadata.py:163
+msgid ""
+"Enter the Artist/ Author of this image.  The person's name or the company "
+"who is responsible for the creation of this image."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:179
+#: EditExifMetadata/editexifmetadata.py:167
+#, fuzzy
+msgid "Enter the copyright information for this image. \n"
+msgstr "האם לכלול מידע נישואים עבור הילדים."
+
+#: EditExifMetadata/editexifmetadata.py:181
+#: EditExifMetadata/editexifmetadata.py:169
+msgid ""
+"The original date/ time when the image was first created/ taken as in a "
+"photograph.\n"
+"Example: 1830-01-1 09:30:59"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:184
+#: EditExifMetadata/editexifmetadata.py:173
+msgid ""
+"This is the date/ time that the image was last changed/ modified.\n"
+"Example: 2011-05-24 14:30:00"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:202
+#: EditExifMetadata/editexifmetadata.py:191
+msgid ""
+"Displays the Gramps Wiki Help page for 'Edit Image Exif Metadata' in your "
+"web browser."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:205
+#: EditExifMetadata/editexifmetadata.py:194
+msgid ""
+"This will open up a new window to allow you to edit/ modify this image's "
+"Exif metadata.\n"
+"  It will also allow you to be able to Save the modified metadata."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:209
+#: EditExifMetadata/editexifmetadata.py:198
+msgid "Will produce a Popup window showing a Thumbnail Viewing Area"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:211
+#: EditExifMetadata/editexifmetadata.py:201
+msgid ""
+"Select from a drop- down box the image file type that you would like to "
+"convert your non- Exiv2 compatible media object to."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:214
+#: EditExifMetadata/editexifmetadata.py:205
+msgid ""
+"If your image is not of an image type that can have Exif metadata read/ "
+"written to/from, convert it to a type that can?"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:217
+#: EditExifMetadata/editexifmetadata.py:209
+msgid ""
+"WARNING:  This will completely erase all Exif metadata from this image!  Are "
+"you sure that you want to do this?"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:315
+#: EditExifMetadata/editexifmetadata.py:214
+#, fuzzy
+msgid "Thumbnail"
+msgstr "מיקום צלמית"
+
+#: EditExifMetadata/editexifmetadata.py:397
+#: EditExifMetadata/editexifmetadata.py:402
+#, fuzzy
+msgid "Select an image to begin..."
+msgstr "בחרי אובייקט מדיה"
+
+#: EditExifMetadata/editexifmetadata.py:419
+#: EditExifMetadata/editexifmetadata.py:421
+msgid ""
+"Image is NOT readable,\n"
+"Please choose a different image..."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:435
+#: EditExifMetadata/editexifmetadata.py:481
+#: EditExifMetadata/editexifmetadata.py:1440
+msgid ""
+"Image is NOT writable,\n"
+"You will NOT be able to save Exif metadata...."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:447
+#: EditExifMetadata/editexifmetadata.py:441
+msgid "Please convert this image to an Exiv2- compatible image type..."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:670
+#: EditExifMetadata/editexifmetadata.py:648
+msgid "Click Close to close this Thumbnail View Area."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:674
+#: EditExifMetadata/editexifmetadata.py:654
+msgid "Thumbnail View Area"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:753
+#: EditExifMetadata/editexifmetadata.py:724
+msgid ""
+"WARNING: You are about to convert this image into a .jpeg image.  Are you "
+"sure that you want to do this?"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:755
+#: EditExifMetadata/editexifmetadata.py:726
+msgid "Convert and Delete"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:841
+#: EditExifMetadata/editexifmetadata.py:807
+msgid ""
+"Your image has been converted and the original file has been deleted, and "
+"the full path has been updated!"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:845
+#: EditExifMetadata/editexifmetadata.py:812
+msgid ""
+"There has been an error, Please check your source and destination file "
+"paths..."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:848
+#: EditExifMetadata/editexifmetadata.py:816
+msgid ""
+"There was an error in deleting the original file.  You will need to delete "
+"it yourself!"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:865
+#: EditExifMetadata/editexifmetadata.py:834
+msgid "There was an error in converting your image file."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:876
+#: EditExifMetadata/editexifmetadata.py:844
+#, fuzzy
+msgid "Media Path Update"
+msgstr "תאריך פטירה"
+
+#: EditExifMetadata/editexifmetadata.py:882
+#: EditExifMetadata/editexifmetadata.py:853
+msgid "There has been an error in updating the image file's path!"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:916
+#: EditExifMetadata/editexifmetadata.py:886
+msgid ""
+"Click the close button when you are finished modifying this image's Exif "
+"metadata."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:954
+#: EditExifMetadata/editexifmetadata.py:924
+msgid "Saves a copy of the data fields into the image's Exif metadata."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:957
+#: EditExifMetadata/editexifmetadata.py:928
+msgid "Re -display the data fields that were cleared from the Edit Area."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:960
+#: EditExifMetadata/editexifmetadata.py:932
+msgid "This button will clear all of the data fields shown here."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:963
+#: EditExifMetadata/editexifmetadata.py:940
+msgid ""
+"Closes this popup Edit window.\n"
+"WARNING: This action will NOT Save any changes/ modification made to this "
+"image's Exif metadata."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:990
+#: EditExifMetadata/editexifmetadata.py:969
+#, fuzzy
+msgid "Media Object Title"
+msgstr "מסנני אוביקטי מדיה"
+
+#: EditExifMetadata/editexifmetadata.py:1000
+#: EditExifMetadata/editexifmetadata.py:978
+#, fuzzy
+msgid "media Title: "
+msgstr "כותרת לוח שנה"
+
+#: EditExifMetadata/editexifmetadata.py:1014
+#: EditExifMetadata/editexifmetadata.py:993
+#, fuzzy
+msgid "General Data"
+msgstr "כללי"
+
+#: EditExifMetadata/editexifmetadata.py:1024
+#: EditExifMetadata/editexifmetadata.py:1003
+#, fuzzy
+msgid "Description: "
+msgstr "תיאור:"
+
+#: EditExifMetadata/editexifmetadata.py:1025
+#: EditExifMetadata/editexifmetadata.py:1004
+msgid "Artist: "
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:1026
+#: EditExifMetadata/editexifmetadata.py:1005
+#, fuzzy
+msgid "Copyright: "
+msgstr "זכויות יוצרים"
+
+#: EditExifMetadata/editexifmetadata.py:1039
+#: EditExifMetadata/editexifmetadata.py:1019
+msgid "Date/ Time"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:1053
+#: EditExifMetadata/editexifmetadata.py:1034
+#, fuzzy
+msgid "Original: "
+msgstr "זמן מקורי"
+
+#: EditExifMetadata/editexifmetadata.py:1054
+#: EditExifMetadata/editexifmetadata.py:1035
+#, fuzzy
+msgid "Modified: "
+msgstr "שונה לאחרונה"
+
+#: EditExifMetadata/editexifmetadata.py:1071
+#: EditExifMetadata/editexifmetadata.py:1054
+msgid "Latitude/ Longitude/ Altitude GPS coordinates"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:1085
+#: EditExifMetadata/editexifmetadata.py:1069
+#, fuzzy
+msgid "Latitude :"
+msgstr "קו רוחב:"
+
+#: EditExifMetadata/editexifmetadata.py:1086
+#: EditExifMetadata/editexifmetadata.py:1070
+#, fuzzy
+msgid "Longitude :"
+msgstr "קו אורך:"
+
+#: EditExifMetadata/editexifmetadata.py:1087
+#: EditExifMetadata/editexifmetadata.py:1071
+#, fuzzy
+msgid "Altitude :"
+msgstr "קו רוחב:"
+
+#: EditExifMetadata/editexifmetadata.py:1139
+#: EditExifMetadata/editexifmetadata.py:1114
+#, fuzzy
+msgid "Bad Date/Time"
+msgstr "תאריך שגוי"
+
+#: EditExifMetadata/editexifmetadata.py:1147
+#: EditExifMetadata/editexifmetadata.py:1122
+#, fuzzy
+msgid "Invalid latitude (syntax: 18\\u00b09'"
+msgstr "קו רוחב לא תקין (תחביר: 18°9'"
+
+#: EditExifMetadata/editexifmetadata.py:1148
+#: EditExifMetadata/editexifmetadata.py:1123
+msgid "48.21\"S, -18.2412 or -18:9:48.21)"
+msgstr "48.21\"S, -18.2412 או -18:9:48.21)"
+
+#: EditExifMetadata/editexifmetadata.py:1152
+#: EditExifMetadata/editexifmetadata.py:1127
+#, fuzzy
+msgid "Invalid longitude (syntax: 18\\u00b09'"
+msgstr "קו אורך לא תקין (תחביר: 18°9'"
+
+#: EditExifMetadata/editexifmetadata.py:1153
+#: EditExifMetadata/editexifmetadata.py:1128
+msgid "48.21\"E, -18.2412 or -18:9:48.21)"
+msgstr "48.21\"E, -18.2412 או -18:9:48.21)"
+
+#: EditExifMetadata/editexifmetadata.py:1159
+#: EditExifMetadata/editexifmetadata.py:1136
+msgid ""
+"WARNING!  You are about to completely delete the Exif metadata from this "
+"image?"
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:1324
+#: EditExifMetadata/editexifmetadata.py:1333
+#, fuzzy
+msgid "Media Title Update"
+msgstr "קבצי מדיה"
+
+#: EditExifMetadata/editexifmetadata.py:1350
+#: EditExifMetadata/editexifmetadata.py:1357
+#, fuzzy
+msgid "Media Object Date Created"
+msgstr "מסנני אוביקטי מדיה"
+
+#: EditExifMetadata/editexifmetadata.py:1422
+msgid "Saving Exif metadata to this image..."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:1469
+#: EditExifMetadata/editexifmetadata.py:1465
+msgid "All Exif metadata has been deleted from this image..."
+msgstr ""
+
+#: EditExifMetadata/editexifmetadata.py:1474
+#: EditExifMetadata/editexifmetadata.py:1470
+msgid "There was an error in stripping the Exif metadata from this image..."
+msgstr ""
+
+#: PlaceCompletion/PlaceCompletion.gpr.py:25
+#: PlaceCompletion/PlaceCompletion.gpr.py:26
+msgid "PlaceCompletion"
+msgstr "PlaceCompletion"
+
+#: PlaceCompletion/PlaceCompletion.gpr.py:26
+#: PlaceCompletion/PlaceCompletion.gpr.py:28
+msgid ""
+"Provides a browsable list of selected places, with possibility to complete/"
+"parse/set the attribute fields."
+msgstr ""
+"מספק רשימה ניתנת לדפדוף של מקומות שנבחרו, ומתן אפשרות להשלים/לנתח/להגדיר את "
+"שדות התכונות."
+
+#: PlaceCompletion/PlaceCompletion.py:95
+msgid ""
+"Place Completion by parsing, file lookup and batch setting of place "
+"attributes"
+msgstr "השלמת פרטי מקום על ידי ניתוח, חיפוש קבצים והגדרת אצווה של תכונות מקום"
+
+#: PlaceCompletion/PlaceCompletion.py:258
+msgid "Error in PlaceCompletion.py"
+msgstr "שגיאה ב־PlaceCompletion.py"
+
+#: PlaceCompletion/PlaceCompletion.py:259
+msgid "Non existing group used in get"
+msgstr "שימוש ב־get בקבוצה לא קיימת"
+
+#: PlaceCompletion/PlaceCompletion.py:282
+#, python-format
+msgid "PlaceCompletion is unable to create %s %s"
+msgstr "PlaceCompletion לא מסוגל ליצור את %s %s"
+
+#: PlaceCompletion/PlaceCompletion.py:340
+msgid "Places tool"
+msgstr "כלי מקומות"
+
+#: PlaceCompletion/PlaceCompletion.py:408
+msgid "Missing regex groups in match lat/lon"
+msgstr "חסרות קבוצות ביטויים רגילים בהתאמת אורך/רוחב"
+
+#: PlaceCompletion/PlaceCompletion.py:409
+#, python-format
+msgid ""
+"Regex groups %(lat)s and %(lon)s must be present in lat/lon match. Quiting"
+msgstr ""
+"קבוצות ביטוי רגיל %(lon)s ו־%(lat)s חייבות להמצא בהתאמת אורך/רוחב. עזיבה"
+
+#: PlaceCompletion/PlaceCompletion.py:419
+msgid "Non valid regex for match lat/lon"
+msgstr "ביטוי רגיל לא תקין להתאמת אורך/רוחב"
+
+#: PlaceCompletion/PlaceCompletion.py:420
+msgid "Non valid regular expression given to find lat/lon. Quiting."
+msgstr "התקבל ביטוי רגיל לא תקין לחיפוש אורך/רוחב. עזיבה."
+
+#: PlaceCompletion/PlaceCompletion.py:479
+msgid "Finding Places and appropriate changes"
+msgstr "חיפוש מקומות ושינויים ראויים לביצוע"
+
+#: PlaceCompletion/PlaceCompletion.py:481
+msgid "Filtering"
+msgstr "סינון"
+
+#: PlaceCompletion/PlaceCompletion.py:491
+msgid "Loading lat/lon file in Memory..."
+msgstr "טעינת קובץ אורך/רוחב לזיכרון..."
+
+#: PlaceCompletion/PlaceCompletion.py:497
+msgid "Examining places"
+msgstr "בחינת מקומות"
+
+#: PlaceCompletion/PlaceCompletion.py:685
+msgid "Set Tag"
+msgstr "הגדרת תג"
+
+#: PlaceCompletion/PlaceCompletion.py:687
+msgid "Doing Place changes"
+msgstr "ביצוע שינויים ב'מקומות'"
+
+#: PlaceCompletion/PlaceCompletion.py:731
+msgid "No place record was modified."
+msgstr "רשומות מקום לא הוסגלו."
+
+#: PlaceCompletion/PlaceCompletion.py:733
+msgid "1 place record was modified."
+msgstr "הוסגלה רשומות מקום אחת."
+
+#: PlaceCompletion/PlaceCompletion.py:735
+#, python-format
+msgid "%d place records were modified."
+msgstr "הוסגלו %d רשומות מקום."
+
+#: PlaceCompletion/PlaceCompletion.py:736
+msgid "Change places"
+msgstr "החלפת מקומות"
+
+#: PlaceCompletion/PlaceCompletion.py:809
+msgid "The selected file is a directory, not a file."
+msgstr "הקובץ שנבחר הוא 'מחיצה', לא 'קובץ'."
+
+#: PlaceCompletion/PlaceCompletion.py:820
+msgid "The file you want to access is not a regular file."
+msgstr "הקובץ אליו נעשה נסיון לגשת, אינו קובץ רגיל."
+
+#: PlaceCompletion/PlaceCompletion.py:826
+msgid "The file does not exist."
+msgstr "הקובץ לא קיים."
+
+#: PlaceCompletion/PlaceCompletion.py:858
+msgid "Problem reading file"
+msgstr "בעית קריאת קובץ"
+
+#: PlaceCompletion/PlaceCompletion.py:970
+#: PlaceCompletion/PlaceCompletion.py:982
+#, python-format
+msgid "invalid lat or lon value, %(lat)s, %(lon)s"
+msgstr "ערכי אורך או רוחב לא תקינים, %(lon)s, %(lat)s"
+
+#: PlaceCompletion/PlaceCompletion.py:1135
+msgid "No lat/lon conversion"
+msgstr "אין המרת קו אורך/רוחב"
+
+#: PlaceCompletion/PlaceCompletion.py:1136
+msgid "All in degree notation"
+msgstr "לסמון הכול במעלות"
+
+#: PlaceCompletion/PlaceCompletion.py:1137
+msgid "All in decimal notation"
+msgstr "לסמן הכול בסימון עשרוני"
+
+#: PlaceCompletion/PlaceCompletion.py:1138
+msgid "Correct -50° in 50°S"
+msgstr "תיקון -50° ל־50°S"
+
+#: PlaceCompletion/PlaceCompletion.py:1142
+msgid "No changes"
+msgstr "אין שינויים"
+
+#: PlaceCompletion/PlaceCompletion.py:1143
+msgid "City[, State]"
+msgstr "עיר[, חבל]"
+
+#: PlaceCompletion/PlaceCompletion.py:1145
+msgid "City,PostalCode,Country"
+msgstr "עיר,מיקוד,מדינה"
+
+#: PlaceCompletion/PlaceCompletion.py:1147
+msgid "City[(Street;Locality;Parish)],PostalCode,Country"
+msgstr "עיר[(רחוב;שכונה;קהילה)],מיקוד,מדינה"
+
+#: PlaceCompletion/PlaceCompletion.py:1149
+msgid "TitleStart [, City] [, State]"
+msgstr "TitleStart [, עיר]  [, חבל] "
+
+#: PlaceCompletion/PlaceCompletion.py:1151
+msgid "TitleStart [, City] [, County] [, State] [, Country]"
+msgstr "TitleStart [, עיר] [, מחוז] [, חבל] [, מדינה]"
+
+#: PlaceCompletion/PlaceCompletion.py:1153
+msgid "TitleStart [, City] [, Zip] [, County] [, State] [, Country]"
+msgstr "TitleStart [, עיר] [, מיקוד] [, מחוז] [, חבל] [, מדינה]"
+
+#: PlaceCompletion/PlaceCompletion.py:1177
+msgid "Don't search"
+msgstr "לא לחפש"
+
+#: PlaceCompletion/PlaceCompletion.py:1180
+msgid "GeoNames country file, city search"
+msgstr "קובץ מדינות GeoNames, חיפוש ערים"
+
+#: PlaceCompletion/PlaceCompletion.py:1185
+msgid "GeoNames country file, city localized variants search"
+msgstr "קובץ מדינות GeoNames, חיפוש גרסאות מקומיות לעיר"
+
+#: PlaceCompletion/PlaceCompletion.py:1190
+msgid "GeoNames country file, county/city search"
+msgstr "קובץ מדינות GeoNames, חיפוש מחוז/עיר"
+
+#: PlaceCompletion/PlaceCompletion.py:1202
+msgid "GeoNames country file, title begin, general search"
+msgstr "קובץ מדינות GeoNames, תחילת כותרת, חיפוש כללי"
+
+#: PlaceCompletion/PlaceCompletion.py:1207
+msgid "GeoNames USA state file, city search"
+msgstr "קובץ מדינות USA GeoNames, חיפוש ערים"
+
+#: PlaceCompletion/PlaceCompletion.py:1221
+msgid "GNS Geonet country file, city search"
+msgstr "קובץ מדינות GNS Geonet, חיפוש עיר"
+
+#: PlaceCompletion/PlaceCompletion.py:1228
+msgid "GNS Geonet country file, county/city search"
+msgstr "קובץ מדינות GNS Geonet, חיפוש מחוז/עיר"
+
+#: PlaceCompletion/PlaceCompletion.py:1236
+msgid "GNS Geonet country file, title begin, general search"
+msgstr "קובץ מדינות GNS Geonet, תחילת כותרת, חיפוש כללי"
+
+#: PlaceCompletion/PlaceCompletion.py:1244
+msgid "Wikipedia CSV Dump"
+msgstr "Wikipedia CSV משפך"
+
+#: PlaceCompletion/PlaceCompletion.py:1332
+msgid "All Places"
+msgstr "כל המקומות"
+
+#: PlaceCompletion/PlaceCompletion.py:1335
+msgid "No Latitude/Longitude given"
+msgstr "לא נתקבלו ערכי קו אורך/רוחב"
+
+#: PlaceCompletion/placecompletion.glade:85
+msgid "_Google Maps"
+msgstr "_Google Maps"
+
+#: PlaceCompletion/placecompletion.glade:112
+msgid "Apply all suggested changes"
+msgstr "החלת כל השינויים המוצעים"
+
+#: PlaceCompletion/placecompletion.glade:148
+msgid "Selection of the Places you want to complete:"
+msgstr "בחירת המקומות אותם מעוניינים להשלים:"
+
+#: PlaceCompletion/placecompletion.glade:195
+msgid "Parish:"
+msgstr "קהילה:"
+
+#: PlaceCompletion/placecompletion.glade:271
+msgid "Place _filter:"
+msgstr "מסנן _מקומות:"
+
+#: PlaceCompletion/placecompletion.glade:336
+msgid "Count_ry:"
+msgstr "מ_דינה:"
+
+#: PlaceCompletion/placecompletion.glade:366
+msgid "C_enter latitude:"
+msgstr "מ_רכוז קו רוחב:"
+
+#: PlaceCompletion/placecompletion.glade:383
+msgid "Center longitude:"
+msgstr "מרכוז קו אורך:"
+
+#: PlaceCompletion/placecompletion.glade:430
+msgid "Places in a rectangle:"
+msgstr "מקומות בתוך מרובע:"
+
+#: PlaceCompletion/placecompletion.glade:460
+msgid "Height:"
+msgstr "גובה:"
+
+#: PlaceCompletion/placecompletion.glade:527
+msgid "1. Look up latitude and longitude:"
+msgstr "1. איתור קוי אורך ורוחב:"
+
+#: PlaceCompletion/placecompletion.glade:554
+msgid "Search in:"
+msgstr "חיפוש ב:"
+
+#: PlaceCompletion/placecompletion.glade:566
+msgid "Select A File"
+msgstr "בחירת קובץ"
+
+#: PlaceCompletion/placecompletion.glade:579
+msgid "Parse as:"
+msgstr "ניתוח כ:"
+
+#: PlaceCompletion/placecompletion.glade:619
+msgid "2. Conversion of existing title or position:"
+msgstr "2. המרת כותרת קיימת או איות:"
+
+#: PlaceCompletion/placecompletion.glade:649
+msgid "Change title into:"
+msgstr "שינוי כותרת ל:"
+
+#: PlaceCompletion/placecompletion.glade:664
+msgid "Convert lat/lon as:"
+msgstr "המרת קו אורך/רוחב ל:"
+
+#: PlaceCompletion/placecompletion.glade:701
+msgid ""
+"Or define a simple\n"
+"title format:"
+msgstr ""
+"או להגדיר תסדיר\n"
+"כותרת פשוט:"
+
+#: PlaceCompletion/placecompletion.glade:730
+msgid ""
+"Available variables: city, street, locality, parish, county, state, country, "
+"postal_code"
+msgstr "משתנים זמינים: עיר, רחוב, שכונה, קהילה, מחוז, חבל, מדינה, מיקוד"
+
+#: PlaceCompletion/placecompletion.glade:820
+msgid ""
+"Delete to delete a row, Double-click on the row to edit place with changes "
+"pre-entered, \n"
+"Press Tab on a row or Google Maps button to see place on a map. Press Apply "
+"to do all changes automatically"
+msgstr ""
+"הקשה על מקש 'מחיקה' למחיקת שורה, הקשת עכבר כפולה על שורה לעריכת 'מקום' "
+"ואפשרות לשנות ערכים שהוזנו מראש,\n"
+"הקשה על מקש 'טבלר' בזמן שסמן העכבר ממוקם על שורה או על לחצן מפות Google "
+"להצגת ה'מקום' על המפה. הקשה על לחצן 'החלה' לביצוע כל השינויים באופן אוטומטי"
+
+#: CheckPlaceTitles/checkplacetitles.gpr.py:28
+#: CheckPlaceTitles/checkplacetitles.gpr.py:29
+msgid "Check Place Titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.gpr.py:29
+#: CheckPlaceTitles/checkplacetitles.gpr.py:30
+msgid "Check place titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:71
+msgid "Check Place title"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:86 ExtractCity/extractcity.py:454
+msgid "Checking Place Titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:87 ExtractCity/extractcity.py:456
+msgid "Looking for place fields"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:103
+#: CheckPlaceTitles/checkplacetitles.py:107
+msgid "Differences"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:109
+#: CheckPlaceTitles/checkplacetitles.py:112
+msgid "No need modifications"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:110
+#: CheckPlaceTitles/checkplacetitles.py:113
+msgid "No changes need."
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:185
+#: CheckPlaceTitles/checkplacetitles.py:187
+msgid "Legacy place"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:199
+#: CheckPlaceTitles/checkplacetitles.py:201
+msgid "Modify Place titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.py:222
+#: CheckPlaceTitles/checkplacetitles.py:224
+msgid "Place titles"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:1
+#: CheckPlaceTitles/checkplacetitles.glade:56
+msgid "Remove content of place title field if it does not match"
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:2
+#: CheckPlaceTitles/checkplacetitles.glade:74
+msgid "Copy content of place title field to a new note."
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:4
+#: CheckPlaceTitles/checkplacetitles.glade:91
+msgid "Attach a tag on selected places."
+msgstr ""
+
+#: CheckPlaceTitles/checkplacetitles.glade.h:6
+#: CheckPlaceTitles/checkplacetitles.glade:177
+msgid "column"
+msgstr ""
+
+#: DownloadMedia/DownloadMedia.gpr.py:35 DownloadMedia/DownloadMedia.gpr.py:36
+msgid "Download media files from the internet"
+msgstr "הורדת קבצי מדיה מהמרשתת"
+
+#: DownloadMedia/DownloadMedia.gpr.py:36 DownloadMedia/DownloadMedia.gpr.py:37
+msgid "This tool downloads media files from the internet"
+msgstr "כלי זה נועד להורדת קבצי מדיה מהמרשתת"
+
+#: DownloadMedia/DownloadMedia.py:71
+msgid "Download media"
+msgstr "הורדת מדיה"
+
+#: DownloadMedia/DownloadMedia.py:87
+msgid "Media downloaded"
+msgstr "מדיה ירדה"
+
+#: DownloadMedia/DownloadMedia.py:88
+#, python-format
+msgid "%d media files downloaded"
+msgstr "ירדו %d קבצים"
+
+#: DownloadMedia/DownloadMedia.py:100
+msgid "Download media tool"
+msgstr "כלי הורדת מדיה"
+
+#: DownloadMedia/DownloadMedia.py:106
+msgid "Make sure you are connected to the internet before starting this tool."
+msgstr "נא לודא שניתן להתחבר למרשתת לפני אתחול כלי זה."
+
+#: DownloadMedia/DownloadMedia.py:171 DownloadMedia/DownloadMedia.py:172
+msgid "Downloading files"
+msgstr "מתבצעת הורדת קבצים"
+
+#: DownloadMedia/DownloadMedia.py:207
+msgid "Media download errors detected"
+msgstr "זוהו שגיאות הורדת מדיה"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:3
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:4
+msgid "Deep Connections Gramplet"
+msgstr "גרמפלט קשרי משפחה עמוקים"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:4
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:6
+msgid "Gramplet showing a deep relationship between active and home people"
+msgstr "גרמפלט שמציג קשרי משפחה עמוקים בין אדם הבית לאדם הפעיל"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:10
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:13
+msgid "Deep Connections"
+msgstr "קשרי משפחה עמוקים"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:65
+msgid "Pause"
+msgstr "השהיה"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:69
+#: EditExifMetadata/editexifmetadata.py:215
+msgid "Copy"
+msgstr "העתקה"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:107
+msgid "mentioned in note"
+msgstr "אזכור בהערה"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:133
+msgid "Note on Family"
+msgstr "הערת"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:143
+msgid "sibling"
+msgstr "אחאי"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:151
+msgid "Note on Parent Family"
+msgstr "הערה על משפחת הורה"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:154
+#, python-format
+msgid "%s (association)"
+msgstr "%s (סימוך)"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:158
+msgid "Note on Person"
+msgstr "הערת אדם"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:188
+#, python-format
+msgid ""
+"\n"
+"   %s of "
+msgstr ""
+"\n"
+"   %s של"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:209
+msgid "No Active Person set."
+msgstr "לא הוגדר 'אדם פעיל'"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:217
+msgid "Looking for relationship between\n"
+msgstr "חיפוש קשרי בשפחה בין\n"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:218
+#, python-format
+msgid "  <b>%s</b> (Home Person) and\n"
+msgstr "  <b>%s</b> (אדם הבית) ו\n"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:219
+#, python-format
+msgid "  <b>%s</b> (Active Person)...\n"
+msgstr "  <b>%s</b> (האדם הפעיל)...\n"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:229
+#, python-format
+msgid ""
+"Found relation #%d: \n"
+"   "
+msgstr ""
+"נמצא #%d:  קשר משפחה\n"
+"  "
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:239
+msgid ""
+"Paused.\n"
+"Press Continue to search for additional relations.\n"
+msgstr ""
+"מושהה.\n"
+"נא ללחוץ על 'המשך' לקשרי משפחה נוספים.\n"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:254
+#, python-format
+msgid ""
+"\n"
+"Search completed. %d relations found."
+msgstr ""
+"\n"
+"החיפוש הושלם. נמצאו %d קשרי משפחה."
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:3
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:11
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:29
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:38
+msgid "Photo Tagging"
+msgstr "תיוג תמונה"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:4
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:30
+msgid "Gramplet for tagging people in photos"
+msgstr "גראמפלט לתיוג אנשים בתמונות"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:120
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:134
+msgid "Replace existing references to the person being assigned without asking"
+msgstr "החלפת הפניות קיימות לאדם ללא שאלה מקדימה"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:127
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:141
+msgid "Face detection"
+msgstr "זיהוי פנים"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:130
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:144
+msgid "Minimum face width (px)"
+msgstr "רוחב פנים מזערי (פיקסל)"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:132
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:146
+msgid "Minimum face height (px)"
+msgstr "גובה פנים מזערי (פיקסל)"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:135
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:149
+msgid "Detect faces inside existing boxes"
+msgstr "זיהוי פנים בתוך תיבות קיימות"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:137
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:151
+msgid "Sensitivity (1 min .. 20 max)"
+msgstr "רגישות (1 מזערי.. 20 מירבי)"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:272
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:291
+msgid "Add Person"
+msgstr "הוספת אדם"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:273
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:292
+msgid "Clear Reference"
+msgstr "ניקוי הפניה"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:274
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:293
+msgid "Remove Selection"
+msgstr "הסרת פריטים שנבחרו"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:275
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:294
+msgid "Edit referenced Person"
+msgstr "עריכת האדם המופנה"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:276
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:295
+msgid "Zoom In"
+msgstr "התקרבות"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:277
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:296
+msgid "Zoom Out"
+msgstr "התרחקות"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:280
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:299
+msgid "Detect faces"
+msgstr "זיהוי פנים"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:282
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:301
+msgid "Detect faces (OpenCV module required)"
+msgstr "זיהוי פנים (נדרש רכיב של OpenCV)"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:450
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:495
+msgid "Set as active person"
+msgstr "הגדרה כאדם נפעיל"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:453 RelID/relation_tab.py:97
+msgid "_Select"
+msgstr "_בחירה"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:665
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:779
+#, python-brace-format
+msgid "Replace to {0}"
+msgstr "החלפה ל {0}"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:766
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:880
+msgid "Detecting faces..."
+msgstr "זיהוי פנים..."
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:791
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:905
+msgid "Detection finished"
+msgstr "הזיהוי הסתיים"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:841
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:955
+#, python-brace-format
+msgid "Another region of this image is associated with {name}. Remove it?"
+msgstr "אזור אחר של תמונה זו משויכת ל {name}. האם להסיר אותו?"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:844
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:958
+#, python-brace-format
+msgid ""
+"{count} other regions of this image are associated with {name}. Remove them?"
+msgstr "{count} אזורים אחרים של תמונה זו משויכים ל {name}. האם להסירם?"
+
+#: Query/Query.gpr.py:9 Query/Query.gpr.py:10
+msgid "Query Gramplet"
+msgstr "גרמפלט שאילתה"
+
+#: Query/Query.gpr.py:10 Query/Query.gpr.py:11
+msgid "Gramplet for running SQL-like queries"
+msgstr "גרמפלט להרצת שאילתות דמוי-SQL"
+
+#: Query/Query.gpr.py:18 Query/Query.gpr.py:19
+msgid "Query"
+msgstr "שאילתה"
+
+#: Query/Query.gpr.py:31 Query/Query.gpr.py:33
+msgid "Query Quickview"
+msgstr "מבט מהיר לשאילתה"
+
+#: Query/Query.gpr.py:32 Query/Query.gpr.py:34
+msgid "Quick view for SQL-like running queries"
+msgstr "מבט מהיר עסור גרמפלט להרצת שאילתות דמוי-SQL"
+
+#: Query/QueryGramplet.py:52 PythonGramplet/PythonGramplet.py:55
+msgid "Enter Python expressions"
+msgstr "הזנת ביטוי פייתון"
+
+#: Query/QueryGramplet.py:176
+msgid "Enter SQL query"
+msgstr "הזנת שאילתת SQL"
+
+#: Query/QueryQuickview.py:347 Query/QueryQuickview.py:367
+#, python-format
+msgid "%d rows processed in %s seconds.\n"
+msgstr "%d שורות עובדו ב %s שניות.\n"
+
+#: Query/QueryQuickview.py:426
+msgid "Today"
+msgstr "היום"
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:3
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:10
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:4
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:11
+msgid "Related Relatives"
+msgstr "קרובי משפחה"
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:4
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:5
+msgid "Gramplet showing relatives in a relation"
+msgstr "גרמפלט להצגת קרובי משפחה וקשרי קירבה"
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:93
+msgid "Relations of related people in your database:"
+msgstr "קשרי משפחה של קרובי משפחה במסד הנתונים:"
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:219
+msgid "are partners and"
+msgstr "שותפים וגם"
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:242
+msgid "Common ancestor"
+msgstr "אבות קדמונים משותפים"
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:253
+msgid "No relatives in a relation found"
+msgstr "לא נמצאו קרובי משפחה בקשרי הקירבה"
+
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:254
+msgid "END"
+msgstr "סיום"
+
+#: PlaceTool/PlaceTool.gpr.py:3 PlaceTool/PlaceTool.gpr.py:14
+#: PlaceUpdate/PlaceUpdate.gpr.py:4 PlaceUpdate/PlaceUpdate.gpr.py:15
+msgid "PlaceUpdate"
+msgstr "כלי-מקום"
+
+#: PlaceTool/PlaceTool.gpr.py:4 PlaceUpdate/PlaceUpdate.gpr.py:5
+msgid "Gramplet to manipulate multiple places"
+msgstr "גרמפלט לתמרון ריבוי מקומות"
+
+#: PlaceTool/PlaceTool.py:57 PlaceUpdate/PlaceUpdate.py:56
+msgid "Set properties for multiple places"
+msgstr "נגדרת מאפיינים למספר מקומות"
+
+#: PlaceTool/PlaceTool.py:93 PlaceUpdate/PlaceUpdate.py:96
+msgid ""
+"This gramplet allows setting properties for multiple places at the same time"
+msgstr "הגרמפלט מאפשר הגדרת מאפיינים למספר מקומות בו זמנית"
+
+#: PlaceTool/PlaceTool.py:111 PlaceUpdate/PlaceUpdate.py:111
+msgid "New enclosing place"
+msgstr "מקום מכיל חדש"
+
+#: PlaceTool/PlaceTool.py:134 PlaceUpdate/PlaceUpdate.py:159
+msgid "Clear original enclosing places"
+msgstr "מחיקת המקום המכיל המקורי"
+
+#: PlaceTool/PlaceTool.py:137 PlaceUpdate/PlaceUpdate.py:162
+msgid "Clear tags"
+msgstr "ניקוי תגים"
+
+#: PlaceTool/PlaceTool.py:140 PlaceUpdate/PlaceUpdate.py:165
+msgid "Generate hierarchy"
+msgstr "חילול היררכיה"
+
+#: PlaceTool/PlaceTool.py:146 PlaceUpdate/PlaceUpdate.py:171
+msgid "use spaces as separator"
+msgstr "שימוש ברווח כמפריד"
+
+#: PlaceTool/PlaceTool.py:150 PlaceUpdate/PlaceUpdate.py:175
+msgid "reverse hierarchy"
+msgstr "היפוך היררכיה"
+
+#: PlaceTool/PlaceTool.py:156 PlaceUpdate/PlaceUpdate.py:181
+msgid "Replace text"
+msgstr "החלפת מלל"
+
+#: PlaceTool/PlaceTool.py:159 PlaceUpdate/PlaceUpdate.py:184
+msgid "Use regex"
+msgstr "שימוש בביטוי רגיל (regex)"
+
+#: PlaceTool/PlaceTool.py:169 PlaceUpdate/PlaceUpdate.py:193
+msgid "Old text:"
+msgstr "מלל ישן:"
+
+#: PlaceTool/PlaceTool.py:174 PlaceUpdate/PlaceUpdate.py:197
+msgid "New text:"
+msgstr "מלל חדש:"
+
+#: PlaceTool/PlaceTool.py:186 PlaceUpdate/PlaceUpdate.py:209
+msgid "Clear selections"
+msgstr "ניקוי בחירה"
+
+#: PlaceTool/PlaceTool.py:190 PlaceUpdate/PlaceUpdate.py:213
+msgid "Apply to selected places"
+msgstr "החלה על המקום שנבחר"
+
+#: PlaceTool/PlaceTool.py:231 PlaceUpdate/PlaceUpdate.py:266
+msgid "Setting place properties"
+msgstr "הגדרת מאפייני מקום"
+
+#: PlaceTool/PlaceTool.py:272 PlaceUpdate/PlaceUpdate.py:304
+msgid "Regex operation failed: {}"
+msgstr ""
+
+#: MediaReport/media_report.gpr.py:23 MediaReport/media_report.gpr.py:24
+msgid "Media Report"
+msgstr "דוח מדיה"
+
+#: MediaReport/media_report.gpr.py:24 MediaReport/media_report.gpr.py:25
+msgid "Generates report including images, image data and notes."
+msgstr "חילול דוח שכולל תמונות, מידע על תמונות והערות."
+
+#: MediaReport/media_report.py:106 MediaReport/media_report.py:112
+#: MediaReport/media_report.py:119 MediaReport/media_report.py:125
+#: EventDescriptionEditor/EventDescriptionEditor.py:105
+msgid "INFO"
+msgstr "מידע"
+
+#: MediaReport/media_report.py:106 MediaReport/media_report.py:119
+msgid "You have to select an image to generate this report."
+msgstr "יש לבחור תמונה כדי לחולל דוח זה."
+
+#: MediaReport/media_report.py:112
+msgid ""
+"You have to select a custom note or uncheck the option 'include custom note' "
+"to generate this report."
+msgstr ""
+"לחילול הדוח, יש לבחור בהערה מותאמת אישית, או לבטל סימון 'הכללת הערה מותאמת "
+"אישית'."
+
+#: MediaReport/media_report.py:125
+msgid "This report only supports PDF as output file format."
+msgstr "דוח זה תומך בפלט בתסדיר קובץ PDF בלבד."
+
+#: MediaReport/media_report.py:229
+msgid "General:"
+msgstr "כללי:"
+
+#: MediaReport/media_report.py:250
+msgid "Image type:"
+msgstr "סוג תמונה:"
+
+#: MediaReport/media_report.py:426
+msgid "Heading"
+msgstr "כותרת"
+
+#: MediaReport/media_report.py:430
+msgid "Select a media file for this report"
+msgstr "בחירת קובץ מדיה עבור דוח זה"
+
+#: MediaReport/media_report.py:433
+msgid "Custom note"
+msgstr "הערה מותאם אישית"
+
+#: MediaReport/media_report.py:434
+msgid "Select a note for this report"
+msgstr "בחירת הערה עבור דוח זה"
+
+#: MediaReport/media_report.py:437
+msgid "Include custom note"
+msgstr "הכללת הערה מותאם אישית"
+
+#: MediaReport/media_report.py:438
+msgid "The custom note will be included"
+msgstr "הערה תותאמת אישית תכלל בדוח"
+
+#: MediaReport/media_report.py:442
+msgid "Include referenced people"
+msgstr "הכללת אנשים שאליהם קיימת הפניה"
+
+#: MediaReport/media_report.py:443
+msgid "Referenced people will be included"
+msgstr "אנשים שאליהם קיימת הפניה יכללו בדוח"
+
+#: MediaReport/media_report.py:446
+msgid "Include media data"
+msgstr "הכללת נתונים על מדיה"
+
+#: MediaReport/media_report.py:447
+msgid "Tags, notes and attributes will be included"
+msgstr "תגים, הערות ותכונות יכללו בדוח"
+
+#: MediaReport/media_report.py:450
+msgid "Media width"
+msgstr "רוחב מדיה"
+
+#: MediaReport/media_report.py:451
+#, python-format
+msgid "Maximum media width in % of available page width."
+msgstr "רוחב מדיה מרבי באחוזים (%) מרוחב זמין בעמוד."
+
+#: MediaReport/media_report.py:455
+msgid "Media height"
+msgstr "גובה מדיה"
+
+#: MediaReport/media_report.py:456
+#, python-format
+msgid "Maximum media height in % of available page height."
+msgstr "גובה מדיה מרבי באחוזים (%) מגובה זמין בעמוד."
+
+#: DateCalculator/DateCalculator.gpr.py:21
+#: DateCalculator/DateCalculator.gpr.py:31
+#: DateCalculator/DateCalculator.gpr.py:22
+#: DateCalculator/DateCalculator.gpr.py:32
+msgid "Date Calculator"
+msgstr "מחשבון תאריכים"
+
+#: DateCalculator/DateCalculator.py:78 DateCalculator/DateCalculator.py:96
+msgid "Result"
+msgstr "תוצאה"
+
+#: DateCalculator/DateCalculator.py:81 DateCalculator/DateCalculator.py:104
+msgid "Calculate"
+msgstr "חישוב"
+
+#: DateCalculator/DateCalculator.py:166 DateCalculator/DateCalculator.py:168
+#: DateCalculator/DateCalculator.py:176 DateCalculator/DateCalculator.py:178
+#: DateCalculator/DateCalculator.py:195 DateCalculator/DateCalculator.py:197
+#: DateCalculator/DateCalculator.py:205 DateCalculator/DateCalculator.py:207
+msgid "Error: at least one expression must be a date"
+msgstr "שגיאה: לפחות אחד מהביטוים חייב להיות תאריך"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:264
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:62
+msgid "Place Coordinate Gramplet"
+msgstr "גרמפלט נקודות־ציון מקום"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:764
+msgid "Map Menu"
+msgstr "תפריט מפה"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:775
+msgid "Add city as place"
+msgstr "הוספת עיר כ'מקום'"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:788
+msgid "Add addess as place"
+msgstr "הוספת כתובת כ'מקום'"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:138
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:24
+msgid "Place Coordinate Gramplet view"
+msgstr "מצג גרמפלט נקודות־ציון מקום"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:139
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:25
+msgid "View for the place coordinate gramplet."
+msgstr "מצג גרמפלט נקודות־ציון מקום."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:154
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:43
+msgid "Place and Coordinates"
+msgstr "מקום ונקודות־ציון"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:156
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:44
+msgid "Gramplet that simplifies setting the coordinates of a place"
+msgstr "גרמפלט לפישוט קביעת נקודות־הציון של מקום"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:165
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:53
+msgid "Place Coordinates"
+msgstr "נקודות־ציון מקום"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:215
+msgid "The place was not found. You may clarify the search keywords."
+msgstr "המקום לא נמצא. נא להבהיר מילות־מפתח לחיפוש."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:219
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:247
+msgid "Failed to search for the coordinates due to some unexpected error."
+msgstr "כשל בחיפוש נקודות־ציון כתוצאה משגיאה לא צפויה."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:244
+msgid "The place was not found."
+msgstr "המקום לא נמצא."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:269
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:300
+msgid "The place was not identified."
+msgstr "המקוםלא זוהה."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:271
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:302
+msgid "Coordinates were not given."
+msgstr "לא ניתנו נקודות־ציון."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:286
+msgid "Failed to interpret the input format."
+msgstr "כשל בפרוש תסדיר הקלט."
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:332
+#, python-brace-format
+msgid "DB entry [{id}] {name}:"
+msgstr "רשומת מסד־נתונים [{id}] {name}:"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:337
+#: PlaceCoordinateGramplet/placecoordinate.glade:132
+msgid "Nothing has been searched yet"
+msgstr "טרם בוצע חיפוש"
+
+#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:359
+msgid "No place is active"
+msgstr "אין מקום פעיל"
+
+#: PlaceCoordinateGramplet/placecoordinate.glade:15
+msgid "Search for:"
+msgstr "חיפוש:"
+
+#: PlaceCoordinateGramplet/placecoordinate.glade:26
+msgid "Found place:"
+msgstr "נמצא מקום:"
+
+#: PlaceCoordinateGramplet/placecoordinate.glade:53
+msgid "No DB entry is selected"
+msgstr "לא נבחרה רשומת מסד־נתונים"
+
+#: PlaceCoordinateGramplet/placecoordinate.glade:68
+msgid "Postal-Code:"
+msgstr "מיקוד"
+
+#: PlaceCoordinateGramplet/placecoordinate.glade:116
+msgid "Show found place externally in Google Maps"
+msgstr "הצגת מקום שנמצא במפות גוגל באופן חיצוני"
+
+#: PlaceCoordinateGramplet/placecoordinate.glade:203
+msgid ""
+"Take last clicked position\n"
+"from Geography map"
+msgstr ""
+"לקיחת איות מהקשה אחרונה\n"
+"על מפה גיאוגרפית"
+
+#: PlaceCoordinateGramplet/placecoordinate.glade:218
+msgid "Search location from DB"
+msgstr "חיפוש מקום ממסד־נתונים"
+
+#: PlaceCoordinateGramplet/placecoordinate.glade:232
+msgid "Apply geo location to Database"
+msgstr "החלת איכון (גאו־לוקיישן) על מסד הנתונים"
+
+#: PlaceCoordinateGramplet/placecoordinate.glade:269
+msgid "Go"
+msgstr "מעבר אל"
+
+#: PlaceCoordinateGramplet/placecoordinate.glade:290
+msgid "Show help"
+msgstr "הצגת עזרה"
+
+#: MediaMerge/mediamerge.py:149
+#, python-brace-format
+msgid "{number_of} media merged"
+msgid_plural "{number_of} media merged"
+msgstr[0] "עצם מדיה {number_of} מוזג"
+msgstr[1] "מוזגו {number_of} עצמי מדיה"
+msgstr[2] "מוזגו {number_of} עצמי מדיה"
+msgstr[3] "מוזגו {number_of} עצמי מדיה"
