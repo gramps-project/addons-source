@@ -1,36 +1,36 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Igal Shapira <igal.shapira@gmail.com>, 2009, 2010, 2011.
+# Avi Markovitz <avi.markovitz@gmail.com>, 2019.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2019-09-20 14:20+0300\n"
-"Language-Team: \n"
+"POT-Creation-Date: 2023-09-10 07:59+0300\n"
+"PO-Revision-Date: 2023-09-10 08:07+0300\n"
+"Last-Translator: \n"
+"Language-Team: Avi Markovitz\n"
+"Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.1\n"
-"Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
-"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==2 ? 1 : n>10 && n%10==0 ? 2 : 3);\n"
-"Language: he\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==2 ? 1 : n>10 && n%10==0 ? "
+"2 : 3);\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: DataEntryGramplet/DataEntryGramplet.gpr.py:8
+#: DataEntryGramplet/DataEntryGramplet.gpr.py:9
 msgid "Data Entry Gramplet"
 msgstr "גראמפלט הזנת נתונים"
 
 #: DataEntryGramplet/DataEntryGramplet.gpr.py:9
+#: DataEntryGramplet/DataEntryGramplet.gpr.py:10
 msgid "Gramplet for quick data entry"
 msgstr "גראמפלט להזנת נתונים מהירה"
 
-#: DataEntryGramplet/DataEntryGramplet.gpr.py:13
-msgid "Data Entry"
-msgstr "הזנת נתונים"
-
-#: DataEntryGramplet/DataEntryGramplet.py:71
+#: DataEntryGramplet/DataEntryGramplet.py:71 FilterRules/activepersonrule.py:45
 msgid "Active person"
 msgstr "אדם פעיל"
 
@@ -46,50 +46,6 @@ msgstr "מקורות?"
 #: DataEntryGramplet/DataEntryGramplet.py:109
 msgid "Surname, Given"
 msgstr "שם משפחה, שם פרטי"
-
-#: DataEntryGramplet/DataEntryGramplet.py:77
-#: DataEntryGramplet/DataEntryGramplet.py:110
-msgid "Gender"
-msgstr "מגדר"
-
-#: DataEntryGramplet/DataEntryGramplet.py:77
-#: DataEntryGramplet/DataEntryGramplet.py:111
-msgid "female"
-msgstr "נקבה"
-
-#: DataEntryGramplet/DataEntryGramplet.py:77
-#: DataEntryGramplet/DataEntryGramplet.py:111
-msgid "male"
-msgstr "זכר"
-
-#: DataEntryGramplet/DataEntryGramplet.py:77
-#: DataEntryGramplet/DataEntryGramplet.py:111
-msgid "unknown"
-msgstr "לא ידוע"
-
-#: DataEntryGramplet/DataEntryGramplet.py:77
-#: DataEntryGramplet/DataEntryGramplet.py:111
-msgid "other"
-msgstr "אחר"
-
-#: DataEntryGramplet/DataEntryGramplet.py:78
-#: DataEntryGramplet/DataEntryGramplet.py:80
-#: DataEntryGramplet/DataEntryGramplet.py:81
-#: DataEntryGramplet/DataEntryGramplet.py:111
-#: DataEntryGramplet/DataEntryGramplet.py:112
-#: DataEntryGramplet/DataEntryGramplet.py:113
-msgid "Source"
-msgstr "מקור"
-
-#: DataEntryGramplet/DataEntryGramplet.py:80
-#: DataEntryGramplet/DataEntryGramplet.py:112
-msgid "Birth"
-msgstr "לידה"
-
-#: DataEntryGramplet/DataEntryGramplet.py:81
-#: DataEntryGramplet/DataEntryGramplet.py:113
-msgid "Death"
-msgstr "פטירה"
 
 #: DataEntryGramplet/DataEntryGramplet.py:89
 msgid "Save"
@@ -143,17 +99,9 @@ msgstr "הוספה כצאצא"
 msgid "Add as a Child"
 msgstr "הוספת צאצא"
 
-#: DataEntryGramplet/DataEntryGramplet.py:121
-msgid "Add"
-msgstr "הוספה"
-
 #: DataEntryGramplet/DataEntryGramplet.py:124
 msgid "Copy Active Data"
 msgstr "העתקת נתונים פעילים."
-
-#: DataEntryGramplet/DataEntryGramplet.py:127
-msgid "Clear"
-msgstr "ניקוי"
 
 #: DataEntryGramplet/DataEntryGramplet.py:167
 #: DataEntryGramplet/DataEntryGramplet.py:178

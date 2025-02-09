@@ -1,35 +1,34 @@
-# Addon Data Entry for Gramps.
+# Addon MediaMerge for Gramps.
 # Copyright (C) 2020 Gramps
-# This file is distributed under the same license as the PACKAGE package.
-# Pedro Albuquerque <pmra@protonmail.com>, 2020.
+# This file is distributed under the same license as the gramps package.
+# Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2020-03-29 11:53Hora de Verão de GMT\n"
+"PO-Revision-Date: 2025-02-09 06:44+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
-"Language-Team: Pedro Albuquerque\n"
-"Language: pt\n"
+"Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
+"gramps-project/addons/pt_PT/>\n"
+"Language: pt_PT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Geany / PoHelper 1.36\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10-dev\n"
 
 #: DataEntryGramplet/DataEntryGramplet.gpr.py:8
+#: DataEntryGramplet/DataEntryGramplet.gpr.py:9
 msgid "Data Entry Gramplet"
 msgstr "Gramplet de inserção de dados"
 
 #: DataEntryGramplet/DataEntryGramplet.gpr.py:9
+#: DataEntryGramplet/DataEntryGramplet.gpr.py:10
 msgid "Gramplet for quick data entry"
 msgstr "Gramplet de inserção rápida de dados"
 
-#: DataEntryGramplet/DataEntryGramplet.gpr.py:13
-msgid "Data Entry"
-msgstr "Inserção de dados"
-
-#: DataEntryGramplet/DataEntryGramplet.py:71
+#: DataEntryGramplet/DataEntryGramplet.py:71 FilterRules/activepersonrule.py:45
 msgid "Active person"
 msgstr "Indivíduo activo"
 
@@ -45,50 +44,6 @@ msgstr "Fontes?"
 #: DataEntryGramplet/DataEntryGramplet.py:109
 msgid "Surname, Given"
 msgstr "Apelido, nome"
-
-#: DataEntryGramplet/DataEntryGramplet.py:77
-#: DataEntryGramplet/DataEntryGramplet.py:110
-msgid "Gender"
-msgstr "Sexo"
-
-#: DataEntryGramplet/DataEntryGramplet.py:77
-#: DataEntryGramplet/DataEntryGramplet.py:111
-msgid "female"
-msgstr "mulher"
-
-#: DataEntryGramplet/DataEntryGramplet.py:77
-#: DataEntryGramplet/DataEntryGramplet.py:111
-msgid "male"
-msgstr "homem"
-
-#: DataEntryGramplet/DataEntryGramplet.py:77
-#: DataEntryGramplet/DataEntryGramplet.py:111
-msgid "unknown"
-msgstr "desconhecido"
-
-#: DataEntryGramplet/DataEntryGramplet.py:77
-#: DataEntryGramplet/DataEntryGramplet.py:111
-msgid "other"
-msgstr "outro"
-
-#: DataEntryGramplet/DataEntryGramplet.py:78
-#: DataEntryGramplet/DataEntryGramplet.py:80
-#: DataEntryGramplet/DataEntryGramplet.py:81
-#: DataEntryGramplet/DataEntryGramplet.py:111
-#: DataEntryGramplet/DataEntryGramplet.py:112
-#: DataEntryGramplet/DataEntryGramplet.py:113
-msgid "Source"
-msgstr "Fonte"
-
-#: DataEntryGramplet/DataEntryGramplet.py:80
-#: DataEntryGramplet/DataEntryGramplet.py:112
-msgid "Birth"
-msgstr "Nascimento"
-
-#: DataEntryGramplet/DataEntryGramplet.py:81
-#: DataEntryGramplet/DataEntryGramplet.py:113
-msgid "Death"
-msgstr "Óbito"
 
 #: DataEntryGramplet/DataEntryGramplet.py:89
 msgid "Save"
@@ -142,17 +97,9 @@ msgstr "Adicionar como irmão"
 msgid "Add as a Child"
 msgstr "Adicionar como filho"
 
-#: DataEntryGramplet/DataEntryGramplet.py:121
-msgid "Add"
-msgstr "Adicionar"
-
 #: DataEntryGramplet/DataEntryGramplet.py:124
 msgid "Copy Active Data"
 msgstr "Copiar dados activos"
-
-#: DataEntryGramplet/DataEntryGramplet.py:127
-msgid "Clear"
-msgstr "Limpar"
 
 #: DataEntryGramplet/DataEntryGramplet.py:167
 #: DataEntryGramplet/DataEntryGramplet.py:178

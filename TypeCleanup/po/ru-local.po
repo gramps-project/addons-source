@@ -1,45 +1,43 @@
-# Russian translation for TypeCleanup addon.
+# Russian translation for MediaMerge
 # This file is distributed under the same license as the Gramps package.
+#
+# Ivan Komaritsyn <vantu5z@mail.ru>, 2015, 2016, 2017, 2018, 2019, 2020, 2021.
+# Alexander Bogdashevsky <sanderb@kezomba.com>, 2004.
+# Alex Roitman <shura@gramps-project.org>, 2002, 2003, 2004, 2005, 2006, 2007.
+# Konstantin Dorichev <kdorichev@gmail.com>, 2008.
+# Yevgeny Zegzda <ezegjda@ya.ru>, 2009, 2010.
 # vantu5z <vantu5z@mail.ru>, 2020.
+# Komaritsyn Ivan <vantu5z@mail.ru>, 2018.
+# Andrey Baznikin (http://d.scn.ru/), 2009, 2010, 2011.
+# Vassilii Khachaturov <vassilii@tarunz.org>, 2011, 2012, 2013, 2014.
+# Egor Reentov <egor.gramps@gmail.com>, 2011, 2012, 2013.
+# Artem Glebov <artem.glebov@gmail.com>, 2013.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gramps51\n"
+"Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-27 13:30-0600\n"
-"PO-Revision-Date: 2020-04-27 15:05+0300\n"
-"Last-Translator: vantu5z <vantu5z@mail.ru>\n"
+"POT-Creation-Date: 2018-12-04 16:31+0300\n"
+"PO-Revision-Date: 2018-12-04 16:36+0300\n"
+"Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Gtranslator 2.91.7\n"
+"X-Poedit-Language: Russian\n"
+"X-Poedit-Country: RUSSIAN FEDERATION\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: TypeCleanup/type_cleanup.gpr.py:29
+#: TypeCleanup/type_cleanup.gpr.py:29 TypeCleanup/type_cleanup.gpr.py:30
 msgid "Type Cleanup"
 msgstr "Очистка типов"
 
-#: TypeCleanup/type_cleanup.gpr.py:30
+#: TypeCleanup/type_cleanup.gpr.py:30 TypeCleanup/type_cleanup.gpr.py:31
 msgid "Clean up (remove) custom types"
 msgstr "Производит очистку (удаляет) указанные типы"
-
-#: TypeCleanup/type_cleanup.py:96
-msgid "Event Attributes"
-msgstr "Атрибуты событий"
-
-#: TypeCleanup/type_cleanup.py:97
-msgid "Family Attributes"
-msgstr "Атрибуты семей"
-
-#: TypeCleanup/type_cleanup.py:98
-msgid "Media Attributes"
-msgstr "Атрибуты документов"
-
-#: TypeCleanup/type_cleanup.py:99
-msgid "Person Attributes"
-msgstr "Атрибуты лиц"
 
 #: TypeCleanup/type_cleanup.py:101
 msgid "Event Roles"
@@ -77,10 +75,6 @@ msgstr "Типы мест"
 msgid "Repository Types"
 msgstr "Типы хранилищ"
 
-#: TypeCleanup/type_cleanup.py:110
-msgid "Source Attributes"
-msgstr "Типы атрибутов"
-
 #: TypeCleanup/type_cleanup.py:111
 msgid "Source Media Types"
 msgstr "Типы источников документов"
@@ -92,14 +86,6 @@ msgstr "Типы URL-ссылок"
 #: TypeCleanup/type_cleanup.py:124
 msgid "Types Cleanup Tool"
 msgstr "Иструмент очистки типов"
-
-#: TypeCleanup/type_cleanup.py:160
-msgid "Help"
-msgstr "Справка"
-
-#: TypeCleanup/type_cleanup.py:164
-msgid "Remove"
-msgstr "Удалить"
 
 #: TypeCleanup/type_cleanup.py:166
 msgid ""
@@ -125,10 +111,6 @@ msgstr "Переименовать"
 msgid "Rename the selected type in all referenced objects."
 msgstr "Переименовать выбранный тип во всех объектах по ссылкам."
 
-#: TypeCleanup/type_cleanup.py:188
-msgid "Close"
-msgstr "Закрыть"
-
 #: TypeCleanup/type_cleanup.py:189
 msgid "Close the Type Cleanup Tool"
 msgstr "Закрыть иструмент очистки типов"
@@ -137,21 +119,9 @@ msgstr "Закрыть иструмент очистки типов"
 msgid "Types"
 msgstr "Типы"
 
-#: TypeCleanup/type_cleanup.py:214
-msgid "Type"
-msgstr "Тип"
-
-#: TypeCleanup/type_cleanup.py:221
-msgid "References"
-msgstr "Ссылки"
-
 #: TypeCleanup/type_cleanup.py:242
 msgid "Type Cleanup Tool"
 msgstr "Иструмент очистки типов"
-
-#: TypeCleanup/type_cleanup.py:275
-msgid "Reading database..."
-msgstr "Чтение базы данных..."
 
 #: TypeCleanup/type_cleanup.py:387
 #, python-format
@@ -167,16 +137,9 @@ msgid ""
 "However, it will not remove it from the referenced items in the database.\n"
 "If you want to change it in referenced items, use 'Rename'."
 msgstr ""
-"Удаление этого типа сделает его недоступным в выпадающем списке выбора типов\n"
+"Удаление этого типа сделает его недоступным в выпадающем списке выбора "
+"типов\n"
 "и дальнейшей работе иструмента.\n"
 "\n"
 "Однако, он не будет удалён из объектов по ссылкам в базе данных.\n"
 "Если хотите изменить его в объектах по ссылкам - используйте 'Переименовать'."
-
-#: TypeCleanup/type_cleanup.py:437
-msgid "_Remove"
-msgstr "_Удалить"
-
-#: TypeCleanup/type_cleanup.py:437
-msgid "_Stop"
-msgstr "_Стоп"

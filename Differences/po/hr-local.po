@@ -1,23 +1,24 @@
 # Croatian translation for Gramps
 # This file is distributed under the same license as the Gramps package.
 # Copyright (C) Gramps project
-# Milo Ivir <mail@milotype.de>, 2019., 2020.
+# Milo Ivir <mivir@milotype.de>, 2019, 2020.
+# Stephen Adams, Gramps Reddit, 2018.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-08 17:10-0500\n"
-"PO-Revision-Date: 2020-08-23 20:19+0200\n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2019-10-23 15:25+0200\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: \n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.1\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Generator: Poedit 2.2.4\n"
 
 #: Differences/differences.gpr.py:4 Differences/differences.py:95
 msgid "Database Differences Report"
@@ -27,21 +28,9 @@ msgstr "Izvještaj o razlikama između baza podataka"
 msgid "Compares an external database with the current one."
 msgstr "Uspoređuje vanjsku bazu podataka s trenutačnom."
 
-#: Differences/differences.py:114
-msgid "File:"
-msgstr "Datoteka:"
-
 #: Differences/differences.py:134
 msgid "Differences between Database and File"
 msgstr "Razlike između baze podataka i datoteke"
-
-#: Differences/differences.py:138
-msgid "Family Tree Differences"
-msgstr "Razlike rodoslova"
-
-#: Differences/differences.py:139
-msgid "Processing..."
-msgstr "Obrada u tijeku …"
 
 #: Differences/differences.py:161
 msgid "No differences"
@@ -72,10 +61,6 @@ msgstr "Dodano %s: %s "
 #: Differences/differences.py:195
 msgid "Nothing added"
 msgstr "Ništa nije dodano"
-
-#: Differences/differences.py:306
-msgid "Report Options"
-msgstr "Opcije za izvještaj"
 
 #: Differences/differences.py:308
 msgid "Family Tree file"
@@ -110,8 +95,3 @@ msgstr "Prikaži elemente koji su dodani u datoteku"
 msgid "Include items in file but not in database"
 msgstr ""
 "Uključi elemente koji nedostaju u bazi podataka, ali se nalaze u datoteci"
-
-#: Differences/differences.py:367 Differences/differences.py:369
-#: Differences/differences.py:372 Differences/differences.py:375
-msgid "Text"
-msgstr "Tekst"

@@ -13,18 +13,23 @@
 #  call name : prénom usuel
 #  unknown (context) : inconnu ou non-connu (individu)
 #
-# Laurent Protois <laurent.protois@free.fr>, 2001-2004.
+# Laurent Protois <laurent.protois@free.fr>, 2001, 2002, 2003, 2004.
 # Matthieu Pupat <tieum.tieum@free.fr>, 2004, 2005.
 # Guillaume Pratte <guillaumep@soireevideo.org>, 2005.
-# Frederic Chateaux, 2007-2008.
-# Jérôme Rapinat <romjerome@yahoo.fr>, 2005-2011.
+# Frederic Chateaux, 2007, 2008.
+# Jérôme Rapinat <romjerome@yahoo.fr>, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017.
+# Mathieu MD <mathieu.md@gmail.com>, 2012.
+# Paul Culley <prc@prc-virtualbox>, 2018.
+# Christophe <khrys63@gmail.com>, 2018.
+# Paul Culley <paulr2787@gmail.com>, 2016.
+# J-Paul Bérard <arverne@wanadoo.fr>, 2021.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-12-17 18:14+0100\n"
-"PO-Revision-Date: 2011-12-17 18:48+0100\n"
+"PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
 "Language: \n"
@@ -33,29 +38,25 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: AllNamesQuickview/AllNames.gpr.py:3
-#: AllNamesQuickview/AllNames.py:46
-msgid "All Names of All People"
-msgstr "Tous les noms pour tous les individus"
-
-#: AllNamesQuickview/AllNames.gpr.py:4
-msgid "Display all names of all people"
-msgstr "Affiche tous les noms de tous les individus"
-
-#: AllNamesQuickview/AllNames.py:49
-msgid "Name"
-msgstr "Nom"
-
+#: PlaceCleanup/placecleanup.glade.h:2 PlaceCleanup/placecleanup.glade:52
 #: AllNamesQuickview/AllNames.py:49
 msgid "Primary Name"
 msgstr "Nom principal"
 
-#: AllNamesQuickview/AllNames.py:49
+#: AllNamesQuickview/AllNames.gpr.py:3 AllNamesQuickview/AllNames.py:46
+#: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
+msgid "All Names of All People"
+msgstr "Tous les noms pour tous les individus"
+
+#: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.gpr.py:5
+msgid "Display all names of all people"
+msgstr "Affiche tous les noms de tous les individus"
+
+#: AllNamesQuickview/AllNames.py:49 AllNamesQuickview/AllNames.py:54
 msgid "Name Type"
 msgstr "Type de nom"
 
-#: AllNamesQuickview/AllNames.py:66
+#: AllNamesQuickview/AllNames.py:66 AllNamesQuickview/AllNames.py:71
 #, python-format
 msgid "Total names %d"
 msgstr "Total des noms %d"
-

@@ -1,29 +1,73 @@
 # Croatian translation for Gramps
 # This file is distributed under the same license as the Gramps package.
 # Copyright (C) Gramps project
-# Milo Ivir <mail@milotype.de>, 2019., 2020.
+# Milo Ivir <mivir@milotype.de>, 2019, 2020.
+# Stephen Adams, Gramps Reddit, 2018.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2020-08-29 20:03+0200\n"
+"PO-Revision-Date: 2019-10-23 15:25+0200\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: \n"
+"Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.1\n"
-"Last-Translator: Milo Ivir <mail@milotype.de>\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
-"Language: hr\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Generator: Poedit 2.2.4\n"
 
-#: FamilyTree/FamilyTree.gpr.py:3
-msgid "Family Tree"
-msgstr "Rodoslov"
+#: FamilySheet/FamilySheet.py:767 FamilySheet/FamilySheet.py:769
+#: FamilyTree/FamilyTree.py:930
+#, python-format
+msgid "on %(ymd_date)s"
+msgstr "na dan %(ymd_date)s"
 
-#: FamilyTree/FamilyTree.gpr.py:4
+#: FamilySheet/FamilySheet.py:769 FamilySheet/FamilySheet.py:771
+#: FamilyTree/FamilyTree.py:932
+#, python-format
+msgid "in %(ym_date)s"
+msgstr "%(ym_date)s"
+
+#: FamilySheet/FamilySheet.py:771 FamilySheet/FamilySheet.py:773
+#: FamilyTree/FamilyTree.py:934
+#, python-format
+msgid "in %(y_date)s"
+msgstr "%(y_date)s"
+
+#: FamilySheet/FamilySheet.py:775 FamilySheet/FamilySheet.py:777
+#: FamilyTree/FamilyTree.py:938
+#, python-format
+msgid "on %(placeholder)s"
+msgstr "na %(placeholder)s"
+
+#: FamilySheet/FamilySheet.py:777 FamilySheet/FamilySheet.py:779
+#: FamilyTree/FamilyTree.py:941
+#, python-format
+msgid "on %(placeholder)s (%(partial)s)"
+msgstr "na %(placeholder)s (%(partial)s)"
+
+#: FamilySheet/FamilySheet.py:822 FamilySheet/FamilySheet.py:824
+#: FamilySheet/FamilySheet.py:826 FamilyTree/FamilyTree.py:958
+#, python-format
+msgid "in %(place)s"
+msgstr "u mjestu %(place)s"
+
+#: FamilySheet/FamilySheet.py:878 FamilySheet/FamilySheet.py:880
+#: FamilyTree/FamilyTree.py:1082
+msgid "Replace first name with call name"
+msgstr "Zamijeni cjelokupno ime upotrebnim imenom"
+
+#: FamilySheet/FamilySheet.py:879 FamilySheet/FamilySheet.py:881
+#: FamilyTree/FamilyTree.py:1083
+msgid "Underline call name in first name / add call name to first name"
+msgstr ""
+"Podcrtaj upotrebno ime u cjelokupnom imenu / dodaj upotrebno ime cjelokupnom"
+
+#: FamilyTree/FamilyTree.gpr.py:4 FamilyTree/FamilyTree.gpr.py:5
 msgid "Produces a graphical family tree."
 msgstr "Izrađuje grafički rodoslov."
 
@@ -40,283 +84,178 @@ msgstr "Papir je premalen"
 msgid "Some elements may not appear or be badly rendered."
 msgstr "Neki se elementi neće pojaviti ili će se loše prikazati."
 
-#: FamilyTree/FamilyTree.py:672 FamilyTree/FamilyTree.py:677
-msgid "Unknown"
-msgstr "Nepoznato"
-
-#: FamilyTree/FamilyTree.py:679
-#, python-format
-msgid "%(father)s and %(mother)s"
-msgstr "%(father)s i %(mother)s"
-
-#: FamilyTree/FamilyTree.py:686
+#: FamilyTree/FamilyTree.py:686 FamilyTree/FamilyTree.py:684
 msgid "Anonymous"
 msgstr "Anonimno"
 
-#: FamilyTree/FamilyTree.py:909
+#: FamilyTree/FamilyTree.py:909 FamilyTree/FamilyTree.py:911
 msgid "born"
 msgstr "rođen/a"
 
-#: FamilyTree/FamilyTree.py:911
+#: FamilyTree/FamilyTree.py:911 FamilyTree/FamilyTree.py:913
 msgid "baptised"
 msgstr "kršten/a"
 
-#: FamilyTree/FamilyTree.py:913
+#: FamilyTree/FamilyTree.py:913 FamilyTree/FamilyTree.py:915
 msgid "died"
 msgstr "umro/la"
 
-#: FamilyTree/FamilyTree.py:915
+#: FamilyTree/FamilyTree.py:915 FamilyTree/FamilyTree.py:917
 msgid "buried"
 msgstr "pokopan/a"
 
-#: FamilyTree/FamilyTree.py:917
+#: FamilyTree/FamilyTree.py:917 FamilyTree/FamilyTree.py:919
 msgid "cremated"
 msgstr "kremiran/a"
 
-#: FamilyTree/FamilyTree.py:919
+#: FamilyTree/FamilyTree.py:919 FamilyTree/FamilyTree.py:921
 msgid "married"
 msgstr "vjenčan/a"
 
-#: FamilyTree/FamilyTree.py:921
+#: FamilyTree/FamilyTree.py:921 FamilyTree/FamilyTree.py:923
 msgid "divorced"
 msgstr "rastavljen/a"
 
-#: FamilyTree/FamilyTree.py:923
+#: FamilyTree/FamilyTree.py:923 FamilyTree/FamilyTree.py:925
 msgid "resident"
 msgstr "stanovnik/stanovnica"
 
-#: FamilyTree/FamilyTree.py:930
-#, python-format
-msgid "on %(ymd_date)s"
-msgstr "na dan %(ymd_date)s"
-
-#: FamilyTree/FamilyTree.py:932
-#, python-format
-msgid "in %(ym_date)s"
-msgstr "%(ym_date)s"
-
-#: FamilyTree/FamilyTree.py:934
-#, python-format
-msgid "in %(y_date)s"
-msgstr "%(y_date)s"
-
-#: FamilyTree/FamilyTree.py:938
-#, python-format
-msgid "on %(placeholder)s"
-msgstr "na %(placeholder)s"
-
-#: FamilyTree/FamilyTree.py:941
-#, python-format
-msgid "on %(placeholder)s (%(partial)s)"
-msgstr "na %(placeholder)s (%(partial)s)"
-
-#: FamilyTree/FamilyTree.py:958
-#, python-format
-msgid "in %(place)s"
-msgstr "u mjestu %(place)s"
-
-#: FamilyTree/FamilyTree.py:969
+#: FamilyTree/FamilyTree.py:969 FamilyTree/FamilyTree.py:971
 #, python-format
 msgid "(%(description)s)"
 msgstr "(%(description)s)"
 
-#: FamilyTree/FamilyTree.py:1039
-msgid "Tree Options"
-msgstr "Opcije za rodoslov"
-
-#: FamilyTree/FamilyTree.py:1041
-msgid "Center Family"
-msgstr "Središnja obitelj"
-
-#: FamilyTree/FamilyTree.py:1042
+#: FamilyTree/FamilyTree.py:1042 FamilyTree/FamilyTree.py:1044
 msgid "The center family for the tree"
 msgstr "Središnja obitelj u rodoslovu"
 
-#: FamilyTree/FamilyTree.py:1045
+#: FamilyTree/FamilyTree.py:1045 FamilyTree/FamilyTree.py:1047
 msgid "Ancestor Generations"
 msgstr "Generacije predaka"
 
-#: FamilyTree/FamilyTree.py:1046
+#: FamilyTree/FamilyTree.py:1046 FamilyTree/FamilyTree.py:1048
 msgid "The number of ancestor generations to include in the tree"
 msgstr "Broj generacija predaka, uključenih u rodoslov"
 
-#: FamilyTree/FamilyTree.py:1049
+#: FamilyTree/FamilyTree.py:1049 FamilyTree/FamilyTree.py:1051
 msgid "Descendant Generations"
 msgstr "Generacije potomaka"
 
-#: FamilyTree/FamilyTree.py:1050
+#: FamilyTree/FamilyTree.py:1050 FamilyTree/FamilyTree.py:1052
 msgid "The number of descendant generations to include in the tree"
 msgstr "Broj generacija potomaka, uključenih u rodoslov"
 
-#: FamilyTree/FamilyTree.py:1053
+#: FamilyTree/FamilyTree.py:1053 FamilyTree/FamilyTree.py:1055
 msgid "Kekule number of husband"
 msgstr "Kekule broj muža"
 
-#: FamilyTree/FamilyTree.py:1054
+#: FamilyTree/FamilyTree.py:1054 FamilyTree/FamilyTree.py:1056
 msgid ""
 "The Kekule number of the husband (central family). Set 0 to not show Kekule "
 "numbers"
 msgstr ""
-"Kekule broj muža (središnja obitelj). Postavi na 0, za neprikazivanje "
-"Kekule brojeva"
+"Kekule broj muža (središnja obitelj). Postavi na 0, za neprikazivanje Kekule "
+"brojeva"
 
-#: FamilyTree/FamilyTree.py:1057
+#: FamilyTree/FamilyTree.py:1057 FamilyTree/FamilyTree.py:1059
 msgid "Scale to fit on a single page"
 msgstr "Prilagodi rodoslov veličini stranice"
 
-#: FamilyTree/FamilyTree.py:1058
+#: FamilyTree/FamilyTree.py:1058 FamilyTree/FamilyTree.py:1060
 msgid "Whether to scale to fit on a single page."
 msgstr "Da li prilagoditi rodoslov veličini stranice."
 
-#: FamilyTree/FamilyTree.py:1061
-msgid "Color"
-msgstr "Boja"
-
-#: FamilyTree/FamilyTree.py:1063
+#: FamilyTree/FamilyTree.py:1063 FamilyTree/FamilyTree.py:1065
 msgid "No color"
 msgstr "Bez boje"
 
-#: FamilyTree/FamilyTree.py:1064
-msgid "Generations"
-msgstr "Generacije"
-
-#: FamilyTree/FamilyTree.py:1065
+#: FamilyTree/FamilyTree.py:1065 FamilyTree/FamilyTree.py:1067
 msgid "First generation"
 msgstr "Prva generacija"
 
-#: FamilyTree/FamilyTree.py:1066
+#: FamilyTree/FamilyTree.py:1066 FamilyTree/FamilyTree.py:1068
 msgid "Second generation"
 msgstr "Druga generacija"
 
-#: FamilyTree/FamilyTree.py:1067
+#: FamilyTree/FamilyTree.py:1067 FamilyTree/FamilyTree.py:1069
 msgid "Third generation"
 msgstr "Treća generacija"
 
-#: FamilyTree/FamilyTree.py:1068
+#: FamilyTree/FamilyTree.py:1068 FamilyTree/FamilyTree.py:1070
 msgid "Male line"
 msgstr "Muška loza"
 
-#: FamilyTree/FamilyTree.py:1069
+#: FamilyTree/FamilyTree.py:1069 FamilyTree/FamilyTree.py:1071
 msgid "Male line and illegitimate children"
 msgstr "Muška loza i nezakonita djeca"
 
-#: FamilyTree/FamilyTree.py:1070
+#: FamilyTree/FamilyTree.py:1070 FamilyTree/FamilyTree.py:1072
 msgid "Female line"
 msgstr "Ženska loza"
 
-#: FamilyTree/FamilyTree.py:1073
+#: FamilyTree/FamilyTree.py:1073 FamilyTree/FamilyTree.py:1075
 msgid "Shuffle colors"
 msgstr "Naizmjenične boje"
 
-#: FamilyTree/FamilyTree.py:1074
+#: FamilyTree/FamilyTree.py:1074 FamilyTree/FamilyTree.py:1076
 msgid "Whether to shuffle colors or order them in rainbow fashion."
 msgstr "Da li koristiti boje naizmjenično ili redoslijedom duginih boja."
 
-#: FamilyTree/FamilyTree.py:1077
-msgid "Content"
-msgstr "Sadržaj"
-
-#: FamilyTree/FamilyTree.py:1079
-msgid "Use call name"
-msgstr "Koristi upotrebno ime"
-
-#: FamilyTree/FamilyTree.py:1081
-msgid "Don't use call name"
-msgstr "Ne koristi upotrebno ime"
-
-#: FamilyTree/FamilyTree.py:1082
-msgid "Replace first name with call name"
-msgstr "Zamijeni cjelokupno ime upotrebnim imenom"
-
-#: FamilyTree/FamilyTree.py:1083
-msgid "Underline call name in first name / add call name to first name"
-msgstr ""
-"Podcrtaj upotrebno ime u cjelokupnom imenu / dodaj upotrebno ime cjelokupnom"
-
-#: FamilyTree/FamilyTree.py:1089
+#: FamilyTree/FamilyTree.py:1089 FamilyTree/FamilyTree.py:1091
 msgid "Include Occupation"
 msgstr "Uključi zanimanje"
 
-#: FamilyTree/FamilyTree.py:1092
-msgid "Include Notes"
-msgstr "Uključi zabilješke"
-
-#: FamilyTree/FamilyTree.py:1095
+#: FamilyTree/FamilyTree.py:1095 FamilyTree/FamilyTree.py:1097
 msgid "Include Residence"
 msgstr "Uključi prebivalište"
 
-#: FamilyTree/FamilyTree.py:1098
+#: FamilyTree/FamilyTree.py:1098 FamilyTree/FamilyTree.py:1100
 msgid "Print event data (dead person)"
 msgstr "Ispiši podatke događaja (umrle osobe)"
 
-#: FamilyTree/FamilyTree.py:1100 FamilyTree/FamilyTree.py:1108
-msgid "None"
-msgstr "Bez"
-
 #: FamilyTree/FamilyTree.py:1101 FamilyTree/FamilyTree.py:1109
+#: FamilyTree/FamilyTree.py:1103 FamilyTree/FamilyTree.py:1111
 msgid "Year only"
 msgstr "Samo godina"
 
 #: FamilyTree/FamilyTree.py:1102 FamilyTree/FamilyTree.py:1110
+#: FamilyTree/FamilyTree.py:1104 FamilyTree/FamilyTree.py:1112
 msgid "Full date"
 msgstr "Cjeloviti datum"
 
 #: FamilyTree/FamilyTree.py:1103 FamilyTree/FamilyTree.py:1111
+#: FamilyTree/FamilyTree.py:1105 FamilyTree/FamilyTree.py:1113
 msgid "Full date and place"
 msgstr "Cjeloviti datum i mjesto"
 
-#: FamilyTree/FamilyTree.py:1106
+#: FamilyTree/FamilyTree.py:1106 FamilyTree/FamilyTree.py:1108
 msgid "Print event data (living person)"
 msgstr "Ispiši podatke događaja (žive osobe)"
 
-#: FamilyTree/FamilyTree.py:1114
+#: FamilyTree/FamilyTree.py:1114 FamilyTree/FamilyTree.py:1116
 msgid "Fall back to baptism if birth event missing"
 msgstr "Preuzmi datum krštenja, ako nedostaje događaj rođenja"
 
-#: FamilyTree/FamilyTree.py:1117
+#: FamilyTree/FamilyTree.py:1117 FamilyTree/FamilyTree.py:1119
 msgid "Fall back to burial or cremation if death event missing"
 msgstr "Preuzmi datum pokopa, ako nedostaje događaj smrti"
 
-#: FamilyTree/FamilyTree.py:1120
+#: FamilyTree/FamilyTree.py:1120 FamilyTree/FamilyTree.py:1122
 msgid "Protect private items"
 msgstr "Zaštiti privatne stavke"
 
-#: FamilyTree/FamilyTree.py:1125
-msgid "Print fields for missing information"
-msgstr "Ispiši polja za nedostajuće podatke"
-
-#: FamilyTree/FamilyTree.py:1126
-msgid "Whether to include fields for missing information."
-msgstr "Da li uključiti polja za nedostajuće podatke."
-
-#: FamilyTree/FamilyTree.py:1129
+#: FamilyTree/FamilyTree.py:1129 FamilyTree/FamilyTree.py:1131
 msgid "Include event description"
 msgstr "Uključi opis događaja"
 
-#: FamilyTree/FamilyTree.py:1132
+#: FamilyTree/FamilyTree.py:1132 FamilyTree/FamilyTree.py:1134
 msgid "Text Options"
 msgstr "Opcije za tekst"
 
-#: FamilyTree/FamilyTree.py:1134
-msgid "Title text"
-msgstr "Tekst naslova"
-
-#: FamilyTree/FamilyTree.py:1137
-msgid "Footer text"
-msgstr "Tekst u podnožju"
-
-#: FamilyTree/FamilyTree.py:1152
-msgid "The style used for the title."
-msgstr "Stil za naslov."
-
-#: FamilyTree/FamilyTree.py:1160
+#: FamilyTree/FamilyTree.py:1160 FamilyTree/FamilyTree.py:1162
 msgid "The style used for names."
 msgstr "Stil za imena."
 
-#: FamilyTree/FamilyTree.py:1168
+#: FamilyTree/FamilyTree.py:1168 FamilyTree/FamilyTree.py:1170
 msgid "The style used for data (birth, death, marriage, divorce)."
 msgstr "Stil za podatke (rođenje, smrt, vjenčanje, rastava braka)."
-
-#: FamilyTree/FamilyTree.py:1178
-msgid "The style used for the footer."
-msgstr "Stil za podnožje teksta."

@@ -1,41 +1,38 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR Avi Markovitz <avi.markovitz@gmail.com>, 2019.
+# Igal Shapira <igal.shapira@gmail.com>, 2009, 2010, 2011.
+# Avi Markovitz <avi.markovitz@gmail.com>, 2019.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Plugin Manager\n"
+"Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-18 11:36-0500\n"
-"PO-Revision-Date: 2019-09-20 15:46+0300\n"
-"Language-Team: he\n"
+"POT-Creation-Date: 2023-09-10 07:59+0300\n"
+"PO-Revision-Date: 2023-09-10 08:07+0300\n"
+"Last-Translator: \n"
+"Language-Team: Avi Markovitz\n"
+"Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.1\n"
-"Last-Translator: Avi Markovitz <avi@avi-PC-Mint19>\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==2 ? 1 : n>10 && n%10==0 ? "
 "2 : 3);\n"
-"Language: he\n"
+"X-Generator: Poedit 3.0.1\n"
 
-#: PluginManager/PluginManager.gpr.py:29
+#: PluginManager/PluginManager.gpr.py:29 PluginManager/PluginManager.gpr.py:30
 msgid "Plugin Manager Enhanced"
 msgstr "מנהל מתקעים משופר"
 
-#: PluginManager/PluginManager.gpr.py:30
+#: PluginManager/PluginManager.gpr.py:30 PluginManager/PluginManager.gpr.py:31
 msgid "An Addon/Plugin Manager with several additional capabilities"
 msgstr "מנהל מתקעים/תוספים עם יכולות רבות נוספות"
 
-#: PluginManager/PluginManager.py:87
+#: PluginManager/PluginManager.py:87 PluginManager/PluginManager.py:84
 msgid "Plugin Manager - Enhanced"
 msgstr "מנהל מתקעים - משופר"
 
-#: PluginManager/PluginManager.py:144
-msgid "_Help"
-msgstr "_עזרה"
-
-#: PluginManager/PluginManager.py:151
+#: PluginManager/PluginManager.py:151 PluginManager/PluginManager.py:154
 msgid ""
 "Enter search words to filter the addons.\n"
 "All the words must be present somewhere in the row or\n"
@@ -47,101 +44,29 @@ msgstr ""
 "שקובץ התוסף יכלל בחיפוש.\n"
 "המערכת תתעלם מסדר המילים ורישיות."
 
-#: PluginManager/PluginManager.py:155
+#: PluginManager/PluginManager.py:155 PluginManager/PluginManager.py:158
 msgid "Search..."
 msgstr "חיפוש..."
 
-#: PluginManager/PluginManager.py:161
+#: PluginManager/PluginManager.py:161 ../gramps/gui/plug/_windows.py:816
 msgid "Check for updated addons now"
 msgstr "בדיקת זמינות עדכוני תוספים כעט"
 
-#: PluginManager/PluginManager.py:168
-msgid "Reload"
-msgstr "טעינה מחדש"
-
-#: PluginManager/PluginManager.py:174 PluginManager/PluginManager.py:739
-msgid "_Close"
-msgstr "_סגירה"
-
-#: PluginManager/PluginManager.py:207
+#: PluginManager/PluginManager.py:207 PluginManager/PluginManager.py:216
 msgid "Restart..."
 msgstr "אתחול..."
 
-#: PluginManager/PluginManager.py:208
+#: PluginManager/PluginManager.py:208 PluginManager/PluginManager.py:217
 msgid ""
 "Please Restart Gramps so that your addon changes can be safely completed."
 msgstr "נא לאתחל את גראמפס כדי שהשינויים במתקעים יושלמו בבטחה."
 
-#: PluginManager/PluginManager.py:284
-msgid "Id"
-msgstr "מזהה"
-
-#: PluginManager/PluginManager.py:285
-msgid "Plugin name"
-msgstr "שם מתקע"
-
-#: PluginManager/PluginManager.py:286 PluginManager/PluginManager.py:457
-msgid "Description"
-msgstr "תיאור"
-
-#: PluginManager/PluginManager.py:287
-msgid "Version"
-msgstr "גרסה"
-
-#: PluginManager/PluginManager.py:288
-msgid "Authors"
-msgstr "יוצרים"
-
-#: PluginManager/PluginManager.py:289
-msgid "Email"
-msgstr "דואר אלקטרוני"
-
-#: PluginManager/PluginManager.py:290
-msgid "Filename"
-msgstr "שם קובץ"
-
-#: PluginManager/PluginManager.py:291
-msgid "Location"
-msgstr "מיקום"
-
-#: PluginManager/PluginManager.py:296
-msgid "Loaded"
-msgstr "טעון"
-
-#: PluginManager/PluginManager.py:299
-msgid "Hidden"
-msgstr "מוסתר"
-
-#: PluginManager/PluginManager.py:304 PluginManager/PluginManager.py:701
-msgid "Failed"
-msgstr "כשל"
-
-#: PluginManager/PluginManager.py:377
-msgid "Installation Errors"
-msgstr "שגיאות התקנה"
-
-#: PluginManager/PluginManager.py:378
-msgid "The following addons had errors: "
-msgstr "בתוספים הבאים נמצאו שגיאות: "
-
-#: PluginManager/PluginManager.py:400
-msgid "Error"
-msgstr "שגיאה"
-
-#: PluginManager/PluginManager.py:401
+#: PluginManager/PluginManager.py:401 PluginManager/PluginManager.py:336
 #, python-format
 msgid "Error removing the '%s' directory, The uninstall may have failed"
 msgstr "שגיאה בהסרת המחיצה '%s', ייתכן שהסרת ההתקנה כשלה"
 
-#: PluginManager/PluginManager.py:429
-msgid "Type"
-msgstr "סוג"
-
-#: PluginManager/PluginManager.py:438
-msgid "Status"
-msgstr "מצב"
-
-#: PluginManager/PluginManager.py:441
+#: PluginManager/PluginManager.py:441 PluginManager/PluginManager.py:376
 msgid ""
 "'*' items are supplied by 3rd party authors,\n"
 "<s>strikeout</s> items are hidden"
@@ -149,107 +74,64 @@ msgstr ""
 "'*' פריטים שסופקו על ידי יוצרים צד שלישי,\n"
 "‏<s>קו חוצה</s> פריטים מוסתרים"
 
-#: PluginManager/PluginManager.py:449
-msgid "Name"
-msgstr "שם"
-
-#: PluginManager/PluginManager.py:472
+#: PluginManager/PluginManager.py:472 ../gramps/gui/plug/_windows.py:1079
+#: ../gramps/gui/plug/_windows.py:1137
 msgid "Info"
 msgstr "מידע"
 
 #: PluginManager/PluginManager.py:475 PluginManager/PluginManager.py:586
+#: PluginManager/PluginManager.py:410 PluginManager/PluginManager.py:530
 msgid "Hide"
 msgstr "הסתרה"
 
-#: PluginManager/PluginManager.py:478 PluginManager/PluginManager.py:600
-msgid "Install"
-msgstr "התקנה"
-
-#: PluginManager/PluginManager.py:481
-msgid "Edit"
-msgstr "עריכה"
-
-#: PluginManager/PluginManager.py:483
-msgid "Load"
-msgstr "טעינה"
-
-#: PluginManager/PluginManager.py:494
+#: PluginManager/PluginManager.py:494 PluginManager/PluginManager.py:430
 msgid "Show hidden items"
 msgstr "הצג פריטים מוסתרים"
 
-#: PluginManager/PluginManager.py:502
+#: PluginManager/PluginManager.py:502 PluginManager/PluginManager.py:438
 msgid "Show Built-in items"
 msgstr "הצג פריטים מובנים"
 
-#: PluginManager/PluginManager.py:509
+#: PluginManager/PluginManager.py:509 PluginManager/PluginManager.py:445
 msgid "* indicates 3rd party addon"
 msgstr "*מציין מתקע צג שלישי"
 
-#: PluginManager/PluginManager.py:514
+#: PluginManager/PluginManager.py:514 PluginManager/PluginManager.py:450
 msgid "Plugins"
 msgstr "מתקעים"
 
-#: PluginManager/PluginManager.py:584
+#: PluginManager/PluginManager.py:584 PluginManager/PluginManager.py:528
 msgid "Unhide"
 msgstr "ביטול הסתרה"
 
-#: PluginManager/PluginManager.py:603
+#: PluginManager/PluginManager.py:603 PluginManager/PluginManager.py:547
 msgid "Uninstall"
 msgstr "הסרה"
 
-#: PluginManager/PluginManager.py:613
+#: PluginManager/PluginManager.py:613 ../gramps/gui/plug/_windows.py:962
 msgid "Checking Addons Failed"
 msgstr "בדיקת תוספים כשלה"
 
-#: PluginManager/PluginManager.py:614
+#: PluginManager/PluginManager.py:614 ../gramps/gui/plug/_windows.py:964
 msgid "The addon repository appears to be unavailable. Please try again later."
 msgstr "נראה כי מאגר התוסף אינו זמין. נא לנסות שוב מאוחר יותר."
 
-#: PluginManager/PluginManager.py:628
-msgid ""
-"3rd party addons are not shown until the addons update list is downloaded.  "
-"Would you like to check for updated addons now?"
-msgstr ""
-"תוספים צד שלישי אינם מוצגים עד להורדת רשימת העדכוני התוספים. האם לבדוק "
-"זמינות מעודכני תוספים כעת?"
-
-#: PluginManager/PluginManager.py:631
-msgid "Yes"
-msgstr "כן"
-
-#: PluginManager/PluginManager.py:631
-msgid "No"
-msgstr "לא"
-
-#: PluginManager/PluginManager.py:674
+#: PluginManager/PluginManager.py:674 PluginManager/PluginManager.py:721
 msgid "*Available"
 msgstr "*זמין"
 
-#: PluginManager/PluginManager.py:690
+#: PluginManager/PluginManager.py:690 PluginManager/PluginManager.py:737
 msgid "Built-in"
 msgstr "מובנה"
 
-#: PluginManager/PluginManager.py:695
+#: PluginManager/PluginManager.py:695 PluginManager/PluginManager.py:742
 msgid "*Installed"
 msgstr "*מותקן"
 
-#: PluginManager/PluginManager.py:704
+#: PluginManager/PluginManager.py:704 PluginManager/PluginManager.py:751
 msgid "Update Available"
 msgstr "עדכון זמין"
 
-#: PluginManager/PluginManager.py:733
-#, python-format
-msgid "%(str1)s: %(str2)s"
-msgstr "%(str1)s: %(str2)s"
-
-#: PluginManager/PluginManager.py:733
+#: PluginManager/PluginManager.py:733 ../gramps/gui/plug/_windows.py:1648
 msgid "Detailed Info"
 msgstr "מידע מפורט"
-
-#: PluginManager/PluginManager.py:832
-msgid "Updated"
-msgstr "עדכן"
-
-#: PluginManager/PluginManager.py:843
-msgid "updates|New"
-msgstr "עדכונים|חדש"

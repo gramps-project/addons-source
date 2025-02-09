@@ -1,14 +1,16 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
+# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
+# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-14 10:44-0500\n"
-"PO-Revision-Date: 2024-10-11 08:24+0200\n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
 "Language: da_DK\n"
@@ -19,10 +21,12 @@ msgstr ""
 "X-Generator: Poedit 3.0.1\n"
 
 #: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.gpr.py:3
+#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.gpr.py:4
 msgid "Number of ancestors"
 msgstr "Antal aner"
 
 #: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.gpr.py:4
+#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.gpr.py:5
 msgid "Shows the number of ancestors of the current person"
 msgstr "Vis antal aner for fokuspersonen"
 
@@ -54,5 +58,5 @@ msgid ""
 "collapse were ignored."
 msgstr ""
 "Der blev {} af {} aner ({}) fundet.\n"
-"Kun enkelt aner blev talt. Der blev bortset fra dublikerede "
-"forårsaget af anesammenfald."
+"Kun enkelt aner blev talt. Der blev bortset fra dublikerede forårsaget af "
+"anesammenfald."

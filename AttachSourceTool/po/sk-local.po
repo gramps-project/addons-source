@@ -1,52 +1,54 @@
-# Slovak translations for PACKAGE package.
-# Copyright (C) 2009 THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# GRAMPS SLOVAK language version
+# Lubo Vasko, 2005, 2006, 2007, 2008, 2009, 2010, 2011.
+# Dominik Sivak <bubakovsky@gmail.com>, 2019.
+# MILAN KUROVSKY, 2023.
+# Lubo Vasko <pgval at inmail dot sk>, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
+# Ondrej Krč-Jediný <hou at centrum dot sk>, 2014, 2015.
+# Jozef Riha, 2017.
+#
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-11-23 19:26+0100\n"
-"PO-Revision-Date: 2009-11-25 17:27+0100\n"
-"Last-Translator: \n"
-"Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
+"POT-Creation-Date: 2010-03-08 16:37+0100\n"
+"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
+"addons/sk/>\n"
+"Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"X-Generator: Weblate 5.10-dev\n"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:75
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:83
+#: AttachSourceTool/AttachSourceTool.py:70
+msgid "Select filter to restrict people"
+msgstr "Zvoliť filter pre zúženie výberu osôb"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:229
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:237
+#: AttachSourceTool/AttachSourceTool.py:158
+msgid "Processing...\n"
+msgstr "Spracovávanie...\n"
 
 #: AttachSourceTool/AttachSourceTool.gpr.py:25
 #: AttachSourceTool/AttachSourceTool.py:137
 #: AttachSourceTool/AttachSourceTool.py:191
 #: AttachSourceTool/AttachSourceTool.py:215
+#: AttachSourceTool/AttachSourceTool.gpr.py:26
+#: AttachSourceTool/AttachSourceTool.py:155
 msgid "Attach Source"
 msgstr ""
 
 #: AttachSourceTool/AttachSourceTool.gpr.py:26
 #: AttachSourceTool/AttachSourceTool.py:219
+#: AttachSourceTool/AttachSourceTool.gpr.py:27
 msgid "Attaches a shared source to multiple objects."
 msgstr ""
-
-#: AttachSourceTool/AttachSourceTool.py:67
-#: AttachSourceTool/AttachSourceTool.py:140
-msgid "Options"
-msgstr "Nastavenia"
-
-#: AttachSourceTool/AttachSourceTool.py:69
-msgid "Person Filter"
-msgstr "Filtre osoby"
-
-#: AttachSourceTool/AttachSourceTool.py:70
-msgid "Select filter to restrict people"
-msgstr "Zvoliť filter pre zúženie výberu osôb"
-
-#: AttachSourceTool/AttachSourceTool.py:74
-msgid "Filter Person"
-msgstr "Použiť filter osoby"
-
-#: AttachSourceTool/AttachSourceTool.py:75
-msgid "The center person for the filter"
-msgstr "Ústredná osoba pre filter"
 
 #: AttachSourceTool/AttachSourceTool.py:81
 msgid "Source type"
@@ -80,27 +82,21 @@ msgstr ""
 msgid "ID of source to attach"
 msgstr ""
 
-#: AttachSourceTool/AttachSourceTool.py:157
-msgid "Results"
-msgstr "Výsledky"
-
-#: AttachSourceTool/AttachSourceTool.py:158
-msgid "Processing...\n"
-msgstr "Pripravuje sa...\n"
-
 #: AttachSourceTool/AttachSourceTool.py:173
+#: AttachSourceTool/AttachSourceTool.py:174
 msgid "Attaching sources...\n"
 msgstr ""
 
 #: AttachSourceTool/AttachSourceTool.py:174
+#: AttachSourceTool/AttachSourceTool.py:175
 msgid "Attaching sources..."
 msgstr ""
 
 #: AttachSourceTool/AttachSourceTool.py:194
+#: AttachSourceTool/AttachSourceTool.py:197
 msgid "Done!\n"
 msgstr "Ukončené!\n"
 
-#: AttachSourceTool/AttachSourceTool.py:216
+#: AttachSourceTool/AttachSourceTool.py:216 ../gramps/gen/plug/_pluginreg.py:71
 msgid "Beta"
 msgstr "Beta"
-

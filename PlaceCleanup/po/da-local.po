@@ -1,14 +1,16 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
+# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
+# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-19 02:12-0500\n"
-"PO-Revision-Date: 2024-10-12 11:23+0200\n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
 "Language: da_DK\n"
@@ -19,10 +21,11 @@ msgstr ""
 "X-Generator: Poedit 3.0.1\n"
 
 #: PlaceCleanup/placecleanup.gpr.py:28 PlaceCleanup/placecleanup.gpr.py:44
+#: PlaceCleanup/placecleanup.gpr.py:46
 msgid "Place Cleanup"
 msgstr "Stedrensning"
 
-#: PlaceCleanup/placecleanup.gpr.py:29
+#: PlaceCleanup/placecleanup.gpr.py:29 PlaceCleanup/placecleanup.gpr.py:30
 msgid ""
 "Place Cleanup Gramplet assists in merging places, as well as completing "
 "places from the GeoNames web database"
@@ -63,10 +66,6 @@ msgstr "GeoNames ID skal angives"
 msgid "Use the Help button for more information"
 msgstr "Benyt hjælp knappen for mere information"
 
-#: PlaceCleanup/placecleanup.py:336
-msgid "No matches were found"
-msgstr "Ingen passer"
-
 #: PlaceCleanup/placecleanup.py:337
 msgid ""
 "Try changing the Title, or use the \"Edit\" button to finish this level of "
@@ -101,11 +100,6 @@ msgstr ""
 "For at se yderligere resultater, tryk på søg knappen igen.\n"
 "Eller prøv at ændre titlen med flere detaljer, som f.eks. land."
 
-#: PlaceCleanup/placecleanup.py:399 PlaceCleanup/placecleanup.py:401
-#: PlaceCleanup/placecleanup.py:797
-msgid ", "
-msgstr ", "
-
 #: PlaceCleanup/placecleanup.py:421 PlaceCleanup/placecleanup.py:426
 msgid "Problem getting data from web"
 msgstr "Problem med at hente data fra nettet"
@@ -118,10 +112,6 @@ msgstr "Web forespørgsel tidsudløb, du kan prøve igen..."
 msgid "Problem getting data from GeoNames"
 msgstr "Problem med at hente data fra GeoNames"
 
-#: PlaceCleanup/placecleanup.py:480 PlaceCleanup/placecleanup.py:758
-msgid "Place cycle detected"
-msgstr "Løkke i steder opdaget"
-
 #: PlaceCleanup/placecleanup.py:481
 msgid ""
 "One of the places you are merging encloses the other!\n"
@@ -130,11 +120,6 @@ msgstr ""
 "En af de steder du sammenfletter omslutter den anden!\n"
 "Vælg venligst et andet sted."
 
-#: PlaceCleanup/placecleanup.py:750
-#, python-format
-msgid "Add Place (%s)"
-msgstr "Tilføj sted (%s)"
-
 #: PlaceCleanup/placecleanup.py:759
 msgid ""
 "The place you chose is enclosed in the place you are workin on!\n"
@@ -142,16 +127,6 @@ msgid ""
 msgstr ""
 "Stedet du valgte er omsluttet af stedet du arbejder med!\n"
 "Afbryd venligst og vælg et andet sted."
-
-#: PlaceCleanup/placecleanup.py:782
-#, python-format
-msgid "Add Citation (%s)"
-msgstr "Tilføj Kildehenvisning (%s)"
-
-#: PlaceCleanup/placecleanup.py:787
-#, python-format
-msgid "Edit Place (%s)"
-msgstr "Redigér sted (%s)"
 
 #: PlaceCleanup/placecleanup.py:945
 msgid "GeoNames web site"
@@ -201,14 +176,6 @@ msgstr "By, Amt, Stat, Land"
 msgid "Primary Name"
 msgstr "Primære navn"
 
-#: PlaceCleanup/placecleanup.glade:65
-msgid "Postal Code"
-msgstr "Postnummer"
-
-#: PlaceCleanup/placecleanup.glade:78 PlaceCleanup/placecleanup.glade:1055
-msgid "Type"
-msgstr "Type"
-
 #: PlaceCleanup/placecleanup.glade:89
 msgid "The current Primary name."
 msgstr "Det aktuelle primære navn."
@@ -237,14 +204,6 @@ msgstr ""
 msgid "Orig"
 msgstr "Orig"
 
-#: PlaceCleanup/placecleanup.glade:244
-msgid "Longitude"
-msgstr "Længdegrad"
-
-#: PlaceCleanup/placecleanup.glade:268
-msgid "Latitude"
-msgstr "Breddegrad"
-
 #: PlaceCleanup/placecleanup.glade:280
 msgid "Check this box if you want to keep the original Latitude and Longitude."
 msgstr ""
@@ -254,10 +213,6 @@ msgstr ""
 #: PlaceCleanup/placecleanup.glade:295
 msgid "The Gramps ID.."
 msgstr "Gramps ID.."
-
-#: PlaceCleanup/placecleanup.glade:310
-msgid "ID"
-msgstr "ID"
 
 #: PlaceCleanup/placecleanup.glade:322
 msgid "Check this box if you want to keep the original Gramps ID."
@@ -279,21 +234,9 @@ msgstr ""
 msgid "Inc"
 msgstr "Inkl"
 
-#: PlaceCleanup/placecleanup.glade:426
-msgid "Name"
-msgstr "Navn"
-
 #: PlaceCleanup/placecleanup.glade:446
 msgid "Lang"
 msgstr "Sprog"
-
-#: PlaceCleanup/placecleanup.glade:465
-msgid "Date"
-msgstr "Dato"
-
-#: PlaceCleanup/placecleanup.glade:516
-msgid "Keep"
-msgstr "Behold"
 
 #: PlaceCleanup/placecleanup.glade:520
 msgid ""
@@ -301,10 +244,6 @@ msgid ""
 msgstr ""
 "Vælg en eller flere rækker og benyt denne knap for at beholde alternative "
 "navne."
-
-#: PlaceCleanup/placecleanup.glade:532
-msgid "Primary"
-msgstr "Primær"
 
 #: PlaceCleanup/placecleanup.glade:536
 msgid "Select one row and use this button to make the row the primary name."
@@ -321,25 +260,13 @@ msgstr ""
 "Vælg en eller flere rækker og benyt denne knap til at kassere alternative "
 "navne."
 
-#: PlaceCleanup/placecleanup.glade:576
-msgid "Cancel"
-msgstr "Afbryd"
-
 #: PlaceCleanup/placecleanup.glade:580
 msgid "Cancel the operation, no changes are made to your Place."
 msgstr "Afbryd handlingen, der ændres intet i dit sted."
 
-#: PlaceCleanup/placecleanup.glade:591 PlaceCleanup/placecleanup.glade:640
-msgid "Ok"
-msgstr "Ok"
-
 #: PlaceCleanup/placecleanup.glade:595
 msgid "Store the values in your Place."
 msgstr "Gem værdierne i dit sted."
-
-#: PlaceCleanup/placecleanup.glade:654 PlaceCleanup/placecleanup.glade:867
-msgid "Help"
-msgstr "Hjælp"
 
 #: PlaceCleanup/placecleanup.glade:677
 msgid "Keep Web Links"
@@ -414,10 +341,6 @@ msgstr "Behold nuværende omslutning"
 msgid "Replace with GeoNames Enclosure"
 msgstr "Udskift med GeoNames omslutning"
 
-#: PlaceCleanup/placecleanup.glade:840
-msgid "Title"
-msgstr "Titel"
-
 #: PlaceCleanup/placecleanup.glade:851
 msgid ""
 "Current Place title.\n"
@@ -432,20 +355,12 @@ msgstr ""
 msgid "Search your local places and GeoNames for a match."
 msgstr "Søger dine lokale steder og GeoNames for et match."
 
-#: PlaceCleanup/placecleanup.glade:911
-msgid "Select"
-msgstr "Vælg"
-
 #: PlaceCleanup/placecleanup.glade:915
 msgid ""
 "Continue to merge (for local places), or to complete a place (for GeoNames)."
 msgstr ""
 "Fortsæt at sammenflette (for lokale steder), eller for at komplettere et "
 "sted (for GeoNames)."
-
-#: PlaceCleanup/placecleanup.glade:928
-msgid "Edit"
-msgstr "Redigér"
 
 #: PlaceCleanup/placecleanup.glade:932
 msgid ""

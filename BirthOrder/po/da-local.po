@@ -1,27 +1,31 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
+# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
+# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2024-09-23 14:22+0200\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"PO-Revision-Date: 2024-10-10 10:45+0200\n"
+"Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
-"Language: da\n"
+"Language: da_DK\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
 
 #: BirthOrder/birthorder.gpr.py:9 BirthOrder/birthorder.py:62
+#: BirthOrder/birthorder.gpr.py:10
 msgid "Sort Children in Birth order"
 msgstr "Sorter børn i fødselorden"
 
-#: BirthOrder/birthorder.gpr.py:10
+#: BirthOrder/birthorder.gpr.py:10 BirthOrder/birthorder.gpr.py:12
 msgid ""
 "Looks through families, looking for children that are not in birth order.  "
 "User can accept individual suggestions to correct, edit the birth order "
@@ -40,14 +44,6 @@ msgstr "Ingen familier har brug for sortering"
 msgid "No children were out of birth order."
 msgstr "Alle børn var i fødselsorden."
 
-#: BirthOrder/birthorder.py:186
-msgid "Edit Family"
-msgstr "Ret Familie"
-
-#: BirthOrder/birthorder.py:203
-msgid "Processing..."
-msgstr "Arbejder....."
-
 #: BirthOrder/birthorder.py:204
 msgid "Edit Families"
 msgstr "Ret Familier"
@@ -56,29 +52,9 @@ msgstr "Ret Familier"
 msgid "Looking for children birth order"
 msgstr "Søger efter børn i fødselsorden"
 
-#: BirthOrder/birthorder.py:279
-msgid "Pass 1: Building preliminary lists"
-msgstr "Pass 1: Danner foreløbige  lister"
-
 #: BirthOrder/birthorder.glade:56
 msgid "Select the family you wish to examine."
 msgstr "Vælg familien som du vil undersøge."
-
-#: BirthOrder/birthorder.glade:78
-msgid "Family ID"
-msgstr "Familie ID"
-
-#: BirthOrder/birthorder.glade:93
-msgid "Father"
-msgstr "Far"
-
-#: BirthOrder/birthorder.glade:108
-msgid "Mother"
-msgstr "Mor"
-
-#: BirthOrder/birthorder.glade:141
-msgid "Help"
-msgstr "Hjælp"
 
 #: BirthOrder/birthorder.glade:155
 msgid "Accept All"

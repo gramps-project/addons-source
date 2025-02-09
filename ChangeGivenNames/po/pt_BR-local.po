@@ -1,78 +1,64 @@
-# Brazilian Portuguese translations for addons-gramps package.
-# Copyright (C) 2012 THE addons-gramps'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the addons-gramps package.
-# André Marcelo Alvarenga <andrealvarenga@gmx.net>, 2012.
+# Brazilian-Portuguese translation for Gramps.
+# Tradução português-brasileiro para o Gramps.
+# Copyright (C) 2002 Free Software Foundation, Inc.
 #
+#
+# Marcos Bedinelli <bedinelli@sourceforge.net>, 2002, 2003, 2004, 2005, 2006.
+# Luiz Gonzaga dos Santos Filho <lfilho@gmail.com>, 2007.
+# lcc <lcc@6zap.com>, 2009.
+# André Marcelo Alvarenga <andrealvarenga@gmx.net>, 2011, 2012, 2013, 2014.
+# Paulo Henrique Paiva de Moraes <paulohpmoraes@gmail.com>, 2016, 2017, 2018.
+# Paulo Terezani de Paiva <terezani_ppaiva@yahoo.com.br>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-19 23:24-0300\n"
-"PO-Revision-Date: 2012-08-19 23:24-0300\n"
+"POT-Creation-Date: 2012-08-26 19:54-0300\n"
+"PO-Revision-Date: 2012-08-26 20:57-0300\n"
 "Last-Translator: André Marcelo Alvarenga <andrealvarenga@gmx.net>\n"
-"Language-Team: Brazilian Portuguese\n"
-"Language: pt_BR\n"
+"Language-Team: Brazilian Portuguese>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.0\n"
 
 #: ChangeGivenNames/ChangeGivenNames.gpr.py:36
+#: ChangeGivenNames/ChangeGivenNames.gpr.py:37
 msgid "Fix Capitalization of Given Names"
 msgstr "Corrigir maiúsculas/minúsculas de nomes próprios"
 
 #: ChangeGivenNames/ChangeGivenNames.gpr.py:37
+#: ChangeGivenNames/ChangeGivenNames.gpr.py:39
 msgid ""
 "Searches the entire database and attempts to fix capitalization of the given "
 "names."
-msgstr "Pesquisa em todo o banco de dados e tenta corrigir as maiúsculas/minúsculas dos nomes próprios"
+msgstr ""
+"Pesquisa em todo o banco de dados e tenta corrigir as maiúsculas/minúsculas "
+"dos nomes próprios"
 
 #: ChangeGivenNames/ChangeGivenNames.py:61
+#: ChangeGivenNames/ChangeGivenNames.py:66
 msgid "manual|Fix_Capitalization_of_Given_Names..."
 msgstr "Corrigir_maiúsculas/minúsculas_de_nomes_próprios..."
 
-#: ChangeGivenNames/ChangeGivenNames.py:85
-#: ChangeGivenNames/ChangeGivenNames.py:212
-msgid "Capitalization changes"
-msgstr "Alterações de maiúsculas/minúsculas"
-
 #: ChangeGivenNames/ChangeGivenNames.py:99
+#: ChangeGivenNames/ChangeGivenNames.py:105
 msgid "Checking Given Names"
 msgstr "Verificando os nomes próprios"
 
 #: ChangeGivenNames/ChangeGivenNames.py:100
+#: ChangeGivenNames/ChangeGivenNames.py:107
 msgid "Searching given names"
 msgstr "Pesquisando nomes próprios"
 
-#: ChangeGivenNames/ChangeGivenNames.py:116
-msgid "No modifications made"
-msgstr "Nenhuma modificação feita"
-
-#: ChangeGivenNames/ChangeGivenNames.py:117
-msgid "No capitalization changes were detected."
-msgstr "Nenhuma alteração de maiúsculas/minúsculas foi detectada."
-
-#: ChangeGivenNames/ChangeGivenNames.py:154
-msgid "Select"
-msgstr "Selecionar"
-
-#: ChangeGivenNames/ChangeGivenNames.py:157
-msgid "Original Name"
-msgstr "Nome original"
-
-#: ChangeGivenNames/ChangeGivenNames.py:161
-msgid "Capitalization Change"
-msgstr "Alteração de maiúsculas/minúsculas"
-
 #: ChangeGivenNames/ChangeGivenNames.py:165
+#: ChangeGivenNames/ChangeGivenNames.py:204
 msgid "Affected Names"
 msgstr "Nomes afetados"
 
-#: ChangeGivenNames/ChangeGivenNames.py:172
-msgid "Building display"
-msgstr "Construindo a tela"
-
-#: ChangeGivenNames/changenames.glade.h:1
+#: ChangeGivenNames/changenames.glade.h:1 ChangeGivenNames/changenames.glade:32
 msgid ""
 "Below is a list of the given names that \n"
 "Gramps can convert to correct capitalization. \n"
@@ -83,9 +69,6 @@ msgstr ""
 "Selecione os nomes que gostaria de converter com o Gramps. "
 
 #: ChangeGivenNames/changenames.glade.h:4
+#: ChangeGivenNames/changenames.glade:107
 msgid "Edit selection"
 msgstr "Editar seleção"
-
-#: ChangeGivenNames/changenames.glade.h:5
-msgid "_Accept changes and close"
-msgstr "_Aceitar as alterações e fechar"

@@ -1,14 +1,24 @@
-# Russian translation for BirthOrder
+# Russian translation for MediaMerge
 # This file is distributed under the same license as the Gramps package.
 #
-# Ivan Komaritsyn <vantu5z@mail.ru>, 2018-2019.
+# Ivan Komaritsyn <vantu5z@mail.ru>, 2015, 2016, 2017, 2018, 2019, 2020, 2021.
+# Alexander Bogdashevsky <sanderb@kezomba.com>, 2004.
+# Alex Roitman <shura@gramps-project.org>, 2002, 2003, 2004, 2005, 2006, 2007.
+# Konstantin Dorichev <kdorichev@gmail.com>, 2008.
+# Yevgeny Zegzda <ezegjda@ya.ru>, 2009, 2010.
+# vantu5z <vantu5z@mail.ru>, 2020.
+# Komaritsyn Ivan <vantu5z@mail.ru>, 2018.
+# Andrey Baznikin (http://d.scn.ru/), 2009, 2010, 2011.
+# Vassilii Khachaturov <vassilii@tarunz.org>, 2011, 2012, 2013, 2014.
+# Egor Reentov <egor.gramps@gmail.com>, 2011, 2012, 2013.
+# Artem Glebov <artem.glebov@gmail.com>, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-09 13:42+0300\n"
-"PO-Revision-Date: 2019-01-09 13:44+0300\n"
+"POT-Creation-Date: 2018-12-04 16:31+0300\n"
+"PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
@@ -18,14 +28,15 @@ msgstr ""
 "X-Generator: Gtranslator 2.91.7\n"
 "X-Poedit-Language: Russian\n"
 "X-Poedit-Country: RUSSIAN FEDERATION\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
 #: BirthOrder/birthorder.gpr.py:9 BirthOrder/birthorder.py:62
+#: BirthOrder/birthorder.gpr.py:10
 msgid "Sort Children in Birth order"
 msgstr "Сортировка детей в порядке рождения"
 
-#: BirthOrder/birthorder.gpr.py:10
+#: BirthOrder/birthorder.gpr.py:10 BirthOrder/birthorder.gpr.py:12
 msgid ""
 "Looks through families, looking for children that are not in birth order.  "
 "User can accept individual suggestions to correct, edit the birth order "
@@ -44,14 +55,6 @@ msgstr "Сортировка не требуется"
 msgid "No children were out of birth order."
 msgstr "Дети в несоответствующем порядке рождения отсутствуют."
 
-#: BirthOrder/birthorder.py:186
-msgid "Edit Family"
-msgstr "Редактировать семью"
-
-#: BirthOrder/birthorder.py:203
-msgid "Processing..."
-msgstr "Обработка..."
-
 #: BirthOrder/birthorder.py:204
 msgid "Edit Families"
 msgstr "Редактировать семьи"
@@ -60,43 +63,23 @@ msgstr "Редактировать семьи"
 msgid "Looking for children birth order"
 msgstr "Просмотр порядка рождения детей"
 
-#: BirthOrder/birthorder.py:279
-msgid "Pass 1: Building preliminary lists"
-msgstr "Проход 1: Построение предварительных списков"
-
-#: BirthOrder/birthorder.glade.h:1
+#: BirthOrder/birthorder.glade.h:1 BirthOrder/birthorder.glade:56
 msgid "Select the family you wish to examine."
 msgstr "Выберите семью, которую хотите проверить."
 
-#: BirthOrder/birthorder.glade.h:2
-msgid "Family ID"
-msgstr "ID семьи"
-
-#: BirthOrder/birthorder.glade.h:3
-msgid "Father"
-msgstr "Отец"
-
-#: BirthOrder/birthorder.glade.h:4
-msgid "Mother"
-msgstr "Мать"
-
-#: BirthOrder/birthorder.glade.h:5
-msgid "Help"
-msgstr "Справка"
-
-#: BirthOrder/birthorder.glade.h:6
+#: BirthOrder/birthorder.glade.h:6 BirthOrder/birthorder.glade:155
 msgid "Accept All"
 msgstr "Принять всё"
 
-#: BirthOrder/birthorder.glade.h:7
+#: BirthOrder/birthorder.glade.h:7 BirthOrder/birthorder.glade:159
 msgid "This button will sort all of the families listed."
 msgstr "Будет произведена сортировка по всем семьям в списке."
 
-#: BirthOrder/birthorder.glade.h:8
+#: BirthOrder/birthorder.glade.h:8 BirthOrder/birthorder.glade:170
 msgid "Accept All *"
 msgstr "Принять всё *"
 
-#: BirthOrder/birthorder.glade.h:9
+#: BirthOrder/birthorder.glade.h:9 BirthOrder/birthorder.glade:174
 msgid ""
 "This button will sort all the families with '*'.  In these families, all the "
 "children have valid dates, so the sort is unambiguous."
@@ -104,11 +87,11 @@ msgstr ""
 "Произвести сортировку в семьях помеченных '*'. В этих семьях, все дети имеют "
 "полные даты, поэтому сортировка будет однозначной."
 
-#: BirthOrder/birthorder.glade.h:10
+#: BirthOrder/birthorder.glade.h:10 BirthOrder/birthorder.glade:185
 msgid "Accept"
 msgstr "Принять"
 
-#: BirthOrder/birthorder.glade.h:11
+#: BirthOrder/birthorder.glade.h:11 BirthOrder/birthorder.glade:189
 msgid ""
 "This button will accept only the family selected and save it as shown in "
 "lower right pane."
@@ -116,23 +99,23 @@ msgstr ""
 "Принять изменения только для выбранной семьи и сохранить как показано на "
 "нижней панели справа."
 
-#: BirthOrder/birthorder.glade.h:12
+#: BirthOrder/birthorder.glade.h:12 BirthOrder/birthorder.glade:232
 msgid "Done"
 msgstr "Завершить"
 
-#: BirthOrder/birthorder.glade.h:13
+#: BirthOrder/birthorder.glade.h:13 BirthOrder/birthorder.glade:236
 msgid "This button will exit, with remaining families unchanged."
 msgstr "Выход без внесения изменений в семьи."
 
-#: BirthOrder/birthorder.glade.h:14
+#: BirthOrder/birthorder.glade.h:14 BirthOrder/birthorder.glade:256
 msgid "Current sort"
 msgstr "Текущий порядок"
 
-#: BirthOrder/birthorder.glade.h:15
+#: BirthOrder/birthorder.glade.h:15 BirthOrder/birthorder.glade:267
 msgid "Proposed sort"
 msgstr "Предлагаемый порядок"
 
-#: BirthOrder/birthorder.glade.h:16
+#: BirthOrder/birthorder.glade.h:16 BirthOrder/birthorder.glade:333
 msgid ""
 "When satisfied with the sort, use 'Accept' button below to accept the "
 "changes.  If you wish to adjust the order, select the child you wish to "

@@ -1,14 +1,16 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Ukrainian translation for MediaMerge
+# This file is distributed under the same license as the Gramps package.
+#
+# Illia Maier <illia@maier.page>, 2024.
+# Fedir Zinchuk <fedikw@gmail.com>, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
+# Oleh Petriv, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-03 07:36+0100\n"
-"PO-Revision-Date: 2024-12-11 22:30+0200\n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"PO-Revision-Date: 2024-10-10 22:54+0300\n"
 "Last-Translator: Illia Maier <illia@maier.page>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
 "gramps/uk/>\n"
@@ -16,85 +18,72 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0.1\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: HistContext.gpr.py:4 HistContext.gpr.py:14
+#: HistContext.gpr.py:4 HistContext.gpr.py:14 HistContext/HistContext.gpr.py:4
+#: HistContext/HistContext.gpr.py:14
 msgid "Historical Context"
 msgstr "Історичний контекст"
 
-#: HistContext.gpr.py:5
+#: HistContext.gpr.py:5 HistContext/HistContext.gpr.py:5
 msgid "Lists relevant historical events during the lifetime of a Person"
 msgstr "Перелік відповідних історичних подій протягом життя особи"
 
-#: HistContext.py:123
+#: HistContext.py:123 HistContext/HistContext.py:123
 msgid "Rows starting with this in the text column will be hidden "
 msgstr "Рядки, що починаються з цього в текстовому стовпці, будуть приховані"
 
-#: HistContext.py:126
+#: HistContext.py:126 HistContext/HistContext.py:126
 msgid "Use filter "
 msgstr "Використовувати фільтр"
 
-#: HistContext.py:129
+#: HistContext.py:129 HistContext/HistContext.py:129
 msgid "Show outside life span "
 msgstr "Показати поза межами тривалості життя"
 
-#: HistContext.py:132
+#: HistContext.py:132 HistContext/HistContext.py:132
 msgid "Use full dates"
 msgstr "Використовувати повні дати"
 
-#: HistContext.py:135
+#: HistContext.py:135 HistContext/HistContext.py:135
 msgid "Foreground color items in lifespan"
 msgstr "Колір елементів на передньому плані в межах тривалості життя"
 
-#: HistContext.py:138
+#: HistContext.py:138 HistContext/HistContext.py:138
 msgid "Background color items in lifespan"
 msgstr "Колір фону елементів в межах тривалості життя"
 
-#: HistContext.py:141
+#: HistContext.py:141 HistContext/HistContext.py:141
 msgid "Foreground color items outside lifespan"
 msgstr "Колір елементів на передньому плані поза межами тривалості життя"
 
-#: HistContext.py:144
+#: HistContext.py:144 HistContext/HistContext.py:144
 msgid "Background color items outside lifespan"
 msgstr "Колір фону елементів поза межами тривалості життя"
 
-#: HistContext.py:149
+#: HistContext.py:149 HistContext/HistContext.py:149
 msgid "Select from files"
 msgstr "Вибрати з файлів"
 
-#: HistContext.py:287
+#: HistContext.py:287 HistContext/HistContext.py:287
 msgid "Invalid date "
 msgstr "Невірна дата"
 
-#: HistContext.py:288
+#: HistContext.py:288 HistContext/HistContext.py:288
 msgid " in line: "
 msgstr " у рядку: "
 
 #: HistContext.py:289 HistContext.py:333 HistContext.py:420
+#: HistContext/HistContext.py:289 HistContext/HistContext.py:333
+#: HistContext/HistContext.py:420
 msgid "Error:"
 msgstr "Помилка:"
 
-#: HistContext.py:327
-msgid ": not four semicolons in : \""
-msgstr ": немає чотирьох крапок з комою в : \""
-
-#: HistContext.py:419
+#: HistContext.py:419 HistContext/HistContext.py:419
 msgid "Cannot open URL: "
 msgstr "Не вдається відкрити URL: "
 
-#: HistContext.py:427
+#: HistContext.py:427 HistContext/HistContext.py:427
 msgid "Double click row to follow link"
 msgstr "Двічі клацніть на рядок, щоб перейти за посиланням"
-
-#: HistContext.py:438
-msgid "From"
-msgstr "З"
-
-#: HistContext.py:449
-msgid "To"
-msgstr "До"
-
-#: HistContext.py:458
-msgid "Text"
-msgstr "Текст"

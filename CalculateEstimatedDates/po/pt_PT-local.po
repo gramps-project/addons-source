@@ -1,55 +1,37 @@
-# Addon Calculate Estimated Dates for Gramps.
+# Addon MediaMerge for Gramps.
 # Copyright (C) 2020 Gramps
-# This file is distributed under the same license as the Gramps package.
-# Pedro Albuquerque <pmra@protonmail.com>, 2020.
+# This file is distributed under the same license as the gramps package.
+# Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2020-03-29 11:29Hora de Verão de GMT\n"
+"PO-Revision-Date: 2025-02-09 06:44+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
-"Language-Team: Pedro Albuquerque\n"
-"Language: pt\n"
+"Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
+"gramps-project/addons/pt_PT/>\n"
+"Language: pt_PT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Geany / PoHelper 1.36\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10-dev\n"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:9
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:190
+#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
 msgid "Calculate Estimated Dates"
 msgstr "Calcular datas estimadas"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
+#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:11
 msgid "Calculates estimated dates for birth and death."
 msgstr "Calcula datas estimadas de nascimento e óbito."
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:80
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:193
-msgid "Options"
-msgstr "Opções"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:82
-msgid "Filter"
-msgstr "Filtro"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:83
 msgid "Select filter to restrict people"
 msgstr "Seleccione um filtro para limitar os indivíduos"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:87
-msgid "Filter Person"
-msgstr "Indivíduo filtro"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:88
-msgid "The center person for the filter"
-msgstr "O indivíduo central para o filtro"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:94
-msgid "Source text"
-msgstr "Texto fonte"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:95
 msgid "Calculated Date Estimates"
@@ -69,10 +51,6 @@ msgid ""
 msgstr ""
 "Remover eventos, notas e fonte calculadas; ocorre imediatamente ao executar"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:103
-msgid "Birth"
-msgstr "Nascimento"
-
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:104
 msgid "Do not add birth events"
 msgstr "Não adicionar nascimentos"
@@ -88,10 +66,6 @@ msgstr "Adicionar nascimentos com datas"
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:107
 msgid "Add a birth events with or without estimated dates"
 msgstr "Adicionar nascimentos com ou sem datas estimadas"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:110
-msgid "Death"
-msgstr "Óbito"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:111
 msgid "Do not add death events"
@@ -117,17 +91,9 @@ msgstr "Idade máxima"
 msgid "Maximum age that one can live to"
 msgstr "Idade máxima até que se pode viver"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:124
-msgid "Maximum sibling age difference"
-msgstr "Diferença de idade máxima entre irmãos"
-
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:127
 msgid "Maximum age difference between siblings"
 msgstr "Diferença de idade máxima entre irmãos"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:130
-msgid "Average years between generations"
-msgstr "Média de anos entre gerações"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:133
 msgid "Average years between two generations"
@@ -148,11 +114,6 @@ msgstr "Extremas (antes e depois)"
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:139
 msgid "Dates on events are either about or after/before"
 msgstr "Datas em eventos que são cerca de ou antes/depois de"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:170
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:187
-msgid "Help"
-msgstr "Ajuda"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:172
 msgid ""
@@ -235,32 +196,6 @@ msgstr "Tem a certeza de que quer seleccionar dados de novo?"
 msgid "Run Select Again"
 msgstr "Seleccionar dados de novo"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:225
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:234
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:401
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:415
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:420
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:425
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:436
-msgid "Select"
-msgstr "Seleccionar"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:234
-msgid "Person"
-msgstr "Indivíduo"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:234
-msgid "Action"
-msgstr "Acção"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:235
-msgid "Birth Date"
-msgstr "Data de nascimento"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:235
-msgid "Death Date"
-msgstr "Data de óbito"
-
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:236
 msgid "Evidence"
 msgstr "Evidência"
@@ -293,10 +228,6 @@ msgid ""
 msgstr ""
 "A seleccionar... \n"
 "\n"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:324
-msgid "Selecting..."
-msgstr "A seleccionar..."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:359
 msgid "Add birth and death events"

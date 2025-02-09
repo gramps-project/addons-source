@@ -1,117 +1,62 @@
-# SDutch translation of addon LastChange.
+# Dutch translation of addon MediaMerge.
 # Copyright (C) 2020 Gramps project
-# This file is distributed under the same license as the LastChange package.
+# This file is distributed under the same license as the MediaMerge package.
+# Jan Sparreboom <jan@sparreboom.net>, 2020, 2021, 2023.
 # Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
 # Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
-# Erik De Richter <frederik.de.richter@gmail.com>, 2006, 2007, 2008, 2009, 2010 , 2011, 2012, 2013.
-# Harmen Huizinga <harmenhuizinga@sigmo.nl>, 2013
-# Jan Sparreboom <jan@sparreboom.net>, 2020.
+# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
+# Erik De Richter <frederik.de.richter@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
+# Harmen Huizinga <harmenhuizinga@sigmo.nl>, 2013.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: LastChange 5.x\n"
+"Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
-"POT-Creation-Date: 2020-04-22 11:04-0500\n"
-"PO-Revision-Date: 2020-07-28 16:58+0200\n"
-"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
-"Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
+"POT-Creation-Date: 2019-01-04 18:55-0600\n"
+"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
+"addons/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10-dev\n"
 
-#: LastChange/LastChange.gpr.py:24
-msgid "Last Change"
-msgstr "Laatste wijziging"
+#: AncestorFill/AncestorFill.py:360 AncestorFill/AncestorFill.py:361
+#: LastChange/LastChangeReport.py:378
+msgid "The style used for the title of the page."
+msgstr "De stijl die wordt gebruikt voor de titel van de pagina."
 
-#: LastChange/LastChange.gpr.py:25
+#: LastChange/LastChange.gpr.py:25 LastChange/LastChange.gpr.py:26
 msgid "List the last ten person records that have been changed"
 msgstr "Maak een lijst van de laatste tien persoonsgegevens die gewijzigd zijn"
 
-#: LastChange/LastChange.gpr.py:34
+#: LastChange/LastChange.gpr.py:34 LastChange/LastChange.gpr.py:35
 msgid "Latest Changes"
 msgstr "Laatste wijzigingen"
 
 #: LastChange/LastChange.gpr.py:40 LastChange/LastChangeReport.py:74
-#: LastChange/LastChangeReport.py:113
+#: LastChange/LastChangeReport.py:113 LastChange/LastChange.gpr.py:42
 msgid "Last Change Report"
 msgstr "Laatste wijzigingsverslag"
 
-#: LastChange/LastChange.gpr.py:41
+#: LastChange/LastChange.gpr.py:41 LastChange/LastChange.gpr.py:43
 msgid "Report of the last records that have been changed"
 msgstr "Verslag van de laatste gegevens die gewijzigd zijn"
-
-#: LastChange/LastChangeGramplet.py:55
-msgid "Double-click name for details"
-msgstr "Dubbelklik op de naam voor details"
-
-#: LastChange/LastChangeGramplet.py:56
-msgid "No Family Tree loaded."
-msgstr "Geen stamboom geladen."
-
-#: LastChange/LastChangeGramplet.py:60
-msgid "Processing..."
-msgstr "Verwerken..."
 
 #: LastChange/LastChangeGramplet.py:82
 msgid "changed on"
 msgstr "gewijzigd op"
 
-#: LastChange/LastChangeReport.py:53
-msgid "<Unknown>"
-msgstr "<Onbekend>"
-
 #: LastChange/LastChangeReport.py:75
 msgid "You must select at least one type of record."
 msgstr "U moet ten minste één gegevenstype selecteren."
 
-#: LastChange/LastChangeReport.py:116 LastChange/LastChangeReport.py:345
-msgid "People"
-msgstr "Personen"
-
-#: LastChange/LastChangeReport.py:118 LastChange/LastChangeReport.py:346
-msgid "Families"
-msgstr "Gezinnen"
-
-#: LastChange/LastChangeReport.py:120 LastChange/LastChangeReport.py:348
-msgid "Events"
-msgstr "Gebeurtenissen"
-
-#: LastChange/LastChangeReport.py:122 LastChange/LastChangeReport.py:347
-msgid "Places"
-msgstr "Locaties"
-
-#: LastChange/LastChangeReport.py:124 LastChange/LastChangeReport.py:349
-msgid "Media"
-msgstr "Media"
-
-#: LastChange/LastChangeReport.py:126 LastChange/LastChangeReport.py:350
-msgid "Sources"
-msgstr "Bronnen"
-
-#: LastChange/LastChangeReport.py:128 LastChange/LastChangeReport.py:351
-msgid "Notes"
-msgstr "Notities"
-
-#: LastChange/LastChangeReport.py:130 LastChange/LastChangeReport.py:352
-msgid "Citations"
-msgstr "Citaten"
-
 #: LastChange/LastChangeReport.py:180
 msgid "People Changed"
 msgstr "Gewijzigde personen"
-
-#: LastChange/LastChangeReport.py:181 LastChange/LastChangeReport.py:198
-#: LastChange/LastChangeReport.py:229 LastChange/LastChangeReport.py:252
-#: LastChange/LastChangeReport.py:270 LastChange/LastChangeReport.py:288
-#: LastChange/LastChangeReport.py:305 LastChange/LastChangeReport.py:322
-msgid "ID"
-msgstr "ID"
-
-#: LastChange/LastChangeReport.py:181
-msgid "Person"
-msgstr "Persoon"
 
 #: LastChange/LastChangeReport.py:181 LastChange/LastChangeReport.py:198
 #: LastChange/LastChangeReport.py:229 LastChange/LastChangeReport.py:252
@@ -137,34 +82,17 @@ msgstr "%s en %s"
 msgid "Events Changed"
 msgstr "Gewijzigde gebeurtenissen"
 
-#: LastChange/LastChangeReport.py:229
-msgid "Event"
-msgstr "Gebeurtenis"
-
 #: LastChange/LastChangeReport.py:251
 msgid "Places Changed"
 msgstr "Gewijzigde locaties"
-
-#: LastChange/LastChangeReport.py:252
-msgid "Place"
-msgstr "Locatie"
 
 #: LastChange/LastChangeReport.py:269
 msgid "Media Changed"
 msgstr "Gewijzigde media"
 
-#: LastChange/LastChangeReport.py:270
-msgid "Path"
-msgstr "Pad"
-
 #: LastChange/LastChangeReport.py:287
 msgid "Sources Changed"
 msgstr "Gewijzigde bronnen"
-
-#: LastChange/LastChangeReport.py:288 LastChange/LastChangeReport.py:305
-#: LastChange/LastChangeReport.py:322
-msgid "Title"
-msgstr "Titel"
 
 #: LastChange/LastChangeReport.py:304
 msgid "Notes Changed"
@@ -174,26 +102,10 @@ msgstr "Gewijzigde notities"
 msgid "Citations Changed"
 msgstr "Gewijzigde citaten"
 
-#: LastChange/LastChangeReport.py:343
-msgid "Report Options"
-msgstr "Verslagopties"
-
 #: LastChange/LastChangeReport.py:344
 msgid "Select From"
 msgstr "Selecteer uit"
 
-#: LastChange/LastChangeReport.py:378
-msgid "The style used for the title of the page."
-msgstr "De stijl die wordt gebruikt voor de titel van de pagina."
-
-#: LastChange/LastChangeReport.py:393
-msgid "The style used for the section headers."
-msgstr "De stijl die wordt gebruikt voor de sectiekoppen."
-
 #: LastChange/LastChangeReport.py:403
 msgid "The style used for normal text"
 msgstr "De stijl die wordt gebruikt voor normale tekst"
-
-#: LastChange/LastChangeReport.py:415
-msgid "The basic style used for table headings."
-msgstr "De basisstijl die wordt gebruikt voor tabelkoppen."

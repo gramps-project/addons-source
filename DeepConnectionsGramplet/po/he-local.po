@@ -1,71 +1,52 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Igal Shapira <igal.shapira@gmail.com>, 2009, 2010, 2011.
+# Avi Markovitz <avi.markovitz@gmail.com>, 2019.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Gramps v5.2.1\n"
+"Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-08 10:42-0500\n"
-"PO-Revision-Date: 2024-04-05 15:37+0300\n"
-"Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
-"Language-Team: https://www.gramps-project.org/bugs\\n\"\n"
+"POT-Creation-Date: 2023-09-10 07:59+0300\n"
+"PO-Revision-Date: 2023-09-10 08:07+0300\n"
+"Last-Translator: \n"
+"Language-Team: Avi Markovitz\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.4.2\n"
-"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==2 ? 1 : n>10 && n%10==0 ? "
+"2 : 3);\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:3
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:4
 msgid "Deep Connections Gramplet"
 msgstr "גרמפלט קשרי משפחה עמוקים"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:4
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:6
 msgid "Gramplet showing a deep relationship between active and home people"
 msgstr "גרמפלט שמציג קשרי משפחה עמוקים בין אדם הבית לאדם הפעיל"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:10
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:13
 msgid "Deep Connections"
 msgstr "קשרי משפחה עמוקים"
-
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:59
-msgid "Double-click name for details"
-msgstr "הקשת עכבר כפולה על שם כדי להציג פרטים"
-
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:60
-msgid "No Family Tree loaded."
-msgstr "לא נטען אילן־יוחסין"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:65
 msgid "Pause"
 msgstr "השהיה"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:67
-msgid "Continue"
-msgstr "המשך"
-
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:69
+#: EditExifMetadata/editexifmetadata.py:215
 msgid "Copy"
 msgstr "העתקה"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:107
 msgid "mentioned in note"
 msgstr "אזכור בהערה"
-
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:126
-msgid "child"
-msgstr "צאצא"
-
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:130
-msgid "husband"
-msgstr "בעל"
-
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:132
-msgid "wife"
-msgstr "רעיה"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:133
 msgid "Note on Family"
@@ -74,14 +55,6 @@ msgstr "הערת"
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:143
 msgid "sibling"
 msgstr "אחאי"
-
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:147
-msgid "father"
-msgstr "אב"
-
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:150
-msgid "mother"
-msgstr "אם"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:151
 msgid "Note on Parent Family"
@@ -105,17 +78,9 @@ msgstr ""
 "\n"
 "   %s של"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:206
-msgid "No Home Person set."
-msgstr "לא הוגדר 'אדם בית'."
-
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:209
 msgid "No Active Person set."
 msgstr "לא הוגדר 'אדם פעיל'"
-
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:213
-msgid "self"
-msgstr "אני"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:217
 msgid "Looking for relationship between\n"

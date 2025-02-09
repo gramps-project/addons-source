@@ -2,49 +2,48 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Pär Ekholm <pehlm@pekholm.org>, 2021.
+# Bo Rosén <bo.rosen@home.se>, 2001.
+# Jens Arvidsson <jya@sverige.nu>, 2002, 2003, 2004, 2005.
+# Stefan Björk <betula@users.sourceforge.net>, 2005, 2006.
+# Peter Landgren <peter.talken@telia.com>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017.
+# Pär Ekholm <par.ekholm50@gmail.com>, 2016, 2018.
+# Pär Ekholm <par.ekholm@pekholm.se>, 2018, 2019.
+# Peter Landgren <peter@test>, 2010.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-02 14:37-0600\n"
-"PO-Revision-Date: 2021-05-21 19:21+0200\n"
-"Language-Team: \n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
+"Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/sv/>\n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3\n"
-"Last-Translator: Pär Ekholm <pehlm@pekholm.se>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: sv_SE\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10-dev\n"
+
+#: EventDescriptionEditor/EventDescriptionEditor.py:142
+#: DescendantsLines/DescendantsLines.py:1688
+msgid "Replace"
+msgstr "Ersätt"
 
 #: DescendantsLines/DescendantsLines.gpr.py:26
+#: DescendantsLines/DescendantsLines.gpr.py:27
 msgid "Descendants Lines"
 msgstr "Ättlingslinjer"
 
 #: DescendantsLines/DescendantsLines.gpr.py:27
+#: DescendantsLines/DescendantsLines.gpr.py:28
 msgid "Produces descendants lines of a person"
 msgstr "Producerar ättlingslinjer för en person"
 
 #: DescendantsLines/DescendantsLines.py:463
 msgid "Using SVG type for supplemental document is not supported!"
 msgstr "Användning av SVG-typ för kompletterande dokument stöds inte!"
-
-#: DescendantsLines/DescendantsLines.py:1329
-msgid "Unknown"
-msgstr "Okänd"
-
-#: DescendantsLines/DescendantsLines.py:1525
-msgid "Report Options"
-msgstr "Rapportalternativ"
-
-#: DescendantsLines/DescendantsLines.py:1527
-msgid "Center Person"
-msgstr "Huvudperson"
-
-#: DescendantsLines/DescendantsLines.py:1528
-msgid "The center person for the report"
-msgstr "Huvudpersonen för rapporten"
 
 #: DescendantsLines/DescendantsLines.py:1531
 msgid "Output format"
@@ -70,17 +69,9 @@ msgstr "PS-format"
 msgid "The output format to be used"
 msgstr "Format för utdata att använda"
 
-#: DescendantsLines/DescendantsLines.py:1540
-msgid "Destination"
-msgstr "Mål"
-
 #: DescendantsLines/DescendantsLines.py:1541
 msgid "The destination file for the content."
 msgstr "Målfilen för innehållet."
-
-#: DescendantsLines/DescendantsLines.py:1544
-msgid "Generations"
-msgstr "Generationer"
 
 #: DescendantsLines/DescendantsLines.py:1545
 msgid "The number of generations to include in the chart. (0 for unlimited)"
@@ -133,10 +124,6 @@ msgstr "Vänster om texten"
 #: DescendantsLines/DescendantsLines.py:1573
 msgid "Position of image relative to text"
 msgstr "Bildens position relativt till texten"
-
-#: DescendantsLines/DescendantsLines.py:1577
-msgid "Report Options (2)"
-msgstr "Rapportalternativ (2)"
 
 #: DescendantsLines/DescendantsLines.py:1579
 msgid "Colour Name by Gender"
@@ -199,10 +186,6 @@ msgid ""
 msgstr ""
 "Maximal längd av en händelses notisfält i ett textblock, '$e(n)'\n"
 "0=ingen gräns "
-
-#: DescendantsLines/DescendantsLines.py:1610
-msgid "Display"
-msgstr "Visa"
 
 #: DescendantsLines/DescendantsLines.py:1612
 msgid "Box around Person's block"
@@ -282,14 +265,6 @@ msgstr ""
 "c=vanligaste använda förnamn, t=titel, s=ändelse, g=familjesmeknamn\n"
 "Se Wikimanualen > Rapporter > part 2"
 
-#: DescendantsLines/DescendantsLines.py:1656
-msgid ""
-"Descendant\n"
-"Display Format"
-msgstr ""
-"Ättling\n"
-"Visningsformat"
-
 #: DescendantsLines/DescendantsLines.py:1662
 #: DescendantsLines/DescendantsLines.py:1681
 msgid ""
@@ -301,26 +276,6 @@ msgstr ""
 "Se Wikimanualen > Rapporter > part 2\n"
 "formatering: datum=d(ymdMo) platser=D(elcuspnoitxy) notiser=n "
 "abbreviated_type=t"
-
-#: DescendantsLines/DescendantsLines.py:1675
-msgid ""
-"Spousal\n"
-"Display Format"
-msgstr ""
-"Makar\n"
-"Visningsformat"
-
-#: DescendantsLines/DescendantsLines.py:1688
-msgid "Replace"
-msgstr "Ersätt"
-
-#: DescendantsLines/DescendantsLines.py:1691
-msgid ""
-"Replace Display Format:\n"
-"'Replace this'/' with this'"
-msgstr ""
-"Ersätt visningsformat:\n"
-"'Byt detta'/'mot detta'"
 
 #: DescendantsLines/DescendantsLines.py:1693
 msgid ""
@@ -395,10 +350,6 @@ msgstr ""
 "Om det här värdet är 0, är barn-fältet centrerat under maken. Ju större "
 "värde, flyttas mitten mer till vänster mot ättlingen."
 
-#: DescendantsLines/DescendantsLines.py:1733
-msgid "Children"
-msgstr "Barn"
-
 #: DescendantsLines/DescendantsLines.py:1735
 msgid "OL_PAD"
 msgstr "OL_PAD"
@@ -459,17 +410,9 @@ msgstr "Utrymme att lägga till mellan en rad och nästa i en persons textblock.
 msgid "Header and Footer"
 msgstr "Huvud och Sidfot"
 
-#: DescendantsLines/DescendantsLines.py:1775
-msgid "Title text"
-msgstr "Titeltext"
-
 #: DescendantsLines/DescendantsLines.py:1776
 msgid "The text that will be written in the header of the document"
 msgstr "Texten som kommer att skrivas i dokumentets huvud"
-
-#: DescendantsLines/DescendantsLines.py:1780
-msgid "Footer text"
-msgstr "Sidfotstext"
 
 #: DescendantsLines/DescendantsLines.py:1781
 msgid "The text that will be written in the footer of the document"
@@ -485,10 +428,6 @@ msgid ""
 "footer"
 msgstr ""
 "Ett tal som multiplicerar basstorleken på texten i titeln och i sidfoten"
-
-#: DescendantsLines/DescendantsLines.py:1791
-msgid "Privacy"
-msgstr "Skyddade data"
 
 #: DescendantsLines/DescendantsLines.py:1793
 msgid "Protect People, Images or Events that are marked Private"

@@ -1,14 +1,16 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
+# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
+# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-06 16:42-0500\n"
-"PO-Revision-Date: 2024-10-10 11:13+0200\n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
 "Language: da_DK\n"
@@ -18,18 +20,19 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
 
-#: MediaReport/media_report.gpr.py:23
-msgid "Media Report"
-msgstr "Medierapport"
-
-#: MediaReport/media_report.gpr.py:24
-msgid "Generates report including images, image data and notes."
-msgstr "Danner en rapport som medtager billeder, billeddata og noter."
-
+#: EventDescriptionEditor/EventDescriptionEditor.py:105
 #: MediaReport/media_report.py:106 MediaReport/media_report.py:112
 #: MediaReport/media_report.py:119 MediaReport/media_report.py:125
 msgid "INFO"
 msgstr "INFO"
+
+#: MediaReport/media_report.gpr.py:23 MediaReport/media_report.gpr.py:24
+msgid "Media Report"
+msgstr "Medierapport"
+
+#: MediaReport/media_report.gpr.py:24 MediaReport/media_report.gpr.py:25
+msgid "Generates report including images, image data and notes."
+msgstr "Danner en rapport som medtager billeder, billeddata og noter."
 
 #: MediaReport/media_report.py:106 MediaReport/media_report.py:119
 msgid "You have to select an image to generate this report."
@@ -51,41 +54,13 @@ msgstr "Denne rapport understøtter kun PDF som format for uddata."
 msgid "General:"
 msgstr "Generelt:"
 
-#: MediaReport/media_report.py:235
-msgid "Description:"
-msgstr "Beskrivelse:"
-
 #: MediaReport/media_report.py:250
 msgid "Image type:"
 msgstr "Billedtype:"
 
-#: MediaReport/media_report.py:342
-msgid "File does not exist"
-msgstr "Filen findes ikke"
-
-#: MediaReport/media_report.py:343
-msgid "Could not add photo to page"
-msgstr "Kunne ikke føje foto til siden"
-
-#: MediaReport/media_report.py:344
-#, python-format
-msgid "%(str1)s: %(str2)s"
-msgstr "%(str1)s: %(str2)s"
-
 #: MediaReport/media_report.py:426
 msgid "Heading"
 msgstr "Overskrift"
-
-#: MediaReport/media_report.py:427 MediaReport/media_report.py:431
-#: MediaReport/media_report.py:435 MediaReport/media_report.py:439
-#: MediaReport/media_report.py:444 MediaReport/media_report.py:448
-#: MediaReport/media_report.py:453 MediaReport/media_report.py:458
-msgid "Report Options"
-msgstr "Rapport tilvalg"
-
-#: MediaReport/media_report.py:429
-msgid "Media"
-msgstr "Medier"
 
 #: MediaReport/media_report.py:430
 msgid "Select a media file for this report"

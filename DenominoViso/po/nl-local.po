@@ -1,37 +1,48 @@
-# Dutch translation of Gramps addon DenominoViso
-# Copyright (C) 2020 Gramps Project
-# This file is distributed under the same license as the DenominoViso package.
-#
+# Dutch translation of addon MediaMerge.
+# Copyright (C) 2020 Gramps project
+# This file is distributed under the same license as the MediaMerge package.
+# Jan Sparreboom <jan@sparreboom.net>, 2020, 2021, 2023.
 # Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
 # Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
-# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010.
+# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
+# Erik De Richter <frederik.de.richter@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
+# Harmen Huizinga <harmenhuizinga@sigmo.nl>, 2013.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Gramps 5.1.x\n"
+"Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
-"POT-Creation-Date: 2020-04-06 09:28-0500\n"
-"PO-Revision-Date: 2020-05-10 16:08+0200\n"
-"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
-"Language-Team: Dutch <gramps-users@lists.sourceforge.net\n"
+"POT-Creation-Date: 2019-01-04 18:55-0600\n"
+"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
+"addons/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.6\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10-dev\n"
 
-#: DenominoViso/DenominoViso.gpr.py:8
+#: DataEntryGramplet/DataEntryGramplet.py:167
+#: DataEntryGramplet/DataEntryGramplet.py:178
+#: DataEntryGramplet/DataEntryGramplet.py:315 DenominoViso/DenominoViso.py:2001
+msgid "in"
+msgstr "in"
+
+#: DenominoViso/DenominoViso.gpr.py:8 DenominoViso/DenominoViso.gpr.py:9
 msgid "DenominoViso"
 msgstr "DenominoViso"
 
-#: DenominoViso/DenominoViso.gpr.py:17
+#: DenominoViso/DenominoViso.gpr.py:17 DenominoViso/DenominoViso.gpr.py:19
 msgid ""
 "Generates a web (HTML) page with a graphical representation of ancestors/"
 "descendants (SVG) where details about individuals become visible upon mouse-"
 "events."
 msgstr ""
-"Genereert een web (HTML) pagina met een grafische weergave van afstammelingen/"
-"voorouders (SVG) waar details over individuen zichtbaar worden door muisacties."
+"Genereert een web (HTML) pagina met een grafische weergave van "
+"afstammelingen/voorouders (SVG) waar details over individuen zichtbaar "
+"worden door muisacties."
 
 #: DenominoViso/DenominoViso.py:179
 msgid "No Source"
@@ -52,10 +63,6 @@ msgstr "Voorouder"
 #: DenominoViso/DenominoViso.py:209
 msgid "Descendant"
 msgstr "Afstammeling"
-
-#: DenominoViso/DenominoViso.py:213
-msgid "Regular"
-msgstr "Standaard"
 
 #: DenominoViso/DenominoViso.py:214
 msgid "Fan"
@@ -89,28 +96,11 @@ msgstr "van boven naar beneden"
 msgid "bottom to top"
 msgstr "van beneden naar boven"
 
-#: DenominoViso/DenominoViso.py:305 DenominoViso/DenominoViso.py:975
-#: DenominoViso/DenominoViso.py:1259 DenominoViso/DenominoViso.py:2751
-msgid "type"
-msgstr "type"
-
 #: DenominoViso/DenominoViso.py:306 DenominoViso/DenominoViso.py:974
 #: DenominoViso/DenominoViso.py:1034 DenominoViso/DenominoViso.py:1259
 #: DenominoViso/DenominoViso.py:2750
 msgid "role"
 msgstr "rol"
-
-#: DenominoViso/DenominoViso.py:307 DenominoViso/DenominoViso.py:974
-#: DenominoViso/DenominoViso.py:1039 DenominoViso/DenominoViso.py:1259
-#: DenominoViso/DenominoViso.py:2749
-msgid "date"
-msgstr "datum"
-
-#: DenominoViso/DenominoViso.py:308 DenominoViso/DenominoViso.py:974
-#: DenominoViso/DenominoViso.py:1045 DenominoViso/DenominoViso.py:1260
-#: DenominoViso/DenominoViso.py:2753
-msgid "place"
-msgstr "locatie"
 
 #: DenominoViso/DenominoViso.py:309 DenominoViso/DenominoViso.py:975
 #: DenominoViso/DenominoViso.py:1056 DenominoViso/DenominoViso.py:1260
@@ -122,13 +112,6 @@ msgstr "beschrijving"
 #: DenominoViso/DenominoViso.py:1063 DenominoViso/DenominoViso.py:1261
 msgid "witnesses"
 msgstr "getuigen"
-
-#: DenominoViso/DenominoViso.py:311 DenominoViso/DenominoViso.py:328
-#: DenominoViso/DenominoViso.py:332 DenominoViso/DenominoViso.py:976
-#: DenominoViso/DenominoViso.py:1068 DenominoViso/DenominoViso.py:1261
-#: DenominoViso/DenominoViso.py:1357 DenominoViso/DenominoViso.py:1430
-msgid "source"
-msgstr "bron"
 
 #: DenominoViso/DenominoViso.py:394 DenominoViso/DenominoViso.py:411
 #: DenominoViso/DenominoViso.py:2503
@@ -144,26 +127,6 @@ msgstr "Geen hoofdpersoon geselecteerd"
 msgid "Unknown time direction"
 msgstr "Onbekende tijdsrichting"
 
-#: DenominoViso/DenominoViso.py:1145
-msgid "and"
-msgstr "en"
-
-#: DenominoViso/DenominoViso.py:1281
-msgid "Events"
-msgstr "Gebeurtenissen"
-
-#: DenominoViso/DenominoViso.py:1356
-msgid "Attributes"
-msgstr "Kenmerken"
-
-#: DenominoViso/DenominoViso.py:1429
-msgid "Addresses"
-msgstr "Adressen"
-
-#: DenominoViso/DenominoViso.py:1479
-msgid "Notes"
-msgstr "Opmerkingen"
-
 #: DenominoViso/DenominoViso.py:1508 DenominoViso/DenominoViso.py:1562
 msgid "author"
 msgstr "auteur"
@@ -175,14 +138,6 @@ msgstr "publicatie_info"
 #: DenominoViso/DenominoViso.py:1518 DenominoViso/DenominoViso.py:1564
 msgid "abbreviation"
 msgstr "afkorting"
-
-#: DenominoViso/DenominoViso.py:1561
-msgid "Sources"
-msgstr "Bronnen"
-
-#: DenominoViso/DenominoViso.py:1562 DenominoViso/DenominoViso.py:2757
-msgid "title"
-msgstr "titel"
 
 #: DenominoViso/DenominoViso.py:1562
 msgid "volume"
@@ -198,23 +153,11 @@ msgstr "het grafiektype loopt buiten de grenzen"
 
 #: DenominoViso/DenominoViso.py:2001
 msgid "Search"
-msgstr "Zoek"
-
-#: DenominoViso/DenominoViso.py:2001
-msgid "in"
-msgstr "in"
-
-#: DenominoViso/DenominoViso.py:2471
-msgid "Event"
-msgstr "Gebeurtenis"
+msgstr "Zoeken"
 
 #: DenominoViso/DenominoViso.py:2552
 msgid "DenominoViso Options"
 msgstr "DenominoViso opties"
-
-#: DenominoViso/DenominoViso.py:2555
-msgid "Destination"
-msgstr "Bestemming"
 
 #: DenominoViso/DenominoViso.py:2556
 msgid "The destination file for the html-content."
@@ -259,14 +202,6 @@ msgstr "Tijdsrichting"
 #: DenominoViso/DenominoViso.py:2583
 msgid "Direction in which time increases."
 msgstr "Richting waarin de tijd toeneemt."
-
-#: DenominoViso/DenominoViso.py:2588
-msgid "Generations"
-msgstr "Generaties"
-
-#: DenominoViso/DenominoViso.py:2589
-msgid "The number of generations to include in the tree"
-msgstr "Het aantal generaties dat in de stamboom moet worden opgenomen"
 
 #: DenominoViso/DenominoViso.py:2592
 msgid "Max chart width (%)"
@@ -330,7 +265,8 @@ msgid "Include death relatives"
 msgstr "Overleden familieleden toevoegen"
 
 #: DenominoViso/DenominoViso.py:2626
-msgid "Whether to include the death of relatives during the lifetime of person."
+msgid ""
+"Whether to include the death of relatives during the lifetime of person."
 msgstr ""
 "Of het overlijden van familieleden moet worden toegevoegd tijdens het leven "
 "van een persoon."
@@ -346,10 +282,6 @@ msgid ""
 msgstr ""
 "Of getuigenopmerkingen moeten worden opgenomen (als de gebeurtenisindeling "
 "<getuigen> bevat)"
-
-#: DenominoViso/DenominoViso.py:2634
-msgid "Include Attributes"
-msgstr "Kenmerken toevoegen"
 
 #: DenominoViso/DenominoViso.py:2635
 msgid "Whether to include a person's attributes"
@@ -484,8 +416,8 @@ msgid ""
 "The width of a person rectangle of the regular chart type expressed as "
 "fraction of the horizontal rectangle distance."
 msgstr ""
-"De breedte van een persoonsrechthoek van het standaard grafiektype, uitgedrukt "
-"als fractie van de horizontale rechthoekafstand."
+"De breedte van een persoonsrechthoek van het standaard grafiektype, "
+"uitgedrukt als fractie van de horizontale rechthoekafstand."
 
 #: DenominoViso/DenominoViso.py:2711
 msgid "Height of rectangle (hrd):"
@@ -496,8 +428,8 @@ msgid ""
 "The height of a person rectangle of the regular chart type expressed as "
 "fraction of the horizontal rectangle distance."
 msgstr ""
-"De hoogte van een persoonsrechthoek van het standaard grafiektype, uitgedrukt "
-"als fractie van de horizontale rechthoekafstand."
+"De hoogte van een persoonsrechthoek van het standaard grafiektype, "
+"uitgedrukt als fractie van de horizontale rechthoekafstand."
 
 #: DenominoViso/DenominoViso.py:2715
 msgid "Vertical distance of rectangles (hrd):"
@@ -505,11 +437,11 @@ msgstr "Verticale afstand tussen de rechthoeken (hrd):"
 
 #: DenominoViso/DenominoViso.py:2716
 msgid ""
-"The vertical distance of person rectangles of the regular chart type expressed "
-"as fraction of the horizontal rectangle distance."
+"The vertical distance of person rectangles of the regular chart type "
+"expressed as fraction of the horizontal rectangle distance."
 msgstr ""
-"De verticale afstand tussen persoonsrechthoeken van het standaard grafiektype, "
-"uitgedrukt als fractie van de horizontale rechthoekafstand."
+"De verticale afstand tussen persoonsrechthoeken van het standaard "
+"grafiektype, uitgedrukt als fractie van de horizontale rechthoekafstand."
 
 #: DenominoViso/DenominoViso.py:2719
 msgid "Extra style settings:"
@@ -518,10 +450,6 @@ msgstr "Extra stijlinstellingen:"
 #: DenominoViso/DenominoViso.py:2720
 msgid "Whatever css style settings are needed."
 msgstr "CSS-stijlinstellingen die extra nodig zijn."
-
-#: DenominoViso/DenominoViso.py:2723
-msgid "Advanced Options"
-msgstr "Geavanceerde mogelijkheden"
 
 #: DenominoViso/DenominoViso.py:2730
 msgid "Mouse event handler"
@@ -598,10 +526,6 @@ msgstr "naar map:"
 msgid "Save images in ..."
 msgstr "Afbeeldingen opslaan in ..."
 
-#: DenominoViso/DenominoViso.py:2907
-msgid "equal to"
-msgstr "gelijk aan"
-
 #: DenominoViso/DenominoViso.py:2911
 msgid "should be"
 msgstr "zou moeten zijn"
@@ -641,11 +565,3 @@ msgstr "Lengte streepjes"
 #: DenominoViso/DenominoViso.py:3128
 msgid "Inter-dash length"
 msgstr "Afstand tussen de streepjes"
-
-#: DenominoViso/DenominoViso.py:3179
-msgid "Confidence"
-msgstr "Vertrouwen"
-
-#: DenominoViso/DenominoViso.py:3181
-msgid "Color"
-msgstr "Kleur"

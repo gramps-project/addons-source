@@ -1,43 +1,46 @@
-# Slovak translations for PACKAGE package.
-# Copyright (C) 2009 THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# GRAMPS SLOVAK language version
+# Lubo Vasko, 2005, 2006, 2007, 2008, 2009, 2010, 2011.
+# Dominik Sivak <bubakovsky@gmail.com>, 2019.
+# MILAN KUROVSKY, 2023.
+# Lubo Vasko <pgval at inmail dot sk>, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
+# Ondrej Krč-Jediný <hou at centrum dot sk>, 2014, 2015.
+# Jozef Riha, 2017.
+#
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-11-23 19:26+0100\n"
-"PO-Revision-Date: 2009-11-25 17:27+0100\n"
-"Last-Translator: \n"
-"Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
+"POT-Creation-Date: 2010-03-08 16:37+0100\n"
+"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
+"addons/sk/>\n"
+"Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"X-Generator: Weblate 5.10-dev\n"
 
-#: AllNamesQuickview/AllNames.gpr.py:3
-#: AllNamesQuickview/AllNames.py:46
+#: AllNamesQuickview/AllNames.gpr.py:3 AllNamesQuickview/AllNames.py:46
+#: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
 msgstr ""
 
-#: AllNamesQuickview/AllNames.gpr.py:4
+#: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.gpr.py:5
 msgid "Display all names of all people"
 msgstr ""
 
-#: AllNamesQuickview/AllNames.py:49
-msgid "Name"
-msgstr "Meno"
-
-#: AllNamesQuickview/AllNames.py:49
+#: AllNamesQuickview/AllNames.py:49 PlaceCleanup/placecleanup.glade:52
 msgid "Primary Name"
 msgstr ""
 
-#: AllNamesQuickview/AllNames.py:49
+#: AllNamesQuickview/AllNames.py:49 AllNamesQuickview/AllNames.py:54
 msgid "Name Type"
 msgstr "Typ mena"
 
-#: AllNamesQuickview/AllNames.py:66
+#: AllNamesQuickview/AllNames.py:66 AllNamesQuickview/AllNames.py:71
 #, python-format
 msgid "Total names %d"
 msgstr ""
-

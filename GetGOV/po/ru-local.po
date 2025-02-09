@@ -1,14 +1,24 @@
-# Russian translation for GetGOV
+# Russian translation for MediaMerge
 # This file is distributed under the same license as the Gramps package.
 #
-# Ivan Komaritsyn <vantu5z@mail.ru>, 2018.
+# Ivan Komaritsyn <vantu5z@mail.ru>, 2015, 2016, 2017, 2018, 2019, 2020, 2021.
+# Alexander Bogdashevsky <sanderb@kezomba.com>, 2004.
+# Alex Roitman <shura@gramps-project.org>, 2002, 2003, 2004, 2005, 2006, 2007.
+# Konstantin Dorichev <kdorichev@gmail.com>, 2008.
+# Yevgeny Zegzda <ezegjda@ya.ru>, 2009, 2010.
+# vantu5z <vantu5z@mail.ru>, 2020.
+# Komaritsyn Ivan <vantu5z@mail.ru>, 2018.
+# Andrey Baznikin (http://d.scn.ru/), 2009, 2010, 2011.
+# Vassilii Khachaturov <vassilii@tarunz.org>, 2011, 2012, 2013, 2014.
+# Egor Reentov <egor.gramps@gmail.com>, 2011, 2012, 2013.
+# Artem Glebov <artem.glebov@gmail.com>, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-04 11:11+0300\n"
-"PO-Revision-Date: 2018-12-04 11:15+0300\n"
+"POT-Creation-Date: 2018-12-04 16:31+0300\n"
+"PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
@@ -18,10 +28,10 @@ msgstr ""
 "X-Generator: Gtranslator 2.91.7\n"
 "X-Poedit-Language: Russian\n"
 "X-Poedit-Country: RUSSIAN FEDERATION\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: GetGOV/getgov.gpr.py:30 GetGOV/getgov.gpr.py:41
+#: GetGOV/getgov.gpr.py:30 GetGOV/getgov.gpr.py:41 GetGOV/getgov.gpr.py:42
 msgid "GetGOV"
 msgstr "Места из GOV"
 
@@ -29,30 +39,30 @@ msgstr "Места из GOV"
 msgid "Gramplet to get places from the GOV database"
 msgstr "Грамлет для получения местоположений из базы данных GOV"
 
-#: GetGOV/getgov.py:301
+#: GetGOV/getgov.py:301 GetGOV/getgov.py:303
 msgid "Enter GOV-id:"
 msgstr "Введите GOV-id:"
 
-#: GetGOV/getgov.py:309
+#: GetGOV/getgov.py:309 GetGOV/getgov.py:311
 msgid "Get Place"
 msgstr "Получить место"
 
-#: GetGOV/getgov.py:353
+#: GetGOV/getgov.py:353 GetGOV/getgov.py:343
 #, python-format
 msgid "Add GOV-id place %s"
 msgstr "Добавить GOV-id место %s"
 
-#: GetGOV/getgov.py:502
+#: GetGOV/getgov.py:502 GetGOV/getgov.py:521
 #, python-format
 msgid "from %s to %s"
 msgstr "из %s в %s"
 
-#: GetGOV/getgov.py:504
+#: GetGOV/getgov.py:504 GetGOV/getgov.py:523
 #, python-format
 msgid "after %s"
 msgstr "после %s"
 
-#: GetGOV/getgov.py:506
+#: GetGOV/getgov.py:506 GetGOV/getgov.py:525
 #, python-format
 msgid "before %s"
 msgstr "до %s"

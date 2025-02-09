@@ -1,7 +1,8 @@
 # Croatian translation for Gramps
 # This file is distributed under the same license as the Gramps package.
 # Copyright (C) Gramps project
-# Milo Ivir <mail@milotype.de>, 2019.
+# Milo Ivir <mivir@milotype.de>, 2019, 2020.
+# Stephen Adams, Gramps Reddit, 2018.
 #
 msgid ""
 msgstr ""
@@ -15,11 +16,11 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 "X-Generator: Poedit 2.2.4\n"
 
-#: MediaMerge/mediamerge.gpr.py:32
+#: MediaMerge/mediamerge.gpr.py:32 MediaMerge/mediamerge.gpr.py:31
 msgid "Merge Media"
 msgstr "Sjedinjavanje medija"
 
@@ -30,11 +31,11 @@ msgid ""
 msgstr ""
 "Pretražuje cijelu bazu podataka i sjedinjuje medije koji imaju istu stazu."
 
-#: MediaMerge/mediamerge.py:95
+#: MediaMerge/mediamerge.py:95 MediaMerge/mediamerge.py:104
 msgid "Media Merge"
 msgstr "Sjedinjavanje medija"
 
-#: MediaMerge/mediamerge.py:140
+#: MediaMerge/mediamerge.py:140 MediaMerge/mediamerge.py:149
 #, python-brace-format
 msgid "{number_of} media merged"
 msgid_plural "{number_of} media merged"
@@ -42,14 +43,6 @@ msgstr[0] "{number_of} medij je sjedinjen"
 msgstr[1] "{number_of} medija su sjedinjena"
 msgstr[2] "{number_of} medija je sjedinjeno"
 
-#: MediaMerge/mediamerge.py:144
-msgid "Number of merges done"
-msgstr "Broj sjedinjenja"
-
-#: MediaMerge/mediamerge.py:147
-msgid "No modifications made"
-msgstr "Ništa nije promijenjeno"
-
-#: MediaMerge/mediamerge.py:148
+#: MediaMerge/mediamerge.py:148 MediaMerge/mediamerge.py:157
 msgid "No media items merged."
 msgstr "Niti jedan medij nije sjedinjen."

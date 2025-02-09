@@ -3,51 +3,59 @@
 # translation of de.po to Deutsch
 #
 #
-# Anton Huber <anton_huber@gmx.de>, 2005,2006.
+# Anton Huber <anton_huber@gmx.de>, 2005, 2006.
 # Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
 # Sebastian Vöcking <voeck@web.de>, 2005.
 # Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
 # Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 # Alois Pöttker <alois.poettker@gmx.de>, 2017.
+# Allan Nordhøy <epost@anotheragency.no>, 2021.
+# R. B. <weblate@macdefender.org>, 2021.
+# RiseT <tareiss1971@yahoo.de>, 2021.
+# David Straub <straub@protonmail.com>, 2021.
+# nautilusx <translate@disroot.org>, 2021.
+# Andreas Abraham <andreas.abraham@gmx.de>, 2021.
+# RiseT <twilite505-4bf24909@yahoo.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-04 18:55-0600\n"
-"PO-Revision-Date: 2020-07-23 20:24+0200\n"
+"POT-Creation-Date: 2020-08-02 22:39+0200\n"
+"PO-Revision-Date: 2025-02-09 06:44+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
-"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
+"addons/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 19.12.3\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10-dev\n"
 
-#: Query/Query.gpr.py:9
+#: PythonGramplet/PythonGramplet.py:55 Query/QueryGramplet.py:52
+msgid "Enter Python expressions"
+msgstr "Pythonausdruck eingeben"
+
+#: Query/Query.gpr.py:9 Query/Query.gpr.py:10
 msgid "Query Gramplet"
 msgstr "Abfrage Gramplet"
 
-#: Query/Query.gpr.py:10
+#: Query/Query.gpr.py:10 Query/Query.gpr.py:11
 msgid "Gramplet for running SQL-like queries"
 msgstr "Gramplet zum Ausführen SQL-ähnlicher Abfragen"
 
-#: Query/Query.gpr.py:18
+#: Query/Query.gpr.py:18 Query/Query.gpr.py:19
 msgid "Query"
 msgstr "Abfrage"
 
-#: Query/Query.gpr.py:31
+#: Query/Query.gpr.py:31 Query/Query.gpr.py:33
 msgid "Query Quickview"
 msgstr "Abfrage Schnellansicht"
 
-#: Query/Query.gpr.py:32
+#: Query/Query.gpr.py:32 Query/Query.gpr.py:34
 msgid "Quick view for SQL-like running queries"
 msgstr "Schnellansicht für SQL-ähnlich laufende Abfragen"
-
-#: Query/QueryGramplet.py:52
-msgid "Enter Python expressions"
-msgstr "Pythonausdruck eingeben"
 
 #: Query/QueryGramplet.py:176
 msgid "Enter SQL query"
@@ -58,13 +66,6 @@ msgstr "SQL Abfrage eingeben"
 msgid "%d rows processed in %s seconds.\n"
 msgstr "%d Zeilen in %s Sekunden verarbeitet.\n"
 
-#: Query/QueryQuickview.py:425
-msgid "Date"
-msgstr "Datum"
-
 #: Query/QueryQuickview.py:426
 msgid "Today"
 msgstr "Heute"
-
-#~ msgid "[%d rows processed]"
-#~ msgstr "[%d Zeilen verarbeitet]"

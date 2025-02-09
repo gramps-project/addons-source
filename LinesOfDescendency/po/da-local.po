@@ -1,14 +1,16 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
+# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
+# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-14 14:51+0200\n"
-"PO-Revision-Date: 2024-10-10 09:25+0200\n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
 "Language: da_DK\n"
@@ -18,25 +20,29 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
 
+#: AncestorFill/AncestorFill.py:361
+#: LinesOfDescendency/lines-of-descendency.py:72
+msgid "The style used for the title of the page."
+msgstr "Fontformat for sidens titel"
+
+#: DenominoViso/DenominoViso.py:208
+#: LinesOfDescendency/lines-of-descendency.py:55
+msgid "Ancestor"
+msgstr "Ane"
+
 #: LinesOfDescendency/lines-of-descendency.gpr.py:30
+#: LinesOfDescendency/lines-of-descendency.gpr.py:31
 msgid "Lines of Descendency Report"
 msgstr "Lines of Descendency Report"
 
 #: LinesOfDescendency/lines-of-descendency.gpr.py:31
+#: LinesOfDescendency/lines-of-descendency.gpr.py:33
 msgid ""
 "Prints out all descendency lines from a given ancestor to a given descendent "
 "in text."
 msgstr ""
 "Udskriver alle efterkommerlinjer fra en specifik ane til en specifik "
 "efterkommer i tekstform."
-
-#: LinesOfDescendency/lines-of-descendency.py:53
-msgid "People"
-msgstr "Personer"
-
-#: LinesOfDescendency/lines-of-descendency.py:55
-msgid "Ancestor"
-msgstr "Ane"
 
 #: LinesOfDescendency/lines-of-descendency.py:56
 msgid "The ancestor from which to start the line"
@@ -50,22 +56,9 @@ msgstr "Efterkommer"
 msgid "The descendent to which to build the line"
 msgstr "Efterkommer som linjen skal bygges til"
 
-#: LinesOfDescendency/lines-of-descendency.py:72
-msgid "The style used for the title of the page."
-msgstr "Stilen der benyttes til titlen på siden."
-
 #: LinesOfDescendency/lines-of-descendency.py:82
 msgid "The style used for the title of a line."
 msgstr "Stilen der benyttes til titlen på en linje."
-
-#: LinesOfDescendency/lines-of-descendency.py:89
-msgid "The basic style used for the text display."
-msgstr "Den grundlæggende stil brugt til tekstvisning."
-
-#: LinesOfDescendency/lines-of-descendency.py:103
-#, python-format
-msgid "Person %s is not in the Database"
-msgstr "Personen %s findes ikke i databasen"
 
 #: LinesOfDescendency/lines-of-descendency.py:111
 #, python-format

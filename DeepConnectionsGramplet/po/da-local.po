@@ -1,15 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
+# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
+# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-24 09:06+0200\n"
-"PO-Revision-Date: 2024-09-24 09:14+0200\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"PO-Revision-Date: 2024-10-10 10:45+0200\n"
+"Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
 "Language: da_DK\n"
 "MIME-Version: 1.0\n"
@@ -19,52 +21,32 @@ msgstr ""
 "X-Generator: Poedit 3.0.1\n"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:3
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:4
 msgid "Deep Connections Gramplet"
 msgstr "Dybe forbindelser Gramplet"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:4
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:6
 msgid "Gramplet showing a deep relationship between active and home people"
 msgstr "Gramplet der viser et dybt slægtskab mellem aktiv og hovedpersoner"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:10
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:13
 msgid "Deep Connections"
 msgstr "Dybe Slægtskaber"
-
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:59
-msgid "Double-click name for details"
-msgstr "Dobbeltklik navn for detaljer"
-
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:60
-msgid "No Family Tree loaded."
-msgstr "Ingen slægtsbog indlæst."
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:65
 msgid "Pause"
 msgstr "Pause"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:67
-msgid "Continue"
-msgstr "Fortsæt"
-
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:69
+#: EditExifMetadata/editexifmetadata.py:215
 msgid "Copy"
 msgstr "Kopier"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:107
 msgid "mentioned in note"
 msgstr "Nævnt i note"
-
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:126
-msgid "child"
-msgstr "barn"
-
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:130
-msgid "husband"
-msgstr "ægtemand"
-
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:132
-msgid "wife"
-msgstr "hustru"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:133
 msgid "Note on Family"
@@ -73,14 +55,6 @@ msgstr "Note om Familie"
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:143
 msgid "sibling"
 msgstr "søskende"
-
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:147
-msgid "father"
-msgstr "far"
-
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:150
-msgid "mother"
-msgstr "mor"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:151
 msgid "Note on Parent Family"
@@ -104,17 +78,9 @@ msgstr ""
 "\n"
 "  %s af "
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:206
-msgid "No Home Person set."
-msgstr "Ingen hovedperson valgt"
-
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:209
 msgid "No Active Person set."
 msgstr "Ingen aktive person valgt."
-
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:213
-msgid "self"
-msgstr "selv"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:217
 msgid "Looking for relationship between\n"

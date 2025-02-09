@@ -1,112 +1,94 @@
 # Vietnamese translation for Gramps
-# $Id$
 # This file is distributed under the same license as the Gramps package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# FIRST AUTHOR <trande@gmail.com>, 2012.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: GRAMPS VIETNAMESE 3.3.1-1 - V 1.0\n"
+"Project-Id-Version: GRAMPS VIETNAMESE 4.2.8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-12 14:42+0100\n"
-"PO-Revision-Date: 2012-02-29 23:03+0700\n"
-"Last-Translator: De Tran <trande@gmail.com>\n"
-"Language-Team: VIETNAMESE <quangde@sevuon.com>\n"
-"Language: \n"
+"POT-Creation-Date: 2019-03-05 14:02-0600\n"
+"PO-Revision-Date: 2018-07-13 14:34+0800\n"
+"Last-Translator: detran <trande@gmail.com>\n"
+"Language-Team: VIETNAMESE <trande@gmail.com>\n"
+"Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: VIETNAMESE\n"
-"X-Poedit-Country: VIETNAM\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Poedit-KeywordsList: Vietnamese Translation Feb 29, 2012. 14:02 VN time, "
-"VIETNAMESE TRANSLATION OF GRAMPS\n"
+"X-Poedit-KeywordsList: July 13, 2018: Gramps Version 4.2.8 based on "
+"Vietnamese Translation Feb 29, 2012. 14:02 VN time, VIETNAMESE TRANSLATION "
+"OF GRAMPS, V. 3\n"
+"X-Generator: Poedit 1.5.4\n"
 
 #: CheckPlaceTitles/checkplacetitles.gpr.py:28
+#: CheckPlaceTitles/checkplacetitles.gpr.py:29
 msgid "Check Place Titles"
 msgstr ""
 
 #: CheckPlaceTitles/checkplacetitles.gpr.py:29
+#: CheckPlaceTitles/checkplacetitles.gpr.py:30
 msgid "Check place titles"
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.py:56
-msgid "manual|Check_place_titles"
 msgstr ""
 
 #: CheckPlaceTitles/checkplacetitles.py:71
 msgid "Check Place title"
 msgstr ""
 
-#: CheckPlaceTitles/checkplacetitles.py:86
+#: CheckPlaceTitles/checkplacetitles.py:86 ExtractCity/extractcity.py:454
 msgid "Checking Place Titles"
 msgstr "Kiểm tra tiêu đề địa điểm "
 
-#: CheckPlaceTitles/checkplacetitles.py:87
+#: CheckPlaceTitles/checkplacetitles.py:87 ExtractCity/extractcity.py:456
 msgid "Looking for place fields"
 msgstr "Tìm kiếm trường địa điểm "
 
 #: CheckPlaceTitles/checkplacetitles.py:103
+#: CheckPlaceTitles/checkplacetitles.py:107
 msgid "Differences"
 msgstr ""
 
 #: CheckPlaceTitles/checkplacetitles.py:109
+#: CheckPlaceTitles/checkplacetitles.py:112
 msgid "No need modifications"
 msgstr ""
 
 #: CheckPlaceTitles/checkplacetitles.py:110
+#: CheckPlaceTitles/checkplacetitles.py:113
 msgid "No changes need."
 msgstr ""
 
-#: CheckPlaceTitles/checkplacetitles.py:139
-msgid "Select"
-msgstr "Chọn "
-
-#: CheckPlaceTitles/checkplacetitles.py:142
-#, fuzzy
-msgid "Database"
-msgstr "Toàn bộ CSDL "
-
-#: CheckPlaceTitles/checkplacetitles.py:146
-msgid "Display"
-msgstr "Hiển thị "
-
-#: CheckPlaceTitles/checkplacetitles.py:156
-msgid "Building display"
-msgstr "Tạo hiển thị "
-
 #: CheckPlaceTitles/checkplacetitles.py:185
+#: CheckPlaceTitles/checkplacetitles.py:187
 msgid "Legacy place"
 msgstr ""
 
 #: CheckPlaceTitles/checkplacetitles.py:199
+#: CheckPlaceTitles/checkplacetitles.py:201
 msgid "Modify Place titles"
 msgstr ""
 
 #: CheckPlaceTitles/checkplacetitles.py:222
+#: CheckPlaceTitles/checkplacetitles.py:224
 msgid "Place titles"
 msgstr ""
 
 #: CheckPlaceTitles/checkplacetitles.glade.h:1
+#: CheckPlaceTitles/checkplacetitles.glade:56
 msgid "Remove content of place title field if it does not match"
 msgstr ""
 
 #: CheckPlaceTitles/checkplacetitles.glade.h:2
+#: CheckPlaceTitles/checkplacetitles.glade:74
 msgid "Copy content of place title field to a new note."
 msgstr ""
 
-#: CheckPlaceTitles/checkplacetitles.glade.h:3
-msgid "Mark"
-msgstr "Đánh dấu "
-
 #: CheckPlaceTitles/checkplacetitles.glade.h:4
+#: CheckPlaceTitles/checkplacetitles.glade:91
 msgid "Attach a tag on selected places."
 msgstr ""
 
-#: CheckPlaceTitles/checkplacetitles.glade.h:5
-msgid "_Accept changes and close"
-msgstr "_Chấp nhận thay đổi và đóng "
-
 #: CheckPlaceTitles/checkplacetitles.glade.h:6
+#: CheckPlaceTitles/checkplacetitles.glade:177
 msgid "column"
 msgstr ""

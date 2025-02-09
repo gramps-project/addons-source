@@ -1,14 +1,24 @@
-# Russian translation for ListeEclair
+# Russian translation for MediaMerge
 # This file is distributed under the same license as the Gramps package.
 #
-# Ivan Komaritsyn <vantu5z@mail.ru>, 2018.
+# Ivan Komaritsyn <vantu5z@mail.ru>, 2015, 2016, 2017, 2018, 2019, 2020, 2021.
+# Alexander Bogdashevsky <sanderb@kezomba.com>, 2004.
+# Alex Roitman <shura@gramps-project.org>, 2002, 2003, 2004, 2005, 2006, 2007.
+# Konstantin Dorichev <kdorichev@gmail.com>, 2008.
+# Yevgeny Zegzda <ezegjda@ya.ru>, 2009, 2010.
+# vantu5z <vantu5z@mail.ru>, 2020.
+# Komaritsyn Ivan <vantu5z@mail.ru>, 2018.
+# Andrey Baznikin (http://d.scn.ru/), 2009, 2010, 2011.
+# Vassilii Khachaturov <vassilii@tarunz.org>, 2011, 2012, 2013, 2014.
+# Egor Reentov <egor.gramps@gmail.com>, 2011, 2012, 2013.
+# Artem Glebov <artem.glebov@gmail.com>, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-04 16:22+0300\n"
-"PO-Revision-Date: 2018-12-04 16:26+0300\n"
+"POT-Creation-Date: 2018-12-04 16:31+0300\n"
+"PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
@@ -18,45 +28,17 @@ msgstr ""
 "X-Generator: Gtranslator 2.91.7\n"
 "X-Poedit-Language: Russian\n"
 "X-Poedit-Country: RUSSIAN FEDERATION\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
 #: ListeEclair/ListeEclair.gpr.py:3 ListeEclair/ListeEclair.py:97
-#: ListeEclair/ListeEclair.py:104
+#: ListeEclair/ListeEclair.py:104 ListeEclair/ListeEclair.gpr.py:4
 msgid "Liste Eclair"
 msgstr ""
 
-#: ListeEclair/ListeEclair.gpr.py:4
+#: ListeEclair/ListeEclair.gpr.py:4 ListeEclair/ListeEclair.gpr.py:5
 msgid "Produit une liste eclair"
 msgstr ""
-
-#: ListeEclair/ListeEclair.py:97
-msgid "Generating report"
-msgstr "Создаётся отчёт"
-
-#: ListeEclair/ListeEclair.py:253
-msgid "Report Options"
-msgstr "Параметры отчёта"
-
-#: ListeEclair/ListeEclair.py:260
-msgid "Select using filter"
-msgstr "Выбрать используя фильтр"
-
-#: ListeEclair/ListeEclair.py:261
-msgid "Select places using a filter"
-msgstr "Выбрать места используя фильтр"
-
-#: ListeEclair/ListeEclair.py:266
-msgid "Entire Database"
-msgstr "Вся база данных"
-
-#: ListeEclair/ListeEclair.py:273
-msgid "Select places individually"
-msgstr "Выбрать отдельные места"
-
-#: ListeEclair/ListeEclair.py:274
-msgid "List of places to report on"
-msgstr "Список мест для отчёта"
 
 #: ListeEclair/ListeEclair.py:277
 msgid "Type de Liste"
@@ -77,10 +59,6 @@ msgstr ""
 #: ListeEclair/ListeEclair.py:284
 msgid "Include private data"
 msgstr "Включать конфиденциальные данные"
-
-#: ListeEclair/ListeEclair.py:285
-msgid "Whether to include private data"
-msgstr "Включать ли личные данные"
 
 #: ListeEclair/ListeEclair.py:301
 msgid "The style used for the liste eclair."

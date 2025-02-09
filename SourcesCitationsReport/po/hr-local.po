@@ -1,67 +1,78 @@
 # Croatian translation for Gramps
 # This file is distributed under the same license as the Gramps package.
 # Copyright (C) Gramps project
-# Milo Ivir <mail@milotype.de>, 2019.
+# Milo Ivir <mivir@milotype.de>, 2019, 2020.
+# Stephen Adams, Gramps Reddit, 2018.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-13 22:18+0200\n"
-"PO-Revision-Date: 2020-08-13 22:54+0200\n"
-"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2019-10-23 15:25+0200\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: \n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Generator: Poedit 2.2.4\n"
 
 #: SourcesCitationsReport//SourcesCitationsReport.gpr.py:32
+#: SourcesCitationsReport/SourcesCitationsReport.gpr.py:32
 msgid "Sources and Citations Report"
 msgstr "Izvještaj o izvorima i citatima"
 
 #: SourcesCitationsReport//SourcesCitationsReport.gpr.py:33
+#: SourcesCitationsReport/SourcesCitationsReport.gpr.py:33
 msgid "Provides a source and Citations Report with notes"
 msgstr "Stvara izvještaj o izvorima i citatima, zajedno sa zabilješkama"
 
 #: SourcesCitationsReport//SourcesCitationsReport.py:278
+#: SourcesCitationsReport/SourcesCitationsReport.py:272
 #, python-format
 msgid "Key: %s"
 msgstr "Ključ: %s"
 
 #: SourcesCitationsReport//SourcesCitationsReport.py:283
+#: SourcesCitationsReport/SourcesCitationsReport.py:277
 msgid "Citations:"
 msgstr "Citati:"
 
 #: SourcesCitationsReport//SourcesCitationsReport.py:292
+#: SourcesCitationsReport/SourcesCitationsReport.py:286
 #, python-format
 msgid "%d"
 msgstr "%d"
 
 #: SourcesCitationsReport//SourcesCitationsReport.py:294
+#: SourcesCitationsReport/SourcesCitationsReport.py:288
 #, python-format
 msgid "  %s"
 msgstr "  %s"
 
 #: SourcesCitationsReport//SourcesCitationsReport.py:300
+#: SourcesCitationsReport/SourcesCitationsReport.py:294
 #, python-format
 msgid " - %s "
 msgstr " – %s "
 
 #: SourcesCitationsReport//SourcesCitationsReport.py:306
+#: SourcesCitationsReport/SourcesCitationsReport.py:300
 #, python-format
 msgid "   Type: %s"
 msgstr "   Vrsta: %s"
 
 #: SourcesCitationsReport//SourcesCitationsReport.py:308
+#: SourcesCitationsReport/SourcesCitationsReport.py:302
 #, python-format
 msgid "   N-ID: %s"
 msgstr "   N-ID: %s"
 
 #: SourcesCitationsReport//SourcesCitationsReport.py:316
+#: SourcesCitationsReport/SourcesCitationsReport.py:310
 #, python-format
 msgid "   %s"
 msgstr "   %s"
@@ -71,147 +82,132 @@ msgstr "   %s"
 #: SourcesCitationsReport//SourcesCitationsReport.py:378
 #: SourcesCitationsReport//SourcesCitationsReport.py:384
 #: SourcesCitationsReport//SourcesCitationsReport.py:390
+#: SourcesCitationsReport/SourcesCitationsReport.py:324
+#: SourcesCitationsReport/SourcesCitationsReport.py:345
+#: SourcesCitationsReport/SourcesCitationsReport.py:372
+#: SourcesCitationsReport/SourcesCitationsReport.py:378
+#: SourcesCitationsReport/SourcesCitationsReport.py:384
 #, python-format
 msgid "%s"
 msgstr "%s"
 
 #: SourcesCitationsReport//SourcesCitationsReport.py:332
 #: SourcesCitationsReport//SourcesCitationsReport.py:353
+#: SourcesCitationsReport/SourcesCitationsReport.py:326
+#: SourcesCitationsReport/SourcesCitationsReport.py:347
 #, python-format
 msgid "   ( %s )"
 msgstr "   ( %s )"
 
 #: SourcesCitationsReport//SourcesCitationsReport.py:339
+#: SourcesCitationsReport/SourcesCitationsReport.py:333
 msgid "   Spouses: "
 msgstr "   Supružnici: "
 
 #: SourcesCitationsReport//SourcesCitationsReport.py:341
+#: SourcesCitationsReport/SourcesCitationsReport.py:335
 #, python-format
 msgid "%s "
 msgstr "%s "
 
 #: SourcesCitationsReport//SourcesCitationsReport.py:344
+#: SourcesCitationsReport/SourcesCitationsReport.py:338
 #, python-format
 msgid "and %s "
 msgstr "i %s "
 
 #: SourcesCitationsReport//SourcesCitationsReport.py:355
+#: SourcesCitationsReport/SourcesCitationsReport.py:349
 #, python-format
 msgid " %s"
 msgstr " %s"
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:363
-msgid "Person"
-msgstr "Osoba"
-
-#: SourcesCitationsReport//SourcesCitationsReport.py:363
-msgid "ID"
-msgstr "ID"
-
-#: SourcesCitationsReport//SourcesCitationsReport.py:364
-msgid "Role"
-msgstr "Uloga"
-
-#: SourcesCitationsReport//SourcesCitationsReport.py:419
-msgid "Report Options"
-msgstr "Opcije za izvještaj"
-
 #: SourcesCitationsReport//SourcesCitationsReport.py:421
-msgid "Report Title"
-msgstr "Naslov izvještaja"
-
-#: SourcesCitationsReport//SourcesCitationsReport.py:421
+#: SourcesCitationsReport/SourcesCitationsReport.py:413
 msgid "Title of the Report"
 msgstr "Naslov ovog izvještaja"
 
 #: SourcesCitationsReport//SourcesCitationsReport.py:422
+#: SourcesCitationsReport/SourcesCitationsReport.py:414
 msgid "Title string for the report."
 msgstr "Znakovni niz za naslov izvještaja."
 
 #: SourcesCitationsReport//SourcesCitationsReport.py:425
-msgid "Subtitle"
-msgstr "Podnaslov"
-
-#: SourcesCitationsReport//SourcesCitationsReport.py:425
+#: SourcesCitationsReport/SourcesCitationsReport.py:417
 msgid "Subtitle of the Report"
 msgstr "Podnaslov ovog izvještaja"
 
 #: SourcesCitationsReport//SourcesCitationsReport.py:426
+#: SourcesCitationsReport/SourcesCitationsReport.py:418
 msgid "Subtitle string for the report."
 msgstr "Znakovni niz za podnaslov izvještaja."
 
 #: SourcesCitationsReport//SourcesCitationsReport.py:431
+#: SourcesCitationsReport/SourcesCitationsReport.py:423
 msgid "researcher name"
 msgstr "ime istraživača"
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:433
-#, python-format
-msgid "Copyright %(year)d %(name)s"
-msgstr "© %(year)d. %(name)s"
-
-#: SourcesCitationsReport//SourcesCitationsReport.py:435
-msgid "Footer"
-msgstr "Podnožje"
-
-#: SourcesCitationsReport//SourcesCitationsReport.py:436
-msgid "Footer string for the page."
-msgstr "Znakovni niz za podnožje stranice."
-
-#: SourcesCitationsReport//SourcesCitationsReport.py:443
-msgid "Select using filter"
-msgstr "Odaberi korištenjem filtra"
-
 #: SourcesCitationsReport//SourcesCitationsReport.py:444
+#: SourcesCitationsReport/SourcesCitationsReport.py:436
 msgid "Select sources using a filter"
 msgstr "Odaberi izvore pomoću filtra"
 
 #: SourcesCitationsReport//SourcesCitationsReport.py:451
+#: SourcesCitationsReport/SourcesCitationsReport.py:443
 msgid "Show persons"
 msgstr "Prikaži osobe"
 
 #: SourcesCitationsReport//SourcesCitationsReport.py:452
+#: SourcesCitationsReport/SourcesCitationsReport.py:444
 msgid "Whether to show events and persons mentioned in the note"
 msgstr "Da li prikazati događaje i osobe, navedene u zabilješki"
 
 #: SourcesCitationsReport//SourcesCitationsReport.py:488
+#: SourcesCitationsReport/SourcesCitationsReport.py:480
 msgid "The style used for the title of the report."
 msgstr "Stil korišten za naslov izvještaja."
 
 #: SourcesCitationsReport//SourcesCitationsReport.py:503
+#: SourcesCitationsReport/SourcesCitationsReport.py:495
 msgid "The style used for the subtitle of the report."
 msgstr "Stil koji se koristi za podnaslov izvještaja."
 
 #: SourcesCitationsReport//SourcesCitationsReport.py:517
+#: SourcesCitationsReport/SourcesCitationsReport.py:509
 msgid "The style used for the footer of the report."
 msgstr "Stil koji se koristi za podnožje izvješća."
 
 #: SourcesCitationsReport//SourcesCitationsReport.py:532
+#: SourcesCitationsReport/SourcesCitationsReport.py:524
 msgid "The style used for source title."
 msgstr "Stil korišten za naslov izvora."
 
 #: SourcesCitationsReport//SourcesCitationsReport.py:544
+#: SourcesCitationsReport/SourcesCitationsReport.py:536
 msgid "The style used for source subtitle."
 msgstr "Stil koji se koristi za izvorni podnaslov."
 
 #: SourcesCitationsReport//SourcesCitationsReport.py:556
+#: SourcesCitationsReport/SourcesCitationsReport.py:548
 msgid "The style used for Source details."
 msgstr "Stil korišten za detalje izvora."
 
 #: SourcesCitationsReport//SourcesCitationsReport.py:571
+#: SourcesCitationsReport/SourcesCitationsReport.py:563
 msgid "The style used for citation title."
 msgstr "Stil korišten za naslov citata."
 
 #: SourcesCitationsReport//SourcesCitationsReport.py:583
+#: SourcesCitationsReport/SourcesCitationsReport.py:575
 msgid "The style used for a column title."
 msgstr "Stil korišten za naslov stupca."
 
 #: SourcesCitationsReport//SourcesCitationsReport.py:599
+#: SourcesCitationsReport/SourcesCitationsReport.py:591
 msgid "The style used for each section."
 msgstr "Stil korišten za odlomke."
 
 #: SourcesCitationsReport//SourcesCitationsReport.py:630
+#: SourcesCitationsReport/SourcesCitationsReport.py:622
 msgid "The style used for event and person details."
 msgstr "Stil korišten za detalje događaja i osobe."
-
-#~ msgid "   Eheleute: "
-#~ msgstr "   Supružnici: "

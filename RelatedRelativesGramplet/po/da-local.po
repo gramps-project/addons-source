@@ -1,14 +1,16 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
+# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
+# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-21 08:49+1100\n"
-"PO-Revision-Date: 2024-10-14 08:09+0200\n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
 "Language: da_DK\n"
@@ -20,24 +22,19 @@ msgstr ""
 
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:3
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:10
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:4
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:11
 msgid "Related Relatives"
 msgstr "Slægtninge Slægtskab"
 
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:4
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:5
 msgid "Gramplet showing relatives in a relation"
 msgstr "Gramplet der viser slægtskabet mellem slægtninge"
-
-#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:52
-msgid "No Family Tree loaded."
-msgstr "Ingen slægtsbog indlæst."
 
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.py:93
 msgid "Relations of related people in your database:"
 msgstr "Slægtskab mellem beslægtede personer i din database:"
-
-#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:216
-msgid "and"
-msgstr "og"
 
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.py:219
 msgid "are partners and"

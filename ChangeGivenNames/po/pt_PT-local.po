@@ -1,27 +1,30 @@
-# Addon Change Given Names for Gramps.
+# Addon MediaMerge for Gramps.
 # Copyright (C) 2020 Gramps
 # This file is distributed under the same license as the gramps package.
-# Pedro Albuquerque <pmra@protonmail.com>, 2020.
+# Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2020-03-29 11:34Hora de Verão de GMT\n"
+"PO-Revision-Date: 2025-02-09 06:44+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
-"Language-Team: Pedro Albuquerque\n"
-"Language: pt\n"
+"Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
+"gramps-project/addons/pt_PT/>\n"
+"Language: pt_PT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Geany / PoHelper 1.36\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10-dev\n"
 
 #: ChangeGivenNames/ChangeGivenNames.gpr.py:36
+#: ChangeGivenNames/ChangeGivenNames.gpr.py:37
 msgid "Fix Capitalization of Given Names"
 msgstr "Reparar maiúsculas nos nomes próprios"
 
 #: ChangeGivenNames/ChangeGivenNames.gpr.py:37
+#: ChangeGivenNames/ChangeGivenNames.gpr.py:39
 msgid ""
 "Searches the entire database and attempts to fix capitalization of the given "
 "names."
@@ -33,11 +36,6 @@ msgstr ""
 msgid "manual|Fix_Capitalization_of_Given_Names..."
 msgstr "Reparar_maiúsculas_nos_nomes_próprios..."
 
-#: ChangeGivenNames/ChangeGivenNames.py:91
-#: ChangeGivenNames/ChangeGivenNames.py:251
-msgid "Capitalization changes"
-msgstr "Alterações de maiúsculas"
-
 #: ChangeGivenNames/ChangeGivenNames.py:105
 msgid "Checking Given Names"
 msgstr "A verificar os nomes"
@@ -46,30 +44,6 @@ msgstr "A verificar os nomes"
 msgid "Searching given names"
 msgstr "A procurar nomes próprios"
 
-#: ChangeGivenNames/ChangeGivenNames.py:123
-msgid "No modifications made"
-msgstr "Sem alterações feitas"
-
-#: ChangeGivenNames/ChangeGivenNames.py:124
-msgid "No capitalization changes were detected."
-msgstr "Não se detectaram alterações de maiúsculas."
-
-#: ChangeGivenNames/ChangeGivenNames.py:193
-msgid "Select"
-msgstr "Seleccionar"
-
-#: ChangeGivenNames/ChangeGivenNames.py:196
-msgid "Original Name"
-msgstr "Nome original"
-
-#: ChangeGivenNames/ChangeGivenNames.py:200
-msgid "Capitalization Change"
-msgstr "Alteração de maiúscula"
-
 #: ChangeGivenNames/ChangeGivenNames.py:204
 msgid "Affected Names"
 msgstr "Nomes afectados"
-
-#: ChangeGivenNames/ChangeGivenNames.py:211
-msgid "Building display"
-msgstr "A construir vista"

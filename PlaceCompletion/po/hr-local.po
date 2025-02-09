@@ -1,29 +1,32 @@
 # Croatian translation for Gramps
 # This file is distributed under the same license as the Gramps package.
 # Copyright (C) Gramps project
-# Milo Ivir <mail@milotype.de>, 2019., 2020.
+# Milo Ivir <mivir@milotype.de>, 2019, 2020.
+# Stephen Adams, Gramps Reddit, 2018.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2020-08-28 14:27+0200\n"
+"PO-Revision-Date: 2019-10-23 15:25+0200\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: \n"
+"Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.1\n"
-"Last-Translator: Milo Ivir <mail@milotype.de>\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
-"Language: hr\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Generator: Poedit 2.2.4\n"
 
 #: PlaceCompletion/PlaceCompletion.gpr.py:25
+#: PlaceCompletion/PlaceCompletion.gpr.py:26
 msgid "PlaceCompletion"
 msgstr "Upotpunjavanje mjesta"
 
 #: PlaceCompletion/PlaceCompletion.gpr.py:26
+#: PlaceCompletion/PlaceCompletion.gpr.py:28
 msgid ""
 "Provides a browsable list of selected places, with possibility to complete/"
 "parse/set the attribute fields."
@@ -93,18 +96,6 @@ msgstr "Učitavanje datoteke sa zemljopisnim širinama i dužinama u memoriju �
 msgid "Examining places"
 msgstr "Pregledavanje mjesta"
 
-#: PlaceCompletion/PlaceCompletion.py:520
-msgid "City"
-msgstr "Grad"
-
-#: PlaceCompletion/PlaceCompletion.py:523
-msgid "State"
-msgstr "Pokrajina"
-
-#: PlaceCompletion/PlaceCompletion.py:526
-msgid "Country"
-msgstr "Država"
-
 #: PlaceCompletion/PlaceCompletion.py:685
 msgid "Set Tag"
 msgstr "Postavi etiketu"
@@ -130,20 +121,9 @@ msgstr "%d zapisa za mjesta su promijenjena."
 msgid "Change places"
 msgstr "Promijeni mjesta"
 
-#: PlaceCompletion/PlaceCompletion.py:808
-#: PlaceCompletion/PlaceCompletion.py:814
-#: PlaceCompletion/PlaceCompletion.py:819
-#: PlaceCompletion/PlaceCompletion.py:825
-msgid "Cannot open file"
-msgstr "Nije moguće otvoriti datoteku"
-
 #: PlaceCompletion/PlaceCompletion.py:809
 msgid "The selected file is a directory, not a file."
 msgstr "Odabrana datoteka je mapa, a ne datoteka."
-
-#: PlaceCompletion/PlaceCompletion.py:815
-msgid "You do not have read access to the selected file."
-msgstr "Nemaš pravo čitanja odabrane datoteke."
 
 #: PlaceCompletion/PlaceCompletion.py:820
 msgid "The file you want to access is not a regular file."
@@ -207,8 +187,8 @@ msgstr "Početak naslova [, Grad] [, Pokrajina] [, Država]"
 #: PlaceCompletion/PlaceCompletion.py:1153
 msgid "TitleStart [, City] [, Zip] [, County] [, State] [, Country]"
 msgstr ""
-"Početak naslova [, Grad] [, Poštanski broj] [, Okrug] [, Pokrajina] "
-"[, Država]"
+"Početak naslova [, Grad] [, Poštanski broj] [, Okrug] [, Pokrajina] [, "
+"Država]"
 
 #: PlaceCompletion/PlaceCompletion.py:1177
 msgid "Don't search"
@@ -270,25 +250,13 @@ msgstr "Primijeni sve predložene promjene"
 msgid "Selection of the Places you want to complete:"
 msgstr "Odabir mjesta, koja želiš urediti:"
 
-#: PlaceCompletion/placecompletion.glade:178
-msgid "C_ity:"
-msgstr "_Grad:"
-
 #: PlaceCompletion/placecompletion.glade:195
 msgid "Parish:"
 msgstr "Župa:"
 
-#: PlaceCompletion/placecompletion.glade:240
-msgid "County:"
-msgstr "Pokrajina:"
-
 #: PlaceCompletion/placecompletion.glade:271
 msgid "Place _filter:"
 msgstr "Filtar mjesta:"
-
-#: PlaceCompletion/placecompletion.glade:321
-msgid "State:"
-msgstr "Pokrajina"
 
 #: PlaceCompletion/placecompletion.glade:336
 msgid "Count_ry:"
@@ -305,10 +273,6 @@ msgstr "Centriraj zemljopisnu dužinu:"
 #: PlaceCompletion/placecompletion.glade:430
 msgid "Places in a rectangle:"
 msgstr "Mjesta u pravokutniku:"
-
-#: PlaceCompletion/placecompletion.glade:443
-msgid "Width:"
-msgstr "Širina:"
 
 #: PlaceCompletion/placecompletion.glade:460
 msgid "Height:"
@@ -355,8 +319,8 @@ msgid ""
 "Available variables: city, street, locality, parish, county, state, country, "
 "postal_code"
 msgstr ""
-"Moguće varijable: grad, ulica, lokalitet, župa, okrug, pokrajina, "
-"država, poštanski broj"
+"Moguće varijable: grad, ulica, lokalitet, župa, okrug, pokrajina, država, "
+"poštanski broj"
 
 #: PlaceCompletion/placecompletion.glade:820
 msgid ""
@@ -365,7 +329,7 @@ msgid ""
 "Press Tab on a row or Google Maps button to see place on a map. Press Apply "
 "to do all changes automatically"
 msgstr ""
-"Upotrijebi „Izbriši” za brisanje reda, pritisni dvaput na redak za uređivanje "
-"mjesta s pred-unesenim promjenama, \n"
+"Upotrijebi „Izbriši” za brisanje reda, pritisni dvaput na redak za "
+"uređivanje mjesta s pred-unesenim promjenama, \n"
 "Pritisni tabulatorsku tipku ili Google Maps gumb za prikaz mjesta na karti. "
 "Pritisni „Primijeni” za automatsku primjenu svih promjena"

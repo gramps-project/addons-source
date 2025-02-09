@@ -1,88 +1,73 @@
-# translation of sv.po to svenska
-# translation of svny.1.po to
-# translation of sv.1.po to
-# translation of nytt_sv2.po to
-# translation of nytt_sv.po to
-# translation of ny_sv.po to
-# translation of svny1.po to
-# translation of sv99.po to
-# translation of svny.po to
-# translation of sv.po to
-# translation of sv1.po to
-# -*- coding: utf-8 -*-
-# Svenska meddelanden i Gramps.
-# Copyright (C) 2001-2006, 2007, 2008, 2009, 2010 Free Software Foundation, Inc.
-# Några tips i översättningen:#
-# Svenska datatermgruppen: http://www.nada.kth.se/dataterm/
-# Svensk-engelskt lexikon: http://lexin.nada.kth.se/sve-eng.shtml#
-# Några tveksamma eller inte helt uppenbara översättningar:#
-# city                stad/kommun
-# county              landskap
-# location            lokalisering
-# media object        medieobjekt
-# place               plats
-# plugin              insticksmodul
-# repository          arkivinstitution
-# state               län/delstat
-# undo history        redigeringshistorik#
-# $Id: sv.po 14847 2010-03-16 07:46:22Z ldnp $
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Pär Ekholm <pehlm@pekholm.org>, 2021.
 # Bo Rosén <bo.rosen@home.se>, 2001.
-# Jens Arvidsson <jya@sverige.nu>, 2002-2005.
-# Stefan Björk <betula@users.sourceforge.net>, 2005-2006.
-# Peter Landgren <peter.talken@telia.com>, 2007, 2008, 2009, 2010.
+# Jens Arvidsson <jya@sverige.nu>, 2002, 2003, 2004, 2005.
+# Stefan Björk <betula@users.sourceforge.net>, 2005, 2006.
+# Peter Landgren <peter.talken@telia.com>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017.
+# Pär Ekholm <par.ekholm50@gmail.com>, 2016, 2018.
+# Pär Ekholm <par.ekholm@pekholm.se>, 2018, 2019.
+# Peter Landgren <peter@test>, 2010.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: sv\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-15 22:20+0200\n"
-"PO-Revision-Date: 2020-08-16 12:23+0200\n"
-"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
-"Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
+"Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/sv/>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10-dev\n"
 
-#: ToDoReport//TodoReport.gpr.py:24
+#: AncestorFill/AncestorFill.py:419 AncestorFill/AncestorFill.py:361
+#: ToDoReport//TodoReport.py:525
+msgid "The style used for the title of the page."
+msgstr "Mall för rapporttitel."
+
+#: ToDoReport//TodoReport.gpr.py:24 ToDoReport/TodoReport.gpr.py:25
 msgid "Todo Report"
 msgstr "Att göra rapporter"
 
-#: ToDoReport//TodoReport.gpr.py:25
+#: ToDoReport//TodoReport.gpr.py:25 ToDoReport/TodoReport.gpr.py:27
 msgid ""
 "Produces a list of all the notes with a given tag along with the records "
 "that it references, the Person, Family, Event, etc."
 msgstr ""
-"Ger en lista över alla anteckningar med en given tagg tillsammans med "
-"poster som den refererar till, Person, Familj, Händelse, etc."
+"Ger en lista över alla anteckningar med en given tagg tillsammans med poster "
+"som den refererar till, Person, Familj, Händelse, etc."
 
-#: ToDoReport//TodoReport.py:90
-msgid "ToDo Report"
-msgstr "Att göra rapporter"
-
-#: ToDoReport//TodoReport.py:91
+#: ToDoReport//TodoReport.py:91 ../gramps/plugins/textreport/tagreport.py:115
 msgid "You must first create a tag before running this report."
 msgstr "Du måste först skapa en tagg innan du kör denna rapport."
 
 #: ToDoReport//TodoReport.py:98 ToDoReport//TodoReport.py:526
+#: ToDoReport/TodoReport.py:107 ToDoReport/TodoReport.py:904
 msgid "TR-Title"
 msgstr "TR-Titel"
 
-#: ToDoReport//TodoReport.py:99
+#: ToDoReport//TodoReport.py:99 ToDoReport/TodoReport.py:111
 #, python-format
 msgid "Report on Notes Tagged '%s'"
 msgstr "Rapport om anteckningar taggade '%s'"
 
 #: ToDoReport//TodoReport.py:198 ToDoReport//TodoReport.py:536
+#: ToDoReport/TodoReport.py:237 ToDoReport/TodoReport.py:914
 msgid "TR-Heading"
 msgstr "TR-rubrik"
 
-#: ToDoReport//TodoReport.py:204
+#: ToDoReport//TodoReport.py:204 ToDoReport/TodoReport.py:243
 msgid "NoteTable"
 msgstr "ObsTabell"
 
 #: ToDoReport//TodoReport.py:204 ToDoReport//TodoReport.py:584
+#: ToDoReport/TodoReport.py:243 ToDoReport/TodoReport.py:962
 msgid "TR-Table"
 msgstr "TR-Tabell"
 
@@ -95,22 +80,37 @@ msgstr "TR-Tabell"
 #: ToDoReport//TodoReport.py:362 ToDoReport//TodoReport.py:368
 #: ToDoReport//TodoReport.py:378 ToDoReport//TodoReport.py:389
 #: ToDoReport//TodoReport.py:407 ToDoReport//TodoReport.py:413
-#: ToDoReport//TodoReport.py:569
+#: ToDoReport//TodoReport.py:569 ToDoReport/TodoReport.py:247
+#: ToDoReport/TodoReport.py:253 ToDoReport/TodoReport.py:267
+#: ToDoReport/TodoReport.py:273 ToDoReport/TodoReport.py:302
+#: ToDoReport/TodoReport.py:310 ToDoReport/TodoReport.py:323
+#: ToDoReport/TodoReport.py:329 ToDoReport/TodoReport.py:347
+#: ToDoReport/TodoReport.py:353 ToDoReport/TodoReport.py:363
+#: ToDoReport/TodoReport.py:373 ToDoReport/TodoReport.py:392
+#: ToDoReport/TodoReport.py:398 ToDoReport/TodoReport.py:410
+#: ToDoReport/TodoReport.py:421 ToDoReport/TodoReport.py:437
+#: ToDoReport/TodoReport.py:444 ToDoReport/TodoReport.py:458
+#: ToDoReport/TodoReport.py:469 ToDoReport/TodoReport.py:474
+#: ToDoReport/TodoReport.py:480 ToDoReport/TodoReport.py:490
+#: ToDoReport/TodoReport.py:512 ToDoReport/TodoReport.py:518
+#: ToDoReport/TodoReport.py:535 ToDoReport/TodoReport.py:541
+#: ToDoReport/TodoReport.py:547 ToDoReport/TodoReport.py:564
+#: ToDoReport/TodoReport.py:570 ToDoReport/TodoReport.py:576
+#: ToDoReport/TodoReport.py:582 ToDoReport/TodoReport.py:599
+#: ToDoReport/TodoReport.py:607 ToDoReport/TodoReport.py:613
+#: ToDoReport/TodoReport.py:619 ToDoReport/TodoReport.py:636
+#: ToDoReport/TodoReport.py:642 ToDoReport/TodoReport.py:648
+#: ToDoReport/TodoReport.py:654 ToDoReport/TodoReport.py:678
+#: ToDoReport/TodoReport.py:683 ToDoReport/TodoReport.py:689
+#: ToDoReport/TodoReport.py:947
 msgid "TR-TableCell"
 msgstr "TR-tabellcell"
 
 #: ToDoReport//TodoReport.py:209 ToDoReport//TodoReport.py:215
-#: ToDoReport//TodoReport.py:557
+#: ToDoReport//TodoReport.py:557 ToDoReport/TodoReport.py:248
+#: ToDoReport/TodoReport.py:254 ToDoReport/TodoReport.py:935
 msgid "TR-Normal-Bold"
 msgstr "TR-Normal-Fet"
-
-#: ToDoReport//TodoReport.py:210
-msgid "Id"
-msgstr "Id"
-
-#: ToDoReport//TodoReport.py:216
-msgid "Text"
-msgstr "Text"
 
 #: ToDoReport//TodoReport.py:229 ToDoReport//TodoReport.py:246
 #: ToDoReport//TodoReport.py:264 ToDoReport//TodoReport.py:272
@@ -120,91 +120,64 @@ msgstr "Text"
 #: ToDoReport//TodoReport.py:363 ToDoReport//TodoReport.py:369
 #: ToDoReport//TodoReport.py:379 ToDoReport//TodoReport.py:390
 #: ToDoReport//TodoReport.py:408 ToDoReport//TodoReport.py:414
-#: ToDoReport//TodoReport.py:546
+#: ToDoReport//TodoReport.py:546 ToDoReport/TodoReport.py:268
+#: ToDoReport/TodoReport.py:285 ToDoReport/TodoReport.py:303
+#: ToDoReport/TodoReport.py:311 ToDoReport/TodoReport.py:324
+#: ToDoReport/TodoReport.py:330 ToDoReport/TodoReport.py:348
+#: ToDoReport/TodoReport.py:354 ToDoReport/TodoReport.py:364
+#: ToDoReport/TodoReport.py:374 ToDoReport/TodoReport.py:393
+#: ToDoReport/TodoReport.py:399 ToDoReport/TodoReport.py:411
+#: ToDoReport/TodoReport.py:422 ToDoReport/TodoReport.py:438
+#: ToDoReport/TodoReport.py:445 ToDoReport/TodoReport.py:459
+#: ToDoReport/TodoReport.py:470 ToDoReport/TodoReport.py:475
+#: ToDoReport/TodoReport.py:481 ToDoReport/TodoReport.py:491
+#: ToDoReport/TodoReport.py:513 ToDoReport/TodoReport.py:519
+#: ToDoReport/TodoReport.py:536 ToDoReport/TodoReport.py:542
+#: ToDoReport/TodoReport.py:548 ToDoReport/TodoReport.py:565
+#: ToDoReport/TodoReport.py:571 ToDoReport/TodoReport.py:577
+#: ToDoReport/TodoReport.py:583 ToDoReport/TodoReport.py:600
+#: ToDoReport/TodoReport.py:608 ToDoReport/TodoReport.py:614
+#: ToDoReport/TodoReport.py:620 ToDoReport/TodoReport.py:637
+#: ToDoReport/TodoReport.py:643 ToDoReport/TodoReport.py:649
+#: ToDoReport/TodoReport.py:679 ToDoReport/TodoReport.py:684
+#: ToDoReport/TodoReport.py:690 ToDoReport/TodoReport.py:924
 msgid "TR-Normal"
 msgstr "TR-Normal"
 
 #: ToDoReport//TodoReport.py:236 ToDoReport//TodoReport.py:564
+#: ToDoReport/TodoReport.py:275 ToDoReport/TodoReport.py:942
 msgid "TR-Note"
 msgstr "TR-Obs"
 
 #: ToDoReport//TodoReport.py:245 ToDoReport//TodoReport.py:574
+#: ToDoReport/TodoReport.py:284 ToDoReport/TodoReport.py:952
 msgid "TR-BorderCell"
 msgstr "TR-Gränscell"
 
-#: ToDoReport//TodoReport.py:282 ToDoReport//TodoReport.py:284
-msgid "b. "
-msgstr "f. "
-
-#: ToDoReport//TodoReport.py:293
-msgid "d. "
-msgstr "d. "
-
-#: ToDoReport//TodoReport.py:343
-#, python-format
-msgid "%(relationship_type)s on %(relationship_date)s"
-msgstr "%(relationship_type)s på %(relationship_date)s"
-
-#: ToDoReport//TodoReport.py:374
+#: ToDoReport//TodoReport.py:374 ToDoReport/TodoReport.py:405
 msgid "date: "
 msgstr "datum: "
 
-#: ToDoReport//TodoReport.py:385
+#: ToDoReport//TodoReport.py:385 ToDoReport/TodoReport.py:417
 msgid "place: "
 msgstr "plats: "
 
-#: ToDoReport//TodoReport.py:489
-msgid "Report Options"
-msgstr "Rapportera alternativ"
-
-#: ToDoReport//TodoReport.py:497 ToDoReport//TodoReport.py:501
-msgid "Tag"
-msgstr "Märka"
-
-#: ToDoReport//TodoReport.py:504
-msgid "The tag to use for the report"
-msgstr "Taggen som ska användas för rapporten"
-
-#: ToDoReport//TodoReport.py:507
+#: ToDoReport//TodoReport.py:507 ToDoReport/TodoReport.py:885
 msgid "Group by reference type"
 msgstr "Gruppera efter referenstyp"
 
-#: ToDoReport//TodoReport.py:508
+#: ToDoReport//TodoReport.py:508 ToDoReport/TodoReport.py:886
 msgid "Group notes by Family, Person, Place, etc."
 msgstr "Gruppanteckningar av familj, person, plats etc."
 
-#: ToDoReport//TodoReport.py:525
-msgid "The style used for the title of the page."
-msgstr "Mall som används för sidans titel."
-
-#: ToDoReport//TodoReport.py:535
-msgid "The style used for the section headers."
-msgstr "Mall som används för sektionsrubriken."
-
-#: ToDoReport//TodoReport.py:545
-msgid "The basic style used for the text display."
-msgstr "Grundläggande mall som används för textvisning."
-
-#: ToDoReport//TodoReport.py:556
-msgid "The basic style used for table headings."
-msgstr "Grundläggande mall som används för tabellrubriker."
-
-#: ToDoReport//TodoReport.py:563
-msgid "The basic style used for the note display."
-msgstr "Grundläggande mall som används för visning av notiser."
-
-#: ToDoReport//TodoReport.py:568
+#: ToDoReport//TodoReport.py:568 ToDoReport/TodoReport.py:946
 msgid "The basic style used for the table cell display."
 msgstr "Den grundläggande stilen som används för tabellcellvisning."
 
-#: ToDoReport//TodoReport.py:573
+#: ToDoReport//TodoReport.py:573 ToDoReport/TodoReport.py:951
 msgid "The basic style used for the table border cell display."
-msgstr ""
-"Den grundläggande stilen som används för tabellgränscellsvisningen."
+msgstr "Den grundläggande stilen som används för tabellgränscellsvisningen."
 
-#: ToDoReport//TodoReport.py:583
+#: ToDoReport//TodoReport.py:583 ToDoReport/TodoReport.py:961
 msgid "The basic style used for the table display."
 msgstr "Den grundläggande stilen som används för tabellvisningen."
-
-#~ msgid "Marker"
-#~ msgstr "Markör"

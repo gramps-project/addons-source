@@ -1,291 +1,227 @@
-# Swedish translations for gramps package
-# Svenska �vers�ttningar f�r paket gramps.
-# Copyright (C) 2010 THE gramps'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the gramps package.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Pär Ekholm <pehlm@pekholm.org>, 2021.
+# Bo Rosén <bo.rosen@home.se>, 2001.
+# Jens Arvidsson <jya@sverige.nu>, 2002, 2003, 2004, 2005.
+# Stefan Björk <betula@users.sourceforge.net>, 2005, 2006.
+# Peter Landgren <peter.talken@telia.com>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017.
+# Pär Ekholm <par.ekholm50@gmail.com>, 2016, 2018.
+# Pär Ekholm <par.ekholm@pekholm.se>, 2018, 2019.
+# Peter Landgren <peter@test>, 2010.
 #
-# Peter Landgren <peter.talken@telia.com>, 2010.
 msgid ""
 msgstr ""
-"Project-Id-Version: gramps 32\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-28 16:03+0200\n"
-"PO-Revision-Date: 2010-03-28 16:19+0200\n"
-"Last-Translator: Peter Landgren <peter.talken@telia.com>\n"
-"Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
+"Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/sv/>\n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10-dev\n"
 
-#: FamilyTree/FamilyTree.gpr.py:3
-msgid "Family Tree"
-msgstr "Släktträd"
+#: FamilySheet/FamilySheet.py:769 FamilyTree/FamilyTree.py:857
+#, python-format
+msgid "on %(ymd_date)s"
+msgstr "%(ymd_date)s"
 
-#: FamilyTree/FamilyTree.gpr.py:4
+#: FamilySheet/FamilySheet.py:771 FamilyTree/FamilyTree.py:859
+#, python-format
+msgid "in %(ym_date)s"
+msgstr "%(ym_date)s"
+
+#: FamilySheet/FamilySheet.py:773 FamilyTree/FamilyTree.py:861
+#, python-format
+msgid "in %(y_date)s"
+msgstr "%(y_date)s"
+
+#: FamilySheet/FamilySheet.py:777 FamilyTree/FamilyTree.py:865
+#, python-format
+msgid "on %(placeholder)s"
+msgstr "%(placeholder)s"
+
+#: FamilySheet/FamilySheet.py:779 FamilyTree/FamilyTree.py:868
+#, python-format
+msgid "on %(placeholder)s (%(partial)s)"
+msgstr "%(placeholder)s (%(partial)s)"
+
+#: FamilySheet/FamilySheet.py:824 FamilySheet/FamilySheet.py:826
+#: FamilyTree/FamilyTree.py:885
+#, python-format
+msgid "in %(place)s"
+msgstr "%(place)s"
+
+#: FamilySheet/FamilySheet.py:880 FamilyTree/FamilyTree.py:1011
+msgid "Replace first name with call name"
+msgstr "Byt ut förnamn mot tilltalsnamn"
+
+#: FamilySheet/FamilySheet.py:881 FamilyTree/FamilyTree.py:1012
+msgid "Underline call name in first name / add call name to first name"
+msgstr "Stryk under tilltalsnamn / lägg till tilltalsnamn till förnamn"
+
+#: FamilyTree/FamilyTree.gpr.py:4 FamilyTree/FamilyTree.gpr.py:5
 msgid "Produces a graphical family tree."
 msgstr "Skapar ett grafiskt släktträd."
 
-#: FamilyTree/FamilyTree.py:90
+#: FamilyTree/FamilyTree.py:90 FamilyTree/FamilyTree.py:102
 #, python-format
 msgid "Family Tree for %s"
 msgstr "Släktträd för %s"
 
-#: FamilyTree/FamilyTree.py:624 FamilyTree/FamilyTree.py:629
-msgid "Unknown"
-msgstr "Okänd"
-
-#: FamilyTree/FamilyTree.py:631
-#, python-format
-msgid "%(father)s and %(mother)s"
-msgstr "%(father)s och %(mother)s"
-
-#: FamilyTree/FamilyTree.py:639
+#: FamilyTree/FamilyTree.py:639 FamilyTree/FamilyTree.py:684
 msgid "Anonymous"
 msgstr "Anonym"
 
-#: FamilyTree/FamilyTree.py:836
+#: FamilyTree/FamilyTree.py:836 FamilyTree/FamilyTree.py:911
 msgid "born"
 msgstr "född"
 
-#: FamilyTree/FamilyTree.py:838
+#: FamilyTree/FamilyTree.py:838 FamilyTree/FamilyTree.py:913
 msgid "baptised"
 msgstr "döpt"
 
-#: FamilyTree/FamilyTree.py:840
+#: FamilyTree/FamilyTree.py:840 FamilyTree/FamilyTree.py:915
 msgid "died"
 msgstr "dog"
 
-#: FamilyTree/FamilyTree.py:842
+#: FamilyTree/FamilyTree.py:842 FamilyTree/FamilyTree.py:917
 msgid "buried"
 msgstr "begravd"
 
-#: FamilyTree/FamilyTree.py:844
+#: FamilyTree/FamilyTree.py:844 FamilyTree/FamilyTree.py:919
 msgid "cremated"
 msgstr "kremerad"
 
-#: FamilyTree/FamilyTree.py:846
+#: FamilyTree/FamilyTree.py:846 FamilyTree/FamilyTree.py:921
 msgid "married"
 msgstr "gift"
 
-#: FamilyTree/FamilyTree.py:848
+#: FamilyTree/FamilyTree.py:848 FamilyTree/FamilyTree.py:923
 msgid "divorced"
 msgstr "skild"
 
-#: FamilyTree/FamilyTree.py:850
+#: FamilyTree/FamilyTree.py:850 FamilyTree/FamilyTree.py:925
 msgid "resident"
 msgstr "boende"
 
-#: FamilyTree/FamilyTree.py:857
-#, python-format
-msgid "on %(ymd_date)s"
-msgstr "den %(ymd_date)s"
-
-#: FamilyTree/FamilyTree.py:859
-#, python-format
-msgid "in %(ym_date)s"
-msgstr "på %(ym_date)s"
-
-#: FamilyTree/FamilyTree.py:861
-#, python-format
-msgid "in %(y_date)s"
-msgstr "på %(y_date)s"
-
-#: FamilyTree/FamilyTree.py:865
-#, python-format
-msgid "on %(placeholder)s"
-msgstr "i %(placeholder)s"
-
-#: FamilyTree/FamilyTree.py:868
-#, python-format
-msgid "on %(placeholder)s (%(partial)s)"
-msgstr "i %(placeholder)s (%(partial)s)"
-
-#: FamilyTree/FamilyTree.py:885
-#, python-format
-msgid "in %(place)s"
-msgstr "i %(place)s"
-
-#: FamilyTree/FamilyTree.py:896
+#: FamilyTree/FamilyTree.py:896 FamilyTree/FamilyTree.py:971
 #, python-format
 msgid "(%(description)s)"
 msgstr "(%(description)s)"
 
-#: FamilyTree/FamilyTree.py:973
-msgid "Tree Options"
-msgstr "Trädval"
-
-#: FamilyTree/FamilyTree.py:975
-msgid "Center Family"
-msgstr "Mittfamilj"
-
-#: FamilyTree/FamilyTree.py:976
+#: FamilyTree/FamilyTree.py:976 FamilyTree/FamilyTree.py:1044
 msgid "The center family for the tree"
 msgstr "Mittfamilj för trädet"
 
-#: FamilyTree/FamilyTree.py:979
+#: FamilyTree/FamilyTree.py:979 FamilyTree/FamilyTree.py:1047
 msgid "Ancestor Generations"
 msgstr "Färfädersgenertioner"
 
-#: FamilyTree/FamilyTree.py:980
+#: FamilyTree/FamilyTree.py:980 FamilyTree/FamilyTree.py:1048
 msgid "The number of ancestor generations to include in the tree"
 msgstr "Antal förfädergenerationer som skall tas med i trädet"
 
-#: FamilyTree/FamilyTree.py:983
+#: FamilyTree/FamilyTree.py:983 FamilyTree/FamilyTree.py:1051
 msgid "Descendant Generations"
 msgstr "Ättlingagenerationer"
 
-#: FamilyTree/FamilyTree.py:984
+#: FamilyTree/FamilyTree.py:984 FamilyTree/FamilyTree.py:1052
 msgid "The number of descendant generations to include in the tree"
 msgstr "Antal ättlingagenerationer som skall tas med i trädet"
 
-#: FamilyTree/FamilyTree.py:987
-msgid "Sc_ale to fit on a single page"
-msgstr "Sk_ala till att rymmas på en sida"
-
-#: FamilyTree/FamilyTree.py:988
+#: FamilyTree/FamilyTree.py:988 FamilyTree/FamilyTree.py:1060
 msgid "Whether to scale to fit on a single page."
 msgstr "Huruvida skala så att det ryms på en sida."
 
-#: FamilyTree/FamilyTree.py:991
-msgid "Color"
-msgstr "Färg"
-
-#: FamilyTree/FamilyTree.py:993
+#: FamilyTree/FamilyTree.py:993 FamilyTree/FamilyTree.py:1065
 msgid "No color"
 msgstr "Ingen färg"
 
-#: FamilyTree/FamilyTree.py:994
-msgid "Generations"
-msgstr "Generationer"
-
-#: FamilyTree/FamilyTree.py:995
+#: FamilyTree/FamilyTree.py:995 FamilyTree/FamilyTree.py:1067
 msgid "First generation"
 msgstr "Första generation"
 
-#: FamilyTree/FamilyTree.py:996
+#: FamilyTree/FamilyTree.py:996 FamilyTree/FamilyTree.py:1068
 msgid "Second generation"
 msgstr "Andra generation"
 
-#: FamilyTree/FamilyTree.py:997
+#: FamilyTree/FamilyTree.py:997 FamilyTree/FamilyTree.py:1070
 msgid "Male line"
 msgstr "Manlig linje"
 
-#: FamilyTree/FamilyTree.py:998
+#: FamilyTree/FamilyTree.py:998 FamilyTree/FamilyTree.py:1071
 msgid "Male line and illegitimate children"
 msgstr "Manlig linje och u. ä. barn"
 
-#: FamilyTree/FamilyTree.py:999
+#: FamilyTree/FamilyTree.py:999 FamilyTree/FamilyTree.py:1072
 msgid "Female line"
 msgstr "Kvinnlig linje"
 
-#: FamilyTree/FamilyTree.py:1002
+#: FamilyTree/FamilyTree.py:1002 FamilyTree/FamilyTree.py:1075
 msgid "Shuffle colors"
 msgstr "Blanda färger"
 
-#: FamilyTree/FamilyTree.py:1003
+#: FamilyTree/FamilyTree.py:1003 FamilyTree/FamilyTree.py:1076
 msgid "Whether to shuffle colors or order them in rainbow fashion."
 msgstr "Huruvida färger skall blandas i regnbågens färger."
 
-#: FamilyTree/FamilyTree.py:1006
-msgid "Content"
-msgstr "Innehåll"
-
-#: FamilyTree/FamilyTree.py:1008
-msgid "Use call name"
-msgstr "Använd tilltalsnamn"
-
-#: FamilyTree/FamilyTree.py:1010
-msgid "Don't use call name"
-msgstr "Använd inte tilltalsnamn"
-
-#: FamilyTree/FamilyTree.py:1011
-msgid "Replace first name with call name"
-msgstr "Byt ut förnamn mot tilltalsnamn"
-
-#: FamilyTree/FamilyTree.py:1012
-msgid "Underline call name in first name / add call name to first name"
-msgstr ""
-"Stryk under tilltalsnamn i förnamn / lägg till tilltalsnamn till "
-"förnamn"
-
-#: FamilyTree/FamilyTree.py:1015
+#: FamilyTree/FamilyTree.py:1015 FamilyTree/FamilyTree.py:1091
 msgid "Include Occupation"
 msgstr "Tag med yrke"
 
-#: FamilyTree/FamilyTree.py:1018
+#: FamilyTree/FamilyTree.py:1018 FamilyTree/FamilyTree.py:1097
 msgid "Include Residence"
 msgstr "Tag med boende"
 
-#: FamilyTree/FamilyTree.py:1021
+#: FamilyTree/FamilyTree.py:1021 FamilyTree/FamilyTree.py:1100
 msgid "Print event data (dead person)"
 msgstr "Skriv händelsedata (död person)"
 
-#: FamilyTree/FamilyTree.py:1023 FamilyTree/FamilyTree.py:1031
-msgid "None"
-msgstr "Inget"
-
 #: FamilyTree/FamilyTree.py:1024 FamilyTree/FamilyTree.py:1032
+#: FamilyTree/FamilyTree.py:1103 FamilyTree/FamilyTree.py:1111
 msgid "Year only"
 msgstr "Bara år"
 
 #: FamilyTree/FamilyTree.py:1025 FamilyTree/FamilyTree.py:1033
+#: FamilyTree/FamilyTree.py:1104 FamilyTree/FamilyTree.py:1112
 msgid "Full date"
 msgstr "Komplett datum"
 
 #: FamilyTree/FamilyTree.py:1026 FamilyTree/FamilyTree.py:1034
+#: FamilyTree/FamilyTree.py:1105 FamilyTree/FamilyTree.py:1113
 msgid "Full date and place"
 msgstr "Komplett datum och plats"
 
-#: FamilyTree/FamilyTree.py:1029
+#: FamilyTree/FamilyTree.py:1029 FamilyTree/FamilyTree.py:1108
 msgid "Print event data (living person)"
 msgstr "Skriv händelsedata (levande person)"
 
-#: FamilyTree/FamilyTree.py:1037
+#: FamilyTree/FamilyTree.py:1037 FamilyTree/FamilyTree.py:1116
 msgid "Fall back to baptism if birth event missing"
 msgstr "Använd dop om födelsehändelse saknas"
 
-#: FamilyTree/FamilyTree.py:1040
+#: FamilyTree/FamilyTree.py:1040 FamilyTree/FamilyTree.py:1119
 msgid "Fall back to burial or cremation if death event missing"
 msgstr "Använd begravning eller kremering om dödshändelse saknas"
 
-#: FamilyTree/FamilyTree.py:1045
-msgid "Print fields for missing information"
-msgstr "Skriv ut fält för saknad information"
-
-#: FamilyTree/FamilyTree.py:1046
-msgid "Whether to include fields for missing information."
-msgstr "Huruvida ta med fält för saknad information."
-
-#: FamilyTree/FamilyTree.py:1049
+#: FamilyTree/FamilyTree.py:1049 FamilyTree/FamilyTree.py:1131
 msgid "Include event description"
 msgstr "Tag med händelsebeskrivning"
 
-#: FamilyTree/FamilyTree.py:1052
+#: FamilyTree/FamilyTree.py:1052 FamilyTree/FamilyTree.py:1134
 msgid "Text Options"
 msgstr "Textval"
 
-#: FamilyTree/FamilyTree.py:1054
-msgid "Title text"
-msgstr "Titeltext"
-
-#: FamilyTree/FamilyTree.py:1057
-msgid "Footer text"
-msgstr "Fottext"
-
-#: FamilyTree/FamilyTree.py:1072
-msgid "The style used for the title."
-msgstr "Mall för titel."
-
-#: FamilyTree/FamilyTree.py:1080
+#: FamilyTree/FamilyTree.py:1080 FamilyTree/FamilyTree.py:1162
 msgid "The style used for names."
 msgstr "Mall för namn."
 
-#: FamilyTree/FamilyTree.py:1088
+#: FamilyTree/FamilyTree.py:1088 FamilyTree/FamilyTree.py:1170
 msgid "The style used for data (birth, death, marriage, divorce)."
 msgstr "Mall använd till data (födelse, död, giftermål, skilsmässa)."
-
-#: FamilyTree/FamilyTree.py:1098
-msgid "The style used for the footer."
-msgstr "Mall för fottext"
-

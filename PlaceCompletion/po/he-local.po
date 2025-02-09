@@ -1,14 +1,15 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Igal Shapira <igal.shapira@gmail.com>, 2009, 2010, 2011.
+# Avi Markovitz <avi.markovitz@gmail.com>, 2019.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Gramps 5.2.0 – PlaceCompletion\n"
+"Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2023-09-14 15:31+0300\n"
+"POT-Creation-Date: 2023-09-10 07:59+0300\n"
+"PO-Revision-Date: 2023-09-10 08:07+0300\n"
 "Last-Translator: \n"
 "Language-Team: Avi Markovitz\n"
 "Language: he\n"
@@ -20,10 +21,12 @@ msgstr ""
 "X-Generator: Poedit 3.0.1\n"
 
 #: PlaceCompletion/PlaceCompletion.gpr.py:25
+#: PlaceCompletion/PlaceCompletion.gpr.py:26
 msgid "PlaceCompletion"
 msgstr "PlaceCompletion"
 
 #: PlaceCompletion/PlaceCompletion.gpr.py:26
+#: PlaceCompletion/PlaceCompletion.gpr.py:28
 msgid ""
 "Provides a browsable list of selected places, with possibility to complete/"
 "parse/set the attribute fields."
@@ -89,18 +92,6 @@ msgstr "טעינת קובץ אורך/רוחב לזיכרון..."
 msgid "Examining places"
 msgstr "בחינת מקומות"
 
-#: PlaceCompletion/PlaceCompletion.py:520
-msgid "City"
-msgstr "עיר"
-
-#: PlaceCompletion/PlaceCompletion.py:523
-msgid "State"
-msgstr "חבל"
-
-#: PlaceCompletion/PlaceCompletion.py:526
-msgid "Country"
-msgstr "מדינה"
-
 #: PlaceCompletion/PlaceCompletion.py:685
 msgid "Set Tag"
 msgstr "הגדרת תג"
@@ -126,20 +117,9 @@ msgstr "הוסגלו %d רשומות מקום."
 msgid "Change places"
 msgstr "החלפת מקומות"
 
-#: PlaceCompletion/PlaceCompletion.py:808
-#: PlaceCompletion/PlaceCompletion.py:814
-#: PlaceCompletion/PlaceCompletion.py:819
-#: PlaceCompletion/PlaceCompletion.py:825
-msgid "Cannot open file"
-msgstr "לא ניתן לפתוח קובץ"
-
 #: PlaceCompletion/PlaceCompletion.py:809
 msgid "The selected file is a directory, not a file."
 msgstr "הקובץ שנבחר הוא 'מחיצה', לא 'קובץ'."
-
-#: PlaceCompletion/PlaceCompletion.py:815
-msgid "You do not have read access to the selected file."
-msgstr "אין הרשאות קריאה לקובץ שנבחר."
 
 #: PlaceCompletion/PlaceCompletion.py:820
 msgid "The file you want to access is not a regular file."
@@ -263,25 +243,13 @@ msgstr "החלת כל השינויים המוצעים"
 msgid "Selection of the Places you want to complete:"
 msgstr "בחירת המקומות אותם מעוניינים להשלים:"
 
-#: PlaceCompletion/placecompletion.glade:178
-msgid "C_ity:"
-msgstr "_עיר:"
-
 #: PlaceCompletion/placecompletion.glade:195
 msgid "Parish:"
 msgstr "קהילה:"
 
-#: PlaceCompletion/placecompletion.glade:240
-msgid "County:"
-msgstr "מחוז:"
-
 #: PlaceCompletion/placecompletion.glade:271
 msgid "Place _filter:"
 msgstr "מסנן _מקומות:"
-
-#: PlaceCompletion/placecompletion.glade:321
-msgid "State:"
-msgstr "חבל:"
 
 #: PlaceCompletion/placecompletion.glade:336
 msgid "Count_ry:"
@@ -298,10 +266,6 @@ msgstr "מרכוז קו אורך:"
 #: PlaceCompletion/placecompletion.glade:430
 msgid "Places in a rectangle:"
 msgstr "מקומות בתוך מרובע:"
-
-#: PlaceCompletion/placecompletion.glade:443
-msgid "Width:"
-msgstr "רוחב:"
 
 #: PlaceCompletion/placecompletion.glade:460
 msgid "Height:"

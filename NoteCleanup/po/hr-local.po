@@ -1,29 +1,52 @@
 # Croatian translation for Gramps
 # This file is distributed under the same license as the Gramps package.
 # Copyright (C) Gramps project
-# Milo Ivir <mail@milotype.de>, 2019., 2020.
+# Milo Ivir <mivir@milotype.de>, 2019, 2020.
+# Stephen Adams, Gramps Reddit, 2018.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-12 09:03-0500\n"
-"PO-Revision-Date: 2020-08-24 16:38+0200\n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2019-10-23 15:25+0200\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: \n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.1\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Generator: Poedit 2.2.4\n"
+
+#: MediaVerify/MediaVerify.py:110 NoteCleanup/NoteCleanup.py:135
+msgid "Export"
+msgstr "Izvezi"
+
+#: MediaVerify/MediaVerify.py:111 NoteCleanup/NoteCleanup.py:136
+msgid "Export the results to a text file"
+msgstr "Izvezi rezultate u tekstualnu datoteku"
+
+#: MediaVerify/MediaVerify.py:195 NoteCleanup/NoteCleanup.py:323
+msgid "Export results to a text file"
+msgstr "Izvezi rezultate u tekstualnu datoteku"
+
+#: MediaVerify/MediaVerify.py:218 NoteCleanup/NoteCleanup.py:346
+#, python-format
+msgid "Error when writing the report: %s"
+msgstr "Greška prilikom pisanja izvještaja: %s"
+
+#: DenominoViso/DenominoViso.py:2001 NoteCleanup/NoteCleanup.py:126
+msgid "Search"
+msgstr "Traži"
 
 #: NoteCleanup/NoteCleanup.gpr.py:30 NoteCleanup/NoteCleanup.py:412
+#: NoteCleanup/NoteCleanup.gpr.py:31
 msgid "Note Cleanup"
 msgstr "Čišćenje zabilježaka"
 
-#: NoteCleanup/NoteCleanup.gpr.py:31
+#: NoteCleanup/NoteCleanup.gpr.py:31 NoteCleanup/NoteCleanup.gpr.py:32
 msgid "Clean up Notes that contain HTML markup"
 msgstr "Počisti zabilješke, koje sadrže HTML oznake"
 
@@ -43,10 +66,6 @@ msgstr "Samo poveznice"
 msgid "Issues"
 msgstr "Problemi"
 
-#: NoteCleanup/NoteCleanup.py:120
-msgid "Close"
-msgstr "Zatvori"
-
 #: NoteCleanup/NoteCleanup.py:121
 msgid "Close the Note Cleanup Tool"
 msgstr "Zatvori alat za čišćenje zabilježaka"
@@ -58,10 +77,6 @@ msgstr "Spremi sve"
 #: NoteCleanup/NoteCleanup.py:124
 msgid "Save All Changes"
 msgstr "Spremi sve promjene"
-
-#: NoteCleanup/NoteCleanup.py:126
-msgid "Search"
-msgstr "Traži"
 
 #: NoteCleanup/NoteCleanup.py:127
 msgid "Search for Untidy Notes"
@@ -81,24 +96,11 @@ msgstr ""
 "Te zabilješke će biti dodane u tvoju bazu podataka. Stoga bi možda bilo "
 "dobro da radiš s testnom bazom podataka ili ih izbriši kasnije."
 
-#: NoteCleanup/NoteCleanup.py:135
-msgid "Export"
-msgstr "Izvezi"
-
-#: NoteCleanup/NoteCleanup.py:136
-msgid "Export the results to a text file"
-msgstr "Izvezi rezultate u tekstualnu datoteku"
-
-#: NoteCleanup/NoteCleanup.py:139
-msgid "Help"
-msgstr "Pomoć"
-
 #: NoteCleanup/NoteCleanup.py:181
 msgid ""
 "Please back up your database before running this tool.\n"
 "\n"
-"Start the tool by pressing the 'Search' button, then review the "
-"results.\n"
+"Start the tool by pressing the 'Search' button, then review the results.\n"
 "When satisifed press the 'Save All' button to save your work.\n"
 "You may export a summary list of the notes that were found using the "
 "'Export' button."
@@ -112,10 +114,6 @@ msgstr ""
 msgid "Clean up Notes"
 msgstr "Počisti zabilješke"
 
-#: NoteCleanup/NoteCleanup.py:205
-msgid "Notes"
-msgstr "Zabilješke"
-
 #: NoteCleanup/NoteCleanup.py:288
 msgid "Cleanup Test Notes"
 msgstr "Počisti testne zabilješke"
@@ -123,15 +121,6 @@ msgstr "Počisti testne zabilješke"
 #: NoteCleanup/NoteCleanup.py:310 NoteCleanup/NoteCleanup.py:315
 msgid "Add Test Note"
 msgstr "Dodaj testnu zabilješku"
-
-#: NoteCleanup/NoteCleanup.py:323
-msgid "Export results to a text file"
-msgstr "Izvezi rezultate u tekstualnu datoteku"
-
-#: NoteCleanup/NoteCleanup.py:346
-#, python-format
-msgid "Error when writing the report: %s"
-msgstr "Greška prilikom pisanja izvještaja: %s"
 
 #: NoteCleanup/NoteCleanup.py:383
 msgid ""

@@ -1,14 +1,24 @@
-# Russian translation for QuiltView
+# Russian translation for MediaMerge
 # This file is distributed under the same license as the Gramps package.
 #
-# Ivan Komaritsyn <vantu5z@mail.ru>, 2018.
+# Ivan Komaritsyn <vantu5z@mail.ru>, 2015, 2016, 2017, 2018, 2019, 2020, 2021.
+# Alexander Bogdashevsky <sanderb@kezomba.com>, 2004.
+# Alex Roitman <shura@gramps-project.org>, 2002, 2003, 2004, 2005, 2006, 2007.
+# Konstantin Dorichev <kdorichev@gmail.com>, 2008.
+# Yevgeny Zegzda <ezegjda@ya.ru>, 2009, 2010.
+# vantu5z <vantu5z@mail.ru>, 2020.
+# Komaritsyn Ivan <vantu5z@mail.ru>, 2018.
+# Andrey Baznikin (http://d.scn.ru/), 2009, 2010, 2011.
+# Vassilii Khachaturov <vassilii@tarunz.org>, 2011, 2012, 2013, 2014.
+# Egor Reentov <egor.gramps@gmail.com>, 2011, 2012, 2013.
+# Artem Glebov <artem.glebov@gmail.com>, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-06 10:03+0300\n"
-"PO-Revision-Date: 2018-12-06 10:13+0300\n"
+"POT-Creation-Date: 2018-12-04 16:31+0300\n"
+"PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
@@ -18,50 +28,40 @@ msgstr ""
 "X-Generator: Gtranslator 2.91.7\n"
 "X-Poedit-Language: Russian\n"
 "X-Poedit-Country: RUSSIAN FEDERATION\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: QuiltView/QuiltView.gpr.py:34
+#: QuiltView/QuiltView.gpr.py:34 QuiltView/QuiltView.gpr.py:23
 msgid "Quilt Chart"
 msgstr "График Quilt"
 
-#: QuiltView/QuiltView.gpr.py:35
-msgid "Charts"
-msgstr "Графики"
-
-#: QuiltView/QuiltView.gpr.py:36
+#: QuiltView/QuiltView.gpr.py:36 QuiltView/QuiltView.gpr.py:25
 msgid "The view shows a quilt chart visualisation of a family tree"
 msgstr "Представление семейного древа в виде графика Quilt"
 
-#: QuiltView/QuiltView.py:211
+#: QuiltView/QuiltView.py:211 QuiltView/QuiltView.py:223
 msgid "Quilt chart"
 msgstr "График Quilt"
 
-#: QuiltView/QuiltView.py:288
+#: QuiltView/QuiltView.py:288 QuiltView/QuiltView.py:307
 msgid "Select the name for which you want to see."
 msgstr "Выберите имя для которого хотите посмотреть."
 
-#: QuiltView/QuiltView.py:293
-msgid "Clear"
-msgstr "Очистить"
-
-#: QuiltView/QuiltView.py:295
+#: QuiltView/QuiltView.py:295 QuiltView/QuiltView.py:314
 msgid "Clear the entry field in the name selection box."
 msgstr "Очистить поле ввода для выбора имени."
 
-#: QuiltView/QuiltView.py:300
+#: QuiltView/QuiltView.py:300 QuiltView/QuiltView.py:319
 msgid "Nothing is selected"
 msgstr "Ничего не выбрано"
 
-#: QuiltView/QuiltView.py:358
+#: QuiltView/QuiltView.py:358 ../gramps/plugins/lib/libpersonview.py:275
+#: ../gramps/plugins/view/pedigreeview.py:724
+#: ../gramps/plugins/view/relview.py:411
 msgid "Person Filter Editor"
 msgstr "Редактор фильтров людей"
 
-#: QuiltView/QuiltView.py:360
-msgid "Print the entire tree"
-msgstr "Напечатать всё древо"
-
-#: QuiltView/QuiltView.py:435
+#: QuiltView/QuiltView.py:435 QuiltView/QuiltView.py:572
 #, python-format
 msgid ""
 "You have %(filter)d filtered people, %(count)d people shown on the tree and "
@@ -70,108 +70,47 @@ msgstr ""
 "Вы %(filter)d отфильтровали людей, %(count)d людей показано в древе и "
 "%(total)d людей в базе данных."
 
-#: QuiltView/QuiltView.py:464
-msgid "Could Not Set a Bookmark"
-msgstr "Ошибка создания закладки"
-
-#: QuiltView/QuiltView.py:465
-msgid "A bookmark could not be set because no one was selected."
-msgstr "Нельзя добавить закладку: никто не выделен."
-
-#: QuiltView/QuiltView.py:525
+#: QuiltView/QuiltView.py:525 QuiltView/QuiltView.py:662
 msgid "Loading individuals"
 msgstr "Загрузка лиц"
 
-#: QuiltView/QuiltView.py:526
+#: QuiltView/QuiltView.py:526 QuiltView/QuiltView.py:663
 msgid "Loading the data"
 msgstr "Загрузка данных"
 
-#: QuiltView/QuiltView.py:902
+#: QuiltView/QuiltView.py:902 QuiltView/QuiltView.py:1053
 msgid "About Quilt View"
 msgstr "О дополнении"
 
-#: QuiltView/QuiltView.py:972
-#, python-format
-msgid "Family of %(husband)s and %(spouse)s"
-msgstr "Семья %(husband)s и %(spouse)s"
-
-#: QuiltView/QuiltView.py:978 QuiltView/QuiltView.py:982
-#, python-format
-msgid "Family of %s"
-msgstr "Семья %s"
-
-#: QuiltView/QuiltView.py:1037 QuiltView/QuiltView.py:1166
-msgid "Edit"
-msgstr "Редактировать"
-
 #: QuiltView/QuiltView.py:1040 QuiltView/QuiltView.py:1169
+#: QuiltView/QuiltView.py:1191 QuiltView/QuiltView.py:1320
 msgid "Edit tags"
 msgstr "Изменить метки"
 
-#: QuiltView/QuiltView.py:1056 QuiltView/QuiltView.py:1381
-msgid "Children"
-msgstr "Дети"
-
-#: QuiltView/QuiltView.py:1069 QuiltView/QuiltView.py:1394
-msgid "Add child to family"
-msgstr "Добавить ребёнка в семью"
-
-#: QuiltView/QuiltView.py:1139
-msgid "Add Child to Family"
-msgstr "Добавить ребёнка в семью"
-
-#: QuiltView/QuiltView.py:1172
-msgid "_Copy"
-msgstr "_Копировать"
-
-#: QuiltView/QuiltView.py:1182
-msgid "Spouses"
-msgstr "Супруги"
-
-#: QuiltView/QuiltView.py:1187 QuiltView/QuiltView.py:1312
-msgid "Add"
-msgstr "Добавить"
-
-#: QuiltView/QuiltView.py:1211
-msgid "Siblings"
-msgstr "Братья/Сёстры"
-
-#: QuiltView/QuiltView.py:1279
-msgid "Parents"
-msgstr "Родители"
-
-#: QuiltView/QuiltView.py:1318
-msgid "Related"
-msgstr "Связанные"
-
-#: QuiltView/QuiltView.py:1349
+#: QuiltView/QuiltView.py:1349 QuiltView/QuiltView.py:1500
 msgid "Set as home person"
 msgstr "Сделать базовым лицом"
 
-#: QuiltView/QuiltView.py:1499
-msgid "Adding Tags"
-msgstr "Добавление меток"
-
-#: QuiltView/QuiltView.py:1505
+#: QuiltView/QuiltView.py:1505 QuiltView/QuiltView.py:1656
 #, python-format
 msgid "Adding Tags to person (%s)"
 msgstr "Изменение меток лица (%s)"
 
-#: QuiltView/QuiltView.py:1510
+#: QuiltView/QuiltView.py:1510 QuiltView/QuiltView.py:1661
 #, python-format
 msgid "Adding Tags to family (%s)"
 msgstr "Изменение меток семьи (%s)"
 
-#: QuiltView/QuiltView.py:1710
+#: QuiltView/QuiltView.py:1710 QuiltView/QuiltView.py:1865
 msgid "Printing the tree"
 msgstr "Печать древа"
 
-#: QuiltView/QuiltView.py:1714
+#: QuiltView/QuiltView.py:1714 QuiltView/QuiltView.py:1869
 #, python-format
 msgid "Need to print %(pages)s pages (%(format)s format)"
 msgstr "Печатать %(pages)s страницы (%(format)s формат)"
 
-#: QuiltView/QuiltView.py:1766
+#: QuiltView/QuiltView.py:1766 QuiltView/QuiltView.py:1921
 msgid ""
 "Center on the selected person.\n"
 "The new position of the person will be near the top left corner."
@@ -179,18 +118,18 @@ msgstr ""
 "Центрировать на выбранном лице.\n"
 "Новая позиция лица будет около верхнего левого угла."
 
-#: QuiltView/QuiltView.py:1771
+#: QuiltView/QuiltView.py:1771 QuiltView/QuiltView.py:1926
 msgid "The path color"
 msgstr "Цвет пути"
 
-#: QuiltView/QuiltView.py:1776
+#: QuiltView/QuiltView.py:1776 QuiltView/QuiltView.py:1931
 msgid "The selected person color"
 msgstr "Цвет выбранного лица"
 
-#: QuiltView/QuiltView.py:1781
+#: QuiltView/QuiltView.py:1781 QuiltView/QuiltView.py:1936
 msgid "The path transparency"
 msgstr "Прозрачность пути"
 
-#: QuiltView/QuiltView.py:1784
+#: QuiltView/QuiltView.py:1784 QuiltView/QuiltView.py:1939
 msgid "General options"
 msgstr "Основные параметры"

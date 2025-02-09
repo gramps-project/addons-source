@@ -1,41 +1,46 @@
-# Addon LinesOfDescendancy for Gramps.
+# Addon MediaMerge for Gramps.
 # Copyright (C) 2020 Gramps
 # This file is distributed under the same license as the gramps package.
-# Pedro Albuquerque <pmra@protonmail.com>, 2020.
+# Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2020-04-01 06:32Hora de Verão de GMT\n"
+"PO-Revision-Date: 2025-02-09 06:44+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
-"Language-Team: Pedro Albuquerque\n"
-"Language: pt\n"
+"Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
+"gramps-project/addons/pt_PT/>\n"
+"Language: pt_PT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Geany / PoHelper 1.36\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10-dev\n"
+
+#: AncestorFill/AncestorFill.py:425 AncestorFill/AncestorFill.py:361
+#: LinesOfDescendency/lines-of-descendency.py:72
+msgid "The style used for the title of the page."
+msgstr "O estilo usado para o título da página."
+
+#: DenominoViso/DenominoViso.py:208
+#: LinesOfDescendency/lines-of-descendency.py:55
+msgid "Ancestor"
+msgstr "Ascendente"
 
 #: LinesOfDescendency/lines-of-descendency.gpr.py:30
+#: LinesOfDescendency/lines-of-descendency.gpr.py:31
 msgid "Lines of Descendency Report"
 msgstr "Linhas de descendência"
 
 #: LinesOfDescendency/lines-of-descendency.gpr.py:31
+#: LinesOfDescendency/lines-of-descendency.gpr.py:33
 msgid ""
 "Prints out all descendency lines from a given ancestor to a given descendent "
 "in text."
 msgstr ""
 "Imprime todas as linhas de descendência de um dado ascendente até um dado "
 "descendente em texto."
-
-#: LinesOfDescendency/lines-of-descendency.py:53
-msgid "People"
-msgstr "Indivíduos"
-
-#: LinesOfDescendency/lines-of-descendency.py:55
-msgid "Ancestor"
-msgstr "Ascendente"
 
 #: LinesOfDescendency/lines-of-descendency.py:56
 msgid "The ancestor from which to start the line"
@@ -49,22 +54,9 @@ msgstr "Descendente"
 msgid "The descendent to which to build the line"
 msgstr "O descendente para quem construir a linha"
 
-#: LinesOfDescendency/lines-of-descendency.py:72
-msgid "The style used for the title of the page."
-msgstr "O estilo usado para o título da página."
-
 #: LinesOfDescendency/lines-of-descendency.py:82
 msgid "The style used for the title of a line."
 msgstr "O estilo usado para o título da linha."
-
-#: LinesOfDescendency/lines-of-descendency.py:89
-msgid "The basic style used for the text display."
-msgstr "O estilo básico usado para mostrar texto."
-
-#: LinesOfDescendency/lines-of-descendency.py:103
-#, python-format
-msgid "Person %s is not in the Database"
-msgstr "O indivíduo %s não está na base de dados"
 
 #: LinesOfDescendency/lines-of-descendency.py:176
 #, python-format

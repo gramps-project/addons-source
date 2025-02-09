@@ -1,83 +1,47 @@
-# Dutch translation of Gramps addon DateCalculator
+# Dutch translation of addon MediaMerge.
 # Copyright (C) 2020 Gramps project
-# This file is distributed under the same license as the DateCalculator package.
-# Jan Sparreboom <jan@sparreboom.net>, 2020.
+# This file is distributed under the same license as the MediaMerge package.
+# Jan Sparreboom <jan@sparreboom.net>, 2020, 2021, 2023.
+# Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
+# Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
+# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
+# Erik De Richter <frederik.de.richter@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
+# Harmen Huizinga <harmenhuizinga@sigmo.nl>, 2013.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: DateCalculator 5.1.x\n"
+"Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2020-05-05 17:06+0200\n"
-"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
-"Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
+"POT-Creation-Date: 2019-01-04 18:55-0600\n"
+"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
+"addons/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.6\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10-dev\n"
 
 #: DateCalculator/DateCalculator.gpr.py:21
 #: DateCalculator/DateCalculator.gpr.py:31
+#: DateCalculator/DateCalculator.gpr.py:22
+#: DateCalculator/DateCalculator.gpr.py:32
 msgid "Date Calculator"
 msgstr "Datum rekenmachine"
 
-#: DateCalculator/DateCalculator.gpr.py:22
-msgid "Useful for date math calculations"
-msgstr "Handig voor wiskundige berekeningen met datums"
-
-#: DateCalculator/DateCalculator.py:63
-msgid "Expression 1"
-msgstr "Uitdrukking 1"
-
-#: DateCalculator/DateCalculator.py:64
-msgid "Expression 2"
-msgstr "Uitdrukking 2"
-
-#: DateCalculator/DateCalculator.py:65
+#: DateCalculator/DateCalculator.py:65 DateCalculator/DateCalculator.py:96
 msgid "Result"
 msgstr "Uitkomst"
 
-#: DateCalculator/DateCalculator.py:68
+#: DateCalculator/DateCalculator.py:68 DateCalculator/DateCalculator.py:104
 msgid "Calculate"
 msgstr "Berekenen"
 
-#: DateCalculator/DateCalculator.py:71
-msgid "Clear"
-msgstr "Wissen"
-
-#: DateCalculator/DateCalculator.py:118
-msgid "Error: invalid entry for expression 1"
-msgstr "Fout: ongeldige invoer voor uitdrukking 1"
-
-#: DateCalculator/DateCalculator.py:128
-msgid "Error: invalid entry for expression 2"
-msgstr "Fout: ongeldige invoer voor uitdrukking 2"
-
 #: DateCalculator/DateCalculator.py:153 DateCalculator/DateCalculator.py:155
 #: DateCalculator/DateCalculator.py:163 DateCalculator/DateCalculator.py:165
+#: DateCalculator/DateCalculator.py:195 DateCalculator/DateCalculator.py:197
+#: DateCalculator/DateCalculator.py:205 DateCalculator/DateCalculator.py:207
 msgid "Error: at least one expression must be a date"
 msgstr "Fout: ten minste één expressie moet een datum zijn"
-
-#: DateCalculator/DateCalculator.py:171
-msgid ""
-"Enter an expression in the entries above and click Calculate.\n"
-"\n"
-"An expression can be:\n"
-"\n"
-"1. a valid Gramps date\n"
-"2. a positive or negative number, representing years\n"
-"3. a positive or negative tuple, representing (years, months, days)\n"
-"\n"
-"Note that at least one expression must be a date."
-msgstr ""
-"Voer een uitdrukking in de bovenstaande invoervelden in en klik op "
-"Berekenen.\n"
-"\n"
-"Een mogelijke uitdrukking:\n"
-"1. een geldige Gramps-datum\n"
-"2. een positief of negatief getal, dat jaren voorstelt\n"
-"3. een positieve of negatieve reeks, dat voor (jaren, maanden, dagen) "
-"staat\n"
-"\n"
-"Merk op dat ten minste één expressie een datum moet zijn."

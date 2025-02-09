@@ -1,14 +1,16 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
+# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
+# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-21 08:49+1100\n"
-"PO-Revision-Date: 2024-09-28 14:22+0200\n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
 "Language: da_DK\n"
@@ -20,25 +22,12 @@ msgstr ""
 
 #: DescendantCount/DescendantCount.gpr.py:22
 #: DescendantCount/DescendantCount.gpr.py:31
+#: DescendantCount/DescendantCount.gpr.py:23
+#: DescendantCount/DescendantCount.gpr.py:32
 msgid "Descendant Count"
 msgstr "Antal Efterkommere"
 
 #: DescendantCount/DescendantCount.gpr.py:23
+#: DescendantCount/DescendantCount.gpr.py:24
 msgid "Gramplet for showing people and descendant counts"
 msgstr "Gramplet der viser personer og antal efterkommere"
-
-#: DescendantCount/DescendantCount.py:87
-msgid ""
-"Click name to change active\n"
-"Double-click name to edit"
-msgstr ""
-"Klik på navn for at gøre personen til den aktive\n"
-"Dobbeltklik på navn for at redigere"
-
-#: DescendantCount/DescendantCount.py:94
-msgid "Person"
-msgstr "Person"
-
-#: DescendantCount/DescendantCount.py:101
-msgid "Descendants"
-msgstr "Efterkommere"

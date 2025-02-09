@@ -1,44 +1,51 @@
 # Croatian translation for Gramps
 # This file is distributed under the same license as the Gramps package.
 # Copyright (C) Gramps project
-# Milo Ivir <mail@milotype.de>, 2019., 2020.
+# Milo Ivir <mivir@milotype.de>, 2019, 2020.
+# Stephen Adams, Gramps Reddit, 2018.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-08 21:09+0200\n"
-"PO-Revision-Date: 2020-08-29 19:15+0200\n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2019-10-23 15:25+0200\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: \n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.1\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Generator: Poedit 2.2.4\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.gpr.py:28
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.gpr.py:36
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.gpr.py:29
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.gpr.py:37
 msgid "Prerequisites Checker"
 msgstr "Provjera preduvjeta"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.gpr.py:29
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.gpr.py:30
 msgid "Prerequisites Checker Gramplet"
 msgstr "Gramplet za provjeru preduvjeta"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:133
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:143
 msgid ""
 "Diagnostic Gramplet to help evaluate if <a href=\"https://gramps-project.org/"
 "\">Gramps</a> has all <a href=\"https://github.com/gramps-project/gramps/"
 "blob/master/README.md\">prerequisites</a> installed.\n"
 msgstr ""
 "Dijagnostički Gramplet koji pomaže procijeniti, jesu li u <a href=\"https://"
-"gramps-project.org/\">Grampsu</a> instalirane sve <a href=\"https://github."
-"com/gramps-project/gramps/blob /master/README.md\">potrebne komponente</a>.\n"
+"gramps-project.org/\">Grampsu</a> instalirane sve <a href=\"https://"
+"github.com/gramps-project/gramps/blob /master/README.md\">potrebne "
+"komponente</a>.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:138
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:149
 msgid ""
 "Diagnostic Gramplet to help evaluate if Gramps has all prerequisites "
 "installed."
@@ -46,39 +53,8 @@ msgstr ""
 "Dijagnostički Gramplet koji pomaže procijeniti, jesu li u Grampsu "
 "instalirane sve potrebne komponente."
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:144
-msgid ""
-"\n"
-"<u><b>REQUIREMENTS</b></u>\n"
-msgstr ""
-"\n"
-"<u><b>PREDUVJETI</b></u>\n"
-
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:145
-msgid ""
-"The following packages <b>MUST</b> be installed (Requires the minimum "
-"version or greater.):\n"
-msgstr ""
-"Sljedeći paketi <b>MORAJU</b> biti instalirani (zahtijeva minimalnu verziju "
-"ili veću.):\n"
-
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:160
-msgid ""
-"\n"
-"<u><b>STRONGLY RECOMMENDED</b></u>\n"
-msgstr ""
-"\n"
-"<u><b>IZRIČITO PREPORUČENO</b></u>\n"
-
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:161
-msgid ""
-"The following packages are <b>STRONGLY RECOMMENDED</b> to be installed "
-"(needed for geography and charts):\n"
-msgstr ""
-"<b>IZRIČITO PREPORUČUJEMO</b> instalirati sljedeće pakete (potrebni su za "
-"zemljopisne karte i dijagrame):\n"
-
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:172
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:215
 msgid ""
 "\n"
 "<u><b>Optional</b></u>\n"
@@ -86,15 +62,13 @@ msgstr ""
 "\n"
 "<u><b>Opcionalno</b></u>\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:173
-msgid "The following packages are optional:\n"
-msgstr "Sljedeći paketi su opcionalni:\n"
-
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:175
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:220
 msgid "Gtkspell enables spell checking in the notes.\n"
 msgstr "Gtkspell omogućava provjeru pravopisa u bilješkama.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:179
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:225
 msgid ""
 "Python Image Library (PIL) is needed for cropping images and LaTeX output."
 msgstr ""
@@ -102,6 +76,7 @@ msgstr ""
 "rezultata."
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:190
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:238
 msgid ""
 "\n"
 "<u><b>Development & Translation Requirements</b></u>\n"
@@ -109,15 +84,8 @@ msgstr ""
 "\n"
 "<u><b>Preduvjeti za razvoj i prevođenje</b></u>\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:192
-msgid ""
-"The following packages should be installed if you intend to translate or do "
-"any development (addons etc):\n"
-msgstr ""
-"Instaliraj sljedeće pakete, ako namjeravaš prevoditi ili programirati "
-"(dodaci itd.):\n"
-
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:200
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:250
 msgid ""
 "\n"
 "<u><b>Optional packages required by Third-party Addons</b></u>\n"
@@ -125,15 +93,8 @@ msgstr ""
 "\n"
 "<u><b>Opcionalni paketi koji su potrebni za dodatke trećih strana</b></u>\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:203
-msgid ""
-"Prerequistes required for the following <a href=\"https://gramps-project.org/"
-"wiki/index.php?title=Third-party_Addons\">Third-party Addons</a> to work:\n"
-msgstr ""
-"Preduvjeti za funkcioniranje sljedećih <a href=\"https://gramps-project.org/"
-"wiki/index.php?title=Third-party_Addons\">dodataka trećih strana</a>:\n"
-
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:224
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:275
 msgid ""
 "\n"
 "<u><b>Diagnostic checks</b></u>\n"
@@ -142,10 +103,12 @@ msgstr ""
 "<u><b>Dijagnostičke provjere</b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:225
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:276
 msgid "Check for potential issues.\n"
 msgstr "Provjeri, postoje li potencijalni problemi.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:226
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:277
 msgid ""
 "\n"
 "Environment settings:\n"
@@ -154,6 +117,7 @@ msgstr ""
 "Postavke okruženja:\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:231
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:282
 msgid ""
 "\n"
 "\n"
@@ -164,6 +128,7 @@ msgstr ""
 "<u><b>Dostupni jezici:</b></u>\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:236
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:287
 msgid ""
 "\n"
 "<u><b>Back Up Your Genealogy Files.</b></u>\n"
@@ -171,101 +136,13 @@ msgstr ""
 "\n"
 "<u><b>Spremi sigurnosnu kopiju tvojih genealoških datoteka.</b></u>\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:237
-msgid "Time to back up your genealogy files, and then test your backups!\n"
-msgstr ""
-"Vrijeme je za spremanje sigurnosnih kopija tvojih genealoških datoteka. "
-"Nakon toga ih provjeri!\n"
-
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:240
-msgid ""
-"<i><a href=\"https://gramps-project.org/wiki/index.php?"
-"title=How_to_make_a_backup\">Backup to Gramps XML</a> You will find backup "
-"in the Family Tree menu of recent Gramps versions, otherwise use Export in "
-"the same menu but uncheck privacy options in the Exporter Assistant in order "
-"to export all data.</i>\n"
-msgstr ""
-"<i><a href=\"https://gramps-project.org/wiki/index.php?"
-"title=How_to_make_a_backup\">Spremi sigurnosnu kopiju u Gramps XML formatu</"
-"a> Mogućnost spremanja sigurnosne kopije nalazi se u izborniku „Rodoslovi” "
-"novijih verzija Gramps-a, u protivnom koristi „Izvezi” u istom izborniku, "
-"ali odznači opcije privatnosti u pomoćniku za izvoz, kako bi se izvezli svi "
-"podaci.</i>\n"
-
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:246
-msgid ""
-"* Backups can be made at any time and at least on the first day of every "
-"month, if not more often.\n"
-msgstr ""
-"* Sigurnosne kopije mogu se napraviti bilo kada i barem prvog dana svakog "
-"mjeseca, ako ne i češće.\n"
-
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:248
-msgid ""
-"* Before any upgrade it is strongly recommended to backup each of your "
-"Family Trees.\n"
-msgstr ""
-"* Prije nadogradnje programa, izričito preporučujemo da spremiš sigurnosne "
-"kopije svih tvojih rodoslova.\n"
-
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:250
-msgid ""
-"* Test your backups by creating a new Family Tree and importing the backup."
-msgstr ""
-"* Ispitaj tvoje sigurnosne kopije na sljedeći način: stvori novi rodoslov i "
-"uvezi sigurnosnu kopiju."
-
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:268
-msgid ",  released "
-msgstr ", objavljen "
-
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:269
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:321
 msgid ", is the most current version.\n"
 msgstr ", je najnovija verzija.\n"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:282
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:365
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:431
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:490
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:491
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:538
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:559
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:594
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:595
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:619
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:620
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:684
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:687
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:747
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:748
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:847
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:859
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:868
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:870
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:883
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:945
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:991
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1047
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1050
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1062
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1084
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1132
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1134
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1204
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1278
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1443
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1484
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1485
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1852
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1854
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1913
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1920
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1949
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1951
-msgid "not found"
-msgstr "nije pronađeno"
-
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:287
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:339
 #, python-format
 msgid ""
 "You have Gramps %s. Please make a backup and then upgrade.\n"
@@ -275,6 +152,7 @@ msgstr ""
 "%s"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:291
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:343
 #, python-format
 msgid ""
 "You have Gramps %s installed; an unreleased development version. Thank you "
@@ -286,6 +164,7 @@ msgstr ""
 "tvoj prijatelj.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:299
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:351
 #, python-format
 msgid "You have Gramps %s. Congratulations, you have the current version.\n"
 msgstr "Imaš Gramps %s. Čestitamo, imaš aktualnu verziju.\n"
@@ -298,6 +177,13 @@ msgstr "Imaš Gramps %s. Čestitamo, imaš aktualnu verziju.\n"
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:694
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:891
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1093
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:378
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:504
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:548
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:597
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:748
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:953
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1160
 msgid " (Requires version "
 msgstr " (Zahtijeva verziju "
 
@@ -308,6 +194,13 @@ msgstr " (Zahtijeva verziju "
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:501
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:513
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:549
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:379
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:387
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:457
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:511
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:554
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:566
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:602
 msgid " or greater installed.)\n"
 msgstr " ili novija instalirana.)\n"
 
@@ -320,6 +213,15 @@ msgstr " ili novija instalirana.)\n"
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:690
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:886
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1089
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:386
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:456
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:509
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:552
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:564
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:601
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:744
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:948
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1156
 msgid " (Passed: version "
 msgstr " (Prošlo: verzija "
 
@@ -332,10 +234,20 @@ msgstr " (Prošlo: verzija "
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:743
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:744
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1045
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:414
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:479
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:538
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:539
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:587
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:735
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:797
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:798
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1107
 msgid "unknown version"
 msgstr "nepoznata verzija"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:370
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:422
 msgid "DISPLAY not set"
 msgstr "DISPLAY nije postavljen"
 
@@ -344,36 +256,17 @@ msgstr "DISPLAY nije postavljen"
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:497
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:508
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:545
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:505
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:549
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:561
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:598
 msgid " or greater.)\n"
 msgstr " ili novija.)\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:507
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:560
 msgid " (Requires "
 msgstr " (Zahtijeva "
-
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:597
-msgid "* Berkeley Database library (bsddb3: "
-msgstr "* Berkeley biblioteka baze podataka (bsddb3: "
-
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:622
-msgid "* SQLite Database library (sqlite3: "
-msgstr "* SQLite biblioteka baze podataka (sqlite3: "
-
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:636
-msgid "* xdg-utils (Manual check see instructions link)"
-msgstr "* xdg-utils (za ručnu provjeru, pogledaj poveznicu za upute)"
-
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:649
-msgid "* librsvg2 (Manual check see instructions link)"
-msgstr "* librsvg2 (za ručnu provjeru, pogledaj poveznicu za upute)"
-
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:660
-msgid ""
-"* language-pack-gnome-xx (Manual check see instructions link) for your "
-"Language <show locale here TBD>"
-msgstr ""
-"* language-pack-gnome-xx (za ručnu provjeru, pogledaj poveznicu za upute) za "
-"tvoj jezik <prikaži jezik ovdje TBD>"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:692
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1090
@@ -381,75 +274,60 @@ msgstr ""
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1490
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1495
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1689
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:745
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1157
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1161
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1560
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1565
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1759
 msgid " or greater installed.)"
 msgstr " ili novija instalirana.)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:695
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:749
 msgid " or greater)"
 msgstr " ili novija)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:726
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:780
 msgid "Graphviz not in system PATH"
 msgstr "Graphviz nije u STAZI sustava"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:789
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:848
 msgid "Ghostscript not in system PATH"
 msgstr "Ghostscript nije u STAZI sustava"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:804
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:863
 msgid " (Passed: version 0.5.x is installed.)"
 msgstr " (Prošlo: instalirana je verzija 0.5.x.)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:807
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:866
 msgid " (Requires version 0.5.x)"
 msgstr " (Zahtijeva verziju 0.5.x)"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:809
-msgid "* python-fontconfig not found, (Requires version 0.5.x)"
-msgstr "* python-fontconfig nije pronađen, (zahtijeva verziju 0.5.x)"
-
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:888
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:893
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:950
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:955
 msgid " or greater installed.) (enchant module: "
 msgstr " ili novija je instalirana.) (modul enchant: "
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:934
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:942
-msgid "installed"
-msgstr "instalirana"
-
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:949
-#, python-format
-msgid ""
-"* rcs %s TBD (Passed: version %s or greater installed. If not on Microsoft "
-"Windows)"
-msgstr ""
-"* rcs %s TBD (Prošlo: verzija %s ili novija je instalirana. Ako se ne radi o "
-"Microsoft Windowsu)"
-
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:953
-#, python-format
-msgid ""
-"* rcs %s TBD (Requires version %s or greater installed. If not on Microsoft "
-"Windows)"
-msgstr ""
-"* rcs %s TBD (Zahtijeva verziju %s ili novija je instalirana. Ako se ne radi "
-"o Microsoft Windowsu)"
-
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:989
-msgid "Installed but does not supply version"
-msgstr "Instalirana, ali ne daje podatke o verziji"
-
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1063
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1130
 #, python-format
 msgid "GExiv2 : %s (Exiv2 library : %s)"
 msgstr "GExiv2 : %s (Exiv2 biblioteka : %s)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1130
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1197
 msgid "found another font"
 msgstr "pronađen je jedan drugi font"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1137
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1205
 msgid ""
 "For addon Networkchart, font <a href=\"https://www.fontsquirrel.com/fonts/"
 "white-rabbit\">White Rabbit</a> provides an extremely readable result.\n"
@@ -458,6 +336,7 @@ msgstr ""
 "fonts/white-rabbit\">White Rabbit</a> daje izuzetno čitljiv rezultat.\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1173
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1241
 msgid "Why, when same code works in Graphview"
 msgstr "Zašto, kad isti kod radi u Graphviewu"
 
@@ -465,26 +344,30 @@ msgstr "Zašto, kad isti kod radi u Graphviewu"
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1230
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1240
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1250
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1246
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1298
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1308
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1318
 msgid "not installed"
 msgstr "nije instalirano"
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1257
-msgid "  and one of either: (pydotplus: "
-msgstr " i jedan od bilo kojeg: (pydotplus: "
-
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1258
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1327
 msgid ") or (pygraphviz: "
 msgstr ") ili (pygraphviz: "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1282
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1351
 msgid "Installed(MS-Windows)"
 msgstr "Instalirani (MS-Windows)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1286
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1355
 msgid "Installed(Linux/Mac)"
 msgstr "Instalirani (Linux / Mac)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1320
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1389
 msgid "not installed "
 msgstr "nije instalirano "
 
@@ -494,55 +377,54 @@ msgstr "nije instalirano "
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1547
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1632
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1638
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1444
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1614
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1616
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1617
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1702
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1708
 msgid "not found."
 msgstr "nije pronađeno."
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1397
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1466
 msgid "Standard. Passed: program installed - 32bit on 64bit Win OS."
 msgstr ""
 "Standardno. Prošlo: instalirani program – 32-bitni na 64-bitnom Win OS-u."
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1407
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1415
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1439
-msgid "Installed"
-msgstr "Instalirano"
-
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1449
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1518
 msgid ") (Requires the gramps addon listed under 'Plugin lib')"
 msgstr ") (Zahtijeva dodatak za gramps, navedene u „Plugin lib”)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1481
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1551
 msgid "DBF installed"
 msgstr "DBF instaliran"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1489
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1559
 msgid ".)(Requires version "
 msgstr ".) (Zahtijeva verziju "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1494
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1564
 msgid " installed.)(Passed: version "
 msgstr " instalirana.) (Prošlo: verzija "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1641
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1711
 #, python-format
 msgid "(OpenCV facedetection: %s)"
 msgstr "(Otkrivanje lica pomoću OpenCV: %s)"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1688
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1758
 msgid " (lxml: not found. Requires version "
 msgstr " (lxml: nije pronađen. Zahtijeva verziju "
 
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1706
-msgid "* Requires: MongoDB TBD / pymongo TBD"
-msgstr "* Zahtijeva: MongoDB TBD / pymongo TBD"
-
-#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1720
-#, python-format
-msgid "* Operating System: %s"
-msgstr "* Operacijski sustav: %s"
-
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1741
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1811
 msgid ""
 "<u><b><a href=\"https://gramps-project.org/wiki/index.php?"
 "title=Gramps_5.0_Wiki_Manual_-"
@@ -562,6 +444,14 @@ msgstr ""
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1801
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1802
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1803
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1817
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1818
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1819
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1820
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1870
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1871
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1872
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1874
 msgid "not set"
 msgstr "nije postavljeno"
 
@@ -573,10 +463,19 @@ msgstr "nije postavljeno"
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1806
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1807
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1808
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1822
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1823
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1824
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1825
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1876
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1877
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1878
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1879
 msgid "not tested"
 msgstr "nije testirano"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1775
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1845
 msgid ""
 "\n"
 "Installed Locales\\Translations (If only English is listed please re-install "
@@ -589,6 +488,7 @@ msgstr ""
 "\n"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1811
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1882
 msgid ""
 "\n"
 "Gramps Environment variables:\n"
@@ -599,10 +499,14 @@ msgstr ""
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1850
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1911
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1947
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1921
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1983
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2019
 msgid "found"
 msgstr "pronađeno"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1954
+#: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:2026
 msgid ""
 "Sphinx is a tool that builds the Gramps development documentation and man "
 "pages\n"

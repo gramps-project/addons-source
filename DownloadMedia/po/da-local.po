@@ -1,14 +1,16 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
+# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
+# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-26 10:18-0500\n"
-"PO-Revision-Date: 2024-09-29 17:48+0200\n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
 "Language: da_DK\n"
@@ -18,11 +20,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
 
-#: DownloadMedia/DownloadMedia.gpr.py:35
+#: DownloadMedia/DownloadMedia.gpr.py:35 DownloadMedia/DownloadMedia.gpr.py:36
 msgid "Download media files from the internet"
 msgstr "Hent mediafiler fra internettet"
 
-#: DownloadMedia/DownloadMedia.gpr.py:36
+#: DownloadMedia/DownloadMedia.gpr.py:36 DownloadMedia/DownloadMedia.gpr.py:37
 msgid "This tool downloads media files from the internet"
 msgstr "Dette værktøj henter mediafiler fra internettet"
 
@@ -45,7 +47,8 @@ msgstr "Hent medieværktøj"
 
 #: DownloadMedia/DownloadMedia.py:106
 msgid "Make sure you are connected to the internet before starting this tool."
-msgstr "Sørg for at du er forbundet til internettet inden du starter dette værktøj."
+msgstr ""
+"Sørg for at du er forbundet til internettet inden du starter dette værktøj."
 
 #: DownloadMedia/DownloadMedia.py:171 DownloadMedia/DownloadMedia.py:172
 msgid "Downloading files"

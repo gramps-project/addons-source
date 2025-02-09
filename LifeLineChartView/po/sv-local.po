@@ -2,21 +2,44 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Pär Ekholm <pehlm@pekholm.org>, 2021.
+# Bo Rosén <bo.rosen@home.se>, 2001.
+# Jens Arvidsson <jya@sverige.nu>, 2002, 2003, 2004, 2005.
+# Stefan Björk <betula@users.sourceforge.net>, 2005, 2006.
+# Peter Landgren <peter.talken@telia.com>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017.
+# Pär Ekholm <par.ekholm50@gmail.com>, 2016, 2018.
+# Pär Ekholm <par.ekholm@pekholm.se>, 2018, 2019.
+# Peter Landgren <peter@test>, 2010.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-28 23:17+0100\n"
-"PO-Revision-Date: 2021-05-24 13:14+0200\n"
-"Language-Team: \n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
+"Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/sv/>\n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3\n"
-"Last-Translator: Pär Ekholm <pehlm@pekholm.se>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: sv_SE\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10-dev\n"
+
+#: DynamicWeb//dynamicweb.py:2611 DynamicWeb/dynamicweb.py:3170
+#: LifeLineChartView/lifelinechartview.py:508
+msgid "Zoom in"
+msgstr "Zooma in"
+
+#: DynamicWeb//dynamicweb.py:2612 DynamicWeb/dynamicweb.py:3171
+#: LifeLineChartView/lifelinechartview.py:518
+msgid "Zoom out"
+msgstr "Zooma ut"
+
+#: DynamicWeb//dynamicweb.py:4181 DynamicWeb/dynamicweb.py:5098
+#: LifeLineChartView/_dummy_translation_string_po.py:101
+msgid "Maximum number of generations"
+msgstr "Maximalt antal generationer"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:10
 msgid "Warp the chart shape"
@@ -170,20 +193,10 @@ msgstr "Födelsetextfältsankare"
 msgid "Text alignment of the birth label."
 msgstr "Textanpassning för födelsetextfältet."
 
-#: LifeLineChartView/_dummy_translation_string_po.py:44
-#: LifeLineChartView/_dummy_translation_string_po.py:64
-msgid "Left"
-msgstr "Vänster"
-
 #: LifeLineChartView/_dummy_translation_string_po.py:45
 #: LifeLineChartView/_dummy_translation_string_po.py:65
 msgid "Center"
 msgstr "Centrera"
-
-#: LifeLineChartView/_dummy_translation_string_po.py:46
-#: LifeLineChartView/_dummy_translation_string_po.py:66
-msgid "Right"
-msgstr "Höger"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:48
 msgid "Show death label"
@@ -376,10 +389,6 @@ msgstr ""
 "På grund av anförluster kan en individ uppträda flera gånger i ett enkelt "
 "förfäderdiagram. Om detta är aktivt visas varje individ bara en gång."
 
-#: LifeLineChartView/_dummy_translation_string_po.py:101
-msgid "Maximum number of generations"
-msgstr "Maximalt antal generationer"
-
 #: LifeLineChartView/_dummy_translation_string_po.py:102
 msgid ""
 "if this number of generations has been reached, the algorithm doesn't go any "
@@ -482,29 +491,6 @@ msgstr ""
 "LifeLineChartView-beroenden saknas. Det är inte möjligt att använda detta "
 "insticksprogram utan dem."
 
-#: LifeLineChartView/lifelinechart.py:476
-msgid "calculated"
-msgstr "beräknad"
-
-#: LifeLineChartView/lifelinechart.py:477
-#: LifeLineChartView/lifelinechart.py:478
-#: LifeLineChartView/lifelinechart.py:479
-#: LifeLineChartView/lifelinechart.py:480
-msgid "estimated"
-msgstr "uppskattad"
-
-#: LifeLineChartView/lifelinechart.py:482
-msgid "about"
-msgstr "omkring"
-
-#: LifeLineChartView/lifelinechart.py:483
-msgid "before"
-msgstr "före"
-
-#: LifeLineChartView/lifelinechart.py:484
-msgid "after"
-msgstr "efter"
-
 #: LifeLineChartView/lifelinechart.py:1183
 #, python-brace-format
 msgid "cursor position at {date}"
@@ -530,146 +516,45 @@ msgstr "Dölj syskon"
 msgid "Show ancestors above "
 msgstr "Visa förfäder ovan "
 
-#: LifeLineChartView/lifelinechart.py:2679
-msgid "_Edit"
-msgstr "R_edigera"
-
-#: LifeLineChartView/lifelinechart.py:2687
-msgid "Edit family"
-msgstr "Redigera familj"
-
-#: LifeLineChartView/lifelinechart.py:2703
-msgid "Reorder families"
-msgstr "Sorterar om familjer"
-
-#: LifeLineChartView/lifelinechart.py:2709
-msgid "_Copy"
-msgstr "_Kopiera"
-
-#: LifeLineChartView/lifelinechart.py:2719
-msgid "Spouses"
-msgstr "Makar"
-
-#: LifeLineChartView/lifelinechart.py:2753
-msgid "Siblings"
-msgstr "Syskon"
-
-#: LifeLineChartView/lifelinechart.py:2819
-msgid "Children"
-msgstr "Barn"
-
-#: LifeLineChartView/lifelinechart.py:2856
-msgid "Parents"
-msgstr "Föräldrar"
-
-#: LifeLineChartView/lifelinechart.py:2890
-#: LifeLineChartView/lifelinechart.py:2932
-msgid "_Add"
-msgstr "_Lägg till"
-
-#: LifeLineChartView/lifelinechart.py:2899
-msgid "Related"
-msgstr "Släkt"
-
-#: LifeLineChartView/lifelinechart.py:2939
-msgid "Add child to family"
-msgstr "Lägg till barn till familj"
-
-#: LifeLineChartView/lifelinechart.py:2947
-msgid "Add partner to person"
-msgstr "Lägg partner till en person"
-
-#: LifeLineChartView/lifelinechart.py:2954
-msgid "Add a person"
-msgstr "Lägg till en person"
-
-#: LifeLineChartView/lifelinechart.py:3044
-msgid "Add Child to Family"
-msgstr "Lägg till barn till familjen"
-
-#: LifeLineChartView/lifelinechartview.gpr.py:152
-#, python-brace-format
-msgid ""
-"Failed to load the required module {module_name} version {module_version}."
-msgstr ""
-"Det gick inte att ladda den nödvändiga modulen {module_name} version "
-"{module_version}."
-
-#: LifeLineChartView/lifelinechartview.gpr.py:154
-#, python-brace-format
-msgid ""
-"\n"
-"\n"
-"It is not possible to use {self.plugin_name} without this module. You can "
-"either uninstall this plugin, or download the module."
-msgstr ""
-"\n"
-"\n"
-"Det är inte möjligt att använda {self.plugin_name} utan denna modul. Du kan "
-"antingen avinstallera detta insticksprogram eller ladda ner modulen."
-
-#: LifeLineChartView/lifelinechartview.gpr.py:161
-msgid " Plugin"
-msgstr " Insticksprogram"
-
-#: LifeLineChartView/lifelinechartview.gpr.py:163
-msgid "Download module"
-msgstr "Ladda ner modul"
-
-#: LifeLineChartView/lifelinechartview.gpr.py:164
-#: LifeLineChartView/lifelinechartview.py:834
-msgid "_Cancel"
-msgstr "_Avbryt"
-
-#: LifeLineChartView/lifelinechartview.gpr.py:170
-msgid "The user chose to ignore the warning once."
-msgstr "Användaren valde att ignorera varningen en gång."
-
-#: LifeLineChartView/lifelinechartview.gpr.py:174
-msgid "The user chose to install the module."
-msgstr "Användaren valde att installera modulen."
-
-#: LifeLineChartView/lifelinechartview.gpr.py:206
-#, python-format
-msgid "Unable to open '%s' with curl"
-msgstr "Kan inte öppna '%s' med curl"
-
 #: LifeLineChartView/lifelinechartview.gpr.py:217
 #: LifeLineChartView/lifelinechartview.gpr.py:224
+#: ../gramps/gen/plug/utils.py:349 ../gramps/gen/plug/utils.py:356
 #, python-format
 msgid "Unable to open '%s'"
 msgstr "Kan inte öppna '%s'"
 
 #: LifeLineChartView/lifelinechartview.gpr.py:233
+#: ../gramps/gen/plug/utils.py:363
 #, python-format
 msgid "Error in reading '%s'"
 msgstr "Fel vid läsning av '%s'"
 
 #: LifeLineChartView/lifelinechartview.gpr.py:248
+#: ../gramps/cli/arghandler.py:403 ../gramps/gen/plug/utils.py:374
 #, python-format
 msgid "Error: cannot open '%s'"
 msgstr "FEL: Kan inte öppna '%s'"
 
 #: LifeLineChartView/lifelinechartview.gpr.py:252
+#: ../gramps/gen/plug/utils.py:378
 #, python-format
 msgid "Error: unknown file type: '%s'"
 msgstr "Fel: okänd filtyp: '%s'"
 
 #: LifeLineChartView/lifelinechartview.gpr.py:318
+#: LifeLineChartView/lifelinechartview.gpr.py:24
 msgid "Life Line Ancestor Chart"
 msgstr "Life Line förfädersdiagram"
 
-#: LifeLineChartView/lifelinechartview.gpr.py:319
-#: LifeLineChartView/lifelinechartview.gpr.py:333
-msgid "Charts"
-msgstr "Diagram"
-
 #: LifeLineChartView/lifelinechartview.gpr.py:320
 #: LifeLineChartView/lifelinechartview.gpr.py:334
+#: LifeLineChartView/lifelinechartview.gpr.py:26
+#: LifeLineChartView/lifelinechartview.gpr.py:44
 msgid "Persons and their relation in a time based chart"
 msgstr "Personer och deras relation i ett tidsbaserat diagram"
 
 #: LifeLineChartView/lifelinechartview.gpr.py:332
+#: LifeLineChartView/lifelinechartview.gpr.py:42
 msgid "Life Line Descendant Chart"
 msgstr "Life Line ättlingadiagram"
 
@@ -679,12 +564,10 @@ msgid "General Layout"
 msgstr "Allmän layout"
 
 #: LifeLineChartView/lifelinechartview.py:399
+#: LifeLineChartView/lifelinechartview.gpr.py:34
+#: LifeLineChartView/lifelinechartview.gpr.py:52
 msgid "Life Line Chart"
 msgstr "Life Line-diagram"
-
-#: LifeLineChartView/lifelinechartview.py:508
-msgid "Zoom in"
-msgstr "Zooma in"
 
 #: LifeLineChartView/lifelinechartview.py:509
 #: LifeLineChartView/lifelinechartview.py:510
@@ -697,10 +580,6 @@ msgstr "Ctrl"
 #: LifeLineChartView/lifelinechartview.py:520
 msgid "Mouse wheel"
 msgstr "Mushjul"
-
-#: LifeLineChartView/lifelinechartview.py:518
-msgid "Zoom out"
-msgstr "Zooma ut"
 
 #: LifeLineChartView/lifelinechartview.py:527
 msgid "Zoom to original"
@@ -722,17 +601,9 @@ msgstr "Återställ placeringen och personvalet"
 msgid "Open Life Line Chart help"
 msgstr "Open Life Line-diagram hjälpsidor"
 
-#: LifeLineChartView/lifelinechartview.py:664
-msgid "Organize Bookmarks"
-msgstr "Ordna bokmärken"
-
 #: LifeLineChartView/lifelinechartview.py:831
 msgid "Export View as SVG"
 msgstr "Exportera vy som SVG"
-
-#: LifeLineChartView/lifelinechartview.py:835
-msgid "_Save"
-msgstr "_Spara"
 
 #: LifeLineChartView/lifelinechartview.py:946
 msgid "Reset all settings"

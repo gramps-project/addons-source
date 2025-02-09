@@ -1,78 +1,64 @@
-# Swedish translations for PACKAGE package.
-# Copyright (C) 2012 THE PACKAGE'S COPYRIGHT HOLDER
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# Pär Ekholm <pehlm@pekholm.org>, 2021.
+# Bo Rosén <bo.rosen@home.se>, 2001.
+# Jens Arvidsson <jya@sverige.nu>, 2002, 2003, 2004, 2005.
+# Stefan Björk <betula@users.sourceforge.net>, 2005, 2006.
+# Peter Landgren <peter.talken@telia.com>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017.
+# Pär Ekholm <par.ekholm50@gmail.com>, 2016, 2018.
+# Pär Ekholm <par.ekholm@pekholm.se>, 2018, 2019.
+# Peter Landgren <peter@test>, 2010.
 #
-# Peter Landgren <peter.talken@telia.com>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-09 20:22+0200\n"
-"PO-Revision-Date: 2012-05-09 20:41+0200\n"
-"Last-Translator: Peter Landgren <peter.talken@telia.com>\n"
-"Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
+"Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/sv/>\n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10-dev\n"
 
 #: ChangeGivenNames/ChangeGivenNames.gpr.py:36
+#: ChangeGivenNames/ChangeGivenNames.gpr.py:37
 msgid "Fix Capitalization of Given Names"
 msgstr "Ordna stavning av förnamn"
 
 #: ChangeGivenNames/ChangeGivenNames.gpr.py:37
+#: ChangeGivenNames/ChangeGivenNames.gpr.py:39
 msgid ""
 "Searches the entire database and attempts to fix capitalization of the given "
 "names."
-msgstr "Söker igenom hela databasen och försöker ordna stavning av förnamnen"
+msgstr "Söker igenom hela databasen och försöker ordna stavning av förnamnen."
 
 #: ChangeGivenNames/ChangeGivenNames.py:60
+#: ChangeGivenNames/ChangeGivenNames.py:66
 msgid "manual|Fix_Capitalization_of_Given_Names..."
-msgstr ""
-
-#: ChangeGivenNames/ChangeGivenNames.py:84
-#: ChangeGivenNames/ChangeGivenNames.py:211
-msgid "Capitalization changes"
-msgstr "Stavningsändringr"
+msgstr "manuell|Åtgärda_Versaler_i_förnamn..."
 
 #: ChangeGivenNames/ChangeGivenNames.py:98
+#: ChangeGivenNames/ChangeGivenNames.py:105
 msgid "Checking Given Names"
 msgstr "Kontrollera förnamn"
 
 #: ChangeGivenNames/ChangeGivenNames.py:99
+#: ChangeGivenNames/ChangeGivenNames.py:107
 msgid "Searching given names"
 msgstr "Söker förnamn"
 
-#: ChangeGivenNames/ChangeGivenNames.py:115
-msgid "No modifications made"
-msgstr "Inga ändringar gjorda"
-
-#: ChangeGivenNames/ChangeGivenNames.py:116
-msgid "No capitalization changes were detected."
-msgstr "Inga behov av stavningsändringar hittades"
-
-#: ChangeGivenNames/ChangeGivenNames.py:153
-msgid "Select"
-msgstr "Välj"
-
-#: ChangeGivenNames/ChangeGivenNames.py:156
-msgid "Original Name"
-msgstr "Ursprungligt namn"
-
-#: ChangeGivenNames/ChangeGivenNames.py:160
-msgid "Capitalization Change"
-msgstr "Stavningsändring"
-
 #: ChangeGivenNames/ChangeGivenNames.py:164
+#: ChangeGivenNames/ChangeGivenNames.py:204
 msgid "Affected Names"
 msgstr "Påverkat namn"
 
-#: ChangeGivenNames/ChangeGivenNames.py:171
-msgid "Building display"
-msgstr "Bygger upp visning"
-
-#: ChangeGivenNames/changenames.glade.h:1
+#: ChangeGivenNames/changenames.glade.h:1 ChangeGivenNames/changenames.glade:32
 msgid ""
 "Below is a list of the given names that \n"
 "Gramps can convert to correct capitalization. \n"
@@ -83,10 +69,6 @@ msgstr ""
 "Välj de namn du vill att Gramps skall omvandla. "
 
 #: ChangeGivenNames/changenames.glade.h:4
+#: ChangeGivenNames/changenames.glade:107
 msgid "Edit selection"
 msgstr "Redigera val"
-
-#: ChangeGivenNames/changenames.glade.h:5
-msgid "_Accept changes and close"
-msgstr "_Acceptera ändringar och stäng"
-

@@ -21,11 +21,11 @@ msgstr ""
 "OF GRAMPS, V. 3\n"
 "X-Generator: Poedit 1.5.4\n"
 
-#: Themes/themes.gpr.py:28
+#: Themes/themes.gpr.py:28 Themes/themes.gpr.py:29
 msgid "Theme preferences"
 msgstr "Tùy chọn chủ đề"
 
-#: Themes/themes.gpr.py:29
+#: Themes/themes.gpr.py:29 Themes/themes.gpr.py:31
 msgid ""
 "An addition to Preferences for simple Theme and Font adjustment.  Especially "
 "useful for Windows users."
@@ -33,50 +33,27 @@ msgstr ""
 "Một bổ sung cho Tùy chọn để điều chỉnh Chủ đề và Phông chữ đơn giản. Đặc "
 "biệt hữu ích cho người dùng Windows."
 
-#: Themes/themes.py:93
-msgid "_Help"
-msgstr "_Trợ giúp "
-
-#: Themes/themes.py:137 Themes/themes.py:155
+#: Themes/themes.py:137 Themes/themes.py:155 Themes/themes.py:172
+#: Themes/themes.py:190
 msgid "Theme is hardcoded by GTK_THEME"
 msgstr "Chủ đề bị có định do GTK_THEME"
 
-#: Themes/themes.py:140 Themes/themes.py:163
-#, python-format
-msgid "%s: "
-msgstr "%s:"
-
-#: Themes/themes.py:140 Themes/themes.py:190
+#: Themes/themes.py:140 Themes/themes.py:190 DynamicWeb/dynamicweb.py:5157
 msgid "Theme"
 msgstr "Chủ đề"
 
-#: Themes/themes.py:145
+#: Themes/themes.py:145 Themes/themes.py:180
 msgid "Dark Variant"
 msgstr "Biến thể tối"
 
-#: Themes/themes.py:163
+#: Themes/themes.py:163 Themes/themes.py:198
 msgid "Font"
 msgstr "Font chữ "
 
-#: Themes/themes.py:170
-msgid "_Toolbar"
-msgstr "_Thanh công cụ "
-
-#: Themes/themes.py:170
-msgid "Text"
-msgstr "Văn bản "
-
-#: Themes/themes.py:179
+#: Themes/themes.py:179 Themes/themes.py:214
 msgid "Fixed Scrollbar (requires restart)"
 msgstr "Thanh cuộn cổ điển (yêu cầu khởi động lại)"
 
-#: Themes/themes.py:186
-#, fuzzy
-msgid "Restore to defaults"
-msgstr "Khôi phục một gramplet về mặc định? "
-
-#~ msgid "Default"
-#~ msgstr "Mặc định "
-
-#~ msgid "Colors"
-#~ msgstr "Màu"
+#: ../gramps/gui/configure.py:983
+msgid "Colors"
+msgstr "Màu"

@@ -3,61 +3,50 @@
 # translation of de.po to Deutsch
 #
 #
-# Anton Huber <anton_huber@gmx.de>, 2005,2006.
+# Anton Huber <anton_huber@gmx.de>, 2005, 2006.
 # Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
 # Sebastian Vöcking <voeck@web.de>, 2005.
 # Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
 # Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 # Alois Pöttker <alois.poettker@gmx.de>, 2017.
+# Allan Nordhøy <epost@anotheragency.no>, 2021.
+# R. B. <weblate@macdefender.org>, 2021.
+# RiseT <tareiss1971@yahoo.de>, 2021.
+# David Straub <straub@protonmail.com>, 2021.
+# nautilusx <translate@disroot.org>, 2021.
+# Andreas Abraham <andreas.abraham@gmx.de>, 2021.
+# RiseT <twilite505-4bf24909@yahoo.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2020-07-26 22:10+0200\n"
+"POT-Creation-Date: 2020-08-02 22:39+0200\n"
+"PO-Revision-Date: 2025-02-09 06:44+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
-"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
+"addons/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 19.12.3\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10-dev\n"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:9
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:190
+#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
 msgid "Calculate Estimated Dates"
 msgstr "Geschätzte Daten berechnen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
+#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:11
 msgid "Calculates estimated dates for birth and death."
 msgstr "Berechnet geschätzte Daten für Geburt und Tod."
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:80
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:193
-msgid "Options"
-msgstr "Optionen"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:82
-msgid "Filter"
-msgstr "Filter"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:83
 msgid "Select filter to restrict people"
 msgstr "Filter zum eingrenzen der Personen wählen"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:87
-msgid "Filter Person"
-msgstr "Personenfilter"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:88
-msgid "The center person for the filter"
-msgstr "Die Hauptperson für den Filter"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:94
-msgid "Source text"
-msgstr "Quelltext"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:95
 msgid "Calculated Date Estimates"
@@ -78,10 +67,6 @@ msgstr ""
 "Berechnete Ereignisse, Notizen und Quellen entfernen: Wird sofort nach Start "
 "ausgeführt"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:103
-msgid "Birth"
-msgstr "Geburt"
-
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:104
 msgid "Do not add birth events"
 msgstr "Geburtsereignisse nicht hinzufügen"
@@ -97,10 +82,6 @@ msgstr "Geburtsereignisse mit Datum hinzufügen"
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:107
 msgid "Add a birth events with or without estimated dates"
 msgstr "Fügt Geburtsereignisse mit oder ohne berechnete Daten hinzu"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:110
-msgid "Death"
-msgstr "Tod"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:111
 msgid "Do not add death events"
@@ -126,17 +107,9 @@ msgstr "Maximales Alter"
 msgid "Maximum age that one can live to"
 msgstr "Maximales Alter das eine Person erreichen kann"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:124
-msgid "Maximum sibling age difference"
-msgstr "Maximaler Altersabstand von Geschwistern"
-
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:127
 msgid "Maximum age difference between siblings"
 msgstr "Maximaler Altersabstand zwischen Geschwistern"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:130
-msgid "Average years between generations"
-msgstr "Durchschnittlicher Abstand zwischen Generationen in Jahren"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:133
 msgid "Average years between two generations"
@@ -157,11 +130,6 @@ msgstr "Extreme (nach und vor)"
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:139
 msgid "Dates on events are either about or after/before"
 msgstr "Daten von Ereignissen sind entweder um oder nach/vor"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:170
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:187
-msgid "Help"
-msgstr "Hilfe"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:172
 msgid ""
@@ -249,32 +217,6 @@ msgstr "Bist du sich sicher, das du die Daten neu wählen willst?"
 msgid "Run Select Again"
 msgstr "Auswahl erneut ausführen"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:225
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:234
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:401
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:415
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:420
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:425
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:436
-msgid "Select"
-msgstr "Auswählen"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:234
-msgid "Person"
-msgstr "Person"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:234
-msgid "Action"
-msgstr "Aktion"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:235
-msgid "Birth Date"
-msgstr "Geburtsdatum"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:235
-msgid "Death Date"
-msgstr "Sterbedatum"
-
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:236
 msgid "Evidence"
 msgstr "Beleg"
@@ -307,10 +249,6 @@ msgid ""
 msgstr ""
 "Auswählen...\n"
 "\n"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:324
-msgid "Selecting..."
-msgstr "Auswählen..."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:359
 msgid "Add birth and death events"
@@ -367,7 +305,7 @@ msgstr "Geschätztes Sterbedatum"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:495
 msgid " Done! Committing..."
-msgstr "Fertig! Übernehmen..."
+msgstr " Fertig! Übernehmen..."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:499
 #, python-format
@@ -377,9 +315,3 @@ msgstr "%d Ereignisse hinzugefügt."
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:527
 msgid "Estimated date"
 msgstr "Geschätztes Datum"
-
-#~ msgid "Removed date estimates"
-#~ msgstr "Berechnete Daten entfernt"
-
-#~ msgid "Add date estimates"
-#~ msgstr "Datumsschätzungen hinzufügen"

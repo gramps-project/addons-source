@@ -1,57 +1,39 @@
 # Croatian translation for Gramps
 # This file is distributed under the same license as the Gramps package.
 # Copyright (C) Gramps project
-# Milo Ivir <mivir@milotype.de>, 2019., 2020.
+# Milo Ivir <mivir@milotype.de>, 2019, 2020.
+# Stephen Adams, Gramps Reddit, 2018.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2020-08-28 18:54+0200\n"
+"PO-Revision-Date: 2019-10-23 15:25+0200\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: \n"
+"Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.1\n"
-"Last-Translator: Milo Ivir <mail@milotype.de>\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
-"Language: hr\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Generator: Poedit 2.2.4\n"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:9
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:190
+#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
 msgid "Calculate Estimated Dates"
 msgstr "Procijeni datume"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
+#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:11
 msgid "Calculates estimated dates for birth and death."
 msgstr "Procijenjuje datume rođenja i smrti."
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:80
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:193
-msgid "Options"
-msgstr "Opcije"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:82
-msgid "Filter"
-msgstr "Filtar"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:83
 msgid "Select filter to restrict people"
 msgstr "Odaberi filtar za ograničavanje osoba"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:87
-msgid "Filter Person"
-msgstr "Osoba filtra"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:88
-msgid "The center person for the filter"
-msgstr "Središnja osoba ovog filtra"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:94
-msgid "Source text"
-msgstr "Tekst Izvora"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:95
 msgid "Calculated Date Estimates"
@@ -72,10 +54,6 @@ msgstr ""
 "Ukloni izračunate događaje, zabilješke i izvore; djeluje trenutno nakon "
 "izvršavanja"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:103
-msgid "Birth"
-msgstr "Rođenje"
-
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:104
 msgid "Do not add birth events"
 msgstr "Ne uključuj rođenja"
@@ -91,10 +69,6 @@ msgstr "Uključi rođenja s datumima"
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:107
 msgid "Add a birth events with or without estimated dates"
 msgstr "Uključi rođenja sa ili bez približnog datuma"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:110
-msgid "Death"
-msgstr "Smrt"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:111
 msgid "Do not add death events"
@@ -120,17 +94,9 @@ msgstr "Najviša životna dob"
 msgid "Maximum age that one can live to"
 msgstr "Najviša moguća životna dob"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:124
-msgid "Maximum sibling age difference"
-msgstr "Najveća starosna razlika prema bratu/sestri"
-
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:127
 msgid "Maximum age difference between siblings"
 msgstr "Najveća starosna razlika između braće i sestara"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:130
-msgid "Average years between generations"
-msgstr "Prosječni razmak u godinama između generacija"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:133
 msgid "Average years between two generations"
@@ -151,11 +117,6 @@ msgstr "Ekstremi (nakon i prije)"
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:139
 msgid "Dates on events are either about or after/before"
 msgstr "Datumi u događajima sadrže ili ’oko' ili 'prije/nakon’"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:170
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:187
-msgid "Help"
-msgstr "Pomoć"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:172
 msgid ""
@@ -239,32 +200,6 @@ msgstr "Zaista želiš ponovo odabrati podatke?"
 msgid "Run Select Again"
 msgstr "Odaberi ponovo"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:225
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:234
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:401
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:415
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:420
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:425
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:436
-msgid "Select"
-msgstr "Odaberi"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:234
-msgid "Person"
-msgstr "Osoba"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:234
-msgid "Action"
-msgstr "Radnja"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:235
-msgid "Birth Date"
-msgstr "Datum rođenja"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:235
-msgid "Death Date"
-msgstr "Datum smrti"
-
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:236
 msgid "Evidence"
 msgstr "Dokaz"
@@ -297,10 +232,6 @@ msgid ""
 msgstr ""
 "Odabiranje … \n"
 "\n"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:324
-msgid "Selecting..."
-msgstr "Odabiranje …"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:359
 msgid "Add birth and death events"

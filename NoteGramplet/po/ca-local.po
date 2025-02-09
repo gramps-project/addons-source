@@ -1,53 +1,50 @@
-# Catalan translations for PACKAGE package.
-# Copyright (C) 2009 THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# translation of ca.po to Català
+# TRADUCCIÓ AL CATALÀ DE GRAMPS
+# Copyright (C) 2008 PEL GRUP DE GRAMPS
+# Aquest fitxer es distribueix segons la mateixa llicència que Gramps
 #
+# Joan Creus <joan punt creus a gmail punt com>, 2008.
+# Joan Creus <joan.creus at gmail dot com>, 2008, 2009, 2010, 2011, 2012, 2013.
+# Arnau <arnaullv at gmail dot com>, 2017.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: ca\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-11-23 19:11+0100\n"
-"PO-Revision-Date: 2009-11-23 21:21+0100\n"
-"Last-Translator: \n"
-"Language-Team: Catalan <ca@dodds.net>\n"
+"POT-Creation-Date: 2010-03-08 16:37+0100\n"
+"PO-Revision-Date: 2010-03-07 17:48+0100\n"
+"Last-Translator: Joan Creus <joan.creus at gmail dot com>\n"
+"Language-Team: Català <en@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: NoteGramplet/NoteGramplet.gpr.py:3
-msgid "Note Gramplet"
-msgstr "Gramplet de Notes"
-
-#: NoteGramplet/NoteGramplet.gpr.py:9
-msgid "Note"
-msgstr "Nota"
-
+#: DataEntryGramplet/DataEntryGramplet.py:55 FilterRules/activepersonrule.py:45
 #: NoteGramplet/NoteGramplet.py:59
 msgid "Active person"
 msgstr "Persona activa"
 
-#: NoteGramplet/NoteGramplet.py:83
-msgid "Family"
-msgstr "Família"
-
-#: NoteGramplet/NoteGramplet.py:105
+#: DataEntryGramplet/DataEntryGramplet.py:69
+#: DataEntryGramplet/DataEntryGramplet.py:89 NoteGramplet/NoteGramplet.py:105
 msgid "Save"
 msgstr "Desar"
 
-#: NoteGramplet/NoteGramplet.py:108
+#: DataEntryGramplet/DataEntryGramplet.py:72
+#: DataEntryGramplet/DataEntryGramplet.py:92 NoteGramplet/NoteGramplet.py:108
 msgid "Abandon"
 msgstr "Abandonar"
 
-#: NoteGramplet/NoteGramplet.py:167
-#: NoteGramplet/NoteGramplet.py:248
-msgid "Person Note"
-msgstr "Nota de Persona"
+#: NoteGramplet/NoteGramplet.gpr.py:3 NoteGramplet/NoteGramplet.gpr.py:4
+msgid "Note Gramplet"
+msgstr "Gramplet de Notes"
 
-#: NoteGramplet/NoteGramplet.py:252
+#: NoteGramplet/NoteGramplet.py:252 ../gramps/gui/editors/editnote.py:373
 msgid "Add Note"
 msgstr "Afegir Nota"
 
-#: NoteGramplet/NoteGramplet.py:257
+#: NoteGramplet/NoteGramplet.py:257 ../gramps/gui/editors/editnote.py:324
+#: ../gramps/gui/editors/editnote.py:377
+#: ../gramps/gui/editors/objectentries.py:589
 msgid "Edit Note"
 msgstr "Edició de Nota"
-

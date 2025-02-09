@@ -1,14 +1,16 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
+# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
+# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-04 18:55-0600\n"
-"PO-Revision-Date: 2024-10-02 14:54+0200\n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
 "Language: da_DK\n"
@@ -18,15 +20,15 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
 
-#: FaceDetection/FaceDetection.gpr.py:3
+#: FaceDetection/FaceDetection.gpr.py:3 FaceDetection/FaceDetection.gpr.py:4
 msgid "Face Detection"
 msgstr "Ansigtsgenkendelse"
 
-#: FaceDetection/FaceDetection.gpr.py:4
+#: FaceDetection/FaceDetection.gpr.py:4 FaceDetection/FaceDetection.gpr.py:5
 msgid "Gramplet for detecting and assigning faces"
 msgstr "Gramplet til at genkende og tildele ansigter"
 
-#: FaceDetection/FaceDetection.gpr.py:12
+#: FaceDetection/FaceDetection.gpr.py:12 FaceDetection/FaceDetection.gpr.py:13
 msgid "Faces"
 msgstr "Ansigter"
 

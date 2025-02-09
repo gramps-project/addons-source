@@ -1,14 +1,16 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
+# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
+# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2024-10-10 11:28+0200\n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
 "Language: da_DK\n"
@@ -18,11 +20,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
 
-#: MediaVerify/MediaVerify.gpr.py:30
+#: MediaVerify/MediaVerify.gpr.py:30 MediaVerify/MediaVerify.gpr.py:31
 msgid "Media Verify"
 msgstr "Verificér medier"
 
-#: MediaVerify/MediaVerify.gpr.py:31
+#: MediaVerify/MediaVerify.gpr.py:31 MediaVerify/MediaVerify.gpr.py:32
 msgid "Verify that media is present in the correct path"
 msgstr "Verificér at medier er tilstede på den korrekte filsti"
 
@@ -53,10 +55,6 @@ msgstr "Ingen md5 dannet"
 #: MediaVerify/MediaVerify.py:85
 msgid "Errors"
 msgstr "Fejl"
-
-#: MediaVerify/MediaVerify.py:100
-msgid "Close"
-msgstr "Luk"
 
 #: MediaVerify/MediaVerify.py:101
 msgid "Close the Media Verify Tool"

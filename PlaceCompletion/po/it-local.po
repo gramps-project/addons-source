@@ -1,357 +1,376 @@
-# Italian translations for PACKAGE package.
-# Copyright (C) 2009 THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Italian translation for GRAMPS
+# Copyright (C) 2001-2010 the Gramps Project
 #
+# Common and noteworthy translations:
+#
+#   alternate              alternativo
+#   ancestor               ascendente
+#   ancestral              ascendenza
+#   autosave               salvataggio automatico
+#   baptism                battesimo
+#   birth                  nascita
+#   christening            battesimo (anachronistic - see gramps-devel ML)
+#   church parish          parrocchia
+#   county                 provincia
+#   country                stato
+#   common-law             (relazione) di fatto
+#   dead                   decedere
+#   death                  decesso
+#   descendant             discendente/discendenza
+#   had a child %(child)s  divenne padre/madre di %(child)s
+#                          (copes with male and femail children)
+#   he was son of          fu figlio di
+#   home person            persona-casa
+#   family (adj)           famigliare
+#   half-sibling           fratelli unilaterali
+#   in %(place)s           in quel di (copes with all sort of place names)
+#   location               località
+#   merge, to              fondere
+#   partner                partner
+#   province               provincia, regione
+#   record                 elemento
+#   relationship path      percorso (delle) relazioni
+#   report                 resoconto
+#   state (geog)           regione, stato
+#   step-sibling           fratellastri
+#   thumbnail              anteprima
+#   unmarried              celibe/nubile
+#
+# A special remark are required by some sentences related to reports.
+#
+# * "%s was born on %s"
+#
+#   In Italian, we use a tense equivalent to the English's past simple
+#   for living people, and the equivalent to English's present perfect
+#   for people who died.  Unfortunately, the program cannot distinguish
+#   between these two cases.
+#
+# * ", and was buried on %s."
+#
+#   In Italian, the word for buried declines accordingly to its subject
+#   gender.
+#
+# * "born %(date)s in %(place)s%(endnotes)s"
+#
+#   The same rule as for "buried" applies to born, as well.
+#
+# Marco Molteni <molter@gufi.org>, 2001-2002.
+# Lorenzo Cappelletti <lorenzo.cappelletti@email.it>, 2003.
+# Luigi Toscano <luigi.toscano@tiscali.it>, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019.
+# Giansalvo Gusinu <giansalvo.gusinu@gmail.com>, 2019.
+# Sebastiano Pistore <SebastianoPistore.info@protonmail.ch>, 2025.
+# Vincenzo Alfano <vinc.alfano@gmail.com>, 2016.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-11-23 19:32+0100\n"
-"PO-Revision-Date: 2009-11-23 21:35+0100\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2010-03-08 16:37+0100\n"
+"PO-Revision-Date: 2010-03-07 22:48+0100\n"
+"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: PlaceCompletion/PlaceCompletion.gpr.py:25
+#: PlaceCompletion/PlaceCompletion.gpr.py:26
 msgid "PlaceCompletion"
 msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.gpr.py:26
-msgid "Provides a browsable list of selected places, with possibility to complete/parse/set the attribute fields."
+#: PlaceCompletion/PlaceCompletion.gpr.py:28
+msgid ""
+"Provides a browsable list of selected places, with possibility to complete/"
+"parse/set the attribute fields."
 msgstr ""
 
-#: PlaceCompletion/PlaceCompletion.py:86
-msgid "Place Completion by parsing, file lookup and batch setting of place attributes"
+#: PlaceCompletion/PlaceCompletion.py:86 PlaceCompletion/PlaceCompletion.py:95
+msgid ""
+"Place Completion by parsing, file lookup and batch setting of place "
+"attributes"
 msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:236
 #: PlaceCompletion/PlaceCompletion.py:275
+#: PlaceCompletion/PlaceCompletion.py:258
 msgid "Error in PlaceCompletion.py"
 msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:237
+#: PlaceCompletion/PlaceCompletion.py:259
 msgid "Non existing group used in get"
 msgstr ""
 
-#: PlaceCompletion/PlaceCompletion.py:276
-msgid "Non existing group used in set"
-msgstr ""
-
 #: PlaceCompletion/PlaceCompletion.py:334
+#: PlaceCompletion/PlaceCompletion.py:340
 msgid "Places tool"
 msgstr ""
 
-#: PlaceCompletion/PlaceCompletion.py:426
-msgid "Non Valid Title Regex"
-msgstr ""
-
-#: PlaceCompletion/PlaceCompletion.py:427
-msgid "Non valid regular expression given to match title. Quiting."
-msgstr ""
-
 #: PlaceCompletion/PlaceCompletion.py:442
+#: PlaceCompletion/PlaceCompletion.py:408
 msgid "Missing regex groups in match lat/lon"
 msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:443
+#: PlaceCompletion/PlaceCompletion.py:409
 #, python-format
-msgid "Regex groups %(lat)s and %(lon)s must be present in lat/lon match. Quiting"
+msgid ""
+"Regex groups %(lat)s and %(lon)s must be present in lat/lon match. Quiting"
 msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:453
+#: PlaceCompletion/PlaceCompletion.py:419
 msgid "Non valid regex for match lat/lon"
 msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:454
+#: PlaceCompletion/PlaceCompletion.py:420
 msgid "Non valid regular expression given to find lat/lon. Quiting."
 msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:512
+#: PlaceCompletion/PlaceCompletion.py:479
 msgid "Finding Places and appropriate changes"
 msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:514
+#: PlaceCompletion/PlaceCompletion.py:481
 msgid "Filtering"
 msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:524
+#: PlaceCompletion/PlaceCompletion.py:491
 msgid "Loading lat/lon file in Memory..."
 msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:529
+#: PlaceCompletion/PlaceCompletion.py:497
 msgid "Examining places"
 msgstr ""
 
-#: PlaceCompletion/PlaceCompletion.py:549
-#: PlaceCompletion/PlaceCompletion.py:1113
-msgid "City"
-msgstr "Città"
-
-#: PlaceCompletion/PlaceCompletion.py:552
-msgid "State"
-msgstr "Regione"
-
-#: PlaceCompletion/PlaceCompletion.py:556
-msgid "Country"
-msgstr "Stato"
-
 #: PlaceCompletion/PlaceCompletion.py:717
+#: PlaceCompletion/PlaceCompletion.py:687
 msgid "Doing Place changes"
 msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:754
 #: PlaceCompletion/PlaceCompletion.py:764
+#: PlaceCompletion/PlaceCompletion.py:736
 msgid "Change places"
 msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:759
+#: PlaceCompletion/PlaceCompletion.py:731
 msgid "No place record was modified."
 msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:761
+#: PlaceCompletion/PlaceCompletion.py:733
 msgid "1 place record was modified."
 msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:763
+#: PlaceCompletion/PlaceCompletion.py:735
 #, python-format
 msgid "%d place records were modified."
 msgstr ""
 
-#: PlaceCompletion/PlaceCompletion.py:836
-#: PlaceCompletion/PlaceCompletion.py:843
-#: PlaceCompletion/PlaceCompletion.py:849
-#: PlaceCompletion/PlaceCompletion.py:855
-msgid "Cannot open file"
-msgstr "Impossibile aprire il file"
-
 #: PlaceCompletion/PlaceCompletion.py:837
+#: PlaceCompletion/PlaceCompletion.py:809
 msgid "The selected file is a directory, not a file."
 msgstr "Il file selezionato è una directory, non un file."
 
-#: PlaceCompletion/PlaceCompletion.py:844
-msgid "You do not have read access to the selected file."
-msgstr "Permessi insufficienti per leggere il file selezionato."
-
 #: PlaceCompletion/PlaceCompletion.py:850
+#: PlaceCompletion/PlaceCompletion.py:820
 msgid "The file you want to access is not a regular file."
 msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:856
+#: PlaceCompletion/PlaceCompletion.py:826
 msgid "The file does not exist."
 msgstr "Il file non esiste"
 
 #: PlaceCompletion/PlaceCompletion.py:875
+#: PlaceCompletion/PlaceCompletion.py:858
 msgid "Problem reading file"
-msgstr ""
-
-#: PlaceCompletion/PlaceCompletion.py:929
-msgid "lat"
-msgstr ""
-
-#: PlaceCompletion/PlaceCompletion.py:929
-msgid "lon"
 msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:993
 #: PlaceCompletion/PlaceCompletion.py:1005
+#: PlaceCompletion/PlaceCompletion.py:970
+#: PlaceCompletion/PlaceCompletion.py:982
 #, python-format
 msgid "invalid lat or lon value, %(lat)s, %(lon)s"
 msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:1074
+#: PlaceCompletion/PlaceCompletion.py:1135
 msgid "No lat/lon conversion"
 msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:1075
+#: PlaceCompletion/PlaceCompletion.py:1136
 msgid "All in degree notation"
 msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:1076
+#: PlaceCompletion/PlaceCompletion.py:1137
 msgid "All in decimal notation"
 msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:1077
+#: PlaceCompletion/PlaceCompletion.py:1138
 msgid "Correct -50° in 50°S"
 msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:1081
+#: PlaceCompletion/PlaceCompletion.py:1142
 msgid "No changes"
 msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:1082
+#: PlaceCompletion/PlaceCompletion.py:1143
 msgid "City[, State]"
 msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:1084
+#: PlaceCompletion/PlaceCompletion.py:1149
 msgid "TitleStart [, City] [, State]"
 msgstr ""
 
-#: PlaceCompletion/PlaceCompletion.py:1107
-msgid "City [,|.] State"
-msgstr ""
-
-#: PlaceCompletion/PlaceCompletion.py:1109
-msgid "City [,|.] Country"
-msgstr ""
-
-#: PlaceCompletion/PlaceCompletion.py:1111
-msgid "City (Country)"
-msgstr ""
-
 #: PlaceCompletion/PlaceCompletion.py:1117
+#: PlaceCompletion/PlaceCompletion.py:1177
 msgid "Don't search"
 msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:1120
+#: PlaceCompletion/PlaceCompletion.py:1180
 msgid "GeoNames country file, city search"
 msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:1125
+#: PlaceCompletion/PlaceCompletion.py:1185
 msgid "GeoNames country file, city localized variants search"
 msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:1136
+#: PlaceCompletion/PlaceCompletion.py:1202
 msgid "GeoNames country file, title begin, general search"
 msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:1141
+#: PlaceCompletion/PlaceCompletion.py:1207
 msgid "GeoNames USA state file, city search"
 msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:1155
+#: PlaceCompletion/PlaceCompletion.py:1221
 msgid "GNS Geonet country file, city search"
 msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:1164
+#: PlaceCompletion/PlaceCompletion.py:1236
 msgid "GNS Geonet country file, title begin, general search"
 msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:1172
+#: PlaceCompletion/PlaceCompletion.py:1244
 msgid "Wikipedia CSV Dump"
 msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:1260
+#: PlaceCompletion/PlaceCompletion.py:1332
 msgid "All Places"
 msgstr "Tutti i luoghi"
 
 #: PlaceCompletion/PlaceCompletion.py:1263
+#: PlaceCompletion/PlaceCompletion.py:1335
 msgid "No Latitude/Longitude given"
 msgstr ""
 
-#: PlaceCompletion/placecompletion.glade.h:1
-msgid "<b>1. Look up latitude and longitude:</b>"
-msgstr ""
-
-#: PlaceCompletion/placecompletion.glade.h:2
-msgid "<b>2. Parsing and Conversion of existing title or position:</b>"
-msgstr ""
-
-#: PlaceCompletion/placecompletion.glade.h:3
-msgid "<b>3. Set attributes of all selected places:</b>"
-msgstr ""
-
-#: PlaceCompletion/placecompletion.glade.h:4
-msgid ""
-"<i>Delete to delete a row, Double-click on the row to edit place with changes pre-entered, \n"
-"Press Tab on a row or Google Maps button to see place on a map. Press Apply to do all changes automatically</i>"
-msgstr ""
-
-#: PlaceCompletion/placecompletion.glade.h:6
-msgid "<span size=\"large\"><b>Selection of the Places you want to complete:</b></span>"
-msgstr ""
-
 #: PlaceCompletion/placecompletion.glade.h:7
+#: PlaceCompletion/placecompletion.glade:112
 msgid "Apply all suggested changes"
 msgstr ""
 
 #: PlaceCompletion/placecompletion.glade.h:8
+#: PlaceCompletion/placecompletion.glade:366
 msgid "C_enter latitude:"
 msgstr ""
 
-#: PlaceCompletion/placecompletion.glade.h:9
-msgid "C_ity:"
-msgstr "C_ittà:"
-
 #: PlaceCompletion/placecompletion.glade.h:10
+#: PlaceCompletion/placecompletion.glade:383
 msgid "Center longitude:"
 msgstr ""
 
 #: PlaceCompletion/placecompletion.glade.h:11
+#: PlaceCompletion/placecompletion.glade:649
 msgid "Change title into:"
 msgstr ""
 
 #: PlaceCompletion/placecompletion.glade.h:12
+#: ../gramps/gen/filters/rules/place/_hasplace.py:63
 msgid "City:"
 msgstr "Città:"
 
 #: PlaceCompletion/placecompletion.glade.h:13
+#: PlaceCompletion/placecompletion.glade:664
 msgid "Convert lat/lon as:"
 msgstr ""
 
 #: PlaceCompletion/placecompletion.glade.h:14
+#: PlaceCompletion/placecompletion.glade:336
 msgid "Count_ry:"
 msgstr "Sta_to:"
 
 #: PlaceCompletion/placecompletion.glade.h:15
+#: ../gramps/gen/filters/rules/place/_hasplace.py:66
 msgid "Country:"
 msgstr "Stato:"
 
-#: PlaceCompletion/placecompletion.glade.h:16
-msgid "County:"
-msgstr "Contea/Provincia:"
-
 #: PlaceCompletion/placecompletion.glade.h:17
+#: PlaceCompletion/placecompletion.glade:460
 msgid "Height:"
 msgstr "Altezza:"
 
-#: PlaceCompletion/placecompletion.glade.h:18
-msgid "Parish"
-msgstr "Parrocchia"
-
 #: PlaceCompletion/placecompletion.glade.h:19
+#: PlaceCompletion/placecompletion.glade:195
 msgid "Parish:"
 msgstr "Parrocchia:"
 
 #: PlaceCompletion/placecompletion.glade.h:20
+#: PlaceCompletion/placecompletion.glade:579
 msgid "Parse as:"
 msgstr ""
 
-#: PlaceCompletion/placecompletion.glade.h:21
-msgid "Parse title:"
-msgstr ""
-
 #: PlaceCompletion/placecompletion.glade.h:22
+#: PlaceCompletion/placecompletion.glade:271
 msgid "Place _filter:"
 msgstr ""
 
 #: PlaceCompletion/placecompletion.glade.h:23
+#: PlaceCompletion/placecompletion.glade:430
 msgid "Places in a rectangle:"
 msgstr ""
 
 #: PlaceCompletion/placecompletion.glade.h:24
+#: PlaceCompletion/placecompletion.glade:554
 msgid "Search in:"
 msgstr ""
 
 #: PlaceCompletion/placecompletion.glade.h:25
+#: PlaceCompletion/placecompletion.glade:566
 msgid "Select A File"
 msgstr "Selezione file"
 
-#: PlaceCompletion/placecompletion.glade.h:26
-msgid "State:"
-msgstr "Regione:"
-
-#: PlaceCompletion/placecompletion.glade.h:27
-msgid "Width:"
-msgstr "Larghezza:"
-
 #: PlaceCompletion/placecompletion.glade.h:28
+#: ../gramps/gen/filters/rules/place/_hasplace.py:67
 msgid "ZIP/Postal Code:"
 msgstr "CAP:"
 
 #: PlaceCompletion/placecompletion.glade.h:29
+#: PlaceCompletion/placecompletion.glade:85
 msgid "_Google Maps"
 msgstr "_Google Maps"
-

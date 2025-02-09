@@ -1,14 +1,16 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
+# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
+# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-02 14:37-0600\n"
-"PO-Revision-Date: 2024-09-29 09:12+0200\n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
 "Language: da_DK\n"
@@ -18,33 +20,24 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
 
+#: EventDescriptionEditor/EventDescriptionEditor.py:142
+#: DescendantsLines/DescendantsLines.py:1688
+msgid "Replace"
+msgstr "Erstat"
+
 #: DescendantsLines/DescendantsLines.gpr.py:26
+#: DescendantsLines/DescendantsLines.gpr.py:27
 msgid "Descendants Lines"
 msgstr "Efterkommerlinier"
 
 #: DescendantsLines/DescendantsLines.gpr.py:27
+#: DescendantsLines/DescendantsLines.gpr.py:28
 msgid "Produces descendants lines of a person"
 msgstr "Danner efterkommerlinier for en person"
 
 #: DescendantsLines/DescendantsLines.py:463
 msgid "Using SVG type for supplemental document is not supported!"
 msgstr "At benytte SVG type til supplerende dokument er ikke understøttet!"
-
-#: DescendantsLines/DescendantsLines.py:1329
-msgid "Unknown"
-msgstr "Ukendt"
-
-#: DescendantsLines/DescendantsLines.py:1525
-msgid "Report Options"
-msgstr "Rapport tilvalg"
-
-#: DescendantsLines/DescendantsLines.py:1527
-msgid "Center Person"
-msgstr "Fokusperson"
-
-#: DescendantsLines/DescendantsLines.py:1528
-msgid "The center person for the report"
-msgstr "Person som er i fokus for rapporten"
 
 #: DescendantsLines/DescendantsLines.py:1531
 msgid "Output format"
@@ -70,17 +63,9 @@ msgstr "PS format"
 msgid "The output format to be used"
 msgstr "Uddataformat der benyttes"
 
-#: DescendantsLines/DescendantsLines.py:1540
-msgid "Destination"
-msgstr "Bestemmelsessted"
-
 #: DescendantsLines/DescendantsLines.py:1541
 msgid "The destination file for the content."
 msgstr "Bestemmelsessted for indholdet."
-
-#: DescendantsLines/DescendantsLines.py:1544
-msgid "Generations"
-msgstr "Generationer"
 
 #: DescendantsLines/DescendantsLines.py:1545
 msgid "The number of generations to include in the chart. (0 for unlimited)"
@@ -133,10 +118,6 @@ msgstr "Til venstre for tekst"
 #: DescendantsLines/DescendantsLines.py:1573
 msgid "Position of image relative to text"
 msgstr "Billedets placering i forhold til tekst"
-
-#: DescendantsLines/DescendantsLines.py:1577
-msgid "Report Options (2)"
-msgstr "Rapport-tilvalg (2)"
 
 #: DescendantsLines/DescendantsLines.py:1579
 msgid "Colour Name by Gender"
@@ -199,10 +180,6 @@ msgid ""
 msgstr ""
 "Maksimum længde af en hændelses notefelt i en tekstblok, '$e(n)\n"
 "0=ubegrænset "
-
-#: DescendantsLines/DescendantsLines.py:1610
-msgid "Display"
-msgstr "Vis"
 
 #: DescendantsLines/DescendantsLines.py:1612
 msgid "Box around Person's block"
@@ -283,14 +260,6 @@ msgstr ""
 "c=det almindeligste brugte fornav, t=titel, s=endelse, g=familiekælenavn\\n\n"
 "Se Wiki manualen > rapporter > del 2"
 
-#: DescendantsLines/DescendantsLines.py:1656
-msgid ""
-"Descendant\n"
-"Display Format"
-msgstr ""
-"Efterkommer\n"
-"Visningsformat"
-
 #: DescendantsLines/DescendantsLines.py:1662
 #: DescendantsLines/DescendantsLines.py:1681
 msgid ""
@@ -298,26 +267,6 @@ msgid ""
 "See Wiki Manual > Reports > part 2\n"
 "formating: dates=d(ymdMo) places=D(elcuspnoitxy) notes=n abbreviated_type=t"
 msgstr ""
-
-#: DescendantsLines/DescendantsLines.py:1675
-msgid ""
-"Spousal\n"
-"Display Format"
-msgstr ""
-"Ægtefællerelateret\n"
-"Visningsformat"
-
-#: DescendantsLines/DescendantsLines.py:1688
-msgid "Replace"
-msgstr "Erstat"
-
-#: DescendantsLines/DescendantsLines.py:1691
-msgid ""
-"Replace Display Format:\n"
-"'Replace this'/' with this'"
-msgstr ""
-"Erstat visningsformat:\n"
-"'Erstat dette'/' med dette'"
 
 #: DescendantsLines/DescendantsLines.py:1693
 msgid ""
@@ -392,10 +341,6 @@ msgstr ""
 "Hvis denne værdi er 0, vil børne-feltet blive centreret under ægtefællen. Jo "
 "større værdi, jo mere er feltet flyttet til venstre mod efterkommeren."
 
-#: DescendantsLines/DescendantsLines.py:1733
-msgid "Children"
-msgstr "Børn"
-
 #: DescendantsLines/DescendantsLines.py:1735
 msgid "OL_PAD"
 msgstr "OL_PAD"
@@ -458,17 +403,9 @@ msgstr ""
 msgid "Header and Footer"
 msgstr "Sidehoved og sidefod"
 
-#: DescendantsLines/DescendantsLines.py:1775
-msgid "Title text"
-msgstr "Titeltekst"
-
 #: DescendantsLines/DescendantsLines.py:1776
 msgid "The text that will be written in the header of the document"
 msgstr "Teksten der vil blive skrevet i sidehovedet af  dokumentet"
-
-#: DescendantsLines/DescendantsLines.py:1780
-msgid "Footer text"
-msgstr "Tekst til sidefod"
 
 #: DescendantsLines/DescendantsLines.py:1781
 msgid "The text that will be written in the footer of the document"
@@ -484,10 +421,6 @@ msgid ""
 "footer"
 msgstr ""
 "Et tal der multiplicerer basisstørrelsen af teksten i titlen og sidefoden"
-
-#: DescendantsLines/DescendantsLines.py:1791
-msgid "Privacy"
-msgstr "Persondatabeskyttelse"
 
 #: DescendantsLines/DescendantsLines.py:1793
 msgid "Protect People, Images or Events that are marked Private"

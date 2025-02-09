@@ -1,25 +1,70 @@
-# Finnish translations for Gramps GraphView addon.
+# translation of fi.po to Finnish
+# GRAMPS
+# Copyright (C) YEAR ORGANIZATION.
 #
-# Matti Niemelä <niememat@gmail.com>, 2018.
-#
+# Eero Tamminen <eerot@sf>, 2005, 2006, 2007, 2008.
+# Janne Kovesjärvi <janne.kovesjarvi@gmail.com>, 2008, 2009, 2013.
+# Matti Niemelä <niememat@gmail.com>, 2014, 2015, 2016, 2017, 2018.
+# Pekka Valta <pekka.valta@kolumbus.fi>, 2014, 2018.
+# Niemelä <niememat@gmail.com>, 2017, 2018.
+# Bo Rosén <bo.rosen@home.se>, 2001.
+# Jens Arvidsson <jya@sverige.nu>, 2002, 2003, 2004, 2005.
+# Stefan Björk <betula@users.sourceforge.net>, 2005, 2006.
+# Peter Landgren <peter.talken@telia.com>, 2007, 2008, 2009, 2010, 2011.
+# Anton Huber <anton_huber@gmx.de>, 2005, 2006.
+# Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
+# Sebastian Vöcking <voeck@web.de>, 2005.
+# Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
+# Alex Roitman <shura@gramps-project.org>, 2006.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
 msgid ""
 msgstr ""
-"Project-Id-Version: gramps51\n"
+"Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-29 11:23-0500\n"
-"PO-Revision-Date: 2022-09-08 21:57+0300\n"
+"POT-Creation-Date: 2018-10-02 02:13+0300\n"
+"PO-Revision-Date: 2019-12-10 13:09+0200\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
-"Language-Team: suomi\n"
+"Language-Team: niememat@gmail.com\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 2.0.6\n"
 
-#: GraphView/avatars.py:59
-msgid "Custom"
-msgstr "Mukautettu"
+#: DynamicWeb//dynamicweb.py:2611 DynamicWeb/dynamicweb.py:3170
+#: GraphView/graphview.py:1021
+msgid "Zoom in"
+msgstr "Lähennä"
+
+#: DynamicWeb//dynamicweb.py:2612 DynamicWeb/dynamicweb.py:3171
+#: GraphView/graphview.py:1028
+msgid "Zoom out"
+msgstr "Loitonna"
+
+#: QuiltView/QuiltView.py:1191 QuiltView/QuiltView.py:1320
+msgid "Edit tags"
+msgstr "Muokkaa tageja"
+
+#: QuiltView/QuiltView.py:1500 GraphView/graphview.py:3872
+msgid "Set as home person"
+msgstr "Aseta kotihenkilö"
+
+#: QuiltView/QuiltView.py:1656 GraphView/graphview.py:4300
+#, python-format
+msgid "Adding Tags to person (%s)"
+msgstr "Lisää tageja henkilölle (%s)"
+
+#: QuiltView/QuiltView.py:1661 GraphView/graphview.py:4305
+#, python-format
+msgid "Adding Tags to family (%s)"
+msgstr "Lisää tageja perheelle (%s)"
+
+#: DeepConnectionsGramplet.py:69 EditExifMetadata/editexifmetadata.py:215
+#: GraphView/graphview.py:3711
+msgid "Copy"
+msgstr "Kopioi"
 
 #: GraphView/avatars.py:60
 msgid "Dark (default)"
@@ -34,319 +79,204 @@ msgid "Cartoon"
 msgstr "Väripiirros"
 
 #: GraphView/graphview.gpr.py:34 GraphView/graphview.py:183
+#: GraphView/graphview.gpr.py:4 GraphView/graphview.gpr.py:14
+#: GraphView/graphview.py:189
 msgid "Graph View"
 msgstr "Kaavionäkymä"
 
-#: GraphView/graphview.gpr.py:35
-msgid "Charts"
-msgstr "Kaaviot"
-
-#: GraphView/graphview.gpr.py:36
+#: GraphView/graphview.gpr.py:36 GraphView/graphview.gpr.py:6
 msgid "Dynamic and interactive graph of relations"
 msgstr "Dynaaminen ja vuorovaikutteinen suhteiden kuvaaja"
 
-#: GraphView/graphview.gpr.py:49
-msgid ""
-"Graphview Warning:  Goocanvas 2 or 3 (https://wiki.gnome.org/action/show/"
-"Projects/GooCanvas) is required for this view to work"
-msgstr ""
-"Kaavionäkymä varoitus:  Goocanvas 2 tai 3 (https://wiki.gnome.org/action/"
-"show/Projects/GooCanvas) tarvitaan, jotta tämä näkymä toimisi"
-
-#: GraphView/graphview.gpr.py:54
-msgid ""
-"Graphview Warning:  GraphViz (http://www.graphviz.org) is required for this "
-"view to work"
-msgstr ""
-"Käävionäkymä varoitus:  GraphViz (http://www.graphviz.org) tarvitaan, jotta "
-"tämä näkymä toimisi"
-
-#: GraphView/graphview.gpr.py:63
-msgid "Graphview Failed to Load"
-msgstr "Kaavionäkymän lataus epäonnistui"
-
-#: GraphView/graphview.gpr.py:64
-#, python-format
-msgid ""
-"\n"
-"\n"
-"Graphview is missing python modules or programs.\n"
-"%smust be installed.\n"
-"\n"
-"For now, it may be possible to install the files manually. See\n"
-"<a href=\"https://gramps-project.org/wiki/index.php?title=Graph_View\" "
-"title=\"https://gramps-project.org/wiki/index.php?title=Graph_View\">https://"
-"gramps-project.org/wiki/index.php?title=Graph_View</a> \n"
-"\n"
-"To dismiss all future Graphview warnings click Dismiss."
-msgstr ""
-"\n"
-"\n"
-"Kaavionäkymästä puuttuu python-moduuleja tai -ohjelmia.\n"
-"%son asennettava.\n"
-"\n"
-"Toistaiseksi voi olla mahdollista asentaa tiedostot manuaalisesti. Katso\n"
-"<a href=\"https://gramps-project.org/wiki/index.php?title=Graph_View\" "
-"title=\"https://gramps-project.org/wiki/index.php?title=Graph_View\">https://"
-"gramps-project.org/wiki/index.php?title=Graph_View</a> \n"
-"\n"
-"Voit hylätä kaikki tulevat Graphview-varoitukset valitsemalla Hylkää."
-
-#: GraphView/graphview.gpr.py:80
-msgid " Dismiss "
-msgstr " Hylkää "
-
-#: GraphView/graphview.gpr.py:81
-msgid "Continue"
-msgstr "Jatka"
-
-#: GraphView/graphview.py:711 GraphView/graphview.py:3619
-msgid "Show images"
-msgstr "Näytä kuvat"
-
-#: GraphView/graphview.py:714
+#: GraphView/graphview.py:714 GraphView/graphview.py:757
 msgid "Show avatars"
 msgstr "Näytä hahmot"
 
 #: GraphView/graphview.py:717 GraphView/graphview.py:3627
+#: GraphView/graphview.py:760 GraphView/graphview.py:3736
 msgid "Highlight the home person"
 msgstr "Korosta kotihenkilö"
 
 #: GraphView/graphview.py:721 GraphView/graphview.py:3635
+#: GraphView/graphview.py:764 GraphView/graphview.py:3744
 msgid "Show full dates"
 msgstr "Näytä täydelliset päivämäärät"
 
 #: GraphView/graphview.py:725 GraphView/graphview.py:3643
+#: GraphView/graphview.py:768 GraphView/graphview.py:3752
 msgid "Show places"
 msgstr "Näytä paikat"
 
-#: GraphView/graphview.py:728 GraphView/graphview.py:2929
-msgid "Default"
-msgstr "Oletus"
-
-#: GraphView/graphview.py:734
-msgid "Place format"
-msgstr "Paikan muoto"
-
-#: GraphView/graphview.py:739 GraphView/graphview.py:3651
-msgid "Show tags"
-msgstr "Näytä tagit"
-
-#: GraphView/graphview.py:741
+#: GraphView/graphview.py:741 GraphView/graphview.py:784
 msgid "Vertical: Top to Bottom"
 msgstr "Pystysuora: ylhäältä alas"
 
-#: GraphView/graphview.py:741
+#: GraphView/graphview.py:741 GraphView/graphview.py:784
 msgid "Vertical: Bottom to Top"
 msgstr "Pystysuora: Alhaalta ylös"
 
-#: GraphView/graphview.py:741
+#: GraphView/graphview.py:741 GraphView/graphview.py:784
 msgid "Horizontal: Left to Right"
 msgstr "Vaakasuora: Vasemmalta oikealle"
 
-#: GraphView/graphview.py:741
+#: GraphView/graphview.py:741 GraphView/graphview.py:784
 msgid "Horizontal: Right to Left"
 msgstr "Vaakasuora: Oikealta vasemmalle"
 
-#: GraphView/graphview.py:743
+#: GraphView/graphview.py:743 GraphView/graphview.py:786
 msgid "Time Direction"
 msgstr "Ajan suunta"
 
-#: GraphView/graphview.py:747
-msgid "Layout"
-msgstr "Asetelma"
-
-#: GraphView/graphview.py:765
+#: GraphView/graphview.py:765 GraphView/graphview.py:812
 msgid "Person theme"
 msgstr "Henkilöteema"
 
-#: GraphView/graphview.py:770
+#: GraphView/graphview.py:770 GraphView/graphview.py:817
 msgid "Path color to home person"
 msgstr "Polun väri kotihenkilölle"
 
-#: GraphView/graphview.py:774
+#: GraphView/graphview.py:774 GraphView/graphview.py:821
 msgid "Font:"
 msgstr "Kirjasin:"
 
-#: GraphView/graphview.py:788
+#: GraphView/graphview.py:788 GraphView/graphview.py:835
 msgid "Avatars style"
 msgstr "Hahmon tyyli"
 
-#: GraphView/graphview.py:794
+#: GraphView/graphview.py:794 GraphView/graphview.py:841
 msgid "PNG files"
 msgstr "PNG tiedosto"
 
-#: GraphView/graphview.py:799
+#: GraphView/graphview.py:799 GraphView/graphview.py:846
 msgid "Male avatar:"
 msgstr "Miehen hahmo:"
 
-#: GraphView/graphview.py:800
+#: GraphView/graphview.py:800 GraphView/graphview.py:847
 msgid "Choose male avatar"
 msgstr "Valitse miehen hahmo"
 
-#: GraphView/graphview.py:812
+#: GraphView/graphview.py:812 GraphView/graphview.py:859
 msgid "Female avatar:"
 msgstr "Naisen hahmo:"
 
-#: GraphView/graphview.py:813
+#: GraphView/graphview.py:813 GraphView/graphview.py:860
 msgid "Choose female avatar"
 msgstr "Valitse naisen hahmo"
 
-#: GraphView/graphview.py:827
+#: GraphView/graphview.py:827 GraphView/graphview.py:900
 msgid "Active person border size"
 msgstr "Aktiivisen henkilön rajauskoko"
 
-#: GraphView/graphview.py:832
+#: GraphView/graphview.py:832 GraphView/graphview.py:905
 msgid "Person border size"
 msgstr "Henkilön rajauskoko"
 
-#: GraphView/graphview.py:835
+#: GraphView/graphview.py:835 GraphView/graphview.py:908
 msgid "Themes"
 msgstr "Teemat"
 
 #: GraphView/graphview.py:848 GraphView/graphview.py:3661
+#: GraphView/graphview.py:921 GraphView/graphview.py:3770
 msgid "Show animation"
 msgstr "Näytä animaatio"
 
-#: GraphView/graphview.py:852
+#: GraphView/graphview.py:852 GraphView/graphview.py:925
 msgid "Animation speed (1..5 and 5 is the slower)"
 msgstr "Animaationopeus (1..5 ja 5 on hitaampi)"
 
-#: GraphView/graphview.py:856
+#: GraphView/graphview.py:856 GraphView/graphview.py:929
 msgid "Animation count (0..8 use 0 to turn off)"
 msgstr "Animaatio määrä (0..8 käytössä, 0 sammuttaa)"
 
-#: GraphView/graphview.py:865
+#: GraphView/graphview.py:865 GraphView/graphview.py:938
 msgid "Animation"
 msgstr "Animaatio"
 
-#: GraphView/graphview.py:879
+#: GraphView/graphview.py:879 GraphView/graphview.py:952
 msgid "Search in all database"
 msgstr "Haku kaikista tietokannoista"
 
-#: GraphView/graphview.py:881
+#: GraphView/graphview.py:881 GraphView/graphview.py:954
 msgid "Also apply search by all database."
 msgstr "Käytä myös hakua kaikista tietokannoista."
 
-#: GraphView/graphview.py:884
+#: GraphView/graphview.py:884 GraphView/graphview.py:957
 msgid "Show person images"
 msgstr "Näytä henkilökuvat"
 
-#: GraphView/graphview.py:887
+#: GraphView/graphview.py:887 GraphView/graphview.py:960
 msgid "Show persons thumbnails in search result list."
 msgstr "Näytä henkilöiden pikkukuvat hakutulosluettelossa."
 
-#: GraphView/graphview.py:890
+#: GraphView/graphview.py:890 GraphView/graphview.py:963
 msgid "Show bookmarked first"
 msgstr "Näytä kirjanmerkityt ensin"
 
-#: GraphView/graphview.py:893
+#: GraphView/graphview.py:893 GraphView/graphview.py:966
 msgid "Show bookmarked persons first in search result list."
 msgstr "Näytä kirjanmerkityt henkilöt ensimmäisenä hakutulosluettelossa."
 
-#: GraphView/graphview.py:895
+#: GraphView/graphview.py:895 DenominoViso/DenominoViso.py:2001
 msgid "Search"
 msgstr "Hae"
 
-#: GraphView/graphview.py:926
+#: GraphView/graphview.py:926 GraphView/graphview.py:999
 msgid "Select a dot file name"
 msgstr "Valitse pistetiedoston nimi"
 
-#: GraphView/graphview.py:929
-msgid "_Cancel"
-msgstr "_Peruuta"
-
-#: GraphView/graphview.py:930
-msgid "_Apply"
-msgstr "_Käytä"
-
-#: GraphView/graphview.py:943
-msgid "File already exists"
-msgstr "Tiedosto on jo olemassa"
-
-#: GraphView/graphview.py:944
-msgid ""
-"You can choose to either overwrite the file, or change the selected filename."
-msgstr "Voit joko ylikirjoittaa tiedoston tai vaihtaa valitun tiedoston nimen."
-
-#: GraphView/graphview.py:946
-msgid "_Overwrite"
-msgstr "_Ylikirjoita"
-
-#: GraphView/graphview.py:947
-msgid "_Change filename"
-msgstr "_Vaihda tiedoston nimeä"
-
-#: GraphView/graphview.py:962
-#, python-format
-msgid "Could not create %s"
-msgstr "Ei voitu luoda %s"
-
-#: GraphView/graphview.py:1021
-msgid "Zoom in"
-msgstr "Lähennä"
-
-#: GraphView/graphview.py:1028
-msgid "Zoom out"
-msgstr "Loitonna"
-
-#: GraphView/graphview.py:1035
+#: GraphView/graphview.py:1035 LifeLineChartView/lifelinechartview.py:527
 msgid "Zoom to original"
 msgstr "Alkuperäinen koko"
 
-#: GraphView/graphview.py:1042
+#: GraphView/graphview.py:1042 LifeLineChartView/lifelinechartview.py:534
 msgid "Zoom to best fit"
 msgstr "Ikkunaan sopivaksi"
 
-#: GraphView/graphview.py:1049
+#: GraphView/graphview.py:1049 GraphView/graphview.py:1123
 msgid "Go to active person"
 msgstr "Siirry aktiivihenkilöön"
 
-#: GraphView/graphview.py:1054
+#: GraphView/graphview.py:1054 GraphView/graphview.py:1128
 msgid "Go to bookmark"
 msgstr "Siirry kirjanmerkkiin"
 
-#: GraphView/graphview.py:1056
+#: GraphView/graphview.py:1056 GraphView/graphview.py:1130
 msgid "Center view on selected bookmark"
 msgstr "Keskitä näkymä valittuun kirjanmerkkiin"
 
-#: GraphView/graphview.py:1058
+#: GraphView/graphview.py:1058 GraphView/graphview.py:1132
 msgid "Bookmarks for current graph"
 msgstr "Nykyisen kaavion kirjanmerkit"
 
-#: GraphView/graphview.py:1059
+#: GraphView/graphview.py:1059 GraphView/graphview.py:1133
 msgid "Other Bookmarks"
 msgstr "Muut kirjanmerkit"
 
-#: GraphView/graphview.py:1090
+#: GraphView/graphview.py:1090 GraphView/graphview.py:1164
 msgid "Ancestor generations"
 msgstr "Esivanhempien sukupolvien enimmäismäärä"
 
-#: GraphView/graphview.py:1094
+#: GraphView/graphview.py:1094 GraphView/graphview.py:1168
 msgid "Descendant generations"
 msgstr "Jälkeläissukupolvien enimmäismäärä"
 
-#: GraphView/graphview.py:1098
-msgid "Generations"
-msgstr "Sukupolvet"
-
-#: GraphView/graphview.py:1105
+#: GraphView/graphview.py:1105 GraphView/graphview.py:1179
 msgid "Vertical spacing between generations"
 msgstr "Sukupolvien välinen pystysuora väli"
 
-#: GraphView/graphview.py:1110
+#: GraphView/graphview.py:1110 GraphView/graphview.py:1184
 msgid "Horizontal spacing between generations"
 msgstr "Sukupolvien välinen vaakasuora väli"
 
-#: GraphView/graphview.py:1114
+#: GraphView/graphview.py:1114 GraphView/graphview.py:1188
 msgid "Spacings"
 msgstr "Välit"
 
-#: GraphView/graphview.py:1119
+#: GraphView/graphview.py:1119 GraphView/graphview.py:1193
 msgid "All connected"
 msgstr "Kaikki yhdistetty"
 
-#: GraphView/graphview.py:1121
+#: GraphView/graphview.py:1121 GraphView/graphview.py:1195
 msgid ""
 "Show all connected persons limited by generation restrictions.\n"
 "Works slow, so don't set large generation values."
@@ -354,20 +284,15 @@ msgstr ""
 "Näytä kaikki sukupolvirajoitusten rajoittamat yhdistetyt henkilöt.\n"
 "Toimii hitaasti, joten älä aseta suuria sukupolviarvoja."
 
-#: GraphView/graphview.py:1263
+#: GraphView/graphview.py:1263 GraphView/graphview.py:1337
 msgid "Add active person"
 msgstr "Lisää aktiivihenkilö"
 
-#: GraphView/graphview.py:1267 GraphView/graphview.py:3708
-#: GraphView/graphview.py:3970
-msgid "Edit"
-msgstr "Muokkaa"
-
-#: GraphView/graphview.py:1268
+#: GraphView/graphview.py:1268 GraphView/graphview.py:1342
 msgid "Call the bookmark editor"
 msgstr "Kutsu kirjanmerkkieditori"
 
-#: GraphView/graphview.py:1325
+#: GraphView/graphview.py:1325 GraphView/graphview.py:1399
 msgid ""
 "You don't have any bookmarks yet...\n"
 "Try to add some frequently used persons to speedup navigation."
@@ -375,21 +300,23 @@ msgstr ""
 "Sinulla ei ole vielä yhtään kirjanmerkkiä...\n"
 "Yritä lisätä joitakin usein käytettyjä henkilöitä nopeuttaaksesi navigointia."
 
-#: GraphView/graphview.py:1333
+#: GraphView/graphview.py:1333 GraphView/graphview.py:1407
 msgid "No bookmarks for this graph..."
 msgstr "Ei kirjanmerkkejä tälle kaaviolle..."
 
-#: GraphView/graphview.py:1338
+#: GraphView/graphview.py:1338 GraphView/graphview.py:1412
 msgid "No other bookmarks..."
 msgstr "Ei muita kirjanmerkkejä..."
 
 #: GraphView/graphview.py:1343 GraphView/graphview.py:1345
 #: GraphView/search_widget.py:224 GraphView/search_widget.py:243
+#: GraphView/graphview.py:1417 GraphView/graphview.py:1419
+#: GraphView/search_widget.py:233 GraphView/search_widget.py:252
 #, python-format
 msgid "found: %s"
 msgstr "löytyi: %s"
 
-#: GraphView/graphview.py:1355
+#: GraphView/graphview.py:1355 GraphView/graphview.py:1429
 #, python-format
 msgid ""
 "Add active person to bookmarks\n"
@@ -398,7 +325,7 @@ msgstr ""
 "Lisää aktiivinen henkilö kirjanmerkkeihin\n"
 "%s"
 
-#: GraphView/graphview.py:1442
+#: GraphView/graphview.py:1442 GraphView/graphview.py:1516
 #, python-format
 msgid ""
 "Person <b><i>%s</i></b> is not in the current view.\n"
@@ -407,229 +334,121 @@ msgstr ""
 "Henkilö <b><i>%s</i></b> ei ole nykyisessä näkymässä.\n"
 "Haluatko aktivoida henkilön ja katsella uudelleen?"
 
-#: GraphView/graphview.py:1445
+#: GraphView/graphview.py:1445 GraphView/graphview.py:1519
 msgid "Change active person?"
 msgstr "Vaihdetaanko aktiivihenkilö?"
 
-#: GraphView/graphview.py:1446 GraphView/graphview.py:4407
-#: GraphView/graphview.py:4436
-msgid "Yes"
-msgstr "Kyllä"
-
-#: GraphView/graphview.py:1446 GraphView/graphview.py:4407
-#: GraphView/graphview.py:4436
-msgid "No"
-msgstr "Ei"
-
-#: GraphView/graphview.py:2511 GraphView/graphview.py:2544
-msgid "Relationship loop detected"
-msgstr "Suhteessa havaittu silmukka"
-
-#: GraphView/graphview.py:2584
-msgid ""
-"You try to build graph containing more then 1000 persons. Not all persons "
-"will be shown in the graph."
-msgstr ""
-"Yrität rakentaa kaaviota, joka sisältää yli 1000 henkilöä. Kaikki henkilöt "
-"eivät näy kuvaajassa."
-
-#: GraphView/graphview.py:2587
+#: GraphView/graphview.py:2587 GraphView/graphview.py:2678
 msgid "Incomplete graph"
 msgstr "Epätäydellinen kaavio"
 
-#: GraphView/graphview.py:2940
+#: GraphView/graphview.py:2940 GraphView/graphview.py:3047
 msgid "Image on right side"
 msgstr "Kuva oikealla"
 
-#: GraphView/graphview.py:2961
+#: GraphView/graphview.py:2961 GraphView/graphview.py:3068
 msgid "Image on left side"
 msgstr "Kuva vasemmalla"
 
-#: GraphView/graphview.py:2982
-msgid "Normal"
-msgstr "Normaali"
-
 #: GraphView/graphview.py:3059 GraphView/graphview.py:3060
 #: GraphView/graphview.py:3072 GraphView/graphview.py:3073
+#: SourcesCitationsReport/SourcesCitationsReport.py:335
 #, python-format
 msgid "%s "
 msgstr "%s "
 
-#: GraphView/graphview.py:3290
+#: GraphView/graphview.py:3290 GraphView/graphview.py:3399
 msgid "<b>Tags:</b>"
 msgstr "<b>Tagit:</b>"
 
-#: GraphView/graphview.py:3670
+#: GraphView/graphview.py:3670 GraphView/graphview.py:3779
 msgid "Lines type"
 msgstr "Viivan tyyppi"
 
-#: GraphView/graphview.py:3674
+#: GraphView/graphview.py:3674 GraphView/graphview.py:3783
 msgid "Direct"
 msgstr "Suora"
 
-#: GraphView/graphview.py:3682
+#: GraphView/graphview.py:3682 GraphView/graphview.py:3791
 msgid "Curves"
 msgstr "Kaareva"
 
-#: GraphView/graphview.py:3690
+#: GraphView/graphview.py:3690 GraphView/graphview.py:3799
 msgid "Ortho"
 msgstr "Suorakulmainen"
 
-#: GraphView/graphview.py:3711
-msgid "Copy"
-msgstr "Kopioi"
-
-#: GraphView/graphview.py:3714 GraphView/graphview.py:3973
-msgid "Delete"
-msgstr "Poista"
-
-#: GraphView/graphview.py:3720 GraphView/graphview.py:3979
-msgid "Tags"
-msgstr "Tagit"
-
-#: GraphView/graphview.py:3722
+#: GraphView/graphview.py:3722 GraphView/graphview.py:3896
 msgid "Select tags for person"
 msgstr "Valitse tagi henkilölle"
 
-#: GraphView/graphview.py:3725 GraphView/graphview.py:3984
-msgid "Organize Tags..."
-msgstr "Järjestä tageja..."
-
-#: GraphView/graphview.py:3729 GraphView/graphview.py:3988
-msgid "Spouses"
-msgstr "Puolisot"
-
-#: GraphView/graphview.py:3731
+#: GraphView/graphview.py:3731 GraphView/graphview.py:3907
 msgid "Add new family"
 msgstr "Lisää uusi perhe"
 
-#: GraphView/graphview.py:3752
-msgid "Siblings"
-msgstr "Sisarukset"
-
-#: GraphView/graphview.py:3818
-msgid "Parents"
-msgstr "Vanhemmat"
-
-#: GraphView/graphview.py:3849
+#: GraphView/graphview.py:3849 GraphView/graphview.py:4025
 msgid "Add parents"
 msgstr "Lisää vanhemmat"
 
-#: GraphView/graphview.py:3853
-msgid "Related"
-msgstr "Sukua"
-
-#: GraphView/graphview.py:3872
-msgid "Set as home person"
-msgstr "Aseta kotihenkilö"
-
 #: GraphView/graphview.py:3878 GraphView/search_widget.py:277
-#: GraphView/search_widget.py:348
+#: GraphView/search_widget.py:348 GraphView/graphview.py:4057
+#: GraphView/search_widget.py:286 GraphView/search_widget.py:364
 msgid "Remove from bookmarks"
 msgstr "Poista kirjanmerkeistä"
 
 #: GraphView/graphview.py:3881 GraphView/search_widget.py:285
-#: GraphView/search_widget.py:361
+#: GraphView/search_widget.py:361 GraphView/graphview.py:4060
+#: GraphView/search_widget.py:294 GraphView/search_widget.py:377
 msgid "Add to bookmarks"
 msgstr "Lisää kirjanmerkkeihin"
 
-#: GraphView/graphview.py:3911
-msgid "Quick View"
-msgstr "Pikanäkymä"
-
-#: GraphView/graphview.py:3955
-msgid "Web Connection"
-msgstr "Nettiyhteys"
-
-#: GraphView/graphview.py:3981
+#: GraphView/graphview.py:3981 GraphView/graphview.py:4182
 msgid "Select tags for family"
 msgstr "Valitse tagi perheelle"
 
-#: GraphView/graphview.py:3998
+#: GraphView/graphview.py:3998 GraphView/graphview.py:4201
 msgid "Add father"
 msgstr "Lisää isä"
 
-#: GraphView/graphview.py:4007
+#: GraphView/graphview.py:4007 GraphView/graphview.py:4210
 msgid "Add mother"
 msgstr "Lisää äiti"
 
-#: GraphView/graphview.py:4024
-msgid "Children"
-msgstr "Lapset"
-
-#: GraphView/graphview.py:4033
-msgid "Add child to family"
-msgstr "Lisää perheeseen lapsi"
-
-#: GraphView/graphview.py:4104
+#: GraphView/graphview.py:4104 GraphView/graphview.py:4313
 msgid "About Graph View"
 msgstr "Tietoja kaavionäkymästä"
 
-#: GraphView/graphview.py:4294
-msgid "Adding Tags"
-msgstr "Lisätään tageja"
-
-#: GraphView/graphview.py:4300
-#, python-format
-msgid "Adding Tags to person (%s)"
-msgstr "Lisää tageja henkilölle (%s)"
-
-#: GraphView/graphview.py:4305
-#, python-format
-msgid "Adding Tags to family (%s)"
-msgstr "Lisää tageja perheelle (%s)"
-
-#: GraphView/graphview.py:4388
-msgid "Add Child to Family"
-msgstr "Lisää perheeseen lapsi"
-
-#: GraphView/graphview.py:4403
-#, python-format
-msgid "Delete %s?"
-msgstr "Poista %s?"
-
-#: GraphView/graphview.py:4404
+#: GraphView/graphview.py:4404 GraphView/graphview.py:4669
 #, python-format
 msgid "Deleting the person [%s] will remove it from the database."
 msgstr "Henkilön [%s] poistaminen poistaa sen tietokannasta."
 
-#: GraphView/graphview.py:4416
-#, python-format
-msgid "Delete Person (%s)"
-msgstr "Poista henkilö (%s)"
-
-#: GraphView/graphview.py:4433
+#: GraphView/graphview.py:4433 GraphView/graphview.py:4698
 #, python-format
 msgid "Delete family [%s]?"
 msgstr "Poista perhe [%s]?"
 
-#: GraphView/graphview.py:4434
+#: GraphView/graphview.py:4434 GraphView/graphview.py:4699
 msgid "Deleting the family will remove it from the database."
 msgstr "Perheen poistaminen poistaa sen tietokannasta."
 
-#: GraphView/graphview.py:4445
+#: GraphView/graphview.py:4445 GraphView/graphview.py:4710
 #, python-format
 msgid "Delete Family [%s]"
 msgstr "Poista perhe [%s]"
 
-#: GraphView/graphview.py:4464
-#, python-format
-msgid "%s has been bookmarked"
-msgstr "%s on merkitty kirjanmerkkeihin"
-
-#: GraphView/search_widget.py:73
+#: GraphView/search_widget.py:73 GraphView/search_widget.py:82
 msgid "Persons from current graph"
 msgstr "Henkilöt nykyisestä kaaviosta"
 
-#: GraphView/search_widget.py:74
+#: GraphView/search_widget.py:74 GraphView/search_widget.py:83
 msgid "Other persons from database"
 msgstr "Muut henkilöt tietokannasta"
 
-#: GraphView/search_widget.py:226
+#: GraphView/search_widget.py:226 GraphView/search_widget.py:235
 msgid "No persons found..."
 msgstr "Henkilöitä ei löytynyt..."
 
-#: GraphView/search_widget.py:382
+#: GraphView/search_widget.py:382 GraphView/search_widget.py:398
 msgid ""
 "Search people in the current visible graph and database.\n"
 "Use <Ctrl+F> to make search entry active."
@@ -637,69 +456,24 @@ msgstr ""
 "Etsi ihmisiä nykyisestä näkyvästä kaaviosta ja tietokannasta.\n"
 "Aktivoi haku painamalla <Ctrl+F>."
 
-#: GraphView/search_widget.py:384
+#: GraphView/search_widget.py:384 PluginManager/PluginManager.py:158
 msgid "Search..."
 msgstr "Hae..."
 
-#: GraphView/search_widget.py:575
+#: GraphView/search_widget.py:575 GraphView/search_widget.py:592
 #, python-format
 msgid "<b>%s:</b>"
 msgstr "<b>%s:</b>"
 
-#: GraphView/search_widget.py:661
-#, python-format
-msgid "Birth: %s"
-msgstr "Syntymä: %s"
-
-#: GraphView/search_widget.py:665
-#, python-format
-msgid "Death: %s"
-msgstr "Kuolema: %s"
-
 #: GraphView/search_widget.py:671
+#: ../gramps/plugins/gramplet/relativegramplet.py:116
 msgid "Parents:"
 msgstr "Vanhemmat:"
 
-#~ msgid "_Print..."
-#~ msgstr "_Tulosta..."
+#: ../gramps/gui/configure.py:983
+msgid "Colors"
+msgstr "Värit"
 
-#~ msgid ""
-#~ "Save the dot file for a later print.\n"
-#~ "This will save a .gv file and a svg file.\n"
-#~ "You must select a .gv file"
-#~ msgstr ""
-#~ "Tallenna pistetiedosto myöhempää tulostusta varten.\n"
-#~ "Tallentaa .gv-tiedoston ja svg-tiedoston.\n"
-#~ "Valitse .gv-tiedosto"
-
-#~ msgid "Colors"
-#~ msgstr "Värit"
-
-#~ msgid "Edit tags"
-#~ msgstr "Muokkaa tageja"
-
-#~ msgid "Add"
-#~ msgstr "Lisää"
-
-#, python-format
-#~ msgid "b. %s"
-#~ msgstr "s. %s"
-
-#, python-format
-#~ msgid "d. %s"
-#~ msgstr "k. %s"
-
-#~ msgid "Show lines"
-#~ msgstr "Näytä viivat"
-
-#~ msgid "none"
-#~ msgstr "ei mitään"
-
-#~ msgid "curves"
-#~ msgstr "käyrät"
-
-#~ msgid "ortho"
-#~ msgstr "suorat"
-
-#~ msgid "Path color"
-#~ msgstr "Polun väri"
+#: LifeLineChartView/_dummy_translation_string_po.py:98
+msgid "none"
+msgstr "ei mitään"

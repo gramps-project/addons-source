@@ -1,14 +1,16 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
+# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
+# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-28 23:17+0100\n"
-"PO-Revision-Date: 2024-10-10 09:10+0200\n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
 "Language: da_DK\n"
@@ -17,6 +19,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
+
+#: DynamicWeb/dynamicweb.py:3170 LifeLineChartView/lifelinechartview.py:508
+msgid "Zoom in"
+msgstr "Zoom ind"
+
+#: DynamicWeb/dynamicweb.py:3171 LifeLineChartView/lifelinechartview.py:518
+msgid "Zoom out"
+msgstr "Zoom ud"
+
+#: DynamicWeb/dynamicweb.py:5098
+#: LifeLineChartView/_dummy_translation_string_po.py:101
+msgid "Maximum number of generations"
+msgstr "Det største antal generationer"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:10
 msgid "Warp the chart shape"
@@ -171,20 +186,10 @@ msgstr "Anker for fødselsteksten"
 msgid "Text alignment of the birth label."
 msgstr "Justering af fødselsteksten."
 
-#: LifeLineChartView/_dummy_translation_string_po.py:44
-#: LifeLineChartView/_dummy_translation_string_po.py:64
-msgid "Left"
-msgstr "Venstre"
-
 #: LifeLineChartView/_dummy_translation_string_po.py:45
 #: LifeLineChartView/_dummy_translation_string_po.py:65
 msgid "Center"
 msgstr "Centrér"
-
-#: LifeLineChartView/_dummy_translation_string_po.py:46
-#: LifeLineChartView/_dummy_translation_string_po.py:66
-msgid "Right"
-msgstr "Højre"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:48
 msgid "Show death label"
@@ -377,10 +382,6 @@ msgstr ""
 "På grund af anetab kan en person optræde flere gange på en simpel anetavle. "
 "Hvis dette er aktivet, så vil alle personer kun optræde en gang."
 
-#: LifeLineChartView/_dummy_translation_string_po.py:101
-msgid "Maximum number of generations"
-msgstr "Det største antal generationer"
-
 #: LifeLineChartView/_dummy_translation_string_po.py:102
 msgid ""
 "if this number of generations has been reached, the algorithm doesn't go any "
@@ -484,29 +485,6 @@ msgstr ""
 "LifeLineChartView afhængigheder mangler. Det er ikke muligt at benytte dette "
 "plugin uden dem."
 
-#: LifeLineChartView/lifelinechart.py:476
-msgid "calculated"
-msgstr "beregnet"
-
-#: LifeLineChartView/lifelinechart.py:477
-#: LifeLineChartView/lifelinechart.py:478
-#: LifeLineChartView/lifelinechart.py:479
-#: LifeLineChartView/lifelinechart.py:480
-msgid "estimated"
-msgstr "anslået"
-
-#: LifeLineChartView/lifelinechart.py:482
-msgid "about"
-msgstr "omkring"
-
-#: LifeLineChartView/lifelinechart.py:483
-msgid "before"
-msgstr "før"
-
-#: LifeLineChartView/lifelinechart.py:484
-msgid "after"
-msgstr "efter"
-
 #: LifeLineChartView/lifelinechart.py:1183
 #, python-brace-format
 msgid "cursor position at {date}"
@@ -532,146 +510,45 @@ msgstr "Skjul søskende"
 msgid "Show ancestors above "
 msgstr "Vis aner ovenfor "
 
-#: LifeLineChartView/lifelinechart.py:2679
-msgid "_Edit"
-msgstr "R_edigér"
-
-#: LifeLineChartView/lifelinechart.py:2687
-msgid "Edit family"
-msgstr "Redigér familie"
-
-#: LifeLineChartView/lifelinechart.py:2703
-msgid "Reorder families"
-msgstr "Omorganisér familier"
-
-#: LifeLineChartView/lifelinechart.py:2709
-msgid "_Copy"
-msgstr "_Kopier"
-
-#: LifeLineChartView/lifelinechart.py:2719
-msgid "Spouses"
-msgstr "Ægtefæller"
-
-#: LifeLineChartView/lifelinechart.py:2753
-msgid "Siblings"
-msgstr "Søskende"
-
-#: LifeLineChartView/lifelinechart.py:2819
-msgid "Children"
-msgstr "Børn"
-
-#: LifeLineChartView/lifelinechart.py:2856
-msgid "Parents"
-msgstr "Forældre"
-
-#: LifeLineChartView/lifelinechart.py:2890
-#: LifeLineChartView/lifelinechart.py:2932
-msgid "_Add"
-msgstr "_Tilføj"
-
-#: LifeLineChartView/lifelinechart.py:2899
-msgid "Related"
-msgstr "Beslægtede"
-
-#: LifeLineChartView/lifelinechart.py:2939
-msgid "Add child to family"
-msgstr "Tilføj barn til familien"
-
-#: LifeLineChartView/lifelinechart.py:2947
-msgid "Add partner to person"
-msgstr "Tilføj partner til en person"
-
-#: LifeLineChartView/lifelinechart.py:2954
-msgid "Add a person"
-msgstr "Tilføj en person"
-
-#: LifeLineChartView/lifelinechart.py:3044
-msgid "Add Child to Family"
-msgstr "Føj barn til familie"
-
-#: LifeLineChartView/lifelinechartview.gpr.py:152
-#, python-brace-format
-msgid ""
-"Failed to load the required module {module_name} version {module_version}."
-msgstr ""
-"Kunne ikke indlæse det nødvendige modul {module_name} version "
-"{module_version}."
-
-#: LifeLineChartView/lifelinechartview.gpr.py:154
-#, python-brace-format
-msgid ""
-"\n"
-"\n"
-"It is not possible to use {self.plugin_name} without this module. You can "
-"either uninstall this plugin, or download the module."
-msgstr ""
-"\n"
-"\n"
-"Det er ikke muligt at benytte {self.plugin_name} uden dette modul. Du kan "
-"enten afinstallere dette plugin, eller hente modulet."
-
-#: LifeLineChartView/lifelinechartview.gpr.py:161
-msgid " Plugin"
-msgstr " Plugin"
-
-#: LifeLineChartView/lifelinechartview.gpr.py:163
-msgid "Download module"
-msgstr "Hent modul"
-
-#: LifeLineChartView/lifelinechartview.gpr.py:164
-#: LifeLineChartView/lifelinechartview.py:834
-msgid "_Cancel"
-msgstr "_Afbryd"
-
-#: LifeLineChartView/lifelinechartview.gpr.py:170
-msgid "The user chose to ignore the warning once."
-msgstr "Brugeren valgte at ignorere advarslen en gang."
-
-#: LifeLineChartView/lifelinechartview.gpr.py:174
-msgid "The user chose to install the module."
-msgstr "Brugeren valgt at installere modulet."
-
-#: LifeLineChartView/lifelinechartview.gpr.py:206
-#, python-format
-msgid "Unable to open '%s' with curl"
-msgstr "Kan ikke åbne '%s' med curl"
-
 #: LifeLineChartView/lifelinechartview.gpr.py:217
 #: LifeLineChartView/lifelinechartview.gpr.py:224
+#: ../gramps/gen/plug/utils.py:349 ../gramps/gen/plug/utils.py:356
 #, python-format
 msgid "Unable to open '%s'"
 msgstr "Kan ikke åbne '%s'"
 
 #: LifeLineChartView/lifelinechartview.gpr.py:233
+#: ../gramps/gen/plug/utils.py:363
 #, python-format
 msgid "Error in reading '%s'"
 msgstr "Fejl ved læsning af '%s'"
 
 #: LifeLineChartView/lifelinechartview.gpr.py:248
+#: ../gramps/cli/arghandler.py:403 ../gramps/gen/plug/utils.py:374
 #, python-format
 msgid "Error: cannot open '%s'"
 msgstr "Fejl: Kan ikke åbne '%s'"
 
 #: LifeLineChartView/lifelinechartview.gpr.py:252
+#: ../gramps/gen/plug/utils.py:378
 #, python-format
 msgid "Error: unknown file type: '%s'"
 msgstr "Fejl: ukendt filtype: '%s'"
 
 #: LifeLineChartView/lifelinechartview.gpr.py:318
+#: LifeLineChartView/lifelinechartview.gpr.py:24
 msgid "Life Line Ancestor Chart"
 msgstr "Life Line Anetavle"
 
-#: LifeLineChartView/lifelinechartview.gpr.py:319
-#: LifeLineChartView/lifelinechartview.gpr.py:333
-msgid "Charts"
-msgstr "Diagrammer"
-
 #: LifeLineChartView/lifelinechartview.gpr.py:320
 #: LifeLineChartView/lifelinechartview.gpr.py:334
+#: LifeLineChartView/lifelinechartview.gpr.py:26
+#: LifeLineChartView/lifelinechartview.gpr.py:44
 msgid "Persons and their relation in a time based chart"
 msgstr "Personer og deres slægtskaber i et tidsbaseret diagram"
 
 #: LifeLineChartView/lifelinechartview.gpr.py:332
+#: LifeLineChartView/lifelinechartview.gpr.py:42
 msgid "Life Line Descendant Chart"
 msgstr "Life Line Efterkommerdiagram"
 
@@ -681,12 +558,10 @@ msgid "General Layout"
 msgstr "Generelt layout"
 
 #: LifeLineChartView/lifelinechartview.py:399
+#: LifeLineChartView/lifelinechartview.gpr.py:34
+#: LifeLineChartView/lifelinechartview.gpr.py:52
 msgid "Life Line Chart"
 msgstr "Life Line Diagram"
-
-#: LifeLineChartView/lifelinechartview.py:508
-msgid "Zoom in"
-msgstr "Zoom ind"
 
 #: LifeLineChartView/lifelinechartview.py:509
 #: LifeLineChartView/lifelinechartview.py:510
@@ -699,10 +574,6 @@ msgstr "Ctrl"
 #: LifeLineChartView/lifelinechartview.py:520
 msgid "Mouse wheel"
 msgstr "Mushjul"
-
-#: LifeLineChartView/lifelinechartview.py:518
-msgid "Zoom out"
-msgstr "Zoom ud"
 
 #: LifeLineChartView/lifelinechartview.py:527
 msgid "Zoom to original"
@@ -724,17 +595,9 @@ msgstr "Fortryd placerings og personvalget"
 msgid "Open Life Line Chart help"
 msgstr "Åbn Life Line Chart hjælp"
 
-#: LifeLineChartView/lifelinechartview.py:664
-msgid "Organize Bookmarks"
-msgstr "Organisér bogmærker"
-
 #: LifeLineChartView/lifelinechartview.py:831
 msgid "Export View as SVG"
 msgstr "Eksporter oversigt som SVG"
-
-#: LifeLineChartView/lifelinechartview.py:835
-msgid "_Save"
-msgstr "_Gem"
 
 #: LifeLineChartView/lifelinechartview.py:946
 msgid "Reset all settings"

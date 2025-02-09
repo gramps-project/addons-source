@@ -1,14 +1,16 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
+# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
+# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-05 16:32-0500\n"
-"PO-Revision-Date: 2024-10-06 07:42+0200\n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
 "Language: da_DK\n"
@@ -18,9 +20,57 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
 
-#: GraphView/avatars.py:59
-msgid "Custom"
-msgstr "Tilpasset"
+#: SourcesCitationsReport/SourcesCitationsReport.py:335
+#: GraphView/graphview.py:3083 GraphView/graphview.py:3084
+#: GraphView/graphview.py:3096 GraphView/graphview.py:3097
+#, python-format
+msgid "%s "
+msgstr "%s "
+
+#: PluginManager/PluginManager.py:158 GraphView/search_widget.py:384
+msgid "Search..."
+msgstr "Søg...."
+
+#: DynamicWeb/dynamicweb.py:3170 GraphView/graphview.py:1024
+msgid "Zoom in"
+msgstr "Zoom ind"
+
+#: DynamicWeb/dynamicweb.py:3171 GraphView/graphview.py:1031
+msgid "Zoom out"
+msgstr "Zoom ud"
+
+#: DenominoViso/DenominoViso.py:2001 GraphView/graphview.py:897
+msgid "Search"
+msgstr "Søg"
+
+#: QuiltView/QuiltView.py:1500 GraphView/graphview.py:3941
+msgid "Set as home person"
+msgstr "Sæt som fokusperson"
+
+#: QuiltView/QuiltView.py:1656 GraphView/graphview.py:4382
+#: GraphView/graphview.py:4428
+#, python-format
+msgid "Adding Tags to person (%s)"
+msgstr "Tilføjer mærkater til person (%s)"
+
+#: QuiltView/QuiltView.py:1661 GraphView/graphview.py:4387
+#: GraphView/graphview.py:4439
+#, python-format
+msgid "Adding Tags to family (%s)"
+msgstr "Tilføjer mærkater til familie (%s)"
+
+#: LifeLineChartView/lifelinechartview.py:527 GraphView/graphview.py:1038
+msgid "Zoom to original"
+msgstr "Zoom til original"
+
+#: LifeLineChartView/lifelinechartview.py:534 GraphView/graphview.py:1045
+msgid "Zoom to best fit"
+msgstr "Zoom så den passer bedst"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:69
+#: EditExifMetadata/editexifmetadata.py:215 GraphView/graphview.py:3778
+msgid "Copy"
+msgstr "Kopier"
 
 #: GraphView/avatars.py:60
 msgid "Dark (default)"
@@ -35,320 +85,192 @@ msgid "Cartoon"
 msgstr "Tegneserie"
 
 #: GraphView/graphview.gpr.py:34 GraphView/graphview.py:185
+#: GraphView/graphview.gpr.py:4 GraphView/graphview.gpr.py:14
+#: GraphView/graphview.py:189
 msgid "Graph View"
 msgstr "Graf visning"
 
-#: GraphView/graphview.gpr.py:35
-msgid "Charts"
-msgstr "Tavler"
-
-#: GraphView/graphview.gpr.py:36
+#: GraphView/graphview.gpr.py:36 GraphView/graphview.gpr.py:6
 msgid "Dynamic and interactive graph of relations"
 msgstr "Dynamisk og interaktiv graf over slægtsskab"
 
-#: GraphView/graphview.gpr.py:49
-msgid ""
-"Graphview Warning:  Goocanvas 2 or 3 (https://wiki.gnome.org/action/show/"
-"Projects/GooCanvas) is required for this view to work"
-msgstr ""
-"Graphview Warning:  Goocanvas 2 or 3 (https://wiki.gnome.org/action/show/"
-"Projects/GooCanvas) is required for this view to work"
-
-#: GraphView/graphview.gpr.py:54
-msgid ""
-"Graphview Warning:  GraphViz (http://www.graphviz.org) is required for this "
-"view to work"
-msgstr ""
-"Graphview Warning:  GraphViz (http://www.graphviz.org) is required for this "
-"view to work"
-
-#: GraphView/graphview.gpr.py:63
-msgid "Graphview Failed to Load"
-msgstr "Graphview kunne ikke indlæses"
-
-#: GraphView/graphview.gpr.py:64
-#, python-format
-msgid ""
-"\n"
-"\n"
-"Graphview is missing python modules or programs.\n"
-"%smust be installed.\n"
-"\n"
-"For now, it may be possible to install the files manually. See\n"
-"<a href=\"https://gramps-project.org/wiki/index.php?title=Graph_View\" "
-"title=\"https://gramps-project.org/wiki/index.php?title=Graph_View\">https://"
-"gramps-project.org/wiki/index.php?title=Graph_View</a> \n"
-"\n"
-"To dismiss all future Graphview warnings click Dismiss."
-msgstr ""
-"\n"
-"\n"
-"Graphview mangler python moduler eller programmer.\n"
-"%s skal være installeret\n"
-"\n"
-"Det kan være muligt at installere filerne manuelt. Se\n"
-"<a href=\"https://gramps-project.org/wiki/index.php?title=Graph_View\" "
-"title=\"https://gramps-project.org/wiki/index.php?title=Graph_View\">https://"
-"gramps-project.org/wiki/index.php?title=Graph_View</a> \n"
-"\n"
-"For at afvise alle fremtidige advarsler klik Afvis."
-
-#: GraphView/graphview.gpr.py:80
-msgid " Dismiss "
-msgstr " Afvis "
-
-#: GraphView/graphview.gpr.py:81
-msgid "Continue"
-msgstr "Fortsæt"
-
-#: GraphView/graphview.py:713 GraphView/graphview.py:3643
-msgid "Show images"
-msgstr "Vis billeder"
-
-#: GraphView/graphview.py:716
+#: GraphView/graphview.py:716 GraphView/graphview.py:757
 msgid "Show avatars"
 msgstr "Vis avatarer"
 
 #: GraphView/graphview.py:719 GraphView/graphview.py:3651
+#: GraphView/graphview.py:760 GraphView/graphview.py:3736
 msgid "Highlight the home person"
 msgstr "Fremhæv fokuspersonsn"
 
 #: GraphView/graphview.py:723 GraphView/graphview.py:3659
+#: GraphView/graphview.py:764 GraphView/graphview.py:3744
 msgid "Show full dates"
 msgstr "Vis fulde datoer"
 
 #: GraphView/graphview.py:727 GraphView/graphview.py:3667
+#: GraphView/graphview.py:768 GraphView/graphview.py:3752
 msgid "Show places"
 msgstr "Vis steder"
 
-#: GraphView/graphview.py:730 GraphView/graphview.py:2953
-msgid "Default"
-msgstr "Standard"
-
-#: GraphView/graphview.py:736
-msgid "Place format"
-msgstr "Sted format"
-
-#: GraphView/graphview.py:741 GraphView/graphview.py:3675
-msgid "Show tags"
-msgstr "Vis mærkater"
-
-#: GraphView/graphview.py:743
+#: GraphView/graphview.py:743 GraphView/graphview.py:784
 msgid "Vertical: Top to Bottom"
 msgstr "Lodret: Top til bund"
 
-#: GraphView/graphview.py:743
+#: GraphView/graphview.py:743 GraphView/graphview.py:784
 msgid "Vertical: Bottom to Top"
 msgstr "Lodret: Bund til top"
 
-#: GraphView/graphview.py:743
+#: GraphView/graphview.py:743 GraphView/graphview.py:784
 msgid "Horizontal: Left to Right"
 msgstr "Vandret: Venstre til højre"
 
-#: GraphView/graphview.py:743
+#: GraphView/graphview.py:743 GraphView/graphview.py:784
 msgid "Horizontal: Right to Left"
 msgstr "Vandret: Højre til venstre"
 
-#: GraphView/graphview.py:745
+#: GraphView/graphview.py:745 GraphView/graphview.py:786
 msgid "Time Direction"
 msgstr "Tidsretning"
 
-#: GraphView/graphview.py:749
-msgid "Layout"
-msgstr "Layout"
-
-#: GraphView/graphview.py:767
+#: GraphView/graphview.py:767 GraphView/graphview.py:812
 msgid "Person theme"
 msgstr "Person tema"
 
-#: GraphView/graphview.py:772
+#: GraphView/graphview.py:772 GraphView/graphview.py:817
 msgid "Path color to home person"
 msgstr "Stifarve til fokusperson"
 
-#: GraphView/graphview.py:776
+#: GraphView/graphview.py:776 GraphView/graphview.py:821
 msgid "Font:"
 msgstr "Font:"
 
-#: GraphView/graphview.py:790
+#: GraphView/graphview.py:790 GraphView/graphview.py:835
 msgid "Avatars style"
 msgstr "Avatar stil"
 
-#: GraphView/graphview.py:796
+#: GraphView/graphview.py:796 GraphView/graphview.py:841
 msgid "PNG files"
 msgstr "PNG filer"
 
-#: GraphView/graphview.py:801
+#: GraphView/graphview.py:801 GraphView/graphview.py:846
 msgid "Male avatar:"
 msgstr "Mandlig avatar:"
 
-#: GraphView/graphview.py:802
+#: GraphView/graphview.py:802 GraphView/graphview.py:847
 msgid "Choose male avatar"
 msgstr "Vølg mandlig avatar"
 
-#: GraphView/graphview.py:814
+#: GraphView/graphview.py:814 GraphView/graphview.py:859
 msgid "Female avatar:"
 msgstr "Kvindelig avatar:"
 
-#: GraphView/graphview.py:815
+#: GraphView/graphview.py:815 GraphView/graphview.py:860
 msgid "Choose female avatar"
 msgstr "Vælg kvindelig avatar"
 
-#: GraphView/graphview.py:829
+#: GraphView/graphview.py:829 GraphView/graphview.py:900
 msgid "Active person border size"
 msgstr "Aktiv person rand størrelse"
 
-#: GraphView/graphview.py:834
+#: GraphView/graphview.py:834 GraphView/graphview.py:905
 msgid "Person border size"
 msgstr "Person randstørrelse"
 
-#: GraphView/graphview.py:837
+#: GraphView/graphview.py:837 GraphView/graphview.py:908
 msgid "Themes"
 msgstr "Temaer"
 
 #: GraphView/graphview.py:850 GraphView/graphview.py:3685
+#: GraphView/graphview.py:921 GraphView/graphview.py:3770
 msgid "Show animation"
 msgstr "Vis animation"
 
-#: GraphView/graphview.py:854
+#: GraphView/graphview.py:854 GraphView/graphview.py:925
 msgid "Animation speed (1..5 and 5 is the slower)"
 msgstr "Animation hastighed (1..5  og 5 er langsomst)"
 
-#: GraphView/graphview.py:858
+#: GraphView/graphview.py:858 GraphView/graphview.py:929
 msgid "Animation count (0..8 use 0 to turn off)"
 msgstr "Animation antal (0..8 benyt 0 for at slå fra)"
 
-#: GraphView/graphview.py:867
+#: GraphView/graphview.py:867 GraphView/graphview.py:938
 msgid "Animation"
 msgstr "Animation"
 
-#: GraphView/graphview.py:881
+#: GraphView/graphview.py:881 GraphView/graphview.py:952
 msgid "Search in all database"
 msgstr "Søg i hele databasn"
 
-#: GraphView/graphview.py:883
+#: GraphView/graphview.py:883 GraphView/graphview.py:954
 msgid "Also apply search by all database."
 msgstr "Anvend også søgning i alle databaser."
 
-#: GraphView/graphview.py:886
+#: GraphView/graphview.py:886 GraphView/graphview.py:957
 msgid "Show person images"
 msgstr "Vis personbilleder"
 
-#: GraphView/graphview.py:889
+#: GraphView/graphview.py:889 GraphView/graphview.py:960
 msgid "Show persons thumbnails in search result list."
 msgstr "Vis personminiaturer i resultatlisten for søgningen."
 
-#: GraphView/graphview.py:892
+#: GraphView/graphview.py:892 GraphView/graphview.py:963
 msgid "Show bookmarked first"
 msgstr "Hvis bogmærkede først"
 
-#: GraphView/graphview.py:895
+#: GraphView/graphview.py:895 GraphView/graphview.py:966
 msgid "Show bookmarked persons first in search result list."
 msgstr "Vis bogmærkede person først i resultatlisten."
 
-#: GraphView/graphview.py:897
-msgid "Search"
-msgstr "Søg"
-
-#: GraphView/graphview.py:928
+#: GraphView/graphview.py:928 GraphView/graphview.py:999
 msgid "Select a dot file name"
 msgstr "Vælg et punktum filnavn"
 
-#: GraphView/graphview.py:931
-msgid "_Cancel"
-msgstr "_Afbryd"
-
-#: GraphView/graphview.py:932
-msgid "_Apply"
-msgstr "_Anvend"
-
-#: GraphView/graphview.py:945
-msgid "File already exists"
-msgstr "Filen findes allerede"
-
-#: GraphView/graphview.py:946
-msgid ""
-"You can choose to either overwrite the file, or change the selected filename."
-msgstr ""
-"Du kan vælge at enten overskrive filen, eller ændre det valgte filnavn."
-
-#: GraphView/graphview.py:948
-msgid "_Overwrite"
-msgstr "_Overskriv"
-
-#: GraphView/graphview.py:949
-msgid "_Change filename"
-msgstr "R_et filnavn"
-
-#: GraphView/graphview.py:964
-#, python-format
-msgid "Could not create %s"
-msgstr "Kunne ikke danne %s"
-
-#: GraphView/graphview.py:1024
-msgid "Zoom in"
-msgstr "Zoom ind"
-
-#: GraphView/graphview.py:1031
-msgid "Zoom out"
-msgstr "Zoom ud"
-
-#: GraphView/graphview.py:1038
-msgid "Zoom to original"
-msgstr "Zoom til original"
-
-#: GraphView/graphview.py:1045
-msgid "Zoom to best fit"
-msgstr "Zoom så den passer bedst"
-
-#: GraphView/graphview.py:1052
+#: GraphView/graphview.py:1052 GraphView/graphview.py:1123
 msgid "Go to active person"
 msgstr "Gå til den aktive person"
 
-#: GraphView/graphview.py:1057
+#: GraphView/graphview.py:1057 GraphView/graphview.py:1128
 msgid "Go to bookmark"
 msgstr "Gå til bogmærke"
 
-#: GraphView/graphview.py:1059
+#: GraphView/graphview.py:1059 GraphView/graphview.py:1130
 msgid "Center view on selected bookmark"
 msgstr "Centrer visningen til det valgte bogmærke"
 
-#: GraphView/graphview.py:1061
+#: GraphView/graphview.py:1061 GraphView/graphview.py:1132
 msgid "Bookmarks for current graph"
 msgstr "Bogmærker på den nuværende graf"
 
-#: GraphView/graphview.py:1062
+#: GraphView/graphview.py:1062 GraphView/graphview.py:1133
 msgid "Other Bookmarks"
 msgstr "Andre bogmærker"
 
-#: GraphView/graphview.py:1093
+#: GraphView/graphview.py:1093 GraphView/graphview.py:1164
 msgid "Ancestor generations"
 msgstr "Ane generationer"
 
-#: GraphView/graphview.py:1097
+#: GraphView/graphview.py:1097 GraphView/graphview.py:1168
 msgid "Descendant generations"
 msgstr "Efterkommer generationer"
 
-#: GraphView/graphview.py:1101
-msgid "Generations"
-msgstr "Generationer"
-
-#: GraphView/graphview.py:1108
+#: GraphView/graphview.py:1108 GraphView/graphview.py:1179
 msgid "Vertical spacing between generations"
 msgstr "Lodret afstand mellem generationer"
 
-#: GraphView/graphview.py:1113
+#: GraphView/graphview.py:1113 GraphView/graphview.py:1184
 msgid "Horizontal spacing between generations"
 msgstr "Vandret afstand mellem generationer"
 
-#: GraphView/graphview.py:1117
+#: GraphView/graphview.py:1117 GraphView/graphview.py:1188
 msgid "Spacings"
 msgstr "Afstande"
 
-#: GraphView/graphview.py:1122
+#: GraphView/graphview.py:1122 GraphView/graphview.py:1193
 msgid "All connected"
 msgstr "Alle forbundne"
 
-#: GraphView/graphview.py:1124
+#: GraphView/graphview.py:1124 GraphView/graphview.py:1195
 msgid ""
 "Show all connected persons limited by generation restrictions.\n"
 "Works slow, so don't set large generation values."
@@ -356,20 +278,15 @@ msgstr ""
 "Vis alle forbundne personer begrænset af generationsrestriktioner.\n"
 "Fungerer langsomt, så benyt ikke store generationsværdier."
 
-#: GraphView/graphview.py:1266
+#: GraphView/graphview.py:1266 GraphView/graphview.py:1337
 msgid "Add active person"
 msgstr "Tilføj aktiv person"
 
-#: GraphView/graphview.py:1270 GraphView/graphview.py:3775
-#: GraphView/graphview.py:4042
-msgid "Edit"
-msgstr "Redigér"
-
-#: GraphView/graphview.py:1271
+#: GraphView/graphview.py:1271 GraphView/graphview.py:1342
 msgid "Call the bookmark editor"
 msgstr "Benyt bogmærkeredigeringen"
 
-#: GraphView/graphview.py:1328
+#: GraphView/graphview.py:1328 GraphView/graphview.py:1399
 msgid ""
 "You don't have any bookmarks yet...\n"
 "Try to add some frequently used persons to speedup navigation."
@@ -378,21 +295,23 @@ msgstr ""
 "Prøv at tilføje nogle ofte benyttede person for at øge hastigheden på "
 "navigationen."
 
-#: GraphView/graphview.py:1336
+#: GraphView/graphview.py:1336 GraphView/graphview.py:1407
 msgid "No bookmarks for this graph..."
 msgstr "Ingen bogmærker til denne graf..."
 
-#: GraphView/graphview.py:1341
+#: GraphView/graphview.py:1341 GraphView/graphview.py:1412
 msgid "No other bookmarks..."
 msgstr "Ingen andre bogmærker..."
 
 #: GraphView/graphview.py:1346 GraphView/graphview.py:1348
 #: GraphView/search_widget.py:224 GraphView/search_widget.py:243
+#: GraphView/graphview.py:1417 GraphView/graphview.py:1419
+#: GraphView/search_widget.py:233 GraphView/search_widget.py:252
 #, python-format
 msgid "found: %s"
 msgstr "fandt: %s"
 
-#: GraphView/graphview.py:1358
+#: GraphView/graphview.py:1358 GraphView/graphview.py:1429
 #, python-format
 msgid ""
 "Add active person to bookmarks\n"
@@ -401,7 +320,7 @@ msgstr ""
 "Tilføj aktiv person til bogmærker\n"
 "%s"
 
-#: GraphView/graphview.py:1445
+#: GraphView/graphview.py:1445 GraphView/graphview.py:1516
 #, python-format
 msgid ""
 "Person <b><i>%s</i></b> is not in the current view.\n"
@@ -410,233 +329,118 @@ msgstr ""
 "Person <b><i>%s</i></b> findes ikke i den nuværende visning.\n"
 "Vild du sætte den som aktiv og gendanne visningen?"
 
-#: GraphView/graphview.py:1448
+#: GraphView/graphview.py:1448 GraphView/graphview.py:1519
 msgid "Change active person?"
 msgstr "Skift aktiv person?"
 
-#: GraphView/graphview.py:1449 GraphView/graphview.py:4516
-#: GraphView/graphview.py:4545
-msgid "Yes"
-msgstr "Ja"
-
-#: GraphView/graphview.py:1449 GraphView/graphview.py:4516
-#: GraphView/graphview.py:4545
-msgid "No"
-msgstr "Nej"
-
-#: GraphView/graphview.py:2519 GraphView/graphview.py:2552
-msgid "Relationship loop detected"
-msgstr "Slægtskabsløkke fundet"
-
-#: GraphView/graphview.py:2592
-msgid ""
-"You try to build graph containing more then 1000 persons. Not all persons "
-"will be shown in the graph."
-msgstr ""
-"Du prøver at danne en graf der indeholder mere end 1000 personer. Ikke alle "
-"personer vil blive vist i grafen."
-
-#: GraphView/graphview.py:2595
+#: GraphView/graphview.py:2595 GraphView/graphview.py:2678
 msgid "Incomplete graph"
 msgstr "Ufuldstændig graf"
 
-#: GraphView/graphview.py:2964
+#: GraphView/graphview.py:2964 GraphView/graphview.py:3047
 msgid "Image on right side"
 msgstr "Billedet på højre side"
 
-#: GraphView/graphview.py:2985
+#: GraphView/graphview.py:2985 GraphView/graphview.py:3068
 msgid "Image on left side"
 msgstr "Billedet på venstre side"
 
-#: GraphView/graphview.py:3006
-msgid "Normal"
-msgstr "Normal"
-
-#: GraphView/graphview.py:3083 GraphView/graphview.py:3084
-#: GraphView/graphview.py:3096 GraphView/graphview.py:3097
-#, python-format
-msgid "%s "
-msgstr "%s "
-
-#: GraphView/graphview.py:3314
+#: GraphView/graphview.py:3314 GraphView/graphview.py:3399
 msgid "<b>Tags:</b>"
 msgstr "<b>Mærkater:</b>"
 
-#: GraphView/graphview.py:3694
+#: GraphView/graphview.py:3694 GraphView/graphview.py:3779
 msgid "Lines type"
 msgstr "Linjetype"
 
-#: GraphView/graphview.py:3698
+#: GraphView/graphview.py:3698 GraphView/graphview.py:3783
 msgid "Direct"
 msgstr "Lige"
 
-#: GraphView/graphview.py:3706
+#: GraphView/graphview.py:3706 GraphView/graphview.py:3791
 msgid "Curves"
 msgstr "Buer"
 
-#: GraphView/graphview.py:3714
+#: GraphView/graphview.py:3714 GraphView/graphview.py:3799
 msgid "Ortho"
 msgstr "Ortho"
 
-#: GraphView/graphview.py:3778
-msgid "Copy"
-msgstr "Kopier"
-
-#: GraphView/graphview.py:3781 GraphView/graphview.py:4045
-msgid "Delete"
-msgstr "Slet"
-
-#: GraphView/graphview.py:3787 GraphView/graphview.py:4051
-msgid "Tags"
-msgstr "Mærkater"
-
-#: GraphView/graphview.py:3789
+#: GraphView/graphview.py:3789 GraphView/graphview.py:3896
 msgid "Select tags for person"
 msgstr "Vælg mærkater for person"
 
-#: GraphView/graphview.py:3792 GraphView/graphview.py:4056
-msgid "Organize Tags..."
-msgstr "Organisér mærkater ..."
-
-#: GraphView/graphview.py:3798 GraphView/graphview.py:4062
-msgid "Spouses"
-msgstr "Ægtefæller"
-
-#: GraphView/graphview.py:3800
+#: GraphView/graphview.py:3800 GraphView/graphview.py:3907
 msgid "Add new family"
 msgstr "Tilføj en ny familie"
 
-#: GraphView/graphview.py:3821
-msgid "Siblings"
-msgstr "Søskende"
-
-#: GraphView/graphview.py:3887
-msgid "Parents"
-msgstr "Forældre"
-
-#: GraphView/graphview.py:3918
+#: GraphView/graphview.py:3918 GraphView/graphview.py:4025
 msgid "Add parents"
 msgstr "Tilføj nye forældre"
 
-#: GraphView/graphview.py:3922
-msgid "Related"
-msgstr "Beslægtede"
-
-#: GraphView/graphview.py:3941
-msgid "Set as home person"
-msgstr "Sæt som fokusperson"
-
-#: GraphView/graphview.py:3944
+#: GraphView/graphview.py:3944 GraphView/graphview.py:4051
 msgid "Show path to home person"
 msgstr "Hvis stien til fokusperon"
 
 #: GraphView/graphview.py:3950 GraphView/search_widget.py:277
-#: GraphView/search_widget.py:348
+#: GraphView/search_widget.py:348 GraphView/graphview.py:4057
+#: GraphView/search_widget.py:286 GraphView/search_widget.py:364
 msgid "Remove from bookmarks"
 msgstr "Fjern fra bogmærker"
 
 #: GraphView/graphview.py:3953 GraphView/search_widget.py:285
-#: GraphView/search_widget.py:361
+#: GraphView/search_widget.py:361 GraphView/graphview.py:4060
+#: GraphView/search_widget.py:294 GraphView/search_widget.py:377
 msgid "Add to bookmarks"
 msgstr "Tilføj til bogmærker"
 
-#: GraphView/graphview.py:3983
-msgid "Quick View"
-msgstr "Kvikoversigt"
-
-#: GraphView/graphview.py:4027
-msgid "Web Connection"
-msgstr "Web forbindelse"
-
-#: GraphView/graphview.py:4053
+#: GraphView/graphview.py:4053 GraphView/graphview.py:4182
 msgid "Select tags for family"
 msgstr "Vælg mærkater for familie"
 
-#: GraphView/graphview.py:4072
+#: GraphView/graphview.py:4072 GraphView/graphview.py:4201
 msgid "Add father"
 msgstr "Tilføj fader"
 
-#: GraphView/graphview.py:4081
+#: GraphView/graphview.py:4081 GraphView/graphview.py:4210
 msgid "Add mother"
 msgstr "Tilføj moder"
 
-#: GraphView/graphview.py:4098
-msgid "Children"
-msgstr "Børn"
-
-#: GraphView/graphview.py:4107
-msgid "Add child to family"
-msgstr "Tilføj barn til familien"
-
-#: GraphView/graphview.py:4178
+#: GraphView/graphview.py:4178 GraphView/graphview.py:4313
 msgid "About Graph View"
 msgstr "Om Graph View"
 
-#: GraphView/graphview.py:4376
-msgid "Adding Tags"
-msgstr "Tilføjer mærkater"
-
-#: GraphView/graphview.py:4382 GraphView/graphview.py:4428
-#, python-format
-msgid "Adding Tags to person (%s)"
-msgstr "Tilføjer mærkater til person (%s)"
-
-#: GraphView/graphview.py:4387 GraphView/graphview.py:4439
-#, python-format
-msgid "Adding Tags to family (%s)"
-msgstr "Tilføjer mærkater til familie (%s)"
-
-#: GraphView/graphview.py:4497
-msgid "Add Child to Family"
-msgstr "Føj barn til familie"
-
-#: GraphView/graphview.py:4512
-#, python-format
-msgid "Delete %s?"
-msgstr "Slet %s?"
-
-#: GraphView/graphview.py:4513
+#: GraphView/graphview.py:4513 GraphView/graphview.py:4669
 #, python-format
 msgid "Deleting the person [%s] will remove it from the database."
 msgstr "Sletning af person [%s] vil fjerne denne fra databasen."
 
-#: GraphView/graphview.py:4525
-#, python-format
-msgid "Delete Person (%s)"
-msgstr "Slet person (%s)"
-
-#: GraphView/graphview.py:4542
+#: GraphView/graphview.py:4542 GraphView/graphview.py:4698
 #, python-format
 msgid "Delete family [%s]?"
 msgstr "Slet familie [%s]?"
 
-#: GraphView/graphview.py:4543
+#: GraphView/graphview.py:4543 GraphView/graphview.py:4699
 msgid "Deleting the family will remove it from the database."
 msgstr "Sletning af familien vil fjerne denne fra databasen."
 
-#: GraphView/graphview.py:4554
+#: GraphView/graphview.py:4554 GraphView/graphview.py:4710
 #, python-format
 msgid "Delete Family [%s]"
 msgstr "Slet familie [%s]?"
 
-#: GraphView/graphview.py:4573
-#, python-format
-msgid "%s has been bookmarked"
-msgstr "%s er blevet tilføjet bogmærker"
-
-#: GraphView/search_widget.py:73
+#: GraphView/search_widget.py:73 GraphView/search_widget.py:82
 msgid "Persons from current graph"
 msgstr "Personer i den nuværende graf"
 
-#: GraphView/search_widget.py:74
+#: GraphView/search_widget.py:74 GraphView/search_widget.py:83
 msgid "Other persons from database"
 msgstr "Andre personer fra databasen"
 
-#: GraphView/search_widget.py:226
+#: GraphView/search_widget.py:226 GraphView/search_widget.py:235
 msgid "No persons found..."
 msgstr "Ingen person fundet..."
 
-#: GraphView/search_widget.py:382
+#: GraphView/search_widget.py:382 GraphView/search_widget.py:398
 msgid ""
 "Search people in the current visible graph and database.\n"
 "Use <Ctrl+F> to make search entry active."
@@ -644,25 +448,12 @@ msgstr ""
 "Søg efter personer i den nuværende synlige graf og database.\n"
 "Benyt <Ctrl+F> for at gøresøgningen aktiv."
 
-#: GraphView/search_widget.py:384
-msgid "Search..."
-msgstr "Søg...."
-
-#: GraphView/search_widget.py:575
+#: GraphView/search_widget.py:575 GraphView/search_widget.py:592
 #, python-format
 msgid "<b>%s:</b>"
 msgstr "<b>%s:</b>"
 
-#: GraphView/search_widget.py:661
-#, python-format
-msgid "Birth: %s"
-msgstr "Fødsel: %s"
-
-#: GraphView/search_widget.py:665
-#, python-format
-msgid "Death: %s"
-msgstr "Død: %s"
-
 #: GraphView/search_widget.py:671
+#: ../gramps/plugins/gramplet/relativegramplet.py:116
 msgid "Parents:"
 msgstr "Forældre:"

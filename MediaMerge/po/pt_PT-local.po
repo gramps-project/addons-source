@@ -1,23 +1,24 @@
 # Addon MediaMerge for Gramps.
 # Copyright (C) 2020 Gramps
 # This file is distributed under the same license as the gramps package.
-# Pedro Albuquerque <pmra@protonmail.com>, 2020.
+# Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2020-04-01 07:27Hora de Verão de GMT\n"
+"PO-Revision-Date: 2025-02-09 06:44+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
-"Language-Team: Pedro Albuquerque\n"
-"Language: pt\n"
+"Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
+"gramps-project/addons/pt_PT/>\n"
+"Language: pt_PT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Geany / PoHelper 1.36\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10-dev\n"
 
-#: MediaMerge/mediamerge.gpr.py:32
+#: MediaMerge/mediamerge.gpr.py:32 MediaMerge/mediamerge.gpr.py:31
 msgid "Merge Media"
 msgstr "Unir multimédia"
 
@@ -29,25 +30,17 @@ msgstr ""
 "Procura em toda a base de dados por multimédia que tenha o mesmo caminho e "
 "une-a."
 
-#: MediaMerge/mediamerge.py:95
+#: MediaMerge/mediamerge.py:95 MediaMerge/mediamerge.py:104
 msgid "Media Merge"
 msgstr "Unir multimédia"
 
-#: MediaMerge/mediamerge.py:140
+#: MediaMerge/mediamerge.py:140 MediaMerge/mediamerge.py:149
 #, python-brace-format
 msgid "{number_of} media merged"
 msgid_plural "{number_of} media merged"
 msgstr[0] "{number_of} multimédia unida"
 msgstr[1] "{number_of} multimédia unida"
 
-#: MediaMerge/mediamerge.py:144
-msgid "Number of merges done"
-msgstr "Número de uniões realizadas"
-
-#: MediaMerge/mediamerge.py:147
-msgid "No modifications made"
-msgstr "Nenhuma modificação feita"
-
-#: MediaMerge/mediamerge.py:148
+#: MediaMerge/mediamerge.py:148 MediaMerge/mediamerge.py:157
 msgid "No media items merged."
 msgstr "Nenhuma multimédia unida."

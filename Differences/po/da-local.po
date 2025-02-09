@@ -1,14 +1,16 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
+# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
+# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-08 17:10-0500\n"
-"PO-Revision-Date: 2024-09-29 17:24+0200\n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
 "Language: da_DK\n"
@@ -26,21 +28,9 @@ msgstr "Rapport over forskelle i databaser"
 msgid "Compares an external database with the current one."
 msgstr "Sammenligner en ekstern database med den aktuelle."
 
-#: Differences/differences.py:114
-msgid "File:"
-msgstr "Fil:"
-
 #: Differences/differences.py:134
 msgid "Differences between Database and File"
 msgstr "Forskelle mellem database og fil"
-
-#: Differences/differences.py:138
-msgid "Family Tree Differences"
-msgstr "Slægtsbogsforskelle"
-
-#: Differences/differences.py:139
-msgid "Processing..."
-msgstr "Arbejder....."
 
 #: Differences/differences.py:161
 msgid "No differences"
@@ -71,10 +61,6 @@ msgstr "Tilføjet %s: %s "
 #: Differences/differences.py:195
 msgid "Nothing added"
 msgstr "Intet tilføjet"
-
-#: Differences/differences.py:306
-msgid "Report Options"
-msgstr "Rapport tilvalg"
 
 #: Differences/differences.py:308
 msgid "Family Tree file"
@@ -107,8 +93,3 @@ msgstr "Hvis tilføjede elementer i filen"
 #: Differences/differences.py:322
 msgid "Include items in file but not in database"
 msgstr "Medtag elementer i filen men ikke i databasen"
-
-#: Differences/differences.py:367 Differences/differences.py:369
-#: Differences/differences.py:372 Differences/differences.py:375
-msgid "Text"
-msgstr "Tekst"

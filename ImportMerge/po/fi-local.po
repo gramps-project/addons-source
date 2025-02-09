@@ -1,18 +1,43 @@
+# translation of fi.po to Finnish
+# GRAMPS
+# Copyright (C) YEAR ORGANIZATION.
+#
+# Eero Tamminen <eerot@sf>, 2005, 2006, 2007, 2008.
+# Janne Kovesjärvi <janne.kovesjarvi@gmail.com>, 2008, 2009, 2013.
+# Matti Niemelä <niememat@gmail.com>, 2014, 2015, 2016, 2017, 2018.
+# Pekka Valta <pekka.valta@kolumbus.fi>, 2014, 2018.
+# Niemelä <niememat@gmail.com>, 2017, 2018.
+# Bo Rosén <bo.rosen@home.se>, 2001.
+# Jens Arvidsson <jya@sverige.nu>, 2002, 2003, 2004, 2005.
+# Stefan Björk <betula@users.sourceforge.net>, 2005, 2006.
+# Peter Landgren <peter.talken@telia.com>, 2007, 2008, 2009, 2010, 2011.
+# Anton Huber <anton_huber@gmx.de>, 2005, 2006.
+# Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
+# Sebastian Vöcking <voeck@web.de>, 2005.
+# Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
+# Alex Roitman <shura@gramps-project.org>, 2006.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
 msgid ""
 msgstr ""
-"Project-Id-Version: 5.0.0\n"
+"Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-08-10 08:27-0500\n"
-"PO-Revision-Date: 2018-10-02 16:18+0300\n"
+"POT-Creation-Date: 2018-10-02 02:13+0300\n"
+"PO-Revision-Date: 2019-12-10 13:09+0200\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
-"Language-Team: Suomi <niememat@gmail.com>\n"
+"Language-Team: niememat@gmail.com\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.0.6\n"
 
+#: CheckPlaceTitles/checkplacetitles.py:107
+msgid "Differences"
+msgstr "Erot"
+
+#: ImportMerge/importmerge.glade:8
 msgid ""
 "A '*' indicates that the action was automarked, a '?' indicates a conflict "
 "between automarks."
@@ -20,38 +45,27 @@ msgstr ""
 "Merkki '*' osoittaa, että toiminta on merkitty automaattisesti. '?' Osoittaa "
 "ristiriitaa automaattisessa merkinnässä."
 
-msgid "Action"
-msgstr "Toiminta"
-
-msgid "Add"
-msgstr "Liitä"
-
 # Lisää tuonti
+#: ImportMerge/importmerge.py:110
 msgid "Add Import"
 msgstr "Lisätään tuonnista"
 
-# Jisätty
-msgid "Added"
-msgstr "Lisätään"
-
+#: ImportMerge/importmerge.glade:481
 msgid "Automark Families"
 msgstr "Automaattisesti merkityt perheet"
 
+#: ImportMerge/importmerge.glade:498
 msgid "Automark Parent Families"
 msgstr "Automaattisesti merkattujen vanhempien perheet"
 
-msgid "Citation"
-msgstr "Lainaus"
-
-msgid "Close _without saving"
-msgstr "Sulje _tallentamatta"
-
+#: ImportMerge/importmerge.gpr.py:33
 msgid ""
 "Compares a Gramps XML database with the current one, and allows merging of "
 "the differences."
 msgstr ""
 "Vertaa Gramps XML -tietokantaa nykyiseen ja mahdollistaa erojen yhdistämisen."
 
+#: ImportMerge/importmerge.glade:227
 msgid ""
 "Data item details, showing the current treeitem, imported tree item, and "
 "result (when chosen)."
@@ -59,147 +73,114 @@ msgstr ""
 "Tietoja kohteen yksityiskohdista, joka näyttää nykyisen sukupuun kohteen, "
 "tuodun sukupuun kohteen ja tuloksen (kun se on valittu)."
 
-msgid "Delete"
-msgstr "Poista"
-
+#: ImportMerge/importmerge.py:108
 msgid "Delete original"
 msgstr "Poista alkuperäinen"
 
-msgid "Differences"
-msgstr "Erot"
-
+#: ImportMerge/importmerge.py:93
 msgid "Different"
 msgstr "Erilainen"
 
+#: BirthOrder/birthorder.glade:232
 msgid "Done"
 msgstr "Valmis"
 
+#: ImportMerge/importmerge.glade:437
 msgid "Edit Import"
 msgstr "Muokkaa tuontia"
 
-msgid "Event"
-msgstr "Tapahtuma"
-
-msgid "Family"
-msgstr "Perhe"
-
-msgid "Help"
-msgstr "Ohjeet"
-
-msgid "ID"
-msgstr "ID"
-
-msgid "If you close without saving, the changes you have made will be lost"
-msgstr "Jos suljet tallentamatta, tehdyt muutokset menetetään"
-
+#: ImportMerge/importmerge.py:109 ImportMerge/importmerge.glade:334
 msgid "Ignore"
 msgstr "Ohita"
 
+#: ImportMerge/importmerge.py:338
 msgid "Import Failure"
 msgstr "Tuonti epäonnistui"
 
+#: ImportMerge/importmerge.py:710
 msgid "Import and Merge"
 msgstr "Tuo ja yhdistä"
 
+#: ImportMerge/importmerge.gpr.py:31 ImportMerge/importmerge.py:328
+#: ImportMerge/importmerge.py:707
 msgid "Import and Merge tool"
 msgstr "Tuo ja yhdistä työkalu"
 
+#: ImportMerge/importmerge.py:80
 msgid "Import and merge a Gramps XML"
 msgstr "Tuo ja yhdistä Gramps XML"
 
+#: ImportMerge/importmerge.glade:39
 msgid "Import file"
 msgstr "Tuo tiedosto"
 
+#: ImportMerge/importmerge.py:482 ImportMerge/importmerge.py:961
+#: ImportMerge/importmerge.py:982
 msgid "Imported"
 msgstr "Tuotu"
 
-msgid "Importing data..."
-msgstr "Tuodaan tietoja ..."
-
 # Säilytä alkuperäinen
+#: ImportMerge/importmerge.py:114
 msgid "Keep original"
 msgstr "Säilytetään alkuperäinen"
 
-msgid "Last changed"
-msgstr "Viimeksi muutettu"
-
-msgid "Media"
-msgstr "Media"
-
+#: ImportMerge/importmerge.glade:422
 msgid "Merge Import"
 msgstr "Yhdistä tuonnista"
 
+#: ImportMerge/importmerge.glade:392
 msgid "Merge Original"
 msgstr "Yhdistä alkuperäisestä"
 
 # Yhdistä tuontiin
+#: ImportMerge/importmerge.py:112
 msgid "Merge into import"
 msgstr "Yhdistetään tuonnista"
 
 # Yhdistä alkuperäiseen
+#: ImportMerge/importmerge.py:111
 msgid "Merge into original"
 msgstr "Ydistetään alkuperäisestä"
 
+#: ImportMerge/importmerge.py:89
 msgid "Missing"
 msgstr "Puuttuva"
 
-msgid "Note"
-msgstr "Huomautus"
-
-msgid "Object"
-msgstr "Kohde"
-
+#: ImportMerge/importmerge.glade:180
 msgid "Object Name/Description"
 msgstr "Kohteen nimi/kuvaus"
 
+#: ImportMerge/importmerge.glade:248
 msgid "Object and item"
 msgstr "Kohde ja nimike"
 
+#: ImportMerge/importmerge.py:481 ImportMerge/importmerge.py:960
+#: ImportMerge/importmerge.py:981
 msgid "Original"
 msgstr "Alkuperäinen"
 
-msgid "Person"
-msgstr "Henkilö"
-
-msgid "Place"
-msgstr "Paikka"
-
-msgid "Processing..."
-msgstr "Käsitellään..."
-
+#: EventDescriptionEditor/EventDescriptionEditor.py:142
 msgid "Replace"
 msgstr "Korvaa"
 
+#: ImportMerge/importmerge.py:113
 msgid "Replace with import"
 msgstr "Korvaa tuonnilla"
 
-msgid "Repository"
-msgstr "Arkisto"
-
+#: ImportMerge/importmerge.py:484 ImportMerge/importmerge.py:963
+#: ImportMerge/importmerge.py:984
 msgid "Result  "
 msgstr "Tulos "
 
-msgid "Save Changes?"
-msgstr "Talleta muutokset?"
-
-msgid "Searching..."
-msgstr "Haetaan..."
-
+#: ImportMerge/importmerge.glade:124
 msgid "Select the difference you wish to examine."
 msgstr "Valitse ero, jota haluat tarkastella."
 
+#: ImportMerge/importmerge.glade:464
 msgid "Show more details"
 msgstr "Näytä lisää tietoja"
 
-msgid "Source"
-msgstr "Lähde"
-
-msgid "Status"
-msgstr "Tila"
-
-msgid "Tag"
-msgstr "Tagi"
-
+#: ImportMerge/importmerge.py:128
 msgid ""
 "The import data will entirely replace the data in your tree.  Any referenced "
 "items were also marked for replacement or removal."
@@ -207,9 +188,11 @@ msgstr ""
 "Tuontitiedot korvaavat kokonaan sukupuun tiedot. Kaikki kohteet on merkitty "
 "vaihdettavaksi tai poistettavaksi."
 
+#: ImportMerge/importmerge.glade:353
 msgid "This button will add the imported data as a new object to your tree."
 msgstr "Painike lisää tuodut tiedot uusiksi kohteiksi sukupuuhusi."
 
+#: ImportMerge/importmerge.glade:368
 msgid ""
 "This button will bring up a dialog allowing you to finalize your changes, or "
 "abandon them."
@@ -217,6 +200,7 @@ msgstr ""
 "Painikkeella avataan valintaikkunan, jonka avulla voit viimeistellä tai "
 "hylätä muutokset."
 
+#: ImportMerge/importmerge.glade:441
 msgid ""
 "This button will edit the imported data.  The data will still need to be "
 "merged, added or replaced."
@@ -224,28 +208,34 @@ msgstr ""
 "Painikkeella muokataan tuotuja tietoja. Tiedot on vielä yhdistettävä, "
 "lisättävä tai vaihdettava."
 
+#: ImportMerge/importmerge.glade:338
 msgid "This button will ignore the difference, no changes to your tree."
 msgstr "Painikkeella ohitetaan erot, ei muutoksia sukupuuhusi."
 
+#: ImportMerge/importmerge.glade:426
 msgid ""
 "This button will merge the imported data into your tree with the imported "
 "data as a base."
 msgstr "Painike yhdistää tuodut tiedot sukupuuhun, pohjana tuodut tiedot."
 
+#: ImportMerge/importmerge.glade:396
 msgid ""
 "This button will merge the imported data into your tree with your tree data "
 "as a base."
 msgstr "Painike yhdistää tuodut tiedot sukupuuhun, pohjana sukupuusi tiedot."
 
+#: ImportMerge/importmerge.glade:411
 msgid "This button will replace your tree data with the imported data."
 msgstr "Painikkeella korvataan sukupuusi tiedot tuodulla tiedolla."
 
+#: ImportMerge/importmerge.py:122
 msgid ""
 "This item will be added to your tree.  Any referenced items were also marked "
 "for adding."
 msgstr ""
 "Tämä kohde lisätään puuhusi. Kaikki kohteet on merkitty myös lisättäväksi."
 
+#: ImportMerge/importmerge.py:118
 msgid ""
 "This item will be deleted from your tree.  Any referenced items were also "
 "marked for deletion."
@@ -253,6 +243,7 @@ msgstr ""
 "Tämä kohde poistetaan sukupuusta. Kaikki merkatut kohteet on myös merkitty "
 "poistettavaksi."
 
+#: ImportMerge/importmerge.py:124
 msgid ""
 "This item will be merged, saving data from your tree.  Any referenced items "
 "were also marked for merging or adding."
@@ -260,6 +251,7 @@ msgstr ""
 "Tämä kohta yhdistetään tallentamalla tietoja sukupuustasi. Kaikki viitatut "
 "kohteet merkittiin myös yhdistämiseen tai lisäämiseen."
 
+#: ImportMerge/importmerge.py:126
 msgid ""
 "This item will be merged, using data from the import.  Any referenced items "
 "were also marked for merging or adding."
@@ -267,6 +259,7 @@ msgstr ""
 "Tämä merkintä yhdistetään, käyttäen tuotuja tietoja. Kaikki kohteet "
 "merkittiin myös yhdistämiseksi tai lisäämiseksi."
 
+#: ImportMerge/importmerge.py:120
 msgid ""
 "This item will not be changed in your tree.  Any referenced items were also "
 "marked for Ignore."
@@ -274,6 +267,7 @@ msgstr ""
 "Tätä kohtaa ei muuteta puussa. Kaikki viittaamattomat kohteet merkittiin "
 "myös ohitettavaksi."
 
+#: ImportMerge/importmerge.py:130
 msgid ""
 "This item will not be changed in your tree.  Any referenced items were also "
 "marked to keep."
@@ -281,9 +275,11 @@ msgstr ""
 "Tätä kohtaa sukupuussa ei muuteta. Kaikki viitatut kohteet oli myös merkitty "
 "pidettäväksi."
 
+#: ImportMerge/importmerge.glade:349
 msgid "Unmark"
 msgstr "Poista merkintä"
 
+#: ImportMerge/importmerge.py:115 ImportMerge/importmerge.glade:293
 msgid ""
 "Use buttons below to set the 'Action' for each difference.  No changes will "
 "be made to your tree until you press 'Done' and confirm."
@@ -291,19 +287,18 @@ msgstr ""
 "Käytä alla olevia painikkeita asettaaksesi \"Toiminto\" jokaiselle erolle. "
 "Puuhun ei tehdä muutoksia, ennen kuin painat Valmis ja vahvistat."
 
+#: ImportMerge/importmerge.py:406
 msgid "Your Tree and import are the same."
 msgstr "Puu ja tuonti ovat samat."
 
-msgid "_Cancel"
-msgstr "_Peruuta"
-
-msgid "_Save"
-msgstr "_Tallenna"
-
 # tuotu
+#: ImportMerge/importmerge.py:458 ImportMerge/importmerge.py:466
+#: ImportMerge/importmerge.py:474
 msgid "imported "
 msgstr "tuodaan "
 
 # sukupuusi
+#: ImportMerge/importmerge.py:451 ImportMerge/importmerge.py:460
+#: ImportMerge/importmerge.py:468 ImportMerge/importmerge.py:476
 msgid "your tree "
 msgstr "sukupuun "

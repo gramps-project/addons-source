@@ -3,33 +3,42 @@
 # translation of de.po to Deutsch
 #
 #
-# Anton Huber <anton_huber@gmx.de>, 2005,2006.
+# Anton Huber <anton_huber@gmx.de>, 2005, 2006.
 # Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
 # Sebastian Vöcking <voeck@web.de>, 2005.
 # Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
 # Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 # Alois Pöttker <alois.poettker@gmx.de>, 2017.
+# Allan Nordhøy <epost@anotheragency.no>, 2021.
+# R. B. <weblate@macdefender.org>, 2021.
+# RiseT <tareiss1971@yahoo.de>, 2021.
+# David Straub <straub@protonmail.com>, 2021.
+# nautilusx <translate@disroot.org>, 2021.
+# Andreas Abraham <andreas.abraham@gmx.de>, 2021.
+# RiseT <twilite505-4bf24909@yahoo.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-29 22:41+0200\n"
-"PO-Revision-Date: 2020-07-23 20:24+0200\n"
+"POT-Creation-Date: 2020-08-02 22:39+0200\n"
+"PO-Revision-Date: 2025-02-09 06:44+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
-"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
+"addons/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 19.12.3\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10-dev\n"
 
 #: FamilySheet/FamilySheet.gpr.py:3 FamilySheet/FamilySheet.py:126
+#: FamilySheet/FamilySheet.gpr.py:4
 msgid "Family Sheet"
 msgstr "Familienblatt"
 
-#: FamilySheet/FamilySheet.gpr.py:4
+#: FamilySheet/FamilySheet.gpr.py:4 FamilySheet/FamilySheet.gpr.py:6
 msgid ""
 "Produces a family sheet showing full information about a person and his/her "
 "partners and children."
@@ -61,11 +70,6 @@ msgstr "; %(type)s: %(value)s"
 msgid "Source references:"
 msgstr "Quellenangaben:"
 
-#: FamilySheet/FamilySheet.py:571
-#, python-format
-msgid "%s: "
-msgstr "%s: "
-
 #: FamilySheet/FamilySheet.py:575
 #, python-format
 msgid ", page %s"
@@ -75,131 +79,97 @@ msgstr ", Seite %s"
 msgid "Notes:"
 msgstr "Notizen:"
 
-#: FamilySheet/FamilySheet.py:767
+#: FamilySheet/FamilySheet.py:767 FamilySheet/FamilySheet.py:769
 #, python-format
 msgid "on %(ymd_date)s"
 msgstr "am %(ymd_date)s"
 
-#: FamilySheet/FamilySheet.py:769
+#: FamilySheet/FamilySheet.py:769 FamilySheet/FamilySheet.py:771
 #, python-format
 msgid "in %(ym_date)s"
 msgstr "im %(ym_date)s"
 
-#: FamilySheet/FamilySheet.py:771
+#: FamilySheet/FamilySheet.py:771 FamilySheet/FamilySheet.py:773
 #, python-format
 msgid "in %(y_date)s"
 msgstr "in %(y_date)s"
 
-#: FamilySheet/FamilySheet.py:775
+#: FamilySheet/FamilySheet.py:775 FamilySheet/FamilySheet.py:777
 #, python-format
 msgid "on %(placeholder)s"
 msgstr "am %(placeholder)s"
 
-#: FamilySheet/FamilySheet.py:777
+#: FamilySheet/FamilySheet.py:777 FamilySheet/FamilySheet.py:779
 #, python-format
 msgid "on %(placeholder)s (%(partial)s)"
 msgstr "am %(placeholder)s (%(partial)s)"
 
 #: FamilySheet/FamilySheet.py:822 FamilySheet/FamilySheet.py:824
+#: FamilySheet/FamilySheet.py:826
 #, python-format
 msgid "in %(place)s"
 msgstr "in %(place)s"
 
-#: FamilySheet/FamilySheet.py:859
-msgid "Report Options"
-msgstr "Berichtsoptionen"
-
-#: FamilySheet/FamilySheet.py:862
+#: FamilySheet/FamilySheet.py:862 FamilySheet/FamilySheet.py:864
 msgid "Center person"
 msgstr "Zentrale Person"
 
-#: FamilySheet/FamilySheet.py:864
+#: FamilySheet/FamilySheet.py:864 FamilySheet/FamilySheet.py:866
 msgid "The person whose partners and children are printed"
 msgstr "Die Person, deren Partner und Kinder gedruckt werden"
 
-#: FamilySheet/FamilySheet.py:867
+#: FamilySheet/FamilySheet.py:867 FamilySheet/FamilySheet.py:869
 msgid "Print sheets for"
 msgstr "Blätter drucken für"
 
-#: FamilySheet/FamilySheet.py:869
+#: FamilySheet/FamilySheet.py:869 FamilySheet/FamilySheet.py:871
 msgid "Center person only"
 msgstr "Nur zentrale Person"
 
-#: FamilySheet/FamilySheet.py:870
+#: FamilySheet/FamilySheet.py:870 FamilySheet/FamilySheet.py:872
 msgid "Center person and descendants in side branches"
 msgstr "Zentrale Person und Nachkommen in Nebenlinien"
 
-#: FamilySheet/FamilySheet.py:871
+#: FamilySheet/FamilySheet.py:871 FamilySheet/FamilySheet.py:873
 msgid "Center person and all descendants"
 msgstr "Zentrale Person und alle Nachkommen"
 
-#: FamilySheet/FamilySheet.py:872
+#: FamilySheet/FamilySheet.py:872 FamilySheet/FamilySheet.py:874
 msgid "Whether to include descendants, and which ones."
 msgstr "Ob Nachkommen enthalten sind und welche."
 
-#: FamilySheet/FamilySheet.py:875
-msgid "Use call name"
-msgstr "Rufname"
-
-#: FamilySheet/FamilySheet.py:877
-msgid "Don't use call name"
-msgstr "Rufname nicht verwenden"
-
-#: FamilySheet/FamilySheet.py:878
+#: FamilySheet/FamilySheet.py:878 FamilySheet/FamilySheet.py:880
 msgid "Replace first name with call name"
 msgstr "Vornamen durch Rufname ersetzen"
 
-#: FamilySheet/FamilySheet.py:879
+#: FamilySheet/FamilySheet.py:879 FamilySheet/FamilySheet.py:881
 msgid "Underline call name in first name / add call name to first name"
 msgstr "Rufname im Vornamen unterstreichen / zum Vornamen hinzufügen"
 
-#: FamilySheet/FamilySheet.py:880
+#: FamilySheet/FamilySheet.py:880 FamilySheet/FamilySheet.py:882
 msgid "Whether to include call name, and how."
 msgstr "Ob Rufnamen enthalten sind und wie."
 
-#: FamilySheet/FamilySheet.py:883
+#: FamilySheet/FamilySheet.py:883 FamilySheet/FamilySheet.py:885
 msgid "Print placeholders for missing information"
 msgstr "Platzhalter für fehlende Informationen drucken"
 
-#: FamilySheet/FamilySheet.py:885
-msgid "Whether to include fields for missing information."
-msgstr "Ob Felder für fehlende Informationen enthalten sind."
-
-#: FamilySheet/FamilySheet.py:888
-msgid "Include sources"
-msgstr "Quellen einbeziehen"
-
-#: FamilySheet/FamilySheet.py:889
-msgid "Whether to include source references."
-msgstr "Ob Quellennachweise einbezogen werden."
-
-#: FamilySheet/FamilySheet.py:892
-msgid "Include notes"
-msgstr "Notizen aufnehmen"
-
-#: FamilySheet/FamilySheet.py:893
-msgid "Whether to include notes."
-msgstr "Ob Notizen aufgenommen werden."
-
-#: FamilySheet/FamilySheet.py:907
+#: FamilySheet/FamilySheet.py:907 FamilySheet/FamilySheet.py:909
 msgid "The basic style used for the text display"
 msgstr "Der Grundstil, der für Text verwendet wird"
 
-#: FamilySheet/FamilySheet.py:917
+#: FamilySheet/FamilySheet.py:917 FamilySheet/FamilySheet.py:919
 msgid "The style used for the page key on the top"
 msgstr "Der Stil, der für den Seitenschlüssel oben verwendet wird."
 
-#: FamilySheet/FamilySheet.py:926
+#: FamilySheet/FamilySheet.py:926 FamilySheet/FamilySheet.py:928
 msgid "The style used for names"
 msgstr "Der Stil der für Namen verwendet wird"
 
-#: FamilySheet/FamilySheet.py:936
+#: FamilySheet/FamilySheet.py:936 FamilySheet/FamilySheet.py:938
 msgid "The style used for numbers"
 msgstr "Der Stil der für Nummern verwendet wird"
 
-#: FamilySheet/FamilySheet.py:946
+#: FamilySheet/FamilySheet.py:946 FamilySheet/FamilySheet.py:948
 msgid "The style used for footnotes (notes and source references)"
 msgstr "Der Stil der für Fußnoten (Notizen und Quellenangaben) verwendet wird"
-
-#~ msgid "→ %s"
-#~ msgstr "→ %s"

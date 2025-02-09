@@ -1,14 +1,24 @@
-# Russian translation for WordleGramplet
+# Russian translation for MediaMerge
 # This file is distributed under the same license as the Gramps package.
 #
-# Ivan Komaritsyn <vantu5z@mail.ru>, 2018.
+# Ivan Komaritsyn <vantu5z@mail.ru>, 2015, 2016, 2017, 2018, 2019, 2020, 2021.
+# Alexander Bogdashevsky <sanderb@kezomba.com>, 2004.
+# Alex Roitman <shura@gramps-project.org>, 2002, 2003, 2004, 2005, 2006, 2007.
+# Konstantin Dorichev <kdorichev@gmail.com>, 2008.
+# Yevgeny Zegzda <ezegjda@ya.ru>, 2009, 2010.
+# vantu5z <vantu5z@mail.ru>, 2020.
+# Komaritsyn Ivan <vantu5z@mail.ru>, 2018.
+# Andrey Baznikin (http://d.scn.ru/), 2009, 2010, 2011.
+# Vassilii Khachaturov <vassilii@tarunz.org>, 2011, 2012, 2013, 2014.
+# Egor Reentov <egor.gramps@gmail.com>, 2011, 2012, 2013.
+# Artem Glebov <artem.glebov@gmail.com>, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-06 14:13+0300\n"
-"PO-Revision-Date: 2018-12-06 14:15+0300\n"
+"POT-Creation-Date: 2018-12-04 16:31+0300\n"
+"PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
@@ -18,14 +28,11 @@ msgstr ""
 "X-Generator: Gtranslator 2.91.7\n"
 "X-Poedit-Language: Russian\n"
 "X-Poedit-Country: RUSSIAN FEDERATION\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
-
-#: WordleGramplet/WordleGramplet.gpr.py:4
-msgid "Wordle Gramplet"
-msgstr "Грамплет облака слов"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
 #: WordleGramplet/WordleGramplet.gpr.py:10
+#: WordleGramplet/WordleGramplet.gpr.py:4
 msgid "Wordle"
 msgstr "Облако слов"
 
@@ -33,46 +40,14 @@ msgstr "Облако слов"
 msgid "Gramplet used to make word clouds with wordle.net"
 msgstr "Грамплет создающий облако слов с помощью wordle.net"
 
-#: WordleGramplet/WordleGramplet.py:72
-msgid "Double-click surname for details"
-msgstr "Двойной щелчок по фамилии для отображения подробной информации"
-
-#: WordleGramplet/WordleGramplet.py:74
-msgid "No Family Tree loaded."
-msgstr "Семейное древо не загружено."
-
-#: WordleGramplet/WordleGramplet.py:91
-msgid "Processing..."
-msgstr "Обработка..."
-
 #: WordleGramplet/WordleGramplet.py:126
 msgid "[Missing]"
 msgstr "[Отсутствует]"
-
-#: WordleGramplet/WordleGramplet.py:134
-msgid "Total unique surnames"
-msgstr "Количество уникальных фамилий"
-
-#: WordleGramplet/WordleGramplet.py:136
-msgid "Total people"
-msgstr "Количество человек"
 
 #: WordleGramplet/WordleGramplet.py:140
 msgid "Number of font sizes"
 msgstr "Размер шрифта"
 
-#: WordleGramplet/WordleGramplet.py:143
-msgid "Filter"
-msgstr "Фильтр"
-
 #: WordleGramplet/WordleGramplet.py:144
 msgid "Select filter to restrict list"
 msgstr "Выберите фильтр для сокращения списка"
-
-#: WordleGramplet/WordleGramplet.py:148
-msgid "Filter Person"
-msgstr "Фильтр по лицу"
-
-#: WordleGramplet/WordleGramplet.py:149
-msgid "The center person for the filter"
-msgstr "Главное лицо для фильтра"

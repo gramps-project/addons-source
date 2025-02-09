@@ -1,30 +1,36 @@
-# Dutch translation of addon PlaceCompletion.
+# Dutch translation of addon MediaMerge.
 # Copyright (C) 2020 Gramps project
-# This file is distributed under the same license as the PlaceCompletion package.
+# This file is distributed under the same license as the MediaMerge package.
+# Jan Sparreboom <jan@sparreboom.net>, 2020, 2021, 2023.
 # Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
 # Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
-# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010.
-# Jan Sparreboom <jan@sparreboom.net>, 2020.
+# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
+# Erik De Richter <frederik.de.richter@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
+# Harmen Huizinga <harmenhuizinga@sigmo.nl>, 2013.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PlaceCompletion 5.x\n"
+"Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
 "POT-Creation-Date: 2019-01-04 18:55-0600\n"
-"PO-Revision-Date: 2020-08-07 14:02+0200\n"
-"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
-"Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
+"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
+"addons/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10-dev\n"
 
 #: PlaceCompletion/PlaceCompletion.gpr.py:25
+#: PlaceCompletion/PlaceCompletion.gpr.py:26
 msgid "PlaceCompletion"
 msgstr "Locatievoltooiing"
 
 #: PlaceCompletion/PlaceCompletion.gpr.py:26
+#: PlaceCompletion/PlaceCompletion.gpr.py:28
 msgid ""
 "Provides a browsable list of selected places, with possibility to complete/"
 "parse/set the attribute fields."
@@ -93,18 +99,6 @@ msgstr "Brgrd / lngrd-bestand in het geheugen laden ..."
 msgid "Examining places"
 msgstr "Plaatsen onderzoeken"
 
-#: PlaceCompletion/PlaceCompletion.py:520
-msgid "City"
-msgstr "Stad"
-
-#: PlaceCompletion/PlaceCompletion.py:523
-msgid "State"
-msgstr "Staat"
-
-#: PlaceCompletion/PlaceCompletion.py:526
-msgid "Country"
-msgstr "Land"
-
 #: PlaceCompletion/PlaceCompletion.py:685
 msgid "Set Tag"
 msgstr "Label instellen"
@@ -130,20 +124,9 @@ msgstr "%d plaatsgegevens zijn gewijzigd."
 msgid "Change places"
 msgstr "Wijzig plaatsen"
 
-#: PlaceCompletion/PlaceCompletion.py:808
-#: PlaceCompletion/PlaceCompletion.py:814
-#: PlaceCompletion/PlaceCompletion.py:819
-#: PlaceCompletion/PlaceCompletion.py:825
-msgid "Cannot open file"
-msgstr "Kan bestand niet openen"
-
 #: PlaceCompletion/PlaceCompletion.py:809
 msgid "The selected file is a directory, not a file."
 msgstr "Het geselecteerde bestand is een map, geen bestand."
-
-#: PlaceCompletion/PlaceCompletion.py:815
-msgid "You do not have read access to the selected file."
-msgstr "U heeft geen leestoegang op het geselecteerde bestand."
 
 #: PlaceCompletion/PlaceCompletion.py:820
 msgid "The file you want to access is not a regular file."
@@ -267,25 +250,13 @@ msgstr "Pas alle voorgestelde wijzigingen toe"
 msgid "Selection of the Places you want to complete:"
 msgstr "Selectie van de plaatsen die u wilt voltooien:"
 
-#: PlaceCompletion/placecompletion.glade:178
-msgid "C_ity:"
-msgstr "_Stad:"
-
 #: PlaceCompletion/placecompletion.glade:195
 msgid "Parish:"
 msgstr "Parochie:"
 
-#: PlaceCompletion/placecompletion.glade:240
-msgid "County:"
-msgstr "Graafschap:"
-
 #: PlaceCompletion/placecompletion.glade:271
 msgid "Place _filter:"
 msgstr "Locatie_filter:"
-
-#: PlaceCompletion/placecompletion.glade:321
-msgid "State:"
-msgstr "Staat:"
 
 #: PlaceCompletion/placecompletion.glade:336
 msgid "Count_ry:"
@@ -302,10 +273,6 @@ msgstr "Middelpunt lengtegraad:"
 #: PlaceCompletion/placecompletion.glade:430
 msgid "Places in a rectangle:"
 msgstr "Locaties in een rechthoek:"
-
-#: PlaceCompletion/placecompletion.glade:443
-msgid "Width:"
-msgstr "Breedte:"
 
 #: PlaceCompletion/placecompletion.glade:460
 msgid "Height:"

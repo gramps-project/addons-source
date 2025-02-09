@@ -1,47 +1,55 @@
-# Hungarian translation of GRAMPS.
-# Copyright (C) 2011 the Gramps Project
-# This file is distributed under the same license as the PACKAGE package.
+# translation of hu.po to magyar
+# Hungarian translation for GRAMPS
+# Copyright (C) 2003 the Gramps Project
 #
 #
 # Egyeki Gergely <egeri@elte.hu>, 2003, 2004.
 # Arpad Horvath <horvath.arpad@szgti.bmf.hu>, 2006.
+# Jancsi <gyj@centrum.sk>, 2020.
 # Kolesár András <translation@kolesar.hu>, 2009.
-# Nemeséri, Lajos <nemeseril@gmail.com>, Lajos <nemeseril@gmail.com>, 2011, 2012.
-#
+# Nemeséri Lajos <nemeseril@gmail.com>, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
 msgid ""
 msgstr ""
-"Project-Id-Version: GRAMPS 3.4_18872\n"
+"Project-Id-Version: hu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-25 15:31+0100\n"
-"PO-Revision-Date: 2012-02-18 14:43+0100\n"
-"Last-Translator: Nemeséri, Lajos <nemeseril@gmail.com>\n"
-"Language-Team: magyar <gnome@gnome.hu>\n"
-"Language: hu\n"
+"POT-Creation-Date: 2010-03-08 16:54+0100\n"
+"PO-Revision-Date: 2009-11-10 09:48+0100\n"
+"Last-Translator: Kolesár András <translation@kolesar.hu>\n"
+"Language-Team: magyar <hu@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bits\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Lokalize 1.2\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;X-Generator: KBabel 1.11.2X-Generator: X-"
+"Generator: KBabel 1.11.2\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #: EditExifMetadata/editexifmetadata.gpr.py:29
 #: EditExifMetadata/editexifmetadata.py:753
 #: EditExifMetadata/editexifmetadata.py:1159
+#: EditExifMetadata/editexifmetadata.gpr.py:30
+#: EditExifMetadata/editexifmetadata.py:723
+#: EditExifMetadata/editexifmetadata.py:1135
+#: EditExifMetadata/editexifmetadata.py:1147
 msgid "Edit Image Exif Metadata"
 msgstr "A kép Exif metaadatainak szerkesztése"
 
 #: EditExifMetadata/editexifmetadata.gpr.py:30
+#: EditExifMetadata/editexifmetadata.gpr.py:31
 msgid "Gramplet to view, edit, and save image Exif metadata"
 msgstr "Kép Exif metaadatokat mutató, szerkesztő és mentő gramplet"
 
 #: EditExifMetadata/editexifmetadata.gpr.py:34
+#: EditExifMetadata/editexifmetadata.gpr.py:35
 msgid "Edit Exif Metadata"
 msgstr "Exif metaadatok szerkesztése"
 
 #: EditExifMetadata/editexifmetadata.py:148
+#: EditExifMetadata/editexifmetadata.py:135
 msgid "<-- Image Types -->"
 msgstr "<-- Kép típus -->"
 
 #: EditExifMetadata/editexifmetadata.py:171
+#: EditExifMetadata/editexifmetadata.py:158
 msgid ""
 "Warning:  Changing this entry will update the Media object title field in "
 "Gramps not Exiv2 metadata."
@@ -50,11 +58,13 @@ msgstr ""
 "fogja frissíteni, nem az Exiv2 metaadatokat."
 
 #: EditExifMetadata/editexifmetadata.py:174
+#: EditExifMetadata/editexifmetadata.py:161
 #, fuzzy
 msgid "Provide a short description for this image."
 msgstr "Adja meg a kép rövid leírását."
 
 #: EditExifMetadata/editexifmetadata.py:176
+#: EditExifMetadata/editexifmetadata.py:163
 msgid ""
 "Enter the Artist/ Author of this image.  The person's name or the company "
 "who is responsible for the creation of this image."
@@ -63,10 +73,12 @@ msgstr ""
 "ami a kép létrehozásáért felel."
 
 #: EditExifMetadata/editexifmetadata.py:179
+#: EditExifMetadata/editexifmetadata.py:167
 msgid "Enter the copyright information for this image. \n"
 msgstr "A kép szerzői jogi adatait vigye be. \n"
 
 #: EditExifMetadata/editexifmetadata.py:181
+#: EditExifMetadata/editexifmetadata.py:169
 msgid ""
 "The original date/ time when the image was first created/ taken as in a "
 "photograph.\n"
@@ -76,6 +88,7 @@ msgstr ""
 "Például: 1830-01-1 09:30:59"
 
 #: EditExifMetadata/editexifmetadata.py:184
+#: EditExifMetadata/editexifmetadata.py:173
 msgid ""
 "This is the date/ time that the image was last changed/ modified.\n"
 "Example: 2011-05-24 14:30:00"
@@ -83,31 +96,8 @@ msgstr ""
 "Ez a kép utolsó változtatásának/módosításának dátuma/ideje.\n"
 "Például: 2011-05-24 14:30:00"
 
-#: EditExifMetadata/editexifmetadata.py:187
-msgid ""
-"Enter the Latitude GPS coordinates for this image,\n"
-"Example: 43.722965, 43 43 22 N, 38° 38′ 03″ N, 38 38 3"
-msgstr ""
-"A kép GPS koordináta szélességi fok bevitele,\n"
-"Például: 43.722965, 43 43 22 É, 38° 38′ 03″ É, 38 38 3"
-
-#: EditExifMetadata/editexifmetadata.py:190
-msgid ""
-"Enter the Longitude GPS coordinates for this image,\n"
-"Example: 10.396378, 10 23 46 E, 105° 6′ 6″ W, -105 6 6"
-msgstr ""
-"A kép GPS koordináta hosszúsági fok bevitele,\n"
-"Például: 10.396378, 10 23 46 K, 105° 6′ 6″ NY, -105 6 6"
-
-#: EditExifMetadata/editexifmetadata.py:193
-msgid ""
-"This is the measurement of Above or Below Sea Level.  It is measured in "
-"meters.Example: 200.558, -200.558"
-msgstr ""
-"Ez tengerszint feletti, vagy alatti érték. Mérése méterben történik. Pédául: "
-"200.558, -200.558"
-
 #: EditExifMetadata/editexifmetadata.py:202
+#: EditExifMetadata/editexifmetadata.py:191
 msgid ""
 "Displays the Gramps Wiki Help page for 'Edit Image Exif Metadata' in your "
 "web browser."
@@ -116,6 +106,7 @@ msgstr ""
 "GRAMPS Wiki súgóból."
 
 #: EditExifMetadata/editexifmetadata.py:205
+#: EditExifMetadata/editexifmetadata.py:194
 msgid ""
 "This will open up a new window to allow you to edit/ modify this image's "
 "Exif metadata.\n"
@@ -126,11 +117,13 @@ msgstr ""
 "  Lehetővé teszi a módosított Exif metaadatok menthetőségét is."
 
 #: EditExifMetadata/editexifmetadata.py:209
+#: EditExifMetadata/editexifmetadata.py:198
 msgid "Will produce a Popup window showing a Thumbnail Viewing Area"
 msgstr ""
 "Felugró ablakot hoz létre, ami a bélyegképek megtekintési mezőjét mutatja"
 
 #: EditExifMetadata/editexifmetadata.py:211
+#: EditExifMetadata/editexifmetadata.py:201
 msgid ""
 "Select from a drop- down box the image file type that you would like to "
 "convert your non- Exiv2 compatible media object to."
@@ -139,6 +132,7 @@ msgstr ""
 "kompatibilis média objektumát konvertálni szeretné."
 
 #: EditExifMetadata/editexifmetadata.py:214
+#: EditExifMetadata/editexifmetadata.py:205
 msgid ""
 "If your image is not of an image type that can have Exif metadata read/ "
 "written to/from, convert it to a type that can?"
@@ -147,6 +141,7 @@ msgstr ""
 "legyen arra alkalmas típusúra konvertálva?"
 
 #: EditExifMetadata/editexifmetadata.py:217
+#: EditExifMetadata/editexifmetadata.py:209
 msgid ""
 "WARNING:  This will completely erase all Exif metadata from this image!  Are "
 "you sure that you want to do this?"
@@ -155,14 +150,17 @@ msgstr ""
 "ezt akarja?"
 
 #: EditExifMetadata/editexifmetadata.py:315
+#: EditExifMetadata/editexifmetadata.py:214
 msgid "Thumbnail"
 msgstr "Bélyegkép"
 
 #: EditExifMetadata/editexifmetadata.py:397
+#: EditExifMetadata/editexifmetadata.py:402
 msgid "Select an image to begin..."
 msgstr "Kezdéshez válasszon egy képet..."
 
 #: EditExifMetadata/editexifmetadata.py:419
+#: EditExifMetadata/editexifmetadata.py:421
 msgid ""
 "Image is NOT readable,\n"
 "Please choose a different image..."
@@ -171,6 +169,8 @@ msgstr ""
 "Kérem válasszon másik képet..."
 
 #: EditExifMetadata/editexifmetadata.py:435
+#: EditExifMetadata/editexifmetadata.py:481
+#: EditExifMetadata/editexifmetadata.py:1440
 msgid ""
 "Image is NOT writable,\n"
 "You will NOT be able to save Exif metadata...."
@@ -179,27 +179,22 @@ msgstr ""
 "NEM lehetséges az Exif metaadatok mentése..."
 
 #: EditExifMetadata/editexifmetadata.py:447
+#: EditExifMetadata/editexifmetadata.py:441
 msgid "Please convert this image to an Exiv2- compatible image type..."
 msgstr "Kérem konvertálja a képet egy Exiv2 kompatibilis kép típusra..."
 
-#: EditExifMetadata/editexifmetadata.py:470
-#, fuzzy
-msgid "Image Size : %04(width)d x %04(height)d pixels"
-msgstr "Képméret: %04d x %04d képpont"
-
-#: EditExifMetadata/editexifmetadata.py:503
-msgid "Displaying Exif metadata..."
-msgstr "Exif metaadatok mutatása..."
-
 #: EditExifMetadata/editexifmetadata.py:670
+#: EditExifMetadata/editexifmetadata.py:648
 msgid "Click Close to close this Thumbnail View Area."
 msgstr "A bélyegkép mutató terület bezárásához kattintson a Bezárásra."
 
 #: EditExifMetadata/editexifmetadata.py:674
+#: EditExifMetadata/editexifmetadata.py:654
 msgid "Thumbnail View Area"
 msgstr "Bélyegkép mutató terület"
 
 #: EditExifMetadata/editexifmetadata.py:753
+#: EditExifMetadata/editexifmetadata.py:724
 msgid ""
 "WARNING: You are about to convert this image into a .jpeg image.  Are you "
 "sure that you want to do this?"
@@ -208,14 +203,12 @@ msgstr ""
 "szeretné?"
 
 #: EditExifMetadata/editexifmetadata.py:755
+#: EditExifMetadata/editexifmetadata.py:726
 msgid "Convert and Delete"
 msgstr "Konvertálás és törlés"
 
-#: EditExifMetadata/editexifmetadata.py:755
-msgid "Convert"
-msgstr "Konvertálás"
-
 #: EditExifMetadata/editexifmetadata.py:841
+#: EditExifMetadata/editexifmetadata.py:807
 msgid ""
 "Your image has been converted and the original file has been deleted, and "
 "the full path has been updated!"
@@ -224,12 +217,14 @@ msgstr ""
 "pedig frissítésre került!"
 
 #: EditExifMetadata/editexifmetadata.py:845
+#: EditExifMetadata/editexifmetadata.py:812
 msgid ""
 "There has been an error, Please check your source and destination file "
 "paths..."
 msgstr "Hiba történt, ellenőrizze a forrás és a cél fájl elérési útvonalát..."
 
 #: EditExifMetadata/editexifmetadata.py:848
+#: EditExifMetadata/editexifmetadata.py:816
 msgid ""
 "There was an error in deleting the original file.  You will need to delete "
 "it yourself!"
@@ -238,18 +233,22 @@ msgstr ""
 "elvégeznie!"
 
 #: EditExifMetadata/editexifmetadata.py:865
+#: EditExifMetadata/editexifmetadata.py:834
 msgid "There was an error in converting your image file."
 msgstr "A képfájl konvertálásakor hiba történt..."
 
 #: EditExifMetadata/editexifmetadata.py:876
+#: EditExifMetadata/editexifmetadata.py:844
 msgid "Media Path Update"
 msgstr "Média útvonal frissítés"
 
 #: EditExifMetadata/editexifmetadata.py:882
+#: EditExifMetadata/editexifmetadata.py:853
 msgid "There has been an error in updating the image file's path!"
 msgstr "A képfájl elérési útvonalának frissítésekor hiba történt!"
 
 #: EditExifMetadata/editexifmetadata.py:916
+#: EditExifMetadata/editexifmetadata.py:886
 msgid ""
 "Click the close button when you are finished modifying this image's Exif "
 "metadata."
@@ -257,18 +256,22 @@ msgstr ""
 "A kép Exif metaadat módosítás befejezése után kattintson a Bezárás gombra."
 
 #: EditExifMetadata/editexifmetadata.py:954
+#: EditExifMetadata/editexifmetadata.py:924
 msgid "Saves a copy of the data fields into the image's Exif metadata."
 msgstr "Az adatmezők adatainak a kép Exif metaadataiba másolása és mentése."
 
 #: EditExifMetadata/editexifmetadata.py:957
+#: EditExifMetadata/editexifmetadata.py:928
 msgid "Re -display the data fields that were cleared from the Edit Area."
 msgstr "A szerkesztési területről törölt adatmező adatok újra megjelenítése."
 
 #: EditExifMetadata/editexifmetadata.py:960
+#: EditExifMetadata/editexifmetadata.py:932
 msgid "This button will clear all of the data fields shown here."
 msgstr "Ez a gomb kitisztítja az itt mutatott összes adatmezőt."
 
 #: EditExifMetadata/editexifmetadata.py:963
+#: EditExifMetadata/editexifmetadata.py:940
 msgid ""
 "Closes this popup Edit window.\n"
 "WARNING: This action will NOT Save any changes/ modification made to this "
@@ -279,80 +282,99 @@ msgstr ""
 "metaadataiba."
 
 #: EditExifMetadata/editexifmetadata.py:990
+#: EditExifMetadata/editexifmetadata.py:969
 msgid "Media Object Title"
 msgstr "Média objektum cím"
 
 #: EditExifMetadata/editexifmetadata.py:1000
+#: EditExifMetadata/editexifmetadata.py:978
 msgid "media Title: "
 msgstr "médiacím:"
 
 #: EditExifMetadata/editexifmetadata.py:1014
+#: EditExifMetadata/editexifmetadata.py:993
 msgid "General Data"
 msgstr "Általános adatok"
 
 #: EditExifMetadata/editexifmetadata.py:1024
+#: EditExifMetadata/editexifmetadata.py:1003
 msgid "Description: "
 msgstr "Leírás: "
 
 #: EditExifMetadata/editexifmetadata.py:1025
+#: EditExifMetadata/editexifmetadata.py:1004
 msgid "Artist: "
 msgstr "Művész: "
 
 #: EditExifMetadata/editexifmetadata.py:1026
+#: EditExifMetadata/editexifmetadata.py:1005
 msgid "Copyright: "
 msgstr "Szerzői jog: "
 
 #: EditExifMetadata/editexifmetadata.py:1039
+#: EditExifMetadata/editexifmetadata.py:1019
 msgid "Date/ Time"
 msgstr "Dátum/idő"
 
 #: EditExifMetadata/editexifmetadata.py:1053
+#: EditExifMetadata/editexifmetadata.py:1034
 msgid "Original: "
 msgstr "Eredeti: "
 
 #: EditExifMetadata/editexifmetadata.py:1054
+#: EditExifMetadata/editexifmetadata.py:1035
 msgid "Modified: "
 msgstr "Módosított: "
 
 #: EditExifMetadata/editexifmetadata.py:1071
+#: EditExifMetadata/editexifmetadata.py:1054
 msgid "Latitude/ Longitude/ Altitude GPS coordinates"
 msgstr "Szélesség/ hosszúság/ magasság GPS koordináták"
 
 #: EditExifMetadata/editexifmetadata.py:1085
+#: EditExifMetadata/editexifmetadata.py:1069
 msgid "Latitude :"
 msgstr "Szélességi fok:"
 
 #: EditExifMetadata/editexifmetadata.py:1086
+#: EditExifMetadata/editexifmetadata.py:1070
 msgid "Longitude :"
 msgstr "Hosszúsági fok:"
 
 #: EditExifMetadata/editexifmetadata.py:1087
+#: EditExifMetadata/editexifmetadata.py:1071
 msgid "Altitude :"
 msgstr "Magasság:"
 
 #: EditExifMetadata/editexifmetadata.py:1139
+#: EditExifMetadata/editexifmetadata.py:1114
 msgid "Bad Date/Time"
 msgstr "Hibás dátum/idő"
 
 #: EditExifMetadata/editexifmetadata.py:1147
+#: EditExifMetadata/editexifmetadata.py:1122
 #, fuzzy
 msgid "Invalid latitude (syntax: 18\\u00b09'"
 msgstr "érvénytelen szélességi fok (szintaktika: 18°9'"
 
 #: EditExifMetadata/editexifmetadata.py:1148
+#: EditExifMetadata/editexifmetadata.py:1123
 msgid "48.21\"S, -18.2412 or -18:9:48.21)"
 msgstr "48.21\"D, -18.2412 vagy -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1152
+#: EditExifMetadata/editexifmetadata.py:1127
 #, fuzzy
 msgid "Invalid longitude (syntax: 18\\u00b09'"
 msgstr "érvénytelen hosszúsági fok (szintaktika: 18°9'"
 
 #: EditExifMetadata/editexifmetadata.py:1153
+#: EditExifMetadata/editexifmetadata.py:1128
 msgid "48.21\"E, -18.2412 or -18:9:48.21)"
 msgstr "48.21\"K, -18.2412 vagy -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1159
+#: EditExifMetadata/editexifmetadata.py:1136
 msgid ""
 "WARNING!  You are about to completely delete the Exif metadata from this "
 "image?"
@@ -360,10 +382,12 @@ msgstr ""
 "FIGYELEM!  Biztosan le akarja törölni ennek a képnek az Exif metaadatait?"
 
 #: EditExifMetadata/editexifmetadata.py:1324
+#: EditExifMetadata/editexifmetadata.py:1333
 msgid "Media Title Update"
 msgstr "Média cím frissítés"
 
 #: EditExifMetadata/editexifmetadata.py:1350
+#: EditExifMetadata/editexifmetadata.py:1357
 msgid "Media Object Date Created"
 msgstr "Média objektum dátum létrehozva"
 
@@ -372,9 +396,11 @@ msgid "Saving Exif metadata to this image..."
 msgstr "A kép Exif metaadatainak mentése..."
 
 #: EditExifMetadata/editexifmetadata.py:1469
+#: EditExifMetadata/editexifmetadata.py:1465
 msgid "All Exif metadata has been deleted from this image..."
 msgstr "A kép minden Exif metaadata törölve..."
 
 #: EditExifMetadata/editexifmetadata.py:1474
+#: EditExifMetadata/editexifmetadata.py:1470
 msgid "There was an error in stripping the Exif metadata from this image..."
 msgstr "A kép metaadatainak kinyerésekor hiba történt..."

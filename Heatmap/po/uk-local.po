@@ -1,14 +1,16 @@
-# Ukrainian translation for Heatmap
+# Ukrainian translation for MediaMerge
 # This file is distributed under the same license as the Gramps package.
 #
 # Illia Maier <illia@maier.page>, 2024.
+# Fedir Zinchuk <fedikw@gmail.com>, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
+# Oleh Petriv, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-24 10:57-0500\n"
-"PO-Revision-Date: 2024-10-11 22:00+0300\n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"PO-Revision-Date: 2024-10-10 22:54+0300\n"
 "Last-Translator: Illia Maier <illia@maier.page>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
 "gramps/uk/>\n"
@@ -16,38 +18,21 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: Heatmap/heatmap.gpr.py:24
-msgid "Heatmap"
-msgstr "Теплова мапа (Heatmap)"
+#: EventDescriptionEditor/EventDescriptionEditor.py:105 Heatmap/heatmap.py:214
+#: Heatmap/heatmap.py:226
+msgid "INFO"
+msgstr "ІНФОРМАЦІЯ"
 
-#: Heatmap/heatmap.gpr.py:25
+#: Heatmap/heatmap.gpr.py:25 Heatmap/heatmap.gpr.py:26
 msgid "Create a heatmap web report."
 msgstr "Створити веб-звіт теплової мапи (Heatmap)."
-
-#: Heatmap/heatmap.py:72
-msgid "Filter"
-msgstr "Фільтр"
-
-#: Heatmap/heatmap.py:73 Heatmap/heatmap.py:77 Heatmap/heatmap.py:80
-#: Heatmap/heatmap.py:87 Heatmap/heatmap.py:91 Heatmap/heatmap.py:95
-#: Heatmap/heatmap.py:105
-msgid "General"
-msgstr "Загальне"
-
-#: Heatmap/heatmap.py:76
-msgid "Filter Person"
-msgstr "Фільтрувати Особу"
 
 #: Heatmap/heatmap.py:85
 msgid "Map tiles"
 msgstr "Шари мапи"
-
-#: Heatmap/heatmap.py:89
-msgid "Point size"
-msgstr "Розмір точки"
 
 #: Heatmap/heatmap.py:90
 msgid ""
@@ -65,20 +50,17 @@ msgstr "Шлях до файлу"
 msgid ""
 "For the file name only english letters A-Z, a-z and numbers 0-9 as well as "
 "the characters space, underline and hypen are allowed. The file name also "
-"has to start and end with an alphanumeric character.The file extention '."
-"html' is added by the report."
+"has to start and end with an alphanumeric character.The file extention "
+"'.html' is added by the report."
 msgstr ""
 "Для імені файлу дозволені лише англійські літери A-Z, a-z і цифри 0-9, а "
-"також пробіл, підкреслення і дефіс. Ім'я файлу має починатися і закінчуватися "
-"алфавітно-цифровим символом. Розширення файлу '.html' додається звітом."
+"також пробіл, підкреслення і дефіс. Ім'я файлу має починатися і "
+"закінчуватися алфавітно-цифровим символом. Розширення файлу '.html' "
+"додається звітом."
 
 #: Heatmap/heatmap.py:103
 msgid "File name"
 msgstr "Імʼя файлу"
-
-#: Heatmap/heatmap.py:111
-msgid "Events"
-msgstr "Події"
 
 #: Heatmap/heatmap.py:117
 msgid "Enable custom start position"
@@ -90,11 +72,6 @@ msgid ""
 msgstr ""
 "Увімкнення змусить мапу відкриватися з користувацької початкової позиції та "
 "масштабу."
-
-#: Heatmap/heatmap.py:121 Heatmap/heatmap.py:127 Heatmap/heatmap.py:132
-#: Heatmap/heatmap.py:137
-msgid "Advanced"
-msgstr "Розширене"
 
 #: Heatmap/heatmap.py:124
 msgid "Start latitude"
@@ -139,18 +116,6 @@ msgstr "Шлях не існує."
 #: Heatmap/heatmap.py:210
 msgid "Invalid filename."
 msgstr "Недійсне імʼя файлу."
-
-#: Heatmap/heatmap.py:214 Heatmap/heatmap.py:226
-msgid "INFO"
-msgstr "ІНФОРМАЦІЯ"
-
-#: Heatmap/multi_select.py:104
-msgid "Event type"
-msgstr "Тип події"
-
-#: Heatmap/utils.py:52
-msgid "OpenStreetMap"
-msgstr "OpenStreetMap"
 
 #: Heatmap/utils.py:55
 msgid "Stamen Terrain"

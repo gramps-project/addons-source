@@ -1,34 +1,36 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
+# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
+# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-21 08:49+1100\n"
-"PO-Revision-Date: 2024-09-23 11:39+0200\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"PO-Revision-Date: 2024-10-10 10:45+0200\n"
+"Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
-"Language: da\n"
+"Language: da_DK\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
 
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:24
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:32
+#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:25
+#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:33
 msgid "Birthdays"
 msgstr "Fødseldage"
 
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:25
+#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:26
 msgid "a gramplet that displays the birthdays of the living people"
 msgstr "en gramplet der viser fødselsdage for levende persone"
-
-#: BirthdaysGramplet/BirthdaysGramplet.py:38
-msgid "No Family Tree loaded."
-msgstr "Ingen slægtsbog indlæst."
 
 #: BirthdaysGramplet/BirthdaysGramplet.py:45
 msgid "Ignore birthdays with tag"
@@ -37,7 +39,3 @@ msgstr "Undlad fødseldage med ettiket"
 #: BirthdaysGramplet/BirthdaysGramplet.py:46
 msgid "Only show birthdays with tag"
 msgstr "Vis kun fødseldage med ettiket"
-
-#: BirthdaysGramplet/BirthdaysGramplet.py:90
-msgid "Processing..."
-msgstr "Arbejder....."

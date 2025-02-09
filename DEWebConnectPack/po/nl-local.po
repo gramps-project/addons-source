@@ -1,37 +1,48 @@
-# Dutch translation of Gramps addon DEWebConnectPack
+# Dutch translation of addon MediaMerge.
 # Copyright (C) 2020 Gramps project
-# This file is distributed under the same license as the DEWebConnectPack package.
-# Jan Sparreboom <jan@sparreboom.net>, 2020.
+# This file is distributed under the same license as the MediaMerge package.
+# Jan Sparreboom <jan@sparreboom.net>, 2020, 2021, 2023.
+# Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
+# Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
+# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
+# Erik De Richter <frederik.de.richter@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
+# Harmen Huizinga <harmenhuizinga@sigmo.nl>, 2013.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Gramps 5.1.x\n"
+"Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
-"POT-Creation-Date: 2019-11-27 10:32-0600\n"
-"PO-Revision-Date: 2020-05-04 21:44+0200\n"
-"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
-"Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
+"POT-Creation-Date: 2019-01-04 18:55-0600\n"
+"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
+"addons/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.6\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10-dev\n"
 
-#: DEWebConnectPack/DEWebPack.gpr.py:10
+#: SVWebconnectPack/SVWebPack.py:34 DEWebConnectPack/DEWebPack.py:39
+msgid "FamilySearch.org"
+msgstr "FamilySearch.org"
+
+#: UKWebConnectPack/UKWebPack.py:39 DEWebConnectPack/DEWebPack.py:44
+msgid "Open Library"
+msgstr "Open Library"
+
+#: DEWebConnectPack/DEWebPack.gpr.py:10 DEWebConnectPack/DEWebPack.gpr.py:11
 msgid "DE Web Connect Pack"
 msgstr "DE Web Connect Pack"
 
-#: DEWebConnectPack/DEWebPack.gpr.py:11
+#: DEWebConnectPack/DEWebPack.gpr.py:11 DEWebConnectPack/DEWebPack.gpr.py:12
 msgid "Collection of Web sites for the DE (requires libwebconnect)"
 msgstr "Verzameling van websites voor DE (vereist libwebconnect)"
 
 #: DEWebConnectPack/DEWebPack.py:37
 msgid "Bielefeld Academic Search"
 msgstr "Zoekmachine Bielefeld Academic"
-
-#: DEWebConnectPack/DEWebPack.py:39
-msgid "FamilySearch.org"
-msgstr "FamilySearch.org"
 
 #: DEWebConnectPack/DEWebPack.py:42
 msgid "Google Archives"
@@ -40,10 +51,6 @@ msgstr "Google Archives"
 #: DEWebConnectPack/DEWebPack.py:43
 msgid "DE Google"
 msgstr "DE Google"
-
-#: DEWebConnectPack/DEWebPack.py:44
-msgid "Open Library"
-msgstr "Open Library"
 
 #: DEWebConnectPack/DEWebPack.py:45
 msgid "Surname map (1890-1996)"

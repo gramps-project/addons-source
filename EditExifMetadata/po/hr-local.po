@@ -1,36 +1,40 @@
 # Croatian translation for Gramps
 # This file is distributed under the same license as the Gramps package.
 # Copyright (C) Gramps project
-# Milo Ivir <mail@milotype.de>, 2019., 2020.
+# Milo Ivir <mivir@milotype.de>, 2019, 2020.
+# Stephen Adams, Gramps Reddit, 2018.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-09 14:09-0500\n"
-"PO-Revision-Date: 2020-08-23 20:24+0200\n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2019-10-23 15:25+0200\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: \n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.1\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Generator: Poedit 2.2.4\n"
 
 #: EditExifMetadata/editexifmetadata.gpr.py:29
 #: EditExifMetadata/editexifmetadata.py:723
 #: EditExifMetadata/editexifmetadata.py:1135
 #: EditExifMetadata/editexifmetadata.py:1147
+#: EditExifMetadata/editexifmetadata.gpr.py:30
 msgid "Edit Image Exif Metadata"
 msgstr "Uredi Exif metapodatke slike"
 
 #: EditExifMetadata/editexifmetadata.gpr.py:30
+#: EditExifMetadata/editexifmetadata.gpr.py:31
 msgid "Gramplet to view, edit, and save image Exif metadata"
 msgstr "Dodatak za pregled, uređivanje i spremanje Exif metapodataka slike"
 
 #: EditExifMetadata/editexifmetadata.gpr.py:34
+#: EditExifMetadata/editexifmetadata.gpr.py:35
 msgid "Edit Exif Metadata"
 msgstr "Uređivač Exif metapodataka"
 
@@ -162,15 +166,6 @@ msgstr "Sličica"
 msgid "Copy"
 msgstr "Kopiraj"
 
-#: EditExifMetadata/editexifmetadata.py:216
-#: EditExifMetadata/editexifmetadata.py:726
-msgid "Convert"
-msgstr "Konvertiraj"
-
-#: EditExifMetadata/editexifmetadata.py:217
-msgid "Clear"
-msgstr "Izbriši"
-
 #: EditExifMetadata/editexifmetadata.py:402
 msgid "Select an image to begin..."
 msgstr "Odaberi sliku za početak …"
@@ -260,8 +255,8 @@ msgid ""
 "Click the close button when you are finished modifying this image's Exif "
 "metadata."
 msgstr ""
-"Pritisni gumb za zatvaranje, nakon što završiš s promjenama Efix metapodataka "
-"za ovu sliku."
+"Pritisni gumb za zatvaranje, nakon što završiš s promjenama Efix "
+"metapodataka za ovu sliku."
 
 #: EditExifMetadata/editexifmetadata.py:924
 msgid "Saves a copy of the data fields into the image's Exif metadata."
@@ -367,11 +362,6 @@ msgid ""
 "WARNING!  You are about to completely delete the Exif metadata from this "
 "image?"
 msgstr "UPOZORENJE! Kompletno ćeš obrisati Exif metapodatke iz ove slike!?"
-
-#: EditExifMetadata/editexifmetadata.py:1138
-#: EditExifMetadata/editexifmetadata.py:1150
-msgid "Delete"
-msgstr "Obriši"
 
 #: EditExifMetadata/editexifmetadata.py:1148
 msgid ""

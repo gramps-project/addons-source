@@ -1,14 +1,16 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
+# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
+# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-26 09:45-0500\n"
-"PO-Revision-Date: 2024-10-02 15:22+0200\n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
 "Language: da_DK\n"
@@ -19,10 +21,11 @@ msgstr ""
 "X-Generator: Poedit 3.0.1\n"
 
 #: FamilySheet/FamilySheet.gpr.py:3 FamilySheet/FamilySheet.py:126
+#: FamilySheet/FamilySheet.gpr.py:4
 msgid "Family Sheet"
 msgstr "Familieark"
 
-#: FamilySheet/FamilySheet.gpr.py:4
+#: FamilySheet/FamilySheet.gpr.py:4 FamilySheet/FamilySheet.gpr.py:6
 msgid ""
 "Produces a family sheet showing full information about a person and his/her "
 "partners and children."
@@ -53,11 +56,6 @@ msgstr "; %(type)s: %(value)s"
 #: FamilySheet/FamilySheet.py:557
 msgid "Source references:"
 msgstr "Kildehenvisning:"
-
-#: FamilySheet/FamilySheet.py:571
-#, python-format
-msgid "%s: "
-msgstr "%s: "
 
 #: FamilySheet/FamilySheet.py:575
 #, python-format
@@ -98,10 +96,6 @@ msgstr "på %(placeholder)s (%(partial)s)"
 msgid "in %(place)s"
 msgstr "i %(place)s"
 
-#: FamilySheet/FamilySheet.py:861
-msgid "Report Options"
-msgstr "Rapport tilvalg"
-
 #: FamilySheet/FamilySheet.py:864
 msgid "Center person"
 msgstr "Fokusperson"
@@ -130,14 +124,6 @@ msgstr "Fokuspersonen og alle efterkommere"
 msgid "Whether to include descendants, and which ones."
 msgstr "Hvorvidt efterfølgere skal medtages, og hvilke."
 
-#: FamilySheet/FamilySheet.py:877
-msgid "Use call name"
-msgstr "Brug tilnavn"
-
-#: FamilySheet/FamilySheet.py:879
-msgid "Don't use call name"
-msgstr "Brug ikke tilnavn"
-
 #: FamilySheet/FamilySheet.py:880
 msgid "Replace first name with call name"
 msgstr "Erstat fornavne med tilnavn"
@@ -153,26 +139,6 @@ msgstr "Hvorvidt tilnavnet skal medtages, og hvordan."
 #: FamilySheet/FamilySheet.py:885
 msgid "Print placeholders for missing information"
 msgstr "Udskriv pladsholder for manglende information"
-
-#: FamilySheet/FamilySheet.py:887
-msgid "Whether to include fields for missing information."
-msgstr "Vælg om felter for manglende oplysninger skal medtages."
-
-#: FamilySheet/FamilySheet.py:890
-msgid "Include sources"
-msgstr "Medtag kilder"
-
-#: FamilySheet/FamilySheet.py:891
-msgid "Whether to include source references."
-msgstr "Vælg om kildehenvisninger skal medtages."
-
-#: FamilySheet/FamilySheet.py:894
-msgid "Include notes"
-msgstr "Medtag noter"
-
-#: FamilySheet/FamilySheet.py:895
-msgid "Whether to include notes."
-msgstr "Vælg om noter skal medtages."
 
 #: FamilySheet/FamilySheet.py:909
 msgid "The basic style used for the text display"

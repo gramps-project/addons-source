@@ -1,100 +1,118 @@
-# Italian translations for PACKAGE package.
-# Copyright (C) 2009 THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Italian translation for GRAMPS
+# Copyright (C) 2001-2010 the Gramps Project
 #
+# Common and noteworthy translations:
+#
+#   alternate              alternativo
+#   ancestor               ascendente
+#   ancestral              ascendenza
+#   autosave               salvataggio automatico
+#   baptism                battesimo
+#   birth                  nascita
+#   christening            battesimo (anachronistic - see gramps-devel ML)
+#   church parish          parrocchia
+#   county                 provincia
+#   country                stato
+#   common-law             (relazione) di fatto
+#   dead                   decedere
+#   death                  decesso
+#   descendant             discendente/discendenza
+#   had a child %(child)s  divenne padre/madre di %(child)s
+#                          (copes with male and femail children)
+#   he was son of          fu figlio di
+#   home person            persona-casa
+#   family (adj)           famigliare
+#   half-sibling           fratelli unilaterali
+#   in %(place)s           in quel di (copes with all sort of place names)
+#   location               località
+#   merge, to              fondere
+#   partner                partner
+#   province               provincia, regione
+#   record                 elemento
+#   relationship path      percorso (delle) relazioni
+#   report                 resoconto
+#   state (geog)           regione, stato
+#   step-sibling           fratellastri
+#   thumbnail              anteprima
+#   unmarried              celibe/nubile
+#
+# A special remark are required by some sentences related to reports.
+#
+# * "%s was born on %s"
+#
+#   In Italian, we use a tense equivalent to the English's past simple
+#   for living people, and the equivalent to English's present perfect
+#   for people who died.  Unfortunately, the program cannot distinguish
+#   between these two cases.
+#
+# * ", and was buried on %s."
+#
+#   In Italian, the word for buried declines accordingly to its subject
+#   gender.
+#
+# * "born %(date)s in %(place)s%(endnotes)s"
+#
+#   The same rule as for "buried" applies to born, as well.
+#
+# Marco Molteni <molter@gufi.org>, 2001-2002.
+# Lorenzo Cappelletti <lorenzo.cappelletti@email.it>, 2003.
+# Luigi Toscano <luigi.toscano@tiscali.it>, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019.
+# Giansalvo Gusinu <giansalvo.gusinu@gmail.com>, 2019.
+# Sebastiano Pistore <SebastianoPistore.info@protonmail.ch>, 2025.
+# Vincenzo Alfano <vinc.alfano@gmail.com>, 2016.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-11-23 19:29+0100\n"
-"PO-Revision-Date: 2009-11-23 21:29+0100\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2010-03-08 16:37+0100\n"
+"PO-Revision-Date: 2010-03-07 22:48+0100\n"
+"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:3
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:4
 msgid "Deep Connections Gramplet"
 msgstr ""
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:9
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:13
 msgid "Deep Connections"
 msgstr ""
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:51
-msgid "Double-click name for details"
-msgstr "Doppio clic sul nome per i dettagli"
-
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:52
-msgid "No Family Tree loaded."
-msgstr "Nessun albero genealogico caricato."
-
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:57
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:65
 msgid "Pause"
 msgstr ""
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:59
-msgid "Continue"
-msgstr "Continua"
-
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:80
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:96
-#, fuzzy
-msgid "child"
-msgstr "figlio/a"
-
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:85
-msgid "husband"
-msgstr "marito"
-
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:89
-msgid "wife"
-msgstr "moglie"
-
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:101
-msgid "father"
-msgstr "padre"
-
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:105
-msgid "mother"
-msgstr "madre"
-
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:123
-#, python-format
-msgid ""
-"\n"
-"   who is a %s of "
-msgstr ""
-
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:137
-msgid "No Home Person set."
-msgstr "Persona principale non impostata."
-
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:140
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:209
 msgid "No Active Person set."
 msgstr "Nessuna persona attiva impostata."
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:143
-msgid "self"
-msgstr "se stesso"
-
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:147
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:217
 msgid "Looking for relationship between\n"
 msgstr ""
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:148
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:218
 #, python-format
 msgid "  <b>%s</b> (Home Person) and\n"
 msgstr ""
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:149
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:219
 #, fuzzy, python-format
 msgid "  <b>%s</b> (Active Person)...\n"
 msgstr "Persona attiva: <b>%s</b>"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:157
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:229
 #, python-format
 msgid ""
 "Found relation #%d: \n"
@@ -102,15 +120,16 @@ msgid ""
 msgstr ""
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:163
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:239
 msgid ""
 "Paused.\n"
 "Press Continue to search for additional relations.\n"
 msgstr ""
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:176
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:254
 #, python-format
 msgid ""
 "\n"
 "Search completed. %d relations found."
 msgstr ""
-

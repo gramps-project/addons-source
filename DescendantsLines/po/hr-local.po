@@ -1,51 +1,44 @@
 # Croatian translation for Gramps
 # This file is distributed under the same license as the Gramps package.
 # Copyright (C) Gramps project
-# Milo Ivir <mail@milotype.de>, 2019., 2020.
+# Milo Ivir <mivir@milotype.de>, 2019, 2020.
+# Stephen Adams, Gramps Reddit, 2018.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-02 14:37-0600\n"
-"PO-Revision-Date: 2020-08-23 20:11+0200\n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2019-10-23 15:25+0200\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: \n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.1\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Generator: Poedit 2.2.4\n"
+
+#: EventDescriptionEditor/EventDescriptionEditor.py:128
+#: EventDescriptionEditor/EventDescriptionEditor.py:142
+#: DescendantsLines/DescendantsLines.py:1688
+msgid "Replace"
+msgstr "Zamjena"
 
 #: DescendantsLines/DescendantsLines.gpr.py:26
+#: DescendantsLines/DescendantsLines.gpr.py:27
 msgid "Descendants Lines"
 msgstr "Linije potomaka"
 
 #: DescendantsLines/DescendantsLines.gpr.py:27
+#: DescendantsLines/DescendantsLines.gpr.py:28
 msgid "Produces descendants lines of a person"
 msgstr "Stvara linije potomaka za jednu osobu"
 
 #: DescendantsLines/DescendantsLines.py:463
 msgid "Using SVG type for supplemental document is not supported!"
 msgstr "Korištenje SVG vrste za dopunske datoteke nije podržano!"
-
-#: DescendantsLines/DescendantsLines.py:1329
-msgid "Unknown"
-msgstr "Nepoznato"
-
-#: DescendantsLines/DescendantsLines.py:1525
-msgid "Report Options"
-msgstr "Opcije za izvještaj"
-
-#: DescendantsLines/DescendantsLines.py:1527
-msgid "Center Person"
-msgstr "Središnja osoba"
-
-#: DescendantsLines/DescendantsLines.py:1528
-msgid "The center person for the report"
-msgstr "Središnja osoba u izvještaju"
 
 #: DescendantsLines/DescendantsLines.py:1531
 msgid "Output format"
@@ -71,17 +64,9 @@ msgstr "PS format"
 msgid "The output format to be used"
 msgstr "Izlazni format, koji se koristi"
 
-#: DescendantsLines/DescendantsLines.py:1540
-msgid "Destination"
-msgstr "Odredište"
-
 #: DescendantsLines/DescendantsLines.py:1541
 msgid "The destination file for the content."
 msgstr "Odredišna datoteka za sadržaj."
-
-#: DescendantsLines/DescendantsLines.py:1544
-msgid "Generations"
-msgstr "Generacije"
 
 #: DescendantsLines/DescendantsLines.py:1545
 msgid "The number of generations to include in the chart. (0 for unlimited)"
@@ -134,10 +119,6 @@ msgstr "Lijevo od teksta"
 #: DescendantsLines/DescendantsLines.py:1573
 msgid "Position of image relative to text"
 msgstr "Položaj slike, relativan u odnosu na tekst"
-
-#: DescendantsLines/DescendantsLines.py:1577
-msgid "Report Options (2)"
-msgstr "Opcije za izvještaj (2)"
 
 #: DescendantsLines/DescendantsLines.py:1579
 msgid "Colour Name by Gender"
@@ -200,10 +181,6 @@ msgid ""
 msgstr ""
 "Maksimalna duljina polja zabilješke događaja u tekstualnom bloku, '$e(n)'\n"
 " 0 = neograničeno "
-
-#: DescendantsLines/DescendantsLines.py:1610
-msgid "Display"
-msgstr "Prikaži"
 
 #: DescendantsLines/DescendantsLines.py:1612
 msgid "Box around Person's block"
@@ -280,14 +257,6 @@ msgstr ""
 "c=uobičajeno korišteno ime, t=titula, s=sufiks, g=obiteljski nadimak\n"
 "Pogledaj Wiki priručnik > Izvještaji > 2. dio"
 
-#: DescendantsLines/DescendantsLines.py:1656
-msgid ""
-"Descendant\n"
-"Display Format"
-msgstr ""
-"Potomak\n"
-"format prikaza"
-
 #: DescendantsLines/DescendantsLines.py:1662
 #: DescendantsLines/DescendantsLines.py:1681
 msgid ""
@@ -299,26 +268,6 @@ msgstr ""
 "Pogledaj Wiki priručnik > Izvještaji > 2. dio\n"
 "formatiranje: datumi=d(ymdMo) mjesta=D(elcuspnoitxy) zabilješke=n "
 "skraćena_vrsta=t"
-
-#: DescendantsLines/DescendantsLines.py:1675
-msgid ""
-"Spousal\n"
-"Display Format"
-msgstr ""
-"Supružnički\n"
-"format prikaza"
-
-#: DescendantsLines/DescendantsLines.py:1688
-msgid "Replace"
-msgstr "Zamijeni"
-
-#: DescendantsLines/DescendantsLines.py:1691
-msgid ""
-"Replace Display Format:\n"
-"'Replace this'/' with this'"
-msgstr ""
-"Zamijeni format prikaza:\n"
-"„Zamijeni ovo”/„s ovim”"
 
 #: DescendantsLines/DescendantsLines.py:1693
 msgid ""
@@ -393,10 +342,6 @@ msgstr ""
 "Ako je ta vrijednost 0, traka djece je centrirana ispod supružnika. Što je "
 "vrijednost veća, to više se centar pomiče lijevo prema potomku."
 
-#: DescendantsLines/DescendantsLines.py:1733
-msgid "Children"
-msgstr "Djeca"
-
 #: DescendantsLines/DescendantsLines.py:1735
 msgid "OL_PAD"
 msgstr "SDL_ODMAK"
@@ -457,17 +402,9 @@ msgstr "Dodatni razmak između redaka u tekstu osobe."
 msgid "Header and Footer"
 msgstr "Zaglavlje i podnožje"
 
-#: DescendantsLines/DescendantsLines.py:1775
-msgid "Title text"
-msgstr "Tekst naslova"
-
 #: DescendantsLines/DescendantsLines.py:1776
 msgid "The text that will be written in the header of the document"
 msgstr "Tekst koji se upisuje u zaglavlje dokumenta"
-
-#: DescendantsLines/DescendantsLines.py:1780
-msgid "Footer text"
-msgstr "Tekst u podnožju"
 
 #: DescendantsLines/DescendantsLines.py:1781
 msgid "The text that will be written in the footer of the document"
@@ -482,10 +419,6 @@ msgid ""
 "A number that multiply the base size of the text in the title and in the "
 "footer"
 msgstr "Broj kojim se množi osnovna veličina teksta u naslovu i podnožju"
-
-#: DescendantsLines/DescendantsLines.py:1791
-msgid "Privacy"
-msgstr "Privatnost"
 
 #: DescendantsLines/DescendantsLines.py:1793
 msgid "Protect People, Images or Events that are marked Private"
@@ -507,51 +440,3 @@ msgstr "Tekst prikazan u bloku osobe, označene kao privatne"
 #: DescendantsLines/DescendantsLines.py:1815
 msgid "The default style."
 msgstr "Standardni stil."
-
-#~ msgid "S  &amp; F Options"
-#~ msgstr "Opcije za S i F"
-
-#~ msgid "S_DOWN"
-#~ msgstr "S_DOLJE"
-
-#~ msgid "S_UP"
-#~ msgstr "S_GORE"
-
-#~ msgid "S_VPAD"
-#~ msgstr "S_UODMAK"
-
-#~ msgid "The number of ??? vpad"
-#~ msgstr "Broj za uspravni odmak"
-
-#~ msgid "SP_PAD"
-#~ msgstr "SS_ODMAK"
-
-#~ msgid "F_PAD"
-#~ msgstr "F_ODMAK"
-
-#~ msgid "FL_PAD"
-#~ msgstr "FL_ODMAK"
-
-#~ msgid "O, C &amp; Text Options"
-#~ msgstr "Opcije za SD, D i tekst"
-
-#~ msgid "O_DOWN"
-#~ msgstr "SD_DOLJE"
-
-#~ msgid "C_PAD"
-#~ msgstr "D_ODMAK"
-
-#~ msgid "C_UP"
-#~ msgstr "D_GORE"
-
-#~ msgid "TEXT_PAD"
-#~ msgstr "TEKST_ODMAK"
-
-#~ msgid "The number of text pad ???"
-#~ msgstr "Odmak za tekst"
-
-#~ msgid "TEXT_LINE_PAD"
-#~ msgstr "TEKST_REDAK_ODMAK"
-
-#~ msgid "The number of text line pad ??? "
-#~ msgstr "Odmak za tekstovni redak "

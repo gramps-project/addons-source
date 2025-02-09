@@ -1,15 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
+# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
+# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2024-09-24 08:53+0200\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"PO-Revision-Date: 2024-10-10 10:45+0200\n"
+"Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
 "Language: da_DK\n"
 "MIME-Version: 1.0\n"
@@ -18,21 +20,19 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
 
+#: FilterRules/activepersonrule.py:45 DataEntryGramplet/DataEntryGramplet.py:71
+msgid "Active person"
+msgstr "Fokuspersin"
+
 #: DataEntryGramplet/DataEntryGramplet.gpr.py:8
+#: DataEntryGramplet/DataEntryGramplet.gpr.py:9
 msgid "Data Entry Gramplet"
 msgstr "Dataindtastnings Gramplet"
 
 #: DataEntryGramplet/DataEntryGramplet.gpr.py:9
+#: DataEntryGramplet/DataEntryGramplet.gpr.py:10
 msgid "Gramplet for quick data entry"
 msgstr "Gramplet for hurtig indtastning af data"
-
-#: DataEntryGramplet/DataEntryGramplet.gpr.py:13
-msgid "Data Entry"
-msgstr "Data indtastning"
-
-#: DataEntryGramplet/DataEntryGramplet.py:71
-msgid "Active person"
-msgstr "Aktiv person"
 
 #: DataEntryGramplet/DataEntryGramplet.py:73
 msgid "Family:"
@@ -46,50 +46,6 @@ msgstr "Kilder?"
 #: DataEntryGramplet/DataEntryGramplet.py:109
 msgid "Surname, Given"
 msgstr "Efternavn, Fornavn"
-
-#: DataEntryGramplet/DataEntryGramplet.py:77
-#: DataEntryGramplet/DataEntryGramplet.py:110
-msgid "Gender"
-msgstr "Køn"
-
-#: DataEntryGramplet/DataEntryGramplet.py:77
-#: DataEntryGramplet/DataEntryGramplet.py:111
-msgid "female"
-msgstr "kvinde"
-
-#: DataEntryGramplet/DataEntryGramplet.py:77
-#: DataEntryGramplet/DataEntryGramplet.py:111
-msgid "male"
-msgstr "man"
-
-#: DataEntryGramplet/DataEntryGramplet.py:77
-#: DataEntryGramplet/DataEntryGramplet.py:111
-msgid "unknown"
-msgstr "ukendt"
-
-#: DataEntryGramplet/DataEntryGramplet.py:77
-#: DataEntryGramplet/DataEntryGramplet.py:111
-msgid "other"
-msgstr "andet"
-
-#: DataEntryGramplet/DataEntryGramplet.py:78
-#: DataEntryGramplet/DataEntryGramplet.py:80
-#: DataEntryGramplet/DataEntryGramplet.py:81
-#: DataEntryGramplet/DataEntryGramplet.py:111
-#: DataEntryGramplet/DataEntryGramplet.py:112
-#: DataEntryGramplet/DataEntryGramplet.py:113
-msgid "Source"
-msgstr "Kilde"
-
-#: DataEntryGramplet/DataEntryGramplet.py:80
-#: DataEntryGramplet/DataEntryGramplet.py:112
-msgid "Birth"
-msgstr "Fødsel"
-
-#: DataEntryGramplet/DataEntryGramplet.py:81
-#: DataEntryGramplet/DataEntryGramplet.py:113
-msgid "Death"
-msgstr "Død"
 
 #: DataEntryGramplet/DataEntryGramplet.py:89
 msgid "Save"
@@ -143,17 +99,9 @@ msgstr "Tilføj som en søskende"
 msgid "Add as a Child"
 msgstr "Tilføj som et barn"
 
-#: DataEntryGramplet/DataEntryGramplet.py:121
-msgid "Add"
-msgstr "Tilføj"
-
 #: DataEntryGramplet/DataEntryGramplet.py:124
 msgid "Copy Active Data"
 msgstr "Kopier Aktive Data"
-
-#: DataEntryGramplet/DataEntryGramplet.py:127
-msgid "Clear"
-msgstr "Rens"
 
 #: DataEntryGramplet/DataEntryGramplet.py:167
 #: DataEntryGramplet/DataEntryGramplet.py:178

@@ -1,14 +1,24 @@
-# Russian translation for DateCalculator
+# Russian translation for MediaMerge
 # This file is distributed under the same license as the Gramps package.
 #
-# Ivan Komaritsyn <vantu5z@mail.ru>, 2018.
+# Ivan Komaritsyn <vantu5z@mail.ru>, 2015, 2016, 2017, 2018, 2019, 2020, 2021.
+# Alexander Bogdashevsky <sanderb@kezomba.com>, 2004.
+# Alex Roitman <shura@gramps-project.org>, 2002, 2003, 2004, 2005, 2006, 2007.
+# Konstantin Dorichev <kdorichev@gmail.com>, 2008.
+# Yevgeny Zegzda <ezegjda@ya.ru>, 2009, 2010.
+# vantu5z <vantu5z@mail.ru>, 2020.
+# Komaritsyn Ivan <vantu5z@mail.ru>, 2018.
+# Andrey Baznikin (http://d.scn.ru/), 2009, 2010, 2011.
+# Vassilii Khachaturov <vassilii@tarunz.org>, 2011, 2012, 2013, 2014.
+# Egor Reentov <egor.gramps@gmail.com>, 2011, 2012, 2013.
+# Artem Glebov <artem.glebov@gmail.com>, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-29 11:49+0300\n"
-"PO-Revision-Date: 2018-11-29 11:57+0300\n"
+"POT-Creation-Date: 2018-12-04 16:31+0300\n"
+"PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
@@ -18,69 +28,27 @@ msgstr ""
 "X-Generator: Gtranslator 2.91.7\n"
 "X-Poedit-Language: Russian\n"
 "X-Poedit-Country: RUSSIAN FEDERATION\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
 #: DateCalculator/DateCalculator.gpr.py:21
 #: DateCalculator/DateCalculator.gpr.py:31
+#: DateCalculator/DateCalculator.gpr.py:22
+#: DateCalculator/DateCalculator.gpr.py:32
 msgid "Date Calculator"
 msgstr "Калькулятор дат"
 
-#: DateCalculator/DateCalculator.gpr.py:22
-msgid "Useful for date math calculations"
-msgstr "Полезен при проведении вычислений с датами"
-
-#: DateCalculator/DateCalculator.py:63
-msgid "Expression 1"
-msgstr "Выражение 1"
-
-#: DateCalculator/DateCalculator.py:64
-msgid "Expression 2"
-msgstr "Выражение 2"
-
-#: DateCalculator/DateCalculator.py:65
+#: DateCalculator/DateCalculator.py:65 DateCalculator/DateCalculator.py:96
 msgid "Result"
 msgstr "Результат"
 
-#: DateCalculator/DateCalculator.py:68
+#: DateCalculator/DateCalculator.py:68 DateCalculator/DateCalculator.py:104
 msgid "Calculate"
 msgstr "Вычислить"
 
-#: DateCalculator/DateCalculator.py:71
-msgid "Clear"
-msgstr "Очистить"
-
-#: DateCalculator/DateCalculator.py:118
-msgid "Error: invalid entry for expression 1"
-msgstr "Ошибка: недопустимое значение для выражения 1"
-
-#: DateCalculator/DateCalculator.py:128
-msgid "Error: invalid entry for expression 2"
-msgstr "Ошибка: недопустимое значение для выражения 2"
-
 #: DateCalculator/DateCalculator.py:153 DateCalculator/DateCalculator.py:155
 #: DateCalculator/DateCalculator.py:163 DateCalculator/DateCalculator.py:165
+#: DateCalculator/DateCalculator.py:195 DateCalculator/DateCalculator.py:197
+#: DateCalculator/DateCalculator.py:205 DateCalculator/DateCalculator.py:207
 msgid "Error: at least one expression must be a date"
 msgstr "Ошибка: хотябы одно выражение должно быть датой"
-
-#: DateCalculator/DateCalculator.py:171
-msgid ""
-"Enter an expression in the entries above and click Calculate.\n"
-"\n"
-"An expression can be:\n"
-"\n"
-"1. a valid Gramps date\n"
-"2. a positive or negative number, representing years\n"
-"3. a positive or negative tuple, representing (years, months, days)\n"
-"\n"
-"Note that at least one expression must be a date."
-msgstr ""
-"Введите выражения и нажмите 'Вычислить'.\n"
-"\n"
-"Выражение может быть:\n"
-"\n"
-"1. допустимой датой Gramps\n"
-"2. положительным или отрицательным числом, представляющим года\n"
-"3. положительным или отрицательным массивом, представляющим (года, месяцы, дни)\n"
-"\n"
-"Имейте ввиду, что хотябы одно выражение должно быть датой."

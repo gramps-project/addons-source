@@ -1,14 +1,24 @@
-# Russian translation for SourceIndex
+# Russian translation for MediaMerge
 # This file is distributed under the same license as the Gramps package.
 #
-# Ivan Komaritsyn <vantu5z@mail.ru>, 2018.
+# Ivan Komaritsyn <vantu5z@mail.ru>, 2015, 2016, 2017, 2018, 2019, 2020, 2021.
+# Alexander Bogdashevsky <sanderb@kezomba.com>, 2004.
+# Alex Roitman <shura@gramps-project.org>, 2002, 2003, 2004, 2005, 2006, 2007.
+# Konstantin Dorichev <kdorichev@gmail.com>, 2008.
+# Yevgeny Zegzda <ezegjda@ya.ru>, 2009, 2010.
+# vantu5z <vantu5z@mail.ru>, 2020.
+# Komaritsyn Ivan <vantu5z@mail.ru>, 2018.
+# Andrey Baznikin (http://d.scn.ru/), 2009, 2010, 2011.
+# Vassilii Khachaturov <vassilii@tarunz.org>, 2011, 2012, 2013, 2014.
+# Egor Reentov <egor.gramps@gmail.com>, 2011, 2012, 2013.
+# Artem Glebov <artem.glebov@gmail.com>, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-06 11:17+0300\n"
-"PO-Revision-Date: 2018-12-06 11:32+0300\n"
+"POT-Creation-Date: 2018-12-04 16:31+0300\n"
+"PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
@@ -18,36 +28,37 @@ msgstr ""
 "X-Generator: Gtranslator 2.91.7\n"
 "X-Poedit-Language: Russian\n"
 "X-Poedit-Country: RUSSIAN FEDERATION\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: SourceIndex/SourceIndex.gpr.py:23
-msgid "BirthIndex"
-msgstr "Список рождений"
-
-#: SourceIndex/SourceIndex.gpr.py:38
-msgid "MarriageIndex"
-msgstr "Список браков"
-
-#: SourceIndex/SourceIndex.gpr.py:53
-msgid "DeathIndex"
-msgstr "Список смертей"
-
-#: SourceIndex/SourceIndex.gpr.py:68
-msgid "CensusIndex"
-msgstr "Список крещений"
-
-#: SourceIndex/SourceIndex.gpr.py:83
-msgid "Witness"
-msgstr "Свидетель"
-
-#: SourceIndex/SourceIndex.gpr.py:98
-msgid "SourceIndex"
-msgstr "Список источников"
-
+#: DynamicWeb//dynamicweb.py:2581 DynamicWeb/dynamicweb.py:3114
 #: SourceIndex/birth.py:126 SourceIndex/census.py:82 SourceIndex/death.py:87
 #: SourceIndex/index.py:92 SourceIndex/marriage.py:87 SourceIndex/witness.py:64
 msgid "Sources Index"
+msgstr "Список источников"
+
+#: Form/editform.py:189 Form/editform.py:225 SourceIndex/birth.glade.h:5
+msgid "Reference:"
+msgstr "Ссылка:"
+
+#: SourceIndex/SourceIndex.gpr.py:23 SourceIndex/SourceIndex.gpr.py:24
+msgid "BirthIndex"
+msgstr "Список рождений"
+
+#: SourceIndex/SourceIndex.gpr.py:38 SourceIndex/SourceIndex.gpr.py:40
+msgid "MarriageIndex"
+msgstr "Список браков"
+
+#: SourceIndex/SourceIndex.gpr.py:53 SourceIndex/SourceIndex.gpr.py:56
+msgid "DeathIndex"
+msgstr "Список смертей"
+
+#: SourceIndex/SourceIndex.gpr.py:68 SourceIndex/SourceIndex.gpr.py:72
+msgid "CensusIndex"
+msgstr "Список крещений"
+
+#: SourceIndex/SourceIndex.gpr.py:98 SourceIndex/SourceIndex.gpr.py:104
+msgid "SourceIndex"
 msgstr "Список источников"
 
 #: SourceIndex/index.py:407
@@ -58,27 +69,22 @@ msgstr "*** Ошибка: необходимо установить ElementTree 
 msgid "must install either ElementTree or lxml"
 msgstr "необходимо установить ElementTree или lxml"
 
-#: SourceIndex/birth.glade.h:1
+#: SourceIndex/birth.glade.h:1 SourceIndex/birth.glade:7
+#: SourceIndex/index.glade:585
 msgid "birth"
 msgstr "рождение"
 
-#: SourceIndex/birth.glade.h:2
-msgid "Date:"
-msgstr "Дата:"
-
-#: SourceIndex/birth.glade.h:3
+#: SourceIndex/birth.glade.h:3 SourceIndex/birth.glade:65
+#: SourceIndex/census.glade:728 SourceIndex/death.glade:97
+#: SourceIndex/marriage.glade:64
 msgid "Info:"
 msgstr "Информация:"
 
-#: SourceIndex/birth.glade.h:4
+#: SourceIndex/birth.glade.h:4 SourceIndex/birth.glade:99
 msgid "Birth act:"
 msgstr "Рождение (сертификат):"
 
-#: SourceIndex/birth.glade.h:5
-msgid "Reference:"
-msgstr "Ссылка:"
-
-#: SourceIndex/birth.glade.h:6
+#: SourceIndex/birth.glade.h:6 SourceIndex/birth.glade:129
 msgid ""
 "Volume\n"
 "    Page:"
@@ -86,55 +92,58 @@ msgstr ""
 "Том\n"
 "    Страница:"
 
-#: SourceIndex/birth.glade.h:8
+#: SourceIndex/birth.glade.h:8 SourceIndex/birth.glade:149
 msgid "The source title"
 msgstr "Название источника"
 
-#: SourceIndex/birth.glade.h:9
+#: SourceIndex/birth.glade.h:9 SourceIndex/birth.glade:164
 msgid "The volume or page of this source"
 msgstr "Том или страница этого источника"
 
-#: SourceIndex/birth.glade.h:10
+#: SourceIndex/birth.glade.h:10 SourceIndex/birth.glade:195
+#: SourceIndex/birth.glade:297 SourceIndex/birth.glade:644
+#: SourceIndex/witness.glade:73
 msgid "Names:"
 msgstr "Имена:"
 
-#: SourceIndex/birth.glade.h:11
+#: SourceIndex/birth.glade.h:11 SourceIndex/birth.glade:214
 msgid "select the gender/sex"
 msgstr "выберите пол"
 
-#: SourceIndex/birth.glade.h:12
-msgid "Gender:"
-msgstr "Пол:"
-
-#: SourceIndex/birth.glade.h:13
+#: SourceIndex/birth.glade.h:13 SourceIndex/birth.glade:247
 msgid "The names of the main person written into the source"
 msgstr "Имена основного лица записанного в источник"
 
-#: SourceIndex/birth.glade.h:14
+#: SourceIndex/birth.glade.h:14 SourceIndex/birth.glade:262
 msgid "The first names of the main person written into the source"
 msgstr "Имена основного лица записанного в источник"
 
-#: SourceIndex/birth.glade.h:15
+#: SourceIndex/birth.glade.h:15 SourceIndex/birth.glade:278
+#: SourceIndex/birth.glade:511 SourceIndex/birth.glade:729
+#: SourceIndex/witness.glade:90
 msgid "First names:"
 msgstr "Имена:"
 
-#: SourceIndex/birth.glade.h:16
+#: SourceIndex/birth.glade.h:16 SourceIndex/birth.glade:334
+#: SourceIndex/birth.glade:493
 msgid "Other:"
 msgstr "Другое:"
 
-#: SourceIndex/birth.glade.h:17
+#: SourceIndex/birth.glade.h:17 SourceIndex/birth.glade:351
 msgid "Repository title"
 msgstr "Название хранилища"
 
-#: SourceIndex/birth.glade.h:18
+#: SourceIndex/birth.glade.h:18 SourceIndex/birth.glade:388
+#: SourceIndex/census.glade:973 SourceIndex/death.glade:589
+#: SourceIndex/marriage.glade:234
 msgid "<b>Image</b>"
 msgstr "<b>Изображение</b>"
 
-#: SourceIndex/birth.glade.h:19
+#: SourceIndex/birth.glade.h:19 SourceIndex/birth.glade:406
 msgid "<b><i>Repository</i></b>"
 msgstr "<b><i>Хранилище</i></b>"
 
-#: SourceIndex/birth.glade.h:20
+#: SourceIndex/birth.glade.h:20 SourceIndex/birth.glade:421
 msgid ""
 "Spouse\n"
 "names:"
@@ -142,7 +151,7 @@ msgstr ""
 "Имена\n"
 "супругов:"
 
-#: SourceIndex/birth.glade.h:22
+#: SourceIndex/birth.glade.h:22 SourceIndex/birth.glade:441
 msgid ""
 "Marriage\n"
 "date:"
@@ -150,7 +159,7 @@ msgstr ""
 "Дата\n"
 "брака:"
 
-#: SourceIndex/birth.glade.h:24
+#: SourceIndex/birth.glade.h:24 SourceIndex/birth.glade:460
 msgid ""
 "Death\n"
 "date:"
@@ -158,19 +167,30 @@ msgstr ""
 "Дата\n"
 "смерти:"
 
-#: SourceIndex/birth.glade.h:26
+#: SourceIndex/birth.glade.h:26 FilterRules/ageatdeath.py:71
 msgid "Age:"
 msgstr "Возраст:"
 
-#: SourceIndex/birth.glade.h:27
+#: SourceIndex/birth.glade.h:27 SourceIndex/birth.glade:578
+#: SourceIndex/birth.glade:677 SourceIndex/census.glade:543
+#: SourceIndex/death.glade:722 SourceIndex/death.glade:821
+#: SourceIndex/marriage.glade:529 SourceIndex/marriage.glade:903
+#: SourceIndex/marriage.glade:922 SourceIndex/marriage.glade:941
+#: SourceIndex/marriage.glade:1361 SourceIndex/marriage.glade:1474
+#: SourceIndex/witness.glade:141
 msgid "Occupation:"
 msgstr "Место жительства:"
 
-#: SourceIndex/birth.glade.h:28
+#: SourceIndex/birth.glade.h:28 SourceIndex/birth.glade:597
+#: SourceIndex/birth.glade:710 SourceIndex/death.glade:741
+#: SourceIndex/death.glade:854 SourceIndex/marriage.glade:560
+#: SourceIndex/marriage.glade:960 SourceIndex/marriage.glade:979
+#: SourceIndex/marriage.glade:998 SourceIndex/marriage.glade:1408
+#: SourceIndex/marriage.glade:1455 SourceIndex/witness.glade:158
 msgid "Live:"
 msgstr "Живой:"
 
-#: SourceIndex/birth.glade.h:29
+#: SourceIndex/birth.glade.h:29 SourceIndex/birth.glade:833
 msgid ""
 "<b>Witness\n"
 "Godfather\n"
@@ -180,31 +200,31 @@ msgstr ""
 "Крёстный отец\n"
 "Крёстная мать:</b>"
 
-#: SourceIndex/birth.glade.h:32
+#: SourceIndex/birth.glade.h:32 SourceIndex/birth.glade:870
 msgid "Call number:"
 msgstr "Номер телефона:"
 
-#: SourceIndex/birth.glade.h:33
+#: SourceIndex/birth.glade.h:33 SourceIndex/birth.glade:887
 msgid "The call number into the repository"
 msgstr "Номер телефона в хранилище"
 
-#: SourceIndex/birth.glade.h:34
+#: SourceIndex/birth.glade.h:34 SourceIndex/birth.glade:925
 msgid "<b><i>Data person</i></b>"
 msgstr "<b><i>Данные лица</i></b>"
 
-#: SourceIndex/birth.glade.h:35
+#: SourceIndex/birth.glade.h:35 SourceIndex/birth.glade:949
 msgid "<b><i>Data margin</i></b>"
 msgstr "<b><i>Данные брака</i></b>"
 
-#: SourceIndex/birth.glade.h:36
+#: SourceIndex/birth.glade.h:36 SourceIndex/birth.glade:973
 msgid "<b><i>Data father</i></b>"
 msgstr "<b><i>Данные отца</i></b>"
 
-#: SourceIndex/birth.glade.h:37
+#: SourceIndex/birth.glade.h:37 SourceIndex/birth.glade:985
 msgid "<b><i>Data mother</i></b>"
 msgstr "<b><i>Данные матери</i></b>"
 
-#: SourceIndex/birth.glade.h:38
+#: SourceIndex/birth.glade.h:38 SourceIndex/birth.glade:1021
 msgid ""
 "witness1, name, given, age, occupation;\n"
 "witness2, name, given, age, occupation;\n"
@@ -216,15 +236,7 @@ msgstr ""
 "крёстный отец, имя, возраст, проживание;\n"
 "и др..."
 
-#: SourceIndex/birth.glade.h:42
-msgid "Cancel"
-msgstr "Отменить"
-
-#: SourceIndex/birth.glade.h:43
-msgid "OK"
-msgstr "OK"
-
-#: SourceIndex/birth.glade.h:44
+#: SourceIndex/birth.glade.h:44 SourceIndex/birth.glade:1549
 msgid ""
 "Marriage\n"
 "place:"
@@ -232,7 +244,7 @@ msgstr ""
 "Место\n"
 "брака:"
 
-#: SourceIndex/birth.glade.h:46
+#: SourceIndex/birth.glade.h:46 SourceIndex/birth.glade:1568
 msgid ""
 "Death\n"
 "place:"
@@ -240,7 +252,7 @@ msgstr ""
 "Место\n"
 "смерти:"
 
-#: SourceIndex/birth.glade.h:48
+#: SourceIndex/birth.glade.h:48 SourceIndex/birth.glade:1588
 msgid ""
 "Birth\n"
 "place:"
@@ -248,14 +260,15 @@ msgstr ""
 "Место\n"
 "рождения:"
 
-#: SourceIndex/birth.glade.h:50
+#: SourceIndex/birth.glade.h:50 SourceIndex/birth.glade:1892
+#: SourceIndex/birth.glade:1911
 msgid "Origine:"
 msgstr ""
 
-#: SourceIndex/birth.glade.h:51
+#: SourceIndex/birth.glade.h:51 SourceIndex/birth.glade:2272
 msgid "<b><i>Citation</i></b>"
 msgstr "<b><i>Цитата</i></b>"
 
-#: SourceIndex/birth.glade.h:52
+#: SourceIndex/birth.glade.h:52 SourceIndex/birth.glade:2287
 msgid "<b><i>Source</i></b>"
 msgstr "<b><i>Источник</i></b>"

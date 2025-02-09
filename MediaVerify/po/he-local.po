@@ -1,15 +1,16 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Igal Shapira <igal.shapira@gmail.com>, 2009, 2010, 2011.
+# Avi Markovitz <avi.markovitz@gmail.com>, 2019.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2023-09-17 17:01+0300\n"
-"Last-Translator: Avi Markovitz\n"
+"POT-Creation-Date: 2023-09-10 07:59+0300\n"
+"PO-Revision-Date: 2023-09-10 08:07+0300\n"
+"Last-Translator: \n"
 "Language-Team: Avi Markovitz\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
@@ -19,11 +20,25 @@ msgstr ""
 "2 : 3);\n"
 "X-Generator: Poedit 3.0.1\n"
 
-#: MediaVerify/MediaVerify.gpr.py:30
+#: MediaMerge/mediamerge.gpr.py:31
+msgid "Merge Media"
+msgstr "מיזוג מדיה"
+
+#: MediaMerge/mediamerge.gpr.py:32 MediaMerge/mediamerge.gpr.py:33
+msgid ""
+"Searches the entire database, looking for media that have the same path and "
+"merges them."
+msgstr "חיפוש בכלל מסד־הנתונים, לאיתור ומזוג פרטי מדיה בעלי נתיבים זהים."
+
+#: MediaMerge/mediamerge.py:157
+msgid "No media items merged."
+msgstr "לא מוזגו פרטי מדיה."
+
+#: MediaVerify/MediaVerify.gpr.py:30 MediaVerify/MediaVerify.gpr.py:31
 msgid "Media Verify"
 msgstr "אימות מדיה"
 
-#: MediaVerify/MediaVerify.gpr.py:31
+#: MediaVerify/MediaVerify.gpr.py:31 MediaVerify/MediaVerify.gpr.py:32
 msgid "Verify that media is present in the correct path"
 msgstr "נא לודא שקיימת מדיה בנתיב הנוכחי"
 
@@ -54,10 +69,6 @@ msgstr "לא חולל md5"
 #: MediaVerify/MediaVerify.py:85
 msgid "Errors"
 msgstr "שגיאות"
-
-#: MediaVerify/MediaVerify.py:100
-msgid "Close"
-msgstr "סגירה"
 
 #: MediaVerify/MediaVerify.py:101
 msgid "Close the Media Verify Tool"
@@ -143,28 +154,11 @@ msgstr "תיקון נתיבי קובץ"
 msgid "Fix media paths"
 msgstr "תיקון נתיבי מדיה"
 
-#~ msgid "Merge Media"
-#~ msgstr "מיזוג מדיה"
-
-#~ msgid ""
-#~ "Searches the entire database, looking for media that have the same path "
-#~ "and merges them."
-#~ msgstr ""
-#~ "חיפוש בכלל מסד־הנתונים, לאיתור ומיזוג פרטי מדיה  שהנתיבים שלהם זהים."
-
+#: MediaMerge/mediamerge.py:149
 #, python-brace-format
-#~ msgid "{number_of} media merged"
-#~ msgid_plural "{number_of} media merged"
-#~ msgstr[0] "עצם מדיה {number_of} מוזג"
-#~ msgstr[1] "מוזגו {number_of} עצמי מדיה"
-#~ msgstr[2] "מוזגו {number_of} עצמי מדיה"
-#~ msgstr[3] "מוזגו {number_of} עצמי מדיה"
-
-#~ msgid "Number of merges done"
-#~ msgstr "מספר מזוגים שבוצעו"
-
-#~ msgid "No modifications made"
-#~ msgstr "לא נעשו הסגלות"
-
-#~ msgid "No media items merged."
-#~ msgstr "לא מוזגו פרטי מדיה."
+msgid "{number_of} media merged"
+msgid_plural "{number_of} media merged"
+msgstr[0] "עצם מדיה {number_of} מוזג"
+msgstr[1] "מוזגו {number_of} עצמי מדיה"
+msgstr[2] "מוזגו {number_of} עצמי מדיה"
+msgstr[3] "מוזגו {number_of} עצמי מדיה"

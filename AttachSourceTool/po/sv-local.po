@@ -1,54 +1,57 @@
-# Swedish translations for PACKAGE package.
-# Copyright (C) 2009 THE PACKAGE'S COPYRIGHT HOLDER
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# Pär Ekholm <pehlm@pekholm.org>, 2021.
+# Bo Rosén <bo.rosen@home.se>, 2001.
+# Jens Arvidsson <jya@sverige.nu>, 2002, 2003, 2004, 2005.
+# Stefan Björk <betula@users.sourceforge.net>, 2005, 2006.
+# Peter Landgren <peter.talken@telia.com>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017.
+# Pär Ekholm <par.ekholm50@gmail.com>, 2016, 2018.
+# Pär Ekholm <par.ekholm@pekholm.se>, 2018, 2019.
+# Peter Landgren <peter@test>, 2010.
 #
-# Peter Landgren <peter.talken@telia.com>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-11-23 19:26+0100\n"
-"PO-Revision-Date: 2011-03-16 09:24+0100\n"
-"Last-Translator: Peter Landgren <peter.talken@telia.com>\n"
-"Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
+"Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/sv/>\n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10-dev\n"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:75
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:83
+#: AttachSourceTool/AttachSourceTool.py:70
+msgid "Select filter to restrict people"
+msgstr "Välj ett filter, som begränsar personurvalet"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:229
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:237
+#: AttachSourceTool/AttachSourceTool.py:158
+msgid "Processing...\n"
+msgstr "Arbetar...\n"
 
 #: AttachSourceTool/AttachSourceTool.gpr.py:25
 #: AttachSourceTool/AttachSourceTool.py:137
 #: AttachSourceTool/AttachSourceTool.py:191
 #: AttachSourceTool/AttachSourceTool.py:215
+#: AttachSourceTool/AttachSourceTool.gpr.py:26
+#: AttachSourceTool/AttachSourceTool.py:155
 msgid "Attach Source"
 msgstr "Koppla källa"
 
 #: AttachSourceTool/AttachSourceTool.gpr.py:26
 #: AttachSourceTool/AttachSourceTool.py:219
+#: AttachSourceTool/AttachSourceTool.gpr.py:27
 msgid "Attaches a shared source to multiple objects."
 msgstr "Kopplar en delad källa till flera objekt."
-
-#: AttachSourceTool/AttachSourceTool.py:67
-#: AttachSourceTool/AttachSourceTool.py:140
-msgid "Options"
-msgstr "Alternativ"
-
-#: AttachSourceTool/AttachSourceTool.py:69
-msgid "Person Filter"
-msgstr "Personfilter"
-
-#: AttachSourceTool/AttachSourceTool.py:70
-msgid "Select filter to restrict people"
-msgstr "Välj ett filter, som begränsar personurvalet"
-
-#: AttachSourceTool/AttachSourceTool.py:74
-msgid "Filter Person"
-msgstr "Filtrera person"
-
-#: AttachSourceTool/AttachSourceTool.py:75
-msgid "The center person for the filter"
-msgstr "Huvudpersonen för filtret"
 
 #: AttachSourceTool/AttachSourceTool.py:81
 msgid "Source type"
@@ -82,28 +85,21 @@ msgstr "Befintlig käll-ID"
 msgid "ID of source to attach"
 msgstr "ID hos källa som skall kopplas"
 
-#: AttachSourceTool/AttachSourceTool.py:157
-msgid "Results"
-msgstr "Resultat"
-
-#: AttachSourceTool/AttachSourceTool.py:158
-msgid "Processing...\n"
-msgstr "Arbetar...\n"
-
 #: AttachSourceTool/AttachSourceTool.py:173
+#: AttachSourceTool/AttachSourceTool.py:174
 msgid "Attaching sources...\n"
 msgstr "Kopplar källor...\n"
 
 #: AttachSourceTool/AttachSourceTool.py:174
+#: AttachSourceTool/AttachSourceTool.py:175
 msgid "Attaching sources..."
 msgstr "Kopplar källor..."
 
 #: AttachSourceTool/AttachSourceTool.py:194
+#: AttachSourceTool/AttachSourceTool.py:197
 msgid "Done!\n"
 msgstr "Klart!\n"
 
-#: AttachSourceTool/AttachSourceTool.py:216
+#: AttachSourceTool/AttachSourceTool.py:216 ../gramps/gen/plug/_pluginreg.py:71
 msgid "Beta"
 msgstr "Beta"
-
-

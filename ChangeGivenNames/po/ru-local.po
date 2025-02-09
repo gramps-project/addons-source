@@ -1,14 +1,24 @@
-# Russian translation for ChangeGivenNames
+# Russian translation for MediaMerge
 # This file is distributed under the same license as the Gramps package.
 #
-# Ivan Komaritsyn <vantu5z@mail.ru>, 2018.
+# Ivan Komaritsyn <vantu5z@mail.ru>, 2015, 2016, 2017, 2018, 2019, 2020, 2021.
+# Alexander Bogdashevsky <sanderb@kezomba.com>, 2004.
+# Alex Roitman <shura@gramps-project.org>, 2002, 2003, 2004, 2005, 2006, 2007.
+# Konstantin Dorichev <kdorichev@gmail.com>, 2008.
+# Yevgeny Zegzda <ezegjda@ya.ru>, 2009, 2010.
+# vantu5z <vantu5z@mail.ru>, 2020.
+# Komaritsyn Ivan <vantu5z@mail.ru>, 2018.
+# Andrey Baznikin (http://d.scn.ru/), 2009, 2010, 2011.
+# Vassilii Khachaturov <vassilii@tarunz.org>, 2011, 2012, 2013, 2014.
+# Egor Reentov <egor.gramps@gmail.com>, 2011, 2012, 2013.
+# Artem Glebov <artem.glebov@gmail.com>, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-28 14:34+0300\n"
-"PO-Revision-Date: 2018-11-28 14:40+0300\n"
+"POT-Creation-Date: 2018-12-04 16:31+0300\n"
+"PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
@@ -18,28 +28,24 @@ msgstr ""
 "X-Generator: Gtranslator 2.91.7\n"
 "X-Poedit-Language: Russian\n"
 "X-Poedit-Country: RUSSIAN FEDERATION\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
 #: ChangeGivenNames/ChangeGivenNames.gpr.py:36
+#: ChangeGivenNames/ChangeGivenNames.gpr.py:37
 msgid "Fix Capitalization of Given Names"
 msgstr "Исправление регистра в именах"
 
 #: ChangeGivenNames/ChangeGivenNames.gpr.py:37
+#: ChangeGivenNames/ChangeGivenNames.gpr.py:39
 msgid ""
 "Searches the entire database and attempts to fix capitalization of the given "
 "names."
-msgstr ""
-"Просматривает всю базу данных и пытается исправить регистр в именах."
+msgstr "Просматривает всю базу данных и пытается исправить регистр в именах."
 
 #: ChangeGivenNames/ChangeGivenNames.py:66
 msgid "manual|Fix_Capitalization_of_Given_Names..."
 msgstr ""
-
-#: ChangeGivenNames/ChangeGivenNames.py:91
-#: ChangeGivenNames/ChangeGivenNames.py:251
-msgid "Capitalization changes"
-msgstr "Изменения в регистре"
 
 #: ChangeGivenNames/ChangeGivenNames.py:105
 msgid "Checking Given Names"
@@ -49,35 +55,11 @@ msgstr "Проверка имён"
 msgid "Searching given names"
 msgstr "Поиск имён"
 
-#: ChangeGivenNames/ChangeGivenNames.py:123
-msgid "No modifications made"
-msgstr "Изменений не произведено"
-
-#: ChangeGivenNames/ChangeGivenNames.py:124
-msgid "No capitalization changes were detected."
-msgstr "Не обнаружено изменений в регистре."
-
-#: ChangeGivenNames/ChangeGivenNames.py:193
-msgid "Select"
-msgstr "Выбрать"
-
-#: ChangeGivenNames/ChangeGivenNames.py:196
-msgid "Original Name"
-msgstr "Первоначальное имя"
-
-#: ChangeGivenNames/ChangeGivenNames.py:200
-msgid "Capitalization Change"
-msgstr "Изменение в регистре"
-
 #: ChangeGivenNames/ChangeGivenNames.py:204
 msgid "Affected Names"
 msgstr "Изменённые имена"
 
-#: ChangeGivenNames/ChangeGivenNames.py:211
-msgid "Building display"
-msgstr "Обновление экрана"
-
-#: ChangeGivenNames/changenames.glade.h:1
+#: ChangeGivenNames/changenames.glade.h:1 ChangeGivenNames/changenames.glade:32
 msgid ""
 "Below is a list of the given names that \n"
 "Gramps can convert to correct capitalization. \n"
@@ -88,9 +70,6 @@ msgstr ""
 "Выберите имена, которые хотите исправить. "
 
 #: ChangeGivenNames/changenames.glade.h:4
+#: ChangeGivenNames/changenames.glade:107
 msgid "Edit selection"
 msgstr "Редактировать выбранное"
-
-#: ChangeGivenNames/changenames.glade.h:5
-msgid "_Accept changes and close"
-msgstr "_Принять изменения и закрыть"

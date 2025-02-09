@@ -13,18 +13,23 @@
 #  call name : prénom usuel
 #  unknown (context) : inconnu ou non-connu (individu)
 #
-# Laurent Protois <laurent.protois@free.fr>, 2001-2004.
+# Laurent Protois <laurent.protois@free.fr>, 2001, 2002, 2003, 2004.
 # Matthieu Pupat <tieum.tieum@free.fr>, 2004, 2005.
 # Guillaume Pratte <guillaumep@soireevideo.org>, 2005.
-# Frederic Chateaux, 2007-2008.
-# Jérôme Rapinat <romjerome@yahoo.fr>, 2005-2011.
+# Frederic Chateaux, 2007, 2008.
+# Jérôme Rapinat <romjerome@yahoo.fr>, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017.
+# Mathieu MD <mathieu.md@gmail.com>, 2012.
+# Paul Culley <prc@prc-virtualbox>, 2018.
+# Christophe <khrys63@gmail.com>, 2018.
+# Paul Culley <paulr2787@gmail.com>, 2016.
+# J-Paul Bérard <arverne@wanadoo.fr>, 2021.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-17 18:16+0100\n"
-"PO-Revision-Date: 2011-12-17 18:58+0100\n"
+"POT-Creation-Date: 2011-12-17 18:14+0100\n"
+"PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
 "Language: \n"
@@ -33,63 +38,41 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: EditExifMetadata//editexifmetadata.py:215
+#: EditExifMetadata/editexifmetadata.py:215
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:65
+msgid "Copy"
+msgstr "Copie"
+
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:3
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:4
 msgid "Deep Connections Gramplet"
 msgstr "Gramplet Connexions approfondies"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:4
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:6
 msgid "Gramplet showing a deep relationship between active and home people"
-msgstr "Gramplet affichant les relations étroites entre la souche et les autres individus"
+msgstr ""
+"Gramplet affichant les relations étroites entre la souche et les autres "
+"individus"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:10
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:13
 msgid "Deep Connections"
 msgstr "Connexions approfondies"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:55
-msgid "Double-click name for details"
-msgstr "Double cliquez sur le nom pour les détails"
-
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:56
-msgid "No Family Tree loaded."
-msgstr "Aucun Arbre Familial chargé."
-
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:61
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:65
 msgid "Pause"
 msgstr "Pause"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:63
-msgid "Continue"
-msgstr "Continuer"
-
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:65
-msgid "Copy"
-msgstr "Copier"
-
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:90
-msgid "child"
-msgstr "enfant"
-
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:94
-msgid "husband"
-msgstr "le mari"
-
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:96
-msgid "wife"
-msgstr "la femme"
-
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:106
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:143
 msgid "sibling"
 msgstr "le frère ou la sœur"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:110
-msgid "father"
-msgstr "père"
-
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:113
-msgid "mother"
-msgstr "mère"
-
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:150
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:188
 #, python-format
 msgid ""
 "\n"
@@ -98,33 +81,30 @@ msgstr ""
 "\n"
 "   qui est %s de "
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:168
-msgid "No Home Person set."
-msgstr "Individu par défaut (souche) non défini."
-
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:171
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:209
 msgid "No Active Person set."
 msgstr "Aucun individu actif défini."
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:175
-msgid "self"
-msgstr "L'individu actif"
-
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:179
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:217
 msgid "Looking for relationship between\n"
 msgstr "Recherche de relation entre\n"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:180
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:218
 #, python-format
 msgid "  <b>%s</b> (Home Person) and\n"
 msgstr "  <b>%s</b> (Souche) et\n"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:181
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:219
 #, python-format
 msgid "  <b>%s</b> (Active Person)...\n"
 msgstr "  <b>%s</b> (la personne active)...\n"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:191
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:229
 #, python-format
 msgid ""
 "Found relation #%d: \n"
@@ -134,6 +114,7 @@ msgstr ""
 "   "
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:201
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:239
 msgid ""
 "Paused.\n"
 "Press Continue to search for additional relations.\n"
@@ -142,6 +123,7 @@ msgstr ""
 "Appuyez sur Continuer pour rechercher d'autres relations.\n"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:216
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:254
 #, python-format
 msgid ""
 "\n"
@@ -149,4 +131,3 @@ msgid ""
 msgstr ""
 "\n"
 "Recherche terminée. %d relations trouvées."
-

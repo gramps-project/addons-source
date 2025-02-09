@@ -1,14 +1,16 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
+# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
+# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-26 17:29-0500\n"
-"PO-Revision-Date: 2024-10-02 14:59+0200\n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
 "Language: da_DK\n"
@@ -21,20 +23,18 @@ msgstr ""
 #: FamilyRelationshipTool/FamilyRelationshipTool.gpr.py:24
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:88
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:103
+#: FamilyRelationshipTool/FamilyRelationshipTool.gpr.py:25
 msgid "Family Relationship Tool"
 msgstr "Familie slægtskabs værktøj"
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.gpr.py:25
+#: FamilyRelationshipTool/FamilyRelationshipTool.gpr.py:26
 msgid "Mass-edit the family relationship type for a group of families."
 msgstr "Masserediger familieslægtskabstype for en gruppe familier."
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:53
 msgid "All Families"
 msgstr "Alle familier"
-
-#: FamilyRelationshipTool/FamilyRelationshipTool.py:63
-msgid "Family Filter"
-msgstr "Familiefilter"
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:64
 msgid ""
@@ -43,12 +43,6 @@ msgid ""
 msgstr ""
 "Vælg de familier der skal behandles.\n"
 "Dan et brugerdefineret filter hvis tomt."
-
-#: FamilyRelationshipTool/FamilyRelationshipTool.py:67
-#: FamilyRelationshipTool/FamilyRelationshipTool.py:75
-#: FamilyRelationshipTool/FamilyRelationshipTool.py:92
-msgid "Options"
-msgstr "Tilvalg"
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:70
 msgid "Relationship Type"
@@ -61,22 +55,6 @@ msgid ""
 msgstr ""
 "Vælg familieslægtskabstype.\n"
 "Brugerbestemte slægtskabstyper er ikke understøttet."
-
-#: FamilyRelationshipTool/FamilyRelationshipTool.py:73
-msgid "Married"
-msgstr "Gift"
-
-#: FamilyRelationshipTool/FamilyRelationshipTool.py:73
-msgid "Unmarried"
-msgstr "Ugift"
-
-#: FamilyRelationshipTool/FamilyRelationshipTool.py:74
-msgid "Civil Union"
-msgstr "Borgerlig vielse"
-
-#: FamilyRelationshipTool/FamilyRelationshipTool.py:74
-msgid "Unknown"
-msgstr "Ukendt"
 
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:107
 msgid "Process relationships..."

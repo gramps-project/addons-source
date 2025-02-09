@@ -1,14 +1,24 @@
-# Russian translation for lxml
+# Russian translation for MediaMerge
 # This file is distributed under the same license as the Gramps package.
 #
-# Ivan Komaritsyn <vantu5z@mail.ru>, 2018.
+# Ivan Komaritsyn <vantu5z@mail.ru>, 2015, 2016, 2017, 2018, 2019, 2020, 2021.
+# Alexander Bogdashevsky <sanderb@kezomba.com>, 2004.
+# Alex Roitman <shura@gramps-project.org>, 2002, 2003, 2004, 2005, 2006, 2007.
+# Konstantin Dorichev <kdorichev@gmail.com>, 2008.
+# Yevgeny Zegzda <ezegjda@ya.ru>, 2009, 2010.
+# vantu5z <vantu5z@mail.ru>, 2020.
+# Komaritsyn Ivan <vantu5z@mail.ru>, 2018.
+# Andrey Baznikin (http://d.scn.ru/), 2009, 2010, 2011.
+# Vassilii Khachaturov <vassilii@tarunz.org>, 2011, 2012, 2013, 2014.
+# Egor Reentov <egor.gramps@gmail.com>, 2011, 2012, 2013.
+# Artem Glebov <artem.glebov@gmail.com>, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-06 14:23+0300\n"
-"PO-Revision-Date: 2018-12-06 15:20+0300\n"
+"POT-Creation-Date: 2018-12-04 16:31+0300\n"
+"PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
@@ -18,18 +28,15 @@ msgstr ""
 "X-Generator: Gtranslator 2.91.7\n"
 "X-Poedit-Language: Russian\n"
 "X-Poedit-Country: RUSSIAN FEDERATION\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: lxml/etreeGramplet.gpr.py:9
-msgid "etree Gramplet"
-msgstr "Грамплет etree"
-
-#: lxml/etreeGramplet.gpr.py:10
+#: lxml/etreeGramplet.gpr.py:10 lxml/etreeGramplet.gpr.py:11
 msgid "Gramplet for testing etree with Gramps XML"
 msgstr "Грамплет для тестирования etree с Gramps XML"
 
-#: lxml/etreeGramplet.gpr.py:18
+#: lxml/etreeGramplet.gpr.py:18 lxml/etreeGramplet.gpr.py:10
+#: lxml/etreeGramplet.gpr.py:19
 msgid "etree"
 msgstr "etree"
 
@@ -37,17 +44,9 @@ msgstr "etree"
 msgid "Invalid timestamp"
 msgstr "Неверное время"
 
-#: lxml/etreeGramplet.py:86 lxml/lxmlGramplet.py:111
-msgid "Unknown"
-msgstr "Неизвестно"
-
 #: lxml/etreeGramplet.py:139
 msgid "No file parsed..."
 msgstr "Нет разобранного файла..."
-
-#: lxml/etreeGramplet.py:146 lxml/lxmlGramplet.py:171
-msgid "Run"
-msgstr "Запуск"
 
 #: lxml/etreeGramplet.py:205 lxml/etreeGramplet.py:210
 msgid "Number of editions back"
@@ -94,12 +93,12 @@ msgstr ""
 msgid "Cannot copy \"%s\""
 msgstr "Не удалось скопировать \"%s\""
 
-#: lxml/etreeGramplet.py:417
+#: lxml/etreeGramplet.py:417 lxml/etreeGramplet.py:418
 #, python-format
 msgid "XML: Last %s editions since %s, were at/on :\n"
 msgstr "XML: Последние изменение %s с %s, было :\n"
 
-#: lxml/etreeGramplet.py:470
+#: lxml/etreeGramplet.py:470 lxml/etreeGramplet.py:471
 #, python-format
 msgid ""
 "\n"
@@ -110,7 +109,7 @@ msgstr ""
 "XML: Количество записей и связей : \t%s\n"
 "\n"
 
-#: lxml/etreeGramplet.py:473
+#: lxml/etreeGramplet.py:473 lxml/etreeGramplet.py:474
 #, python-format
 msgid ""
 "Number of tags : \n"
@@ -119,7 +118,7 @@ msgstr ""
 "Количество меток : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:475
+#: lxml/etreeGramplet.py:475 lxml/etreeGramplet.py:476
 #, python-format
 msgid ""
 "Number of tags : \n"
@@ -128,7 +127,7 @@ msgstr ""
 "Количество меток : \n"
 "\t\t\t%s\n"
 
-#: lxml/etreeGramplet.py:477
+#: lxml/etreeGramplet.py:477 lxml/etreeGramplet.py:478
 #, python-format
 msgid ""
 "Number of  events : \n"
@@ -137,16 +136,7 @@ msgstr ""
 "Количество событий : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:478
-#, python-format
-msgid ""
-"Number of persons : \n"
-"\t\t\t%s\t|\t(%s)* and (%s)* surnames\n"
-msgstr ""
-"Количество лиц : \n"
-"\t\t\t%s\t|\t(%s)* и (%s)* фамилий\n"
-
-#: lxml/etreeGramplet.py:479
+#: lxml/etreeGramplet.py:479 lxml/etreeGramplet.py:484
 #, python-format
 msgid ""
 "Number of families : \n"
@@ -155,7 +145,7 @@ msgstr ""
 "Количество семей : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:480
+#: lxml/etreeGramplet.py:480 lxml/etreeGramplet.py:485
 #, python-format
 msgid ""
 "Number of sources : \n"
@@ -164,7 +154,7 @@ msgstr ""
 "Количество источников : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:481
+#: lxml/etreeGramplet.py:481 lxml/etreeGramplet.py:487
 #, python-format
 msgid ""
 "Number of citations : \n"
@@ -173,7 +163,7 @@ msgstr ""
 "Количество цитат : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:482
+#: lxml/etreeGramplet.py:482 lxml/etreeGramplet.py:490
 #, python-format
 msgid ""
 "Number of places : \n"
@@ -182,7 +172,7 @@ msgstr ""
 "Количество мест : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:483
+#: lxml/etreeGramplet.py:483 lxml/etreeGramplet.py:491
 #, python-format
 msgid ""
 "Number of media objects : \n"
@@ -191,7 +181,7 @@ msgstr ""
 "Количество документов : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:484
+#: lxml/etreeGramplet.py:484 lxml/etreeGramplet.py:492
 #, python-format
 msgid ""
 "Number of repositories : \n"
@@ -200,7 +190,7 @@ msgstr ""
 "Количество хранилищ : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:485
+#: lxml/etreeGramplet.py:485 lxml/etreeGramplet.py:493
 #, python-format
 msgid ""
 "Number of notes : \n"
@@ -209,7 +199,7 @@ msgstr ""
 "Количество заметок : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:490
+#: lxml/etreeGramplet.py:490 lxml/etreeGramplet.py:498
 #, python-format
 msgid ""
 "\n"
@@ -218,7 +208,7 @@ msgstr ""
 "\n"
 "XML: Количество дополнительных записей и связей: \t%s\n"
 
-#: lxml/etreeGramplet.py:492
+#: lxml/etreeGramplet.py:492 lxml/etreeGramplet.py:502
 #, python-format
 msgid ""
 "* loaded Family Tree base:\n"
@@ -227,15 +217,12 @@ msgstr ""
 "* загруженная база Семейного древа:\n"
 " \"%s\"\n"
 
-#: lxml/lxmlGramplet.gpr.py:9
-msgid "lxml Gramplet"
-msgstr "Грамплет lxml"
-
-#: lxml/lxmlGramplet.gpr.py:10
+#: lxml/lxmlGramplet.gpr.py:10 lxml/lxmlGramplet.gpr.py:11
 msgid "Gramplet for testing lxml and XSLT"
 msgstr "Грамплет для тестирования lxml и XSLT"
 
-#: lxml/lxmlGramplet.gpr.py:18
+#: lxml/lxmlGramplet.gpr.py:18 lxml/lxmlGramplet.gpr.py:10
+#: lxml/lxmlGramplet.gpr.py:19
 msgid "lxml"
 msgstr "lxml"
 
@@ -405,14 +392,6 @@ msgstr "Поиск ..."
 msgid "Content generated by Gramps"
 msgstr "Содержание создано Gramps"
 
-#: lxml/lxmlGramplet.py:591
-msgid "Surnames"
-msgstr "Фамилии"
-
-#: lxml/lxmlGramplet.py:592
-msgid "Places"
-msgstr "Места"
-
 #: lxml/lxmlGramplet.py:593
 msgid "List of sources"
 msgstr "Список источников"
@@ -425,53 +404,9 @@ msgstr "Австралия"
 msgid "Brazil"
 msgstr "Бразилия"
 
-#: lxml/lxmlGramplet.py:613
-msgid "Bulgaria"
-msgstr "Болгария"
-
-#: lxml/lxmlGramplet.py:614
-msgid "Canada"
-msgstr "Канада"
-
-#: lxml/lxmlGramplet.py:615
-msgid "Chile"
-msgstr "Чили"
-
-#: lxml/lxmlGramplet.py:616
-msgid "China"
-msgstr "Китай"
-
-#: lxml/lxmlGramplet.py:617
-msgid "Croatia"
-msgstr "Хорватия"
-
-#: lxml/lxmlGramplet.py:618
-msgid "Czech Republic"
-msgstr "Чешская Республика"
-
-#: lxml/lxmlGramplet.py:619
-msgid "England"
-msgstr "Англия"
-
-#: lxml/lxmlGramplet.py:620
-msgid "Finland"
-msgstr "Финляндия"
-
-#: lxml/lxmlGramplet.py:621
-msgid "France"
-msgstr "Франция"
-
-#: lxml/lxmlGramplet.py:622
-msgid "Germany"
-msgstr "Германия"
-
 #: lxml/lxmlGramplet.py:623
 msgid "India"
 msgstr "Индия"
-
-#: lxml/lxmlGramplet.py:624
-msgid "Japan"
-msgstr "Япония"
 
 #: lxml/lxmlGramplet.py:625
 msgid "Norway"
@@ -480,26 +415,6 @@ msgstr "Норвегия"
 #: lxml/lxmlGramplet.py:626
 msgid "Portugal"
 msgstr "Португалия"
-
-#: lxml/lxmlGramplet.py:627
-msgid "Russia"
-msgstr "Россия"
-
-#: lxml/lxmlGramplet.py:628
-msgid "Sweden"
-msgstr "Швеция"
-
-#: lxml/lxmlGramplet.py:629
-msgid "United States of America"
-msgstr "Соединённые Штаты Америки"
-
-#: lxml/lxmlGramplet.py:633
-msgid "Name"
-msgstr "Имя"
-
-#: lxml/lxmlGramplet.py:634
-msgid "Country"
-msgstr "Государство/Страна"
 
 #: lxml/lxmlGramplet.py:695
 #, python-format
@@ -516,7 +431,3 @@ msgstr ""
 "Попытка открыть\n"
 " \"%s\"\n"
 " в Вашем браузере по умолчанию ..."
-
-#: lxml/lxmlGramplet.py:715
-msgid "Gallery"
-msgstr "Галерея"

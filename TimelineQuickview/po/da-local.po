@@ -1,14 +1,16 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
+# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
+# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2024-10-14 15:29+0200\n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
 "Language: da_DK\n"
@@ -18,17 +20,14 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
 
-#: TimelineQuickview/TimelineQuickview.gpr.py:9
-msgid "Timeline"
-msgstr "Tidslinje"
+#: Query/QueryQuickview.py:426 TimelineQuickview/TimelineQuickview.py:186
+msgid "Today"
+msgstr "I dag"
 
 #: TimelineQuickview/TimelineQuickview.gpr.py:10
+#: TimelineQuickview/TimelineQuickview.gpr.py:11
 msgid "Display a person's events on a timeline"
 msgstr "Vis en persons hændelser på en tidslinje"
-
-#: TimelineQuickview/TimelineQuickview.py:46
-msgid "Parents"
-msgstr "Forældre"
 
 #: TimelineQuickview/TimelineQuickview.py:48
 msgid "Inlaw Parents"
@@ -77,30 +76,6 @@ msgstr "Partners ægtefælle"
 msgid "Timeline for %s"
 msgstr "Tidslinje for %s"
 
-#: TimelineQuickview/TimelineQuickview.py:159
-msgid "Date"
-msgstr "Dato"
-
-#: TimelineQuickview/TimelineQuickview.py:160
-msgid "Event"
-msgstr "Hændelse"
-
-#: TimelineQuickview/TimelineQuickview.py:161
-msgid "Age"
-msgstr "Alder"
-
-#: TimelineQuickview/TimelineQuickview.py:162
-msgid "Place"
-msgstr "Sted"
-
 #: TimelineQuickview/TimelineQuickview.py:163
 msgid "People involved"
 msgstr "Involverede personer"
-
-#: TimelineQuickview/TimelineQuickview.py:186
-msgid "Today"
-msgstr "I dag"
-
-#: TimelineQuickview/TimelineQuickview.py:192
-msgid "Unknown"
-msgstr "Ukendt"

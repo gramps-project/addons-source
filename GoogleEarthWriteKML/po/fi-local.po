@@ -1,40 +1,57 @@
-# Finnish translation for addons-gramps package.
-# This file is distributed under the same license as the addons-gramps package.
 # translation of fi.po to Finnish
-# Matti Niemelä <niememat@gmail.com>, 2018
+# GRAMPS
+# Copyright (C) YEAR ORGANIZATION.
 #
+# Eero Tamminen <eerot@sf>, 2005, 2006, 2007, 2008.
+# Janne Kovesjärvi <janne.kovesjarvi@gmail.com>, 2008, 2009, 2013.
+# Matti Niemelä <niememat@gmail.com>, 2014, 2015, 2016, 2017, 2018.
+# Pekka Valta <pekka.valta@kolumbus.fi>, 2014, 2018.
+# Niemelä <niememat@gmail.com>, 2017, 2018.
+# Bo Rosén <bo.rosen@home.se>, 2001.
+# Jens Arvidsson <jya@sverige.nu>, 2002, 2003, 2004, 2005.
+# Stefan Björk <betula@users.sourceforge.net>, 2005, 2006.
+# Peter Landgren <peter.talken@telia.com>, 2007, 2008, 2009, 2010, 2011.
+# Anton Huber <anton_huber@gmx.de>, 2005, 2006.
+# Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
+# Sebastian Vöcking <voeck@web.de>, 2005.
+# Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
+# Alex Roitman <shura@gramps-project.org>, 2006.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
 msgid ""
 msgstr ""
-"Project-Id-Version: gramps 5.0.0\n"
+"Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-17 05:02+0200\n"
-"PO-Revision-Date: 2018-12-09 16:29+0200\n"
+"POT-Creation-Date: 2018-10-02 02:13+0300\n"
+"PO-Revision-Date: 2019-12-10 13:09+0200\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
-"Language-Team: Finnish <niememat>\n"
-"Language: fi_FI\n"
+"Language-Team: niememat@gmail.com\n"
+"Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.0.6\n"
 
 #: GoogleEarthWriteKML.gpr.py:30
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.gpr.py:31
 msgid "GoogleEarth"
 msgstr "GoogleEarth"
 
 #: GoogleEarthWriteKML.gpr.py:35
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.gpr.py:36
 msgid "Creates data file for GoogleEarth and opens it"
 msgstr "Luo GoogleEarth tiedostoa ja avaa sen"
 
-#: GoogleEarthWriteKML.py:140
+#: GoogleEarthWriteKML.py:140 GoogleEarthWriteKML/GoogleEarthWriteKML.py:119
 msgid "No place description"
 msgstr "Ei paikkatietoa"
 
-#: GoogleEarthWriteKML.py:173
+#: GoogleEarthWriteKML.py:173 GoogleEarthWriteKML/GoogleEarthWriteKML.py:152
 msgid "GoogleEarth not installed!"
 msgstr "GoogleEarth ei ole asennettu!"
 
-#: GoogleEarthWriteKML.py:174
+#: GoogleEarthWriteKML.py:174 GoogleEarthWriteKML/GoogleEarthWriteKML.py:153
 #, python-format
 msgid ""
 "Create kmz/kml file ''%s''\n"
@@ -43,28 +60,20 @@ msgstr ""
 "Luodaan kmz/kml tiedosto ''%s''\n"
 "käyttäjän hakemistoon ''%s''?"
 
-#: GoogleEarthWriteKML.py:177 GoogleEarthWriteKML.py:198
-msgid "Yes"
-msgstr "Kyllä"
-
-#: GoogleEarthWriteKML.py:178 GoogleEarthWriteKML.py:199
-msgid "No"
-msgstr "Ei"
-
-#: GoogleEarthWriteKML.py:184
+#: GoogleEarthWriteKML.py:184 GoogleEarthWriteKML/GoogleEarthWriteKML.py:163
 #, python-format
 msgid "Failure writing to %s"
 msgstr "Kirjoitus epäonnistui %s"
 
-#: GoogleEarthWriteKML.py:185
+#: GoogleEarthWriteKML.py:185 GoogleEarthWriteKML/GoogleEarthWriteKML.py:164
 msgid "Directory does not exist"
 msgstr "Hakemistoa ei ole olemassa"
 
-#: GoogleEarthWriteKML.py:194
+#: GoogleEarthWriteKML.py:194 GoogleEarthWriteKML/GoogleEarthWriteKML.py:173
 msgid "GoogleEarth file exists!"
 msgstr "GoogleEarth tiedosto on olemassa!"
 
-#: GoogleEarthWriteKML.py:195
+#: GoogleEarthWriteKML.py:195 GoogleEarthWriteKML/GoogleEarthWriteKML.py:174
 #, python-format
 msgid ""
 "Overwrite kmz/kml file ''%s''\n"

@@ -1,23 +1,24 @@
-# Russian translation for Gramps
+# Russian translation for MediaMerge
 # This file is distributed under the same license as the Gramps package.
-# Русский перевод для GRAMPS
-# Copyright (C) 2002-2011 Free Software Foundation, Inc.
 #
+# Ivan Komaritsyn <vantu5z@mail.ru>, 2015, 2016, 2017, 2018, 2019, 2020, 2021.
 # Alexander Bogdashevsky <sanderb@kezomba.com>, 2004.
-# Alex Roitman <shura@gramps-project.org>, 2002-2007.
+# Alex Roitman <shura@gramps-project.org>, 2002, 2003, 2004, 2005, 2006, 2007.
 # Konstantin Dorichev <kdorichev@gmail.com>, 2008.
 # Yevgeny Zegzda <ezegjda@ya.ru>, 2009, 2010.
-# Andrey Baznikin (http://d.scn.ru/), 2009-2011.
-# Vassilii Khachaturov <vassilii@tarunz.org>, 2011-2014.
-# Egor Reentov <egor.gramps@gmail.com>, 2011-2013.
-# Ivan Komaritsyn <vantu5z@mail.ru>, 2015-2017.
+# vantu5z <vantu5z@mail.ru>, 2020.
+# Komaritsyn Ivan <vantu5z@mail.ru>, 2018.
+# Andrey Baznikin (http://d.scn.ru/), 2009, 2010, 2011.
+# Vassilii Khachaturov <vassilii@tarunz.org>, 2011, 2012, 2013, 2014.
+# Egor Reentov <egor.gramps@gmail.com>, 2011, 2012, 2013.
+# Artem Glebov <artem.glebov@gmail.com>, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-20 09:20-0600\n"
-"PO-Revision-Date: 2017-11-09 11:38+0300\n"
+"POT-Creation-Date: 2018-12-04 16:31+0300\n"
+"PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
@@ -27,100 +28,42 @@ msgstr ""
 "X-Generator: Gtranslator 2.91.7\n"
 "X-Poedit-Language: Russian\n"
 "X-Poedit-Country: RUSSIAN FEDERATION\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: LastChange/LastChange.gpr.py:24
-msgid "Last Change Gramplet"
-msgstr "Последние изменения"
+#: AncestorFill/AncestorFill.py:360 AncestorFill/AncestorFill.py:361
+#: LastChange/LastChangeReport.py:378
+msgid "The style used for the title of the page."
+msgstr "Стиль заголовка страницы."
 
-#: LastChange/LastChange.gpr.py:25
+#: LastChange/LastChange.gpr.py:25 LastChange/LastChange.gpr.py:26
 msgid "List the last ten person records that have been changed"
 msgstr "Показывает последние десять лиц в которые вносились изменения"
 
-#: LastChange/LastChange.gpr.py:34
+#: LastChange/LastChange.gpr.py:34 LastChange/LastChange.gpr.py:35
 msgid "Latest Changes"
 msgstr "Последние изменения"
 
 #: LastChange/LastChange.gpr.py:40 LastChange/LastChangeReport.py:74
-#: LastChange/LastChangeReport.py:113
+#: LastChange/LastChangeReport.py:113 LastChange/LastChange.gpr.py:42
 msgid "Last Change Report"
 msgstr "Последние изменения"
 
-#: LastChange/LastChange.gpr.py:41
+#: LastChange/LastChange.gpr.py:41 LastChange/LastChange.gpr.py:43
 msgid "Report of the last records that have been changed"
 msgstr "Создаёт отчёт о последних изменениях в записях"
-
-#: LastChange/LastChangeGramplet.py:55
-msgid "Double-click name for details"
-msgstr "Двойной щелчок по имени для отображения подробностей"
-
-#: LastChange/LastChangeGramplet.py:56
-msgid "No Family Tree loaded."
-msgstr "Семейное древо не загружено."
-
-#: LastChange/LastChangeGramplet.py:60
-msgid "Processing..."
-msgstr "Обработка..."
 
 #: LastChange/LastChangeGramplet.py:82
 msgid "changed on"
 msgstr "изменено в"
 
-#: LastChange/LastChangeReport.py:53
-msgid "<Unknown>"
-msgstr "<Неизвестно>"
-
 #: LastChange/LastChangeReport.py:75
 msgid "You must select at least one type of record."
 msgstr "Необходимо выбрать хотя бы один тип записи."
 
-#: LastChange/LastChangeReport.py:116 LastChange/LastChangeReport.py:345
-msgid "People"
-msgstr "Люди"
-
-#: LastChange/LastChangeReport.py:118 LastChange/LastChangeReport.py:346
-msgid "Families"
-msgstr "Семьи"
-
-#: LastChange/LastChangeReport.py:120 LastChange/LastChangeReport.py:348
-msgid "Events"
-msgstr "События"
-
-#: LastChange/LastChangeReport.py:122 LastChange/LastChangeReport.py:347
-msgid "Places"
-msgstr "Места"
-
-#: LastChange/LastChangeReport.py:124 LastChange/LastChangeReport.py:349
-msgid "Media"
-msgstr "Альбом"
-
-#: LastChange/LastChangeReport.py:126 LastChange/LastChangeReport.py:350
-msgid "Sources"
-msgstr "Источники"
-
-#: LastChange/LastChangeReport.py:128 LastChange/LastChangeReport.py:351
-msgid "Notes"
-msgstr "Заметки"
-
-#: LastChange/LastChangeReport.py:130 LastChange/LastChangeReport.py:352
-msgid "Citations"
-msgstr "Цитаты"
-
 #: LastChange/LastChangeReport.py:180
 msgid "People Changed"
 msgstr "Изменённые лица"
-
-#: LastChange/LastChangeReport.py:181 LastChange/LastChangeReport.py:198
-#: LastChange/LastChangeReport.py:229 LastChange/LastChangeReport.py:252
-#: LastChange/LastChangeReport.py:270 LastChange/LastChangeReport.py:288
-#: LastChange/LastChangeReport.py:305 LastChange/LastChangeReport.py:322
-msgid "ID"
-msgstr "ID"
-
-#: LastChange/LastChangeReport.py:181
-msgid "Person"
-msgstr "Лицо"
 
 #: LastChange/LastChangeReport.py:181 LastChange/LastChangeReport.py:198
 #: LastChange/LastChangeReport.py:229 LastChange/LastChangeReport.py:252
@@ -146,34 +89,17 @@ msgstr "%s и %s"
 msgid "Events Changed"
 msgstr "Изменённые события"
 
-#: LastChange/LastChangeReport.py:229
-msgid "Event"
-msgstr "Событие"
-
 #: LastChange/LastChangeReport.py:251
 msgid "Places Changed"
 msgstr "Изменённые места"
-
-#: LastChange/LastChangeReport.py:252
-msgid "Place"
-msgstr "Место"
 
 #: LastChange/LastChangeReport.py:269
 msgid "Media Changed"
 msgstr "Изменённые документы"
 
-#: LastChange/LastChangeReport.py:270
-msgid "Path"
-msgstr "Путь"
-
 #: LastChange/LastChangeReport.py:287
 msgid "Sources Changed"
 msgstr "Изменённые источники"
-
-#: LastChange/LastChangeReport.py:288 LastChange/LastChangeReport.py:305
-#: LastChange/LastChangeReport.py:322
-msgid "Title"
-msgstr "Название"
 
 #: LastChange/LastChangeReport.py:304
 msgid "Notes Changed"
@@ -183,26 +109,10 @@ msgstr "Изменённые Заметки"
 msgid "Citations Changed"
 msgstr "Изменённые цитаты"
 
-#: LastChange/LastChangeReport.py:343
-msgid "Report Options"
-msgstr "Параметры отчёта"
-
 #: LastChange/LastChangeReport.py:344
 msgid "Select From"
 msgstr "Выбрать из"
 
-#: LastChange/LastChangeReport.py:378
-msgid "The style used for the title of the page."
-msgstr "Стиль заголовков страниц."
-
-#: LastChange/LastChangeReport.py:393
-msgid "The style used for the section headers."
-msgstr "Стиль заголовка разделов."
-
 #: LastChange/LastChangeReport.py:403
 msgid "The style used for normal text"
 msgstr "Стиль простого текста"
-
-#: LastChange/LastChangeReport.py:415
-msgid "The basic style used for table headings."
-msgstr "Основной стиль используемый для заголовков таблиц."

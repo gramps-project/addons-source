@@ -1,14 +1,16 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
+# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
+# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-02 11:58-0500\n"
-"PO-Revision-Date: 2024-10-12 16:41+0200\n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
 "Language: da_DK\n"
@@ -19,10 +21,11 @@ msgstr ""
 "X-Generator: Poedit 3.0.1\n"
 
 #: PlaceUpdate/PlaceUpdate.gpr.py:3 PlaceUpdate/PlaceUpdate.gpr.py:14
+#: PlaceUpdate/PlaceUpdate.gpr.py:4 PlaceUpdate/PlaceUpdate.gpr.py:15
 msgid "PlaceUpdate"
 msgstr "Stedopdatering"
 
-#: PlaceUpdate/PlaceUpdate.gpr.py:4
+#: PlaceUpdate/PlaceUpdate.gpr.py:4 PlaceUpdate/PlaceUpdate.gpr.py:5
 msgid "Gramplet to manipulate multiple places"
 msgstr "Gramplet til at behandle flere steder"
 
@@ -30,29 +33,16 @@ msgstr "Gramplet til at behandle flere steder"
 msgid "Set properties for multiple places"
 msgstr "Angiv egenskaber for flere steder"
 
-#: PlaceUpdate/PlaceUpdate.py:77 PlaceUpdate/PlaceUpdate.py:154
-msgid "Select"
-msgstr "Vælg"
-
 #: PlaceUpdate/PlaceUpdate.py:96
-msgid "This gramplet allows setting properties for multiple places at the same time"
-msgstr "Denne Gramplet giver dig mulighed for at angive egenskaber for flere steder på samme tid"
-
-#: PlaceUpdate/PlaceUpdate.py:101
-msgid "Place type:"
-msgstr "Stedtype:"
-
-#: PlaceUpdate/PlaceUpdate.py:106
-msgid "Tag:"
-msgstr "Mærkat:"
+msgid ""
+"This gramplet allows setting properties for multiple places at the same time"
+msgstr ""
+"Denne Gramplet giver dig mulighed for at angive egenskaber for flere steder "
+"på samme tid"
 
 #: PlaceUpdate/PlaceUpdate.py:111
 msgid "New enclosing place"
 msgstr "Nyt omsluttende sted"
-
-#: PlaceUpdate/PlaceUpdate.py:116
-msgid "None"
-msgstr "Ingen"
 
 #: PlaceUpdate/PlaceUpdate.py:119
 msgid "Timespan:"

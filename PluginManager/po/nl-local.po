@@ -1,40 +1,43 @@
-# Dutch translation of addon PluginManager.
+# Dutch translation of addon MediaMerge.
 # Copyright (C) 2020 Gramps project
-# This file is distributed under the same license as the PluginManager package.
-# Jan Sparreboom <jan@sparreboom.net>, 2020.
+# This file is distributed under the same license as the MediaMerge package.
+# Jan Sparreboom <jan@sparreboom.net>, 2020, 2021, 2023.
+# Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
+# Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
+# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
+# Erik De Richter <frederik.de.richter@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
+# Harmen Huizinga <harmenhuizinga@sigmo.nl>, 2013.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PluginManager 5.x\n"
+"Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
 "POT-Creation-Date: 2019-01-04 18:55-0600\n"
-"PO-Revision-Date: 2020-08-06 18:18+0200\n"
-"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
-"Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
+"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
+"addons/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10-dev\n"
 
-#: PluginManager/PluginManager.gpr.py:29
+#: PluginManager/PluginManager.gpr.py:29 PluginManager/PluginManager.gpr.py:30
 msgid "Plugin Manager Enhanced"
 msgstr "Verbeterde uitbreidingenbeheerder"
 
-#: PluginManager/PluginManager.gpr.py:30
+#: PluginManager/PluginManager.gpr.py:30 PluginManager/PluginManager.gpr.py:31
 msgid "An Addon/Plugin Manager with several additional capabilities"
 msgstr ""
 "Een addon-/uitbreidingenbeheerder met verschillende extra mogelijkheden"
 
-#: PluginManager/PluginManager.py:87
+#: PluginManager/PluginManager.py:87 PluginManager/PluginManager.py:84
 msgid "Plugin Manager - Enhanced"
 msgstr "Uitbreidingenbeheerder - verbeterd"
 
-#: PluginManager/PluginManager.py:144
-msgid "_Help"
-msgstr "_Help"
-
-#: PluginManager/PluginManager.py:151
+#: PluginManager/PluginManager.py:151 PluginManager/PluginManager.py:154
 msgid ""
 "Enter search words to filter the addons.\n"
 "All the words must be present somewhere in the row or\n"
@@ -46,104 +49,32 @@ msgstr ""
 "de addon-bestandsnaam die in de zoekopdracht moet worden opgenomen.\n"
 "Hoofdlettergebruik en volgorde wordt genegeerd."
 
-#: PluginManager/PluginManager.py:155
+#: PluginManager/PluginManager.py:155 PluginManager/PluginManager.py:158
 msgid "Search..."
 msgstr "Zoeken..."
 
-#: PluginManager/PluginManager.py:161
+#: PluginManager/PluginManager.py:161 ../gramps/gui/plug/_windows.py:816
 msgid "Check for updated addons now"
 msgstr "Controleer nu op bijgewerkte add-ons"
 
-#: PluginManager/PluginManager.py:168
-msgid "Reload"
-msgstr "Herladen"
-
-#: PluginManager/PluginManager.py:174 PluginManager/PluginManager.py:739
-msgid "_Close"
-msgstr "_Sluiten"
-
-#: PluginManager/PluginManager.py:207
+#: PluginManager/PluginManager.py:207 PluginManager/PluginManager.py:216
 msgid "Restart..."
 msgstr "Herstarten..."
 
-#: PluginManager/PluginManager.py:208
+#: PluginManager/PluginManager.py:208 PluginManager/PluginManager.py:217
 msgid ""
 "Please Restart Gramps so that your addon changes can be safely completed."
 msgstr ""
 "Start Gramps opnieuw zodat uw wijzigingen aan de add-ons veilig kunnen "
 "worden voltooid."
 
-#: PluginManager/PluginManager.py:284
-msgid "Id"
-msgstr "Id"
-
-#: PluginManager/PluginManager.py:285
-msgid "Plugin name"
-msgstr "Naam uitbreiding"
-
-#: PluginManager/PluginManager.py:286 PluginManager/PluginManager.py:457
-msgid "Description"
-msgstr "Beschrijving"
-
-#: PluginManager/PluginManager.py:287
-msgid "Version"
-msgstr "Versie"
-
-#: PluginManager/PluginManager.py:288
-msgid "Authors"
-msgstr "Auteurs"
-
-#: PluginManager/PluginManager.py:289
-msgid "Email"
-msgstr "E-mail"
-
-#: PluginManager/PluginManager.py:290
-msgid "Filename"
-msgstr "Bestandsnaam"
-
-#: PluginManager/PluginManager.py:291
-msgid "Location"
-msgstr "Locatie"
-
-#: PluginManager/PluginManager.py:296
-msgid "Loaded"
-msgstr "Geladen"
-
-#: PluginManager/PluginManager.py:299
-msgid "Hidden"
-msgstr "Verborgen"
-
-#: PluginManager/PluginManager.py:304 PluginManager/PluginManager.py:701
-msgid "Failed"
-msgstr "Mislukt"
-
-#: PluginManager/PluginManager.py:377
-msgid "Installation Errors"
-msgstr "Installatie fouten"
-
-#: PluginManager/PluginManager.py:378
-msgid "The following addons had errors: "
-msgstr "De volgende add-ons bevatten fouten: "
-
-#: PluginManager/PluginManager.py:400
-msgid "Error"
-msgstr "Fout"
-
-#: PluginManager/PluginManager.py:401
+#: PluginManager/PluginManager.py:401 PluginManager/PluginManager.py:336
 #, python-format
 msgid "Error removing the '%s' directory, The uninstall may have failed"
 msgstr ""
 "Fout bij het verwijderen van de map '%s'. Het verwijderen is mogelijk mislukt"
 
-#: PluginManager/PluginManager.py:429
-msgid "Type"
-msgstr "Type"
-
-#: PluginManager/PluginManager.py:438
-msgid "Status"
-msgstr "Status"
-
-#: PluginManager/PluginManager.py:441
+#: PluginManager/PluginManager.py:441 PluginManager/PluginManager.py:376
 msgid ""
 "'*' items are supplied by 3rd party authors,\n"
 "<s>strikeout</s> items are hidden"
@@ -151,109 +82,66 @@ msgstr ""
 "'*' items worden geleverd door externe auteurs,\n"
 "<s>doorgestreepte</s> -items zijn verborgen"
 
-#: PluginManager/PluginManager.py:449
-msgid "Name"
-msgstr "Naam"
-
-#: PluginManager/PluginManager.py:472
+#: PluginManager/PluginManager.py:472 ../gramps/gui/plug/_windows.py:1079
+#: ../gramps/gui/plug/_windows.py:1137
 msgid "Info"
 msgstr "Info"
 
 #: PluginManager/PluginManager.py:475 PluginManager/PluginManager.py:586
+#: PluginManager/PluginManager.py:410 PluginManager/PluginManager.py:530
 msgid "Hide"
 msgstr "Verberg"
 
-#: PluginManager/PluginManager.py:478 PluginManager/PluginManager.py:600
-msgid "Install"
-msgstr "Installeren"
-
-#: PluginManager/PluginManager.py:481
-msgid "Edit"
-msgstr "Bewerken"
-
-#: PluginManager/PluginManager.py:483
-msgid "Load"
-msgstr "Laden"
-
-#: PluginManager/PluginManager.py:494
+#: PluginManager/PluginManager.py:494 PluginManager/PluginManager.py:430
 msgid "Show hidden items"
 msgstr "Toon verborgen items"
 
-#: PluginManager/PluginManager.py:502
+#: PluginManager/PluginManager.py:502 PluginManager/PluginManager.py:438
 msgid "Show Built-in items"
 msgstr "Toon ingebouwde items"
 
-#: PluginManager/PluginManager.py:509
+#: PluginManager/PluginManager.py:509 PluginManager/PluginManager.py:445
 msgid "* indicates 3rd party addon"
 msgstr "* geeft add-on van derden aan"
 
-#: PluginManager/PluginManager.py:514
+#: PluginManager/PluginManager.py:514 PluginManager/PluginManager.py:450
 msgid "Plugins"
 msgstr "Uitbreidingen"
 
-#: PluginManager/PluginManager.py:584
+#: PluginManager/PluginManager.py:584 PluginManager/PluginManager.py:528
 msgid "Unhide"
 msgstr "Maak zichtbaar"
 
-#: PluginManager/PluginManager.py:603
+#: PluginManager/PluginManager.py:603 PluginManager/PluginManager.py:547
 msgid "Uninstall"
 msgstr "Deïnstalleren"
 
-#: PluginManager/PluginManager.py:613
+#: PluginManager/PluginManager.py:613 ../gramps/gui/plug/_windows.py:962
 msgid "Checking Addons Failed"
-msgstr "Het controleren op add-ons is mislukt"
+msgstr "Controle op uitbreidingen is mislukt"
 
-#: PluginManager/PluginManager.py:614
+#: PluginManager/PluginManager.py:614 ../gramps/gui/plug/_windows.py:964
 msgid "The addon repository appears to be unavailable. Please try again later."
 msgstr ""
-"De add-on bibliotheek lijkt niet beschikbaar te zijn. Probeer het later "
-"opnieuw."
+"De bibliotheek met uitbreidingen lijkt niet beschikbaar te zijn. Probeer het "
+"later opnieuw."
 
-#: PluginManager/PluginManager.py:628
-msgid ""
-"3rd party addons are not shown until the addons update list is downloaded.  "
-"Would you like to check for updated addons now?"
-msgstr ""
-"Add-ons van derden worden niet weergegeven totdat de lijst met updates van "
-"de add-ons is gedownload. Wilt u nu controleren op bijgewerkte add-ons?"
-
-#: PluginManager/PluginManager.py:631
-msgid "Yes"
-msgstr "Ja"
-
-#: PluginManager/PluginManager.py:631
-msgid "No"
-msgstr "Nee"
-
-#: PluginManager/PluginManager.py:674
+#: PluginManager/PluginManager.py:674 PluginManager/PluginManager.py:721
 msgid "*Available"
 msgstr "*Beschikbaar"
 
-#: PluginManager/PluginManager.py:690
+#: PluginManager/PluginManager.py:690 PluginManager/PluginManager.py:737
 msgid "Built-in"
 msgstr "Ingebouwd"
 
-#: PluginManager/PluginManager.py:695
+#: PluginManager/PluginManager.py:695 PluginManager/PluginManager.py:742
 msgid "*Installed"
 msgstr "*Geïnstalleerd"
 
-#: PluginManager/PluginManager.py:704
+#: PluginManager/PluginManager.py:704 PluginManager/PluginManager.py:751
 msgid "Update Available"
 msgstr "Update beschikbaar"
 
-#: PluginManager/PluginManager.py:733
-#, python-format
-msgid "%(str1)s: %(str2)s"
-msgstr "%(str1)s: %(str2)s"
-
-#: PluginManager/PluginManager.py:733
+#: PluginManager/PluginManager.py:733 ../gramps/gui/plug/_windows.py:1648
 msgid "Detailed Info"
 msgstr "Gedetailleerde info"
-
-#: PluginManager/PluginManager.py:832
-msgid "Updated"
-msgstr "Bijgewerkt"
-
-#: PluginManager/PluginManager.py:843
-msgid "updates|New"
-msgstr "Nieuw"

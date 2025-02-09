@@ -1,115 +1,58 @@
 # Croatian translation for Gramps
 # This file is distributed under the same license as the Gramps package.
 # Copyright (C) Gramps project
-# Milo Ivir <mail@milotype.de>, 2019., 2020.
+# Milo Ivir <mivir@milotype.de>, 2019, 2020.
+# Stephen Adams, Gramps Reddit, 2018.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-21 08:49+1100\n"
-"PO-Revision-Date: 2020-08-29 20:20+0200\n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2019-10-23 15:25+0200\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: \n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.1\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Generator: Poedit 2.2.4\n"
 
-#: LastChange/LastChange.gpr.py:24
-msgid "Last Change"
-msgstr "Zadnja promjena"
+#: AncestorFill/AncestorFill.py:360 AncestorFill/AncestorFill.py:361
+#: LastChange/LastChangeReport.py:378
+msgid "The style used for the title of the page."
+msgstr "Stil za naslov stranice."
 
-#: LastChange/LastChange.gpr.py:25
+#: LastChange/LastChange.gpr.py:25 LastChange/LastChange.gpr.py:26
 msgid "List the last ten person records that have been changed"
 msgstr "Nabroji zadnjih deset promijenjenih zapisa osobe"
 
-#: LastChange/LastChange.gpr.py:34
+#: LastChange/LastChange.gpr.py:34 LastChange/LastChange.gpr.py:35
 msgid "Latest Changes"
 msgstr "Zadnje promjene"
 
 #: LastChange/LastChange.gpr.py:40 LastChange/LastChangeReport.py:74
-#: LastChange/LastChangeReport.py:113
+#: LastChange/LastChangeReport.py:113 LastChange/LastChange.gpr.py:42
 msgid "Last Change Report"
 msgstr "Izvještaj o zadnjim promjenama"
 
-#: LastChange/LastChange.gpr.py:41
+#: LastChange/LastChange.gpr.py:41 LastChange/LastChange.gpr.py:43
 msgid "Report of the last records that have been changed"
 msgstr "Izvještaj o zadnjim promijenjenim zapisima"
-
-#: LastChange/LastChangeGramplet.py:55
-msgid "Double-click name for details"
-msgstr "Pritisni dvaput na ime za prikaz detalja"
-
-#: LastChange/LastChangeGramplet.py:56
-msgid "No Family Tree loaded."
-msgstr "Nijedan rodoslov nije učitan."
-
-#: LastChange/LastChangeGramplet.py:60
-msgid "Processing..."
-msgstr "Obrada u tijeku …"
 
 #: LastChange/LastChangeGramplet.py:82
 msgid "changed on"
 msgstr "promijenjeno"
 
-#: LastChange/LastChangeReport.py:53
-msgid "<Unknown>"
-msgstr "<Nepoznato>"
-
 #: LastChange/LastChangeReport.py:75
 msgid "You must select at least one type of record."
 msgstr "Moraš odabrati barem jednu vrstu zapisa."
 
-#: LastChange/LastChangeReport.py:116 LastChange/LastChangeReport.py:345
-msgid "People"
-msgstr "Osobe"
-
-#: LastChange/LastChangeReport.py:118 LastChange/LastChangeReport.py:346
-msgid "Families"
-msgstr "Obitelji"
-
-#: LastChange/LastChangeReport.py:120 LastChange/LastChangeReport.py:348
-msgid "Events"
-msgstr "Događaji"
-
-#: LastChange/LastChangeReport.py:122 LastChange/LastChangeReport.py:347
-msgid "Places"
-msgstr "Mjesta"
-
-#: LastChange/LastChangeReport.py:124 LastChange/LastChangeReport.py:349
-msgid "Media"
-msgstr "Mediji"
-
-#: LastChange/LastChangeReport.py:126 LastChange/LastChangeReport.py:350
-msgid "Sources"
-msgstr "Izvori"
-
-#: LastChange/LastChangeReport.py:128 LastChange/LastChangeReport.py:351
-msgid "Notes"
-msgstr "Zabilješke"
-
-#: LastChange/LastChangeReport.py:130 LastChange/LastChangeReport.py:352
-msgid "Citations"
-msgstr "Citati"
-
 #: LastChange/LastChangeReport.py:180
 msgid "People Changed"
 msgstr "Promijenjene osobe"
-
-#: LastChange/LastChangeReport.py:181 LastChange/LastChangeReport.py:198
-#: LastChange/LastChangeReport.py:229 LastChange/LastChangeReport.py:252
-#: LastChange/LastChangeReport.py:270 LastChange/LastChangeReport.py:288
-#: LastChange/LastChangeReport.py:305 LastChange/LastChangeReport.py:322
-msgid "ID"
-msgstr "ID"
-
-#: LastChange/LastChangeReport.py:181
-msgid "Person"
-msgstr "Osoba"
 
 #: LastChange/LastChangeReport.py:181 LastChange/LastChangeReport.py:198
 #: LastChange/LastChangeReport.py:229 LastChange/LastChangeReport.py:252
@@ -135,34 +78,17 @@ msgstr "%s i %s"
 msgid "Events Changed"
 msgstr "Promijenjeni događaji"
 
-#: LastChange/LastChangeReport.py:229
-msgid "Event"
-msgstr "Događaj"
-
 #: LastChange/LastChangeReport.py:251
 msgid "Places Changed"
 msgstr "Promijenjena mjesta"
-
-#: LastChange/LastChangeReport.py:252
-msgid "Place"
-msgstr "Mjesto"
 
 #: LastChange/LastChangeReport.py:269
 msgid "Media Changed"
 msgstr "Promijenjeni objekti"
 
-#: LastChange/LastChangeReport.py:270
-msgid "Path"
-msgstr "Staza"
-
 #: LastChange/LastChangeReport.py:287
 msgid "Sources Changed"
 msgstr "Promijenjeni izvori"
-
-#: LastChange/LastChangeReport.py:288 LastChange/LastChangeReport.py:305
-#: LastChange/LastChangeReport.py:322
-msgid "Title"
-msgstr "Naslov"
 
 #: LastChange/LastChangeReport.py:304
 msgid "Notes Changed"
@@ -172,26 +98,10 @@ msgstr "Promijenjene zabilješke"
 msgid "Citations Changed"
 msgstr "Promijenjeni citati"
 
-#: LastChange/LastChangeReport.py:343
-msgid "Report Options"
-msgstr "Opcije za izvještaj"
-
 #: LastChange/LastChangeReport.py:344
 msgid "Select From"
 msgstr "Odaberi između"
 
-#: LastChange/LastChangeReport.py:378
-msgid "The style used for the title of the page."
-msgstr "Stil za naslov stranice."
-
-#: LastChange/LastChangeReport.py:393
-msgid "The style used for the section headers."
-msgstr "Stil za zaglavlja odjeljka."
-
 #: LastChange/LastChangeReport.py:403
 msgid "The style used for normal text"
 msgstr "Stil za normalni tekst"
-
-#: LastChange/LastChangeReport.py:415
-msgid "The basic style used for table headings."
-msgstr "Osnovni stil za naslove tablica."

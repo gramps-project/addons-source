@@ -1,13 +1,15 @@
-# Ukrainian translation for BirthOrder
+# Ukrainian translation for MediaMerge
 # This file is distributed under the same license as the Gramps package.
 #
 # Illia Maier <illia@maier.page>, 2024.
+# Fedir Zinchuk <fedikw@gmail.com>, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
+# Oleh Petriv, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
 "PO-Revision-Date: 2024-10-10 22:54+0300\n"
 "Last-Translator: Illia Maier <illia@maier.page>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
@@ -16,14 +18,15 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: BirthOrder/birthorder.gpr.py:9 BirthOrder/birthorder.py:62
+#: BirthOrder/birthorder.gpr.py:10
 msgid "Sort Children in Birth order"
 msgstr "Сортувати дітей за порядком народження"
 
-#: BirthOrder/birthorder.gpr.py:10
+#: BirthOrder/birthorder.gpr.py:10 BirthOrder/birthorder.gpr.py:12
 msgid ""
 "Looks through families, looking for children that are not in birth order.  "
 "User can accept individual suggestions to correct, edit the birth order "
@@ -31,8 +34,9 @@ msgid ""
 "dates, or accept all."
 msgstr ""
 "Переглядає сімʼї, шукаючи дітей, які не відповідають порядку народження. "
-"Користувач може прийняти індивідуальні пропозиції для виправлення, редагувати порядок народження вручну, "
-"прийняти всі ті сімʼї, де всі діти мають правильні дати народження, або прийняти всі."
+"Користувач може прийняти індивідуальні пропозиції для виправлення, "
+"редагувати порядок народження вручну, прийняти всі ті сімʼї, де всі діти "
+"мають правильні дати народження, або прийняти всі."
 
 #: BirthOrder/birthorder.py:161
 msgid "No families need sorting"
@@ -42,14 +46,6 @@ msgstr "Жодна сімʼя не потребує сортування"
 msgid "No children were out of birth order."
 msgstr "Всі діти були в правильному порядку народження."
 
-#: BirthOrder/birthorder.py:186
-msgid "Edit Family"
-msgstr "Редагувати сімʼю"
-
-#: BirthOrder/birthorder.py:203
-msgid "Processing..."
-msgstr "Обробка..."
-
 #: BirthOrder/birthorder.py:204
 msgid "Edit Families"
 msgstr "Редагувати сімʼї"
@@ -58,29 +54,9 @@ msgstr "Редагувати сімʼї"
 msgid "Looking for children birth order"
 msgstr "Пошук порядку народження дітей"
 
-#: BirthOrder/birthorder.py:279
-msgid "Pass 1: Building preliminary lists"
-msgstr "Прохід 1: Створення попередніх списків"
-
 #: BirthOrder/birthorder.glade:56
 msgid "Select the family you wish to examine."
 msgstr "Виберіть сімʼю, яку ви хочете оглянути."
-
-#: BirthOrder/birthorder.glade:78
-msgid "Family ID"
-msgstr "ID сімʼї"
-
-#: BirthOrder/birthorder.glade:93
-msgid "Father"
-msgstr "Батько"
-
-#: BirthOrder/birthorder.glade:108
-msgid "Mother"
-msgstr "Мати"
-
-#: BirthOrder/birthorder.glade:141
-msgid "Help"
-msgstr "Допомога"
 
 #: BirthOrder/birthorder.glade:155
 msgid "Accept All"
@@ -99,7 +75,8 @@ msgid ""
 "This button will sort all the families with '*'.  In these families, all the "
 "children have valid dates, so the sort is unambiguous."
 msgstr ""
-"Ця кнопка відсортує всі сімʼї з '*'. У цих сімʼях всі діти мають дійсні дати, тому сортування однозначне."
+"Ця кнопка відсортує всі сімʼї з '*'. У цих сімʼях всі діти мають дійсні "
+"дати, тому сортування однозначне."
 
 #: BirthOrder/birthorder.glade:185
 msgid "Accept"
@@ -110,7 +87,8 @@ msgid ""
 "This button will accept only the family selected and save it as shown in "
 "lower right pane."
 msgstr ""
-"Ця кнопка прийме лише вибрану сімʼю і збереже її, як показано в правій нижній панелі."
+"Ця кнопка прийме лише вибрану сімʼю і збереже її, як показано в правій "
+"нижній панелі."
 
 #: BirthOrder/birthorder.glade:232
 msgid "Done"
@@ -134,6 +112,6 @@ msgid ""
 "changes.  If you wish to adjust the order, select the child you wish to "
 "move, and use 'Up' or 'Down' buttons below to move them."
 msgstr ""
-"Якщо вас влаштовує сортування, натисніть кнопку 'Прийняти', щоб прийняти зміни. "
-"Якщо ви хочете змінити порядок, виберіть дитину, яку хочете перемістити, і використайте "
-"кнопки 'Вгору' або 'Вниз', щоб перемістити її."
+"Якщо вас влаштовує сортування, натисніть кнопку 'Прийняти', щоб прийняти "
+"зміни. Якщо ви хочете змінити порядок, виберіть дитину, яку хочете "
+"перемістити, і використайте кнопки 'Вгору' або 'Вниз', щоб перемістити її."

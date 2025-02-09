@@ -1,164 +1,212 @@
-# Italian translations for PACKAGE package.
-# Copyright (C) 2009 THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Italian translation for GRAMPS
+# Copyright (C) 2001-2010 the Gramps Project
 #
+# Common and noteworthy translations:
+#
+#   alternate              alternativo
+#   ancestor               ascendente
+#   ancestral              ascendenza
+#   autosave               salvataggio automatico
+#   baptism                battesimo
+#   birth                  nascita
+#   christening            battesimo (anachronistic - see gramps-devel ML)
+#   church parish          parrocchia
+#   county                 provincia
+#   country                stato
+#   common-law             (relazione) di fatto
+#   dead                   decedere
+#   death                  decesso
+#   descendant             discendente/discendenza
+#   had a child %(child)s  divenne padre/madre di %(child)s
+#                          (copes with male and femail children)
+#   he was son of          fu figlio di
+#   home person            persona-casa
+#   family (adj)           famigliare
+#   half-sibling           fratelli unilaterali
+#   in %(place)s           in quel di (copes with all sort of place names)
+#   location               località
+#   merge, to              fondere
+#   partner                partner
+#   province               provincia, regione
+#   record                 elemento
+#   relationship path      percorso (delle) relazioni
+#   report                 resoconto
+#   state (geog)           regione, stato
+#   step-sibling           fratellastri
+#   thumbnail              anteprima
+#   unmarried              celibe/nubile
+#
+# A special remark are required by some sentences related to reports.
+#
+# * "%s was born on %s"
+#
+#   In Italian, we use a tense equivalent to the English's past simple
+#   for living people, and the equivalent to English's present perfect
+#   for people who died.  Unfortunately, the program cannot distinguish
+#   between these two cases.
+#
+# * ", and was buried on %s."
+#
+#   In Italian, the word for buried declines accordingly to its subject
+#   gender.
+#
+# * "born %(date)s in %(place)s%(endnotes)s"
+#
+#   The same rule as for "buried" applies to born, as well.
+#
+# Marco Molteni <molter@gufi.org>, 2001-2002.
+# Lorenzo Cappelletti <lorenzo.cappelletti@email.it>, 2003.
+# Luigi Toscano <luigi.toscano@tiscali.it>, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019.
+# Giansalvo Gusinu <giansalvo.gusinu@gmail.com>, 2019.
+# Sebastiano Pistore <SebastianoPistore.info@protonmail.ch>, 2025.
+# Vincenzo Alfano <vinc.alfano@gmail.com>, 2016.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-11-23 19:33+0100\n"
-"PO-Revision-Date: 2009-11-23 21:36+0100\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2010-03-08 16:37+0100\n"
+"PO-Revision-Date: 2010-03-07 22:48+0100\n"
+"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: DenominoViso/DenominoViso.py:2580 DenominoViso/DenominoViso.py:2607
+#: RepositoriesReport/RepositoriesReportAlt.py:355
+msgid "Include private records"
+msgstr "Includere informazioni private"
+
 #: RepositoriesReport/RepositoriesReport.gpr.py:25
+#: RepositoriesReport/RepositoriesReport.gpr.py:26
 msgid "Repositories Report Options"
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReport.gpr.py:26
 #: RepositoriesReport/RepositoriesReport.gpr.py:42
+#: RepositoriesReport/RepositoriesReport.gpr.py:27
+#: RepositoriesReport/RepositoriesReport.gpr.py:46
 msgid "Produces a textual repositories report"
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReport.gpr.py:41
 #: RepositoriesReport/RepositoriesReport.py:71
 #: RepositoriesReport/RepositoriesReportAlt.py:92
+#: RepositoriesReport/RepositoriesReport.gpr.py:45
+#: RepositoriesReport/RepositoriesReport.py:80
+#: RepositoriesReport/RepositoriesReportAlt.py:139
 msgid "Repositories Report"
 msgstr ""
 
-#: RepositoriesReport/RepositoriesReport.py:142
-#: RepositoriesReport/RepositoriesReportAlt.py:321
-msgid "Report Options"
-msgstr "Opzioni resoconto"
-
 #: RepositoriesReport/RepositoriesReport.py:166
 #: RepositoriesReport/RepositoriesReportAlt.py:385
+#: SourcesCitationsReport/SourcesCitationsReport.py:480
 msgid "The style used for the title of the report."
 msgstr "Lo stile usato per il titolo del resoconto."
 
 #: RepositoriesReport/RepositoriesReport.py:180
 #: RepositoriesReport/RepositoriesReportAlt.py:399
+#: RepositoriesReport/RepositoriesReport.py:189
+#: RepositoriesReport/RepositoriesReportAlt.py:518
 msgid "The style used for repository title."
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReport.py:194
 #: RepositoriesReport/RepositoriesReportAlt.py:414
+#: SourcesCitationsReport/SourcesCitationsReport.py:591
 msgid "The style used for each section."
 msgstr "Lo stile usato per ogni sezione."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:121
-msgid "Private"
-msgstr "Privato"
-
-#: RepositoriesReport/RepositoriesReportAlt.py:163
-#, python-format
-msgid "Address:"
-msgstr ""
-
-#: RepositoriesReport/RepositoriesReportAlt.py:191
-msgid "%s. Private"
-msgstr "%s. Privato"
-
-#: RepositoriesReport/RepositoriesReportAlt.py:231
-msgid "Author:"
-msgstr "Autore:"
-
-#: RepositoriesReport/RepositoriesReportAlt.py:233
-#, python-format
-msgid "Abbreviation:"
-msgstr ""
-
 #: RepositoriesReport/RepositoriesReportAlt.py:235
+#: RepositoriesReport/RepositoriesReportAlt.py:273
 #, python-format
 msgid "Publication information:"
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:237
+#: RepositoriesReport/RepositoriesReportAlt.py:278
 #, python-format
 msgid "Data:"
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:323
+#: RepositoriesReport/RepositoriesReportAlt.py:431
 msgid "Include repository's urls"
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:324
+#: RepositoriesReport/RepositoriesReportAlt.py:432
 msgid "Whether to include urls on repository."
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:327
+#: RepositoriesReport/RepositoriesReportAlt.py:435
 msgid "Include repository's address"
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:328
+#: RepositoriesReport/RepositoriesReportAlt.py:436
 msgid "Whether to include addresses on repository."
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:331
+#: RepositoriesReport/RepositoriesReportAlt.py:439
 msgid "Include source's author"
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:332
+#: RepositoriesReport/RepositoriesReportAlt.py:440
 msgid "Whether to include author."
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:335
+#: RepositoriesReport/RepositoriesReportAlt.py:443
 msgid "Include source's abbreviation"
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:336
+#: RepositoriesReport/RepositoriesReportAlt.py:444
 msgid "Whether to include abbreviation."
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:339
+#: RepositoriesReport/RepositoriesReportAlt.py:447
 msgid "Include source's publication information"
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:340
+#: RepositoriesReport/RepositoriesReportAlt.py:448
 msgid "Whether to include publication information."
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:343
+#: RepositoriesReport/RepositoriesReportAlt.py:451
 msgid "Include source's data"
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:344
+#: RepositoriesReport/RepositoriesReportAlt.py:452
 msgid "Whether to include keys and values."
 msgstr ""
 
-#: RepositoriesReport/RepositoriesReportAlt.py:347
-msgid "Include notes"
-msgstr "Includere le note"
-
 #: RepositoriesReport/RepositoriesReportAlt.py:348
+#: RepositoriesReport/RepositoriesReportAlt.py:456
 msgid "Whether to include notes on repositories and sources."
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:351
+#: RepositoriesReport/RepositoriesReportAlt.py:459
 msgid "Include media"
 msgstr ""
 
-#: RepositoriesReport/RepositoriesReportAlt.py:352
-msgid "Whether to include media on sources."
-msgstr ""
-
-#: RepositoriesReport/RepositoriesReportAlt.py:355
-msgid "Include private records"
-msgstr "Includere informazioni private"
-
 #: RepositoriesReport/RepositoriesReportAlt.py:356
+#: RepositoriesReport/RepositoriesReportAlt.py:468
 msgid "Whether to include repositories and sources marked as private."
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReportAlt.py:429
+#: RepositoriesReport/RepositoriesReportAlt.py:548
 msgid "The style used for child section."
 msgstr ""
-
-#: RepositoriesReport/RepositoriesReportAlt.py:441
-msgid "The basic style used for the note display."
-msgstr "Lo stile base usato per la visualizzazione delle note."
-

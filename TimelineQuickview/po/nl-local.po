@@ -1,36 +1,37 @@
-# Dutch translation of addon TimelineQuickview.
+# Dutch translation of addon MediaMerge.
 # Copyright (C) 2020 Gramps project
-# This file is distributed under the same license as the TimelineQuickview package.
+# This file is distributed under the same license as the MediaMerge package.
+# Jan Sparreboom <jan@sparreboom.net>, 2020, 2021, 2023.
 # Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
 # Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
-# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010.
-# Jan Sparreboom <jan@sparreboom.net>, 2020.
+# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
+# Erik De Richter <frederik.de.richter@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
+# Harmen Huizinga <harmenhuizinga@sigmo.nl>, 2013.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: TimelineQuickview 5.x\n"
+"Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
 "POT-Creation-Date: 2019-01-04 18:55-0600\n"
-"PO-Revision-Date: 2020-08-15 16:09+0200\n"
-"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
-"Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
+"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
+"addons/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10-dev\n"
 
-#: TimelineQuickview/TimelineQuickview.gpr.py:9
-msgid "Timeline"
-msgstr "Tijdlijn"
+#: Query/QueryQuickview.py:426 TimelineQuickview/TimelineQuickview.py:186
+msgid "Today"
+msgstr "Vandaag"
 
 #: TimelineQuickview/TimelineQuickview.gpr.py:10
+#: TimelineQuickview/TimelineQuickview.gpr.py:11
 msgid "Display a person's events on a timeline"
 msgstr "Geef de gebeurtenissen van een persoon weer op een tijdlijn"
-
-#: TimelineQuickview/TimelineQuickview.py:46
-msgid "Parents"
-msgstr "Ouders"
 
 #: TimelineQuickview/TimelineQuickview.py:48
 msgid "Inlaw Parents"
@@ -79,30 +80,6 @@ msgstr "Echtgenote van de partner"
 msgid "Timeline for %s"
 msgstr "Tijdlijn voor %s"
 
-#: TimelineQuickview/TimelineQuickview.py:159
-msgid "Date"
-msgstr "Datum"
-
-#: TimelineQuickview/TimelineQuickview.py:160
-msgid "Event"
-msgstr "Gebeurtenis"
-
-#: TimelineQuickview/TimelineQuickview.py:161
-msgid "Age"
-msgstr "Leeftijd"
-
-#: TimelineQuickview/TimelineQuickview.py:162
-msgid "Place"
-msgstr "Locatie"
-
 #: TimelineQuickview/TimelineQuickview.py:163
 msgid "People involved"
 msgstr "Betrokken personen"
-
-#: TimelineQuickview/TimelineQuickview.py:186
-msgid "Today"
-msgstr "Vandaag"
-
-#: TimelineQuickview/TimelineQuickview.py:192
-msgid "Unknown"
-msgstr "Onbekend"

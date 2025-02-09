@@ -1,56 +1,66 @@
-# SOME DESCRIPTIVE TITLE.
+# Vietnamese translation for Gramps
+# This file is distributed under the same license as the Gramps package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# FIRST AUTHOR <trande@gmail.com>, 2012.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: GRAMPS VIETNAMESE 1.0\n"
+"Project-Id-Version: GRAMPS VIETNAMESE 4.2.8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-25 15:34+0100\n"
-"PO-Revision-Date: 2011-09-26 20:25+0700\n"
-"Last-Translator: De Tran <trande@gmail.com>\n"
-"Language-Team: VIETNAMESE <quangde@sevuon.com>\n"
-"Language: \n"
+"POT-Creation-Date: 2019-03-05 14:02-0600\n"
+"PO-Revision-Date: 2018-07-13 14:34+0800\n"
+"Last-Translator: detran <trande@gmail.com>\n"
+"Language-Team: VIETNAMESE <trande@gmail.com>\n"
+"Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: VIETNAMESE\n"
-"X-Poedit-Country: VIETNAM\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Poedit-KeywordsList: Finishe Vietnamese Translation Sept 23, 2011. 21:45 "
-"VN h\n"
+"X-Poedit-KeywordsList: July 13, 2018: Gramps Version 4.2.8 based on "
+"Vietnamese Translation Feb 29, 2012. 14:02 VN time, VIETNAMESE TRANSLATION "
+"OF GRAMPS, V. 3\n"
+"X-Generator: Poedit 1.5.4\n"
 
 #: EditExifMetadata/editexifmetadata.gpr.py:29
 #: EditExifMetadata/editexifmetadata.py:753
 #: EditExifMetadata/editexifmetadata.py:1159
+#: EditExifMetadata/editexifmetadata.gpr.py:30
+#: EditExifMetadata/editexifmetadata.py:723
+#: EditExifMetadata/editexifmetadata.py:1135
+#: EditExifMetadata/editexifmetadata.py:1147
 msgid "Edit Image Exif Metadata"
 msgstr "Sửa metadata Exif của hình "
 
 #: EditExifMetadata/editexifmetadata.gpr.py:30
+#: EditExifMetadata/editexifmetadata.gpr.py:31
 msgid "Gramplet to view, edit, and save image Exif metadata"
 msgstr "Gramplet để xem, chỉnh và lưu metadata Exif của hình ảnh "
 
 #: EditExifMetadata/editexifmetadata.gpr.py:34
+#: EditExifMetadata/editexifmetadata.gpr.py:35
 msgid "Edit Exif Metadata"
 msgstr "Sửa metadata Exif "
 
 #: EditExifMetadata/editexifmetadata.py:148
+#: EditExifMetadata/editexifmetadata.py:135
 msgid "<-- Image Types -->"
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:171
+#: EditExifMetadata/editexifmetadata.py:158
 msgid ""
 "Warning:  Changing this entry will update the Media object title field in "
 "Gramps not Exiv2 metadata."
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:174
+#: EditExifMetadata/editexifmetadata.py:161
 #, fuzzy
 msgid "Provide a short description for this image."
 msgstr "Nhập mô tải ngắn gọn cho hình này. "
 
 #: EditExifMetadata/editexifmetadata.py:176
+#: EditExifMetadata/editexifmetadata.py:163
 msgid ""
 "Enter the Artist/ Author of this image.  The person's name or the company "
 "who is responsible for the creation of this image."
@@ -59,11 +69,13 @@ msgstr ""
 "nhiệm đã tạo ra hình này. "
 
 #: EditExifMetadata/editexifmetadata.py:179
+#: EditExifMetadata/editexifmetadata.py:167
 #, fuzzy
 msgid "Enter the copyright information for this image. \n"
 msgstr "Nhập bản quyền cho hình này.\n"
 
 #: EditExifMetadata/editexifmetadata.py:181
+#: EditExifMetadata/editexifmetadata.py:169
 msgid ""
 "The original date/ time when the image was first created/ taken as in a "
 "photograph.\n"
@@ -71,36 +83,14 @@ msgid ""
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:184
+#: EditExifMetadata/editexifmetadata.py:173
 msgid ""
 "This is the date/ time that the image was last changed/ modified.\n"
 "Example: 2011-05-24 14:30:00"
 msgstr ""
 
-#: EditExifMetadata/editexifmetadata.py:187
-#, fuzzy
-msgid ""
-"Enter the Latitude GPS coordinates for this image,\n"
-"Example: 43.722965, 43 43 22 N, 38° 38′ 03″ N, 38 38 3"
-msgstr ""
-"Nhập vĩ độ GPS cho hình.\n"
-"Thí dụ: 43.722965, 43 43 22 N, 38 38' 03\" N, 38 38 3"
-
-#: EditExifMetadata/editexifmetadata.py:190
-#, fuzzy
-msgid ""
-"Enter the Longitude GPS coordinates for this image,\n"
-"Example: 10.396378, 10 23 46 E, 105° 6′ 6″ W, -105 6 6"
-msgstr ""
-"Nhập kinh độ GPS cho hình.\n"
-"Thí dụ 10.396378, 10 23 46 E, 105° 6′ 6″ W, -105 6 6"
-
-#: EditExifMetadata/editexifmetadata.py:193
-msgid ""
-"This is the measurement of Above or Below Sea Level.  It is measured in "
-"meters.Example: 200.558, -200.558"
-msgstr ""
-
 #: EditExifMetadata/editexifmetadata.py:202
+#: EditExifMetadata/editexifmetadata.py:191
 msgid ""
 "Displays the Gramps Wiki Help page for 'Edit Image Exif Metadata' in your "
 "web browser."
@@ -109,6 +99,7 @@ msgstr ""
 "trình duyệt của bạn. "
 
 #: EditExifMetadata/editexifmetadata.py:205
+#: EditExifMetadata/editexifmetadata.py:194
 msgid ""
 "This will open up a new window to allow you to edit/ modify this image's "
 "Exif metadata.\n"
@@ -116,22 +107,26 @@ msgid ""
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:209
+#: EditExifMetadata/editexifmetadata.py:198
 msgid "Will produce a Popup window showing a Thumbnail Viewing Area"
 msgstr "Sẽ tạo ra một cửa sổ nổi lên hiển thị vùng xem thu nhỏ "
 
 #: EditExifMetadata/editexifmetadata.py:211
+#: EditExifMetadata/editexifmetadata.py:201
 msgid ""
 "Select from a drop- down box the image file type that you would like to "
 "convert your non- Exiv2 compatible media object to."
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:214
+#: EditExifMetadata/editexifmetadata.py:205
 msgid ""
 "If your image is not of an image type that can have Exif metadata read/ "
 "written to/from, convert it to a type that can?"
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:217
+#: EditExifMetadata/editexifmetadata.py:209
 msgid ""
 "WARNING:  This will completely erase all Exif metadata from this image!  Are "
 "you sure that you want to do this?"
@@ -140,15 +135,18 @@ msgstr ""
 "muốn làm thế không? "
 
 #: EditExifMetadata/editexifmetadata.py:315
+#: EditExifMetadata/editexifmetadata.py:214
 #, fuzzy
 msgid "Thumbnail"
 msgstr "Hình thu nhỏ "
 
 #: EditExifMetadata/editexifmetadata.py:397
+#: EditExifMetadata/editexifmetadata.py:402
 msgid "Select an image to begin..."
 msgstr "Chọn một hình để bắt đầu... "
 
 #: EditExifMetadata/editexifmetadata.py:419
+#: EditExifMetadata/editexifmetadata.py:421
 #, fuzzy
 msgid ""
 "Image is NOT readable,\n"
@@ -158,6 +156,8 @@ msgstr ""
 "Xin chọn hình khác... "
 
 #: EditExifMetadata/editexifmetadata.py:435
+#: EditExifMetadata/editexifmetadata.py:481
+#: EditExifMetadata/editexifmetadata.py:1440
 msgid ""
 "Image is NOT writable,\n"
 "You will NOT be able to save Exif metadata...."
@@ -167,30 +167,25 @@ msgstr ""
 "Bạn sẽ KHÔNG thể lưu metadata Exif..."
 
 #: EditExifMetadata/editexifmetadata.py:447
+#: EditExifMetadata/editexifmetadata.py:441
 #, fuzzy
 msgid "Please convert this image to an Exiv2- compatible image type..."
 msgstr "Đổi hình này sang hình .jpg? "
 
-#: EditExifMetadata/editexifmetadata.py:470
-msgid "Image Size : %04(width)d x %04(height)d pixels"
-msgstr ""
-
-#: EditExifMetadata/editexifmetadata.py:503
-#, fuzzy
-msgid "Displaying Exif metadata..."
-msgstr "Xóa tất cả metadata Exif... "
-
 #: EditExifMetadata/editexifmetadata.py:670
+#: EditExifMetadata/editexifmetadata.py:648
 #, fuzzy
 msgid "Click Close to close this Thumbnail View Area."
 msgstr "Nhấp Đóng để đóng khu xem hình thu nhỏ này. "
 
 #: EditExifMetadata/editexifmetadata.py:674
+#: EditExifMetadata/editexifmetadata.py:654
 #, fuzzy
 msgid "Thumbnail View Area"
 msgstr "Khu xem hình thu nhỏ "
 
 #: EditExifMetadata/editexifmetadata.py:753
+#: EditExifMetadata/editexifmetadata.py:724
 #, fuzzy
 msgid ""
 "WARNING: You are about to convert this image into a .jpeg image.  Are you "
@@ -200,15 +195,13 @@ msgstr ""
 "không? "
 
 #: EditExifMetadata/editexifmetadata.py:755
+#: EditExifMetadata/editexifmetadata.py:726
 #, fuzzy
 msgid "Convert and Delete"
 msgstr "Đổi và xóa hình gốc "
 
-#: EditExifMetadata/editexifmetadata.py:755
-msgid "Convert"
-msgstr "Đổi "
-
 #: EditExifMetadata/editexifmetadata.py:841
+#: EditExifMetadata/editexifmetadata.py:807
 #, fuzzy
 msgid ""
 "Your image has been converted and the original file has been deleted, and "
@@ -216,33 +209,39 @@ msgid ""
 msgstr "Hình đã đổi sang hình jpg.và hình gốc đã được xóa bỏ! "
 
 #: EditExifMetadata/editexifmetadata.py:845
+#: EditExifMetadata/editexifmetadata.py:812
 msgid ""
 "There has been an error, Please check your source and destination file "
 "paths..."
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:848
+#: EditExifMetadata/editexifmetadata.py:816
 msgid ""
 "There was an error in deleting the original file.  You will need to delete "
 "it yourself!"
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:865
+#: EditExifMetadata/editexifmetadata.py:834
 #, fuzzy
 msgid "There was an error in converting your image file."
 msgstr "Không có metadata Exif cho hình này... "
 
 #: EditExifMetadata/editexifmetadata.py:876
+#: EditExifMetadata/editexifmetadata.py:844
 #, fuzzy
 msgid "Media Path Update"
 msgstr "ngày chết "
 
 #: EditExifMetadata/editexifmetadata.py:882
+#: EditExifMetadata/editexifmetadata.py:853
 #, fuzzy
 msgid "There has been an error in updating the image file's path!"
 msgstr "Không có metadata Exif cho hình này... "
 
 #: EditExifMetadata/editexifmetadata.py:916
+#: EditExifMetadata/editexifmetadata.py:886
 #, fuzzy
 msgid ""
 "Click the close button when you are finished modifying this image's Exif "
@@ -250,18 +249,22 @@ msgid ""
 msgstr "Nhấp vào nút đóng khi bạn xem xong tất cả metadata của hình. "
 
 #: EditExifMetadata/editexifmetadata.py:954
+#: EditExifMetadata/editexifmetadata.py:924
 msgid "Saves a copy of the data fields into the image's Exif metadata."
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:957
+#: EditExifMetadata/editexifmetadata.py:928
 msgid "Re -display the data fields that were cleared from the Edit Area."
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:960
+#: EditExifMetadata/editexifmetadata.py:932
 msgid "This button will clear all of the data fields shown here."
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:963
+#: EditExifMetadata/editexifmetadata.py:940
 msgid ""
 "Closes this popup Edit window.\n"
 "WARNING: This action will NOT Save any changes/ modification made to this "
@@ -269,105 +272,126 @@ msgid ""
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:990
+#: EditExifMetadata/editexifmetadata.py:969
 #, fuzzy
 msgid "Media Object Title"
 msgstr "Bộ lọc tài liệu đa phương tiện "
 
 #: EditExifMetadata/editexifmetadata.py:1000
+#: EditExifMetadata/editexifmetadata.py:978
 #, fuzzy
 msgid "media Title: "
 msgstr "Tiêu đề lịch "
 
 #: EditExifMetadata/editexifmetadata.py:1014
+#: EditExifMetadata/editexifmetadata.py:993
 #, fuzzy
 msgid "General Data"
 msgstr "Tổng quát "
 
 #: EditExifMetadata/editexifmetadata.py:1024
+#: EditExifMetadata/editexifmetadata.py:1003
 #, fuzzy
 msgid "Description: "
 msgstr "Mô tả: "
 
 #: EditExifMetadata/editexifmetadata.py:1025
+#: EditExifMetadata/editexifmetadata.py:1004
 #, fuzzy
 msgid "Artist: "
 msgstr "Nghệ sĩ "
 
 #: EditExifMetadata/editexifmetadata.py:1026
+#: EditExifMetadata/editexifmetadata.py:1005
 #, fuzzy
 msgid "Copyright: "
 msgstr "Bản quyền "
 
 #: EditExifMetadata/editexifmetadata.py:1039
+#: EditExifMetadata/editexifmetadata.py:1019
 #, fuzzy
 msgid "Date/ Time"
 msgstr "Ngày/giờ gốc "
 
 #: EditExifMetadata/editexifmetadata.py:1053
+#: EditExifMetadata/editexifmetadata.py:1034
 #, fuzzy
 msgid "Original: "
 msgstr "Thời gian gốc "
 
 #: EditExifMetadata/editexifmetadata.py:1054
+#: EditExifMetadata/editexifmetadata.py:1035
 #, fuzzy
 msgid "Modified: "
 msgstr "Sửa lần cuối "
 
 #: EditExifMetadata/editexifmetadata.py:1071
+#: EditExifMetadata/editexifmetadata.py:1054
 #, fuzzy
 msgid "Latitude/ Longitude/ Altitude GPS coordinates"
 msgstr "Vĩ/kinh độ GPS "
 
 #: EditExifMetadata/editexifmetadata.py:1085
+#: EditExifMetadata/editexifmetadata.py:1069
 #, fuzzy
 msgid "Latitude :"
 msgstr "Vĩ độ: "
 
 #: EditExifMetadata/editexifmetadata.py:1086
+#: EditExifMetadata/editexifmetadata.py:1070
 #, fuzzy
 msgid "Longitude :"
 msgstr "Kinh độ: "
 
 #: EditExifMetadata/editexifmetadata.py:1087
+#: EditExifMetadata/editexifmetadata.py:1071
 #, fuzzy
 msgid "Altitude :"
 msgstr "Vĩ độ: "
 
 #: EditExifMetadata/editexifmetadata.py:1139
+#: EditExifMetadata/editexifmetadata.py:1114
 #, fuzzy
 msgid "Bad Date/Time"
 msgstr "Ngày/giờ gốc "
 
 #: EditExifMetadata/editexifmetadata.py:1147
+#: EditExifMetadata/editexifmetadata.py:1122
 #, fuzzy
 msgid "Invalid latitude (syntax: 18\\u00b09'"
 msgstr "Kinh tuyền sai (cấu trúc: 18°9'"
 
 #: EditExifMetadata/editexifmetadata.py:1148
+#: EditExifMetadata/editexifmetadata.py:1123
 msgid "48.21\"S, -18.2412 or -18:9:48.21)"
 msgstr "48.21\"S, -18.2412 or -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1152
+#: EditExifMetadata/editexifmetadata.py:1127
 #, fuzzy
 msgid "Invalid longitude (syntax: 18\\u00b09'"
 msgstr "Kinh tuyến sai (cấu trúc: 18°9'"
 
 #: EditExifMetadata/editexifmetadata.py:1153
+#: EditExifMetadata/editexifmetadata.py:1128
 msgid "48.21\"E, -18.2412 or -18:9:48.21)"
 msgstr "48.21\"E, -18.2412 or -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1159
+#: EditExifMetadata/editexifmetadata.py:1136
 msgid ""
 "WARNING!  You are about to completely delete the Exif metadata from this "
 "image?"
 msgstr "CẢNH BÁO: Bạn sắp xóa hoàn toàn metadata Exif khỏi hình? "
 
 #: EditExifMetadata/editexifmetadata.py:1324
+#: EditExifMetadata/editexifmetadata.py:1333
 #, fuzzy
 msgid "Media Title Update"
 msgstr "Lọc đa phương tiện "
 
 #: EditExifMetadata/editexifmetadata.py:1350
+#: EditExifMetadata/editexifmetadata.py:1357
 #, fuzzy
 msgid "Media Object Date Created"
 msgstr "Đối tượng đa phương tiện ghi là riêng tư "
@@ -378,10 +402,12 @@ msgid "Saving Exif metadata to this image..."
 msgstr "Lưu metadata Exif của hình này... "
 
 #: EditExifMetadata/editexifmetadata.py:1469
+#: EditExifMetadata/editexifmetadata.py:1465
 msgid "All Exif metadata has been deleted from this image..."
 msgstr "Mọi metadata Exif đã được xóa khỏi hình... "
 
 #: EditExifMetadata/editexifmetadata.py:1474
+#: EditExifMetadata/editexifmetadata.py:1470
 #, fuzzy
 msgid "There was an error in stripping the Exif metadata from this image..."
 msgstr "Không có metadata Exif cho hình này... "

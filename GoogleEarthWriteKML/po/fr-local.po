@@ -13,18 +13,23 @@
 #  call name : prénom usuel
 #  unknown (context) : inconnu ou non-connu (individu)
 #
-# Laurent Protois <laurent.protois@free.fr>, 2001-2004.
+# Laurent Protois <laurent.protois@free.fr>, 2001, 2002, 2003, 2004.
 # Matthieu Pupat <tieum.tieum@free.fr>, 2004, 2005.
 # Guillaume Pratte <guillaumep@soireevideo.org>, 2005.
-# Frederic Chateaux, 2007-2008.
-# Jérôme Rapinat <romjerome@yahoo.fr>, 2005-2011.
+# Frederic Chateaux, 2007, 2008.
+# Jérôme Rapinat <romjerome@yahoo.fr>, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017.
+# Mathieu MD <mathieu.md@gmail.com>, 2012.
+# Paul Culley <prc@prc-virtualbox>, 2018.
+# Christophe <khrys63@gmail.com>, 2018.
+# Paul Culley <paulr2787@gmail.com>, 2016.
+# J-Paul Bérard <arverne@wanadoo.fr>, 2021.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-17 18:19+0100\n"
-"PO-Revision-Date: 2011-12-17 19:10+0100\n"
+"POT-Creation-Date: 2011-12-17 18:14+0100\n"
+"PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
 "Language: \n"
@@ -34,22 +39,27 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.gpr.py:30
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.gpr.py:31
 msgid "GoogleEarth"
 msgstr "GoogleEarth"
 
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.gpr.py:35
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.gpr.py:36
 msgid "Creates data file for GoogleEarth and opens it"
 msgstr "Créé un fichier de données pouvant être ouvert dans GoogleEarth"
 
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.py:89
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:119
 msgid "No place description"
 msgstr "Aucune description du lieu"
 
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.py:122
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:152
 msgid "GoogleEarth not installed!"
 msgstr "GoogleEarth n'est pas installé !"
 
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.py:123
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:153
 #, python-format
 msgid ""
 "Create kmz/kml file ''%s''\n"
@@ -58,30 +68,24 @@ msgstr ""
 "Création du fichier kmz/kml \"%s\"\n"
 "dans le répertoire de l'utilisateur \"%s\" ?"
 
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:126
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:147
-msgid "Yes"
-msgstr "Oui"
-
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:127
-#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:148
-msgid "No"
-msgstr "Non"
-
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.py:133
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:163
 #, python-format
 msgid "Failure writing to %s"
 msgstr "Échec à l'écriture de %s"
 
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.py:134
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:164
 msgid "Directory does not exist"
 msgstr "Le répertoire n'existe pas"
 
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.py:143
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:173
 msgid "GoogleEarth file exists!"
 msgstr "Le fichier GoogleEarth existe !"
 
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.py:144
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:174
 #, python-format
 msgid ""
 "Overwrite kmz/kml file ''%s''\n"
@@ -89,4 +93,3 @@ msgid ""
 msgstr ""
 "Écraser le fichier kmz/kml \"%s\"\n"
 "dans le répertoire de l'utilisateur \"%s\" ?"
-

@@ -1,35 +1,29 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Igal Shapira <igal.shapira@gmail.com>, 2009, 2010, 2011.
+# Avi Markovitz <avi.markovitz@gmail.com>, 2019.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Gramps 5.2.0 – mediabrowser'\n"
+"Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-09-10 07:59+0300\n"
-"PO-Revision-Date: 2023-09-17 16:18+0300\n"
-"Last-Translator: Avi Markovitz\n"
+"PO-Revision-Date: 2023-09-10 08:07+0300\n"
+"Last-Translator: \n"
 "Language-Team: Avi Markovitz\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==2 ? 1 : n>10 && n%10==0 ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==2 ? 1 : n>10 && n%10==0 ? "
+"2 : 3);\n"
 "X-Generator: Poedit 3.0.1\n"
 
-#: MediaBrowser/MediaBrowser.gpr.py:30
+#: MediaBrowser/MediaBrowser.gpr.py:30 MediaBrowser/MediaBrowser.gpr.py:31
 msgid "Media Browser"
 msgstr "דפדפן קבצי מדיה"
 
-#: MediaBrowser/MediaBrowser.gpr.py:31
-msgid "Gramplet showing details of a person"
-msgstr "גרמפלט להצגת פרטי 'אדם'"
-
-#: MediaBrowser/MediaBrowser.gpr.py:38
+#: MediaBrowser/MediaBrowser.gpr.py:38 MediaBrowser/MediaBrowser.gpr.py:39
 msgid "Browser"
 msgstr "דפדפן"
-
-#: MediaBrowser/MediaBrowser.py:53
-msgid "Object"
-msgstr "עצם"

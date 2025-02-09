@@ -2,27 +2,36 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Pär Ekholm <pehlm@pekholm.org>, 2021.
+# Bo Rosén <bo.rosen@home.se>, 2001.
+# Jens Arvidsson <jya@sverige.nu>, 2002, 2003, 2004, 2005.
+# Stefan Björk <betula@users.sourceforge.net>, 2005, 2006.
+# Peter Landgren <peter.talken@telia.com>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017.
+# Pär Ekholm <par.ekholm50@gmail.com>, 2016, 2018.
+# Pär Ekholm <par.ekholm@pekholm.se>, 2018, 2019.
+# Peter Landgren <peter@test>, 2010.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2021-05-21 11:17+0200\n"
-"Language-Team: \n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
+"Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/sv/>\n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3\n"
-"Last-Translator: Pär Ekholm <pehlm@pekholm.se>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: sv_SE\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10-dev\n"
 
 #: BirthOrder/birthorder.gpr.py:9 BirthOrder/birthorder.py:62
+#: BirthOrder/birthorder.gpr.py:10
 msgid "Sort Children in Birth order"
 msgstr "Sortera barn i födelseordning"
 
-#: BirthOrder/birthorder.gpr.py:10
+#: BirthOrder/birthorder.gpr.py:10 BirthOrder/birthorder.gpr.py:12
 msgid ""
 "Looks through families, looking for children that are not in birth order.  "
 "User can accept individual suggestions to correct, edit the birth order "
@@ -42,14 +51,6 @@ msgstr "Inga familjer behöver sortering"
 msgid "No children were out of birth order."
 msgstr "Alla barn var i födelseordning."
 
-#: BirthOrder/birthorder.py:186
-msgid "Edit Family"
-msgstr "Redigera familj"
-
-#: BirthOrder/birthorder.py:203
-msgid "Processing..."
-msgstr "Arbetar..."
-
 #: BirthOrder/birthorder.py:204
 msgid "Edit Families"
 msgstr "Redigera familjer"
@@ -58,29 +59,9 @@ msgstr "Redigera familjer"
 msgid "Looking for children birth order"
 msgstr "Söker efter barns födelseordning"
 
-#: BirthOrder/birthorder.py:279
-msgid "Pass 1: Building preliminary lists"
-msgstr "Pass 1: Konstruerar preliminära listor"
-
 #: BirthOrder/birthorder.glade:56
 msgid "Select the family you wish to examine."
 msgstr "Välj familjen du önskar undersöka."
-
-#: BirthOrder/birthorder.glade:78
-msgid "Family ID"
-msgstr "Familje-ID"
-
-#: BirthOrder/birthorder.glade:93
-msgid "Father"
-msgstr "Far"
-
-#: BirthOrder/birthorder.glade:108
-msgid "Mother"
-msgstr "Mor"
-
-#: BirthOrder/birthorder.glade:141
-msgid "Help"
-msgstr "Hjälp"
 
 #: BirthOrder/birthorder.glade:155
 msgid "Accept All"

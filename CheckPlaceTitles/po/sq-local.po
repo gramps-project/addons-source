@@ -1,8 +1,6 @@
-# Albanian translation for Gramps
-# $Id$
-# This file is distributed under the same license as the Gramps package.
 # Copyright (C) 2006, 2007 Free Software Foundation, Inc.
 # translation of celestia-doc-index.0.3.6.po to Albanian
+# This file is distributed under the same license as the GRAMPS package.
 #
 # Maintainer: Armend Iseni <aiseni.as@gmail.com>, 2008
 # Maintainer: Vlado Pesov <vpesov@genrepsoft.com>, 2008
@@ -17,11 +15,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-02-12 14:42+0100\n"
+"POT-Creation-Date: 2010-03-08 16:54+0100\n"
 "PO-Revision-Date: 2008-11-13 21:00+0100\n"
 "Last-Translator: Vlora Jakupi <vlorajak@hotmail.com>\n"
 "Language-Team: \n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -35,90 +32,73 @@ msgstr ""
 "X-Poedit-SearchPath-0: /home/jole/SVN/gramps/gramps30\n"
 
 #: CheckPlaceTitles/checkplacetitles.gpr.py:28
+#: CheckPlaceTitles/checkplacetitles.gpr.py:29
 msgid "Check Place Titles"
 msgstr ""
 
 #: CheckPlaceTitles/checkplacetitles.gpr.py:29
+#: CheckPlaceTitles/checkplacetitles.gpr.py:30
 msgid "Check place titles"
-msgstr ""
-
-#: CheckPlaceTitles/checkplacetitles.py:56
-msgid "manual|Check_place_titles"
 msgstr ""
 
 #: CheckPlaceTitles/checkplacetitles.py:71
 msgid "Check Place title"
 msgstr ""
 
-#: CheckPlaceTitles/checkplacetitles.py:86
+#: CheckPlaceTitles/checkplacetitles.py:86 ExtractCity/extractcity.py:454
 msgid "Checking Place Titles"
 msgstr "Kontrrollimi i titullit të vendit"
 
-#: CheckPlaceTitles/checkplacetitles.py:87
+#: CheckPlaceTitles/checkplacetitles.py:87 ExtractCity/extractcity.py:456
 msgid "Looking for place fields"
 msgstr "Kërkim i fushave të vendit"
 
 #: CheckPlaceTitles/checkplacetitles.py:103
+#: CheckPlaceTitles/checkplacetitles.py:107
 msgid "Differences"
 msgstr ""
 
 #: CheckPlaceTitles/checkplacetitles.py:109
+#: CheckPlaceTitles/checkplacetitles.py:112
 msgid "No need modifications"
 msgstr ""
 
 #: CheckPlaceTitles/checkplacetitles.py:110
+#: CheckPlaceTitles/checkplacetitles.py:113
 msgid "No changes need."
 msgstr ""
 
-#: CheckPlaceTitles/checkplacetitles.py:139
-msgid "Select"
-msgstr "Përzgjedh"
-
-#: CheckPlaceTitles/checkplacetitles.py:142
-#, fuzzy
-msgid "Database"
-msgstr "E gjith Baza e të dhënave"
-
-#: CheckPlaceTitles/checkplacetitles.py:146
-msgid "Display"
-msgstr "Shfaq"
-
-#: CheckPlaceTitles/checkplacetitles.py:156
-msgid "Building display"
-msgstr "Shfaq ndërtimin"
-
 #: CheckPlaceTitles/checkplacetitles.py:185
+#: CheckPlaceTitles/checkplacetitles.py:187
 msgid "Legacy place"
 msgstr ""
 
 #: CheckPlaceTitles/checkplacetitles.py:199
+#: CheckPlaceTitles/checkplacetitles.py:201
 msgid "Modify Place titles"
 msgstr ""
 
 #: CheckPlaceTitles/checkplacetitles.py:222
+#: CheckPlaceTitles/checkplacetitles.py:224
 msgid "Place titles"
 msgstr ""
 
 #: CheckPlaceTitles/checkplacetitles.glade.h:1
+#: CheckPlaceTitles/checkplacetitles.glade:56
 msgid "Remove content of place title field if it does not match"
 msgstr ""
 
 #: CheckPlaceTitles/checkplacetitles.glade.h:2
+#: CheckPlaceTitles/checkplacetitles.glade:74
 msgid "Copy content of place title field to a new note."
 msgstr ""
 
-#: CheckPlaceTitles/checkplacetitles.glade.h:3
-msgid "Mark"
-msgstr "Shënim"
-
 #: CheckPlaceTitles/checkplacetitles.glade.h:4
+#: CheckPlaceTitles/checkplacetitles.glade:91
 msgid "Attach a tag on selected places."
 msgstr ""
 
-#: CheckPlaceTitles/checkplacetitles.glade.h:5
-msgid "_Accept changes and close"
-msgstr "_Prano ndryshimet dhe mbylle"
-
 #: CheckPlaceTitles/checkplacetitles.glade.h:6
+#: CheckPlaceTitles/checkplacetitles.glade:177
 msgid "column"
 msgstr ""

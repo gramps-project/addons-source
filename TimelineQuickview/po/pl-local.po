@@ -1,104 +1,99 @@
-# Polish translations for PACKAGE package.
-# Copyright (C) 2009 THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# translation of pl.po to
+# Copyright (C) 2002-2003, 2006, 2007 Free Software Foundation, Inc.
 #
+# Piotr Czubaszek <pioterus(at)gmail(dot)com>, 2007.
+# Piotr Czubaszek <piotrek@gmail.com>, 2007.
+# Łukasz Rymarczyk <yenidai(at)poczta(dot)onet(dot)pl>, 2008, 2009.
+# Przemek Wiech <pwiech@gmail.com>, 2019.
+# Michał Stojek <stojex@gmail.com>, 2021.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-11-23 19:34+0100\n"
-"PO-Revision-Date: 2009-11-25 19:20+0100\n"
-"Last-Translator: \n"
-"Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
+"POT-Creation-Date: 2010-03-08 16:37+0100\n"
+"PO-Revision-Date: 2009-10-05 21:15+0100\n"
+"Last-Translator: Łukasz Rymarczyk <yenidai@poczta.onet.pl>\n"
+"Language-Team: Łukasz Rymarczyk <yenidai@poczta.onet.pl>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-
-#: TimelineQuickview/TimelineQuickview.gpr.py:9
-msgid "Timeline"
-msgstr "Oś czasu"
+"X-Poedit-Language: Polish\n"
+"X-Poedit-Country: POLAND\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+"X-Poedit-SearchPath-0: ~/.poedit/a\n"
 
 #: TimelineQuickview/TimelineQuickview.gpr.py:10
+#: TimelineQuickview/TimelineQuickview.gpr.py:11
 msgid "Display a person's events on a timeline"
 msgstr ""
 
-#: TimelineQuickview/TimelineQuickview.py:41
-msgid "Parents"
-msgstr "Rodzice"
-
 #: TimelineQuickview/TimelineQuickview.py:43
+#: TimelineQuickview/TimelineQuickview.py:48
 msgid "Inlaw Parents"
 msgstr ""
 
 #: TimelineQuickview/TimelineQuickview.py:46
+#: TimelineQuickview/TimelineQuickview.py:51
 msgid "Grandparents"
 msgstr ""
 
 #: TimelineQuickview/TimelineQuickview.py:48
+#: TimelineQuickview/TimelineQuickview.py:53
 msgid "Inlaw Grandparents"
 msgstr ""
 
 #: TimelineQuickview/TimelineQuickview.py:51
+#: TimelineQuickview/TimelineQuickview.py:56
 msgid "Great grandparents"
 msgstr ""
 
 #: TimelineQuickview/TimelineQuickview.py:53
+#: TimelineQuickview/TimelineQuickview.py:58
 msgid "Inlaw Great grandparents"
 msgstr ""
 
 #: TimelineQuickview/TimelineQuickview.py:56
+#: TimelineQuickview/TimelineQuickview.py:61
 msgid "Great, "
 msgstr ""
 
 #: TimelineQuickview/TimelineQuickview.py:56
 #: TimelineQuickview/TimelineQuickview.py:58
+#: TimelineQuickview/TimelineQuickview.py:61
+#: TimelineQuickview/TimelineQuickview.py:63
 msgid "great, "
 msgstr ""
 
 #: TimelineQuickview/TimelineQuickview.py:56
 #: TimelineQuickview/TimelineQuickview.py:58
+#: TimelineQuickview/TimelineQuickview.py:61
+#: TimelineQuickview/TimelineQuickview.py:63
 msgid "great grandparents"
 msgstr ""
 
 #: TimelineQuickview/TimelineQuickview.py:58
+#: TimelineQuickview/TimelineQuickview.py:63
 msgid "Inlaw Great, "
 msgstr ""
 
 #: TimelineQuickview/TimelineQuickview.py:88
+#: TimelineQuickview/TimelineQuickview.py:102
 msgid "Partner's spouse"
 msgstr ""
 
 #: TimelineQuickview/TimelineQuickview.py:138
+#: TimelineQuickview/TimelineQuickview.py:156
 #, python-format
 msgid "Timeline for %s"
 msgstr ""
 
-#: TimelineQuickview/TimelineQuickview.py:141
-msgid "Date"
-msgstr "Data"
-
-#: TimelineQuickview/TimelineQuickview.py:142
-msgid "Event"
-msgstr "Zdarzenie"
-
-#: TimelineQuickview/TimelineQuickview.py:143
-msgid "Age"
-msgstr "Wiek"
-
-#: TimelineQuickview/TimelineQuickview.py:144
-msgid "Place"
-msgstr "Miejsce"
-
 #: TimelineQuickview/TimelineQuickview.py:145
+#: TimelineQuickview/TimelineQuickview.py:163
 msgid "People involved"
 msgstr ""
 
-#: TimelineQuickview/TimelineQuickview.py:169
+#: TimelineQuickview/TimelineQuickview.py:169 Query/QueryQuickview.py:426
 msgid "Today"
 msgstr ""
-
-#: TimelineQuickview/TimelineQuickview.py:175
-msgid "Unknown"
-msgstr "Nieznany"
-

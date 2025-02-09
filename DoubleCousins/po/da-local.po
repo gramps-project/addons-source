@@ -1,14 +1,16 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
+# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
+# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-24 19:33+0200\n"
-"PO-Revision-Date: 2024-09-29 17:42+0200\n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
 "Language: da_DK\n"
@@ -19,16 +21,14 @@ msgstr ""
 "X-Generator: Poedit 3.0.1\n"
 
 #: DoubleCousins/double_cousins.gpr.py:24
+#: DoubleCousins/double_cousins.gpr.py:25
 msgid "Double Cousins"
 msgstr "Dobbelt kusiner/fætre"
 
 #: DoubleCousins/double_cousins.gpr.py:25
+#: DoubleCousins/double_cousins.gpr.py:26
 msgid "A text report listing double cousins."
 msgstr "En tekstrapport, der visér dobbelt kusiner/fætre."
-
-#: DoubleCousins/double_cousins.py:104 DoubleCousins/double_cousins.py:105
-msgid "Birth"
-msgstr "Fødsel"
 
 #: DoubleCousins/double_cousins.py:112
 msgid "Double Cousins Report"
@@ -58,11 +58,3 @@ msgstr "Ingen dobbelt kusiner/fætre blev fundet i din database."
 #: DoubleCousins/double_cousins.py:170
 msgid "Show info text"
 msgstr "Vis informatiostekst"
-
-#: DoubleCousins/double_cousins.py:171 DoubleCousins/double_cousins.py:173
-msgid "Report Options"
-msgstr "Rapport tilvalg"
-
-#: DoubleCousins/double_cousins.py:172
-msgid "Show Gramps ID"
-msgstr "Vis Gramps ID"

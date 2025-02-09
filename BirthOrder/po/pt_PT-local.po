@@ -1,28 +1,29 @@
-# Portuguese translations for Gramps package.
-# Copyright (C) 2020 gramps
+# Addon MediaMerge for Gramps.
+# Copyright (C) 2020 Gramps
 # This file is distributed under the same license as the gramps package.
-# Pedro Albuquerque <pmra@protonmail.com>, 2020.
-#
+# Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-15 10:12+0100\n"
-"PO-Revision-Date: 2020-03-29 \n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2025-02-09 06:44+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
-"Language-Team: Portuguese <pmra@protonmail.com>\n"
-"Language: pt\n"
+"Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
+"gramps-project/addons/pt_PT/>\n"
+"Language: pt_PT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Geany / PoHelper 1.36\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10-dev\n"
 
 #: BirthOrder/birthorder.gpr.py:9 BirthOrder/birthorder.py:62
+#: BirthOrder/birthorder.gpr.py:10
 msgid "Sort Children in Birth order"
 msgstr "Ordenar filhos por data de nascimento"
 
-#: BirthOrder/birthorder.gpr.py:10
+#: BirthOrder/birthorder.gpr.py:10 BirthOrder/birthorder.gpr.py:12
 msgid ""
 "Looks through families, looking for children that are not in birth order.  "
 "User can accept individual suggestions to correct, edit the birth order "
@@ -42,14 +43,6 @@ msgstr "Nenhuma família precisa de ser ordenada"
 msgid "No children were out of birth order."
 msgstr "Nenhum filho fora de ordem."
 
-#: BirthOrder/birthorder.py:186
-msgid "Edit Family"
-msgstr "Editar família"
-
-#: BirthOrder/birthorder.py:203
-msgid "Processing..."
-msgstr "A processar..."
-
 #: BirthOrder/birthorder.py:204
 msgid "Edit Families"
 msgstr "Editar famílias"
@@ -58,29 +51,9 @@ msgstr "Editar famílias"
 msgid "Looking for children birth order"
 msgstr "A procurar ordem de nascimento dos filhos"
 
-#: BirthOrder/birthorder.py:279
-msgid "Pass 1: Building preliminary lists"
-msgstr "Passo 1: construir listas preliminares"
-
 #: BirthOrder/birthorder.glade:56
 msgid "Select the family you wish to examine."
 msgstr "Seleccione a família que deseja examinar."
-
-#: BirthOrder/birthorder.glade:78
-msgid "Family ID"
-msgstr "ID da família"
-
-#: BirthOrder/birthorder.glade:93
-msgid "Father"
-msgstr "Pai"
-
-#: BirthOrder/birthorder.glade:108
-msgid "Mother"
-msgstr "Mãe"
-
-#: BirthOrder/birthorder.glade:141
-msgid "Help"
-msgstr "Ajuda"
 
 #: BirthOrder/birthorder.glade:155
 msgid "Accept All"

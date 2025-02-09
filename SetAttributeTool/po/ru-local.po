@@ -1,14 +1,24 @@
-# Russian translation for SetAttributeTool
+# Russian translation for MediaMerge
 # This file is distributed under the same license as the Gramps package.
 #
-# Ivan Komaritsyn <vantu5z@mail.ru>, 2018.
+# Ivan Komaritsyn <vantu5z@mail.ru>, 2015, 2016, 2017, 2018, 2019, 2020, 2021.
+# Alexander Bogdashevsky <sanderb@kezomba.com>, 2004.
+# Alex Roitman <shura@gramps-project.org>, 2002, 2003, 2004, 2005, 2006, 2007.
+# Konstantin Dorichev <kdorichev@gmail.com>, 2008.
+# Yevgeny Zegzda <ezegjda@ya.ru>, 2009, 2010.
+# vantu5z <vantu5z@mail.ru>, 2020.
+# Komaritsyn Ivan <vantu5z@mail.ru>, 2018.
+# Andrey Baznikin (http://d.scn.ru/), 2009, 2010, 2011.
+# Vassilii Khachaturov <vassilii@tarunz.org>, 2011, 2012, 2013, 2014.
+# Egor Reentov <egor.gramps@gmail.com>, 2011, 2012, 2013.
+# Artem Glebov <artem.glebov@gmail.com>, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-06 11:09+0300\n"
-"PO-Revision-Date: 2018-12-06 11:17+0300\n"
+"POT-Creation-Date: 2018-12-04 16:31+0300\n"
+"PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
@@ -18,48 +28,39 @@ msgstr ""
 "X-Generator: Gtranslator 2.91.7\n"
 "X-Poedit-Language: Russian\n"
 "X-Poedit-Country: RUSSIAN FEDERATION\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: SetAttributeTool/SetAttributeTool.gpr.py:25
-#: SetAttributeTool/SetAttributeTool.py:121
-#: SetAttributeTool/SetAttributeTool.py:129
-msgid "Set Attribute"
-msgstr "Установка атрибутов"
-
-#: SetAttributeTool/SetAttributeTool.gpr.py:26
-msgid "Set an attribute to a given value."
-msgstr "Установливает значения атрибутов."
-
-#: SetAttributeTool/SetAttributeTool.py:68
-#: SetAttributeTool/SetAttributeTool.py:124
-msgid "Options"
-msgstr "Параметры"
-
-#: SetAttributeTool/SetAttributeTool.py:70
-msgid "Person Filter"
-msgstr "Фильтр лиц"
-
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:83
 #: SetAttributeTool/SetAttributeTool.py:71
 msgid "Select filter to restrict people"
 msgstr "Выбор фильтра для ограничения лиц"
 
-#: SetAttributeTool/SetAttributeTool.py:75
-msgid "Filter Person"
-msgstr "Фильтр по лицу"
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:237
+#: SetAttributeTool/SetAttributeTool.py:131
+#: SetAttributeTool/SetAttributeTool.py:190
+msgid "Processing...\n"
+msgstr "Обработка...\n"
 
-# !!!FIXME!!!
-#: SetAttributeTool/SetAttributeTool.py:76
-msgid "The center person for the filter"
-msgstr "Главное лицо для фильтра"
+#: AttachSourceTool/AttachSourceTool.py:197
+#: SetAttributeTool/SetAttributeTool.py:186
+#: SetAttributeTool/SetAttributeTool.py:235
+msgid "Done!\n"
+msgstr "Завершено!\n"
 
-#: SetAttributeTool/SetAttributeTool.py:80
-msgid "Attribute"
-msgstr "Атрибут"
+#: SetAttributeTool/SetAttributeTool.gpr.py:25
+#: SetAttributeTool/SetAttributeTool.py:121
+#: SetAttributeTool/SetAttributeTool.py:129
+#: SetAttributeTool/SetAttributeTool.gpr.py:26
+#: SetAttributeTool/SetAttributeTool.py:122
+#: SetAttributeTool/SetAttributeTool.py:150
+msgid "Set Attribute"
+msgstr "Установка атрибутов"
 
-#: SetAttributeTool/SetAttributeTool.py:81
-msgid "Value"
-msgstr "Значение"
+#: SetAttributeTool/SetAttributeTool.gpr.py:26
+#: SetAttributeTool/SetAttributeTool.gpr.py:27
+msgid "Set an attribute to a given value."
+msgstr "Установливает значения атрибутов."
 
 #: SetAttributeTool/SetAttributeTool.py:83
 msgid "Attribute type to add or edit"
@@ -69,29 +70,17 @@ msgstr "Тип атрибута для добавления или измене�
 msgid "Attribute value to add or edit"
 msgstr "Значение атрибута для добавления или изменения"
 
-#: SetAttributeTool/SetAttributeTool.py:91
-msgid "Remove"
-msgstr "Удалить"
-
 #: SetAttributeTool/SetAttributeTool.py:92
 msgid "Remove attribute type and value set"
 msgstr "Удалить установленный тип атрибута и значение"
 
-#: SetAttributeTool/SetAttributeTool.py:130
-#: SetAttributeTool/SetAttributeTool.py:189
-msgid "Results"
-msgstr "Результаты"
-
-#: SetAttributeTool/SetAttributeTool.py:131
-#: SetAttributeTool/SetAttributeTool.py:190
-msgid "Processing...\n"
-msgstr "Обработка...\n"
-
 #: SetAttributeTool/SetAttributeTool.py:146
+#: SetAttributeTool/SetAttributeTool.py:152
 msgid "Setting attributes..."
 msgstr "Установка атрибутов..."
 
 #: SetAttributeTool/SetAttributeTool.py:153
+#: SetAttributeTool/SetAttributeTool.py:156
 #, python-format
 msgid ""
 "Setting '%s' attributes to '%s'...\n"
@@ -101,6 +90,7 @@ msgstr ""
 "\n"
 
 #: SetAttributeTool/SetAttributeTool.py:184
+#: SetAttributeTool/SetAttributeTool.py:188
 #, python-format
 msgid ""
 "\n"
@@ -109,20 +99,18 @@ msgstr ""
 "\n"
 "Установить %d '%s' атрибуты для '%s'\n"
 
-#: SetAttributeTool/SetAttributeTool.py:186
-#: SetAttributeTool/SetAttributeTool.py:235
-msgid "Done!\n"
-msgstr "Завершено!\n"
-
 #: SetAttributeTool/SetAttributeTool.py:188
+#: SetAttributeTool/SetAttributeTool.py:191
 msgid "Remove Attribute"
 msgstr "Удалить атрибут"
 
 #: SetAttributeTool/SetAttributeTool.py:205
+#: SetAttributeTool/SetAttributeTool.py:194
 msgid "Removing attributes..."
 msgstr "Удаление атрибутов..."
 
 #: SetAttributeTool/SetAttributeTool.py:230
+#: SetAttributeTool/SetAttributeTool.py:221
 #, python-format
 msgid ""
 "\n"

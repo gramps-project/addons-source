@@ -1,36 +1,39 @@
 # Croatian translation for Gramps
 # This file is distributed under the same license as the Gramps package.
 # Copyright (C) Gramps project
-# Milo Ivir <mail@milotype.de>, 2019., 2020.
+# Milo Ivir <mivir@milotype.de>, 2019, 2020.
+# Stephen Adams, Gramps Reddit, 2018.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-06 16:42-0500\n"
-"PO-Revision-Date: 2020-08-24 14:47+0200\n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2019-10-23 15:25+0200\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: \n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.1\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Generator: Poedit 2.2.4\n"
 
-#: MediaReport/media_report.gpr.py:23
-msgid "Media Report"
-msgstr "Izvještaj o medijima"
-
-#: MediaReport/media_report.gpr.py:24
-msgid "Generates report including images, image data and notes."
-msgstr "Izrađuje izvještaj koji uključuje slike, podatke slika i zabilješke."
-
+#: EventDescriptionEditor/EventDescriptionEditor.py:91
+#: EventDescriptionEditor/EventDescriptionEditor.py:105
 #: MediaReport/media_report.py:106 MediaReport/media_report.py:112
 #: MediaReport/media_report.py:119 MediaReport/media_report.py:125
 msgid "INFO"
 msgstr "INFORMACIJE"
+
+#: MediaReport/media_report.gpr.py:23 MediaReport/media_report.gpr.py:24
+msgid "Media Report"
+msgstr "Izvještaj o medijima"
+
+#: MediaReport/media_report.gpr.py:24 MediaReport/media_report.gpr.py:25
+msgid "Generates report including images, image data and notes."
+msgstr "Izrađuje izvještaj koji uključuje slike, podatke slika i zabilješke."
 
 #: MediaReport/media_report.py:106 MediaReport/media_report.py:119
 msgid "You have to select an image to generate this report."
@@ -52,41 +55,13 @@ msgstr "Ovaj izvještaj podržava samo PDF kao izlazni format."
 msgid "General:"
 msgstr "Opće:"
 
-#: MediaReport/media_report.py:235
-msgid "Description:"
-msgstr "Opis:"
-
 #: MediaReport/media_report.py:250
 msgid "Image type:"
 msgstr "Vrsta slike:"
 
-#: MediaReport/media_report.py:342
-msgid "File does not exist"
-msgstr "Datoteka ne postoji"
-
-#: MediaReport/media_report.py:343
-msgid "Could not add photo to page"
-msgstr "Nije moguće sliku dodati na stranicu"
-
-#: MediaReport/media_report.py:344
-#, python-format
-msgid "%(str1)s: %(str2)s"
-msgstr "%(str1)s: %(str2)s"
-
 #: MediaReport/media_report.py:426
 msgid "Heading"
 msgstr "Naslov"
-
-#: MediaReport/media_report.py:427 MediaReport/media_report.py:431
-#: MediaReport/media_report.py:435 MediaReport/media_report.py:439
-#: MediaReport/media_report.py:444 MediaReport/media_report.py:448
-#: MediaReport/media_report.py:453 MediaReport/media_report.py:458
-msgid "Report Options"
-msgstr "Opcije za izvještaj"
-
-#: MediaReport/media_report.py:429
-msgid "Media"
-msgstr "Mediji"
 
 #: MediaReport/media_report.py:430
 msgid "Select a media file for this report"

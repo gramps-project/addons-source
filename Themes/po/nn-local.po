@@ -3,6 +3,7 @@
 # Copyright (C) 2008
 #
 # Sigmund Lorentsen <siglorent@gmail.com>, 2008, 2009, 2010, 2011, 2012, 2014.
+# Sigmund Lorentsen <sigmund.lorentsen@tele2.no>, 2008, 2009, 2010, 2011, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: nn\n"
@@ -19,11 +20,11 @@ msgstr ""
 "X-Generator: Lokalize 1.5\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: Themes/themes.gpr.py:28
+#: Themes/themes.gpr.py:28 Themes/themes.gpr.py:29
 msgid "Theme preferences"
 msgstr "Temainnstillinger"
 
-#: Themes/themes.gpr.py:29
+#: Themes/themes.gpr.py:29 Themes/themes.gpr.py:31
 msgid ""
 "An addition to Preferences for simple Theme and Font adjustment.  Especially "
 "useful for Windows users."
@@ -31,50 +32,27 @@ msgstr ""
 "Et tillegg til Innstillinger for enkel justering av tema og skrift. Spesielt "
 "nyttig for Windows-brukere."
 
-#: Themes/themes.py:93
-msgid "_Help"
-msgstr "_Hjelp"
-
-#: Themes/themes.py:137 Themes/themes.py:155
+#: Themes/themes.py:137 Themes/themes.py:155 Themes/themes.py:172
+#: Themes/themes.py:190
 msgid "Theme is hardcoded by GTK_THEME"
 msgstr "Temaet er hardkodet av GTK_THEME"
 
-#: Themes/themes.py:140 Themes/themes.py:163
-#, fuzzy, python-format
-msgid "%s: "
-msgstr " Detaljar: %s"
-
-#: Themes/themes.py:140 Themes/themes.py:190
+#: Themes/themes.py:140 Themes/themes.py:190 DynamicWeb/dynamicweb.py:5157
 msgid "Theme"
 msgstr "Tema"
 
-#: Themes/themes.py:145
+#: Themes/themes.py:145 Themes/themes.py:180
 msgid "Dark Variant"
 msgstr "Mørk Variant"
 
-#: Themes/themes.py:163
+#: Themes/themes.py:163 Themes/themes.py:198
 msgid "Font"
 msgstr "Skrifttype"
 
-#: Themes/themes.py:170
-msgid "_Toolbar"
-msgstr "Verk_tøylinje"
-
-#: Themes/themes.py:170
-msgid "Text"
-msgstr "Tekst"
-
-#: Themes/themes.py:179
+#: Themes/themes.py:179 Themes/themes.py:214
 msgid "Fixed Scrollbar (requires restart)"
 msgstr "Klassisk rullegardin (krever omstart)"
 
-#: Themes/themes.py:186
-#, fuzzy
-msgid "Restore to defaults"
-msgstr "Skal standard hentast inn att?"
-
-#~ msgid "Default"
-#~ msgstr "Standard"
-
-#~ msgid "Colors"
-#~ msgstr "Fargar"
+#: ../gramps/gui/configure.py:983
+msgid "Colors"
+msgstr "Fargar"

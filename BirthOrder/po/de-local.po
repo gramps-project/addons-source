@@ -3,33 +3,42 @@
 # translation of de.po to Deutsch
 #
 #
-# Anton Huber <anton_huber@gmx.de>, 2005,2006.
+# Anton Huber <anton_huber@gmx.de>, 2005, 2006.
 # Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
 # Sebastian Vöcking <voeck@web.de>, 2005.
 # Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
 # Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 # Alois Pöttker <alois.poettker@gmx.de>, 2017.
+# Allan Nordhøy <epost@anotheragency.no>, 2021.
+# R. B. <weblate@macdefender.org>, 2021.
+# RiseT <tareiss1971@yahoo.de>, 2021.
+# David Straub <straub@protonmail.com>, 2021.
+# nautilusx <translate@disroot.org>, 2021.
+# Andreas Abraham <andreas.abraham@gmx.de>, 2021.
+# RiseT <twilite505-4bf24909@yahoo.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2020-07-26 22:02+0200\n"
+"POT-Creation-Date: 2020-08-02 22:39+0200\n"
+"PO-Revision-Date: 2025-02-09 06:44+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
-"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
+"addons/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 19.12.3\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10-dev\n"
 
 #: BirthOrder/birthorder.gpr.py:9 BirthOrder/birthorder.py:62
+#: BirthOrder/birthorder.gpr.py:10
 msgid "Sort Children in Birth order"
 msgstr "Sortiert Kinder in Geburtsreihenfolge"
 
-#: BirthOrder/birthorder.gpr.py:10
+#: BirthOrder/birthorder.gpr.py:10 BirthOrder/birthorder.gpr.py:12
 msgid ""
 "Looks through families, looking for children that are not in birth order.  "
 "User can accept individual suggestions to correct, edit the birth order "
@@ -39,8 +48,8 @@ msgstr ""
 "Geht durch die Familien und schaut nach Kindern, die sich nicht in der "
 "Geburtsreihenfolge befinden. Der Anwender kann einzelne Vorschläge zum "
 "manuellen Korrigieren/Bearbeiten der Geburtsreihenfolge übernehmen, alle "
-"Familien mit korrekter Geburtsreihenfolge übernehmen oder alle Familien"
-" übernehmen."
+"Familien mit korrekter Geburtsreihenfolge übernehmen oder alle Familien "
+"übernehmen."
 
 #: BirthOrder/birthorder.py:161
 msgid "No families need sorting"
@@ -50,14 +59,6 @@ msgstr "Es muss keine Familie sortiert werden"
 msgid "No children were out of birth order."
 msgstr "Es sind keine Kinder außerhalb der Geburtsreihenfolge."
 
-#: BirthOrder/birthorder.py:186
-msgid "Edit Family"
-msgstr "Familie bearbeiten"
-
-#: BirthOrder/birthorder.py:203
-msgid "Processing..."
-msgstr "Verarbeitung..."
-
 #: BirthOrder/birthorder.py:204
 msgid "Edit Families"
 msgstr "Familien Bearbeiten"
@@ -66,29 +67,9 @@ msgstr "Familien Bearbeiten"
 msgid "Looking for children birth order"
 msgstr "Suche nach der Geburtsreihenfolge der Kinder"
 
-#: BirthOrder/birthorder.py:279
-msgid "Pass 1: Building preliminary lists"
-msgstr "Durchgang 1: Erstelle Vorbereitungslisten"
-
 #: BirthOrder/birthorder.glade:56
 msgid "Select the family you wish to examine."
 msgstr "Wähle die Familie, die du untersuchen willst."
-
-#: BirthOrder/birthorder.glade:78
-msgid "Family ID"
-msgstr "Familie-ID"
-
-#: BirthOrder/birthorder.glade:93
-msgid "Father"
-msgstr "Vater"
-
-#: BirthOrder/birthorder.glade:108
-msgid "Mother"
-msgstr "Mutter"
-
-#: BirthOrder/birthorder.glade:141
-msgid "Help"
-msgstr "Hilfe"
 
 #: BirthOrder/birthorder.glade:155
 msgid "Accept All"

@@ -1,63 +1,56 @@
-# Dutch translation of addon SetAttributeTool.
+# Dutch translation of addon MediaMerge.
 # Copyright (C) 2020 Gramps project
-# This file is distributed under the same license as the SetAttributeTool package.
+# This file is distributed under the same license as the MediaMerge package.
+# Jan Sparreboom <jan@sparreboom.net>, 2020, 2021, 2023.
 # Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
 # Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
-# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010.
-# Jan Sparreboom <jan@sparreboom.net>, 2020.
+# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
+# Erik De Richter <frederik.de.richter@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
+# Harmen Huizinga <harmenhuizinga@sigmo.nl>, 2013.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: SetAttributeTool 5.x\n"
+"Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
 "POT-Creation-Date: 2019-01-04 18:55-0600\n"
-"PO-Revision-Date: 2020-08-10 20:46+0200\n"
-"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
-"Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
+"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
+"addons/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10-dev\n"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:83
+#: SetAttributeTool/SetAttributeTool.py:71
+msgid "Select filter to restrict people"
+msgstr "Selecteer filter om aantal mensen te beperken"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:237
+#: SetAttributeTool/SetAttributeTool.py:151
+#: SetAttributeTool/SetAttributeTool.py:193
+msgid "Processing...\n"
+msgstr "Wordt verwerkt...\n"
+
+#: AttachSourceTool/AttachSourceTool.py:197
+#: SetAttributeTool/SetAttributeTool.py:226
+msgid "Done!\n"
+msgstr "Uitgevoerd!\n"
 
 #: SetAttributeTool/SetAttributeTool.gpr.py:25
 #: SetAttributeTool/SetAttributeTool.py:122
 #: SetAttributeTool/SetAttributeTool.py:150
+#: SetAttributeTool/SetAttributeTool.gpr.py:26
 msgid "Set Attribute"
 msgstr "Kenmerk instellen"
 
 #: SetAttributeTool/SetAttributeTool.gpr.py:26
+#: SetAttributeTool/SetAttributeTool.gpr.py:27
 msgid "Set an attribute to a given value."
 msgstr "Stel een kenmerk in op een bepaalde waarde."
-
-#: SetAttributeTool/SetAttributeTool.py:68
-#: SetAttributeTool/SetAttributeTool.py:125
-msgid "Options"
-msgstr "Opties"
-
-#: SetAttributeTool/SetAttributeTool.py:70
-msgid "Person Filter"
-msgstr "Persoonsfilter"
-
-#: SetAttributeTool/SetAttributeTool.py:71
-msgid "Select filter to restrict people"
-msgstr "Keuzefilter om het aantal personen te beperken"
-
-#: SetAttributeTool/SetAttributeTool.py:75
-msgid "Filter Person"
-msgstr "Persoonsfilter"
-
-#: SetAttributeTool/SetAttributeTool.py:76
-msgid "The center person for the filter"
-msgstr "De centrale persoon voor het filter"
-
-#: SetAttributeTool/SetAttributeTool.py:80
-msgid "Attribute"
-msgstr "Kenmerk"
-
-#: SetAttributeTool/SetAttributeTool.py:81
-msgid "Value"
-msgstr "Waarde"
 
 #: SetAttributeTool/SetAttributeTool.py:83
 msgid "Attribute type to add or edit"
@@ -67,30 +60,9 @@ msgstr "Kenmerktype om toe te voegen of te bewerken"
 msgid "Attribute value to add or edit"
 msgstr "Kenmerkwaarde om toe te voegen of te bewerken"
 
-#: SetAttributeTool/SetAttributeTool.py:91
-msgid "Remove"
-msgstr "Verwijderen"
-
 #: SetAttributeTool/SetAttributeTool.py:92
 msgid "Remove attribute type and value set"
 msgstr "Verwijder kenmerktype en waardenset"
-
-#: SetAttributeTool/SetAttributeTool.py:131
-msgid "Results"
-msgstr "Resultaten"
-
-#: SetAttributeTool/SetAttributeTool.py:133
-msgid "Cannot save attribute"
-msgstr "Kan kenmerk niet opslaan"
-
-#: SetAttributeTool/SetAttributeTool.py:134
-msgid "The attribute type cannot be empty"
-msgstr "Het kenmerktype mag niet leeg zijn"
-
-#: SetAttributeTool/SetAttributeTool.py:151
-#: SetAttributeTool/SetAttributeTool.py:193
-msgid "Processing...\n"
-msgstr "Wordt verwerkt...\n"
 
 #: SetAttributeTool/SetAttributeTool.py:152
 msgid "Setting attributes..."
@@ -130,7 +102,3 @@ msgid ""
 msgstr ""
 "\n"
 "%d '%s' kenmerken verwijderen naar '%s'\n"
-
-#: SetAttributeTool/SetAttributeTool.py:226
-msgid "Done!\n"
-msgstr "Gedaan!\n"

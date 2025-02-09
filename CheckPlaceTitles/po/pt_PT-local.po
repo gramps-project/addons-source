@@ -1,83 +1,73 @@
-# Addon Check Place Titles for Gramps.
+# Addon MediaMerge for Gramps.
 # Copyright (C) 2020 Gramps
-# This file is distributed under the same license as the Gramps package.
-# Pedro Albuquerque <pmra@protonmail.com>, 2020.
+# This file is distributed under the same license as the gramps package.
+# Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-04 18:55-0600\n"
-"PO-Revision-Date: 2020-03-29 11:39Hora de Verão de GMT\n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2025-02-09 06:44+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
-"Language-Team: Pedro Albuquerque\n"
-"Language: pt\n"
+"Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
+"gramps-project/addons/pt_PT/>\n"
+"Language: pt_PT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Geany / PoHelper 1.36\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10-dev\n"
+
+#: ExtractCity/extractcity.py:439 ExtractCity/extractcity.py:454
+#: CheckPlaceTitles/checkplacetitles.py:86
+msgid "Checking Place Titles"
+msgstr "A verificar títulos"
+
+#: ExtractCity/extractcity.py:441 ExtractCity/extractcity.py:456
+#: CheckPlaceTitles/checkplacetitles.py:88
+msgid "Looking for place fields"
+msgstr "A procurar campos de local"
 
 #: CheckPlaceTitles/checkplacetitles.gpr.py:28
+#: CheckPlaceTitles/checkplacetitles.gpr.py:29
 msgid "Check Place Titles"
 msgstr "Verificar títulos de locais"
 
 #: CheckPlaceTitles/checkplacetitles.gpr.py:29
+#: CheckPlaceTitles/checkplacetitles.gpr.py:30
 msgid "Check place titles"
 msgstr "Verificar títulos de locais"
-
-#: CheckPlaceTitles/checkplacetitles.py:56
-msgid "manual|Check_place_titles"
-msgstr "Verificar_títulos_de_locais"
 
 #: CheckPlaceTitles/checkplacetitles.py:71
 msgid "Check Place title"
 msgstr "Verificar título de local"
-
-#: CheckPlaceTitles/checkplacetitles.py:86
-msgid "Checking Place Titles"
-msgstr "A verificar títulos de locais"
-
-#: CheckPlaceTitles/checkplacetitles.py:88
-msgid "Looking for place fields"
-msgstr "A procurar campos de locais"
 
 #: CheckPlaceTitles/checkplacetitles.py:107
 msgid "Differences"
 msgstr "Diferenças"
 
 #: CheckPlaceTitles/checkplacetitles.py:113
+#: CheckPlaceTitles/checkplacetitles.py:112
 msgid "No need modifications"
 msgstr "Não precisa de alterações"
 
 #: CheckPlaceTitles/checkplacetitles.py:114
+#: CheckPlaceTitles/checkplacetitles.py:113
 msgid "No changes need."
 msgstr "Não precisa de alterações."
 
-#: CheckPlaceTitles/checkplacetitles.py:143
-msgid "Select"
-msgstr "Seleccionar"
-
-#: CheckPlaceTitles/checkplacetitles.py:146
-msgid "Database"
-msgstr "Base de dados"
-
-#: CheckPlaceTitles/checkplacetitles.py:150
-msgid "Display"
-msgstr "Mostrar"
-
-#: CheckPlaceTitles/checkplacetitles.py:160
-msgid "Building display"
-msgstr "A construir a vista"
-
 #: CheckPlaceTitles/checkplacetitles.py:189
+#: CheckPlaceTitles/checkplacetitles.py:187
 msgid "Legacy place"
 msgstr "Local antigo"
 
 #: CheckPlaceTitles/checkplacetitles.py:203
+#: CheckPlaceTitles/checkplacetitles.py:201
 msgid "Modify Place titles"
 msgstr "Modificar títulos de locais"
 
 #: CheckPlaceTitles/checkplacetitles.py:226
+#: CheckPlaceTitles/checkplacetitles.py:224
 msgid "Place titles"
 msgstr "Títulos de locais"
 
@@ -89,17 +79,9 @@ msgstr "Remover conteúdo do campo de título se não corresponder"
 msgid "Copy content of place title field to a new note."
 msgstr "Copiar conteúdo do campo de título para uma nova nota."
 
-#: CheckPlaceTitles/checkplacetitles.glade:87
-msgid "Mark"
-msgstr "Marcar"
-
 #: CheckPlaceTitles/checkplacetitles.glade:91
 msgid "Attach a tag on selected places."
 msgstr "Anexar uma etiqueta nos locais seleccionados."
-
-#: CheckPlaceTitles/checkplacetitles.glade:150
-msgid "_Accept changes and close"
-msgstr "_Aceitar alterações e fechar"
 
 #: CheckPlaceTitles/checkplacetitles.glade:177
 msgid "column"

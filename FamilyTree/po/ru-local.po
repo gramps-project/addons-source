@@ -1,14 +1,24 @@
-# Russian translation for FamilyTree
+# Russian translation for MediaMerge
 # This file is distributed under the same license as the Gramps package.
 #
-# Ivan Komaritsyn <vantu5z@mail.ru>, 2018.
+# Ivan Komaritsyn <vantu5z@mail.ru>, 2015, 2016, 2017, 2018, 2019, 2020, 2021.
+# Alexander Bogdashevsky <sanderb@kezomba.com>, 2004.
+# Alex Roitman <shura@gramps-project.org>, 2002, 2003, 2004, 2005, 2006, 2007.
+# Konstantin Dorichev <kdorichev@gmail.com>, 2008.
+# Yevgeny Zegzda <ezegjda@ya.ru>, 2009, 2010.
+# vantu5z <vantu5z@mail.ru>, 2020.
+# Komaritsyn Ivan <vantu5z@mail.ru>, 2018.
+# Andrey Baznikin (http://d.scn.ru/), 2009, 2010, 2011.
+# Vassilii Khachaturov <vassilii@tarunz.org>, 2011, 2012, 2013, 2014.
+# Egor Reentov <egor.gramps@gmail.com>, 2011, 2012, 2013.
+# Artem Glebov <artem.glebov@gmail.com>, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-30 12:51+0300\n"
-"PO-Revision-Date: 2018-11-09 13:16+0300\n"
+"POT-Creation-Date: 2018-12-04 16:31+0300\n"
+"PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
@@ -18,14 +28,57 @@ msgstr ""
 "X-Generator: Gtranslator 2.91.7\n"
 "X-Poedit-Language: Russian\n"
 "X-Poedit-Country: RUSSIAN FEDERATION\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: FamilyTree/FamilyTree.gpr.py:3
-msgid "Family Tree"
-msgstr "Семейное древо"
+#: FamilySheet/FamilySheet.py:749 FamilySheet/FamilySheet.py:769
+#: FamilyTree/FamilyTree.py:926
+#, python-format
+msgid "on %(ymd_date)s"
+msgstr "в %(ymd_date)s"
 
-#: FamilyTree/FamilyTree.gpr.py:4
+#: FamilySheet/FamilySheet.py:751 FamilySheet/FamilySheet.py:771
+#: FamilyTree/FamilyTree.py:928
+#, python-format
+msgid "in %(ym_date)s"
+msgstr "в %(ym_date)s"
+
+#: FamilySheet/FamilySheet.py:753 FamilySheet/FamilySheet.py:773
+#: FamilyTree/FamilyTree.py:930
+#, python-format
+msgid "in %(y_date)s"
+msgstr "в %(y_date)s"
+
+#: FamilySheet/FamilySheet.py:757 FamilySheet/FamilySheet.py:777
+#: FamilyTree/FamilyTree.py:934
+#, python-format
+msgid "on %(placeholder)s"
+msgstr "в %(placeholder)s"
+
+#: FamilySheet/FamilySheet.py:759 FamilySheet/FamilySheet.py:779
+#: FamilyTree/FamilyTree.py:937
+#, python-format
+msgid "on %(placeholder)s (%(partial)s)"
+msgstr "в %(placeholder)s (%(partial)s)"
+
+#: FamilySheet/FamilySheet.py:804 FamilySheet/FamilySheet.py:806
+#: FamilySheet/FamilySheet.py:824 FamilySheet/FamilySheet.py:826
+#: FamilyTree/FamilyTree.py:954
+#, python-format
+msgid "in %(place)s"
+msgstr "в %(place)s"
+
+#: FamilySheet/FamilySheet.py:860 FamilySheet/FamilySheet.py:880
+#: FamilyTree/FamilyTree.py:1086
+msgid "Replace first name with call name"
+msgstr "Заменить имя на прозвище"
+
+#: FamilySheet/FamilySheet.py:861 FamilySheet/FamilySheet.py:881
+#: FamilyTree/FamilyTree.py:1087
+msgid "Underline call name in first name / add call name to first name"
+msgstr "Подчеркнуть прозвище в имени / добавить прозвище в имя"
+
+#: FamilyTree/FamilyTree.gpr.py:4 FamilyTree/FamilyTree.gpr.py:5
 msgid "Produces a graphical family tree."
 msgstr "Создаёт графическое представление семейного древа."
 
@@ -34,282 +87,179 @@ msgstr "Создаёт графическое представление сем�
 msgid "Family Tree for %s"
 msgstr "Семейное древо для %s"
 
-#: FamilyTree/FamilyTree.py:668 FamilyTree/FamilyTree.py:673
-msgid "Unknown"
-msgstr "Неизвестно"
-
-#: FamilyTree/FamilyTree.py:675
-#, python-format
-msgid "%(father)s and %(mother)s"
-msgstr "%(father)s и %(mother)s"
-
-#: FamilyTree/FamilyTree.py:682
+#: FamilyTree/FamilyTree.py:682 FamilyTree/FamilyTree.py:684
 msgid "Anonymous"
 msgstr "Неизвестный"
 
-#: FamilyTree/FamilyTree.py:905
+#: FamilyTree/FamilyTree.py:905 FamilyTree/FamilyTree.py:911
 msgid "born"
 msgstr "рождён"
 
-#: FamilyTree/FamilyTree.py:907
+#: FamilyTree/FamilyTree.py:907 FamilyTree/FamilyTree.py:913
 msgid "baptised"
 msgstr "крещён"
 
-#: FamilyTree/FamilyTree.py:909
+#: FamilyTree/FamilyTree.py:909 FamilyTree/FamilyTree.py:915
 msgid "died"
 msgstr "умер"
 
-#: FamilyTree/FamilyTree.py:911
+#: FamilyTree/FamilyTree.py:911 FamilyTree/FamilyTree.py:917
 msgid "buried"
 msgstr "захоронен"
 
-#: FamilyTree/FamilyTree.py:913
+#: FamilyTree/FamilyTree.py:913 FamilyTree/FamilyTree.py:919
 msgid "cremated"
 msgstr "кремирован"
 
-#: FamilyTree/FamilyTree.py:915
+#: FamilyTree/FamilyTree.py:915 FamilyTree/FamilyTree.py:921
 msgid "married"
 msgstr "брак"
 
-#: FamilyTree/FamilyTree.py:917
+#: FamilyTree/FamilyTree.py:917 FamilyTree/FamilyTree.py:923
 msgid "divorced"
 msgstr "разведен(а)"
 
-#: FamilyTree/FamilyTree.py:919
+#: FamilyTree/FamilyTree.py:919 FamilyTree/FamilyTree.py:925
 msgid "resident"
 msgstr "резидент"
 
-#: FamilyTree/FamilyTree.py:926
-#, python-format
-msgid "on %(ymd_date)s"
-msgstr "в %(ymd_date)s"
-
-#: FamilyTree/FamilyTree.py:928
-#, python-format
-msgid "in %(ym_date)s"
-msgstr "в %(ym_date)s"
-
-#: FamilyTree/FamilyTree.py:930
-#, python-format
-msgid "in %(y_date)s"
-msgstr "в %(y_date)s"
-
-#: FamilyTree/FamilyTree.py:934
-#, python-format
-msgid "on %(placeholder)s"
-msgstr "в %(placeholder)s"
-
-#: FamilyTree/FamilyTree.py:937
-#, python-format
-msgid "on %(placeholder)s (%(partial)s)"
-msgstr "в %(placeholder)s (%(partial)s)"
-
-#: FamilyTree/FamilyTree.py:954
-#, python-format
-msgid "in %(place)s"
-msgstr "в %(place)s"
-
-#: FamilyTree/FamilyTree.py:965
+#: FamilyTree/FamilyTree.py:965 FamilyTree/FamilyTree.py:971
 #, python-format
 msgid "(%(description)s)"
 msgstr "(%(description)s)"
 
-#: FamilyTree/FamilyTree.py:1043
-msgid "Tree Options"
-msgstr "Параметры древа"
-
-#: FamilyTree/FamilyTree.py:1045
-msgid "Center Family"
-msgstr "Главная семья"
-
-#: FamilyTree/FamilyTree.py:1046
+#: FamilyTree/FamilyTree.py:1046 FamilyTree/FamilyTree.py:1044
 msgid "The center family for the tree"
 msgstr "Главная семья для древа"
 
-#: FamilyTree/FamilyTree.py:1049
+#: FamilyTree/FamilyTree.py:1049 FamilyTree/FamilyTree.py:1047
 msgid "Ancestor Generations"
 msgstr "Поколения предков"
 
-#: FamilyTree/FamilyTree.py:1050
+#: FamilyTree/FamilyTree.py:1050 FamilyTree/FamilyTree.py:1048
 msgid "The number of ancestor generations to include in the tree"
 msgstr "Количество предков для включения в древо"
 
-#: FamilyTree/FamilyTree.py:1053
+#: FamilyTree/FamilyTree.py:1053 FamilyTree/FamilyTree.py:1051
 msgid "Descendant Generations"
 msgstr "Поколения потомков"
 
-#: FamilyTree/FamilyTree.py:1054
+#: FamilyTree/FamilyTree.py:1054 FamilyTree/FamilyTree.py:1052
 msgid "The number of descendant generations to include in the tree"
 msgstr "Количество потомков для включения в древо"
 
-#: FamilyTree/FamilyTree.py:1057
+#: FamilyTree/FamilyTree.py:1057 FamilyTree/FamilyTree.py:1055
 msgid "Kekule number of husband"
 msgstr "Число Кекуля для мужа"
 
-#: FamilyTree/FamilyTree.py:1058
+#: FamilyTree/FamilyTree.py:1058 FamilyTree/FamilyTree.py:1056
 msgid ""
 "The Kekule number of the husband (central family). Set 0 to not show Kekule "
 "numbers"
 msgstr ""
-"Число Кекуля для мужа (главная семья). Установите 0, чтобы скрыть "
-"числа Кекуля"
+"Число Кекуля для мужа (главная семья). Установите 0, чтобы скрыть числа "
+"Кекуля"
 
-#: FamilyTree/FamilyTree.py:1061
+#: FamilyTree/FamilyTree.py:1061 FamilyTree/FamilyTree.py:1059
 msgid "Scale to fit on a single page"
 msgstr "Масштабировать для расположения на одной странице"
 
-#: FamilyTree/FamilyTree.py:1062
+#: FamilyTree/FamilyTree.py:1062 FamilyTree/FamilyTree.py:1060
 msgid "Whether to scale to fit on a single page."
 msgstr "Нужно ли мастабировать для расположения на одной странице."
 
-#: FamilyTree/FamilyTree.py:1065
-msgid "Color"
-msgstr "Цвет"
-
-#: FamilyTree/FamilyTree.py:1067
+#: FamilyTree/FamilyTree.py:1067 FamilyTree/FamilyTree.py:1065
 msgid "No color"
 msgstr "Без цвета"
 
-#: FamilyTree/FamilyTree.py:1068
-msgid "Generations"
-msgstr "Поколения"
-
-#: FamilyTree/FamilyTree.py:1069
+#: FamilyTree/FamilyTree.py:1069 FamilyTree/FamilyTree.py:1067
 msgid "First generation"
 msgstr "Первое поколение"
 
-#: FamilyTree/FamilyTree.py:1070
+#: FamilyTree/FamilyTree.py:1070 FamilyTree/FamilyTree.py:1068
 msgid "Second generation"
 msgstr "Второе поколение"
 
-#: FamilyTree/FamilyTree.py:1071
+#: FamilyTree/FamilyTree.py:1071 FamilyTree/FamilyTree.py:1069
 msgid "Third generation"
 msgstr "Третье поколение"
 
-#: FamilyTree/FamilyTree.py:1072
+#: FamilyTree/FamilyTree.py:1072 FamilyTree/FamilyTree.py:1070
 msgid "Male line"
 msgstr "Мужская линия"
 
-#: FamilyTree/FamilyTree.py:1073
+#: FamilyTree/FamilyTree.py:1073 FamilyTree/FamilyTree.py:1071
 msgid "Male line and illegitimate children"
 msgstr "Мужская линия и незаконнорождённые дети"
 
-#: FamilyTree/FamilyTree.py:1074
+#: FamilyTree/FamilyTree.py:1074 FamilyTree/FamilyTree.py:1072
 msgid "Female line"
 msgstr "Женская линия"
 
-#: FamilyTree/FamilyTree.py:1077
+#: FamilyTree/FamilyTree.py:1077 FamilyTree/FamilyTree.py:1075
 msgid "Shuffle colors"
 msgstr "Перемешать цвета"
 
-#: FamilyTree/FamilyTree.py:1078
+#: FamilyTree/FamilyTree.py:1078 FamilyTree/FamilyTree.py:1076
 msgid "Whether to shuffle colors or order them in rainbow fashion."
 msgstr "Нужно ли перемешать цвета или использовать порядок радуги."
 
-#: FamilyTree/FamilyTree.py:1081
-msgid "Content"
-msgstr "Содержание"
-
-#: FamilyTree/FamilyTree.py:1083
-msgid "Use call name"
-msgstr "Использовать прозвище"
-
-#: FamilyTree/FamilyTree.py:1085
-msgid "Don't use call name"
-msgstr "Не использовать прозвище"
-
-#: FamilyTree/FamilyTree.py:1086
-msgid "Replace first name with call name"
-msgstr "Заменить имя на прозвище"
-
-#: FamilyTree/FamilyTree.py:1087
-msgid "Underline call name in first name / add call name to first name"
-msgstr "Подчеркнуть прозвище в имени / добавить прозвище в имя"
-
-#: FamilyTree/FamilyTree.py:1093
+#: FamilyTree/FamilyTree.py:1093 FamilyTree/FamilyTree.py:1091
 msgid "Include Occupation"
 msgstr "Включать род занятий"
 
-#: FamilyTree/FamilyTree.py:1096
-msgid "Include Notes"
-msgstr "Включать заметки"
-
-#: FamilyTree/FamilyTree.py:1099
+#: FamilyTree/FamilyTree.py:1099 FamilyTree/FamilyTree.py:1097
 msgid "Include Residence"
 msgstr "Включать место жительства"
 
-#: FamilyTree/FamilyTree.py:1102
+#: FamilyTree/FamilyTree.py:1102 FamilyTree/FamilyTree.py:1100
 msgid "Print event data (dead person)"
 msgstr "Выводить данные собития (умершее лицо)"
 
-#: FamilyTree/FamilyTree.py:1104 FamilyTree/FamilyTree.py:1112
-msgid "None"
-msgstr "Нет"
-
 #: FamilyTree/FamilyTree.py:1105 FamilyTree/FamilyTree.py:1113
+#: FamilyTree/FamilyTree.py:1103 FamilyTree/FamilyTree.py:1111
 msgid "Year only"
 msgstr "Только год"
 
 #: FamilyTree/FamilyTree.py:1106 FamilyTree/FamilyTree.py:1114
+#: FamilyTree/FamilyTree.py:1104 FamilyTree/FamilyTree.py:1112
 msgid "Full date"
 msgstr "Полная дата"
 
 #: FamilyTree/FamilyTree.py:1107 FamilyTree/FamilyTree.py:1115
+#: FamilyTree/FamilyTree.py:1105 FamilyTree/FamilyTree.py:1113
 msgid "Full date and place"
 msgstr "Полная дата и место"
 
-#: FamilyTree/FamilyTree.py:1110
+#: FamilyTree/FamilyTree.py:1110 FamilyTree/FamilyTree.py:1108
 msgid "Print event data (living person)"
 msgstr "Выводить данные собития (живые лица)"
 
-#: FamilyTree/FamilyTree.py:1118
+#: FamilyTree/FamilyTree.py:1118 FamilyTree/FamilyTree.py:1116
 msgid "Fall back to baptism if birth event missing"
 msgstr "Использовать крещение, если событие о рождении отсутствует"
 
-#: FamilyTree/FamilyTree.py:1121
+#: FamilyTree/FamilyTree.py:1121 FamilyTree/FamilyTree.py:1119
 msgid "Fall back to burial or cremation if death event missing"
-msgstr "Использовать захоронение или кремацию, если событие о смерти отсутствует"
+msgstr ""
+"Использовать захоронение или кремацию, если событие о смерти отсутствует"
 
-#: FamilyTree/FamilyTree.py:1124
+#: FamilyTree/FamilyTree.py:1124 FamilyTree/FamilyTree.py:1122
 msgid "Protect private items"
 msgstr "Защитить личные данные"
 
-#: FamilyTree/FamilyTree.py:1129
-msgid "Print fields for missing information"
-msgstr "Печатать поля для отсутствующей информации"
-
-#: FamilyTree/FamilyTree.py:1130
-msgid "Whether to include fields for missing information."
-msgstr "Включать ли поля для отсутствующей информации."
-
-#: FamilyTree/FamilyTree.py:1133
+#: FamilyTree/FamilyTree.py:1133 FamilyTree/FamilyTree.py:1131
 msgid "Include event description"
 msgstr "Включать описание событий"
 
-#: FamilyTree/FamilyTree.py:1136
+#: FamilyTree/FamilyTree.py:1136 FamilyTree/FamilyTree.py:1134
 msgid "Text Options"
 msgstr "Параметры текста"
 
-#: FamilyTree/FamilyTree.py:1138
-msgid "Title text"
-msgstr "Текст заголовка"
-
-#: FamilyTree/FamilyTree.py:1141
-msgid "Footer text"
-msgstr "Нижний колонтитул"
-
-#: FamilyTree/FamilyTree.py:1156
-msgid "The style used for the title."
-msgstr "Стиль заголовка."
-
-#: FamilyTree/FamilyTree.py:1164
+#: FamilyTree/FamilyTree.py:1164 FamilyTree/FamilyTree.py:1162
 msgid "The style used for names."
 msgstr "Стиль для имён."
 
-#: FamilyTree/FamilyTree.py:1172
+#: FamilyTree/FamilyTree.py:1172 FamilyTree/FamilyTree.py:1170
 msgid "The style used for data (birth, death, marriage, divorce)."
 msgstr "Стиль для данных (рождение, смерть, брак, развод)."
-
-#: FamilyTree/FamilyTree.py:1182
-msgid "The style used for the footer."
-msgstr "Стиль нижней строки."

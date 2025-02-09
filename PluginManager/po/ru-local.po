@@ -1,42 +1,49 @@
-# Russian translation for PluginManager Gramps addon.
+# Russian translation for MediaMerge
 # This file is distributed under the same license as the Gramps package.
-# Copyright (C) 2001-2018 Free Software Foundation, Inc.
 #
-# Ivan Komaritsyn <vantu5z@mail.ru>, 2017-2018.
+# Ivan Komaritsyn <vantu5z@mail.ru>, 2015, 2016, 2017, 2018, 2019, 2020, 2021.
+# Alexander Bogdashevsky <sanderb@kezomba.com>, 2004.
+# Alex Roitman <shura@gramps-project.org>, 2002, 2003, 2004, 2005, 2006, 2007.
+# Konstantin Dorichev <kdorichev@gmail.com>, 2008.
+# Yevgeny Zegzda <ezegjda@ya.ru>, 2009, 2010.
+# vantu5z <vantu5z@mail.ru>, 2020.
+# Komaritsyn Ivan <vantu5z@mail.ru>, 2018.
+# Andrey Baznikin (http://d.scn.ru/), 2009, 2010, 2011.
+# Vassilii Khachaturov <vassilii@tarunz.org>, 2011, 2012, 2013, 2014.
+# Egor Reentov <egor.gramps@gmail.com>, 2011, 2012, 2013.
+# Artem Glebov <artem.glebov@gmail.com>, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-26 14:43+0300\n"
-"PO-Revision-Date: 2018-12-26 14:45+0300\n"
+"POT-Creation-Date: 2018-12-04 16:31+0300\n"
+"PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 "X-Generator: Gtranslator 2.91.7\n"
+"X-Poedit-Language: Russian\n"
+"X-Poedit-Country: RUSSIAN FEDERATION\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: PluginManager/PluginManager.gpr.py:29
+#: PluginManager/PluginManager.gpr.py:29 PluginManager/PluginManager.gpr.py:30
 msgid "Plugin Manager Enhanced"
 msgstr "Расширенный менеджер дополнений"
 
-#: PluginManager/PluginManager.gpr.py:30
+#: PluginManager/PluginManager.gpr.py:30 PluginManager/PluginManager.gpr.py:31
 msgid "An Addon/Plugin Manager with several additional capabilities"
 msgstr "Менеджер дополнений с расширенными возможностями"
 
-#: PluginManager/PluginManager.py:87
+#: PluginManager/PluginManager.py:87 PluginManager/PluginManager.py:84
 msgid "Plugin Manager - Enhanced"
 msgstr "Менеджер дополнений - расширенный"
 
-#: PluginManager/PluginManager.py:144
-msgid "_Help"
-msgstr "_Справка"
-
-#: PluginManager/PluginManager.py:151
+#: PluginManager/PluginManager.py:151 PluginManager/PluginManager.py:154
 msgid ""
 "Enter search words to filter the addons.\n"
 "All the words must be present somewhere in the row or\n"
@@ -48,101 +55,29 @@ msgstr ""
 "или в имени файла.\n"
 "Регистр и порядок слов неважен."
 
-#: PluginManager/PluginManager.py:155
+#: PluginManager/PluginManager.py:155 PluginManager/PluginManager.py:158
 msgid "Search..."
 msgstr "Поиск..."
 
-#: PluginManager/PluginManager.py:161
+#: PluginManager/PluginManager.py:161 ../gramps/gui/plug/_windows.py:816
 msgid "Check for updated addons now"
 msgstr "Проверить дополнения на наличие обновлений"
 
-#: PluginManager/PluginManager.py:168
-msgid "Reload"
-msgstr "Перезагрузить"
-
-#: PluginManager/PluginManager.py:174 PluginManager/PluginManager.py:734
-msgid "_Close"
-msgstr "_Закрыть"
-
-#: PluginManager/PluginManager.py:207
+#: PluginManager/PluginManager.py:207 PluginManager/PluginManager.py:216
 msgid "Restart..."
 msgstr "Перезапустить..."
 
-#: PluginManager/PluginManager.py:208
+#: PluginManager/PluginManager.py:208 PluginManager/PluginManager.py:217
 msgid ""
 "Please Restart Gramps so that your addon changes can be safely completed."
 msgstr "Перезапустите Gramps, чтобы применить изменения в дополнении."
 
-#: PluginManager/PluginManager.py:284
-msgid "Id"
-msgstr "Id"
-
-#: PluginManager/PluginManager.py:285
-msgid "Plugin name"
-msgstr "Название модуля расширения"
-
-#: PluginManager/PluginManager.py:286 PluginManager/PluginManager.py:457
-msgid "Description"
-msgstr "Описание"
-
-#: PluginManager/PluginManager.py:287
-msgid "Version"
-msgstr "Версия"
-
-#: PluginManager/PluginManager.py:288
-msgid "Authors"
-msgstr "Авторы"
-
-#: PluginManager/PluginManager.py:289
-msgid "Email"
-msgstr "Эл. почта"
-
-#: PluginManager/PluginManager.py:290
-msgid "Filename"
-msgstr "Имя файла"
-
-#: PluginManager/PluginManager.py:291
-msgid "Location"
-msgstr "Расположение"
-
-#: PluginManager/PluginManager.py:296
-msgid "Loaded"
-msgstr "Загружен"
-
-#: PluginManager/PluginManager.py:299
-msgid "Hidden"
-msgstr "Скрытый"
-
-#: PluginManager/PluginManager.py:304 PluginManager/PluginManager.py:698
-msgid "Failed"
-msgstr "Неудачно"
-
-#: PluginManager/PluginManager.py:377
-msgid "Installation Errors"
-msgstr "Ошибки при установке"
-
-#: PluginManager/PluginManager.py:378
-msgid "The following addons had errors: "
-msgstr "Следующие дополнения имели ошибки: "
-
-#: PluginManager/PluginManager.py:400
-msgid "Error"
-msgstr "Ошибка"
-
-#: PluginManager/PluginManager.py:401
+#: PluginManager/PluginManager.py:401 PluginManager/PluginManager.py:336
 #, python-format
 msgid "Error removing the '%s' directory, The uninstall may have failed"
 msgstr "Ошибка удаления каталога '%s', при удалении дополнения возникли ошибки"
 
-#: PluginManager/PluginManager.py:429
-msgid "Type"
-msgstr "Тип"
-
-#: PluginManager/PluginManager.py:438
-msgid "Status"
-msgstr "Статус"
-
-#: PluginManager/PluginManager.py:441
+#: PluginManager/PluginManager.py:441 PluginManager/PluginManager.py:376
 msgid ""
 "'*' items are supplied by 3rd party authors,\n"
 "<s>strikeout</s> items are hidden"
@@ -150,109 +85,66 @@ msgstr ""
 "'*' дополнения поддерживаются сторонними авторами,\n"
 "<s>зачёркнутые</s> дополнения скрыты"
 
-#: PluginManager/PluginManager.py:449
-msgid "Name"
-msgstr "Название"
-
-#: PluginManager/PluginManager.py:472
+#: PluginManager/PluginManager.py:472 ../gramps/gui/plug/_windows.py:1079
+#: ../gramps/gui/plug/_windows.py:1137
 msgid "Info"
 msgstr "Информация"
 
 #: PluginManager/PluginManager.py:475 PluginManager/PluginManager.py:585
+#: PluginManager/PluginManager.py:410 PluginManager/PluginManager.py:530
 msgid "Hide"
 msgstr "Скрыть"
 
-#: PluginManager/PluginManager.py:478 PluginManager/PluginManager.py:599
-msgid "Install"
-msgstr "Установить"
-
-#: PluginManager/PluginManager.py:481
-msgid "Edit"
-msgstr "Изменить"
-
-#: PluginManager/PluginManager.py:483
-msgid "Load"
-msgstr "Загрузить"
-
-#: PluginManager/PluginManager.py:494
+#: PluginManager/PluginManager.py:494 PluginManager/PluginManager.py:430
 msgid "Show hidden items"
 msgstr "Показать скрытые дополнения"
 
-#: PluginManager/PluginManager.py:502
+#: PluginManager/PluginManager.py:502 PluginManager/PluginManager.py:438
 msgid "Show Built-in items"
 msgstr "Показать встроенные дополнения"
 
-#: PluginManager/PluginManager.py:509
+#: PluginManager/PluginManager.py:509 PluginManager/PluginManager.py:445
 msgid "* indicates 3rd party addon"
 msgstr "* обозначает сторонние дополнения"
 
-#: PluginManager/PluginManager.py:514
+#: PluginManager/PluginManager.py:514 PluginManager/PluginManager.py:450
 msgid "Plugins"
 msgstr "Дополнения"
 
-#: PluginManager/PluginManager.py:583
+#: PluginManager/PluginManager.py:583 PluginManager/PluginManager.py:528
 msgid "Unhide"
 msgstr "Показать"
 
-#: PluginManager/PluginManager.py:602
+#: PluginManager/PluginManager.py:602 PluginManager/PluginManager.py:547
 msgid "Uninstall"
 msgstr "Удалить"
 
-#: PluginManager/PluginManager.py:612
+#: PluginManager/PluginManager.py:612 ../gramps/gui/plug/_windows.py:962
 msgid "Checking Addons Failed"
 msgstr "Не удалось проверить дополнения"
 
-#: PluginManager/PluginManager.py:613
+#: PluginManager/PluginManager.py:613 ../gramps/gui/plug/_windows.py:964
 msgid "The addon repository appears to be unavailable. Please try again later."
 msgstr ""
 "Сервер с дополнениями временно недоступен. Пожалуйста, попробуйте ещё раз "
 "позднее."
 
-#: PluginManager/PluginManager.py:627
-msgid ""
-"3rd party addons are not shown until the addons update list is downloaded.  "
-"Would you like to check for updated addons now?"
-msgstr ""
-"Сторонние дополнения будут показаны после загрузки списка обновлений. "
-"Желаете проверить наличие обновлений сейчас?"
-
-#: PluginManager/PluginManager.py:630
-msgid "Yes"
-msgstr "Да"
-
-#: PluginManager/PluginManager.py:630
-msgid "No"
-msgstr "Нет"
-
-#: PluginManager/PluginManager.py:673
+#: PluginManager/PluginManager.py:673 PluginManager/PluginManager.py:721
 msgid "*Available"
 msgstr "*Доступно"
 
-#: PluginManager/PluginManager.py:687
+#: PluginManager/PluginManager.py:687 PluginManager/PluginManager.py:737
 msgid "Built-in"
 msgstr "Встроено"
 
-#: PluginManager/PluginManager.py:692
+#: PluginManager/PluginManager.py:692 PluginManager/PluginManager.py:742
 msgid "*Installed"
 msgstr "*Установлено"
 
-#: PluginManager/PluginManager.py:701
+#: PluginManager/PluginManager.py:701 PluginManager/PluginManager.py:751
 msgid "Update Available"
 msgstr "Доступно обновление"
 
-#: PluginManager/PluginManager.py:728
-#, python-format
-msgid "%(str1)s: %(str2)s"
-msgstr "%(str1)s: %(str2)s"
-
-#: PluginManager/PluginManager.py:728
+#: PluginManager/PluginManager.py:728 ../gramps/gui/plug/_windows.py:1648
 msgid "Detailed Info"
 msgstr "Подробная информация"
-
-#: PluginManager/PluginManager.py:827
-msgid "Updated"
-msgstr "Обновлено"
-
-#: PluginManager/PluginManager.py:838
-msgid "updates|New"
-msgstr "Новые"

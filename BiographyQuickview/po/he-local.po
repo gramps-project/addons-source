@@ -1,28 +1,32 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Igal Shapira <igal.shapira@gmail.com>, 2009, 2010, 2011.
+# Avi Markovitz <avi.markovitz@gmail.com>, 2019.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Gramps 5.2.0 - Biography Quickview\n"
+"Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-01 13:52-0500\n"
-"PO-Revision-Date: 2023-09-10 06:36+0300\n"
+"POT-Creation-Date: 2023-09-10 07:59+0300\n"
+"PO-Revision-Date: 2023-09-10 08:07+0300\n"
 "Last-Translator: \n"
-"Language-Team: Avi markovitz\n"
+"Language-Team: Avi Markovitz\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==2 ? 1 : n>10 && n%10==0 ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==2 ? 1 : n>10 && n%10==0 ? "
+"2 : 3);\n"
 "X-Generator: Poedit 3.0.1\n"
 
 #: BiographyQuickview/BiographyQuickview.gpr.py:9
+#: BiographyQuickview/BiographyQuickview.gpr.py:10
 msgid "Biography"
 msgstr "תולדות חיים"
 
 #: BiographyQuickview/BiographyQuickview.gpr.py:10
+#: BiographyQuickview/BiographyQuickview.gpr.py:11
 msgid "Display a text biography"
 msgstr "הצגת תולדות חיים מילוליים"
 
@@ -30,7 +34,3 @@ msgstr "הצגת תולדות חיים מילוליים"
 #, python-format
 msgid "Biography for %s"
 msgstr "תולדות חיים של %s"
-
-#: BiographyQuickview/BiographyQuickview.py:92
-msgid "Sources"
-msgstr "מקורות"

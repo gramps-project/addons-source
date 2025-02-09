@@ -3,58 +3,57 @@
 # translation of de.po to Deutsch
 #
 #
-# Anton Huber <anton_huber@gmx.de>, 2005,2006.
+# Anton Huber <anton_huber@gmx.de>, 2005, 2006.
 # Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
 # Sebastian Vöcking <voeck@web.de>, 2005.
 # Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
 # Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 # Alois Pöttker <alois.poettker@gmx.de>, 2017.
+# Allan Nordhøy <epost@anotheragency.no>, 2021.
+# R. B. <weblate@macdefender.org>, 2021.
+# RiseT <tareiss1971@yahoo.de>, 2021.
+# David Straub <straub@protonmail.com>, 2021.
+# nautilusx <translate@disroot.org>, 2021.
+# Andreas Abraham <andreas.abraham@gmx.de>, 2021.
+# RiseT <twilite505-4bf24909@yahoo.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2020-07-23 20:24+0200\n"
+"POT-Creation-Date: 2020-08-02 22:39+0200\n"
+"PO-Revision-Date: 2025-02-09 06:44+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
-"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
+"addons/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 19.12.3\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10-dev\n"
 
-#: AttachSourceTool/AttachSourceTool.gpr.py:25
-#: AttachSourceTool/AttachSourceTool.py:137
-#: AttachSourceTool/AttachSourceTool.py:155
-msgid "Attach Source"
-msgstr "Quelle hinzufügen"
-
-#: AttachSourceTool/AttachSourceTool.gpr.py:26
-msgid "Attaches a shared source to multiple objects."
-msgstr "Fügt verteilte Quellen mehreren Objekten hinzu."
-
-#: AttachSourceTool/AttachSourceTool.py:67
-#: AttachSourceTool/AttachSourceTool.py:140
-msgid "Options"
-msgstr "Optionen"
-
-#: AttachSourceTool/AttachSourceTool.py:69
-msgid "Person Filter"
-msgstr "Personenfilter"
-
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:83
 #: AttachSourceTool/AttachSourceTool.py:70
 msgid "Select filter to restrict people"
 msgstr "Filter zum eingrenzen der Personen wählen"
 
-#: AttachSourceTool/AttachSourceTool.py:74
-msgid "Filter Person"
-msgstr "Personenfilter"
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:237
+#: AttachSourceTool/AttachSourceTool.py:157
+msgid "Processing...\n"
+msgstr "Verarbeitung...\n"
 
-#: AttachSourceTool/AttachSourceTool.py:75
-msgid "The center person for the filter"
-msgstr "Die Hauptperson für den Filter"
+#: AttachSourceTool/AttachSourceTool.gpr.py:25
+#: AttachSourceTool/AttachSourceTool.py:137
+#: AttachSourceTool/AttachSourceTool.py:155
+#: AttachSourceTool/AttachSourceTool.gpr.py:26
+msgid "Attach Source"
+msgstr "Quelle hinzufügen"
+
+#: AttachSourceTool/AttachSourceTool.gpr.py:26
+#: AttachSourceTool/AttachSourceTool.gpr.py:27
+msgid "Attaches a shared source to multiple objects."
+msgstr "Fügt verteilte Quellen mehreren Objekten hinzu."
 
 #: AttachSourceTool/AttachSourceTool.py:81
 msgid "Source type"
@@ -87,14 +86,6 @@ msgstr "Vorhandene Quellen ID"
 #: AttachSourceTool/AttachSourceTool.py:95
 msgid "ID of source to attach"
 msgstr "ID der anzuhängenden Quelle"
-
-#: AttachSourceTool/AttachSourceTool.py:156
-msgid "Results"
-msgstr "Ergebnisse"
-
-#: AttachSourceTool/AttachSourceTool.py:157
-msgid "Processing...\n"
-msgstr "Verarbeitung...\n"
 
 #: AttachSourceTool/AttachSourceTool.py:174
 msgid "Attaching sources...\n"

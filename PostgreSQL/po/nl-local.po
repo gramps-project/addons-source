@@ -1,74 +1,37 @@
-# Dutch translation of addon PostgreSQL.
+# Dutch translation of addon MediaMerge.
 # Copyright (C) 2020 Gramps project
-# This file is distributed under the same license as the PostgreSQL package.
-# Jan Sparreboom <jan@sparreboom.net>, 2020.
+# This file is distributed under the same license as the MediaMerge package.
+# Jan Sparreboom <jan@sparreboom.net>, 2020, 2021, 2023.
+# Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
+# Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
+# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
+# Erik De Richter <frederik.de.richter@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
+# Harmen Huizinga <harmenhuizinga@sigmo.nl>, 2013.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PostgreSQL 5.x\n"
+"Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
 "POT-Creation-Date: 2019-01-04 18:55-0600\n"
-"PO-Revision-Date: 2020-08-07 14:37+0200\n"
-"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
-"Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
+"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
+"addons/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10-dev\n"
 
-#: PostgreSQL/postgresql.gpr.py:26
+#: PostgreSQL/postgresql.gpr.py:26 PostgreSQL/postgresql.gpr.py:23
 msgid "PostgreSQL"
 msgstr "PostgreSQL"
 
-#: PostgreSQL/postgresql.gpr.py:27
+#: PostgreSQL/postgresql.gpr.py:27 PostgreSQL/postgresql.gpr.py:24
 msgid "_PostgreSQL Database"
 msgstr "_PostgreSQL Database"
 
-#: PostgreSQL/postgresql.gpr.py:28
+#: PostgreSQL/postgresql.gpr.py:28 PostgreSQL/postgresql.gpr.py:25
 msgid "PostgreSQL Database"
 msgstr "PostgreSQL-database"
-
-#: PostgreSQL/postgresql.gpr.py:42
-msgid "PostgreSQL Warning:  Python psycopg2 module not found."
-msgstr "PostgreSQL-waarschuwing: Python psycopg2-module niet gevonden."
-
-#: PostgreSQL/postgresql.gpr.py:48
-msgid "PostgreSQL Failed to Load"
-msgstr "PostgreSQL kan niet worden geladen"
-
-#: PostgreSQL/postgresql.gpr.py:49
-msgid ""
-"\n"
-"\n"
-"PostgreSQL is missing the psycopg2 python module.\n"
-"For now, it may be possible to install the files manually. See\n"
-"\n"
-"https://gramps-project.org/wiki/index.php?title=PostgreSQL \n"
-"\n"
-"To dismiss all future PostgreSQL warnings click Dismiss."
-msgstr ""
-"\n"
-"\n"
-"PostgreSQL mist de psycopg2 python-module.\n"
-"Voorlopig is het wellicht mogelijk om de bestanden handmatig te installeren. Zie\n"
-"\n"
-"https://gramps-project.org/wiki/index.php?title=PostgreSQL \n"
-"\n"
-"Om alle toekomstige PostgreSQL-waarschuwingen af te wijzen, klikt u op Negeren."
-
-#: PostgreSQL/postgresql.gpr.py:53
-msgid " Dismiss "
-msgstr " Negeren "
-
-#: PostgreSQL/postgresql.gpr.py:54
-msgid "Continue"
-msgstr "Doorgaan"
-
-#: PostgreSQL/postgresql.py:68
-msgid "Database version"
-msgstr "Database versie"
-
-#: PostgreSQL/postgresql.py:69
-msgid "Database module location"
-msgstr "Databasemodule locatie"

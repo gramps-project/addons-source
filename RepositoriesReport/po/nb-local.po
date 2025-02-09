@@ -1,166 +1,163 @@
-# Norwegian Bokmal translations for PACKAGE package.
-# Copyright (C) 2009 THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# translation of nb.po to
+# Gramps
+# Copyright (C) YEAR ORGANIZATION.
 #
+# Frode Jemtland <frode.jemtland@skolelinux.no>, 2003, 2004, 2005, 2006, 2008.
+# Axel Bojer <axelb@skolelinux.no>, 2003.
+# Jørgen Grønlund <jorgenhg@broadpark.no>, 2005.
+# Nils Kristian Tomren <project@nilsk.net>, 2006.
+# Espen Berg <espenbe@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2015, 2016.
+# Harald H. <haarektrans@gmail.com>, 2017.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-11-23 19:33+0100\n"
-"PO-Revision-Date: 2009-11-25 19:16+0100\n"
-"Last-Translator: \n"
-"Language-Team: Norwegian Bokmal <i18n-nb@lister.ping.uio.no>\n"
+"POT-Creation-Date: 2010-03-08 16:37+0100\n"
+"PO-Revision-Date: 2010-03-08 08:21+0100\n"
+"Last-Translator: Espen Berg <espenbe@gmail.com>\n"
+"Language-Team: American English <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Norwegian Bokmaal <i18n-nb@lister.ping.uio.no>\n"
+"Generated-By: pygettext.py 1.4\n"
+"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: DenominoViso/DenominoViso.py:2580 DenominoViso/DenominoViso.py:2607
+#: RepositoriesReport/RepositoriesReportAlt.py:355
+msgid "Include private records"
+msgstr "Ta med private poster"
+
 #: RepositoriesReport/RepositoriesReport.gpr.py:25
+#: RepositoriesReport/RepositoriesReport.gpr.py:26
 msgid "Repositories Report Options"
 msgstr ""
 
 #: RepositoriesReport/RepositoriesReport.gpr.py:26
 #: RepositoriesReport/RepositoriesReport.gpr.py:42
+#: RepositoriesReport/RepositoriesReport.gpr.py:27
+#: RepositoriesReport/RepositoriesReport.gpr.py:46
 msgid "Produces a textual repositories report"
 msgstr "Lager en tekstbasert rapport over oppbevaringssteder"
 
 #: RepositoriesReport/RepositoriesReport.gpr.py:41
 #: RepositoriesReport/RepositoriesReport.py:71
 #: RepositoriesReport/RepositoriesReportAlt.py:92
+#: RepositoriesReport/RepositoriesReport.gpr.py:45
+#: RepositoriesReport/RepositoriesReport.py:80
+#: RepositoriesReport/RepositoriesReportAlt.py:139
 msgid "Repositories Report"
 msgstr "Oppbevaringsstedsrapport"
 
-#: RepositoriesReport/RepositoriesReport.py:142
-#: RepositoriesReport/RepositoriesReportAlt.py:321
-msgid "Report Options"
-msgstr "Innstillinger for rapporter"
-
 #: RepositoriesReport/RepositoriesReport.py:166
 #: RepositoriesReport/RepositoriesReportAlt.py:385
+#: SourcesCitationsReport/SourcesCitationsReport.py:480
 msgid "The style used for the title of the report."
 msgstr "Stilen som brukes på rapportens tittel."
 
 #: RepositoriesReport/RepositoriesReport.py:180
 #: RepositoriesReport/RepositoriesReportAlt.py:399
+#: RepositoriesReport/RepositoriesReport.py:189
+#: RepositoriesReport/RepositoriesReportAlt.py:518
 msgid "The style used for repository title."
 msgstr "Stil som brukes på tittel på oppbevaringssted."
 
 #: RepositoriesReport/RepositoriesReport.py:194
 #: RepositoriesReport/RepositoriesReportAlt.py:414
+#: SourcesCitationsReport/SourcesCitationsReport.py:591
 msgid "The style used for each section."
 msgstr "Stilen som brukes til kapitteloverskriften."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:121
-msgid "Private"
-msgstr "Privat"
-
-#: RepositoriesReport/RepositoriesReportAlt.py:163
-#, python-format
-msgid "Address:"
-msgstr "Adresse:"
-
-#: RepositoriesReport/RepositoriesReportAlt.py:191
-#, python-format
-msgid "%s. Private"
-msgstr "%s. Privat"
-
-#: RepositoriesReport/RepositoriesReportAlt.py:231
-#, python-format
-msgid "Author:"
-msgstr "Forfatter:"
-
-#: RepositoriesReport/RepositoriesReportAlt.py:233
-#, python-format
-msgid "Abbreviation:"
-msgstr "Forkortelse:"
-
 #: RepositoriesReport/RepositoriesReportAlt.py:235
+#: RepositoriesReport/RepositoriesReportAlt.py:273
 #, python-format
 msgid "Publication information:"
 msgstr "Publiseringsinformasjon:"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:237
+#: RepositoriesReport/RepositoriesReportAlt.py:278
 #, python-format
 msgid "Data:"
 msgstr "Data:"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:323
+#: RepositoriesReport/RepositoriesReportAlt.py:431
 msgid "Include repository's urls"
 msgstr "Ta med lenke til oppbevaringssteder"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:324
+#: RepositoriesReport/RepositoriesReportAlt.py:432
 msgid "Whether to include urls on repository."
 msgstr "Om lenke til oppbevaringssteder skal tas med."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:327
+#: RepositoriesReport/RepositoriesReportAlt.py:435
 msgid "Include repository's address"
 msgstr "Ta med adresse til oppbevaringssted"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:328
+#: RepositoriesReport/RepositoriesReportAlt.py:436
 msgid "Whether to include addresses on repository."
 msgstr "Om adresser til oppbevaringssteder skal tas med."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:331
+#: RepositoriesReport/RepositoriesReportAlt.py:439
 msgid "Include source's author"
 msgstr "Ta med kildens forfatter"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:332
+#: RepositoriesReport/RepositoriesReportAlt.py:440
 msgid "Whether to include author."
 msgstr "Om forfatter skal tas med."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:335
+#: RepositoriesReport/RepositoriesReportAlt.py:443
 msgid "Include source's abbreviation"
 msgstr "Ta med kildens kortnavn"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:336
+#: RepositoriesReport/RepositoriesReportAlt.py:444
 msgid "Whether to include abbreviation."
 msgstr "Om kortnavn skal tas med."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:339
+#: RepositoriesReport/RepositoriesReportAlt.py:447
 msgid "Include source's publication information"
 msgstr "Ta med kildens publiseringsinformasjon"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:340
+#: RepositoriesReport/RepositoriesReportAlt.py:448
 msgid "Whether to include publication information."
 msgstr "Om publiseringsinformasjon skal tas med."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:343
+#: RepositoriesReport/RepositoriesReportAlt.py:451
 msgid "Include source's data"
 msgstr "Ta med kildens data"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:344
+#: RepositoriesReport/RepositoriesReportAlt.py:452
 msgid "Whether to include keys and values."
 msgstr "Om nøkler og verdier skal tas med."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:347
-msgid "Include notes"
-msgstr "Ta med kommentarer"
-
 #: RepositoriesReport/RepositoriesReportAlt.py:348
+#: RepositoriesReport/RepositoriesReportAlt.py:456
 msgid "Whether to include notes on repositories and sources."
 msgstr "Om notat for oppbevaringssteder og kilder skal tas med."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:351
+#: RepositoriesReport/RepositoriesReportAlt.py:459
 msgid "Include media"
 msgstr "Ta med media"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:352
-msgid "Whether to include media on sources."
-msgstr "Om media til kilder skal tas med."
-
-#: RepositoriesReport/RepositoriesReportAlt.py:355
-msgid "Include private records"
-msgstr "Ta med private poster"
-
 #: RepositoriesReport/RepositoriesReportAlt.py:356
+#: RepositoriesReport/RepositoriesReportAlt.py:468
 msgid "Whether to include repositories and sources marked as private."
-msgstr "Om oppbevaringssteder og kilder som er markert som private skal tas med."
+msgstr ""
+"Om oppbevaringssteder og kilder som er markert som private skal tas med."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:429
+#: RepositoriesReport/RepositoriesReportAlt.py:548
 msgid "The style used for child section."
 msgstr "Stilen som brukes til delkapittel."
-
-#: RepositoriesReport/RepositoriesReportAlt.py:441
-msgid "The basic style used for the note display."
-msgstr "Den grunnleggende stilen for notatvisning."
-

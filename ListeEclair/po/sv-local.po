@@ -2,58 +2,38 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Pär Ekholm <pehlm@pekholm.org>, 2021.
+# Bo Rosén <bo.rosen@home.se>, 2001.
+# Jens Arvidsson <jya@sverige.nu>, 2002, 2003, 2004, 2005.
+# Stefan Björk <betula@users.sourceforge.net>, 2005, 2006.
+# Peter Landgren <peter.talken@telia.com>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017.
+# Pär Ekholm <par.ekholm50@gmail.com>, 2016, 2018.
+# Pär Ekholm <par.ekholm@pekholm.se>, 2018, 2019.
+# Peter Landgren <peter@test>, 2010.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2021-05-26 19:34+0200\n"
-"Language-Team: \n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
+"Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/sv/>\n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3\n"
-"Last-Translator: Pär Ekholm <pehlm@pekholm.se>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: sv_SE\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10-dev\n"
 
 #: ListeEclair/ListeEclair.gpr.py:3 ListeEclair/ListeEclair.py:97
-#: ListeEclair/ListeEclair.py:104
+#: ListeEclair/ListeEclair.py:104 ListeEclair/ListeEclair.gpr.py:4
 msgid "Liste Eclair"
 msgstr "Snabblista"
 
-#: ListeEclair/ListeEclair.gpr.py:4
+#: ListeEclair/ListeEclair.gpr.py:4 ListeEclair/ListeEclair.gpr.py:5
 msgid "Produit une liste eclair"
 msgstr "Skapar en snabblista"
-
-#: ListeEclair/ListeEclair.py:97
-msgid "Generating report"
-msgstr "Skapar rapport"
-
-#: ListeEclair/ListeEclair.py:253
-msgid "Report Options"
-msgstr "Rapportalternativ"
-
-#: ListeEclair/ListeEclair.py:260
-msgid "Select using filter"
-msgstr "Välj filteranvändning"
-
-#: ListeEclair/ListeEclair.py:261
-msgid "Select places using a filter"
-msgstr "Välj ut platser med hjälp av ett filter"
-
-#: ListeEclair/ListeEclair.py:266
-msgid "Entire Database"
-msgstr "Hela databasen"
-
-#: ListeEclair/ListeEclair.py:273
-msgid "Select places individually"
-msgstr "Välj ut platser individuellt"
-
-#: ListeEclair/ListeEclair.py:274
-msgid "List of places to report on"
-msgstr "Lista på platser att rapportera om"
 
 #: ListeEclair/ListeEclair.py:277
 msgid "Type de Liste"
@@ -74,10 +54,6 @@ msgstr "Listtyp"
 #: ListeEclair/ListeEclair.py:284
 msgid "Include private data"
 msgstr "Ta med privata objekt"
-
-#: ListeEclair/ListeEclair.py:285
-msgid "Whether to include private data"
-msgstr "Huruvida ta med privata objekt"
 
 #: ListeEclair/ListeEclair.py:301
 msgid "The style used for the liste eclair."

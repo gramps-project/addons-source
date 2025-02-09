@@ -2,28 +2,49 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Pär Ekholm <pehlm@pekholm.org>, 2021.
+# Bo Rosén <bo.rosen@home.se>, 2001.
+# Jens Arvidsson <jya@sverige.nu>, 2002, 2003, 2004, 2005.
+# Stefan Björk <betula@users.sourceforge.net>, 2005, 2006.
+# Peter Landgren <peter.talken@telia.com>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017.
+# Pär Ekholm <par.ekholm50@gmail.com>, 2016, 2018.
+# Pär Ekholm <par.ekholm@pekholm.se>, 2018, 2019.
+# Peter Landgren <peter@test>, 2010.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-10 16:28-0600\n"
-"PO-Revision-Date: 2021-05-24 14:04+0200\n"
-"Language-Team: \n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
+"Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/sv/>\n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3\n"
-"Last-Translator: Pär Ekholm <pehlm@pekholm.se>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: sv_SE\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10-dev\n"
+
+#: EventDescriptionEditor/EventDescriptionEditor.py:142
+#: ImportMerge/importmerge.py:910 ImportMerge/importmerge.glade:407
+msgid "Replace"
+msgstr "Ersätt"
+
+#: BirthOrder/birthorder.glade:232 ImportMerge/importmerge.glade:364
+msgid "Done"
+msgstr "Klart"
+
+#: ImportMerge/importmerge.glade:264 CheckPlaceTitles/checkplacetitles.py:107
+msgid "Differences"
+msgstr "Skillnader"
 
 #: ImportMerge/importmerge.gpr.py:30 ImportMerge/importmerge.py:328
-#: ImportMerge/importmerge.py:707
+#: ImportMerge/importmerge.py:707 ImportMerge/importmerge.gpr.py:31
 msgid "Import and Merge tool"
 msgstr "Verktyg för att importera och slå samman"
 
-#: ImportMerge/importmerge.gpr.py:31
+#: ImportMerge/importmerge.gpr.py:31 ImportMerge/importmerge.gpr.py:33
 msgid ""
 "Compares a Gramps XML database with the current one, and allows merging of "
 "the differences."
@@ -38,10 +59,6 @@ msgstr "Importera och slå samman en Gramps XML"
 #: ImportMerge/importmerge.py:89
 msgid "Missing"
 msgstr "Saknas"
-
-#: ImportMerge/importmerge.py:91
-msgid "Added"
-msgstr "Tillagd"
 
 #: ImportMerge/importmerge.py:93
 msgid "Different"
@@ -139,65 +156,13 @@ msgstr ""
 "Denna post kommer inte att ändras i ditt träd.  Alla refererade poster har "
 "också markerats för att behålla."
 
-#: ImportMerge/importmerge.py:145
-msgid "Family"
-msgstr "Familj"
-
-#: ImportMerge/importmerge.py:145
-msgid "Person"
-msgstr "Person"
-
-#: ImportMerge/importmerge.py:145
-msgid "Citation"
-msgstr "Citat"
-
-#: ImportMerge/importmerge.py:145
-msgid "Event"
-msgstr "Händelse"
-
-#: ImportMerge/importmerge.py:145
-msgid "Media"
-msgstr "Media"
-
-#: ImportMerge/importmerge.py:146
-msgid "Note"
-msgstr "Notis"
-
-#: ImportMerge/importmerge.py:146
-msgid "Place"
-msgstr "Plats"
-
-#: ImportMerge/importmerge.py:146
-msgid "Repository"
-msgstr "Arkivplats"
-
-#: ImportMerge/importmerge.py:146
-msgid "Source"
-msgstr "Källa"
-
-#: ImportMerge/importmerge.py:146
-msgid "Tag"
-msgstr "Tagg"
-
-#: ImportMerge/importmerge.py:329
-msgid "Importing data..."
-msgstr "Importerar data..."
-
 #: ImportMerge/importmerge.py:338
 msgid "Import Failure"
 msgstr "Importfel"
 
-#: ImportMerge/importmerge.py:342
-msgid "Searching..."
-msgstr "Letar..."
-
 #: ImportMerge/importmerge.py:406
 msgid "Your Tree and import are the same."
 msgstr "Ditt träd och importen är samma."
-
-#: ImportMerge/importmerge.py:438
-msgid "Last changed"
-msgstr "Senast ändrad"
 
 #: ImportMerge/importmerge.py:451 ImportMerge/importmerge.py:460
 #: ImportMerge/importmerge.py:468 ImportMerge/importmerge.py:476
@@ -224,25 +189,9 @@ msgstr "Importerad"
 msgid "Result  "
 msgstr "Resultat  "
 
-#: ImportMerge/importmerge.py:709
-msgid "Processing..."
-msgstr "Arbetar..."
-
 #: ImportMerge/importmerge.py:710
 msgid "Import and Merge"
 msgstr "Importera och lägg samman"
-
-#: ImportMerge/importmerge.py:910 ImportMerge/importmerge.glade:407
-msgid "Replace"
-msgstr "Ersätt"
-
-#: ImportMerge/importmerge.py:915
-msgid "Add"
-msgstr "Lägg till"
-
-#: ImportMerge/importmerge.py:920
-msgid "Delete"
-msgstr "Radera"
 
 #: ImportMerge/importmerge.glade:8
 msgid ""
@@ -252,10 +201,6 @@ msgstr ""
 "A '*' indikerar att åtgärden var automarkerad, ett '?' indikerar en konflikt "
 "mellan automarkeringar."
 
-#: ImportMerge/importmerge.glade:9
-msgid "Action"
-msgstr "Åtgärd"
-
 #: ImportMerge/importmerge.glade:39
 msgid "Import file"
 msgstr "Importera fil"
@@ -263,18 +208,6 @@ msgstr "Importera fil"
 #: ImportMerge/importmerge.glade:124
 msgid "Select the difference you wish to examine."
 msgstr "Välj den skillnad du vill undersöka."
-
-#: ImportMerge/importmerge.glade:134
-msgid "Status"
-msgstr "Status"
-
-#: ImportMerge/importmerge.glade:149
-msgid "Object"
-msgstr "Objekt"
-
-#: ImportMerge/importmerge.glade:164
-msgid "ID"
-msgstr "ID"
 
 #: ImportMerge/importmerge.glade:180
 msgid "Object Name/Description"
@@ -292,14 +225,6 @@ msgstr ""
 msgid "Object and item"
 msgstr "Objekt och post"
 
-#: ImportMerge/importmerge.glade:264
-msgid "Differences"
-msgstr "Skillnader"
-
-#: ImportMerge/importmerge.glade:320
-msgid "Help"
-msgstr "Hjälp"
-
 #: ImportMerge/importmerge.glade:338
 msgid "This button will ignore the difference, no changes to your tree."
 msgstr "Denna knapp ignorerar skillnaden, inga ändringar i ditt träd."
@@ -312,10 +237,6 @@ msgstr "Avmarkera"
 msgid "This button will add the imported data as a new object to your tree."
 msgstr ""
 "Den här knappen lägger till importerad data som ett nytt objekt i ditt träd."
-
-#: ImportMerge/importmerge.glade:364
-msgid "Done"
-msgstr "Klart"
 
 #: ImportMerge/importmerge.glade:368
 msgid ""
@@ -376,24 +297,3 @@ msgstr "Automarkera familjer"
 #: ImportMerge/importmerge.glade:498
 msgid "Automark Parent Families"
 msgstr "Automarkera föräldrafamiljer"
-
-#: ImportMerge/importmerge.glade:551
-msgid "Close _without saving"
-msgstr "Stäng _utan att spara"
-
-#: ImportMerge/importmerge.glade:566
-msgid "_Cancel"
-msgstr "_Avbryt"
-
-#: ImportMerge/importmerge.glade:582
-msgid "_Save"
-msgstr "_Spara"
-
-#: ImportMerge/importmerge.glade:613
-msgid "Save Changes?"
-msgstr "Spara ändringar?"
-
-#: ImportMerge/importmerge.glade:644
-msgid "If you close without saving, the changes you have made will be lost"
-msgstr ""
-"Om du stänger utan att spara, så kommer de ändringar du gjort att förloras"

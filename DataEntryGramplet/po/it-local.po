@@ -1,137 +1,175 @@
-# Italian translations for PACKAGE package.
-# Copyright (C) 2009 THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# Italian translation for GRAMPS
+# Copyright (C) 2001-2010 the Gramps Project
 #
+# Common and noteworthy translations:
+#
+#   alternate              alternativo
+#   ancestor               ascendente
+#   ancestral              ascendenza
+#   autosave               salvataggio automatico
+#   baptism                battesimo
+#   birth                  nascita
+#   christening            battesimo (anachronistic - see gramps-devel ML)
+#   church parish          parrocchia
+#   county                 provincia
+#   country                stato
+#   common-law             (relazione) di fatto
+#   dead                   decedere
+#   death                  decesso
+#   descendant             discendente/discendenza
+#   had a child %(child)s  divenne padre/madre di %(child)s
+#                          (copes with male and femail children)
+#   he was son of          fu figlio di
+#   home person            persona-casa
+#   family (adj)           famigliare
+#   half-sibling           fratelli unilaterali
+#   in %(place)s           in quel di (copes with all sort of place names)
+#   location               località
+#   merge, to              fondere
+#   partner                partner
+#   province               provincia, regione
+#   record                 elemento
+#   relationship path      percorso (delle) relazioni
+#   report                 resoconto
+#   state (geog)           regione, stato
+#   step-sibling           fratellastri
+#   thumbnail              anteprima
+#   unmarried              celibe/nubile
+#
+# A special remark are required by some sentences related to reports.
+#
+# * "%s was born on %s"
+#
+#   In Italian, we use a tense equivalent to the English's past simple
+#   for living people, and the equivalent to English's present perfect
+#   for people who died.  Unfortunately, the program cannot distinguish
+#   between these two cases.
+#
+# * ", and was buried on %s."
+#
+#   In Italian, the word for buried declines accordingly to its subject
+#   gender.
+#
+# * "born %(date)s in %(place)s%(endnotes)s"
+#
+#   The same rule as for "buried" applies to born, as well.
+#
+# Marco Molteni <molter@gufi.org>, 2001-2002.
+# Lorenzo Cappelletti <lorenzo.cappelletti@email.it>, 2003.
+# Luigi Toscano <luigi.toscano@tiscali.it>, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019.
+# Giansalvo Gusinu <giansalvo.gusinu@gmail.com>, 2019.
+# Sebastiano Pistore <SebastianoPistore.info@protonmail.ch>, 2025.
+# Vincenzo Alfano <vinc.alfano@gmail.com>, 2016.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-11-23 19:28+0100\n"
-"PO-Revision-Date: 2009-11-23 21:28+0100\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2010-03-08 16:37+0100\n"
+"PO-Revision-Date: 2010-03-07 22:48+0100\n"
+"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: DataEntryGramplet/DataEntryGramplet.gpr.py:8
+#: DataEntryGramplet/DataEntryGramplet.gpr.py:9
 msgid "Data Entry Gramplet"
 msgstr ""
 
-#: DataEntryGramplet/DataEntryGramplet.gpr.py:12
-msgid "Data Entry"
-msgstr ""
-
-#: DataEntryGramplet/DataEntryGramplet.py:55
+#: DataEntryGramplet/DataEntryGramplet.py:55 FilterRules/activepersonrule.py:45
 #, fuzzy
 msgid "Active person"
 msgstr "Persona attiva: <b>%s</b>"
 
 #: DataEntryGramplet/DataEntryGramplet.py:56
+#: DataEntryGramplet/DataEntryGramplet.py:73
 msgid "Family:"
 msgstr "Famiglia:"
 
 #: DataEntryGramplet/DataEntryGramplet.py:58
 #: DataEntryGramplet/DataEntryGramplet.py:85
+#: DataEntryGramplet/DataEntryGramplet.py:76
+#: DataEntryGramplet/DataEntryGramplet.py:109
 #, fuzzy
 msgid "Surname, Given"
 msgstr "Cognome"
 
-#: DataEntryGramplet/DataEntryGramplet.py:59
-#: DataEntryGramplet/DataEntryGramplet.py:86
-msgid "Gender"
-msgstr "Sesso"
-
-#: DataEntryGramplet/DataEntryGramplet.py:59
-#: DataEntryGramplet/DataEntryGramplet.py:86
-msgid "female"
-msgstr "femmina"
-
-#: DataEntryGramplet/DataEntryGramplet.py:59
-#: DataEntryGramplet/DataEntryGramplet.py:86
-msgid "male"
-msgstr "maschio"
-
-#: DataEntryGramplet/DataEntryGramplet.py:59
-#: DataEntryGramplet/DataEntryGramplet.py:86
-msgid "unknown"
-msgstr "sconosciuto"
-
-#: DataEntryGramplet/DataEntryGramplet.py:60
-#: DataEntryGramplet/DataEntryGramplet.py:87
-msgid "Birth"
-msgstr "Nascita"
-
-#: DataEntryGramplet/DataEntryGramplet.py:61
-#: DataEntryGramplet/DataEntryGramplet.py:88
-msgid "Death"
-msgstr "Decesso"
-
 #: DataEntryGramplet/DataEntryGramplet.py:69
+#: DataEntryGramplet/DataEntryGramplet.py:89
 msgid "Save"
 msgstr ""
 
 #: DataEntryGramplet/DataEntryGramplet.py:72
+#: DataEntryGramplet/DataEntryGramplet.py:92
 msgid "Abandon"
 msgstr ""
 
 #: DataEntryGramplet/DataEntryGramplet.py:77
+#: DataEntryGramplet/DataEntryGramplet.py:97
 msgid "New person"
 msgstr "Nuova persona"
 
 #: DataEntryGramplet/DataEntryGramplet.py:78
+#: DataEntryGramplet/DataEntryGramplet.py:98
 msgid "Add relation"
 msgstr ""
 
 #: DataEntryGramplet/DataEntryGramplet.py:79
+#: DataEntryGramplet/DataEntryGramplet.py:99
 msgid "No relation to active person"
 msgstr ""
 
 #: DataEntryGramplet/DataEntryGramplet.py:80
+#: DataEntryGramplet/DataEntryGramplet.py:100
 msgid "Add as a Parent"
 msgstr ""
 
 #: DataEntryGramplet/DataEntryGramplet.py:81
+#: DataEntryGramplet/DataEntryGramplet.py:103
 msgid "Add as a Spouse"
 msgstr ""
 
 #: DataEntryGramplet/DataEntryGramplet.py:82
+#: DataEntryGramplet/DataEntryGramplet.py:106
 msgid "Add as a Sibling"
 msgstr ""
 
 #: DataEntryGramplet/DataEntryGramplet.py:83
+#: DataEntryGramplet/DataEntryGramplet.py:107
 msgid "Add as a Child"
 msgstr ""
 
-#: DataEntryGramplet/DataEntryGramplet.py:96
-msgid "Add"
-msgstr "Aggiungi"
-
 #: DataEntryGramplet/DataEntryGramplet.py:99
+#: DataEntryGramplet/DataEntryGramplet.py:124
 msgid "Copy Active Data"
 msgstr ""
-
-#: DataEntryGramplet/DataEntryGramplet.py:102
-msgid "Clear"
-msgstr "Pulisci"
 
 #: DataEntryGramplet/DataEntryGramplet.py:145
 #: DataEntryGramplet/DataEntryGramplet.py:159
 #: DataEntryGramplet/DataEntryGramplet.py:266
+#: DataEntryGramplet/DataEntryGramplet.py:167
+#: DataEntryGramplet/DataEntryGramplet.py:178
+#: DataEntryGramplet/DataEntryGramplet.py:315
 msgid "in"
 msgstr ""
 
 #: DataEntryGramplet/DataEntryGramplet.py:387
+#: DataEntryGramplet/DataEntryGramplet.py:441
+#: DataEntryGramplet/DataEntryGramplet.py:569
 #, python-format
 msgid "Gramplet Data Edit: %s"
 msgstr ""
 
 #: DataEntryGramplet/DataEntryGramplet.py:407
+#: DataEntryGramplet/DataEntryGramplet.py:515
 msgid "Please provide a name."
 msgstr ""
 
 #: DataEntryGramplet/DataEntryGramplet.py:407
+#: DataEntryGramplet/DataEntryGramplet.py:515
 msgid "Can't add new person."
 msgstr ""
 
@@ -139,16 +177,28 @@ msgstr ""
 #: DataEntryGramplet/DataEntryGramplet.py:423
 #: DataEntryGramplet/DataEntryGramplet.py:432
 #: DataEntryGramplet/DataEntryGramplet.py:437
+#: DataEntryGramplet/DataEntryGramplet.py:523
+#: DataEntryGramplet/DataEntryGramplet.py:531
+#: DataEntryGramplet/DataEntryGramplet.py:536
+#: DataEntryGramplet/DataEntryGramplet.py:541
+#: DataEntryGramplet/DataEntryGramplet.py:550
+#: DataEntryGramplet/DataEntryGramplet.py:555
+#: DataEntryGramplet/DataEntryGramplet.py:560
+#: DataEntryGramplet/DataEntryGramplet.py:565
 msgid "Please set an active person."
 msgstr ""
 
 #: DataEntryGramplet/DataEntryGramplet.py:415
 #: DataEntryGramplet/DataEntryGramplet.py:418
+#: DataEntryGramplet/DataEntryGramplet.py:523
+#: DataEntryGramplet/DataEntryGramplet.py:526
 msgid "Can't add new person as a parent."
 msgstr ""
 
 #: DataEntryGramplet/DataEntryGramplet.py:418
 #: DataEntryGramplet/DataEntryGramplet.py:427
+#: DataEntryGramplet/DataEntryGramplet.py:526
+#: DataEntryGramplet/DataEntryGramplet.py:545
 msgid "Please set the new person's gender."
 msgstr ""
 
@@ -157,33 +207,39 @@ msgstr ""
 #: DataEntryGramplet/DataEntryGramplet.py:559
 #: DataEntryGramplet/DataEntryGramplet.py:596
 #: DataEntryGramplet/DataEntryGramplet.py:629
+#: DataEntryGramplet/DataEntryGramplet.py:541
+#: DataEntryGramplet/DataEntryGramplet.py:545
+#: DataEntryGramplet/DataEntryGramplet.py:768
+#: DataEntryGramplet/DataEntryGramplet.py:805
+#: DataEntryGramplet/DataEntryGramplet.py:838
 msgid "Can't add new person as a spouse."
 msgstr ""
 
 #: DataEntryGramplet/DataEntryGramplet.py:432
+#: DataEntryGramplet/DataEntryGramplet.py:560
 msgid "Can't add new person as a sibling."
 msgstr ""
 
 #: DataEntryGramplet/DataEntryGramplet.py:437
 #: DataEntryGramplet/DataEntryGramplet.py:675
+#: DataEntryGramplet/DataEntryGramplet.py:565
+#: DataEntryGramplet/DataEntryGramplet.py:938
 msgid "Can't add new person as a child."
 msgstr ""
 
 #: DataEntryGramplet/DataEntryGramplet.py:558
+#: DataEntryGramplet/DataEntryGramplet.py:767
 msgid "Please set gender on Active or new person."
 msgstr ""
 
 #: DataEntryGramplet/DataEntryGramplet.py:595
 #: DataEntryGramplet/DataEntryGramplet.py:628
+#: DataEntryGramplet/DataEntryGramplet.py:804
+#: DataEntryGramplet/DataEntryGramplet.py:837
 msgid "Same genders on Active and new person."
 msgstr ""
 
 #: DataEntryGramplet/DataEntryGramplet.py:674
+#: DataEntryGramplet/DataEntryGramplet.py:937
 msgid "Please set gender on Active person."
 msgstr ""
-
-#: DataEntryGramplet/DataEntryGramplet.py:696
-#, python-format
-msgid "Gramplet Data Entry: %s"
-msgstr ""
-

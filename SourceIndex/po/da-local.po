@@ -1,14 +1,16 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
+# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
+# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-04 18:55-0600\n"
-"PO-Revision-Date: 2024-10-14 12:08+0200\n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
 "Language: da_DK\n"
@@ -18,10 +20,27 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
 
-#: SourceIndex/birth.py:126 SourceIndex/census.py:82 SourceIndex/death.py:87
-#: SourceIndex/index.py:92 SourceIndex/marriage.py:87 SourceIndex/witness.py:64
+#: FilterRules/ageatdeath.py:71 SourceIndex/birth.glade:544
+#: SourceIndex/birth.glade:762 SourceIndex/census.glade:286
+#: SourceIndex/death.glade:521 SourceIndex/death.glade:669
+#: SourceIndex/death.glade:939 SourceIndex/marriage.glade:467
+#: SourceIndex/marriage.glade:789 SourceIndex/marriage.glade:808
+#: SourceIndex/marriage.glade:827 SourceIndex/marriage.glade:1562
+#: SourceIndex/marriage.glade:1621 SourceIndex/witness.glade:107
+msgid "Age:"
+msgstr "Alder:"
+
+#: DynamicWeb/dynamicweb.py:3114 SourceIndex/birth.py:126
+#: SourceIndex/census.py:82 SourceIndex/death.py:87 SourceIndex/index.py:92
+#: SourceIndex/marriage.py:87 SourceIndex/witness.py:64
 msgid "Sources Index"
 msgstr "Kildeindeks"
+
+#: SourceIndex/birth.glade:113 SourceIndex/census.glade:873
+#: SourceIndex/death.glade:182 SourceIndex/marriage.glade:1263
+#: Form/editform.py:225
+msgid "Reference:"
+msgstr "Henvisning:"
 
 #: SourceIndex/index.py:407
 msgid "*** Error: Must install either ElementTree or lxml."
@@ -31,40 +50,29 @@ msgstr "*** Fejl: Du skal installere enten ElementTree eller lxml."
 msgid "must install either ElementTree or lxml"
 msgstr "du skal installere enten ElementTree eller lxml"
 
-#: SourceIndex/SourceIndex.gpr.py:23
+#: SourceIndex/SourceIndex.gpr.py:23 SourceIndex/SourceIndex.gpr.py:24
 msgid "BirthIndex"
 msgstr "Fødselsindeks"
 
-#: SourceIndex/SourceIndex.gpr.py:38
+#: SourceIndex/SourceIndex.gpr.py:38 SourceIndex/SourceIndex.gpr.py:40
 msgid "MarriageIndex"
 msgstr "Ægteskabsindeks"
 
-#: SourceIndex/SourceIndex.gpr.py:53
+#: SourceIndex/SourceIndex.gpr.py:53 SourceIndex/SourceIndex.gpr.py:56
 msgid "DeathIndex"
 msgstr "Dødsindeks"
 
-#: SourceIndex/SourceIndex.gpr.py:68
+#: SourceIndex/SourceIndex.gpr.py:68 SourceIndex/SourceIndex.gpr.py:72
 msgid "CensusIndex"
 msgstr "Folketællingsindeks"
 
-#: SourceIndex/SourceIndex.gpr.py:83
-msgid "Witness"
-msgstr "Vidne"
-
-#: SourceIndex/SourceIndex.gpr.py:98
+#: SourceIndex/SourceIndex.gpr.py:98 SourceIndex/SourceIndex.gpr.py:104
 msgid "SourceIndex"
 msgstr "Kildeindeks"
 
 #: SourceIndex/birth.glade:7 SourceIndex/index.glade:585
 msgid "birth"
 msgstr "fødsel"
-
-#: SourceIndex/birth.glade:47 SourceIndex/birth.glade:316
-#: SourceIndex/birth.glade:852 SourceIndex/census.glade:745
-#: SourceIndex/death.glade:78 SourceIndex/death.glade:484
-#: SourceIndex/marriage.glade:266
-msgid "Date:"
-msgstr "Dato:"
 
 #: SourceIndex/birth.glade:65 SourceIndex/census.glade:728
 #: SourceIndex/death.glade:97 SourceIndex/marriage.glade:64
@@ -74,11 +82,6 @@ msgstr "Info:"
 #: SourceIndex/birth.glade:99
 msgid "Birth act:"
 msgstr "Fødselshandling:"
-
-#: SourceIndex/birth.glade:113 SourceIndex/census.glade:873
-#: SourceIndex/death.glade:182 SourceIndex/marriage.glade:1263
-msgid "Reference:"
-msgstr "Henvisning:"
 
 #: SourceIndex/birth.glade:129
 msgid ""
@@ -104,11 +107,6 @@ msgstr "Navne:"
 #: SourceIndex/birth.glade:214
 msgid "select the gender/sex"
 msgstr "vælg køn"
-
-#: SourceIndex/birth.glade:230 SourceIndex/census.glade:254
-#: SourceIndex/death.glade:386
-msgid "Gender:"
-msgstr "Køn:"
 
 #: SourceIndex/birth.glade:247
 msgid "The names of the main person written into the source"
@@ -163,16 +161,6 @@ msgid ""
 msgstr ""
 "Døds-\n"
 "dato:"
-
-#: SourceIndex/birth.glade:544 SourceIndex/birth.glade:762
-#: SourceIndex/census.glade:286 SourceIndex/death.glade:521
-#: SourceIndex/death.glade:669 SourceIndex/death.glade:939
-#: SourceIndex/marriage.glade:467 SourceIndex/marriage.glade:789
-#: SourceIndex/marriage.glade:808 SourceIndex/marriage.glade:827
-#: SourceIndex/marriage.glade:1562 SourceIndex/marriage.glade:1621
-#: SourceIndex/witness.glade:107
-msgid "Age:"
-msgstr "Alder:"
 
 #: SourceIndex/birth.glade:578 SourceIndex/birth.glade:677
 #: SourceIndex/census.glade:543 SourceIndex/death.glade:722
@@ -238,18 +226,6 @@ msgstr ""
 "gudfader,navn, fornavn, alder, beskæftigelse;\n"
 "o.s.v....."
 
-#: SourceIndex/birth.glade:1365 SourceIndex/census.glade:63
-#: SourceIndex/death.glade:1452 SourceIndex/marriage.glade:1976
-#: SourceIndex/witness.glade:360
-msgid "Cancel"
-msgstr "Afbryd"
-
-#: SourceIndex/birth.glade:1420 SourceIndex/census.glade:117
-#: SourceIndex/death.glade:1507 SourceIndex/marriage.glade:2031
-#: SourceIndex/witness.glade:415
-msgid "OK"
-msgstr "OK"
-
 #: SourceIndex/birth.glade:1549
 msgid ""
 "Marriage\n"
@@ -299,14 +275,6 @@ msgstr "<b>Folketælling</b>"
 msgid "<b>Repository</b>"
 msgstr "<b>Arkiv</b>"
 
-#: SourceIndex/census.glade:190 SourceIndex/death.glade:353
-#: SourceIndex/death.glade:465 SourceIndex/death.glade:788
-#: SourceIndex/marriage.glade:405 SourceIndex/marriage.glade:591
-#: SourceIndex/marriage.glade:610 SourceIndex/marriage.glade:629
-#: SourceIndex/marriage.glade:1330 SourceIndex/marriage.glade:1493
-msgid "Name:"
-msgstr "Navn:"
-
 #: SourceIndex/census.glade:221 SourceIndex/death.glade:432
 #: SourceIndex/death.glade:636 SourceIndex/death.glade:873
 #: SourceIndex/marriage.glade:450 SourceIndex/marriage.glade:732
@@ -355,16 +323,6 @@ msgstr "Note:"
 msgid "<b>Data person</b>"
 msgstr "<b>Data person</b>"
 
-#: SourceIndex/census.glade:777 SourceIndex/census.glade:841
-#: SourceIndex/death.glade:131 SourceIndex/death.glade:201
-#: SourceIndex/marriage.glade:284 SourceIndex/marriage.glade:1233
-msgid "ID:"
-msgstr "ID:"
-
-#: SourceIndex/census.glade:811
-msgid "Address:"
-msgstr "Adresse:"
-
 #: SourceIndex/census.glade:904 SourceIndex/death.glade:217
 #: SourceIndex/marriage.glade:1296
 msgid "Volume:"
@@ -375,14 +333,6 @@ msgid "order, person, surname, given, age, status, occupation, etc ..."
 msgstr ""
 "orden, person, efternavn, fornavn, alder, status, beskæftigelse, o.s.v..."
 
-#: SourceIndex/census.glade:1090
-msgid "Note"
-msgstr "Note"
-
-#: SourceIndex/death.glade:7 SourceIndex/index.glade:707
-msgid "death"
-msgstr "død"
-
 #: SourceIndex/death.glade:165
 msgid "Death act:"
 msgstr "Dødshandling:"
@@ -390,10 +340,6 @@ msgstr "Dødshandling:"
 #: SourceIndex/death.glade:282
 msgid "<b>Death act</b>"
 msgstr "<b>Dødshandling</b>"
-
-#: SourceIndex/death.glade:503
-msgid "Place:"
-msgstr "Sted:"
 
 #: SourceIndex/death.glade:986 SourceIndex/marriage.glade:1720
 msgid "<b>Witness:</b>"
@@ -446,21 +392,9 @@ msgstr "_Fil"
 msgid "Import CSV"
 msgstr "Importer CSV"
 
-#: SourceIndex/index.glade:141
-msgid "_Edit"
-msgstr "_Redigér"
-
-#: SourceIndex/index.glade:199
-msgid "_View"
-msgstr "_Vis"
-
 #: SourceIndex/index.glade:209
 msgid "Display all"
 msgstr "Vis alt"
-
-#: SourceIndex/index.glade:210
-msgid "All"
-msgstr "Alt"
 
 #: SourceIndex/index.glade:220
 msgid "Display only births"
@@ -493,10 +427,6 @@ msgstr "Vis kun folketællinger"
 #: SourceIndex/index.glade:254
 msgid "Censuses"
 msgstr "Folketællinger"
-
-#: SourceIndex/index.glade:268
-msgid "_Help"
-msgstr "_Hjælp"
 
 #: SourceIndex/index.glade:278
 msgid "About this utility."
@@ -545,10 +475,6 @@ msgstr "Vælg en fødsleskilde"
 #: SourceIndex/index.glade:617
 msgid "Select a marriage source"
 msgstr "Vælg en ægteskabskilde"
-
-#: SourceIndex/index.glade:646 SourceIndex/marriage.glade:7
-msgid "marriage"
-msgstr "ægteskab"
 
 #: SourceIndex/index.glade:678
 msgid "Select a death source"
@@ -661,7 +587,3 @@ msgstr "vidner"
 #: SourceIndex/witness.glade:60
 msgid "<b>Witness</b>"
 msgstr "<b>Vidner</b>"
-
-#: SourceIndex/witness.glade:175
-msgid "Relationship:"
-msgstr "Slægtskab:"

@@ -1,143 +1,118 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# French translation for gramps
+# Copyright (C) 2001-2011 Free Software Foundation, Inc.
+#
+# Quelques variables pour la cohérence:
+#  ancestor : ascendant
+#  descendant : descendant
+#  person, individual, people : individu(s)
+#  remove (context) : enlever une référence ou supprimer de la base
+#  home : souche
+#  active person : individu actif
+#  media : media (pas de 's' ou accent) : un medium
+#  les médias : journaux, tv
+#  call name : prénom usuel
+#  unknown (context) : inconnu ou non-connu (individu)
+#
+# Laurent Protois <laurent.protois@free.fr>, 2001, 2002, 2003, 2004.
+# Matthieu Pupat <tieum.tieum@free.fr>, 2004, 2005.
+# Guillaume Pratte <guillaumep@soireevideo.org>, 2005.
+# Frederic Chateaux, 2007, 2008.
+# Jérôme Rapinat <romjerome@yahoo.fr>, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017.
+# Mathieu MD <mathieu.md@gmail.com>, 2012.
+# Paul Culley <prc@prc-virtualbox>, 2018.
+# Christophe <khrys63@gmail.com>, 2018.
+# Paul Culley <paulr2787@gmail.com>, 2016.
+# J-Paul Bérard <arverne@wanadoo.fr>, 2021.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: fr\n"
+"Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-24 21:46+0200\n"
-"PO-Revision-Date: 2019-12-08 18:45+0100\n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"Language: fr\n"
+"POT-Creation-Date: 2011-12-17 18:14+0100\n"
+"PO-Revision-Date: 2011-12-17 18:49+0100\n"
+"Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
+"Language-Team:  <fr@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.5.4\n"
-
-#: GenealogyTree/gt_ancestor.py:83 GenealogyTree/gt_descendant.py:83
-#: GenealogyTree/gt_sandclock.py:91
-#, python-format
-msgid "Person %s is not in the Database"
-msgstr "Individu %s non présent dans la base de données"
-
-#: GenealogyTree/gt_ancestor.py:148 GenealogyTree/gt_descendant.py:156
-#: GenealogyTree/gt_grandparent.py:205 GenealogyTree/gt_sandclock.py:215
-msgid "Report Options"
-msgstr "Options du rapport"
-
-#: GenealogyTree/gt_ancestor.py:150 GenealogyTree/gt_descendant.py:158
-#: GenealogyTree/gt_grandparent.py:207 GenealogyTree/gt_sandclock.py:218
-msgid "Center Person"
-msgstr "Individu central"
-
-#: GenealogyTree/gt_ancestor.py:151 GenealogyTree/gt_descendant.py:159
-#: GenealogyTree/gt_grandparent.py:208 GenealogyTree/gt_sandclock.py:219
-msgid "The center person for the report"
-msgstr "La personne centrale pour ce rapport"
-
-#: GenealogyTree/gt_ancestor.py:154 GenealogyTree/gt_descendant.py:162
-#: GenealogyTree/gt_grandparent.py:211
-msgid "Generations"
-msgstr "Générations"
-
-#: GenealogyTree/gt_ancestor.py:155 GenealogyTree/gt_descendant.py:163
-#: GenealogyTree/gt_grandparent.py:212 GenealogyTree/gt_sandclock.py:227
-#: GenealogyTree/gt_sandclock.py:231
-msgid "The number of generations to include in the tree"
-msgstr "Le nombre de générations à inclure dans l'arbre"
 
 #: GenealogyTree/gt_ancestor.py:158 GenealogyTree/gt_descendant.py:166
 #: GenealogyTree/gt_grandparent.py:219 GenealogyTree/gt_sandclock.py:238
+#: GenealogyTree/gt_ancestor.py:170 GenealogyTree/gt_descendant.py:187
+#: GenealogyTree/gt_grandparent.py:231 GenealogyTree/gt_sandclock.py:250
 msgid "Include images"
 msgstr "Inclure les images"
 
 #: GenealogyTree/gt_ancestor.py:159 GenealogyTree/gt_descendant.py:167
 #: GenealogyTree/gt_grandparent.py:220 GenealogyTree/gt_sandclock.py:239
+#: GenealogyTree/gt_ancestor.py:171 GenealogyTree/gt_descendant.py:188
+#: GenealogyTree/gt_grandparent.py:232 GenealogyTree/gt_sandclock.py:251
 msgid "Include images of people in the nodes."
 msgstr "Inclure les images des individus dans les nœuds."
 
-#: GenealogyTree/gt_grandparent.py:107
+#: GenealogyTree/gt_grandparent.py:107 GenealogyTree/gt_grandparent.py:119
 #, python-format
 msgid "Person %s does not have both a paternal and a maternal grandparent"
 msgstr "L'individu %s n'a pas de grands-parents paternels et maternels"
 
-#: GenealogyTree/gt_grandparent.py:215
+#: GenealogyTree/gt_grandparent.py:215 GenealogyTree/gt_grandparent.py:227
 msgid "Grandparent family spacing"
 msgstr "Espacement de la famille grands-parents"
 
-#: GenealogyTree/gt_grandparent.py:216
+#: GenealogyTree/gt_grandparent.py:216 GenealogyTree/gt_grandparent.py:228
 msgid "Extra spacing of grandparent families (mm)"
 msgstr "Espacement supplémentaire pour la famille grands-parents (mm)"
 
-#: GenealogyTree/gt_sandclock.py:96
-#, python-format
-msgid "Family %s is not in the Database"
-msgstr "Familles %s non présente dans la base de données"
-
-#: GenealogyTree/gt_sandclock.py:222
-msgid "Center Family"
-msgstr "Famille centrale"
-
-#: GenealogyTree/gt_sandclock.py:223
+#: GenealogyTree/gt_sandclock.py:223 GenealogyTree/gt_sandclock.py:235
 msgid "The center family for the report"
 msgstr "La famille centrale pour ce rapport"
 
-#: GenealogyTree/gt_sandclock.py:226
+#: GenealogyTree/gt_sandclock.py:226 GenealogyTree/gt_sandclock.py:238
 msgid "Generations up"
 msgstr "Générations ascendantes"
 
-#: GenealogyTree/gt_sandclock.py:230
+#: GenealogyTree/gt_sandclock.py:230 GenealogyTree/gt_sandclock.py:242
 msgid "Generations down"
 msgstr "Générations descendantes"
 
-#: GenealogyTree/gt_sandclock.py:234
+#: GenealogyTree/gt_sandclock.py:234 GenealogyTree/gt_sandclock.py:246
 msgid "Include siblings"
 msgstr "Inclure les frères et sœurs"
 
-#: GenealogyTree/gt_sandclock.py:235
+#: GenealogyTree/gt_sandclock.py:235 GenealogyTree/gt_sandclock.py:247
 msgid "Include siblings of ancestors."
 msgstr "Inclure les frères et sœurs des ascendants."
 
-#: GenealogyTree/treeplugins.gpr.py:29
-msgid "Ancestor Tree"
-msgstr "Arbre des ascendants"
-
-#: GenealogyTree/treeplugins.gpr.py:30
+#: GenealogyTree/treeplugins.gpr.py:30 GenealogyTree/treeplugins.gpr.py:31
 msgid "Ancestor tree using LaTeX genealogytree"
 msgstr "Arbre des ascendants utilisant LaTeX genealogytree"
 
-#: GenealogyTree/treeplugins.gpr.py:51
-msgid "Descendant Tree"
-msgstr "Arbre des descendants"
-
-#: GenealogyTree/treeplugins.gpr.py:52
+#: GenealogyTree/treeplugins.gpr.py:52 GenealogyTree/treeplugins.gpr.py:56
 msgid "Descendant tree using LaTeX genealogytree"
 msgstr "Arbre des descendants utilisant LaTeX genealogytree"
 
-#: GenealogyTree/treeplugins.gpr.py:73
+#: GenealogyTree/treeplugins.gpr.py:73 GenealogyTree/treeplugins.gpr.py:80
 msgid "Grandparent Tree"
 msgstr "Arbre des grands-parents"
 
-#: GenealogyTree/treeplugins.gpr.py:74
+#: GenealogyTree/treeplugins.gpr.py:74 GenealogyTree/treeplugins.gpr.py:81
 msgid "Grandparent tree using LaTeX genealogytree"
 msgstr "Arbre des grands-parents utilisant LaTeX genealogytree"
 
-#: GenealogyTree/treeplugins.gpr.py:95
+#: GenealogyTree/treeplugins.gpr.py:95 GenealogyTree/treeplugins.gpr.py:105
 msgid "Sandclock Tree"
 msgstr "Arbre sablier"
 
-#: GenealogyTree/treeplugins.gpr.py:96
+#: GenealogyTree/treeplugins.gpr.py:96 GenealogyTree/treeplugins.gpr.py:106
 msgid "Sandclock tree using LaTeX genealogytree"
 msgstr "Arbre sablier utilisant LaTeX genealogytree"
 
-#: GenealogyTree/treeplugins.gpr.py:117
+#: GenealogyTree/treeplugins.gpr.py:117 GenealogyTree/treeplugins.gpr.py:130
 msgid "Sandclock Tree for a Family"
 msgstr "Arbre sablier pour une famille"
 
-#: GenealogyTree/treeplugins.gpr.py:118
+#: GenealogyTree/treeplugins.gpr.py:118 GenealogyTree/treeplugins.gpr.py:131
 msgid "Sandclock tree for a family using LaTeX genealogytree"
 msgstr "Arbre sablier pour une famille utilisant LaTeX genealogytree"

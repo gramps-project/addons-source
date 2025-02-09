@@ -1,14 +1,15 @@
-# Ukrainian translation for EditExifMetadata
-# Copyright (c) 2011 Gramps
-# This file is distributed under the same license as the gramps package.
-# Fedir Zinchuk <fedikw@gmail.com>, 2011, 2012.
+# Ukrainian translation for MediaMerge
+# This file is distributed under the same license as the Gramps package.
+#
 # Illia Maier <illia@maier.page>, 2024.
+# Fedir Zinchuk <fedikw@gmail.com>, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
+# Oleh Petriv, 2013.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gramps\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-09 14:09-0500\n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
 "PO-Revision-Date: 2024-10-10 22:54+0300\n"
 "Last-Translator: Illia Maier <illia@maier.page>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
@@ -17,22 +18,25 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: EditExifMetadata/editexifmetadata.gpr.py:29
 #: EditExifMetadata/editexifmetadata.py:723
 #: EditExifMetadata/editexifmetadata.py:1135
 #: EditExifMetadata/editexifmetadata.py:1147
+#: EditExifMetadata/editexifmetadata.gpr.py:30
 msgid "Edit Image Exif Metadata"
 msgstr "Редагувати Exif метадані зображення"
 
 #: EditExifMetadata/editexifmetadata.gpr.py:30
+#: EditExifMetadata/editexifmetadata.gpr.py:31
 msgid "Gramplet to view, edit, and save image Exif metadata"
 msgstr ""
 "Грамплет для перегляду, редагування та збереження Exif метаданих зображення"
 
 #: EditExifMetadata/editexifmetadata.gpr.py:34
+#: EditExifMetadata/editexifmetadata.gpr.py:35
 msgid "Edit Exif Metadata"
 msgstr "Редагувати Exif метадані"
 
@@ -44,7 +48,9 @@ msgstr "<-- Типи Зображень -->"
 msgid ""
 "Warning:  Changing this entry will update the Media object title field in "
 "Gramps not Exiv2 metadata."
-msgstr "Увага: Зміна цього запису оновить поле заголовка медіа-обʼєкта в Gramps, а не метадані Exiv2."
+msgstr ""
+"Увага: Зміна цього запису оновить поле заголовка медіа-обʼєкта в Gramps, а "
+"не метадані Exiv2."
 
 #: EditExifMetadata/editexifmetadata.py:161
 msgid "Provide a short description for this image."
@@ -68,7 +74,8 @@ msgid ""
 "photograph.\n"
 "Example: 1830-01-1 09:30:59"
 msgstr ""
-"Оригінальна дата/час, коли зображення було вперше створено/знято, як на фотографії.\n"
+"Оригінальна дата/час, коли зображення було вперше створено/знято, як на "
+"фотографії.\n"
 "Приклад: 1830-01-1 09:30:59"
 
 #: EditExifMetadata/editexifmetadata.py:173
@@ -99,20 +106,27 @@ msgstr ""
 msgid ""
 "This is the measurement of Above or Below Sea Level.  It is measured in "
 "meters.  Example: 200.558, -200.558"
-msgstr "Це вимірювання над або під рівнем моря. Воно вимірюється в метрах. Приклад: 200.558, -200.558"
+msgstr ""
+"Це вимірювання над або під рівнем моря. Воно вимірюється в метрах. Приклад: "
+"200.558, -200.558"
 
 #: EditExifMetadata/editexifmetadata.py:191
 msgid ""
 "Displays the Gramps Wiki Help page for 'Edit Image Exif Metadata' in your "
 "web browser."
-msgstr "Відкриває сторінку довідки Gramps Wiki про 'Редагування метаданих Exif зображення' у вашому веб-браузері."
+msgstr ""
+"Відкриває сторінку довідки Gramps Wiki про 'Редагування метаданих Exif "
+"зображення' у вашому веб-браузері."
 
 #: EditExifMetadata/editexifmetadata.py:194
 msgid ""
 "This will open up a new window to allow you to edit/ modify this image's "
 "Exif metadata.\n"
 "  It will also allow you to be able to Save the modified metadata."
-msgstr "Це відкриє нове вікно для редагування/модифікації метаданих Exif цього зображення.\nТакож це дозволить зберегти змінені метадані."
+msgstr ""
+"Це відкриє нове вікно для редагування/модифікації метаданих Exif цього "
+"зображення.\n"
+"Також це дозволить зберегти змінені метадані."
 
 #: EditExifMetadata/editexifmetadata.py:198
 msgid "Will produce a Popup window showing a Thumbnail Viewing Area"
@@ -122,13 +136,17 @@ msgstr "Зʼявиться спливаюче вікно з областю пе�
 msgid ""
 "Select from a drop- down box the image file type that you would like to "
 "convert your non- Exiv2 compatible media object to."
-msgstr "Виберіть у випадаючому списку тип файлу зображення, до якого ви хочете перетворити медіа-обʼєкт, несумісний з Exiv2."
+msgstr ""
+"Виберіть у випадаючому списку тип файлу зображення, до якого ви хочете "
+"перетворити медіа-обʼєкт, несумісний з Exiv2."
 
 #: EditExifMetadata/editexifmetadata.py:205
 msgid ""
 "If your image is not of an image type that can have Exif metadata read/ "
 "written to/from, convert it to a type that can?"
-msgstr "Якщо ваш тип зображення не підтримує зчитування/записування метаданих Exif, перетворіть його в сумісний тип."
+msgstr ""
+"Якщо ваш тип зображення не підтримує зчитування/записування метаданих Exif, "
+"перетворіть його в сумісний тип."
 
 #: EditExifMetadata/editexifmetadata.py:209
 msgid ""
@@ -149,15 +167,6 @@ msgstr "Мініатюра"
 #: EditExifMetadata/editexifmetadata.py:215
 msgid "Copy"
 msgstr "Копіювати"
-
-#: EditExifMetadata/editexifmetadata.py:216
-#: EditExifMetadata/editexifmetadata.py:726
-msgid "Convert"
-msgstr "Конвертувати"
-
-#: EditExifMetadata/editexifmetadata.py:217
-msgid "Clear"
-msgstr "Очистити"
 
 #: EditExifMetadata/editexifmetadata.py:402
 msgid "Select an image to begin..."
@@ -185,7 +194,8 @@ msgstr "Розмір зображення: {width} x {height} пікселів"
 msgid ""
 "Image is NOT writable,\n"
 "You will NOT be able to save Exif metadata...."
-msgstr "Зображення НЕ доступне для запису,\n"
+msgstr ""
+"Зображення НЕ доступне для запису,\n"
 "Ви НЕ зможете зберегти метадані Exif...."
 
 #: EditExifMetadata/editexifmetadata.py:648
@@ -200,7 +210,9 @@ msgstr "Перегляд Мініатюр"
 msgid ""
 "WARNING: You are about to convert this image into a .jpeg image.  Are you "
 "sure that you want to do this?"
-msgstr "УВАГА: Ви збираєтеся конвертувати це зображення у формат .jpeg. Ви впевнені, що хочете це зробити?"
+msgstr ""
+"УВАГА: Ви збираєтеся конвертувати це зображення у формат .jpeg. Ви впевнені, "
+"що хочете це зробити?"
 
 #: EditExifMetadata/editexifmetadata.py:726
 msgid "Convert and Delete"
@@ -210,19 +222,25 @@ msgstr "Конвертувати та видалити"
 msgid ""
 "Your image has been converted and the original file has been deleted, and "
 "the full path has been updated!"
-msgstr "Ваше зображення було конвертовано, оригінальний файл видалено, і повний шлях було оновлено!"
+msgstr ""
+"Ваше зображення було конвертовано, оригінальний файл видалено, і повний шлях "
+"було оновлено!"
 
 #: EditExifMetadata/editexifmetadata.py:812
 msgid ""
 "There has been an error, Please check your source and destination file "
 "paths..."
-msgstr "Виникла помилка. Будь ласка, перевірте шляхи до вихідного та цільового файлів..."
+msgstr ""
+"Виникла помилка. Будь ласка, перевірте шляхи до вихідного та цільового "
+"файлів..."
 
 #: EditExifMetadata/editexifmetadata.py:816
 msgid ""
 "There was an error in deleting the original file.  You will need to delete "
 "it yourself!"
-msgstr "Виникла помилка при видаленні оригінального файлу. Вам потрібно видалити його вручну!"
+msgstr ""
+"Виникла помилка при видаленні оригінального файлу. Вам потрібно видалити "
+"його вручну!"
 
 #: EditExifMetadata/editexifmetadata.py:834
 msgid "There was an error in converting your image file."
@@ -240,7 +258,9 @@ msgstr "Сталася помилка при оновленні шляху до 
 msgid ""
 "Click the close button when you are finished modifying this image's Exif "
 "metadata."
-msgstr "Натисніть кнопку «Закрити», коли ви закінчите змінювати метадані Exif цього зображення."
+msgstr ""
+"Натисніть кнопку «Закрити», коли ви закінчите змінювати метадані Exif цього "
+"зображення."
 
 #: EditExifMetadata/editexifmetadata.py:924
 msgid "Saves a copy of the data fields into the image's Exif metadata."
@@ -248,7 +268,8 @@ msgstr "Зберігає копію полів даних у метадані Ex
 
 #: EditExifMetadata/editexifmetadata.py:928
 msgid "Re -display the data fields that were cleared from the Edit Area."
-msgstr "Повторно відображає поля даних, які були очищені з області редагування."
+msgstr ""
+"Повторно відображає поля даних, які були очищені з області редагування."
 
 #: EditExifMetadata/editexifmetadata.py:932
 msgid "This button will clear all of the data fields shown here."
@@ -263,7 +284,10 @@ msgid ""
 "Closes this popup Edit window.\n"
 "WARNING: This action will NOT Save any changes/ modification made to this "
 "image's Exif metadata."
-msgstr "Закриває це спливаюче вікно редагування.\nПОПЕРЕДЖЕННЯ: Ця дія НЕ зберігає жодних змін/модифікацій у метаданих Exif цього зображення."
+msgstr ""
+"Закриває це спливаюче вікно редагування.\n"
+"ПОПЕРЕДЖЕННЯ: Ця дія НЕ зберігає жодних змін/модифікацій у метаданих Exif "
+"цього зображення."
 
 #: EditExifMetadata/editexifmetadata.py:969
 msgid "Media Object Title"
@@ -341,18 +365,15 @@ msgstr "48.21\"E, -18.2412 або -18:9:48.21)"
 msgid ""
 "WARNING!  You are about to completely delete the Exif metadata from this "
 "image?"
-msgstr "УВАГА! Ви збираєтесь повністю видалити метадані Exif з цього зображення?"
-
-#: EditExifMetadata/editexifmetadata.py:1138
-#: EditExifMetadata/editexifmetadata.py:1150
-msgid "Delete"
-msgstr "Видалити"
+msgstr ""
+"УВАГА! Ви збираєтесь повністю видалити метадані Exif з цього зображення?"
 
 #: EditExifMetadata/editexifmetadata.py:1148
 msgid ""
 "WARNING!  You are about to completely delete the GPS metadata from this "
 "image?"
-msgstr "УВАГА! Ви збираєтесь повністю видалити GPS метадані з цього зображення?"
+msgstr ""
+"УВАГА! Ви збираєтесь повністю видалити GPS метадані з цього зображення?"
 
 #: EditExifMetadata/editexifmetadata.py:1333
 msgid "Media Title Update"

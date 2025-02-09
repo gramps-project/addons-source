@@ -1,47 +1,32 @@
 # Croatian translation for Gramps
 # This file is distributed under the same license as the Gramps package.
 # Copyright (C) Gramps project
-# Milo Ivir <mail@milotype.de>, 2020.
+# Milo Ivir <mivir@milotype.de>, 2019, 2020.
+# Stephen Adams, Gramps Reddit, 2018.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-27 13:30-0600\n"
-"PO-Revision-Date: 2020-08-24 16:59+0200\n"
+"POT-Creation-Date: 2019-01-22 09:28-0600\n"
+"PO-Revision-Date: 2019-10-23 15:25+0200\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: \n"
+"Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.1\n"
-"Last-Translator: Milo Ivir <mail@milotype.de>\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
-"Language: hr\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Generator: Poedit 2.2.4\n"
 
-#: TypeCleanup/type_cleanup.gpr.py:29
+#: TypeCleanup/type_cleanup.gpr.py:29 TypeCleanup/type_cleanup.gpr.py:30
 msgid "Type Cleanup"
 msgstr "Čišćenje vrsta"
 
-#: TypeCleanup/type_cleanup.gpr.py:30
+#: TypeCleanup/type_cleanup.gpr.py:30 TypeCleanup/type_cleanup.gpr.py:31
 msgid "Clean up (remove) custom types"
 msgstr "Počisti (ukloni) prilagođene vrste"
-
-#: TypeCleanup/type_cleanup.py:96
-msgid "Event Attributes"
-msgstr "Svojstva događaja"
-
-#: TypeCleanup/type_cleanup.py:97
-msgid "Family Attributes"
-msgstr "Svojstva obitelji"
-
-#: TypeCleanup/type_cleanup.py:98
-msgid "Media Attributes"
-msgstr "Svojstva medija"
-
-#: TypeCleanup/type_cleanup.py:99
-msgid "Person Attributes"
-msgstr "Svojstva osobe"
 
 #: TypeCleanup/type_cleanup.py:101
 msgid "Event Roles"
@@ -79,10 +64,6 @@ msgstr "Vrste mjesta"
 msgid "Repository Types"
 msgstr "Vrste repozitorija"
 
-#: TypeCleanup/type_cleanup.py:110
-msgid "Source Attributes"
-msgstr "Svojstva izvora"
-
 #: TypeCleanup/type_cleanup.py:111
 msgid "Source Media Types"
 msgstr "Vrste medija izvora"
@@ -94,14 +75,6 @@ msgstr "Vrste URL adresa"
 #: TypeCleanup/type_cleanup.py:124
 msgid "Types Cleanup Tool"
 msgstr "Alat za čišćenje vrsta"
-
-#: TypeCleanup/type_cleanup.py:160
-msgid "Help"
-msgstr "Pomogni"
-
-#: TypeCleanup/type_cleanup.py:164
-msgid "Remove"
-msgstr "Ukloni"
 
 #: TypeCleanup/type_cleanup.py:166
 msgid ""
@@ -127,10 +100,6 @@ msgstr "Preimenuj"
 msgid "Rename the selected type in all referenced objects."
 msgstr "Preimenuj odabranu vrstu u svim referenciranim objektima."
 
-#: TypeCleanup/type_cleanup.py:188
-msgid "Close"
-msgstr "Zatvori"
-
 #: TypeCleanup/type_cleanup.py:189
 msgid "Close the Type Cleanup Tool"
 msgstr "Zatvori alat za čišćenje vrsta"
@@ -139,21 +108,9 @@ msgstr "Zatvori alat za čišćenje vrsta"
 msgid "Types"
 msgstr "Vrste"
 
-#: TypeCleanup/type_cleanup.py:214
-msgid "Type"
-msgstr "Vrsta"
-
-#: TypeCleanup/type_cleanup.py:221
-msgid "References"
-msgstr "Reference"
-
 #: TypeCleanup/type_cleanup.py:242
 msgid "Type Cleanup Tool"
 msgstr "Alat za čišćenje vrsta"
-
-#: TypeCleanup/type_cleanup.py:275
-msgid "Reading database..."
-msgstr "Učitavanje baze podataka ..."
 
 #: TypeCleanup/type_cleanup.py:387
 #, python-format
@@ -166,21 +123,12 @@ msgid ""
 "down lists\n"
 "and further runs of this tool.\n"
 "\n"
-"However, it will not remove it from the referenced items in the "
-"database.\n"
+"However, it will not remove it from the referenced items in the database.\n"
 "If you want to change it in referenced items, use 'Rename'."
 msgstr ""
-"Uklanjanje ove prilagođene vrste uklonit će je iz padajućih popisa za "
-"odabir vrste\n"
+"Uklanjanje ove prilagođene vrste uklonit će je iz padajućih popisa za odabir "
+"vrste\n"
 "i ostalih izvršavanja ovog alata.\n"
 "\n"
 "Međutim, neće je ukloniti iz referenciranih objekata u bazi podataka.\n"
 "Ako je želiš promijeniti u referenciranim objektima, koristi „Preimenuj”."
-
-#: TypeCleanup/type_cleanup.py:437
-msgid "_Remove"
-msgstr "_Ukloni"
-
-#: TypeCleanup/type_cleanup.py:437
-msgid "_Stop"
-msgstr "_Prekid"

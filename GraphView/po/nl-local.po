@@ -1,28 +1,84 @@
-# Dutch translation of addon GraphView.
+# Dutch translation of addon MediaMerge.
 # Copyright (C) 2020 Gramps project
-# This file is distributed under the same license as the GraphView package.
+# This file is distributed under the same license as the MediaMerge package.
+# Jan Sparreboom <jan@sparreboom.net>, 2020, 2021, 2023.
 # Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
 # Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
-# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010.
-# Jan Sparreboom <jan@sparreboom.net>, 2020, 2021.
+# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
+# Erik De Richter <frederik.de.richter@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
+# Harmen Huizinga <harmenhuizinga@sigmo.nl>, 2013.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: GraphView 5.x\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-05 16:32-0500\n"
-"PO-Revision-Date: 2023-06-09 20:35+0200\n"
-"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
-"Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
+"Project-Id-Version: MediaMerge 5.x\n"
+"Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
+"POT-Creation-Date: 2019-01-04 18:55-0600\n"
+"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
+"addons/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.0.1\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10-dev\n"
 
-#: GraphView/avatars.py:59
-msgid "Custom"
-msgstr "Zelfgemaakt"
+#: SourcesCitationsReport//SourcesCitationsReport.py:341
+#: SourcesCitationsReport/SourcesCitationsReport.py:335
+#: GraphView/graphview.py:3083 GraphView/graphview.py:3084
+#: GraphView/graphview.py:3096 GraphView/graphview.py:3097
+#, python-format
+msgid "%s "
+msgstr "%s "
+
+#: PluginManager/PluginManager.py:155 PluginManager/PluginManager.py:158
+#: GraphView/search_widget.py:384
+msgid "Search..."
+msgstr "Zoeken..."
+
+#: DynamicWeb/dynamicweb.py:2615 DynamicWeb/dynamicweb.py:3170
+#: GraphView/graphview.py:1024
+msgid "Zoom in"
+msgstr "Inzoomen"
+
+#: DynamicWeb/dynamicweb.py:2616 DynamicWeb/dynamicweb.py:3171
+#: GraphView/graphview.py:1031
+msgid "Zoom out"
+msgstr "Uitzoomen"
+
+#: DenominoViso/DenominoViso.py:2001 GraphView/graphview.py:897
+msgid "Search"
+msgstr "Zoeken"
+
+#: QuiltView/QuiltView.py:1500 GraphView/graphview.py:3941
+msgid "Set as home person"
+msgstr "Instellen als beginpersoon"
+
+#: QuiltView/QuiltView.py:1656 GraphView/graphview.py:4382
+#: GraphView/graphview.py:4428
+#, python-format
+msgid "Adding Tags to person (%s)"
+msgstr "Labels aan persoon (%s) toevoegen"
+
+#: QuiltView/QuiltView.py:1661 GraphView/graphview.py:4387
+#: GraphView/graphview.py:4439
+#, python-format
+msgid "Adding Tags to family (%s)"
+msgstr "Labels aan gezin (%s) toevoegen"
+
+#: EditExifMetadata//editexifmetadata.py:215
+#: EditExifMetadata/editexifmetadata.py:215 GraphView/graphview.py:3778
+msgid "Copy"
+msgstr "Kopieer"
+
+#: LifeLineChartView/lifelinechartview.py:527 GraphView/graphview.py:1038
+msgid "Zoom to original"
+msgstr "Zoom naar origineel"
+
+#: LifeLineChartView/lifelinechartview.py:534 GraphView/graphview.py:1045
+msgid "Zoom to best fit"
+msgstr "Zoom naar best passend"
 
 #: GraphView/avatars.py:60
 msgid "Dark (default)"
@@ -37,306 +93,193 @@ msgid "Cartoon"
 msgstr "Cartoon"
 
 #: GraphView/graphview.gpr.py:34 GraphView/graphview.py:185
+#: GraphView/graphview.gpr.py:4 GraphView/graphview.gpr.py:14
+#: GraphView/graphview.py:189
 msgid "Graph View"
 msgstr "Grafiekweergave"
 
-#: GraphView/graphview.gpr.py:35
-msgid "Charts"
-msgstr "Grafieken"
-
-#: GraphView/graphview.gpr.py:36
+#: GraphView/graphview.gpr.py:36 GraphView/graphview.gpr.py:6
 msgid "Dynamic and interactive graph of relations"
 msgstr "Dynamische en interactieve grafiek van relaties"
 
-#: GraphView/graphview.gpr.py:49
-msgid "Graphview Warning:  Goocanvas 2 or 3 (https://wiki.gnome.org/action/show/Projects/GooCanvas) is required for this view to work"
-msgstr "Graphview-waarschuwing: Goocanvas 2 of 3 (https://wiki.gnome.org/action/show/Projects/GooCanvas) is vereist om deze weergave te laten werken"
-
-#: GraphView/graphview.gpr.py:54
-msgid "Graphview Warning:  GraphViz (http://www.graphviz.org) is required for this view to work"
-msgstr "GraphView waarschuwing: GraphViz (http://www.graphviz.org) is vereist om deze weergave te laten werken"
-
-#: GraphView/graphview.gpr.py:63
-msgid "Graphview Failed to Load"
-msgstr "Graphview kan niet worden geladen"
-
-#: GraphView/graphview.gpr.py:64
-#, python-format
-msgid ""
-"\n"
-"\n"
-"Graphview is missing python modules or programs.\n"
-"%smust be installed.\n"
-"\n"
-"For now, it may be possible to install the files manually. See\n"
-"<a href=\"https://gramps-project.org/wiki/index.php?title=Graph_View\" title=\"https://gramps-project.org/wiki/index.php?title=Graph_View\">https://gramps-project.org/wiki/index.php?title=Graph_View</a> \n"
-"\n"
-"To dismiss all future Graphview warnings click Dismiss."
-msgstr ""
-"\n"
-"\n"
-"Graphview mist python-modules of -programma's.\n"
-"%smoet geïnstalleerd worden.\n"
-"\n"
-"Voorlopig is het misschien mogelijk om de bestanden handmatig te installeren. Zie\n"
-"<a href=\"https://gramps-project.org/wiki/index.php?title=Graph_View\" title=\"https://gramps-project.org/wiki/index.php?title=Graph_View\">https://gramps-project.org/wiki/index.php?title=Graph_View</a> \n"
-"\n"
-"Klik op Sluiten om alle toekomstige Graphview-waarschuwingen te negeren."
-
-#: GraphView/graphview.gpr.py:80
-msgid " Dismiss "
-msgstr " Sluiten "
-
-#: GraphView/graphview.gpr.py:81
-msgid "Continue"
-msgstr "Doorgaan"
-
-#: GraphView/graphview.py:713 GraphView/graphview.py:3643
-msgid "Show images"
-msgstr "Toon afbeeldingen"
-
-#: GraphView/graphview.py:716
+#: GraphView/graphview.py:716 GraphView/graphview.py:757
 msgid "Show avatars"
 msgstr "Toon avatars"
 
 #: GraphView/graphview.py:719 GraphView/graphview.py:3651
+#: GraphView/graphview.py:760 GraphView/graphview.py:3736
 msgid "Highlight the home person"
 msgstr "Markeer de beginpersoon"
 
 #: GraphView/graphview.py:723 GraphView/graphview.py:3659
+#: GraphView/graphview.py:764 GraphView/graphview.py:3744
 msgid "Show full dates"
 msgstr "Toon volledige datums"
 
 #: GraphView/graphview.py:727 GraphView/graphview.py:3667
+#: GraphView/graphview.py:768 GraphView/graphview.py:3752
 msgid "Show places"
 msgstr "Toon locaties"
 
-#: GraphView/graphview.py:730 GraphView/graphview.py:2953
-msgid "Default"
-msgstr "Standaard"
-
-#: GraphView/graphview.py:736
-msgid "Place format"
-msgstr "Locatie opmaak"
-
-#: GraphView/graphview.py:741 GraphView/graphview.py:3675
-msgid "Show tags"
-msgstr "Toon labels"
-
-#: GraphView/graphview.py:743
+#: GraphView/graphview.py:743 GraphView/graphview.py:784
 msgid "Vertical: Top to Bottom"
 msgstr "Verticaal: van boven naar beneden"
 
-#: GraphView/graphview.py:743
+#: GraphView/graphview.py:743 GraphView/graphview.py:784
 msgid "Vertical: Bottom to Top"
 msgstr "Verticaal: van onder naar boven"
 
-#: GraphView/graphview.py:743
+#: GraphView/graphview.py:743 GraphView/graphview.py:784
 msgid "Horizontal: Left to Right"
 msgstr "Horizontaal: van links naar rechts"
 
-#: GraphView/graphview.py:743
+#: GraphView/graphview.py:743 GraphView/graphview.py:784
 msgid "Horizontal: Right to Left"
 msgstr "Horizontaal: van rechts naar links"
 
-#: GraphView/graphview.py:745
+#: GraphView/graphview.py:745 GraphView/graphview.py:786
 msgid "Time Direction"
 msgstr "Tijdsrichting"
 
-#: GraphView/graphview.py:749
-msgid "Layout"
-msgstr "Indeling"
-
-#: GraphView/graphview.py:767
+#: GraphView/graphview.py:767 GraphView/graphview.py:812
 msgid "Person theme"
 msgstr "Persoonsthema"
 
-#: GraphView/graphview.py:772
+#: GraphView/graphview.py:772 GraphView/graphview.py:817
 msgid "Path color to home person"
 msgstr "Padkleur naar beginpersoon"
 
-#: GraphView/graphview.py:776
+#: GraphView/graphview.py:776 GraphView/graphview.py:821
 msgid "Font:"
 msgstr "Lettertype:"
 
-#: GraphView/graphview.py:790
+#: GraphView/graphview.py:790 GraphView/graphview.py:835
 msgid "Avatars style"
 msgstr "Avatars-stijl"
 
-#: GraphView/graphview.py:796
+#: GraphView/graphview.py:796 GraphView/graphview.py:841
 msgid "PNG files"
 msgstr "PNG-bestanden"
 
-#: GraphView/graphview.py:801
+#: GraphView/graphview.py:801 GraphView/graphview.py:846
 msgid "Male avatar:"
 msgstr "Mannelijke avatar:"
 
-#: GraphView/graphview.py:802
+#: GraphView/graphview.py:802 GraphView/graphview.py:847
 msgid "Choose male avatar"
 msgstr "Kies een mannelijke avatar"
 
-#: GraphView/graphview.py:814
+#: GraphView/graphview.py:814 GraphView/graphview.py:859
 msgid "Female avatar:"
 msgstr "Vrouwelijke avatar:"
 
-#: GraphView/graphview.py:815
+#: GraphView/graphview.py:815 GraphView/graphview.py:860
 msgid "Choose female avatar"
 msgstr "Kies een vrouwelijke avatar"
 
-#: GraphView/graphview.py:829
+#: GraphView/graphview.py:829 GraphView/graphview.py:900
 msgid "Active person border size"
 msgstr "Grootte rand actieve persoon"
 
-#: GraphView/graphview.py:834
+#: GraphView/graphview.py:834 GraphView/graphview.py:905
 msgid "Person border size"
 msgstr "Grootte persoonskader"
 
-#: GraphView/graphview.py:837
+#: GraphView/graphview.py:837 GraphView/graphview.py:908
 msgid "Themes"
 msgstr "Thema's"
 
 #: GraphView/graphview.py:850 GraphView/graphview.py:3685
+#: GraphView/graphview.py:921 GraphView/graphview.py:3770
 msgid "Show animation"
 msgstr "Toon animatie"
 
-#: GraphView/graphview.py:854
+#: GraphView/graphview.py:854 GraphView/graphview.py:925
 msgid "Animation speed (1..5 and 5 is the slower)"
 msgstr "Animatiesnelheid (1..5 en 5 is het langzaamst)"
 
-#: GraphView/graphview.py:858
+#: GraphView/graphview.py:858 GraphView/graphview.py:929
 msgid "Animation count (0..8 use 0 to turn off)"
 msgstr "Aantal animaties (0..8 gebruik 0 om uit te schakelen)"
 
-#: GraphView/graphview.py:867
+#: GraphView/graphview.py:867 GraphView/graphview.py:938
 msgid "Animation"
 msgstr "Animatie"
 
-#: GraphView/graphview.py:881
+#: GraphView/graphview.py:881 GraphView/graphview.py:952
 msgid "Search in all database"
 msgstr "Zoek in de gehele database"
 
-#: GraphView/graphview.py:883
+#: GraphView/graphview.py:883 GraphView/graphview.py:954
 msgid "Also apply search by all database."
 msgstr "Pas ook zoeken door de gehele database toe."
 
-#: GraphView/graphview.py:886
+#: GraphView/graphview.py:886 GraphView/graphview.py:957
 msgid "Show person images"
 msgstr "Toon persoonsafbeeldingen"
 
-#: GraphView/graphview.py:889
+#: GraphView/graphview.py:889 GraphView/graphview.py:960
 msgid "Show persons thumbnails in search result list."
 msgstr "Toon miniaturen van personen in de lijst met zoekresultaten."
 
-#: GraphView/graphview.py:892
+#: GraphView/graphview.py:892 GraphView/graphview.py:963
 msgid "Show bookmarked first"
 msgstr "Toon personen met een bladwijzer eerst"
 
-#: GraphView/graphview.py:895
+#: GraphView/graphview.py:895 GraphView/graphview.py:966
 msgid "Show bookmarked persons first in search result list."
-msgstr "Toon personen met een bladwijzer als eerste in de lijst met zoekresultaten."
+msgstr ""
+"Toon personen met een bladwijzer als eerste in de lijst met zoekresultaten."
 
-#: GraphView/graphview.py:897
-msgid "Search"
-msgstr "Zoek"
-
-#: GraphView/graphview.py:928
+#: GraphView/graphview.py:928 GraphView/graphview.py:999
 msgid "Select a dot file name"
 msgstr "Selecteer een dot-bestandsnaam"
 
-#: GraphView/graphview.py:931
-msgid "_Cancel"
-msgstr "_Annuleren"
-
-#: GraphView/graphview.py:932
-msgid "_Apply"
-msgstr "_Toepassen"
-
-#: GraphView/graphview.py:945
-msgid "File already exists"
-msgstr "Bestand bestaat al"
-
-#: GraphView/graphview.py:946
-msgid "You can choose to either overwrite the file, or change the selected filename."
-msgstr "U kunt ervoor kiezen om het bestand te overschrijven of de geselecteerde bestandsnaam te wijzigen."
-
-#: GraphView/graphview.py:948
-msgid "_Overwrite"
-msgstr "_Overschrijven"
-
-#: GraphView/graphview.py:949
-msgid "_Change filename"
-msgstr "_Wijzig bestandsnaam"
-
-#: GraphView/graphview.py:964
-#, python-format
-msgid "Could not create %s"
-msgstr "Kan %s niet maken"
-
-#: GraphView/graphview.py:1024
-msgid "Zoom in"
-msgstr "Inzoomen"
-
-#: GraphView/graphview.py:1031
-msgid "Zoom out"
-msgstr "Uitzoomen"
-
-#: GraphView/graphview.py:1038
-msgid "Zoom to original"
-msgstr "Zoom naar origineel"
-
-#: GraphView/graphview.py:1045
-msgid "Zoom to best fit"
-msgstr "Zoom naar best passend"
-
-#: GraphView/graphview.py:1052
+#: GraphView/graphview.py:1052 GraphView/graphview.py:1123
 msgid "Go to active person"
 msgstr "Ga naar actieve persoon"
 
-#: GraphView/graphview.py:1057
+#: GraphView/graphview.py:1057 GraphView/graphview.py:1128
 msgid "Go to bookmark"
 msgstr "Ga naar bladwijzer"
 
-#: GraphView/graphview.py:1059
+#: GraphView/graphview.py:1059 GraphView/graphview.py:1130
 msgid "Center view on selected bookmark"
 msgstr "Centreer de weergave op geselecteerde bladwijzer"
 
-#: GraphView/graphview.py:1061
+#: GraphView/graphview.py:1061 GraphView/graphview.py:1132
 msgid "Bookmarks for current graph"
 msgstr "Bladwijzers voor huidige grafiek"
 
-#: GraphView/graphview.py:1062
+#: GraphView/graphview.py:1062 GraphView/graphview.py:1133
 msgid "Other Bookmarks"
 msgstr "Andere bladwijzers"
 
-#: GraphView/graphview.py:1093
+#: GraphView/graphview.py:1093 GraphView/graphview.py:1164
 msgid "Ancestor generations"
 msgstr "Vooroudergeneraties"
 
-#: GraphView/graphview.py:1097
+#: GraphView/graphview.py:1097 GraphView/graphview.py:1168
 msgid "Descendant generations"
 msgstr "Afstammelingsgeneraties"
 
-#: GraphView/graphview.py:1101
-msgid "Generations"
-msgstr "Generaties"
-
-#: GraphView/graphview.py:1108
+#: GraphView/graphview.py:1108 GraphView/graphview.py:1179
 msgid "Vertical spacing between generations"
 msgstr "Verticale afstand tussen generaties"
 
-#: GraphView/graphview.py:1113
+#: GraphView/graphview.py:1113 GraphView/graphview.py:1184
 msgid "Horizontal spacing between generations"
 msgstr "Horizontale afstand tussen generaties"
 
-#: GraphView/graphview.py:1117
+#: GraphView/graphview.py:1117 GraphView/graphview.py:1188
 msgid "Spacings"
 msgstr "Afstanden"
 
-#: GraphView/graphview.py:1122
+#: GraphView/graphview.py:1122 GraphView/graphview.py:1193
 msgid "All connected"
 msgstr "Allemaal verbonden"
 
-#: GraphView/graphview.py:1124
+#: GraphView/graphview.py:1124 GraphView/graphview.py:1195
 msgid ""
 "Show all connected persons limited by generation restrictions.\n"
 "Works slow, so don't set large generation values."
@@ -344,42 +287,40 @@ msgstr ""
 "Toon alle verbonden personen beperkt door generatiebeperkingen.\n"
 "Werkt traag, dus stel geen grote generatiewaarden in."
 
-#: GraphView/graphview.py:1266
+#: GraphView/graphview.py:1266 GraphView/graphview.py:1337
 msgid "Add active person"
 msgstr "Voeg actieve persoon toe"
 
-#: GraphView/graphview.py:1270 GraphView/graphview.py:3775
-#: GraphView/graphview.py:4042
-msgid "Edit"
-msgstr "Bewerken"
-
-#: GraphView/graphview.py:1271
+#: GraphView/graphview.py:1271 GraphView/graphview.py:1342
 msgid "Call the bookmark editor"
 msgstr "Schakel de bladwijzereditor in"
 
-#: GraphView/graphview.py:1328
+#: GraphView/graphview.py:1328 GraphView/graphview.py:1399
 msgid ""
 "You don't have any bookmarks yet...\n"
 "Try to add some frequently used persons to speedup navigation."
 msgstr ""
 "U heeft nog geen bladwijzers ...\n"
-"Probeer een aantal veelgebruikte personen toe te voegen om de navigatie te versnellen."
+"Probeer een aantal veelgebruikte personen toe te voegen om de navigatie te "
+"versnellen."
 
-#: GraphView/graphview.py:1336
+#: GraphView/graphview.py:1336 GraphView/graphview.py:1407
 msgid "No bookmarks for this graph..."
 msgstr "Geen bladwijzers voor deze grafiek ..."
 
-#: GraphView/graphview.py:1341
+#: GraphView/graphview.py:1341 GraphView/graphview.py:1412
 msgid "No other bookmarks..."
 msgstr "Geen andere bladwijzers ..."
 
 #: GraphView/graphview.py:1346 GraphView/graphview.py:1348
 #: GraphView/search_widget.py:224 GraphView/search_widget.py:243
+#: GraphView/graphview.py:1417 GraphView/graphview.py:1419
+#: GraphView/search_widget.py:233 GraphView/search_widget.py:252
 #, python-format
 msgid "found: %s"
 msgstr "gevonden: %s"
 
-#: GraphView/graphview.py:1358
+#: GraphView/graphview.py:1358 GraphView/graphview.py:1429
 #, python-format
 msgid ""
 "Add active person to bookmarks\n"
@@ -388,7 +329,7 @@ msgstr ""
 "Voeg actieve persoon toe aan bladwijzers\n"
 "%s"
 
-#: GraphView/graphview.py:1445
+#: GraphView/graphview.py:1445 GraphView/graphview.py:1516
 #, python-format
 msgid ""
 "Person <b><i>%s</i></b> is not in the current view.\n"
@@ -397,229 +338,118 @@ msgstr ""
 "Persoon <b><i>%s</i></b> bevindt zich niet in de huidige weergave.\n"
 "Wilt u deze op actief zetten en de weergave opnieuw opbouwen?"
 
-#: GraphView/graphview.py:1448
+#: GraphView/graphview.py:1448 GraphView/graphview.py:1519
 msgid "Change active person?"
 msgstr "Wijzig actieve persoon?"
 
-#: GraphView/graphview.py:1449 GraphView/graphview.py:4516
-#: GraphView/graphview.py:4545
-msgid "Yes"
-msgstr "Ja"
-
-#: GraphView/graphview.py:1449 GraphView/graphview.py:4516
-#: GraphView/graphview.py:4545
-msgid "No"
-msgstr "Nee"
-
-#: GraphView/graphview.py:2519 GraphView/graphview.py:2552
-msgid "Relationship loop detected"
-msgstr "Relatielus gedetecteerd"
-
-#: GraphView/graphview.py:2592
-msgid "You try to build graph containing more then 1000 persons. Not all persons will be shown in the graph."
-msgstr "U probeert een grafiek op te bouwen met meer dan 1000 personen. Niet alle personen worden in de grafiek weergegeven."
-
-#: GraphView/graphview.py:2595
+#: GraphView/graphview.py:2595 GraphView/graphview.py:2678
 msgid "Incomplete graph"
 msgstr "Onvolledige grafiek"
 
-#: GraphView/graphview.py:2964
+#: GraphView/graphview.py:2964 GraphView/graphview.py:3047
 msgid "Image on right side"
 msgstr "Afbeelding aan de rechterkant"
 
-#: GraphView/graphview.py:2985
+#: GraphView/graphview.py:2985 GraphView/graphview.py:3068
 msgid "Image on left side"
 msgstr "Afbeelding aan de linkerkant"
 
-#: GraphView/graphview.py:3006
-msgid "Normal"
-msgstr "Normaal"
-
-#: GraphView/graphview.py:3083 GraphView/graphview.py:3084
-#: GraphView/graphview.py:3096 GraphView/graphview.py:3097
-#, python-format
-msgid "%s "
-msgstr "%s "
-
-#: GraphView/graphview.py:3314
+#: GraphView/graphview.py:3314 GraphView/graphview.py:3399
 msgid "<b>Tags:</b>"
 msgstr "<b>Labels:</b>"
 
-#: GraphView/graphview.py:3694
+#: GraphView/graphview.py:3694 GraphView/graphview.py:3779
 msgid "Lines type"
 msgstr "Type lijnen"
 
-#: GraphView/graphview.py:3698
+#: GraphView/graphview.py:3698 GraphView/graphview.py:3783
 msgid "Direct"
 msgstr "Rechtstreeks"
 
-#: GraphView/graphview.py:3706
+#: GraphView/graphview.py:3706 GraphView/graphview.py:3791
 msgid "Curves"
 msgstr "Gebogen"
 
-#: GraphView/graphview.py:3714
+#: GraphView/graphview.py:3714 GraphView/graphview.py:3799
 msgid "Ortho"
 msgstr "Orthogonaal"
 
-#: GraphView/graphview.py:3778
-msgid "Copy"
-msgstr "Kopiëren"
-
-#: GraphView/graphview.py:3781 GraphView/graphview.py:4045
-msgid "Delete"
-msgstr "Verwijderen"
-
-#: GraphView/graphview.py:3787 GraphView/graphview.py:4051
-msgid "Tags"
-msgstr "Labels"
-
-#: GraphView/graphview.py:3789
+#: GraphView/graphview.py:3789 GraphView/graphview.py:3896
 msgid "Select tags for person"
 msgstr "Selecteer labels voor persoon"
 
-#: GraphView/graphview.py:3792 GraphView/graphview.py:4056
-msgid "Organize Tags..."
-msgstr "Labels ordenen..."
-
-#: GraphView/graphview.py:3798 GraphView/graphview.py:4062
-msgid "Spouses"
-msgstr "Echtgenoten"
-
-#: GraphView/graphview.py:3800
+#: GraphView/graphview.py:3800 GraphView/graphview.py:3907
 msgid "Add new family"
 msgstr "Voeg nieuw gezin toe"
 
-#: GraphView/graphview.py:3821
-msgid "Siblings"
-msgstr "Broers en zussen"
-
-#: GraphView/graphview.py:3887
-msgid "Parents"
-msgstr "Ouders"
-
-#: GraphView/graphview.py:3918
+#: GraphView/graphview.py:3918 GraphView/graphview.py:4025
 msgid "Add parents"
 msgstr "Voeg ouders toe"
 
-#: GraphView/graphview.py:3922
-msgid "Related"
-msgstr "Verwant"
-
-#: GraphView/graphview.py:3941
-msgid "Set as home person"
-msgstr "Instellen als beginpersoon"
-
-#: GraphView/graphview.py:3944
+#: GraphView/graphview.py:3944 GraphView/graphview.py:4051
 msgid "Show path to home person"
 msgstr "Toon pad naar beginpersoon"
 
 #: GraphView/graphview.py:3950 GraphView/search_widget.py:277
-#: GraphView/search_widget.py:348
+#: GraphView/search_widget.py:348 GraphView/graphview.py:4057
+#: GraphView/search_widget.py:286 GraphView/search_widget.py:364
 msgid "Remove from bookmarks"
 msgstr "Verwijderen uit bladwijzers"
 
 #: GraphView/graphview.py:3953 GraphView/search_widget.py:285
-#: GraphView/search_widget.py:361
+#: GraphView/search_widget.py:361 GraphView/graphview.py:4060
+#: GraphView/search_widget.py:294 GraphView/search_widget.py:377
 msgid "Add to bookmarks"
 msgstr "Voeg toe aan bladwijzers"
 
-#: GraphView/graphview.py:3983
-msgid "Quick View"
-msgstr "Snelle weergave"
-
-#: GraphView/graphview.py:4027
-msgid "Web Connection"
-msgstr "Webverbinding"
-
-#: GraphView/graphview.py:4053
+#: GraphView/graphview.py:4053 GraphView/graphview.py:4182
 msgid "Select tags for family"
 msgstr "Selecteer labels voor gezin"
 
-#: GraphView/graphview.py:4072
+#: GraphView/graphview.py:4072 GraphView/graphview.py:4201
 msgid "Add father"
 msgstr "Voeg vader toe"
 
-#: GraphView/graphview.py:4081
+#: GraphView/graphview.py:4081 GraphView/graphview.py:4210
 msgid "Add mother"
 msgstr "Voeg moeder toe"
 
-#: GraphView/graphview.py:4098
-msgid "Children"
-msgstr "Kinderen"
-
-#: GraphView/graphview.py:4107
-msgid "Add child to family"
-msgstr "Voeg kind aan gezin toe"
-
-#: GraphView/graphview.py:4178
+#: GraphView/graphview.py:4178 GraphView/graphview.py:4313
 msgid "About Graph View"
 msgstr "Over Grafiekweergave"
 
-#: GraphView/graphview.py:4376
-msgid "Adding Tags"
-msgstr "Labels toevoegen"
-
-#: GraphView/graphview.py:4382 GraphView/graphview.py:4428
-#, python-format
-msgid "Adding Tags to person (%s)"
-msgstr "Labels aan persoon (%s) toevoegen"
-
-#: GraphView/graphview.py:4387 GraphView/graphview.py:4439
-#, python-format
-msgid "Adding Tags to family (%s)"
-msgstr "Labels aan gezin (%s) toevoegen"
-
-#: GraphView/graphview.py:4497
-msgid "Add Child to Family"
-msgstr "Voeg kind aan gezin toe"
-
-#: GraphView/graphview.py:4512
-#, python-format
-msgid "Delete %s?"
-msgstr "Verwijder %s?"
-
-#: GraphView/graphview.py:4513
+#: GraphView/graphview.py:4513 GraphView/graphview.py:4669
 #, python-format
 msgid "Deleting the person [%s] will remove it from the database."
 msgstr "Als u persoon [%s] verwijdert, wordt deze uit de database verwijderd."
 
-#: GraphView/graphview.py:4525
-#, python-format
-msgid "Delete Person (%s)"
-msgstr "Verwijder persoon (%s)"
-
-#: GraphView/graphview.py:4542
+#: GraphView/graphview.py:4542 GraphView/graphview.py:4698
 #, python-format
 msgid "Delete family [%s]?"
 msgstr "Verwijder gezin [%s]?"
 
-#: GraphView/graphview.py:4543
+#: GraphView/graphview.py:4543 GraphView/graphview.py:4699
 msgid "Deleting the family will remove it from the database."
 msgstr "Als u het gezin verwijdert, wordt deze uit de database verwijderd."
 
-#: GraphView/graphview.py:4554
+#: GraphView/graphview.py:4554 GraphView/graphview.py:4710
 #, python-format
 msgid "Delete Family [%s]"
 msgstr "Verwijder gezin [%s]"
 
-#: GraphView/graphview.py:4573
-#, python-format
-msgid "%s has been bookmarked"
-msgstr "%s is als bladwijzer toegevoegd"
-
-#: GraphView/search_widget.py:73
+#: GraphView/search_widget.py:73 GraphView/search_widget.py:82
 msgid "Persons from current graph"
 msgstr "Personen uit huidige grafiek"
 
-#: GraphView/search_widget.py:74
+#: GraphView/search_widget.py:74 GraphView/search_widget.py:83
 msgid "Other persons from database"
 msgstr "Andere personen uit database"
 
-#: GraphView/search_widget.py:226
+#: GraphView/search_widget.py:226 GraphView/search_widget.py:235
 msgid "No persons found..."
 msgstr "Geen personen gevonden..."
 
-#: GraphView/search_widget.py:382
+#: GraphView/search_widget.py:382 GraphView/search_widget.py:398
 msgid ""
 "Search people in the current visible graph and database.\n"
 "Use <Ctrl+F> to make search entry active."
@@ -627,29 +457,12 @@ msgstr ""
 "Zoek personen in de huidige zichtbare grafiek en database.\n"
 "Gebruik <Ctrl+F> om het zoekitem actief te maken."
 
-#: GraphView/search_widget.py:384
-msgid "Search..."
-msgstr "Zoeken..."
-
-#: GraphView/search_widget.py:575
+#: GraphView/search_widget.py:575 GraphView/search_widget.py:592
 #, python-format
 msgid "<b>%s:</b>"
 msgstr "<b>%s:</b>"
 
-#: GraphView/search_widget.py:661
-#, python-format
-msgid "Birth: %s"
-msgstr "Geboorte: %s"
-
-#: GraphView/search_widget.py:665
-#, python-format
-msgid "Death: %s"
-msgstr "Overleden: %s"
-
 #: GraphView/search_widget.py:671
+#: ../gramps/plugins/gramplet/relativegramplet.py:116
 msgid "Parents:"
 msgstr "Ouders:"
-
-#, python-format
-#~ msgid "%s %s"
-#~ msgstr "%s %s"

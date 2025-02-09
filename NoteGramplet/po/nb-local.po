@@ -1,54 +1,54 @@
-# Norwegian Bokmal translations for PACKAGE package.
-# Copyright (C) 2009 THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# translation of nb.po to
+# Gramps
+# Copyright (C) YEAR ORGANIZATION.
 #
+# Frode Jemtland <frode.jemtland@skolelinux.no>, 2003, 2004, 2005, 2006, 2008.
+# Axel Bojer <axelb@skolelinux.no>, 2003.
+# Jørgen Grønlund <jorgenhg@broadpark.no>, 2005.
+# Nils Kristian Tomren <project@nilsk.net>, 2006.
+# Espen Berg <espenbe@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2015, 2016.
+# Harald H. <haarektrans@gmail.com>, 2017.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-11-23 19:32+0100\n"
-"PO-Revision-Date: 2009-11-25 19:05+0100\n"
-"Last-Translator: \n"
-"Language-Team: Norwegian Bokmal <i18n-nb@lister.ping.uio.no>\n"
+"POT-Creation-Date: 2010-03-08 16:37+0100\n"
+"PO-Revision-Date: 2010-03-08 08:21+0100\n"
+"Last-Translator: Espen Berg <espenbe@gmail.com>\n"
+"Language-Team: American English <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Norwegian Bokmaal <i18n-nb@lister.ping.uio.no>\n"
+"Generated-By: pygettext.py 1.4\n"
+"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: NoteGramplet/NoteGramplet.gpr.py:3
-msgid "Note Gramplet"
-msgstr "Notat Smågramps"
-
-#: NoteGramplet/NoteGramplet.gpr.py:9
-msgid "Note"
-msgstr "Kommentar"
-
+#: DataEntryGramplet/DataEntryGramplet.py:55 FilterRules/activepersonrule.py:45
 #: NoteGramplet/NoteGramplet.py:59
 msgid "Active person"
 msgstr "Aktiv person"
 
-#: NoteGramplet/NoteGramplet.py:83
-msgid "Family"
-msgstr "Familie"
-
-#: NoteGramplet/NoteGramplet.py:105
+#: DataEntryGramplet/DataEntryGramplet.py:69
+#: DataEntryGramplet/DataEntryGramplet.py:89 NoteGramplet/NoteGramplet.py:105
 msgid "Save"
 msgstr "Lagre"
 
-#: NoteGramplet/NoteGramplet.py:108
+#: DataEntryGramplet/DataEntryGramplet.py:72
+#: DataEntryGramplet/DataEntryGramplet.py:92 NoteGramplet/NoteGramplet.py:108
 msgid "Abandon"
 msgstr "Utelate"
 
-#: NoteGramplet/NoteGramplet.py:167
-#: NoteGramplet/NoteGramplet.py:248
-msgid "Person Note"
-msgstr "Personnotat"
+#: NoteGramplet/NoteGramplet.gpr.py:3 NoteGramplet/NoteGramplet.gpr.py:4
+msgid "Note Gramplet"
+msgstr "Notat Smågramps"
 
-#: NoteGramplet/NoteGramplet.py:252
+#: NoteGramplet/NoteGramplet.py:252 ../gramps/gui/editors/editnote.py:373
 msgid "Add Note"
 msgstr "Legg til notat"
 
-#: NoteGramplet/NoteGramplet.py:257
+#: NoteGramplet/NoteGramplet.py:257 ../gramps/gui/editors/editnote.py:324
+#: ../gramps/gui/editors/editnote.py:377
+#: ../gramps/gui/editors/objectentries.py:589
 msgid "Edit Note"
 msgstr "Rediger notat"
-

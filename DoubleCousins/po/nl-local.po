@@ -1,33 +1,38 @@
-# Dutch translation of addon DNA.
-# Copyright (C) 2021 Gramps project
-# This file is distributed under the same license as the DNA package.
-# Jan Sparreboom <jan@sparreboom.net>, 2021.
+# Dutch translation of addon MediaMerge.
+# Copyright (C) 2020 Gramps project
+# This file is distributed under the same license as the MediaMerge package.
+# Jan Sparreboom <jan@sparreboom.net>, 2020, 2021, 2023.
+# Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
+# Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
+# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
+# Erik De Richter <frederik.de.richter@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
+# Harmen Huizinga <harmenhuizinga@sigmo.nl>, 2013.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: DoubleCousins 5.x\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-24 19:33+0200\n"
-"PO-Revision-Date: 2023-06-09 18:12+0200\n"
-"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
-"Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
+"Project-Id-Version: MediaMerge 5.x\n"
+"Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
+"POT-Creation-Date: 2019-01-04 18:55-0600\n"
+"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
+"addons/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.0.1\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10-dev\n"
 
 #: DoubleCousins/double_cousins.gpr.py:24
+#: DoubleCousins/double_cousins.gpr.py:25
 msgid "Double Cousins"
 msgstr "Dubbele neven en nichten"
 
 #: DoubleCousins/double_cousins.gpr.py:25
+#: DoubleCousins/double_cousins.gpr.py:26
 msgid "A text report listing double cousins."
 msgstr "Een tekstrapport met dubbele neven en nichten."
-
-#: DoubleCousins/double_cousins.py:104 DoubleCousins/double_cousins.py:105
-msgid "Birth"
-msgstr "Geboorte"
 
 #: DoubleCousins/double_cousins.py:112
 msgid "Double Cousins Report"
@@ -35,8 +40,20 @@ msgstr "Dubbele neven en nichten verslag"
 
 #: DoubleCousins/double_cousins.py:120
 #, no-python-format
-msgid "Double (first) cousins occur when two siblings of family A marry two siblings of family B. Their children are double cousins to each other and share the same four grandparents instead of six like normal first cousins. Therefore they are genetically closer than normal first cousins and share 25% of their DNA similar to half-siblings instead of 12.5% like normal first cousins.\n"
-msgstr "Dubbelneven en achterneven komen voor wanneer twee broers en zussen van familie A trouwen met twee broers en zussen van familie B. Hun kinderen zijn dubbelneven en delen dezelfde vier grootouders in plaats van zes zoals bij normale neven en nichten. Daarom zijn ze genetisch dichter bij elkaar dan normale neven en nichten en delen ze 25% van hun DNA zoals bij halfbroers en halfzussen in plaats van 12,5% zoals bij normale neven en nichten.\n"
+msgid ""
+"Double (first) cousins occur when two siblings of family A marry two "
+"siblings of family B. Their children are double cousins to each other and "
+"share the same four grandparents instead of six like normal first cousins. "
+"Therefore they are genetically closer than normal first cousins and share "
+"25% of their DNA similar to half-siblings instead of 12.5% like normal first "
+"cousins.\n"
+msgstr ""
+"Dubbelneven en achterneven komen voor wanneer twee broers en zussen van "
+"familie A trouwen met twee broers en zussen van familie B. Hun kinderen zijn "
+"dubbelneven en delen dezelfde vier grootouders in plaats van zes zoals bij "
+"normale neven en nichten. Daarom zijn ze genetisch dichter bij elkaar dan "
+"normale neven en nichten en delen ze 25% van hun DNA zoals bij halfbroers en "
+"halfzussen in plaats van 12,5% zoals bij normale neven en nichten.\n"
 
 #: DoubleCousins/double_cousins.py:136
 msgid "No double cousins were found in your database."
@@ -45,11 +62,3 @@ msgstr "Er zijn geen dubbele neven en nichten gevonden in uw database."
 #: DoubleCousins/double_cousins.py:170
 msgid "Show info text"
 msgstr "Informatietekst tonen"
-
-#: DoubleCousins/double_cousins.py:171 DoubleCousins/double_cousins.py:173
-msgid "Report Options"
-msgstr "Verslag opties"
-
-#: DoubleCousins/double_cousins.py:172
-msgid "Show Gramps ID"
-msgstr "Toon gramps-id"

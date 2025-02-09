@@ -1,14 +1,24 @@
-# Russian translation for ExtractCity
+# Russian translation for MediaMerge
 # This file is distributed under the same license as the Gramps package.
 #
-# Ivan Komaritsyn <vantu5z@mail.ru>, 2018.
+# Ivan Komaritsyn <vantu5z@mail.ru>, 2015, 2016, 2017, 2018, 2019, 2020, 2021.
+# Alexander Bogdashevsky <sanderb@kezomba.com>, 2004.
+# Alex Roitman <shura@gramps-project.org>, 2002, 2003, 2004, 2005, 2006, 2007.
+# Konstantin Dorichev <kdorichev@gmail.com>, 2008.
+# Yevgeny Zegzda <ezegjda@ya.ru>, 2009, 2010.
+# vantu5z <vantu5z@mail.ru>, 2020.
+# Komaritsyn Ivan <vantu5z@mail.ru>, 2018.
+# Andrey Baznikin (http://d.scn.ru/), 2009, 2010, 2011.
+# Vassilii Khachaturov <vassilii@tarunz.org>, 2011, 2012, 2013, 2014.
+# Egor Reentov <egor.gramps@gmail.com>, 2011, 2012, 2013.
+# Artem Glebov <artem.glebov@gmail.com>, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-30 12:02+0300\n"
-"PO-Revision-Date: 2018-11-30 12:05+0300\n"
+"POT-Creation-Date: 2018-12-04 16:31+0300\n"
+"PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
@@ -18,75 +28,40 @@ msgstr ""
 "X-Generator: Gtranslator 2.91.7\n"
 "X-Poedit-Language: Russian\n"
 "X-Poedit-Country: RUSSIAN FEDERATION\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: ExtractCity/extractcity.gpr.py:33
+#: ExtractCity/extractcity.gpr.py:33 ExtractCity/extractcity.gpr.py:34
 msgid "Extract Place Data from a Place Title"
 msgstr "Извлечение данных о месте из названия"
 
-#: ExtractCity/extractcity.gpr.py:34
+#: ExtractCity/extractcity.gpr.py:34 ExtractCity/extractcity.gpr.py:35
 msgid "Attempts to extract city and state/province from a place title"
 msgstr ""
 "Пробует извлечь названия города, штата, области и т.д. из названия места"
 
-#: ExtractCity/extractcity.py:68
-msgid "United States of America"
-msgstr "Соединённые Штаты Америки"
-
-#: ExtractCity/extractcity.py:68
-msgid "Canada"
-msgstr "Канада"
-
-#: ExtractCity/extractcity.py:68
-msgid "France"
-msgstr "Франция"
-
-#: ExtractCity/extractcity.py:68
-msgid "Sweden"
-msgstr "Швеция"
-
-#: ExtractCity/extractcity.py:391
+#: ExtractCity/extractcity.py:391 ExtractCity/extractcity.py:402
 msgid "Place title"
 msgstr "Название места"
 
-#: ExtractCity/extractcity.py:392
-msgid "City"
-msgstr "Город"
-
-#: ExtractCity/extractcity.py:393
-msgid "State"
-msgstr "Республика"
-
-#: ExtractCity/extractcity.py:394
-msgid "ZIP/Postal Code"
-msgstr "Индекс/Почтовый код"
-
-#: ExtractCity/extractcity.py:395
-msgid "Country"
-msgstr "Государство/Страна"
-
 #: ExtractCity/extractcity.py:422 ExtractCity/extractcity.py:612
+#: ExtractCity/extractcity.py:437 ExtractCity/extractcity.py:641
 msgid "Extract Place data"
 msgstr "Извлечение данных о месте"
 
-#: ExtractCity/extractcity.py:439
+#: ExtractCity/extractcity.py:439 ExtractCity/extractcity.py:454
 msgid "Checking Place Titles"
 msgstr "Проверка названий мест"
 
-#: ExtractCity/extractcity.py:440
+#: ExtractCity/extractcity.py:440 ExtractCity/extractcity.py:456
 msgid "Looking for place fields"
 msgstr "Ищем части адресов"
 
-#: ExtractCity/extractcity.py:526
-msgid "No modifications made"
-msgstr "Изменений не произведено"
-
-#: ExtractCity/extractcity.py:527
+#: ExtractCity/extractcity.py:527 ExtractCity/extractcity.py:543
 msgid "No place information could be extracted."
 msgstr "Никакой информации о местах не может быть выделено."
 
-#: ExtractCity/extractcity.py:546
+#: ExtractCity/extractcity.py:546 ExtractCity/extractcity.py:564
 msgid ""
 "Below is a list of Places with the possible data that can be extracted from "
 "the place title. Select the places you wish Gramps to convert."
@@ -94,11 +69,3 @@ msgstr ""
 "Ниже приведён список мест и возможные данные, которые могут быть извлечены "
 "из названия места. Отметьте места для которых Gramps должен выполнить "
 "конвертацию."
-
-#: ExtractCity/extractcity.py:557
-msgid "Select"
-msgstr "Выбрать"
-
-#: ExtractCity/extractcity.py:571
-msgid "Building display"
-msgstr "Обновление экрана"

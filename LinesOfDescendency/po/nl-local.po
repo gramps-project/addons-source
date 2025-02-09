@@ -1,45 +1,52 @@
-# Dutch translation of Gramps addon LinesOfDescendency
+# Dutch translation of addon MediaMerge.
 # Copyright (C) 2020 Gramps project
-# This file is distributed under the same license as the LinesOfDescendency package.
-#
+# This file is distributed under the same license as the MediaMerge package.
+# Jan Sparreboom <jan@sparreboom.net>, 2020, 2021, 2023.
 # Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
 # Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
-# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010.
-# Jan Sparreboom <jan@sparreboom.net>, 2020
+# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
+# Erik De Richter <frederik.de.richter@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
+# Harmen Huizinga <harmenhuizinga@sigmo.nl>, 2013.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: LinesOfDescendency 5.1.x\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-14 14:51+0200\n"
-"PO-Revision-Date: 2020-07-14 14:09+0200\n"
-"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
-"Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
+"Project-Id-Version: MediaMerge 5.x\n"
+"Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
+"POT-Creation-Date: 2019-01-04 18:55-0600\n"
+"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
+"addons/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10-dev\n"
+
+#: AncestorFill/AncestorFill.py:360 AncestorFill/AncestorFill.py:361
+#: LinesOfDescendency/lines-of-descendency.py:72
+msgid "The style used for the title of the page."
+msgstr "De stijl die wordt gebruikt voor de titel van de pagina."
+
+#: DenominoViso/DenominoViso.py:208
+#: LinesOfDescendency/lines-of-descendency.py:55
+msgid "Ancestor"
+msgstr "Voorouder"
 
 #: LinesOfDescendency/lines-of-descendency.gpr.py:30
+#: LinesOfDescendency/lines-of-descendency.gpr.py:31
 msgid "Lines of Descendency Report"
 msgstr "Afstammelingslijnenverslag"
 
 #: LinesOfDescendency/lines-of-descendency.gpr.py:31
+#: LinesOfDescendency/lines-of-descendency.gpr.py:33
 msgid ""
 "Prints out all descendency lines from a given ancestor to a given descendent "
 "in text."
 msgstr ""
 "Print alle afstammingslijnen van een bepaalde voorouder naar een bepaalde "
 "afstammeling in tekst uit."
-
-#: LinesOfDescendency/lines-of-descendency.py:53
-msgid "People"
-msgstr "Personen"
-
-#: LinesOfDescendency/lines-of-descendency.py:55
-msgid "Ancestor"
-msgstr "Voorouder"
 
 #: LinesOfDescendency/lines-of-descendency.py:56
 msgid "The ancestor from which to start the line"
@@ -53,22 +60,9 @@ msgstr "Afstammeling"
 msgid "The descendent to which to build the line"
 msgstr "De afstammeling waarnaar de lijn moet worden opgebouwd"
 
-#: LinesOfDescendency/lines-of-descendency.py:72
-msgid "The style used for the title of the page."
-msgstr "De stijl die gebruikt wordt voor de titel van de pagina."
-
 #: LinesOfDescendency/lines-of-descendency.py:82
 msgid "The style used for the title of a line."
 msgstr "De stijl die gebruikt wordt voor de titel van een regel."
-
-#: LinesOfDescendency/lines-of-descendency.py:89
-msgid "The basic style used for the text display."
-msgstr "De basisstijl die gebruikt wordt voor de tekstweergave."
-
-#: LinesOfDescendency/lines-of-descendency.py:103
-#, python-format
-msgid "Person %s is not in the Database"
-msgstr "Persoon %s staat niet in de database"
 
 #: LinesOfDescendency/lines-of-descendency.py:111
 #, python-format

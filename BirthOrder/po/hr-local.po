@@ -1,29 +1,31 @@
 # Croatian translation for Gramps
 # This file is distributed under the same license as the Gramps package.
 # Copyright (C) Gramps project
-# Milo Ivir <mivir@milotype.de>, 2019., 2020.
+# Milo Ivir <mivir@milotype.de>, 2019, 2020.
+# Stephen Adams, Gramps Reddit, 2018.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2019-03-08 00:03+0100\n"
+"PO-Revision-Date: 2019-10-23 15:25+0200\n"
+"Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: \n"
+"Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.1\n"
-"Last-Translator: Milo Ivir <mail@milotype.de>\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
-"Language: hr\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Generator: Poedit 2.2.4\n"
 
 #: BirthOrder/birthorder.gpr.py:9 BirthOrder/birthorder.py:62
+#: BirthOrder/birthorder.gpr.py:10
 msgid "Sort Children in Birth order"
 msgstr "Svrstaj djecu redoslijedom rođenja"
 
-#: BirthOrder/birthorder.gpr.py:10
+#: BirthOrder/birthorder.gpr.py:10 BirthOrder/birthorder.gpr.py:12
 msgid ""
 "Looks through families, looking for children that are not in birth order.  "
 "User can accept individual suggestions to correct, edit the birth order "
@@ -43,14 +45,6 @@ msgstr "Nijednu obitelj nije potrebno razvrastati"
 msgid "No children were out of birth order."
 msgstr "Sva djeca su svrstana po redoslijedu rođenja."
 
-#: BirthOrder/birthorder.py:186
-msgid "Edit Family"
-msgstr "Uredi obitelj"
-
-#: BirthOrder/birthorder.py:203
-msgid "Processing..."
-msgstr "Obrada u tijeku …"
-
 #: BirthOrder/birthorder.py:204
 msgid "Edit Families"
 msgstr "Uredi obitelji"
@@ -59,29 +53,9 @@ msgstr "Uredi obitelji"
 msgid "Looking for children birth order"
 msgstr "Pretraga redoslijeda rođenja djece"
 
-#: BirthOrder/birthorder.py:279
-msgid "Pass 1: Building preliminary lists"
-msgstr "1. prolaz: Izrada preliminarnog popisa"
-
 #: BirthOrder/birthorder.glade:56
 msgid "Select the family you wish to examine."
 msgstr "Odaberi obitelj, koju želiš provjeriti."
-
-#: BirthOrder/birthorder.glade:78
-msgid "Family ID"
-msgstr "ID obitelji"
-
-#: BirthOrder/birthorder.glade:93
-msgid "Father"
-msgstr "Otac"
-
-#: BirthOrder/birthorder.glade:108
-msgid "Mother"
-msgstr "Majka"
-
-#: BirthOrder/birthorder.glade:141
-msgid "Help"
-msgstr "Pomoć"
 
 #: BirthOrder/birthorder.glade:155
 msgid "Accept All"

@@ -1,172 +1,145 @@
-# Danish translation for Gramps; Dansk oversættelse til GRAMPS
-# Copyright (C) 2002 Free Software Foundation, Inc.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
 # Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
-# Morten Bo Johansen <mbj@spamcop.net>, 2006-, >= Gramps 0.7.3
+# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
+# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
 #
-# *** Konventioner: ***
-#
-# LDS: SDH (Latter Day Saints -> Sidste Dages Hellige)
-# home person: proband
-# ancestor: ane
-# give name: fornavn
-# preferences: indstillinger
-# link: forbindelse
-# family tree: slægtsbog
-# communion: altergang
-# probate: skifte
 msgid ""
 msgstr ""
-"Project-Id-Version: GRAMPS SVN13333 (trunk)\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-08 16:54+0100\n"
-"PO-Revision-Date: 2024-09-23 14:38+0200\n"
-"Last-Translator: Morten Bo Johansen <mojo@mbjnet.dk>\n"
-"Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
-"Language: da\n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"PO-Revision-Date: 2024-10-10 10:45+0200\n"
+"Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
+"Language-Team: \n"
+"Language: da_DK\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Generated-By: pygettext.py 1.4\n"
 "X-Generator: Poedit 3.0.1\n"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:9
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:182
+#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:190
 msgid "Calculate Estimated Dates"
 msgstr "Beregn anslåede datoer"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
+#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:11
 msgid "Calculates estimated dates for birth and death."
 msgstr "Beregner anslåede datoer for fødsel og død."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:72
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:185
-msgid "Options"
-msgstr "Indstillinger"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:74
-msgid "Filter"
-msgstr "Filter"
-
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:75
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:83
 msgid "Select filter to restrict people"
 msgstr "Vælg filter til personafgrænsning"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:79
-msgid "Filter Person"
-msgstr "Person til filter"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:80
-msgid "The center person for the filter"
-msgstr "Fokusperson for filteret"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:86
-msgid "Source text"
-msgstr "Kildetekst"
-
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:87
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:95
 msgid "Calculated Date Estimates"
 msgstr "Estimater for beregnede datoer"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:88
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:96
 msgid "Source to remove and/or add"
 msgstr "Kilde der skal fjernes og/eller tilføjes"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:91
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:99
 msgid "Remove previously added events, notes, and source"
 msgstr "Fjern tidligere tilføjede hændelser. noter, og kilder"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:92
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:100
 msgid ""
 "Remove calculated events, notes, and source; occurs immediately on Execute"
 msgstr "Fjern anslåede hændelser, noter og kilder; sker umiddelbart ved Udfør"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:95
-msgid "Birth"
-msgstr "Fødsel"
-
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:96
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:104
 msgid "Do not add birth events"
 msgstr "Tilføj ikke fødselshændelser"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:97
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:105
 msgid "Add birth events without dates"
 msgstr "Tilføj fødselshændelser, men uden dato"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:98
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:106
 msgid "Add birth events with dates"
 msgstr "Tilføj fødselshændelser med dato"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:99
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:107
 msgid "Add a birth events with or without estimated dates"
 msgstr "Tilføj en fødselshændelse med eller uden anslåede datoer"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:102
-msgid "Death"
-msgstr "Død"
-
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:103
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:111
 msgid "Do not add death events"
 msgstr " Tilføj ikke dødshændelser"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:104
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:112
 msgid "Add death events without dates"
 msgstr "Tilføj dødshændelses uden datoer"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:105
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:113
 msgid "Add death events with dates"
 msgstr "Tilføj dødshændelser med datoer"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:106
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:114
 msgid "Add death events with or without estimated dates"
 msgstr "Tilføj dødshændelser med eller uden anslåede datoer"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:110
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:118
 msgid "Maximum age"
 msgstr "Største alder"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:113
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:121
 msgid "Maximum age that one can live to"
 msgstr "Størst opnåelige alder"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:116
-msgid "Maximum sibling age difference"
-msgstr "Største aldersforskel mellem søskende"
-
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:119
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:127
 msgid "Maximum age difference between siblings"
 msgstr "Største aldersforskel mellem søskende"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:122
-msgid "Average years between generations"
-msgstr "Gennemsnitligt antal år mellem generationer"
-
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:125
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:133
 msgid "Average years between two generations"
 msgstr "Gennemsnitligt antal år mellem to generationer"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:128
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:136
 msgid "Estimated Dates"
 msgstr "Anslåede datoer"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:129
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:137
 msgid "Approximate (about)"
 msgstr "Anslået (omkring)"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:130
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:138
 msgid "Extremes (after and before)"
 msgstr "Ekstremer (efter og før)"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:131
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:139
 msgid "Dates on events are either about or after/before"
 msgstr "Datoer for hændelser er enten omkring eller før/efter"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:162
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:179
-msgid "Help"
-msgstr "Hjælp"
-
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:164
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:172
 msgid ""
 "The Calculate Estimated Dates Tool is used to add and remove birth and death "
 "events for people that are missing these events.\n"
@@ -205,26 +178,32 @@ msgstr ""
 "tidligere hændelser) for at tilføje alle mulige hændelser."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:191
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:199
 msgid "Select All"
 msgstr "Vælg alt"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:192
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:200
 msgid "Select None"
 msgstr "Vælg intet"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:193
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:201
 msgid "Toggle Selection"
 msgstr "Skift Valget"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:194
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:202
 msgid "Add Selected Events"
 msgstr "Tilføj Valgte Hændelse"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:200
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:208
 msgid "Remove Events, Notes, and Source and Reselect Data"
 msgstr "Fjern Hændelser, Noter, og Kilde og Genvælg Data"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:201
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:209
 msgid ""
 "Are you sure you want to remove previous events, notes, and source and "
 "reselect data?"
@@ -233,77 +212,58 @@ msgstr ""
 "genvælge data?"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:202
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:210
 msgid "Remove and Run Select Again"
 msgstr "Fjern og Udfør Valg igen"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:206
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:214
 msgid "Reselect Data"
 msgstr "Genvælg Data"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:207
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:215
 msgid "Are you sure you want to reselect data?"
 msgstr "Er du sikker på at du vil genvælge data?"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:208
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:216
 msgid "Run Select Again"
 msgstr "Udfør Valg Igen"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:217
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:226
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:386
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:400
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:405
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:410
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:421
-msgid "Select"
-msgstr "Vælg"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:226
-msgid "Person"
-msgstr "Person"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:226
-msgid "Action"
-msgstr "Handling"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:227
-msgid "Birth Date"
-msgstr "Fødselsdato"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:227
-msgid "Death Date"
-msgstr "Dødsdato"
-
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:228
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:236
 msgid "Evidence"
 msgstr "Dokumentation"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:228
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:236
 msgid "Relative"
 msgstr "Slægtning"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:229
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:237
 msgid "Processing...\n"
 msgstr "Behandler ...\n"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:247
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:255
 msgid "Removing old estimations... "
 msgstr "Fjerner gamle estimater"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:248
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:256
 #, python-format
 msgid "Removing '%s'..."
 msgstr "Fjerner \"%s\" ..."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:302
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:319
 msgid "done!\n"
 msgstr "udført!\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:303
-msgid "Removed date estimates"
-msgstr "Fjernede dato forlag"
-
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:307
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:323
 msgid ""
 "Selecting... \n"
 "\n"
@@ -311,76 +271,83 @@ msgstr ""
 "Vælger...\n"
 "\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:308
-msgid "Selecting..."
-msgstr "Vælger...."
-
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:343
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:359
 msgid "Add birth and death events"
 msgstr "Tilføj fødsels- og dødshændelser"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:345
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:361
 msgid "Add birth event"
 msgstr "Tilføj fødselshændelse"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:347
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:363
 msgid "Add death event"
 msgstr "Tilføj dødshændelse"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:382
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:398
 msgid "No events to be added."
 msgstr "Ingen hændelser skal tilføjes."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:424
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:439
 msgid "Selecting... "
 msgstr "Vælger ..."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:425
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:440
 #, python-format
 msgid "Adding events '%s'..."
 msgstr "Tilføjer hændelser '%s'..."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:447
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:465
 #, python-format
 msgid "Added birth event based on %(evidence)s, from %(name)s"
 msgstr "Tilføjet fødselshændelse baseret på %(evidence)s, fra %(name)s"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:450
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:468
 #, python-format
 msgid "Added birth event based on %s"
 msgstr " Tilføjet fødselshændelse baseret på %s"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:452
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:470
 msgid "Estimated birth date"
 msgstr "Anslået fødselsdato"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:463
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:480
 #, python-format
 msgid "Added death event based on %(evidence)s, from %(person)s"
 msgstr "Tilføjet dødshændelse baseret på %(evidence)s, from %(person)s"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:466
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:483
 #, python-format
 msgid "Added death event based on %s"
 msgstr " Tilføjet dødshændelse baseret på %s"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:468
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:485
 msgid "Estimated death date"
 msgstr "Anslået dødsdato"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:478
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:495
 msgid " Done! Committing..."
 msgstr "Udført! Gemmer....."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:480
-msgid "Add date estimates"
-msgstr "Tilføj anslåede datoer"
-
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:483
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:499
 #, python-format
 msgid "Added %d events."
 msgstr "Tilføjet %d hændelser."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:511
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:527
 msgid "Estimated date"
 msgstr "Anslået dato"

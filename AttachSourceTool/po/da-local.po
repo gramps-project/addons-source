@@ -1,52 +1,48 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
+# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
+# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2024-09-23 09:35+0200\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"PO-Revision-Date: 2024-10-10 10:45+0200\n"
+"Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
-"Language: da\n"
+"Language: da_DK\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:75
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:83
+#: AttachSourceTool/AttachSourceTool.py:70
+msgid "Select filter to restrict people"
+msgstr "Vælg filter til personafgrænsning"
+
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:229
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:237
+#: AttachSourceTool/AttachSourceTool.py:157
+msgid "Processing...\n"
+msgstr "Behandler ...\n"
 
 #: AttachSourceTool/AttachSourceTool.gpr.py:25
 #: AttachSourceTool/AttachSourceTool.py:137
 #: AttachSourceTool/AttachSourceTool.py:155
+#: AttachSourceTool/AttachSourceTool.gpr.py:26
 msgid "Attach Source"
 msgstr "Vedæft Kilde"
 
 #: AttachSourceTool/AttachSourceTool.gpr.py:26
+#: AttachSourceTool/AttachSourceTool.gpr.py:27
 msgid "Attaches a shared source to multiple objects."
 msgstr "Vedhæfter en delt kilde til flere objekter."
-
-#: AttachSourceTool/AttachSourceTool.py:67
-#: AttachSourceTool/AttachSourceTool.py:140
-msgid "Options"
-msgstr "Tilvalg"
-
-#: AttachSourceTool/AttachSourceTool.py:69
-msgid "Person Filter"
-msgstr "Person Filter"
-
-#: AttachSourceTool/AttachSourceTool.py:70
-msgid "Select filter to restrict people"
-msgstr "Vælg filter for at begrænse personer"
-
-#: AttachSourceTool/AttachSourceTool.py:74
-msgid "Filter Person"
-msgstr "Filter Person"
-
-#: AttachSourceTool/AttachSourceTool.py:75
-msgid "The center person for the filter"
-msgstr "Hovedpersonen for filteret"
 
 #: AttachSourceTool/AttachSourceTool.py:81
 msgid "Source type"
@@ -79,14 +75,6 @@ msgstr "Eksisterende KildeID"
 #: AttachSourceTool/AttachSourceTool.py:95
 msgid "ID of source to attach"
 msgstr "ID for kilden, der skal vedhæftes"
-
-#: AttachSourceTool/AttachSourceTool.py:156
-msgid "Results"
-msgstr "Resultater"
-
-#: AttachSourceTool/AttachSourceTool.py:157
-msgid "Processing...\n"
-msgstr "Arbejder...\n"
 
 #: AttachSourceTool/AttachSourceTool.py:174
 msgid "Attaching sources...\n"

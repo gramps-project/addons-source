@@ -13,18 +13,23 @@
 #  call name : prénom usuel
 #  unknown (context) : inconnu ou non-connu (individu)
 #
-# Laurent Protois <laurent.protois@free.fr>, 2001-2004.
+# Laurent Protois <laurent.protois@free.fr>, 2001, 2002, 2003, 2004.
 # Matthieu Pupat <tieum.tieum@free.fr>, 2004, 2005.
 # Guillaume Pratte <guillaumep@soireevideo.org>, 2005.
-# Frederic Chateaux, 2007-2008.
-# Jérôme Rapinat <romjerome@yahoo.fr>, 2005-2011.
+# Frederic Chateaux, 2007, 2008.
+# Jérôme Rapinat <romjerome@yahoo.fr>, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017.
+# Mathieu MD <mathieu.md@gmail.com>, 2012.
+# Paul Culley <prc@prc-virtualbox>, 2018.
+# Christophe <khrys63@gmail.com>, 2018.
+# Paul Culley <paulr2787@gmail.com>, 2016.
+# J-Paul Bérard <arverne@wanadoo.fr>, 2021.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-17 18:25+0100\n"
-"PO-Revision-Date: 2011-12-17 19:26+0100\n"
+"POT-Creation-Date: 2011-12-17 18:14+0100\n"
+"PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
 "Language: \n"
@@ -33,67 +38,56 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: SetAttributeTool/SetAttributeTool.gpr.py:25
-#: SetAttributeTool/SetAttributeTool.py:118
-#: SetAttributeTool/SetAttributeTool.py:124
-#: SetAttributeTool/SetAttributeTool.py:193
-msgid "Set Attribute"
-msgstr "Définir un attribut"
-
-#: SetAttributeTool/SetAttributeTool.gpr.py:26
-msgid "Set an attribute to a given value."
-msgstr "Définir une valeur à un attribut."
-
-#: SetAttributeTool/SetAttributeTool.py:69
-#: SetAttributeTool/SetAttributeTool.py:121
-msgid "Options"
-msgstr "Options"
-
-#: SetAttributeTool/SetAttributeTool.py:71
-msgid "Person Filter"
-msgstr "Filtre individu"
-
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:78
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:83
 #: SetAttributeTool/SetAttributeTool.py:72
 msgid "Select filter to restrict people"
 msgstr "Sélectionne un filtre pour restreindre les individus"
 
-#: SetAttributeTool/SetAttributeTool.py:76
-msgid "Filter Person"
-msgstr "Filtre sur l'individu"
-
-#: SetAttributeTool/SetAttributeTool.py:77
-msgid "The center person for the filter"
-msgstr "L'individu central pour ce filtre"
-
-#: SetAttributeTool/SetAttributeTool.py:81
-msgid "Attribute"
-msgstr "Attribut"
-
-#: SetAttributeTool/SetAttributeTool.py:82
-msgid "Value"
-msgstr "Valeur"
-
-#: SetAttributeTool/SetAttributeTool.py:84
-msgid "Attribute type to add or edit"
-msgstr "Type d'attribut à ajouter ou éditer"
-
-#: SetAttributeTool/SetAttributeTool.py:85
-msgid "Attribute value to add or edit"
-msgstr "Valeur de l'attribut à ajouter ou éditer"
-
-#: SetAttributeTool/SetAttributeTool.py:125
-msgid "Results"
-msgstr "Résultats"
-
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:232
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:237
 #: SetAttributeTool/SetAttributeTool.py:126
 msgid "Processing...\n"
 msgstr "Traitement en cours...\n"
 
+#: AttachSourceTool/AttachSourceTool.py:190
+#: AttachSourceTool/AttachSourceTool.py:197
+#: SetAttributeTool/SetAttributeTool.py:181
+msgid "Done!\n"
+msgstr "Terminé !\n"
+
+#: SetAttributeTool/SetAttributeTool.gpr.py:25
+#: SetAttributeTool/SetAttributeTool.py:118
+#: SetAttributeTool/SetAttributeTool.py:124
+#: SetAttributeTool/SetAttributeTool.py:193
+#: SetAttributeTool/SetAttributeTool.gpr.py:26
+#: SetAttributeTool/SetAttributeTool.py:122
+#: SetAttributeTool/SetAttributeTool.py:150
+msgid "Set Attribute"
+msgstr "Définir un attribut"
+
+#: SetAttributeTool/SetAttributeTool.gpr.py:26
+#: SetAttributeTool/SetAttributeTool.gpr.py:27
+msgid "Set an attribute to a given value."
+msgstr "Définir une valeur à un attribut."
+
+#: SetAttributeTool/SetAttributeTool.py:84
+#: SetAttributeTool/SetAttributeTool.py:83
+msgid "Attribute type to add or edit"
+msgstr "Type d'attribut à ajouter ou éditer"
+
+#: SetAttributeTool/SetAttributeTool.py:85
+#: SetAttributeTool/SetAttributeTool.py:84
+msgid "Attribute value to add or edit"
+msgstr "Valeur de l'attribut à ajouter ou éditer"
+
 #: SetAttributeTool/SetAttributeTool.py:141
+#: SetAttributeTool/SetAttributeTool.py:152
 msgid "Setting attributes..."
 msgstr "Définition des attributs..."
 
 #: SetAttributeTool/SetAttributeTool.py:148
+#: SetAttributeTool/SetAttributeTool.py:156
 #, python-format
 msgid ""
 "Setting '%s' attributes to '%s'...\n"
@@ -103,6 +97,7 @@ msgstr ""
 "\n"
 
 #: SetAttributeTool/SetAttributeTool.py:179
+#: SetAttributeTool/SetAttributeTool.py:188
 #, python-format
 msgid ""
 "\n"
@@ -111,15 +106,6 @@ msgstr ""
 "\n"
 "A défini %d attributs '%s' à '%s'\n"
 
-#: SetAttributeTool/SetAttributeTool.py:181
-msgid "Done!\n"
-msgstr "Terminé !\n"
-
-#: SetAttributeTool/SetAttributeTool.py:194
+#: ../gramps/gen/plug/_pluginreg.py:71 SetAttributeTool/SetAttributeTool.py:194
 msgid "Beta"
-msgstr "Bêta "
-
-#: SetAttributeTool/SetAttributeTool.py:197
-msgid "Sets an attribute of a person to a given value."
-msgstr "Définit un attribut à une personne avec une valeur donnée."
-
+msgstr "Beta"

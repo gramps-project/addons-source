@@ -1,35 +1,41 @@
-# Dutch translation of Gramps addon FamilySheet
+# Dutch translation of addon MediaMerge.
 # Copyright (C) 2020 Gramps project
-# This file is distributed under the same license as the FamilySheet package.
+# This file is distributed under the same license as the MediaMerge package.
+# Jan Sparreboom <jan@sparreboom.net>, 2020, 2021, 2023.
 # Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
 # Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
-# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010.
+# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
+# Erik De Richter <frederik.de.richter@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
+# Harmen Huizinga <harmenhuizinga@sigmo.nl>, 2013.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: FamilySheet 5.1.x\n"
+"Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
-"POT-Creation-Date: 2019-09-21 10:45+1000\n"
-"PO-Revision-Date: 2020-04-27 14:33+0200\n"
-"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
-"Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
+"POT-Creation-Date: 2019-01-04 18:55-0600\n"
+"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
+"addons/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.6\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10-dev\n"
 
 #: FamilySheet/FamilySheet.gpr.py:3 FamilySheet/FamilySheet.py:126
+#: FamilySheet/FamilySheet.gpr.py:4
 msgid "Family Sheet"
 msgstr "Familieblad"
 
-#: FamilySheet/FamilySheet.gpr.py:4
+#: FamilySheet/FamilySheet.gpr.py:4 FamilySheet/FamilySheet.gpr.py:6
 msgid ""
 "Produces a family sheet showing full information about a person and his/her "
 "partners and children."
 msgstr ""
-"Toont een familieblad met volledige informatie over een persoon en zijn/"
-"haar partners en kinderen."
+"Toont een familieblad met volledige informatie over een persoon en zijn/haar "
+"partners en kinderen."
 
 #: FamilySheet/FamilySheet.py:232 FamilySheet/FamilySheet.py:275
 #, python-format
@@ -55,11 +61,6 @@ msgstr "; %(type)s: %(value)s"
 msgid "Source references:"
 msgstr "Bronverwijzingen:"
 
-#: FamilySheet/FamilySheet.py:571
-#, python-format
-msgid "%s: "
-msgstr "%s: "
-
 #: FamilySheet/FamilySheet.py:575
 #, python-format
 msgid ", page %s"
@@ -69,129 +70,98 @@ msgstr ", pagina %s"
 msgid "Notes:"
 msgstr "Opmerkingen:"
 
-#: FamilySheet/FamilySheet.py:767
+#: FamilySheet/FamilySheet.py:767 FamilySheet/FamilySheet.py:769
 #, python-format
 msgid "on %(ymd_date)s"
 msgstr "op %(ymd_date)s"
 
-#: FamilySheet/FamilySheet.py:769
+#: FamilySheet/FamilySheet.py:769 FamilySheet/FamilySheet.py:771
 #, python-format
 msgid "in %(ym_date)s"
 msgstr "in %(ym_date)s"
 
-#: FamilySheet/FamilySheet.py:771
+#: FamilySheet/FamilySheet.py:771 FamilySheet/FamilySheet.py:773
 #, python-format
 msgid "in %(y_date)s"
 msgstr "in %(y_date)s"
 
-#: FamilySheet/FamilySheet.py:775
+#: FamilySheet/FamilySheet.py:775 FamilySheet/FamilySheet.py:777
 #, python-format
 msgid "on %(placeholder)s"
 msgstr "op %(placeholder)s"
 
-#: FamilySheet/FamilySheet.py:777
+#: FamilySheet/FamilySheet.py:777 FamilySheet/FamilySheet.py:779
 #, python-format
 msgid "on %(placeholder)s (%(partial)s)"
 msgstr "op %(placeholder)s (%(partial)s)"
 
 #: FamilySheet/FamilySheet.py:822 FamilySheet/FamilySheet.py:824
+#: FamilySheet/FamilySheet.py:826
 #, python-format
 msgid "in %(place)s"
 msgstr "te %(place)s"
 
-#: FamilySheet/FamilySheet.py:859
-msgid "Report Options"
-msgstr "Verslagopties"
-
-#: FamilySheet/FamilySheet.py:862
+#: FamilySheet/FamilySheet.py:862 FamilySheet/FamilySheet.py:864
 msgid "Center person"
 msgstr "Centrale persoon"
 
-#: FamilySheet/FamilySheet.py:864
+#: FamilySheet/FamilySheet.py:864 FamilySheet/FamilySheet.py:866
 msgid "The person whose partners and children are printed"
 msgstr "De persoon waarvan de partners en de kinderen worden afgedrukt"
 
-#: FamilySheet/FamilySheet.py:867
+#: FamilySheet/FamilySheet.py:867 FamilySheet/FamilySheet.py:869
 msgid "Print sheets for"
 msgstr "Pagina's afdrukken voor"
 
-#: FamilySheet/FamilySheet.py:869
+#: FamilySheet/FamilySheet.py:869 FamilySheet/FamilySheet.py:871
 msgid "Center person only"
 msgstr "Alleen centrale persoon"
 
-#: FamilySheet/FamilySheet.py:870
+#: FamilySheet/FamilySheet.py:870 FamilySheet/FamilySheet.py:872
 msgid "Center person and descendants in side branches"
 msgstr "Centrale persoon en afstammelingen in zijtakken"
 
-#: FamilySheet/FamilySheet.py:871
+#: FamilySheet/FamilySheet.py:871 FamilySheet/FamilySheet.py:873
 msgid "Center person and all descendants"
 msgstr "Centrale persoon en al de afstammelingen"
 
-#: FamilySheet/FamilySheet.py:872
+#: FamilySheet/FamilySheet.py:872 FamilySheet/FamilySheet.py:874
 msgid "Whether to include descendants, and which ones."
 msgstr "Of nakomelingen moeten worden opgenomen en welke."
 
-#: FamilySheet/FamilySheet.py:875
-msgid "Use call name"
-msgstr "Gebruik roepnaam"
-
-#: FamilySheet/FamilySheet.py:877
-msgid "Don't use call name"
-msgstr "Gebruik de roepnaam niet"
-
-#: FamilySheet/FamilySheet.py:878
+#: FamilySheet/FamilySheet.py:878 FamilySheet/FamilySheet.py:880
 msgid "Replace first name with call name"
 msgstr "Vervang de voornaam door de roepnaam"
 
-#: FamilySheet/FamilySheet.py:879
+#: FamilySheet/FamilySheet.py:879 FamilySheet/FamilySheet.py:881
 msgid "Underline call name in first name / add call name to first name"
 msgstr "Onderstreep roepnaam in de voornaam / voeg roepnaam aan voornaam toe"
 
-#: FamilySheet/FamilySheet.py:880
+#: FamilySheet/FamilySheet.py:880 FamilySheet/FamilySheet.py:882
 msgid "Whether to include call name, and how."
 msgstr "Of de roepnaam moet worden opgenomen en hoe."
 
-#: FamilySheet/FamilySheet.py:883
+#: FamilySheet/FamilySheet.py:883 FamilySheet/FamilySheet.py:885
 msgid "Print placeholders for missing information"
 msgstr "Tijdelijke aanduidingen afdrukken voor ontbrekende informatie"
 
-#: FamilySheet/FamilySheet.py:885
-msgid "Whether to include fields for missing information."
-msgstr "Of velden moeten worden opgenomen voor ontbrekende informatie."
-
-#: FamilySheet/FamilySheet.py:888
-msgid "Include sources"
-msgstr "Bronnen bijvoegen"
-
-#: FamilySheet/FamilySheet.py:889
-msgid "Whether to include source references."
-msgstr "Of bronreferenties moeten worden opgenomen."
-
-#: FamilySheet/FamilySheet.py:892
-msgid "Include notes"
-msgstr "Opmerkingen bijvoegen"
-
-#: FamilySheet/FamilySheet.py:893
-msgid "Whether to include notes."
-msgstr "Of opmerkingen moeten worden opgenomen."
-
-#: FamilySheet/FamilySheet.py:907
+#: FamilySheet/FamilySheet.py:907 FamilySheet/FamilySheet.py:909
 msgid "The basic style used for the text display"
 msgstr "De basistijl gebruikt voor de tekstweergave"
 
-#: FamilySheet/FamilySheet.py:917
+#: FamilySheet/FamilySheet.py:917 FamilySheet/FamilySheet.py:919
 msgid "The style used for the page key on the top"
 msgstr "De stijl die wordt gebruikt voor de paginanaam bovenaan"
 
-#: FamilySheet/FamilySheet.py:926
+#: FamilySheet/FamilySheet.py:926 FamilySheet/FamilySheet.py:928
 msgid "The style used for names"
 msgstr "De stijl die voor namen wordt gebruikt"
 
-#: FamilySheet/FamilySheet.py:936
+#: FamilySheet/FamilySheet.py:936 FamilySheet/FamilySheet.py:938
 msgid "The style used for numbers"
 msgstr "De stijl die voor getallen wordt gebruikt"
 
-#: FamilySheet/FamilySheet.py:946
+#: FamilySheet/FamilySheet.py:946 FamilySheet/FamilySheet.py:948
 msgid "The style used for footnotes (notes and source references)"
 msgstr ""
 "De stijl die wordt gebruikt voor voetnoten (opmerkingen en bronverwijzingen)"

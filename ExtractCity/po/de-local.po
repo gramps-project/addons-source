@@ -3,94 +3,67 @@
 # translation of de.po to Deutsch
 #
 #
-# Anton Huber <anton_huber@gmx.de>, 2005,2006.
+# Anton Huber <anton_huber@gmx.de>, 2005, 2006.
 # Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
 # Sebastian Vöcking <voeck@web.de>, 2005.
 # Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
 # Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 # Alois Pöttker <alois.poettker@gmx.de>, 2017.
+# Allan Nordhøy <epost@anotheragency.no>, 2021.
+# R. B. <weblate@macdefender.org>, 2021.
+# RiseT <tareiss1971@yahoo.de>, 2021.
+# David Straub <straub@protonmail.com>, 2021.
+# nautilusx <translate@disroot.org>, 2021.
+# Andreas Abraham <andreas.abraham@gmx.de>, 2021.
+# RiseT <twilite505-4bf24909@yahoo.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-29 22:23+0200\n"
-"PO-Revision-Date: 2020-07-23 20:24+0200\n"
+"POT-Creation-Date: 2020-08-02 22:39+0200\n"
+"PO-Revision-Date: 2025-02-09 06:44+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
-"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
+"addons/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 19.12.3\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10-dev\n"
 
-#: ExtractCity/extractcity.gpr.py:33
+#: ExtractCity/extractcity.gpr.py:33 ExtractCity/extractcity.gpr.py:34
 msgid "Extract Place Data from a Place Title"
 msgstr "Extrahiere Ortsdaten aus Ortstitel"
 
-#: ExtractCity/extractcity.gpr.py:34
+#: ExtractCity/extractcity.gpr.py:34 ExtractCity/extractcity.gpr.py:35
 msgid "Attempts to extract city and state/province from a place title"
 msgstr ""
 "Versuche, Stadt und Bundesland/Provinz von einem Ortstitel zu extrahieren"
 
-#: ExtractCity/extractcity.py:68
-msgid "United States of America"
-msgstr "Vereinigte Staaten von Amerika"
-
-#: ExtractCity/extractcity.py:68
-msgid "Canada"
-msgstr "Kanada"
-
-#: ExtractCity/extractcity.py:68
-msgid "France"
-msgstr "Frankreich"
-
-#: ExtractCity/extractcity.py:68
-msgid "Sweden"
-msgstr "Schweden"
-
-#: ExtractCity/extractcity.py:391
+#: ExtractCity/extractcity.py:391 ExtractCity/extractcity.py:402
 msgid "Place title"
 msgstr "Ortstitel"
 
-#: ExtractCity/extractcity.py:392
-msgid "City"
-msgstr "Stadt"
-
-#: ExtractCity/extractcity.py:393
-msgid "State"
-msgstr "Bundesland"
-
-#: ExtractCity/extractcity.py:394
-msgid "ZIP/Postal Code"
-msgstr "PLZ"
-
-#: ExtractCity/extractcity.py:395
-msgid "Country"
-msgstr "Land"
-
 #: ExtractCity/extractcity.py:426 ExtractCity/extractcity.py:630
+#: ExtractCity/extractcity.py:437 ExtractCity/extractcity.py:641
 msgid "Extract Place data"
 msgstr "Ortsdaten extrahieren"
 
-#: ExtractCity/extractcity.py:443
+#: ExtractCity/extractcity.py:443 ExtractCity/extractcity.py:454
 msgid "Checking Place Titles"
 msgstr "Überprüfung von Ortstiteln"
 
-#: ExtractCity/extractcity.py:445
+#: ExtractCity/extractcity.py:445 ExtractCity/extractcity.py:456
 msgid "Looking for place fields"
 msgstr "Suche nach Ortsfeldern"
 
-#: ExtractCity/extractcity.py:531
-msgid "No modifications made"
-msgstr "Keine Veränderungen gemacht"
-
-#: ExtractCity/extractcity.py:532
+#: ExtractCity/extractcity.py:532 ExtractCity/extractcity.py:543
 msgid "No place information could be extracted."
 msgstr "Es konnten keine Ortsinformationen extrahiert werden."
 
-#: ExtractCity/extractcity.py:553
+#: ExtractCity/extractcity.py:553 ExtractCity/extractcity.py:564
 msgid ""
 "Below is a list of Places with the possible data that can be extracted from "
 "the place title. Select the places you wish Gramps to convert."
@@ -99,27 +72,9 @@ msgstr ""
 "Ortstitel extrahiert werden können. Wähle die Orte aus, die Gramps "
 "konvertieren soll."
 
-#: ExtractCity/extractcity.py:564
-msgid "Select"
-msgstr "Auswählen"
-
-#: ExtractCity/extractcity.py:580
-msgid "Building display"
-msgstr "Anzeige wird erstellt"
-
-#: ExtractCity/changenames.glade:37
-msgid ""
-"Below is a list of the family names that \n"
-"Gramps can convert to correct capitalization. \n"
-"Select the names you wish Gramps to convert. "
-msgstr ""
-"Es folgt eine Liste von Nachnamen, die Gramps \n"
-"in korrekte Großschreibung ändern kann. \n"
-"Wähle die Namen aus, die Gramps ändern soll. "
-
 #: ExtractCity/changenames.glade:94
 msgid "_Toggle Selected"
-msgstr ""
+msgstr "Ausgewählte _umkehren"
 
 #: ExtractCity/changenames.glade:98
 msgid ""
@@ -127,7 +82,7 @@ msgid ""
 "(add to group), or <shift> (extend group) click, or with <ctrl> or <shift> "
 "arrow keys and 'space'.  Or <ctrl>'a' for select all."
 msgstr ""
-
-#: ExtractCity/changenames.glade:126
-msgid "_Accept changes and close"
-msgstr "Änderungen _akzeptieren und schließen"
+"Schaltet die Häkchen bei ausgewählten Zeilen um. Zeilen können mit <Strg> "
+"(zur Gruppe hinzufügen) oder <Umschalt> (Gruppe erweitern) oder mit <Strg> "
+"oder <Umschalt> Pfeiltasten und 'Leerzeichen' ausgewählt werden.  Oder "
+"<Strg>'a' für Alles auswählen."

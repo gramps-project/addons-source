@@ -13,18 +13,23 @@
 #  call name : prénom usuel
 #  unknown (context) : inconnu ou non-connu (individu)
 #
-# Laurent Protois <laurent.protois@free.fr>, 2001-2004.
+# Laurent Protois <laurent.protois@free.fr>, 2001, 2002, 2003, 2004.
 # Matthieu Pupat <tieum.tieum@free.fr>, 2004, 2005.
 # Guillaume Pratte <guillaumep@soireevideo.org>, 2005.
-# Frederic Chateaux, 2007-2008.
-# Jérôme Rapinat <romjerome@yahoo.fr>, 2005-2011.
+# Frederic Chateaux, 2007, 2008.
+# Jérôme Rapinat <romjerome@yahoo.fr>, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017.
+# Mathieu MD <mathieu.md@gmail.com>, 2012.
+# Paul Culley <prc@prc-virtualbox>, 2018.
+# Christophe <khrys63@gmail.com>, 2018.
+# Paul Culley <paulr2787@gmail.com>, 2016.
+# J-Paul Bérard <arverne@wanadoo.fr>, 2021.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-17 18:17+0100\n"
-"PO-Revision-Date: 2011-12-17 19:02+0100\n"
+"POT-Creation-Date: 2011-12-17 18:14+0100\n"
+"PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
 "Language: \n"
@@ -33,28 +38,29 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-# trunk
-#: DEWebConnectPack/DEWebPack.gpr.py:10
-msgid "DE Web Connect Pack"
-msgstr "Ensemble de liens internet allemands"
-
-#: DEWebConnectPack/DEWebPack.gpr.py:11
-msgid "Collection of Web sites for the DE (requires libwebconnect)"
-msgstr "Collection de sites internet pour l'Allemagne (nécessite libwebconnect)"
-
-#: DEWebConnectPack/DEWebPack.py:33
-msgid "Bielefeld Academic Search"
-msgstr "Recherche Bielefeld Academic"
-
+#: UKWebConnectPack/UKWebPack.py:31 SVWebconnectPack/SVWebPack.py:34
 #: DEWebConnectPack/DEWebPack.py:35
 msgid "FamilySearch.org"
 msgstr "FamilySearch.org"
 
-#: DEWebConnectPack/DEWebPack.py:38
+# trunk
+#: DEWebConnectPack/DEWebPack.gpr.py:10 DEWebConnectPack/DEWebPack.gpr.py:11
+msgid "DE Web Connect Pack"
+msgstr "Ensemble de liens internet allemands"
+
+#: DEWebConnectPack/DEWebPack.gpr.py:11 DEWebConnectPack/DEWebPack.gpr.py:12
+msgid "Collection of Web sites for the DE (requires libwebconnect)"
+msgstr ""
+"Collection de sites internet pour l'Allemagne (nécessite libwebconnect)"
+
+#: DEWebConnectPack/DEWebPack.py:33 DEWebConnectPack/DEWebPack.py:37
+msgid "Bielefeld Academic Search"
+msgstr "Recherche Bielefeld Academic"
+
+#: DEWebConnectPack/DEWebPack.py:38 DEWebConnectPack/DEWebPack.py:42
 msgid "Google Archives"
 msgstr "Archives Google"
 
-#: DEWebConnectPack/DEWebPack.py:39
+#: DEWebConnectPack/DEWebPack.py:39 DEWebConnectPack/DEWebPack.py:43
 msgid "DE Google"
 msgstr "Google DE"
-

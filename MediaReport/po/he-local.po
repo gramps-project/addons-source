@@ -1,15 +1,16 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Igal Shapira <igal.shapira@gmail.com>, 2009, 2010, 2011.
+# Avi Markovitz <avi.markovitz@gmail.com>, 2019.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Gramps 5.2.0 – MediaReport\n"
+"Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-09-10 07:59+0300\n"
-"PO-Revision-Date: 2023-09-17 17:40+0300\n"
-"Last-Translator: Avi Markovitz\n"
+"PO-Revision-Date: 2023-09-10 08:07+0300\n"
+"Last-Translator: \n"
 "Language-Team: Avi Markovitz\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
@@ -19,16 +20,17 @@ msgstr ""
 "2 : 3);\n"
 "X-Generator: Poedit 3.0.1\n"
 
-#: MediaReport/media_report.gpr.py:23
+#: MediaReport/media_report.gpr.py:23 MediaReport/media_report.gpr.py:24
 msgid "Media Report"
 msgstr "דוח מדיה"
 
-#: MediaReport/media_report.gpr.py:24
+#: MediaReport/media_report.gpr.py:24 MediaReport/media_report.gpr.py:25
 msgid "Generates report including images, image data and notes."
 msgstr "חילול דוח שכולל תמונות, מידע על תמונות והערות."
 
 #: MediaReport/media_report.py:106 MediaReport/media_report.py:112
 #: MediaReport/media_report.py:119 MediaReport/media_report.py:125
+#: EventDescriptionEditor/EventDescriptionEditor.py:105
 msgid "INFO"
 msgstr "מידע"
 
@@ -52,41 +54,13 @@ msgstr "דוח זה תומך בפלט בתסדיר קובץ PDF בלבד."
 msgid "General:"
 msgstr "כללי:"
 
-#: MediaReport/media_report.py:235
-msgid "Description:"
-msgstr "תיאור:"
-
 #: MediaReport/media_report.py:250
 msgid "Image type:"
 msgstr "סוג תמונה:"
 
-#: MediaReport/media_report.py:342
-msgid "File does not exist"
-msgstr "קובץ לא קיים"
-
-#: MediaReport/media_report.py:343
-msgid "Could not add photo to page"
-msgstr "לא ניתן להוסיף תמונה לעמוד"
-
-#: MediaReport/media_report.py:344
-#, python-format
-msgid "%(str1)s: %(str2)s"
-msgstr "%(str1)s: %(str2)s"
-
 #: MediaReport/media_report.py:426
 msgid "Heading"
 msgstr "כותרת"
-
-#: MediaReport/media_report.py:427 MediaReport/media_report.py:431
-#: MediaReport/media_report.py:435 MediaReport/media_report.py:439
-#: MediaReport/media_report.py:444 MediaReport/media_report.py:448
-#: MediaReport/media_report.py:453 MediaReport/media_report.py:458
-msgid "Report Options"
-msgstr "אפשרויות דוח"
-
-#: MediaReport/media_report.py:429
-msgid "Media"
-msgstr "מדיה"
 
 #: MediaReport/media_report.py:430
 msgid "Select a media file for this report"

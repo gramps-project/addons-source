@@ -1,14 +1,16 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
+# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
+# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-24 11:30-0500\n"
-"PO-Revision-Date: 2024-10-11 12:50+0200\n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
 "Language: da_DK\n"
@@ -18,12 +20,19 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
 
+#: RelID/relation_tab.py:97 PhotoTaggingGramplet/PhotoTaggingGramplet.py:498
+msgid "_Select"
+msgstr "_Vælg"
+
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:28
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:37
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:29
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:38
 msgid "Photo Tagging"
 msgstr "FotoMærkning"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:29
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:30
 msgid "Gramplet for tagging people in photos"
 msgstr "Gramplet til at mærke personer i fotos"
 
@@ -31,13 +40,10 @@ msgstr "Gramplet til at mærke personer i fotos"
 msgid "https://www.gramps-project.org/wiki/index.php/Photo_Tagging_Gramplet"
 msgstr "https://www.gramps-project.org/wiki/index.php/Photo_Tagging_Gramplet"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:132
-msgid "Selection"
-msgstr "Valg"
-
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:134
 msgid "Replace existing references to the person being assigned without asking"
-msgstr "Udskift eksisterende henvisninger til personen som er tildelt uden at spørge"
+msgstr ""
+"Udskift eksisterende henvisninger til personen som er tildelt uden at spørge"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:141
 msgid "Face detection"
@@ -58,15 +64,6 @@ msgstr "Genkend ansigter indenfor eksisterende bokse"
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:151
 msgid "Sensitivity (1 min .. 20 max)"
 msgstr "Følsomhed (1 min .. 20 max)"
-
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:190
-msgid "_OK"
-msgstr "_OK"
-
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:290
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:848
-msgid "Select Person"
-msgstr "Vælg person"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:291
 msgid "Add Person"
@@ -100,27 +97,6 @@ msgstr "Genkend ansigter"
 msgid "Detect faces (OpenCV module required)"
 msgstr "Genkend ansigter (OpenCV modul påkrævet)"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:304
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:910
-msgid "Settings"
-msgstr "Indstillinger"
-
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:305
-msgid "Help"
-msgstr "Hjælp"
-
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:353
-msgid "Preview"
-msgstr "Forhåndsvisning"
-
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:354
-msgid "Person"
-msgstr "Person"
-
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:355
-msgid "Age"
-msgstr "Alder"
-
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:356
 msgid "XMP Region Name"
 msgstr "XMP Region Navn"
@@ -128,27 +104,6 @@ msgstr "XMP Region Navn"
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:495
 msgid "Set as active person"
 msgstr "Vælg som aktive person"
-
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:498
-msgid "_Select"
-msgstr "_Vælg"
-
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:501
-msgid "_Add"
-msgstr "_Tilføj"
-
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:504
-msgid "_Clear"
-msgstr "_Ryd"
-
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:507
-msgid "_Remove"
-msgstr "_Fjern"
-
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:723
-#, python-format
-msgid "Edit Person (%s)"
-msgstr "Redigér person (%s)"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:779
 #, python-brace-format
@@ -170,8 +125,10 @@ msgstr "En anden del af dette billede er forbundet med {name}. Fjern det?"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:958
 #, python-brace-format
-msgid "{count} other regions of this image are associated with {name}. Remove them?"
-msgstr "{count} andre regioner af dette billede er forbundet med {name}. Fjern dem?"
+msgid ""
+"{count} other regions of this image are associated with {name}. Remove them?"
+msgstr ""
+"{count} andre regioner af dette billede er forbundet med {name}. Fjern dem?"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:1110
 #, python-format

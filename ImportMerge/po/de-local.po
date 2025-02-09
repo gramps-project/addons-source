@@ -3,34 +3,56 @@
 # translation of de.po to Deutsch
 #
 #
-# Anton Huber <anton_huber@gmx.de>, 2005,2006.
+# Anton Huber <anton_huber@gmx.de>, 2005, 2006.
 # Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
 # Sebastian Vöcking <voeck@web.de>, 2005.
 # Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
 # Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 # Alois Pöttker <alois.poettker@gmx.de>, 2017.
+# Allan Nordhøy <epost@anotheragency.no>, 2021.
+# R. B. <weblate@macdefender.org>, 2021.
+# RiseT <tareiss1971@yahoo.de>, 2021.
+# David Straub <straub@protonmail.com>, 2021.
+# nautilusx <translate@disroot.org>, 2021.
+# Andreas Abraham <andreas.abraham@gmx.de>, 2021.
+# RiseT <twilite505-4bf24909@yahoo.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-02 14:58+0200\n"
-"PO-Revision-Date: 2020-08-02 15:07+0200\n"
+"POT-Creation-Date: 2020-08-02 22:39+0200\n"
+"PO-Revision-Date: 2025-02-09 06:44+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
-"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
+"addons/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 19.12.3\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10-dev\n"
+
+#: EventDescriptionEditor/EventDescriptionEditor.py:128
+#: EventDescriptionEditor/EventDescriptionEditor.py:142
+#: ImportMerge/importmerge.py:910 ImportMerge/importmerge.glade:407
+msgid "Replace"
+msgstr "Ersetzen"
+
+#: BirthOrder/birthorder.glade:232 ImportMerge/importmerge.glade:364
+msgid "Done"
+msgstr "Fertig"
+
+#: CheckPlaceTitles/checkplacetitles.py:107 ImportMerge/importmerge.glade:264
+msgid "Differences"
+msgstr "Unterschiede"
 
 #: ImportMerge/importmerge.gpr.py:30 ImportMerge/importmerge.py:328
-#: ImportMerge/importmerge.py:707
+#: ImportMerge/importmerge.py:707 ImportMerge/importmerge.gpr.py:31
 msgid "Import and Merge tool"
 msgstr "Import und Zusammenführungswerkzeug"
 
-#: ImportMerge/importmerge.gpr.py:31
+#: ImportMerge/importmerge.gpr.py:31 ImportMerge/importmerge.gpr.py:33
 msgid ""
 "Compares a Gramps XML database with the current one, and allows merging of "
 "the differences."
@@ -45,10 +67,6 @@ msgstr "Importiert und verschmilzt eine Gramps XML"
 #: ImportMerge/importmerge.py:89
 msgid "Missing"
 msgstr "Fehlt"
-
-#: ImportMerge/importmerge.py:91
-msgid "Added"
-msgstr "Hinzugefügt"
 
 #: ImportMerge/importmerge.py:93
 msgid "Different"
@@ -88,8 +106,8 @@ msgid ""
 "be made to your tree until you press 'Done' and confirm."
 msgstr ""
 "Verwenden die Schaltflächen unten, um die 'Aktion' für jeden Unterschied "
-"festzulegen. Es werden keine Änderungen an deinem Baum durchgeführt, bis du"
-" \"Fertig\" drückst und bestätigst."
+"festzulegen. Es werden keine Änderungen an deinem Baum durchgeführt, bis du "
+"\"Fertig\" drückst und bestätigst."
 
 #: ImportMerge/importmerge.py:118
 msgid ""
@@ -138,8 +156,8 @@ msgid ""
 "The import data will entirely replace the data in your tree.  Any referenced "
 "items were also marked for replacement or removal."
 msgstr ""
-"Die Importdaten werden die Daten in deinem Baum vollständig ersetzen. Alle"
-" referenzierten Elemente wurden auch für Ersatz oder Entfernung markiert."
+"Die Importdaten werden die Daten in deinem Baum vollständig ersetzen. Alle "
+"referenzierten Elemente wurden auch für Ersatz oder Entfernung markiert."
 
 #: ImportMerge/importmerge.py:130
 msgid ""
@@ -149,65 +167,13 @@ msgstr ""
 "Dieses Element wird in deinem Baum nicht geändert. Alle referenzierten "
 "Elemente wurden auch markiert zu behalten."
 
-#: ImportMerge/importmerge.py:145
-msgid "Family"
-msgstr "Familie"
-
-#: ImportMerge/importmerge.py:145
-msgid "Person"
-msgstr "Person"
-
-#: ImportMerge/importmerge.py:145
-msgid "Citation"
-msgstr "Fundstelle"
-
-#: ImportMerge/importmerge.py:145
-msgid "Event"
-msgstr "Ereignis"
-
-#: ImportMerge/importmerge.py:145
-msgid "Media"
-msgstr "Medien"
-
-#: ImportMerge/importmerge.py:146
-msgid "Note"
-msgstr "Notiz"
-
-#: ImportMerge/importmerge.py:146
-msgid "Place"
-msgstr "Ort"
-
-#: ImportMerge/importmerge.py:146
-msgid "Repository"
-msgstr "Aufbewahrungsort"
-
-#: ImportMerge/importmerge.py:146
-msgid "Source"
-msgstr "Quelle"
-
-#: ImportMerge/importmerge.py:146
-msgid "Tag"
-msgstr "Markierung"
-
-#: ImportMerge/importmerge.py:329
-msgid "Importing data..."
-msgstr "Importiere Daten..."
-
 #: ImportMerge/importmerge.py:338
 msgid "Import Failure"
 msgstr "Importfehler"
 
-#: ImportMerge/importmerge.py:342
-msgid "Searching..."
-msgstr "Suche..."
-
 #: ImportMerge/importmerge.py:406
 msgid "Your Tree and import are the same."
 msgstr "Dein Baum und der Import sind identisch."
-
-#: ImportMerge/importmerge.py:438
-msgid "Last changed"
-msgstr "Zuletzt geändert"
 
 #: ImportMerge/importmerge.py:451 ImportMerge/importmerge.py:460
 #: ImportMerge/importmerge.py:468 ImportMerge/importmerge.py:476
@@ -234,25 +200,9 @@ msgstr "Importiert"
 msgid "Result  "
 msgstr "Ergebnis  "
 
-#: ImportMerge/importmerge.py:709
-msgid "Processing..."
-msgstr "Verarbeitung..."
-
 #: ImportMerge/importmerge.py:710
 msgid "Import and Merge"
 msgstr "Importieren und Verschmelzen"
-
-#: ImportMerge/importmerge.py:910 ImportMerge/importmerge.glade:407
-msgid "Replace"
-msgstr "Ersetze"
-
-#: ImportMerge/importmerge.py:915
-msgid "Add"
-msgstr "Hinzufügen"
-
-#: ImportMerge/importmerge.py:920
-msgid "Delete"
-msgstr "Löschen"
 
 #: ImportMerge/importmerge.glade:8
 msgid ""
@@ -262,10 +212,6 @@ msgstr ""
 "Ein '*' zeigt das die Aktion automatisch markiert wurde, ein '?' zeigt einen "
 "Konflikt zwischen automatischen Markierungen."
 
-#: ImportMerge/importmerge.glade:9
-msgid "Action"
-msgstr "Aktion"
-
 #: ImportMerge/importmerge.glade:39
 msgid "Import file"
 msgstr "Datei importieren"
@@ -273,18 +219,6 @@ msgstr "Datei importieren"
 #: ImportMerge/importmerge.glade:124
 msgid "Select the difference you wish to examine."
 msgstr "Wähle die Unterschiede, die du untersuchen willst."
-
-#: ImportMerge/importmerge.glade:134
-msgid "Status"
-msgstr "Status"
-
-#: ImportMerge/importmerge.glade:149
-msgid "Object"
-msgstr "Objekt"
-
-#: ImportMerge/importmerge.glade:164
-msgid "ID"
-msgstr "ID"
 
 #: ImportMerge/importmerge.glade:180
 msgid "Object Name/Description"
@@ -302,14 +236,6 @@ msgstr ""
 msgid "Object and item"
 msgstr "Objekt und Element"
 
-#: ImportMerge/importmerge.glade:264
-msgid "Differences"
-msgstr "Unterschiede"
-
-#: ImportMerge/importmerge.glade:320
-msgid "Help"
-msgstr "Hilfe"
-
 #: ImportMerge/importmerge.glade:338
 msgid "This button will ignore the difference, no changes to your tree."
 msgstr ""
@@ -325,10 +251,6 @@ msgid "This button will add the imported data as a new object to your tree."
 msgstr ""
 "Diese Schaltfläche fügt die importierten Daten als neue Objekte deinem "
 "Stammbaum hinzu."
-
-#: ImportMerge/importmerge.glade:364
-msgid "Done"
-msgstr "Fertig"
 
 #: ImportMerge/importmerge.glade:368
 msgid ""
@@ -389,23 +311,3 @@ msgstr "Familien automatisch markieren"
 #: ImportMerge/importmerge.glade:498
 msgid "Automark Parent Families"
 msgstr "Elternfamilien automatisch markieren"
-
-#: ImportMerge/importmerge.glade:551
-msgid "Close _without saving"
-msgstr "_Ohne speichern schließen"
-
-#: ImportMerge/importmerge.glade:566
-msgid "_Cancel"
-msgstr "_Abbrechen"
-
-#: ImportMerge/importmerge.glade:582
-msgid "_Save"
-msgstr "_Speichern"
-
-#: ImportMerge/importmerge.glade:613
-msgid "Save Changes?"
-msgstr "Änderungen speichern?"
-
-#: ImportMerge/importmerge.glade:644
-msgid "If you close without saving, the changes you have made will be lost"
-msgstr "Wenn du ohne zu speichern schließt, gehen deine Änderungen verloren."

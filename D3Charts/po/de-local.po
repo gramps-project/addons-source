@@ -3,33 +3,43 @@
 # translation of de.po to Deutsch
 #
 #
-# Anton Huber <anton_huber@gmx.de>, 2005,2006.
+# Anton Huber <anton_huber@gmx.de>, 2005, 2006.
 # Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
 # Sebastian Vöcking <voeck@web.de>, 2005.
 # Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
 # Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 # Alois Pöttker <alois.poettker@gmx.de>, 2017.
+# Allan Nordhøy <epost@anotheragency.no>, 2021.
+# R. B. <weblate@macdefender.org>, 2021.
+# RiseT <tareiss1971@yahoo.de>, 2021.
+# David Straub <straub@protonmail.com>, 2021.
+# nautilusx <translate@disroot.org>, 2021.
+# Andreas Abraham <andreas.abraham@gmx.de>, 2021.
+# RiseT <twilite505-4bf24909@yahoo.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-26 22:49+0200\n"
-"PO-Revision-Date: 2020-07-26 23:00+0200\n"
+"POT-Creation-Date: 2020-08-02 22:39+0200\n"
+"PO-Revision-Date: 2025-02-09 06:44+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
-"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
+"addons/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 19.12.3\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10-dev\n"
 
 #: D3Charts/AncestralCollapsibleTree.gpr.py:22
+#: D3Charts/AncestralCollapsibleTree.gpr.py:23
 msgid "Ancestral Collapsible Tree"
 msgstr "Zusammenklappbarer Vorfahrenbaum"
 
 #: D3Charts/AncestralCollapsibleTree.gpr.py:31
+#: D3Charts/AncestralCollapsibleTree.gpr.py:33
 msgid ""
 "Generates a web page with a graphical representation of ancestors (SVG) "
 "represented as a Collapsible Tree Layout from the D3.js JavaScript library."
@@ -37,12 +47,6 @@ msgstr ""
 "Erzeugt eine Webseite mit einer grafischen Darstellung von Vorfahren "
 "(SVG)dargestellt als zusammenklappbares Baum-Layout aus der D3.js JavaScript-"
 "Bibliothek."
-
-#: D3Charts/AncestralCollapsibleTree.py:124 D3Charts/AncestralFanChart.py:120
-#: D3Charts/DescendantIndentedTree.py:914
-#, python-format
-msgid "Person %s is not in the Database"
-msgstr "Person %s ist nicht in der Datenbank"
 
 #: D3Charts/AncestralCollapsibleTree.py:326
 #: D3Charts/AncestralCollapsibleTree.py:771
@@ -73,37 +77,10 @@ msgstr "Fehler beim Kopieren von Webdateien: %s"
 msgid "Ancestral Collapsible Tree Options"
 msgstr "Zusammenklappbarer Vorfahrenbaum Optionen"
 
-#: D3Charts/AncestralCollapsibleTree.py:818 D3Charts/AncestralFanChart.py:709
-#: D3Charts/DescendantIndentedTree.py:1787
-msgid "Center Person"
-msgstr "Hauptperson"
-
-#: D3Charts/AncestralCollapsibleTree.py:819 D3Charts/AncestralFanChart.py:710
-#: D3Charts/DescendantIndentedTree.py:1788
-msgid "The center person for the report"
-msgstr "Die Hauptperson für den Bericht"
-
-#: D3Charts/AncestralCollapsibleTree.py:833 D3Charts/AncestralFanChart.py:716
-msgid "Name format"
-msgstr "Namensformat"
-
-#: D3Charts/AncestralCollapsibleTree.py:834 D3Charts/AncestralFanChart.py:717
-msgid "Default"
-msgstr "Vorgabe"
-
-#: D3Charts/AncestralCollapsibleTree.py:837 D3Charts/AncestralFanChart.py:720
-msgid "Select the format to display names"
-msgstr "Wähle das Format zum Anzeigen von Namen."
-
 #: D3Charts/AncestralCollapsibleTree.py:840 D3Charts/AncestralFanChart.py:723
 #: D3Charts/DescendantIndentedTree.py:1804
 msgid "Include Generations"
 msgstr "Generationen Aufnehmen"
-
-#: D3Charts/AncestralCollapsibleTree.py:841 D3Charts/AncestralFanChart.py:724
-#: D3Charts/DescendantIndentedTree.py:1806
-msgid "The number of generations to include in the report"
-msgstr "Anzahl der im Bericht enthaltenen Generationen"
 
 #: D3Charts/AncestralCollapsibleTree.py:846
 msgid "Male Background Color"
@@ -137,31 +114,21 @@ msgstr "Erweiterbarer weiblicher Hintergrund"
 msgid "RGB-color for female expandable box background."
 msgstr "RGB-Farbe für weibliche erweiterbare Boxenhintergrund"
 
-#: D3Charts/AncestralCollapsibleTree.py:865 D3Charts/AncestralFanChart.py:737
-#: D3Charts/DescendantIndentedTree.py:1824
-msgid "Destination"
-msgstr "Ziel"
-
 #: D3Charts/AncestralCollapsibleTree.py:867 D3Charts/AncestralFanChart.py:739
 #: D3Charts/DescendantIndentedTree.py:1826
 msgid "The destination path for generated files."
 msgstr "Der Zielpfad für erstellte Dateien."
-
-#: D3Charts/AncestralCollapsibleTree.py:871 D3Charts/AncestralFanChart.py:743
-#: D3Charts/DescendantIndentedTree.py:1830
-msgid "Filename"
-msgstr "Dateiname"
 
 #: D3Charts/AncestralCollapsibleTree.py:872 D3Charts/AncestralFanChart.py:744
 #: D3Charts/DescendantIndentedTree.py:1831
 msgid "The destination file name for html content."
 msgstr "Der Zieldateiname für HTML Inhalt."
 
-#: D3Charts/AncestralFanChart.gpr.py:22
+#: D3Charts/AncestralFanChart.gpr.py:22 D3Charts/AncestralFanChart.gpr.py:23
 msgid "Ancestral Fan Chart"
 msgstr "Ahnenfächergrafik"
 
-#: D3Charts/AncestralFanChart.gpr.py:31
+#: D3Charts/AncestralFanChart.gpr.py:31 D3Charts/AncestralFanChart.gpr.py:33
 msgid ""
 "Generates a web page with a graphical representation of ancestors (SVG) "
 "represented as a Fan Chart from the D3.js JavaScript library."
@@ -191,10 +158,12 @@ msgstr "RGB-Farbe für väterlichen Boxenhintergrund"
 
 #: D3Charts/DescendantIndentedTree.gpr.py:22
 #: D3Charts/DescendantIndentedTree.py:909
+#: D3Charts/DescendantIndentedTree.gpr.py:23
 msgid "Descendant Indented Tree"
 msgstr "Nachkommenbaum eingerückt"
 
 #: D3Charts/DescendantIndentedTree.gpr.py:31
+#: D3Charts/DescendantIndentedTree.gpr.py:33
 msgid ""
 "Generates a web page with a graphical representation of descendants (SVG) "
 "representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
@@ -208,12 +177,6 @@ msgstr ""
 #, python-format
 msgid "See %(reference)s : %(spouse)s"
 msgstr "Siehe %(reference)s : %(spouse)s"
-
-#: D3Charts/DescendantIndentedTree.py:744
-#: D3Charts/DescendantIndentedTree.py:811
-#, python-format
-msgid "%s sp."
-msgstr "%s Part."
 
 #: D3Charts/DescendantIndentedTree.py:764
 msgid "Generating report..."
@@ -232,39 +195,10 @@ msgstr ""
 "Zielverzeichnis %s existiert nicht\n"
 "Möchtest du versuchen es zu erstellen."
 
-#: D3Charts/DescendantIndentedTree.py:1368
-#: D3Charts/DescendantIndentedTree.py:1394
-msgid "_Yes"
-msgstr "_Ja"
-
-#: D3Charts/DescendantIndentedTree.py:1369
-#: D3Charts/DescendantIndentedTree.py:1395
-msgid "_No"
-msgstr "_Nein"
-
 #: D3Charts/DescendantIndentedTree.py:1374
 #, python-format
 msgid "Failed to create %s: %s"
 msgstr "Fehler beim erstellen %s: %s"
-
-#: D3Charts/DescendantIndentedTree.py:1382
-msgid "Permission problem"
-msgstr "Berechtigungsproblem"
-
-#: D3Charts/DescendantIndentedTree.py:1383
-#, python-format
-msgid ""
-"You do not have permission to write under the directory %s\n"
-"\n"
-"Please select another directory or correct the permissions."
-msgstr ""
-"Du hast keine Berechtigung, in das Verzeichnis %s hinein zu schreiben.\n"
-"\n"
-"Bitte wähle ein anderes Verzeichnis oder korrigiere die Berechtigungen."
-
-#: D3Charts/DescendantIndentedTree.py:1390
-msgid "File already exists"
-msgstr "Datei existiert bereits"
 
 #: D3Charts/DescendantIndentedTree.py:1391
 #, python-format
@@ -283,42 +217,6 @@ msgstr "Standardansicht"
 msgid "Expand All"
 msgstr "Alles ausklappen"
 
-#: D3Charts/DescendantIndentedTree.py:1784
-msgid "Report Options"
-msgstr "Berichtsoptionen"
-
-#: D3Charts/DescendantIndentedTree.py:1793
-msgid "Numbering system"
-msgstr "Nummerierungssystem"
-
-#: D3Charts/DescendantIndentedTree.py:1795
-msgid "Simple numbering"
-msgstr "Einfache Nummerierung"
-
-#: D3Charts/DescendantIndentedTree.py:1796
-msgid "d'Aboville numbering"
-msgstr "d'Aboville Nummerierung"
-
-#: D3Charts/DescendantIndentedTree.py:1797
-msgid "Henry numbering"
-msgstr "Henry-Nummerierung"
-
-#: D3Charts/DescendantIndentedTree.py:1798
-msgid "de Villiers/Pama numbering"
-msgstr "de Villiers/Pama Nummerierung"
-
-#: D3Charts/DescendantIndentedTree.py:1799
-msgid "Meurgey de Tupigny numbering"
-msgstr "Meurgey de Tupigny Nummerierung"
-
-#: D3Charts/DescendantIndentedTree.py:1800
-msgid "Record (Modified Register) numbering"
-msgstr "Datensatz (Modifizierte Register) Nummerierung"
-
-#: D3Charts/DescendantIndentedTree.py:1801
-msgid "The numbering system to be used"
-msgstr "Das Nummerierungssystem, das verwendet wird"
-
 #: D3Charts/DescendantIndentedTree.py:1811
 msgid "Include contraction level"
 msgstr "Kontraktionsstufe einbeziehen"
@@ -329,37 +227,9 @@ msgstr ""
 "Die Anzahl der Nachkommenebenen die bei der ersten Anzeige zusammengezogen "
 "sind."
 
-#: D3Charts/DescendantIndentedTree.py:1818
-msgid "Font size"
-msgstr "Schriftgröße"
-
 #: D3Charts/DescendantIndentedTree.py:1820
 msgid "The font size in pixels for each node."
 msgstr "Die Schriftgröße in Punkten für jeden Knoten."
-
-#: D3Charts/DescendantIndentedTree.py:1837
-msgid "Content"
-msgstr "Inhalt"
-
-#: D3Charts/DescendantIndentedTree.py:1839
-msgid "Show marriage info"
-msgstr "Heiratsdaten anzeigen"
-
-#: D3Charts/DescendantIndentedTree.py:1840
-msgid "Whether to show marriage information in the report."
-msgstr "Ob Heiratsinformationen in dem Bericht enthalten sind."
-
-#: D3Charts/DescendantIndentedTree.py:1843
-msgid "Show divorce info"
-msgstr "Scheidungsinformationen zeigen"
-
-#: D3Charts/DescendantIndentedTree.py:1844
-msgid "Whether to show divorce information in the report."
-msgstr "Ob Scheidungsinformationen in dem Bericht enthalten sind."
-
-#: D3Charts/DescendantIndentedTree.py:1847
-msgid "Show duplicate trees"
-msgstr "Doppelte Stammbäume zeigen"
 
 #: D3Charts/DescendantIndentedTree.py:1848
 msgid "Whether to show duplicate family trees in the report."
@@ -397,14 +267,6 @@ msgstr "Mit als vertraulich markierten Datensätzen"
 msgid "Whether to include private objects."
 msgstr "Ob vertrauliche Objekte aufgenommen werden."
 
-#: D3Charts/DescendantIndentedTree.py:1872
-msgid "Living People"
-msgstr "Lebende Personen"
-
-#: D3Charts/DescendantIndentedTree.py:1875
-msgid "Exclude"
-msgstr "Ausschließen"
-
 #: D3Charts/DescendantIndentedTree.py:1877
 msgid "Include Last Name Only"
 msgstr "Nur Nachnamen aufnehmen"
@@ -413,17 +275,9 @@ msgstr "Nur Nachnamen aufnehmen"
 msgid "Include Full Name Only"
 msgstr "Nur vollständigen Namen aufnehmen"
 
-#: D3Charts/DescendantIndentedTree.py:1880
-msgid "Include"
-msgstr "Einbeziehen"
-
 #: D3Charts/DescendantIndentedTree.py:1881
 msgid "How to handle living people."
 msgstr "Wie werden lebende Personen behandelt."
-
-#: D3Charts/DescendantIndentedTree.py:1886
-msgid "Years from death to consider living"
-msgstr "Definiere 'lebende Person' über die Anzahl der Jahre seit Todesjahr."
 
 #: D3Charts/DescendantIndentedTree.py:1888
 msgid "Whether or not to include people who may have recently died."
@@ -572,62 +426,6 @@ msgstr ""
 "Ob Biografie-Werkzeughinweise angezeigt werden sollen, wenn sich der "
 "Mauszeiger über einen Knoten befindet."
 
-#: D3Charts/DescendantIndentedTree.py:1987
-msgid "Use callname for common name"
-msgstr "Benutze Rufnamen für Namen"
-
-#: D3Charts/DescendantIndentedTree.py:1988
-msgid "Whether to use the call name as the first name."
-msgstr "Ob der Rufname als Vorname benutzt wird."
-
-#: D3Charts/DescendantIndentedTree.py:1992
-msgid "Use full dates instead of only the year"
-msgstr "Zeige vollständiges Datum, anstatt nur das Jahr zu verwenden."
-
-#: D3Charts/DescendantIndentedTree.py:1995
-msgid "Whether to use full dates instead of just year."
-msgstr "Ob ein vollständiges Datum anstelle der Jahreszahl benutzt wird."
-
-#: D3Charts/DescendantIndentedTree.py:1999
-msgid "Compute death age"
-msgstr "Alter bei Tot berechnen"
-
-#: D3Charts/DescendantIndentedTree.py:2000
-msgid "Whether to compute a person's age at death."
-msgstr "Ob das Alter einer Person beim Tod berechnet wird."
-
-#: D3Charts/DescendantIndentedTree.py:2004
-msgid "Include Photo/Images from Gallery"
-msgstr "Fotos/Bilder aus der Galerie aufnehmen"
-
-#: D3Charts/DescendantIndentedTree.py:2006
-msgid "Whether to include images."
-msgstr "Ob Bilder aufgenommen werden."
-
-#: D3Charts/DescendantIndentedTree.py:2009
-msgid "Use complete sentences"
-msgstr "Benutze vollständige Sätze"
-
-#: D3Charts/DescendantIndentedTree.py:2011
-msgid "Whether to use complete sentences or succinct language."
-msgstr "Ob vollständige Sätze oder knappe Sprache benutzt wird."
-
-#: D3Charts/DescendantIndentedTree.py:2014
-msgid "Replace missing places with ______"
-msgstr "Ersetze fehlende Orte durch ______"
-
-#: D3Charts/DescendantIndentedTree.py:2016
-msgid "Whether to replace missing Places with blanks."
-msgstr "Ob fehlende Orte durch Lücken ersetzt werden."
-
-#: D3Charts/DescendantIndentedTree.py:2020
-msgid "Replace missing dates with ______"
-msgstr "Ersetze fehlende Daten durch ______"
-
-#: D3Charts/DescendantIndentedTree.py:2022
-msgid "Whether to replace missing Dates with blanks."
-msgstr "Ob fehlende Daten durch Lücken ersetzt werden."
-
 #: D3Charts/DescendantIndentedTree.py:2026
 msgid "Text Color"
 msgstr "Textfarbe"
@@ -635,10 +433,6 @@ msgstr "Textfarbe"
 #: D3Charts/DescendantIndentedTree.py:2028
 msgid "RGB-color for biography text."
 msgstr "RGB-Farbe für Biografietext."
-
-#: D3Charts/DescendantIndentedTree.py:2031
-msgid "Background Color"
-msgstr "Hintergrundfarbe"
 
 #: D3Charts/DescendantIndentedTree.py:2033
 msgid "RGB-color for biography tooltip."

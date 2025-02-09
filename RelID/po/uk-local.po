@@ -1,14 +1,16 @@
-# Ukrainian translation for RelID
+# Ukrainian translation for MediaMerge
 # This file is distributed under the same license as the Gramps package.
 #
 # Illia Maier <illia@maier.page>, 2024.
+# Fedir Zinchuk <fedikw@gmail.com>, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
+# Oleh Petriv, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-04 18:55-0600\n"
-"PO-Revision-Date: 2024-10-11 22:00+0300\n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"PO-Revision-Date: 2024-10-10 22:54+0300\n"
 "Last-Translator: Illia Maier <illia@maier.page>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
 "gramps/uk/>\n"
@@ -16,14 +18,18 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: RelID/relation_tab.gpr.py:35
+#: DataEntryGramplet/DataEntryGramplet.py:89 RelID/relation_tab.py:126
+msgid "Save"
+msgstr "Зберегти"
+
+#: RelID/relation_tab.gpr.py:35 RelID/relation_tab.gpr.py:36
 msgid "Display relations and distances with the home person"
 msgstr "Показати зв’язки та відстані з головною особою"
 
-#: RelID/relation_tab.gpr.py:36
+#: RelID/relation_tab.gpr.py:36 RelID/relation_tab.gpr.py:37
 msgid "Will display relational informations with the home person"
 msgstr "Буде показано інформацію про зв’язки з головною особою"
 
@@ -34,10 +40,6 @@ msgstr "Зв’язки та відстані з коренем"
 #: RelID/relation_tab.py:92
 msgid "Folder Chooser"
 msgstr "Вибір папки"
-
-#: RelID/relation_tab.py:95
-msgid "_Cancel"
-msgstr "_Скасувати"
 
 #: RelID/relation_tab.py:97
 msgid "_Select"
@@ -54,10 +56,6 @@ msgstr "Rel_id"
 #: RelID/relation_tab.py:111
 msgid "Relation"
 msgstr "Зв’язок"
-
-#: RelID/relation_tab.py:112
-msgid "Name"
-msgstr "Ім’я"
 
 #: RelID/relation_tab.py:113
 msgid "up"
@@ -78,10 +76,6 @@ msgstr "Ранг"
 #: RelID/relation_tab.py:117
 msgid "Period"
 msgstr "Період"
-
-#: RelID/relation_tab.py:126
-msgid "Save"
-msgstr "Зберегти"
 
 #: RelID/relation_tab.py:164
 msgid "Please wait, filtering..."

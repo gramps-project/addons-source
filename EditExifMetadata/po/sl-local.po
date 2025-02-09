@@ -1,55 +1,68 @@
 # Translation of gramps.pot to slovenian
 # Copyright (c) 2007 gramps-project
 # This file is distributed under the same license as the gramps package.
-# Bernard Banko <bernard.banko at t-2.net>, 2007-2011, 2011.
+# Bernard Banko <bernard.banko@siol.net>, 2007.
+# Bernard Banko <bernard.banko at t-2.net>, 2007, 2008, 2009, 2010, 2011.
+# Bernard Banko <beernarrd (at) gmail.com>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gramps 3.3\n"
+"Project-Id-Version: gramps 3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-25 15:34+0100\n"
-"PO-Revision-Date: 2011-09-07 00:25+0200\n"
-"Last-Translator: Bernard Banko <bernard.banko at t-2.net>\n"
-"Language-Team: slovenian <lugos-slo at lugos.si>\n"
-"Language: sl\n"
+"POT-Creation-Date: 2010-03-08 16:54+0100\n"
+"PO-Revision-Date: 2008-02-22 23:19+0100\n"
+"Last-Translator: Bernard Banko <bernard.banko (afna) siol.net>\n"
+"Language-Team: lugos slovenizacija <lugos-slo at lugos.si>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0)\n"
+"X-Poedit-Language: Slovenian\n"
+"X-Poedit-Country: SLOVENIA\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || "
+"n%100==4 ? 3 : 0)\n"
 
 #: EditExifMetadata/editexifmetadata.gpr.py:29
 #: EditExifMetadata/editexifmetadata.py:753
 #: EditExifMetadata/editexifmetadata.py:1159
+#: EditExifMetadata/editexifmetadata.gpr.py:30
+#: EditExifMetadata/editexifmetadata.py:723
+#: EditExifMetadata/editexifmetadata.py:1135
+#: EditExifMetadata/editexifmetadata.py:1147
 msgid "Edit Image Exif Metadata"
 msgstr "Uredi slikovne lastne podatke Exif"
 
 #: EditExifMetadata/editexifmetadata.gpr.py:30
+#: EditExifMetadata/editexifmetadata.gpr.py:31
 msgid "Gramplet to view, edit, and save image Exif metadata"
 msgstr ""
 "Pripomoček za prikaz, urejanje in shranjevanje slikovnih lastnih podatkov "
 "Exif"
 
 #: EditExifMetadata/editexifmetadata.gpr.py:34
+#: EditExifMetadata/editexifmetadata.gpr.py:35
 msgid "Edit Exif Metadata"
 msgstr "Uredi podatke Exif"
 
 #: EditExifMetadata/editexifmetadata.py:148
+#: EditExifMetadata/editexifmetadata.py:135
 msgid "<-- Image Types -->"
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:171
+#: EditExifMetadata/editexifmetadata.py:158
 msgid ""
 "Warning:  Changing this entry will update the Media object title field in "
 "Gramps not Exiv2 metadata."
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:174
+#: EditExifMetadata/editexifmetadata.py:161
 #, fuzzy
 msgid "Provide a short description for this image."
 msgstr "Navedite kratek opis slike."
 
 #: EditExifMetadata/editexifmetadata.py:176
+#: EditExifMetadata/editexifmetadata.py:163
 msgid ""
 "Enter the Artist/ Author of this image.  The person's name or the company "
 "who is responsible for the creation of this image."
@@ -58,6 +71,7 @@ msgstr ""
 "to sliko."
 
 #: EditExifMetadata/editexifmetadata.py:179
+#: EditExifMetadata/editexifmetadata.py:167
 #, fuzzy
 msgid "Enter the copyright information for this image. \n"
 msgstr ""
@@ -65,6 +79,7 @@ msgstr ""
 "Primer: (c) 2011, Creative Commons Share-A-Like"
 
 #: EditExifMetadata/editexifmetadata.py:181
+#: EditExifMetadata/editexifmetadata.py:169
 msgid ""
 "The original date/ time when the image was first created/ taken as in a "
 "photograph.\n"
@@ -72,36 +87,14 @@ msgid ""
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:184
+#: EditExifMetadata/editexifmetadata.py:173
 msgid ""
 "This is the date/ time that the image was last changed/ modified.\n"
 "Example: 2011-05-24 14:30:00"
 msgstr ""
 
-#: EditExifMetadata/editexifmetadata.py:187
-#, fuzzy
-msgid ""
-"Enter the Latitude GPS coordinates for this image,\n"
-"Example: 43.722965, 43 43 22 N, 38° 38′ 03″ N, 38 38 3"
-msgstr ""
-"Navedite zemljepisno širino nastanka slike.\n"
-"Primer: 43.722965, 43 43 22 N, 38° 38′ 03″ N, 38 38 3"
-
-#: EditExifMetadata/editexifmetadata.py:190
-#, fuzzy
-msgid ""
-"Enter the Longitude GPS coordinates for this image,\n"
-"Example: 10.396378, 10 23 46 E, 105° 6′ 6″ W, -105 6 6"
-msgstr ""
-"Vnesite zemljepisno dolžino nastanka slike.\n"
-"Primer: 10.396378, 10 23 46 E, 105° 6′ 6″ W, -105 6 6"
-
-#: EditExifMetadata/editexifmetadata.py:193
-msgid ""
-"This is the measurement of Above or Below Sea Level.  It is measured in "
-"meters.Example: 200.558, -200.558"
-msgstr ""
-
 #: EditExifMetadata/editexifmetadata.py:202
+#: EditExifMetadata/editexifmetadata.py:191
 msgid ""
 "Displays the Gramps Wiki Help page for 'Edit Image Exif Metadata' in your "
 "web browser."
@@ -109,6 +102,7 @@ msgstr ""
 "Prikaže spletno Pomoč Gramps Wiki za 'Uredi slikovne lastne podatke Exif'."
 
 #: EditExifMetadata/editexifmetadata.py:205
+#: EditExifMetadata/editexifmetadata.py:194
 msgid ""
 "This will open up a new window to allow you to edit/ modify this image's "
 "Exif metadata.\n"
@@ -116,22 +110,26 @@ msgid ""
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:209
+#: EditExifMetadata/editexifmetadata.py:198
 msgid "Will produce a Popup window showing a Thumbnail Viewing Area"
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:211
+#: EditExifMetadata/editexifmetadata.py:201
 msgid ""
 "Select from a drop- down box the image file type that you would like to "
 "convert your non- Exiv2 compatible media object to."
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:214
+#: EditExifMetadata/editexifmetadata.py:205
 msgid ""
 "If your image is not of an image type that can have Exif metadata read/ "
 "written to/from, convert it to a type that can?"
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:217
+#: EditExifMetadata/editexifmetadata.py:209
 msgid ""
 "WARNING:  This will completely erase all Exif metadata from this image!  Are "
 "you sure that you want to do this?"
@@ -140,15 +138,18 @@ msgstr ""
 "da to želite?"
 
 #: EditExifMetadata/editexifmetadata.py:315
+#: EditExifMetadata/editexifmetadata.py:214
 #, fuzzy
 msgid "Thumbnail"
 msgstr "Lokacija sličic"
 
 #: EditExifMetadata/editexifmetadata.py:397
+#: EditExifMetadata/editexifmetadata.py:402
 msgid "Select an image to begin..."
 msgstr "Izberite sliko za začetek postopka ..."
 
 #: EditExifMetadata/editexifmetadata.py:419
+#: EditExifMetadata/editexifmetadata.py:421
 #, fuzzy
 msgid ""
 "Image is NOT readable,\n"
@@ -158,6 +159,8 @@ msgstr ""
 "  Izberite drugo ..."
 
 #: EditExifMetadata/editexifmetadata.py:435
+#: EditExifMetadata/editexifmetadata.py:481
+#: EditExifMetadata/editexifmetadata.py:1440
 msgid ""
 "Image is NOT writable,\n"
 "You will NOT be able to save Exif metadata...."
@@ -166,30 +169,25 @@ msgstr ""
 "Podatkov Exif ne boste mogli shraniti ..."
 
 #: EditExifMetadata/editexifmetadata.py:447
+#: EditExifMetadata/editexifmetadata.py:441
 #, fuzzy
 msgid "Please convert this image to an Exiv2- compatible image type..."
 msgstr ""
 "Ali naj se, kadar je potrebno, slika pretvori v obliko, združljivo z zapisom "
 "exiv2?"
 
-#: EditExifMetadata/editexifmetadata.py:470
-msgid "Image Size : %04(width)d x %04(height)d pixels"
-msgstr ""
-
-#: EditExifMetadata/editexifmetadata.py:503
-#, fuzzy
-msgid "Displaying Exif metadata..."
-msgstr "Prikaz slikovnih lastnih podatkov Exif ..."
-
 #: EditExifMetadata/editexifmetadata.py:670
+#: EditExifMetadata/editexifmetadata.py:648
 msgid "Click Close to close this Thumbnail View Area."
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:674
+#: EditExifMetadata/editexifmetadata.py:654
 msgid "Thumbnail View Area"
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:753
+#: EditExifMetadata/editexifmetadata.py:724
 #, fuzzy
 msgid ""
 "WARNING: You are about to convert this image into a .jpeg image.  Are you "
@@ -201,14 +199,12 @@ msgstr ""
 "Ali ste prepričani, da želite pretvoriti sliko?"
 
 #: EditExifMetadata/editexifmetadata.py:755
+#: EditExifMetadata/editexifmetadata.py:726
 msgid "Convert and Delete"
 msgstr "Pretvori in zbriši"
 
-#: EditExifMetadata/editexifmetadata.py:755
-msgid "Convert"
-msgstr "Pretvori"
-
 #: EditExifMetadata/editexifmetadata.py:841
+#: EditExifMetadata/editexifmetadata.py:807
 #, fuzzy
 msgid ""
 "Your image has been converted and the original file has been deleted, and "
@@ -216,51 +212,61 @@ msgid ""
 msgstr "Slika je bila pretvorjena, izvirna datoteka pa izbrisana ..."
 
 #: EditExifMetadata/editexifmetadata.py:845
+#: EditExifMetadata/editexifmetadata.py:812
 msgid ""
 "There has been an error, Please check your source and destination file "
 "paths..."
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:848
+#: EditExifMetadata/editexifmetadata.py:816
 msgid ""
 "There was an error in deleting the original file.  You will need to delete "
 "it yourself!"
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:865
+#: EditExifMetadata/editexifmetadata.py:834
 #, fuzzy
 msgid "There was an error in converting your image file."
 msgstr "Pri brisanju podatkov Exif s te slike je prišlo do napake ..."
 
 #: EditExifMetadata/editexifmetadata.py:876
+#: EditExifMetadata/editexifmetadata.py:844
 #, fuzzy
 msgid "Media Path Update"
 msgstr "datum smrti"
 
 #: EditExifMetadata/editexifmetadata.py:882
+#: EditExifMetadata/editexifmetadata.py:853
 #, fuzzy
 msgid "There has been an error in updating the image file's path!"
 msgstr "Pri brisanju podatkov Exif s te slike je prišlo do napake ..."
 
 #: EditExifMetadata/editexifmetadata.py:916
+#: EditExifMetadata/editexifmetadata.py:886
 msgid ""
 "Click the close button when you are finished modifying this image's Exif "
 "metadata."
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:954
+#: EditExifMetadata/editexifmetadata.py:924
 msgid "Saves a copy of the data fields into the image's Exif metadata."
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:957
+#: EditExifMetadata/editexifmetadata.py:928
 msgid "Re -display the data fields that were cleared from the Edit Area."
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:960
+#: EditExifMetadata/editexifmetadata.py:932
 msgid "This button will clear all of the data fields shown here."
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:963
+#: EditExifMetadata/editexifmetadata.py:940
 msgid ""
 "Closes this popup Edit window.\n"
 "WARNING: This action will NOT Save any changes/ modification made to this "
@@ -268,103 +274,124 @@ msgid ""
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:990
+#: EditExifMetadata/editexifmetadata.py:969
 #, fuzzy
 msgid "Media Object Title"
 msgstr "Filtri za predmete"
 
 #: EditExifMetadata/editexifmetadata.py:1000
+#: EditExifMetadata/editexifmetadata.py:978
 #, fuzzy
 msgid "media Title: "
 msgstr "Naslov koledarja"
 
 #: EditExifMetadata/editexifmetadata.py:1014
+#: EditExifMetadata/editexifmetadata.py:993
 #, fuzzy
 msgid "General Data"
 msgstr "Splošno"
 
 #: EditExifMetadata/editexifmetadata.py:1024
+#: EditExifMetadata/editexifmetadata.py:1003
 #, fuzzy
 msgid "Description: "
 msgstr "Opis:"
 
 #: EditExifMetadata/editexifmetadata.py:1025
+#: EditExifMetadata/editexifmetadata.py:1004
 #, fuzzy
 msgid "Artist: "
 msgstr "Avtor"
 
 #: EditExifMetadata/editexifmetadata.py:1026
+#: EditExifMetadata/editexifmetadata.py:1005
 #, fuzzy
 msgid "Copyright: "
 msgstr "Copyright"
 
 #: EditExifMetadata/editexifmetadata.py:1039
+#: EditExifMetadata/editexifmetadata.py:1019
 msgid "Date/ Time"
 msgstr "Datum / Čas"
 
 #: EditExifMetadata/editexifmetadata.py:1053
+#: EditExifMetadata/editexifmetadata.py:1034
 #, fuzzy
 msgid "Original: "
 msgstr "Izvirni čas"
 
 #: EditExifMetadata/editexifmetadata.py:1054
+#: EditExifMetadata/editexifmetadata.py:1035
 #, fuzzy
 msgid "Modified: "
 msgstr "Zadnjič spremenjeno"
 
 #: EditExifMetadata/editexifmetadata.py:1071
+#: EditExifMetadata/editexifmetadata.py:1054
 msgid "Latitude/ Longitude/ Altitude GPS coordinates"
 msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:1085
+#: EditExifMetadata/editexifmetadata.py:1069
 #, fuzzy
 msgid "Latitude :"
 msgstr "Zemljepisna širina:"
 
 #: EditExifMetadata/editexifmetadata.py:1086
+#: EditExifMetadata/editexifmetadata.py:1070
 #, fuzzy
 msgid "Longitude :"
 msgstr "Zemljepisna dolžina:"
 
 #: EditExifMetadata/editexifmetadata.py:1087
+#: EditExifMetadata/editexifmetadata.py:1071
 #, fuzzy
 msgid "Altitude :"
 msgstr "Zemljepisna širina:"
 
 #: EditExifMetadata/editexifmetadata.py:1139
+#: EditExifMetadata/editexifmetadata.py:1114
 #, fuzzy
 msgid "Bad Date/Time"
 msgstr "Datum / Čas"
 
 #: EditExifMetadata/editexifmetadata.py:1147
+#: EditExifMetadata/editexifmetadata.py:1122
 #, fuzzy
 msgid "Invalid latitude (syntax: 18\\u00b09'"
 msgstr "Napačna z. širina (sintaksa: 18°9'"
 
 #: EditExifMetadata/editexifmetadata.py:1148
+#: EditExifMetadata/editexifmetadata.py:1123
 msgid "48.21\"S, -18.2412 or -18:9:48.21)"
 msgstr "48.21\"S, -18.2412 ali -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1152
+#: EditExifMetadata/editexifmetadata.py:1127
 #, fuzzy
 msgid "Invalid longitude (syntax: 18\\u00b09'"
 msgstr "Napačna z. dolžina (sintaksa: 18°9'"
 
 #: EditExifMetadata/editexifmetadata.py:1153
+#: EditExifMetadata/editexifmetadata.py:1128
 msgid "48.21\"E, -18.2412 or -18:9:48.21)"
 msgstr "48.21\"E, -18.2412 ali -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1159
+#: EditExifMetadata/editexifmetadata.py:1136
 msgid ""
 "WARNING!  You are about to completely delete the Exif metadata from this "
 "image?"
 msgstr "OPOZORILO:  Izbrisali boste vse Exif podatke v tej sliki!"
 
 #: EditExifMetadata/editexifmetadata.py:1324
+#: EditExifMetadata/editexifmetadata.py:1333
 #, fuzzy
 msgid "Media Title Update"
 msgstr "Filter za predmete"
 
 #: EditExifMetadata/editexifmetadata.py:1350
+#: EditExifMetadata/editexifmetadata.py:1357
 #, fuzzy
 msgid "Media Object Date Created"
 msgstr "Zunanji predmeti z oznako zasebno"
@@ -375,9 +402,11 @@ msgid "Saving Exif metadata to this image..."
 msgstr "Shranjevanje podatkov Exif v sliko ..."
 
 #: EditExifMetadata/editexifmetadata.py:1469
+#: EditExifMetadata/editexifmetadata.py:1465
 msgid "All Exif metadata has been deleted from this image..."
 msgstr "Vsi slikovni podatki Exif so bili s te slike zbrisani ..."
 
 #: EditExifMetadata/editexifmetadata.py:1474
+#: EditExifMetadata/editexifmetadata.py:1470
 msgid "There was an error in stripping the Exif metadata from this image..."
 msgstr "Pri brisanju podatkov Exif s te slike je prišlo do napake ..."

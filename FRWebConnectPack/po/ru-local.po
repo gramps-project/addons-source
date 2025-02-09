@@ -1,14 +1,24 @@
-# Russian translation for FRWebConnectPack
+# Russian translation for MediaMerge
 # This file is distributed under the same license as the Gramps package.
 #
-# Ivan Komaritsyn <vantu5z@mail.ru>, 2018.
+# Ivan Komaritsyn <vantu5z@mail.ru>, 2015, 2016, 2017, 2018, 2019, 2020, 2021.
+# Alexander Bogdashevsky <sanderb@kezomba.com>, 2004.
+# Alex Roitman <shura@gramps-project.org>, 2002, 2003, 2004, 2005, 2006, 2007.
+# Konstantin Dorichev <kdorichev@gmail.com>, 2008.
+# Yevgeny Zegzda <ezegjda@ya.ru>, 2009, 2010.
+# vantu5z <vantu5z@mail.ru>, 2020.
+# Komaritsyn Ivan <vantu5z@mail.ru>, 2018.
+# Andrey Baznikin (http://d.scn.ru/), 2009, 2010, 2011.
+# Vassilii Khachaturov <vassilii@tarunz.org>, 2011, 2012, 2013, 2014.
+# Egor Reentov <egor.gramps@gmail.com>, 2011, 2012, 2013.
+# Artem Glebov <artem.glebov@gmail.com>, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-30 12:08+0300\n"
-"PO-Revision-Date: 2018-11-30 12:12+0300\n"
+"POT-Creation-Date: 2018-12-04 16:31+0300\n"
+"PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
@@ -18,41 +28,38 @@ msgstr ""
 "X-Generator: Gtranslator 2.91.7\n"
 "X-Poedit-Language: Russian\n"
 "X-Poedit-Country: RUSSIAN FEDERATION\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: FRWebConnectPack/FRWebPack.gpr.py:10
-msgid "FR Web Connect Pack"
-msgstr "Набор FR Web Connect"
-
-#: FRWebConnectPack/FRWebPack.gpr.py:11
-msgid "Collection of Web sites for the FR (requires libwebconnect)"
-msgstr "Набор веб-сайтов для FR (требуется libwebconnect)"
-
-#: FRWebConnectPack/FRWebPack.py:40
-msgid "French cultural ministry"
-msgstr "Француское министерство культуры"
-
-#: FRWebConnectPack/FRWebPack.py:41
-msgid "Genealogical bank"
-msgstr "Банк генеалогии"
-
-#: FRWebConnectPack/FRWebPack.py:43
-msgid "OrigineFile (Quebec)"
-msgstr "OrigineFile (Квебек)"
-
+#: UKWebConnectPack/UKWebPack.py:35 SVWebconnectPack/SVWebPack.py:34
 #: FRWebConnectPack/FRWebPack.py:47
 msgid "FamilySearch.org"
 msgstr "FamilySearch.org"
 
-#: FRWebConnectPack/FRWebPack.py:48
-msgid "Cyber genealogy"
-msgstr "Кибер генеалогия"
-
-#: FRWebConnectPack/FRWebPack.py:54
+#: UKWebConnectPack/UKWebPack.py:38 FRWebConnectPack/FRWebPack.py:54
 msgid "Hathi Trust Digital Library"
 msgstr "Hathi Trust цифровая библиотека"
 
-#: FRWebConnectPack/FRWebPack.py:55
+#: UKWebConnectPack/UKWebPack.py:39 FRWebConnectPack/FRWebPack.py:55
 msgid "Open Library"
 msgstr "Открытая библиотека"
+
+#: FRWebConnectPack/FRWebPack.gpr.py:10 FRWebConnectPack/FRWebPack.gpr.py:11
+msgid "FR Web Connect Pack"
+msgstr "Набор FR Web Connect"
+
+#: FRWebConnectPack/FRWebPack.gpr.py:11 FRWebConnectPack/FRWebPack.gpr.py:12
+msgid "Collection of Web sites for the FR (requires libwebconnect)"
+msgstr "Набор веб-сайтов для FR (требуется libwebconnect)"
+
+#: FRWebConnectPack/FRWebPack.py:41 FRWebConnectPack/FRWebPack.py:42
+msgid "Genealogical bank"
+msgstr "Банк генеалогии"
+
+#: FRWebConnectPack/FRWebPack.py:43 FRWebConnectPack/FRWebPack.py:44
+msgid "OrigineFile (Quebec)"
+msgstr "OrigineFile (Квебек)"
+
+#: FRWebConnectPack/FRWebPack.py:48 FRWebConnectPack/FRWebPack.py:50
+msgid "Cyber genealogy"
+msgstr "Кибер генеалогия"

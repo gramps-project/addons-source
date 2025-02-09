@@ -1,14 +1,16 @@
-# Ukrainian translation for PlaceCleanup
+# Ukrainian translation for MediaMerge
 # This file is distributed under the same license as the Gramps package.
 #
 # Illia Maier <illia@maier.page>, 2024.
+# Fedir Zinchuk <fedikw@gmail.com>, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
+# Oleh Petriv, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-19 02:12-0500\n"
-"PO-Revision-Date: 2024-10-09 23:14+0300\n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"PO-Revision-Date: 2024-10-10 22:54+0300\n"
 "Last-Translator: Illia Maier <illia@maier.page>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
 "gramps/uk/>\n"
@@ -16,14 +18,15 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: PlaceCleanup/placecleanup.gpr.py:28 PlaceCleanup/placecleanup.gpr.py:44
+#: PlaceCleanup/placecleanup.gpr.py:46
 msgid "Place Cleanup"
 msgstr "Очищення місць (Place Cleanup)"
 
-#: PlaceCleanup/placecleanup.gpr.py:29
+#: PlaceCleanup/placecleanup.gpr.py:29 PlaceCleanup/placecleanup.gpr.py:30
 msgid ""
 "Place Cleanup Gramplet assists in merging places, as well as completing "
 "places from the GeoNames web database"
@@ -32,6 +35,7 @@ msgstr ""
 "інформації про місця з бази даних GeoNames"
 
 #: PlaceCleanup/placecleanup.py:266 PlaceCleanup/placecleanup.glade.h:65
+#: PlaceCleanup/placecleanup.glade:1088
 msgid ""
 "No\n"
 "Matches"
@@ -40,6 +44,7 @@ msgstr ""
 "Співпадінь"
 
 #: PlaceCleanup/placecleanup.py:267 PlaceCleanup/placecleanup.glade.h:54
+#: PlaceCleanup/placecleanup.glade:895
 msgid "Find"
 msgstr "Знайти"
 
@@ -66,17 +71,13 @@ msgstr "Необхідно вказати GeoNames ID"
 msgid "Use the Help button for more information"
 msgstr "Натисніть кнопку «Допомога» для додаткової інформації"
 
-#: PlaceCleanup/placecleanup.py:336
-msgid "No matches were found"
-msgstr "Співпадінь не знайдено"
-
 #: PlaceCleanup/placecleanup.py:337
 msgid ""
 "Try changing the Title, or use the \"Edit\" button to finish this level of "
 "the place manually."
 msgstr ""
-"Спробуйте змінити назву або використайте кнопку \"Редагувати\", щоб завершити "
-"цей рівень місця вручну."
+"Спробуйте змінити назву або використайте кнопку \"Редагувати\", щоб "
+"завершити цей рівень місця вручну."
 
 #: PlaceCleanup/placecleanup.py:347
 #, python-format
@@ -104,28 +105,20 @@ msgstr ""
 "Щоб побачити більше результатів, натисніть кнопку пошуку знову.\n"
 "Або спробуйте додати більше деталей у назву, наприклад, країну."
 
-#: PlaceCleanup/placecleanup.py:396 PlaceCleanup/placecleanup.py:398
-#: PlaceCleanup/placecleanup.py:787
-msgid ", "
-msgstr ", "
-
 #: PlaceCleanup/placecleanup.py:418 PlaceCleanup/placecleanup.py:423
+#: PlaceCleanup/placecleanup.py:421 PlaceCleanup/placecleanup.py:426
 msgid "Problem getting data from web"
 msgstr "Проблема отримання даних з Інтернету"
 
-#: PlaceCleanup/placecleanup.py:424
+#: PlaceCleanup/placecleanup.py:424 PlaceCleanup/placecleanup.py:427
 msgid "Web request Timeout, you can try again..."
 msgstr "Час запиту минув, спробуйте ще раз..."
 
-#: PlaceCleanup/placecleanup.py:432
+#: PlaceCleanup/placecleanup.py:432 PlaceCleanup/placecleanup.py:435
 msgid "Problem getting data from GeoNames"
 msgstr "Проблема отримання даних від GeoNames"
 
-#: PlaceCleanup/placecleanup.py:477 PlaceCleanup/placecleanup.py:748
-msgid "Place cycle detected"
-msgstr "Виявлено зациклювання місць"
-
-#: PlaceCleanup/placecleanup.py:478
+#: PlaceCleanup/placecleanup.py:478 PlaceCleanup/placecleanup.py:481
 msgid ""
 "One of the places you are merging encloses the other!\n"
 "Please choose another place."
@@ -133,12 +126,7 @@ msgstr ""
 "Одне з місць, яке ви обʼєднуєте, включає інше!\n"
 "Будь ласка, оберіть інше місце."
 
-#: PlaceCleanup/placecleanup.py:740
-#, python-format
-msgid "Add Place (%s)"
-msgstr "Додати Місце (%s)"
-
-#: PlaceCleanup/placecleanup.py:749
+#: PlaceCleanup/placecleanup.py:749 PlaceCleanup/placecleanup.py:759
 msgid ""
 "The place you chose is enclosed in the place you are workin on!\n"
 "Please cancel and choose another place."
@@ -146,29 +134,19 @@ msgstr ""
 "Вибране місце включено в місце, над яким ви працюєте!\n"
 "Скасуйте та виберіть інше місце."
 
-#: PlaceCleanup/placecleanup.py:772
-#, python-format
-msgid "Add Citation (%s)"
-msgstr "Додати Цитату (%s)"
-
-#: PlaceCleanup/placecleanup.py:777
-#, python-format
-msgid "Edit Place (%s)"
-msgstr "Редагувати Місце (%s)"
-
-#: PlaceCleanup/placecleanup.py:933
+#: PlaceCleanup/placecleanup.py:933 PlaceCleanup/placecleanup.py:945
 msgid "GeoNames web site"
 msgstr "Веб-сайт GeoNames"
 
-#: PlaceCleanup/placecleanup.py:938
+#: PlaceCleanup/placecleanup.py:938 PlaceCleanup/placecleanup.py:950
 msgid "GeoNames author"
 msgstr "Автор GeoNames"
 
-#: PlaceCleanup/placecleanup.py:943
+#: PlaceCleanup/placecleanup.py:943 PlaceCleanup/placecleanup.py:955
 msgid "GeoNames was founded by Marc Wick. You can reach him at "
 msgstr "GeoNames заснований Марком Віком. Його можна знайти на "
 
-#: PlaceCleanup/placecleanup.py:946
+#: PlaceCleanup/placecleanup.py:946 PlaceCleanup/placecleanup.py:958
 msgid ""
 "GeoNames is a project of Unxos GmbH, Weingartenstrasse 8, 8708 Männedorf, "
 "Switzerland.\n"
@@ -178,16 +156,16 @@ msgstr ""
 "Швейцарія.\n"
 "Ця робота ліцензована за умовами "
 
-#: PlaceCleanup/placecleanup.py:961
+#: PlaceCleanup/placecleanup.py:961 PlaceCleanup/placecleanup.py:973
 #, python-format
 msgid "Add Souce/Repo/Note (%s)"
 msgstr "Додати Джерело/Сховище/Примітку (%s)"
 
-#: PlaceCleanup/placecleanup.py:1062
+#: PlaceCleanup/placecleanup.py:1062 PlaceCleanup/placecleanup.py:1074
 msgid "This Place is not used!"
 msgstr "Це Місце не використовується!"
 
-#: PlaceCleanup/placecleanup.py:1063
+#: PlaceCleanup/placecleanup.py:1063 PlaceCleanup/placecleanup.py:1075
 msgid ""
 "You should delete it, or, if it contains useful notes or other data, use the "
 "Find to merge it into a valid place."
@@ -195,75 +173,54 @@ msgstr ""
 "Слід видалити його або, якщо воно містить корисні замітки чи інші дані, "
 "використайте пошук для обʼєднання з коректним місцем."
 
-#: PlaceCleanup/placecleanup.glade.h:1
+#: PlaceCleanup/placecleanup.glade.h:1 PlaceCleanup/placecleanup.glade:27
 msgid "City, County, State, Country"
 msgstr "Місто, Округ/Район, Штат/Область, Країна"
 
-#: PlaceCleanup/placecleanup.glade.h:2
+#: PlaceCleanup/placecleanup.glade.h:2 PlaceCleanup/placecleanup.glade:52
 msgid "Primary Name"
 msgstr "Основна назва"
 
-#: PlaceCleanup/placecleanup.glade.h:3
-msgid "Postal Code"
-msgstr "Поштовий індекс"
-
-#: PlaceCleanup/placecleanup.glade.h:4
-msgid "Type"
-msgstr "Тип"
-
-#: PlaceCleanup/placecleanup.glade.h:5
+#: PlaceCleanup/placecleanup.glade.h:5 PlaceCleanup/placecleanup.glade:89
 msgid "The current Primary name."
 msgstr "Поточна Основна назва."
 
-#: PlaceCleanup/placecleanup.glade.h:6
+#: PlaceCleanup/placecleanup.glade.h:6 PlaceCleanup/placecleanup.glade:102
 msgid "The postal code for the place, if any."
 msgstr "Поштовий індекс для місця, якщо є."
 
-#: PlaceCleanup/placecleanup.glade.h:7
+#: PlaceCleanup/placecleanup.glade.h:7 PlaceCleanup/placecleanup.glade:114
 msgid "What type of place this is. Eg 'Country', 'City', ... ."
 msgstr "Тип цього місця. Наприклад: 'Країна', 'Місто' і т.д."
 
-#: PlaceCleanup/placecleanup.glade.h:8
+#: PlaceCleanup/placecleanup.glade.h:8 PlaceCleanup/placecleanup.glade:166
+#: PlaceCleanup/placecleanup.glade:180 PlaceCleanup/placecleanup.glade:339
+#: PlaceCleanup/placecleanup.glade:353
 msgid "Orig"
 msgstr "Ориг(Orig)"
 
-#: PlaceCleanup/placecleanup.glade.h:9
+#: PlaceCleanup/placecleanup.glade.h:9 PlaceCleanup/placecleanup.glade:133
 msgid "Check this box if you want to keep the original Postal code."
 msgstr "Поставте відмітку, якщо хочете зберегти оригінальний Поштовий індекс."
 
-#: PlaceCleanup/placecleanup.glade.h:10
+#: PlaceCleanup/placecleanup.glade.h:10 PlaceCleanup/placecleanup.glade:148
 msgid "Check this box if you want to keep the original Place Type."
 msgstr "Поставте відмітку, якщо хочете зберегти оригінальний Тип місця."
 
-#: PlaceCleanup/placecleanup.glade.h:11
-msgid "Longitude"
-msgstr "Довгота"
-
-#: PlaceCleanup/placecleanup.glade.h:12
-msgid "Latitude"
-msgstr "Широта"
-
-#: PlaceCleanup/placecleanup.glade.h:13
-msgid "Keep Original"
-msgstr "Зберегти оригінал"
-
-#: PlaceCleanup/placecleanup.glade.h:14
+#: PlaceCleanup/placecleanup.glade.h:14 PlaceCleanup/placecleanup.glade:280
 msgid "Check this box if you want to keep the original Latitude and Longitude."
 msgstr "Поставте відмітку, якщо хочете зберегти оригінальні Широту та Довготу."
 
-#: PlaceCleanup/placecleanup.glade.h:15
+#: PlaceCleanup/placecleanup.glade.h:15 PlaceCleanup/placecleanup.glade:295
 msgid "The Gramps ID.."
 msgstr "Ідентифікатор Gramps.."
 
-#: PlaceCleanup/placecleanup.glade.h:16
-msgid "ID"
-msgstr "ID"
-
-#: PlaceCleanup/placecleanup.glade.h:17
+#: PlaceCleanup/placecleanup.glade.h:17 PlaceCleanup/placecleanup.glade:322
 msgid "Check this box if you want to keep the original Gramps ID."
-msgstr "Поставте відмітку, якщо хочете зберегти оригінальний ідентифікатор Gramps."
+msgstr ""
+"Поставте відмітку, якщо хочете зберегти оригінальний ідентифікатор Gramps."
 
-#: PlaceCleanup/placecleanup.glade.h:18
+#: PlaceCleanup/placecleanup.glade.h:18 PlaceCleanup/placecleanup.glade:391
 msgid ""
 "Alterative Names\n"
 "Select one or more rows and press 'Keep' button to toggle the 'include into "
@@ -273,98 +230,74 @@ msgstr ""
 "Виберіть один або кілька рядків і натисніть кнопку 'Зберегти', щоб увімкнути "
 "статус 'включити до місця'."
 
-#: PlaceCleanup/placecleanup.glade.h:20
+#: PlaceCleanup/placecleanup.glade.h:20 PlaceCleanup/placecleanup.glade:406
 msgid "Inc"
 msgstr "Вкл"
 
-#: PlaceCleanup/placecleanup.glade.h:21
-msgid "Name"
-msgstr "Назва"
-
-#: PlaceCleanup/placecleanup.glade.h:22
+#: PlaceCleanup/placecleanup.glade.h:22 PlaceCleanup/placecleanup.glade:446
 msgid "Lang"
 msgstr "Мова"
 
-#: PlaceCleanup/placecleanup.glade.h:23
-msgid "Date"
-msgstr "Дата"
-
-#: PlaceCleanup/placecleanup.glade.h:24
-msgid "Keep"
-msgstr "Зберегти"
-
-#: PlaceCleanup/placecleanup.glade.h:25
+#: PlaceCleanup/placecleanup.glade.h:25 PlaceCleanup/placecleanup.glade:520
 msgid ""
 "Select one or more rows and use this button to keep the alternative names."
 msgstr ""
 "Виберіть один або кілька рядків і натисніть цю кнопку, щоб зберегти "
 "альтернативні назви."
 
-#: PlaceCleanup/placecleanup.glade.h:26
-msgid "Primary"
-msgstr "Основна"
-
-#: PlaceCleanup/placecleanup.glade.h:27
+#: PlaceCleanup/placecleanup.glade.h:27 PlaceCleanup/placecleanup.glade:536
 msgid "Select one row and use this button to make the row the primary name."
 msgstr ""
 "Виберіть один рядок і натисніть цю кнопку, щоб зробити його основною назвою."
 
-#: PlaceCleanup/placecleanup.glade.h:28
+#: PlaceCleanup/placecleanup.glade.h:28 PlaceCleanup/placecleanup.glade:548
 msgid "Discard"
 msgstr "Відхилити"
 
-#: PlaceCleanup/placecleanup.glade.h:29
+#: PlaceCleanup/placecleanup.glade.h:29 PlaceCleanup/placecleanup.glade:552
 msgid ""
 "Select one or more rows and use this button to discard the alternative names."
 msgstr ""
 "Виберіть один або кілька рядків і натисніть цю кнопку, щоб відхилити "
 "альтернативні назви."
 
-#: PlaceCleanup/placecleanup.glade.h:30
+#: PlaceCleanup/placecleanup.glade.h:30 PlaceCleanup/placecleanup.glade:580
 msgid "Cancel the operation, no changes are made to your Place."
 msgstr "Скасувати операцію, зміни не будуть внесені."
 
-#: PlaceCleanup/placecleanup.glade.h:31
+#: PlaceCleanup/placecleanup.glade.h:31 PlaceCleanup/placecleanup.glade:595
 msgid "Store the values in your Place."
 msgstr "Зберегти значення для місця."
 
-#: PlaceCleanup/placecleanup.glade.h:32
-msgid "Ok"
-msgstr "ОК"
-
-#: PlaceCleanup/placecleanup.glade.h:33
-msgid "Help"
-msgstr "Допомога"
-
-#: PlaceCleanup/placecleanup.glade.h:34
+#: PlaceCleanup/placecleanup.glade.h:34 PlaceCleanup/placecleanup.glade:677
 msgid "Keep Web Links"
 msgstr "Зберегти веб-посилання"
 
-#: PlaceCleanup/placecleanup.glade.h:35
+#: PlaceCleanup/placecleanup.glade.h:35 PlaceCleanup/placecleanup.glade:681
 msgid "Puts web links (typically wikipedia) into your place."
 msgstr "Додає веб-посилання (зазвичай з Вікіпедії) до місця."
 
-#: PlaceCleanup/placecleanup.glade.h:36
+#: PlaceCleanup/placecleanup.glade.h:36 PlaceCleanup/placecleanup.glade:693
 msgid "Add citation and source to Place"
 msgstr "Додати цитату та джерело до місця"
 
-#: PlaceCleanup/placecleanup.glade.h:37
+#: PlaceCleanup/placecleanup.glade.h:37 PlaceCleanup/placecleanup.glade:697
 msgid "This Adds a Citation to your place, citing GeoNames."
 msgstr "Додається цитата до місця з посиланням на GeoNames."
 
-#: PlaceCleanup/placecleanup.glade.h:38
+#: PlaceCleanup/placecleanup.glade.h:38 PlaceCleanup/placecleanup.glade:711
 msgid "GeoNames User ID"
 msgstr "Ідентифікатор користувача GeoNames"
 
-#: PlaceCleanup/placecleanup.glade.h:39
+#: PlaceCleanup/placecleanup.glade.h:39 PlaceCleanup/placecleanup.glade:723
 msgid "Enter you Geonames user ID here."
 msgstr "Введіть тут свій ідентифікатор користувача GeoNames."
 
-#: PlaceCleanup/placecleanup.glade.h:40
+#: PlaceCleanup/placecleanup.glade.h:40 PlaceCleanup/placecleanup.glade:735
 msgid "Alternative Names Languages to keep"
 msgstr "Мови для альтернативних назв"
 
-#: PlaceCleanup/placecleanup.glade.h:41
+#: PlaceCleanup/placecleanup.glade.h:41 PlaceCleanup/placecleanup.glade:747
 msgid ""
 "Enter the two or three letter codes for the languages you wish to keep, "
 "seperated by spaces.\n"
@@ -373,16 +306,17 @@ msgid ""
 "If you often see an un-checked name in a specific language you want, add the "
 "language code here."
 msgstr ""
-"Введіть дво- або трибуквені коди мов, розділені пробілами, які хочете залишити.\n"
+"Введіть дво- або трибуквені коди мов, розділені пробілами, які хочете "
+"залишити.\n"
 "Наприклад \"en fr ru\".\n"
 "Ці мови будуть спочатку відмічені в результатах відображення назв.\n"
 "Якщо часто бачите не відмічену назву на певній мові, додайте код мови тут."
 
-#: PlaceCleanup/placecleanup.glade.h:45
+#: PlaceCleanup/placecleanup.glade.h:45 PlaceCleanup/placecleanup.glade:763
 msgid "Currently Enclosed Places"
 msgstr "Місця, що входять до складу"
 
-#: PlaceCleanup/placecleanup.glade.h:46
+#: PlaceCleanup/placecleanup.glade.h:46 PlaceCleanup/placecleanup.glade:775
 msgid ""
 "When cleaning a place that is already enclosed, this affects what is done.\n"
 "If '<b>Keep current Enclosure</b>' is selected, no changes to the enclosing "
@@ -391,108 +325,106 @@ msgid ""
 "is changed to the next level GeoNames place.  This may result in some unused "
 "places remaining in your database."
 msgstr ""
-"Під час очищення місця, яке вже включене до іншого, це впливає на те, що буде зроблено.\n"
-"Якщо вибрано '<b>Залишити поточне вхождення</b>', жодних змін до включеного місця не буде внесено.\n"
-"Якщо вибрано '<b>Замінити на вхождення GeoNames</b>', включене місце буде змінено на наступний рівень місць GeoNames. Це може призвести до залишкових місць у вашій базі даних."
+"Під час очищення місця, яке вже включене до іншого, це впливає на те, що "
+"буде зроблено.\n"
+"Якщо вибрано '<b>Залишити поточне вхождення</b>', жодних змін до включеного "
+"місця не буде внесено.\n"
+"Якщо вибрано '<b>Замінити на вхождення GeoNames</b>', включене місце буде "
+"змінено на наступний рівень місць GeoNames. Це може призвести до залишкових "
+"місць у вашій базі даних."
 
-#: PlaceCleanup/placecleanup.glade.h:49
+#: PlaceCleanup/placecleanup.glade.h:49 PlaceCleanup/placecleanup.glade:780
 msgid "Keep current Enclosure"
 msgstr "Залишити поточне вхождення"
 
-#: PlaceCleanup/placecleanup.glade.h:50
+#: PlaceCleanup/placecleanup.glade.h:50 PlaceCleanup/placecleanup.glade:795
 msgid "Replace with GeoNames Enclosure"
 msgstr "Замінити на вхождення GeoNames"
 
-#: PlaceCleanup/placecleanup.glade.h:51
-msgid "Title"
-msgstr "Назва"
-
-#: PlaceCleanup/placecleanup.glade.h:52
+#: PlaceCleanup/placecleanup.glade.h:52 PlaceCleanup/placecleanup.glade:851
 msgid ""
 "Current Place title.\n"
 "You can edit this to help find other places, particularly to reduce the "
 "number of results."
 msgstr ""
 "Поточна назва місця.\n"
-"Ви можете відредагувати це, щоб допомогти знайти інші місця, особливо для зменшення кількості результатів."
+"Ви можете відредагувати це, щоб допомогти знайти інші місця, особливо для "
+"зменшення кількості результатів."
 
-#: PlaceCleanup/placecleanup.glade.h:55
+#: PlaceCleanup/placecleanup.glade.h:55 PlaceCleanup/placecleanup.glade:899
 msgid "Search your local places and GeoNames for a match."
 msgstr "Шукати співпадіння між місцевими місцями та GeoNames."
 
-#: PlaceCleanup/placecleanup.glade.h:56
-msgid "Select"
-msgstr "Вибрати"
-
-#: PlaceCleanup/placecleanup.glade.h:57
+#: PlaceCleanup/placecleanup.glade.h:57 PlaceCleanup/placecleanup.glade:915
 msgid ""
 "Continue to merge (for local places), or to complete a place (for GeoNames)."
 msgstr ""
-"Продовжити об'єднання (для місцевих місць) або завершити місце (для GeoNames)."
+"Продовжити об'єднання (для місцевих місць) або завершити місце (для "
+"GeoNames)."
 
-#: PlaceCleanup/placecleanup.glade.h:58
-msgid "Edit"
-msgstr "Редагувати"
-
-#: PlaceCleanup/placecleanup.glade.h:59
+#: PlaceCleanup/placecleanup.glade.h:59 PlaceCleanup/placecleanup.glade:932
 msgid ""
 "Split up Title, Edit manually, and enclose with next level of hierarchy.  "
 "For use when the initial component of the Title is too detailed to be found "
 "in the gazetteer."
 msgstr ""
 "Розділити назву, редагувати вручну та включити до наступного рівня ієрархії. "
-"Використовується, коли початковий компонент назви занадто детальний для пошуку у справочнику."
+"Використовується, коли початковий компонент назви занадто детальний для "
+"пошуку у справочнику."
 
-#: PlaceCleanup/placecleanup.glade.h:60
+#: PlaceCleanup/placecleanup.glade.h:60 PlaceCleanup/placecleanup.glade:958
 msgid "Next Place"
 msgstr "Наступне місце"
 
-#: PlaceCleanup/placecleanup.glade.h:61
+#: PlaceCleanup/placecleanup.glade.h:61 PlaceCleanup/placecleanup.glade:962
 msgid "Find an incomplete place."
 msgstr "Знайти незавершені місця."
 
-#: PlaceCleanup/placecleanup.glade.h:62
+#: PlaceCleanup/placecleanup.glade.h:62 PlaceCleanup/placecleanup.glade:985
 msgid "Set preferences"
 msgstr "Налаштувати параметри"
 
-#: PlaceCleanup/placecleanup.glade.h:63
+#: PlaceCleanup/placecleanup.glade.h:63 PlaceCleanup/placecleanup.glade:1008
 msgid "Select one of these places to continue the cleanup process."
 msgstr "Виберіть одне з цих місць для продовження процесу очищення."
 
-#: PlaceCleanup/placecleanup.glade.h:64
+#: PlaceCleanup/placecleanup.glade.h:64 PlaceCleanup/placecleanup.glade:1035
 msgid "Search result places"
 msgstr "Результати пошуку місць"
 
-#: PlaceCleanup/placecleanup.glade.h:67
+#: PlaceCleanup/placecleanup.glade.h:67 PlaceCleanup/placecleanup.glade:1102
 msgid ""
 "Checking the 'Populated' checkbox causes the GeoNames search to include "
 "'Populted places', places where people live and work."
 msgstr ""
-"Вибір 'Заселені' дозволяє пошук GeoNames включити 'Заселені місця', де люди живуть та працюють."
+"Вибір 'Заселені' дозволяє пошук GeoNames включити 'Заселені місця', де люди "
+"живуть та працюють."
 
-#: PlaceCleanup/placecleanup.glade.h:68
+#: PlaceCleanup/placecleanup.glade.h:68 PlaceCleanup/placecleanup.glade:1119
 msgid "Populated"
 msgstr "Заселені"
 
-#: PlaceCleanup/placecleanup.glade.h:69
+#: PlaceCleanup/placecleanup.glade.h:69 PlaceCleanup/placecleanup.glade:1131
 msgid ""
 "Checking the 'Admin' checkbox cause the GeoNames search to include "
 "adminstrative subdivisions in the search (countries, states, counties etc.)."
 msgstr ""
-"Вибір 'Адміністративні' дозволяє пошук GeoNames включити адміністративні підрозділи (країни, штати/області, округи/райони тощо)."
+"Вибір 'Адміністративні' дозволяє пошук GeoNames включити адміністративні "
+"підрозділи (країни, штати/області, округи/райони тощо)."
 
-#: PlaceCleanup/placecleanup.glade.h:70
+#: PlaceCleanup/placecleanup.glade.h:70 PlaceCleanup/placecleanup.glade:1148
 msgid ""
 "Checking the 'Spot' checkbox cause the GeoNames search to include a wide "
 "variety of other places in the search (churches, burial grounds, buildings "
 "etc.)."
 msgstr ""
-"Вибір 'Різні' дозволяє у пошук GeoNames включати різноманітні інші місця (церкви, кладовища, будівлі тощо)."
+"Вибір 'Різні' дозволяє у пошук GeoNames включати різноманітні інші місця "
+"(церкви, кладовища, будівлі тощо)."
 
-#: PlaceCleanup/placecleanup.glade.h:71
+#: PlaceCleanup/placecleanup.glade.h:71 PlaceCleanup/placecleanup.glade:1163
 msgid "Admin"
 msgstr "Адміністративні"
 
-#: PlaceCleanup/placecleanup.glade.h:72
+#: PlaceCleanup/placecleanup.glade.h:72 PlaceCleanup/placecleanup.glade:1174
 msgid "Spot"
 msgstr "Різні"

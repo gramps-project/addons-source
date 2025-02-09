@@ -1,14 +1,16 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
+# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
+# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-04 18:55-0600\n"
-"PO-Revision-Date: 2024-10-14 08:18+0200\n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
 "Language: da_DK\n"
@@ -18,11 +20,15 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
 
-#: RelID/relation_tab.gpr.py:35
+#: DataEntryGramplet/DataEntryGramplet.py:89 RelID/relation_tab.py:126
+msgid "Save"
+msgstr "Gem"
+
+#: RelID/relation_tab.gpr.py:35 RelID/relation_tab.gpr.py:36
 msgid "Display relations and distances with the home person"
 msgstr "Vis slægtskab og afstand til fokuspersonen"
 
-#: RelID/relation_tab.gpr.py:36
+#: RelID/relation_tab.gpr.py:36 RelID/relation_tab.gpr.py:37
 msgid "Will display relational informations with the home person"
 msgstr "Vil vise slægtskabsinformation til hovedpersonen"
 
@@ -33,10 +39,6 @@ msgstr "Slægtskab og afstand til proband"
 #: RelID/relation_tab.py:92
 msgid "Folder Chooser"
 msgstr "Mappevælger"
-
-#: RelID/relation_tab.py:95
-msgid "_Cancel"
-msgstr "_Afbryd"
 
 #: RelID/relation_tab.py:97
 msgid "_Select"
@@ -53,10 +55,6 @@ msgstr "Rel_id"
 #: RelID/relation_tab.py:111
 msgid "Relation"
 msgstr "Slægtskab"
-
-#: RelID/relation_tab.py:112
-msgid "Name"
-msgstr "Navn"
 
 #: RelID/relation_tab.py:113
 msgid "up"
@@ -77,10 +75,6 @@ msgstr "Rang"
 #: RelID/relation_tab.py:117
 msgid "Period"
 msgstr "Periode"
-
-#: RelID/relation_tab.py:126
-msgid "Save"
-msgstr "Gem"
 
 #: RelID/relation_tab.py:164
 msgid "Please wait, filtering..."

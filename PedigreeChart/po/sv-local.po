@@ -1,91 +1,61 @@
-# Swedish translations for PACKAGE package.
-# Copyright (C) 2011 THE PACKAGE'S COPYRIGHT HOLDER
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# Pär Ekholm <pehlm@pekholm.org>, 2021.
+# Bo Rosén <bo.rosen@home.se>, 2001.
+# Jens Arvidsson <jya@sverige.nu>, 2002, 2003, 2004, 2005.
+# Stefan Björk <betula@users.sourceforge.net>, 2005, 2006.
+# Peter Landgren <peter.talken@telia.com>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017.
+# Pär Ekholm <par.ekholm50@gmail.com>, 2016, 2018.
+# Pär Ekholm <par.ekholm@pekholm.se>, 2018, 2019.
+# Peter Landgren <peter@test>, 2010.
 #
-# Peter Landgren <peter.talken@telia.com>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-03-16 13:15+0100\n"
-"PO-Revision-Date: 2011-03-16 16:12+0100\n"
-"Last-Translator: Peter Landgren <peter.talken@telia.com>\n"
-"Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
+"Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/sv/>\n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10-dev\n"
 
-#: PedigreeChart/PedigreeChart.gpr.py:24
+#: PedigreeChart/PedigreeChart.gpr.py:24 PedigreeChart/PedigreeChart.gpr.py:25
 msgid "Pedigree Chart"
 msgstr "Antavla"
 
-#: PedigreeChart/PedigreeChart.gpr.py:25
+#: PedigreeChart/PedigreeChart.gpr.py:25 PedigreeChart/PedigreeChart.gpr.py:26
 msgid "Alternate version of the traditional pedigree chart."
-msgstr "Antavlealternativ"
+msgstr "Alternativ version av den traditionella stamtavlan."
 
-#: PedigreeChart/PedigreeChart.py:378
-#, python-format
-msgid "Person %s is not in the Database"
-msgstr "Person %s saknas i databasen"
-
-#: PedigreeChart/PedigreeChart.py:381 PedigreeChart/PedigreeChart.py:529
-msgid "Mother"
-msgstr "Mor"
-
-#: PedigreeChart/PedigreeChart.py:385
+#: PedigreeChart/PedigreeChart.py:385 PedigreeChart/PedigreeChart.py:379
 #, python-format
 msgid "Pedigree Chart for %s"
 msgstr "Antavla för %s"
 
-#: PedigreeChart/PedigreeChart.py:532
-msgid "Father"
-msgstr "Far"
-
-#: PedigreeChart/PedigreeChart.py:534
+#: PedigreeChart/PedigreeChart.py:534 PedigreeChart/PedigreeChart.py:528
 #, python-format
 msgid "Page %d"
 msgstr "Sida %d"
 
-#: PedigreeChart/PedigreeChart.py:641
-msgid "Tree Options"
-msgstr "Trädalternativ"
-
-#: PedigreeChart/PedigreeChart.py:643
-msgid "Center Person"
-msgstr "Huvudperson"
-
-#: PedigreeChart/PedigreeChart.py:644
-msgid "The center person for the tree"
-msgstr "Trädets huvudperson"
-
-#: PedigreeChart/PedigreeChart.py:647
-msgid "Generations"
-msgstr "Generationer"
-
-#: PedigreeChart/PedigreeChart.py:648
-msgid "The number of generations to include in the tree"
-msgstr "Det antal generationer, som skall tas med i trädet."
-
-#: PedigreeChart/PedigreeChart.py:651
+#: PedigreeChart/PedigreeChart.py:651 PedigreeChart/PedigreeChart.py:640
 msgid "Show Mother/Father captions"
 msgstr "Visa mor/far ledtext"
 
-#: PedigreeChart/PedigreeChart.py:652
+#: PedigreeChart/PedigreeChart.py:652 PedigreeChart/PedigreeChart.py:641
 msgid "Show the title of mother or father beside each ancestor's box."
 msgstr "Visa titel på mor eller far vid sidan om varje ättlings ruta."
 
-#: PedigreeChart/PedigreeChart.py:664
-msgid "The basic style used for the text display."
-msgstr "Grundmall för textvisning."
-
-#: PedigreeChart/PedigreeChart.py:673
+#: PedigreeChart/PedigreeChart.py:673 PedigreeChart/PedigreeChart.py:662
 msgid "The basic style used for the title display."
-msgstr "Mall för titelvisning"
+msgstr "Den grundläggande stilen som används för titelvisningen."
 
-#: PedigreeChart/PedigreeChart.py:682
+#: PedigreeChart/PedigreeChart.py:682 PedigreeChart/PedigreeChart.py:671
 msgid "Style used for labels and captions"
 msgstr "Mall för etiketter och ledtexter"
-
-

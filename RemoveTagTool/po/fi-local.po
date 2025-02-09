@@ -1,29 +1,54 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# translation of fi.po to Finnish
+# GRAMPS
+# Copyright (C) YEAR ORGANIZATION.
 #
+# Eero Tamminen <eerot@sf>, 2005, 2006, 2007, 2008.
+# Janne Kovesjärvi <janne.kovesjarvi@gmail.com>, 2008, 2009, 2013.
+# Matti Niemelä <niememat@gmail.com>, 2014, 2015, 2016, 2017, 2018.
+# Pekka Valta <pekka.valta@kolumbus.fi>, 2014, 2018.
+# Niemelä <niememat@gmail.com>, 2017, 2018.
+# Bo Rosén <bo.rosen@home.se>, 2001.
+# Jens Arvidsson <jya@sverige.nu>, 2002, 2003, 2004, 2005.
+# Stefan Björk <betula@users.sourceforge.net>, 2005, 2006.
+# Peter Landgren <peter.talken@telia.com>, 2007, 2008, 2009, 2010, 2011.
+# Anton Huber <anton_huber@gmx.de>, 2005, 2006.
+# Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
+# Sebastian Vöcking <voeck@web.de>, 2005.
+# Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
+# Alex Roitman <shura@gramps-project.org>, 2006.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
 msgid ""
 msgstr ""
-"Project-Id-Version: Add/Remove Tag Tool\n"
+"Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-19 23:12+0200\n"
-"PO-Revision-Date: 2021-11-02 10:42+0200\n"
+"POT-Creation-Date: 2018-10-02 02:13+0300\n"
+"PO-Revision-Date: 2019-12-10 13:09+0200\n"
+"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: niememat@gmail.com\n"
+"Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3\n"
-"Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
+"Generated-By: pygettext.py 1.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: fi_FI\n"
+"X-Generator: Poedit 2.0.6\n"
+
+#: DynamicWeb//dynamicweb.py:2542 DynamicWeb/dynamicweb.py:3052
+#: RemoveTagTool/RemoveTagTool.py:124
+msgid "Persons"
+msgstr "Henkilöt"
+
+#: QuiltView/QuiltView.py:1939 RemoveTagTool/RemoveTagTool.py:89
+#: RemoveTagTool/RemoveTagTool.py:97 RemoveTagTool/RemoveTagTool.py:105
+msgid "General options"
+msgstr "Yleiset valinnat"
 
 #: RemoveTagTool/RemoveTagTool.gpr.py:24 RemoveTagTool/RemoveTagTool.py:186
-#: RemoveTagTool/RemoveTagTool.py:246
+#: RemoveTagTool/RemoveTagTool.py:246 RemoveTagTool/RemoveTagTool.gpr.py:25
 msgid "Add/Remove Tag Tool"
 msgstr "Lisää/poista tagi työkalu"
 
-#: RemoveTagTool/RemoveTagTool.gpr.py:25
+#: RemoveTagTool/RemoveTagTool.gpr.py:25 RemoveTagTool/RemoveTagTool.gpr.py:26
 msgid "Add or remove a tag from groups of people, events, etc."
 msgstr "Lisää tai poista tagi henkilöryhmistä, tapahtumista jne."
 
@@ -51,51 +76,6 @@ msgstr "Lisää tageja"
 msgid "Remove Tags"
 msgstr "Poista tageja"
 
-#: RemoveTagTool/RemoveTagTool.py:89 RemoveTagTool/RemoveTagTool.py:97
-#: RemoveTagTool/RemoveTagTool.py:105
-msgid "General options"
-msgstr "Yleiset valinnat"
-
-#: RemoveTagTool/RemoveTagTool.py:92
-msgid "People"
-msgstr "Henkilöt"
-
-#: RemoveTagTool/RemoveTagTool.py:92 RemoveTagTool/RemoveTagTool.py:125
-msgid "Families"
-msgstr "Perheet"
-
-#: RemoveTagTool/RemoveTagTool.py:92 RemoveTagTool/RemoveTagTool.py:126
-msgid "Events"
-msgstr "Tapahtumat"
-
-#: RemoveTagTool/RemoveTagTool.py:92 RemoveTagTool/RemoveTagTool.py:127
-msgid "Places"
-msgstr "Paikat"
-
-#: RemoveTagTool/RemoveTagTool.py:92 RemoveTagTool/RemoveTagTool.py:128
-msgid "Sources"
-msgstr "Lähteet"
-
-#: RemoveTagTool/RemoveTagTool.py:93 RemoveTagTool/RemoveTagTool.py:129
-msgid "Citations"
-msgstr "Lainaukset"
-
-#: RemoveTagTool/RemoveTagTool.py:93 RemoveTagTool/RemoveTagTool.py:130
-msgid "Repositories"
-msgstr "Arkistot"
-
-#: RemoveTagTool/RemoveTagTool.py:93 RemoveTagTool/RemoveTagTool.py:132
-msgid "Media"
-msgstr "Mediat"
-
-#: RemoveTagTool/RemoveTagTool.py:93 RemoveTagTool/RemoveTagTool.py:133
-msgid "Notes"
-msgstr "Lisätiedot"
-
-#: RemoveTagTool/RemoveTagTool.py:95
-msgid "Category"
-msgstr "Kategoria"
-
 #: RemoveTagTool/RemoveTagTool.py:96
 msgid "Choose a category."
 msgstr "Valitse kategoria."
@@ -108,46 +88,6 @@ msgstr "Valitse tagi"
 msgid "Choose a tag to remove."
 msgstr "Valitse poistettava tagi."
 
-#: RemoveTagTool/RemoveTagTool.py:124
-msgid "Person Filter"
-msgstr "Henkilösuodin"
-
-#: RemoveTagTool/RemoveTagTool.py:124
-msgid "Persons"
-msgstr "Henkilöt"
-
-#: RemoveTagTool/RemoveTagTool.py:125
-msgid "Family Filter"
-msgstr "Perhesuodin"
-
-#: RemoveTagTool/RemoveTagTool.py:126
-msgid "Event Filter"
-msgstr "Tapahtumasuodin"
-
-#: RemoveTagTool/RemoveTagTool.py:127
-msgid "Place Filter"
-msgstr "Paikkasuodin"
-
-#: RemoveTagTool/RemoveTagTool.py:128
-msgid "Source Filter"
-msgstr "Lähdesuodin"
-
-#: RemoveTagTool/RemoveTagTool.py:129
-msgid "Citation Filter"
-msgstr "Lainaussuodin"
-
-#: RemoveTagTool/RemoveTagTool.py:130
-msgid "Repository Filter"
-msgstr "Arkistosuodin"
-
-#: RemoveTagTool/RemoveTagTool.py:132
-msgid "Media Filter"
-msgstr "Mediasuodin"
-
-#: RemoveTagTool/RemoveTagTool.py:133
-msgid "Note Filter"
-msgstr "Lisätietosuodin"
-
 #: RemoveTagTool/RemoveTagTool.py:140
 msgid "Filter options"
 msgstr "Suodinvalinnat"
@@ -156,10 +96,6 @@ msgstr "Suodinvalinnat"
 #, python-format
 msgid "All %s"
 msgstr "Kaikki %s"
-
-#: RemoveTagTool/RemoveTagTool.py:190
-msgid "Options"
-msgstr "Valinnat"
 
 #: RemoveTagTool/RemoveTagTool.py:198
 msgid ""
@@ -195,5 +131,6 @@ msgid "Tag '{}' was {} to {} {} objects.\n"
 msgstr "Tageja '{}' on {} - {} {} kohteessa.\n"
 
 #: RemoveTagTool/RemoveTagTool.py:271
+#: EventDescriptionEditor/EventDescriptionEditor.py:105
 msgid "INFO"
 msgstr "INFO"

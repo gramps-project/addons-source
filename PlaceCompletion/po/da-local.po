@@ -1,14 +1,16 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Lars Kr. Lundin <gramps@lklundin.dk>, 2002.
+# Kaj Mikkelsen <kmi@vgdata.dk>, 2016, 2017, 2018, 2024.
+# FIRST AUTHOR <kmi@vgdata.dk>, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2024-10-12 15:41+0200\n"
+"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
 "Language: da_DK\n"
@@ -19,10 +21,12 @@ msgstr ""
 "X-Generator: Poedit 3.0.1\n"
 
 #: PlaceCompletion/PlaceCompletion.gpr.py:25
+#: PlaceCompletion/PlaceCompletion.gpr.py:26
 msgid "PlaceCompletion"
 msgstr "PlaceCompletion"
 
 #: PlaceCompletion/PlaceCompletion.gpr.py:26
+#: PlaceCompletion/PlaceCompletion.gpr.py:28
 msgid ""
 "Provides a browsable list of selected places, with possibility to complete/"
 "parse/set the attribute fields."
@@ -93,18 +97,6 @@ msgstr "Indlæser bredde/længde fil i Hukommelsen..."
 msgid "Examining places"
 msgstr "Undersøger steder"
 
-#: PlaceCompletion/PlaceCompletion.py:520
-msgid "City"
-msgstr "By"
-
-#: PlaceCompletion/PlaceCompletion.py:523
-msgid "State"
-msgstr "Stat"
-
-#: PlaceCompletion/PlaceCompletion.py:526
-msgid "Country"
-msgstr "Land"
-
 #: PlaceCompletion/PlaceCompletion.py:685
 msgid "Set Tag"
 msgstr "Sæt mærkat"
@@ -130,20 +122,9 @@ msgstr "%d stedposter blev ændret"
 msgid "Change places"
 msgstr "Ret steder"
 
-#: PlaceCompletion/PlaceCompletion.py:808
-#: PlaceCompletion/PlaceCompletion.py:814
-#: PlaceCompletion/PlaceCompletion.py:819
-#: PlaceCompletion/PlaceCompletion.py:825
-msgid "Cannot open file"
-msgstr "Kan ikke åbne fil"
-
 #: PlaceCompletion/PlaceCompletion.py:809
 msgid "The selected file is a directory, not a file."
 msgstr "den valgte fil er en mappe, ikke en fil."
-
-#: PlaceCompletion/PlaceCompletion.py:815
-msgid "You do not have read access to the selected file."
-msgstr "Du har ikke rettigheder for at tilgå den valgte fil."
 
 #: PlaceCompletion/PlaceCompletion.py:820
 msgid "The file you want to access is not a regular file."
@@ -267,25 +248,13 @@ msgstr "Anvend alle foreslåede ændringer"
 msgid "Selection of the Places you want to complete:"
 msgstr "Valg af pladser du vil komplettere: "
 
-#: PlaceCompletion/placecompletion.glade:178
-msgid "C_ity:"
-msgstr "B_y:"
-
 #: PlaceCompletion/placecompletion.glade:195
 msgid "Parish:"
 msgstr "Sogn:"
 
-#: PlaceCompletion/placecompletion.glade:240
-msgid "County:"
-msgstr "Amt:"
-
 #: PlaceCompletion/placecompletion.glade:271
 msgid "Place _filter:"
 msgstr "Sted_filter"
-
-#: PlaceCompletion/placecompletion.glade:321
-msgid "State:"
-msgstr "Stat:"
 
 #: PlaceCompletion/placecompletion.glade:336
 msgid "Count_ry:"
@@ -302,10 +271,6 @@ msgstr "Centrum længdegrad:"
 #: PlaceCompletion/placecompletion.glade:430
 msgid "Places in a rectangle:"
 msgstr "Steder i en firkant:"
-
-#: PlaceCompletion/placecompletion.glade:443
-msgid "Width:"
-msgstr "Bredde::"
 
 #: PlaceCompletion/placecompletion.glade:460
 msgid "Height:"

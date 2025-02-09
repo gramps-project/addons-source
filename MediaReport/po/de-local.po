@@ -3,40 +3,50 @@
 # translation of de.po to Deutsch
 #
 #
-# Anton Huber <anton_huber@gmx.de>, 2005,2006.
+# Anton Huber <anton_huber@gmx.de>, 2005, 2006.
 # Sebastian Vöcking <sebastian_voecking@gmx.de>, 2005.
 # Sebastian Vöcking <voeck@web.de>, 2005.
 # Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
 # Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 # Alois Pöttker <alois.poettker@gmx.de>, 2017.
+# Allan Nordhøy <epost@anotheragency.no>, 2021.
+# R. B. <weblate@macdefender.org>, 2021.
+# RiseT <tareiss1971@yahoo.de>, 2021.
+# David Straub <straub@protonmail.com>, 2021.
+# nautilusx <translate@disroot.org>, 2021.
+# Andreas Abraham <andreas.abraham@gmx.de>, 2021.
+# RiseT <twilite505-4bf24909@yahoo.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-03 20:01+0200\n"
-"PO-Revision-Date: 2020-08-03 21:12+0200\n"
+"POT-Creation-Date: 2020-08-02 22:39+0200\n"
+"PO-Revision-Date: 2025-02-09 06:44+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
-"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
+"addons/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 19.12.3\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10-dev\n"
 
-#: MediaReport/media_report.gpr.py:23
-msgid "Media Report"
-msgstr "Medienbericht"
-
-#: MediaReport/media_report.gpr.py:24
-msgid "Generates report including images, image data and notes."
-msgstr "Erstellt einen Bericht mit Bildern, Bilddaten und Notizen."
-
+#: EventDescriptionEditor/EventDescriptionEditor.py:91
+#: EventDescriptionEditor/EventDescriptionEditor.py:105
 #: MediaReport/media_report.py:106 MediaReport/media_report.py:112
 #: MediaReport/media_report.py:119 MediaReport/media_report.py:125
 msgid "INFO"
 msgstr "INFO"
+
+#: MediaReport/media_report.gpr.py:23 MediaReport/media_report.gpr.py:24
+msgid "Media Report"
+msgstr "Medienbericht"
+
+#: MediaReport/media_report.gpr.py:24 MediaReport/media_report.gpr.py:25
+msgid "Generates report including images, image data and notes."
+msgstr "Erstellt einen Bericht mit Bildern, Bilddaten und Notizen."
 
 #: MediaReport/media_report.py:106 MediaReport/media_report.py:119
 msgid "You have to select an image to generate this report."
@@ -59,41 +69,13 @@ msgstr "Dieser Bericht unterstützt nur PDF als Ausgangsformat."
 msgid "General:"
 msgstr "Allgemeines:"
 
-#: MediaReport/media_report.py:235
-msgid "Description:"
-msgstr "Beschreibung:"
-
 #: MediaReport/media_report.py:250
 msgid "Image type:"
 msgstr "Art der Bilder:"
 
-#: MediaReport/media_report.py:342
-msgid "File does not exist"
-msgstr "Datei existiert nicht"
-
-#: MediaReport/media_report.py:343
-msgid "Could not add photo to page"
-msgstr "Foto kann zur Seite nicht hinzugefügt werden."
-
-#: MediaReport/media_report.py:344
-#, python-format
-msgid "%(str1)s: %(str2)s"
-msgstr "%(str1)s: %(str2)s"
-
 #: MediaReport/media_report.py:426
 msgid "Heading"
 msgstr "Überschrift"
-
-#: MediaReport/media_report.py:427 MediaReport/media_report.py:431
-#: MediaReport/media_report.py:435 MediaReport/media_report.py:439
-#: MediaReport/media_report.py:444 MediaReport/media_report.py:448
-#: MediaReport/media_report.py:453 MediaReport/media_report.py:458
-msgid "Report Options"
-msgstr "Berichtsoptionen"
-
-#: MediaReport/media_report.py:429
-msgid "Media"
-msgstr "Medien"
 
 #: MediaReport/media_report.py:430
 msgid "Select a media file for this report"

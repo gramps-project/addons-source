@@ -1,135 +1,123 @@
-# Norwegian Bokmal translations for PACKAGE package.
-# Copyright (C) 2009 THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# translation of nb.po to
+# Gramps
+# Copyright (C) YEAR ORGANIZATION.
 #
+# Frode Jemtland <frode.jemtland@skolelinux.no>, 2003, 2004, 2005, 2006, 2008.
+# Axel Bojer <axelb@skolelinux.no>, 2003.
+# Jørgen Grønlund <jorgenhg@broadpark.no>, 2005.
+# Nils Kristian Tomren <project@nilsk.net>, 2006.
+# Espen Berg <espenbe@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2015, 2016.
+# Harald H. <haarektrans@gmail.com>, 2017.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-11-23 19:28+0100\n"
-"PO-Revision-Date: 2009-11-25 17:14+0100\n"
-"Last-Translator: \n"
-"Language-Team: Norwegian Bokmal <i18n-nb@lister.ping.uio.no>\n"
+"POT-Creation-Date: 2010-03-08 16:37+0100\n"
+"PO-Revision-Date: 2010-03-08 08:21+0100\n"
+"Last-Translator: Espen Berg <espenbe@gmail.com>\n"
+"Language-Team: American English <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Norwegian Bokmaal <i18n-nb@lister.ping.uio.no>\n"
+"Generated-By: pygettext.py 1.4\n"
+"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: DataEntryGramplet/DataEntryGramplet.gpr.py:8
+#: DataEntryGramplet/DataEntryGramplet.gpr.py:9
 msgid "Data Entry Gramplet"
 msgstr ""
 
-#: DataEntryGramplet/DataEntryGramplet.gpr.py:12
-msgid "Data Entry"
-msgstr ""
-
-#: DataEntryGramplet/DataEntryGramplet.py:55
+#: DataEntryGramplet/DataEntryGramplet.py:55 FilterRules/activepersonrule.py:45
 msgid "Active person"
 msgstr "Aktiv person"
 
 #: DataEntryGramplet/DataEntryGramplet.py:56
+#: DataEntryGramplet/DataEntryGramplet.py:73
 msgid "Family:"
 msgstr "Familie:"
 
 #: DataEntryGramplet/DataEntryGramplet.py:58
 #: DataEntryGramplet/DataEntryGramplet.py:85
+#: DataEntryGramplet/DataEntryGramplet.py:76
+#: DataEntryGramplet/DataEntryGramplet.py:109
 msgid "Surname, Given"
 msgstr "Etternavn, Fornavn"
 
-#: DataEntryGramplet/DataEntryGramplet.py:59
-#: DataEntryGramplet/DataEntryGramplet.py:86
-msgid "Gender"
-msgstr "Kjønn"
-
-#: DataEntryGramplet/DataEntryGramplet.py:59
-#: DataEntryGramplet/DataEntryGramplet.py:86
-msgid "female"
-msgstr "kvinne"
-
-#: DataEntryGramplet/DataEntryGramplet.py:59
-#: DataEntryGramplet/DataEntryGramplet.py:86
-msgid "male"
-msgstr "mann"
-
-#: DataEntryGramplet/DataEntryGramplet.py:59
-#: DataEntryGramplet/DataEntryGramplet.py:86
-msgid "unknown"
-msgstr "ukjent"
-
-#: DataEntryGramplet/DataEntryGramplet.py:60
-#: DataEntryGramplet/DataEntryGramplet.py:87
-msgid "Birth"
-msgstr "Født"
-
-#: DataEntryGramplet/DataEntryGramplet.py:61
-#: DataEntryGramplet/DataEntryGramplet.py:88
-msgid "Death"
-msgstr "Død"
-
 #: DataEntryGramplet/DataEntryGramplet.py:69
+#: DataEntryGramplet/DataEntryGramplet.py:89
 msgid "Save"
 msgstr "Lagre"
 
 #: DataEntryGramplet/DataEntryGramplet.py:72
+#: DataEntryGramplet/DataEntryGramplet.py:92
 msgid "Abandon"
 msgstr "Utelate"
 
 #: DataEntryGramplet/DataEntryGramplet.py:77
+#: DataEntryGramplet/DataEntryGramplet.py:97
 msgid "New person"
 msgstr "Ny person"
 
 #: DataEntryGramplet/DataEntryGramplet.py:78
+#: DataEntryGramplet/DataEntryGramplet.py:98
 msgid "Add relation"
 msgstr "Legg til relasjon"
 
 #: DataEntryGramplet/DataEntryGramplet.py:79
+#: DataEntryGramplet/DataEntryGramplet.py:99
 msgid "No relation to active person"
 msgstr "Ingen slektskap til aktiv person"
 
 #: DataEntryGramplet/DataEntryGramplet.py:80
+#: DataEntryGramplet/DataEntryGramplet.py:100
 msgid "Add as a Parent"
 msgstr "Legg til som foreldre"
 
 #: DataEntryGramplet/DataEntryGramplet.py:81
+#: DataEntryGramplet/DataEntryGramplet.py:103
 msgid "Add as a Spouse"
 msgstr "Legg til som ektefelle"
 
 #: DataEntryGramplet/DataEntryGramplet.py:82
+#: DataEntryGramplet/DataEntryGramplet.py:106
 msgid "Add as a Sibling"
 msgstr "Legg til et søsken"
 
 #: DataEntryGramplet/DataEntryGramplet.py:83
+#: DataEntryGramplet/DataEntryGramplet.py:107
 msgid "Add as a Child"
 msgstr "Legg til som barn"
 
-#: DataEntryGramplet/DataEntryGramplet.py:96
-msgid "Add"
-msgstr "Legg til"
-
 #: DataEntryGramplet/DataEntryGramplet.py:99
+#: DataEntryGramplet/DataEntryGramplet.py:124
 msgid "Copy Active Data"
 msgstr "Kopiere aktive data"
-
-#: DataEntryGramplet/DataEntryGramplet.py:102
-msgid "Clear"
-msgstr "Rydde"
 
 #: DataEntryGramplet/DataEntryGramplet.py:145
 #: DataEntryGramplet/DataEntryGramplet.py:159
 #: DataEntryGramplet/DataEntryGramplet.py:266
+#: DataEntryGramplet/DataEntryGramplet.py:167
+#: DataEntryGramplet/DataEntryGramplet.py:178
+#: DataEntryGramplet/DataEntryGramplet.py:315
 msgid "in"
 msgstr "i"
 
 #: DataEntryGramplet/DataEntryGramplet.py:387
+#: DataEntryGramplet/DataEntryGramplet.py:441
+#: DataEntryGramplet/DataEntryGramplet.py:569
 #, python-format
 msgid "Gramplet Data Edit: %s"
 msgstr ""
 
 #: DataEntryGramplet/DataEntryGramplet.py:407
+#: DataEntryGramplet/DataEntryGramplet.py:515
 msgid "Please provide a name."
 msgstr "Angi et navn."
 
 #: DataEntryGramplet/DataEntryGramplet.py:407
+#: DataEntryGramplet/DataEntryGramplet.py:515
 msgid "Can't add new person."
 msgstr "Kan ikke legge til ny person."
 
@@ -137,16 +125,28 @@ msgstr "Kan ikke legge til ny person."
 #: DataEntryGramplet/DataEntryGramplet.py:423
 #: DataEntryGramplet/DataEntryGramplet.py:432
 #: DataEntryGramplet/DataEntryGramplet.py:437
+#: DataEntryGramplet/DataEntryGramplet.py:523
+#: DataEntryGramplet/DataEntryGramplet.py:531
+#: DataEntryGramplet/DataEntryGramplet.py:536
+#: DataEntryGramplet/DataEntryGramplet.py:541
+#: DataEntryGramplet/DataEntryGramplet.py:550
+#: DataEntryGramplet/DataEntryGramplet.py:555
+#: DataEntryGramplet/DataEntryGramplet.py:560
+#: DataEntryGramplet/DataEntryGramplet.py:565
 msgid "Please set an active person."
 msgstr "Angi aktiv person."
 
 #: DataEntryGramplet/DataEntryGramplet.py:415
 #: DataEntryGramplet/DataEntryGramplet.py:418
+#: DataEntryGramplet/DataEntryGramplet.py:523
+#: DataEntryGramplet/DataEntryGramplet.py:526
 msgid "Can't add new person as a parent."
 msgstr "Kan ikke legge til ny person som foreldre."
 
 #: DataEntryGramplet/DataEntryGramplet.py:418
 #: DataEntryGramplet/DataEntryGramplet.py:427
+#: DataEntryGramplet/DataEntryGramplet.py:526
+#: DataEntryGramplet/DataEntryGramplet.py:545
 msgid "Please set the new person's gender."
 msgstr "Velg kjønn på den nye personen."
 
@@ -155,33 +155,39 @@ msgstr "Velg kjønn på den nye personen."
 #: DataEntryGramplet/DataEntryGramplet.py:559
 #: DataEntryGramplet/DataEntryGramplet.py:596
 #: DataEntryGramplet/DataEntryGramplet.py:629
+#: DataEntryGramplet/DataEntryGramplet.py:541
+#: DataEntryGramplet/DataEntryGramplet.py:545
+#: DataEntryGramplet/DataEntryGramplet.py:768
+#: DataEntryGramplet/DataEntryGramplet.py:805
+#: DataEntryGramplet/DataEntryGramplet.py:838
 msgid "Can't add new person as a spouse."
 msgstr "Kan ikke legge til ny person som mor."
 
 #: DataEntryGramplet/DataEntryGramplet.py:432
+#: DataEntryGramplet/DataEntryGramplet.py:560
 msgid "Can't add new person as a sibling."
 msgstr "Kan ikke legge til ny person som søsken."
 
 #: DataEntryGramplet/DataEntryGramplet.py:437
 #: DataEntryGramplet/DataEntryGramplet.py:675
+#: DataEntryGramplet/DataEntryGramplet.py:565
+#: DataEntryGramplet/DataEntryGramplet.py:938
 msgid "Can't add new person as a child."
 msgstr "Kan ikke legge til ny person som barn."
 
 #: DataEntryGramplet/DataEntryGramplet.py:558
+#: DataEntryGramplet/DataEntryGramplet.py:767
 msgid "Please set gender on Active or new person."
 msgstr "Velg kjønn på aktiv eller ny person."
 
 #: DataEntryGramplet/DataEntryGramplet.py:595
 #: DataEntryGramplet/DataEntryGramplet.py:628
+#: DataEntryGramplet/DataEntryGramplet.py:804
+#: DataEntryGramplet/DataEntryGramplet.py:837
 msgid "Same genders on Active and new person."
 msgstr "Samme kjønn på aktiv og ny person."
 
 #: DataEntryGramplet/DataEntryGramplet.py:674
+#: DataEntryGramplet/DataEntryGramplet.py:937
 msgid "Please set gender on Active person."
 msgstr "Velg kjønn på aktiv person."
-
-#: DataEntryGramplet/DataEntryGramplet.py:696
-#, python-format
-msgid "Gramplet Data Entry: %s"
-msgstr ""
-

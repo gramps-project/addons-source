@@ -1,30 +1,43 @@
-# SDutch translation of addon NumberOfDescendantsQuickview.
+# Dutch translation of addon MediaMerge.
 # Copyright (C) 2020 Gramps project
-# This file is distributed under the same license as the NumberOfDescendantsQuickview package.
+# This file is distributed under the same license as the MediaMerge package.
+# Jan Sparreboom <jan@sparreboom.net>, 2020, 2021, 2023.
 # Tino Meinen <a.t.meinen@chello.nl>, 2003, 2004, 2005.
 # Kees Bakker <kees.bakker@xs4all.nl>, 2005, 2006, 2007.
-# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010.
-# Jan Sparreboom <jan@sparreboom.net>, 2020.
+# Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
+# Erik De Richter <frederik.de.richter@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
+# Harmen Huizinga <harmenhuizinga@sigmo.nl>, 2013.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: NumberOfDescendantsQuickview 5.x\n"
+"Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
-"POT-Creation-Date: 2020-04-22 11:04-0500\n"
-"PO-Revision-Date: 2020-08-02 14:35+0200\n"
-"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
-"Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
+"POT-Creation-Date: 2019-01-04 18:55-0600\n"
+"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
+"addons/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10-dev\n"
 
+#: LifeLineChartView/_dummy_translation_string_po.py:115
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:3
 msgid "Number of descendants"
 msgstr "Aantal afstammelingen"
 
+#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:48
+#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:54
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:87
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:94
+msgid "Generation"
+msgstr "Generatie"
+
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:4
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:5
 msgid "Shows the number of descendants of the current person"
 msgstr "Toont het aantal nakomelingen van de huidige persoon"
 
@@ -32,18 +45,6 @@ msgstr "Toont het aantal nakomelingen van de huidige persoon"
 #, python-format
 msgid "Number of %s's descendants"
 msgstr "Aantal afstammelingen van %s"
-
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:87
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:94
-msgid "Generation"
-msgstr "Generatie"
-
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:88
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:95
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:111
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:115
-msgid "Total"
-msgstr "Totaal"
 
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:89
 msgid "Seen"
@@ -61,9 +62,11 @@ msgstr "Nu in leven"
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:122
 #, python-format
 msgid "Seen = number of descendants whose birth %s has lived to see"
-msgstr "Gezien = aantal afstammelingen waarvan %s hun geboorte nog heeft meegemaakt"
+msgstr ""
+"Gezien = aantal afstammelingen waarvan %s hun geboorte nog heeft meegemaakt"
 
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:124
 #, python-format
 msgid "Outlived = number of descendants who died while %s was still alive"
-msgstr "Overleefd = aantal afstammelingen die overleden zijn terwijl %s nog leefde"
+msgstr ""
+"Overleefd = aantal afstammelingen die overleden zijn terwijl %s nog leefde"
