@@ -15,19 +15,20 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-08 17:11-0500\n"
-"PO-Revision-Date: 2021-05-27 13:30+0200\n"
-"Language-Team: \n"
+"PO-Revision-Date: 2025-02-09 08:03+0000\n"
+"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
+"Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
+"addons/sv/>\n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.3\n"
-"Last-Translator: Pär Ekholm <pehlm@pekholm.se>\n"
-"Language: sv_SE\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10-dev\n"
 
 #: MediaMerge/mediamerge.gpr.py:31
 msgid "Merge Media"
-msgstr "Mediasammanslagning"
+msgstr "Slå samman media"
 
 #: MediaMerge/mediamerge.gpr.py:32 MediaMerge/mediamerge.gpr.py:33
 msgid ""
@@ -7471,16 +7472,16 @@ msgstr "_Google-kartor"
 #: CheckPlaceTitles/checkplacetitles.gpr.py:28
 #: CheckPlaceTitles/checkplacetitles.gpr.py:29
 msgid "Check Place Titles"
-msgstr ""
+msgstr "Markera platstitlar"
 
 #: CheckPlaceTitles/checkplacetitles.gpr.py:29
 #: CheckPlaceTitles/checkplacetitles.gpr.py:30
 msgid "Check place titles"
-msgstr ""
+msgstr "Markera platstitlar"
 
 #: CheckPlaceTitles/checkplacetitles.py:71
 msgid "Check Place title"
-msgstr ""
+msgstr "Markera platstitel"
 
 #: ImportMerge/importmerge.glade:264 CheckPlaceTitles/checkplacetitles.py:107
 msgid "Differences"
@@ -7489,47 +7490,47 @@ msgstr "Skillnader"
 #: CheckPlaceTitles/checkplacetitles.py:109
 #: CheckPlaceTitles/checkplacetitles.py:112
 msgid "No need modifications"
-msgstr ""
+msgstr "Inga ändringar behövs"
 
 #: CheckPlaceTitles/checkplacetitles.py:110
 #: CheckPlaceTitles/checkplacetitles.py:113
 msgid "No changes need."
-msgstr ""
+msgstr "Inga ändringar behövs."
 
 #: CheckPlaceTitles/checkplacetitles.py:185
 #: CheckPlaceTitles/checkplacetitles.py:187
 msgid "Legacy place"
-msgstr ""
+msgstr "Äldre plats"
 
 #: CheckPlaceTitles/checkplacetitles.py:199
 #: CheckPlaceTitles/checkplacetitles.py:201
 msgid "Modify Place titles"
-msgstr ""
+msgstr "Ändra platstitlar"
 
 #: CheckPlaceTitles/checkplacetitles.py:222
 #: CheckPlaceTitles/checkplacetitles.py:224
 msgid "Place titles"
-msgstr ""
+msgstr "Platstitlar"
 
 #: CheckPlaceTitles/checkplacetitles.glade.h:1
 #: CheckPlaceTitles/checkplacetitles.glade:56
 msgid "Remove content of place title field if it does not match"
-msgstr ""
+msgstr "Ta bort innehållet i platsrubrikfältet om det inte stämmer"
 
 #: CheckPlaceTitles/checkplacetitles.glade.h:2
 #: CheckPlaceTitles/checkplacetitles.glade:74
 msgid "Copy content of place title field to a new note."
-msgstr ""
+msgstr "Kopiera innehållet i platsrubrikfältet till en ny anteckning."
 
 #: CheckPlaceTitles/checkplacetitles.glade.h:4
 #: CheckPlaceTitles/checkplacetitles.glade:91
 msgid "Attach a tag on selected places."
-msgstr ""
+msgstr "Fäst en tagg på utvalda platser."
 
 #: CheckPlaceTitles/checkplacetitles.glade.h:6
 #: CheckPlaceTitles/checkplacetitles.glade:177
 msgid "column"
-msgstr ""
+msgstr "kolumn"
 
 #: ThumbnailGenerator/ThumbnailGenerator.gpr.py:30
 #: ThumbnailGenerator/ThumbnailGenerator.py:53
