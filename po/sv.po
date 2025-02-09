@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-08 17:11-0500\n"
-"PO-Revision-Date: 2025-02-09 08:03+0000\n"
+"PO-Revision-Date: 2025-02-09 11:16+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -2381,7 +2381,7 @@ msgstr "La till poster i fil som saknas i databasen"
 #: Differences/differences.py:191
 #, python-format
 msgid "Added %s: %s "
-msgstr "Tillagd %s: %s"
+msgstr "Tillagd %s: %s "
 
 #: Differences/differences.py:195
 msgid "Nothing added"
@@ -2446,11 +2446,11 @@ msgstr "Engelska"
 
 #: AncestorFill/AncestorFill.py:375 ../gramps/gen/plug/report/stdoptions.py:68
 msgid "The translation to be used for the report."
-msgstr "Rapportens språk"
+msgstr "Rapportens språk."
 
 #: AncestorFill/AncestorFill.py:419 AncestorFill/AncestorFill.py:361
 msgid "The style used for the title of the page."
-msgstr "Mall för rapporttitel"
+msgstr "Mall för rapporttitel."
 
 #: HtmlView/htmlview.gpr.py:30 HtmlView/htmlview.gpr.py:31
 msgid "Html View"
@@ -3107,8 +3107,7 @@ msgstr "Webbsidans titel"
 
 #: DynamicWeb//dynamicweb.py:3916 DynamicWeb/dynamicweb.py:4741
 msgid "Select filter to restrict people that appear on web site"
-msgstr ""
-"Välj ett filter, som begränsar vilka personer, som visas på en hemsida."
+msgstr "Välj ett filter, som begränsar vilka personer, som visas på en hemsida"
 
 #: DynamicWeb//dynamicweb.py:3929 DynamicWeb//dynamicweb.py:3949
 #: DynamicWeb/dynamicweb.py:4755 DynamicWeb/dynamicweb.py:4778
@@ -3138,7 +3137,7 @@ msgid ""
 "very long"
 msgstr ""
 "Detta tillåter dig att begränsa uppgifter om personer, som inte har varit "
-"döda tillräckligt länge."
+"döda tillräckligt länge"
 
 #: DynamicWeb//dynamicweb.py:3996 DynamicWeb/dynamicweb.py:4839
 msgid "Export notes"
@@ -3214,11 +3213,11 @@ msgstr "Huruvida visa sidor för platserna"
 
 #: DynamicWeb//dynamicweb.py:4065 DynamicWeb/dynamicweb.py:4921
 msgid "Choose your choice of map service for creating the Place Map Pages"
-msgstr "Välj din karttjänst för skapande av platskartsidor."
+msgstr "Välj din karttjänst för skapande av platskartsidor"
 
 #: DynamicWeb//dynamicweb.py:4069 DynamicWeb/dynamicweb.py:4926
 msgid "Google map API key"
-msgstr "Google map API key"
+msgstr "Google Maps API-nyckel"
 
 #: DynamicWeb//dynamicweb.py:4070 DynamicWeb/dynamicweb.py:4927
 msgid "The API key used for the Google map"
@@ -3701,7 +3700,7 @@ msgstr "Lägg till som föräldrar"
 #: DataEntryGramplet/DataEntryGramplet.py:81
 #: DataEntryGramplet/DataEntryGramplet.py:103
 msgid "Add as a Spouse"
-msgstr "Lägg till som  maka/make"
+msgstr "Lägg till som maka/make"
 
 #: DataEntryGramplet/DataEntryGramplet.py:82
 #: DataEntryGramplet/DataEntryGramplet.py:106
@@ -3742,7 +3741,7 @@ msgstr "Ange ett namn."
 #: DataEntryGramplet/DataEntryGramplet.py:407
 #: DataEntryGramplet/DataEntryGramplet.py:515
 msgid "Can't add new person."
-msgstr "Kan inte lägga till en ny person"
+msgstr "Kan inte lägga till en ny person."
 
 #: DataEntryGramplet/DataEntryGramplet.py:415
 #: DataEntryGramplet/DataEntryGramplet.py:423
@@ -3801,7 +3800,7 @@ msgstr "kan ej lägga till ny person som barn."
 #: DataEntryGramplet/DataEntryGramplet.py:558
 #: DataEntryGramplet/DataEntryGramplet.py:767
 msgid "Please set gender on Active or new person."
-msgstr "Ange kön på aktiv eller ny person"
+msgstr "Ange kön på aktiv eller ny person."
 
 #: DataEntryGramplet/DataEntryGramplet.py:595
 #: DataEntryGramplet/DataEntryGramplet.py:628
@@ -3813,7 +3812,7 @@ msgstr "Samma kön på aktiv och ny peson."
 #: DataEntryGramplet/DataEntryGramplet.py:674
 #: DataEntryGramplet/DataEntryGramplet.py:937
 msgid "Please set gender on Active person."
-msgstr "Ange kön för aktiv person"
+msgstr "Ange kön för aktiv person."
 
 #: Themes/themes.gpr.py:28 Themes/themes.gpr.py:29
 msgid "Theme preferences"
@@ -4002,7 +4001,7 @@ msgstr "vittnen"
 #: ../gramps/plugins/export/exportxml.py:196
 #, python-format
 msgid "Failure writing %s"
-msgstr "Misslyckades med att skriva till %s"
+msgstr "Fel vid skrivning av %s"
 
 #: DenominoViso/DenominoViso.py:755 DenominoViso/DenominoViso.py:769
 msgid "Unknown time direction"
@@ -4069,7 +4068,7 @@ msgstr "Visningstyp"
 
 #: DenominoViso/DenominoViso.py:2550 DenominoViso/DenominoViso.py:2574
 msgid "The type of graph to create."
-msgstr "Diagramtyp"
+msgstr "Diagramtyp."
 
 #: DenominoViso/DenominoViso.py:2555 DenominoViso/DenominoViso.py:2582
 msgid "Direction of time"
@@ -4085,7 +4084,7 @@ msgstr "Max diagrambredd (%)"
 
 #: DenominoViso/DenominoViso.py:2566 DenominoViso/DenominoViso.py:2593
 msgid "Width of the tree as fraction of the browser window"
-msgstr "Bredd på trädet, som del av fönster."
+msgstr "Bredd på trädet, som del av fönster"
 
 #: DenominoViso/DenominoViso.py:2569 DenominoViso/DenominoViso.py:2596
 msgid "Max chart height (px)"
@@ -4148,7 +4147,7 @@ msgstr ""
 
 #: DenominoViso/DenominoViso.py:2608 DenominoViso/DenominoViso.py:2635
 msgid "Whether to include a person's attributes"
-msgstr "Huruvida ta med attribut."
+msgstr "Huruvida ta med en persons attribut"
 
 #: DenominoViso/DenominoViso.py:2611 DenominoViso/DenominoViso.py:2638
 msgid "Include Addresses"
@@ -4200,7 +4199,7 @@ msgstr "Ta med foton/bilder från galleri"
 
 #: DenominoViso/DenominoViso.py:2636 DenominoViso/DenominoViso.py:2663
 msgid "Whether to include images"
-msgstr "Huruvida ta med bilder."
+msgstr "Huruvida ta med bilder"
 
 #: DenominoViso/DenominoViso.py:2639 DenominoViso/DenominoViso.py:2666
 msgid "Copy Image"
@@ -4220,7 +4219,7 @@ msgstr "Bestäm bilder med vilka attribut som skall tas med eller ej"
 
 #: DenominoViso/DenominoViso.py:2650 DenominoViso/DenominoViso.py:2678
 msgid "Include Image source references"
-msgstr "Huruvida ta med bildkällreferenser."
+msgstr "Huruvida ta med bildkällreferenser"
 
 #: DenominoViso/DenominoViso.py:2651 DenominoViso/DenominoViso.py:2679
 msgid "Whether to include references for images"
@@ -4244,7 +4243,7 @@ msgstr "Färg för aktiv person:"
 
 #: DenominoViso/DenominoViso.py:2664 DenominoViso/DenominoViso.py:2692
 msgid "RGB-color of geometric shape of the activated person."
-msgstr "c"
+msgstr "RGB-färg för den aktiverade personens geometriska form."
 
 #: DenominoViso/DenominoViso.py:2667 DenominoViso/DenominoViso.py:2695
 msgid "Color of found persons:"
@@ -5866,6 +5865,7 @@ msgid ""
 "controls in the toolbar above."
 msgstr ""
 "\n"
+"\n"
 "Notiser valda på den vänstra sidan visas Efter rensning i denna ruta.\n"
 "Om du vill göra ändringar, kan du göra dem här och använda mallkontrollerna "
 "i verktygsfältet ovan."
@@ -5944,12 +5944,12 @@ msgstr "Ordna stavning av förnamn"
 msgid ""
 "Searches the entire database and attempts to fix capitalization of the given "
 "names."
-msgstr "Söker igenom hela databasen och försöker ordna stavning av förnamnen"
+msgstr "Söker igenom hela databasen och försöker ordna stavning av förnamnen."
 
 #: ChangeGivenNames/ChangeGivenNames.py:60
 #: ChangeGivenNames/ChangeGivenNames.py:66
 msgid "manual|Fix_Capitalization_of_Given_Names..."
-msgstr ""
+msgstr "manuell|Åtgärda_Versaler_i_förnamn..."
 
 #: ChangeGivenNames/ChangeGivenNames.py:98
 #: ChangeGivenNames/ChangeGivenNames.py:105
@@ -6075,7 +6075,7 @@ msgid ""
 "Displays the Gramps Wiki Help page for 'Edit Image Exif Metadata' in your "
 "web browser."
 msgstr ""
-"Visar Gramps Wiki hjälpsida för 'Redigera Exif-metadata' på din nätbläddrare"
+"Visar Gramps Wiki hjälpsida för 'Redigera Exif-metadata' i din webbläsare."
 
 #: EditExifMetadata/editexifmetadata.py:205
 #: EditExifMetadata/editexifmetadata.py:194
@@ -6099,8 +6099,8 @@ msgid ""
 "Select from a drop- down box the image file type that you would like to "
 "convert your non- Exiv2 compatible media object to."
 msgstr ""
-"Välj från en rullgardinsmeny den filtyp du vill omvandla  din ej- Exiv2 "
-"kompatible mediaobjekt till."
+"Välj från en rullgardinsmeny den filtyp du vill omvandla ditt ej- Exiv2 "
+"kompatibla mediaobjekt till."
 
 #: EditExifMetadata/editexifmetadata.py:214
 #: EditExifMetadata/editexifmetadata.py:205
@@ -6200,7 +6200,7 @@ msgid ""
 "There was an error in deleting the original file.  You will need to delete "
 "it yourself!"
 msgstr ""
-"Det blev fel vid bortagning av orginalfilen. Du måste ta bort den själv."
+"Det blev fel vid borttagning av originalfilen.   Du måste ta bort den själv!"
 
 #: EditExifMetadata/editexifmetadata.py:865
 #: EditExifMetadata/editexifmetadata.py:834
@@ -7211,8 +7211,8 @@ msgstr "Saknade regex grupper i matchning av lat/lon"
 msgid ""
 "Regex groups %(lat)s and %(lon)s must be present in lat/lon match. Quiting"
 msgstr ""
-"Regex grupper %(lat)s och %(lon)s måstr vara närvarande i lat/lon-matchning. "
-"Avslutar."
+"Regex grupper %(lat)s och %(lon)s måste vara närvarande i lat/lon-matchning. "
+"Avslutar"
 
 #: PlaceCompletion/PlaceCompletion.py:453
 #: PlaceCompletion/PlaceCompletion.py:419
@@ -7263,13 +7263,13 @@ msgstr "Ingen platspost ändrades."
 #: PlaceCompletion/PlaceCompletion.py:761
 #: PlaceCompletion/PlaceCompletion.py:733
 msgid "1 place record was modified."
-msgstr "1 platspost ändrades"
+msgstr "1 platspost ändrades."
 
 #: PlaceCompletion/PlaceCompletion.py:763
 #: PlaceCompletion/PlaceCompletion.py:735
 #, python-format
 msgid "%d place records were modified."
-msgstr "%d platsposter ändrades"
+msgstr "%d platsposter ändrades."
 
 #: PlaceCompletion/PlaceCompletion.py:837
 #: PlaceCompletion/PlaceCompletion.py:809
@@ -7284,7 +7284,7 @@ msgstr "Ded fil du vill ha tillgång till är ej en vanlig fil."
 #: PlaceCompletion/PlaceCompletion.py:856
 #: PlaceCompletion/PlaceCompletion.py:826
 msgid "The file does not exist."
-msgstr "Filen finns inte"
+msgstr "Filen finns inte."
 
 #: PlaceCompletion/PlaceCompletion.py:875
 #: PlaceCompletion/PlaceCompletion.py:858
@@ -7432,7 +7432,7 @@ msgstr "Höjd:"
 #: PlaceCompletion/placecompletion.glade.h:19
 #: PlaceCompletion/placecompletion.glade:195
 msgid "Parish:"
-msgstr " församling"
+msgstr "Församling:"
 
 #: PlaceCompletion/placecompletion.glade.h:20
 #: PlaceCompletion/placecompletion.glade:579
@@ -9273,7 +9273,7 @@ msgstr "Urklippsgramplet: %s"
 
 #: ExportProlog/ExportProlog.gpr.py:3 ExportProlog/ExportProlog.gpr.py:4
 msgid "Prolog Export"
-msgstr "Prolog Export"
+msgstr "Exportera Prolog"
 
 #: ExportProlog/ExportProlog.gpr.py:4 ExportProlog/ExportProlog.gpr.py:6
 msgid "Exports data into a Prolog fact format.  Data is in Unicode (utf-8)"
@@ -9368,32 +9368,32 @@ msgstr "Notiser:"
 #: FamilySheet/FamilySheet.py:769
 #, python-format
 msgid "on %(ymd_date)s"
-msgstr " %(ymd_date)s"
+msgstr "%(ymd_date)s"
 
 #: FamilySheet/FamilySheet.py:771
 #, python-format
 msgid "in %(ym_date)s"
-msgstr " %(ym_date)s"
+msgstr "%(ym_date)s"
 
 #: FamilySheet/FamilySheet.py:773
 #, python-format
 msgid "in %(y_date)s"
-msgstr " %(y_date)s"
+msgstr "%(y_date)s"
 
 #: FamilySheet/FamilySheet.py:777
 #, python-format
 msgid "on %(placeholder)s"
-msgstr " %(placeholder)s"
+msgstr "%(placeholder)s"
 
 #: FamilySheet/FamilySheet.py:779
 #, python-format
 msgid "on %(placeholder)s (%(partial)s)"
-msgstr " %(placeholder)s (%(partial)s)"
+msgstr "%(placeholder)s (%(partial)s)"
 
 #: FamilySheet/FamilySheet.py:824 FamilySheet/FamilySheet.py:826
 #, python-format
 msgid "in %(place)s"
-msgstr " %(place)s"
+msgstr "%(place)s"
 
 #: FamilySheet/FamilySheet.py:864
 msgid "Center person"
@@ -9421,7 +9421,7 @@ msgstr "Huvudperson och alla ättlingar"
 
 #: FamilySheet/FamilySheet.py:874
 msgid "Whether to include descendants, and which ones."
-msgstr "Huruvida inkludera ättlingar, och vilka. "
+msgstr "Huruvida inkludera ättlingar, och vilka."
 
 #: FamilySheet/FamilySheet.py:880
 msgid "Replace first name with call name"
@@ -9577,7 +9577,7 @@ msgstr "  <b>%s</b> (huvudperson) och\n"
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:219
 #, python-format
 msgid "  <b>%s</b> (Active Person)...\n"
-msgstr "Aktiv person: <b>%s</b>\n"
+msgstr "  <b>%s</b> (Aktiv person)...\n"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:191
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:229
@@ -11046,7 +11046,7 @@ msgstr "Ta med källas publiceringsinformation"
 #: RepositoriesReport/RepositoriesReportAlt.py:340
 #: RepositoriesReport/RepositoriesReportAlt.py:448
 msgid "Whether to include publication information."
-msgstr "Huruvida ta med källas publiceringsinformation"
+msgstr "Om publikationsinformation ska inkluderas."
 
 #: RepositoriesReport/RepositoriesReportAlt.py:343
 #: RepositoriesReport/RepositoriesReportAlt.py:451
@@ -11180,7 +11180,7 @@ msgstr "d."
 #: TimelinePedigreeView/TimelinePedigreeView.py:80
 #: TimelinePedigreeView/TimelinePedigreeView.py:84
 msgid "short for baptized|bap."
-msgstr "döpt"
+msgstr "döpt."
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:82
 #: TimelinePedigreeView/TimelinePedigreeView.py:86
@@ -11202,7 +11202,7 @@ msgstr "Tidslinjeantavla"
 #: ../gramps/plugins/view/pedigreeview.py:724
 #: ../gramps/plugins/view/relview.py:411
 msgid "Person Filter Editor"
-msgstr "Personfilterredigerare"
+msgstr "Redigera personfilter"
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:1548
 #: TimelinePedigreeView/TimelinePedigreeView.py:1437
@@ -11222,7 +11222,7 @@ msgstr "Visa levnadsomfång"
 msgid "%d generation"
 msgid_plural "%d generations"
 msgstr[0] "%d generation"
-msgstr[1] "%d generations"
+msgstr[1] "%d generationer"
 
 #: GraphView/graphview.gpr.py:3 GraphView/graphview.py:90
 #: GraphView/graphview.gpr.py:4 GraphView/graphview.gpr.py:14
@@ -11297,7 +11297,7 @@ msgstr "Antavla"
 
 #: PedigreeChart/PedigreeChart.gpr.py:25 PedigreeChart/PedigreeChart.gpr.py:26
 msgid "Alternate version of the traditional pedigree chart."
-msgstr "Antavlealternativ"
+msgstr "Alternativ version av den traditionella stamtavlan."
 
 #: PedigreeChart/PedigreeChart.py:385 PedigreeChart/PedigreeChart.py:379
 #, python-format
@@ -11319,7 +11319,7 @@ msgstr "Visa titel på mor eller far vid sidan om varje ättlings ruta."
 
 #: PedigreeChart/PedigreeChart.py:673 PedigreeChart/PedigreeChart.py:662
 msgid "The basic style used for the title display."
-msgstr "Mall för titelvisning"
+msgstr "Den grundläggande stilen som används för titelvisningen."
 
 #: PedigreeChart/PedigreeChart.py:682 PedigreeChart/PedigreeChart.py:671
 msgid "Style used for labels and captions"
@@ -11342,7 +11342,7 @@ msgstr ""
 #: HtreePedigreeView/HtreePedigreeView.py:96
 #: TimelinePedigreeView/TimelinePedigreeView.py:85
 msgid "short for christened|chr."
-msgstr "döpt"
+msgstr "döpt."
 
 #: HtreePedigreeView/HtreePedigreeView.py:543
 msgid "H-tree Pedigree View"
@@ -11437,7 +11437,7 @@ msgstr "Välj från"
 
 #: LastChange/LastChangeReport.py:403
 msgid "The style used for normal text"
-msgstr "Mall för normal text."
+msgstr "Stilen som används för normal text"
 
 #: NetworkChart/NetworkChart.gpr.py:31 NetworkChart/NetworkChart.gpr.py:24
 msgid "Network Chart"
