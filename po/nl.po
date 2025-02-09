@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
 "POT-Creation-Date: 2019-01-04 18:55-0600\n"
-"PO-Revision-Date: 2025-02-09 08:03+0000\n"
+"PO-Revision-Date: 2025-02-09 11:16+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -22172,7 +22172,7 @@ msgstr "Alternatieve versie van de traditionele kwartierstaat."
 #: PedigreeChart/PedigreeChart.py:379
 #, python-format
 msgid "Pedigree Chart for %s"
-msgstr "Kwartierstaatdiagram  voor %s"
+msgstr "Kwartierstaatdiagram voor %s"
 
 #: PedigreeChart/PedigreeChart.py:528
 #, python-format
@@ -22335,7 +22335,7 @@ msgstr "De stijl die wordt gebruikt voor normale tekst"
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.gpr.py:7
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.gpr.py:16
 msgid "This Day in Family History"
-msgstr "Vandaag in de  familiegeschiedenis"
+msgstr "Vandaag in de familiegeschiedenis"
 
 #: ThisDayInFamilyHistory//ThisDayInFamilyHistory.gpr.py:8
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.gpr.py:9
@@ -22918,13 +22918,13 @@ msgstr "%(female_name)s werd genaturaliseerd in %(year)s te %(place)s."
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:678
 #, python-format
 msgid "%(male_name)s had a title bestowed in %(year)s at %(place)s."
-msgstr "%(male_name)s is een titel toegekend  in %(year)s te %(place)s."
+msgstr "%(male_name)s is een titel toegekend in %(year)s te %(place)s."
 
 #: ThisDayInFamilyHistory//ThisDayInFamilyHistory.py:670
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:680
 #, python-format
 msgid "%(female_name)s had a title bestowed in %(year)s at %(place)s."
-msgstr "%(female_name)s is een titel toegekend  in %(year)s te %(place)s."
+msgstr "%(female_name)s is een titel toegekend in %(year)s te %(place)s."
 
 #: ThisDayInFamilyHistory//ThisDayInFamilyHistory.py:673
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:683
@@ -23401,7 +23401,9 @@ msgstr ""
 msgid ""
 "Starting and ending person for displayed path(s).\n"
 "Select two people"
-msgstr "Selecteer twee mensen"
+msgstr ""
+"Start- en eindpersoon voor weergegeven pad(en).\n"
+"Selecteer twee mensen"
 
 #: NetworkChart/NetworkChart.py:1171
 msgid "Highlight path(s)"
@@ -23417,9 +23419,9 @@ msgid ""
 "Direct - Highlight direct descendant/ancestor paths.\n"
 "Any - Highlight any path(s) including direct or indirect."
 msgstr ""
-"Geen   - Markeer paden niet.\n"
-"Direct - Markeer directe afstammelingen van voorouders / voorouders.\n"
-"Alle   - markeer elk pad, zowel direct of indirect."
+"Geen - Paden niet markeren.\n"
+"Direct - Directe voorouders/afstammelingen markeren.\n"
+"Alle - Elk pad markeren, direct of indirect."
 
 #: NetworkChart/NetworkChart.py:1185 NetworkChart/NetworkChart.py:1186
 msgid "Show only path(s)"
@@ -23440,9 +23442,9 @@ msgid ""
 "Direct - Show only direct descendant/ancestor paths.\n"
 "Any - Show only path(s) direct or indirect."
 msgstr ""
-"Geen   - Toon niet alleen paden.\n"
-"Direct - Toon alleen directe paden van afstammelingen / voorouders.\n"
-"Alle   - Toon alleen pad(en), direct of indirect."
+"Geen - Niet alleen paden weergeven.\n"
+"Direct - Alleen directe paden van voorouders/afstammelingen weergeven.\n"
+"Alle - Alleen pad(en), direct of indirect, weergeven."
 
 #: NetworkChart/NetworkChart.py:1199 NetworkChart/NetworkChart.py:1200
 msgid "Select person at center of selection radius in graph."
