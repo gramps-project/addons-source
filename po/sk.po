@@ -12,13 +12,16 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-08 16:37+0100\n"
-"PO-Revision-Date: 2009-11-30 10:32+0100\n"
-"Last-Translator: Lubo Vasko <pgval at inmail dot sk>\n"
-"Language-Team:  <sk-i18n@linux.sk>\n"
+"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
+"addons/sk/>\n"
+"Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"X-Generator: Weblate 5.10-dev\n"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:9
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:182
@@ -49,61 +52,56 @@ msgstr "Zdroj ktorý sa má odobrať alebo pridať"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:91
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:99
-#, fuzzy
 msgid "Remove previously added events, notes, and source"
-msgstr "Odstrániť predtým pridané dátumy"
+msgstr "Odstrániť predtým pridané udalosti, poznámky a zdroj"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:92
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:100
 msgid ""
 "Remove calculated events, notes, and source; occurs immediately on Execute"
 msgstr ""
+"Odstráni vypočítané udalosti, poznámky a zdroj; nastane okamžite pri akcii "
+"Vykonať"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:96
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:104
-#, fuzzy
 msgid "Do not add birth events"
-msgstr "pridané narodenie %s"
+msgstr "Nepridávať udalosti narodenia"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:97
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:105
-#, fuzzy
 msgid "Add birth events without dates"
-msgstr "udalosť narodenia bez dátumu"
+msgstr "Pridať udalosti narodenia bez dátumov"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:98
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:106
-#, fuzzy
 msgid "Add birth events with dates"
-msgstr "udalosť narodenia bez dátumu"
+msgstr "Pridať udalosti narodenia s dátumami"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:99
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:107
 msgid "Add a birth events with or without estimated dates"
-msgstr ""
+msgstr "Pridať udalosti narodenia s odhadovanými dátumami alebo bez nich"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:103
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:111
-#, fuzzy
 msgid "Do not add death events"
-msgstr "pridané úmrtie %s"
+msgstr "Nepridávať udalosti úmrtia"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:104
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:112
-#, fuzzy
 msgid "Add death events without dates"
-msgstr "Odhadnúť dátumy narodenia"
+msgstr "Pridať udalosti úmrtia bez dátumu"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:105
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:113
-#, fuzzy
 msgid "Add death events with dates"
-msgstr "Odhadnúť dátumy narodenia"
+msgstr "Pridať udalosti úmrtia s dátumami"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:106
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:114
 msgid "Add death events with or without estimated dates"
-msgstr ""
+msgstr "Pridať udalosti úmrtia s odhadovanými dátumami alebo bez nich"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:110
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:118
@@ -123,28 +121,27 @@ msgstr "Maximálny vekový rozdiel medzi súrodencami"
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:125
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:133
 msgid "Average years between two generations"
-msgstr " Priemerný počet rokov medzi dvomi generáciami"
+msgstr "Priemerný počet rokov medzi dvomi generáciami"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:128
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:136
-#, fuzzy
 msgid "Estimated Dates"
-msgstr "odhadovaný dátum"
+msgstr "Odhadované dátumy"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:129
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:137
 msgid "Approximate (about)"
-msgstr ""
+msgstr "Približne (okolo)"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:130
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:138
 msgid "Extremes (after and before)"
-msgstr ""
+msgstr "Extrémy (po a pred)"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:131
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:139
 msgid "Dates on events are either about or after/before"
-msgstr ""
+msgstr "Dátumy udalostí sú buď okolo, alebo po/pred"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:164
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:172
@@ -167,35 +164,51 @@ msgid ""
 "You may have to run the tool repeatedly (without removing previous events) "
 "to add all of the events possible."
 msgstr ""
+"Nástroj Výpočet odhadovaných dátumov sa používa na pridávanie a "
+"odstraňovanie udalostí narodenia a úmrtia pre osoby, ktorým tieto udalosti "
+"chýbajú.\n"
+"\n"
+"Použitie:\n"
+"1. Prejdite na kartu Možnosti\n"
+"2. Začiarknite možnosť [ ] Odstrániť, ak chcete odstrániť predchádzajúce "
+"odhady\n"
+"3. Vyberte možnosti Pridať dátum, ak chcete datovať udalosti s dátumom alebo "
+"bez dátumu\n"
+"4. Kliknite na položku Vykonať\n"
+"5. Vyberte osoby, ku ktorým chcete pridať udalosti\n"
+"6. Kliknutím na tlačidlo Pridať vybrané udalosti vytvorte\n"
+"\n"
+"POZNÁMKY: Ak sa rozhodnete, že udalosť bude trvalá, odstráňte ju zo zdroja. "
+"V opačnom prípade sa odstráni pri ďalšom automatickom odstránení týchto "
+"udalostí.\n"
+"\n"
+"Možno budete musieť nástroj spustiť opakovane (bez odstránenia "
+"predchádzajúcich udalostí), aby ste pridali všetky možné udalosti."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:191
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:199
-#, fuzzy
 msgid "Select All"
-msgstr "Zvoliť súbor"
+msgstr "Vybrať všetko"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:192
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:200
-#, fuzzy
 msgid "Select None"
-msgstr "Zvoliť poznámku"
+msgstr "Vybrať žiadne"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:193
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:201
-#, fuzzy
 msgid "Toggle Selection"
-msgstr "Voľba nástroja"
+msgstr "Prepnúť výber"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:194
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:202
-#, fuzzy
 msgid "Add Selected Events"
-msgstr "Označiť udalosť"
+msgstr "Pridať vybrané udalosti"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:200
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:208
 msgid "Remove Events, Notes, and Source and Reselect Data"
-msgstr ""
+msgstr "Odstrániť udalosti, poznámky, zdroj a znovu vybrať údaje"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:201
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:209
@@ -203,52 +216,48 @@ msgid ""
 "Are you sure you want to remove previous events, notes, and source and "
 "reselect data?"
 msgstr ""
+"Naozaj chcete odstrániť predchádzajúce udalosti, poznámky, zdroj a znovu "
+"vybrať údaje?"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:202
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:210
-#, fuzzy
 msgid "Remove and Run Select Again"
-msgstr "Zmazať označenú osobu"
+msgstr "Odstrániť a znovu spustiť výber"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:206
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:214
-#, fuzzy
 msgid "Reselect Data"
-msgstr "Označiť otca"
+msgstr "Znovu vybrať údaje"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:207
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:215
-#, fuzzy
 msgid "Are you sure you want to reselect data?"
-msgstr "Ste si istý že chcete vymazať históriu príkazov?"
+msgstr "Ste si istí, že chcete znovu vybrať údaje?"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:208
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:216
-#, fuzzy
 msgid "Run Select Again"
-msgstr "Výber zostavy"
+msgstr "Znovu spustiť výber"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:228
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:236
-#, fuzzy
 msgid "Evidence"
-msgstr "Bydlisko"
+msgstr "Dôkaz"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:228
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:236
-#, fuzzy
 msgid "Relative"
-msgstr "Príbuzní"
+msgstr "Relatívny"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:229
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:237
 msgid "Processing...\n"
-msgstr "Pripravuje sa...\n"
+msgstr "Spracovávanie...\n"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:247
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:255
 msgid "Removing old estimations... "
-msgstr ""
+msgstr "Odstraňovanie starých odhadov... "
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:248
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:256
@@ -258,65 +267,60 @@ msgstr "Odstraňujem '%s'..."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:302
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:319
-#, fuzzy
 msgid "done!\n"
-msgstr "Ukončené!\n"
+msgstr "Hotovo!\n"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:307
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:323
-#, fuzzy
 msgid ""
 "Selecting... \n"
 "\n"
-msgstr "Vybrať..."
+msgstr ""
+"Výber... \n"
+"\n"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:343
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:359
-#, fuzzy
 msgid "Add birth and death events"
-msgstr "Pridať novú udalosť"
+msgstr "Pridať udalosti narodenia a úmrtia"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:345
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:361
-#, fuzzy
 msgid "Add birth event"
-msgstr "chýbajúcim udalosť narodenia"
+msgstr "Pridať udalosť narodenia"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:347
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:363
-#, fuzzy
 msgid "Add death event"
-msgstr "Pridať novú udalosť"
+msgstr "Pridať udalosť úmrtia"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:382
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:398
-#, fuzzy
 msgid "No events to be added."
-msgstr "Nebol pridaný nijaký popis udalosti."
+msgstr "Žiadne udalosti na pridanie."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:424
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:439
-#, fuzzy
 msgid "Selecting... "
-msgstr "Vybrať..."
+msgstr "Výber... "
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:425
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:440
-#, fuzzy, python-format
+#, python-format
 msgid "Adding events '%s'..."
-msgstr "Pridať existujúcich rodičov..."
+msgstr "Pridávanie udalostí '%s'..."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:447
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:465
-#, fuzzy, python-format
+#, python-format
 msgid "Added birth event based on %(evidence)s, from %(name)s"
-msgstr "pridané narodenie %s"
+msgstr "Pridaná udalosť narodenia na základe %(evidence)s, z %(name)s"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:450
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:468
-#, fuzzy, python-format
+#, python-format
 msgid "Added birth event based on %s"
-msgstr "pridané narodenie %s"
+msgstr "Pridaná udalosť narodenia na základe %s"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:452
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:470
@@ -325,15 +329,15 @@ msgstr "Odhadnuté dátumy narodenia"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:463
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:480
-#, fuzzy, python-format
+#, python-format
 msgid "Added death event based on %(evidence)s, from %(person)s"
-msgstr "pridané úmrtie %s"
+msgstr "Pridaná udalosť úmrtia na základe %(evidence)s, z %(person)s"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:466
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:483
-#, fuzzy, python-format
+#, python-format
 msgid "Added death event based on %s"
-msgstr "pridané úmrtie %s"
+msgstr "Pridaná udalosť úmrtia na základe %s"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:468
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:485
@@ -347,9 +351,9 @@ msgstr ""
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:483
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:499
-#, fuzzy, python-format
+#, python-format
 msgid "Added %d events."
-msgstr "Pridať novú udalosť"
+msgstr "Počet pridaných udalostí: %d."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:511
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:527
@@ -748,7 +752,7 @@ msgstr "Zoradiť podľa:"
 
 #: DynamicWeb//dynamicweb.py:2581 DynamicWeb/dynamicweb.py:3114
 msgid "Sources Index"
-msgstr "Index zdrojov:"
+msgstr "Register zdrojov"
 
 #: DynamicWeb//dynamicweb.py:2584 DynamicWeb//dynamicweb.py:4120
 #: DynamicWeb/dynamicweb.py:3117 DynamicWeb/dynamicweb.py:4992
@@ -1108,7 +1112,7 @@ msgstr "Či povoliť prispôsobenie stránky"
 
 #: DynamicWeb//dynamicweb.py:4109 DynamicWeb/dynamicweb.py:4974
 msgid "Whether to use tabbed panels for the different sections of the pages."
-msgstr "Či použiť panely s tabmi pre rôzne sekcie stránok"
+msgstr "Či sa majú používať panely s kartami pre rôzne časti stránok."
 
 #: DynamicWeb//dynamicweb.py:4113 DynamicWeb/dynamicweb.py:4980
 msgid "Whether to show the last modification time in the pages footer"
@@ -1298,7 +1302,7 @@ msgstr "Počet stránok"
 
 #: DynamicWeb//dynamicweb.py:4270 DynamicWeb/dynamicweb.py:5242
 msgid "Number pages in the web site menu."
-msgstr "Očíslovať stránky v menu"
+msgstr "Číslovať stránky v menu webovej stránky."
 
 #: DynamicWeb//dynamicweb.py:4286 DynamicWeb/dynamicweb.py:5262
 #, python-format
@@ -1318,12 +1322,12 @@ msgid "SQLite is a common local database format"
 msgstr ""
 
 #: ImportSql/ImportSql.py:824 Sqlite/ImportSql.py:893
-#, fuzzy, python-format
+#, python-format
 msgid "Import Complete: %d second"
 msgid_plural "Import Complete: %d seconds"
-msgstr[0] "Import dokončený : %d sekundy"
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "Import dokončený: %d sekunda"
+msgstr[1] "Import dokončený: %d sekundy"
+msgstr[2] "Import dokončený: %d sekúnd"
 
 #: DataEntryGramplet/DataEntryGramplet.gpr.py:8
 #: DataEntryGramplet/DataEntryGramplet.gpr.py:9
@@ -1622,26 +1626,23 @@ msgstr ""
 #: DenominoViso/DenominoViso.py:2721 DenominoViso/DenominoViso.py:306
 #: DenominoViso/DenominoViso.py:974 DenominoViso/DenominoViso.py:1034
 #: DenominoViso/DenominoViso.py:1259 DenominoViso/DenominoViso.py:2750
-#, fuzzy
 msgid "role"
-msgstr "Úloha"
+msgstr "úloha"
 
 #: DenominoViso/DenominoViso.py:291 DenominoViso/DenominoViso.py:962
 #: DenominoViso/DenominoViso.py:1041 DenominoViso/DenominoViso.py:1245
 #: DenominoViso/DenominoViso.py:2723 DenominoViso/DenominoViso.py:309
 #: DenominoViso/DenominoViso.py:975 DenominoViso/DenominoViso.py:1056
 #: DenominoViso/DenominoViso.py:1260 DenominoViso/DenominoViso.py:2752
-#, fuzzy
 msgid "description"
-msgstr "Popis"
+msgstr "popis"
 
 #: DenominoViso/DenominoViso.py:292 DenominoViso/DenominoViso.py:963
 #: DenominoViso/DenominoViso.py:1048 DenominoViso/DenominoViso.py:1246
 #: DenominoViso/DenominoViso.py:310 DenominoViso/DenominoViso.py:976
 #: DenominoViso/DenominoViso.py:1063 DenominoViso/DenominoViso.py:1261
-#, fuzzy
 msgid "witnesses"
-msgstr "Svedkovia"
+msgstr "svedkovia"
 
 #: DenominoViso/DenominoViso.py:363 DenominoViso/DenominoViso.py:2489
 #: ../gramps/plugins/export/exportpkg.py:213
@@ -1662,9 +1663,8 @@ msgstr ""
 
 #: DenominoViso/DenominoViso.py:1548 DenominoViso/DenominoViso.py:1508
 #: DenominoViso/DenominoViso.py:1562
-#, fuzzy
 msgid "author"
-msgstr "Autor"
+msgstr "autor"
 
 #: DenominoViso/DenominoViso.py:1549 DenominoViso/DenominoViso.py:1513
 #: DenominoViso/DenominoViso.py:1563
@@ -1673,9 +1673,8 @@ msgstr ""
 
 #: DenominoViso/DenominoViso.py:1550 DenominoViso/DenominoViso.py:1518
 #: DenominoViso/DenominoViso.py:1564
-#, fuzzy
 msgid "abbreviation"
-msgstr "Skratka"
+msgstr "skratka"
 
 #: DenominoViso/DenominoViso.py:1739 DenominoViso/DenominoViso.py:1754
 msgid "of"
@@ -1847,9 +1846,8 @@ msgid "Include Photos/Images from Gallery"
 msgstr ""
 
 #: DenominoViso/DenominoViso.py:2636 DenominoViso/DenominoViso.py:2663
-#, fuzzy
 msgid "Whether to include images"
-msgstr "Otázka-začleniť obrázky."
+msgstr "Či zahrnúť obrázky"
 
 #: DenominoViso/DenominoViso.py:2639 DenominoViso/DenominoViso.py:2666
 msgid "Copy Image"
@@ -2151,7 +2149,7 @@ msgstr "Upraviť Exif metadáta obrázku"
 #: EditExifMetadata/editexifmetadata.gpr.py:30
 #: EditExifMetadata/editexifmetadata.gpr.py:31
 msgid "Gramplet to view, edit, and save image Exif metadata"
-msgstr "Gramplet pre prezeranie, úpravu a uloženie exif metadát obrázka."
+msgstr "Gramplet na zobrazenie, úpravu a uloženie metadát Exif obrázka"
 
 #: EditExifMetadata/editexifmetadata.gpr.py:34
 #: EditExifMetadata/editexifmetadata.gpr.py:35
@@ -2172,9 +2170,8 @@ msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:174
 #: EditExifMetadata/editexifmetadata.py:161
-#, fuzzy
 msgid "Provide a short description for this image."
-msgstr "Zadajte stručný popis súboru."
+msgstr "Poskytnite krátky popis tohto obrázka."
 
 #: EditExifMetadata/editexifmetadata.py:176
 #: EditExifMetadata/editexifmetadata.py:163
@@ -2187,11 +2184,8 @@ msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:179
 #: EditExifMetadata/editexifmetadata.py:167
-#, fuzzy
 msgid "Enter the copyright information for this image. \n"
-msgstr ""
-"Zapíšte informáciu o autorských právach k obrázku.·\n"
-"Príklad :·(C)·2010·Smith·and·Wesson"
+msgstr "Zadajte informácie o autorských právach k tomuto obrázku. \n"
 
 #: EditExifMetadata/editexifmetadata.py:181
 #: EditExifMetadata/editexifmetadata.py:169
@@ -2255,9 +2249,8 @@ msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:315
 #: EditExifMetadata/editexifmetadata.py:214
-#, fuzzy
 msgid "Thumbnail"
-msgstr "Umiestnenie náhľadu"
+msgstr "Miniatúra"
 
 #: EditExifMetadata/editexifmetadata.py:397
 #: EditExifMetadata/editexifmetadata.py:402
@@ -2266,13 +2259,12 @@ msgstr "Zvoliť obrázok kde začať ..."
 
 #: EditExifMetadata/editexifmetadata.py:419
 #: EditExifMetadata/editexifmetadata.py:421
-#, fuzzy
 msgid ""
 "Image is NOT readable,\n"
 "Please choose a different image..."
 msgstr ""
-"Obrázok sa nepodarilo otvoriť,\n"
-"Zvoľte iný..."
+"Obrázok NIE JE čitateľný,\n"
+"Prosím, vyberte iný obrázok..."
 
 #: EditExifMetadata/editexifmetadata.py:435
 #: EditExifMetadata/editexifmetadata.py:481
@@ -2286,9 +2278,9 @@ msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:447
 #: EditExifMetadata/editexifmetadata.py:441
-#, fuzzy
 msgid "Please convert this image to an Exiv2- compatible image type..."
-msgstr "Ak je obrázok v inom formáte ako exiv-2, má sa konvertovať do jpeg?"
+msgstr ""
+"Zkonvertujte prosím tento obrázok na typ obrázka kompatibilný s Exiv2..."
 
 #: EditExifMetadata/editexifmetadata.py:670
 #: EditExifMetadata/editexifmetadata.py:648
@@ -2302,14 +2294,12 @@ msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:753
 #: EditExifMetadata/editexifmetadata.py:724
-#, fuzzy
 msgid ""
 "WARNING: You are about to convert this image into a .jpeg image.  Are you "
 "sure that you want to do this?"
 msgstr ""
-"Upozornenie: Chystáte sa previesť tento obrázok do formátu .tiff.\n"
-"\n"
-"Naozaj to chcete vykonať?"
+"UPOZORNENIE: Chystáte sa konvertovať tento obrázok na obrázok .jpeg.  Ste si "
+"istí, že to chcete urobiť?"
 
 #: EditExifMetadata/editexifmetadata.py:755
 #: EditExifMetadata/editexifmetadata.py:726
@@ -2318,11 +2308,12 @@ msgstr "Konvertovať a zmazať"
 
 #: EditExifMetadata/editexifmetadata.py:841
 #: EditExifMetadata/editexifmetadata.py:807
-#, fuzzy
 msgid ""
 "Your image has been converted and the original file has been deleted, and "
 "the full path has been updated!"
-msgstr "Obrázok bol konvertovaný a originálny súbor bol zmazaný..."
+msgstr ""
+"Váš obrázok bol skonvertovaný, pôvodný súbor bol odstránený a celá cesta k "
+"obrázku bola aktualizovaná!"
 
 #: EditExifMetadata/editexifmetadata.py:845
 #: EditExifMetadata/editexifmetadata.py:812
@@ -2340,21 +2331,18 @@ msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:865
 #: EditExifMetadata/editexifmetadata.py:834
-#, fuzzy
 msgid "There was an error in converting your image file."
-msgstr "Pri separovaní Exif metadát sa vyskytla chyba..."
+msgstr "Pri konverzii vášho obrázkového súboru došlo k chybe."
 
 #: EditExifMetadata/editexifmetadata.py:876
 #: EditExifMetadata/editexifmetadata.py:844
-#, fuzzy
 msgid "Media Path Update"
-msgstr "dátum úmrtia"
+msgstr "Aktualizácia cesty k médiám"
 
 #: EditExifMetadata/editexifmetadata.py:882
 #: EditExifMetadata/editexifmetadata.py:853
-#, fuzzy
 msgid "There has been an error in updating the image file's path!"
-msgstr "Pri separovaní Exif metadát sa vyskytla chyba..."
+msgstr "Pri aktualizácii cesty k súboru obrázka došlo k chybe!"
 
 #: EditExifMetadata/editexifmetadata.py:916
 #: EditExifMetadata/editexifmetadata.py:886
@@ -2388,39 +2376,33 @@ msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:990
 #: EditExifMetadata/editexifmetadata.py:969
-#, fuzzy
 msgid "Media Object Title"
-msgstr "Filtre pre Mediálne objekty"
+msgstr "Názov objektu média"
 
 #: EditExifMetadata/editexifmetadata.py:1000
 #: EditExifMetadata/editexifmetadata.py:978
-#, fuzzy
 msgid "media Title: "
-msgstr "Názov kalendára"
+msgstr "Názov média: "
 
 #: EditExifMetadata/editexifmetadata.py:1014
 #: EditExifMetadata/editexifmetadata.py:993
-#, fuzzy
 msgid "General Data"
-msgstr "Všeobecne"
+msgstr "Všeobecné údaje"
 
 #: EditExifMetadata/editexifmetadata.py:1024
 #: EditExifMetadata/editexifmetadata.py:1003
-#, fuzzy
 msgid "Description: "
-msgstr "Popis:"
+msgstr "Popis: "
 
 #: EditExifMetadata/editexifmetadata.py:1025
 #: EditExifMetadata/editexifmetadata.py:1004
-#, fuzzy
 msgid "Artist: "
-msgstr "Umelec"
+msgstr "Umelec: "
 
 #: EditExifMetadata/editexifmetadata.py:1026
 #: EditExifMetadata/editexifmetadata.py:1005
-#, fuzzy
 msgid "Copyright: "
-msgstr "Copyright"
+msgstr "Copyright: "
 
 #: EditExifMetadata/editexifmetadata.py:1039
 #: EditExifMetadata/editexifmetadata.py:1019
@@ -2429,15 +2411,13 @@ msgstr "Dátum/ Čas"
 
 #: EditExifMetadata/editexifmetadata.py:1053
 #: EditExifMetadata/editexifmetadata.py:1034
-#, fuzzy
 msgid "Original: "
-msgstr "Pôvodný čas"
+msgstr "Originál: "
 
 #: EditExifMetadata/editexifmetadata.py:1054
 #: EditExifMetadata/editexifmetadata.py:1035
-#, fuzzy
 msgid "Modified: "
-msgstr "Posledná zmena"
+msgstr "Posledná zmena: "
 
 #: EditExifMetadata/editexifmetadata.py:1071
 #: EditExifMetadata/editexifmetadata.py:1054
@@ -2446,33 +2426,28 @@ msgstr ""
 
 #: EditExifMetadata/editexifmetadata.py:1085
 #: EditExifMetadata/editexifmetadata.py:1069
-#, fuzzy
 msgid "Latitude :"
-msgstr "Zemepis. šírka:"
+msgstr "Zemepisná šírka :"
 
 #: EditExifMetadata/editexifmetadata.py:1086
 #: EditExifMetadata/editexifmetadata.py:1070
-#, fuzzy
 msgid "Longitude :"
-msgstr "Zemepis. dĺžka:"
+msgstr "Zemepisná dĺžka :"
 
 #: EditExifMetadata/editexifmetadata.py:1087
 #: EditExifMetadata/editexifmetadata.py:1071
-#, fuzzy
 msgid "Altitude :"
-msgstr "Zemepis. šírka:"
+msgstr "Výška :"
 
 #: EditExifMetadata/editexifmetadata.py:1139
 #: EditExifMetadata/editexifmetadata.py:1114
-#, fuzzy
 msgid "Bad Date/Time"
-msgstr "Dátum/ Čas"
+msgstr "Nesprávny dátum/čas"
 
 #: EditExifMetadata/editexifmetadata.py:1147
 #: EditExifMetadata/editexifmetadata.py:1122
-#, fuzzy
 msgid "Invalid latitude (syntax: 18\\u00b09'"
-msgstr "Zem. šírka neplatná (syntax: 18°9'"
+msgstr "Neplatná zemepisná šírka (syntax: 18\\u00b09'"
 
 #: EditExifMetadata/editexifmetadata.py:1148
 #: EditExifMetadata/editexifmetadata.py:1123
@@ -2481,9 +2456,8 @@ msgstr "48.21\"S, -18.2412 alebo -18:9:48.21)"
 
 #: EditExifMetadata/editexifmetadata.py:1152
 #: EditExifMetadata/editexifmetadata.py:1127
-#, fuzzy
 msgid "Invalid longitude (syntax: 18\\u00b09'"
-msgstr "Zem. dĺžka neplatná(syntax: 18°9'"
+msgstr "Neplatná zemepisná dĺžka (syntax: 18\\u00b09'"
 
 #: EditExifMetadata/editexifmetadata.py:1153
 #: EditExifMetadata/editexifmetadata.py:1128
@@ -2495,24 +2469,22 @@ msgstr "48.21\"E, -18.2412 alebo -18:9:48.21)"
 msgid ""
 "WARNING!  You are about to completely delete the Exif metadata from this "
 "image?"
-msgstr "Upozornenie: chystáte sa úplne vymazať Exif metadáta z obrázku."
+msgstr ""
+"UPOZORNENIE!  Chystáte sa úplne odstrániť metadáta Exif z tohto obrázka?"
 
 #: EditExifMetadata/editexifmetadata.py:1324
 #: EditExifMetadata/editexifmetadata.py:1333
-#, fuzzy
 msgid "Media Title Update"
-msgstr "Nastavenie filtra médií"
+msgstr "Aktualizácia názvu média"
 
 #: EditExifMetadata/editexifmetadata.py:1350
 #: EditExifMetadata/editexifmetadata.py:1357
-#, fuzzy
 msgid "Media Object Date Created"
-msgstr "Mediálne objekty označené ako dôverné"
+msgstr "Dátum objektu média vytvorený"
 
 #: EditExifMetadata/editexifmetadata.py:1422
-#, fuzzy
 msgid "Saving Exif metadata to this image..."
-msgstr "Exif dáta sa ukladajú do obrázka..."
+msgstr "Ukladanie metadát Exif do tohto obrázka..."
 
 #: EditExifMetadata/editexifmetadata.py:1469
 #: EditExifMetadata/editexifmetadata.py:1465
@@ -2538,7 +2510,7 @@ msgstr ""
 
 #: ToDoReport//TodoReport.py:91 ../gramps/plugins/textreport/tagreport.py:115
 msgid "You must first create a tag before running this report."
-msgstr "Pred spustením tohto prehľadu musíte najprv vytvoriť značku."
+msgstr "Pred spustením tejto zostavy musíte najprv vytvoriť značku."
 
 #: ToDoReport//TodoReport.py:98 ToDoReport//TodoReport.py:526
 #: ToDoReport/TodoReport.py:107 ToDoReport/TodoReport.py:904
@@ -2690,8 +2662,8 @@ msgid ""
 "Provides a browsable list of selected places, with possibility to complete/"
 "parse/set the attribute fields."
 msgstr ""
-"Poskytuje zoznam vybraných miest ktorý je možné prezerať s možnosťou "
-"doplňovať/triediť/nastaviť atribúty polí"
+"Poskytuje prehľadávateľný zoznam vybraných miest s možnosťou "
+"doplňovať/triediť/nastaviť atribúty polí."
 
 #: PlaceCompletion/PlaceCompletion.py:86 PlaceCompletion/PlaceCompletion.py:95
 msgid ""
@@ -2831,7 +2803,7 @@ msgstr "Všetky zápisy decimálne"
 #: PlaceCompletion/PlaceCompletion.py:1077
 #: PlaceCompletion/PlaceCompletion.py:1138
 msgid "Correct -50° in 50°S"
-msgstr "Opraviť  -50° na 50°S"
+msgstr "Opraviť -50° v 50°S"
 
 #: PlaceCompletion/PlaceCompletion.py:1081
 #: PlaceCompletion/PlaceCompletion.py:1142
@@ -2946,7 +2918,7 @@ msgstr "Výška:"
 #: PlaceCompletion/placecompletion.glade.h:19
 #: PlaceCompletion/placecompletion.glade:195
 msgid "Parish:"
-msgstr "farnosť"
+msgstr "Farnosť:"
 
 #: PlaceCompletion/placecompletion.glade.h:20
 #: PlaceCompletion/placecompletion.glade:579
@@ -2976,7 +2948,7 @@ msgstr "Zvoliť súbor"
 #: PlaceCompletion/placecompletion.glade.h:28
 #: ../gramps/gen/filters/rules/place/_hasplace.py:67
 msgid "ZIP/Postal Code:"
-msgstr "PSČ"
+msgstr "PSČ/poštové smerovacie číslo:"
 
 #: PlaceCompletion/placecompletion.glade.h:29
 #: PlaceCompletion/placecompletion.glade:85
@@ -3247,7 +3219,7 @@ msgstr "  <b>%s</b> (Východzia osoba) a\n"
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:219
 #, python-format
 msgid "  <b>%s</b> (Active Person)...\n"
-msgstr "Aktívna osoba: <b>%s</b>\n"
+msgstr "  <b>%s</b> (aktívna osoba)...\n"
 
 #: DeepConnectionsGramplet.py:228
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:229
