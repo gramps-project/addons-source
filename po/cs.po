@@ -11,13 +11,16 @@ msgstr ""
 "Project-Id-Version: gramps 3.2.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-08 16:54+0100\n"
-"PO-Revision-Date: 2009-06-19 08:56+0100\n"
-"Last-Translator: Zdeněk Hataš <zdenek.hatas@gmail.com>\n"
-"Language-Team:  <zdenek.hatas@gmail.com>\n"
+"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"Last-Translator: Milan <mobrcian@hotmail.com>\n"
+"Language-Team: Czech <https://hosted.weblate.org/projects/gramps-project/"
+"addons/cs/>\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
+"X-Generator: Weblate 5.10-dev\n"
 "X-Poedit-Language: Czech\n"
 "X-Poedit-Country: CZECH REPUBLIC\n"
 "X-Poedit-Bookmarks: 2035,-1,-1,-1,-1,-1,-1,-1,-1,-1\n"
@@ -1114,7 +1117,7 @@ msgstr "Zda zapnout nastavení stránky"
 
 #: DynamicWeb//dynamicweb.py:4109 DynamicWeb/dynamicweb.py:4974
 msgid "Whether to use tabbed panels for the different sections of the pages."
-msgstr "Zda použít tabelované panly pro různé sekce stránek"
+msgstr "Zda použít tabelované panely pro různé sekce stránek."
 
 #: DynamicWeb//dynamicweb.py:4113 DynamicWeb/dynamicweb.py:4980
 msgid "Whether to show the last modification time in the pages footer"
@@ -1673,7 +1676,7 @@ msgstr "48.21\"E, -18.2412 nebo -18:9:48.21)"
 msgid ""
 "WARNING!  You are about to completely delete the Exif metadata from this "
 "image?"
-msgstr "POZOR! Chystáte se úplně odstranit Exif metadata z tohot obrázku?"
+msgstr "POZOR! Chystáte se úplně odstranit Exif metadata z tohoto obrázku?"
 
 #: EditExifMetadata/editexifmetadata.py:1324
 #: EditExifMetadata/editexifmetadata.py:1333
