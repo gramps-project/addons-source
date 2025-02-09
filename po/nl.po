@@ -13,15 +13,16 @@ msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
 "POT-Creation-Date: 2019-01-04 18:55-0600\n"
-"PO-Revision-Date: 2020-07-31 18:07+0200\n"
-"Last-Translator: Jan Sparreboom <jan@sparreboom.net>\n"
-"Language-Team: Dutch <gramps-users@lists.sourceforge.net>\n"
+"PO-Revision-Date: 2025-02-09 08:03+0000\n"
+"Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
+"addons/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.3\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10-dev\n"
 
 #: MediaMerge/mediamerge.gpr.py:32 MediaMerge/mediamerge.gpr.py:31
 msgid "Merge Media"
@@ -182,8 +183,8 @@ msgstr ""
 "6. Klik op de 'Geselecteerde gebeurtenissen toevoegen' knop\n"
 "\n"
 "OPMERKING: als u besluit een gebeurtenis permanent te maken, verwijder het "
-"dan uit de bron. Anders wordt de gebeurtenis tijdens het volgend gebruik  "
-"van de tool automatisch verwijderd.\n"
+"dan uit de bron. Anders wordt de gebeurtenis tijdens het volgend gebruik van "
+"de tool automatisch verwijderd.\n"
 "\n"
 "Mogelijk moet u de tool herhaaldelijk uitvoeren (zonder eerder aangemaakte "
 "gebeurtenissen te verwijderen) om alle mogelijke gebeurtenissen toe te "
@@ -998,7 +999,7 @@ msgstr ""
 
 #: PlaceCleanup/placecleanup.glade:472 PlaceCleanup/placecleanup.glade:548
 msgid "Discard"
-msgstr "Verwijder"
+msgstr "Negeren"
 
 #: PlaceCleanup/placecleanup.glade:476 PlaceCleanup/placecleanup.glade:552
 msgid ""
@@ -2234,7 +2235,7 @@ msgstr "Nationale archieven van Zweden zoek volkstellingen"
 
 #: SVWebconnectPack/SVWebPack.py:47
 msgid "Arkiv Digital released prisoners"
-msgstr "Arkiv Digital vrijgelaten gevangenen "
+msgstr "Arkiv Digital vrijgelaten gevangenen"
 
 #: SVWebconnectPack/SVWebPack.py:48
 msgid "Gravestone inventory - rötter.se"
@@ -2334,13 +2335,13 @@ msgstr "Deïnstalleren"
 
 #: PluginManager/PluginManager.py:613 ../gramps/gui/plug/_windows.py:962
 msgid "Checking Addons Failed"
-msgstr "Het controleren op add-ons is mislukt"
+msgstr "Controle op uitbreidingen is mislukt"
 
 #: PluginManager/PluginManager.py:614 ../gramps/gui/plug/_windows.py:964
 msgid "The addon repository appears to be unavailable. Please try again later."
 msgstr ""
-"De add-on bibliotheek lijkt niet beschikbaar te zijn. Probeer het later "
-"opnieuw."
+"De bibliotheek met uitbreidingen lijkt niet beschikbaar te zijn. Probeer het "
+"later opnieuw."
 
 #: PluginManager/PluginManager.py:674 PluginManager/PluginManager.py:721
 msgid "*Available"
@@ -4333,7 +4334,7 @@ msgstr "het grafiektype loopt buiten de grenzen"
 
 #: DenominoViso/DenominoViso.py:2001
 msgid "Search"
-msgstr "Zoek"
+msgstr "Zoeken"
 
 #: DenominoViso/DenominoViso.py:2552
 msgid "DenominoViso Options"
@@ -4948,7 +4949,7 @@ msgid ""
 "Create kmz/kml file ''%s''\n"
 "in user directory ''%s''?"
 msgstr ""
-"Maak kmz / kml-bestand ''% s''\n"
+"Maak kmz / kml-bestand ''%s''\n"
 "in gebruikersmap ''%s''?"
 
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.py:163
@@ -5473,7 +5474,7 @@ msgstr ""
 #: SourceReferences/SourceReferences.gpr.py:32
 #: SourceReferences/SourceReferences.gpr.py:33
 msgid "Gramplet showing the references for a source"
-msgstr "Gramplet dat de bronreferenties  toont"
+msgstr "Gramplet dat de bronreferenties toont"
 
 #: PhpGedView/phpgedview.gpr.py:23 PhpGedView/phpgedview.gpr.py:24
 msgid "PhpGedView"
@@ -5538,7 +5539,7 @@ msgstr "- standaard -"
 
 #: PhpGedView/phpgedview.glade:19 PhpGedView/phpgedview.glade:85
 msgid "phpGedView import"
-msgstr "phpGedView import"
+msgstr "phpGedView importeren"
 
 #: PhpGedView/phpgedview.glade:103
 msgid "http://"
@@ -6220,7 +6221,7 @@ msgstr "GeoVoorouder"
 #: GeoAncestor/GeoAncestor.py:294 GeoAncestor/GeoAncestor.py:304
 #, python-format
 msgid "Ancestors places for %s"
-msgstr "Voorouderslocaties  voor %s"
+msgstr "Voorouderslocaties voor %s"
 
 #: GeoAncestor/GeoAncestor.py:301 GeoAncestor/GeoAncestor.py:311
 msgid "Counting all places"
@@ -6621,9 +6622,8 @@ msgid ""
 "If your image is not of an image type that can have Exif metadata read/ "
 "written to/from, convert it to a type that can?"
 msgstr ""
-"Als uw afbeelding niet van een afbeeldingstype is dat Exif-metagegevens kan "
-"lezen / schrijven naar / van, converteert u deze naar een type dat dat wel "
-"kan?"
+"Als uw afbeelding niet van een type is dat Exif-metagegevens kan bevatten, "
+"deze dan converteren naar een type dat dat wel ondersteunt?"
 
 #: EditExifMetadata//editexifmetadata.py:209
 #: EditExifMetadata/editexifmetadata.py:209
@@ -6942,7 +6942,7 @@ msgid ""
 "Produces a list of all the notes with a given tag along with the records "
 "that it references, the Person, Family, Event, etc."
 msgstr ""
-"Produceert een lijst van alle notities met een bepaald  label, samen met de "
+"Produceert een lijst van alle notities met een bepaald label, samen met de "
 "gegevens waarnaar het verwijst, de persoon, familie, gebeurtenis, enz."
 
 #: ToDoReport//TodoReport.py:91 ../gramps/plugins/textreport/tagreport.py:115
@@ -7265,8 +7265,8 @@ msgstr "Het doelbestand voor de inhoud."
 #: DescendantsLines/DescendantsLines.py:1545
 msgid "The number of generations to include in the chart. (0 for unlimited)"
 msgstr ""
-"Het aantal generaties dat in de grafiek moet worden opgenomen (0 voor "
-"ongelimiteerd)."
+"Het aantal generaties dat in de grafiek moet worden opgenomen. (0 voor "
+"ongelimiteerd)"
 
 #: DescendantsLines/DescendantsLines.py:1550
 #: DescendantsLines/DescendantsLines.py:1550
@@ -7468,7 +7468,7 @@ msgid ""
 "colour"
 msgstr ""
 "Intensiteit van de achtergrondkleur in het Afstammelingsblok, 0 = vaag, 255 "
-"=  intense kleur"
+"= intense kleur"
 
 #: DescendantsLines/DescendantsLines.py:1639
 #: DescendantsLines/DescendantsLines.py:1639
@@ -7480,8 +7480,8 @@ msgstr "Kleurintensiteit van het partnertekstblok"
 msgid ""
 "Intensity of backgound colour in Spouse's Block, 0=faint 255=intense colour"
 msgstr ""
-"Intensiteit van de achtergrondkleur in het partnertekstblok, 0 = vaag, 255 "
-"=  intense kleur"
+"Intensiteit van de achtergrondkleur in het partnertekstblok, 0 = vaag, 255 = "
+"intense kleur"
 
 #: DescendantsLines/DescendantsLines.py:1645
 #: DescendantsLines/DescendantsLines.py:1645
@@ -7687,12 +7687,12 @@ msgstr "Koptekst en voettekst"
 #: DescendantsLines/DescendantsLines.py:1776
 #: DescendantsLines/DescendantsLines.py:1776
 msgid "The text that will be written in the header of the document"
-msgstr "De tekst die in de kop van het document wordt geschreven."
+msgstr "De tekst die in de kop van het document wordt geschreven"
 
 #: DescendantsLines/DescendantsLines.py:1781
 #: DescendantsLines/DescendantsLines.py:1781
 msgid "The text that will be written in the footer of the document"
-msgstr "De tekst die in de voettekst van het document wordt geschreven."
+msgstr "De tekst die in de voettekst van het document wordt geschreven"
 
 #: DescendantsLines/DescendantsLines.py:1785
 #: DescendantsLines/DescendantsLines.py:1785
@@ -7706,7 +7706,7 @@ msgid ""
 "footer"
 msgstr ""
 "Een getal dat de basisgrootte van de tekst in de titel en in de voettekst "
-"vermenigvuldigt."
+"vermenigvuldigt"
 
 #: DescendantsLines/DescendantsLines.py:1793
 #: DescendantsLines/DescendantsLines.py:1793
@@ -7808,7 +7808,7 @@ msgstr ""
 
 #: BirthOrder/birthorder.glade:232
 msgid "Done"
-msgstr "Gereed"
+msgstr "Voltooid"
 
 #: BirthOrder/birthorder.glade:236
 msgid "This button will exit, with remaining families unchanged."
@@ -9099,7 +9099,7 @@ msgstr ""
 
 #: LifeLineChartView/_dummy_translation_string_po.py:111
 msgid "Flip families to reduce horizontal connections"
-msgstr "Draai gezinnen om om horizontale verbindingen te verminderen"
+msgstr "Gezinnen spiegelen om horizontale verbindingen te verminderen"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:112
 msgid ""
@@ -15597,9 +15597,8 @@ msgid "What country was his mother born in?"
 msgstr "In welk land is zijn moeder geboren?"
 
 #: Form\form_us.xml.h:940 Form/form_us.xml.h:940
-#, fuzzy
 msgid "Highest grade attended"
-msgstr "Hoogste voltooide leerjaar"
+msgstr "Hoogste bijgewoonde leerjaar"
 
 #: Form\form_us.xml.h:941 Form/form_us.xml.h:941
 msgid "What is the highest grade of school that he has attended?"
@@ -15626,9 +15625,8 @@ msgid "How many weeks has he been looking for work?"
 msgstr "Hoeveel weken is hij al op zoek naar werk?"
 
 #: Form\form_us.xml.h:947 Form/form_us.xml.h:947
-#, fuzzy
 msgid "# weeks worked in 1949"
-msgstr "# weken gewerkt in 1939"
+msgstr "# weken gewerkt in 1949"
 
 #: Form\form_us.xml.h:948 Form/form_us.xml.h:948
 msgid ""
@@ -19368,7 +19366,7 @@ msgstr ""
 #: Heatmap/heatmap.py:165 Heatmap/heatmap.py:171
 #: ../gramps/gui/configure.py:1956
 msgid "Limits"
-msgstr "Grenzen"
+msgstr "Limieten"
 
 #: Heatmap/heatmap.py:251 Heatmap/heatmap.py:210
 msgid "Invalid filename."
@@ -19995,7 +19993,7 @@ msgstr "Geïmporteerd"
 #: ImportMerge/importmerge.py:484 ImportMerge/importmerge.py:963
 #: ImportMerge/importmerge.py:984
 msgid "Result  "
-msgstr "Resultaat "
+msgstr "Resultaat  "
 
 #: ImportMerge/importmerge.py:710
 msgid "Import and Merge"
@@ -22452,7 +22450,7 @@ msgstr "Naam persoon"
 #: ThisDayInFamilyHistory//ThisDayInFamilyHistory.py:201
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:249
 msgid "Event Year"
-msgstr "Gebeurtenisjaar"
+msgstr "Jaar gebeurtenis"
 
 #: ThisDayInFamilyHistory//ThisDayInFamilyHistory.py:305
 #: ThisDayInFamilyHistory//ThisDayInFamilyHistory.py:359
