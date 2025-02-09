@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-02 22:39+0200\n"
-"PO-Revision-Date: 2025-02-09 06:44+0000\n"
+"PO-Revision-Date: 2025-02-09 22:37+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -1657,7 +1657,7 @@ msgstr "Hintergrundfarbe männlich"
 
 #: D3Charts/AncestralCollapsibleTree.py:847
 msgid "RGB-color for male box background."
-msgstr "RGB-Farbe für Hintergrund männliche Box"
+msgstr "RGB-Farbe für den Hintergrund der männlichen Box."
 
 #: D3Charts/AncestralCollapsibleTree.py:850
 msgid "Male Expandable Background Color"
@@ -3592,7 +3592,6 @@ msgid "Tiny Tafel"
 msgstr "Tiny Tafel"
 
 #: ListeEclair/ListeEclair.py:280
-#, fuzzy
 msgid "cousingenweb"
 msgstr "cousingenweb"
 
@@ -9476,7 +9475,7 @@ msgstr "Jahr in der Gemeinde geblieben"
 
 #: Form/form_dk.xml.h:328
 msgid "Hvilket aar taget ophold i sognet"
-msgstr " hat sich in welchem Jahr in der Gemeinde niedergelassen?"
+msgstr "Welches Jahr des Wohnsitzes in der Gemeinde"
 
 #: Form/form_dk.xml.h:329
 msgid "Previous Residence"
@@ -12427,11 +12426,11 @@ msgstr "NACHNAMEN und ANDERE NAMEN."
 
 #: Form/form_gb.xml.h:224 Form/form_gb.xml.h:263
 msgid "OVSPI"
-msgstr ""
+msgstr "OVSPI"
 
 #: Form/form_gb.xml.h:225 Form/form_gb.xml.h:264
 msgid "O, V, S, P or I"
-msgstr ""
+msgstr "O, V, S, P oder I"
 
 #: Form/form_gb.xml.h:227 Form/form_gb.xml.h:266
 msgid "M or F"
@@ -12717,7 +12716,7 @@ msgstr "Kinder, die lebend geboren wurden in gegenwärtiger Ehe"
 #: Form/form_us.xml.h:743 Form/form_us.xml.h:781 Form/form_us.xml.h:824
 #: Form/form_us.xml.h:1004 Form/form_us.xml.h:885 Form/form_us.xml.h:1092
 msgid "NARA publication"
-msgstr ""
+msgstr "NARA-Publikation"
 
 #: Form/form_us.xml.h:2 Form/form_us.xml.h:15 Form/form_us.xml.h:36
 #: Form/form_us.xml.h:57 Form/form_us.xml.h:97 Form/form_us.xml.h:166
@@ -16959,11 +16958,11 @@ msgstr ""
 
 #: Form/form_us.xml.h:1955 Form/form_us.xml.h:2043
 msgid "T."
-msgstr ""
+msgstr "T."
 
 #: Form/form_us.xml.h:1956 Form/form_us.xml.h:2044
 msgid "R."
-msgstr ""
+msgstr "R."
 
 #: Form/form_us.xml.h:1959 Form/form_us.xml.h:2432 Form/form_us.xml.h:2047
 #: Form/form_us.xml.h:2520
@@ -17899,7 +17898,7 @@ msgstr "Familienstand:"
 
 #: SourceIndex/census.glade:466 SourceIndex/death.glade:1099
 msgid "Spouse name:"
-msgstr "Partner Name"
+msgstr "Name des Partners:"
 
 #: SourceIndex/census.glade:510 SourceIndex/death.glade:703
 #: SourceIndex/death.glade:892 SourceIndex/marriage.glade:498
