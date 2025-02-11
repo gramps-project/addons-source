@@ -266,17 +266,18 @@ elif command == "init":
                 continue  # skip this one if not listed
 
             mkdir(f"{addon}/po")
+            fnames = ' '.join(glob.glob(f"{addon}/*.py"))
             system(
                 f"xgettext --language=Python --keyword=_ --keyword=N_"
                 f" --from-code=UTF-8"
-                f' -o "{addon}/po/template.pot" "{addon}"/*.py '
+                f' -o "{addon}/po/template.pot" {fnames} '
             )
-            fnames = glob.glob("%s/*.glade" % addon)
+            fnames = ' '.join(glob.glob("%s/*.glade" % addon))
             if fnames:
                 system(
                     "xgettext -j --add-comments -L Glade "
                     f'--from-code=UTF-8 -o "{addon}/po/template.pot" '
-                    f'"{addon}"/*.glade'
+                    f'{fnames}'
                 )
 
             # scan for xml files and get translation text where the tag
@@ -636,17 +637,18 @@ elif command == "as-needed":
         cleanup(addon)
         if todo:  # make an updated pot file
             mkdir("%(addon)s/po")
+            fnames = ' '.join(glob.glob(f"{addon}/*.py"))
             system(
                 "xgettext --language=Python --keyword=_ --keyword=N_"
                 " --from-code=UTF-8"
-                f' -o "{addon}/po/temp.pot" "{addon}"/*.py '
+                f' -o "{addon}/po/temp.pot" {fnames} '
             )
-            fnames = glob.glob("%s/*.glade" % addon)
+            fnames = ' '.join(glob.glob(f"{addon}/*.glade"))
             if fnames:
                 system(
                     "xgettext -j --add-comments -L Glade "
                     f'--from-code=UTF-8 -o "{addon}/po/temp.pot" '
-                    f'"{addon}"/*.glade'
+                    f'{fnames}'
                 )
 
             # scan for xml files and get translation text where the tag
