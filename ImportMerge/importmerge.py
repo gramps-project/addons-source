@@ -1,6 +1,6 @@
 # Gramps - a GTK+/GNOME based genealogy program
 #
-# Copyright (C) 2017       Paul Culley <paulr2787@gmail.com>
+# Copyright (C) 2025       Paul Culley <paulr2787@gmail.com>
 # Copyright (C) 2018       Serge Noiraud
 #
 # This program is free software; you can redistribute it and/or modify
@@ -45,7 +45,8 @@ from gi.repository import Gtk, Gdk
 #
 #------------------------------------------------------------------------
 #from gramps.gen.display.name import displayer as global_name_display
-from gramps.gen.merge.diff import diff_items, to_struct
+from gramps.gen.lib.json_utils import object_to_dict
+from gramps.gen.merge.diff import diff_items
 from gramps.gen.dbstate import DbState
 from gramps.gen.utils.db import get_participant_from_event
 from gramps.gen.db import DbTxn
@@ -357,8 +358,8 @@ class ImportMerge(tool.BatchTool, ManagedWindow):
                         handles1[p_1] == handles2[p_2]:  # in both
                     # compare the two items for equality
                     diff = diff_items(obj_type,
-                                      to_struct(handle_func1(handles1[p_1])),
-                                      to_struct(handle_func2(handles2[p_2])))
+                                      object_to_dict(handle_func1(handles1[p_1])),
+                                      object_to_dict(handle_func2(handles2[p_2])))
                     hndl = handles1[p_1]
                     self._progress.step()
                     self._progress.step()
@@ -488,7 +489,7 @@ class ImportMerge(tool.BatchTool, ManagedWindow):
         '''
         Compare two struct objects and report differences.
         '''
-        # if to_struct(item1) == to_struct(item2):
+        # if object_to_dict(item1) == object_to_dict(item2):
         #     return   # _eq_ doesn't work on Gramps objects for this purpose
         if item1 is None and item2 is None:
             return
@@ -1052,7 +1053,8 @@ class ImportMerge(tool.BatchTool, ManagedWindow):
                     continue
                 item1 = handle_func1(hndl)
                 item2 = handle_func2(hndl)
-                diff = diff_items(obj_type, to_struct(item1), to_struct(item2))
+                diff = diff_items(obj_type,
+                                  object_to_dict(item1), object_to_dict(item2))
                 if diff:
                     item = handle_func1(hndl)
                     gid, name = self.sa[0].describe(item)
