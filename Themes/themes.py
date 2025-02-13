@@ -200,13 +200,13 @@ class MyPrefs(GrampsPreferences):
         grid.attach(font_button, 1, 1, 1, 1)
         font_button.connect('font-set', self.font_changed)
 
-        # Toolbar Text
-        t_text = Gtk.CheckButton.new_with_mnemonic(
-            _("_Toolbar") + ' ' + _('Text'))
-        value = config.get('interface.toolbar-text')
-        t_text.set_active(value)
-        t_text.connect('toggled', self.t_text_changed)
-        grid.attach(t_text, 0, 2, 2, 1)
+        # Toolbar Text (now in General tab)
+        # t_text = Gtk.CheckButton.new_with_mnemonic(
+        #     _("_Toolbar") + ' ' + _('Text'))
+        # value = config.get('interface.toolbar-text')
+        # t_text.set_active(value)
+        # t_text.connect('toggled', self.t_text_changed)
+        # grid.attach(t_text, 0, 2, 2, 1)
 
         # Scrollbar Windows style
         if win():
