@@ -933,7 +933,8 @@ class PlaceCleanup(Gramplet):
         """ Find or create a source.
         returns handle to source."""
         for hndl in self.dbstate.db.get_source_handles():
-            if self.dbstate.db.get_raw_source_data(hndl)[2] == 'GeoNames':
+            src = self.dbstate.db.get_raw_source_data(hndl)
+            if src.title == 'GeoNames':
                 return hndl
         # No source found, lets add one with associated repo and note
         repo = Repository()
@@ -1060,12 +1061,12 @@ class PlaceCleanup(Gramplet):
         while True:
             hndl = p_hndls[indx]
             place_data = self.dbstate.db.get_raw_place_data(hndl)
-            p_type = place_data[8][0]  # place_type
+            p_type = PlaceType(place_data.place_type)  # place_type
             refs = list(self.dbstate.db.find_backlink_handles(hndl))
             if(p_type == PlaceType.UNKNOWN or
                not refs or
                p_type != PlaceType.COUNTRY and
-               not place_data[5]):  # placeref_list
+               not place_data.placeref_list):  # placeref_list
                 # need to get view to this place...
                 self.set_active("Place", hndl)
                 self.incomp_hndl = hndl
