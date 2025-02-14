@@ -94,14 +94,6 @@ msgstr "Traži:"
 msgid "Found place:"
 msgstr "Pronađeno mjesto:"
 
-#: PlaceCoordinateGramplet/placecoordinate.glade:53
-#: ../gramps/gui/glade/dialog.glade:838 ../gramps/gui/glade/dialog.glade:855
-#: ../gramps/gui/glade/dialog.glade:969
-#: ../gramps/plugins/tool/removespaces.glade:108
-#: ../gramps/plugins/tool/removespaces.glade:165
-msgid "label"
-msgstr "oznaka"
-
 #: PlaceCoordinateGramplet/placecoordinate.glade:68
 msgid "Postal-Code:"
 msgstr "Poštanski broj:"

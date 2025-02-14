@@ -55,19 +55,6 @@ msgstr "Rapport de remplissage de l'arbre d'ascendance pour %s"
 msgid "Generation "
 msgstr "Génération "
 
-# L'espace finale est pour précéder le « : » codé en dur dans certains contextes
-#: AncestorFill/AncestorFill.py:371 ../gramps/gen/plug/report/stdoptions.py:63
-msgid "Translation"
-msgstr "Traduction "
-
-#: AncestorFill/AncestorFill.py:372 ../gramps/gen/utils/win32locale.py:55
-msgid "English"
-msgstr "Anglais"
-
-#: AncestorFill/AncestorFill.py:375 ../gramps/gen/plug/report/stdoptions.py:68
-msgid "The translation to be used for the report."
-msgstr "La traduction à utiliser pour le rapport."
-
 #: AncestorFill/AncestorFill.py:419 AncestorFill/AncestorFill.py:361
 msgid "The style used for the title of the page."
 msgstr "Le style utilisé pour les titres de page."

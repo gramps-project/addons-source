@@ -135,3 +135,20 @@ msgstr "Correction des chemins de fichier"
 #: MediaVerify/MediaVerify.py:263 MediaVerify/MediaVerify.py:390
 msgid "Fix media paths"
 msgstr "Correction des chemins media"
+
+#: NoteCleanup/NoteCleanup.py:135 MediaVerify/MediaVerify.py:110
+msgid "Export"
+msgstr "Exporter"
+
+#: NoteCleanup/NoteCleanup.py:136 MediaVerify/MediaVerify.py:111
+msgid "Export the results to a text file"
+msgstr "Exporter les résultats dans un fichier texte"
+
+#: NoteCleanup/NoteCleanup.py:314 MediaVerify/MediaVerify.py:195
+msgid "Export results to a text file"
+msgstr "Exporter les résultats vers un fichier texte"
+
+#: NoteCleanup/NoteCleanup.py:338 MediaVerify/MediaVerify.py:218
+#, python-format
+msgid "Error when writing the report: %s"
+msgstr "Erreur lors de la rédaction du rapport: %s"

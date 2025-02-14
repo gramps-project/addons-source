@@ -34,40 +34,34 @@ msgstr ""
 "X-Generator: Poedit 2.0.6\n"
 
 #: TimelinePedigreeView.py:79 TimelinePedigreeView/TimelinePedigreeView.py:82
-#: HtreePedigreeView.py:83
+#: HtreePedigreeView/HtreePedigreeView.py:93
 msgid "short for born|b."
 msgstr "s."
 
 #: TimelinePedigreeView.py:80 TimelinePedigreeView/TimelinePedigreeView.py:83
-#: HtreePedigreeView.py:84
+#: HtreePedigreeView/HtreePedigreeView.py:94
 msgid "short for died|d."
 msgstr "k."
 
 #: TimelinePedigreeView.py:81 TimelinePedigreeView/TimelinePedigreeView.py:84
-#: HtreePedigreeView.py:85
+#: HtreePedigreeView/HtreePedigreeView.py:95
 msgid "short for baptized|bap."
 msgstr "kast."
 
 #: TimelinePedigreeView.py:82 TimelinePedigreeView/TimelinePedigreeView.py:85
-#: HtreePedigreeView.py:86
+#: HtreePedigreeView/HtreePedigreeView.py:96
 msgid "short for christened|chr."
 msgstr "rist."
 
 #: TimelinePedigreeView.py:83 TimelinePedigreeView/TimelinePedigreeView.py:86
-#: HtreePedigreeView.py:87
+#: HtreePedigreeView/HtreePedigreeView.py:97
 msgid "short for buried|bur."
 msgstr "haud."
 
 #: TimelinePedigreeView.py:84 TimelinePedigreeView/TimelinePedigreeView.py:87
-#: HtreePedigreeView.py:88
+#: HtreePedigreeView/HtreePedigreeView.py:98
 msgid "short for cremated|crem."
 msgstr "tuhk."
-
-#: TimelinePedigreeView.py:515 ../gramps/plugins/lib/libpersonview.py:275
-#: ../gramps/plugins/view/pedigreeview.py:724
-#: ../gramps/plugins/view/relview.py:411 HtreePedigreeView.py:697
-msgid "Person Filter Editor"
-msgstr "Henkilösuodinmuokkain"
 
 #: HtreePedigreeView.gpr.py:45 HtreePedigreeView/HtreePedigreeView.gpr.py:34
 #: HtreePedigreeView/HtreePedigreeView.gpr.py:47

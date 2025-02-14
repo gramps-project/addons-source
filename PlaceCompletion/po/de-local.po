@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-02 22:39+0200\n"
-"PO-Revision-Date: 2025-02-09 06:44+0000\n"
+"PO-Revision-Date: 2025-02-09 22:37+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -345,15 +345,3 @@ msgstr ""
 "Drücke Tab in einer Zeile oder die Google Maps Schaltfläche um den Ort auf "
 "einer Karte zu sehen. Drücke Übernehmen um alle Änderungen automatisch "
 "durchzuführen"
-
-#: ../gramps/gen/filters/rules/place/_hasplace.py:66
-msgid "Country:"
-msgstr "Land:"
-
-#: ../gramps/gen/filters/rules/place/_hasplace.py:63
-msgid "City:"
-msgstr "Ort:"
-
-#: ../gramps/gen/filters/rules/place/_hasplace.py:67
-msgid "ZIP/Postal Code:"
-msgstr "PLZ:"

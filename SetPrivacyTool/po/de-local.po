@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-02 22:39+0200\n"
-"PO-Revision-Date: 2025-02-09 06:44+0000\n"
+"PO-Revision-Date: 2025-02-09 22:37+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -33,8 +33,13 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.10-dev\n"
 
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:83
+#: SetPrivacyTool/SetPrivacyTool.py:312
+msgid "Select filter to restrict people"
+msgstr "Filter zum eingrenzen der Personen wählen"
+
 #: DynamicWeb/dynamicweb.py:2538 DynamicWeb/dynamicweb.py:3052
-#: SetPrivacyTool/SetPrivacyTool.py:195
+#: SetPrivacyTool/SetPrivacyTool.py:320
 msgid "Persons"
 msgstr "Personen"
 

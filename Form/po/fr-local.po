@@ -38,31 +38,49 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: AncestorFill/AncestorFill.py:419 AncestorFill/AncestorFill.py:361
-msgid "The style used for the title of the page."
-msgstr "Le style utilisé pour les titres de page."
-
 #: DataEntryGramplet/DataEntryGramplet.py:154
 #: DataEntryGramplet/DataEntryGramplet.py:168
 #: DataEntryGramplet/DataEntryGramplet.py:299
 #: DataEntryGramplet/DataEntryGramplet.py:167
 #: DataEntryGramplet/DataEntryGramplet.py:178
-#: DataEntryGramplet/DataEntryGramplet.py:315 Form/form_us.xml.h:1061
+#: DataEntryGramplet/DataEntryGramplet.py:315 Form/form_us.xml.h:2259
 msgid "in"
 msgstr "dans"
 
 #: DenominoViso/DenominoViso.py:1747 DenominoViso/DenominoViso.py:1754
-#: Form/form_us.xml.h:1062
+#: Form/form_us.xml.h:2270 Form/form_us.xml.h:2288 Form/form_us.xml.h:2299
+#: Form/form_us.xml.h:2317 Form/form_us.xml.h:2327
 msgid "of"
 msgstr "de"
 
-#: RelID/Relation_tab.py:107 RelID/relation_tab.py:111 Form/form_ca.xml.h:312
-#: Form/form_dk.xml.h:14 Form/form_fr.xml.h:5 Form/form_gb.xml.h:24
-#: Form/form_us.xml.h:759
+#: RelID/Relation_tab.py:107 RelID/relation_tab.py:111 Form/form_ca.xml.h:417
+#: Form/form_ca.xml.h:470 Form/form_ca.xml.h:628 Form/form_ca.xml.h:681
+#: Form/form_ca.xml.h:769 Form/form_ca.xml.h:820 Form/form_us.xml.h:1427
+#: Form/form_us.xml.h:1965 Form/form_us.xml.h:1984 Form/form_us.xml.h:2004
+#: Form/form_dk.xml.h:14 Form/form_dk.xml.h:31 Form/form_dk.xml.h:48
+#: Form/form_dk.xml.h:65 Form/form_dk.xml.h:82 Form/form_dk.xml.h:99
+#: Form/form_dk.xml.h:118 Form/form_dk.xml.h:137 Form/form_dk.xml.h:156
+#: Form/form_dk.xml.h:177 Form/form_dk.xml.h:200 Form/form_dk.xml.h:221
+#: Form/form_dk.xml.h:242 Form/form_dk.xml.h:270 Form/form_dk.xml.h:305
+#: Form/form_dk.xml.h:331 Form/form_dk.xml.h:347 Form/form_dk.xml.h:379
+#: Form/form_dk.xml.h:399 Form/form_dk.xml.h:421 Form/form_dk.xml.h:441
+#: Form/form_fr.xml.h:5 Form/form_fr.xml.h:13 Form/form_fr.xml.h:21
+#: Form/form_fr.xml.h:29 Form/form_fr.xml.h:36 Form/form_fr.xml.h:121
+#: Form/form_fr.xml.h:128 Form/form_fr.xml.h:135 Form/form_fr.xml.h:142
+#: Form/form_fr.xml.h:152 Form/form_fr.xml.h:161 Form/form_fr.xml.h:169
+#: Form/form_fr.xml.h:178 Form/form_fr.xml.h:187 Form/form_fr.xml.h:196
+#: Form/form_fr.xml.h:205 Form/form_fr.xml.h:216 Form/form_gb.xml.h:76
+#: Form/form_gb.xml.h:94 Form/form_gb.xml.h:113 Form/form_gb.xml.h:134
+#: Form/form_gb.xml.h:156 Form/form_gb.xml.h:181 Form/form_gb.xml.h:202
+#: Form/form_gb.xml.h:236 Form/form_gb.xml.h:285 Form/form_gb.xml.h:312
+#: Form/form_gb.xml.h:335 Form/form_gb.xml.h:371 Form/form_gb.xml.h:432
+#: Form/form_gb.xml.h:459 Form/form_gb.xml.h:487 Form/form_gb.xml.h:519
+#: Form/form_gb.xml.h:558 Form/form_gb.xml.h:580 Form/form_gb.xml.h:609
 msgid "Relation"
 msgstr "Relation"
 
-#: RelID/Relation_tab.py:112 RelID/relation_tab.py:116 Form/form_us.xml.h:374
+#: RelID/Relation_tab.py:112 RelID/relation_tab.py:116 Form/form_us.xml.h:649
+#: Form/form_us.xml.h:1013 Form/form_us.xml.h:2291 Form/form_us.xml.h:2320
 msgid "Rank"
 msgstr "Rang"
 
@@ -88,6 +106,7 @@ msgid "Headings"
 msgstr "En-têtes"
 
 #: Form/form.py:60 CombinedView/eventpage.py:202 CombinedView/eventpage.py:267
+#: Form/form.py:62
 msgid "Order"
 msgstr "Rang"
 
@@ -8060,11 +8079,3 @@ msgstr ""
 #: Form/form_us.xml.h:1191 Form/form_us.xml.h:2600
 msgid "Residents Status"
 msgstr ""
-
-#: ../gramps/gen/lib/eventtype.py:210
-msgid "Census"
-msgstr "Recensement"
-
-#: FamilyTree/FamilyTree.py:1162
-msgid "The style used for names."
-msgstr "Le style utilisé pour les noms."

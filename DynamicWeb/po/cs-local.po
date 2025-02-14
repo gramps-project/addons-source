@@ -653,6 +653,7 @@ msgid "Select the template of the web site"
 msgstr "Zvolte šablonu pro WWW stránky"
 
 #: DynamicWeb//dynamicweb.py:3980 D3Charts/DescendantIndentedTree.py:1867
+#: DynamicWeb/dynamicweb.py:4811
 msgid "Include records marked private"
 msgstr "Zahrnout záznamy označené jako důvěrné"
 
@@ -661,10 +662,12 @@ msgid "Whether to include private objects"
 msgstr "Zda zahrnout soukromé objekty"
 
 #: DynamicWeb//dynamicweb.py:3985 D3Charts/DescendantIndentedTree.py:1877
+#: DynamicWeb/dynamicweb.py:4819
 msgid "Include Last Name Only"
 msgstr "Zahrnout pouze příjmení"
 
 #: DynamicWeb//dynamicweb.py:3986 D3Charts/DescendantIndentedTree.py:1879
+#: DynamicWeb/dynamicweb.py:4822
 msgid "Include Full Name Only"
 msgstr "Zahrnout pouze celá jména"
 
@@ -985,15 +988,3 @@ msgstr "Obsah stránky %(index)i"
 #: DynamicWeb//dynamicweb.py:4289 DynamicWeb/dynamicweb.py:5266
 msgid "Contents of the page"
 msgstr "Obsah stránky"
-
-#: ../gramps/plugins/webreport/narrativeweb.py:2552
-msgid "Include a column for birth dates on the index pages"
-msgstr "Zahrnout sloupec s daty narození na indexových stránkách"
-
-#: ../gramps/plugins/webreport/narrativeweb.py:2554
-msgid "Whether to include a birth column"
-msgstr "Zda zahrnout sloupec narození"
-
-#: ../gramps/plugins/webreport/narrativeweb.py:2560
-msgid "Whether to include a death column"
-msgstr "Zda zahrnout sloupec úmrtí"

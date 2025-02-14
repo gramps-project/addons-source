@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-02 22:39+0200\n"
-"PO-Revision-Date: 2025-02-09 06:44+0000\n"
+"PO-Revision-Date: 2025-02-09 22:37+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -465,6 +465,11 @@ msgid "There was an error in stripping the Exif metadata from this image..."
 msgstr ""
 "Beim reinitialisieren der Exif Metadaten für dieses Bild ist ein Fehler "
 "aufgetreten..."
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:69
+#: EditExifMetadata/editexifmetadata.py:215
+msgid "Copy"
+msgstr "Kopieren"
 
 #: EditExifMetadata/editexifmetadata.py:214
 msgid "Thumbnail"

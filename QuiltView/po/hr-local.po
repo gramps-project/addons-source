@@ -116,9 +116,3 @@ msgstr "Prozirnost linije"
 #: QuiltView/QuiltView.py:1939
 msgid "General options"
 msgstr "Opći opcije"
-
-#: ../gramps/plugins/lib/libpersonview.py:275
-#: ../gramps/plugins/view/pedigreeview.py:724
-#: ../gramps/plugins/view/relview.py:411
-msgid "Person Filter Editor"
-msgstr "Uređivač filtra za osobe"

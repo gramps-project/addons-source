@@ -24,10 +24,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.10-dev\n"
 
-#: GeoAncestor/GeoAncestor.gpr.py:73 ../gramps/plugins/view/geography.gpr.py:74
-msgid "OsmGpsMap module not loaded."
-msgstr "OsmGpsMap-module niet geladen."
-
 #: GeoAncestor/GeoAncestor.gpr.py:88 GeoAncestor/GeoAncestor.gpr.py:31
 #: GeoAncestor/GeoAncestor.gpr.py:41
 msgid "Ancestors map"

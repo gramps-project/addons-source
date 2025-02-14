@@ -56,6 +56,7 @@ msgid "Theme is hardcoded by GTK_THEME"
 msgstr "Le thème est figé par GTK_THEME"
 
 #: Themes/themes.py:140 Themes/themes.py:190 DynamicWeb/dynamicweb.py:5157
+#: Themes/themes.py:175 Themes/themes.py:225
 msgid "Theme"
 msgstr "Thème"
 
@@ -70,7 +71,3 @@ msgstr "Police"
 #: Themes/themes.py:179 Themes/themes.py:214
 msgid "Fixed Scrollbar (requires restart)"
 msgstr "Barre de défilement fixe (redémarrage requis)"
-
-#: ../gramps/gui/configure.py:983
-msgid "Colors"
-msgstr "Couleurs"

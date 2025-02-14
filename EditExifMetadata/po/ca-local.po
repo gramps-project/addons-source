@@ -408,3 +408,8 @@ msgstr "Totes les metadades Exif s'han esborrat d'aquesta imatge..."
 #: EditExifMetadata/editexifmetadata.py:1470
 msgid "There was an error in stripping the Exif metadata from this image..."
 msgstr "Hi ha hagut un error en treure les metadades Exif d'aquesat imatge..."
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:69
+#: EditExifMetadata/editexifmetadata.py:215
+msgid "Copy"
+msgstr "Copia"

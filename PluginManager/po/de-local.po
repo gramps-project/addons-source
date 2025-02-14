@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-02 22:39+0200\n"
-"PO-Revision-Date: 2025-02-09 06:44+0000\n"
+"PO-Revision-Date: 2025-02-09 22:37+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -61,10 +61,6 @@ msgstr ""
 msgid "Search..."
 msgstr "Suchen …"
 
-#: PluginManager/PluginManager.py:161 ../gramps/gui/plug/_windows.py:816
-msgid "Check for updated addons now"
-msgstr "Jetzt nach Aktualisierungen für Erweiterungen suchen"
-
 #: PluginManager/PluginManager.py:207 PluginManager/PluginManager.py:216
 msgid "Restart..."
 msgstr "Neustart …"
@@ -90,11 +86,6 @@ msgid ""
 msgstr ""
 "'*' Artikel werden von Drittanbietern verschickt,\n"
 "<s>durchgestrichene</s> Artikel sind versteckt"
-
-#: PluginManager/PluginManager.py:472 ../gramps/gui/plug/_windows.py:1079
-#: ../gramps/gui/plug/_windows.py:1137
-msgid "Info"
-msgstr "Info"
 
 #: PluginManager/PluginManager.py:475 PluginManager/PluginManager.py:586
 #: PluginManager/PluginManager.py:410 PluginManager/PluginManager.py:530
@@ -125,16 +116,6 @@ msgstr "Aufdecken"
 msgid "Uninstall"
 msgstr "Deinstallieren"
 
-#: PluginManager/PluginManager.py:613 ../gramps/gui/plug/_windows.py:962
-msgid "Checking Addons Failed"
-msgstr "Überprüfen der Erweiterungen fehlgeschlagen"
-
-#: PluginManager/PluginManager.py:614 ../gramps/gui/plug/_windows.py:964
-msgid "The addon repository appears to be unavailable. Please try again later."
-msgstr ""
-"Der Aufbewahrungsort im Internet für Zusatzmodule ist nicht erreichbar. "
-"Bitte versuche es später noch einmal."
-
 #: PluginManager/PluginManager.py:674 PluginManager/PluginManager.py:721
 msgid "*Available"
 msgstr "*Verfügbar"
@@ -150,7 +131,3 @@ msgstr "*Installiert"
 #: PluginManager/PluginManager.py:704 PluginManager/PluginManager.py:751
 msgid "Update Available"
 msgstr "Aktualisierung Verfügbar"
-
-#: PluginManager/PluginManager.py:733 ../gramps/gui/plug/_windows.py:1648
-msgid "Detailed Info"
-msgstr "Detaillierte Informationen"

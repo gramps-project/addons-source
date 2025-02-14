@@ -31,19 +31,6 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: UKWebConnectPack/UKWebPack.py:35 SVWebconnectPack/SVWebPack.py:34
-#: FRWebConnectPack/FRWebPack.py:47
-msgid "FamilySearch.org"
-msgstr "FamilySearch.org"
-
-#: UKWebConnectPack/UKWebPack.py:38 FRWebConnectPack/FRWebPack.py:54
-msgid "Hathi Trust Digital Library"
-msgstr "Hathi Trust цифровая библиотека"
-
-#: UKWebConnectPack/UKWebPack.py:39 FRWebConnectPack/FRWebPack.py:55
-msgid "Open Library"
-msgstr "Открытая библиотека"
-
 #: FRWebConnectPack/FRWebPack.gpr.py:10 FRWebConnectPack/FRWebPack.gpr.py:11
 msgid "FR Web Connect Pack"
 msgstr "Набор FR Web Connect"

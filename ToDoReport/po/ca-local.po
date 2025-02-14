@@ -33,10 +33,6 @@ msgstr ""
 "amb els registres a què fa referència, la persona, la família, "
 "l’esdeveniment, etc."
 
-#: ToDoReport//TodoReport.py:91 ../gramps/plugins/textreport/tagreport.py:115
-msgid "You must first create a tag before running this report."
-msgstr "Primer has de crear una etiqueta abans d’executar aquest informe."
-
 #: ToDoReport//TodoReport.py:98 ToDoReport//TodoReport.py:526
 #: ToDoReport/TodoReport.py:107 ToDoReport/TodoReport.py:904
 msgid "TR-Title"
@@ -161,6 +157,7 @@ msgid "Group notes by Family, Person, Place, etc."
 msgstr "Notes de grup per família, persona, lloc, etc."
 
 #: ToDoReport//TodoReport.py:525 AncestorFill/AncestorFill.py:361
+#: ToDoReport/TodoReport.py:903
 msgid "The style used for the title of the page."
 msgstr "L'estil utilitzat per al títol de la pàgina."
 

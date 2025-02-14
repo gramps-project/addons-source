@@ -13,15 +13,16 @@ msgstr ""
 "Project-Id-Version: hu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-08 16:54+0100\n"
-"PO-Revision-Date: 2009-11-10 09:48+0100\n"
-"Last-Translator: Kolesár András <translation@kolesar.hu>\n"
-"Language-Team: magyar <hu@li.org>\n"
+"PO-Revision-Date: 2025-02-09 22:37+0000\n"
+"Last-Translator: Lajos Nemeséri <nemeseril@gmail.com>\n"
+"Language-Team: Hungarian <https://hosted.weblate.org/projects/gramps-project/"
+"addons/hu/>\n"
+"Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;X-Generator: KBabel 1.11.2X-Generator: X-"
-"Generator: KBabel 1.11.2\n"
-"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 5.10-dev\n"
 
 #: DynamicWeb/dynamicweb.gpr.py:15 DynamicWeb/dynamicweb.gpr.py:16
 msgid "Dynamic Web Report"
@@ -43,7 +44,7 @@ msgstr "Tárgymutató oldalak"
 #: DynamicWeb/dynamicweb.py:341 DynamicWeb/dynamicweb.py:5214
 #, python-format
 msgid "Custom page %(index)i"
-msgstr "Egyéni oldal  %(index)i"
+msgstr "Egyéni oldal %(index)i"
 
 #: DynamicWeb/dynamicweb.py:305 DynamicWeb/dynamicweb.py:358
 msgid "Ascending tree"
@@ -642,6 +643,7 @@ msgid "Select the template of the web site"
 msgstr "Válassza ki a web-oldal témáját"
 
 #: DynamicWeb/dynamicweb.py:3976 D3Charts/DescendantIndentedTree.py:1867
+#: DynamicWeb/dynamicweb.py:4811
 msgid "Include records marked private"
 msgstr "Személyes adatokkal együtt"
 
@@ -650,10 +652,12 @@ msgid "Whether to include private objects"
 msgstr "Legyenek-e benne a bizalmas objektumok"
 
 #: DynamicWeb/dynamicweb.py:3981 D3Charts/DescendantIndentedTree.py:1877
+#: DynamicWeb/dynamicweb.py:4819
 msgid "Include Last Name Only"
 msgstr "Csak a vezetéknevet mutassa"
 
 #: DynamicWeb/dynamicweb.py:3982 D3Charts/DescendantIndentedTree.py:1879
+#: DynamicWeb/dynamicweb.py:4822
 msgid "Include Full Name Only"
 msgstr "Csak a teljes nevet mutassa"
 
@@ -735,12 +739,12 @@ msgstr "Helyoldalak nyomtatása"
 
 #: DynamicWeb/dynamicweb.py:4033 DynamicWeb/dynamicweb.py:4886
 msgid "Whether to show pages for the places"
-msgstr "Legyenek-e a Hely oldalak jelenítve, vagy sem."
+msgstr "Legyenek-e hely oldalak jelenítve, vagy sem"
 
 #: DynamicWeb/dynamicweb.py:4061 DynamicWeb/dynamicweb.py:4921
 msgid "Choose your choice of map service for creating the Place Map Pages"
 msgstr ""
-"Válasszon egy térképszolgáltatót térkép létrehozásához a Helyek oldalon."
+"Válasszon egy térképszolgáltatót térkép létrehozásához a Helyek Oldalon"
 
 #: DynamicWeb/dynamicweb.py:4065 DynamicWeb/dynamicweb.py:4926
 msgid "Google map API key"
@@ -752,7 +756,7 @@ msgstr "A Google térképhez használt API kulcs"
 
 #: DynamicWeb/dynamicweb.py:4083 DynamicWeb/dynamicweb.py:4945
 msgid "Whether or not to include family pages"
-msgstr "Legyenek-e benne családi oldalak is."
+msgstr "Legyenek-e benne családi oldalak is"
 
 #: DynamicWeb/dynamicweb.py:4093 DynamicWeb/dynamicweb.py:4959
 msgid ""
@@ -929,7 +933,7 @@ msgstr "%(index)i egyéni oldal címe"
 #: DynamicWeb/dynamicweb.py:4249 DynamicWeb/dynamicweb.py:5217
 #, python-format
 msgid "Name for the custom page %(index)i"
-msgstr " %(index)i egyéni oldal neve"
+msgstr "%(index)i egyéni oldal neve"
 
 #: DynamicWeb/dynamicweb.py:4252 DynamicWeb/dynamicweb.py:5222
 #, python-format
@@ -969,3 +973,7 @@ msgstr "%(index)i oldal tartalma"
 #: DynamicWeb/dynamicweb.py:4285 DynamicWeb/dynamicweb.py:5266
 msgid "Contents of the page"
 msgstr "Az oldal tartalma"
+
+#: Themes/themes.py:140 Themes/themes.py:190 DynamicWeb/dynamicweb.py:5157
+msgid "Theme"
+msgstr "Téma"

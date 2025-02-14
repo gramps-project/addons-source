@@ -25,7 +25,7 @@ msgstr ""
 #: DataEntryGramplet/DataEntryGramplet.py:266
 #: DataEntryGramplet/DataEntryGramplet.py:167
 #: DataEntryGramplet/DataEntryGramplet.py:178
-#: DataEntryGramplet/DataEntryGramplet.py:315 DenominoViso/DenominoViso.py:1985
+#: DataEntryGramplet/DataEntryGramplet.py:315 DenominoViso/DenominoViso.py:2001
 msgid "in"
 msgstr "a"
 
@@ -100,15 +100,6 @@ msgstr "Descripció"
 #: DenominoViso/DenominoViso.py:1063 DenominoViso/DenominoViso.py:1261
 msgid "witnesses"
 msgstr "testimonis"
-
-#: DenominoViso/DenominoViso.py:363 DenominoViso/DenominoViso.py:2489
-#: ../gramps/plugins/export/exportpkg.py:213
-#: ../gramps/plugins/export/exportxml.py:151
-#: ../gramps/plugins/export/exportxml.py:175
-#: ../gramps/plugins/export/exportxml.py:196
-#, python-format
-msgid "Failure writing %s"
-msgstr "Error en escriure %s"
 
 #: DenominoViso/DenominoViso.py:755 DenominoViso/DenominoViso.py:769
 msgid "Unknown time direction"

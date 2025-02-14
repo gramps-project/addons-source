@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-08 17:11-0500\n"
-"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"PO-Revision-Date: 2025-02-09 22:37+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -26,14 +26,69 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.10-dev\n"
 
-#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:34 Form/form_us.xml.h:2085
-#: Form/form_us.xml.h:2122 Form/form_us.xml.h:2160 Form/form_us.xml.h:2198
-#: GraphView/graphview.gpr.py:4
-msgid "Ancestry"
-msgstr "Anor"
+#: SourcesCitationsReport/SourcesCitationsReport.py:335
+#: GraphView/graphview.py:3168 GraphView/graphview.py:3169
+#: GraphView/graphview.py:3181 GraphView/graphview.py:3182
+#, python-format
+msgid "%s "
+msgstr "%s "
+
+#: PluginManager/PluginManager.py:155 PluginManager/PluginManager.py:158
+#: GraphView/search_widget.py:400
+msgid "Search..."
+msgstr "Sök..."
+
+#: DynamicWeb//dynamicweb.py:2611 DynamicWeb/dynamicweb.py:3170
+#: GraphView/graphview.py:1095
+msgid "Zoom in"
+msgstr "Zooma in"
+
+#: DynamicWeb//dynamicweb.py:2612 DynamicWeb/dynamicweb.py:3171
+#: GraphView/graphview.py:1102
+msgid "Zoom out"
+msgstr "Zooma ut"
+
+#: DenominoViso/DenominoViso.py:1985 DenominoViso/DenominoViso.py:2001
+#: GraphView/graphview.py:968
+msgid "Search"
+msgstr "Sök"
+
+#: QuiltView/QuiltView.py:1500 GraphView/graphview.py:4048
+msgid "Set as home person"
+msgstr "Ställ in som huvudperson"
+
+#: QuiltView/QuiltView.py:1656 GraphView/graphview.py:4538
+#: GraphView/graphview.py:4584
+#, python-format
+msgid "Adding Tags to person (%s)"
+msgstr "Lägger till taggar till person (%s)"
+
+#: QuiltView/QuiltView.py:1661 GraphView/graphview.py:4543
+#: GraphView/graphview.py:4595
+#, python-format
+msgid "Adding Tags to family (%s)"
+msgstr "Lägger till taggar till familjen (%s)"
+
+#: LifeLineChartView/lifelinechartview.py:527 GraphView/graphview.py:1109
+msgid "Zoom to original"
+msgstr "Zooma till originalet"
+
+#: LifeLineChartView/lifelinechartview.py:534 GraphView/graphview.py:1116
+msgid "Zoom to best fit"
+msgstr "Zooma för att passa bäst"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:65
+#: EditExifMetadata/editexifmetadata.py:215 GraphView/graphview.py:3863
+msgid "Copy"
+msgstr "Kopiera"
 
 #: GraphView/graphview.gpr.py:3 GraphView/graphview.py:90
 #: GraphView/graphview.gpr.py:4 GraphView/graphview.gpr.py:14
 #: GraphView/graphview.py:189
 msgid "Graph View"
 msgstr "Diagramvy"
+
+#: NetworkChart/NetworkChart.py:1174 NetworkChart/NetworkChart.py:1188
+#: GraphView/graphview.py:3783
+msgid "Direct"
+msgstr "Direkt"

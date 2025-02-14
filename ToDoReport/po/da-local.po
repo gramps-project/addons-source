@@ -20,7 +20,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
 
-#: AncestorFill/AncestorFill.py:361 ToDoReport/TodoReport.py:525
+#: AncestorFill/AncestorFill.py:361 ToDoReport/TodoReport.py:903
 msgid "The style used for the title of the page."
 msgstr "Fontformat for sidens titel"
 
@@ -35,10 +35,6 @@ msgid ""
 msgstr ""
 "Danner en liste med alle de noter med et bestemt mærkat sammen med alle "
 "poster de henviser til, personen, familien, hændeser o.s.v."
-
-#: ToDoReport/TodoReport.py:91 ../gramps/plugins/textreport/tagreport.py:115
-msgid "You must first create a tag before running this report."
-msgstr "Du skal først oprette et mærkat før du laver denne rapport."
 
 #: ToDoReport/TodoReport.py:98 ToDoReport/TodoReport.py:526
 #: ToDoReport/TodoReport.py:107 ToDoReport/TodoReport.py:904

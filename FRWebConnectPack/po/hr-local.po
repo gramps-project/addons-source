@@ -20,18 +20,6 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 "X-Generator: Poedit 2.2.4\n"
 
-#: UKWebConnectPack/UKWebPack.py:35 SVWebconnectPack/SVWebPack.py:34
-msgid "FamilySearch.org"
-msgstr "FamilySearch.org"
-
-#: UKWebConnectPack/UKWebPack.py:38
-msgid "Hathi Trust Digital Library"
-msgstr "Hathi Trust digitalna biblioteka"
-
-#: UKWebConnectPack/UKWebPack.py:39
-msgid "Open Library"
-msgstr "Open Library"
-
 #: FRWebConnectPack/FRWebPack.gpr.py:10 FRWebConnectPack/FRWebPack.gpr.py:11
 msgid "FR Web Connect Pack"
 msgstr "FR Web Connect zbirka"

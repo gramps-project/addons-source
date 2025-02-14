@@ -328,11 +328,6 @@ msgstr "Centre de la longitude :"
 msgid "Change title into:"
 msgstr "Changer le titre en :"
 
-#: PlaceCompletion/placecompletion.glade.h:10
-#: ../gramps/gen/filters/rules/place/_hasplace.py:63
-msgid "City:"
-msgstr "Ville :"
-
 #: PlaceCompletion/placecompletion.glade.h:11
 #: PlaceCompletion/placecompletion.glade:664
 msgid "Convert lat/lon as:"
@@ -342,11 +337,6 @@ msgstr "Convertir lat/long en :"
 #: PlaceCompletion/placecompletion.glade:336
 msgid "Count_ry:"
 msgstr "_Pays :"
-
-#: PlaceCompletion/placecompletion.glade.h:13
-#: ../gramps/gen/filters/rules/place/_hasplace.py:66
-msgid "Country:"
-msgstr "Pays :"
 
 #: PlaceCompletion/placecompletion.glade.h:15
 #: PlaceCompletion/placecompletion.glade:820
@@ -409,12 +399,6 @@ msgstr "Sélectionner un fichier"
 #: PlaceCompletion/placecompletion.glade:148
 msgid "Selection of the Places you want to complete:"
 msgstr "Sélection des lieux à compléter :"
-
-# Utilisation d'un terme général (Code lieu) car le code postal ne sert à rien en généalogie.
-#: PlaceCompletion/placecompletion.glade.h:31
-#: ../gramps/gen/filters/rules/place/_hasplace.py:67
-msgid "ZIP/Postal Code:"
-msgstr "Code lieu :"
 
 #: PlaceCompletion/placecompletion.glade.h:32
 #: PlaceCompletion/placecompletion.glade:85

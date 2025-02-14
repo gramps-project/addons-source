@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-08 16:37+0100\n"
-"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"PO-Revision-Date: 2025-02-09 22:37+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -24,14 +24,24 @@ msgstr ""
 "X-Generator: Weblate 5.10-dev\n"
 
 #: DynamicWeb//dynamicweb.py:2611 DynamicWeb/dynamicweb.py:3170
-#: graphview.py:606
+#: GraphView/graphview.py:1095
 msgid "Zoom in"
 msgstr "Priblížiť"
 
 #: DynamicWeb//dynamicweb.py:2612 DynamicWeb/dynamicweb.py:3171
-#: graphview.py:613
+#: GraphView/graphview.py:1102
 msgid "Zoom out"
 msgstr "Oddialiť"
+
+#: DenominoViso/DenominoViso.py:1985 DenominoViso/DenominoViso.py:2001
+#: GraphView/graphview.py:968
+msgid "Search"
+msgstr "Hľadať"
+
+#: DeepConnectionsGramplet.py:69 EditExifMetadata/editexifmetadata.py:215
+#: GraphView/graphview.py:3863
+msgid "Copy"
+msgstr "Kopírovať"
 
 #: graphview.py:130 GraphView/graphview.gpr.py:4 GraphView/graphview.gpr.py:14
 #: GraphView/graphview.py:189
@@ -58,14 +68,6 @@ msgstr "Generácie potomkov"
 msgid "Ancestor generations"
 msgstr "Generácie predkov"
 
-#: graphview.py:458 LifeLineChartView/_dummy_translation_string_po.py:98
-msgid "none"
-msgstr "žiadne"
-
-#: graphview.py:478 ../gramps/gui/configure.py:983
-msgid "Colors"
-msgstr "Farby"
-
 #: graphview.py:490 GraphView/graphview.py:921 GraphView/graphview.py:3770
 msgid "Show animation"
 msgstr "Zobraziť animáciu"
@@ -83,10 +85,12 @@ msgid "Select a dot file name"
 msgstr "Vyberte názov dot súboru"
 
 #: graphview.py:620 LifeLineChartView/lifelinechartview.py:527
+#: GraphView/graphview.py:1109
 msgid "Zoom to original"
 msgstr "Pôvodné priblíženie"
 
 #: graphview.py:627 LifeLineChartView/lifelinechartview.py:534
+#: GraphView/graphview.py:1116
 msgid "Zoom to best fit"
 msgstr "Prispôsobiť priblíženie obsahu"
 

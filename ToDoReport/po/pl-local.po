@@ -36,10 +36,6 @@ msgstr ""
 "Tworzy listę wszystkich notatek z danym tagiem wraz z rekordami, do których "
 "się on odnosi, osobą, rodziną, zdarzeniem itp."
 
-#: ToDoReport//TodoReport.py:91 ../gramps/plugins/textreport/tagreport.py:115
-msgid "You must first create a tag before running this report."
-msgstr "Przed uruchomieniem tego raportu musisz najpierw utworzyć tag."
-
 #: ToDoReport//TodoReport.py:98 ToDoReport//TodoReport.py:526
 #: ToDoReport/TodoReport.py:107 ToDoReport/TodoReport.py:904
 msgid "TR-Title"
@@ -164,6 +160,7 @@ msgid "Group notes by Family, Person, Place, etc."
 msgstr "Grupuj notatki według rodziny, osoby, miejsca itp."
 
 #: ToDoReport//TodoReport.py:525 AncestorFill/AncestorFill.py:361
+#: ToDoReport/TodoReport.py:903
 msgid "The style used for the title of the page."
 msgstr "Styl używany do tytułu strony."
 

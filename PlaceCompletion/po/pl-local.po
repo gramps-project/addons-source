@@ -268,11 +268,6 @@ msgstr "Centruj długość geogr.:"
 msgid "Change title into:"
 msgstr "Zmień tytuł na:"
 
-#: PlaceCompletion/placecompletion.glade.h:12
-#: ../gramps/gen/filters/rules/place/_hasplace.py:63
-msgid "City:"
-msgstr "Miasto:"
-
 #: PlaceCompletion/placecompletion.glade.h:13
 #: PlaceCompletion/placecompletion.glade:664
 msgid "Convert lat/lon as:"
@@ -281,11 +276,6 @@ msgstr "Konwertuj dł./szer. jako:"
 #: PlaceCompletion/placecompletion.glade.h:14
 #: PlaceCompletion/placecompletion.glade:336
 msgid "Count_ry:"
-msgstr "Kraj:"
-
-#: PlaceCompletion/placecompletion.glade.h:15
-#: ../gramps/gen/filters/rules/place/_hasplace.py:66
-msgid "Country:"
 msgstr "Kraj:"
 
 #: PlaceCompletion/placecompletion.glade.h:17
@@ -322,11 +312,6 @@ msgstr "Szukaj w:"
 #: PlaceCompletion/placecompletion.glade:566
 msgid "Select A File"
 msgstr "Wybierz plik"
-
-#: PlaceCompletion/placecompletion.glade.h:28
-#: ../gramps/gen/filters/rules/place/_hasplace.py:67
-msgid "ZIP/Postal Code:"
-msgstr "Kod pocztowy:"
 
 #: PlaceCompletion/placecompletion.glade.h:29
 #: PlaceCompletion/placecompletion.glade:85

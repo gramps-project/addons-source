@@ -25,7 +25,7 @@ msgstr ""
 "X-Poedit-SearchPath-0: ~/.poedit/a\n"
 
 #: DenominoViso/DenominoViso.py:1985 DenominoViso/DenominoViso.py:2001
-#: GraphView/graphview.py:849
+#: GraphView/graphview.py:968
 msgid "Search"
 msgstr "Szukaj"
 
@@ -156,18 +156,22 @@ msgid "Select a dot file name"
 msgstr "Wybierz nazwę pliku dot"
 
 #: GraphView/graphview.py:975 DynamicWeb/dynamicweb.py:3170
+#: GraphView/graphview.py:1095
 msgid "Zoom in"
 msgstr "Przybliż"
 
 #: GraphView/graphview.py:982 DynamicWeb/dynamicweb.py:3171
+#: GraphView/graphview.py:1102
 msgid "Zoom out"
 msgstr "Oddal"
 
 #: GraphView/graphview.py:989 LifeLineChartView/lifelinechartview.py:527
+#: GraphView/graphview.py:1109
 msgid "Zoom to original"
 msgstr "Powiększ do oryginału"
 
 #: GraphView/graphview.py:996 LifeLineChartView/lifelinechartview.py:534
+#: GraphView/graphview.py:1116
 msgid "Zoom to best fit"
 msgstr "Powiększ do najlepszego dopasowania"
 
@@ -292,6 +296,8 @@ msgstr "Obraz po lewej stronie"
 #: GraphView/graphview.py:3007 GraphView/graphview.py:3008
 #: GraphView/graphview.py:3020 GraphView/graphview.py:3021
 #: SourcesCitationsReport/SourcesCitationsReport.py:335
+#: GraphView/graphview.py:3168 GraphView/graphview.py:3169
+#: GraphView/graphview.py:3181 GraphView/graphview.py:3182
 #, python-format
 msgid "%s "
 msgstr "%s "
@@ -317,6 +323,7 @@ msgid "Ortho"
 msgstr "Prostopadłe"
 
 #: GraphView/graphview.py:3659 EditExifMetadata/editexifmetadata.py:215
+#: GraphView/graphview.py:3863
 msgid "Copy"
 msgstr "Kopiuj"
 
@@ -333,6 +340,7 @@ msgid "Add parents"
 msgstr "Dodaj rodziców"
 
 #: GraphView/graphview.py:3820 QuiltView/QuiltView.py:1500
+#: GraphView/graphview.py:4048
 msgid "Set as home person"
 msgstr "Ustaw jako osobę główną"
 
@@ -365,12 +373,14 @@ msgid "About Graph View"
 msgstr "O Graph View"
 
 # #: GraphView/graphview.py:4248
-#: QuiltView/QuiltView.py:1656
+#: QuiltView/QuiltView.py:1656 GraphView/graphview.py:4538
+#: GraphView/graphview.py:4584
 #, python-format
 msgid "Adding Tags to person (%s)"
 msgstr "Dodawanie tagów do osoby (%s)"
 
 #: GraphView/graphview.py:4253 QuiltView/QuiltView.py:1661
+#: GraphView/graphview.py:4543 GraphView/graphview.py:4595
 #, python-format
 msgid "Adding Tags to family (%s)"
 msgstr "Dodawanie tagów do rodziny (%s)"
@@ -415,6 +425,7 @@ msgstr ""
 "Użyj <Ctrl+F> aby aktywować pozycję wyszukiwania."
 
 #: GraphView/search_widget.py:384 PluginManager/PluginManager.py:158
+#: GraphView/search_widget.py:400
 msgid "Search..."
 msgstr "Szukaj..."
 
@@ -422,8 +433,3 @@ msgstr "Szukaj..."
 #, python-format
 msgid "<b>%s:</b>"
 msgstr "<b>%s:</b>"
-
-#: GraphView/search_widget.py:671
-#: ../gramps/plugins/gramplet/relativegramplet.py:116
-msgid "Parents:"
-msgstr "Rodzice:"

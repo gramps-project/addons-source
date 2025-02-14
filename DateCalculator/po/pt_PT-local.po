@@ -18,6 +18,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.10-dev\n"
 
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:69
+#: EditExifMetadata/editexifmetadata.py:215
+#: DateCalculator/DateCalculator.py:107
+msgid "Copy"
+msgstr "Copiar"
+
 #: DateCalculator/DateCalculator.gpr.py:21
 #: DateCalculator/DateCalculator.gpr.py:31
 #: DateCalculator/DateCalculator.gpr.py:22

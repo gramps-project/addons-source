@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-08 17:11-0500\n"
-"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"PO-Revision-Date: 2025-02-09 22:37+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -268,11 +268,6 @@ msgstr "Centrum longitud:"
 msgid "Change title into:"
 msgstr "Ändra titel till:"
 
-#: PlaceCompletion/placecompletion.glade.h:12
-#: ../gramps/gen/filters/rules/place/_hasplace.py:63
-msgid "City:"
-msgstr "Stad/Kommun:"
-
 #: PlaceCompletion/placecompletion.glade.h:13
 #: PlaceCompletion/placecompletion.glade:664
 msgid "Convert lat/lon as:"
@@ -282,11 +277,6 @@ msgstr "Omvandla lat/lon som:"
 #: PlaceCompletion/placecompletion.glade:336
 msgid "Count_ry:"
 msgstr "La_nd:"
-
-#: PlaceCompletion/placecompletion.glade.h:15
-#: ../gramps/gen/filters/rules/place/_hasplace.py:66
-msgid "Country:"
-msgstr "Land:"
 
 #: PlaceCompletion/placecompletion.glade.h:17
 #: PlaceCompletion/placecompletion.glade:460
@@ -322,11 +312,6 @@ msgstr "Sök i:"
 #: PlaceCompletion/placecompletion.glade:566
 msgid "Select A File"
 msgstr "Välj fil"
-
-#: PlaceCompletion/placecompletion.glade.h:28
-#: ../gramps/gen/filters/rules/place/_hasplace.py:67
-msgid "ZIP/Postal Code:"
-msgstr "Postnummer:"
 
 #: PlaceCompletion/placecompletion.glade.h:29
 #: PlaceCompletion/placecompletion.glade:85

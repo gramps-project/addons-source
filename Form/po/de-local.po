@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-02 22:39+0200\n"
-"PO-Revision-Date: 2025-02-09 06:44+0000\n"
+"PO-Revision-Date: 2025-02-09 22:37+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -33,54 +33,51 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.10-dev\n"
 
-#: AncestorFill/AncestorFill.py:360 AncestorFill/AncestorFill.py:361
-msgid "The style used for the title of the page."
-msgstr "Der Stil, der für den Seitentitel verwendet wird."
-
 #: CombinedView/combinedview.py:1507 CombinedView/combinedview.py:1572
-#: CombinedView/eventpage.py:202 CombinedView/eventpage.py:267 Form/form.py:60
+#: CombinedView/eventpage.py:202 CombinedView/eventpage.py:267 Form/form.py:62
 msgid "Order"
 msgstr "Reihenfolge"
 
 #: DataEntryGramplet/DataEntryGramplet.py:167
 #: DataEntryGramplet/DataEntryGramplet.py:178
-#: DataEntryGramplet/DataEntryGramplet.py:315 Form/form_us.xml.h:2171
+#: DataEntryGramplet/DataEntryGramplet.py:315 Form/form_us.xml.h:2259
 msgid "in"
 msgstr "in"
 
-#: DenominoViso/DenominoViso.py:1754 Form/form_us.xml.h:2182
-#: Form/form_us.xml.h:2200 Form/form_us.xml.h:2211 Form/form_us.xml.h:2229
-#: Form/form_us.xml.h:2239
+#: DenominoViso/DenominoViso.py:1754 Form/form_us.xml.h:2270
+#: Form/form_us.xml.h:2288 Form/form_us.xml.h:2299 Form/form_us.xml.h:2317
+#: Form/form_us.xml.h:2327
 msgid "of"
 msgstr "von"
 
-#: RelID/relation_tab.py:111 Form/form_fr.xml.h:5 Form/form_fr.xml.h:13
-#: Form/form_fr.xml.h:21 Form/form_fr.xml.h:29 Form/form_fr.xml.h:36
-#: Form/form_fr.xml.h:121 Form/form_fr.xml.h:128 Form/form_fr.xml.h:135
-#: Form/form_fr.xml.h:142 Form/form_fr.xml.h:152 Form/form_fr.xml.h:161
-#: Form/form_fr.xml.h:169 Form/form_fr.xml.h:178 Form/form_fr.xml.h:187
-#: Form/form_fr.xml.h:196 Form/form_fr.xml.h:205 Form/form_fr.xml.h:216
-#: Form/form_dk.xml.h:14 Form/form_dk.xml.h:31 Form/form_dk.xml.h:48
-#: Form/form_dk.xml.h:65 Form/form_dk.xml.h:82 Form/form_dk.xml.h:99
-#: Form/form_dk.xml.h:118 Form/form_dk.xml.h:137 Form/form_dk.xml.h:156
-#: Form/form_dk.xml.h:177 Form/form_dk.xml.h:200 Form/form_dk.xml.h:221
-#: Form/form_dk.xml.h:242 Form/form_dk.xml.h:270 Form/form_dk.xml.h:305
-#: Form/form_dk.xml.h:331 Form/form_dk.xml.h:347 Form/form_dk.xml.h:379
-#: Form/form_dk.xml.h:399 Form/form_dk.xml.h:421 Form/form_dk.xml.h:441
-#: Form/form_ca.xml.h:417 Form/form_ca.xml.h:470 Form/form_ca.xml.h:628
-#: Form/form_ca.xml.h:681 Form/form_ca.xml.h:769 Form/form_ca.xml.h:820
-#: Form/form_gb.xml.h:65 Form/form_gb.xml.h:83 Form/form_gb.xml.h:102
-#: Form/form_gb.xml.h:123 Form/form_gb.xml.h:145 Form/form_gb.xml.h:170
-#: Form/form_gb.xml.h:191 Form/form_gb.xml.h:244 Form/form_gb.xml.h:264
-#: Form/form_gb.xml.h:277 Form/form_gb.xml.h:332 Form/form_gb.xml.h:359
-#: Form/form_gb.xml.h:387 Form/form_gb.xml.h:419 Form/form_gb.xml.h:458
-#: Form/form_gb.xml.h:480 Form/form_gb.xml.h:509 Form/form_us.xml.h:1339
-#: Form/form_us.xml.h:1877 Form/form_us.xml.h:1896 Form/form_us.xml.h:1916
+#: RelID/relation_tab.py:111 Form/form_ca.xml.h:417 Form/form_ca.xml.h:470
+#: Form/form_ca.xml.h:628 Form/form_ca.xml.h:681 Form/form_ca.xml.h:769
+#: Form/form_ca.xml.h:820 Form/form_us.xml.h:1427 Form/form_us.xml.h:1965
+#: Form/form_us.xml.h:1984 Form/form_us.xml.h:2004 Form/form_dk.xml.h:14
+#: Form/form_dk.xml.h:31 Form/form_dk.xml.h:48 Form/form_dk.xml.h:65
+#: Form/form_dk.xml.h:82 Form/form_dk.xml.h:99 Form/form_dk.xml.h:118
+#: Form/form_dk.xml.h:137 Form/form_dk.xml.h:156 Form/form_dk.xml.h:177
+#: Form/form_dk.xml.h:200 Form/form_dk.xml.h:221 Form/form_dk.xml.h:242
+#: Form/form_dk.xml.h:270 Form/form_dk.xml.h:305 Form/form_dk.xml.h:331
+#: Form/form_dk.xml.h:347 Form/form_dk.xml.h:379 Form/form_dk.xml.h:399
+#: Form/form_dk.xml.h:421 Form/form_dk.xml.h:441 Form/form_fr.xml.h:5
+#: Form/form_fr.xml.h:13 Form/form_fr.xml.h:21 Form/form_fr.xml.h:29
+#: Form/form_fr.xml.h:36 Form/form_fr.xml.h:121 Form/form_fr.xml.h:128
+#: Form/form_fr.xml.h:135 Form/form_fr.xml.h:142 Form/form_fr.xml.h:152
+#: Form/form_fr.xml.h:161 Form/form_fr.xml.h:169 Form/form_fr.xml.h:178
+#: Form/form_fr.xml.h:187 Form/form_fr.xml.h:196 Form/form_fr.xml.h:205
+#: Form/form_fr.xml.h:216 Form/form_gb.xml.h:76 Form/form_gb.xml.h:94
+#: Form/form_gb.xml.h:113 Form/form_gb.xml.h:134 Form/form_gb.xml.h:156
+#: Form/form_gb.xml.h:181 Form/form_gb.xml.h:202 Form/form_gb.xml.h:236
+#: Form/form_gb.xml.h:285 Form/form_gb.xml.h:312 Form/form_gb.xml.h:335
+#: Form/form_gb.xml.h:371 Form/form_gb.xml.h:432 Form/form_gb.xml.h:459
+#: Form/form_gb.xml.h:487 Form/form_gb.xml.h:519 Form/form_gb.xml.h:558
+#: Form/form_gb.xml.h:580 Form/form_gb.xml.h:609
 msgid "Relation"
 msgstr "Beziehung"
 
-#: RelID/relation_tab.py:116 Form/form_us.xml.h:649 Form/form_us.xml.h:925
-#: Form/form_us.xml.h:2203 Form/form_us.xml.h:2232
+#: RelID/relation_tab.py:116 Form/form_us.xml.h:649 Form/form_us.xml.h:1013
+#: Form/form_us.xml.h:2291 Form/form_us.xml.h:2320
 msgid "Rank"
 msgstr "Rang"
 
@@ -447,7 +444,7 @@ msgstr "Jahr in der Gemeinde geblieben"
 
 #: Form/form_dk.xml.h:328
 msgid "Hvilket aar taget ophold i sognet"
-msgstr " hat sich in welchem Jahr in der Gemeinde niedergelassen?"
+msgstr "Welches Jahr des Wohnsitzes in der Gemeinde"
 
 #: Form/form_dk.xml.h:329
 msgid "Previous Residence"
@@ -3398,11 +3395,11 @@ msgstr "NACHNAMEN und ANDERE NAMEN."
 
 #: Form/form_gb.xml.h:224 Form/form_gb.xml.h:263
 msgid "OVSPI"
-msgstr ""
+msgstr "OVSPI"
 
 #: Form/form_gb.xml.h:225 Form/form_gb.xml.h:264
 msgid "O, V, S, P or I"
-msgstr ""
+msgstr "O, V, S, P oder I"
 
 #: Form/form_gb.xml.h:227 Form/form_gb.xml.h:266
 msgid "M or F"
@@ -3688,7 +3685,7 @@ msgstr "Kinder, die lebend geboren wurden in gegenwärtiger Ehe"
 #: Form/form_us.xml.h:743 Form/form_us.xml.h:781 Form/form_us.xml.h:824
 #: Form/form_us.xml.h:1004 Form/form_us.xml.h:885 Form/form_us.xml.h:1092
 msgid "NARA publication"
-msgstr ""
+msgstr "NARA-Publikation"
 
 #: Form/form_us.xml.h:2 Form/form_us.xml.h:15 Form/form_us.xml.h:36
 #: Form/form_us.xml.h:57 Form/form_us.xml.h:97 Form/form_us.xml.h:166
@@ -7930,11 +7927,11 @@ msgstr ""
 
 #: Form/form_us.xml.h:1955 Form/form_us.xml.h:2043
 msgid "T."
-msgstr ""
+msgstr "T."
 
 #: Form/form_us.xml.h:1956 Form/form_us.xml.h:2044
 msgid "R."
-msgstr ""
+msgstr "R."
 
 #: Form/form_us.xml.h:1959 Form/form_us.xml.h:2432 Form/form_us.xml.h:2047
 #: Form/form_us.xml.h:2520
@@ -8596,11 +8593,3 @@ msgstr "Branche/Arbeitgeber"
 #: Form/form_us.xml.h:2512 Form/form_us.xml.h:2600
 msgid "Residents Status"
 msgstr "Einwohner Status"
-
-#: ../gramps/gen/lib/eventtype.py:210
-msgid "Census"
-msgstr "Volkszählung"
-
-#: FamilyTree/FamilyTree.py:1162
-msgid "The style used for names."
-msgstr "Stil für Namen"

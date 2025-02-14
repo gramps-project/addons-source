@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-08 16:37+0100\n"
-"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"PO-Revision-Date: 2025-02-09 22:37+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -24,30 +24,20 @@ msgstr ""
 "X-Generator: Weblate 5.10-dev\n"
 
 #: DataEntryGramplet/DataEntryGramplet.py:55 FilterRules/activepersonrule.py:45
-#: NoteGramplet/NoteGramplet.py:59
+#: NoteGramplet/NoteGramplet.py:65
 msgid "Active person"
 msgstr "Aktívna osoba"
 
 #: DataEntryGramplet/DataEntryGramplet.py:69
-#: DataEntryGramplet/DataEntryGramplet.py:89 NoteGramplet/NoteGramplet.py:105
+#: DataEntryGramplet/DataEntryGramplet.py:89 NoteGramplet/NoteGramplet.py:111
 msgid "Save"
 msgstr "Uložiť"
 
 #: DataEntryGramplet/DataEntryGramplet.py:72
-#: DataEntryGramplet/DataEntryGramplet.py:92 NoteGramplet/NoteGramplet.py:108
+#: DataEntryGramplet/DataEntryGramplet.py:92 NoteGramplet/NoteGramplet.py:114
 msgid "Abandon"
 msgstr "Zrušiť"
 
 #: NoteGramplet/NoteGramplet.gpr.py:3 NoteGramplet/NoteGramplet.gpr.py:4
 msgid "Note Gramplet"
 msgstr "Gramplet Poznámka"
-
-#: NoteGramplet/NoteGramplet.py:252 ../gramps/gui/editors/editnote.py:373
-msgid "Add Note"
-msgstr "Pridať poznámku"
-
-#: NoteGramplet/NoteGramplet.py:257 ../gramps/gui/editors/editnote.py:324
-#: ../gramps/gui/editors/editnote.py:377
-#: ../gramps/gui/editors/objectentries.py:589
-msgid "Edit Note"
-msgstr "Editovať poznámku"

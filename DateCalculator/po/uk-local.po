@@ -21,6 +21,11 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
+#: EditExifMetadata/editexifmetadata.py:215
+#: DateCalculator/DateCalculator.py:107
+msgid "Copy"
+msgstr "Копіювати"
+
 #: DateCalculator/DateCalculator.gpr.py:21
 #: DateCalculator/DateCalculator.gpr.py:31
 #: DateCalculator/DateCalculator.gpr.py:22

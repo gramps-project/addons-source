@@ -407,3 +407,8 @@ msgstr "Все данные Exif были удалены из данного и�
 #: EditExifMetadata/editexifmetadata.py:1470
 msgid "There was an error in stripping the Exif metadata from this image..."
 msgstr "Ошибка при удалении метаданных Exif данного изображения..."
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:69
+#: EditExifMetadata/editexifmetadata.py:215
+msgid "Copy"
+msgstr "Копировать"

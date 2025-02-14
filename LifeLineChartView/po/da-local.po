@@ -510,31 +510,6 @@ msgstr "Skjul søskende"
 msgid "Show ancestors above "
 msgstr "Vis aner ovenfor "
 
-#: LifeLineChartView/lifelinechartview.gpr.py:217
-#: LifeLineChartView/lifelinechartview.gpr.py:224
-#: ../gramps/gen/plug/utils.py:349 ../gramps/gen/plug/utils.py:356
-#, python-format
-msgid "Unable to open '%s'"
-msgstr "Kan ikke åbne '%s'"
-
-#: LifeLineChartView/lifelinechartview.gpr.py:233
-#: ../gramps/gen/plug/utils.py:363
-#, python-format
-msgid "Error in reading '%s'"
-msgstr "Fejl ved læsning af '%s'"
-
-#: LifeLineChartView/lifelinechartview.gpr.py:248
-#: ../gramps/cli/arghandler.py:403 ../gramps/gen/plug/utils.py:374
-#, python-format
-msgid "Error: cannot open '%s'"
-msgstr "Fejl: Kan ikke åbne '%s'"
-
-#: LifeLineChartView/lifelinechartview.gpr.py:252
-#: ../gramps/gen/plug/utils.py:378
-#, python-format
-msgid "Error: unknown file type: '%s'"
-msgstr "Fejl: ukendt filtype: '%s'"
-
 #: LifeLineChartView/lifelinechartview.gpr.py:318
 #: LifeLineChartView/lifelinechartview.gpr.py:24
 msgid "Life Line Ancestor Chart"

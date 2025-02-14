@@ -40,19 +40,20 @@ msgstr ""
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:78
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:83
-#: SetAttributeTool/SetAttributeTool.py:72
+#: SetAttributeTool/SetAttributeTool.py:71
 msgid "Select filter to restrict people"
 msgstr "Sélectionne un filtre pour restreindre les individus"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:232
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:237
-#: SetAttributeTool/SetAttributeTool.py:126
+#: SetAttributeTool/SetAttributeTool.py:151
+#: SetAttributeTool/SetAttributeTool.py:193
 msgid "Processing...\n"
 msgstr "Traitement en cours...\n"
 
 #: AttachSourceTool/AttachSourceTool.py:190
 #: AttachSourceTool/AttachSourceTool.py:197
-#: SetAttributeTool/SetAttributeTool.py:181
+#: SetAttributeTool/SetAttributeTool.py:226
 msgid "Done!\n"
 msgstr "Terminé !\n"
 
@@ -105,7 +106,3 @@ msgid ""
 msgstr ""
 "\n"
 "A défini %d attributs '%s' à '%s'\n"
-
-#: ../gramps/gen/plug/_pluginreg.py:71 SetAttributeTool/SetAttributeTool.py:194
-msgid "Beta"
-msgstr "Beta"

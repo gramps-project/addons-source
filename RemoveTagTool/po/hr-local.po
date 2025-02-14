@@ -20,24 +20,21 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 "X-Generator: Poedit 2.2.4\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:83
-msgid "Select filter to restrict people"
-msgstr "Odaberi filtar za ograničavanje osoba"
-
 #: EventDescriptionEditor/EventDescriptionEditor.py:91
 #: EventDescriptionEditor/EventDescriptionEditor.py:105
-#: RemoveTagTool/RemoveTagTool.py:264
+#: RemoveTagTool/RemoveTagTool.py:271
 msgid "INFO"
 msgstr "INFORMACIJE"
 
-#: QuiltView/QuiltView.py:1939 RemoveTagTool/RemoveTagTool.py:82
-#: RemoveTagTool/RemoveTagTool.py:90 RemoveTagTool/RemoveTagTool.py:98
+#: DynamicWeb//dynamicweb.py:2542 DynamicWeb/dynamicweb.py:3052
+#: RemoveTagTool/RemoveTagTool.py:124
+msgid "Persons"
+msgstr "Osobe"
+
+#: QuiltView/QuiltView.py:1939 RemoveTagTool/RemoveTagTool.py:89
+#: RemoveTagTool/RemoveTagTool.py:97 RemoveTagTool/RemoveTagTool.py:105
 msgid "General options"
 msgstr "Opći opcije"
-
-#: PlaceCompletion/PlaceCompletion.py:1332
-msgid "All Places"
-msgstr "Sva mjesta"
 
 #: RemoveTagTool/RemoveTagTool.gpr.py:24 RemoveTagTool/RemoveTagTool.py:179
 #: RemoveTagTool/RemoveTagTool.py:239 RemoveTagTool/RemoveTagTool.gpr.py:25

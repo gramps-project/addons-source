@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-08 17:11-0500\n"
-"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"PO-Revision-Date: 2025-02-09 22:37+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -27,7 +27,7 @@ msgstr ""
 "X-Generator: Weblate 5.10-dev\n"
 
 #: AncestorFill/AncestorFill.py:419 AncestorFill/AncestorFill.py:361
-#: ToDoReport//TodoReport.py:525
+#: ToDoReport/TodoReport.py:903
 msgid "The style used for the title of the page."
 msgstr "Mall för rapporttitel."
 
@@ -42,10 +42,6 @@ msgid ""
 msgstr ""
 "Ger en lista över alla anteckningar med en given tagg tillsammans med poster "
 "som den refererar till, Person, Familj, Händelse, etc."
-
-#: ToDoReport//TodoReport.py:91 ../gramps/plugins/textreport/tagreport.py:115
-msgid "You must first create a tag before running this report."
-msgstr "Du måste först skapa en tagg innan du kör denna rapport."
 
 #: ToDoReport//TodoReport.py:98 ToDoReport//TodoReport.py:526
 #: ToDoReport/TodoReport.py:107 ToDoReport/TodoReport.py:904

@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-02 22:39+0200\n"
-"PO-Revision-Date: 2025-02-09 06:44+0000\n"
+"PO-Revision-Date: 2025-02-09 22:37+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -35,67 +35,59 @@ msgstr ""
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:326
 #: SourcesCitationsReport/SourcesCitationsReport.py:335
-#: GraphView/graphview.py:2827 GraphView/graphview.py:2828
-#: GraphView/graphview.py:2840 GraphView/graphview.py:2841
+#: GraphView/graphview.py:3168 GraphView/graphview.py:3169
+#: GraphView/graphview.py:3181 GraphView/graphview.py:3182
 #, python-format
 msgid "%s "
 msgstr "%s "
 
 #: PluginManager/PluginManager.py:155 PluginManager/PluginManager.py:158
-#: GraphView/search_widget.py:444
+#: GraphView/search_widget.py:400
 msgid "Search..."
 msgstr "Suchen …"
 
 #: DynamicWeb/dynamicweb.py:2607 DynamicWeb/dynamicweb.py:3170
-#: GraphView/graphview.py:867
+#: GraphView/graphview.py:1095
 msgid "Zoom in"
 msgstr "Hineinzoomen"
 
 #: DynamicWeb/dynamicweb.py:2608 DynamicWeb/dynamicweb.py:3171
-#: GraphView/graphview.py:874
+#: GraphView/graphview.py:1102
 msgid "Zoom out"
 msgstr "Herauszoomen"
 
-#: DenominoViso/DenominoViso.py:2001 GraphView/graphview.py:741
+#: DenominoViso/DenominoViso.py:2001 GraphView/graphview.py:968
 msgid "Search"
 msgstr "Suche"
 
-#: QuiltView/QuiltView.py:1191 QuiltView/QuiltView.py:1320
-msgid "Edit tags"
-msgstr "Markierungen bearbeiten"
-
-#: QuiltView/QuiltView.py:1500 GraphView/graphview.py:3640
+#: QuiltView/QuiltView.py:1500 GraphView/graphview.py:4048
 msgid "Set as home person"
 msgstr "Als Hauptperson setzen"
 
-#: QuiltView/QuiltView.py:1656 GraphView/graphview.py:4068
+#: QuiltView/QuiltView.py:1656 GraphView/graphview.py:4538
+#: GraphView/graphview.py:4584
 #, python-format
 msgid "Adding Tags to person (%s)"
 msgstr "Markierungen zu Person (%s) hinzufügen"
 
-#: QuiltView/QuiltView.py:1661 GraphView/graphview.py:4073
+#: QuiltView/QuiltView.py:1661 GraphView/graphview.py:4543
+#: GraphView/graphview.py:4595
 #, python-format
 msgid "Adding Tags to family (%s)"
 msgstr "Markierungen zu Familie (%s) hinzufügen"
 
 #: LifeLineChartView//lifelinechartview.py:527
-#: LifeLineChartView/lifelinechartview.py:527 GraphView/graphview.py:881
+#: LifeLineChartView/lifelinechartview.py:527 GraphView/graphview.py:1109
 msgid "Zoom to original"
 msgstr "Auf original Größe zoomen"
 
 #: LifeLineChartView//lifelinechartview.py:534
-#: LifeLineChartView/lifelinechartview.py:534 GraphView/graphview.py:888
+#: LifeLineChartView/lifelinechartview.py:534 GraphView/graphview.py:1116
 msgid "Zoom to best fit"
 msgstr "Zoom auf die beste Größte"
 
-#: Form/form_us.xml.h:1997 Form/form_us.xml.h:2034 Form/form_us.xml.h:2072
-#: Form/form_us.xml.h:2110 Form/form_us.xml.h:2085 Form/form_us.xml.h:2122
-#: Form/form_us.xml.h:2160 Form/form_us.xml.h:2198
-msgid "Ancestry"
-msgstr "Vorfahren"
-
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:69
-#: EditExifMetadata/editexifmetadata.py:215 GraphView/graphview.py:3479
+#: EditExifMetadata/editexifmetadata.py:215 GraphView/graphview.py:3863
 msgid "Copy"
 msgstr "Kopieren"
 
@@ -399,12 +391,3 @@ msgstr ""
 #, python-format
 msgid "<b>%s:</b>"
 msgstr "<b>%s:</b>"
-
-#: GraphView/search_widget.py:716
-#: ../gramps/plugins/gramplet/relativegramplet.py:116
-msgid "Parents:"
-msgstr "Eltern:"
-
-#: ../gramps/gui/configure.py:983
-msgid "Colors"
-msgstr "Farben"

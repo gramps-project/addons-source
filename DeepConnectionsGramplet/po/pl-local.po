@@ -89,3 +89,8 @@ msgid ""
 msgstr ""
 "\n"
 "Wyszukiwanie zakończone. %d relacji znaleziono."
+
+#: GraphView/graphview.py:3659 EditExifMetadata/editexifmetadata.py:215
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:69
+msgid "Copy"
+msgstr "Kopiuj"

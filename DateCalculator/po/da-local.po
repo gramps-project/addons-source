@@ -20,6 +20,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
 
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:69
+#: EditExifMetadata/editexifmetadata.py:215
+#: DateCalculator/DateCalculator.py:107
+msgid "Copy"
+msgstr "Kopier"
+
 #: DateCalculator/DateCalculator.gpr.py:21
 #: DateCalculator/DateCalculator.gpr.py:31
 #: DateCalculator/DateCalculator.gpr.py:22

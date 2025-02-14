@@ -31,46 +31,39 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: QuiltView/QuiltView.py:358 ../gramps/plugins/lib/libpersonview.py:275
-#: ../gramps/plugins/view/pedigreeview.py:724
-#: ../gramps/plugins/view/relview.py:411
-#: HtreePedigreeView/HtreePedigreeView.py:697
-msgid "Person Filter Editor"
-msgstr "Редактор фильтров людей"
-
 #: TimelinePedigreeView/TimelinePedigreeView.py:79
 #: TimelinePedigreeView/TimelinePedigreeView.py:82
-#: HtreePedigreeView/HtreePedigreeView.py:83
+#: HtreePedigreeView/HtreePedigreeView.py:93
 msgid "short for born|b."
 msgstr "р."
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:80
 #: TimelinePedigreeView/TimelinePedigreeView.py:83
-#: HtreePedigreeView/HtreePedigreeView.py:84
+#: HtreePedigreeView/HtreePedigreeView.py:94
 msgid "short for died|d."
 msgstr "у."
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:81
 #: TimelinePedigreeView/TimelinePedigreeView.py:84
-#: HtreePedigreeView/HtreePedigreeView.py:85
+#: HtreePedigreeView/HtreePedigreeView.py:95
 msgid "short for baptized|bap."
 msgstr "крещ."
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:82
 #: TimelinePedigreeView/TimelinePedigreeView.py:85
-#: HtreePedigreeView/HtreePedigreeView.py:86
+#: HtreePedigreeView/HtreePedigreeView.py:96
 msgid "short for christened|chr."
 msgstr "прин. хр."
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:83
 #: TimelinePedigreeView/TimelinePedigreeView.py:86
-#: HtreePedigreeView/HtreePedigreeView.py:87
+#: HtreePedigreeView/HtreePedigreeView.py:97
 msgid "short for buried|bur."
 msgstr "похор."
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:84
 #: TimelinePedigreeView/TimelinePedigreeView.py:87
-#: HtreePedigreeView/HtreePedigreeView.py:88
+#: HtreePedigreeView/HtreePedigreeView.py:98
 msgid "short for cremated|crem."
 msgstr "крем."
 

@@ -20,10 +20,6 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 "X-Generator: Poedit 2.2.4\n"
 
-#: GeoAncestor/GeoAncestor.gpr.py:72 ../gramps/plugins/view/geography.gpr.py:74
-msgid "OsmGpsMap module not loaded."
-msgstr "OsmGpsMap modul nije učitan."
-
 #: GeoAncestor/GeoAncestor.gpr.py:87 GeoAncestor/GeoAncestor.gpr.py:31
 #: GeoAncestor/GeoAncestor.gpr.py:41
 msgid "Ancestors map"

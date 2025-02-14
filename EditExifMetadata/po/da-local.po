@@ -400,3 +400,8 @@ msgstr "Alle Exif-metadata er blevet slettet fra dette billede ..."
 #: EditExifMetadata/editexifmetadata.py:1470
 msgid "There was an error in stripping the Exif metadata from this image..."
 msgstr "Der opstod en fejl ved sletning af Exif-metadata fra dette billede ..."
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:69
+#: EditExifMetadata/editexifmetadata.py:215
+msgid "Copy"
+msgstr "Kopier"

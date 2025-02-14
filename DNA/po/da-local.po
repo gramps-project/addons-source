@@ -20,16 +20,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
 
-#: SourcesCitationsReport/SourcesCitationsReport.py:324
-#: SourcesCitationsReport/SourcesCitationsReport.py:345
-#: SourcesCitationsReport/SourcesCitationsReport.py:372
-#: SourcesCitationsReport/SourcesCitationsReport.py:378
-#: SourcesCitationsReport/SourcesCitationsReport.py:384
-#: DNA/dnasegmentmap.py:848
-#, python-format
-msgid "%s"
-msgstr "%s"
-
 #: DNA/dnasegmentmap.gpr.py:25 DNA/dnasegmentmap.gpr.py:34
 #: DNA/dnasegmentmap.gpr.py:26 DNA/dnasegmentmap.gpr.py:35
 msgid "DNA Segment Map"
@@ -50,10 +40,6 @@ msgstr " Kort for"
 #: DNA/dnasegmentmap.py:474 DNA/dnasegmentmap.py:634
 msgid "Chr"
 msgstr "Kr"
-
-#: DNA/dnasegmentmap.py:614 DNAMatches/dnamatches.py:210
-msgid "LEGEND"
-msgstr "Tegnforklaring"
 
 #: DNA/dnasegmentmap.py:827 DNA/dnasegmentmap.py:1056
 #, python-brace-format

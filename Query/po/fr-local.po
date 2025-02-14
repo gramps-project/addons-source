@@ -38,6 +38,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: PythonGramplet/PythonGramplet.py:50 PythonGramplet/PythonGramplet.py:55
+#: Query/QueryGramplet.py:52
+msgid "Enter Python expressions"
+msgstr "Entrez des expressions python"
+
 #: Query/Query.gpr.py:9 Query/Query.gpr.py:10
 msgid "Query Gramplet"
 msgstr "Gramplet Requête"

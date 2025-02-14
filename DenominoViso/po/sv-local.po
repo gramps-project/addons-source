@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-08 17:11-0500\n"
-"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"PO-Revision-Date: 2025-02-09 22:37+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -31,7 +31,7 @@ msgstr ""
 #: DataEntryGramplet/DataEntryGramplet.py:266
 #: DataEntryGramplet/DataEntryGramplet.py:167
 #: DataEntryGramplet/DataEntryGramplet.py:178
-#: DataEntryGramplet/DataEntryGramplet.py:315 DenominoViso/DenominoViso.py:1985
+#: DataEntryGramplet/DataEntryGramplet.py:315 DenominoViso/DenominoViso.py:2001
 msgid "in"
 msgstr "i"
 
@@ -105,15 +105,6 @@ msgstr "beskrivning"
 #: DenominoViso/DenominoViso.py:1063 DenominoViso/DenominoViso.py:1261
 msgid "witnesses"
 msgstr "vittnen"
-
-#: DenominoViso/DenominoViso.py:363 DenominoViso/DenominoViso.py:2489
-#: ../gramps/plugins/export/exportpkg.py:213
-#: ../gramps/plugins/export/exportxml.py:151
-#: ../gramps/plugins/export/exportxml.py:175
-#: ../gramps/plugins/export/exportxml.py:196
-#, python-format
-msgid "Failure writing %s"
-msgstr "Fel vid skrivning av %s"
 
 #: DenominoViso/DenominoViso.py:755 DenominoViso/DenominoViso.py:769
 msgid "Unknown time direction"

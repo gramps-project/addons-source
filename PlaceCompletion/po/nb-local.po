@@ -260,11 +260,6 @@ msgstr ""
 msgid "Change title into:"
 msgstr "Endre tittel til:"
 
-#: PlaceCompletion/placecompletion.glade.h:12
-#: ../gramps/gen/filters/rules/place/_hasplace.py:63
-msgid "City:"
-msgstr "By/Kommune:"
-
 #: PlaceCompletion/placecompletion.glade.h:13
 #: PlaceCompletion/placecompletion.glade:664
 msgid "Convert lat/lon as:"
@@ -273,11 +268,6 @@ msgstr "Konvertere brd/len til:"
 #: PlaceCompletion/placecompletion.glade.h:14
 #: PlaceCompletion/placecompletion.glade:336
 msgid "Count_ry:"
-msgstr "Land:"
-
-#: PlaceCompletion/placecompletion.glade.h:15
-#: ../gramps/gen/filters/rules/place/_hasplace.py:66
-msgid "Country:"
 msgstr "Land:"
 
 #: PlaceCompletion/placecompletion.glade.h:17
@@ -314,11 +304,6 @@ msgstr "Søk i:"
 #: PlaceCompletion/placecompletion.glade:566
 msgid "Select A File"
 msgstr "Velg en fil"
-
-#: PlaceCompletion/placecompletion.glade.h:28
-#: ../gramps/gen/filters/rules/place/_hasplace.py:67
-msgid "ZIP/Postal Code:"
-msgstr "Postnummer:"
 
 #: PlaceCompletion/placecompletion.glade.h:29
 #: PlaceCompletion/placecompletion.glade:85

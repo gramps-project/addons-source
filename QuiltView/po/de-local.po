@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-02 22:39+0200\n"
-"PO-Revision-Date: 2025-02-09 06:44+0000\n"
+"PO-Revision-Date: 2025-02-09 22:37+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -130,9 +130,3 @@ msgstr "Die Pfadtransparenz"
 #: QuiltView/QuiltView.py:1939
 msgid "General options"
 msgstr "Allgemeine Optionen"
-
-#: ../gramps/plugins/lib/libpersonview.py:275
-#: ../gramps/plugins/view/pedigreeview.py:724
-#: ../gramps/plugins/view/relview.py:411
-msgid "Person Filter Editor"
-msgstr "Filtereditor für Personen"

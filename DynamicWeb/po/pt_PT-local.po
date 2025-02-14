@@ -19,17 +19,17 @@ msgstr ""
 "X-Generator: Weblate 5.10-dev\n"
 
 #: D3Charts/DescendantIndentedTree.py:1858
-#: D3Charts/DescendantIndentedTree.py:1867 DynamicWeb//dynamicweb.py:3980
+#: D3Charts/DescendantIndentedTree.py:1867 DynamicWeb/dynamicweb.py:4811
 msgid "Include records marked private"
 msgstr "Incluir registos marcados privados"
 
 #: D3Charts/DescendantIndentedTree.py:1868
-#: D3Charts/DescendantIndentedTree.py:1877 DynamicWeb//dynamicweb.py:3985
+#: D3Charts/DescendantIndentedTree.py:1877 DynamicWeb/dynamicweb.py:4819
 msgid "Include Last Name Only"
 msgstr "Incluir só apelido"
 
 #: D3Charts/DescendantIndentedTree.py:1870
-#: D3Charts/DescendantIndentedTree.py:1879 DynamicWeb//dynamicweb.py:3986
+#: D3Charts/DescendantIndentedTree.py:1879 DynamicWeb/dynamicweb.py:4822
 msgid "Include Full Name Only"
 msgstr "Incluir só nome completo"
 
@@ -968,3 +968,7 @@ msgstr "Conteúdo da página %(index)i"
 #: DynamicWeb//dynamicweb.py:4289 DynamicWeb/dynamicweb.py:5266
 msgid "Contents of the page"
 msgstr "Conteúdo da página"
+
+#: Themes/themes.py:140 Themes/themes.py:190 DynamicWeb/dynamicweb.py:5157
+msgid "Theme"
+msgstr "Tema"

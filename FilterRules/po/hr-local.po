@@ -154,3 +154,17 @@ msgid "Matches people who are related to anybody matched by a person filter"
 msgstr ""
 "Pronalazi osobe koje su u srodstvu s bilo kojom osobom koja je pronađena "
 "pomoću filtra za osobe"
+
+#: DataEntryGramplet/DataEntryGramplet.py:71 FilterRules/activepersonrule.py:45
+msgid "Active person"
+msgstr "Aktivna osoba"
+
+#: SourceIndex/birth.glade:544 SourceIndex/birth.glade:762
+#: SourceIndex/census.glade:286 SourceIndex/death.glade:521
+#: SourceIndex/death.glade:669 SourceIndex/death.glade:939
+#: SourceIndex/marriage.glade:467 SourceIndex/marriage.glade:789
+#: SourceIndex/marriage.glade:808 SourceIndex/marriage.glade:827
+#: SourceIndex/marriage.glade:1562 SourceIndex/marriage.glade:1621
+#: SourceIndex/witness.glade:107 FilterRules/ageatdeath.py:71
+msgid "Age:"
+msgstr "Starost:"

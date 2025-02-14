@@ -33,7 +33,8 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.0.6\n"
 
-#: GraphView/graphview.py:3674 GraphView/graphview.py:3783 NetworkChart.py:1183
+#: GraphView/graphview.py:3674 GraphView/graphview.py:3783
+#: NetworkChart/NetworkChart.py:1174 NetworkChart/NetworkChart.py:1188
 msgid "Direct"
 msgstr "Suora"
 
@@ -220,6 +221,7 @@ msgid "Male Background"
 msgstr "Miehen taustaväri"
 
 #: NetworkChart.py:1005 D3Charts/AncestralCollapsibleTree.py:847
+#: NetworkChart/NetworkChart.py:1009
 msgid "RGB-color for male box background."
 msgstr "RGB-väri miessolun taustalle."
 
@@ -240,6 +242,7 @@ msgid "RGB-color for Male box edge."
 msgstr "RGB-väri miessolun reunalle."
 
 #: NetworkChart.py:1018 D3Charts/AncestralCollapsibleTree.py:855
+#: NetworkChart/NetworkChart.py:1022
 msgid "Female Background"
 msgstr "Naisen taustaväri"
 
@@ -574,10 +577,6 @@ msgstr "Vahvista ylikirjoitustiedosto."
 #: NetworkChart.py:1247 NetworkChart/NetworkChart.py:1243
 msgid "Enable/disable confirmation of file overwrite."
 msgstr "Ota tiedoston päällekirjoitus käyttöön/poista se käytöstä."
-
-#: ../gramps/gen/plug/report/stdoptions.py:307
-msgid "Date format"
-msgstr "Päivämäärän muoto"
 
 # added:
 #: NetworkChart/NetworkChart.py:1026

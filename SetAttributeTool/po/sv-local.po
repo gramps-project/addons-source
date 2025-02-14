@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-08 17:11-0500\n"
-"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"PO-Revision-Date: 2025-02-09 22:37+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -28,26 +28,22 @@ msgstr ""
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:75
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:83
-#: SetAttributeTool/SetAttributeTool.py:73
+#: SetAttributeTool/SetAttributeTool.py:71
 msgid "Select filter to restrict people"
 msgstr "Välj ett filter, som begränsar personurvalet"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:229
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:237
-#: SetAttributeTool/SetAttributeTool.py:128
+#: SetAttributeTool/SetAttributeTool.py:151
+#: SetAttributeTool/SetAttributeTool.py:193
 msgid "Processing...\n"
 msgstr "Arbetar...\n"
 
 #: AttachSourceTool/AttachSourceTool.py:194
 #: AttachSourceTool/AttachSourceTool.py:197
-#: SetAttributeTool/SetAttributeTool.py:184
+#: SetAttributeTool/SetAttributeTool.py:226
 msgid "Done!\n"
 msgstr "Klart!\n"
-
-#: AttachSourceTool/AttachSourceTool.py:216 ../gramps/gen/plug/_pluginreg.py:71
-#: SetAttributeTool/SetAttributeTool.py:197
-msgid "Beta"
-msgstr "Beta"
 
 #: SetAttributeTool/SetAttributeTool.gpr.py:25
 #: SetAttributeTool/SetAttributeTool.py:119

@@ -407,3 +407,7 @@ msgstr "Wszystkie metadane Exif zostały usunięte z tego obrazu..."
 #: EditExifMetadata/editexifmetadata.py:1470
 msgid "There was an error in stripping the Exif metadata from this image..."
 msgstr "Wystąpił błąd podczas usuwania metadanych Exif z tego obrazu..."
+
+#: GraphView/graphview.py:3659 EditExifMetadata/editexifmetadata.py:215
+msgid "Copy"
+msgstr "Kopiuj"

@@ -38,6 +38,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: RepositoriesReport/RepositoriesReportAlt.py:458
+#: RepositoriesReport/RepositoriesReportAlt.py:459
+#: GedcomExtensions/GedcomExtensions.py:198
+msgid "Include media"
+msgstr "Inclure les media"
+
 #: GedcomExtensions/GedcomExtensions.gpr.py:31
 #: GedcomExtensions/GedcomExtensions.gpr.py:32
 msgid "Export GEDCOM Extensions (GED2)"

@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-08 17:11-0500\n"
-"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"PO-Revision-Date: 2025-02-09 22:37+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -27,12 +27,12 @@ msgstr ""
 "X-Generator: Weblate 5.10-dev\n"
 
 #: FamilyTree/FamilyTree.py:979 FamilyTree/FamilyTree.py:1047
-#: TimelinePedigreeView/TimelinePedigreeView.py:1598
+#: TimelinePedigreeView/TimelinePedigreeView.py:1481
 msgid "Ancestor Generations"
 msgstr "Färfädersgenertioner"
 
 #: FamilyTree/FamilyTree.py:983 FamilyTree/FamilyTree.py:1051
-#: TimelinePedigreeView/TimelinePedigreeView.py:1579
+#: TimelinePedigreeView/TimelinePedigreeView.py:1465
 msgid "Descendant Generations"
 msgstr "Ättlingagenerationer"
 
@@ -83,13 +83,6 @@ msgstr "krem."
 msgid "Timeline pedigree"
 msgstr "Tidslinjeantavla"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:642
-#: ../gramps/plugins/lib/libpersonview.py:275
-#: ../gramps/plugins/view/pedigreeview.py:724
-#: ../gramps/plugins/view/relview.py:411
-msgid "Person Filter Editor"
-msgstr "Redigera personfilter"
-
 #: TimelinePedigreeView/TimelinePedigreeView.py:1548
 #: TimelinePedigreeView/TimelinePedigreeView.py:1437
 msgid "Order by timeline"
@@ -109,3 +102,8 @@ msgid "%d generation"
 msgid_plural "%d generations"
 msgstr[0] "%d generation"
 msgstr[1] "%d generationer"
+
+#: HtreePedigreeView/HtreePedigreeView.py:96
+#: TimelinePedigreeView/TimelinePedigreeView.py:85
+msgid "short for christened|chr."
+msgstr "döpt."

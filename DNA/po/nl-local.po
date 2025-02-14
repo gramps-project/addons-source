@@ -24,10 +24,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.10-dev\n"
 
-#: DNA/dna.gpr.py:3 DNA/dna.gpr.py:10 ../gramps/plugins/lib/libgedcom.py:741
-msgid "DNA"
-msgstr "DNA"
-
 #: DNA/dna.py:87 DNA/dnasegmentmap.gpr.py:25 DNA/dnasegmentmap.gpr.py:34
 #: DNA/dnasegmentmap.gpr.py:26 DNA/dnasegmentmap.gpr.py:35
 msgid "DNA Segment Map"
@@ -40,10 +36,6 @@ msgstr "Chr"
 #: DNA/dnasegmentmap.gpr.py:28 DNA/dnasegmentmap.gpr.py:29
 msgid "Gramplet showing a matching DNA segment map"
 msgstr "Gramplet dat een overeenkomende DNA-segmentkaart toont"
-
-#: DNA/dnasegmentmap.py:360 DNAMatches/dnamatches.py:210
-msgid "LEGEND"
-msgstr "LEGENDA"
 
 #: DNA/dnasegmentmap.py:450 DNA/dnasegmentmap.py:1115
 msgid ""

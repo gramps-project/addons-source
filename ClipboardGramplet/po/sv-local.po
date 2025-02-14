@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-08 17:11-0500\n"
-"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"PO-Revision-Date: 2025-02-09 22:37+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -25,13 +25,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.10-dev\n"
-
-#: ClipboardGramplet/ClipboardGramplet.gpr.py:17
-#: ../gramps/gui/clipboard.py:1384 ../gramps/gui/clipboard.py:1392
-#: ../gramps/gui/clipboard.py:1435 ../gramps/gui/clipboard.py:1482
-#: ../gramps/gui/glade/clipboard.glade:8
-msgid "Clipboard"
-msgstr "Urklipp"
 
 #: ClipboardGramplet/ClipboardGramplet.py:93
 #: ClipboardGramplet/ClipboardGramplet.py:83

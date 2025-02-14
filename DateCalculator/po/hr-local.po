@@ -20,6 +20,11 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 "X-Generator: Poedit 2.2.4\n"
 
+#: EditExifMetadata/editexifmetadata.py:215
+#: DateCalculator/DateCalculator.py:107
+msgid "Copy"
+msgstr "Kopiraj"
+
 #: DateCalculator/DateCalculator.gpr.py:21
 #: DateCalculator/DateCalculator.gpr.py:31
 #: DateCalculator/DateCalculator.gpr.py:22

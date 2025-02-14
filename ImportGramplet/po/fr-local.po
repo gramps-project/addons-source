@@ -80,19 +80,6 @@ msgstr "Importation effectuée"
 msgid "Importing Text..."
 msgstr "Importation du texte..."
 
-#: ImportGramplet/ImportGramplet.py:224 ../gramps/gen/display/name.py:398
-#: ../gramps/gen/utils/keyword.py:57 ../gramps/gui/configure.py:1087
-#: ../gramps/gui/configure.py:1088 ../gramps/gui/configure.py:1092
-#: ../gramps/gui/configure.py:1093 ../gramps/gui/configure.py:1095
-#: ../gramps/gui/configure.py:1096 ../gramps/gui/configure.py:1097
-#: ../gramps/gui/configure.py:1099 ../gramps/gui/configure.py:1100
-#: ../gramps/gui/configure.py:1101 ../gramps/gui/configure.py:1102
-#: ../gramps/gui/configure.py:1103 ../gramps/gui/configure.py:1104
-#: ../gramps/gui/configure.py:1105 ../gramps/plugins/export/exportcsv.py:421
-#: ../gramps/plugins/importer/importcsv.py:206
-msgid "Given"
-msgstr "Prénom"
-
 #: ImportGramplet/ImportGramplet.py:249 ImportGramplet/ImportGramplet.py:259
 msgid "Can't determine type of import"
 msgstr "Impossible de déterminer le type d'importation"

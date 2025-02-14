@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-08 17:11-0500\n"
-"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"PO-Revision-Date: 2025-02-09 22:37+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -26,47 +26,9 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.10-dev\n"
 
-#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:54
-#: DescendantCount/descendant_count.py:84
-#: DescendantCount/descendant_count.py:91
-msgid "Generation"
-msgstr "Generation"
-
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:57
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:62
-#: DescendantCount/descendant_count.py:59
-#, python-format
-msgid "Number of %s's descendants"
-msgstr "Antal av %ss ättlingar"
-
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:84
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:89
-#: DescendantCount/descendant_count.py:86
-msgid "Seen"
-msgstr "Sedda"
-
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:86
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:91
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:96
-#: DescendantCount/descendant_count.py:88
-#: DescendantCount/descendant_count.py:93
-msgid "Now alive"
-msgstr "Nu levande"
-
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:117
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:122
-#: DescendantCount/descendant_count.py:116
-#, python-format
-msgid "Seen = number of descendants whose birth %s has lived to see"
-msgstr "Sedda = antal ättlingar, vars födelse har inträffat under %s levnad"
-
 #: DescendantCount/DescendantCount.gpr.py:3
 #: DescendantCount/DescendantCount.gpr.py:23
 #: DescendantCount/DescendantCount.py:91
 #: DescendantCount/DescendantCount.gpr.py:32
 msgid "Descendant Count"
 msgstr "Ättlingsräknare"
-
-#: DescendantCount/descendant_count.py:201 ../gramps/gen/plug/_pluginreg.py:72
-msgid "Stable"
-msgstr "Stabil"

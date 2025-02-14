@@ -525,31 +525,6 @@ msgstr "Verberg broers en zussen"
 msgid "Show ancestors above "
 msgstr "Toon voorouders boven "
 
-#: LifeLineChartView/lifelinechartview.gpr.py:217
-#: LifeLineChartView/lifelinechartview.gpr.py:224
-#: ../gramps/gen/plug/utils.py:349 ../gramps/gen/plug/utils.py:356
-#, python-format
-msgid "Unable to open '%s'"
-msgstr "Kan '%s' niet openen"
-
-#: LifeLineChartView/lifelinechartview.gpr.py:233
-#: ../gramps/gen/plug/utils.py:363
-#, python-format
-msgid "Error in reading '%s'"
-msgstr "Fout bij het lezen van '%s'"
-
-#: LifeLineChartView/lifelinechartview.gpr.py:248
-#: ../gramps/cli/arghandler.py:403 ../gramps/gen/plug/utils.py:374
-#, python-format
-msgid "Error: cannot open '%s'"
-msgstr "Fout: kan '%s' niet openen"
-
-#: LifeLineChartView/lifelinechartview.gpr.py:252
-#: ../gramps/gen/plug/utils.py:378
-#, python-format
-msgid "Error: unknown file type: '%s'"
-msgstr "Fout: onbekend bestandstype: '%s'"
-
 #: LifeLineChartView/lifelinechartview.gpr.py:318
 #: LifeLineChartView/lifelinechartview.gpr.py:24
 msgid "Life Line Ancestor Chart"

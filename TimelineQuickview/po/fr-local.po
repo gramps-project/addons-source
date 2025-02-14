@@ -39,7 +39,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: Query/QueryQuickview.py:225 Query/QueryQuickview.py:426
-#: TimelineQuickview/TimelineQuickview.py:183
+#: TimelineQuickview/TimelineQuickview.py:186
 msgid "Today"
 msgstr "Aujourd'hui"
 
@@ -112,7 +112,3 @@ msgstr "Fil du temps pour %s"
 #: TimelineQuickview/TimelineQuickview.py:163
 msgid "People involved"
 msgstr "Personnes impliquées"
-
-#: ../gramps/gen/plug/_pluginreg.py:72
-msgid "Stable"
-msgstr "Stable"

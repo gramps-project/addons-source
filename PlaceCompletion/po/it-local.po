@@ -310,11 +310,6 @@ msgstr ""
 msgid "Change title into:"
 msgstr ""
 
-#: PlaceCompletion/placecompletion.glade.h:12
-#: ../gramps/gen/filters/rules/place/_hasplace.py:63
-msgid "City:"
-msgstr "Città:"
-
 #: PlaceCompletion/placecompletion.glade.h:13
 #: PlaceCompletion/placecompletion.glade:664
 msgid "Convert lat/lon as:"
@@ -324,11 +319,6 @@ msgstr ""
 #: PlaceCompletion/placecompletion.glade:336
 msgid "Count_ry:"
 msgstr "Sta_to:"
-
-#: PlaceCompletion/placecompletion.glade.h:15
-#: ../gramps/gen/filters/rules/place/_hasplace.py:66
-msgid "Country:"
-msgstr "Stato:"
 
 #: PlaceCompletion/placecompletion.glade.h:17
 #: PlaceCompletion/placecompletion.glade:460
@@ -364,11 +354,6 @@ msgstr ""
 #: PlaceCompletion/placecompletion.glade:566
 msgid "Select A File"
 msgstr "Selezione file"
-
-#: PlaceCompletion/placecompletion.glade.h:28
-#: ../gramps/gen/filters/rules/place/_hasplace.py:67
-msgid "ZIP/Postal Code:"
-msgstr "CAP:"
 
 #: PlaceCompletion/placecompletion.glade.h:29
 #: PlaceCompletion/placecompletion.glade:85

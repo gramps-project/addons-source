@@ -46,12 +46,12 @@ msgid "Ancestry"
 msgstr "Lignée"
 
 #: FamilyTree/FamilyTree.py:1055 FamilyTree/FamilyTree.py:1047
-#: TimelinePedigreeView/TimelinePedigreeView.py:1641
+#: TimelinePedigreeView/TimelinePedigreeView.py:1481
 msgid "Ancestor Generations"
 msgstr "Générations de ascendants"
 
 #: FamilyTree/FamilyTree.py:1059 FamilyTree/FamilyTree.py:1051
-#: TimelinePedigreeView/TimelinePedigreeView.py:1622
+#: TimelinePedigreeView/TimelinePedigreeView.py:1465
 msgid "Descendant Generations"
 msgstr "Générations de descendants"
 
@@ -93,13 +93,6 @@ msgstr "inci."
 #: TimelinePedigreeView/TimelinePedigreeView.py:339
 msgid "Timeline pedigree"
 msgstr "Arbre au fil du temps"
-
-#: TimelinePedigreeView/TimelinePedigreeView.py:676
-#: ../gramps/plugins/lib/libpersonview.py:275
-#: ../gramps/plugins/view/pedigreeview.py:724
-#: ../gramps/plugins/view/relview.py:411
-msgid "Person Filter Editor"
-msgstr "Éditeur de filtre sur l'individu"
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:1591
 #: TimelinePedigreeView/TimelinePedigreeView.py:1437

@@ -38,20 +38,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: UKWebConnectPack/UKWebPack.py:31 SVWebconnectPack/SVWebPack.py:34
-msgid "FamilySearch.org"
-msgstr "FamilySearch.org"
-
-#: UKWebConnectPack/UKWebPack.py:34 UKWebConnectPack/UKWebPack.py:38
-#: FRWebConnectPack/FRWebPack.py:50
-msgid "Hathi Trust Digital Library"
-msgstr "Bibliothèque Hathi Trust Digital"
-
-#: DEWebConnectPack/DEWebPack.py:38 DEWebConnectPack/DEWebPack.py:42
-#: FRWebConnectPack/FRWebPack.py:48
-msgid "Google Archives"
-msgstr "Archives Google"
-
 #: FRWebConnectPack/FRWebPack.gpr.py:10 FRWebConnectPack/FRWebPack.gpr.py:11
 msgid "FR Web Connect Pack"
 msgstr "Ensemble de liens internet francophones"

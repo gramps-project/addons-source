@@ -40,17 +40,17 @@ msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1402
 #: EventDescriptionEditor/EventDescriptionEditor.py:142
-#: ImportMerge/importmerge.py:888 ImportMerge/importmerge.glade.h:22
+#: ImportMerge/importmerge.py:910 ImportMerge/importmerge.glade:407
 msgid "Replace"
 msgstr "Remplacer"
 
 #: BirthOrder/birthorder.glade.h:12 BirthOrder/birthorder.glade:232
-#: ImportMerge/importmerge.glade.h:18
+#: ImportMerge/importmerge.glade:364
 msgid "Done"
 msgstr "Conclure"
 
 #: CheckPlaceTitles/checkplacetitles.py:103
-#: CheckPlaceTitles/checkplacetitles.py:107 ImportMerge/importmerge.glade.h:11
+#: CheckPlaceTitles/checkplacetitles.py:107 ImportMerge/importmerge.glade:264
 msgid "Differences"
 msgstr "Différences"
 
@@ -328,7 +328,3 @@ msgstr "Marquage automatique des familles"
 #: ImportMerge/importmerge.glade.h:30 ImportMerge/importmerge.glade:498
 msgid "Automark Parent Families"
 msgstr "Marquage automatique des familles parentes"
-
-#: DateCalculator/DateCalculator.py:96
-msgid "Result"
-msgstr "Résultat"

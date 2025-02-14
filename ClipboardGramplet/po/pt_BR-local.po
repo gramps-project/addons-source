@@ -24,13 +24,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 1.0\n"
 
-#: ClipboardGramplet/ClipboardGramplet.gpr.py:17
-#: ../gramps/gui/clipboard.py:1384 ../gramps/gui/clipboard.py:1392
-#: ../gramps/gui/clipboard.py:1435 ../gramps/gui/clipboard.py:1482
-#: ../gramps/gui/glade/clipboard.glade:8
-msgid "Clipboard"
-msgstr "Área de transferência"
-
 #: ClipboardGramplet/ClipboardGramplet.py:92
 #: ClipboardGramplet/ClipboardGramplet.py:83
 #, python-format

@@ -42,6 +42,7 @@ msgid "Theme is hardcoded by GTK_THEME"
 msgstr "Tema er hardkodet av GTK_THEME"
 
 #: Themes/themes.py:140 Themes/themes.py:190 DynamicWeb/dynamicweb.py:5157
+#: Themes/themes.py:175 Themes/themes.py:225
 msgid "Theme"
 msgstr "Tema"
 
@@ -56,7 +57,3 @@ msgstr "Skrifttype"
 #: Themes/themes.py:179 Themes/themes.py:214
 msgid "Fixed Scrollbar (requires restart)"
 msgstr "Klassisk rullegardin (krever omstart)"
-
-#: ../gramps/gui/configure.py:983
-msgid "Colors"
-msgstr "Farger"

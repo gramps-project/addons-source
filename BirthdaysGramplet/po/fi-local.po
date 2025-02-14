@@ -33,11 +33,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.0.6\n"
 
-#: CalculateEstimatedDates.py:118
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:118
-msgid "Maximum age"
-msgstr "Suurin mahdollinen ikä"
-
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:24
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:32
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:25
@@ -57,12 +52,3 @@ msgstr "Jätä pois syntymäpäivät, joissa on tagi"
 #: BirthdaysGramplet/BirthdaysGramplet.py:46
 msgid "Only show birthdays with tag"
 msgstr "Näytä vain syntymäpäivät, joissa on tagi"
-
-#: SourcesCitationsReport/SourcesCitationsReport.py:324
-#: SourcesCitationsReport/SourcesCitationsReport.py:345
-#: SourcesCitationsReport/SourcesCitationsReport.py:372
-#: SourcesCitationsReport/SourcesCitationsReport.py:378
-#: SourcesCitationsReport/SourcesCitationsReport.py:384
-#, python-format
-msgid "%s"
-msgstr "%s"

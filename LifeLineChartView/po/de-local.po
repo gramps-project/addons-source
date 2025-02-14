@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-02 22:39+0200\n"
-"PO-Revision-Date: 2025-02-09 06:44+0000\n"
+"PO-Revision-Date: 2025-02-09 22:37+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -34,17 +34,17 @@ msgstr ""
 "X-Generator: Weblate 5.10-dev\n"
 
 #: DynamicWeb/dynamicweb.py:2607 DynamicWeb/dynamicweb.py:3170
-#: LifeLineChartView//lifelinechartview.py:508
+#: LifeLineChartView/lifelinechartview.py:508
 msgid "Zoom in"
 msgstr "Hineinzoomen"
 
 #: DynamicWeb/dynamicweb.py:2608 DynamicWeb/dynamicweb.py:3171
-#: LifeLineChartView//lifelinechartview.py:518
+#: LifeLineChartView/lifelinechartview.py:518
 msgid "Zoom out"
 msgstr "Herauszoomen"
 
 #: DynamicWeb/dynamicweb.py:4177 DynamicWeb/dynamicweb.py:5098
-#: LifeLineChartView//_dummy_translation_string_po.py:101
+#: LifeLineChartView/_dummy_translation_string_po.py:101
 msgid "Maximum number of generations"
 msgstr "Maximale Anzahl der Generationen"
 
@@ -651,31 +651,6 @@ msgstr "Geschwister veerbergen"
 #: LifeLineChartView/lifelinechart.py:2652
 msgid "Show ancestors above "
 msgstr "Platziere Vorfahren über "
-
-#: LifeLineChartView//lifelinechartview.gpr.py:217
-#: LifeLineChartView//lifelinechartview.gpr.py:224
-#: ../gramps/gen/plug/utils.py:349 ../gramps/gen/plug/utils.py:356
-#, python-format
-msgid "Unable to open '%s'"
-msgstr "Kann '%s' nicht öffnen"
-
-#: LifeLineChartView//lifelinechartview.gpr.py:233
-#: ../gramps/gen/plug/utils.py:363
-#, python-format
-msgid "Error in reading '%s'"
-msgstr "Fehler beim Lesen von \"%s\""
-
-#: LifeLineChartView//lifelinechartview.gpr.py:248
-#: ../gramps/cli/arghandler.py:403 ../gramps/gen/plug/utils.py:374
-#, python-format
-msgid "Error: cannot open '%s'"
-msgstr "Fehler: Kann '%s' nicht öffnen"
-
-#: LifeLineChartView//lifelinechartview.gpr.py:252
-#: ../gramps/gen/plug/utils.py:378
-#, python-format
-msgid "Error: unknown file type: '%s'"
-msgstr "Fehler: unbekannter Dateityp: '%s'."
 
 #: LifeLineChartView//lifelinechartview.gpr.py:318
 #: LifeLineChartView/lifelinechartview.gpr.py:24

@@ -20,10 +20,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
 
-#: MediaVerify/MediaVerify.py:143
-msgid "Files"
-msgstr "Filer"
-
 #: HistContext.gpr.py:4 HistContext.gpr.py:14 HistContext/HistContext.gpr.py:4
 #: HistContext/HistContext.gpr.py:14
 msgid "Historical Context"

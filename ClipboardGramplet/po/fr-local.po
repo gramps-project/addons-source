@@ -38,13 +38,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ClipboardGramplet/ClipboardGramplet.gpr.py:17
-#: ../gramps/gui/clipboard.py:1384 ../gramps/gui/clipboard.py:1392
-#: ../gramps/gui/clipboard.py:1435 ../gramps/gui/clipboard.py:1482
-#: ../gramps/gui/glade/clipboard.glade:8
-msgid "Clipboard"
-msgstr "Presse-papiers"
-
 #: ClipboardGramplet/ClipboardGramplet.py:93
 #: ClipboardGramplet/ClipboardGramplet.py:83
 #, python-format

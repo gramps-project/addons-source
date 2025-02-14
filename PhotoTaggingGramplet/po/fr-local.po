@@ -38,6 +38,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: RelID/Relation_tab.py:93 RelID/relation_tab.py:97
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:498
+msgid "_Select"
+msgstr "_Sélectionner"
+
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:3
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:11
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:29

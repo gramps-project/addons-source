@@ -24,9 +24,8 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.10-dev\n"
 
-#: EventDescriptionEditor/EventDescriptionEditor.py:105 Heatmap/heatmap.py:261
-#: Heatmap/heatmap.py:267 Heatmap/heatmap.py:269 Heatmap/heatmap.py:344
-#: Heatmap/heatmap.py:454 Heatmap/heatmap.py:490
+#: EventDescriptionEditor/EventDescriptionEditor.py:105 Heatmap/heatmap.py:214
+#: Heatmap/heatmap.py:226
 msgid "INFO"
 msgstr "INFO"
 
@@ -132,13 +131,6 @@ msgid ""
 msgstr ""
 "Stel de waarde in voor de startzoom\n"
 "Standaard: 5"
-
-#: Heatmap/heatmap.py:136 Heatmap/heatmap.py:141 Heatmap/heatmap.py:145
-#: Heatmap/heatmap.py:150 Heatmap/heatmap.py:155 Heatmap/heatmap.py:160
-#: Heatmap/heatmap.py:165 Heatmap/heatmap.py:171
-#: ../gramps/gui/configure.py:1956
-msgid "Limits"
-msgstr "Limieten"
 
 #: Heatmap/heatmap.py:251 Heatmap/heatmap.py:210
 msgid "Invalid filename."

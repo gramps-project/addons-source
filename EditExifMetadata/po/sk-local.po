@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-08 16:37+0100\n"
-"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"PO-Revision-Date: 2025-02-09 22:37+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -382,3 +382,7 @@ msgstr "Všetky metadáta boli z tohoto obrázka odstránené..."
 #: EditExifMetadata/editexifmetadata.py:1470
 msgid "There was an error in stripping the Exif metadata from this image..."
 msgstr "Pri separovaní Exif metadát sa vyskytla chyba..."
+
+#: DeepConnectionsGramplet.py:69 EditExifMetadata/editexifmetadata.py:215
+msgid "Copy"
+msgstr "Kopírovať"

@@ -82,7 +82,7 @@ msgstr "Seleziona filtro per restringere le persone"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:229
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:237
-#: AttachSourceTool/AttachSourceTool.py:158
+#: AttachSourceTool/AttachSourceTool.py:157
 msgid "Processing...\n"
 msgstr "Elaborazione in corso...\n"
 
@@ -147,7 +147,3 @@ msgstr ""
 #: AttachSourceTool/AttachSourceTool.py:197
 msgid "Done!\n"
 msgstr "Fatto!\n"
-
-#: AttachSourceTool/AttachSourceTool.py:216 ../gramps/gen/plug/_pluginreg.py:71
-msgid "Beta"
-msgstr "Beta"

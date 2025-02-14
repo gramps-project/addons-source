@@ -59,10 +59,6 @@ msgstr ""
 msgid "Search..."
 msgstr "Поиск..."
 
-#: PluginManager/PluginManager.py:161 ../gramps/gui/plug/_windows.py:816
-msgid "Check for updated addons now"
-msgstr "Проверить дополнения на наличие обновлений"
-
 #: PluginManager/PluginManager.py:207 PluginManager/PluginManager.py:216
 msgid "Restart..."
 msgstr "Перезапустить..."
@@ -84,11 +80,6 @@ msgid ""
 msgstr ""
 "'*' дополнения поддерживаются сторонними авторами,\n"
 "<s>зачёркнутые</s> дополнения скрыты"
-
-#: PluginManager/PluginManager.py:472 ../gramps/gui/plug/_windows.py:1079
-#: ../gramps/gui/plug/_windows.py:1137
-msgid "Info"
-msgstr "Информация"
 
 #: PluginManager/PluginManager.py:475 PluginManager/PluginManager.py:585
 #: PluginManager/PluginManager.py:410 PluginManager/PluginManager.py:530
@@ -119,16 +110,6 @@ msgstr "Показать"
 msgid "Uninstall"
 msgstr "Удалить"
 
-#: PluginManager/PluginManager.py:612 ../gramps/gui/plug/_windows.py:962
-msgid "Checking Addons Failed"
-msgstr "Не удалось проверить дополнения"
-
-#: PluginManager/PluginManager.py:613 ../gramps/gui/plug/_windows.py:964
-msgid "The addon repository appears to be unavailable. Please try again later."
-msgstr ""
-"Сервер с дополнениями временно недоступен. Пожалуйста, попробуйте ещё раз "
-"позднее."
-
 #: PluginManager/PluginManager.py:673 PluginManager/PluginManager.py:721
 msgid "*Available"
 msgstr "*Доступно"
@@ -144,7 +125,3 @@ msgstr "*Установлено"
 #: PluginManager/PluginManager.py:701 PluginManager/PluginManager.py:751
 msgid "Update Available"
 msgstr "Доступно обновление"
-
-#: PluginManager/PluginManager.py:728 ../gramps/gui/plug/_windows.py:1648
-msgid "Detailed Info"
-msgstr "Подробная информация"

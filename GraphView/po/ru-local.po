@@ -33,51 +33,51 @@ msgstr ""
 
 #: SourcesCitationsReport//SourcesCitationsReport.py:341
 #: SourcesCitationsReport/SourcesCitationsReport.py:335
-#: GraphView/graphview.py:3007 GraphView/graphview.py:3008
-#: GraphView/graphview.py:3020 GraphView/graphview.py:3021
+#: GraphView/graphview.py:3168 GraphView/graphview.py:3169
+#: GraphView/graphview.py:3181 GraphView/graphview.py:3182
 #, python-format
 msgid "%s "
 msgstr "%s "
 
 #: PluginManager/PluginManager.py:155 PluginManager/PluginManager.py:158
-#: GraphView/search_widget.py:384
+#: GraphView/search_widget.py:400
 msgid "Search..."
 msgstr "Поиск..."
 
 #: DynamicWeb//dynamicweb.py:2611 DynamicWeb/dynamicweb.py:3170
-#: GraphView/graphview.py:975
+#: GraphView/graphview.py:1095
 msgid "Zoom in"
 msgstr "Увеличить"
 
 #: DynamicWeb//dynamicweb.py:2612 DynamicWeb/dynamicweb.py:3171
-#: GraphView/graphview.py:982
+#: GraphView/graphview.py:1102
 msgid "Zoom out"
 msgstr "Уменьшить"
 
 #: DenominoViso/DenominoViso.py:1998 DenominoViso/DenominoViso.py:2001
-#: GraphView/graphview.py:849
+#: GraphView/graphview.py:968
 msgid "Search"
 msgstr "Поиск"
 
 #: QuiltView/QuiltView.py:1349 QuiltView/QuiltView.py:1500
-#: GraphView/graphview.py:3820
+#: GraphView/graphview.py:4048
 msgid "Set as home person"
 msgstr "Сделать базовым лицом"
 
 #: QuiltView/QuiltView.py:1505 QuiltView/QuiltView.py:1656
-#: GraphView/graphview.py:4248
+#: GraphView/graphview.py:4538 GraphView/graphview.py:4584
 #, python-format
 msgid "Adding Tags to person (%s)"
 msgstr "Изменение меток лица (%s)"
 
 #: QuiltView/QuiltView.py:1510 QuiltView/QuiltView.py:1661
-#: GraphView/graphview.py:4253
+#: GraphView/graphview.py:4543 GraphView/graphview.py:4595
 #, python-format
 msgid "Adding Tags to family (%s)"
 msgstr "Изменение меток семьи (%s)"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:69
-#: EditExifMetadata/editexifmetadata.py:215 GraphView/graphview.py:3659
+#: EditExifMetadata/editexifmetadata.py:215 GraphView/graphview.py:3863
 msgid "Copy"
 msgstr "Копировать"
 
@@ -208,10 +208,12 @@ msgid "Select a dot file name"
 msgstr "Выбор dot файла"
 
 #: GraphView/graphview.py:989 LifeLineChartView/lifelinechartview.py:527
+#: GraphView/graphview.py:1109
 msgid "Zoom to original"
 msgstr "Оригинальный размер"
 
 #: GraphView/graphview.py:996 LifeLineChartView/lifelinechartview.py:534
+#: GraphView/graphview.py:1116
 msgid "Zoom to best fit"
 msgstr "Уместить в окне"
 
@@ -437,8 +439,3 @@ msgstr ""
 #, python-format
 msgid "<b>%s:</b>"
 msgstr "<b>%s:</b>"
-
-#: GraphView/search_widget.py:671
-#: ../gramps/plugins/gramplet/relativegramplet.py:116
-msgid "Parents:"
-msgstr "Родители:"

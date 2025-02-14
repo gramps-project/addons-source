@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-08 17:11-0500\n"
-"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"PO-Revision-Date: 2025-02-09 22:37+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -25,20 +25,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.10-dev\n"
-
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:110
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:118
-msgid "Maximum age"
-msgstr "Maximiålder"
-
-#: SourcesCitationsReport/SourcesCitationsReport.py:324
-#: SourcesCitationsReport/SourcesCitationsReport.py:345
-#: SourcesCitationsReport/SourcesCitationsReport.py:372
-#: SourcesCitationsReport/SourcesCitationsReport.py:378
-#: SourcesCitationsReport/SourcesCitationsReport.py:384
-#, python-format
-msgid "%s"
-msgstr "%s"
 
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:5
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:26

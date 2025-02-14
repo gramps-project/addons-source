@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-08 16:37+0100\n"
-"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"PO-Revision-Date: 2025-02-09 22:37+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -24,8 +24,9 @@ msgstr ""
 "X-Generator: Weblate 5.10-dev\n"
 
 #: ExportRaw/ExportRaw.gpr.py:3 ExportRaw/ExportRaw.gpr.py:4
+#, fuzzy
 msgid "Raw Export"
-msgstr ""
+msgstr "Nespracovaný export"
 
 #: ExportRaw/ExportRaw.gpr.py:4 ExportRaw/ExportRaw.gpr.py:5
 msgid "This is a raw python object dump"

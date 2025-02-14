@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-02 22:39+0200\n"
-"PO-Revision-Date: 2025-02-09 06:44+0000\n"
+"PO-Revision-Date: 2025-02-09 22:37+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -34,32 +34,32 @@ msgstr ""
 "X-Generator: Weblate 5.10-dev\n"
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:82
-#: HtreePedigreeView/HtreePedigreeView.py:83
+#: HtreePedigreeView/HtreePedigreeView.py:93
 msgid "short for born|b."
 msgstr "*"
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:83
-#: HtreePedigreeView/HtreePedigreeView.py:84
+#: HtreePedigreeView/HtreePedigreeView.py:94
 msgid "short for died|d."
 msgstr "†"
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:84
-#: HtreePedigreeView/HtreePedigreeView.py:85
+#: HtreePedigreeView/HtreePedigreeView.py:95
 msgid "short for baptized|bap."
 msgstr "〰"
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:85
-#: HtreePedigreeView/HtreePedigreeView.py:86
+#: HtreePedigreeView/HtreePedigreeView.py:96
 msgid "short for christened|chr."
 msgstr "〰"
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:86
-#: HtreePedigreeView/HtreePedigreeView.py:87
+#: HtreePedigreeView/HtreePedigreeView.py:97
 msgid "short for buried|bur."
 msgstr "▭"
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:87
-#: HtreePedigreeView/HtreePedigreeView.py:88
+#: HtreePedigreeView/HtreePedigreeView.py:98
 msgid "short for cremated|crem."
 msgstr "⚱"
 
@@ -87,9 +87,3 @@ msgstr "H-Baum Ahnentafel Ansicht"
 #: HtreePedigreeView/HtreePedigreeView.py:1692
 msgid "About H-Tree"
 msgstr "Über H-Baum"
-
-#: ../gramps/plugins/lib/libpersonview.py:275
-#: ../gramps/plugins/view/pedigreeview.py:724
-#: ../gramps/plugins/view/relview.py:411
-msgid "Person Filter Editor"
-msgstr "Filtereditor für Personen"

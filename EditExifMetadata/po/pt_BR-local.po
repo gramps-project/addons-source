@@ -411,3 +411,8 @@ msgstr "Todos os metadados EXIF desta imagem foram excluídos..."
 #: EditExifMetadata/editexifmetadata.py:1470
 msgid "There was an error in stripping the Exif metadata from this image..."
 msgstr "Ocorreu um erro na extração dos metadados EXIF desta imagem..."
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:65
+#: EditExifMetadata/editexifmetadata.py:215
+msgid "Copy"
+msgstr "Copiar"

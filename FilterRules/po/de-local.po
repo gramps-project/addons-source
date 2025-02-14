@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-02 22:39+0200\n"
-"PO-Revision-Date: 2025-02-09 06:44+0000\n"
+"PO-Revision-Date: 2025-02-09 22:37+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -168,3 +168,17 @@ msgid "Matches people who are related to anybody matched by a person filter"
 msgstr ""
 "Entspricht Personen, die mit Personen verwandt sind, die mit einem "
 "Personenfilter übereinstimmen"
+
+#: DataEntryGramplet/DataEntryGramplet.py:71 FilterRules/activepersonrule.py:45
+msgid "Active person"
+msgstr "Aktive Person"
+
+#: SourceIndex/birth.glade:544 SourceIndex/birth.glade:762
+#: SourceIndex/census.glade:286 SourceIndex/death.glade:521
+#: SourceIndex/death.glade:669 SourceIndex/death.glade:939
+#: SourceIndex/marriage.glade:467 SourceIndex/marriage.glade:789
+#: SourceIndex/marriage.glade:808 SourceIndex/marriage.glade:827
+#: SourceIndex/marriage.glade:1562 SourceIndex/marriage.glade:1621
+#: SourceIndex/witness.glade:107 FilterRules/ageatdeath.py:71
+msgid "Age:"
+msgstr "Alter:"

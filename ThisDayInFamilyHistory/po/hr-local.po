@@ -20,23 +20,6 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 "X-Generator: Poedit 2.2.4\n"
 
-#: SourceIndex/birth.glade:7 SourceIndex/index.glade:585
-#: ThisDayInFamilyHistory//ThisDayInFamilyHistory.py:153
-#: ThisDayInFamilyHistory//ThisDayInFamilyHistory.py:232
-#: ThisDayInFamilyHistory//ThisDayInFamilyHistory.py:505
-#: ThisDayInFamilyHistory//ThisDayInFamilyHistory.py:506
-#: ThisDayInFamilyHistory//ThisDayInFamilyHistory.py:508
-msgid "birth"
-msgstr "rođenje"
-
-#: SourceIndex/census.glade:7 SourceIndex/index.glade:768
-#: ThisDayInFamilyHistory//ThisDayInFamilyHistory.py:235
-#: ThisDayInFamilyHistory//ThisDayInFamilyHistory.py:520
-#: ThisDayInFamilyHistory//ThisDayInFamilyHistory.py:521
-#: ThisDayInFamilyHistory//ThisDayInFamilyHistory.py:524
-msgid "census"
-msgstr "popis stanovništva"
-
 #: ThisDayInFamilyHistory//ThisDayInFamilyHistory.gpr.py:7
 #: ThisDayInFamilyHistory//ThisDayInFamilyHistory.gpr.py:14
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.gpr.py:7
@@ -159,14 +142,6 @@ msgstr "Ime osobe"
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:249
 msgid "Event Year"
 msgstr "Godina događaja"
-
-#: ThisDayInFamilyHistory//ThisDayInFamilyHistory.py:305
-#: ThisDayInFamilyHistory//ThisDayInFamilyHistory.py:359
-#: ../gramps/gui/editors/editfamily.py:571
-#: ../gramps/plugins/importer/importcsv.py:360
-#: ../gramps/plugins/view/familyview.py:410
-msgid "family"
-msgstr "obitelj"
 
 #: ThisDayInFamilyHistory//ThisDayInFamilyHistory.py:318
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:328

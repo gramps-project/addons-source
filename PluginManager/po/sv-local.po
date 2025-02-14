@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-08 17:11-0500\n"
-"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"PO-Revision-Date: 2025-02-09 22:37+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -54,10 +54,6 @@ msgstr ""
 msgid "Search..."
 msgstr "Sök..."
 
-#: PluginManager/PluginManager.py:161 ../gramps/gui/plug/_windows.py:816
-msgid "Check for updated addons now"
-msgstr "Kontrollera uppdaterade tillägg nu"
-
 #: PluginManager/PluginManager.py:207 PluginManager/PluginManager.py:216
 msgid "Restart..."
 msgstr "Omstart..."
@@ -80,11 +76,6 @@ msgid ""
 msgstr ""
 "'*' poster är tillhandahållna av tredjeparts-författare,\n"
 "<s>överstrukna</s> poster är dolda"
-
-#: PluginManager/PluginManager.py:472 ../gramps/gui/plug/_windows.py:1079
-#: ../gramps/gui/plug/_windows.py:1137
-msgid "Info"
-msgstr "Info"
 
 #: PluginManager/PluginManager.py:475 PluginManager/PluginManager.py:586
 #: PluginManager/PluginManager.py:410 PluginManager/PluginManager.py:530
@@ -115,14 +106,6 @@ msgstr "Gör synlig"
 msgid "Uninstall"
 msgstr "Avinstallera"
 
-#: PluginManager/PluginManager.py:613 ../gramps/gui/plug/_windows.py:962
-msgid "Checking Addons Failed"
-msgstr "Kontroll av tillägg misslyckades"
-
-#: PluginManager/PluginManager.py:614 ../gramps/gui/plug/_windows.py:964
-msgid "The addon repository appears to be unavailable. Please try again later."
-msgstr "Arkivplatsen med tillägg verkar vara otillgänglig. Försök senare."
-
 #: PluginManager/PluginManager.py:674 PluginManager/PluginManager.py:721
 msgid "*Available"
 msgstr "*Tillgänglig"
@@ -138,7 +121,3 @@ msgstr "*Installerad"
 #: PluginManager/PluginManager.py:704 PluginManager/PluginManager.py:751
 msgid "Update Available"
 msgstr "Uppdatering tillgänglig"
-
-#: PluginManager/PluginManager.py:733 ../gramps/gui/plug/_windows.py:1648
-msgid "Detailed Info"
-msgstr "Detaljinformation"

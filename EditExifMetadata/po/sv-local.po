@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-08 17:11-0500\n"
-"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"PO-Revision-Date: 2025-02-09 22:37+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -403,3 +403,8 @@ msgstr "All Exif-metadata har raderats från denna bild..."
 msgid "There was an error in stripping the Exif metadata from this image..."
 msgstr ""
 "Det inträffade ett fel vid utplockning av Exif metadata från denna bild..."
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:65
+#: EditExifMetadata/editexifmetadata.py:215
+msgid "Copy"
+msgstr "Kopiera"

@@ -18,8 +18,13 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.10-dev\n"
 
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:83
+#: SetPrivacyTool/SetPrivacyTool.py:312
+msgid "Select filter to restrict people"
+msgstr "Seleccione um filtro para limitar os indivíduos"
+
 #: DynamicWeb//dynamicweb.py:2542 DynamicWeb/dynamicweb.py:3052
-#: SetPrivacyTool/SetPrivacyTool.py:195
+#: SetPrivacyTool/SetPrivacyTool.py:320
 msgid "Persons"
 msgstr "Indivíduos"
 

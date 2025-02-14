@@ -20,20 +20,6 @@ msgstr ""
 "2 : 3);\n"
 "X-Generator: Poedit 3.0.1\n"
 
-#: MediaMerge/mediamerge.gpr.py:31
-msgid "Merge Media"
-msgstr "מיזוג מדיה"
-
-#: MediaMerge/mediamerge.gpr.py:32 MediaMerge/mediamerge.gpr.py:33
-msgid ""
-"Searches the entire database, looking for media that have the same path and "
-"merges them."
-msgstr "חיפוש בכלל מסד־הנתונים, לאיתור ומזוג פרטי מדיה בעלי נתיבים זהים."
-
-#: MediaMerge/mediamerge.py:157
-msgid "No media items merged."
-msgstr "לא מוזגו פרטי מדיה."
-
 #: MediaVerify/MediaVerify.gpr.py:30 MediaVerify/MediaVerify.gpr.py:31
 msgid "Media Verify"
 msgstr "אימות מדיה"
@@ -153,12 +139,3 @@ msgstr "תיקון נתיבי קובץ"
 #: MediaVerify/MediaVerify.py:390
 msgid "Fix media paths"
 msgstr "תיקון נתיבי מדיה"
-
-#: MediaMerge/mediamerge.py:149
-#, python-brace-format
-msgid "{number_of} media merged"
-msgid_plural "{number_of} media merged"
-msgstr[0] "עצם מדיה {number_of} מוזג"
-msgstr[1] "מוזגו {number_of} עצמי מדיה"
-msgstr[2] "מוזגו {number_of} עצמי מדיה"
-msgstr[3] "מוזגו {number_of} עצמי מדיה"

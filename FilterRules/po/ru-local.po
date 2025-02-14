@@ -163,3 +163,11 @@ msgstr "Люди связанные с <фильтром>"
 #: FilterRules/isrelatedwithfiltermatch.gpr.py:29
 msgid "Matches people who are related to anybody matched by a person filter"
 msgstr "Выбирает людей связанных с кем-либо из результата фильтра лиц"
+
+#: DataEntryGramplet/DataEntryGramplet.py:71 FilterRules/activepersonrule.py:45
+msgid "Active person"
+msgstr "Активное лицо"
+
+#: SourceIndex/birth.glade.h:26 FilterRules/ageatdeath.py:71
+msgid "Age:"
+msgstr "Возраст:"

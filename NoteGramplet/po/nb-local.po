@@ -25,30 +25,20 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: DataEntryGramplet/DataEntryGramplet.py:55 FilterRules/activepersonrule.py:45
-#: NoteGramplet/NoteGramplet.py:59
+#: NoteGramplet/NoteGramplet.py:65
 msgid "Active person"
 msgstr "Aktiv person"
 
 #: DataEntryGramplet/DataEntryGramplet.py:69
-#: DataEntryGramplet/DataEntryGramplet.py:89 NoteGramplet/NoteGramplet.py:105
+#: DataEntryGramplet/DataEntryGramplet.py:89 NoteGramplet/NoteGramplet.py:111
 msgid "Save"
 msgstr "Lagre"
 
 #: DataEntryGramplet/DataEntryGramplet.py:72
-#: DataEntryGramplet/DataEntryGramplet.py:92 NoteGramplet/NoteGramplet.py:108
+#: DataEntryGramplet/DataEntryGramplet.py:92 NoteGramplet/NoteGramplet.py:114
 msgid "Abandon"
 msgstr "Utelate"
 
 #: NoteGramplet/NoteGramplet.gpr.py:3 NoteGramplet/NoteGramplet.gpr.py:4
 msgid "Note Gramplet"
 msgstr "Notat Smågramps"
-
-#: NoteGramplet/NoteGramplet.py:252 ../gramps/gui/editors/editnote.py:373
-msgid "Add Note"
-msgstr "Legg til notat"
-
-#: NoteGramplet/NoteGramplet.py:257 ../gramps/gui/editors/editnote.py:324
-#: ../gramps/gui/editors/editnote.py:377
-#: ../gramps/gui/editors/objectentries.py:589
-msgid "Edit Note"
-msgstr "Rediger notat"

@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-08 17:11-0500\n"
-"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"PO-Revision-Date: 2025-02-09 22:37+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -42,18 +42,6 @@ msgstr "AncestorFill för %s"
 #: AncestorFill/AncestorFill.py:275 AncestorFill/AncestorFill.py:205
 msgid "Generation "
 msgstr "Generation "
-
-#: AncestorFill/AncestorFill.py:371 ../gramps/gen/plug/report/stdoptions.py:63
-msgid "Translation"
-msgstr "Översättning"
-
-#: AncestorFill/AncestorFill.py:372 ../gramps/gen/utils/win32locale.py:55
-msgid "English"
-msgstr "Engelska"
-
-#: AncestorFill/AncestorFill.py:375 ../gramps/gen/plug/report/stdoptions.py:68
-msgid "The translation to be used for the report."
-msgstr "Rapportens språk."
 
 #: AncestorFill/AncestorFill.py:419 AncestorFill/AncestorFill.py:361
 msgid "The style used for the title of the page."

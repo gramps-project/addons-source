@@ -45,10 +45,6 @@ msgstr "Lisäosien/Laajennusten hallinta, jolla on useita lisäominaisuuksia"
 msgid "Plugin Manager - Enhanced"
 msgstr "Laajennusten hallinta - parannettu"
 
-#: PluginManager.py:150 ../gramps/gui/plug/_windows.py:816
-msgid "Check for updated addons now"
-msgstr "Tarkista päivitetyt laajennukset nyt"
-
 #: PluginManager.py:184 PluginManager/PluginManager.py:216
 msgid "Restart..."
 msgstr "Käynnistää uudelleen..."
@@ -84,11 +80,6 @@ msgstr ""
 "'*' kohteita toimittavat 3. osapuolen kirjoittajat,\n"
 "<s>yliviivatut</s> kohteet on piilotettu"
 
-#: PluginManager.py:455 ../gramps/gui/plug/_windows.py:1079
-#: ../gramps/gui/plug/_windows.py:1137
-msgid "Info"
-msgstr "Tiedot"
-
 #: PluginManager.py:477 PluginManager/PluginManager.py:430
 msgid "Show hidden items"
 msgstr "Näytä piilotetut kohteet"
@@ -109,14 +100,6 @@ msgstr "Laajennukset"
 msgid "Uninstall"
 msgstr "Poista asennus"
 
-#: PluginManager.py:561 ../gramps/gui/plug/_windows.py:962
-msgid "Checking Addons Failed"
-msgstr "Laajennusten tarkistus epäonnistui"
-
-#: PluginManager.py:562 ../gramps/gui/plug/_windows.py:964
-msgid "The addon repository appears to be unavailable. Please try again later."
-msgstr "Laajennushakemisto ei ole käytettävissä. Yritä uudelleen myöhemmin."
-
 #: PluginManager.py:622 PluginManager/PluginManager.py:721
 msgid "*Available"
 msgstr "*Saatavissa"
@@ -133,6 +116,6 @@ msgstr "*Asennettu"
 msgid "Update Available"
 msgstr "Päivitys saatavilla"
 
-#: PluginManager.py:677 ../gramps/gui/plug/_windows.py:1648
-msgid "Detailed Info"
-msgstr "Lisätietoja"
+#: GraphView/search_widget.py:384 PluginManager/PluginManager.py:158
+msgid "Search..."
+msgstr "Hae..."

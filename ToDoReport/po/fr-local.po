@@ -39,7 +39,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: AncestorFill/AncestorFill.py:419 AncestorFill/AncestorFill.py:361
-#: ToDoReport//TodoReport.py:525
+#: ToDoReport/TodoReport.py:903
 msgid "The style used for the title of the page."
 msgstr "Le style utilisé pour les titres de page."
 
@@ -55,10 +55,6 @@ msgstr ""
 "Produit une liste de toutes les notes avec une étiquette donnée ainsi que "
 "les enregistrements qui les référencent, l'individu, la famille, "
 "l'événement, etc."
-
-#: ToDoReport//TodoReport.py:91 ../gramps/plugins/textreport/tagreport.py:115
-msgid "You must first create a tag before running this report."
-msgstr "Vous devez d'abord créer une étiquette avant de lancer ce rapport."
 
 #: ToDoReport//TodoReport.py:98 ToDoReport//TodoReport.py:526
 #: ToDoReport/TodoReport.py:107 ToDoReport/TodoReport.py:904

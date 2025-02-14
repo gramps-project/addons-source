@@ -32,7 +32,7 @@ msgstr ""
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
 #: AncestorFill/AncestorFill.py:360 AncestorFill/AncestorFill.py:361
-#: ToDoReport//TodoReport.py:525
+#: ToDoReport/TodoReport.py:903
 msgid "The style used for the title of the page."
 msgstr "Стиль заголовка страницы."
 
@@ -47,10 +47,6 @@ msgid ""
 msgstr ""
 "Предоставляет список всех заметок с указанныой меткой по всем записям на "
 "которые они ссылаются (лицо, семья, событие, др.)"
-
-#: ToDoReport//TodoReport.py:91 ../gramps/plugins/textreport/tagreport.py:115
-msgid "You must first create a tag before running this report."
-msgstr "Необходимо создать метки перед тем как запускать этот отчёт."
 
 #: ToDoReport//TodoReport.py:98 ToDoReport//TodoReport.py:526
 #: ToDoReport/TodoReport.py:107 ToDoReport/TodoReport.py:904

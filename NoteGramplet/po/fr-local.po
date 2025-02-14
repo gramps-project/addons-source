@@ -40,17 +40,17 @@ msgstr ""
 
 #: DataEntryGramplet/DataEntryGramplet.py:59
 #: DataEntryGramplet/DataEntryGramplet.py:71 FilterRules/activepersonrule.py:45
-#: NoteGramplet/NoteGramplet.py:61
+#: NoteGramplet/NoteGramplet.py:65
 msgid "Active person"
 msgstr "Individu actif"
 
 #: DataEntryGramplet/DataEntryGramplet.py:77
-#: DataEntryGramplet/DataEntryGramplet.py:89 NoteGramplet/NoteGramplet.py:107
+#: DataEntryGramplet/DataEntryGramplet.py:89 NoteGramplet/NoteGramplet.py:111
 msgid "Save"
 msgstr "Enregistrer"
 
 #: DataEntryGramplet/DataEntryGramplet.py:80
-#: DataEntryGramplet/DataEntryGramplet.py:92 NoteGramplet/NoteGramplet.py:110
+#: DataEntryGramplet/DataEntryGramplet.py:92 NoteGramplet/NoteGramplet.py:114
 msgid "Abandon"
 msgstr "Abandonner"
 
@@ -65,12 +65,3 @@ msgstr "Gramplet pour l'édition des notes de l'individu actif"
 #: NoteGramplet/NoteGramplet.py:248 NoteGramplet/NoteGramplet.py:255
 msgid "Save Note"
 msgstr "Enregistrer la note"
-
-#: ../gramps/gui/editors/editnote.py:373
-msgid "Add Note"
-msgstr "Ajouter une note"
-
-#: ../gramps/gui/editors/editnote.py:324 ../gramps/gui/editors/editnote.py:377
-#: ../gramps/gui/editors/objectentries.py:589
-msgid "Edit Note"
-msgstr "Éditer la note"

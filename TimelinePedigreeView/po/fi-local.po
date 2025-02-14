@@ -41,6 +41,7 @@ msgstr "Aikajana sukupuu"
 
 #: TimelinePedigreeView.gpr.py:45 Form/form_us.xml.h:2085
 #: Form/form_us.xml.h:2122 Form/form_us.xml.h:2160 Form/form_us.xml.h:2198
+#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:34
 msgid "Ancestry"
 msgstr "Esivanhemmat"
 
@@ -81,12 +82,6 @@ msgstr "tuhk."
 msgid "Timeline pedigree"
 msgstr "Aikajana sukupuu"
 
-#: TimelinePedigreeView.py:515 ../gramps/plugins/lib/libpersonview.py:275
-#: ../gramps/plugins/view/pedigreeview.py:724
-#: ../gramps/plugins/view/relview.py:411
-msgid "Person Filter Editor"
-msgstr "Henkilösuodinmuokkain"
-
 #: TimelinePedigreeView.py:1415
 #: TimelinePedigreeView/TimelinePedigreeView.py:1437
 msgid "Order by timeline"
@@ -98,6 +93,7 @@ msgid "Show lifespan"
 msgstr "Näytä elinkaari"
 
 #: TimelinePedigreeView.py:1443 FamilyTree/FamilyTree.py:1051
+#: TimelinePedigreeView/TimelinePedigreeView.py:1465
 msgid "Descendant Generations"
 msgstr "Jälkeläisten sukupolvet"
 
@@ -111,6 +107,7 @@ msgstr[0] "%d sukupolvi"
 msgstr[1] "%d sukupolvea"
 
 #: TimelinePedigreeView.py:1459 FamilyTree/FamilyTree.py:1047
+#: TimelinePedigreeView/TimelinePedigreeView.py:1481
 msgid "Ancestor Generations"
 msgstr "Esivanhempien sukupolvet"
 

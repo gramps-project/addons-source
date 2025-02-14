@@ -672,6 +672,7 @@ msgid "Select the template of the web site"
 msgstr "Sélectionner le modèle de site web"
 
 #: DynamicWeb//dynamicweb.py:3980 D3Charts/DescendantIndentedTree.py:1867
+#: DynamicWeb/dynamicweb.py:4811
 msgid "Include records marked private"
 msgstr "Inclure les données privées"
 
@@ -680,10 +681,12 @@ msgid "Whether to include private objects"
 msgstr "Inclure ou non les objets privés"
 
 #: DynamicWeb//dynamicweb.py:3985 D3Charts/DescendantIndentedTree.py:1877
+#: DynamicWeb/dynamicweb.py:4819
 msgid "Include Last Name Only"
 msgstr "N'inclure que le nom"
 
 #: DynamicWeb//dynamicweb.py:3986 D3Charts/DescendantIndentedTree.py:1879
+#: DynamicWeb/dynamicweb.py:4822
 msgid "Include Full Name Only"
 msgstr "Inclure le nom complet"
 
@@ -1007,3 +1010,7 @@ msgstr "Contenu de la page %(index)i"
 #: DynamicWeb//dynamicweb.py:4289 DynamicWeb/dynamicweb.py:5266
 msgid "Contents of the page"
 msgstr "Contenu de la page"
+
+#: Themes/themes.py:140 Themes/themes.py:190 DynamicWeb/dynamicweb.py:5157
+msgid "Theme"
+msgstr "Thème"

@@ -53,10 +53,6 @@ msgstr ""
 msgid "Search..."
 msgstr "Zoeken..."
 
-#: PluginManager/PluginManager.py:161 ../gramps/gui/plug/_windows.py:816
-msgid "Check for updated addons now"
-msgstr "Controleer nu op bijgewerkte add-ons"
-
 #: PluginManager/PluginManager.py:207 PluginManager/PluginManager.py:216
 msgid "Restart..."
 msgstr "Herstarten..."
@@ -81,11 +77,6 @@ msgid ""
 msgstr ""
 "'*' items worden geleverd door externe auteurs,\n"
 "<s>doorgestreepte</s> -items zijn verborgen"
-
-#: PluginManager/PluginManager.py:472 ../gramps/gui/plug/_windows.py:1079
-#: ../gramps/gui/plug/_windows.py:1137
-msgid "Info"
-msgstr "Info"
 
 #: PluginManager/PluginManager.py:475 PluginManager/PluginManager.py:586
 #: PluginManager/PluginManager.py:410 PluginManager/PluginManager.py:530
@@ -116,16 +107,6 @@ msgstr "Maak zichtbaar"
 msgid "Uninstall"
 msgstr "Deïnstalleren"
 
-#: PluginManager/PluginManager.py:613 ../gramps/gui/plug/_windows.py:962
-msgid "Checking Addons Failed"
-msgstr "Controle op uitbreidingen is mislukt"
-
-#: PluginManager/PluginManager.py:614 ../gramps/gui/plug/_windows.py:964
-msgid "The addon repository appears to be unavailable. Please try again later."
-msgstr ""
-"De bibliotheek met uitbreidingen lijkt niet beschikbaar te zijn. Probeer het "
-"later opnieuw."
-
 #: PluginManager/PluginManager.py:674 PluginManager/PluginManager.py:721
 msgid "*Available"
 msgstr "*Beschikbaar"
@@ -141,7 +122,3 @@ msgstr "*Geïnstalleerd"
 #: PluginManager/PluginManager.py:704 PluginManager/PluginManager.py:751
 msgid "Update Available"
 msgstr "Update beschikbaar"
-
-#: PluginManager/PluginManager.py:733 ../gramps/gui/plug/_windows.py:1648
-msgid "Detailed Info"
-msgstr "Gedetailleerde info"

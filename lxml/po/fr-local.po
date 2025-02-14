@@ -309,7 +309,3 @@ msgstr ""
 "Tentative d'ouverture de\n"
 " \"%s\"\n"
 " dans votre navigateur internet préféré ..."
-
-#: CheckPlaceTitles/checkplacetitles.py:224
-msgid "Place titles"
-msgstr "Titres de lieu"

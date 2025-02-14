@@ -21,14 +21,19 @@ msgstr ""
 "X-Generator: Poedit 2.2.4\n"
 
 #: DynamicWeb//dynamicweb.py:2611 DynamicWeb/dynamicweb.py:3170
-#: LifeLineChartView/lifelinechartview.py:463
+#: LifeLineChartView/lifelinechartview.py:508
 msgid "Zoom in"
 msgstr "Uvećaj"
 
 #: DynamicWeb//dynamicweb.py:2612 DynamicWeb/dynamicweb.py:3171
-#: LifeLineChartView/lifelinechartview.py:473
+#: LifeLineChartView/lifelinechartview.py:518
 msgid "Zoom out"
 msgstr "Umanji"
+
+#: DynamicWeb//dynamicweb.py:4181 DynamicWeb/dynamicweb.py:5098
+#: LifeLineChartView/_dummy_translation_string_po.py:101
+msgid "Maximum number of generations"
+msgstr "Najveći broj generacija"
 
 #: LifeLineChartView/lifelinechart.py:2066
 #: LifeLineChartView/lifelinechart.py:2591
@@ -54,31 +59,6 @@ msgstr "Sakrij braću/sestre"
 #: LifeLineChartView/lifelinechart.py:2652
 msgid "Show ancestors above "
 msgstr "Prikaži pretke iznad "
-
-#: LifeLineChartView/lifelinechartview.gpr.py:191
-#: LifeLineChartView/lifelinechartview.gpr.py:198
-#: ../gramps/gen/plug/utils.py:349 ../gramps/gen/plug/utils.py:356
-#, python-format
-msgid "Unable to open '%s'"
-msgstr "Nije moguće otvoriti „%s”"
-
-#: LifeLineChartView/lifelinechartview.gpr.py:205
-#: ../gramps/gen/plug/utils.py:363
-#, python-format
-msgid "Error in reading '%s'"
-msgstr "Greška pri čitanju „%s”"
-
-#: LifeLineChartView/lifelinechartview.gpr.py:216
-#: ../gramps/cli/arghandler.py:403 ../gramps/gen/plug/utils.py:374
-#, python-format
-msgid "Error: cannot open '%s'"
-msgstr "Greška: nije moguće otvoriti „%s”"
-
-#: LifeLineChartView/lifelinechartview.gpr.py:220
-#: ../gramps/gen/plug/utils.py:378
-#, python-format
-msgid "Error: unknown file type: '%s'"
-msgstr "Greška: nepoznata vrsta datoteke: „%s”"
 
 #: LifeLineChartView/lifelinechartview.gpr.py:274
 #: LifeLineChartView/lifelinechartview.gpr.py:24
@@ -181,3 +161,8 @@ msgstr "Konfiguracija oznaka"
 #: LifeLineChartView/lifelinechartview.py:946
 msgid "Reset all settings"
 msgstr "Resetiraj sve postavke"
+
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:3
+#: LifeLineChartView/_dummy_translation_string_po.py:115
+msgid "Number of descendants"
+msgstr "Broj potomaka"

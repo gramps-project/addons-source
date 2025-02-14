@@ -19,7 +19,7 @@ msgstr ""
 "X-Generator: Weblate 5.10-dev\n"
 
 #: AncestorFill/AncestorFill.py:425 AncestorFill/AncestorFill.py:361
-#: ToDoReport//TodoReport.py:525
+#: ToDoReport/TodoReport.py:903
 msgid "The style used for the title of the page."
 msgstr "O estilo usado para o título da página."
 
@@ -34,10 +34,6 @@ msgid ""
 msgstr ""
 "Produz uma lista de todas as notas com uma dada etiqueta juntamente com os "
 "registos referenciados, indivíduo, família, evento, etc."
-
-#: ToDoReport//TodoReport.py:91 ../gramps/plugins/textreport/tagreport.py:115
-msgid "You must first create a tag before running this report."
-msgstr "Tem primeiro de criar uma etiqueta antes de executar este relatório."
 
 #: ToDoReport//TodoReport.py:98 ToDoReport//TodoReport.py:526
 #: ToDoReport/TodoReport.py:107 ToDoReport/TodoReport.py:904

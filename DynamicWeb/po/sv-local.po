@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-08 17:11-0500\n"
-"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"PO-Revision-Date: 2025-02-09 22:37+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -26,15 +26,15 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.10-dev\n"
 
-#: D3Charts/DescendantIndentedTree.py:1867 DynamicWeb//dynamicweb.py:3980
+#: D3Charts/DescendantIndentedTree.py:1867 DynamicWeb/dynamicweb.py:4811
 msgid "Include records marked private"
 msgstr "Ta med data markerade som privata"
 
-#: D3Charts/DescendantIndentedTree.py:1877 DynamicWeb//dynamicweb.py:3985
+#: D3Charts/DescendantIndentedTree.py:1877 DynamicWeb/dynamicweb.py:4819
 msgid "Include Last Name Only"
 msgstr "Ta bara med efternamnet"
 
-#: D3Charts/DescendantIndentedTree.py:1879 DynamicWeb//dynamicweb.py:3986
+#: D3Charts/DescendantIndentedTree.py:1879 DynamicWeb/dynamicweb.py:4822
 msgid "Include Full Name Only"
 msgstr "Ta bara med kompletta namnet"
 
@@ -969,3 +969,7 @@ msgstr "Sidan %(index)i innehåll"
 #: DynamicWeb//dynamicweb.py:4289 DynamicWeb/dynamicweb.py:5266
 msgid "Contents of the page"
 msgstr "Innehåll på sidan"
+
+#: Themes/themes.py:140 Themes/themes.py:190 DynamicWeb/dynamicweb.py:5157
+msgid "Theme"
+msgstr "Tema"

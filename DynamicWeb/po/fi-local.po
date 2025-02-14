@@ -656,6 +656,7 @@ msgid "Select the template of the web site"
 msgstr "Valitse verkkosivuston malli"
 
 #: DynamicWeb//dynamicweb.py:3980 D3Charts/DescendantIndentedTree.py:1867
+#: DynamicWeb/dynamicweb.py:4811
 msgid "Include records marked private"
 msgstr "Lisää yksityisiksi merkityt tiedot"
 
@@ -664,10 +665,12 @@ msgid "Whether to include private objects"
 msgstr "Lisätäänkö yksityiset tiedot"
 
 #: DynamicWeb//dynamicweb.py:3985 D3Charts/DescendantIndentedTree.py:1877
+#: DynamicWeb/dynamicweb.py:4819
 msgid "Include Last Name Only"
 msgstr "Lisää vain sukunimi"
 
 #: DynamicWeb//dynamicweb.py:3986 D3Charts/DescendantIndentedTree.py:1879
+#: DynamicWeb/dynamicweb.py:4822
 msgid "Include Full Name Only"
 msgstr "Lisää vain koko nimi"
 
@@ -984,3 +987,7 @@ msgstr "Sivun sisältö %(index)i"
 #: DynamicWeb//dynamicweb.py:4289 DynamicWeb/dynamicweb.py:5266
 msgid "Contents of the page"
 msgstr "Sivun sisältö"
+
+#: Themes/themes.py:140 Themes/themes.py:190 DynamicWeb/dynamicweb.py:5157
+msgid "Theme"
+msgstr "Teema"

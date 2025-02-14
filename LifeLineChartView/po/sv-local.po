@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-08 17:11-0500\n"
-"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"PO-Revision-Date: 2025-02-09 22:37+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -515,31 +515,6 @@ msgstr "Dölj syskon"
 #: LifeLineChartView/lifelinechart.py:2652
 msgid "Show ancestors above "
 msgstr "Visa förfäder ovan "
-
-#: LifeLineChartView/lifelinechartview.gpr.py:217
-#: LifeLineChartView/lifelinechartview.gpr.py:224
-#: ../gramps/gen/plug/utils.py:349 ../gramps/gen/plug/utils.py:356
-#, python-format
-msgid "Unable to open '%s'"
-msgstr "Kan inte öppna '%s'"
-
-#: LifeLineChartView/lifelinechartview.gpr.py:233
-#: ../gramps/gen/plug/utils.py:363
-#, python-format
-msgid "Error in reading '%s'"
-msgstr "Fel vid läsning av '%s'"
-
-#: LifeLineChartView/lifelinechartview.gpr.py:248
-#: ../gramps/cli/arghandler.py:403 ../gramps/gen/plug/utils.py:374
-#, python-format
-msgid "Error: cannot open '%s'"
-msgstr "FEL: Kan inte öppna '%s'"
-
-#: LifeLineChartView/lifelinechartview.gpr.py:252
-#: ../gramps/gen/plug/utils.py:378
-#, python-format
-msgid "Error: unknown file type: '%s'"
-msgstr "Fel: okänd filtyp: '%s'"
 
 #: LifeLineChartView/lifelinechartview.gpr.py:318
 #: LifeLineChartView/lifelinechartview.gpr.py:24

@@ -103,10 +103,6 @@ msgstr ""
 msgid "Search..."
 msgstr "Ricerca..."
 
-#: PluginManager/PluginManager.py:161 ../gramps/gui/plug/_windows.py:816
-msgid "Check for updated addons now"
-msgstr "Cerca adesso i componenti aggiuntivi aggiornati"
-
 #: PluginManager/PluginManager.py:207 PluginManager/PluginManager.py:216
 msgid "Restart..."
 msgstr "Riavvia..."
@@ -132,11 +128,6 @@ msgid ""
 msgstr ""
 "Gli elementi '*' sono forniti da autori di terze parti,\n"
 "gli elementi <s>barrati</s> sono nascosti"
-
-#: PluginManager/PluginManager.py:472 ../gramps/gui/plug/_windows.py:1079
-#: ../gramps/gui/plug/_windows.py:1137
-msgid "Info"
-msgstr "Informazioni"
 
 #: PluginManager/PluginManager.py:475 PluginManager/PluginManager.py:586
 #: PluginManager/PluginManager.py:410 PluginManager/PluginManager.py:530
@@ -167,16 +158,6 @@ msgstr "Mostra"
 msgid "Uninstall"
 msgstr "Disinstalla"
 
-#: PluginManager/PluginManager.py:613 ../gramps/gui/plug/_windows.py:962
-msgid "Checking Addons Failed"
-msgstr "Il controllo dei componenti aggiuntivi non è riuscito"
-
-#: PluginManager/PluginManager.py:614 ../gramps/gui/plug/_windows.py:964
-msgid "The addon repository appears to be unavailable. Please try again later."
-msgstr ""
-"Il repository dei componenti aggiuntivi non è disponibile. Riprovare più "
-"tardi."
-
 #: PluginManager/PluginManager.py:674 PluginManager/PluginManager.py:721
 msgid "*Available"
 msgstr "*Disponibile"
@@ -192,7 +173,3 @@ msgstr "*Installato"
 #: PluginManager/PluginManager.py:702 PluginManager/PluginManager.py:751
 msgid "Update Available"
 msgstr "Aggiornamento disponibile"
-
-#: PluginManager/PluginManager.py:729 ../gramps/gui/plug/_windows.py:1648
-msgid "Detailed Info"
-msgstr "Informazioni dettagliate"

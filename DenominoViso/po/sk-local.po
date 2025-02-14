@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-08 16:37+0100\n"
-"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"PO-Revision-Date: 2025-02-09 22:37+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -28,25 +28,25 @@ msgstr ""
 #: DataEntryGramplet/DataEntryGramplet.py:266
 #: DataEntryGramplet/DataEntryGramplet.py:167
 #: DataEntryGramplet/DataEntryGramplet.py:178
-#: DataEntryGramplet/DataEntryGramplet.py:315 DenominoViso/DenominoViso.py:1985
+#: DataEntryGramplet/DataEntryGramplet.py:315 DenominoViso/DenominoViso.py:2001
 msgid "in"
 msgstr "in"
 
 #: DenominoViso/DenominoViso.gpr.py:9
 msgid "DenominoViso"
-msgstr ""
+msgstr "DenominoViso"
 
 #: DenominoViso/DenominoViso.py:167 DenominoViso/DenominoViso.py:179
 msgid "No Source"
-msgstr ""
+msgstr "Žiadny zdroj"
 
 #: DenominoViso/DenominoViso.py:196 DenominoViso/DenominoViso.py:208
 msgid "Ancestor"
-msgstr ""
+msgstr "Predok"
 
 #: DenominoViso/DenominoViso.py:197 DenominoViso/DenominoViso.py:209
 msgid "Descendant"
-msgstr ""
+msgstr "Potomok"
 
 #: DenominoViso/DenominoViso.py:202 DenominoViso/DenominoViso.py:214
 msgid "Fan"
@@ -58,27 +58,27 @@ msgstr ""
 
 #: DenominoViso/DenominoViso.py:204 DenominoViso/DenominoViso.py:216
 msgid "Mandelbrot Tree"
-msgstr ""
+msgstr "Mandelbrot Tree"
 
 #: DenominoViso/DenominoViso.py:205 DenominoViso/DenominoViso.py:217
 msgid "Pythagoras Tree"
-msgstr ""
+msgstr "Pythagoras Tree"
 
 #: DenominoViso/DenominoViso.py:209 DenominoViso/DenominoViso.py:221
 msgid "right to left"
-msgstr ""
+msgstr "sprava doľava"
 
 #: DenominoViso/DenominoViso.py:210 DenominoViso/DenominoViso.py:222
 msgid "left to right"
-msgstr ""
+msgstr "zľava doprava"
 
 #: DenominoViso/DenominoViso.py:211 DenominoViso/DenominoViso.py:223
 msgid "top to bottom"
-msgstr ""
+msgstr "zhora nadol"
 
 #: DenominoViso/DenominoViso.py:212 DenominoViso/DenominoViso.py:224
 msgid "bottom to top"
-msgstr ""
+msgstr "Zdola nahor"
 
 #: DenominoViso/DenominoViso.py:288 DenominoViso/DenominoViso.py:961
 #: DenominoViso/DenominoViso.py:1021 DenominoViso/DenominoViso.py:1244
@@ -103,22 +103,13 @@ msgstr "popis"
 msgid "witnesses"
 msgstr "svedkovia"
 
-#: DenominoViso/DenominoViso.py:363 DenominoViso/DenominoViso.py:2489
-#: ../gramps/plugins/export/exportpkg.py:213
-#: ../gramps/plugins/export/exportxml.py:151
-#: ../gramps/plugins/export/exportxml.py:175
-#: ../gramps/plugins/export/exportxml.py:196
-#, python-format
-msgid "Failure writing %s"
-msgstr "Chyba pri zápise %s"
-
 #: DenominoViso/DenominoViso.py:755 DenominoViso/DenominoViso.py:769
 msgid "Unknown time direction"
-msgstr ""
+msgstr "Neznámy časový smer"
 
 #: DenominoViso/DenominoViso.py:1548 DenominoViso/DenominoViso.py:1562
 msgid "volume"
-msgstr ""
+msgstr "zväzok"
 
 #: DenominoViso/DenominoViso.py:1548 DenominoViso/DenominoViso.py:1508
 #: DenominoViso/DenominoViso.py:1562
@@ -128,7 +119,7 @@ msgstr "autor"
 #: DenominoViso/DenominoViso.py:1549 DenominoViso/DenominoViso.py:1513
 #: DenominoViso/DenominoViso.py:1563
 msgid "publication_info"
-msgstr ""
+msgstr "publikácia_info"
 
 #: DenominoViso/DenominoViso.py:1550 DenominoViso/DenominoViso.py:1518
 #: DenominoViso/DenominoViso.py:1564
@@ -141,19 +132,19 @@ msgstr ""
 
 #: DenominoViso/DenominoViso.py:1940 DenominoViso/DenominoViso.py:1959
 msgid "the chart type runs out of bounds"
-msgstr ""
+msgstr "typ grafu vybočuje z hraníc"
 
 #: DenominoViso/DenominoViso.py:1985 DenominoViso/DenominoViso.py:2001
 msgid "Search"
-msgstr ""
+msgstr "Hľadať"
 
 #: DenominoViso/DenominoViso.py:2528 DenominoViso/DenominoViso.py:2552
 msgid "DenominoViso Options"
-msgstr ""
+msgstr "Možnosti DenominoViso"
 
 #: DenominoViso/DenominoViso.py:2535 DenominoViso/DenominoViso.py:2559
 msgid "Central Person"
-msgstr ""
+msgstr "Centrálna osoba"
 
 #: DenominoViso/DenominoViso.py:2536 DenominoViso/DenominoViso.py:2560
 msgid "The central person for the tree"
@@ -161,61 +152,63 @@ msgstr ""
 
 #: DenominoViso/DenominoViso.py:2539 DenominoViso/DenominoViso.py:2563
 msgid "Title of the webpage"
-msgstr ""
+msgstr "Názov webovej stránky"
 
 #: DenominoViso/DenominoViso.py:2540 DenominoViso/DenominoViso.py:2564
 msgid "Any string you wish."
-msgstr ""
+msgstr "Ľubovoľný reťazec."
 
 #: DenominoViso/DenominoViso.py:2544 DenominoViso/DenominoViso.py:2568
 msgid "Either plot ancestor or descendants graph."
-msgstr ""
+msgstr "Či vykresliť graf predkov, alebo graf potomkov."
 
 #: DenominoViso/DenominoViso.py:2549 DenominoViso/DenominoViso.py:2573
 msgid "Display type"
-msgstr ""
+msgstr "Typ zobrazenia"
 
 #: DenominoViso/DenominoViso.py:2550 DenominoViso/DenominoViso.py:2574
 msgid "The type of graph to create."
-msgstr ""
+msgstr "Typ grafu na vytvorenie."
 
 #: DenominoViso/DenominoViso.py:2555 DenominoViso/DenominoViso.py:2582
 msgid "Direction of time"
-msgstr ""
+msgstr "Časová orientácia"
 
 #: DenominoViso/DenominoViso.py:2556 DenominoViso/DenominoViso.py:2583
 msgid "Direction in which time increases."
-msgstr ""
+msgstr "Smer, ktorým sa čas predlžuje."
 
 #: DenominoViso/DenominoViso.py:2565 DenominoViso/DenominoViso.py:2592
 msgid "Max chart width (%)"
-msgstr ""
+msgstr "Maximálna šírka grafu (%)"
 
 #: DenominoViso/DenominoViso.py:2566 DenominoViso/DenominoViso.py:2593
 msgid "Width of the tree as fraction of the browser window"
-msgstr ""
+msgstr "Šírka stromu ako podiel okna prehliadača"
 
 #: DenominoViso/DenominoViso.py:2569 DenominoViso/DenominoViso.py:2596
 msgid "Max chart height (px)"
-msgstr ""
+msgstr "Maximálna výška grafu (px)"
 
 #: DenominoViso/DenominoViso.py:2570 DenominoViso/DenominoViso.py:2597
 msgid "Height of the tree in pixels."
-msgstr ""
+msgstr "Výška stromu v pixeloch."
 
 #: DenominoViso/DenominoViso.py:2573 DenominoViso/DenominoViso.py:2600
 msgid "Closing remarks"
-msgstr ""
+msgstr "Záverečné poznámky"
 
 #: DenominoViso/DenominoViso.py:2574 DenominoViso/DenominoViso.py:2601
 msgid ""
 "List of strings, free text added at the bottom, for example for a copyright "
 "notice."
 msgstr ""
+"Zoznam reťazcov, voľný text pridaný v spodnej časti, napríklad pre "
+"upozornenie na autorské práva."
 
 #: DenominoViso/DenominoViso.py:2577 DenominoViso/DenominoViso.py:2604
 msgid "Include Options"
-msgstr ""
+msgstr "Zahrnúť možnosti"
 
 #: DenominoViso/DenominoViso.py:2580 DenominoViso/DenominoViso.py:2607
 msgid "Include private records"
@@ -227,34 +220,36 @@ msgstr "Zahrnúť udalosti"
 
 #: DenominoViso/DenominoViso.py:2594 DenominoViso/DenominoViso.py:2621
 msgid "Include birth children"
-msgstr ""
+msgstr "Zahrnúť narodené deti"
 
 #: DenominoViso/DenominoViso.py:2595 DenominoViso/DenominoViso.py:2622
 msgid "Whether to include the birth of children in the list of events."
-msgstr ""
+msgstr "Či zahrnúť do zoznamu udalostí narodenie detí."
 
 #: DenominoViso/DenominoViso.py:2598 DenominoViso/DenominoViso.py:2625
 msgid "Include death relatives"
-msgstr ""
+msgstr "Zahrnúť príbuzných po smrti"
 
 #: DenominoViso/DenominoViso.py:2599 DenominoViso/DenominoViso.py:2626
 msgid ""
 "Whether to include the death of relatives during the lifetime of person."
-msgstr ""
+msgstr "Či zahrnúť úmrtie príbuzných počas života osoby."
 
 #: DenominoViso/DenominoViso.py:2602 DenominoViso/DenominoViso.py:2629
 msgid "Include witness note"
-msgstr ""
+msgstr "Zahrnúť poznámku svedka"
 
 #: DenominoViso/DenominoViso.py:2603 DenominoViso/DenominoViso.py:2630
+#, fuzzy
 msgid ""
 "Whether to include the note belonging to a witness (if the event_format "
 "contains <witnesses>)"
 msgstr ""
+"Či zahrnúť poznámku patriacu svedkovi (ak event_format obsahuje <witnesses>)"
 
 #: DenominoViso/DenominoViso.py:2608 DenominoViso/DenominoViso.py:2635
 msgid "Whether to include a person's attributes"
-msgstr ""
+msgstr "Či zahrnúť atribúty osoby"
 
 #: DenominoViso/DenominoViso.py:2611 DenominoViso/DenominoViso.py:2638
 msgid "Include Addresses"
@@ -262,31 +257,31 @@ msgstr "Zahrnúť adresy"
 
 #: DenominoViso/DenominoViso.py:2612 DenominoViso/DenominoViso.py:2639
 msgid "Whether to include a person's addresses."
-msgstr ""
+msgstr "Či zahrnúť adresy osoby."
 
 #: DenominoViso/DenominoViso.py:2615 DenominoViso/DenominoViso.py:2642
 msgid "Include Note"
-msgstr ""
+msgstr "Zahrnúť poznámku"
 
 #: DenominoViso/DenominoViso.py:2616 DenominoViso/DenominoViso.py:2643
 msgid "Whether to include a person's note."
-msgstr ""
+msgstr "Či zahrnúť poznámku osoby."
 
 #: DenominoViso/DenominoViso.py:2619 DenominoViso/DenominoViso.py:2646
 msgid "Include URL"
-msgstr ""
+msgstr "Zahrnúť adresu URL"
 
 #: DenominoViso/DenominoViso.py:2620 DenominoViso/DenominoViso.py:2647
 msgid "Whether to include a person's internet address."
-msgstr ""
+msgstr "Či zahrnúť internetovú adresu osoby."
 
 #: DenominoViso/DenominoViso.py:2623 DenominoViso/DenominoViso.py:2650
 msgid "Include URL description"
-msgstr ""
+msgstr "Zahrnúť popis adresy URL"
 
 #: DenominoViso/DenominoViso.py:2624 DenominoViso/DenominoViso.py:2651
 msgid "Whether to include the description of the first URL"
-msgstr ""
+msgstr "Či zahrnúť popis prvej adresy URL"
 
 #: DenominoViso/DenominoViso.py:2629 DenominoViso/DenominoViso.py:2656
 msgid "Include Sources"
@@ -294,15 +289,15 @@ msgstr "Zahrnúť zdroje"
 
 #: DenominoViso/DenominoViso.py:2630 DenominoViso/DenominoViso.py:2657
 msgid "Whether to include a person's sources."
-msgstr ""
+msgstr "Či zahrnúť zdroje osoby."
 
 #: DenominoViso/DenominoViso.py:2633 DenominoViso/DenominoViso.py:2660
 msgid "Image Options"
-msgstr ""
+msgstr "Možnosti obrázka"
 
 #: DenominoViso/DenominoViso.py:2635 DenominoViso/DenominoViso.py:2662
 msgid "Include Photos/Images from Gallery"
-msgstr ""
+msgstr "Zahrnúť fotografie/obrázky z galérie"
 
 #: DenominoViso/DenominoViso.py:2636 DenominoViso/DenominoViso.py:2663
 msgid "Whether to include images"

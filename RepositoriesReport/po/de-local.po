@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-02 22:39+0200\n"
-"PO-Revision-Date: 2025-02-09 06:44+0000\n"
+"PO-Revision-Date: 2025-02-09 22:37+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -36,19 +36,19 @@ msgstr ""
 #: SourcesCitationsReport/SourcesCitationsReport.py:470
 #: SourcesCitationsReport/SourcesCitationsReport.py:480
 #: RepositoriesReport/RepositoriesReport.py:175
-#: RepositoriesReport/RepositoriesReportAlt.py:503
+#: RepositoriesReport/RepositoriesReportAlt.py:504
 msgid "The style used for the title of the report."
 msgstr "Der Stil, der für den Titel des Berichts verwendet wird."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:540
 #: SourcesCitationsReport/SourcesCitationsReport.py:591
 #: RepositoriesReport/RepositoriesReport.py:203
-#: RepositoriesReport/RepositoriesReportAlt.py:532
+#: RepositoriesReport/RepositoriesReportAlt.py:533
 msgid "The style used for each section."
 msgstr "Der Stil, der für jeden Absatz verwendet wird."
 
 #: DenominoViso/DenominoViso.py:2607
-#: RepositoriesReport/RepositoriesReportAlt.py:466
+#: RepositoriesReport/RepositoriesReportAlt.py:467
 msgid "Include private records"
 msgstr "Vertrauliche Daten aufnehmen"
 
@@ -201,15 +201,3 @@ msgstr "Ob Schlüsseldatensätze mit leeren Werten enthalten sein sollen."
 #: RepositoriesReport/RepositoriesReportAlt.py:548
 msgid "The style used for child section."
 msgstr "Der Stil, der für Kinder Absatz verwendet wird."
-
-#: ../gramps/gen/plug/report/stdoptions.py:63
-msgid "Translation"
-msgstr "Übersetzung"
-
-#: ../gramps/gen/utils/win32locale.py:55
-msgid "English"
-msgstr "Englisch"
-
-#: ../gramps/gen/plug/report/stdoptions.py:68
-msgid "The translation to be used for the report."
-msgstr "Die Übersetzung, die für den Bericht verwendet wird."

@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-02 22:39+0200\n"
-"PO-Revision-Date: 2025-02-09 06:44+0000\n"
+"PO-Revision-Date: 2025-02-09 22:37+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -33,15 +33,15 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.10-dev\n"
 
-#: D3Charts/DescendantIndentedTree.py:1867 DynamicWeb/dynamicweb.py:3976
+#: D3Charts/DescendantIndentedTree.py:1867 DynamicWeb/dynamicweb.py:4811
 msgid "Include records marked private"
 msgstr "Mit als vertraulich markierten Datensätzen"
 
-#: D3Charts/DescendantIndentedTree.py:1877 DynamicWeb/dynamicweb.py:3981
+#: D3Charts/DescendantIndentedTree.py:1877 DynamicWeb/dynamicweb.py:4819
 msgid "Include Last Name Only"
 msgstr "Nur Nachnamen aufnehmen"
 
-#: D3Charts/DescendantIndentedTree.py:1879 DynamicWeb/dynamicweb.py:3982
+#: D3Charts/DescendantIndentedTree.py:1879 DynamicWeb/dynamicweb.py:4822
 msgid "Include Full Name Only"
 msgstr "Nur vollständigen Namen aufnehmen"
 
@@ -997,107 +997,6 @@ msgstr "Inhalt der Seite %(index)i"
 msgid "Contents of the page"
 msgstr "Inhalt der Seite"
 
-#: ../gramps/plugins/webreport/narrativeweb.py:2552
-msgid "Include a column for birth dates on the index pages"
-msgstr "Spalte für Geburtsdaten auf den Indexseiten"
-
-#: ../gramps/plugins/webreport/narrativeweb.py:2558
-msgid "Include a column for death dates on the index pages"
-msgstr "Spalte für Todesdaten auf den Indexseiten"
-
-#: ../gramps/plugins/webreport/narrativeweb.py:2427
-msgid "Include images and media objects"
-msgstr "Bilder und Medienobjekte aufnehmen"
-
-#: ../gramps/plugins/webreport/narrativeweb.py:2554
-msgid "Whether to include a birth column"
-msgstr "Ob eine Spalte für Geburt aufgenommen wird."
-
-#: ../gramps/plugins/webreport/narrativeweb.py:2560
-msgid "Whether to include a death column"
-msgstr "Ob eine Spalte für Tod aufgenommen wird."
-
-#: ../gramps/plugins/drawreport/statisticschart.py:447
-msgid "Age at marriage"
-msgstr "Alter bei Hochzeit"
-
-#: ../gramps/plugins/gramplet/agestats.py:264
-msgid "Average"
-msgstr "Durchschnitt"
-
-#: ../gramps/gui/filters/sidebar/_personsidebarfilter.py:164
-#: ../gramps/plugins/export/exportcsv.py:428
-#: ../gramps/plugins/webreport/person.py:1957
-#: ../gramps/plugins/webreport/person.py:2351
-msgid "Birth date"
-msgstr "Geburtsdatum"
-
-#: ../gramps/gui/filters/sidebar/_personsidebarfilter.py:168
-#: ../gramps/plugins/drawreport/statisticschart.py:405
-#: ../gramps/plugins/export/exportcsv.py:429
-#: ../gramps/plugins/importer/importcsv.py:242
-msgid "Birth place"
-msgstr "Geburtsort"
-
-#: ../gramps/gui/filters/sidebar/_personsidebarfilter.py:170
-#: ../gramps/plugins/export/exportcsv.py:434
-#: ../gramps/plugins/webreport/person.py:1968
-#: ../gramps/plugins/webreport/person.py:2352
-msgid "Death date"
-msgstr "Sterbedatum"
-
-#: ../gramps/gui/filters/sidebar/_personsidebarfilter.py:174
-#: ../gramps/plugins/drawreport/statisticschart.py:411
-#: ../gramps/plugins/export/exportcsv.py:435
-msgid "Death place"
-msgstr "Sterbeort"
-
-#: ../gramps/plugins/drawreport/statisticschart.py:417
-msgid "Marriage place"
-msgstr "Hochzeitsort"
-
-#: ../gramps/plugins/gramplet/agestats.py:266
-msgid "Maximum"
-msgstr "Maximum"
-
-#: ../gramps/plugins/gramplet/agestats.py:263
-msgid "Minimum"
-msgstr "Minimum"
-
-#: ../gramps/plugins/drawreport/statisticschart.py:441
-msgid "Number of children"
-msgstr "Kinderzahl"
-
-#: ../gramps/plugins/drawreport/drawplugins.gpr.py:207
-#: ../gramps/plugins/drawreport/statisticschart.py:916
-#: ../gramps/plugins/drawreport/statisticschart.py:934
-#: ../gramps/plugins/drawreport/statisticschart.py:971
-#: ../gramps/plugins/drawreport/statisticschart.py:973
-msgid "Statistics Charts"
-msgstr "Statistikdiagramme"
-
-#: ../gramps/plugins/webreport/home.py:81
-msgid "Home"
-msgstr "Anfang"
-
-#: ../gramps/plugins/webreport/person.py:1929
-msgid "Age at Death"
-msgstr "Alter beim Tod"
-
-#: ../gramps/plugins/webreport/narrativeweb.py:2678
-msgid "Include Family Map Pages with all places shown on the map"
-msgstr ""
-"Familienkartenseiten mit allen auf der Karte abgebildeten Orten aufnehmen"
-
-#: ../gramps/plugins/webreport/narrativeweb.py:2599
-msgid "Include event pages"
-msgstr "Ereignisseiten aufnehmen"
-
-#: ../gramps/plugins/webreport/narrativeweb.py:2600
-msgid "Add a complete events list and relevant pages or not"
-msgstr ""
-"Eine komplette Ereignisliste und entsprechende Seiten aufnehmen oder nicht"
-
-#: ../gramps/plugins/webreport/narrativeweb.py:2307
-msgid "Sort all children in birth order"
-msgstr "Alle Kinder in Reihenfolge der Geburt sortieren"
+#: Themes/themes.py:173 Themes/themes.py:223 DynamicWeb/dynamicweb.py:5157
+msgid "Theme"
+msgstr "Thema"

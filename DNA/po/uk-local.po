@@ -42,10 +42,6 @@ msgstr " Карта для "
 msgid "Chr"
 msgstr "Хр"
 
-#: DNA/dnasegmentmap.py:614 DNAMatches/dnamatches.py:210
-msgid "LEGEND"
-msgstr "ЛЕГЕНДА"
-
 #: DNA/dnasegmentmap.py:827 DNA/dnasegmentmap.py:1056
 #, python-brace-format
 msgid ""
@@ -64,16 +60,6 @@ msgstr " SNPs"
 #: DNA/dnasegmentmap.py:834 DNA/dnasegmentmap.py:1063
 msgid " and ends at "
 msgstr " і закінчується на "
-
-#: DNA/dnasegmentmap.py:848
-#: SourcesCitationsReport/SourcesCitationsReport.py:324
-#: SourcesCitationsReport/SourcesCitationsReport.py:345
-#: SourcesCitationsReport/SourcesCitationsReport.py:372
-#: SourcesCitationsReport/SourcesCitationsReport.py:378
-#: SourcesCitationsReport/SourcesCitationsReport.py:384
-#, python-format
-msgid "%s"
-msgstr "%s"
 
 #: DNA/dnasegmentmap.py:852 DNA/dnasegmentmap.py:1086
 #, python-format

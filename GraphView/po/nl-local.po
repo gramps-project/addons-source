@@ -26,57 +26,57 @@ msgstr ""
 
 #: SourcesCitationsReport//SourcesCitationsReport.py:341
 #: SourcesCitationsReport/SourcesCitationsReport.py:335
-#: GraphView/graphview.py:3083 GraphView/graphview.py:3084
-#: GraphView/graphview.py:3096 GraphView/graphview.py:3097
+#: GraphView/graphview.py:3168 GraphView/graphview.py:3169
+#: GraphView/graphview.py:3181 GraphView/graphview.py:3182
 #, python-format
 msgid "%s "
 msgstr "%s "
 
 #: PluginManager/PluginManager.py:155 PluginManager/PluginManager.py:158
-#: GraphView/search_widget.py:384
+#: GraphView/search_widget.py:400
 msgid "Search..."
 msgstr "Zoeken..."
 
 #: DynamicWeb/dynamicweb.py:2615 DynamicWeb/dynamicweb.py:3170
-#: GraphView/graphview.py:1024
+#: GraphView/graphview.py:1095
 msgid "Zoom in"
 msgstr "Inzoomen"
 
 #: DynamicWeb/dynamicweb.py:2616 DynamicWeb/dynamicweb.py:3171
-#: GraphView/graphview.py:1031
+#: GraphView/graphview.py:1102
 msgid "Zoom out"
 msgstr "Uitzoomen"
 
-#: DenominoViso/DenominoViso.py:2001 GraphView/graphview.py:897
+#: DenominoViso/DenominoViso.py:2001 GraphView/graphview.py:968
 msgid "Search"
 msgstr "Zoeken"
 
-#: QuiltView/QuiltView.py:1500 GraphView/graphview.py:3941
+#: QuiltView/QuiltView.py:1500 GraphView/graphview.py:4048
 msgid "Set as home person"
 msgstr "Instellen als beginpersoon"
 
-#: QuiltView/QuiltView.py:1656 GraphView/graphview.py:4382
-#: GraphView/graphview.py:4428
+#: QuiltView/QuiltView.py:1656 GraphView/graphview.py:4538
+#: GraphView/graphview.py:4584
 #, python-format
 msgid "Adding Tags to person (%s)"
 msgstr "Labels aan persoon (%s) toevoegen"
 
-#: QuiltView/QuiltView.py:1661 GraphView/graphview.py:4387
-#: GraphView/graphview.py:4439
+#: QuiltView/QuiltView.py:1661 GraphView/graphview.py:4543
+#: GraphView/graphview.py:4595
 #, python-format
 msgid "Adding Tags to family (%s)"
 msgstr "Labels aan gezin (%s) toevoegen"
 
 #: EditExifMetadata//editexifmetadata.py:215
-#: EditExifMetadata/editexifmetadata.py:215 GraphView/graphview.py:3778
+#: EditExifMetadata/editexifmetadata.py:215 GraphView/graphview.py:3863
 msgid "Copy"
 msgstr "Kopieer"
 
-#: LifeLineChartView/lifelinechartview.py:527 GraphView/graphview.py:1038
+#: LifeLineChartView/lifelinechartview.py:527 GraphView/graphview.py:1109
 msgid "Zoom to original"
 msgstr "Zoom naar origineel"
 
-#: LifeLineChartView/lifelinechartview.py:534 GraphView/graphview.py:1045
+#: LifeLineChartView/lifelinechartview.py:534 GraphView/graphview.py:1116
 msgid "Zoom to best fit"
 msgstr "Zoom naar best passend"
 
@@ -461,8 +461,3 @@ msgstr ""
 #, python-format
 msgid "<b>%s:</b>"
 msgstr "<b>%s:</b>"
-
-#: GraphView/search_widget.py:671
-#: ../gramps/plugins/gramplet/relativegramplet.py:116
-msgid "Parents:"
-msgstr "Ouders:"

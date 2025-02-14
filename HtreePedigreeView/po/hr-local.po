@@ -21,32 +21,32 @@ msgstr ""
 "X-Generator: Poedit 2.2.4\n"
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:82
-#: HtreePedigreeView/HtreePedigreeView.py:83
+#: HtreePedigreeView/HtreePedigreeView.py:93
 msgid "short for born|b."
 msgstr "r."
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:83
-#: HtreePedigreeView/HtreePedigreeView.py:84
+#: HtreePedigreeView/HtreePedigreeView.py:94
 msgid "short for died|d."
 msgstr "u."
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:84
-#: HtreePedigreeView/HtreePedigreeView.py:85
+#: HtreePedigreeView/HtreePedigreeView.py:95
 msgid "short for baptized|bap."
 msgstr "kr."
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:85
-#: HtreePedigreeView/HtreePedigreeView.py:86
+#: HtreePedigreeView/HtreePedigreeView.py:96
 msgid "short for christened|chr."
 msgstr "kr."
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:86
-#: HtreePedigreeView/HtreePedigreeView.py:87
+#: HtreePedigreeView/HtreePedigreeView.py:97
 msgid "short for buried|bur."
 msgstr "pok."
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:87
-#: HtreePedigreeView/HtreePedigreeView.py:88
+#: HtreePedigreeView/HtreePedigreeView.py:98
 msgid "short for cremated|crem."
 msgstr "krem."
 
@@ -72,10 +72,3 @@ msgstr "Pogled H-stabla predaka"
 #: HtreePedigreeView/HtreePedigreeView.py:1692
 msgid "About H-Tree"
 msgstr "O H-stablu"
-
-#: ../gramps/plugins/lib/libpersonview.py:275
-#: ../gramps/plugins/view/pedigreeview.py:724
-#: ../gramps/plugins/view/relview.py:411
-#: HtreePedigreeView/HtreePedigreeView.py:699
-msgid "Person Filter Editor"
-msgstr "Uređivač filtra za osobe"

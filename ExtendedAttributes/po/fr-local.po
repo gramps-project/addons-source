@@ -52,12 +52,3 @@ msgstr "Attributs étendus"
 #: ExtendedAttributes/ExtendedAttributes.gpr.py:48
 msgid "Extended Family Attributes"
 msgstr "Attributs étendus de la famille"
-
-#: ExtendedAttributes/ExtendedAttributes.py:49
-#: ../gramps/plugins/gramplet/attributes.py:56
-msgid ""
-"Double-click on a row to view a quick report showing all people with the "
-"selected attribute."
-msgstr ""
-"Double-cliquez sur une ligne pour ouvrir un rapport express montrant tous "
-"les individus avec cet attribut."

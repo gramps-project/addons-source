@@ -20,8 +20,13 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 "X-Generator: Poedit 2.2.4\n"
 
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:83
+#: SetPrivacyTool/SetPrivacyTool.py:312
+msgid "Select filter to restrict people"
+msgstr "Odaberi filtar za ograničavanje osoba"
+
 #: DynamicWeb//dynamicweb.py:2542 DynamicWeb/dynamicweb.py:3052
-#: SetPrivacyTool/SetPrivacyTool.py:195
+#: SetPrivacyTool/SetPrivacyTool.py:320
 msgid "Persons"
 msgstr "Osobe"
 

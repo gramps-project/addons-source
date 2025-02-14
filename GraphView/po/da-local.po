@@ -21,54 +21,54 @@ msgstr ""
 "X-Generator: Poedit 3.0.1\n"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:335
-#: GraphView/graphview.py:3083 GraphView/graphview.py:3084
-#: GraphView/graphview.py:3096 GraphView/graphview.py:3097
+#: GraphView/graphview.py:3168 GraphView/graphview.py:3169
+#: GraphView/graphview.py:3181 GraphView/graphview.py:3182
 #, python-format
 msgid "%s "
 msgstr "%s "
 
-#: PluginManager/PluginManager.py:158 GraphView/search_widget.py:384
+#: PluginManager/PluginManager.py:158 GraphView/search_widget.py:400
 msgid "Search..."
 msgstr "Søg...."
 
-#: DynamicWeb/dynamicweb.py:3170 GraphView/graphview.py:1024
+#: DynamicWeb/dynamicweb.py:3170 GraphView/graphview.py:1095
 msgid "Zoom in"
 msgstr "Zoom ind"
 
-#: DynamicWeb/dynamicweb.py:3171 GraphView/graphview.py:1031
+#: DynamicWeb/dynamicweb.py:3171 GraphView/graphview.py:1102
 msgid "Zoom out"
 msgstr "Zoom ud"
 
-#: DenominoViso/DenominoViso.py:2001 GraphView/graphview.py:897
+#: DenominoViso/DenominoViso.py:2001 GraphView/graphview.py:968
 msgid "Search"
 msgstr "Søg"
 
-#: QuiltView/QuiltView.py:1500 GraphView/graphview.py:3941
+#: QuiltView/QuiltView.py:1500 GraphView/graphview.py:4048
 msgid "Set as home person"
 msgstr "Sæt som fokusperson"
 
-#: QuiltView/QuiltView.py:1656 GraphView/graphview.py:4382
-#: GraphView/graphview.py:4428
+#: QuiltView/QuiltView.py:1656 GraphView/graphview.py:4538
+#: GraphView/graphview.py:4584
 #, python-format
 msgid "Adding Tags to person (%s)"
 msgstr "Tilføjer mærkater til person (%s)"
 
-#: QuiltView/QuiltView.py:1661 GraphView/graphview.py:4387
-#: GraphView/graphview.py:4439
+#: QuiltView/QuiltView.py:1661 GraphView/graphview.py:4543
+#: GraphView/graphview.py:4595
 #, python-format
 msgid "Adding Tags to family (%s)"
 msgstr "Tilføjer mærkater til familie (%s)"
 
-#: LifeLineChartView/lifelinechartview.py:527 GraphView/graphview.py:1038
+#: LifeLineChartView/lifelinechartview.py:527 GraphView/graphview.py:1109
 msgid "Zoom to original"
 msgstr "Zoom til original"
 
-#: LifeLineChartView/lifelinechartview.py:534 GraphView/graphview.py:1045
+#: LifeLineChartView/lifelinechartview.py:534 GraphView/graphview.py:1116
 msgid "Zoom to best fit"
 msgstr "Zoom så den passer bedst"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:69
-#: EditExifMetadata/editexifmetadata.py:215 GraphView/graphview.py:3778
+#: EditExifMetadata/editexifmetadata.py:215 GraphView/graphview.py:3863
 msgid "Copy"
 msgstr "Kopier"
 
@@ -452,8 +452,3 @@ msgstr ""
 #, python-format
 msgid "<b>%s:</b>"
 msgstr "<b>%s:</b>"
-
-#: GraphView/search_widget.py:671
-#: ../gramps/plugins/gramplet/relativegramplet.py:116
-msgid "Parents:"
-msgstr "Forældre:"

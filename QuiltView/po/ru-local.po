@@ -55,12 +55,6 @@ msgstr "Очистить поле ввода для выбора имени."
 msgid "Nothing is selected"
 msgstr "Ничего не выбрано"
 
-#: QuiltView/QuiltView.py:358 ../gramps/plugins/lib/libpersonview.py:275
-#: ../gramps/plugins/view/pedigreeview.py:724
-#: ../gramps/plugins/view/relview.py:411
-msgid "Person Filter Editor"
-msgstr "Редактор фильтров людей"
-
 #: QuiltView/QuiltView.py:435 QuiltView/QuiltView.py:572
 #, python-format
 msgid ""
