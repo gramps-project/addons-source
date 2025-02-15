@@ -41,6 +41,14 @@ Examples:
    python3 make.py gramps42 as-needed
        Builds the tgz for only addons that have changed, then recreates
        the listings and does cleanup
+
+   python3 make.py gramps60 aggregate-pot
+       Aggregates all `template.pot` files into a single `po/addons.pot` file.
+       Strings that are already in `gramps.pot` are excluded.
+
+   python3 make.py gramps60 extract-po
+       Extracts strings from the aggregated `po/{lang}.po` files into the
+       `{lang}-local.po` files for each addon.
 """
 import shutil
 import glob
@@ -49,6 +57,7 @@ import os
 import tarfile
 import json
 from xml.etree import ElementTree
+from subprocess import call, Popen, PIPE
 
 if "GRAMPSPATH" in os.environ:
     GRAMPSPATH = os.environ["GRAMPSPATH"]
@@ -60,7 +69,6 @@ gramps_version = sys.argv[1]
 command = sys.argv[2]
 if len(sys.argv) >= 4:
     addon = sys.argv[3]
-
 
 def system(scmd, **kwargs):
     """
@@ -933,6 +941,67 @@ elif command == "listing":
             newline="",
         )
         json.dump(output, fp_out, indent=0)
+
+elif command == "aggregate-pot":
+    try:
+        sys.path.insert(0, GRAMPSPATH)
+        os.environ["GRAMPS_RESOURCES"] = os.path.abspath(GRAMPSPATH)
+        from gramps.gen.const import GRAMPS_LOCALE as glocale
+        from gramps.gen.plug import make_environment
+    except ImportError:
+        print(
+            "Where is Gramps: '%s'? Use "
+            "'GRAMPSPATH=path python3 make.py %s aggregate-pot'"
+            % (os.path.abspath(GRAMPSPATH), gramps_version)
+        )
+        exit()
+
+    args = ["msgcat", "--use-first"]
+    pot_files = glob.glob("*/po/template.pot")
+    args.extend(pot_files)
+    args.extend(["-o", "po/template.pot"])
+    call(args)
+
+    gramps_pot = os.path.join(GRAMPSPATH, "po/gramps.pot")
+    args = ["msgcomm", "po/template.pot", gramps_pot]
+    args.extend(["--unique"])
+    args.extend(["-o", "po/unique.pot"])
+    call(args)
+
+    args = ["msgcomm", "po/template.pot", "po/unique.pot"]
+    args.extend(["--more-than", "1"])
+    args.extend(["-o", "po/addons.pot"])
+    call(args)
+
+    os.remove("po/template.pot")
+    os.remove("po/unique.pot")
+
+elif command == "extract-po":
+    for po_dir in glob.glob("*/po"):
+        print (po_dir[:-3])
+        for lang in get_all_languages():
+            #print (lang)
+            po = os.path.join(po_dir, f"{lang}-local.po")
+            pot = os.path.join(po_dir, "template.pot")
+            if os.path.exists(po) and os.path.exists(f"po/{lang}.po"):
+                args = ["msgcomm", f"po/{lang}.po", pot]
+                args.extend(["--more-than", "1"])
+                args.extend(["-o", po])
+                call(args)
+
+                args = ["git", "diff", "-U0", po]
+                empty_diff = True
+                with Popen(args, stdout=PIPE, text=True) as proc:
+                    for line in proc.stdout.readlines():
+                        if (line.startswith(("-", "+")) and
+                            not line.startswith(("---", "+++"))):
+                            if (not line.startswith(("+#", "-#")) and
+                                "PO-Revision-Date" not in line):
+                                empty_diff = False
+
+                if empty_diff:
+                    args = ["git", "restore", po]
+                    call(args)
 
 else:
     raise AttributeError("unknown command")
