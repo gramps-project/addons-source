@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-02 22:39+0200\n"
-"PO-Revision-Date: 2025-02-09 22:37+0000\n"
+"PO-Revision-Date: 2025-02-15 16:17+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -31,7 +31,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.10\n"
 
 #: MediaMerge/mediamerge.gpr.py:32 MediaMerge/mediamerge.gpr.py:31
 msgid "Merge Media"
@@ -1665,7 +1665,7 @@ msgstr "Männliche erweiterbare Hintergrundfarbe"
 
 #: D3Charts/AncestralCollapsibleTree.py:852
 msgid "RGB-color for male expandable box background."
-msgstr "RGB-Farbe für männliche erweiterbare Boxenhintergrund"
+msgstr "RGB-Farbe für den Hintergrund der männlichen erweiterbaren Box."
 
 #: D3Charts/AncestralCollapsibleTree.py:855
 msgid "Female Background"
@@ -1673,7 +1673,7 @@ msgstr "Hintergrund weiblich"
 
 #: D3Charts/AncestralCollapsibleTree.py:856
 msgid "RGB-color for female box background."
-msgstr "RGB-Farbe für weibliche Boxenhintergrund"
+msgstr "RGB-Farbe für den Hintergrund der weiblichen Box."
 
 #: D3Charts/AncestralCollapsibleTree.py:859
 msgid "Female Expandable Background"
@@ -1681,7 +1681,7 @@ msgstr "Erweiterbarer weiblicher Hintergrund"
 
 #: D3Charts/AncestralCollapsibleTree.py:861
 msgid "RGB-color for female expandable box background."
-msgstr "RGB-Farbe für weibliche erweiterbare Boxenhintergrund"
+msgstr "RGB-Farbe für den Hintergrund der weiblichen erweiterbaren Box."
 
 #: D3Charts/AncestralCollapsibleTree.py:867 D3Charts/AncestralFanChart.py:739
 #: D3Charts/DescendantIndentedTree.py:1826
@@ -1715,7 +1715,7 @@ msgstr "Väterliche Hintergrundfarbe"
 
 #: D3Charts/AncestralFanChart.py:730
 msgid "RGB-color for paternal box background."
-msgstr "RGB-Farbe für väterlichen Boxenhintergrund"
+msgstr "RGB-Farbe für den Hintergrund der väterlichen Box."
 
 #: D3Charts/AncestralFanChart.py:733
 msgid "Maternal Background"
@@ -1723,7 +1723,7 @@ msgstr "Hintergrund väterlich"
 
 #: D3Charts/AncestralFanChart.py:734
 msgid "RGB-color for maternal box background."
-msgstr "RGB-Farbe für väterlichen Boxenhintergrund"
+msgstr "RGB-Farbe für den Hintergrund der mütterlichen Box."
 
 #: D3Charts/DescendantIndentedTree.gpr.py:22
 #: D3Charts/DescendantIndentedTree.py:909
@@ -1818,7 +1818,7 @@ msgstr "Erweiterbar Hintergrundfarbe"
 
 #: D3Charts/DescendantIndentedTree.py:1858
 msgid "RGB-color for expandable row background."
-msgstr "RGB-Farbe für erweiterbare Reihe Hintergrund"
+msgstr "RGB-Farbe für den Hintergrund der erweiterbaren Zeile."
 
 #: D3Charts/DescendantIndentedTree.py:1861
 msgid "Non-Expandable Background Color"
@@ -1826,7 +1826,7 @@ msgstr "Nicht-Erweiterbar Hintergrundfarbe"
 
 #: D3Charts/DescendantIndentedTree.py:1863
 msgid "RGB-color for non-expandable row background."
-msgstr "RGB-Farbe für nicht erweiterbare Reihe Hintergrund"
+msgstr "RGB-Farbe für den Hintergrund einer nicht erweiterbaren Zeile."
 
 #: D3Charts/DescendantIndentedTree.py:1867
 msgid "Include records marked private"
@@ -2117,13 +2117,13 @@ msgstr "Deinstallieren"
 
 #: PluginManager/PluginManager.py:613 ../gramps/gui/plug/_windows.py:962
 msgid "Checking Addons Failed"
-msgstr "Überprüfen der Erweiterungen fehlgeschlagen"
+msgstr "Überprüfung von Erweiterungen fehlgeschlagen"
 
 #: PluginManager/PluginManager.py:614 ../gramps/gui/plug/_windows.py:964
 msgid "The addon repository appears to be unavailable. Please try again later."
 msgstr ""
-"Der Aufbewahrungsort im Internet für Zusatzmodule ist nicht erreichbar. "
-"Bitte versuche es später noch einmal."
+"Der Aufbewahrungsort für Erweiterung scheint nicht verfügbar zu sein. Bitte "
+"versuche es später noch einmal."
 
 #: PluginManager/PluginManager.py:674 PluginManager/PluginManager.py:721
 msgid "*Available"
@@ -6030,9 +6030,9 @@ msgid ""
 "These are added to your database, so you may want to work with a test "
 "database or delete them later."
 msgstr ""
-"Generiert Testnotizen im Bereich N99996-N99999.\n"
-"Diese werden zu deiner Datenbank hinzugefügt, sodass du möglicherweise\n"
-"mit einer Testdatenbank arbeiten sie später löschen kannst."
+"Erzeugt Testnotizen im Bereich N99996-N99999.\n"
+"Diese werden zu deiner Datenbank hinzugefügt, so dass du vielleicht mit "
+"einer Testdatenbank arbeiten oder sie später löschen möchtest."
 
 #: NoteCleanup/NoteCleanup.py:181
 msgid ""
@@ -6662,7 +6662,7 @@ msgstr ""
 #: ToDoReport//TodoReport.py:91 ../gramps/plugins/textreport/tagreport.py:115
 msgid "You must first create a tag before running this report."
 msgstr ""
-"Du musst erst eine Markierung erstellen, bevor du diesen Bericht erstellen "
+"Du musst zuerst ein Etikett erstellen, bevor du diesen Bericht ausführen "
 "kannst."
 
 #: ToDoReport//TodoReport.py:98 ToDoReport//TodoReport.py:526
@@ -8922,7 +8922,7 @@ msgstr "Platziere Vorfahren über "
 #: ../gramps/gen/plug/utils.py:349 ../gramps/gen/plug/utils.py:356
 #, python-format
 msgid "Unable to open '%s'"
-msgstr "Kann '%s' nicht öffnen"
+msgstr "„%s“ kann nicht geöffnet werden"
 
 #: LifeLineChartView//lifelinechartview.gpr.py:233
 #: ../gramps/gen/plug/utils.py:363
@@ -8940,7 +8940,7 @@ msgstr "Fehler: Kann '%s' nicht öffnen"
 #: ../gramps/gen/plug/utils.py:378
 #, python-format
 msgid "Error: unknown file type: '%s'"
-msgstr "Fehler: unbekannter Dateityp: '%s'."
+msgstr "Fehler: unbekannter Dateityp: '%s'"
 
 #: LifeLineChartView//lifelinechartview.gpr.py:318
 #: LifeLineChartView/lifelinechartview.gpr.py:24
@@ -12414,7 +12414,7 @@ msgstr "E.D. Buchstabe Code"
 
 #: Form/form_gb.xml.h:220 Form/form_gb.xml.h:259
 msgid "Borough, U.D. or R.D."
-msgstr ""
+msgstr "Stadtbezirk, U.D. oder R.D."
 
 #: Form/form_gb.xml.h:221 Form/form_gb.xml.h:260
 msgid "Registration District and Sub-district"
@@ -12468,7 +12468,7 @@ msgstr "Arbeitet Zuhause"
 #: Form/form_gb.xml.h:425 Form/form_gb.xml.h:452 Form/form_gb.xml.h:480
 #: Form/form_gb.xml.h:512 Form/form_gb.xml.h:551
 msgid "GROS Data"
-msgstr ""
+msgstr "GROS-Daten"
 
 #: Form/form_gb.xml.h:301 Form/form_gb.xml.h:401
 msgid "Born in County"
@@ -16950,7 +16950,7 @@ msgstr "Frauen über 60 Jahre alt"
 #: Form/form_us.xml.h:2079 Form/form_us.xml.h:2116 Form/form_us.xml.h:2154
 #: Form/form_us.xml.h:2192
 msgid "P.O."
-msgstr ""
+msgstr "P.O."
 
 #: Form/form_us.xml.h:1954 Form/form_us.xml.h:2042
 msgid "Sec."
@@ -22057,9 +22057,9 @@ msgid ""
 "Direct - Highlight direct descendant/ancestor paths.\n"
 "Any - Highlight any path(s) including direct or indirect."
 msgstr ""
-"Keine - Pfade nicht hervorheben.Direkt - Direkte Nachkommen- / "
-"Vorfahrenpfade hervorheben.Beliebige - Einen oder mehrere Pfade, "
-"einschließlich direkt oder indirekt hervorheben."
+"Keine - Pfade werden nicht hervorgehoben.\n"
+"Direkt - Hebt direkte Pfade von Nachfahren/Ahnen hervor.\n"
+"Alle - Alle Pfade hervorheben, einschließlich direkter oder indirekter Pfade."
 
 #: NetworkChart/NetworkChart.py:1186
 msgid "Show only path(s)"
@@ -22293,7 +22293,7 @@ msgstr "Hilfe anzeigen"
 
 #: ../gramps/plugins/textreport/simplebooktitle.py:146
 msgid "Title string for the book."
-msgstr "Titeltext des Buches."
+msgstr "Titelzeichenfolge für das Buch."
 
 #: ../gramps/plugins/textreport/simplebooktitle.py:149
 msgid "Subtitle of the Book"
@@ -22301,7 +22301,7 @@ msgstr "Untertitel des Buches"
 
 #: ../gramps/plugins/textreport/simplebooktitle.py:150
 msgid "Subtitle string for the book."
-msgstr "Untertiteltext des Buches."
+msgstr "Untertitelzeichenfolge für das Buch."
 
 #: ../gramps/gen/plug/report/stdoptions.py:63
 msgid "Translation"
@@ -22313,31 +22313,31 @@ msgstr "Englisch"
 
 #: ../gramps/gen/plug/report/stdoptions.py:68
 msgid "The translation to be used for the report."
-msgstr "Die Übersetzung, die für den Bericht verwendet wird."
+msgstr "Die Übersetzung, die für den Bericht verwendet werden soll."
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2552
 msgid "Include a column for birth dates on the index pages"
-msgstr "Spalte für Geburtsdaten auf den Indexseiten"
+msgstr "Einfügen einer Spalte für Geburtsdaten auf den Indexseiten"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2558
 msgid "Include a column for death dates on the index pages"
-msgstr "Spalte für Todesdaten auf den Indexseiten"
+msgstr "Aufnahme einer Spalte für Sterbedaten in die Indexseiten"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2427
 msgid "Include images and media objects"
-msgstr "Bilder und Medienobjekte aufnehmen"
+msgstr "Bilder und Medienobjekte einbeziehen"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2554
 msgid "Whether to include a birth column"
-msgstr "Ob eine Spalte für Geburt aufgenommen wird."
+msgstr "Ob eine Geburtsspalte aufgenommen werden soll"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2560
 msgid "Whether to include a death column"
-msgstr "Ob eine Spalte für Tod aufgenommen wird."
+msgstr "Ob eine Sterbespalte eingefügt werden soll"
 
 #: ../gramps/plugins/drawreport/statisticschart.py:447
 msgid "Age at marriage"
-msgstr "Alter bei Hochzeit"
+msgstr "Alter bei der Eheschließung"
 
 #: ../gramps/plugins/gramplet/agestats.py:264
 msgid "Average"
@@ -22372,7 +22372,7 @@ msgstr "Sterbeort"
 
 #: ../gramps/plugins/drawreport/statisticschart.py:417
 msgid "Marriage place"
-msgstr "Hochzeitsort"
+msgstr "Ort der Eheschließung"
 
 #: ../gramps/plugins/gramplet/agestats.py:266
 msgid "Maximum"
@@ -22405,16 +22405,16 @@ msgstr "Alter beim Tod"
 #: ../gramps/plugins/webreport/narrativeweb.py:2678
 msgid "Include Family Map Pages with all places shown on the map"
 msgstr ""
-"Familienkartenseiten mit allen auf der Karte abgebildeten Orten aufnehmen"
+"Familienkartenseiten mit allen auf der Karte gezeigten Orten einschließen"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2599
 msgid "Include event pages"
-msgstr "Ereignisseiten aufnehmen"
+msgstr "Ereignisseiten einbeziehen"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2600
 msgid "Add a complete events list and relevant pages or not"
 msgstr ""
-"Eine komplette Ereignisliste und entsprechende Seiten aufnehmen oder nicht"
+"Eine vollständige Ereignisliste und relevante Seiten hinzufügen oder nicht"
 
 #: ../gramps/plugins/webreport/narrativeweb.py:2307
 msgid "Sort all children in birth order"
@@ -22424,7 +22424,7 @@ msgstr "Alle Kinder in Reihenfolge der Geburt sortieren"
 #: ../gramps/plugins/view/pedigreeview.py:724
 #: ../gramps/plugins/view/relview.py:411
 msgid "Person Filter Editor"
-msgstr "Filtereditor für Personen"
+msgstr "Personenfiltereditor"
 
 #: EditExifMetadata/editexifmetadata.py:214
 msgid "Thumbnail"
@@ -22442,11 +22442,11 @@ msgstr "Land:"
 
 #: ../gramps/gen/filters/rules/place/_hasplace.py:63
 msgid "City:"
-msgstr "Ort:"
+msgstr "Stadt:"
 
 #: ../gramps/gen/filters/rules/place/_hasplace.py:67
 msgid "ZIP/Postal Code:"
-msgstr "PLZ:"
+msgstr "Postleitzahl:"
 
 #: ../gramps/gen/lib/eventtype.py:210
 msgid "Census"
@@ -22477,4 +22477,4 @@ msgstr "Familie"
 #: ../gramps/plugins/tool/removespaces.glade:108
 #: ../gramps/plugins/tool/removespaces.glade:165
 msgid "label"
-msgstr "Beschriftung"
+msgstr "Bezeichnung"
