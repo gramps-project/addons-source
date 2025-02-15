@@ -1458,16 +1458,6 @@ msgstr ""
 msgid "GEXF export options"
 msgstr ""
 
-#: D3Charts/AncestralCollapsibleTree.gpr.py:23
-msgid "Ancestral Collapsible Tree"
-msgstr ""
-
-#: D3Charts/AncestralCollapsibleTree.gpr.py:33
-msgid ""
-"Generates a web page with a graphical representation of ancestors (SVG) "
-"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
-msgstr ""
-
 #: D3Charts/AncestralCollapsibleTree.py:326
 #: D3Charts/AncestralCollapsibleTree.py:771
 #: D3Charts/AncestralCollapsibleTree.py:785 D3Charts/AncestralFanChart.py:401
@@ -1544,14 +1534,26 @@ msgstr ""
 msgid "The destination file name for html content."
 msgstr ""
 
-#: D3Charts/AncestralFanChart.gpr.py:23
-msgid "Ancestral Fan Chart"
+#: D3Charts/AncestralCollapsibleTree.gpr.py:23
+msgid "Ancestral Collapsible Tree"
 msgstr ""
 
-#: D3Charts/AncestralFanChart.gpr.py:33
+#: D3Charts/AncestralCollapsibleTree.gpr.py:33
 msgid ""
 "Generates a web page with a graphical representation of ancestors (SVG) "
-"represented as a Fan Chart from the D3.js JavaScript library."
+"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
+msgstr ""
+
+#: D3Charts/DescendantIndentedTree.gpr.py:23
+#: D3Charts/DescendantIndentedTree.py:909
+msgid "Descendant Indented Tree"
+msgstr ""
+
+#: D3Charts/DescendantIndentedTree.gpr.py:33
+msgid ""
+"Generates a web page with a graphical representation of descendants (SVG) "
+"representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
+"library."
 msgstr ""
 
 #: D3Charts/AncestralFanChart.py:707
@@ -1574,16 +1576,14 @@ msgstr ""
 msgid "RGB-color for maternal box background."
 msgstr ""
 
-#: D3Charts/DescendantIndentedTree.gpr.py:23
-#: D3Charts/DescendantIndentedTree.py:909
-msgid "Descendant Indented Tree"
+#: D3Charts/AncestralFanChart.gpr.py:23
+msgid "Ancestral Fan Chart"
 msgstr ""
 
-#: D3Charts/DescendantIndentedTree.gpr.py:33
+#: D3Charts/AncestralFanChart.gpr.py:33
 msgid ""
-"Generates a web page with a graphical representation of descendants (SVG) "
-"representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
-"library."
+"Generates a web page with a graphical representation of ancestors (SVG) "
+"represented as a Fan Chart from the D3.js JavaScript library."
 msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:673
@@ -1603,7 +1603,7 @@ msgstr ""
 #, python-format
 msgid ""
 "Destinaton diretory %s does not exist\n"
-"Do you want to attempt to create it."
+"Do you want to attempt to create it?"
 msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1374
@@ -1615,7 +1615,7 @@ msgstr ""
 #, python-format
 msgid ""
 "Destination file %s already exists.\n"
-"Do you want to overwrite."
+"Do you want to overwrite it?"
 msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1446
