@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-08 16:37+0100\n"
-"PO-Revision-Date: 2025-02-09 22:37+0000\n"
+"PO-Revision-Date: 2025-02-15 16:17+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.10\n"
 
 #: DataEntryGramplet/DataEntryGramplet.py:145
 #: DataEntryGramplet/DataEntryGramplet.py:159
@@ -54,7 +54,7 @@ msgstr ""
 
 #: DenominoViso/DenominoViso.py:203 DenominoViso/DenominoViso.py:215
 msgid "Growth Spiral"
-msgstr ""
+msgstr "Rastová špirála"
 
 #: DenominoViso/DenominoViso.py:204 DenominoViso/DenominoViso.py:216
 msgid "Mandelbrot Tree"
@@ -148,7 +148,7 @@ msgstr "Centrálna osoba"
 
 #: DenominoViso/DenominoViso.py:2536 DenominoViso/DenominoViso.py:2560
 msgid "The central person for the tree"
-msgstr ""
+msgstr "Hlavná osoba pre strom"
 
 #: DenominoViso/DenominoViso.py:2539 DenominoViso/DenominoViso.py:2563
 msgid "Title of the webpage"
@@ -305,71 +305,71 @@ msgstr "Či zahrnúť obrázky"
 
 #: DenominoViso/DenominoViso.py:2639 DenominoViso/DenominoViso.py:2666
 msgid "Copy Image"
-msgstr ""
+msgstr "Kopírovať obrázok"
 
 #: DenominoViso/DenominoViso.py:2640 DenominoViso/DenominoViso.py:2667
 msgid "Copy the images to a designated directory."
-msgstr ""
+msgstr "Skopírovať obrázky do určeného adresára."
 
 #: DenominoViso/DenominoViso.py:2646 DenominoViso/DenominoViso.py:2674
 msgid "Images with Attribute"
-msgstr ""
+msgstr "Obrázky s atribútom"
 
 #: DenominoViso/DenominoViso.py:2647 DenominoViso/DenominoViso.py:2675
 msgid "Determine images with which attributes to in/exclude"
-msgstr ""
+msgstr "Určiť obrázky s ktorými atribútmi sa majú zahrnúť/vylúčiť"
 
 #: DenominoViso/DenominoViso.py:2650 DenominoViso/DenominoViso.py:2678
 msgid "Include Image source references"
-msgstr ""
+msgstr "Zahrnúť odkazy na zdroj obrázkov"
 
 #: DenominoViso/DenominoViso.py:2651 DenominoViso/DenominoViso.py:2679
 msgid "Whether to include references for images"
-msgstr ""
+msgstr "Či zahrnúť odkazy na obrázky"
 
 #: DenominoViso/DenominoViso.py:2654 DenominoViso/DenominoViso.py:2682
 msgid "Source reference attribute"
-msgstr ""
+msgstr "Atribút odkazu zdroja"
 
 #: DenominoViso/DenominoViso.py:2655 DenominoViso/DenominoViso.py:2683
 msgid "Image attribute that should be used as source reference"
-msgstr ""
+msgstr "Atribút obrázka, ktorý sa má použiť ako odkaz na zdroj"
 
 #: DenominoViso/DenominoViso.py:2661 DenominoViso/DenominoViso.py:2689
 msgid "Style Options"
-msgstr ""
+msgstr "Možnosti štýlu"
 
 #: DenominoViso/DenominoViso.py:2663 DenominoViso/DenominoViso.py:2691
 msgid "Color of active person:"
-msgstr ""
+msgstr "Farba aktívnej osoby:"
 
 #: DenominoViso/DenominoViso.py:2664 DenominoViso/DenominoViso.py:2692
 msgid "RGB-color of geometric shape of the activated person."
-msgstr ""
+msgstr "RGB-farba geometrického tvaru aktivovanej osoby."
 
 #: DenominoViso/DenominoViso.py:2667 DenominoViso/DenominoViso.py:2695
 msgid "Color of found persons:"
-msgstr ""
+msgstr "Farba nájdených osôb:"
 
 #: DenominoViso/DenominoViso.py:2668 DenominoViso/DenominoViso.py:2696
 msgid "RGB-color of geometric shape of the persons found."
-msgstr ""
+msgstr "RGB-farba geometrického tvaru nájdených osôb."
 
 #: DenominoViso/DenominoViso.py:2671 DenominoViso/DenominoViso.py:2699
 msgid "Color of male persons:"
-msgstr ""
+msgstr "Farba mužských osôb:"
 
 #: DenominoViso/DenominoViso.py:2672 DenominoViso/DenominoViso.py:2700
 msgid "RGB-color of geometric shape of the male persons."
-msgstr ""
+msgstr "RGB-farba geometrického tvaru mužských osôb."
 
 #: DenominoViso/DenominoViso.py:2675 DenominoViso/DenominoViso.py:2703
 msgid "Colour of female persons:"
-msgstr ""
+msgstr "Farba ženských osôb:"
 
 #: DenominoViso/DenominoViso.py:2676 DenominoViso/DenominoViso.py:2704
 msgid "RGB-color of geometric shape of the female persons."
-msgstr ""
+msgstr "RGB-farba geometrického tvaru ženských osôb."
 
 #: DenominoViso/DenominoViso.py:2679 DenominoViso/DenominoViso.py:2707
 msgid "Width of rectangle (hrd):"

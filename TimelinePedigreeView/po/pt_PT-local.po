@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2025-02-09 06:44+0000\n"
+"PO-Revision-Date: 2025-02-15 10:09+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -16,20 +16,21 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.10\n"
 
 #: TimelinePedigreeView/TimelinePedigreeView.gpr.py:41 Form/form_us.xml.h:2085
 #: Form/form_us.xml.h:2122 Form/form_us.xml.h:2160 Form/form_us.xml.h:2198
+#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:34
 msgid "Ancestry"
 msgstr "Ascendência"
 
 #: FamilyTree/FamilyTree.py:1049 FamilyTree/FamilyTree.py:1047
-#: TimelinePedigreeView/TimelinePedigreeView.py:1476
+#: TimelinePedigreeView/TimelinePedigreeView.py:1481
 msgid "Ancestor Generations"
 msgstr "Gerações ascendentes"
 
 #: FamilyTree/FamilyTree.py:1053 FamilyTree/FamilyTree.py:1051
-#: TimelinePedigreeView/TimelinePedigreeView.py:1460
+#: TimelinePedigreeView/TimelinePedigreeView.py:1465
 msgid "Descendant Generations"
 msgstr "Gerações descendentes"
 

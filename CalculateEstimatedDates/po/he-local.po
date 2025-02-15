@@ -9,16 +9,17 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-09-10 07:59+0300\n"
-"PO-Revision-Date: 2023-09-10 08:07+0300\n"
-"Last-Translator: \n"
-"Language-Team: Avi Markovitz\n"
+"PO-Revision-Date: 2025-02-15 16:17+0000\n"
+"Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
+"Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
+"addons/he/>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==2 ? 1 : n>10 && n%10==0 ? "
-"2 : 3);\n"
-"X-Generator: Poedit 3.0.1\n"
+"Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
+"n % 10 == 0) ? 2 : 3));\n"
+"X-Generator: Weblate 5.10\n"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:9
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:190
@@ -41,16 +42,16 @@ msgstr "תאריכים משוערים מחושבים"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:96
 msgid "Source to remove and/or add"
-msgstr "מקור להוספה ו/או הסרה"
+msgstr "מקור להוספה ו/או להסרה"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:99
 msgid "Remove previously added events, notes, and source"
-msgstr "הסרת אירועים קודמים, הערות ומקורות, ולבחור נתונים מחדש"
+msgstr "הסרת אירועים, הערות ומקורות, שנוספו לאחרנה"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:100
 msgid ""
 "Remove calculated events, notes, and source; occurs immediately on Execute"
-msgstr "הסרת אירועים מחושבים, הערות ומקורות; מתבצע באופן מיידי"
+msgstr "הסרת אירועים מחושבים, הערות ומקורות; מתבצע באופן מיידי בעת הביצוע"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:104
 msgid "Do not add birth events"

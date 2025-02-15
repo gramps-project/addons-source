@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2025-02-09 06:44+0000\n"
+"PO-Revision-Date: 2025-02-15 10:09+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -16,10 +16,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.10\n"
 
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:3
 #: LifeLineChartView/_dummy_translation_string_po.py:115
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:4
 msgid "Number of descendants"
 msgstr "Número de descendentes"
 

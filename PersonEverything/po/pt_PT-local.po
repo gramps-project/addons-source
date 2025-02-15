@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2025-02-09 06:44+0000\n"
+"PO-Revision-Date: 2025-02-15 10:09+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -16,23 +16,20 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.10\n"
 
 #: AncestorFill/AncestorFill.py:425 AncestorFill/AncestorFill.py:361
-#: PersonEverything//PersonEverything.py:1028
-#: PersonEverything//PersonEverything_old.py:1027
+#: PersonEverything/PersonEverything.py:1028
 msgid "The style used for the title of the page."
 msgstr "O estilo usado para o título da página."
 
 #: DynamicWeb//dynamicweb.py:2550 DynamicWeb/dynamicweb.py:3060
-#: PersonEverything//PersonEverything.py:220
-#: PersonEverything//PersonEverything_old.py:219
+#: PersonEverything/PersonEverything.py:220
 msgid "Relationship to Father"
 msgstr "Relação com o pai"
 
 #: DynamicWeb//dynamicweb.py:2551 DynamicWeb/dynamicweb.py:3061
-#: PersonEverything//PersonEverything.py:225
-#: PersonEverything//PersonEverything_old.py:224
+#: PersonEverything/PersonEverything.py:225
 msgid "Relationship to Mother"
 msgstr "Relação com a mãe"
 

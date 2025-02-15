@@ -9,16 +9,17 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2019-10-23 15:25+0200\n"
+"PO-Revision-Date: 2025-02-15 16:17+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
-"Language-Team: \n"
+"Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
+"addons/hr/>\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
-"X-Generator: Poedit 2.2.4\n"
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.10\n"
 
 #: SourcesCitationsReport//SourcesCitationsReport.py:341
 #: SourcesCitationsReport/SourcesCitationsReport.py:335
@@ -99,7 +100,7 @@ msgstr "Istakni početnu osobu"
 #: GraphView/graphview.py:623 GraphView/graphview.py:3400
 #: GraphView/graphview.py:764 GraphView/graphview.py:3744
 msgid "Show full dates"
-msgstr "Prikaži potpuni datum"
+msgstr "Prikaži potpune datume"
 
 #: GraphView/graphview.py:627 GraphView/graphview.py:3408
 #: GraphView/graphview.py:768 GraphView/graphview.py:3752
@@ -177,7 +178,7 @@ msgstr "Idi na knjižnu oznaku"
 
 #: GraphView/graphview.py:901 GraphView/graphview.py:1130
 msgid "Center view on selected bookmark"
-msgstr "Centriraj pogled na odabranu knjižnu oznaku"
+msgstr "Centriraj prikaz na odabranu knjižnu oznaku"
 
 #: GraphView/graphview.py:903 GraphView/graphview.py:1132
 msgid "Bookmarks for current graph"
@@ -256,8 +257,8 @@ msgid ""
 "Person <b><i>%s</i></b> is not in the current view.\n"
 "Do you want to set it active and rebuild view?"
 msgstr ""
-"Osoba <b><i>%s</i></b> se ne nalazi u aktualnom pogledu.\n"
-"Želiš li je postaviti aktivnom te ponovo izgraditi pogled?"
+"Osoba <b><i>%s</i></b> se ne nalazi u aktualnom prikazu.\n"
+"Želiš li je postaviti aktivnom te ponovo izraditi prikaz?"
 
 #: GraphView/graphview.py:1277 GraphView/graphview.py:1519
 msgid "Change active person?"

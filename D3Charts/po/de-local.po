@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-02 22:39+0200\n"
-"PO-Revision-Date: 2025-02-09 22:37+0000\n"
+"PO-Revision-Date: 2025-02-15 16:17+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -31,7 +31,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.10\n"
 
 #: D3Charts/AncestralCollapsibleTree.gpr.py:22
 #: D3Charts/AncestralCollapsibleTree.gpr.py:23
@@ -96,7 +96,7 @@ msgstr "Männliche erweiterbare Hintergrundfarbe"
 
 #: D3Charts/AncestralCollapsibleTree.py:852
 msgid "RGB-color for male expandable box background."
-msgstr "RGB-Farbe für männliche erweiterbare Boxenhintergrund"
+msgstr "RGB-Farbe für den Hintergrund der männlichen erweiterbaren Box."
 
 #: D3Charts/AncestralCollapsibleTree.py:855
 msgid "Female Background"
@@ -104,7 +104,7 @@ msgstr "Hintergrund weiblich"
 
 #: D3Charts/AncestralCollapsibleTree.py:856
 msgid "RGB-color for female box background."
-msgstr "RGB-Farbe für weibliche Boxenhintergrund"
+msgstr "RGB-Farbe für den Hintergrund der weiblichen Box."
 
 #: D3Charts/AncestralCollapsibleTree.py:859
 msgid "Female Expandable Background"
@@ -112,7 +112,7 @@ msgstr "Erweiterbarer weiblicher Hintergrund"
 
 #: D3Charts/AncestralCollapsibleTree.py:861
 msgid "RGB-color for female expandable box background."
-msgstr "RGB-Farbe für weibliche erweiterbare Boxenhintergrund"
+msgstr "RGB-Farbe für den Hintergrund der weiblichen erweiterbaren Box."
 
 #: D3Charts/AncestralCollapsibleTree.py:867 D3Charts/AncestralFanChart.py:739
 #: D3Charts/DescendantIndentedTree.py:1826
@@ -146,7 +146,7 @@ msgstr "Väterliche Hintergrundfarbe"
 
 #: D3Charts/AncestralFanChart.py:730
 msgid "RGB-color for paternal box background."
-msgstr "RGB-Farbe für väterlichen Boxenhintergrund"
+msgstr "RGB-Farbe für den Hintergrund der väterlichen Box."
 
 #: D3Charts/AncestralFanChart.py:733
 msgid "Maternal Background"
@@ -154,7 +154,7 @@ msgstr "Hintergrund väterlich"
 
 #: D3Charts/AncestralFanChart.py:734
 msgid "RGB-color for maternal box background."
-msgstr "RGB-Farbe für väterlichen Boxenhintergrund"
+msgstr "RGB-Farbe für den Hintergrund der mütterlichen Box."
 
 #: D3Charts/DescendantIndentedTree.gpr.py:22
 #: D3Charts/DescendantIndentedTree.py:909
@@ -186,28 +186,10 @@ msgstr "Erstelle Bericht..."
 msgid "Invalid Destination Directory"
 msgstr "Ungültiges Zielverzeichnis"
 
-#: D3Charts/DescendantIndentedTree.py:1365
-#, python-format
-msgid ""
-"Destinaton diretory %s does not exist\n"
-"Do you want to attempt to create it."
-msgstr ""
-"Zielverzeichnis %s existiert nicht\n"
-"Möchtest du versuchen es zu erstellen."
-
 #: D3Charts/DescendantIndentedTree.py:1374
 #, python-format
 msgid "Failed to create %s: %s"
 msgstr "Fehler beim erstellen %s: %s"
-
-#: D3Charts/DescendantIndentedTree.py:1391
-#, python-format
-msgid ""
-"Destination file %s already exists.\n"
-"Do you want to overwrite."
-msgstr ""
-"Zieldatei %s existiert bereits.\n"
-"Möchtest du es überschreiben."
 
 #: D3Charts/DescendantIndentedTree.py:1446
 msgid "Default View"
@@ -249,7 +231,7 @@ msgstr "Erweiterbar Hintergrundfarbe"
 
 #: D3Charts/DescendantIndentedTree.py:1858
 msgid "RGB-color for expandable row background."
-msgstr "RGB-Farbe für erweiterbare Reihe Hintergrund"
+msgstr "RGB-Farbe für den Hintergrund der erweiterbaren Zeile."
 
 #: D3Charts/DescendantIndentedTree.py:1861
 msgid "Non-Expandable Background Color"
@@ -257,7 +239,7 @@ msgstr "Nicht-Erweiterbar Hintergrundfarbe"
 
 #: D3Charts/DescendantIndentedTree.py:1863
 msgid "RGB-color for non-expandable row background."
-msgstr "RGB-Farbe für nicht erweiterbare Reihe Hintergrund"
+msgstr "RGB-Farbe für den Hintergrund einer nicht erweiterbaren Zeile."
 
 #: D3Charts/DescendantIndentedTree.py:1867
 msgid "Include records marked private"

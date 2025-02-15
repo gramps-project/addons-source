@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2025-02-09 06:44+0000\n"
+"PO-Revision-Date: 2025-02-15 10:09+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -16,19 +16,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.10\n"
 
 #: DescendantsLines/DescendantsLines.py:1594
 #: EventDescriptionEditor/EventDescriptionEditor.py:142
-#: ImportMerge/importmerge.py:893 ImportMerge/importmerge.glade:405
+#: ImportMerge/importmerge.py:910 ImportMerge/importmerge.glade:407
 msgid "Replace"
 msgstr "Substituir"
 
-#: BirthOrder/birthorder.glade:232 ImportMerge/importmerge.glade:362
+#: BirthOrder/birthorder.glade:232 ImportMerge/importmerge.glade:364
 msgid "Done"
 msgstr "Feito"
 
-#: CheckPlaceTitles/checkplacetitles.py:107 ImportMerge/importmerge.glade:262
+#: CheckPlaceTitles/checkplacetitles.py:107 ImportMerge/importmerge.glade:264
 msgid "Differences"
 msgstr "Diferenças"
 

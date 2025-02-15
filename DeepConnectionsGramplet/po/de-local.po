@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-02 22:39+0200\n"
-"PO-Revision-Date: 2025-02-09 06:44+0000\n"
+"PO-Revision-Date: 2025-02-15 16:17+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -31,7 +31,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.10\n"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:3
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:4

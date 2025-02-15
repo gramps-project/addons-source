@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2025-02-09 06:44+0000\n"
+"PO-Revision-Date: 2025-02-15 10:09+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.10\n"
 
 #: D3Charts/AncestralCollapsibleTree.gpr.py:22
 #: D3Charts/AncestralCollapsibleTree.gpr.py:23
@@ -29,7 +29,7 @@ msgid ""
 "Generates a web page with a graphical representation of ancestors (SVG) "
 "represented as a Collapsible Tree Layout from the D3.js JavaScript library."
 msgstr ""
-"Gera uma página web com uma representação gráfica de ascendentes (SVG) "
+"Gera uma página “web” com uma representação gráfica de ascendentes (SVG) "
 "representada como árvore colapsável da biblioteca JavaScript D3 js."
 
 #: D3Charts/AncestralCollapsibleTree.py:326
@@ -65,7 +65,7 @@ msgstr "Falha ao criar a estrutura de pastas: %s"
 #: D3Charts/DescendantIndentedTree.py:1555
 #, python-format
 msgid "Failed to copy web files : %s"
-msgstr "Falha ao copiar os ficheiros web: %s"
+msgstr "Falha ao copiar os ficheiros “web”: %s"
 
 #: D3Charts/AncestralCollapsibleTree.py:811
 #: D3Charts/AncestralCollapsibleTree.py:816
@@ -87,7 +87,7 @@ msgstr "Cor de fundo masculina"
 #: D3Charts/AncestralCollapsibleTree.py:842
 #: D3Charts/AncestralCollapsibleTree.py:847
 msgid "RGB-color for male box background."
-msgstr "Cor RGB para a caixa de homens."
+msgstr "Cor RGB para o fundo da caixa de homens."
 
 #: D3Charts/AncestralCollapsibleTree.py:845
 #: D3Charts/AncestralCollapsibleTree.py:850
@@ -97,7 +97,7 @@ msgstr "Cor de fundo expansível masculina"
 #: D3Charts/AncestralCollapsibleTree.py:847
 #: D3Charts/AncestralCollapsibleTree.py:852
 msgid "RGB-color for male expandable box background."
-msgstr "Cor RGB para a caixa expansível de homens."
+msgstr "Cor RGB para o fundo da caixa expansível de homens."
 
 #: D3Charts/AncestralCollapsibleTree.py:850
 #: D3Charts/AncestralCollapsibleTree.py:855
@@ -107,7 +107,7 @@ msgstr "Cor de fundo feminina"
 #: D3Charts/AncestralCollapsibleTree.py:851
 #: D3Charts/AncestralCollapsibleTree.py:856
 msgid "RGB-color for female box background."
-msgstr "Cor RGB para a caixa de mulheres."
+msgstr "Cor RGB para o fundo da caixa de mulheres."
 
 #: D3Charts/AncestralCollapsibleTree.py:854
 #: D3Charts/AncestralCollapsibleTree.py:859
@@ -117,7 +117,7 @@ msgstr "Cor de fundo expansível feminina"
 #: D3Charts/AncestralCollapsibleTree.py:856
 #: D3Charts/AncestralCollapsibleTree.py:861
 msgid "RGB-color for female expandable box background."
-msgstr "Cor RGB para a caixa expansível de mulheres."
+msgstr "Cor RGB para o fundo da caixa expansível de mulheres."
 
 #: D3Charts/AncestralCollapsibleTree.py:862 D3Charts/AncestralFanChart.py:734
 #: D3Charts/DescendantIndentedTree.py:1817
@@ -142,8 +142,8 @@ msgid ""
 "Generates a web page with a graphical representation of ancestors (SVG) "
 "represented as a Fan Chart from the D3.js JavaScript library."
 msgstr ""
-"Gera uma página web com uma representação gráfica de ascendentes (SVG) "
-"representada como leque da biblioteca JavaScript D3 js."
+"Gera uma página “web” com uma representação gráfica de ascendentes (SVG) "
+"representada como leque, da biblioteca JavaScript D3 js."
 
 #: D3Charts/AncestralFanChart.py:702 D3Charts/AncestralFanChart.py:707
 msgid "Ancestral Fan Chart Options"
@@ -179,8 +179,9 @@ msgid ""
 "representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
 "library."
 msgstr ""
-"Gera uma página web com uma representação gráfica de descendentes (SVG) "
-"representada como árvore indentada colapsável da biblioteca JavaScript D3 js."
+"Gera uma página “web” com uma representação gráfica de descendentes (SVG) "
+"representada como árvore indentada colapsável, da biblioteca JavaScript "
+"D3.js."
 
 #: D3Charts/DescendantIndentedTree.py:672
 #: D3Charts/DescendantIndentedTree.py:673
@@ -198,36 +199,16 @@ msgstr "A gerar o relatório..."
 msgid "Invalid Destination Directory"
 msgstr "Pasta destino inválida"
 
-#: D3Charts/DescendantIndentedTree.py:1364
-#: D3Charts/DescendantIndentedTree.py:1365
-#, python-format
-msgid ""
-"Destinaton diretory %s does not exist\n"
-"Do you want to attempt to create it."
-msgstr ""
-"A pasta destino %s não existe.\n"
-"Deseja tentar criá-la?"
-
 #: D3Charts/DescendantIndentedTree.py:1373
 #: D3Charts/DescendantIndentedTree.py:1374
 #, python-format
 msgid "Failed to create %s: %s"
 msgstr "Falha ao criar %s: %s"
 
-#: D3Charts/DescendantIndentedTree.py:1388
-#: D3Charts/DescendantIndentedTree.py:1391
-#, python-format
-msgid ""
-"Destination file %s already exists.\n"
-"Do you want to overwrite."
-msgstr ""
-"O ficheiro destino %s já existe.\n"
-"Deseja sobrescrevê-lo?"
-
 #: D3Charts/DescendantIndentedTree.py:1443
 #: D3Charts/DescendantIndentedTree.py:1446
 msgid "Default View"
-msgstr "Vista predefinida"
+msgstr "Vista pré-definida"
 
 #: D3Charts/DescendantIndentedTree.py:1446
 #: D3Charts/DescendantIndentedTree.py:1449
@@ -272,17 +253,17 @@ msgstr "Cor de fundo expansível"
 #: D3Charts/DescendantIndentedTree.py:1849
 #: D3Charts/DescendantIndentedTree.py:1858
 msgid "RGB-color for expandable row background."
-msgstr "Cor RGB para o fundo da linha expandida."
+msgstr "Cor RGB para o fundo da linha expansível."
 
 #: D3Charts/DescendantIndentedTree.py:1852
 #: D3Charts/DescendantIndentedTree.py:1861
 msgid "Non-Expandable Background Color"
-msgstr "Cor de fundo não-expansível"
+msgstr "Cor de fundo não expansível"
 
 #: D3Charts/DescendantIndentedTree.py:1854
 #: D3Charts/DescendantIndentedTree.py:1863
 msgid "RGB-color for non-expandable row background."
-msgstr "Cor RGB para o fundo da linha não-expansível."
+msgstr "Cor RGB para o fundo da linha não expansível."
 
 #: D3Charts/DescendantIndentedTree.py:1858
 #: D3Charts/DescendantIndentedTree.py:1867
@@ -292,7 +273,7 @@ msgstr "Incluir registos marcados privados"
 #: D3Charts/DescendantIndentedTree.py:1860
 #: D3Charts/DescendantIndentedTree.py:1869
 msgid "Whether to include private objects."
-msgstr "Se deve incluir objectos marcados como provados."
+msgstr "Se deve incluir objectos marcados como privados."
 
 #: D3Charts/DescendantIndentedTree.py:1868
 #: D3Charts/DescendantIndentedTree.py:1877
@@ -349,7 +330,7 @@ msgstr "Onde clicar para contrair/expandir nós."
 #: D3Charts/DescendantIndentedTree.py:1899
 #: D3Charts/DescendantIndentedTree.py:1908
 msgid "Auto-generate HREF links for nodes"
-msgstr "Gerar ligações href para os nós automaticamente"
+msgstr "Gerar automaticamente ligações HREF para os nós"
 
 #: D3Charts/DescendantIndentedTree.py:1901
 #: D3Charts/DescendantIndentedTree.py:1910
@@ -359,12 +340,12 @@ msgstr "Se deve gerar automaticamente ligações HTML para cada nó no relatóri
 #: D3Charts/DescendantIndentedTree.py:1907
 #: D3Charts/DescendantIndentedTree.py:1916
 msgid "URL prefix path."
-msgstr "Caminho prefixo do URL"
+msgstr "Caminho prefixo do URL."
 
 #: D3Charts/DescendantIndentedTree.py:1909
 #: D3Charts/DescendantIndentedTree.py:1918
 msgid "URL prefix to apply to each auto-generated HREF link."
-msgstr "Prefixo do URL a aplicar a cada ligação href gerada."
+msgstr "Prefixo do URL a aplicar a cada ligação HREF gerada automaticamente."
 
 #: D3Charts/DescendantIndentedTree.py:1915
 #: D3Charts/DescendantIndentedTree.py:1924
@@ -409,7 +390,7 @@ msgstr ".cgi"
 #: D3Charts/DescendantIndentedTree.py:1929
 #: D3Charts/DescendantIndentedTree.py:1938
 msgid "URL file name delimeter"
-msgstr "Delimitador do nome do URL"
+msgstr "Delimitador do nome de ficheiro do URL"
 
 #: D3Charts/DescendantIndentedTree.py:1931
 #: D3Charts/DescendantIndentedTree.py:1940
@@ -429,17 +410,18 @@ msgstr "Substituir espaços por sublinhados (_)"
 #: D3Charts/DescendantIndentedTree.py:1934
 #: D3Charts/DescendantIndentedTree.py:1943
 msgid "What to use as file name delimiter replacing whitespace."
-msgstr "O que usar como delimitador de ficheiro em substituição dos espaços."
+msgstr ""
+"O que usar como delimitador de nome de ficheiro em substituição dos espaços."
 
 #: D3Charts/DescendantIndentedTree.py:1939
 #: D3Charts/DescendantIndentedTree.py:1948
 msgid "Generations to generate HREF links"
-msgstr "Gerações para gerar ligações href"
+msgstr "Gerações para gerar ligações HREF"
 
 #: D3Charts/DescendantIndentedTree.py:1941
 #: D3Charts/DescendantIndentedTree.py:1950
 msgid "The number of generations to generate HREF links."
-msgstr "O número de gerações para as quais gerar ligações href."
+msgstr "O número de gerações para as quais gerar ligações HREF."
 
 #: D3Charts/DescendantIndentedTree.py:1947
 #: D3Charts/DescendantIndentedTree.py:1956

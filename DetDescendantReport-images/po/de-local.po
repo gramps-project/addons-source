@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-02 22:39+0200\n"
-"PO-Revision-Date: 2025-02-09 06:44+0000\n"
+"PO-Revision-Date: 2025-02-15 16:17+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -31,75 +31,75 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.10\n"
 
 #: AncestorFill/AncestorFill.py:360 AncestorFill/AncestorFill.py:361
-#: DetDescendantReport-images/detdescendantreporti.py:1248
+#: DetDescendantReport-images/detdescendantreporti.py:1252
 msgid "The style used for the title of the page."
 msgstr "Der Stil, der für den Seitentitel verwendet wird."
 
 #: DynamicWeb/dynamicweb.py:1626 DynamicWeb/dynamicweb.py:1737
-#: DetDescendantReport-images/detdescendantreporti.py:936
+#: DetDescendantReport-images/detdescendantreporti.py:940
 #, python-format
 msgid "%(type)s: %(value)s"
 msgstr "%(type)s: %(value)s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:817
 #: DescendantBooks/DetailedDescendantBookReport.py:861
-#: DetDescendantReport-images/detdescendantreporti.py:450
+#: DetDescendantReport-images/detdescendantreporti.py:454
 #, python-format
 msgid "%(date)s, %(place)s"
 msgstr "%(date)s, %(place)s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:820
 #: DescendantBooks/DetailedDescendantBookReport.py:864
-#: DetDescendantReport-images/detdescendantreporti.py:453
+#: DetDescendantReport-images/detdescendantreporti.py:457
 #, python-format
 msgid "%(date)s"
 msgstr "%(date)s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:822
 #: DescendantBooks/DetailedDescendantBookReport.py:866
-#: DetDescendantReport-images/detdescendantreporti.py:455
+#: DetDescendantReport-images/detdescendantreporti.py:459
 #, python-format
 msgid "%(place)s"
 msgstr "%(place)s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1237
-#: DetDescendantReport-images/detdescendantreporti.py:807
+#: DetDescendantReport-images/detdescendantreporti.py:811
 #, python-format
 msgid "%(name_kind)s: %(name)s%(endnotes)s"
 msgstr "%(name_kind)s: %(name)s%(endnotes)s"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1405
-#: DetDescendantReport-images/detdescendantreporti.py:1143
+#: DetDescendantReport-images/detdescendantreporti.py:1147
 msgid "List children"
 msgstr "Kinder auflisten"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1422
-#: DetDescendantReport-images/detdescendantreporti.py:1160
+#: DetDescendantReport-images/detdescendantreporti.py:1164
 msgid "Add descendant reference in child list"
 msgstr "Nachkommenreferenzen zu Kinderliste hinzufügen"
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1570
-#: DetDescendantReport-images/detdescendantreporti.py:1278
+#: DetDescendantReport-images/detdescendantreporti.py:1282
 msgid "The style used for the children list."
 msgstr "Der Stil, der für die Kinderliste verwendet wird."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1597
-#: DetDescendantReport-images/detdescendantreporti.py:1301
+#: DetDescendantReport-images/detdescendantreporti.py:1305
 msgid "The style used for the first personal entry."
 msgstr "Der Stil, der für den ersten persönlichen Eintrag verwendet wird."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1607
-#: DetDescendantReport-images/detdescendantreporti.py:1311
+#: DetDescendantReport-images/detdescendantreporti.py:1315
 msgid "The style used for the More About header and for headers of mates."
 msgstr ""
 "Der Stil, der für die \"Mehr über\" Kopfzeile und Kopfzeile von Partnern "
 "verwendet wird."
 
 #: DescendantBooks/DetailedDescendantBookReport.py:1618
-#: DetDescendantReport-images/detdescendantreporti.py:1322
+#: DetDescendantReport-images/detdescendantreporti.py:1326
 msgid "The style used for additional detail data."
 msgstr "Der Stil, der für die sonstigen genauen Daten verwendet wird."
 

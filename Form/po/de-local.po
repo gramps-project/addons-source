@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-02 22:39+0200\n"
-"PO-Revision-Date: 2025-02-09 22:37+0000\n"
+"PO-Revision-Date: 2025-02-15 16:17+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -31,7 +31,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.10\n"
 
 #: CombinedView/combinedview.py:1507 CombinedView/combinedview.py:1572
 #: CombinedView/eventpage.py:202 CombinedView/eventpage.py:267 Form/form.py:62
@@ -3383,7 +3383,7 @@ msgstr "E.D. Buchstabe Code"
 
 #: Form/form_gb.xml.h:220 Form/form_gb.xml.h:259
 msgid "Borough, U.D. or R.D."
-msgstr ""
+msgstr "Stadtbezirk, U.D. oder R.D."
 
 #: Form/form_gb.xml.h:221 Form/form_gb.xml.h:260
 msgid "Registration District and Sub-district"
@@ -3437,7 +3437,7 @@ msgstr "Arbeitet Zuhause"
 #: Form/form_gb.xml.h:425 Form/form_gb.xml.h:452 Form/form_gb.xml.h:480
 #: Form/form_gb.xml.h:512 Form/form_gb.xml.h:551
 msgid "GROS Data"
-msgstr ""
+msgstr "GROS-Daten"
 
 #: Form/form_gb.xml.h:301 Form/form_gb.xml.h:401
 msgid "Born in County"
@@ -7919,7 +7919,7 @@ msgstr "Frauen über 60 Jahre alt"
 #: Form/form_us.xml.h:2079 Form/form_us.xml.h:2116 Form/form_us.xml.h:2154
 #: Form/form_us.xml.h:2192
 msgid "P.O."
-msgstr ""
+msgstr "P.O."
 
 #: Form/form_us.xml.h:1954 Form/form_us.xml.h:2042
 msgid "Sec."

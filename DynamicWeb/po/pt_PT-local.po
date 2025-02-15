@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2025-02-09 06:44+0000\n"
+"PO-Revision-Date: 2025-02-15 10:09+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.10\n"
 
 #: D3Charts/DescendantIndentedTree.py:1858
 #: D3Charts/DescendantIndentedTree.py:1867 DynamicWeb/dynamicweb.py:4811
@@ -35,11 +35,11 @@ msgstr "Incluir só nome completo"
 
 #: DynamicWeb//dynamicweb.gpr.py:15 DynamicWeb/dynamicweb.gpr.py:16
 msgid "Dynamic Web Report"
-msgstr "Relatório Web dinâmico"
+msgstr "Relatório “Web” dinâmico"
 
 #: DynamicWeb//dynamicweb.gpr.py:16 DynamicWeb/dynamicweb.gpr.py:17
 msgid "Produces dynamic web pages for the database"
-msgstr "Produz páginas web dinâmicas para a base de dados"
+msgstr "Produz páginas “web” dinâmicas para a base de dados"
 
 #: DynamicWeb//dynamicweb.py:284 DynamicWeb/dynamicweb.py:334
 msgid "SVG graphical tree"
@@ -100,7 +100,7 @@ msgstr "Impossível criar a pasta: %(path)s"
 #: DynamicWeb//dynamicweb.py:746 DynamicWeb//dynamicweb.py:3385
 #: DynamicWeb/dynamicweb.py:816 DynamicWeb/dynamicweb.py:4102
 msgid "Dynamic Web Site Report"
-msgstr "Relatório Página Web dinâmica"
+msgstr "Relatório Página “Web” dinâmica"
 
 #: DynamicWeb//dynamicweb.py:746 DynamicWeb/dynamicweb.py:816
 msgid "Exporting family tree data ..."
@@ -120,8 +120,7 @@ msgstr "Impossível converter \"%(path)s\" em caminho relativo."
 msgid ""
 "The pages configuration is not valid: several pages have the same content"
 msgstr ""
-"A configuração da página não é válida: há várias páginas com o mesmo "
-"comentário"
+"A configuração da página é inválida: há várias páginas com o mesmo comentário"
 
 #: DynamicWeb//dynamicweb.py:2194 DynamicWeb/dynamicweb.py:2368
 msgid "DynWeb|Home"
@@ -146,7 +145,7 @@ msgstr "Índices"
 
 #: DynamicWeb//dynamicweb.py:2444 DynamicWeb/dynamicweb.py:2918
 msgid "(filtered from _MAX_ total entries)"
-msgstr "(filtrado de _MAX_ total entradas)"
+msgstr "(filtrado de um total de _MAX_ entradas)"
 
 #: DynamicWeb//dynamicweb.py:2445 DynamicWeb/dynamicweb.py:2920
 #, python-format
@@ -163,11 +162,11 @@ msgstr "(ordenar por quantidade)"
 
 #: DynamicWeb//dynamicweb.py:2448 DynamicWeb/dynamicweb.py:2925
 msgid ": activate to sort column ascending"
-msgstr ": activar para coluna de ordem ascendente"
+msgstr ": activar para coluna em ordem crescente"
 
 #: DynamicWeb//dynamicweb.py:2449 DynamicWeb/dynamicweb.py:2929
 msgid ": activate to sort column descending"
-msgstr ": activar para coluna de ordem descendente"
+msgstr ": activar para coluna em ordem decrescente"
 
 #: DynamicWeb//dynamicweb.py:2450 DynamicWeb/dynamicweb.py:2934
 msgid ""
@@ -193,7 +192,7 @@ msgstr "Configurar"
 
 #: DynamicWeb//dynamicweb.py:2483 DynamicWeb/dynamicweb.py:2972
 msgid "DynamicWeb_report#Help"
-msgstr "DynamicWeb_relatório#Ajuda"
+msgstr "DynamicWeb_report#Help"
 
 #: DynamicWeb//dynamicweb.py:2488 DynamicWeb/dynamicweb.py:2977
 msgid "Examples"
@@ -233,7 +232,7 @@ msgstr "Incluir mapa nas páginas individuais e familiares"
 #: DynamicWeb//dynamicweb.py:2505 DynamicWeb//dynamicweb.py:4096
 #: DynamicWeb/dynamicweb.py:3011 DynamicWeb/dynamicweb.py:4955
 msgid "Include half and/ or step-siblings on the individual pages"
-msgstr "Incluir meio-irmãos nas paǵinas individuais"
+msgstr "Incluir meio-irmãos nas páginas individuais"
 
 #: DynamicWeb//dynamicweb.py:2506 DynamicWeb//dynamicweb.py:4166
 #: DynamicWeb/dynamicweb.py:3013 DynamicWeb/dynamicweb.py:5076
@@ -267,11 +266,11 @@ msgstr "Sem dados disponíveis na tabela"
 
 #: DynamicWeb//dynamicweb.py:2529 DynamicWeb/dynamicweb.py:3039
 msgid "No matching records found"
-msgstr "Sem registos encontrados"
+msgstr "Sem registos correspondentes"
 
 #: DynamicWeb//dynamicweb.py:2530 DynamicWeb/dynamicweb.py:3040
 msgid "No matching surname."
-msgstr "Sem apelido encontrado."
+msgstr "Sem apelido correspondente."
 
 #: DynamicWeb//dynamicweb.py:2535 DynamicWeb/dynamicweb.py:3045
 msgid "Other participants"
@@ -279,7 +278,7 @@ msgstr "Outros participantes"
 
 #: DynamicWeb//dynamicweb.py:2538 DynamicWeb/dynamicweb.py:3048
 msgid "Person page"
-msgstr "Página pessoal"
+msgstr "Página do indivíduo"
 
 #: DynamicWeb//dynamicweb.py:2539 DynamicWeb/dynamicweb.py:3049
 msgid "Person to search for"
@@ -319,7 +318,7 @@ msgstr "Restaurar"
 
 #: DynamicWeb//dynamicweb.py:2557 DynamicWeb/dynamicweb.py:3067
 msgid "Restore default settings"
-msgstr "Restaurar predefinições"
+msgstr "Restaurar pré-definições"
 
 #: DynamicWeb//dynamicweb.py:2558 DynamicWeb//dynamicweb.py:4112
 #: DynamicWeb/dynamicweb.py:3068 DynamicWeb/dynamicweb.py:4978
@@ -409,7 +408,7 @@ msgstr "A mostrar _START_ a _END_ de _TOTAL_ entradas"
 
 #: DynamicWeb//dynamicweb.py:2579 DynamicWeb/dynamicweb.py:3112
 msgid "Sort by:"
-msgstr "Ordenar por"
+msgstr "Ordenar por:"
 
 #: DynamicWeb//dynamicweb.py:2581 DynamicWeb/dynamicweb.py:3114
 msgid "Sources Index"
@@ -418,7 +417,7 @@ msgstr "Índice de fontes"
 #: DynamicWeb//dynamicweb.py:2584 DynamicWeb//dynamicweb.py:4120
 #: DynamicWeb/dynamicweb.py:3117 DynamicWeb/dynamicweb.py:4992
 msgid "Suppress Gramps ID"
-msgstr "Suprimir Id Gramps"
+msgstr "Suprimir IDs Gramps"
 
 #: DynamicWeb//dynamicweb.py:2586 DynamicWeb/dynamicweb.py:3119
 msgid "Surnames Index"
@@ -479,7 +478,7 @@ msgstr "Usado para fonte"
 
 #: DynamicWeb//dynamicweb.py:2605 DynamicWeb/dynamicweb.py:3159
 msgid "Web Link"
-msgstr "Ligação web"
+msgstr "Ligação “web”"
 
 #: DynamicWeb//dynamicweb.py:2607 DynamicWeb//dynamicweb.py:4222
 #: DynamicWeb/dynamicweb.py:3164 DynamicWeb/dynamicweb.py:5173
@@ -487,7 +486,7 @@ msgid ""
 "Whether to use a special color for the persons that appear several times in "
 "the SVG tree"
 msgstr ""
-"Se deve usar uma cor especial para o indivíduo que aparece várias vezes na "
+"Se deve usar uma cor especial para indivíduos que aparecem várias vezes na "
 "árvore SVG"
 
 #: DynamicWeb//dynamicweb.py:2608 DynamicWeb/dynamicweb.py:3167
@@ -527,7 +526,7 @@ msgstr "Impossível copiar \"%(src)s\" para \"%(dst)s\""
 #: DynamicWeb//dynamicweb.py:2989 DynamicWeb/dynamicweb.py:3632
 #, python-format
 msgid "Unable to copy web site template files from \"%(path)s\""
-msgstr "Impossível copiar o modelo de página web de \"%(path)s\""
+msgstr "Impossível copiar o modelo de página “web” de \"%(path)s\""
 
 #: DynamicWeb//dynamicweb.py:3033 DynamicWeb/dynamicweb.py:3681
 #, python-format
@@ -554,7 +553,7 @@ msgstr "Impossível adicionar \"%(file)s\" ao arquivo \"%(archive)s\""
 #: DynamicWeb//dynamicweb.py:3143 DynamicWeb/dynamicweb.py:3831
 #, python-format
 msgid "DynamicWebReport ignoring link type '%(class)s'"
-msgstr "Relatório Web dinâmico a ignorar tipo de ligação \"%(class)s\""
+msgstr "Relatório “web” dinâmico a ignorar tipo de ligação \"%(class)s\""
 
 #: DynamicWeb//dynamicweb.py:3527 DynamicWeb/dynamicweb.py:4262
 #, python-format
@@ -593,28 +592,29 @@ msgstr ""
 "__NB_SOURCES__ é substituído pelo número de fontes.\n"
 "__NB_REPOSITORIES__ é substituído pelo número de repositórios.\n"
 "__NB_PLACES__ é substituído pelo número de locais.\n"
-"__MEDIA_<gid>__ é substituído pela multimédia com Id Gramps <gid>.\n"
-"__THUMB_<gid>__ é substituído pela minatura da multimédia com Id Gramps "
+"__MEDIA_<gid>__ é substituído pela multimédia com ID Gramps <gid>.\n"
+"__THUMB_<gid>__ é substituído pela miniatura da multimédia com ID Gramps "
 "<gid>.\n"
 "__EXPORT_DATE__ é substituído pela data actual.\n"
 "__GRAMPS_VERSION__ é substituído pela versão do Gramps.\n"
-"__GRAMPS_HOMEPAGE__ é substituído pela ligação à página web do Gramps.\n"
-"URLs começado por \"relative://relative.<link>\" são subtituídos pelo URL "
+"__GRAMPS_HOMEPAGE__ é substituído pela ligação à página “web” do Gramps.\n"
+"URLs começados por \"relative://relative.<link>\" são substituídos pelo URL "
 "relativo \"<link>\".\n"
 
 #: DynamicWeb//dynamicweb.py:3897 DynamicWeb/dynamicweb.py:4712
 msgid "Store web pages in archive"
-msgstr "Armazenar páginas web num arquivo"
+msgstr "Armazenar páginas “web” num arquivo"
 
 #: DynamicWeb//dynamicweb.py:3898 DynamicWeb/dynamicweb.py:4715
 msgid ""
 "Whether to create an archive file (in ZIP or TGZ format) containing the web "
 "site"
-msgstr "Se deve criar um arquivo (em formato ZIP ou TGZ) contendo a página web"
+msgstr ""
+"Se deve criar um arquivo (em formato ZIP ou TGZ) contendo a página “web”"
 
 #: DynamicWeb//dynamicweb.py:3902 DynamicWeb/dynamicweb.py:4722
 msgid "Archive file"
-msgstr "Arquivo"
+msgstr "Ficheiro de arquivo"
 
 #: DynamicWeb//dynamicweb.py:3904 DynamicWeb/dynamicweb.py:4728
 msgid "The archive file name (with \".zip\" or \".tgz\" extension)"
@@ -622,16 +622,16 @@ msgstr "O nome do arquivo (com extensão \".zip\" ou \".tgz\")"
 
 #: DynamicWeb//dynamicweb.py:3910 DynamicWeb/dynamicweb.py:4735
 msgid "Web site title"
-msgstr "Título da página web"
+msgstr "Título da página “web”"
 
 #: DynamicWeb//dynamicweb.py:3911 DynamicWeb/dynamicweb.py:4736
 msgid "The title of the web site"
-msgstr "O título da página web"
+msgstr "O título da página “web”"
 
 #: DynamicWeb//dynamicweb.py:3916 DynamicWeb/dynamicweb.py:4741
 msgid "Select filter to restrict people that appear on web site"
 msgstr ""
-"Seleccione o filtro para limitar os indivíduos que aparecem na página web"
+"Seleccione o filtro para limitar os indivíduos que aparecem na página “web”"
 
 #: DynamicWeb//dynamicweb.py:3929 DynamicWeb//dynamicweb.py:3949
 #: DynamicWeb/dynamicweb.py:4755 DynamicWeb/dynamicweb.py:4778
@@ -645,15 +645,15 @@ msgstr "Seleccione um formato para mostrar uma versão mais curta dos nomes"
 
 #: DynamicWeb//dynamicweb.py:3955 DynamicWeb/dynamicweb.py:4787
 msgid "Web site template"
-msgstr "Modelo de página web"
+msgstr "Modelo de página “web”"
 
 #: DynamicWeb//dynamicweb.py:3958 DynamicWeb/dynamicweb.py:4790
 msgid "Select the template of the web site"
-msgstr "Seleccione o modelo de página web"
+msgstr "Seleccione o modelo de página “web”"
 
 #: DynamicWeb//dynamicweb.py:3981 DynamicWeb/dynamicweb.py:4812
 msgid "Whether to include private objects"
-msgstr "Se deve incluir objectos provados"
+msgstr "Se deve incluir objectos privados"
 
 #: DynamicWeb//dynamicweb.py:3992 DynamicWeb/dynamicweb.py:4833
 msgid ""
@@ -669,7 +669,7 @@ msgstr "Exportar notas"
 
 #: DynamicWeb//dynamicweb.py:3997 DynamicWeb/dynamicweb.py:4840
 msgid "Whether to export notes in the web pages"
-msgstr "Se deve exportar notas nas páginas web"
+msgstr "Se deve exportar notas nas páginas “web”"
 
 #: DynamicWeb//dynamicweb.py:4000 DynamicWeb/dynamicweb.py:4843
 msgid "Export sources"
@@ -677,7 +677,7 @@ msgstr "Exportar fontes"
 
 #: DynamicWeb//dynamicweb.py:4001 DynamicWeb/dynamicweb.py:4845
 msgid "Whether to export sources and citations in the web pages"
-msgstr "Se deve exportar fontes e citações nas páginas web"
+msgstr "Se deve exportar fontes e citações nas páginas “web”"
 
 #: DynamicWeb//dynamicweb.py:4004 DynamicWeb/dynamicweb.py:4849
 msgid "Export addresses"
@@ -685,7 +685,7 @@ msgstr "Exportar endereços"
 
 #: DynamicWeb//dynamicweb.py:4005 DynamicWeb/dynamicweb.py:4850
 msgid "Whether to export addresses in the web pages"
-msgstr "Se deve exportar endereços nas páginas web"
+msgstr "Se deve exportar endereços nas páginas “web”"
 
 #: DynamicWeb//dynamicweb.py:4014 DynamicWeb/dynamicweb.py:4858
 msgid "Whether or not to include the Repository Pages."
@@ -697,7 +697,7 @@ msgstr "Incluir multimédia"
 
 #: DynamicWeb//dynamicweb.py:4018 DynamicWeb/dynamicweb.py:4862
 msgid "Whether to include images and media in the web pages"
-msgstr "Se deve incluir a multimédia nas páginas web."
+msgstr "Se deve incluir a multimédia nas páginas “web”"
 
 #: DynamicWeb//dynamicweb.py:4022 DynamicWeb/dynamicweb.py:4867
 msgid "Copy, rename files with an internal Gramps identifier"
@@ -725,7 +725,7 @@ msgstr "Imprimir o tipo das notas"
 
 #: DynamicWeb//dynamicweb.py:4033 DynamicWeb/dynamicweb.py:4881
 msgid "Whether to print the notes type in the notes text"
-msgstr "Se deve imprimir o tipo das notas no texto das notas."
+msgstr "Se deve imprimir o tipo das notas no texto das notas"
 
 #: DynamicWeb//dynamicweb.py:4036 DynamicWeb/dynamicweb.py:4885
 msgid "Print place pages"
@@ -754,7 +754,8 @@ msgstr "Se deve incluir páginas familiares"
 #: DynamicWeb//dynamicweb.py:4097 DynamicWeb/dynamicweb.py:4959
 msgid ""
 "Whether to include half and/ or step-siblings with the parents and siblings"
-msgstr "Se deve incluir meio-irmãos com os pais e irmãos"
+msgstr ""
+"Se deve incluir meios-irmãos e/ou irmãos adoptivos com os pais e irmãos"
 
 #: DynamicWeb//dynamicweb.py:4104 DynamicWeb/dynamicweb.py:4968
 msgid "Enable page configuration"
@@ -762,7 +763,7 @@ msgstr "Activar configuração da página"
 
 #: DynamicWeb//dynamicweb.py:4105 DynamicWeb/dynamicweb.py:4969
 msgid "Whether to enable page configuration"
-msgstr "Se deve activar configuração da página"
+msgstr "Se deve activar a configuração da página"
 
 #: DynamicWeb//dynamicweb.py:4109 DynamicWeb/dynamicweb.py:4974
 msgid "Whether to use tabbed panels for the different sections of the pages."
@@ -770,7 +771,7 @@ msgstr "Se deve usar separadores para diferentes secções das páginas."
 
 #: DynamicWeb//dynamicweb.py:4113 DynamicWeb/dynamicweb.py:4980
 msgid "Whether to show the last modification time in the pages footer"
-msgstr "Se deve mostrar a hora da última modificação no rodapé das páginas."
+msgstr "Se deve mostrar a hora da última modificação no rodapé das páginas"
 
 #: DynamicWeb//dynamicweb.py:4117 DynamicWeb/dynamicweb.py:4988
 msgid "Whether to insert sources author in the sources title"
@@ -778,7 +779,7 @@ msgstr "Se deve inserir o autor das fontes no título das fontes"
 
 #: DynamicWeb//dynamicweb.py:4121 DynamicWeb/dynamicweb.py:4993
 msgid "Whether to hide the Gramps ID"
-msgstr "Se deve ocultar a Id Gramps"
+msgstr "Se deve ocultar a ID Gramps"
 
 #: DynamicWeb//dynamicweb.py:4130 DynamicWeb/dynamicweb.py:5001
 msgid "List"
@@ -790,43 +791,43 @@ msgstr "Tabela"
 
 #: DynamicWeb//dynamicweb.py:4134 DynamicWeb/dynamicweb.py:5008
 msgid "Default format for the surnames index"
-msgstr "Formato predefinido para o índice de apelidos"
+msgstr "Formato pré-definido para o índice de apelidos"
 
 #: DynamicWeb//dynamicweb.py:4134 DynamicWeb/dynamicweb.py:5009
 msgid "The default format for the surnames index"
-msgstr "O formato predefinido para o índice de apelidos"
+msgstr "O formato pré-definido para o índice de apelidos"
 
 #: DynamicWeb//dynamicweb.py:4135 DynamicWeb/dynamicweb.py:5014
 msgid "Default format for the persons index"
-msgstr "Formato predefinido para o índice de indivíduos"
+msgstr "Formato pré-definido para o índice de indivíduos"
 
 #: DynamicWeb//dynamicweb.py:4135 DynamicWeb/dynamicweb.py:5015
 msgid "The default format for the persons index"
-msgstr "O formato predefinido para o índice de indivíduos"
+msgstr "O formato pré-definido para o índice de indivíduos"
 
 #: DynamicWeb//dynamicweb.py:4136 DynamicWeb/dynamicweb.py:5020
 msgid "Default format for the families index"
-msgstr "Formato predefinido para o índice de famílias"
+msgstr "Formato pré-definido para o índice de famílias"
 
 #: DynamicWeb//dynamicweb.py:4136 DynamicWeb/dynamicweb.py:5021
 msgid "The default format for the families index"
-msgstr "O formato predefinido para o índice de famílias"
+msgstr "O formato pré-definido para o índice de famílias"
 
 #: DynamicWeb//dynamicweb.py:4137 DynamicWeb/dynamicweb.py:5026
 msgid "Default format for the sources index"
-msgstr "Formato predefinido para o índice de fontes"
+msgstr "Formato pré-definido para o índice de fontes"
 
 #: DynamicWeb//dynamicweb.py:4137 DynamicWeb/dynamicweb.py:5027
 msgid "The default format for the sources index"
-msgstr "O formato predefinido para o índice de fontes"
+msgstr "O formato pré-definido para o índice de fontes"
 
 #: DynamicWeb//dynamicweb.py:4138 DynamicWeb/dynamicweb.py:5032
 msgid "Default format for the places index"
-msgstr "Formato predefinido para o índice de locais"
+msgstr "Formato pré-definido para o índice de locais"
 
 #: DynamicWeb//dynamicweb.py:4138 DynamicWeb/dynamicweb.py:5033
 msgid "The default format for the places index"
-msgstr "O formato predefinido para o índice de locais"
+msgstr "O formato pré-definido para o índice de locais"
 
 #: DynamicWeb//dynamicweb.py:4147 DynamicWeb/dynamicweb.py:5045
 msgid ""
@@ -837,7 +838,7 @@ msgstr ""
 
 #: DynamicWeb//dynamicweb.py:4158 DynamicWeb/dynamicweb.py:5063
 msgid "Generate a families index page"
-msgstr "Gerar uma página de indice de famílias"
+msgstr "Gerar uma página de índice de famílias"
 
 #: DynamicWeb//dynamicweb.py:4159 DynamicWeb/dynamicweb.py:5066
 msgid "Whether to generate an index page for families"
@@ -855,15 +856,15 @@ msgid ""
 msgstr ""
 "Se deve incluir as referências aos itens nas páginas de índice. Por exemplo, "
 "no índice da multimédia, incluir nomes de indivíduos, famílias, locais e "
-"fontes que referenciem a multimédia"
+"fontes que referenciem a multimédia."
 
 #: DynamicWeb//dynamicweb.py:4170 DynamicWeb/dynamicweb.py:5085
 msgid "Default number of entries in the indexes"
-msgstr "Número de entradas predefinidas nos índices"
+msgstr "Número de entradas pré-definidas nos índices"
 
 #: DynamicWeb//dynamicweb.py:4173 DynamicWeb/dynamicweb.py:5090
 msgid "The default number of entries shown in one index page"
-msgstr "O número predefinido de entradas mostradas numa página de índice"
+msgstr "O número pré-definido de entradas mostradas numa página de índice"
 
 #: DynamicWeb//dynamicweb.py:4181 DynamicWeb/dynamicweb.py:5098
 msgid "Maximum number of generations"
@@ -875,11 +876,11 @@ msgid ""
 "trees and graphs"
 msgstr ""
 "O número máximo de gerações a incluir nas árvores e gráficos de ascendentes "
-"e descendentes."
+"e descendentes"
 
 #: DynamicWeb//dynamicweb.py:4188 DynamicWeb/dynamicweb.py:5111
 msgid "Choose the default SVG tree graph type"
-msgstr "Escolha o tipo de gráfico SVG predefinido"
+msgstr "Escolha o tipo de gráfico SVG pré-definido"
 
 #: DynamicWeb//dynamicweb.py:4194 DynamicWeb/dynamicweb.py:5119
 msgid "Choose the default SVG tree graph shape"

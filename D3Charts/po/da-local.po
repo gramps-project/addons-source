@@ -173,28 +173,10 @@ msgstr "Danner rapporten..."
 msgid "Invalid Destination Directory"
 msgstr "Ugyldig målfolder"
 
-#: D3Charts/DescendantIndentedTree.py:1365
-#, python-format
-msgid ""
-"Destinaton diretory %s does not exist\n"
-"Do you want to attempt to create it."
-msgstr ""
-"Målfolder %s findes ikke\n"
-"Vild du forsøge at danne det."
-
 #: D3Charts/DescendantIndentedTree.py:1374
 #, python-format
 msgid "Failed to create %s: %s"
 msgstr "Kunne ikke danne%s: %s"
-
-#: D3Charts/DescendantIndentedTree.py:1391
-#, python-format
-msgid ""
-"Destination file %s already exists.\n"
-"Do you want to overwrite."
-msgstr ""
-"Målfil %s findes allerede.\n"
-"Vil du  overskrive den."
 
 #: D3Charts/DescendantIndentedTree.py:1446
 msgid "Default View"

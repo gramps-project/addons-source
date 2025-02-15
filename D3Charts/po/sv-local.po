@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-08 17:11-0500\n"
-"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"PO-Revision-Date: 2025-02-09 22:37+0000\n"
 "Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
@@ -177,28 +177,10 @@ msgstr "Skapar rapport..."
 msgid "Invalid Destination Directory"
 msgstr "Felaktig målkatalog"
 
-#: D3Charts/DescendantIndentedTree.py:1365
-#, python-format
-msgid ""
-"Destinaton diretory %s does not exist\n"
-"Do you want to attempt to create it."
-msgstr ""
-"Målkatalog %s existerar inte\n"
-"Vill du försöka skapa den."
-
 #: D3Charts/DescendantIndentedTree.py:1374
 #, python-format
 msgid "Failed to create %s: %s"
 msgstr "Fel vid skapandet av %s: %s"
-
-#: D3Charts/DescendantIndentedTree.py:1391
-#, python-format
-msgid ""
-"Destination file %s already exists.\n"
-"Do you want to overwrite."
-msgstr ""
-"Målfilen %s finns redan.\n"
-"Vill du skriva över den."
 
 #: D3Charts/DescendantIndentedTree.py:1446
 msgid "Default View"

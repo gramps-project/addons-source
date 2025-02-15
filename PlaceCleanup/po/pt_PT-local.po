@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2025-02-09 06:44+0000\n"
+"PO-Revision-Date: 2025-02-15 10:09+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.10\n"
 
 #: PlaceCleanup/placecleanup.gpr.py:28 PlaceCleanup/placecleanup.gpr.py:44
 #: PlaceCleanup/placecleanup.gpr.py:46
@@ -73,8 +73,8 @@ msgid ""
 "Try changing the Title, or use the \"Edit\" button to finish this level of "
 "the place manually."
 msgstr ""
-"Tente alterar o título ou clique em Editar para terminar este nível de local "
-"manualmente."
+"Tente alterar o título, ou clique em Editar para terminar este nível de "
+"local manualmente."
 
 #: PlaceCleanup/placecleanup.py:347
 #, python-format
@@ -113,7 +113,7 @@ msgstr "O pedido expirou, tente novamente..."
 
 #: PlaceCleanup/placecleanup.py:432 PlaceCleanup/placecleanup.py:435
 msgid "Problem getting data from GeoNames"
-msgstr "Problema ao obter dados da GeoNames"
+msgstr "Problema ao obter dados do GeoNames"
 
 #: PlaceCleanup/placecleanup.py:478 PlaceCleanup/placecleanup.py:481
 msgid ""
@@ -141,7 +141,7 @@ msgstr "Autor do GeoNames"
 
 #: PlaceCleanup/placecleanup.py:945 PlaceCleanup/placecleanup.py:955
 msgid "GeoNames was founded by Marc Wick. You can reach him at "
-msgstr "O GeoNames foi fundado pelo Marc Wick. Pode contactá-lo em  "
+msgstr "O GeoNames foi fundado pelo Marc Wick. Pode contactá-lo em "
 
 #: PlaceCleanup/placecleanup.py:948 PlaceCleanup/placecleanup.py:958
 msgid ""
@@ -151,7 +151,7 @@ msgid ""
 msgstr ""
 "O GeoNames é um projecto de Unxos GmbH, Weingartenstrasse 8, 8708 Männedorf, "
 "Switzerland.\n"
-"Este trabalho está licensiado sob  "
+"Este trabalho está licenciado sob "
 
 #: PlaceCleanup/placecleanup.py:951 PlaceCleanup/placecleanup.py:961
 msgid "Creative Commons Attribution 3.0 License"
@@ -184,7 +184,7 @@ msgstr "Nome principal"
 
 #: PlaceCleanup/placecleanup.glade:88 PlaceCleanup/placecleanup.glade:89
 msgid "The current Primary name."
-msgstr "O nome principal actual"
+msgstr "O nome principal actual."
 
 #: PlaceCleanup/placecleanup.glade:102
 msgid "The postal code for the place, if any."
@@ -275,11 +275,11 @@ msgstr "Manter ligações web"
 
 #: PlaceCleanup/placecleanup.glade:609 PlaceCleanup/placecleanup.glade:681
 msgid "Puts web links (typically wikipedia) into your place."
-msgstr "Põe as ligações web (titpicamente wikipedia no seu local."
+msgstr "Põe as ligações “web” (tipicamente Wikipédia) no seu local."
 
 #: PlaceCleanup/placecleanup.glade:622 PlaceCleanup/placecleanup.glade:693
 msgid "Add citation and source to Place"
-msgstr "Adicionar citação e fonte no seu local"
+msgstr "Adicionar citação e fonte ao seu local"
 
 #: PlaceCleanup/placecleanup.glade:626 PlaceCleanup/placecleanup.glade:697
 msgid "This Adds a Citation to your place, citing GeoNames."
@@ -287,11 +287,11 @@ msgstr "Isto adiciona uma citação ao seu local, citando o GeoNames."
 
 #: PlaceCleanup/placecleanup.glade:641 PlaceCleanup/placecleanup.glade:711
 msgid "GeoNames User ID"
-msgstr "ID de utilizador GeoNames"
+msgstr "Utilizador GeoNames"
 
 #: PlaceCleanup/placecleanup.glade:653 PlaceCleanup/placecleanup.glade:723
 msgid "Enter you Geonames user ID here."
-msgstr "Insira a sua ID Geonames aqui."
+msgstr "Insira a sua identificação GeoNames aqui."
 
 #: PlaceCleanup/placecleanup.glade:665 PlaceCleanup/placecleanup.glade:735
 msgid "Alternative Names Languages to keep"
@@ -331,7 +331,7 @@ msgstr ""
 "alteração ao local contentor.\n"
 "Se seleccionar \"<b>Substituir com contenção GeoNames</b>\", o local contido "
 "é alterado para o nível de local GeoNames seguinte. Pode resultar em alguns "
-"lugares não utilizados restantes na sua base de dados."
+"locais não utilizados restantes na sua base de dados."
 
 #: PlaceCleanup/placecleanup.glade:710 PlaceCleanup/placecleanup.glade:780
 msgid "Keep current Enclosure"
@@ -353,7 +353,7 @@ msgstr ""
 
 #: PlaceCleanup/placecleanup.glade:831 PlaceCleanup/placecleanup.glade:899
 msgid "Search your local places and GeoNames for a match."
-msgstr "Procurar correspondência nos seus locais e no GeoNames."
+msgstr "Procurar correspondência local e no GeoNames."
 
 #: PlaceCleanup/placecleanup.glade:847 PlaceCleanup/placecleanup.glade:915
 msgid ""
@@ -378,7 +378,7 @@ msgstr "Local seguinte"
 
 #: PlaceCleanup/placecleanup.glade:894 PlaceCleanup/placecleanup.glade:962
 msgid "Find an incomplete place."
-msgstr "Encontrar um local incompleto"
+msgstr "Encontrar um local incompleto."
 
 #: PlaceCleanup/placecleanup.glade:917 PlaceCleanup/placecleanup.glade:985
 msgid "Set preferences"
@@ -390,19 +390,19 @@ msgstr "Seleccionar um destes locais para continuar o processo de limpeza."
 
 #: PlaceCleanup/placecleanup.glade:967 PlaceCleanup/placecleanup.glade:1035
 msgid "Search result places"
-msgstr "Procurar locais resultado"
+msgstr "Locais resultados da procura"
 
 #: PlaceCleanup/placecleanup.glade:1034 PlaceCleanup/placecleanup.glade:1102
 msgid ""
 "Checking the 'Populated' checkbox causes the GeoNames search to include "
 "'Populted places', places where people live and work."
 msgstr ""
-"Marcar a caixa \"Populados\" faz com que o GeoNames inclua \"Locais "
-"populados\", locais onde as pessoas vivem e trabalham."
+"Marcar a caixa \"Habitados\" faz com que o GeoNames inclua locais habitados, "
+"locais onde as pessoas vivem e trabalham."
 
 #: PlaceCleanup/placecleanup.glade:1053 PlaceCleanup/placecleanup.glade:1119
 msgid "Populated"
-msgstr "Populados"
+msgstr "Habitados"
 
 #: PlaceCleanup/placecleanup.glade:1065 PlaceCleanup/placecleanup.glade:1131
 msgid ""
@@ -418,8 +418,9 @@ msgid ""
 "variety of other places in the search (churches, burial grounds, buildings "
 "etc.)."
 msgstr ""
-"Marcar a caixa \"Local\" faz com que o GeoNames inclua uma grande variedade "
-"de outros locais na procura (igrejas, cemitérios, edifícios, etc.)."
+"Marcar a caixa \"Ponto de interesse\" faz com que o GeoNames inclua uma "
+"grande variedade de outros locais na procura (igrejas, cemitérios, "
+"edifícios, etc.)."
 
 #: PlaceCleanup/placecleanup.glade:1101 PlaceCleanup/placecleanup.glade:1163
 msgid "Admin"
@@ -427,4 +428,4 @@ msgstr "Administração"
 
 #: PlaceCleanup/placecleanup.glade:1112 PlaceCleanup/placecleanup.glade:1174
 msgid "Spot"
-msgstr "Local"
+msgstr "Ponto de interesse"

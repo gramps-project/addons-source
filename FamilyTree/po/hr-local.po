@@ -9,60 +9,61 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2019-10-23 15:25+0200\n"
+"PO-Revision-Date: 2025-02-15 16:17+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
-"Language-Team: \n"
+"Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
+"addons/hr/>\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
-"X-Generator: Poedit 2.2.4\n"
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.10\n"
 
 #: FamilySheet/FamilySheet.py:767 FamilySheet/FamilySheet.py:769
-#: FamilyTree/FamilyTree.py:930
+#: FamilyTree/FamilyTree.py:932
 #, python-format
 msgid "on %(ymd_date)s"
 msgstr "na dan %(ymd_date)s"
 
 #: FamilySheet/FamilySheet.py:769 FamilySheet/FamilySheet.py:771
-#: FamilyTree/FamilyTree.py:932
+#: FamilyTree/FamilyTree.py:934
 #, python-format
 msgid "in %(ym_date)s"
 msgstr "%(ym_date)s"
 
 #: FamilySheet/FamilySheet.py:771 FamilySheet/FamilySheet.py:773
-#: FamilyTree/FamilyTree.py:934
+#: FamilyTree/FamilyTree.py:936
 #, python-format
 msgid "in %(y_date)s"
 msgstr "%(y_date)s"
 
 #: FamilySheet/FamilySheet.py:775 FamilySheet/FamilySheet.py:777
-#: FamilyTree/FamilyTree.py:938
+#: FamilyTree/FamilyTree.py:940
 #, python-format
 msgid "on %(placeholder)s"
 msgstr "na %(placeholder)s"
 
 #: FamilySheet/FamilySheet.py:777 FamilySheet/FamilySheet.py:779
-#: FamilyTree/FamilyTree.py:941
+#: FamilyTree/FamilyTree.py:943
 #, python-format
 msgid "on %(placeholder)s (%(partial)s)"
 msgstr "na %(placeholder)s (%(partial)s)"
 
 #: FamilySheet/FamilySheet.py:822 FamilySheet/FamilySheet.py:824
-#: FamilySheet/FamilySheet.py:826 FamilyTree/FamilyTree.py:958
+#: FamilySheet/FamilySheet.py:826 FamilyTree/FamilyTree.py:960
 #, python-format
 msgid "in %(place)s"
 msgstr "u mjestu %(place)s"
 
 #: FamilySheet/FamilySheet.py:878 FamilySheet/FamilySheet.py:880
-#: FamilyTree/FamilyTree.py:1082
+#: FamilyTree/FamilyTree.py:1084
 msgid "Replace first name with call name"
 msgstr "Zamijeni cjelokupno ime upotrebnim imenom"
 
 #: FamilySheet/FamilySheet.py:879 FamilySheet/FamilySheet.py:881
-#: FamilyTree/FamilyTree.py:1083
+#: FamilyTree/FamilyTree.py:1085
 msgid "Underline call name in first name / add call name to first name"
 msgstr ""
 "Podcrtaj upotrebno ime u cjelokupnom imenu / dodaj upotrebno ime cjelokupnom"
@@ -159,11 +160,11 @@ msgstr ""
 
 #: FamilyTree/FamilyTree.py:1057 FamilyTree/FamilyTree.py:1059
 msgid "Scale to fit on a single page"
-msgstr "Prilagodi rodoslov veličini stranice"
+msgstr "Prilagodi rodoslov veličini jedne stranice"
 
 #: FamilyTree/FamilyTree.py:1058 FamilyTree/FamilyTree.py:1060
 msgid "Whether to scale to fit on a single page."
-msgstr "Da li prilagoditi rodoslov veličini stranice."
+msgstr "Da li prilagoditi rodoslov veličini jedne stranice."
 
 #: FamilyTree/FamilyTree.py:1063 FamilyTree/FamilyTree.py:1065
 msgid "No color"
@@ -258,4 +259,4 @@ msgstr "Stil za imena."
 
 #: FamilyTree/FamilyTree.py:1168 FamilyTree/FamilyTree.py:1170
 msgid "The style used for data (birth, death, marriage, divorce)."
-msgstr "Stil za podatke (rođenje, smrt, vjenčanje, rastava braka)."
+msgstr "Stil za podatke (rođenje, smrt, brak, rastava braka)."

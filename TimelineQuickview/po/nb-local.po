@@ -13,16 +13,17 @@ msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-08 16:37+0100\n"
-"PO-Revision-Date: 2010-03-08 08:21+0100\n"
-"Last-Translator: Espen Berg <espenbe@gmail.com>\n"
-"Language-Team: American English <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2025-02-15 10:09+0000\n"
+"Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
+"Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
+"project/addons/nb_NO/>\n"
+"Language: nb\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Norwegian Bokmaal <i18n-nb@lister.ping.uio.no>\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10\n"
 "Generated-By: pygettext.py 1.4\n"
-"X-Generator: Lokalize 0.3\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: TimelineQuickview/TimelineQuickview.gpr.py:10
 #: TimelineQuickview/TimelineQuickview.gpr.py:11
@@ -95,5 +96,6 @@ msgid "People involved"
 msgstr ""
 
 #: TimelineQuickview/TimelineQuickview.py:169 Query/QueryQuickview.py:426
+#: TimelineQuickview/TimelineQuickview.py:186
 msgid "Today"
 msgstr ""

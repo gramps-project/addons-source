@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-08 16:37+0100\n"
-"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"PO-Revision-Date: 2025-02-15 16:17+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.10\n"
 
 #: DynamicWeb//dynamicweb.gpr.py:15 DynamicWeb/dynamicweb.gpr.py:16
 msgid "Dynamic Web Report"
@@ -639,6 +639,7 @@ msgid "Select the template of the web site"
 msgstr "Zvoľte šablónu web stránky"
 
 #: DynamicWeb//dynamicweb.py:3980 D3Charts/DescendantIndentedTree.py:1867
+#: DynamicWeb/dynamicweb.py:4811
 msgid "Include records marked private"
 msgstr "Zahrnúť záznamy označené ako súkromné"
 
@@ -647,10 +648,12 @@ msgid "Whether to include private objects"
 msgstr "Či zahrnúť súkromné objekty"
 
 #: DynamicWeb//dynamicweb.py:3985 D3Charts/DescendantIndentedTree.py:1877
+#: DynamicWeb/dynamicweb.py:4819
 msgid "Include Last Name Only"
 msgstr "Zahrnúť iba posledné meno"
 
 #: DynamicWeb//dynamicweb.py:3986 D3Charts/DescendantIndentedTree.py:1879
+#: DynamicWeb/dynamicweb.py:4822
 msgid "Include Full Name Only"
 msgstr "Zahrnúť iba celé meno"
 

@@ -9,16 +9,17 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-09-10 07:59+0300\n"
-"PO-Revision-Date: 2023-09-10 08:07+0300\n"
-"Last-Translator: \n"
-"Language-Team: Avi Markovitz\n"
+"PO-Revision-Date: 2025-02-15 16:17+0000\n"
+"Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
+"Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
+"addons/he/>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==2 ? 1 : n>10 && n%10==0 ? "
-"2 : 3);\n"
-"X-Generator: Poedit 3.0.1\n"
+"Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
+"n % 10 == 0) ? 2 : 3));\n"
+"X-Generator: Weblate 5.10\n"
 
 #: Themes/themes.gpr.py:28 Themes/themes.gpr.py:29
 msgid "Theme preferences"
@@ -38,6 +39,7 @@ msgid "Theme is hardcoded by GTK_THEME"
 msgstr "ערכת נושא מקודדת באופן מובנה על ידי GTK_THEME"
 
 #: Themes/themes.py:159 Themes/themes.py:209 DynamicWeb/dynamicweb.py:5157
+#: Themes/themes.py:175 Themes/themes.py:225
 msgid "Theme"
 msgstr "ערכת נושא"
 

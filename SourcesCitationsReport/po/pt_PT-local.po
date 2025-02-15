@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2025-02-09 06:44+0000\n"
+"PO-Revision-Date: 2025-02-15 10:09+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.10\n"
 
 #: SourcesCitationsReport//SourcesCitationsReport.gpr.py:32
 #: SourcesCitationsReport/SourcesCitationsReport.gpr.py:32
@@ -143,7 +143,7 @@ msgstr "Cadeia de sub-título do relatório."
 #: SourcesCitationsReport//SourcesCitationsReport.py:431
 #: SourcesCitationsReport/SourcesCitationsReport.py:423
 msgid "researcher name"
-msgstr "nome do pesquisador"
+msgstr "nome do investigador"
 
 #: SourcesCitationsReport//SourcesCitationsReport.py:444
 #: SourcesCitationsReport/SourcesCitationsReport.py:436
@@ -168,7 +168,7 @@ msgstr "O estilo usado para o título do relatório."
 #: SourcesCitationsReport//SourcesCitationsReport.py:503
 #: SourcesCitationsReport/SourcesCitationsReport.py:495
 msgid "The style used for the subtitle of the report."
-msgstr "O estilo usado para o subtítulo do relatório."
+msgstr "O estilo usado para o sub-título do relatório."
 
 #: SourcesCitationsReport//SourcesCitationsReport.py:517
 #: SourcesCitationsReport/SourcesCitationsReport.py:509
@@ -183,7 +183,7 @@ msgstr "O estilo usado para o título da fonte."
 #: SourcesCitationsReport//SourcesCitationsReport.py:544
 #: SourcesCitationsReport/SourcesCitationsReport.py:536
 msgid "The style used for source subtitle."
-msgstr "O estilo usado para a legenda da fonte."
+msgstr "O estilo usado para o sub-título da fonte."
 
 #: SourcesCitationsReport//SourcesCitationsReport.py:556
 #: SourcesCitationsReport/SourcesCitationsReport.py:548
@@ -208,4 +208,4 @@ msgstr "O estilo usado para cada secção."
 #: SourcesCitationsReport//SourcesCitationsReport.py:630
 #: SourcesCitationsReport/SourcesCitationsReport.py:622
 msgid "The style used for event and person details."
-msgstr "O estilo usado para o evento e detalhes pessoais."
+msgstr "O estilo usado para detalhes do evento e pessoais."

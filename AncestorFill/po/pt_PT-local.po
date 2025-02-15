@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2025-02-09 06:44+0000\n"
+"PO-Revision-Date: 2025-02-15 10:09+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -16,11 +16,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.10\n"
 
 #: AncestorFill/AncestorFill.gpr.py:8 AncestorFill/AncestorFill.gpr.py:9
 msgid "AncestorFill"
-msgstr "AncestorFill"
+msgstr "Preencher ascendentes"
 
 #: AncestorFill/AncestorFill.gpr.py:9 AncestorFill/AncestorFill.gpr.py:10
 msgid "Report on the filling of the tree"
@@ -29,7 +29,7 @@ msgstr "Relatório do preenchimento da árvore"
 #: AncestorFill/AncestorFill.py:268 AncestorFill/AncestorFill.py:189
 #, python-format
 msgid "AncestorFill for %s"
-msgstr "AncestorFill de %s"
+msgstr "Preenchimento dos ascendentes de %s"
 
 #: AncestorFill/AncestorFill.py:281 AncestorFill/AncestorFill.py:205
 msgid "Generation "

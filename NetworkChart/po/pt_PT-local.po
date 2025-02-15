@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2025-02-09 06:44+0000\n"
+"PO-Revision-Date: 2025-02-15 10:09+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -16,20 +16,20 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.10\n"
 
 #: D3Charts/AncestralCollapsibleTree.py:842
-#: D3Charts/AncestralCollapsibleTree.py:847 NetworkChart/NetworkChart.py:1002
+#: D3Charts/AncestralCollapsibleTree.py:847 NetworkChart/NetworkChart.py:1009
 msgid "RGB-color for male box background."
-msgstr "Cor RGB para a caixa de homens."
+msgstr "Cor RGB para o fundo da caixa de homens."
 
 #: D3Charts/AncestralCollapsibleTree.py:850
-#: D3Charts/AncestralCollapsibleTree.py:855 NetworkChart/NetworkChart.py:1015
+#: D3Charts/AncestralCollapsibleTree.py:855 NetworkChart/NetworkChart.py:1022
 msgid "Female Background"
 msgstr "Cor de fundo feminina"
 
 #: GraphView/graphview.py:3388 GraphView/graphview.py:3783
-#: NetworkChart/NetworkChart.py:1180
+#: NetworkChart/NetworkChart.py:1174 NetworkChart/NetworkChart.py:1188
 msgid "Direct"
 msgstr "Directa"
 

@@ -212,31 +212,11 @@ msgstr "Создание отчёта..."
 msgid "Invalid Destination Directory"
 msgstr "Не верный каталог назначения"
 
-#: D3Charts/DescendantIndentedTree.py:1364
-#: D3Charts/DescendantIndentedTree.py:1365
-#, python-format
-msgid ""
-"Destinaton diretory %s does not exist\n"
-"Do you want to attempt to create it."
-msgstr ""
-"Каталог назначения %s не существует\n"
-"Хотите создать его?"
-
 #: D3Charts/DescendantIndentedTree.py:1373
 #: D3Charts/DescendantIndentedTree.py:1374
 #, python-format
 msgid "Failed to create %s: %s"
 msgstr "Не удалось создать %s: %s"
-
-#: D3Charts/DescendantIndentedTree.py:1388
-#: D3Charts/DescendantIndentedTree.py:1391
-#, python-format
-msgid ""
-"Destination file %s already exists.\n"
-"Do you want to overwrite."
-msgstr ""
-"Файл назначения %s уже существует.\n"
-"Хотите перезаписать его?"
 
 #: D3Charts/DescendantIndentedTree.py:1443
 #: D3Charts/DescendantIndentedTree.py:1446

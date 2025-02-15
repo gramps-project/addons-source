@@ -206,31 +206,11 @@ msgstr "Verslag genereren..."
 msgid "Invalid Destination Directory"
 msgstr "Ongeldige bestemmingsdirectory"
 
-#: D3Charts/DescendantIndentedTree.py:1364
-#: D3Charts/DescendantIndentedTree.py:1365
-#, python-format
-msgid ""
-"Destinaton diretory %s does not exist\n"
-"Do you want to attempt to create it."
-msgstr ""
-"Bestemmingsdirectory %s bestaat niet\n"
-"Wilt u proberen het te maken."
-
 #: D3Charts/DescendantIndentedTree.py:1373
 #: D3Charts/DescendantIndentedTree.py:1374
 #, python-format
 msgid "Failed to create %s: %s"
 msgstr "Kan %s: %s niet maken"
-
-#: D3Charts/DescendantIndentedTree.py:1388
-#: D3Charts/DescendantIndentedTree.py:1391
-#, python-format
-msgid ""
-"Destination file %s already exists.\n"
-"Do you want to overwrite."
-msgstr ""
-"Bestemmingsbestand %s bestaat al.\n"
-"Wilt u het overschrijven."
 
 #: D3Charts/DescendantIndentedTree.py:1443
 #: D3Charts/DescendantIndentedTree.py:1446

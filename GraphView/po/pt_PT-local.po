@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2025-02-09 06:44+0000\n"
+"PO-Revision-Date: 2025-02-15 10:09+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -16,55 +16,55 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.10\n"
 
 #: SourcesCitationsReport//SourcesCitationsReport.py:341
 #: SourcesCitationsReport/SourcesCitationsReport.py:335
-#: GraphView/graphview.py:2776 GraphView/graphview.py:2777
-#: GraphView/graphview.py:2789 GraphView/graphview.py:2790
+#: GraphView/graphview.py:3168 GraphView/graphview.py:3169
+#: GraphView/graphview.py:3181 GraphView/graphview.py:3182
 #, python-format
 msgid "%s "
 msgstr "%s "
 
 #: PluginManager/PluginManager.py:155 PluginManager/PluginManager.py:158
-#: GraphView/search_widget.py:436
+#: GraphView/search_widget.py:400
 msgid "Search..."
 msgstr "Procurar..."
 
 #: DynamicWeb//dynamicweb.py:2611 DynamicWeb/dynamicweb.py:3170
-#: GraphView/graphview.py:839
+#: GraphView/graphview.py:1095
 msgid "Zoom in"
 msgstr "Ampliar"
 
 #: DynamicWeb//dynamicweb.py:2612 DynamicWeb/dynamicweb.py:3171
-#: GraphView/graphview.py:846
+#: GraphView/graphview.py:1102
 msgid "Zoom out"
 msgstr "Reduzir"
 
 #: DenominoViso/DenominoViso.py:2006 DenominoViso/DenominoViso.py:2001
-#: GraphView/graphview.py:713
+#: GraphView/graphview.py:968
 msgid "Search"
 msgstr "Procurar"
 
 #: QuiltView/QuiltView.py:1508 QuiltView/QuiltView.py:1500
-#: GraphView/graphview.py:3586
+#: GraphView/graphview.py:4048
 msgid "Set as home person"
 msgstr "Definir como indivíduo inicial"
 
 #: QuiltView/QuiltView.py:1664 QuiltView/QuiltView.py:1656
-#: GraphView/graphview.py:3932
+#: GraphView/graphview.py:4538 GraphView/graphview.py:4584
 #, python-format
 msgid "Adding Tags to person (%s)"
 msgstr "Adicionar etiquetas ao indivíduo (%s)"
 
 #: QuiltView/QuiltView.py:1669 QuiltView/QuiltView.py:1661
-#: GraphView/graphview.py:3937
+#: GraphView/graphview.py:4543 GraphView/graphview.py:4595
 #, python-format
 msgid "Adding Tags to family (%s)"
 msgstr "A adicionar etiquetas à família (%s)"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:69
-#: EditExifMetadata/editexifmetadata.py:215 GraphView/graphview.py:3425
+#: EditExifMetadata/editexifmetadata.py:215 GraphView/graphview.py:3863
 msgid "Copy"
 msgstr "Copiar"
 
@@ -159,10 +159,12 @@ msgid "Select a dot file name"
 msgstr "Seleccione um nome de ficheiro"
 
 #: GraphView/graphview.py:853 LifeLineChartView/lifelinechartview.py:527
+#: GraphView/graphview.py:1109
 msgid "Zoom to original"
 msgstr "Tamanho original"
 
 #: GraphView/graphview.py:860 LifeLineChartView/lifelinechartview.py:534
+#: GraphView/graphview.py:1116
 msgid "Zoom to best fit"
 msgstr "Melhor ajuste"
 

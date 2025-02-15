@@ -9,16 +9,17 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-09-10 07:59+0300\n"
-"PO-Revision-Date: 2023-09-10 08:07+0300\n"
-"Last-Translator: \n"
-"Language-Team: Avi Markovitz\n"
+"PO-Revision-Date: 2025-02-15 16:17+0000\n"
+"Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
+"Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
+"addons/he/>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==2 ? 1 : n>10 && n%10==0 ? "
-"2 : 3);\n"
-"X-Generator: Poedit 3.0.1\n"
+"Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
+"n % 10 == 0) ? 2 : 3));\n"
+"X-Generator: Weblate 5.10\n"
 
 #: EditExifMetadata/editexifmetadata.gpr.py:29
 #: EditExifMetadata/editexifmetadata.py:753
@@ -28,22 +29,22 @@ msgstr ""
 #: EditExifMetadata/editexifmetadata.py:1135
 #: EditExifMetadata/editexifmetadata.py:1147
 msgid "Edit Image Exif Metadata"
-msgstr ""
+msgstr "עריכת נתוני־על Exif לתמונה"
 
 #: EditExifMetadata/editexifmetadata.gpr.py:30
 #: EditExifMetadata/editexifmetadata.gpr.py:31
 msgid "Gramplet to view, edit, and save image Exif metadata"
-msgstr ""
+msgstr "גרמפלט להצגת, עריכת  ישמירת נתוני־על Exif לתמונות"
 
 #: EditExifMetadata/editexifmetadata.gpr.py:34
 #: EditExifMetadata/editexifmetadata.gpr.py:35
 msgid "Edit Exif Metadata"
-msgstr ""
+msgstr "עריכת נתוני־על Exif לתמונה"
 
 #: EditExifMetadata/editexifmetadata.py:148
 #: EditExifMetadata/editexifmetadata.py:135
 msgid "<-- Image Types -->"
-msgstr ""
+msgstr "<-- סוגי צילום -->"
 
 #: EditExifMetadata/editexifmetadata.py:171
 #: EditExifMetadata/editexifmetadata.py:158
@@ -51,6 +52,8 @@ msgid ""
 "Warning:  Changing this entry will update the Media object title field in "
 "Gramps not Exiv2 metadata."
 msgstr ""
+"אזהרה: שינוי רשומה זו תעדכן את שדה כותרת של עצם מדיה בגרמפס לא בנתוני־על "
+"Exiv2."
 
 #: EditExifMetadata/editexifmetadata.py:174
 #: EditExifMetadata/editexifmetadata.py:161
@@ -64,6 +67,7 @@ msgid ""
 "Enter the Artist/ Author of this image.  The person's name or the company "
 "who is responsible for the creation of this image."
 msgstr ""
+"הזנת האמן / היוצר של תמונה זו. שמו של האדם או החברה האחראים ליצירת התמונה."
 
 #: EditExifMetadata/editexifmetadata.py:179
 #: EditExifMetadata/editexifmetadata.py:167
@@ -78,6 +82,8 @@ msgid ""
 "photograph.\n"
 "Example: 1830-01-1 09:30:59"
 msgstr ""
+"התאריך / השעה המקוריים בו נוצרה התמונה לראשונה / נלקח כמו שמופיע בתמונה.\n"
+"דוגמה: 1830-01-1 09:30"
 
 #: EditExifMetadata/editexifmetadata.py:184
 #: EditExifMetadata/editexifmetadata.py:173
@@ -85,6 +91,8 @@ msgid ""
 "This is the date/ time that the image was last changed/ modified.\n"
 "Example: 2011-05-24 14:30:00"
 msgstr ""
+"זהו התאריך / השעה שהתמונה השתנתה/הוסגלה.\n"
+"דוגמה: 2011-05-24 14:30:00"
 
 #: EditExifMetadata/editexifmetadata.py:202
 #: EditExifMetadata/editexifmetadata.py:191
@@ -92,6 +100,7 @@ msgid ""
 "Displays the Gramps Wiki Help page for 'Edit Image Exif Metadata' in your "
 "web browser."
 msgstr ""
+"הצגת עמוד העזרה בויקי גרמפס עבור \"עריכת נתוני־על Exif\" בדפדפן המרשתת."
 
 #: EditExifMetadata/editexifmetadata.py:205
 #: EditExifMetadata/editexifmetadata.py:194
@@ -112,6 +121,8 @@ msgid ""
 "Select from a drop- down box the image file type that you would like to "
 "convert your non- Exiv2 compatible media object to."
 msgstr ""
+"בחירה מתיבה נפתחת את סוג קובץ התמונה אליו יש להמיר את עצם המדיה שאינו תואם "
+"Exiv2."
 
 #: EditExifMetadata/editexifmetadata.py:214
 #: EditExifMetadata/editexifmetadata.py:205

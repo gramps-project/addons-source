@@ -9,61 +9,63 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2019-10-23 15:25+0200\n"
+"PO-Revision-Date: 2025-02-15 16:17+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
-"Language-Team: \n"
+"Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
+"addons/hr/>\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
-"X-Generator: Poedit 2.2.4\n"
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.10\n"
 
 #: CombinedView/combinedview.py:1517 CombinedView/combinedview.py:1582
-#: CombinedView/eventpage.py:202 CombinedView/eventpage.py:267 Form/form.py:60
+#: CombinedView/eventpage.py:202 CombinedView/eventpage.py:267 Form/form.py:62
 msgid "Order"
 msgstr "Narudžba"
 
 #: DataEntryGramplet/DataEntryGramplet.py:167
 #: DataEntryGramplet/DataEntryGramplet.py:178
-#: DataEntryGramplet/DataEntryGramplet.py:315 Form\form_us.xml.h:2171
+#: DataEntryGramplet/DataEntryGramplet.py:315 Form/form_us.xml.h:2259
 msgid "in"
 msgstr "u"
 
-#: DenominoViso/DenominoViso.py:1754 Form\form_us.xml.h:2182
-#: Form\form_us.xml.h:2200 Form\form_us.xml.h:2211 Form\form_us.xml.h:2229
-#: Form\form_us.xml.h:2239
+#: DenominoViso/DenominoViso.py:1754 Form/form_us.xml.h:2270
+#: Form/form_us.xml.h:2288 Form/form_us.xml.h:2299 Form/form_us.xml.h:2317
+#: Form/form_us.xml.h:2327
 msgid "of"
 msgstr "od"
 
-#: RelID/relation_tab.py:111 Form\form_ca.xml.h:417 Form\form_ca.xml.h:470
-#: Form\form_ca.xml.h:628 Form\form_ca.xml.h:681 Form\form_ca.xml.h:769
-#: Form\form_ca.xml.h:820 Form\form_dk.xml.h:14 Form\form_dk.xml.h:31
-#: Form\form_dk.xml.h:48 Form\form_dk.xml.h:65 Form\form_dk.xml.h:82
-#: Form\form_dk.xml.h:99 Form\form_dk.xml.h:118 Form\form_dk.xml.h:137
-#: Form\form_dk.xml.h:156 Form\form_dk.xml.h:177 Form\form_dk.xml.h:200
-#: Form\form_dk.xml.h:221 Form\form_dk.xml.h:242 Form\form_dk.xml.h:270
-#: Form\form_dk.xml.h:305 Form\form_dk.xml.h:331 Form\form_dk.xml.h:347
-#: Form\form_dk.xml.h:379 Form\form_dk.xml.h:399 Form\form_dk.xml.h:421
-#: Form\form_dk.xml.h:441 Form\form_fr.xml.h:5 Form\form_fr.xml.h:13
-#: Form\form_fr.xml.h:21 Form\form_fr.xml.h:29 Form\form_fr.xml.h:36
-#: Form\form_fr.xml.h:121 Form\form_fr.xml.h:128 Form\form_fr.xml.h:135
-#: Form\form_fr.xml.h:142 Form\form_fr.xml.h:152 Form\form_fr.xml.h:161
-#: Form\form_fr.xml.h:169 Form\form_fr.xml.h:178 Form\form_fr.xml.h:187
-#: Form\form_fr.xml.h:196 Form\form_fr.xml.h:205 Form\form_fr.xml.h:216
-#: Form\form_gb.xml.h:65 Form\form_gb.xml.h:83 Form\form_gb.xml.h:102
-#: Form\form_gb.xml.h:123 Form\form_gb.xml.h:145 Form\form_gb.xml.h:170
-#: Form\form_gb.xml.h:191 Form\form_gb.xml.h:244 Form\form_gb.xml.h:264
-#: Form\form_gb.xml.h:277 Form\form_gb.xml.h:332 Form\form_gb.xml.h:359
-#: Form\form_gb.xml.h:387 Form\form_gb.xml.h:419 Form\form_gb.xml.h:458
-#: Form\form_gb.xml.h:480 Form\form_gb.xml.h:509 Form\form_us.xml.h:1339
-#: Form\form_us.xml.h:1877 Form\form_us.xml.h:1896 Form\form_us.xml.h:1916
+#: RelID/relation_tab.py:111 Form/form_ca.xml.h:417 Form/form_ca.xml.h:470
+#: Form/form_ca.xml.h:628 Form/form_ca.xml.h:681 Form/form_ca.xml.h:769
+#: Form/form_ca.xml.h:820 Form/form_us.xml.h:1427 Form/form_us.xml.h:1965
+#: Form/form_us.xml.h:1984 Form/form_us.xml.h:2004 Form/form_dk.xml.h:14
+#: Form/form_dk.xml.h:31 Form/form_dk.xml.h:48 Form/form_dk.xml.h:65
+#: Form/form_dk.xml.h:82 Form/form_dk.xml.h:99 Form/form_dk.xml.h:118
+#: Form/form_dk.xml.h:137 Form/form_dk.xml.h:156 Form/form_dk.xml.h:177
+#: Form/form_dk.xml.h:200 Form/form_dk.xml.h:221 Form/form_dk.xml.h:242
+#: Form/form_dk.xml.h:270 Form/form_dk.xml.h:305 Form/form_dk.xml.h:331
+#: Form/form_dk.xml.h:347 Form/form_dk.xml.h:379 Form/form_dk.xml.h:399
+#: Form/form_dk.xml.h:421 Form/form_dk.xml.h:441 Form/form_fr.xml.h:5
+#: Form/form_fr.xml.h:13 Form/form_fr.xml.h:21 Form/form_fr.xml.h:29
+#: Form/form_fr.xml.h:36 Form/form_fr.xml.h:121 Form/form_fr.xml.h:128
+#: Form/form_fr.xml.h:135 Form/form_fr.xml.h:142 Form/form_fr.xml.h:152
+#: Form/form_fr.xml.h:161 Form/form_fr.xml.h:169 Form/form_fr.xml.h:178
+#: Form/form_fr.xml.h:187 Form/form_fr.xml.h:196 Form/form_fr.xml.h:205
+#: Form/form_fr.xml.h:216 Form/form_gb.xml.h:76 Form/form_gb.xml.h:94
+#: Form/form_gb.xml.h:113 Form/form_gb.xml.h:134 Form/form_gb.xml.h:156
+#: Form/form_gb.xml.h:181 Form/form_gb.xml.h:202 Form/form_gb.xml.h:236
+#: Form/form_gb.xml.h:285 Form/form_gb.xml.h:312 Form/form_gb.xml.h:335
+#: Form/form_gb.xml.h:371 Form/form_gb.xml.h:432 Form/form_gb.xml.h:459
+#: Form/form_gb.xml.h:487 Form/form_gb.xml.h:519 Form/form_gb.xml.h:558
+#: Form/form_gb.xml.h:580 Form/form_gb.xml.h:609
 msgid "Relation"
 msgstr "Odno"
 
-#: RelID/relation_tab.py:116 Form\form_us.xml.h:649 Form\form_us.xml.h:925
-#: Form\form_us.xml.h:2203 Form\form_us.xml.h:2232
+#: RelID/relation_tab.py:116 Form/form_us.xml.h:649 Form/form_us.xml.h:1013
+#: Form/form_us.xml.h:2291 Form/form_us.xml.h:2320
 msgid "Rank"
 msgstr "Položaj"
 
@@ -1316,7 +1318,7 @@ msgstr ""
 #: Form\form_ca.xml.h:325 Form\form_ca.xml.h:379 Form/form_ca.xml.h:325
 #: Form/form_ca.xml.h:379
 msgid "15. Married or Widowed"
-msgstr ""
+msgstr "15. Vjenčani ili obudovljeni"
 
 #: Form\form_ca.xml.h:326 Form/form_ca.xml.h:326
 msgid "Maried1871"
@@ -1413,7 +1415,7 @@ msgstr "3. Nenastanjene kuće"
 
 #: Form\form_ca.xml.h:406 Form/form_ca.xml.h:406
 msgid "4. Houses inhabited"
-msgstr ""
+msgstr "4. Nastanjene kuće"
 
 #: Form\form_ca.xml.h:408 Form/form_ca.xml.h:408
 msgid "5. Families"
@@ -1433,7 +1435,7 @@ msgstr "8. Starost"
 
 #: Form\form_ca.xml.h:416 Form/form_ca.xml.h:416
 msgid "9. Married or Widowed"
-msgstr "9. Oženjen/udata ili udovac/udovica"
+msgstr "9. Vjenčani ili obudovljeni"
 
 #: Form\form_ca.xml.h:418 Form/form_ca.xml.h:418
 msgid "10. Relationship to Head of Family"
@@ -1441,42 +1443,42 @@ msgstr "10. Veza prema glavi obitelji"
 
 #: Form\form_ca.xml.h:422 Form/form_ca.xml.h:422
 msgid "12. FrenchCanadian"
-msgstr ""
+msgstr "12. Francuski kanađani"
 
 #: Form\form_ca.xml.h:423 Form/form_ca.xml.h:423
 msgid "BirthPlaceFather"
-msgstr ""
+msgstr "Mjesto rođenja oca"
 
 #: Form\form_ca.xml.h:424 Form/form_ca.xml.h:424
 msgid "13. Birth Place of Father"
-msgstr ""
+msgstr "13. Mjesto rođenja oca"
 
 #: Form\form_ca.xml.h:425 Form/form_ca.xml.h:425
 msgid "BirthPlaceMother"
-msgstr ""
+msgstr "Mjesto rođenja majke"
 
 #: Form\form_ca.xml.h:426 Form/form_ca.xml.h:426
 msgid "14. Birth Place of Mother"
-msgstr ""
+msgstr "14. Mjesto rođenja majke"
 
 #: Form\form_ca.xml.h:428 Form/form_ca.xml.h:428
 msgid "15. Religion"
-msgstr ""
+msgstr "15. Vjera"
 
 #: Form\form_ca.xml.h:430 Form/form_ca.xml.h:430
 msgid "16. Profession, Occupation or Trade"
-msgstr ""
+msgstr "16. Profesija, zanimanje ili obrt"
 
 #: Form\form_ca.xml.h:431 Form\form_ca.xml.h:496 Form\form_ca.xml.h:707
 #: Form\form_gb.xml.h:153 Form\form_gb.xml.h:248 Form\form_gb.xml.h:425
 #: Form/form_ca.xml.h:431 Form/form_ca.xml.h:496 Form/form_ca.xml.h:707
 #: Form/form_gb.xml.h:164 Form/form_gb.xml.h:293 Form/form_gb.xml.h:525
 msgid "Employer"
-msgstr "Poslodavatelj"
+msgstr "Poslodavac"
 
 #: Form\form_ca.xml.h:432 Form/form_ca.xml.h:432
 msgid "17. Employers"
-msgstr ""
+msgstr "17. Poslodavci"
 
 #: Form\form_ca.xml.h:433 Form\form_ca.xml.h:498 Form\form_ca.xml.h:709
 #: Form/form_ca.xml.h:433 Form/form_ca.xml.h:498 Form/form_ca.xml.h:709
@@ -1489,7 +1491,7 @@ msgstr ""
 
 #: Form\form_ca.xml.h:435 Form/form_ca.xml.h:435
 msgid "Unemployed"
-msgstr "Nezasposlen/a"
+msgstr "Nezasposleni"
 
 #: Form\form_ca.xml.h:436 Form/form_ca.xml.h:436
 msgid "19. Unemployed during week preceding Census"
@@ -1506,7 +1508,7 @@ msgstr ""
 #: Form\form_ca.xml.h:439 Form\form_ca.xml.h:846 Form/form_ca.xml.h:439
 #: Form/form_ca.xml.h:846
 msgid "CanRead"
-msgstr "Pismen/a"
+msgstr "Zna čitati"
 
 #: Form\form_ca.xml.h:440 Form/form_ca.xml.h:440
 msgid "21. Instruction: Read"
@@ -1515,7 +1517,7 @@ msgstr ""
 #: Form\form_ca.xml.h:441 Form\form_ca.xml.h:848 Form/form_ca.xml.h:441
 #: Form/form_ca.xml.h:848
 msgid "CanWrite"
-msgstr "Nepismen/a"
+msgstr "Zna pisati"
 
 #: Form\form_ca.xml.h:442 Form/form_ca.xml.h:442
 msgid "22. Instruction: Write"
@@ -1523,15 +1525,15 @@ msgstr ""
 
 #: Form\form_ca.xml.h:444 Form/form_ca.xml.h:444
 msgid "23. Deaf and Dumb"
-msgstr ""
+msgstr "23. Gluhi i nijemi"
 
 #: Form\form_ca.xml.h:446 Form/form_ca.xml.h:446
 msgid "24. Blind"
-msgstr ""
+msgstr "24. Slijepi"
 
 #: Form\form_ca.xml.h:448 Form/form_ca.xml.h:448
 msgid "25. Unsound mind"
-msgstr ""
+msgstr "25. Nezdrav um"
 
 #: Form\form_ca.xml.h:449 Form\form_ca.xml.h:528 Form\form_ca.xml.h:660
 #: Form\form_ca.xml.h:753 Form\form_ca.xml.h:793 Form/form_ca.xml.h:449
@@ -1553,7 +1555,7 @@ msgstr "Kuća"
 #: Form\form_ca.xml.h:461 Form\form_ca.xml.h:672 Form/form_ca.xml.h:461
 #: Form/form_ca.xml.h:672
 msgid "1. Dwelling house"
-msgstr ""
+msgstr "1. Stambena kuća"
 
 #: Form\form_ca.xml.h:463 Form\form_ca.xml.h:674 Form/form_ca.xml.h:463
 #: Form/form_ca.xml.h:674
@@ -1586,7 +1588,7 @@ msgstr ""
 #: Form\form_ca.xml.h:473 Form\form_ca.xml.h:684 Form/form_ca.xml.h:473
 #: Form/form_ca.xml.h:684
 msgid "7. Single, married, widowed, divorced or legally separated"
-msgstr ""
+msgstr "7. Singl, vjenčani, obudovljeni, razvedeni ili zakonski rastavljeni"
 
 #: Form\form_ca.xml.h:474 Form\form_ca.xml.h:685 Form\form_ca.xml.h:773
 #: Form/form_ca.xml.h:474 Form/form_ca.xml.h:685 Form/form_ca.xml.h:773
@@ -2126,7 +2128,7 @@ msgstr ""
 
 #: Form\form_ca.xml.h:633 Form/form_ca.xml.h:633
 msgid "5. Married, single, widowed or divorced"
-msgstr ""
+msgstr "5. Vjenčani, singl, obudovljeni ili razvedeni"
 
 #: Form\form_ca.xml.h:635 Form/form_ca.xml.h:635
 msgid "6. Age"
@@ -2378,7 +2380,7 @@ msgstr ""
 
 #: Form\form_ca.xml.h:772 Form/form_ca.xml.h:772
 msgid "6. Single, married, widowed, divorced or legally separated"
-msgstr ""
+msgstr "6. Singl, vjenčani, obudovljeni, razvedeni ili zakonski rastavljeni"
 
 #: Form\form_ca.xml.h:774 Form/form_ca.xml.h:774
 msgid "7. Month of birth"
@@ -2398,7 +2400,7 @@ msgstr ""
 
 #: Form\form_ca.xml.h:782 Form/form_ca.xml.h:782
 msgid "11. Religion"
-msgstr ""
+msgstr "11. Vjera"
 
 #: Form\form_ca.xml.h:784 Form/form_ca.xml.h:784
 msgid "12. Months at school in 1910"
@@ -2406,11 +2408,11 @@ msgstr ""
 
 #: Form\form_ca.xml.h:786 Form/form_ca.xml.h:786
 msgid "13. Can Read"
-msgstr ""
+msgstr "13. Zna čitati"
 
 #: Form\form_ca.xml.h:788 Form/form_ca.xml.h:788
 msgid "14. Can Write"
-msgstr ""
+msgstr "14. Zna pisati"
 
 #: Form\form_ca.xml.h:790 Form/form_ca.xml.h:790
 msgid "15. Language commonly spoken"
@@ -2424,7 +2426,7 @@ msgstr ""
 
 #: Form\form_ca.xml.h:805 Form/form_ca.xml.h:805
 msgid "1. Dwelling House"
-msgstr ""
+msgstr "1. Stambena kuća"
 
 #: Form\form_ca.xml.h:807 Form/form_ca.xml.h:807
 msgid "2. Family, Household or Institution"
@@ -2468,7 +2470,7 @@ msgstr ""
 
 #: Form\form_ca.xml.h:825 Form/form_ca.xml.h:825
 msgid "11. Single, married, widowed, divorced or legally separated"
-msgstr ""
+msgstr "11. Singl, vjenčani, obudovljeni, razvedeni ili zakonski rastavljeni"
 
 #: Form\form_ca.xml.h:827 Form/form_ca.xml.h:827
 msgid "12. Age at last birthday"
@@ -3259,7 +3261,7 @@ msgstr ""
 #: Form\form_gb.xml.h:126 Form\form_gb.xml.h:148 Form/form_gb.xml.h:137
 #: Form/form_gb.xml.h:159 Form/form_gb.xml.h:288
 msgid "CONDITION as to Marriage"
-msgstr ""
+msgstr "UVJET za brak"
 
 #: Form\form_gb.xml.h:128 Form\form_gb.xml.h:150 Form/form_gb.xml.h:139
 #: Form/form_gb.xml.h:161 Form/form_gb.xml.h:290
@@ -3429,6 +3431,8 @@ msgid ""
 "\"Single,\" \"Married,\" \"Widower,\" or \"Widow,\" for all persons aged 15 "
 "years and upwards."
 msgstr ""
+"„Singl”, „Vjenčani”, „Udovac” ili „Udovica” za sve osobe s 15 godina i "
+"starije."
 
 #: Form\form_gb.xml.h:197 Form\form_gb.xml.h:280 Form\form_gb.xml.h:517
 #: Form/form_gb.xml.h:208 Form/form_gb.xml.h:341 Form/form_gb.xml.h:617
@@ -4990,7 +4994,7 @@ msgstr ""
 
 #: Form\form_us.xml.h:419 Form/form_us.xml.h:419
 msgid "Married or widowed"
-msgstr ""
+msgstr "Vjenčani ili obudovljeni"
 
 #: Form\form_us.xml.h:421 Form/form_us.xml.h:421
 msgid "Month in which person died"
@@ -5092,12 +5096,12 @@ msgstr "Veza s glavom obitelji"
 #: Form/form_us.xml.h:2100 Form/form_us.xml.h:2138 Form/form_us.xml.h:2176
 #: Form/form_us.xml.h:2214
 msgid "Single"
-msgstr "Nevjenčan/a"
+msgstr "Singl"
 
 #: Form\form_us.xml.h:474 Form\form_us.xml.h:1026 Form\form_us.xml.h:1769
 #: Form/form_us.xml.h:474 Form/form_us.xml.h:1114 Form/form_us.xml.h:1857
 msgid "Widowed, divorced"
-msgstr ""
+msgstr "Obudovljeni, razvedeni"
 
 #: Form\form_us.xml.h:475 Form\form_us.xml.h:623 Form\form_us.xml.h:1027
 #: Form\form_us.xml.h:1770 Form/form_us.xml.h:475 Form/form_us.xml.h:623
@@ -5576,14 +5580,14 @@ msgstr ""
 
 #: Form\form_us.xml.h:617 Form/form_us.xml.h:617
 msgid "Veteran of Civil War or widow of a veteran"
-msgstr ""
+msgstr "Veteran građanskog rata ili udovica veterana"
 
 #: Form\form_us.xml.h:622 Form\form_us.xml.h:679 Form\form_us.xml.h:718
 #: Form\form_us.xml.h:763 Form\form_us.xml.h:988 Form\form_us.xml.h:1522
 #: Form/form_us.xml.h:622 Form/form_us.xml.h:679 Form/form_us.xml.h:718
 #: Form/form_us.xml.h:763 Form/form_us.xml.h:1076 Form/form_us.xml.h:1610
 msgid "Single, married, widowed or divorced"
-msgstr ""
+msgstr "Singl, vjenčani, obudovljeni ili razvedeni"
 
 #: Form\form_us.xml.h:624 Form/form_us.xml.h:624
 msgid "Mother of how many children and number of children living"
@@ -6328,7 +6332,7 @@ msgstr ""
 #: Form\form_us.xml.h:973 Form\form_us.xml.h:2511 Form/form_us.xml.h:1061
 #: Form/form_us.xml.h:2599
 msgid "Widow of"
-msgstr "Udovac/Udovica od"
+msgstr "Udovica od"
 
 #: Form\form_us.xml.h:974 Form/form_us.xml.h:1062
 msgid "Her age"
@@ -6530,24 +6534,24 @@ msgstr ""
 
 #: Form\form_us.xml.h:1100 Form/form_us.xml.h:1188
 msgid "Number of Colleges"
-msgstr ""
+msgstr "Broj visokih učilišta"
 
 #: Form\form_us.xml.h:1101 Form\form_us.xml.h:1103 Form/form_us.xml.h:1189
 #: Form/form_us.xml.h:1191
 msgid "Number of Pupils"
-msgstr ""
+msgstr "Broj učenika"
 
 #: Form\form_us.xml.h:1102 Form/form_us.xml.h:1190
 msgid "Number of Common Schools"
-msgstr ""
+msgstr "Broj osnovnih škola"
 
 #: Form\form_us.xml.h:1106 Form/form_us.xml.h:1194
 msgid "Males over 21 years"
-msgstr ""
+msgstr "Muškarci stariji od 21 godina"
 
 #: Form\form_us.xml.h:1107 Form/form_us.xml.h:1195
 msgid "Males under 21 years"
-msgstr ""
+msgstr "Muškarci mlađi od 21 godina"
 
 #: Form\form_us.xml.h:1109 Form\form_us.xml.h:1111 Form/form_us.xml.h:1197
 #: Form/form_us.xml.h:1199
@@ -6561,7 +6565,7 @@ msgstr "Ukupni broj"
 #: Form/form_us.xml.h:1938 Form/form_us.xml.h:2065 Form/form_us.xml.h:2101
 #: Form/form_us.xml.h:2139 Form/form_us.xml.h:2177 Form/form_us.xml.h:2215
 msgid "Widowed"
-msgstr "Udovac/Udovica"
+msgstr "Obudovljeni"
 
 #: Form\form_us.xml.h:1118 Form/form_us.xml.h:1206
 msgid "Years resident in the state"
@@ -6780,7 +6784,7 @@ msgstr ""
 
 #: Form\form_us.xml.h:1198 Form/form_us.xml.h:1286
 msgid "Single, Widowed, or Divorced"
-msgstr ""
+msgstr "Singl, obudovljeni ili razvedeni"
 
 #: Form\form_us.xml.h:1200 Form/form_us.xml.h:1288
 msgid "Father (N,Native; F,Foreign)"
@@ -6953,7 +6957,7 @@ msgstr ""
 
 #: Form\form_us.xml.h:1259 Form/form_us.xml.h:1347
 msgid "Conjugal condition; Single-Married-Widowed-Divorced-Separated"
-msgstr ""
+msgstr "Bračno stanje; singl-vjenčani-obudovljeni-razvedeni-rastavljeni"
 
 #: Form\form_us.xml.h:1260 Form/form_us.xml.h:1348
 msgid "Months in school in 1904-Public"

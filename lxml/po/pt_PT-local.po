@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2025-02-09 06:44+0000\n"
+"PO-Revision-Date: 2025-02-15 10:09+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.10\n"
 
 #: lxml/etreeGramplet.gpr.py:9 lxml/etreeGramplet.gpr.py:18
 #: lxml/etreeGramplet.gpr.py:10 lxml/etreeGramplet.gpr.py:19
@@ -33,7 +33,7 @@ msgstr "Carimbo inválido"
 
 #: lxml/etreeGramplet.py:139
 msgid "No file parsed..."
-msgstr "Sem ficheiros analisados..."
+msgstr "Nenhum ficheiro analisado..."
 
 #: lxml/etreeGramplet.py:205 lxml/etreeGramplet.py:210
 msgid "Number of editions back"
@@ -50,7 +50,7 @@ msgstr "Por favor, repare o espaço em \"%s\""
 
 #: lxml/etreeGramplet.py:245 lxml/lxmlGramplet.py:265
 msgid "Sorry, no support for your OS yet!"
-msgstr "Desculpe, ainda não há suporte para o seu SO!"
+msgstr "Desculpe, ainda não há suporte para o seu sistema!"
 
 #: lxml/etreeGramplet.py:254 lxml/lxmlGramplet.py:275
 msgid "Is it a compressed .gramps?"
@@ -83,7 +83,7 @@ msgstr "Impossível copiar \"%s\""
 #: lxml/etreeGramplet.py:418
 #, python-format
 msgid "XML: Last %s editions since %s, were at/on :\n"
-msgstr "XML: as últimas %s edições desde %s estavam em:\n"
+msgstr "XML: últimas %s edições desde %s, estavam em:\n"
 
 #: lxml/etreeGramplet.py:471
 #, python-format
@@ -93,7 +93,7 @@ msgid ""
 "\n"
 msgstr ""
 "\n"
-"XML: número de registos e relações - \t%s\n"
+"XML: número de registos e relações : \t%s\n"
 "\n"
 
 #: lxml/etreeGramplet.py:474
@@ -369,7 +369,7 @@ msgstr " fonte(s)"
 
 #: lxml/lxmlGramplet.py:521 lxml/lxmlGramplet.py:717
 msgid "Gallery.html"
-msgstr "Html da galeria"
+msgstr "Galeria.html"
 
 #: lxml/lxmlGramplet.py:522
 #, python-format
