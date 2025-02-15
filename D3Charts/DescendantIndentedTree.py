@@ -1364,7 +1364,7 @@ class DescendantIndentedTreeReport(Report):
             prompt = QuestionDialog2(_('Invalid Destination Directory'),
                                      _('Destinaton diretory %s does not '
                                        'exist\nDo you want to attempt to '
-                                       'create it.') % self.dest_path,
+                                       'create it?') % self.dest_path,
                                      _('_Yes'),
                                      _('_No'), parent=self.user.uistate.window)
             if prompt.run():
@@ -1389,7 +1389,7 @@ class DescendantIndentedTreeReport(Report):
         if os.path.isfile(self.desthtml):
             prompt = QuestionDialog2(_('File already exists'),
                                      _('Destination file %s already exists.\n'
-                                       'Do you want to overwrite.') %
+                                       'Do you want to overwrite it?') %
                                      (self.desthtml),
                                      _('_Yes'),
                                      _('_No'), parent=self.user.uistate.window)

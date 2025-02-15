@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:57-0800\n"
+"POT-Creation-Date: 2025-02-15 16:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,16 +16,6 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-#: D3Charts/AncestralCollapsibleTree.gpr.py:23
-msgid "Ancestral Collapsible Tree"
-msgstr ""
-
-#: D3Charts/AncestralCollapsibleTree.gpr.py:33
-msgid ""
-"Generates a web page with a graphical representation of ancestors (SVG) "
-"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
-msgstr ""
 
 #: D3Charts/AncestralCollapsibleTree.py:124 D3Charts/AncestralFanChart.py:120
 #: D3Charts/DescendantIndentedTree.py:914
@@ -146,14 +136,26 @@ msgstr ""
 msgid "The destination file name for html content."
 msgstr ""
 
-#: D3Charts/AncestralFanChart.gpr.py:23
-msgid "Ancestral Fan Chart"
+#: D3Charts/AncestralCollapsibleTree.gpr.py:23
+msgid "Ancestral Collapsible Tree"
 msgstr ""
 
-#: D3Charts/AncestralFanChart.gpr.py:33
+#: D3Charts/AncestralCollapsibleTree.gpr.py:33
 msgid ""
 "Generates a web page with a graphical representation of ancestors (SVG) "
-"represented as a Fan Chart from the D3.js JavaScript library."
+"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
+msgstr ""
+
+#: D3Charts/DescendantIndentedTree.gpr.py:23
+#: D3Charts/DescendantIndentedTree.py:909
+msgid "Descendant Indented Tree"
+msgstr ""
+
+#: D3Charts/DescendantIndentedTree.gpr.py:33
+msgid ""
+"Generates a web page with a graphical representation of descendants (SVG) "
+"representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
+"library."
 msgstr ""
 
 #: D3Charts/AncestralFanChart.py:707
@@ -176,16 +178,14 @@ msgstr ""
 msgid "RGB-color for maternal box background."
 msgstr ""
 
-#: D3Charts/DescendantIndentedTree.gpr.py:23
-#: D3Charts/DescendantIndentedTree.py:909
-msgid "Descendant Indented Tree"
+#: D3Charts/AncestralFanChart.gpr.py:23
+msgid "Ancestral Fan Chart"
 msgstr ""
 
-#: D3Charts/DescendantIndentedTree.gpr.py:33
+#: D3Charts/AncestralFanChart.gpr.py:33
 msgid ""
-"Generates a web page with a graphical representation of descendants (SVG) "
-"representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
-"library."
+"Generates a web page with a graphical representation of ancestors (SVG) "
+"represented as a Fan Chart from the D3.js JavaScript library."
 msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:673
@@ -211,7 +211,7 @@ msgstr ""
 #, python-format
 msgid ""
 "Destinaton diretory %s does not exist\n"
-"Do you want to attempt to create it."
+"Do you want to attempt to create it?"
 msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1368
@@ -249,7 +249,7 @@ msgstr ""
 #, python-format
 msgid ""
 "Destination file %s already exists.\n"
-"Do you want to overwrite."
+"Do you want to overwrite it?"
 msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1446
