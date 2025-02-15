@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-15 21:17+0000\n"
+"PO-Revision-Date: 2025-02-15 21:25+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -5622,14 +5622,8 @@ msgid "Gramplet showing the references for a source"
 msgstr "Gramplet prikazuje reference izvora"
 
 #: DNAMatches/dnamatches.gpr.py:27 DNAMatches/dnamatches.gpr.py:36
-#, fuzzy
-#| msgid ""
-#| "No\n"
-#| "Matches"
 msgid "DNA Matches"
-msgstr ""
-"Nema\n"
-"podudaranja"
+msgstr "DNA podudaranja"
 
 #: DNAMatches/dnamatches.gpr.py:30
 msgid "Gramplet to display a list of DNA matches"
@@ -10785,7 +10779,7 @@ msgstr ""
 
 #: Form/form_ca.xml.h:521
 msgid "31. Can speak English"
-msgstr ""
+msgstr "31. Govori engleski"
 
 #: Form/form_ca.xml.h:522 Form/form_ca.xml.h:842
 msgid "SpeakFrench"
@@ -10793,7 +10787,7 @@ msgstr ""
 
 #: Form/form_ca.xml.h:523
 msgid "32. Can speak French"
-msgstr ""
+msgstr "32. Govori francuski"
 
 #: Form/form_ca.xml.h:525
 msgid "33. Mother tongue (If spoken)"
@@ -13180,7 +13174,7 @@ msgstr "Zna pisati"
 
 #: Form/form_us.xml.h:695
 msgid "Can speak English"
-msgstr ""
+msgstr "Govori engleski"
 
 #: Form/form_us.xml.h:696 Form/form_us.xml.h:736 Form/form_us.xml.h:758
 #: Form/form_us.xml.h:798 Form/form_us.xml.h:1557 Form/form_us.xml.h:1579
@@ -15198,11 +15192,11 @@ msgstr "Nepismeni u starosti od 10 do 15 godina"
 
 #: Form/form_us.xml.h:1548
 msgid "Illiterate and 16 to 21 years old"
-msgstr "Nepismeni u starosti od 16 do 21 godine"
+msgstr "Nepismen i 16 do 21 godina"
 
 #: Form/form_us.xml.h:1549 Form/form_us.xml.h:1571 Form/form_us.xml.h:1593
 msgid "Illiterate and over 21"
-msgstr "Nepismeni stariji od 21 godine"
+msgstr "Nepismen i više od 21 godina"
 
 #: Form/form_us.xml.h:1550 Form/form_us.xml.h:1572 Form/form_us.xml.h:1595
 msgid "Honorably discharged from military service"
@@ -18757,14 +18751,9 @@ msgid "Gathering data"
 msgstr "Učitavanje podataka"
 
 #: GeoTimeLines/GeoTimeLines.py:1686 GeoTimeLines/GeoTimeLines.py:1992
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of persons : \n"
-#| "\t\t\t%s\t|\t(%s)*\n"
+#, python-format
 msgid "Number of Persons: %s"
-msgstr ""
-"Broj osoba: \n"
-"\t\t\t%s\t|\t(%s)*\n"
+msgstr "Broj osoba: %s"
 
 #: GeoTimeLines/GeoTimeLines.py:1776
 msgid ""
