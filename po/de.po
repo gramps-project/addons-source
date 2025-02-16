@@ -8,7 +8,7 @@
 # Sebastian Vöcking <voeck@web.de>, 2005.
 # Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
 # Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2025.
 # Alois Pöttker <alois.poettker@gmx.de>, 2017.
 # Allan Nordhøy <epost@anotheragency.no>, 2021.
 # R. B. <weblate@macdefender.org>, 2021.
@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-02 22:39+0200\n"
-"PO-Revision-Date: 2025-02-15 16:17+0000\n"
+"PO-Revision-Date: 2025-02-15 21:17+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -2393,9 +2393,7 @@ msgstr "Zeige Elemente, die in der Datei hinzugefügt wurden"
 
 #: Differences/differences.py:322
 msgid "Include items in file but not in database"
-msgstr ""
-"Elemente die sich  in der Datei aber nicht in der Datenbank befinden "
-"aufnehmen"
+msgstr "Elemente in die Datei, aber nicht in die Datenbank aufnehmen"
 
 #: AncestorFill/AncestorFill.gpr.py:8 AncestorFill/AncestorFill.gpr.py:9
 msgid "AncestorFill"
@@ -5427,7 +5425,7 @@ msgstr ""
 #: DescendantBooks/CollectAscendants.py:178
 #, python-format
 msgid "Deep pruning ascendants from %s people..."
-msgstr "Starke Reduzierung der  Aszendenten von %s Personen..."
+msgstr "Tiefgreifende Beschneidung der Aszendenten von %s Personen..."
 
 #: DescendantBooks/CollectAscendants.py:182
 #, python-format
@@ -6354,8 +6352,8 @@ msgid ""
 "If your image is not of an image type that can have Exif metadata read/ "
 "written to/from, convert it to a type that can?"
 msgstr ""
-"Wenn dein Bild kein Bildtyp ist, aus/in den man Exif Metadaten lesen/"
-"schreiben kann, konvertiere es zu einem Typ mit dem das möglich ist."
+"Wenn dein Bild nicht von einem Bildtyp ist, von dem Exif-Metadaten gelesen/"
+"geschrieben werden können, es in einen Typ konvertieren, der das kann?"
 
 #: EditExifMetadata/editexifmetadata.py:200
 #: EditExifMetadata/editexifmetadata.py:209
@@ -9060,15 +9058,15 @@ msgstr "Nicht vertraulich: %d %s\n"
 
 #: SetPrivacyTool/SetPrivacyTool.py:96 SetPrivacyTool/SetPrivacyTool.py:107
 msgid "Set persons private.."
-msgstr "Personen als vertraulich markieren…"
+msgstr "Personen als vertraulich markieren.."
 
 #: SetPrivacyTool/SetPrivacyTool.py:133 SetPrivacyTool/SetPrivacyTool.py:157
 msgid "Set events private.."
-msgstr "Ereignisse als vertraulich markieren…"
+msgstr "Ereignisse als vertraulich markieren.."
 
 #: SetPrivacyTool/SetPrivacyTool.py:160 SetPrivacyTool/SetPrivacyTool.py:197
 msgid "Set media private.."
-msgstr "Medien als vertraulich markieren…"
+msgstr "Medium als vertraulich markieren.."
 
 #: SetPrivacyTool/SetPrivacyTool.py:204 SetPrivacyTool/SetPrivacyTool.py:306
 msgid "Always private if no date."
@@ -14841,11 +14839,11 @@ msgstr "Name Ihres Oberst"
 
 #: Form/form_us.xml.h:932 Form/form_us.xml.h:1020
 msgid "By what other name was your Company called"
-msgstr "Unter welchem anderen Namen wurde Ihre Kompanie genannt?"
+msgstr "Wie lautete der andere Name Ihrer Firma"
 
 #: Form/form_us.xml.h:933 Form/form_us.xml.h:1021
 msgid "By what other name was your Regiment called"
-msgstr "Unter welchem anderen Namen wurde Ihr Regiment genannt?"
+msgstr "Wie hieß Ihr Regiment sonst noch"
 
 #: Form/form_us.xml.h:934 Form/form_us.xml.h:1022
 msgid "Battles in which you took part"
@@ -14938,7 +14936,7 @@ msgstr "Heiratsort"
 
 #: Form/form_us.xml.h:956 Form/form_us.xml.h:1044
 msgid "When, where and circumstances you quit the service"
-msgstr "Wann, wo und unter welchen Umständen beendeten Sie den Dienst?"
+msgstr "Wann, wo und unter welchen Umständen Sie den Dienst verlassen haben"
 
 #: Form/form_us.xml.h:957 Form/form_us.xml.h:1045
 msgid "Paroled at close of war"
@@ -16954,7 +16952,7 @@ msgstr "P.O."
 
 #: Form/form_us.xml.h:1954 Form/form_us.xml.h:2042
 msgid "Sec."
-msgstr ""
+msgstr "Sec."
 
 #: Form/form_us.xml.h:1955 Form/form_us.xml.h:2043
 msgid "T."
