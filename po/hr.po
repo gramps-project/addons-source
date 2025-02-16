@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-15 21:17+0000\n"
+"PO-Revision-Date: 2025-02-16 10:55+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -416,7 +416,7 @@ msgid ""
 "Number of tags : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
-"Broj etiketa: \n"
+"Broj oznaka: \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:476
@@ -425,7 +425,7 @@ msgid ""
 "Number of tags : \n"
 "\t\t\t%s\n"
 msgstr ""
-"Broj etiketa: \n"
+"Broj oznaka: \n"
 "\t\t\t%s\n"
 
 #: lxml/etreeGramplet.py:478
@@ -2661,16 +2661,12 @@ msgid "Number of Ancestors found "
 msgstr "Broj pronađenih predaka "
 
 #: AncestorFill/AncestorFill.py:207
-#, fuzzy
-#| msgid "Number of Ancestors found "
 msgid "Percent of Ancestors found "
-msgstr "Broj pronađenih predaka "
+msgstr "Postotak pronađenih predaka "
 
 #: AncestorFill/AncestorFill.py:208
-#, fuzzy
-#| msgid "Number of Ancestors found "
 msgid "Number of unique Ancestors found "
-msgstr "Broj pronađenih predaka "
+msgstr "Broj pronađenih jedinstvenih predaka "
 
 #: AncestorFill/AncestorFill.py:209
 msgid "Number of theoretical Ancestors "
@@ -2685,10 +2681,8 @@ msgid "Total Number of Ancestors found "
 msgstr "Ukupni broj pronađenih predaka "
 
 #: AncestorFill/AncestorFill.py:255
-#, fuzzy
-#| msgid "Total Number of Ancestors found "
 msgid "Total Number of unique Ancestors found "
-msgstr "Ukupni broj pronađenih predaka "
+msgstr "Ukupni broj pronađenih jedinstvenih predaka "
 
 #: AncestorFill/AncestorFill.py:259
 msgid ""
@@ -2697,6 +2691,10 @@ msgid ""
 "Note: This report only counts ancestors with a parent-child relationship of "
 "birth."
 msgstr ""
+"\n"
+"\n"
+"Napomena: Ovaj izvještaj broji samo pretke s odnosom roditelj-dijete "
+"temeljen na rođenju."
 
 #: AncestorFill/AncestorFill.py:305
 msgid "Filled digit"
@@ -4995,7 +4993,7 @@ msgstr "O poplunastom dijagramu"
 
 #: QuiltView/QuiltView.py:1191 QuiltView/QuiltView.py:1320
 msgid "Edit tags"
-msgstr "Uredi etikete"
+msgstr "Uredi oznake"
 
 #: QuiltView/QuiltView.py:1500
 msgid "Set as home person"
@@ -5622,14 +5620,8 @@ msgid "Gramplet showing the references for a source"
 msgstr "Gramplet prikazuje reference izvora"
 
 #: DNAMatches/dnamatches.gpr.py:27 DNAMatches/dnamatches.gpr.py:36
-#, fuzzy
-#| msgid ""
-#| "No\n"
-#| "Matches"
 msgid "DNA Matches"
-msgstr ""
-"Nema\n"
-"podudaranja"
+msgstr "DNA podudaranja"
 
 #: DNAMatches/dnamatches.gpr.py:30
 msgid "Gramplet to display a list of DNA matches"
@@ -6948,7 +6940,7 @@ msgid ""
 "Produces a list of all the notes with a given tag along with the records "
 "that it references, the Person, Family, Event, etc."
 msgstr ""
-"Stvara popis svih zabilježaka sa zadanom etiketom, zajedno sa zapisima na "
+"Stvara popis svih zabilježaka sa zadanom oznakom, zajedno sa zapisima na "
 "koje se referenciraju, npr. osobu, obitelj, događaj, itd."
 
 #: ToDoReport/TodoReport.py:107 ToDoReport/TodoReport.py:904
@@ -7684,11 +7676,11 @@ msgstr "gramplet prikazuje rođendane živih osoba"
 
 #: BirthdaysGramplet/BirthdaysGramplet.py:45
 msgid "Ignore birthdays with tag"
-msgstr "Zanemari rođendane s etiketom"
+msgstr "Zanemari rođendane s oznakom"
 
 #: BirthdaysGramplet/BirthdaysGramplet.py:46
 msgid "Only show birthdays with tag"
-msgstr "Prikaži samo rođendane s etiketom"
+msgstr "Prikaži samo rođendane s oznakom"
 
 #: PlaceCompletion/PlaceCompletion.gpr.py:26
 msgid "PlaceCompletion"
@@ -8048,7 +8040,7 @@ msgstr "Kopiraj sadržaj polja naslova mjesta, u novu zabilješku."
 
 #: CheckPlaceTitles/checkplacetitles.glade:91
 msgid "Attach a tag on selected places."
-msgstr "Dodaj etiketu odabranim mjestima."
+msgstr "Dodaj oznaku odabranim mjestima."
 
 #: CheckPlaceTitles/checkplacetitles.glade:177
 msgid "column"
@@ -8601,7 +8593,7 @@ msgstr ""
 #: LifeLineChartView/_dummy_translation_string_po.py:77
 #: LifeLineChartView/lifelinechartview.py:884
 msgid "Label Configuration"
-msgstr "Konfiguracija oznaka"
+msgstr "Konfiguracija etiketa"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:30
 #, fuzzy
@@ -9104,16 +9096,12 @@ msgid "Set media private.."
 msgstr "Postavi medije kao privatne …"
 
 #: SetPrivacyTool/SetPrivacyTool.py:230
-#, fuzzy
-#| msgid "Set events private.."
 msgid "Set adresses private.."
-msgstr "Postavi događaje kao privatne …"
+msgstr "Postavi adrese kao privatne …"
 
 #: SetPrivacyTool/SetPrivacyTool.py:259
-#, fuzzy
-#| msgid "Set events private.."
 msgid "Set internet objects private.."
-msgstr "Postavi događaje kao privatne …"
+msgstr "Postavi internetske objekte kao privatne …"
 
 #: SetPrivacyTool/SetPrivacyTool.py:301
 msgid ""
@@ -9135,33 +9123,27 @@ msgstr ""
 "privatni."
 
 #: SetPrivacyTool/SetPrivacyTool.py:324
-#, fuzzy
-#| msgid "Select filter to restrict people"
 msgid "Select filter to restrict events"
-msgstr "Odaberi filtar za ograničavanje osoba"
+msgstr "Odaberi filtar za ograničavanje događaja"
 
 #: SetPrivacyTool/SetPrivacyTool.py:336
-#, fuzzy
-#| msgid "Select filter to restrict list"
 msgid "Select filter to restrict medias"
-msgstr "Odaberi filtar za ograničavanje popisa"
+msgstr "Odaberi filtar za ograničavanje medija"
 
 #: SetPrivacyTool/SetPrivacyTool.py:347
-#, fuzzy
-#| msgid "Can't determine type of import"
 msgid "Internet type filter"
-msgstr "Nije moguće ustanoviti vrstu uvoza"
+msgstr "Internetska vrsta filtra"
 
 #: SetPrivacyTool/SetPrivacyTool.py:351
 msgid "E-Mail"
-msgstr ""
+msgstr "E-mail"
 
 #: SyncAssociations/syncAssociations.gpr.py:4
 #: SyncAssociations/syncAssociations.py:130
 #: SyncAssociations/syncAssociations.py:134
 #: SyncAssociations/syncAssociations.py:138
 msgid "Sync Associations"
-msgstr "Sinkronizacija veza"
+msgstr "Sinkroniziraj veze"
 
 #: SyncAssociations/syncAssociations.gpr.py:6
 msgid ""
@@ -10270,24 +10252,24 @@ msgstr "2. Kolibe"
 
 #: Form/form_ca.xml.h:300 Form/form_ca.xml.h:354 Form/form_ca.xml.h:401
 msgid "HousesBeingBuilt"
-msgstr "Kuće u izgradnji"
+msgstr "Zgrade: u izgradnji"
 
 #: Form/form_ca.xml.h:301
 msgid "3. Dwelling houses in construction"
-msgstr ""
+msgstr "3. Stambene zgrade u izgradnji"
 
 #: Form/form_ca.xml.h:303
 msgid "4. Dwelling houses unoccupied"
-msgstr ""
+msgstr "4. Stambene zgrade nenastanjene"
 
 #: Form/form_ca.xml.h:304 Form/form_ca.xml.h:358 Form/form_ca.xml.h:405
 #: Form/form_ca.xml.h:551
 msgid "HousesInhabited"
-msgstr ""
+msgstr "Zgrade: nastanjene"
 
 #: Form/form_ca.xml.h:305
 msgid "5. Dwelling houses inhabited"
-msgstr ""
+msgstr "5. Stambene zgrade nastanjene"
 
 #: Form/form_ca.xml.h:307
 msgid "6.Families"
@@ -10581,11 +10563,11 @@ msgstr "Kuća"
 
 #: Form/form_ca.xml.h:461 Form/form_ca.xml.h:672
 msgid "1. Dwelling house"
-msgstr "1. Stambena kuća"
+msgstr "1. Stambena zgrada"
 
 #: Form/form_ca.xml.h:463 Form/form_ca.xml.h:674
 msgid "2. Family or household"
-msgstr ""
+msgstr "2. Obitelj ili kućanstvo"
 
 #: Form/form_ca.xml.h:465 Form/form_ca.xml.h:676
 msgid "3. Name of each person in family"
@@ -10785,7 +10767,7 @@ msgstr ""
 
 #: Form/form_ca.xml.h:521
 msgid "31. Can speak English"
-msgstr ""
+msgstr "31. Govori engleski"
 
 #: Form/form_ca.xml.h:522 Form/form_ca.xml.h:842
 msgid "SpeakFrench"
@@ -10793,7 +10775,7 @@ msgstr ""
 
 #: Form/form_ca.xml.h:523
 msgid "32. Can speak French"
-msgstr ""
+msgstr "32. Govori francuski"
 
 #: Form/form_ca.xml.h:525
 msgid "33. Mother tongue (If spoken)"
@@ -11330,11 +11312,11 @@ msgstr ""
 
 #: Form/form_ca.xml.h:761
 msgid "1. House"
-msgstr ""
+msgstr "1. Kuća"
 
 #: Form/form_ca.xml.h:762
 msgid "Dwelling house"
-msgstr ""
+msgstr "Stambena zgrada"
 
 #: Form/form_ca.xml.h:763
 msgid "2. Family"
@@ -11342,7 +11324,7 @@ msgstr ""
 
 #: Form/form_ca.xml.h:764
 msgid "Family or household"
-msgstr ""
+msgstr "Obitelj ili kućanstvo"
 
 #: Form/form_ca.xml.h:765
 msgid "3. Name"
@@ -11404,15 +11386,15 @@ msgstr ""
 
 #: Form/form_ca.xml.h:805
 msgid "1. Dwelling House"
-msgstr "1. Stambena kuća"
+msgstr "1. Stambena zgrada"
 
 #: Form/form_ca.xml.h:807
 msgid "2. Family, Household or Institution"
-msgstr ""
+msgstr "2. Obitelj, kućanstvo ili institucija"
 
 #: Form/form_ca.xml.h:809
 msgid "3. Name of each person in family, household or institution"
-msgstr ""
+msgstr "3. Ime svake osobe u obitelji, kućanstvu ili instituciji"
 
 #: Form/form_ca.xml.h:810
 msgid "MilitaryService"
@@ -11440,7 +11422,7 @@ msgstr ""
 
 #: Form/form_ca.xml.h:821
 msgid "9. Relationship to head of family or household"
-msgstr ""
+msgstr "9. Srodstvo s glavi obitelji ili kućanstva"
 
 #: Form/form_ca.xml.h:823
 msgid "10. Sex"
@@ -13180,7 +13162,7 @@ msgstr "Zna pisati"
 
 #: Form/form_us.xml.h:695
 msgid "Can speak English"
-msgstr ""
+msgstr "Govori engleski"
 
 #: Form/form_us.xml.h:696 Form/form_us.xml.h:736 Form/form_us.xml.h:758
 #: Form/form_us.xml.h:798 Form/form_us.xml.h:1557 Form/form_us.xml.h:1579
@@ -15198,11 +15180,11 @@ msgstr "Nepismeni u starosti od 10 do 15 godina"
 
 #: Form/form_us.xml.h:1548
 msgid "Illiterate and 16 to 21 years old"
-msgstr "Nepismeni u starosti od 16 do 21 godine"
+msgstr "Nepismen i 16 do 21 godina"
 
 #: Form/form_us.xml.h:1549 Form/form_us.xml.h:1571 Form/form_us.xml.h:1593
 msgid "Illiterate and over 21"
-msgstr "Nepismeni stariji od 21 godine"
+msgstr "Nepismen i više od 21 godina"
 
 #: Form/form_us.xml.h:1550 Form/form_us.xml.h:1572 Form/form_us.xml.h:1595
 msgid "Honorably discharged from military service"
@@ -15690,7 +15672,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:1880 Form/form_us.xml.h:1902 Form/form_us.xml.h:1931
 msgid "Dwelling Value"
-msgstr ""
+msgstr "Vrijednost stambene jedinice"
 
 #: Form/form_us.xml.h:1885 Form/form_us.xml.h:1907 Form/form_us.xml.h:1936
 msgid "Birthplace (NY County or other)"
@@ -18757,14 +18739,9 @@ msgid "Gathering data"
 msgstr "Učitavanje podataka"
 
 #: GeoTimeLines/GeoTimeLines.py:1686 GeoTimeLines/GeoTimeLines.py:1992
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of persons : \n"
-#| "\t\t\t%s\t|\t(%s)*\n"
+#, python-format
 msgid "Number of Persons: %s"
-msgstr ""
-"Broj osoba: \n"
-"\t\t\t%s\t|\t(%s)*\n"
+msgstr "Broj osoba: %s"
 
 #: GeoTimeLines/GeoTimeLines.py:1776
 msgid ""
@@ -19428,11 +19405,11 @@ msgstr "Dodaj/Ukloni etikete"
 
 #: RemoveTagTool/RemoveTagTool.gpr.py:26
 msgid "Add or remove a tag from groups of people, events, etc."
-msgstr "Dodaj ili ukloni etiketu iz grupa osoba, događaja, itd."
+msgstr "Dodaj ili ukloni oznaku iz grupa osoba, događaja, itd."
 
 #: RemoveTagTool/RemoveTagTool.py:58
 msgid "The Tool requires at least one tag to execute."
-msgstr "Za pokretanje alata, potrebna je barem jedna etiketa."
+msgstr "Za izvršavanje alata je potrebna barem jedna oznaka."
 
 #: RemoveTagTool/RemoveTagTool.py:59 RemoveTagTool/RemoveTagTool.py:61
 msgid "ERROR"
@@ -19444,7 +19421,7 @@ msgstr "Dodaj/Ukloni"
 
 #: RemoveTagTool/RemoveTagTool.py:87
 msgid "Add or remove tags from objects."
-msgstr "Dodaj ili ukloni etikete iz objekata."
+msgstr "Dodaj ili ukloni oznake iz objekata."
 
 #: RemoveTagTool/RemoveTagTool.py:88
 msgid "Add Tags"
@@ -19459,14 +19436,12 @@ msgid "Choose a category."
 msgstr "Odaberi kategoriju."
 
 #: RemoveTagTool/RemoveTagTool.py:103
-#, fuzzy
-#| msgid "Choose a category."
 msgid "Choose Tag"
-msgstr "Odaberi kategoriju."
+msgstr "Odaberi oznaku"
 
 #: RemoveTagTool/RemoveTagTool.py:104
 msgid "Choose a tag to remove."
-msgstr "Odaberi etiketu koju želiš ukloniti."
+msgstr "Odaberi oznaku koju želiš ukloniti."
 
 #: RemoveTagTool/RemoveTagTool.py:140
 msgid "Filter options"
@@ -19482,7 +19457,7 @@ msgid ""
 "Unable to run the tool. Please check if your database contains tags, filters "
 "and objects."
 msgstr ""
-"Alat nije moguće pokrenuti. Provjeri, sadrži li tvoja baza podataka etikete, "
+"Alat nije moguće pokrenuti. Provjeri, sadrži li tvoja baza podataka oznake, "
 "filtre i objekte."
 
 #: RemoveTagTool/RemoveTagTool.py:200 RemoveTagTool/RemoveTagTool.py:235
@@ -19496,19 +19471,19 @@ msgstr "Nijedan objekt %s nije pronađen u bazi podataka."
 
 #: RemoveTagTool/RemoveTagTool.py:249
 msgid "Process tags..."
-msgstr "Obrada etiketa …"
+msgstr "Obrada oznaka …"
 
 #: RemoveTagTool/RemoveTagTool.py:266
 msgid "added"
-msgstr "dodano"
+msgstr "dodana"
 
 #: RemoveTagTool/RemoveTagTool.py:268
 msgid "removed"
-msgstr "uklonjeno"
+msgstr "uklonjena"
 
 #: RemoveTagTool/RemoveTagTool.py:269
 msgid "Tag '{}' was {} to {} {} objects.\n"
-msgstr "Etiketa „{}” je {} u {} {} objekte.\n"
+msgstr "Oznaka „{}” je {} u {} {} objekte.\n"
 
 #: DNA/dnasegmentmap.gpr.py:26 DNA/dnasegmentmap.gpr.py:35
 msgid "DNA Segment Map"
@@ -19520,13 +19495,11 @@ msgstr "Gramplet za prikaz karte poklapajućih DNA segmenata"
 
 #: DNA/dnasegmentmap.py:546
 msgid "Chromosome "
-msgstr ""
+msgstr "Kromosom "
 
 #: DNA/dnasegmentmap.py:552
-#, fuzzy
-#| msgid "Wait for me"
 msgid " Map for "
-msgstr "Čekaj na mene"
+msgstr " Karta za "
 
 #: DNA/dnasegmentmap.py:634
 msgid "Chr"
@@ -19534,13 +19507,11 @@ msgstr "Kromosom"
 
 #: DNA/dnasegmentmap.py:759
 msgid "Legend"
-msgstr ""
+msgstr "Legenda"
 
 #: DNA/dnasegmentmap.py:761
-#, fuzzy
-#| msgid "Grandparents"
 msgid ": Grandparent"
-msgstr "Djedovi i bake"
+msgstr ": Djed/baka"
 
 #: DNA/dnasegmentmap.py:1056
 #, python-brace-format
@@ -19556,37 +19527,35 @@ msgstr ""
 
 #: DNA/dnasegmentmap.py:1061
 msgid " : Starts at "
-msgstr ""
+msgstr " : Počinje "
 
 #: DNA/dnasegmentmap.py:1063
-#, fuzzy
-#| msgid "and %s "
 msgid " and ends at "
-msgstr "i %s "
+msgstr " i završava "
 
 #: DNA/dnasegmentmap.py:1079 DNA/dnasegmentmap.py:1082
 #, python-brace-format
 msgid "{0}"
-msgstr ""
+msgstr "{0}"
 
 #: DNA/dnasegmentmap.py:1086
 #, python-format
 msgid "%(ancestor1)s and %(ancestor2)s"
-msgstr ""
+msgstr "%(ancestor1)s i %(ancestor2)s"
 
 #: DNA/dnasegmentmap.py:1090
-#, fuzzy, python-brace-format
-#| msgid "Relationship Type"
+#, python-brace-format
 msgid ""
 "\n"
 "Relationship: {0} "
-msgstr "Vrsta veze"
+msgstr ""
+"\n"
+"Srodstvo: {0} "
 
 #: DNA/dnasegmentmap.py:1091
-#, fuzzy, python-brace-format
-#| msgid "Ancestor"
+#, python-brace-format
 msgid " Ancestor: {0}"
-msgstr "Predak"
+msgstr " Predak: {0}"
 
 #: DNA/dnasegmentmap.py:1115
 msgid ""
@@ -19864,10 +19833,8 @@ msgid "What to show"
 msgstr ""
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:880
-#, fuzzy
-#| msgid "The Gramps ID.."
 msgid "Show GrampsID"
-msgstr "Gramps ID …"
+msgstr "Prikaži Gramps ID"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:881
 msgid "Show GrampsID on top right of the box"
@@ -20059,10 +20026,8 @@ msgid "Clear original enclosing places"
 msgstr "Trenutačno obuhvaćena mjesta"
 
 #: PlaceUpdate/PlaceUpdate.py:162
-#, fuzzy
-#| msgid "Clear GPS"
 msgid "Clear tags"
-msgstr "Izbriši GPS"
+msgstr "Izbriši oznake"
 
 #: PlaceUpdate/PlaceUpdate.py:165
 #, fuzzy
@@ -21158,7 +21123,7 @@ msgstr "Ne postoji veza s aktivnom osobom"
 
 #: GraphView/graphview.py:3896
 msgid "Select tags for person"
-msgstr "Odaberi etikete za osobu"
+msgstr "Odaberi oznake za osobu"
 
 #: GraphView/graphview.py:3907
 msgid "Add new family"
@@ -21192,7 +21157,7 @@ msgstr "Korišteno za obitelj"
 
 #: GraphView/graphview.py:4182
 msgid "Select tags for family"
-msgstr "Odaberi etikete za obitelj"
+msgstr "Odaberi oznake za obitelj"
 
 #: GraphView/graphview.py:4201
 msgid "Add father"
