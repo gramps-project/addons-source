@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-16 10:55+0000\n"
+"PO-Revision-Date: 2025-02-17 00:14+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -23141,7 +23141,7 @@ msgstr ""
 
 #: NetworkChart/NetworkChart.py:1240
 msgid "Confirm overwrite file."
-msgstr ""
+msgstr "Potvrdiť prepísanie súboru."
 
 #: NetworkChart/NetworkChart.py:1243
 msgid "Enable/disable confirmation of file overwrite."
@@ -23155,17 +23155,15 @@ msgstr "Gramplet Poznámka"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:764
 msgid "Map Menu"
-msgstr ""
+msgstr "Menu mapy"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:775
 msgid "Add city as place"
-msgstr ""
+msgstr "Pridať mesto ako miesto"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:788
-#, fuzzy
-#| msgid "Add as a Parent"
 msgid "Add addess as place"
-msgstr "Pridať ako rodiča"
+msgstr "Pridať adresu ako miesto"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:24
 msgid "Place Coordinate Gramplet view"
@@ -23177,49 +23175,47 @@ msgstr ""
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:43
 msgid "Place and Coordinates"
-msgstr ""
+msgstr "Miesto a súradnice"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:44
 msgid "Gramplet that simplifies setting the coordinates of a place"
-msgstr ""
+msgstr "Gramplet, ktorý zjednodušuje nastavenie súradníc miesta"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:53
 msgid "Place Coordinates"
-msgstr ""
+msgstr "Súradnice miesta"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:215
 msgid "The place was not found. You may clarify the search keywords."
-msgstr ""
+msgstr "Miesto nebolo nájdené. Môžete spresniť kľúčové slová vyhľadávania."
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:219
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:247
 msgid "Failed to search for the coordinates due to some unexpected error."
-msgstr ""
+msgstr "Nepodarilo sa vyhľadať súradnice v dôsledku neočakávanej chyby."
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:244
 msgid "The place was not found."
-msgstr ""
+msgstr "Miesto nebolo nájdené."
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:269
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:300
-#, fuzzy
-#| msgid "1 place record was modified."
 msgid "The place was not identified."
-msgstr "1 záznam o mieste bol zmenený."
+msgstr "Miesto nebolo identifikované."
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:271
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:302
 msgid "Coordinates were not given."
-msgstr ""
+msgstr "Súradnice neboli zadané."
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:286
 msgid "Failed to interpret the input format."
-msgstr ""
+msgstr "Nepodarilo sa interpretovať vstupný formát."
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:332
 #, python-brace-format
 msgid "DB entry [{id}] {name}:"
-msgstr ""
+msgstr "Položka DB [{id}] {name}:"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:337
 #: PlaceCoordinateGramplet/placecoordinate.glade:132
@@ -23228,23 +23224,19 @@ msgstr ""
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.py:359
 msgid "No place is active"
-msgstr ""
+msgstr "Žiadne miesto nie je aktívne"
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:15
-#, fuzzy
-#| msgid "Search:"
 msgid "Search for:"
-msgstr "Hľadať:"
+msgstr "Vyhľadať:"
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:26
-#, fuzzy
-#| msgid "place: "
 msgid "Found place:"
-msgstr "lokalita: "
+msgstr "Nájdené miesto:"
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:53
 msgid "No DB entry is selected"
-msgstr ""
+msgstr "Nie je vybraná položka DB"
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:68
 #, fuzzy
@@ -23254,7 +23246,7 @@ msgstr "PSČ/poštové smerovacie číslo:"
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:116
 msgid "Show found place externally in Google Maps"
-msgstr ""
+msgstr "Zobraziť nájdené miesto externe v Mapách Google"
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:203
 msgid ""
@@ -23275,10 +23267,8 @@ msgid "Go"
 msgstr ""
 
 #: PlaceCoordinateGramplet/placecoordinate.glade:290
-#, fuzzy
-#| msgid "Show places"
 msgid "Show help"
-msgstr "Zobraziť miesta"
+msgstr "Zobraziť pomoc"
 
 #~ msgid "Beta"
 #~ msgstr "Beta"
