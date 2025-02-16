@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: 4.1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-16 06:02+0000\n"
+"PO-Revision-Date: 2025-02-17 00:14+0000\n"
 "Last-Translator: Bora Atıcı <boratici.acc@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/tr/>\n"
@@ -80,15 +80,15 @@ msgstr ""
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:104
 msgid "Do not add birth events"
-msgstr ""
+msgstr "Doğum etkinliklerini eklemeyin"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:105
 msgid "Add birth events without dates"
-msgstr ""
+msgstr "Tarihsiz doğum etkinliklerini ekleyin"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:106
 msgid "Add birth events with dates"
-msgstr ""
+msgstr "Tarihli doğum etkinliklerini ekleyin"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:107
 msgid "Add a birth events with or without estimated dates"
@@ -96,15 +96,15 @@ msgstr ""
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:111
 msgid "Do not add death events"
-msgstr ""
+msgstr "Ölüm etkinliklerini eklemeyin"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:112
 msgid "Add death events without dates"
-msgstr ""
+msgstr "Tarihsiz ölüm etkinliklerini ekleyin"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:113
 msgid "Add death events with dates"
-msgstr ""
+msgstr "Tarihli ölüm etkinliklerini ekleyin"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:114
 msgid "Add death events with or without estimated dates"
@@ -165,7 +165,7 @@ msgstr ""
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:199
 msgid "Select All"
-msgstr ""
+msgstr "Tümünü seç"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:200
 msgid "Select None"
@@ -7311,10 +7311,8 @@ msgid "Correct -50° in 50°S"
 msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:1142
-#, fuzzy
-#| msgid "No changes need."
 msgid "No changes"
-msgstr "Değiştirmeye gerek yok."
+msgstr "Değişiklik yok"
 
 #: PlaceCompletion/PlaceCompletion.py:1143
 msgid "City[, State]"
@@ -7405,10 +7403,8 @@ msgid "Parish:"
 msgstr ""
 
 #: PlaceCompletion/placecompletion.glade:271
-#, fuzzy
-#| msgid "Place titles"
 msgid "Place _filter:"
-msgstr "Yer başlıkları"
+msgstr "Yer _süzgeci:"
 
 #: PlaceCompletion/placecompletion.glade:336
 msgid "Count_ry:"
