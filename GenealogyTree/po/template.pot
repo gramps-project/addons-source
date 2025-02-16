@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,100 +16,6 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-#: GenealogyTree/gt_ancestor.py:95 GenealogyTree/gt_descendant.py:96
-#: GenealogyTree/gt_sandclock.py:103
-#, python-format
-msgid "Person %s is not in the Database"
-msgstr ""
-
-#: GenealogyTree/gt_ancestor.py:160 GenealogyTree/gt_descendant.py:177
-#: GenealogyTree/gt_grandparent.py:217 GenealogyTree/gt_sandclock.py:227
-msgid "Report Options"
-msgstr ""
-
-#: GenealogyTree/gt_ancestor.py:162 GenealogyTree/gt_descendant.py:179
-#: GenealogyTree/gt_grandparent.py:219 GenealogyTree/gt_sandclock.py:230
-msgid "Center Person"
-msgstr ""
-
-#: GenealogyTree/gt_ancestor.py:163 GenealogyTree/gt_descendant.py:180
-#: GenealogyTree/gt_grandparent.py:220 GenealogyTree/gt_sandclock.py:231
-msgid "The center person for the report"
-msgstr ""
-
-#: GenealogyTree/gt_ancestor.py:166 GenealogyTree/gt_descendant.py:183
-#: GenealogyTree/gt_grandparent.py:223
-msgid "Generations"
-msgstr ""
-
-#: GenealogyTree/gt_ancestor.py:167 GenealogyTree/gt_descendant.py:184
-#: GenealogyTree/gt_grandparent.py:224 GenealogyTree/gt_sandclock.py:239
-#: GenealogyTree/gt_sandclock.py:243
-msgid "The number of generations to include in the tree"
-msgstr ""
-
-#: GenealogyTree/gt_ancestor.py:170 GenealogyTree/gt_descendant.py:187
-#: GenealogyTree/gt_grandparent.py:231 GenealogyTree/gt_sandclock.py:250
-msgid "Include images"
-msgstr ""
-
-#: GenealogyTree/gt_ancestor.py:171 GenealogyTree/gt_descendant.py:188
-#: GenealogyTree/gt_grandparent.py:232 GenealogyTree/gt_sandclock.py:251
-msgid "Include images of people in the nodes."
-msgstr ""
-
-#: GenealogyTree/gt_descendant.py:191
-msgid "First spouse left"
-msgstr ""
-
-#: GenealogyTree/gt_descendant.py:192
-msgid ""
-"Always put first of multiple spouses on the left. This can help reduce line-"
-"crossings with multiple marriages."
-msgstr ""
-
-#: GenealogyTree/gt_grandparent.py:119
-#, python-format
-msgid "Person %s does not have both a paternal and a maternal grandparent"
-msgstr ""
-
-#: GenealogyTree/gt_grandparent.py:227
-msgid "Grandparent family spacing"
-msgstr ""
-
-#: GenealogyTree/gt_grandparent.py:228
-msgid "Extra spacing of grandparent families (mm)"
-msgstr ""
-
-#: GenealogyTree/gt_sandclock.py:108
-#, python-format
-msgid "Family %s is not in the Database"
-msgstr ""
-
-#: GenealogyTree/gt_sandclock.py:234
-msgid "Center Family"
-msgstr ""
-
-#: GenealogyTree/gt_sandclock.py:235
-msgid "The center family for the report"
-msgstr ""
-
-#: GenealogyTree/gt_sandclock.py:238
-msgid "Generations up"
-msgstr ""
-
-#: GenealogyTree/gt_sandclock.py:242
-msgid "Generations down"
-msgstr ""
-
-#: GenealogyTree/gt_sandclock.py:246
-msgid "Include siblings"
-msgstr ""
-
-#: GenealogyTree/gt_sandclock.py:247
-msgid "Include siblings of ancestors."
-msgstr ""
 
 #: GenealogyTree/treeplugins.gpr.py:30
 msgid "Ancestor Tree"
@@ -149,4 +55,98 @@ msgstr ""
 
 #: GenealogyTree/treeplugins.gpr.py:131
 msgid "Sandclock tree for a family using LaTeX genealogytree"
+msgstr ""
+
+#: GenealogyTree/gt_sandclock.py:103 GenealogyTree/gt_descendant.py:96
+#: GenealogyTree/gt_ancestor.py:95
+#, python-format
+msgid "Person %s is not in the Database"
+msgstr ""
+
+#: GenealogyTree/gt_sandclock.py:108
+#, python-format
+msgid "Family %s is not in the Database"
+msgstr ""
+
+#: GenealogyTree/gt_sandclock.py:227 GenealogyTree/gt_grandparent.py:217
+#: GenealogyTree/gt_descendant.py:177 GenealogyTree/gt_ancestor.py:160
+msgid "Report Options"
+msgstr ""
+
+#: GenealogyTree/gt_sandclock.py:230 GenealogyTree/gt_grandparent.py:219
+#: GenealogyTree/gt_descendant.py:179 GenealogyTree/gt_ancestor.py:162
+msgid "Center Person"
+msgstr ""
+
+#: GenealogyTree/gt_sandclock.py:231 GenealogyTree/gt_grandparent.py:220
+#: GenealogyTree/gt_descendant.py:180 GenealogyTree/gt_ancestor.py:163
+msgid "The center person for the report"
+msgstr ""
+
+#: GenealogyTree/gt_sandclock.py:234
+msgid "Center Family"
+msgstr ""
+
+#: GenealogyTree/gt_sandclock.py:235
+msgid "The center family for the report"
+msgstr ""
+
+#: GenealogyTree/gt_sandclock.py:238
+msgid "Generations up"
+msgstr ""
+
+#: GenealogyTree/gt_sandclock.py:239 GenealogyTree/gt_sandclock.py:243
+#: GenealogyTree/gt_grandparent.py:224 GenealogyTree/gt_descendant.py:184
+#: GenealogyTree/gt_ancestor.py:167
+msgid "The number of generations to include in the tree"
+msgstr ""
+
+#: GenealogyTree/gt_sandclock.py:242
+msgid "Generations down"
+msgstr ""
+
+#: GenealogyTree/gt_sandclock.py:246
+msgid "Include siblings"
+msgstr ""
+
+#: GenealogyTree/gt_sandclock.py:247
+msgid "Include siblings of ancestors."
+msgstr ""
+
+#: GenealogyTree/gt_sandclock.py:250 GenealogyTree/gt_grandparent.py:231
+#: GenealogyTree/gt_descendant.py:187 GenealogyTree/gt_ancestor.py:170
+msgid "Include images"
+msgstr ""
+
+#: GenealogyTree/gt_sandclock.py:251 GenealogyTree/gt_grandparent.py:232
+#: GenealogyTree/gt_descendant.py:188 GenealogyTree/gt_ancestor.py:171
+msgid "Include images of people in the nodes."
+msgstr ""
+
+#: GenealogyTree/gt_grandparent.py:119
+#, python-format
+msgid "Person %s does not have both a paternal and a maternal grandparent"
+msgstr ""
+
+#: GenealogyTree/gt_grandparent.py:223 GenealogyTree/gt_descendant.py:183
+#: GenealogyTree/gt_ancestor.py:166
+msgid "Generations"
+msgstr ""
+
+#: GenealogyTree/gt_grandparent.py:227
+msgid "Grandparent family spacing"
+msgstr ""
+
+#: GenealogyTree/gt_grandparent.py:228
+msgid "Extra spacing of grandparent families (mm)"
+msgstr ""
+
+#: GenealogyTree/gt_descendant.py:191
+msgid "First spouse left"
+msgstr ""
+
+#: GenealogyTree/gt_descendant.py:192
+msgid ""
+"Always put first of multiple spouses on the left. This can help reduce line-"
+"crossings with multiple marriages."
 msgstr ""

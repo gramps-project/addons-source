@@ -10,7 +10,7 @@ register(
     name=_("etree"),
     description=_("Gramplet for testing etree with Gramps XML"),
     status=STABLE,
-    version = '1.0.19',
+    version = '1.0.20',
     gramps_target_version="6.0",
     include_in_listing=False,
     height=400,

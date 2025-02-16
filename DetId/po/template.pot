@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,14 +17,6 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: DetId/DetId.gpr.py:31
-msgid "Deterministic ID"
-msgstr ""
-
-#: DetId/DetId.gpr.py:32
-msgid "Set/reset Gramps to use a Deterministic ID"
-msgstr ""
-
 #: DetId/DetId.py:74
 msgid "Deterministic ID Tool"
 msgstr ""
@@ -32,4 +24,12 @@ msgstr ""
 #: DetId/DetId.py:80
 msgid ""
 "The ID and handles now start at 0x00000000, and increment by 0x100000001"
+msgstr ""
+
+#: DetId/DetId.gpr.py:31
+msgid "Deterministic ID"
+msgstr ""
+
+#: DetId/DetId.gpr.py:32
+msgid "Set/reset Gramps to use a Deterministic ID"
 msgstr ""

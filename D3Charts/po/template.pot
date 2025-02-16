@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-15 16:02+0000\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,33 +17,33 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: D3Charts/AncestralCollapsibleTree.py:124 D3Charts/AncestralFanChart.py:120
-#: D3Charts/DescendantIndentedTree.py:914
+#: D3Charts/AncestralCollapsibleTree.py:124
+#: D3Charts/DescendantIndentedTree.py:914 D3Charts/AncestralFanChart.py:120
 #, python-format
 msgid "Person %s is not in the Database"
 msgstr ""
 
 #: D3Charts/AncestralCollapsibleTree.py:326
 #: D3Charts/AncestralCollapsibleTree.py:771
-#: D3Charts/AncestralCollapsibleTree.py:785 D3Charts/AncestralFanChart.py:401
-#: D3Charts/AncestralFanChart.py:648 D3Charts/AncestralFanChart.py:674
+#: D3Charts/AncestralCollapsibleTree.py:785
 #: D3Charts/DescendantIndentedTree.py:1500
 #: D3Charts/DescendantIndentedTree.py:1563
 #: D3Charts/DescendantIndentedTree.py:1570
 #: D3Charts/DescendantIndentedTree.py:1677
-#: D3Charts/DescendantIndentedTree.py:1697
+#: D3Charts/DescendantIndentedTree.py:1697 D3Charts/AncestralFanChart.py:401
+#: D3Charts/AncestralFanChart.py:648 D3Charts/AncestralFanChart.py:674
 #, python-format
 msgid "Failed writing %s: %s"
 msgstr ""
 
-#: D3Charts/AncestralCollapsibleTree.py:345 D3Charts/AncestralFanChart.py:420
-#: D3Charts/DescendantIndentedTree.py:1519
+#: D3Charts/AncestralCollapsibleTree.py:345
+#: D3Charts/DescendantIndentedTree.py:1519 D3Charts/AncestralFanChart.py:420
 #, python-format
 msgid "Failed to create directory structure : %s"
 msgstr ""
 
-#: D3Charts/AncestralCollapsibleTree.py:368 D3Charts/AncestralFanChart.py:443
-#: D3Charts/DescendantIndentedTree.py:1555
+#: D3Charts/AncestralCollapsibleTree.py:368
+#: D3Charts/DescendantIndentedTree.py:1555 D3Charts/AncestralFanChart.py:443
 #, python-format
 msgid "Failed to copy web files : %s"
 msgstr ""
@@ -52,13 +52,13 @@ msgstr ""
 msgid "Ancestral Collapsible Tree Options"
 msgstr ""
 
-#: D3Charts/AncestralCollapsibleTree.py:818 D3Charts/AncestralFanChart.py:709
-#: D3Charts/DescendantIndentedTree.py:1787
+#: D3Charts/AncestralCollapsibleTree.py:818
+#: D3Charts/DescendantIndentedTree.py:1787 D3Charts/AncestralFanChart.py:709
 msgid "Center Person"
 msgstr ""
 
-#: D3Charts/AncestralCollapsibleTree.py:819 D3Charts/AncestralFanChart.py:710
-#: D3Charts/DescendantIndentedTree.py:1788
+#: D3Charts/AncestralCollapsibleTree.py:819
+#: D3Charts/DescendantIndentedTree.py:1788 D3Charts/AncestralFanChart.py:710
 msgid "The center person for the report"
 msgstr ""
 
@@ -74,13 +74,13 @@ msgstr ""
 msgid "Select the format to display names"
 msgstr ""
 
-#: D3Charts/AncestralCollapsibleTree.py:840 D3Charts/AncestralFanChart.py:723
-#: D3Charts/DescendantIndentedTree.py:1804
+#: D3Charts/AncestralCollapsibleTree.py:840
+#: D3Charts/DescendantIndentedTree.py:1804 D3Charts/AncestralFanChart.py:723
 msgid "Include Generations"
 msgstr ""
 
-#: D3Charts/AncestralCollapsibleTree.py:841 D3Charts/AncestralFanChart.py:724
-#: D3Charts/DescendantIndentedTree.py:1806
+#: D3Charts/AncestralCollapsibleTree.py:841
+#: D3Charts/DescendantIndentedTree.py:1806 D3Charts/AncestralFanChart.py:724
 msgid "The number of generations to include in the report"
 msgstr ""
 
@@ -116,66 +116,24 @@ msgstr ""
 msgid "RGB-color for female expandable box background."
 msgstr ""
 
-#: D3Charts/AncestralCollapsibleTree.py:865 D3Charts/AncestralFanChart.py:737
-#: D3Charts/DescendantIndentedTree.py:1824
+#: D3Charts/AncestralCollapsibleTree.py:865
+#: D3Charts/DescendantIndentedTree.py:1824 D3Charts/AncestralFanChart.py:737
 msgid "Destination"
 msgstr ""
 
-#: D3Charts/AncestralCollapsibleTree.py:867 D3Charts/AncestralFanChart.py:739
-#: D3Charts/DescendantIndentedTree.py:1826
+#: D3Charts/AncestralCollapsibleTree.py:867
+#: D3Charts/DescendantIndentedTree.py:1826 D3Charts/AncestralFanChart.py:739
 msgid "The destination path for generated files."
 msgstr ""
 
-#: D3Charts/AncestralCollapsibleTree.py:871 D3Charts/AncestralFanChart.py:743
-#: D3Charts/DescendantIndentedTree.py:1830
+#: D3Charts/AncestralCollapsibleTree.py:871
+#: D3Charts/DescendantIndentedTree.py:1830 D3Charts/AncestralFanChart.py:743
 msgid "Filename"
 msgstr ""
 
-#: D3Charts/AncestralCollapsibleTree.py:872 D3Charts/AncestralFanChart.py:744
-#: D3Charts/DescendantIndentedTree.py:1831
+#: D3Charts/AncestralCollapsibleTree.py:872
+#: D3Charts/DescendantIndentedTree.py:1831 D3Charts/AncestralFanChart.py:744
 msgid "The destination file name for html content."
-msgstr ""
-
-#: D3Charts/AncestralCollapsibleTree.gpr.py:23
-msgid "Ancestral Collapsible Tree"
-msgstr ""
-
-#: D3Charts/AncestralCollapsibleTree.gpr.py:33
-msgid ""
-"Generates a web page with a graphical representation of ancestors (SVG) "
-"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
-msgstr ""
-
-#: D3Charts/DescendantIndentedTree.gpr.py:23
-#: D3Charts/DescendantIndentedTree.py:909
-msgid "Descendant Indented Tree"
-msgstr ""
-
-#: D3Charts/DescendantIndentedTree.gpr.py:33
-msgid ""
-"Generates a web page with a graphical representation of descendants (SVG) "
-"representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
-"library."
-msgstr ""
-
-#: D3Charts/AncestralFanChart.py:707
-msgid "Ancestral Fan Chart Options"
-msgstr ""
-
-#: D3Charts/AncestralFanChart.py:729
-msgid "Paternal Background Color"
-msgstr ""
-
-#: D3Charts/AncestralFanChart.py:730
-msgid "RGB-color for paternal box background."
-msgstr ""
-
-#: D3Charts/AncestralFanChart.py:733
-msgid "Maternal Background"
-msgstr ""
-
-#: D3Charts/AncestralFanChart.py:734
-msgid "RGB-color for maternal box background."
 msgstr ""
 
 #: D3Charts/AncestralFanChart.gpr.py:23
@@ -201,6 +159,11 @@ msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:764
 msgid "Generating report..."
+msgstr ""
+
+#: D3Charts/DescendantIndentedTree.py:909
+#: D3Charts/DescendantIndentedTree.gpr.py:23
+msgid "Descendant Indented Tree"
 msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1364
@@ -628,4 +591,41 @@ msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:2046
 msgid "The font size in pixels for biography body text."
+msgstr ""
+
+#: D3Charts/DescendantIndentedTree.gpr.py:33
+msgid ""
+"Generates a web page with a graphical representation of descendants (SVG) "
+"representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
+"library."
+msgstr ""
+
+#: D3Charts/AncestralFanChart.py:707
+msgid "Ancestral Fan Chart Options"
+msgstr ""
+
+#: D3Charts/AncestralFanChart.py:729
+msgid "Paternal Background Color"
+msgstr ""
+
+#: D3Charts/AncestralFanChart.py:730
+msgid "RGB-color for paternal box background."
+msgstr ""
+
+#: D3Charts/AncestralFanChart.py:733
+msgid "Maternal Background"
+msgstr ""
+
+#: D3Charts/AncestralFanChart.py:734
+msgid "RGB-color for maternal box background."
+msgstr ""
+
+#: D3Charts/AncestralCollapsibleTree.gpr.py:23
+msgid "Ancestral Collapsible Tree"
+msgstr ""
+
+#: D3Charts/AncestralCollapsibleTree.gpr.py:33
+msgid ""
+"Generates a web page with a graphical representation of ancestors (SVG) "
+"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
 msgstr ""

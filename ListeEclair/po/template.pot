@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,13 +17,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ListeEclair/ListeEclair.gpr.py:4 ListeEclair/ListeEclair.py:97
-#: ListeEclair/ListeEclair.py:104
+#: ListeEclair/ListeEclair.py:97 ListeEclair/ListeEclair.py:104
+#: ListeEclair/ListeEclair.gpr.py:4
 msgid "Liste Eclair"
-msgstr ""
-
-#: ListeEclair/ListeEclair.gpr.py:5
-msgid "Produit une liste eclair"
 msgstr ""
 
 #: ListeEclair/ListeEclair.py:97
@@ -84,4 +80,8 @@ msgstr ""
 
 #: ListeEclair/ListeEclair.py:314
 msgid "The style used for place title."
+msgstr ""
+
+#: ListeEclair/ListeEclair.gpr.py:5
+msgid "Produit une liste eclair"
 msgstr ""

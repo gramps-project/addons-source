@@ -11,7 +11,7 @@ register(
     name=_("DE Web Connect Pack"),
     description=_("Collection of Web sites for the DE (requires libwebconnect)"),
     status=STABLE,
-    version = '0.0.31',
+    version = '0.0.32',
     gramps_target_version="6.0",
     fname="DEWebPack.py",
     load_on_reg=True,

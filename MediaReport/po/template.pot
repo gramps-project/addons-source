@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,14 +16,6 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-#: MediaReport/media_report.gpr.py:24
-msgid "Media Report"
-msgstr ""
-
-#: MediaReport/media_report.gpr.py:25
-msgid "Generates report including images, image data and notes."
-msgstr ""
 
 #: MediaReport/media_report.py:106 MediaReport/media_report.py:112
 #: MediaReport/media_report.py:119 MediaReport/media_report.py:125
@@ -136,4 +128,12 @@ msgstr ""
 #: MediaReport/media_report.py:456
 #, python-format
 msgid "Maximum media height in % of available page height."
+msgstr ""
+
+#: MediaReport/media_report.gpr.py:24
+msgid "Media Report"
+msgstr ""
+
+#: MediaReport/media_report.gpr.py:25
+msgid "Generates report including images, image data and notes."
 msgstr ""

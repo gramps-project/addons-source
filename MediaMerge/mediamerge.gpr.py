@@ -33,7 +33,7 @@ register(
         "Searches the entire database, looking for "
         "media that have the same path and merges them."
     ),
-    version = '1.0.13',
+    version = '1.0.14',
     gramps_target_version="6.0",
     status=STABLE,
     fname="mediamerge.py",

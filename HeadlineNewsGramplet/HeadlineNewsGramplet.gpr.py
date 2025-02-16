@@ -9,7 +9,7 @@ register(
     expand=True,
     gramplet="HeadlineNewsGramplet",
     gramplet_title=_("Headline News"),
-    version = '1.0.48',
+    version = '1.0.49',
     gramps_target_version="6.0",
     help_url="HeadlineNewsGramplet",
 )

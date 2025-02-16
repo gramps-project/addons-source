@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-06 11:50-0500\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,38 +17,48 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: GetGOV/getgov.gpr.py:30 GetGOV/getgov.gpr.py:42
-msgid "GetGOV"
+#: GetGOV/getgov.py:315
+msgid "Place ID to import from GOV (Historical Gazetteer):"
 msgstr ""
 
-#: GetGOV/getgov.gpr.py:31
-msgid "Gramplet to get places from the GOV database"
-msgstr ""
-
-#: GetGOV/getgov.py:303
-msgid "Enter GOV-id:"
-msgstr ""
-
-#: GetGOV/getgov.py:311
+#: GetGOV/getgov.py:323
 msgid "Get Place"
 msgstr ""
 
-#: GetGOV/getgov.py:343
+#: GetGOV/getgov.py:356
 #, python-format
 msgid "Add GOV-id place %s"
 msgstr ""
 
-#: GetGOV/getgov.py:521
+#: GetGOV/getgov.py:388
+#, python-format
+msgid "GetGOV error: %s"
+msgstr ""
+
+#: GetGOV/getgov.py:421
+#, python-format
+msgid "GOV error on id %s with code: "
+msgstr ""
+
+#: GetGOV/getgov.py:555
 #, python-format
 msgid "from %s to %s"
 msgstr ""
 
-#: GetGOV/getgov.py:523
+#: GetGOV/getgov.py:557
 #, python-format
 msgid "after %s"
 msgstr ""
 
-#: GetGOV/getgov.py:525
+#: GetGOV/getgov.py:559
 #, python-format
 msgid "before %s"
+msgstr ""
+
+#: GetGOV/getgov.gpr.py:32 GetGOV/getgov.gpr.py:44
+msgid "GetGOV"
+msgstr ""
+
+#: GetGOV/getgov.gpr.py:33
+msgid "Gramplet to get places from the GOV database"
 msgstr ""

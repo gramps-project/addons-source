@@ -23,7 +23,7 @@ register(
     name=_("MongoDB"),
     name_accell=_("_MongoDB Database"),
     description=_("MongoDB Database"),
-    version = '1.0.13',
+    version = '1.0.14',
     gramps_target_version="6.0",
     status=UNSTABLE,
     audience=DEVELOPER,

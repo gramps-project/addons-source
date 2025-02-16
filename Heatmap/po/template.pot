@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,14 +16,6 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-#: Heatmap/heatmap.gpr.py:25
-msgid "Heatmap"
-msgstr ""
-
-#: Heatmap/heatmap.gpr.py:26
-msgid "Create a heatmap web report."
-msgstr ""
 
 #: Heatmap/heatmap.py:72
 msgid "Filter"
@@ -127,6 +119,14 @@ msgstr ""
 
 #: Heatmap/heatmap.py:214 Heatmap/heatmap.py:226
 msgid "INFO"
+msgstr ""
+
+#: Heatmap/heatmap.gpr.py:25
+msgid "Heatmap"
+msgstr ""
+
+#: Heatmap/heatmap.gpr.py:26
+msgid "Create a heatmap web report."
 msgstr ""
 
 #: Heatmap/multi_select.py:104

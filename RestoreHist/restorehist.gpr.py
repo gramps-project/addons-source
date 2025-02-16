@@ -34,7 +34,7 @@ register(
         "new menus or Gramplets, but allows the last six objects "
         "visited to be found via the 'Go' menu."
     ),
-    version = '0.0.20',
+    version = '0.0.21',
     gramps_target_version="6.0",
     fname="restorehist.py",
     authors=["Paul Culley"],

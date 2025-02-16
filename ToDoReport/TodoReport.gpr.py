@@ -26,7 +26,7 @@ register(
     description=_(
         "Produces a list of all the notes with a given tag along with the records that it references, the Person, Family, Event, etc."
     ),
-    version = '1.2.38',
+    version = '1.2.39',
     gramps_target_version="6.0",
     status=STABLE,
     fname="TodoReport.py",

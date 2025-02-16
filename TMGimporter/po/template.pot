@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,64 +16,6 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-#: TMGimporter/importtmg.gpr.py:49
-msgid "TMG Project Backup"
-msgstr ""
-
-#: TMGimporter/importtmg.gpr.py:50 TMGimporter/importtmg.gpr.py:66
-#: TMGimporter/importtmg.gpr.py:81 TMGimporter/importtmg.gpr.py:96
-msgid "Import TMG project files"
-msgstr ""
-
-#: TMGimporter/importtmg.gpr.py:65 TMGimporter/importtmg.gpr.py:80
-#: TMGimporter/importtmg.gpr.py:95
-msgid "TMG Unsupported"
-msgstr ""
-
-#: TMGimporter/importtmg.py:88 TMGimporter/importtmg.py:109
-#: TMGimporter/importtmg.py:130
-#, python-format
-msgid "%s could not be opened"
-msgstr ""
-
-#: TMGimporter/importtmg.py:89
-#, python-format
-msgid ""
-"Directly importing from TMG files is not supported\n"
-"by the TMG Importer Addon.\n"
-"\n"
-"You need to use an backup copy of the TMG project(*.sqz)\n"
-"\n"
-"Ensure that your TMG project was created by:\n"
-"TMG version 5.x or greater.\n"
-"\n"
-"Your file:\n"
-"*.PJC - Project Configuration File for TMG 5.0 to TMG 9.05\n"
-"\n"
-"Please refer to:\n"
-"%(gramps_wiki_import_pjc_direct_url)s"
-msgstr ""
-
-#: TMGimporter/importtmg.py:110
-#, python-format
-msgid ""
-"Directly importing from TMG files is not supportedby the TMG Importer Addon."
-"You need to use an backup copy of TMG project(*.sqz)Ensure that your TMG "
-"project was created by:TMG version 5.x or greater.Your file:*.TMG - Version "
-"Control File for TMG 2.0 to TMG 4.0dPlease refer to:"
-"%(gramps_wiki_import_pjc_direct_url)s"
-msgstr ""
-
-#: TMGimporter/importtmg.py:131
-#, python-format
-msgid ""
-"Directly importing from TMG files is not supportedby the TMG Importer Addon."
-"You need to use an backup copy of TMG project(*.sqz)Ensure that your TMG "
-"project was created by:TMG version 5.x or greater.Your file:*.VER - Version "
-"Control File for TMG 1.2 and earlierPlease refer to:"
-"%(gramps_wiki_import_pjc_direct_url)s"
-msgstr ""
 
 #: TMGimporter/libtmg.py:1558
 #, python-format
@@ -139,6 +81,64 @@ msgstr ""
 
 #: TMGimporter/libtmg.py:1654
 msgid "Value"
+msgstr ""
+
+#: TMGimporter/importtmg.py:88 TMGimporter/importtmg.py:109
+#: TMGimporter/importtmg.py:130
+#, python-format
+msgid "%s could not be opened"
+msgstr ""
+
+#: TMGimporter/importtmg.py:89
+#, python-format
+msgid ""
+"Directly importing from TMG files is not supported\n"
+"by the TMG Importer Addon.\n"
+"\n"
+"You need to use an backup copy of the TMG project(*.sqz)\n"
+"\n"
+"Ensure that your TMG project was created by:\n"
+"TMG version 5.x or greater.\n"
+"\n"
+"Your file:\n"
+"*.PJC - Project Configuration File for TMG 5.0 to TMG 9.05\n"
+"\n"
+"Please refer to:\n"
+"%(gramps_wiki_import_pjc_direct_url)s"
+msgstr ""
+
+#: TMGimporter/importtmg.py:110
+#, python-format
+msgid ""
+"Directly importing from TMG files is not supportedby the TMG Importer Addon."
+"You need to use an backup copy of TMG project(*.sqz)Ensure that your TMG "
+"project was created by:TMG version 5.x or greater.Your file:*.TMG - Version "
+"Control File for TMG 2.0 to TMG 4.0dPlease refer to:"
+"%(gramps_wiki_import_pjc_direct_url)s"
+msgstr ""
+
+#: TMGimporter/importtmg.py:131
+#, python-format
+msgid ""
+"Directly importing from TMG files is not supportedby the TMG Importer Addon."
+"You need to use an backup copy of TMG project(*.sqz)Ensure that your TMG "
+"project was created by:TMG version 5.x or greater.Your file:*.VER - Version "
+"Control File for TMG 1.2 and earlierPlease refer to:"
+"%(gramps_wiki_import_pjc_direct_url)s"
+msgstr ""
+
+#: TMGimporter/importtmg.gpr.py:49
+msgid "TMG Project Backup"
+msgstr ""
+
+#: TMGimporter/importtmg.gpr.py:50 TMGimporter/importtmg.gpr.py:66
+#: TMGimporter/importtmg.gpr.py:81 TMGimporter/importtmg.gpr.py:96
+msgid "Import TMG project files"
+msgstr ""
+
+#: TMGimporter/importtmg.gpr.py:65 TMGimporter/importtmg.gpr.py:80
+#: TMGimporter/importtmg.gpr.py:95
+msgid "TMG Unsupported"
 msgstr ""
 
 #: TMGimporter/libtmg.glade:15

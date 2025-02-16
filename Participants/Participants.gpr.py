@@ -30,7 +30,7 @@ register(
     id="Participants",
     name=_("Participants"),
     description=_("Gramplet showing the participants in an event"),
-    version = '1.0.20',
+    version = '1.0.21',
     gramps_target_version="6.0",
     status=STABLE,
     fname="Participants.py",

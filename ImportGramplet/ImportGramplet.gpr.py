@@ -11,7 +11,7 @@ register(
     description=_("Gramplet for importing text"),
     status=STABLE,
     audience=EXPERT,
-    version = '1.0.44',
+    version = '1.0.45',
     gramps_target_version="6.0",
     height=200,
     gramplet="ImportGramplet",

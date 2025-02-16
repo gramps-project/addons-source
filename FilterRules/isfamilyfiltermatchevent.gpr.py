@@ -24,7 +24,7 @@ register(
     id="isfamilyfiltermatchevent",
     name=_("Events of families matching a <family filter>"),
     description=_("Events of families matching a <family filter>"),
-    version = '1.0.17',
+    version = '1.0.18',
     authors=["Matthias Kemmer"],
     authors_email=["matt.familienforschung@gmail.com"],
     gramps_target_version="6.0",

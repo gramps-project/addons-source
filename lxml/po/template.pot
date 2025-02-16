@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,14 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: lxml/lxmlGramplet.gpr.py:10 lxml/lxmlGramplet.gpr.py:19
+msgid "lxml"
+msgstr ""
+
+#: lxml/lxmlGramplet.gpr.py:11
+msgid "Gramplet for testing lxml and XSLT"
+msgstr ""
 
 #: lxml/etreeGramplet.gpr.py:10 lxml/etreeGramplet.gpr.py:19
 msgid "etree"
@@ -191,14 +199,6 @@ msgstr ""
 msgid ""
 "* loaded Family Tree base:\n"
 " \"%s\"\n"
-msgstr ""
-
-#: lxml/lxmlGramplet.gpr.py:10 lxml/lxmlGramplet.gpr.py:19
-msgid "lxml"
-msgstr ""
-
-#: lxml/lxmlGramplet.gpr.py:11
-msgid "Gramplet for testing lxml and XSLT"
 msgstr ""
 
 #: lxml/lxmlGramplet.py:67

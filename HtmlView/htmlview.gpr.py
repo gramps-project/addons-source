@@ -30,7 +30,7 @@ register(
     id="htmlview",
     name=_("Html View"),
     description=_("A view showing html pages embedded in Gramps"),
-    version = '1.0.15',
+    version = '1.0.16',
     gramps_target_version="6.0",
     status=STABLE,
     include_in_listing=False,

@@ -9,7 +9,7 @@ register(
     height=250,
     gramplet="PythonGramplet",
     gramplet_title=_("Python Shell"),
-    version = '1.0.38',
+    version = '1.0.39',
     gramps_target_version="6.0",
     help_url="PythonGramplet",
 )

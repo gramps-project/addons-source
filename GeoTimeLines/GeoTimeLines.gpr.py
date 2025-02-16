@@ -26,7 +26,7 @@ register(
     description=_(
         "A view showing all the places visited by a person or persons on various date."
     ),
-    version = '1.0.4',
+    version = '1.0.5',
     gramps_target_version="6.0",
     status=BETA,
     audience=EXPERT,

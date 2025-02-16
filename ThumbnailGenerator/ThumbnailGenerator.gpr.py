@@ -30,7 +30,7 @@ register(
     id="thumbgen",
     name=_("Thumbnail Generator"),
     description=_("Generates thumbnails for media files"),
-    version = '1.0.30',
+    version = '1.0.31',
     gramps_target_version="6.0",
     status=STABLE,
     fname="ThumbnailGenerator.py",

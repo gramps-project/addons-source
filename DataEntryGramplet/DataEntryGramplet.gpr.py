@@ -14,7 +14,7 @@ register(
     gramplet_title=_("Data Entry"),
     detached_width=510,
     detached_height=480,
-    version = '1.0.51',
+    version = '1.0.52',
     gramps_target_version="6.0",
     status=STABLE,
     audience=EXPERT,

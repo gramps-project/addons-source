@@ -9,7 +9,7 @@ register(
     id="calculateestimateddates",
     name=_("Calculate Estimated Dates"),
     description=_("Calculates estimated dates for birth and death."),
-    version = '0.90.40',
+    version = '0.90.41',
     gramps_target_version="6.0",
     status=STABLE,  # not yet tested with python 3
     fname="CalculateEstimatedDates.py",

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,8 +17,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ImportMerge/importmerge.gpr.py:31 ImportMerge/importmerge.py:328
-#: ImportMerge/importmerge.py:707
+#: ImportMerge/importmerge.gpr.py:31 ImportMerge/importmerge.py:329
+#: ImportMerge/importmerge.py:708
 msgid "Import and Merge tool"
 msgstr ""
 
@@ -28,200 +28,200 @@ msgid ""
 "the differences."
 msgstr ""
 
-#: ImportMerge/importmerge.py:80
+#: ImportMerge/importmerge.py:81
 msgid "Import and merge a Gramps XML"
 msgstr ""
 
-#: ImportMerge/importmerge.py:89
+#: ImportMerge/importmerge.py:90
 msgid "Missing"
 msgstr ""
 
-#: ImportMerge/importmerge.py:91
+#: ImportMerge/importmerge.py:92
 msgid "Added"
 msgstr ""
 
-#: ImportMerge/importmerge.py:93
+#: ImportMerge/importmerge.py:94
 msgid "Different"
 msgstr ""
 
-#: ImportMerge/importmerge.py:108
+#: ImportMerge/importmerge.py:109
 msgid "Delete original"
 msgstr ""
 
-#: ImportMerge/importmerge.py:109 ImportMerge/importmerge.glade:334
+#: ImportMerge/importmerge.py:110 ImportMerge/importmerge.glade:334
 msgid "Ignore"
 msgstr ""
 
-#: ImportMerge/importmerge.py:110
+#: ImportMerge/importmerge.py:111
 msgid "Add Import"
 msgstr ""
 
-#: ImportMerge/importmerge.py:111
+#: ImportMerge/importmerge.py:112
 msgid "Merge into original"
 msgstr ""
 
-#: ImportMerge/importmerge.py:112
+#: ImportMerge/importmerge.py:113
 msgid "Merge into import"
 msgstr ""
 
-#: ImportMerge/importmerge.py:113
+#: ImportMerge/importmerge.py:114
 msgid "Replace with import"
 msgstr ""
 
-#: ImportMerge/importmerge.py:114
+#: ImportMerge/importmerge.py:115
 msgid "Keep original"
 msgstr ""
 
-#: ImportMerge/importmerge.py:115 ImportMerge/importmerge.glade:293
+#: ImportMerge/importmerge.py:116 ImportMerge/importmerge.glade:293
 msgid ""
 "Use buttons below to set the 'Action' for each difference.  No changes will "
 "be made to your tree until you press 'Done' and confirm."
 msgstr ""
 
-#: ImportMerge/importmerge.py:118
+#: ImportMerge/importmerge.py:119
 msgid ""
 "This item will be deleted from your tree.  Any referenced items were also "
 "marked for deletion."
 msgstr ""
 
-#: ImportMerge/importmerge.py:120
+#: ImportMerge/importmerge.py:121
 msgid ""
 "This item will not be changed in your tree.  Any referenced items were also "
 "marked for Ignore."
 msgstr ""
 
-#: ImportMerge/importmerge.py:122
+#: ImportMerge/importmerge.py:123
 msgid ""
 "This item will be added to your tree.  Any referenced items were also marked "
 "for adding."
 msgstr ""
 
-#: ImportMerge/importmerge.py:124
+#: ImportMerge/importmerge.py:125
 msgid ""
 "This item will be merged, saving data from your tree.  Any referenced items "
 "were also marked for merging or adding."
 msgstr ""
 
-#: ImportMerge/importmerge.py:126
+#: ImportMerge/importmerge.py:127
 msgid ""
 "This item will be merged, using data from the import.  Any referenced items "
 "were also marked for merging or adding."
 msgstr ""
 
-#: ImportMerge/importmerge.py:128
+#: ImportMerge/importmerge.py:129
 msgid ""
 "The import data will entirely replace the data in your tree.  Any referenced "
 "items were also marked for replacement or removal."
 msgstr ""
 
-#: ImportMerge/importmerge.py:130
+#: ImportMerge/importmerge.py:131
 msgid ""
 "This item will not be changed in your tree.  Any referenced items were also "
 "marked to keep."
 msgstr ""
 
-#: ImportMerge/importmerge.py:145
+#: ImportMerge/importmerge.py:146
 msgid "Family"
 msgstr ""
 
-#: ImportMerge/importmerge.py:145
+#: ImportMerge/importmerge.py:146
 msgid "Person"
 msgstr ""
 
-#: ImportMerge/importmerge.py:145
+#: ImportMerge/importmerge.py:146
 msgid "Citation"
 msgstr ""
 
-#: ImportMerge/importmerge.py:145
+#: ImportMerge/importmerge.py:146
 msgid "Event"
 msgstr ""
 
-#: ImportMerge/importmerge.py:145
+#: ImportMerge/importmerge.py:146
 msgid "Media"
 msgstr ""
 
-#: ImportMerge/importmerge.py:146
+#: ImportMerge/importmerge.py:147
 msgid "Note"
 msgstr ""
 
-#: ImportMerge/importmerge.py:146
+#: ImportMerge/importmerge.py:147
 msgid "Place"
 msgstr ""
 
-#: ImportMerge/importmerge.py:146
+#: ImportMerge/importmerge.py:147
 msgid "Repository"
 msgstr ""
 
-#: ImportMerge/importmerge.py:146
+#: ImportMerge/importmerge.py:147
 msgid "Source"
 msgstr ""
 
-#: ImportMerge/importmerge.py:146
+#: ImportMerge/importmerge.py:147
 msgid "Tag"
 msgstr ""
 
-#: ImportMerge/importmerge.py:329
+#: ImportMerge/importmerge.py:330
 msgid "Importing data..."
 msgstr ""
 
-#: ImportMerge/importmerge.py:338
+#: ImportMerge/importmerge.py:339
 msgid "Import Failure"
 msgstr ""
 
-#: ImportMerge/importmerge.py:342
+#: ImportMerge/importmerge.py:343
 msgid "Searching..."
 msgstr ""
 
-#: ImportMerge/importmerge.py:406
+#: ImportMerge/importmerge.py:407
 msgid "Your Tree and import are the same."
 msgstr ""
 
-#: ImportMerge/importmerge.py:438
+#: ImportMerge/importmerge.py:439
 msgid "Last changed"
 msgstr ""
 
-#: ImportMerge/importmerge.py:451 ImportMerge/importmerge.py:460
-#: ImportMerge/importmerge.py:468 ImportMerge/importmerge.py:476
+#: ImportMerge/importmerge.py:452 ImportMerge/importmerge.py:461
+#: ImportMerge/importmerge.py:469 ImportMerge/importmerge.py:477
 msgid "your tree "
 msgstr ""
 
-#: ImportMerge/importmerge.py:458 ImportMerge/importmerge.py:466
-#: ImportMerge/importmerge.py:474
+#: ImportMerge/importmerge.py:459 ImportMerge/importmerge.py:467
+#: ImportMerge/importmerge.py:475
 msgid "imported "
-msgstr ""
-
-#: ImportMerge/importmerge.py:481 ImportMerge/importmerge.py:960
-#: ImportMerge/importmerge.py:981
-msgid "Original"
 msgstr ""
 
 #: ImportMerge/importmerge.py:482 ImportMerge/importmerge.py:961
 #: ImportMerge/importmerge.py:982
+msgid "Original"
+msgstr ""
+
+#: ImportMerge/importmerge.py:483 ImportMerge/importmerge.py:962
+#: ImportMerge/importmerge.py:983
 msgid "Imported"
 msgstr ""
 
-#: ImportMerge/importmerge.py:484 ImportMerge/importmerge.py:963
-#: ImportMerge/importmerge.py:984
+#: ImportMerge/importmerge.py:485 ImportMerge/importmerge.py:964
+#: ImportMerge/importmerge.py:985
 msgid "Result  "
 msgstr ""
 
-#: ImportMerge/importmerge.py:709
+#: ImportMerge/importmerge.py:710
 msgid "Processing..."
 msgstr ""
 
-#: ImportMerge/importmerge.py:710
+#: ImportMerge/importmerge.py:711
 msgid "Import and Merge"
 msgstr ""
 
-#: ImportMerge/importmerge.py:910 ImportMerge/importmerge.glade:407
+#: ImportMerge/importmerge.py:911 ImportMerge/importmerge.glade:407
 msgid "Replace"
 msgstr ""
 
-#: ImportMerge/importmerge.py:915
+#: ImportMerge/importmerge.py:916
 msgid "Add"
 msgstr ""
 
-#: ImportMerge/importmerge.py:920
+#: ImportMerge/importmerge.py:921
 msgid "Delete"
 msgstr ""
 

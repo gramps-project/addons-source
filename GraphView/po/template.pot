@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,41 +17,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: GraphView/avatars.py:59
-msgid "Custom"
-msgstr ""
-
-#: GraphView/avatars.py:60
-msgid "Dark (default)"
-msgstr ""
-
-#: GraphView/avatars.py:61
-msgid "Light"
-msgstr ""
-
-#: GraphView/avatars.py:62
-msgid "Cartoon"
-msgstr ""
-
-#: GraphView/avatars.py:63
-msgid "Modern"
-msgstr ""
-
-#: GraphView/avatars.py:64
-msgid "Updated"
-msgstr ""
-
-#: GraphView/graphview.gpr.py:4 GraphView/graphview.gpr.py:14
-#: GraphView/graphview.py:189
+#: GraphView/graphview.py:189 GraphView/graphview.gpr.py:4
+#: GraphView/graphview.gpr.py:14
 msgid "Graph View"
-msgstr ""
-
-#: GraphView/graphview.gpr.py:5
-msgid "Charts"
-msgstr ""
-
-#: GraphView/graphview.gpr.py:6
-msgid "Dynamic and interactive graph of relations"
 msgstr ""
 
 #: GraphView/graphview.py:751 GraphView/graphview.py:3728
@@ -602,6 +570,38 @@ msgstr ""
 #: GraphView/graphview.py:4729
 #, python-format
 msgid "%s has been bookmarked"
+msgstr ""
+
+#: GraphView/graphview.gpr.py:5
+msgid "Charts"
+msgstr ""
+
+#: GraphView/graphview.gpr.py:6
+msgid "Dynamic and interactive graph of relations"
+msgstr ""
+
+#: GraphView/avatars.py:59
+msgid "Custom"
+msgstr ""
+
+#: GraphView/avatars.py:60
+msgid "Dark (default)"
+msgstr ""
+
+#: GraphView/avatars.py:61
+msgid "Light"
+msgstr ""
+
+#: GraphView/avatars.py:62
+msgid "Cartoon"
+msgstr ""
+
+#: GraphView/avatars.py:63
+msgid "Modern"
+msgstr ""
+
+#: GraphView/avatars.py:64
+msgid "Updated"
 msgstr ""
 
 #: GraphView/search_widget.py:82

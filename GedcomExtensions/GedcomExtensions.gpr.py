@@ -32,7 +32,7 @@ register(
     name=_("Export GEDCOM Extensions (GED2)"),
     name_accell=_("GEDCOM Extensions (GED2)"),
     description=_("Extensions to the common GEDCOM format."),
-    version = '1.0.39',
+    version = '1.0.40',
     gramps_target_version="6.0",
     status=STABLE,
     audience=EXPERT,

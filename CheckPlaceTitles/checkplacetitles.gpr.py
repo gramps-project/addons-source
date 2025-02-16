@@ -28,7 +28,7 @@ register(
     id="checkplacetitle",
     name=_("Check Place Titles"),
     description=_("Check place titles"),
-    version = '1.0.18',
+    version = '1.0.19',
     gramps_target_version="6.0",
     include_in_listing=False,
     status=STABLE,

@@ -3,7 +3,7 @@ register(
     id="FamilyTree",
     name=_("Family Tree"),
     description=_("Produces a graphical family tree."),
-    version = '4.2.25',
+    version = '4.2.26',
     gramps_target_version="6.0",
     status=STABLE,
     fname="FamilyTree.py",

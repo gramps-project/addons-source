@@ -3,7 +3,7 @@ register(
     id="Raw Export",
     name=_("Raw Export"),
     description=_("This is a raw python object dump"),
-    version = '1.0.41',
+    version = '1.0.42',
     gramps_target_version="6.0",
     status=STABLE,
     audience=DEVELOPER,

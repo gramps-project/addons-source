@@ -39,7 +39,7 @@ register(
         "Searches the entire database and attempts to "
         "fix capitalization of the given names."
     ),
-    version = '1.0.39',
+    version = '1.0.40',
     gramps_target_version="6.0",
     status=STABLE,  # not yet tested with python 3
     fname="ChangeGivenNames.py",

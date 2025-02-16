@@ -24,7 +24,7 @@ register(
     id="MatrilinealProgenitrix",
     name=_("Matrilineal progenitrix of <person>"),
     description=_("Matches the earliest recorded matrilineal ancestor mother."),
-    version = '1.0.11',
+    version = '1.0.12',
     authors=["Matthias Kemmer"],
     authors_email=["matt.familienforschung@gmail.com"],
     gramps_target_version="6.0",

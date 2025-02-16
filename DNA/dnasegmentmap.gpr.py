@@ -35,7 +35,7 @@ register(
     gramplet_title=_("DNA Segment Map"),
     detached_width=600,
     detached_height=450,
-    version = '2.0.12',
+    version = '2.0.13',
     gramps_target_version="6.0",
     help_url="Addon:DNASegmentMap",
     include_in_listing=True,

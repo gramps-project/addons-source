@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-06 08:57-0800\n"
+"POT-Creation-Date: 2025-02-16 15:10-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,10 +34,10 @@ msgstr ""
 msgid "Select Child"
 msgstr ""
 
-#: CombinedView/basepage.py:434 CombinedView/eventpage.py:101
-#: CombinedView/eventpage.py:235 CombinedView/personpage.py:132
+#: CombinedView/basepage.py:434 CombinedView/personpage.py:132
 #: CombinedView/personpage.py:474 CombinedView/personpage.py:525
 #: CombinedView/personpage.py:687 CombinedView/personpage.py:900
+#: CombinedView/eventpage.py:101 CombinedView/eventpage.py:235
 #, python-format
 msgid "Edit %s"
 msgstr ""
@@ -52,142 +52,9 @@ msgstr ""
 msgid "%(abbrev)s %(date)s%(place)s"
 msgstr ""
 
-#: CombinedView/combinedview.gpr.py:24 CombinedView/combinedview.py:87
-msgid "Combined"
-msgstr ""
-
-#: CombinedView/combinedview.gpr.py:25
-msgid "A view showing relationships and events for a person"
-msgstr ""
-
-#: CombinedView/combinedview.gpr.py:32 CombinedView/combinedview.py:650
-#: CombinedView/personpage.py:244
-msgid "Relationships"
-msgstr ""
-
-#: CombinedView/combinedview.py:325
-msgid "Organize Bookmarks"
-msgstr ""
-
-#: CombinedView/combinedview.py:526
-msgid "Edit the active person"
-msgstr ""
-
-#: CombinedView/combinedview.py:528
-msgid "Edit the active event"
-msgstr ""
-
-#: CombinedView/combinedview.py:577
-#, python-format
-msgid "%(birthabbrev)s %(birthdate)s, %(deathabbrev)s %(deathdate)s"
-msgstr ""
-
-#: CombinedView/combinedview.py:584 CombinedView/combinedview.py:586
-#, python-format
-msgid "%(event)s %(date)s"
-msgstr ""
-
-#: CombinedView/combinedview.py:624
-msgid "Use shading"
-msgstr ""
-
-#: CombinedView/combinedview.py:627
-msgid "Display edit buttons"
-msgstr ""
-
-#: CombinedView/combinedview.py:630
-msgid "Show Tags"
-msgstr ""
-
-#: CombinedView/combinedview.py:632
-msgid "View links as website links"
-msgstr ""
-
-#: CombinedView/combinedview.py:638
-msgid "Layout"
-msgstr ""
-
-#: CombinedView/combinedview.py:653
-msgid "Show Details"
-msgstr ""
-
-#: CombinedView/combinedview.py:656
-msgid "Vertical Details"
-msgstr ""
-
-#: CombinedView/combinedview.py:659
-msgid "Show Siblings"
-msgstr ""
-
-#: CombinedView/combinedview.py:662
-msgid "Person"
-msgstr ""
-
-#: CombinedView/eventpage.py:119 CombinedView/navigationview.py:365
-#: CombinedView/personpage.py:151
+#: CombinedView/personpage.py:151 CombinedView/navigationview.py:365
+#: CombinedView/eventpage.py:119
 msgid "ID"
-msgstr ""
-
-#: CombinedView/eventpage.py:140
-msgid "Attributes"
-msgstr ""
-
-#: CombinedView/eventpage.py:167
-msgid "Participants"
-msgstr ""
-
-#: CombinedView/eventpage.py:202 CombinedView/eventpage.py:267
-msgid "Order"
-msgstr ""
-
-#: CombinedView/eventpage.py:289
-msgid "Citations"
-msgstr ""
-
-#: CombinedView/navigationview.py:274
-#, python-format
-msgid "%s has been bookmarked"
-msgstr ""
-
-#: CombinedView/navigationview.py:278
-msgid "Could Not Set a Bookmark"
-msgstr ""
-
-#: CombinedView/navigationview.py:279
-msgid "A bookmark could not be set because no one was selected."
-msgstr ""
-
-#: CombinedView/navigationview.py:345
-msgid "No Home Person"
-msgstr ""
-
-#: CombinedView/navigationview.py:346
-msgid ""
-"You need to set a 'default person' to go to. Select the People View, select "
-"the person you want as 'Home Person', then confirm your choice via the menu "
-"Edit -> Set Home Person."
-msgstr ""
-
-#: CombinedView/navigationview.py:356 CombinedView/navigationview.py:359
-msgid "Jump to by Gramps ID"
-msgstr ""
-
-#: CombinedView/navigationview.py:365
-#, python-format
-msgid "%s: "
-msgstr ""
-
-#: CombinedView/navigationview.py:370
-msgid "_Cancel"
-msgstr ""
-
-#: CombinedView/navigationview.py:371
-msgid "_Jump to"
-msgstr ""
-
-#: CombinedView/navigationview.py:383
-#, python-format
-msgid "Error: %s is not a valid Gramps ID"
 msgstr ""
 
 #: CombinedView/personpage.py:161
@@ -204,6 +71,11 @@ msgstr ""
 
 #: CombinedView/personpage.py:197
 msgid "unknown"
+msgstr ""
+
+#: CombinedView/personpage.py:244 CombinedView/combinedview.gpr.py:32
+#: CombinedView/combinedview.py:650
+msgid "Relationships"
 msgstr ""
 
 #: CombinedView/personpage.py:255 CombinedView/personpage.py:276
@@ -340,4 +212,132 @@ msgstr ""
 
 #: CombinedView/personpage.py:972
 msgid "Relationship"
+msgstr ""
+
+#: CombinedView/combinedview.gpr.py:24 CombinedView/combinedview.py:87
+msgid "Combined"
+msgstr ""
+
+#: CombinedView/combinedview.gpr.py:25
+msgid "A view showing relationships and events for a person"
+msgstr ""
+
+#: CombinedView/navigationview.py:274
+#, python-format
+msgid "%s has been bookmarked"
+msgstr ""
+
+#: CombinedView/navigationview.py:278
+msgid "Could Not Set a Bookmark"
+msgstr ""
+
+#: CombinedView/navigationview.py:279
+msgid "A bookmark could not be set because no one was selected."
+msgstr ""
+
+#: CombinedView/navigationview.py:345
+msgid "No Home Person"
+msgstr ""
+
+#: CombinedView/navigationview.py:346
+msgid ""
+"You need to set a 'default person' to go to. Select the People View, select "
+"the person you want as 'Home Person', then confirm your choice via the menu "
+"Edit -> Set Home Person."
+msgstr ""
+
+#: CombinedView/navigationview.py:356 CombinedView/navigationview.py:359
+msgid "Jump to by Gramps ID"
+msgstr ""
+
+#: CombinedView/navigationview.py:365
+#, python-format
+msgid "%s: "
+msgstr ""
+
+#: CombinedView/navigationview.py:370
+msgid "_Cancel"
+msgstr ""
+
+#: CombinedView/navigationview.py:371
+msgid "_Jump to"
+msgstr ""
+
+#: CombinedView/navigationview.py:383
+#, python-format
+msgid "Error: %s is not a valid Gramps ID"
+msgstr ""
+
+#: CombinedView/eventpage.py:140
+msgid "Attributes"
+msgstr ""
+
+#: CombinedView/eventpage.py:167
+msgid "Participants"
+msgstr ""
+
+#: CombinedView/eventpage.py:202 CombinedView/eventpage.py:267
+msgid "Order"
+msgstr ""
+
+#: CombinedView/eventpage.py:289
+msgid "Citations"
+msgstr ""
+
+#: CombinedView/combinedview.py:325
+msgid "Organize Bookmarks"
+msgstr ""
+
+#: CombinedView/combinedview.py:526
+msgid "Edit the active person"
+msgstr ""
+
+#: CombinedView/combinedview.py:528
+msgid "Edit the active event"
+msgstr ""
+
+#: CombinedView/combinedview.py:577
+#, python-format
+msgid "%(birthabbrev)s %(birthdate)s, %(deathabbrev)s %(deathdate)s"
+msgstr ""
+
+#: CombinedView/combinedview.py:584 CombinedView/combinedview.py:586
+#, python-format
+msgid "%(event)s %(date)s"
+msgstr ""
+
+#: CombinedView/combinedview.py:624
+msgid "Use shading"
+msgstr ""
+
+#: CombinedView/combinedview.py:627
+msgid "Display edit buttons"
+msgstr ""
+
+#: CombinedView/combinedview.py:630
+msgid "Show Tags"
+msgstr ""
+
+#: CombinedView/combinedview.py:632
+msgid "View links as website links"
+msgstr ""
+
+#: CombinedView/combinedview.py:638
+msgid "Layout"
+msgstr ""
+
+#: CombinedView/combinedview.py:653
+msgid "Show Details"
+msgstr ""
+
+#: CombinedView/combinedview.py:656
+msgid "Vertical Details"
+msgstr ""
+
+#: CombinedView/combinedview.py:659
+msgid "Show Siblings"
+msgstr ""
+
+#: CombinedView/combinedview.py:662
+msgid "Person"
 msgstr ""
