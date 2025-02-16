@@ -10,13 +10,14 @@
 # Pär Ekholm <par.ekholm@pekholm.se>, 2018, 2019.
 # Peter Landgren <peter@test>, 2010.
 # Pär Ekholm <github1@m.pekholm.org>, 2025.
+# Milan <mobrcian@hotmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2025-02-16 10:55+0000\n"
-"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
+"Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
 "Language: sv\n"
@@ -13684,7 +13685,7 @@ msgstr ""
 
 #: Form/form_us.xml.h:892
 msgid "Hotel, large rooming house, institution, military installation, etc."
-msgstr ""
+msgstr "Hotel, veľká ubytovňa, inštitúcia, vojenské zariadenie a pod."
 
 #: Form/form_us.xml.h:899
 msgid "Is this house on a farm (or ranch)?"
