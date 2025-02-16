@@ -3,13 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Igal Shapira <igal.shapira@gmail.com>, 2009, 2010, 2011.
 # Avi Markovitz <avi.markovitz@gmail.com>, 2019, 2025.
+# Yaron Shahrabani <sh.yaron@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2025-02-17 00:14+0000\n"
-"Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
 "Language: he\n"
@@ -339,7 +340,7 @@ msgstr "גראמפלט לתיוג אנשים בתמונות"
 
 #: lxml/etreeGramplet.py:85 lxml/lxmlGramplet.py:110
 msgid "Invalid timestamp"
-msgstr ""
+msgstr "חותמת זמן שגויה"
 
 #: lxml/etreeGramplet.py:139
 msgid "No file parsed..."
@@ -347,29 +348,29 @@ msgstr "לא נותח קובץ..."
 
 #: lxml/etreeGramplet.py:205 lxml/etreeGramplet.py:210
 msgid "Number of editions back"
-msgstr ""
+msgstr "מספר המהדורות אחורה"
 
 #: lxml/etreeGramplet.py:220 lxml/lxmlGramplet.py:235
 msgid "Space character on filename"
-msgstr ""
+msgstr "תו רווח בשם הקובץ"
 
 #: lxml/etreeGramplet.py:220 lxml/lxmlGramplet.py:235
 #, python-format
 msgid "Please fix space on \"%s\""
-msgstr ""
+msgstr "נא לתקן את הרווח ב־„%s”"
 
 #: lxml/etreeGramplet.py:245 lxml/lxmlGramplet.py:265
 msgid "Sorry, no support for your OS yet!"
-msgstr ""
+msgstr "אין תמיכה במערכת ההפעלה שלך עדיין, סליחה!"
 
 #: lxml/etreeGramplet.py:254 lxml/lxmlGramplet.py:275
 msgid "Is it a compressed .gramps?"
-msgstr ""
+msgstr "האם זה ‎.gramps דחוס?"
 
 #: lxml/etreeGramplet.py:254 lxml/lxmlGramplet.py:275
 #, python-format
 msgid "Cannot uncompress \"%s\""
-msgstr ""
+msgstr "לא ניתן לפרוס את „%s”"
 
 #: lxml/etreeGramplet.py:256 lxml/etreeGramplet.py:263 lxml/lxmlGramplet.py:278
 #: lxml/lxmlGramplet.py:286
@@ -380,11 +381,15 @@ msgid ""
 " to:\n"
 " \"%(file2)s\".\n"
 msgstr ""
+"מתוך:\n"
+" \"%(file1)s\"\n"
+" אל:\n"
+" \"%(file2)s\".\n"
 
 #: lxml/etreeGramplet.py:261 lxml/lxmlGramplet.py:283
 #, python-format
 msgid "Cannot copy \"%s\""
-msgstr ""
+msgstr "לא ניתן להעתיק את „%s”"
 
 #: lxml/etreeGramplet.py:418
 #, python-format
