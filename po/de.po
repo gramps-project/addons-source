@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-15 21:17+0000\n"
+"PO-Revision-Date: 2025-02-16 06:02+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -1188,10 +1188,8 @@ msgstr "Platz"
 
 #: FilterRules/activepersonrule.gpr.py:27
 #: FilterRules/activepersonrule.gpr.py:28
-#, fuzzy
-#| msgid "Change active person?"
 msgid "The active Person"
-msgstr "Aktive Person ändern?"
+msgstr "Die aktive Person"
 
 #: FilterRules/activepersonrule.py:45
 msgid "Active person"
@@ -2483,10 +2481,8 @@ msgid "Completed Person"
 msgstr "Zentrale Person"
 
 #: Betawhatsnext/Betawhatsnext.py:112
-#, fuzzy
-#| msgid "Heads of Families"
 msgid " Completed offspring Families"
-msgstr "Familienvorstände"
+msgstr " Abgeschlossene Nachkommenschaft Familien"
 
 #: Betawhatsnext/Betawhatsnext.py:118
 #, fuzzy
@@ -4438,7 +4434,7 @@ msgstr "Pythagorasbaum"
 
 #: DenominoViso/DenominoViso.py:221
 msgid "right to left"
-msgstr "Rechts nach Links"
+msgstr "von rechts nach links"
 
 #: DenominoViso/DenominoViso.py:222
 msgid "left to right"
@@ -5681,14 +5677,8 @@ msgid "Gramplet showing the references for a source"
 msgstr "Gramplet zeigt die Referenzen für eine Quelle"
 
 #: DNAMatches/dnamatches.gpr.py:27 DNAMatches/dnamatches.gpr.py:36
-#, fuzzy
-#| msgid ""
-#| "No\n"
-#| "Matches"
 msgid "DNA Matches"
-msgstr ""
-"Keine\n"
-"Übereinstimmungen"
+msgstr "DNA-Übereinstimmungen"
 
 #: DNAMatches/dnamatches.gpr.py:30
 #, fuzzy
@@ -5726,21 +5716,19 @@ msgstr ""
 
 #: DNAMatches/dnamatches.py:156
 msgid "Shared DNA"
-msgstr ""
+msgstr "Gemeinsame DNA"
 
 #: DNAMatches/dnamatches.py:157
 msgid "Shared Segments"
-msgstr ""
+msgstr "Gemeinsame Segmente"
 
 #: DNAMatches/dnamatches.py:158
 msgid "Largest Segment"
-msgstr ""
+msgstr "Größtes Segment"
 
 #: DNAMatches/dnamatches.py:159
-#, fuzzy
-#| msgid " source(s)"
 msgid "Source(s)"
-msgstr " Quelle(n)"
+msgstr "Quelle(n)"
 
 #: DNAMatches/dnamatches.py:194
 #, fuzzy
@@ -19003,14 +18991,9 @@ msgid "Gathering data"
 msgstr "Lade die Daten"
 
 #: GeoTimeLines/GeoTimeLines.py:1686 GeoTimeLines/GeoTimeLines.py:1992
-#, fuzzy, python-format
-#| msgid ""
-#| "Number of persons : \n"
-#| "\t\t\t%s\t|\t(%s)*\n"
+#, python-format
 msgid "Number of Persons: %s"
-msgstr ""
-"Anzahl der Personen: \n"
-"\t\t\t%s\t|\t(%s)*\n"
+msgstr "Anzahl der Personen: %s"
 
 #: GeoTimeLines/GeoTimeLines.py:1776
 msgid ""
@@ -19781,10 +19764,8 @@ msgid "Chromosome "
 msgstr ""
 
 #: DNA/dnasegmentmap.py:552
-#, fuzzy
-#| msgid "Wait for me"
 msgid " Map for "
-msgstr "Wait for me"
+msgstr " Karte für "
 
 #: DNA/dnasegmentmap.py:634
 msgid "Chr"
@@ -19817,10 +19798,8 @@ msgid " : Starts at "
 msgstr ""
 
 #: DNA/dnasegmentmap.py:1063
-#, fuzzy
-#| msgid "and %s "
 msgid " and ends at "
-msgstr "und %s "
+msgstr " und endet mit "
 
 #: DNA/dnasegmentmap.py:1079 DNA/dnasegmentmap.py:1082
 #, python-brace-format
@@ -19833,18 +19812,18 @@ msgid "%(ancestor1)s and %(ancestor2)s"
 msgstr ""
 
 #: DNA/dnasegmentmap.py:1090
-#, fuzzy, python-brace-format
-#| msgid "Relationship Type"
+#, python-brace-format
 msgid ""
 "\n"
 "Relationship: {0} "
-msgstr "Beziehungstyp"
+msgstr ""
+"\n"
+"Beziehung: {0} "
 
 #: DNA/dnasegmentmap.py:1091
-#, fuzzy, python-brace-format
-#| msgid "Ancestor"
+#, python-brace-format
 msgid " Ancestor: {0}"
-msgstr "Vorfahre"
+msgstr " Vorfahre: {0}"
 
 #: DNA/dnasegmentmap.py:1115
 msgid ""
@@ -20466,10 +20445,8 @@ msgid "Reference Date or Date Range"
 msgstr ""
 
 #: DateCalculator/DateCalculator.py:86
-#, fuzzy
-#| msgid " by Gramps "
 msgid "a valid Gramps date"
-msgstr " von Gramps "
+msgstr "ein gültiges Gramps-Datum"
 
 #: DateCalculator/DateCalculator.py:90
 msgid "Date or offset ±y or ±y, m, d"
@@ -21598,10 +21575,8 @@ msgid "Invalid date "
 msgstr "Ungültiger Zeitstempel"
 
 #: HistContext/HistContext.py:288
-#, fuzzy
-#| msgid "%(line)s. line:"
 msgid " in line: "
-msgstr "%(line)s. Linie:"
+msgstr " in einer Reihe: "
 
 #: HistContext/HistContext.py:289 HistContext/HistContext.py:333
 #: HistContext/HistContext.py:420
@@ -22590,7 +22565,7 @@ msgstr "Unten nach Oben"
 
 #: NetworkChart/NetworkChart.py:931
 msgid "Right to Left"
-msgstr "Rechts nach Links"
+msgstr "Von rechts nach links"
 
 #: NetworkChart/NetworkChart.py:933
 msgid "Default (Top to Bottom)"
