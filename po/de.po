@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-16 06:02+0000\n"
+"PO-Revision-Date: 2025-02-17 00:14+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -1787,16 +1787,13 @@ msgid "Invalid Destination Directory"
 msgstr "Ungültiges Zielverzeichnis"
 
 #: D3Charts/DescendantIndentedTree.py:1365
-#, fuzzy, python-format
-#| msgid ""
-#| "Destinaton diretory %s does not exist\n"
-#| "Do you want to attempt to create it."
+#, python-format
 msgid ""
 "Destinaton diretory %s does not exist\n"
 "Do you want to attempt to create it?"
 msgstr ""
-"Zielverzeichnis %s existiert nicht\n"
-"Möchtest du versuchen es zu erstellen."
+"Das Zielverzeichnis %s existiert nicht\n"
+"Möchtest du versuchen, es zu erstellen?"
 
 #: D3Charts/DescendantIndentedTree.py:1374
 #, python-format
@@ -1804,16 +1801,13 @@ msgid "Failed to create %s: %s"
 msgstr "Fehler beim erstellen %s: %s"
 
 #: D3Charts/DescendantIndentedTree.py:1391
-#, fuzzy, python-format
-#| msgid ""
-#| "Destination file %s already exists.\n"
-#| "Do you want to overwrite."
+#, python-format
 msgid ""
 "Destination file %s already exists.\n"
 "Do you want to overwrite it?"
 msgstr ""
-"Zieldatei %s existiert bereits.\n"
-"Möchtest du es überschreiben."
+"Die Zieldatei %s existiert bereits.\n"
+"Möchtest du sie überschreiben?"
 
 #: D3Charts/DescendantIndentedTree.py:1446
 msgid "Default View"
@@ -3377,22 +3371,22 @@ msgid ""
 "URL starting with \"relative://relative.<link>\" are replaced by the "
 "relative URL \"<link>\".\n"
 msgstr ""
-"In dieser Notiz werden folgende speziellen Wörter verarbeitet:\n"
-"__SEARCH_FORM__ wird durch das Suchformular ersetzt.\n"
+"In diesem Hinweis werden die folgenden speziellen Wörter verarbeitet:\n"
+"__SEARCH_FORM__ wird durch ein Suchformular ersetzt.\n"
 "__NB_INDIVIDUALS__ wird durch die Anzahl der Personen ersetzt.\n"
-"__NB_FAMILIES__ wird durch die Anzahl der Familien ersetzt.\n"
+"__NB_FAMILIEN__ wird durch die Anzahl der Familien ersetzt.\n"
 "__NB_MEDIA__ wird durch die Anzahl der Medien ersetzt.\n"
 "__NB_SOURCES__ wird durch die Anzahl der Quellen ersetzt.\n"
-"__NB_REPOSITORIES__ wird durch die Anzahl der Aufbewahrungsorte ersetzt.\n"
+"__NB_REPOSITORIES__ wird durch die Anzahl der Repositories ersetzt.\n"
 "__NB_PLACES__ wird durch die Anzahl der Orte ersetzt.\n"
-"__MEDIA_<gid>__ wird durch das Medium mit der Gramps ID <gid> ersetzt.\n"
-"__THUMB_<gid>__ wird durch das Vorschaubild des Mediums mit der Gramps ID "
+"__MEDIA_<gid>__ wird durch die Medien mit Gramps ID <gid> ersetzt.\n"
+"__THUMB_<gid>__ wird durch die Miniaturansicht des Mediums mit der Gramps ID "
 "<gid> ersetzt.\n"
 "__EXPORT_DATE__ wird durch das aktuelle Datum ersetzt.\n"
-"__GRAMPS_VERSION__ wird durch die Gramps Version ersetzt.\n"
-"__GRAMPS_HOMEPAGE__ wird durch dem Gramps homepage Link ersetzt.\n"
-"URLs die mit  \"relative://relative.<link>\" starten werden ersetzt durch "
-"die relative URL \"<link>\".\n"
+"__GRAMPS_VERSION__ wird durch die Gramps-Version ersetzt.\n"
+"__GRAMPS_HOMEPAGE__ wird durch den Gramps-Homepage-Link ersetzt.\n"
+"URL, die mit „relative://relative.<link>“ beginnen, werden durch die "
+"relative URL „<link>“ ersetzt.\n"
 
 #: DynamicWeb/dynamicweb.py:4712
 msgid "Store web pages in archive"
@@ -7293,7 +7287,9 @@ msgstr "Verwende d'Aboville Nachkommen Nummerierungssystem"
 
 #: DescendantsLines/DescendantsLines.py:1552
 msgid "Prepend name with d'Aboville descendant number in the chart."
-msgstr "Dem Namen die  d'Aboville Nachkommennummer im Diagramm voranstellen"
+msgstr ""
+"Den Namen mit der Nummer des Nachkommen von d'Aboville in der Grafik "
+"voranstellen."
 
 #: DescendantsLines/DescendantsLines.py:1555
 msgid "Include an image"
@@ -8032,7 +8028,7 @@ msgstr "_Land:"
 
 #: PlaceCompletion/placecompletion.glade:366
 msgid "C_enter latitude:"
-msgstr "Längengrad  z_entrieren:"
+msgstr "Längengrad z_entrieren:"
 
 #: PlaceCompletion/placecompletion.glade:383
 msgid "Center longitude:"
@@ -8614,7 +8610,7 @@ msgid ""
 "Removing %d '%s' attributes to '%s'\n"
 msgstr ""
 "\n"
-"Entferne %d '%s' Attribute bis  '%s'\n"
+"Entfernen von %d '%s'-Attributen zu '%s'\n"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:10
 msgid "Warp the chart shape"
@@ -8848,8 +8844,7 @@ msgstr "Individueller Farbgradient"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:71
 msgid "The color of the individuals is faded to black with increasing age."
-msgstr ""
-"Die Farbe der Individuen verfärbt sich  mit zunehmendem Alter bis schwarz."
+msgstr "Die Farbe der Individuen verblasst mit zunehmendem Alter zu Schwarz."
 
 #: LifeLineChartView/_dummy_translation_string_po.py:72
 msgid "Font name"
@@ -13340,7 +13335,7 @@ msgstr "Eingebürgert oder Ausländer"
 
 #: Form/form_us.xml.h:727
 msgid "Able to speak English; if not, language spoken"
-msgstr "Kann Englisch sprechen; wenn nicht,  gesprochene Sprache"
+msgstr "Englischkenntnisse; falls nicht, gesprochene Sprache"
 
 #: Form/form_us.xml.h:729
 msgid "Nature of industry"
@@ -13621,10 +13616,8 @@ msgid "Is this house on a farm (or ranch)?"
 msgstr ""
 
 #: Form/form_us.xml.h:900
-#, fuzzy
-#| msgid "Owners of land"
 msgid "On 3+ acres of land?"
-msgstr "Landbesitzer"
+msgstr "Auf mehr als 3 Hektar Land?"
 
 #: Form/form_us.xml.h:901
 msgid "Is this house on a place of three or more acres?"
@@ -13649,20 +13642,18 @@ msgid "Marital status"
 msgstr "Familienstand"
 
 #: Form/form_us.xml.h:909
-#, fuzzy
-#| msgid "7. Single, married, widowed, divorced or legally separated"
 msgid "Is he now married, widowed, divorced, separated, or never married?"
-msgstr "7. Single, verheiratet, verwitwet, geschieden oder rechtlich getrennt"
+msgstr ""
+"Ist er jetzt verheiratet, verwitwet, geschieden, getrennt lebend oder nie "
+"verheiratet?"
 
 #: Form/form_us.xml.h:911
 msgid "What State (or foreign country) was he born in?"
 msgstr ""
 
 #: Form/form_us.xml.h:912
-#, fuzzy
-#| msgid "Naturalized"
 msgid "Is he naturalized?"
-msgstr "Eingebürgert"
+msgstr "Ist er eingebürgert?"
 
 #: Form/form_us.xml.h:913
 #, fuzzy
@@ -13697,10 +13688,8 @@ msgid "Was this person looking for work?"
 msgstr ""
 
 #: Form/form_us.xml.h:919
-#, fuzzy
-#| msgid "Place of employment or business"
 msgid "Has a job or business?"
-msgstr "Arbeitsort oder Geschäft"
+msgstr "Hat er einen Job oder eine Firma?"
 
 #: Form/form_us.xml.h:920
 msgid "Even though he didn’t work last week, does he have a job or business?"
@@ -13783,20 +13772,16 @@ msgid "What is the highest grade of school that he has attended?"
 msgstr ""
 
 #: Form/form_us.xml.h:942
-#, fuzzy
-#| msgid "Complexion"
 msgid "Completed?"
-msgstr "Hautfarbe"
+msgstr "Abgeschlossen?"
 
 #: Form/form_us.xml.h:943
 msgid "Did he finish this grade?"
 msgstr ""
 
 #: Form/form_us.xml.h:944
-#, fuzzy
-#| msgid "Attended school since Sept. 1, 1909"
 msgid "Attended school since Feb 1, 1950?"
-msgstr "Schulbesuch seit 1. Sept. 1909"
+msgstr "Seit dem 1. Februar 1950 zur Schule gegangen?"
 
 #: Form/form_us.xml.h:945
 msgid "Has he attended school at any time since February 1st?"
@@ -13901,10 +13886,8 @@ msgid "WWI Veteran?"
 msgstr "Veteran?"
 
 #: Form/form_us.xml.h:964
-#, fuzzy
-#| msgid "World War State"
 msgid "World War I?"
-msgstr "Weltkrieg Staat"
+msgstr "Erster Weltkrieg?"
 
 #: Form/form_us.xml.h:965
 msgid "Any other time, including present service?"
@@ -13937,12 +13920,12 @@ msgid "# years since marriage ended"
 msgstr "Jahre der gegenwärtigen Ehe"
 
 #: Form/form_us.xml.h:971
-#, fuzzy
-#| msgid "7. Single, married, widowed, divorced or legally separated"
 msgid ""
 "How many years since this person was married, widowed, divorced, or "
 "separated?"
-msgstr "7. Single, verheiratet, verwitwet, geschieden oder rechtlich getrennt"
+msgstr ""
+"Wie viele Jahre sind vergangen, seit diese Person verheiratet, verwitwet, "
+"geschieden oder getrennt war?"
 
 #: Form/form_us.xml.h:972
 msgid "How many children has she ever borne, not counting stillbirths?"
@@ -14198,7 +14181,7 @@ msgstr "und wo"
 
 #: Form/form_us.xml.h:1048
 msgid "Have you your parole"
-msgstr "Haben sie ihre  Bewährung"
+msgstr "Hast du deine Bewährung"
 
 #: Form/form_us.xml.h:1049
 msgid "Voting Precinct and County"
@@ -17733,7 +17716,7 @@ msgstr "Polizeilich freie Stadt"
 #: Form/form_gb.xml.h:569
 msgid "Whether 1. Deaf and Dumb, 2. Blind, 3. Imbecile or Idiot 4. Lunatic"
 msgstr ""
-"Ob 1,  Taub und stumm, 2.  Blind, 3.  Schwachsinnig oder Idiot 4.  Wahnsinnig"
+"Ob 1. Taub und stumm, 2. blind, 3. schwachsinnig oder Idiot 4. Geistesgestört"
 
 #: Form/form_gb.xml.h:474
 msgid "School Board District"
@@ -17811,8 +17794,8 @@ msgid ""
 "\"Deaf and Dumb\", \"Dumb only\", \"Blind\", \"Imbecile or Idiot\", or "
 "\"Lunatic\""
 msgstr ""
-"\"Taub und Stumm\",   \"nur Stumm\", \"Blind\",   \"Schwachsinnig oder "
-"Idiot\"  oder \"Wahnsinnig\""
+"\"Taubstumm\", \"Nur stumm\", \"Blind\", \"Schwachsinnig oder Idiot\" oder "
+"\"Geisteskranker\""
 
 #: Form/form_gb.xml.h:595
 msgid "Poor Law Union"
@@ -18451,10 +18434,8 @@ msgid ""
 msgstr ""
 
 #: Heatmap/heatmap.py:103
-#, fuzzy
-#| msgid "First name:"
 msgid "File name"
-msgstr "Vorname:"
+msgstr "Dateiname"
 
 #: Heatmap/heatmap.py:117
 msgid "Enable custom start position"
@@ -18466,10 +18447,8 @@ msgid ""
 msgstr ""
 
 #: Heatmap/heatmap.py:124
-#, fuzzy
-#| msgid "C_enter latitude:"
 msgid "Start latitude"
-msgstr "Längengrad  z_entrieren:"
+msgstr "Start Breitengrad"
 
 #: Heatmap/heatmap.py:126
 msgid ""
@@ -18478,10 +18457,8 @@ msgid ""
 msgstr ""
 
 #: Heatmap/heatmap.py:129
-#, fuzzy
-#| msgid "Center longitude:"
 msgid "Start longitude"
-msgstr "Längengrad zentrieren:"
+msgstr "Start Längengrad"
 
 #: Heatmap/heatmap.py:131
 msgid ""
@@ -19395,7 +19372,7 @@ msgstr "Minimale Gesichtshöhe (Pkt)"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:149
 msgid "Detect faces inside existing boxes"
-msgstr "Erkennt Gesichter in existierenden  Kästen"
+msgstr "Gesichter innerhalb bestehender Boxen erkennen"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:151
 msgid "Sensitivity (1 min .. 20 max)"
@@ -20139,10 +20116,8 @@ msgid "Female Box Color"
 msgstr "Umrandung weibliche Box."
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:898
-#, fuzzy
-#| msgid "Colour of female persons:"
 msgid "Box background color for female person"
-msgstr "Farbe weiblicher Personen:"
+msgstr "Box-Hintergrundfarbe für weibliche Person"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:904
 #, fuzzy
@@ -21034,10 +21009,8 @@ msgid "Dark (default)"
 msgstr "- Standardwert -"
 
 #: GraphView/avatars.py:61
-#, fuzzy
-#| msgid "Height:"
 msgid "Light"
-msgstr "Höhe:"
+msgstr "Licht"
 
 #: GraphView/avatars.py:62
 msgid "Cartoon"
@@ -21145,10 +21118,8 @@ msgid "Choose male avatar"
 msgstr "Wähle eine Kategorie."
 
 #: GraphView/graphview.py:859
-#, fuzzy
-#| msgid "Female over 21"
 msgid "Female avatar:"
-msgstr "Weiblich über 21"
+msgstr "Weiblicher Avatar:"
 
 #: GraphView/graphview.py:860
 #, fuzzy
@@ -21157,10 +21128,8 @@ msgid "Choose female avatar"
 msgstr "Farbig weiblich 45 und älter"
 
 #: GraphView/graphview.py:872
-#, fuzzy
-#| msgid "Show avatars"
 msgid "Unknown avatar:"
-msgstr "Avatare anzeigen"
+msgstr "Unbekannter Avatar:"
 
 #: GraphView/graphview.py:873
 #, fuzzy
@@ -21169,10 +21138,8 @@ msgid "Choose Unknown avatar"
 msgstr "Avatare anzeigen"
 
 #: GraphView/graphview.py:885
-#, fuzzy
-#| msgid "Show avatars"
 msgid "Other avatar:"
-msgstr "Avatare anzeigen"
+msgstr "Anderer Avatar:"
 
 #: GraphView/graphview.py:886
 msgid "Choose Other avatar"
@@ -21529,10 +21496,8 @@ msgid "Rows starting with this in the text column will be hidden "
 msgstr ""
 
 #: HistContext/HistContext.py:126
-#, fuzzy
-#| msgid "Place _filter:"
 msgid "Use filter "
-msgstr "Orte_filter:"
+msgstr "Filter anwenden "
 
 #: HistContext/HistContext.py:129
 #, fuzzy
@@ -21580,10 +21545,8 @@ msgstr " in einer Reihe: "
 
 #: HistContext/HistContext.py:289 HistContext/HistContext.py:333
 #: HistContext/HistContext.py:420
-#, fuzzy
-#| msgid "Errors"
 msgid "Error:"
-msgstr "Fehler"
+msgstr "Fehler:"
 
 #: HistContext/HistContext.py:327
 msgid ": line does not contain four sections separated by semicolons in : \""
@@ -22217,13 +22180,13 @@ msgstr "%(female_name)s wurde beigesetzt in %(year)s in %(place)s."
 #, python-format
 msgid "%(male_name)s participated in a census in %(year)s at %(place)s."
 msgstr ""
-"%(male_name)s nahm an einer Volkszählung teil  in %(year)s in %(place)s."
+"%(male_name)s nahmen an einer Volkszählung in %(year)s in %(place)s teil."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:535
 #, python-format
 msgid "%(female_name)s participated in a census in %(year)s at %(place)s."
 msgstr ""
-"%(female_name)s nahm an einer Volkszählung teil  in %(year)s in %(place)s."
+"%(female_name)s nahm an einer Volkszählung teil in %(year)s in %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:544
 #, python-format
@@ -22349,7 +22312,7 @@ msgstr "%(female_name)s ist eingewandert in %(year)s in %(place)s."
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:611
 #, python-format
 msgid "%(male_name)s got married in %(year)s at %(place)s."
-msgstr "%(male_name)s heiratete  in %(year)s in %(place)s."
+msgstr "%(male_name)s hat geheiratet in %(year)s in %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:613
 #, python-format
@@ -22372,14 +22335,14 @@ msgstr "%(female_name)s als Familie beigetreten in %(year)s in %(place)s."
 #, python-format
 msgid "%(male_name)s entered a civil union in %(year)s at %(place)s."
 msgstr ""
-"%(male_name)s ging eine eingetragene Partnerschaft ein  in %(year)s in "
+"%(male_name)s ging eine eingetragene Partnerschaft ein in %(year)s in "
 "%(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:623
 #, python-format
 msgid "%(female_name)s entered a civil union in %(year)s at %(place)s."
 msgstr ""
-"%(female_name)s ging eine eingetragene Partnerschaft ein  in %(year)s in "
+"%(female_name)s ging eine eingetragene Partnerschaft ein in %(year)s in "
 "%(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:632
@@ -22829,8 +22792,8 @@ msgid ""
 "Marriages after this year are represented bythe year only. Invalid entries "
 "will be ignored."
 msgstr ""
-"Hochzeitsdatum  nach diesem Jahr werden nur durch das Jahr dargestellt. "
-"Ungültige Einträge werden ignoriert."
+"Eheschließungen nach diesem Jahr werden nur durch die Jahreszahl "
+"dargestellt. Ungültige Einträge werden ignoriert."
 
 #: NetworkChart/NetworkChart.py:1092
 msgid "Round marriage to year after year entered (above)."
