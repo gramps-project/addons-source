@@ -2,14 +2,13 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Igal Shapira <igal.shapira@gmail.com>, 2009, 2010, 2011.
-# Avi Markovitz <avi.markovitz@gmail.com>, 2019.
-#
+# Avi Markovitz <avi.markovitz@gmail.com>, 2019, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-15 16:17+0000\n"
+"PO-Revision-Date: 2025-02-17 00:14+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -104,7 +103,7 @@ msgstr "הוספת אירועי פטירה ללא תאריכים"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:113
 msgid "Add death events with dates"
-msgstr "הוספת ארוע פטירה עם תאריכים"
+msgstr "הוספת אירוע פטירה עם תאריכים"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:114
 msgid "Add death events with or without estimated dates"
@@ -140,7 +139,7 @@ msgstr "קיצוניים (אחרי ולפני)"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:139
 msgid "Dates on events are either about or after/before"
-msgstr "תאריכי אירועים הם מסוג, בקרוב או אחרי/לפני"
+msgstr "תאריכי אירועים הם, בקירוב או לפני/אחרי"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:172
 msgid ""
@@ -167,7 +166,7 @@ msgstr ""
 "\n"
 "אופן השימוש:\n"
 "1. מעבר ללשונית 'אפשרויות'\n"
-"2. סימון אפשרות [ ] ''הסרה' לניקוי אומדנים קודמים\n"
+"2. סימון אפשרות [ ] 'הסרה' לניקוי אומדנים קודמים\n"
 "3. בחריה באפשרות 'הוספת תאריך לאירועים עם או בלי תאריכים\n"
 "4. הקשה על ביצוע\n"
 "5. בחירת האנשים להם יש להוסיף אירועים\n"
@@ -176,12 +175,12 @@ msgstr ""
 "הערות: כדי לקבע אירוע לצמיתות, יש להסיר אותו מהמקור. אחרת, הוא יוסר בפעם "
 "הבאה שתתבצע הסרת אירועים האלה באופן אוטומטי.\n"
 "\n"
-"ייתכן שתדרש הפעלת הכלי שוב ושוב (מבלי להסיר אירועים קודמים) כדי להוסיף את כל "
-"האירועים האפשריים."
+"ייתכן שידרש לשפעל את הכלי שוב ושוב (מבלי להסיר אירועים קודמים) כדי להוסיף את "
+"כל האירועים האפשריים."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:199
 msgid "Select All"
-msgstr "בחירת הכול"
+msgstr "לבחור הכול"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:200
 msgid "Select None"
@@ -189,7 +188,7 @@ msgstr "לא לבחור דבר"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:201
 msgid "Toggle Selection"
-msgstr "החלפת בחירה"
+msgstr "מיתוג בחירה"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:202
 msgid "Add Selected Events"
@@ -197,7 +196,7 @@ msgstr "הוספת אירועים שנבחרו"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:208
 msgid "Remove Events, Notes, and Source and Reselect Data"
-msgstr "הסרת אירועים, הערות ומקורות, ולבחור נתונים מחדש"
+msgstr "הסרת אירועים, הערות ומקורות, ובחירת נתונים מחדש"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:209
 msgid ""
@@ -207,11 +206,11 @@ msgstr "האם להסיר אירועים קודמים, הערות ומקורות
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:210
 msgid "Remove and Run Select Again"
-msgstr "הסרה והרצת בחירה חוזרת"
+msgstr "להסיר ולהריץ בחירה חוזרת"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:214
 msgid "Reselect Data"
-msgstr "בחירת נתונים מחדש"
+msgstr "לבחור נתונים מחדש"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:215
 msgid "Are you sure you want to reselect data?"
@@ -231,7 +230,7 @@ msgstr "יחסי"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:237
 msgid "Processing...\n"
-msgstr "עיבוד מתבצע...\n"
+msgstr "מתבצע עיבוד...\n"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:255
 msgid "Removing old estimations... "
@@ -251,20 +250,20 @@ msgid ""
 "Selecting... \n"
 "\n"
 msgstr ""
-"בחירה...\n"
+"מתבצעת בחירה... \n"
 "\n"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:359
 msgid "Add birth and death events"
-msgstr "הוספת אירועי לידה ופטירה"
+msgstr "להוסיף אירועי לידה ופטירה"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:361
 msgid "Add birth event"
-msgstr "הוספת אירוע לידה"
+msgstr "להוסיף אירוע לידה"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:363
 msgid "Add death event"
-msgstr "הוספת אירוע פטירה"
+msgstr "להוסיף אירוע פטירה"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:398
 msgid "No events to be added."
@@ -272,12 +271,12 @@ msgstr "אין אירועים להוספה."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:439
 msgid "Selecting... "
-msgstr "בחירה... "
+msgstr "מתבצעת בחירה... "
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:440
 #, python-format
 msgid "Adding events '%s'..."
-msgstr "הוספת אירועים '%s' מתבצעת..."
+msgstr "מתבצעת הוספת '%s' אירועים..."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:465
 #, python-format
@@ -344,7 +343,7 @@ msgstr ""
 
 #: lxml/etreeGramplet.py:139
 msgid "No file parsed..."
-msgstr ""
+msgstr "לא נותח קובץ..."
 
 #: lxml/etreeGramplet.py:205 lxml/etreeGramplet.py:210
 msgid "Number of editions back"
@@ -390,7 +389,7 @@ msgstr ""
 #: lxml/etreeGramplet.py:418
 #, python-format
 msgid "XML: Last %s editions since %s, were at/on :\n"
-msgstr ""
+msgstr "XML: %s מהדורות מאז %s,היו ב/על:\n"
 
 #: lxml/etreeGramplet.py:471
 #, python-format
@@ -399,6 +398,9 @@ msgid ""
 "XML: Number of records and relations : \t%s\n"
 "\n"
 msgstr ""
+"\n"
+"XML: מספר רשומות וקשרים: \t%s\n"
+"\n"
 
 #: lxml/etreeGramplet.py:474
 #, python-format
@@ -406,6 +408,8 @@ msgid ""
 "Number of tags : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
+"מספר תגים: \n"
+"\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:476
 #, python-format
@@ -413,6 +417,8 @@ msgid ""
 "Number of tags : \n"
 "\t\t\t%s\n"
 msgstr ""
+"מספר תגים: \n"
+"\t\t\t%s\n"
 
 #: lxml/etreeGramplet.py:478
 #, python-format
@@ -500,7 +506,7 @@ msgstr ""
 
 #: lxml/lxmlGramplet.gpr.py:10 lxml/lxmlGramplet.gpr.py:19
 msgid "lxml"
-msgstr ""
+msgstr "lxml"
 
 #: lxml/lxmlGramplet.gpr.py:11
 #, fuzzy
@@ -514,19 +520,19 @@ msgstr ""
 
 #: lxml/lxmlGramplet.py:67
 msgid "\"gzip\" is missing"
-msgstr ""
+msgstr "\"gzip\" חסר"
 
 #: lxml/lxmlGramplet.py:89
 msgid "Missing python3 lxml"
-msgstr ""
+msgstr "חסר  python3 lxml"
 
 #: lxml/lxmlGramplet.py:89
 msgid "Please, try to install \"python3 lxml\" package."
-msgstr ""
+msgstr "נא לנסות להתקין את חבילת  python3 lxml."
 
 #: lxml/lxmlGramplet.py:164
 msgid "No file loaded..."
-msgstr ""
+msgstr "לא נטען קובץ..."
 
 #: lxml/lxmlGramplet.py:298
 msgid "XSD validation (lxml)"
@@ -549,7 +555,7 @@ msgstr ""
 
 #: lxml/lxmlGramplet.py:329
 msgid "Parsing issue"
-msgstr ""
+msgstr "סוגיית נלוח"
 
 #: lxml/lxmlGramplet.py:329
 #, python-format
@@ -612,11 +618,11 @@ msgstr ""
 #: lxml/lxmlGramplet.py:469 lxml/lxmlGramplet.py:474 lxml/lxmlGramplet.py:479
 #: lxml/lxmlGramplet.py:484
 msgid "0"
-msgstr ""
+msgstr "0"
 
 #: lxml/lxmlGramplet.py:495
 msgid "File parsed with"
-msgstr ""
+msgstr "קובץ נולח באמצעות"
 
 #: lxml/lxmlGramplet.py:498
 msgid "File was generated on "
@@ -630,7 +636,7 @@ msgstr "מזהה גרמפס.."
 
 #: lxml/lxmlGramplet.py:500
 msgid "Period: "
-msgstr ""
+msgstr "תקופה: "
 
 #: lxml/lxmlGramplet.py:502
 msgid " entries for surname(s); no frequency yet"
@@ -672,39 +678,39 @@ msgstr ""
 
 #: lxml/lxmlGramplet.py:565
 msgid "xmllint: skip DTD validation"
-msgstr ""
+msgstr "xmllint: לדלג על אימות DTD"
 
 #: lxml/lxmlGramplet.py:589
 msgid "I am looking at ..."
-msgstr ""
+msgstr "אני מביט על..."
 
 #: lxml/lxmlGramplet.py:590
 msgid "Content generated by Gramps"
-msgstr ""
+msgstr "תוכן שנוצר על ידי גרמפס"
 
 #: lxml/lxmlGramplet.py:593
 msgid "List of sources"
-msgstr ""
+msgstr "רשימת מקורות"
 
 #: lxml/lxmlGramplet.py:611
 msgid "Australia"
-msgstr ""
+msgstr "אוסטרליה"
 
 #: lxml/lxmlGramplet.py:612
 msgid "Brazil"
-msgstr ""
+msgstr "ברזיל"
 
 #: lxml/lxmlGramplet.py:623
 msgid "India"
-msgstr ""
+msgstr "הודו"
 
 #: lxml/lxmlGramplet.py:625
 msgid "Norway"
-msgstr ""
+msgstr "נורבגיה"
 
 #: lxml/lxmlGramplet.py:626
 msgid "Portugal"
-msgstr ""
+msgstr "פורטוגל"
 
 #: lxml/lxmlGramplet.py:695
 #, python-format
@@ -838,7 +844,7 @@ msgstr "יוצרי GeoNames"
 
 #: PlaceCleanup/placecleanup.py:955
 msgid "GeoNames was founded by Marc Wick. You can reach him at "
-msgstr "GeoNamesנוסדה על ידי מארק וויק. אפשר לפנות אליו ב־ "
+msgstr "GeoNames נוסדה על ידי מארק וויק. אפשר לפנות אליו ב־ "
 
 #: PlaceCleanup/placecleanup.py:958
 msgid ""
@@ -847,7 +853,7 @@ msgid ""
 "This work is licensed under a "
 msgstr ""
 "GeoNames הוא מיזם של Unxos GmbH, ויינגרטנשטראסה 8, 8708 מנדורף, שוויץ.\n"
-"עבודה זו מורשית תחת "
+"עבודה זו מורשית בכפוף ל "
 
 #: PlaceCleanup/placecleanup.py:961
 msgid "Creative Commons Attribution 3.0 License"
@@ -856,11 +862,11 @@ msgstr "רישיון קריאטיב קומונס אטריביושן 3.0"
 #: PlaceCleanup/placecleanup.py:973
 #, python-format
 msgid "Add Souce/Repo/Note (%s)"
-msgstr "הוספת מקור/מאגר/הערה (%s)"
+msgstr "להוסיף מקור/מאגר/הערה (%s)"
 
 #: PlaceCleanup/placecleanup.py:1074
 msgid "This Place is not used!"
-msgstr "מקום זה אינו בשימוש!"
+msgstr "מקום זה לא בשימוש!"
 
 #: PlaceCleanup/placecleanup.py:1075
 msgid ""
@@ -872,7 +878,7 @@ msgstr ""
 
 #: PlaceCleanup/placecleanup.glade:27
 msgid "City, County, State, Country"
-msgstr "עיר, מחוז, מדינה, ארץ"
+msgstr "עיר, מחוז, ארץ, מדינה"
 
 #: PlaceCleanup/placecleanup.glade:52
 msgid "Primary Name"
@@ -880,15 +886,15 @@ msgstr "שם עיקרי"
 
 #: PlaceCleanup/placecleanup.glade:89
 msgid "The current Primary name."
-msgstr "שם ראשי נוכחי."
+msgstr "שם עקרי נוכחי."
 
 #: PlaceCleanup/placecleanup.glade:102
 msgid "The postal code for the place, if any."
-msgstr "המיקוד של המקום, אם קיים."
+msgstr "המיקוד של המקום, כגול שקיים."
 
 #: PlaceCleanup/placecleanup.glade:114
 msgid "What type of place this is. Eg 'Country', 'City', ... ."
-msgstr "סוג מקום. לדוגמה:  'מדינה', 'עיר', ... ."
+msgstr "סוג מקום. לדוגמה: 'מדינה', 'עיר', ... ."
 
 #: PlaceCleanup/placecleanup.glade:133
 msgid "Check this box if you want to keep the original Postal code."
@@ -943,12 +949,12 @@ msgstr "בחירת שורה אחת ושימוש בלחצן זה להפיכת ה�
 
 #: PlaceCleanup/placecleanup.glade:548
 msgid "Discard"
-msgstr "להסיר"
+msgstr "לסלק"
 
 #: PlaceCleanup/placecleanup.glade:552
 msgid ""
 "Select one or more rows and use this button to discard the alternative names."
-msgstr "בחירת שורה אחת או יותר ושימוש בלחצן זה לשמיטת השמות החלופיים."
+msgstr "בחירת שורה אחת או יותר ושימוש בלחצן זה לסילוק השמות החלופיים."
 
 #: PlaceCleanup/placecleanup.glade:580
 msgid "Cancel the operation, no changes are made to your Place."
@@ -956,7 +962,7 @@ msgstr "ביטול פעולה, לא נעשו שינויים ברשומת המק�
 
 #: PlaceCleanup/placecleanup.glade:595
 msgid "Store the values in your Place."
-msgstr "אחסון הערכים במקום."
+msgstr "אחסון הערכים ברשומות המקום."
 
 #: PlaceCleanup/placecleanup.glade:677
 msgid "Keep Web Links"
@@ -972,7 +978,7 @@ msgstr "הוספת מובאה ומקור למקום"
 
 #: PlaceCleanup/placecleanup.glade:697
 msgid "This Adds a Citation to your place, citing GeoNames."
-msgstr "הוספת מובאה למקום, מובאה מ־GeoNames."
+msgstr "פעולה זו מוסיפה מובאה למקום, מובאה מ־GeoNames."
 
 #: PlaceCleanup/placecleanup.glade:711
 msgid "GeoNames User ID"
@@ -980,11 +986,11 @@ msgstr "מזהה משתמש GeoNames"
 
 #: PlaceCleanup/placecleanup.glade:723
 msgid "Enter you Geonames user ID here."
-msgstr "הזנת מזהה משתמש GeoNames כאן."
+msgstr "להזין כאן מזהה משתמש GeoNames."
 
 #: PlaceCleanup/placecleanup.glade:735
 msgid "Alternative Names Languages to keep"
-msgstr "שמות ושפות חלופיים לניהול"
+msgstr "שמות ושפות חלופיים שיושארו"
 
 #: PlaceCleanup/placecleanup.glade:747
 msgid ""
@@ -1133,19 +1139,19 @@ msgstr "הגדרה כאדם נפעיל"
 #: FilterRules/ageatdeath.gpr.py:25 FilterRules/ageatdeath.py:72
 #: FilterRules/ageatdeath.py:74
 msgid "Filter people by their age at death"
-msgstr ""
+msgstr "סינון אנשים לפי גילם בפטירתם"
 
 #: FilterRules/ageatdeath.gpr.py:26
 msgid "Filter rule that matches people by their age at death"
-msgstr ""
+msgstr "כלל סינון שמתאים לאנשים לפי גילם בפטירתם"
 
 #: FilterRules/ageatdeath.py:47
 msgid "Age in years at person's death."
-msgstr ""
+msgstr "גילו של אדם בשנים בעת פטירתו."
 
 #: FilterRules/ageatdeath.py:71
 msgid "Age:"
-msgstr ""
+msgstr "גיל:"
 
 #: FilterRules/associationsofpersonmatch.gpr.py:25
 #: FilterRules/associationsofpersonmatch.gpr.py:26
