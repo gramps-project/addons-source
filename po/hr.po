@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-16 10:55+0000\n"
+"PO-Revision-Date: 2025-02-17 00:14+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -55,7 +55,7 @@ msgstr "Procijeni datume"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:11
 msgid "Calculates estimated dates for birth and death."
-msgstr "Procijenjuje datume rođenja i smrti."
+msgstr "Procjenjuje datume rođenja i smrti."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:83
 msgid "Select filter to restrict people"
@@ -94,7 +94,7 @@ msgstr "Uključi rođenja s datumima"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:107
 msgid "Add a birth events with or without estimated dates"
-msgstr "Uključi rođenja sa ili bez približnog datuma"
+msgstr "Uključi rođenja sa ili bez procijenjenih datuma"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:111
 msgid "Do not add death events"
@@ -110,7 +110,7 @@ msgstr "Uključi smrti s datumima"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:114
 msgid "Add death events with or without estimated dates"
-msgstr "Uključi smrti sa ili bez približnog datuma"
+msgstr "Uključi smrti sa ili bez procijenjenih datuma"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:118
 msgid "Maximum age"
@@ -5028,7 +5028,7 @@ msgstr ""
 
 #: QuiltView/QuiltView.py:1926
 msgid "The path color"
-msgstr "Boja staze"
+msgstr "Boja linije"
 
 #: QuiltView/QuiltView.py:1931
 msgid "The selected person color"
@@ -6763,7 +6763,7 @@ msgid ""
 "Your image has been converted and the original file has been deleted, and "
 "the full path has been updated!"
 msgstr ""
-"Tvoja je slika konvertirana, original je uklonjen, a puna staza slike je "
+"Tvoja je slika konvertirana, original je uklonjen, a potpuna staza slike je "
 "aktualizirana!"
 
 #: EditExifMetadata/editexifmetadata.py:812
@@ -16854,7 +16854,7 @@ msgstr "Starost supružnika"
 
 #: Form/form_pl.xml.h:14 Form/form_pl.xml.h:42
 msgid "Spouse's Birth Year (Estimated)"
-msgstr "Godina rođenja (procijenjeno)"
+msgstr "Godina rođenja supružnika (procijenjeno)"
 
 #: Form/form_pl.xml.h:15 Form/form_pl.xml.h:43
 msgid "Spouse's Father's Name"
@@ -19797,26 +19797,20 @@ msgid "Failed writing "
 msgstr "Greška u pisanju %s: %s"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:849
-#, fuzzy
-#| msgid "Year of immigration to the United States"
 msgid "Year of Birth of Center Person"
-msgstr "Godina imigracije u SAD"
+msgstr "Godina rođenja središnje osobe"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:852
 msgid "The year of birth of the center person. Estimate a year if unknown"
-msgstr ""
+msgstr "Godina rođenja središnje osobe. Procijeni godinu ako je nepoznata"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:857
-#, fuzzy
-#| msgid "Invalid Destination Directory"
 msgid "Destination directory"
-msgstr "Nevažeća odredišna mapa"
+msgstr "Odredišna mapa"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:860
-#, fuzzy
-#| msgid "The destination path for generated files."
 msgid "Path for generated files"
-msgstr "Odredište za stvorene datoteke."
+msgstr "Staza za stvorene datoteke"
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:868
 #, fuzzy
