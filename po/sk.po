@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 00:14+0000\n"
+"PO-Revision-Date: 2025-02-17 15:09+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: MediaMerge/mediamerge.gpr.py:31
 msgid "Merge Media"
@@ -1653,7 +1653,7 @@ msgstr "Nie je možné kopírovať súbory šablóny WWW stránok z \"%(path)s\"
 
 #: D3Charts/AncestralCollapsibleTree.py:816
 msgid "Ancestral Collapsible Tree Options"
-msgstr ""
+msgstr "Možnosti skladacieho stromu predkov"
 
 #: D3Charts/AncestralCollapsibleTree.py:840 D3Charts/AncestralFanChart.py:723
 #: D3Charts/DescendantIndentedTree.py:1804
@@ -1670,51 +1670,53 @@ msgstr "Zvoľte farebnú schému pozadia"
 
 #: D3Charts/AncestralCollapsibleTree.py:847
 msgid "RGB-color for male box background."
-msgstr ""
+msgstr "RGB-farba pre pozadie kolónky muža."
 
 #: D3Charts/AncestralCollapsibleTree.py:850
 msgid "Male Expandable Background Color"
-msgstr ""
+msgstr "Rozšíriteľná farba pozadia muža"
 
 #: D3Charts/AncestralCollapsibleTree.py:852
 msgid "RGB-color for male expandable box background."
-msgstr ""
+msgstr "RGB-farba pre rozšířitelné pozadie kolónky muža."
 
 #: D3Charts/AncestralCollapsibleTree.py:855
 msgid "Female Background"
-msgstr ""
+msgstr "Pozadie Žena"
 
 #: D3Charts/AncestralCollapsibleTree.py:856
 msgid "RGB-color for female box background."
-msgstr ""
+msgstr "RGB-farba pre pozadie kolónky ženy."
 
 #: D3Charts/AncestralCollapsibleTree.py:859
 msgid "Female Expandable Background"
-msgstr ""
+msgstr "Rozšíriteľná farba pozadia ženy"
 
 #: D3Charts/AncestralCollapsibleTree.py:861
 msgid "RGB-color for female expandable box background."
-msgstr ""
+msgstr "RGB-farba pre rozšířitelné pozadie kolónky ženy."
 
 #: D3Charts/AncestralCollapsibleTree.py:867 D3Charts/AncestralFanChart.py:739
 #: D3Charts/DescendantIndentedTree.py:1826
 msgid "The destination path for generated files."
-msgstr ""
+msgstr "Cieľová cesta pre vygenerované súbory."
 
 #: D3Charts/AncestralCollapsibleTree.py:872 D3Charts/AncestralFanChart.py:744
 #: D3Charts/DescendantIndentedTree.py:1831
 msgid "The destination file name for html content."
-msgstr ""
+msgstr "Názov cieľového súboru pre obsah html."
 
 #: D3Charts/AncestralCollapsibleTree.gpr.py:23
 msgid "Ancestral Collapsible Tree"
-msgstr ""
+msgstr "Skladací strom predkov"
 
 #: D3Charts/AncestralCollapsibleTree.gpr.py:33
 msgid ""
 "Generates a web page with a graphical representation of ancestors (SVG) "
 "represented as a Collapsible Tree Layout from the D3.js JavaScript library."
 msgstr ""
+"Vygeneruje webovú stránku s grafickým znázornením predkov (SVG) "
+"reprezentovaných ako Collapsible Tree Layout z knižnice JavaScript D3.js."
 
 #: D3Charts/DescendantIndentedTree.gpr.py:23
 #: D3Charts/DescendantIndentedTree.py:909
@@ -22822,11 +22824,11 @@ msgstr ""
 
 #: NetworkChart/NetworkChart.py:1008
 msgid "Male Background"
-msgstr ""
+msgstr "Pozadie muža"
 
 #: NetworkChart/NetworkChart.py:1012
 msgid "Male Background Alpha"
-msgstr ""
+msgstr "Pozadie muža alfa"
 
 #: NetworkChart/NetworkChart.py:1014
 msgid "Alpha for Male box background (transparent=0, solid=255)."
@@ -22834,20 +22836,20 @@ msgstr ""
 
 #: NetworkChart/NetworkChart.py:1018
 msgid "Male Box Edge"
-msgstr ""
+msgstr "Okraj kolónky muža"
 
 #: NetworkChart/NetworkChart.py:1019
 msgid "RGB-color for Male box edge."
-msgstr ""
+msgstr "RGB-farba pre okraj kolónky muža."
 
 #: NetworkChart/NetworkChart.py:1023
 msgid "RGB-color for Female box background."
-msgstr ""
+msgstr "RGB-farba pre pozadie kolónky Žena."
 
 # added:
 #: NetworkChart/NetworkChart.py:1026
 msgid "Female Background Alpha"
-msgstr ""
+msgstr "Pozadie ženy alfa"
 
 #: NetworkChart/NetworkChart.py:1028
 msgid "Alpha for Female box background (transparent=0, solid=255)."
@@ -22855,15 +22857,15 @@ msgstr ""
 
 #: NetworkChart/NetworkChart.py:1033
 msgid "Female Box Edge"
-msgstr ""
+msgstr "Pozadie kolónky ženy"
 
 #: NetworkChart/NetworkChart.py:1034
 msgid "RGB-color for Female box edge."
-msgstr ""
+msgstr "RGB-farba pre okraj kolónky ženy."
 
 #: NetworkChart/NetworkChart.py:1037
 msgid "Other Background"
-msgstr ""
+msgstr "Iné pozadie"
 
 #: NetworkChart/NetworkChart.py:1038
 #, fuzzy
@@ -22873,53 +22875,55 @@ msgstr "RGB-farba geometrického tvaru nájdených osôb."
 
 #: NetworkChart/NetworkChart.py:1041
 msgid "Other Background Alpha"
-msgstr ""
+msgstr "Iné pozadie alfa"
 
 #: NetworkChart/NetworkChart.py:1043
 msgid "Alpha for Other box background (transparent=0, solid=255)."
-msgstr ""
+msgstr "Alfa pre pozadie inej kolónky (priehľadné=0, plné=255)."
 
 #: NetworkChart/NetworkChart.py:1047
 msgid "Family Connector Line"
-msgstr ""
+msgstr "Spojovacia linka rodiny"
 
 #: NetworkChart/NetworkChart.py:1048
 msgid "RGB-color for family connector line."
-msgstr ""
+msgstr "RGB-farba pre spojovaciu linku rodiny."
 
 #: NetworkChart/NetworkChart.py:1051
 msgid "Marriage Connector Line"
-msgstr ""
+msgstr "Spojovacia linka manželstva"
 
 #: NetworkChart/NetworkChart.py:1052
 msgid "RGB-color for marriage connector line."
-msgstr ""
+msgstr "RGB-farba pre spojovaciu linku manželstva."
 
 #: NetworkChart/NetworkChart.py:1055
 msgid "Highlight Connector Line"
-msgstr ""
+msgstr "Zvýrazniť spojovaciu linku"
 
 #: NetworkChart/NetworkChart.py:1056
 msgid ""
 "RGB-color for the highlighted path between two individuals.  If the graph."
 "inverts, reverse the order to change."
 msgstr ""
+"RGB-farba pre zvýraznenú cestu medzi dvoma jedincami.  Ak sa graf invertuje, "
+"obráťte poradie na zmenu."
 
 #: NetworkChart/NetworkChart.py:1061
 msgid "Trim Box Edge"
-msgstr ""
+msgstr "Orezať okraj kolónky"
 
 #: NetworkChart/NetworkChart.py:1062
 msgid "RGB-color for box edge that has been trimmed."
-msgstr ""
+msgstr "RGB-farba pre okraj kolónky, ktorý bol orezaný."
 
 #: NetworkChart/NetworkChart.py:1066
 msgid "Remove color background on all nodes."
-msgstr ""
+msgstr "Odstrániť farebné pozadie na všetkých uzloch."
 
 #: NetworkChart/NetworkChart.py:1068
 msgid "Removes color background for individuals (nodes) on chart."
-msgstr ""
+msgstr "Odstráni farebné pozadie pre jedincov (uzly) v grafe."
 
 #: NetworkChart/NetworkChart.py:1073
 msgid ""
@@ -22940,7 +22944,7 @@ msgstr ""
 
 #: NetworkChart/NetworkChart.py:1082
 msgid "Represent birthday by year only."
-msgstr ""
+msgstr "Reprezentovať narodeniny len podľa roku."
 
 #: NetworkChart/NetworkChart.py:1086
 msgid ""
@@ -22961,83 +22965,87 @@ msgstr ""
 
 #: NetworkChart/NetworkChart.py:1094
 msgid "Represent marriage by year only."
-msgstr ""
+msgstr "Reprezentovať manželstvo len podľa roku."
 
 #: NetworkChart/NetworkChart.py:1099
 msgid ""
 "Attempts to remove middle names.  Only works for entries with birth year in "
 "the record."
 msgstr ""
+"Pokusy o odstránenie prostredných mien.  Funguje len pre položky s rokom "
+"narodenia v zázname."
 
 #: NetworkChart/NetworkChart.py:1107
 msgid "Remove middle names."
-msgstr ""
+msgstr "Odstrániť prostredné mená."
 
 #: NetworkChart/NetworkChart.py:1112
 msgid "Allow inclusion of private records in chart."
-msgstr ""
+msgstr "Povoliť zahrnutie súkromných záznamov do grafu."
 
 #: NetworkChart/NetworkChart.py:1117
 msgid "Trim"
-msgstr ""
+msgstr "Orezať"
 
 #: NetworkChart/NetworkChart.py:1119
-#, fuzzy
-#| msgid "Descendant"
 msgid "Trim descendants"
-msgstr "Potomok"
+msgstr "Orezať potomkov"
 
 #: NetworkChart/NetworkChart.py:1121
 msgid "All descendants (children) of selected individuals will not be shown."
-msgstr ""
+msgstr "Všetci potomkovia (deti) vybraných jedincov nebudú zobrazení."
 
 #: NetworkChart/NetworkChart.py:1127
 msgid "Enable trimming of descendants."
-msgstr ""
+msgstr "Povoliť orezávanie potomkov."
 
 #: NetworkChart/NetworkChart.py:1129
 msgid ""
 "You must enter valid person(s) before \n"
 "enabling trimming of descendants from tree."
 msgstr ""
+"Musíte zadať platnú(é) osobu(y) pred \n"
+"umožnením orezania potomkov zo stromu."
 
 #: NetworkChart/NetworkChart.py:1134
-#, fuzzy
-#| msgid "Ancestor"
 msgid "Trim ancestors"
-msgstr "Predok"
+msgstr "Orezať predkov"
 
 #: NetworkChart/NetworkChart.py:1135
 msgid "All ancestors (parents) of selected individuals will not be shown."
-msgstr ""
+msgstr "Všetci predkovia (rodičia) vybraných jedincov nebudú zobrazení."
 
 #: NetworkChart/NetworkChart.py:1141
 msgid "Enable trimming of ancestors."
-msgstr ""
+msgstr "Povoliť orezávanie predkov."
 
 #: NetworkChart/NetworkChart.py:1143
 msgid "Enable trimming of ancestors from tree."
-msgstr ""
+msgstr "Umožní orezávanie predkov zo stromu."
 
 #: NetworkChart/NetworkChart.py:1147
 msgid "Enable trim groups."
-msgstr ""
+msgstr "Povoliť orezať skupiny."
 
 #: NetworkChart/NetworkChart.py:1149
 msgid ""
 "Remove groups less than Min Group Size.  Automatic\n"
 "for databases with more than 1500 individuals."
 msgstr ""
+"Odstráni skupiny menšie ako minimálna veľkosť skupiny.  Automatické\n"
+"pre databázy s viac ako 1500 jedincami."
 
 #: NetworkChart/NetworkChart.py:1154
 msgid "Min Group Size"
-msgstr ""
+msgstr "Najmenšia veľkosť skupiny"
 
 #: NetworkChart/NetworkChart.py:1156
 msgid ""
 "Enter the minimum size group to display.\n"
 "Value may be 2 or greater."
 msgstr ""
+"Zadať minimálnu veľkosť skupiny, ktorá sa má zobraziť.\n"
+"Hodnota môže byť 2 alebo viac."
 
 #: NetworkChart/NetworkChart.py:1164
 msgid ""
@@ -23046,28 +23054,30 @@ msgid ""
 "displayed path(s).\n"
 "Select two"
 msgstr ""
+"Vybrať počiatočných a\n"
+"koncových jedincov v\n"
+"zobrazených cestách.\n"
+"Vybrať dvoch"
 
 #: NetworkChart/NetworkChart.py:1167
 msgid ""
 "Starting and ending person for displayed path(s).\n"
 "Select two people"
 msgstr ""
+"Počiatočná a koncová osoba pre zobrazenú(-é) cestu(-y).\n"
+"Vybrať dve osoby"
 
 #: NetworkChart/NetworkChart.py:1171
-#, fuzzy
-#| msgid "Highlight the home person"
 msgid "Highlight path(s)"
-msgstr "Zvýrazniť východziu osobu"
+msgstr "Zvýrazniť cestu(-y)"
 
 #: NetworkChart/NetworkChart.py:1174 NetworkChart/NetworkChart.py:1188
 msgid "Any"
-msgstr ""
+msgstr "Akékoľvek"
 
 #: NetworkChart/NetworkChart.py:1176
-#, fuzzy
-#| msgid "Select None"
 msgid "Default (None)"
-msgstr "Vybrať žiadne"
+msgstr "Predvolené (žiadne)"
 
 #: NetworkChart/NetworkChart.py:1181
 msgid ""
@@ -23075,16 +23085,17 @@ msgid ""
 "Direct - Highlight direct descendant/ancestor paths.\n"
 "Any - Highlight any path(s) including direct or indirect."
 msgstr ""
+"Žiadne – nezvýrazňovať cesty.\n"
+"Priame – zvýrazniť priame cesty potomkov/predkov.\n"
+"Akékoľvek – zvýrazniť akúkoľvek cestu(-y), vrátane priamych alebo nepriamych."
 
 #: NetworkChart/NetworkChart.py:1186
-#, fuzzy
-#| msgid "Show full dates"
 msgid "Show only path(s)"
-msgstr "Zobraziť celé dátumy"
+msgstr "Zobraziť len cestu(-y)"
 
 #: NetworkChart/NetworkChart.py:1189
 msgid "Default (none)"
-msgstr ""
+msgstr "Predvolené (žiadne)"
 
 #: NetworkChart/NetworkChart.py:1193
 msgid ""
@@ -23092,40 +23103,45 @@ msgid ""
 "Direct - Show only direct descendant/ancestor paths.\n"
 "Any - Show only path(s) direct or indirect."
 msgstr ""
+"Žiadne - nezobraziť iba cesty.\n"
+"Priame - zobraziť len priame cesty potomkov/predkov.\n"
+"Ľubovoľné - zobraziť len priame alebo nepriame cesty."
 
 #: NetworkChart/NetworkChart.py:1200
 msgid "Select person at center of selection radius in graph."
-msgstr ""
+msgstr "Vybrať osobu v strede okruhu výberu v grafe."
 
 #: NetworkChart/NetworkChart.py:1203
 msgid ""
 "Max connections\n"
 "from center"
 msgstr ""
+"Maximum spojení\n"
+"od stredu"
 
 #: NetworkChart/NetworkChart.py:1206
 msgid ""
 "Enter the maximum number of connections allowed from\n"
 "the center person.  Value may be 1 or greater."
 msgstr ""
+"Zadať maximálny počet povolených spojení od\n"
+"hlavnej osoby.  Hodnota môže byť 1 alebo vyššia."
 
 #: NetworkChart/NetworkChart.py:1211
 msgid "Limit graph to max connections from center."
-msgstr ""
+msgstr "Obmedzí graf na maximálny počet spojení od stredu."
 
 #: NetworkChart/NetworkChart.py:1213
 msgid "Display up to max connections from central person."
-msgstr ""
+msgstr "Zobraziť maximálny počet spojení od hlavnej osoby."
 
 #: NetworkChart/NetworkChart.py:1217
-#, fuzzy
-#| msgid "Highlight the home person"
 msgid "Highlight central person in graph."
-msgstr "Zvýrazniť východziu osobu"
+msgstr "Zvýrazniť hlavnú osobu v grafe."
 
 #: NetworkChart/NetworkChart.py:1219
 msgid "Add yellow color background to central person."
-msgstr ""
+msgstr "Pridať žltú farbu pozadia k hlavnej osobe."
 
 #: NetworkChart/NetworkChart.py:1234
 #, fuzzy
