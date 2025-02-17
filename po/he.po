@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 00:14+0000\n"
-"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"PO-Revision-Date: 2025-02-17 15:09+0000\n"
+"Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
 "Language: he\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: MediaMerge/mediamerge.gpr.py:31
 msgid "Merge Media"
@@ -333,10 +333,8 @@ msgid "etree"
 msgstr ""
 
 #: lxml/etreeGramplet.gpr.py:11
-#, fuzzy
-#| msgid "Gramplet for tagging people in photos"
 msgid "Gramplet for testing etree with Gramps XML"
-msgstr "גראמפלט לתיוג אנשים בתמונות"
+msgstr "גראמפלט לבדיקת etree באמצעות גרמפס XML"
 
 #: lxml/etreeGramplet.py:85 lxml/lxmlGramplet.py:110
 msgid "Invalid timestamp"
@@ -514,10 +512,8 @@ msgid "lxml"
 msgstr "lxml"
 
 #: lxml/lxmlGramplet.gpr.py:11
-#, fuzzy
-#| msgid "Gramplet for tagging people in photos"
 msgid "Gramplet for testing lxml and XSLT"
-msgstr "גראמפלט לתיוג אנשים בתמונות"
+msgstr "גראמפלט לבדיקת lxml ו־XSLT"
 
 #: lxml/lxmlGramplet.py:67
 msgid "Where is gzip?"
@@ -568,10 +564,8 @@ msgid "Cannot parse content of \"%(file)s\""
 msgstr ""
 
 #: lxml/lxmlGramplet.py:333
-#, fuzzy
-#| msgid " (Passed: version "
 msgid "Gramps version"
-msgstr " (עבר: גרסה "
+msgstr "גרסת גרמפס"
 
 #: lxml/lxmlGramplet.py:333
 #, python-format
@@ -590,10 +584,8 @@ msgid "Cannot validate \"%(file)s\" via RelaxNG schema"
 msgstr ""
 
 #: lxml/lxmlGramplet.py:341
-#, fuzzy
-#| msgid "Files"
 msgid "File issue"
-msgstr "קבצים"
+msgstr "סוגיית קובץ"
 
 #: lxml/lxmlGramplet.py:341
 #, python-format
@@ -601,16 +593,12 @@ msgid "Cannot parse \"%(file)s\" via etree"
 msgstr ""
 
 #: lxml/lxmlGramplet.py:359
-#, fuzzy
-#| msgid "Processing...\n"
 msgid "Parsing file..."
-msgstr "עיבוד מתבצע...\n"
+msgstr "מתבצע ניתוח קובץ..."
 
 #: lxml/lxmlGramplet.py:456
-#, fuzzy
-#| msgid "Missing Files"
 msgid "Missing header"
-msgstr "קבצים חסרים"
+msgstr "חסרה כותרת"
 
 #: lxml/lxmlGramplet.py:456
 msgid ""
@@ -634,10 +622,8 @@ msgid "File was generated on "
 msgstr ""
 
 #: lxml/lxmlGramplet.py:498
-#, fuzzy
-#| msgid "The Gramps ID.."
 msgid " by Gramps "
-msgstr "מזהה גרמפס.."
+msgstr " על ידי גרמפס "
 
 #: lxml/lxmlGramplet.py:500
 msgid "Period: "
@@ -648,20 +634,16 @@ msgid " entries for surname(s); no frequency yet"
 msgstr ""
 
 #: lxml/lxmlGramplet.py:503
-#, fuzzy
-#| msgid "Set properties for multiple places"
 msgid " entries for place(s)"
-msgstr "נגדרת מאפיינים למספר מקומות"
+msgstr " רשומות למקום"
 
 #: lxml/lxmlGramplet.py:504
 msgid " note(s)"
 msgstr ""
 
 #: lxml/lxmlGramplet.py:505
-#, fuzzy
-#| msgid "Sources?"
 msgid " source(s)"
-msgstr "מקורות?"
+msgstr " מקורות?"
 
 #: lxml/lxmlGramplet.py:521 lxml/lxmlGramplet.py:717
 msgid "Gallery.html"
@@ -1126,20 +1108,16 @@ msgstr "כתם"
 
 #: FilterRules/activepersonrule.gpr.py:27
 #: FilterRules/activepersonrule.gpr.py:28
-#, fuzzy
-#| msgid "Set as active person"
 msgid "The active Person"
-msgstr "הגדרה כאדם נפעיל"
+msgstr "האדם הפעיל"
 
 #: FilterRules/activepersonrule.py:45
 msgid "Active person"
 msgstr "אדם פעיל"
 
 #: FilterRules/activepersonrule.py:47
-#, fuzzy
-#| msgid "Set as active person"
 msgid "Matches the active person"
-msgstr "הגדרה כאדם נפעיל"
+msgstr "תואם לאדם הפעיל"
 
 #: FilterRules/ageatdeath.gpr.py:25 FilterRules/ageatdeath.py:72
 #: FilterRules/ageatdeath.py:74
@@ -1197,10 +1175,8 @@ msgid "Matches families matched by an event filter"
 msgstr ""
 
 #: FilterRules/hasrolerule.gpr.py:27
-#, fuzzy
-#| msgid "Add birth events with dates"
 msgid "People with events with a selected role"
-msgstr "הוספת אירועי לידה עם תאריכים"
+msgstr "אירועם לאנשים עם תפקיד שנבחר"
 
 #: FilterRules/hasrolerule.gpr.py:28 FilterRules/hasrolerule.py:69
 msgid "Matches people with an event with a selected role"
@@ -1227,16 +1203,12 @@ msgid "Inverse"
 msgstr ""
 
 #: FilterRules/hasrolerule.py:68
-#, fuzzy
-#| msgid "Add birth events with dates"
 msgid "People with events with the <role>"
-msgstr "הוספת אירועי לידה עם תאריכים"
+msgstr "אירועם לאנשים עם <תפקיד>"
 
 #: FilterRules/hasrolerule.py:92
-#, fuzzy
-#| msgid "Add birth events with dates"
 msgid "Families with events with the <role>"
-msgstr "הוספת אירועי לידה עם תאריכים"
+msgstr "אירועם למשפחות עם <תפקיד>"
 
 #: FilterRules/hassourcefilter.gpr.py:28
 msgid "Source matching parameters"
@@ -1264,10 +1236,8 @@ msgid "Include the children in the matching families."
 msgstr ""
 
 #: FilterRules/infamilyrule.py:75 FilterRules/infamilyrule.py:124
-#, fuzzy
-#| msgid "Include media data"
 msgid "Include Parents"
-msgstr "הכללת נתונים על מדיה"
+msgstr "הכללת הורים"
 
 #: FilterRules/infamilyrule.py:76
 msgid "Include the parents in the matching families."
@@ -1319,9 +1289,8 @@ msgid "Sources and Citations Report"
 msgstr ""
 
 #: SourcesCitationsReport/SourcesCitationsReport.gpr.py:33
-#, fuzzy
 msgid "Provides a source and Citations Report with notes"
-msgstr "קבעי תיאור עבור קובץ זה."
+msgstr "מספק דוח מקור ומבואות עם הערות"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:272
 #, python-format
@@ -1343,14 +1312,9 @@ msgid "  %s"
 msgstr ""
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:294
-#, fuzzy, python-format
-#| msgid ""
-#| "\n"
-#| "   %s of "
+#, python-format
 msgid " - %s "
-msgstr ""
-"\n"
-"   %s של"
+msgstr " - %s "
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:300
 #, python-format
@@ -1363,14 +1327,9 @@ msgid "   N-ID: %s"
 msgstr ""
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:310
-#, fuzzy, python-format
-#| msgid ""
-#| "\n"
-#| "   %s of "
+#, python-format
 msgid "   %s"
-msgstr ""
-"\n"
-"   %s של"
+msgstr "   %s"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:324
 #: SourcesCitationsReport/SourcesCitationsReport.py:345
@@ -1383,20 +1342,13 @@ msgstr ""
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:326
 #: SourcesCitationsReport/SourcesCitationsReport.py:347
-#, fuzzy, python-format
-#| msgid ""
-#| "\n"
-#| "   %s of "
+#, python-format
 msgid "   ( %s )"
-msgstr ""
-"\n"
-"   %s של"
+msgstr "   ( %s )"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:333
-#, fuzzy
-#| msgid "Add as a Spouse"
 msgid "   Spouses: "
-msgstr "הוספה כבן(ת) זוג"
+msgstr "   זוגאים: "
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:335
 #, python-format
@@ -1418,20 +1370,16 @@ msgid "Title of the Report"
 msgstr ""
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:414
-#, fuzzy
-#| msgid "Select a note for this report"
 msgid "Title string for the report."
-msgstr "בחירת הערה עבור דוח זה"
+msgstr "מחרוזת כותרת לדוח זה."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:417
 msgid "Subtitle of the Report"
 msgstr ""
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:418
-#, fuzzy
-#| msgid "Select a note for this report"
 msgid "Subtitle string for the report."
-msgstr "בחירת הערה עבור דוח זה"
+msgstr "מחרוזת כותרת משנה לדוח זה."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:423
 msgid "researcher name"
@@ -1442,10 +1390,8 @@ msgid "Select sources using a filter"
 msgstr ""
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:443
-#, fuzzy
-#| msgid "New person"
 msgid "Show persons"
-msgstr "אדם חדש"
+msgstr "להציג אנשים"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:444
 msgid "Whether to show events and persons mentioned in the note"
@@ -1460,10 +1406,8 @@ msgid "The style used for the subtitle of the report."
 msgstr ""
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:509
-#, fuzzy
-#| msgid "Select a note for this report"
 msgid "The style used for the footer of the report."
-msgstr "בחירת הערה עבור דוח זה"
+msgstr "הסגנון שישש לסיומת עמוד בדוח."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:524
 msgid "The style used for source title."
@@ -1486,10 +1430,8 @@ msgid "The style used for a column title."
 msgstr ""
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:591
-#, fuzzy
-#| msgid "The postal code for the place, if any."
 msgid "The style used for each section."
-msgstr "המיקוד של המקום, אם קיים."
+msgstr "הסיגנון שישמש בכל מקטע."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:622
 msgid "The style used for event and person details."
@@ -1497,10 +1439,8 @@ msgstr ""
 
 #: GenealogyTree/gt_ancestor.py:170 GenealogyTree/gt_descendant.py:187
 #: GenealogyTree/gt_grandparent.py:231 GenealogyTree/gt_sandclock.py:250
-#, fuzzy
-#| msgid "Include media data"
 msgid "Include images"
-msgstr "הכללת נתונים על מדיה"
+msgstr "הכללת תמונות"
 
 #: GenealogyTree/gt_ancestor.py:171 GenealogyTree/gt_descendant.py:188
 #: GenealogyTree/gt_grandparent.py:232 GenealogyTree/gt_sandclock.py:251
@@ -1531,26 +1471,20 @@ msgid "Extra spacing of grandparent families (mm)"
 msgstr ""
 
 #: GenealogyTree/gt_sandclock.py:235
-#, fuzzy
-#| msgid "Select a media file for this report"
 msgid "The center family for the report"
-msgstr "בחירת קובץ מדיה עבור דוח זה"
+msgstr "המשפחה שבמרכז הדוח"
 
 #: GenealogyTree/gt_sandclock.py:238
-#, fuzzy
-#| msgid "Generate"
 msgid "Generations up"
-msgstr "חילול"
+msgstr "דורות מעלה"
 
 #: GenealogyTree/gt_sandclock.py:242
 msgid "Generations down"
 msgstr ""
 
 #: GenealogyTree/gt_sandclock.py:246
-#, fuzzy
-#| msgid "sibling"
 msgid "Include siblings"
-msgstr "אחאי"
+msgstr "לכלול אחאים"
 
 #: GenealogyTree/gt_sandclock.py:247
 msgid "Include siblings of ancestors."
@@ -1753,10 +1687,9 @@ msgid ""
 msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1374
-#, fuzzy, python-format
-#| msgid "PlaceCompletion is unable to create %s %s"
+#, python-format
 msgid "Failed to create %s: %s"
-msgstr "PlaceCompletion לא מסוגל ליצור את %s %s"
+msgstr "כשל ביצירת %s: %s"
 
 #: D3Charts/DescendantIndentedTree.py:1391
 #, python-format
@@ -1822,10 +1755,8 @@ msgid "Whether to include private objects."
 msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1877
-#, fuzzy
-#| msgid "Include custom note"
 msgid "Include Last Name Only"
-msgstr "הכללת הערה מותאם אישית"
+msgstr "הכללת שם משפחה בלבד"
 
 #: D3Charts/DescendantIndentedTree.py:1879
 msgid "Include Full Name Only"
@@ -1966,10 +1897,8 @@ msgid "Whether or not to generate links for spouses."
 msgstr ""
 
 #: D3Charts/DescendantIndentedTree.py:1979
-#, fuzzy
-#| msgid "Biography"
 msgid "Biography Content"
-msgstr "תולדות חיים"
+msgstr "תוכן תולדות חיים"
 
 #: D3Charts/DescendantIndentedTree.py:1981
 msgid "Show biography tooltips"
@@ -2016,20 +1945,16 @@ msgid "Collection of Web sites for Sweden (requires libwebconnect)"
 msgstr ""
 
 #: SVWebconnectPack/SVWebPack.py:33
-#, fuzzy
-#| msgid "Find GeoNames"
 msgid "Find A Grave"
-msgstr "חיפוש GeoNames"
+msgstr "Find A Grave"
 
 #: SVWebconnectPack/SVWebPack.py:34
 msgid "FamilySearch.org"
 msgstr ""
 
 #: SVWebconnectPack/SVWebPack.py:35
-#, fuzzy
-#| msgid "_Google Maps"
 msgid "Google SV"
-msgstr "_Google Maps"
+msgstr "Google SV"
 
 #: SVWebconnectPack/SVWebPack.py:38
 msgid "FamilySearch.org Tree"
@@ -2168,9 +2093,8 @@ msgstr "עדכון זמין"
 #: EventDescriptionEditor/EventDescriptionEditor.gpr.py:25
 #: EventDescriptionEditor/EventDescriptionEditor.py:52
 #: EventDescriptionEditor/EventDescriptionEditor.py:64
-#, fuzzy
 msgid "Event Description Editor"
-msgstr "תיאור:"
+msgstr "עורך תיאור אירועים"
 
 #: EventDescriptionEditor/EventDescriptionEditor.gpr.py:27
 msgid ""
@@ -2178,10 +2102,8 @@ msgid ""
 msgstr ""
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:75
-#, fuzzy
-#| msgid "Search..."
 msgid "Search substring..."
-msgstr "חיפוש..."
+msgstr "חיפוש מחרוזת משנה..."
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:105
 msgid "INFO"
@@ -2193,10 +2115,8 @@ msgid "%s event descriptions of %s events were changed."
 msgstr ""
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:142
-#, fuzzy
-#| msgid "Replace text"
 msgid "Replace"
-msgstr "החלפת מלל"
+msgstr "החלפה"
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:145
 msgid "Replace substring only"
@@ -2209,10 +2129,8 @@ msgid ""
 msgstr ""
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:151
-#, fuzzy
-#| msgid "Use regex"
 msgid "Allow regex"
-msgstr "שימוש בביטוי רגיל (regex)"
+msgstr "לאפשר ביטוי רגיל (regex)"
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:152
 msgid "Allow regular expressions."
@@ -2411,20 +2329,16 @@ msgid "Pause search expansion"
 msgstr ""
 
 #: Betawhatsnext/Betawhatsnext.py:105
-#, fuzzy
-#| msgid "Note on Person"
 msgid "Completed Person"
-msgstr "הערת אדם"
+msgstr "אדם שהושלם"
 
 #: Betawhatsnext/Betawhatsnext.py:112
 msgid " Completed offspring Families"
 msgstr ""
 
 #: Betawhatsnext/Betawhatsnext.py:118
-#, fuzzy
-#| msgid "Note on Family"
 msgid "Ignore Person or Family"
-msgstr "הערת"
+msgstr "להתעלם מאדם או משפחה"
 
 #: Betawhatsnext/Betawhatsnext.py:223
 msgid ""
@@ -2535,20 +2449,17 @@ msgid "Differences between Database and File"
 msgstr ""
 
 #: Differences/differences.py:161
-#, fuzzy
-#| msgid "Set preferences"
 msgid "No differences"
-msgstr "קביעת העדפות"
+msgstr "אין הבדלים"
 
 #: Differences/differences.py:168
 msgid "Missing items in File that are added in Database"
 msgstr ""
 
 #: Differences/differences.py:174
-#, fuzzy, python-format
-#| msgid "Missing Files"
+#, python-format
 msgid "Missing %s: %s"
-msgstr "קבצים חסרים"
+msgstr "חסר %s: %s"
 
 #: Differences/differences.py:178
 msgid "Nothing missing"
@@ -2559,10 +2470,9 @@ msgid "Added items in File that are missing in Database"
 msgstr ""
 
 #: Differences/differences.py:191
-#, fuzzy, python-format
-#| msgid "Added %d events."
+#, python-format
 msgid "Added %s: %s "
-msgstr "נוספו %d אירועים."
+msgstr "נוסף %s: %s "
 
 #: Differences/differences.py:195
 msgid "Nothing added"
@@ -2593,10 +2503,8 @@ msgid "Include items not in file but in database"
 msgstr ""
 
 #: Differences/differences.py:321
-#, fuzzy
-#| msgid "Show hidden items"
 msgid "Show items added in file"
-msgstr "הצג פריטים מוסתרים"
+msgstr "הצגת פריטים שנוספו בקובץ"
 
 #: Differences/differences.py:322
 msgid "Include items in file but not in database"
@@ -2616,10 +2524,8 @@ msgid "AncestorFill for %s"
 msgstr ""
 
 #: AncestorFill/AncestorFill.py:205
-#, fuzzy
-#| msgid "Generate"
 msgid "Generation "
-msgstr "חילול"
+msgstr "חילול "
 
 #: AncestorFill/AncestorFill.py:206
 msgid "Number of Ancestors found "
@@ -2678,20 +2584,16 @@ msgid ""
 msgstr ""
 
 #: AncestorFill/AncestorFill.py:317
-#, fuzzy
-#| msgid "Display a text biography"
 msgid "Display theoretical"
-msgstr "הצגת תולדות חיים מילוליים"
+msgstr "להציג עיוני"
 
 #: AncestorFill/AncestorFill.py:319
 msgid "Whether to display the theoretical number of ancestor by generation"
 msgstr ""
 
 #: AncestorFill/AncestorFill.py:361
-#, fuzzy
-#| msgid "The postal code for the place, if any."
 msgid "The style used for the title of the page."
-msgstr "המיקוד של המקום, אם קיים."
+msgstr "הסגנון שמשמש בכותרת העמוד."
 
 #: SharedPostgreSQL/sharedpostgresql.gpr.py:24
 msgid "SharedPostgreSQL"
@@ -2750,10 +2652,8 @@ msgid ""
 msgstr ""
 
 #: ExportRaw/ExportRaw.gpr.py:4
-#, fuzzy
-#| msgid "Export"
 msgid "Raw Export"
-msgstr "ייצוא"
+msgstr "ייצוא גולמי"
 
 #: ExportRaw/ExportRaw.gpr.py:5
 msgid "This is a raw python object dump"
@@ -2858,10 +2758,8 @@ msgid "Tree"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:2435
-#, fuzzy
-#| msgid "Search result places"
 msgid "Search results"
-msgstr "תוצאות חיפוש מקומות"
+msgstr "תוצאות חיפוש"
 
 #: DynamicWeb/dynamicweb.py:2595 DynamicWeb/dynamicweb.py:3014
 #: DynamicWeb/dynamicweb.py:4997
@@ -2917,10 +2815,8 @@ msgid "DynamicWeb_report#Help"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:2977
-#, fuzzy
-#| msgid "Examining places"
 msgid "Examples"
-msgstr "בחינת מקומות"
+msgstr "דוגמאות"
 
 #: DynamicWeb/dynamicweb.py:2978
 msgid "F"
@@ -2955,10 +2851,8 @@ msgid "Include half and/ or step-siblings on the individual pages"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:3013 DynamicWeb/dynamicweb.py:5076
-#, fuzzy
-#| msgid "Include referenced people"
 msgid "Include references in indexes"
-msgstr "הכללת אנשים שאליהם קיימת הפניה"
+msgstr "הכללת אזכורים במפתחות"
 
 #: DynamicWeb/dynamicweb.py:3018 DynamicWeb/dynamicweb.py:4985
 msgid "Insert sources author in the sources title"
@@ -2969,32 +2863,24 @@ msgid "M"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:3030
-#, fuzzy
-#| msgid "Maximum age"
 msgid "Maximize"
-msgstr "גיל מרבי"
+msgstr "מירוב"
 
 #: DynamicWeb/dynamicweb.py:3031
-#, fuzzy
-#| msgid "Media downloaded"
 msgid "Media Index"
-msgstr "מדיה ירדה"
+msgstr "מפתח מדיה"
 
 #: DynamicWeb/dynamicweb.py:3032
-#, fuzzy
-#| msgid "Media Merge"
 msgid "Media Type"
-msgstr "מיזוג מדיה"
+msgstr "סוג מדיה"
 
 #: DynamicWeb/dynamicweb.py:3037
 msgid "No data available in table"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:3039
-#, fuzzy
-#| msgid "%s matches were found"
 msgid "No matching records found"
-msgstr "נמצאו %s התאמות"
+msgstr "לא נמצאו רשומות התאמות"
 
 #: DynamicWeb/dynamicweb.py:3040
 msgid "No matching surname."
@@ -3009,38 +2895,28 @@ msgid "Person page"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:3049
-#, fuzzy
-#| msgid "Don't search"
 msgid "Person to search for"
-msgstr "לא לחפש"
+msgstr "האדם אותו יש לחפש"
 
 #: DynamicWeb/dynamicweb.py:3051
 msgid "Persons Index"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:3052
-#, fuzzy
-#| msgid "Add Person"
 msgid "Persons"
-msgstr "הוספת אדם"
+msgstr "אנשים"
 
 #: DynamicWeb/dynamicweb.py:3054
-#, fuzzy
-#| msgid "Places tool"
 msgid "Places Index"
-msgstr "כלי מקומות"
+msgstr "מפתח מקומות"
 
 #: DynamicWeb/dynamicweb.py:3056
-#, fuzzy
-#| msgid "Problem reading file"
 msgid "Preparing file ..."
-msgstr "בעית קריאת קובץ"
+msgstr "מתבצעת הכנת קובץ ..."
 
 #: DynamicWeb/dynamicweb.py:3060
-#, fuzzy
-#| msgid "No relation to active person"
 msgid "Relationship to Father"
-msgstr "אין קשר לאדם הפעיל"
+msgstr "יוחסה לאב"
 
 #: DynamicWeb/dynamicweb.py:3061
 msgid "Relationship to Mother"
@@ -3087,10 +2963,8 @@ msgid "Save tree as file"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:3075
-#, fuzzy
-#| msgid "Search in:"
 msgid "Search:"
-msgstr "חיפוש ב:"
+msgstr "חיפוש:"
 
 #: DynamicWeb/dynamicweb.py:3078
 msgid "Select the background color scheme"
@@ -3129,10 +3003,8 @@ msgid "Show _MENU_ entries"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:3105 DynamicWeb/dynamicweb.py:5170
-#, fuzzy
-#| msgid "Show Built-in items"
 msgid "Show duplicates"
-msgstr "הצג פריטים מובנים"
+msgstr "הצגת רשומות כפולות"
 
 #: DynamicWeb/dynamicweb.py:3106
 msgid "Showing 0 to 0 of 0 entries"
@@ -3147,22 +3019,16 @@ msgid "Sort by:"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:3114
-#, fuzzy
-#| msgid "Sources?"
 msgid "Sources Index"
-msgstr "מקורות?"
+msgstr "מפתח מקורות"
 
 #: DynamicWeb/dynamicweb.py:3117 DynamicWeb/dynamicweb.py:4992
-#, fuzzy
-#| msgid "The Gramps ID.."
 msgid "Suppress Gramps ID"
-msgstr "מזהה גרמפס.."
+msgstr "דיכוי מזהה גרמפס"
 
 #: DynamicWeb/dynamicweb.py:3119
-#, fuzzy
-#| msgid "Surname, Given"
 msgid "Surnames Index"
-msgstr "שם משפחה, שם פרטי"
+msgstr "מפתח שם משפחה"
 
 #: DynamicWeb/dynamicweb.py:3123
 msgid "U"
@@ -3193,26 +3059,20 @@ msgid "Use a table format for the sources index"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:3151
-#, fuzzy
-#| msgid "The postal code for the place, if any."
 msgid "Use a table format for the places index"
-msgstr "המיקוד של המקום, אם קיים."
+msgstr "להשתמש בתסדיר טבלאי למפתח המקומות"
 
 #: DynamicWeb/dynamicweb.py:3153
-#, fuzzy
-#| msgid "Note on Family"
 msgid "Used for family"
-msgstr "הערת"
+msgstr "משמש למשפחות"
 
 #: DynamicWeb/dynamicweb.py:3154
 msgid "Used for media"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:3155
-#, fuzzy
-#| msgid "New person"
 msgid "Used for person"
-msgstr "אדם חדש"
+msgstr "משמש לאדם"
 
 #: DynamicWeb/dynamicweb.py:3156
 msgid "Used for place"
@@ -3223,10 +3083,8 @@ msgid "Used for source"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:3159
-#, fuzzy
-#| msgid "Keep Web Links"
 msgid "Web Link"
-msgstr "להשאיר קישורי רשת"
+msgstr "קישור רשת"
 
 #: DynamicWeb/dynamicweb.py:3164 DynamicWeb/dynamicweb.py:5173
 msgid ""
@@ -3247,14 +3105,10 @@ msgid "Without title"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:3170
-#, fuzzy
-#| msgid "Zoom In"
 msgid "Zoom in"
 msgstr "התקרבות"
 
 #: DynamicWeb/dynamicweb.py:3171
-#, fuzzy
-#| msgid "Zoom Out"
 msgid "Zoom out"
 msgstr "התרחקות"
 
@@ -3333,10 +3187,8 @@ msgid ""
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:4712
-#, fuzzy
-#| msgid "Store the values in your Place."
 msgid "Store web pages in archive"
-msgstr "אחסון הערכים במקום."
+msgstr "אחסון עמודי מרשתת בארכיון"
 
 #: DynamicWeb/dynamicweb.py:4715
 msgid ""
@@ -3357,16 +3209,12 @@ msgid "Web site title"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:4736
-#, fuzzy
-#| msgid "The file does not exist."
 msgid "The title of the web site"
-msgstr "הקובץ לא קיים."
+msgstr "כותרת אתר המרשתת"
 
 #: DynamicWeb/dynamicweb.py:4741
-#, fuzzy
-#| msgid "Select filter to restrict people"
 msgid "Select filter to restrict people that appear on web site"
-msgstr "בחירת מסנן להגבלת האנשים"
+msgstr "בחירת מסנן להגבלת האנשים שמופיעים באתר מרשתת"
 
 #: DynamicWeb/dynamicweb.py:4755 DynamicWeb/dynamicweb.py:4778
 msgid "Name format (short)"
@@ -3395,20 +3243,16 @@ msgid ""
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:4839
-#, fuzzy
-#| msgid "Export"
 msgid "Export notes"
-msgstr "ייצוא"
+msgstr "ייצוא הערות"
 
 #: DynamicWeb/dynamicweb.py:4840
 msgid "Whether to export notes in the web pages"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:4843
-#, fuzzy
-#| msgid "Export"
 msgid "Export sources"
-msgstr "ייצוא"
+msgstr "ייצוא מקורות"
 
 #: DynamicWeb/dynamicweb.py:4845
 msgid "Whether to export sources and citations in the web pages"
@@ -3427,10 +3271,8 @@ msgid "Whether or not to include the Repository Pages."
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:4861
-#, fuzzy
-#| msgid "Include media data"
 msgid "Include images and media"
-msgstr "הכללת נתונים על מדיה"
+msgstr "הכללת תמונות ומדיה"
 
 #: DynamicWeb/dynamicweb.py:4862
 msgid "Whether to include images and media in the web pages"
@@ -3465,26 +3307,20 @@ msgid "Whether to print the notes type in the notes text"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:4885
-#, fuzzy
-#| msgid "Doing Place changes"
 msgid "Print place pages"
-msgstr "ביצוע שינויים ב'מקומות'"
+msgstr "הדפסת עמודי מקום"
 
 #: DynamicWeb/dynamicweb.py:4886
-#, fuzzy
-#| msgid "Set properties for multiple places"
 msgid "Whether to show pages for the places"
-msgstr "נגדרת מאפיינים למספר מקומות"
+msgstr "האם להציג עמודים עבור המקומות"
 
 #: DynamicWeb/dynamicweb.py:4921
 msgid "Choose your choice of map service for creating the Place Map Pages"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:4926
-#, fuzzy
-#| msgid "_Google Maps"
 msgid "Google map API key"
-msgstr "_Google Maps"
+msgstr "מפתח API של Google Maps"
 
 #: DynamicWeb/dynamicweb.py:4927
 msgid "The API key used for the Google map"
@@ -3520,10 +3356,8 @@ msgid "Whether to insert sources author in the sources title"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:4993
-#, fuzzy
-#| msgid "Need to set GeoNames ID"
 msgid "Whether to hide the Gramps ID"
-msgstr "נדרש להגדיר מזהה GeoNames"
+msgstr "האם להסתיר מזהה גרמפס"
 
 #: DynamicWeb/dynamicweb.py:5001
 msgid "List"
@@ -3566,10 +3400,8 @@ msgid "The default format for the sources index"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:5032
-#, fuzzy
-#| msgid "The postal code for the place, if any."
 msgid "Default format for the places index"
-msgstr "המיקוד של המקום, אם קיים."
+msgstr "תסדיר ברירת מחדל למפתח המקומות"
 
 #: DynamicWeb/dynamicweb.py:5033
 #, fuzzy
@@ -6280,10 +6112,8 @@ msgid "Referenced Region"
 msgstr "עריכת האדם המופנה"
 
 #: PersonEverything/PersonEverything.py:505
-#, fuzzy
-#| msgid "Image type:"
 msgid "Mime type"
-msgstr "סוג תמונה:"
+msgstr "סוג Mime"
 
 #: PersonEverything/PersonEverything.py:516
 msgid ""
@@ -6291,56 +6121,41 @@ msgid ""
 msgstr ""
 
 #: PersonEverything/PersonEverything.py:542
-#, fuzzy
-#| msgid "Image type:"
 msgid "Note type"
-msgstr "סוג תמונה:"
+msgstr "סוג הערה"
 
 #: PersonEverything/PersonEverything.py:553
-#, fuzzy
-#| msgid "Get Place"
 msgid "Parent Place"
-msgstr "אחזור מקום"
+msgstr "מקום אב"
 
 #: PersonEverything/PersonEverything.py:568
 #: PersonEverything/PersonEverything.py:572
-#, fuzzy
-#| msgid "All in degree notation"
 msgid "Alternate Location"
-msgstr "לסמון הכול במעלות"
+msgstr "חלף מקום"
 
 #: PersonEverything/PersonEverything.py:607
-#, fuzzy
-#| msgid "Alternative Names Languages to keep"
 msgid "Alternative Name"
-msgstr "שמות ושפות חלופיים לניהול"
+msgstr "שמות חלופיים"
 
 #: PersonEverything/PersonEverything.py:618
-#, fuzzy
-#| msgid "No Latitude/Longitude given"
 msgid "Latitude, Longitude"
-msgstr "לא נתקבלו ערכי קו אורך/רוחב"
+msgstr "קו אורך, קו רוחב"
 
 #: PersonEverything/PersonEverything.py:648
 msgid "Repository type"
 msgstr ""
 
 #: PersonEverything/PersonEverything.py:670
-#, fuzzy
-#| msgid "Set preferences"
 msgid "Repository reference"
-msgstr "קביעת העדפות"
+msgstr "העדפות מאגר"
 
 #: PersonEverything/PersonEverything.py:671
-#, fuzzy
-#| msgid "Media Merge"
 msgid "Media type"
-msgstr "מיזוג מדיה"
+msgstr "סוג מדיה"
 
 #: PersonEverything/PersonEverything.py:679
-#, fuzzy
 msgid "Origin type"
-msgstr "זמן מקורי"
+msgstr "סוג מוצא"
 
 #: PersonEverything/PersonEverything.py:686
 msgid "Prefix, surname, connector"
@@ -6359,10 +6174,8 @@ msgid "Tag colour and priority"
 msgstr ""
 
 #: PersonEverything/PersonEverything.py:960
-#, fuzzy
-#| msgid "No relatives in a relation found"
 msgid "No source information found"
-msgstr "לא נמצאו קרובי משפחה בקשרי הקירבה"
+msgstr "לא נמצא מידע מקור"
 
 #: GeoAncestor/GeoAncestor.gpr.py:31 GeoAncestor/GeoAncestor.gpr.py:41
 msgid "Ancestors map"
@@ -6377,10 +6190,8 @@ msgid "Ancestors places on the map"
 msgstr ""
 
 #: GeoAncestor/GeoAncestor.py:235
-#, fuzzy
-#| msgid "Common ancestor"
 msgid "GeoAncestor"
-msgstr "אבות קדמונים משותפים"
+msgstr "GeoAncestor"
 
 #: GeoAncestor/GeoAncestor.py:304
 #, python-format
@@ -6388,10 +6199,8 @@ msgid "Ancestors places for %s"
 msgstr ""
 
 #: GeoAncestor/GeoAncestor.py:311
-#, fuzzy
-#| msgid "Examining places"
 msgid "Counting all places"
-msgstr "בחינת מקומות"
+msgstr "מנית כל המקומות"
 
 #: GeoAncestor/GeoAncestor.py:314
 #, fuzzy
