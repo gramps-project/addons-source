@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 00:14+0000\n"
+"PO-Revision-Date: 2025-02-17 11:05+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: MediaMerge/mediamerge.gpr.py:31
 msgid "Merge Media"
@@ -18907,6 +18907,10 @@ msgid ""
 "to differentiate different\n"
 "markers at the same location"
 msgstr ""
+"Spreid de kaartmarkeringen\n"
+"om verschillende soorten\n"
+"markeringen op dezelfde locatie\n"
+"te onderscheiden"
 
 #: GeoTimeLines/GeoTimeLines.py:1786
 msgid ""
@@ -18914,28 +18918,37 @@ msgid ""
 "as measured along the equator\n"
 "(includes latitude distortion)"
 msgstr ""
+"Straal van de spreiding (hm)\n"
+"zoals gemeten langs de evenaar\n"
+"(incl. vervorming breedtegraad)"
 
 #: GeoTimeLines/GeoTimeLines.py:1794
 msgid ""
 "Display markers for unknown ancestors\n"
 "based on earliest descendant location"
 msgstr ""
+"Markeringen tonen voor onbekende voorouders\n"
+"op basis van de locatie van de vroegste afstammeling"
 
 #: GeoTimeLines/GeoTimeLines.py:1803
 msgid ""
 "Days to keep lines on the map after\n"
 "an event"
 msgstr ""
+"Dagen om lijnen op de kaart te houden\n"
+"na een evenement"
 
 #: GeoTimeLines/GeoTimeLines.py:1822
 msgid "Use custom map icons"
-msgstr ""
+msgstr "Aangepaste pictogrammen op kaart"
 
 #: GeoTimeLines/GeoTimeLines.py:1829
 msgid ""
 "If there is no birth event for a person, their age\n"
 "is assumed to be this at their first event"
 msgstr ""
+"Als er geen geboortegebeurtenis is voor een persoon, \n"
+"dan wordt de leeftijd berekend vanaf hun eerste evenement"
 
 #: GeoTimeLines/GeoTimeLines.py:1836
 msgid ""
