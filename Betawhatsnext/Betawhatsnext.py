@@ -83,7 +83,7 @@ class BetaWhatNextGramplet(Gramplet):
 
         # Minimum number of lines we want to see. Further lines with the same
         # distance to the main person will be added on top of this.
-        name = _("Seach Quota ")
+        name = _("Search Quota ")
         opt = NumberOption(name, self.__todos_wanted, 1, 300)
         self.opts.append(opt)
 
