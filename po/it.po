@@ -66,8 +66,8 @@ msgstr ""
 "Project-Id-Version: gramps 3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-06 08:58-0800\n"
-"PO-Revision-Date: 2025-02-17 11:05+0000\n"
-"Last-Translator: Fabio Restante <frestante@gmail.com>\n"
+"PO-Revision-Date: 2025-02-17 15:09+0000\n"
+"Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/it/>\n"
 "Language: it\n"
@@ -704,10 +704,8 @@ msgid " note(s)"
 msgstr ""
 
 #: lxml/lxmlGramplet.py:505
-#, fuzzy
-#| msgid "New source"
 msgid " source(s)"
-msgstr "Nuova fonte"
+msgstr " fonte/i"
 
 #: lxml/lxmlGramplet.py:521 lxml/lxmlGramplet.py:717
 msgid "Gallery.html"
@@ -1202,10 +1200,8 @@ msgid "Matches families matched by an event filter"
 msgstr ""
 
 #: FilterRules/hasrolerule.gpr.py:27
-#, fuzzy
-#| msgid "Add birth events with dates"
 msgid "People with events with a selected role"
-msgstr "Aggiunge eventi di tipo nascita con data"
+msgstr "Persone con eventi con un ruolo selezionato"
 
 #: FilterRules/hasrolerule.gpr.py:28 FilterRules/hasrolerule.py:69
 msgid "Matches people with an event with a selected role"
@@ -1232,16 +1228,12 @@ msgid "Inverse"
 msgstr ""
 
 #: FilterRules/hasrolerule.py:68
-#, fuzzy
-#| msgid "Add birth events with dates"
 msgid "People with events with the <role>"
-msgstr "Aggiunge eventi di tipo nascita con data"
+msgstr "Persone con eventi con <ruolo>"
 
 #: FilterRules/hasrolerule.py:92
-#, fuzzy
-#| msgid "Add birth events with dates"
 msgid "Families with events with the <role>"
-msgstr "Aggiunge eventi di tipo nascita con data"
+msgstr "Famiglie con eventi con <ruolo>"
 
 #: FilterRules/hassourcefilter.gpr.py:28
 msgid "Source matching parameters"
@@ -1401,10 +1393,9 @@ msgid "and %s "
 msgstr ""
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:349
-#, fuzzy, python-format
-#| msgid "%d. %s"
+#, python-format
 msgid " %s"
-msgstr "%d. %s"
+msgstr " %s"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:413
 #, fuzzy
@@ -1512,10 +1503,8 @@ msgstr "Includi un'immagine"
 
 #: GenealogyTree/gt_ancestor.py:171 GenealogyTree/gt_descendant.py:188
 #: GenealogyTree/gt_grandparent.py:232 GenealogyTree/gt_sandclock.py:251
-#, fuzzy
-#| msgid "Image for people with unknown gender."
 msgid "Include images of people in the nodes."
-msgstr "Immagine per persone di genere sconosciuto."
+msgstr "Include immagini di persone nei nodi."
 
 #: GenealogyTree/gt_descendant.py:191
 msgid "First spouse left"
@@ -2601,10 +2590,9 @@ msgid "Added items in File that are missing in Database"
 msgstr ""
 
 #: Differences/differences.py:191
-#, fuzzy, python-format
-#| msgid "Added %d events."
+#, python-format
 msgid "Added %s: %s "
-msgstr "Aggiunti %d eventi."
+msgstr "Aggiunto %s: %s "
 
 #: Differences/differences.py:195
 msgid "Nothing added"
@@ -2662,10 +2650,8 @@ msgid "AncestorFill for %s"
 msgstr ""
 
 #: AncestorFill/AncestorFill.py:205
-#, fuzzy
-#| msgid "First generation"
 msgid "Generation "
-msgstr "Prima generazione"
+msgstr "Generazione "
 
 #: AncestorFill/AncestorFill.py:206
 msgid "Number of Ancestors found "
@@ -3011,10 +2997,8 @@ msgid "M"
 msgstr ""
 
 #: DynamicWeb/dynamicweb.py:3030
-#, fuzzy
-#| msgid "Maximum age"
 msgid "Maximize"
-msgstr "Età massima"
+msgstr "Massimizza"
 
 #: DynamicWeb/dynamicweb.py:3031
 msgid "Media Index"
@@ -3381,11 +3365,9 @@ msgid "The title of the web site"
 msgstr "Il file non esiste"
 
 #: DynamicWeb/dynamicweb.py:4741
-#, fuzzy
-#| msgid "Select filter to restrict people that appear in the report"
 msgid "Select filter to restrict people that appear on web site"
 msgstr ""
-"Seleziona il filtro per restringere le persone che appariranno nel resoconto"
+"Seleziona un filtro per restringere le persone che appariranno nel sito web"
 
 #: DynamicWeb/dynamicweb.py:4755 DynamicWeb/dynamicweb.py:4778
 msgid "Name format (short)"
@@ -3883,18 +3865,18 @@ msgid "The style used for place title."
 msgstr "Lo stile usato per ogni sezione."
 
 #: Sqlite/ExportSql.py:1346
-#, fuzzy, python-format
+#, python-format
 msgid "Export Complete: %d second"
 msgid_plural "Export Complete: %d seconds"
-msgstr[0] "Importazione completata: %d secondo"
-msgstr[1] ""
+msgstr[0] "Esportazione completata: %d secondo"
+msgstr[1] "Esportazione completata: %d secondi"
 
 #: Sqlite/ImportSql.py:893
-#, fuzzy, python-format
+#, python-format
 msgid "Import Complete: %d second"
 msgid_plural "Import Complete: %d seconds"
 msgstr[0] "Importazione completata: %d secondo"
-msgstr[1] ""
+msgstr[1] "Importazione completata: %d secondi"
 
 #: Sqlite/Sqlite.gpr.py:4
 msgid "SQLite Import"
@@ -3954,16 +3936,14 @@ msgid ""
 msgstr ""
 
 #: CombinedView/personpage.py:597
-#, fuzzy, python-format
-#| msgid "%(event_name)s of %(name)s and %(mate)s "
+#, python-format
 msgid "%(event_type)s: %(date)s in %(place)s"
-msgstr "%(event_name)s di %(name)s e %(mate)s "
+msgstr "%(event_type)s: %(date)s in %(place)s"
 
 #: CombinedView/personpage.py:601
-#, fuzzy, python-format
-#| msgid "%(event_name)s of %(name)s "
+#, python-format
 msgid "%(event_type)s: %(date)s"
-msgstr "%(event_name)s di %(name)s "
+msgstr "%(event_type)s: %(date)s"
 
 #: CombinedView/personpage.py:604
 #, fuzzy, python-format
@@ -3996,10 +3976,8 @@ msgid "Family:"
 msgstr "Famiglia:"
 
 #: DataEntryGramplet/DataEntryGramplet.py:74
-#, fuzzy
-#| msgid "Include Sources"
 msgid "Sources?"
-msgstr "Includere le fonti"
+msgstr "Fonti?"
 
 #: DataEntryGramplet/DataEntryGramplet.py:76
 #: DataEntryGramplet/DataEntryGramplet.py:109
@@ -4104,7 +4082,7 @@ msgstr ""
 #: DataEntryGramplet/DataEntryGramplet.py:526
 #: DataEntryGramplet/DataEntryGramplet.py:545
 msgid "Please set the new person's gender."
-msgstr ""
+msgstr "Impostare il genere della nuova persona."
 
 #: DataEntryGramplet/DataEntryGramplet.py:531
 msgid "Can't add new person as a mother."
@@ -4150,16 +4128,16 @@ msgstr ""
 
 #: DataEntryGramplet/DataEntryGramplet.py:767
 msgid "Please set gender on Active or new person."
-msgstr ""
+msgstr "Impostare il genere per la persona attiva o la nuova persona."
 
 #: DataEntryGramplet/DataEntryGramplet.py:804
 #: DataEntryGramplet/DataEntryGramplet.py:837
 msgid "Same genders on Active and new person."
-msgstr ""
+msgstr "Stessi generi per la persona attiva e la nuova persona."
 
 #: DataEntryGramplet/DataEntryGramplet.py:937
 msgid "Please set gender on Active person."
-msgstr ""
+msgstr "Impostare il genere per la persona attiva."
 
 #: FamilyTreeDNA/ftdna_import.gpr.py:4
 #, fuzzy
@@ -4196,9 +4174,8 @@ msgid "Shared Citation ID :"
 msgstr ""
 
 #: FamilyTreeDNA/ftdna_import.py:151
-#, fuzzy
 msgid "Active Person : "
-msgstr "Persona attiva: <b>%s</b>"
+msgstr "Persona attiva: "
 
 #: FamilyTreeDNA/ftdna_import.py:165
 msgid "Import data from Family Finder files"
@@ -4675,7 +4652,7 @@ msgstr ""
 
 #: DenominoViso/DenominoViso.py:2663
 msgid "Whether to include images"
-msgstr "Indica se includere le immagini."
+msgstr "Indica se includere le immagini"
 
 #: DenominoViso/DenominoViso.py:2666
 msgid "Copy Image"
@@ -5485,10 +5462,8 @@ msgid "Installed(Linux/Mac)"
 msgstr "*Installato"
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1389
-#, fuzzy
-#| msgid "Uninstall"
 msgid "not installed "
-msgstr "Disinstalla"
+msgstr "non installato "
 
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1444
 #: PrerequisitesCheckerGramplet/PrerequisitesCheckerGramplet.py:1614
@@ -5713,10 +5688,8 @@ msgid "done."
 msgstr "fatto!\n"
 
 #: PhpGedView/phpgedviewconnector.py:347
-#, fuzzy
-#| msgid "Selecting... "
 msgid "Connecting..."
-msgstr "Selezione... "
+msgstr "Connessione..."
 
 #: PhpGedView/phpgedviewconnector.py:349
 msgid "Get version..."
@@ -5877,7 +5850,7 @@ msgstr "%d. %s"
 #: DescendantBooks/DetailedDescendantBookReport.py:1345
 msgid "Select filter to restrict people that appear in the report"
 msgstr ""
-"Seleziona il filtro per restringere le persone che appariranno nel resoconto"
+"Seleziona un filtro per restringere le persone che appariranno nel resoconto"
 
 #: DescendantBooks/DescendantBookReport.py:585
 msgid "The style used for the table of contents header."
@@ -6144,10 +6117,8 @@ msgid "Number of font sizes"
 msgstr ""
 
 #: WordleGramplet/WordleGramplet.py:144
-#, fuzzy
-#| msgid "Select filter to restrict people"
 msgid "Select filter to restrict list"
-msgstr "Seleziona filtro per restringere le persone"
+msgstr "Seleziona filtro per restringere gli elenchi"
 
 #: PersonEverything/PersonEverything.gpr.py:32
 msgid "PersonEverything Report"
@@ -6175,10 +6146,8 @@ msgid " This is the primary birth event."
 msgstr ""
 
 #: PersonEverything/PersonEverything.py:199
-#, fuzzy
-#| msgid "Add birth and death events"
 msgid " This is the primary death event."
-msgstr "Aggiunge eventi di tipo nascita e decesso"
+msgstr " Questo è l'evento decesso primario."
 
 #: PersonEverything/PersonEverything.py:238
 #, fuzzy
@@ -6728,12 +6697,12 @@ msgid "Convert and Delete"
 msgstr "Converti ed elimina"
 
 #: EditExifMetadata/editexifmetadata.py:807
-#, fuzzy
 msgid ""
 "Your image has been converted and the original file has been deleted, and "
 "the full path has been updated!"
 msgstr ""
-"L'immagine è stata convertita ed il file originale è stato eliminato..."
+"L'immagine è stata convertita ed il file originale è stato eliminato, e il "
+"percorso completo è stato aggiornato!"
 
 #: EditExifMetadata/editexifmetadata.py:812
 msgid ""
@@ -6760,11 +6729,10 @@ msgid "Media Path Update"
 msgstr "data del decesso"
 
 #: EditExifMetadata/editexifmetadata.py:853
-#, fuzzy
 msgid "There has been an error in updating the image file's path!"
 msgstr ""
-"Si è verificato un errore nella rimozione dei metadati Exif da questa "
-"immagine..."
+"Si è verificato un errore nell'aggiornamento del percorso del file "
+"dell'immagine!"
 
 #: EditExifMetadata/editexifmetadata.py:886
 msgid ""
@@ -6801,9 +6769,8 @@ msgid "Media Object Title"
 msgstr "Filtri oggetti multimediali"
 
 #: EditExifMetadata/editexifmetadata.py:978
-#, fuzzy
 msgid "media Title: "
-msgstr "Titolo calendario"
+msgstr "Titolo oggetto multimediale: "
 
 #: EditExifMetadata/editexifmetadata.py:993
 #, fuzzy
@@ -6811,33 +6778,28 @@ msgid "General Data"
 msgstr "Generale"
 
 #: EditExifMetadata/editexifmetadata.py:1003
-#, fuzzy
 msgid "Description: "
-msgstr "Descrizione:"
+msgstr "Descrizione: "
 
 #: EditExifMetadata/editexifmetadata.py:1004
-#, fuzzy
 msgid "Artist: "
-msgstr "Artista"
+msgstr "Artista: "
 
 #: EditExifMetadata/editexifmetadata.py:1005
-#, fuzzy
 msgid "Copyright: "
-msgstr "Copyright"
+msgstr "Copyright: "
 
 #: EditExifMetadata/editexifmetadata.py:1019
 msgid "Date/ Time"
 msgstr "Data/ Ora"
 
 #: EditExifMetadata/editexifmetadata.py:1034
-#, fuzzy
 msgid "Original: "
-msgstr "Orario originale"
+msgstr "Originale: "
 
 #: EditExifMetadata/editexifmetadata.py:1035
-#, fuzzy
 msgid "Modified: "
-msgstr "Ultima modifica"
+msgstr "Ultima modifica: "
 
 #: EditExifMetadata/editexifmetadata.py:1054
 msgid "Latitude/ Longitude/ Altitude GPS coordinates"
@@ -6937,7 +6899,7 @@ msgstr "TR-Titolo"
 #: ToDoReport/TodoReport.py:111
 #, python-format
 msgid "Report on Notes Tagged '%s'"
-msgstr "Rapporto sulle note contrassegnate con '% s'"
+msgstr "Rapporto sulle note contrassegnate con '%s'"
 
 #: ToDoReport/TodoReport.py:237 ToDoReport/TodoReport.py:914
 msgid "TR-Heading"
@@ -7180,7 +7142,7 @@ msgstr "Il formato di output da usare"
 
 #: DescendantsLines/DescendantsLines.py:1541
 msgid "The destination file for the content."
-msgstr "Il file di destinazione per il contenuto"
+msgstr "Il file di destinazione per il contenuto."
 
 #: DescendantsLines/DescendantsLines.py:1545
 msgid "The number of generations to include in the chart. (0 for unlimited)"
@@ -7192,7 +7154,7 @@ msgstr "Usa il sistema di numerazione dei discendenti d'Aboville"
 
 #: DescendantsLines/DescendantsLines.py:1552
 msgid "Prepend name with d'Aboville descendant number in the chart."
-msgstr "Anteponi al nome il numero del discendente d'Aboville nel grafico"
+msgstr "Anteponi al nome il numero del discendente d'Aboville nel grafico."
 
 #: DescendantsLines/DescendantsLines.py:1555
 msgid "Include an image"
@@ -7209,7 +7171,7 @@ msgstr "Massima altezza dell'immagine"
 #: DescendantsLines/DescendantsLines.py:1561
 msgid "Maximum image height in pixels, 0=don't scale for height."
 msgstr ""
-"Massima altezza dell'immagine in pixels, 0=non ridimensionare per l'altezza."
+"Massima altezza dell'immagine in pixel, 0=non ridimensionare per l'altezza."
 
 #: DescendantsLines/DescendantsLines.py:1565
 msgid "Max Image width"
@@ -7218,8 +7180,8 @@ msgstr "Massima larghezza dell'immagine"
 #: DescendantsLines/DescendantsLines.py:1566
 msgid "Maximum image width in pixels, 0=don't scale for width."
 msgstr ""
-"Massima larghezza dell'immagine in pixels, 0=non ridimensionare per la "
-"larghezza"
+"Massima larghezza dell'immagine in pixel, 0=non ridimensionare per la "
+"larghezza."
 
 #: DescendantsLines/DescendantsLines.py:1570
 msgid "Image Location"
@@ -7299,7 +7261,7 @@ msgid ""
 msgstr ""
 "Lunghezza massima del campo nota di un evento all'interno di un blocco di "
 "testo, '$e(n)'\n"
-"0=illimitato"
+" 0=illimitato "
 
 #: DescendantsLines/DescendantsLines.py:1612
 msgid "Box around Person's block"
@@ -7767,7 +7729,7 @@ msgstr ""
 
 #: PlaceCompletion/PlaceCompletion.py:826
 msgid "The file does not exist."
-msgstr "Il file non esiste"
+msgstr "Il file non esiste."
 
 #: PlaceCompletion/PlaceCompletion.py:858
 msgid "Problem reading file"
@@ -9049,16 +9011,12 @@ msgid "If checked, all objects without a date will also be set private."
 msgstr ""
 
 #: SetPrivacyTool/SetPrivacyTool.py:324
-#, fuzzy
-#| msgid "Select filter to restrict people"
 msgid "Select filter to restrict events"
-msgstr "Seleziona filtro per restringere le persone"
+msgstr "Seleziona filtro per restringere gli eventi"
 
 #: SetPrivacyTool/SetPrivacyTool.py:336
-#, fuzzy
-#| msgid "Select filter to restrict people"
 msgid "Select filter to restrict medias"
-msgstr "Seleziona filtro per restringere le persone"
+msgstr "Seleziona filtro per restringere gli oggetti multimediali"
 
 #: SetPrivacyTool/SetPrivacyTool.py:347
 msgid "Internet type filter"
@@ -16872,7 +16830,7 @@ msgstr "Anno di nascita (stimato)"
 
 #: Form/form_pl.xml.h:12 Form/form_pl.xml.h:40
 msgid "Spouse's Gender"
-msgstr "Sesso del coniuge"
+msgstr "Genere del coniuge"
 
 #: Form/form_pl.xml.h:13 Form/form_pl.xml.h:41
 msgid "Spouse's Age"
@@ -17692,17 +17650,15 @@ msgstr ""
 
 #: SourceIndex/birth.glade:214
 msgid "select the gender/sex"
-msgstr ""
+msgstr "seleziona genere/sesso"
 
 #: SourceIndex/birth.glade:247
-#, fuzzy
-#| msgid "Color the name to indicate a person's gender in the chart."
 msgid "The names of the main person written into the source"
-msgstr "Colora il nome per indicare il genere della persona nel grafico."
+msgstr "I nomi della persona principale riportati nella fonte"
 
 #: SourceIndex/birth.glade:262
 msgid "The first names of the main person written into the source"
-msgstr ""
+msgstr "I nomi propri della persona principale riportati nella fonte"
 
 #: SourceIndex/birth.glade:278 SourceIndex/birth.glade:511
 #: SourceIndex/birth.glade:729 SourceIndex/witness.glade:90
@@ -17810,20 +17766,20 @@ msgid ""
 msgstr ""
 
 #: SourceIndex/birth.glade:1568
-#, fuzzy
-#| msgid "place: "
 msgid ""
 "Death\n"
 "place:"
-msgstr "posto: "
+msgstr ""
+"Luogo del\n"
+"decesso:"
 
 #: SourceIndex/birth.glade:1588
-#, fuzzy
-#| msgid "place: "
 msgid ""
 "Birth\n"
 "place:"
-msgstr "posto: "
+msgstr ""
+"Luogo di\n"
+"nascita:"
 
 #: SourceIndex/birth.glade:1892 SourceIndex/birth.glade:1911
 #, fuzzy
@@ -17869,16 +17825,12 @@ msgid "Death date:"
 msgstr "data del decesso"
 
 #: SourceIndex/census.glade:381 SourceIndex/death.glade:1035
-#, fuzzy
-#| msgid "place: "
 msgid "Birth place:"
-msgstr "posto: "
+msgstr "Luogo di nascita:"
 
 #: SourceIndex/census.glade:414
-#, fuzzy
-#| msgid "place: "
 msgid "Death place:"
-msgstr "posto: "
+msgstr "Luogo del decesso:"
 
 #: SourceIndex/census.glade:447
 #, fuzzy
@@ -18403,10 +18355,9 @@ msgstr ""
 "richiesta indicata."
 
 #: DetDescendantReport-images/detdescendantreporti.py:471
-#, fuzzy, python-format
-#| msgid "%(event_name)s of %(name)s "
+#, python-format
 msgid "%(event_name)s: %(event_text)s"
-msgstr "%(event_name)s di %(name)s "
+msgstr "%(event_name)s: %(event_text)s"
 
 #: DetDescendantReport-images/detdescendantreporti.py:1177
 #, fuzzy
@@ -18745,9 +18696,9 @@ msgid "  <b>%s</b> (Home Person) and\n"
 msgstr ""
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:219
-#, fuzzy, python-format
+#, python-format
 msgid "  <b>%s</b> (Active Person)...\n"
-msgstr "Persona attiva: <b>%s</b>"
+msgstr "  <b>%s</b> (persona attiva)...\n"
 
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:229
 #, python-format
@@ -19215,16 +19166,13 @@ msgid "Set as active person"
 msgstr "Persona attiva: <b>%s</b>"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:779
-#, fuzzy, python-brace-format
-#| msgid "Replace"
+#, python-brace-format
 msgid "Replace to {0}"
-msgstr "Sostituzioni"
+msgstr "Sostituisci con {0}"
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:880
-#, fuzzy
-#| msgid "Selecting... "
 msgid "Detecting faces..."
-msgstr "Selezione... "
+msgstr "Riconoscimento volti..."
 
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:905
 msgid "Detection finished"
@@ -19254,7 +19202,7 @@ msgstr ""
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:1114
 #, python-format
 msgid "Unknown gender person|Dead at %s"
-msgstr ""
+msgstr "Decesso a %s"
 
 #: ImportGramplet/ImportGramplet.gpr.py:11
 msgid "Gramplet for importing text"
@@ -19824,10 +19772,8 @@ msgid ""
 msgstr ""
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:168
-#, fuzzy
-#| msgid "Failure writing %s"
 msgid "Failed writing "
-msgstr "Errore durante la scrittura di %s"
+msgstr "Errore durante la scrittura di "
 
 #: TimePedigreeHTML/TimePedigreeHtml.py:849
 msgid "Year of Birth of Center Person"
@@ -20159,30 +20105,26 @@ msgid "Tags, notes and attributes will be included"
 msgstr ""
 
 #: MediaReport/media_report.py:450
-#, fuzzy
 msgid "Media width"
-msgstr "Filtro oggetti multimediali"
+msgstr "Larghezza oggetto multimediale"
 
 #: MediaReport/media_report.py:451
-#, fuzzy, python-format
-#| msgid "Maximum image width in pixels, 0=don't scale for width."
+#, python-format
 msgid "Maximum media width in % of available page width."
 msgstr ""
-"Massima larghezza dell'immagine in pixels, 0=non ridimensionare per la "
-"larghezza"
+"Massima larghezza dell'oggetto multimediale in percentuale della larghezza "
+"disponibile della pagina."
 
 #: MediaReport/media_report.py:455
-#, fuzzy
-#| msgid "Max Image height"
 msgid "Media height"
-msgstr "Massima altezza dell'immagine"
+msgstr "Altezza dell'oggetto multimediale"
 
 #: MediaReport/media_report.py:456
-#, fuzzy, python-format
-#| msgid "Maximum image height in pixels, 0=don't scale for height."
+#, python-format
 msgid "Maximum media height in % of available page height."
 msgstr ""
-"Massima altezza dell'immagine in pixels, 0=non ridimensionare per l'altezza."
+"Massima altezza dell'oggetto multimediale in percentuale dell'altezza "
+"disponibile della pagina."
 
 #: DateCalculator/DateCalculator.gpr.py:22
 #: DateCalculator/DateCalculator.gpr.py:32
@@ -20311,7 +20253,7 @@ msgstr ""
 
 #: FamilyTree/FamilyTree.gpr.py:5
 msgid "Produces a graphical family tree."
-msgstr "Genera un albero genealogico grafico"
+msgstr "Genera un albero genealogico grafico."
 
 #: FamilyTree/FamilyTree.py:102
 #, python-format
@@ -20404,7 +20346,7 @@ msgstr "Ridimensiona su una singola pagina"
 
 #: FamilyTree/FamilyTree.py:1060
 msgid "Whether to scale to fit on a single page."
-msgstr "Se ridimensionare per farlo entrare in una sola pagina"
+msgstr "Se ridimensionare per farlo entrare in una sola pagina."
 
 #: FamilyTree/FamilyTree.py:1065
 msgid "No color"
@@ -20440,7 +20382,7 @@ msgstr "Mischia i colori"
 
 #: FamilyTree/FamilyTree.py:1076
 msgid "Whether to shuffle colors or order them in rainbow fashion."
-msgstr "Se mischiare i colori o ordinarli a mo di arcobaleno"
+msgstr "Se mischiare i colori o ordinarli a mo' di arcobaleno."
 
 #: FamilyTree/FamilyTree.py:1091
 msgid "Include Occupation"
@@ -20767,12 +20709,11 @@ msgstr ""
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:1470
 #: TimelinePedigreeView/TimelinePedigreeView.py:1486
-#, fuzzy, python-format
-#| msgid "Third generation"
+#, python-format
 msgid "%d generation"
 msgid_plural "%d generations"
-msgstr[0] "Terza generazione"
-msgstr[1] "Terza generazione"
+msgstr[0] "%d generazione"
+msgstr[1] "%d generazioni"
 
 #: TimelinePedigreeView/TimelinePedigreeView.py:1505
 msgid "About Timeline Pedigree View"
@@ -21007,16 +20948,12 @@ msgid "Descendant generations"
 msgstr "Generazioni discendenti"
 
 #: GraphView/graphview.py:1179
-#, fuzzy
-#| msgid "Average years between two generations"
 msgid "Vertical spacing between generations"
-msgstr "Numero medio di anni tra due generazioni"
+msgstr "Spaziatura verticale tra le generazioni"
 
 #: GraphView/graphview.py:1184
-#, fuzzy
-#| msgid "Average years between two generations"
 msgid "Horizontal spacing between generations"
-msgstr "Numero medio di anni tra due generazioni"
+msgstr "Spaziatura orizzontale tra le generazioni"
 
 #: GraphView/graphview.py:1188
 msgid "Spacings"
@@ -21076,9 +21013,8 @@ msgid ""
 msgstr ""
 
 #: GraphView/graphview.py:1519
-#, fuzzy
 msgid "Change active person?"
-msgstr "Persona attiva: <b>%s</b>"
+msgstr "Modificare la persona attiva?"
 
 #: GraphView/graphview.py:2668
 #, python-brace-format
@@ -21822,10 +21758,9 @@ msgid "%(male_name)s was adopted in %(year)s at %(place)s."
 msgstr ""
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:483
-#, fuzzy, python-format
-#| msgid "%(event_name)s of %(name)s and %(mate)s "
+#, python-format
 msgid "%(female_name)s was adopted in %(year)s at %(place)s."
-msgstr "%(event_name)s di %(name)s e %(mate)s "
+msgstr "%(female_name)s è adottata nel %(year)s presso %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:486
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:539
@@ -21890,16 +21825,14 @@ msgid "%(female_name)s became a bat mitzvah in %(year)s at %(place)s."
 msgstr ""
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:517
-#, fuzzy, python-format
-#| msgid "%(event_name)s of %(name)s and %(mate)s "
+#, python-format
 msgid "%(male_name)s was born in %(year)s at %(place)s."
-msgstr "%(event_name)s di %(name)s e %(mate)s "
+msgstr "%(male_name)s nasce nel %(year)s presso %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:519
-#, fuzzy, python-format
-#| msgid "%(event_name)s of %(name)s and %(mate)s "
+#, python-format
 msgid "%(female_name)s was born in %(year)s at %(place)s."
-msgstr "%(event_name)s di %(name)s e %(mate)s "
+msgstr "%(female_name)s nasce nel %(year)s presso %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:522
 #, python-format
@@ -21954,16 +21887,14 @@ msgid "%(female_name)s was cremated in %(year)s at %(place)s."
 msgstr ""
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:554
-#, fuzzy, python-format
-#| msgid "%(event_name)s of %(name)s and %(mate)s "
+#, python-format
 msgid "%(male_name)s died in %(year)s at %(place)s."
-msgstr "%(event_name)s di %(name)s e %(mate)s "
+msgstr "%(male_name)s muore nel %(year)s presso %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:556
-#, fuzzy, python-format
-#| msgid "%(event_name)s of %(name)s and %(mate)s "
+#, python-format
 msgid "%(female_name)s died in %(year)s at %(place)s."
-msgstr "%(event_name)s di %(name)s e %(mate)s "
+msgstr "%(female_name)s muore nel %(year)s presso %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:559
 #, python-format
@@ -22386,11 +22317,11 @@ msgstr ""
 
 #: NetworkChart/NetworkChart.py:1002
 msgid "Different node shapes/edges for gender."
-msgstr ""
+msgstr "Forme/bordi dei nodi diversi in base al genere."
 
 #: NetworkChart/NetworkChart.py:1003
 msgid "Node differences for gender."
-msgstr ""
+msgstr "Differenze dei nodi per genere."
 
 #: NetworkChart/NetworkChart.py:1008
 msgid "Male Background"
