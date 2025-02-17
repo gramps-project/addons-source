@@ -7,13 +7,13 @@
 # Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
 # Erik De Richter <frederik.de.richter@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
 # Harmen Huizinga <harmenhuizinga@sigmo.nl>, 2013.
-#
+# Stephan Paternotte <stephan@paternottes.net>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
-"Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
-"POT-Creation-Date: 2019-01-04 18:55-0600\n"
-"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-17 11:05+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -22,12 +22,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
-#: CliMerge/CliMerge.gpr.py:8 CliMerge/CliMerge.gpr.py:9
+#: CliMerge/CliMerge.gpr.py:9
 msgid "Command Line Merge"
 msgstr "Opdrachtregel samenvoegen"
 
-#: CliMerge/CliMerge.gpr.py:17 CliMerge/CliMerge.gpr.py:19
+#: CliMerge/CliMerge.gpr.py:19
 msgid "Merge primary objects via the command line."
 msgstr "Voeg primaire objecten samen via de opdrachtregel."

@@ -3,13 +3,13 @@
 # Copyright (C) Gramps project
 # Milo Ivir <mivir@milotype.de>, 2019, 2020.
 # Stephen Adams, Gramps Reddit, 2018.
-#
+# Milo Ivir <mail@milotype.de>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2025-02-15 16:17+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-17 00:14+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -21,8 +21,12 @@ msgstr ""
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Weblate 5.10\n"
 
-#: UKWebConnectPack/UKWebPack.py:35 SVWebconnectPack/SVWebPack.py:34
-#: USWebConnectPack/USWebPack.py:34 USWebConnectPack/USWebPack.py:46
+#: SVWebconnectPack/SVWebPack.py:33 USWebConnectPack/USWebPack.py:33
+msgid "Find A Grave"
+msgstr "Nađi grob"
+
+#: SVWebconnectPack/SVWebPack.py:34 USWebConnectPack/USWebPack.py:34
+#: USWebConnectPack/USWebPack.py:46
 msgid "FamilySearch.org"
 msgstr "FamilySearch.org"
 
@@ -34,17 +38,13 @@ msgstr "Hathi Trust digitalna biblioteka"
 msgid "Open Library"
 msgstr "Open Library"
 
-#: USWebConnectPack/USWebPack.gpr.py:10 USWebConnectPack/USWebPack.gpr.py:11
+#: USWebConnectPack/USWebPack.gpr.py:11
 msgid "US Web Connect Pack"
 msgstr "SAD Web Connect zbirka"
 
-#: USWebConnectPack/USWebPack.gpr.py:11 USWebConnectPack/USWebPack.gpr.py:12
+#: USWebConnectPack/USWebPack.gpr.py:12
 msgid "Collection of Web sites for the US (requires libwebconnect)"
 msgstr "Zbirka web stranica za SAD (zahtijeva libwebconnect)"
-
-#: USWebConnectPack/USWebPack.py:33 SVWebconnectPack/SVWebPack.py:33
-msgid "Find A Grave"
-msgstr "Nađi grob"
 
 #: USWebConnectPack/USWebPack.py:35
 msgid "US Google"

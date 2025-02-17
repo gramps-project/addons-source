@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-02 02:13+0300\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2019-12-10 13:09+0200\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: niememat@gmail.com\n"
@@ -33,46 +33,49 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.0.6\n"
 
-#: PluginManager.gpr.py:29 PluginManager/PluginManager.gpr.py:30
+#: PluginManager/PluginManager.gpr.py:30
 msgid "Plugin Manager Enhanced"
 msgstr "Laajennusten parannettu hallinta"
 
-#: PluginManager.gpr.py:30 PluginManager/PluginManager.gpr.py:31
+#: PluginManager/PluginManager.gpr.py:31
 msgid "An Addon/Plugin Manager with several additional capabilities"
 msgstr "Lisäosien/Laajennusten hallinta, jolla on useita lisäominaisuuksia"
 
-#: PluginManager.py:90 PluginManager/PluginManager.py:84
+#: PluginManager/PluginManager.py:84
 msgid "Plugin Manager - Enhanced"
 msgstr "Laajennusten hallinta - parannettu"
 
-#: PluginManager.py:184 PluginManager/PluginManager.py:216
+#: PluginManager/PluginManager.py:154
+msgid ""
+"Enter search words to filter the addons.\n"
+"All the words must be present somewhere in the row or\n"
+"the addon filename to be included in the search.\n"
+"Word case and order is ignored."
+msgstr ""
+
+#: PluginManager/PluginManager.py:158
+msgid "Search..."
+msgstr "Hae..."
+
+#: PluginManager/PluginManager.py:216
 msgid "Restart..."
 msgstr "Käynnistää uudelleen..."
 
-#: PluginManager.py:185 PluginManager/PluginManager.py:217
+#: PluginManager/PluginManager.py:217
 msgid ""
 "Please Restart Gramps so that your addon changes can be safely completed."
 msgstr ""
 "Käynnistä Gramps uudelleen, jotta laajennusten muutokset voidaan "
 "turvallisesti suorittaa."
 
-#: PluginManager.py:305 PluginManager.py:458 PluginManager.py:534
-#: PluginManager/PluginManager.py:410 PluginManager/PluginManager.py:530
-msgid "Hide"
-msgstr "Piilota"
-
-#: PluginManager.py:315 PluginManager.py:532 PluginManager/PluginManager.py:528
-msgid "Unhide"
-msgstr "Näytä"
-
-#: PluginManager.py:391 PluginManager/PluginManager.py:336
+#: PluginManager/PluginManager.py:336
 #, python-format
 msgid "Error removing the '%s' directory, The uninstall may have failed"
 msgstr ""
 "Virhe poistettaessa '% s' -hakemistoa, asennuksen poisto voi olla "
 "epäonnistunut"
 
-#: PluginManager.py:425 PluginManager/PluginManager.py:376
+#: PluginManager/PluginManager.py:376
 msgid ""
 "'*' items are supplied by 3rd party authors,\n"
 "<s>strikeout</s> items are hidden"
@@ -80,42 +83,46 @@ msgstr ""
 "'*' kohteita toimittavat 3. osapuolen kirjoittajat,\n"
 "<s>yliviivatut</s> kohteet on piilotettu"
 
-#: PluginManager.py:477 PluginManager/PluginManager.py:430
+#: PluginManager/PluginManager.py:410 PluginManager/PluginManager.py:530
+msgid "Hide"
+msgstr "Piilota"
+
+#: PluginManager/PluginManager.py:430
 msgid "Show hidden items"
 msgstr "Näytä piilotetut kohteet"
 
-#: PluginManager.py:485 PluginManager/PluginManager.py:438
+#: PluginManager/PluginManager.py:438
 msgid "Show Built-in items"
 msgstr "Näytä sisäänrakennetut kohteet"
 
-#: PluginManager.py:492 PluginManager/PluginManager.py:445
+#: PluginManager/PluginManager.py:445
 msgid "* indicates 3rd party addon"
 msgstr "* ilmaisee 3. osapuolen laajennukset"
 
-#: PluginManager.py:497 PluginManager/PluginManager.py:450
+#: PluginManager/PluginManager.py:450
 msgid "Plugins"
 msgstr "Laajennukset"
 
-#: PluginManager.py:551 PluginManager/PluginManager.py:547
+#: PluginManager/PluginManager.py:528
+msgid "Unhide"
+msgstr "Näytä"
+
+#: PluginManager/PluginManager.py:547
 msgid "Uninstall"
 msgstr "Poista asennus"
 
-#: PluginManager.py:622 PluginManager/PluginManager.py:721
+#: PluginManager/PluginManager.py:721
 msgid "*Available"
 msgstr "*Saatavissa"
 
-#: PluginManager.py:636 PluginManager/PluginManager.py:737
+#: PluginManager/PluginManager.py:737
 msgid "Built-in"
 msgstr "Sisäänrakennettu"
 
-#: PluginManager.py:641 PluginManager/PluginManager.py:742
+#: PluginManager/PluginManager.py:742
 msgid "*Installed"
 msgstr "*Asennettu"
 
-#: PluginManager.py:650 PluginManager/PluginManager.py:751
+#: PluginManager/PluginManager.py:751
 msgid "Update Available"
 msgstr "Päivitys saatavilla"
-
-#: GraphView/search_widget.py:384 PluginManager/PluginManager.py:158
-msgid "Search..."
-msgstr "Hae..."

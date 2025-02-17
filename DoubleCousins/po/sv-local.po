@@ -9,14 +9,15 @@
 # Pär Ekholm <par.ekholm50@gmail.com>, 2016, 2018.
 # Pär Ekholm <par.ekholm@pekholm.se>, 2018, 2019.
 # Peter Landgren <peter@test>, 2010.
-#
+# Pär Ekholm <github1@m.pekholm.org>, 2025.
+# Milan <mobrcian@hotmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-08 17:11-0500\n"
-"PO-Revision-Date: 2025-02-09 11:16+0000\n"
-"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-16 10:55+0000\n"
+"Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
 "Language: sv\n"
@@ -24,14 +25,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.10\n"
 
-#: DoubleCousins/double_cousins.gpr.py:24
 #: DoubleCousins/double_cousins.gpr.py:25
 msgid "Double Cousins"
 msgstr "Dubbelkusiner"
 
-#: DoubleCousins/double_cousins.gpr.py:25
 #: DoubleCousins/double_cousins.gpr.py:26
 msgid "A text report listing double cousins."
 msgstr "En textrapport som listar dubbelkusiner."

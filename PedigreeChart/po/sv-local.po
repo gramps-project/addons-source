@@ -9,14 +9,15 @@
 # Pär Ekholm <par.ekholm50@gmail.com>, 2016, 2018.
 # Pär Ekholm <par.ekholm@pekholm.se>, 2018, 2019.
 # Peter Landgren <peter@test>, 2010.
-#
+# Pär Ekholm <github1@m.pekholm.org>, 2025.
+# Milan <mobrcian@hotmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-08 17:11-0500\n"
-"PO-Revision-Date: 2025-02-09 11:16+0000\n"
-"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-16 10:55+0000\n"
+"Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
 "Language: sv\n"
@@ -24,38 +25,38 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.10\n"
 
-#: PedigreeChart/PedigreeChart.gpr.py:24 PedigreeChart/PedigreeChart.gpr.py:25
+#: PedigreeChart/PedigreeChart.gpr.py:25
 msgid "Pedigree Chart"
 msgstr "Antavla"
 
-#: PedigreeChart/PedigreeChart.gpr.py:25 PedigreeChart/PedigreeChart.gpr.py:26
+#: PedigreeChart/PedigreeChart.gpr.py:26
 msgid "Alternate version of the traditional pedigree chart."
 msgstr "Alternativ version av den traditionella stamtavlan."
 
-#: PedigreeChart/PedigreeChart.py:385 PedigreeChart/PedigreeChart.py:379
+#: PedigreeChart/PedigreeChart.py:379
 #, python-format
 msgid "Pedigree Chart for %s"
 msgstr "Antavla för %s"
 
-#: PedigreeChart/PedigreeChart.py:534 PedigreeChart/PedigreeChart.py:528
+#: PedigreeChart/PedigreeChart.py:528
 #, python-format
 msgid "Page %d"
 msgstr "Sida %d"
 
-#: PedigreeChart/PedigreeChart.py:651 PedigreeChart/PedigreeChart.py:640
+#: PedigreeChart/PedigreeChart.py:640
 msgid "Show Mother/Father captions"
 msgstr "Visa mor/far ledtext"
 
-#: PedigreeChart/PedigreeChart.py:652 PedigreeChart/PedigreeChart.py:641
+#: PedigreeChart/PedigreeChart.py:641
 msgid "Show the title of mother or father beside each ancestor's box."
 msgstr "Visa titel på mor eller far vid sidan om varje ättlings ruta."
 
-#: PedigreeChart/PedigreeChart.py:673 PedigreeChart/PedigreeChart.py:662
+#: PedigreeChart/PedigreeChart.py:662
 msgid "The basic style used for the title display."
 msgstr "Den grundläggande stilen som används för titelvisningen."
 
-#: PedigreeChart/PedigreeChart.py:682 PedigreeChart/PedigreeChart.py:671
+#: PedigreeChart/PedigreeChart.py:671
 msgid "Style used for labels and captions"
 msgstr "Mall för etiketter och ledtexter"

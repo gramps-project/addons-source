@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-26 19:54-0300\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2012-08-26 20:57-0300\n"
 "Last-Translator: André Marcelo Alvarenga <andrealvarenga@gmx.net>\n"
 "Language-Team: Brazilian Portuguese>\n"
@@ -24,30 +24,42 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 1.0\n"
 
-#: DEWebConnectPack/DEWebPack.gpr.py:10 DEWebConnectPack/DEWebPack.gpr.py:11
-msgid "DE Web Connect Pack"
-msgstr "Pacote de conexão Web para DE"
-
-#: DEWebConnectPack/DEWebPack.gpr.py:11 DEWebConnectPack/DEWebPack.gpr.py:12
-msgid "Collection of Web sites for the DE (requires libwebconnect)"
-msgstr "Coleção de páginas Web para DE (precisa do libwebconnect)"
-
-#: DEWebConnectPack/DEWebPack.py:33 DEWebConnectPack/DEWebPack.py:37
-msgid "Bielefeld Academic Search"
-msgstr "BASE (Bielefeld Academic Search Engine)"
-
-#: DEWebConnectPack/DEWebPack.py:35 SVWebconnectPack/SVWebPack.py:34
+#: SVWebconnectPack/SVWebPack.py:34 DEWebConnectPack/DEWebPack.py:39
 msgid "FamilySearch.org"
 msgstr "FamilySearch.org"
 
-#: DEWebConnectPack/DEWebPack.py:38 DEWebConnectPack/DEWebPack.py:42
+#: UKWebConnectPack/UKWebPack.py:39 DEWebConnectPack/DEWebPack.py:44
+msgid "Open Library"
+msgstr "Open Library"
+
+#: DEWebConnectPack/DEWebPack.gpr.py:11
+msgid "DE Web Connect Pack"
+msgstr "Pacote de conexão Web para DE"
+
+#: DEWebConnectPack/DEWebPack.gpr.py:12
+msgid "Collection of Web sites for the DE (requires libwebconnect)"
+msgstr "Coleção de páginas Web para DE (precisa do libwebconnect)"
+
+#: DEWebConnectPack/DEWebPack.py:37
+msgid "Bielefeld Academic Search"
+msgstr "BASE (Bielefeld Academic Search Engine)"
+
+#: DEWebConnectPack/DEWebPack.py:42
 msgid "Google Archives"
 msgstr "Arquivos do Google"
 
-#: DEWebConnectPack/DEWebPack.py:39 DEWebConnectPack/DEWebPack.py:43
+#: DEWebConnectPack/DEWebPack.py:43
 msgid "DE Google"
 msgstr "Google DE"
 
-#: DEWebConnectPack/DEWebPack.py:40 UKWebConnectPack/UKWebPack.py:39
-msgid "Open Library"
-msgstr "Open Library"
+#: DEWebConnectPack/DEWebPack.py:45
+msgid "Surname map (1890-1996)"
+msgstr ""
+
+#: DEWebConnectPack/DEWebPack.py:46
+msgid "GenWiki"
+msgstr ""
+
+#: DEWebConnectPack/DEWebPack.py:47
+msgid "German digital library"
+msgstr ""

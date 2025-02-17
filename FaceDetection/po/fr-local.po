@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-17 18:14+0100\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -38,18 +38,24 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: FaceDetection/FaceDetection.gpr.py:3 FaceDetection/FaceDetection.gpr.py:4
+#: FaceDetection/FaceDetection.gpr.py:4
 msgid "Face Detection"
 msgstr "Détection de visage"
 
-#: FaceDetection/FaceDetection.gpr.py:4 FaceDetection/FaceDetection.gpr.py:5
+#: FaceDetection/FaceDetection.gpr.py:5
 msgid "Gramplet for detecting and assigning faces"
 msgstr "Gramplet pour détecter et assigner des visages"
 
-#: FaceDetection/FaceDetection.gpr.py:11 FaceDetection/FaceDetection.gpr.py:13
+#: FaceDetection/FaceDetection.gpr.py:13
 msgid "Faces"
 msgstr "Visages"
 
-#: FaceDetection/FaceDetection.py:58 FaceDetection/FaceDetection.py:72
+#: FaceDetection/FaceDetection.py:63
+#, fuzzy
+#| msgid "GoogleEarth not installed!"
+msgid "OpenCV-Python is not installed"
+msgstr "GoogleEarth n'est pas installé !"
+
+#: FaceDetection/FaceDetection.py:72
 msgid "Detect New Faces"
 msgstr "Détection des nouveaux visages"

@@ -7,13 +7,13 @@
 # Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
 # Erik De Richter <frederik.de.richter@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
 # Harmen Huizinga <harmenhuizinga@sigmo.nl>, 2013.
-#
+# Stephan Paternotte <stephan@paternottes.net>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
-"Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
-"POT-Creation-Date: 2019-01-04 18:55-0600\n"
-"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-17 11:05+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -22,84 +22,92 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
-#: GenealogyTree/gt_ancestor.py:160 GenealogyTree/gt_descendant.py:168
-#: GenealogyTree/gt_grandparent.py:221 GenealogyTree/gt_sandclock.py:240
 #: GenealogyTree/gt_ancestor.py:170 GenealogyTree/gt_descendant.py:187
 #: GenealogyTree/gt_grandparent.py:231 GenealogyTree/gt_sandclock.py:250
 msgid "Include images"
 msgstr "Voeg afbeeldingen toe"
 
-#: GenealogyTree/gt_ancestor.py:161 GenealogyTree/gt_descendant.py:169
-#: GenealogyTree/gt_grandparent.py:222 GenealogyTree/gt_sandclock.py:241
 #: GenealogyTree/gt_ancestor.py:171 GenealogyTree/gt_descendant.py:188
 #: GenealogyTree/gt_grandparent.py:232 GenealogyTree/gt_sandclock.py:251
 msgid "Include images of people in the nodes."
 msgstr "Neem afbeeldingen van mensen op in de knooppunten."
 
-#: GenealogyTree/gt_grandparent.py:109 GenealogyTree/gt_grandparent.py:119
+#: GenealogyTree/gt_descendant.py:191
+msgid "First spouse left"
+msgstr "Eerste partner links"
+
+#: GenealogyTree/gt_descendant.py:192
+msgid ""
+"Always put first of multiple spouses on the left. This can help reduce line-"
+"crossings with multiple marriages."
+msgstr ""
+"Plaats de eerste van meerdere partners altijd aan de linkerkant. Dit kan "
+"helpen om kruisingen van lijnen te verminderen bij meerdere huwelijken."
+
+#: GenealogyTree/gt_grandparent.py:119
 #, python-format
 msgid "Person %s does not have both a paternal and a maternal grandparent"
 msgstr ""
 "Persoon %s heeft niet zowel een vaderlijke als een moederlijke grootouder"
 
-#: GenealogyTree/gt_grandparent.py:217 GenealogyTree/gt_grandparent.py:227
+#: GenealogyTree/gt_grandparent.py:227
 msgid "Grandparent family spacing"
 msgstr "Grootouder-gezin-afstand"
 
-#: GenealogyTree/gt_grandparent.py:218 GenealogyTree/gt_grandparent.py:228
+#: GenealogyTree/gt_grandparent.py:228
 msgid "Extra spacing of grandparent families (mm)"
 msgstr "Extra afstand tussen grootoudergezinnen (mm)"
 
-#: GenealogyTree/gt_sandclock.py:225 GenealogyTree/gt_sandclock.py:235
+#: GenealogyTree/gt_sandclock.py:235
 msgid "The center family for the report"
 msgstr "Het centrale gezin voor het verslag"
 
-#: GenealogyTree/gt_sandclock.py:228 GenealogyTree/gt_sandclock.py:238
+#: GenealogyTree/gt_sandclock.py:238
 msgid "Generations up"
 msgstr "Generaties omhoog"
 
-#: GenealogyTree/gt_sandclock.py:232 GenealogyTree/gt_sandclock.py:242
+#: GenealogyTree/gt_sandclock.py:242
 msgid "Generations down"
 msgstr "Generaties omlaag"
 
-#: GenealogyTree/gt_sandclock.py:236 GenealogyTree/gt_sandclock.py:246
+#: GenealogyTree/gt_sandclock.py:246
 msgid "Include siblings"
 msgstr "Voeg broers en zussen toe"
 
-#: GenealogyTree/gt_sandclock.py:237 GenealogyTree/gt_sandclock.py:247
+#: GenealogyTree/gt_sandclock.py:247
 msgid "Include siblings of ancestors."
 msgstr "Voeg broers en zussen van voorouders toe."
 
-#: GenealogyTree/treeplugins.gpr.py:30 GenealogyTree/treeplugins.gpr.py:31
+#: GenealogyTree/treeplugins.gpr.py:31
 msgid "Ancestor tree using LaTeX genealogytree"
 msgstr "Voorouderboom opgebouwd met LaTeX genealogieboom"
 
-#: GenealogyTree/treeplugins.gpr.py:52 GenealogyTree/treeplugins.gpr.py:56
+#: GenealogyTree/treeplugins.gpr.py:56
 msgid "Descendant tree using LaTeX genealogytree"
 msgstr "Afstammingsboom opgebouwd met LaTeX genealogieboom"
 
-#: GenealogyTree/treeplugins.gpr.py:73 GenealogyTree/treeplugins.gpr.py:80
+#: GenealogyTree/treeplugins.gpr.py:80
 msgid "Grandparent Tree"
 msgstr "Grootouderboom"
 
-#: GenealogyTree/treeplugins.gpr.py:74 GenealogyTree/treeplugins.gpr.py:81
+#: GenealogyTree/treeplugins.gpr.py:81
 msgid "Grandparent tree using LaTeX genealogytree"
 msgstr "Grootouderboom opgebouwd met LaTeX genealogieboom"
 
-#: GenealogyTree/treeplugins.gpr.py:95 GenealogyTree/treeplugins.gpr.py:105
+#: GenealogyTree/treeplugins.gpr.py:105
 msgid "Sandclock Tree"
 msgstr "Zandklokboom"
 
-#: GenealogyTree/treeplugins.gpr.py:96 GenealogyTree/treeplugins.gpr.py:106
+#: GenealogyTree/treeplugins.gpr.py:106
 msgid "Sandclock tree using LaTeX genealogytree"
 msgstr "Zandklokboom opgebouwd met LaTeX genealogieboom"
 
-#: GenealogyTree/treeplugins.gpr.py:117 GenealogyTree/treeplugins.gpr.py:130
+#: GenealogyTree/treeplugins.gpr.py:130
 msgid "Sandclock Tree for a Family"
 msgstr "Zandklokboom voor een gezin"
 
-#: GenealogyTree/treeplugins.gpr.py:118 GenealogyTree/treeplugins.gpr.py:131
+#: GenealogyTree/treeplugins.gpr.py:131
 msgid "Sandclock tree for a family using LaTeX genealogytree"
 msgstr "Zandklokboom voor een gezin opgebouwd met LaTeX genealogieboom"

@@ -7,13 +7,13 @@
 # Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
 # Erik De Richter <frederik.de.richter@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
 # Harmen Huizinga <harmenhuizinga@sigmo.nl>, 2013.
-#
+# Stephan Paternotte <stephan@paternottes.net>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
-"Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
-"POT-Creation-Date: 2019-01-04 18:55-0600\n"
-"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-17 11:05+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -22,24 +22,21 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:142
 #: DescendantsLines/DescendantsLines.py:1688
 msgid "Replace"
 msgstr "Vervangen"
 
-#: DescendantsLines/DescendantsLines.gpr.py:26
 #: DescendantsLines/DescendantsLines.gpr.py:27
 msgid "Descendants Lines"
 msgstr "Afstammelingslijnen"
 
-#: DescendantsLines/DescendantsLines.gpr.py:27
 #: DescendantsLines/DescendantsLines.gpr.py:28
 msgid "Produces descendants lines of a person"
 msgstr "Produceert afstammelingslijnen van een persoon"
 
-#: DescendantsLines/DescendantsLines.py:463
 #: DescendantsLines/DescendantsLines.py:463
 msgid "Using SVG type for supplemental document is not supported!"
 msgstr ""
@@ -47,41 +44,33 @@ msgstr ""
 "ondersteund!"
 
 #: DescendantsLines/DescendantsLines.py:1531
-#: DescendantsLines/DescendantsLines.py:1531
 msgid "Output format"
 msgstr "Uitvoeropmaak"
 
-#: DescendantsLines/DescendantsLines.py:1532
 #: DescendantsLines/DescendantsLines.py:1532
 msgid "PNG format"
 msgstr "PNG afbeelding"
 
 #: DescendantsLines/DescendantsLines.py:1533
-#: DescendantsLines/DescendantsLines.py:1533
 msgid "SVG format"
 msgstr "SVG bestand"
 
-#: DescendantsLines/DescendantsLines.py:1534
 #: DescendantsLines/DescendantsLines.py:1534
 msgid "PDF format"
 msgstr "PDF document"
 
 #: DescendantsLines/DescendantsLines.py:1535
-#: DescendantsLines/DescendantsLines.py:1535
 msgid "PS format"
 msgstr "PS bestand"
 
-#: DescendantsLines/DescendantsLines.py:1536
 #: DescendantsLines/DescendantsLines.py:1536
 msgid "The output format to be used"
 msgstr "De te gebruiken uitvoeropmaak"
 
 #: DescendantsLines/DescendantsLines.py:1541
-#: DescendantsLines/DescendantsLines.py:1541
 msgid "The destination file for the content."
 msgstr "Het doelbestand voor de inhoud."
 
-#: DescendantsLines/DescendantsLines.py:1545
 #: DescendantsLines/DescendantsLines.py:1545
 msgid "The number of generations to include in the chart. (0 for unlimited)"
 msgstr ""
@@ -89,87 +78,71 @@ msgstr ""
 "ongelimiteerd)"
 
 #: DescendantsLines/DescendantsLines.py:1550
-#: DescendantsLines/DescendantsLines.py:1550
 msgid "Use d'Aboville descendant numbering system"
 msgstr "Gebruik het d'Aboville afstammeling nummersysteem"
 
-#: DescendantsLines/DescendantsLines.py:1552
 #: DescendantsLines/DescendantsLines.py:1552
 msgid "Prepend name with d'Aboville descendant number in the chart."
 msgstr ""
 "De naam in de grafiek voorafgaan met het d'Aboville afstammelingsnummer."
 
 #: DescendantsLines/DescendantsLines.py:1555
-#: DescendantsLines/DescendantsLines.py:1555
 msgid "Include an image"
 msgstr "Voeg een afbeelding toe"
 
-#: DescendantsLines/DescendantsLines.py:1556
 #: DescendantsLines/DescendantsLines.py:1556
 msgid "Whether to include an image if one is available."
 msgstr ""
 "Aanvinken als een afbeelding moet worden toegevoegd als deze beschikbaar is."
 
 #: DescendantsLines/DescendantsLines.py:1560
-#: DescendantsLines/DescendantsLines.py:1560
 msgid "Max Image height"
 msgstr "Max afbeeldingshoogte"
 
-#: DescendantsLines/DescendantsLines.py:1561
 #: DescendantsLines/DescendantsLines.py:1561
 msgid "Maximum image height in pixels, 0=don't scale for height."
 msgstr "Maximale afbeeldingshoogte in pixels, 0 = geen schaalhoogte instellen."
 
 #: DescendantsLines/DescendantsLines.py:1565
-#: DescendantsLines/DescendantsLines.py:1565
 msgid "Max Image width"
 msgstr "Max afbeeldingsbreedte"
 
-#: DescendantsLines/DescendantsLines.py:1566
 #: DescendantsLines/DescendantsLines.py:1566
 msgid "Maximum image width in pixels, 0=don't scale for width."
 msgstr ""
 "Maximale afbeeldingsbreedte in Pixels, 0 = geen schaalbreedte instellen."
 
 #: DescendantsLines/DescendantsLines.py:1570
-#: DescendantsLines/DescendantsLines.py:1570
 msgid "Image Location"
 msgstr "Afbeeldingslocatie"
 
-#: DescendantsLines/DescendantsLines.py:1571
 #: DescendantsLines/DescendantsLines.py:1571
 msgid "Above text"
 msgstr "Boven de tekst"
 
 #: DescendantsLines/DescendantsLines.py:1572
-#: DescendantsLines/DescendantsLines.py:1572
 msgid "Left of text"
 msgstr "Links van de tekst"
 
-#: DescendantsLines/DescendantsLines.py:1573
 #: DescendantsLines/DescendantsLines.py:1573
 msgid "Position of image relative to text"
 msgstr "Positie van de afbeelding relatief tot de tekst"
 
 #: DescendantsLines/DescendantsLines.py:1579
-#: DescendantsLines/DescendantsLines.py:1579
 msgid "Colour Name by Gender"
 msgstr "Kleur naam naar geslacht"
 
-#: DescendantsLines/DescendantsLines.py:1581
 #: DescendantsLines/DescendantsLines.py:1581
 msgid "Color the name to indicate a person's gender in the chart."
 msgstr ""
 "Kleur de naam om het geslacht van een persoon in de grafiek aan te geven."
 
 #: DescendantsLines/DescendantsLines.py:1585
-#: DescendantsLines/DescendantsLines.py:1585
 msgid "Use alternate events, if Primary event is not found"
 msgstr ""
 "Gebruik alternatieve gebeurtenissen, als de Primaire gebeurtenis niet wordt "
 "gevonden"
 
-#: DescendantsLines/DescendantsLines.py:1586
 #: DescendantsLines/DescendantsLines.py:1586
 msgid ""
 "For Birth (baptism, christen)\n"
@@ -183,11 +156,9 @@ msgstr ""
 "Dood (begrafenis, crematie, nalatenschap)."
 
 #: DescendantsLines/DescendantsLines.py:1592
-#: DescendantsLines/DescendantsLines.py:1592
 msgid "Sort Events by Date"
 msgstr "Sorteer gebeurtenissen op datum"
 
-#: DescendantsLines/DescendantsLines.py:1593
 #: DescendantsLines/DescendantsLines.py:1593
 msgid "Sort events by date (else use the order of the 'Display Format' above)."
 msgstr ""
@@ -195,31 +166,25 @@ msgstr ""
 "indeling' hierboven)."
 
 #: DescendantsLines/DescendantsLines.py:1597
-#: DescendantsLines/DescendantsLines.py:1597
 msgid "Text style"
 msgstr "Tekststijl"
 
-#: DescendantsLines/DescendantsLines.py:1598
 #: DescendantsLines/DescendantsLines.py:1598
 msgid "Center-aligned text"
 msgstr "Gecentreerde tekst"
 
 #: DescendantsLines/DescendantsLines.py:1599
-#: DescendantsLines/DescendantsLines.py:1599
 msgid "Left-aligned text"
 msgstr "Links uitgelijnde tekst"
 
-#: DescendantsLines/DescendantsLines.py:1600
 #: DescendantsLines/DescendantsLines.py:1600
 msgid "Alignment of the text in the block for each person on the chart"
 msgstr "Uitlijning van de tekst in het blok voor elke persoon op de kaart"
 
 #: DescendantsLines/DescendantsLines.py:1604
-#: DescendantsLines/DescendantsLines.py:1604
 msgid "Max Note Length"
 msgstr "Max notitielengte"
 
-#: DescendantsLines/DescendantsLines.py:1605
 #: DescendantsLines/DescendantsLines.py:1605
 msgid ""
 "Maximum length of an event's note field in a text block, '$e(n)'\n"
@@ -229,21 +194,17 @@ msgstr ""
 " 0 = geen begrenzing "
 
 #: DescendantsLines/DescendantsLines.py:1612
-#: DescendantsLines/DescendantsLines.py:1612
 msgid "Box around Person's block"
 msgstr "Kader rond het tekstblok van een persoon"
 
-#: DescendantsLines/DescendantsLines.py:1613
 #: DescendantsLines/DescendantsLines.py:1613
 msgid "Draw a thin black box around each person' text block."
 msgstr "Teken een dun zwart kader rond het tekstblok van elke persoon."
 
 #: DescendantsLines/DescendantsLines.py:1617
-#: DescendantsLines/DescendantsLines.py:1617
 msgid "All Person's blocks have the same height"
 msgstr "De kaders rond het tekstblok van alle personen hebben dezelfde hoogte"
 
-#: DescendantsLines/DescendantsLines.py:1618
 #: DescendantsLines/DescendantsLines.py:1618
 msgid ""
 "All the blocks of all the person have the same height, which is the height "
@@ -253,11 +214,9 @@ msgstr ""
 "het hoogste tekstblok."
 
 #: DescendantsLines/DescendantsLines.py:1623
-#: DescendantsLines/DescendantsLines.py:1623
 msgid "All Person's blocks have the same width"
 msgstr "De kaders rond het tekstblok van alle personen hebben dezelfde breedte"
 
-#: DescendantsLines/DescendantsLines.py:1624
 #: DescendantsLines/DescendantsLines.py:1624
 msgid ""
 "All the blocks of all the person have the same width, which is the width of "
@@ -267,21 +226,17 @@ msgstr ""
 "het breedste tekstblok."
 
 #: DescendantsLines/DescendantsLines.py:1629
-#: DescendantsLines/DescendantsLines.py:1629
 msgid "Colour blocks by Generation"
 msgstr "Kleur kaders per generatie"
 
-#: DescendantsLines/DescendantsLines.py:1630
 #: DescendantsLines/DescendantsLines.py:1630
 msgid "Colour the background of text blocks by generation."
 msgstr "Kleur de achtergrond van tekstblokken per generatie."
 
 #: DescendantsLines/DescendantsLines.py:1634
-#: DescendantsLines/DescendantsLines.py:1634
 msgid "Descend block colour intensity"
 msgstr "Verlaag de blokkleur intensiteit"
 
-#: DescendantsLines/DescendantsLines.py:1635
 #: DescendantsLines/DescendantsLines.py:1635
 msgid ""
 "Intensity of backgound colour in Descendant's Block, 0=faint, 255=intense "
@@ -291,11 +246,9 @@ msgstr ""
 "= intense kleur"
 
 #: DescendantsLines/DescendantsLines.py:1639
-#: DescendantsLines/DescendantsLines.py:1639
 msgid "Spouse block colour intensity"
 msgstr "Kleurintensiteit van het partnertekstblok"
 
-#: DescendantsLines/DescendantsLines.py:1640
 #: DescendantsLines/DescendantsLines.py:1640
 msgid ""
 "Intensity of backgound colour in Spouse's Block, 0=faint 255=intense colour"
@@ -304,16 +257,13 @@ msgstr ""
 "intense kleur"
 
 #: DescendantsLines/DescendantsLines.py:1645
-#: DescendantsLines/DescendantsLines.py:1645
 msgid "Display Formats"
 msgstr "Weergave-indeling"
 
 #: DescendantsLines/DescendantsLines.py:1647
-#: DescendantsLines/DescendantsLines.py:1647
 msgid "Name Display Format"
 msgstr "Naam weergave-indeling"
 
-#: DescendantsLines/DescendantsLines.py:1650
 #: DescendantsLines/DescendantsLines.py:1650
 msgid ""
 "f=first & middle names, l=surname, n=nickname,\n"
@@ -326,7 +276,6 @@ msgstr ""
 
 #: DescendantsLines/DescendantsLines.py:1662
 #: DescendantsLines/DescendantsLines.py:1681
-#: DescendantsLines/DescendantsLines.py:1681
 msgid ""
 "[event, list]$e(formating)\n"
 "See Wiki Manual > Reports > part 2\n"
@@ -338,7 +287,6 @@ msgstr ""
 "n, Afgekort_Type = t"
 
 #: DescendantsLines/DescendantsLines.py:1693
-#: DescendantsLines/DescendantsLines.py:1693
 msgid ""
 "i.e.\n"
 "United States of America/USA"
@@ -347,37 +295,30 @@ msgstr ""
 "United States of America / USA"
 
 #: DescendantsLines/DescendantsLines.py:1697
-#: DescendantsLines/DescendantsLines.py:1697
 msgid "Spouse and Family"
 msgstr "Partner en familie"
 
 #: DescendantsLines/DescendantsLines.py:1699
-#: DescendantsLines/DescendantsLines.py:1699
 msgid "Vertical edge descendant to spouse-bar"
 msgstr "Verticale lijn van afstammeling tot partnerkader"
 
-#: DescendantsLines/DescendantsLines.py:1700
 #: DescendantsLines/DescendantsLines.py:1700
 msgid "The length of the vertical edge from descendant to spouse-bar."
 msgstr ""
 "De lengte van de verticale lijn van de afstammeling tot verbindingslijn."
 
 #: DescendantsLines/DescendantsLines.py:1704
-#: DescendantsLines/DescendantsLines.py:1704
 msgid "Vertical edge spouse-bar to spouse"
 msgstr "Verticale lijn van verbindingslijn naar partner"
 
-#: DescendantsLines/DescendantsLines.py:1705
 #: DescendantsLines/DescendantsLines.py:1705
 msgid "The length of the vertical edge from spouse-bar to spouse."
 msgstr "De lengte van de verticale lijn tussen verbindingslijn en partner."
 
 #: DescendantsLines/DescendantsLines.py:1709
-#: DescendantsLines/DescendantsLines.py:1709
 msgid "Vertical space spouse-bar to other spouse"
 msgstr "Verticale ruimte van verbindingslijn naar een andere partner"
 
-#: DescendantsLines/DescendantsLines.py:1710
 #: DescendantsLines/DescendantsLines.py:1710
 msgid ""
 "The space to add between one spouse-bar and another spouse in case of "
@@ -387,21 +328,17 @@ msgstr ""
 "in het geval van meerdere gezinnen met dezelfde afstammeling."
 
 #: DescendantsLines/DescendantsLines.py:1715
-#: DescendantsLines/DescendantsLines.py:1715
 msgid "Horizontal space descendant to spouse"
 msgstr "Horizontale ruimte van afstammeling tot partner"
 
-#: DescendantsLines/DescendantsLines.py:1716
 #: DescendantsLines/DescendantsLines.py:1716
 msgid "The space to add between the descendant and the spouse."
 msgstr "De toe te voegen ruimte tussen afstammeling en de partner."
 
 #: DescendantsLines/DescendantsLines.py:1721
-#: DescendantsLines/DescendantsLines.py:1721
 msgid "Horizonal space family to family"
 msgstr "Horizontale ruimte van gezin naar gezin"
 
-#: DescendantsLines/DescendantsLines.py:1722
 #: DescendantsLines/DescendantsLines.py:1722
 msgid ""
 "The space to add between the more extern descendant (or spouse) of a family "
@@ -412,11 +349,9 @@ msgstr ""
 "van het volgende gezin."
 
 #: DescendantsLines/DescendantsLines.py:1727
-#: DescendantsLines/DescendantsLines.py:1727
 msgid "Horizontal distance spouse to family edge"
 msgstr "Horizontale afstand partner naar gezinsrand"
 
-#: DescendantsLines/DescendantsLines.py:1728
 #: DescendantsLines/DescendantsLines.py:1728
 msgid ""
 "If this value is 0, the children bar is centered under the spouse. The "
@@ -428,71 +363,57 @@ msgstr ""
 "de afstammeling."
 
 #: DescendantsLines/DescendantsLines.py:1735
-#: DescendantsLines/DescendantsLines.py:1735
 msgid "OL_PAD"
 msgstr "OL_PAD"
 
-#: DescendantsLines/DescendantsLines.py:1736
 #: DescendantsLines/DescendantsLines.py:1736
 msgid "The number of ??? pad"
 msgstr "Het aantal ??? pad"
 
 #: DescendantsLines/DescendantsLines.py:1739
-#: DescendantsLines/DescendantsLines.py:1739
 msgid "Vertical edge spouse-bar to child-bar"
 msgstr "Verticale lijn tussen partnerbalk en kinderbalk"
 
-#: DescendantsLines/DescendantsLines.py:1740
 #: DescendantsLines/DescendantsLines.py:1740
 msgid "The length of the vertical edge from spouse-bar to child-bar."
 msgstr "De lengte van de verticale lijn tussen partnerbalk en kinderbalk."
 
 #: DescendantsLines/DescendantsLines.py:1746
-#: DescendantsLines/DescendantsLines.py:1746
 msgid "Children distance"
 msgstr "Afstand kinderen"
 
-#: DescendantsLines/DescendantsLines.py:1747
 #: DescendantsLines/DescendantsLines.py:1747
 msgid "The horizontal distance between two children of the same family."
 msgstr "De horizontale afstand tussen twee kinderen uit hetzelfde gezin."
 
 #: DescendantsLines/DescendantsLines.py:1751
-#: DescendantsLines/DescendantsLines.py:1751
 msgid "Vertical edge child to child-bar"
 msgstr "Verticale lijn van kind naar kinderbalk"
 
-#: DescendantsLines/DescendantsLines.py:1753
 #: DescendantsLines/DescendantsLines.py:1753
 msgid "The length of the vertical edge from child to child-bar."
 msgstr "De lengte van de verticale lijn van kind naar kinderbalk."
 
 #: DescendantsLines/DescendantsLines.py:1756
-#: DescendantsLines/DescendantsLines.py:1756
 msgid "MIN_C_WIDTH"
 msgstr "MIN_C_WIDTH"
 
-#: DescendantsLines/DescendantsLines.py:1757
 #: DescendantsLines/DescendantsLines.py:1757
 msgid "The number of ??? min width"
 msgstr "Het aantal ??? min breedte"
 
 #: DescendantsLines/DescendantsLines.py:1762
-#: DescendantsLines/DescendantsLines.py:1762
 msgid "Space around text"
 msgstr "Ruimte rond tekst"
 
-#: DescendantsLines/DescendantsLines.py:1763
 #: DescendantsLines/DescendantsLines.py:1763
 msgid "The space to add around the text block of a person."
 msgstr "De toe te voegen ruimte rond het tekstblok van een persoon."
 
 #: DescendantsLines/DescendantsLines.py:1767
-#: DescendantsLines/DescendantsLines.py:1767
 msgid "Space between lines of text"
 msgstr "Ruimte tussen tekstregels"
 
-#: DescendantsLines/DescendantsLines.py:1768
 #: DescendantsLines/DescendantsLines.py:1768
 msgid "The space to add between a line and the next in a person text block."
 msgstr ""
@@ -500,26 +421,21 @@ msgstr ""
 "tekstblok van een persoon."
 
 #: DescendantsLines/DescendantsLines.py:1773
-#: DescendantsLines/DescendantsLines.py:1773
 msgid "Header and Footer"
 msgstr "Koptekst en voettekst"
 
-#: DescendantsLines/DescendantsLines.py:1776
 #: DescendantsLines/DescendantsLines.py:1776
 msgid "The text that will be written in the header of the document"
 msgstr "De tekst die in de kop van het document wordt geschreven"
 
 #: DescendantsLines/DescendantsLines.py:1781
-#: DescendantsLines/DescendantsLines.py:1781
 msgid "The text that will be written in the footer of the document"
 msgstr "De tekst die in de voettekst van het document wordt geschreven"
 
 #: DescendantsLines/DescendantsLines.py:1785
-#: DescendantsLines/DescendantsLines.py:1785
 msgid "Title and footer coefficient"
 msgstr "Titel en voettekstcoëfficiënt"
 
-#: DescendantsLines/DescendantsLines.py:1786
 #: DescendantsLines/DescendantsLines.py:1786
 msgid ""
 "A number that multiply the base size of the text in the title and in the "
@@ -529,30 +445,25 @@ msgstr ""
 "vermenigvuldigt"
 
 #: DescendantsLines/DescendantsLines.py:1793
-#: DescendantsLines/DescendantsLines.py:1793
 msgid "Protect People, Images or Events that are marked Private"
 msgstr ""
 "Bescherm personen, afbeeldingen of evenementen die als privé zijn gemarkeerd"
 
-#: DescendantsLines/DescendantsLines.py:1795
 #: DescendantsLines/DescendantsLines.py:1795
 msgid "The Privacy setting of only these types of Gramps objects are checked"
 msgstr ""
 "De Privacy-instelling van alleen dit soort Gramps-objecten is aangevinkt"
 
 #: DescendantsLines/DescendantsLines.py:1799
-#: DescendantsLines/DescendantsLines.py:1799
 msgid "Privacy text"
 msgstr "Privacy tekst"
 
-#: DescendantsLines/DescendantsLines.py:1800
 #: DescendantsLines/DescendantsLines.py:1800
 msgid "Text to display in block, when a Person is marked private"
 msgstr ""
 "Tekst om in het tekstblok weer te geven, wanneer een persoon als privé is "
 "gemarkeerd"
 
-#: DescendantsLines/DescendantsLines.py:1815
 #: DescendantsLines/DescendantsLines.py:1815
 msgid "The default style."
 msgstr "De standaard stijl."

@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-17 18:14+0100\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -38,19 +38,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: RebuildTypes/RebuildTypes.gpr.py:25 RebuildTypes/RebuildTypes.gpr.py:26
+#: RebuildTypes/RebuildTypes.gpr.py:26
 msgid "Rebuild Gramps Types"
 msgstr "Reconstruire les types Gramps"
 
-#: RebuildTypes/RebuildTypes.gpr.py:26 RebuildTypes/RebuildTypes.gpr.py:27
+#: RebuildTypes/RebuildTypes.gpr.py:27
 msgid "Rebuilds Gramps Types"
 msgstr "Reconstruit les types Gramps"
 
-#: RebuildTypes/RebuildTypes.py:74 RebuildTypes/RebuildTypes.py:75
+#: RebuildTypes/RebuildTypes.py:75
 msgid "Gramps Types rebuilt"
 msgstr "Les types Gramps reconstruits"
 
-#: RebuildTypes/RebuildTypes.py:75 RebuildTypes/RebuildTypes.py:76
+#: RebuildTypes/RebuildTypes.py:76
 #, python-format
 msgid "Found %d custom event types"
 msgstr "Trouvé %d type(s) d'événement personnalisé(s)"

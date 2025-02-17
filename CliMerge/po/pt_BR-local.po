@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-26 19:54-0300\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2012-08-26 20:57-0300\n"
 "Last-Translator: André Marcelo Alvarenga <andrealvarenga@gmx.net>\n"
 "Language-Team: Brazilian Portuguese>\n"
@@ -24,6 +24,10 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 1.0\n"
 
-#: CliMerge/CliMerge.gpr.py:17 CliMerge/CliMerge.gpr.py:19
+#: CliMerge/CliMerge.gpr.py:9
+msgid "Command Line Merge"
+msgstr ""
+
+#: CliMerge/CliMerge.gpr.py:19
 msgid "Merge primary objects via the command line."
 msgstr "Mesclar os objetos primários através da linha de comando."

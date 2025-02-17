@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-26 19:54-0300\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2012-08-26 20:57-0300\n"
 "Last-Translator: André Marcelo Alvarenga <andrealvarenga@gmx.net>\n"
 "Language-Team: Brazilian Portuguese>\n"
@@ -24,83 +24,66 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 1.0\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:78
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:83
-#: AttachSourceTool/AttachSourceTool.py:66
+#: AttachSourceTool/AttachSourceTool.py:70
 msgid "Select filter to restrict people"
 msgstr "Selecione o filtro para restringir as pessoas"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:232
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:237
-#: AttachSourceTool/AttachSourceTool.py:152
+#: AttachSourceTool/AttachSourceTool.py:157
 msgid "Processing...\n"
 msgstr "Processando...\n"
 
-#: AttachSourceTool/AttachSourceTool.gpr.py:25
-#: AttachSourceTool/AttachSourceTool.py:133
-#: AttachSourceTool/AttachSourceTool.py:150
 #: AttachSourceTool/AttachSourceTool.gpr.py:26
 #: AttachSourceTool/AttachSourceTool.py:137
 #: AttachSourceTool/AttachSourceTool.py:155
 msgid "Attach Source"
 msgstr "Anexar fonte"
 
-#: AttachSourceTool/AttachSourceTool.gpr.py:26
 #: AttachSourceTool/AttachSourceTool.gpr.py:27
 msgid "Attaches a shared source to multiple objects."
 msgstr "Anexa uma fonte comum a vários objetos"
 
-#: AttachSourceTool/AttachSourceTool.py:77
 #: AttachSourceTool/AttachSourceTool.py:81
 msgid "Source type"
 msgstr "Tipo de fonte"
 
-#: AttachSourceTool/AttachSourceTool.py:78
 #: AttachSourceTool/AttachSourceTool.py:82
 msgid "New source"
 msgstr "Nova fonte"
 
-#: AttachSourceTool/AttachSourceTool.py:79
 #: AttachSourceTool/AttachSourceTool.py:83
 msgid "Existing source"
 msgstr "Fonte existente"
 
-#: AttachSourceTool/AttachSourceTool.py:80
 #: AttachSourceTool/AttachSourceTool.py:84
 msgid "Select the type of source to attach"
 msgstr "Selecione o tipo de fonte a anexar"
 
-#: AttachSourceTool/AttachSourceTool.py:85
 #: AttachSourceTool/AttachSourceTool.py:89
 msgid "New Source Title"
 msgstr "Novo título da fonte"
 
-#: AttachSourceTool/AttachSourceTool.py:86
 #: AttachSourceTool/AttachSourceTool.py:90
 msgid "Text of source to attach"
 msgstr "Texto da fonte a anexar"
 
-#: AttachSourceTool/AttachSourceTool.py:90
 #: AttachSourceTool/AttachSourceTool.py:94
 msgid "Existing Source ID"
 msgstr "ID da fonte existente"
 
-#: AttachSourceTool/AttachSourceTool.py:91
 #: AttachSourceTool/AttachSourceTool.py:95
 msgid "ID of source to attach"
 msgstr "ID da fonte a anexar"
 
-#: AttachSourceTool/AttachSourceTool.py:169
 #: AttachSourceTool/AttachSourceTool.py:174
 msgid "Attaching sources...\n"
 msgstr "Anexando fontes...\n"
 
-#: AttachSourceTool/AttachSourceTool.py:170
 #: AttachSourceTool/AttachSourceTool.py:175
 msgid "Attaching sources..."
 msgstr "Anexando fontes..."
 
-#: AttachSourceTool/AttachSourceTool.py:189
 #: AttachSourceTool/AttachSourceTool.py:197
 msgid "Done!\n"
 msgstr "Concluído!\n"

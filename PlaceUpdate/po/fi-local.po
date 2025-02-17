@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-02 02:13+0300\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2019-12-10 13:09+0200\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: niememat@gmail.com\n"
@@ -33,81 +33,86 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.0.6\n"
 
-#: PlaceTool/PlaceTool.gpr.py:3 PlaceTool/PlaceTool.gpr.py:14
 #: PlaceUpdate/PlaceUpdate.gpr.py:4 PlaceUpdate/PlaceUpdate.gpr.py:15
 msgid "PlaceUpdate"
 msgstr "Paikkatyökalu"
 
-#: PlaceTool/PlaceTool.gpr.py:4 PlaceUpdate/PlaceUpdate.gpr.py:5
+#: PlaceUpdate/PlaceUpdate.gpr.py:5
 msgid "Gramplet to manipulate multiple places"
 msgstr "Gramplet, joka käsittelee useita paikkoja kerrallaan"
 
-#: PlaceTool/PlaceTool.py:57 PlaceUpdate/PlaceUpdate.py:56
+#: PlaceUpdate/PlaceUpdate.py:56
 msgid "Set properties for multiple places"
 msgstr "Aseta usean paikan ominaisuuksia"
 
-#: PlaceTool/PlaceTool.py:93 PlaceUpdate/PlaceUpdate.py:96
+#: PlaceUpdate/PlaceUpdate.py:96
 msgid ""
 "This gramplet allows setting properties for multiple places at the same time"
 msgstr ""
 "Tällä Grampletilla voi asettaa ominaisuuksia monelle paikalle kerrallaan"
 
-#: PlaceTool/PlaceTool.py:111 PlaceUpdate/PlaceUpdate.py:111
+#: PlaceUpdate/PlaceUpdate.py:111
 msgid "New enclosing place"
 msgstr "Uusi ympäröivä paikka:"
-
-#: PlaceTool/PlaceTool.py:134 PlaceUpdate/PlaceUpdate.py:159
-msgid "Clear original enclosing places"
-msgstr "Poista aiemmat ympäröivät paikat"
-
-#: PlaceTool/PlaceTool.py:137 PlaceUpdate/PlaceUpdate.py:162
-msgid "Clear tags"
-msgstr "Poista aiemmat tagit"
-
-#: PlaceTool/PlaceTool.py:140 PlaceUpdate/PlaceUpdate.py:165
-msgid "Generate hierarchy"
-msgstr "Generoi paikkahierarkia"
-
-#: PlaceTool/PlaceTool.py:146 PlaceUpdate/PlaceUpdate.py:171
-msgid "use spaces as separator"
-msgstr "välilyönti erotinmerkkinä"
-
-#: PlaceTool/PlaceTool.py:150 PlaceUpdate/PlaceUpdate.py:175
-msgid "reverse hierarchy"
-msgstr "käänteinen hierarkia"
-
-#: PlaceTool/PlaceTool.py:156 PlaceUpdate/PlaceUpdate.py:181
-msgid "Replace text"
-msgstr "Korvaa teksti"
-
-#: PlaceTool/PlaceTool.py:159 PlaceUpdate/PlaceUpdate.py:184
-msgid "Use regex"
-msgstr "Käytä säännöllisiä lausekkeita"
-
-#: PlaceTool/PlaceTool.py:169 PlaceUpdate/PlaceUpdate.py:193
-msgid "Old text:"
-msgstr "Korvattava teksti:"
-
-#: PlaceTool/PlaceTool.py:174 PlaceUpdate/PlaceUpdate.py:197
-msgid "New text:"
-msgstr "Uusi teksti:"
-
-#: PlaceTool/PlaceTool.py:186 PlaceUpdate/PlaceUpdate.py:209
-msgid "Clear selections"
-msgstr "Poista valinnat"
-
-#: PlaceTool/PlaceTool.py:190 PlaceUpdate/PlaceUpdate.py:213
-msgid "Apply to selected places"
-msgstr "Suorita valituille paikoilla"
-
-#: PlaceTool/PlaceTool.py:231 PlaceUpdate/PlaceUpdate.py:266
-msgid "Setting place properties"
-msgstr "Paikkojen ominaisuuksien asettaminen"
-
-#: PlaceTool/PlaceTool.py:272 PlaceUpdate/PlaceUpdate.py:304
-msgid "Regex operation failed: {}"
-msgstr ""
 
 #: PlaceUpdate/PlaceUpdate.py:119
 msgid "Timespan:"
 msgstr "Aikaväli:"
+
+#: PlaceUpdate/PlaceUpdate.py:123
+#, fuzzy
+#| msgid "Clear original enclosing places"
+msgid "Set timespan for enclosing places"
+msgstr "Poista aiemmat ympäröivät paikat"
+
+#: PlaceUpdate/PlaceUpdate.py:159
+msgid "Clear original enclosing places"
+msgstr "Poista aiemmat ympäröivät paikat"
+
+#: PlaceUpdate/PlaceUpdate.py:162
+msgid "Clear tags"
+msgstr "Poista aiemmat tagit"
+
+#: PlaceUpdate/PlaceUpdate.py:165
+msgid "Generate hierarchy"
+msgstr "Generoi paikkahierarkia"
+
+#: PlaceUpdate/PlaceUpdate.py:171
+msgid "use spaces as separator"
+msgstr "välilyönti erotinmerkkinä"
+
+#: PlaceUpdate/PlaceUpdate.py:175
+msgid "reverse hierarchy"
+msgstr "käänteinen hierarkia"
+
+#: PlaceUpdate/PlaceUpdate.py:181
+msgid "Replace text"
+msgstr "Korvaa teksti"
+
+#: PlaceUpdate/PlaceUpdate.py:184
+msgid "Use regex"
+msgstr "Käytä säännöllisiä lausekkeita"
+
+#: PlaceUpdate/PlaceUpdate.py:193
+msgid "Old text:"
+msgstr "Korvattava teksti:"
+
+#: PlaceUpdate/PlaceUpdate.py:197
+msgid "New text:"
+msgstr "Uusi teksti:"
+
+#: PlaceUpdate/PlaceUpdate.py:209
+msgid "Clear selections"
+msgstr "Poista valinnat"
+
+#: PlaceUpdate/PlaceUpdate.py:213
+msgid "Apply to selected places"
+msgstr "Suorita valituille paikoilla"
+
+#: PlaceUpdate/PlaceUpdate.py:266
+msgid "Setting place properties"
+msgstr "Paikkojen ominaisuuksien asettaminen"
+
+#: PlaceUpdate/PlaceUpdate.py:304
+msgid "Regex operation failed: {}"
+msgstr ""

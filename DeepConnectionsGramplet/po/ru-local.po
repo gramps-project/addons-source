@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-04 16:31+0300\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -31,17 +31,19 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:3
+#: EditExifMetadata/editexifmetadata.py:215
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:69
+msgid "Copy"
+msgstr "Копировать"
+
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:4
 msgid "Deep Connections Gramplet"
 msgstr "Подробные связи"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:4
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:6
 msgid "Gramplet showing a deep relationship between active and home people"
 msgstr "Показывает связь между активным и базовым лицом"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:10
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:13
 msgid "Deep Connections"
 msgstr "Подробные связи"
@@ -50,43 +52,31 @@ msgstr "Подробные связи"
 msgid "Pause"
 msgstr "Пауза"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:69
-#: EditExifMetadata/editexifmetadata.py:215
-msgid "Copy"
-msgstr "Копировать"
-
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:106
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:107
 msgid "mentioned in note"
 msgstr "упомянут в заметке"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:132
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:133
 msgid "Note on Family"
 msgstr "Заметка о семье"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:142
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:143
 msgid "sibling"
 msgstr "брат/сестра"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:150
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:151
 msgid "Note on Parent Family"
 msgstr "Заметка о семье родителей"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:153
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:154
 #, python-format
 msgid "%s (association)"
 msgstr "%s (связь)"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:157
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:158
 msgid "Note on Person"
 msgstr "Заметка о человеке"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:187
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:188
 #, python-format
 msgid ""
@@ -96,29 +86,24 @@ msgstr ""
 "\n"
 "   %s "
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:208
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:209
 msgid "No Active Person set."
 msgstr "Активное лицо не назначено."
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:216
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:217
 msgid "Looking for relationship between\n"
 msgstr "Поиск отношений между\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:217
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:218
 #, python-format
 msgid "  <b>%s</b> (Home Person) and\n"
 msgstr "  <b>%s</b> (Базовое лицо) и\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:218
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:219
 #, python-format
 msgid "  <b>%s</b> (Active Person)...\n"
 msgstr "  <b>%s</b> (Активное лицо)...\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:228
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:229
 #, python-format
 msgid ""
@@ -128,7 +113,6 @@ msgstr ""
 "Найдена связь #%d: \n"
 "   "
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:238
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:239
 msgid ""
 "Paused.\n"
@@ -137,7 +121,6 @@ msgstr ""
 "Остановлено.\n"
 "Нажмите 'Продолжить' для поиска дополнительных связей.\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:253
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:254
 #, python-format
 msgid ""

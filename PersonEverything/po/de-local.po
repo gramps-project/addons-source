@@ -8,7 +8,7 @@
 # Sebastian Vöcking <voeck@web.de>, 2005.
 # Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
 # Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2025.
 # Alois Pöttker <alois.poettker@gmx.de>, 2017.
 # Allan Nordhøy <epost@anotheragency.no>, 2021.
 # R. B. <weblate@macdefender.org>, 2021.
@@ -21,8 +21,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-02 22:39+0200\n"
-"PO-Revision-Date: 2025-02-15 16:17+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-17 00:14+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -33,63 +33,51 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.10\n"
 
-#: AncestorFill/AncestorFill.py:360 AncestorFill/AncestorFill.py:361
-#: PersonEverything/PersonEverything.py:1028
+#: AncestorFill/AncestorFill.py:361 PersonEverything/PersonEverything.py:1028
 msgid "The style used for the title of the page."
 msgstr "Der Stil, der für den Seitentitel verwendet wird."
 
-#: DynamicWeb/dynamicweb.py:2546 DynamicWeb/dynamicweb.py:3060
-#: PersonEverything/PersonEverything.py:220
+#: DynamicWeb/dynamicweb.py:3060 PersonEverything/PersonEverything.py:220
 msgid "Relationship to Father"
 msgstr "Beziehung zum Vater"
 
-#: DynamicWeb/dynamicweb.py:2547 DynamicWeb/dynamicweb.py:3061
-#: PersonEverything/PersonEverything.py:225
+#: DynamicWeb/dynamicweb.py:3061 PersonEverything/PersonEverything.py:225
 msgid "Relationship to Mother"
 msgstr "Beziehung zur Mutter"
 
-#: PersonEverything//PersonEverything.gpr.py:31
 #: PersonEverything/PersonEverything.gpr.py:32
 msgid "PersonEverything Report"
 msgstr "PersonAlles Bericht"
 
-#: PersonEverything//PersonEverything.gpr.py:32
 #: PersonEverything/PersonEverything.gpr.py:33
 msgid "Produces a report containing everything about the active person"
 msgstr "Erstellt einen Bericht der alles über die aktive Person enthält"
 
-#: PersonEverything//PersonEverything.py:133
 #: PersonEverything/PersonEverything.py:133
 #, python-format
 msgid "All information about %s"
 msgstr "Alle Informationen über %s"
 
-#: PersonEverything//PersonEverything.py:173
 #: PersonEverything/PersonEverything.py:173
 msgid "Primary name"
 msgstr "Primärer Name"
 
-#: PersonEverything//PersonEverything.py:180
 #: PersonEverything/PersonEverything.py:180
 msgid "Alternate name"
 msgstr "Alternative Name"
 
-#: PersonEverything//PersonEverything.py:196
 #: PersonEverything/PersonEverything.py:196
 msgid " This is the primary birth event."
 msgstr " Dies ist das primäre Geburtsereignis."
 
-#: PersonEverything//PersonEverything.py:199
 #: PersonEverything/PersonEverything.py:199
 msgid " This is the primary death event."
 msgstr " Dies ist das primäre Todesereignis."
 
-#: PersonEverything//PersonEverything.py:238
 #: PersonEverything/PersonEverything.py:238
 msgid "Parent Family"
 msgstr "Eltern Familie"
 
-#: PersonEverything//PersonEverything.py:240
 #: PersonEverything/PersonEverything.py:240
 msgid ""
 "Details of any children and events etc. would be in a similar report for the "
@@ -98,123 +86,98 @@ msgstr ""
 "Einzelheiten zu Kindern, Ereignissen usw. sind in einem ähnlichen Bericht "
 "für den Vater oder die Mutter enthalten."
 
-#: PersonEverything//PersonEverything.py:403
 #: PersonEverything/PersonEverything.py:403
 msgid "Temple and status"
 msgstr "Tempel und Status"
 
-#: PersonEverything//PersonEverything.py:414
 #: PersonEverything/PersonEverything.py:414
 msgid "LDS Ordinance family"
 msgstr "HLT-Ritus Familie"
 
-#: PersonEverything//PersonEverything.py:418
 #: PersonEverything/PersonEverything.py:418
 msgid "LDS "
 msgstr "HLT"
 
-#: PersonEverything//PersonEverything.py:434
 #: PersonEverything/PersonEverything.py:434
 msgid "Street, City, County, State, Postal Code, Country, Phone number"
 msgstr "Straße, Ort, Kreis, Staat, Postleitzahl, Land, Telefonnummer"
 
-#: PersonEverything//PersonEverything.py:448
 #: PersonEverything/PersonEverything.py:448
 msgid "Media Reference"
 msgstr "Medienreferenz"
 
-#: PersonEverything//PersonEverything.py:455
-#: PersonEverything//PersonEverything.py:732
 #: PersonEverything/PersonEverything.py:455
 #: PersonEverything/PersonEverything.py:732
 msgid "Description and Path"
 msgstr "Beschreibung und Pfad"
 
-#: PersonEverything//PersonEverything.py:484
 #: PersonEverything/PersonEverything.py:484
 msgid "Referenced Region"
 msgstr "Referenzierte Region"
 
-#: PersonEverything//PersonEverything.py:505
 #: PersonEverything/PersonEverything.py:505
 msgid "Mime type"
 msgstr "Mime Typ"
 
-#: PersonEverything//PersonEverything.py:516
 #: PersonEverything/PersonEverything.py:516
 msgid ""
 "Given name(s): Title, Given, Suffix, Call Name, Nick Name, Family Nick Name"
 msgstr ""
 "Vorname(n): Titel, Vorname, Suffix, Rufname, Spitzname, Familienspitzname"
 
-#: PersonEverything//PersonEverything.py:542
 #: PersonEverything/PersonEverything.py:542
 msgid "Note type"
 msgstr "Notiztyp"
 
-#: PersonEverything//PersonEverything.py:553
 #: PersonEverything/PersonEverything.py:553
 msgid "Parent Place"
 msgstr "Eltern Ort"
 
-#: PersonEverything//PersonEverything.py:568
-#: PersonEverything//PersonEverything.py:572
 #: PersonEverything/PersonEverything.py:568
 #: PersonEverything/PersonEverything.py:572
 msgid "Alternate Location"
 msgstr "Alternativer Ort"
 
-#: PersonEverything//PersonEverything.py:607
 #: PersonEverything/PersonEverything.py:607
 msgid "Alternative Name"
 msgstr "Alternative Name"
 
-#: PersonEverything//PersonEverything.py:618
 #: PersonEverything/PersonEverything.py:618
 msgid "Latitude, Longitude"
 msgstr "Breitengrad, Längengrad"
 
-#: PersonEverything//PersonEverything.py:648
 #: PersonEverything/PersonEverything.py:648
 msgid "Repository type"
 msgstr "Art des Aufbewahrungsort"
 
-#: PersonEverything//PersonEverything.py:670
 #: PersonEverything/PersonEverything.py:670
 msgid "Repository reference"
 msgstr "Aufbewahrungsort-Referenz"
 
-#: PersonEverything//PersonEverything.py:671
 #: PersonEverything/PersonEverything.py:671
 msgid "Media type"
 msgstr "Medienart"
 
-#: PersonEverything//PersonEverything.py:679
 #: PersonEverything/PersonEverything.py:679
 msgid "Origin type"
 msgstr "Herkunftsart"
 
-#: PersonEverything//PersonEverything.py:686
 #: PersonEverything/PersonEverything.py:686
 msgid "Prefix, surname, connector"
 msgstr "Präfix, Nachname, Verbinder"
 
-#: PersonEverything//PersonEverything.py:691
 #: PersonEverything/PersonEverything.py:691
 msgid "{This is the primary surname}"
 msgstr "{Dies ist der primäre Nachname}"
 
-#: PersonEverything//PersonEverything.py:704
 #: PersonEverything/PersonEverything.py:704
 msgid "Tag name"
 msgstr "Makierungsname"
 
-#: PersonEverything//PersonEverything.py:715
 #: PersonEverything/PersonEverything.py:715
 msgid "Tag colour and priority"
 msgstr "Markierungsfarbe und Priorität"
 
-#: PersonEverything//PersonEverything.py:960
 #: PersonEverything/PersonEverything.py:960
 msgid "No source information found"
 msgstr "Keine Quelleninformation gefunden"

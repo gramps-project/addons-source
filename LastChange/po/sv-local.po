@@ -9,14 +9,15 @@
 # Pär Ekholm <par.ekholm50@gmail.com>, 2016, 2018.
 # Pär Ekholm <par.ekholm@pekholm.se>, 2018, 2019.
 # Peter Landgren <peter@test>, 2010.
-#
+# Pär Ekholm <github1@m.pekholm.org>, 2025.
+# Milan <mobrcian@hotmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-08 17:11-0500\n"
-"PO-Revision-Date: 2025-02-09 11:16+0000\n"
-"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-16 10:55+0000\n"
+"Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
 "Language: sv\n"
@@ -24,27 +25,26 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.10\n"
 
-#: AncestorFill/AncestorFill.py:419 AncestorFill/AncestorFill.py:361
-#: LastChange/LastChangeReport.py:378
+#: AncestorFill/AncestorFill.py:361 LastChange/LastChangeReport.py:378
 msgid "The style used for the title of the page."
 msgstr "Mall för rapporttitel."
 
-#: LastChange/LastChange.gpr.py:25 LastChange/LastChange.gpr.py:26
+#: LastChange/LastChange.gpr.py:26
 msgid "List the last ten person records that have been changed"
 msgstr "Lista de tio personposterna, som har ändrats"
 
-#: LastChange/LastChange.gpr.py:34 LastChange/LastChange.gpr.py:35
+#: LastChange/LastChange.gpr.py:35
 msgid "Latest Changes"
 msgstr "Senaste ändringar"
 
-#: LastChange/LastChange.gpr.py:40 LastChange/LastChangeReport.py:74
-#: LastChange/LastChangeReport.py:113 LastChange/LastChange.gpr.py:42
+#: LastChange/LastChange.gpr.py:42 LastChange/LastChangeReport.py:74
+#: LastChange/LastChangeReport.py:113
 msgid "Last Change Report"
 msgstr "Rapport över senaste ändringar"
 
-#: LastChange/LastChange.gpr.py:41 LastChange/LastChange.gpr.py:43
+#: LastChange/LastChange.gpr.py:43
 msgid "Report of the last records that have been changed"
 msgstr "Rapport över de poster, som har ändrats senast"
 

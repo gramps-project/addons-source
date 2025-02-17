@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -32,12 +32,10 @@ msgstr "Slægtskab med fader"
 msgid "Relationship to Mother"
 msgstr "Slægtskab med moder"
 
-#: PersonEverything/PersonEverything.gpr.py:31
 #: PersonEverything/PersonEverything.gpr.py:32
 msgid "PersonEverything Report"
 msgstr " Dette er den primære fødselshændelse"
 
-#: PersonEverything/PersonEverything.gpr.py:32
 #: PersonEverything/PersonEverything.gpr.py:33
 msgid "Produces a report containing everything about the active person"
 msgstr "Danner en rapport, der indeholder alt om den aktive person"

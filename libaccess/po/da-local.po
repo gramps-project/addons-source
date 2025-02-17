@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -20,7 +20,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
 
-#: libaccess/libaccess.gpr.py:32 libaccess/libaccess.gpr.py:34
+#: libaccess/libaccess.gpr.py:34
 msgid "Provides a library for generic access to the database and gen.lib."
 msgstr "Giver et bibliotek for generisk adgang til database og gen.lib."
 

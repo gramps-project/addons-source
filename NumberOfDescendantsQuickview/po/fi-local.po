@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-02 02:13+0300\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2019-12-10 13:09+0200\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: niememat@gmail.com\n"
@@ -33,50 +33,44 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.0.6\n"
 
-#: NumberOfDescendantsQuickview.gpr.py:3
 #: LifeLineChartView/_dummy_translation_string_po.py:115
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:4
 msgid "Number of descendants"
 msgstr "Jälkeläisten määrä"
 
-#: NumberOfDescendantsQuickview.gpr.py:4
+#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:54
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:87
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:94
+msgid "Generation"
+msgstr "Sukupolvi"
+
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:5
 msgid "Shows the number of descendants of the current person"
 msgstr "Näyttää nykyisen henkilön jälkeläisten lukumäärän"
 
-#: NumberOfDescendantsQuickview.py:62
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:62
 #, python-format
 msgid "Number of %s's descendants"
 msgstr "Henkilön %s jälkeläisten lukumäärä"
 
-#: NumberOfDescendantsQuickview.py:87 NumberOfDescendantsQuickview.py:94
-#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:54
-msgid "Generation"
-msgstr "Sukupolvi"
-
-#: NumberOfDescendantsQuickview.py:89
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:89
 msgid "Seen"
 msgstr "Nähnyt"
 
-#: NumberOfDescendantsQuickview.py:90
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:90
 msgid "Outlived"
 msgstr "Kuollut"
 
-#: NumberOfDescendantsQuickview.py:91 NumberOfDescendantsQuickview.py:96
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:91
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:96
 msgid "Now alive"
 msgstr "Elossa"
 
-#: NumberOfDescendantsQuickview.py:122
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:122
 #, python-format
 msgid "Seen = number of descendants whose birth %s has lived to see"
 msgstr "Nähnyt = jälkeläisten määrä, joiden syntymän %s on eläessään nähnyt"
 
-#: NumberOfDescendantsQuickview.py:124
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:124
 #, python-format
 msgid "Outlived = number of descendants who died while %s was still alive"

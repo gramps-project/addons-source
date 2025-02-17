@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -26,11 +26,11 @@ msgstr ""
 msgid "INFO"
 msgstr "INFO"
 
-#: MediaReport/media_report.gpr.py:23 MediaReport/media_report.gpr.py:24
+#: MediaReport/media_report.gpr.py:24
 msgid "Media Report"
 msgstr "Medierapport"
 
-#: MediaReport/media_report.gpr.py:24 MediaReport/media_report.gpr.py:25
+#: MediaReport/media_report.gpr.py:25
 msgid "Generates report including images, image data and notes."
 msgstr "Danner en rapport som medtager billeder, billeddata og noter."
 

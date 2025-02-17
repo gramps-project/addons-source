@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-17 18:14+0100\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -38,77 +38,61 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: Query/QueryQuickview.py:225 Query/QueryQuickview.py:426
-#: TimelineQuickview/TimelineQuickview.py:186
+#: Query/QueryQuickview.py:426 TimelineQuickview/TimelineQuickview.py:186
 msgid "Today"
 msgstr "Aujourd'hui"
 
-#: TimelineQuickview/TimelineQuickview.gpr.py:10
 #: TimelineQuickview/TimelineQuickview.gpr.py:11
 msgid "Display a person's events on a timeline"
 msgstr "Affiche les événements d'une personne tout au long de sa vie"
 
-#: TimelineQuickview/TimelineQuickview.py:44
 #: TimelineQuickview/TimelineQuickview.py:48
 msgid "Inlaw Parents"
 msgstr "Les parents par alliance"
 
-#: TimelineQuickview/TimelineQuickview.py:47
 #: TimelineQuickview/TimelineQuickview.py:51
 msgid "Grandparents"
 msgstr "Les grand-parents"
 
-#: TimelineQuickview/TimelineQuickview.py:49
 #: TimelineQuickview/TimelineQuickview.py:53
 msgid "Inlaw Grandparents"
 msgstr "Les grand-parents par alliance"
 
-#: TimelineQuickview/TimelineQuickview.py:52
 #: TimelineQuickview/TimelineQuickview.py:56
 msgid "Great grandparents"
 msgstr "Les arrières-grand-parents"
 
-#: TimelineQuickview/TimelineQuickview.py:54
 #: TimelineQuickview/TimelineQuickview.py:58
 msgid "Inlaw Great grandparents"
 msgstr "Les arrières grand-parents par alliance"
 
-#: TimelineQuickview/TimelineQuickview.py:57
 #: TimelineQuickview/TimelineQuickview.py:61
 msgid "Great, "
 msgstr "Aïeux"
 
-#: TimelineQuickview/TimelineQuickview.py:57
-#: TimelineQuickview/TimelineQuickview.py:59
 #: TimelineQuickview/TimelineQuickview.py:61
 #: TimelineQuickview/TimelineQuickview.py:63
 msgid "great, "
 msgstr "aïeux"
 
-#: TimelineQuickview/TimelineQuickview.py:57
-#: TimelineQuickview/TimelineQuickview.py:59
 #: TimelineQuickview/TimelineQuickview.py:61
 #: TimelineQuickview/TimelineQuickview.py:63
 msgid "great grandparents"
 msgstr "arrières-grand-parents"
 
-#: TimelineQuickview/TimelineQuickview.py:59
 #: TimelineQuickview/TimelineQuickview.py:63
 msgid "Inlaw Great, "
 msgstr "Aïeux par alliance"
 
-#: TimelineQuickview/TimelineQuickview.py:98
 #: TimelineQuickview/TimelineQuickview.py:102
 msgid "Partner's spouse"
 msgstr "Conjoint du concubin"
 
-#: TimelineQuickview/TimelineQuickview.py:152
 #: TimelineQuickview/TimelineQuickview.py:156
 #, python-format
 msgid "Timeline for %s"
 msgstr "Fil du temps pour %s"
 
-#: TimelineQuickview/TimelineQuickview.py:159
 #: TimelineQuickview/TimelineQuickview.py:163
 msgid "People involved"
 msgstr "Personnes impliquées"

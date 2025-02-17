@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2024-10-10 22:54+0300\n"
 "Last-Translator: Illia Maier <illia@maier.page>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
@@ -21,11 +21,23 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: DynamicWeb/dynamicweb.gpr.py:15 DynamicWeb/dynamicweb.gpr.py:16
+#: D3Charts/DescendantIndentedTree.py:1867 DynamicWeb/dynamicweb.py:4811
+msgid "Include records marked private"
+msgstr "Включати записи, позначені як приватні"
+
+#: D3Charts/DescendantIndentedTree.py:1877 DynamicWeb/dynamicweb.py:4819
+msgid "Include Last Name Only"
+msgstr "Включати лише прізвище"
+
+#: D3Charts/DescendantIndentedTree.py:1879 DynamicWeb/dynamicweb.py:4822
+msgid "Include Full Name Only"
+msgstr "Включати лише повне ім'я"
+
+#: DynamicWeb/dynamicweb.gpr.py:16
 msgid "Dynamic Web Report"
 msgstr "Динамічний веб-звіт"
 
-#: DynamicWeb/dynamicweb.gpr.py:16 DynamicWeb/dynamicweb.gpr.py:17
+#: DynamicWeb/dynamicweb.gpr.py:17
 msgid "Produces dynamic web pages for the database"
 msgstr "Генерує динамічні веб-сторінки для бази даних"
 
@@ -531,6 +543,26 @@ msgstr "Сім'я %(father)s"
 msgid "Family of %(mother)s"
 msgstr "Сім'я %(mother)s"
 
+#: DynamicWeb/dynamicweb.py:4660
+msgid ""
+"In this note, the following special words are processed:\n"
+"__SEARCH_FORM__ is replaced by a search form.\n"
+"__NB_INDIVIDUALS__ is replaced by the number of persons.\n"
+"__NB_FAMILIES__ is replaced by the number of families.\n"
+"__NB_MEDIA__ is replaced by the number of media.\n"
+"__NB_SOURCES__ is replaced by the number of sources.\n"
+"__NB_REPOSITORIES__ is replaced by the number of repositories.\n"
+"__NB_PLACES__ is replaced by the number of places.\n"
+"__MEDIA_<gid>__ is replaced by the media with Gramps ID <gid>.\n"
+"__THUMB_<gid>__ is replaced by the thumbnail of the media with Gramps ID "
+"<gid>.\n"
+"__EXPORT_DATE__ is replaced by the current date.\n"
+"__GRAMPS_VERSION__ is replaced by the Gramps version.\n"
+"__GRAMPS_HOMEPAGE__ is replaced by the Gramps homepage link.\n"
+"URL starting with \"relative://relative.<link>\" are replaced by the "
+"relative URL \"<link>\".\n"
+msgstr ""
+
 #: DynamicWeb/dynamicweb.py:4712
 msgid "Store web pages in archive"
 msgstr "Зберігати веб-сторінки в архіві"
@@ -578,21 +610,9 @@ msgstr "Шаблон веб-сайту"
 msgid "Select the template of the web site"
 msgstr "Виберіть шаблон веб-сайту"
 
-#: DynamicWeb/dynamicweb.py:4811 D3Charts/DescendantIndentedTree.py:1867
-msgid "Include records marked private"
-msgstr "Включати записи, позначені як приватні"
-
 #: DynamicWeb/dynamicweb.py:4812
 msgid "Whether to include private objects"
 msgstr "Чи включати приватні об'єкти"
-
-#: DynamicWeb/dynamicweb.py:4819 D3Charts/DescendantIndentedTree.py:1877
-msgid "Include Last Name Only"
-msgstr "Включати лише прізвище"
-
-#: DynamicWeb/dynamicweb.py:4822 D3Charts/DescendantIndentedTree.py:1879
-msgid "Include Full Name Only"
-msgstr "Включати лише повне ім'я"
 
 #: DynamicWeb/dynamicweb.py:4833
 msgid ""

@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-02 02:13+0300\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2019-12-10 13:09+0200\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: niememat@gmail.com\n"
@@ -33,34 +33,34 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.0.6\n"
 
-#: UKWebPack.gpr.py:10 UKWebConnectPack/UKWebPack.gpr.py:11
-msgid "UK Web Connect Pack"
-msgstr "UK Web Connect Pack"
-
-#: UKWebPack.gpr.py:11 UKWebConnectPack/UKWebPack.gpr.py:12
-msgid "Collection of Web sites for the UK (requires libwebconnect)"
-msgstr "Nettisivustojen kokoelma UK (vaatii libwebconnectin)"
-
-#: UKWebPack.py:33 UKWebConnectPack/UKWebPack.py:33
-msgid "UK Google"
-msgstr "Google UK"
-
-#: UKWebPack.py:34 UKWebConnectPack/UKWebPack.py:34
-msgid "British, UK, and Ireland"
-msgstr "Englanti, UK, ja Irlanti (RootsWeb's)"
-
-#: UKWebPack.py:35 SVWebconnectPack/SVWebPack.py:34
+#: SVWebconnectPack/SVWebPack.py:34 UKWebConnectPack/UKWebPack.py:35
 msgid "FamilySearch.org"
 msgstr "FamilySearch.org UK"
 
-#: UKWebPack.py:37 UKWebConnectPack/UKWebPack.py:37
+#: UKWebConnectPack/UKWebPack.gpr.py:11
+msgid "UK Web Connect Pack"
+msgstr "UK Web Connect Pack"
+
+#: UKWebConnectPack/UKWebPack.gpr.py:12
+msgid "Collection of Web sites for the UK (requires libwebconnect)"
+msgstr "Nettisivustojen kokoelma UK (vaatii libwebconnectin)"
+
+#: UKWebConnectPack/UKWebPack.py:33
+msgid "UK Google"
+msgstr "Google UK"
+
+#: UKWebConnectPack/UKWebPack.py:34
+msgid "British, UK, and Ireland"
+msgstr "Englanti, UK, ja Irlanti (RootsWeb's)"
+
+#: UKWebConnectPack/UKWebPack.py:37
 msgid "National Archives"
 msgstr "National Archives UK"
 
-#: UKWebPack.py:38 UKWebConnectPack/UKWebPack.py:38
+#: UKWebConnectPack/UKWebPack.py:38
 msgid "Hathi Trust Digital Library"
 msgstr "Hathi Trust Digital kirjasto"
 
-#: UKWebPack.py:39 UKWebConnectPack/UKWebPack.py:39
+#: UKWebConnectPack/UKWebPack.py:39
 msgid "Open Library"
 msgstr "Open Library UK"

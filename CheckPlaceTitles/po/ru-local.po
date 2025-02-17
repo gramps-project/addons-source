@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-04 16:31+0300\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -31,22 +31,18 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: ExtractCity/extractcity.py:439 ExtractCity/extractcity.py:454
-#: CheckPlaceTitles/checkplacetitles.py:86
+#: ExtractCity/extractcity.py:454 CheckPlaceTitles/checkplacetitles.py:86
 msgid "Checking Place Titles"
 msgstr "Проверка названий мест"
 
-#: ExtractCity/extractcity.py:440 ExtractCity/extractcity.py:456
-#: CheckPlaceTitles/checkplacetitles.py:88
+#: ExtractCity/extractcity.py:456 CheckPlaceTitles/checkplacetitles.py:88
 msgid "Looking for place fields"
 msgstr "Ищем части адресов"
 
-#: CheckPlaceTitles/checkplacetitles.gpr.py:28
 #: CheckPlaceTitles/checkplacetitles.gpr.py:29
 msgid "Check Place Titles"
 msgstr "Проверка названия мест"
 
-#: CheckPlaceTitles/checkplacetitles.gpr.py:29
 #: CheckPlaceTitles/checkplacetitles.gpr.py:30
 msgid "Check place titles"
 msgstr "Проверяет названия местоположений"
@@ -59,47 +55,38 @@ msgstr "Проверить название места"
 msgid "Differences"
 msgstr "Отличия"
 
-#: CheckPlaceTitles/checkplacetitles.py:113
 #: CheckPlaceTitles/checkplacetitles.py:112
 msgid "No need modifications"
 msgstr "Изменения не требуются"
 
-#: CheckPlaceTitles/checkplacetitles.py:114
 #: CheckPlaceTitles/checkplacetitles.py:113
 msgid "No changes need."
 msgstr "Изменения не требуются."
 
-#: CheckPlaceTitles/checkplacetitles.py:189
 #: CheckPlaceTitles/checkplacetitles.py:187
 msgid "Legacy place"
 msgstr "Старое место"
 
-#: CheckPlaceTitles/checkplacetitles.py:203
 #: CheckPlaceTitles/checkplacetitles.py:201
 msgid "Modify Place titles"
 msgstr "Изменить названия мест"
 
-#: CheckPlaceTitles/checkplacetitles.py:226
 #: CheckPlaceTitles/checkplacetitles.py:224
 msgid "Place titles"
 msgstr "Названия мест"
 
-#: CheckPlaceTitles/checkplacetitles.glade.h:1
 #: CheckPlaceTitles/checkplacetitles.glade:56
 msgid "Remove content of place title field if it does not match"
 msgstr "Удалить название места, если оно не совпадает"
 
-#: CheckPlaceTitles/checkplacetitles.glade.h:2
 #: CheckPlaceTitles/checkplacetitles.glade:74
 msgid "Copy content of place title field to a new note."
 msgstr "Копировать название места в новую заметку."
 
-#: CheckPlaceTitles/checkplacetitles.glade.h:4
 #: CheckPlaceTitles/checkplacetitles.glade:91
 msgid "Attach a tag on selected places."
 msgstr "Прикрепить метку к выбранным местам."
 
-#: CheckPlaceTitles/checkplacetitles.glade.h:6
 #: CheckPlaceTitles/checkplacetitles.glade:177
 msgid "column"
 msgstr "колонка"

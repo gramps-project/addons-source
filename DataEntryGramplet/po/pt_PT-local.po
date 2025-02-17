@@ -1,13 +1,13 @@
 # Addon MediaMerge for Gramps.
 # Copyright (C) 2020 Gramps
 # This file is distributed under the same license as the gramps package.
-# Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020.
+# Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2025-02-15 10:09+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-17 11:46+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -16,21 +16,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
-#: DataEntryGramplet/DataEntryGramplet.gpr.py:8
+#: FilterRules/activepersonrule.py:45 DataEntryGramplet/DataEntryGramplet.py:71
+msgid "Active person"
+msgstr "Indivíduo activo"
+
 #: DataEntryGramplet/DataEntryGramplet.gpr.py:9
 msgid "Data Entry Gramplet"
-msgstr "Gramplet de inserção de dados"
+msgstr "Gramplet Inserção de dados"
 
-#: DataEntryGramplet/DataEntryGramplet.gpr.py:9
 #: DataEntryGramplet/DataEntryGramplet.gpr.py:10
 msgid "Gramplet for quick data entry"
 msgstr "Gramplet de inserção rápida de dados"
-
-#: DataEntryGramplet/DataEntryGramplet.py:71 FilterRules/activepersonrule.py:45
-msgid "Active person"
-msgstr "Indivíduo activo"
 
 #: DataEntryGramplet/DataEntryGramplet.py:73
 msgid "Family:"
@@ -181,11 +179,11 @@ msgstr "Por favor, defina o indivíduo activo."
 
 #: DataEntryGramplet/DataEntryGramplet.py:764
 msgid "Can't add new person as a spouse to no one."
-msgstr "Impossível adicionar novo indivíduo como cônjuge a ninguém."
+msgstr "Impossível adicionar novo indivíduo como cônjuge de ninguém."
 
 #: DataEntryGramplet/DataEntryGramplet.py:767
 msgid "Please set gender on Active or new person."
-msgstr "Por favor, defina o sexo no activo ou no novo indivíduo."
+msgstr "Por favor, defina o sexo do indivíduo activo ou do novo."
 
 #: DataEntryGramplet/DataEntryGramplet.py:804
 #: DataEntryGramplet/DataEntryGramplet.py:837

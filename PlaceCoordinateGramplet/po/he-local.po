@@ -2,14 +2,14 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Igal Shapira <igal.shapira@gmail.com>, 2009, 2010, 2011.
-# Avi Markovitz <avi.markovitz@gmail.com>, 2019.
-#
+# Avi Markovitz <avi.markovitz@gmail.com>, 2019, 2025.
+# Yaron Shahrabani <sh.yaron@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-10 07:59+0300\n"
-"PO-Revision-Date: 2025-02-15 16:17+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-17 15:09+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -19,10 +19,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: PlaceCoordinateGramplet/PlaceCoordinateGeoView.py:264
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:62
 msgid "Place Coordinate Gramplet"
 msgstr "גרמפלט נקודות־ציון מקום"
 
@@ -38,27 +37,22 @@ msgstr "הוספת עיר כ'מקום'"
 msgid "Add addess as place"
 msgstr "הוספת כתובת כ'מקום'"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:138
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:24
 msgid "Place Coordinate Gramplet view"
 msgstr "מצג גרמפלט נקודות־ציון מקום"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:139
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:25
 msgid "View for the place coordinate gramplet."
 msgstr "מצג גרמפלט נקודות־ציון מקום."
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:154
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:43
 msgid "Place and Coordinates"
 msgstr "מקום ונקודות־ציון"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:156
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:44
 msgid "Gramplet that simplifies setting the coordinates of a place"
 msgstr "גרמפלט לפישוט קביעת נקודות־הציון של מקום"
 
-#: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:165
 #: PlaceCoordinateGramplet/PlaceCoordinateGramplet.gpr.py:53
 msgid "Place Coordinates"
 msgstr "נקודות־ציון מקום"

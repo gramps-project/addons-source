@@ -2,14 +2,14 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Igal Shapira <igal.shapira@gmail.com>, 2009, 2010, 2011.
-# Avi Markovitz <avi.markovitz@gmail.com>, 2019.
-#
+# Avi Markovitz <avi.markovitz@gmail.com>, 2019, 2025.
+# Yaron Shahrabani <sh.yaron@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-10 07:59+0300\n"
-"PO-Revision-Date: 2025-02-15 16:17+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-17 15:09+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -19,78 +19,87 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
-#: PlaceTool/PlaceTool.gpr.py:3 PlaceTool/PlaceTool.gpr.py:14
 #: PlaceUpdate/PlaceUpdate.gpr.py:4 PlaceUpdate/PlaceUpdate.gpr.py:15
 msgid "PlaceUpdate"
 msgstr "כלי-מקום"
 
-#: PlaceTool/PlaceTool.gpr.py:4 PlaceUpdate/PlaceUpdate.gpr.py:5
+#: PlaceUpdate/PlaceUpdate.gpr.py:5
 msgid "Gramplet to manipulate multiple places"
 msgstr "גרמפלט לתמרון ריבוי מקומות"
 
-#: PlaceTool/PlaceTool.py:57 PlaceUpdate/PlaceUpdate.py:56
+#: PlaceUpdate/PlaceUpdate.py:56
 msgid "Set properties for multiple places"
 msgstr "נגדרת מאפיינים למספר מקומות"
 
-#: PlaceTool/PlaceTool.py:93 PlaceUpdate/PlaceUpdate.py:96
+#: PlaceUpdate/PlaceUpdate.py:96
 msgid ""
 "This gramplet allows setting properties for multiple places at the same time"
 msgstr "הגרמפלט מאפשר הגדרת מאפיינים למספר מקומות בו זמנית"
 
-#: PlaceTool/PlaceTool.py:111 PlaceUpdate/PlaceUpdate.py:111
+#: PlaceUpdate/PlaceUpdate.py:111
 msgid "New enclosing place"
 msgstr "מקום מכיל חדש"
 
-#: PlaceTool/PlaceTool.py:134 PlaceUpdate/PlaceUpdate.py:159
+#: PlaceUpdate/PlaceUpdate.py:119
+msgid "Timespan:"
+msgstr ""
+
+#: PlaceUpdate/PlaceUpdate.py:123
+#, fuzzy
+#| msgid "Clear original enclosing places"
+msgid "Set timespan for enclosing places"
+msgstr "מחיקת המקום המכיל המקורי"
+
+#: PlaceUpdate/PlaceUpdate.py:159
 msgid "Clear original enclosing places"
 msgstr "מחיקת המקום המכיל המקורי"
 
-#: PlaceTool/PlaceTool.py:137 PlaceUpdate/PlaceUpdate.py:162
+#: PlaceUpdate/PlaceUpdate.py:162
 msgid "Clear tags"
 msgstr "ניקוי תגים"
 
-#: PlaceTool/PlaceTool.py:140 PlaceUpdate/PlaceUpdate.py:165
+#: PlaceUpdate/PlaceUpdate.py:165
 msgid "Generate hierarchy"
 msgstr "חילול היררכיה"
 
-#: PlaceTool/PlaceTool.py:146 PlaceUpdate/PlaceUpdate.py:171
+#: PlaceUpdate/PlaceUpdate.py:171
 msgid "use spaces as separator"
 msgstr "שימוש ברווח כמפריד"
 
-#: PlaceTool/PlaceTool.py:150 PlaceUpdate/PlaceUpdate.py:175
+#: PlaceUpdate/PlaceUpdate.py:175
 msgid "reverse hierarchy"
 msgstr "היפוך היררכיה"
 
-#: PlaceTool/PlaceTool.py:156 PlaceUpdate/PlaceUpdate.py:181
+#: PlaceUpdate/PlaceUpdate.py:181
 msgid "Replace text"
 msgstr "החלפת מלל"
 
-#: PlaceTool/PlaceTool.py:159 PlaceUpdate/PlaceUpdate.py:184
+#: PlaceUpdate/PlaceUpdate.py:184
 msgid "Use regex"
 msgstr "שימוש בביטוי רגיל (regex)"
 
-#: PlaceTool/PlaceTool.py:169 PlaceUpdate/PlaceUpdate.py:193
+#: PlaceUpdate/PlaceUpdate.py:193
 msgid "Old text:"
 msgstr "מלל ישן:"
 
-#: PlaceTool/PlaceTool.py:174 PlaceUpdate/PlaceUpdate.py:197
+#: PlaceUpdate/PlaceUpdate.py:197
 msgid "New text:"
 msgstr "מלל חדש:"
 
-#: PlaceTool/PlaceTool.py:186 PlaceUpdate/PlaceUpdate.py:209
+#: PlaceUpdate/PlaceUpdate.py:209
 msgid "Clear selections"
 msgstr "ניקוי בחירה"
 
-#: PlaceTool/PlaceTool.py:190 PlaceUpdate/PlaceUpdate.py:213
+#: PlaceUpdate/PlaceUpdate.py:213
 msgid "Apply to selected places"
 msgstr "החלה על המקום שנבחר"
 
-#: PlaceTool/PlaceTool.py:231 PlaceUpdate/PlaceUpdate.py:266
+#: PlaceUpdate/PlaceUpdate.py:266
 msgid "Setting place properties"
 msgstr "הגדרת מאפייני מקום"
 
-#: PlaceTool/PlaceTool.py:272 PlaceUpdate/PlaceUpdate.py:304
+#: PlaceUpdate/PlaceUpdate.py:304
 msgid "Regex operation failed: {}"
 msgstr ""

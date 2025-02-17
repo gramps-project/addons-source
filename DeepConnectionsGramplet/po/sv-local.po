@@ -9,14 +9,15 @@
 # Pär Ekholm <par.ekholm50@gmail.com>, 2016, 2018.
 # Pär Ekholm <par.ekholm@pekholm.se>, 2018, 2019.
 # Peter Landgren <peter@test>, 2010.
-#
+# Pär Ekholm <github1@m.pekholm.org>, 2025.
+# Milan <mobrcian@hotmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-08 17:11-0500\n"
-"PO-Revision-Date: 2025-02-09 11:16+0000\n"
-"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-16 10:55+0000\n"
+"Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
 "Language: sv\n"
@@ -24,39 +25,61 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.10\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:3
+#: EditExifMetadata/editexifmetadata.py:215
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:69
+msgid "Copy"
+msgstr "Kopiera"
+
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:4
 msgid "Deep Connections Gramplet"
 msgstr "Gramplet för långa släktskap"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:4
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:6
 msgid "Gramplet showing a deep relationship between active and home people"
 msgstr "Gramplet visande ett lång släktskap mellan aktiv och hem person"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:10
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:13
 msgid "Deep Connections"
 msgstr "Långa släktskap"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:61
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:65
 msgid "Pause"
 msgstr "Paus"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:65
-#: EditExifMetadata/editexifmetadata.py:215
-msgid "Copy"
-msgstr "Kopiera"
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:107
+msgid "mentioned in note"
+msgstr ""
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:106
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:133
+#, fuzzy
+#| msgid "Time In Family"
+msgid "Note on Family"
+msgstr "Tid i familjen"
+
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:143
 msgid "sibling"
 msgstr "syskon"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:150
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:151
+#, fuzzy
+#| msgid "Parent Family"
+msgid "Note on Parent Family"
+msgstr "Föräldrafamilj"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:154
+#, fuzzy, python-format
+#| msgid "Sync Associations"
+msgid "%s (association)"
+msgstr "Synkronisera föreningar"
+
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:158
+#, fuzzy
+#| msgid "New person"
+msgid "Note on Person"
+msgstr "Ny person"
+
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:188
 #, python-format
 msgid ""
@@ -66,29 +89,24 @@ msgstr ""
 "\n"
 "   %s till "
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:171
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:209
 msgid "No Active Person set."
 msgstr "Ingen aktiv person angiven."
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:179
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:217
 msgid "Looking for relationship between\n"
 msgstr "Letar efter släktskap mellan\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:180
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:218
 #, python-format
 msgid "  <b>%s</b> (Home Person) and\n"
 msgstr "  <b>%s</b> (huvudperson) och\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:181
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:219
 #, python-format
 msgid "  <b>%s</b> (Active Person)...\n"
 msgstr "  <b>%s</b> (Aktiv person)...\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:191
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:229
 #, python-format
 msgid ""
@@ -98,7 +116,6 @@ msgstr ""
 "Hittade släktskap #%d: \n"
 "   "
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:201
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:239
 msgid ""
 "Paused.\n"
@@ -107,7 +124,6 @@ msgstr ""
 "Paus.\n"
 "Tryck Fortsätt för att leta efter ytterligare släktsakp.\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:216
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:254
 #, python-format
 msgid ""

@@ -5,14 +5,13 @@
 # Lubo Vasko <pgval at inmail dot sk>, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
 # Ondrej Krč-Jediný <hou at centrum dot sk>, 2014, 2015.
 # Jozef Riha, 2017.
-#
-#
+# Milan <mobrcian@hotmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-08 16:37+0100\n"
-"PO-Revision-Date: 2025-02-15 16:17+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-17 15:09+0000\n"
 "Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Slovak <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sk/>\n"
@@ -21,144 +20,150 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=((n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2);\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
-#: DynamicWeb//dynamicweb.gpr.py:15 DynamicWeb/dynamicweb.gpr.py:16
+#: D3Charts/DescendantIndentedTree.py:1867 DynamicWeb/dynamicweb.py:4811
+msgid "Include records marked private"
+msgstr "Zahrnúť záznamy označené ako súkromné"
+
+#: D3Charts/DescendantIndentedTree.py:1877 DynamicWeb/dynamicweb.py:4819
+msgid "Include Last Name Only"
+msgstr "Zahrnúť iba posledné meno"
+
+#: D3Charts/DescendantIndentedTree.py:1879 DynamicWeb/dynamicweb.py:4822
+msgid "Include Full Name Only"
+msgstr "Zahrnúť iba celé meno"
+
+#: DynamicWeb/dynamicweb.gpr.py:16
 msgid "Dynamic Web Report"
 msgstr "Dynamické WWW stránky"
 
-#: DynamicWeb//dynamicweb.gpr.py:16 DynamicWeb/dynamicweb.gpr.py:17
+#: DynamicWeb/dynamicweb.gpr.py:17
 msgid "Produces dynamic web pages for the database"
 msgstr "Vytvára dynamické WWW stránky z databáze"
 
-#: DynamicWeb//dynamicweb.py:284 DynamicWeb/dynamicweb.py:334
+#: DynamicWeb/dynamicweb.py:334
 msgid "SVG graphical tree"
 msgstr "SVG grafický strom"
 
-#: DynamicWeb//dynamicweb.py:287 DynamicWeb/dynamicweb.py:337
+#: DynamicWeb/dynamicweb.py:337
 msgid "Indexes pages"
 msgstr "Indexové stránky"
 
-#: DynamicWeb//dynamicweb.py:291 DynamicWeb//dynamicweb.py:4252
 #: DynamicWeb/dynamicweb.py:341 DynamicWeb/dynamicweb.py:5214
 #, python-format
 msgid "Custom page %(index)i"
 msgstr "Vlastná stránka %(index)i"
 
-#: DynamicWeb//dynamicweb.py:309 DynamicWeb/dynamicweb.py:358
+#: DynamicWeb/dynamicweb.py:358
 msgid "Ascending tree"
 msgstr "Strom predkov"
 
-#: DynamicWeb//dynamicweb.py:310 DynamicWeb/dynamicweb.py:359
+#: DynamicWeb/dynamicweb.py:359
 msgid "Descending tree"
 msgstr "Strom potomkov"
 
-#: DynamicWeb//dynamicweb.py:311 DynamicWeb/dynamicweb.py:360
+#: DynamicWeb/dynamicweb.py:360
 msgid "Descending tree with spouses"
 msgstr "Strom potomkov s partnermi"
 
-#: DynamicWeb//dynamicweb.py:312 DynamicWeb/dynamicweb.py:361
+#: DynamicWeb/dynamicweb.py:361
 msgid "Ascending and descending tree"
 msgstr "Strom predkov a potomkov"
 
-#: DynamicWeb//dynamicweb.py:313 DynamicWeb/dynamicweb.py:362
+#: DynamicWeb/dynamicweb.py:362
 msgid "Ascending and descending tree with spouses"
 msgstr "Strom predkov a potomkov s partnermi"
 
-#: DynamicWeb//dynamicweb.py:343 DynamicWeb/dynamicweb.py:394
+#: DynamicWeb/dynamicweb.py:394
 msgid "Size proportional to number of ancestors"
 msgstr "Veľkosť úmerná počtu predkov"
 
-#: DynamicWeb//dynamicweb.py:344 DynamicWeb/dynamicweb.py:395
+#: DynamicWeb/dynamicweb.py:395
 msgid "Homogeneous parents distribution"
 msgstr "Homogénne rozdelenie rodičov"
 
-#: DynamicWeb//dynamicweb.py:357 DynamicWeb/dynamicweb.py:409
+#: DynamicWeb/dynamicweb.py:409
 msgid "Age based gradient"
 msgstr "Prechod založený na veku"
 
-#: DynamicWeb//dynamicweb.py:379 DynamicWeb/dynamicweb.py:431
+#: DynamicWeb/dynamicweb.py:431
 msgid "Gradient"
 msgstr "Prechod"
 
-#: DynamicWeb//dynamicweb.py:715 DynamicWeb//dynamicweb.py:720
 #: DynamicWeb/dynamicweb.py:780 DynamicWeb/dynamicweb.py:786
 #, python-format
 msgid "Could not create the directory: %(path)s"
 msgstr "Nepodarilo sa vytvoriť adresár: %(path)s"
 
-#: DynamicWeb//dynamicweb.py:746 DynamicWeb//dynamicweb.py:3385
 #: DynamicWeb/dynamicweb.py:816 DynamicWeb/dynamicweb.py:4102
 msgid "Dynamic Web Site Report"
 msgstr "Dynamický WWW výkaz"
 
-#: DynamicWeb//dynamicweb.py:746 DynamicWeb/dynamicweb.py:816
+#: DynamicWeb/dynamicweb.py:816
 msgid "Exporting family tree data ..."
 msgstr "Exportujú sa data rodokmeňu ..."
 
-#: DynamicWeb//dynamicweb.py:1630 DynamicWeb/dynamicweb.py:1737
+#: DynamicWeb/dynamicweb.py:1737
 #, python-format
 msgid "%(type)s: %(value)s"
 msgstr "%(type)s: %(value)s"
 
-#: DynamicWeb//dynamicweb.py:1877 DynamicWeb/dynamicweb.py:2011
+#: DynamicWeb/dynamicweb.py:2011
 #, python-format
 msgid "Impossible to convert \"%(path)s\" to a relative path."
 msgstr "Nepodarilo sa konvertovať \"%(path)s\" na relatívnu cestu."
 
-#: DynamicWeb//dynamicweb.py:2183 DynamicWeb/dynamicweb.py:2353
+#: DynamicWeb/dynamicweb.py:2353
 msgid ""
 "The pages configuration is not valid: several pages have the same content"
 msgstr ""
 "Táto konfigurácia stránok je nesprávna: obsah niekoľkých stránok je zhodný"
 
-#: DynamicWeb//dynamicweb.py:2194 DynamicWeb/dynamicweb.py:2368
+#: DynamicWeb/dynamicweb.py:2368
 msgid "DynWeb|Home"
 msgstr "Domov"
 
-#: DynamicWeb//dynamicweb.py:2195 DynamicWeb//dynamicweb.py:2208
-#: DynamicWeb//dynamicweb.py:2209 DynamicWeb//dynamicweb.py:2210
 #: DynamicWeb/dynamicweb.py:2375 DynamicWeb/dynamicweb.py:2442
 #: DynamicWeb/dynamicweb.py:2449 DynamicWeb/dynamicweb.py:2456
 msgid "Tree"
 msgstr "Strom"
 
-#: DynamicWeb//dynamicweb.py:2207 DynamicWeb/dynamicweb.py:2435
+#: DynamicWeb/dynamicweb.py:2435
 msgid "Search results"
 msgstr "Výsledky vyhľadávania"
 
-#: DynamicWeb//dynamicweb.py:2277 DynamicWeb//dynamicweb.py:2507
-#: DynamicWeb//dynamicweb.py:4126 DynamicWeb/dynamicweb.py:2595
-#: DynamicWeb/dynamicweb.py:3014 DynamicWeb/dynamicweb.py:4997
+#: DynamicWeb/dynamicweb.py:2595 DynamicWeb/dynamicweb.py:3014
+#: DynamicWeb/dynamicweb.py:4997
 msgid "Indexes"
 msgstr "Indexy"
 
-#: DynamicWeb//dynamicweb.py:2444 DynamicWeb/dynamicweb.py:2918
+#: DynamicWeb/dynamicweb.py:2918
 msgid "(filtered from _MAX_ total entries)"
 msgstr "(filtrované z _MAX_ položiek celkovo)"
 
-#: DynamicWeb//dynamicweb.py:2445 DynamicWeb/dynamicweb.py:2920
+#: DynamicWeb/dynamicweb.py:2920
 #, python-format
 msgid "(m. %s)"
 msgstr "(vyd./žen. %s)"
 
-#: DynamicWeb//dynamicweb.py:2446 DynamicWeb/dynamicweb.py:2921
+#: DynamicWeb/dynamicweb.py:2921
 msgid "(sort by name)"
 msgstr "(zoradiť podľa mena)"
 
-#: DynamicWeb//dynamicweb.py:2447 DynamicWeb/dynamicweb.py:2922
+#: DynamicWeb/dynamicweb.py:2922
 msgid "(sort by quantity)"
 msgstr "(zoradiť podľa počtu)"
 
-#: DynamicWeb//dynamicweb.py:2448 DynamicWeb/dynamicweb.py:2925
+#: DynamicWeb/dynamicweb.py:2925
 msgid ": activate to sort column ascending"
 msgstr ": aktivujte pre zoradenie stĺpca vzostupne"
 
-#: DynamicWeb//dynamicweb.py:2449 DynamicWeb/dynamicweb.py:2929
+#: DynamicWeb/dynamicweb.py:2929
 msgid ": activate to sort column descending"
 msgstr ": aktivujte pre zoradenie stĺpca zostupne"
 
-#: DynamicWeb//dynamicweb.py:2450 DynamicWeb/dynamicweb.py:2934
+#: DynamicWeb/dynamicweb.py:2934
 msgid ""
 "<p>This page provides the SVG raw code.<br>Copy the contents into a text "
 "editor and save as an SVG file.<br>Make sure that the text editor encoding "
@@ -168,310 +173,295 @@ msgstr ""
 "editoru a uložte ho ako súbor SVG.<br>Uistite sa, že kódovanie znakov je "
 "UTF-8.</p>"
 
-#: DynamicWeb//dynamicweb.py:2456 DynamicWeb/dynamicweb.py:2942
+#: DynamicWeb/dynamicweb.py:2942
 msgid "Alternate Name"
 msgstr "Alternatívne meno"
 
-#: DynamicWeb//dynamicweb.py:2473 DynamicWeb/dynamicweb.py:2961
+#: DynamicWeb/dynamicweb.py:2961
 msgid "Click on the map to show it full-screen"
 msgstr "Kliknite na mapu pre zobrazenie na celú obrazovku"
 
-#: DynamicWeb//dynamicweb.py:2476 DynamicWeb/dynamicweb.py:2965
+#: DynamicWeb/dynamicweb.py:2965
 msgid "Configure"
 msgstr "Nastaviť"
 
-#: DynamicWeb//dynamicweb.py:2483 DynamicWeb/dynamicweb.py:2972
+#: DynamicWeb/dynamicweb.py:2972
 msgid "DynamicWeb_report#Help"
 msgstr "DynamicWeb_report#Pomoc"
 
-#: DynamicWeb//dynamicweb.py:2488 DynamicWeb/dynamicweb.py:2977
+#: DynamicWeb/dynamicweb.py:2977
 msgid "Examples"
 msgstr "Príklady"
 
-#: DynamicWeb//dynamicweb.py:2489 DynamicWeb/dynamicweb.py:2978
+#: DynamicWeb/dynamicweb.py:2978
 msgid "F"
 msgstr "Ž"
 
-#: DynamicWeb//dynamicweb.py:2490 DynamicWeb/dynamicweb.py:2979
+#: DynamicWeb/dynamicweb.py:2979
 msgid "Families Index"
 msgstr "Index rodín"
 
-#: DynamicWeb//dynamicweb.py:2492 DynamicWeb/dynamicweb.py:2981
+#: DynamicWeb/dynamicweb.py:2981
 msgid "Family Nick Name"
 msgstr "Domáce meno"
 
-#: DynamicWeb//dynamicweb.py:2495 DynamicWeb/dynamicweb.py:2984
+#: DynamicWeb/dynamicweb.py:2984
 msgid "File ready"
 msgstr "Súbor pripravený"
 
-#: DynamicWeb//dynamicweb.py:2500 DynamicWeb//dynamicweb.py:4146
 #: DynamicWeb/dynamicweb.py:2991 DynamicWeb/dynamicweb.py:5042
 msgid "Include dates columns on the index pages"
 msgstr "Zahrnúť stĺpec s dátumami na indexových stránkach"
 
-#: DynamicWeb//dynamicweb.py:2502 DynamicWeb//dynamicweb.py:4162
 #: DynamicWeb/dynamicweb.py:2999 DynamicWeb/dynamicweb.py:5071
 msgid "Include a column for media path on the index pages"
 msgstr "Zahrnúť stĺpec pre cestu k médiám na indexových stránkach"
 
-#: DynamicWeb//dynamicweb.py:2504 DynamicWeb//dynamicweb.py:4049
 #: DynamicWeb/dynamicweb.py:3007 DynamicWeb/dynamicweb.py:4903
 msgid "Include a map in the individuals and family pages"
 msgstr "Zahrnúť mapu na osobných a rodinných stránkach"
 
-#: DynamicWeb//dynamicweb.py:2505 DynamicWeb//dynamicweb.py:4096
 #: DynamicWeb/dynamicweb.py:3011 DynamicWeb/dynamicweb.py:4955
 msgid "Include half and/ or step-siblings on the individual pages"
 msgstr "Zahrnúť nevlastných súrodencov na osobných stránkach"
 
-#: DynamicWeb//dynamicweb.py:2506 DynamicWeb//dynamicweb.py:4166
 #: DynamicWeb/dynamicweb.py:3013 DynamicWeb/dynamicweb.py:5076
 msgid "Include references in indexes"
 msgstr "Zahrnúť referencie v indexoch"
 
-#: DynamicWeb//dynamicweb.py:2509 DynamicWeb//dynamicweb.py:4116
 #: DynamicWeb/dynamicweb.py:3018 DynamicWeb/dynamicweb.py:4985
 msgid "Insert sources author in the sources title"
 msgstr "Uviesť autora zdrojov v názve zdrojov"
 
-#: DynamicWeb//dynamicweb.py:2516 DynamicWeb/dynamicweb.py:3026
+#: DynamicWeb/dynamicweb.py:3026
 msgid "M"
 msgstr "M"
 
-#: DynamicWeb//dynamicweb.py:2520 DynamicWeb/dynamicweb.py:3030
+#: DynamicWeb/dynamicweb.py:3030
 msgid "Maximize"
 msgstr "Zväčšiť"
 
-#: DynamicWeb//dynamicweb.py:2521 DynamicWeb/dynamicweb.py:3031
+#: DynamicWeb/dynamicweb.py:3031
 msgid "Media Index"
 msgstr "Index médií"
 
-#: DynamicWeb//dynamicweb.py:2522 DynamicWeb/dynamicweb.py:3032
+#: DynamicWeb/dynamicweb.py:3032
 msgid "Media Type"
 msgstr "Typ média"
 
-#: DynamicWeb//dynamicweb.py:2527 DynamicWeb/dynamicweb.py:3037
+#: DynamicWeb/dynamicweb.py:3037
 msgid "No data available in table"
 msgstr "Pre tabuľku nie sú dostupné žiadne dáta"
 
-#: DynamicWeb//dynamicweb.py:2529 DynamicWeb/dynamicweb.py:3039
+#: DynamicWeb/dynamicweb.py:3039
 msgid "No matching records found"
 msgstr "Nenašli sa žiadne odpovedajúce záznamy"
 
-#: DynamicWeb//dynamicweb.py:2530 DynamicWeb/dynamicweb.py:3040
+#: DynamicWeb/dynamicweb.py:3040
 msgid "No matching surname."
 msgstr "Žiadne odpovedajúce priezvisko."
 
-#: DynamicWeb//dynamicweb.py:2535 DynamicWeb/dynamicweb.py:3045
+#: DynamicWeb/dynamicweb.py:3045
 msgid "Other participants"
 msgstr "Ďalší účastníci"
 
-#: DynamicWeb//dynamicweb.py:2538 DynamicWeb/dynamicweb.py:3048
+#: DynamicWeb/dynamicweb.py:3048
 msgid "Person page"
 msgstr "Stránka osoby"
 
-#: DynamicWeb//dynamicweb.py:2539 DynamicWeb/dynamicweb.py:3049
+#: DynamicWeb/dynamicweb.py:3049
 msgid "Person to search for"
 msgstr "Vyhľadať osobu"
 
-#: DynamicWeb//dynamicweb.py:2541 DynamicWeb/dynamicweb.py:3051
+#: DynamicWeb/dynamicweb.py:3051
 msgid "Persons Index"
 msgstr "Index osôb"
 
-#: DynamicWeb//dynamicweb.py:2542 DynamicWeb/dynamicweb.py:3052
+#: DynamicWeb/dynamicweb.py:3052
 msgid "Persons"
 msgstr "Osoby"
 
-#: DynamicWeb//dynamicweb.py:2544 DynamicWeb/dynamicweb.py:3054
+#: DynamicWeb/dynamicweb.py:3054
 msgid "Places Index"
 msgstr "Index miest"
 
-#: DynamicWeb//dynamicweb.py:2546 DynamicWeb/dynamicweb.py:3056
+#: DynamicWeb/dynamicweb.py:3056
 msgid "Preparing file ..."
 msgstr "Súbor sa pripravuje ..."
 
-#: DynamicWeb//dynamicweb.py:2550 DynamicWeb/dynamicweb.py:3060
+#: DynamicWeb/dynamicweb.py:3060
 msgid "Relationship to Father"
 msgstr "Vzťah k otcovi"
 
-#: DynamicWeb//dynamicweb.py:2551 DynamicWeb/dynamicweb.py:3061
+#: DynamicWeb/dynamicweb.py:3061
 msgid "Relationship to Mother"
 msgstr "Vzťah k matke"
 
-#: DynamicWeb//dynamicweb.py:2553 DynamicWeb/dynamicweb.py:3063
+#: DynamicWeb/dynamicweb.py:3063
 msgid "Repositories Index"
 msgstr "Index prameňov"
 
-#: DynamicWeb//dynamicweb.py:2556 DynamicWeb/dynamicweb.py:3066
+#: DynamicWeb/dynamicweb.py:3066
 msgid "Restore"
 msgstr "Obnoviť"
 
-#: DynamicWeb//dynamicweb.py:2557 DynamicWeb/dynamicweb.py:3067
+#: DynamicWeb/dynamicweb.py:3067
 msgid "Restore default settings"
 msgstr "Obnoviť základené nastavenia"
 
-#: DynamicWeb//dynamicweb.py:2558 DynamicWeb//dynamicweb.py:4112
 #: DynamicWeb/dynamicweb.py:3068 DynamicWeb/dynamicweb.py:4978
 msgid "Show last modification time"
 msgstr "Zobraziť čas poslednej úpravy"
 
-#: DynamicWeb//dynamicweb.py:2559 DynamicWeb//dynamicweb.py:4203
 #: DynamicWeb/dynamicweb.py:3069 DynamicWeb/dynamicweb.py:5133
 msgid "SVG tree children distribution"
 msgstr "Rozdelenie SVG stromu detí"
 
-#: DynamicWeb//dynamicweb.py:2560 DynamicWeb/dynamicweb.py:3070
+#: DynamicWeb/dynamicweb.py:3070
 msgid "SVG tree configuration"
 msgstr "Nastavenie SVG stromu"
 
-#: DynamicWeb//dynamicweb.py:2561 DynamicWeb//dynamicweb.py:4191
 #: DynamicWeb/dynamicweb.py:3071 DynamicWeb/dynamicweb.py:5115
 msgid "SVG tree graph shape"
 msgstr "Tvar SVG stromu"
 
-#: DynamicWeb//dynamicweb.py:2562 DynamicWeb//dynamicweb.py:4185
 #: DynamicWeb/dynamicweb.py:3072 DynamicWeb/dynamicweb.py:5107
 msgid "SVG tree graph type"
 msgstr "Typ SVG stromu"
 
-#: DynamicWeb//dynamicweb.py:2563 DynamicWeb//dynamicweb.py:4197
 #: DynamicWeb/dynamicweb.py:3073 DynamicWeb/dynamicweb.py:5123
 msgid "SVG tree parents distribution"
 msgstr "Rozdelenie SVG stromu rodičov"
 
-#: DynamicWeb//dynamicweb.py:2564 DynamicWeb/dynamicweb.py:3074
+#: DynamicWeb/dynamicweb.py:3074
 msgid "Save tree as file"
 msgstr "Uložiť strom ako súbor"
 
-#: DynamicWeb//dynamicweb.py:2565 DynamicWeb/dynamicweb.py:3075
+#: DynamicWeb/dynamicweb.py:3075
 msgid "Search:"
 msgstr "Hľadať:"
 
-#: DynamicWeb//dynamicweb.py:2566 DynamicWeb/dynamicweb.py:3078
+#: DynamicWeb/dynamicweb.py:3078
 msgid "Select the background color scheme"
 msgstr "Zvoľte farebnú schému pozadia"
 
-#: DynamicWeb//dynamicweb.py:2567 DynamicWeb/dynamicweb.py:3082
+#: DynamicWeb/dynamicweb.py:3082
 msgid "Select the children distribution (fan charts only)"
 msgstr "Zvoľte rozdelenie detí (iba vejárový graf)"
 
-#: DynamicWeb//dynamicweb.py:2568 DynamicWeb/dynamicweb.py:3086
+#: DynamicWeb/dynamicweb.py:3086
 msgid "Select the number of ascending generations"
 msgstr "Zvoľte počet generácií predkov"
 
-#: DynamicWeb//dynamicweb.py:2569 DynamicWeb/dynamicweb.py:3090
+#: DynamicWeb/dynamicweb.py:3090
 msgid "Select the number of descending generations"
 msgstr "Zvoľte počet generácií potomkov"
 
-#: DynamicWeb//dynamicweb.py:2570 DynamicWeb/dynamicweb.py:3094
+#: DynamicWeb/dynamicweb.py:3094
 msgid "Select the parents distribution (fan charts only)"
 msgstr "Zvoľte rozdelenie rodičov (iba vejárový graf)"
 
-#: DynamicWeb//dynamicweb.py:2571 DynamicWeb/dynamicweb.py:3096
+#: DynamicWeb/dynamicweb.py:3096
 msgid "Select the shape of graph"
 msgstr "Zvoľte tvar grafu"
 
-#: DynamicWeb//dynamicweb.py:2572 DynamicWeb/dynamicweb.py:3097
+#: DynamicWeb/dynamicweb.py:3097
 msgid "Select the type of graph"
 msgstr "Zvoľte typ grafu"
 
-#: DynamicWeb//dynamicweb.py:2573 DynamicWeb/dynamicweb.py:3101
+#: DynamicWeb/dynamicweb.py:3101
 msgid "Several matches.<br>Precise your search or choose in the lists below."
 msgstr ""
 "Viacero zhod.<br>Upresnite vyhľadávanie alebo vyberte zo zoznamu nižšie."
 
-#: DynamicWeb//dynamicweb.py:2574 DynamicWeb/dynamicweb.py:3104
+#: DynamicWeb/dynamicweb.py:3104
 msgid "Show _MENU_ entries"
 msgstr "Zobraziť _MENU_ položky"
 
-#: DynamicWeb//dynamicweb.py:2575 DynamicWeb//dynamicweb.py:4221
 #: DynamicWeb/dynamicweb.py:3105 DynamicWeb/dynamicweb.py:5170
 msgid "Show duplicates"
 msgstr "Zobraziť duplicity"
 
-#: DynamicWeb//dynamicweb.py:2576 DynamicWeb/dynamicweb.py:3106
+#: DynamicWeb/dynamicweb.py:3106
 msgid "Showing 0 to 0 of 0 entries"
 msgstr "Zobrazených 0 až 0 z 0 záznamov"
 
-#: DynamicWeb//dynamicweb.py:2577 DynamicWeb/dynamicweb.py:3109
+#: DynamicWeb/dynamicweb.py:3109
 msgid "Showing _START_ to _END_ of _TOTAL_ entries"
 msgstr "Zobrazených _START_ až _END_ z _TOTAL_ záznamov"
 
-#: DynamicWeb//dynamicweb.py:2579 DynamicWeb/dynamicweb.py:3112
+#: DynamicWeb/dynamicweb.py:3112
 msgid "Sort by:"
 msgstr "Zoradiť podľa:"
 
-#: DynamicWeb//dynamicweb.py:2581 DynamicWeb/dynamicweb.py:3114
+#: DynamicWeb/dynamicweb.py:3114
 msgid "Sources Index"
 msgstr "Register zdrojov"
 
-#: DynamicWeb//dynamicweb.py:2584 DynamicWeb//dynamicweb.py:4120
 #: DynamicWeb/dynamicweb.py:3117 DynamicWeb/dynamicweb.py:4992
 msgid "Suppress Gramps ID"
 msgstr "Potlačiť Gramps ID"
 
-#: DynamicWeb//dynamicweb.py:2586 DynamicWeb/dynamicweb.py:3119
+#: DynamicWeb/dynamicweb.py:3119
 msgid "Surnames Index"
 msgstr "Index priezvisk"
 
-#: DynamicWeb//dynamicweb.py:2590 DynamicWeb/dynamicweb.py:3123
+#: DynamicWeb/dynamicweb.py:3123
 msgid "U"
 msgstr "N"
 
-#: DynamicWeb//dynamicweb.py:2592 DynamicWeb//dynamicweb.py:4108
 #: DynamicWeb/dynamicweb.py:3127 DynamicWeb/dynamicweb.py:4972
 msgid "Use tabbed panels instead of sections"
 msgstr "Použiť panely s tabmi namiesto sekcií"
 
-#: DynamicWeb//dynamicweb.py:2593 DynamicWeb/dynamicweb.py:3131
+#: DynamicWeb/dynamicweb.py:3131
 msgid "Use the search box above in order to find a person."
 msgstr "Použite vyhľadávanie vyššie k vyhľadaniu osoby."
 
-#: DynamicWeb//dynamicweb.py:2594 DynamicWeb/dynamicweb.py:3135
+#: DynamicWeb/dynamicweb.py:3135
 msgid "Use a table format for the surnames index"
 msgstr "Použiť tabuľkový formát v indexe priezvisk"
 
-#: DynamicWeb//dynamicweb.py:2595 DynamicWeb/dynamicweb.py:3139
+#: DynamicWeb/dynamicweb.py:3139
 msgid "Use a table format for the persons index"
 msgstr "Použiť tabuľkový formát v indexe osôb"
 
-#: DynamicWeb//dynamicweb.py:2596 DynamicWeb/dynamicweb.py:3143
+#: DynamicWeb/dynamicweb.py:3143
 msgid "Use a table format for the families index"
 msgstr "Použiť tabuľkový formát v indexe rodín"
 
-#: DynamicWeb//dynamicweb.py:2597 DynamicWeb/dynamicweb.py:3147
+#: DynamicWeb/dynamicweb.py:3147
 msgid "Use a table format for the sources index"
 msgstr "Použiť tabuľkový formát v indexe zdrojov"
 
-#: DynamicWeb//dynamicweb.py:2598 DynamicWeb/dynamicweb.py:3151
+#: DynamicWeb/dynamicweb.py:3151
 msgid "Use a table format for the places index"
 msgstr "Použiť tabuľkový formát v indexe miest"
 
-#: DynamicWeb//dynamicweb.py:2599 DynamicWeb/dynamicweb.py:3153
+#: DynamicWeb/dynamicweb.py:3153
 msgid "Used for family"
 msgstr "Použité pre rodinu"
 
-#: DynamicWeb//dynamicweb.py:2600 DynamicWeb/dynamicweb.py:3154
+#: DynamicWeb/dynamicweb.py:3154
 msgid "Used for media"
 msgstr "Použité pre média"
 
-#: DynamicWeb//dynamicweb.py:2601 DynamicWeb/dynamicweb.py:3155
+#: DynamicWeb/dynamicweb.py:3155
 msgid "Used for person"
 msgstr "Použité pre osobu"
 
-#: DynamicWeb//dynamicweb.py:2602 DynamicWeb/dynamicweb.py:3156
+#: DynamicWeb/dynamicweb.py:3156
 msgid "Used for place"
 msgstr "Použité pre miesto"
 
-#: DynamicWeb//dynamicweb.py:2603 DynamicWeb/dynamicweb.py:3157
+#: DynamicWeb/dynamicweb.py:3157
 msgid "Used for source"
 msgstr "Použité pre zdroj"
 
-#: DynamicWeb//dynamicweb.py:2605 DynamicWeb/dynamicweb.py:3159
+#: DynamicWeb/dynamicweb.py:3159
 msgid "Web Link"
 msgstr "Webový odkaz"
 
-#: DynamicWeb//dynamicweb.py:2607 DynamicWeb//dynamicweb.py:4222
 #: DynamicWeb/dynamicweb.py:3164 DynamicWeb/dynamicweb.py:5173
 msgid ""
 "Whether to use a special color for the persons that appear several times in "
@@ -479,83 +469,81 @@ msgid ""
 msgstr ""
 "Či použiť špeciálnu farbu pre osoby ktoré sa v SVG strome vyskytujú viac krát"
 
-#: DynamicWeb//dynamicweb.py:2608 DynamicWeb/dynamicweb.py:3167
+#: DynamicWeb/dynamicweb.py:3167
 msgid "Without name"
 msgstr "Bez mena"
 
-#: DynamicWeb//dynamicweb.py:2609 DynamicWeb/dynamicweb.py:3168
+#: DynamicWeb/dynamicweb.py:3168
 msgid "Without surname"
 msgstr "Bez priezviska"
 
-#: DynamicWeb//dynamicweb.py:2610 DynamicWeb/dynamicweb.py:3169
+#: DynamicWeb/dynamicweb.py:3169
 msgid "Without title"
 msgstr "Bez titulu"
 
-#: DynamicWeb//dynamicweb.py:2611 DynamicWeb/dynamicweb.py:3170
+#: DynamicWeb/dynamicweb.py:3170
 msgid "Zoom in"
 msgstr "Priblížiť"
 
-#: DynamicWeb//dynamicweb.py:2612 DynamicWeb/dynamicweb.py:3171
+#: DynamicWeb/dynamicweb.py:3171
 msgid "Zoom out"
 msgstr "Oddialiť"
 
-#: DynamicWeb//dynamicweb.py:2613 DynamicWeb/dynamicweb.py:3172
+#: DynamicWeb/dynamicweb.py:3172
 msgid "all"
 msgstr "všetky"
 
-#: DynamicWeb//dynamicweb.py:2957 DynamicWeb/dynamicweb.py:3585
+#: DynamicWeb/dynamicweb.py:3585
 #, python-format
 msgid "Copying error: %(error)s"
 msgstr "Chyba pri kopírování: %(error)s"
 
-#: DynamicWeb//dynamicweb.py:2958 DynamicWeb/dynamicweb.py:3588
+#: DynamicWeb/dynamicweb.py:3588
 #, python-format
 msgid "Impossible to copy \"%(src)s\" to \"%(dst)s\""
 msgstr "Nie je možné kopírovať \"%(src)s\" do \"%(dst)s\""
 
-#: DynamicWeb//dynamicweb.py:2989 DynamicWeb/dynamicweb.py:3632
+#: DynamicWeb/dynamicweb.py:3632
 #, python-format
 msgid "Unable to copy web site template files from \"%(path)s\""
 msgstr "Nie je možné kopírovať súbory šablóny WWW stránok z \"%(path)s\""
 
-#: DynamicWeb//dynamicweb.py:3033 DynamicWeb/dynamicweb.py:3681
+#: DynamicWeb/dynamicweb.py:3681
 #, python-format
 msgid "Keeping \"%(dst)s\" (newer than \"%(src)s\")"
 msgstr "Ponecháva sa \"%(dst)s\" (novší ako \"%(src)s\")"
 
-#: DynamicWeb//dynamicweb.py:3036 DynamicWeb/dynamicweb.py:3687
+#: DynamicWeb/dynamicweb.py:3687
 #, python-format
 msgid "Copying \"%(src)s\" to \"%(dst)s\""
 msgstr "Kopíruje sa \"%(src)s\" do \"%(dst)s\""
 
-#: DynamicWeb//dynamicweb.py:3065 DynamicWeb//dynamicweb.py:3083
 #: DynamicWeb/dynamicweb.py:3718 DynamicWeb/dynamicweb.py:3742
 #, python-format
 msgid "Unable to overwrite archive file \"%(path)s\""
 msgstr "Nepodarilo sa prepísať súbor archívu \"%(path)s\""
 
-#: DynamicWeb//dynamicweb.py:3075 DynamicWeb//dynamicweb.py:3090
 #: DynamicWeb/dynamicweb.py:3731 DynamicWeb/dynamicweb.py:3752
 #, python-format
 msgid "Unable to add file \"%(file)s\" to archive \"%(archive)s\""
 msgstr "Nepodarilo sa pridať súbor \"%(file)s\" do archívu \"%(archive)s\""
 
-#: DynamicWeb//dynamicweb.py:3143 DynamicWeb/dynamicweb.py:3831
+#: DynamicWeb/dynamicweb.py:3831
 #, python-format
 msgid "DynamicWebReport ignoring link type '%(class)s'"
 msgstr "DynamicWebReport ignoruje odkaz typu '%(class)s'"
 
-#: DynamicWeb//dynamicweb.py:3527 DynamicWeb/dynamicweb.py:4262
+#: DynamicWeb/dynamicweb.py:4262
 #, python-format
 msgid "Family of %(father)s"
 msgstr "Rodina patriaca %(father)s"
 
-#: DynamicWeb//dynamicweb.py:3531 DynamicWeb/dynamicweb.py:4266
+#: DynamicWeb/dynamicweb.py:4266
 #, python-format
 msgid "Family of %(mother)s"
 msgstr "Rodina patriaca %(mother)s"
 
-#: DynamicWeb//dynamicweb.py:3846 DynamicWeb/dynamicweb.py:4660
+#: DynamicWeb/dynamicweb.py:4660
 msgid ""
 "In this note, the following special words are processed:\n"
 "__SEARCH_FORM__ is replaced by a search form.\n"
@@ -590,264 +578,247 @@ msgstr ""
 "URL začínajúce na \"relative://relative.<link>\" sú nahradené relatívnou URL "
 "\"<link>\".\n"
 
-#: DynamicWeb//dynamicweb.py:3897 DynamicWeb/dynamicweb.py:4712
+#: DynamicWeb/dynamicweb.py:4712
 msgid "Store web pages in archive"
 msgstr "Uložiť webové súbory do archívu"
 
-#: DynamicWeb//dynamicweb.py:3898 DynamicWeb/dynamicweb.py:4715
+#: DynamicWeb/dynamicweb.py:4715
 msgid ""
 "Whether to create an archive file (in ZIP or TGZ format) containing the web "
 "site"
 msgstr "Či vytvoriť archív (v ZIP alebo TGZ formáte) obsahujúci web stránku"
 
-#: DynamicWeb//dynamicweb.py:3902 DynamicWeb/dynamicweb.py:4722
+#: DynamicWeb/dynamicweb.py:4722
 msgid "Archive file"
 msgstr "Súbor archívu"
 
-#: DynamicWeb//dynamicweb.py:3904 DynamicWeb/dynamicweb.py:4728
+#: DynamicWeb/dynamicweb.py:4728
 msgid "The archive file name (with \".zip\" or \".tgz\" extension)"
 msgstr "Názov súboru archívu (s \".zip\" alebo \".tgz\" príponou)"
 
-#: DynamicWeb//dynamicweb.py:3910 DynamicWeb/dynamicweb.py:4735
+#: DynamicWeb/dynamicweb.py:4735
 msgid "Web site title"
 msgstr "Nadpis web stránky"
 
-#: DynamicWeb//dynamicweb.py:3911 DynamicWeb/dynamicweb.py:4736
+#: DynamicWeb/dynamicweb.py:4736
 msgid "The title of the web site"
 msgstr "Nadpis web stránky"
 
-#: DynamicWeb//dynamicweb.py:3916 DynamicWeb/dynamicweb.py:4741
+#: DynamicWeb/dynamicweb.py:4741
 msgid "Select filter to restrict people that appear on web site"
 msgstr "Zvoľte filter pre vymedzenie osôb zobrazených na web stránke"
 
-#: DynamicWeb//dynamicweb.py:3929 DynamicWeb//dynamicweb.py:3949
 #: DynamicWeb/dynamicweb.py:4755 DynamicWeb/dynamicweb.py:4778
 msgid "Name format (short)"
 msgstr "Formát mien (krátky)"
 
-#: DynamicWeb//dynamicweb.py:3930 DynamicWeb//dynamicweb.py:3952
 #: DynamicWeb/dynamicweb.py:4757 DynamicWeb/dynamicweb.py:4783
 msgid "Select the format to display a shorter version of the names"
 msgstr "Zvoľte formát zobrazenia krátkych verzií mien"
 
-#: DynamicWeb//dynamicweb.py:3955 DynamicWeb/dynamicweb.py:4787
+#: DynamicWeb/dynamicweb.py:4787
 msgid "Web site template"
 msgstr "Šablóna web stránky"
 
-#: DynamicWeb//dynamicweb.py:3958 DynamicWeb/dynamicweb.py:4790
+#: DynamicWeb/dynamicweb.py:4790
 msgid "Select the template of the web site"
 msgstr "Zvoľte šablónu web stránky"
 
-#: DynamicWeb//dynamicweb.py:3980 D3Charts/DescendantIndentedTree.py:1867
-#: DynamicWeb/dynamicweb.py:4811
-msgid "Include records marked private"
-msgstr "Zahrnúť záznamy označené ako súkromné"
-
-#: DynamicWeb//dynamicweb.py:3981 DynamicWeb/dynamicweb.py:4812
+#: DynamicWeb/dynamicweb.py:4812
 msgid "Whether to include private objects"
 msgstr "Či zahrnúť súkromné objekty"
 
-#: DynamicWeb//dynamicweb.py:3985 D3Charts/DescendantIndentedTree.py:1877
-#: DynamicWeb/dynamicweb.py:4819
-msgid "Include Last Name Only"
-msgstr "Zahrnúť iba posledné meno"
-
-#: DynamicWeb//dynamicweb.py:3986 D3Charts/DescendantIndentedTree.py:1879
-#: DynamicWeb/dynamicweb.py:4822
-msgid "Include Full Name Only"
-msgstr "Zahrnúť iba celé meno"
-
-#: DynamicWeb//dynamicweb.py:3992 DynamicWeb/dynamicweb.py:4833
+#: DynamicWeb/dynamicweb.py:4833
 msgid ""
 "This allows you to restrict information on people who have not been dead for "
 "very long"
 msgstr "Toto umožňuje obmedziť informácie o nedávno zosnulých osobách"
 
-#: DynamicWeb//dynamicweb.py:3996 DynamicWeb/dynamicweb.py:4839
+#: DynamicWeb/dynamicweb.py:4839
 msgid "Export notes"
 msgstr "Exportovať poznámky"
 
-#: DynamicWeb//dynamicweb.py:3997 DynamicWeb/dynamicweb.py:4840
+#: DynamicWeb/dynamicweb.py:4840
 msgid "Whether to export notes in the web pages"
 msgstr "Či exportovať poznámky do web stránok"
 
-#: DynamicWeb//dynamicweb.py:4000 DynamicWeb/dynamicweb.py:4843
+#: DynamicWeb/dynamicweb.py:4843
 msgid "Export sources"
 msgstr "Exportovať zdroje"
 
-#: DynamicWeb//dynamicweb.py:4001 DynamicWeb/dynamicweb.py:4845
+#: DynamicWeb/dynamicweb.py:4845
 msgid "Whether to export sources and citations in the web pages"
 msgstr "Či exportovať zdroje a citácie do web stránok"
 
-#: DynamicWeb//dynamicweb.py:4004 DynamicWeb/dynamicweb.py:4849
+#: DynamicWeb/dynamicweb.py:4849
 msgid "Export addresses"
 msgstr "Exportovať adresy"
 
-#: DynamicWeb//dynamicweb.py:4005 DynamicWeb/dynamicweb.py:4850
+#: DynamicWeb/dynamicweb.py:4850
 msgid "Whether to export addresses in the web pages"
 msgstr "Či exportovať adresy do web stránok"
 
-#: DynamicWeb//dynamicweb.py:4014 DynamicWeb/dynamicweb.py:4858
+#: DynamicWeb/dynamicweb.py:4858
 msgid "Whether or not to include the Repository Pages."
 msgstr "Či zahrnúť stránky archívov alebo nie."
 
-#: DynamicWeb//dynamicweb.py:4017 DynamicWeb/dynamicweb.py:4861
+#: DynamicWeb/dynamicweb.py:4861
 msgid "Include images and media"
 msgstr "Zahrnúť obrázky a médiá"
 
-#: DynamicWeb//dynamicweb.py:4018 DynamicWeb/dynamicweb.py:4862
+#: DynamicWeb/dynamicweb.py:4862
 msgid "Whether to include images and media in the web pages"
 msgstr "Či zahrnúť obrázky a médiá vo web stránkách"
 
-#: DynamicWeb//dynamicweb.py:4022 DynamicWeb/dynamicweb.py:4867
+#: DynamicWeb/dynamicweb.py:4867
 msgid "Copy, rename files with an internal Gramps identifier"
 msgstr "Kopírovať, premenovať súbory s interným Gramps identifikátorom"
 
-#: DynamicWeb//dynamicweb.py:4023 DynamicWeb/dynamicweb.py:4870
+#: DynamicWeb/dynamicweb.py:4870
 msgid "Copy, keep file names unchanged"
 msgstr "Kopírovať, ponechať názvy súborov nezmenené"
 
-#: DynamicWeb//dynamicweb.py:4024 DynamicWeb/dynamicweb.py:4871
+#: DynamicWeb/dynamicweb.py:4871
 msgid "Do not copy, reference existing files"
 msgstr "Nekopírovať, odkázať na existujúce súbory"
 
-#: DynamicWeb//dynamicweb.py:4026 DynamicWeb/dynamicweb.py:4873
+#: DynamicWeb/dynamicweb.py:4873
 msgid "Images and media"
 msgstr "Obrázky a médiá"
 
-#: DynamicWeb//dynamicweb.py:4029 DynamicWeb/dynamicweb.py:4876
+#: DynamicWeb/dynamicweb.py:4876
 msgid "Whether to make a copy of the media"
 msgstr "Či vytvoriť kópiu médií"
 
-#: DynamicWeb//dynamicweb.py:4032 DynamicWeb/dynamicweb.py:4879
+#: DynamicWeb/dynamicweb.py:4879
 msgid "Print the notes type"
 msgstr "Zahrnúť typ poznámok"
 
-#: DynamicWeb//dynamicweb.py:4033 DynamicWeb/dynamicweb.py:4881
+#: DynamicWeb/dynamicweb.py:4881
 msgid "Whether to print the notes type in the notes text"
 msgstr "Či zahrnúť v poznámkach aj ich typ"
 
-#: DynamicWeb//dynamicweb.py:4036 DynamicWeb/dynamicweb.py:4885
+#: DynamicWeb/dynamicweb.py:4885
 msgid "Print place pages"
 msgstr "Zahrnúť stránky s miestami"
 
-#: DynamicWeb//dynamicweb.py:4037 DynamicWeb/dynamicweb.py:4886
+#: DynamicWeb/dynamicweb.py:4886
 msgid "Whether to show pages for the places"
 msgstr "Či zobraziť stránky s miestami"
 
-#: DynamicWeb//dynamicweb.py:4065 DynamicWeb/dynamicweb.py:4921
+#: DynamicWeb/dynamicweb.py:4921
 msgid "Choose your choice of map service for creating the Place Map Pages"
 msgstr "Vyberte si poskytovateľa máp pre vyvtvorenie stránky s miestami"
 
-#: DynamicWeb//dynamicweb.py:4069 DynamicWeb/dynamicweb.py:4926
+#: DynamicWeb/dynamicweb.py:4926
 msgid "Google map API key"
 msgstr "Google map API kľúč"
 
-#: DynamicWeb//dynamicweb.py:4070 DynamicWeb/dynamicweb.py:4927
+#: DynamicWeb/dynamicweb.py:4927
 msgid "The API key used for the Google map"
 msgstr "API kľúč používaný pre Google mapu"
 
-#: DynamicWeb//dynamicweb.py:4087 DynamicWeb/dynamicweb.py:4945
+#: DynamicWeb/dynamicweb.py:4945
 msgid "Whether or not to include family pages"
 msgstr "Či zahrnúť stránky rodín alebo nie"
 
-#: DynamicWeb//dynamicweb.py:4097 DynamicWeb/dynamicweb.py:4959
+#: DynamicWeb/dynamicweb.py:4959
 msgid ""
 "Whether to include half and/ or step-siblings with the parents and siblings"
 msgstr "Či zahrnúť nevlastných súrodencov s rodičmi a súrodencami"
 
-#: DynamicWeb//dynamicweb.py:4104 DynamicWeb/dynamicweb.py:4968
+#: DynamicWeb/dynamicweb.py:4968
 msgid "Enable page configuration"
 msgstr "Povoliť prispôsobenie stránky"
 
-#: DynamicWeb//dynamicweb.py:4105 DynamicWeb/dynamicweb.py:4969
+#: DynamicWeb/dynamicweb.py:4969
 msgid "Whether to enable page configuration"
 msgstr "Či povoliť prispôsobenie stránky"
 
-#: DynamicWeb//dynamicweb.py:4109 DynamicWeb/dynamicweb.py:4974
+#: DynamicWeb/dynamicweb.py:4974
 msgid "Whether to use tabbed panels for the different sections of the pages."
 msgstr "Či sa majú používať panely s kartami pre rôzne časti stránok."
 
-#: DynamicWeb//dynamicweb.py:4113 DynamicWeb/dynamicweb.py:4980
+#: DynamicWeb/dynamicweb.py:4980
 msgid "Whether to show the last modification time in the pages footer"
 msgstr "Či zobraziť čas poslednej úpravy v pätičke súboru"
 
-#: DynamicWeb//dynamicweb.py:4117 DynamicWeb/dynamicweb.py:4988
+#: DynamicWeb/dynamicweb.py:4988
 msgid "Whether to insert sources author in the sources title"
 msgstr "Či uviesť autora zdrojov v nadpise zdrojov"
 
-#: DynamicWeb//dynamicweb.py:4121 DynamicWeb/dynamicweb.py:4993
+#: DynamicWeb/dynamicweb.py:4993
 msgid "Whether to hide the Gramps ID"
 msgstr "Či skryť Gramps ID"
 
-#: DynamicWeb//dynamicweb.py:4130 DynamicWeb/dynamicweb.py:5001
+#: DynamicWeb/dynamicweb.py:5001
 msgid "List"
 msgstr "Zoznam"
 
-#: DynamicWeb//dynamicweb.py:4131 DynamicWeb/dynamicweb.py:5002
+#: DynamicWeb/dynamicweb.py:5002
 msgid "Table"
 msgstr "Tabuľka"
 
-#: DynamicWeb//dynamicweb.py:4134 DynamicWeb/dynamicweb.py:5008
+#: DynamicWeb/dynamicweb.py:5008
 msgid "Default format for the surnames index"
 msgstr "Základný formát pre index priezvisk"
 
-#: DynamicWeb//dynamicweb.py:4134 DynamicWeb/dynamicweb.py:5009
+#: DynamicWeb/dynamicweb.py:5009
 msgid "The default format for the surnames index"
 msgstr "Základný formát pre index priezvisk"
 
-#: DynamicWeb//dynamicweb.py:4135 DynamicWeb/dynamicweb.py:5014
+#: DynamicWeb/dynamicweb.py:5014
 msgid "Default format for the persons index"
 msgstr "Základný formát pre index osôb"
 
-#: DynamicWeb//dynamicweb.py:4135 DynamicWeb/dynamicweb.py:5015
+#: DynamicWeb/dynamicweb.py:5015
 msgid "The default format for the persons index"
 msgstr "Základný formát pre index osôb"
 
-#: DynamicWeb//dynamicweb.py:4136 DynamicWeb/dynamicweb.py:5020
+#: DynamicWeb/dynamicweb.py:5020
 msgid "Default format for the families index"
 msgstr "Základný formát pre index rodín"
 
-#: DynamicWeb//dynamicweb.py:4136 DynamicWeb/dynamicweb.py:5021
+#: DynamicWeb/dynamicweb.py:5021
 msgid "The default format for the families index"
 msgstr "Základný formát pre index rodín"
 
-#: DynamicWeb//dynamicweb.py:4137 DynamicWeb/dynamicweb.py:5026
+#: DynamicWeb/dynamicweb.py:5026
 msgid "Default format for the sources index"
 msgstr "Základný formát pre index zdrojov"
 
-#: DynamicWeb//dynamicweb.py:4137 DynamicWeb/dynamicweb.py:5027
+#: DynamicWeb/dynamicweb.py:5027
 msgid "The default format for the sources index"
 msgstr "Základný formát pre index zdrojov"
 
-#: DynamicWeb//dynamicweb.py:4138 DynamicWeb/dynamicweb.py:5032
+#: DynamicWeb/dynamicweb.py:5032
 msgid "Default format for the places index"
 msgstr "Základný formát pre index miest"
 
-#: DynamicWeb//dynamicweb.py:4138 DynamicWeb/dynamicweb.py:5033
+#: DynamicWeb/dynamicweb.py:5033
 msgid "The default format for the places index"
 msgstr "Základný formát pre index miest"
 
-#: DynamicWeb//dynamicweb.py:4147 DynamicWeb/dynamicweb.py:5045
+#: DynamicWeb/dynamicweb.py:5045
 msgid ""
 "Whether to include dates columns (birth, death, marriage) on the index pages"
 msgstr ""
 "Či zahrnúť stĺpec s dátumami (narodenie, smrť, manželstvo) na indexových "
 "stránkach"
 
-#: DynamicWeb//dynamicweb.py:4158 DynamicWeb/dynamicweb.py:5063
+#: DynamicWeb/dynamicweb.py:5063
 msgid "Generate a families index page"
 msgstr "Generovať indexovú stránku rodín"
 
-#: DynamicWeb//dynamicweb.py:4159 DynamicWeb/dynamicweb.py:5066
+#: DynamicWeb/dynamicweb.py:5066
 msgid "Whether to generate an index page for families"
 msgstr "Či generovať indexovú stránku rodín"
 
-#: DynamicWeb//dynamicweb.py:4163 DynamicWeb/dynamicweb.py:5073
+#: DynamicWeb/dynamicweb.py:5073
 msgid "Whether to include a column showing the media path"
 msgstr "Či zahrnúť stĺpec s cestou k médiu"
 
-#: DynamicWeb//dynamicweb.py:4167 DynamicWeb/dynamicweb.py:5079
+#: DynamicWeb/dynamicweb.py:5079
 msgid ""
 "Whether to include the references to the items in the index pages. For "
 "example, in the media index page, the names of the individuals, families, "
@@ -857,112 +828,116 @@ msgstr ""
 "indexovej stránke medií mená osôb, rodín, miest, zdrojov ktoré odkazujú na "
 "médiá."
 
-#: DynamicWeb//dynamicweb.py:4170 DynamicWeb/dynamicweb.py:5085
+#: DynamicWeb/dynamicweb.py:5085
 msgid "Default number of entries in the indexes"
 msgstr "Základný počet záznamov v indexoch"
 
-#: DynamicWeb//dynamicweb.py:4173 DynamicWeb/dynamicweb.py:5090
+#: DynamicWeb/dynamicweb.py:5090
 msgid "The default number of entries shown in one index page"
 msgstr "Základný počet záznamov zobrazených na jednej indexovej stránke"
 
-#: DynamicWeb//dynamicweb.py:4181 DynamicWeb/dynamicweb.py:5098
+#: DynamicWeb/dynamicweb.py:5098
 msgid "Maximum number of generations"
 msgstr "Maximálny počet generácií"
 
-#: DynamicWeb//dynamicweb.py:4182 DynamicWeb/dynamicweb.py:5101
+#: DynamicWeb/dynamicweb.py:5101
 msgid ""
 "The maximum number of generations to include in the ancestor and descendant "
 "trees and graphs"
 msgstr ""
 "Maximálny počet generácií zahrnutých v stromoch a grafoch predkov a potomkov"
 
-#: DynamicWeb//dynamicweb.py:4188 DynamicWeb/dynamicweb.py:5111
+#: DynamicWeb/dynamicweb.py:5111
 msgid "Choose the default SVG tree graph type"
 msgstr "Zvoľte základný typ grafu pre SVG strom"
 
-#: DynamicWeb//dynamicweb.py:4194 DynamicWeb/dynamicweb.py:5119
+#: DynamicWeb/dynamicweb.py:5119
 msgid "Choose the default SVG tree graph shape"
 msgstr "Zvoľte základný tvar grafu pre SVG strom"
 
-#: DynamicWeb//dynamicweb.py:4200 DynamicWeb/dynamicweb.py:5128
+#: DynamicWeb/dynamicweb.py:5128
 msgid "Choose the default SVG tree parents distribution (for fan charts only)"
 msgstr ""
 "Zvoľte základné rozdelenie rodičov v SVG strome (len pre vejárové grafy)"
 
-#: DynamicWeb//dynamicweb.py:4206 DynamicWeb/dynamicweb.py:5138
+#: DynamicWeb/dynamicweb.py:5138
 msgid "Choose the default SVG tree children distribution (for fan charts only)"
 msgstr "Zvoľte základné rozdelenie detí v SVG strome (len pre vejárové grafy)"
 
-#: DynamicWeb//dynamicweb.py:4212 DynamicWeb/dynamicweb.py:5149
+#: DynamicWeb/dynamicweb.py:5149
 msgid ""
 "Choose the background color scheme for the persons in the SVG tree graph"
 msgstr "Zvoľte schému farby pozadia pre osoby v grafe SVG stromu"
 
-#: DynamicWeb//dynamicweb.py:4231 DynamicWeb/dynamicweb.py:5190
+#: DynamicWeb/dynamicweb.py:5157
+msgid "Theme"
+msgstr ""
+
+#: DynamicWeb/dynamicweb.py:5190
 msgid "Pages"
 msgstr "Stránky"
 
-#: DynamicWeb//dynamicweb.py:4235 DynamicWeb/dynamicweb.py:5194
+#: DynamicWeb/dynamicweb.py:5194
 msgid "A note to be used as the page header"
 msgstr "Poznámka ktorá sa zobrazí v hlavičke stránky"
 
-#: DynamicWeb//dynamicweb.py:4238 DynamicWeb/dynamicweb.py:5197
+#: DynamicWeb/dynamicweb.py:5197
 msgid "HTML user brand name / icon"
 msgstr "HTML užívateľský značka / ikona"
 
-#: DynamicWeb//dynamicweb.py:4239 DynamicWeb/dynamicweb.py:5199
+#: DynamicWeb/dynamicweb.py:5199
 msgid "A note to be used as the brand name or image in the menu"
 msgstr "Poznámka ktorá bude použitá ako značka alebo obrázok v menu"
 
-#: DynamicWeb//dynamicweb.py:4248 DynamicWeb/dynamicweb.py:5208
+#: DynamicWeb/dynamicweb.py:5208
 msgid "Custom pages"
 msgstr "Vlastné stránky"
 
-#: DynamicWeb//dynamicweb.py:4252 DynamicWeb/dynamicweb.py:5213
+#: DynamicWeb/dynamicweb.py:5213
 #, python-format
 msgid "Title for the custom page %(index)i"
 msgstr "Nadpis pre vlastnú stránku %(index)i"
 
-#: DynamicWeb//dynamicweb.py:4253 DynamicWeb/dynamicweb.py:5217
+#: DynamicWeb/dynamicweb.py:5217
 #, python-format
 msgid "Name for the custom page %(index)i"
 msgstr "Názov pre vlastnú stránku %(index)i"
 
-#: DynamicWeb//dynamicweb.py:4256 DynamicWeb/dynamicweb.py:5222
+#: DynamicWeb/dynamicweb.py:5222
 #, python-format
 msgid "Note for custom page %(index)i"
 msgstr "Poznámka pre vlastnú stránku %(index)i"
 
-#: DynamicWeb//dynamicweb.py:4257 DynamicWeb/dynamicweb.py:5225
+#: DynamicWeb/dynamicweb.py:5225
 msgid "A note to be used for the custom page content.\n"
 msgstr "Poznámka ktorá sa použije v obsahu vlastnej stránky.\n"
 
-#: DynamicWeb//dynamicweb.py:4260 DynamicWeb/dynamicweb.py:5230
+#: DynamicWeb/dynamicweb.py:5230
 #, python-format
 msgid "Menu for the custom page %(index)i"
 msgstr "Menu pre vlastnú stránku %(index)i"
 
-#: DynamicWeb//dynamicweb.py:4261 DynamicWeb/dynamicweb.py:5232
+#: DynamicWeb/dynamicweb.py:5232
 msgid "Whether to print a menu for the custom page"
 msgstr "Či zahrnúť menu pre vlastnú stránku"
 
-#: DynamicWeb//dynamicweb.py:4266 DynamicWeb/dynamicweb.py:5236
+#: DynamicWeb/dynamicweb.py:5236
 msgid "Pages selection"
 msgstr "Výber stránky"
 
-#: DynamicWeb//dynamicweb.py:4269 DynamicWeb/dynamicweb.py:5240
+#: DynamicWeb/dynamicweb.py:5240
 msgid "Number of pages"
 msgstr "Počet stránok"
 
-#: DynamicWeb//dynamicweb.py:4270 DynamicWeb/dynamicweb.py:5242
+#: DynamicWeb/dynamicweb.py:5242
 msgid "Number pages in the web site menu."
 msgstr "Číslovať stránky v menu webovej stránky."
 
-#: DynamicWeb//dynamicweb.py:4286 DynamicWeb/dynamicweb.py:5262
+#: DynamicWeb/dynamicweb.py:5262
 #, python-format
 msgid "Contents of page %(index)i"
 msgstr "Obsah stránky %(index)i"
 
-#: DynamicWeb//dynamicweb.py:4289 DynamicWeb/dynamicweb.py:5266
+#: DynamicWeb/dynamicweb.py:5266
 msgid "Contents of the page"
 msgstr "Obsah stránky"

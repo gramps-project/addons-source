@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-17 18:14+0100\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -38,23 +38,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: JSON/JSON.gpr.py:3 JSON/JSON.gpr.py:4
+#: JSON/JSON.gpr.py:4
 msgid "JSON Export"
 msgstr "Exportation JSON"
 
-#: JSON/JSON.gpr.py:4 JSON/JSON.gpr.py:5
+#: JSON/JSON.gpr.py:5
 msgid "This is a JSON export"
 msgstr "Ceci est une exportation JSON"
 
-#: JSON/JSON.gpr.py:11 JSON/JSON.gpr.py:12
+#: JSON/JSON.gpr.py:12
 msgid "JSON options"
 msgstr "Options JSON"
 
-#: JSON/JSON.gpr.py:17 JSON/JSON.gpr.py:20
+#: JSON/JSON.gpr.py:20
 msgid "JSON Import"
 msgstr "Importation JSON"
 
-#: JSON/JSON.gpr.py:18 JSON/JSON.gpr.py:21
+#: JSON/JSON.gpr.py:21
 msgid "This is a JSON import"
 msgstr "Ceci est une importation JSON"
 

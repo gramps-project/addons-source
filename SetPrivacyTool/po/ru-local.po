@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-04 16:31+0300\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -36,57 +36,56 @@ msgstr ""
 msgid "Select filter to restrict people"
 msgstr "Выбор фильтра для ограничения лиц"
 
-#: DynamicWeb//dynamicweb.py:2542 DynamicWeb/dynamicweb.py:3052
-#: SetPrivacyTool/SetPrivacyTool.py:320
+#: DynamicWeb/dynamicweb.py:3052 SetPrivacyTool/SetPrivacyTool.py:320
 msgid "Persons"
 msgstr "Лица"
 
-#: SetPrivacyTool/SetPrivacyTool.gpr.py:23 SetPrivacyTool/SetPrivacyTool.py:48
-#: SetPrivacyTool/SetPrivacyTool.py:90 SetPrivacyTool/SetPrivacyTool.py:93
-#: SetPrivacyTool/SetPrivacyTool.py:130 SetPrivacyTool/SetPrivacyTool.py:157
 #: SetPrivacyTool/SetPrivacyTool.gpr.py:24 SetPrivacyTool/SetPrivacyTool.py:51
-#: SetPrivacyTool/SetPrivacyTool.py:96 SetPrivacyTool/SetPrivacyTool.py:146
-#: SetPrivacyTool/SetPrivacyTool.py:186 SetPrivacyTool/SetPrivacyTool.py:226
-#: SetPrivacyTool/SetPrivacyTool.py:255
+#: SetPrivacyTool/SetPrivacyTool.py:93 SetPrivacyTool/SetPrivacyTool.py:96
+#: SetPrivacyTool/SetPrivacyTool.py:146 SetPrivacyTool/SetPrivacyTool.py:186
+#: SetPrivacyTool/SetPrivacyTool.py:226 SetPrivacyTool/SetPrivacyTool.py:255
 msgid "Set Privacy Tool"
 msgstr "Установка секретности"
 
-#: SetPrivacyTool/SetPrivacyTool.gpr.py:24
 #: SetPrivacyTool/SetPrivacyTool.gpr.py:25
 msgid "Set all objects of the last <number> of years private."
 msgstr "Сделать все объекты последних <number> лет личными."
 
-#: SetPrivacyTool/SetPrivacyTool.py:87 SetPrivacyTool/SetPrivacyTool.py:90
+#: SetPrivacyTool/SetPrivacyTool.py:90
 #, python-format
 msgid "Set private: %d %s\n"
 msgstr "Установить частный: %d %s\n"
 
-#: SetPrivacyTool/SetPrivacyTool.py:89 SetPrivacyTool/SetPrivacyTool.py:92
+#: SetPrivacyTool/SetPrivacyTool.py:92
 #, python-format
 msgid "Not private: %d %s\n"
 msgstr "Не личное: %d %s\n"
 
-#: SetPrivacyTool/SetPrivacyTool.py:96 SetPrivacyTool/SetPrivacyTool.py:107
+#: SetPrivacyTool/SetPrivacyTool.py:107
 msgid "Set persons private.."
 msgstr "Сделать лица личными.."
 
-#: SetPrivacyTool/SetPrivacyTool.py:133 SetPrivacyTool/SetPrivacyTool.py:157
+#: SetPrivacyTool/SetPrivacyTool.py:157
 msgid "Set events private.."
 msgstr "Сделать события личными.."
 
-#: SetPrivacyTool/SetPrivacyTool.py:160 SetPrivacyTool/SetPrivacyTool.py:197
+#: SetPrivacyTool/SetPrivacyTool.py:197
 msgid "Set media private.."
 msgstr "Сделать документы личными.."
 
-#: SetPrivacyTool/SetPrivacyTool.py:204 SetPrivacyTool/SetPrivacyTool.py:306
-msgid "Always private if no date."
-msgstr "Всегда личное, если дата отсутствует."
+#: SetPrivacyTool/SetPrivacyTool.py:230
+#, fuzzy
+#| msgid "Set events private.."
+msgid "Set adresses private.."
+msgstr "Сделать события личными.."
 
-#: SetPrivacyTool/SetPrivacyTool.py:205 SetPrivacyTool/SetPrivacyTool.py:307
-msgid "If checked, all objects without a date will also be set private."
-msgstr "Если установлено, то все объекты без даты будут переведены в личные."
+#: SetPrivacyTool/SetPrivacyTool.py:259
+#, fuzzy
+#| msgid "Set events private.."
+msgid "Set internet objects private.."
+msgstr "Сделать события личными.."
 
-#: SetPrivacyTool/SetPrivacyTool.py:210 SetPrivacyTool/SetPrivacyTool.py:301
+#: SetPrivacyTool/SetPrivacyTool.py:301
 msgid ""
 "The time range in years from today you want to set objects private.\n"
 "'0 years' = remove privacy from all objects."
@@ -94,3 +93,33 @@ msgstr ""
 "Промежуток времени в годах (от текущей даты) для перевода объектов в "
 "личные.\n"
 "'0 лет' = удалит метки секретности со всех объектов."
+
+#: SetPrivacyTool/SetPrivacyTool.py:306
+msgid "Always private if no date."
+msgstr "Всегда личное, если дата отсутствует."
+
+#: SetPrivacyTool/SetPrivacyTool.py:307
+msgid "If checked, all objects without a date will also be set private."
+msgstr "Если установлено, то все объекты без даты будут переведены в личные."
+
+#: SetPrivacyTool/SetPrivacyTool.py:324
+#, fuzzy
+#| msgid "Select filter to restrict people"
+msgid "Select filter to restrict events"
+msgstr "Выбор фильтра для ограничения лиц"
+
+#: SetPrivacyTool/SetPrivacyTool.py:336
+#, fuzzy
+#| msgid "Select filter to restrict list"
+msgid "Select filter to restrict medias"
+msgstr "Выберите фильтр для сокращения списка"
+
+#: SetPrivacyTool/SetPrivacyTool.py:347
+#, fuzzy
+#| msgid "Can't determine type of import"
+msgid "Internet type filter"
+msgstr "Не удалось определить тип импорта"
+
+#: SetPrivacyTool/SetPrivacyTool.py:351
+msgid "E-Mail"
+msgstr ""

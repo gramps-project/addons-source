@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS VIETNAMESE 4.2.8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-05 14:02-0600\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2018-07-13 14:34+0800\n"
 "Last-Translator: detran <trande@gmail.com>\n"
 "Language-Team: VIETNAMESE <trande@gmail.com>\n"
@@ -21,12 +21,18 @@ msgstr ""
 "OF GRAMPS, V. 3\n"
 "X-Generator: Poedit 1.5.4\n"
 
-#: CheckPlaceTitles/checkplacetitles.gpr.py:28
+#: ExtractCity/extractcity.py:454 CheckPlaceTitles/checkplacetitles.py:86
+msgid "Checking Place Titles"
+msgstr "Kiểm tra tiêu đề địa điểm "
+
+#: ExtractCity/extractcity.py:456 CheckPlaceTitles/checkplacetitles.py:88
+msgid "Looking for place fields"
+msgstr "Tìm kiếm trường địa điểm "
+
 #: CheckPlaceTitles/checkplacetitles.gpr.py:29
 msgid "Check Place Titles"
 msgstr ""
 
-#: CheckPlaceTitles/checkplacetitles.gpr.py:29
 #: CheckPlaceTitles/checkplacetitles.gpr.py:30
 msgid "Check place titles"
 msgstr ""
@@ -35,60 +41,42 @@ msgstr ""
 msgid "Check Place title"
 msgstr ""
 
-#: CheckPlaceTitles/checkplacetitles.py:86 ExtractCity/extractcity.py:454
-msgid "Checking Place Titles"
-msgstr "Kiểm tra tiêu đề địa điểm "
-
-#: CheckPlaceTitles/checkplacetitles.py:87 ExtractCity/extractcity.py:456
-msgid "Looking for place fields"
-msgstr "Tìm kiếm trường địa điểm "
-
-#: CheckPlaceTitles/checkplacetitles.py:103
 #: CheckPlaceTitles/checkplacetitles.py:107
 msgid "Differences"
 msgstr ""
 
-#: CheckPlaceTitles/checkplacetitles.py:109
 #: CheckPlaceTitles/checkplacetitles.py:112
 msgid "No need modifications"
 msgstr ""
 
-#: CheckPlaceTitles/checkplacetitles.py:110
 #: CheckPlaceTitles/checkplacetitles.py:113
 msgid "No changes need."
 msgstr ""
 
-#: CheckPlaceTitles/checkplacetitles.py:185
 #: CheckPlaceTitles/checkplacetitles.py:187
 msgid "Legacy place"
 msgstr ""
 
-#: CheckPlaceTitles/checkplacetitles.py:199
 #: CheckPlaceTitles/checkplacetitles.py:201
 msgid "Modify Place titles"
 msgstr ""
 
-#: CheckPlaceTitles/checkplacetitles.py:222
 #: CheckPlaceTitles/checkplacetitles.py:224
 msgid "Place titles"
 msgstr ""
 
-#: CheckPlaceTitles/checkplacetitles.glade.h:1
 #: CheckPlaceTitles/checkplacetitles.glade:56
 msgid "Remove content of place title field if it does not match"
 msgstr ""
 
-#: CheckPlaceTitles/checkplacetitles.glade.h:2
 #: CheckPlaceTitles/checkplacetitles.glade:74
 msgid "Copy content of place title field to a new note."
 msgstr ""
 
-#: CheckPlaceTitles/checkplacetitles.glade.h:4
 #: CheckPlaceTitles/checkplacetitles.glade:91
 msgid "Attach a tag on selected places."
 msgstr ""
 
-#: CheckPlaceTitles/checkplacetitles.glade.h:6
 #: CheckPlaceTitles/checkplacetitles.glade:177
 msgid "column"
 msgstr ""

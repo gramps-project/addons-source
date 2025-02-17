@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-17 18:14+0100\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -38,30 +38,33 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: UKWebConnectPack/UKWebPack.py:31 SVWebconnectPack/SVWebPack.py:34
-#: USWebConnectPack/USWebPack.py:30
+#: SVWebconnectPack/SVWebPack.py:33 USWebConnectPack/USWebPack.py:33
+msgid "Find A Grave"
+msgstr "Trouver une tombe"
+
+#: SVWebconnectPack/SVWebPack.py:34 USWebConnectPack/USWebPack.py:34
+#: USWebConnectPack/USWebPack.py:46
 msgid "FamilySearch.org"
 msgstr "FamilySearch.org"
 
-#: UKWebConnectPack/UKWebPack.py:34 UKWebConnectPack/UKWebPack.py:38
-#: USWebConnectPack/USWebPack.py:45
+#: UKWebConnectPack/UKWebPack.py:38 USWebConnectPack/USWebPack.py:41
 msgid "Hathi Trust Digital Library"
 msgstr "Bibliothèque Hathi Trust Digital"
 
+#: UKWebConnectPack/UKWebPack.py:39 USWebConnectPack/USWebPack.py:42
+msgid "Open Library"
+msgstr ""
+
 # trunk
-#: USWebConnectPack/USWebPack.gpr.py:10 USWebConnectPack/USWebPack.gpr.py:11
+#: USWebConnectPack/USWebPack.gpr.py:11
 msgid "US Web Connect Pack"
 msgstr "Ensemble de liens internet US"
 
-#: USWebConnectPack/USWebPack.gpr.py:11 USWebConnectPack/USWebPack.gpr.py:12
+#: USWebConnectPack/USWebPack.gpr.py:12
 msgid "Collection of Web sites for the US (requires libwebconnect)"
 msgstr ""
 "Collection de sites internet pour les États-Unis (nécessite libwebconnect)"
 
-#: USWebConnectPack/USWebPack.py:29 SVWebconnectPack/SVWebPack.py:33
-msgid "Find A Grave"
-msgstr "Trouver une tombe"
-
-#: USWebConnectPack/USWebPack.py:31 USWebConnectPack/USWebPack.py:35
+#: USWebConnectPack/USWebPack.py:35
 msgid "US Google"
 msgstr "Google US"

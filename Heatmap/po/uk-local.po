@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2024-10-10 22:54+0300\n"
 "Last-Translator: Illia Maier <illia@maier.page>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
@@ -26,7 +26,7 @@ msgstr ""
 msgid "INFO"
 msgstr "ІНФОРМАЦІЯ"
 
-#: Heatmap/heatmap.gpr.py:25 Heatmap/heatmap.gpr.py:26
+#: Heatmap/heatmap.gpr.py:26
 msgid "Create a heatmap web report."
 msgstr "Створити веб-звіт теплової мапи (Heatmap)."
 

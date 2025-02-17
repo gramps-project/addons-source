@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-04 16:31+0300\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -31,11 +31,15 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: Themes/themes.gpr.py:28 Themes/themes.gpr.py:29
+#: DynamicWeb/dynamicweb.py:5157 Themes/themes.py:175 Themes/themes.py:225
+msgid "Theme"
+msgstr "Тема"
+
+#: Themes/themes.gpr.py:29
 msgid "Theme preferences"
 msgstr "Тематические предпочтения"
 
-#: Themes/themes.gpr.py:29 Themes/themes.gpr.py:31
+#: Themes/themes.gpr.py:31
 msgid ""
 "An addition to Preferences for simple Theme and Font adjustment.  Especially "
 "useful for Windows users."
@@ -43,24 +47,18 @@ msgstr ""
 "Дополнение к настройкам для простой настройки темы и шрифта. Особенно "
 "полезно для пользователей Windows."
 
-#: Themes/themes.py:137 Themes/themes.py:155 Themes/themes.py:172
-#: Themes/themes.py:190
+#: Themes/themes.py:172 Themes/themes.py:190
 msgid "Theme is hardcoded by GTK_THEME"
 msgstr "Тема жёстко задана с помощью GTK_THEME"
 
-#: Themes/themes.py:140 Themes/themes.py:190 DynamicWeb/dynamicweb.py:5157
-#: Themes/themes.py:175 Themes/themes.py:225
-msgid "Theme"
-msgstr "Тема"
-
-#: Themes/themes.py:145 Themes/themes.py:180
+#: Themes/themes.py:180
 msgid "Dark Variant"
 msgstr "Тёмный вариант"
 
-#: Themes/themes.py:163 Themes/themes.py:198
+#: Themes/themes.py:198
 msgid "Font"
 msgstr "Шрифт"
 
-#: Themes/themes.py:179 Themes/themes.py:214
+#: Themes/themes.py:214
 msgid "Fixed Scrollbar (requires restart)"
 msgstr "Классическая полоса прокрутки (требуется перезагрузка)"

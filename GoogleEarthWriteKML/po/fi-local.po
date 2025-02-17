@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-02 02:13+0300\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2019-12-10 13:09+0200\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: niememat@gmail.com\n"
@@ -33,25 +33,23 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.0.6\n"
 
-#: GoogleEarthWriteKML.gpr.py:30
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.gpr.py:31
 msgid "GoogleEarth"
 msgstr "GoogleEarth"
 
-#: GoogleEarthWriteKML.gpr.py:35
 #: GoogleEarthWriteKML/GoogleEarthWriteKML.gpr.py:36
 msgid "Creates data file for GoogleEarth and opens it"
 msgstr "Luo GoogleEarth tiedostoa ja avaa sen"
 
-#: GoogleEarthWriteKML.py:140 GoogleEarthWriteKML/GoogleEarthWriteKML.py:119
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:119
 msgid "No place description"
 msgstr "Ei paikkatietoa"
 
-#: GoogleEarthWriteKML.py:173 GoogleEarthWriteKML/GoogleEarthWriteKML.py:152
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:152
 msgid "GoogleEarth not installed!"
 msgstr "GoogleEarth ei ole asennettu!"
 
-#: GoogleEarthWriteKML.py:174 GoogleEarthWriteKML/GoogleEarthWriteKML.py:153
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:153
 #, python-format
 msgid ""
 "Create kmz/kml file ''%s''\n"
@@ -60,20 +58,20 @@ msgstr ""
 "Luodaan kmz/kml tiedosto ''%s''\n"
 "käyttäjän hakemistoon ''%s''?"
 
-#: GoogleEarthWriteKML.py:184 GoogleEarthWriteKML/GoogleEarthWriteKML.py:163
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:163
 #, python-format
 msgid "Failure writing to %s"
 msgstr "Kirjoitus epäonnistui %s"
 
-#: GoogleEarthWriteKML.py:185 GoogleEarthWriteKML/GoogleEarthWriteKML.py:164
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:164
 msgid "Directory does not exist"
 msgstr "Hakemistoa ei ole olemassa"
 
-#: GoogleEarthWriteKML.py:194 GoogleEarthWriteKML/GoogleEarthWriteKML.py:173
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:173
 msgid "GoogleEarth file exists!"
 msgstr "GoogleEarth tiedosto on olemassa!"
 
-#: GoogleEarthWriteKML.py:195 GoogleEarthWriteKML/GoogleEarthWriteKML.py:174
+#: GoogleEarthWriteKML/GoogleEarthWriteKML.py:174
 #, python-format
 msgid ""
 "Overwrite kmz/kml file ''%s''\n"

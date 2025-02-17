@@ -1,13 +1,13 @@
 # Addon MediaMerge for Gramps.
 # Copyright (C) 2020 Gramps
 # This file is distributed under the same license as the gramps package.
-# Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020.
+# Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2025-02-15 10:09+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-17 11:46+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -16,31 +16,28 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
-#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:41 Form/form_us.xml.h:2085
-#: Form/form_us.xml.h:2122 Form/form_us.xml.h:2160 Form/form_us.xml.h:2198
-#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:34
+#: Form/form_us.xml.h:2085 Form/form_us.xml.h:2122 Form/form_us.xml.h:2160
+#: Form/form_us.xml.h:2198 TimelinePedigreeView/TimelinePedigreeView.gpr.py:34
 msgid "Ancestry"
 msgstr "Ascendência"
 
-#: FamilyTree/FamilyTree.py:1049 FamilyTree/FamilyTree.py:1047
+#: FamilyTree/FamilyTree.py:1047
 #: TimelinePedigreeView/TimelinePedigreeView.py:1481
 msgid "Ancestor Generations"
 msgstr "Gerações ascendentes"
 
-#: FamilyTree/FamilyTree.py:1053 FamilyTree/FamilyTree.py:1051
+#: FamilyTree/FamilyTree.py:1051
 #: TimelinePedigreeView/TimelinePedigreeView.py:1465
 msgid "Descendant Generations"
 msgstr "Gerações descendentes"
 
-#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:40
 #: TimelinePedigreeView/TimelinePedigreeView.gpr.py:33
 #: TimelinePedigreeView/TimelinePedigreeView.gpr.py:46
 msgid "Timeline Pedigree"
 msgstr "Cronologia de costados"
 
-#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:42
 #: TimelinePedigreeView/TimelinePedigreeView.gpr.py:36
 msgid ""
 "The view shows a timeline pedigree with ancestors and descendants of the "
@@ -77,18 +74,14 @@ msgstr "crem."
 msgid "Timeline pedigree"
 msgstr "Cronologia de costados"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1432
 #: TimelinePedigreeView/TimelinePedigreeView.py:1437
 msgid "Order by timeline"
 msgstr "Ordem cronológica"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1434
 #: TimelinePedigreeView/TimelinePedigreeView.py:1439
 msgid "Show lifespan"
 msgstr "Mostrar duração de vida"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1465
-#: TimelinePedigreeView/TimelinePedigreeView.py:1481
 #: TimelinePedigreeView/TimelinePedigreeView.py:1470
 #: TimelinePedigreeView/TimelinePedigreeView.py:1486
 #, python-format
@@ -97,7 +90,6 @@ msgid_plural "%d generations"
 msgstr[0] "%d geração"
 msgstr[1] "%d gerações"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1500
 #: TimelinePedigreeView/TimelinePedigreeView.py:1505
 msgid "About Timeline Pedigree View"
 msgstr "Acerca dos costados da cronologia"

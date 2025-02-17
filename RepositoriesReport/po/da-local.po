@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -21,14 +21,14 @@ msgstr ""
 "X-Generator: Poedit 3.0.1\n"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:480
-#: RepositoriesReport/RepositoriesReport.py:175
 #: RepositoriesReport/RepositoriesReportAlt.py:504
+#: RepositoriesReport/RepositoriesReport.py:175
 msgid "The style used for the title of the report."
 msgstr "Stilen der benyttes til rapportens titel."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:591
-#: RepositoriesReport/RepositoriesReport.py:203
 #: RepositoriesReport/RepositoriesReportAlt.py:533
+#: RepositoriesReport/RepositoriesReport.py:203
 msgid "The style used for each section."
 msgstr "Stilen der benyttes til hver sektion."
 
@@ -37,22 +37,18 @@ msgstr "Stilen der benyttes til hver sektion."
 msgid "Include private records"
 msgstr "Medtage private poster"
 
-#: RepositoriesReport/RepositoriesReport.gpr.py:25
 #: RepositoriesReport/RepositoriesReport.gpr.py:26
 msgid "Repositories Report Options"
 msgstr "Arkivrapport tilvalg"
 
-#: RepositoriesReport/RepositoriesReport.gpr.py:26
-#: RepositoriesReport/RepositoriesReport.gpr.py:43
 #: RepositoriesReport/RepositoriesReport.gpr.py:27
 #: RepositoriesReport/RepositoriesReport.gpr.py:46
 msgid "Produces a textual repositories report"
 msgstr "Danner en tekstbaseret arkivrapport"
 
-#: RepositoriesReport/RepositoriesReport.gpr.py:42
+#: RepositoriesReport/RepositoriesReport.gpr.py:45
 #: RepositoriesReport/RepositoriesReport.py:80
 #: RepositoriesReport/RepositoriesReportAlt.py:139
-#: RepositoriesReport/RepositoriesReport.gpr.py:45
 msgid "Repositories Report"
 msgstr "Arkivrapport"
 

@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-17 18:14+0100\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -38,11 +38,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: Themes/themes.gpr.py:28 Themes/themes.gpr.py:29
+#: DynamicWeb/dynamicweb.py:5157 Themes/themes.py:175 Themes/themes.py:225
+msgid "Theme"
+msgstr "Thème"
+
+#: Themes/themes.gpr.py:29
 msgid "Theme preferences"
 msgstr "Préférences de thème"
 
-#: Themes/themes.gpr.py:29 Themes/themes.gpr.py:31
+#: Themes/themes.gpr.py:31
 msgid ""
 "An addition to Preferences for simple Theme and Font adjustment.  Especially "
 "useful for Windows users."
@@ -50,24 +54,18 @@ msgstr ""
 "Un ajout aux préférences pour un simple ajustement de thème et de police. "
 "Particulièrement utile pour les utilisateurs Windows."
 
-#: Themes/themes.py:137 Themes/themes.py:155 Themes/themes.py:172
-#: Themes/themes.py:190
+#: Themes/themes.py:172 Themes/themes.py:190
 msgid "Theme is hardcoded by GTK_THEME"
 msgstr "Le thème est figé par GTK_THEME"
 
-#: Themes/themes.py:140 Themes/themes.py:190 DynamicWeb/dynamicweb.py:5157
-#: Themes/themes.py:175 Themes/themes.py:225
-msgid "Theme"
-msgstr "Thème"
-
-#: Themes/themes.py:145 Themes/themes.py:180
+#: Themes/themes.py:180
 msgid "Dark Variant"
 msgstr "Variante sombre"
 
-#: Themes/themes.py:163 Themes/themes.py:198
+#: Themes/themes.py:198
 msgid "Font"
 msgstr "Police"
 
-#: Themes/themes.py:179 Themes/themes.py:214
+#: Themes/themes.py:214
 msgid "Fixed Scrollbar (requires restart)"
 msgstr "Barre de défilement fixe (redémarrage requis)"

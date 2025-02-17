@@ -1,13 +1,13 @@
 # Addon MediaMerge for Gramps.
 # Copyright (C) 2020 Gramps
 # This file is distributed under the same license as the gramps package.
-# Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020.
+# Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2025-02-15 10:09+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-17 11:46+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -16,40 +16,37 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
-#: GetGOV/getgov.gpr.py:30 GetGOV/getgov.gpr.py:41 GetGOV/getgov.gpr.py:42
+#: GetGOV/getgov.gpr.py:30 GetGOV/getgov.gpr.py:42 GetGOV/getgov.gpr.py:32
+#: GetGOV/getgov.gpr.py:44
 msgid "GetGOV"
-msgstr "GetGOV"
+msgstr "Obter GOV"
 
-#: GetGOV/getgov.gpr.py:31
+#: GetGOV/getgov.gpr.py:31 GetGOV/getgov.gpr.py:33
 msgid "Gramplet to get places from the GOV database"
 msgstr "Gramplet para obter locais da base de dados GOV"
 
-#: GetGOV/getgov.py:303
-msgid "Enter GOV-id:"
-msgstr "Insira a GOV-id:"
-
-#: GetGOV/getgov.py:311
+#: GetGOV/getgov.py:311 GetGOV/getgov.py:323
 msgid "Get Place"
 msgstr "Obter local"
 
-#: GetGOV/getgov.py:343
+#: GetGOV/getgov.py:343 GetGOV/getgov.py:356
 #, python-format
 msgid "Add GOV-id place %s"
 msgstr "Adicionar local GOV-id %s"
 
-#: GetGOV/getgov.py:518 GetGOV/getgov.py:521
+#: GetGOV/getgov.py:521 GetGOV/getgov.py:555
 #, python-format
 msgid "from %s to %s"
 msgstr "de %s a %s"
 
-#: GetGOV/getgov.py:520 GetGOV/getgov.py:523
+#: GetGOV/getgov.py:523 GetGOV/getgov.py:557
 #, python-format
 msgid "after %s"
 msgstr "após %s"
 
-#: GetGOV/getgov.py:522 GetGOV/getgov.py:525
+#: GetGOV/getgov.py:525 GetGOV/getgov.py:559
 #, python-format
 msgid "before %s"
 msgstr "antes de %s"

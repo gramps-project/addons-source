@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-17 18:14+0100\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -38,56 +38,50 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:78
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:83
 #: SetAttributeTool/SetAttributeTool.py:71
 msgid "Select filter to restrict people"
 msgstr "Sélectionne un filtre pour restreindre les individus"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:232
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:237
 #: SetAttributeTool/SetAttributeTool.py:151
 #: SetAttributeTool/SetAttributeTool.py:193
 msgid "Processing...\n"
 msgstr "Traitement en cours...\n"
 
-#: AttachSourceTool/AttachSourceTool.py:190
 #: AttachSourceTool/AttachSourceTool.py:197
 #: SetAttributeTool/SetAttributeTool.py:226
 msgid "Done!\n"
 msgstr "Terminé !\n"
 
-#: SetAttributeTool/SetAttributeTool.gpr.py:25
-#: SetAttributeTool/SetAttributeTool.py:118
-#: SetAttributeTool/SetAttributeTool.py:124
-#: SetAttributeTool/SetAttributeTool.py:193
 #: SetAttributeTool/SetAttributeTool.gpr.py:26
 #: SetAttributeTool/SetAttributeTool.py:122
 #: SetAttributeTool/SetAttributeTool.py:150
 msgid "Set Attribute"
 msgstr "Définir un attribut"
 
-#: SetAttributeTool/SetAttributeTool.gpr.py:26
 #: SetAttributeTool/SetAttributeTool.gpr.py:27
 msgid "Set an attribute to a given value."
 msgstr "Définir une valeur à un attribut."
 
-#: SetAttributeTool/SetAttributeTool.py:84
 #: SetAttributeTool/SetAttributeTool.py:83
 msgid "Attribute type to add or edit"
 msgstr "Type d'attribut à ajouter ou éditer"
 
-#: SetAttributeTool/SetAttributeTool.py:85
 #: SetAttributeTool/SetAttributeTool.py:84
 msgid "Attribute value to add or edit"
 msgstr "Valeur de l'attribut à ajouter ou éditer"
 
-#: SetAttributeTool/SetAttributeTool.py:141
+#: SetAttributeTool/SetAttributeTool.py:92
+#, fuzzy
+#| msgid "Set an attribute to a given value."
+msgid "Remove attribute type and value set"
+msgstr "Définir une valeur à un attribut."
+
 #: SetAttributeTool/SetAttributeTool.py:152
 msgid "Setting attributes..."
 msgstr "Définition des attributs..."
 
-#: SetAttributeTool/SetAttributeTool.py:148
 #: SetAttributeTool/SetAttributeTool.py:156
 #, python-format
 msgid ""
@@ -97,12 +91,35 @@ msgstr ""
 "Définition des attributs '%s' à '%s'...\n"
 "\n"
 
-#: SetAttributeTool/SetAttributeTool.py:179
 #: SetAttributeTool/SetAttributeTool.py:188
 #, python-format
 msgid ""
 "\n"
 "Set %d '%s' attributes to '%s'\n"
+msgstr ""
+"\n"
+"A défini %d attributs '%s' à '%s'\n"
+
+#: SetAttributeTool/SetAttributeTool.py:191
+#, fuzzy
+#| msgid "Set Attribute"
+msgid "Remove Attribute"
+msgstr "Définir un attribut"
+
+#: SetAttributeTool/SetAttributeTool.py:194
+#, fuzzy
+#| msgid "Setting attributes..."
+msgid "Removing attributes..."
+msgstr "Définition des attributs..."
+
+#: SetAttributeTool/SetAttributeTool.py:221
+#, fuzzy, python-format
+#| msgid ""
+#| "\n"
+#| "Set %d '%s' attributes to '%s'\n"
+msgid ""
+"\n"
+"Removing %d '%s' attributes to '%s'\n"
 msgstr ""
 "\n"
 "A défini %d attributs '%s' à '%s'\n"

@@ -3,13 +3,13 @@
 # Copyright (C) Gramps project
 # Milo Ivir <mivir@milotype.de>, 2019, 2020.
 # Stephen Adams, Gramps Reddit, 2018.
-#
+# Milo Ivir <mail@milotype.de>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2025-02-15 16:17+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-17 00:14+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -21,12 +21,11 @@ msgstr ""
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Weblate 5.10\n"
 
-#: lxml/etreeGramplet.gpr.py:9 lxml/etreeGramplet.gpr.py:18
 #: lxml/etreeGramplet.gpr.py:10 lxml/etreeGramplet.gpr.py:19
 msgid "etree"
 msgstr "etree"
 
-#: lxml/etreeGramplet.gpr.py:10 lxml/etreeGramplet.gpr.py:11
+#: lxml/etreeGramplet.gpr.py:11
 msgid "Gramplet for testing etree with Gramps XML"
 msgstr "Gramplet za testiranje etree s Gramps XML-om"
 
@@ -105,7 +104,7 @@ msgid ""
 "Number of tags : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 msgstr ""
-"Broj etiketa: \n"
+"Broj oznaka: \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
 #: lxml/etreeGramplet.py:476
@@ -114,7 +113,7 @@ msgid ""
 "Number of tags : \n"
 "\t\t\t%s\n"
 msgstr ""
-"Broj etiketa: \n"
+"Broj oznaka: \n"
 "\t\t\t%s\n"
 
 #: lxml/etreeGramplet.py:478
@@ -137,9 +136,6 @@ msgstr ""
 
 #: lxml/etreeGramplet.py:483
 #, python-format
-#| msgid ""
-#| "Number of places : \n"
-#| "\t\t\t%s\t|\t(%s)*\n"
 msgid ""
 "Number of persons : \n"
 "\t\t\t%s\t|\t(%s)*\n"
@@ -228,12 +224,11 @@ msgstr ""
 "* učitana baza podataka rodoslova:\n"
 " „%s”\n"
 
-#: lxml/lxmlGramplet.gpr.py:9 lxml/lxmlGramplet.gpr.py:18
 #: lxml/lxmlGramplet.gpr.py:10 lxml/lxmlGramplet.gpr.py:19
 msgid "lxml"
 msgstr "lxml"
 
-#: lxml/lxmlGramplet.gpr.py:10 lxml/lxmlGramplet.gpr.py:11
+#: lxml/lxmlGramplet.gpr.py:11
 msgid "Gramplet for testing lxml and XSLT"
 msgstr "Gramplet za testiranje lxml i XSLT"
 

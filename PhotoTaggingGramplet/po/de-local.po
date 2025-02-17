@@ -8,7 +8,7 @@
 # Sebastian Vöcking <voeck@web.de>, 2005.
 # Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
 # Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2025.
 # Alois Pöttker <alois.poettker@gmx.de>, 2017.
 # Allan Nordhøy <epost@anotheragency.no>, 2021.
 # R. B. <weblate@macdefender.org>, 2021.
@@ -21,8 +21,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-02 22:39+0200\n"
-"PO-Revision-Date: 2025-02-15 16:17+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-17 00:14+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -37,123 +37,105 @@ msgstr ""
 msgid "_Select"
 msgstr "_Auswählen"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:3
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:11
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:29
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:38
 msgid "Photo Tagging"
 msgstr "Foto markieren"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:4
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:30
 msgid "Gramplet for tagging people in photos"
 msgstr "Gramplet zum markieren von Personen auf Fotos"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:101
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:108
 msgid "https://www.gramps-project.org/wiki/index.php/Photo_Tagging_Gramplet"
 msgstr "https://www.gramps-project.org/wiki/index.php/Photo_Tagging_Gramplet"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:127
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:134
 msgid "Replace existing references to the person being assigned without asking"
 msgstr ""
 "Ersetze existierende Referenzen zu der Person die ohne Nachfragen zugeordnet "
 "wurden"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:134
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:141
 msgid "Face detection"
 msgstr "Gesichtserkennung"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:137
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:144
 msgid "Minimum face width (px)"
 msgstr "Minimale Gesichtshöhe (Pkt)"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:139
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:146
 msgid "Minimum face height (px)"
 msgstr "Minimale Gesichtshöhe (Pkt)"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:142
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:149
 msgid "Detect faces inside existing boxes"
-msgstr "Erkennt Gesichter in existierenden  Kästen"
+msgstr "Gesichter innerhalb bestehender Boxen erkennen"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:144
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:151
 msgid "Sensitivity (1 min .. 20 max)"
 msgstr "Empfindlichkeit (1 min … 20 max)"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:285
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:291
 msgid "Add Person"
 msgstr "Person hinzufügen"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:286
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:292
 msgid "Clear Reference"
 msgstr "Referenz löschen"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:287
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:293
 msgid "Remove Selection"
 msgstr "Auswahl entfernen"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:288
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:294
 msgid "Edit referenced Person"
 msgstr "Referenzierte Person bearbeiten"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:289
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:295
 msgid "Zoom In"
 msgstr "Vergrößern"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:290
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:296
 msgid "Zoom Out"
 msgstr "Verkleinern"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:293
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:299
 msgid "Detect faces"
 msgstr "Erkannte Gesichter"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:295
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:301
 msgid "Detect faces (OpenCV module required)"
 msgstr "Entdeckt Gesichter (OpenCV Modul benötigt)"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:475
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:356
+#, fuzzy
+#| msgid "Person Name"
+msgid "XMP Region Name"
+msgstr "Name der Person"
+
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:495
 msgid "Set as active person"
 msgstr "Als aktive Person wählen"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:690
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:779
 #, python-brace-format
 msgid "Replace to {0}"
 msgstr "Ersetze nach {0}"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:791
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:880
 msgid "Detecting faces..."
 msgstr "Suche nach Gesichtern …"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:816
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:905
 msgid "Detection finished"
 msgstr "Erkennung abgeschlossen"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:866
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:955
 #, python-brace-format
 msgid "Another region of this image is associated with {name}. Remove it?"
 msgstr "Eine andere Region dieses Bildes ist mit {name}. verknüpft. Entfernen?"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:869
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:958
 #, python-brace-format
 msgid ""
@@ -161,19 +143,16 @@ msgid ""
 msgstr ""
 "{count} andere Regionen dieses Bildes sind mit {name} verknüpft. Entfernen?"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:1013
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:1110
 #, python-format
 msgid "Male person|Dead at %s"
 msgstr "Tod am %s"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:1015
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:1112
 #, python-format
 msgid "Female person|Dead at %s"
 msgstr "Tod am %s"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:1017
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.py:1114
 #, python-format
 msgid "Unknown gender person|Dead at %s"

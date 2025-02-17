@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2024-10-10 22:54+0300\n"
 "Last-Translator: Illia Maier <illia@maier.page>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
@@ -21,69 +21,71 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: HistContext.gpr.py:4 HistContext.gpr.py:14 HistContext/HistContext.gpr.py:4
-#: HistContext/HistContext.gpr.py:14
+#: HistContext/HistContext.gpr.py:4 HistContext/HistContext.gpr.py:14
 msgid "Historical Context"
 msgstr "Історичний контекст"
 
-#: HistContext.gpr.py:5 HistContext/HistContext.gpr.py:5
+#: HistContext/HistContext.gpr.py:5
 msgid "Lists relevant historical events during the lifetime of a Person"
 msgstr "Перелік відповідних історичних подій протягом життя особи"
 
-#: HistContext.py:123 HistContext/HistContext.py:123
+#: HistContext/HistContext.py:123
 msgid "Rows starting with this in the text column will be hidden "
 msgstr "Рядки, що починаються з цього в текстовому стовпці, будуть приховані"
 
-#: HistContext.py:126 HistContext/HistContext.py:126
+#: HistContext/HistContext.py:126
 msgid "Use filter "
 msgstr "Використовувати фільтр"
 
-#: HistContext.py:129 HistContext/HistContext.py:129
+#: HistContext/HistContext.py:129
 msgid "Show outside life span "
 msgstr "Показати поза межами тривалості життя"
 
-#: HistContext.py:132 HistContext/HistContext.py:132
+#: HistContext/HistContext.py:132
 msgid "Use full dates"
 msgstr "Використовувати повні дати"
 
-#: HistContext.py:135 HistContext/HistContext.py:135
+#: HistContext/HistContext.py:135
 msgid "Foreground color items in lifespan"
 msgstr "Колір елементів на передньому плані в межах тривалості життя"
 
-#: HistContext.py:138 HistContext/HistContext.py:138
+#: HistContext/HistContext.py:138
 msgid "Background color items in lifespan"
 msgstr "Колір фону елементів в межах тривалості життя"
 
-#: HistContext.py:141 HistContext/HistContext.py:141
+#: HistContext/HistContext.py:141
 msgid "Foreground color items outside lifespan"
 msgstr "Колір елементів на передньому плані поза межами тривалості життя"
 
-#: HistContext.py:144 HistContext/HistContext.py:144
+#: HistContext/HistContext.py:144
 msgid "Background color items outside lifespan"
 msgstr "Колір фону елементів поза межами тривалості життя"
 
-#: HistContext.py:149 HistContext/HistContext.py:149
+#: HistContext/HistContext.py:149
 msgid "Select from files"
 msgstr "Вибрати з файлів"
 
-#: HistContext.py:287 HistContext/HistContext.py:287
+#: HistContext/HistContext.py:287
 msgid "Invalid date "
 msgstr "Невірна дата"
 
-#: HistContext.py:288 HistContext/HistContext.py:288
+#: HistContext/HistContext.py:288
 msgid " in line: "
 msgstr " у рядку: "
 
-#: HistContext.py:289 HistContext.py:333 HistContext.py:420
 #: HistContext/HistContext.py:289 HistContext/HistContext.py:333
 #: HistContext/HistContext.py:420
 msgid "Error:"
 msgstr "Помилка:"
 
-#: HistContext.py:419 HistContext/HistContext.py:419
+#: HistContext/HistContext.py:327
+msgid ": line does not contain four sections separated by semicolons in : \""
+msgstr ""
+
+#: HistContext/HistContext.py:419
 msgid "Cannot open URL: "
 msgstr "Не вдається відкрити URL: "
 
-#: HistContext.py:427 HistContext/HistContext.py:427
+#: HistContext/HistContext.py:427
 msgid "Double click row to follow link"
 msgstr "Двічі клацніть на рядок, щоб перейти за посиланням"

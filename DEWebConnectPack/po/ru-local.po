@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-04 16:31+0300\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -31,8 +31,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: UKWebConnectPack/UKWebPack.py:35 SVWebconnectPack/SVWebPack.py:34
-#: DEWebConnectPack/DEWebPack.py:39
+#: SVWebconnectPack/SVWebPack.py:34 DEWebConnectPack/DEWebPack.py:39
 msgid "FamilySearch.org"
 msgstr "FamilySearch.org"
 
@@ -40,11 +39,11 @@ msgstr "FamilySearch.org"
 msgid "Open Library"
 msgstr "Открытая библиотека"
 
-#: DEWebConnectPack/DEWebPack.gpr.py:10 DEWebConnectPack/DEWebPack.gpr.py:11
+#: DEWebConnectPack/DEWebPack.gpr.py:11
 msgid "DE Web Connect Pack"
 msgstr "Набор DE Web Connect"
 
-#: DEWebConnectPack/DEWebPack.gpr.py:11 DEWebConnectPack/DEWebPack.gpr.py:12
+#: DEWebConnectPack/DEWebPack.gpr.py:12
 msgid "Collection of Web sites for the DE (requires libwebconnect)"
 msgstr "Набор веб-сайтов для DE (требуется libwebconnect)"
 
@@ -59,3 +58,17 @@ msgstr "Архивы Google"
 #: DEWebConnectPack/DEWebPack.py:43
 msgid "DE Google"
 msgstr "DE Google"
+
+#: DEWebConnectPack/DEWebPack.py:45
+msgid "Surname map (1890-1996)"
+msgstr ""
+
+#: DEWebConnectPack/DEWebPack.py:46
+msgid "GenWiki"
+msgstr ""
+
+#: DEWebConnectPack/DEWebPack.py:47
+#, fuzzy
+#| msgid "Hathi Trust Digital Library"
+msgid "German digital library"
+msgstr "Hathi Trust цифровая библиотека"

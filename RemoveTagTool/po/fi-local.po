@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-02 02:13+0300\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2019-12-10 13:09+0200\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: niememat@gmail.com\n"
@@ -33,8 +33,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.0.6\n"
 
-#: DynamicWeb//dynamicweb.py:2542 DynamicWeb/dynamicweb.py:3052
-#: RemoveTagTool/RemoveTagTool.py:124
+#: EventDescriptionEditor/EventDescriptionEditor.py:105
+#: RemoveTagTool/RemoveTagTool.py:271
+msgid "INFO"
+msgstr "INFO"
+
+#: DynamicWeb/dynamicweb.py:3052 RemoveTagTool/RemoveTagTool.py:124
 msgid "Persons"
 msgstr "Henkilöt"
 
@@ -43,12 +47,12 @@ msgstr "Henkilöt"
 msgid "General options"
 msgstr "Yleiset valinnat"
 
-#: RemoveTagTool/RemoveTagTool.gpr.py:24 RemoveTagTool/RemoveTagTool.py:186
-#: RemoveTagTool/RemoveTagTool.py:246 RemoveTagTool/RemoveTagTool.gpr.py:25
+#: RemoveTagTool/RemoveTagTool.gpr.py:25 RemoveTagTool/RemoveTagTool.py:186
+#: RemoveTagTool/RemoveTagTool.py:246
 msgid "Add/Remove Tag Tool"
 msgstr "Lisää/poista tagi työkalu"
 
-#: RemoveTagTool/RemoveTagTool.gpr.py:25 RemoveTagTool/RemoveTagTool.gpr.py:26
+#: RemoveTagTool/RemoveTagTool.gpr.py:26
 msgid "Add or remove a tag from groups of people, events, etc."
 msgstr "Lisää tai poista tagi henkilöryhmistä, tapahtumista jne."
 
@@ -129,8 +133,3 @@ msgstr "poistettu"
 #: RemoveTagTool/RemoveTagTool.py:269
 msgid "Tag '{}' was {} to {} {} objects.\n"
 msgstr "Tageja '{}' on {} - {} {} kohteessa.\n"
-
-#: RemoveTagTool/RemoveTagTool.py:271
-#: EventDescriptionEditor/EventDescriptionEditor.py:105
-msgid "INFO"
-msgstr "INFO"

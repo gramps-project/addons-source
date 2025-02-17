@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-04 16:31+0300\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -41,14 +41,12 @@ msgstr "Выбор фильтра для ограничения лиц"
 msgid "Processing...\n"
 msgstr "Обработка...\n"
 
-#: AttachSourceTool/AttachSourceTool.gpr.py:25
+#: AttachSourceTool/AttachSourceTool.gpr.py:26
 #: AttachSourceTool/AttachSourceTool.py:137
 #: AttachSourceTool/AttachSourceTool.py:155
-#: AttachSourceTool/AttachSourceTool.gpr.py:26
 msgid "Attach Source"
 msgstr "Указание источника"
 
-#: AttachSourceTool/AttachSourceTool.gpr.py:26
 #: AttachSourceTool/AttachSourceTool.gpr.py:27
 msgid "Attaches a shared source to multiple objects."
 msgstr "Указание ссылок на источники для объектов."

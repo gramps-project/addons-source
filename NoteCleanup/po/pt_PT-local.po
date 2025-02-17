@@ -1,13 +1,13 @@
 # Addon MediaMerge for Gramps.
 # Copyright (C) 2020 Gramps
 # This file is distributed under the same license as the gramps package.
-# Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020.
+# Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2025-02-15 10:09+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-17 11:46+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: MediaVerify/MediaVerify.py:110 NoteCleanup/NoteCleanup.py:135
 msgid "Export"
@@ -35,33 +35,31 @@ msgstr "Exportar resultados para um ficheiro de texto"
 msgid "Error when writing the report: %s"
 msgstr "Erro ao escrever o relatório: %s"
 
-#: DenominoViso/DenominoViso.py:2006 DenominoViso/DenominoViso.py:2001
-#: NoteCleanup/NoteCleanup.py:126
+#: DenominoViso/DenominoViso.py:2001 NoteCleanup/NoteCleanup.py:126
 msgid "Search"
 msgstr "Procurar"
 
-#: NoteCleanup/NoteCleanup.gpr.py:30 NoteCleanup/NoteCleanup.py:397
 #: NoteCleanup/NoteCleanup.gpr.py:31 NoteCleanup/NoteCleanup.py:412
 msgid "Note Cleanup"
 msgstr "Limpeza de notas"
 
-#: NoteCleanup/NoteCleanup.gpr.py:31 NoteCleanup/NoteCleanup.gpr.py:32
+#: NoteCleanup/NoteCleanup.gpr.py:32
 msgid "Clean up Notes that contain HTML markup"
 msgstr "Limpa notas que contêm marcação HTML"
 
-#: NoteCleanup/NoteCleanup.py:90 NoteCleanup/NoteCleanup.py:92
+#: NoteCleanup/NoteCleanup.py:92
 msgid "Note Cleanup Tool"
 msgstr "Ferramenta de limpeza de notas"
 
-#: NoteCleanup/NoteCleanup.py:96 NoteCleanup/NoteCleanup.py:98
+#: NoteCleanup/NoteCleanup.py:98
 msgid "Cleaned Notes"
 msgstr "Notas limpas"
 
-#: NoteCleanup/NoteCleanup.py:96 NoteCleanup/NoteCleanup.py:98
+#: NoteCleanup/NoteCleanup.py:98
 msgid "Links Only"
 msgstr "Só ligações"
 
-#: NoteCleanup/NoteCleanup.py:97 NoteCleanup/NoteCleanup.py:99
+#: NoteCleanup/NoteCleanup.py:99
 msgid "Issues"
 msgstr "Problemas"
 
@@ -95,7 +93,7 @@ msgstr ""
 "Serão adicionadas à base de dados, portanto poderá querer usar uma base de "
 "dados de teste ou eliminá-las depois."
 
-#: NoteCleanup/NoteCleanup.py:177 NoteCleanup/NoteCleanup.py:181
+#: NoteCleanup/NoteCleanup.py:181
 msgid ""
 "Please back up your database before running this tool.\n"
 "\n"
@@ -104,26 +102,25 @@ msgid ""
 "You may export a summary list of the notes that were found using the "
 "'Export' button."
 msgstr ""
-"Faça uma cópia de segurança antes de usara ferramenta.\n"
+"Faça uma salvaguarda antes de usar a ferramenta.\n"
 "\n"
 "Inicie a ferramenta clicando em Procurar e depois reveja os resultados.\n"
 "Quando terminar, clique em Gravar tudo para gravar as alterações.\n"
 "Pode exportar uma lista das notas que foram encontradas."
 
-#: NoteCleanup/NoteCleanup.py:186 NoteCleanup/NoteCleanup.py:190
+#: NoteCleanup/NoteCleanup.py:190
 msgid "Clean up Notes"
 msgstr "Limpar notas"
 
-#: NoteCleanup/NoteCleanup.py:279 NoteCleanup/NoteCleanup.py:288
+#: NoteCleanup/NoteCleanup.py:288
 msgid "Cleanup Test Notes"
 msgstr "Limpar notas de teste"
 
-#: NoteCleanup/NoteCleanup.py:301 NoteCleanup/NoteCleanup.py:306
 #: NoteCleanup/NoteCleanup.py:310 NoteCleanup/NoteCleanup.py:315
 msgid "Add Test Note"
 msgstr "Adicionar nota de teste"
 
-#: NoteCleanup/NoteCleanup.py:372 NoteCleanup/NoteCleanup.py:383
+#: NoteCleanup/NoteCleanup.py:383
 msgid ""
 "\n"
 "\n"
@@ -133,7 +130,7 @@ msgstr ""
 "\n"
 "Notas seleccionadas à esquerda são mostradas ANTES da limpeza nesta caixa."
 
-#: NoteCleanup/NoteCleanup.py:375 NoteCleanup/NoteCleanup.py:386
+#: NoteCleanup/NoteCleanup.py:386
 msgid ""
 "\n"
 "\n"
@@ -147,14 +144,14 @@ msgstr ""
 "Se quiser fazer alterações, pode fazê-las aqui e usar os controlos de estilo "
 "na barra de ferramentas acima."
 
-#: NoteCleanup/NoteCleanup.py:390 NoteCleanup/NoteCleanup.py:404
+#: NoteCleanup/NoteCleanup.py:404
 msgid "Saving Notes"
 msgstr "A gravar notas"
 
-#: NoteCleanup/NoteCleanup.py:392 NoteCleanup/NoteCleanup.py:407
+#: NoteCleanup/NoteCleanup.py:407
 msgid "Saving Cleaned Notes"
 msgstr "A gravar notas limpas"
 
-#: NoteCleanup/NoteCleanup.py:416 NoteCleanup/NoteCleanup.py:435
+#: NoteCleanup/NoteCleanup.py:435
 msgid "Scanning Notes"
 msgstr "A analisar notas"

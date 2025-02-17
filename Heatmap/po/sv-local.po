@@ -9,14 +9,15 @@
 # Pär Ekholm <par.ekholm50@gmail.com>, 2016, 2018.
 # Pär Ekholm <par.ekholm@pekholm.se>, 2018, 2019.
 # Peter Landgren <peter@test>, 2010.
-#
+# Pär Ekholm <github1@m.pekholm.org>, 2025.
+# Milan <mobrcian@hotmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-08 17:11-0500\n"
-"PO-Revision-Date: 2025-02-09 22:37+0000\n"
-"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-16 10:55+0000\n"
+"Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
 "Language: sv\n"
@@ -24,42 +25,22 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.10\n"
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:105 Heatmap/heatmap.py:214
 #: Heatmap/heatmap.py:226
 msgid "INFO"
 msgstr "INFO"
 
-#: Heatmap/heatmap.gpr.py:25 Heatmap/heatmap.gpr.py:26
+#: Heatmap/heatmap.gpr.py:26
 msgid "Create a heatmap web report."
 msgstr "Skapa en webbrapport med färgdiagram."
 
-#: Heatmap/heatmap.py:77 Heatmap/utils.py:55
-msgid "Stamen Terrain"
-msgstr "Stamen Terrain"
-
-#: Heatmap/heatmap.py:78 Heatmap/utils.py:61
-msgid "Stamen Toner"
-msgstr "Stamen Toner"
-
-#: Heatmap/heatmap.py:79 Heatmap/utils.py:64
-msgid "Stamen Watercolor"
-msgstr "Stamen Watercolor"
-
-#: Heatmap/heatmap.py:80 Heatmap/utils.py:67
-msgid "CartoDB Positron"
-msgstr "CartoDB Positron"
-
-#: Heatmap/heatmap.py:81 Heatmap/utils.py:70
-msgid "CartoDB DarkMatter"
-msgstr "CartoDB DarkMatter"
-
-#: Heatmap/heatmap.py:82 Heatmap/heatmap.py:85
+#: Heatmap/heatmap.py:85
 msgid "Map tiles"
 msgstr "Kartplattor"
 
-#: Heatmap/heatmap.py:87 Heatmap/heatmap.py:90
+#: Heatmap/heatmap.py:90
 msgid ""
 "Set the size of the heatmap points.\n"
 "Default: 15"
@@ -67,11 +48,11 @@ msgstr ""
 "Storleken på färgdiagrammets punkter.\n"
 "Standard: 15"
 
-#: Heatmap/heatmap.py:90 Heatmap/heatmap.py:93
+#: Heatmap/heatmap.py:93
 msgid "File path"
 msgstr "Filmål"
 
-#: Heatmap/heatmap.py:94 Heatmap/heatmap.py:98
+#: Heatmap/heatmap.py:98
 msgid ""
 "For the file name only english letters A-Z, a-z and numbers 0-9 as well as "
 "the characters space, underline and hypen are allowed. The file name also "
@@ -83,26 +64,26 @@ msgstr ""
 "måste också börja och sluta med ett alfanumeriskt tecken. Filtillägget "
 "'.html' läggs till i rapporten."
 
-#: Heatmap/heatmap.py:99 Heatmap/heatmap.py:103
+#: Heatmap/heatmap.py:103
 msgid "File name"
 msgstr "Filnamn"
 
-#: Heatmap/heatmap.py:107 Heatmap/heatmap.py:117
+#: Heatmap/heatmap.py:117
 msgid "Enable custom start position"
 msgstr "Aktivera anpassad startposition"
 
-#: Heatmap/heatmap.py:109 Heatmap/heatmap.py:119
+#: Heatmap/heatmap.py:119
 msgid ""
 "Enabling will force the map open at your custom start position and zoom."
 msgstr ""
 "Aktivering tvingar kartan att öppnas vid din anpassade startposition och "
 "zooma."
 
-#: Heatmap/heatmap.py:114 Heatmap/heatmap.py:124
+#: Heatmap/heatmap.py:124
 msgid "Start latitude"
 msgstr "Startlatitud"
 
-#: Heatmap/heatmap.py:116 Heatmap/heatmap.py:126
+#: Heatmap/heatmap.py:126
 msgid ""
 "Set custom start position latitude\n"
 "Default: 50.0"
@@ -110,11 +91,11 @@ msgstr ""
 "Ange anpassad startpositionslatitud\n"
 "Standard: 50.0"
 
-#: Heatmap/heatmap.py:119 Heatmap/heatmap.py:129
+#: Heatmap/heatmap.py:129
 msgid "Start longitude"
 msgstr "Startlongitud"
 
-#: Heatmap/heatmap.py:121 Heatmap/heatmap.py:131
+#: Heatmap/heatmap.py:131
 msgid ""
 "Set custom start position longitude\n"
 "Default: 10.0"
@@ -122,11 +103,11 @@ msgstr ""
 "Ange anpassad startpositionslongitud\n"
 "Standard: 10.0"
 
-#: Heatmap/heatmap.py:124 Heatmap/heatmap.py:134
+#: Heatmap/heatmap.py:134
 msgid "Start zoom"
 msgstr "Startzoom"
 
-#: Heatmap/heatmap.py:126 Heatmap/heatmap.py:136
+#: Heatmap/heatmap.py:136
 msgid ""
 "Set the value for the starting zoom\n"
 "Default: 5"
@@ -134,10 +115,36 @@ msgstr ""
 "Ställ in värdet för startzoomen\n"
 "Standard: 5"
 
-#: Heatmap/heatmap.py:251 Heatmap/heatmap.py:210
+#: Heatmap/heatmap.py:209
+msgid "Path does not exist."
+msgstr "Sökvägen finns inte."
+
+#: Heatmap/heatmap.py:210
 msgid "Invalid filename."
 msgstr "Ogiltigt filnamn."
 
-#: Heatmap/heatmap.py:252 Heatmap/heatmap.py:209
-msgid "Path does not exist."
-msgstr "Sökvägen finns inte."
+#: Heatmap/utils.py:55
+msgid "Stamen Terrain"
+msgstr "Stamen Terrain"
+
+#: Heatmap/utils.py:58
+#, fuzzy
+#| msgid "Paternal Background Color"
+msgid "Stamen Terrain (Background only)"
+msgstr "Bakgrundsfärg för fadersidan"
+
+#: Heatmap/utils.py:61
+msgid "Stamen Toner"
+msgstr "Stamen Toner"
+
+#: Heatmap/utils.py:64
+msgid "Stamen Watercolor"
+msgstr "Stamen Watercolor"
+
+#: Heatmap/utils.py:67
+msgid "CartoDB Positron"
+msgstr "CartoDB Positron"
+
+#: Heatmap/utils.py:70
+msgid "CartoDB DarkMatter"
+msgstr "CartoDB DarkMatter"

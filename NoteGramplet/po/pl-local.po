@@ -10,10 +10,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-08 16:37+0100\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2009-10-05 21:15+0100\n"
 "Last-Translator: Łukasz Rymarczyk <yenidai@poczta.onet.pl>\n"
 "Language-Team: Łukasz Rymarczyk <yenidai@poczta.onet.pl>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -24,21 +25,28 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2);\n"
 "X-Poedit-SearchPath-0: ~/.poedit/a\n"
 
-#: DataEntryGramplet/DataEntryGramplet.py:55 FilterRules/activepersonrule.py:45
-#: NoteGramplet/NoteGramplet.py:65
+#: FilterRules/activepersonrule.py:45 NoteGramplet/NoteGramplet.py:65
 msgid "Active person"
 msgstr "Aktywna osoba"
 
-#: DataEntryGramplet/DataEntryGramplet.py:69
 #: DataEntryGramplet/DataEntryGramplet.py:89 NoteGramplet/NoteGramplet.py:111
 msgid "Save"
 msgstr "Zapisz"
 
-#: DataEntryGramplet/DataEntryGramplet.py:72
 #: DataEntryGramplet/DataEntryGramplet.py:92 NoteGramplet/NoteGramplet.py:114
 msgid "Abandon"
 msgstr "Porzuć"
 
-#: NoteGramplet/NoteGramplet.gpr.py:3 NoteGramplet/NoteGramplet.gpr.py:4
+#: NoteGramplet/NoteGramplet.gpr.py:4
 msgid "Note Gramplet"
 msgstr "Gramplet Notatki"
+
+#: NoteGramplet/NoteGramplet.gpr.py:5
+msgid "Gramplet for editing active person's notes"
+msgstr ""
+
+#: NoteGramplet/NoteGramplet.py:255
+#, fuzzy
+#| msgid "Save"
+msgid "Save Note"
+msgstr "Zapisz"

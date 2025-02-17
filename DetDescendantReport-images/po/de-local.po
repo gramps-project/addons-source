@@ -8,7 +8,7 @@
 # Sebastian Vöcking <voeck@web.de>, 2005.
 # Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
 # Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2025.
 # Alois Pöttker <alois.poettker@gmx.de>, 2017.
 # Allan Nordhøy <epost@anotheragency.no>, 2021.
 # R. B. <weblate@macdefender.org>, 2021.
@@ -21,8 +21,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-02 22:39+0200\n"
-"PO-Revision-Date: 2025-02-15 16:17+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-17 00:14+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -33,12 +33,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.10\n"
 
-#: AncestorFill/AncestorFill.py:360 AncestorFill/AncestorFill.py:361
+#: AncestorFill/AncestorFill.py:361
 #: DetDescendantReport-images/detdescendantreporti.py:1252
 msgid "The style used for the title of the page."
 msgstr "Der Stil, der für den Seitentitel verwendet wird."
 
-#: DynamicWeb/dynamicweb.py:1626 DynamicWeb/dynamicweb.py:1737
+#: DynamicWeb/dynamicweb.py:1737
 #: DetDescendantReport-images/detdescendantreporti.py:940
 #, python-format
 msgid "%(type)s: %(value)s"
@@ -103,12 +103,10 @@ msgstr ""
 msgid "The style used for additional detail data."
 msgstr "Der Stil, der für die sonstigen genauen Daten verwendet wird."
 
-#: DetDescendantReport-images/detdescendantreport.gpr.py:3
 #: DetDescendantReport-images/detdescendantreport.gpr.py:4
 msgid "Detailed Descendant Report With All Images"
 msgstr "Detaillierter Nachkommenbericht mit allen Bildern"
 
-#: DetDescendantReport-images/detdescendantreport.gpr.py:4
 #: DetDescendantReport-images/detdescendantreport.gpr.py:6
 msgid ""
 "Produces a detailed descendant report with all images and optional todo list."
@@ -116,28 +114,23 @@ msgstr ""
 "Erstellt einen detaillierten Nachkommenbericht mit allen Bildern und einer "
 "optionalen Aufgabenliste."
 
-#: DetDescendantReport-images/detdescendantreporti.py:467
 #: DetDescendantReport-images/detdescendantreporti.py:471
 #, python-format
 msgid "%(event_name)s: %(event_text)s"
 msgstr "%(event_name)s: %(event_text)s"
 
-#: DetDescendantReport-images/detdescendantreporti.py:1173
 #: DetDescendantReport-images/detdescendantreporti.py:1177
 msgid "Include TODO notes"
 msgstr "Aufgabenliste aufnehmen"
 
-#: DetDescendantReport-images/detdescendantreporti.py:1174
 #: DetDescendantReport-images/detdescendantreporti.py:1178
 msgid "Whether to include TODO notes."
 msgstr "Ob Aufgaben Notizen aufgenommen werden."
 
-#: DetDescendantReport-images/detdescendantreporti.py:1347
 #: DetDescendantReport-images/detdescendantreporti.py:1351
 msgid "The style used for image labels."
 msgstr "Der für Bildbeschriftungen verwendete Stil."
 
-#: DetDescendantReport-images/detdescendantreporti.py:1360
 #: DetDescendantReport-images/detdescendantreporti.py:1364
 msgid "A style used for image captions."
 msgstr "Ein Stil für Bildunterschriften."

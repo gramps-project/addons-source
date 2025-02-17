@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-04 16:31+0300\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -31,19 +31,17 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: DataEntryGramplet/DataEntryGramplet.gpr.py:8
+#: FilterRules/activepersonrule.py:45 DataEntryGramplet/DataEntryGramplet.py:71
+msgid "Active person"
+msgstr "Активное лицо"
+
 #: DataEntryGramplet/DataEntryGramplet.gpr.py:9
 msgid "Data Entry Gramplet"
 msgstr "Ввод данных"
 
-#: DataEntryGramplet/DataEntryGramplet.gpr.py:9
 #: DataEntryGramplet/DataEntryGramplet.gpr.py:10
 msgid "Gramplet for quick data entry"
 msgstr "Грамплет для быстрого ввода данных"
-
-#: DataEntryGramplet/DataEntryGramplet.py:71 FilterRules/activepersonrule.py:45
-msgid "Active person"
-msgstr "Активное лицо"
 
 #: DataEntryGramplet/DataEntryGramplet.py:73
 msgid "Family:"
@@ -120,32 +118,20 @@ msgstr "Копировать текущие данные"
 msgid "in"
 msgstr "в"
 
-#: DataEntryGramplet/DataEntryGramplet.py:440
-#: DataEntryGramplet/DataEntryGramplet.py:568
 #: DataEntryGramplet/DataEntryGramplet.py:441
 #: DataEntryGramplet/DataEntryGramplet.py:569
 #, python-format
 msgid "Gramplet Data Edit: %s"
 msgstr "Грамплет ввода данных: %s"
 
-#: DataEntryGramplet/DataEntryGramplet.py:514
 #: DataEntryGramplet/DataEntryGramplet.py:515
 msgid "Please provide a name."
 msgstr "Необходимо добавить имя."
 
-#: DataEntryGramplet/DataEntryGramplet.py:514
 #: DataEntryGramplet/DataEntryGramplet.py:515
 msgid "Can't add new person."
 msgstr "Не удалось добавить новое лицо."
 
-#: DataEntryGramplet/DataEntryGramplet.py:522
-#: DataEntryGramplet/DataEntryGramplet.py:530
-#: DataEntryGramplet/DataEntryGramplet.py:535
-#: DataEntryGramplet/DataEntryGramplet.py:540
-#: DataEntryGramplet/DataEntryGramplet.py:549
-#: DataEntryGramplet/DataEntryGramplet.py:554
-#: DataEntryGramplet/DataEntryGramplet.py:559
-#: DataEntryGramplet/DataEntryGramplet.py:564
 #: DataEntryGramplet/DataEntryGramplet.py:523
 #: DataEntryGramplet/DataEntryGramplet.py:531
 #: DataEntryGramplet/DataEntryGramplet.py:536
@@ -157,35 +143,24 @@ msgstr "Не удалось добавить новое лицо."
 msgid "Please set an active person."
 msgstr "Необходимо установить активное лицо."
 
-#: DataEntryGramplet/DataEntryGramplet.py:522
-#: DataEntryGramplet/DataEntryGramplet.py:525
 #: DataEntryGramplet/DataEntryGramplet.py:523
 #: DataEntryGramplet/DataEntryGramplet.py:526
 msgid "Can't add new person as a parent."
 msgstr "Не удалось добавить лицо как родителя."
 
-#: DataEntryGramplet/DataEntryGramplet.py:525
-#: DataEntryGramplet/DataEntryGramplet.py:544
 #: DataEntryGramplet/DataEntryGramplet.py:526
 #: DataEntryGramplet/DataEntryGramplet.py:545
 msgid "Please set the new person's gender."
 msgstr "Необходимо выбрать пол для нового лица."
 
-#: DataEntryGramplet/DataEntryGramplet.py:530
 #: DataEntryGramplet/DataEntryGramplet.py:531
 msgid "Can't add new person as a mother."
 msgstr "Не удалось добавить лицо как мать."
 
-#: DataEntryGramplet/DataEntryGramplet.py:535
 #: DataEntryGramplet/DataEntryGramplet.py:536
 msgid "Can't add new person as a father."
 msgstr "Не удалось добавить лицо как отца."
 
-#: DataEntryGramplet/DataEntryGramplet.py:540
-#: DataEntryGramplet/DataEntryGramplet.py:544
-#: DataEntryGramplet/DataEntryGramplet.py:767
-#: DataEntryGramplet/DataEntryGramplet.py:804
-#: DataEntryGramplet/DataEntryGramplet.py:837
 #: DataEntryGramplet/DataEntryGramplet.py:541
 #: DataEntryGramplet/DataEntryGramplet.py:545
 #: DataEntryGramplet/DataEntryGramplet.py:768
@@ -194,51 +169,40 @@ msgstr "Не удалось добавить лицо как отца."
 msgid "Can't add new person as a spouse."
 msgstr "Не удалось добавить лицо как супруга."
 
-#: DataEntryGramplet/DataEntryGramplet.py:549
 #: DataEntryGramplet/DataEntryGramplet.py:550
 msgid "Can't add new person as a wife."
 msgstr "Не удалось добавить лицо как жену."
 
-#: DataEntryGramplet/DataEntryGramplet.py:554
 #: DataEntryGramplet/DataEntryGramplet.py:555
 msgid "Can't add new person as a husband."
 msgstr "Не удалось добавить лицо как мужа."
 
-#: DataEntryGramplet/DataEntryGramplet.py:559
 #: DataEntryGramplet/DataEntryGramplet.py:560
 msgid "Can't add new person as a sibling."
 msgstr "Не удалось добавить лицо как брата или сестру."
 
-#: DataEntryGramplet/DataEntryGramplet.py:564
-#: DataEntryGramplet/DataEntryGramplet.py:937
 #: DataEntryGramplet/DataEntryGramplet.py:565
 #: DataEntryGramplet/DataEntryGramplet.py:938
 msgid "Can't add new person as a child."
 msgstr "Не удалось добавить лицо как ребёнка."
 
-#: DataEntryGramplet/DataEntryGramplet.py:762
 #: DataEntryGramplet/DataEntryGramplet.py:763
 msgid "Please set Active person."
 msgstr "Необходимо установить активное лицо."
 
-#: DataEntryGramplet/DataEntryGramplet.py:763
 #: DataEntryGramplet/DataEntryGramplet.py:764
 msgid "Can't add new person as a spouse to no one."
 msgstr "Не удалось добавить лицо как супруга никому."
 
-#: DataEntryGramplet/DataEntryGramplet.py:766
 #: DataEntryGramplet/DataEntryGramplet.py:767
 msgid "Please set gender on Active or new person."
 msgstr "Необходимо выбрать пол для активного или нового лица."
 
-#: DataEntryGramplet/DataEntryGramplet.py:803
-#: DataEntryGramplet/DataEntryGramplet.py:836
 #: DataEntryGramplet/DataEntryGramplet.py:804
 #: DataEntryGramplet/DataEntryGramplet.py:837
 msgid "Same genders on Active and new person."
 msgstr "Одинаковый пол у активного и нового лица."
 
-#: DataEntryGramplet/DataEntryGramplet.py:936
 #: DataEntryGramplet/DataEntryGramplet.py:937
 msgid "Please set gender on Active person."
 msgstr "Необходимо выбрать пол для активного лица."

@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-04 16:31+0300\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -37,27 +37,22 @@ msgid "Select filter to restrict people"
 msgstr "Выбор фильтра для ограничения лиц"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:237
-#: SetAttributeTool/SetAttributeTool.py:131
-#: SetAttributeTool/SetAttributeTool.py:190
+#: SetAttributeTool/SetAttributeTool.py:151
+#: SetAttributeTool/SetAttributeTool.py:193
 msgid "Processing...\n"
 msgstr "Обработка...\n"
 
 #: AttachSourceTool/AttachSourceTool.py:197
-#: SetAttributeTool/SetAttributeTool.py:186
-#: SetAttributeTool/SetAttributeTool.py:235
+#: SetAttributeTool/SetAttributeTool.py:226
 msgid "Done!\n"
 msgstr "Завершено!\n"
 
-#: SetAttributeTool/SetAttributeTool.gpr.py:25
-#: SetAttributeTool/SetAttributeTool.py:121
-#: SetAttributeTool/SetAttributeTool.py:129
 #: SetAttributeTool/SetAttributeTool.gpr.py:26
 #: SetAttributeTool/SetAttributeTool.py:122
 #: SetAttributeTool/SetAttributeTool.py:150
 msgid "Set Attribute"
 msgstr "Установка атрибутов"
 
-#: SetAttributeTool/SetAttributeTool.gpr.py:26
 #: SetAttributeTool/SetAttributeTool.gpr.py:27
 msgid "Set an attribute to a given value."
 msgstr "Установливает значения атрибутов."
@@ -74,12 +69,10 @@ msgstr "Значение атрибута для добавления или и�
 msgid "Remove attribute type and value set"
 msgstr "Удалить установленный тип атрибута и значение"
 
-#: SetAttributeTool/SetAttributeTool.py:146
 #: SetAttributeTool/SetAttributeTool.py:152
 msgid "Setting attributes..."
 msgstr "Установка атрибутов..."
 
-#: SetAttributeTool/SetAttributeTool.py:153
 #: SetAttributeTool/SetAttributeTool.py:156
 #, python-format
 msgid ""
@@ -89,7 +82,6 @@ msgstr ""
 "Установка '%s' атрибутов для '%s'...\n"
 "\n"
 
-#: SetAttributeTool/SetAttributeTool.py:184
 #: SetAttributeTool/SetAttributeTool.py:188
 #, python-format
 msgid ""
@@ -99,17 +91,14 @@ msgstr ""
 "\n"
 "Установить %d '%s' атрибуты для '%s'\n"
 
-#: SetAttributeTool/SetAttributeTool.py:188
 #: SetAttributeTool/SetAttributeTool.py:191
 msgid "Remove Attribute"
 msgstr "Удалить атрибут"
 
-#: SetAttributeTool/SetAttributeTool.py:205
 #: SetAttributeTool/SetAttributeTool.py:194
 msgid "Removing attributes..."
 msgstr "Удаление атрибутов..."
 
-#: SetAttributeTool/SetAttributeTool.py:230
 #: SetAttributeTool/SetAttributeTool.py:221
 #, python-format
 msgid ""

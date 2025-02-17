@@ -8,7 +8,7 @@
 # Sebastian Vöcking <voeck@web.de>, 2005.
 # Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
 # Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2025.
 # Alois Pöttker <alois.poettker@gmx.de>, 2017.
 # Allan Nordhøy <epost@anotheragency.no>, 2021.
 # R. B. <weblate@macdefender.org>, 2021.
@@ -21,8 +21,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-02 22:39+0200\n"
-"PO-Revision-Date: 2025-02-15 16:17+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-17 00:14+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -41,16 +41,16 @@ msgstr "RGB-Farbe für den Hintergrund der männlichen Box."
 msgid "Female Background"
 msgstr "Hintergrund weiblich"
 
-#: GraphView/graphview.py:3442 GraphView/graphview.py:3783
-#: NetworkChart/NetworkChart.py:1174 NetworkChart/NetworkChart.py:1188
+#: GraphView/graphview.py:3783 NetworkChart/NetworkChart.py:1174
+#: NetworkChart/NetworkChart.py:1188
 msgid "Direct"
 msgstr "Gerade"
 
-#: NetworkChart/NetworkChart.gpr.py:31 NetworkChart/NetworkChart.gpr.py:24
+#: NetworkChart/NetworkChart.gpr.py:24
 msgid "Network Chart"
 msgstr "Netzwerkgrafik"
 
-#: NetworkChart/NetworkChart.gpr.py:41 NetworkChart/NetworkChart.gpr.py:35
+#: NetworkChart/NetworkChart.gpr.py:35
 msgid "Generates a family network chart."
 msgstr "Erstellt eine Familiennetzwerkgrafik."
 
@@ -116,7 +116,7 @@ msgstr "Unten nach Oben"
 
 #: NetworkChart/NetworkChart.py:931
 msgid "Right to Left"
-msgstr "Rechts nach Links"
+msgstr "Von rechts nach links"
 
 #: NetworkChart/NetworkChart.py:933
 msgid "Default (Top to Bottom)"
@@ -255,7 +255,7 @@ msgstr "Umrandung männliche Box."
 msgid "RGB-color for Male box edge."
 msgstr "RGB-Farbe für Umrandung männliche Box"
 
-#: NetworkChart/NetworkChart.py:1023 NetworkChart/NetworkChart.py:1034
+#: NetworkChart/NetworkChart.py:1023
 msgid "RGB-color for Female box background."
 msgstr "RGB-Farbe für Hintergrund weibliche Box"
 
@@ -272,6 +272,12 @@ msgstr ""
 #: NetworkChart/NetworkChart.py:1033
 msgid "Female Box Edge"
 msgstr "Umrandung weibliche Box."
+
+#: NetworkChart/NetworkChart.py:1034
+#, fuzzy
+#| msgid "RGB-color for Male box edge."
+msgid "RGB-color for Female box edge."
+msgstr "RGB-Farbe für Umrandung männliche Box"
 
 #: NetworkChart/NetworkChart.py:1037
 msgid "Other Background"
@@ -374,8 +380,8 @@ msgid ""
 "Marriages after this year are represented bythe year only. Invalid entries "
 "will be ignored."
 msgstr ""
-"Hochzeitsdatum  nach diesem Jahr werden nur durch das Jahr dargestellt. "
-"Ungültige Einträge werden ignoriert."
+"Eheschließungen nach diesem Jahr werden nur durch die Jahreszahl "
+"dargestellt. Ungültige Einträge werden ignoriert."
 
 #: NetworkChart/NetworkChart.py:1092
 msgid "Round marriage to year after year entered (above)."

@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-17 18:14+0100\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -38,7 +38,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ExtendedAttributes/ExtendedAttributes.gpr.py:31
 #: ExtendedAttributes/ExtendedAttributes.gpr.py:32
 msgid "Extended Person Attributes"
 msgstr "Attributs étendus de l'individu"
@@ -48,7 +47,17 @@ msgstr "Attributs étendus de l'individu"
 msgid "Extended Attributes"
 msgstr "Attributs étendus"
 
-#: ExtendedAttributes/ExtendedAttributes.gpr.py:45
 #: ExtendedAttributes/ExtendedAttributes.gpr.py:48
 msgid "Extended Family Attributes"
 msgstr "Attributs étendus de la famille"
+
+#: ExtendedAttributes/ExtendedAttributes.py:54
+#, fuzzy
+#| msgid ""
+#| "Double-click on a row to view a quick report showing all people with the "
+#| "selected attribute."
+msgid ""
+"Double-click on a row to edit the object containing the selected attribute."
+msgstr ""
+"Double-cliquez sur une ligne pour ouvrir un rapport express montrant tous "
+"les individus avec cet attribut."

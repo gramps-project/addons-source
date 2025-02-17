@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-17 18:14+0100\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -38,63 +38,52 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:458
 #: RepositoriesReport/RepositoriesReportAlt.py:459
 #: GedcomExtensions/GedcomExtensions.py:198
 msgid "Include media"
 msgstr "Inclure les media"
 
-#: GedcomExtensions/GedcomExtensions.gpr.py:31
 #: GedcomExtensions/GedcomExtensions.gpr.py:32
 msgid "Export GEDCOM Extensions (GED2)"
 msgstr "Exportation des extensions Gedcom (GED2)"
 
-#: GedcomExtensions/GedcomExtensions.gpr.py:32
 #: GedcomExtensions/GedcomExtensions.gpr.py:33
 msgid "GEDCOM Extensions (GED2)"
 msgstr "Extensions Gedcom (GED2)"
 
-#: GedcomExtensions/GedcomExtensions.gpr.py:33
 #: GedcomExtensions/GedcomExtensions.gpr.py:34
 msgid "Extensions to the common GEDCOM format."
 msgstr "Extensions du format courant Gedcom."
 
-#: GedcomExtensions/GedcomExtensions.gpr.py:41
 #: GedcomExtensions/GedcomExtensions.gpr.py:42
 msgid "GEDCOM Extensions options"
 msgstr "Options des extensions Gedcom (GED2)"
 
-#: GedcomExtensions/GedcomExtensions.py:91
 #: GedcomExtensions/GedcomExtensions.py:197
 msgid "Include witnesses"
 msgstr "Inclure les témoins"
 
-#: GedcomExtensions/GedcomExtensions.py:119
-#: GedcomExtensions/GedcomExtensions.py:261
-msgid "Export failed"
-msgstr "L'exportation a échoué"
+#: GedcomExtensions/GedcomExtensions.py:201
+msgid "Patronymic names:"
+msgstr "Noms patronymiques:"
 
-#: GedcomExtensions/GedcomExtensions.py:178
 #: GedcomExtensions/GedcomExtensions.py:203
 #: GedcomExtensions/GedcomExtensions.py:210
 msgid "Don't change"
 msgstr "Ne pas changer"
 
-#: GedcomExtensions/GedcomExtensions.py:179
 #: GedcomExtensions/GedcomExtensions.py:204
 msgid "Add Patronymic name after Given name"
 msgstr "Ajouter le nom patronymique après le prénom"
 
-#: GedcomExtensions/GedcomExtensions.py:180
 #: GedcomExtensions/GedcomExtensions.py:205
 msgid "Ignore Patronymic name"
 msgstr "Ignorer le nom patronymique"
 
-#: GedcomExtensions/GedcomExtensions.py
-#: GedcomExtensions/GedcomExtensions.py:201
-msgid "Patronymic names:"
-msgstr "Noms patronymiques:"
-
 #: GedcomExtensions/GedcomExtensions.py:208
 msgid "Type of surname:"
 msgstr "Type de nom de famille:"
+
+#: GedcomExtensions/GedcomExtensions.py:261
+msgid "Export failed"
+msgstr "L'exportation a échoué"

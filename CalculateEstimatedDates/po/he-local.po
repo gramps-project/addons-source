@@ -2,14 +2,14 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Igal Shapira <igal.shapira@gmail.com>, 2009, 2010, 2011.
-# Avi Markovitz <avi.markovitz@gmail.com>, 2019.
-#
+# Avi Markovitz <avi.markovitz@gmail.com>, 2019, 2025.
+# Yaron Shahrabani <sh.yaron@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-10 07:59+0300\n"
-"PO-Revision-Date: 2025-02-15 16:17+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-17 15:09+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -19,15 +19,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:9
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:190
 #: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
+#: CalculateEstimatedDates/CalculateEstimatedDates.py:190
 msgid "Calculate Estimated Dates"
 msgstr "חישוב תאריכים משוערים"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
 #: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:11
 msgid "Calculates estimated dates for birth and death."
 msgstr "חישוב תאריכים משוערים ללידה ופטירה."
@@ -79,7 +77,7 @@ msgstr "הוספת אירועי פטירה ללא תאריכים"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:113
 msgid "Add death events with dates"
-msgstr "הוספת ארוע פטירה עם תאריכים"
+msgstr "הוספת אירוע פטירה עם תאריכים"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:114
 msgid "Add death events with or without estimated dates"
@@ -115,7 +113,7 @@ msgstr "קיצוניים (אחרי ולפני)"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:139
 msgid "Dates on events are either about or after/before"
-msgstr "תאריכי אירועים הם מסוג, בקרוב או אחרי/לפני"
+msgstr "תאריכי אירועים הם, בקירוב או לפני/אחרי"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:172
 msgid ""
@@ -142,7 +140,7 @@ msgstr ""
 "\n"
 "אופן השימוש:\n"
 "1. מעבר ללשונית 'אפשרויות'\n"
-"2. סימון אפשרות [ ] ''הסרה' לניקוי אומדנים קודמים\n"
+"2. סימון אפשרות [ ] 'הסרה' לניקוי אומדנים קודמים\n"
 "3. בחריה באפשרות 'הוספת תאריך לאירועים עם או בלי תאריכים\n"
 "4. הקשה על ביצוע\n"
 "5. בחירת האנשים להם יש להוסיף אירועים\n"
@@ -151,12 +149,12 @@ msgstr ""
 "הערות: כדי לקבע אירוע לצמיתות, יש להסיר אותו מהמקור. אחרת, הוא יוסר בפעם "
 "הבאה שתתבצע הסרת אירועים האלה באופן אוטומטי.\n"
 "\n"
-"ייתכן שתדרש הפעלת הכלי שוב ושוב (מבלי להסיר אירועים קודמים) כדי להוסיף את כל "
-"האירועים האפשריים."
+"ייתכן שידרש לשפעל את הכלי שוב ושוב (מבלי להסיר אירועים קודמים) כדי להוסיף את "
+"כל האירועים האפשריים."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:199
 msgid "Select All"
-msgstr "בחירת הכול"
+msgstr "לבחור הכול"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:200
 msgid "Select None"
@@ -164,7 +162,7 @@ msgstr "לא לבחור דבר"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:201
 msgid "Toggle Selection"
-msgstr "החלפת בחירה"
+msgstr "מיתוג בחירה"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:202
 msgid "Add Selected Events"
@@ -172,7 +170,7 @@ msgstr "הוספת אירועים שנבחרו"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:208
 msgid "Remove Events, Notes, and Source and Reselect Data"
-msgstr "הסרת אירועים, הערות ומקורות, ולבחור נתונים מחדש"
+msgstr "הסרת אירועים, הערות ומקורות, ובחירת נתונים מחדש"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:209
 msgid ""
@@ -182,11 +180,11 @@ msgstr "האם להסיר אירועים קודמים, הערות ומקורות
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:210
 msgid "Remove and Run Select Again"
-msgstr "הסרה והרצת בחירה חוזרת"
+msgstr "להסיר ולהריץ בחירה חוזרת"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:214
 msgid "Reselect Data"
-msgstr "בחירת נתונים מחדש"
+msgstr "לבחור נתונים מחדש"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:215
 msgid "Are you sure you want to reselect data?"
@@ -206,7 +204,7 @@ msgstr "יחסי"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:237
 msgid "Processing...\n"
-msgstr "עיבוד מתבצע...\n"
+msgstr "מתבצע עיבוד...\n"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:255
 msgid "Removing old estimations... "
@@ -226,20 +224,20 @@ msgid ""
 "Selecting... \n"
 "\n"
 msgstr ""
-"בחירה...\n"
+"מתבצעת בחירה... \n"
 "\n"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:359
 msgid "Add birth and death events"
-msgstr "הוספת אירועי לידה ופטירה"
+msgstr "להוסיף אירועי לידה ופטירה"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:361
 msgid "Add birth event"
-msgstr "הוספת אירוע לידה"
+msgstr "להוסיף אירוע לידה"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:363
 msgid "Add death event"
-msgstr "הוספת אירוע פטירה"
+msgstr "להוסיף אירוע פטירה"
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:398
 msgid "No events to be added."
@@ -247,12 +245,12 @@ msgstr "אין אירועים להוספה."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:439
 msgid "Selecting... "
-msgstr "בחירה... "
+msgstr "מתבצעת בחירה... "
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:440
 #, python-format
 msgid "Adding events '%s'..."
-msgstr "הוספת אירועים '%s' מתבצעת..."
+msgstr "מתבצעת הוספת '%s' אירועים..."
 
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:465
 #, python-format

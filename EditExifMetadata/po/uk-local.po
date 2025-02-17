@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2024-10-10 22:54+0300\n"
 "Last-Translator: Illia Maier <illia@maier.page>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
@@ -21,21 +21,18 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: EditExifMetadata/editexifmetadata.gpr.py:29
+#: EditExifMetadata/editexifmetadata.gpr.py:30
 #: EditExifMetadata/editexifmetadata.py:723
 #: EditExifMetadata/editexifmetadata.py:1135
 #: EditExifMetadata/editexifmetadata.py:1147
-#: EditExifMetadata/editexifmetadata.gpr.py:30
 msgid "Edit Image Exif Metadata"
 msgstr "Редагувати Exif метадані зображення"
 
-#: EditExifMetadata/editexifmetadata.gpr.py:30
 #: EditExifMetadata/editexifmetadata.gpr.py:31
 msgid "Gramplet to view, edit, and save image Exif metadata"
 msgstr ""
 "Грамплет для перегляду, редагування та збереження Exif метаданих зображення"
 
-#: EditExifMetadata/editexifmetadata.gpr.py:34
 #: EditExifMetadata/editexifmetadata.gpr.py:35
 msgid "Edit Exif Metadata"
 msgstr "Редагувати Exif метадані"

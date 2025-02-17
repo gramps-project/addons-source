@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-02 02:13+0300\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2019-12-10 13:09+0200\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: niememat@gmail.com\n"
@@ -33,51 +33,51 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.0.6\n"
 
-#: TimelinePedigreeView.py:79 TimelinePedigreeView/TimelinePedigreeView.py:82
+#: TimelinePedigreeView/TimelinePedigreeView.py:82
 #: HtreePedigreeView/HtreePedigreeView.py:93
 msgid "short for born|b."
 msgstr "s."
 
-#: TimelinePedigreeView.py:80 TimelinePedigreeView/TimelinePedigreeView.py:83
+#: TimelinePedigreeView/TimelinePedigreeView.py:83
 #: HtreePedigreeView/HtreePedigreeView.py:94
 msgid "short for died|d."
 msgstr "k."
 
-#: TimelinePedigreeView.py:81 TimelinePedigreeView/TimelinePedigreeView.py:84
+#: TimelinePedigreeView/TimelinePedigreeView.py:84
 #: HtreePedigreeView/HtreePedigreeView.py:95
 msgid "short for baptized|bap."
 msgstr "kast."
 
-#: TimelinePedigreeView.py:82 TimelinePedigreeView/TimelinePedigreeView.py:85
+#: TimelinePedigreeView/TimelinePedigreeView.py:85
 #: HtreePedigreeView/HtreePedigreeView.py:96
 msgid "short for christened|chr."
 msgstr "rist."
 
-#: TimelinePedigreeView.py:83 TimelinePedigreeView/TimelinePedigreeView.py:86
+#: TimelinePedigreeView/TimelinePedigreeView.py:86
 #: HtreePedigreeView/HtreePedigreeView.py:97
 msgid "short for buried|bur."
 msgstr "haud."
 
-#: TimelinePedigreeView.py:84 TimelinePedigreeView/TimelinePedigreeView.py:87
+#: TimelinePedigreeView/TimelinePedigreeView.py:87
 #: HtreePedigreeView/HtreePedigreeView.py:98
 msgid "short for cremated|crem."
 msgstr "tuhk."
 
-#: HtreePedigreeView.gpr.py:45 HtreePedigreeView/HtreePedigreeView.gpr.py:34
+#: HtreePedigreeView/HtreePedigreeView.gpr.py:34
 #: HtreePedigreeView/HtreePedigreeView.gpr.py:47
 msgid "H-Tree Pedigree"
 msgstr "H-Sukupuu"
 
-#: HtreePedigreeView.gpr.py:47 HtreePedigreeView/HtreePedigreeView.gpr.py:37
+#: HtreePedigreeView/HtreePedigreeView.gpr.py:37
 msgid ""
 "The view shows a space-efficient pedigree with ancestors of the selected "
 "person"
 msgstr "Näkymä näyttää valitulle henkilölle tilaa säästävän sukupuun"
 
-#: HtreePedigreeView.py:531 HtreePedigreeView/HtreePedigreeView.py:543
+#: HtreePedigreeView/HtreePedigreeView.py:543
 msgid "H-tree Pedigree View"
 msgstr "H-Sukupuu"
 
-#: HtreePedigreeView.py:1638 HtreePedigreeView/HtreePedigreeView.py:1692
+#: HtreePedigreeView/HtreePedigreeView.py:1692
 msgid "About H-Tree"
 msgstr "Tietoja H-Sukupuusta"

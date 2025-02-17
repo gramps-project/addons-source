@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-04 16:31+0300\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -31,94 +31,79 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: AncestorFill/AncestorFill.py:360 AncestorFill/AncestorFill.py:361
-#: DetDescendantReport-images/detdescendantreporti.py:1247
+#: AncestorFill/AncestorFill.py:361
+#: DetDescendantReport-images/detdescendantreporti.py:1252
 msgid "The style used for the title of the page."
 msgstr "Стиль заголовка страницы."
 
-#: DynamicWeb//dynamicweb.py:1630 DynamicWeb/dynamicweb.py:1737
-#: DetDescendantReport-images/detdescendantreporti.py:935
+#: DynamicWeb/dynamicweb.py:1737
+#: DetDescendantReport-images/detdescendantreporti.py:940
 #, python-format
 msgid "%(type)s: %(value)s"
 msgstr "%(type)s: %(value)s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:801
-#: DescendantBooks/DetailedDescendantBookReport.py:845
 #: DescendantBooks/DetailedDescendantBookReport.py:817
 #: DescendantBooks/DetailedDescendantBookReport.py:861
-#: DetDescendantReport-images/detdescendantreporti.py:450
+#: DetDescendantReport-images/detdescendantreporti.py:454
 #, python-format
 msgid "%(date)s, %(place)s"
 msgstr "%(date)s, %(place)s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:804
-#: DescendantBooks/DetailedDescendantBookReport.py:848
 #: DescendantBooks/DetailedDescendantBookReport.py:820
 #: DescendantBooks/DetailedDescendantBookReport.py:864
-#: DetDescendantReport-images/detdescendantreporti.py:453
+#: DetDescendantReport-images/detdescendantreporti.py:457
 #, python-format
 msgid "%(date)s"
 msgstr "%(date)s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:806
-#: DescendantBooks/DetailedDescendantBookReport.py:850
 #: DescendantBooks/DetailedDescendantBookReport.py:822
 #: DescendantBooks/DetailedDescendantBookReport.py:866
-#: DetDescendantReport-images/detdescendantreporti.py:455
+#: DetDescendantReport-images/detdescendantreporti.py:459
 #, python-format
 msgid "%(place)s"
 msgstr "%(place)s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1221
 #: DescendantBooks/DetailedDescendantBookReport.py:1237
-#: DetDescendantReport-images/detdescendantreporti.py:806
+#: DetDescendantReport-images/detdescendantreporti.py:811
 #, python-format
 msgid "%(name_kind)s: %(name)s%(endnotes)s"
 msgstr "%(name_kind)s: %(name)s%(endnotes)s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1389
 #: DescendantBooks/DetailedDescendantBookReport.py:1405
-#: DetDescendantReport-images/detdescendantreporti.py:1142
+#: DetDescendantReport-images/detdescendantreporti.py:1147
 msgid "List children"
 msgstr "Перечислять детей"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1406
 #: DescendantBooks/DetailedDescendantBookReport.py:1422
-#: DetDescendantReport-images/detdescendantreporti.py:1159
+#: DetDescendantReport-images/detdescendantreporti.py:1164
 msgid "Add descendant reference in child list"
 msgstr "Добавлять ссылки на потомков в спискок детей"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1546
 #: DescendantBooks/DetailedDescendantBookReport.py:1570
-#: DetDescendantReport-images/detdescendantreporti.py:1277
+#: DetDescendantReport-images/detdescendantreporti.py:1282
 msgid "The style used for the children list."
 msgstr "Стиль списка детей."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1573
 #: DescendantBooks/DetailedDescendantBookReport.py:1597
-#: DetDescendantReport-images/detdescendantreporti.py:1300
+#: DetDescendantReport-images/detdescendantreporti.py:1305
 msgid "The style used for the first personal entry."
 msgstr "Стиль первой личной записи."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1583
 #: DescendantBooks/DetailedDescendantBookReport.py:1607
-#: DetDescendantReport-images/detdescendantreporti.py:1310
+#: DetDescendantReport-images/detdescendantreporti.py:1315
 msgid "The style used for the More About header and for headers of mates."
 msgstr ""
 "Стиль используемый для заголовков подробностей и для заголовков друзей."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1594
 #: DescendantBooks/DetailedDescendantBookReport.py:1618
-#: DetDescendantReport-images/detdescendantreporti.py:1321
+#: DetDescendantReport-images/detdescendantreporti.py:1326
 msgid "The style used for additional detail data."
 msgstr "Стиль для дополнительной информации."
 
-#: DetDescendantReport-images/detdescendantreport.gpr.py:3
 #: DetDescendantReport-images/detdescendantreport.gpr.py:4
 msgid "Detailed Descendant Report With All Images"
 msgstr "Подробный отчёт о потомках со всеми изображениями"
 
-#: DetDescendantReport-images/detdescendantreport.gpr.py:4
 #: DetDescendantReport-images/detdescendantreport.gpr.py:6
 msgid ""
 "Produces a detailed descendant report with all images and optional todo list."
@@ -126,28 +111,23 @@ msgstr ""
 "Создаёт подробный отчёт о предках со всеми изображениями и возможным списком "
 "задач."
 
-#: DetDescendantReport-images/detdescendantreporti.py:467
 #: DetDescendantReport-images/detdescendantreporti.py:471
 #, python-format
 msgid "%(event_name)s: %(event_text)s"
 msgstr "%(event_name)s: %(event_text)s"
 
-#: DetDescendantReport-images/detdescendantreporti.py:1172
 #: DetDescendantReport-images/detdescendantreporti.py:1177
 msgid "Include TODO notes"
 msgstr "Включать заметки с задачами"
 
-#: DetDescendantReport-images/detdescendantreporti.py:1173
 #: DetDescendantReport-images/detdescendantreporti.py:1178
 msgid "Whether to include TODO notes."
 msgstr "Включать ли заметки с задачами."
 
-#: DetDescendantReport-images/detdescendantreporti.py:1346
 #: DetDescendantReport-images/detdescendantreporti.py:1351
 msgid "The style used for image labels."
 msgstr "Стиль для названия изображений."
 
-#: DetDescendantReport-images/detdescendantreporti.py:1359
 #: DetDescendantReport-images/detdescendantreporti.py:1364
 msgid "A style used for image captions."
 msgstr "Стиль для заголовков изображений."

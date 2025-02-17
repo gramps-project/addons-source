@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-04 16:31+0300\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -35,23 +35,23 @@ msgstr ""
 msgid "Enter Python expressions"
 msgstr "Введите выражение Python"
 
-#: Query/Query.gpr.py:9 Query/Query.gpr.py:10
+#: Query/Query.gpr.py:10
 msgid "Query Gramplet"
 msgstr "Грамплет запросов"
 
-#: Query/Query.gpr.py:10 Query/Query.gpr.py:11
+#: Query/Query.gpr.py:11
 msgid "Gramplet for running SQL-like queries"
 msgstr "Грамплет для осуществления SQL запросов"
 
-#: Query/Query.gpr.py:18 Query/Query.gpr.py:19
+#: Query/Query.gpr.py:19
 msgid "Query"
 msgstr "Запрос"
 
-#: Query/Query.gpr.py:31 Query/Query.gpr.py:33
+#: Query/Query.gpr.py:33
 msgid "Query Quickview"
 msgstr "Быстрый вид для запросов"
 
-#: Query/Query.gpr.py:32 Query/Query.gpr.py:34
+#: Query/Query.gpr.py:34
 msgid "Quick view for SQL-like running queries"
 msgstr "Быстрый вид для SQL запросов"
 

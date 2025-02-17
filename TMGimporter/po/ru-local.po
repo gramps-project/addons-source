@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-04 16:31+0300\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -31,20 +31,17 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: TMGimporter/importtmg.gpr.py:63 TMGimporter/importtmg.gpr.py:49
+#: TMGimporter/importtmg.gpr.py:49
 msgid "TMG Project Backup"
 msgstr "Резервная копия проекта TMG"
 
-#: TMGimporter/importtmg.gpr.py:64 TMGimporter/importtmg.gpr.py:78
-#: TMGimporter/importtmg.gpr.py:91 TMGimporter/importtmg.gpr.py:104
 #: TMGimporter/importtmg.gpr.py:50 TMGimporter/importtmg.gpr.py:66
 #: TMGimporter/importtmg.gpr.py:81 TMGimporter/importtmg.gpr.py:96
 msgid "Import TMG project files"
 msgstr "Импорт файлов проекта TMG"
 
-#: TMGimporter/importtmg.gpr.py:77 TMGimporter/importtmg.gpr.py:90
-#: TMGimporter/importtmg.gpr.py:103 TMGimporter/importtmg.gpr.py:65
-#: TMGimporter/importtmg.gpr.py:80 TMGimporter/importtmg.gpr.py:95
+#: TMGimporter/importtmg.gpr.py:65 TMGimporter/importtmg.gpr.py:80
+#: TMGimporter/importtmg.gpr.py:95
 msgid "TMG Unsupported"
 msgstr "TMG не поддерживается"
 

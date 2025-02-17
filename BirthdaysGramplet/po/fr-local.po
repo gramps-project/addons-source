@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-17 18:14+0100\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -38,7 +38,21 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:5
+#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:25
+#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:33
+#, fuzzy
+#| msgid "BirthYear"
+msgid "Birthdays"
+msgstr "Année de naissance"
+
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:26
 msgid "a gramplet that displays the birthdays of the living people"
 msgstr "Ce Gramplet affiche les anniversaires des personnes en vie"
+
+#: BirthdaysGramplet/BirthdaysGramplet.py:45
+msgid "Ignore birthdays with tag"
+msgstr ""
+
+#: BirthdaysGramplet/BirthdaysGramplet.py:46
+msgid "Only show birthdays with tag"
+msgstr ""

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nn\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-05 14:02-0600\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2014-12-22 21:26+0100\n"
 "Last-Translator: \n"
 "Language-Team: Norwegian Nynorsk <i18n-nn@lister.ping.uio.no>\n"
@@ -20,11 +20,15 @@ msgstr ""
 "X-Generator: Lokalize 1.5\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: Themes/themes.gpr.py:28 Themes/themes.gpr.py:29
+#: DynamicWeb/dynamicweb.py:5157 Themes/themes.py:175 Themes/themes.py:225
+msgid "Theme"
+msgstr "Tema"
+
+#: Themes/themes.gpr.py:29
 msgid "Theme preferences"
 msgstr "Temainnstillinger"
 
-#: Themes/themes.gpr.py:29 Themes/themes.gpr.py:31
+#: Themes/themes.gpr.py:31
 msgid ""
 "An addition to Preferences for simple Theme and Font adjustment.  Especially "
 "useful for Windows users."
@@ -32,24 +36,18 @@ msgstr ""
 "Et tillegg til Innstillinger for enkel justering av tema og skrift. Spesielt "
 "nyttig for Windows-brukere."
 
-#: Themes/themes.py:137 Themes/themes.py:155 Themes/themes.py:172
-#: Themes/themes.py:190
+#: Themes/themes.py:172 Themes/themes.py:190
 msgid "Theme is hardcoded by GTK_THEME"
 msgstr "Temaet er hardkodet av GTK_THEME"
 
-#: Themes/themes.py:140 Themes/themes.py:190 DynamicWeb/dynamicweb.py:5157
-#: Themes/themes.py:175 Themes/themes.py:225
-msgid "Theme"
-msgstr "Tema"
-
-#: Themes/themes.py:145 Themes/themes.py:180
+#: Themes/themes.py:180
 msgid "Dark Variant"
 msgstr "Mørk Variant"
 
-#: Themes/themes.py:163 Themes/themes.py:198
+#: Themes/themes.py:198
 msgid "Font"
 msgstr "Skrifttype"
 
-#: Themes/themes.py:179 Themes/themes.py:214
+#: Themes/themes.py:214
 msgid "Fixed Scrollbar (requires restart)"
 msgstr "Klassisk rullegardin (krever omstart)"

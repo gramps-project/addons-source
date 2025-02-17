@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-17 18:14+0100\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -38,117 +38,129 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: MediaVerify/MediaVerify.gpr.py:30 MediaVerify/MediaVerify.py:125
-#: MediaVerify/MediaVerify.py:182 MediaVerify/MediaVerify.py:260
 #: MediaVerify/MediaVerify.gpr.py:31
 msgid "Media Verify"
 msgstr "Vérification des media"
 
-#: MediaVerify/MediaVerify.gpr.py:31 MediaVerify/MediaVerify.gpr.py:32
+#: MediaVerify/MediaVerify.gpr.py:32
 msgid "Verify that media is present in the correct path"
 msgstr "Vérifier si l'objet medium est présent avec le bon chemin "
 
-#: MediaVerify/MediaVerify.py:69 MediaVerify/MediaVerify.py:78
+#: MediaVerify/MediaVerify.py:78
 msgid "Media Verify Tool"
 msgstr "Outil de vérification des media"
 
-#: MediaVerify/MediaVerify.py:81 MediaVerify/MediaVerify.py:143
-msgid "Files"
-msgstr "Fichiers"
+#: MediaVerify/MediaVerify.py:83
+msgid "Moved/Renamed Files"
+msgstr ""
 
-#: MediaVerify/MediaVerify.py:93 MediaVerify/MediaVerify.py:101
+#: MediaVerify/MediaVerify.py:83
+msgid "Missing Files"
+msgstr "Fichiers manquants"
+
+#: MediaVerify/MediaVerify.py:84
+msgid "Duplicate Files"
+msgstr "Fichiers dupliqués"
+
+#: MediaVerify/MediaVerify.py:84
+msgid "Extra Files"
+msgstr "Fichiers supplémentaires"
+
+#: MediaVerify/MediaVerify.py:85
+msgid "No md5 Generated"
+msgstr "Pas de md5 généré"
+
+#: MediaVerify/MediaVerify.py:85
+msgid "Errors"
+msgstr ""
+
+#: MediaVerify/MediaVerify.py:101
 msgid "Close the Media Verify Tool"
 msgstr "Fermer l'outil de vérification des media"
 
-#: MediaVerify/MediaVerify.py:95 MediaVerify/MediaVerify.py:103
+#: MediaVerify/MediaVerify.py:103
 msgid "Generate"
 msgstr "Générer"
 
-#: MediaVerify/MediaVerify.py:96 MediaVerify/MediaVerify.py:104
+#: MediaVerify/MediaVerify.py:104
 msgid "Generate md5 hashes for media objects"
 msgstr "Génère des tables (hashes) md5 de nos fichiers media"
 
-#: MediaVerify/MediaVerify.py:98 MediaVerify/MediaVerify.py:106
+#: MediaVerify/MediaVerify.py:106
 msgid "Verify"
 msgstr "Vérification"
 
-#: MediaVerify/MediaVerify.py:99 MediaVerify/MediaVerify.py:107
+#: MediaVerify/MediaVerify.py:107
 msgid "Check media paths and report missing, duplicate and extra files"
 msgstr ""
 "Vérification des media et chemins manquants, dupliqués ainsi que fichiers "
 "supplémentaires rapportés"
 
-#: MediaVerify/MediaVerify.py:102 MediaVerify/MediaVerify.py:113
+#: MediaVerify/MediaVerify.py:110
+msgid "Export"
+msgstr "Exporter"
+
+#: MediaVerify/MediaVerify.py:111
+msgid "Export the results to a text file"
+msgstr "Exporter les résultats dans un fichier texte"
+
+#: MediaVerify/MediaVerify.py:113
 msgid "Fix"
 msgstr "Corriger"
 
-#: MediaVerify/MediaVerify.py:103 MediaVerify/MediaVerify.py:114
+#: MediaVerify/MediaVerify.py:114
 msgid "Fix media paths of moved and renamed files"
 msgstr "Correction des chemin media pour les fichiers déplacés et renommés"
 
-#: MediaVerify/MediaVerify.py:117 MediaVerify/MediaVerify.py:132
+#: MediaVerify/MediaVerify.py:132
 msgid "Verify Gramps media using md5 hashes"
 msgstr "Vérifier les objets media Gramps en utilisant les tables (hashes) md5"
 
+#: MediaVerify/MediaVerify.py:143
+msgid "Files"
+msgstr "Fichiers"
+
+#: MediaVerify/MediaVerify.py:195
+msgid "Export results to a text file"
+msgstr "Exporter les résultats vers un fichier texte"
+
+#: MediaVerify/MediaVerify.py:218
+#, python-format
+msgid "Error when writing the report: %s"
+msgstr "Erreur lors de la rédaction du rapport: %s"
+
 # Substantif (GNOME fr)
-#: MediaVerify/MediaVerify.py:128 MediaVerify/MediaVerify.py:259
+#: MediaVerify/MediaVerify.py:259
 msgid "Generating media hashes"
 msgstr "Génération des hashes media"
 
 # Substantif (GNOME fr)
-#: MediaVerify/MediaVerify.py:130 MediaVerify/MediaVerify.py:261
+#: MediaVerify/MediaVerify.py:261
 msgid "Set media hashes"
 msgstr "Définition des hashes media"
 
-#: MediaVerify/MediaVerify.py:173 MediaVerify/MediaVerify.py:83
-msgid "Missing Files"
-msgstr "Fichiers manquants"
-
-#: MediaVerify/MediaVerify.py:174 MediaVerify/MediaVerify.py:84
-msgid "Duplicate Files"
-msgstr "Fichiers dupliqués"
-
-#: MediaVerify/MediaVerify.py:175 MediaVerify/MediaVerify.py:84
-msgid "Extra Files"
-msgstr "Fichiers supplémentaires"
-
-#: MediaVerify/MediaVerify.py:176 MediaVerify/MediaVerify.py:85
-msgid "No md5 Generated"
-msgstr "Pas de md5 généré"
+#: MediaVerify/MediaVerify.py:296
+msgid ""
+"Media path not set.  You must set the \"Base path for relative media paths\" "
+"in the Preferences."
+msgstr ""
 
 # Substantif (GNOME fr)
-#: MediaVerify/MediaVerify.py:185 MediaVerify/MediaVerify.py:307
+#: MediaVerify/MediaVerify.py:307
 msgid "Finding files"
 msgstr "Recherche de fichiers"
 
 # Substantif (GNOME fr)
-#: MediaVerify/MediaVerify.py:205 MediaVerify/MediaVerify.py:335
+#: MediaVerify/MediaVerify.py:335
 msgid "Checking paths"
 msgstr "Vérification des chemins"
 
 # Substantif (GNOME fr)
-#: MediaVerify/MediaVerify.py:261 MediaVerify/MediaVerify.py:388
+#: MediaVerify/MediaVerify.py:388
 msgid "Fixing file paths"
 msgstr "Correction des chemins de fichier"
 
 # Substantif (GNOME fr)
-#: MediaVerify/MediaVerify.py:263 MediaVerify/MediaVerify.py:390
+#: MediaVerify/MediaVerify.py:390
 msgid "Fix media paths"
 msgstr "Correction des chemins media"
-
-#: NoteCleanup/NoteCleanup.py:135 MediaVerify/MediaVerify.py:110
-msgid "Export"
-msgstr "Exporter"
-
-#: NoteCleanup/NoteCleanup.py:136 MediaVerify/MediaVerify.py:111
-msgid "Export the results to a text file"
-msgstr "Exporter les résultats dans un fichier texte"
-
-#: NoteCleanup/NoteCleanup.py:314 MediaVerify/MediaVerify.py:195
-msgid "Export results to a text file"
-msgstr "Exporter les résultats vers un fichier texte"
-
-#: NoteCleanup/NoteCleanup.py:338 MediaVerify/MediaVerify.py:218
-#, python-format
-msgid "Error when writing the report: %s"
-msgstr "Erreur lors de la rédaction du rapport: %s"

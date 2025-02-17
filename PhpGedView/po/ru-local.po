@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-04 16:31+0300\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -31,11 +31,11 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: PhpGedView/phpgedview.gpr.py:23 PhpGedView/phpgedview.gpr.py:24
+#: PhpGedView/phpgedview.gpr.py:24
 msgid "PhpGedView"
 msgstr "PhpGedView"
 
-#: PhpGedView/phpgedview.gpr.py:24 PhpGedView/phpgedview.gpr.py:25
+#: PhpGedView/phpgedview.gpr.py:25
 msgid "Download a GEDCOM file from a phpGedView server."
 msgstr "Загружает GEDCOM файл с сервера phpGedView."
 
@@ -88,23 +88,22 @@ msgstr "Чтение списка..."
 msgid "Error: Invalid URL"
 msgstr "Ошибка: неверный URL"
 
-#: PhpGedView/phpgedview.glade.h:1 PhpGedView/phpgedview.glade:12
+#: PhpGedView/phpgedview.glade:12
 msgid "- default -"
 msgstr "- по умолчанию -"
 
-#: PhpGedView/phpgedview.glade.h:2 PhpGedView/phpgedview.glade:19
-#: PhpGedView/phpgedview.glade:85
+#: PhpGedView/phpgedview.glade:19 PhpGedView/phpgedview.glade:85
 msgid "phpGedView import"
 msgstr "Импорт phpGedView"
 
-#: PhpGedView/phpgedview.glade.h:3 PhpGedView/phpgedview.glade:103
+#: PhpGedView/phpgedview.glade:103
 msgid "http://"
 msgstr "http://"
 
-#: PhpGedView/phpgedview.glade.h:5 PhpGedView/phpgedview.glade:170
+#: PhpGedView/phpgedview.glade:170
 msgid "Username:"
 msgstr "Имя пользователя:"
 
-#: PhpGedView/phpgedview.glade.h:6 PhpGedView/phpgedview.glade:182
+#: PhpGedView/phpgedview.glade:182
 msgid "Password:"
 msgstr "Пароль:"

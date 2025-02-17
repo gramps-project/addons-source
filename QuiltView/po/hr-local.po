@@ -3,13 +3,13 @@
 # Copyright (C) Gramps project
 # Milo Ivir <mivir@milotype.de>, 2019, 2020.
 # Stephen Adams, Gramps Reddit, 2018.
-#
+# Milo Ivir <mail@milotype.de>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2025-02-15 16:17+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-17 00:14+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -21,12 +21,11 @@ msgstr ""
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Weblate 5.10\n"
 
-#: QuiltView/QuiltView.gpr.py:30 QuiltView/QuiltView.gpr.py:23
-#: QuiltView/QuiltView.gpr.py:34
+#: QuiltView/QuiltView.gpr.py:23 QuiltView/QuiltView.gpr.py:34
 msgid "Quilt Chart"
 msgstr "Poplunasti dijagram"
 
-#: QuiltView/QuiltView.gpr.py:32 QuiltView/QuiltView.gpr.py:25
+#: QuiltView/QuiltView.gpr.py:25
 msgid "The view shows a quilt chart visualisation of a family tree"
 msgstr "Prikazuje dijagram rodoslova u obliku popluna"
 
@@ -69,7 +68,7 @@ msgstr "O poplunastom dijagramu"
 
 #: QuiltView/QuiltView.py:1191 QuiltView/QuiltView.py:1320
 msgid "Edit tags"
-msgstr "Uredi etikete"
+msgstr "Uredi oznake"
 
 #: QuiltView/QuiltView.py:1500
 msgid "Set as home person"
@@ -104,7 +103,7 @@ msgstr ""
 
 #: QuiltView/QuiltView.py:1926
 msgid "The path color"
-msgstr "Boja staze"
+msgstr "Boja linije"
 
 #: QuiltView/QuiltView.py:1931
 msgid "The selected person color"

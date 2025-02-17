@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS VIETNAMESE 4.2.8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-05 14:02-0600\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2018-07-13 14:34+0800\n"
 "Last-Translator: detran <trande@gmail.com>\n"
 "Language-Team: VIETNAMESE <trande@gmail.com>\n"
@@ -21,11 +21,15 @@ msgstr ""
 "OF GRAMPS, V. 3\n"
 "X-Generator: Poedit 1.5.4\n"
 
-#: Themes/themes.gpr.py:28 Themes/themes.gpr.py:29
+#: DynamicWeb/dynamicweb.py:5157 Themes/themes.py:175 Themes/themes.py:225
+msgid "Theme"
+msgstr "Chủ đề"
+
+#: Themes/themes.gpr.py:29
 msgid "Theme preferences"
 msgstr "Tùy chọn chủ đề"
 
-#: Themes/themes.gpr.py:29 Themes/themes.gpr.py:31
+#: Themes/themes.gpr.py:31
 msgid ""
 "An addition to Preferences for simple Theme and Font adjustment.  Especially "
 "useful for Windows users."
@@ -33,24 +37,18 @@ msgstr ""
 "Một bổ sung cho Tùy chọn để điều chỉnh Chủ đề và Phông chữ đơn giản. Đặc "
 "biệt hữu ích cho người dùng Windows."
 
-#: Themes/themes.py:137 Themes/themes.py:155 Themes/themes.py:172
-#: Themes/themes.py:190
+#: Themes/themes.py:172 Themes/themes.py:190
 msgid "Theme is hardcoded by GTK_THEME"
 msgstr "Chủ đề bị có định do GTK_THEME"
 
-#: Themes/themes.py:140 Themes/themes.py:190 DynamicWeb/dynamicweb.py:5157
-#: Themes/themes.py:175 Themes/themes.py:225
-msgid "Theme"
-msgstr "Chủ đề"
-
-#: Themes/themes.py:145 Themes/themes.py:180
+#: Themes/themes.py:180
 msgid "Dark Variant"
 msgstr "Biến thể tối"
 
-#: Themes/themes.py:163 Themes/themes.py:198
+#: Themes/themes.py:198
 msgid "Font"
 msgstr "Font chữ "
 
-#: Themes/themes.py:179 Themes/themes.py:214
+#: Themes/themes.py:214
 msgid "Fixed Scrollbar (requires restart)"
 msgstr "Thanh cuộn cổ điển (yêu cầu khởi động lại)"

@@ -3,13 +3,13 @@
 # Copyright (C) Gramps project
 # Milo Ivir <mivir@milotype.de>, 2019, 2020.
 # Stephen Adams, Gramps Reddit, 2018.
-#
+# Milo Ivir <mail@milotype.de>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2025-02-15 16:17+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-17 00:14+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -21,14 +21,12 @@ msgstr ""
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Weblate 5.10\n"
 
-#: D3Charts/DescendantIndentedTree.py:1839
 #: D3Charts/DescendantIndentedTree.py:1848
 #: DescendantBooks/DescendantBookReport.py:552
 msgid "Whether to show duplicate family trees in the report."
 msgstr "Da li prikazati duple rodoslove u izvještaju."
 
-#: AncestorFill/AncestorFill.py:360 AncestorFill/AncestorFill.py:361
-#: DescendantBooks/DescendantBookReport.py:575
+#: AncestorFill/AncestorFill.py:361 DescendantBooks/DescendantBookReport.py:575
 #: DescendantBooks/DetailedDescendantBookReport.py:1540
 msgid "The style used for the title of the page."
 msgstr "Stil za naslov stranice."
@@ -115,23 +113,19 @@ msgstr "Stil za naslov tablice sadržaja."
 msgid "The style used for the table of contents detail."
 msgstr "Stil za detalje tablice sadržaja."
 
-#: DescendantBooks/DescendantBooks.gpr.py:21
 #: DescendantBooks/DescendantBooks.gpr.py:22
 msgid "Descendant Book"
 msgstr "Knjiga o potomcima"
 
-#: DescendantBooks/DescendantBooks.gpr.py:22
 #: DescendantBooks/DescendantBooks.gpr.py:23
 msgid "Produces one or more descendant reports based on a supplied query."
 msgstr ""
 "Stvara jedan ili više izvještaja o potomcima, na osnovi dostavljenog upita."
 
-#: DescendantBooks/DescendantBooks.gpr.py:38
 #: DescendantBooks/DescendantBooks.gpr.py:41
 msgid "Detailed Descendant Book"
 msgstr "Detaljna knjiga o potomcima"
 
-#: DescendantBooks/DescendantBooks.gpr.py:39
 #: DescendantBooks/DescendantBooks.gpr.py:43
 msgid ""
 "Produces one or more detailed descendant reports based on a supplied query."

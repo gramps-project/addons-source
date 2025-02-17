@@ -8,7 +8,7 @@
 # Sebastian Vöcking <voeck@web.de>, 2005.
 # Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
 # Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2025.
 # Alois Pöttker <alois.poettker@gmx.de>, 2017.
 # Allan Nordhøy <epost@anotheragency.no>, 2021.
 # R. B. <weblate@macdefender.org>, 2021.
@@ -21,8 +21,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-02 22:39+0200\n"
-"PO-Revision-Date: 2025-02-15 16:17+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-17 00:14+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -33,10 +33,84 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.10\n"
 
-#: DNA/dna.py:87 DNA/dnasegmentmap.gpr.py:26 DNA/dnasegmentmap.gpr.py:35
+#: DNA/dnasegmentmap.gpr.py:26 DNA/dnasegmentmap.gpr.py:35
 msgid "DNA Segment Map"
 msgstr "DNA-Segmentkarte"
 
-#: DNA/dna.py:88 DNA/dnasegmentmap.py:634
+#: DNA/dnasegmentmap.gpr.py:29
+#, fuzzy
+#| msgid "Gramplet showing the participants in an event"
+msgid "Gramplet showing a matching DNA segment map"
+msgstr "Gramplet zeigt die Beteiligten eines Ereignis"
+
+#: DNA/dnasegmentmap.py:546
+msgid "Chromosome "
+msgstr ""
+
+#: DNA/dnasegmentmap.py:552
+msgid " Map for "
+msgstr " Karte für "
+
+#: DNA/dnasegmentmap.py:634
 msgid "Chr"
 msgstr "Chr"
+
+#: DNA/dnasegmentmap.py:759
+msgid "Legend"
+msgstr ""
+
+#: DNA/dnasegmentmap.py:761
+#, fuzzy
+#| msgid "Grandparents"
+msgid ": Grandparent"
+msgstr "Großeltern"
+
+#: DNA/dnasegmentmap.py:1056
+#, python-brace-format
+msgid ""
+"\n"
+"{0}\n"
+"{1} cMs"
+msgstr ""
+
+#: DNA/dnasegmentmap.py:1060
+msgid " SNPs"
+msgstr ""
+
+#: DNA/dnasegmentmap.py:1061
+msgid " : Starts at "
+msgstr ""
+
+#: DNA/dnasegmentmap.py:1063
+msgid " and ends at "
+msgstr " und endet mit "
+
+#: DNA/dnasegmentmap.py:1079 DNA/dnasegmentmap.py:1082
+#, python-brace-format
+msgid "{0}"
+msgstr ""
+
+#: DNA/dnasegmentmap.py:1086
+#, python-format
+msgid "%(ancestor1)s and %(ancestor2)s"
+msgstr ""
+
+#: DNA/dnasegmentmap.py:1090
+#, python-brace-format
+msgid ""
+"\n"
+"Relationship: {0} "
+msgstr ""
+"\n"
+"Beziehung: {0} "
+
+#: DNA/dnasegmentmap.py:1091
+#, python-brace-format
+msgid " Ancestor: {0}"
+msgstr " Vorfahre: {0}"
+
+#: DNA/dnasegmentmap.py:1115
+msgid ""
+"Click to make this person active\n"
+"Right-click to edit this person"
+msgstr ""

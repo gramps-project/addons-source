@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -24,23 +24,23 @@ msgstr ""
 msgid "Enter Python expressions"
 msgstr "Enter Python expressions"
 
-#: Query/Query.gpr.py:9 Query/Query.gpr.py:10
+#: Query/Query.gpr.py:10
 msgid "Query Gramplet"
 msgstr "Query Gramplet"
 
-#: Query/Query.gpr.py:10 Query/Query.gpr.py:11
+#: Query/Query.gpr.py:11
 msgid "Gramplet for running SQL-like queries"
 msgstr "Gramplet for at køre SQL-lignende forespørgsler"
 
-#: Query/Query.gpr.py:18 Query/Query.gpr.py:19
+#: Query/Query.gpr.py:19
 msgid "Query"
 msgstr "Forespørgsel"
 
-#: Query/Query.gpr.py:31 Query/Query.gpr.py:33
+#: Query/Query.gpr.py:33
 msgid "Query Quickview"
 msgstr "Foresspørgsels kvikoversigt"
 
-#: Query/Query.gpr.py:32 Query/Query.gpr.py:34
+#: Query/Query.gpr.py:34
 msgid "Quick view for SQL-like running queries"
 msgstr "Kvikoversigt for at udføre SQL-lignende forespørgsler"
 

@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-17 18:14+0100\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -38,8 +38,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: Differences/differences.gpr.py:4 Differences/differences.py:97
-#: Differences/differences.py:95
+#: Differences/differences.gpr.py:4 Differences/differences.py:95
 msgid "Database Differences Report"
 msgstr "Rapport des différences dans la base de données"
 
@@ -47,80 +46,72 @@ msgstr "Rapport des différences dans la base de données"
 msgid "Compares an external database with the current one."
 msgstr "Compare une base de données externe avec la base actuelle."
 
-#: Differences/differences.py:136 Differences/differences.py:134
+#: Differences/differences.py:134
 msgid "Differences between Database and File"
 msgstr "Différences entre la base de données et le fichier"
 
 # Substantif (GNOME fr)
-#: Differences/differences.py:163 Differences/differences.py:161
+#: Differences/differences.py:161
 msgid "No differences"
 msgstr "Pas de différences"
 
-#: Differences/differences.py:170 Differences/differences.py:168
+#: Differences/differences.py:168
 msgid "Missing items in File that are added in Database"
 msgstr ""
 "Éléments manquants dans le fichier qui sont ajoutés dans la base de données"
 
-#: Differences/differences.py:176 Differences/differences.py:174
+#: Differences/differences.py:174
 #, python-format
 msgid "Missing %s: %s"
 msgstr "Disparu %s: %s"
 
-#: Differences/differences.py:180 Differences/differences.py:178
+#: Differences/differences.py:178
 msgid "Nothing missing"
 msgstr "Rien ne manque"
 
-#: Differences/differences.py:187 Differences/differences.py:185
+#: Differences/differences.py:185
 msgid "Added items in File that are missing in Database"
 msgstr "Ajout d'éléments dans le fichier qui manquent dans la base de données"
 
-#: Differences/differences.py:193 Differences/differences.py:191
+#: Differences/differences.py:191
 #, python-format
 msgid "Added %s: %s "
 msgstr "Ajoutée %s: %s "
 
-#: Differences/differences.py:197 Differences/differences.py:195
+#: Differences/differences.py:195
 msgid "Nothing added"
 msgstr "Rien ajouté"
 
-#: Differences/differences.py:310 Differences/differences_old.py:298
 #: Differences/differences.py:308
 msgid "Family Tree file"
 msgstr "Fichier arbre familial"
 
-#: Differences/differences.py:312 Differences/differences_old.py:300
 #: Differences/differences.py:310
 msgid "Select a .gpkg or .gramps file"
 msgstr "Sélectionner un fichier .gpkg ou .gramps"
 
-#: Differences/differences.py:315 Differences/differences_old.py:303
 #: Differences/differences.py:313
 msgid "Show items that are different"
 msgstr "Afficher les parties différentes"
 
-#: Differences/differences.py:316 Differences/differences_old.py:304
 #: Differences/differences.py:314
 msgid "Include items that are different"
 msgstr "Inclure les parties différentes"
 
-#: Differences/differences.py:319 Differences/differences_old.py:307
 #: Differences/differences.py:317
 msgid "Show items missing from file"
 msgstr "Afficher les éléments manquants dans le fichier"
 
-#: Differences/differences.py:320 Differences/differences_old.py:308
 #: Differences/differences.py:318
 msgid "Include items not in file but in database"
 msgstr ""
 "Inclure les parties non-présentes dans le fichier mais dans la base de "
 "données"
 
-#: Differences/differences.py:323 Differences/differences_old.py:311
 #: Differences/differences.py:321
 msgid "Show items added in file"
 msgstr "Afficher les éléments ajoutés dans le fichier"
 
-#: Differences/differences.py:324 Differences/differences_old.py:312
 #: Differences/differences.py:322
 msgid "Include items in file but not in database"
 msgstr ""

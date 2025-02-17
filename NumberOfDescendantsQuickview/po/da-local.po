@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -21,7 +21,7 @@ msgstr ""
 "X-Generator: Poedit 3.0.1\n"
 
 #: LifeLineChartView/_dummy_translation_string_po.py:115
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:3
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:4
 msgid "Number of descendants"
 msgstr "Antal efterkommere"
 
@@ -31,7 +31,6 @@ msgstr "Antal efterkommere"
 msgid "Generation"
 msgstr "Generation"
 
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:4
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:5
 msgid "Shows the number of descendants of the current person"
 msgstr "Viser antal efterkommere for hovedpersonen"

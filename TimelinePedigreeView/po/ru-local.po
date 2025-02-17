@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-04 16:31+0300\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -31,29 +31,26 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: Form/form_us.xml.h:1035 Form/form_us.xml.h:2085 Form/form_us.xml.h:2122
-#: Form/form_us.xml.h:2160 Form/form_us.xml.h:2198
-#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:34
+#: Form/form_us.xml.h:2085 Form/form_us.xml.h:2122 Form/form_us.xml.h:2160
+#: Form/form_us.xml.h:2198 TimelinePedigreeView/TimelinePedigreeView.gpr.py:34
 msgid "Ancestry"
 msgstr "Родословная"
 
-#: FamilyTree/FamilyTree.py:1049 FamilyTree/FamilyTree.py:1047
+#: FamilyTree/FamilyTree.py:1047
 #: TimelinePedigreeView/TimelinePedigreeView.py:1481
 msgid "Ancestor Generations"
 msgstr "Поколения предков"
 
-#: FamilyTree/FamilyTree.py:1053 FamilyTree/FamilyTree.py:1051
+#: FamilyTree/FamilyTree.py:1051
 #: TimelinePedigreeView/TimelinePedigreeView.py:1465
 msgid "Descendant Generations"
 msgstr "Поколения потомков"
 
-#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:44
 #: TimelinePedigreeView/TimelinePedigreeView.gpr.py:33
 #: TimelinePedigreeView/TimelinePedigreeView.gpr.py:46
 msgid "Timeline Pedigree"
 msgstr "Временная диаграмма"
 
-#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:46
 #: TimelinePedigreeView/TimelinePedigreeView.gpr.py:36
 msgid ""
 "The view shows a timeline pedigree with ancestors and descendants of the "
@@ -62,53 +59,42 @@ msgstr ""
 "Вид представляющий временную диаграмму семейного древа с предками и "
 "потомками для выбранного лица"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:79
 #: TimelinePedigreeView/TimelinePedigreeView.py:82
 msgid "short for born|b."
 msgstr "р."
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:80
 #: TimelinePedigreeView/TimelinePedigreeView.py:83
 msgid "short for died|d."
 msgstr "у."
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:81
 #: TimelinePedigreeView/TimelinePedigreeView.py:84
 msgid "short for baptized|bap."
 msgstr "крещ."
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:82
 #: TimelinePedigreeView/TimelinePedigreeView.py:85
 msgid "short for christened|chr."
 msgstr "прин. хр."
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:83
 #: TimelinePedigreeView/TimelinePedigreeView.py:86
 msgid "short for buried|bur."
 msgstr "похор."
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:84
 #: TimelinePedigreeView/TimelinePedigreeView.py:87
 msgid "short for cremated|crem."
 msgstr "крем."
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:334
 #: TimelinePedigreeView/TimelinePedigreeView.py:339
 msgid "Timeline pedigree"
 msgstr "Временная диаграмма"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1415
 #: TimelinePedigreeView/TimelinePedigreeView.py:1437
 msgid "Order by timeline"
 msgstr "Сортировать по времени"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1417
 #: TimelinePedigreeView/TimelinePedigreeView.py:1439
 msgid "Show lifespan"
 msgstr "Показывать промежуток жизни"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1448
-#: TimelinePedigreeView/TimelinePedigreeView.py:1464
 #: TimelinePedigreeView/TimelinePedigreeView.py:1470
 #: TimelinePedigreeView/TimelinePedigreeView.py:1486
 #, python-format
@@ -118,7 +104,6 @@ msgstr[0] "%d поколение"
 msgstr[1] "%d поколения"
 msgstr[2] "%d поколений"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1483
 #: TimelinePedigreeView/TimelinePedigreeView.py:1505
 msgid "About Timeline Pedigree View"
 msgstr "О дополнении"

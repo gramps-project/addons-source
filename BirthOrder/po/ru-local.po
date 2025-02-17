@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-04 16:31+0300\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -31,12 +31,11 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: BirthOrder/birthorder.gpr.py:9 BirthOrder/birthorder.py:62
-#: BirthOrder/birthorder.gpr.py:10
+#: BirthOrder/birthorder.gpr.py:10 BirthOrder/birthorder.py:62
 msgid "Sort Children in Birth order"
 msgstr "Сортировка детей в порядке рождения"
 
-#: BirthOrder/birthorder.gpr.py:10 BirthOrder/birthorder.gpr.py:12
+#: BirthOrder/birthorder.gpr.py:12
 msgid ""
 "Looks through families, looking for children that are not in birth order.  "
 "User can accept individual suggestions to correct, edit the birth order "
@@ -63,23 +62,23 @@ msgstr "Редактировать семьи"
 msgid "Looking for children birth order"
 msgstr "Просмотр порядка рождения детей"
 
-#: BirthOrder/birthorder.glade.h:1 BirthOrder/birthorder.glade:56
+#: BirthOrder/birthorder.glade:56
 msgid "Select the family you wish to examine."
 msgstr "Выберите семью, которую хотите проверить."
 
-#: BirthOrder/birthorder.glade.h:6 BirthOrder/birthorder.glade:155
+#: BirthOrder/birthorder.glade:155
 msgid "Accept All"
 msgstr "Принять всё"
 
-#: BirthOrder/birthorder.glade.h:7 BirthOrder/birthorder.glade:159
+#: BirthOrder/birthorder.glade:159
 msgid "This button will sort all of the families listed."
 msgstr "Будет произведена сортировка по всем семьям в списке."
 
-#: BirthOrder/birthorder.glade.h:8 BirthOrder/birthorder.glade:170
+#: BirthOrder/birthorder.glade:170
 msgid "Accept All *"
 msgstr "Принять всё *"
 
-#: BirthOrder/birthorder.glade.h:9 BirthOrder/birthorder.glade:174
+#: BirthOrder/birthorder.glade:174
 msgid ""
 "This button will sort all the families with '*'.  In these families, all the "
 "children have valid dates, so the sort is unambiguous."
@@ -87,11 +86,11 @@ msgstr ""
 "Произвести сортировку в семьях помеченных '*'. В этих семьях, все дети имеют "
 "полные даты, поэтому сортировка будет однозначной."
 
-#: BirthOrder/birthorder.glade.h:10 BirthOrder/birthorder.glade:185
+#: BirthOrder/birthorder.glade:185
 msgid "Accept"
 msgstr "Принять"
 
-#: BirthOrder/birthorder.glade.h:11 BirthOrder/birthorder.glade:189
+#: BirthOrder/birthorder.glade:189
 msgid ""
 "This button will accept only the family selected and save it as shown in "
 "lower right pane."
@@ -99,23 +98,23 @@ msgstr ""
 "Принять изменения только для выбранной семьи и сохранить как показано на "
 "нижней панели справа."
 
-#: BirthOrder/birthorder.glade.h:12 BirthOrder/birthorder.glade:232
+#: BirthOrder/birthorder.glade:232
 msgid "Done"
 msgstr "Завершить"
 
-#: BirthOrder/birthorder.glade.h:13 BirthOrder/birthorder.glade:236
+#: BirthOrder/birthorder.glade:236
 msgid "This button will exit, with remaining families unchanged."
 msgstr "Выход без внесения изменений в семьи."
 
-#: BirthOrder/birthorder.glade.h:14 BirthOrder/birthorder.glade:256
+#: BirthOrder/birthorder.glade:256
 msgid "Current sort"
 msgstr "Текущий порядок"
 
-#: BirthOrder/birthorder.glade.h:15 BirthOrder/birthorder.glade:267
+#: BirthOrder/birthorder.glade:267
 msgid "Proposed sort"
 msgstr "Предлагаемый порядок"
 
-#: BirthOrder/birthorder.glade.h:16 BirthOrder/birthorder.glade:333
+#: BirthOrder/birthorder.glade:333
 msgid ""
 "When satisfied with the sort, use 'Accept' button below to accept the "
 "changes.  If you wish to adjust the order, select the child you wish to "

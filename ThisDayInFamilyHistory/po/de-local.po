@@ -8,7 +8,7 @@
 # Sebastian Vöcking <voeck@web.de>, 2005.
 # Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
 # Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2025.
 # Alois Pöttker <alois.poettker@gmx.de>, 2017.
 # Allan Nordhøy <epost@anotheragency.no>, 2021.
 # R. B. <weblate@macdefender.org>, 2021.
@@ -21,8 +21,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-02 22:39+0200\n"
-"PO-Revision-Date: 2025-02-15 16:17+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-17 00:14+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -34,12 +34,10 @@ msgstr ""
 "X-Generator: Weblate 5.10\n"
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.gpr.py:7
-#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.gpr.py:14
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.gpr.py:16
 msgid "This Day in Family History"
 msgstr "Dieser Tag in der Familiengeschichte"
 
-#: ThisDayInFamilyHistory/ThisDayInFamilyHistory.gpr.py:8
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.gpr.py:9
 msgid ""
 "A configurable program that shows you the connected events from your family "
@@ -266,13 +264,13 @@ msgstr "%(female_name)s wurde beigesetzt in %(year)s in %(place)s."
 #, python-format
 msgid "%(male_name)s participated in a census in %(year)s at %(place)s."
 msgstr ""
-"%(male_name)s nahm an einer Volkszählung teil  in %(year)s in %(place)s."
+"%(male_name)s nahmen an einer Volkszählung in %(year)s in %(place)s teil."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:535
 #, python-format
 msgid "%(female_name)s participated in a census in %(year)s at %(place)s."
 msgstr ""
-"%(female_name)s nahm an einer Volkszählung teil  in %(year)s in %(place)s."
+"%(female_name)s nahm an einer Volkszählung teil in %(year)s in %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:544
 #, python-format
@@ -398,7 +396,7 @@ msgstr "%(female_name)s ist eingewandert in %(year)s in %(place)s."
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:611
 #, python-format
 msgid "%(male_name)s got married in %(year)s at %(place)s."
-msgstr "%(male_name)s heiratete  in %(year)s in %(place)s."
+msgstr "%(male_name)s hat geheiratet in %(year)s in %(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:613
 #, python-format
@@ -421,14 +419,14 @@ msgstr "%(female_name)s als Familie beigetreten in %(year)s in %(place)s."
 #, python-format
 msgid "%(male_name)s entered a civil union in %(year)s at %(place)s."
 msgstr ""
-"%(male_name)s ging eine eingetragene Partnerschaft ein  in %(year)s in "
+"%(male_name)s ging eine eingetragene Partnerschaft ein in %(year)s in "
 "%(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:623
 #, python-format
 msgid "%(female_name)s entered a civil union in %(year)s at %(place)s."
 msgstr ""
-"%(female_name)s ging eine eingetragene Partnerschaft ein  in %(year)s in "
+"%(female_name)s ging eine eingetragene Partnerschaft ein in %(year)s in "
 "%(place)s."
 
 #: ThisDayInFamilyHistory/ThisDayInFamilyHistory.py:632

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -510,19 +510,21 @@ msgstr "Skjul søskende"
 msgid "Show ancestors above "
 msgstr "Vis aner ovenfor "
 
-#: LifeLineChartView/lifelinechartview.gpr.py:318
 #: LifeLineChartView/lifelinechartview.gpr.py:24
 msgid "Life Line Ancestor Chart"
 msgstr "Life Line Anetavle"
 
-#: LifeLineChartView/lifelinechartview.gpr.py:320
-#: LifeLineChartView/lifelinechartview.gpr.py:334
 #: LifeLineChartView/lifelinechartview.gpr.py:26
 #: LifeLineChartView/lifelinechartview.gpr.py:44
 msgid "Persons and their relation in a time based chart"
 msgstr "Personer og deres slægtskaber i et tidsbaseret diagram"
 
-#: LifeLineChartView/lifelinechartview.gpr.py:332
+#: LifeLineChartView/lifelinechartview.gpr.py:34
+#: LifeLineChartView/lifelinechartview.gpr.py:52
+#: LifeLineChartView/lifelinechartview.py:399
+msgid "Life Line Chart"
+msgstr "Life Line Diagram"
+
 #: LifeLineChartView/lifelinechartview.gpr.py:42
 msgid "Life Line Descendant Chart"
 msgstr "Life Line Efterkommerdiagram"
@@ -531,12 +533,6 @@ msgstr "Life Line Efterkommerdiagram"
 #: LifeLineChartView/lifelinechartview.py:883
 msgid "General Layout"
 msgstr "Generelt layout"
-
-#: LifeLineChartView/lifelinechartview.py:399
-#: LifeLineChartView/lifelinechartview.gpr.py:34
-#: LifeLineChartView/lifelinechartview.gpr.py:52
-msgid "Life Line Chart"
-msgstr "Life Line Diagram"
 
 #: LifeLineChartView/lifelinechartview.py:509
 #: LifeLineChartView/lifelinechartview.py:510

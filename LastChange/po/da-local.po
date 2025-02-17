@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -24,20 +24,20 @@ msgstr ""
 msgid "The style used for the title of the page."
 msgstr "Fontformat for sidens titel"
 
-#: LastChange/LastChange.gpr.py:25 LastChange/LastChange.gpr.py:26
+#: LastChange/LastChange.gpr.py:26
 msgid "List the last ten person records that have been changed"
 msgstr "List de seneste 10 personposter, som er blevet ændret"
 
-#: LastChange/LastChange.gpr.py:34 LastChange/LastChange.gpr.py:35
+#: LastChange/LastChange.gpr.py:35
 msgid "Latest Changes"
 msgstr "Seneste ændringer"
 
-#: LastChange/LastChange.gpr.py:40 LastChange/LastChangeReport.py:74
-#: LastChange/LastChangeReport.py:113 LastChange/LastChange.gpr.py:42
+#: LastChange/LastChange.gpr.py:42 LastChange/LastChangeReport.py:74
+#: LastChange/LastChangeReport.py:113
 msgid "Last Change Report"
 msgstr "Rapport over seneste ændringer"
 
-#: LastChange/LastChange.gpr.py:41 LastChange/LastChange.gpr.py:43
+#: LastChange/LastChange.gpr.py:43
 msgid "Report of the last records that have been changed"
 msgstr "Rapport over de seneste poster, der err blevet ændret"
 

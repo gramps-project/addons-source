@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -28,16 +28,16 @@ msgstr "RGB-farve til baggrund for mandlig boks "
 msgid "Female Background"
 msgstr "Kvindelig baggrund"
 
-#: GraphView/graphview.py:3698 GraphView/graphview.py:3783
-#: NetworkChart/NetworkChart.py:1174 NetworkChart/NetworkChart.py:1188
+#: GraphView/graphview.py:3783 NetworkChart/NetworkChart.py:1174
+#: NetworkChart/NetworkChart.py:1188
 msgid "Direct"
 msgstr "Lige"
 
-#: NetworkChart/NetworkChart.gpr.py:23 NetworkChart/NetworkChart.gpr.py:24
+#: NetworkChart/NetworkChart.gpr.py:24
 msgid "Network Chart"
 msgstr "Netværksdiagram"
 
-#: NetworkChart/NetworkChart.gpr.py:34 NetworkChart/NetworkChart.gpr.py:35
+#: NetworkChart/NetworkChart.gpr.py:35
 msgid "Generates a family network chart."
 msgstr "Danner et familie netværksdiagram."
 

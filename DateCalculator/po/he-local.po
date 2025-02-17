@@ -2,14 +2,14 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Igal Shapira <igal.shapira@gmail.com>, 2009, 2010, 2011.
-# Avi Markovitz <avi.markovitz@gmail.com>, 2019.
-#
+# Avi Markovitz <avi.markovitz@gmail.com>, 2019, 2025.
+# Yaron Shahrabani <sh.yaron@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-10 07:59+0300\n"
-"PO-Revision-Date: 2025-02-15 16:17+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-17 15:09+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -19,32 +19,62 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:69
 #: EditExifMetadata/editexifmetadata.py:215
 #: DateCalculator/DateCalculator.py:107
 msgid "Copy"
 msgstr "העתקה"
 
-#: DateCalculator/DateCalculator.gpr.py:21
-#: DateCalculator/DateCalculator.gpr.py:31
 #: DateCalculator/DateCalculator.gpr.py:22
 #: DateCalculator/DateCalculator.gpr.py:32
 msgid "Date Calculator"
 msgstr "מחשבון תאריכים"
 
-#: DateCalculator/DateCalculator.py:78 DateCalculator/DateCalculator.py:96
+#: DateCalculator/DateCalculator.gpr.py:23
+msgid "Perform date math calculations"
+msgstr ""
+
+#: DateCalculator/DateCalculator.py:86
+msgid "Reference Date or Date Range"
+msgstr ""
+
+#: DateCalculator/DateCalculator.py:86
+msgid "a valid Gramps date"
+msgstr ""
+
+#: DateCalculator/DateCalculator.py:90
+msgid "Date or offset ±y or ±y, m, d"
+msgstr ""
+
+#: DateCalculator/DateCalculator.py:92
+msgid ""
+"1. a Date\n"
+"2. a positive or negative number, representing years\n"
+"3. a positive or negative list of values, representing years, months, days"
+msgstr ""
+
+#: DateCalculator/DateCalculator.py:96
 msgid "Result"
 msgstr "תוצאה"
 
-#: DateCalculator/DateCalculator.py:81 DateCalculator/DateCalculator.py:104
+#: DateCalculator/DateCalculator.py:104
 msgid "Calculate"
 msgstr "חישוב"
 
-#: DateCalculator/DateCalculator.py:166 DateCalculator/DateCalculator.py:168
-#: DateCalculator/DateCalculator.py:176 DateCalculator/DateCalculator.py:178
+#: DateCalculator/DateCalculator.py:159
+msgid "Error: invalid date for first expression"
+msgstr ""
+
+#: DateCalculator/DateCalculator.py:169
+msgid "Error: invalid offset for second expression"
+msgstr ""
+
 #: DateCalculator/DateCalculator.py:195 DateCalculator/DateCalculator.py:197
 #: DateCalculator/DateCalculator.py:205 DateCalculator/DateCalculator.py:207
 msgid "Error: at least one expression must be a date"
 msgstr "שגיאה: לפחות אחד מהביטוים חייב להיות תאריך"
+
+#: DateCalculator/DateCalculator.py:223
+msgid "Enter an expression in the entries above and click Calculate."
+msgstr ""

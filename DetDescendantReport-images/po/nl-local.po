@@ -7,13 +7,13 @@
 # Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
 # Erik De Richter <frederik.de.richter@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
 # Harmen Huizinga <harmenhuizinga@sigmo.nl>, 2013.
-#
+# Stephan Paternotte <stephan@paternottes.net>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
-"Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
-"POT-Creation-Date: 2019-01-04 18:55-0600\n"
-"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-17 11:05+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -22,97 +22,82 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
-#: AncestorFill/AncestorFill.py:360 AncestorFill/AncestorFill.py:361
-#: DetDescendantReport-images/detdescendantreporti.py:1248
+#: AncestorFill/AncestorFill.py:361
+#: DetDescendantReport-images/detdescendantreporti.py:1252
 msgid "The style used for the title of the page."
 msgstr "De stijl die wordt gebruikt voor de titel van de pagina."
 
-#: DynamicWeb/dynamicweb.py:1631 DynamicWeb/dynamicweb.py:1737
-#: DetDescendantReport-images/detdescendantreporti.py:936
+#: DynamicWeb/dynamicweb.py:1737
+#: DetDescendantReport-images/detdescendantreporti.py:940
 #, python-format
 msgid "%(type)s: %(value)s"
 msgstr "%(type)s: %(value)s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:814
-#: DescendantBooks/DetailedDescendantBookReport.py:858
 #: DescendantBooks/DetailedDescendantBookReport.py:817
 #: DescendantBooks/DetailedDescendantBookReport.py:861
-#: DetDescendantReport-images/detdescendantreporti.py:450
+#: DetDescendantReport-images/detdescendantreporti.py:454
 #, python-format
 msgid "%(date)s, %(place)s"
 msgstr "%(date)s, %(place)s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:817
-#: DescendantBooks/DetailedDescendantBookReport.py:861
 #: DescendantBooks/DetailedDescendantBookReport.py:820
 #: DescendantBooks/DetailedDescendantBookReport.py:864
-#: DetDescendantReport-images/detdescendantreporti.py:453
+#: DetDescendantReport-images/detdescendantreporti.py:457
 #, python-format
 msgid "%(date)s"
 msgstr "%(date)s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:819
-#: DescendantBooks/DetailedDescendantBookReport.py:863
 #: DescendantBooks/DetailedDescendantBookReport.py:822
 #: DescendantBooks/DetailedDescendantBookReport.py:866
-#: DetDescendantReport-images/detdescendantreporti.py:455
+#: DetDescendantReport-images/detdescendantreporti.py:459
 #, python-format
 msgid "%(place)s"
 msgstr "%(place)s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1234
 #: DescendantBooks/DetailedDescendantBookReport.py:1237
-#: DetDescendantReport-images/detdescendantreporti.py:807
+#: DetDescendantReport-images/detdescendantreporti.py:811
 #, python-format
 msgid "%(name_kind)s: %(name)s%(endnotes)s"
 msgstr "%(name_kind)s: %(name)s%(endnotes)s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1402
 #: DescendantBooks/DetailedDescendantBookReport.py:1405
-#: DetDescendantReport-images/detdescendantreporti.py:1143
+#: DetDescendantReport-images/detdescendantreporti.py:1147
 msgid "List children"
 msgstr "Lijst met kinderen"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1419
 #: DescendantBooks/DetailedDescendantBookReport.py:1422
-#: DetDescendantReport-images/detdescendantreporti.py:1160
+#: DetDescendantReport-images/detdescendantreporti.py:1164
 msgid "Add descendant reference in child list"
 msgstr "Afstammingsreferentie toevoegen aan de onderliggende lijst"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1567
 #: DescendantBooks/DetailedDescendantBookReport.py:1570
-#: DetDescendantReport-images/detdescendantreporti.py:1278
+#: DetDescendantReport-images/detdescendantreporti.py:1282
 msgid "The style used for the children list."
 msgstr "De stijl die wordt gebruikt voor de onderliggende lijst."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1594
 #: DescendantBooks/DetailedDescendantBookReport.py:1597
-#: DetDescendantReport-images/detdescendantreporti.py:1301
+#: DetDescendantReport-images/detdescendantreporti.py:1305
 msgid "The style used for the first personal entry."
 msgstr "De stijl die werd gebruikt voor de eerste eigen invoer."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1604
 #: DescendantBooks/DetailedDescendantBookReport.py:1607
-#: DetDescendantReport-images/detdescendantreporti.py:1311
+#: DetDescendantReport-images/detdescendantreporti.py:1315
 msgid "The style used for the More About header and for headers of mates."
 msgstr ""
 "De stijl die wordt gebruikt voor de koptekst Meer Over en voor headers van "
 "partners."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1615
 #: DescendantBooks/DetailedDescendantBookReport.py:1618
-#: DetDescendantReport-images/detdescendantreporti.py:1322
+#: DetDescendantReport-images/detdescendantreporti.py:1326
 msgid "The style used for additional detail data."
 msgstr "De stijl die wordt gebruikt voor aanvullende detailgegevens."
 
-#: DetDescendantReport-images/detdescendantreport.gpr.py:3
 #: DetDescendantReport-images/detdescendantreport.gpr.py:4
 msgid "Detailed Descendant Report With All Images"
 msgstr "Gedetailleerd afstammelingsverslag met alle afbeeldingen"
 
-#: DetDescendantReport-images/detdescendantreport.gpr.py:4
 #: DetDescendantReport-images/detdescendantreport.gpr.py:6
 msgid ""
 "Produces a detailed descendant report with all images and optional todo list."
@@ -120,28 +105,23 @@ msgstr ""
 "Produceert een gedetailleerd afstammelingsverslag met alle afbeeldingen en "
 "optionele takenlijst."
 
-#: DetDescendantReport-images/detdescendantreporti.py:467
 #: DetDescendantReport-images/detdescendantreporti.py:471
 #, python-format
 msgid "%(event_name)s: %(event_text)s"
 msgstr "%(event_name)s: %(event_text)s"
 
-#: DetDescendantReport-images/detdescendantreporti.py:1173
 #: DetDescendantReport-images/detdescendantreporti.py:1177
 msgid "Include TODO notes"
 msgstr "Voeg takenlijst toe"
 
-#: DetDescendantReport-images/detdescendantreporti.py:1174
 #: DetDescendantReport-images/detdescendantreporti.py:1178
 msgid "Whether to include TODO notes."
 msgstr "Of takenlijsten moeten worden opgenomen."
 
-#: DetDescendantReport-images/detdescendantreporti.py:1347
 #: DetDescendantReport-images/detdescendantreporti.py:1351
 msgid "The style used for image labels."
 msgstr "De stijl die wordt gebruikt voor afbeeldingslabels."
 
-#: DetDescendantReport-images/detdescendantreporti.py:1360
 #: DetDescendantReport-images/detdescendantreporti.py:1364
 msgid "A style used for image captions."
 msgstr "Een stijl die wordt gebruikt voor bijschriften bij afbeeldingen."

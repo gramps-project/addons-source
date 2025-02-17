@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-17 18:14+0100\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -38,19 +38,147 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: RelID/Relation_tab.py:93 RelID/relation_tab.py:97
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:498
+#: RelID/relation_tab.py:97 PhotoTaggingGramplet/PhotoTaggingGramplet.py:498
 msgid "_Select"
 msgstr "_Sélectionner"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:3
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:11
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:29
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:38
 msgid "Photo Tagging"
 msgstr "Cartographie photographique"
 
-#: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:4
 #: PhotoTaggingGramplet/PhotoTaggingGramplet.gpr.py:30
 msgid "Gramplet for tagging people in photos"
 msgstr "Gramplet pour définir les individus dans les photos"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:108
+msgid "https://www.gramps-project.org/wiki/index.php/Photo_Tagging_Gramplet"
+msgstr ""
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:134
+msgid "Replace existing references to the person being assigned without asking"
+msgstr ""
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:141
+#, fuzzy
+#| msgid "Face Detection"
+msgid "Face detection"
+msgstr "Détection de visage"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:144
+msgid "Minimum face width (px)"
+msgstr ""
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:146
+#, fuzzy
+#| msgid "Max chart height (px)"
+msgid "Minimum face height (px)"
+msgstr "Hauteur max du graphique (px)"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:149
+msgid "Detect faces inside existing boxes"
+msgstr ""
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:151
+msgid "Sensitivity (1 min .. 20 max)"
+msgstr ""
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:291
+#, fuzzy
+#| msgid "Persons"
+msgid "Add Person"
+msgstr "Personnes"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:292
+#, fuzzy
+#| msgid "Media Reference"
+msgid "Clear Reference"
+msgstr "Référence de l'objet"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:293
+#, fuzzy
+#| msgid "Toggle Selection"
+msgid "Remove Selection"
+msgstr "Sélection du levier"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:294
+#, fuzzy
+#| msgid "Referenced Region"
+msgid "Edit referenced Person"
+msgstr "Région de l'image"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:295
+#, fuzzy
+#| msgid "Zoom in"
+msgid "Zoom In"
+msgstr "Zoom avant"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:296
+#, fuzzy
+#| msgid "Zoom out"
+msgid "Zoom Out"
+msgstr "Zoom arrière"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:299
+#, fuzzy
+#| msgid "Detect New Faces"
+msgid "Detect faces"
+msgstr "Détection des nouveaux visages"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:301
+msgid "Detect faces (OpenCV module required)"
+msgstr ""
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:356
+msgid "XMP Region Name"
+msgstr ""
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:495
+#, fuzzy
+#| msgid "Set as home person"
+msgid "Set as active person"
+msgstr "Définir l’individu central"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:779
+#, fuzzy, python-brace-format
+#| msgid "Replace"
+msgid "Replace to {0}"
+msgstr "Remplacer"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:880
+#, fuzzy
+#| msgid "Setting attributes..."
+msgid "Detecting faces..."
+msgstr "Définition des attributs..."
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:905
+#, fuzzy
+#| msgid "Direction of time"
+msgid "Detection finished"
+msgstr "Sens du temps"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:955
+#, python-brace-format
+msgid "Another region of this image is associated with {name}. Remove it?"
+msgstr ""
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:958
+#, python-brace-format
+msgid ""
+"{count} other regions of this image are associated with {name}. Remove them?"
+msgstr ""
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:1110
+#, fuzzy, python-format
+msgid "Male person|Dead at %s"
+msgstr "Sélectionner un individu en tant que père"
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:1112
+#, python-format
+msgid "Female person|Dead at %s"
+msgstr ""
+
+#: PhotoTaggingGramplet/PhotoTaggingGramplet.py:1114
+#, python-format
+msgid "Unknown gender person|Dead at %s"
+msgstr ""

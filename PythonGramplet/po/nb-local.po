@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-08 16:37+0100\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2025-02-15 10:09+0000\n"
 "Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
@@ -25,12 +25,15 @@ msgstr ""
 "X-Generator: Weblate 5.10\n"
 "Generated-By: pygettext.py 1.4\n"
 
-#: PythonGramplet/PythonGramplet.gpr.py:8
 #: PythonGramplet/PythonGramplet.gpr.py:4
 #: PythonGramplet/PythonGramplet.gpr.py:11
 msgid "Python Shell"
 msgstr "Pythonskall"
 
-#: PythonGramplet/PythonGramplet.py:48 PythonGramplet/PythonGramplet.py:55
+#: PythonGramplet/PythonGramplet.gpr.py:5
+msgid "Interactive Python interpreter"
+msgstr ""
+
+#: PythonGramplet/PythonGramplet.py:55
 msgid "Enter Python expressions"
 msgstr "Skriv inn Python-uttrykk"

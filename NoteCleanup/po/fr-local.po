@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-17 18:14+0100\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -38,33 +38,48 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: DenominoViso/DenominoViso.py:1996 DenominoViso/DenominoViso.py:2001
-#: NoteCleanup/NoteCleanup.py:126
+#: MediaVerify/MediaVerify.py:110 NoteCleanup/NoteCleanup.py:135
+msgid "Export"
+msgstr "Exporter"
+
+#: MediaVerify/MediaVerify.py:111 NoteCleanup/NoteCleanup.py:136
+msgid "Export the results to a text file"
+msgstr "Exporter les résultats dans un fichier texte"
+
+#: MediaVerify/MediaVerify.py:195 NoteCleanup/NoteCleanup.py:323
+msgid "Export results to a text file"
+msgstr "Exporter les résultats vers un fichier texte"
+
+#: MediaVerify/MediaVerify.py:218 NoteCleanup/NoteCleanup.py:346
+#, python-format
+msgid "Error when writing the report: %s"
+msgstr "Erreur lors de la rédaction du rapport: %s"
+
+#: DenominoViso/DenominoViso.py:2001 NoteCleanup/NoteCleanup.py:126
 msgid "Search"
 msgstr "Rechercher"
 
-#: NoteCleanup/NoteCleanup.gpr.py:30 NoteCleanup/NoteCleanup.py:397
 #: NoteCleanup/NoteCleanup.gpr.py:31 NoteCleanup/NoteCleanup.py:412
 msgid "Note Cleanup"
 msgstr "Nettoyage de note"
 
-#: NoteCleanup/NoteCleanup.gpr.py:31 NoteCleanup/NoteCleanup.gpr.py:32
+#: NoteCleanup/NoteCleanup.gpr.py:32
 msgid "Clean up Notes that contain HTML markup"
 msgstr "Nettoyer les notes qui contiennent des balises HTML"
 
-#: NoteCleanup/NoteCleanup.py:91 NoteCleanup/NoteCleanup.py:92
+#: NoteCleanup/NoteCleanup.py:92
 msgid "Note Cleanup Tool"
 msgstr "Outil de nettoyage de la note"
 
-#: NoteCleanup/NoteCleanup.py:97 NoteCleanup/NoteCleanup.py:98
+#: NoteCleanup/NoteCleanup.py:98
 msgid "Cleaned Notes"
 msgstr "Notes nettoyées"
 
-#: NoteCleanup/NoteCleanup.py:97 NoteCleanup/NoteCleanup.py:98
+#: NoteCleanup/NoteCleanup.py:98
 msgid "Links Only"
 msgstr "Liens Seulement"
 
-#: NoteCleanup/NoteCleanup.py:98 NoteCleanup/NoteCleanup.py:99
+#: NoteCleanup/NoteCleanup.py:99
 msgid "Issues"
 msgstr "Problèmes"
 
@@ -98,15 +113,7 @@ msgstr ""
 "Celles-ci seront ajoutées à votre base de données, de sorte que vous devrez "
 "travailler avec une base de données de test ou les supprimer plus tard."
 
-#: NoteCleanup/NoteCleanup.py:135 MediaVerify/MediaVerify.py:110
-msgid "Export"
-msgstr "Exporter"
-
-#: NoteCleanup/NoteCleanup.py:136 MediaVerify/MediaVerify.py:111
-msgid "Export the results to a text file"
-msgstr "Exporter les résultats dans un fichier texte"
-
-#: NoteCleanup/NoteCleanup.py:173 NoteCleanup/NoteCleanup.py:181
+#: NoteCleanup/NoteCleanup.py:181
 msgid ""
 "Please back up your database before running this tool.\n"
 "\n"
@@ -125,29 +132,19 @@ msgstr ""
 "Vous peut exporter un résumé liste des notes qui ont été trouvés en "
 "utilisant le bouton 'Exporter'."
 
-#: NoteCleanup/NoteCleanup.py:183 NoteCleanup/NoteCleanup.py:190
+#: NoteCleanup/NoteCleanup.py:190
 msgid "Clean up Notes"
 msgstr "Nettoyer les notes"
 
-#: NoteCleanup/NoteCleanup.py:278 NoteCleanup/NoteCleanup.py:288
+#: NoteCleanup/NoteCleanup.py:288
 msgid "Cleanup Test Notes"
 msgstr "Nettoyage des notes test"
 
-#: NoteCleanup/NoteCleanup.py:300 NoteCleanup/NoteCleanup.py:305
 #: NoteCleanup/NoteCleanup.py:310 NoteCleanup/NoteCleanup.py:315
 msgid "Add Test Note"
 msgstr "Ajouter une note de test"
 
-#: NoteCleanup/NoteCleanup.py:314 MediaVerify/MediaVerify.py:195
-msgid "Export results to a text file"
-msgstr "Exporter les résultats vers un fichier texte"
-
-#: NoteCleanup/NoteCleanup.py:338 MediaVerify/MediaVerify.py:218
-#, python-format
-msgid "Error when writing the report: %s"
-msgstr "Erreur lors de la rédaction du rapport: %s"
-
-#: NoteCleanup/NoteCleanup.py:372 NoteCleanup/NoteCleanup.py:383
+#: NoteCleanup/NoteCleanup.py:383
 msgid ""
 "\n"
 "\n"
@@ -158,7 +155,7 @@ msgstr ""
 "Les notes sélectionnées sur le volet de gauche sont représentées avant le "
 "nettoyage dans cette case."
 
-#: NoteCleanup/NoteCleanup.py:375 NoteCleanup/NoteCleanup.py:386
+#: NoteCleanup/NoteCleanup.py:386
 msgid ""
 "\n"
 "\n"
@@ -173,14 +170,14 @@ msgstr ""
 "Si vous souhaitez apporter des modifications, vous pouvez les faire ici et "
 "utiliser les commandes dans la barre d'outils ci-dessus."
 
-#: NoteCleanup/NoteCleanup.py:390 NoteCleanup/NoteCleanup.py:404
+#: NoteCleanup/NoteCleanup.py:404
 msgid "Saving Notes"
 msgstr "Enregistrement des notes"
 
-#: NoteCleanup/NoteCleanup.py:392 NoteCleanup/NoteCleanup.py:407
+#: NoteCleanup/NoteCleanup.py:407
 msgid "Saving Cleaned Notes"
 msgstr "Enregistrement des notes nettoyées"
 
-#: NoteCleanup/NoteCleanup.py:417 NoteCleanup/NoteCleanup.py:435
+#: NoteCleanup/NoteCleanup.py:435
 msgid "Scanning Notes"
 msgstr "Analyse des notes"

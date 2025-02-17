@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-17 18:14+0100\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -38,29 +38,46 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: UKWebConnectPack/UKWebPack.py:31 SVWebconnectPack/SVWebPack.py:34
-#: DEWebConnectPack/DEWebPack.py:35
+#: SVWebconnectPack/SVWebPack.py:34 DEWebConnectPack/DEWebPack.py:39
 msgid "FamilySearch.org"
 msgstr "FamilySearch.org"
 
+#: UKWebConnectPack/UKWebPack.py:39 DEWebConnectPack/DEWebPack.py:44
+msgid "Open Library"
+msgstr ""
+
 # trunk
-#: DEWebConnectPack/DEWebPack.gpr.py:10 DEWebConnectPack/DEWebPack.gpr.py:11
+#: DEWebConnectPack/DEWebPack.gpr.py:11
 msgid "DE Web Connect Pack"
 msgstr "Ensemble de liens internet allemands"
 
-#: DEWebConnectPack/DEWebPack.gpr.py:11 DEWebConnectPack/DEWebPack.gpr.py:12
+#: DEWebConnectPack/DEWebPack.gpr.py:12
 msgid "Collection of Web sites for the DE (requires libwebconnect)"
 msgstr ""
 "Collection de sites internet pour l'Allemagne (nécessite libwebconnect)"
 
-#: DEWebConnectPack/DEWebPack.py:33 DEWebConnectPack/DEWebPack.py:37
+#: DEWebConnectPack/DEWebPack.py:37
 msgid "Bielefeld Academic Search"
 msgstr "Recherche Bielefeld Academic"
 
-#: DEWebConnectPack/DEWebPack.py:38 DEWebConnectPack/DEWebPack.py:42
+#: DEWebConnectPack/DEWebPack.py:42
 msgid "Google Archives"
 msgstr "Archives Google"
 
-#: DEWebConnectPack/DEWebPack.py:39 DEWebConnectPack/DEWebPack.py:43
+#: DEWebConnectPack/DEWebPack.py:43
 msgid "DE Google"
 msgstr "Google DE"
+
+#: DEWebConnectPack/DEWebPack.py:45
+msgid "Surname map (1890-1996)"
+msgstr ""
+
+#: DEWebConnectPack/DEWebPack.py:46
+msgid "GenWiki"
+msgstr ""
+
+#: DEWebConnectPack/DEWebPack.py:47
+#, fuzzy
+#| msgid "Hathi Trust Digital Library"
+msgid "German digital library"
+msgstr "Bibliothèque Hathi Trust Digital"

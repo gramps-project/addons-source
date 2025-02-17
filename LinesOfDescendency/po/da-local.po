@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -30,12 +30,10 @@ msgstr "Fontformat for sidens titel"
 msgid "Ancestor"
 msgstr "Ane"
 
-#: LinesOfDescendency/lines-of-descendency.gpr.py:30
 #: LinesOfDescendency/lines-of-descendency.gpr.py:31
 msgid "Lines of Descendency Report"
 msgstr "Lines of Descendency Report"
 
-#: LinesOfDescendency/lines-of-descendency.gpr.py:31
 #: LinesOfDescendency/lines-of-descendency.gpr.py:33
 msgid ""
 "Prints out all descendency lines from a given ancestor to a given descendent "

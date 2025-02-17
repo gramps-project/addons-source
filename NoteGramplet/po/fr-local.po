@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-17 18:14+0100\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -38,30 +38,26 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: DataEntryGramplet/DataEntryGramplet.py:59
-#: DataEntryGramplet/DataEntryGramplet.py:71 FilterRules/activepersonrule.py:45
-#: NoteGramplet/NoteGramplet.py:65
+#: FilterRules/activepersonrule.py:45 NoteGramplet/NoteGramplet.py:65
 msgid "Active person"
 msgstr "Individu actif"
 
-#: DataEntryGramplet/DataEntryGramplet.py:77
 #: DataEntryGramplet/DataEntryGramplet.py:89 NoteGramplet/NoteGramplet.py:111
 msgid "Save"
 msgstr "Enregistrer"
 
-#: DataEntryGramplet/DataEntryGramplet.py:80
 #: DataEntryGramplet/DataEntryGramplet.py:92 NoteGramplet/NoteGramplet.py:114
 msgid "Abandon"
 msgstr "Abandonner"
 
-#: NoteGramplet/NoteGramplet.gpr.py:3 NoteGramplet/NoteGramplet.gpr.py:4
+#: NoteGramplet/NoteGramplet.gpr.py:4
 msgid "Note Gramplet"
 msgstr "Gramplet Note"
 
-#: NoteGramplet/NoteGramplet.gpr.py:4 NoteGramplet/NoteGramplet.gpr.py:5
+#: NoteGramplet/NoteGramplet.gpr.py:5
 msgid "Gramplet for editing active person's notes"
 msgstr "Gramplet pour l'édition des notes de l'individu actif"
 
-#: NoteGramplet/NoteGramplet.py:248 NoteGramplet/NoteGramplet.py:255
+#: NoteGramplet/NoteGramplet.py:255
 msgid "Save Note"
 msgstr "Enregistrer la note"

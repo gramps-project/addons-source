@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -24,7 +24,6 @@ msgstr ""
 msgid "Today"
 msgstr "I dag"
 
-#: TimelineQuickview/TimelineQuickview.gpr.py:10
 #: TimelineQuickview/TimelineQuickview.gpr.py:11
 msgid "Display a person's events on a timeline"
 msgstr "Vis en persons hændelser på en tidslinje"

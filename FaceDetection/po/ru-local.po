@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-04 16:31+0300\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -31,15 +31,15 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: FaceDetection/FaceDetection.gpr.py:3 FaceDetection/FaceDetection.gpr.py:4
+#: FaceDetection/FaceDetection.gpr.py:4
 msgid "Face Detection"
 msgstr "Определение лиц"
 
-#: FaceDetection/FaceDetection.gpr.py:4 FaceDetection/FaceDetection.gpr.py:5
+#: FaceDetection/FaceDetection.gpr.py:5
 msgid "Gramplet for detecting and assigning faces"
 msgstr "Грамплет для определения и указания лиц"
 
-#: FaceDetection/FaceDetection.gpr.py:12 FaceDetection/FaceDetection.gpr.py:13
+#: FaceDetection/FaceDetection.gpr.py:13
 msgid "Faces"
 msgstr "Лица"
 

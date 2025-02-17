@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2024-10-10 22:54+0300\n"
 "Last-Translator: Illia Maier <illia@maier.page>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
@@ -21,17 +21,25 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: GenealogyTree/gt_ancestor.py:170 GenealogyTree/gt_descendant.py:178
+#: GenealogyTree/gt_ancestor.py:170 GenealogyTree/gt_descendant.py:187
 #: GenealogyTree/gt_grandparent.py:231 GenealogyTree/gt_sandclock.py:250
-#: GenealogyTree/gt_descendant.py:187
 msgid "Include images"
 msgstr "Включити зображення"
 
-#: GenealogyTree/gt_ancestor.py:171 GenealogyTree/gt_descendant.py:179
+#: GenealogyTree/gt_ancestor.py:171 GenealogyTree/gt_descendant.py:188
 #: GenealogyTree/gt_grandparent.py:232 GenealogyTree/gt_sandclock.py:251
-#: GenealogyTree/gt_descendant.py:188
 msgid "Include images of people in the nodes."
 msgstr "Включити зображення людей у вузлах."
+
+#: GenealogyTree/gt_descendant.py:191
+msgid "First spouse left"
+msgstr ""
+
+#: GenealogyTree/gt_descendant.py:192
+msgid ""
+"Always put first of multiple spouses on the left. This can help reduce line-"
+"crossings with multiple marriages."
+msgstr ""
 
 #: GenealogyTree/gt_grandparent.py:119
 #, python-format
@@ -67,34 +75,34 @@ msgstr "Включити братів і сестер"
 msgid "Include siblings of ancestors."
 msgstr "Включити братів і сестер предків."
 
-#: GenealogyTree/treeplugins.gpr.py:30 GenealogyTree/treeplugins.gpr.py:31
+#: GenealogyTree/treeplugins.gpr.py:31
 msgid "Ancestor tree using LaTeX genealogytree"
 msgstr "Дерево предків за допомогою LaTeX genealogytree"
 
-#: GenealogyTree/treeplugins.gpr.py:53 GenealogyTree/treeplugins.gpr.py:56
+#: GenealogyTree/treeplugins.gpr.py:56
 msgid "Descendant tree using LaTeX genealogytree"
 msgstr "Дерево нащадків за допомогою LaTeX genealogytree"
 
-#: GenealogyTree/treeplugins.gpr.py:75 GenealogyTree/treeplugins.gpr.py:80
+#: GenealogyTree/treeplugins.gpr.py:80
 msgid "Grandparent Tree"
 msgstr "Дерево дідусів і бабусь"
 
-#: GenealogyTree/treeplugins.gpr.py:76 GenealogyTree/treeplugins.gpr.py:81
+#: GenealogyTree/treeplugins.gpr.py:81
 msgid "Grandparent tree using LaTeX genealogytree"
 msgstr "Дерево дідусів і бабусь за допомогою LaTeX genealogytree"
 
-#: GenealogyTree/treeplugins.gpr.py:98 GenealogyTree/treeplugins.gpr.py:105
+#: GenealogyTree/treeplugins.gpr.py:105
 msgid "Sandclock Tree"
 msgstr "Пісочний годинник"
 
-#: GenealogyTree/treeplugins.gpr.py:99 GenealogyTree/treeplugins.gpr.py:106
+#: GenealogyTree/treeplugins.gpr.py:106
 msgid "Sandclock tree using LaTeX genealogytree"
 msgstr "Пісочний годинник за допомогою LaTeX genealogytree"
 
-#: GenealogyTree/treeplugins.gpr.py:121 GenealogyTree/treeplugins.gpr.py:130
+#: GenealogyTree/treeplugins.gpr.py:130
 msgid "Sandclock Tree for a Family"
 msgstr "Пісочний годинник для сім'ї"
 
-#: GenealogyTree/treeplugins.gpr.py:122 GenealogyTree/treeplugins.gpr.py:131
+#: GenealogyTree/treeplugins.gpr.py:131
 msgid "Sandclock tree for a family using LaTeX genealogytree"
 msgstr "Пісочний годинник для сім'ї за допомогою LaTeX genealogytree"

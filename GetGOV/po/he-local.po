@@ -2,14 +2,14 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Igal Shapira <igal.shapira@gmail.com>, 2009, 2010, 2011.
-# Avi Markovitz <avi.markovitz@gmail.com>, 2019.
-#
+# Avi Markovitz <avi.markovitz@gmail.com>, 2019, 2025.
+# Yaron Shahrabani <sh.yaron@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-10 07:59+0300\n"
-"PO-Revision-Date: 2025-02-15 16:17+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-17 15:09+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -19,40 +19,37 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
-#: GetGOV/getgov.gpr.py:30 GetGOV/getgov.gpr.py:41 GetGOV/getgov.gpr.py:42
+#: GetGOV/getgov.gpr.py:30 GetGOV/getgov.gpr.py:42 GetGOV/getgov.gpr.py:32
+#: GetGOV/getgov.gpr.py:44
 msgid "GetGOV"
 msgstr "גטגוב"
 
-#: GetGOV/getgov.gpr.py:31
+#: GetGOV/getgov.gpr.py:31 GetGOV/getgov.gpr.py:33
 msgid "Gramplet to get places from the GOV database"
 msgstr "גראמפלט לאחזור מקומות ממסד נתונים GOV"
 
-#: GetGOV/getgov.py:303
-msgid "Enter GOV-id:"
-msgstr "הזנת מזהה GOV:"
-
-#: GetGOV/getgov.py:311
+#: GetGOV/getgov.py:311 GetGOV/getgov.py:323
 msgid "Get Place"
 msgstr "אחזור מקום"
 
-#: GetGOV/getgov.py:343
+#: GetGOV/getgov.py:343 GetGOV/getgov.py:356
 #, python-format
 msgid "Add GOV-id place %s"
 msgstr "הוספת מקום מזהה GOV ‏%s"
 
-#: GetGOV/getgov.py:518 GetGOV/getgov.py:521
+#: GetGOV/getgov.py:521 GetGOV/getgov.py:555
 #, python-format
 msgid "from %s to %s"
 msgstr "מ %s ל %s"
 
-#: GetGOV/getgov.py:520 GetGOV/getgov.py:523
+#: GetGOV/getgov.py:523 GetGOV/getgov.py:557
 #, python-format
 msgid "after %s"
 msgstr "אחרי %s"
 
-#: GetGOV/getgov.py:522 GetGOV/getgov.py:525
+#: GetGOV/getgov.py:525 GetGOV/getgov.py:559
 #, python-format
 msgid "before %s"
 msgstr "לפני %s"

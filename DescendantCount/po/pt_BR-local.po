@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-26 19:54-0300\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2012-08-26 20:57-0300\n"
 "Last-Translator: André Marcelo Alvarenga <andrealvarenga@gmx.net>\n"
 "Language-Team: Brazilian Portuguese>\n"
@@ -24,15 +24,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 1.0\n"
 
-#: DescendantCount/DescendantCount.gpr.py:3
-#: DescendantCount/DescendantCount.gpr.py:24
-#: DescendantCount/DescendantCount.py:91
 #: DescendantCount/DescendantCount.gpr.py:23
 #: DescendantCount/DescendantCount.gpr.py:32
 msgid "Descendant Count"
 msgstr "Contagem de descendentes"
 
-#: DescendantCount/DescendantCount.gpr.py:18
 #: DescendantCount/DescendantCount.gpr.py:24
 msgid "Gramplet for showing people and descendant counts"
 msgstr "Gramplet para mostrar a quantidade de pessoas e descendentes"

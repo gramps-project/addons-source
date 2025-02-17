@@ -9,14 +9,15 @@
 # Pär Ekholm <par.ekholm50@gmail.com>, 2016, 2018.
 # Pär Ekholm <par.ekholm@pekholm.se>, 2018, 2019.
 # Peter Landgren <peter@test>, 2010.
-#
+# Pär Ekholm <github1@m.pekholm.org>, 2025.
+# Milan <mobrcian@hotmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-08 17:11-0500\n"
-"PO-Revision-Date: 2025-02-09 11:16+0000\n"
-"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-16 10:55+0000\n"
+"Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
 "Language: sv\n"
@@ -24,19 +25,27 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.10\n"
 
-#: GenealogyTree/gt_ancestor.py:170 GenealogyTree/gt_descendant.py:178
+#: GenealogyTree/gt_ancestor.py:170 GenealogyTree/gt_descendant.py:187
 #: GenealogyTree/gt_grandparent.py:231 GenealogyTree/gt_sandclock.py:250
-#: GenealogyTree/gt_descendant.py:187
 msgid "Include images"
 msgstr "Ta med bilder"
 
-#: GenealogyTree/gt_ancestor.py:171 GenealogyTree/gt_descendant.py:179
+#: GenealogyTree/gt_ancestor.py:171 GenealogyTree/gt_descendant.py:188
 #: GenealogyTree/gt_grandparent.py:232 GenealogyTree/gt_sandclock.py:251
-#: GenealogyTree/gt_descendant.py:188
 msgid "Include images of people in the nodes."
 msgstr "Ta med bilder på personer i noderna."
+
+#: GenealogyTree/gt_descendant.py:191
+msgid "First spouse left"
+msgstr "Första maken till vänster"
+
+#: GenealogyTree/gt_descendant.py:192
+msgid ""
+"Always put first of multiple spouses on the left. This can help reduce line-"
+"crossings with multiple marriages."
+msgstr ""
 
 #: GenealogyTree/gt_grandparent.py:119
 #, python-format
@@ -71,34 +80,34 @@ msgstr "Ta med syskon"
 msgid "Include siblings of ancestors."
 msgstr "Ta med syskon för anor."
 
-#: GenealogyTree/treeplugins.gpr.py:30 GenealogyTree/treeplugins.gpr.py:31
+#: GenealogyTree/treeplugins.gpr.py:31
 msgid "Ancestor tree using LaTeX genealogytree"
 msgstr "Antavla som använder LaTex genealogiträd"
 
-#: GenealogyTree/treeplugins.gpr.py:52 GenealogyTree/treeplugins.gpr.py:56
+#: GenealogyTree/treeplugins.gpr.py:56
 msgid "Descendant tree using LaTeX genealogytree"
 msgstr "Stamtavla som använder LaTex genealogiträd"
 
-#: GenealogyTree/treeplugins.gpr.py:73 GenealogyTree/treeplugins.gpr.py:80
+#: GenealogyTree/treeplugins.gpr.py:80
 msgid "Grandparent Tree"
 msgstr "Träd för far- eller morförälder"
 
-#: GenealogyTree/treeplugins.gpr.py:74 GenealogyTree/treeplugins.gpr.py:81
+#: GenealogyTree/treeplugins.gpr.py:81
 msgid "Grandparent tree using LaTeX genealogytree"
 msgstr "Träd för far- eller morförälder som använder LaTex genealogiträd"
 
-#: GenealogyTree/treeplugins.gpr.py:95 GenealogyTree/treeplugins.gpr.py:105
+#: GenealogyTree/treeplugins.gpr.py:105
 msgid "Sandclock Tree"
 msgstr "Timglasträd"
 
-#: GenealogyTree/treeplugins.gpr.py:96 GenealogyTree/treeplugins.gpr.py:106
+#: GenealogyTree/treeplugins.gpr.py:106
 msgid "Sandclock tree using LaTeX genealogytree"
 msgstr "Timglasträd som använder LaTex genealogiträd"
 
-#: GenealogyTree/treeplugins.gpr.py:117 GenealogyTree/treeplugins.gpr.py:130
+#: GenealogyTree/treeplugins.gpr.py:130
 msgid "Sandclock Tree for a Family"
 msgstr "Timglasträd för en familj"
 
-#: GenealogyTree/treeplugins.gpr.py:118 GenealogyTree/treeplugins.gpr.py:131
+#: GenealogyTree/treeplugins.gpr.py:131
 msgid "Sandclock tree for a family using LaTeX genealogytree"
 msgstr "Timglasträd för en familj som använder LaTex genealogiträd"

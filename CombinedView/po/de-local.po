@@ -8,7 +8,7 @@
 # Sebastian Vöcking <voeck@web.de>, 2005.
 # Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
 # Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2025.
 # Alois Pöttker <alois.poettker@gmx.de>, 2017.
 # Allan Nordhøy <epost@anotheragency.no>, 2021.
 # R. B. <weblate@macdefender.org>, 2021.
@@ -21,8 +21,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-02 22:39+0200\n"
-"PO-Revision-Date: 2025-02-15 16:17+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-17 00:14+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -33,68 +33,43 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.10\n"
 
-#: CombinedView/combinedview.gpr.py:23 CombinedView/combinedview.py:125
-#: CombinedView/combinedview.gpr.py:24 CombinedView/combinedview.py:87
-msgid "Combined"
-msgstr "Kombiniert"
-
-#: CombinedView/combinedview.gpr.py:24 CombinedView/combinedview.gpr.py:25
-msgid "A view showing relationships and events for a person"
-msgstr "Eine Ansicht, die Beziehungen und Ereignisse für eine Person zeigt"
-
-#: CombinedView/combinedview.py:910 CombinedView/basepage.py:493
+#: CombinedView/basepage.py:493
 #, python-format
 msgid "%(abbrev)s %(date)s in %(place)s"
 msgstr "%(abbrev)s %(date)s in %(place)s"
 
-#: CombinedView/combinedview.py:912 CombinedView/basepage.py:495
+#: CombinedView/basepage.py:495
 #, python-format
 msgid "%(abbrev)s %(date)s%(place)s"
 msgstr "%(abbrev)s %(date)s%(place)s"
 
-#: CombinedView/combinedview.py:1056 CombinedView/personpage.py:597
-#, python-format
-msgid "%(event_type)s: %(date)s in %(place)s"
-msgstr "%(event_type)s: %(date)s in %(place)s"
+#: CombinedView/combinedview.gpr.py:24 CombinedView/combinedview.py:87
+msgid "Combined"
+msgstr "Kombiniert"
 
-#: CombinedView/combinedview.py:1060 CombinedView/personpage.py:601
-#, python-format
-msgid "%(event_type)s: %(date)s"
-msgstr "%(event_type)s: %(date)s"
+#: CombinedView/combinedview.gpr.py:25
+msgid "A view showing relationships and events for a person"
+msgstr "Eine Ansicht, die Beziehungen und Ereignisse für eine Person zeigt"
 
-#: CombinedView/combinedview.py:1063 CombinedView/personpage.py:604
-#, python-format
-msgid "%(event_type)s: %(place)s"
-msgstr "%(event_type)s: %(place)s"
+#: CombinedView/combinedview.py:528
+#, fuzzy
+#| msgid "Add death event"
+msgid "Edit the active event"
+msgstr "Todesereignis hinzufügen"
 
-#: CombinedView/combinedview.py:1151 CombinedView/combinedview.py:1267
-#: CombinedView/personpage.py:684 CombinedView/personpage.py:897
-msgid "Click to make this event active"
-msgstr "Klicke, um dieses Ereignis zu aktivieren"
+#: CombinedView/combinedview.py:630
+msgid "Show Tags"
+msgstr "Markierungen zeigen"
 
-#: CombinedView/combinedview.py:1346 CombinedView/personpage.py:743
-msgid "Click to visit this link"
-msgstr "Klicke, um diesen Link zu besuchen"
+#: CombinedView/combinedview.py:656
+msgid "Vertical Details"
+msgstr "Vertikale Details"
 
-#: CombinedView/combinedview.py:1443 CombinedView/combinedview.py:1450
-#: CombinedView/personpage.py:965 CombinedView/personpage.py:972
-msgid ": "
-msgstr ": "
-
-#: CombinedView/combinedview.py:1507 CombinedView/combinedview.py:1572
 #: CombinedView/eventpage.py:202 CombinedView/eventpage.py:267
 msgid "Order"
 msgstr "Reihenfolge"
 
-#: CombinedView/combinedview.py:2212 CombinedView/combinedview.py:656
-msgid "Vertical Details"
-msgstr "Vertikale Details"
-
-#: CombinedView/combinedview.py:2218 CombinedView/combinedview.py:630
-msgid "Show Tags"
-msgstr "Markierungen zeigen"
-
-#: CombinedView/navigationview.py:341 CombinedView/navigationview.py:346
+#: CombinedView/navigationview.py:346
 msgid ""
 "You need to set a 'default person' to go to. Select the People View, select "
 "the person you want as 'Home Person', then confirm your choice via the menu "
@@ -103,3 +78,30 @@ msgstr ""
 "Du musst eine 'Hauptperson' setzen, um dorthin zu springen. Gehe zur "
 "Personenansicht, wähle die Person, die du als 'Hauptperson' setzen willst "
 "und bestätige deine Wahl über Menü Bearbeiten -> Hauptperson setzen."
+
+#: CombinedView/personpage.py:597
+#, python-format
+msgid "%(event_type)s: %(date)s in %(place)s"
+msgstr "%(event_type)s: %(date)s in %(place)s"
+
+#: CombinedView/personpage.py:601
+#, python-format
+msgid "%(event_type)s: %(date)s"
+msgstr "%(event_type)s: %(date)s"
+
+#: CombinedView/personpage.py:604
+#, python-format
+msgid "%(event_type)s: %(place)s"
+msgstr "%(event_type)s: %(place)s"
+
+#: CombinedView/personpage.py:684 CombinedView/personpage.py:897
+msgid "Click to make this event active"
+msgstr "Klicke, um dieses Ereignis zu aktivieren"
+
+#: CombinedView/personpage.py:743
+msgid "Click to visit this link"
+msgstr "Klicke, um diesen Link zu besuchen"
+
+#: CombinedView/personpage.py:965 CombinedView/personpage.py:972
+msgid ": "
+msgstr ": "

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -20,15 +20,15 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
 
-#: FaceDetection/FaceDetection.gpr.py:3 FaceDetection/FaceDetection.gpr.py:4
+#: FaceDetection/FaceDetection.gpr.py:4
 msgid "Face Detection"
 msgstr "Ansigtsgenkendelse"
 
-#: FaceDetection/FaceDetection.gpr.py:4 FaceDetection/FaceDetection.gpr.py:5
+#: FaceDetection/FaceDetection.gpr.py:5
 msgid "Gramplet for detecting and assigning faces"
 msgstr "Gramplet til at genkende og tildele ansigter"
 
-#: FaceDetection/FaceDetection.gpr.py:12 FaceDetection/FaceDetection.gpr.py:13
+#: FaceDetection/FaceDetection.gpr.py:13
 msgid "Faces"
 msgstr "Ansigter"
 

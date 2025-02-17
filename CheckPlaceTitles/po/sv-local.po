@@ -9,14 +9,15 @@
 # Pär Ekholm <par.ekholm50@gmail.com>, 2016, 2018.
 # Pär Ekholm <par.ekholm@pekholm.se>, 2018, 2019.
 # Peter Landgren <peter@test>, 2010.
-#
+# Pär Ekholm <github1@m.pekholm.org>, 2025.
+# Milan <mobrcian@hotmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-08 17:11-0500\n"
-"PO-Revision-Date: 2025-02-09 11:16+0000\n"
-"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-16 10:55+0000\n"
+"Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
 "Language: sv\n"
@@ -24,22 +25,20 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.10\n"
 
 #: ExtractCity/extractcity.py:454 CheckPlaceTitles/checkplacetitles.py:86
 msgid "Checking Place Titles"
 msgstr "Kontrollerar platstitlar"
 
-#: ExtractCity/extractcity.py:456 CheckPlaceTitles/checkplacetitles.py:87
+#: ExtractCity/extractcity.py:456 CheckPlaceTitles/checkplacetitles.py:88
 msgid "Looking for place fields"
 msgstr "Söker efter platsfält"
 
-#: CheckPlaceTitles/checkplacetitles.gpr.py:28
 #: CheckPlaceTitles/checkplacetitles.gpr.py:29
 msgid "Check Place Titles"
 msgstr "Markera platstitlar"
 
-#: CheckPlaceTitles/checkplacetitles.gpr.py:29
 #: CheckPlaceTitles/checkplacetitles.gpr.py:30
 msgid "Check place titles"
 msgstr "Markera platstitlar"
@@ -48,52 +47,42 @@ msgstr "Markera platstitlar"
 msgid "Check Place title"
 msgstr "Markera platstitel"
 
-#: ImportMerge/importmerge.glade:264 CheckPlaceTitles/checkplacetitles.py:107
-#: CheckPlaceTitles/checkplacetitles.py:103
+#: CheckPlaceTitles/checkplacetitles.py:107
 msgid "Differences"
 msgstr "Skillnader"
 
-#: CheckPlaceTitles/checkplacetitles.py:109
 #: CheckPlaceTitles/checkplacetitles.py:112
 msgid "No need modifications"
 msgstr "Inga ändringar behövs"
 
-#: CheckPlaceTitles/checkplacetitles.py:110
 #: CheckPlaceTitles/checkplacetitles.py:113
 msgid "No changes need."
 msgstr "Inga ändringar behövs."
 
-#: CheckPlaceTitles/checkplacetitles.py:185
 #: CheckPlaceTitles/checkplacetitles.py:187
 msgid "Legacy place"
 msgstr "Äldre plats"
 
-#: CheckPlaceTitles/checkplacetitles.py:199
 #: CheckPlaceTitles/checkplacetitles.py:201
 msgid "Modify Place titles"
 msgstr "Ändra platstitlar"
 
-#: CheckPlaceTitles/checkplacetitles.py:222
 #: CheckPlaceTitles/checkplacetitles.py:224
 msgid "Place titles"
 msgstr "Platstitlar"
 
-#: CheckPlaceTitles/checkplacetitles.glade.h:1
 #: CheckPlaceTitles/checkplacetitles.glade:56
 msgid "Remove content of place title field if it does not match"
 msgstr "Ta bort innehållet i platsrubrikfältet om det inte stämmer"
 
-#: CheckPlaceTitles/checkplacetitles.glade.h:2
 #: CheckPlaceTitles/checkplacetitles.glade:74
 msgid "Copy content of place title field to a new note."
 msgstr "Kopiera innehållet i platsrubrikfältet till en ny anteckning."
 
-#: CheckPlaceTitles/checkplacetitles.glade.h:4
 #: CheckPlaceTitles/checkplacetitles.glade:91
 msgid "Attach a tag on selected places."
 msgstr "Fäst en tagg på utvalda platser."
 
-#: CheckPlaceTitles/checkplacetitles.glade.h:6
 #: CheckPlaceTitles/checkplacetitles.glade:177
 msgid "column"
 msgstr "kolumn"

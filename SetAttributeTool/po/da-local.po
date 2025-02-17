@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -20,13 +20,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:75
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:83
 #: SetAttributeTool/SetAttributeTool.py:71
 msgid "Select filter to restrict people"
 msgstr "Vælg filter til personafgrænsning"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:229
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:237
 #: SetAttributeTool/SetAttributeTool.py:151
 #: SetAttributeTool/SetAttributeTool.py:193
@@ -38,14 +36,12 @@ msgstr "Behandler ...\n"
 msgid "Done!\n"
 msgstr "Færdig!\n"
 
-#: SetAttributeTool/SetAttributeTool.gpr.py:25
+#: SetAttributeTool/SetAttributeTool.gpr.py:26
 #: SetAttributeTool/SetAttributeTool.py:122
 #: SetAttributeTool/SetAttributeTool.py:150
-#: SetAttributeTool/SetAttributeTool.gpr.py:26
 msgid "Set Attribute"
 msgstr "Sæt attribut"
 
-#: SetAttributeTool/SetAttributeTool.gpr.py:26
 #: SetAttributeTool/SetAttributeTool.gpr.py:27
 msgid "Set an attribute to a given value."
 msgstr "Sæt en attribut til en specifik værdi."

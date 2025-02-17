@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-17 18:14+0100\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -38,37 +38,37 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: PedigreeChart/PedigreeChart.gpr.py:24 PedigreeChart/PedigreeChart.gpr.py:25
+#: PedigreeChart/PedigreeChart.gpr.py:25
 msgid "Pedigree Chart"
 msgstr "Arbre graphique"
 
-#: PedigreeChart/PedigreeChart.gpr.py:25 PedigreeChart/PedigreeChart.gpr.py:26
+#: PedigreeChart/PedigreeChart.gpr.py:26
 msgid "Alternate version of the traditional pedigree chart."
 msgstr "Version alternative de l'arbre graphique traditionnel."
 
 # de ou pour ?
-#: PedigreeChart/PedigreeChart.py:385 PedigreeChart/PedigreeChart.py:379
+#: PedigreeChart/PedigreeChart.py:379
 #, python-format
 msgid "Pedigree Chart for %s"
 msgstr "Arbre graphique de %s"
 
-#: PedigreeChart/PedigreeChart.py:534 PedigreeChart/PedigreeChart.py:528
+#: PedigreeChart/PedigreeChart.py:528
 #, python-format
 msgid "Page %d"
 msgstr "Page %d"
 
-#: PedigreeChart/PedigreeChart.py:651 PedigreeChart/PedigreeChart.py:640
+#: PedigreeChart/PedigreeChart.py:640
 msgid "Show Mother/Father captions"
 msgstr "Afficher les en-têtes Mère/Père "
 
-#: PedigreeChart/PedigreeChart.py:652 PedigreeChart/PedigreeChart.py:641
+#: PedigreeChart/PedigreeChart.py:641
 msgid "Show the title of mother or father beside each ancestor's box."
 msgstr "Afficher la mère et le père à côté de l'aire de l'ascendant."
 
-#: PedigreeChart/PedigreeChart.py:673 PedigreeChart/PedigreeChart.py:662
+#: PedigreeChart/PedigreeChart.py:662
 msgid "The basic style used for the title display."
 msgstr "Le style de base pour afficher le titre."
 
-#: PedigreeChart/PedigreeChart.py:682 PedigreeChart/PedigreeChart.py:671
+#: PedigreeChart/PedigreeChart.py:671
 msgid "Style used for labels and captions"
 msgstr "Le style utilisé pour les étiquettes et en-têtes"

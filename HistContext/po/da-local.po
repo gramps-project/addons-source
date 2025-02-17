@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -20,69 +20,71 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
 
-#: HistContext.gpr.py:4 HistContext.gpr.py:14 HistContext/HistContext.gpr.py:4
-#: HistContext/HistContext.gpr.py:14
+#: HistContext/HistContext.gpr.py:4 HistContext/HistContext.gpr.py:14
 msgid "Historical Context"
 msgstr "Historisk Sammhæng"
 
-#: HistContext.gpr.py:5 HistContext/HistContext.gpr.py:5
+#: HistContext/HistContext.gpr.py:5
 msgid "Lists relevant historical events during the lifetime of a Person"
 msgstr "Viser relevante historiske hændelser igennem en persons levetid"
 
-#: HistContext.py:123 HistContext/HistContext.py:123
+#: HistContext/HistContext.py:123
 msgid "Rows starting with this in the text column will be hidden "
 msgstr "Rækker der begynder med dette i tekstkolonnen vil blive skjult "
 
-#: HistContext.py:126 HistContext/HistContext.py:126
+#: HistContext/HistContext.py:126
 msgid "Use filter "
 msgstr "Benyt filter "
 
-#: HistContext.py:129 HistContext/HistContext.py:129
+#: HistContext/HistContext.py:129
 msgid "Show outside life span "
 msgstr "Vis udenfor livsforløb "
 
-#: HistContext.py:132 HistContext/HistContext.py:132
+#: HistContext/HistContext.py:132
 msgid "Use full dates"
 msgstr "Benyt hele datoer"
 
-#: HistContext.py:135 HistContext/HistContext.py:135
+#: HistContext/HistContext.py:135
 msgid "Foreground color items in lifespan"
 msgstr "Forgrundsfarve indefor livsforløb"
 
-#: HistContext.py:138 HistContext/HistContext.py:138
+#: HistContext/HistContext.py:138
 msgid "Background color items in lifespan"
 msgstr "Baggrundsfarve indefor livsforløb"
 
-#: HistContext.py:141 HistContext/HistContext.py:141
+#: HistContext/HistContext.py:141
 msgid "Foreground color items outside lifespan"
 msgstr "Forgrundsfarve  udenfor livsforløb"
 
-#: HistContext.py:144 HistContext/HistContext.py:144
+#: HistContext/HistContext.py:144
 msgid "Background color items outside lifespan"
 msgstr "Baggrundsfarve udenfor livsforløb"
 
-#: HistContext.py:149 HistContext/HistContext.py:149
+#: HistContext/HistContext.py:149
 msgid "Select from files"
 msgstr "Vælg fra filer"
 
-#: HistContext.py:287 HistContext/HistContext.py:287
+#: HistContext/HistContext.py:287
 msgid "Invalid date "
 msgstr "Ugyldig dato "
 
-#: HistContext.py:288 HistContext/HistContext.py:288
+#: HistContext/HistContext.py:288
 msgid " in line: "
 msgstr " i linje: "
 
-#: HistContext.py:289 HistContext.py:333 HistContext.py:420
 #: HistContext/HistContext.py:289 HistContext/HistContext.py:333
 #: HistContext/HistContext.py:420
 msgid "Error:"
 msgstr "Fejl:"
 
-#: HistContext.py:419 HistContext/HistContext.py:419
+#: HistContext/HistContext.py:327
+msgid ": line does not contain four sections separated by semicolons in : \""
+msgstr ""
+
+#: HistContext/HistContext.py:419
 msgid "Cannot open URL: "
 msgstr "Kan ikke åbne URL: "
 
-#: HistContext.py:427 HistContext/HistContext.py:427
+#: HistContext/HistContext.py:427
 msgid "Double click row to follow link"
 msgstr "Dobbeltklik for at følge linket"

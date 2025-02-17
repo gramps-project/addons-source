@@ -10,10 +10,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-08 16:37+0100\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2009-10-05 21:15+0100\n"
 "Last-Translator: Łukasz Rymarczyk <yenidai@poczta.onet.pl>\n"
 "Language-Team: Łukasz Rymarczyk <yenidai@poczta.onet.pl>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -24,12 +25,17 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2);\n"
 "X-Poedit-SearchPath-0: ~/.poedit/a\n"
 
-#: PythonGramplet/PythonGramplet.gpr.py:8
 #: PythonGramplet/PythonGramplet.gpr.py:4
 #: PythonGramplet/PythonGramplet.gpr.py:11
 msgid "Python Shell"
 msgstr "Konsola Pythona"
 
-#: PythonGramplet/PythonGramplet.py:48 PythonGramplet/PythonGramplet.py:55
+#: PythonGramplet/PythonGramplet.gpr.py:5
+#, fuzzy
+#| msgid "Interactive Family Tree"
+msgid "Interactive Python interpreter"
+msgstr "Interaktywne drzewo genealogiczne"
+
+#: PythonGramplet/PythonGramplet.py:55
 msgid "Enter Python expressions"
 msgstr "Wprowadź wyrażenie Pythona"

@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-02 02:13+0300\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2019-12-10 13:09+0200\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: niememat@gmail.com\n"
@@ -33,69 +33,208 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.0.6\n"
 
-#: FilterRules/hasrolerule.gpr.py:26 FilterRules/hasrolerule.gpr.py:27
+#: FilterRules/activepersonrule.gpr.py:27
+#: FilterRules/activepersonrule.gpr.py:28
+#, fuzzy
+#| msgid "Change active person?"
+msgid "The active Person"
+msgstr "Vaihdetaanko aktiivihenkilö?"
+
+#: FilterRules/activepersonrule.py:45
+#, fuzzy
+#| msgid "Add active person"
+msgid "Active person"
+msgstr "Lisää aktiivihenkilö"
+
+#: FilterRules/activepersonrule.py:47
+#, fuzzy
+#| msgid "Go to active person"
+msgid "Matches the active person"
+msgstr "Siirry aktiivihenkilöön"
+
+#: FilterRules/ageatdeath.gpr.py:25 FilterRules/ageatdeath.py:72
+#: FilterRules/ageatdeath.py:74
+msgid "Filter people by their age at death"
+msgstr ""
+
+#: FilterRules/ageatdeath.gpr.py:26
+msgid "Filter rule that matches people by their age at death"
+msgstr ""
+
+#: FilterRules/ageatdeath.py:47
+msgid "Age in years at person's death."
+msgstr ""
+
+#: FilterRules/ageatdeath.py:71
+msgid "Age:"
+msgstr ""
+
+#: FilterRules/associationsofpersonmatch.gpr.py:25
+#: FilterRules/associationsofpersonmatch.gpr.py:26
+#: FilterRules/associationsofpersonmatch.py:46
+#: FilterRules/associationsofpersonmatch.py:47
+msgid "Match associations of <person filter>"
+msgstr ""
+
+#: FilterRules/degreesofseparation.gpr.py:25
+#: FilterRules/degreesofseparation.py:60
+msgid "People separated less than <N> degrees of <person>"
+msgstr ""
+
+#: FilterRules/degreesofseparation.gpr.py:26
+#: FilterRules/degreesofseparation.py:62
+msgid "Filter rule that matches relatives by degrees of separation"
+msgstr ""
+
+#: FilterRules/degreesofseparation.py:47
+msgid "Number of degrees of separation from person."
+msgstr ""
+
+#: FilterRules/degreesofseparation.py:59
+msgid "Degrees:"
+msgstr ""
+
+#: FilterRules/familieswitheventfiltermatch.gpr.py:25
+#: FilterRules/familieswitheventfiltermatch.py:45
+#, fuzzy
+#| msgid "Families with events with the <role>"
+msgid "Families matching <event filter>"
+msgstr "Perheet, joiden tapahtumissa on <rooli>"
+
+#: FilterRules/familieswitheventfiltermatch.gpr.py:26
+#, fuzzy
+#| msgid "Matches families with an event with a selected role"
+msgid "Matches families that are matched by an event filter"
+msgstr "Poimii perheet, joiden tapahtumissa on valittu rooli"
+
+#: FilterRules/familieswitheventfiltermatch.py:47
+#, fuzzy
+#| msgid "Matches families with an event with a selected role"
+msgid "Matches families matched by an event filter"
+msgstr "Poimii perheet, joiden tapahtumissa on valittu rooli"
+
+#: FilterRules/hasrolerule.gpr.py:27
 msgid "People with events with a selected role"
 msgstr "Henkilöt, joiden tapahtumissa on valittu rooli"
 
-#: FilterRules/hasrolerule.gpr.py:27 FilterRules/hasrolerule.py:65
 #: FilterRules/hasrolerule.gpr.py:28 FilterRules/hasrolerule.py:69
 msgid "Matches people with an event with a selected role"
 msgstr "Poimii henkilöt, joiden tapahtumissa on valittu rooli"
 
-#: FilterRules/hasrolerule.gpr.py:40 FilterRules/hasrolerule.gpr.py:43
+#: FilterRules/hasrolerule.gpr.py:43
 msgid "Families with events with a selected role"
 msgstr "Perheet, joiden tapahtumissa on valittu rooli"
 
-#: FilterRules/hasrolerule.gpr.py:41 FilterRules/hasrolerule.py:89
 #: FilterRules/hasrolerule.gpr.py:44 FilterRules/hasrolerule.py:93
 msgid "Matches families with an event with a selected role"
 msgstr "Poimii perheet, joiden tapahtumissa on valittu rooli"
 
-#: FilterRules/hasrolerule.py:51 FilterRules/hasrolerule.py:55
+#: FilterRules/hasrolerule.py:55
 msgid "Does NOT match with selected Role"
 msgstr "EI vastaa valittua roolia"
 
-#: FilterRules/hasrolerule.py:52 FilterRules/hasrolerule.py:56
+#: FilterRules/hasrolerule.py:56
 msgid "Finds the items that don't have event Roles of the selected type."
 msgstr "Poimii tapahtumat, joilla ei ole valittua roolia."
 
-#: FilterRules/hasrolerule.py:63 FilterRules/hasrolerule.py:87
 #: FilterRules/hasrolerule.py:67 FilterRules/hasrolerule.py:91
 msgid "Inverse"
 msgstr "Käänteinen"
 
-#: FilterRules/hasrolerule.py:64 FilterRules/hasrolerule.py:68
+#: FilterRules/hasrolerule.py:68
 msgid "People with events with the <role>"
 msgstr "Henkilöt, joiden tapahtumissa on <rooli>"
 
-#: FilterRules/hasrolerule.py:88 FilterRules/hasrolerule.py:92
+#: FilterRules/hasrolerule.py:92
 msgid "Families with events with the <role>"
 msgstr "Perheet, joiden tapahtumissa on <rooli>"
 
-#: FilterRules/hassourcefilter.gpr.py:27 FilterRules/hassourcefilter.gpr.py:28
+#: FilterRules/hassourcefilter.gpr.py:28
 msgid "Source matching parameters"
 msgstr "Lähteet valitulla arvolla"
 
-#: FilterRules/hassourcefilter.gpr.py:28 FilterRules/hassourcefilter.gpr.py:29
+#: FilterRules/hassourcefilter.gpr.py:29
 msgid "Matches Sources with values containing the chosen parameters"
 msgstr "Poimii lähteet, jotka sisältävät valitun arvon"
 
-#: FilterRules/hassourcefilter.py:54 FilterRules/hassourcefilter.py:58
+#: FilterRules/hassourcefilter.py:58
 msgid "Matches sources with a particular value"
 msgstr "Poimii lähteet, jotka sisältävät valitun arvon"
 
-#: FilterRules/isrelatedwithfiltermatch.gpr.py:26
-#: FilterRules/isrelatedwithfiltermatch.py:49
+#: FilterRules/infamilyrule.gpr.py:26 FilterRules/infamilyrule.gpr.py:27
+#: FilterRules/infamilyrule.py:125 FilterRules/infamilyrule.py:126
+#, fuzzy
+#| msgid "People related to <filter>"
+msgid "People who are part of families matching <filter>"
+msgstr "Henkilöt, jotka liittyvät <suotimeen>"
+
+#: FilterRules/infamilyrule.py:48 FilterRules/infamilyrule.py:123
+#, fuzzy
+#| msgid "Include media"
+msgid "Include Children"
+msgstr "Lisää media"
+
+#: FilterRules/infamilyrule.py:49
+#, fuzzy
+#| msgid "Include dates columns on the index pages"
+msgid "Include the children in the matching families."
+msgstr "Lisää päivämääräsarakkeet hakemistosivulle"
+
+#: FilterRules/infamilyrule.py:75 FilterRules/infamilyrule.py:124
+#, fuzzy
+#| msgid "Inlaw Parents"
+msgid "Include Parents"
+msgstr "Appivanhemmat"
+
+#: FilterRules/infamilyrule.py:76
+#, fuzzy
+#| msgid "Include dates columns on the index pages"
+msgid "Include the parents in the matching families."
+msgstr "Lisää päivämääräsarakkeet hakemistosivulle"
+
+#: FilterRules/infamilyrule.py:122 FilterRules/isfamilyfiltermatchevent.py:62
+#, fuzzy
+#| msgid "Family Nick Name"
+msgid "Family Filter name:"
+msgstr "Perheen lempinimi"
+
+#: FilterRules/isfamilyfiltermatchevent.gpr.py:25
+#: FilterRules/isfamilyfiltermatchevent.gpr.py:26
+#: FilterRules/isfamilyfiltermatchevent.py:63
+#: FilterRules/isfamilyfiltermatchevent.py:64
+msgid "Events of families matching a <family filter>"
+msgstr ""
+
 #: FilterRules/isrelatedwithfiltermatch.gpr.py:27
 #: FilterRules/isrelatedwithfiltermatch.py:53
 msgid "People related to <filter>"
 msgstr "Henkilöt, jotka liittyvät <suotimeen>"
 
-#: FilterRules/isrelatedwithfiltermatch.gpr.py:27
-#: FilterRules/isrelatedwithfiltermatch.py:51
 #: FilterRules/isrelatedwithfiltermatch.gpr.py:29
 #: FilterRules/isrelatedwithfiltermatch.py:55
 msgid "Matches people who are related to anybody matched by a person filter"
 msgstr ""
 "Poimii henkilöt, jotka ovat liitetty johonkin henkilösuotimen poimimista "
 "henkilöistä"
+
+#: FilterRules/multipleparents.gpr.py:27 FilterRules/multipleparents.gpr.py:28
+msgid "Multiple Parents Filter"
+msgstr ""
+
+#: FilterRules/multipleparents.py:42
+msgid "People with multiple parent records"
+msgstr ""
+
+#: FilterRules/multipleparents.py:43
+#, fuzzy
+#| msgid "Matches people with an event with a selected role"
+msgid "Matches people who have more than one set of parents"
+msgstr "Poimii henkilöt, joiden tapahtumissa on valittu rooli"
+
+#: FilterRules/peopleeventscount.gpr.py:25 FilterRules/peopleeventscount.py:50
+msgid "People with <count> of <event>"
+msgstr ""
+
+#: FilterRules/peopleeventscount.gpr.py:26 FilterRules/peopleeventscount.py:52
+msgid "Matches persons which have events of given type and number."
+msgstr ""

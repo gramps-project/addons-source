@@ -9,14 +9,15 @@
 # Pär Ekholm <par.ekholm50@gmail.com>, 2016, 2018.
 # Pär Ekholm <par.ekholm@pekholm.se>, 2018, 2019.
 # Peter Landgren <peter@test>, 2010.
-#
+# Pär Ekholm <github1@m.pekholm.org>, 2025.
+# Milan <mobrcian@hotmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-08 17:11-0500\n"
-"PO-Revision-Date: 2025-02-09 22:37+0000\n"
-"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-16 10:55+0000\n"
+"Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
 "Language: sv\n"
@@ -24,14 +25,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.10\n"
 
-#: FamilyTree/FamilyTree.py:979 FamilyTree/FamilyTree.py:1047
+#: Form/form_us.xml.h:2085 Form/form_us.xml.h:2122 Form/form_us.xml.h:2160
+#: Form/form_us.xml.h:2198 TimelinePedigreeView/TimelinePedigreeView.gpr.py:34
+msgid "Ancestry"
+msgstr "Anor"
+
+#: FamilyTree/FamilyTree.py:1047
 #: TimelinePedigreeView/TimelinePedigreeView.py:1481
 msgid "Ancestor Generations"
 msgstr "Färfädersgenertioner"
 
-#: FamilyTree/FamilyTree.py:983 FamilyTree/FamilyTree.py:1051
+#: FamilyTree/FamilyTree.py:1051
 #: TimelinePedigreeView/TimelinePedigreeView.py:1465
 msgid "Descendant Generations"
 msgstr "Ättlingagenerationer"
@@ -41,60 +47,48 @@ msgstr "Ättlingagenerationer"
 msgid "Timeline Pedigree"
 msgstr "Antavla med tidslinje"
 
-#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:34 Form/form_us.xml.h:2085
-#: Form/form_us.xml.h:2122 Form/form_us.xml.h:2160 Form/form_us.xml.h:2198
-msgid "Ancestry"
-msgstr "Anor"
-
-#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:35
 #: TimelinePedigreeView/TimelinePedigreeView.gpr.py:36
 msgid ""
 "The view shows a timeline pedigree with ancestors and descendants of the "
 "selected person"
 msgstr "Vyn visar en tidslinje med anor och ättlingar för den valda personen"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:78
 #: TimelinePedigreeView/TimelinePedigreeView.py:82
 msgid "short for born|b."
 msgstr "f."
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:79
 #: TimelinePedigreeView/TimelinePedigreeView.py:83
 msgid "short for died|d."
 msgstr "d."
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:80
 #: TimelinePedigreeView/TimelinePedigreeView.py:84
 msgid "short for baptized|bap."
 msgstr "döpt."
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:82
+#: TimelinePedigreeView/TimelinePedigreeView.py:85
+msgid "short for christened|chr."
+msgstr "döpt."
+
 #: TimelinePedigreeView/TimelinePedigreeView.py:86
 msgid "short for buried|bur."
 msgstr "begr."
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:83
 #: TimelinePedigreeView/TimelinePedigreeView.py:87
 msgid "short for cremated|crem."
 msgstr "krem."
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:484
 #: TimelinePedigreeView/TimelinePedigreeView.py:339
 msgid "Timeline pedigree"
 msgstr "Tidslinjeantavla"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1548
 #: TimelinePedigreeView/TimelinePedigreeView.py:1437
 msgid "Order by timeline"
 msgstr "Tidslinjeordning"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1550
 #: TimelinePedigreeView/TimelinePedigreeView.py:1439
 msgid "Show lifespan"
 msgstr "Visa levnadsomfång"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1588
-#: TimelinePedigreeView/TimelinePedigreeView.py:1607
 #: TimelinePedigreeView/TimelinePedigreeView.py:1470
 #: TimelinePedigreeView/TimelinePedigreeView.py:1486
 #, python-format
@@ -103,7 +97,8 @@ msgid_plural "%d generations"
 msgstr[0] "%d generation"
 msgstr[1] "%d generationer"
 
-#: HtreePedigreeView/HtreePedigreeView.py:96
-#: TimelinePedigreeView/TimelinePedigreeView.py:85
-msgid "short for christened|chr."
-msgstr "döpt."
+#: TimelinePedigreeView/TimelinePedigreeView.py:1505
+#, fuzzy
+#| msgid "Timeline Pedigree"
+msgid "About Timeline Pedigree View"
+msgstr "Antavla med tidslinje"

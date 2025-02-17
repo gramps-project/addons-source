@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-17 18:14+0100\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -38,23 +38,47 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: FRWebConnectPack/FRWebPack.gpr.py:10 FRWebConnectPack/FRWebPack.gpr.py:11
+#: FRWebConnectPack/FRWebPack.gpr.py:11
 msgid "FR Web Connect Pack"
 msgstr "Ensemble de liens internet francophones"
 
-#: FRWebConnectPack/FRWebPack.gpr.py:11 FRWebConnectPack/FRWebPack.gpr.py:12
+#: FRWebConnectPack/FRWebPack.gpr.py:12
 msgid "Collection of Web sites for the FR (requires libwebconnect)"
 msgstr ""
 "Collection de sites internet pour les francophones (nécessite libwebconnect)"
 
-#: FRWebConnectPack/FRWebPack.py:37 FRWebConnectPack/FRWebPack.py:42
+#: FRWebConnectPack/FRWebPack.py:41
+msgid "Cultural ministry (France)"
+msgstr ""
+
+#: FRWebConnectPack/FRWebPack.py:42
 msgid "Genealogical bank"
 msgstr "GeneaBank"
 
-#: FRWebConnectPack/FRWebPack.py:39 FRWebConnectPack/FRWebPack.py:44
+#: FRWebConnectPack/FRWebPack.py:44
 msgid "OrigineFile (Quebec)"
 msgstr "FichierOrigine (Québec)"
 
-#: FRWebConnectPack/FRWebPack.py:44 FRWebConnectPack/FRWebPack.py:50
+#: FRWebConnectPack/FRWebPack.py:50
 msgid "Cyber genealogy"
 msgstr "Cybergénéalogie"
+
+#: FRWebConnectPack/FRWebPack.py:53
+msgid "RetroNews (Bnf)"
+msgstr ""
+
+#: FRWebConnectPack/FRWebPack.py:58
+#, fuzzy
+#| msgid "Hathi Trust Digital Library"
+msgid "Hathi Trust Digital Library (fr)"
+msgstr "Bibliothèque Hathi Trust Digital"
+
+#: FRWebConnectPack/FRWebPack.py:59
+msgid "Open Library (fr)"
+msgstr ""
+
+#: FRWebConnectPack/FRWebPack.py:60
+#, fuzzy
+#| msgid "Open Archives"
+msgid "Belgium's Archives"
+msgstr "Archives Ouvertes"

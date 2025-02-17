@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-17 18:14+0100\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -38,22 +38,20 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: AncestorFill/AncestorFill.py:419 AncestorFill/AncestorFill.py:361
+#: AncestorFill/AncestorFill.py:361
 #: LinesOfDescendency/lines-of-descendency.py:72
 msgid "The style used for the title of the page."
 msgstr "Le style utilisé pour les titres de page."
 
-#: DenominoViso/DenominoViso.py:199 DenominoViso/DenominoViso.py:208
+#: DenominoViso/DenominoViso.py:208
 #: LinesOfDescendency/lines-of-descendency.py:55
 msgid "Ancestor"
 msgstr "Ascendant"
 
-#: LinesOfDescendency/lines-of-descendency.gpr.py:30
 #: LinesOfDescendency/lines-of-descendency.gpr.py:31
 msgid "Lines of Descendency Report"
 msgstr "Rapport sur les lignes de descendance"
 
-#: LinesOfDescendency/lines-of-descendency.gpr.py:31
 #: LinesOfDescendency/lines-of-descendency.gpr.py:33
 msgid ""
 "Prints out all descendency lines from a given ancestor to a given descendent "

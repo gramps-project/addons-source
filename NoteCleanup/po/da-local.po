@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -41,12 +41,11 @@ msgstr "Fejl ved skrivning af rapport: %s"
 msgid "Search"
 msgstr "Søg"
 
-#: NoteCleanup/NoteCleanup.gpr.py:30 NoteCleanup/NoteCleanup.py:412
-#: NoteCleanup/NoteCleanup.gpr.py:31
+#: NoteCleanup/NoteCleanup.gpr.py:31 NoteCleanup/NoteCleanup.py:412
 msgid "Note Cleanup"
 msgstr "Noterensning"
 
-#: NoteCleanup/NoteCleanup.gpr.py:31 NoteCleanup/NoteCleanup.gpr.py:32
+#: NoteCleanup/NoteCleanup.gpr.py:32
 msgid "Clean up Notes that contain HTML markup"
 msgstr "Rens i noter der indeholder HTML markup"
 

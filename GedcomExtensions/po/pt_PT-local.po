@@ -1,13 +1,13 @@
 # Addon MediaMerge for Gramps.
 # Copyright (C) 2020 Gramps
 # This file is distributed under the same license as the gramps package.
-# Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020.
+# Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2025-02-15 10:09+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-17 11:46+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -16,65 +16,54 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:458
 #: RepositoriesReport/RepositoriesReportAlt.py:459
 #: GedcomExtensions/GedcomExtensions.py:198
 msgid "Include media"
 msgstr "Incluir multimédia"
 
-#: GedcomExtensions/GedcomExtensions.gpr.py:31
 #: GedcomExtensions/GedcomExtensions.gpr.py:32
 msgid "Export GEDCOM Extensions (GED2)"
 msgstr "Exportar extensões GEDCOM (GED2)"
 
-#: GedcomExtensions/GedcomExtensions.gpr.py:32
 #: GedcomExtensions/GedcomExtensions.gpr.py:33
 msgid "GEDCOM Extensions (GED2)"
 msgstr "Extensões GEDCOM (GED2)"
 
-#: GedcomExtensions/GedcomExtensions.gpr.py:33
 #: GedcomExtensions/GedcomExtensions.gpr.py:34
 msgid "Extensions to the common GEDCOM format."
 msgstr "Extensões para o formato GEDCOM."
 
-#: GedcomExtensions/GedcomExtensions.gpr.py:40
 #: GedcomExtensions/GedcomExtensions.gpr.py:42
 msgid "GEDCOM Extensions options"
 msgstr "Opções de extensões GEDCOM"
 
-#: GedcomExtensions/GedcomExtensions.py:121
 #: GedcomExtensions/GedcomExtensions.py:197
 msgid "Include witnesses"
 msgstr "Incluir testemunhas"
 
-#: GedcomExtensions/GedcomExtensions.py:154
-#: GedcomExtensions/GedcomExtensions.py:261
-msgid "Export failed"
-msgstr "A exportação falhou"
+#: GedcomExtensions/GedcomExtensions.py:201
+msgid "Patronymic names:"
+msgstr "Nomes Patronímicos:"
 
-#: GedcomExtensions/GedcomExtensions.py:178
 #: GedcomExtensions/GedcomExtensions.py:203
 #: GedcomExtensions/GedcomExtensions.py:210
 msgid "Don't change"
 msgstr "Não alterar"
 
-#: GedcomExtensions/GedcomExtensions.py:179
 #: GedcomExtensions/GedcomExtensions.py:204
 msgid "Add Patronymic name after Given name"
 msgstr "Adicionar Nome Patronímico após o Primeiro Nome"
 
-#: GedcomExtensions/GedcomExtensions.py:180
 #: GedcomExtensions/GedcomExtensions.py:205
 msgid "Ignore Patronymic name"
 msgstr "Ignorar Nome Patronímico"
 
-#: GedcomExtensions/GedcomExtensions.py
-#: GedcomExtensions/GedcomExtensions.py:201
-msgid "Patronymic names:"
-msgstr "Nomes Patronímicos:"
-
 #: GedcomExtensions/GedcomExtensions.py:208
 msgid "Type of surname:"
 msgstr "Tipo de apelido:"
+
+#: GedcomExtensions/GedcomExtensions.py:261
+msgid "Export failed"
+msgstr "A exportação falhou"

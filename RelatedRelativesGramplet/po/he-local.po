@@ -2,14 +2,14 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Igal Shapira <igal.shapira@gmail.com>, 2009, 2010, 2011.
-# Avi Markovitz <avi.markovitz@gmail.com>, 2019.
-#
+# Avi Markovitz <avi.markovitz@gmail.com>, 2019, 2025.
+# Yaron Shahrabani <sh.yaron@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-10 07:59+0300\n"
-"PO-Revision-Date: 2025-02-15 16:17+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-17 15:09+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -19,16 +19,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
-#: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:3
-#: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:10
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:4
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:11
 msgid "Related Relatives"
 msgstr "קרובי משפחה"
 
-#: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:4
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:5
 msgid "Gramplet showing relatives in a relation"
 msgstr "גרמפלט להצגת קרובי משפחה וקשרי קירבה"

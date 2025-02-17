@@ -3,13 +3,13 @@
 # Copyright (C) Gramps project
 # Milo Ivir <mivir@milotype.de>, 2019, 2020.
 # Stephen Adams, Gramps Reddit, 2018.
-#
+# Milo Ivir <mail@milotype.de>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2025-02-15 16:17+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-17 00:14+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -26,59 +26,52 @@ msgstr ""
 msgid "Select filter to restrict people"
 msgstr "Odaberi filtar za ograničavanje osoba"
 
-#: DynamicWeb//dynamicweb.py:2542 DynamicWeb/dynamicweb.py:3052
-#: SetPrivacyTool/SetPrivacyTool.py:320
+#: DynamicWeb/dynamicweb.py:3052 SetPrivacyTool/SetPrivacyTool.py:320
 msgid "Persons"
 msgstr "Osobe"
 
-#: SetPrivacyTool/SetPrivacyTool.gpr.py:23 SetPrivacyTool/SetPrivacyTool.py:48
-#: SetPrivacyTool/SetPrivacyTool.py:90 SetPrivacyTool/SetPrivacyTool.py:93
-#: SetPrivacyTool/SetPrivacyTool.py:130 SetPrivacyTool/SetPrivacyTool.py:157
 #: SetPrivacyTool/SetPrivacyTool.gpr.py:24 SetPrivacyTool/SetPrivacyTool.py:51
-#: SetPrivacyTool/SetPrivacyTool.py:96 SetPrivacyTool/SetPrivacyTool.py:146
-#: SetPrivacyTool/SetPrivacyTool.py:186 SetPrivacyTool/SetPrivacyTool.py:226
-#: SetPrivacyTool/SetPrivacyTool.py:255
+#: SetPrivacyTool/SetPrivacyTool.py:93 SetPrivacyTool/SetPrivacyTool.py:96
+#: SetPrivacyTool/SetPrivacyTool.py:146 SetPrivacyTool/SetPrivacyTool.py:186
+#: SetPrivacyTool/SetPrivacyTool.py:226 SetPrivacyTool/SetPrivacyTool.py:255
 msgid "Set Privacy Tool"
 msgstr "Postavi privatnost"
 
-#: SetPrivacyTool/SetPrivacyTool.gpr.py:24
 #: SetPrivacyTool/SetPrivacyTool.gpr.py:25
 msgid "Set all objects of the last <number> of years private."
 msgstr "Postavi sve objekte zadnjih <number> godina kao privatne."
 
-#: SetPrivacyTool/SetPrivacyTool.py:87 SetPrivacyTool/SetPrivacyTool.py:90
+#: SetPrivacyTool/SetPrivacyTool.py:90
 #, python-format
 msgid "Set private: %d %s\n"
 msgstr "Postavite privatno: %d %s\n"
 
-#: SetPrivacyTool/SetPrivacyTool.py:89 SetPrivacyTool/SetPrivacyTool.py:92
+#: SetPrivacyTool/SetPrivacyTool.py:92
 #, python-format
 msgid "Not private: %d %s\n"
 msgstr "Nije privatno: %d %s\n"
 
-#: SetPrivacyTool/SetPrivacyTool.py:96 SetPrivacyTool/SetPrivacyTool.py:107
+#: SetPrivacyTool/SetPrivacyTool.py:107
 msgid "Set persons private.."
 msgstr "Postavi osobe kao privatne …"
 
-#: SetPrivacyTool/SetPrivacyTool.py:133 SetPrivacyTool/SetPrivacyTool.py:157
+#: SetPrivacyTool/SetPrivacyTool.py:157
 msgid "Set events private.."
 msgstr "Postavi događaje kao privatne …"
 
-#: SetPrivacyTool/SetPrivacyTool.py:160 SetPrivacyTool/SetPrivacyTool.py:197
+#: SetPrivacyTool/SetPrivacyTool.py:197
 msgid "Set media private.."
 msgstr "Postavi medije kao privatne …"
 
-#: SetPrivacyTool/SetPrivacyTool.py:204 SetPrivacyTool/SetPrivacyTool.py:306
-msgid "Always private if no date."
-msgstr "Uvijek privatno, ako nema datuma."
+#: SetPrivacyTool/SetPrivacyTool.py:230
+msgid "Set adresses private.."
+msgstr "Postavi adrese kao privatne …"
 
-#: SetPrivacyTool/SetPrivacyTool.py:205 SetPrivacyTool/SetPrivacyTool.py:307
-msgid "If checked, all objects without a date will also be set private."
-msgstr ""
-"Ako je označeno, svi objekti bez datuma će također biti postavljeni kao "
-"privatni."
+#: SetPrivacyTool/SetPrivacyTool.py:259
+msgid "Set internet objects private.."
+msgstr "Postavi internetske objekte kao privatne …"
 
-#: SetPrivacyTool/SetPrivacyTool.py:210 SetPrivacyTool/SetPrivacyTool.py:301
+#: SetPrivacyTool/SetPrivacyTool.py:301
 msgid ""
 "The time range in years from today you want to set objects private.\n"
 "'0 years' = remove privacy from all objects."
@@ -86,3 +79,29 @@ msgstr ""
 "Vremenski raspon u godinama od današnjeg dana, za koji želiš postaviti "
 "objekte kao privatne.\n"
 "„0 godina” = ukloni privatnost iz svih objekata."
+
+#: SetPrivacyTool/SetPrivacyTool.py:306
+msgid "Always private if no date."
+msgstr "Uvijek privatno, ako nema datuma."
+
+#: SetPrivacyTool/SetPrivacyTool.py:307
+msgid "If checked, all objects without a date will also be set private."
+msgstr ""
+"Ako je označeno, svi objekti bez datuma će također biti postavljeni kao "
+"privatni."
+
+#: SetPrivacyTool/SetPrivacyTool.py:324
+msgid "Select filter to restrict events"
+msgstr "Odaberi filtar za ograničavanje događaja"
+
+#: SetPrivacyTool/SetPrivacyTool.py:336
+msgid "Select filter to restrict medias"
+msgstr "Odaberi filtar za ograničavanje medija"
+
+#: SetPrivacyTool/SetPrivacyTool.py:347
+msgid "Internet type filter"
+msgstr "Internetska vrsta filtra"
+
+#: SetPrivacyTool/SetPrivacyTool.py:351
+msgid "E-Mail"
+msgstr "E-mail"

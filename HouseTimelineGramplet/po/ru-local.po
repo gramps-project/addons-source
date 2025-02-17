@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-04 16:31+0300\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -31,31 +31,24 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: HouseTimelineGramplet/housetimeline.gpr.py:3
-#: HouseTimelineGramplet/housetimeline.gpr.py:14
 #: HouseTimelineGramplet/housetimeline.gpr.py:4
 #: HouseTimelineGramplet/housetimeline.gpr.py:15
 msgid "House Timeline"
 msgstr "Жители дома"
 
-#: HouseTimelineGramplet/housetimeline.gpr.py:4
 #: HouseTimelineGramplet/housetimeline.gpr.py:5
 msgid "Lists the Residents of an Address by Timeline"
 msgstr "Список жителей по адресу на линии времени"
 
-#: HouseTimelineGramplet/housetimeline.py:41
-#: HouseTimelineGramplet/housetimeline.py:48
 #: HouseTimelineGramplet/housetimeline.py:51
 #: HouseTimelineGramplet/housetimeline.py:58
 msgid "House Icon Style"
 msgstr "Стиль иконки дома"
 
-#: HouseTimelineGramplet/housetimeline.py:51
 #: HouseTimelineGramplet/housetimeline.py:61
 msgid "Unicode"
 msgstr "Юникод"
 
-#: HouseTimelineGramplet/housetimeline.py:80
 #: HouseTimelineGramplet/housetimeline.py:90
 msgid ""
 "There are no individuals with Address data. Please add Address data to "
@@ -64,22 +57,18 @@ msgstr ""
 "Отсутствуют лица с информацией об адресе. Пожалуйста добавьте указанную "
 "информацию для людей."
 
-#: HouseTimelineGramplet/housetimeline.py:119
 #: HouseTimelineGramplet/housetimeline.py:129
 msgid "Time In Family"
 msgstr "Время в семье"
 
-#: HouseTimelineGramplet/housetimeline.py:120
 #: HouseTimelineGramplet/housetimeline.py:130
 msgid "First Resident"
 msgstr "Первое место жительства"
 
-#: HouseTimelineGramplet/housetimeline.py:121
 #: HouseTimelineGramplet/housetimeline.py:131
 msgid "Last Resident"
 msgstr "Последнее место жительства"
 
-#: HouseTimelineGramplet/housetimeline.py:124
 #: HouseTimelineGramplet/housetimeline.py:134
 msgid "Total Known Residents"
 msgstr "Количество известных мест проживания"

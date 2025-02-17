@@ -3,13 +3,13 @@
 # Copyright (C) Gramps project
 # Milo Ivir <mivir@milotype.de>, 2019, 2020.
 # Stephen Adams, Gramps Reddit, 2018.
-#
+# Milo Ivir <mail@milotype.de>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2025-02-15 16:17+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-17 00:14+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -21,63 +21,52 @@ msgstr ""
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Weblate 5.10\n"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:458
 #: RepositoriesReport/RepositoriesReportAlt.py:459
 #: GedcomExtensions/GedcomExtensions.py:198
 msgid "Include media"
 msgstr "Uključi medije"
 
-#: GedcomExtensions/GedcomExtensions.gpr.py:31
 #: GedcomExtensions/GedcomExtensions.gpr.py:32
 msgid "Export GEDCOM Extensions (GED2)"
 msgstr "Dodaci za GEDCOM izvoz (GED2)"
 
-#: GedcomExtensions/GedcomExtensions.gpr.py:32
 #: GedcomExtensions/GedcomExtensions.gpr.py:33
 msgid "GEDCOM Extensions (GED2)"
 msgstr "GEDCOM dodaci (GED2)"
 
-#: GedcomExtensions/GedcomExtensions.gpr.py:33
 #: GedcomExtensions/GedcomExtensions.gpr.py:34
 msgid "Extensions to the common GEDCOM format."
 msgstr "Dodaci za običan GEDCOM format."
 
-#: GedcomExtensions/GedcomExtensions.gpr.py:40
 #: GedcomExtensions/GedcomExtensions.gpr.py:42
 msgid "GEDCOM Extensions options"
 msgstr "Opcije za GEDCOM dodatke"
 
-#: GedcomExtensions/GedcomExtensions.py:121
 #: GedcomExtensions/GedcomExtensions.py:197
 msgid "Include witnesses"
 msgstr "Uključi svjedoke"
 
-#: GedcomExtensions/GedcomExtensions.py:154
-#: GedcomExtensions/GedcomExtensions.py:261
-msgid "Export failed"
-msgstr "Izvoz neuspio"
+#: GedcomExtensions/GedcomExtensions.py:201
+msgid "Patronymic names:"
+msgstr "Očinska imena:"
 
-#: GedcomExtensions/GedcomExtensions.py:178
 #: GedcomExtensions/GedcomExtensions.py:203
 #: GedcomExtensions/GedcomExtensions.py:210
 msgid "Don't change"
 msgstr "Ne mijenjaj"
 
-#: GedcomExtensions/GedcomExtensions.py:179
 #: GedcomExtensions/GedcomExtensions.py:204
 msgid "Add Patronymic name after Given name"
 msgstr "Dodaj Očinsko ime nakon Imena"
 
-#: GedcomExtensions/GedcomExtensions.py:180
 #: GedcomExtensions/GedcomExtensions.py:205
 msgid "Ignore Patronymic name"
 msgstr "Zanemari Očinsko ime"
 
-#: GedcomExtensions/GedcomExtensions.py
-#: GedcomExtensions/GedcomExtensions.py:201
-msgid "Patronymic names:"
-msgstr "Očinska imena:"
-
 #: GedcomExtensions/GedcomExtensions.py:208
 msgid "Type of surname:"
 msgstr "Vrsta prezimena:"
+
+#: GedcomExtensions/GedcomExtensions.py:261
+msgid "Export failed"
+msgstr "Izvoz neuspio"

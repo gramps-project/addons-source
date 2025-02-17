@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -34,12 +34,12 @@ msgstr "Personer"
 msgid "General options"
 msgstr "Standard tilvalg"
 
-#: RemoveTagTool/RemoveTagTool.gpr.py:24 RemoveTagTool/RemoveTagTool.py:186
-#: RemoveTagTool/RemoveTagTool.py:246 RemoveTagTool/RemoveTagTool.gpr.py:25
+#: RemoveTagTool/RemoveTagTool.gpr.py:25 RemoveTagTool/RemoveTagTool.py:186
+#: RemoveTagTool/RemoveTagTool.py:246
 msgid "Add/Remove Tag Tool"
 msgstr "Tilføj/Fjern mærkat værktøj"
 
-#: RemoveTagTool/RemoveTagTool.gpr.py:25 RemoveTagTool/RemoveTagTool.gpr.py:26
+#: RemoveTagTool/RemoveTagTool.gpr.py:26
 msgid "Add or remove a tag from groups of people, events, etc."
 msgstr "Tilføj eller fjern mærkat fra grupper af personer, hændelser o.s.v."
 

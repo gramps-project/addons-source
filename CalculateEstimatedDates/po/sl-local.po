@@ -9,10 +9,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps 3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-08 16:54+0100\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2008-02-22 23:19+0100\n"
 "Last-Translator: Bernard Banko <bernard.banko (afna) siol.net>\n"
 "Language-Team: lugos slovenizacija <lugos-slo at lugos.si>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -21,133 +22,108 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || "
 "n%100==4 ? 3 : 0)\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:9
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:182
 #: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:190
 msgid "Calculate Estimated Dates"
 msgstr "Izračunaj okvirne datume"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
 #: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:11
 msgid "Calculates estimated dates for birth and death."
 msgstr "Izračuna okvirne datume rojstev in smrti."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:75
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:83
 msgid "Select filter to restrict people"
 msgstr "Izberi filter za omejitev oseb"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:87
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:95
 msgid "Calculated Date Estimates"
 msgstr "Ocene izračunanih datumov"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:88
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:96
 msgid "Source to remove and/or add"
 msgstr "Vir, ki ga je treba odstraniti ali dodati"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:91
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:99
 #, fuzzy
 msgid "Remove previously added events, notes, and source"
 msgstr "Odstrani predhodno dodane datume"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:92
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:100
 msgid ""
 "Remove calculated events, notes, and source; occurs immediately on Execute"
 msgstr ""
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:96
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:104
 #, fuzzy
 msgid "Do not add birth events"
 msgstr "Rodi se %s."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:97
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:105
 #, fuzzy
 msgid "Add birth events without dates"
 msgstr "datum rojstva"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:98
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:106
 #, fuzzy
 msgid "Add birth events with dates"
 msgstr "datum rojstva"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:99
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:107
 msgid "Add a birth events with or without estimated dates"
 msgstr ""
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:103
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:111
 #, fuzzy
 msgid "Do not add death events"
 msgstr "%s umre."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:104
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:112
 #, fuzzy
 msgid "Add death events without dates"
 msgstr "Dodaj ocenjene datume rojstva"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:105
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:113
 #, fuzzy
 msgid "Add death events with dates"
 msgstr "Dodaj ocenjene datume rojstva"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:106
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:114
 msgid "Add death events with or without estimated dates"
 msgstr ""
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:110
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:118
 msgid "Maximum age"
 msgstr "Največja starost"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:113
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:121
 msgid "Maximum age that one can live to"
 msgstr "Najvišja starost, ki jo lahko kdo doseže"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:119
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:127
 msgid "Maximum age difference between siblings"
 msgstr "Največja razlika v letih med brati in sestrami"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:125
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:133
 msgid "Average years between two generations"
 msgstr "Povprečno število let med dvema rodovoma"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:128
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:136
 #, fuzzy
 msgid "Estimated Dates"
 msgstr "Ocenjeno"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:129
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:137
 msgid "Approximate (about)"
 msgstr ""
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:130
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:138
 msgid "Extremes (after and before)"
 msgstr ""
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:131
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:139
 msgid "Dates on events are either about or after/before"
 msgstr ""
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:164
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:172
 msgid ""
 "The Calculate Estimated Dates Tool is used to add and remove birth and death "
@@ -169,102 +145,85 @@ msgid ""
 "to add all of the events possible."
 msgstr ""
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:191
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:199
 #, fuzzy
 msgid "Select All"
 msgstr "Izberi datoteko"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:192
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:200
 #, fuzzy
 msgid "Select None"
 msgstr "Izberi opombo"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:193
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:201
 #, fuzzy
 msgid "Toggle Selection"
 msgstr "Izbira orodij"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:194
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:202
 #, fuzzy
 msgid "Add Selected Events"
 msgstr "Izberi dogodek"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:200
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:208
 msgid "Remove Events, Notes, and Source and Reselect Data"
 msgstr ""
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:201
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:209
 msgid ""
 "Are you sure you want to remove previous events, notes, and source and "
 "reselect data?"
 msgstr ""
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:202
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:210
 #, fuzzy
 msgid "Remove and Run Select Again"
 msgstr "Odstrani izbrano osebo"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:206
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:214
 #, fuzzy
 msgid "Reselect Data"
 msgstr "Izberi očeta"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:207
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:215
 #, fuzzy
 msgid "Are you sure you want to reselect data?"
 msgstr "Ali ste prepičani, da bi radi izbrisali zgodovino razveljavitev?"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:208
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:216
 #, fuzzy
 msgid "Run Select Again"
 msgstr "Izbira poročila"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:228
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:236
 #, fuzzy
 msgid "Evidence"
 msgstr "Domovanje"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:228
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:236
 #, fuzzy
 msgid "Relative"
 msgstr "V sorodu"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:229
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:237
 #, fuzzy
 msgid "Processing...\n"
 msgstr "Obdelava..."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:247
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:255
 msgid "Removing old estimations... "
 msgstr ""
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:248
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:256
 #, python-format
 msgid "Removing '%s'..."
 msgstr "Odstranjevanje '%s'..."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:302
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:319
 #, fuzzy
 msgid "done!\n"
 msgstr "brez"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:307
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:323
 #, fuzzy
 msgid ""
@@ -272,90 +231,75 @@ msgid ""
 "\n"
 msgstr "Izberi..."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:343
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:359
 #, fuzzy
 msgid "Add birth and death events"
 msgstr "Dodaj nov dogodek"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:345
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:361
 #, fuzzy
 msgid "Add birth event"
 msgstr "Osebe z manjkajočimi datumi rojstva"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:347
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:363
 #, fuzzy
 msgid "Add death event"
 msgstr "Dodaj nov dogodek"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:382
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:398
 #, fuzzy
 msgid "No events to be added."
 msgstr "Ni dogodkov točno na ta dan"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:424
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:439
 #, fuzzy
 msgid "Selecting... "
 msgstr "Izberi..."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:425
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:440
 #, fuzzy, python-format
 msgid "Adding events '%s'..."
 msgstr "Dodaj obstoječe starše..."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:447
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:465
 #, python-format
 msgid "Added birth event based on %(evidence)s, from %(name)s"
 msgstr ""
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:450
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:468
 #, fuzzy, python-format
 msgid "Added birth event based on %s"
 msgstr "Rodi se %s."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:452
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:470
 #, fuzzy
 msgid "Estimated birth date"
 msgstr "Dodaj ocenjene datume rojstva"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:463
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:480
 #, python-format
 msgid "Added death event based on %(evidence)s, from %(person)s"
 msgstr ""
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:466
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:483
 #, fuzzy, python-format
 msgid "Added death event based on %s"
 msgstr "%s umre."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:468
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:485
 #, fuzzy
 msgid "Estimated death date"
 msgstr "Dodaj ocenjene datume smrti"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:478
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:495
 msgid " Done! Committing..."
 msgstr ""
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:483
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:499
 #, fuzzy, python-format
 msgid "Added %d events."
 msgstr "Dodaj nov dogodek"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:511
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:527
 #, fuzzy
 msgid "Estimated date"

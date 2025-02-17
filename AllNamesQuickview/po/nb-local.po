@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-08 16:37+0100\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2025-02-15 10:09+0000\n"
 "Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
@@ -25,25 +25,23 @@ msgstr ""
 "X-Generator: Weblate 5.10\n"
 "Generated-By: pygettext.py 1.4\n"
 
-#: AllNamesQuickview/AllNames.gpr.py:3 AllNamesQuickview/AllNames.py:46
+#: PlaceCleanup/placecleanup.glade:52 AllNamesQuickview/AllNames.py:54
+msgid "Primary Name"
+msgstr "Primærnavn"
+
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
 msgstr "Alle navn på alle personer"
 
-#: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.gpr.py:5
+#: AllNamesQuickview/AllNames.gpr.py:5
 msgid "Display all names of all people"
 msgstr ""
 
-#: AllNamesQuickview/AllNames.py:49 PlaceCleanup/placecleanup.glade:52
 #: AllNamesQuickview/AllNames.py:54
-msgid "Primary Name"
-msgstr "Primærnavn"
-
-#: AllNamesQuickview/AllNames.py:49 AllNamesQuickview/AllNames.py:54
 msgid "Name Type"
 msgstr "Navnetype"
 
-#: AllNamesQuickview/AllNames.py:66 AllNamesQuickview/AllNames.py:71
+#: AllNamesQuickview/AllNames.py:71
 #, python-format
 msgid "Total names %d"
 msgstr "Antall navn %d"

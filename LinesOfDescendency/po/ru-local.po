@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-04 16:31+0300\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -31,22 +31,20 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: AncestorFill/AncestorFill.py:360 AncestorFill/AncestorFill.py:361
+#: AncestorFill/AncestorFill.py:361
 #: LinesOfDescendency/lines-of-descendency.py:72
 msgid "The style used for the title of the page."
 msgstr "Стиль заголовка страницы."
 
-#: DenominoViso/DenominoViso.py:207 DenominoViso/DenominoViso.py:208
+#: DenominoViso/DenominoViso.py:208
 #: LinesOfDescendency/lines-of-descendency.py:55
 msgid "Ancestor"
 msgstr "Предок"
 
-#: LinesOfDescendency/lines-of-descendency.gpr.py:30
 #: LinesOfDescendency/lines-of-descendency.gpr.py:31
 msgid "Lines of Descendency Report"
 msgstr "Линии родства"
 
-#: LinesOfDescendency/lines-of-descendency.gpr.py:31
 #: LinesOfDescendency/lines-of-descendency.gpr.py:33
 msgid ""
 "Prints out all descendency lines from a given ancestor to a given descendent "
@@ -68,6 +66,11 @@ msgstr "Потомок до которого строить линию"
 
 #: LinesOfDescendency/lines-of-descendency.py:82
 msgid "The style used for the title of a line."
+msgstr ""
+
+#: LinesOfDescendency/lines-of-descendency.py:111
+#, python-format
+msgid "%(line)s. line:"
 msgstr ""
 
 #: LinesOfDescendency/lines-of-descendency.py:176

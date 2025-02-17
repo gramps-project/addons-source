@@ -8,7 +8,7 @@
 # Sebastian Vöcking <voeck@web.de>, 2005.
 # Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
 # Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2025.
 # Alois Pöttker <alois.poettker@gmx.de>, 2017.
 # Allan Nordhøy <epost@anotheragency.no>, 2021.
 # R. B. <weblate@macdefender.org>, 2021.
@@ -21,8 +21,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-02 22:39+0200\n"
-"PO-Revision-Date: 2025-02-15 16:17+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-17 00:14+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -37,23 +37,23 @@ msgstr ""
 msgid "Enter Python expressions"
 msgstr "Pythonausdruck eingeben"
 
-#: Query/Query.gpr.py:9 Query/Query.gpr.py:10
+#: Query/Query.gpr.py:10
 msgid "Query Gramplet"
 msgstr "Abfrage Gramplet"
 
-#: Query/Query.gpr.py:10 Query/Query.gpr.py:11
+#: Query/Query.gpr.py:11
 msgid "Gramplet for running SQL-like queries"
 msgstr "Gramplet zum Ausführen SQL-ähnlicher Abfragen"
 
-#: Query/Query.gpr.py:18 Query/Query.gpr.py:19
+#: Query/Query.gpr.py:19
 msgid "Query"
 msgstr "Abfrage"
 
-#: Query/Query.gpr.py:31 Query/Query.gpr.py:33
+#: Query/Query.gpr.py:33
 msgid "Query Quickview"
 msgstr "Abfrage Schnellansicht"
 
-#: Query/Query.gpr.py:32 Query/Query.gpr.py:34
+#: Query/Query.gpr.py:34
 msgid "Quick view for SQL-like running queries"
 msgstr "Schnellansicht für SQL-ähnlich laufende Abfragen"
 

@@ -3,13 +3,13 @@
 # Copyright (C) Gramps project
 # Milo Ivir <mivir@milotype.de>, 2019, 2020.
 # Stephen Adams, Gramps Reddit, 2018.
-#
+# Milo Ivir <mail@milotype.de>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2025-02-15 16:17+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-17 00:14+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -37,14 +37,12 @@ msgstr "Obrada u tijeku …\n"
 msgid "Done!\n"
 msgstr "Gotovo!\n"
 
-#: SetAttributeTool/SetAttributeTool.gpr.py:25
+#: SetAttributeTool/SetAttributeTool.gpr.py:26
 #: SetAttributeTool/SetAttributeTool.py:122
 #: SetAttributeTool/SetAttributeTool.py:150
-#: SetAttributeTool/SetAttributeTool.gpr.py:26
 msgid "Set Attribute"
 msgstr "Postavi svojstvo"
 
-#: SetAttributeTool/SetAttributeTool.gpr.py:26
 #: SetAttributeTool/SetAttributeTool.gpr.py:27
 msgid "Set an attribute to a given value."
 msgstr "Postavi svojstvo na određenu vrijednost."

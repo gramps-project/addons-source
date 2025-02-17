@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -20,20 +20,17 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
 
-#: TMGimporter/importtmg.gpr.py:47 TMGimporter/importtmg.gpr.py:49
+#: TMGimporter/importtmg.gpr.py:49
 msgid "TMG Project Backup"
 msgstr "Sikkerhedskopier TMG projekt"
 
-#: TMGimporter/importtmg.gpr.py:48 TMGimporter/importtmg.gpr.py:63
-#: TMGimporter/importtmg.gpr.py:77 TMGimporter/importtmg.gpr.py:91
 #: TMGimporter/importtmg.gpr.py:50 TMGimporter/importtmg.gpr.py:66
 #: TMGimporter/importtmg.gpr.py:81 TMGimporter/importtmg.gpr.py:96
 msgid "Import TMG project files"
 msgstr "Importer TMG projekt filer"
 
-#: TMGimporter/importtmg.gpr.py:62 TMGimporter/importtmg.gpr.py:76
-#: TMGimporter/importtmg.gpr.py:90 TMGimporter/importtmg.gpr.py:65
-#: TMGimporter/importtmg.gpr.py:80 TMGimporter/importtmg.gpr.py:95
+#: TMGimporter/importtmg.gpr.py:65 TMGimporter/importtmg.gpr.py:80
+#: TMGimporter/importtmg.gpr.py:95
 msgid "TMG Unsupported"
 msgstr "TMG ikke understøttet"
 

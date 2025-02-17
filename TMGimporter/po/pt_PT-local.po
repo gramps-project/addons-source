@@ -1,13 +1,13 @@
 # Addon MediaMerge for Gramps.
 # Copyright (C) 2020 Gramps
 # This file is distributed under the same license as the gramps package.
-# Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020.
+# Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2025-02-15 10:09+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-17 11:46+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -16,22 +16,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
-#: TMGimporter/importtmg.gpr.py:63 TMGimporter/importtmg.gpr.py:49
+#: TMGimporter/importtmg.gpr.py:49
 msgid "TMG Project Backup"
-msgstr "Cópia de segurança de projecto TMG"
+msgstr "Salvaguarda de projecto TMG"
 
-#: TMGimporter/importtmg.gpr.py:64 TMGimporter/importtmg.gpr.py:78
-#: TMGimporter/importtmg.gpr.py:91 TMGimporter/importtmg.gpr.py:104
 #: TMGimporter/importtmg.gpr.py:50 TMGimporter/importtmg.gpr.py:66
 #: TMGimporter/importtmg.gpr.py:81 TMGimporter/importtmg.gpr.py:96
 msgid "Import TMG project files"
 msgstr "Importar ficheiros de projecto TMG"
 
-#: TMGimporter/importtmg.gpr.py:77 TMGimporter/importtmg.gpr.py:90
-#: TMGimporter/importtmg.gpr.py:103 TMGimporter/importtmg.gpr.py:65
-#: TMGimporter/importtmg.gpr.py:80 TMGimporter/importtmg.gpr.py:95
+#: TMGimporter/importtmg.gpr.py:65 TMGimporter/importtmg.gpr.py:80
+#: TMGimporter/importtmg.gpr.py:95
 msgid "TMG Unsupported"
 msgstr "TMG não suportado"
 
@@ -55,7 +52,7 @@ msgstr ""
 "A importação directa de ficheiros TMG não é suportada\n"
 "por esta extensão.\n"
 "\n"
-"Tem de usar uma cópia de segurnaça do projecto TMG (*.sqz)\n"
+"Tem de usar uma salvaguarda do projecto TMG (*.sqz)\n"
 "\n"
 "Assegure-se de que o seu projecto TMG foi criado por:\n"
 "TMG versão 5.x ou posterior.\n"
@@ -63,7 +60,7 @@ msgstr ""
 "O seu ficheiro:\n"
 "*.PJC - ficheiro de configuração de projecto para TMG 5.0 a TMG 9.05\n"
 "\n"
-"Por favor consulte:\n"
+"Por favor, consulte:\n"
 "%(gramps_wiki_import_pjc_direct_url)s"
 
 #: TMGimporter/importtmg.py:110
@@ -76,9 +73,9 @@ msgid ""
 "%(gramps_wiki_import_pjc_direct_url)s"
 msgstr ""
 "A importação directa de ficheiros TMG não é suportada por esta extensão. Tem "
-"de usar uma cópia de segurnaça do projecto TMG (*.sqz). Assegure-se de que o "
-"seu projecto TMG foi criado por TMG versão 5.x ou posterior. O seu ficheiro "
-"*.TMG - ficheiro de controlo de versão para TMG 2.0 a TMG 4.0d. Por favor "
+"de usar uma salvaguarda do projecto TMG (*.sqz). Assegure-se de que o seu "
+"projecto TMG foi criado pelo TMG versão 5.x ou posterior. O seu ficheiro: "
+"*.TMG - ficheiro de controlo de versão para TMG 2.0 a TMG 4.0d. Por favor, "
 "consulte: %(gramps_wiki_import_pjc_direct_url)s"
 
 #: TMGimporter/importtmg.py:131
@@ -91,9 +88,9 @@ msgid ""
 "%(gramps_wiki_import_pjc_direct_url)s"
 msgstr ""
 "A importação directa de ficheiros TMG não é suportada por esta extensão. Tem "
-"de usar uma cópia de segurnaça do projecto TMG (*.sqz). Assegure-se de que o "
-"seu projecto TMG foi criado por TMG versão 5.x ou posterior. O seu ficheiro "
-"*.VER - ficheiro de controlo de versão para TMG 1.2 e anteriores. Por favor "
+"de usar uma salvaguardado projecto TMG (*.sqz). Assegure-se de que o seu "
+"projecto TMG foi criado pelo TMG versão 5.x ou posterior. O seu ficheiro: "
+"*.VER - ficheiro de controlo de versão para TMG 1.2 e anteriores. Por favor, "
 "consulte: %(gramps_wiki_import_pjc_direct_url)s"
 
 #: TMGimporter/libtmg.glade:15

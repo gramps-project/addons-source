@@ -7,13 +7,13 @@
 # Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
 # Erik De Richter <frederik.de.richter@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
 # Harmen Huizinga <harmenhuizinga@sigmo.nl>, 2013.
-#
+# Stephan Paternotte <stephan@paternottes.net>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
-"Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
-"POT-Creation-Date: 2019-01-04 18:55-0600\n"
-"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-17 11:05+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -22,29 +22,48 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
-#: FilterRules/ageatdeath.py:71 SourceIndex/birth.glade:544
-#: SourceIndex/birth.glade:762 SourceIndex/census.glade:286
+#: FilterRules/ageatdeath.py:71 SourceIndex/witness.glade:107
+#: SourceIndex/birth.glade:544 SourceIndex/birth.glade:762
 #: SourceIndex/death.glade:521 SourceIndex/death.glade:669
-#: SourceIndex/death.glade:939 SourceIndex/marriage.glade:467
-#: SourceIndex/marriage.glade:789 SourceIndex/marriage.glade:808
-#: SourceIndex/marriage.glade:827 SourceIndex/marriage.glade:1562
-#: SourceIndex/marriage.glade:1621 SourceIndex/witness.glade:107
+#: SourceIndex/death.glade:939 SourceIndex/census.glade:286
+#: SourceIndex/marriage.glade:467 SourceIndex/marriage.glade:789
+#: SourceIndex/marriage.glade:808 SourceIndex/marriage.glade:827
+#: SourceIndex/marriage.glade:1562 SourceIndex/marriage.glade:1621
 msgid "Age:"
 msgstr "Leeftijd:"
 
-#: DynamicWeb/dynamicweb.py:2585 DynamicWeb/dynamicweb.py:3114
-#: SourceIndex/birth.py:126 SourceIndex/census.py:82 SourceIndex/death.py:87
-#: SourceIndex/index.py:92 SourceIndex/marriage.py:87 SourceIndex/witness.py:64
+#: DynamicWeb/dynamicweb.py:3114 SourceIndex/marriage.py:87
+#: SourceIndex/census.py:82 SourceIndex/index.py:92 SourceIndex/death.py:87
+#: SourceIndex/witness.py:64 SourceIndex/birth.py:126
 msgid "Sources Index"
 msgstr "Bronnenindex"
 
-#: Form/editform.py:191 Form/editform.py:225 SourceIndex/birth.glade:113
-#: SourceIndex/census.glade:873 SourceIndex/death.glade:182
-#: SourceIndex/marriage.glade:1263
+#: Form/editform.py:225 SourceIndex/birth.glade:113 SourceIndex/death.glade:182
+#: SourceIndex/census.glade:873 SourceIndex/marriage.glade:1263
 msgid "Reference:"
 msgstr "Referentie:"
+
+#: SourceIndex/SourceIndex.gpr.py:24
+msgid "BirthIndex"
+msgstr "Geboorte-index"
+
+#: SourceIndex/SourceIndex.gpr.py:40
+msgid "MarriageIndex"
+msgstr "Huwelijksindex"
+
+#: SourceIndex/SourceIndex.gpr.py:56
+msgid "DeathIndex"
+msgstr "Overlijdensindex"
+
+#: SourceIndex/SourceIndex.gpr.py:72
+msgid "CensusIndex"
+msgstr "Volkstellingsindex"
+
+#: SourceIndex/SourceIndex.gpr.py:104
+msgid "SourceIndex"
+msgstr "Bronindex"
 
 #: SourceIndex/index.py:407
 msgid "*** Error: Must install either ElementTree or lxml."
@@ -53,26 +72,6 @@ msgstr "*** Fout: moet ElementTree of lxml installeren."
 #: SourceIndex/index.py:409
 msgid "must install either ElementTree or lxml"
 msgstr "moet ElementTree of lxml installeren"
-
-#: SourceIndex/SourceIndex.gpr.py:23 SourceIndex/SourceIndex.gpr.py:24
-msgid "BirthIndex"
-msgstr "Geboorte-index"
-
-#: SourceIndex/SourceIndex.gpr.py:38 SourceIndex/SourceIndex.gpr.py:40
-msgid "MarriageIndex"
-msgstr "Huwelijksindex"
-
-#: SourceIndex/SourceIndex.gpr.py:53 SourceIndex/SourceIndex.gpr.py:56
-msgid "DeathIndex"
-msgstr "Overlijdensindex"
-
-#: SourceIndex/SourceIndex.gpr.py:68 SourceIndex/SourceIndex.gpr.py:72
-msgid "CensusIndex"
-msgstr "Volkstellingsindex"
-
-#: SourceIndex/SourceIndex.gpr.py:98 SourceIndex/SourceIndex.gpr.py:104
-msgid "SourceIndex"
-msgstr "Bronindex"
 
 #: SourceIndex/birth.glade:7 SourceIndex/index.glade:585
 msgid "birth"

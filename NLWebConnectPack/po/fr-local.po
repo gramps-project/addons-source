@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-17 18:14+0100\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -38,18 +38,25 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: NLWebPack.py:33 NLWebConnectPack/NLWebPack.py:34
+#: NLWebConnectPack/NLWebPack.gpr.py:13
+#, fuzzy
+#| msgid "Collection of Web sites for the UK (requires libwebconnect)"
+msgid "Collection of Web sites for the Netherlands (requires libwebconnect)"
+msgstr ""
+"Collection de sites internet pour le Royaume-uni (nécessite libwebconnect)"
+
+#: NLWebConnectPack/NLWebPack.py:34
 msgid "Open Archives"
 msgstr "Archives Ouvertes"
 
-#: NLWebPack.py:34 NLWebConnectPack/NLWebPack.py:35
+#: NLWebConnectPack/NLWebPack.py:35
 msgid "Genealogy Online"
 msgstr "Généalogie Online"
 
-#: NLWebPack.py:35 NLWebConnectPack/NLWebPack.py:36
+#: NLWebConnectPack/NLWebPack.py:36
 msgid "National Archive"
 msgstr "Archives nationales"
 
-#: NLWebPack.py:37 NLWebConnectPack/NLWebPack.py:38
+#: NLWebConnectPack/NLWebPack.py:38
 msgid "Who (re)searches who?"
 msgstr "Qui (re)cherche qui?"

@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-17 18:14+0100\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -39,37 +39,30 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:4
-#: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:5
-msgid "Gramplet showing relatives in a relation"
-msgstr "Gramplet affichant les parentés dans une relation"
-
-#: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:10
-#: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:4
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:11
 msgid "Related Relatives"
 msgstr "Parentés"
 
-#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:90
+#: RelatedRelativesGramplet/RelatedRelativesGramplet.gpr.py:5
+msgid "Gramplet showing relatives in a relation"
+msgstr "Gramplet affichant les parentés dans une relation"
+
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.py:93
 msgid "Relations of related people in your database:"
 msgstr "Relations des individus liés dans cette base de données :"
 
-#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:216
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.py:219
 msgid "are partners and"
 msgstr "sont conjoints et"
 
-#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:239
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.py:242
 msgid "Common ancestor"
 msgstr "Ascendant commun"
 
-#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:250
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.py:253
 msgid "No relatives in a relation found"
 msgstr "Aucune parenté trouvée dans la relation"
 
-#: RelatedRelativesGramplet/RelatedRelativesGramplet.py:251
 #: RelatedRelativesGramplet/RelatedRelativesGramplet.py:254
 msgid "END"
 msgstr "FIN"

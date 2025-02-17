@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-17 18:14+0100\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -38,16 +38,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ImportGramplet/ImportGramplet.gpr.py:10
 #: ImportGramplet/ImportGramplet.gpr.py:11
 msgid "Gramplet for importing text"
 msgstr "Gramplet pour importer du texte"
 
-#: ImportGramplet/ImportGramplet.py:88 ImportGramplet/ImportGramplet.py:94
+#: ImportGramplet/ImportGramplet.py:94
 msgid "VCard import"
 msgstr "Importation VCard"
 
-#: ImportGramplet/ImportGramplet.py:138 ImportGramplet/ImportGramplet.py:144
+#: ImportGramplet/ImportGramplet.py:144
 #, python-format
 msgid ""
 "The opened file has media path %s, which conflicts with the media path of "
@@ -60,7 +59,7 @@ msgstr ""
 "emplacement ou changer le chemin media de la base de données dans les "
 "Préférences."
 
-#: ImportGramplet/ImportGramplet.py:168 ImportGramplet/ImportGramplet.py:172
+#: ImportGramplet/ImportGramplet.py:172
 msgid ""
 "Enter text to import and then click\n"
 "the Import button at bottom"
@@ -68,18 +67,18 @@ msgstr ""
 "Entrez du texte pour l'importation puis\n"
 "cliquez sur le bouton en bas"
 
-#: ImportGramplet/ImportGramplet.py:194 ImportGramplet/ImportGramplet.py:198
+#: ImportGramplet/ImportGramplet.py:198
 msgid "_Import"
 msgstr "_Importer"
 
-#: ImportGramplet/ImportGramplet.py:210 ImportGramplet/ImportGramplet.py:218
+#: ImportGramplet/ImportGramplet.py:218
 msgid "Import done"
 msgstr "Importation effectuée"
 
-#: ImportGramplet/ImportGramplet.py:220 ImportGramplet/ImportGramplet.py:228
+#: ImportGramplet/ImportGramplet.py:228
 msgid "Importing Text..."
 msgstr "Importation du texte..."
 
-#: ImportGramplet/ImportGramplet.py:249 ImportGramplet/ImportGramplet.py:259
+#: ImportGramplet/ImportGramplet.py:259
 msgid "Can't determine type of import"
 msgstr "Impossible de déterminer le type d'importation"

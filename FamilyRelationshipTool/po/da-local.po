@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -20,14 +20,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
 
-#: FamilyRelationshipTool/FamilyRelationshipTool.gpr.py:24
+#: FamilyRelationshipTool/FamilyRelationshipTool.gpr.py:25
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:88
 #: FamilyRelationshipTool/FamilyRelationshipTool.py:103
-#: FamilyRelationshipTool/FamilyRelationshipTool.gpr.py:25
 msgid "Family Relationship Tool"
 msgstr "Familie slægtskabs værktøj"
 
-#: FamilyRelationshipTool/FamilyRelationshipTool.gpr.py:25
 #: FamilyRelationshipTool/FamilyRelationshipTool.gpr.py:26
 msgid "Mass-edit the family relationship type for a group of families."
 msgstr "Masserediger familieslægtskabstype for en gruppe familier."

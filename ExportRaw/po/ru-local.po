@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-04 16:31+0300\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -31,14 +31,14 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: ExportRaw/ExportRaw.gpr.py:3 ExportRaw/ExportRaw.gpr.py:4
+#: ExportRaw/ExportRaw.gpr.py:4
 msgid "Raw Export"
 msgstr "Экспорт в Raw"
 
-#: ExportRaw/ExportRaw.gpr.py:4 ExportRaw/ExportRaw.gpr.py:5
+#: ExportRaw/ExportRaw.gpr.py:5
 msgid "This is a raw python object dump"
 msgstr "Получение данных по объекту в формате python"
 
-#: ExportRaw/ExportRaw.gpr.py:11 ExportRaw/ExportRaw.gpr.py:13
+#: ExportRaw/ExportRaw.gpr.py:13
 msgid "Raw options"
 msgstr "Параметры Raw"

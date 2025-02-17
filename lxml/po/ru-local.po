@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-04 16:31+0300\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -31,14 +31,13 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: lxml/etreeGramplet.gpr.py:10 lxml/etreeGramplet.gpr.py:11
-msgid "Gramplet for testing etree with Gramps XML"
-msgstr "Грамплет для тестирования etree с Gramps XML"
-
-#: lxml/etreeGramplet.gpr.py:18 lxml/etreeGramplet.gpr.py:10
-#: lxml/etreeGramplet.gpr.py:19
+#: lxml/etreeGramplet.gpr.py:10 lxml/etreeGramplet.gpr.py:19
 msgid "etree"
 msgstr "etree"
+
+#: lxml/etreeGramplet.gpr.py:11
+msgid "Gramplet for testing etree with Gramps XML"
+msgstr "Грамплет для тестирования etree с Gramps XML"
 
 #: lxml/etreeGramplet.py:85 lxml/lxmlGramplet.py:110
 msgid "Invalid timestamp"
@@ -93,12 +92,12 @@ msgstr ""
 msgid "Cannot copy \"%s\""
 msgstr "Не удалось скопировать \"%s\""
 
-#: lxml/etreeGramplet.py:417 lxml/etreeGramplet.py:418
+#: lxml/etreeGramplet.py:418
 #, python-format
 msgid "XML: Last %s editions since %s, were at/on :\n"
 msgstr "XML: Последние изменение %s с %s, было :\n"
 
-#: lxml/etreeGramplet.py:470 lxml/etreeGramplet.py:471
+#: lxml/etreeGramplet.py:471
 #, python-format
 msgid ""
 "\n"
@@ -109,7 +108,7 @@ msgstr ""
 "XML: Количество записей и связей : \t%s\n"
 "\n"
 
-#: lxml/etreeGramplet.py:473 lxml/etreeGramplet.py:474
+#: lxml/etreeGramplet.py:474
 #, python-format
 msgid ""
 "Number of tags : \n"
@@ -118,7 +117,7 @@ msgstr ""
 "Количество меток : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:475 lxml/etreeGramplet.py:476
+#: lxml/etreeGramplet.py:476
 #, python-format
 msgid ""
 "Number of tags : \n"
@@ -127,7 +126,7 @@ msgstr ""
 "Количество меток : \n"
 "\t\t\t%s\n"
 
-#: lxml/etreeGramplet.py:477 lxml/etreeGramplet.py:478
+#: lxml/etreeGramplet.py:478
 #, python-format
 msgid ""
 "Number of  events : \n"
@@ -136,7 +135,31 @@ msgstr ""
 "Количество событий : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:479 lxml/etreeGramplet.py:484
+#: lxml/etreeGramplet.py:481
+#, fuzzy, python-format
+#| msgid ""
+#| "Number of places : \n"
+#| "\t\t\t%s\t|\t(%s)*\n"
+msgid ""
+"Number of persons : \n"
+"\t\t\t%s\t|\t(%s) and (%s)* surnames\n"
+msgstr ""
+"Количество мест : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#: lxml/etreeGramplet.py:483
+#, fuzzy, python-format
+#| msgid ""
+#| "Number of places : \n"
+#| "\t\t\t%s\t|\t(%s)*\n"
+msgid ""
+"Number of persons : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+msgstr ""
+"Количество мест : \n"
+"\t\t\t%s\t|\t(%s)*\n"
+
+#: lxml/etreeGramplet.py:484
 #, python-format
 msgid ""
 "Number of families : \n"
@@ -145,7 +168,7 @@ msgstr ""
 "Количество семей : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:480 lxml/etreeGramplet.py:485
+#: lxml/etreeGramplet.py:485
 #, python-format
 msgid ""
 "Number of sources : \n"
@@ -154,7 +177,7 @@ msgstr ""
 "Количество источников : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:481 lxml/etreeGramplet.py:487
+#: lxml/etreeGramplet.py:487
 #, python-format
 msgid ""
 "Number of citations : \n"
@@ -163,7 +186,7 @@ msgstr ""
 "Количество цитат : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:482 lxml/etreeGramplet.py:490
+#: lxml/etreeGramplet.py:490
 #, python-format
 msgid ""
 "Number of places : \n"
@@ -172,7 +195,7 @@ msgstr ""
 "Количество мест : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:483 lxml/etreeGramplet.py:491
+#: lxml/etreeGramplet.py:491
 #, python-format
 msgid ""
 "Number of media objects : \n"
@@ -181,7 +204,7 @@ msgstr ""
 "Количество документов : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:484 lxml/etreeGramplet.py:492
+#: lxml/etreeGramplet.py:492
 #, python-format
 msgid ""
 "Number of repositories : \n"
@@ -190,7 +213,7 @@ msgstr ""
 "Количество хранилищ : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:485 lxml/etreeGramplet.py:493
+#: lxml/etreeGramplet.py:493
 #, python-format
 msgid ""
 "Number of notes : \n"
@@ -199,7 +222,7 @@ msgstr ""
 "Количество заметок : \n"
 "\t\t\t%s\t|\t(%s)*\n"
 
-#: lxml/etreeGramplet.py:490 lxml/etreeGramplet.py:498
+#: lxml/etreeGramplet.py:498
 #, python-format
 msgid ""
 "\n"
@@ -208,7 +231,7 @@ msgstr ""
 "\n"
 "XML: Количество дополнительных записей и связей: \t%s\n"
 
-#: lxml/etreeGramplet.py:492 lxml/etreeGramplet.py:502
+#: lxml/etreeGramplet.py:502
 #, python-format
 msgid ""
 "* loaded Family Tree base:\n"
@@ -217,14 +240,13 @@ msgstr ""
 "* загруженная база Семейного древа:\n"
 " \"%s\"\n"
 
-#: lxml/lxmlGramplet.gpr.py:10 lxml/lxmlGramplet.gpr.py:11
-msgid "Gramplet for testing lxml and XSLT"
-msgstr "Грамплет для тестирования lxml и XSLT"
-
-#: lxml/lxmlGramplet.gpr.py:18 lxml/lxmlGramplet.gpr.py:10
-#: lxml/lxmlGramplet.gpr.py:19
+#: lxml/lxmlGramplet.gpr.py:10 lxml/lxmlGramplet.gpr.py:19
 msgid "lxml"
 msgstr "lxml"
+
+#: lxml/lxmlGramplet.gpr.py:11
+msgid "Gramplet for testing lxml and XSLT"
+msgstr "Грамплет для тестирования lxml и XSLT"
 
 #: lxml/lxmlGramplet.py:67
 msgid "Where is gzip?"

@@ -3,13 +3,13 @@
 # Copyright (C) Gramps project
 # Milo Ivir <mivir@milotype.de>, 2019, 2020.
 # Stephen Adams, Gramps Reddit, 2018.
-#
+# Milo Ivir <mail@milotype.de>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2025-02-15 16:17+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-17 00:14+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -21,12 +21,86 @@ msgstr ""
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Weblate 5.10\n"
 
-#: D3Charts/AncestralCollapsibleTree.gpr.py:22
+#: D3Charts/AncestralCollapsibleTree.py:326
+#: D3Charts/AncestralCollapsibleTree.py:771
+#: D3Charts/AncestralCollapsibleTree.py:785 D3Charts/AncestralFanChart.py:401
+#: D3Charts/AncestralFanChart.py:648 D3Charts/AncestralFanChart.py:674
+#: D3Charts/DescendantIndentedTree.py:1500
+#: D3Charts/DescendantIndentedTree.py:1563
+#: D3Charts/DescendantIndentedTree.py:1570
+#: D3Charts/DescendantIndentedTree.py:1677
+#: D3Charts/DescendantIndentedTree.py:1697
+#, python-format
+msgid "Failed writing %s: %s"
+msgstr "Greška u pisanju %s: %s"
+
+#: D3Charts/AncestralCollapsibleTree.py:345 D3Charts/AncestralFanChart.py:420
+#: D3Charts/DescendantIndentedTree.py:1519
+#, python-format
+msgid "Failed to create directory structure : %s"
+msgstr "Greška u stvaranju strukture mapa: %s"
+
+#: D3Charts/AncestralCollapsibleTree.py:368 D3Charts/AncestralFanChart.py:443
+#: D3Charts/DescendantIndentedTree.py:1555
+#, python-format
+msgid "Failed to copy web files : %s"
+msgstr "Greška u kopiranju web datoteka: %s"
+
+#: D3Charts/AncestralCollapsibleTree.py:816
+msgid "Ancestral Collapsible Tree Options"
+msgstr "Opcije za sklopivo stablo predaka"
+
+#: D3Charts/AncestralCollapsibleTree.py:840 D3Charts/AncestralFanChart.py:723
+#: D3Charts/DescendantIndentedTree.py:1804
+msgid "Include Generations"
+msgstr "Uključi generacije"
+
+#: D3Charts/AncestralCollapsibleTree.py:846
+msgid "Male Background Color"
+msgstr "Muška boja pozadine"
+
+#: D3Charts/AncestralCollapsibleTree.py:847
+msgid "RGB-color for male box background."
+msgstr "RGB-boja za mušku boju pozadine."
+
+#: D3Charts/AncestralCollapsibleTree.py:850
+msgid "Male Expandable Background Color"
+msgstr "Muška boja pozadine, rasklopljeno"
+
+#: D3Charts/AncestralCollapsibleTree.py:852
+msgid "RGB-color for male expandable box background."
+msgstr "RGB-boja za mušku boju pozadine u rasklopljenom stanju."
+
+#: D3Charts/AncestralCollapsibleTree.py:855
+msgid "Female Background"
+msgstr "Ženska boja pozadine"
+
+#: D3Charts/AncestralCollapsibleTree.py:856
+msgid "RGB-color for female box background."
+msgstr "RGB-boja za žensku boju pozadine."
+
+#: D3Charts/AncestralCollapsibleTree.py:859
+msgid "Female Expandable Background"
+msgstr "Ženska boja pozadine, rasklopljeno"
+
+#: D3Charts/AncestralCollapsibleTree.py:861
+msgid "RGB-color for female expandable box background."
+msgstr "RGB-boja za žensku boju pozadine u rasklopljenom stanju."
+
+#: D3Charts/AncestralCollapsibleTree.py:867 D3Charts/AncestralFanChart.py:739
+#: D3Charts/DescendantIndentedTree.py:1826
+msgid "The destination path for generated files."
+msgstr "Odredište za stvorene datoteke."
+
+#: D3Charts/AncestralCollapsibleTree.py:872 D3Charts/AncestralFanChart.py:744
+#: D3Charts/DescendantIndentedTree.py:1831
+msgid "The destination file name for html content."
+msgstr "Ime datoteke za html sadržaj."
+
 #: D3Charts/AncestralCollapsibleTree.gpr.py:23
 msgid "Ancestral Collapsible Tree"
 msgstr "Sklopivo stablo predaka"
 
-#: D3Charts/AncestralCollapsibleTree.gpr.py:31
 #: D3Charts/AncestralCollapsibleTree.gpr.py:33
 msgid ""
 "Generates a web page with a graphical representation of ancestors (SVG) "
@@ -35,147 +109,11 @@ msgstr ""
 "Stvara web-stranicu s grafičkim prikazom predaka (SVG) u sklopivom "
 "stablastom obliku pomoću D3.js JavaScript biblioteke."
 
-#: D3Charts/AncestralCollapsibleTree.py:326
-#: D3Charts/AncestralCollapsibleTree.py:768
-#: D3Charts/AncestralCollapsibleTree.py:781 D3Charts/AncestralFanChart.py:401
-#: D3Charts/AncestralFanChart.py:645 D3Charts/AncestralFanChart.py:670
-#: D3Charts/DescendantIndentedTree.py:1497
-#: D3Charts/DescendantIndentedTree.py:1557
-#: D3Charts/DescendantIndentedTree.py:1563
-#: D3Charts/DescendantIndentedTree.py:1670
-#: D3Charts/DescendantIndentedTree.py:1689
-#: D3Charts/AncestralCollapsibleTree.py:771
-#: D3Charts/AncestralCollapsibleTree.py:785 D3Charts/AncestralFanChart.py:648
-#: D3Charts/AncestralFanChart.py:674 D3Charts/DescendantIndentedTree.py:1500
-#: D3Charts/DescendantIndentedTree.py:1570
-#: D3Charts/DescendantIndentedTree.py:1677
-#: D3Charts/DescendantIndentedTree.py:1697
-#, python-format
-msgid "Failed writing %s: %s"
-msgstr "Greška u pisanju %s: %s"
-
-#: D3Charts/AncestralCollapsibleTree.py:344 D3Charts/AncestralFanChart.py:419
-#: D3Charts/DescendantIndentedTree.py:1515
-#: D3Charts/AncestralCollapsibleTree.py:345 D3Charts/AncestralFanChart.py:420
-#: D3Charts/DescendantIndentedTree.py:1519
-#, python-format
-msgid "Failed to create directory structure : %s"
-msgstr "Greška u stvaranju strukture mapa: %s"
-
-#: D3Charts/AncestralCollapsibleTree.py:366 D3Charts/AncestralFanChart.py:441
-#: D3Charts/DescendantIndentedTree.py:1550
-#: D3Charts/AncestralCollapsibleTree.py:368 D3Charts/AncestralFanChart.py:443
-#: D3Charts/DescendantIndentedTree.py:1555
-#, python-format
-msgid "Failed to copy web files : %s"
-msgstr "Greška u kopiranju web datoteka: %s"
-
-#: D3Charts/AncestralCollapsibleTree.py:811
-#: D3Charts/AncestralCollapsibleTree.py:816
-msgid "Ancestral Collapsible Tree Options"
-msgstr "Opcije za sklopivo stablo predaka"
-
-#: D3Charts/AncestralCollapsibleTree.py:835 D3Charts/AncestralFanChart.py:718
-#: D3Charts/DescendantIndentedTree.py:1795
-#: D3Charts/AncestralCollapsibleTree.py:840 D3Charts/AncestralFanChart.py:723
-#: D3Charts/DescendantIndentedTree.py:1804
-msgid "Include Generations"
-msgstr "Uključi generacije"
-
-#: D3Charts/AncestralCollapsibleTree.py:841
-#: D3Charts/AncestralCollapsibleTree.py:846
-msgid "Male Background Color"
-msgstr "Muška boja pozadine"
-
-#: D3Charts/AncestralCollapsibleTree.py:842
-#: D3Charts/AncestralCollapsibleTree.py:847
-msgid "RGB-color for male box background."
-msgstr "RGB-boja za mušku boju pozadine."
-
-#: D3Charts/AncestralCollapsibleTree.py:845
-#: D3Charts/AncestralCollapsibleTree.py:850
-msgid "Male Expandable Background Color"
-msgstr "Muška boja pozadine, rasklopljeno"
-
-#: D3Charts/AncestralCollapsibleTree.py:847
-#: D3Charts/AncestralCollapsibleTree.py:852
-msgid "RGB-color for male expandable box background."
-msgstr "RGB-boja za mušku boju pozadine u rasklopljenom stanju."
-
-#: D3Charts/AncestralCollapsibleTree.py:850
-#: D3Charts/AncestralCollapsibleTree.py:855
-msgid "Female Background"
-msgstr "Ženska boja pozadine"
-
-#: D3Charts/AncestralCollapsibleTree.py:851
-#: D3Charts/AncestralCollapsibleTree.py:856
-msgid "RGB-color for female box background."
-msgstr "RGB-boja za žensku boju pozadine."
-
-#: D3Charts/AncestralCollapsibleTree.py:854
-#: D3Charts/AncestralCollapsibleTree.py:859
-msgid "Female Expandable Background"
-msgstr "Ženska boja pozadine, rasklopljeno"
-
-#: D3Charts/AncestralCollapsibleTree.py:856
-#: D3Charts/AncestralCollapsibleTree.py:861
-msgid "RGB-color for female expandable box background."
-msgstr "RGB-boja za žensku boju pozadine u rasklopljenom stanju."
-
-#: D3Charts/AncestralCollapsibleTree.py:862 D3Charts/AncestralFanChart.py:734
-#: D3Charts/DescendantIndentedTree.py:1817
-#: D3Charts/AncestralCollapsibleTree.py:867 D3Charts/AncestralFanChart.py:739
-#: D3Charts/DescendantIndentedTree.py:1826
-msgid "The destination path for generated files."
-msgstr "Odredište za stvorene datoteke."
-
-#: D3Charts/AncestralCollapsibleTree.py:867 D3Charts/AncestralFanChart.py:739
-#: D3Charts/DescendantIndentedTree.py:1822
-#: D3Charts/AncestralCollapsibleTree.py:872 D3Charts/AncestralFanChart.py:744
-#: D3Charts/DescendantIndentedTree.py:1831
-msgid "The destination file name for html content."
-msgstr "Ime datoteke za html sadržaj."
-
-#: D3Charts/AncestralFanChart.gpr.py:22 D3Charts/AncestralFanChart.gpr.py:23
-msgid "Ancestral Fan Chart"
-msgstr "Lepezasti dijagram predaka"
-
-#: D3Charts/AncestralFanChart.gpr.py:31 D3Charts/AncestralFanChart.gpr.py:33
-msgid ""
-"Generates a web page with a graphical representation of ancestors (SVG) "
-"represented as a Fan Chart from the D3.js JavaScript library."
-msgstr ""
-"Stvara web-stranicu s grafičkim prikazom predaka (SVG) u lepezastom "
-"dijagramu pomoću D3.js JavaScript biblioteke."
-
-#: D3Charts/AncestralFanChart.py:702 D3Charts/AncestralFanChart.py:707
-msgid "Ancestral Fan Chart Options"
-msgstr "Opcije za lepezasti dijagram predaka"
-
-#: D3Charts/AncestralFanChart.py:724 D3Charts/AncestralFanChart.py:729
-msgid "Paternal Background Color"
-msgstr "Očeva boja pozadine"
-
-#: D3Charts/AncestralFanChart.py:725 D3Charts/AncestralFanChart.py:730
-msgid "RGB-color for paternal box background."
-msgstr "RGB-boje za očevu boju pozadine."
-
-#: D3Charts/AncestralFanChart.py:728 D3Charts/AncestralFanChart.py:733
-msgid "Maternal Background"
-msgstr "Majčina boja pozadine"
-
-#: D3Charts/AncestralFanChart.py:729 D3Charts/AncestralFanChart.py:734
-msgid "RGB-color for maternal box background."
-msgstr "RGB-boje za majčinu boju pozadine."
-
-#: D3Charts/DescendantIndentedTree.gpr.py:22
-#: D3Charts/DescendantIndentedTree.py:908
 #: D3Charts/DescendantIndentedTree.gpr.py:23
 #: D3Charts/DescendantIndentedTree.py:909
 msgid "Descendant Indented Tree"
 msgstr "Stablo potomaka s uvlakama"
 
-#: D3Charts/DescendantIndentedTree.gpr.py:31
 #: D3Charts/DescendantIndentedTree.gpr.py:33
 msgid ""
 "Generates a web page with a graphical representation of descendants (SVG) "
@@ -185,252 +123,258 @@ msgstr ""
 "Stvara web-stranicu s grafičkim prikazom potomaka (SVG) u sklopivom "
 "stablastom obliku s uvlakama pomoću D3.js JavaScript biblioteke."
 
-#: D3Charts/DescendantIndentedTree.py:672
+#: D3Charts/AncestralFanChart.py:707
+msgid "Ancestral Fan Chart Options"
+msgstr "Opcije za lepezasti dijagram predaka"
+
+#: D3Charts/AncestralFanChart.py:729
+msgid "Paternal Background Color"
+msgstr "Očeva boja pozadine"
+
+#: D3Charts/AncestralFanChart.py:730
+msgid "RGB-color for paternal box background."
+msgstr "RGB-boje za očevu boju pozadine."
+
+#: D3Charts/AncestralFanChart.py:733
+msgid "Maternal Background"
+msgstr "Majčina boja pozadine"
+
+#: D3Charts/AncestralFanChart.py:734
+msgid "RGB-color for maternal box background."
+msgstr "RGB-boje za majčinu boju pozadine."
+
+#: D3Charts/AncestralFanChart.gpr.py:23
+msgid "Ancestral Fan Chart"
+msgstr "Lepezasti dijagram predaka"
+
+#: D3Charts/AncestralFanChart.gpr.py:33
+msgid ""
+"Generates a web page with a graphical representation of ancestors (SVG) "
+"represented as a Fan Chart from the D3.js JavaScript library."
+msgstr ""
+"Stvara web-stranicu s grafičkim prikazom predaka (SVG) u lepezastom "
+"dijagramu pomoću D3.js JavaScript biblioteke."
+
 #: D3Charts/DescendantIndentedTree.py:673
 #, python-format
 msgid "See %(reference)s : %(spouse)s"
 msgstr "Pogledaj %(reference)s : %(spouse)s"
 
-#: D3Charts/DescendantIndentedTree.py:763
 #: D3Charts/DescendantIndentedTree.py:764
 msgid "Generating report..."
 msgstr "Izrada izvještaja …"
 
-#: D3Charts/DescendantIndentedTree.py:1363
 #: D3Charts/DescendantIndentedTree.py:1364
 msgid "Invalid Destination Directory"
 msgstr "Nevažeća odredišna mapa"
 
-#: D3Charts/DescendantIndentedTree.py:1373
+#: D3Charts/DescendantIndentedTree.py:1365
+#, fuzzy, python-format
+#| msgid ""
+#| "Destinaton diretory %s does not exist\n"
+#| "Do you want to attempt to create it."
+msgid ""
+"Destinaton diretory %s does not exist\n"
+"Do you want to attempt to create it?"
+msgstr ""
+"Odredišna mapa %s ne postoji\n"
+"Želiš li je pokušati stvoriti."
+
 #: D3Charts/DescendantIndentedTree.py:1374
 #, python-format
 msgid "Failed to create %s: %s"
 msgstr "Greška prilikom stvaranja %s: %s"
 
-#: D3Charts/DescendantIndentedTree.py:1443
+#: D3Charts/DescendantIndentedTree.py:1391
+#, fuzzy, python-format
+#| msgid ""
+#| "Destination file %s already exists.\n"
+#| "Do you want to overwrite."
+msgid ""
+"Destination file %s already exists.\n"
+"Do you want to overwrite it?"
+msgstr ""
+"Odredišna datoteka %s već postoji.\n"
+"Želiš li je prepisati?"
+
 #: D3Charts/DescendantIndentedTree.py:1446
 msgid "Default View"
 msgstr "Standardni prikaz"
 
-#: D3Charts/DescendantIndentedTree.py:1446
 #: D3Charts/DescendantIndentedTree.py:1449
 msgid "Expand All"
 msgstr "Rasklopi sve"
 
-#: D3Charts/DescendantIndentedTree.py:1802
 #: D3Charts/DescendantIndentedTree.py:1811
 msgid "Include contraction level"
 msgstr "Uključi razinu sklapanja"
 
-#: D3Charts/DescendantIndentedTree.py:1804
 #: D3Charts/DescendantIndentedTree.py:1813
 msgid "The number of descendant levels to contract on initial display."
 msgstr "Broj sklopljenih razina potomaka pri prvobitnom prikazu."
 
-#: D3Charts/DescendantIndentedTree.py:1811
 #: D3Charts/DescendantIndentedTree.py:1820
 msgid "The font size in pixels for each node."
 msgstr "Veličina fonta za svaki čvor."
 
-#: D3Charts/DescendantIndentedTree.py:1839
 #: D3Charts/DescendantIndentedTree.py:1848
 msgid "Whether to show duplicate family trees in the report."
 msgstr "Da li prikazati duple rodoslove u izvještaju."
 
-#: D3Charts/DescendantIndentedTree.py:1843
 #: D3Charts/DescendantIndentedTree.py:1852
 msgid "Expanded Row Background Color"
 msgstr "Boja pozadine proširenih redova"
 
-#: D3Charts/DescendantIndentedTree.py:1844
 #: D3Charts/DescendantIndentedTree.py:1853
 msgid "RGB-color for expanded row background."
 msgstr "RGB-boje za pozadine proširenih redova."
 
-#: D3Charts/DescendantIndentedTree.py:1847
 #: D3Charts/DescendantIndentedTree.py:1856
 msgid "Expandable Background Color"
 msgstr "Proširiva boja pozadine"
 
-#: D3Charts/DescendantIndentedTree.py:1849
 #: D3Charts/DescendantIndentedTree.py:1858
 msgid "RGB-color for expandable row background."
 msgstr "RGB-boje za proširive boje pozadine."
 
-#: D3Charts/DescendantIndentedTree.py:1852
 #: D3Charts/DescendantIndentedTree.py:1861
 msgid "Non-Expandable Background Color"
 msgstr "Ne-proširiva boja pozadine"
 
-#: D3Charts/DescendantIndentedTree.py:1854
 #: D3Charts/DescendantIndentedTree.py:1863
 msgid "RGB-color for non-expandable row background."
 msgstr "RGB-boje za ne-proširive boje pozadine."
 
-#: D3Charts/DescendantIndentedTree.py:1858
 #: D3Charts/DescendantIndentedTree.py:1867
 msgid "Include records marked private"
 msgstr "Uključi zapise, označene kao privatne"
 
-#: D3Charts/DescendantIndentedTree.py:1860
 #: D3Charts/DescendantIndentedTree.py:1869
 msgid "Whether to include private objects."
 msgstr "Da li uključiti privatne objekte."
 
-#: D3Charts/DescendantIndentedTree.py:1868
 #: D3Charts/DescendantIndentedTree.py:1877
 msgid "Include Last Name Only"
 msgstr "Uključi samo prezimena"
 
-#: D3Charts/DescendantIndentedTree.py:1870
 #: D3Charts/DescendantIndentedTree.py:1879
 msgid "Include Full Name Only"
 msgstr "Uključi samo potpuna imena"
 
-#: D3Charts/DescendantIndentedTree.py:1872
 #: D3Charts/DescendantIndentedTree.py:1881
 msgid "How to handle living people."
 msgstr "Kako postupati sa živim osobama."
 
-#: D3Charts/DescendantIndentedTree.py:1879
 #: D3Charts/DescendantIndentedTree.py:1888
 msgid "Whether or not to include people who may have recently died."
 msgstr "Da li uključiti osobe, koje su vjerojatno nedavno umrle."
 
-#: D3Charts/DescendantIndentedTree.py:1887
 #: D3Charts/DescendantIndentedTree.py:1896
 msgid "Navigation"
 msgstr "Navigacija"
 
-#: D3Charts/DescendantIndentedTree.py:1889
 #: D3Charts/DescendantIndentedTree.py:1898
 msgid "Contraction/Expansion mechanism"
 msgstr "Mehanizam za sklapljanje/rasklapanja"
 
-#: D3Charts/DescendantIndentedTree.py:1892
 #: D3Charts/DescendantIndentedTree.py:1901
 msgid "Entire node."
 msgstr "Cjelokupno čvorište."
 
-#: D3Charts/DescendantIndentedTree.py:1893
 #: D3Charts/DescendantIndentedTree.py:1902
 msgid "Arrow images at start of node."
 msgstr "Slika strelica na početku čvorišta."
 
-#: D3Charts/DescendantIndentedTree.py:1894
 #: D3Charts/DescendantIndentedTree.py:1903
 msgid "Plus/Minus images at start of node."
 msgstr "Plus/Minus slika na početku čvorišta."
 
-#: D3Charts/DescendantIndentedTree.py:1895
-#: D3Charts/DescendantIndentedTree.py:1924
 #: D3Charts/DescendantIndentedTree.py:1904
 #: D3Charts/DescendantIndentedTree.py:1933
 msgid "Where to click to expand/contract nodes."
 msgstr "Gdje pritisnuti za rasklapanje/sklapljanje čvorišta."
 
-#: D3Charts/DescendantIndentedTree.py:1899
 #: D3Charts/DescendantIndentedTree.py:1908
 msgid "Auto-generate HREF links for nodes"
 msgstr "Automastko stvaranje HREF-poveznica za čvorište"
 
-#: D3Charts/DescendantIndentedTree.py:1901
 #: D3Charts/DescendantIndentedTree.py:1910
 msgid "Whether to auto-generate HTML links for each node on the report."
 msgstr "Da li automatski stvoriti HTML-poveznice za sva čvorišta u izvještaju."
 
-#: D3Charts/DescendantIndentedTree.py:1907
 #: D3Charts/DescendantIndentedTree.py:1916
 msgid "URL prefix path."
 msgstr "URL-staza."
 
-#: D3Charts/DescendantIndentedTree.py:1909
 #: D3Charts/DescendantIndentedTree.py:1918
 msgid "URL prefix to apply to each auto-generated HREF link."
 msgstr ""
 "URL-staza, koja se primijenjuje na svaku automatski stvorenu HREF-poveznicu."
 
-#: D3Charts/DescendantIndentedTree.py:1915
 #: D3Charts/DescendantIndentedTree.py:1924
 msgid "URL file extension"
 msgstr "Datotečni nastavak URL-a"
 
-#: D3Charts/DescendantIndentedTree.py:1917
 #: D3Charts/DescendantIndentedTree.py:1926
 msgid "No file extension."
 msgstr "Bez datotečnog nastavka."
 
-#: D3Charts/DescendantIndentedTree.py:1918
 #: D3Charts/DescendantIndentedTree.py:1927
 msgid ".html"
 msgstr ".html"
 
-#: D3Charts/DescendantIndentedTree.py:1919
 #: D3Charts/DescendantIndentedTree.py:1928
 msgid ".htm"
 msgstr ".htm"
 
-#: D3Charts/DescendantIndentedTree.py:1920
 #: D3Charts/DescendantIndentedTree.py:1929
 msgid ".shtml"
 msgstr ".shtml"
 
-#: D3Charts/DescendantIndentedTree.py:1921
 #: D3Charts/DescendantIndentedTree.py:1930
 msgid ".php"
 msgstr ".php"
 
-#: D3Charts/DescendantIndentedTree.py:1922
 #: D3Charts/DescendantIndentedTree.py:1931
 msgid ".php3"
 msgstr ".php3"
 
-#: D3Charts/DescendantIndentedTree.py:1923
 #: D3Charts/DescendantIndentedTree.py:1932
 msgid ".cgi"
 msgstr ".cgi"
 
-#: D3Charts/DescendantIndentedTree.py:1929
 #: D3Charts/DescendantIndentedTree.py:1938
 msgid "URL file name delimeter"
 msgstr "Razdvojnik URL imena datoteka"
 
-#: D3Charts/DescendantIndentedTree.py:1931
 #: D3Charts/DescendantIndentedTree.py:1940
 msgid "Remove all whitespace."
 msgstr "Ukloni sve razmake."
 
-#: D3Charts/DescendantIndentedTree.py:1932
 #: D3Charts/DescendantIndentedTree.py:1941
 msgid "Replace whitespace with dash(-)."
 msgstr "Ukloni sve razmake sa crticom (-)."
 
-#: D3Charts/DescendantIndentedTree.py:1933
 #: D3Charts/DescendantIndentedTree.py:1942
 msgid "Replace whitespace with underscore(_)"
 msgstr "Ukloni sve razmake s podvlakom (_)"
 
-#: D3Charts/DescendantIndentedTree.py:1934
 #: D3Charts/DescendantIndentedTree.py:1943
 msgid "What to use as file name delimiter replacing whitespace."
 msgstr "Što koristiti kao razdvojnik umjesto razmaka."
 
-#: D3Charts/DescendantIndentedTree.py:1939
 #: D3Charts/DescendantIndentedTree.py:1948
 msgid "Generations to generate HREF links"
 msgstr "Generacije za stvaranje HREF-poveznica"
 
-#: D3Charts/DescendantIndentedTree.py:1941
 #: D3Charts/DescendantIndentedTree.py:1950
 msgid "The number of generations to generate HREF links."
 msgstr "Broj generacija, za koje se stvaraju HREF-poveznice."
 
-#: D3Charts/DescendantIndentedTree.py:1947
 #: D3Charts/DescendantIndentedTree.py:1956
 msgid "Exclude persons who died before (years)"
 msgstr "Isključi osobe koje su umrle prije (godina)"
 
-#: D3Charts/DescendantIndentedTree.py:1950
 #: D3Charts/DescendantIndentedTree.py:1959
 msgid ""
 "Whether to generate links for people who died in infancy, -1 excludes nobody."
@@ -438,74 +382,60 @@ msgstr ""
 "Da li stvoriti poveznice za osobe koje su umrle pri porodu. −1 ne isključuje "
 "nikoga."
 
-#: D3Charts/DescendantIndentedTree.py:1956
 #: D3Charts/DescendantIndentedTree.py:1965
 msgid "Exclude center person"
 msgstr "Isključi središnju osobu"
 
-#: D3Charts/DescendantIndentedTree.py:1957
 #: D3Charts/DescendantIndentedTree.py:1966
 msgid "Whether or not to generate links for center person."
 msgstr "Da li stvoriti poveznice za središnju osobu."
 
-#: D3Charts/DescendantIndentedTree.py:1962
 #: D3Charts/DescendantIndentedTree.py:1971
 msgid "Exclude Spouses"
 msgstr "Isključi supružnike"
 
-#: D3Charts/DescendantIndentedTree.py:1963
 #: D3Charts/DescendantIndentedTree.py:1972
 msgid "Whether or not to generate links for spouses."
 msgstr "Da li stvoriti poveznice za supružnike."
 
-#: D3Charts/DescendantIndentedTree.py:1970
 #: D3Charts/DescendantIndentedTree.py:1979
 msgid "Biography Content"
 msgstr "Sadržaj biografije"
 
-#: D3Charts/DescendantIndentedTree.py:1972
 #: D3Charts/DescendantIndentedTree.py:1981
 msgid "Show biography tooltips"
 msgstr "Prikaži natuknice za alat biografije"
 
-#: D3Charts/DescendantIndentedTree.py:1973
 #: D3Charts/DescendantIndentedTree.py:1982
 msgid "Whether to show biography tooltips when hovering over a node."
 msgstr ""
 "Da li prikazati natuknice za alat biografije, prilikom prelaženja mišem "
 "preko čvorišta."
 
-#: D3Charts/DescendantIndentedTree.py:2017
 #: D3Charts/DescendantIndentedTree.py:2026
 msgid "Text Color"
 msgstr "Boja teksta"
 
-#: D3Charts/DescendantIndentedTree.py:2019
 #: D3Charts/DescendantIndentedTree.py:2028
 msgid "RGB-color for biography text."
 msgstr "RGB-boja za tekst biografije."
 
-#: D3Charts/DescendantIndentedTree.py:2024
 #: D3Charts/DescendantIndentedTree.py:2033
 msgid "RGB-color for biography tooltip."
 msgstr "RGB-boje za natuknice biografije."
 
-#: D3Charts/DescendantIndentedTree.py:2027
 #: D3Charts/DescendantIndentedTree.py:2036
 msgid "Header Font size"
 msgstr "Veličina fonta zaglavlja"
 
-#: D3Charts/DescendantIndentedTree.py:2029
 #: D3Charts/DescendantIndentedTree.py:2038
 msgid "The font size in pixels for biography header text."
 msgstr "Veličina fonta u pikslima za tekst zaglavlja biografije."
 
-#: D3Charts/DescendantIndentedTree.py:2035
 #: D3Charts/DescendantIndentedTree.py:2044
 msgid "Body Font size"
 msgstr "Veličina fonta osnovnog teksta"
 
-#: D3Charts/DescendantIndentedTree.py:2037
 #: D3Charts/DescendantIndentedTree.py:2046
 msgid "The font size in pixels for biography body text."
 msgstr "Veličina fonta u pikslima za osnovni tekst biografije."

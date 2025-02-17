@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-17 18:14+0100\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -39,18 +39,17 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 # Ancêtres, Aïeux ?
-#: Form/form_us.xml.h:1035 Form/form_us.xml.h:2085 Form/form_us.xml.h:2122
-#: Form/form_us.xml.h:2160 Form/form_us.xml.h:2198
-#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:34
+#: Form/form_us.xml.h:2085 Form/form_us.xml.h:2122 Form/form_us.xml.h:2160
+#: Form/form_us.xml.h:2198 TimelinePedigreeView/TimelinePedigreeView.gpr.py:34
 msgid "Ancestry"
 msgstr "Lignée"
 
-#: FamilyTree/FamilyTree.py:1055 FamilyTree/FamilyTree.py:1047
+#: FamilyTree/FamilyTree.py:1047
 #: TimelinePedigreeView/TimelinePedigreeView.py:1481
 msgid "Ancestor Generations"
 msgstr "Générations de ascendants"
 
-#: FamilyTree/FamilyTree.py:1059 FamilyTree/FamilyTree.py:1051
+#: FamilyTree/FamilyTree.py:1051
 #: TimelinePedigreeView/TimelinePedigreeView.py:1465
 msgid "Descendant Generations"
 msgstr "Générations de descendants"
@@ -60,7 +59,6 @@ msgstr "Générations de descendants"
 msgid "Timeline Pedigree"
 msgstr "Arbre au fil du temps"
 
-#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:35
 #: TimelinePedigreeView/TimelinePedigreeView.gpr.py:36
 msgid ""
 "The view shows a timeline pedigree with ancestors and descendants of the "
@@ -81,6 +79,12 @@ msgstr "d."
 msgid "short for baptized|bap."
 msgstr "bap."
 
+#: TimelinePedigreeView/TimelinePedigreeView.py:85
+#, fuzzy
+#| msgid "short for cremated|crem."
+msgid "short for christened|chr."
+msgstr "inci."
+
 #: TimelinePedigreeView/TimelinePedigreeView.py:86
 msgid "short for buried|bur."
 msgstr "inh."
@@ -89,23 +93,18 @@ msgstr "inh."
 msgid "short for cremated|crem."
 msgstr "inci."
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:488
 #: TimelinePedigreeView/TimelinePedigreeView.py:339
 msgid "Timeline pedigree"
 msgstr "Arbre au fil du temps"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1591
 #: TimelinePedigreeView/TimelinePedigreeView.py:1437
 msgid "Order by timeline"
 msgstr "Trier par date"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1593
 #: TimelinePedigreeView/TimelinePedigreeView.py:1439
 msgid "Show lifespan"
 msgstr "Afficher la durée de vie"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1631
-#: TimelinePedigreeView/TimelinePedigreeView.py:1650
 #: TimelinePedigreeView/TimelinePedigreeView.py:1470
 #: TimelinePedigreeView/TimelinePedigreeView.py:1486
 #, python-format
@@ -113,3 +112,9 @@ msgid "%d generation"
 msgid_plural "%d generations"
 msgstr[0] "%d génération"
 msgstr[1] "%d générations"
+
+#: TimelinePedigreeView/TimelinePedigreeView.py:1505
+#, fuzzy
+#| msgid "Timeline Pedigree"
+msgid "About Timeline Pedigree View"
+msgstr "Arbre au fil du temps"

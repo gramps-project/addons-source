@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -20,27 +20,46 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
 
-#: FilterRules/ageatdeath.py:71 SourceIndex/birth.glade:544
-#: SourceIndex/birth.glade:762 SourceIndex/census.glade:286
+#: FilterRules/ageatdeath.py:71 SourceIndex/witness.glade:107
+#: SourceIndex/birth.glade:544 SourceIndex/birth.glade:762
 #: SourceIndex/death.glade:521 SourceIndex/death.glade:669
-#: SourceIndex/death.glade:939 SourceIndex/marriage.glade:467
-#: SourceIndex/marriage.glade:789 SourceIndex/marriage.glade:808
-#: SourceIndex/marriage.glade:827 SourceIndex/marriage.glade:1562
-#: SourceIndex/marriage.glade:1621 SourceIndex/witness.glade:107
+#: SourceIndex/death.glade:939 SourceIndex/census.glade:286
+#: SourceIndex/marriage.glade:467 SourceIndex/marriage.glade:789
+#: SourceIndex/marriage.glade:808 SourceIndex/marriage.glade:827
+#: SourceIndex/marriage.glade:1562 SourceIndex/marriage.glade:1621
 msgid "Age:"
 msgstr "Alder:"
 
-#: DynamicWeb/dynamicweb.py:3114 SourceIndex/birth.py:126
-#: SourceIndex/census.py:82 SourceIndex/death.py:87 SourceIndex/index.py:92
-#: SourceIndex/marriage.py:87 SourceIndex/witness.py:64
+#: DynamicWeb/dynamicweb.py:3114 SourceIndex/marriage.py:87
+#: SourceIndex/census.py:82 SourceIndex/index.py:92 SourceIndex/death.py:87
+#: SourceIndex/witness.py:64 SourceIndex/birth.py:126
 msgid "Sources Index"
 msgstr "Kildeindeks"
 
-#: SourceIndex/birth.glade:113 SourceIndex/census.glade:873
-#: SourceIndex/death.glade:182 SourceIndex/marriage.glade:1263
-#: Form/editform.py:225
+#: Form/editform.py:225 SourceIndex/birth.glade:113 SourceIndex/death.glade:182
+#: SourceIndex/census.glade:873 SourceIndex/marriage.glade:1263
 msgid "Reference:"
 msgstr "Henvisning:"
+
+#: SourceIndex/SourceIndex.gpr.py:24
+msgid "BirthIndex"
+msgstr "Fødselsindeks"
+
+#: SourceIndex/SourceIndex.gpr.py:40
+msgid "MarriageIndex"
+msgstr "Ægteskabsindeks"
+
+#: SourceIndex/SourceIndex.gpr.py:56
+msgid "DeathIndex"
+msgstr "Dødsindeks"
+
+#: SourceIndex/SourceIndex.gpr.py:72
+msgid "CensusIndex"
+msgstr "Folketællingsindeks"
+
+#: SourceIndex/SourceIndex.gpr.py:104
+msgid "SourceIndex"
+msgstr "Kildeindeks"
 
 #: SourceIndex/index.py:407
 msgid "*** Error: Must install either ElementTree or lxml."
@@ -49,26 +68,6 @@ msgstr "*** Fejl: Du skal installere enten ElementTree eller lxml."
 #: SourceIndex/index.py:409
 msgid "must install either ElementTree or lxml"
 msgstr "du skal installere enten ElementTree eller lxml"
-
-#: SourceIndex/SourceIndex.gpr.py:23 SourceIndex/SourceIndex.gpr.py:24
-msgid "BirthIndex"
-msgstr "Fødselsindeks"
-
-#: SourceIndex/SourceIndex.gpr.py:38 SourceIndex/SourceIndex.gpr.py:40
-msgid "MarriageIndex"
-msgstr "Ægteskabsindeks"
-
-#: SourceIndex/SourceIndex.gpr.py:53 SourceIndex/SourceIndex.gpr.py:56
-msgid "DeathIndex"
-msgstr "Dødsindeks"
-
-#: SourceIndex/SourceIndex.gpr.py:68 SourceIndex/SourceIndex.gpr.py:72
-msgid "CensusIndex"
-msgstr "Folketællingsindeks"
-
-#: SourceIndex/SourceIndex.gpr.py:98 SourceIndex/SourceIndex.gpr.py:104
-msgid "SourceIndex"
-msgstr "Kildeindeks"
 
 #: SourceIndex/birth.glade:7 SourceIndex/index.glade:585
 msgid "birth"

@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-26 19:54-0300\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2012-08-26 20:57-0300\n"
 "Last-Translator: André Marcelo Alvarenga <andrealvarenga@gmx.net>\n"
 "Language-Team: Brazilian Portuguese>\n"
@@ -24,7 +24,19 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 1.0\n"
 
-#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:5
+#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:25
+#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:33
+msgid "Birthdays"
+msgstr ""
+
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:26
 msgid "a gramplet that displays the birthdays of the living people"
 msgstr "Gramplet que mostra os aniversários das pessoas vivas"
+
+#: BirthdaysGramplet/BirthdaysGramplet.py:45
+msgid "Ignore birthdays with tag"
+msgstr ""
+
+#: BirthdaysGramplet/BirthdaysGramplet.py:46
+msgid "Only show birthdays with tag"
+msgstr ""

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-08 16:37+0100\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2025-02-15 10:09+0000\n"
 "Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
@@ -25,7 +25,19 @@ msgstr ""
 "X-Generator: Weblate 5.10\n"
 "Generated-By: pygettext.py 1.4\n"
 
-#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:5
+#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:25
+#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:33
+msgid "Birthdays"
+msgstr ""
+
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:26
 msgid "a gramplet that displays the birthdays of the living people"
 msgstr "en gramplet som viser bursdager for levende personer"
+
+#: BirthdaysGramplet/BirthdaysGramplet.py:45
+msgid "Ignore birthdays with tag"
+msgstr ""
+
+#: BirthdaysGramplet/BirthdaysGramplet.py:46
+msgid "Only show birthdays with tag"
+msgstr ""

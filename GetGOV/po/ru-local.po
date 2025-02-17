@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-04 16:31+0300\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -31,38 +31,35 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: GetGOV/getgov.gpr.py:30 GetGOV/getgov.gpr.py:41 GetGOV/getgov.gpr.py:42
+#: GetGOV/getgov.gpr.py:30 GetGOV/getgov.gpr.py:42 GetGOV/getgov.gpr.py:32
+#: GetGOV/getgov.gpr.py:44
 msgid "GetGOV"
 msgstr "Места из GOV"
 
-#: GetGOV/getgov.gpr.py:31
+#: GetGOV/getgov.gpr.py:31 GetGOV/getgov.gpr.py:33
 msgid "Gramplet to get places from the GOV database"
 msgstr "Грамлет для получения местоположений из базы данных GOV"
 
-#: GetGOV/getgov.py:301 GetGOV/getgov.py:303
-msgid "Enter GOV-id:"
-msgstr "Введите GOV-id:"
-
-#: GetGOV/getgov.py:309 GetGOV/getgov.py:311
+#: GetGOV/getgov.py:311 GetGOV/getgov.py:323
 msgid "Get Place"
 msgstr "Получить место"
 
-#: GetGOV/getgov.py:353 GetGOV/getgov.py:343
+#: GetGOV/getgov.py:343 GetGOV/getgov.py:356
 #, python-format
 msgid "Add GOV-id place %s"
 msgstr "Добавить GOV-id место %s"
 
-#: GetGOV/getgov.py:502 GetGOV/getgov.py:521
+#: GetGOV/getgov.py:521 GetGOV/getgov.py:555
 #, python-format
 msgid "from %s to %s"
 msgstr "из %s в %s"
 
-#: GetGOV/getgov.py:504 GetGOV/getgov.py:523
+#: GetGOV/getgov.py:523 GetGOV/getgov.py:557
 #, python-format
 msgid "after %s"
 msgstr "после %s"
 
-#: GetGOV/getgov.py:506 GetGOV/getgov.py:525
+#: GetGOV/getgov.py:525 GetGOV/getgov.py:559
 #, python-format
 msgid "before %s"
 msgstr "до %s"

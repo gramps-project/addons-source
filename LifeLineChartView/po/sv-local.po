@@ -9,14 +9,15 @@
 # Pär Ekholm <par.ekholm50@gmail.com>, 2016, 2018.
 # Pär Ekholm <par.ekholm@pekholm.se>, 2018, 2019.
 # Peter Landgren <peter@test>, 2010.
-#
+# Pär Ekholm <github1@m.pekholm.org>, 2025.
+# Milan <mobrcian@hotmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-08 17:11-0500\n"
-"PO-Revision-Date: 2025-02-09 22:37+0000\n"
-"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-16 10:55+0000\n"
+"Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
 "Language: sv\n"
@@ -24,19 +25,17 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.10\n"
 
-#: DynamicWeb//dynamicweb.py:2611 DynamicWeb/dynamicweb.py:3170
-#: LifeLineChartView/lifelinechartview.py:508
+#: DynamicWeb/dynamicweb.py:3170 LifeLineChartView/lifelinechartview.py:508
 msgid "Zoom in"
 msgstr "Zooma in"
 
-#: DynamicWeb//dynamicweb.py:2612 DynamicWeb/dynamicweb.py:3171
-#: LifeLineChartView/lifelinechartview.py:518
+#: DynamicWeb/dynamicweb.py:3171 LifeLineChartView/lifelinechartview.py:518
 msgid "Zoom out"
 msgstr "Zooma ut"
 
-#: DynamicWeb//dynamicweb.py:4181 DynamicWeb/dynamicweb.py:5098
+#: DynamicWeb/dynamicweb.py:5098
 #: LifeLineChartView/_dummy_translation_string_po.py:101
 msgid "Maximum number of generations"
 msgstr "Maximalt antal generationer"
@@ -516,19 +515,21 @@ msgstr "Dölj syskon"
 msgid "Show ancestors above "
 msgstr "Visa förfäder ovan "
 
-#: LifeLineChartView/lifelinechartview.gpr.py:318
 #: LifeLineChartView/lifelinechartview.gpr.py:24
 msgid "Life Line Ancestor Chart"
 msgstr "Life Line förfädersdiagram"
 
-#: LifeLineChartView/lifelinechartview.gpr.py:320
-#: LifeLineChartView/lifelinechartview.gpr.py:334
 #: LifeLineChartView/lifelinechartview.gpr.py:26
 #: LifeLineChartView/lifelinechartview.gpr.py:44
 msgid "Persons and their relation in a time based chart"
 msgstr "Personer och deras relation i ett tidsbaserat diagram"
 
-#: LifeLineChartView/lifelinechartview.gpr.py:332
+#: LifeLineChartView/lifelinechartview.gpr.py:34
+#: LifeLineChartView/lifelinechartview.gpr.py:52
+#: LifeLineChartView/lifelinechartview.py:399
+msgid "Life Line Chart"
+msgstr "Life Line-diagram"
+
 #: LifeLineChartView/lifelinechartview.gpr.py:42
 msgid "Life Line Descendant Chart"
 msgstr "Life Line ättlingadiagram"
@@ -537,12 +538,6 @@ msgstr "Life Line ättlingadiagram"
 #: LifeLineChartView/lifelinechartview.py:883
 msgid "General Layout"
 msgstr "Allmän layout"
-
-#: LifeLineChartView/lifelinechartview.py:399
-#: LifeLineChartView/lifelinechartview.gpr.py:34
-#: LifeLineChartView/lifelinechartview.gpr.py:52
-msgid "Life Line Chart"
-msgstr "Life Line-diagram"
 
 #: LifeLineChartView/lifelinechartview.py:509
 #: LifeLineChartView/lifelinechartview.py:510

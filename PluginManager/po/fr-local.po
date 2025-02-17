@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-17 18:14+0100\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -38,45 +38,48 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: PluginManager/PluginManager.gpr.py:29 PluginManager/PluginManager.gpr.py:30
+#: PluginManager/PluginManager.gpr.py:30
 msgid "Plugin Manager Enhanced"
 msgstr "Gestionnaire de greffons - Amélioré"
 
-#: PluginManager/PluginManager.gpr.py:30 PluginManager/PluginManager.gpr.py:31
+#: PluginManager/PluginManager.gpr.py:31
 msgid "An Addon/Plugin Manager with several additional capabilities"
 msgstr ""
 "Gestionnaire de greffons avec plusieurs fonctionnalités supplémentaires"
 
-#: PluginManager/PluginManager.py:86 PluginManager/PluginManager.py:84
+#: PluginManager/PluginManager.py:84
 msgid "Plugin Manager - Enhanced"
 msgstr "Gestionnaire de greffons - Amélioré"
 
-#: PluginManager/PluginManager.py:180 PluginManager/PluginManager.py:216
+#: PluginManager/PluginManager.py:154
+msgid ""
+"Enter search words to filter the addons.\n"
+"All the words must be present somewhere in the row or\n"
+"the addon filename to be included in the search.\n"
+"Word case and order is ignored."
+msgstr ""
+
+#: PluginManager/PluginManager.py:158
+msgid "Search..."
+msgstr "Rechercher…"
+
+#: PluginManager/PluginManager.py:216
 msgid "Restart..."
 msgstr "Recommencer..."
 
-#: PluginManager/PluginManager.py:181 PluginManager/PluginManager.py:217
+#: PluginManager/PluginManager.py:217
 msgid ""
 "Please Restart Gramps so that your addon changes can be safely completed."
 msgstr ""
 "Redémarrez Gramps afin que vos modifications puissent être effectuées en "
 "toute sécurité."
 
-#: PluginManager/PluginManager.py:301 PluginManager/PluginManager.py:454
-#: PluginManager/PluginManager.py:530 PluginManager/PluginManager.py:410
-msgid "Hide"
-msgstr "Cacher"
-
-#: PluginManager/PluginManager.py:311 PluginManager/PluginManager.py:528
-msgid "Unhide"
-msgstr "Afficher"
-
-#: PluginManager/PluginManager.py:387 PluginManager/PluginManager.py:336
+#: PluginManager/PluginManager.py:336
 #, python-format
 msgid "Error removing the '%s' directory, The uninstall may have failed"
 msgstr ""
 
-#: PluginManager/PluginManager.py:421 PluginManager/PluginManager.py:376
+#: PluginManager/PluginManager.py:376
 msgid ""
 "'*' items are supplied by 3rd party authors,\n"
 "<s>strikeout</s> items are hidden"
@@ -84,42 +87,46 @@ msgstr ""
 "* indique que le greffon a été fourni, \n"
 "Les <s>éléments</s> sont cachés"
 
-#: PluginManager/PluginManager.py:473 PluginManager/PluginManager.py:430
+#: PluginManager/PluginManager.py:410 PluginManager/PluginManager.py:530
+msgid "Hide"
+msgstr "Cacher"
+
+#: PluginManager/PluginManager.py:430
 msgid "Show hidden items"
 msgstr "Afficher des objets cachés"
 
-#: PluginManager/PluginManager.py:481 PluginManager/PluginManager.py:438
+#: PluginManager/PluginManager.py:438
 msgid "Show Built-in items"
 msgstr "Afficher les objets standard"
 
-#: PluginManager/PluginManager.py:488 PluginManager/PluginManager.py:445
+#: PluginManager/PluginManager.py:445
 msgid "* indicates 3rd party addon"
 msgstr "* indique que le greffon a été fourni"
 
-#: PluginManager/PluginManager.py:493 PluginManager/PluginManager.py:450
+#: PluginManager/PluginManager.py:450
 msgid "Plugins"
 msgstr "Greffons"
+
+#: PluginManager/PluginManager.py:528
+msgid "Unhide"
+msgstr "Afficher"
 
 #: PluginManager/PluginManager.py:547
 msgid "Uninstall"
 msgstr "Désinstaller"
 
-#: PluginManager/PluginManager.py:618 PluginManager/PluginManager.py:721
+#: PluginManager/PluginManager.py:721
 msgid "*Available"
 msgstr "*Disponible"
 
-#: PluginManager/PluginManager.py:632 PluginManager/PluginManager.py:737
+#: PluginManager/PluginManager.py:737
 msgid "Built-in"
 msgstr "Encastré"
 
-#: PluginManager/PluginManager.py:637 PluginManager/PluginManager.py:742
+#: PluginManager/PluginManager.py:742
 msgid "*Installed"
 msgstr "*Installée"
 
-#: PluginManager/PluginManager.py:646 PluginManager/PluginManager.py:751
+#: PluginManager/PluginManager.py:751
 msgid "Update Available"
 msgstr "Plus récent disponible"
-
-#: GraphView/search_widget.py:384 PluginManager/PluginManager.py:158
-msgid "Search..."
-msgstr "Rechercher…"

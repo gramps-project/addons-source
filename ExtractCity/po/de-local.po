@@ -8,7 +8,7 @@
 # Sebastian Vöcking <voeck@web.de>, 2005.
 # Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
 # Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2025.
 # Alois Pöttker <alois.poettker@gmx.de>, 2017.
 # Allan Nordhøy <epost@anotheragency.no>, 2021.
 # R. B. <weblate@macdefender.org>, 2021.
@@ -21,8 +21,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-02 22:39+0200\n"
-"PO-Revision-Date: 2025-02-15 16:17+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-17 00:14+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -33,37 +33,36 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.10\n"
 
-#: ExtractCity/extractcity.gpr.py:33 ExtractCity/extractcity.gpr.py:34
+#: ExtractCity/extractcity.gpr.py:34
 msgid "Extract Place Data from a Place Title"
 msgstr "Extrahiere Ortsdaten aus Ortstitel"
 
-#: ExtractCity/extractcity.gpr.py:34 ExtractCity/extractcity.gpr.py:35
+#: ExtractCity/extractcity.gpr.py:35
 msgid "Attempts to extract city and state/province from a place title"
 msgstr ""
 "Versuche, Stadt und Bundesland/Provinz von einem Ortstitel zu extrahieren"
 
-#: ExtractCity/extractcity.py:391 ExtractCity/extractcity.py:402
+#: ExtractCity/extractcity.py:402
 msgid "Place title"
 msgstr "Ortstitel"
 
-#: ExtractCity/extractcity.py:426 ExtractCity/extractcity.py:630
 #: ExtractCity/extractcity.py:437 ExtractCity/extractcity.py:641
 msgid "Extract Place data"
 msgstr "Ortsdaten extrahieren"
 
-#: ExtractCity/extractcity.py:443 ExtractCity/extractcity.py:454
+#: ExtractCity/extractcity.py:454
 msgid "Checking Place Titles"
 msgstr "Überprüfung von Ortstiteln"
 
-#: ExtractCity/extractcity.py:445 ExtractCity/extractcity.py:456
+#: ExtractCity/extractcity.py:456
 msgid "Looking for place fields"
 msgstr "Suche nach Ortsfeldern"
 
-#: ExtractCity/extractcity.py:532 ExtractCity/extractcity.py:543
+#: ExtractCity/extractcity.py:543
 msgid "No place information could be extracted."
 msgstr "Es konnten keine Ortsinformationen extrahiert werden."
 
-#: ExtractCity/extractcity.py:553 ExtractCity/extractcity.py:564
+#: ExtractCity/extractcity.py:564
 msgid ""
 "Below is a list of Places with the possible data that can be extracted from "
 "the place title. Select the places you wish Gramps to convert."

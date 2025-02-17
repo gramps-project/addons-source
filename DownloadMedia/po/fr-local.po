@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-17 18:14+0100\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -38,37 +38,42 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: DownloadMedia/DownloadMedia.gpr.py:35 DownloadMedia/DownloadMedia.gpr.py:36
+#: DownloadMedia/DownloadMedia.gpr.py:36
 msgid "Download media files from the internet"
 msgstr "Télécharge des objets media depuis internet"
 
-#: DownloadMedia/DownloadMedia.gpr.py:36 DownloadMedia/DownloadMedia.gpr.py:37
+#: DownloadMedia/DownloadMedia.gpr.py:37
 msgid "This tool downloads media files from the internet"
 msgstr "Cet outil télécharge des fichiers depuis internet"
 
-#: DownloadMedia/DownloadMedia.py:69 DownloadMedia/DownloadMedia.py:71
+#: DownloadMedia/DownloadMedia.py:71
 msgid "Download media"
 msgstr "Téléchargement des media"
 
-#: DownloadMedia/DownloadMedia.py:81 DownloadMedia/DownloadMedia.py:87
+#: DownloadMedia/DownloadMedia.py:87
 msgid "Media downloaded"
 msgstr "Objet téléchargé"
 
-#: DownloadMedia/DownloadMedia.py:82 DownloadMedia/DownloadMedia.py:88
+#: DownloadMedia/DownloadMedia.py:88
 #, python-format
 msgid "%d media files downloaded"
 msgstr "%d fichiers téléchargés"
 
-#: DownloadMedia/DownloadMedia.py:94 DownloadMedia/DownloadMedia.py:100
+#: DownloadMedia/DownloadMedia.py:100
 msgid "Download media tool"
 msgstr "Outil de téléchargement des media"
 
-#: DownloadMedia/DownloadMedia.py:100 DownloadMedia/DownloadMedia.py:106
+#: DownloadMedia/DownloadMedia.py:106
 msgid "Make sure you are connected to the internet before starting this tool."
 msgstr ""
 "Soyez certain(e) que vous êtes connecté à internet avant de lancer cet outil."
 
-#: DownloadMedia/DownloadMedia.py:157 DownloadMedia/DownloadMedia.py:158
 #: DownloadMedia/DownloadMedia.py:171 DownloadMedia/DownloadMedia.py:172
 msgid "Downloading files"
 msgstr "Téléchargement des fichiers"
+
+#: DownloadMedia/DownloadMedia.py:207
+#, fuzzy
+#| msgid "Media downloaded"
+msgid "Media download errors detected"
+msgstr "Objet téléchargé"

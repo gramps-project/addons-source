@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-04 16:31+0300\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -31,10 +31,88 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: DNA/dna.py:87 DNA/dnasegmentmap.gpr.py:26 DNA/dnasegmentmap.gpr.py:35
+#: DNA/dnasegmentmap.gpr.py:26 DNA/dnasegmentmap.gpr.py:35
 msgid "DNA Segment Map"
 msgstr "Карта сегментов ДНК"
 
-#: DNA/dna.py:88 DNA/dnasegmentmap.py:634
+#: DNA/dnasegmentmap.gpr.py:29
+#, fuzzy
+#| msgid "Gramplet showing the participants in an event"
+msgid "Gramplet showing a matching DNA segment map"
+msgstr "Показывает участников события"
+
+#: DNA/dnasegmentmap.py:546
+msgid "Chromosome "
+msgstr ""
+
+#: DNA/dnasegmentmap.py:552
+#, fuzzy
+#| msgid "Wait for me"
+msgid " Map for "
+msgstr "Жди меня"
+
+#: DNA/dnasegmentmap.py:634
 msgid "Chr"
 msgstr "Хр"
+
+#: DNA/dnasegmentmap.py:759
+msgid "Legend"
+msgstr ""
+
+#: DNA/dnasegmentmap.py:761
+#, fuzzy
+#| msgid "Grandparents"
+msgid ": Grandparent"
+msgstr "Бабушки и дедушки"
+
+#: DNA/dnasegmentmap.py:1056
+#, python-brace-format
+msgid ""
+"\n"
+"{0}\n"
+"{1} cMs"
+msgstr ""
+
+#: DNA/dnasegmentmap.py:1060
+msgid " SNPs"
+msgstr ""
+
+#: DNA/dnasegmentmap.py:1061
+msgid " : Starts at "
+msgstr ""
+
+#: DNA/dnasegmentmap.py:1063
+#, fuzzy
+#| msgid "and %s "
+msgid " and ends at "
+msgstr "и %s "
+
+#: DNA/dnasegmentmap.py:1079 DNA/dnasegmentmap.py:1082
+#, python-brace-format
+msgid "{0}"
+msgstr ""
+
+#: DNA/dnasegmentmap.py:1086
+#, python-format
+msgid "%(ancestor1)s and %(ancestor2)s"
+msgstr ""
+
+#: DNA/dnasegmentmap.py:1090
+#, fuzzy, python-brace-format
+#| msgid "Relationship to Father"
+msgid ""
+"\n"
+"Relationship: {0} "
+msgstr "Отношение к отцу"
+
+#: DNA/dnasegmentmap.py:1091
+#, fuzzy, python-brace-format
+#| msgid "Ancestor"
+msgid " Ancestor: {0}"
+msgstr "Предок"
+
+#: DNA/dnasegmentmap.py:1115
+msgid ""
+"Click to make this person active\n"
+"Right-click to edit this person"
+msgstr ""

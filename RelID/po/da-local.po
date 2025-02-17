@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -24,11 +24,11 @@ msgstr ""
 msgid "Save"
 msgstr "Gem"
 
-#: RelID/relation_tab.gpr.py:35 RelID/relation_tab.gpr.py:36
+#: RelID/relation_tab.gpr.py:36
 msgid "Display relations and distances with the home person"
 msgstr "Vis slægtskab og afstand til fokuspersonen"
 
-#: RelID/relation_tab.gpr.py:36 RelID/relation_tab.gpr.py:37
+#: RelID/relation_tab.gpr.py:37
 msgid "Will display relational informations with the home person"
 msgstr "Vil vise slægtskabsinformation til hovedpersonen"
 

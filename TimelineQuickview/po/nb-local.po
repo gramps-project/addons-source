@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-08 16:37+0100\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2025-02-15 10:09+0000\n"
 "Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
@@ -25,77 +25,61 @@ msgstr ""
 "X-Generator: Weblate 5.10\n"
 "Generated-By: pygettext.py 1.4\n"
 
-#: TimelineQuickview/TimelineQuickview.gpr.py:10
+#: Query/QueryQuickview.py:426 TimelineQuickview/TimelineQuickview.py:186
+msgid "Today"
+msgstr ""
+
 #: TimelineQuickview/TimelineQuickview.gpr.py:11
 msgid "Display a person's events on a timeline"
 msgstr ""
 
-#: TimelineQuickview/TimelineQuickview.py:43
 #: TimelineQuickview/TimelineQuickview.py:48
 msgid "Inlaw Parents"
 msgstr ""
 
-#: TimelineQuickview/TimelineQuickview.py:46
 #: TimelineQuickview/TimelineQuickview.py:51
 msgid "Grandparents"
 msgstr ""
 
-#: TimelineQuickview/TimelineQuickview.py:48
 #: TimelineQuickview/TimelineQuickview.py:53
 msgid "Inlaw Grandparents"
 msgstr ""
 
-#: TimelineQuickview/TimelineQuickview.py:51
 #: TimelineQuickview/TimelineQuickview.py:56
 msgid "Great grandparents"
 msgstr ""
 
-#: TimelineQuickview/TimelineQuickview.py:53
 #: TimelineQuickview/TimelineQuickview.py:58
 msgid "Inlaw Great grandparents"
 msgstr ""
 
-#: TimelineQuickview/TimelineQuickview.py:56
 #: TimelineQuickview/TimelineQuickview.py:61
 msgid "Great, "
 msgstr ""
 
-#: TimelineQuickview/TimelineQuickview.py:56
-#: TimelineQuickview/TimelineQuickview.py:58
 #: TimelineQuickview/TimelineQuickview.py:61
 #: TimelineQuickview/TimelineQuickview.py:63
 msgid "great, "
 msgstr ""
 
-#: TimelineQuickview/TimelineQuickview.py:56
-#: TimelineQuickview/TimelineQuickview.py:58
 #: TimelineQuickview/TimelineQuickview.py:61
 #: TimelineQuickview/TimelineQuickview.py:63
 msgid "great grandparents"
 msgstr ""
 
-#: TimelineQuickview/TimelineQuickview.py:58
 #: TimelineQuickview/TimelineQuickview.py:63
 msgid "Inlaw Great, "
 msgstr ""
 
-#: TimelineQuickview/TimelineQuickview.py:88
 #: TimelineQuickview/TimelineQuickview.py:102
 msgid "Partner's spouse"
 msgstr ""
 
-#: TimelineQuickview/TimelineQuickview.py:138
 #: TimelineQuickview/TimelineQuickview.py:156
 #, python-format
 msgid "Timeline for %s"
 msgstr ""
 
-#: TimelineQuickview/TimelineQuickview.py:145
 #: TimelineQuickview/TimelineQuickview.py:163
 msgid "People involved"
-msgstr ""
-
-#: TimelineQuickview/TimelineQuickview.py:169 Query/QueryQuickview.py:426
-#: TimelineQuickview/TimelineQuickview.py:186
-msgid "Today"
 msgstr ""

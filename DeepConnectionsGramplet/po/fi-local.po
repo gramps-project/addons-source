@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-02 02:13+0300\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2019-12-10 13:09+0200\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: niememat@gmail.com\n"
@@ -33,62 +33,52 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.0.6\n"
 
-#: DeepConnectionsGramplet.gpr.py:3
+#: EditExifMetadata/editexifmetadata.py:215
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:69
+msgid "Copy"
+msgstr "Kopioi"
+
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:4
 msgid "Deep Connections Gramplet"
 msgstr "Syväsuhteet Gramplet"
 
-#: DeepConnectionsGramplet.gpr.py:4
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:6
 msgid "Gramplet showing a deep relationship between active and home people"
 msgstr "Gramplet näyttää aktiivi- ja kotihenkilön väliset suhteet syvemmältä"
 
-#: DeepConnectionsGramplet.gpr.py:10
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:13
 msgid "Deep Connections"
 msgstr "Syväsuhteet"
 
-#: DeepConnectionsGramplet.py:65
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:65
 msgid "Pause"
 msgstr "Pysäytä"
 
-#: DeepConnectionsGramplet.py:69 EditExifMetadata/editexifmetadata.py:215
-msgid "Copy"
-msgstr "Kopioi"
-
-#: DeepConnectionsGramplet.py:106
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:107
 msgid "mentioned in note"
 msgstr "mainitussa huomautuksessa"
 
-#: DeepConnectionsGramplet.py:132
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:133
 msgid "Note on Family"
 msgstr "Perheen lisätietoja"
 
-#: DeepConnectionsGramplet.py:142
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:143
 msgid "sibling"
 msgstr "sisarus"
 
-#: DeepConnectionsGramplet.py:150
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:151
 msgid "Note on Parent Family"
 msgstr "Vanhempien perheen lisätietoja"
 
-#: DeepConnectionsGramplet.py:153
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:154
 #, python-format
 msgid "%s (association)"
 msgstr "%s (liitoksen lisätietoja)"
 
-#: DeepConnectionsGramplet.py:157
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:158
 msgid "Note on Person"
 msgstr "Henkilön lisätietoja"
 
-#: DeepConnectionsGramplet.py:187
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:188
 #, python-format
 msgid ""
@@ -98,31 +88,26 @@ msgstr ""
 "\n"
 "   %s henkilölle "
 
-#: DeepConnectionsGramplet.py:208
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:209
 msgid "No Active Person set."
 msgstr "Aktiivihenkilöä ei ole asetettu."
 
-#: DeepConnectionsGramplet.py:216
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:217
 msgid "Looking for relationship between\n"
 msgstr ""
 "Etsitään henkilöiden väliset sukulaisuussuhteeet\n"
 " \n"
 
-#: DeepConnectionsGramplet.py:217
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:218
 #, python-format
 msgid "  <b>%s</b> (Home Person) and\n"
 msgstr "  <b>%s</b> (kotihenkilö) ja\n"
 
-#: DeepConnectionsGramplet.py:218
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:219
 #, python-format
 msgid "  <b>%s</b> (Active Person)...\n"
 msgstr "  <b>%s</b> (aktiivihenkilö)...\n"
 
-#: DeepConnectionsGramplet.py:228
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:229
 #, python-format
 msgid ""
@@ -132,7 +117,6 @@ msgstr ""
 "Löydetyt suhteet #%d: \n"
 "   "
 
-#: DeepConnectionsGramplet.py:238
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:239
 msgid ""
 "Paused.\n"
@@ -141,7 +125,6 @@ msgstr ""
 "Pysäytetty.\n"
 "Etsi lisää suhteita painamalla Jatka.\n"
 
-#: DeepConnectionsGramplet.py:253
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:254
 #, python-format
 msgid ""

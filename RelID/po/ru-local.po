@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-04 16:31+0300\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -35,11 +35,11 @@ msgstr ""
 msgid "Save"
 msgstr "Сохранить"
 
-#: RelID/relation_tab.gpr.py:35 RelID/relation_tab.gpr.py:36
+#: RelID/relation_tab.gpr.py:36
 msgid "Display relations and distances with the home person"
 msgstr "Отображает связи с главным лицом"
 
-#: RelID/relation_tab.gpr.py:36 RelID/relation_tab.gpr.py:37
+#: RelID/relation_tab.gpr.py:37
 msgid "Will display relational informations with the home person"
 msgstr "Будет показана информация о связи с главным лицом"
 

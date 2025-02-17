@@ -10,34 +10,34 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ca\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-08 16:37+0100\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2010-03-07 17:48+0100\n"
 "Last-Translator: Joan Creus <joan.creus at gmail dot com>\n"
 "Language-Team: Català <en@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: AllNamesQuickview/AllNames.gpr.py:3 AllNamesQuickview/AllNames.py:46
+#: PlaceCleanup/placecleanup.glade:52 AllNamesQuickview/AllNames.py:54
+msgid "Primary Name"
+msgstr ""
+
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
 msgstr ""
 
-#: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.gpr.py:5
+#: AllNamesQuickview/AllNames.gpr.py:5
 msgid "Display all names of all people"
 msgstr ""
 
-#: AllNamesQuickview/AllNames.py:49 PlaceCleanup/placecleanup.glade:52
-msgid "Primary Name"
-msgstr ""
-
-#: AllNamesQuickview/AllNames.py:49 AllNamesQuickview/AllNames.py:54
+#: AllNamesQuickview/AllNames.py:54
 msgid "Name Type"
 msgstr "Tipus de nom"
 
-#: AllNamesQuickview/AllNames.py:66 AllNamesQuickview/AllNames.py:71
+#: AllNamesQuickview/AllNames.py:71
 #, python-format
 msgid "Total names %d"
 msgstr ""

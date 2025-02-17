@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -32,11 +32,11 @@ msgstr "Medtag kun efternavn"
 msgid "Include Full Name Only"
 msgstr "Medtag kun fuldt navn"
 
-#: DynamicWeb/dynamicweb.gpr.py:15 DynamicWeb/dynamicweb.gpr.py:16
+#: DynamicWeb/dynamicweb.gpr.py:16
 msgid "Dynamic Web Report"
 msgstr "Hvorvidt familiesider skal medtages"
 
-#: DynamicWeb/dynamicweb.gpr.py:16 DynamicWeb/dynamicweb.gpr.py:17
+#: DynamicWeb/dynamicweb.gpr.py:17
 msgid "Produces dynamic web pages for the database"
 msgstr "Danner en dynamisk web rapport over databasen"
 

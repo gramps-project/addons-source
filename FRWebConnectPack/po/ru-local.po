@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-04 16:31+0300\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -31,22 +31,48 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: FRWebConnectPack/FRWebPack.gpr.py:10 FRWebConnectPack/FRWebPack.gpr.py:11
+#: FRWebConnectPack/FRWebPack.gpr.py:11
 msgid "FR Web Connect Pack"
 msgstr "Набор FR Web Connect"
 
-#: FRWebConnectPack/FRWebPack.gpr.py:11 FRWebConnectPack/FRWebPack.gpr.py:12
+#: FRWebConnectPack/FRWebPack.gpr.py:12
 msgid "Collection of Web sites for the FR (requires libwebconnect)"
 msgstr "Набор веб-сайтов для FR (требуется libwebconnect)"
 
-#: FRWebConnectPack/FRWebPack.py:41 FRWebConnectPack/FRWebPack.py:42
+#: FRWebConnectPack/FRWebPack.py:41
+msgid "Cultural ministry (France)"
+msgstr ""
+
+#: FRWebConnectPack/FRWebPack.py:42
 msgid "Genealogical bank"
 msgstr "Банк генеалогии"
 
-#: FRWebConnectPack/FRWebPack.py:43 FRWebConnectPack/FRWebPack.py:44
+#: FRWebConnectPack/FRWebPack.py:44
 msgid "OrigineFile (Quebec)"
 msgstr "OrigineFile (Квебек)"
 
-#: FRWebConnectPack/FRWebPack.py:48 FRWebConnectPack/FRWebPack.py:50
+#: FRWebConnectPack/FRWebPack.py:50
 msgid "Cyber genealogy"
 msgstr "Кибер генеалогия"
+
+#: FRWebConnectPack/FRWebPack.py:53
+msgid "RetroNews (Bnf)"
+msgstr ""
+
+#: FRWebConnectPack/FRWebPack.py:58
+#, fuzzy
+#| msgid "Hathi Trust Digital Library"
+msgid "Hathi Trust Digital Library (fr)"
+msgstr "Hathi Trust цифровая библиотека"
+
+#: FRWebConnectPack/FRWebPack.py:59
+#, fuzzy
+#| msgid "Open Library"
+msgid "Open Library (fr)"
+msgstr "Открытая библиотека"
+
+#: FRWebConnectPack/FRWebPack.py:60
+#, fuzzy
+#| msgid "Open Archives"
+msgid "Belgium's Archives"
+msgstr "Открытые архивы"

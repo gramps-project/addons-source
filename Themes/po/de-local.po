@@ -8,7 +8,7 @@
 # Sebastian Vöcking <voeck@web.de>, 2005.
 # Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
 # Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2025.
 # Alois Pöttker <alois.poettker@gmx.de>, 2017.
 # Allan Nordhøy <epost@anotheragency.no>, 2021.
 # R. B. <weblate@macdefender.org>, 2021.
@@ -21,8 +21,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-02 22:39+0200\n"
-"PO-Revision-Date: 2025-02-15 16:17+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-17 00:14+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -33,11 +33,15 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.10\n"
 
-#: Themes/themes.gpr.py:28 Themes/themes.gpr.py:29
+#: DynamicWeb/dynamicweb.py:5157 Themes/themes.py:175 Themes/themes.py:225
+msgid "Theme"
+msgstr "Thema"
+
+#: Themes/themes.gpr.py:29
 msgid "Theme preferences"
 msgstr "Theme-Einstellungen"
 
-#: Themes/themes.gpr.py:29 Themes/themes.gpr.py:31
+#: Themes/themes.gpr.py:31
 msgid ""
 "An addition to Preferences for simple Theme and Font adjustment.  Especially "
 "useful for Windows users."
@@ -45,24 +49,18 @@ msgstr ""
 "Eine Ergänzung zu den Voreinstellungen für die einfache Anpassung von Design "
 "und Schrift. Besonders nützlich für Windows-Benutzer."
 
-#: Themes/themes.py:170 Themes/themes.py:188 Themes/themes.py:172
-#: Themes/themes.py:190
+#: Themes/themes.py:172 Themes/themes.py:190
 msgid "Theme is hardcoded by GTK_THEME"
 msgstr "Das Thema ist fest einprogrammiert durch GTK_THEME"
 
-#: Themes/themes.py:173 Themes/themes.py:223 DynamicWeb/dynamicweb.py:5157
-#: Themes/themes.py:175 Themes/themes.py:225
-msgid "Theme"
-msgstr "Thema"
-
-#: Themes/themes.py:178 Themes/themes.py:180
+#: Themes/themes.py:180
 msgid "Dark Variant"
 msgstr "Dunkle Variante"
 
-#: Themes/themes.py:196 Themes/themes.py:198
+#: Themes/themes.py:198
 msgid "Font"
 msgstr "Schrift"
 
-#: Themes/themes.py:212 Themes/themes.py:214
+#: Themes/themes.py:214
 msgid "Fixed Scrollbar (requires restart)"
 msgstr "Feste Bildlaufleiste (erfordert Neustart)"

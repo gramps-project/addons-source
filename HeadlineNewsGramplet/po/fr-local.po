@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-17 18:14+0100\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -38,13 +38,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:10
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:4
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:11
 msgid "Headline News"
 msgstr "Nouvelles"
 
-#: HeadlineNewsGramplet/HeadlineNewsGramplet.py:100
+#: HeadlineNewsGramplet/HeadlineNewsGramplet.gpr.py:5
+msgid "Gramplet that shows the latest Gramps news"
+msgstr ""
+
 #: HeadlineNewsGramplet/HeadlineNewsGramplet.py:113
 msgid "Read Gramps headline news"
 msgstr "Lire les nouvelles depuis le wiki de GRAMPS"

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-08 16:37+0100\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2025-02-15 10:09+0000\n"
 "Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
@@ -25,21 +25,28 @@ msgstr ""
 "X-Generator: Weblate 5.10\n"
 "Generated-By: pygettext.py 1.4\n"
 
-#: DataEntryGramplet/DataEntryGramplet.py:55 FilterRules/activepersonrule.py:45
-#: NoteGramplet/NoteGramplet.py:65
+#: FilterRules/activepersonrule.py:45 NoteGramplet/NoteGramplet.py:65
 msgid "Active person"
 msgstr "Aktiv person"
 
-#: DataEntryGramplet/DataEntryGramplet.py:69
 #: DataEntryGramplet/DataEntryGramplet.py:89 NoteGramplet/NoteGramplet.py:111
 msgid "Save"
 msgstr "Lagre"
 
-#: DataEntryGramplet/DataEntryGramplet.py:72
 #: DataEntryGramplet/DataEntryGramplet.py:92 NoteGramplet/NoteGramplet.py:114
 msgid "Abandon"
 msgstr "Utelate"
 
-#: NoteGramplet/NoteGramplet.gpr.py:3 NoteGramplet/NoteGramplet.gpr.py:4
+#: NoteGramplet/NoteGramplet.gpr.py:4
 msgid "Note Gramplet"
 msgstr "Notat Smågramps"
+
+#: NoteGramplet/NoteGramplet.gpr.py:5
+msgid "Gramplet for editing active person's notes"
+msgstr ""
+
+#: NoteGramplet/NoteGramplet.py:255
+#, fuzzy
+#| msgid "Save"
+msgid "Save Note"
+msgstr "Lagre"

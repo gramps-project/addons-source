@@ -9,10 +9,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GRAMPS 3.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-08 16:54+0100\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2010-03-03 01:10+0200\n"
 "Last-Translator: Boril Gourinov <boril.gourinov@gmail.com>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
+"Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -22,125 +23,100 @@ msgstr ""
 "X-Poedit-Country: BULGARIA\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:9
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:182
 #: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:190
 msgid "Calculate Estimated Dates"
 msgstr "Изчисляване на приблизителните дати"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:10
 #: CalculateEstimatedDates/CalculateEstimatedDates.gpr.py:11
 msgid "Calculates estimated dates for birth and death."
 msgstr "Изчисляване на приблизителните дати за раждане и смърт."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:75
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:83
 msgid "Select filter to restrict people"
 msgstr "Създаване на филтър за ограничаване на хората"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:87
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:95
 msgid "Calculated Date Estimates"
 msgstr "Изчислени приблизителни дати"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:88
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:96
 msgid "Source to remove and/or add"
 msgstr "Източник за премахване и/или добавяне"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:91
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:99
 msgid "Remove previously added events, notes, and source"
 msgstr "Премахване на предишно създадени дати"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:92
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:100
 msgid ""
 "Remove calculated events, notes, and source; occurs immediately on Execute"
 msgstr "Премахва изчислените събития, бележки и източници веднага след Изпълни"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:96
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:104
 msgid "Do not add birth events"
 msgstr "Не се добавят раждания"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:97
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:105
 msgid "Add birth events without dates"
 msgstr "Добавя раждане без дата"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:98
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:106
 msgid "Add birth events with dates"
 msgstr "Добавя раждане с дата"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:99
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:107
 msgid "Add a birth events with or without estimated dates"
 msgstr "Прибавя раждане с или без оценъчни дати"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:103
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:111
 msgid "Do not add death events"
 msgstr "Да не се добавят умирания"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:104
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:112
 msgid "Add death events without dates"
 msgstr "Добавя смърт без дата"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:105
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:113
 msgid "Add death events with dates"
 msgstr "Добавя смърт с дата"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:106
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:114
 msgid "Add death events with or without estimated dates"
 msgstr "Прибавя смърт с или без оценъчни дати"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:110
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:118
 msgid "Maximum age"
 msgstr "Максимална възраст"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:113
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:121
 msgid "Maximum age that one can live to"
 msgstr "Максимална възраст, до която човек може да достигне"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:119
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:127
 msgid "Maximum age difference between siblings"
 msgstr "Максимална разлика във възрастта между братята/сестрите"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:125
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:133
 msgid "Average years between two generations"
 msgstr "Средно години между две поколения"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:128
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:136
 msgid "Estimated Dates"
 msgstr "Приблизителна дата"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:129
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:137
 msgid "Approximate (about)"
 msgstr "Приблизително (около)"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:130
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:138
 msgid "Extremes (after and before)"
 msgstr "Крайно (след и преди)"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:131
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:139
 msgid "Dates on events are either about or after/before"
 msgstr "Датите на събитията са около или след/преди"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:164
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:172
 msgid ""
 "The Calculate Estimated Dates Tool is used to add and remove birth and death "
@@ -180,32 +156,26 @@ msgstr ""
 "Може да се наложи да пускате инструмента няколкократно, без да премахвате "
 "предните събития, за да добавите всички възможни събития."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:191
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:199
 msgid "Select All"
 msgstr "Избор на всичко"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:192
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:200
 msgid "Select None"
 msgstr "Избор на нищо"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:193
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:201
 msgid "Toggle Selection"
 msgstr "Обръщане на избора"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:194
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:202
 msgid "Add Selected Events"
 msgstr "Добавяне на избраните на събития"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:200
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:208
 msgid "Remove Events, Notes, and Source and Reselect Data"
 msgstr "Премахва събития, бележки и източници и преизбира информацията"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:201
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:209
 msgid ""
 "Are you sure you want to remove previous events, notes, and source and "
@@ -214,58 +184,47 @@ msgstr ""
 "Сигурни ли сте, че искате да премахнете предишните събития,бележки и "
 "източници и да преизберете информацията?"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:202
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:210
 msgid "Remove and Run Select Again"
 msgstr "Премахва и стартира на избора отново"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:206
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:214
 msgid "Reselect Data"
 msgstr "Преизбиране на информация"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:207
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:215
 msgid "Are you sure you want to reselect data?"
 msgstr "Сигурни ли сте, че искате да изберете отново информацията?"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:208
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:216
 msgid "Run Select Again"
 msgstr "Започва избора отново"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:228
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:236
 msgid "Evidence"
 msgstr "Свидетелства"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:228
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:236
 msgid "Relative"
 msgstr "Роднини"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:229
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:237
 msgid "Processing...\n"
 msgstr "Тече обработка...\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:247
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:255
 msgid "Removing old estimations... "
 msgstr "Премахване на старите преценки... "
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:248
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:256
 #, python-format
 msgid "Removing '%s'..."
 msgstr "Премахване „%s“..."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:302
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:319
 msgid "done!\n"
 msgstr "готово!\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:307
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:323
 msgid ""
 "Selecting... \n"
@@ -274,83 +233,68 @@ msgstr ""
 "Избиране...\n"
 "\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:343
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:359
 msgid "Add birth and death events"
 msgstr "Добавяне на ново събитие"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:345
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:361
 msgid "Add birth event"
 msgstr "лисващо раждане"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:347
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:363
 msgid "Add death event"
 msgstr "Добавяне на ново събитие"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:382
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:398
 msgid "No events to be added."
 msgstr "Няма събития за добавяне."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:424
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:439
 msgid "Selecting... "
 msgstr "Избиране... "
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:425
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:440
 #, python-format
 msgid "Adding events '%s'..."
 msgstr "Добавяне на събития „%s“..."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:447
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:465
 #, python-format
 msgid "Added birth event based on %(evidence)s, from %(name)s"
 msgstr "Добавено е раждане основано на %(evidence)s, от %(name)s"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:450
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:468
 #, python-format
 msgid "Added birth event based on %s"
 msgstr "Добавено е раждане на %s"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:452
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:470
 msgid "Estimated birth date"
 msgstr "Приблизителна дата на раждане"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:463
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:480
 #, python-format
 msgid "Added death event based on %(evidence)s, from %(person)s"
 msgstr "Добавена е смърт основана на%(evidence)s, от %(person)s"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:466
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:483
 #, python-format
 msgid "Added death event based on %s"
 msgstr "Добавена е смърт на %s"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:468
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:485
 msgid "Estimated death date"
 msgstr "Приблизителна дата на смъртта"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:478
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:495
 msgid " Done! Committing..."
 msgstr " Готово! Съхраняване..."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:483
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:499
 #, python-format
 msgid "Added %d events."
 msgstr "Добавени %d събития."
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:511
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:527
 msgid "Estimated date"
 msgstr "Приблизителна дата"

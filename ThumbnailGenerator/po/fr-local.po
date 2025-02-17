@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-17 18:14+0100\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -38,50 +38,41 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ThumbnailGenerator/ThumbnailGenerator.gpr.py:30
-#: ThumbnailGenerator/ThumbnailGenerator.py:45
 #: ThumbnailGenerator/ThumbnailGenerator.gpr.py:31
 #: ThumbnailGenerator/ThumbnailGenerator.py:53
 msgid "Thumbnail Generator"
 msgstr "Générateur de miniature"
 
-#: ThumbnailGenerator/ThumbnailGenerator.gpr.py:31
 #: ThumbnailGenerator/ThumbnailGenerator.gpr.py:32
 msgid "Generates thumbnails for media files"
 msgstr "Génère des miniatures de nos fichiers media"
 
 # Substantif (GNOME fr)
-#: ThumbnailGenerator/ThumbnailGenerator.py:48
 #: ThumbnailGenerator/ThumbnailGenerator.py:56
 msgid "Generating media thumbnails"
 msgstr "Création des miniatures"
 
 # Substantif (GNOME fr)
-#: ThumbnailGenerator/ThumbnailGenerator.py:59
 #: ThumbnailGenerator/ThumbnailGenerator.py:67
 msgid "Generating thumbnails for person references"
 msgstr "Création des miniatures pour les individus"
 
 # Substantif (GNOME fr)
-#: ThumbnailGenerator/ThumbnailGenerator.py:68
 #: ThumbnailGenerator/ThumbnailGenerator.py:76
 msgid "Generating thumbnails for family references"
 msgstr "Création des miniatures pour les familles"
 
 # trunk
 # Substantif (GNOME fr)
-#: ThumbnailGenerator/ThumbnailGenerator.py:77
 #: ThumbnailGenerator/ThumbnailGenerator.py:85
 msgid "Generating thumbnails for event references"
 msgstr "Création des miniatures pour les événements"
 
 # Substantif (GNOME fr)
-#: ThumbnailGenerator/ThumbnailGenerator.py:86
 #: ThumbnailGenerator/ThumbnailGenerator.py:94
 msgid "Generating thumbnails for place references"
 msgstr "Création des miniatures pour les lieux"
 
-#: ThumbnailGenerator/ThumbnailGenerator.py:95
 #: ThumbnailGenerator/ThumbnailGenerator.py:103
 msgid "Generating thumbnails for source references"
 msgstr "Création des miniatures pour les sources"

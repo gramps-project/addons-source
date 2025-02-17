@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -110,24 +110,20 @@ msgstr "Stilen der bruges til indholdsfortegnelsens overskrift."
 msgid "The style used for the table of contents detail."
 msgstr "Stilen der bruges til indholdsfortegnelsens detaljer."
 
-#: DescendantBooks/DescendantBooks.gpr.py:21
 #: DescendantBooks/DescendantBooks.gpr.py:22
 msgid "Descendant Book"
 msgstr "Efterkommerbog"
 
-#: DescendantBooks/DescendantBooks.gpr.py:22
 #: DescendantBooks/DescendantBooks.gpr.py:23
 msgid "Produces one or more descendant reports based on a supplied query."
 msgstr ""
 "Danner en eller flere efterkommerrapporter baseret på en angivet "
 "forespørgsel."
 
-#: DescendantBooks/DescendantBooks.gpr.py:38
 #: DescendantBooks/DescendantBooks.gpr.py:41
 msgid "Detailed Descendant Book"
 msgstr "Detaljeret efterkommerbog"
 
-#: DescendantBooks/DescendantBooks.gpr.py:39
 #: DescendantBooks/DescendantBooks.gpr.py:43
 msgid ""
 "Produces one or more detailed descendant reports based on a supplied query."

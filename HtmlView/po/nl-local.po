@@ -7,13 +7,13 @@
 # Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
 # Erik De Richter <frederik.de.richter@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
 # Harmen Huizinga <harmenhuizinga@sigmo.nl>, 2013.
-#
+# Stephan Paternotte <stephan@paternottes.net>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
-"Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
-"POT-Creation-Date: 2019-01-04 18:55-0600\n"
-"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-17 11:05+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -22,45 +22,45 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
-#: HtmlView/htmlview.gpr.py:30 HtmlView/htmlview.gpr.py:31
+#: HtmlView/htmlview.gpr.py:31
 msgid "Html View"
 msgstr "Html-weergave"
 
-#: HtmlView/htmlview.gpr.py:31 HtmlView/htmlview.gpr.py:32
+#: HtmlView/htmlview.gpr.py:32
 msgid "A view showing html pages embedded in Gramps"
 msgstr "Een weergave van html-pagina's die zijn ingesloten in Gramps"
 
-#: HtmlView/htmlview.gpr.py:39 HtmlView/htmlview.gpr.py:40
+#: HtmlView/htmlview.gpr.py:40
 msgid "Web"
 msgstr "Web"
 
-#: HtmlView/htmlview.py:318 HtmlView/htmlview.py:328
+#: HtmlView/htmlview.py:328
 msgid "HtmlView"
 msgstr "HtmlWeergave"
 
-#: HtmlView/htmlview.py:485 HtmlView/htmlview.py:495
+#: HtmlView/htmlview.py:495
 msgid "Go to the previous page in the history"
 msgstr "Ga naar de vorige pagina in de geschiedenis"
 
-#: HtmlView/htmlview.py:493 HtmlView/htmlview.py:503
+#: HtmlView/htmlview.py:503
 msgid "Go to the next page in the history"
 msgstr "Ga naar de volgende pagina in de geschiedenis"
 
-#: HtmlView/htmlview.py:498 HtmlView/htmlview.py:508
+#: HtmlView/htmlview.py:508
 msgid "_Refresh"
 msgstr "_Vernieuwen"
 
-#: HtmlView/htmlview.py:501 HtmlView/htmlview.py:511
+#: HtmlView/htmlview.py:511
 msgid "Stop and reload the page."
 msgstr "Stop en herlaad de pagina."
 
-#: HtmlView/htmlview.py:545 HtmlView/htmlview.py:555
+#: HtmlView/htmlview.py:555
 msgid "Start page for the Html View"
 msgstr "Startpagina voor de HTML-weergave"
 
-#: HtmlView/htmlview.py:546 HtmlView/htmlview.py:556
+#: HtmlView/htmlview.py:556
 msgid ""
 "Type a webpage address at the top, and hit the execute button to load a "
 "webpage in this page\n"

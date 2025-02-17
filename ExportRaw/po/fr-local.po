@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-17 18:14+0100\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -38,14 +38,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ExportRaw/ExportRaw.gpr.py:3 ExportRaw/ExportRaw.gpr.py:4
+#: ExportRaw/ExportRaw.gpr.py:4
 msgid "Raw Export"
 msgstr "Export brut"
 
-#: ExportRaw/ExportRaw.gpr.py:4 ExportRaw/ExportRaw.gpr.py:5
+#: ExportRaw/ExportRaw.gpr.py:5
 msgid "This is a raw python object dump"
 msgstr "Ceci est une image brute d'objet python"
 
-#: ExportRaw/ExportRaw.gpr.py:11 ExportRaw/ExportRaw.gpr.py:13
+#: ExportRaw/ExportRaw.gpr.py:13
 msgid "Raw options"
 msgstr "Options"

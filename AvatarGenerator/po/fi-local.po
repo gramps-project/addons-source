@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-02 02:13+0300\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2019-12-10 13:09+0200\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: niememat@gmail.com\n"
@@ -33,13 +33,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.0.6\n"
 
-#: CalculateEstimatedDates.py:83
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:83
 #: AvatarGenerator/AvatarGenerator.py:86
 msgid "Select filter to restrict people"
 msgstr "Rajoita henkilöitä valitsemalla suodatin"
 
-#: RemoveTagTool/RemoveTagTool.py:271
 #: EventDescriptionEditor/EventDescriptionEditor.py:105
 #: AvatarGenerator/AvatarGenerator.py:211
 #: AvatarGenerator/AvatarGenerator.py:219
@@ -48,12 +46,10 @@ msgstr "Rajoita henkilöitä valitsemalla suodatin"
 msgid "INFO"
 msgstr "INFO"
 
-#: AvatarGenerator/AvatarGenerator.gpr.py:23
 #: AvatarGenerator/AvatarGenerator.gpr.py:24
 msgid "Avatar Generator Tool"
 msgstr "Avatar työkalu"
 
-#: AvatarGenerator/AvatarGenerator.gpr.py:24
 #: AvatarGenerator/AvatarGenerator.gpr.py:25
 msgid "A tool to add avatar pictures to your family tree"
 msgstr "Työkalu avatar kuvien käsittelyyn sukupuuussa"

@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-26 19:54-0300\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2012-08-26 20:57-0300\n"
 "Last-Translator: André Marcelo Alvarenga <andrealvarenga@gmx.net>\n"
 "Language-Team: Brazilian Portuguese>\n"
@@ -24,44 +24,55 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 1.0\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:3
+#: EditExifMetadata/editexifmetadata.py:215
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:69
+msgid "Copy"
+msgstr "Copiar"
+
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:4
 msgid "Deep Connections Gramplet"
 msgstr "Gramplet de relação detalhada"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:4
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:6
 msgid "Gramplet showing a deep relationship between active and home people"
 msgstr ""
 "Gramplet que mostra uma relação detalhada entre a pessoa ativa e a inicial"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:10
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.gpr.py:13
 msgid "Deep Connections"
 msgstr "Relação detalhada"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:61
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:65
 msgid "Pause"
 msgstr "Pausar"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:65
-#: EditExifMetadata/editexifmetadata.py:215
-msgid "Copy"
-msgstr "Copiar"
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:107
+msgid "mentioned in note"
+msgstr ""
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:106
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:133
+msgid "Note on Family"
+msgstr ""
+
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:143
 msgid "sibling"
 msgstr "irmã(o)"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:117
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:151
+msgid "Note on Parent Family"
+msgstr ""
+
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:154
 #, python-format
 msgid "%s (association)"
 msgstr "%s (associação)"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:150
+#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:158
+#, fuzzy
+#| msgid "New person"
+msgid "Note on Person"
+msgstr "Nova pessoa"
+
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:188
 #, python-format
 msgid ""
@@ -71,29 +82,24 @@ msgstr ""
 "\n"
 "   %s de "
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:171
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:209
 msgid "No Active Person set."
 msgstr "Não foi definida uma pessoa ativa."
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:179
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:217
 msgid "Looking for relationship between\n"
 msgstr "Procurando por parentesco entre\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:180
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:218
 #, python-format
 msgid "  <b>%s</b> (Home Person) and\n"
 msgstr "  <b>%s</b> (Pessoa inicial) e\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:181
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:219
 #, python-format
 msgid "  <b>%s</b> (Active Person)...\n"
 msgstr "  <b>%s</b> (Pessoa ativa)...\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:191
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:229
 #, python-format
 msgid ""
@@ -103,7 +109,6 @@ msgstr ""
 "Parentesco encontrado #%d: \n"
 "   "
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:201
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:239
 msgid ""
 "Paused.\n"
@@ -112,7 +117,6 @@ msgstr ""
 "Pausado.\n"
 "Clique em Continuar para procurar outros parentescos.\n"
 
-#: DeepConnectionsGramplet/DeepConnectionsGramplet.py:216
 #: DeepConnectionsGramplet/DeepConnectionsGramplet.py:254
 #, python-format
 msgid ""

@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-17 18:14+0100\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -39,7 +39,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: SurnameMappingGramplet/SurnameMappingGramplet.grp.py:3
-#: SurnameMappingGramplet/SurnameMappingGramplet.grp.py:10
 #: SurnameMappingGramplet/SurnameMappingGramplet.grp.py:11
 msgid "Surname Mapping"
 msgstr "Groupement des noms de famille"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -20,11 +20,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
 
-#: RestoreHist/restorehist.gpr.py:29 RestoreHist/restorehist.gpr.py:30
+#: RestoreHist/restorehist.gpr.py:30
 msgid "Restart where you were last working"
 msgstr "Genstart fra der du senest arbejdede"
 
-#: RestoreHist/restorehist.gpr.py:30 RestoreHist/restorehist.gpr.py:32
+#: RestoreHist/restorehist.gpr.py:32
 msgid ""
 "This addon causes Gramps to restart on the same view and object where Gramps "
 "was previously closed.  It adds no new menus or Gramplets, but allows the "

@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-17 18:14+0100\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -39,21 +39,23 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: AssociationsTool/associationstool.gpr.py:36
+#, fuzzy
+#| msgid "Associations state tool"
+msgid "Check Associations data"
+msgstr "Outil de l'état des associations"
+
 #: AssociationsTool/associationstool.gpr.py:37
 msgid "Will check the data on Association for people."
 msgstr "Va regarder les données 'Association' des individus"
 
-#: AssociationsTool/associationstool.py:43
 #: AssociationsTool/associationstool.py:53
 msgid "Associations state tool"
 msgstr "Outil de l'état des associations"
 
-#: AssociationsTool/associationstool.py:67
 #: AssociationsTool/associationstool.py:81
 msgid "Type of link"
 msgstr "Type de lien"
 
-#: AssociationsTool/associationstool.py:68
 #: AssociationsTool/associationstool.py:82
 msgid "Of"
 msgstr "De"

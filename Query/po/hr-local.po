@@ -3,13 +3,13 @@
 # Copyright (C) Gramps project
 # Milo Ivir <mivir@milotype.de>, 2019, 2020.
 # Stephen Adams, Gramps Reddit, 2018.
-#
+# Milo Ivir <mail@milotype.de>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2025-02-15 16:17+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-17 00:14+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -25,23 +25,23 @@ msgstr ""
 msgid "Enter Python expressions"
 msgstr "Upiši Python izraze"
 
-#: Query/Query.gpr.py:9 Query/Query.gpr.py:10
+#: Query/Query.gpr.py:10
 msgid "Query Gramplet"
 msgstr "Upit – Gramplet"
 
-#: Query/Query.gpr.py:10 Query/Query.gpr.py:11
+#: Query/Query.gpr.py:11
 msgid "Gramplet for running SQL-like queries"
 msgstr "Gramplet za izvršavanje SQL upita"
 
-#: Query/Query.gpr.py:18 Query/Query.gpr.py:19
+#: Query/Query.gpr.py:19
 msgid "Query"
 msgstr "Upit"
 
-#: Query/Query.gpr.py:31 Query/Query.gpr.py:33
+#: Query/Query.gpr.py:33
 msgid "Query Quickview"
 msgstr "Brzi prikaz za upite"
 
-#: Query/Query.gpr.py:32 Query/Query.gpr.py:34
+#: Query/Query.gpr.py:34
 msgid "Quick view for SQL-like running queries"
 msgstr "Brzi prikaz za SQL upite"
 

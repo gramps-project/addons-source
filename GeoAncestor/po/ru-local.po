@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-04 16:31+0300\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -31,32 +31,31 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: GeoAncestor/GeoAncestor.gpr.py:88 GeoAncestor/GeoAncestor.gpr.py:31
-#: GeoAncestor/GeoAncestor.gpr.py:41
+#: GeoAncestor/GeoAncestor.gpr.py:31 GeoAncestor/GeoAncestor.gpr.py:41
 msgid "Ancestors map"
 msgstr "Карта предков"
 
-#: GeoAncestor/GeoAncestor.gpr.py:89 GeoAncestor/GeoAncestor.gpr.py:32
+#: GeoAncestor/GeoAncestor.gpr.py:32
 msgid "A view showing ancestors places on the map."
 msgstr "Вид отображающий местоположения предков на карте."
 
-#: GeoAncestor/GeoAncestor.py:197 GeoAncestor/GeoAncestor.py:207
+#: GeoAncestor/GeoAncestor.py:207
 msgid "Ancestors places on the map"
 msgstr "Места предков на карте"
 
-#: GeoAncestor/GeoAncestor.py:225 GeoAncestor/GeoAncestor.py:235
+#: GeoAncestor/GeoAncestor.py:235
 msgid "GeoAncestor"
 msgstr ""
 
-#: GeoAncestor/GeoAncestor.py:294 GeoAncestor/GeoAncestor.py:304
+#: GeoAncestor/GeoAncestor.py:304
 #, python-format
 msgid "Ancestors places for %s"
 msgstr "Места предков для %s"
 
-#: GeoAncestor/GeoAncestor.py:301 GeoAncestor/GeoAncestor.py:311
+#: GeoAncestor/GeoAncestor.py:311
 msgid "Counting all places"
 msgstr "Подсчёт всех мест"
 
-#: GeoAncestor/GeoAncestor.py:304 GeoAncestor/GeoAncestor.py:314
+#: GeoAncestor/GeoAncestor.py:314
 msgid "Showing all places"
 msgstr "Отображение всех мест"

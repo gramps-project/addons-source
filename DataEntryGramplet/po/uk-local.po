@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2024-10-10 22:54+0300\n"
 "Last-Translator: Illia Maier <illia@maier.page>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
@@ -21,19 +21,17 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: DataEntryGramplet/DataEntryGramplet.gpr.py:8
+#: FilterRules/activepersonrule.py:45 DataEntryGramplet/DataEntryGramplet.py:71
+msgid "Active person"
+msgstr "Активна особа"
+
 #: DataEntryGramplet/DataEntryGramplet.gpr.py:9
 msgid "Data Entry Gramplet"
 msgstr "Грамплет для введення даних"
 
-#: DataEntryGramplet/DataEntryGramplet.gpr.py:9
 #: DataEntryGramplet/DataEntryGramplet.gpr.py:10
 msgid "Gramplet for quick data entry"
 msgstr "Грамплет для швидкого введення даних"
-
-#: DataEntryGramplet/DataEntryGramplet.py:71 FilterRules/activepersonrule.py:45
-msgid "Active person"
-msgstr "Активна особа"
 
 #: DataEntryGramplet/DataEntryGramplet.py:73
 msgid "Family:"

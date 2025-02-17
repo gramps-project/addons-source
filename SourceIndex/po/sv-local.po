@@ -9,14 +9,15 @@
 # Pär Ekholm <par.ekholm50@gmail.com>, 2016, 2018.
 # Pär Ekholm <par.ekholm@pekholm.se>, 2018, 2019.
 # Peter Landgren <peter@test>, 2010.
-#
+# Pär Ekholm <github1@m.pekholm.org>, 2025.
+# Milan <mobrcian@hotmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-08 17:11-0500\n"
-"PO-Revision-Date: 2025-02-09 11:16+0000\n"
-"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-16 10:55+0000\n"
+"Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
 "Language: sv\n"
@@ -24,23 +25,48 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.10\n"
 
-#: FilterRules/ageatdeath.py:71 SourceIndex/birth.glade:544
-#: SourceIndex/birth.glade:762 SourceIndex/census.glade:286
+#: FilterRules/ageatdeath.py:71 SourceIndex/witness.glade:107
+#: SourceIndex/birth.glade:544 SourceIndex/birth.glade:762
 #: SourceIndex/death.glade:521 SourceIndex/death.glade:669
-#: SourceIndex/death.glade:939 SourceIndex/marriage.glade:467
-#: SourceIndex/marriage.glade:789 SourceIndex/marriage.glade:808
-#: SourceIndex/marriage.glade:827 SourceIndex/marriage.glade:1562
-#: SourceIndex/marriage.glade:1621 SourceIndex/witness.glade:107
+#: SourceIndex/death.glade:939 SourceIndex/census.glade:286
+#: SourceIndex/marriage.glade:467 SourceIndex/marriage.glade:789
+#: SourceIndex/marriage.glade:808 SourceIndex/marriage.glade:827
+#: SourceIndex/marriage.glade:1562 SourceIndex/marriage.glade:1621
 msgid "Age:"
 msgstr "Ålder:"
 
-#: DynamicWeb//dynamicweb.py:2581 DynamicWeb/dynamicweb.py:3114
-#: SourceIndex/birth.py:126 SourceIndex/census.py:82 SourceIndex/death.py:87
-#: SourceIndex/index.py:92 SourceIndex/marriage.py:87 SourceIndex/witness.py:64
+#: DynamicWeb/dynamicweb.py:3114 SourceIndex/marriage.py:87
+#: SourceIndex/census.py:82 SourceIndex/index.py:92 SourceIndex/death.py:87
+#: SourceIndex/witness.py:64 SourceIndex/birth.py:126
 msgid "Sources Index"
 msgstr "Källindex"
+
+#: Form/editform.py:225 SourceIndex/birth.glade:113 SourceIndex/death.glade:182
+#: SourceIndex/census.glade:873 SourceIndex/marriage.glade:1263
+msgid "Reference:"
+msgstr "Referens:"
+
+#: SourceIndex/SourceIndex.gpr.py:24
+msgid "BirthIndex"
+msgstr "FödelseIndex"
+
+#: SourceIndex/SourceIndex.gpr.py:40
+msgid "MarriageIndex"
+msgstr "VigselIndex"
+
+#: SourceIndex/SourceIndex.gpr.py:56
+msgid "DeathIndex"
+msgstr "DödsfallsIndex"
+
+#: SourceIndex/SourceIndex.gpr.py:72
+msgid "CensusIndex"
+msgstr "FolkräkningsIndex"
+
+#: SourceIndex/SourceIndex.gpr.py:104
+msgid "SourceIndex"
+msgstr "KällIndex"
 
 #: SourceIndex/index.py:407
 msgid "*** Error: Must install either ElementTree or lxml."
@@ -49,26 +75,6 @@ msgstr "*** Fel: Måste installera antingen ElementTree eller lxml."
 #: SourceIndex/index.py:409
 msgid "must install either ElementTree or lxml"
 msgstr "måste installera antingen ElementTree eller lxml"
-
-#: SourceIndex/SourceIndex.gpr.py:23 SourceIndex/SourceIndex.gpr.py:24
-msgid "BirthIndex"
-msgstr "FödelseIndex"
-
-#: SourceIndex/SourceIndex.gpr.py:38 SourceIndex/SourceIndex.gpr.py:40
-msgid "MarriageIndex"
-msgstr "VigselIndex"
-
-#: SourceIndex/SourceIndex.gpr.py:53 SourceIndex/SourceIndex.gpr.py:56
-msgid "DeathIndex"
-msgstr "DödsfallsIndex"
-
-#: SourceIndex/SourceIndex.gpr.py:68 SourceIndex/SourceIndex.gpr.py:72
-msgid "CensusIndex"
-msgstr "FolkräkningsIndex"
-
-#: SourceIndex/SourceIndex.gpr.py:98 SourceIndex/SourceIndex.gpr.py:104
-msgid "SourceIndex"
-msgstr "KällIndex"
 
 #: SourceIndex/birth.glade:7 SourceIndex/index.glade:585
 msgid "birth"
@@ -82,12 +88,6 @@ msgstr "Info:"
 #: SourceIndex/birth.glade:99
 msgid "Birth act:"
 msgstr "Födelsehandling:"
-
-#: SourceIndex/birth.glade:113 SourceIndex/census.glade:873
-#: SourceIndex/death.glade:182 SourceIndex/marriage.glade:1263
-#: Form/editform.py:225
-msgid "Reference:"
-msgstr "Referens:"
 
 #: SourceIndex/birth.glade:129
 msgid ""

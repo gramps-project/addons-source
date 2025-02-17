@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-02 02:13+0300\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2019-12-10 13:09+0200\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: niememat@gmail.com\n"
@@ -33,14 +33,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.0.6\n"
 
-#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:24
-#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:32
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:25
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:33
 msgid "Birthdays"
 msgstr "Syntymäpäivät"
 
-#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:25
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:26
 msgid "a gramplet that displays the birthdays of the living people"
 msgstr "Gramplet, joka näyttää elävien ihmisten syntymä päivät ja iät"

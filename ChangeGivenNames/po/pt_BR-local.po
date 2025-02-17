@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-26 19:54-0300\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2012-08-26 20:57-0300\n"
 "Last-Translator: André Marcelo Alvarenga <andrealvarenga@gmx.net>\n"
 "Language-Team: Brazilian Portuguese>\n"
@@ -24,12 +24,10 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 1.0\n"
 
-#: ChangeGivenNames/ChangeGivenNames.gpr.py:36
 #: ChangeGivenNames/ChangeGivenNames.gpr.py:37
 msgid "Fix Capitalization of Given Names"
 msgstr "Corrigir maiúsculas/minúsculas de nomes próprios"
 
-#: ChangeGivenNames/ChangeGivenNames.gpr.py:37
 #: ChangeGivenNames/ChangeGivenNames.gpr.py:39
 msgid ""
 "Searches the entire database and attempts to fix capitalization of the given "
@@ -38,27 +36,23 @@ msgstr ""
 "Pesquisa em todo o banco de dados e tenta corrigir as maiúsculas/minúsculas "
 "dos nomes próprios"
 
-#: ChangeGivenNames/ChangeGivenNames.py:61
 #: ChangeGivenNames/ChangeGivenNames.py:66
 msgid "manual|Fix_Capitalization_of_Given_Names..."
 msgstr "Corrigir_maiúsculas/minúsculas_de_nomes_próprios..."
 
-#: ChangeGivenNames/ChangeGivenNames.py:99
 #: ChangeGivenNames/ChangeGivenNames.py:105
 msgid "Checking Given Names"
 msgstr "Verificando os nomes próprios"
 
-#: ChangeGivenNames/ChangeGivenNames.py:100
 #: ChangeGivenNames/ChangeGivenNames.py:107
 msgid "Searching given names"
 msgstr "Pesquisando nomes próprios"
 
-#: ChangeGivenNames/ChangeGivenNames.py:165
 #: ChangeGivenNames/ChangeGivenNames.py:204
 msgid "Affected Names"
 msgstr "Nomes afetados"
 
-#: ChangeGivenNames/changenames.glade.h:1 ChangeGivenNames/changenames.glade:32
+#: ChangeGivenNames/changenames.glade:32
 msgid ""
 "Below is a list of the given names that \n"
 "Gramps can convert to correct capitalization. \n"
@@ -68,7 +62,6 @@ msgstr ""
 "Gramps pode corrigir as maiúsculas/minúsculas. \n"
 "Selecione os nomes que gostaria de converter com o Gramps. "
 
-#: ChangeGivenNames/changenames.glade.h:4
 #: ChangeGivenNames/changenames.glade:107
 msgid "Edit selection"
 msgstr "Editar seleção"

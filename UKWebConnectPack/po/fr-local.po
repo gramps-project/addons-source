@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-17 18:14+0100\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -38,32 +38,36 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: SVWebconnectPack/SVWebPack.py:34 UKWebConnectPack/UKWebPack.py:35
+msgid "FamilySearch.org"
+msgstr "FamilySearch.org"
+
 # trunk
-#: UKWebConnectPack/UKWebPack.gpr.py:10 UKWebConnectPack/UKWebPack.gpr.py:11
+#: UKWebConnectPack/UKWebPack.gpr.py:11
 msgid "UK Web Connect Pack"
 msgstr "Ensemble de liens internet anglo-saxons"
 
-#: UKWebConnectPack/UKWebPack.gpr.py:11 UKWebConnectPack/UKWebPack.gpr.py:12
+#: UKWebConnectPack/UKWebPack.gpr.py:12
 msgid "Collection of Web sites for the UK (requires libwebconnect)"
 msgstr ""
 "Collection de sites internet pour le Royaume-uni (nécessite libwebconnect)"
 
-#: UKWebConnectPack/UKWebPack.py:29 UKWebConnectPack/UKWebPack.py:33
+#: UKWebConnectPack/UKWebPack.py:33
 msgid "UK Google"
 msgstr "Google UK"
 
-#: UKWebConnectPack/UKWebPack.py:30 UKWebConnectPack/UKWebPack.py:34
+#: UKWebConnectPack/UKWebPack.py:34
 msgid "British, UK, and Ireland"
 msgstr "Anglais, Royaume-uni, et Irlande"
 
-#: UKWebConnectPack/UKWebPack.py:31 SVWebconnectPack/SVWebPack.py:34
-msgid "FamilySearch.org"
-msgstr "FamilySearch.org"
-
-#: UKWebConnectPack/UKWebPack.py:33 UKWebConnectPack/UKWebPack.py:37
+#: UKWebConnectPack/UKWebPack.py:37
 msgid "National Archives"
 msgstr "Archives nationales anglaises"
 
-#: UKWebConnectPack/UKWebPack.py:34 UKWebConnectPack/UKWebPack.py:38
+#: UKWebConnectPack/UKWebPack.py:38
 msgid "Hathi Trust Digital Library"
 msgstr "Bibliothèque Hathi Trust Digital"
+
+#: UKWebConnectPack/UKWebPack.py:39
+msgid "Open Library"
+msgstr ""

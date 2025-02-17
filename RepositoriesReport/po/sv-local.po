@@ -9,14 +9,15 @@
 # Pär Ekholm <par.ekholm50@gmail.com>, 2016, 2018.
 # Pär Ekholm <par.ekholm@pekholm.se>, 2018, 2019.
 # Peter Landgren <peter@test>, 2010.
-#
+# Pär Ekholm <github1@m.pekholm.org>, 2025.
+# Milan <mobrcian@hotmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-08 17:11-0500\n"
-"PO-Revision-Date: 2025-02-09 11:16+0000\n"
-"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-16 10:55+0000\n"
+"Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
 "Language: sv\n"
@@ -24,141 +25,155 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.10\n"
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:480
-#: RepositoriesReport/RepositoriesReport.py:166
-#: RepositoriesReport/RepositoriesReportAlt.py:385
+#: RepositoriesReport/RepositoriesReportAlt.py:504
+#: RepositoriesReport/RepositoriesReport.py:175
 msgid "The style used for the title of the report."
 msgstr "Den mall, som används för rapportens titel."
 
 #: SourcesCitationsReport/SourcesCitationsReport.py:591
-#: RepositoriesReport/RepositoriesReport.py:194
-#: RepositoriesReport/RepositoriesReportAlt.py:414
+#: RepositoriesReport/RepositoriesReportAlt.py:533
+#: RepositoriesReport/RepositoriesReport.py:203
 msgid "The style used for each section."
 msgstr "Den mall, som används för varje sektion."
 
-#: DenominoViso/DenominoViso.py:2580 DenominoViso/DenominoViso.py:2607
-#: RepositoriesReport/RepositoriesReportAlt.py:355
+#: DenominoViso/DenominoViso.py:2607
+#: RepositoriesReport/RepositoriesReportAlt.py:467
 msgid "Include private records"
 msgstr "Ta med privata poster"
 
-#: RepositoriesReport/RepositoriesReport.gpr.py:25
 #: RepositoriesReport/RepositoriesReport.gpr.py:26
 msgid "Repositories Report Options"
 msgstr "Arkivplatsrapportalternativ"
 
-#: RepositoriesReport/RepositoriesReport.gpr.py:26
-#: RepositoriesReport/RepositoriesReport.gpr.py:42
 #: RepositoriesReport/RepositoriesReport.gpr.py:27
 #: RepositoriesReport/RepositoriesReport.gpr.py:46
 msgid "Produces a textual repositories report"
 msgstr "Skapar en textbaserad rapport över arkivplatser"
 
-#: RepositoriesReport/RepositoriesReport.gpr.py:41
-#: RepositoriesReport/RepositoriesReport.py:71
-#: RepositoriesReport/RepositoriesReportAlt.py:92
 #: RepositoriesReport/RepositoriesReport.gpr.py:45
 #: RepositoriesReport/RepositoriesReport.py:80
 #: RepositoriesReport/RepositoriesReportAlt.py:139
 msgid "Repositories Report"
 msgstr "Arkivplatsrapport"
 
-#: RepositoriesReport/RepositoriesReport.py:180
-#: RepositoriesReport/RepositoriesReportAlt.py:399
 #: RepositoriesReport/RepositoriesReport.py:189
 #: RepositoriesReport/RepositoriesReportAlt.py:518
 msgid "The style used for repository title."
 msgstr "Mall för arkivplatstitel."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:235
 #: RepositoriesReport/RepositoriesReportAlt.py:273
-#, python-format
 msgid "Publication information:"
 msgstr "Publiceringsinformation:"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:237
 #: RepositoriesReport/RepositoriesReportAlt.py:278
-#, python-format
 msgid "Data:"
 msgstr "Data:"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:323
+#: RepositoriesReport/RepositoriesReportAlt.py:378
+#, fuzzy
+#| msgid "Pages"
+msgid "Page:"
+msgstr "Sidor"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:419
+#, fuzzy
+#| msgid "Select sources using a filter"
+msgid "Selection with a filter"
+msgstr "Välj källor med hjälp av ett filter"
+
 #: RepositoriesReport/RepositoriesReportAlt.py:431
 msgid "Include repository's urls"
 msgstr "Tag med arkivplatsens url"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:324
 #: RepositoriesReport/RepositoriesReportAlt.py:432
 msgid "Whether to include urls on repository."
 msgstr "Huruvida ta med arkivplatsens url."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:327
 #: RepositoriesReport/RepositoriesReportAlt.py:435
 msgid "Include repository's address"
 msgstr "Ta med arkivplatsens adress"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:328
 #: RepositoriesReport/RepositoriesReportAlt.py:436
 msgid "Whether to include addresses on repository."
 msgstr "Huruvida ta med arkivplatsens adress."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:331
 #: RepositoriesReport/RepositoriesReportAlt.py:439
 msgid "Include source's author"
 msgstr "Tag med författare till källa"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:332
 #: RepositoriesReport/RepositoriesReportAlt.py:440
 msgid "Whether to include author."
 msgstr "Huruvida ta med författare."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:335
 #: RepositoriesReport/RepositoriesReportAlt.py:443
 msgid "Include source's abbreviation"
 msgstr "Ta med källförkortning"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:336
 #: RepositoriesReport/RepositoriesReportAlt.py:444
 msgid "Whether to include abbreviation."
 msgstr "Huruvida ta med källförkortning."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:339
 #: RepositoriesReport/RepositoriesReportAlt.py:447
 msgid "Include source's publication information"
 msgstr "Ta med källas publiceringsinformation"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:340
 #: RepositoriesReport/RepositoriesReportAlt.py:448
 msgid "Whether to include publication information."
 msgstr "Om publikationsinformation ska inkluderas."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:343
 #: RepositoriesReport/RepositoriesReportAlt.py:451
 msgid "Include source's data"
 msgstr "Tag med källdata"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:344
 #: RepositoriesReport/RepositoriesReportAlt.py:452
 msgid "Whether to include keys and values."
 msgstr "Huruvida ta med nycklar och värden."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:348
 #: RepositoriesReport/RepositoriesReportAlt.py:456
 msgid "Whether to include notes on repositories and sources."
 msgstr "Huruvida ta med notiser om arkivplatser och källor."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:351
 #: RepositoriesReport/RepositoriesReportAlt.py:459
 msgid "Include media"
 msgstr "Tag med media"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:356
+#: RepositoriesReport/RepositoriesReportAlt.py:460
+#, fuzzy
+#| msgid "Whether to include images"
+msgid "Whether to include media."
+msgstr "Huruvida ta med bilder"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:463
+#, fuzzy
+#| msgid "Include Options"
+msgid "Include citations"
+msgstr "Ta med alternativ"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:464
+#, fuzzy
+#| msgid "Whether to include a person's sources."
+msgid "Whether to include citations on sources."
+msgstr "Huruvida ta med källor."
+
 #: RepositoriesReport/RepositoriesReportAlt.py:468
 msgid "Whether to include repositories and sources marked as private."
 msgstr "Huruvida ta med arkivplatser och källor markerade som privata."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:429
+#: RepositoriesReport/RepositoriesReportAlt.py:471
+#, fuzzy
+#| msgid "Display type"
+msgid "Display empty values"
+msgstr "Visningstyp"
+
+#: RepositoriesReport/RepositoriesReportAlt.py:472
+#, fuzzy
+#| msgid "Whether to include keys and values."
+msgid "Whether to include key records with empty values."
+msgstr "Huruvida ta med nycklar och värden."
+
 #: RepositoriesReport/RepositoriesReportAlt.py:548
 msgid "The style used for child section."
 msgstr "Mall använd för val av barn."

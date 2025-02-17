@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -19,21 +19,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
-
-#: D3Charts/AncestralCollapsibleTree.gpr.py:22
-#: D3Charts/AncestralCollapsibleTree.gpr.py:23
-msgid "Ancestral Collapsible Tree"
-msgstr "Sammenfolleligt anetræ"
-
-#: D3Charts/AncestralCollapsibleTree.gpr.py:31
-#: D3Charts/AncestralCollapsibleTree.gpr.py:33
-msgid ""
-"Generates a web page with a graphical representation of ancestors (SVG) "
-"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
-msgstr ""
-"Danner en web side med en grafisk repræsentation af  aner (SVG) "
-"repræsenteret som et sammenfoldelig træ layout fra  D3.js javascript "
-"bibliotek."
 
 #: D3Charts/AncestralCollapsibleTree.py:326
 #: D3Charts/AncestralCollapsibleTree.py:771
@@ -111,17 +96,33 @@ msgstr "Mål stien for dannede filer"
 msgid "The destination file name for html content."
 msgstr "Mål filnavn for html indhold"
 
-#: D3Charts/AncestralFanChart.gpr.py:22 D3Charts/AncestralFanChart.gpr.py:23
-msgid "Ancestral Fan Chart"
-msgstr "Ane viftetavle"
+#: D3Charts/AncestralCollapsibleTree.gpr.py:23
+msgid "Ancestral Collapsible Tree"
+msgstr "Sammenfolleligt anetræ"
 
-#: D3Charts/AncestralFanChart.gpr.py:31 D3Charts/AncestralFanChart.gpr.py:33
+#: D3Charts/AncestralCollapsibleTree.gpr.py:33
 msgid ""
 "Generates a web page with a graphical representation of ancestors (SVG) "
-"represented as a Fan Chart from the D3.js JavaScript library."
+"represented as a Collapsible Tree Layout from the D3.js JavaScript library."
 msgstr ""
-"Danner e web side med en grafisk repræsentation af aner (SVG) repræsenteret "
-"som en viftetavle fra D3.js JavaScript bibliotek."
+"Danner en web side med en grafisk repræsentation af  aner (SVG) "
+"repræsenteret som et sammenfoldelig træ layout fra  D3.js javascript "
+"bibliotek."
+
+#: D3Charts/DescendantIndentedTree.gpr.py:23
+#: D3Charts/DescendantIndentedTree.py:909
+msgid "Descendant Indented Tree"
+msgstr ""
+
+#: D3Charts/DescendantIndentedTree.gpr.py:33
+msgid ""
+"Generates a web page with a graphical representation of descendants (SVG) "
+"representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
+"library."
+msgstr ""
+"Danner en web side med en grafisk repræsentation af efterkommere (SVG) "
+"repræsenteret som et sammenfoldelig træ layout fra  D3.js javascript "
+"bibliotek."
 
 #: D3Charts/AncestralFanChart.py:707
 msgid "Ancestral Fan Chart Options"
@@ -143,22 +144,17 @@ msgstr "Mødre baggrund"
 msgid "RGB-color for maternal box background."
 msgstr "RGB-farve for mødreboks baggrund."
 
-#: D3Charts/DescendantIndentedTree.gpr.py:22
-#: D3Charts/DescendantIndentedTree.py:909
-#: D3Charts/DescendantIndentedTree.gpr.py:23
-msgid "Descendant Indented Tree"
-msgstr ""
+#: D3Charts/AncestralFanChart.gpr.py:23
+msgid "Ancestral Fan Chart"
+msgstr "Ane viftetavle"
 
-#: D3Charts/DescendantIndentedTree.gpr.py:31
-#: D3Charts/DescendantIndentedTree.gpr.py:33
+#: D3Charts/AncestralFanChart.gpr.py:33
 msgid ""
-"Generates a web page with a graphical representation of descendants (SVG) "
-"representedas a Collapsible Indented Tree Layout from the D3.js JavaScript "
-"library."
+"Generates a web page with a graphical representation of ancestors (SVG) "
+"represented as a Fan Chart from the D3.js JavaScript library."
 msgstr ""
-"Danner en web side med en grafisk repræsentation af efterkommere (SVG) "
-"repræsenteret som et sammenfoldelig træ layout fra  D3.js javascript "
-"bibliotek."
+"Danner e web side med en grafisk repræsentation af aner (SVG) repræsenteret "
+"som en viftetavle fra D3.js JavaScript bibliotek."
 
 #: D3Charts/DescendantIndentedTree.py:673
 #, python-format
@@ -173,10 +169,34 @@ msgstr "Danner rapporten..."
 msgid "Invalid Destination Directory"
 msgstr "Ugyldig målfolder"
 
+#: D3Charts/DescendantIndentedTree.py:1365
+#, fuzzy, python-format
+#| msgid ""
+#| "Destinaton diretory %s does not exist\n"
+#| "Do you want to attempt to create it."
+msgid ""
+"Destinaton diretory %s does not exist\n"
+"Do you want to attempt to create it?"
+msgstr ""
+"Målfolder %s findes ikke\n"
+"Vild du forsøge at danne det."
+
 #: D3Charts/DescendantIndentedTree.py:1374
 #, python-format
 msgid "Failed to create %s: %s"
 msgstr "Kunne ikke danne%s: %s"
+
+#: D3Charts/DescendantIndentedTree.py:1391
+#, fuzzy, python-format
+#| msgid ""
+#| "Destination file %s already exists.\n"
+#| "Do you want to overwrite."
+msgid ""
+"Destination file %s already exists.\n"
+"Do you want to overwrite it?"
+msgstr ""
+"Målfil %s findes allerede.\n"
+"Vil du  overskrive den."
 
 #: D3Charts/DescendantIndentedTree.py:1446
 msgid "Default View"

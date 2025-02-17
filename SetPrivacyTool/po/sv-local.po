@@ -9,14 +9,15 @@
 # Pär Ekholm <par.ekholm50@gmail.com>, 2016, 2018.
 # Pär Ekholm <par.ekholm@pekholm.se>, 2018, 2019.
 # Peter Landgren <peter@test>, 2010.
-#
+# Pär Ekholm <github1@m.pekholm.org>, 2025.
+# Milan <mobrcian@hotmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-08 17:11-0500\n"
-"PO-Revision-Date: 2025-02-09 11:16+0000\n"
-"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-16 10:55+0000\n"
+"Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
 "Language: sv\n"
@@ -24,22 +25,17 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.10\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:75
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:83
-#: SetPrivacyTool/SetPrivacyTool.py:236
+#: SetPrivacyTool/SetPrivacyTool.py:312
 msgid "Select filter to restrict people"
 msgstr "Välj ett filter, som begränsar personurvalet"
 
-#: DynamicWeb//dynamicweb.py:2542 DynamicWeb/dynamicweb.py:3052
-#: SetPrivacyTool/SetPrivacyTool.py:232
+#: DynamicWeb/dynamicweb.py:3052 SetPrivacyTool/SetPrivacyTool.py:320
 msgid "Persons"
 msgstr "Personer"
 
-#: SetPrivacyTool/SetPrivacyTool.gpr.py:23 SetPrivacyTool/SetPrivacyTool.py:50
-#: SetPrivacyTool/SetPrivacyTool.py:92 SetPrivacyTool/SetPrivacyTool.py:95
-#: SetPrivacyTool/SetPrivacyTool.py:144 SetPrivacyTool/SetPrivacyTool.py:182
 #: SetPrivacyTool/SetPrivacyTool.gpr.py:24 SetPrivacyTool/SetPrivacyTool.py:51
 #: SetPrivacyTool/SetPrivacyTool.py:93 SetPrivacyTool/SetPrivacyTool.py:96
 #: SetPrivacyTool/SetPrivacyTool.py:146 SetPrivacyTool/SetPrivacyTool.py:186
@@ -47,54 +43,75 @@ msgstr "Personer"
 msgid "Set Privacy Tool"
 msgstr "Ställ in Sekretessverktyg"
 
-#: SetPrivacyTool/SetPrivacyTool.gpr.py:24
 #: SetPrivacyTool/SetPrivacyTool.gpr.py:25
 msgid "Set all objects of the last <number> of years private."
 msgstr "Ange alla objekt för de senaste <number> åren som privata."
 
-#: SetPrivacyTool/SetPrivacyTool.py:89 SetPrivacyTool/SetPrivacyTool.py:90
+#: SetPrivacyTool/SetPrivacyTool.py:90
 #, python-format
 msgid "Set private: %d %s\n"
 msgstr "Ange privata: %d %s\n"
 
-#: SetPrivacyTool/SetPrivacyTool.py:91 SetPrivacyTool/SetPrivacyTool.py:92
+#: SetPrivacyTool/SetPrivacyTool.py:92
 #, python-format
 msgid "Not private: %d %s\n"
 msgstr "Ej privata: %d %s\n"
 
-#: SetPrivacyTool/SetPrivacyTool.py:103 SetPrivacyTool/SetPrivacyTool.py:107
+#: SetPrivacyTool/SetPrivacyTool.py:107
 msgid "Set persons private.."
 msgstr "Ange personer privata.."
 
-#: SetPrivacyTool/SetPrivacyTool.py:152 SetPrivacyTool/SetPrivacyTool.py:157
+#: SetPrivacyTool/SetPrivacyTool.py:157
 msgid "Set events private.."
 msgstr "Ange händelser privata.."
 
-#: SetPrivacyTool/SetPrivacyTool.py:190 SetPrivacyTool/SetPrivacyTool.py:197
+#: SetPrivacyTool/SetPrivacyTool.py:197
 msgid "Set media private.."
 msgstr "Ange media privata.."
 
-#: SetPrivacyTool/SetPrivacyTool.py:247 SetPrivacyTool/SetPrivacyTool.py:324
-msgid "Select filter to restrict events"
-msgstr "Välj filter för att begränsa händelser"
+#: SetPrivacyTool/SetPrivacyTool.py:230
+#, fuzzy
+#| msgid "Set events private.."
+msgid "Set adresses private.."
+msgstr "Ange händelser privata.."
 
-#: SetPrivacyTool/SetPrivacyTool.py:258 SetPrivacyTool/SetPrivacyTool.py:336
-msgid "Select filter to restrict medias"
-msgstr "Välj filter för att begränsa media"
+#: SetPrivacyTool/SetPrivacyTool.py:259
+#, fuzzy
+#| msgid "Set events private.."
+msgid "Set internet objects private.."
+msgstr "Ange händelser privata.."
 
-#: SetPrivacyTool/SetPrivacyTool.py:265 SetPrivacyTool/SetPrivacyTool.py:306
-msgid "Always private if no date."
-msgstr "Alltid privat om inget datum."
-
-#: SetPrivacyTool/SetPrivacyTool.py:266 SetPrivacyTool/SetPrivacyTool.py:307
-msgid "If checked, all objects without a date will also be set private."
-msgstr ""
-"Om kontrollerade, alla objekt utan datum kommer också att anges privata."
-
-#: SetPrivacyTool/SetPrivacyTool.py:271 SetPrivacyTool/SetPrivacyTool.py:301
+#: SetPrivacyTool/SetPrivacyTool.py:301
 msgid ""
 "The time range in years from today you want to set objects private.\n"
 "'0 years' = remove privacy from all objects."
 msgstr ""
 "Tidsintervallet i år från idag som du vill ange objekt privata.\n"
 "'0 år' = ta bort sekretess från alla objekt."
+
+#: SetPrivacyTool/SetPrivacyTool.py:306
+msgid "Always private if no date."
+msgstr "Alltid privat om inget datum."
+
+#: SetPrivacyTool/SetPrivacyTool.py:307
+msgid "If checked, all objects without a date will also be set private."
+msgstr ""
+"Om kontrollerade, alla objekt utan datum kommer också att anges privata."
+
+#: SetPrivacyTool/SetPrivacyTool.py:324
+msgid "Select filter to restrict events"
+msgstr "Välj filter för att begränsa händelser"
+
+#: SetPrivacyTool/SetPrivacyTool.py:336
+msgid "Select filter to restrict medias"
+msgstr "Välj filter för att begränsa media"
+
+#: SetPrivacyTool/SetPrivacyTool.py:347
+#, fuzzy
+#| msgid "Can't determine type of import"
+msgid "Internet type filter"
+msgstr "Kan inte bestämma importtypen"
+
+#: SetPrivacyTool/SetPrivacyTool.py:351
+msgid "E-Mail"
+msgstr ""

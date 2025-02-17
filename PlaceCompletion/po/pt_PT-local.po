@@ -1,13 +1,13 @@
 # Addon MediaMerge for Gramps.
 # Copyright (C) 2020 Gramps
 # This file is distributed under the same license as the gramps package.
-# Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020.
+# Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2025-02-15 10:09+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-17 11:46+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -16,14 +16,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
-#: PlaceCompletion/PlaceCompletion.gpr.py:25
 #: PlaceCompletion/PlaceCompletion.gpr.py:26
 msgid "PlaceCompletion"
 msgstr "Conclusão de locais"
 
-#: PlaceCompletion/PlaceCompletion.gpr.py:26
 #: PlaceCompletion/PlaceCompletion.gpr.py:28
 msgid ""
 "Provides a browsable list of selected places, with possibility to complete/"
@@ -104,16 +102,16 @@ msgstr "A fazer alterações"
 
 #: PlaceCompletion/PlaceCompletion.py:731
 msgid "No place record was modified."
-msgstr "Nenhum registo foi alterado."
+msgstr "Nenhum local foi alterado."
 
 #: PlaceCompletion/PlaceCompletion.py:733
 msgid "1 place record was modified."
-msgstr "Foi alterado um registo."
+msgstr "Foi alterado um local."
 
 #: PlaceCompletion/PlaceCompletion.py:735
 #, python-format
 msgid "%d place records were modified."
-msgstr "Foram alterados %d registos."
+msgstr "Foram alterados %d locais."
 
 #: PlaceCompletion/PlaceCompletion.py:736
 msgid "Change places"
@@ -139,7 +137,7 @@ msgstr "Problema ao ler o ficheiro"
 #: PlaceCompletion/PlaceCompletion.py:982
 #, python-format
 msgid "invalid lat or lon value, %(lat)s, %(lon)s"
-msgstr "valor de lat ou lon inválidos, %(lat)s, %(lon)s"
+msgstr "valor de lat ou lon inválido, %(lat)s, %(lon)s"
 
 #: PlaceCompletion/PlaceCompletion.py:1135
 msgid "No lat/lon conversion"
@@ -231,7 +229,7 @@ msgstr "Todos os locais"
 
 #: PlaceCompletion/PlaceCompletion.py:1335
 msgid "No Latitude/Longitude given"
-msgstr "Sem Latitude/Longitude"
+msgstr "Não indicou latitude/longitude"
 
 #: PlaceCompletion/placecompletion.glade:85
 msgid "_Google Maps"
@@ -283,7 +281,7 @@ msgstr "Procurar em:"
 
 #: PlaceCompletion/placecompletion.glade:566
 msgid "Select A File"
-msgstr "Seleccione um ficheiro"
+msgstr "Seleccionar um ficheiro"
 
 #: PlaceCompletion/placecompletion.glade:579
 msgid "Parse as:"
@@ -324,7 +322,7 @@ msgid ""
 "Press Tab on a row or Google Maps button to see place on a map. Press Apply "
 "to do all changes automatically"
 msgstr ""
-"Delete para eliminar a linha, duplo clique para editar o local com entradas "
-"pré-inseridas,\n"
+"Prima Delete para eliminar a linha, duplo clique para editar o local com "
+"alterações pré-inseridas,\n"
 "Tab ou botão GoogleMaps para ver o local no mapa. Clique em Aplicar para "
-"alterar tudo automaticamente."
+"alterar tudo automaticamente"

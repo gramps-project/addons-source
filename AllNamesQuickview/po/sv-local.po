@@ -9,14 +9,15 @@
 # Pär Ekholm <par.ekholm50@gmail.com>, 2016, 2018.
 # Pär Ekholm <par.ekholm@pekholm.se>, 2018, 2019.
 # Peter Landgren <peter@test>, 2010.
-#
+# Pär Ekholm <github1@m.pekholm.org>, 2025.
+# Milan <mobrcian@hotmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-08 17:11-0500\n"
-"PO-Revision-Date: 2025-02-09 11:16+0000\n"
-"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-16 10:55+0000\n"
+"Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
 "Language: sv\n"
@@ -24,27 +25,25 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.10\n"
 
-#: PlaceCleanup/placecleanup.glade:48 PlaceCleanup/placecleanup.glade:52
-#: AllNamesQuickview/AllNames.py:49
+#: PlaceCleanup/placecleanup.glade:52 AllNamesQuickview/AllNames.py:54
 msgid "Primary Name"
 msgstr "Primärt namn"
 
-#: AllNamesQuickview/AllNames.gpr.py:3 AllNamesQuickview/AllNames.py:46
 #: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.py:51
 msgid "All Names of All People"
 msgstr "Samtliga namn för alla personer"
 
-#: AllNamesQuickview/AllNames.gpr.py:4 AllNamesQuickview/AllNames.gpr.py:5
+#: AllNamesQuickview/AllNames.gpr.py:5
 msgid "Display all names of all people"
 msgstr "Visa samtliga namn för alla personer"
 
-#: AllNamesQuickview/AllNames.py:49 AllNamesQuickview/AllNames.py:54
+#: AllNamesQuickview/AllNames.py:54
 msgid "Name Type"
 msgstr "Namntyp"
 
-#: AllNamesQuickview/AllNames.py:66 AllNamesQuickview/AllNames.py:71
+#: AllNamesQuickview/AllNames.py:71
 #, python-format
 msgid "Total names %d"
 msgstr "Totalt antal namn %d"

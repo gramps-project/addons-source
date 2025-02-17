@@ -7,13 +7,13 @@
 # Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
 # Erik De Richter <frederik.de.richter@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
 # Harmen Huizinga <harmenhuizinga@sigmo.nl>, 2013.
-#
+# Stephan Paternotte <stephan@paternottes.net>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
-"Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
-"POT-Creation-Date: 2019-01-04 18:55-0600\n"
-"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-17 11:05+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -22,70 +22,55 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
-#: SourcesCitationsReport//SourcesCitationsReport.gpr.py:32
 #: SourcesCitationsReport/SourcesCitationsReport.gpr.py:32
 msgid "Sources and Citations Report"
 msgstr "Bronnen en citatenverslag"
 
-#: SourcesCitationsReport//SourcesCitationsReport.gpr.py:33
 #: SourcesCitationsReport/SourcesCitationsReport.gpr.py:33
 msgid "Provides a source and Citations Report with notes"
 msgstr "Biedt een bron en citatenverslag met notities"
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:278
 #: SourcesCitationsReport/SourcesCitationsReport.py:272
 #, python-format
 msgid "Key: %s"
 msgstr "Sleutel: %s"
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:283
 #: SourcesCitationsReport/SourcesCitationsReport.py:277
 msgid "Citations:"
 msgstr "Citaten:"
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:292
 #: SourcesCitationsReport/SourcesCitationsReport.py:286
 #, python-format
 msgid "%d"
 msgstr "%d"
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:294
 #: SourcesCitationsReport/SourcesCitationsReport.py:288
 #, python-format
 msgid "  %s"
 msgstr "  %s"
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:300
 #: SourcesCitationsReport/SourcesCitationsReport.py:294
 #, python-format
 msgid " - %s "
 msgstr " - %s "
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:306
 #: SourcesCitationsReport/SourcesCitationsReport.py:300
 #, python-format
 msgid "   Type: %s"
 msgstr "   Type: %s"
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:308
 #: SourcesCitationsReport/SourcesCitationsReport.py:302
 #, python-format
 msgid "   N-ID: %s"
 msgstr "   N-ID: %s"
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:316
 #: SourcesCitationsReport/SourcesCitationsReport.py:310
 #, python-format
 msgid "   %s"
 msgstr "   %s"
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:330
-#: SourcesCitationsReport//SourcesCitationsReport.py:351
-#: SourcesCitationsReport//SourcesCitationsReport.py:378
-#: SourcesCitationsReport//SourcesCitationsReport.py:384
-#: SourcesCitationsReport//SourcesCitationsReport.py:390
 #: SourcesCitationsReport/SourcesCitationsReport.py:324
 #: SourcesCitationsReport/SourcesCitationsReport.py:345
 #: SourcesCitationsReport/SourcesCitationsReport.py:372
@@ -95,124 +80,100 @@ msgstr "   %s"
 msgid "%s"
 msgstr "%s"
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:332
-#: SourcesCitationsReport//SourcesCitationsReport.py:353
 #: SourcesCitationsReport/SourcesCitationsReport.py:326
 #: SourcesCitationsReport/SourcesCitationsReport.py:347
 #, python-format
 msgid "   ( %s )"
 msgstr "   ( %s )"
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:339
 #: SourcesCitationsReport/SourcesCitationsReport.py:333
 msgid "   Spouses: "
 msgstr "   Echtgenoten "
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:341
 #: SourcesCitationsReport/SourcesCitationsReport.py:335
 #, python-format
 msgid "%s "
 msgstr "%s "
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:344
 #: SourcesCitationsReport/SourcesCitationsReport.py:338
 #, python-format
 msgid "and %s "
 msgstr "en %s "
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:355
 #: SourcesCitationsReport/SourcesCitationsReport.py:349
 #, python-format
 msgid " %s"
 msgstr " %s"
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:421
 #: SourcesCitationsReport/SourcesCitationsReport.py:413
 msgid "Title of the Report"
 msgstr "Titel van het verslag"
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:422
 #: SourcesCitationsReport/SourcesCitationsReport.py:414
 msgid "Title string for the report."
 msgstr "Titelregel voor het verslag."
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:425
 #: SourcesCitationsReport/SourcesCitationsReport.py:417
 msgid "Subtitle of the Report"
 msgstr "Ondertitel van het verslag"
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:426
 #: SourcesCitationsReport/SourcesCitationsReport.py:418
 msgid "Subtitle string for the report."
 msgstr "Ondertitelregel van het verslag."
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:431
 #: SourcesCitationsReport/SourcesCitationsReport.py:423
 msgid "researcher name"
 msgstr "naam onderzoeker"
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:444
 #: SourcesCitationsReport/SourcesCitationsReport.py:436
 msgid "Select sources using a filter"
 msgstr "Selecteer bronnen met behulp van een filter"
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:451
 #: SourcesCitationsReport/SourcesCitationsReport.py:443
 msgid "Show persons"
 msgstr "Toon personen"
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:452
 #: SourcesCitationsReport/SourcesCitationsReport.py:444
 msgid "Whether to show events and persons mentioned in the note"
 msgstr ""
 "Of gebeurtenissen en personen vermeld in de notitie moeten worden weergegeven"
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:488
 #: SourcesCitationsReport/SourcesCitationsReport.py:480
 msgid "The style used for the title of the report."
 msgstr "De stijl die wordt gebruikt voor de titel van het verslag."
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:503
 #: SourcesCitationsReport/SourcesCitationsReport.py:495
 msgid "The style used for the subtitle of the report."
 msgstr "De stijl die wordt gebruikt voor de ondertitel van het rapport."
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:517
 #: SourcesCitationsReport/SourcesCitationsReport.py:509
 msgid "The style used for the footer of the report."
 msgstr "De stijl die wordt gebruikt voor de voettekst van het rapport."
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:532
 #: SourcesCitationsReport/SourcesCitationsReport.py:524
 msgid "The style used for source title."
 msgstr "De stijl die wordt gebruikt voor de brontitel."
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:544
 #: SourcesCitationsReport/SourcesCitationsReport.py:536
 msgid "The style used for source subtitle."
 msgstr "De stijl die wordt gebruikt voor de bronondertiteling."
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:556
 #: SourcesCitationsReport/SourcesCitationsReport.py:548
 msgid "The style used for Source details."
 msgstr "De stijl die wordt gebruikt voor brondetails."
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:571
 #: SourcesCitationsReport/SourcesCitationsReport.py:563
 msgid "The style used for citation title."
 msgstr "De stijl die wordt gebruikt voor de citaattitel."
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:583
 #: SourcesCitationsReport/SourcesCitationsReport.py:575
 msgid "The style used for a column title."
 msgstr "De stijl die wordt gebruikt voor een kolomtitel."
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:599
 #: SourcesCitationsReport/SourcesCitationsReport.py:591
 msgid "The style used for each section."
 msgstr "De stijl die voor elke sectie wordt gebruikt."
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:630
 #: SourcesCitationsReport/SourcesCitationsReport.py:622
 msgid "The style used for event and person details."
 msgstr ""

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2024-10-10 22:54+0300\n"
 "Last-Translator: Illia Maier <illia@maier.page>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/gramps-project/"
@@ -21,15 +21,15 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: DynamicWeb/dynamicweb.py:5157 Themes/themes.py:173 Themes/themes.py:223
+#: DynamicWeb/dynamicweb.py:5157 Themes/themes.py:175 Themes/themes.py:225
 msgid "Theme"
 msgstr "Тема"
 
-#: Themes/themes.gpr.py:28 Themes/themes.gpr.py:29
+#: Themes/themes.gpr.py:29
 msgid "Theme preferences"
 msgstr "Тематичні уподобання"
 
-#: Themes/themes.gpr.py:29 Themes/themes.gpr.py:31
+#: Themes/themes.gpr.py:31
 msgid ""
 "An addition to Preferences for simple Theme and Font adjustment.  Especially "
 "useful for Windows users."
@@ -37,19 +37,18 @@ msgstr ""
 "На додаток до налаштувань для простої настройки теми та шрифту. Особливо "
 "корисно для користувачів Windows."
 
-#: Themes/themes.py:170 Themes/themes.py:188 Themes/themes.py:172
-#: Themes/themes.py:190
+#: Themes/themes.py:172 Themes/themes.py:190
 msgid "Theme is hardcoded by GTK_THEME"
 msgstr "Тему пришито через GTK_THEME"
 
-#: Themes/themes.py:178 Themes/themes.py:180
+#: Themes/themes.py:180
 msgid "Dark Variant"
 msgstr "Темний варіант"
 
-#: Themes/themes.py:196 Themes/themes.py:198
+#: Themes/themes.py:198
 msgid "Font"
 msgstr "Шрифт"
 
-#: Themes/themes.py:212 Themes/themes.py:214
+#: Themes/themes.py:214
 msgid "Fixed Scrollbar (requires restart)"
 msgstr "Класична смуга прокрутки (потрібно перезавантажити)"

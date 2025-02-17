@@ -3,13 +3,13 @@
 # Copyright (C) Gramps project
 # Milo Ivir <mivir@milotype.de>, 2019, 2020.
 # Stephen Adams, Gramps Reddit, 2018.
-#
+# Milo Ivir <mail@milotype.de>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2025-02-15 16:17+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-17 00:14+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -21,12 +21,11 @@ msgstr ""
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Weblate 5.10\n"
 
-#: PlaceCleanup/placecleanup.gpr.py:28 PlaceCleanup/placecleanup.gpr.py:44
-#: PlaceCleanup/placecleanup.gpr.py:46
+#: PlaceCleanup/placecleanup.gpr.py:28 PlaceCleanup/placecleanup.gpr.py:46
 msgid "Place Cleanup"
 msgstr "Sređivanje mjesta"
 
-#: PlaceCleanup/placecleanup.gpr.py:29 PlaceCleanup/placecleanup.gpr.py:30
+#: PlaceCleanup/placecleanup.gpr.py:30
 msgid ""
 "Place Cleanup Gramplet assists in merging places, as well as completing "
 "places from the GeoNames web database"
@@ -34,8 +33,7 @@ msgstr ""
 "Gramplet pomaže sjediniti mjesta, kao i popuniti mjesta uz pomoć internetske "
 "baze podataka GeoNames"
 
-#: PlaceCleanup/placecleanup.py:266 PlaceCleanup/placecleanup.glade:1020
-#: PlaceCleanup/placecleanup.glade:1088
+#: PlaceCleanup/placecleanup.py:266 PlaceCleanup/placecleanup.glade:1088
 msgid ""
 "No\n"
 "Matches"
@@ -43,8 +41,7 @@ msgstr ""
 "Nema\n"
 "podudaranja"
 
-#: PlaceCleanup/placecleanup.py:267 PlaceCleanup/placecleanup.glade:827
-#: PlaceCleanup/placecleanup.glade:895
+#: PlaceCleanup/placecleanup.py:267 PlaceCleanup/placecleanup.glade:895
 msgid "Find"
 msgstr "Pronađi"
 
@@ -105,20 +102,19 @@ msgstr ""
 "Za prikaz više rezultata, ponovo pritisni gumb za traženje.\n"
 "Ili pokušaj promijeniti naslov, koristeći više detalja, npr. državu."
 
-#: PlaceCleanup/placecleanup.py:418 PlaceCleanup/placecleanup.py:423
 #: PlaceCleanup/placecleanup.py:421 PlaceCleanup/placecleanup.py:426
 msgid "Problem getting data from web"
 msgstr "Problem u dohvaćanju podataka s interneta"
 
-#: PlaceCleanup/placecleanup.py:424 PlaceCleanup/placecleanup.py:427
+#: PlaceCleanup/placecleanup.py:427
 msgid "Web request Timeout, you can try again..."
 msgstr "Vrijeme za internetski zahtjev je isteklo, možeš pokušati ponovo …"
 
-#: PlaceCleanup/placecleanup.py:432 PlaceCleanup/placecleanup.py:435
+#: PlaceCleanup/placecleanup.py:435
 msgid "Problem getting data from GeoNames"
 msgstr "Problem u dohvaćanju podataka s GeoNames stranica"
 
-#: PlaceCleanup/placecleanup.py:478 PlaceCleanup/placecleanup.py:481
+#: PlaceCleanup/placecleanup.py:481
 msgid ""
 "One of the places you are merging encloses the other!\n"
 "Please choose another place."
@@ -126,7 +122,7 @@ msgstr ""
 "Jedno od mjesta koje sjedinjuješ obuhvaća drugo mjesto!\n"
 "Odaberi jedno drugo mjesto."
 
-#: PlaceCleanup/placecleanup.py:749 PlaceCleanup/placecleanup.py:759
+#: PlaceCleanup/placecleanup.py:759
 msgid ""
 "The place you chose is enclosed in the place you are workin on!\n"
 "Please cancel and choose another place."
@@ -134,19 +130,19 @@ msgstr ""
 "Odabrano mjesto je obuhvaćeno mjestom koje trenutačno obrađuješ!\n"
 "Prekini i odaberi jedno drugo mjesto."
 
-#: PlaceCleanup/placecleanup.py:935 PlaceCleanup/placecleanup.py:945
+#: PlaceCleanup/placecleanup.py:945 PlaceCleanup/placecleanup.py:946
 msgid "GeoNames web site"
 msgstr "GeoNames web-stranica"
 
-#: PlaceCleanup/placecleanup.py:940 PlaceCleanup/placecleanup.py:950
+#: PlaceCleanup/placecleanup.py:950 PlaceCleanup/placecleanup.py:951
 msgid "GeoNames author"
 msgstr "GeoNames autor"
 
-#: PlaceCleanup/placecleanup.py:945 PlaceCleanup/placecleanup.py:955
+#: PlaceCleanup/placecleanup.py:955 PlaceCleanup/placecleanup.py:956
 msgid "GeoNames was founded by Marc Wick. You can reach him at "
 msgstr "GeoNames je osnovao Marc Wick. Možeš ga kontaktirati na "
 
-#: PlaceCleanup/placecleanup.py:948 PlaceCleanup/placecleanup.py:958
+#: PlaceCleanup/placecleanup.py:958 PlaceCleanup/placecleanup.py:959
 msgid ""
 "GeoNames is a project of Unxos GmbH, Weingartenstrasse 8, 8708 Männedorf, "
 "Switzerland.\n"
@@ -156,20 +152,20 @@ msgstr ""
 "Švicarska.\n"
 "Licenziran je pod "
 
-#: PlaceCleanup/placecleanup.py:951 PlaceCleanup/placecleanup.py:961
+#: PlaceCleanup/placecleanup.py:961 PlaceCleanup/placecleanup.py:962
 msgid "Creative Commons Attribution 3.0 License"
 msgstr "Creative Commons – Imenovanje, 3.0"
 
-#: PlaceCleanup/placecleanup.py:963 PlaceCleanup/placecleanup.py:973
+#: PlaceCleanup/placecleanup.py:973 PlaceCleanup/placecleanup.py:974
 #, python-format
 msgid "Add Souce/Repo/Note (%s)"
 msgstr "Dodaj Izvor/Spremište/Zabilješku (%s)"
 
-#: PlaceCleanup/placecleanup.py:1064 PlaceCleanup/placecleanup.py:1074
+#: PlaceCleanup/placecleanup.py:1074 PlaceCleanup/placecleanup.py:1075
 msgid "This Place is not used!"
 msgstr "Ovo se mjesto ne koristi!"
 
-#: PlaceCleanup/placecleanup.py:1065 PlaceCleanup/placecleanup.py:1075
+#: PlaceCleanup/placecleanup.py:1075 PlaceCleanup/placecleanup.py:1076
 msgid ""
 "You should delete it, or, if it contains useful notes or other data, use the "
 "Find to merge it into a valid place."
@@ -181,11 +177,11 @@ msgstr ""
 msgid "City, County, State, Country"
 msgstr "Grad/Okrug/Pokrajina/Država"
 
-#: PlaceCleanup/placecleanup.glade:48 PlaceCleanup/placecleanup.glade:52
+#: PlaceCleanup/placecleanup.glade:52
 msgid "Primary Name"
 msgstr "Primarno ime"
 
-#: PlaceCleanup/placecleanup.glade:88 PlaceCleanup/placecleanup.glade:89
+#: PlaceCleanup/placecleanup.glade:89
 msgid "The current Primary name."
 msgstr "Trenutačno primarno ime."
 
@@ -193,39 +189,37 @@ msgstr "Trenutačno primarno ime."
 msgid "The postal code for the place, if any."
 msgstr "Poštanski broj mjesta, ako postoji."
 
-#: PlaceCleanup/placecleanup.glade:115 PlaceCleanup/placecleanup.glade:114
+#: PlaceCleanup/placecleanup.glade:114
 msgid "What type of place this is. Eg 'Country', 'City', ... ."
 msgstr "Vrsta mjesta, npr. 'Država', 'Grad', … ."
 
-#: PlaceCleanup/placecleanup.glade:132 PlaceCleanup/placecleanup.glade:150
-#: PlaceCleanup/placecleanup.glade:281 PlaceCleanup/placecleanup.glade:166
-#: PlaceCleanup/placecleanup.glade:180 PlaceCleanup/placecleanup.glade:339
-#: PlaceCleanup/placecleanup.glade:353
-msgid "Orig"
-msgstr "Original"
-
-#: PlaceCleanup/placecleanup.glade:136 PlaceCleanup/placecleanup.glade:133
+#: PlaceCleanup/placecleanup.glade:133
 msgid "Check this box if you want to keep the original Postal code."
 msgstr "Označi ovaj okvir, ako želiš zadržati prvobitni poštanski broj."
 
-#: PlaceCleanup/placecleanup.glade:154 PlaceCleanup/placecleanup.glade:148
+#: PlaceCleanup/placecleanup.glade:148
 msgid "Check this box if you want to keep the original Place Type."
 msgstr "Označi ovaj okvir, ako želiš zadržati prvobitnu vrstu mjesta."
 
-#: PlaceCleanup/placecleanup.glade:236 PlaceCleanup/placecleanup.glade:280
+#: PlaceCleanup/placecleanup.glade:166 PlaceCleanup/placecleanup.glade:180
+#: PlaceCleanup/placecleanup.glade:339 PlaceCleanup/placecleanup.glade:353
+msgid "Orig"
+msgstr "Original"
+
+#: PlaceCleanup/placecleanup.glade:280
 msgid "Check this box if you want to keep the original Latitude and Longitude."
 msgstr ""
 "Označi ovaj okvir, ako želiš zadržati prvobitnu zemljopisnu širinu i dužinu."
 
-#: PlaceCleanup/placecleanup.glade:254 PlaceCleanup/placecleanup.glade:295
+#: PlaceCleanup/placecleanup.glade:295
 msgid "The Gramps ID.."
 msgstr "Gramps ID …"
 
-#: PlaceCleanup/placecleanup.glade:285 PlaceCleanup/placecleanup.glade:322
+#: PlaceCleanup/placecleanup.glade:322
 msgid "Check this box if you want to keep the original Gramps ID."
 msgstr "Označi ovaj okvir, ako želiš zadržati prvobitni Gramps ID."
 
-#: PlaceCleanup/placecleanup.glade:315 PlaceCleanup/placecleanup.glade:391
+#: PlaceCleanup/placecleanup.glade:391
 msgid ""
 "Alterative Names\n"
 "Select one or more rows and press 'Keep' button to toggle the 'include into "
@@ -235,76 +229,76 @@ msgstr ""
 "Odaberi jedan ili više redaka i pritisni „Zadrži” za promjenu stanja "
 "„uključi u mjesto”."
 
-#: PlaceCleanup/placecleanup.glade:330 PlaceCleanup/placecleanup.glade:406
+#: PlaceCleanup/placecleanup.glade:406
 msgid "Inc"
 msgstr "Nepotpuno"
 
-#: PlaceCleanup/placecleanup.glade:370 PlaceCleanup/placecleanup.glade:446
+#: PlaceCleanup/placecleanup.glade:446
 msgid "Lang"
 msgstr "Jezik"
 
-#: PlaceCleanup/placecleanup.glade:444 PlaceCleanup/placecleanup.glade:520
+#: PlaceCleanup/placecleanup.glade:520
 msgid ""
 "Select one or more rows and use this button to keep the alternative names."
 msgstr ""
 "Odaberi jedan ili više redaka i pritisni ovaj gumb, za zadržavanje "
 "alternativnih imena."
 
-#: PlaceCleanup/placecleanup.glade:460 PlaceCleanup/placecleanup.glade:536
+#: PlaceCleanup/placecleanup.glade:536
 msgid "Select one row and use this button to make the row the primary name."
 msgstr ""
 "Odaberi jedan ili više redaka i pritisni ovaj gumb, za određivanje retka "
 "primarnim imenom."
 
-#: PlaceCleanup/placecleanup.glade:472 PlaceCleanup/placecleanup.glade:548
+#: PlaceCleanup/placecleanup.glade:548
 msgid "Discard"
 msgstr "Odbaci"
 
-#: PlaceCleanup/placecleanup.glade:476 PlaceCleanup/placecleanup.glade:552
+#: PlaceCleanup/placecleanup.glade:552
 msgid ""
 "Select one or more rows and use this button to discard the alternative names."
 msgstr ""
 "Odaberi jedan ili više redaka i pritisni ovaj gumb, za odbacivanje "
 "alternativnih imena."
 
-#: PlaceCleanup/placecleanup.glade:504 PlaceCleanup/placecleanup.glade:580
+#: PlaceCleanup/placecleanup.glade:580
 msgid "Cancel the operation, no changes are made to your Place."
 msgstr "Prekini operaciju. Podaci tvog mjesta se ne mijenjaju."
 
-#: PlaceCleanup/placecleanup.glade:520 PlaceCleanup/placecleanup.glade:595
+#: PlaceCleanup/placecleanup.glade:595
 msgid "Store the values in your Place."
 msgstr "Spremi vrijednosti u tvoje mjesto."
 
-#: PlaceCleanup/placecleanup.glade:605 PlaceCleanup/placecleanup.glade:677
+#: PlaceCleanup/placecleanup.glade:677
 msgid "Keep Web Links"
 msgstr "Zadrži web poveznice"
 
-#: PlaceCleanup/placecleanup.glade:609 PlaceCleanup/placecleanup.glade:681
+#: PlaceCleanup/placecleanup.glade:681
 msgid "Puts web links (typically wikipedia) into your place."
 msgstr ""
 "Postavlja web poveznice (uobičajeno su poveznice s wikipedia) u tvoje mjesto."
 
-#: PlaceCleanup/placecleanup.glade:622 PlaceCleanup/placecleanup.glade:693
+#: PlaceCleanup/placecleanup.glade:693
 msgid "Add citation and source to Place"
 msgstr "Dodaj citat ili izvor mjestu"
 
-#: PlaceCleanup/placecleanup.glade:626 PlaceCleanup/placecleanup.glade:697
+#: PlaceCleanup/placecleanup.glade:697
 msgid "This Adds a Citation to your place, citing GeoNames."
 msgstr "Ovo dodaje citat tvojem mjestu, citirajući GeoNames."
 
-#: PlaceCleanup/placecleanup.glade:641 PlaceCleanup/placecleanup.glade:711
+#: PlaceCleanup/placecleanup.glade:711
 msgid "GeoNames User ID"
 msgstr "Korisnički ID za GeoNames"
 
-#: PlaceCleanup/placecleanup.glade:653 PlaceCleanup/placecleanup.glade:723
+#: PlaceCleanup/placecleanup.glade:723
 msgid "Enter you Geonames user ID here."
 msgstr "Ovdje upiši tvoj korisnički ID za GeoNames."
 
-#: PlaceCleanup/placecleanup.glade:665 PlaceCleanup/placecleanup.glade:735
+#: PlaceCleanup/placecleanup.glade:735
 msgid "Alternative Names Languages to keep"
 msgstr "Jezici alternativnih imena koje želiš zadržati"
 
-#: PlaceCleanup/placecleanup.glade:677 PlaceCleanup/placecleanup.glade:747
+#: PlaceCleanup/placecleanup.glade:747
 msgid ""
 "Enter the two or three letter codes for the languages you wish to keep, "
 "seperated by spaces.\n"
@@ -320,11 +314,11 @@ msgstr ""
 "Ako često vidiš neoznačeno ime u nekom određenom jeziku, ovdje dodaj jezični "
 "kod."
 
-#: PlaceCleanup/placecleanup.glade:693 PlaceCleanup/placecleanup.glade:763
+#: PlaceCleanup/placecleanup.glade:763
 msgid "Currently Enclosed Places"
 msgstr "Trenutačno obuhvaćena mjesta"
 
-#: PlaceCleanup/placecleanup.glade:705 PlaceCleanup/placecleanup.glade:775
+#: PlaceCleanup/placecleanup.glade:775
 msgid ""
 "When cleaning a place that is already enclosed, this affects what is done.\n"
 "If '<b>Keep current Enclosure</b>' is selected, no changes to the enclosing "
@@ -340,15 +334,15 @@ msgstr ""
 "mjesto mijenja se na sljedeću razinu GeoNames mjesta. To može proizvesti "
 "mjesta u tvojoj bazi podataka, koja se ne koriste."
 
-#: PlaceCleanup/placecleanup.glade:710 PlaceCleanup/placecleanup.glade:780
+#: PlaceCleanup/placecleanup.glade:780
 msgid "Keep current Enclosure"
 msgstr "Zadrži trenutačno obuhvaćanje"
 
-#: PlaceCleanup/placecleanup.glade:726 PlaceCleanup/placecleanup.glade:795
+#: PlaceCleanup/placecleanup.glade:795
 msgid "Replace with GeoNames Enclosure"
 msgstr "Zamijeni s obuhvaćanjem pomoću GeoNames"
 
-#: PlaceCleanup/placecleanup.glade:782 PlaceCleanup/placecleanup.glade:851
+#: PlaceCleanup/placecleanup.glade:851
 msgid ""
 "Current Place title.\n"
 "You can edit this to help find other places, particularly to reduce the "
@@ -358,18 +352,18 @@ msgstr ""
 "Ovo možeš urediti, kao pomoć prilikom traženja drugih mjesta, naročito za "
 "smanjivanje broja rezultata."
 
-#: PlaceCleanup/placecleanup.glade:831 PlaceCleanup/placecleanup.glade:899
+#: PlaceCleanup/placecleanup.glade:899
 msgid "Search your local places and GeoNames for a match."
 msgstr "Traži poklapanja tvojih mjesta s GeoNames."
 
-#: PlaceCleanup/placecleanup.glade:847 PlaceCleanup/placecleanup.glade:915
+#: PlaceCleanup/placecleanup.glade:915
 msgid ""
 "Continue to merge (for local places), or to complete a place (for GeoNames)."
 msgstr ""
 "Nastavi za sjedinjavanje (za lokalno spremljena mjesta) ili za "
 "upotpunjavanje mjesta (za GeoNames)."
 
-#: PlaceCleanup/placecleanup.glade:864 PlaceCleanup/placecleanup.glade:932
+#: PlaceCleanup/placecleanup.glade:932
 msgid ""
 "Split up Title, Edit manually, and enclose with next level of hierarchy.  "
 "For use when the initial component of the Title is too detailed to be found "
@@ -379,27 +373,27 @@ msgstr ""
 "se, kad izvorna komponenta naslova sadrži previše detalja za pronalaženje u "
 "geografskom leksikonu."
 
-#: PlaceCleanup/placecleanup.glade:890 PlaceCleanup/placecleanup.glade:958
+#: PlaceCleanup/placecleanup.glade:958
 msgid "Next Place"
 msgstr "Sljedeće mjesto"
 
-#: PlaceCleanup/placecleanup.glade:894 PlaceCleanup/placecleanup.glade:962
+#: PlaceCleanup/placecleanup.glade:962
 msgid "Find an incomplete place."
 msgstr "Nađi nepotpuno mjesto."
 
-#: PlaceCleanup/placecleanup.glade:917 PlaceCleanup/placecleanup.glade:985
+#: PlaceCleanup/placecleanup.glade:985
 msgid "Set preferences"
 msgstr "Postavi postavke"
 
-#: PlaceCleanup/placecleanup.glade:940 PlaceCleanup/placecleanup.glade:1008
+#: PlaceCleanup/placecleanup.glade:1008
 msgid "Select one of these places to continue the cleanup process."
 msgstr "Odaberi jedno od ovih mjesta za nastavljanje s čišćenjem."
 
-#: PlaceCleanup/placecleanup.glade:967 PlaceCleanup/placecleanup.glade:1035
+#: PlaceCleanup/placecleanup.glade:1035
 msgid "Search result places"
 msgstr "Traži mjesta rezultata"
 
-#: PlaceCleanup/placecleanup.glade:1034 PlaceCleanup/placecleanup.glade:1102
+#: PlaceCleanup/placecleanup.glade:1102
 msgid ""
 "Checking the 'Populated' checkbox causes the GeoNames search to include "
 "'Populted places', places where people live and work."
@@ -407,11 +401,11 @@ msgstr ""
 "Aktiviranjem polja „Naseljeno”, GeoNames u pretragu uključuje „Naseljena "
 "mjesta”, mjesta gdje osobe žive i rade."
 
-#: PlaceCleanup/placecleanup.glade:1053 PlaceCleanup/placecleanup.glade:1119
+#: PlaceCleanup/placecleanup.glade:1119
 msgid "Populated"
 msgstr "Naseljeno"
 
-#: PlaceCleanup/placecleanup.glade:1065 PlaceCleanup/placecleanup.glade:1131
+#: PlaceCleanup/placecleanup.glade:1131
 msgid ""
 "Checking the 'Admin' checkbox cause the GeoNames search to include "
 "adminstrative subdivisions in the search (countries, states, counties etc.)."
@@ -419,7 +413,7 @@ msgstr ""
 "Aktiviranjem polja „Administracija”, GeoNames u pretragu uključuje "
 "administrativne podskupine (države, pokrajine, okruge itd.)"
 
-#: PlaceCleanup/placecleanup.glade:1084 PlaceCleanup/placecleanup.glade:1148
+#: PlaceCleanup/placecleanup.glade:1148
 msgid ""
 "Checking the 'Spot' checkbox cause the GeoNames search to include a wide "
 "variety of other places in the search (churches, burial grounds, buildings "
@@ -428,10 +422,10 @@ msgstr ""
 "Aktiviranjem polja „Mjesto”, GeoNames u pretragu uključuje razna mjesta "
 "(crkve, groblja, zgrade, itd.)."
 
-#: PlaceCleanup/placecleanup.glade:1101 PlaceCleanup/placecleanup.glade:1163
+#: PlaceCleanup/placecleanup.glade:1163
 msgid "Admin"
 msgstr "Administracija"
 
-#: PlaceCleanup/placecleanup.glade:1112 PlaceCleanup/placecleanup.glade:1174
+#: PlaceCleanup/placecleanup.glade:1174
 msgid "Spot"
 msgstr "Mjesto"

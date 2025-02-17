@@ -3,13 +3,13 @@
 # Copyright (C) Gramps project
 # Milo Ivir <mivir@milotype.de>, 2019, 2020.
 # Stephen Adams, Gramps Reddit, 2018.
-#
+# Milo Ivir <mail@milotype.de>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2025-02-15 16:17+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-17 00:14+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -21,26 +21,24 @@ msgstr ""
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Weblate 5.10\n"
 
-#: D3Charts/AncestralCollapsibleTree.py:842
 #: D3Charts/AncestralCollapsibleTree.py:847 NetworkChart/NetworkChart.py:1009
 msgid "RGB-color for male box background."
 msgstr "RGB-boja za mušku boju pozadine."
 
-#: D3Charts/AncestralCollapsibleTree.py:850
 #: D3Charts/AncestralCollapsibleTree.py:855 NetworkChart/NetworkChart.py:1022
 msgid "Female Background"
 msgstr "Ženska boja pozadine"
 
-#: GraphView/graphview.py:3439 GraphView/graphview.py:3783
-#: NetworkChart/NetworkChart.py:1174 NetworkChart/NetworkChart.py:1188
+#: GraphView/graphview.py:3783 NetworkChart/NetworkChart.py:1174
+#: NetworkChart/NetworkChart.py:1188
 msgid "Direct"
 msgstr "Ravne"
 
-#: NetworkChart/NetworkChart.gpr.py:31 NetworkChart/NetworkChart.gpr.py:24
+#: NetworkChart/NetworkChart.gpr.py:24
 msgid "Network Chart"
 msgstr "Mrežni dijagram"
 
-#: NetworkChart/NetworkChart.gpr.py:41 NetworkChart/NetworkChart.gpr.py:35
+#: NetworkChart/NetworkChart.gpr.py:35
 msgid "Generates a family network chart."
 msgstr "Stvara mrežni dijagram obitelji."
 
@@ -244,7 +242,7 @@ msgstr "Rubovi okvira muških osoba"
 msgid "RGB-color for Male box edge."
 msgstr "RGB-boja za rubove okvira muških osoba."
 
-#: NetworkChart/NetworkChart.py:1023 NetworkChart/NetworkChart.py:1034
+#: NetworkChart/NetworkChart.py:1023
 msgid "RGB-color for Female box background."
 msgstr "RGB-boja pozadine okvira ženskih osoba."
 
@@ -260,6 +258,12 @@ msgstr "Prozirnost pozadine okvira ženskih osoba (prozirno=0, neprozirno=255)."
 #: NetworkChart/NetworkChart.py:1033
 msgid "Female Box Edge"
 msgstr "Rubovi okvira ženskih osoba"
+
+#: NetworkChart/NetworkChart.py:1034
+#, fuzzy
+#| msgid "RGB-color for Male box edge."
+msgid "RGB-color for Female box edge."
+msgstr "RGB-boja za rubove okvira muških osoba."
 
 #: NetworkChart/NetworkChart.py:1037
 msgid "Other Background"

@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-02 02:13+0300\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2019-12-10 13:09+0200\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: niememat@gmail.com\n"
@@ -33,55 +33,52 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.0.6\n"
 
-#: GedcomExtensions.gpr.py:31 GedcomExtensions/GedcomExtensions.gpr.py:32
-msgid "Export GEDCOM Extensions (GED2)"
-msgstr "Laajennettu GEDCOM vienti (GED2)"
-
-#: GedcomExtensions.gpr.py:32 GedcomExtensions/GedcomExtensions.gpr.py:33
-msgid "GEDCOM Extensions (GED2)"
-msgstr "GEDCOM Laajennukset (GED2)"
-
-#: GedcomExtensions.gpr.py:33 GedcomExtensions/GedcomExtensions.gpr.py:34
-msgid "Extensions to the common GEDCOM format."
-msgstr "Laajennukset yleiseen GEDCOM muotoon."
-
-#: GedcomExtensions.gpr.py:40 GedcomExtensions/GedcomExtensions.gpr.py:42
-msgid "GEDCOM Extensions options"
-msgstr "GEDCOM laajennusten valinnat"
-
-#: GedcomExtensions.py:121 GedcomExtensions/GedcomExtensions.py:197
-msgid "Include witnesses"
-msgstr "Lisää todistajat"
-
-#: GedcomExtensions.py:122 RepositoriesReport/RepositoriesReportAlt.py:459
+#: RepositoriesReport/RepositoriesReportAlt.py:459
+#: GedcomExtensions/GedcomExtensions.py:198
 msgid "Include media"
 msgstr "Lisää media"
 
-#: GedcomExtensions.py:154 GedcomExtensions/GedcomExtensions.py:261
-msgid "Export failed"
-msgstr "Vienti epäonnistui"
+#: GedcomExtensions/GedcomExtensions.gpr.py:32
+msgid "Export GEDCOM Extensions (GED2)"
+msgstr "Laajennettu GEDCOM vienti (GED2)"
 
-#: GedcomExtensions/GedcomExtensions.py:178
+#: GedcomExtensions/GedcomExtensions.gpr.py:33
+msgid "GEDCOM Extensions (GED2)"
+msgstr "GEDCOM Laajennukset (GED2)"
+
+#: GedcomExtensions/GedcomExtensions.gpr.py:34
+msgid "Extensions to the common GEDCOM format."
+msgstr "Laajennukset yleiseen GEDCOM muotoon."
+
+#: GedcomExtensions/GedcomExtensions.gpr.py:42
+msgid "GEDCOM Extensions options"
+msgstr "GEDCOM laajennusten valinnat"
+
+#: GedcomExtensions/GedcomExtensions.py:197
+msgid "Include witnesses"
+msgstr "Lisää todistajat"
+
+#: GedcomExtensions/GedcomExtensions.py:201
+msgid "Patronymic names:"
+msgstr "Isännimet:"
+
 #: GedcomExtensions/GedcomExtensions.py:203
 #: GedcomExtensions/GedcomExtensions.py:210
 msgid "Don't change"
 msgstr "Älä muuta"
 
-#: GedcomExtensions/GedcomExtensions.py:179
 #: GedcomExtensions/GedcomExtensions.py:204
 msgid "Add Patronymic name after Given name"
 msgstr "Lisää Isännimi Etunimen jälkeen"
 
-#: GedcomExtensions/GedcomExtensions.py:180
 #: GedcomExtensions/GedcomExtensions.py:205
 msgid "Ignore Patronymic name"
 msgstr "Ohita Isännimi"
 
-#: GedcomExtensions/GedcomExtensions.py
-#: GedcomExtensions/GedcomExtensions.py:201
-msgid "Patronymic names:"
-msgstr "Isännimet:"
-
 #: GedcomExtensions/GedcomExtensions.py:208
 msgid "Type of surname:"
 msgstr "Sukunimityyppi:"
+
+#: GedcomExtensions/GedcomExtensions.py:261
+msgid "Export failed"
+msgstr "Vienti epäonnistui"

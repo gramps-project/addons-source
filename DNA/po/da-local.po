@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -20,28 +20,37 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
 
-#: DNA/dnasegmentmap.gpr.py:25 DNA/dnasegmentmap.gpr.py:34
 #: DNA/dnasegmentmap.gpr.py:26 DNA/dnasegmentmap.gpr.py:35
 msgid "DNA Segment Map"
 msgstr "DNA Segment  Kort"
 
-#: DNA/dnasegmentmap.gpr.py:28 DNA/dnasegmentmap.gpr.py:29
+#: DNA/dnasegmentmap.gpr.py:29
 msgid "Gramplet showing a matching DNA segment map"
 msgstr "Gramplet der viser et  matchene DNA segment kort"
 
-#: DNA/dnasegmentmap.py:436 DNA/dnasegmentmap.py:546
+#: DNA/dnasegmentmap.py:546
 msgid "Chromosome "
 msgstr "Kromosom "
 
-#: DNA/dnasegmentmap.py:442 DNA/dnasegmentmap.py:552
+#: DNA/dnasegmentmap.py:552
 msgid " Map for "
 msgstr " Kort for"
 
-#: DNA/dnasegmentmap.py:474 DNA/dnasegmentmap.py:634
+#: DNA/dnasegmentmap.py:634
 msgid "Chr"
 msgstr "Kr"
 
-#: DNA/dnasegmentmap.py:827 DNA/dnasegmentmap.py:1056
+#: DNA/dnasegmentmap.py:759
+msgid "Legend"
+msgstr ""
+
+#: DNA/dnasegmentmap.py:761
+#, fuzzy
+#| msgid "Grandparents"
+msgid ": Grandparent"
+msgstr "Bedsteforældre"
+
+#: DNA/dnasegmentmap.py:1056
 #, python-brace-format
 msgid ""
 "\n"
@@ -52,20 +61,43 @@ msgstr ""
 "{0}\n"
 "{1} cMs"
 
-#: DNA/dnasegmentmap.py:831 DNA/dnasegmentmap.py:1060
+#: DNA/dnasegmentmap.py:1060
 msgid " SNPs"
 msgstr " SNPs"
 
-#: DNA/dnasegmentmap.py:834 DNA/dnasegmentmap.py:1063
+#: DNA/dnasegmentmap.py:1061
+msgid " : Starts at "
+msgstr ""
+
+#: DNA/dnasegmentmap.py:1063
 msgid " and ends at "
 msgstr " og slutter ved "
 
-#: DNA/dnasegmentmap.py:852 DNA/dnasegmentmap.py:1086
+#: DNA/dnasegmentmap.py:1079 DNA/dnasegmentmap.py:1082
+#, python-brace-format
+msgid "{0}"
+msgstr ""
+
+#: DNA/dnasegmentmap.py:1086
 #, python-format
 msgid "%(ancestor1)s and %(ancestor2)s"
 msgstr "%(ancestor1)s og %(ancestor2)s"
 
-#: DNA/dnasegmentmap.py:879 DNA/dnasegmentmap.py:1115
+#: DNA/dnasegmentmap.py:1090
+#, fuzzy, python-brace-format
+#| msgid "Relationship Type"
+msgid ""
+"\n"
+"Relationship: {0} "
+msgstr "Slægtskabstype:"
+
+#: DNA/dnasegmentmap.py:1091
+#, fuzzy, python-brace-format
+#| msgid "Ancestor"
+msgid " Ancestor: {0}"
+msgstr "Ane"
+
+#: DNA/dnasegmentmap.py:1115
 msgid ""
 "Click to make this person active\n"
 "Right-click to edit this person"

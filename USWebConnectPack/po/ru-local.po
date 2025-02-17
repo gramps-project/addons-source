@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-04 16:31+0300\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -31,30 +31,30 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: UKWebConnectPack/UKWebPack.py:35 SVWebconnectPack/SVWebPack.py:34
-#: USWebConnectPack/USWebPack.py:34
+#: SVWebconnectPack/SVWebPack.py:33 USWebConnectPack/USWebPack.py:33
+msgid "Find A Grave"
+msgstr "Поиск могилы"
+
+#: SVWebconnectPack/SVWebPack.py:34 USWebConnectPack/USWebPack.py:34
+#: USWebConnectPack/USWebPack.py:46
 msgid "FamilySearch.org"
 msgstr "FamilySearch.org"
 
-#: UKWebConnectPack/UKWebPack.py:38 USWebConnectPack/USWebPack.py:49
+#: UKWebConnectPack/UKWebPack.py:38 USWebConnectPack/USWebPack.py:41
 msgid "Hathi Trust Digital Library"
 msgstr "Hathi Trust цифровая библиотека"
 
-#: UKWebConnectPack/UKWebPack.py:39 USWebConnectPack/USWebPack.py:50
+#: UKWebConnectPack/UKWebPack.py:39 USWebConnectPack/USWebPack.py:42
 msgid "Open Library"
 msgstr "Открытая библиотека"
 
-#: USWebConnectPack/USWebPack.gpr.py:10 USWebConnectPack/USWebPack.gpr.py:11
+#: USWebConnectPack/USWebPack.gpr.py:11
 msgid "US Web Connect Pack"
 msgstr "Набор US Web Connect"
 
-#: USWebConnectPack/USWebPack.gpr.py:11 USWebConnectPack/USWebPack.gpr.py:12
+#: USWebConnectPack/USWebPack.gpr.py:12
 msgid "Collection of Web sites for the US (requires libwebconnect)"
 msgstr "Набор веб-сайтов для US (требуется libwebconnect)"
-
-#: USWebConnectPack/USWebPack.py:33 SVWebconnectPack/SVWebPack.py:33
-msgid "Find A Grave"
-msgstr "Поиск могилы"
 
 #: USWebConnectPack/USWebPack.py:35
 msgid "US Google"

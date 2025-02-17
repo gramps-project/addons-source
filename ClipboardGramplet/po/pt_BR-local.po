@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-26 19:54-0300\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2012-08-26 20:57-0300\n"
 "Last-Translator: André Marcelo Alvarenga <andrealvarenga@gmx.net>\n"
 "Language-Team: Brazilian Portuguese>\n"
@@ -24,7 +24,17 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 1.0\n"
 
-#: ClipboardGramplet/ClipboardGramplet.py:92
+#: ClipboardGramplet/ClipboardGramplet.gpr.py:10
+#: ClipboardGramplet/ClipboardGramplet.gpr.py:18
+#, fuzzy
+#| msgid "Clipboard"
+msgid "Collections Clipboard"
+msgstr "Área de transferência"
+
+#: ClipboardGramplet/ClipboardGramplet.gpr.py:11
+msgid "Gramplet for grouping collections of items to aid in data entry."
+msgstr ""
+
 #: ClipboardGramplet/ClipboardGramplet.py:83
 #, python-format
 msgid "Clipboard Gramplet: %s"

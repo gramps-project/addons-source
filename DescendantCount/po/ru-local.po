@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-04 16:31+0300\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -32,12 +32,10 @@ msgstr ""
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
 #: DescendantCount/DescendantCount.gpr.py:23
-#: DescendantCount/DescendantCount.gpr.py:24
-msgid "Gramplet for showing people and descendant counts"
-msgstr "Показывает количество потомков"
-
-#: DescendantCount/DescendantCount.gpr.py:31
-#: DescendantCount/DescendantCount.gpr.py:23
 #: DescendantCount/DescendantCount.gpr.py:32
 msgid "Descendant Count"
 msgstr "Количество потомков"
+
+#: DescendantCount/DescendantCount.gpr.py:24
+msgid "Gramplet for showing people and descendant counts"
+msgstr "Показывает количество потомков"

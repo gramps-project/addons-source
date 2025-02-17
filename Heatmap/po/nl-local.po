@@ -7,13 +7,13 @@
 # Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
 # Erik De Richter <frederik.de.richter@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
 # Harmen Huizinga <harmenhuizinga@sigmo.nl>, 2013.
-#
+# Stephan Paternotte <stephan@paternottes.net>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
-"Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
-"POT-Creation-Date: 2019-01-04 18:55-0600\n"
-"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-17 11:05+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -22,42 +22,22 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
 #: EventDescriptionEditor/EventDescriptionEditor.py:105 Heatmap/heatmap.py:214
 #: Heatmap/heatmap.py:226
 msgid "INFO"
 msgstr "INFO"
 
-#: Heatmap/heatmap.gpr.py:25 Heatmap/heatmap.gpr.py:26
+#: Heatmap/heatmap.gpr.py:26
 msgid "Create a heatmap web report."
 msgstr "Maak een warmtebeeld-webverslag."
 
-#: Heatmap/heatmap.py:77 Heatmap/utils.py:55
-msgid "Stamen Terrain"
-msgstr "Stamen terrein"
-
-#: Heatmap/heatmap.py:78 Heatmap/utils.py:61
-msgid "Stamen Toner"
-msgstr "Stamen zwart-wit"
-
-#: Heatmap/heatmap.py:79 Heatmap/utils.py:64
-msgid "Stamen Watercolor"
-msgstr "Stamen waterverf"
-
-#: Heatmap/heatmap.py:80 Heatmap/utils.py:67
-msgid "CartoDB Positron"
-msgstr "CartoDB Positron"
-
-#: Heatmap/heatmap.py:81 Heatmap/utils.py:70
-msgid "CartoDB DarkMatter"
-msgstr "CartoDB DarkMatter"
-
-#: Heatmap/heatmap.py:82 Heatmap/heatmap.py:85
+#: Heatmap/heatmap.py:85
 msgid "Map tiles"
 msgstr "Kaarttegels"
 
-#: Heatmap/heatmap.py:87 Heatmap/heatmap.py:90
+#: Heatmap/heatmap.py:90
 msgid ""
 "Set the size of the heatmap points.\n"
 "Default: 15"
@@ -65,11 +45,11 @@ msgstr ""
 "Stel de grootte van de heatmap-punten in.\n"
 "Standaard: 15"
 
-#: Heatmap/heatmap.py:90 Heatmap/heatmap.py:93
+#: Heatmap/heatmap.py:93
 msgid "File path"
 msgstr "Bestandspad"
 
-#: Heatmap/heatmap.py:94 Heatmap/heatmap.py:98
+#: Heatmap/heatmap.py:98
 msgid ""
 "For the file name only english letters A-Z, a-z and numbers 0-9 as well as "
 "the characters space, underline and hypen are allowed. The file name also "
@@ -81,26 +61,26 @@ msgstr ""
 "moet ook beginnen en eindigen met een alfanumeriek teken. De "
 "bestandsextensie '.html' wordt door het rapport toegevoegd."
 
-#: Heatmap/heatmap.py:99 Heatmap/heatmap.py:103
+#: Heatmap/heatmap.py:103
 msgid "File name"
 msgstr "Bestandsnaam"
 
-#: Heatmap/heatmap.py:107 Heatmap/heatmap.py:117
+#: Heatmap/heatmap.py:117
 msgid "Enable custom start position"
 msgstr "Schakel aangepaste startpositie in"
 
-#: Heatmap/heatmap.py:109 Heatmap/heatmap.py:119
+#: Heatmap/heatmap.py:119
 msgid ""
 "Enabling will force the map open at your custom start position and zoom."
 msgstr ""
 "Als u dit inschakelt, wordt de kaart geforceerd geopend op uw aangepaste "
 "startpositie en zoomt u in."
 
-#: Heatmap/heatmap.py:114 Heatmap/heatmap.py:124
+#: Heatmap/heatmap.py:124
 msgid "Start latitude"
 msgstr "Begin breedtegraad"
 
-#: Heatmap/heatmap.py:116 Heatmap/heatmap.py:126
+#: Heatmap/heatmap.py:126
 msgid ""
 "Set custom start position latitude\n"
 "Default: 50.0"
@@ -108,11 +88,11 @@ msgstr ""
 "Stel een aangepaste breedtegraad voor de startpositie in\n"
 "Standaard: 50.0"
 
-#: Heatmap/heatmap.py:119 Heatmap/heatmap.py:129
+#: Heatmap/heatmap.py:129
 msgid "Start longitude"
 msgstr "Begin lengtegraad"
 
-#: Heatmap/heatmap.py:121 Heatmap/heatmap.py:131
+#: Heatmap/heatmap.py:131
 msgid ""
 "Set custom start position longitude\n"
 "Default: 10.0"
@@ -120,11 +100,11 @@ msgstr ""
 "Stel de lengtegraad van de aangepaste startpositie in\n"
 "Standaard: 10.0"
 
-#: Heatmap/heatmap.py:124 Heatmap/heatmap.py:134
+#: Heatmap/heatmap.py:134
 msgid "Start zoom"
 msgstr "Begin zoom"
 
-#: Heatmap/heatmap.py:126 Heatmap/heatmap.py:136
+#: Heatmap/heatmap.py:136
 msgid ""
 "Set the value for the starting zoom\n"
 "Default: 5"
@@ -132,10 +112,34 @@ msgstr ""
 "Stel de waarde in voor de startzoom\n"
 "Standaard: 5"
 
-#: Heatmap/heatmap.py:251 Heatmap/heatmap.py:210
+#: Heatmap/heatmap.py:209
+msgid "Path does not exist."
+msgstr "Pad bestaat niet."
+
+#: Heatmap/heatmap.py:210
 msgid "Invalid filename."
 msgstr "Ongeldige bestandsnaam."
 
-#: Heatmap/heatmap.py:252 Heatmap/heatmap.py:209
-msgid "Path does not exist."
-msgstr "Pad bestaat niet."
+#: Heatmap/utils.py:55
+msgid "Stamen Terrain"
+msgstr "Stamen terrein"
+
+#: Heatmap/utils.py:58
+msgid "Stamen Terrain (Background only)"
+msgstr "Stamen Terrein (alleen achtergrond)"
+
+#: Heatmap/utils.py:61
+msgid "Stamen Toner"
+msgstr "Stamen zwart-wit"
+
+#: Heatmap/utils.py:64
+msgid "Stamen Watercolor"
+msgstr "Stamen waterverf"
+
+#: Heatmap/utils.py:67
+msgid "CartoDB Positron"
+msgstr "CartoDB Positron"
+
+#: Heatmap/utils.py:70
+msgid "CartoDB DarkMatter"
+msgstr "CartoDB DarkMatter"

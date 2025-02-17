@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -21,61 +21,51 @@ msgstr ""
 "X-Generator: Poedit 3.0.1\n"
 
 #: RepositoriesReport/RepositoriesReportAlt.py:459
-#: GedcomExtensions/GedcomExtensions.py:118
+#: GedcomExtensions/GedcomExtensions.py:198
 msgid "Include media"
 msgstr "Medtag medier"
 
-#: GedcomExtensions/GedcomExtensions.gpr.py:31
 #: GedcomExtensions/GedcomExtensions.gpr.py:32
 msgid "Export GEDCOM Extensions (GED2)"
 msgstr "Eksporter GEDCOM udvidelser (GED2)"
 
-#: GedcomExtensions/GedcomExtensions.gpr.py:32
 #: GedcomExtensions/GedcomExtensions.gpr.py:33
 msgid "GEDCOM Extensions (GED2)"
 msgstr "GEDCOM udvidelser (GED2)"
 
-#: GedcomExtensions/GedcomExtensions.gpr.py:33
 #: GedcomExtensions/GedcomExtensions.gpr.py:34
 msgid "Extensions to the common GEDCOM format."
 msgstr "Udvidelser til det almidenlige GEDCOM format."
 
-#: GedcomExtensions/GedcomExtensions.gpr.py:41
 #: GedcomExtensions/GedcomExtensions.gpr.py:42
 msgid "GEDCOM Extensions options"
 msgstr "GEDCOM Udvidelsers tilvalg"
 
-#: GedcomExtensions/GedcomExtensions.py:117
 #: GedcomExtensions/GedcomExtensions.py:197
 msgid "Include witnesses"
 msgstr "Medtag vidner"
 
-#: GedcomExtensions/GedcomExtensions.py:150
-#: GedcomExtensions/GedcomExtensions.py:261
-msgid "Export failed"
-msgstr "Eksporten mislykkedes"
+#: GedcomExtensions/GedcomExtensions.py:201
+msgid "Patronymic names:"
+msgstr "Patronymiske navne:"
 
-#: GedcomExtensions/GedcomExtensions.py:178
 #: GedcomExtensions/GedcomExtensions.py:203
 #: GedcomExtensions/GedcomExtensions.py:210
 msgid "Don't change"
 msgstr "Ændr ikke"
 
-#: GedcomExtensions/GedcomExtensions.py:179
 #: GedcomExtensions/GedcomExtensions.py:204
 msgid "Add Patronymic name after Given name"
 msgstr "Tilføj Patronymisk navn efter Fornavn"
 
-#: GedcomExtensions/GedcomExtensions.py:180
 #: GedcomExtensions/GedcomExtensions.py:205
 msgid "Ignore Patronymic name"
 msgstr "Ignorer Patronymisk navn"
 
-#: GedcomExtensions/GedcomExtensions.py
-#: GedcomExtensions/GedcomExtensions.py:201
-msgid "Patronymic names:"
-msgstr "Patronymiske navne:"
-
 #: GedcomExtensions/GedcomExtensions.py:208
 msgid "Type of surname:"
 msgstr "Type af efternavn:"
+
+#: GedcomExtensions/GedcomExtensions.py:261
+msgid "Export failed"
+msgstr "Eksporten mislykkedes"

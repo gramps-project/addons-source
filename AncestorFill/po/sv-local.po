@@ -9,14 +9,15 @@
 # Pär Ekholm <par.ekholm50@gmail.com>, 2016, 2018.
 # Pär Ekholm <par.ekholm@pekholm.se>, 2018, 2019.
 # Peter Landgren <peter@test>, 2010.
-#
+# Pär Ekholm <github1@m.pekholm.org>, 2025.
+# Milan <mobrcian@hotmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-08 17:11-0500\n"
-"PO-Revision-Date: 2025-02-09 22:37+0000\n"
-"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-16 10:55+0000\n"
+"Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
 "Language: sv\n"
@@ -24,25 +25,91 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.10\n"
 
-#: AncestorFill/AncestorFill.gpr.py:8 AncestorFill/AncestorFill.gpr.py:9
+#: AncestorFill/AncestorFill.gpr.py:9
 msgid "AncestorFill"
 msgstr "Anors fyllnadsgrad"
 
-#: AncestorFill/AncestorFill.gpr.py:9 AncestorFill/AncestorFill.gpr.py:10
+#: AncestorFill/AncestorFill.gpr.py:10
 msgid "Report on the filling of the tree"
 msgstr "Rapport över ifyllnad av släktträd"
 
-#: AncestorFill/AncestorFill.py:263 AncestorFill/AncestorFill.py:189
+#: AncestorFill/AncestorFill.py:189
 #, python-format
 msgid "AncestorFill for %s"
 msgstr "AncestorFill för %s"
 
-#: AncestorFill/AncestorFill.py:275 AncestorFill/AncestorFill.py:205
+#: AncestorFill/AncestorFill.py:205
 msgid "Generation "
 msgstr "Generation "
 
-#: AncestorFill/AncestorFill.py:419 AncestorFill/AncestorFill.py:361
+#: AncestorFill/AncestorFill.py:206
+msgid "Number of Ancestors found "
+msgstr "Antal förfäder som hittats "
+
+#: AncestorFill/AncestorFill.py:207
+msgid "Percent of Ancestors found "
+msgstr "Procent av förfäderna hittades "
+
+#: AncestorFill/AncestorFill.py:208
+msgid "Number of unique Ancestors found "
+msgstr "Antal unika förfäder som hittats "
+
+#: AncestorFill/AncestorFill.py:209
+msgid "Number of theoretical Ancestors "
+msgstr "Antal teoretiska förfäder "
+
+#: AncestorFill/AncestorFill.py:210
+msgid "Pedigree Collapse "
+msgstr "Anförlust "
+
+#: AncestorFill/AncestorFill.py:253
+msgid "Total Number of Ancestors found "
+msgstr "Totalt antal förfäder som hittats "
+
+#: AncestorFill/AncestorFill.py:255
+msgid "Total Number of unique Ancestors found "
+msgstr "Totalt antal unika Ancestors som hittats "
+
+#: AncestorFill/AncestorFill.py:259
+msgid ""
+"\n"
+"\n"
+"Note: This report only counts ancestors with a parent-child relationship of "
+"birth."
+msgstr ""
+
+#: AncestorFill/AncestorFill.py:305
+msgid "Filled digit"
+msgstr ""
+
+#: AncestorFill/AncestorFill.py:307
+msgid ""
+"The number of digits after comma to include in the report for the percentage "
+"of ancestor found at a given generation"
+msgstr ""
+
+#: AncestorFill/AncestorFill.py:311
+msgid "Collapsed digit"
+msgstr ""
+
+#: AncestorFill/AncestorFill.py:313
+msgid ""
+"The number of digits after comma to include in the report for the pedigree "
+"Collapse"
+msgstr ""
+"Antalet siffror efter kommatecken som ska inkluderas i rapporten för "
+"anförlust"
+
+#: AncestorFill/AncestorFill.py:317
+msgid "Display theoretical"
+msgstr "Visa teoretisk"
+
+#: AncestorFill/AncestorFill.py:319
+msgid "Whether to display the theoretical number of ancestor by generation"
+msgstr ""
+
+#: AncestorFill/AncestorFill.py:361
 msgid "The style used for the title of the page."
 msgstr "Mall för rapporttitel."

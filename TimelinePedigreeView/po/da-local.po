@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -20,28 +20,26 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
 
-#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:41 Form/form_us.xml.h:2085
-#: Form/form_us.xml.h:2122 Form/form_us.xml.h:2160 Form/form_us.xml.h:2198
+#: Form/form_us.xml.h:2085 Form/form_us.xml.h:2122 Form/form_us.xml.h:2160
+#: Form/form_us.xml.h:2198 TimelinePedigreeView/TimelinePedigreeView.gpr.py:34
 msgid "Ancestry"
 msgstr "Aner"
 
 #: FamilyTree/FamilyTree.py:1047
-#: TimelinePedigreeView/TimelinePedigreeView.py:1476
+#: TimelinePedigreeView/TimelinePedigreeView.py:1481
 msgid "Ancestor Generations"
 msgstr "Ane generationer"
 
 #: FamilyTree/FamilyTree.py:1051
-#: TimelinePedigreeView/TimelinePedigreeView.py:1460
+#: TimelinePedigreeView/TimelinePedigreeView.py:1465
 msgid "Descendant Generations"
 msgstr "Anegenerationer"
 
-#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:40
 #: TimelinePedigreeView/TimelinePedigreeView.gpr.py:33
 #: TimelinePedigreeView/TimelinePedigreeView.gpr.py:46
 msgid "Timeline Pedigree"
 msgstr "Tidslinje anetræ"
 
-#: TimelinePedigreeView/TimelinePedigreeView.gpr.py:42
 #: TimelinePedigreeView/TimelinePedigreeView.gpr.py:36
 msgid ""
 "The view shows a timeline pedigree with ancestors and descendants of the "
@@ -77,18 +75,14 @@ msgstr "krem."
 msgid "Timeline pedigree"
 msgstr "Tidslinje anetræ"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1432
 #: TimelinePedigreeView/TimelinePedigreeView.py:1437
 msgid "Order by timeline"
 msgstr "Orden efter tidslinje"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1434
 #: TimelinePedigreeView/TimelinePedigreeView.py:1439
 msgid "Show lifespan"
 msgstr "Vis livstidsomfang"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1465
-#: TimelinePedigreeView/TimelinePedigreeView.py:1481
 #: TimelinePedigreeView/TimelinePedigreeView.py:1470
 #: TimelinePedigreeView/TimelinePedigreeView.py:1486
 #, python-format
@@ -97,7 +91,6 @@ msgid_plural "%d generations"
 msgstr[0] "%d generation"
 msgstr[1] "%d generationer"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:1500
 #: TimelinePedigreeView/TimelinePedigreeView.py:1505
 msgid "About Timeline Pedigree View"
 msgstr "Om tidslinjeanetræ"

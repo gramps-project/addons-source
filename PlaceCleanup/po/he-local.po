@@ -2,14 +2,14 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Igal Shapira <igal.shapira@gmail.com>, 2009, 2010, 2011.
-# Avi Markovitz <avi.markovitz@gmail.com>, 2019.
-#
+# Avi Markovitz <avi.markovitz@gmail.com>, 2019, 2025.
+# Yaron Shahrabani <sh.yaron@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.2.0 – mediamerge\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-10 07:59+0300\n"
-"PO-Revision-Date: 2025-02-15 16:17+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-17 15:09+0000\n"
 "Last-Translator: Avi Markovitz <avi.markovitz@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/gramps-project/"
 "addons/he/>\n"
@@ -19,14 +19,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
-#: PlaceCleanup/placecleanup.gpr.py:28 PlaceCleanup/placecleanup.gpr.py:44
-#: PlaceCleanup/placecleanup.gpr.py:46
+#: PlaceCleanup/placecleanup.gpr.py:28 PlaceCleanup/placecleanup.gpr.py:46
 msgid "Place Cleanup"
 msgstr "ארגון מקומות"
 
-#: PlaceCleanup/placecleanup.gpr.py:29 PlaceCleanup/placecleanup.gpr.py:30
+#: PlaceCleanup/placecleanup.gpr.py:30
 msgid ""
 "Place Cleanup Gramplet assists in merging places, as well as completing "
 "places from the GeoNames web database"
@@ -34,8 +33,7 @@ msgstr ""
 "ארגון־מקומות מסייע במיזוג מקומות והשלמת תכונות מקומות מתוך מסד־נתוני המרשתת "
 "של GeoNames"
 
-#: PlaceCleanup/placecleanup.py:266 PlaceCleanup/placecleanup.glade:1020
-#: PlaceCleanup/placecleanup.glade:1088
+#: PlaceCleanup/placecleanup.py:266 PlaceCleanup/placecleanup.glade:1088
 msgid ""
 "No\n"
 "Matches"
@@ -43,8 +41,7 @@ msgstr ""
 "אין\n"
 "התאמות"
 
-#: PlaceCleanup/placecleanup.py:267 PlaceCleanup/placecleanup.glade:827
-#: PlaceCleanup/placecleanup.glade:895
+#: PlaceCleanup/placecleanup.py:267 PlaceCleanup/placecleanup.glade:895
 msgid "Find"
 msgstr "חיפוש"
 
@@ -133,41 +130,41 @@ msgstr ""
 "המקום שנבחר מוכל במקום שנמצא כעת בעבודה!\n"
 "נא לבטל ולבחור מקום אחר."
 
-#: PlaceCleanup/placecleanup.py:945
+#: PlaceCleanup/placecleanup.py:945 PlaceCleanup/placecleanup.py:946
 msgid "GeoNames web site"
 msgstr "אתר מרשתת GeoNames"
 
-#: PlaceCleanup/placecleanup.py:950
+#: PlaceCleanup/placecleanup.py:950 PlaceCleanup/placecleanup.py:951
 msgid "GeoNames author"
 msgstr "יוצרי GeoNames"
 
-#: PlaceCleanup/placecleanup.py:955
+#: PlaceCleanup/placecleanup.py:955 PlaceCleanup/placecleanup.py:956
 msgid "GeoNames was founded by Marc Wick. You can reach him at "
-msgstr "GeoNamesנוסדה על ידי מארק וויק. אפשר לפנות אליו ב־ "
+msgstr "GeoNames נוסדה על ידי מארק וויק. אפשר לפנות אליו ב־ "
 
-#: PlaceCleanup/placecleanup.py:958
+#: PlaceCleanup/placecleanup.py:958 PlaceCleanup/placecleanup.py:959
 msgid ""
 "GeoNames is a project of Unxos GmbH, Weingartenstrasse 8, 8708 Männedorf, "
 "Switzerland.\n"
 "This work is licensed under a "
 msgstr ""
 "GeoNames הוא מיזם של Unxos GmbH, ויינגרטנשטראסה 8, 8708 מנדורף, שוויץ.\n"
-"עבודה זו מורשית תחת "
+"עבודה זו מורשית בכפוף ל "
 
-#: PlaceCleanup/placecleanup.py:961
+#: PlaceCleanup/placecleanup.py:961 PlaceCleanup/placecleanup.py:962
 msgid "Creative Commons Attribution 3.0 License"
 msgstr "רישיון קריאטיב קומונס אטריביושן 3.0"
 
-#: PlaceCleanup/placecleanup.py:973
+#: PlaceCleanup/placecleanup.py:973 PlaceCleanup/placecleanup.py:974
 #, python-format
 msgid "Add Souce/Repo/Note (%s)"
-msgstr "הוספת מקור/מאגר/הערה (%s)"
+msgstr "להוסיף מקור/מאגר/הערה (%s)"
 
-#: PlaceCleanup/placecleanup.py:1074
+#: PlaceCleanup/placecleanup.py:1074 PlaceCleanup/placecleanup.py:1075
 msgid "This Place is not used!"
-msgstr "מקום זה אינו בשימוש!"
+msgstr "מקום זה לא בשימוש!"
 
-#: PlaceCleanup/placecleanup.py:1075
+#: PlaceCleanup/placecleanup.py:1075 PlaceCleanup/placecleanup.py:1076
 msgid ""
 "You should delete it, or, if it contains useful notes or other data, use the "
 "Find to merge it into a valid place."
@@ -177,52 +174,50 @@ msgstr ""
 
 #: PlaceCleanup/placecleanup.glade:27
 msgid "City, County, State, Country"
-msgstr "עיר, מחוז, מדינה, ארץ"
+msgstr "עיר, מחוז, ארץ, מדינה"
 
-#: PlaceCleanup/placecleanup.glade:48 PlaceCleanup/placecleanup.glade:52
+#: PlaceCleanup/placecleanup.glade:52
 msgid "Primary Name"
 msgstr "שם עיקרי"
 
-#: PlaceCleanup/placecleanup.glade:88 PlaceCleanup/placecleanup.glade:89
+#: PlaceCleanup/placecleanup.glade:89
 msgid "The current Primary name."
-msgstr "שם ראשי נוכחי."
+msgstr "שם עקרי נוכחי."
 
 #: PlaceCleanup/placecleanup.glade:102
 msgid "The postal code for the place, if any."
-msgstr "המיקוד של המקום, אם קיים."
+msgstr "המיקוד של המקום, כגול שקיים."
 
-#: PlaceCleanup/placecleanup.glade:115 PlaceCleanup/placecleanup.glade:114
+#: PlaceCleanup/placecleanup.glade:114
 msgid "What type of place this is. Eg 'Country', 'City', ... ."
-msgstr "סוג מקום. לדוגמה:  'מדינה', 'עיר', ... ."
+msgstr "סוג מקום. לדוגמה: 'מדינה', 'עיר', ... ."
 
-#: PlaceCleanup/placecleanup.glade:132 PlaceCleanup/placecleanup.glade:150
-#: PlaceCleanup/placecleanup.glade:281 PlaceCleanup/placecleanup.glade:166
-#: PlaceCleanup/placecleanup.glade:180 PlaceCleanup/placecleanup.glade:339
-#: PlaceCleanup/placecleanup.glade:353
-msgid "Orig"
-msgstr "מקור"
-
-#: PlaceCleanup/placecleanup.glade:136 PlaceCleanup/placecleanup.glade:133
+#: PlaceCleanup/placecleanup.glade:133
 msgid "Check this box if you want to keep the original Postal code."
 msgstr "סימון תיבה זו לשמירת קוד המקום המקורי."
 
-#: PlaceCleanup/placecleanup.glade:154 PlaceCleanup/placecleanup.glade:148
+#: PlaceCleanup/placecleanup.glade:148
 msgid "Check this box if you want to keep the original Place Type."
 msgstr "סימון תיבה זו לשמירת סוג המקום המקורי."
 
-#: PlaceCleanup/placecleanup.glade:236 PlaceCleanup/placecleanup.glade:280
+#: PlaceCleanup/placecleanup.glade:166 PlaceCleanup/placecleanup.glade:180
+#: PlaceCleanup/placecleanup.glade:339 PlaceCleanup/placecleanup.glade:353
+msgid "Orig"
+msgstr "מקור"
+
+#: PlaceCleanup/placecleanup.glade:280
 msgid "Check this box if you want to keep the original Latitude and Longitude."
 msgstr "סימון תיבה זו לשמירת קווי האורך והרוחב המקורים."
 
-#: PlaceCleanup/placecleanup.glade:254 PlaceCleanup/placecleanup.glade:295
+#: PlaceCleanup/placecleanup.glade:295
 msgid "The Gramps ID.."
 msgstr "מזהה גרמפס.."
 
-#: PlaceCleanup/placecleanup.glade:285 PlaceCleanup/placecleanup.glade:322
+#: PlaceCleanup/placecleanup.glade:322
 msgid "Check this box if you want to keep the original Gramps ID."
 msgstr "סימון תיבה זו לשמירת מזהה גרמפס המקורי."
 
-#: PlaceCleanup/placecleanup.glade:315 PlaceCleanup/placecleanup.glade:391
+#: PlaceCleanup/placecleanup.glade:391
 msgid ""
 "Alterative Names\n"
 "Select one or more rows and press 'Keep' button to toggle the 'include into "
@@ -231,69 +226,69 @@ msgstr ""
 "שמות חלופיים\n"
 "בחירה בשורה אחת או יותר והקשה על לחצן 'שמירה' למעבר למצב 'הכללה בתוך מקום'."
 
-#: PlaceCleanup/placecleanup.glade:330 PlaceCleanup/placecleanup.glade:406
+#: PlaceCleanup/placecleanup.glade:406
 msgid "Inc"
 msgstr "Inc"
 
-#: PlaceCleanup/placecleanup.glade:370 PlaceCleanup/placecleanup.glade:446
+#: PlaceCleanup/placecleanup.glade:446
 msgid "Lang"
 msgstr "שפה"
 
-#: PlaceCleanup/placecleanup.glade:444 PlaceCleanup/placecleanup.glade:520
+#: PlaceCleanup/placecleanup.glade:520
 msgid ""
 "Select one or more rows and use this button to keep the alternative names."
 msgstr "בחירת שורה אחת או יותר ושימוש בלחצן זה לשמירת השמות החלופיים."
 
-#: PlaceCleanup/placecleanup.glade:460 PlaceCleanup/placecleanup.glade:536
+#: PlaceCleanup/placecleanup.glade:536
 msgid "Select one row and use this button to make the row the primary name."
 msgstr "בחירת שורה אחת ושימוש בלחצן זה להפיכת השורה לשם העיקרי."
 
-#: PlaceCleanup/placecleanup.glade:472 PlaceCleanup/placecleanup.glade:548
+#: PlaceCleanup/placecleanup.glade:548
 msgid "Discard"
-msgstr "להסיר"
+msgstr "לסלק"
 
-#: PlaceCleanup/placecleanup.glade:476 PlaceCleanup/placecleanup.glade:552
+#: PlaceCleanup/placecleanup.glade:552
 msgid ""
 "Select one or more rows and use this button to discard the alternative names."
-msgstr "בחירת שורה אחת או יותר ושימוש בלחצן זה לשמיטת השמות החלופיים."
+msgstr "בחירת שורה אחת או יותר ושימוש בלחצן זה לסילוק השמות החלופיים."
 
-#: PlaceCleanup/placecleanup.glade:504 PlaceCleanup/placecleanup.glade:580
+#: PlaceCleanup/placecleanup.glade:580
 msgid "Cancel the operation, no changes are made to your Place."
 msgstr "ביטול פעולה, לא נעשו שינויים ברשומת המקום."
 
-#: PlaceCleanup/placecleanup.glade:520 PlaceCleanup/placecleanup.glade:595
+#: PlaceCleanup/placecleanup.glade:595
 msgid "Store the values in your Place."
-msgstr "אחסון הערכים במקום."
+msgstr "אחסון הערכים ברשומות המקום."
 
-#: PlaceCleanup/placecleanup.glade:605 PlaceCleanup/placecleanup.glade:677
+#: PlaceCleanup/placecleanup.glade:677
 msgid "Keep Web Links"
 msgstr "להשאיר קישורי רשת"
 
-#: PlaceCleanup/placecleanup.glade:609 PlaceCleanup/placecleanup.glade:681
+#: PlaceCleanup/placecleanup.glade:681
 msgid "Puts web links (typically wikipedia) into your place."
 msgstr "משלב קישורי רשת (וויקי‎פדיה באופן טיפוסי)‎ במקומות."
 
-#: PlaceCleanup/placecleanup.glade:622 PlaceCleanup/placecleanup.glade:693
+#: PlaceCleanup/placecleanup.glade:693
 msgid "Add citation and source to Place"
 msgstr "הוספת מובאה ומקור למקום"
 
-#: PlaceCleanup/placecleanup.glade:626 PlaceCleanup/placecleanup.glade:697
+#: PlaceCleanup/placecleanup.glade:697
 msgid "This Adds a Citation to your place, citing GeoNames."
-msgstr "הוספת מובאה למקום, מובאה מ־GeoNames."
+msgstr "פעולה זו מוסיפה מובאה למקום, מובאה מ־GeoNames."
 
-#: PlaceCleanup/placecleanup.glade:641 PlaceCleanup/placecleanup.glade:711
+#: PlaceCleanup/placecleanup.glade:711
 msgid "GeoNames User ID"
 msgstr "מזהה משתמש GeoNames"
 
-#: PlaceCleanup/placecleanup.glade:653 PlaceCleanup/placecleanup.glade:723
+#: PlaceCleanup/placecleanup.glade:723
 msgid "Enter you Geonames user ID here."
-msgstr "הזנת מזהה משתמש GeoNames כאן."
+msgstr "להזין כאן מזהה משתמש GeoNames."
 
-#: PlaceCleanup/placecleanup.glade:665 PlaceCleanup/placecleanup.glade:735
+#: PlaceCleanup/placecleanup.glade:735
 msgid "Alternative Names Languages to keep"
-msgstr "שמות ושפות חלופיים לניהול"
+msgstr "שמות ושפות חלופיים שיושארו"
 
-#: PlaceCleanup/placecleanup.glade:677 PlaceCleanup/placecleanup.glade:747
+#: PlaceCleanup/placecleanup.glade:747
 msgid ""
 "Enter the two or three letter codes for the languages you wish to keep, "
 "seperated by spaces.\n"
@@ -308,11 +303,11 @@ msgstr ""
 "במידה ומופיעים לעתים קרובות שמות לא מסומנים בשפה הרצויה, ניתן להוסיף כאן את "
 "קוד השפה."
 
-#: PlaceCleanup/placecleanup.glade:693 PlaceCleanup/placecleanup.glade:763
+#: PlaceCleanup/placecleanup.glade:763
 msgid "Currently Enclosed Places"
 msgstr "מקומות מוכלים נוכחיים"
 
-#: PlaceCleanup/placecleanup.glade:705 PlaceCleanup/placecleanup.glade:775
+#: PlaceCleanup/placecleanup.glade:775
 msgid ""
 "When cleaning a place that is already enclosed, this affects what is done.\n"
 "If '<b>Keep current Enclosure</b>' is selected, no changes to the enclosing "
@@ -327,15 +322,15 @@ msgstr ""
 "לרמה הבאה של מקומות GeoNames. מצב זה עשוי לגרום לכך שמספר מקומות במסד "
 "הנתונים יוותרו ללא שימוש."
 
-#: PlaceCleanup/placecleanup.glade:710 PlaceCleanup/placecleanup.glade:780
+#: PlaceCleanup/placecleanup.glade:780
 msgid "Keep current Enclosure"
 msgstr "שמירת הכללה נוכחית"
 
-#: PlaceCleanup/placecleanup.glade:726 PlaceCleanup/placecleanup.glade:795
+#: PlaceCleanup/placecleanup.glade:795
 msgid "Replace with GeoNames Enclosure"
 msgstr "מקומות מוכלים גאו-נאמס"
 
-#: PlaceCleanup/placecleanup.glade:782 PlaceCleanup/placecleanup.glade:851
+#: PlaceCleanup/placecleanup.glade:851
 msgid ""
 "Current Place title.\n"
 "You can edit this to help find other places, particularly to reduce the "
@@ -345,16 +340,16 @@ msgstr ""
 "ניתן לעריכה על מנת לסייע באיתור מקומות אחרים, במיוחד כדי לצמצום את מספר "
 "התוצאות."
 
-#: PlaceCleanup/placecleanup.glade:831 PlaceCleanup/placecleanup.glade:899
+#: PlaceCleanup/placecleanup.glade:899
 msgid "Search your local places and GeoNames for a match."
 msgstr "חיפוש התאמה במקומות local ומקומות GeoNames."
 
-#: PlaceCleanup/placecleanup.glade:847 PlaceCleanup/placecleanup.glade:915
+#: PlaceCleanup/placecleanup.glade:915
 msgid ""
 "Continue to merge (for local places), or to complete a place (for GeoNames)."
 msgstr "להמשיך במיזוג (מקומות local), או להשלים תכונות מקום (מקומות GeoNames)."
 
-#: PlaceCleanup/placecleanup.glade:864 PlaceCleanup/placecleanup.glade:932
+#: PlaceCleanup/placecleanup.glade:932
 msgid ""
 "Split up Title, Edit manually, and enclose with next level of hierarchy.  "
 "For use when the initial component of the Title is too detailed to be found "
@@ -363,27 +358,27 @@ msgstr ""
 "פיצול כותרת, עריכה באופן ידני והכללה ברמה הבאה של ההיררכיה.  לשימוש כאשר "
 "הרכיב הראשוני של הכותרת מפורט מכדי להימצא במִלוֹן הגֵאוֹגרָפִי."
 
-#: PlaceCleanup/placecleanup.glade:890 PlaceCleanup/placecleanup.glade:958
+#: PlaceCleanup/placecleanup.glade:958
 msgid "Next Place"
 msgstr "המקום הבא"
 
-#: PlaceCleanup/placecleanup.glade:894 PlaceCleanup/placecleanup.glade:962
+#: PlaceCleanup/placecleanup.glade:962
 msgid "Find an incomplete place."
 msgstr "מציאת מקום חלקי."
 
-#: PlaceCleanup/placecleanup.glade:917 PlaceCleanup/placecleanup.glade:985
+#: PlaceCleanup/placecleanup.glade:985
 msgid "Set preferences"
 msgstr "קביעת העדפות"
 
-#: PlaceCleanup/placecleanup.glade:940 PlaceCleanup/placecleanup.glade:1008
+#: PlaceCleanup/placecleanup.glade:1008
 msgid "Select one of these places to continue the cleanup process."
 msgstr "בחירת אחד מהמקומות הללו להמשך בתהליך הארגון."
 
-#: PlaceCleanup/placecleanup.glade:967 PlaceCleanup/placecleanup.glade:1035
+#: PlaceCleanup/placecleanup.glade:1035
 msgid "Search result places"
 msgstr "תוצאות חיפוש מקומות"
 
-#: PlaceCleanup/placecleanup.glade:1034 PlaceCleanup/placecleanup.glade:1102
+#: PlaceCleanup/placecleanup.glade:1102
 msgid ""
 "Checking the 'Populated' checkbox causes the GeoNames search to include "
 "'Populted places', places where people live and work."
@@ -391,11 +386,11 @@ msgstr ""
 "סימון תיבת 'אכלוס' תגרום לחיפוש GeoNames לכלול בתוצאות החיפוש גם 'אזורים "
 "מאוכלסים' בהם אנשים גרים ועובדים."
 
-#: PlaceCleanup/placecleanup.glade:1053 PlaceCleanup/placecleanup.glade:1119
+#: PlaceCleanup/placecleanup.glade:1119
 msgid "Populated"
 msgstr "אכלוס"
 
-#: PlaceCleanup/placecleanup.glade:1065 PlaceCleanup/placecleanup.glade:1131
+#: PlaceCleanup/placecleanup.glade:1131
 msgid ""
 "Checking the 'Admin' checkbox cause the GeoNames search to include "
 "adminstrative subdivisions in the search (countries, states, counties etc.)."
@@ -403,7 +398,7 @@ msgstr ""
 "סימון תיבת 'מנהלתי' תגרום לחיפוש GeoNames לכלול בתוצאות החיפוש גם אזורים "
 "מנהליים משניים (מדינות, חבלים, מחוזות וכיוצא בזה)."
 
-#: PlaceCleanup/placecleanup.glade:1084 PlaceCleanup/placecleanup.glade:1148
+#: PlaceCleanup/placecleanup.glade:1148
 msgid ""
 "Checking the 'Spot' checkbox cause the GeoNames search to include a wide "
 "variety of other places in the search (churches, burial grounds, buildings "
@@ -412,10 +407,10 @@ msgstr ""
 "סימון תיבת הסימון 'כתם' תגרום לחיפוש GeoNames לכלול בתוצאות החיפוש מגוון רחב "
 "של מקומות אחרים (כנסיות, אתרי קבורה, מבני ציבור, וכדומה)."
 
-#: PlaceCleanup/placecleanup.glade:1101 PlaceCleanup/placecleanup.glade:1163
+#: PlaceCleanup/placecleanup.glade:1163
 msgid "Admin"
 msgstr "מנהלתי"
 
-#: PlaceCleanup/placecleanup.glade:1112 PlaceCleanup/placecleanup.glade:1174
+#: PlaceCleanup/placecleanup.glade:1174
 msgid "Spot"
 msgstr "כתם"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -20,38 +20,35 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
 
-#: GetGOV/getgov.gpr.py:30 GetGOV/getgov.gpr.py:42
+#: GetGOV/getgov.gpr.py:30 GetGOV/getgov.gpr.py:42 GetGOV/getgov.gpr.py:32
+#: GetGOV/getgov.gpr.py:44
 msgid "GetGOV"
 msgstr "GetGOV"
 
-#: GetGOV/getgov.gpr.py:31
+#: GetGOV/getgov.gpr.py:31 GetGOV/getgov.gpr.py:33
 msgid "Gramplet to get places from the GOV database"
 msgstr "Gramplet til at hente steder fra GOV databasen"
 
-#: GetGOV/getgov.py:303
-msgid "Enter GOV-id:"
-msgstr "Indtast GOV-id:"
-
-#: GetGOV/getgov.py:311
+#: GetGOV/getgov.py:311 GetGOV/getgov.py:323
 msgid "Get Place"
 msgstr "Hent sted"
 
-#: GetGOV/getgov.py:343
+#: GetGOV/getgov.py:343 GetGOV/getgov.py:356
 #, python-format
 msgid "Add GOV-id place %s"
 msgstr "Tilføj GOV-id sted %s"
 
-#: GetGOV/getgov.py:521
+#: GetGOV/getgov.py:521 GetGOV/getgov.py:555
 #, python-format
 msgid "from %s to %s"
 msgstr "fra %s til %s"
 
-#: GetGOV/getgov.py:523
+#: GetGOV/getgov.py:523 GetGOV/getgov.py:557
 #, python-format
 msgid "after %s"
 msgstr "efter %s"
 
-#: GetGOV/getgov.py:525
+#: GetGOV/getgov.py:525 GetGOV/getgov.py:559
 #, python-format
 msgid "before %s"
 msgstr "før %s"

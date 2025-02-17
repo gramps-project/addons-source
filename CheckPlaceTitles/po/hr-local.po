@@ -3,13 +3,13 @@
 # Copyright (C) Gramps project
 # Milo Ivir <mivir@milotype.de>, 2019, 2020.
 # Stephen Adams, Gramps Reddit, 2018.
-#
+# Milo Ivir <mail@milotype.de>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2025-02-15 16:17+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-17 00:14+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -29,12 +29,10 @@ msgstr "Provjera naslova mjesta"
 msgid "Looking for place fields"
 msgstr "Traženje zapisa o mjestu"
 
-#: CheckPlaceTitles/checkplacetitles.gpr.py:28
 #: CheckPlaceTitles/checkplacetitles.gpr.py:29
 msgid "Check Place Titles"
 msgstr "Provjeri naslove mjesta"
 
-#: CheckPlaceTitles/checkplacetitles.gpr.py:29
 #: CheckPlaceTitles/checkplacetitles.gpr.py:30
 msgid "Check place titles"
 msgstr "Provjeri naslove mjesta"
@@ -47,27 +45,22 @@ msgstr "Provjeri naslov mjesta"
 msgid "Differences"
 msgstr "Razlike"
 
-#: CheckPlaceTitles/checkplacetitles.py:113
 #: CheckPlaceTitles/checkplacetitles.py:112
 msgid "No need modifications"
 msgstr "Nema potrebe za promjenama"
 
-#: CheckPlaceTitles/checkplacetitles.py:114
 #: CheckPlaceTitles/checkplacetitles.py:113
 msgid "No changes need."
 msgstr "Promjene nisu potrebne."
 
-#: CheckPlaceTitles/checkplacetitles.py:189
 #: CheckPlaceTitles/checkplacetitles.py:187
 msgid "Legacy place"
 msgstr "Staro mjesto"
 
-#: CheckPlaceTitles/checkplacetitles.py:203
 #: CheckPlaceTitles/checkplacetitles.py:201
 msgid "Modify Place titles"
 msgstr "Promijeni naslove mjesta"
 
-#: CheckPlaceTitles/checkplacetitles.py:226
 #: CheckPlaceTitles/checkplacetitles.py:224
 msgid "Place titles"
 msgstr "Naslovi mjesta"
@@ -82,7 +75,7 @@ msgstr "Kopiraj sadržaj polja naslova mjesta, u novu zabilješku."
 
 #: CheckPlaceTitles/checkplacetitles.glade:91
 msgid "Attach a tag on selected places."
-msgstr "Dodaj etiketu odabranim mjestima."
+msgstr "Dodaj oznaku odabranim mjestima."
 
 #: CheckPlaceTitles/checkplacetitles.glade:177
 msgid "column"

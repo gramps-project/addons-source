@@ -1,13 +1,13 @@
 # Addon MediaMerge for Gramps.
 # Copyright (C) 2020 Gramps
 # This file is distributed under the same license as the gramps package.
-# Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020.
+# Pedro Albuquerque <pmra@protonmail.com>, 2017, 2020, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: gramps51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2025-02-15 10:09+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-17 11:46+0000\n"
 "Last-Translator: Pedro Albuquerque <pmra@protonmail.com>\n"
 "Language-Team: Portuguese (Portugal) <https://hosted.weblate.org/projects/"
 "gramps-project/addons/pt_PT/>\n"
@@ -16,36 +16,35 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
-#: UKWebConnectPack/UKWebPack.py:35 SVWebconnectPack/SVWebPack.py:34
-#: DEWebConnectPack/DEWebPack.py:39
+#: SVWebconnectPack/SVWebPack.py:34 DEWebConnectPack/DEWebPack.py:39
 msgid "FamilySearch.org"
-msgstr "FamilySearch.org"
+msgstr "Family Search"
 
 #: UKWebConnectPack/UKWebPack.py:39 DEWebConnectPack/DEWebPack.py:44
 msgid "Open Library"
-msgstr "Open Library"
+msgstr "Biblioteca Open Library"
 
-#: DEWebConnectPack/DEWebPack.gpr.py:10 DEWebConnectPack/DEWebPack.gpr.py:11
+#: DEWebConnectPack/DEWebPack.gpr.py:11
 msgid "DE Web Connect Pack"
-msgstr "DE Web Connect Pack"
+msgstr "Pacote Internet para DE"
 
-#: DEWebConnectPack/DEWebPack.gpr.py:11 DEWebConnectPack/DEWebPack.gpr.py:12
+#: DEWebConnectPack/DEWebPack.gpr.py:12
 msgid "Collection of Web sites for the DE (requires libwebconnect)"
-msgstr "Colecção de páginas web para DE (requer libwebconnect)"
+msgstr "Colecção de páginas “web” para a Alemanha (requer libwebconnect)"
 
 #: DEWebConnectPack/DEWebPack.py:37
 msgid "Bielefeld Academic Search"
-msgstr "Bielefeld Academic Search"
+msgstr "Procura Bielefeld Academic"
 
 #: DEWebConnectPack/DEWebPack.py:42
 msgid "Google Archives"
-msgstr "Google Archives"
+msgstr "Arquivos Google"
 
 #: DEWebConnectPack/DEWebPack.py:43
 msgid "DE Google"
-msgstr "DE Google"
+msgstr "Google DE"
 
 #: DEWebConnectPack/DEWebPack.py:45
 msgid "Surname map (1890-1996)"

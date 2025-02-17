@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-04 16:31+0300\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -31,29 +31,26 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: EventDescriptionEditor/EventDescriptionEditor.py:91
 #: EventDescriptionEditor/EventDescriptionEditor.py:105
 #: RemoveTagTool/RemoveTagTool.py:271
 msgid "INFO"
 msgstr "ИНФОРМАЦИЯ"
 
-#: DynamicWeb//dynamicweb.py:2542 DynamicWeb/dynamicweb.py:3052
-#: RemoveTagTool/RemoveTagTool.py:124
+#: DynamicWeb/dynamicweb.py:3052 RemoveTagTool/RemoveTagTool.py:124
 msgid "Persons"
 msgstr "Лица"
 
-#: QuiltView/QuiltView.py:1784 QuiltView/QuiltView.py:1939
-#: RemoveTagTool/RemoveTagTool.py:89 RemoveTagTool/RemoveTagTool.py:97
-#: RemoveTagTool/RemoveTagTool.py:105
+#: QuiltView/QuiltView.py:1939 RemoveTagTool/RemoveTagTool.py:89
+#: RemoveTagTool/RemoveTagTool.py:97 RemoveTagTool/RemoveTagTool.py:105
 msgid "General options"
 msgstr "Основные параметры"
 
-#: RemoveTagTool/RemoveTagTool.gpr.py:24 RemoveTagTool/RemoveTagTool.py:186
-#: RemoveTagTool/RemoveTagTool.py:246 RemoveTagTool/RemoveTagTool.gpr.py:25
+#: RemoveTagTool/RemoveTagTool.gpr.py:25 RemoveTagTool/RemoveTagTool.py:186
+#: RemoveTagTool/RemoveTagTool.py:246
 msgid "Add/Remove Tag Tool"
 msgstr "Инструмент добавления / удаления меток"
 
-#: RemoveTagTool/RemoveTagTool.gpr.py:25 RemoveTagTool/RemoveTagTool.gpr.py:26
+#: RemoveTagTool/RemoveTagTool.gpr.py:26
 msgid "Add or remove a tag from groups of people, events, etc."
 msgstr "Добавить или удалить теги для групп людей, событий и т. Д."
 

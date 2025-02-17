@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-04 16:31+0300\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -31,12 +31,10 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: PlaceCompletion/PlaceCompletion.gpr.py:25
 #: PlaceCompletion/PlaceCompletion.gpr.py:26
 msgid "PlaceCompletion"
 msgstr "PlaceCompletion"
 
-#: PlaceCompletion/PlaceCompletion.gpr.py:26
 #: PlaceCompletion/PlaceCompletion.gpr.py:28
 msgid ""
 "Provides a browsable list of selected places, with possibility to complete/"
@@ -241,92 +239,74 @@ msgstr "Все места"
 msgid "No Latitude/Longitude given"
 msgstr "Не задана широта/долгота"
 
-#: PlaceCompletion/placecompletion.glade.h:1
 #: PlaceCompletion/placecompletion.glade:85
 msgid "_Google Maps"
 msgstr "Карты _Google"
 
-#: PlaceCompletion/placecompletion.glade.h:2
 #: PlaceCompletion/placecompletion.glade:112
 msgid "Apply all suggested changes"
 msgstr "Применить все предлагаемые изменения"
 
-#: PlaceCompletion/placecompletion.glade.h:3
 #: PlaceCompletion/placecompletion.glade:148
 msgid "Selection of the Places you want to complete:"
 msgstr "Выбор мест которые хотите дополнить:"
 
-#: PlaceCompletion/placecompletion.glade.h:5
 #: PlaceCompletion/placecompletion.glade:195
 msgid "Parish:"
 msgstr "Церковь:"
 
-#: PlaceCompletion/placecompletion.glade.h:7
 #: PlaceCompletion/placecompletion.glade:271
 msgid "Place _filter:"
 msgstr "Фильтр мест:"
 
-#: PlaceCompletion/placecompletion.glade.h:9
 #: PlaceCompletion/placecompletion.glade:336
 msgid "Count_ry:"
 msgstr "Ст_рана:"
 
-#: PlaceCompletion/placecompletion.glade.h:10
 #: PlaceCompletion/placecompletion.glade:366
 msgid "C_enter latitude:"
 msgstr "Широта:"
 
-#: PlaceCompletion/placecompletion.glade.h:11
 #: PlaceCompletion/placecompletion.glade:383
 msgid "Center longitude:"
 msgstr "Долгота:"
 
-#: PlaceCompletion/placecompletion.glade.h:12
 #: PlaceCompletion/placecompletion.glade:430
 msgid "Places in a rectangle:"
 msgstr "Места в прямоугольнике:"
 
-#: PlaceCompletion/placecompletion.glade.h:14
 #: PlaceCompletion/placecompletion.glade:460
 msgid "Height:"
 msgstr "Высота:"
 
-#: PlaceCompletion/placecompletion.glade.h:15
 #: PlaceCompletion/placecompletion.glade:527
 msgid "1. Look up latitude and longitude:"
 msgstr "1. Анализ широты и долготы:"
 
-#: PlaceCompletion/placecompletion.glade.h:16
 #: PlaceCompletion/placecompletion.glade:554
 msgid "Search in:"
 msgstr "Искать в:"
 
-#: PlaceCompletion/placecompletion.glade.h:17
 #: PlaceCompletion/placecompletion.glade:566
 msgid "Select A File"
 msgstr "Выбор файла"
 
-#: PlaceCompletion/placecompletion.glade.h:18
 #: PlaceCompletion/placecompletion.glade:579
 msgid "Parse as:"
 msgstr "Разобрать как:"
 
-#: PlaceCompletion/placecompletion.glade.h:19
 #: PlaceCompletion/placecompletion.glade:619
 msgid "2. Conversion of existing title or position:"
 msgstr "2. Перевод существующего названия или положения:"
 
-#: PlaceCompletion/placecompletion.glade.h:20
 #: PlaceCompletion/placecompletion.glade:649
 msgid "Change title into:"
 msgstr "Изменить название:"
 
-#: PlaceCompletion/placecompletion.glade.h:21
 #: PlaceCompletion/placecompletion.glade:664
 msgid "Convert lat/lon as:"
 msgstr "Перевести широту/долготу в:"
 
-#: PlaceCompletion/placecompletion.glade.h:22
 #: PlaceCompletion/placecompletion.glade:701
 msgid ""
 "Or define a simple\n"
@@ -335,7 +315,6 @@ msgstr ""
 "Или определите простой\n"
 "формат названия:"
 
-#: PlaceCompletion/placecompletion.glade.h:24
 #: PlaceCompletion/placecompletion.glade:730
 msgid ""
 "Available variables: city, street, locality, parish, county, state, country, "
@@ -344,7 +323,6 @@ msgstr ""
 "Доступные значения: city, street, locality, parish, county, state, country, "
 "postal_code"
 
-#: PlaceCompletion/placecompletion.glade.h:25
 #: PlaceCompletion/placecompletion.glade:820
 msgid ""
 "Delete to delete a row, Double-click on the row to edit place with changes "

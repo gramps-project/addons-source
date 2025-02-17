@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-17 18:14+0100\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -38,40 +38,39 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ListeEclair/ListeEclair.gpr.py:3 ListeEclair/ListeEclair.py:90
-#: ListeEclair/ListeEclair.py:95 ListeEclair/ListeEclair.gpr.py:4
-#: ListeEclair/ListeEclair.py:97 ListeEclair/ListeEclair.py:104
+#: ListeEclair/ListeEclair.gpr.py:4 ListeEclair/ListeEclair.py:97
+#: ListeEclair/ListeEclair.py:104
 msgid "Liste Eclair"
 msgstr "Liste Éclair"
 
-#: ListeEclair/ListeEclair.gpr.py:4 ListeEclair/ListeEclair.gpr.py:5
+#: ListeEclair/ListeEclair.gpr.py:5
 msgid "Produit une liste eclair"
 msgstr "Produit une liste éclair"
 
-#: ListeEclair/ListeEclair.py:252 ListeEclair/ListeEclair.py:277
+#: ListeEclair/ListeEclair.py:277
 msgid "Type de Liste"
 msgstr "Type de Liste"
 
-#: ListeEclair/ListeEclair.py:254 ListeEclair/ListeEclair.py:279
+#: ListeEclair/ListeEclair.py:279
 msgid "Tiny Tafel"
 msgstr "Tiny Tafel"
 
-#: ListeEclair/ListeEclair.py:255 ListeEclair/ListeEclair.py:280
+#: ListeEclair/ListeEclair.py:280
 msgid "cousingenweb"
 msgstr "cousingenweb"
 
-#: ListeEclair/ListeEclair.py:256 ListeEclair/ListeEclair.py:281
+#: ListeEclair/ListeEclair.py:281
 msgid "Type de liste"
 msgstr "Type de liste"
 
-#: ListeEclair/ListeEclair.py:259 ListeEclair/ListeEclair.py:284
+#: ListeEclair/ListeEclair.py:284
 msgid "Include private data"
 msgstr "Inclure les données privées"
 
-#: ListeEclair/ListeEclair.py:276 ListeEclair/ListeEclair.py:301
+#: ListeEclair/ListeEclair.py:301
 msgid "The style used for the liste eclair."
 msgstr "Le style utilisé pour la liste éclair."
 
-#: ListeEclair/ListeEclair.py:289 ListeEclair/ListeEclair.py:314
+#: ListeEclair/ListeEclair.py:314
 msgid "The style used for place title."
 msgstr "Le style utilisé pour le titre du lieu."

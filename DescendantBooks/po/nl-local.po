@@ -7,13 +7,13 @@
 # Erik De Richter <frederik.de.richter@pandora.be>, 2006, 2007, 2008, 2009, 2010, 2011, 2012.
 # Erik De Richter <frederik.de.richter@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013.
 # Harmen Huizinga <harmenhuizinga@sigmo.nl>, 2013.
-#
+# Stephan Paternotte <stephan@paternottes.net>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: MediaMerge 5.x\n"
-"Report-Msgid-Bugs-To: https://www.gramps-project.org/bugs\n"
-"POT-Creation-Date: 2019-01-04 18:55-0600\n"
-"PO-Revision-Date: 2025-02-09 11:16+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-17 11:05+0000\n"
 "Last-Translator: Stephan Paternotte <stephan@paternottes.net>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/gramps-project/"
 "addons/nl/>\n"
@@ -22,17 +22,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.10.1-dev\n"
 
-#: D3Charts/DescendantIndentedTree.py:1839
 #: D3Charts/DescendantIndentedTree.py:1848
 #: DescendantBooks/DescendantBookReport.py:552
 msgid "Whether to show duplicate family trees in the report."
 msgstr "Of dubbele stambomen in het rapport moeten worden weergegeven."
 
-#: AncestorFill/AncestorFill.py:360 AncestorFill/AncestorFill.py:361
-#: DescendantBooks/DescendantBookReport.py:575
-#: DescendantBooks/DetailedDescendantBookReport.py:1537
+#: AncestorFill/AncestorFill.py:361 DescendantBooks/DescendantBookReport.py:575
+#: DescendantBooks/DetailedDescendantBookReport.py:1540
 msgid "The style used for the title of the page."
 msgstr "De stijl die wordt gebruikt voor de titel van de pagina."
 
@@ -87,7 +85,6 @@ msgid "Descendants Report"
 msgstr "Afstammelingenverslag"
 
 #: DescendantBooks/DescendantBookReport.py:423
-#: DescendantBooks/DetailedDescendantBookReport.py:418
 #: DescendantBooks/DetailedDescendantBookReport.py:421
 #, python-format
 msgid "Writing %s reports..."
@@ -99,14 +96,12 @@ msgid "%s. Descendants of %s"
 msgstr "%s. Afstammelingen van %s"
 
 #: DescendantBooks/DescendantBookReport.py:481
-#: DescendantBooks/DetailedDescendantBookReport.py:614
 #: DescendantBooks/DetailedDescendantBookReport.py:617
 #, python-format
 msgid "%d. %s"
 msgstr "%d. %s"
 
 #: DescendantBooks/DescendantBookReport.py:510
-#: DescendantBooks/DetailedDescendantBookReport.py:1342
 #: DescendantBooks/DetailedDescendantBookReport.py:1345
 msgid "Select filter to restrict people that appear in the report"
 msgstr "Selecteer filter om het aantal personen in het verslag te beperken"
@@ -119,24 +114,20 @@ msgstr "De stijl die wordt gebruikt voor de koptekst van de inhoudsopgave."
 msgid "The style used for the table of contents detail."
 msgstr "De stijl die voor de inhoudsopgave wordt gebruikt."
 
-#: DescendantBooks/DescendantBooks.gpr.py:21
 #: DescendantBooks/DescendantBooks.gpr.py:22
 msgid "Descendant Book"
 msgstr "Afstammelingenboek"
 
-#: DescendantBooks/DescendantBooks.gpr.py:22
 #: DescendantBooks/DescendantBooks.gpr.py:23
 msgid "Produces one or more descendant reports based on a supplied query."
 msgstr ""
 "Produceert een of meer afstammelingenverslagen op basis van een opgegeven "
 "zoekvraag."
 
-#: DescendantBooks/DescendantBooks.gpr.py:38
 #: DescendantBooks/DescendantBooks.gpr.py:41
 msgid "Detailed Descendant Book"
 msgstr "Gedetailleerd afstammelingenboek"
 
-#: DescendantBooks/DescendantBooks.gpr.py:39
 #: DescendantBooks/DescendantBooks.gpr.py:43
 msgid ""
 "Produces one or more detailed descendant reports based on a supplied query."
@@ -148,190 +139,154 @@ msgstr ""
 msgid "Detailed Descendants Report"
 msgstr "Gedetailleerd afstammelingenverslag"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:356
 #: DescendantBooks/DetailedDescendantBookReport.py:359
 #, python-format
 msgid "Generating %s report references..."
 msgstr "%s verslagreferenties genereren..."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:450
 #: DescendantBooks/DetailedDescendantBookReport.py:453
 #, python-format
 msgid "%(report_count)s. Descendant Report for %(person_name)s"
 msgstr "%(report_count)s. Afstammelingenverslag voor %(person_name)s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:516
 #: DescendantBooks/DetailedDescendantBookReport.py:519
 msgid "Index of Places"
 msgstr "Index van locaties"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:539
 #: DescendantBooks/DetailedDescendantBookReport.py:542
 msgid "Index of Dates"
 msgstr "Index van datums"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:562
 #: DescendantBooks/DetailedDescendantBookReport.py:565
 msgid "Index of Names"
 msgstr "Index van namen"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:568
 #: DescendantBooks/DetailedDescendantBookReport.py:571
 msgid "Report, Generation, Person, Name"
 msgstr "Verslag, Generatie, Persoon, Naam"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:694
 #: DescendantBooks/DetailedDescendantBookReport.py:697
 #, python-format
 msgid "See Report : %s, Generation : %s, Person : %s"
 msgstr "Zie verslag : %s, Generatie : %s, Persoon : %s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:763
-#: DescendantBooks/DetailedDescendantBookReport.py:776
 #: DescendantBooks/DetailedDescendantBookReport.py:766
 #: DescendantBooks/DetailedDescendantBookReport.py:779
 #, python-format
 msgid "Report appearances for %s"
 msgstr "Uiterlijk van het verslag %s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:768
 #: DescendantBooks/DetailedDescendantBookReport.py:771
 #, python-format
 msgid "Spouse of: Report: %s, Generation: %s, Person: %s"
 msgstr "Echtgenoot van: Verslag: %s, Generatie: %s, Persoon: %s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:781
 #: DescendantBooks/DetailedDescendantBookReport.py:784
 #, python-format
 msgid "Report: %s, Generation: %s, Person: %s"
 msgstr "Verslag: %s, Generatie: %s, Persoon: %s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:806
 #: DescendantBooks/DetailedDescendantBookReport.py:809
 #, python-format
 msgid "%(event_name)s of %(name)s "
 msgstr "%(event_name)s van %(name)s "
 
-#: DescendantBooks/DetailedDescendantBookReport.py:810
 #: DescendantBooks/DetailedDescendantBookReport.py:813
 #, python-format
 msgid "%(event_name)s of %(name)s and %(mate)s "
 msgstr "%(event_name)s van %(name)s en %(mate)s "
 
-#: DescendantBooks/DetailedDescendantBookReport.py:814
-#: DescendantBooks/DetailedDescendantBookReport.py:858
 #: DescendantBooks/DetailedDescendantBookReport.py:817
 #: DescendantBooks/DetailedDescendantBookReport.py:861
 #, python-format
 msgid "%(date)s, %(place)s"
 msgstr "%(date)s, %(place)s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:817
-#: DescendantBooks/DetailedDescendantBookReport.py:861
 #: DescendantBooks/DetailedDescendantBookReport.py:820
 #: DescendantBooks/DetailedDescendantBookReport.py:864
 #, python-format
 msgid "%(date)s"
 msgstr "%(date)s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:819
-#: DescendantBooks/DetailedDescendantBookReport.py:863
 #: DescendantBooks/DetailedDescendantBookReport.py:822
 #: DescendantBooks/DetailedDescendantBookReport.py:866
 #, python-format
 msgid "%(place)s"
 msgstr "%(place)s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:821
 #: DescendantBooks/DetailedDescendantBookReport.py:824
 #, python-format
 msgid ". Ref: %(repno)s %(gen)s %(per)s "
 msgstr ". Ref: %(repno)s %(gen)s %(per)s "
 
-#: DescendantBooks/DetailedDescendantBookReport.py:850
 #: DescendantBooks/DetailedDescendantBookReport.py:853
 #, python-format
 msgid "%(event_name)s:"
 msgstr "%(event_name)s:"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:875
 #: DescendantBooks/DetailedDescendantBookReport.py:878
 #, python-format
 msgid " %(event_text)s"
 msgstr " %(event_text)s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:993
 #: DescendantBooks/DetailedDescendantBookReport.py:996
 #, python-format
 msgid "Ref: %s. %s"
 msgstr "Ref: %s. %s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1234
 #: DescendantBooks/DetailedDescendantBookReport.py:1237
 #, python-format
 msgid "%(name_kind)s: %(name)s%(endnotes)s"
 msgstr "%(name_kind)s: %(name)s%(endnotes)s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1295
 #: DescendantBooks/DetailedDescendantBookReport.py:1298
 #, python-format
 msgid "%(type)s:"
 msgstr "%(type)s:"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1300
 #: DescendantBooks/DetailedDescendantBookReport.py:1303
 #, python-format
 msgid " %(value)s%(endnotes)s"
 msgstr " %(value)s%(endnotes)s"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1402
 #: DescendantBooks/DetailedDescendantBookReport.py:1405
 msgid "List children"
 msgstr "Lijst met kinderen"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1419
 #: DescendantBooks/DetailedDescendantBookReport.py:1422
 msgid "Add descendant reference in child list"
 msgstr "Afstammingsreferentie toevoegen aan de onderliggende lijst"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1483
 #: DescendantBooks/DetailedDescendantBookReport.py:1486
 msgid "Include Index of Names"
 msgstr "Namenlijst toevoegen"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1484
 #: DescendantBooks/DetailedDescendantBookReport.py:1487
 msgid "Whether to include the index of Names at the end of the report."
 msgstr "Of de namenindex aan het einde van het rapport moet worden opgenomen."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1488
 #: DescendantBooks/DetailedDescendantBookReport.py:1491
 msgid "Include index of Dates"
 msgstr "Index van datums toevoegen"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1489
 #: DescendantBooks/DetailedDescendantBookReport.py:1492
 msgid "Whether to include the index of Dates at the end of the report."
 msgstr ""
 "Of de index van datums aan het einde van het rapport moet worden opgenomen."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1493
 #: DescendantBooks/DetailedDescendantBookReport.py:1496
 msgid "Include index of Places"
 msgstr "Index van plaatsen toevoegen"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1494
 #: DescendantBooks/DetailedDescendantBookReport.py:1497
 msgid "Whether to include the index of Places at the end of the report."
 msgstr ""
 "Of de index van locaties aan het einde van het rapport moet worden opgenomen."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1498
 #: DescendantBooks/DetailedDescendantBookReport.py:1501
 msgid "Include the 'Report appearances' section with each person"
 msgstr "Voeg het gedeelte 'Rapportverschijningen' bij elke persoon toe"
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1500
 #: DescendantBooks/DetailedDescendantBookReport.py:1503
 msgid ""
 "The 'Report appearances' section shows other places in the report where the "
@@ -340,67 +295,54 @@ msgstr ""
 "Het gedeelte 'Rapportverschijningen' toont andere plaatsen in het rapport "
 "waar de persoon wordt genoemd."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1567
 #: DescendantBooks/DetailedDescendantBookReport.py:1570
 msgid "The style used for the children list."
 msgstr "De stijl die wordt gebruikt voor de onderliggende lijst."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1577
 #: DescendantBooks/DetailedDescendantBookReport.py:1580
 msgid "The basic style used for Note header."
 msgstr "De basisstijl die wordt gebruikt voor de opmerkingen-koptekst."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1594
 #: DescendantBooks/DetailedDescendantBookReport.py:1597
 msgid "The style used for the first personal entry."
 msgstr "De stijl die werd gebruikt voor de eerste eigen invoer."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1604
 #: DescendantBooks/DetailedDescendantBookReport.py:1607
 msgid "The style used for the More About header and for headers of mates."
 msgstr ""
 "De stijl die wordt gebruikt voor de koptekst Meer Over en voor headers van "
 "partners."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1615
 #: DescendantBooks/DetailedDescendantBookReport.py:1618
 msgid "The style used for additional detail data."
 msgstr "De stijl die wordt gebruikt voor aanvullende detailgegevens."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1625
-#: DescendantBooks/DetailedDescendantBookReport.py:1635
 #: DescendantBooks/DetailedDescendantBookReport.py:1628
 #: DescendantBooks/DetailedDescendantBookReport.py:1638
 msgid "The style used for note detail data."
 msgstr "De stijl die wordt gebruikt voor detailgegevens van opmerkingen."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1645
 #: DescendantBooks/DetailedDescendantBookReport.py:1648
 msgid "The style used for the date in the Index of Dates."
 msgstr "De stijl die wordt gebruikt voor de datum in de index van datums."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1655
 #: DescendantBooks/DetailedDescendantBookReport.py:1658
 msgid "The style used for the events in the Index of Dates."
 msgstr ""
 "De stijl die wordt gebruikt voor de gebeurtenissen in de Index of Dates."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1665
 #: DescendantBooks/DetailedDescendantBookReport.py:1668
 msgid "The style used for the header in the Index of Names."
 msgstr "De stijl die wordt gebruikt voor de koptekst in de namenlijst."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1675
 #: DescendantBooks/DetailedDescendantBookReport.py:1678
 msgid "The style used for the references in the Index of Names."
 msgstr "De stijl die wordt gebruikt voor de verwijzingen in de namenindex."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1685
 #: DescendantBooks/DetailedDescendantBookReport.py:1688
 msgid "The style used for the header in the Index of Places."
 msgstr "De stijl die wordt gebruikt voor de koptekst in de plaatsindex."
 
-#: DescendantBooks/DetailedDescendantBookReport.py:1696
 #: DescendantBooks/DetailedDescendantBookReport.py:1699
 msgid "The style used for the references in the Index of Places."
 msgstr "De stijl die wordt gebruikt voor de verwijzingen in de plaatsindex."

@@ -3,13 +3,13 @@
 # Copyright (C) Gramps project
 # Milo Ivir <mivir@milotype.de>, 2019, 2020.
 # Stephen Adams, Gramps Reddit, 2018.
-#
+# Milo Ivir <mail@milotype.de>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2025-02-15 16:17+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-17 00:14+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -21,9 +21,8 @@ msgstr ""
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Weblate 5.10\n"
 
-#: EventDescriptionEditor/EventDescriptionEditor.py:128
 #: EventDescriptionEditor/EventDescriptionEditor.py:142
-#: ImportMerge/importmerge.py:910 ImportMerge/importmerge.glade:407
+#: ImportMerge/importmerge.py:911 ImportMerge/importmerge.glade:407
 msgid "Replace"
 msgstr "Zamjena"
 
@@ -35,13 +34,13 @@ msgstr "Gotovo"
 msgid "Differences"
 msgstr "Razlike"
 
-#: ImportMerge/importmerge.gpr.py:30 ImportMerge/importmerge.py:311
-#: ImportMerge/importmerge.py:690 ImportMerge/importmerge.gpr.py:31
-#: ImportMerge/importmerge.py:328 ImportMerge/importmerge.py:707
+#: ImportMerge/importmerge.gpr.py:31 ImportMerge/importmerge.py:328
+#: ImportMerge/importmerge.py:707 ImportMerge/importmerge.py:329
+#: ImportMerge/importmerge.py:708
 msgid "Import and Merge tool"
 msgstr "Alat za uvoz i sjedinjavanje"
 
-#: ImportMerge/importmerge.gpr.py:31 ImportMerge/importmerge.gpr.py:33
+#: ImportMerge/importmerge.gpr.py:33
 msgid ""
 "Compares a Gramps XML database with the current one, and allows merging of "
 "the differences."
@@ -49,49 +48,49 @@ msgstr ""
 "Uspoređuje Gramps XML bazu podataka s trenutačnom i dozvoljava njihovo "
 "sjedinjenje."
 
-#: ImportMerge/importmerge.py:80
+#: ImportMerge/importmerge.py:80 ImportMerge/importmerge.py:81
 msgid "Import and merge a Gramps XML"
 msgstr "Uvezi i sjedini Gramps XML"
 
-#: ImportMerge/importmerge.py:89
+#: ImportMerge/importmerge.py:89 ImportMerge/importmerge.py:90
 msgid "Missing"
 msgstr "Nedostaje"
 
-#: ImportMerge/importmerge.py:93
+#: ImportMerge/importmerge.py:93 ImportMerge/importmerge.py:94
 msgid "Different"
 msgstr "Različito"
 
-#: ImportMerge/importmerge.py:108
+#: ImportMerge/importmerge.py:108 ImportMerge/importmerge.py:109
 msgid "Delete original"
 msgstr "Obriši original"
 
-#: ImportMerge/importmerge.py:109 ImportMerge/importmerge.glade:332
-#: ImportMerge/importmerge.glade:334
+#: ImportMerge/importmerge.py:109 ImportMerge/importmerge.glade:334
+#: ImportMerge/importmerge.py:110
 msgid "Ignore"
 msgstr "Zanemari"
 
-#: ImportMerge/importmerge.py:110
+#: ImportMerge/importmerge.py:110 ImportMerge/importmerge.py:111
 msgid "Add Import"
 msgstr "Dodaj uvoz"
 
-#: ImportMerge/importmerge.py:111
+#: ImportMerge/importmerge.py:111 ImportMerge/importmerge.py:112
 msgid "Merge into original"
 msgstr "Sjedini u original"
 
-#: ImportMerge/importmerge.py:112
+#: ImportMerge/importmerge.py:112 ImportMerge/importmerge.py:113
 msgid "Merge into import"
 msgstr "Sjedini u uvoz"
 
-#: ImportMerge/importmerge.py:113
+#: ImportMerge/importmerge.py:113 ImportMerge/importmerge.py:114
 msgid "Replace with import"
 msgstr "Zamijeni s uvozom"
 
-#: ImportMerge/importmerge.py:114
+#: ImportMerge/importmerge.py:114 ImportMerge/importmerge.py:115
 msgid "Keep original"
 msgstr "Zadrži original"
 
-#: ImportMerge/importmerge.py:115 ImportMerge/importmerge.glade:291
-#: ImportMerge/importmerge.glade:293
+#: ImportMerge/importmerge.py:115 ImportMerge/importmerge.glade:293
+#: ImportMerge/importmerge.py:116
 msgid ""
 "Use buttons below to set the 'Action' for each difference.  No changes will "
 "be made to your tree until you press 'Done' and confirm."
@@ -99,7 +98,7 @@ msgstr ""
 "Koristi donje gumbove i postavi polje „Radnja” za svaku razliku pojedinačno. "
 "Promjene u rodoslovu stupit će na snagu tek nakon pritiskanja gumba „Gotovo”."
 
-#: ImportMerge/importmerge.py:118
+#: ImportMerge/importmerge.py:118 ImportMerge/importmerge.py:119
 msgid ""
 "This item will be deleted from your tree.  Any referenced items were also "
 "marked for deletion."
@@ -107,7 +106,7 @@ msgstr ""
 "Stavke će biti izbrisane iz tvog rodoslova. Sve referencirajuće stavke su "
 "također označene za brisanje."
 
-#: ImportMerge/importmerge.py:120
+#: ImportMerge/importmerge.py:120 ImportMerge/importmerge.py:121
 msgid ""
 "This item will not be changed in your tree.  Any referenced items were also "
 "marked for Ignore."
@@ -115,7 +114,7 @@ msgstr ""
 "Ova stavka se neće mijenjati u tvom rodoslovu. Sve referencirajuće stavke su "
 "također označene sa „Zanemari”."
 
-#: ImportMerge/importmerge.py:122
+#: ImportMerge/importmerge.py:122 ImportMerge/importmerge.py:123
 msgid ""
 "This item will be added to your tree.  Any referenced items were also marked "
 "for adding."
@@ -123,7 +122,7 @@ msgstr ""
 "Ova stavka će biti dodana tvom rodoslovu. Sve referencirajuće stavke su "
 "također označene za dodavanje."
 
-#: ImportMerge/importmerge.py:124
+#: ImportMerge/importmerge.py:124 ImportMerge/importmerge.py:125
 msgid ""
 "This item will be merged, saving data from your tree.  Any referenced items "
 "were also marked for merging or adding."
@@ -131,7 +130,7 @@ msgstr ""
 "Ova će se stavka sjediniti, spremajući podatke iz tvog rodoslova. Sve "
 "referencirajuće stavke također su označene za sjedinjavanje ili dodavanje."
 
-#: ImportMerge/importmerge.py:126
+#: ImportMerge/importmerge.py:126 ImportMerge/importmerge.py:127
 msgid ""
 "This item will be merged, using data from the import.  Any referenced items "
 "were also marked for merging or adding."
@@ -139,7 +138,7 @@ msgstr ""
 "Ova će se stavka sjediniti, koristeći podatke iz uvoza. Sve referencirajuće "
 "stavke također su označene za sjedinjavanje ili dodavanje."
 
-#: ImportMerge/importmerge.py:128
+#: ImportMerge/importmerge.py:128 ImportMerge/importmerge.py:129
 msgid ""
 "The import data will entirely replace the data in your tree.  Any referenced "
 "items were also marked for replacement or removal."
@@ -147,7 +146,7 @@ msgstr ""
 "Uvozni podaci će u potpunosti zamijeniti podatke u tvom rodoslovu. Sve "
 "referencirajuće stavke su također označene za zamjenu ili uklanjanje."
 
-#: ImportMerge/importmerge.py:130
+#: ImportMerge/importmerge.py:130 ImportMerge/importmerge.py:131
 msgid ""
 "This item will not be changed in your tree.  Any referenced items were also "
 "marked to keep."
@@ -155,46 +154,46 @@ msgstr ""
 "Ova stavka se neće mijenjati u tvom rodoslovu. Sve referencirajuće stavke su "
 "također označene za zadržavanje."
 
-#: ImportMerge/importmerge.py:321 ImportMerge/importmerge.py:338
+#: ImportMerge/importmerge.py:338 ImportMerge/importmerge.py:339
 msgid "Import Failure"
 msgstr "Greška prilikom uvoza"
 
-#: ImportMerge/importmerge.py:389 ImportMerge/importmerge.py:406
+#: ImportMerge/importmerge.py:406 ImportMerge/importmerge.py:407
 msgid "Your Tree and import are the same."
 msgstr "Tvoj rodoslov i uvoz su jednaki."
 
-#: ImportMerge/importmerge.py:434 ImportMerge/importmerge.py:443
-#: ImportMerge/importmerge.py:451 ImportMerge/importmerge.py:459
-#: ImportMerge/importmerge.py:460 ImportMerge/importmerge.py:468
-#: ImportMerge/importmerge.py:476
+#: ImportMerge/importmerge.py:451 ImportMerge/importmerge.py:460
+#: ImportMerge/importmerge.py:468 ImportMerge/importmerge.py:476
+#: ImportMerge/importmerge.py:452 ImportMerge/importmerge.py:461
+#: ImportMerge/importmerge.py:469 ImportMerge/importmerge.py:477
 msgid "your tree "
 msgstr "tvoj rodoslov "
 
-#: ImportMerge/importmerge.py:441 ImportMerge/importmerge.py:449
-#: ImportMerge/importmerge.py:457 ImportMerge/importmerge.py:458
-#: ImportMerge/importmerge.py:466 ImportMerge/importmerge.py:474
+#: ImportMerge/importmerge.py:458 ImportMerge/importmerge.py:466
+#: ImportMerge/importmerge.py:474 ImportMerge/importmerge.py:459
+#: ImportMerge/importmerge.py:467 ImportMerge/importmerge.py:475
 msgid "imported "
 msgstr "uvezeno "
 
-#: ImportMerge/importmerge.py:464 ImportMerge/importmerge.py:943
-#: ImportMerge/importmerge.py:964 ImportMerge/importmerge.py:481
-#: ImportMerge/importmerge.py:960 ImportMerge/importmerge.py:981
+#: ImportMerge/importmerge.py:481 ImportMerge/importmerge.py:960
+#: ImportMerge/importmerge.py:981 ImportMerge/importmerge.py:482
+#: ImportMerge/importmerge.py:961 ImportMerge/importmerge.py:982
 msgid "Original"
 msgstr "Original"
 
-#: ImportMerge/importmerge.py:465 ImportMerge/importmerge.py:944
-#: ImportMerge/importmerge.py:965 ImportMerge/importmerge.py:482
-#: ImportMerge/importmerge.py:961 ImportMerge/importmerge.py:982
+#: ImportMerge/importmerge.py:482 ImportMerge/importmerge.py:961
+#: ImportMerge/importmerge.py:982 ImportMerge/importmerge.py:483
+#: ImportMerge/importmerge.py:962 ImportMerge/importmerge.py:983
 msgid "Imported"
 msgstr "Uvezeno"
 
-#: ImportMerge/importmerge.py:467 ImportMerge/importmerge.py:946
-#: ImportMerge/importmerge.py:967 ImportMerge/importmerge.py:484
-#: ImportMerge/importmerge.py:963 ImportMerge/importmerge.py:984
+#: ImportMerge/importmerge.py:484 ImportMerge/importmerge.py:963
+#: ImportMerge/importmerge.py:984 ImportMerge/importmerge.py:485
+#: ImportMerge/importmerge.py:964 ImportMerge/importmerge.py:985
 msgid "Result  "
 msgstr "Rezultat "
 
-#: ImportMerge/importmerge.py:693 ImportMerge/importmerge.py:710
+#: ImportMerge/importmerge.py:710 ImportMerge/importmerge.py:711
 msgid "Import and Merge"
 msgstr "Uvezi i sjedini"
 
@@ -206,19 +205,19 @@ msgstr ""
 "Zvijezdica (*) ukazuje na automatski označenu radnju, a upitnik (?) ukazuje "
 "na konflikt između automatskih oznaka."
 
-#: ImportMerge/importmerge.glade:38 ImportMerge/importmerge.glade:39
+#: ImportMerge/importmerge.glade:39
 msgid "Import file"
 msgstr "Uvezi datoteku"
 
-#: ImportMerge/importmerge.glade:122 ImportMerge/importmerge.glade:124
+#: ImportMerge/importmerge.glade:124
 msgid "Select the difference you wish to examine."
 msgstr "Odaberi raziku koju želiš provjeriti."
 
-#: ImportMerge/importmerge.glade:178 ImportMerge/importmerge.glade:180
+#: ImportMerge/importmerge.glade:180
 msgid "Object Name/Description"
 msgstr "Ime objekta/Opis"
 
-#: ImportMerge/importmerge.glade:225 ImportMerge/importmerge.glade:227
+#: ImportMerge/importmerge.glade:227
 msgid ""
 "Data item details, showing the current treeitem, imported tree item, and "
 "result (when chosen)."
@@ -226,23 +225,23 @@ msgstr ""
 "Detalji stavke, prikazujući trenutačnu stavku, uvezenu stavku i rezultat "
 "(ukoliko je odabrano)."
 
-#: ImportMerge/importmerge.glade:246 ImportMerge/importmerge.glade:248
+#: ImportMerge/importmerge.glade:248
 msgid "Object and item"
 msgstr "Objekt i stavka"
 
-#: ImportMerge/importmerge.glade:336 ImportMerge/importmerge.glade:338
+#: ImportMerge/importmerge.glade:338
 msgid "This button will ignore the difference, no changes to your tree."
 msgstr "Ovaj gumb će zanemariti razlike, bez promjena u tvom rodoslovu."
 
-#: ImportMerge/importmerge.glade:347 ImportMerge/importmerge.glade:349
+#: ImportMerge/importmerge.glade:349
 msgid "Unmark"
 msgstr "Odznači"
 
-#: ImportMerge/importmerge.glade:351 ImportMerge/importmerge.glade:353
+#: ImportMerge/importmerge.glade:353
 msgid "This button will add the imported data as a new object to your tree."
 msgstr "Ovaj gumb će dodati uvezene podatke u tvoj rodoslov kao nove objekte."
 
-#: ImportMerge/importmerge.glade:366 ImportMerge/importmerge.glade:368
+#: ImportMerge/importmerge.glade:368
 msgid ""
 "This button will bring up a dialog allowing you to finalize your changes, or "
 "abandon them."
@@ -250,11 +249,11 @@ msgstr ""
 "Ovaj gumb će otvoriti dijaloški okvir, u kojem tvoje promjene možeš završtit "
 "ili ih se odreći."
 
-#: ImportMerge/importmerge.glade:390 ImportMerge/importmerge.glade:392
+#: ImportMerge/importmerge.glade:392
 msgid "Merge Original"
 msgstr "Sjedini original"
 
-#: ImportMerge/importmerge.glade:394 ImportMerge/importmerge.glade:396
+#: ImportMerge/importmerge.glade:396
 msgid ""
 "This button will merge the imported data into your tree with your tree data "
 "as a base."
@@ -262,15 +261,15 @@ msgstr ""
 "Ovaj gumb će sjediniti uvezene podatke s tvojim rodoslovom, a rodoslovni "
 "podaci se uzimaju kao osnova."
 
-#: ImportMerge/importmerge.glade:409 ImportMerge/importmerge.glade:411
+#: ImportMerge/importmerge.glade:411
 msgid "This button will replace your tree data with the imported data."
 msgstr "Ovaj gumb će zamijeniti podatke u tvom rodoslovu s uvezenim podacima."
 
-#: ImportMerge/importmerge.glade:420 ImportMerge/importmerge.glade:422
+#: ImportMerge/importmerge.glade:422
 msgid "Merge Import"
 msgstr "Sjedini uvoz"
 
-#: ImportMerge/importmerge.glade:424 ImportMerge/importmerge.glade:426
+#: ImportMerge/importmerge.glade:426
 msgid ""
 "This button will merge the imported data into your tree with the imported "
 "data as a base."
@@ -278,11 +277,11 @@ msgstr ""
 "Ovaj gumb će sjediniti uvezene podatke s tvojim rodoslovom, a uvozni podaci "
 "se uzimaju kao osnova."
 
-#: ImportMerge/importmerge.glade:435 ImportMerge/importmerge.glade:437
+#: ImportMerge/importmerge.glade:437
 msgid "Edit Import"
 msgstr "Uredi uvoz"
 
-#: ImportMerge/importmerge.glade:439 ImportMerge/importmerge.glade:441
+#: ImportMerge/importmerge.glade:441
 msgid ""
 "This button will edit the imported data.  The data will still need to be "
 "merged, added or replaced."
@@ -290,14 +289,14 @@ msgstr ""
 "Ovaj gumb će urediti uvezene podatke. Podaci će se svejedno morati "
 "sjediniti, dodati ili zamijeniti."
 
-#: ImportMerge/importmerge.glade:462 ImportMerge/importmerge.glade:464
+#: ImportMerge/importmerge.glade:464
 msgid "Show more details"
 msgstr "Prikaži više detalja"
 
-#: ImportMerge/importmerge.glade:479 ImportMerge/importmerge.glade:481
+#: ImportMerge/importmerge.glade:481
 msgid "Automark Families"
 msgstr "Automatski označi obitelji"
 
-#: ImportMerge/importmerge.glade:496 ImportMerge/importmerge.glade:498
+#: ImportMerge/importmerge.glade:498
 msgid "Automark Parent Families"
 msgstr "Automatski označi obitelji roditelja"

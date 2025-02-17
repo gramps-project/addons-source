@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-04 16:31+0300\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -31,49 +31,41 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:79
 #: TimelinePedigreeView/TimelinePedigreeView.py:82
 #: HtreePedigreeView/HtreePedigreeView.py:93
 msgid "short for born|b."
 msgstr "р."
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:80
 #: TimelinePedigreeView/TimelinePedigreeView.py:83
 #: HtreePedigreeView/HtreePedigreeView.py:94
 msgid "short for died|d."
 msgstr "у."
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:81
 #: TimelinePedigreeView/TimelinePedigreeView.py:84
 #: HtreePedigreeView/HtreePedigreeView.py:95
 msgid "short for baptized|bap."
 msgstr "крещ."
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:82
 #: TimelinePedigreeView/TimelinePedigreeView.py:85
 #: HtreePedigreeView/HtreePedigreeView.py:96
 msgid "short for christened|chr."
 msgstr "прин. хр."
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:83
 #: TimelinePedigreeView/TimelinePedigreeView.py:86
 #: HtreePedigreeView/HtreePedigreeView.py:97
 msgid "short for buried|bur."
 msgstr "похор."
 
-#: TimelinePedigreeView/TimelinePedigreeView.py:84
 #: TimelinePedigreeView/TimelinePedigreeView.py:87
 #: HtreePedigreeView/HtreePedigreeView.py:98
 msgid "short for cremated|crem."
 msgstr "крем."
 
-#: HtreePedigreeView/HtreePedigreeView.gpr.py:45
 #: HtreePedigreeView/HtreePedigreeView.gpr.py:34
 #: HtreePedigreeView/HtreePedigreeView.gpr.py:47
 msgid "H-Tree Pedigree"
 msgstr "Древо H-Tree"
 
-#: HtreePedigreeView/HtreePedigreeView.gpr.py:47
 #: HtreePedigreeView/HtreePedigreeView.gpr.py:37
 msgid ""
 "The view shows a space-efficient pedigree with ancestors of the selected "
@@ -81,12 +73,10 @@ msgid ""
 msgstr ""
 "Показывае древо предков с соответствующими отступами для выбранного лица"
 
-#: HtreePedigreeView/HtreePedigreeView.py:531
 #: HtreePedigreeView/HtreePedigreeView.py:543
 msgid "H-tree Pedigree View"
 msgstr "Вид H-Tree"
 
-#: HtreePedigreeView/HtreePedigreeView.py:1638
 #: HtreePedigreeView/HtreePedigreeView.py:1692
 msgid "About H-Tree"
 msgstr "О дополнении"

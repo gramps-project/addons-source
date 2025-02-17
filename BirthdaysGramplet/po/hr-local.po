@@ -3,13 +3,13 @@
 # Copyright (C) Gramps project
 # Milo Ivir <mivir@milotype.de>, 2019, 2020.
 # Stephen Adams, Gramps Reddit, 2018.
-#
+# Milo Ivir <mail@milotype.de>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2025-02-15 16:17+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-17 00:14+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -21,22 +21,19 @@ msgstr ""
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Weblate 5.10\n"
 
-#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:24
-#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:32
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:25
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:33
 msgid "Birthdays"
 msgstr "Rođendani"
 
-#: BirthdaysGramplet/BirthdaysGramplet.gpr.py:25
 #: BirthdaysGramplet/BirthdaysGramplet.gpr.py:26
 msgid "a gramplet that displays the birthdays of the living people"
 msgstr "gramplet prikazuje rođendane živih osoba"
 
 #: BirthdaysGramplet/BirthdaysGramplet.py:45
 msgid "Ignore birthdays with tag"
-msgstr "Zanemari rođendane s etiketom"
+msgstr "Zanemari rođendane s oznakom"
 
 #: BirthdaysGramplet/BirthdaysGramplet.py:46
 msgid "Only show birthdays with tag"
-msgstr "Prikaži samo rođendane s etiketom"
+msgstr "Prikaži samo rođendane s oznakom"

@@ -8,7 +8,7 @@
 # Sebastian Vöcking <voeck@web.de>, 2005.
 # Martin Hawlisch <martin@hawlisch.de>, 2005, 2006.
 # Alex Roitman <shura@gramps-project.org>, 2006.
-# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
+# Mirko Leonhäuser <mirko@leonhaeuser.de>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2025.
 # Alois Pöttker <alois.poettker@gmx.de>, 2017.
 # Allan Nordhøy <epost@anotheragency.no>, 2021.
 # R. B. <weblate@macdefender.org>, 2021.
@@ -21,8 +21,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-02 22:39+0200\n"
-"PO-Revision-Date: 2025-02-15 16:17+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-17 00:14+0000\n"
 "Last-Translator: Mirko Leonhäuser <mirko@leonhaeuser.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/gramps-project/"
 "addons/de/>\n"
@@ -33,17 +33,46 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.10\n"
 
-#: DynamicWeb/dynamicweb.py:2577 DynamicWeb/dynamicweb.py:3114
-#: SourceIndex/birth.py:126 SourceIndex/census.py:82 SourceIndex/death.py:87
-#: SourceIndex/index.py:92 SourceIndex/marriage.py:87 SourceIndex/witness.py:64
+#: FilterRules/ageatdeath.py:71 SourceIndex/witness.glade:107
+#: SourceIndex/birth.glade:544 SourceIndex/birth.glade:762
+#: SourceIndex/death.glade:521 SourceIndex/death.glade:669
+#: SourceIndex/death.glade:939 SourceIndex/census.glade:286
+#: SourceIndex/marriage.glade:467 SourceIndex/marriage.glade:789
+#: SourceIndex/marriage.glade:808 SourceIndex/marriage.glade:827
+#: SourceIndex/marriage.glade:1562 SourceIndex/marriage.glade:1621
+msgid "Age:"
+msgstr "Alter:"
+
+#: DynamicWeb/dynamicweb.py:3114 SourceIndex/marriage.py:87
+#: SourceIndex/census.py:82 SourceIndex/index.py:92 SourceIndex/death.py:87
+#: SourceIndex/witness.py:64 SourceIndex/birth.py:126
 msgid "Sources Index"
 msgstr "Quellen Index"
 
-#: Form/editform.py:191 Form/editform.py:225 SourceIndex/birth.glade:113
-#: SourceIndex/census.glade:873 SourceIndex/death.glade:182
-#: SourceIndex/marriage.glade:1263
+#: Form/editform.py:225 SourceIndex/birth.glade:113 SourceIndex/death.glade:182
+#: SourceIndex/census.glade:873 SourceIndex/marriage.glade:1263
 msgid "Reference:"
 msgstr "Referenz:"
+
+#: SourceIndex/SourceIndex.gpr.py:24
+msgid "BirthIndex"
+msgstr "Geburtsindex"
+
+#: SourceIndex/SourceIndex.gpr.py:40
+msgid "MarriageIndex"
+msgstr "Hochzeitsindex"
+
+#: SourceIndex/SourceIndex.gpr.py:56
+msgid "DeathIndex"
+msgstr "Sterbeindex"
+
+#: SourceIndex/SourceIndex.gpr.py:72
+msgid "CensusIndex"
+msgstr "Volkszählungindex"
+
+#: SourceIndex/SourceIndex.gpr.py:104
+msgid "SourceIndex"
+msgstr "Quellenindex"
 
 #: SourceIndex/index.py:407
 msgid "*** Error: Must install either ElementTree or lxml."
@@ -52,26 +81,6 @@ msgstr "*** Fehler: Es muss entweder ElementTree oder lxml installiert sein."
 #: SourceIndex/index.py:409
 msgid "must install either ElementTree or lxml"
 msgstr "du musst ElemtTree oder lxml installieren"
-
-#: SourceIndex/SourceIndex.gpr.py:23 SourceIndex/SourceIndex.gpr.py:24
-msgid "BirthIndex"
-msgstr "Geburtsindex"
-
-#: SourceIndex/SourceIndex.gpr.py:38 SourceIndex/SourceIndex.gpr.py:40
-msgid "MarriageIndex"
-msgstr "Hochzeitsindex"
-
-#: SourceIndex/SourceIndex.gpr.py:53 SourceIndex/SourceIndex.gpr.py:56
-msgid "DeathIndex"
-msgstr "Sterbeindex"
-
-#: SourceIndex/SourceIndex.gpr.py:68 SourceIndex/SourceIndex.gpr.py:72
-msgid "CensusIndex"
-msgstr "Volkszählungindex"
-
-#: SourceIndex/SourceIndex.gpr.py:98 SourceIndex/SourceIndex.gpr.py:104
-msgid "SourceIndex"
-msgstr "Quellenindex"
 
 #: SourceIndex/birth.glade:7 SourceIndex/index.glade:585
 msgid "birth"
@@ -164,16 +173,6 @@ msgid ""
 msgstr ""
 "Tot\n"
 "Datum:"
-
-#: SourceIndex/birth.glade:544 SourceIndex/birth.glade:762
-#: SourceIndex/census.glade:286 SourceIndex/death.glade:521
-#: SourceIndex/death.glade:669 SourceIndex/death.glade:939
-#: SourceIndex/marriage.glade:467 SourceIndex/marriage.glade:789
-#: SourceIndex/marriage.glade:808 SourceIndex/marriage.glade:827
-#: SourceIndex/marriage.glade:1562 SourceIndex/marriage.glade:1621
-#: SourceIndex/witness.glade:107 FilterRules/ageatdeath.py:71
-msgid "Age:"
-msgstr "Alter:"
 
 #: SourceIndex/birth.glade:578 SourceIndex/birth.glade:677
 #: SourceIndex/census.glade:543 SourceIndex/death.glade:722

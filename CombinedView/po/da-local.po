@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-08 17:11-0500\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2024-10-10 10:45+0200\n"
 "Last-Translator: Kaj Mikkelsen <kmi@vgdata.dk>\n"
 "Language-Team: \n"
@@ -30,12 +30,11 @@ msgstr "%(abbrev)s %(date)s i %(place)s"
 msgid "%(abbrev)s %(date)s%(place)s"
 msgstr "%(abbrev)s %(date)s%(place)s"
 
-#: CombinedView/combinedview.gpr.py:23 CombinedView/combinedview.py:87
-#: CombinedView/combinedview.gpr.py:24
+#: CombinedView/combinedview.gpr.py:24 CombinedView/combinedview.py:87
 msgid "Combined"
 msgstr "Kombineret"
 
-#: CombinedView/combinedview.gpr.py:24 CombinedView/combinedview.gpr.py:25
+#: CombinedView/combinedview.gpr.py:25
 msgid "A view showing relationships and events for a person"
 msgstr "En visning af slægtsforhold og hændelser for en person"
 
@@ -55,7 +54,7 @@ msgstr "Lodrette Detaljer"
 msgid "Order"
 msgstr "Rækkefølge"
 
-#: CombinedView/navigationview.py:341 CombinedView/navigationview.py:346
+#: CombinedView/navigationview.py:346
 msgid ""
 "You need to set a 'default person' to go to. Select the People View, select "
 "the person you want as 'Home Person', then confirm your choice via the menu "
@@ -65,31 +64,29 @@ msgstr ""
 "vælg den person du vil benytte som 'Hovedperson' via menuen Rediger -> vælg "
 "Hovedperson."
 
-#: CombinedView/personpage.py:591 CombinedView/personpage.py:597
+#: CombinedView/personpage.py:597
 #, python-format
 msgid "%(event_type)s: %(date)s in %(place)s"
 msgstr "%(event_type)s: %(date)s in %(place)s"
 
-#: CombinedView/personpage.py:595 CombinedView/personpage.py:601
+#: CombinedView/personpage.py:601
 #, python-format
 msgid "%(event_type)s: %(date)s"
 msgstr "%(event_type)s: %(date)s"
 
-#: CombinedView/personpage.py:598 CombinedView/personpage.py:604
+#: CombinedView/personpage.py:604
 #, python-format
 msgid "%(event_type)s: %(place)s"
 msgstr "%(event_type)s: %(place)s"
 
-#: CombinedView/personpage.py:678 CombinedView/personpage.py:891
 #: CombinedView/personpage.py:684 CombinedView/personpage.py:897
 msgid "Click to make this event active"
 msgstr "Klik for at gøre denne hændelse aktiv"
 
-#: CombinedView/personpage.py:737 CombinedView/personpage.py:743
+#: CombinedView/personpage.py:743
 msgid "Click to visit this link"
 msgstr ""
 
-#: CombinedView/personpage.py:959 CombinedView/personpage.py:966
 #: CombinedView/personpage.py:965 CombinedView/personpage.py:972
 msgid ": "
 msgstr ""

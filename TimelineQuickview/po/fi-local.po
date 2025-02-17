@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-02 02:13+0300\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2019-12-10 13:09+0200\n"
 "Last-Translator: Matti Niemelä <niememat@gmail.com>\n"
 "Language-Team: niememat@gmail.com\n"
@@ -33,63 +33,61 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.0.6\n"
 
-#: TimelineQuickview.gpr.py:10 TimelineQuickview/TimelineQuickview.gpr.py:11
+#: Query/QueryQuickview.py:426 TimelineQuickview/TimelineQuickview.py:186
+msgid "Today"
+msgstr "Tänään"
+
+#: TimelineQuickview/TimelineQuickview.gpr.py:11
 msgid "Display a person's events on a timeline"
 msgstr "Näytä henkilön tapahtumat aikajanalla"
 
-#: TimelineQuickview.py:48 TimelineQuickview/TimelineQuickview.py:48
+#: TimelineQuickview/TimelineQuickview.py:48
 msgid "Inlaw Parents"
 msgstr "Appivanhemmat"
 
-#: TimelineQuickview.py:51 TimelineQuickview/TimelineQuickview.py:51
+#: TimelineQuickview/TimelineQuickview.py:51
 msgid "Grandparents"
 msgstr "Isovanhemmat"
 
-#: TimelineQuickview.py:53 TimelineQuickview/TimelineQuickview.py:53
+#: TimelineQuickview/TimelineQuickview.py:53
 msgid "Inlaw Grandparents"
 msgstr "Puolison vanhemmat"
 
-#: TimelineQuickview.py:56 TimelineQuickview/TimelineQuickview.py:56
+#: TimelineQuickview/TimelineQuickview.py:56
 msgid "Great grandparents"
 msgstr "Isoisovanhemmat"
 
-#: TimelineQuickview.py:58 TimelineQuickview/TimelineQuickview.py:58
+#: TimelineQuickview/TimelineQuickview.py:58
 msgid "Inlaw Great grandparents"
 msgstr "Puolison isoisovanhemmat"
 
-#: TimelineQuickview.py:61 TimelineQuickview/TimelineQuickview.py:61
+#: TimelineQuickview/TimelineQuickview.py:61
 msgid "Great, "
 msgstr "Iso, "
 
-#: TimelineQuickview.py:61 TimelineQuickview.py:63
 #: TimelineQuickview/TimelineQuickview.py:61
 #: TimelineQuickview/TimelineQuickview.py:63
 msgid "great, "
 msgstr "iso, "
 
-#: TimelineQuickview.py:61 TimelineQuickview.py:63
 #: TimelineQuickview/TimelineQuickview.py:61
 #: TimelineQuickview/TimelineQuickview.py:63
 msgid "great grandparents"
 msgstr "iso isovanhemmat"
 
-#: TimelineQuickview.py:63 TimelineQuickview/TimelineQuickview.py:63
+#: TimelineQuickview/TimelineQuickview.py:63
 msgid "Inlaw Great, "
 msgstr "Puolison iso, "
 
-#: TimelineQuickview.py:102 TimelineQuickview/TimelineQuickview.py:102
+#: TimelineQuickview/TimelineQuickview.py:102
 msgid "Partner's spouse"
 msgstr "Kumppanin puoliso"
 
-#: TimelineQuickview.py:156 TimelineQuickview/TimelineQuickview.py:156
+#: TimelineQuickview/TimelineQuickview.py:156
 #, python-format
 msgid "Timeline for %s"
 msgstr "Aikajana henkilölle %s"
 
-#: TimelineQuickview.py:163 TimelineQuickview/TimelineQuickview.py:163
+#: TimelineQuickview/TimelineQuickview.py:163
 msgid "People involved"
 msgstr "Mukana olevat henkilöt"
-
-#: TimelineQuickview.py:186 Query/QueryQuickview.py:426
-msgid "Today"
-msgstr "Tänään"

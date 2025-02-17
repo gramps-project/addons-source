@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-17 18:14+0100\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -38,12 +38,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: BirthOrder/birthorder.gpr.py:9 BirthOrder/birthorder.py:55
 #: BirthOrder/birthorder.gpr.py:10 BirthOrder/birthorder.py:62
 msgid "Sort Children in Birth order"
 msgstr "Trier les enfants dans l'ordre des naissances"
 
-#: BirthOrder/birthorder.gpr.py:10 BirthOrder/birthorder.gpr.py:12
+#: BirthOrder/birthorder.gpr.py:12
 msgid ""
 "Looks through families, looking for children that are not in birth order.  "
 "User can accept individual suggestions to correct, edit the birth order "
@@ -56,39 +55,39 @@ msgstr ""
 "familles qui ont tous les enfants avec des dates de naissance appropriées ou "
 "accepter tout."
 
-#: BirthOrder/birthorder.py:124 BirthOrder/birthorder.py:161
+#: BirthOrder/birthorder.py:161
 msgid "No families need sorting"
 msgstr "Aucune famille ne doit être triée"
 
-#: BirthOrder/birthorder.py:125 BirthOrder/birthorder.py:162
+#: BirthOrder/birthorder.py:162
 msgid "No children were out of birth order."
 msgstr "Les enfants étaient tous en ordre de naissance."
 
-#: BirthOrder/birthorder.py:167 BirthOrder/birthorder.py:204
+#: BirthOrder/birthorder.py:204
 msgid "Edit Families"
 msgstr "Modifier les familles"
 
-#: BirthOrder/birthorder.py:238 BirthOrder/birthorder.py:275
+#: BirthOrder/birthorder.py:275
 msgid "Looking for children birth order"
 msgstr "À la recherche d'un ordre de naissance pour les enfants"
 
-#: BirthOrder/birthorder.glade.h:1 BirthOrder/birthorder.glade:56
+#: BirthOrder/birthorder.glade:56
 msgid "Select the family you wish to examine."
 msgstr "Sélectionnez la famille que vous souhaitez examiner."
 
-#: BirthOrder/birthorder.glade.h:6 BirthOrder/birthorder.glade:155
+#: BirthOrder/birthorder.glade:155
 msgid "Accept All"
 msgstr "Accepter tout"
 
-#: BirthOrder/birthorder.glade.h:7 BirthOrder/birthorder.glade:159
+#: BirthOrder/birthorder.glade:159
 msgid "This button will sort all of the families listed."
 msgstr "Ce bouton va trier toutes les familles répertoriées."
 
-#: BirthOrder/birthorder.glade.h:8 BirthOrder/birthorder.glade:170
+#: BirthOrder/birthorder.glade:170
 msgid "Accept All *"
 msgstr "Accepter tout *"
 
-#: BirthOrder/birthorder.glade.h:9 BirthOrder/birthorder.glade:174
+#: BirthOrder/birthorder.glade:174
 msgid ""
 "This button will sort all the families with '*'.  In these families, all the "
 "children have valid dates, so the sort is unambiguous."
@@ -97,11 +96,11 @@ msgstr ""
 "enfants ont des dates valides, de sorte que l'ordre de tri est pleinement "
 "déterminé."
 
-#: BirthOrder/birthorder.glade.h:10 BirthOrder/birthorder.glade:185
+#: BirthOrder/birthorder.glade:185
 msgid "Accept"
 msgstr "Acceptez"
 
-#: BirthOrder/birthorder.glade.h:11 BirthOrder/birthorder.glade:189
+#: BirthOrder/birthorder.glade:189
 msgid ""
 "This button will accept only the family selected and save it as shown in "
 "lower right pane."
@@ -109,23 +108,23 @@ msgstr ""
 "Ce bouton n'acceptera que la famille sélectionnée et enregistrez-la comme "
 "indiqué dans le volet inférieur droit."
 
-#: BirthOrder/birthorder.glade.h:12 BirthOrder/birthorder.glade:232
+#: BirthOrder/birthorder.glade:232
 msgid "Done"
 msgstr "Conclure"
 
-#: BirthOrder/birthorder.glade.h:13 BirthOrder/birthorder.glade:236
+#: BirthOrder/birthorder.glade:236
 msgid "This button will exit, with remaining families unchanged."
 msgstr "Ce bouton quittera l'outil, les familles restantes restant inchangées."
 
-#: BirthOrder/birthorder.glade.h:14 BirthOrder/birthorder.glade:256
+#: BirthOrder/birthorder.glade:256
 msgid "Current sort"
 msgstr "Ordre de tri actuel"
 
-#: BirthOrder/birthorder.glade.h:15 BirthOrder/birthorder.glade:267
+#: BirthOrder/birthorder.glade:267
 msgid "Proposed sort"
 msgstr "Ordre de tri proposé"
 
-#: BirthOrder/birthorder.glade.h:16 BirthOrder/birthorder.glade:333
+#: BirthOrder/birthorder.glade:333
 msgid ""
 "When satisfied with the sort, use 'Accept' button below to accept the "
 "changes.  If you wish to adjust the order, select the child you wish to "

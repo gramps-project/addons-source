@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gramps50\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-04 16:31+0300\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2018-12-04 16:36+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language-Team: Russian\n"
@@ -31,54 +31,43 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: PlaceCleanup/placecleanup.py:267 PlaceCleanup/placecleanup.glade.h:54
-#: PlaceCleanup/placecleanup.glade:895
-#: EventDescriptionEditor/EventDescriptionEditor.py:125
+#: PlaceCleanup/placecleanup.py:267 PlaceCleanup/placecleanup.glade:895
+#: EventDescriptionEditor/EventDescriptionEditor.py:139
 msgid "Find"
 msgstr "Найти"
 
-#: EventDescriptionEditor/EventDescriptionEditor.gpr.py:24
-#: EventDescriptionEditor/EventDescriptionEditor.py:50
-#: EventDescriptionEditor/EventDescriptionEditor.py:61
 #: EventDescriptionEditor/EventDescriptionEditor.gpr.py:25
 #: EventDescriptionEditor/EventDescriptionEditor.py:52
 #: EventDescriptionEditor/EventDescriptionEditor.py:64
 msgid "Event Description Editor"
 msgstr "Редактор описания событий"
 
-#: EventDescriptionEditor/EventDescriptionEditor.gpr.py:25
 #: EventDescriptionEditor/EventDescriptionEditor.gpr.py:27
 msgid ""
 "A tool to find and replace a string in event description of multiple events."
 msgstr "Иструмент для поиска и замены строк в описании нескольких событий."
 
-#: EventDescriptionEditor/EventDescriptionEditor.py:72
 #: EventDescriptionEditor/EventDescriptionEditor.py:75
 msgid "Search substring..."
 msgstr "Поиск подстроки"
 
-#: EventDescriptionEditor/EventDescriptionEditor.py:91
 #: EventDescriptionEditor/EventDescriptionEditor.py:105
 msgid "INFO"
 msgstr "ИНФОРМАЦИЯ"
 
-#: EventDescriptionEditor/EventDescriptionEditor.py:92
 #: EventDescriptionEditor/EventDescriptionEditor.py:106
 #, python-format
 msgid "%s event descriptions of %s events were changed."
 msgstr "Было изменено %s описаний событий в %s событиях."
 
-#: EventDescriptionEditor/EventDescriptionEditor.py:128
 #: EventDescriptionEditor/EventDescriptionEditor.py:142
 msgid "Replace"
 msgstr "Заменить"
 
-#: EventDescriptionEditor/EventDescriptionEditor.py:131
 #: EventDescriptionEditor/EventDescriptionEditor.py:145
 msgid "Replace substring only"
 msgstr "Заменить только подстроку"
 
-#: EventDescriptionEditor/EventDescriptionEditor.py:132
 #: EventDescriptionEditor/EventDescriptionEditor.py:146
 msgid ""
 "If True only the substring will be replaced, otherwise the whole description "
@@ -86,3 +75,13 @@ msgid ""
 msgstr ""
 "Если установлено, то будет заменена только подстрока, иначе будет удалено "
 "всё описание и заменено новым."
+
+#: EventDescriptionEditor/EventDescriptionEditor.py:151
+#, fuzzy
+#| msgid "Use regex"
+msgid "Allow regex"
+msgstr "Использовать регулярное выражение"
+
+#: EventDescriptionEditor/EventDescriptionEditor.py:152
+msgid "Allow regular expressions."
+msgstr ""

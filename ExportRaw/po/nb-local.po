@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-08 16:37+0100\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2025-02-15 10:09+0000\n"
 "Last-Translator: Harald Herreros <h.herreros@proton.me>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/gramps-"
@@ -25,14 +25,14 @@ msgstr ""
 "X-Generator: Weblate 5.10\n"
 "Generated-By: pygettext.py 1.4\n"
 
-#: ExportRaw/ExportRaw.gpr.py:3 ExportRaw/ExportRaw.gpr.py:4
+#: ExportRaw/ExportRaw.gpr.py:4
 msgid "Raw Export"
 msgstr ""
 
-#: ExportRaw/ExportRaw.gpr.py:4 ExportRaw/ExportRaw.gpr.py:5
+#: ExportRaw/ExportRaw.gpr.py:5
 msgid "This is a raw python object dump"
 msgstr ""
 
-#: ExportRaw/ExportRaw.gpr.py:10 ExportRaw/ExportRaw.gpr.py:13
+#: ExportRaw/ExportRaw.gpr.py:13
 msgid "Raw options"
 msgstr ""

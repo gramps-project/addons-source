@@ -9,14 +9,15 @@
 # Pär Ekholm <par.ekholm50@gmail.com>, 2016, 2018.
 # Pär Ekholm <par.ekholm@pekholm.se>, 2018, 2019.
 # Peter Landgren <peter@test>, 2010.
-#
+# Pär Ekholm <github1@m.pekholm.org>, 2025.
+# Milan <mobrcian@hotmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-08 17:11-0500\n"
-"PO-Revision-Date: 2025-02-09 11:16+0000\n"
-"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-16 10:55+0000\n"
+"Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
 "Language: sv\n"
@@ -24,24 +25,23 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.10\n"
 
-#: CombinedView/basepage.py:492 CombinedView/basepage.py:493
+#: CombinedView/basepage.py:493
 #, python-format
 msgid "%(abbrev)s %(date)s in %(place)s"
 msgstr "%(abbrev)s %(date)s i %(place)s"
 
-#: CombinedView/basepage.py:494 CombinedView/basepage.py:495
+#: CombinedView/basepage.py:495
 #, python-format
 msgid "%(abbrev)s %(date)s%(place)s"
 msgstr "%(abbrev)s %(date)s%(place)s"
 
-#: CombinedView/combinedview.gpr.py:23 CombinedView/combinedview.py:87
-#: CombinedView/combinedview.gpr.py:24
+#: CombinedView/combinedview.gpr.py:24 CombinedView/combinedview.py:87
 msgid "Combined"
 msgstr "Kombinerad"
 
-#: CombinedView/combinedview.gpr.py:24 CombinedView/combinedview.gpr.py:25
+#: CombinedView/combinedview.gpr.py:25
 msgid "A view showing relationships and events for a person"
 msgstr "En vy som visar relationer och händelser för en person"
 
@@ -61,7 +61,7 @@ msgstr "Vertikala detaljer"
 msgid "Order"
 msgstr "Ordning"
 
-#: CombinedView/navigationview.py:341 CombinedView/navigationview.py:346
+#: CombinedView/navigationview.py:346
 msgid ""
 "You need to set a 'default person' to go to. Select the People View, select "
 "the person you want as 'Home Person', then confirm your choice via the menu "
@@ -71,31 +71,29 @@ msgstr ""
 "den person du vill ha som 'hemperson'. Bekräfta ditt val via menyn Redigera "
 "-> Välj Hemperson."
 
-#: CombinedView/personpage.py:591 CombinedView/personpage.py:597
+#: CombinedView/personpage.py:597
 #, python-format
 msgid "%(event_type)s: %(date)s in %(place)s"
 msgstr "%(event_type)s: %(date)s i %(place)s"
 
-#: CombinedView/personpage.py:595 CombinedView/personpage.py:601
+#: CombinedView/personpage.py:601
 #, python-format
 msgid "%(event_type)s: %(date)s"
 msgstr "%(event_type)s: %(date)s"
 
-#: CombinedView/personpage.py:598 CombinedView/personpage.py:604
+#: CombinedView/personpage.py:604
 #, python-format
 msgid "%(event_type)s: %(place)s"
 msgstr "%(event_type)s: %(place)s"
 
-#: CombinedView/personpage.py:678 CombinedView/personpage.py:891
 #: CombinedView/personpage.py:684 CombinedView/personpage.py:897
 msgid "Click to make this event active"
 msgstr "Klicka för att göra händelsen aktiv"
 
-#: CombinedView/personpage.py:737 CombinedView/personpage.py:743
+#: CombinedView/personpage.py:743
 msgid "Click to visit this link"
 msgstr "Klicka för att besöka denna länk"
 
-#: CombinedView/personpage.py:959 CombinedView/personpage.py:966
 #: CombinedView/personpage.py:965 CombinedView/personpage.py:972
 msgid ": "
 msgstr ": "

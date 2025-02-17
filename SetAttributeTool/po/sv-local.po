@@ -9,14 +9,15 @@
 # Pär Ekholm <par.ekholm50@gmail.com>, 2016, 2018.
 # Pär Ekholm <par.ekholm@pekholm.se>, 2018, 2019.
 # Peter Landgren <peter@test>, 2010.
-#
+# Pär Ekholm <github1@m.pekholm.org>, 2025.
+# Milan <mobrcian@hotmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-08 17:11-0500\n"
-"PO-Revision-Date: 2025-02-09 22:37+0000\n"
-"Last-Translator: Pär Ekholm <github1@m.pekholm.org>\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-16 10:55+0000\n"
+"Last-Translator: Milan <mobrcian@hotmail.com>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/gramps-project/"
 "addons/sv/>\n"
 "Language: sv\n"
@@ -24,58 +25,52 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.10\n"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:75
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:83
 #: SetAttributeTool/SetAttributeTool.py:71
 msgid "Select filter to restrict people"
 msgstr "Välj ett filter, som begränsar personurvalet"
 
-#: CalculateEstimatedDates/CalculateEstimatedDates.py:229
 #: CalculateEstimatedDates/CalculateEstimatedDates.py:237
 #: SetAttributeTool/SetAttributeTool.py:151
 #: SetAttributeTool/SetAttributeTool.py:193
 msgid "Processing...\n"
 msgstr "Arbetar...\n"
 
-#: AttachSourceTool/AttachSourceTool.py:194
 #: AttachSourceTool/AttachSourceTool.py:197
 #: SetAttributeTool/SetAttributeTool.py:226
 msgid "Done!\n"
 msgstr "Klart!\n"
 
-#: SetAttributeTool/SetAttributeTool.gpr.py:25
-#: SetAttributeTool/SetAttributeTool.py:119
-#: SetAttributeTool/SetAttributeTool.py:179
-#: SetAttributeTool/SetAttributeTool.py:196
 #: SetAttributeTool/SetAttributeTool.gpr.py:26
 #: SetAttributeTool/SetAttributeTool.py:122
 #: SetAttributeTool/SetAttributeTool.py:150
 msgid "Set Attribute"
 msgstr "Sätt attribut"
 
-#: SetAttributeTool/SetAttributeTool.gpr.py:26
 #: SetAttributeTool/SetAttributeTool.gpr.py:27
 msgid "Set an attribute to a given value."
 msgstr "Sätt ett attribut till ett givet värde."
 
-#: SetAttributeTool/SetAttributeTool.py:85
 #: SetAttributeTool/SetAttributeTool.py:83
 msgid "Attribute type to add or edit"
 msgstr "Attributtyp add lägga till eller redigera"
 
-#: SetAttributeTool/SetAttributeTool.py:86
 #: SetAttributeTool/SetAttributeTool.py:84
 msgid "Attribute value to add or edit"
 msgstr "Attributvärde add lägga till eller redigera"
 
-#: SetAttributeTool/SetAttributeTool.py:143
+#: SetAttributeTool/SetAttributeTool.py:92
+#, fuzzy
+#| msgid "Set an attribute to a given value."
+msgid "Remove attribute type and value set"
+msgstr "Sätt ett attribut till ett givet värde."
+
 #: SetAttributeTool/SetAttributeTool.py:152
 msgid "Setting attributes..."
 msgstr "Sätter attribut..."
 
-#: SetAttributeTool/SetAttributeTool.py:150
 #: SetAttributeTool/SetAttributeTool.py:156
 #, python-format
 msgid ""
@@ -85,12 +80,35 @@ msgstr ""
 "Sätter '%s'- attribut till '%s'...\n"
 "\n"
 
-#: SetAttributeTool/SetAttributeTool.py:182
 #: SetAttributeTool/SetAttributeTool.py:188
 #, python-format
 msgid ""
 "\n"
 "Set %d '%s' attributes to '%s'\n"
+msgstr ""
+"\n"
+"Satte %d '%s' attribut till '%s'\n"
+
+#: SetAttributeTool/SetAttributeTool.py:191
+#, fuzzy
+#| msgid "Set Attribute"
+msgid "Remove Attribute"
+msgstr "Sätt attribut"
+
+#: SetAttributeTool/SetAttributeTool.py:194
+#, fuzzy
+#| msgid "Setting attributes..."
+msgid "Removing attributes..."
+msgstr "Sätter attribut..."
+
+#: SetAttributeTool/SetAttributeTool.py:221
+#, fuzzy, python-format
+#| msgid ""
+#| "\n"
+#| "Set %d '%s' attributes to '%s'\n"
+msgid ""
+"\n"
+"Removing %d '%s' attributes to '%s'\n"
 msgstr ""
 "\n"
 "Satte %d '%s' attribut till '%s'\n"

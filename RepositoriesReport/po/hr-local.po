@@ -3,13 +3,13 @@
 # Copyright (C) Gramps project
 # Milo Ivir <mivir@milotype.de>, 2019, 2020.
 # Stephen Adams, Gramps Reddit, 2018.
-#
+# Milo Ivir <mail@milotype.de>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gramps 5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 09:28-0600\n"
-"PO-Revision-Date: 2025-02-15 16:17+0000\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
+"PO-Revision-Date: 2025-02-17 00:14+0000\n"
 "Last-Translator: Milo Ivir <mail@milotype.de>\n"
 "Language-Team: Croatian <https://hosted.weblate.org/projects/gramps-project/"
 "addons/hr/>\n"
@@ -21,17 +21,15 @@ msgstr ""
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Weblate 5.10\n"
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:488
 #: SourcesCitationsReport/SourcesCitationsReport.py:480
-#: RepositoriesReport/RepositoriesReport.py:175
 #: RepositoriesReport/RepositoriesReportAlt.py:504
+#: RepositoriesReport/RepositoriesReport.py:175
 msgid "The style used for the title of the report."
 msgstr "Stil korišten za naslov izvještaja."
 
-#: SourcesCitationsReport//SourcesCitationsReport.py:599
 #: SourcesCitationsReport/SourcesCitationsReport.py:591
-#: RepositoriesReport/RepositoriesReport.py:203
 #: RepositoriesReport/RepositoriesReportAlt.py:533
+#: RepositoriesReport/RepositoriesReport.py:203
 msgid "The style used for each section."
 msgstr "Stil korišten za odlomke."
 
@@ -40,27 +38,22 @@ msgstr "Stil korišten za odlomke."
 msgid "Include private records"
 msgstr "Uključi privatne zapise"
 
-#: RepositoriesReport/RepositoriesReport.gpr.py:25
 #: RepositoriesReport/RepositoriesReport.gpr.py:26
 msgid "Repositories Report Options"
 msgstr "Opcije za izvještaj o spremištima"
 
-#: RepositoriesReport/RepositoriesReport.gpr.py:26
-#: RepositoriesReport/RepositoriesReport.gpr.py:43
 #: RepositoriesReport/RepositoriesReport.gpr.py:27
 #: RepositoriesReport/RepositoriesReport.gpr.py:46
 msgid "Produces a textual repositories report"
 msgstr "Stvara tekstualni izvještaj o spremištima"
 
-#: RepositoriesReport/RepositoriesReport.gpr.py:42
+#: RepositoriesReport/RepositoriesReport.gpr.py:45
 #: RepositoriesReport/RepositoriesReport.py:80
 #: RepositoriesReport/RepositoriesReportAlt.py:139
-#: RepositoriesReport/RepositoriesReport.gpr.py:45
 msgid "Repositories Report"
 msgstr "Izvještaj o spremištima"
 
 #: RepositoriesReport/RepositoriesReport.py:189
-#: RepositoriesReport/RepositoriesReportAlt.py:517
 #: RepositoriesReport/RepositoriesReportAlt.py:518
 msgid "The style used for repository title."
 msgstr "Stil korišten za naslov spremišta."
@@ -73,117 +66,94 @@ msgstr "Informacije o publikaciji:"
 msgid "Data:"
 msgstr "Podaci:"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:377
 #: RepositoriesReport/RepositoriesReportAlt.py:378
 msgid "Page:"
 msgstr "Stranica:"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:418
 #: RepositoriesReport/RepositoriesReportAlt.py:419
 msgid "Selection with a filter"
 msgstr "Odabir filtrom"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:430
 #: RepositoriesReport/RepositoriesReportAlt.py:431
 msgid "Include repository's urls"
 msgstr "Uključi URL spremišta"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:431
 #: RepositoriesReport/RepositoriesReportAlt.py:432
 msgid "Whether to include urls on repository."
 msgstr "Da li uključiti URL adrese spremišta."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:434
 #: RepositoriesReport/RepositoriesReportAlt.py:435
 msgid "Include repository's address"
 msgstr "Uključi adrese spremišta"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:435
 #: RepositoriesReport/RepositoriesReportAlt.py:436
 msgid "Whether to include addresses on repository."
 msgstr "Da li uključiti adrese spremišta."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:438
 #: RepositoriesReport/RepositoriesReportAlt.py:439
 msgid "Include source's author"
 msgstr "Uključi autore izvora"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:439
 #: RepositoriesReport/RepositoriesReportAlt.py:440
 msgid "Whether to include author."
 msgstr "Da li uključiti autore izvora."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:442
 #: RepositoriesReport/RepositoriesReportAlt.py:443
 msgid "Include source's abbreviation"
 msgstr "Uključi kratice izvora"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:443
 #: RepositoriesReport/RepositoriesReportAlt.py:444
 msgid "Whether to include abbreviation."
 msgstr "Da li uključiti kratice izvora."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:446
 #: RepositoriesReport/RepositoriesReportAlt.py:447
 msgid "Include source's publication information"
 msgstr "Uključi informacije o publikaciji izvora"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:447
 #: RepositoriesReport/RepositoriesReportAlt.py:448
 msgid "Whether to include publication information."
 msgstr "Da li uključiti informacije o publikaciji izvora."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:450
 #: RepositoriesReport/RepositoriesReportAlt.py:451
 msgid "Include source's data"
 msgstr "Uključi podatke iz izvora"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:451
 #: RepositoriesReport/RepositoriesReportAlt.py:452
 msgid "Whether to include keys and values."
 msgstr "Da li uključiti ključeve i vrijednosti."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:455
 #: RepositoriesReport/RepositoriesReportAlt.py:456
 msgid "Whether to include notes on repositories and sources."
 msgstr "Da li uključiti zabilješke o spremištima i izvorima."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:458
 #: RepositoriesReport/RepositoriesReportAlt.py:459
 msgid "Include media"
 msgstr "Uključi medije"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:459
 #: RepositoriesReport/RepositoriesReportAlt.py:460
 msgid "Whether to include media."
 msgstr "Da li uključiti medije."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:462
 #: RepositoriesReport/RepositoriesReportAlt.py:463
 msgid "Include citations"
 msgstr "Uključi citate"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:463
 #: RepositoriesReport/RepositoriesReportAlt.py:464
 msgid "Whether to include citations on sources."
 msgstr "Da li uključiti citate izvora."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:467
 #: RepositoriesReport/RepositoriesReportAlt.py:468
 msgid "Whether to include repositories and sources marked as private."
 msgstr "Da li uključiti privatne zapise o spremištima i izvorima."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:470
 #: RepositoriesReport/RepositoriesReportAlt.py:471
 msgid "Display empty values"
 msgstr "Uključi prazne vrijednosti"
 
-#: RepositoriesReport/RepositoriesReportAlt.py:471
 #: RepositoriesReport/RepositoriesReportAlt.py:472
 msgid "Whether to include key records with empty values."
 msgstr "Da li uključiti ključne zapise bez vrijednosti."
 
-#: RepositoriesReport/RepositoriesReportAlt.py:547
 #: RepositoriesReport/RepositoriesReportAlt.py:548
 msgid "The style used for child section."
 msgstr "Stil korišten za odlomke s djecom."

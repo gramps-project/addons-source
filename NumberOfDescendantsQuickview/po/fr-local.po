@@ -28,7 +28,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: trunk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-17 18:14+0100\n"
+"POT-Creation-Date: 2025-02-06 08:58-0800\n"
 "PO-Revision-Date: 2011-12-17 18:49+0100\n"
 "Last-Translator: Jérôme Rapinat <romjerome@yahoo.fr>\n"
 "Language-Team:  <fr@li.org>\n"
@@ -38,52 +38,45 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:3
 #: LifeLineChartView/_dummy_translation_string_po.py:115
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:4
 msgid "Number of descendants"
 msgstr "Nombre de descendants"
 
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:4
+#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:54
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:87
+#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:94
+msgid "Generation"
+msgstr "Génération"
+
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.gpr.py:5
 msgid "Shows the number of descendants of the current person"
 msgstr "Affiche le nombre de descendants de l'individu actif"
 
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:57
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:62
 #, python-format
 msgid "Number of %s's descendants"
 msgstr "Nombre de descendants de %s"
 
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:82
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:89
-#: NumberOfAncestorsQuickview/NumberOfAncestorsQuickview.py:54
-msgid "Generation"
-msgstr "Génération"
-
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:84
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:89
 msgid "Seen"
 msgstr "Vu"
 
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:85
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:90
 msgid "Outlived"
 msgstr "En vie"
 
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:86
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:91
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:96
 msgid "Now alive"
 msgstr "En vie actuellement"
 
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:117
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:122
 #, python-format
 msgid "Seen = number of descendants whose birth %s has lived to see"
 msgstr ""
 "Vu = nombre de descendants dont la naissance de %s lui a permis de se voir"
 
-#: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:119
 #: NumberOfDescendantsQuickview/NumberOfDescendantsQuickview.py:124
 #, python-format
 msgid "Outlived = number of descendants who died while %s was still alive"
